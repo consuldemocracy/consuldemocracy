@@ -1,0 +1,32 @@
+<%= form_for(@debate) do |f| %>
+  <% if @debate.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@debate.errors.count, "error") %> prohibited this debate from being saved:</h2>
+
+      <ul>
+      <% @debate.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <p><strong>Título del debate</strong></p>
+  <p>Sé claro y conciso a la hora de poner un título, pero recuerda que debe explicar bien tu idea, ¡es tu carta de entrada!</p>
+  <%= f.text_field :title %>
+
+  <br/>
+  <p><strong>Describe tu opinión</strong></p>
+  <p>Explica con todo el detalle que puedas y de una manera sencilla la idea y que crees que conseguiríamos con ella</p>
+  <%= f.text_area  :description %>
+
+  <% if action_name == 'new' %>
+    <%= f.check_box :terms_of_service %>
+    Acepto la política de privacidad y el aviso legal 
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+  <br/>
+<% end %>
