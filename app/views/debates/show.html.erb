@@ -1,0 +1,8 @@
+<div id="debate-<%= @debate.id %>">
+  <p><%= @debate.title %></p>
+  <p><%= @debate.description %></p>
+  <p>Creado el: <%= l @debate.created_at.to_date %></p>
+</div>
+
+<%= link_to 'Edit', edit_debate_path(@debate) %> |
+<%= link_to 'Back', debates_path %>
