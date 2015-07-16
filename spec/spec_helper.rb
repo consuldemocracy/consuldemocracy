@@ -1,6 +1,8 @@
+require 'factory_girl_rails'
 RSpec.configure do |config|
   config.filter_run :focus
   config.run_all_when_everything_filtered = true
+  config.include FactoryGirl::Syntax::Methods
 
   # Allows RSpec to persist some state between runs in order to support
   # the `--only-failures` and `--next-failure` CLI options.
