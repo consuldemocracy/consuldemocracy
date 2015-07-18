@@ -4,5 +4,14 @@
   <p>Creado el: <%= l @debate.created_at.to_date %></p>
 </div>
 
+Deja tu comentario
+<%= render 'comments/form', parent: @debate %>
+
+<div id="comments" style="padding-top:20px">
+  <h2>Comentarios</h2>
+  <%= render @debate.root_comments %>
+</div>
+
+<br/><br/>
 <%= link_to 'Edit', edit_debate_path(@debate) %> |
 <%= link_to 'Back', debates_path %>

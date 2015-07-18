@@ -1,0 +1,7 @@
+<%= form_for [@debate, Comment.new] do |f| %>
+  <%= f.text_area :body %>
+  <%= f.hidden_field :commentable_type, value: parent.class %>
+  <%= f.hidden_field :commentable_id, value: parent.id %>
+  
+  <%= f.submit 'Publicar comentario' %>
+<% end %>
