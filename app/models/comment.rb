@@ -1,10 +1,10 @@
 class Comment < ActiveRecord::Base
-  acts_as_nested_set :scope => [:commentable_id, :commentable_type]
+  acts_as_nested_set scope: [:commentable_id, :commentable_type]
 
-  validates :body, :presence => true
-  validates :user, :presence => true
+  validates :body, presence: true
+  validates :user, presence: true
 
-  belongs_to :commentable, :polymorphic => true
+  belongs_to :commentable, polymorphic: true
   belongs_to :user
 
   def self.build(commentable, user, body)
