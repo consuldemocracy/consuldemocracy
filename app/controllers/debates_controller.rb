@@ -1,6 +1,7 @@
 class DebatesController < ApplicationController
   before_action :set_debate, only: [:show, :edit, :update]
-
+  before_action :authenticate_user!, only: [:new, :create]
+  
   def index
     @debates = Debate.all
   end
@@ -16,7 +17,9 @@ class DebatesController < ApplicationController
   end
 
   def create
-    @debate = Debate.create(debate_params)
+    @debate = Debate.new(debate_params)
+    @debate.author = current_user
+    @debate.save
     respond_with @debate
   end
 
