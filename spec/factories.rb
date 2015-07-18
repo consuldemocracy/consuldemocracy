@@ -4,4 +4,15 @@ FactoryGirl.define do
     description      'Debate description'
     terms_of_service '1'
   end
+
+  factory :comment do
+    commentable
+    user
+    body 'Comment body'
+  end
+
+  factory :commentable do
+    debate
+  end
+
 end
