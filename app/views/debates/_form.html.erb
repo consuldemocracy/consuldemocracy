@@ -20,6 +20,11 @@
   <p>Explica con todo el detalle que puedas y de una manera sencilla la idea y que crees que conseguiríamos con ella</p>
   <%= f.text_area  :description %>
 
+  <div>
+    <%= f.label :tag_list, "Temas (separados por comas)" %><br />
+    <%= f.text_field :tag_list, value: @debate.tag_list.to_s %>
+  </div>
+
   <% if @debate.new_record? %>
     <%= f.check_box :terms_of_service %>
     Acepto la política de privacidad y el aviso legal 
