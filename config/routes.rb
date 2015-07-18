@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   root 'welcome#index'
   resources :debates do
     resources :votes, only: :create
+    resources :comments, only: :create
   end
 
   # Example of regular route:

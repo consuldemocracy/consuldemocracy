@@ -18,6 +18,15 @@ FactoryGirl.define do
     association :votable, factory: :debate
     association :voter, factory: :user
     vote_flag true
+
+  factory :comment do
+    commentable
+    user
+    body 'Comment body'
+  end
+
+  factory :commentable do
+    debate
   end
 
 end

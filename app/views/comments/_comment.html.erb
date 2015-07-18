@@ -1,0 +1,13 @@
+<div id="comment-<%= comment.id %>" class='comment' style="padding-bottom:30px">
+  <p><%= comment.user.name %></p>
+  <p>hace <%= time_ago_in_words(comment.created_at) %></p>
+  <p><%= comment.body %></p>
+
+  <div style="margin-left:50px">
+    <%= render comment.children %>
+  </div>
+  
+  <div style="margin-left:50px">
+    <%= render 'comments/form', parent: comment %>
+  </div>
+</div>
