@@ -10,12 +10,12 @@
 <div>
   <div id='in_favor'>
     <%= link_to "up", debate_votes_path(@debate, value: 'yes'), method: "post" %>
-    <%= @debate.percentage('likes') %>%
+    <%= percentage('likes', @debate) %>
   </div>
   
   <div id='against'>
     <%= link_to "down", debate_votes_path(@debate, value: 'no'), method: "post" %>
-    <%= @debate.percentage('dislikes') %>%
+    <%= percentage('dislikes', @debate) %>
   </div>
   
   Votos <%= @debate.total_votes %>
