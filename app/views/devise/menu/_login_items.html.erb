@@ -1,9 +1,11 @@
-<% if user_signed_in? %>
-  <li>
-    <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
-  </li>
-<% else %>
-  <li>
-    <%= link_to('Login', new_user_session_path)  %>
-  </li>
-<% end %>
+<div style="float:right; margin-right:50px">
+  <% if user_signed_in? %>
+    <li>
+      <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
+    </li>
+  <% else %>
+    <li>
+      <%= link_to('Login', new_user_session_path)  %>
+    </li>
+  <% end %>
+</div>

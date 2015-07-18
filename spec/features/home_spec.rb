@@ -4,7 +4,7 @@ feature "Home" do
 
   scenario "Welcome message" do
     visit '/'
-    expect(page).to have_content 'Bienvenido al Ayuntamiento de Madrid'
+    expect(page).to have_content 'Debates sobre Madrid'
   end
 
 end
