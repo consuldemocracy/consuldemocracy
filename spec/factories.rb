@@ -11,6 +11,7 @@ FactoryGirl.define do
     title            'Debate title'
     description      'Debate description'
     terms_of_service '1'
+    association :author, factory: :user
   end
 
 end
