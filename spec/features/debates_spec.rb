@@ -12,6 +12,7 @@ feature 'Debates' do
       expect(page).to have_content "Debate title"
       expect(page).to have_content "Debate description"
       expect(page).to have_content "Creado el: #{I18n.l Date.today}"
+      expect(page).to have_content "por: #{Debate.first.author.name}"
     end
   end
 
@@ -23,9 +24,13 @@ feature 'Debates' do
     expect(page).to have_content "Debate title"
     expect(page).to have_content "Debate description"
     expect(page).to have_content "Creado el: #{I18n.l Date.today}"
+    expect(page).to have_content "por: #{debate.author.name}"
   end
 
   scenario 'Create' do
+    author = create(:user)
+    login_as(author)
+
     visit new_debate_path
     fill_in 'debate_title', with: 'Acabar con los desahucios'
     fill_in 'debate_description', with: 'Esto es un tema muy importante porque...'
@@ -36,6 +41,8 @@ feature 'Debates' do
     expect(page).to have_content 'Debate creado correctamente'
     expect(page).to have_content 'Acabar con los desahucios'
     expect(page).to have_content 'Esto es un tema muy importante porque...'
+    expect(page).to have_content "Creado el: #{I18n.l Date.today}"
+    expect(page).to have_content "por: #{author.name}"
   end
 
   scenario 'Update' do
