@@ -1,13 +1,13 @@
-<div id="debate-<%= @debate.id %>">
+<span id="debate-<%= @debate.id %>" style="width:70%; float:left">
   <p><%= @debate.title %></p>
   <p><%= @debate.description %></p>
   <p>
     Creado el: <%= l @debate.created_at.to_date %>
     por: <%= @debate.author.name %>
   </p>
-</div>
+</span>
 
-<div>
+<span style="width:30%;float:left">
   <div id='in_favor'>
     <%= link_to "up", debate_votes_path(@debate, value: 'yes'), method: "post" %>
     <%= percentage('likes', @debate) %>
@@ -19,19 +19,21 @@
   </div>
   
   Votos <%= @debate.total_votes %>
+</span>
+
+<div style="display: block; width:300px">
+  <%= render 'shared/tags', debate: @debate %>
 </div>
 
 <br/><br/>
-<%= render 'shared/tags', debate: @debate %>
-
-<br/><br/>
-Deja tu comentario
-<%= render 'comments/form', parent: @debate %>
-
 <div id="comments" style="padding-top:20px">
   <h2>Comentarios</h2>
   <%= render @debate.root_comments %>
 </div>
+
+Deja tu comentario
+<%= render 'comments/form', parent: @debate %>
+
 
 <br/><br/>
 <%= link_to 'Edit', edit_debate_path(@debate) %> |
