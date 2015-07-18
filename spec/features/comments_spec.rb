@@ -10,7 +10,7 @@ feature 'Comments' do
     visit debate_path(debate)
 
     expect(page).to have_css('.comment', count: 3)
-    
+
     comment = Comment.first
     within first('.comment') do
       expect(page).to have_content comment.user.name
@@ -22,7 +22,7 @@ feature 'Comments' do
   scenario 'Create' do
     user = create(:user)
     debate = create(:debate)
-    
+
     login_as(user)
     visit debate_path(debate)
 
@@ -30,7 +30,7 @@ feature 'Comments' do
     click_button 'Publicar comentario'
 
     expect(page).to have_content 'Comentario guardado'
-    
+
     within "#comments" do
       expect(page).to have_content '¿Has pensado en esto...?'
     end
@@ -41,9 +41,9 @@ feature 'Comments' do
     manuela = create(:user, first_name: 'Manuela')
     debate  = create(:debate)
     comment = create(:comment, commentable: debate, user: citizen)
-    
-    visit debate_path(debate)
+
     login_as(manuela)
+    visit debate_path(debate)
 
     within "#comment-#{comment.id}" do
       fill_in 'comment_body', with: 'La semana que viene está hecho.'
@@ -60,7 +60,7 @@ feature 'Comments' do
     debate = create(:debate)
     parent = create(:comment, commentable: debate)
 
-    7.times do 
+    7.times do
      create(:comment, commentable: debate).
      move_to_child_of(parent)
      parent = parent.children.first
@@ -69,5 +69,5 @@ feature 'Comments' do
     visit debate_path(debate)
     expect(page).to have_css(".comment.comment.comment.comment.comment.comment.comment.comment")
   end
-  
+
 end
