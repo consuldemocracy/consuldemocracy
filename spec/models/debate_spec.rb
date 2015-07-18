@@ -10,6 +10,11 @@ describe Debate do
     expect(@debate).to be_valid
   end
 
+  it "should not be valid without an author" do
+    @debate.author = nil
+    expect(@debate).to_not be_valid
+  end
+
   it "should not be valid without a title" do
     @debate.title = nil
     expect(@debate).to_not be_valid

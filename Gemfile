@@ -31,7 +31,7 @@ gem 'devise'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-
+gem 'acts-as-taggable-on'
 gem "responders"
 gem 'foundation-rails'
 gem 'acts_as_votable'
