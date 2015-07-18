@@ -14,6 +14,12 @@ FactoryGirl.define do
     association :author, factory: :user
   end
 
+  factory :vote do
+    association :votable, factory: :debate
+    association :voter, factory: :user
+    vote_flag true
+  end
+  
   factory :comment do
     commentable
     user

@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'welcome#index'
   resources :debates do
+    resources :votes, only: :create
     resources :comments, only: :create
   end
 

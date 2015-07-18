@@ -7,6 +7,21 @@
   </p>
 </div>
 
+<div>
+  <div id='in_favor'>
+    <%= link_to "up", debate_votes_path(@debate, value: 'yes'), method: "post" %>
+    <%= @debate.percentage('likes') %>%
+  </div>
+  
+  <div id='against'>
+    <%= link_to "down", debate_votes_path(@debate, value: 'no'), method: "post" %>
+    <%= @debate.percentage('dislikes') %>%
+  </div>
+  
+  Votos <%= @debate.total_votes %>
+</div>
+
+<br/><br/>
 <%= render 'shared/tags', debate: @debate %>
 
 <br/><br/>
