@@ -4,5 +4,22 @@
   <p>Creado el: <%= l @debate.created_at.to_date %></p>
 </div>
 
-<%= link_to 'Edit', edit_debate_path(@debate) %> |
-<%= link_to 'Back', debates_path %>
+<div>
+  <div id='in_favor'>
+    <%= link_to "up", debate_votes_path(@debate, value: 'yes'), method: "post" %>
+    <%= @debate.percentage('likes') %>%
+  </div>
+  
+  <div id='against'>
+    <%= link_to "down", debate_votes_path(@debate, value: 'no'), method: "post" %>
+    <%= @debate.percentage('dislikes') %>%
+  </div>
+  
+  Votos <%= @debate.total_votes %>
+</div>
+
+<br/><br/>
+<div>
+  <%= link_to 'Edit', edit_debate_path(@debate) %> |
+  <%= link_to 'Back', debates_path %>
+</div>
