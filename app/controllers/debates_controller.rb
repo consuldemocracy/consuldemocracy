@@ -3,7 +3,11 @@ class DebatesController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create]
   
   def index
-    @debates = Debate.all
+    if params[:tag]
+      @debates = Debate.tagged_with(params[:tag])
+    else
+      @debates = Debate.all
+    end
   end
 
   def show
@@ -35,7 +39,7 @@ class DebatesController < ApplicationController
     end
 
     def debate_params
-      params.require(:debate).permit(:title, :description, :external_link, :terms_of_service)
+      params.require(:debate).permit(:title, :description, :tag_list, :terms_of_service)
     end
 
 end
