@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-feature 'Votes', :focus do
+feature 'Votes' do
 
   background do
     @manuela = create(:user)
