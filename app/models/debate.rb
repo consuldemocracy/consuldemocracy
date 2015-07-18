@@ -1,4 +1,6 @@
 class Debate < ActiveRecord::Base
+  acts_as_commentable
+  
   validates :title, presence: true
   validates :description, presence: true
 

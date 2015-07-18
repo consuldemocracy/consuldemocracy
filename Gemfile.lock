@@ -36,7 +36,13 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
+    acts_as_commentable_with_threading (2.0.0)
+      activerecord (>= 4.0)
+      activesupport (>= 4.0)
+      awesome_nested_set (>= 3.0)
     arel (6.0.2)
+    awesome_nested_set (3.0.2)
+      activerecord (>= 4.0.0, < 5)
     bcrypt (3.1.10)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
@@ -188,6 +194,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  acts_as_commentable_with_threading
   byebug
   capybara
   coffee-rails (~> 4.1.0)
