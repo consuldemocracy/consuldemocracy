@@ -1,7 +1,10 @@
 <div id="debate-<%= @debate.id %>">
   <p><%= @debate.title %></p>
   <p><%= @debate.description %></p>
-  <p>Creado el: <%= l @debate.created_at.to_date %></p>
+  <p>
+    Creado el: <%= l @debate.created_at.to_date %>
+    por: <%= @debate.author.name %>
+  </p>
 </div>
 
 <%= link_to 'Edit', edit_debate_path(@debate) %> |
