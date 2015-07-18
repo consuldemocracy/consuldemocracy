@@ -14,4 +14,14 @@ FactoryGirl.define do
     association :author, factory: :user
   end
 
+  factory :comment do
+    commentable
+    user
+    body 'Comment body'
+  end
+
+  factory :commentable do
+    debate
+  end
+
 end
