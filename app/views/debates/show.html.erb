@@ -28,13 +28,12 @@
 <br/><br/>
 <div id="comments" style="padding-top:20px">
   <h2>Comentarios</h2>
+  <div style="padding-bottom:60px">
+    Deja tu comentario
+    <%= render 'comments/form', parent: @debate %>
+  </div>
   <%= render @debate.root_comments %>
 </div>
 
-Deja tu comentario
-<%= render 'comments/form', parent: @debate %>
-
-
-<br/><br/>
 <%= link_to 'Edit', edit_debate_path(@debate) %> |
 <%= link_to 'Back', debates_path %>
