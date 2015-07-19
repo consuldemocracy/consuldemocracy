@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 feature 'Debates' do
-  
+
   scenario 'Index' do
     3.times { create(:debate) }
 
@@ -35,7 +35,7 @@ feature 'Debates' do
     fill_in 'debate_title', with: 'Acabar con los desahucios'
     fill_in 'debate_description', with: 'Esto es un tema muy importante porque...'
     check 'debate_terms_of_service'
-    
+
     click_button 'Crear Debate'
 
     expect(page).to have_content 'Debate creado correctamente'
@@ -45,13 +45,36 @@ feature 'Debates' do
     expect(page).to have_content "por: #{author.name}"
   end
 
-  scenario 'Update' do
+  scenario 'Update should not be posible if logged user is not the author' do
     debate = create(:debate)
+    expect(debate).to be_editable
+    login_as(create(:user))
 
-    visit edit_debate_path(debate)
+    expect {
+      visit edit_debate_path(debate)
+    }.to raise_error ActiveRecord::RecordNotFound
+  end
+
+  scenario 'Update should not be posible if debate is not editable' do
+    debate = create(:debate)
+    vote = create(:vote, votable: debate)
+    expect(debate).to_not be_editable
+    login_as(debate.author)
+
+    expect {
+      visit edit_debate_path(debate)
+    }.to raise_error ActiveRecord::RecordNotFound
+  end
+
+  scenario 'Update should be posible for the author of an editable debate' do
+    debate = create(:debate)
+    login_as(debate.author)
+
+    visit debate_path(debate)
+    click_link 'Edit'
     fill_in 'debate_title', with: 'Dimisión Rajoy'
     fill_in 'debate_description', with: 'Podríamos...'
-    
+
     click_button 'Actualizar Debate'
 
     expect(page).to have_content 'Debate actualizado correctamente'
