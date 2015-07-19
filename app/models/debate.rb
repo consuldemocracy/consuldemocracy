@@ -3,7 +3,7 @@ class Debate < ActiveRecord::Base
   acts_as_votable
   acts_as_commentable
   acts_as_taggable
-  
+
   belongs_to :author, class_name: 'User', foreign_key: 'author_id'
 
   validates :title, presence: true
@@ -22,6 +22,14 @@ class Debate < ActiveRecord::Base
 
   def total_votes
     votes_for.size
+  end
+
+  def editable?
+    total_votes == 0
+  end
+
+  def editable_by?(user)
+    editable? && author == user
   end
 
 end

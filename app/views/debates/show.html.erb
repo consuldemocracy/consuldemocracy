@@ -12,12 +12,12 @@
     <%= link_to "up", debate_votes_path(@debate, value: 'yes'), method: "post" %>
     <%= percentage('likes', @debate) %>
   </div>
-  
+
   <div id='against'>
     <%= link_to "down", debate_votes_path(@debate, value: 'no'), method: "post" %>
     <%= percentage('dislikes', @debate) %>
   </div>
-  
+
   Votos <%= @debate.total_votes %>
 </span>
 
@@ -35,5 +35,7 @@
   <%= render @debate.root_comments %>
 </div>
 
-<%= link_to 'Edit', edit_debate_path(@debate) %> |
+<% if current_user && @debate.editable_by?(current_user) %>
+  <%= link_to 'Edit', edit_debate_path(@debate) %> |
+<% end %>
 <%= link_to 'Back', debates_path %>
