@@ -1,0 +1,15 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  database: participacion_development
+  host: localhost
+  pool: 5
+  username:
+  password:
+
+development:
+  <<: *default
+
+test:
+  <<: *default
+  database: participacion_test
