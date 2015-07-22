@@ -10,11 +10,12 @@
         <%= javascript_include_tag "vendor/modernizr" %>
         <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
         <%= csrf_meta_tags %>
+        <script src="https://www.google.com/recaptcha/api.js?hl=<%= I18n.locale %>"></script>
     </head>
 <body>
-    
+
     <%= render 'layouts/header' %>
-    
+
     <% if notice %>
         <p class="alert-box success"><%= notice %></p>
     <% end %>
@@ -22,11 +23,11 @@
     <% if alert %>
         <p class="alert-box success"><%= alert %></p>
     <% end %>
-    
+
     <div class="row">
       <div class="small-12 column">
         <%= yield %>
       </div>
-    </div>  
+    </div>
 </body>
 </html>
