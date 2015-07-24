@@ -1,12 +1,43 @@
-#tag_cloud {
-  width: 400px;
-  line-height: 1.6em;
-  .s { font-size: 0.8em; }
-  .m { font-size: 1.2em; }
-  .l { font-size: 1.8em; }
+// Table of Contents
+//
+// 01. Variables
+// 02. Global styles
+// 03. Header
+// 04. Footer
+
+
+// 01. Variables
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+$font-family-sans-serif: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$line-height: rem-calc(24);
+
+// 02. Global styles
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+
+
+// 02. Header
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+header {
+	background: url('https://static.pexels.com/photos/2752/city-sunny-people-street-large.jpg');
+	background-position: 50% 50%;
+	background-size: cover;
+	min-height: $line-height*20; 
 }
 
+.contain-to-grid {
+	background: none;
+}
 
-body {
-	background: #fafafa;
+.top-links {
+	color: white;
+	font-size: rem-calc(14);
+	padding: $header-line-height/2+em 0;
+
+	a {
+		color: white;
+	}
 }
