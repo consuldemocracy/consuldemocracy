@@ -34,7 +34,7 @@ feature 'Tags' do
 
     visit debate_path(debate)
 
-    expect(page).to have_content "Temas: Hacienda, Economía"
+    expect(page).to have_content "Temas: Economía, Hacienda"
   end
 
   scenario 'Tag Cloud' do
@@ -61,16 +61,16 @@ feature 'Tags' do
     check 'debate_terms_of_service'
 
     fill_in 'debate_tag_list', with: "Impuestos, Economía, Hacienda"
-    
+
     click_button 'Crear Debate'
 
     expect(page).to have_content 'Debate creado correctamente'
-    expect(page).to have_content 'Temas: Impuestos, Economía, Hacienda'
+    expect(page).to have_content 'Temas: Economía, Hacienda, Impuestos'
   end
 
   scenario 'Update' do
     debate = create(:debate, tag_list: 'Economía')
-    
+
     login_as(debate.author)
     visit edit_debate_path(debate)
 
@@ -88,12 +88,12 @@ feature 'Tags' do
 
     login_as(debate.author)
     visit edit_debate_path(debate)
-    
+
     fill_in 'debate_tag_list', with: ""
     click_button 'Actualizar Debate'
 
     expect(page).to have_content 'Debate actualizado correctamente'
     expect(page).to_not have_content 'Temas:'
   end
-  
+
 end
