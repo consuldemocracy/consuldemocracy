@@ -1,4 +1,5 @@
 class DebatesController < ApplicationController
+  include RecaptchaHelper 
   before_action :set_debate, only: [:show, :edit, :update]
   before_action :authenticate_user!, except: [:show, :index]
   before_action :validate_ownership, only: [:edit, :update]
@@ -51,7 +52,7 @@ class DebatesController < ApplicationController
     end
 
     def verify_captcha?
-      return true unless Rails.application.secrets.recaptcha_public_key
+      return true unless recaptcha_keys?
       verify_recaptcha(model: @debate) 
     end
 
