@@ -1,4 +1,4 @@
-<%= link_to "Comentar", "", class: "js-add-comment-link", data: {'id': parent.id} %>
+<%= link_to comment_link_text(parent), "", class: "js-add-comment-link", data: {'id': parent.id} %>
 
 <div id="js-comment-form-<%= parent.id %>" style="display:none">
   <%= form_for [@debate, Comment.new] do |f| %>
@@ -6,6 +6,6 @@
     <%= f.hidden_field :commentable_type, value: parent.class %>
     <%= f.hidden_field :commentable_id, value: parent.id %>
     
-    <%= f.submit 'Publicar comentario' %>
+    <%= f.submit comment_button_text(parent) %>
   <% end %>
 </div>
