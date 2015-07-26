@@ -4,6 +4,7 @@
 // 02. Global styles
 // 03. Header
 // 04. Footer
+// 05. Debates
 
 
 // 01. Variables
@@ -12,32 +13,129 @@
 $font-family-sans-serif: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 $line-height: rem-calc(24);
 
+$brand:				#0077B9;
+$debates:           #008CCF;
+$header-color:		#292B33;
+$text-color:        #919399;
+
 // 02. Global styles
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
+body {
+    font-family: $font-family-sans-serif;
+    font-weight: 300;
 
+    p {
+        font-weight: 300;
+    }
+}
 
-
-// 02. Header
+// 03. Header
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
 header {
-	background: url('https://static.pexels.com/photos/2752/city-sunny-people-street-large.jpg');
-	background-position: 50% 50%;
-	background-size: cover;
-	min-height: $line-height*20; 
+    background: url('home-header-bg.jpg');
+    background-position: 50% 50%;
+    background-size: cover;
+    min-height: $line-height*20;
 }
 
 .contain-to-grid {
-	background: none;
+    background: none;
+}
+
+.top-bar {
+    background: white;
+    color: $header-color;
+    height: $line-height*4;
+
+    .name h1 a {
+        color: black;
+        font-family: 'Lato';
+        font-size: rem-calc(36);
+        font-weight: lighter;
+        line-height: $line-height*4;
+        padding-left: 0;
+        white-space: nowrap;
+
+        span {
+            color: $brand;
+            font-size: rem-calc(24);
+            font-weight: normal;
+        }
+
+        img {
+            margin-right: $line-height/2;
+        }
+    }
+}
+
+.top-bar-section li:not(.has-form) a:not(.button) {
+    background: white;
+    color: $brand;
+    line-height: $line-height*4;
 }
 
 .top-links {
-	color: white;
-	font-size: rem-calc(14);
-	padding: $header-line-height/2+em 0;
+    color: white;
+    font-size: rem-calc(14);
+    padding: $header-line-height/2+em 0;
 
-	a {
-		color: white;
-	}
+    a {
+        color: white;
+    }
 }
+
+// 04. Footer
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+
+
+
+// 05. Debates
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+.debates-index {
+    margin-top: $line-height;
+}
+
+.debate {
+    
+    .panel {
+
+        .fi-comment-quotes {
+            color: $debates;
+            font-size: rem-calc(36);
+            line-height: $line-height;
+        }
+
+        .label {
+            margin-top: $line-height/4; 
+        }
+
+        h3 a {
+            clear: both;
+            color: $header-color;
+            display: block;
+            font-size: rem-calc(16);
+        }
+
+        p {
+            color: $text-color;
+            font-size: rem-calc(13);
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
