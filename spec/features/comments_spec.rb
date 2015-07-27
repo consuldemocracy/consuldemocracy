@@ -26,6 +26,8 @@ feature 'Comments' do
     login_as(user)
     visit debate_path(debate)
 
+    click_on 'Comentar'
+
     fill_in 'comment_body', with: '¿Has pensado en esto...?'
     click_button 'Publicar comentario'
 
