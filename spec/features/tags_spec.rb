@@ -80,7 +80,11 @@ feature 'Tags' do
     click_button 'Actualizar Debate'
 
     expect(page).to have_content 'Debate actualizado correctamente'
-    expect(page).to have_content 'Temas: Economía, Hacienda'
+    within('#tags') do
+      expect(page).to have_content 'Temas:'
+      expect(page).to have_css('a', text: 'Economía')
+      expect(page).to have_css('a', text: 'Hacienda')
+    end
   end
 
   scenario 'Delete' do
