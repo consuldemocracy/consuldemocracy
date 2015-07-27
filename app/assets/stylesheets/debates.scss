@@ -5,7 +5,8 @@
 // 03. Header
 // 04. Footer
 // 05. Debates
-
+// 06. Comentarios
+//
 
 // 01. Variables
 // - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -42,6 +43,10 @@ body {
 
 .row {
     max-width: 1170px;
+}
+
+.inline-block {
+    display: inline-block;
 }
 
 // 03. Header
@@ -148,7 +153,7 @@ header {
 }
 
 .debate {
-    
+
     .panel {
         background: white;
         border: 0;
@@ -168,7 +173,7 @@ header {
         }
 
         .label {
-            margin-top: $line-height/4; 
+            margin-top: $line-height/4;
         }
 
         h3 {
@@ -190,64 +195,138 @@ header {
             line-height: $line-height;
             margin-bottom: $line-height;
         }
+    }
+        
+    .votes {
+        background: $votes-background;
+        margin: -5px -20px -20px -20px;
+        padding: 1.25rem 1.25rem 0 1.25rem;
 
-        .votes {
-            background: $votes-background;
-            margin: -5px -20px -20px -20px;
-            padding: 1.25rem 1.25rem 0 1.25rem;
+        .fi-like {
+            color: $votes-like;
+            font-size: rem-calc(48);
+            line-height: $line-height*2;
+        }
 
-            .fi-like {
-                color: $votes-like;
-                font-size: rem-calc(48);
-                line-height: $line-height*2;
-            }
+        .fi-dislike {
+            color: $votes-dislike;
+            display: inline-block;
+            font-size: rem-calc(48);
+            line-height: $line-height*2;
+            padding-top: $line-height/3;
+        }
 
-            .fi-dislike {
-                color: $votes-dislike;
+        .in-favor {
+            color: $votes-like;
+            line-height: rem-calc(48);
+            vertical-align: top;
+
+            span {
                 display: inline-block;
-                font-size: rem-calc(48);
-                line-height: $line-height*2;
-                padding-top: $line-height/3;
-            }
-
-            .in-favor {
-                color: $votes-like;
-                line-height: rem-calc(48);
+                line-height: 48px;
+                padding-top: 5px;
                 vertical-align: top;
-
-                span {
-                    display: inline-block;
-                    line-height: 48px;
-                    padding-top: 5px;
-                    vertical-align: top;
-                }
             }
+        }
 
-            .against {
-                @extend .in-favor;
-                color: $votes-dislike;
-                display: inline-block;
-            }
+        .against {
+            @extend .in-favor;
+            color: $votes-dislike;
+            display: inline-block;
+        }
 
-            .total-votes {
-                font-size: rem-calc(12);
-                line-height: $line-height*2;
-            }
+        .total-votes {
+            font-size: rem-calc(12);
+            line-height: $line-height*2;
+        }
 
-            .divider {
-                background: rgba(0,0,0, .1);
-                display: inline-block;
-                height: 3rem;
-                margin: 0 .5rem;
-                width: 1px;
-            }
+        .divider {
+            background: rgba(0,0,0, .1);
+            display: inline-block;
+            height: 3rem;
+            margin: 0 .5rem;
+            width: 1px;
         }
     }
 }
 
+.debate-show {
+    background: white;
+    margin-top: $line-height;
+    padding: $line-height/2; 
 
+    h1 {        
+        font-size: rem-calc(30);
+        font-weight: bold;
+        margin: 0;
+    }
 
+    .fi-price-tag {
+        color: $text-color;
+        font-size: rem-calc(18);
+        line-height: $line-height;
+    }
+        
+    .votes {
+        
+        .fi-like {
+            color: $votes-like;
+            font-size: rem-calc(48);
+            line-height: $line-height*2;
+        }
 
+        .fi-dislike {
+            color: $votes-dislike;
+            display: inline-block;
+            font-size: rem-calc(48);
+            line-height: $line-height*2;
+            padding-top: $line-height/3;
+        }
+
+        .in-favor {
+            color: $votes-like;
+            line-height: rem-calc(48);
+            vertical-align: top;
+
+            span {
+                display: inline-block;
+                line-height: 48px;
+                padding-top: 5px;
+                vertical-align: top;
+            }
+        }
+
+        .against {
+            @extend .in-favor;
+            color: $votes-dislike;
+        }
+
+        .total-votes {
+            font-size: rem-calc(14);
+            line-height: $line-height*2;
+        }
+
+        .divider {
+            background: rgba(0,0,0, .1);
+            display: inline-block;
+            height: 3rem;
+            margin: 0 .5rem;
+            width: 1px;
+        }
+    }
+}
+
+// 06. Comentarios
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+.comments {
+    clear: both;
+
+    h2 {
+        margin: 0;
+        font-weight: bold;
+    }
+}
 
 
 

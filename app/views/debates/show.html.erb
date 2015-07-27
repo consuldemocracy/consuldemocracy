@@ -1,44 +1,51 @@
-<article>
+<article class="debate-show">
+    
+    <%= link_to 'Volver', debates_path, :class => 'right' %>
+
     <div class="row">
-        <div id="debate-<%= @debate.id %>" class="small-12 medium-2 large-4 colum">
-            <h3><%= @debate.title %></h3>
+        <div id="debate-<%= @debate.id %>" class="small-12 medium-9 column">
+            <h1><%= @debate.title %></h1>
+            <p>Por <%= @debate.author.name %> el <%= l @debate.created_at.to_date %></p>            
             <p><%= @debate.description %></p>
-        <p>
-            Creado el: <%= l @debate.created_at.to_date %>
-            por: <%= @debate.author.name %>
-        </p>
+            <p><%= render 'shared/tags', debate: @debate %></p>
+        </div>
+    
+        <div class="votes small-12 medium-3 column">
+            <div class="small-12 column text-center">
+                <div id="in_favor" class="inline-block">
+                    <%= link_to debate_votes_path(@debate, value: 'yes'), :class => 'in-favor', method: "post" do %>
+                        <i class="fi-like"></i>
+                        <span><%= percentage('likes', @debate) %></span>
+                    <% end %>
+                </div>
+                
+                <span class="divider"></span>
+
+                <div id="against" class="inline-block">
+                    <%= link_to debate_votes_path(@debate, value: 'no'), :class => 'against', method: "post" do %>
+                        <i class="fi-dislike"></i>
+                        <span><%= percentage('dislikes', @debate) %></span>
+                    <% end %>
+                </div>
+            </div>
+            
+            <div class="small-12 column text-center">
+                <p class="total-votes"><%= @debate.total_votes %> votos</p>
+            </div>
+        </div>
     </div>
 
-<span style="width:30%;float:left">
-  <div id='in_favor'>
-    <%= link_to "up", debate_votes_path(@debate, value: 'yes'), method: "post" %>
-    <%= percentage('likes', @debate) %>
-  </div>
+    <div id="comments" class="comments">
+        <h2>Comentarios</h2>
+            <div style="padding-bottom:60px">
+                Deja tu comentario
+                <%= render 'comments/form', parent: @debate %>
+            </div>
+        <%= render @debate.root_comments %>
+    </div>
 
-  <div id='against'>
-    <%= link_to "down", debate_votes_path(@debate, value: 'no'), method: "post" %>
-    <%= percentage('dislikes', @debate) %>
-  </div>
+    <% if current_user && @debate.editable_by?(current_user) %>
+        <%= link_to 'Edit', edit_debate_path(@debate), :class => 'button radius right' %> |
+    <% end %>
 
-  Votos <%= @debate.total_votes %>
-</span>
-
-<div style="display: block; width:300px">
-  <%= render 'shared/tags', debate: @debate %>
-</div>
-
-<br/><br/>
-<div id="comments" style="padding-top:20px">
-  <h2>Comentarios</h2>
-  <div style="padding-bottom:60px">
-    Deja tu comentario
-    <%= render 'comments/form', parent: @debate %>
-  </div>
-  <%= render @debate.root_comments %>
-</div>
-
-<% if current_user && @debate.editable_by?(current_user) %>
-  <%= link_to 'Edit', edit_debate_path(@debate) %> |
-<% end %>
-<%= link_to 'Back', debates_path %>
 </article>
