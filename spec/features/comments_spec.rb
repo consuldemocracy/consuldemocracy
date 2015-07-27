@@ -59,7 +59,7 @@ feature 'Comments' do
     end
   end
 
-  scenario "N replies" do
+  scenario "N replies", :js do
     debate = create(:debate)
     parent = create(:comment, commentable: debate)
 
