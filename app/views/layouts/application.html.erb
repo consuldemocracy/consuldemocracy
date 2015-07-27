@@ -1,22 +1,32 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title><%= content_for?(:title) ? yield(:title) : "Participación" %></title>
+        <title><%= content_for?(:title) ? yield(:title) : "Participación" %></title>
 
-    <%= stylesheet_link_tag    "application" %>
-    <%= javascript_include_tag "vendor/modernizr" %>
-    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
-    <%= csrf_meta_tags %>
-  </head>
-  <body style="margin:50px">
-    <p class="alert"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+        <%= stylesheet_link_tag    "application" %>
+        <%= javascript_include_tag "vendor/modernizr" %>
+        <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+        <%= csrf_meta_tags %>
+    </head>
+<body>
+    
+    <%= render 'layouts/header' %>
+    
+    <% if notice %>
+        <p class="alert-box success"><%= notice %></p>
+    <% end %>
 
-    <%= render 'devise/menu/login_items' %>
-
-    <%= yield %>
-  </body>
+    <% if alert %>
+        <p class="alert-box success"><%= alert %></p>
+    <% end %>
+    
+    <div class="row">
+      <div class="small-12 column">
+        <%= yield %>
+      </div>
+    </div>  
+</body>
 </html>

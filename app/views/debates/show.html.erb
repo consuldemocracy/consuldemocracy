@@ -1,11 +1,13 @@
-<span id="debate-<%= @debate.id %>" style="width:70%; float:left">
-  <p><%= @debate.title %></p>
-  <p><%= @debate.description %></p>
-  <p>
-    Creado el: <%= l @debate.created_at.to_date %>
-    por: <%= @debate.author.name %>
-  </p>
-</span>
+<article>
+    <div class="row">
+        <div id="debate-<%= @debate.id %>" class="small-12 medium-2 large-4 colum">
+            <h3><%= @debate.title %></h3>
+            <p><%= @debate.description %></p>
+        <p>
+            Creado el: <%= l @debate.created_at.to_date %>
+            por: <%= @debate.author.name %>
+        </p>
+    </div>
 
 <span style="width:30%;float:left">
   <div id='in_favor'>
@@ -39,3 +41,4 @@
   <%= link_to 'Edit', edit_debate_path(@debate) %> |
 <% end %>
 <%= link_to 'Back', debates_path %>
+</article>
