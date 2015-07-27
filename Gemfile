@@ -48,10 +48,11 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.0'
   gem 'capybara'
   gem 'factory_girl_rails'
+  gem 'launchy'
 end
 
 group :test do
-  gem 'database_cleaner'  
+  gem 'database_cleaner'
   gem 'poltergeist'
 end
 

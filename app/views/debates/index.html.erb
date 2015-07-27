@@ -1,10 +1,11 @@
-<h1>Debates sobre Madrid</h1>
+<%#= link_to 'New Debate', new_debate_path, :class => 'button radius right' %>
 
-<div id='debates'>
-  <%= render @debates %>
-</div>
+<section id='debates' class="debates-index">
+    <div class="row">
+        <%= render @debates %>
+    </div>
+</section>
 
-<%= render 'shared/tag_cloud' %>
-
-<br/><br/>
-<%= link_to 'New Debate', new_debate_path %>
+<aside>
+    <%= render 'shared/tag_cloud' %>
+</aside>
