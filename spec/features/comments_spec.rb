@@ -19,7 +19,7 @@ feature 'Comments' do
     end
   end
 
-  scenario 'Create' do
+  scenario 'Create', :js, :focus do
     user = create(:user)
     debate = create(:debate)
 
@@ -36,7 +36,7 @@ feature 'Comments' do
     end
   end
 
-  scenario 'Reply' do
+  scenario 'Reply', :js do
     citizen = create(:user, first_name: 'Ana')
     manuela = create(:user, first_name: 'Manuela')
     debate  = create(:debate)
@@ -45,6 +45,7 @@ feature 'Comments' do
     login_as(manuela)
     visit debate_path(debate)
 
+    click_link "Responder"
     within "#comment-#{comment.id}" do
       fill_in 'comment_body', with: 'La semana que viene está hecho.'
       click_button 'Publicar comentario'

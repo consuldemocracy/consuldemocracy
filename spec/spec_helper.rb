@@ -1,15 +1,19 @@
 require 'factory_girl_rails'
+require 'database_cleaner'
+
 RSpec.configure do |config|
+  config.use_transactional_fixtures = false
   config.filter_run :focus
   config.run_all_when_everything_filtered = true
   config.include FactoryGirl::Syntax::Methods
-
+  
   config.before(:suite) do
     DatabaseCleaner.clean_with :truncation
     DatabaseCleaner.strategy = :transaction
   end
 
   config.before(:each) do
+    DatabaseCleaner.strategy= example.metadata[:js] ? :truncation : :transaction
     DatabaseCleaner.start
   end
 
