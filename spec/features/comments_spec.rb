@@ -19,7 +19,7 @@ feature 'Comments' do
     end
   end
 
-  scenario 'Create', :js, :focus do
+  scenario 'Create', :js do
     user = create(:user)
     debate = create(:debate)
 
