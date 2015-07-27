@@ -1,7 +1,11 @@
-<%= form_for [@debate, Comment.new] do |f| %>
-  <%= f.text_area :body %>
-  <%= f.hidden_field :commentable_type, value: parent.class %>
-  <%= f.hidden_field :commentable_id, value: parent.id %>
-  
-  <%= f.submit 'Publicar comentario', :class => "button radius" %>
-<% end %>
+<%= link_to comment_link_text(parent), "", class: "js-add-comment-link", data: {'id': parent.id} %>
+
+<div id="js-comment-form-<%= parent.id %>" style="display:none">
+  <%= form_for [@debate, Comment.new] do |f| %>
+    <%= f.text_area :body %>
+    <%= f.hidden_field :commentable_type, value: parent.class %>
+    <%= f.hidden_field :commentable_id, value: parent.id %>
+    
+    <%= f.submit comment_button_text(parent), :class => "button radius" %>
+  <% end %>
+</div>
