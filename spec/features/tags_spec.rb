@@ -9,11 +9,11 @@ feature 'Tags' do
     visit debates_path
 
     within "#debate-#{earth.id}" do
-      expect(page).to have_content "Temas: Medio Ambiente"
+      expect(page).to have_content "Medio Ambiente"
     end
 
     within "#debate-#{money.id}" do
-      expect(page).to have_content "Temas: Economía"
+      expect(page).to have_content "Economía"
     end
   end
 
@@ -24,9 +24,11 @@ feature 'Tags' do
     visit debates_path
     first(:link, "Salud").click
 
-    expect(page).to have_css('.debate', count: 2)
-    expect(page).to have_content('Temas: Salud')
-    expect(page).to_not have_content('Temas: Hacienda')
+    within('#debates') do
+      expect(page).to have_css('.debate', count: 2)
+      expect(page).to have_content('Salud')
+      expect(page).to_not have_content('Hacienda')
+    end
   end
 
   scenario 'Show' do
@@ -34,7 +36,7 @@ feature 'Tags' do
 
     visit debate_path(debate)
 
-    expect(page).to have_content "Temas: Economía, Hacienda"
+    expect(page).to have_content "Economía, Hacienda"
   end
 
   scenario 'Tag Cloud' do
@@ -65,7 +67,7 @@ feature 'Tags' do
     click_button 'Crear Debate'
 
     expect(page).to have_content 'Debate creado correctamente'
-    expect(page).to have_content 'Temas: Economía, Hacienda, Impuestos'
+    expect(page).to have_content 'Economía, Hacienda, Impuestos'
   end
 
   scenario 'Update' do
@@ -80,7 +82,7 @@ feature 'Tags' do
     click_button 'Actualizar Debate'
 
     expect(page).to have_content 'Debate actualizado correctamente'
-    expect(page).to have_content 'Temas: Economía, Hacienda'
+    expect(page).to have_content 'Economía, Hacienda'
   end
 
   scenario 'Delete' do
@@ -93,7 +95,7 @@ feature 'Tags' do
     click_button 'Actualizar Debate'
 
     expect(page).to have_content 'Debate actualizado correctamente'
-    expect(page).to_not have_content 'Temas:'
+    expect(page).to_not have_content 'Economía'
   end
 
 end
