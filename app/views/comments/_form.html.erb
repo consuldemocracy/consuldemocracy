@@ -1,6 +1,6 @@
-<%= link_to comment_link_text(parent), "", class: "js-add-comment-link", data: {'id': parent.id, 'klass': parent.class.to_s } %>
+<%= link_to comment_link_text(parent), "", class: "js-add-comment-link", data: {'id': dom_id(parent)} %>
 
-<div id="js-comment-form-<%= parent.id %>-<%= parent.class.to_s %>" style="display:none">
+<div id="js-comment-form-<%= dom_id(parent) %>" style="display:none">
   <%= form_for [@debate, Comment.new] do |f| %>
     <%= f.text_area :body %>
     <%= f.hidden_field :commentable_type, value: parent.class %>

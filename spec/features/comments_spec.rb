@@ -48,7 +48,7 @@ feature 'Comments' do
     visit debate_path(debate)
 
     click_link "Responder"
-    within "#js-comment-form-#{comment.id}-Comment" do
+    within "#js-comment-form-comment_#{comment.id}" do
       fill_in 'comment_body', with: 'La semana que viene está hecho.'
       click_button 'Publicar respuesta'
     end
