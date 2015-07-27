@@ -19,12 +19,14 @@ feature 'Comments' do
     end
   end
 
-  scenario 'Create' do
+  scenario 'Create', :js do
     user = create(:user)
     debate = create(:debate)
 
     login_as(user)
     visit debate_path(debate)
+
+    click_on 'Comentar'
 
     fill_in 'comment_body', with: '¿Has pensado en esto...?'
     click_button 'Publicar comentario'
@@ -36,7 +38,7 @@ feature 'Comments' do
     end
   end
 
-  scenario 'Reply' do
+  scenario 'Reply', :js do
     citizen = create(:user, first_name: 'Ana')
     manuela = create(:user, first_name: 'Manuela')
     debate  = create(:debate)
@@ -45,9 +47,10 @@ feature 'Comments' do
     login_as(manuela)
     visit debate_path(debate)
 
-    within "#comment-#{comment.id}" do
+    click_link "Responder"
+    within "#js-comment-form-comment_#{comment.id}" do
       fill_in 'comment_body', with: 'La semana que viene está hecho.'
-      click_button 'Publicar comentario'
+      click_button 'Publicar respuesta'
     end
 
     expect(page).to have_content 'Comentario guardado'

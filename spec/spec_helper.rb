@@ -1,8 +1,25 @@
 require 'factory_girl_rails'
+require 'database_cleaner'
+
 RSpec.configure do |config|
+  config.use_transactional_fixtures = false
+
   config.filter_run :focus
   config.run_all_when_everything_filtered = true
   config.include FactoryGirl::Syntax::Methods
+
+  config.before(:suite) do
+    DatabaseCleaner.clean_with :truncation
+  end
+
+  config.before(:each) do |example|
+    DatabaseCleaner.strategy= example.metadata[:js] ? :truncation : :transaction
+    DatabaseCleaner.start
+  end
+
+  config.after(:each) do
+    DatabaseCleaner.clean
+  end
 
   # Allows RSpec to persist some state between runs in order to support
   # the `--only-failures` and `--next-failure` CLI options.
