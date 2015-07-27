@@ -13,21 +13,35 @@
 $font-family-sans-serif: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 $line-height: rem-calc(24);
 
+$background:        #EDEFF0;
 $brand:				#0077B9;
 $debates:           #008CCF;
 $header-color:		#292B33;
 $text-color:        #919399;
+$votes-background:  #EDEDED;
+$votes-dislike:     #FF7978;
+$votes-like:        #00D288;
 
 // 02. Global styles
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
+*, html {
+    margin: 0;
+    padding: 0;
+}
+
 body {
+    background: $background;
     font-family: $font-family-sans-serif;
-    font-weight: 300;
+    font-weight: normal;
 
     p {
-        font-weight: 300;
+        font-weight: normal;
     }
+}
+
+.row {
+    max-width: 1170px;
 }
 
 // 03. Header
@@ -38,6 +52,30 @@ header {
     background-position: 50% 50%;
     background-size: cover;
     min-height: $line-height*20;
+
+    h1 {
+        color: white;        
+        font-size: rem-calc(45);
+        font-weight: bolder;
+        line-height: $line-height*3;
+        margin: $line-height 0 0 0;
+        padding: 0;
+    }
+
+    h2 {
+        @extend h1;
+        font-size: rem-calc(24);
+        font-weight: normal;
+        line-height: $line-height*2;
+        margin: 0;
+    }
+
+    .button {
+        background: none;
+        border: 2px solid white;
+        color: white;
+        margin-top: $line-height*2;
+    }
 }
 
 .contain-to-grid {
@@ -48,15 +86,15 @@ header {
     background: white;
     color: $header-color;
     height: $line-height*4;
+    max-width: 1170px !important;
 
-    .name h1 a {
+    .name a {
         color: black;
         font-family: 'Lato';
         font-size: rem-calc(36);
         font-weight: lighter;
         line-height: $line-height*4;
         padding-left: 0;
-        white-space: nowrap;
 
         span {
             color: $brand;
@@ -70,16 +108,25 @@ header {
     }
 }
 
-.top-bar-section li:not(.has-form) a:not(.button) {
-    background: white;
-    color: $brand;
-    line-height: $line-height*4;
+.top-bar-section {
+
+    li:not(.has-form) a:not(.button) {
+        background: white;
+        color: $brand;
+        line-height: $line-height*4;
+    }
+
+    li.active:not(.has-form) a:not(.button) {
+        height: $line-height*4;
+        line-height: $line-height*4;
+    }
 }
 
 .top-links {
     color: white;
     font-size: rem-calc(14);
-    padding: $header-line-height/2+em 0;
+    height: $line-height*2;
+    padding: $line-height/2 0;
 
     a {
         color: white;
@@ -103,10 +150,20 @@ header {
 .debate {
     
     .panel {
+        background: white;
+        border: 0;
+        box-shadow: 0 2px 0 rgba(0,0,0,.1);
 
         .fi-comment-quotes {
             color: $debates;
             font-size: rem-calc(36);
+            line-height: $line-height;
+            margin-bottom: $line-height*0.77;
+        }
+
+        .fi-price-tag {
+            color: $text-color;
+            font-size: rem-calc(18);
             line-height: $line-height;
         }
 
@@ -114,21 +171,79 @@ header {
             margin-top: $line-height/4; 
         }
 
-        h3 a {
-            clear: both;
-            color: $header-color;
-            display: block;
-            font-size: rem-calc(16);
+        h3 {
+            margin: 0;
+            font-weight: bold;
+
+            a {
+                clear: both;
+                color: $header-color;
+                display: block;
+                font-size: rem-calc(16);
+                line-height: $line-height;
+            }
         }
 
         p {
             color: $text-color;
             font-size: rem-calc(13);
+            line-height: $line-height;
+            margin-bottom: $line-height;
+        }
+
+        .votes {
+            background: $votes-background;
+            margin: -5px -20px -20px -20px;
+            padding: 1.25rem 1.25rem 0 1.25rem;
+
+            .fi-like {
+                color: $votes-like;
+                font-size: rem-calc(48);
+                line-height: $line-height*2;
+            }
+
+            .fi-dislike {
+                color: $votes-dislike;
+                display: inline-block;
+                font-size: rem-calc(48);
+                line-height: $line-height*2;
+                padding-top: $line-height/3;
+            }
+
+            .in-favor {
+                color: $votes-like;
+                line-height: rem-calc(48);
+                vertical-align: top;
+
+                span {
+                    display: inline-block;
+                    line-height: 48px;
+                    padding-top: 5px;
+                    vertical-align: top;
+                }
+            }
+
+            .against {
+                @extend .in-favor;
+                color: $votes-dislike;
+                display: inline-block;
+            }
+
+            .total-votes {
+                font-size: rem-calc(12);
+                line-height: $line-height*2;
+            }
+
+            .divider {
+                background: rgba(0,0,0, .1);
+                display: inline-block;
+                height: 3rem;
+                margin: 0 .5rem;
+                width: 1px;
+            }
         }
     }
 }
-
-
 
 
 
