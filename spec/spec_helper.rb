@@ -6,13 +6,12 @@ RSpec.configure do |config|
   config.filter_run :focus
   config.run_all_when_everything_filtered = true
   config.include FactoryGirl::Syntax::Methods
-  
+
   config.before(:suite) do
     DatabaseCleaner.clean_with :truncation
-    DatabaseCleaner.strategy = :transaction
   end
 
-  config.before(:each) do
+  config.before(:each) do |example|
     DatabaseCleaner.strategy= example.metadata[:js] ? :truncation : :transaction
     DatabaseCleaner.start
   end
