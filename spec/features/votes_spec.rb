@@ -17,33 +17,33 @@ feature 'Votes' do
 
     visit debate_path(@debate)
 
-    expect(page).to have_content "2 votos"
-    
-    within('#in_favor') do 
-      expect(page).to have_content "50%" 
+    expect(page).to have_content "2 votes"
+
+    within('#in_favor') do
+      expect(page).to have_content "50%"
     end
-    
-    within('#against')  do 
-      expect(page).to have_content "50%" 
+
+    within('#against')  do
+      expect(page).to have_content "50%"
     end
   end
 
   scenario 'Create' do
     find('#in_favor a').click
-    expect(page).to have_content "Gracias por votar"
+    expect(page).to have_content "Thanks for voting."
   end
 
   scenario 'Update' do
     find('#in_favor a').click
     find('#against a').click
-    expect(page).to have_content "Gracias por votar"
+    expect(page).to have_content "Thanks for voting."
   end
 
   scenario 'Trying to vote multiple times' do
     find('#in_favor a').click
     find('#in_favor a').click
-    expect(page).to have_content "Tu voto ya ha sido registrado"
-    expect(page).to have_content "1 voto"
+    expect(page).to have_content "Your vote is already registered."
+    expect(page).to have_content "1 vote"
   end
 
 end

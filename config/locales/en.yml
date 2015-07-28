@@ -1,0 +1,31 @@
+en:
+  debates:
+    debate:
+      debate: Debate
+      vote: vote
+      votes: votes
+    form:
+      one_error: error
+      plural_errors: errors
+      not_saved: "prohibited this debate from being saved:"
+      debate_title: Debate title
+      title_instructions: "SBe clear and precise with the title, but make it informative"
+      debate_text: Ellaborate your opinion
+      text_instructions: "Explain your opinion, go into details, tell us what's the purpose of your idea"
+      tags_label: "Topics (comma separated)"
+      accept_terms: I accept the privacy policy and the legal terms
+    show:
+      back_link: Back
+      comments: Comments
+      leave_comment: Write a comment
+      edit_debate_link: Edit
+    edit:
+      editing: Edit debate
+      show_link: Show debate
+      back_link: Back
+    new:
+      publish_new: Publish new debate
+      back_link: Back
+  votes:
+    notice_thanks: "Thanks for voting."
+    notice_already_registered: "Your vote is already registered."

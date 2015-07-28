@@ -1,0 +1,31 @@
+es:
+  debates:
+    debate:
+      debate: Debate
+      vote: voto
+      votes: votos
+    form:
+      one_error: error
+      plural_errors: errores
+      not_saved: "impidieron guardar el debate:"
+      debate_title: Título del debate
+      title_instructions: "Sé claro y conciso a la hora de poner un título, pero recuerda que debe explicar bien tu idea, ¡es tu carta de entrada!"
+      debate_text: Describe tu opinión
+      text_instructions: "Explica con todo el detalle que puedas y de una manera sencilla la idea y que crees que conseguiríamos con ella"
+      tags_label: "Temas (separados por comas)"
+      accept_terms: Acepto la política de privacidad y el aviso legal
+    show:
+      back_link: Volver
+      comments: Comentarios
+      leave_comment: Deja tu comentario
+      edit_debate_link: Editar
+    edit:
+      editing: Editar debate
+      show_link: Ver debate
+      back_link: Volver
+    new:
+      publish_new: Publicar debate nuevo
+      back_link: Volver
+  votes:
+    notice_thanks: "Gracias por votar."
+    notice_already_registered: "Tu voto ya ha sido registrado."

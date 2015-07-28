@@ -72,14 +72,14 @@ feature 'Debates' do
 
     visit debate_path(debate)
     click_link 'Edit'
-    fill_in 'debate_title', with: 'Dimisión Rajoy'
-    fill_in 'debate_description', with: 'Podríamos...'
+    fill_in 'debate_title', with: "Go home Rajoy"
+    fill_in 'debate_description', with: "Let's..."
 
-    click_button 'Update Debate'
+    click_button "Update Debate"
 
-    expect(page).to have_content 'Debate was successfully updated.'
-    expect(page).to have_content 'Dimisión Rajoy'
-    expect(page).to have_content 'Podríamos...'
+    expect(page).to have_content "Debate was successfully updated."
+    expect(page).to have_content "Go home Rajoy"
+    expect(page).to have_content "Let's..."
   end
 
 end

@@ -1,7 +1,7 @@
 <%= form_for(@debate) do |f| %>
   <% if @debate.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@debate.errors.count, "error") %> prohibited this debate from being saved:</h2>
+      <h2><%= pluralize(@debate.errors.count, t("debates.form.one_error"), t("debates.form.multiple_errors")) %> <%= t("debates.form.not_saved") %>:</h2>
 
       <ul>
       <% @debate.errors.full_messages.each do |message| %>
@@ -11,23 +11,23 @@
     </div>
   <% end %>
 
-  <p><strong>Título del debate</strong></p>
-  <p>Sé claro y conciso a la hora de poner un título, pero recuerda que debe explicar bien tu idea, ¡es tu carta de entrada!</p>
+  <p><strong><%= t("debates.form.debate_title") %></strong></p>
+  <p><%= t("debates.form.title_instructions") %></p>
   <%= f.text_field :title %>
 
   <br/>
-  <p><strong>Describe tu opinión</strong></p>
-  <p>Explica con todo el detalle que puedas y de una manera sencilla la idea y que crees que conseguiríamos con ella</p>
+  <p><strong><%= t("debates.form.debate_text") %></strong></p>
+  <p><%= t("debates.form.text_instructions") %></p>
   <%= f.text_area  :description %>
 
   <div>
-    <%= f.label :tag_list, "Temas (separados por comas)" %><br />
+    <%= f.label :tag_list, t("debates.form.tags_label") %><br />
     <%= f.text_field :tag_list, value: @debate.tag_list.to_s %>
   </div>
 
   <% if @debate.new_record? %>
     <%= f.check_box :terms_of_service %>
-    Acepto la política de privacidad y el aviso legal 
+    <%= t("debates.form.accept_terms") %>
   <% end %>
 
   <%= render 'shared/captcha' %>
