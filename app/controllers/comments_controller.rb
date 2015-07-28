@@ -1,12 +1,13 @@
 class CommentsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_debate, :set_parent
+  respond_to :html, :js
 
   def create
-    comment = Comment.build(@debate, current_user, params[:comment][:body])
-    comment.save!
-    comment.move_to_child_of(@parent) if reply?
-    redirect_to @debate, notice: "Comentario guardado"
+    @comment = Comment.build(@debate, current_user, params[:comment][:body])
+    @comment.save!
+    @comment.move_to_child_of(@parent) if reply?
+    respond_with @comment
   end
 
   private

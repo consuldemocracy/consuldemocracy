@@ -1,0 +1,4 @@
+var form = "#js-comment-form-<%= dom_id(@parent) %>"
+$(form + " #comment_body").val('');
+$(form).hide();
+$("<%= j(render @comment) %>").insertAfter($(form));
