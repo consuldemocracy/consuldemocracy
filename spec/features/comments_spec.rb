@@ -31,8 +31,6 @@ feature 'Comments' do
     fill_in 'comment_body', with: '¿Has pensado en esto...?'
     click_button 'Publicar comentario'
 
-    expect(page).to have_content 'Comentario guardado'
-
     within "#comments" do
       expect(page).to have_content '¿Has pensado en esto...?'
     end
@@ -53,7 +51,6 @@ feature 'Comments' do
       click_button 'Publicar respuesta'
     end
 
-    expect(page).to have_content 'Comentario guardado'
     within "#comment-#{comment.id}" do
       expect(page).to have_content 'La semana que viene está hecho.'
     end
