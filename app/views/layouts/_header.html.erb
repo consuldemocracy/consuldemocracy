@@ -1,4 +1,4 @@
-<header>
+<header class="<%= header_css %>">
 	<section class="top-links">
 		<div class="row">
 			<div class="small-12 column">
@@ -27,11 +27,13 @@
 		</nav>
 	</div>
 
-	<div class="row">
-		<div class="small-12 column text-center">
-			<h1>Estamos abriendo Madrid</h1>
-			<h2>Para que todos los madrileños decidamos que ciudad queremos tener.</h2>
-			<%= link_to 'Participa en los últimos debates e iniciativas', new_debate_path, :class => 'button radius' %>
+	<% if home_page? %>
+		<div class="row">
+			<div class="small-12 column text-center">
+				<h1>Estamos abriendo Madrid</h1>
+				<h2>Para que todos los madrileños decidamos que ciudad queremos tener.</h2>
+				<%= link_to 'Participa en los últimos debates e iniciativas', new_debate_path, :class => 'button radius' %>
+			</div>
 		</div>
-	</div>
+	<% end %>
 </header>

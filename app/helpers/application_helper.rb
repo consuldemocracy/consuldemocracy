@@ -8,4 +8,12 @@ module ApplicationHelper
     return if debate.total_votes == 0
     debate.send(vote).percent_of(debate.total_votes).to_s + "%"
   end
+
+  def home_page?
+    request.fullpath == '/'
+  end
+
+  def header_css
+    home_page? ? '' : 'results'
+  end
 end

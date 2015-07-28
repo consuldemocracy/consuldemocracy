@@ -56,7 +56,11 @@ header {
     background: url('home-header-bg.jpg');
     background-position: 50% 50%;
     background-size: cover;
-    min-height: $line-height*20;
+    height: $line-height*20;
+
+    &.results {
+        height: $line-height*8 !important;
+    }
 
     h1 {
         color: white;        
