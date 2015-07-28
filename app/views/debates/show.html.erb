@@ -6,7 +6,7 @@
         <div id="debate-<%= @debate.id %>" class="small-12 medium-9 column">
             <h1><%= @debate.title %></h1>
             <p>Por <%= @debate.author.name %> el <%= l @debate.created_at.to_date %></p>
-            <p><%= @debate.description %></p>
+            <p><%= sanitize(@debate.description.html_safe) %></p>
             <p><%= render 'shared/tags', debate: @debate %></p>
         </div>
 
