@@ -28,21 +28,47 @@ feature 'Votes' do
     end
   end
 
-  scenario 'Create' do
+  scenario 'Create', :js do
     find('#in_favor a').click
-    expect(page).to have_content "Thanks for voting."
+    
+    within('#in_favor') do
+      expect(page).to have_content "100%"
+    end
+    
+    within('#against')  do
+      expect(page).to have_content "0%"
+    end
+    
+    expect(page).to have_content "1 vote"
   end
 
-  scenario 'Update' do
+  scenario 'Update', :js do
     find('#in_favor a').click
     find('#against a').click
-    expect(page).to have_content "Thanks for voting."
+
+    within('#in_favor') do
+      expect(page).to have_content "0%"
+    end
+
+    within('#against')  do
+      expect(page).to have_content "100%"
+    end
+
+    expect(page).to have_content "1 vote"
   end
 
-  scenario 'Trying to vote multiple times' do
+  scenario 'Trying to vote multiple times', :js do
     find('#in_favor a').click
     find('#in_favor a').click
-    expect(page).to have_content "Your vote is already registered."
+    
+    within('#in_favor') do
+      expect(page).to have_content "100%"
+    end
+
+    within('#against')  do
+      expect(page).to have_content "0%"
+    end
+
     expect(page).to have_content "1 vote"
   end
 
