@@ -1,15 +1,15 @@
 <article class="debate-show">
-    
+
     <%= link_to 'Volver', debates_path, :class => 'right' %>
 
     <div class="row">
         <div id="debate-<%= @debate.id %>" class="small-12 medium-9 column">
             <h1><%= @debate.title %></h1>
-            <p>Por <%= @debate.author.name %> el <%= l @debate.created_at.to_date %></p>            
+            <p>Por <%= @debate.author.name %> el <%= l @debate.created_at.to_date %></p>
             <p><%= @debate.description %></p>
             <p><%= render 'shared/tags', debate: @debate %></p>
         </div>
-    
+
         <div class="votes small-12 medium-3 column">
             <div class="small-12 column text-center">
                 <div id="in_favor" class="inline-block">
@@ -18,7 +18,7 @@
                         <span><%= percentage('likes', @debate) %></span>
                     <% end %>
                 </div>
-                
+
                 <span class="divider"></span>
 
                 <div id="against" class="inline-block">
@@ -28,7 +28,7 @@
                     <% end %>
                 </div>
             </div>
-            
+
             <div class="small-12 column text-center">
                 <p class="total-votes"><%= pluralize(@debate.total_votes, 'voto', 'votos') %> votos</p>
             </div>
@@ -45,7 +45,7 @@
     </div>
 
     <% if current_user && @debate.editable_by?(current_user) %>
-        <%= link_to 'Edit', edit_debate_path(@debate), :class => 'button radius right' %> |
+      <%= link_to 'Edit', edit_debate_path(@debate), :class => 'button radius right' %>
     <% end %>
 
 </article>
