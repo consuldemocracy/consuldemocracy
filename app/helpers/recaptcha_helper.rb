@@ -1,7 +1,7 @@
 module RecaptchaHelper
 
-  def recaptchable?
-    @debate.new_record?
+  def recaptchable?(resource)
+    resource.new_record?
   end
   
   def recaptcha_keys?

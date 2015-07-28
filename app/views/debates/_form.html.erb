@@ -30,7 +30,7 @@
     <%= t("debates.form.accept_terms") %>
   <% end %>
 
-  <%= render 'shared/captcha' %>
+  <%= render 'shared/captcha', resource: @debate %>
 
   <div class="actions">
     <%= f.submit %>
