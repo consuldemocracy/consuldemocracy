@@ -64,9 +64,9 @@ feature 'Tags' do
 
     fill_in 'debate_tag_list', with: "Impuestos, Economía, Hacienda"
 
-    click_button 'Crear Debate'
+    click_button 'Create Debate'
 
-    expect(page).to have_content 'Debate creado correctamente'
+    expect(page).to have_content 'Debate was successfully created.'
     expect(page).to have_content 'Economía, Hacienda, Impuestos'
   end
 
@@ -79,9 +79,9 @@ feature 'Tags' do
     expect(page).to have_selector("input[value='Economía']")
 
     fill_in 'debate_tag_list', with: "Economía, Hacienda"
-    click_button 'Actualizar Debate'
+    click_button 'Update Debate'
 
-    expect(page).to have_content 'Debate actualizado correctamente'
+    expect(page).to have_content 'Debate was successfully updated.'
     within('.tags') do
       expect(page).to have_css('a', text: 'Economía')
       expect(page).to have_css('a', text: 'Hacienda')
@@ -95,9 +95,9 @@ feature 'Tags' do
     visit edit_debate_path(debate)
 
     fill_in 'debate_tag_list', with: ""
-    click_button 'Actualizar Debate'
+    click_button 'Update Debate'
 
-    expect(page).to have_content 'Debate actualizado correctamente'
+    expect(page).to have_content 'Debate was successfully updated.'
     expect(page).to_not have_content 'Economía'
   end
 

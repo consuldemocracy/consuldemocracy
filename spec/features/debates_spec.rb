@@ -36,9 +36,9 @@ feature 'Debates' do
     fill_in 'debate_description', with: 'Esto es un tema muy importante porque...'
     check 'debate_terms_of_service'
 
-    click_button 'Crear Debate'
+    click_button 'Create Debate'
 
-    expect(page).to have_content 'Debate creado correctamente'
+    expect(page).to have_content 'Debate was successfully created.'
     expect(page).to have_content 'Acabar con los desahucios'
     expect(page).to have_content 'Esto es un tema muy importante porque...'
     expect(page).to have_content "Por #{author.name}"
@@ -75,9 +75,9 @@ feature 'Debates' do
     fill_in 'debate_title', with: 'Dimisión Rajoy'
     fill_in 'debate_description', with: 'Podríamos...'
 
-    click_button 'Actualizar Debate'
+    click_button 'Update Debate'
 
-    expect(page).to have_content 'Debate actualizado correctamente'
+    expect(page).to have_content 'Debate was successfully updated.'
     expect(page).to have_content 'Dimisión Rajoy'
     expect(page).to have_content 'Podríamos...'
   end

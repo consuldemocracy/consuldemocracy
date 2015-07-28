@@ -14,9 +14,9 @@ feature 'Users' do
 
     click_button 'Registrarse'
 
-    expect(page).to have_content '¡Bienvenido! Has sido identificado.'
+    expect(page).to have_content 'Welcome! You have signed up successfully.'
   end
-  
+
   scenario 'Sign in' do
     user = create(:user, email: 'manuela@madrid.es', password: 'judgementday')
 
@@ -25,18 +25,18 @@ feature 'Users' do
     fill_in 'user_email',    with: 'manuela@madrid.es'
     fill_in 'user_password', with: 'judgementday'
     click_button 'Entrar'
-    
-    expect(page).to have_content 'Has iniciado sesión correctamente.'
+
+    expect(page).to have_content 'Signed in successfully.'
   end
 
   scenario 'Sign out' do
     user = create(:user)
     login_as(user)
-    
+
     visit "/"
     click_link 'Salir'
 
-    expect(page).to have_content 'Has cerrado la sesión correctamente.'
+    expect(page).to have_content 'Signed out successfully.'
   end
 
 end
