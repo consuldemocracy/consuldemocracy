@@ -4,7 +4,7 @@ jQuery ->
     $("#js-comment-form-#{id}").toggle()
 
   ready = ->
-    $('.js-add-comment-link').click ->
+    $('body').on 'click', '.js-add-comment-link', ->
       id = $(this).data().id
       toggle_comment(id)
       false
