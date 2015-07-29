@@ -1,7 +1,7 @@
 module ApplicationHelper
 
   def tags(debate)
-    debate.tag_list.sort.map { |tag| link_to sanitize(tag), debates_path(tag: tag) }.join(', ').html_safe
+    debate.tag_list.sort.map { |tag| link_to sanitize(tag), debates_path(tag: tag) }.join('').html_safe
   end
 
   def percentage(vote, debate)

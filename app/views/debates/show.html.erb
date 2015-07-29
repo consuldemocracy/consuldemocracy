@@ -1,16 +1,23 @@
-<article class="debate-show">
+<section class="debate-show">
 
-    <%= link_to t("debates.show.back_link"), debates_path, class: 'right' %>
+    <div id="debate-<%= @debate.id %>" class="row">
 
-    <div class="row">
-        <div id="debate-<%= @debate.id %>" class="small-12 medium-9 column">
+        <div class="small-12 medium-9 column">
+
+            <%= link_to "&lt;&nbsp;".html_safe + t("debates.show.back_link"), debates_path, class: 'left back' %>
+
             <h1><%= @debate.title %></h1>
-            <p>Por <%= @debate.author.name %> el <%= l @debate.created_at.to_date %></p>
-            <p><%= sanitize(@debate.description.html_safe) %></p>
+            <div class="debate-info">
+
+                <%= image_tag('user_default.jpg', class: 'author-photo', size: '32x32') %>
+
+                <%= @debate.author.name %> <span>&nbsp;&bullet;&nbsp;</span> <%= l @debate.created_at.to_date %> <span>&nbsp;&bullet;&nbsp;</span> <%= pluralize(@debate.comment_threads.count, t("debates.show.comment"), t("debates.show.comments")) %>
+            </div>
+            <p><%= @debate.description %></p>
             <p><%= render 'shared/tags', debate: @debate %></p>
         </div>
 
-        <div class="votes small-12 medium-3 column">
+        <div class="small-12 medium-3 column votes">
             <div class="small-12 column text-center">
                 <div id="in_favor" class="inline-block">
                     <%= link_to debate_votes_path(@debate, value: 'yes'), class: 'in-favor', method: "post" do %>
@@ -34,18 +41,20 @@
             </div>
         </div>
     </div>
+</section>
 
-    <div id="comments" class="comments">
-        <h2><%= t("debates.show.comments") %></h2>
-            <div style="padding-bottom:60px">
-                <%= t("debates.show.leave_comment") %>
-                <%= render 'comments/form', parent: @debate %>
-            </div>
-        <%= render @debate.root_comments %>
+<section class="row-full comments">
+    <div class="row">
+        <div id="comments" class="small-12 column">
+            <h2><%= t("debates.show.comments") %></h2>
+                <div style="padding-bottom:60px">
+                    <%= t("debates.show.leave_comment") %>
+                    <%= render 'comments/form', parent: @debate %>
+                </div>
+            <%= render @debate.root_comments %>
+        </div>
+        <% if current_user && @debate.editable_by?(current_user) %>
+            <%= link_to t("debates.show.edit_debate_link"), edit_debate_path(@debate), :class => 'button radius right' %>
+        <% end %>
     </div>
-
-    <% if current_user && @debate.editable_by?(current_user) %>
-        <%= link_to t("debates.show.edit_debate_link"), edit_debate_path(@debate), class: 'button radius right' %>
-    <% end %>
-
-</article>
+</section>
