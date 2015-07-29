@@ -11,8 +11,8 @@ feature 'Debates' do
     within first('.debate') do
       expect(page).to have_content "Debate title"
       expect(page).to have_content "Debate description"
-      expect(page).to have_content "el #{I18n.l Date.today}"
       expect(page).to have_content Debate.first.author.name
+      expect(page).to have_content I18n.l(Date.today)
     end
   end
 
@@ -23,8 +23,8 @@ feature 'Debates' do
 
     expect(page).to have_content "Debate title"
     expect(page).to have_content "Debate description"
-    expect(page).to have_content "el #{I18n.l Date.today}"
     expect(page).to have_content debate.author.name
+    expect(page).to have_content I18n.l(Date.today)
   end
 
   scenario 'Create' do
@@ -41,8 +41,8 @@ feature 'Debates' do
     expect(page).to have_content 'Debate was successfully created.'
     expect(page).to have_content 'Acabar con los desahucios'
     expect(page).to have_content 'Esto es un tema muy importante porque...'
-    expect(page).to have_content "el #{I18n.l Date.today}"
     expect(page).to have_content author.name
+    expect(page).to have_content I18n.l(Date.today)
   end
 
   scenario 'Update should not be posible if logged user is not the author' do
