@@ -32,7 +32,9 @@
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
 
-  <div class="actions">
+  <%= render 'shared/captcha', resource: resource %>
+
+  <div class="actions" style="padding-top:20px">
     <%= f.submit t("devise_views.registrations.new.submit"), class: 'button radius' %>
   </div>
 <% end %>
