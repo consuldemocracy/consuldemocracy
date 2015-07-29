@@ -12,14 +12,14 @@
 		<div class="row votes">
         	<div class="small-8 column">
 
-	    		<%= link_to debate_votes_path(debate, value: 'yes'), :class => 'in-favor', method: "post" do %>
+	    		<%= link_to debate_votes_path(debate, value: 'yes'), class: 'in-favor', method: "post" do %>
 	    			<i class="fi-like"></i>
 	    			<span><%= percentage('likes', debate) %></span>
 	    		<% end %>
 
 	    		<span class="divider"></span>
 
-	    		<%= link_to debate_votes_path(debate, value: 'no'), :class => 'against', method: "post" do %>
+	    		<%= link_to debate_votes_path(debate, value: 'no'), class: 'against', method: "post" do %>
 	    			<i class="fi-dislike"></i>
 	    			<span><%= percentage('dislikes', debate) %></span>
 	    		<% end %>

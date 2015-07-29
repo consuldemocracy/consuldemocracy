@@ -1,6 +1,6 @@
 <article class="debate-show">
 
-    <%= link_to t("debates.show.back_link"), debates_path, :class => 'right' %>
+    <%= link_to t("debates.show.back_link"), debates_path, class: 'right' %>
 
     <div class="row">
         <div id="debate-<%= @debate.id %>" class="small-12 medium-9 column">
@@ -13,7 +13,7 @@
         <div class="votes small-12 medium-3 column">
             <div class="small-12 column text-center">
                 <div id="in_favor" class="inline-block">
-                    <%= link_to debate_votes_path(@debate, value: 'yes'), :class => 'in-favor', method: "post" do %>
+                    <%= link_to debate_votes_path(@debate, value: 'yes'), class: 'in-favor', method: "post" do %>
                         <i class="fi-like"></i>
                         <span><%= percentage('likes', @debate) %></span>
                     <% end %>
@@ -22,7 +22,7 @@
                 <span class="divider"></span>
 
                 <div id="against" class="inline-block">
-                    <%= link_to debate_votes_path(@debate, value: 'no'), :class => 'against', method: "post" do %>
+                    <%= link_to debate_votes_path(@debate, value: 'no'), class: 'against', method: "post" do %>
                         <i class="fi-dislike"></i>
                         <span><%= percentage('dislikes', @debate) %></span>
                     <% end %>
@@ -45,7 +45,7 @@
     </div>
 
     <% if current_user && @debate.editable_by?(current_user) %>
-        <%= link_to t("debates.show.edit_debate_link"), edit_debate_path(@debate), :class => 'button radius right' %>
+        <%= link_to t("debates.show.edit_debate_link"), edit_debate_path(@debate), class: 'button radius right' %>
     <% end %>
 
 </article>

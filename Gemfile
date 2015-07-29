@@ -35,7 +35,7 @@ gem 'acts-as-taggable-on'
 gem "responders"
 gem 'foundation-rails'
 gem 'acts_as_votable'
-gem "recaptcha", :require => "recaptcha/rails"
+gem "recaptcha", require: "recaptcha/rails"
 gem 'ckeditor'
 
 group :development, :test do
