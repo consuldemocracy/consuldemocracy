@@ -5,13 +5,13 @@ describe RecaptchaHelper do
   describe '#recaptchable?' do
 
     it 'should be true if new record' do
-      assign(:debate, build(:debate))
-      expect(helper.recaptchable?).to be true
+      debate = build(:debate)
+      expect(helper.recaptchable?(debate)).to be true
     end
 
     it 'should be false if existing record' do
-      assign(:debate, create(:debate))
-      expect(helper.recaptchable?).to be false
+      debate = create(:debate)
+      expect(helper.recaptchable?(debate)).to be false
     end
 
   end

@@ -18,8 +18,7 @@
   <br/>
   <p><strong><%= t("debates.form.debate_text") %></strong></p>
   <p><%= t("debates.form.text_instructions") %></p>
-  <%= f.text_area  :description %>
-
+  <%= f.cktext_area :description, ckeditor: { language: I18n.locale } %>
   <div>
     <%= f.label :tag_list, t("debates.form.tags_label") %><br />
     <%= f.text_field :tag_list, value: @debate.tag_list.to_s %>
@@ -30,10 +29,10 @@
     <%= t("debates.form.accept_terms") %>
   <% end %>
 
-  <%= render 'shared/captcha' %>
+  <%= render 'shared/captcha', resource: @debate %>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit(class: "button radius") %>
   </div>
   <br/>
 <% end %>

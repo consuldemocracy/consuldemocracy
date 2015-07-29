@@ -5,7 +5,7 @@
     <%= f.text_area :body %>
     <%= f.hidden_field :commentable_type, value: parent.class %>
     <%= f.hidden_field :commentable_id, value: parent.id %>
-    
-    <%= f.submit comment_button_text(parent), :class => "button radius" %>
+
+    <%= f.submit comment_button_text(parent), class: "button radius" %>
   <% end %>
 </div>
