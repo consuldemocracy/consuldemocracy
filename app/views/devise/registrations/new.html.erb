@@ -1,39 +1,39 @@
-<h2>Sign up</h2>
+<h2><%= t("devise_views.registrations.new.title") %></h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
 
   <div class="field">
-    <%= f.label :first_name %><br />
+    <%= f.label :first_name, t("devise_views.registrations.new.first_name_label") %><br />
     <%= f.text_field :first_name, autofocus: true %>
   </div>
 
   <div class="field">
-    <%= f.label :last_name %><br />
+    <%= f.label :last_name, t("devise_views.registrations.new.last_name_label") %><br />
     <%= f.text_field :last_name %>
   </div>
 
   <div class="field">
-    <%= f.label :email %><br />
+    <%= f.label :email, t("devise_views.registrations.new.email_label") %><br />
     <%= f.email_field :email %>
   </div>
 
   <div class="field">
-    <%= f.label :password %>
+    <%= f.label :password, t("devise_views.registrations.new.password_label") %>
     <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <em><%= t("devise_views.registrations.new.min_length", min: @minimum_password_length) %></em>
     <% end %><br />
     <%= f.password_field :password, autocomplete: "off" %>
   </div>
 
   <div class="field">
-    <%= f.label :password_confirmation %><br />
+    <%= f.label :password_confirmation, t("devise_views.registrations.new.password_confirmation_label") %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
 
   <div class="actions">
-    <%= f.submit "Registrarse", class: 'button radius' %>
+    <%= f.submit t("devise_views.registrations.new.submit"), class: 'button radius' %>
   </div>
 <% end %>
 
