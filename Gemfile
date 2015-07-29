@@ -51,6 +51,7 @@ group :development, :test do
   gem 'capybara'
   gem 'factory_girl_rails'
   gem 'launchy'
+  gem 'quiet_assets'
 end
 
 group :test do
