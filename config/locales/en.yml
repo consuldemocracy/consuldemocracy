@@ -27,6 +27,7 @@ en:
       accept_terms: I accept the privacy policy and the legal terms
     show:
       back_link: Back
+      comment: Comment
       comments: Comments
       leave_comment: Write a comment
       edit_debate_link: Edit

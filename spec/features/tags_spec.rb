@@ -36,7 +36,8 @@ feature 'Tags' do
 
     visit debate_path(debate)
 
-    expect(page).to have_content "Economía, Hacienda"
+    expect(page).to have_content "Economía"
+    expect(page).to have_content "Hacienda"
   end
 
   scenario 'Tag Cloud' do
@@ -67,7 +68,9 @@ feature 'Tags' do
     click_button 'Create Debate'
 
     expect(page).to have_content 'Debate was successfully created.'
-    expect(page).to have_content 'Economía, Hacienda, Impuestos'
+    expect(page).to have_content 'Economía'
+    expect(page).to have_content 'Hacienda'
+    expect(page).to have_content 'Impuestos'
   end
 
   scenario 'Update' do
