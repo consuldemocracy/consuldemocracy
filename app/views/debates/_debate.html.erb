@@ -5,7 +5,7 @@
 
         <h3><%= link_to debate.title, debate %></h3>
         <p>Por <%= debate.author.name %> el <%= l debate.created_at.to_date %></p>
-        <p><%= debate.description %></p>
+        <p><%= sanitize(debate.description.html_safe) %></p>
 
         <p><%= render 'shared/tags', debate: debate %></p>
 
