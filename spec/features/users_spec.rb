@@ -4,7 +4,7 @@ feature 'Users' do
 
   scenario 'Sign up' do
     visit '/'
-    click_link 'Registrarse'
+    click_link 'Sign up'
 
     fill_in 'user_first_name',            with: 'Manuela'
     fill_in 'user_last_name',             with: 'Carmena'
@@ -12,7 +12,7 @@ feature 'Users' do
     fill_in 'user_password',              with: 'judgementday'
     fill_in 'user_password_confirmation', with: 'judgementday'
 
-    click_button 'Registrarse'
+    click_button 'Sign up'
 
     expect(page).to have_content 'Welcome! You have signed up successfully.'
   end
@@ -21,10 +21,10 @@ feature 'Users' do
     user = create(:user, email: 'manuela@madrid.es', password: 'judgementday')
 
     visit '/'
-    click_link 'Entrar'
+    click_link 'Log in'
     fill_in 'user_email',    with: 'manuela@madrid.es'
     fill_in 'user_password', with: 'judgementday'
-    click_button 'Entrar'
+    click_button 'Log in'
 
     expect(page).to have_content 'Signed in successfully.'
   end
@@ -34,7 +34,7 @@ feature 'Users' do
     login_as(user)
 
     visit "/"
-    click_link 'Salir'
+    click_link 'Logout'
 
     expect(page).to have_content 'Signed out successfully.'
   end

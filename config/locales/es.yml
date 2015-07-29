@@ -1,4 +1,15 @@
 es:
+  layouts:
+    header:
+      external_link_transparency: Portal de Transparencia
+      external_link_opendata: Datos abiertos
+      open_gov: "Gobierno %{open}"
+      open: "abierto"
+      participation: Participación
+      menu: Menú
+      open_city: Estamos abriendo Madrid
+      open_city_slogan: Para que todos los madrileños decidamos que ciudad queremos tener.
+      create_debate: Crea un debate
   debates:
     debate:
       debate: Debate

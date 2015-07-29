@@ -1,4 +1,15 @@
 en:
+  layouts:
+    header:
+      external_link_transparency: Transparency
+      external_link_opendata: Open data
+      open_gov: "%{open} government"
+      open: "Open"
+      participation: Participation
+      menu: Menu
+      open_city: We are opening Madrid
+      open_city_slogan: So the citizens can decide what kind of city they want.
+      create_debate: Create a debate
   debates:
     debate:
       debate: Debate
