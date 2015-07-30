@@ -23,6 +23,12 @@
 
 			<section class="top-bar-section">
 				<%= render 'devise/menu/login_items' %>
+
+				<% if user_signed_in? %>
+				<ul class="right">
+					<li><%= link_to(t("layouts.header.my_account_link"), account_path) %></li>
+				</ul>
+				<% end %>
 			</section>
 		</nav>
 	</div>

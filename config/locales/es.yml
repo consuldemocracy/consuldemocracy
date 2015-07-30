@@ -10,6 +10,7 @@ es:
       open_city: Estamos abriendo Madrid
       open_city_slogan: Para que todos los madrileños decidamos que ciudad queremos tener.
       create_debate: Crea un debate
+      my_account_link: Mi cuenta
   debates:
     debate:
       debate: Debate
@@ -41,3 +42,7 @@ es:
   votes:
     notice_thanks: "Gracias por votar."
     notice_already_registered: "Tu voto ya ha sido registrado."
+  account:
+    show:
+      title: "Mi cuenta"
+      save_changes_submit: "Guardar cambios"
