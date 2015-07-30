@@ -1,19 +1,18 @@
 <%= form_for(@debate) do |f| %>
-  <% if @debate.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@debate.errors.count, t("debates.form.one_error"), t("debates.form.multiple_errors")) %> <%= t("debates.form.not_saved") %>:</h2>
+    <% if @debate.errors.any? %>
+        <div id="error_explanation" class="alert-box alert radius">
+            <p><%= pluralize(@debate.errors.count, t("debates.form.one_error"), t("debates.form.multiple_errors")) %> <%= t("debates.form.not_saved") %>:</p>
+            <ul>
+                <% @debate.errors.full_messages.each do |message| %>
+                    <li><%= message %></li>
+                <% end %>
+            </ul>
+        </div>
+    <% end %>
 
-      <ul>
-      <% @debate.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <p><strong><%= t("debates.form.debate_title") %></strong></p>
-  <p><%= t("debates.form.title_instructions") %></p>
-  <%= f.text_field :title %>
+    <p><strong><%= t("debates.form.debate_title") %></strong></p>
+    <p><%= t("debates.form.title_instructions") %></p>
+    <%= f.text_field :title %>
 
   <br/>
   <p><strong><%= t("debates.form.debate_text") %></strong></p>
