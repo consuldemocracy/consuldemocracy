@@ -8,7 +8,7 @@
 //   05.1. Debates Index
 //   05.2. Debates Show
 // 06. Comments
-// 06. Tags
+// 07. Tags
 //
 
 // 01. Variables
@@ -24,6 +24,9 @@ $brand:				#0077B9;
 $debates:           #008CCF;
 
 $comments-bg:       #FAF9F8;
+$comments-info:     #A5B2B9;
+$comments-text:     #3F4549;
+
 
 $header-color:		#292B33;
 $link:              #0077B9;
@@ -33,7 +36,7 @@ $tags-border:       #F0F0F0;
 $tags-color:        #8F8F8F;
 
 $text-color:        #919399;
-$text-medium:       #999999; 
+$text-medium:       #999999;
 $text-light:        #a3a6ad;
 
 $votes-background:  #EDEDED;
@@ -92,7 +95,7 @@ header {
     }
 
     h1 {
-        color: white;        
+        color: white;
         font-size: rem-calc(45);
         font-weight: bolder;
         line-height: $line-height*3;
@@ -231,7 +234,7 @@ header {
             margin-bottom: $line-height;
         }
     }
-        
+
     .votes {
         background: $votes-background;
         margin: -5px -20px -20px -20px;
@@ -291,15 +294,16 @@ header {
 .debate-show {
     color: $text-medium;
     margin-top: $line-height;
-    padding: 0 $line-height/2;   
+    margin-bottom: $line-height*2;
+    padding: 0 $line-height/2;
 
     .back {
         color: $text-light;
         font-size: rem-calc(13);
         line-height: $line-height;
-    }    
+    }
 
-    h1 {        
+    h1 {
         clear: both;
         font-size: rem-calc(24);
         font-weight: bold;
@@ -323,7 +327,7 @@ header {
             font-size: rem-calc(14);
             line-height: $line-height;
             margin-bottom: 0;
-        }  
+        }
     }
 
     .author-photo {
@@ -335,13 +339,13 @@ header {
         vertical-align: middle;
         width: 32px;
     }
-        
+
     .votes {
         border: 1px solid $votes-border;
         box-shadow: 0 2px 0 rgba(0,0,0,.1);
         border-radius: 3px;
         padding: $line-height/2;
-        
+
         .fi-like {
             background: $votes-like;
             border: 1px solid $votes-like-b;
@@ -398,6 +402,10 @@ header {
             width: 1px;
         }
     }
+
+    .publish-comment {
+        margin-top: $line-height;
+    }
 }
 
 // 06. Comments
@@ -405,19 +413,71 @@ header {
 
 .comments {
     background: $comments-bg;
-    margin-top: $line-height*2;
+    background-image: url('comments_divider.png');
+    background-repeat: repeat-x;
     padding-top: $line-height;
+    padding-bottom: $line-height*4;
 
     h2 {
         margin: 0;
         font-weight: bold;
+    }
+
+    .comment {
+        margin: $line-height/4 0;
+
+        p {
+            color: $comments-text;
+            font-size: rem-calc(15);
+            margin-bottom: 0;
+        }
+
+        a {
+            color: $comments-info;
+        }
+
+        .user-photo {
+            border-radius: 2px;
+            display: inline-block;
+            height: 32px;
+            line-height: $line-height*2;
+            margin-right: $line-height/4;
+            vertical-align: top;
+            width: 32px;
+        }
+
+        .comment-body {
+            margin-left: $line-height*1.6;
+
+            .reply {
+                font-size: rem-calc(12);
+                font-weight: lighter;
+            }
+        }
+
+        .comment-children {
+            border-left: 1px dotted $border;
+            margin-left: $line-height*1.6;
+            padding-left: $line-height/4;
+
+            @media only screen and (max-width: 40em) {
+                margin-left: $line-height/1.5;
+            }
+        }
+
+        .comment-info {
+            color: $comments-info;
+            font-size: rem-calc(13);
+            font-weight: lighter;
+            vertical-align: middle;
+        }
     }
 }
 
 // 07. Tags
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
-.tags a {    
+.tags a {
     background: $tags-bg;
     border: 1px solid $tags-border;
     border-radius: 3px;

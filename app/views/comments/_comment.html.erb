@@ -1,13 +1,18 @@
-<div id="comment-<%= comment.id %>" class='comment' style="padding-bottom:30px">
-  <p><%= comment.user.name %></p>
-  <p>hace <%= time_ago_in_words(comment.created_at) %></p>
-  <p><%= comment.body %></p>
+<div class="row">
+	<div id="comment-<%= comment.id %>" class="small-12 column comment">
 
-  <div style="margin-left:50px">
-    <%= render comment.children %>
-  </div>
-  
-  <div style="margin-left:50px">
-    <%= render 'comments/form', parent: comment %>
-  </div>
+		<%= image_tag('user_default_2.jpg', class: 'user-photo left', size: '32x32') %>
+
+	 	<div class="comment-body">
+	 		<span class="comment-info">
+	 			<%= comment.user.name %>&nbsp;&bullet;&nbsp;<%= time_ago_in_words(comment.created_at) %>
+	 		</span>
+	  		<p><%= comment.body %></p>
+	  		<p class="reply"><%= render 'comments/form', parent: comment %></p>
+	  	</div>
+
+	  	<div class="comment-children">
+	    	<%= render comment.children %>
+	  	</div>
+	</div>
 </div>

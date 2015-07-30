@@ -4,7 +4,7 @@
 
         <div class="small-12 medium-9 column">
 
-            <%= link_to "&lt;&nbsp;".html_safe + t("debates.show.back_link"), debates_path, class: 'left back' %>
+            <%= link_to "&laquo;&nbsp;".html_safe + t("debates.show.back_link"), debates_path, class: 'left back' %>
 
             <h1><%= @debate.title %></h1>
             <div class="debate-info">
@@ -40,6 +40,10 @@
                 <p class="total-votes"><%= pluralize(@debate.total_votes, t("debates.debate.vote"), t("debates.debate.votes")) %></p>
             </div>
         </div>
+
+        <div class="small-12 medium-3 column text-center publish-comment">
+        <%= link_to t("debates.show.leave_comment"), "#comments", :class => 'button radius expand' %>
+        </div>
     </div>
 </section>
 
@@ -47,7 +51,7 @@
     <div class="row">
         <div id="comments" class="small-12 column">
             <h2><%= t("debates.show.comments") %></h2>
-                <div style="padding-bottom:60px">
+                <div>
                     <%= t("debates.show.leave_comment") %>
                     <%= render 'comments/form', parent: @debate %>
                 </div>
