@@ -20,12 +20,12 @@ Cuando quieras resolver una incidencia mediante código:
 * Crea una rama para resolver la incidencia desde la rama `master`
 * Añade el código necesario para resolver la incidencia en tantos commits como sea preciso
 * Asegúrate de que los tests pasan (y escribe más tests para probar la nueva funcionalidad si fuera preciso)
-* Envía una *pull request* al repositorio principal indicando que la incidencia que se está arreglando
+* Envía una *pull request* al repositorio principal indicando la incidencia que se está arreglando
 
 ## Otras formas de contribuir sin código
 
 * Si crees que hay una funcionalidad que hace falta, o descubres un problema, abre una incidencia (asegúrate de que
-  no haya una incidencia para ya abierta antes)
+  no haya una incidencia para lo mismo ya abierta antes)
 * También puedes ayudar dando este proyecto a conocer
 
 ## Cómo escribir una incidencia
