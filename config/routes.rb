@@ -11,6 +11,8 @@ Rails.application.routes.draw do
     resources :comments, only: :create
   end
 
+  resource :account, controller: "account", only: [:show, :update]
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

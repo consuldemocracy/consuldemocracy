@@ -41,3 +41,7 @@ en:
   votes:
     notice_thanks: "Thanks for voting."
     notice_already_registered: "Your vote is already registered."
+  account:
+    show:
+      title: "My account"
+      save_changes_submit: "Save changes"
