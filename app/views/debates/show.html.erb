@@ -17,33 +17,9 @@
             <p><%= render 'shared/tags', debate: @debate %></p>
         </div>
 
-        <div class="small-12 medium-3 column votes">
-            <div class="small-12 column text-center">
-                <div id="in_favor" class="inline-block">
-                    <%= link_to debate_votes_path(@debate, value: 'yes'), class: 'in-favor', method: "post" do %>
-                        <i class="fi-like"></i>
-                        <span><%= percentage('likes', @debate) %></span>
-                    <% end %>
-                </div>
-
-                <span class="divider"></span>
-
-                <div id="against" class="inline-block">
-                    <%= link_to debate_votes_path(@debate, value: 'no'), class: 'against', method: "post" do %>
-                        <i class="fi-dislike"></i>
-                        <span><%= percentage('dislikes', @debate) %></span>
-                    <% end %>
-                </div>
-            </div>
-
-            <div class="small-12 column text-center">
-                <p class="total-votes"><%= pluralize(@debate.total_votes, t("debates.debate.vote"), t("debates.debate.votes")) %></p>
-            </div>
-        </div>
-
-        <div class="small-12 medium-3 column text-center publish-comment">
-        <%= link_to t("debates.show.leave_comment"), "#comments", :class => 'button radius expand' %>
-        </div>
+      <div id="votes" class="votes small-12 medium-3 column">
+        <%= render 'votes/votes' %>
+      </div>
     </div>
 </section>
 

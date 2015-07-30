@@ -1,13 +1,20 @@
-jQuery ->
+App.Comments =
 
-  toggle_comment = (id) ->
+  add_response: (parent_id, response_html) ->
+    $(response_html).insertAfter($("#js-comment-form-#{parent_id}"))
+
+  reset_and_hide_form: (id) ->
+    form = $("#js-comment-form-#{id}")
+    form.val('')
+    form.hide()
+
+  toggle_form: (id) ->
     $("#js-comment-form-#{id}").toggle()
 
-  ready = ->
-    $('.js-add-comment-link').click ->
+  initialize: ->
+    $('body').on 'click', '.js-add-comment-link', ->
       id = $(this).data().id
-      toggle_comment(id)
+      App.Comments.toggle_form(id)
       false
 
-  $(document).ready(ready)
-  $(document).on('page:load', ready)
+

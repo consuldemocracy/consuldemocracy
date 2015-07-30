@@ -1,0 +1,3 @@
+var parent_id = '<%= dom_id(@parent) %>';
+App.Comments.reset_and_hide_form(parent_id);
+App.Comments.add_response(parent_id, "<%= j(render @comment) %>");
