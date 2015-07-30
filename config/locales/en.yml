@@ -10,6 +10,7 @@ en:
       open_city: We are opening Madrid
       open_city_slogan: So the citizens can decide what kind of city they want.
       create_debate: Create a debate
+      my_account_link: My account
   debates:
     debate:
       debate: Debate
@@ -41,3 +42,7 @@ en:
   votes:
     notice_thanks: "Thanks for voting."
     notice_already_registered: "Your vote is already registered."
+  account:
+    show:
+      title: "My account"
+      save_changes_submit: "Save changes"

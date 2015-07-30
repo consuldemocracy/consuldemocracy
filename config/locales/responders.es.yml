@@ -8,3 +8,5 @@ es:
       destroy:
         notice: "%{resource_name} borrado correctamente."
         alert: "%{resource_name} no ha podido ser borrado."
+      save_changes:
+        notice: "Cambios guardados"
