@@ -1,13 +1,13 @@
-jQuery ->
 
-  toggle_comment = (id) ->
+App.Comments =
+
+  toggle_form: (id) ->
     $("#js-comment-form-#{id}").toggle()
 
-  ready = ->
+  initialize: ->
     $('body').on 'click', '.js-add-comment-link', ->
       id = $(this).data().id
-      toggle_comment(id)
+      App.Comments.toggle_form(id)
       false
 
-  $(document).ready(ready)
-  $(document).on('page:load', ready)
+

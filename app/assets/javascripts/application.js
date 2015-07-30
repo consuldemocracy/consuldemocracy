@@ -18,4 +18,13 @@
 //= require app
 //= require_tree .
 
-$(function(){ $(document).foundation(); });
+var initialize_modules = function() {
+  App.Comments.initialize();
+};
+
+$(function(){
+  $(document).foundation();
+
+  $(document).ready(initialize_modules)
+  $(document).on('page:load', initialize_modules)
+});
