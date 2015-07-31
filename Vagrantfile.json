@@ -1,0 +1,17 @@
+{
+  "postgresql": {
+    "password": {
+      "postgres": "supersecret_password"
+    }
+  },
+  "participacion": {
+  	"app": {
+  	  "base_dir": "/vagrant"
+  	},
+  	"db": {
+  	  "name": "participacion_development",
+  	  "username": "participacion",
+  	  "password": "participacion"
+  	}
+  }
+}
