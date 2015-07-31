@@ -39,6 +39,11 @@ es:
     new:
       publish_new: Publicar debate nuevo
       back_link: Volver
+  comments_helper:
+    comment_link: Comentar
+    comment_button: Publicar comentario
+    reply_link: Responder
+    reply_button: Publicar respuesta
   votes:
     notice_thanks: "Gracias por votar."
     notice_already_registered: "Tu voto ya ha sido registrado."

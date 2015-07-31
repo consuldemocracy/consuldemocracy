@@ -39,6 +39,11 @@ en:
     new:
       publish_new: Publish new debate
       back_link: Back
+  comments_helper:
+    comment_link: Comment
+    comment_button: Publish comment
+    reply_link: Reply
+    reply_button: Publish reply
   votes:
     notice_thanks: "Thanks for voting."
     notice_already_registered: "Your vote is already registered."
