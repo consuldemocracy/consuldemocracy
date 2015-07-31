@@ -9,6 +9,9 @@
 //   05.2. Debates Show
 // 06. Comments
 // 07. Tags
+// 08. Login and Sign Up
+//   08.1. Login
+//   08.2. Sign Up
 //
 
 // 01. Variables
@@ -17,7 +20,7 @@
 $font-family-sans-serif: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 $line-height: rem-calc(24);
 
-$background:        #F9F9F9;
+$background:        #E9E9E9;
 $border:            #DEE0E3;
 $brand:				#0077B9;
 
@@ -79,6 +82,16 @@ body {
 
 .inline-block {
     display: inline-block;
+}
+
+::selection {
+    background: $brand;
+    color: white;
+}
+
+::-moz-selection {
+    background: $brand;
+    color: white;
 }
 
 // 03. Header
@@ -493,8 +506,64 @@ header {
         background: #e5f1f8;
         border: 1px solid $brand;
     }
-
 }
+
+// 08. Login and Sign Up
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+// 08.1. Login
+// - - - - - - - - - - - -
+
+.auth {
+    background: $background;
+    box-shadow: 0px -4px 5px $background;
+    min-height: $line-height*20;
+
+    .panel {
+        background: white;
+        margin-top: $line-height*2;
+
+        h1 {
+            font-size: rem-calc(30);
+            font-weight: bolder;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
