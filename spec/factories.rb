@@ -5,6 +5,7 @@ FactoryGirl.define do
     last_name        'Carmena'
     sequence(:email) { |n| "manuela#{n}@madrid.es" }
     password         'judgmentday'
+    confirmed_at     Time.now
   end
 
   factory :debate do
