@@ -1,5 +1,6 @@
 class Comment < ActiveRecord::Base
   acts_as_nested_set scope: [:commentable_id, :commentable_type]
+  acts_as_votable
 
   validates :body, presence: true
   validates :user, presence: true
