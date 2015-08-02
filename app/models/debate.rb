@@ -12,6 +12,8 @@ class Debate < ActiveRecord::Base
 
   validates :terms_of_service, acceptance: { allow_nil: false }, on: :create
 
+  before_validation :sanitize_description
+
   def likes
     get_likes.size
   end
@@ -30,6 +32,12 @@ class Debate < ActiveRecord::Base
 
   def editable_by?(user)
     editable? && author == user
+  end
+
+  protected
+
+  def sanitize_description
+    self.description = WYSIWYGSanitizer.new.sanitize(description)
   end
 
 end

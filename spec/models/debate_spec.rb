@@ -25,6 +25,12 @@ describe Debate do
     expect(@debate).to_not be_valid
   end
 
+  it "should sanitize the description" do
+    @debate.description = "<script>alert('danger');</script>"
+    @debate.valid?
+    expect(@debate.description).to eq("alert('danger');")
+  end
+
   it "should not be valid without accepting terms of service" do
     @debate.terms_of_service = nil
     expect(@debate).to_not be_valid
