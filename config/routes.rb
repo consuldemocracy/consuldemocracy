@@ -6,9 +6,17 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root 'debates#index'
+
+  concern :votable do |options|
+    resources :votes, options.merge(only: :create)
+  end
+
   resources :debates do
-    resources :votes, only: :create
-    resources :comments, only: :create
+    concerns :votable, votable_type: 'debate'
+
+    resources :comments, only: :create do
+     concerns :votable, votable_type: 'comment'
+    end
   end
 
   resource :account, controller: "account", only: [:show, :update]
