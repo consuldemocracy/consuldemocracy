@@ -17,8 +17,8 @@
             <p><%= render 'shared/tags', debate: @debate %></p>
         </div>
 
-      <div id="votes" class="votes small-12 medium-3 column">
-        <%= render 'votes/votes' %>
+      <div id="<%= dom_id(@debate) %>_votes" class="votes small-12 medium-3 column">
+        <%= render 'debates/votes' %>
       </div>
     </div>
 </section>

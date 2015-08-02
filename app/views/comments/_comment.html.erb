@@ -8,6 +8,11 @@
 	 			<%= comment.user.name %>&nbsp;&bullet;&nbsp;<%= time_ago_in_words(comment.created_at) %>
 	 		</span>
 	  		<p><%= comment.body %></p>
+
+	  		<span id="<%= dom_id(comment) %>_votes">
+	  		  <%= render 'comments/votes', comment: comment %>
+	  		</span>
+
 	  		<p class="reply"><%= render 'comments/form', parent: comment %></p>
 	  	</div>
 
