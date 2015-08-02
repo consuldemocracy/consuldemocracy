@@ -7,6 +7,10 @@
 # Ignore bundler config.
 /.bundle
 
+# Ignore vagrant config
+/.vagrant
+/Berksfile.lock
+
 # Ignore the default SQLite database.
 /db/*.sqlite3
 /db/*.sqlite3-journal

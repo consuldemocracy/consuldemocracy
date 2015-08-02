@@ -36,6 +36,22 @@ Para ejecutar los tests:
 bundle exec bin/rspec
 ```
 
+## Vagrant
+
+Prerequisitos: 
+
+* Instalar [Vagrant](http://www.vagrantup.com/downloads.html)
+* Instalar [ChefDK](https://downloads.chef.io/chef-dk/)
+* Plugin de Berkshelf de vagrant ```vagrant plugin install vagrant-berkshelf```
+
+Uso:
+
+```vagrant up``` y abrir el navegador en http://127.0.0.1:8888
+
+```vagrant destroy``` para destruir la maquina virtual
+
+
+
 ## Licencia
 
 El código de este proyecto está publicado bajo la licencia MIT (ver MIT-license.md)

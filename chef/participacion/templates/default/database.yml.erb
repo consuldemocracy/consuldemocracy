@@ -1,0 +1,11 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  host: localhost
+  pool: 5
+
+development:
+  <<: *default
+  database: <%= @db_name %>
+  username: <%= @db_username %>
+  password: <%= @db_password %>

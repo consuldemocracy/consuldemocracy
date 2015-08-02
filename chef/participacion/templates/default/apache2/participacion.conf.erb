@@ -1,0 +1,12 @@
+RackEnv development
+
+<VirtualHost *:80> 
+  DocumentRoot <%= @params[:docroot] %>
+  <Directory <%= @params[:docroot] %>> 
+    # This relaxes Apache security settings. 
+    AllowOverride all 
+    # MultiViews must be turned off. 
+    Options -MultiViews 
+    Require all granted
+  </Directory> 
+</VirtualHost> 
