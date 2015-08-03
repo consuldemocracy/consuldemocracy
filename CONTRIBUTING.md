@@ -13,6 +13,12 @@ Para comunicación más puntual e informal, contacta con los miembros del equipo
 
 ## Resolver una incidencia
 
+Los administradores utilizan dos etiquetas relacionadas con la disponibilidad para aceptar colaboraciones con las que marcar incidencias:
+
+* `PRs-welcome`: las [incidencias marcadas como PRs-welcome](https://github.com/AyuntamientoMadrid/participacion/labels/PRs-welcome) son funcionalidades bien definidas y que están listas para que quien quiera pueda implementarlas.
+
+* `Not-ready`: con esta etiqueta se señalan funcionalidades o cambios que han de realizarse pero que todavía no están del todo definidos o falta alguna decisión a nivel interno que tomar. Por tanto se desaconseja que se inicie su implementación de momento.
+
 Cuando quieras resolver una incidencia mediante código:
 
 * Avisa de que vas a trabajar en esta incidencia añadiendo un comentario
