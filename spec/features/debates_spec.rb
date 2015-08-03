@@ -62,6 +62,27 @@ feature 'Debates' do
     expect(page.html).to_not include '<script>alert("an attack");</script>'
   end
 
+  scenario 'tagging using dangerous strings' do
+
+    author = create(:user)
+    login_as(author)
+
+    visit new_debate_path
+
+    fill_in 'debate_title', with: 'A test'
+    fill_in 'debate_description', with: 'A test'
+    fill_in 'debate_tag_list', with: 'user_id=1, &a=3, <script>alert("hey");</script>'
+    check 'debate_terms_of_service'
+
+    click_button 'Create Debate'
+
+    expect(page).to have_content 'Debate was successfully created.'
+    expect(page).to have_content 'user_id1'
+    expect(page).to have_content 'a3'
+    expect(page).to have_content 'scriptalert("hey");script'
+    expect(page.html).to_not include 'user_id=1, &a=3, <script>alert("hey");</script>'
+  end
+
   scenario 'Update should not be posible if logged user is not the author' do
     debate = create(:debate)
     expect(debate).to be_editable
