@@ -21,7 +21,8 @@ Los administradores utilizan dos etiquetas relacionadas con la disponibilidad pa
 
 Cuando quieras resolver una incidencia mediante código:
 
-* Avisa de que vas a trabajar en esta incidencia añadiendo un comentario
+* Avisa de que vas a trabajar en esta incidencia añadiendo un comentario.
+* Cuando las incidencias tienen a alguien asignado significa que esa persona ya está trabajando en esa issue.
 * Haz un fork del proyecto
 * Crea una rama para resolver la incidencia desde la rama `master`
 * Añade el código necesario para resolver la incidencia en tantos commits como sea preciso
