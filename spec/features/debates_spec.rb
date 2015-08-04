@@ -45,21 +45,22 @@ feature 'Debates' do
     expect(page).to have_content I18n.l(Date.today)
   end
 
-  scenario 'JS injection is sanitized' do
+  scenario 'JS injection is prevented but safe html is respected' do
     author = create(:user)
     login_as(author)
 
     visit new_debate_path
     fill_in 'debate_title', with: 'A test'
-    fill_in 'debate_description', with: 'This is <script>alert("an attack");</script>'
+    fill_in 'debate_description', with: '<p>This is <script>alert("an attack");</script></p>'
     check 'debate_terms_of_service'
 
     click_button 'Create Debate'
 
     expect(page).to have_content 'Debate was successfully created.'
     expect(page).to have_content 'A test'
-    expect(page).to have_content 'This is alert("an attack");'
+    expect(page.html).to include '<p>This is alert("an attack");</p>'
     expect(page.html).to_not include '<script>alert("an attack");</script>'
+    expect(page.html).to_not include '&lt;p&gt;This is'
   end
 
   scenario 'tagging using dangerous strings' do
