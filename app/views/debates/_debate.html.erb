@@ -10,7 +10,7 @@
             <p class="debate-info">
               <i class="icon-chat-bubble-two"></i>&nbsp;<%= pluralize(debate.comment_threads.count, t("debates.debate.comment"), t("debates.debate.comments")) %>
             </p>
-            <p><%= sanitize(truncate(debate.description, length: 200).html_safe) %></p>
+            <%= debate.description %>
             <%= render "shared/tags", debate: debate %>
           </div>
         </div>
