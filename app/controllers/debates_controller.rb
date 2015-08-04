@@ -1,15 +1,16 @@
 class DebatesController < ApplicationController
-  include RecaptchaHelper 
+  include RecaptchaHelper
   before_action :set_debate, only: [:show, :edit, :update]
   before_action :authenticate_user!, except: [:show, :index]
   before_action :validate_ownership, only: [:edit, :update]
 
   def index
     if params[:tag]
-      @debates = Debate.tagged_with(params[:tag])
+      @debates = Debate.tagged_with(params[:tag]).order("created_at DESC")
     else
-      @debates = Debate.all
+      @debates = Debate.all.order("created_at DESC")
     end
+    @featured_debates = @debates.to_a.shift(3)
   end
 
   def show
@@ -53,7 +54,7 @@ class DebatesController < ApplicationController
 
     def verify_captcha?
       return true unless recaptcha_keys?
-      verify_recaptcha(model: @debate) 
+      verify_recaptcha(model: @debate)
     end
 
 end

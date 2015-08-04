@@ -1,4 +1,5 @@
-<div id="tag-cloud">
+<div id="tag-cloud" class="tag-cloud">
+  <h3><%= t("shared.tags_cloud.tags") %></h3>
   <% tag_cloud Debate.tag_counts, %w[s m l] do |tag, css_class| %>
     <%= link_to sanitize("#{tag.name}(#{tag.taggings_count})"), debates_path(tag: tag.name), class: css_class %>
   <% end %>

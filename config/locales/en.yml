@@ -12,10 +12,17 @@ en:
       create_debate: Create a debate
       my_account_link: My account
   debates:
+    index:
+      create_debate: Create a debate
     debate:
       debate: Debate
       vote: vote
       votes: votes
+      comment: Comment
+      comments: Comments
+      agree: I agree
+      disagree: I disagree
+      leave_comment: Comment
     form:
       one_error: error
       plural_errors: errors
@@ -45,9 +52,15 @@ en:
     reply_link: Reply
     reply_button: Publish reply
   votes:
+    agree: I agree
+    disagree: I disagree
+    supports: Supports
     notice_thanks: "Thanks for voting."
     notice_already_registered: "Your vote is already registered."
   account:
     show:
       title: "My account"
       save_changes_submit: "Save changes"
+  shared:
+    tags_cloud:
+        tags: Tags
