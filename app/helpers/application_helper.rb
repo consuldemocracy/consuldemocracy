@@ -10,10 +10,16 @@ module ApplicationHelper
   end
 
   def home_page?
-    request.fullpath == '/'
+    # Using path because fullpath yields false negatives since it contains
+    # parameters too
+    request.path == '/'
   end
 
   def header_css
     home_page? ? '' : 'results'
+  end
+
+  def available_locales_to_switch
+    I18n.available_locales - [I18n.locale]
   end
 end

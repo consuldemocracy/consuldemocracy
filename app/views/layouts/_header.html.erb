@@ -4,6 +4,14 @@
 			<div class="small-12 column">
 				<div class="right">
 					<a href="#"><%= t("layouts.header.external_link_transparency") %></a> | <a href="#"><%= t("layouts.header.external_link_opendata") %></a>
+          |
+          <span id="locale-switcher">
+            [
+              <% available_locales_to_switch.each do |locale| %>
+                <%= link_to(locale, params.merge(locale: locale), id: "locale-link-#{locale}") %>
+              <% end %>
+            ]
+          </span>
 				</div>
 			</div>
 		</div>
