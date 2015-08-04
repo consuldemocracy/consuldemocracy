@@ -14,7 +14,7 @@
                 <%= @debate.author.name %> <span>&nbsp;&bullet;&nbsp;</span> <%= l @debate.created_at.to_date %> <span>&nbsp;&bullet;&nbsp;</span> <%= pluralize(@debate.comment_threads.count, t("debates.show.comment"), t("debates.show.comments")) %>
             </div>
             <div class="debate-description">
-              <%= @debate.description.html_safe %>
+              <%= @debate.description %>
             </div>
             <p><%= render 'shared/tags', debate: @debate %></p>
         </div>
