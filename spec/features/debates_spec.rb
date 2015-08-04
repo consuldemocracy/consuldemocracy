@@ -3,16 +3,16 @@ require 'rails_helper'
 feature 'Debates' do
 
   scenario 'Index' do
-    3.times { create(:debate) }
+    debates = [create(:debate), create(:debate), create(:debate)]
 
     visit debates_path
 
     expect(page).to have_selector('.debate', count: 3)
-    within first('.debate') do
-      expect(page).to have_content "Debate title"
-      expect(page).to have_content "Debate description"
-      expect(page).to have_content Debate.first.author.name
-      expect(page).to have_content I18n.l(Date.today)
+    debates.each do |debate|
+      within('#debates') do
+        expect(page).to have_content debate.title
+        expect(page).to have_content debate.description
+      end
     end
   end
 
@@ -21,7 +21,7 @@ feature 'Debates' do
 
     visit debate_path(debate)
 
-    expect(page).to have_content "Debate title"
+    expect(page).to have_content debate.title
     expect(page).to have_content "Debate description"
     expect(page).to have_content debate.author.name
     expect(page).to have_content I18n.l(Date.today)
