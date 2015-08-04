@@ -35,6 +35,10 @@ class Debate < ActiveRecord::Base
     editable? && author == user
   end
 
+  def description
+    super.try :html_safe
+  end
+
   protected
 
   def sanitize_description
