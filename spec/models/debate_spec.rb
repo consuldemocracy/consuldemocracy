@@ -31,6 +31,12 @@ describe Debate do
     expect(@debate.description).to eq("alert('danger');")
   end
 
+  it "should sanitize the tag list" do
+    @debate.tag_list = "user_id=1"
+    @debate.valid?
+    expect(@debate.tag_list).to eq(['user_id1'])
+  end
+
   it "should not be valid without accepting terms of service" do
     @debate.terms_of_service = nil
     expect(@debate).to_not be_valid
