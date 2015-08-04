@@ -4,10 +4,19 @@ feature 'Debates' do
 
   scenario 'Index' do
     debates = [create(:debate), create(:debate), create(:debate)]
+    featured_debates = [create(:debate), create(:debate), create(:debate)]
 
     visit debates_path
 
-    expect(page).to have_selector('.debate', count: 3)
+    expect(page).to have_selector('#featured-debates .debate', count: 3)
+    featured_debates.each do |debate|
+      within('#featured-debates') do
+        expect(page).to have_content debate.title
+        expect(page).to have_content debate.description
+      end
+    end
+
+    expect(page).to have_selector('#debates .debate', count: 3)
     debates.each do |debate|
       within('#debates') do
         expect(page).to have_content debate.title

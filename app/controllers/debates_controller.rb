@@ -10,7 +10,7 @@ class DebatesController < ApplicationController
     else
       @debates = Debate.all.order("created_at DESC")
     end
-    @featured_debates = []
+    @featured_debates = @debates.to_a.shift(3)
   end
 
   def show
