@@ -1,7 +1,7 @@
 class DebatesController < ApplicationController
   include RecaptchaHelper
   before_action :set_debate, only: [:show, :edit, :update, :vote]
-  before_action :authenticate_user!, except: [:index, :show, :vote]
+  before_action :authenticate_user!, except: [:index, :show]
   before_action :validate_ownership, only: [:edit, :update]
 
   def index
