@@ -26,7 +26,7 @@ class DebatesController < ApplicationController
   def create
     @debate = Debate.new(debate_params)
     @debate.author = current_user
-    if verify_captcha? and @debate.save
+    if verify_captcha?(@debate) and @debate.save
       redirect_to @debate, notice: t('flash.actions.create.notice', resource_name: 'Debate')
     else
       render :new
@@ -51,10 +51,4 @@ class DebatesController < ApplicationController
     def validate_ownership
       raise ActiveRecord::RecordNotFound unless @debate.editable_by?(current_user)
     end
-
-    def verify_captcha?
-      return true unless recaptcha_keys?
-      verify_recaptcha(model: @debate)
-    end
-
 end
