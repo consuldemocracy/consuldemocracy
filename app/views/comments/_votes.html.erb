@@ -1,0 +1,11 @@
+<span class="in_favor">
+  <%= link_to "up", vote_comment_path(comment, value: 'yes'),
+    method: "post", remote: true %>
+  <%= comment.get_likes.size %>
+</span>
+
+<span class="against">
+  <%= link_to "down", vote_comment_path(comment, value: 'no'),
+      method: "post", remote: true %>
+  <%= comment.get_dislikes.size %>
+</span>

@@ -10,8 +10,8 @@
       <%= @debate.description %>
       <p><%= render 'shared/tags', debate: @debate %></p>
     </div>
-    <div id="votes" class="small-12 medium-3 column votes">
-      <%= render 'votes/votes' %>
+    <div id="<%= dom_id(@debate) %>_votes" class="votes small-12 medium-3 column">
+      <%= render 'debates/votes' %>
       <div class="text-center">
         <%= link_to t("debates.show.leave_comment"), "#comments", class: "leave-comment" %>
       </div>

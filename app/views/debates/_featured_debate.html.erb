@@ -16,22 +16,8 @@
           </div>
 
           <div class="row votes">
-            <div class="small-12 column">
-              <%= link_to debate_votes_path(featured_debate, value: "yes"), class: "like", title: t('votes.agree'), method: "post" do %>
-                <i class="icon-like"></i>
-                <span><%= percentage('likes', featured_debate) %></span>
-              <% end %>
-
-              <span class="divider"></span>
-
-              <%= link_to debate_votes_path(featured_debate, value: "no"), class: "unlike", title: t('votes.disagree'), method: "post" do %>
-                <i class="icon-unlike"></i>
-                <span><%= percentage('dislikes', featured_debate) %></span>
-              <% end %>
-
-              <span class="total-votes right">
-                <%= pluralize(featured_debate.total_votes, t("debates.debate.vote"), t("debates.debate.votes")) %>
-              </span>
+            <div id="<%= dom_id(featured_debate) %>_votes" class="small-12 column">
+              <%= render 'debates/featured_debate_votes', debate: featured_debate %>
             </div>
           </div>
         </div>

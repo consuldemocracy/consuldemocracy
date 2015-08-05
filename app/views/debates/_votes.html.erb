@@ -7,7 +7,8 @@
 
   <div class="text-center">
     <div id="in_favor" class="inline-block">
-      <%= link_to debate_votes_path(@debate, value: 'yes'), class: "like", title: t('votes.agree'), method: "post", remote: true do %>
+      <%= link_to vote_debate_path(@debate, value: 'yes', partial: 'votes'),
+                  class: "like", title: t('votes.agree'), method: "post", remote: true do %>
         <i class="icon-like"></i>
         <span><%= percentage('likes', @debate) %></span>
       <% end %>
@@ -16,7 +17,8 @@
     <span class="divider"></span>
 
     <div id="against" class="inline-block">
-      <%= link_to debate_votes_path(@debate, value: 'no'), class: "unlike", title: t('votes.disagree'), method: "post", remote: true do %>
+      <%= link_to vote_debate_path(@debate, value: 'no', partial: 'votes'),
+                  class: "unlike", title: t('votes.disagree'), method: "post", remote: true do %>
         <i class="icon-unlike"></i>
         <span><%= percentage('dislikes', @debate) %></span>
       <% end %>

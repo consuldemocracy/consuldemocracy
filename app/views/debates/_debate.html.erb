@@ -14,25 +14,11 @@
             <%= render "shared/tags", debate: debate %>
           </div>
         </div>
-        <div class="small-12 medium-3 column">
-          <div class="text-center votes">
-            <%= link_to debate_votes_path(debate, value: 'yes'), class: "like inline-block", title: t('votes.agree'), method: "post" do %>
-              <i class="icon-like"></i>
-              <span><%= percentage('likes', debate) %></span>
-            <% end %>
 
-            <span class="divider"></span>
-
-            <%= link_to debate_votes_path(debate, value: 'no'), class: "unlike inline-block", title: t('votes.disagree'), method: "post" do %>
-              <i class="icon-unlike"></i>
-              <span><%= percentage('dislikes', debate) %></span>
-            <% end %>
-            <br>
-            <span class="total-votes">
-              <%= pluralize(debate.total_votes, t("debates.debate.vote"), t("debates.debate.votes")) %>
-            </span>
-          </div>
+        <div id="<%= dom_id(debate) %>_votes" class="small-12 medium-3 column">
+          <%= render 'debates/votes_min', debate: debate %>
         </div>
+
       </div>
     </div>
   </div>
