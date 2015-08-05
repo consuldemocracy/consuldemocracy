@@ -13,6 +13,20 @@ feature 'Votes' do
       visit debate_path(@debate)
     end
 
+    scenario 'Show no votes' do
+      visit debate_path(@debate)
+
+      expect(page).to have_content "0 votes"
+
+      within('#in_favor') do
+        expect(page).to have_content "0%"
+      end
+
+      within('#against')  do
+        expect(page).to have_content "0%"
+      end
+    end
+
     scenario 'Show' do
       vote = create(:vote, voter: @manuela, votable: @debate, vote_flag: true)
       vote = create(:vote, voter: @pablo, votable: @debate, vote_flag: false)
