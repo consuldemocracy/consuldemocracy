@@ -1,6 +1,6 @@
-<%= link_to comment_link_text(parent), "", class: "js-add-comment-link", data: {'id': dom_id(parent)} %>
+<%= link_to(comment_link_text(parent), "", class: "js-add-comment-link", data: {'id': dom_id(parent)}) if toggeable %>
 
-<div id="js-comment-form-<%= dom_id(parent) %>" style="display:none">
+<div id="js-comment-form-<%= dom_id(parent) %>" <%= "style='display:none'".html_safe if toggeable %>>
   <%= form_for [@debate, Comment.new], remote: true do |f| %>
     <%= f.text_area :body %>
     <%= f.hidden_field :commentable_type, value: parent.class %>

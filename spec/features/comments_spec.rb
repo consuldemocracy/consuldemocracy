@@ -19,14 +19,27 @@ feature 'Comments' do
     end
   end
 
+  feature 'Not logged user' do
+    scenario 'can not see comments forms' do
+      debate = create(:debate)
+      create(:comment, commentable: debate)
+      visit debate_path(debate)
+
+      expect(page).to have_content 'Log in to participate'
+      within ('#comments') do
+        expect(page).to_not have_content 'Write a comment'
+        expect(page).to_not have_content 'Reply'
+        expect(page).to_not have_css('form')
+      end
+    end
+  end
+
   scenario 'Create', :js do
     user = create(:user)
     debate = create(:debate)
 
     login_as(user)
     visit debate_path(debate)
-
-    click_on 'Comment'
 
     fill_in 'comment_body', with: '¿Has pensado en esto...?'
     click_button 'Publish comment'

@@ -13,7 +13,11 @@
     <div id="<%= dom_id(@debate) %>_votes" class="votes small-12 medium-3 column">
       <%= render 'debates/votes' %>
       <div class="text-center">
+      <% if user_signed_in? %>
         <%= link_to t("debates.show.leave_comment"), "#comments", class: "leave-comment" %>
+      <% else %>
+        <%= link_to t("debates.show.login_to_comment"), new_user_session_path, class: "leave-comment" %>
+      <% end %>
       </div>
     </div>
   </div>
@@ -23,10 +27,12 @@
   <div class="row">
     <div id="comments" class="small-12 column">
       <h2><%= t("debates.show.comments") %></h2>
+      <% if user_signed_in? %>
         <div>
           <%= t("debates.show.leave_comment") %>
-          <%= render 'comments/form', parent: @debate %>
+          <%= render 'comments/form', {parent: @debate, toggeable: false} %>
         </div>
+      <% end %>
       <%= render @debate.root_comments %>
     </div>
     <% if current_user && @debate.editable_by?(current_user) %>
