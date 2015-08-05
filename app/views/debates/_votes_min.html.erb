@@ -1,0 +1,25 @@
+<div class="small-8 column">
+  <div id="in_favor">
+    <%= link_to vote_debate_path(debate, value: 'yes', partial: 'votes_min'),
+                class: 'in-favor', method: "post", remote: true do %>
+      <i class="fi-like"></i>
+      <span><%= percentage('likes', debate) %></span>
+    <% end %>
+  </div>
+
+  <span class="divider"></span>
+
+  <div id="against">
+    <%= link_to vote_debate_path(debate, value: 'no', partial: 'votes_min'),
+                class: 'against', method: "post", remote: true do %>
+      <i class="fi-dislike"></i>
+      <span><%= percentage('dislikes', debate) %></span>
+    <% end %>
+  </div>
+</div>
+
+<div class="small-4 column">
+  <p class="total-votes right">
+    <%= pluralize(debate.total_votes, t("debates.debate.vote"), t("debates.debate.votes")) %>
+  </p>
+</div>

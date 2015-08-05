@@ -9,25 +9,8 @@
 
         <p><%= render 'shared/tags', debate: debate %></p>
 
-		<div class="row votes">
-        	<div class="small-8 column">
-
-	    		<%= link_to debate_votes_path(debate, value: 'yes'), class: 'in-favor', method: "post" do %>
-	    			<i class="fi-like"></i>
-	    			<span><%= percentage('likes', debate) %></span>
-	    		<% end %>
-
-	    		<span class="divider"></span>
-
-	    		<%= link_to debate_votes_path(debate, value: 'no'), class: 'against', method: "post" do %>
-	    			<i class="fi-dislike"></i>
-	    			<span><%= percentage('dislikes', debate) %></span>
-	    		<% end %>
-			</div>
-
-			<div class="small-4 column">
-    			<p class="total-votes right"><%= pluralize(debate.total_votes, t("debates.debate.vote"), t("debates.debate.votes")) %></p>
-    		</div>
-    	</div>
+		  <div id="<%= dom_id(debate) %>_votes" class="row votes">
+        <%= render 'debates/votes_min', debate: debate %>
+      </div>
     </div>
 </div>
