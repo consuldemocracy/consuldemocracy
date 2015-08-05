@@ -20,9 +20,28 @@ describe Debate do
     expect(@debate).to_not be_valid
   end
 
-  it "should not be valid without a description" do
-    @debate.description = nil
-    expect(@debate).to_not be_valid
+  describe "#description" do
+    it "should be mandatory" do
+      @debate.description = nil
+      expect(@debate).to_not be_valid
+    end
+
+    it "should be sanitized" do
+      @debate.description = "<script>alert('danger');</script>"
+      @debate.valid?
+      expect(@debate.description).to eq("alert('danger');")
+    end
+
+    it "should be html_safe" do
+      @debate.description = "<script>alert('danger');</script>"
+      expect(@debate.description).to be_html_safe
+    end
+  end
+
+  it "should sanitize the tag list" do
+    @debate.tag_list = "user_id=1"
+    @debate.valid?
+    expect(@debate.tag_list).to eq(['user_id1'])
   end
 
   it "should not be valid without accepting terms of service" do

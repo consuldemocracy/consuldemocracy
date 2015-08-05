@@ -6,10 +6,11 @@ class DebatesController < ApplicationController
 
   def index
     if params[:tag]
-      @debates = Debate.tagged_with(params[:tag])
+      @debates = Debate.tagged_with(params[:tag]).order("created_at DESC")
     else
-      @debates = Debate.all
+      @debates = Debate.all.order("created_at DESC")
     end
+    @featured_debates = @debates.to_a.shift(3)
   end
 
   def show
@@ -25,7 +26,7 @@ class DebatesController < ApplicationController
   def create
     @debate = Debate.new(debate_params)
     @debate.author = current_user
-    if verify_captcha? and @debate.save
+    if verify_captcha?(@debate) and @debate.save
       redirect_to @debate, notice: t('flash.actions.create.notice', resource_name: 'Debate')
     else
       render :new
@@ -54,10 +55,4 @@ class DebatesController < ApplicationController
     def validate_ownership
       raise ActiveRecord::RecordNotFound unless @debate.editable_by?(current_user)
     end
-
-    def verify_captcha?
-      return true unless recaptcha_keys?
-      verify_recaptcha(model: @debate) 
-    end
-
 end

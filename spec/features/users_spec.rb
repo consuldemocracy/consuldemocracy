@@ -14,7 +14,12 @@ feature 'Users' do
 
     click_button 'Sign up'
 
-    expect(page).to have_content 'Welcome! You have signed up successfully.'
+    expect(page).to have_content "A message with a confirmation link has been sent to your email address. Please follow the link to activate your account."
+
+    sent_token = /.*confirmation_token=(.*)".*/.match(ActionMailer::Base.deliveries.last.body.to_s)[1]
+    visit user_confirmation_path(confirmation_token: sent_token)
+
+    expect(page).to have_content "Your email address has been successfully confirmed"
   end
 
   scenario 'Sign in' do

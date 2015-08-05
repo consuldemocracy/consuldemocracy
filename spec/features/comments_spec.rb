@@ -26,10 +26,10 @@ feature 'Comments' do
     login_as(user)
     visit debate_path(debate)
 
-    click_on 'Comentar'
+    click_on 'Comment'
 
     fill_in 'comment_body', with: '¿Has pensado en esto...?'
-    click_button 'Publicar comentario'
+    click_button 'Publish comment'
 
     within "#comments" do
       expect(page).to have_content '¿Has pensado en esto...?'
@@ -45,10 +45,10 @@ feature 'Comments' do
     login_as(manuela)
     visit debate_path(debate)
 
-    click_link "Responder"
+    click_link "Reply"
     within "#js-comment-form-comment_#{comment.id}" do
       fill_in 'comment_body', with: 'La semana que viene está hecho.'
-      click_button 'Publicar respuesta'
+      click_button 'Publish reply'
     end
 
     within "#comment-#{comment.id}" do
