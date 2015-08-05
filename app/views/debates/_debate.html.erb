@@ -1,33 +1,39 @@
-<div id="debate-<%= debate.id %>" class="small-12 medium-6 large-4 column debate end">
+<div class="debates-index">
+  <div id="debate-<%= debate.id %>" class="debate">
     <div class="panel">
-        <i class="fi-comment-quotes left"></i>
-        <span class="label radius right"><%= t("debates.debate.debate") %></span>
+      <div class="row">
+        <div class="small-12 medium-9 column">
+          <div class="debate-content">
+            <span class="label left"><%= t("debates.debate.debate") %></span>
+            <i class="icon-quote-right"></i>
+            <h3><%= link_to debate.title, debate %></h3>
+            <p class="debate-info">
+              <i class="icon-chat-bubble-two"></i>&nbsp;<%= pluralize(debate.comment_threads.count, t("debates.debate.comment"), t("debates.debate.comments")) %>
+            </p>
+            <%= debate.description %>
+            <%= render "shared/tags", debate: debate %>
+          </div>
+        </div>
+        <div class="small-12 medium-3 column">
+          <div class="text-center votes">
+            <%= link_to debate_votes_path(debate, value: 'yes'), class: "like inline-block", title: t('votes.agree'), method: "post" do %>
+              <i class="icon-like"></i>
+              <span><%= percentage('likes', debate) %></span>
+            <% end %>
 
-        <h3><%= link_to debate.title, debate %></h3>
-        <p>Por <%= debate.author.name %> el <%= l debate.created_at.to_date %></p>
-        <p><%= sanitize(debate.description.html_safe) %></p>
+            <span class="divider"></span>
 
-        <p><%= render 'shared/tags', debate: debate %></p>
-
-		<div class="row votes">
-        	<div class="small-8 column">
-
-	    		<%= link_to debate_votes_path(debate, value: 'yes'), class: 'in-favor', method: "post" do %>
-	    			<i class="fi-like"></i>
-	    			<span><%= percentage('likes', debate) %></span>
-	    		<% end %>
-
-	    		<span class="divider"></span>
-
-	    		<%= link_to debate_votes_path(debate, value: 'no'), class: 'against', method: "post" do %>
-	    			<i class="fi-dislike"></i>
-	    			<span><%= percentage('dislikes', debate) %></span>
-	    		<% end %>
-			</div>
-
-			<div class="small-4 column">
-    			<p class="total-votes right"><%= pluralize(debate.total_votes, t("debates.debate.vote"), t("debates.debate.votes")) %></p>
-    		</div>
-    	</div>
+            <%= link_to debate_votes_path(debate, value: 'no'), class: "unlike inline-block", title: t('votes.disagree'), method: "post" do %>
+              <i class="icon-unlike"></i>
+              <span><%= percentage('dislikes', debate) %></span>
+            <% end %>
+            <br>
+            <span class="total-votes">
+              <%= pluralize(debate.total_votes, t("debates.debate.vote"), t("debates.debate.votes")) %>
+            </span>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
 </div>

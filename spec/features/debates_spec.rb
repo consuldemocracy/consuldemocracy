@@ -3,16 +3,25 @@ require 'rails_helper'
 feature 'Debates' do
 
   scenario 'Index' do
-    3.times { create(:debate) }
+    debates = [create(:debate), create(:debate), create(:debate)]
+    featured_debates = [create(:debate), create(:debate), create(:debate)]
 
     visit debates_path
 
-    expect(page).to have_selector('.debate', count: 3)
-    within first('.debate') do
-      expect(page).to have_content "Debate title"
-      expect(page).to have_content "Debate description"
-      expect(page).to have_content Debate.first.author.name
-      expect(page).to have_content I18n.l(Date.today)
+    expect(page).to have_selector('#featured-debates .debate', count: 3)
+    featured_debates.each do |debate|
+      within('#featured-debates') do
+        expect(page).to have_content debate.title
+        expect(page).to have_content debate.description
+      end
+    end
+
+    expect(page).to have_selector('#debates .debate', count: 3)
+    debates.each do |debate|
+      within('#debates') do
+        expect(page).to have_content debate.title
+        expect(page).to have_content debate.description
+      end
     end
   end
 
@@ -21,7 +30,7 @@ feature 'Debates' do
 
     visit debate_path(debate)
 
-    expect(page).to have_content "Debate title"
+    expect(page).to have_content debate.title
     expect(page).to have_content "Debate description"
     expect(page).to have_content debate.author.name
     expect(page).to have_content I18n.l(Date.today)
@@ -45,21 +54,22 @@ feature 'Debates' do
     expect(page).to have_content I18n.l(Date.today)
   end
 
-  scenario 'JS injection is sanitized' do
+  scenario 'JS injection is prevented but safe html is respected' do
     author = create(:user)
     login_as(author)
 
     visit new_debate_path
     fill_in 'debate_title', with: 'A test'
-    fill_in 'debate_description', with: 'This is <script>alert("an attack");</script>'
+    fill_in 'debate_description', with: '<p>This is <script>alert("an attack");</script></p>'
     check 'debate_terms_of_service'
 
     click_button 'Create Debate'
 
     expect(page).to have_content 'Debate was successfully created.'
     expect(page).to have_content 'A test'
-    expect(page).to have_content 'This is alert("an attack");'
+    expect(page.html).to include '<p>This is alert("an attack");</p>'
     expect(page.html).to_not include '<script>alert("an attack");</script>'
+    expect(page.html).to_not include '&lt;p&gt;This is'
   end
 
   scenario 'tagging using dangerous strings' do
