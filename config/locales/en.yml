@@ -38,6 +38,7 @@ en:
       comment: Comment
       comments: Comments
       leave_comment: Write a comment
+      login_to_comment: Log in to participate
       edit_debate_link: Edit
     edit:
       editing: Edit debate
