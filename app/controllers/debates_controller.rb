@@ -51,10 +51,4 @@ class DebatesController < ApplicationController
     def validate_ownership
       raise ActiveRecord::RecordNotFound unless @debate.editable_by?(current_user)
     end
-
-    def verify_captcha?
-      return true unless recaptcha_keys?
-      verify_recaptcha(model: @debate)
-    end
-
 end
