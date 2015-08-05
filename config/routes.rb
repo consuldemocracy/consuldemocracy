@@ -6,9 +6,18 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root 'debates#index'
+
   resources :debates do
-    resources :votes, only: :create
-    resources :comments, only: :create
+    member do
+      post :vote
+    end
+
+    resources :comments, only: :create, shallow: true do
+      member do
+        post :vote
+      end
+    end
+
   end
 
   resource :account, controller: "account", only: [:show, :update]

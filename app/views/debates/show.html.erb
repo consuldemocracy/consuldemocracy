@@ -7,11 +7,11 @@
         <span class="author"><%= @debate.author.name %></span><span class="bullet">&nbsp;&bullet;&nbsp;</span> <%= l @debate.created_at.to_date %> <span class="bullet">&nbsp;&bullet;&nbsp;</span><i class="icon-chat-bubble-two"></i>&nbsp;<%= pluralize(@debate.comment_threads.count, t("debates.show.comment"), t("debates.show.comments")) %>
       </div>
       <h1><%= @debate.title %></h1>
-      <p><%= @debate.description %></p>
+      <%= @debate.description %>
       <p><%= render 'shared/tags', debate: @debate %></p>
     </div>
-    <div id="votes" class="small-12 medium-3 column votes">
-      <%= render 'votes/votes' %>
+    <div id="<%= dom_id(@debate) %>_votes" class="votes small-12 medium-3 column">
+      <%= render 'debates/votes' %>
       <div class="text-center">
       <% if user_signed_in? %>
         <%= link_to t("debates.show.leave_comment"), "#comments", class: "leave-comment" %>
