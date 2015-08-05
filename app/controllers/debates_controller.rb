@@ -1,7 +1,7 @@
 class DebatesController < ApplicationController
-  include RecaptchaHelper 
-  before_action :set_debate, only: [:show, :edit, :update]
-  before_action :authenticate_user!, except: [:show, :index]
+  include RecaptchaHelper
+  before_action :set_debate, only: [:show, :edit, :update, :vote]
+  before_action :authenticate_user!, except: [:index, :show, :vote]
   before_action :validate_ownership, only: [:edit, :update]
 
   def index
@@ -35,6 +35,10 @@ class DebatesController < ApplicationController
   def update
     @debate.update(debate_params)
     respond_with @debate
+  end
+
+  def vote
+    @debate.vote_by(voter: current_user, vote: params[:value])
   end
 
 
