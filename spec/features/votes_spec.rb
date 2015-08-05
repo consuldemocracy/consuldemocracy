@@ -44,20 +44,44 @@ feature 'Votes' do
       expect(page).to have_content "1 vote"
     end
 
-    scenario 'Create from debate index', :js do
+    scenario 'Create from debate featured', :js do
       visit debates_path
 
-      find('#in_favor a').click
+      within("#featured-debates") do
+        find('#in_favor a').click
 
-      within('#in_favor') do
-        expect(page).to have_content "100%"
+        within('#in_favor') do
+          expect(page).to have_content "100%"
+        end
+
+        within('#against')  do
+          expect(page).to have_content "0%"
+        end
+
+        expect(page).to have_content "1 vote"
       end
+      expect(URI.parse(current_url).path).to eq(debates_path)
+    end
 
-      within('#against')  do
-        expect(page).to have_content "0%"
+    scenario 'Create from debate index', :js do
+      3.times { create(:debate) }
+      visit debates_path
+
+      within("#debates") do
+        expect(page).to have_css(".debate", count: 1)
+
+        find('#in_favor a').click
+
+        within('#in_favor') do
+          expect(page).to have_content "100%"
+        end
+
+        within('#against')  do
+          expect(page).to have_content "0%"
+        end
+
+        expect(page).to have_content "1 vote"
       end
-
-      expect(page).to have_content "1 vote"
       expect(URI.parse(current_url).path).to eq(debates_path)
     end
 
