@@ -30,7 +30,7 @@ feature 'Votes' do
       end
     end
 
-    scenario 'Create', :js do
+    scenario 'Create from debate show', :js do
       find('#in_favor a').click
 
       within('#in_favor') do
@@ -42,6 +42,23 @@ feature 'Votes' do
       end
 
       expect(page).to have_content "1 vote"
+    end
+
+    scenario 'Create from debate index', :js do
+      visit debates_path
+
+      find('#in_favor a').click
+
+      within('#in_favor') do
+        expect(page).to have_content "100%"
+      end
+
+      within('#against')  do
+        expect(page).to have_content "0%"
+      end
+
+      expect(page).to have_content "1 vote"
+      expect(URI.parse(current_url).path).to eq(debates_path)
     end
 
     scenario 'Update', :js do
