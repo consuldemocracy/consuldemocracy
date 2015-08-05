@@ -13,6 +13,7 @@ class Debate < ActiveRecord::Base
   validates :terms_of_service, acceptance: { allow_nil: false }, on: :create
 
   before_validation :sanitize_description
+  before_validation :sanitize_tag_list
 
   def likes
     get_likes.size
@@ -34,10 +35,18 @@ class Debate < ActiveRecord::Base
     editable? && author == user
   end
 
+  def description
+    super.try :html_safe
+  end
+
   protected
 
   def sanitize_description
     self.description = WYSIWYGSanitizer.new.sanitize(description)
+  end
+
+  def sanitize_tag_list
+    self.tag_list  = TagSanitizer.new.sanitize_tag_list(self.tag_list)
   end
 
 end

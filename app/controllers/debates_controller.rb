@@ -1,15 +1,16 @@
 class DebatesController < ApplicationController
-  include RecaptchaHelper 
-  before_action :set_debate, only: [:show, :edit, :update]
-  before_action :authenticate_user!, except: [:show, :index]
+  include RecaptchaHelper
+  before_action :set_debate, only: [:show, :edit, :update, :vote]
+  before_action :authenticate_user!, except: [:index, :show]
   before_action :validate_ownership, only: [:edit, :update]
 
   def index
     if params[:tag]
-      @debates = Debate.tagged_with(params[:tag])
+      @debates = Debate.tagged_with(params[:tag]).order("created_at DESC")
     else
-      @debates = Debate.all
+      @debates = Debate.all.order("created_at DESC")
     end
+    @featured_debates = @debates.to_a.shift(3)
   end
 
   def show
@@ -25,7 +26,7 @@ class DebatesController < ApplicationController
   def create
     @debate = Debate.new(debate_params)
     @debate.author = current_user
-    if verify_captcha? and @debate.save
+    if verify_captcha?(@debate) and @debate.save
       redirect_to @debate, notice: t('flash.actions.create.notice', resource_name: 'Debate')
     else
       render :new
@@ -35,6 +36,10 @@ class DebatesController < ApplicationController
   def update
     @debate.update(debate_params)
     respond_with @debate
+  end
+
+  def vote
+    @debate.vote_by(voter: current_user, vote: params[:value])
   end
 
 
@@ -50,10 +55,4 @@ class DebatesController < ApplicationController
     def validate_ownership
       raise ActiveRecord::RecordNotFound unless @debate.editable_by?(current_user)
     end
-
-    def verify_captcha?
-      return true unless recaptcha_keys?
-      verify_recaptcha(model: @debate) 
-    end
-
 end

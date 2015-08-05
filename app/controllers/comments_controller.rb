@@ -1,12 +1,18 @@
 class CommentsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_debate, :set_parent
+  before_action :set_debate, :set_parent, only: :create
   respond_to :html, :js
 
   def create
     @comment = Comment.build(@debate, current_user, params[:comment][:body])
     @comment.save!
     @comment.move_to_child_of(@parent) if reply?
+    respond_with @comment
+  end
+
+  def vote
+    @comment = Comment.find(params[:id])
+    @comment.vote_by(voter: current_user, vote: params[:value])
     respond_with @comment
   end
 

@@ -21,4 +21,9 @@ class ApplicationController < ActionController::Base
 
     I18n.locale = session[:locale]
   end
+
+  def verify_captcha?(resource)
+    return true unless recaptcha_keys?
+    verify_recaptcha(model: resource)
+  end
 end
