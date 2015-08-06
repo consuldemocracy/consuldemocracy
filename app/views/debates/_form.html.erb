@@ -12,7 +12,7 @@
 
     <p><strong><%= t("debates.form.debate_title") %></strong></p>
     <p><%= t("debates.form.title_instructions") %></p>
-    <%= f.text_field :title %>
+    <%= f.text_field :title, maxlength: Debate::TITLE_LENGTH %>
 
   <br/>
   <p><strong><%= t("debates.form.debate_text") %></strong></p>
