@@ -60,6 +60,8 @@ es:
       change_credentials_link: "Cambiar mi contraseña"
       first_name_label: "Nombre"
       last_name_label: "Apellidos"
+      use_nickname_label: "Usar pseudónimo"
+      nickname_label: "Pseudónimo"
   recaptcha:
     errors:
       verification_failed: "La verificación por captcha falló"
