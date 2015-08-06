@@ -1,27 +1,29 @@
-<div class="small-12 medium-4 column debates-list">
-  <div class="row">
-    <div class="debates-featured">
-      <div id="debate-<%= featured_debate.id %>" class="small-12 column end debate">
-        <div class="panel">
-          <div class="debate-content">
-            <span class="label left"><%= t("debates.debate.debate") %></span>
-            <i class="icon-quote-right right"></i>
+<div class="small-12 medium-4 column">
+  <div id="debate-<%= featured_debate.id %>" class="debate-featured">
+    <div class="panel">
 
-            <h3><%= link_to featured_debate.title, featured_debate %></h3>
-            <p class="debate-info">
-              <i class="icon-chat-bubble-two"></i>&nbsp;<%= pluralize(featured_debate.comment_threads.count, t("debates.show.comment"), t("debates.show.comments")) %>
-            </p>
-            <p><%= sanitize(truncate(featured_debate.description, length: 200).html_safe) %></p>
-            <p><%= render "shared/tags", debate: featured_debate %></p>
-          </div>
+      <div class="debate-content">
+        <span class="label left"><%= t("debates.debate.debate") %></span>
+        <i class="icon-comment-quotes right"></i>
+        <h3><%= link_to featured_debate.title, featured_debate %></h3>
+        <p class="debate-info">
+          <i class="icon-chat-bubble-two"></i>&nbsp;
+          <%= pluralize(featured_debate.comment_threads.count,
+              t("debates.show.comment"), t("debates.show.comments")) %>
+        </p>
+        <div class="debate-description">
+          <%= featured_debate.description %>
+          <div class="truncate"></div>
+        </div>
+        <%= render "shared/tags", debate: featured_debate %>
+      </div>
 
-          <div class="row votes">
-            <div id="<%= dom_id(featured_debate) %>_votes" class="small-12 column">
-              <%= render 'debates/featured_debate_votes', debate: featured_debate %>
-            </div>
-          </div>
+      <div class="row">
+        <div id="<%= dom_id(featured_debate) %>_votes" class="small-12 column">
+          <%= render 'debates/votes', debate: featured_debate %>
         </div>
       </div>
+
     </div>
   </div>
 </div>

@@ -10,16 +10,19 @@
       <%= @debate.description %>
       <p><%= render 'shared/tags', debate: @debate %></p>
     </div>
-    <div id="<%= dom_id(@debate) %>_votes" class="votes small-12 medium-3 column">
-      <%= render 'debates/votes' %>
+
+    <div id="<%= dom_id(@debate) %>_votes" class="small-12 medium-3 column">
+      <h3><%= t("votes.supports") %></h3>
       <div class="text-center">
-      <% if user_signed_in? %>
-        <%= link_to t("debates.show.leave_comment"), "#comments", class: "leave-comment" %>
-      <% else %>
-        <%= link_to t("debates.show.login_to_comment"), new_user_session_path, class: "leave-comment" %>
-      <% end %>
+        <%= render 'debates/votes', debate: @debate %>
+        <% if user_signed_in? %>
+          <%= link_to t("debates.show.leave_comment"), "#comments", class: "leave-comment" %>
+        <% else %>
+          <%= link_to t("debates.show.login_to_comment"), new_user_session_path, class: "leave-comment" %>
+        <% end %>
       </div>
     </div>
+
   </div>
 </section>
 

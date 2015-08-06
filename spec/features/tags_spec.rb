@@ -26,11 +26,13 @@ feature 'Tags' do
     visit debates_path
     first(:link, "Salud").click
 
-    expect(page).to have_css('.debate', count: 2)
-    expect(page).to have_content(debate1.title)
-    expect(page).to have_content(debate2.title)
-    expect(page).to_not have_content(debate3.title)
-    expect(page).to_not have_content(debate4.title)
+    within("#debates") do
+      expect(page).to have_css('.debate', count: 2)
+      expect(page).to have_content(debate1.title)
+      expect(page).to have_content(debate2.title)
+      expect(page).to_not have_content(debate3.title)
+      expect(page).to_not have_content(debate4.title)
+    end
   end
 
   scenario 'Show' do

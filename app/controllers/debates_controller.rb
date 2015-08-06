@@ -9,8 +9,8 @@ class DebatesController < ApplicationController
       @debates = Debate.tagged_with(params[:tag]).order("created_at DESC")
     else
       @debates = Debate.all.order("created_at DESC")
+      @featured_debates = @debates.to_a.shift(3)
     end
-    @featured_debates = @debates.to_a.shift(3)
   end
 
   def show

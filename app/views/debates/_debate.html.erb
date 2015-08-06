@@ -1,25 +1,29 @@
-<div class="debates-index">
-  <div id="debate-<%= debate.id %>" class="debate">
-    <div class="panel">
-      <div class="row">
-        <div class="small-12 medium-9 column">
-          <div class="debate-content">
-            <span class="label left"><%= t("debates.debate.debate") %></span>
-            <i class="icon-quote-right"></i>
-            <h3><%= link_to debate.title, debate %></h3>
-            <p class="debate-info">
-              <i class="icon-chat-bubble-two"></i>&nbsp;<%= pluralize(debate.comment_threads.count, t("debates.debate.comment"), t("debates.debate.comments")) %>
-            </p>
+<div id="debate-<%= debate.id %>" class="debate">
+  <div class="panel">
+    <div class="row">
+
+      <div class="small-12 medium-9 column">
+        <div class="debate-content">
+          <span class="label left"><%= t("debates.debate.debate") %></span>
+          <i class="icon-comment-quotes"></i>
+          <h3><%= link_to debate.title, debate %></h3>
+          <p class="debate-info">
+            <i class="icon-chat-bubble-two"></i>&nbsp;
+            <%= pluralize(debate.comment_threads.count,
+                t("debates.debate.comment"), t("debates.debate.comments")) %>
+          </p>
+          <div class="debate-description">
             <%= debate.description %>
-            <%= render "shared/tags", debate: debate %>
+            <div class="truncate"></div>
           </div>
+          <%= render "shared/tags", debate: debate %>
         </div>
-
-        <div id="<%= dom_id(debate) %>_votes" class="small-12 medium-3 column">
-          <%= render 'debates/votes_min', debate: debate %>
-        </div>
-
       </div>
+
+      <div id="<%= dom_id(debate) %>_votes" class="small-12 medium-3 column text-center">
+          <%= render 'debates/votes', debate: debate %>
+      </div>
+
     </div>
   </div>
 </div>

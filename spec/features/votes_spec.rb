@@ -18,11 +18,11 @@ feature 'Votes' do
 
       expect(page).to have_content "0 votes"
 
-      within('#in_favor') do
+      within('.in-favor') do
         expect(page).to have_content "0%"
       end
 
-      within('#against')  do
+      within('.against')  do
         expect(page).to have_content "0%"
       end
     end
@@ -35,23 +35,23 @@ feature 'Votes' do
 
       expect(page).to have_content "2 votes"
 
-      within('#in_favor') do
+      within('.in-favor') do
         expect(page).to have_content "50%"
       end
 
-      within('#against')  do
+      within('.against')  do
         expect(page).to have_content "50%"
       end
     end
 
     scenario 'Create from debate show', :js do
-      find('#in_favor a').click
+      find('.in-favor a').click
 
-      within('#in_favor') do
+      within('.in-favor') do
         expect(page).to have_content "100%"
       end
 
-      within('#against')  do
+      within('.against')  do
         expect(page).to have_content "0%"
       end
 
@@ -62,13 +62,13 @@ feature 'Votes' do
       visit debates_path
 
       within("#featured-debates") do
-        find('#in_favor a').click
+        find('.in-favor a').click
 
-        within('#in_favor') do
+        within('.in-favor') do
           expect(page).to have_content "100%"
         end
 
-        within('#against')  do
+        within('.against')  do
           expect(page).to have_content "0%"
         end
 
@@ -84,13 +84,13 @@ feature 'Votes' do
       within("#debates") do
         expect(page).to have_css(".debate", count: 1)
 
-        find('#in_favor a').click
+        find('.in-favor a').click
 
-        within('#in_favor') do
+        within('.in-favor') do
           expect(page).to have_content "100%"
         end
 
-        within('#against')  do
+        within('.against')  do
           expect(page).to have_content "0%"
         end
 
@@ -100,14 +100,14 @@ feature 'Votes' do
     end
 
     scenario 'Update', :js do
-      find('#in_favor a').click
-      find('#against a').click
+      find('.in-favor a').click
+      find('.against a').click
 
-      within('#in_favor') do
+      within('.in-favor') do
         expect(page).to have_content "0%"
       end
 
-      within('#against')  do
+      within('.against')  do
         expect(page).to have_content "100%"
       end
 
@@ -115,14 +115,14 @@ feature 'Votes' do
     end
 
     scenario 'Trying to vote multiple times', :js do
-      find('#in_favor a').click
-      find('#in_favor a').click
+      find('.in-favor a').click
+      find('.in-favor a').click
 
-      within('#in_favor') do
+      within('.in-favor') do
         expect(page).to have_content "100%"
       end
 
-      within('#against')  do
+      within('.against')  do
         expect(page).to have_content "0%"
       end
 

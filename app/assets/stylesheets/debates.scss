@@ -1,8 +1,6 @@
 // Table of Contents
 //
 // 01. Variables
-//  01.1. Fonts
-//  01.2. Colors
 // 02. Global styles
 // 03. Header
 // 04. Footer
@@ -19,43 +17,7 @@
 // 01. Variables
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
-// 01.1. Fonts
-// - - - - - - - - - - - -
-
-$font-family-sans-serif: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-$line-height: rem-calc(24);
-
-// 01.2. Colors
-// - - - - - - - - - - - -
-
-$background:        #E9E9E9;
-$border:            #DEE0E3;
-$brand:             #0077B9;
-
-$debates:           #008CCF;
-
-$comments-bg:       #F1F1F1;//FAF9F8;
-$comments-info:     #A5B2B9;
-$comments-text:     #3F4549;
-
-
-$header-color:      #292B33;
-$link:              #0077B9;
-
-$tags-bg:           #FAFAFA;
-$tags-border:       #F0F0F0;
-$tags-color:        #8F8F8F;
-
-$text-color:        #222222;
-$text-medium:       #999999;
-$text-light:        #A3A6AD;
-
-$votes:             #A0AEC4;
-$votes-background:  #F0F0F0;
-$votes-border:      #D8D8D8;
-$votes-unlike:      #EF8585;
-$votes-like:        #7BD2A8;
-$votes-text:        #54627C;
+@import "variables";
 
 // 02. Global styles
 // - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -66,19 +28,15 @@ $votes-text:        #54627C;
 }
 
 body {
-  background: white;
+  background: $background;
   font-family: $font-family-sans-serif;
   font-size: rem-calc(13);
   font-weight: normal;
   text-rendering: optimizeLegibility;
 }
 
-.row {
-  max-width: 1170px;
-}
-
-.row-full {
-  max-width: 100% !important;
+.button {
+  padding: rem-calc(15) rem-calc(32);
 }
 
 .clear {
@@ -87,6 +45,14 @@ body {
 
 .inline-block {
   display: inline-block;
+}
+
+.row {
+  max-width: 1170px;
+}
+
+.row-full {
+  max-width: 100% !important;
 }
 
 ::selection, ::-moz-selection {
@@ -126,6 +92,7 @@ header {
 
   .button {
     color: white;
+    font-family: inherit;
     margin-top: $line-height*2;
   }
 }
@@ -195,200 +162,253 @@ header {
 // 05. Debates
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
-aside {
-  .button {
-    margin-top: $line-height;
+@mixin votes {
+  border-top: 1px solid $votes-border;
+  padding: rem-calc(14) rem-calc(12);
+  background: $votes-background;
+  margin: 0 -12px;
+
+  .icon-like {
+    background: white;
+    border: 2px solid white;
+    border-radius: rem-calc(3);
+    color: $votes-neutral;
+    display: inline-block;
+    font-size: rem-calc(30);
+    line-height: rem-calc(30);
+    padding: rem-calc(3) rem-calc(6);
+    position: relative;
+    //when active => color: $votes-like;
+
+    &:hover {
+      background: $votes-like;
+      color: white;
+      cursor: pointer;
+    }
+
+    &:active {
+      border-color: $votes-like-act;
+    }
+  }
+
+  .icon-unlike {
+    background: white;
+    border: 2px solid white;
+    border-radius: rem-calc(3);
+    color: $votes-neutral;
+    display: inline-block;
+    font-size: rem-calc(30);
+    line-height: rem-calc(30);
+    padding: rem-calc(3) rem-calc(6);
+    position: relative;
+    //when active => color: $votes-unlike;
+
+    &:hover {
+      background: $votes-unlike;
+      color: white;
+      cursor: pointer;
+    }
+
+    &:active {
+      border-color: $votes-unlike-act;
+    }
+  }
+
+  .like {
+    line-height: rem-calc(48);
+    vertical-align: super;
+
+    span {
+      color: $votes-text;
+      display: inline-block;
+      font-size: rem-calc(16);
+      font-weight: lighter;
+      line-height: $line-height*2;
+      padding-left: rem-calc(8);
+      vertical-align: top;
+    }
+  }
+
+  .unlike {
+    @extend .like;
+  }
+
+  .total-votes {
+    color: $votes-text;
+    float: right;
+    line-height: $line-height*2;
+  }
+
+  .divider {
+    margin: 0 rem-calc(6);
   }
 }
 
 // 05.1. Debates Index
 // - - - - - - - - - - - -
 
-.debates-list {
-  margin-top: $line-height;
-}
+.debate-featured {
+  margin-bottom: rem-calc(34);
+  margin-top: rem-calc(23);
 
-.debates-featured {
+  .panel {
+    background: white;
+    border: 1px solid;
+    border-color: #e5e6e9 #dfe0e4 #d0d1d5;
+    border-radius: rem-calc(3);
+    margin-bottom: $line-height;
+    padding: rem-calc(24) rem-calc(12) 0 rem-calc(12);
 
-  .debate {
+    .debate-content {
+      min-height: $line-height*14.71;
+    }
 
-    .panel {
-      background: white;
-      box-shadow: 0 2px 0 rgba(0,0,0,.1);
-      padding: rem-calc(20) rem-calc(20) 0 rem-calc(20);
+    .label {
+      background: none;
+      clear: both;
+      color: $debates;
+      display: block;
+      font-weight: bold;
+      text-transform: uppercase;
+      padding-left: 0;
+      padding-top: 0;
+    }
 
-      .debate-content {
-        min-height: $line-height*11;
-      }
+    .icon-comment-quotes {
+      color: $debates;
+      font-size: rem-calc(36);
+      line-height: $line-height;
+      position: absolute;
+      right: rem-calc(18);
+      top: rem-calc(24);
+    }
 
-      .label {
-        background: none;
+    h3 {
+      font-weight: bold;
+      margin: rem-calc(8) 0 0 0;
+      min-height: rem-calc(65);
+
+      a {
         clear: both;
-        color: $debates;
+        color: $header-color;
         display: block;
-        font-weight: bold;
-        text-transform: uppercase;
-        padding: 0;
-      }
-
-      .icon-quote-right {
-        color: $debates;
-        font-size: rem-calc(30);
+        font-size: rem-calc(16);
         line-height: $line-height;
-        position: absolute;
-        right: $line-height;
-        top: $line-height/2;
       }
+    }
+
+    .debate-info {
+      color: $text-light;
+      font-weight: lighter;
+      margin-bottom: 0;
 
       .icon-chat-bubble-two {
-        vertical-align: middle;
-      }
-
-      h3 {
-        margin: rem-calc(12) 0 0 0;
-        font-weight: bold;
-
-        a {
-          clear: both;
-          color: $header-color;
-          display: block;
-          font-size: rem-calc(16);
-          line-height: $line-height;
-        }
-      }
-
-      .debate-info {
-        color: $text-light;
-        font-weight: lighter;
-        margin-bottom: 0;
-
-        .icon-chat-bubble-two {
-          font-size: rem-calc(16);
-        }
-      }
-
-      p {
-        color: $text-color;
-        font-size: rem-calc(13);
-        line-height: $line-height;
-        margin-bottom: $line-height/2;
+        font-size: rem-calc(16);
+        vertical-align: top;
       }
     }
 
-    .votes {
-      border-top: 1px solid $votes-border;
-      padding: $line-height/2 0;
-
-      .icon-like {
-        background: $votes-background;
-        border: 1px solid $votes-border;
-        border-radius: rem-calc(3);
-        color: $votes;
-        display: inline-block;
-        font-size: rem-calc(30);
-        line-height: rem-calc(30);
-        padding: rem-calc(6) rem-calc(12);
-        //when active => color: $votes-like;
-
-        &:hover {
-          background: white;
-          color: $brand;
-        }
-      }
-
-      .icon-unlike {
-        background: $votes-background;
-        border: 1px solid $votes-border;
-        border-radius: rem-calc(3);
-        color: $votes;
-        display: inline-block;
-        font-size: rem-calc(30);
-        line-height: rem-calc(30);
-        padding: rem-calc(6) rem-calc(12);
-        //when active => color: $votes-unlike;
-
-        &:hover {
-          background: white;
-          color: $brand;
-        }
-      }
-
-      .like {
-        line-height: rem-calc(48);
-        vertical-align: super;
-
-        span {
-          color: $votes-text;
-          display: inline-block;
-          font-size: rem-calc(18);
-          font-weight: bold;
-          line-height: $line-height*2;
-          padding-left: rem-calc(6);
-          vertical-align: top;
-        }
-      }
-
-      .unlike {
-        @extend .like;
-      }
-
-      .total-votes {
-        color: $votes-text;
-        line-height: $line-height*2;
-      }
-
-      .divider {
-        margin: 0 rem-calc(3);
-      }
+    .debate-description {
+      color: $text-color;
+      font-size: rem-calc(13);
+      height: $line-height*6.5;
+      line-height: $line-height;
+      margin-bottom: $line-height/2;
+      margin-top: $line-height;
+      overflow: hidden;
+      position: relative;
     }
+
+    .truncate {
+      background: url('truncate.png');
+      background-repeat: repeat-x;
+      bottom: 0;
+      height: 24px;
+      position: absolute;
+      width: 100%;
+    }
+
+    p {
+      color: $text-color;
+      font-size: rem-calc(13);
+      line-height: $line-height;
+      margin-bottom: $line-height/2;
+    }
+  }
+
+  .votes {
+    @include votes;
   }
 }
 
-.debates-index {
-  @extend .debates-featured;
+.debates-list {
+  margin-bottom: $line-height*2;
+}
 
-  .debate {
-    margin-bottom: rem-calc(6);
+.debate {
+  @extend .debate-featured;
+  margin-bottom: 0;
+  margin-top: 0;
 
-    .panel {
-      border: 0;
-      box-shadow: none;
-      margin-bottom: 0;
-      padding: 0 rem-calc(6);
+  .panel {
+    margin-bottom: 0;
+    min-height: $line-height*8;
+    padding: 0 rem-calc(12) rem-calc(2) rem-calc(12);
 
-      p {
-        text-align: justify;
-      }
+    &:first-child {
+      padding-top: $line-height;
+    }
 
-      .debate-content {
-        min-height: 0;
-      }
+    .label {
+      line-height: $line-height;
+      padding-bottom: 0;
+    }
 
-      .icon-quote-right {
-        font-size: rem-calc(14);
-        position: initial;
-        vertical-align: bottom;
-      }
+    h3 {
+      margin-top: 0;
+      min-height: $line-height*2;
+    }
 
-      .label {
-        line-height: $line-height;
-        margin-right: rem-calc(5);
+    p {
+      text-align: justify;
+    }
+
+    .debate-content {
+      margin: 0;
+      min-height: 0;
+
+      .tags {
+        display: block;
       }
     }
 
-    .votes {
-      border: 0;
-      margin-top: $line-height;
+    .icon-comment-quotes {
+      font-size: rem-calc(18);
+      left: rem-calc(60);
+      top: 0;
+    }
 
-      .like {
+    .debate-description {
+      height: $line-height*3;
+      margin-top: 0;
+    }
+  }
 
-        span {
-          color: $votes-text;
-          display: block;
-          font-size: rem-calc(18);
-          font-weight: bold;
-          line-height: $line-height*1.5;
-        }
+  .votes {
+    border: 0;
+
+    .total-votes {
+      display: block;
+      float: none;
+      line-height: $line-height;
+    }
+
+    .like {
+
+      span {
+        color: $votes-text;
+        display: block;
+        line-height: $line-height/2;
       }
     }
   }
@@ -452,77 +472,22 @@ aside {
     font-weight: bold;
   }
 
+  h3 {
+    border-bottom: 1px solid $border;
+    font-size: rem-calc(18);
+    margin: 0 0 $line-height 0;
+    text-transform: uppercase;
+  }
+
   .votes {
-    padding-top: 0;
-
-    @media (min-width: 480px) {
-      padding-top: $line-height*1.5;
-    }
-
-    h3 {
-      border-bottom: 1px solid $border;
-      font-size: rem-calc(18);
-      margin: 0 0 $line-height 0;
-      text-transform: uppercase;
-    }
-
-    .icon-like {
-      background: $votes-background;
-      border: 1px solid $votes-border;
-      border-radius: rem-calc(3);
-      color: $votes;
-      display: inline-block;
-      font-size: rem-calc(30);
-      line-height: rem-calc(30);
-      padding: rem-calc(6) rem-calc(12);
-      //when active => color: $votes-like;
-
-      &:hover {
-        background: white;
-        color: $brand;
-      }
-    }
-
-    .icon-unlike {
-      background: $votes-background;
-      border: 1px solid $votes-border;
-      border-radius: rem-calc(3);
-      color: $votes;
-      display: inline-block;
-      font-size: rem-calc(30);
-      line-height: rem-calc(30);
-      padding: rem-calc(6) rem-calc(12);
-      //when active => color: $votes-unlike;
-
-      &:hover {
-        background: white;
-        color: $brand;
-      }
-    }
-
-    .like {
-
-      span {
-        color: $votes-text;
-        display: block;
-        font-size: rem-calc(18);
-        font-weight: bold;
-        line-height: $line-height*1.5;
-      }
-    }
-
-    .unlike {
-      @extend .like;
-    }
+    @include votes;
+    border: 0;
+    margin: 0;
 
     .total-votes {
-      color: $votes-text;
-      font-size: rem-calc(14);
+      display: block;
+      float: none;
       line-height: $line-height;
-    }
-
-    .divider {
-      margin: 0 rem-calc(12);
     }
   }
 
@@ -610,6 +575,7 @@ aside {
     color: $tags-color;
     display: inline-block;
     font-size: rem-calc(13);
+    line-height: rem-calc(22);
     margin-bottom: rem-calc(8);
     margin-right: rem-calc(8);
     padding: 0 rem-calc(6);
