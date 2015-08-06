@@ -20,11 +20,9 @@ es:
       votes: votos
       comment: Comentario
       comments: Comentarios
-      agree: Estoy de acuerdo
-      disagree: No estoy de acuerdo
     form:
       one_error: error
-      plural_errors: errores
+      multiple_errors: errores
       not_saved: "impidieron guardar el debate:"
       debate_title: Título del debate
       title_instructions: "Sé claro y conciso a la hora de poner un título, pero recuerda que debe explicar bien tu idea, ¡es tu carta de entrada!"
@@ -55,12 +53,17 @@ es:
     agree: Estoy de acuerdo
     disagree: No estoy de acuerdo
     supports: Apoyos
-    notice_thanks: "Gracias por votar."
-    notice_already_registered: "Tu voto ya ha sido registrado."
   account:
     show:
       title: "Mi cuenta"
       save_changes_submit: "Guardar cambios"
+      change_credentials_link: "Cambiar mi contraseña"
+      first_name_label: "Nombre"
+      last_name_label: "Apellidos"
+  recaptcha:
+    errors:
+      verification_failed: "La verificación por captcha falló"
   shared:
     tags_cloud:
         tags: Etiquetas
+

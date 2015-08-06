@@ -20,12 +20,9 @@ en:
       votes: votes
       comment: Comment
       comments: Comments
-      agree: I agree
-      disagree: I disagree
-      leave_comment: Comment
     form:
       one_error: error
-      plural_errors: errors
+      multiple_errors: errors
       not_saved: "prohibited this debate from being saved:"
       debate_title: Debate title
       title_instructions: "SBe clear and precise with the title, but make it informative"
@@ -56,12 +53,16 @@ en:
     agree: I agree
     disagree: I disagree
     supports: Supports
-    notice_thanks: "Thanks for voting."
-    notice_already_registered: "Your vote is already registered."
   account:
     show:
       title: "My account"
       save_changes_submit: "Save changes"
+      change_credentials_link: "Change my credentials"
+      first_name_label: "First Name"
+      last_name_label: "Last Name"
+  recaptcha:
+    errors:
+      verification_failed: "The captcha verification failed"
   shared:
     tags_cloud:
         tags: Tags

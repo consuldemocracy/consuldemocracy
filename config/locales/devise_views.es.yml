@@ -55,7 +55,7 @@ es:
       new:
         title: "Registrarse"
         first_name_label: "Nombre"
-        last_name_label: "Apellido"
+        last_name_label: "Apellidos"
         email_label: "Email"
         password_label: "Contraseña"
         min_length: "(mínimo %{min} caracteres)"
