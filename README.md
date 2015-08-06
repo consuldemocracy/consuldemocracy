@@ -1,5 +1,10 @@
 # Aplicación de Participación Ciudadana del Ayuntamiento de Madrid
 
+[![Build Status](https://travis-ci.org/AyuntamientoMadrid/participacion.svg?branch=master)](https://travis-ci.org/AyuntamientoMadrid/participacion)
+[![Code Climate](https://codeclimate.com/github/AyuntamientoMadrid/participacion/badges/gpa.svg)](https://codeclimate.com/github/AyuntamientoMadrid/participacion)
+[![Dependency Status](https://gemnasium.com/AyuntamientoMadrid/participacion.svg)](https://gemnasium.com/AyuntamientoMadrid/participacion)
+[![Coverage Status](https://coveralls.io/repos/AyuntamientoMadrid/participacion/badge.svg?branch=master&service=github)](https://coveralls.io/github/AyuntamientoMadrid/participacion?branch=master)
+
 Este es el repositorio de código abierto de la Aplicación de Participación Ciudadana del Ayuntamiento de Madrid.
 
 ## Estado del proyecto
@@ -22,8 +27,8 @@ cd participacion
 bundle install
 cp config/database.yml.example config/database.yml
 cp config/secrets.yml.example config/secrets.yml
-bundle exec bin/rake db:create db:schema_load
-RAILS_ENV=test bundle exec rake db:create db:schema_load
+bundle exec bin/rake db:create db:schema:load
+RAILS_ENV=test bundle exec rake db:create db:schema:load
 ```
 
 Para ejecutar la aplicación en local:

@@ -1,13 +1,16 @@
-<div id="debate-<%= debate.id %>" class="debates-index">
+<div id="debate-<%= debate.id %>" class="debate">
   <div class="panel">
     <div class="row">
+
       <div class="small-12 medium-9 column">
         <div class="debate-content">
           <span class="label left"><%= t("debates.debate.debate") %></span>
           <i class="icon-comment-quotes"></i>
           <h3><%= link_to debate.title, debate %></h3>
           <p class="debate-info">
-            <i class="icon-chat-bubble-two"></i>&nbsp;<%= pluralize(debate.comment_threads.count, t("debates.debate.comment"), t("debates.debate.comments")) %>
+            <i class="icon-chat-bubble-two"></i>&nbsp;
+            <%= pluralize(debate.comment_threads.count,
+                t("debates.debate.comment"), t("debates.debate.comments")) %>
           </p>
           <div class="debate-description">
             <%= debate.description %>
@@ -16,29 +19,11 @@
           <%= render "shared/tags", debate: debate %>
         </div>
       </div>
-      <div class="small-12 medium-3 column text-center">
-        <div class="votes">
-          <div class="inline-block in-favor">
-            <%= link_to debate_votes_path(debate, value: 'yes'), class: "like inline-block", title: t('votes.agree'), method: "post" do %>
-              <i class="icon-like"></i>
-              <span><%= percentage('likes', debate) %></span>
-            <% end %>
-          </div>
 
-          <span class="divider"></span>
-
-          <div class="inline-block against">
-            <%= link_to debate_votes_path(debate, value: 'no'), class: "unlike inline-block", title: t('votes.disagree'), method: "post" do %>
-              <i class="icon-unlike"></i>
-              <span><%= percentage('dislikes', debate) %></span>
-            <% end %>
-          </div>
-
-          <span class="total-votes">
-            <%= pluralize(debate.total_votes, t("debates.debate.vote"), t("debates.debate.votes")) %>
-          </span>
-        </div>
+      <div id="<%= dom_id(debate) %>_votes" class="small-12 medium-3 column text-center">
+          <%= render 'debates/votes', debate: debate %>
       </div>
+
     </div>
   </div>
 </div>

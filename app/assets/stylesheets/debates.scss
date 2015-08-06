@@ -247,7 +247,7 @@ header {
 // 05.1. Debates Index
 // - - - - - - - - - - - -
 
-.debates-featured {
+.debate-featured {
   margin-bottom: rem-calc(34);
   margin-top: rem-calc(23);
 
@@ -345,8 +345,8 @@ header {
   margin-bottom: $line-height*2;
 }
 
-.debates-index {
-  @extend .debates-featured;
+.debate {
+  @extend .debate-featured;
   margin-bottom: 0;
   margin-top: 0;
 

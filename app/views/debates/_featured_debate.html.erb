@@ -1,12 +1,15 @@
 <div class="small-12 medium-4 column">
-  <div id="debate-<%= featured_debate.id %>" class="debates-featured">
+  <div id="debate-<%= featured_debate.id %>" class="debate-featured">
     <div class="panel">
+
       <div class="debate-content">
         <span class="label left"><%= t("debates.debate.debate") %></span>
         <i class="icon-comment-quotes right"></i>
         <h3><%= link_to featured_debate.title, featured_debate %></h3>
         <p class="debate-info">
-          <i class="icon-chat-bubble-two"></i>&nbsp;<%= pluralize(featured_debate.comment_threads.count, t("debates.show.comment"), t("debates.show.comments")) %>
+          <i class="icon-chat-bubble-two"></i>&nbsp;
+          <%= pluralize(featured_debate.comment_threads.count,
+              t("debates.show.comment"), t("debates.show.comments")) %>
         </p>
         <div class="debate-description">
           <%= featured_debate.description %>
@@ -15,27 +18,12 @@
         <%= render "shared/tags", debate: featured_debate %>
       </div>
 
-      <div class="votes">
-        <div class="inline-block in-favor">
-          <%= link_to debate_votes_path(featured_debate, value: "yes"), class: "like", title: t('votes.agree'), method: "post" do %>
-            <i class="icon-like"></i>
-            <span><%= percentage('likes', featured_debate) %></span>
-          <% end %>
+      <div class="row">
+        <div id="<%= dom_id(featured_debate) %>_votes" class="small-12 column">
+          <%= render 'debates/votes', debate: featured_debate %>
         </div>
-
-        <span class="divider"></span>
-
-        <div class="inline-block against">
-          <%= link_to debate_votes_path(featured_debate, value: "no"), class: "unlike", title: t('votes.disagree'), method: "post" do %>
-            <i class="icon-unlike"></i>
-            <span><%= percentage('dislikes', featured_debate) %></span>
-          <% end %>
-        </div>
-
-        <span class="total-votes">
-          <%= pluralize(featured_debate.total_votes, t("debates.debate.vote"), t("debates.debate.votes")) %>
-        </span>
       </div>
+
     </div>
   </div>
 </div>
