@@ -5,13 +5,16 @@
 // 03. Header
 // 04. Footer
 // 05. Debates
-//   05.1. Debates Index
-//   05.2. Debates Show
+//   05.1. Debates index
+//   05.2. Debate show
+//   05.3. Debate new
 // 06. Comments
 // 07. Tags
 // 08. Login and Sign Up
 //   08.1. Login
 //   08.2. Sign Up
+// 09. Forms
+// 10. Alerts
 //
 
 // 01. Variables
@@ -162,6 +165,12 @@ header {
 // 05. Debates
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
+@mixin back {
+  color: $text-light;
+  font-size: rem-calc(13);
+  line-height: $line-height;
+}
+
 @mixin votes {
   border-top: 1px solid $votes-border;
   padding: rem-calc(14) rem-calc(12);
@@ -244,7 +253,7 @@ header {
   }
 }
 
-// 05.1. Debates Index
+// 05.1. Debates index
 // - - - - - - - - - - - -
 
 .debate-featured {
@@ -414,7 +423,7 @@ header {
   }
 }
 
-// 05.2. Debates Show
+// 05.2. Debate show
 // - - - - - - - - - - - -
 
 .debate-show {
@@ -422,9 +431,7 @@ header {
   padding: 0 rem-calc(12);
 
   .back {
-    color: $text-light;
-    font-size: rem-calc(13);
-    line-height: $line-height;
+    @include back;
   }
 
   .icon-angle-left {
@@ -496,6 +503,61 @@ header {
     margin-top: $line-height;
   }
 }
+
+// 05.3. Debate new
+// - - - - - - - - - - - -
+
+.debate-new {
+  background: white;
+  padding-top: $line-height;
+
+  .back {
+    @include back;
+  }
+
+  h1 {
+    clear: both;
+    font-size: rem-calc(36);
+    font-weight: bold;
+    line-height: $line-height*2;
+    margin-bottom: $line-height;
+  }
+
+  .icon-comment-quotes {
+    color: $debates;
+    font-size: rem-calc(60);
+    line-height: $line-height;
+    opacity: .5;
+  }
+
+  h2 {
+    clear: both;
+    font-size: rem-calc(20);
+    font-weight: bold;
+    line-height: $line-height;
+    margin: 0;
+  }
+
+  .recommendations {
+    list-style-type: none;
+    margin-left: 0;
+    margin-top: $line-height;
+
+    li {
+      font-size: rem-calc(12);
+      margin: rem-calc(12) 0;
+
+      &:before {
+        color: $debates;
+        content: "l ";
+        font-family: "icons" !important;
+      }
+    }
+  }
+}
+
+
+
 
 // 06. Comments
 // - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -658,7 +720,71 @@ header {
   }
 }
 
+// 09. Forms
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+form {
+
+  label {
+    font-weight: bold;
+    line-height: $line-height;
+  }
+
+  input[type]:not([type=submit]) {
+    background: $input-bg;
+    height: $line-height*2;
+    margin-bottom: rem-calc(16);
+  }
+
+  .note {
+    display: block;
+    font-size: rem-calc(13);
+    margin-bottom: rem-calc(12);
+  }
+
+  .ckeditor {
+    margin-bottom: $line-height;
+    min-height: $line-height*14;
+  }
+
+  .checkbox {
+    display: inline-block;
+    font-size: rem-calc(14);
+    line-height: $line-height*2;
+    margin: 0 0 0 rem-calc(6);
+    vertical-align: top;
+  }
+}
 
 
+// 10. Alerts
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+.alert-box {
+
+  &.success {
+    background-color: $success-bg;
+    border-color: $success-border;
+    color: $success-color;
+  }
+
+  &.info {
+    background-color: $info-bg;
+    border-color: $info-border;
+    color: $info-color;
+  }
+
+  &.warning {
+    background-color: $warning-bg;
+    border-color: $warning-border;
+    color: $warning-color;
+  }
+
+  &.alert {
+    background-color: $alert-bg;
+    border-color: $alert-border;
+    color: $alert-color;
+  }
+}
 
 
