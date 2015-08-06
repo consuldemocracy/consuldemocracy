@@ -16,7 +16,7 @@
       </div>
 
       <div class="votes">
-        <div class="in-favor">
+        <div class="inline-block in-favor">
           <%= link_to debate_votes_path(featured_debate, value: "yes"), class: "like", title: t('votes.agree'), method: "post" do %>
             <i class="icon-like"></i>
             <span><%= percentage('likes', featured_debate) %></span>
@@ -25,7 +25,7 @@
 
         <span class="divider"></span>
 
-        <div class="against">
+        <div class="inline-block against">
           <%= link_to debate_votes_path(featured_debate, value: "no"), class: "unlike", title: t('votes.disagree'), method: "post" do %>
             <i class="icon-unlike"></i>
             <span><%= percentage('dislikes', featured_debate) %></span>
