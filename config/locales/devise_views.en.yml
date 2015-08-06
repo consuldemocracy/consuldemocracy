@@ -56,6 +56,8 @@ en:
         title: "Sign up"
         first_name_label: "First name"
         last_name_label: "Last name"
+        nickname_label: "Nickname"
+        use_nickname_label: "Use nickname"
         email_label: "Email"
         password_label: "Password"
         min_length: "(%{min} characters minimum)"
