@@ -12,7 +12,7 @@
               t("debates.show.comment"), t("debates.show.comments")) %>
         </p>
         <div class="debate-description">
-          <%= featured_debate.description %>
+          <%= link_to featured_debate.description, featured_debate %>
           <div class="truncate"></div>
         </div>
         <%= render "shared/tags", debate: featured_debate %>
