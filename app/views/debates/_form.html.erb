@@ -1,37 +1,47 @@
 <%= form_for(@debate) do |f| %>
-    <% if @debate.errors.any? %>
-        <div id="error_explanation" class="alert-box alert radius">
-            <p><%= pluralize(@debate.errors.count, t("debates.form.one_error"), t("debates.form.multiple_errors")) %> <%= t("debates.form.not_saved") %>:</p>
-            <ul>
-                <% @debate.errors.full_messages.each do |message| %>
-                    <li><%= message %></li>
-                <% end %>
-            </ul>
-        </div>
-    <% end %>
-
-    <p><strong><%= t("debates.form.debate_title") %></strong></p>
-    <p><%= t("debates.form.title_instructions") %></p>
-    <%= f.text_field :title, maxlength: Debate::TITLE_LENGTH %>
-
-  <br/>
-  <p><strong><%= t("debates.form.debate_text") %></strong></p>
-  <p><%= t("debates.form.text_instructions") %></p>
-  <%= f.cktext_area :description, ckeditor: { language: I18n.locale } %>
-  <div>
-    <%= f.label :tag_list, t("debates.form.tags_label") %><br />
-    <%= f.text_field :tag_list, value: @debate.tag_list.to_s %>
-  </div>
-
-  <% if @debate.new_record? %>
-    <%= f.check_box :terms_of_service %>
-    <%= t("debates.form.accept_terms") %>
+  <% if @debate.errors.any? %>
+    <div id="error_explanation" class="alert-box alert radius">
+      <p><strong><%= pluralize(@debate.errors.count, t("debates.form.error"), t("debates.form.errors")) %> <%= t("debates.form.not_saved") %></strong></p>
+      <ul>
+          <% @debate.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+          <% end %>
+      </ul>
+    </div>
   <% end %>
 
-  <%= render 'shared/captcha', resource: @debate %>
+  <div class="row">
+    <div class="small-12 column">
+      <%= f.label :title, t("debates.form.debate_title") %>
+      <span class="note"><%= t("debates.form.title_instructions") %></span>
+      <%= f.text_field :title, maxlength: Debate::TITLE_LENGTH %>
+    </div>
 
-  <div class="actions">
-    <%= f.submit(class: "button radius") %>
+    <div class="ckeditor small-12 column">
+      <%= f.label :description, t("debates.form.debate_text") %>
+      <span class="note"><%= t("debates.form.text_instructions") %></span>
+      <%= f.cktext_area :description, ckeditor: { language: I18n.locale } %>
+    </div>
+
+    <div class="small-12 column">
+      <%= f.label :tag_list, t("debates.form.tags_label") %>
+      <span class="note"><%= t("debates.form.tags_instructions") %></span>
+      <%= f.text_field :tag_list, value: @debate.tag_list.to_s %>
+    </div>
+
+    <div class="small-12 column">
+      <% if @debate.new_record? %>
+        <%= f.check_box :terms_of_service %>
+        <span class="checkbox"><%= t("debates.form.accept_terms") %></span>
+      <% end %>
+    </div>
+
+    <div class="small-12 column">
+      <%= render 'shared/captcha', resource: @debate %>
+    </div>
+
+    <div class="actions small-12 column">
+      <%= f.submit(class: "button radius") %>
+    </div>
   </div>
-  <br/>
 <% end %>
