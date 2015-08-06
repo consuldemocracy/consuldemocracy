@@ -1,5 +1,8 @@
 require 'numeric'
 class Debate < ActiveRecord::Base
+
+  TITLE_LENGTH = Debate.columns.find{|c| c.name == 'title'}.limit
+
   acts_as_votable
   acts_as_commentable
   acts_as_taggable
