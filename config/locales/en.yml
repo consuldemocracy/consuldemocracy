@@ -21,14 +21,15 @@ en:
       comment: Comment
       comments: Comments
     form:
-      one_error: error
-      multiple_errors: errors
+      error: error
+      errors: errors
       not_saved: "prohibited this debate from being saved:"
       debate_title: Debate title
       title_instructions: "SBe clear and precise with the title, but make it informative"
       debate_text: Ellaborate your opinion
       text_instructions: "Explain your opinion, go into details, tell us what's the purpose of your idea"
-      tags_label: "Topics (comma separated)"
+      tags_label: Topics
+      tags_instructions: Comma separated
       accept_terms: I accept the privacy policy and the legal terms
     show:
       back_link: Back
@@ -44,6 +45,10 @@ en:
     new:
       publish_new: Publish new debate
       back_link: Back
+      recommendations_title: Tips for creating a debate
+      recommendation_one: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore"
+      recommendation_two: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore"
+      recommendation_three: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore"
   comments_helper:
     comment_link: Comment
     comment_button: Publish comment

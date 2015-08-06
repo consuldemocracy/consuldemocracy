@@ -21,14 +21,15 @@ es:
       comment: Comentario
       comments: Comentarios
     form:
-      one_error: error
-      multiple_errors: errores
+      error: error
+      errors: errores
       not_saved: "impidieron guardar el debate:"
       debate_title: Título del debate
       title_instructions: "Sé claro y conciso a la hora de poner un título, pero recuerda que debe explicar bien tu idea, ¡es tu carta de entrada!"
       debate_text: Describe tu opinión
       text_instructions: "Explica con todo el detalle que puedas y de una manera sencilla la idea y que crees que conseguiríamos con ella"
-      tags_label: "Temas (separados por comas)"
+      tags_label: Temas
+      tags_instructions: Separados por comas
       accept_terms: Acepto la política de privacidad y el aviso legal
     show:
       back_link: Volver
@@ -44,6 +45,10 @@ es:
     new:
       publish_new: Publicar debate nuevo
       back_link: Volver
+      recommendations_title: Recomendaciones para crear un debate
+      recommendation_one: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore"
+      recommendation_two: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore"
+      recommendation_three: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore"
   comments_helper:
     comment_link: Comentar
     comment_button: Publicar comentario
