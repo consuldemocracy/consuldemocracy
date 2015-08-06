@@ -51,6 +51,7 @@ group :development, :test do
   gem 'launchy'
   gem 'quiet_assets'
   gem 'letter_opener_web', '~> 1.2.0'
+  gem 'i18n-tasks'
 end
 
 group :test do
