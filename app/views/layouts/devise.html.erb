@@ -12,7 +12,7 @@
     <script src="https://www.google.com/recaptcha/api.js?hl=<%= I18n.locale %>"></script>
   </head>
 
-  <body>
+  <body class="auth-page">
 
     <% if notice %>
         <p class="alert-box success"><%= notice %></p>
@@ -21,6 +21,17 @@
     <% if alert %>
         <p class="alert-box"><%= alert %></p>
     <% end %>
+
+    <div class="row">
+      <div class="small-12 medium-8 large-5 column small-centered">
+        <h1>
+          <%= link_to root_path do %>
+            <%= image_tag('logo_madrid_white.png', class: 'left', size: '96x96') %>
+            <%= t("layouts.header.open_gov", open: "<strong>#{t('layouts.header.open')}</strong>").html_safe %> | <span><%= t("layouts.header.participation") %></span>
+          <% end %>
+        </h1>
+      </div>
+    </div>
 
     <%= yield %>
 

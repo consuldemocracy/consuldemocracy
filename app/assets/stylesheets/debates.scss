@@ -611,14 +611,45 @@ header {
 // 08.1. Login
 // - - - - - - - - - - - -
 
+.auth-page {
+  background: url('auth_bg.jpg');
+  margin-top: $line-height;
+
+  @media (min-width: 480px) {
+    margin-top: $line-height*2;
+  }
+
+  h1 {
+
+    a {
+      color: white;
+      font-family: 'Lato';
+      font-size: rem-calc(20);
+      font-weight: lighter;
+      line-height: $line-height*4;
+      padding-left: rem-calc(6);
+
+      span {
+        font-size: rem-calc(16);
+        font-weight: lighter;
+        vertical-align: top;
+      }
+
+      @media (min-width: 480px) {
+        font-size: rem-calc(30);
+        span {
+          font-size: rem-calc(20);
+        }
+      }
+    }
+  }
+}
+
 .auth {
-  background: $background;
-  box-shadow: 0px -4px 5px $background;
   min-height: $line-height*20;
 
   .panel {
     background: white;
-    margin-top: $line-height*2;
 
     h1 {
       font-size: rem-calc(30);
