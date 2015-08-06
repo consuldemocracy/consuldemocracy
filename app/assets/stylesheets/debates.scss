@@ -162,6 +162,88 @@ header {
 // 05. Debates
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
+@mixin votes {
+  border-top: 1px solid $votes-border;
+  padding: rem-calc(14) rem-calc(12);
+  background: $votes-background;
+  margin: 0 -12px;
+
+  .icon-like {
+    background: white;
+    border: 2px solid white;
+    border-radius: rem-calc(3);
+    color: $votes-neutral;
+    display: inline-block;
+    font-size: rem-calc(30);
+    line-height: rem-calc(30);
+    padding: rem-calc(3) rem-calc(6);
+    position: relative;
+    //when active => color: $votes-like;
+
+    &:hover {
+      background: $votes-like;
+      color: white;
+      cursor: pointer;
+    }
+
+    &:active {
+      border-color: $votes-like-act;
+    }
+  }
+
+  .icon-unlike {
+    background: white;
+    border: 2px solid white;
+    border-radius: rem-calc(3);
+    color: $votes-neutral;
+    display: inline-block;
+    font-size: rem-calc(30);
+    line-height: rem-calc(30);
+    padding: rem-calc(3) rem-calc(6);
+    position: relative;
+    //when active => color: $votes-unlike;
+
+    &:hover {
+      background: $votes-unlike;
+      color: white;
+      cursor: pointer;
+    }
+
+    &:active {
+      border-color: $votes-unlike-act;
+    }
+  }
+
+  .like {
+    line-height: rem-calc(48);
+    vertical-align: super;
+
+    span {
+      color: $votes-text;
+      display: inline-block;
+      font-size: rem-calc(16);
+      font-weight: lighter;
+      line-height: $line-height*2;
+      padding-left: rem-calc(8);
+      vertical-align: top;
+    }
+  }
+
+  .unlike {
+    @extend .like;
+  }
+
+  .total-votes {
+    color: $votes-text;
+    float: right;
+    line-height: $line-height*2;
+  }
+
+  .divider {
+    margin: 0 rem-calc(6);
+  }
+}
+
 // 05.1. Debates Index
 // - - - - - - - - - - - -
 
@@ -255,85 +337,7 @@ header {
   }
 
   .votes {
-    border-top: 1px solid $votes-border;
-    padding: rem-calc(14) rem-calc(12);
-    background: $votes-background;
-    margin: 0 -12px;
-
-    .icon-like {
-      background: white;
-      border: 2px solid white;
-      border-radius: rem-calc(3);
-      color: $votes-neutral;
-      display: inline-block;
-      font-size: rem-calc(30);
-      line-height: rem-calc(30);
-      padding: rem-calc(3) rem-calc(6);
-      position: relative;
-      //when active => color: $votes-like;
-
-      &:hover {
-        background: $votes-like;
-        color: white;
-        cursor: pointer;
-      }
-
-      &:active {
-        border-color: $votes-like-act;
-      }
-    }
-
-    .icon-unlike {
-      background: white;
-      border: 2px solid white;
-      border-radius: rem-calc(3);
-      color: $votes-neutral;
-      display: inline-block;
-      font-size: rem-calc(30);
-      line-height: rem-calc(30);
-      padding: rem-calc(3) rem-calc(6);
-      position: relative;
-      //when active => color: $votes-unlike;
-
-      &:hover {
-        background: $votes-unlike;
-        color: white;
-        cursor: pointer;
-      }
-
-      &:active {
-        border-color: $votes-unlike-act;
-      }
-    }
-
-    .like {
-      line-height: rem-calc(48);
-      vertical-align: super;
-
-      span {
-        color: $votes-text;
-        display: inline-block;
-        font-size: rem-calc(16);
-        font-weight: lighter;
-        line-height: $line-height*2;
-        padding-left: rem-calc(8);
-        vertical-align: top;
-      }
-    }
-
-    .unlike {
-      @extend .like;
-    }
-
-    .total-votes {
-      color: $votes-text;
-      float: right;
-      line-height: $line-height*2;
-    }
-
-    .divider {
-      margin: 0 rem-calc(6);
-    }
+    @include votes;
   }
 }
 
@@ -394,9 +398,9 @@ header {
     border: 0;
 
     .total-votes {
+      display: block;
       float: none;
       line-height: $line-height;
-      display: block;
     }
 
     .like {
@@ -468,77 +472,22 @@ header {
     font-weight: bold;
   }
 
+  h3 {
+    border-bottom: 1px solid $border;
+    font-size: rem-calc(18);
+    margin: 0 0 $line-height 0;
+    text-transform: uppercase;
+  }
+
   .votes {
-    padding-top: 0;
-
-    @media (min-width: 480px) {
-      padding-top: $line-height*1.5;
-    }
-
-    h3 {
-      border-bottom: 1px solid $border;
-      font-size: rem-calc(18);
-      margin: 0 0 $line-height 0;
-      text-transform: uppercase;
-    }
-
-    .icon-like {
-      background: $votes-background;
-      border: 1px solid $votes-border;
-      border-radius: rem-calc(3);
-      color: $votes;
-      display: inline-block;
-      font-size: rem-calc(30);
-      line-height: rem-calc(30);
-      padding: rem-calc(6) rem-calc(12);
-      //when active => color: $votes-like;
-
-      &:hover {
-        background: white;
-        color: $brand;
-      }
-    }
-
-    .icon-unlike {
-      background: $votes-background;
-      border: 1px solid $votes-border;
-      border-radius: rem-calc(3);
-      color: $votes;
-      display: inline-block;
-      font-size: rem-calc(30);
-      line-height: rem-calc(30);
-      padding: rem-calc(6) rem-calc(12);
-      //when active => color: $votes-unlike;
-
-      &:hover {
-        background: white;
-        color: $brand;
-      }
-    }
-
-    .like {
-
-      span {
-        color: $votes-text;
-        display: block;
-        font-size: rem-calc(18);
-        font-weight: bold;
-        line-height: $line-height*1.5;
-      }
-    }
-
-    .unlike {
-      @extend .like;
-    }
+    @include votes;
+    border: 0;
+    margin: 0;
 
     .total-votes {
-      color: $votes-text;
-      font-size: rem-calc(14);
+      display: block;
+      float: none;
       line-height: $line-height;
-    }
-
-    .divider {
-      margin: 0 rem-calc(12);
     }
   }
 

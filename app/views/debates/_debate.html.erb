@@ -18,17 +18,21 @@
       </div>
       <div class="small-12 medium-3 column text-center">
         <div class="votes">
-          <%= link_to debate_votes_path(debate, value: 'yes'), class: "like inline-block", title: t('votes.agree'), method: "post" do %>
-            <i class="icon-like"></i>
-            <span><%= percentage('likes', debate) %></span>
-          <% end %>
+          <div class="in-favor">
+            <%= link_to debate_votes_path(debate, value: 'yes'), class: "like inline-block", title: t('votes.agree'), method: "post" do %>
+              <i class="icon-like"></i>
+              <span><%= percentage('likes', debate) %></span>
+            <% end %>
+          </div>
 
           <span class="divider"></span>
 
-          <%= link_to debate_votes_path(debate, value: 'no'), class: "unlike inline-block", title: t('votes.disagree'), method: "post" do %>
-            <i class="icon-unlike"></i>
-            <span><%= percentage('dislikes', debate) %></span>
-          <% end %>
+          <div class="against">
+            <%= likenk_to debate_votes_path(debate, value: 'no'), class: "unlike inline-block", title: t('votes.disagree'), method: "post" do %>
+              <i class="icon-unlike"></i>
+              <span><%= percentage('dislikes', debate) %></span>
+            <% end %>
+          </div>
 
           <span class="total-votes">
             <%= pluralize(debate.total_votes, t("debates.debate.vote"), t("debates.debate.votes")) %>
