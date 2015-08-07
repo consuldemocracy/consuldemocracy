@@ -114,6 +114,9 @@ GEM
       json
       thread
       thread_safe
+    email_spec (1.6.0)
+      launchy (~> 2.1)
+      mail (~> 2.2)
     erubis (2.7.0)
     execjs (2.5.2)
     factory_girl (4.5.0)
@@ -305,6 +308,7 @@ DEPENDENCIES
   coveralls
   database_cleaner
   devise
+  email_spec
   factory_girl_rails
   foundation-rails
   i18n-tasks
