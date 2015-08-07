@@ -27,8 +27,8 @@ cd participacion
 bundle install
 cp config/database.yml.example config/database.yml
 cp config/secrets.yml.example config/secrets.yml
-bundle exec bin/rake db:create db:schema:load
-RAILS_ENV=test bundle exec rake db:create db:schema:load
+bundle exec bin/rake db:setup
+RAILS_ENV=test bundle exec rake db:setup
 ```
 
 Para ejecutar la aplicación en local:
