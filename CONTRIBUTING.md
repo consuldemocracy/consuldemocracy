@@ -43,3 +43,5 @@ Cuando quieras resolver una incidencia mediante código:
   * Lo que se esperaba que pasara
   * Lo que ha pasado
 * También es buena idea que incluyas tu sistema operativo, navegador, versión de navegador y plugins instalados.
+
+!Gracias! :heart: :heart: :heart:
