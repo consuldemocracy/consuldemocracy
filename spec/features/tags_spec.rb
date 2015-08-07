@@ -8,11 +8,11 @@ feature 'Tags' do
 
     visit debates_path
 
-    within "#debate-#{earth.id}" do
+    within "#debate_#{earth.id}" do
       expect(page).to have_content "Medio Ambiente"
     end
 
-    within "#debate-#{money.id}" do
+    within "#debate_#{money.id}" do
       expect(page).to have_content "Economía"
     end
   end
