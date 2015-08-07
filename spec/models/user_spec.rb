@@ -86,11 +86,11 @@ describe User do
   end
 
   describe "moderator?" do
-    it "is false when the user is not an admin" do
+    it "is false when the user is not a moderator" do
       expect(subject.moderator?).to be false
     end
 
-    it "is true when the user is an admin" do
+    it "is true when the user is a moderator" do
       subject.save
       create(:moderator, user: subject)
       expect(subject.moderator?).to be true
