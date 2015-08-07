@@ -3,6 +3,18 @@
     <h1><%= t("account.show.title") %></h1>
 
     <%= form_for @account, as: :account, url: account_path do |f| %>
+
+      <% if @account.errors.any? %>
+        <div id="error_explanation" class="alert-box alert radius">
+          <p><strong><%= pluralize(@account.errors.count, t("debates.form.error"), t("debates.form.errors")) %> <%= t("debates.form.not_saved") %></strong></p>
+          <ul>
+              <% @account.errors.full_messages.each do |message| %>
+                  <li><%= message %></li>
+              <% end %>
+          </ul>
+        </div>
+      <% end %>
+
       <div class="row">
         <div class="small-12 medium-6 column">
           <%= f.label :first_name, t("account.show.first_name_label") %>
