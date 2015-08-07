@@ -11,6 +11,7 @@ es:
       open_city_slogan: Para que todos los madrileños decidamos que ciudad queremos tener.
       create_debate: Crea un debate
       my_account_link: Mi cuenta
+      language: Idioma de la página
   debates:
     index:
       create_debate: Crea un debate
