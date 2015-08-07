@@ -4,8 +4,12 @@ class User < ActiveRecord::Base
 
   acts_as_voter
 
+  validates :first_name, presence: true, unless: :use_nickname?
+  validates :last_name, presence: true, unless: :use_nickname?
+  validates :nickname, presence: true, if: :use_nickname?
+
   def name
-    "#{first_name} #{last_name}"
+    use_nickname? ? nickname : "#{first_name} #{last_name}"
   end
 
   def votes_on_debates(debates_ids = [])

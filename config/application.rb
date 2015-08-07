@@ -20,6 +20,11 @@ module Participacion
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     config.i18n.default_locale = :es
 
+    config.i18n.available_locales = [:en, :es]
+
+    # Add the new directories to the locales load path
+    config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}')]
+
     config.assets.paths << Rails.root.join("app", "assets", "fonts")
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
