@@ -1,12 +1,4 @@
-<% voted_classes = case @voted_values[debate.id]
-    when true
-      {in_favor: "voted", against: "no-voted"}
-    when false
-      {in_favor: "no-voted", against: "voted"}
-    else
-      {in_favor: "", against: ""}
-  end %>
-
+<% voted_classes = css_classes_for_debate_vote(@voted_values, debate) %>
 <div class="votes">
   <div class="in-favor inline-block">
     <%= link_to vote_debate_path(debate, value: 'yes'),
