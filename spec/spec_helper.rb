@@ -1,6 +1,7 @@
 require 'factory_girl_rails'
 require 'database_cleaner'
 require "email_spec"
+Dir["./spec/support/**/*.rb"].sort.each { |f| require f}
 
 RSpec.configure do |config|
   config.use_transactional_fixtures = false
@@ -10,6 +11,7 @@ RSpec.configure do |config|
   config.include FactoryGirl::Syntax::Methods
   config.include(EmailSpec::Helpers)
   config.include(EmailSpec::Matchers)
+  config.include(CommonActions)
   config.before(:suite) do
     DatabaseCleaner.clean_with :truncation
   end

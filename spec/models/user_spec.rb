@@ -34,6 +34,20 @@ describe User do
     expect(subject).to be_valid
   end
 
+  describe 'preferences' do
+    describe 'email_on_debate_comment' do
+      it 'should be false by default' do
+        expect(subject.email_on_debate_comment).to eq(false)
+      end
+    end
+
+    describe 'email_on_comment_reply' do
+      it 'should be false by default' do
+        expect(subject.email_on_comment_reply).to eq(false)
+      end
+    end
+  end
+
   describe 'use_nickname' do
     describe 'when true' do
       before { subject.use_nickname = true }
