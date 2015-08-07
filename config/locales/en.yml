@@ -11,6 +11,14 @@ en:
       open_city_slogan: So the citizens can decide what kind of city they want.
       create_debate: Create a debate
       my_account_link: My account
+  admin:
+    dashboard:
+      index:
+        title: Administration
+  moderation:
+    dashboard:
+      index:
+        title: Moderation
   debates:
     index:
       create_debate: Create a debate
