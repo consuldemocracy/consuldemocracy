@@ -11,10 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150806140048) do
+ActiveRecord::Schema.define(version: 20150807140346) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "administrators", force: :cascade do |t|
+    t.integer "user_id"
+  end
+
+  add_index "administrators", ["user_id"], name: "index_administrators_on_user_id", using: :btree
 
   create_table "comments", force: :cascade do |t|
     t.integer  "commentable_id"
@@ -40,6 +46,12 @@ ActiveRecord::Schema.define(version: 20150806140048) do
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
   end
+
+  create_table "moderators", force: :cascade do |t|
+    t.integer "user_id"
+  end
+
+  add_index "moderators", ["user_id"], name: "index_moderators_on_user_id", using: :btree
 
   create_table "taggings", force: :cascade do |t|
     t.integer  "tag_id"
@@ -103,4 +115,6 @@ ActiveRecord::Schema.define(version: 20150806140048) do
   add_index "votes", ["votable_id", "votable_type", "vote_scope"], name: "index_votes_on_votable_id_and_votable_type_and_vote_scope", using: :btree
   add_index "votes", ["voter_id", "voter_type", "vote_scope"], name: "index_votes_on_voter_id_and_voter_type_and_vote_scope", using: :btree
 
+  add_foreign_key "administrators", "users"
+  add_foreign_key "moderators", "users"
 end
