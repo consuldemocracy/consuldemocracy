@@ -17,4 +17,13 @@ class Comment < ActiveRecord::Base
   def self.find_parent(params)
     params[:commentable_type].constantize.find(params[:commentable_id])
   end
+
+  def debate
+    commentable if commentable.class == Debate
+  end
+
+  def author
+    user
+  end
+
 end

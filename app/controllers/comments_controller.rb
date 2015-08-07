@@ -7,6 +7,10 @@ class CommentsController < ApplicationController
     @comment = Comment.build(@debate, current_user, params[:comment][:body])
     @comment.save!
     @comment.move_to_child_of(@parent) if reply?
+
+    Mailer.comment(@comment).deliver_now
+    Mailer.reply(@comment).deliver_now
+
     respond_with @comment
   end
 

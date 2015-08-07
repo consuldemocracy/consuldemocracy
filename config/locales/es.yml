@@ -73,4 +73,8 @@ es:
   shared:
     tags_cloud:
         tags: Etiquetas
-
+  mailer:
+    comment:
+      subject: Alguien ha comentado en tu debate
+    reply:
+      subject: Alguien ha respondido a tu comentario

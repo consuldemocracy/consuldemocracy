@@ -73,3 +73,8 @@ en:
   shared:
     tags_cloud:
         tags: Tags
+  mailer:
+    comment:
+      subject: Someone has commented on your debate
+    reply:
+      subject: Someone has replied to your comment
