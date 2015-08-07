@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.3'
 # Use PostgreSQL
@@ -26,11 +25,6 @@ gem 'devise'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 gem 'acts_as_commentable_with_threading'
-# Use Unicorn as the app server
-# gem 'unicorn'
-
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
 gem 'acts-as-taggable-on'
 gem "responders"
 gem 'foundation-rails'
@@ -52,6 +46,9 @@ group :development, :test do
   gem 'quiet_assets'
   gem 'letter_opener_web', '~> 1.2.0'
   gem 'i18n-tasks'
+  gem 'capistrano', '3.4.0',           require: false
+  gem "capistrano-bundler", '1.1.4',   require: false
+  gem "capistrano-rails", '1.1.3',     require: false
 end
 
 group :test do
