@@ -47,4 +47,4 @@ El código de este proyecto está publicado bajo la licencia MIT (ver MIT-licens
 
 ## Contribuciones
 
-Ver fichero CONTRIBUTING.md
+Ver fichero [CONTRIBUTING.md](CONTRIBUTING.md)
