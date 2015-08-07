@@ -15,6 +15,7 @@
 //   08.2. Sign Up
 // 09. Forms
 // 10. Alerts
+// 11. User account
 //
 
 // 01. Variables
@@ -187,7 +188,6 @@ header {
     line-height: rem-calc(30);
     padding: rem-calc(3) rem-calc(6);
     position: relative;
-    //when active => color: $votes-like;
 
     &:hover {
       background: $votes-like;
@@ -210,7 +210,6 @@ header {
     line-height: rem-calc(30);
     padding: rem-calc(3) rem-calc(6);
     position: relative;
-    //when active => color: $votes-unlike;
 
     &:hover {
       background: $votes-unlike;
@@ -236,10 +235,40 @@ header {
       padding-left: rem-calc(8);
       vertical-align: top;
     }
+
+    &.voted {
+
+      .icon-like {
+        background: $votes-like;
+        color: white;
+      }
+    }
+
+    &.no-voted {
+
+      .icon-like {
+        opacity: .5;
+      }
+    }
   }
 
   .unlike {
     @extend .like;
+
+    &.voted {
+
+      .icon-unlike {
+        background: $votes-unlike;
+        color: white;
+      }
+    }
+
+    &.no-voted {
+
+      .icon-unlike {
+        opacity: .5;
+      }
+    }
   }
 
   .total-votes {
@@ -318,7 +347,6 @@ header {
     }
 
     .debate-description {
-      color: $text-color;
       font-size: rem-calc(13);
       height: $line-height*6.5;
       line-height: $line-height;
@@ -326,6 +354,10 @@ header {
       margin-top: $line-height;
       overflow: hidden;
       position: relative;
+
+      a {
+        color: $text-color;
+      }
     }
 
     .truncate {
@@ -556,9 +588,6 @@ header {
   }
 }
 
-
-
-
 // 06. Comments
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -783,5 +812,62 @@ form {
     background-color: $alert-bg;
     border-color: $alert-border;
     color: $alert-color;
+  }
+}
+
+// 11. User account
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+.account {
+  background: white;
+  padding-top: $line-height;
+
+
+  input[type="checkbox"], .checkbox {
+    margin-top: -(rem-calc(12));
+  }
+
+  .back {
+    @include back;
+  }
+
+  h1 {
+    clear: both;
+    font-size: rem-calc(36);
+    font-weight: bold;
+    line-height: $line-height*2;
+    margin-bottom: $line-height;
+  }
+
+  .icon-comment-quotes {
+    color: $debates;
+    font-size: rem-calc(60);
+    line-height: $line-height;
+    opacity: .5;
+  }
+
+  h2 {
+    clear: both;
+    font-size: rem-calc(20);
+    font-weight: bold;
+    line-height: $line-height;
+    margin: 0;
+  }
+
+  .recommendations {
+    list-style-type: none;
+    margin-left: 0;
+    margin-top: $line-height;
+
+    li {
+      font-size: rem-calc(12);
+      margin: rem-calc(12) 0;
+
+      &:before {
+        color: $debates;
+        content: "l ";
+        font-family: "icons" !important;
+      }
+    }
   }
 }
