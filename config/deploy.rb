@@ -7,6 +7,7 @@ def deploysecret(key)
 end
 
 set :rails_env, fetch(:stage)
+set :rvm_ruby_version, '2.2.2'
 
 set :application, 'participacion'
 set :repo_url, 'git@github.com:AyuntamientoMadrid/participacion.git'
