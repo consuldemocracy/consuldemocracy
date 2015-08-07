@@ -62,6 +62,8 @@ es:
     show:
       title: "Mi cuenta"
       save_changes_submit: "Guardar cambios"
+      email_on_debate_comment_label: "Recibir un email cuando alguien commenta en mis debates"
+      email_on_comment_reply_label: "Recibir un email cuando alguien contesta a mis comentarios"
       change_credentials_link: "Cambiar mi contraseña"
       first_name_label: "Nombre"
       last_name_label: "Apellidos"

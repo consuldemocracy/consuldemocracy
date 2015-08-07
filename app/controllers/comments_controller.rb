@@ -8,8 +8,8 @@ class CommentsController < ApplicationController
     @comment.save!
     @comment.move_to_child_of(@parent) if reply?
 
-    Mailer.comment(@comment).deliver_now
-    Mailer.reply(@comment).deliver_now
+    Mailer.comment(@comment).deliver_now if email_on_debate_comment?
+    Mailer.reply(@comment).deliver_now if email_on_comment_reply?
 
     respond_with @comment
   end
@@ -35,5 +35,13 @@ class CommentsController < ApplicationController
 
     def reply?
       @parent.class == Comment
+    end
+
+    def email_on_debate_comment?
+      @comment.debate.author.email_on_debate_comment?
+    end
+
+    def email_on_comment_reply?
+      reply? && @parent.author.email_on_comment_reply?
     end
 end
