@@ -41,11 +41,11 @@ feature 'Comments' do
     login_as(user)
     visit debate_path(debate)
 
-    fill_in 'comment_body', with: '¿Has pensado en esto...?'
+    fill_in 'comment_body', with: 'Have you thought about...?'
     click_button 'Publish comment'
 
     within "#comments" do
-      expect(page).to have_content '¿Has pensado en esto...?'
+      expect(page).to have_content 'Have you thought about...?'
     end
   end
 
@@ -60,12 +60,12 @@ feature 'Comments' do
 
     click_link "Reply"
     within "#js-comment-form-comment_#{comment.id}" do
-      fill_in 'comment_body', with: 'La semana que viene está hecho.'
+      fill_in 'comment_body', with: 'It will be done next week.'
       click_button 'Publish reply'
     end
 
     within "#comment-#{comment.id}" do
-      expect(page).to have_content 'La semana que viene está hecho.'
+      expect(page).to have_content 'It will be done next week.'
     end
   end
 

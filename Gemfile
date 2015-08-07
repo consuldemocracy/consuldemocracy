@@ -59,3 +59,7 @@ group :test do
   gem 'coveralls', require: false
 end
 
+group :test do
+  gem 'email_spec'
+end
+

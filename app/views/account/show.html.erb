@@ -15,6 +15,16 @@
   <%= f.label :nickname, t("account.show.nickname_label") %>
   <%= f.text_field :nickname %>
 
+  <div>
+    <%= f.check_box :email_on_debate_comment %>
+    <%= f.label :email_on_debate_comment, t("account.show.email_on_debate_comment_label") %>
+  </div>
+
+  <div>
+    <%= f.check_box :email_on_comment_reply %>
+    <%= f.label :email_on_comment_reply, t("account.show.email_on_comment_reply_label") %>
+  </div>
+
   <%= f.submit t("account.show.save_changes_submit"), class: "button radius" %>
 <% end %>
 
