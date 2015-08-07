@@ -62,7 +62,7 @@ es:
     show:
       title: "Mi cuenta"
       save_changes_submit: "Guardar cambios"
-      change_credentials_link: "Cambiar mi contraseña"
+      change_credentials_link: "Cambiar mis credenciales"
       first_name_label: "Nombre"
       last_name_label: "Apellidos"
       use_nickname_label: "Usar pseudónimo"
