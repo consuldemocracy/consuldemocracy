@@ -102,10 +102,12 @@ feature 'Votes' do
 
       within('.in-favor') do
         expect(page).to have_content "100%"
+        expect(page).to have_css("a.voted")
       end
 
       within('.against')  do
         expect(page).to have_content "0%"
+        expect(page).to have_css("a.no-voted")
       end
 
       expect(page).to have_content "1 vote"
@@ -119,10 +121,12 @@ feature 'Votes' do
 
         within('.in-favor') do
           expect(page).to have_content "100%"
+          expect(page).to have_css("a.voted")
         end
 
         within('.against')  do
           expect(page).to have_content "0%"
+          expect(page).to have_css("a.no-voted")
         end
 
         expect(page).to have_content "1 vote"
@@ -141,10 +145,12 @@ feature 'Votes' do
 
         within('.in-favor') do
           expect(page).to have_content "100%"
+          expect(page).to have_css("a.voted")
         end
 
         within('.against')  do
           expect(page).to have_content "0%"
+          expect(page).to have_css("a.no-voted")
         end
 
         expect(page).to have_content "1 vote"
@@ -158,10 +164,12 @@ feature 'Votes' do
 
       within('.in-favor') do
         expect(page).to have_content "0%"
+        expect(page).to have_css("a.no-voted")
       end
 
       within('.against')  do
         expect(page).to have_content "100%"
+        expect(page).to have_css("a.voted")
       end
 
       expect(page).to have_content "1 vote"
