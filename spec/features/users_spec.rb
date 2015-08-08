@@ -44,4 +44,26 @@ feature 'Users' do
     expect(page).to have_content 'Signed out successfully.'
   end
 
+  scenario 'Reset password' do
+    create(:user, email: 'manuela@madrid.es')
+
+    visit '/'
+    click_link 'Log in'
+    click_link 'Forgot your password?'
+
+    fill_in 'user_email', with: 'manuela@madrid.es'
+    click_button 'Send me reset password instructions'
+
+    expect(page).to have_content "You will receive an email with instructions on how to reset your password in a few minutes."
+
+    sent_token = /.*reset_password_token=(.*)".*/.match(ActionMailer::Base.deliveries.last.body.to_s)[1]
+    visit edit_user_password_path(reset_password_token: sent_token)
+
+    fill_in 'user_password', with: 'new password'
+    fill_in 'user_password_confirmation', with: 'new password'
+    click_button 'Change my password'
+
+    expect(page).to have_content "Your password has been changed successfully. You are now signed in."
+  end
+
 end

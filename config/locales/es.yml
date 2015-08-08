@@ -11,6 +11,7 @@ es:
       open_city_slogan: Para que todos los madrileños decidamos que ciudad queremos tener.
       create_debate: Crea un debate
       my_account_link: Mi cuenta
+      language: Idioma de la página
   debates:
     index:
       create_debate: Crea un debate
@@ -63,6 +64,8 @@ es:
       title: "Mi cuenta"
       save_changes_submit: "Guardar cambios"
       change_credentials_link: "Cambiar mis credenciales"
+      email_on_debate_comment_label: "Recibir un email cuando alguien commenta en mis debates"
+      email_on_comment_reply_label: "Recibir un email cuando alguien contesta a mis comentarios"
       first_name_label: "Nombre"
       last_name_label: "Apellidos"
       use_nickname_label: "Usar pseudónimo"
@@ -73,4 +76,8 @@ es:
   shared:
     tags_cloud:
         tags: Etiquetas
-
+  mailer:
+    comment:
+      subject: Alguien ha comentado en tu debate
+    reply:
+      subject: Alguien ha respondido a tu comentario

@@ -20,6 +20,7 @@
           <%= f.label :first_name, t("account.show.first_name_label") %>
           <%= f.text_field :first_name, placeholder: t("account.show.first_name_label") %>
         </div>
+
         <div class="small-12 medium-6 column">
           <%= f.label :last_name, t("account.show.last_name_label") %>
           <%= f.text_field :last_name, placeholder:  t("account.show.last_name_label") %>
@@ -31,6 +32,20 @@
           <%= f.label :use_nickname do %>
             <%= f.check_box :use_nickname %>
             <span class="checkbox"><%= t("account.show.use_nickname_label") %></span>
+          <% end %>
+        </div>
+
+        <div class="small-12 column">
+          <%= f.label :email_on_debate_comment do %>
+            <%= f.check_box :email_on_debate_comment %>
+            <span class="checkbox"><%= t("account.show.email_on_debate_comment_label") %></span>
+          <% end %>
+        </div>
+
+        <div class="small-12 column">
+          <%= f.label :email_on_comment_reply do %>
+            <%= f.check_box :email_on_comment_reply %>
+            <span class="checkbox"><%= t("account.show.email_on_comment_reply_label") %></span>
           <% end %>
         </div>
 

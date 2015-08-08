@@ -11,6 +11,7 @@ en:
       open_city_slogan: So the citizens can decide what kind of city they want.
       create_debate: Create a debate
       my_account_link: My account
+      language: Site language
   debates:
     index:
       create_debate: Create a debate
@@ -62,6 +63,8 @@ en:
     show:
       title: "My account"
       save_changes_submit: "Save changes"
+      email_on_debate_comment_label: "Receive email when someone comments on my debates"
+      email_on_comment_reply_label: "Receive email when someone replies to my comments"
       change_credentials_link: "Change my credentials"
       first_name_label: "First Name"
       last_name_label: "Last Name"
@@ -73,3 +76,8 @@ en:
   shared:
     tags_cloud:
         tags: Tags
+  mailer:
+    comment:
+      subject: Someone has commented on your debate
+    reply:
+      subject: Someone has replied to your comment
