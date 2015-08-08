@@ -22,3 +22,6 @@
 /config/deploy-secrets.yml
 
 /coverage
+
+# Ignore folder contents (cached gems) but not the folder
+/.bundle/*

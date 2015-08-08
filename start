@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+if [ -f tmp/pids/server.pid ]; then
+  echo "Removing old pid's, please stop containers with 'docker-compose stop'"
+  rm -f tmp/pids/server.pid
+fi
+
+echo "Checking bundle dependencies..."
+bundle check || bundle install
+
+echo "Booting up..."
+exec bundle exec rails s -p 3000 -b 0.0.0
