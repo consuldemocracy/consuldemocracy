@@ -47,10 +47,6 @@ es:
         current_password_label: "Contraseña actual"
         need_current: "Necesitamos tu contraseña actual para confirmar los cambios"
         update_submit: "Actualizar"
-        cancel_title: "Cancelar cuenta"
-        cancel_text: "¿Deseas borrar tu cuenta?"
-        cancel_link: "Cancelar mi cuenta"
-        cancel_confirm: "¿Seguro?"
         back_link: "Atrás"
       new:
         title: "Registrarse"

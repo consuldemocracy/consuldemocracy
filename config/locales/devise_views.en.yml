@@ -47,10 +47,6 @@ en:
         current_password_label: "Current password"
         need_current: "We need your current password to confirm your changes"
         update_submit: "Update"
-        cancel_title: "Cancel my account"
-        cancel_text: "Unhappy?"
-        cancel_link: "Cancel my account"
-        cancel_confirm: "Are you sure?"
         back_link: "Back"
       new:
         title: "Sign up"
