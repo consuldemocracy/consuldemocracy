@@ -30,6 +30,7 @@ class DebatesController < ApplicationController
     @debate = Debate.new(debate_params)
     @debate.author = current_user
     if verify_captcha?(@debate) and @debate.save
+      ahoy.track :debate_created, debate_id: @debate.id
       redirect_to @debate, notice: t('flash.actions.create.notice', resource_name: 'Debate')
     else
       render :new
