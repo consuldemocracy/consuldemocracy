@@ -32,6 +32,10 @@ gem 'acts_as_votable'
 gem "recaptcha", require: "recaptcha/rails"
 gem 'ckeditor'
 
+gem 'ahoy_matey'  # stats
+gem "chartkick"   # charts
+gem 'groupdate'   # group temporary data
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
@@ -62,4 +66,3 @@ end
 group :test do
   gem 'email_spec'
 end
-

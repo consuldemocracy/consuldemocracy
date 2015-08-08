@@ -15,6 +15,7 @@
 //= require foundation
 //= require turbolinks
 //= require ckeditor/init
+//= require ahoy
 //= require app
 //= require_tree .
 
