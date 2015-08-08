@@ -94,6 +94,8 @@ ActiveRecord::Schema.define(version: 20150807140346) do
     t.string   "unconfirmed_email"
     t.string   "nickname"
     t.boolean  "use_nickname",           default: false, null: false
+    t.boolean  "email_on_debate_comment", default: false
+    t.boolean  "email_on_comment_reply",  default: false
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree
