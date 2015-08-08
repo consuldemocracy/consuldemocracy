@@ -15,6 +15,20 @@ feature 'Account' do
     expect(page).to have_selector("input[value='Colau']")
   end
 
+  scenario "Failed Edit" do
+    login_as(@user)
+    visit account_path
+
+    fill_in 'account_first_name', with: ''
+    fill_in 'account_last_name', with: ''
+    fill_in 'account_nickname', with: ''
+    click_button 'Save changes'
+
+    expect(page).to have_content "2 errors prohibited this debate from being saved"
+    expect(page).to have_content "First name can't be blank"
+    expect(page).to have_content "First name can't be blank"
+  end
+
   scenario 'Edit' do
     login_as(@user)
     visit account_path
