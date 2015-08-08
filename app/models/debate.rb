@@ -18,6 +18,12 @@ class Debate < ActiveRecord::Base
   before_validation :sanitize_description
   before_validation :sanitize_tag_list
 
+  # ahoy setup
+  #----------------------------------------------------------------------
+
+  visitable # Ahoy will automatically assign visit_id on create
+
+
   def likes
     get_likes.size
   end
