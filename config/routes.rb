@@ -21,6 +21,11 @@ Rails.application.routes.draw do
   end
 
   resource :account, controller: "account", only: [:show, :update]
+  resource :stats, only: [:show]
+
+  namespace :api do
+    resource :stats, only: [:show]
+  end
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

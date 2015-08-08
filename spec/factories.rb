@@ -31,4 +31,9 @@ FactoryGirl.define do
     debate
   end
 
+  factory :ahoy_event, :class => Ahoy::Event do
+    id { SecureRandom.uuid }
+    time DateTime.now
+    sequence(:name) {|n| "Event #{n} type"}
+  end
 end
