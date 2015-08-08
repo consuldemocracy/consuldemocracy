@@ -7,8 +7,11 @@ class AccountController < ApplicationController
   end
 
   def update
-    flash[:notice] = t("flash.actions.save_changes.notice") if @account.update(account_params)
-    redirect_to account_path
+    if @account.update(account_params)
+      redirect_to account_path, notice: t("flash.actions.save_changes.notice")
+    else
+      render :show
+    end
   end
 
   private
