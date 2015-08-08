@@ -97,7 +97,49 @@ header {
   .button {
     color: white;
     font-family: inherit;
-    margin-top: $line-height*2;
+    margin-top: $line-height;
+  }
+
+  .home-page {
+    .button {
+      color: white;
+      font-family: inherit;
+      margin-top: $line-height*2;
+    }
+  }
+
+  .selected {
+    position: relative;
+
+    &:before {
+      top: -14px;
+    left: 50%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    border-top-color: #fff;
+    border-width: 8px;
+    margin-left: -8px;
+    }
+  }
+
+  .language {
+    float: none;
+    text-align: center;
+
+    @media (min-width: 480px) {
+      float: left;
+    }
+  }
+
+  .external-links {
+    @extend .language;
+
+    @media (min-width: 480px) {
+      float: right;
+    }
   }
 }
 
@@ -106,13 +148,13 @@ header {
 }
 
 .top-bar {
-  background: white;
-  color: $header-color;
+  background: rgba(0,0,0,.5);
+  color: white; //$header-color;
   height: $line-height*4;
   max-width: 1170px !important;
 
   .name a {
-    color: black;
+    color: white;
     font-family: 'Lato';
     font-size: rem-calc(36);
     font-weight: lighter;
@@ -120,7 +162,7 @@ header {
     padding-left: 0;
 
     span {
-      color: $brand;
+      // color: $brand;
       font-size: rem-calc(24);
       font-weight: normal;
     }
@@ -132,14 +174,29 @@ header {
 }
 
 .top-bar-section {
+    margin-right: $line-height;
+
+  ul li > a {
+    font-size: rem-calc(14);
+  }
+
+  ul li, ul li:hover:not(.has-form) > a {
+    background: none;
+  }
 
   li:not(.has-form) a:not(.button) {
-    background: white;
-    color: $brand;
+    background: none;
+    color: white;
     line-height: $line-height*4;
+
+    &:hover {
+      background: none;
+      color: $link-hover;
+    }
   }
 
   li.active:not(.has-form) a:not(.button) {
+    background: none;
     height: $line-height*4;
     line-height: $line-height*4;
   }
@@ -148,8 +205,12 @@ header {
 .top-links {
   color: white;
   font-size: rem-calc(14);
-  height: $line-height*2;
+  height: $line-height*3;
   padding: $line-height/2 0;
+
+  @media (min-width: 480px) {
+    height: $line-height*2;
+  }
 
   a {
     color: white;
@@ -180,7 +241,7 @@ header {
 
   .icon-like {
     background: white;
-    border: 2px solid white;
+    border: 2px solid $votes-border;
     border-radius: rem-calc(3);
     color: $votes-neutral;
     display: inline-block;
@@ -191,6 +252,7 @@ header {
 
     &:hover {
       background: $votes-like;
+      border-color: white;
       color: white;
       cursor: pointer;
     }
@@ -202,7 +264,7 @@ header {
 
   .icon-unlike {
     background: white;
-    border: 2px solid white;
+    border: 2px solid $votes-border;
     border-radius: rem-calc(3);
     color: $votes-neutral;
     display: inline-block;
@@ -213,6 +275,7 @@ header {
 
     &:hover {
       background: $votes-unlike;
+      border-color: white;
       color: white;
       cursor: pointer;
     }
@@ -235,40 +298,10 @@ header {
       padding-left: rem-calc(8);
       vertical-align: top;
     }
-
-    &.voted {
-
-      .icon-like {
-        background: $votes-like;
-        color: white;
-      }
-    }
-
-    &.no-voted {
-
-      .icon-like {
-        opacity: .5;
-      }
-    }
   }
 
   .unlike {
     @extend .like;
-
-    &.voted {
-
-      .icon-unlike {
-        background: $votes-unlike;
-        color: white;
-      }
-    }
-
-    &.no-voted {
-
-      .icon-unlike {
-        opacity: .5;
-      }
-    }
   }
 
   .total-votes {
@@ -347,6 +380,7 @@ header {
     }
 
     .debate-description {
+      color: $text-color;
       font-size: rem-calc(13);
       height: $line-height*6.5;
       line-height: $line-height;
@@ -354,10 +388,6 @@ header {
       margin-top: $line-height;
       overflow: hidden;
       position: relative;
-
-      a {
-        color: $text-color;
-      }
     }
 
     .truncate {
@@ -588,6 +618,9 @@ header {
   }
 }
 
+
+
+
 // 06. Comments
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -815,11 +848,13 @@ form {
   }
 }
 
+
 // 11. User account
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
 .account {
   background: white;
+  min-height: $line-height*23;
   padding-top: $line-height;
 
 
@@ -827,7 +862,7 @@ form {
     margin-top: -(rem-calc(12));
   }
 
-  .back {
+  .back, .icon-angle-left {
     @include back;
   }
 
