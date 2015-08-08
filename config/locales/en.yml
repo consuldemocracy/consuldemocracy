@@ -1,4 +1,25 @@
 en:
+  activerecord:
+    models:
+      comment: Comment
+      debate: Debate
+      user: User
+      vote: Vote
+    attributes:
+      comment:
+        body: Comment
+        user: User
+      debate:
+        author: Author
+        description: Opinion
+        terms_of_service: Terms of service
+        title: Title
+      user:
+        email: Email
+        first_name: First Name
+        last_name: Last Name
+        nickname: Nickname
+        password: Password
   layouts:
     header:
       external_link_transparency: Transparency
