@@ -1,25 +1,4 @@
 es:
-  activerecord:
-    models:
-      comment: Comentario
-      debate: Debate
-      user: Usuario
-      vote: Voto
-    attributes:
-      comment:
-        body: Comentario
-        user: Usuario
-      debate:
-        author: Autor
-        description: Opinión
-        terms_of_service: Términos de servicio
-        title: Título
-      user:
-        email: Correo electrónico
-        first_name: Nombre
-        last_name: Apellidos
-        nickname: Pseudónimo
-        password: Contraseña
   layouts:
     header:
       external_link_transparency: Portal de Transparencia
