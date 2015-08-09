@@ -151,6 +151,11 @@ GEM
     json (1.8.3)
     launchy (2.4.3)
       addressable (~> 2.3)
+    letter_opener (1.4.1)
+      launchy (~> 2.2)
+    letter_opener_web (1.2.3)
+      letter_opener (~> 1.0)
+      rails (>= 3.2)
     loofah (2.0.2)
       nokogiri (>= 1.5.9)
     mail (2.6.3)
@@ -310,6 +315,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   launchy
+  letter_opener_web (~> 1.2.0)
   pg
   poltergeist
   quiet_assets
