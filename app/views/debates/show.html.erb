@@ -9,6 +9,7 @@
       <h1><%= @debate.title %></h1>
       <%= @debate.description %>
       <p><%= render 'shared/tags', debate: @debate %></p>
+      <p><%= social_share_button_tag(@debate.title) %></p>
     </div>
 
     <div id="<%= dom_id(@debate) %>_votes" class="small-12 medium-3 column">

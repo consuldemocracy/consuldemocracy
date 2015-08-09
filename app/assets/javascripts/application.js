@@ -15,6 +15,7 @@
 //= require foundation
 //= require turbolinks
 //= require ckeditor/init
+//= require social-share-button
 //= require app
 //= require_tree .
 
