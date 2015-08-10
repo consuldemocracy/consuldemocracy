@@ -1,5 +1,6 @@
 class Admin::BaseController < ApplicationController
 
+  skip_authorization_check
   before_filter :verify_administrator
 
   private

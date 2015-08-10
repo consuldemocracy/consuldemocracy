@@ -7,7 +7,7 @@ class Ability
 
     if user # logged-in users
       can [:read, :create, :vote], Debate
-      can :edit, Debate do |debate|
+      can :update, Debate do |debate|
         debate.editable_by?(user)
       end
 

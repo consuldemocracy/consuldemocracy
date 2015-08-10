@@ -1,6 +1,9 @@
 require "application_responder"
 
 class ApplicationController < ActionController::Base
+
+  check_authorization unless: :devise_controller?
+
   self.responder = ApplicationResponder
   respond_to :html
 

@@ -1,5 +1,6 @@
 class Moderation::BaseController < ApplicationController
 
+  skip_authorization_check
   before_filter :verify_moderator
 
   private
