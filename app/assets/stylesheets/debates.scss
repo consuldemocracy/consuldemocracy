@@ -1,237 +1,14 @@
 // Table of Contents
 //
-// 01. Variables
-// 02. Global styles
-// 03. Header
-// 04. Footer
-// 05. Debates
-//   05.1. Debates index
-//   05.2. Debate show
-//   05.3. Debate new
-// 06. Comments
-// 07. Tags
-// 08. Login and Sign Up
-//   08.1. Login
-//   08.2. Sign Up
-// 09. Forms
-// 10. Alerts
-// 11. User account
+// 01. Debates
+// 02. Index
+// 03. Show
+// 04. New
+// 05. Comments
 //
 
-// 01. Variables
+// 01. Debates
 // - - - - - - - - - - - - - - - - - - - - - - - - -
-
-@import "variables";
-
-// 02. Global styles
-// - - - - - - - - - - - - - - - - - - - - - - - - -
-
-*, html {
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  background: $background;
-  font-family: $font-family-sans-serif;
-  font-size: rem-calc(13);
-  font-weight: normal;
-  text-rendering: optimizeLegibility;
-}
-
-.button {
-  padding: rem-calc(15) rem-calc(32);
-}
-
-.clear {
-  clear: both;
-}
-
-.inline-block {
-  display: inline-block;
-}
-
-.row {
-  max-width: 1170px;
-}
-
-.row-full {
-  max-width: 100% !important;
-}
-
-::selection, ::-moz-selection {
-  background: $brand;
-  color: white;
-}
-
-// 03. Header
-// - - - - - - - - - - - - - - - - - - - - - - - - -
-
-header {
-  background: url('home_header_bg.jpg');
-  background-position: 50% 50%;
-  background-size: cover;
-  min-height: $line-height*20;
-
-  &.results {
-    min-height: $line-height*8;
-  }
-
-  h1 {
-    color: white;
-    font-size: rem-calc(45);
-    font-weight: bolder;
-    line-height: $line-height*3;
-    margin: $line-height 0 0 0;
-    padding: 0;
-  }
-
-  h2 {
-    @extend h1;
-    font-size: rem-calc(24);
-    font-weight: normal;
-    line-height: $line-height*2;
-    margin: 0;
-  }
-
-  .button {
-    color: white;
-    font-family: inherit;
-    margin-top: $line-height;
-  }
-
-  .home-page {
-    .button {
-      color: white;
-      font-family: inherit;
-      margin-top: $line-height*2;
-    }
-  }
-
-  .selected {
-    position: relative;
-
-    &:before {
-      top: -14px;
-    left: 50%;
-    border: solid transparent;
-    content: " ";
-    height: 0;
-    width: 0;
-    position: absolute;
-    border-top-color: #fff;
-    border-width: 8px;
-    margin-left: -8px;
-    }
-  }
-
-  .language {
-    float: none;
-    text-align: center;
-
-    @media (min-width: 480px) {
-      float: left;
-    }
-  }
-
-  .external-links {
-    @extend .language;
-
-    @media (min-width: 480px) {
-      float: right;
-    }
-  }
-}
-
-.contain-to-grid {
-  background: none;
-}
-
-.top-bar {
-  background: rgba(0,0,0,.5);
-  color: white; //$header-color;
-  height: $line-height*4;
-  max-width: 1170px !important;
-
-  .name a {
-    color: white;
-    font-family: 'Lato';
-    font-size: rem-calc(36);
-    font-weight: lighter;
-    line-height: $line-height*4;
-    padding-left: 0;
-
-    span {
-      // color: $brand;
-      font-size: rem-calc(24);
-      font-weight: normal;
-    }
-
-    img {
-      margin-right: $line-height/2;
-    }
-  }
-}
-
-.top-bar-section {
-    margin-right: $line-height;
-
-  ul li > a {
-    font-size: rem-calc(14);
-  }
-
-  ul li, ul li:hover:not(.has-form) > a {
-    background: none;
-  }
-
-  li:not(.has-form) a:not(.button) {
-    background: none;
-    color: white;
-    line-height: $line-height*4;
-
-    &:hover {
-      background: none;
-      color: $link-hover;
-    }
-  }
-
-  li.active:not(.has-form) a:not(.button) {
-    background: none;
-    height: $line-height*4;
-    line-height: $line-height*4;
-  }
-}
-
-.top-links {
-  color: white;
-  font-size: rem-calc(14);
-  height: $line-height*3;
-  padding: $line-height/2 0;
-
-  @media (min-width: 480px) {
-    height: $line-height*2;
-  }
-
-  a {
-    color: white;
-  }
-}
-
-// 04. Footer
-// - - - - - - - - - - - - - - - - - - - - - - - - -
-
-
-
-
-
-// 05. Debates
-// - - - - - - - - - - - - - - - - - - - - - - - - -
-
-@mixin back {
-  color: $text-light;
-  font-size: rem-calc(13);
-  line-height: $line-height;
-}
 
 @mixin votes {
   border-top: 1px solid $votes-border;
@@ -339,8 +116,8 @@ header {
   }
 }
 
-// 05.1. Debates index
-// - - - - - - - - - - - -
+// 02. Index
+// - - - - - - - - - - - - - - - - - - - - - - - - -
 
 .debate-featured {
   margin-bottom: rem-calc(34);
@@ -513,8 +290,8 @@ header {
   }
 }
 
-// 05.2. Debate show
-// - - - - - - - - - - - -
+// 03. Show
+// - - - - - - - - - - - - - - - - - - - - - - - - -
 
 .debate-show {
   background: white;
@@ -594,8 +371,8 @@ header {
   }
 }
 
-// 05.3. Debate new
-// - - - - - - - - - - - -
+// 04. New
+// - - - - - - - - - - - - - - - - - - - - - - - - -
 
 .debate-new {
   background: white;
@@ -646,10 +423,7 @@ header {
   }
 }
 
-
-
-
-// 06. Comments
+// 05. Comments
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
 .comments {
@@ -711,226 +485,6 @@ header {
       font-size: rem-calc(13);
       font-weight: lighter;
       vertical-align: middle;
-    }
-  }
-}
-
-// 07. Tags
-// - - - - - - - - - - - - - - - - - - - - - - - - -
-
-.tags {
-
-  a {
-    background: $tags-bg;
-    border: 1px solid $tags-border;
-    border-radius: 3px;
-    color: $tags-color;
-    display: inline-block;
-    font-size: rem-calc(13);
-    line-height: rem-calc(22);
-    margin-bottom: rem-calc(8);
-    margin-right: rem-calc(8);
-    padding: 0 rem-calc(6);
-
-
-    &:hover {
-      color: $link;
-      cursor: pointer;
-      background: #e5f1f8;
-      border: 1px solid $brand;
-    }
-  }
-}
-
-.tag-cloud {
-  @extend .tags;
-
-  h3 {
-    font-size: rem-calc(24);
-    font-weight: bold;
-    line-height: $line-height*2;
-    margin: 0;
-  }
-
-  a {
-    padding: $line-height/4 $line-height/3;
-  }
-}
-
-// 08. Login and Sign Up
-// - - - - - - - - - - - - - - - - - - - - - - - - -
-
-// 08.1. Login
-// - - - - - - - - - - - -
-
-.auth-page {
-  background: url('auth_bg.jpg');
-  margin-top: $line-height;
-
-  @media (min-width: 480px) {
-    margin-top: $line-height*2;
-  }
-
-  h1 {
-
-    a {
-      color: white;
-      font-family: 'Lato';
-      font-size: rem-calc(20);
-      font-weight: lighter;
-      line-height: $line-height*4;
-      padding-left: rem-calc(6);
-
-      span {
-        font-size: rem-calc(16);
-        font-weight: lighter;
-        vertical-align: top;
-      }
-
-      @media (min-width: 480px) {
-        font-size: rem-calc(30);
-        span {
-          font-size: rem-calc(20);
-        }
-      }
-    }
-  }
-}
-
-.auth {
-  min-height: $line-height*20;
-
-  .panel {
-    background: white;
-
-    h1 {
-      font-size: rem-calc(30);
-      font-weight: bolder;
-    }
-  }
-}
-
-// 09. Forms
-// - - - - - - - - - - - - - - - - - - - - - - - - -
-
-form {
-
-  label {
-    font-weight: bold;
-    line-height: $line-height;
-  }
-
-  input[type]:not([type=submit]) {
-    background: $input-bg;
-    height: $line-height*2;
-    margin-bottom: rem-calc(16);
-  }
-
-  .note {
-    display: block;
-    font-size: rem-calc(13);
-    margin-bottom: rem-calc(12);
-  }
-
-  .ckeditor {
-    margin-bottom: $line-height;
-    min-height: $line-height*14;
-  }
-
-  .checkbox {
-    display: inline-block;
-    font-size: rem-calc(14);
-    line-height: $line-height*2;
-    margin: 0 0 0 rem-calc(6);
-    vertical-align: top;
-  }
-}
-
-// 10. Alerts
-// - - - - - - - - - - - - - - - - - - - - - - - - -
-
-.alert-box {
-
-  &.success {
-    background-color: $success-bg;
-    border-color: $success-border;
-    color: $success-color;
-  }
-
-  &.info {
-    background-color: $info-bg;
-    border-color: $info-border;
-    color: $info-color;
-  }
-
-  &.warning {
-    background-color: $warning-bg;
-    border-color: $warning-border;
-    color: $warning-color;
-  }
-
-  &.alert {
-    background-color: $alert-bg;
-    border-color: $alert-border;
-    color: $alert-color;
-  }
-}
-
-
-// 11. User account
-// - - - - - - - - - - - - - - - - - - - - - - - - -
-
-.account {
-  background: white;
-  min-height: $line-height*23;
-  padding-top: $line-height;
-
-
-  input[type="checkbox"], .checkbox {
-    margin-top: -(rem-calc(12));
-  }
-
-  .back, .icon-angle-left {
-    @include back;
-  }
-
-  h1 {
-    clear: both;
-    font-size: rem-calc(36);
-    font-weight: bold;
-    line-height: $line-height*2;
-    margin-bottom: $line-height;
-  }
-
-  .icon-comment-quotes {
-    color: $debates;
-    font-size: rem-calc(60);
-    line-height: $line-height;
-    opacity: .5;
-  }
-
-  h2 {
-    clear: both;
-    font-size: rem-calc(20);
-    font-weight: bold;
-    line-height: $line-height;
-    margin: 0;
-  }
-
-  .recommendations {
-    list-style-type: none;
-    margin-left: 0;
-    margin-top: $line-height;
-
-    li {
-      font-size: rem-calc(12);
-      margin: rem-calc(12) 0;
-
-      &:before {
-        color: $debates;
-        content: "l ";
-        font-family: "icons" !important;
-      }
     }
   }
 }
