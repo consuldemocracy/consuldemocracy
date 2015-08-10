@@ -1,0 +1,5 @@
+es:
+  admin:
+    dashboard:
+      index:
+        title: Administración

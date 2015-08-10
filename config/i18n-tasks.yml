@@ -22,6 +22,8 @@ data:
     ## Another gem (replace %#= with %=):
     # - "<%#= %x[bundle show vagrant].chomp %>/templates/locales/%{locale}.yml"
     - config/locales/%{locale}.yml
+    - config/locales/admin.%{locale}.yml
+    - config/locales/moderation.%{locale}.yml
     - config/locales/devise_views.%{locale}.yml
     - config/locales/responders.%{locale}.yml
 

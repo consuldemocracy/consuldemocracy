@@ -14,14 +14,6 @@ es:
       language: Idioma de la página
     footer:
       copyright: "Ayuntamiento de Madrid, %{year}. Todos los derechos reservados"
-  admin:
-    dashboard:
-      index:
-        title: Administración
-  moderation:
-    dashboard:
-      index:
-        title: Moderación
   debates:
     index:
       create_debate: Crea un debate
