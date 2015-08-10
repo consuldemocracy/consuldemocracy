@@ -12,6 +12,8 @@ es:
       create_debate: Crea un debate
       my_account_link: Mi cuenta
       language: Idioma de la página
+    footer:
+      copyright: "Ayuntamiento de Madrid, %{year}. Todos los derechos reservados"
   admin:
     dashboard:
       index:
@@ -72,7 +74,7 @@ es:
       title: "Mi cuenta"
       save_changes_submit: "Guardar cambios"
       change_credentials_link: "Cambiar mis credenciales"
-      email_on_debate_comment_label: "Recibir un email cuando alguien commenta en mis debates"
+      email_on_debate_comment_label: "Recibir un email cuando alguien comenta en mis debates"
       email_on_comment_reply_label: "Recibir un email cuando alguien contesta a mis comentarios"
       first_name_label: "Nombre"
       last_name_label: "Apellidos"
