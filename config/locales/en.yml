@@ -12,6 +12,8 @@ en:
       create_debate: Create a debate
       my_account_link: My account
       language: Site language
+    footer:
+      copyright: "Ayuntamiento de Madrid, 2015. All rights reserved"
   debates:
     index:
       create_debate: Create a debate

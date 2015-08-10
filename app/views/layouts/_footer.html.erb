@@ -1,3 +1,43 @@
-<div style="background: #0077b9; width: 100%;">
-	<%= image_tag('footer.jpg', style: 'width: 100%; max-width: 1170px;') %>
-</div>
+<footer>
+	<div class="row-full">
+		<div class="row">
+      <div class="small-12 column">
+        <div class="right">
+          <%= link_to "Enlace 1", "#", class: "link" %> | <%= link_to "Enlace 2", "#", class: "link" %>
+        </div>
+
+        <div class="logo left">
+          <%= link_to root_path do %>
+            <%= image_tag('logo_madrid_white.png', class: 'left', size: '96x96') %>
+            <%= t("layouts.header.open_gov", open: "<strong>#{t('layouts.header.open')}</strong>").html_safe %>
+          <% end %>
+        </div>
+      </div>
+
+      <div class="small-12 medium-3 column clear">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      </div>
+
+      <div class="small-12 medium-3 column">
+        <h4>Lorem ipsum dolor</h4>
+        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      </div>
+
+      <div class="small-12 medium-3 column">
+        <h4>Ut enim ad minim</h4>
+        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+      </div>
+
+      <div class="small-12 medium-3 column">
+        <h4>Duis aute irure</h4>
+        <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      </div>
+    </div>
+
+    <div class="subfooter row">
+      <div class="small-12 column">
+        <%= t("layouts.footer.copyright", year: Time.now.year) %>
+      </div>
+    </div>
+  </div>
+</footer>

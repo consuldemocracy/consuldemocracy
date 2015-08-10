@@ -26,6 +26,31 @@
   line-height: $line-height;
 }
 
+@mixin logo {
+
+  a {
+    color: white;
+    font-family: 'Lato';
+    font-size: rem-calc(20);
+    font-weight: lighter;
+    line-height: $line-height*4;
+    padding-left: rem-calc(6);
+
+    span {
+      font-size: rem-calc(16);
+      font-weight: lighter;
+      vertical-align: top;
+    }
+
+    @media (min-width: 480px) {
+      font-size: rem-calc(30);
+      span {
+        font-size: rem-calc(20);
+      }
+    }
+  }
+}
+
 // 03. Global styles
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -40,6 +65,12 @@ body {
   font-size: rem-calc(13);
   font-weight: normal;
   text-rendering: optimizeLegibility;
+}
+
+p {
+  font-size: rem-calc(13);
+  line-height: $line-height;
+  margin-bottom: $line-height/2;
 }
 
 .button {
@@ -152,7 +183,7 @@ header {
 
 .top-bar {
   background: rgba(0,0,0,.5);
-  color: white; //$header-color;
+  color: white;
   height: $line-height*4;
   max-width: 1170px !important;
 
@@ -222,7 +253,33 @@ header {
 // 05. Footer
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
+footer {
+  background: $brand;
+  color: white;
+  padding: rem-calc(24) 0 rem-calc(48) 0;
 
+  .logo {
+    @include logo;
+  }
+
+  h4 {
+    color: white;
+    font-weight: normal;
+  }
+
+  a {
+    color: white;
+
+    &.link:hover {
+      color: white;
+      opacity: .5;
+    }
+  }
+}
+
+.subfooter {
+  padding-top: $line-height;
+}
 
 
 // 06. Tags
@@ -278,28 +335,7 @@ header {
   }
 
   h1 {
-
-    a {
-      color: white;
-      font-family: 'Lato';
-      font-size: rem-calc(20);
-      font-weight: lighter;
-      line-height: $line-height*4;
-      padding-left: rem-calc(6);
-
-      span {
-        font-size: rem-calc(16);
-        font-weight: lighter;
-        vertical-align: top;
-      }
-
-      @media (min-width: 480px) {
-        font-size: rem-calc(30);
-        span {
-          font-size: rem-calc(20);
-        }
-      }
-    }
+    @include logo;
   }
 }
 
