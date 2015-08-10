@@ -14,14 +14,6 @@ en:
       language: Site language
     footer:
       copyright: "Ayuntamiento de Madrid, 2015. All rights reserved"
-  admin:
-    dashboard:
-      index:
-        title: Administration
-  moderation:
-    dashboard:
-      index:
-        title: Moderation
   debates:
     index:
       create_debate: Create a debate
