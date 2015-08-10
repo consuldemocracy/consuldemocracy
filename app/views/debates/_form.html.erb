@@ -37,10 +37,10 @@
     </div>
 
     <div class="small-12 column">
-      <%= render 'shared/captcha', resource: @debate %>
+      <%= f.simple_captcha %>
     </div>
 
-    <div class="actions small-12 column">
+    <div class="actions small-12 column" style="padding-top:20px">
       <%= f.submit(class: "button radius") %>
     </div>
   </div>

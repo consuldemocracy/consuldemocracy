@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  apply_simple_captcha
   devise :database_authenticatable, :registerable, :confirmable,
          :recoverable, :rememberable, :trackable, :validatable
 

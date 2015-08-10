@@ -72,9 +72,12 @@ es:
       last_name_label: "Apellidos"
       use_nickname_label: "Usar pseudónimo"
       nickname_label: "Pseudónimo"
-  recaptcha:
-    errors:
-      verification_failed: "La verificación por captcha falló"
+  simple_captcha:
+    placeholder: "Introduce el texto de la imagen"
+    label: "Introduce el texto en la caja:"
+    message:
+      user: "el código secreto no coincide con la imagen"
+      debate: "el código secreto no coincide con la imagen"
   shared:
     tags_cloud:
         tags: Etiquetas

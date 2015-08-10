@@ -1,5 +1,4 @@
 class DebatesController < ApplicationController
-  include RecaptchaHelper
   before_action :authenticate_user!, except: [:index, :show]
   load_and_authorize_resource
 
@@ -28,7 +27,7 @@ class DebatesController < ApplicationController
   def create
     @debate = Debate.new(debate_params)
     @debate.author = current_user
-    if verify_captcha?(@debate) and @debate.save
+    if @debate.save_with_captcha
       redirect_to @debate, notice: t('flash.actions.create.notice', resource_name: 'Debate')
     else
       render :new
@@ -52,7 +51,7 @@ class DebatesController < ApplicationController
     end
 
     def debate_params
-      params.require(:debate).permit(:title, :description, :tag_list, :terms_of_service)
+      params.require(:debate).permit(:title, :description, :tag_list, :terms_of_service, :captcha, :captcha_key)
     end
 
     def set_voted_values(debates_ids)

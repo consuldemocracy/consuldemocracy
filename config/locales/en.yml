@@ -72,9 +72,12 @@ en:
       last_name_label: "Last Name"
       use_nickname_label: "Use nickname"
       nickname_label: "Nickname"
-  recaptcha:
-    errors:
-      verification_failed: "The captcha verification failed"
+  simple_captcha:
+    placeholder: "Enter the image value"
+    label: "Enter the code in the box:"
+    message:
+      user: "secret code did not match with the image"
+      debate: "secret code did not match with the image"
   shared:
     tags_cloud:
         tags: Tags

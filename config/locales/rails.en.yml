@@ -20,7 +20,3 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  recaptcha:
-  errors:
-    verification_failed: "Incorrect Captcha"
-    recaptcha_unreachable: "Internet connecion error. Could not load Captcha"
