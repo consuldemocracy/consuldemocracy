@@ -7,13 +7,13 @@ describe User do
       @user = create(:user)
     end
 
-    it "should return {} if no debate" do
+    it "returns {} if no debate" do
       expect(@user.votes_on_debates()).to eq({})
       expect(@user.votes_on_debates([])).to eq({})
       expect(@user.votes_on_debates([nil, nil])).to eq({})
     end
 
-    it "should return a hash of debates ids and votes" do
+    it "returns a hash of debates ids and votes" do
       debate1 = create(:debate)
       debate2 = create(:debate)
       debate3 = create(:debate)
@@ -84,6 +84,30 @@ describe User do
         subject.last_name = "Dredd"
         expect(subject.name).to eq("Joseph Dredd")
       end
+    end
+  end
+
+  describe "administrator?" do
+    it "is false when the user is not an admin" do
+      expect(subject.administrator?).to be false
+    end
+
+    it "is true when the user is an admin" do
+      subject.save
+      create(:administrator, user: subject)
+      expect(subject.administrator?).to be true
+    end
+  end
+
+  describe "moderator?" do
+    it "is false when the user is not a moderator" do
+      expect(subject.moderator?).to be false
+    end
+
+    it "is true when the user is a moderator" do
+      subject.save
+      create(:moderator, user: subject)
+      expect(subject.moderator?).to be true
     end
   end
 

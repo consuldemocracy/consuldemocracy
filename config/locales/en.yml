@@ -14,6 +14,14 @@ en:
       language: Site language
     footer:
       copyright: "Ayuntamiento de Madrid, 2015. All rights reserved"
+  admin:
+    dashboard:
+      index:
+        title: Administration
+  moderation:
+    dashboard:
+      index:
+        title: Moderation
   debates:
     index:
       create_debate: Create a debate
@@ -83,3 +91,7 @@ en:
       subject: Someone has commented on your debate
     reply:
       subject: Someone has replied to your comment
+  unauthorized:
+    default: "You are not authorized to access this page."
+    manage:
+      all: "You are not authorized to %{action} %{subject}."
