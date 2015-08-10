@@ -2,6 +2,7 @@ class AccountController < ApplicationController
 
   before_action :authenticate_user!
   before_action :set_account
+  load_and_authorize_resource class: "User"
 
   def show
   end

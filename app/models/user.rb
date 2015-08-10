@@ -19,4 +19,12 @@ class User < ActiveRecord::Base
     voted = votes.where("votable_type = ? AND votable_id IN (?)", "Debate", debates_ids)
     voted.each_with_object({}){ |v,_| _[v.votable_id] = v.vote_flag }
   end
+
+  def administrator?
+    @is_administrator ||= Administrator.where(user_id: id).exists?
+  end
+
+  def moderator?
+    @is_moderator ||= Moderator.where(user_id: id).exists?
+  end
 end

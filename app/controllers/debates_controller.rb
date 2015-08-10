@@ -1,8 +1,7 @@
 class DebatesController < ApplicationController
   include RecaptchaHelper
-  before_action :set_debate, only: [:show, :edit, :update, :vote]
   before_action :authenticate_user!, except: [:index, :show]
-  before_action :validate_ownership, only: [:edit, :update]
+  load_and_authorize_resource
 
   def index
     if params[:tag]
@@ -54,10 +53,6 @@ class DebatesController < ApplicationController
 
     def debate_params
       params.require(:debate).permit(:title, :description, :tag_list, :terms_of_service)
-    end
-
-    def validate_ownership
-      raise ActiveRecord::RecordNotFound unless @debate.editable_by?(current_user)
     end
 
     def set_voted_values(debates_ids)

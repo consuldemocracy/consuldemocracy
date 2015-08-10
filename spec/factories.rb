@@ -31,4 +31,12 @@ FactoryGirl.define do
     debate
   end
 
+  factory :administrator do
+    user
+  end
+
+  factory :moderator do
+    user
+  end
+
 end

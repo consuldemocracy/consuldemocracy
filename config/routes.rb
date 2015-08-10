@@ -17,10 +17,17 @@ Rails.application.routes.draw do
         post :vote
       end
     end
-
   end
 
   resource :account, controller: "account", only: [:show, :update]
+
+  namespace :admin do
+    root to: "dashboard#index"
+  end
+
+  namespace :moderation do
+    root to: "dashboard#index"
+  end
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

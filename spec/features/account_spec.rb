@@ -10,6 +10,7 @@ feature 'Account' do
     login_as(@user)
     visit root_path
     click_link "My account"
+    expect(current_path).to eq(account_path)
 
     expect(page).to have_selector("input[value='Manuela']")
     expect(page).to have_selector("input[value='Colau']")

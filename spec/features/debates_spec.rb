@@ -98,9 +98,9 @@ feature 'Debates' do
     expect(debate).to be_editable
     login_as(create(:user))
 
-    expect {
-      visit edit_debate_path(debate)
-    }.to raise_error ActiveRecord::RecordNotFound
+    visit edit_debate_path(debate)
+    expect(current_path).to eq(root_path)
+    expect(page).to have_content 'not authorized'
   end
 
   scenario 'Update should not be posible if debate is not editable' do
@@ -109,17 +109,19 @@ feature 'Debates' do
     expect(debate).to_not be_editable
     login_as(debate.author)
 
-    expect {
-      visit edit_debate_path(debate)
-    }.to raise_error ActiveRecord::RecordNotFound
+    visit edit_debate_path(debate)
+    edit_debate_path(debate)
+    expect(current_path).to eq(root_path)
+    expect(page).to have_content 'not authorized'
   end
 
   scenario 'Update should be posible for the author of an editable debate' do
     debate = create(:debate)
     login_as(debate.author)
 
-    visit debate_path(debate)
-    click_link 'Edit'
+    visit edit_debate_path(debate)
+    expect(current_path).to eq(edit_debate_path(debate))
+
     fill_in 'debate_title', with: "End child poverty"
     fill_in 'debate_description', with: "Let's..."
 
