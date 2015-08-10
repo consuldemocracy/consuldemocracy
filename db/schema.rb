@@ -62,18 +62,18 @@ ActiveRecord::Schema.define(version: 20150806163142) do
   add_index "tags", ["name"], name: "index_tags_on_name", unique: true, using: :btree
 
   create_table "users", force: :cascade do |t|
-    t.string   "email",                  default: "",    null: false
-    t.string   "encrypted_password",     default: "",    null: false
+    t.string   "email",                   default: "",    null: false
+    t.string   "encrypted_password",      default: "",    null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,     null: false
+    t.integer  "sign_in_count",           default: 0,     null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.datetime "created_at",                             null: false
-    t.datetime "updated_at",                             null: false
+    t.datetime "created_at",                              null: false
+    t.datetime "updated_at",                              null: false
     t.string   "first_name"
     t.string   "last_name"
     t.string   "confirmation_token"
@@ -81,7 +81,7 @@ ActiveRecord::Schema.define(version: 20150806163142) do
     t.datetime "confirmation_sent_at"
     t.string   "unconfirmed_email"
     t.string   "nickname"
-    t.boolean  "use_nickname",           default: false, null: false
+    t.boolean  "use_nickname",            default: false, null: false
     t.boolean  "email_on_debate_comment", default: false
     t.boolean  "email_on_comment_reply",  default: false
   end
