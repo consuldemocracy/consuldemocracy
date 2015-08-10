@@ -6,6 +6,8 @@ class Ability
     can :read, Debate
 
     if user # logged-in users
+      can [:read, :update], User, id: user.id
+
       can [:read, :create, :vote], Debate
       can :update, Debate do |debate|
         debate.editable_by?(user)

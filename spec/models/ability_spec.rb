@@ -5,7 +5,7 @@ describe Ability do
   subject(:ability) { Ability.new(user) }
   let(:debate) { Debate.new }
 
-  describe "Non-logged in users" do
+  describe "Non-logged in user" do
     let(:user) { nil }
 
     it { should be_able_to(:index, Debate) }
@@ -14,12 +14,21 @@ describe Ability do
     it { should_not be_able_to(:vote, Debate) }
   end
 
-  describe "Citizens" do
+  describe "Citizen" do
     let(:user) { create(:user) }
 
     it { should be_able_to(:index, Debate) }
     it { should be_able_to(:show, debate) }
     it { should be_able_to(:vote, debate) }
+
+    it { should be_able_to(:show, user) }
+    it { should be_able_to(:edit, user) }
+
+    describe "other users" do
+      let(:other_user) { create(:user) }
+      it { should_not be_able_to(:show, other_user) }
+      it { should_not be_able_to(:edit, other_user) }
+    end
 
     describe "editing debates" do
       let(:own_debate) { create(:debate, author: user) }
@@ -33,7 +42,7 @@ describe Ability do
     end
   end
 
-  describe "Moderators" do
+  describe "Moderator" do
     let(:user) { create(:user) }
     before { create(:moderator, user: user) }
 
@@ -43,7 +52,7 @@ describe Ability do
 
   end
 
-  describe "Administrators" do
+  describe "Administrator" do
     let(:user) { create(:user) }
     before { create(:administrator, user: user) }
 
