@@ -24,6 +24,9 @@ describe Ability do
     it { should be_able_to(:show, user) }
     it { should be_able_to(:edit, user) }
 
+    it { should be_able_to(:create, Comment) }
+    it { should be_able_to(:vote, Comment) }
+
     describe "other users" do
       let(:other_user) { create(:user) }
       it { should_not be_able_to(:show, other_user) }

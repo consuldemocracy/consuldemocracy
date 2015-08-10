@@ -13,6 +13,8 @@ class Ability
         debate.editable_by?(user)
       end
 
+      can [:create, :vote], Comment
+
       if user.moderator? or user.administrator?
 
       elsif user.administrator?
