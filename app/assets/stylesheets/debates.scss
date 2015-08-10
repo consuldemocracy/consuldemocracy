@@ -255,6 +255,7 @@ header {
       border-color: white;
       color: white;
       cursor: pointer;
+      opacity: 1 !important;
     }
 
     &:active {
@@ -278,6 +279,7 @@ header {
       border-color: white;
       color: white;
       cursor: pointer;
+      opacity: 1 !important;
     }
 
     &:active {
@@ -302,6 +304,28 @@ header {
 
   .unlike {
     @extend .like;
+  }
+
+  .voted {
+    .icon-like {
+      @extend .icon-like;
+      background: $votes-like;
+      border-color: white;
+      color: white;
+    }
+
+    .icon-unlike {
+      @extend .icon-unlike;
+      background: $votes-unlike;
+      border-color: white;
+      color: white;
+    }
+  }
+
+  .no-voted {
+    .icon-like, .icon-unlike {
+      opacity: .5;
+    }
   }
 
   .total-votes {
@@ -388,6 +412,10 @@ header {
       margin-top: $line-height;
       overflow: hidden;
       position: relative;
+
+      a {
+        color: $text-color;
+      }
     }
 
     .truncate {
@@ -489,8 +517,8 @@ header {
 // - - - - - - - - - - - -
 
 .debate-show {
-  margin-top: $line-height;
-  padding: 0 rem-calc(12);
+  background: white;
+  padding: rem-calc(24) rem-calc(12) 0 rem-calc(12);
 
   .back {
     @include back;
@@ -542,9 +570,9 @@ header {
   }
 
   h3 {
-    border-bottom: 1px solid $border;
+    border-bottom: 2px solid $votes-border;
     font-size: rem-calc(18);
-    margin: 0 0 $line-height 0;
+    margin: 0;
     text-transform: uppercase;
   }
 
