@@ -4,8 +4,8 @@ class Admin::BaseController < ApplicationController
 
   private
 
-  def verify_administrator
-    raise CanCan::AccessDenied unless current_user.try(:administrator?)
-  end
+    def verify_administrator
+      raise CanCan::AccessDenied unless current_user.try(:administrator?)
+    end
 
 end

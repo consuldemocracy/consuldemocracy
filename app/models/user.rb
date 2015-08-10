@@ -25,6 +25,6 @@ class User < ActiveRecord::Base
   end
 
   def moderator?
-    @is_moderator ||= Moderator.where(user_id: id).exists? || administrator?
+    @is_moderator ||= Moderator.where(user_id: id).exists?
   end
 end
