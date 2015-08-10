@@ -34,6 +34,10 @@ feature 'Debates' do
     expect(page).to have_content "Debate description"
     expect(page).to have_content debate.author.name
     expect(page).to have_content I18n.l(Date.today)
+
+    within('.social-share-button') do
+      expect(page.all('a').count).to be(3) # Twitter, Facebook, Google+
+    end
   end
 
   scenario 'Create' do
