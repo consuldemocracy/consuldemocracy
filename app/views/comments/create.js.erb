@@ -1,3 +1,9 @@
 var parent_id = '<%= dom_id(@parent) %>';
-App.Comments.reset_and_hide_form(parent_id);
+
+<% if @parent.is_a?(Debate) -%>
+  App.Comments.reset_form(parent_id);
+<% else -%>
+  App.Comments.reset_and_hide_form(parent_id);
+<% end -%>
+
 App.Comments.add_response(parent_id, "<%= j(render @comment) %>");

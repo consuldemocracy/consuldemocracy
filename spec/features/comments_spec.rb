@@ -59,6 +59,7 @@ feature 'Comments' do
     visit debate_path(debate)
 
     click_link "Reply"
+
     within "#js-comment-form-comment_#{comment.id}" do
       fill_in 'comment_body', with: 'It will be done next week.'
       click_button 'Publish reply'
@@ -67,6 +68,8 @@ feature 'Comments' do
     within "#comment-#{comment.id}" do
       expect(page).to have_content 'It will be done next week.'
     end
+
+    expect(page).to have_selector("#js-comment-form-comment_#{comment.id}", visible: true)
   end
 
   scenario "N replies", :js do
@@ -74,9 +77,9 @@ feature 'Comments' do
     parent = create(:comment, commentable: debate)
 
     7.times do
-     create(:comment, commentable: debate).
-     move_to_child_of(parent)
-     parent = parent.children.first
+      create(:comment, commentable: debate).
+      move_to_child_of(parent)
+      parent = parent.children.first
     end
 
     visit debate_path(debate)
