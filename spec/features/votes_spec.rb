@@ -4,7 +4,7 @@ feature 'Votes' do
 
   feature 'Debates' do
 
-    background do
+    before(:each) do
       @manuela = create(:user)
       @pablo = create(:user)
       @debate = create(:debate)
@@ -236,13 +236,10 @@ feature 'Votes' do
 
       expect(page).to have_content "1 vote"
     end
-
   end
 
-
   feature 'Comments' do
-
-    background do
+    before(:each) do
       @manuela = create(:user)
       @pablo = create(:user)
       @debate = create(:debate)
