@@ -21,8 +21,14 @@ es:
       debate: Debate
       vote: voto
       votes: votos
-      comment: Comentario
-      comments: Comentarios
+      comments:
+        zero: Sin comentarios
+        one: 1 Comentario
+        other: "%{count} Comentarios"
+      responses:
+        zero: Sin respuestas
+        one: 1 Respuesta
+        other: "%{count} Respuestas"
     form:
       error: error
       errors: errores
@@ -36,8 +42,11 @@ es:
       accept_terms: Acepto la política de privacidad y el aviso legal
     show:
       back_link: Volver
-      comment: Comentario
-      comments: Comentarios
+      comments_title: Comentarios
+      comments:
+        zero: Sin comentarios
+        one: 1 Comentario
+        other: "%{count} Comentarios"
       leave_comment: Deja tu comentario
       login_to_comment: Entra para participar
       edit_debate_link: Editar
@@ -108,5 +117,3 @@ es:
       all: "No tienes permiso para borrar %{subject}"
     manage:
       all: "No tienes permiso para realizar la acción '%{action}' sobre %{subject}."
-
-

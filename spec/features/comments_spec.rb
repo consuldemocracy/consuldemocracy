@@ -10,6 +10,7 @@ feature 'Comments' do
     visit debate_path(debate)
 
     expect(page).to have_css('.comment', count: 3)
+    expect(page).to have_content I18n.t('debates.debate.comments', count: 3)
 
     comment = Comment.first
     within first('.comment') do
@@ -84,6 +85,11 @@ feature 'Comments' do
 
     visit debate_path(debate)
     expect(page).to have_css(".comment.comment.comment.comment.comment.comment.comment.comment")
+    expect(page).to have_content I18n.t('debates.debate.comments', count: 8)
+
+    within first('.comment') do
+      expect(page).to have_content I18n.t('debates.comment.responses', count: 7)
+    end
   end
 
 end

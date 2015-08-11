@@ -21,8 +21,14 @@ en:
       debate: Debate
       vote: vote
       votes: votes
-      comment: Comment
-      comments: Comments
+      comments:
+        zero: No comments
+        one: 1 Comment
+        other: "%{count} Comments"
+      responses:
+        zero: No Responses
+        one: 1 Response
+        other: "%{count} Responses"
     form:
       error: error
       errors: errors
@@ -36,8 +42,11 @@ en:
       accept_terms: I accept the privacy policy and the legal terms
     show:
       back_link: Back
-      comment: Comment
-      comments: Comments
+      comments_title: Comments
+      comments:
+        zero: No comments
+        one: 1 Comment
+        other: "%{count} Comments"
       leave_comment: Write a comment
       login_to_comment: Log in to participate
       edit_debate_link: Edit

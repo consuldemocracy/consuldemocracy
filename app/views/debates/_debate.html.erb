@@ -9,7 +9,7 @@
           <h3><%= link_to debate.title, debate %></h3>
           <p class="debate-info">
             <i class="icon-chat-bubble-two"></i>&nbsp;
-            <%= link_to pluralize(debate.comment_threads.count, t("debates.debate.comment"), t("debates.debate.comments")), debate_path(debate, anchor: "comments") %>
+            <%= link_to t("debates.debate.comments", count: debate.comment_threads.count), debate_path(debate, anchor: "comments") %>
           </p>
           <div class="debate-description">
             <%= link_to debate.description, debate %>
