@@ -21,6 +21,7 @@
 
 var initialize_modules = function() {
   App.Comments.initialize();
+  App.Votes.initialize();
 };
 
 $(function(){
