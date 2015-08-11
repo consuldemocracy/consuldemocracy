@@ -20,4 +20,9 @@
   <span class="total-votes">
     <%= pluralize(debate.total_votes, t("debates.debate.vote"), t("debates.debate.votes")) %>
   </span>
+  <div class="not-logged">
+    <%= t("votes.unauthenticated",
+      signin: link_to(t("votes.signin"), new_user_session_path),
+      signup: link_to(t("votes.signup"), new_user_registration_path)).html_safe %>
+  </div>
 </div>

@@ -11,10 +11,11 @@
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
 @mixin votes {
-  border-top: 1px solid $votes-border;
-  padding: rem-calc(14) rem-calc(12);
   background: $votes-bg;
+  border-top: 1px solid $votes-border;
   margin: 0 -12px;
+  padding: rem-calc(14) rem-calc(12);
+  position: relative;
 
   .icon-like {
     background: white;
@@ -113,6 +114,24 @@
 
   .divider {
     margin: 0 rem-calc(6);
+  }
+
+  .not-logged {
+    background: $not-logged-bg;
+    color: white;
+    height: 100%;
+    left: 0;
+    line-height: $line-height*2;
+    padding-top: $line-height/2;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    width: 100%;
+
+    a {
+      color: white;
+      text-decoration: underline;
+    }
   }
 }
 
@@ -291,6 +310,11 @@
         line-height: $line-height/2;
       }
     }
+
+    .not-logged {
+      line-height: $line-height;
+      padding-top: $line-height*1.5;
+    }
   }
 }
 
@@ -377,6 +401,11 @@
       display: block;
       float: none;
       line-height: $line-height;
+    }
+
+    .not-logged {
+      line-height: $line-height;
+      padding: $line-height;
     }
   }
 
