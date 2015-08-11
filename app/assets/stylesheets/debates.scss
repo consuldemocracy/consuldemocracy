@@ -13,7 +13,7 @@
 @mixin votes {
   border-top: 1px solid $votes-border;
   padding: rem-calc(14) rem-calc(12);
-  background: $votes-background;
+  background: $votes-bg;
   margin: 0 -12px;
 
   .icon-like {
@@ -178,6 +178,10 @@
         font-size: rem-calc(16);
         vertical-align: top;
       }
+
+      a {
+        color: $text-light;
+      }
     }
 
     .debate-description {
@@ -320,6 +324,10 @@
     line-height: $line-height*2;
     text-align: justify;
 
+    a {
+        color: $text-light;
+    }
+
     .bullet {
       color: $border;
     }
@@ -367,6 +375,11 @@
 
   .leave-comment {
     display: inline-block;
+    margin-top: $line-height;
+  }
+
+  .tags {
+    display: block;
     margin-top: $line-height;
   }
 }
