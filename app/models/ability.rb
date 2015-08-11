@@ -8,14 +8,22 @@ class Ability
     if user # logged-in users
       can [:read, :update], User, id: user.id
 
-      can [:read, :create, :vote], Debate
+      can :read, Debate
       can :update, Debate do |debate|
         debate.editable_by?(user)
       end
 
-      can [:create, :vote], Comment
+      unless user.organization?
+        can :vote, Debate
+        can :vote, Comment
+      end
 
-      if user.moderator? or user.administrator?
+      if !user.organization? || user.verified_organization?
+        can :create, Comment
+        can :create, Debate
+      end
+
+      if user.moderator? || user.administrator?
 
       elsif user.administrator?
 

@@ -45,6 +45,31 @@ describe Ability do
     end
   end
 
+  describe "Organization" do
+    let(:user) { create(:user, organization_name: "Organization") }
+
+    it { should be_able_to(:show, user) }
+    it { should be_able_to(:edit, user) }
+
+    it { should be_able_to(:index, Debate) }
+    it { should be_able_to(:show, debate) }
+
+    it { should_not be_able_to(:vote, debate) }
+    it { should_not be_able_to(:vote, Comment) }
+
+    describe "Not verified" do
+      it { should_not be_able_to(:create, Comment) }
+      it { should_not be_able_to(:create, Debate) }
+    end
+
+    describe "Verified" do
+      before(:each) { user.organization_verified_at = Time.now }
+
+      it { should be_able_to(:create, Comment) }
+      it { should be_able_to(:create, Debate) }
+    end
+  end
+
   describe "Moderator" do
     let(:user) { create(:user) }
     before { create(:moderator, user: user) }
