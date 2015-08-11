@@ -1,3 +1,5 @@
+<%- limit ||= nil %>
+
 <% if debate.tags.any? %>
-  <span class='tags'><%= tags(debate) %></span>
+  <span class='tags'><%= tags(debate, limit) %></span>
 <% end %>

@@ -42,6 +42,15 @@ class Debate < ActiveRecord::Base
     super.try :html_safe
   end
 
+  def tag_list_with_limit(limit = nil)
+    tags.most_used(limit).pluck :name
+  end
+
+  def tags_count_out_of_limit(limit = nil)
+    count = tags.count - limit
+    count < 0 ? 0 : count
+  end
+
   protected
 
   def sanitize_description
