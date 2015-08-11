@@ -31,4 +31,11 @@ class Comment < ActiveRecord::Base
   def total_votes
     votes_for.size
   end
+
+  # TODO: faking counter cache since there is a bug with acts_as_nested_set :counter_cache
+  # Remove when https://github.com/collectiveidea/awesome_nested_set/issues/294 is fixed
+  # There is a test for this, so you should know if it is actually fixed.
+  def children_count
+    children.count
+  end
 end
