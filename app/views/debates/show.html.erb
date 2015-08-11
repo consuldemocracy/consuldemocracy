@@ -12,10 +12,12 @@
       <p><%= social_share_button_tag(@debate.title) %></p>
     </div>
 
-    <div id="<%= dom_id(@debate) %>_votes" class="small-12 medium-3 column">
+    <div class="small-12 medium-3 column">
       <h3><%= t("votes.supports") %></h3>
       <div class="text-center">
-        <%= render 'debates/votes', debate: @debate %>
+        <div id="<%= dom_id(@debate) %>_votes">
+         <%= render 'debates/votes', debate: @debate %>
+        </div>
         <% if user_signed_in? %>
           <%= link_to t("debates.show.leave_comment"), "#comments", class: "leave-comment" %>
         <% else %>
