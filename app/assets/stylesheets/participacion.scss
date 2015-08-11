@@ -370,10 +370,14 @@ form {
     line-height: $line-height;
   }
 
-  input[type]:not([type=submit]) {
+  input[type]:not([type=submit]):not([type=file]) {
     background: $input-bg;
     height: $line-height*2;
     margin-bottom: rem-calc(16);
+  }
+
+  input[type=file] {
+    margin: rem-calc(12) 0;
   }
 
   .note {
@@ -390,6 +394,7 @@ form {
   .checkbox {
     display: inline-block;
     font-size: rem-calc(14);
+    font-weight: normal;
     line-height: $line-height*2;
     margin: 0 0 0 rem-calc(6);
     vertical-align: top;
@@ -463,6 +468,7 @@ form {
     font-weight: bold;
     line-height: $line-height;
     margin: 0;
+    margin-bottom: $line-height/2;
   }
 
   .recommendations {
