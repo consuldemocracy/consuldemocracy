@@ -71,10 +71,13 @@ es:
       change_credentials_link: "Cambiar mis credenciales"
       email_on_debate_comment_label: "Recibir un email cuando alguien comenta en mis debates"
       email_on_comment_reply_label: "Recibir un email cuando alguien contesta a mis comentarios"
+      avatar: "Avatar"
+      personal: "Datos personales"
       first_name_label: "Nombre"
       last_name_label: "Apellidos"
       use_nickname_label: "Usar pseudónimo"
       nickname_label: "Pseudónimo"
+      notifications: Notificaciones
   simple_captcha:
     placeholder: "Introduce el texto de la imagen"
     label: "Introduce el texto en la caja:"

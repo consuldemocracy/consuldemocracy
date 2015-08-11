@@ -71,10 +71,13 @@ en:
       email_on_debate_comment_label: "Receive email when someone comments on my debates"
       email_on_comment_reply_label: "Receive email when someone replies to my comments"
       change_credentials_link: "Change my credentials"
+      avatar: "Avatar"
+      personal: "Personal data"
       first_name_label: "First Name"
       last_name_label: "Last Name"
       use_nickname_label: "Use nickname"
       nickname_label: "Nickname"
+      notifications: Notifications
   simple_captcha:
     placeholder: "Enter the image value"
     label: "Enter the code in the box:"
