@@ -25,8 +25,8 @@ en:
         other: "%{count} Comments"
       votes:
         zero: No votes
-        one: 1 Vote
-        other: "%{count} Votes"
+        one: 1 vote
+        other: "%{count} votes"
     comment:
       responses:
         zero: No Responses
@@ -34,8 +34,8 @@ en:
         other: "%{count} Responses"
       votes:
         zero: No votes
-        one: 1 Vote
-        other: "%{count} Votes"
+        one: 1 vote
+        other: "%{count} votes"
       votes_weighted_score: "Total: %{score}"
     form:
       error: error

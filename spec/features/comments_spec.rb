@@ -88,7 +88,7 @@ feature 'Comments' do
     expect(page).to have_content I18n.t('debates.debate.comments', count: 8)
 
     within first('.comment') do
-      expect(page).to have_content I18n.t('debates.comment.responses', count: 7)
+      expect(page).to have_content I18n.t('debates.comment.responses', count: 1)
     end
   end
 

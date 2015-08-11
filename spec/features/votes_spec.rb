@@ -112,7 +112,7 @@ feature 'Votes' do
     scenario 'Show no votes' do
       visit debate_path(@debate)
 
-      expect(page).to have_content "0 votes"
+      expect(page).to have_content "No votes"
 
       within('.in-favor') do
         expect(page).to have_content "0%"
@@ -263,6 +263,8 @@ feature 'Votes' do
         within(".against")  do
           expect(page).to have_content "1"
         end
+
+        expect(page).to have_content "2 votes"
       end
     end
 
@@ -277,6 +279,8 @@ feature 'Votes' do
         within(".against")  do
           expect(page).to have_content "0"
         end
+
+        expect(page).to have_content "1 vote"
       end
     end
 
@@ -292,6 +296,8 @@ feature 'Votes' do
         within('.against')  do
           expect(page).to have_content "1"
         end
+
+        expect(page).to have_content "1 vote"
       end
     end
 
@@ -307,6 +313,8 @@ feature 'Votes' do
         within('.against')  do
           expect(page).to have_content "0"
         end
+
+        expect(page).to have_content "1 vote"
       end
     end
 
