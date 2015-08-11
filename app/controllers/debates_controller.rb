@@ -9,7 +9,6 @@ class DebatesController < ApplicationController
     else
       @debates = Debate.all.order("created_at DESC")
       set_voted_values @debates.map(&:id)
-      @featured_debates = @debates.to_a.shift(3)
     end
   end
 
@@ -54,7 +53,4 @@ class DebatesController < ApplicationController
       params.require(:debate).permit(:title, :description, :tag_list, :terms_of_service, :captcha, :captcha_key)
     end
 
-    def set_voted_values(debates_ids)
-      @voted_values = current_user ? current_user.votes_on_debates(debates_ids) : {}
-    end
 end
