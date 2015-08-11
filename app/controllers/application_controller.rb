@@ -1,9 +1,8 @@
 require "application_responder"
 
 class ApplicationController < ActionController::Base
-
   check_authorization unless: :devise_controller?
-
+  include SimpleCaptcha::ControllerHelpers
   self.responder = ApplicationResponder
   respond_to :html
 
@@ -36,11 +35,6 @@ class ApplicationController < ActionController::Base
     else
       "application"
     end
-  end
-
-  def verify_captcha?(resource)
-    return true unless recaptcha_keys?
-    verify_recaptcha(model: resource)
   end
 
 end

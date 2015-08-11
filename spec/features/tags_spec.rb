@@ -65,6 +65,7 @@ feature 'Tags' do
     visit new_debate_path
     fill_in 'debate_title', with: 'Title'
     fill_in 'debate_description', with: 'Description'
+    fill_in 'debate_captcha', with: correct_captcha_text
     check 'debate_terms_of_service'
 
     fill_in 'debate_tag_list', with: "Impuestos, Economía, Hacienda"

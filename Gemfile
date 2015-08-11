@@ -26,7 +26,7 @@ gem 'acts-as-taggable-on'
 gem "responders"
 gem 'foundation-rails'
 gem 'acts_as_votable'
-gem "recaptcha", require: "recaptcha/rails"
+gem 'simple_captcha2', require: 'simple_captcha'
 gem 'ckeditor'
 gem 'cancancan'
 gem 'social-share-button'

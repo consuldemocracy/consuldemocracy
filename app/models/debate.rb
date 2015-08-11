@@ -1,6 +1,6 @@
 require 'numeric'
 class Debate < ActiveRecord::Base
-
+  apply_simple_captcha
   TITLE_LENGTH = Debate.columns.find{|c| c.name == 'title'}.limit
 
   acts_as_votable

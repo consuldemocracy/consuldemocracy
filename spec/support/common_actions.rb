@@ -9,6 +9,7 @@ module CommonActions
     fill_in 'user_email',                 with: 'manuela@madrid.es'
     fill_in 'user_password',              with: 'judgementday'
     fill_in 'user_password_confirmation', with: 'judgementday'
+    fill_in 'user_captcha',               with: correct_captcha_text
 
     click_button 'Sign up'
   end
@@ -49,6 +50,10 @@ module CommonActions
       click_button 'Publish reply'
     end
     expect(page).to have_content 'It will be done next week.'
+  end
+
+  def correct_captcha_text
+    SimpleCaptcha::SimpleCaptchaData.first.value
   end
 
 end

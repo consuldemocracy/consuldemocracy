@@ -47,6 +47,7 @@ feature 'Debates' do
     visit new_debate_path
     fill_in 'debate_title', with: 'Acabar con los desahucios'
     fill_in 'debate_description', with: 'Esto es un tema muy importante porque...'
+    fill_in 'debate_captcha', with: correct_captcha_text
     check 'debate_terms_of_service'
 
     click_button 'Create Debate'
@@ -65,6 +66,7 @@ feature 'Debates' do
     visit new_debate_path
     fill_in 'debate_title', with: 'A test'
     fill_in 'debate_description', with: '<p>This is <script>alert("an attack");</script></p>'
+    fill_in 'debate_captcha', with: correct_captcha_text
     check 'debate_terms_of_service'
 
     click_button 'Create Debate'
@@ -86,6 +88,7 @@ feature 'Debates' do
     fill_in 'debate_title', with: 'A test'
     fill_in 'debate_description', with: 'A test'
     fill_in 'debate_tag_list', with: 'user_id=1, &a=3, <script>alert("hey");</script>'
+    fill_in 'debate_captcha', with: SimpleCaptcha::SimpleCaptchaData.first.value
     check 'debate_terms_of_service'
 
     click_button 'Create Debate'
