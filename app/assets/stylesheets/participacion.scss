@@ -457,12 +457,17 @@ form {
     opacity: .5;
   }
 
+  .avatar {
+    margin-bottom: $line-height;
+  }
+
   h2 {
     clear: both;
     font-size: rem-calc(20);
     font-weight: bold;
     line-height: $line-height;
     margin: 0;
+    margin-bottom: $line-height/2;
   }
 
   .recommendations {

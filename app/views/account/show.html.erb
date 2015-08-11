@@ -35,7 +35,11 @@
           <% end %>
         </div>
 
-        <div class="small-12 column">
+        <div class="small-12 medium-6 column">
+          <h2><%= t("account.show.avatar")%></h2>
+          <%= image_tag('user_default_big.jpg', class: "avatar", size: "100x100") %>
+
+          <h2><%= t("account.show.notifications")%></h2>
           <%= f.label :email_on_debate_comment do %>
             <%= f.check_box :email_on_debate_comment %>
             <span class="checkbox"><%= t("account.show.email_on_debate_comment_label") %></span>
