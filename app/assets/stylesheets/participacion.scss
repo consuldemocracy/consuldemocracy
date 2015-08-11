@@ -73,6 +73,14 @@ p {
   margin-bottom: $line-height/2;
 }
 
+a {
+  color: $link;
+
+  &:hover {
+    color: $link-hover;
+  }
+}
+
 .button {
   padding: rem-calc(15) rem-calc(32);
 }

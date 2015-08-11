@@ -1,25 +1,29 @@
 <div class="row">
-	<div id="comment-<%= comment.id %>" class="small-12 column comment">
+  <div id="comment-<%= comment.id %>" class="comment small-12 column">
 
-		<%= image_tag('user_default_2.jpg', class: 'user-photo left', size: '32x32') %>
+    <%= image_tag('user_default_2.jpg', class: 'user-photo left', size: '32x32') %>
 
-	 	<div class="comment-body">
-	 		<span class="comment-info">
-	 			<%= comment.user.name %>&nbsp;&bullet;&nbsp;<%= time_ago_in_words(comment.created_at) %>
-	 		</span>
-  		<p><%= comment.body %></p>
+    <div class="comment-body">
+      <span class="comment-info">
+        <span><%= comment.user.name %></span>&nbsp;&bullet;&nbsp;<%= time_ago_in_words(comment.created_at) %>
+      </span>
+      <p><%= comment.body %></p>
 
-  		<span id="<%= dom_id(comment) %>_votes">
-  		  <%= render 'comments/votes', comment: comment %>
-  		</span>
+      <span id="<%= dom_id(comment) %>_votes" class="comment-votes right">
+        <%= render 'comments/votes', comment: comment %>
+      </span>
 
-  		<% if user_signed_in? %>
-  		<p class="reply"><%= render 'comments/form', {parent: comment, toggeable: true} %></p>
-  		<% end %>
-	  </div>
+      <p class="reply">
+      númerototal respuestas
+      <% if user_signed_in? %>
+        &nbsp;|&nbsp;
+        <%= render 'comments/form', {parent: comment, toggeable: true} %></p>
+      <% end %>
+    </div>
 
-  	<div class="comment-children">
-    	<%= render comment.children %>
-  	</div>
-	</div>
+    <div class="comment-children">
+      <%= render comment.children %>
+    </div>
+
+  </div>
 </div>
