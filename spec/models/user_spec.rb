@@ -119,6 +119,18 @@ describe User do
       subject.organization_name = "Anonymous"
       expect(subject.organization?).to be true
     end
+
+    it "deactivates the validation of first_name and last_name " do
+      subject.first_name = nil
+      subject.last_name = nil
+      subject.organization_name = "The A Team"
+      expect(subject).to be_valid
+    end
+
+    it "calculates the name using the organization name" do
+      subject.organization_name = "The A Team"
+      expect(subject.name).to eq("The A Team")
+    end
   end
 
   describe "verified_organization?" do

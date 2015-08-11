@@ -4,12 +4,14 @@ class User < ActiveRecord::Base
 
   acts_as_voter
 
-  validates :first_name, presence: true, unless: :use_nickname?
-  validates :last_name, presence: true, unless: :use_nickname?
-  validates :nickname, presence: true, if: :use_nickname?
+  validates :first_name, presence: true, if: :use_first_name?
+  validates :last_name,  presence: true, if: :use_last_name?
+  validates :nickname,   presence: true, if: :use_nickname?
 
   def name
-    use_nickname? ? nickname : "#{first_name} #{last_name}"
+    return nickname          if use_nickname?
+    return organization_name if organization?
+    "#{first_name} #{last_name}"
   end
 
   def votes_on_debates(debates_ids = [])
@@ -35,4 +37,14 @@ class User < ActiveRecord::Base
   def verified_organization?
     organization_verified_at.present?
   end
+
+  private
+    def use_first_name?
+      !use_nickname? && !organization?
+    end
+
+    def use_last_name?
+      use_first_name?
+    end
+
 end
