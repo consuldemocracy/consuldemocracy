@@ -27,4 +27,12 @@ class User < ActiveRecord::Base
   def moderator?
     @is_moderator ||= Moderator.where(user_id: id).exists?
   end
+
+  def organization?
+    organization_name.present?
+  end
+
+  def verified_organization?
+    organization_verified_at.present?
+  end
 end

@@ -111,4 +111,24 @@ describe User do
     end
   end
 
+  describe "organization?" do
+    it "is false when organization_name is blank" do
+      expect(subject.organization?).to be false
+    end
+    it "is true when organization_name exists" do
+      subject.organization_name = "Anonymous"
+      expect(subject.organization?).to be true
+    end
+  end
+
+  describe "verified_organization?" do
+    it "is false when organization_verified_at? is blank" do
+      expect(subject.verified_organization?).to be false
+    end
+    it "is true when organization_verified_at? exists" do
+      subject.organization_verified_at = Time.now
+      expect(subject.verified_organization?).to be true
+    end
+  end
+
 end
