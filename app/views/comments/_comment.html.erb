@@ -22,7 +22,7 @@
     </div>
 
     <div class="comment-children">
-      <%= render comment.children %>
+      <%= render comment.children.reorder('id DESC, lft') %>
     </div>
 
   </div>

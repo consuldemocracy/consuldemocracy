@@ -8,6 +8,8 @@ class Comment < ActiveRecord::Base
   belongs_to :commentable, polymorphic: true
   belongs_to :user
 
+  scope :recent, -> { order(id: :desc) }
+
   def self.build(commentable, user, body)
     new commentable: commentable,
         user_id:     user.id,

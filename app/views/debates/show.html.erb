@@ -43,7 +43,7 @@
           <%= render 'comments/form', {parent: @debate, toggeable: false} %>
         </div>
       <% end %>
-      <%= render @debate.root_comments %>
+      <%= render @debate.root_comments.recent %>
     </div>
     <% if current_user && @debate.editable_by?(current_user) %>
       <%= link_to t("debates.show.edit_debate_link"), edit_debate_path(@debate), :class => 'button radius right' %>
