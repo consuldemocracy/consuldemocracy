@@ -4,11 +4,11 @@ class DebatesController < ApplicationController
 
   def index
     if params[:tag]
-      @debates = Debate.tagged_with(params[:tag]).order("created_at DESC")
-      set_voted_values @debates.map(&:id)
+      @debates = Debate.tagged_with(params[:tag]).order(id: :desc)
+      set_voted_values @debates.pluck(:id)
     else
-      @debates = Debate.all.order("created_at DESC")
-      set_voted_values @debates.map(&:id)
+      @debates = Debate.all.order(id: :desc)
+      set_voted_values @debates.pluck(:id)
     end
   end
 
