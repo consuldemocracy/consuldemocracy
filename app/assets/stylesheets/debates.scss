@@ -354,10 +354,17 @@
     font-weight: bold;
   }
 
+  .sidebar {
+    border-top: 1px solid $border;
+  }
+
   h3 {
-    border-bottom: 2px solid $votes-border;
-    font-size: rem-calc(18);
-    margin: 0;
+    border-top: 1px solid $votes-border;
+    display: inline-block;
+    font-family: $font-family-sans-serif;
+    font-size: rem-calc(16);
+    margin: -1px 0 rem-calc(12);
+    padding-top: rem-calc(6);
     text-transform: uppercase;
   }
 
@@ -456,12 +463,24 @@
 
     p {
       color: $comments-text;
-      font-size: rem-calc(15);
       margin-bottom: 0;
     }
 
-    a {
+    .comment-votes {
       color: $comments-info;
+      font-weight: lighter;
+      margin: rem-calc(15) rem-calc(6) 0;
+
+      a {
+        color: $comments-info;
+        display: inline-block;
+        vertical-align: top;
+      }
+
+      [class^="icon-"] {
+        font-size: rem-calc(20);
+        vertical-align: top;
+      }
     }
 
     .user-photo {
@@ -469,7 +488,7 @@
       display: inline-block;
       height: 32px;
       line-height: $line-height*2;
-      margin-right: $line-height/4;
+      margin-right: rem-calc(6);
       vertical-align: top;
       width: 32px;
     }
@@ -478,13 +497,17 @@
       margin-left: $line-height*1.6;
 
       .reply {
+        background: white;
+        border: 1px solid $border;
         font-size: rem-calc(12);
         font-weight: lighter;
+        margin: rem-calc(6) 0;
+        padding: rem-calc(6);
       }
     }
 
     .comment-children {
-      border-left: 1px dotted $border;
+      border-left: 1px dashed $border;
       margin-left: $line-height*1.6;
       padding-left: $line-height/4;
 
@@ -498,6 +521,11 @@
       font-size: rem-calc(13);
       font-weight: lighter;
       vertical-align: middle;
+
+      span {
+        color: $text-color;
+        font-weight: bold;
+      }
     }
   }
 }

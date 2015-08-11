@@ -2,17 +2,22 @@
   <div id="debate-<%= @debate.id %>" class="row">
     <div class="small-12 medium-9 column">
       <i class="icon-angle-left left"></i>&nbsp;<%= link_to t("debates.show.back_link"), debates_path, class: 'left back' %>
+      <h1><%= @debate.title %></h1>
+
       <div class="debate-info">
         <%= image_tag('user_default.jpg', class: 'author-photo', size: '32x32') %>
         <span class="author"><%= @debate.author.name %></span><span class="bullet">&nbsp;&bullet;&nbsp;</span> <%= l @debate.created_at.to_date %> <span class="bullet">&nbsp;&bullet;&nbsp;</span><i class="icon-chat-bubble-two"></i>&nbsp;<%= link_to pluralize(@debate.comment_threads.count, t("debates.show.comment"), t("debates.show.comments")), "#comments" %>
       </div>
-      <h1><%= @debate.title %></h1>
+
       <%= @debate.description %>
+
       <%= render 'shared/tags', debate: @debate %>
+
       <p><%= social_share_button_tag(@debate.title) %></p>
     </div>
 
-    <div class="small-12 medium-3 column">
+    <aside class="small-12 medium-3 column">
+      <div class="sidebar"></div>
       <h3><%= t("votes.supports") %></h3>
       <div class="text-center">
         <div id="<%= dom_id(@debate) %>_votes">
@@ -24,8 +29,7 @@
           <%= link_to t("debates.show.login_to_comment"), new_user_session_path, class: "leave-comment" %>
         <% end %>
       </div>
-    </div>
-
+    </aside>
   </div>
 </section>
 
