@@ -19,16 +19,24 @@ es:
       create_debate: Crea un debate
     debate:
       debate: Debate
-      vote: voto
-      votes: votos
       comments:
         zero: Sin comentarios
         one: 1 Comentario
         other: "%{count} Comentarios"
+      votes:
+        zero: Sin votos
+        one: 1 Voto
+        other: "%{count} Votos"
+    comment:
       responses:
         zero: Sin respuestas
         one: 1 Respuesta
         other: "%{count} Respuestas"
+      votes:
+        zero: Sin votos
+        one: 1 Voto
+        other: "%{count} Votos"
+      votes_weighted_score: "Total: %{score}"
     form:
       error: error
       errors: errores

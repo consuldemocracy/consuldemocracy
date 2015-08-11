@@ -28,4 +28,7 @@ class Comment < ActiveRecord::Base
     user
   end
 
+  def total_votes
+    votes_for.size
+  end
 end

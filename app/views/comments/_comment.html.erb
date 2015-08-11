@@ -14,7 +14,7 @@
       </span>
 
       <p class="reply">
-        <%= t("debates.debate.responses", count: comment.children_count) %>
+        <%= t("debates.comment.responses", count: comment.children_count) %>
         <% if user_signed_in? %>
           &nbsp;|&nbsp;
           <%= render 'comments/form', {parent: comment, toggeable: true} %>
