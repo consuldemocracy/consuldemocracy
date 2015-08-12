@@ -1,7 +1,7 @@
 <div class="auth row">
   <div class="small-12 medium-8 large-5 column small-centered">
     <div class="panel">
-      <h1 class="text-center"><%= t("devise_views.sessions.new.title") %></h1>
+      <h2><%= t("devise_views.sessions.new.title") %></h2>
 
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
         <div class="row">
@@ -17,8 +17,10 @@
 
           <% if devise_mapping.rememberable? -%>
             <div class="small-12 columns">
-              <%= f.check_box :remember_me %>
-              <%= f.label :remember_me, t("devise_views.sessions.new.remember_me") %>
+              <%= f.label :remember_me do %>
+                <%= f.check_box :remember_me %>
+                <span class="checkbox"><%= t("devise_views.sessions.new.remember_me") %>
+              <% end %>
             </div>
           <% end -%>
 

@@ -29,7 +29,7 @@ en:
       edit:
         title: "Change your password"
         password_label: "New password"
-        min_length: "(%{min} characters minimum)"
+        min_length: "%{min} characters minimum"
         password_confirmation_label: "Confirm new password"
         change_submit: "Change my password"
       new:

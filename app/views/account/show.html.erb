@@ -2,7 +2,7 @@
   <div class="small-12 column">
     <%= link_to t("account.show.change_credentials_link"), edit_user_registration_path, class: 'button radius small secondary right' %>
 
-    <h1 class="inline-block"><%= t("account.show.title") %></h1>
+    <h2 class="inline-block"><%= t("account.show.title") %></h2>
 
     <%= form_for @account, as: :account, url: account_path do |f| %>
 
@@ -19,7 +19,7 @@
 
       <div class="row">
         <div class="small-12 medium-6 column">
-          <h2><%= t("account.show.personal")%></h2>
+          <h3><%= t("account.show.personal")%></h3>
           <%= f.label :first_name, t("account.show.first_name_label") %>
           <%= f.text_field :first_name, placeholder: t("account.show.first_name_label") %>
 
@@ -35,10 +35,10 @@
         </div>
 
         <div class="small-12 medium-6 column">
-          <h2><%= t("account.show.avatar")%></h2>
+          <h3><%= t("account.show.avatar")%></h3>
           <%= image_tag('user_default_big.jpg', class: "avatar", size: "100x100") %>
 
-          <h2><%= t("account.show.notifications")%></h2>
+          <h3><%= t("account.show.notifications")%></h3>
           <%= f.label :email_on_debate_comment do %>
             <%= f.check_box :email_on_debate_comment %>
             <span class="checkbox"><%= t("account.show.email_on_debate_comment_label") %></span>
