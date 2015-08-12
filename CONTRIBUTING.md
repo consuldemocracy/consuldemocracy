@@ -27,6 +27,7 @@ Cuando quieras resolver una incidencia mediante código:
 * Crea una rama para resolver la incidencia desde la rama `master`
 * Añade el código necesario para resolver la incidencia en tantos commits como sea preciso
 * Asegúrate de que los tests pasan (y escribe más tests para probar la nueva funcionalidad si fuera preciso)
+* Sigue estas [buenas prácticas](https://github.com/styleguide/ruby)
 * Envía una *pull request* al repositorio principal indicando la incidencia que se está arreglando
 
 ## Otras formas de contribuir sin código
