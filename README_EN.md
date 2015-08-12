@@ -44,7 +44,7 @@ bundle exec bin/rspec
 
 ## Licence
 
-Code published under MIT license (see [MIT-license.md](MIT-license.md))
+Code published under AFFERO GPL v3 (see [LICENSE-AGPLv3.txt](LICENSE-AGPLv3.txt))
 
 ## Contributions
 
