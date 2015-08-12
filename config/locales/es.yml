@@ -61,6 +61,9 @@ es:
     agree: Estoy de acuerdo
     disagree: No estoy de acuerdo
     supports: Apoyos
+    unauthenticated: "Necesitas %{signin} o %{signup} para continuar."
+    signin: iniciar sesión
+    signup: registrarte
   account:
     show:
       title: "Mi cuenta"
