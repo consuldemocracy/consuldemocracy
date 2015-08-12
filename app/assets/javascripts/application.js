@@ -29,6 +29,9 @@ var initialize_modules = function() {
 $(function(){
   $(document).foundation();
 
-  $(document).ready(initialize_modules)
-  $(document).on('page:load', initialize_modules)
+  $(document).ready(initialize_modules);
+  $(document).on('page:load', initialize_modules);
+  $(document).on('ajax:complete', function(){
+    App.Users.initialize();
+  });
 });
