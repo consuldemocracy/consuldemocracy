@@ -3,3 +3,10 @@ en:
     dashboard:
       index:
         title: Moderation
+    organizations:
+      index:
+        title: Organizations
+        verify: Verify
+        reject: Reject
+        verified: Verified
+        rejected: Rejected

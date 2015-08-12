@@ -27,6 +27,12 @@ Rails.application.routes.draw do
 
   namespace :moderation do
     root to: "dashboard#index"
+    resources :organizations, only: :index do
+      member do
+        put :verify_organization
+        put :reject_organization
+      end
+    end
   end
 
   # Example of regular route:
