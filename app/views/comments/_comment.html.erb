@@ -14,11 +14,12 @@
       </span>
 
       <p class="reply">
-      númerototal respuestas
-      <% if user_signed_in? %>
-        &nbsp;|&nbsp;
-        <%= render 'comments/form', {parent: comment, toggeable: true} %></p>
-      <% end %>
+        <%= t("debates.comment.responses", count: comment.children_count) %>
+        <% if user_signed_in? %>
+          &nbsp;|&nbsp;
+          <%= render 'comments/form', {parent: comment, toggeable: true} %>
+        <% end %>
+      </p>
     </div>
 
     <div class="comment-children">
