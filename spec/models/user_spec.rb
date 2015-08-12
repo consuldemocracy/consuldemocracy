@@ -141,6 +141,36 @@ describe User do
       subject.organization_verified_at = Time.now
       expect(subject.verified_organization?).to be true
     end
+    it "is false when the organization was verified and then rejected" do
+      subject.organization_verified_at = Time.now
+      subject.organization_rejected_at = Time.now + 1
+      expect(subject.verified_organization?).to be false
+    end
+    it "is true when the organization was rejected and then verified" do
+      subject.organization_rejected_at = Time.now
+      subject.organization_verified_at = Time.now + 1
+      expect(subject.verified_organization?).to be true
+    end
+  end
+
+  describe "rejected_organization?" do
+    it "is false when organization_rejected_at? is blank" do
+      expect(subject.rejected_organization?).to be false
+    end
+    it "is true when organization_rejected_at? exists" do
+      subject.organization_rejected_at = Time.now
+      expect(subject.rejected_organization?).to be true
+    end
+    it "is true when the organization was verified and then rejected" do
+      subject.organization_verified_at = Time.now
+      subject.organization_rejected_at = Time.now + 1
+      expect(subject.rejected_organization?).to be true
+    end
+    it "is false when the organization was rejected and then verified" do
+      subject.organization_rejected_at = Time.now
+      subject.organization_verified_at = Time.now + 1
+      expect(subject.rejected_organization?).to be false
+    end
   end
 
 end

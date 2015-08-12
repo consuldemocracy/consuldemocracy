@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150810155304) do
+ActiveRecord::Schema.define(version: 20150812104712) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -52,6 +52,15 @@ ActiveRecord::Schema.define(version: 20150810155304) do
   end
 
   add_index "moderators", ["user_id"], name: "index_moderators_on_user_id", using: :btree
+
+  create_table "simple_captcha_data", force: :cascade do |t|
+    t.string   "key",        limit: 40
+    t.string   "value",      limit: 6
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "simple_captcha_data", ["key"], name: "idx_key", using: :btree
 
   create_table "taggings", force: :cascade do |t|
     t.integer  "tag_id"
@@ -99,6 +108,7 @@ ActiveRecord::Schema.define(version: 20150810155304) do
     t.string   "organization_name",        limit: 80
     t.datetime "organization_verified_at"
     t.string   "phone_number",             limit: 30
+    t.datetime "organization_rejected_at"
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree

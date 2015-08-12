@@ -35,7 +35,13 @@ class User < ActiveRecord::Base
   end
 
   def verified_organization?
-    organization_verified_at.present?
+    organization_verified_at.present? &&
+      (organization_rejected_at.blank? || organization_rejected_at < organization_verified_at)
+  end
+
+  def rejected_organization?
+    organization_rejected_at.present? &&
+      (organization_verified_at.blank? || organization_verified_at < organization_rejected_at)
   end
 
   private
