@@ -36,8 +36,7 @@
 
         <div class="small-12 medium-6 column">
           <h2><%= t("account.show.avatar")%></h2>
-          <%= image_tag('user_default_big.jpg', size: "100x100") %>
-          <%= file_field(:user, :avatar, accept: 'image/png,image/gif,image/jpeg') %>
+          <%= image_tag('user_default_big.jpg', size: "100x100", class: "avatar") %>
 
           <h2><%= t("account.show.notifications")%></h2>
           <%= f.label :email_on_debate_comment do %>
