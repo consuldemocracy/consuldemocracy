@@ -310,7 +310,7 @@ footer {
     &:hover {
       color: $link;
       cursor: pointer;
-      background: #e5f1f8;
+      background: $tags-bg-hover;
       border: 1px solid $brand;
     }
   }
@@ -328,6 +328,17 @@ footer {
 
   a {
     padding: $line-height/4 $line-height/3;
+
+    .label {
+      color: white;
+    }
+
+    &:hover {
+
+      .label {
+        background: $brand;
+      }
+    }
   }
 }
 
