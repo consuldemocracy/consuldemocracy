@@ -22,13 +22,9 @@ FactoryGirl.define do
   end
 
   factory :comment do
-    commentable
+    association :commentable, factory: :debate
     user
     body 'Comment body'
-  end
-
-  factory :commentable do
-    debate
   end
 
   factory :administrator do
