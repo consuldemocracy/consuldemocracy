@@ -17,6 +17,7 @@ feature 'Comments' do
       expect(page).to have_content comment.user.name
       expect(page).to have_content time_ago_in_words(comment.created_at)
       expect(page).to have_content comment.body
+      expect(page).to have_selector("img.initialjs-avatar[data-name='#{comment.user.name}'][data-height='32']", count: 1)
     end
   end
 

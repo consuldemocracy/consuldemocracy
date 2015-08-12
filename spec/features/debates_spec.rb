@@ -25,6 +25,7 @@ feature 'Debates' do
     expect(page).to have_content "Debate description"
     expect(page).to have_content debate.author.name
     expect(page).to have_content I18n.l(Date.today)
+    expect(page).to have_selector("img.initialjs-avatar[data-name='#{debate.author.name}'][data-height='32']", count: 1)
 
     within('.social-share-button') do
       expect(page.all('a').count).to be(3) # Twitter, Facebook, Google+
