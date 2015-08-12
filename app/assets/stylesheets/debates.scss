@@ -138,9 +138,11 @@
 // 02. Index
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
-.debate-featured {
-  margin-bottom: rem-calc(34);
+.featured-debates {
   margin-top: rem-calc(23);
+}
+
+.debate-featured {
 
   .panel {
     background: white;
@@ -242,6 +244,7 @@
 
 .debates-list {
   margin-bottom: $line-height*2;
+  margin-top: $line-height;
 }
 
 .debate {
@@ -318,12 +321,16 @@
   }
 }
 
+.sidebar {
+  margin-top: $line-height;
+}
+
 // 03. Show
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
 .debate-show {
   background: white;
-  padding: rem-calc(24) rem-calc(12) 0 rem-calc(12);
+  padding: rem-calc(24) rem-calc(12) rem-calc(48);
 
   .back {
     @include back;
@@ -378,8 +385,13 @@
     font-weight: bold;
   }
 
-  .sidebar {
+  .sidebar-divider {
     border-top: 1px solid $border;
+    margin-top: $line-height;
+
+    &:first-child {
+      margin-top: 0;
+    }
   }
 
   h3 {

@@ -2,6 +2,15 @@
   <div id="debate-<%= @debate.id %>" class="row">
     <div class="small-12 medium-9 column">
       <i class="icon-angle-left left"></i>&nbsp;<%= link_to t("debates.show.back_link"), debates_path, class: 'left back' %>
+
+      <% if current_user && @debate.editable_by?(current_user) %>
+        <%= link_to edit_debate_path(@debate), :class => 'right' do %>
+          <i class="icon-edit"></i>
+          <%= t("debates.show.edit_debate_link") %>
+        <% end %>
+      <% end %>
+
+
       <h1><%= @debate.title %></h1>
 
       <div class="debate-info">
@@ -12,23 +21,24 @@
       <%= @debate.description %>
 
       <%= render 'shared/tags', debate: @debate %>
-
-      <p><%= social_share_button_tag(@debate.title) %></p>
     </div>
 
     <aside class="small-12 medium-3 column">
-      <div class="sidebar"></div>
+      <div class="sidebar-divider"></div>
       <h3><%= t("votes.supports") %></h3>
       <div class="text-center">
         <div id="<%= dom_id(@debate) %>_votes">
          <%= render 'debates/votes', debate: @debate %>
         </div>
-        <% if user_signed_in? %>
+      </div>
+      <div class="sidebar-divider"></div>
+      <h3><%= t("debates.show.share") %></h3>
+      <%= social_share_button_tag(@debate.title) %>
+      <% if user_signed_in? %>
           <%= link_to t("debates.show.leave_comment"), "#comments", class: "leave-comment" %>
         <% else %>
           <%= link_to t("debates.show.login_to_comment"), new_user_session_path, class: "leave-comment" %>
         <% end %>
-      </div>
     </aside>
   </div>
 </section>
@@ -45,8 +55,5 @@
       <% end %>
       <%= render @debate.root_comments.recent %>
     </div>
-    <% if current_user && @debate.editable_by?(current_user) %>
-      <%= link_to t("debates.show.edit_debate_link"), edit_debate_path(@debate), :class => 'button radius right' %>
-    <% end %>
   </div>
 </section>
