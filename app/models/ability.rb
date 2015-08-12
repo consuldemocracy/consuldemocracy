@@ -24,6 +24,13 @@ class Ability
       end
 
       if user.moderator? || user.administrator?
+        can :verify_organization, User do |u|
+          !u.verified_organization?
+        end
+
+        can :reject_organization, User do |u|
+          !u.rejected_organization?
+        end
 
       elsif user.administrator?
 

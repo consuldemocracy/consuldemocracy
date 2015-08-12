@@ -78,6 +78,20 @@ describe Ability do
     it { should be_able_to(:show, debate) }
     it { should be_able_to(:vote, debate) }
 
+    describe "organizations" do
+      let(:pending_organization)  { create(:user, organization_name: 'org') }
+      let(:rejected_organization) { create(:user, organization_name: 'org', organization_rejected_at: Time.now)}
+      let(:verified_organization) { create(:user, organization_name: 'org', organization_verified_at: Time.now)}
+
+      it { should be_able_to(    :verify_organization, pending_organization)  }
+      it { should be_able_to(    :reject_organization, pending_organization)  }
+
+      it { should_not be_able_to(:verify_organization, verified_organization) }
+      it { should be_able_to(    :reject_organization, verified_organization) }
+
+      it { should_not be_able_to(:reject_organization, rejected_organization) }
+      it { should be_able_to(    :verify_organization, rejected_organization) }
+    end
   end
 
   describe "Administrator" do
