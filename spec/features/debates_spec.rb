@@ -108,7 +108,7 @@ feature 'Debates' do
     login_as(debate.author)
 
     visit edit_debate_path(debate)
-    edit_debate_path(debate)
+
     expect(current_path).to eq(root_path)
     expect(page).to have_content 'not authorized'
   end
