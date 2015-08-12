@@ -47,12 +47,10 @@ class Debate < ActiveRecord::Base
   end
 
   def tags_count_out_of_limit(limit = nil)
-    if limit
-      count = tags.count - limit
-      count < 0 ? 0 : count
-    else
-      0
-    end
+    return 0 unless limit
+
+    count = tags.count - limit
+    count < 0 ? 0 : count
   end
 
   protected
