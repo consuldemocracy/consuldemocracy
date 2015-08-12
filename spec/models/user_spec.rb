@@ -3,7 +3,7 @@ require 'rails_helper'
 describe User do
 
   describe "#votes_on_debates" do
-    before(:each) do
+    background do
       @user = create(:user)
     end
 

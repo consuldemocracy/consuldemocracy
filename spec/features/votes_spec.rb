@@ -4,7 +4,7 @@ feature 'Votes' do
 
   feature 'Debates' do
 
-    before(:each) do
+    background do
       @manuela = create(:user)
       @pablo = create(:user)
       @debate = create(:debate)
@@ -239,7 +239,7 @@ feature 'Votes' do
   end
 
   feature 'Comments' do
-    before(:each) do
+    background do
       @manuela = create(:user)
       @pablo = create(:user)
       @debate = create(:debate)

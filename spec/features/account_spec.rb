@@ -2,7 +2,7 @@ require 'rails_helper'
 
 feature 'Account' do
 
-  before(:each) do
+  background do
     @user = create(:user, first_name: "Manuela", last_name:"Colau")
   end
 

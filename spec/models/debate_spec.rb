@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe Debate do
 
-  before(:each) do
+  background do
     @debate = build(:debate)
   end
 
@@ -50,7 +50,7 @@ describe Debate do
   end
 
   describe "#editable?" do
-    before(:each) do
+    background do
       @debate = create(:debate)
     end
 
@@ -67,7 +67,7 @@ describe Debate do
   end
 
   describe "#editable_by?" do
-    before(:each) do
+    background do
       @debate = create(:debate)
     end
 
