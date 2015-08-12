@@ -16,11 +16,13 @@
 //= require turbolinks
 //= require ckeditor/init
 //= require social-share-button
+//= require initial
 //= require app
 //= require_tree .
 
 var initialize_modules = function() {
   App.Comments.initialize();
+  App.Users.initialize();
   App.Votes.initialize();
 };
 

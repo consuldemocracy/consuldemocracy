@@ -14,7 +14,7 @@
       <h1><%= @debate.title %></h1>
 
       <div class="debate-info">
-        <%= image_tag('user_default.jpg', class: 'author-photo', size: '32x32') %>
+        <%= avatar_image(@debate.author, style: :small) %>
         <span class="author">
             <%= @debate.author.name %>
         </span>

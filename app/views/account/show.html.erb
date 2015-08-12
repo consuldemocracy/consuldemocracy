@@ -36,13 +36,15 @@
 
         <div class="small-12 medium-6 column">
           <h3><%= t("account.show.avatar")%></h3>
-          <%= image_tag('user_default_big.jpg', class: "avatar", size: "100x100") %>
+          <%= avatar_image(@account, style: :profile) %>
 
           <h3><%= t("account.show.notifications")%></h3>
+
           <%= f.label :email_on_debate_comment do %>
             <%= f.check_box :email_on_debate_comment %>
             <span class="checkbox"><%= t("account.show.email_on_debate_comment_label") %></span>
           <% end %>
+
           <%= f.label :email_on_comment_reply do %>
             <%= f.check_box :email_on_comment_reply %>
             <span class="checkbox"><%= t("account.show.email_on_comment_reply_label") %></span>
