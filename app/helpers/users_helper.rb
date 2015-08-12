@@ -1,22 +1,11 @@
 module UsersHelper
   def avatar_image(user, options = {})
-    style         = options.fetch(:style)         { :small }
+    size          = options.fetch(:size)          { 100 }
     klass         = options.fetch(:class)         { '' }
     round_corners = options.fetch(:round_corners) { true }
 
-    data_attributes = case style
-      when :profile
-        { height: 100, width: 100 }
-      when :small
-        { height: 32, width: 32, "font-size" => 20 }
-      else
-        {}
-      end
-
-    if round_corners
-      radius = (data_attributes[:height].to_i * 0.13).round
-      data_attributes.merge!(radius: radius)
-    end
+    data_attributes = { height: size, width: size, "font-size" => (size * 0.6) }
+    data_attributes.merge!(radius: (size * 0.13).round) if round_corners
     data_attributes.merge!(name: user.name)
 
     content_tag :img, nil, class: "avatar #{klass}", data: data_attributes
