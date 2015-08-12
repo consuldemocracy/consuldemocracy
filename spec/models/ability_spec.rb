@@ -46,7 +46,7 @@ describe Ability do
   end
 
   describe "Organization" do
-    let(:user) { create(:user, organization_name: "Organization") }
+    let(:user) { create(:organization) }
 
     it { should be_able_to(:show, user) }
     it { should be_able_to(:edit, user) }
