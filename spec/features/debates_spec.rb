@@ -138,18 +138,31 @@ feature 'Debates' do
       create :debate, tag_list: all_tags
     }
 
-    scenario 'Index page show up to 5 tags per debate' do
+    scenario 'Index page shows up to 5 tags per debate' do
       debate
       visible_tags = ["Medio Ambiente", "Corrupción", "Fiestas populares", "Prensa", "Huelgas"]
 
       visit debates_path
 
-      expect(page).to have_selector('.debate', count: 1)
-      within('.debate') do
+      within('.debate .tags') do
         visible_tags.each do |tag|
           expect(page).to have_content tag
         end
         expect(page).to have_content '2+'
+      end
+    end
+
+    scenario 'Index page shows 3 tags with no plus link' do
+      tag_list = ["Medio Ambiente", "Corrupción", "Fiestas populares"]
+      debate = create :debate, tag_list: tag_list
+
+      visit debates_path
+
+      within('.debate .tags') do
+        tag_list.each do |tag|
+          expect(page).to have_content tag
+        end
+        expect(page).not_to have_content '+'
       end
     end
 
