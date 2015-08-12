@@ -130,4 +130,50 @@ feature 'Debates' do
     expect(page).to have_content "Let's..."
   end
 
+  describe 'Limiting tags shown' do
+    let(:all_tags) {
+      ["Hacienda", "Economía", "Medio Ambiente", "Corrupción", "Fiestas populares", "Prensa", "Huelgas"]
+    }
+    let(:debate) {
+      create :debate, tag_list: all_tags
+    }
+
+    scenario 'Index page shows up to 5 tags per debate' do
+      debate
+      visible_tags = ["Medio Ambiente", "Corrupción", "Fiestas populares", "Prensa", "Huelgas"]
+
+      visit debates_path
+
+      within('.debate .tags') do
+        visible_tags.each do |tag|
+          expect(page).to have_content tag
+        end
+        expect(page).to have_content '2+'
+      end
+    end
+
+    scenario 'Index page shows 3 tags with no plus link' do
+      tag_list = ["Medio Ambiente", "Corrupción", "Fiestas populares"]
+      debate = create :debate, tag_list: tag_list
+
+      visit debates_path
+
+      within('.debate .tags') do
+        tag_list.each do |tag|
+          expect(page).to have_content tag
+        end
+        expect(page).not_to have_content '+'
+      end
+    end
+
+    scenario 'Debate#show shows the full tag list' do
+      visit debate_path(debate)
+
+      within("#debate-#{debate.id}") do
+        all_tags.each do |tag|
+          expect(page).to have_content tag
+        end
+      end
+    end
+  end
 end

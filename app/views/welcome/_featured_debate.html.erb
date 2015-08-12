@@ -14,7 +14,7 @@
           <%= link_to featured_debate.description, featured_debate %>
           <div class="truncate"></div>
         </div>
-        <%= render "shared/tags", debate: featured_debate %>
+        <%= render "shared/tags", debate: featured_debate, limit: 5 %>
       </div>
 
       <div class="row">
