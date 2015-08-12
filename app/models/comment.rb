@@ -34,7 +34,8 @@ class Comment < ActiveRecord::Base
 
   # TODO: faking counter cache since there is a bug with acts_as_nested_set :counter_cache
   # Remove when https://github.com/collectiveidea/awesome_nested_set/issues/294 is fixed
-  # There is a test for this, so you should know if it is actually fixed.
+  # and reset counters using
+  # > Comment.find_each { |comment| Comment.reset_counters(comment.id, :children) }
   def children_count
     children.count
   end
