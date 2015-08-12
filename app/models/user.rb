@@ -8,6 +8,8 @@ class User < ActiveRecord::Base
   validates :last_name,  presence: true, if: :use_last_name?
   validates :nickname,   presence: true, if: :use_nickname?
 
+  scope :organizations, -> { where("users.organization_name IS NOT NULL AND users.organization_name <> ''") }
+
   def name
     return nickname          if use_nickname?
     return organization_name if organization?
