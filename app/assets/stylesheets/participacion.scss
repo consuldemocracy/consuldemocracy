@@ -350,8 +350,24 @@ footer {
 .auth {
   min-height: $line-height*20;
 
+  h2 {
+    clear: both;
+    font-size: rem-calc(30);
+    font-weight: bold;
+    line-height: $line-height*2;
+  }
+
+  .back, .icon-angle-left {
+    @include back;
+  }
+
+  .simple_captcha {
+    margin-bottom: $line-height/2;
+  }
+
   .panel {
     background: white;
+    border: 0;
 
     h1 {
       font-size: rem-calc(30);
@@ -436,15 +452,10 @@ form {
 
 .account {
   background: white;
-  min-height: $line-height*23;
   padding-top: $line-height;
 
   input[type="checkbox"], .checkbox {
     margin-top: -(rem-calc(12));
-  }
-
-  .back, .icon-angle-left {
-    @include back;
   }
 
   h1 {
@@ -467,6 +478,15 @@ form {
   }
 
   h2 {
+    clear: both;
+    font-size: rem-calc(30);
+    font-weight: bold;
+    line-height: $line-height;
+    margin: 0;
+    margin-bottom: $line-height/2;
+  }
+
+  h3 {
     clear: both;
     font-size: rem-calc(20);
     font-weight: bold;
