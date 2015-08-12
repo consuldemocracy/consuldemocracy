@@ -1,5 +1,5 @@
 App.Users =
 
   initialize: ->
-    $('.avatar').initial();
+    $('.initialjs-avatar').initial();
     false
