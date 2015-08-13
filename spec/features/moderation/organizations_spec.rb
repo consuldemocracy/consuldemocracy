@@ -21,11 +21,11 @@ feature 'Moderations::Organizations' do
     expect(current_path).to eq(moderation_organizations_path)
     expect(page).to have_content ('Verified')
 
-    expect(organization.reload.verified_organization?).to eq(true)
+    expect(organization.reload.verified?).to eq(true)
   end
 
   scenario "verified organizations have link to reject" do
-    organization = create(:organization, organization_verified_at: Time.now)
+    organization = create(:verified_organization)
 
     visit moderation_organizations_path
     expect(page).to have_content ('Verified')
@@ -36,11 +36,11 @@ feature 'Moderations::Organizations' do
     expect(current_path).to eq(moderation_organizations_path)
     expect(page).to have_content ('Rejected')
 
-    expect(organization.reload.rejected_organization?).to eq(true)
+    expect(organization.reload.rejected?).to eq(true)
   end
 
   scenario "rejected organizations have link to verify" do
-    organization = create(:organization, organization_rejected_at: Time.now)
+    organization = create(:rejected_organization)
 
     visit moderation_organizations_path
     expect(page).to have_content ('Rejected')
@@ -51,7 +51,7 @@ feature 'Moderations::Organizations' do
     expect(current_path).to eq(moderation_organizations_path)
     expect(page).to have_content ('Verified')
 
-    expect(organization.reload.verified_organization?).to eq(true)
+    expect(organization.reload.verified?).to eq(true)
   end
 
 end

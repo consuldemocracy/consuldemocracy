@@ -29,8 +29,8 @@ Rails.application.routes.draw do
     root to: "dashboard#index"
     resources :organizations, only: :index do
       member do
-        put :verify_organization
-        put :reject_organization
+        put :verify
+        put :reject
       end
     end
   end

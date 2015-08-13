@@ -1,25 +1,19 @@
 class Moderation::OrganizationsController < Moderation::BaseController
 
-  before_filter :load_organizations, only: :index
-  load_and_authorize_resource class: 'User'
+  load_and_authorize_resource
 
   def index
+    @organizations = @organizations.includes(:user).order(:name, 'users.email')
   end
 
-  def verify_organization
-    @organization.update(organization_verified_at: Time.now)
+  def verify
+    @organization.verify
     redirect_to action: :index
   end
 
-  def reject_organization
-    @organization.update(organization_rejected_at: Time.now)
+  def reject
+    @organization.reject
     redirect_to action: :index
   end
-
-  private
-
-    def load_organizations
-      @organizations = User.organizations.order(:organization_name, :email)
-    end
 
 end

@@ -1,27 +1,27 @@
 <h1><%= t('moderation.organizations.index.title') %></h1>
 
 <table>
-<% @organizations.each do |organization| %>
+  <% @organizations.each do |organization| %>
   <tr>
-    <td><%= organization.organization_name %></td>
+    <td><%= organization.name %></td>
     <td><%= organization.email %></td>
     <td><%= organization.phone_number %></td>
-    <% if organization.verified_organization? %>
+    <% if organization.verified? %>
       <td><%= t('moderation.organizations.index.verified') %></td>
     <% end %>
-    <% if can? :verify_organization, organization %>
+    <% if can? :verify, organization %>
       <td><%= link_to t('moderation.organizations.index.verify'),
-                verify_organization_moderation_organization_path(organization),
+                verify_moderation_organization_path(organization),
                 method: :put
           %>
       </td>
     <% end %>
-    <% if organization.rejected_organization? %>
+    <% if organization.rejected? %>
       <td><%= t('moderation.organizations.index.rejected') %></td>
     <% end %>
-    <% if can? :reject_organization, organization %>
+    <% if can? :reject, organization %>
       <td><%= link_to t('moderation.organizations.index.reject'),
-                reject_organization_moderation_organization_path(organization),
+                reject_moderation_organization_path(organization),
                 method: :put
           %>
       </td>
