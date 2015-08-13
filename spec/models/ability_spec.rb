@@ -46,28 +46,18 @@ describe Ability do
   end
 
   describe "Organization" do
-    let(:user) { create(:organization) }
+    let(:user) { create(:user) }
+    before(:each) { create(:organization, user: user) }
 
     it { should be_able_to(:show, user) }
     it { should be_able_to(:edit, user) }
 
     it { should be_able_to(:index, Debate) }
     it { should be_able_to(:show, debate) }
-
     it { should_not be_able_to(:vote, debate) }
+
+    it { should be_able_to(:create, Comment) }
     it { should_not be_able_to(:vote, Comment) }
-
-    describe "Not verified" do
-      it { should_not be_able_to(:create, Comment) }
-      it { should_not be_able_to(:create, Debate) }
-    end
-
-    describe "Verified" do
-      before(:each) { user.organization_verified_at = Time.now }
-
-      it { should be_able_to(:create, Comment) }
-      it { should be_able_to(:create, Debate) }
-    end
   end
 
   describe "Moderator" do
@@ -78,19 +68,21 @@ describe Ability do
     it { should be_able_to(:show, debate) }
     it { should be_able_to(:vote, debate) }
 
+    it { should be_able_to(:read, Organization) }
+
     describe "organizations" do
-      let(:pending_organization)  { create(:user, organization_name: 'org') }
-      let(:rejected_organization) { create(:user, organization_name: 'org', organization_rejected_at: Time.now)}
-      let(:verified_organization) { create(:user, organization_name: 'org', organization_verified_at: Time.now)}
+      let(:pending_organization)  { create(:organization) }
+      let(:rejected_organization) { create(:rejected_organization) }
+      let(:verified_organization) { create(:verified_organization) }
 
-      it { should be_able_to(    :verify_organization, pending_organization)  }
-      it { should be_able_to(    :reject_organization, pending_organization)  }
+      it { should be_able_to(    :verify, pending_organization)  }
+      it { should be_able_to(    :reject, pending_organization)  }
 
-      it { should_not be_able_to(:verify_organization, verified_organization) }
-      it { should be_able_to(    :reject_organization, verified_organization) }
+      it { should_not be_able_to(:verify, verified_organization) }
+      it { should be_able_to(    :reject, verified_organization) }
 
-      it { should_not be_able_to(:reject_organization, rejected_organization) }
-      it { should be_able_to(    :verify_organization, rejected_organization) }
+      it { should_not be_able_to(:reject, rejected_organization) }
+      it { should be_able_to(    :verify, rejected_organization) }
     end
   end
 

@@ -13,24 +13,19 @@ class Ability
         debate.editable_by?(user)
       end
 
+      can :create, Comment
+      can :create, Debate
+
       unless user.organization?
         can :vote, Debate
         can :vote, Comment
       end
 
-      if !user.organization? || user.verified_organization?
-        can :create, Comment
-        can :create, Debate
-      end
-
       if user.moderator? || user.administrator?
-        can :verify_organization, User do |u|
-          !u.verified_organization?
-        end
 
-        can :reject_organization, User do |u|
-          !u.rejected_organization?
-        end
+        can :read, Organization
+        can(:verify, Organization){ |o| !o.verified? }
+        can(:reject, Organization){ |o| !o.rejected? }
 
       elsif user.administrator?
 
