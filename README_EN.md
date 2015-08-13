@@ -42,6 +42,33 @@ Run the tests with:
 bundle exec bin/rspec
 ```
 
+## Configuration for development and test environments with Docker
+Install docker from the [docker web](http://docs.docker.com/)
+Install docker-compose from the [docker-compose instruction page](http://docs.docker.com/compose/install/)
+
+```
+docker-compose build
+docker-compose run app bash -c 'bundle install && rake db:setup'
+
+```
+Run the app locally:
+```
+docker-compose up -d
+```
+
+Examine logs live:
+```
+docker-compose logs
+```
+
+Run the tests with:
+ los tests:
+```
+docker-compose run app bundle exec rspec
+```
+
+You can check transactional mail on http://localhost:1080
+
 ## Licence
 
 Code published under AFFERO GPL v3 (see [LICENSE-AGPLv3.txt](LICENSE-AGPLv3.txt))

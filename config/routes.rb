@@ -78,7 +78,7 @@ Rails.application.routes.draw do
   #     resources :products
   #   end
 
-  if Rails.env.development?
+  if Rails.env.development? && ENV['MAILCATCHER_PORT_1025_TCP_ADDR'].blank?
     mount LetterOpenerWeb::Engine, at: "/letter_opener"
   end
 end

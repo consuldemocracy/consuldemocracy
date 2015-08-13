@@ -1,0 +1,21 @@
+app:
+  build: .
+  command: "./start"
+  volumes:
+    - .:/app
+    - .bundle:/bundle
+  ports:
+    - "3000:3000"
+  links:
+    - db
+    - mail
+  environment:
+    BUNDLE_JOBS: 4
+db:
+  image: postgres
+  ports:
+    - "5432"
+mail:
+  image: schickling/mailcatcher
+  ports:
+    - "1080:1080"

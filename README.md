@@ -41,6 +41,32 @@ Para ejecutar los tests:
 bundle exec bin/rspec
 ```
 
+## Configuración para desarrollo y tests con Docker
+Install docker from the [docker web](http://docs.docker.com/)
+Install docker-compose from the [docker-compose instruction page](http://docs.docker.com/compose/install/)
+
+```
+docker-compose build
+docker-compose run app bash -c 'bundle install && rake db:setup'
+
+```
+Para ejecutar la aplicación:
+```
+docker-compose up -d
+```
+
+Para examinar los logs:
+```
+docker-compose logs
+```
+
+Para ejecutar los tests:
+```
+docker-compose run app bundle exec rspec
+```
+
+Se puede ver el correo saliente del contenedor en http://localhost:1080
+
 ## Licencia
 
 El código de este proyecto está publicado bajo la licencia AFFERO GPL v3 (ver [LICENSE-AGPLv3.txt](LICENSE-AGPLv3.txt))

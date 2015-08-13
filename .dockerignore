@@ -1,0 +1,5 @@
+ .git*
+ log/*
+ tmp/*
+ Dockerfile
+ README.md

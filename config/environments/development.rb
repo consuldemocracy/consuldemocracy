@@ -17,8 +17,14 @@ Rails.application.configure do
   config.action_mailer.raise_delivery_errors = false
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 
-  # Deliver emails to a development mailbox at /letter_opener
-  config.action_mailer.delivery_method = :letter_opener
+  if ENV['MAILCATCHER_PORT_1025_TCP_ADDR']
+    # Deliver emails to the mailcatcher container
+    config.action_mailer.delivery_method = :smtp
+    config.action_mailer.smtp_settings = { :address => ENV['MAILCATCHER_PORT_1025_TCP_ADDR'], :port => 1025 }
+  else
+    # Deliver emails to a development mailbox at mailcatcher/letter_opener
+    config.action_mailer.delivery_method = :letter_opener
+  end
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
