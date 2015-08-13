@@ -4,10 +4,10 @@ App.Comments =
     $(response_html).insertAfter($("#js-comment-form-#{parent_id}"))
 
   reset_and_hide_form: (id) ->
-    form  = $("#js-comment-form-#{id} form")
-    input = form.find("textarea")
-    input.val('')
-    form.hide()
+    form_box = $("#js-comment-form-#{id}")
+    textarea = form_box.find("textarea")
+    textarea.val('')
+    form_box.hide()
 
   reset_form: (id) ->
     input = $("#js-comment-form-#{id} form textarea")
@@ -17,7 +17,12 @@ App.Comments =
     $("#js-comment-form-#{id}").toggle()
 
   initialize: ->
-    $('body').on 'click', '.js-add-comment-link', ->
-      id = $(this).data().id
-      App.Comments.toggle_form(id)
-      false
+    $('body .js-add-comment-link').each ->
+      $this = $(this)
+
+      unless $this.data('initialized') is 'yes'
+        $this.on('click', ->
+          id = $this.data().id
+          App.Comments.toggle_form(id)
+          false
+        ).data 'initialized', 'yes'
