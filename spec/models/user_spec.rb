@@ -112,64 +112,26 @@ describe User do
   end
 
   describe "organization?" do
-    it "is false when organization_name is blank" do
+    it "is false when the user is not an organization" do
       expect(subject.organization?).to be false
     end
-    it "is true when organization_name exists" do
-      subject.organization_name = "Anonymous"
-      expect(subject.organization?).to be true
-    end
 
-    it "deactivates the validation of first_name and last_name " do
-      subject.first_name = nil
-      subject.last_name = nil
-      subject.organization_name = "The A Team"
-      expect(subject).to be_valid
-    end
+    describe 'when it is an organization' do
+      before(:each) { create(:organization, user: subject) }
 
-    it "calculates the name using the organization name" do
-      subject.organization_name = "The A Team"
-      expect(subject.name).to eq("The A Team")
-    end
-  end
+      it "is true when the user is an organization" do
+        expect(subject.organization?).to be true
+      end
 
-  describe "verified_organization?" do
-    it "is false when organization_verified_at? is blank" do
-      expect(subject.verified_organization?).to be false
-    end
-    it "is true when organization_verified_at? exists" do
-      subject.organization_verified_at = Time.now
-      expect(subject.verified_organization?).to be true
-    end
-    it "is false when the organization was verified and then rejected" do
-      subject.organization_verified_at = Time.now
-      subject.organization_rejected_at = Time.now + 1
-      expect(subject.verified_organization?).to be false
-    end
-    it "is true when the organization was rejected and then verified" do
-      subject.organization_rejected_at = Time.now
-      subject.organization_verified_at = Time.now + 1
-      expect(subject.verified_organization?).to be true
-    end
-  end
+      it "deactivates the validation of first_name and last_name" do
+        subject.first_name = nil
+        subject.last_name = nil
+        expect(subject).to be_valid
+      end
 
-  describe "rejected_organization?" do
-    it "is false when organization_rejected_at? is blank" do
-      expect(subject.rejected_organization?).to be false
-    end
-    it "is true when organization_rejected_at? exists" do
-      subject.organization_rejected_at = Time.now
-      expect(subject.rejected_organization?).to be true
-    end
-    it "is true when the organization was verified and then rejected" do
-      subject.organization_verified_at = Time.now
-      subject.organization_rejected_at = Time.now + 1
-      expect(subject.rejected_organization?).to be true
-    end
-    it "is false when the organization was rejected and then verified" do
-      subject.organization_rejected_at = Time.now
-      subject.organization_verified_at = Time.now + 1
-      expect(subject.rejected_organization?).to be false
+      it "calculates the name using the organization name" do
+        expect(subject.name).to eq(subject.organization.name)
+      end
     end
   end
 

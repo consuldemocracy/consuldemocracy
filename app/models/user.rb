@@ -8,11 +8,17 @@ class User < ActiveRecord::Base
   validates :last_name,  presence: true, if: :use_last_name?
   validates :nickname,   presence: true, if: :use_nickname?
 
-  scope :organizations, -> { where("users.organization_name IS NOT NULL AND users.organization_name <> ''") }
+  has_one :administrator
+  has_one :moderator
+  has_one :organization
+
+  scope :administrators, -> { joins(:administrators) }
+  scope :moderators,     -> { joins(:moderator) }
+  scope :organizations,  -> { joins(:organization) }
 
   def name
     return nickname          if use_nickname?
-    return organization_name if organization?
+    return organization.name if organization?
     "#{first_name} #{last_name}"
   end
 
@@ -25,25 +31,15 @@ class User < ActiveRecord::Base
   end
 
   def administrator?
-    @is_administrator ||= Administrator.where(user_id: id).exists?
+    administrator.present?
   end
 
   def moderator?
-    @is_moderator ||= Moderator.where(user_id: id).exists?
+    moderator.present?
   end
 
   def organization?
-    organization_name.present?
-  end
-
-  def verified_organization?
-    organization_verified_at.present? &&
-      (organization_rejected_at.blank? || organization_rejected_at < organization_verified_at)
-  end
-
-  def rejected_organization?
-    organization_rejected_at.present? &&
-      (organization_verified_at.blank? || organization_verified_at < organization_rejected_at)
+    organization.present?
   end
 
   private
