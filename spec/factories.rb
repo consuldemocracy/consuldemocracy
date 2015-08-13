@@ -8,13 +8,6 @@ FactoryGirl.define do
     confirmed_at     { Time.now }
   end
 
-  factory :organization, class: User do
-    organization_name 'org'
-    sequence(:email) { |n| "org#{n}@madrid.es" }
-    password         'pleaseverifyme'
-    confirmed_at     { Time.now }
-  end
-
   factory :debate do
     sequence(:title) {|n| "Debate #{n} title"}
     description      'Debate description'
@@ -46,6 +39,17 @@ FactoryGirl.define do
     user
   end
 
+  factory :organization do
+    user
+    sequence(:name) { |n| "org#{n}" }
+  end
 
+  factory :verified_organization, parent: :organization do
+    verified_at { Time.now}
+  end
+
+  factory :rejected_organization, parent: :organization do
+    rejected_at { Time.now}
+  end
 
 end
