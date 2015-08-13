@@ -70,7 +70,7 @@ feature 'Comments' do
       expect(page).to have_content 'It will be done next week.'
     end
 
-    expect(page).to have_selector("#js-comment-form-comment_#{comment.id}", visible: true)
+    expect(page).to_not have_selector("#js-comment-form-comment_#{comment.id}", visible: true)
   end
 
   scenario "N replies", :js do

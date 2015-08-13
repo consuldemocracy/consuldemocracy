@@ -4,10 +4,10 @@ App.Comments =
     $(response_html).insertAfter($("#js-comment-form-#{parent_id}"))
 
   reset_and_hide_form: (id) ->
-    form  = $("#js-comment-form-#{id} form")
-    input = form.find("textarea")
+    form_container = $("#js-comment-form-#{id}")
+    input = form_container.find("form textarea")
     input.val('')
-    form.hide()
+    form_container.hide()
 
   reset_form: (id) ->
     input = $("#js-comment-form-#{id} form textarea")
