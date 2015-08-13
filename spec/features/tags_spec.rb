@@ -51,11 +51,9 @@ feature 'Tags' do
 
     visit debates_path
 
-    within "#tag-cloud" do
-      expect(page).to have_css(".s", text: "Medio Ambiente(1)")
-      expect(page).to have_css(".m", text: "Corrupción(5)")
-      expect(page).to have_css(".l", text: "Economía(10)")
-    end
+    within(:css, "#tag-cloud .s") { expect(page).to have_content('Medio Ambiente 1') }
+    within(:css, "#tag-cloud .m") { expect(page).to have_content('Corrupción 5') }
+    within(:css, "#tag-cloud .l") { expect(page).to have_content('Economía 10') }
   end
 
   scenario 'Create' do
