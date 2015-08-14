@@ -12,7 +12,7 @@ es:
       see_all_debates: Ver todos los debates
       my_account_link: Mi cuenta
       language: Idioma de la página
-      administration: Admininstar
+      administration: Administar
       moderation: Moderar
     footer:
       copyright: "Ayuntamiento de Madrid, %{year}. Todos los derechos reservados"
