@@ -123,15 +123,33 @@ describe User do
         expect(subject.organization?).to be true
       end
 
-      it "deactivates the validation of first_name and last_name" do
-        subject.first_name = nil
-        subject.last_name = nil
-        expect(subject).to be_valid
-      end
-
       it "calculates the name using the organization name" do
         expect(subject.name).to eq(subject.organization.name)
       end
+    end
+  end
+
+  describe "is_organization" do
+    before(:each) { subject.is_organization = true }
+
+    it "deactivates the validation of first_name and last_name, and activates the validation of organization_name" do
+      subject.first_name = nil
+      subject.last_name = nil
+      subject.organization_name = nil
+      expect(subject).to_not be_valid
+
+      subject.organization_name = 'org'
+      expect(subject).to be_valid
+    end
+
+    it "triggers the creation of an associated organization using organization_name" do
+      expect(subject.organization).to_not be
+
+      subject.is_organization = true
+      subject.organization_name = 'org'
+      subject.save
+
+      expect(subject.organization).to be
     end
   end
 

@@ -4,9 +4,10 @@ class User < ActiveRecord::Base
 
   acts_as_voter
 
-  validates :first_name, presence: true, if: :use_first_name?
-  validates :last_name,  presence: true, if: :use_last_name?
-  validates :nickname,   presence: true, if: :use_nickname?
+  validates :first_name,        presence: true, if: :use_first_name?
+  validates :last_name,         presence: true, if: :use_last_name?
+  validates :nickname,          presence: true, if: :use_nickname?
+  validates :organization_name, presence: true, if: :is_organization
 
   has_one :administrator
   has_one :moderator
@@ -15,6 +16,11 @@ class User < ActiveRecord::Base
   scope :administrators, -> { joins(:administrators) }
   scope :moderators,     -> { joins(:moderator) }
   scope :organizations,  -> { joins(:organization) }
+
+  attr_accessor :organization_name
+  attr_accessor :is_organization
+
+  after_save :create_associated_organization
 
   def name
     return nickname          if use_nickname?
@@ -44,11 +50,15 @@ class User < ActiveRecord::Base
 
   private
     def use_first_name?
-      !use_nickname? && !organization?
+      !is_organization && !use_nickname?
     end
 
     def use_last_name?
       use_first_name?
+    end
+
+    def create_associated_organization
+      create_organization(name: organization_name) if is_organization
     end
 
 end
