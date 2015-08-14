@@ -30,6 +30,7 @@ gem 'simple_captcha2', require: 'simple_captcha'
 gem 'ckeditor'
 gem 'cancancan'
 gem 'social-share-button'
+gem 'unicorn'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -49,7 +50,6 @@ group :development, :test do
   gem "capistrano-bundler", '1.1.4',   require: false
   gem "capistrano-rails", '1.1.3',     require: false
   gem "capistrano-rvm",                require: false
-  gem "capistrano-passenger",          require: false
 end
 
 group :test do
