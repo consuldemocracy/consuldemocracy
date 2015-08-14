@@ -111,6 +111,8 @@ ActiveRecord::Schema.define(version: 20150815154430) do
     t.boolean  "use_nickname",            default: false, null: false
     t.boolean  "email_on_debate_comment", default: false
     t.boolean  "email_on_comment_reply",  default: false
+    t.string   "official_position"
+    t.integer  "official_level",          default: 0
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree
