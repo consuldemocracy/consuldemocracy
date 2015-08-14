@@ -31,7 +31,5 @@ $(function(){
 
   $(document).ready(initialize_modules);
   $(document).on('page:load', initialize_modules);
-  $(document).on('ajax:complete', function(){
-    App.Users.initialize();
-  });
+  $(document).on('ajax:complete', initialize_modules);
 });
