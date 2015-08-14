@@ -16,7 +16,7 @@ feature 'Account' do
 
     expect(page).to have_selector("input[value='Manuela']")
     expect(page).to have_selector("input[value='Colau']")
-    expect(page).to have_selector("img.initialjs-avatar[data-name='Manuela Colau'][data-height='100']", count: 1)
+    expect(page).to have_selector(avatar('Manuela Colau'), count: 1)
   end
 
   scenario "Failed Edit" do
