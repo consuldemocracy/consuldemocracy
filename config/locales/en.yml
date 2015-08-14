@@ -12,6 +12,8 @@ en:
       see_all_debates: See all debates
       my_account_link: My account
       language: Site language
+      administration: Administration
+      moderation: Moderation
     footer:
       copyright: "Ayuntamiento de Madrid, 2015. All rights reserved"
   debates:
