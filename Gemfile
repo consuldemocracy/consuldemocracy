@@ -30,6 +30,7 @@ gem 'simple_captcha2', require: 'simple_captcha'
 gem 'ckeditor'
 gem 'cancancan'
 gem 'social-share-button'
+gem 'initialjs-rails'
 gem 'unicorn'
 
 group :development, :test do
@@ -61,4 +62,3 @@ end
 group :test do
   gem 'email_spec'
 end
-

@@ -17,7 +17,17 @@ App.Comments =
     $("#js-comment-form-#{id}").toggle()
 
   initialize: ->
-    $('body').on 'click', '.js-add-comment-link', ->
-      id = $(this).data().id
-      App.Comments.toggle_form(id)
-      false
+    # $('body').on 'click', '.js-add-comment-link', ->
+    #   id = $(this).data().id
+    #   App.Comments.toggle_form(id)
+    #   false
+    #
+    $('body .js-add-comment-link').each ->
+      $this = $(this)
+
+      unless $this.data('initialized') is 'yes'
+        $this.on('click', ->
+          id = $(this).data().id
+          App.Comments.toggle_form(id)
+          false
+        ).data 'initialized', 'yes'

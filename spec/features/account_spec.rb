@@ -4,20 +4,22 @@ feature 'Account' do
 
   background do
     @user = create(:user, first_name: "Manuela", last_name:"Colau")
+    login_as(@user)
   end
 
   scenario 'Show' do
-    login_as(@user)
     visit root_path
+
     click_link "My account"
+
     expect(current_path).to eq(account_path)
 
     expect(page).to have_selector("input[value='Manuela']")
     expect(page).to have_selector("input[value='Colau']")
+    expect(page).to have_selector(avatar('Manuela Colau'), count: 1)
   end
 
   scenario "Failed Edit" do
-    login_as(@user)
     visit account_path
 
     fill_in 'account_first_name', with: ''
@@ -31,7 +33,6 @@ feature 'Account' do
   end
 
   scenario 'Edit' do
-    login_as(@user)
     visit account_path
 
     fill_in 'account_first_name', with: 'Larry'
