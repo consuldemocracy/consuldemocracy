@@ -1,8 +1,9 @@
 es:
   layouts:
     header:
-      external_link_transparency: Portal de Transparencia
+      external_link_transparency: Transparencia
       external_link_opendata: Datos abiertos
+      external_link_blog: Blog
       open_gov: "Gobierno %{open}"
       open: "abierto"
       participation: Participación
@@ -100,7 +101,7 @@ es:
       notifications: Notificaciones
   simple_captcha:
     placeholder: "Introduce el texto de la imagen"
-    label: "Introduce el texto en la caja:"
+    label: "Introduce el texto en la caja"
     message:
       user: "el código secreto no coincide con la imagen"
       debate: "el código secreto no coincide con la imagen"

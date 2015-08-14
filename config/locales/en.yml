@@ -3,6 +3,7 @@ en:
     header:
       external_link_transparency: Transparency
       external_link_opendata: Open data
+      external_link_blog: Blog
       open_gov: "%{open} government"
       open: "Open"
       participation: Participation
@@ -100,7 +101,7 @@ en:
       notifications: Notifications
   simple_captcha:
     placeholder: "Enter the image value"
-    label: "Enter the code in the box:"
+    label: "Enter the code in the box"
     message:
       user: "secret code did not match with the image"
       debate: "secret code did not match with the image"
