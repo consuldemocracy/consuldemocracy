@@ -383,9 +383,6 @@
   }
 
   .author-photo {
-    border-radius: 2px;
-    display: inline-block;
-    height: 32px;
     line-height: $line-height*2;
     margin-right: rem-calc(6);
     vertical-align: middle;
@@ -537,16 +534,6 @@
         font-size: rem-calc(20);
         vertical-align: top;
       }
-    }
-
-    .user-photo {
-      border-radius: 2px;
-      display: inline-block;
-      height: 32px;
-      line-height: $line-height*2;
-      margin-right: rem-calc(6);
-      vertical-align: top;
-      width: 32px;
     }
 
     .comment-body {

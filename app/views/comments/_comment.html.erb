@@ -1,7 +1,7 @@
 <div class="row">
   <div id="comment-<%= comment.id %>" class="comment small-12 column">
 
-    <%= image_tag('user_default_2.jpg', class: 'user-photo left', size: '32x32') %>
+    <%= avatar_image(comment.user, size: 32, class: 'left') %>
 
     <div class="comment-body">
       <span class="comment-info">

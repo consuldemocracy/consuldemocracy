@@ -56,4 +56,8 @@ module CommonActions
     SimpleCaptcha::SimpleCaptchaData.first.value
   end
 
+  def avatar(name)
+    "img.initialjs-avatar[data-name='#{name}']"
+  end
+
 end
