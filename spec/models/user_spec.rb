@@ -107,4 +107,17 @@ describe User do
     end
   end
 
+  describe "official?" do
+    it "is false when the user is not an official" do
+      expect(subject.official_level).to eq(0)
+      expect(subject.official?).to be false
+    end
+
+    it "is true when the user is an official" do
+      subject.official_level = 3
+      subject.save
+      expect(subject.official?).to be true
+    end
+  end
+
 end

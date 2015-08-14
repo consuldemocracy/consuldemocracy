@@ -25,4 +25,8 @@ class User < ActiveRecord::Base
   def moderator?
     @is_moderator ||= Moderator.where(user_id: id).exists?
   end
+
+  def official?
+    official_level && official_level > 0
+  end
 end
