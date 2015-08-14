@@ -52,7 +52,11 @@
 <section class="row-full comments">
   <div class="row">
     <div id="comments" class="small-12 column">
-      <h2><%= t("debates.show.comments_title") %></h2>
+
+      <h2>
+        <%= t("debates.show.comments_title") %>
+        <span>(<%= t("debates.show.comments", count: @debate.comment_threads.count) %>)</span>
+      </h2>
       <% if user_signed_in? %>
         <div>
           <%= t("debates.show.leave_comment") %>
