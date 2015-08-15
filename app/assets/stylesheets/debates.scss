@@ -13,7 +13,7 @@
 @mixin votes {
   background: $votes-bg;
   border-top: 1px solid $votes-border;
-  margin: 0 -12px;
+  margin: 0 rem-calc(-12);
   padding: rem-calc(14) rem-calc(12);
   position: relative;
 
@@ -21,7 +21,7 @@
     background: white;
     border: 2px solid $votes-border;
     border-radius: rem-calc(3);
-    color: $votes-neutral;
+    color: $text-light;
     display: inline-block;
     font-size: rem-calc(30);
     line-height: rem-calc(30);
@@ -45,7 +45,7 @@
     background: white;
     border: 2px solid $votes-border;
     border-radius: rem-calc(3);
-    color: $votes-neutral;
+    color: $text-light;
     display: inline-block;
     font-size: rem-calc(30);
     line-height: rem-calc(30);
@@ -70,7 +70,7 @@
     vertical-align: super;
 
     span {
-      color: $votes-text;
+      color: white;
       display: inline-block;
       font-size: rem-calc(16);
       font-weight: lighter;
@@ -107,7 +107,7 @@
   }
 
   .total-votes {
-    color: $votes-text;
+    color: white;
     float: right;
     line-height: $line-height*2;
   }
@@ -117,12 +117,12 @@
   }
 
   .not-logged {
-    background: $not-logged-bg;
+    background: rgba(22,99,135,.9);
     color: white;
     height: 100%;
     left: 0;
     line-height: $line-height*2;
-    padding-top: $line-height/2;
+    padding-top: rem-calc(12);
     position: absolute;
     text-align: center;
     top: 0;
@@ -149,11 +149,11 @@
     border: 1px solid;
     border-color: #e5e6e9 #dfe0e4 #d0d1d5;
     border-radius: rem-calc(3);
-    margin-bottom: $line-height;
+    margin-bottom: rem-calc(24);
     padding: rem-calc(24) rem-calc(12) 0 rem-calc(12);
 
     .debate-content {
-      min-height: $line-height*14.71;
+      min-height: rem-calc(353);
     }
 
     .label {
@@ -173,7 +173,7 @@
       line-height: $line-height;
       position: absolute;
       right: rem-calc(18);
-      top: rem-calc(24);
+      top: rem-calc(12);
     }
 
     h3 {
@@ -183,7 +183,7 @@
 
       a {
         clear: both;
-        color: $header-color;
+        color: $text;
         display: block;
         font-size: rem-calc(16);
         line-height: $line-height;
@@ -191,7 +191,7 @@
     }
 
     .debate-info {
-      color: $text-light;
+      color: $text-medium;
       font-weight: lighter;
       margin-bottom: 0;
 
@@ -201,22 +201,22 @@
       }
 
       a {
-        color: $text-light;
+        color: $text-medium;
       }
     }
 
     .debate-description {
-      color: $text-color;
+      color: $text;
       font-size: rem-calc(13);
-      height: $line-height*6.5;
+      height: rem-calc(156);
       line-height: $line-height;
-      margin-bottom: $line-height/2;
-      margin-top: $line-height;
+      margin-bottom: rem-calc(12);
+      margin-top: rem-calc(24);
       overflow: hidden;
       position: relative;
 
       a {
-        color: $text-color;
+        color: $text;
       }
     }
 
@@ -230,10 +230,10 @@
     }
 
     p {
-      color: $text-color;
+      color: $text;
       font-size: rem-calc(13);
       line-height: $line-height;
-      margin-bottom: $line-height/2;
+      margin-bottom: rem-calc(12);
     }
   }
 
@@ -243,8 +243,8 @@
 }
 
 .debates-list {
-  margin-bottom: $line-height*2;
-  margin-top: $line-height;
+  margin-bottom: rem-calc(48);
+  margin-top: rem-calc(24);
 }
 
 .debate {
@@ -253,12 +253,13 @@
   margin-top: 0;
 
   .panel {
+    border: 0;
     margin-bottom: 0;
-    min-height: $line-height*8;
+    min-height: rem-calc(192);
     padding: 0 rem-calc(12) rem-calc(2) rem-calc(12);
 
     &:first-child {
-      padding-top: $line-height;
+      padding-top: rem-calc(24);
     }
 
     .label {
@@ -268,7 +269,7 @@
 
     h3 {
       margin-top: 0;
-      min-height: $line-height*2;
+      min-height: rem-calc(48);
     }
 
     p {
@@ -291,13 +292,29 @@
     }
 
     .debate-description {
-      height: $line-height*3;
+      height: rem-calc(72);
       margin-top: 0;
     }
   }
 
   .votes {
-    border: 0;
+    border: 1px solid $votes-border;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    margin: 0 rem-calc(-24) 0 rem-calc(12);
+
+    &:after {
+      content: "";
+      position: absolute;
+      display: block;
+      border-style: solid;
+      border-color: #166387 transparent transparent transparent;
+      bottom: rem-calc(-14);
+      border-left-width: 0;
+      border-right-color: transparent;
+      right: rem-calc(-1);
+      border-width: 1em 1em 0 0;
+    }
 
     .total-votes {
       display: block;
@@ -308,7 +325,7 @@
     .like {
 
       span {
-        color: $votes-text;
+        color: white;
         display: block;
         line-height: $line-height/2;
       }
@@ -316,13 +333,9 @@
 
     .not-logged {
       line-height: $line-height;
-      padding-top: $line-height*1.5;
+      padding-top: rem-calc(36);
     }
   }
-}
-
-.sidebar {
-  margin-top: $line-height;
 }
 
 // 03. Show
@@ -330,7 +343,7 @@
 
 .debate-show {
   background: white;
-  padding: rem-calc(24) rem-calc(12) rem-calc(48);
+  padding: rem-calc(24) rem-calc(12) 0;
 
   .back {
     @include back;
@@ -344,19 +357,18 @@
     clear: both;
     font-size: rem-calc(24);
     font-weight: bold;
-    line-height: $line-height*2;
     margin: 0;
   }
 
   .debate-info {
     clear: both;
-    color: $text-light;
+    color: $text-medium;
     font-weight: lighter;
     line-height: $line-height*2;
     text-align: justify;
 
     a {
-        color: $text-light;
+        color: $text-medium;
     }
 
     .bullet {
@@ -372,27 +384,19 @@
 
   .author-photo {
     line-height: $line-height*2;
-    margin-right: $line-height/4;
+    margin-right: rem-calc(6);
+    vertical-align: middle;
+    width: 32px;
   }
 
   .author {
-    color: $text-color;
+    color: $text;
     font-weight: bold;
-  }
-
-  .sidebar-divider {
-    border-top: 1px solid $border;
-    margin-top: $line-height;
-
-    &:first-child {
-      margin-top: 0;
-    }
   }
 
   h3 {
     border-top: 1px solid $votes-border;
     display: inline-block;
-    font-family: $font-family-sans-serif;
     font-size: rem-calc(16);
     margin: -1px 0 rem-calc(12);
     padding-top: rem-calc(6);
@@ -401,7 +405,8 @@
 
   .votes {
     @include votes;
-    border: 0;
+    border: 1px solid $votes-border;
+    border-radius: rem-calc(3);
     margin: 0;
 
     .total-votes {
@@ -412,18 +417,22 @@
 
     .not-logged {
       line-height: $line-height;
-      padding: $line-height;
+      padding: rem-calc(24);
     }
   }
 
   .leave-comment {
     display: inline-block;
-    margin-top: $line-height;
+    margin-top: rem-calc(24);
   }
 
   .tags {
     display: block;
-    margin-top: $line-height;
+    margin-top: rem-calc(24);
+
+    a {
+      margin-right: rem-calc(6);
+    }
   }
 }
 
@@ -432,7 +441,7 @@
 
 .debate-new {
   background: white;
-  padding-top: $line-height;
+  padding-top: rem-calc(24);
 
   .back {
     @include back;
@@ -443,7 +452,7 @@
     font-size: rem-calc(36);
     font-weight: bold;
     line-height: $line-height*2;
-    margin-bottom: $line-height;
+    margin-bottom: rem-calc(24);
   }
 
   .icon-comment-quotes {
@@ -464,7 +473,7 @@
   .recommendations {
     list-style-type: none;
     margin-left: 0;
-    margin-top: $line-height;
+    margin-top: rem-calc(24);
 
     li {
       font-size: rem-calc(12);
@@ -483,34 +492,42 @@
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
 .comments {
-  background: $comments-bg;
-  background-image: url('comments_divider.png');
+  background: $white;
   background-repeat: repeat-x;
-  padding-top: $line-height;
-  padding-bottom: $line-height*4;
+  padding-top: rem-calc(24);
+  padding-bottom: rem-calc(96);
 
   h2 {
     margin: 0;
     font-weight: bold;
+
+    span {
+      font-size: rem-calc(14);
+      font-weight: normal;
+      opacity: .8;
+    }
   }
 
   .comment {
-    margin: $line-height/4 0;
+    margin: rem-calc(6) 0;
 
     p {
-      color: $comments-text;
       margin-bottom: 0;
     }
 
     .comment-votes {
-      color: $comments-info;
+      color: $text-medium;
       font-weight: lighter;
       margin: rem-calc(15) rem-calc(6) 0;
 
       a {
-        color: $comments-info;
+        color: $text-light;
         display: inline-block;
         vertical-align: top;
+
+        &:hover {
+          color: $text-medium;
+        }
       }
 
       [class^="icon-"] {
@@ -520,7 +537,7 @@
     }
 
     .comment-body {
-      margin-left: $line-height*1.6;
+      margin-left: rem-calc(36);
 
       .reply {
         background: white;
@@ -534,22 +551,22 @@
 
     .comment-children {
       border-left: 1px dashed $border;
-      margin-left: $line-height*1.6;
-      padding-left: $line-height/4;
+      margin-left: rem-calc(36);
+      padding-left: rem-calc(6);
 
       @media only screen and (max-width: 40em) {
-        margin-left: $line-height/1.5;
+        margin-left: rem-calc(16);
       }
     }
 
     .comment-info {
-      color: $comments-info;
+      color: $text-light;
       font-size: rem-calc(13);
       font-weight: lighter;
       vertical-align: middle;
 
       span {
-        color: $text-color;
+        color: $text;
         font-weight: bold;
       }
     }

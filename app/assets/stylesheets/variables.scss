@@ -9,46 +9,34 @@
 // 01. Fonts
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
-$font-family-sans-serif: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$font-family-sans-serif: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 $line-height: rem-calc(24);
 
 // 02. Colors
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
+$body:              #E9E9E9;
 $background:        #EDEFF0;
 $border:            #DEE0E3;
 $brand:             #0077B9;
-$check:             #46DB91;
-$debates:           #008CCF;
 
-$comments-bg:       #F1F1F1;
-$comments-info:     #A5B2B9;
-$comments-text:     #3F4549;
-
-$header-color:      #292B33;
-$link:              #2895F1;
-$link-hover: 		    #2178BF;
-
-$tags-bg:           #FAFAFA;
-$tags-bg-hover:     #E5F1F8;
-$tags-border:       #F0F0F0;
-$tags-color:        #8F8F8F;
-
-$text-color:        #222222;
+$text:              #222222;
 $text-medium:       #999999;
-$text-light:        #A3A6AD;
+$text-light:        #CCCCCC;
 
-$votes:             #31708f;
+$link:              #2895F1;
+$link-hover:        #2178BF;
+
+$debates:           #008CCF;
 $votes-bg:          #26AEEE;
 $votes-border:      #1F94CB;
+
 $votes-like:        #7BD2A8;
 $votes-like-act:    #5D9E7F;
-$votes-neutral:     #CCCCCC;
-$votes-text:        #FFFFFF;
 $votes-unlike:      #EF8585;
 $votes-unlike-act:  #BD6A6A;
 
-$not-logged-bg:     rgba(22,99,135,.9);
+$check:             #46DB91;
 
 // 03. Forms
 // - - - - - - - - - - - - - - - - - - - - - - - - -

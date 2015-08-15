@@ -32,5 +32,6 @@ module Participacion
 
     # Add lib to the autoload path
     config.autoload_paths << Rails.root.join('lib')
+    config.time_zone = 'Madrid'
   end
 end

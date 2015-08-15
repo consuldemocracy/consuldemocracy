@@ -14,7 +14,7 @@
     <div class="small-12 column">
       <%= f.label :title, t("debates.form.debate_title") %>
       <span class="note"><%= t("debates.form.title_instructions") %></span>
-      <%= f.text_field :title, maxlength: Debate::TITLE_LENGTH %>
+      <%= f.text_field :title, maxlength: Debate::TITLE_LENGTH, placeholder: t("debates.form.debate_title") %>
     </div>
 
     <div class="ckeditor small-12 column">
@@ -40,7 +40,7 @@
       <%= f.simple_captcha %>
     </div>
 
-    <div class="actions small-12 column" style="padding-top:20px">
+    <div class="actions small-12 column">
       <%= f.submit(class: "button radius") %>
     </div>
   </div>
