@@ -71,6 +71,27 @@ feature 'Debates' do
     expect(page).to have_content "Debate was successfully created."
   end
 
+  scenario 'Failed creation goes back to new showing featured tags' do
+    featured_tag = create(:tag, :featured)
+    tag = create(:tag)
+    login_as(create(:user))
+
+    visit new_debate_path
+    fill_in 'debate_title', with: ""
+    fill_in 'debate_description', with: 'Very important issue...'
+    fill_in 'debate_captcha', with: correct_captcha_text
+    check 'debate_terms_of_service'
+
+    click_button "Create Debate"
+
+    expect(page).to_not have_content "Debate was successfully created."
+    expect(page).to have_content "1 error"
+    within(".tags") do
+      expect(page).to have_content featured_tag.name
+      expect(page).to_not have_content tag.name
+    end
+  end
+
   scenario 'JS injection is prevented but safe html is respected' do
     author = create(:user)
     login_as(author)
@@ -199,6 +220,27 @@ feature 'Debates' do
     click_button "Update Debate"
 
     expect(page).to have_content "Debate was successfully updated."
+  end
+
+  scenario 'Failed update goes back to edit showing featured tags' do
+    debate       = create(:debate)
+    featured_tag = create(:tag, :featured)
+    tag = create(:tag)
+    login_as(debate.author)
+
+    visit edit_debate_path(debate)
+    expect(current_path).to eq(edit_debate_path(debate))
+
+    fill_in 'debate_title', with: ""
+    fill_in 'debate_captcha', with: correct_captcha_text
+    click_button "Update Debate"
+
+    expect(page).to_not have_content "Debate was successfully updated."
+    expect(page).to have_content "1 error"
+    within(".tags") do
+      expect(page).to have_content featured_tag.name
+      expect(page).to_not have_content tag.name
+    end
   end
 
   describe 'Limiting tags shown' do
