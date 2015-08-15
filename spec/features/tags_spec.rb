@@ -85,6 +85,7 @@ feature 'Tags' do
     expect(page).to have_selector("input[value='Economía']")
 
     fill_in 'debate_tag_list', with: "Economía, Hacienda"
+    fill_in 'debate_captcha', with: correct_captcha_text
     click_button 'Update Debate'
 
     expect(page).to have_content 'Debate was successfully updated.'
@@ -101,6 +102,7 @@ feature 'Tags' do
     visit edit_debate_path(debate)
 
     fill_in 'debate_tag_list', with: ""
+    fill_in 'debate_captcha', with: correct_captcha_text
     click_button 'Update Debate'
 
     expect(page).to have_content 'Debate was successfully updated.'
