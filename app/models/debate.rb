@@ -1,5 +1,7 @@
 require 'numeric'
 class Debate < ActiveRecord::Base
+  default_scope { order('created_at DESC') }
+
   apply_simple_captcha
   TITLE_LENGTH = Debate.columns.find{|c| c.name == 'title'}.limit
 
@@ -17,6 +19,14 @@ class Debate < ActiveRecord::Base
 
   before_validation :sanitize_description
   before_validation :sanitize_tag_list
+
+  def self.search(params)
+    if params[:tag]
+      tagged_with(params[:tag])
+    else
+      all
+    end
+  end
 
   def likes
     get_likes.size
