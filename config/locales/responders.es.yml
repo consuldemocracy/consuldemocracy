@@ -3,8 +3,8 @@ es:
     actions:
       create:
         notice: "%{resource_name} creado correctamente."
-      # update:
-        # notice: "%{resource_name} actualizado correctamente."
+      update:
+        notice: "%{resource_name} actualizado correctamente."
       # destroy:
         # notice: "%{resource_name} borrado correctamente."
         # alert: "%{resource_name} no ha podido ser borrado."

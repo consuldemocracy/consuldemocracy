@@ -6,9 +6,8 @@
       <li>
         <strong><%= tag.name %></strong>
 
-        <%= form_for(tag, url: admin_tag_path(tag), as: :tag) do |f| %>
-          <!-- <%= f.check_box :featured %> -->
-          <%= f.check_box :featured, label: false %>
+        <%= form_for(tag, url: admin_tag_path(tag), as: :tag, html: { id: "edit_tag_#{tag.id}"}) do |f| %>
+          <%= f.check_box :featured, label: false, id: "tag_featured_#{tag.id}" %>
           <%= t("admin.tags.index.mark_as_featured") %>
           <%= f.submit(class: "button radius tiny") %>
         <% end %>

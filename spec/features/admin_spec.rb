@@ -2,6 +2,14 @@ require 'rails_helper'
 
 feature 'Admin' do
   let(:user) { create(:user) }
+  let(:administrator) do
+    create(:administrator, user: user)
+    user
+  end
+  let(:moderator) do
+    create(:moderator, user: user)
+    user
+  end
 
   scenario 'Access as regular user is not authorized' do
     login_as(user)
@@ -12,9 +20,7 @@ feature 'Admin' do
   end
 
   scenario 'Access as a moderator is not authorized' do
-    create(:moderator, user: user)
-
-    login_as(user)
+    login_as(moderator)
     visit admin_root_path
 
     expect(current_path).to eq(root_path)
@@ -22,9 +28,7 @@ feature 'Admin' do
   end
 
   scenario 'Access as an administrator is authorized' do
-    create(:administrator, user: user)
-
-    login_as(user)
+    login_as(administrator)
     visit admin_root_path
 
     expect(current_path).to eq(admin_root_path)
@@ -32,9 +36,7 @@ feature 'Admin' do
   end
 
   scenario "Admin access links" do
-    create(:administrator, user: user)
-
-    login_as(user)
+    login_as(administrator)
     visit root_path
 
     expect(page).to have_link('Administration')
@@ -42,9 +44,7 @@ feature 'Admin' do
   end
 
   scenario "Moderation access links" do
-    create(:moderator, user: user)
-
-    login_as(user)
+    login_as(moderator)
     visit root_path
 
     expect(page).to have_link('Moderation')
@@ -52,9 +52,7 @@ feature 'Admin' do
   end
 
   scenario 'Admin dashboard' do
-    create(:administrator, user: user)
-
-    login_as(user)
+    login_as(administrator)
     visit root_path
 
     click_link 'Administration'
@@ -65,9 +63,7 @@ feature 'Admin' do
   end
 
   scenario 'Moderation dashboard' do
-    create(:moderator, user: user)
-
-    login_as(user)
+    login_as(moderator)
     visit root_path
 
     click_link 'Moderation'
@@ -75,6 +71,23 @@ feature 'Admin' do
     expect(current_path).to eq(moderation_root_path)
     expect(page).to have_css('#moderation_menu')
     expect(page).to_not have_css('#admin_menu')
+  end
+
+  context 'Tags' do
+    scenario 'marking tags as featured / unfeatured' do
+      unfeatured_tag = create :tag, :unfeatured, name: 'Mi barrio'
+
+      login_as(administrator)
+      visit admin_tags_path
+
+      expect(page).to have_content 'Mi barrio'
+      save_and_open_page
+
+      check "tag_featured_#{unfeatured_tag.id}"
+      click_button 'Update Tag'
+
+      expect(page).to have_checked_field("tag_featured_#{unfeatured_tag.id}")
+    end
   end
 
 end

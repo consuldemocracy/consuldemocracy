@@ -3,3 +3,7 @@ es:
     dashboard:
       index:
         title: Administración
+    tags:
+      index:
+        title: 'Temas de debate'
+        mark_as_featured: 'Marcar como destacado'

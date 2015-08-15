@@ -35,4 +35,16 @@ FactoryGirl.define do
     user
   end
 
+  factory :tag, class: 'ActsAsTaggableOn::Tag' do
+    name 'Medio Ambiente'
+
+    trait :featured do
+      featured true
+    end
+
+    trait :unfeatured do
+      featured false
+    end
+  end
+
 end

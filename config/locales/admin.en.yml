@@ -3,3 +3,7 @@ en:
     dashboard:
       index:
         title: Administration
+    tags:
+      index:
+        title: 'Debate topics'
+        mark_as_featured: 'Mark as featured'
