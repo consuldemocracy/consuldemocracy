@@ -24,7 +24,7 @@ feature 'Debates' do
     expect(page).to have_content debate.title
     expect(page).to have_content "Debate description"
     expect(page).to have_content debate.author.name
-    expect(page).to have_content I18n.l(Date.today)
+    expect(page).to have_content I18n.l(debate.created_at.to_date)
     expect(page).to have_selector(avatar(debate.author.name), count: 1)
 
     within('.social-share-button') do
@@ -48,7 +48,7 @@ feature 'Debates' do
     expect(page).to have_content 'Acabar con los desahucios'
     expect(page).to have_content 'Esto es un tema muy importante porque...'
     expect(page).to have_content author.name
-    expect(page).to have_content I18n.l(Date.today)
+    expect(page).to have_content I18n.l(Debate.last.created_at.to_date)
   end
 
   scenario 'Captcha is required for debate creation' do
