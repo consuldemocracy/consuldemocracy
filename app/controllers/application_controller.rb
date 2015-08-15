@@ -37,7 +37,7 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  def set_voted_values(debates_ids)
-    @voted_values = current_user ? current_user.votes_on_debates(debates_ids) : {}
+  def set_debate_votes(debates)
+    @voted_values = current_user ? current_user.debate_votes(debates) : {}
   end
 end

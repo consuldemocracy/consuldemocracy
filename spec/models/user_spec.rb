@@ -2,13 +2,11 @@ require 'rails_helper'
 
 describe User do
 
-  describe "#votes_on_debates" do
+  describe "#debate_votes" do
     let(:user) { create(:user) }
 
     it "returns {} if no debate" do
-      expect(user.votes_on_debates()).to eq({})
-      expect(user.votes_on_debates([])).to eq({})
-      expect(user.votes_on_debates([nil, nil])).to eq({})
+      expect(user.debate_votes([])).to eq({})
     end
 
     it "returns a hash of debates ids and votes" do
@@ -18,7 +16,7 @@ describe User do
       create(:vote, voter: user, votable: debate1, vote_flag: true)
       create(:vote, voter: user, votable: debate3, vote_flag: false)
 
-      voted = user.votes_on_debates([debate1.id, debate2.id, debate3.id])
+      voted = user.debate_votes([debate1, debate2, debate3])
 
       expect(voted[debate1.id]).to eq(true)
       expect(voted[debate2.id]).to eq(nil)

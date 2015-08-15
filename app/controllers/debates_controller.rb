@@ -3,17 +3,12 @@ class DebatesController < ApplicationController
   load_and_authorize_resource
 
   def index
-    if params[:tag]
-      @debates = Debate.tagged_with(params[:tag]).order(id: :desc)
-      set_voted_values @debates.map(&:id)
-    else
-      @debates = Debate.all.order(id: :desc)
-      set_voted_values @debates.map(&:id)
-    end
+    @debates = Debate.search(params)
+    set_debate_votes(@debates)
   end
 
   def show
-    set_voted_values [@debate.id]
+    set_debate_votes(@debate)
   end
 
   def new
@@ -40,7 +35,7 @@ class DebatesController < ApplicationController
 
   def vote
     @debate.vote_by(voter: current_user, vote: params[:value])
-    set_voted_values [@debate.id]
+    set_debate_votes(@debate)
   end
 
 
