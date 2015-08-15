@@ -3,3 +3,11 @@ es:
     dashboard:
       index:
         title: Administración
+    tags:
+      index:
+        title: 'Temas de debate'
+        add_tag: 'Añade un nuevo tema de debate'
+      mark_as_featured: 'Marcar como destacado'
+      name:
+        placeholder: 'Escribe el nombre del tema'
+      destroy: Elimina la etiqueta

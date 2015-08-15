@@ -49,7 +49,10 @@ en:
       debate_text: Ellaborate your opinion
       text_instructions: "Explain your opinion, go into details, tell us what's the purpose of your idea"
       tags_label: Topics
-      tags_instructions: Comma separated
+      tags_instructions: >
+        Tag this idea. You can choose among our proposals on the list or add any other tag you want by
+        writing them separated by ";" and then pressing "enter".
+        Some suggestions:
       accept_terms: I accept the privacy policy and the legal terms
     show:
       back_link: Back

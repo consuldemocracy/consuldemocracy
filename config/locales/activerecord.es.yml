@@ -3,6 +3,7 @@ es:
     models:
       comment: Comentario
       debate: Debate
+      tag: Topic
       user: Usuario
       vote: Voto
     attributes:

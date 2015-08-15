@@ -13,9 +13,11 @@ class DebatesController < ApplicationController
 
   def new
     @debate = Debate.new
+    load_featured_tags
   end
 
   def edit
+    load_featured_tags
   end
 
   def create
@@ -24,13 +26,18 @@ class DebatesController < ApplicationController
     if @debate.save_with_captcha
       redirect_to @debate, notice: t('flash.actions.create.notice', resource_name: 'Debate')
     else
+      load_featured_tags
       render :new
     end
   end
 
   def update
-    @debate.update(debate_params)
-    respond_with @debate
+    if @debate.update(debate_params)
+      redirect_to @debate, notice: t('flash.actions.update.notice', resource_name: 'Debate')
+    else
+      load_featured_tags
+      render :edit
+    end
   end
 
   def vote
@@ -40,12 +47,12 @@ class DebatesController < ApplicationController
 
 
   private
-    def set_debate
-      @debate = Debate.find(params[:id])
-    end
-
     def debate_params
       params.require(:debate).permit(:title, :description, :tag_list, :terms_of_service, :captcha, :captcha_key)
+    end
+
+    def load_featured_tags
+      @featured_tags = ActsAsTaggableOn::Tag.where(featured: true)
     end
 
 end

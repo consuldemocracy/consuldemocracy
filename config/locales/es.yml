@@ -49,7 +49,10 @@ es:
       debate_text: Describe tu opinión
       text_instructions: "Explica con todo el detalle que puedas y de una manera sencilla la idea y que crees que conseguiríamos con ella"
       tags_label: Temas
-      tags_instructions: Separados por comas
+      tags_instructions: >
+        Etiqueta esta idea. Puedes elegir entre nuestras propuestas o introducir las que desees.
+        Para ello solo tienes que escribir las etiquetas que desees separadas por ";" y pulsar "intro".
+        Algunas recomendaciones:
       accept_terms: Acepto la política de privacidad y el aviso legal
     show:
       back_link: Volver

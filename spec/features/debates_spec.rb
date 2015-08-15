@@ -70,26 +70,55 @@ feature 'Debates' do
     expect(page.html).to_not include '&lt;p&gt;This is'
   end
 
-  scenario 'tagging using dangerous strings' do
+  context 'Tagging debates' do
+    let(:author) { create(:user) }
 
-    author = create(:user)
-    login_as(author)
+    background do
+      login_as(author)
+    end
 
-    visit new_debate_path
+    scenario 'using featured tags', :js do
+      ['Medio Ambiente', 'Ciencia'].each do |tag_name|
+        create(:tag, :featured, name: tag_name)
+      end
 
-    fill_in 'debate_title', with: 'A test'
-    fill_in 'debate_description', with: 'A test'
-    fill_in 'debate_tag_list', with: 'user_id=1, &a=3, <script>alert("hey");</script>'
-    fill_in 'debate_captcha', with: SimpleCaptcha::SimpleCaptchaData.first.value
-    check 'debate_terms_of_service'
+      visit new_debate_path
 
-    click_button 'Create Debate'
+      fill_in 'debate_title', with: 'A test'
+      fill_in_ckeditor 'debate_description', with: 'A test'
+      fill_in 'debate_captcha', with: correct_captcha_text
+      check 'debate_terms_of_service'
 
-    expect(page).to have_content 'Debate was successfully created.'
-    expect(page).to have_content 'user_id1'
-    expect(page).to have_content 'a3'
-    expect(page).to have_content 'scriptalert("hey");script'
-    expect(page.html).to_not include 'user_id=1, &a=3, <script>alert("hey");</script>'
+      ['Medio Ambiente', 'Ciencia'].each do |tag_name|
+        find('.js-add-tag-link', text: tag_name).click
+      end
+
+      click_button 'Create Debate'
+
+      expect(page).to have_content 'Debate was successfully created.'
+      ['Medio Ambiente', 'Ciencia'].each do |tag_name|
+        expect(page).to have_content tag_name
+      end
+    end
+
+    scenario 'using dangerous strings' do
+      visit new_debate_path
+
+      fill_in 'debate_title', with: 'A test'
+      fill_in 'debate_description', with: 'A test'
+      fill_in 'debate_captcha', with: correct_captcha_text
+      check 'debate_terms_of_service'
+
+      fill_in 'debate_tag_list', with: 'user_id=1, &a=3, <script>alert("hey");</script>'
+
+      click_button 'Create Debate'
+
+      expect(page).to have_content 'Debate was successfully created.'
+      expect(page).to have_content 'user_id1'
+      expect(page).to have_content 'a3'
+      expect(page).to have_content 'scriptalert("hey");script'
+      expect(page.html).to_not include 'user_id=1, &a=3, <script>alert("hey");</script>'
+    end
   end
 
   scenario 'Update should not be posible if logged user is not the author' do
