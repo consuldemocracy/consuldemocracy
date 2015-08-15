@@ -23,6 +23,8 @@ Rails.application.routes.draw do
 
   namespace :admin do
     root to: "dashboard#index"
+
+    resources :tags, only: [:index, :update]
   end
 
   namespace :moderation do

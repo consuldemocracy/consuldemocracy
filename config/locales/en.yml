@@ -78,6 +78,8 @@ en:
     comment_button: Publish comment
     reply_link: Reply
     reply_button: Publish reply
+  tags:
+    featured: Featured
   votes:
     agree: I agree
     disagree: I disagree
@@ -117,3 +119,8 @@ en:
     default: "You are not authorized to access this page."
     manage:
       all: "You are not authorized to %{action} %{subject}."
+  admin:
+    tags:
+      index:
+        title: 'Debate topics'
+        mark_as_featured: 'Mark as featured'

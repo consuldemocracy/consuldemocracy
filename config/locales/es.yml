@@ -78,6 +78,8 @@ es:
     comment_button: Publicar comentario
     reply_link: Responder
     reply_button: Publicar respuesta
+  tags:
+    featured: Destacado
   votes:
     agree: Estoy de acuerdo
     disagree: No estoy de acuerdo
@@ -129,3 +131,8 @@ es:
       all: "No tienes permiso para borrar %{subject}"
     manage:
       all: "No tienes permiso para realizar la acción '%{action}' sobre %{subject}."
+  admin:
+    tags:
+      index:
+        title: 'Temas de debate'
+        mark_as_featured: 'Marcar como destacado'
