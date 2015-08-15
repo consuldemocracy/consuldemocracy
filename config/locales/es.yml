@@ -51,7 +51,7 @@ es:
       tags_label: Temas
       tags_instructions: >
         Etiqueta esta idea. Puedes elegir entre nuestras propuestas o introducir las que desees.
-        Para ello solo tienes que escribir las etiquetas que desees separadas por ";" y pulsar "intro".
+        Para ello solo tienes que escribir las etiquetas que desees separadas por "," y pulsar "intro".
         Algunas recomendaciones:
       accept_terms: Acepto la política de privacidad y el aviso legal
     show:
@@ -110,7 +110,7 @@ es:
       debate: "el código secreto no coincide con la imagen"
   shared:
     tags_cloud:
-        tags: Etiquetas
+        tags: Temas
   mailer:
     comment:
       subject: Alguien ha comentado en tu debate

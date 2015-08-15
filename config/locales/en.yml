@@ -50,8 +50,8 @@ en:
       text_instructions: "Explain your opinion, go into details, tell us what's the purpose of your idea"
       tags_label: Topics
       tags_instructions: >
-        Tag this idea. You can choose among our proposals on the list or add any other tag you want by
-        writing them separated by ";" and then pressing "enter".
+        Tag this idea. You can choose among our proposals on the list or add any other topic you want by
+        writing them separated by "," and then pressing "enter".
         Some suggestions:
       accept_terms: I accept the privacy policy and the legal terms
     show:
@@ -110,7 +110,7 @@ en:
       debate: "secret code did not match with the image"
   shared:
     tags_cloud:
-        tags: Tags
+        tags: Topics
   mailer:
     comment:
       subject: Someone has commented on your debate
