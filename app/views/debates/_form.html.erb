@@ -28,7 +28,7 @@
       <span class="note"><%= t("debates.form.tags_instructions") %></span>
       <span class="tags">
         <% @featured_tags.each do |tag| %>
-          <a><%= tag.name %></a>
+          <a class="js-add-tag-link"><%= tag.name %></a>
         <% end %>
       </span>
       <%= f.text_field :tag_list, value: @debate.tag_list.to_s %>
