@@ -6,4 +6,8 @@ en:
     tags:
       index:
         title: 'Debate topics'
-        mark_as_featured: 'Mark as featured'
+        add_tag: 'Add a new debate topic'
+      mark_as_featured: 'Mark as featured'
+      name:
+        placeholder: 'Write a topic'
+      destroy: Delete Tag

@@ -74,14 +74,40 @@ feature 'Admin' do
   end
 
   context 'Tags' do
-    scenario 'marking tags as featured / unfeatured' do
-      unfeatured_tag = create :tag, :unfeatured, name: 'Mi barrio'
+    let(:unfeatured_tag) { create :tag, :unfeatured, name: 'Mi barrio' }
 
+    background do
       login_as(administrator)
+    end
+
+    scenario 'adding a new tag' do
+      visit admin_tags_path
+
+      fill_in 'tag_name', with: 'Papeleras'
+
+      click_on 'Create Tag'
+
+      expect(page).to have_content 'Papeleras'
+    end
+
+    scenario 'deleting tag' do
+      unfeatured_tag
+
       visit admin_tags_path
 
       expect(page).to have_content 'Mi barrio'
-      save_and_open_page
+
+      click_link 'Delete Tag'
+
+      expect(page).not_to have_content 'Mi barrio'
+    end
+
+    scenario 'marking tags as featured / unfeatured' do
+      expect(unfeatured_tag).not_to be_featured
+
+      visit admin_tags_path
+
+      expect(page).to have_content 'Mi barrio'
 
       check "tag_featured_#{unfeatured_tag.id}"
       click_button 'Update Tag'
