@@ -36,7 +36,7 @@ FactoryGirl.define do
   end
 
   factory :tag, class: 'ActsAsTaggableOn::Tag' do
-    name 'Medio Ambiente'
+    sequence(:name) {|n| "Tag #{n} name"}
 
     trait :featured do
       featured true
