@@ -26,7 +26,7 @@ feature 'Comments' do
       visit debate_path(debate)
 
       expect(page).to have_content 'Log in to participate'
-      within ('#comments') do
+      within('#comments') do
         expect(page).to_not have_content 'Write a comment'
         expect(page).to_not have_content 'Reply'
         expect(page).to_not have_css('form')
@@ -77,7 +77,7 @@ feature 'Comments' do
       click_button 'Publish reply'
     end
 
-    within "#comment-#{comment.id}" do
+    within("#comment-#{comment.id}") do
       expect(page).to have_content 'It will be done next week.'
     end
 

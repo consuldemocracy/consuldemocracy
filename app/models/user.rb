@@ -15,7 +15,7 @@ class User < ActiveRecord::Base
 
   def debate_votes(debates)
     voted = votes.for_debates.in(debates)
-    voted.each_with_object({}) { |v,_| _[v.votable_id] = v.value }
+    voted.each_with_object({}) { |v, _| _[v.votable_id] = v.value }
   end
 
   def administrator?

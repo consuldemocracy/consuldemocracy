@@ -9,15 +9,15 @@ FactoryGirl.define do
   end
 
   factory :debate do
-    sequence(:title) {|n| "Debate #{n} title"}
-    description      'Debate description'
-    terms_of_service '1'
+    sequence(:title)     { |n| "Debate #{n} title" }
+    description          'Debate description'
+    terms_of_service     '1'
     association :author, factory: :user
   end
 
   factory :vote do
     association :votable, factory: :debate
-    association :voter, factory: :user
+    association :voter,   factory: :user
     vote_flag true
   end
 
@@ -36,7 +36,7 @@ FactoryGirl.define do
   end
 
   factory :tag, class: 'ActsAsTaggableOn::Tag' do
-    sequence(:name) {|n| "Tag #{n} name"}
+    sequence(:name) { |n| "Tag #{n} name" }
 
     trait :featured do
       featured true

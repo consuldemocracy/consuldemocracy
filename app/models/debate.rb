@@ -3,7 +3,7 @@ class Debate < ActiveRecord::Base
   default_scope { order('created_at DESC') }
 
   apply_simple_captcha
-  TITLE_LENGTH = Debate.columns.find{|c| c.name == 'title'}.limit
+  TITLE_LENGTH = Debate.columns.find { |c| c.name == 'title' }.limit
 
   acts_as_votable
   acts_as_commentable
@@ -70,7 +70,7 @@ class Debate < ActiveRecord::Base
   end
 
   def sanitize_tag_list
-    self.tag_list  = TagSanitizer.new.sanitize_tag_list(self.tag_list)
+    self.tag_list = TagSanitizer.new.sanitize_tag_list(self.tag_list)
   end
 
 end

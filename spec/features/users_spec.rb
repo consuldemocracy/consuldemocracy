@@ -32,7 +32,7 @@ feature 'Users' do
   end
 
   scenario 'Sign in' do
-    user = create(:user, email: 'manuela@madrid.es', password: 'judgementday')
+    create(:user, email: 'manuela@madrid.es', password: 'judgementday')
 
     visit '/'
     click_link 'Log in'

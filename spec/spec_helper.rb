@@ -1,7 +1,7 @@
 require 'factory_girl_rails'
 require 'database_cleaner'
 require "email_spec"
-Dir["./spec/support/**/*.rb"].sort.each { |f| require f}
+Dir["./spec/support/**/*.rb"].sort.each { |f| require f }
 
 RSpec.configure do |config|
   config.use_transactional_fixtures = false
@@ -17,7 +17,7 @@ RSpec.configure do |config|
   end
 
   config.before(:each) do |example|
-    DatabaseCleaner.strategy= example.metadata[:js] ? :truncation : :transaction
+    DatabaseCleaner.strategy = example.metadata[:js] ? :truncation : :transaction
     DatabaseCleaner.start
   end
 

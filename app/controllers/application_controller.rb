@@ -19,25 +19,25 @@ class ApplicationController < ActionController::Base
 
   private
 
-  def set_locale
-    if params[:locale] && I18n.available_locales.include?(params[:locale].to_sym)
-      session[:locale] = params[:locale]
+    def set_locale
+      if params[:locale] && I18n.available_locales.include?(params[:locale].to_sym)
+        session[:locale] = params[:locale]
+      end
+
+      session[:locale] ||= I18n.default_locale
+
+      I18n.locale = session[:locale]
     end
 
-    session[:locale] ||= I18n.default_locale
-
-    I18n.locale = session[:locale]
-  end
-
-  def set_layout
-    if devise_controller?
-      "devise"
-    else
-      "application"
+    def set_layout
+      if devise_controller?
+        "devise"
+      else
+        "application"
+      end
     end
-  end
 
-  def set_debate_votes(debates)
-    @voted_values = current_user ? current_user.debate_votes(debates) : {}
-  end
+    def set_debate_votes(debates)
+      @voted_values = current_user ? current_user.debate_votes(debates) : {}
+    end
 end
