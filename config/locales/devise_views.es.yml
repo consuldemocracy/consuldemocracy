@@ -36,29 +36,30 @@ es:
         title: "¿Has olvidado tu contraseña?"
         email_label: "Email"
         send_submit: "Recibir instrucciones para recuperar mi contraseña"
-    registrations:
-      edit:
-        edit: "Editar"
-        email_label: "Email"
-        waiting_for: "Esperando confirmación de:"
-        leave_blank: "Dejar en blanco si no deseas cambiarla"
-        password_label: "Contraseña nueva"
-        password_confirmation_label: "Confirmar contraseña nueva"
-        current_password_label: "Contraseña actual"
-        need_current: "Necesitamos tu contraseña actual para confirmar los cambios"
-        update_submit: "Actualizar"
-        back_link: "Atrás"
-      new:
-        title: "Registrarse"
-        first_name_label: "Nombre"
-        last_name_label: "Apellidos"
-        nickname_label: "Pseudónimo"
-        use_nickname_label: "Usar pseudónimo"
-        email_label: "Email"
-        password_label: "Contraseña"
-        min_length: "(mínimo %{min} caracteres)"
-        password_confirmation_label: "Confirmar contraseña"
-        submit: "Registrarse"
+    users:
+      registrations:
+        edit:
+          edit: "Editar"
+          email_label: "Email"
+          waiting_for: "Esperando confirmación de:"
+          leave_blank: "Dejar en blanco si no deseas cambiarla"
+          password_label: "Contraseña nueva"
+          password_confirmation_label: "Confirmar contraseña nueva"
+          current_password_label: "Contraseña actual"
+          need_current: "Necesitamos tu contraseña actual para confirmar los cambios"
+          update_submit: "Actualizar"
+          back_link: "Atrás"
+        new:
+          title: "Registrarse"
+          first_name_label: "Nombre"
+          last_name_label: "Apellidos"
+          nickname_label: "Pseudónimo"
+          use_nickname_label: "Usar pseudónimo"
+          email_label: "Email"
+          password_label: "Contraseña"
+          min_length: "(mínimo %{min} caracteres)"
+          password_confirmation_label: "Confirmar contraseña"
+          submit: "Registrarse"
     sessions:
       new:
         title: "Entrar"

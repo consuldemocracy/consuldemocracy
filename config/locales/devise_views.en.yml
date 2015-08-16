@@ -36,29 +36,30 @@ en:
         title: "Forgot your password?"
         email_label: "Email"
         send_submit: "Send me reset password instructions"
-    registrations:
-      edit:
-        edit: "Edit"
-        email_label: "Email"
-        waiting_for: "Currently waiting confirmation for:"
-        leave_blank: "Leave blank if you don't want to change it"
-        password_label: "New password"
-        password_confirmation_label: "Confirm new password"
-        current_password_label: "Current password"
-        need_current: "We need your current password to confirm your changes"
-        update_submit: "Update"
-        back_link: "Back"
-      new:
-        title: "Sign up"
-        first_name_label: "First name"
-        last_name_label: "Last name"
-        nickname_label: "Nickname"
-        use_nickname_label: "Use nickname"
-        email_label: "Email"
-        password_label: "Password"
-        min_length: "(%{min} characters minimum)"
-        password_confirmation_label: "Confirm password"
-        submit: "Sign up"
+    users:
+      registrations:
+        edit:
+          edit: "Edit"
+          email_label: "Email"
+          waiting_for: "Currently waiting confirmation for:"
+          leave_blank: "Leave blank if you don't want to change it"
+          password_label: "New password"
+          password_confirmation_label: "Confirm new password"
+          current_password_label: "Current password"
+          need_current: "We need your current password to confirm your changes"
+          update_submit: "Update"
+          back_link: "Back"
+        new:
+          title: "Sign up"
+          first_name_label: "First name"
+          last_name_label: "Last name"
+          nickname_label: "Nickname"
+          use_nickname_label: "Use nickname"
+          email_label: "Email"
+          password_label: "Password"
+          min_length: "(%{min} characters minimum)"
+          password_confirmation_label: "Confirm password"
+          submit: "Sign up"
     sessions:
       new:
         title: "Log in"
