@@ -24,11 +24,11 @@ class CommentsController < ApplicationController
   private
 
     def comment_params
-      params.require(:comments).permit(:commentable_type, :commentable_id, :body)
+      params.require(:comment).permit(:commentable_type, :commentable_id, :body)
     end
 
     def build_comment
-      @comment = Comment.build(debate, current_user, params[:comment][:body])
+      @comment = Comment.build(debate, current_user, comment_params[:body])
     end
 
     def debate
@@ -36,7 +36,7 @@ class CommentsController < ApplicationController
     end
 
     def parent
-      @parent ||= Comment.find_parent(params[:comment])
+      @parent ||= Comment.find_parent(comment_params)
     end
 
     def reply?

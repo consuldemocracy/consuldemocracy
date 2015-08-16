@@ -40,7 +40,4 @@ class Comment < ActiveRecord::Base
     children.count
   end
 
-  def descendants_count
-    descendants.count
-  end
 end
