@@ -10,6 +10,8 @@ class User < ActiveRecord::Base
   validates :nickname, presence: true, if: :use_nickname?
   validates :official_level, inclusion: {in: 0..5}
 
+  scope :officials, -> { where("official_level > 0") }
+
   def name
     use_nickname? ? nickname : "#{first_name} #{last_name}"
   end
@@ -32,6 +34,7 @@ class User < ActiveRecord::Base
   end
 
   def add_official_position!(position, level)
+    return if position.blank? || level.blank?
     update official_position: position, official_level: level.to_i
   end
 

@@ -152,4 +152,21 @@ describe User do
     end
   end
 
+  describe "officials scope" do
+    it "returns only users with official positions" do
+      create(:user, official_position: "Mayor", official_level: 1)
+      create(:user, official_position: "Director", official_level: 3)
+      create(:user, official_position: "Math Teacher", official_level: 4)
+      create(:user, official_position: "Manager", official_level: 5)
+      2.times { create(:user) }
+
+      officials = User.officials
+      expect(officials.size).to eq(4)
+      officials.each do |user|
+        expect(user.official_level).to be > 0
+        expect(user.official_position).to be_present
+      end
+    end
+  end
+
 end
