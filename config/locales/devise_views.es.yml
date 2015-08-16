@@ -56,6 +56,7 @@ es:
           nickname_label: "Pseudónimo"
           use_nickname_label: "Usar pseudónimo"
           email_label: "Email"
+          phone_number_label: "Teléfono"
           password_label: "Contraseña"
           min_length: "(mínimo %{min} caracteres)"
           password_confirmation_label: "Confirmar contraseña"

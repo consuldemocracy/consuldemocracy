@@ -70,6 +70,7 @@ en:
       change_credentials_link: "Change my credentials"
       first_name_label: "First Name"
       last_name_label: "Last Name"
+      phone_number_label: "Phone number"
       use_nickname_label: "Use nickname"
       nickname_label: "Nickname"
   recaptcha:

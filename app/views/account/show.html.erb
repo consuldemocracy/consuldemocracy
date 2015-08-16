@@ -35,6 +35,11 @@
           <% end %>
         </div>
 
+        <div class="small-12 medium-6 column">
+          <%= f.label :last_name, t("account.show.phone_number_label") %>
+          <%= f.text_field :phone_number, placeholder:  t("account.show.phone_number_label") %>
+        </div>
+
         <div class="small-12 column">
           <%= f.label :email_on_debate_comment do %>
             <%= f.check_box :email_on_debate_comment %>

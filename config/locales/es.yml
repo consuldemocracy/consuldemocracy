@@ -70,6 +70,7 @@ es:
       email_on_comment_reply_label: "Recibir un email cuando alguien contesta a mis comentarios"
       first_name_label: "Nombre"
       last_name_label: "Apellidos"
+      phone_number_label: "Teléfono"
       use_nickname_label: "Usar pseudónimo"
       nickname_label: "Pseudónimo"
   recaptcha:

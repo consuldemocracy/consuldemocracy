@@ -56,6 +56,7 @@ en:
           nickname_label: "Nickname"
           use_nickname_label: "Use nickname"
           email_label: "Email"
+          phone_number_label: "Phone number"
           password_label: "Password"
           min_length: "(%{min} characters minimum)"
           password_confirmation_label: "Confirm password"
