@@ -29,4 +29,17 @@ feature 'Organizations' do
     expect(page).to have_content "Password can't be blank"
     expect(page).to have_content "Organization name can't be blank"
   end
+
+  scenario 'Shared links' do
+    visit new_user_registration_path
+    expect(page).to have_link "Sign up as an organization"
+
+    visit new_organization_registration_path
+    expect(page).to have_link "Sign up"
+
+    visit new_user_session_path
+
+    expect(page).to have_link "Sign up"
+    expect(page).to_not have_link "Sign up as an organization"
+  end
 end
