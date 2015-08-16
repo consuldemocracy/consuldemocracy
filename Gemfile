@@ -21,6 +21,7 @@ gem 'turbolinks'
 gem 'devise'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
+gem 'kaminari'
 gem 'acts_as_commentable_with_threading'
 gem 'acts-as-taggable-on'
 gem "responders"
