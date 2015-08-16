@@ -32,7 +32,8 @@ class DebatesController < ApplicationController
   end
 
   def update
-    if @debate.update(debate_params)
+    @debate.assign_attributes(debate_params)
+    if @debate.save_with_captcha
       redirect_to @debate, notice: t('flash.actions.update.notice', resource_name: 'Debate')
     else
       load_featured_tags

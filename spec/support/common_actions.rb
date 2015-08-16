@@ -53,7 +53,7 @@ module CommonActions
   end
 
   def correct_captcha_text
-    SimpleCaptcha::SimpleCaptchaData.first.value
+    SimpleCaptcha::SimpleCaptchaData.last.value
   end
 
   def avatar(name)
