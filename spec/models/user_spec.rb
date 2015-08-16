@@ -120,4 +120,36 @@ describe User do
     end
   end
 
+  describe "add_official_position!" do
+    it "is false when level not valid" do
+      expect(subject.add_official_position!("Boss", 89)).to be false
+    end
+
+    it "updates official position fields" do
+      expect(subject).not_to be_official
+      subject.add_official_position!("Veterinarian", 2)
+
+      expect(subject).to be_official
+      expect(subject.official_position).to eq("Veterinarian")
+      expect(subject.official_level).to eq(2)
+
+      subject.add_official_position!("Brain surgeon", 3)
+      expect(subject.official_position).to eq("Brain surgeon")
+      expect(subject.official_level).to eq(3)
+    end
+  end
+
+  describe "remove_official_position!" do
+    it "updates official position fields" do
+      subject.add_official_position!("Brain surgeon", 3)
+      expect(subject).to be_official
+
+      subject.remove_official_position!
+
+      expect(subject).not_to be_official
+      expect(subject.official_position).to be_nil
+      expect(subject.official_level).to eq(0)
+    end
+  end
+
 end
