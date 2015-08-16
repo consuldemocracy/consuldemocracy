@@ -74,4 +74,8 @@ module CommonActions
     SCRIPT
   end
 
+  def error_message
+    /\d errors? prohibited this (.*) from being saved:/
+  end
+
 end

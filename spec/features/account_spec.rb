@@ -19,19 +19,6 @@ feature 'Account' do
     expect(page).to have_selector(avatar('Manuela Colau'), count: 1)
   end
 
-  scenario "Failed Edit" do
-    visit account_path
-
-    fill_in 'account_first_name', with: ''
-    fill_in 'account_last_name', with: ''
-    fill_in 'account_nickname', with: ''
-    click_button 'Save changes'
-
-    expect(page).to have_content "2 errors prohibited this debate from being saved"
-    expect(page).to have_content "First name can't be blank"
-    expect(page).to have_content "First name can't be blank"
-  end
-
   scenario 'Edit' do
     visit account_path
 
@@ -49,5 +36,23 @@ feature 'Account' do
     expect(page).to have_selector("input[value='Bird']")
     expect(page).to have_selector("input[id='account_email_on_debate_comment'][value='1']")
     expect(page).to have_selector("input[id='account_email_on_comment_reply'][value='1']")
+  end
+
+  scenario "Errors on edit" do
+    visit account_path
+
+    fill_in 'account_first_name', with: ''
+    click_button 'Save changes'
+
+    expect(page).to have_content error_message
+  end
+
+  scenario 'Errors editing credentials' do
+    visit account_path
+
+    click_link 'Change my credentials'
+    click_button 'Update'
+
+    expect(page).to have_content error_message
   end
 end

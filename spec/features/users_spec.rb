@@ -23,6 +23,14 @@ feature 'Users' do
     expect(page).to have_content "Your email address has been successfully confirmed"
   end
 
+  scenario 'Errors on sign up' do
+    visit '/'
+    click_link 'Sign up'
+    click_button 'Sign up'
+
+    expect(page).to have_content error_message
+  end
+
   scenario 'Sign in' do
     user = create(:user, email: 'manuela@madrid.es', password: 'judgementday')
 

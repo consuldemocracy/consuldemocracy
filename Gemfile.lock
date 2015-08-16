@@ -126,6 +126,12 @@ GEM
     foundation-rails (5.5.2.1)
       railties (>= 3.1.0)
       sass (>= 3.3.0, < 3.5)
+    foundation_rails_helper (1.0.0)
+      actionpack (~> 4.1, >= 4.1.1)
+      activemodel (~> 4.1, >= 4.1.1)
+      activesupport (~> 4.1, >= 4.1.1)
+      railties (~> 4.1, >= 4.1.1)
+      tzinfo (~> 1.2, >= 1.2.2)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
     highline (1.7.3)
@@ -315,6 +321,7 @@ DEPENDENCIES
   email_spec
   factory_girl_rails
   foundation-rails
+  foundation_rails_helper
   i18n-tasks
   initialjs-rails
   jquery-rails

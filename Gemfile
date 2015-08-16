@@ -25,6 +25,7 @@ gem 'acts_as_commentable_with_threading'
 gem 'acts-as-taggable-on'
 gem "responders"
 gem 'foundation-rails'
+gem 'foundation_rails_helper'
 gem 'acts_as_votable'
 gem 'simple_captcha2', require: 'simple_captcha'
 gem 'ckeditor'

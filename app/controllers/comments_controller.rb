@@ -1,17 +1,19 @@
 class CommentsController < ApplicationController
   before_action :authenticate_user!
   before_action :build_comment, only: :create
+  before_action :parent, only: :create
   load_and_authorize_resource
   respond_to :html, :js
 
   def create
-    @comment.save!
-    @comment.move_to_child_of(parent) if reply?
+    if @comment.save
+      @comment.move_to_child_of(parent) if reply?
 
-    Mailer.comment(@comment).deliver_now if email_on_debate_comment?
-    Mailer.reply(@comment).deliver_now if email_on_comment_reply?
-
-    respond_with @comment
+      Mailer.comment(@comment).deliver_now if email_on_debate_comment?
+      Mailer.reply(@comment).deliver_now if email_on_comment_reply?
+    else
+      render :new
+    end
   end
 
   def vote

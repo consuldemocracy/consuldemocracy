@@ -10,14 +10,12 @@ feature 'Comments' do
     visit debate_path(debate)
 
     expect(page).to have_css('.comment', count: 3)
-    expect(page).to have_content '3 Comments'
 
     comment = Comment.first
     within first('.comment') do
       expect(page).to have_content comment.user.name
       expect(page).to have_content time_ago_in_words(comment.created_at)
       expect(page).to have_content comment.body
-      expect(page).to have_selector(avatar(comment.user.name), count: 1)
     end
   end
 
@@ -51,6 +49,18 @@ feature 'Comments' do
     end
   end
 
+  scenario 'Errors on create', :js do
+    user = create(:user)
+    debate = create(:debate)
+
+    login_as(user)
+    visit debate_path(debate)
+
+    click_button 'Publish comment'
+
+    expect(page).to have_content "Can't be blank"
+  end
+
   scenario 'Reply', :js do
     citizen = create(:user, first_name: 'Ana')
     manuela = create(:user, first_name: 'Manuela')
@@ -74,6 +84,23 @@ feature 'Comments' do
     expect(page).to_not have_selector("#js-comment-form-comment_#{comment.id}", visible: true)
   end
 
+  scenario 'Errors on reply', :js do
+    user = create(:user)
+    debate = create(:debate)
+    comment = create(:comment, commentable: debate, user: user)
+
+    login_as(user)
+    visit debate_path(debate)
+
+    click_link "Reply"
+
+    within "#js-comment-form-comment_#{comment.id}" do
+      click_button 'Publish reply'
+      expect(page).to have_content "Can't be blank"
+    end
+
+  end
+
   scenario "N replies", :js do
     debate = create(:debate)
     parent = create(:comment, commentable: debate)
@@ -86,11 +113,6 @@ feature 'Comments' do
 
     visit debate_path(debate)
     expect(page).to have_css(".comment.comment.comment.comment.comment.comment.comment.comment")
-    expect(page).to have_content '8 Comments'
-
-    within first('.comment') do
-      expect(page).to have_content '1 Response'
-    end
   end
 
 end

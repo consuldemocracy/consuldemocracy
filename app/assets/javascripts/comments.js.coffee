@@ -3,6 +3,9 @@ App.Comments =
   add_response: (parent_id, response_html) ->
     $(response_html).insertAfter($("#js-comment-form-#{parent_id}"))
 
+  display_error: (field_with_errors, error_html) ->
+    $(error_html).insertAfter($("#{field_with_errors}"))
+
   reset_and_hide_form: (id) ->
     form_container = $("#js-comment-form-#{id}")
     input = form_container.find("form textarea")
