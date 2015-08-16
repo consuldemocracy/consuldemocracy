@@ -4,14 +4,17 @@ class User < ActiveRecord::Base
 
   acts_as_voter
 
-  validates :first_name,        presence: true, if: :use_first_name?
-  validates :last_name,         presence: true, if: :use_last_name?
-  validates :nickname,          presence: true, if: :use_nickname?
-  validates :organization_name, presence: true, if: :is_organization
-
   has_one :administrator
   has_one :moderator
   has_one :organization
+
+  validates :first_name, presence: true, if: :use_first_name?
+  validates :last_name,  presence: true, if: :use_last_name?
+  validates :nickname,   presence: true, if: :use_nickname?
+
+  validates_associated :organization, message: false
+
+  accepts_nested_attributes_for :organization
 
   scope :administrators, -> { joins(:administrators) }
   scope :moderators,     -> { joins(:moderator) }
@@ -50,15 +53,10 @@ class User < ActiveRecord::Base
 
   private
     def use_first_name?
-      !is_organization && !use_nickname?
+      !organization? && !use_nickname?
     end
 
     def use_last_name?
       use_first_name?
     end
-
-    def create_associated_organization
-      create_organization(name: organization_name) if is_organization
-    end
-
 end

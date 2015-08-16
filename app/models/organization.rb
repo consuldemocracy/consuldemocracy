@@ -2,6 +2,8 @@ class Organization < ActiveRecord::Base
 
   belongs_to :user
 
+  validates :name, presence: true
+
   delegate :email, :phone_number, to: :user
 
   def verify
@@ -21,6 +23,5 @@ class Organization < ActiveRecord::Base
     rejected_at.present? &&
       (verified_at.blank? || verified_at < rejected_at)
   end
-
 
 end

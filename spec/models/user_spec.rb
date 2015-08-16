@@ -129,27 +129,21 @@ describe User do
     end
   end
 
-  describe "is_organization" do
-    before(:each) { subject.is_organization = true }
+  describe "organization_attributes" do
+    before(:each) { subject.organization_attributes = {name: 'org'} }
 
-    it "deactivates the validation of first_name and last_name, and activates the validation of organization_name" do
-      subject.first_name = nil
-      subject.last_name = nil
-      subject.organization_name = nil
-      expect(subject).to_not be_valid
-
-      subject.organization_name = 'org'
-      expect(subject).to be_valid
+    it "triggers the creation of an associated organization" do
+      expect(subject.organization).to be
+      expect(subject.organization.name).to eq('org')
     end
 
-    it "triggers the creation of an associated organization using organization_name" do
-      expect(subject.organization).to_not be
+    it "deactivates the validation of first_name and last_name, and activates the validation of organization" do
+      subject.first_name = nil
+      subject.last_name = nil
+      expect(subject).to be_valid
 
-      subject.is_organization = true
-      subject.organization_name = 'org'
-      subject.save
-
-      expect(subject.organization).to be
+      subject.organization.name= nil
+      expect(subject).to_not be_valid
     end
   end
 
