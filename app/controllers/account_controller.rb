@@ -16,6 +16,7 @@ class AccountController < ApplicationController
   end
 
   private
+
     def set_account
       @account = current_user
     end

@@ -17,8 +17,8 @@ feature 'Votes' do
       debate1 = create(:debate)
       debate2 = create(:debate)
       debate3 = create(:debate)
-      vote = create(:vote, voter: @manuela, votable: debate1, vote_flag: true)
-      vote = create(:vote, voter: @manuela, votable: debate3, vote_flag: false)
+      create(:vote, voter: @manuela, votable: debate1, vote_flag: true)
+      create(:vote, voter: @manuela, votable: debate3, vote_flag: false)
 
       visit root_path
 
@@ -65,8 +65,8 @@ feature 'Votes' do
       debate1 = create(:debate)
       debate2 = create(:debate)
       debate3 = create(:debate)
-      vote = create(:vote, voter: @manuela, votable: debate1, vote_flag: true)
-      vote = create(:vote, voter: @manuela, votable: debate3, vote_flag: false)
+      create(:vote, voter: @manuela, votable: debate1, vote_flag: true)
+      create(:vote, voter: @manuela, votable: debate3, vote_flag: false)
 
       visit debates_path
 
@@ -120,7 +120,7 @@ feature 'Votes' do
         expect(page).to_not have_css("a.no-voted")
       end
 
-      within('.against')  do
+      within('.against') do
         expect(page).to have_content "0%"
         expect(page).to_not have_css("a.voted")
         expect(page).to_not have_css("a.no-voted")
@@ -128,8 +128,8 @@ feature 'Votes' do
     end
 
     scenario 'Show' do
-      vote = create(:vote, voter: @manuela, votable: @debate, vote_flag: true)
-      vote = create(:vote, voter: @pablo, votable: @debate, vote_flag: false)
+      create(:vote, voter: @manuela, votable: @debate, vote_flag: true)
+      create(:vote, voter: @pablo, votable: @debate, vote_flag: false)
 
       visit debate_path(@debate)
 
@@ -140,7 +140,7 @@ feature 'Votes' do
         expect(page).to have_css("a.voted")
       end
 
-      within('.against')  do
+      within('.against') do
         expect(page).to have_content "50%"
         expect(page).to have_css("a.no-voted")
       end
@@ -154,7 +154,7 @@ feature 'Votes' do
         expect(page).to have_css("a.voted")
       end
 
-      within('.against')  do
+      within('.against') do
         expect(page).to have_content "0%"
         expect(page).to have_css("a.no-voted")
       end
@@ -173,7 +173,7 @@ feature 'Votes' do
           expect(page).to have_css("a.voted")
         end
 
-        within('.against')  do
+        within('.against') do
           expect(page).to have_content "0%"
           expect(page).to have_css("a.no-voted")
         end
@@ -195,7 +195,7 @@ feature 'Votes' do
           expect(page).to have_css("a.voted")
         end
 
-        within('.against')  do
+        within('.against') do
           expect(page).to have_content "0%"
           expect(page).to have_css("a.no-voted")
         end
@@ -214,7 +214,7 @@ feature 'Votes' do
         expect(page).to have_css("a.no-voted")
       end
 
-      within('.against')  do
+      within('.against') do
         expect(page).to have_content "100%"
         expect(page).to have_css("a.voted")
       end
@@ -230,7 +230,7 @@ feature 'Votes' do
         expect(page).to have_content "100%"
       end
 
-      within('.against')  do
+      within('.against') do
         expect(page).to have_content "0%"
       end
 
@@ -250,17 +250,17 @@ feature 'Votes' do
     end
 
     scenario 'Show' do
-      vote = create(:vote, voter: @manuela, votable: @comment, vote_flag: true)
-      vote = create(:vote, voter: @pablo, votable: @comment, vote_flag: false)
+      create(:vote, voter: @manuela, votable: @comment, vote_flag: true)
+      create(:vote, voter: @pablo, votable: @comment, vote_flag: false)
 
       visit debate_path(@debate)
 
       within("#comment_#{@comment.id}_votes") do
-        within(".in_favor")  do
+        within(".in_favor") do
           expect(page).to have_content "1"
         end
 
-        within(".against")  do
+        within(".against") do
           expect(page).to have_content "1"
         end
 
@@ -276,7 +276,7 @@ feature 'Votes' do
           expect(page).to have_content "1"
         end
 
-        within(".against")  do
+        within(".against") do
           expect(page).to have_content "0"
         end
 
@@ -293,7 +293,7 @@ feature 'Votes' do
           expect(page).to have_content "0"
         end
 
-        within('.against')  do
+        within('.against') do
           expect(page).to have_content "1"
         end
 
@@ -310,7 +310,7 @@ feature 'Votes' do
           expect(page).to have_content "1"
         end
 
-        within('.against')  do
+        within('.against') do
           expect(page).to have_content "0"
         end
 

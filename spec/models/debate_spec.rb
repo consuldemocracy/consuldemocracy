@@ -95,7 +95,7 @@ describe Debate do
 
   describe '#default_order' do
     let!(:economy) { create(:debate) }
-    let!(:health)  { create(:debate)  }
+    let!(:health)  { create(:debate) }
 
     it "returns debates ordered by last one first" do
       expect(Debate.all).to eq([health, economy])

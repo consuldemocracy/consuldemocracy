@@ -98,7 +98,7 @@ feature 'Debates' do
 
     visit new_debate_path
     click_button 'Create Debate'
-    expect(page).to have_content /error/
+    expect(page).to have_content error_message
   end
 
   scenario 'JS injection is prevented but safe html is respected' do
@@ -183,7 +183,7 @@ feature 'Debates' do
 
   scenario 'Update should not be posible if debate is not editable' do
     debate = create(:debate)
-    vote = create(:vote, votable: debate)
+    create(:vote, votable: debate)
     expect(debate).to_not be_editable
     login_as(debate.author)
 
@@ -223,7 +223,7 @@ feature 'Debates' do
   end
 
   scenario 'Captcha is required to update a debate' do
-    debate       = create(:debate)
+    debate = create(:debate)
     login_as(debate.author)
 
     visit edit_debate_path(debate)
@@ -264,12 +264,9 @@ feature 'Debates' do
   end
 
   describe 'Limiting tags shown' do
-    let(:all_tags) {
-      ["Hacienda", "Economía", "Medio Ambiente", "Corrupción", "Fiestas populares", "Prensa", "Huelgas"]
-    }
-    let(:debate) {
-      create :debate, tag_list: all_tags
-    }
+    tags = ["Hacienda", "Economía", "Medio Ambiente", "Corrupción", "Fiestas populares", "Prensa", "Huelgas"]
+    let(:all_tags) { tags }
+    let(:debate)   { create :debate, tag_list: all_tags }
 
     scenario 'Index page shows up to 5 tags per debate' do
       debate
@@ -287,7 +284,7 @@ feature 'Debates' do
 
     scenario 'Index page shows 3 tags with no plus link' do
       tag_list = ["Medio Ambiente", "Corrupción", "Fiestas populares"]
-      debate = create :debate, tag_list: tag_list
+      create :debate, tag_list: tag_list
 
       visit debates_path
 

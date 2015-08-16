@@ -26,12 +26,12 @@ class Admin::TagsController < Admin::BaseController
 
   private
 
-  def tag_params
-    params.require(:tag).permit(:featured, :name)
-  end
+    def tag_params
+      params.require(:tag).permit(:featured, :name)
+    end
 
-  def find_tag
-    @tag = ActsAsTaggableOn::Tag.find(params[:id])
-  end
+    def find_tag
+      @tag = ActsAsTaggableOn::Tag.find(params[:id])
+    end
 
 end

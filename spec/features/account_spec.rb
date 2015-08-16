@@ -3,7 +3,7 @@ require 'rails_helper'
 feature 'Account' do
 
   background do
-    @user = create(:user, first_name: "Manuela", last_name:"Colau")
+    @user = create(:user, first_name: "Manuela", last_name: "Colau")
     login_as(@user)
   end
 
