@@ -5,6 +5,7 @@ es:
       debate: Debate
       user: Usuario
       vote: Voto
+      organization: Organización
     attributes:
       comment:
         body: Comentario
@@ -20,3 +21,5 @@ es:
         last_name: Apellidos
         nickname: Pseudónimo
         password: Contraseña
+      organization:
+        name: Nombre de organización

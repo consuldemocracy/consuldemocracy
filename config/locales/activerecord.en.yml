@@ -5,6 +5,7 @@ en:
       debate: Debate
       user: User
       vote: Vote
+      organization: Organization
     attributes:
       comment:
         body: Comment
@@ -20,3 +21,5 @@ en:
         last_name: "Last name"
         nickname: Nickname
         password: Password
+      organization:
+        name: Organization name

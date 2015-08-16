@@ -60,6 +60,17 @@ en:
           min_length: "(%{min} characters minimum)"
           password_confirmation_label: "Confirm password"
           submit: "Sign up"
+    organizations:
+      registrations:
+        new:
+          title: "Sign up as organization"
+          organization_name_label: "Organization name"
+          email_label: "Email"
+          password_label: "Password"
+          phone_number_label: "Phone number"
+          min_length: "(%{min} characters minimum)"
+          password_confirmation_label: "Confirm password"
+          submit: "Sign up"
     sessions:
       new:
         title: "Log in"
@@ -77,6 +88,7 @@ en:
         login: "Log in"
         signup: "Sign up"
         signin_with_provider: "Sign in with %{provider}"
+        organization_signup: "Sign up as an organization"
         new_password: "Forgot your password?"
         new_confirmation: "Didn't receive confirmation instructions?"
         new_unlock: "Didn't receive unlock instructions?"

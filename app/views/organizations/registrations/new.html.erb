@@ -1,0 +1,64 @@
+<div class="row-full auth">
+    <div class="row">
+        <div class="small-12 medium-8 large-5 column small-centered">
+            <div class="panel">
+                <h1 class="text-center"><%= t("devise_views.organizations.registrations.new.title") %></h1>
+
+                <%= form_for(resource, as: :user, url: organization_registration_path) do |f| %>
+
+                    <%= devise_error_messages! %>
+
+                    <%= f.fields_for :organization do |fo| %>
+                      <div class="row">
+                          <div class="small-12 columns">
+                              <%= fo.label :organization_name, t("devise_views.organizations.registrations.new.organization_name_label") %>
+                              <%= fo.text_field :name, autofocus: true, placeholder: t("devise_views.organizations.registrations.new.organization_name_label") %>
+                          </div>
+                      </div>
+                    <% end %>
+
+                    <div class="row">
+                        <div class="small-12 columns">
+                            <%= f.label :email, t("devise_views.organizations.registrations.new.email_label") %>
+                            <%= f.email_field :email, placeholder: t("devise_views.organizations.registrations.new.email_label") %>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="small-12 columns">
+                            <%= f.label :phone_number, t("devise_views.organizations.registrations.new.phone_number_label") %>
+                            <%= f.text_field :phone_number, placeholder: t("devise_views.organizations.registrations.new.phone_number_label") %>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="small-12 columns">
+                            <%= f.label :password, t("devise_views.organizations.registrations.new.password_label"), class: "inline-block" %>
+                            <% if @minimum_password_length %>
+                                <span class="inline-block"><i><%= t("devise_views.organizations.registrations.new.min_length", min: @minimum_password_length) %></i></span>
+                            <% end %>
+                            <%= f.password_field :password, autocomplete: "off", placeholder: t("devise_views.organizations.registrations.new.password_label") %>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="small-12 columns">
+                            <%= f.label :password_confirmation, t("devise_views.organizations.registrations.new.password_confirmation_label") %>
+                            <%= f.password_field :password_confirmation, autocomplete: "off", placeholder: t("devise_views.organizations.registrations.new.password_confirmation_label") %>
+                        </div>
+                    </div>
+
+                    <%= render 'shared/captcha', resource: resource %>
+
+                    <div class="row">
+                        <div class="small-12 columns">
+                            <%= f.submit t("devise_views.organizations.registrations.new.submit"), class: "button radius expand" %>
+                        </div>
+                    </div>
+                <% end %>
+
+                <%= render "devise/shared/links" %>
+            </div>
+        </div>
+    </div>
+</div>
