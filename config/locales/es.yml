@@ -17,6 +17,13 @@ es:
       moderation: Moderar
     footer:
       copyright: "Ayuntamiento de Madrid, %{year}. Todos los derechos reservados"
+  form:
+      error: error
+      errors: errores
+      not_saved: "impidieron guardar %{resource}:"
+      accept_terms: Acepto la política de privacidad y el aviso legal
+      user: la cuenta
+      debate: el debate
   debates:
     index:
       create_debate: Crea un debate
@@ -41,9 +48,6 @@ es:
         other: "%{count} votos"
       votes_weighted_score: "Total: %{score}"
     form:
-      error: error
-      errors: errores
-      not_saved: "impidieron guardar el debate:"
       debate_title: Título del debate
       title_instructions: "Sé claro y conciso a la hora de poner un título, pero recuerda que debe explicar bien tu idea, ¡es tu carta de entrada!"
       debate_text: Describe tu opinión
@@ -53,7 +57,6 @@ es:
         Etiqueta esta idea. Puedes elegir entre nuestras propuestas o introducir las que desees.
         Para ello solo tienes que escribir las etiquetas que desees separadas por "," y pulsar "intro".
         Algunas recomendaciones:
-      accept_terms: Acepto la política de privacidad y el aviso legal
     show:
       back_link: Volver
       comments_title: Comentarios
@@ -105,6 +108,7 @@ es:
   simple_captcha:
     placeholder: "Introduce el texto de la imagen"
     label: "Introduce el texto en la caja"
+    refresh_button_text: "Refrescar"
     message:
       user: "el código secreto no coincide con la imagen"
       debate: "el código secreto no coincide con la imagen"

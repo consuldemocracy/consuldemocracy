@@ -89,6 +89,7 @@ search:
 # - '{devise,simple_form}.*'
 ignore_missing:
   - 'unauthorized.*'
+  - 'errors.messages.blank'
 
 ## Consider these keys used:
 ignore_unused:

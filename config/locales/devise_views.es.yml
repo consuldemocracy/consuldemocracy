@@ -29,7 +29,6 @@ es:
       edit:
         title: "Cambia tu contraseña"
         password_label: "Contraseña nueva"
-        min_length: "Mínimo %{min} caracteres"
         password_confirmation_label: "Confirmar contraseña nueva"
         change_submit: "Cambiar mi contraseña"
       new:
@@ -56,7 +55,6 @@ es:
         use_nickname_label: "Usar pseudónimo"
         email_label: "Email"
         password_label: "Contraseña"
-        min_length: "(mínimo %{min} caracteres)"
         password_confirmation_label: "Confirmar contraseña"
         submit: "Registrarse"
     sessions:

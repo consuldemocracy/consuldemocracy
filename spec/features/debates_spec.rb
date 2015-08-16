@@ -25,7 +25,7 @@ feature 'Debates' do
     expect(page).to have_content "Debate description"
     expect(page).to have_content debate.author.name
     expect(page).to have_content I18n.l(debate.created_at.to_date)
-    expect(page).to have_selector(avatar(debate.author.name), count: 1)
+    expect(page).to have_selector(avatar(debate.author.name))
 
     within('.social-share-button') do
       expect(page.all('a').count).to be(3) # Twitter, Facebook, Google+
@@ -90,6 +90,15 @@ feature 'Debates' do
       expect(page).to have_content featured_tag.name
       expect(page).to_not have_content tag.name
     end
+  end
+
+  scenario 'Errors on create' do
+    author = create(:user)
+    login_as(author)
+
+    visit new_debate_path
+    click_button 'Create Debate'
+    expect(page).to have_content /error/
   end
 
   scenario 'JS injection is prevented but safe html is respected' do
@@ -202,6 +211,17 @@ feature 'Debates' do
     expect(page).to have_content "Let's..."
   end
 
+  scenario 'Errors on update' do
+    debate = create(:debate)
+    login_as(debate.author)
+
+    visit edit_debate_path(debate)
+    fill_in 'debate_title', with: ""
+    click_button 'Update Debate'
+
+    expect(page).to have_content error_message
+  end
+
   scenario 'Captcha is required to update a debate' do
     debate       = create(:debate)
     login_as(debate.author)
@@ -278,15 +298,6 @@ feature 'Debates' do
         expect(page).not_to have_content '+'
       end
     end
-
-    scenario 'Debate#show shows the full tag list' do
-      visit debate_path(debate)
-
-      within("#debate-#{debate.id}") do
-        all_tags.each do |tag|
-          expect(page).to have_content tag
-        end
-      end
-    end
   end
+
 end

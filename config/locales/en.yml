@@ -17,6 +17,13 @@ en:
       moderation: Moderation
     footer:
       copyright: "Ayuntamiento de Madrid, 2015. All rights reserved"
+  form:
+      error: error
+      errors: errors
+      not_saved: "prohibited this %{resource} from being saved:"
+      accept_terms: I accept the privacy policy and the legal terms
+      user: account
+      debate: debate
   debates:
     index:
       create_debate: Create a debate
@@ -41,9 +48,6 @@ en:
         other: "%{count} votes"
       votes_weighted_score: "Total: %{score}"
     form:
-      error: error
-      errors: errors
-      not_saved: "prohibited this debate from being saved:"
       debate_title: Debate title
       title_instructions: "SBe clear and precise with the title, but make it informative"
       debate_text: Ellaborate your opinion
@@ -53,7 +57,6 @@ en:
         Tag this idea. You can choose among our proposals on the list or add any other topic you want by
         writing them separated by "," and then pressing "enter".
         Some suggestions:
-      accept_terms: I accept the privacy policy and the legal terms
     show:
       back_link: Back
       comments_title: Comments
@@ -105,6 +108,7 @@ en:
   simple_captcha:
     placeholder: "Enter the image value"
     label: "Enter the code in the box"
+    refresh_button_text: "Refresh"
     message:
       user: "secret code did not match with the image"
       debate: "secret code did not match with the image"
