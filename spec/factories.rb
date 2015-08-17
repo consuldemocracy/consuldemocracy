@@ -55,4 +55,9 @@ FactoryGirl.define do
     end
   end
 
+  factory :setting do
+    sequence(:key) { |n| "setting key number #{n}" }
+    sequence(:value) { |n| "setting number #{n} value" }
+  end
+
 end

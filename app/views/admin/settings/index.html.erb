@@ -1,0 +1,15 @@
+<h1><%= t("admin.settings.index.title") %></h1>
+
+<ul>
+  <% @settings.each do |setting| %>
+    <li>
+      <strong><%= setting.key.classify %></strong>
+
+      <%= form_for(setting, url: admin_setting_path(setting), html: { id: "edit_#{dom_id(setting)}"}) do |f| %>
+        <%= f.text_field :value, label: false, id: dom_id(setting) %>
+        <%= f.submit(class: "button radius tiny") %>
+      <% end %>
+
+    </li>
+  <% end %>
+</ul>

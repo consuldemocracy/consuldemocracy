@@ -29,6 +29,11 @@ Rails.application.routes.draw do
     end
 
     resources :tags, only: [:index, :create, :update, :destroy]
+    resources :officials, only: [:index, :edit, :update, :destroy] do
+      collection { get :search}
+    end
+
+    resources :settings, only: [:index, :update]
   end
 
   namespace :moderation do

@@ -8,6 +8,9 @@ class User < ActiveRecord::Base
   validates :first_name, presence: true, unless: :use_nickname?
   validates :last_name, presence: true, unless: :use_nickname?
   validates :nickname, presence: true, if: :use_nickname?
+  validates :official_level, inclusion: {in: 0..5}
+
+  scope :officials, -> { where("official_level > 0") }
 
   def name
     use_nickname? ? nickname : "#{first_name} #{last_name}"
@@ -24,5 +27,22 @@ class User < ActiveRecord::Base
 
   def moderator?
     @is_moderator ||= Moderator.where(user_id: id).exists?
+  end
+
+  def official?
+    official_level && official_level > 0
+  end
+
+  def add_official_position!(position, level)
+    return if position.blank? || level.blank?
+    update official_position: position, official_level: level.to_i
+  end
+
+  def remove_official_position!
+    update official_position: nil, official_level: 0
+  end
+
+  def self.with_email(e)
+    e.present? ? where(email: e) : none
   end
 end
