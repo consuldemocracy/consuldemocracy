@@ -1,6 +1,8 @@
 class DebatesController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
+
   load_and_authorize_resource
+  respond_to :html, :js
 
   def index
     @debates = Debate.search(params)
@@ -9,6 +11,7 @@ class DebatesController < ApplicationController
 
   def show
     set_debate_votes(@debate)
+    @comments = @debate.root_comments.with_hidden.recent
   end
 
   def new
@@ -45,7 +48,6 @@ class DebatesController < ApplicationController
     @debate.vote_by(voter: current_user, vote: params[:value])
     set_debate_votes(@debate)
   end
-
 
   private
 

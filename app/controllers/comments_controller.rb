@@ -2,6 +2,7 @@ class CommentsController < ApplicationController
   before_action :authenticate_user!
   before_action :build_comment, only: :create
   before_action :parent, only: :create
+
   load_and_authorize_resource
   respond_to :html, :js
 
@@ -50,4 +51,5 @@ class CommentsController < ApplicationController
     def email_on_comment_reply?
       reply? && parent.author.email_on_comment_reply?
     end
+
 end
