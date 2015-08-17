@@ -1,26 +1,46 @@
-<h1><%= t("admin.tags.index.add_tag") %></h1>
+<h2><%= t("admin.tags.index.add_tag") %></h2>
 
 <%= form_for(@tag, url: admin_tags_path, as: :tag) do |f| %>
-  <%= f.text_field :name, placeholder: t("admin.tags.name.placeholder") %>
-  <%= f.check_box :featured, label: false %>
-  <%= t("admin.tags.mark_as_featured") %>
-  <%= f.submit(class: "button radius small") %>
+
+  <div class="row">
+    <div class="small-12 medium-6 column">
+      <%= f.label :name, t("admin.tags.name.placeholder") %>
+      <%= f.text_field :name, placeholder: t("admin.tags.name.placeholder"), label: false  %>
+    </div>
+
+    <div class="is-featured small-12 medium-6 column">
+      <%= f.label :featured do %>
+        <%= f.check_box :featured, label: false %>
+        <span class="checkbox"><%= t("admin.tags.mark_as_featured") %></span>
+      <% end %>
+    </div>
+  </div>
+
+  <%= f.submit(class: "button radius create") %>
+
 <% end %>
 
-<h1><%= t("admin.tags.index.title") %></h1>
+<h3><%= t("admin.tags.index.title") %></h3>
 
-<ul>
+<ul class="admin-list">
   <% @tags.each do |tag| %>
     <li>
-      <strong><%= tag.name %></strong>
+      <span class="tag"><%= tag.name %></span>
 
-      <%= form_for(tag, url: admin_tag_path(tag), as: :tag, html: { id: "edit_tag_#{tag.id}"}) do |f| %>
-        <%= f.check_box :featured, label: false, id: "tag_featured_#{tag.id}" %>
-        <%= t("admin.tags.mark_as_featured") %>
-        <%= f.submit(class: "button radius tiny") %>
-        <%= link_to t("admin.tags.destroy"), admin_tag_path(tag), method: :delete, class: 'button tiny alert' %>
+      <%= form_for(tag,
+          url: admin_tag_path(tag),
+          as: :tag,
+          html: { id: "edit_tag_#{tag.id}", class: "text-right"}) do |f| %>
+
+        <%= f.label :featured do %>
+          <%= f.check_box :featured, label: false, id: "tag_featured_#{tag.id}", class: "left" %>
+          <span class="checkbox left"><%= t("admin.tags.mark_as_featured") %></span>
+        <% end %>
+
+        <%= f.submit(class: "button radius tiny success") %>
+        <br>
+        <%= link_to t("admin.tags.destroy"), admin_tag_path(tag), method: :delete, class: "delete" %>
       <% end %>
-
     </li>
   <% end %>
 </ul>
