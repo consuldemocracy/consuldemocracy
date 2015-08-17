@@ -27,8 +27,12 @@ class Ability
         can(:verify, Organization){ |o| !o.verified? }
         can(:reject, Organization){ |o| !o.rejected? }
 
-      elsif user.administrator?
+        can :hide, Comment
+        can :hide, Debate
 
+      elsif user.administrator?
+        can :restore, Comment
+        can :restore, Debate
       end
     end
   end

@@ -134,7 +134,7 @@ header {
   min-height: rem-calc(480);
 
   &.results {
-    min-height: rem-calc(192);
+    min-height: rem-calc(216);
   }
 
   h1 {
@@ -273,6 +273,35 @@ header {
 
   a {
     color: white;
+  }
+}
+
+.subnavigation {
+  background: white;
+  border-bottom: 1px solid white;
+  clear: both;
+
+  a {
+    color: $link;
+    font-size: rem-calc(14);
+    font-weight: bold;
+
+    &.active {
+      color: $text;
+
+      &:after {
+        bottom: -17px;
+        left: 50%;
+        border: solid transparent;
+        content: " ";
+        height: 0;
+        width: 0;
+        position: absolute;
+        border-top-color: #fff;
+        border-width: 8px;
+        margin-left: -8px;
+      }
+    }
   }
 }
 

@@ -1,11 +1,13 @@
 es:
   admin:
-    menu:
-      tags: Temas de debate
-      organizations: Organizaciones
     dashboard:
       index:
         title: Administración
+    menu:
+      debate_topics: Temas de debate
+      hidden_debates: Debates ocultos
+      hidden_comments: Comentarios ocultos
+      organizations: Organizaciones
     organizations:
       index:
         title: Organizaciones
@@ -19,6 +21,10 @@ es:
           pending: Pendientes
           verified: Verificadas
           rejected: Rechazadas
+    actions:
+      hide: Ocultar
+      restore: Permitir
+      confirm: '¿Estás seguro?'
     tags:
       index:
         title: 'Temas de debate'
@@ -27,3 +33,13 @@ es:
       name:
         placeholder: 'Escribe el nombre del tema'
       destroy: Elimina la etiqueta
+    comments:
+      index:
+        title: Comentarios ocultos
+      restore:
+        success: El comentario ha sido permitido
+    debates:
+      index:
+        title: Debates ocultos
+      restore:
+        success: El debate ha sido permitido

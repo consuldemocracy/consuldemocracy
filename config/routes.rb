@@ -13,14 +13,10 @@ Rails.application.routes.draw do
   root 'welcome#index'
 
   resources :debates do
-    member do
-      post :vote
-    end
+    member { post :vote }
 
     resources :comments, only: :create, shallow: true do
-      member do
-        post :vote
-      end
+      member { post :vote }
     end
   end
 
@@ -35,11 +31,27 @@ Rails.application.routes.draw do
       end
     end
 
+    resources :debates, only: [:index, :show] do
+      member { put :restore }
+    end
+
+    resources :comments, only: :index do
+      member { put :restore }
+    end
+
     resources :tags, only: [:index, :create, :update, :destroy]
   end
 
   namespace :moderation do
     root to: "dashboard#index"
+
+    resources :debates, only: [] do
+      member { put :hide }
+    end
+
+    resources :comments, only: [:index] do
+      member { put :hide }
+    end
   end
 
   # Example of regular route:

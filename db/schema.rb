@@ -12,7 +12,6 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema.define(version: 20150815154430) do
-
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -35,9 +34,11 @@ ActiveRecord::Schema.define(version: 20150815154430) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "children_count",   default: 0
+    t.datetime "hidden_at"
   end
 
   add_index "comments", ["commentable_id", "commentable_type"], name: "index_comments_on_commentable_id_and_commentable_type", using: :btree
+  add_index "comments", ["hidden_at"], name: "index_comments_on_hidden_at", using: :btree
   add_index "comments", ["user_id"], name: "index_comments_on_user_id", using: :btree
 
   create_table "debates", force: :cascade do |t|
@@ -46,7 +47,10 @@ ActiveRecord::Schema.define(version: 20150815154430) do
     t.integer  "author_id"
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
+    t.datetime "hidden_at"
   end
+
+  add_index "debates", ["hidden_at"], name: "index_debates_on_hidden_at", using: :btree
 
   create_table "moderators", force: :cascade do |t|
     t.integer "user_id"

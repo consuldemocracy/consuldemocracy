@@ -1,0 +1,13 @@
+<div class="left">
+  <h1><%= t("admin.debates.index.title") %></h1>
+
+  <ul>
+    <% @debates.each do |debate| %>
+      <%= link_to admin_debate_path(debate) do %>
+        <li id="<%= dom_id(debate) %>">
+          <%= link_to debate.title, admin_debate_path(debate) %>
+        </li>
+      <% end %>
+    <% end %>
+  </ul>
+</div>

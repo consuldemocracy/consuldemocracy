@@ -1,11 +1,13 @@
 en:
   admin:
-    menu:
-      tags: Tags
-      organizations: Organizations
     dashboard:
       index:
         title: Administration
+    menu:
+      debate_topics: Debate topics
+      hidden_debates: Hidden debates
+      hidden_comments: Hidden comments
+      organizations: Organizations
     organizations:
       index:
         title: Organizations
@@ -19,6 +21,10 @@ en:
           pending: Pending
           verified: Verified
           rejected: Rejected
+    actions:
+      hide: Hide
+      restore: Restore
+      confirm: 'Are you sure?'
     tags:
       index:
         title: 'Debate topics'
@@ -27,4 +33,13 @@ en:
       name:
         placeholder: 'Write a topic'
       destroy: Delete Tag
-
+    comments:
+      index:
+        title: Hidden comments
+      restore:
+        success: The comment has been restored
+    debates:
+      index:
+        title: Hidden debates
+      restore:
+        success: The debate has been restored

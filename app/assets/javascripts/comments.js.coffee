@@ -1,7 +1,10 @@
 App.Comments =
 
-  add_response: (parent_id, response_html) ->
+  add_comment: (parent_id, response_html) ->
     $(response_html).insertAfter($("#js-comment-form-#{parent_id}"))
+
+  add_reply: (parent_id, response_html) ->
+    $("##{parent_id} .comment-children:first").prepend($(response_html))
 
   display_error: (field_with_errors, error_html) ->
     $(error_html).insertAfter($("#{field_with_errors}"))

@@ -15,6 +15,10 @@ en:
       language: Site language
       administration: Administration
       moderation: Moderation
+      welcome: Welcome
+      news: News
+      debates: Debates
+      initiatives: Initiatives
     footer:
       copyright: "Ayuntamiento de Madrid, 2015. All rights reserved"
   form:
@@ -38,6 +42,7 @@ en:
         one: 1 vote
         other: "%{count} votes"
     comment:
+      deleted: This comment has been deleted
       responses:
         zero: No Responses
         one: 1 Response
