@@ -33,7 +33,6 @@ gem "recaptcha", require: "recaptcha/rails"
 gem 'ckeditor'
 
 gem 'ahoy_matey'  # stats
-gem "chartkick"   # charts
 gem 'groupdate'   # group temporary data
 
 group :development, :test do
