@@ -14,6 +14,7 @@ en:
       hidden_debates: Hidden debates
       hidden_comments: Hidden comments
       officials: Officials
+      stats: Statistics
     actions:
       hide: Hide
       restore: Restore

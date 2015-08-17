@@ -14,6 +14,7 @@ es:
       hidden_debates: Debates ocultos
       hidden_comments: Comentarios ocultos
       officials: Cargos públicos
+      stats: Estadísticas
     actions:
       hide: Ocultar
       restore: Permitir
