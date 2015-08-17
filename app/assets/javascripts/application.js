@@ -16,11 +16,15 @@
 //= require turbolinks
 //= require ckeditor/init
 //= require ahoy
+//= require d3
+//= require c3
+//= require c3ext
 //= require app
 //= require_tree .
 
 var initialize_modules = function() {
   App.Comments.initialize();
+  App.Stats.initialize();
 };
 
 $(function(){
