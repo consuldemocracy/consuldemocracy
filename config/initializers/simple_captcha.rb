@@ -1,4 +1,4 @@
-SimpleCaptcha.always_pass = Rails.env.test?
+SimpleCaptcha.always_pass = false
 
 SimpleCaptcha.setup do |sc|
   # default: 100x28
