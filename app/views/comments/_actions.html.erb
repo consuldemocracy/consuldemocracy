@@ -1,0 +1,5 @@
+<span id="moderator-comment-actions">
+  &nbsp;|&nbsp;
+  <%= link_to t("admin.actions.hide").capitalize, hide_moderation_comment_path(comment),
+            method: :put, remote: true, data: { confirm: t('admin.actions.confirm') } %>
+</span>

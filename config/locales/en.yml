@@ -38,6 +38,7 @@ en:
         one: 1 vote
         other: "%{count} votes"
     comment:
+      deleted: This comment has been deleted
       responses:
         zero: No Responses
         one: 1 Response

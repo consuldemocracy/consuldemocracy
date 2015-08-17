@@ -4,6 +4,7 @@ require 'cancan/matchers'
 describe Ability do
   subject(:ability) { Ability.new(user) }
   let(:debate) { Debate.new }
+  let(:comment) { create(:comment) }
 
   describe "Non-logged in user" do
     let(:user) { nil }
@@ -53,6 +54,11 @@ describe Ability do
     it { should be_able_to(:show, debate) }
     it { should be_able_to(:vote, debate) }
 
+    it { should be_able_to(:hide, comment) }
+    it { should be_able_to(:hide, debate) }
+
+    it { should_not be_able_to(:restore, comment) }
+    it { should_not be_able_to(:restore, debate) }
   end
 
   describe "Administrator" do
@@ -63,5 +69,7 @@ describe Ability do
     it { should be_able_to(:show, debate) }
     it { should be_able_to(:vote, debate) }
 
+    it { should be_able_to(:restore, comment) }
+    it { should be_able_to(:restore, debate) }
   end
 end
