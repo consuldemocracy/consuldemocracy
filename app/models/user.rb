@@ -41,4 +41,8 @@ class User < ActiveRecord::Base
   def remove_official_position!
     update official_position: nil, official_level: 0
   end
+
+  def self.with_email(e)
+    e.present? ? where(email: e) : none
+  end
 end

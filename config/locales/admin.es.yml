@@ -29,3 +29,20 @@ es:
         title: Debates ocultos
       restore:
         success: El debate ha sido permitido
+    officials:
+      index:
+        title: Cargos Públicos
+        search_email_placeholder: 'Buscar usuario por email'
+        search: Buscar
+      search:
+        title: 'Cargos Públicos: Búsqueda de usuarios'
+        edit_official: Editar cargo público
+        make_official: Convertir en cargo público
+        search: Buscar
+      edit:
+        title: 'Cargos Públicos: Editar usuario'
+        destroy: "Eliminar condición de 'Cargo Público'"
+        cancel: "Cancelar"
+      flash:
+        official_updated: 'Datos del cargo público guardados'
+        official_destroyed: 'Datos guardados: el usuario ya no es cargo público'

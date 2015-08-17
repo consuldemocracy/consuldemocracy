@@ -4,6 +4,10 @@ module AdminHelper
     render "/#{namespace}/menu"
   end
 
+  def official_level_options
+    1..5
+  end
+
   private
 
     def namespace

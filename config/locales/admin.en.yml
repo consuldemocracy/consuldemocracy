@@ -29,4 +29,20 @@ en:
         title: Hidden debates
       restore:
         success: The debate has been restored
-
+    officials:
+      index:
+        title: Officials
+        search_email_placeholder: 'Search user by email'
+        search: Search
+      search:
+        title: 'Officials: Search users'
+        edit_official: Edit official
+        make_official: Make this user an official
+        search: Search
+      edit:
+        title: 'Officials: edit user'
+        destroy: "Remove 'Official' condition"
+        cancel: "Cancel"
+      flash:
+        official_updated: 'Official position saved!'
+        official_destroyed: 'User is not an official anymore'

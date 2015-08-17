@@ -169,4 +169,18 @@ describe User do
     end
   end
 
+  describe "self.with_email" do
+    it "find users by email" do
+      user1 = create(:user, email: "larry@madrid.es")
+      user2 = create(:user, email: "bird@madrid.es")
+      search = User.with_email("larry@madrid.es")
+      expect(search.size).to eq(1)
+      expect(search.first).to eq(user1)
+    end
+
+    it "returns no results if no email provided" do
+      expect(User.with_email("    ").size).to eq(0)
+    end
+  end
+
 end
