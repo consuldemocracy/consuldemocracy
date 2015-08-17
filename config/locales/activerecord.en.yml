@@ -21,3 +21,5 @@ en:
         last_name: "Last name"
         nickname: Nickname
         password: Password
+        official_position: Official position
+        official_level: Official level
