@@ -11,8 +11,8 @@ es:
         title: Organizaciones
         verify: Verificar
         reject: Rechazar
-        verified: Verificado
-        rejected: Rechazado
+        verified: Verificada
+        rejected: Rechazada
         filter: Filtro
         filters:
           all: Todas
