@@ -11,10 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150808102442) do
+ActiveRecord::Schema.define(version: 20150817150457) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "administrators", force: :cascade do |t|
+    t.integer "user_id"
+  end
+
+  add_index "administrators", ["user_id"], name: "index_administrators_on_user_id", using: :btree
 
   create_table "ahoy_events", id: :uuid, default: nil, force: :cascade do |t|
     t.uuid     "visit_id"
@@ -35,15 +41,18 @@ ActiveRecord::Schema.define(version: 20150808102442) do
     t.string   "title"
     t.text     "body"
     t.string   "subject"
-    t.integer  "user_id",          null: false
+    t.integer  "user_id",                      null: false
     t.integer  "parent_id"
     t.integer  "lft"
     t.integer  "rgt"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.datetime "hidden_at"
+    t.integer  "children_count",   default: 0
   end
 
   add_index "comments", ["commentable_id", "commentable_type"], name: "index_comments_on_commentable_id_and_commentable_type", using: :btree
+  add_index "comments", ["hidden_at"], name: "index_comments_on_hidden_at", using: :btree
   add_index "comments", ["user_id"], name: "index_comments_on_user_id", using: :btree
 
   create_table "debates", force: :cascade do |t|
@@ -53,7 +62,30 @@ ActiveRecord::Schema.define(version: 20150808102442) do
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
     t.string   "visit_id"
+    t.datetime "hidden_at"
   end
+
+  add_index "debates", ["hidden_at"], name: "index_debates_on_hidden_at", using: :btree
+
+  create_table "moderators", force: :cascade do |t|
+    t.integer "user_id"
+  end
+
+  add_index "moderators", ["user_id"], name: "index_moderators_on_user_id", using: :btree
+
+  create_table "settings", force: :cascade do |t|
+    t.string "key"
+    t.string "value"
+  end
+
+  create_table "simple_captcha_data", force: :cascade do |t|
+    t.string   "key",        limit: 40
+    t.string   "value",      limit: 6
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "simple_captcha_data", ["key"], name: "idx_key", using: :btree
 
   create_table "taggings", force: :cascade do |t|
     t.integer  "tag_id"
@@ -71,6 +103,7 @@ ActiveRecord::Schema.define(version: 20150808102442) do
   create_table "tags", force: :cascade do |t|
     t.string  "name"
     t.integer "taggings_count", default: 0
+    t.boolean "featured",       default: false
   end
 
   add_index "tags", ["name"], name: "index_tags_on_name", unique: true, using: :btree
@@ -98,6 +131,8 @@ ActiveRecord::Schema.define(version: 20150808102442) do
     t.boolean  "use_nickname",            default: false, null: false
     t.boolean  "email_on_debate_comment", default: false
     t.boolean  "email_on_comment_reply",  default: false
+    t.string   "official_position"
+    t.integer  "official_level",          default: 0
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree
@@ -149,4 +184,6 @@ ActiveRecord::Schema.define(version: 20150808102442) do
   add_index "votes", ["votable_id", "votable_type", "vote_scope"], name: "index_votes_on_votable_id_and_votable_type_and_vote_scope", using: :btree
   add_index "votes", ["voter_id", "voter_type", "vote_scope"], name: "index_votes_on_voter_id_and_voter_type_and_vote_scope", using: :btree
 
+  add_foreign_key "administrators", "users"
+  add_foreign_key "moderators", "users"
 end

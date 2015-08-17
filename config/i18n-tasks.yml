@@ -22,6 +22,8 @@ data:
     ## Another gem (replace %#= with %=):
     # - "<%#= %x[bundle show vagrant].chomp %>/templates/locales/%{locale}.yml"
     - config/locales/%{locale}.yml
+    - config/locales/admin.%{locale}.yml
+    - config/locales/moderation.%{locale}.yml
     - config/locales/devise_views.%{locale}.yml
     - config/locales/responders.%{locale}.yml
 
@@ -85,10 +87,15 @@ search:
 # ignore_missing:
 # - 'errors.messages.{accepted,blank,invalid,too_short,too_long}'
 # - '{devise,simple_form}.*'
+ignore_missing:
+  - 'unauthorized.*'
+  - 'errors.messages.blank'
 
 ## Consider these keys used:
-# ignore_unused:
-# - 'activerecord.attributes.*'
+ignore_unused:
+  - 'unauthorized.*'
+  - 'simple_captcha.*'
+  - 'admin.officials.level_*'
 # - '{devise,kaminari,will_paginate}.*'
 # - 'simple_form.{yes,no}'
 # - 'simple_form.{placeholders,hints,labels}.*'

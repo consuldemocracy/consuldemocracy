@@ -2,25 +2,21 @@ require 'rails_helper'
 
 describe User do
 
-  describe "#votes_on_debates" do
-    before(:each) do
-      @user = create(:user)
+  describe "#debate_votes" do
+    let(:user) { create(:user) }
+
+    it "returns {} if no debate" do
+      expect(user.debate_votes([])).to eq({})
     end
 
-    it "should return {} if no debate" do
-      expect(@user.votes_on_debates()).to eq({})
-      expect(@user.votes_on_debates([])).to eq({})
-      expect(@user.votes_on_debates([nil, nil])).to eq({})
-    end
-
-    it "should return a hash of debates ids and votes" do
+    it "returns a hash of debates ids and votes" do
       debate1 = create(:debate)
       debate2 = create(:debate)
       debate3 = create(:debate)
-      create(:vote, voter: @user, votable: debate1, vote_flag: true)
-      create(:vote, voter: @user, votable: debate3, vote_flag: false)
+      create(:vote, voter: user, votable: debate1, vote_flag: true)
+      create(:vote, voter: user, votable: debate3, vote_flag: false)
 
-      voted = @user.votes_on_debates([debate1.id, debate2.id, debate3.id])
+      voted = user.debate_votes([debate1, debate2, debate3])
 
       expect(voted[debate1.id]).to eq(true)
       expect(voted[debate2.id]).to eq(nil)
@@ -84,6 +80,106 @@ describe User do
         subject.last_name = "Dredd"
         expect(subject.name).to eq("Joseph Dredd")
       end
+    end
+  end
+
+  describe "administrator?" do
+    it "is false when the user is not an admin" do
+      expect(subject.administrator?).to be false
+    end
+
+    it "is true when the user is an admin" do
+      subject.save
+      create(:administrator, user: subject)
+      expect(subject.administrator?).to be true
+    end
+  end
+
+  describe "moderator?" do
+    it "is false when the user is not a moderator" do
+      expect(subject.moderator?).to be false
+    end
+
+    it "is true when the user is a moderator" do
+      subject.save
+      create(:moderator, user: subject)
+      expect(subject.moderator?).to be true
+    end
+  end
+
+  describe "official?" do
+    it "is false when the user is not an official" do
+      expect(subject.official_level).to eq(0)
+      expect(subject.official?).to be false
+    end
+
+    it "is true when the user is an official" do
+      subject.official_level = 3
+      subject.save
+      expect(subject.official?).to be true
+    end
+  end
+
+  describe "add_official_position!" do
+    it "is false when level not valid" do
+      expect(subject.add_official_position!("Boss", 89)).to be false
+    end
+
+    it "updates official position fields" do
+      expect(subject).not_to be_official
+      subject.add_official_position!("Veterinarian", 2)
+
+      expect(subject).to be_official
+      expect(subject.official_position).to eq("Veterinarian")
+      expect(subject.official_level).to eq(2)
+
+      subject.add_official_position!("Brain surgeon", 3)
+      expect(subject.official_position).to eq("Brain surgeon")
+      expect(subject.official_level).to eq(3)
+    end
+  end
+
+  describe "remove_official_position!" do
+    it "updates official position fields" do
+      subject.add_official_position!("Brain surgeon", 3)
+      expect(subject).to be_official
+
+      subject.remove_official_position!
+
+      expect(subject).not_to be_official
+      expect(subject.official_position).to be_nil
+      expect(subject.official_level).to eq(0)
+    end
+  end
+
+  describe "officials scope" do
+    it "returns only users with official positions" do
+      create(:user, official_position: "Mayor", official_level: 1)
+      create(:user, official_position: "Director", official_level: 3)
+      create(:user, official_position: "Math Teacher", official_level: 4)
+      create(:user, official_position: "Manager", official_level: 5)
+      2.times { create(:user) }
+
+      officials = User.officials
+      expect(officials.size).to eq(4)
+      officials.each do |user|
+        expect(user.official_level).to be > 0
+        expect(user.official_position).to be_present
+      end
+    end
+  end
+
+  describe "self.with_email" do
+    it "find users by email" do
+      user1 = create(:user, email: "larry@madrid.es")
+      user2 = create(:user, email: "bird@madrid.es")
+      search = User.with_email("larry@madrid.es")
+      expect(search.size).to eq(1)
+      expect(search.first).to eq(user1)
+    end
+
+    it "returns no results if no email provided" do
+      expect(User.with_email("    ").size).to eq(0)
     end
   end
 

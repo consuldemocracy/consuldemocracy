@@ -1,67 +1,63 @@
 class DebatesController < ApplicationController
-  include RecaptchaHelper
-  before_action :set_debate, only: [:show, :edit, :update, :vote]
   before_action :authenticate_user!, except: [:index, :show]
-  before_action :validate_ownership, only: [:edit, :update]
+
+  load_and_authorize_resource
+  respond_to :html, :js
 
   def index
-    if params[:tag]
-      @debates = Debate.tagged_with(params[:tag]).order("created_at DESC")
-      set_voted_values @debates.map(&:id)
-    else
-      @debates = Debate.all.order("created_at DESC")
-      set_voted_values @debates.map(&:id)
-      @featured_debates = @debates.to_a.shift(3)
-    end
+    @debates = Debate.search(params)
+    set_debate_votes(@debates)
   end
 
   def show
-    set_voted_values [@debate.id]
+    set_debate_votes(@debate)
+    @comments = @debate.root_comments.with_hidden.recent
   end
 
   def new
     @debate = Debate.new
+    load_featured_tags
   end
 
   def edit
+    load_featured_tags
   end
 
   def create
     @debate = Debate.new(debate_params)
     @debate.author = current_user
-    if verify_captcha?(@debate) and @debate.save
+    if @debate.save_with_captcha
       ahoy.track :debate_created, debate_id: @debate.id
       redirect_to @debate, notice: t('flash.actions.create.notice', resource_name: 'Debate')
     else
+      load_featured_tags
       render :new
     end
   end
 
   def update
-    @debate.update(debate_params)
-    respond_with @debate
+    @debate.assign_attributes(debate_params)
+    if @debate.save_with_captcha
+      redirect_to @debate, notice: t('flash.actions.update.notice', resource_name: 'Debate')
+    else
+      load_featured_tags
+      render :edit
+    end
   end
 
   def vote
     @debate.vote_by(voter: current_user, vote: params[:value])
-    set_voted_values [@debate.id]
+    set_debate_votes(@debate)
   end
 
-
   private
-    def set_debate
-      @debate = Debate.find(params[:id])
-    end
 
     def debate_params
-      params.require(:debate).permit(:title, :description, :tag_list, :terms_of_service)
+      params.require(:debate).permit(:title, :description, :tag_list, :terms_of_service, :captcha, :captcha_key)
     end
 
-    def validate_ownership
-      raise ActiveRecord::RecordNotFound unless @debate.editable_by?(current_user)
+    def load_featured_tags
+      @featured_tags = ActsAsTaggableOn::Tag.where(featured: true)
     end
 
-    def set_voted_values(debates_ids)
-      @voted_values = current_user ? current_user.votes_on_debates(debates_ids) : {}
-    end
 end

@@ -21,7 +21,7 @@ Frontend tools used include [SCSS](http://sass-lang.com/) over [Foundation](http
 
 ## Configuration for development and test environments
 
-Prerequisites: install git, Ruby 2.2.2, bundler gem and PostgreSQL.
+Prerequisites: install git, ImageMagick, Ruby 2.2.2, bundler gem and PostgreSQL.
 
 ```
 cd participacion
@@ -44,7 +44,7 @@ bundle exec bin/rspec
 
 ## Licence
 
-Code published under MIT license (see [MIT-license.md](MIT-license.md))
+Code published under AFFERO GPL v3 (see [LICENSE-AGPLv3.txt](LICENSE-AGPLv3.txt))
 
 ## Contributions
 

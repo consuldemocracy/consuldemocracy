@@ -1,20 +1,11 @@
 <%= form_for(@debate) do |f| %>
-  <% if @debate.errors.any? %>
-    <div id="error_explanation" class="alert-box alert radius">
-      <p><strong><%= pluralize(@debate.errors.count, t("debates.form.error"), t("debates.form.errors")) %> <%= t("debates.form.not_saved") %></strong></p>
-      <ul>
-          <% @debate.errors.full_messages.each do |message| %>
-              <li><%= message %></li>
-          <% end %>
-      </ul>
-    </div>
-  <% end %>
+  <%= render 'shared/errors', resource: @debate %>
 
   <div class="row">
     <div class="small-12 column">
       <%= f.label :title, t("debates.form.debate_title") %>
       <span class="note"><%= t("debates.form.title_instructions") %></span>
-      <%= f.text_field :title, maxlength: Debate::TITLE_LENGTH %>
+      <%= f.text_field :title, maxlength: Debate::TITLE_LENGTH, placeholder: t("debates.form.debate_title") %>
     </div>
 
     <div class="ckeditor small-12 column">
@@ -26,18 +17,22 @@
     <div class="small-12 column">
       <%= f.label :tag_list, t("debates.form.tags_label") %>
       <span class="note"><%= t("debates.form.tags_instructions") %></span>
+      <span class="tags">
+        <% @featured_tags.each do |tag| %>
+          <a class="js-add-tag-link"><%= tag.name %></a>
+        <% end %>
+      </span>
       <%= f.text_field :tag_list, value: @debate.tag_list.to_s %>
     </div>
 
     <div class="small-12 column">
       <% if @debate.new_record? %>
-        <%= f.check_box :terms_of_service %>
-        <span class="checkbox"><%= t("debates.form.accept_terms") %></span>
+        <%= f.check_box :terms_of_service, label: t("form.accept_terms") %>
       <% end %>
     </div>
 
     <div class="small-12 column">
-      <%= render 'shared/captcha', resource: @debate %>
+      <%= f.simple_captcha input_html: { required: false } %>
     </div>
 
     <div class="actions small-12 column">

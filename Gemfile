@@ -17,20 +17,24 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
-# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 2.0'
-# bundle exec rake doc:rails generates the API under doc/api.
-gem 'sdoc', '~> 0.4.0', group: :doc
+
 gem 'devise'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
+gem 'kaminari'
 gem 'acts_as_commentable_with_threading'
 gem 'acts-as-taggable-on'
 gem "responders"
 gem 'foundation-rails'
+gem 'foundation_rails_helper'
 gem 'acts_as_votable'
-gem "recaptcha", require: "recaptcha/rails"
+gem 'simple_captcha2', require: 'simple_captcha'
 gem 'ckeditor'
+gem 'cancancan'
+gem 'social-share-button'
+gem 'initialjs-rails'
+gem 'unicorn'
+gem 'paranoia'
 
 gem 'ahoy_matey'  # stats
 gem 'groupdate'   # group temporary data
@@ -45,6 +49,7 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.0'
   gem 'capybara'
   gem 'factory_girl_rails'
+  gem 'fuubar'
   gem 'launchy'
   gem 'quiet_assets'
   gem 'letter_opener_web', '~> 1.2.0'
@@ -53,7 +58,6 @@ group :development, :test do
   gem "capistrano-bundler", '1.1.4',   require: false
   gem "capistrano-rails", '1.1.3',     require: false
   gem "capistrano-rvm",                require: false
-  gem "capistrano-passenger",          require: false
 end
 
 group :test do

@@ -29,7 +29,6 @@ es:
       edit:
         title: "Cambia tu contraseña"
         password_label: "Contraseña nueva"
-        min_length: "(mínimo %{min} caracteres)"
         password_confirmation_label: "Confirmar contraseña nueva"
         change_submit: "Cambiar mi contraseña"
       new:
@@ -41,16 +40,12 @@ es:
         edit: "Editar"
         email_label: "Email"
         waiting_for: "Esperando confirmación de:"
-        leave_blank: "(dejar en blanco si no deseas cambiarla)"
+        leave_blank: "Dejar en blanco si no deseas cambiarla"
         password_label: "Contraseña nueva"
         password_confirmation_label: "Confirmar contraseña nueva"
         current_password_label: "Contraseña actual"
-        need_current: "(necesitamos tu contraseña actual para confirmar los cambios)"
+        need_current: "Necesitamos tu contraseña actual para confirmar los cambios"
         update_submit: "Actualizar"
-        cancel_title: "Cancelar cuenta"
-        cancel_text: "¿Deseas borrar tu cuenta?"
-        cancel_link: "Cancelar mi cuenta"
-        cancel_confirm: "¿Seguro?"
         back_link: "Atrás"
       new:
         title: "Registrarse"
@@ -60,7 +55,6 @@ es:
         use_nickname_label: "Usar pseudónimo"
         email_label: "Email"
         password_label: "Contraseña"
-        min_length: "(mínimo %{min} caracteres)"
         password_confirmation_label: "Confirmar contraseña"
         submit: "Registrarse"
     sessions:

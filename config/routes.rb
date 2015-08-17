@@ -5,19 +5,14 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'debates#index'
+  root 'welcome#index'
 
   resources :debates do
-    member do
-      post :vote
-    end
+    member { post :vote }
 
     resources :comments, only: :create, shallow: true do
-      member do
-        post :vote
-      end
+      member { post :vote }
     end
-
   end
 
   resource :account, controller: "account", only: [:show, :update]
@@ -25,6 +20,37 @@ Rails.application.routes.draw do
 
   namespace :api do
     resource :stats, only: [:show]
+  end
+
+  namespace :admin do
+    root to: "dashboard#index"
+
+    resources :debates, only: [:index, :show] do
+      member { put :restore }
+    end
+
+    resources :comments, only: :index do
+      member { put :restore }
+    end
+
+    resources :tags, only: [:index, :create, :update, :destroy]
+    resources :officials, only: [:index, :edit, :update, :destroy] do
+      collection { get :search}
+    end
+
+    resources :settings, only: [:index, :update]
+  end
+
+  namespace :moderation do
+    root to: "dashboard#index"
+
+    resources :debates, only: [] do
+      member { put :hide }
+    end
+
+    resources :comments, only: [:index] do
+      member { put :hide }
+    end
   end
 
   # Example of regular route:

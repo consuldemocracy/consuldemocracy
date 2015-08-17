@@ -9,6 +9,7 @@ module CommonActions
     fill_in 'user_email',                 with: 'manuela@madrid.es'
     fill_in 'user_password',              with: 'judgementday'
     fill_in 'user_password_confirmation', with: 'judgementday'
+    fill_in 'user_captcha',               with: correct_captcha_text
 
     click_button 'Sign up'
   end
@@ -49,6 +50,32 @@ module CommonActions
       click_button 'Publish reply'
     end
     expect(page).to have_content 'It will be done next week.'
+  end
+
+  def correct_captcha_text
+    SimpleCaptcha::SimpleCaptchaData.last.value
+  end
+
+  def avatar(name)
+    "img.initialjs-avatar[data-name='#{name}']"
+  end
+
+  # Used to fill ckeditor fields
+  # @param [String] locator label text for the textarea or textarea id
+  def fill_in_ckeditor(locator, params = {})
+    # Find out ckeditor id at runtime using its label
+    locator = find('label', text: locator)[:for] if page.has_css?('label', text: locator)
+    # Fill the editor content
+    page.execute_script <<-SCRIPT
+        var ckeditor = CKEDITOR.instances.#{locator}
+        ckeditor.setData('#{params[:with]}')
+        ckeditor.focus()
+        ckeditor.updateElement()
+    SCRIPT
+  end
+
+  def error_message
+    /\d errors? prohibited this (.*) from being saved:/
   end
 
 end

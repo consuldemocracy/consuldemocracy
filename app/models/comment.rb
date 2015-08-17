@@ -1,5 +1,8 @@
 class Comment < ActiveRecord::Base
-  acts_as_nested_set scope: [:commentable_id, :commentable_type]
+  include ActsAsParanoidAliases
+  acts_as_nested_set scope: [:commentable_id, :commentable_type], counter_cache: :children_count
+
+  acts_as_paranoid column: :hidden_at
   acts_as_votable
 
   validates :body, presence: true
@@ -7,6 +10,8 @@ class Comment < ActiveRecord::Base
 
   belongs_to :commentable, polymorphic: true
   belongs_to :user
+
+  scope :recent, -> { order(id: :desc) }
 
   def self.build(commentable, user, body)
     new commentable: commentable,
@@ -24,6 +29,18 @@ class Comment < ActiveRecord::Base
 
   def author
     user
+  end
+
+  def total_votes
+    votes_for.size
+  end
+
+  # TODO: faking counter cache since there is a bug with acts_as_nested_set :counter_cache
+  # Remove when https://github.com/collectiveidea/awesome_nested_set/issues/294 is fixed
+  # and reset counters using
+  # > Comment.find_each { |comment| Comment.reset_counters(comment.id, :children) }
+  def children_count
+    children.count
   end
 
 end

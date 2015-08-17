@@ -1,6 +1,8 @@
 <div id="tag-cloud" class="tag-cloud">
+  <div class="sidebar-divider"></div>
   <h3><%= t("shared.tags_cloud.tags") %></h3>
+  <br>
   <% tag_cloud Debate.tag_counts, %w[s m l] do |tag, css_class| %>
-    <%= link_to sanitize("#{tag.name}(#{tag.taggings_count})"), debates_path(tag: tag.name), class: css_class %>
+    <%= link_to sanitize("#{tag.name} <span class='label round info'>#{tag.taggings_count}</span>"), debates_path(tag: tag.name), class: css_class %>
   <% end %>
 </div>

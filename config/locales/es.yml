@@ -1,44 +1,86 @@
 es:
   layouts:
     header:
-      external_link_transparency: Portal de Transparencia
+      external_link_transparency: Transparencia
       external_link_opendata: Datos abiertos
+      external_link_blog: Blog
       open_gov: "Gobierno %{open}"
       open: "abierto"
       participation: Participación
       menu: Menú
       open_city: Estamos abriendo Madrid
       open_city_slogan: Para que todos los madrileños decidamos que ciudad queremos tener.
-      create_debate: Crea un debate
+      see_all_debates: Ver todos los debates
       my_account_link: Mi cuenta
       language: Idioma de la página
+      administration: Administar
+      moderation: Moderar
+      welcome: Portada
+      news: Novedades
+      debates: Debates
+      initiatives: Iniciativas
+    footer:
+      copyright: "Ayuntamiento de Madrid, %{year}. Todos los derechos reservados"
+  form:
+      error: error
+      errors: errores
+      not_saved: "impidieron guardar %{resource}:"
+      accept_terms: Acepto la política de privacidad y el aviso legal
+      user: la cuenta
+      debate: el debate
   debates:
     index:
       create_debate: Crea un debate
+      showing: "Estás viendo"
+      tag: "con el tema"
+      filter_debates: debates
+      filter_initiatives: iniciativas
+      filter_debates_and_initiatives: debates e iniciativas
+      filter_news: "más nuevos"
+      filter_votes: "más votados"
+      filter_rated: mejor valorados
     debate:
       debate: Debate
-      vote: voto
-      votes: votos
-      comment: Comentario
-      comments: Comentarios
+      comments:
+        zero: Sin comentarios
+        one: 1 Comentario
+        other: "%{count} Comentarios"
+      votes:
+        zero: Sin votos
+        one: 1 voto
+        other: "%{count} votos"
+    comment:
+      deleted: Este comentario ha sido eliminado
+      responses:
+        zero: Sin respuestas
+        one: 1 Respuesta
+        other: "%{count} Respuestas"
+      votes:
+        zero: Sin votos
+        one: 1 voto
+        other: "%{count} votos"
+      votes_weighted_score: "Total: %{score}"
     form:
-      error: error
-      errors: errores
-      not_saved: "impidieron guardar el debate:"
       debate_title: Título del debate
       title_instructions: "Sé claro y conciso a la hora de poner un título, pero recuerda que debe explicar bien tu idea, ¡es tu carta de entrada!"
       debate_text: Describe tu opinión
       text_instructions: "Explica con todo el detalle que puedas y de una manera sencilla la idea y que crees que conseguiríamos con ella"
       tags_label: Temas
-      tags_instructions: Separados por comas
-      accept_terms: Acepto la política de privacidad y el aviso legal
+      tags_instructions: >
+        Etiqueta esta idea. Puedes elegir entre nuestras propuestas o introducir las que desees.
+        Para ello solo tienes que escribir las etiquetas que desees separadas por "," y pulsar "intro".
+        Algunas recomendaciones:
     show:
       back_link: Volver
-      comment: Comentario
-      comments: Comentarios
+      comments_title: Comentarios
+      comments:
+        zero: Sin comentarios
+        one: 1 Comentario
+        other: "%{count} Comentarios"
       leave_comment: Deja tu comentario
       login_to_comment: Entra para participar
       edit_debate_link: Editar
+      share: Compartir
     edit:
       editing: Editar debate
       show_link: Ver debate
@@ -59,25 +101,41 @@ es:
     agree: Estoy de acuerdo
     disagree: No estoy de acuerdo
     supports: Apoyos
+    unauthenticated: "Necesitas %{signin} o %{signup} para continuar."
+    signin: iniciar sesión
+    signup: registrarte
   account:
     show:
       title: "Mi cuenta"
       save_changes_submit: "Guardar cambios"
-      email_on_debate_comment_label: "Recibir un email cuando alguien commenta en mis debates"
+      change_credentials_link: "Cambiar mis credenciales"
+      email_on_debate_comment_label: "Recibir un email cuando alguien comenta en mis debates"
       email_on_comment_reply_label: "Recibir un email cuando alguien contesta a mis comentarios"
-      change_credentials_link: "Cambiar mi contraseña"
+      avatar: "Avatar"
+      personal: "Datos personales"
       first_name_label: "Nombre"
       last_name_label: "Apellidos"
       use_nickname_label: "Usar pseudónimo"
       nickname_label: "Pseudónimo"
-  recaptcha:
-    errors:
-      verification_failed: "La verificación por captcha falló"
+      notifications: Notificaciones
+  simple_captcha:
+    placeholder: "Introduce el texto de la imagen"
+    label: "Introduce el texto en la caja"
+    refresh_button_text: "Refrescar"
+    message:
+      user: "el código secreto no coincide con la imagen"
+      debate: "el código secreto no coincide con la imagen"
   shared:
     tags_cloud:
-        tags: Etiquetas
+        tags: Temas
   mailer:
     comment:
       subject: Alguien ha comentado en tu debate
     reply:
       subject: Alguien ha respondido a tu comentario
+  unauthorized:
+    default: "No tienes permiso para acceder a esta página."
+    manage:
+      all: "No tienes permiso para realizar la acción '%{action}' sobre %{subject}."
+  welcome:
+    featured_debates: Debates destacados

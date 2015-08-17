@@ -1,0 +1,61 @@
+en:
+  admin:
+    settings:
+      index:
+        title: Global settings
+      flash:
+        updated: 'Setting updated!'
+    dashboard:
+      index:
+        title: Administration
+    menu:
+      settings: Global settings
+      debate_topics: Debate topics
+      hidden_debates: Hidden debates
+      hidden_comments: Hidden comments
+      officials: Officials
+    actions:
+      hide: Hide
+      restore: Restore
+      confirm: 'Are you sure?'
+    tags:
+      index:
+        title: 'Debate topics'
+        add_tag: 'Add a new debate topic'
+      mark_as_featured: 'Mark as featured'
+      name:
+        placeholder: 'Write a topic'
+      destroy: Delete Tag
+    comments:
+      index:
+        title: Hidden comments
+      restore:
+        success: The comment has been restored
+    debates:
+      index:
+        title: Hidden debates
+      restore:
+        success: The debate has been restored
+    officials:
+      level_0: Level 0
+      level_1: Level 1
+      level_2: Level 2
+      level_3: Level 3
+      level_4: Level 4
+      level_5: Level 5
+      index:
+        title: Officials
+        search_email_placeholder: 'Search user by email'
+        search: Search
+      search:
+        title: 'Officials: Search users'
+        edit_official: Edit official
+        make_official: Make this user an official
+        search: Search
+      edit:
+        title: 'Officials: edit user'
+        destroy: "Remove 'Official' condition"
+        cancel: "Cancel"
+      flash:
+        official_updated: 'Official position saved!'
+        official_destroyed: 'User is not an official anymore'

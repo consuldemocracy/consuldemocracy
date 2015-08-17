@@ -1,12 +1,10 @@
 class RegistrationsController < Devise::RegistrationsController
-  include RecaptchaHelper
 
   def create
-    if verify_captcha?(resource)
+    build_resource(sign_up_params)
+    if resource.valid_with_captcha?
       super
     else
-      build_resource(sign_up_params)
-      flash.now[:alert] = t('recaptcha.errors.verification_failed')
       render :new
     end
   end
@@ -14,8 +12,8 @@ class RegistrationsController < Devise::RegistrationsController
 
   private
 
-  def sign_up_params
-    params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation, :use_nickname, :nickname)
-  end
+    def sign_up_params
+      params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation, :use_nickname, :nickname, :captcha, :captcha_key)
+    end
 
 end

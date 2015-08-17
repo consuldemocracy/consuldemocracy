@@ -19,17 +19,23 @@
 //= require d3
 //= require c3
 //= require c3ext
+//= require social-share-button
+//= require initial
 //= require app
 //= require_tree .
 
 var initialize_modules = function() {
   App.Comments.initialize();
   App.Stats.initialize();
+  App.Users.initialize();
+  App.Votes.initialize();
+  App.Tags.initialize();
 };
 
 $(function(){
   $(document).foundation();
 
-  $(document).ready(initialize_modules)
-  $(document).on('page:load', initialize_modules)
+  $(document).ready(initialize_modules);
+  $(document).on('page:load', initialize_modules);
+  $(document).on('ajax:complete', initialize_modules);
 });

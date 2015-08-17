@@ -10,6 +10,9 @@ development:
   <<: *default
   database: participacion_development
 
+staging:
+  <<: *default
+
 test:
   <<: *default
   database: participacion_test

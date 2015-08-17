@@ -11,9 +11,10 @@
           ]
       </div>
       <div class="external-links">
-        <%= link_to t("layouts.header.participation"), root_path, class: "selected" %>&nbsp;|&nbsp;
-        <a href="#"><%= t("layouts.header.external_link_transparency") %></a>&nbsp;|&nbsp;
-        <a href="#"><%= t("layouts.header.external_link_opendata") %></a>
+        <%= link_to t("layouts.header.participation"), root_path, class: "selected" %>&nbsp;|
+        <%= link_to t("layouts.header.external_link_transparency"), "#" %>&nbsp;|
+        <%= link_to t("layouts.header.external_link_opendata"), "#" %>&nbsp;|
+        <%= link_to t("layouts.header.external_link_blog"), "#" %>
       </div>
     </div>
   </section>
@@ -32,6 +33,22 @@
 
       <section class="top-bar-section">
         <%= render 'devise/menu/login_items' %>
+        <%= render 'shared/admin_login_items' %>
+      </section>
+
+      <section class="subnavigation row text-center">
+        <div class="small-12 medium-3 column end">
+          <%= link_to t("layouts.header.welcome"), root_path, class: ("active" if current_page?(root_path)) %>
+        </div>
+        <div class="small-12 medium-3 column end">
+          <%= link_to t("layouts.header.news"), "#" %>
+        </div>
+        <div class="small-12 medium-3 column end">
+          <%= link_to t("layouts.header.debates"), debates_path, class: ("active" if current_page?(controller: 'debates')) %>
+        </div>
+        <div class="small-12 medium-3 column end">
+          <%= link_to t("layouts.header.initiatives"), "#" %>
+        </div>
       </section>
     </nav>
   </div>
@@ -41,7 +58,7 @@
       <div class="small-12 column text-center">
         <h1><%= t("layouts.header.open_city") %></h1>
         <h2><%= t("layouts.header.open_city_slogan") %></h2>
-        <%= link_to t("layouts.header.create_debate"), new_debate_path, class: 'button radius' %>
+        <%= link_to t("layouts.header.see_all_debates"), debates_path, class: 'button radius' %>
       </div>
     </div>
   <% end %>

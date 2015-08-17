@@ -1,0 +1,620 @@
+// Table of Contents
+//
+// 01. Variables
+// 02. Mixins
+// 03. Global styles
+// 04. Header
+// 05. Footer
+// 06. Tags
+// 07. Auth pages
+// 08. Forms
+// 09. Alerts
+// 10. User account
+// 11. Filters
+//
+
+// 01. Variables
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+@import "variables";
+
+// 02. Mixins
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+@mixin back {
+  color: $text-light;
+  font-size: rem-calc(13);
+  line-height: $line-height;
+}
+
+@mixin logo {
+
+  a {
+    color: white;
+    font-family: 'Lato' !important;
+    font-size: rem-calc(20);
+    font-weight: lighter;
+    line-height: $line-height*4;
+    padding-left: rem-calc(6);
+
+    span {
+      font-size: rem-calc(16);
+      font-weight: lighter;
+      vertical-align: top;
+    }
+
+    @media (min-width: 480px) {
+      font-size: rem-calc(28);
+      span {
+        font-size: rem-calc(20);
+      }
+    }
+  }
+}
+
+// 03. Global styles
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+*, html {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: $body;
+  font-family: $font-family-sans-serif;
+  font-size: rem-calc(13);
+  font-weight: normal;
+  text-rendering: optimizeLegibility;
+
+  &::selection, ::-moz-selection {
+    background: $brand !important;
+    color: white !important;
+  }
+}
+
+p {
+  font-size: rem-calc(13);
+  line-height: $line-height;
+  margin-bottom: rem-calc(12);
+}
+
+a {
+  color: $link;
+
+  &:hover {
+    color: $link-hover;
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-family-sans-serif;
+}
+
+.button {
+  padding: rem-calc(15) rem-calc(32);
+}
+
+.clear {
+  clear: both;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.row {
+  max-width: 1170px;
+}
+
+.row-full {
+  max-width: 100% !important;
+}
+
+.sidebar {
+  margin-bottom: rem-calc(48);
+}
+
+.sidebar-divider {
+  border-top: 1px solid $border;
+  margin-top: rem-calc(24);
+
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
+// 04. Header
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+header {
+  background: url('home_header_bg.jpg');
+  background-position: 50% 50%;
+  background-size: cover;
+  min-height: rem-calc(480);
+
+  &.results {
+    min-height: rem-calc(216);
+  }
+
+  h1 {
+    color: white;
+    font-size: rem-calc(45);
+    font-weight: bolder;
+    line-height: $line-height*3;
+    margin: rem-calc(24) 0 0 0;
+    padding: 0;
+  }
+
+  h2 {
+    @extend h1;
+    font-size: rem-calc(24);
+    font-weight: normal;
+    line-height: $line-height*2;
+    margin: 0;
+  }
+
+  .button {
+    color: white;
+    font-family: inherit;
+    margin-top: rem-calc(24);
+  }
+
+  .home-page {
+    .button {
+      color: white;
+      font-family: inherit;
+      margin-top: rem-calc(48);
+    }
+  }
+
+  .selected {
+    position: relative;
+
+    &:before {
+      top: -14px;
+      left: 50%;
+      border: solid transparent;
+      content: " ";
+      height: 0;
+      width: 0;
+      position: absolute;
+      border-top-color: #fff;
+      border-width: 8px;
+      margin-left: -8px;
+    }
+  }
+
+  .language {
+    float: none;
+    text-align: center;
+
+    @media (min-width: 480px) {
+      float: left;
+    }
+  }
+
+  .external-links {
+    @extend .language;
+
+    @media (min-width: 480px) {
+      float: right;
+    }
+  }
+}
+
+.contain-to-grid {
+  background: none;
+}
+
+.top-bar {
+  background: rgba(0,0,0,.5);
+  color: white;
+  height: rem-calc(96);
+  max-width: 1170px !important;
+
+  .name a {
+    color: white;
+    font-family: 'Lato';
+    font-size: rem-calc(36);
+    font-weight: lighter;
+    line-height: $line-height*4;
+    padding-left: 0;
+
+    span {
+      font-size: rem-calc(24);
+      font-weight: normal;
+    }
+
+    img {
+      margin-right: rem-calc(12);
+    }
+  }
+}
+
+.top-bar-section {
+  margin-right: rem-calc(24);
+
+  ul li > a {
+    font-size: rem-calc(14);
+  }
+
+  ul li, ul li:hover:not(.has-form) > a {
+    background: none;
+  }
+
+  li:not(.has-form) a:not(.button) {
+    background: none;
+    color: white;
+    line-height: $line-height*4;
+
+    &:hover {
+      background: none;
+      color: $link-hover;
+    }
+  }
+
+  li.active:not(.has-form) a:not(.button) {
+    background: none;
+    height: rem-calc(96);
+    line-height: $line-height*4;
+  }
+}
+
+.top-links {
+  color: white;
+  font-size: rem-calc(14);
+  height: rem-calc(72);
+  padding: rem-calc(12) 0;
+
+  @media (min-width: 480px) {
+    height: rem-calc(48);
+  }
+
+  a {
+    color: white;
+  }
+}
+
+.subnavigation {
+  background: white;
+  border-bottom: 1px solid white;
+  clear: both;
+
+  a {
+    color: $link;
+    font-size: rem-calc(14);
+    font-weight: bold;
+
+    &.active {
+      color: $text;
+
+      &:after {
+        bottom: -17px;
+        left: 50%;
+        border: solid transparent;
+        content: " ";
+        height: 0;
+        width: 0;
+        position: absolute;
+        border-top-color: #fff;
+        border-width: 8px;
+        margin-left: -8px;
+      }
+    }
+  }
+}
+
+// 05. Footer
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+footer {
+  background: $brand;
+  color: white;
+  padding: rem-calc(24) 0 rem-calc(48) 0;
+
+  .logo {
+    @include logo;
+  }
+
+  h4 {
+    color: white;
+    font-weight: normal;
+  }
+
+  a {
+    color: white;
+
+    &.link:hover {
+      color: white;
+      opacity: .5;
+    }
+  }
+}
+
+.subfooter {
+  padding-top: $line-height;
+}
+
+// 06. Tags
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+.tags {
+
+  a {
+    background: $background;
+    border: 1px solid $border;
+    border-radius: 3px;
+    color: $text-medium;
+    display: inline-block;
+    font-size: rem-calc(13);
+    line-height: rem-calc(22);
+    margin-bottom: rem-calc(8);
+    padding: 0 rem-calc(6);
+
+    &:hover {
+      color: $link;
+      cursor: pointer;
+      background: #E5F1F8;
+      border: 1px solid $brand;
+    }
+  }
+}
+
+.tag-cloud {
+  @extend .tags;
+
+  h3 {
+    border-top: 1px solid $votes-border;
+    display: inline-block;
+    font-family: $font-family-sans-serif;
+    font-size: rem-calc(16);
+    margin: -1px 0 rem-calc(12);
+    padding-top: rem-calc(6);
+    text-transform: uppercase;
+  }
+
+  a {
+    padding: rem-calc(6) rem-calc(8);
+
+    .label {
+      color: white;
+    }
+
+    &:hover {
+
+      .label {
+        background: $brand;
+      }
+    }
+  }
+}
+
+// 07. Auth pages
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+.auth-page {
+  background: url('auth_bg.jpg');
+  margin-top: rem-calc(24);
+
+  @media (min-width: 480px) {
+    margin-top: rem-calc(48);
+  }
+
+  h1 {
+    @include logo;
+  }
+}
+
+.auth {
+  min-height: rem-calc(480);
+
+  h2 {
+    clear: both;
+    font-size: rem-calc(30);
+    font-weight: bold;
+    line-height: $line-height*2;
+  }
+
+  .back, .icon-angle-left {
+    @include back;
+  }
+
+  .panel {
+    background: white;
+    border: 0;
+
+    h1 {
+      font-size: rem-calc(30);
+      font-weight: bolder;
+    }
+  }
+}
+
+// 08. Forms
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+form {
+
+  label {
+    font-weight: bold;
+    line-height: $line-height;
+  }
+
+  input[type]:not([type=submit]):not([type=file]) {
+    background: $input-bg;
+    height: rem-calc(48);
+    margin-bottom: rem-calc(16);
+  }
+
+  input[type="checkbox"] {
+    height: rem-calc(24) !important;
+    margin: 0 !important;
+  }
+
+  input[type=file] {
+    margin: rem-calc(12) 0;
+  }
+
+  .note {
+    display: block;
+    font-size: rem-calc(13);
+    margin-bottom: rem-calc(12);
+  }
+
+  .ckeditor {
+    margin-bottom: rem-calc(24);
+    min-height: rem-calc(336);
+  }
+
+  .checkbox {
+    display: inline-block;
+    font-size: rem-calc(14);
+    font-weight: normal;
+    line-height: $line-height;
+    margin: 0 0 0 rem-calc(6);
+    vertical-align: top;
+  }
+
+  .captcha {
+    border: 0;
+    padding: rem-calc(12) 0;
+
+    input {
+      margin-bottom: 0 !important;
+    }
+  }
+
+  .button {
+    margin-top: rem-calc(24);
+  }
+}
+
+// 09. Alerts
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+.alert-box {
+
+  &.success {
+    background-color: $success-bg;
+    border-color: $success-border;
+    color: $success-color;
+  }
+
+  &.info {
+    background-color: $info-bg;
+    border-color: $info-border;
+    color: $info-color;
+  }
+
+  &.warning {
+    background-color: $warning-bg;
+    border-color: $warning-border;
+    color: $warning-color;
+  }
+
+  &.alert {
+    background-color: $alert-bg;
+    border-color: $alert-border;
+    color: $alert-color;
+  }
+}
+
+// 10. User account
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+.account {
+  background: white;
+  padding-top: rem-calc(24);
+
+  h1 {
+    clear: both;
+    font-size: rem-calc(36);
+    font-weight: bold;
+    line-height: $line-height*2;
+    margin-bottom: rem-calc(24);
+  }
+
+  .icon-comment-quotes {
+    color: $debates;
+    font-size: rem-calc(60);
+    line-height: $line-height;
+    opacity: .5;
+  }
+
+  .avatar {
+    margin-bottom: rem-calc(24);
+  }
+
+  .initialjs-avatar {
+    margin-bottom: $line-height;
+  }
+
+  h2 {
+    clear: both;
+    font-size: rem-calc(30);
+    font-weight: bold;
+    line-height: $line-height;
+    margin: 0;
+    margin-bottom: rem-calc(12);
+  }
+
+  h3 {
+    clear: both;
+    font-size: rem-calc(20);
+    font-weight: bold;
+    line-height: $line-height;
+    margin: 0;
+    margin-bottom: rem-calc(12);
+  }
+
+  .recommendations {
+    list-style-type: none;
+    margin-left: 0;
+    margin-top: rem-calc(24);
+
+    li {
+      font-size: rem-calc(12);
+      margin: rem-calc(12) 0;
+
+      &:before {
+        color: $debates;
+        content: "l ";
+        font-family: "icons" !important;
+      }
+    }
+  }
+}
+
+// 11. Filters
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+.filters {
+
+  h2 {
+    display: inline-block;
+    font-size: rem-calc(24);
+    margin: rem-calc(24) 0;
+  }
+
+  select {
+    height: auto;
+    margin: rem-calc(24) rem-calc(6);
+    min-width: rem-calc(180);
+    outline: 0;
+    padding: rem-calc(12);
+    width: auto;
+
+    optgroup {
+      font-size: rem-calc(14);
+    }
+
+    option {
+
+      &:after {
+        content: "a";
+        font-family: "icons";
+      }
+    }
+  }
+}

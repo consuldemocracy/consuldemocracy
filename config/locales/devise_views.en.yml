@@ -29,7 +29,6 @@ en:
       edit:
         title: "Change your password"
         password_label: "New password"
-        min_length: "(%{min} characters minimum)"
         password_confirmation_label: "Confirm new password"
         change_submit: "Change my password"
       new:
@@ -41,16 +40,12 @@ en:
         edit: "Edit"
         email_label: "Email"
         waiting_for: "Currently waiting confirmation for:"
-        leave_blank: "(leave blank if you don't want to change it)"
+        leave_blank: "Leave blank if you don't want to change it"
         password_label: "New password"
         password_confirmation_label: "Confirm new password"
         current_password_label: "Current password"
-        need_current: "(we need your current password to confirm your changes)"
+        need_current: "We need your current password to confirm your changes"
         update_submit: "Update"
-        cancel_title: "Cancel my account"
-        cancel_text: "Unhappy?"
-        cancel_link: "Cancel my account"
-        cancel_confirm: "Are you sure?"
         back_link: "Back"
       new:
         title: "Sign up"
@@ -60,7 +55,6 @@ en:
         use_nickname_label: "Use nickname"
         email_label: "Email"
         password_label: "Password"
-        min_length: "(%{min} characters minimum)"
         password_confirmation_label: "Confirm password"
         submit: "Sign up"
     sessions:

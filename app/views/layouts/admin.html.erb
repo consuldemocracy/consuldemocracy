@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title><%= content_for?(:title) ? yield(:title) : "Admin" %></title>
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "vendor/modernizr" %>
+    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+
+  <body>
+    <%= render 'layouts/admin_header' %>
+
+    <% if notice %>
+      <p class="alert-box success"><%= notice %></p>
+    <% end %>
+
+    <% if alert %>
+      <p class="alert-box"><%= alert %></p>
+    <% end %>
+
+    <div class="left" style="padding:50px;">
+      <%= side_menu %>
+    </div>
+
+    <div class="left">
+      <%= yield %>
+    </div>
+
+  </body>
+
+</html>

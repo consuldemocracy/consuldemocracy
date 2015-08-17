@@ -1,39 +1,49 @@
-<h2><%= t("devise_views.registrations.edit.edit") %> <%= resource_name.to_s.humanize %></h2>
+<div class="auth row">
+  <div class="small-12 medium-8 large-5 column small-centered">
+    <div class="panel">
+      <i class="icon-angle-left left"></i>&nbsp;<%= link_to t("devise_views.registrations.edit.back_link"), :back, class: "left back" %>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= devise_error_messages! %>
+      <h2><%= t("devise_views.registrations.edit.edit") %> <%= resource_name.to_s.humanize %></h2>
 
-  <div class="field">
-    <%= f.label :email, t("devise_views.registrations.edit.email_label") %><br />
-    <%= f.email_field :email, autofocus: true %>
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+        <%= render 'shared/errors', resource: resource %>
+
+        <div class="row">
+          <div class="small-12 column">
+            <%= f.email_field :email, autofocus: true, placeholder: t("devise_views.registrations.edit.email_label") %>
+          </div>
+
+          <div class="small-12 column">
+            <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+              <div><%= t("devise_views.registrations.edit.waiting_for") %> <%= resource.unconfirmed_email %></div>
+            <% end %>
+          </div>
+
+          <div class="small-12 column">
+            <%= f.label :password, t("devise_views.registrations.edit.password_label") %>
+            <span class="note"><%= t("devise_views.registrations.edit.leave_blank") %></span>
+            <%= f.password_field :password, autocomplete: "off",
+                                 label: false,
+                                 placeholder: t("devise_views.registrations.edit.password_label") %>
+          </div>
+
+          <div class="small-12 column">
+            <%= f.password_field :password_confirmation, autocomplete: "off", placeholder: t("devise_views.registrations.edit.password_confirmation_label") %>
+          </div>
+
+          <div class="small-12 column">
+            <%= f.label :current_password, t("devise_views.registrations.edit.current_password_label") %>
+            <span class="note"><%= t("devise_views.registrations.edit.need_current") %></span>
+            <%= f.password_field :current_password, autocomplete: "off",
+                                 label: false,
+                                 placeholder:  t("devise_views.registrations.edit.current_password_label") %>
+          </div>
+
+          <div class="small-12 column">
+            <%= f.submit t("devise_views.registrations.edit.update_submit"), class: "button radius" %>
+          </div>
+        </div>
+      <% end %>
+    </div>
   </div>
-
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div><%= t("devise_views.registrations.edit.waiting_for") %> <%= resource.unconfirmed_email %></div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :password, t("devise_views.registrations.edit.password_label") %> <i><%= t("devise_views.registrations.edit.leave_blank") %></i><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation, t("devise_views.registrations.edit.password_confirmation_label") %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :current_password, t("devise_views.registrations.edit.current_password_label") %> <i><%= t("devise_views.registrations.edit.need_current") %></i><br />
-    <%= f.password_field :current_password, autocomplete: "off" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit t("devise_views.registrations.edit.update_submit") %>
-  </div>
-<% end %>
-
-<h3><%= t("devise_views.registrations.edit.cancel_title") %></h3>
-
-<p><%= t("devise_views.registrations.edit.cancel_text") %> <%= button_to t("devise_views.registrations.edit.cancel_link"), registration_path(resource_name), data: { confirm: t("devise_views.registrations.edit.cancel_confirm") }, method: :delete %></p>
-
-<%= link_to t("devise_views.registrations.edit.back_link"), :back %>
+</div>

@@ -1,0 +1,61 @@
+es:
+  admin:
+    settings:
+      index:
+        title: Configuración global
+      flash:
+        updated: 'Valor actualizado'
+    dashboard:
+      index:
+        title: Administración
+    menu:
+      settings: Configuración global
+      debate_topics: Temas de debate
+      hidden_debates: Debates ocultos
+      hidden_comments: Comentarios ocultos
+      officials: Cargos públicos
+    actions:
+      hide: Ocultar
+      restore: Permitir
+      confirm: '¿Estás seguro?'
+    tags:
+      index:
+        title: 'Temas de debate'
+        add_tag: 'Añade un nuevo tema de debate'
+      mark_as_featured: 'Marcar como destacado'
+      name:
+        placeholder: 'Escribe el nombre del tema'
+      destroy: Elimina la etiqueta
+    comments:
+      index:
+        title: Comentarios ocultos
+      restore:
+        success: El comentario ha sido permitido
+    debates:
+      index:
+        title: Debates ocultos
+      restore:
+        success: El debate ha sido permitido
+    officials:
+      level_0: Nivel 0
+      level_1: Nivel 1
+      level_2: Nivel 2
+      level_3: Nivel 3
+      level_4: Nivel 4
+      level_5: Nivel 5
+      index:
+        title: Cargos Públicos
+        search_email_placeholder: 'Buscar usuario por email'
+        search: Buscar
+      search:
+        title: 'Cargos Públicos: Búsqueda de usuarios'
+        edit_official: Editar cargo público
+        make_official: Convertir en cargo público
+        search: Buscar
+      edit:
+        title: 'Cargos Públicos: Editar usuario'
+        destroy: "Eliminar condición de 'Cargo Público'"
+        cancel: "Cancelar"
+      flash:
+        official_updated: 'Datos del cargo público guardados'
+        official_destroyed: 'Datos guardados: el usuario ya no es cargo público'

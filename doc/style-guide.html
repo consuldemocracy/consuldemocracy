@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>gobierno abierto | Guía de estilo web</title>
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.2/css/foundation.min.css">
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,800,700' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Lato:400,700,300' rel='stylesheet' type='text/css'>
+</head>
+
+<!-- This CSS it's only for styleguide purposes, don't use in the final product. Thanks! ;) -->
+<style type="text/css">
+/* 01. Global
+/* - - - - - - - - - - - - - - - - - - - - - - - - - */
+
+body {
+  background: #F9F9F9;
+  color: #555458;
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Sans-serif !important;
+  font-size: 13px;
+  line-height: 24px;
+}
+
+p {
+  font-size: 13px;
+  margin: 0 0 12px;
+  padding: 0;
+}
+
+a {
+  color: #439fe0;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.menu ul {
+  list-style-type: none;
+  margin-left: 0;
+  margin-top: 24px;
+  padding-left: 0;
+}
+
+ul li {
+  font-size: 13px;
+  margin-bottom: 12px;
+}
+
+.style-guide {
+  background: white;
+  border: 1px solid #d8d8d8;
+  border-radius: 6px;
+  box-shadow: 0 1px 2px 0 rgba(0,0,0,.08);
+  margin: 0 auto;
+  margin-top: 24px;
+  max-width: 800px;
+  padding: 12px 24px 24px;
+  position: relative;
+}
+
+.title {
+  border-bottom: 1px solid #d8d8d8;
+}
+
+.subtitle {
+  margin-top: 24px;
+}
+
+.clear {
+  clear: both;
+}
+
+/* 02. Typo
+/* - - - - - - - - - - - - - - - - - - - - - - - - - */
+
+.lato {
+  color: black;
+  font-family: 'Lato', sans-serif;
+  font-size: 30px;
+  font-weight: lighter;
+}
+
+/* 03. Headings
+/* - - - - - - - - - - - - - - - - - - - - - - - - - */
+
+h1,h2 {
+  margin: 0;
+  padding:  0;
+}
+
+h2.section {
+  border-bottom: 1px solid #d8d8d8;
+  font-size: 24px;
+  font-weight: bold;
+  margin: 24px 0 12px;
+}
+
+h1 {
+  font-size: 32px;
+  margin: 12px 0;
+}
+
+h2 {
+  font-size: 24px;
+  margin: 12px 0;
+}
+
+h3 {
+  font-size: 18px;
+  margin: 12px 0;
+}
+
+h4 {
+  font-size: 16px;
+  margin: 12px 0;
+}
+
+h5 {
+  font-size: 14px;
+  margin: 12px 0;
+}
+
+h6 {
+  font-size: 13px;
+  margin: 12px 0;
+}
+
+/* 04. Links
+/* - - - - - - - - - - - - - - - - - - - - - - - - - */
+
+a.link-example {
+  color: #2895F1;
+}
+
+a.link-example:hover {
+  color: #2178BF;
+}
+
+a.link-example-dark {
+  color: #fff;
+}
+
+a.link-example-dark:hover {
+  color: #2178BF;
+}
+
+/* 05. Forms
+/* - - - - - - - - - - - - - - - - - - - - - - - - - */
+
+form label {
+  font-weight: bold;
+  line-height: 24px;
+}
+
+form input[type]:not([type=submit]) {
+  background: #F8F8F8;
+  height: 48px;
+  margin-bottom: 16px;
+}
+
+.note {
+  display: block;
+  font-size: 12px;
+  margin-bottom: 12px;
+}
+
+.checkbox {
+  display: inline-block;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 48px;
+  margin: 0 0 0 6px;
+  vertical-align: top;
+}
+
+/* 06. Colors
+/* - - - - - - - - - - - - - - - - - - - - - - - - - */
+
+.color-list {
+  margin-bottom: 24px;
+}
+
+.color {
+  color: black;
+  display: inline-block;
+  font-size: 12px;
+  height: 100px;
+  margin-right: 10px;
+  margin-top: 10px;
+  padding-top: 24px;
+  text-align: center;
+  width: 100px;
+}
+
+/* 07. Alerts
+/* - - - - - - - - - - - - - - - - - - - - - - - - - */
+
+.alert-box.success {
+  background-color: #DFF0D8;
+  border-color: #D6E9C6;
+  color: #3C763D;
+}
+
+.alert-box.info {
+  background-color: #D9EDF7;
+  border-color: #BCE8F1;
+  color: #31708F;
+}
+
+.alert-box.warning {
+  background-color: #FCF8E3;
+  border-color: #FAEBCC;
+  color: #8A6D3B;
+}
+
+.alert-box.alert {
+  background-color: #F2DEDE;
+  border-color: #EBCCD1;
+  color: #A94442;
+}
+
+</style>
+<!-- This CSS it's only for styleguide purposes, don't use in the final product. Thanks! ;) -->
+
+<body>
+
+<div class="row style-guide">
+  <h1 class="title"><span class="lato">gobierno <strong>abierto</strong></span> <span class="right">Guía de estilo web</span></h1>
+
+  <div class="menu small-12 medium-2 column">
+    <div class="index">
+      <ul>
+        <li><a href="#1">1. Introducción</a></li>
+        <li><a href="#2">2. Tipografía</a></li>
+        <li><a href="#3">3. Enlaces</a></li>
+        <li><a href="#4">4. Botones</a></li>
+        <li><a href="#5">5. Formularios</a></li>
+        <li><a href="#6">6. Colores</a></li>
+        <li><a href="#7">7. Alertas</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="small-12 medium-10 column">
+    <h2 class="section" id="1">1. Introducción</h2>
+    <p>¡Hola! hemos creado algunas directrices de cómo usar el diseño en los diferentes elementos.</p>
+    <p><span class="label radius alert">IMPORTANTE</span><br><strong> Esta guía de estilo no es definitiva ya que irá creciendo junto al proyecto, por lo que algunos elementos pueden tener modificaciones en el futuro.</strong></p>
+    <p>En este proyecto para el maquetar el front utilizamos como base el framework <a href="http://foundation.zurb.com/" target="_blank">Foundation</a>. Puedes leer toda su <a href="http://foundation.zurb.com/docs/" target="_blank">documentación</a> pero te recomendamos que leas con atención los siguientes enlaces, ya que resumen muy bien el funcionamiento del framework:</p>
+    <ul>
+      <li><a href="http://foundation.zurb.com/docs/components/grid.html" target="_blank">Grid</a></li>
+      <li><a href="http://foundation.zurb.com/docs/utility-classes.html" target="_blank">Utility classes</a></li>
+      <li><a href="http://foundation.zurb.com/docs/components/kitchen_sink.html" target="_blank">Kitchen shink</a></li>
+    </ul>
+    <p>Para desarrollar el CSS utilizamos <a href="http://sass-lang.com/" target="_blank">SASS</a>. Si clonas el <a href="https://github.com/AyuntamientoMadrid/participacion" target="_blank">repositorio</a> verás la siguiente estructura en las hojas de estilo:</p>
+
+    <ul>
+        <li><code><strong>application.sccs</strong></code> hace un @import del resto de SCSS para compilarlos en un solo fichero.</li>
+        <li><code><strong>debates.sccs</strong></code> todos los estilos relacionados con la sección de debates.</li>
+        <li><code><strong>fonts.sccs</strong></code> desde aquí se important todas las fuentes.</li>
+        <li><code><strong>foundation_and_overrides.sccs</strong></code> fichero SCSS de Foundation con todas sus variables por defecto.</li>
+        <li><code><strong>icons.sccs</strong></code> fuente de iconos personalizada para el proyecto, creada en <a href="http://fontastic.me/" target="_blank">Fontastic.me</a>.</li>
+        <li><code><strong>variables.sccs</strong></code> lista de variables para utilizar en el resto de SCSS. </li>
+    </ul>
+
+    <h2 class="section" id="2">2. Tipografía</h2>
+    <p>La fuente que utilizamos para el texto es <a href="https://www.google.com/fonts/specimen/Open+Sans" target="_blank">Open Sans</a> y utlizamos <a href="https://www.google.com/fonts/specimen/Lato" target="_blank">Lato</a> para el logotipo: <span class="lato">gobierno <strong>abierto</strong></span></p>
+
+    <h1>Heading 1</h1>
+    <code>h1 {font-size: 32px;}</code>
+
+    <h2>Heading 2</h2>
+    <code>h2 {font-size: 24px;}</code>
+
+    <h3>Heading 3</h3>
+    <code>h3 {font-size: 18px;}</code>
+
+    <h4>Heading 4</h4>
+    <code>h4 {font-size: 16px;}</code>
+
+    <h5>Heading 5</h5>
+    <code>h5 {font-size: 14px;}</code>
+
+    <h6>Heading 6</h6>
+    <code>h6 {font-size: 13px;}</code>
+
+    <p class="subtitle"><strong>Ejemplo de texto</strong></p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+
+    <code>p {font-size: 13px; line-height: 24px;}</code>
+
+    <h2 class="section" id="3">3. Enlaces</h2>
+    <p>Los enlaces sobre fondo blanco utilizan el color <code style="color: #2895F1;">#2895F1;</code> y al hacer hover cambian al color <code style="color: #2178BF;">#2178BF;</code> Ejemplo: <a href="#" class="link-example">Esto es un enlace</a></p>
+
+    <p>Los enlaces sobre fondo oscuro utilizan el color <code>#FFFFF;/white</code> y al hacer hover cambian al color <code style="color: #2178BF;">#2178BF;</code> Ejemplo: <a href="#" class="link-example-dark" style="background: black; padding: 0 6px;">Esto es un enlace</a></p>
+
+    <h2 class="section" id="4">4. Botones</h2>
+
+    <p>Utilizamos los botones con bordes redondeados por defecto en Foundation, en varios tamaños.</p>
+
+    <p class="subtitle"><strong>Botones expandidos</strong></p>
+    <a href="#" class="button radius expand">Button default</a>
+    <code>class="button radius expand"></code>
+    <br><br>
+    <a href="#" class="button radius success expand">Button success</a>
+    <code>class="button radius success expand"</code>
+    <br><br>
+    <a href="#" class="button radius secondary expand">Button secondary</a>
+    <code>class="button radius secondary expand"></code>
+    <br><br>
+    <a href="#" class="button radius alert expand">Button alert</a>
+    <code>class="button radius alert expand"</code>
+
+    <p class="subtitle"><strong>Botones normales</strong></p>
+    <a href="#" class="button radius">Button default</a>
+    <code>class="button radius"></code>
+    <br>
+    <a href="#" class="button radius success">Button success</a>
+    <code>class="button radius success"</code>
+    <br>
+    <a href="#" class="button radius secondary">Button secondary</a>
+    <code>class="button radius secondary"></code>
+    <br>
+    <a href="#" class="button radius alert">Button alert</a>
+    <code>class="button radius alert"</code>
+
+    <p class="subtitle"><strong>Botones pequeños</strong></p>
+    <a href="#" class="button radius small">Button default</a>
+    <code>class="button radius small"></code>
+    <br>
+    <a href="#" class="button radius small success">Button success</a>
+    <code>class="button radius small success"</code>
+    <br>
+    <a href="#" class="button radius small secondary">Button secondary</a>
+    <code>class="button radius small secondary"></code>
+    <br>
+    <a href="#" class="button radius small alert">Button alert</a>
+    <code>class="button radius small alert"</code>
+
+    <h2 class="section" id="5">5. Formularios</h2>
+
+      <div class="row">
+        <div class="small-12 medium-8 small-centered column">
+          <form>
+            <label>Nombre</label>
+            <span class="note">Mensaje de información para rellenar el campo</span>
+            <input type="text">
+            <label>Apellidos</label>
+            <input type="text">
+            <label>Mensaje</label>
+            <textarea cols="30" rows="6"></textarea>
+            <label>
+              <input type="checkbox">
+              <span class="checkbox">Acepto las condiciones</span>
+            </label>
+            <button class="radius expand">Publicar</button>
+          </form>
+        </div>
+        <code>form { background: #F8F8F8; height: 48px; margin-bottom: 16px; }</code>
+      </div>
+
+    <h2 class="section" id="6">6. Colores</h2>
+    <div class="color-list">
+      <div class="color" style="background: #E9E9E9">
+        <span>body<br><strong>#E9E9E9</strong></span>
+      </div>
+
+      <div class="color" style="background: #EDEFF0">
+        <span>background<br><strong>#EDEFF0</strong></span>
+      </div>
+
+      <div class="color" style="background: #DEE0E3">
+        <span>border<br><strong>#DEE0E3</strong></span>
+      </div>
+
+      <div class="color" style="background: #0077B9">
+        <span>brand<br><strong>#0077B9</strong></span>
+      </div>
+      <br>
+      <div class="color" style="background: #222222">
+        <span>text<br><strong>#222222</strong></span>
+      </div>
+
+      <div class="color" style="background: #999999">
+        <span>text-medium<br><strong>#999999</strong></span>
+      </div>
+
+      <div class="color" style="background: #CCCCCC">
+        <span>text-light<br><strong>#CCCCCC</strong></span>
+      </div>
+      <br>
+
+      <div class="color" style="background: #2895F1">
+        <span>link<br><strong>#2895F1</strong></span>
+      </div>
+
+      <div class="color" style="background: #2178BF">
+        <span>link-hover<br><strong>#2178BF</strong></span>
+      </div>
+      <br>
+      <div class="color" style="background: #008CCF">
+        <span>debates<br><strong>#008CCF</strong></span>
+      </div>
+
+      <div class="color" style="background: #26AEEE">
+        <span>votes-bg<br><strong>#26AEEE</strong></span>
+      </div>
+
+      <div class="color" style="background: #1F94CB">
+        <span>votes-border<br><strong>#1F94CB</strong></span>
+      </div>
+      <br>
+      <div class="color" style="background: #7BD2A8">
+        <span>votes-like<br><strong>#7BD2A8</strong></span>
+      </div>
+
+      <div class="color" style="background: #5D9E7F">
+        <span>votes-like-act<br><strong>#5D9E7F</strong></span>
+      </div>
+
+      <div class="color" style="background: #EF8585">
+        <span>votes-unlike<br><strong>#EF8585</strong></span>
+      </div>
+
+      <div class="color" style="background: #BD6A6A">
+        <span>votes-unlike-act<br><strong>#BD6A6A</strong></span>
+      </div>
+      <br>
+      <div class="color" style="background: #46DB91">
+        <span>check<br><strong>#46DB91</strong></span>
+      </div>
+    </div>
+
+    <h2 class="section clear" id="7">7. Alertas</h2>
+
+    <div class="alert-box radius success">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+    <code>class="alert-bx radius success"</code>
+    <br><br>
+    <div class="alert-box radius info">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+    <code>class="alert-bx radius info"</code>
+    <br><br>
+    <div class="alert-box radius alert">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+    <code>class="alert-bx radius alert"</code>
+    <br><br>
+    <div class="alert-box radius warning">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+    <code>class="alert-bx radius warning"</code>
+    <br><br>
+    <div class="alert-box radius secondary">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+    <code>class="alert-bx radius secondary"</code>
+
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,10 @@
+<% if resource.errors.any? %>
+  <div id="error_explanation" class="alert-box alert radius">
+    <p>
+      <strong>
+      <%= pluralize resource.errors.count, t("form.error"), t("form.errors") %>
+      <%= t("form.not_saved", resource: t("form.#{resource.class.to_s.downcase}")) %>
+      </strong>
+    </p>
+  </div>
+<% end %>

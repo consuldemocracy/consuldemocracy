@@ -1,0 +1,25 @@
+<h1><%= t("admin.officials.index.title") %></h1>
+
+<div>
+<%= form_for(User.new, url: search_admin_officials_path, as: :user, method: :get) do |f| %>
+  <%= text_field_tag :email, "", label: false, placeholder: t("admin.officials.index.search_email_placeholder") %>
+  <%= f.submit t("admin.officials.index.search") %>
+<% end %>
+</div>
+
+<div>
+<%= page_entries_info @officials %>
+</div>
+
+<div>
+<% @officials.each do |official| %>
+  <%= link_to official.name, edit_admin_official_path(official) %>
+  <%= official.official_position %>
+  <%= t("admin.officials.level_#{official.official_level}") %>
+  <br/><br/>
+<% end %>
+</div>
+
+<div>
+<%= paginate @officials %>
+</div>
