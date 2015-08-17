@@ -1,5 +1,4 @@
 class Admin::TagsController < Admin::BaseController
-  layout 'admin'
   before_action :find_tag, only: [:update, :destroy]
 
   respond_to :html, :js
