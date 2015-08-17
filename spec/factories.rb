@@ -36,4 +36,9 @@ FactoryGirl.define do
     time DateTime.now
     sequence(:name) {|n| "Event #{n} type"}
   end
+
+  factory :visit  do
+    id { SecureRandom.uuid }
+    started_at DateTime.now
+  end
 end

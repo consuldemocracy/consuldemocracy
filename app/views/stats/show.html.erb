@@ -1,9 +1,13 @@
 <h1>Stats</h1>
 
 <h3>Visits</h3>
-<%= line_chart Visit.group_by_day(:started_at).count %>
+<%= visits_chart_tag id: "visits" %>
+
+<h3>Combined</h3>
+<%= events_chart_tag @event_types, id: 'combined' %>
+
 
 <% @event_types.each do |event_type| %>
   <h3><%= event_type.titleize %></h3>
-  <%= line_chart api_stats_path(event: event_type) %>
+  <%= events_chart_tag event_type %>
 <% end %>
