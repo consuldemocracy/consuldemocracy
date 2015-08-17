@@ -1,13 +1,10 @@
 <section role="main">
-  <div id="featured-debates" class="row">
-    <%= render partial: "featured_debate", collection: @featured_debates %>
-  </div>
   <div class="row">
     <div id="debates" class="small-12 medium-9 column debates-list">
       <%= render @debates %>
     </div>
     <div class="small-12 medium-3 column">
-      <aside role="complementary">
+      <aside class="sidebar" role="complementary">
         <%= link_to t("debates.index.create_debate"), new_debate_path, class: 'button radius expand' %>
         <%= render "shared/tag_cloud" %>
       </aside>

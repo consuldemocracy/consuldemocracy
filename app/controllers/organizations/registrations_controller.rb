@@ -1,6 +1,4 @@
 class Organizations::RegistrationsController < Devise::RegistrationsController
-  include RecaptchaHelper
-
   def new
     super do |user|
       user.build_organization
@@ -8,22 +6,21 @@ class Organizations::RegistrationsController < Devise::RegistrationsController
   end
 
   def create
-    if verify_captcha?(resource)
+    build_resource(sign_up_params)
+    if resource.valid_with_captcha?
       super do |user|
         # Removes unuseful "organization is invalid" error message
         user.errors.messages.delete(:organization)
       end
     else
-      build_resource(sign_up_params)
-      flash.now[:alert] = t('recaptcha.errors.verification_failed')
-      respond_with resource
+      render :new
     end
   end
 
   private
 
     def sign_up_params
-      params.require(:user).permit(:email, :password, :phone_number, :password_confirmation, organization_attributes: [:name])
+      params.require(:user).permit(:email, :password, :phone_number, :password_confirmation, :captcha, :captcha_key, organization_attributes: [:name])
     end
 
 end

@@ -8,7 +8,7 @@ es:
       confirmation_instructions:
         welcome: "Bienvenido"
         text: "Puedes confirmar tu cuenta de correo electrónico en el siguiente enlace:"
-        confirm_link: "Confirmar my cuenta"
+        confirm_link: "Confirmar mi cuenta"
       reset_password_instructions:
         hello: "Hola"
         text: "Se ha solicitado un enlace para cambiar tu contraseña, puedes hacerlo en el siguiente enlace:"
@@ -29,7 +29,6 @@ es:
       edit:
         title: "Cambia tu contraseña"
         password_label: "Contraseña nueva"
-        min_length: "(mínimo %{min} caracteres)"
         password_confirmation_label: "Confirmar contraseña nueva"
         change_submit: "Cambiar mi contraseña"
       new:
@@ -58,7 +57,6 @@ es:
           email_label: "Email"
           phone_number_label: "Teléfono"
           password_label: "Contraseña"
-          min_length: "(mínimo %{min} caracteres)"
           password_confirmation_label: "Confirmar contraseña"
           submit: "Registrarse"
     organizations:
@@ -69,7 +67,6 @@ es:
           email_label: "Email"
           password_label: "Contraseña"
           phone_number_label: "Teléfono"
-          min_length: "(mínimo %{min} caracteres)"
           password_confirmation_label: "Confirmar contraseña"
           submit: "Registrarse"
     sessions:

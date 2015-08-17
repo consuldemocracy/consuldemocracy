@@ -3,44 +3,71 @@ en:
     header:
       external_link_transparency: Transparency
       external_link_opendata: Open data
+      external_link_blog: Blog
       open_gov: "%{open} government"
       open: "Open"
       participation: Participation
       menu: Menu
       open_city: We are opening Madrid
       open_city_slogan: So the citizens can decide what kind of city they want.
-      create_debate: Create a debate
+      see_all_debates: See all debates
       my_account_link: My account
       language: Site language
+      administration: Administration
+      moderation: Moderation
     footer:
       copyright: "Ayuntamiento de Madrid, 2015. All rights reserved"
+  form:
+      error: error
+      errors: errors
+      not_saved: "prohibited this %{resource} from being saved:"
+      accept_terms: I accept the privacy policy and the legal terms
+      user: account
+      debate: debate
   debates:
     index:
       create_debate: Create a debate
     debate:
       debate: Debate
-      vote: vote
-      votes: votes
-      comment: Comment
-      comments: Comments
+      comments:
+        zero: No comments
+        one: 1 Comment
+        other: "%{count} Comments"
+      votes:
+        zero: No votes
+        one: 1 vote
+        other: "%{count} votes"
+    comment:
+      responses:
+        zero: No Responses
+        one: 1 Response
+        other: "%{count} Responses"
+      votes:
+        zero: No votes
+        one: 1 vote
+        other: "%{count} votes"
+      votes_weighted_score: "Total: %{score}"
     form:
-      error: error
-      errors: errors
-      not_saved: "prohibited this debate from being saved:"
       debate_title: Debate title
       title_instructions: "SBe clear and precise with the title, but make it informative"
       debate_text: Ellaborate your opinion
       text_instructions: "Explain your opinion, go into details, tell us what's the purpose of your idea"
       tags_label: Topics
-      tags_instructions: Comma separated
-      accept_terms: I accept the privacy policy and the legal terms
+      tags_instructions: >
+        Tag this idea. You can choose among our proposals on the list or add any other topic you want by
+        writing them separated by "," and then pressing "enter".
+        Some suggestions:
     show:
       back_link: Back
-      comment: Comment
-      comments: Comments
+      comments_title: Comments
+      comments:
+        zero: No comments
+        one: 1 Comment
+        other: "%{count} Comments"
       leave_comment: Write a comment
       login_to_comment: Log in to participate
       edit_debate_link: Edit
+      share: Share
     edit:
       editing: Edit debate
       show_link: Show debate
@@ -61,6 +88,9 @@ en:
     agree: I agree
     disagree: I disagree
     supports: Supports
+    unauthenticated: "You need to %{signin} or %{signup} before continuing."
+    signin: sign in
+    signup: sign up
   account:
     show:
       title: "My account"
@@ -68,17 +98,25 @@ en:
       email_on_debate_comment_label: "Receive email when someone comments on my debates"
       email_on_comment_reply_label: "Receive email when someone replies to my comments"
       change_credentials_link: "Change my credentials"
+      avatar: "Avatar"
+      personal: "Personal data"
       first_name_label: "First Name"
       last_name_label: "Last Name"
       phone_number_label: "Phone number"
+      organization_name_label: "Organization name"
       use_nickname_label: "Use nickname"
       nickname_label: "Nickname"
-  recaptcha:
-    errors:
-      verification_failed: "The captcha verification failed"
+      notifications: Notifications
+  simple_captcha:
+    placeholder: "Enter the image value"
+    label: "Enter the code in the box"
+    refresh_button_text: "Refresh"
+    message:
+      user: "secret code did not match with the image"
+      debate: "secret code did not match with the image"
   shared:
     tags_cloud:
-        tags: Tags
+        tags: Topics
   mailer:
     comment:
       subject: Someone has commented on your debate

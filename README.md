@@ -20,7 +20,7 @@ Las herramientas utilizadas para el frontend no están cerradas aún. Los estilo
 
 ## Configuración para desarrollo y tests
 
-Prerequisitos: tener instalado git, Ruby 2.2.2, la gema `bundler`, y una librería moderna de PostgreSQL.
+Prerequisitos: tener instalado git, ImageMagick, Ruby 2.2.2, la gema `bundler`, y una librería moderna de PostgreSQL.
 
 ```
 cd participacion
@@ -43,7 +43,7 @@ bundle exec bin/rspec
 
 ## Licencia
 
-El código de este proyecto está publicado bajo la licencia MIT (ver MIT-license.md)
+El código de este proyecto está publicado bajo la licencia AFFERO GPL v3 (ver [LICENSE-AGPLv3.txt](LICENSE-AGPLv3.txt))
 
 ## Contribuciones
 

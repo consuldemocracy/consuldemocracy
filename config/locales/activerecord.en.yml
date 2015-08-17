@@ -3,6 +3,7 @@ en:
     models:
       comment: Comment
       debate: Debate
+      tag: Topic
       user: User
       vote: Vote
       organization: Organization
@@ -21,5 +22,6 @@ en:
         last_name: "Last name"
         nickname: Nickname
         password: Password
+        phone_number: Phone number
       organization:
         name: Organization name

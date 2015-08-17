@@ -22,3 +22,6 @@
 /config/deploy-secrets.yml
 
 /coverage
+
+# Mac finder artifacts
+.DS_Store

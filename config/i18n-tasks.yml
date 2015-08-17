@@ -89,6 +89,7 @@ search:
 # - '{devise,simple_form}.*'
 ignore_missing:
   - 'unauthorized.*'
+  - 'errors.messages.blank'
 
 ## Consider these keys used:
 ignore_unused:
@@ -99,6 +100,7 @@ ignore_unused:
 # - 'simple_form.{error_notification,required}.:'
 ignore_unused:
   - 'unauthorized.*'
+  - 'simple_captcha.*'
 
 ## Exclude these keys from the `i18n-tasks eq-base' report:
 # ignore_eq_base:

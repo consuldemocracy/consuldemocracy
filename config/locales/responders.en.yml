@@ -4,12 +4,11 @@ en:
       create:
         notice: '%{resource_name} was successfully created.'
         # alert: '%{resource_name} could not be created.'
-      # update:
-        # notice: '%{resource_name} was successfully updated.'
+      update:
+        notice: '%{resource_name} was successfully updated.'
         # alert: '%{resource_name} could not be updated.'
       # destroy:
         # notice: '%{resource_name} was successfully destroyed.'
         # alert: '%{resource_name} could not be destroyed.'
       save_changes:
         notice: "Saved"
-

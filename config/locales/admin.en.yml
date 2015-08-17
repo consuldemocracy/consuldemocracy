@@ -3,3 +3,11 @@ en:
     dashboard:
       index:
         title: Administration
+    tags:
+      index:
+        title: 'Debate topics'
+        add_tag: 'Add a new debate topic'
+      mark_as_featured: 'Mark as featured'
+      name:
+        placeholder: 'Write a topic'
+      destroy: Delete Tag

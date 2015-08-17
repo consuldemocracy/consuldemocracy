@@ -11,6 +11,7 @@ feature 'Users' do
     fill_in 'user_email',                 with: 'manuela@madrid.es'
     fill_in 'user_password',              with: 'judgementday'
     fill_in 'user_password_confirmation', with: 'judgementday'
+    fill_in 'user_captcha',               with: correct_captcha_text
 
     click_button 'Sign up'
 
@@ -22,8 +23,16 @@ feature 'Users' do
     expect(page).to have_content "Your email address has been successfully confirmed"
   end
 
+  scenario 'Errors on sign up' do
+    visit '/'
+    click_link 'Sign up'
+    click_button 'Sign up'
+
+    expect(page).to have_content error_message
+  end
+
   scenario 'Sign in' do
-    user = create(:user, email: 'manuela@madrid.es', password: 'judgementday')
+    create(:user, email: 'manuela@madrid.es', password: 'judgementday')
 
     visit '/'
     click_link 'Log in'

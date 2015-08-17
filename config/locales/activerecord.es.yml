@@ -3,6 +3,7 @@ es:
     models:
       comment: Comentario
       debate: Debate
+      tag: Tema
       user: Usuario
       vote: Voto
       organization: Organización
@@ -21,5 +22,6 @@ es:
         last_name: Apellidos
         nickname: Pseudónimo
         password: Contraseña
+        phone_number: Teléfono
       organization:
         name: Nombre de organización

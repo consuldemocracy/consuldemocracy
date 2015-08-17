@@ -21,15 +21,6 @@ feature 'Organizations' do
     expect(user.organization).to_not be_verified
   end
 
-  scenario "Organization fields are validated" do
-    visit new_organization_registration_path
-    click_button 'Sign up'
-
-    expect(page).to have_content "Email can't be blank"
-    expect(page).to have_content "Password can't be blank"
-    expect(page).to have_content "Organization name can't be blank"
-  end
-
   scenario 'Shared links' do
     visit new_user_registration_path
     expect(page).to have_link "Sign up as an organization"

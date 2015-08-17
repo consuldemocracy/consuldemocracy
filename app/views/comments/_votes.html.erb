@@ -1,11 +1,20 @@
+<span>
+  <!-- <%= t('debates.comment.votes_weighted_score', score: comment.weighted_score) %> -->
+  <%= t('debates.comment.votes', count: comment.total_votes) %>
+</span>
+&nbsp;|&nbsp;
 <span class="in_favor">
-  <%= link_to "up", vote_comment_path(comment, value: 'yes'),
-    method: "post", remote: true %>
+  <%= link_to vote_comment_path(comment, value: 'yes'),
+      method: "post", remote: true do %>
+      <i class="icon-angle-up"></i>
+  <% end %>
   <%= comment.get_likes.size %>
 </span>
 
 <span class="against">
-  <%= link_to "down", vote_comment_path(comment, value: 'no'),
-      method: "post", remote: true %>
+  <%= link_to vote_comment_path(comment, value: 'no'),
+      method: "post", remote: true do %>
+      <i class="icon-angle-down"></i>
+  <% end %>
   <%= comment.get_dislikes.size %>
 </span>

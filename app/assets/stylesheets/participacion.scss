@@ -2,7 +2,7 @@
 //
 // 01. Variables
 // 02. Mixins
-// 02. Global styles
+// 03. Global styles
 // 04. Header
 // 05. Footer
 // 06. Tags
@@ -30,7 +30,7 @@
 
   a {
     color: white;
-    font-family: 'Lato';
+    font-family: 'Lato' !important;
     font-size: rem-calc(20);
     font-weight: lighter;
     line-height: $line-height*4;
@@ -43,7 +43,7 @@
     }
 
     @media (min-width: 480px) {
-      font-size: rem-calc(30);
+      font-size: rem-calc(28);
       span {
         font-size: rem-calc(20);
       }
@@ -60,17 +60,34 @@
 }
 
 body {
-  background: $background;
+  background: $body;
   font-family: $font-family-sans-serif;
   font-size: rem-calc(13);
   font-weight: normal;
   text-rendering: optimizeLegibility;
+
+  &::selection, ::-moz-selection {
+    background: $brand !important;
+    color: white !important;
+  }
 }
 
 p {
   font-size: rem-calc(13);
   line-height: $line-height;
-  margin-bottom: $line-height/2;
+  margin-bottom: rem-calc(12);
+}
+
+a {
+  color: $link;
+
+  &:hover {
+    color: $link-hover;
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-family-sans-serif;
 }
 
 .button {
@@ -93,9 +110,18 @@ p {
   max-width: 100% !important;
 }
 
-::selection, ::-moz-selection {
-  background: $brand;
-  color: white;
+.sidebar {
+  margin-top: rem-calc(24);
+  margin-bottom: rem-calc(48);
+}
+
+.sidebar-divider {
+  border-top: 1px solid $border;
+  margin-top: rem-calc(24);
+
+  &:first-child {
+    margin-top: 0;
+  }
 }
 
 // 04. Header
@@ -105,10 +131,10 @@ header {
   background: url('home_header_bg.jpg');
   background-position: 50% 50%;
   background-size: cover;
-  min-height: $line-height*20;
+  min-height: rem-calc(480);
 
   &.results {
-    min-height: $line-height*8;
+    min-height: rem-calc(192);
   }
 
   h1 {
@@ -116,7 +142,7 @@ header {
     font-size: rem-calc(45);
     font-weight: bolder;
     line-height: $line-height*3;
-    margin: $line-height 0 0 0;
+    margin: rem-calc(24) 0 0 0;
     padding: 0;
   }
 
@@ -131,14 +157,14 @@ header {
   .button {
     color: white;
     font-family: inherit;
-    margin-top: $line-height;
+    margin-top: rem-calc(24);
   }
 
   .home-page {
     .button {
       color: white;
       font-family: inherit;
-      margin-top: $line-height*2;
+      margin-top: rem-calc(48);
     }
   }
 
@@ -184,7 +210,7 @@ header {
 .top-bar {
   background: rgba(0,0,0,.5);
   color: white;
-  height: $line-height*4;
+  height: rem-calc(96);
   max-width: 1170px !important;
 
   .name a {
@@ -201,13 +227,13 @@ header {
     }
 
     img {
-      margin-right: $line-height/2;
+      margin-right: rem-calc(12);
     }
   }
 }
 
 .top-bar-section {
-  margin-right: $line-height;
+  margin-right: rem-calc(24);
 
   ul li > a {
     font-size: rem-calc(14);
@@ -230,7 +256,7 @@ header {
 
   li.active:not(.has-form) a:not(.button) {
     background: none;
-    height: $line-height*4;
+    height: rem-calc(96);
     line-height: $line-height*4;
   }
 }
@@ -238,11 +264,11 @@ header {
 .top-links {
   color: white;
   font-size: rem-calc(14);
-  height: $line-height*3;
-  padding: $line-height/2 0;
+  height: rem-calc(72);
+  padding: rem-calc(12) 0;
 
   @media (min-width: 480px) {
-    height: $line-height*2;
+    height: rem-calc(48);
   }
 
   a {
@@ -281,28 +307,26 @@ footer {
   padding-top: $line-height;
 }
 
-
 // 06. Tags
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
 .tags {
 
   a {
-    background: $tags-bg;
-    border: 1px solid $tags-border;
+    background: $background;
+    border: 1px solid $border;
     border-radius: 3px;
-    color: $tags-color;
+    color: $text-medium;
     display: inline-block;
     font-size: rem-calc(13);
     line-height: rem-calc(22);
     margin-bottom: rem-calc(8);
-    margin-right: rem-calc(8);
     padding: 0 rem-calc(6);
 
     &:hover {
       color: $link;
       cursor: pointer;
-      background: #e5f1f8;
+      background: #E5F1F8;
       border: 1px solid $brand;
     }
   }
@@ -312,14 +336,28 @@ footer {
   @extend .tags;
 
   h3 {
-    font-size: rem-calc(24);
-    font-weight: bold;
-    line-height: $line-height*2;
-    margin: 0;
+    border-top: 1px solid $votes-border;
+    display: inline-block;
+    font-family: $font-family-sans-serif;
+    font-size: rem-calc(16);
+    margin: -1px 0 rem-calc(12);
+    padding-top: rem-calc(6);
+    text-transform: uppercase;
   }
 
   a {
-    padding: $line-height/4 $line-height/3;
+    padding: rem-calc(6) rem-calc(8);
+
+    .label {
+      color: white;
+    }
+
+    &:hover {
+
+      .label {
+        background: $brand;
+      }
+    }
   }
 }
 
@@ -328,10 +366,10 @@ footer {
 
 .auth-page {
   background: url('auth_bg.jpg');
-  margin-top: $line-height;
+  margin-top: rem-calc(24);
 
   @media (min-width: 480px) {
-    margin-top: $line-height*2;
+    margin-top: rem-calc(48);
   }
 
   h1 {
@@ -340,10 +378,22 @@ footer {
 }
 
 .auth {
-  min-height: $line-height*20;
+  min-height: rem-calc(480);
+
+  h2 {
+    clear: both;
+    font-size: rem-calc(30);
+    font-weight: bold;
+    line-height: $line-height*2;
+  }
+
+  .back, .icon-angle-left {
+    @include back;
+  }
 
   .panel {
     background: white;
+    border: 0;
 
     h1 {
       font-size: rem-calc(30);
@@ -362,10 +412,19 @@ form {
     line-height: $line-height;
   }
 
-  input[type]:not([type=submit]) {
+  input[type]:not([type=submit]):not([type=file]) {
     background: $input-bg;
-    height: $line-height*2;
+    height: rem-calc(48);
     margin-bottom: rem-calc(16);
+  }
+
+  input[type="checkbox"] {
+    height: rem-calc(24) !important;
+    margin: 0 !important;
+  }
+
+  input[type=file] {
+    margin: rem-calc(12) 0;
   }
 
   .note {
@@ -375,16 +434,30 @@ form {
   }
 
   .ckeditor {
-    margin-bottom: $line-height;
-    min-height: $line-height*14;
+    margin-bottom: rem-calc(24);
+    min-height: rem-calc(336);
   }
 
   .checkbox {
     display: inline-block;
     font-size: rem-calc(14);
-    line-height: $line-height*2;
+    font-weight: normal;
+    line-height: $line-height;
     margin: 0 0 0 rem-calc(6);
     vertical-align: top;
+  }
+
+  .captcha {
+    border: 0;
+    padding: rem-calc(12) 0;
+
+    input {
+      margin-bottom: 0 !important;
+    }
+  }
+
+  .button {
+    margin-top: rem-calc(24);
   }
 }
 
@@ -423,23 +496,14 @@ form {
 
 .account {
   background: white;
-  min-height: $line-height*23;
-  padding-top: $line-height;
-
-  input[type="checkbox"], .checkbox {
-    margin-top: -(rem-calc(12));
-  }
-
-  .back, .icon-angle-left {
-    @include back;
-  }
+  padding-top: rem-calc(24);
 
   h1 {
     clear: both;
     font-size: rem-calc(36);
     font-weight: bold;
     line-height: $line-height*2;
-    margin-bottom: $line-height;
+    margin-bottom: rem-calc(24);
   }
 
   .icon-comment-quotes {
@@ -449,18 +513,36 @@ form {
     opacity: .5;
   }
 
+  .avatar {
+    margin-bottom: rem-calc(24);
+  }
+
+  .initialjs-avatar {
+    margin-bottom: $line-height;
+  }
+
   h2 {
+    clear: both;
+    font-size: rem-calc(30);
+    font-weight: bold;
+    line-height: $line-height;
+    margin: 0;
+    margin-bottom: rem-calc(12);
+  }
+
+  h3 {
     clear: both;
     font-size: rem-calc(20);
     font-weight: bold;
     line-height: $line-height;
     margin: 0;
+    margin-bottom: rem-calc(12);
   }
 
   .recommendations {
     list-style-type: none;
     margin-left: 0;
-    margin-top: $line-height;
+    margin-top: rem-calc(24);
 
     li {
       font-size: rem-calc(12);
