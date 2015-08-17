@@ -15,7 +15,7 @@
 <% @users.each do |user| %>
   <%= link_to user.name, edit_admin_official_path(user) %>
   <%= user.official_position %>
-  <%= user.official_level %>
+  <%= t("admin.officials.level_#{user.official_level}") %>
   <%= link_to user.official? ? t("admin.officials.search.edit_official") : t("admin.officials.search.make_official"), edit_admin_official_path(user) %>
 <% end %>
 </div>

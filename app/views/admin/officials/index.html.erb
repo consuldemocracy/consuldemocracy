@@ -15,7 +15,7 @@
 <% @officials.each do |official| %>
   <%= link_to official.name, edit_admin_official_path(official) %>
   <%= official.official_position %>
-  <%= official.official_level %>
+  <%= t("admin.officials.level_#{official.official_level}") %>
   <br/><br/>
 <% end %>
 </div>

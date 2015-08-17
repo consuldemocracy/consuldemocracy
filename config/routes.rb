@@ -32,6 +32,8 @@ Rails.application.routes.draw do
     resources :officials, only: [:index, :edit, :update, :destroy] do
       collection { get :search}
     end
+
+    resources :settings, only: [:index, :update]
   end
 
   namespace :moderation do

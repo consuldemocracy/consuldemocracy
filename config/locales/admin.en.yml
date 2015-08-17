@@ -1,12 +1,19 @@
 en:
   admin:
+    settings:
+      index:
+        title: Global settings
+      flash:
+        updated: 'Setting updated!'
     dashboard:
       index:
         title: Administration
     menu:
+      settings: Global settings
       debate_topics: Debate topics
       hidden_debates: Hidden debates
       hidden_comments: Hidden comments
+      officials: Officials
     actions:
       hide: Hide
       restore: Restore

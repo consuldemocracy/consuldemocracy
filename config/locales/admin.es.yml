@@ -1,12 +1,19 @@
 es:
   admin:
+    settings:
+      index:
+        title: Configuración global
+      flash:
+        updated: 'Valor actualizado'
     dashboard:
       index:
         title: Administración
     menu:
+      settings: Configuración global
       debate_topics: Temas de debate
       hidden_debates: Debates ocultos
       hidden_comments: Comentarios ocultos
+      officials: Cargos públicos
     actions:
       hide: Ocultar
       restore: Permitir
