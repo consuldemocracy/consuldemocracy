@@ -27,6 +27,14 @@ en:
   debates:
     index:
       create_debate: Create a debate
+      showing: You are seeing
+      tag: with the topic
+      filter_debates: debates
+      filter_initiatives: initiatives
+      filter_debates_and_initiatives: debates and initiatives
+      filter_news: the newest
+      filter_votes: the most voted
+      filter_rated: the best rated
     debate:
       debate: Debate
       comments:
@@ -124,3 +132,5 @@ en:
     default: "You are not authorized to access this page."
     manage:
       all: "You are not authorized to %{action} %{subject}."
+  welcome:
+    featured_debates: Features debates

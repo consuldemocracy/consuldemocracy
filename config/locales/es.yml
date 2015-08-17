@@ -27,6 +27,14 @@ es:
   debates:
     index:
       create_debate: Crea un debate
+      showing: "Estás viendo"
+      tag: "con el tema"
+      filter_debates: debates
+      filter_initiatives: iniciativas
+      filter_debates_and_initiatives: debates e iniciativas
+      filter_news: "más nuevos"
+      filter_votes: "más votados"
+      filter_rated: mejor valorados
     debate:
       debate: Debate
       comments:
@@ -122,17 +130,7 @@ es:
       subject: Alguien ha respondido a tu comentario
   unauthorized:
     default: "No tienes permiso para acceder a esta página."
-    index:
-      all: "No tienes permiso para listar %{subject}"
-    show:
-      all: "No tienes permiso para ver %{subject}"
-    edit:
-      all: "No tienes permiso para editar %{subject}"
-    update:
-      all: "No tienes permiso para modificar %{subject}"
-    create:
-      all: "No tienes permiso para crear %{subject}"
-    delete:
-      all: "No tienes permiso para borrar %{subject}"
     manage:
       all: "No tienes permiso para realizar la acción '%{action}' sobre %{subject}."
+  welcome:
+    featured_debates: Debates destacados

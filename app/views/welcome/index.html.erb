@@ -1,5 +1,10 @@
 <section role="main">
-  <div id="featured-debates" class="featured-debates row">
+  <div class="filters row">
+    <div class="small-12 column">
+      <h2><%= t("welcome.featured_debates") %></h2>
+    </div>
+  </div>
+  <div id="featured-debates" class="row">
     <%= render partial: "featured_debate", collection: @featured_debates %>
   </div>
 </section>
