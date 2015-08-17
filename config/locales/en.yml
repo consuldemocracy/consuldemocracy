@@ -15,6 +15,10 @@ en:
       language: Site language
       administration: Administration
       moderation: Moderation
+      welcome: Welcome
+      news: News
+      debates: Debates
+      initiatives: Initiatives
     footer:
       copyright: "Ayuntamiento de Madrid, 2015. All rights reserved"
   form:

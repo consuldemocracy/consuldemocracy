@@ -15,6 +15,10 @@ es:
       language: Idioma de la página
       administration: Administar
       moderation: Moderar
+      welcome: Portada
+      news: Novedades
+      debates: Debates
+      initiatives: Iniciativas
     footer:
       copyright: "Ayuntamiento de Madrid, %{year}. Todos los derechos reservados"
   form:
