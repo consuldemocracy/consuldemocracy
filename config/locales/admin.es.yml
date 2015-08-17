@@ -1,5 +1,8 @@
 es:
   admin:
+    menu:
+      tags: Temas de debate
+      organizations: Organizaciones
     dashboard:
       index:
         title: Administración

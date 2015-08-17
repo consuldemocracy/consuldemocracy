@@ -1,5 +1,8 @@
 en:
   admin:
+    menu:
+      tags: Tags
+      organizations: Organizations
     dashboard:
       index:
         title: Administration
