@@ -46,6 +46,7 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.0'
   gem 'capybara'
   gem 'factory_girl_rails'
+  gem 'fuubar'
   gem 'launchy'
   gem 'quiet_assets'
   gem 'letter_opener_web', '~> 1.2.0'
