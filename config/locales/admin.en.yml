@@ -30,6 +30,12 @@ en:
       restore:
         success: The debate has been restored
     officials:
+      level_0: Level 0
+      level_1: Level 1
+      level_2: Level 2
+      level_3: Level 3
+      level_4: Level 4
+      level_5: Level 5
       index:
         title: Officials
         search_email_placeholder: 'Search user by email'

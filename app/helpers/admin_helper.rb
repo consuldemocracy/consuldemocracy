@@ -5,7 +5,11 @@ module AdminHelper
   end
 
   def official_level_options
-    1..5
+    options = []
+    (0..5).each do |i|
+      options << [[t("admin.officials.level_#{i}"), Setting.value_for("official_level_#{i}_name")].compact.join(': '), i]
+    end
+    options
   end
 
   private
