@@ -20,7 +20,7 @@ Las herramientas utilizadas para el frontend no están cerradas aún. Los estilo
 
 ## Configuración para desarrollo y tests
 
-Prerequisitos: tener instalado git, ImageMagick, Ruby 2.2.2, la gema `bundler`, y una librería moderna de PostgreSQL.
+Prerequisitos: tener instalado git, ImageMagick, Ruby 2.2.2, la gema `bundler`, y PostgreSQL (9.4 o superior).
 
 ```
 cd participacion

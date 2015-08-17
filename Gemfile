@@ -36,6 +36,9 @@ gem 'initialjs-rails'
 gem 'unicorn'
 gem 'paranoia'
 
+gem 'ahoy_matey'  # stats
+gem 'groupdate'   # group temporary data
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
