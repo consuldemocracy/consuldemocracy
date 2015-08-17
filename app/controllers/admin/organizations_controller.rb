@@ -1,4 +1,4 @@
-class Moderation::OrganizationsController < Moderation::BaseController
+class Admin::OrganizationsController < Admin::BaseController
 
   load_and_authorize_resource
 

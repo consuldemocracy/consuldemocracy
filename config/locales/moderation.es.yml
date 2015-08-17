@@ -3,11 +3,5 @@ es:
     dashboard:
       index:
         title: Moderación
-    organizations:
-      index:
-        title: Organizaciones
-        verify: Verificar
-        reject: Rechazar
-        verified: Verificado
-        rejected: Rechazado
+
 

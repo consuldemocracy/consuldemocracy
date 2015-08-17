@@ -11,3 +11,10 @@ en:
       name:
         placeholder: 'Write a topic'
       destroy: Delete Tag
+    organizations:
+      index:
+        title: Organizations
+        verify: Verify
+        reject: Reject
+        verified: Verified
+        rejected: Rejected

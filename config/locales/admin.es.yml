@@ -3,6 +3,17 @@ es:
     dashboard:
       index:
         title: Administración
+    organizations:
+      index:
+        title: Organizaciones
+        verify: Verificar
+        reject: Rechazar
+        verified: Verificado
+        rejected: Rechazado
+        filter: Filtro
+        filter_all: Todas
+        filter_verified: Verificadas
+        filter_rejected: Rechazadas
     tags:
       index:
         title: 'Temas de debate'

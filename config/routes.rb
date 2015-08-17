@@ -28,18 +28,18 @@ Rails.application.routes.draw do
 
   namespace :admin do
     root to: "dashboard#index"
-
-    resources :tags, only: [:index, :create, :update, :destroy]
-  end
-
-  namespace :moderation do
-    root to: "dashboard#index"
     resources :organizations, only: :index do
       member do
         put :verify
         put :reject
       end
     end
+
+    resources :tags, only: [:index, :create, :update, :destroy]
+  end
+
+  namespace :moderation do
+    root to: "dashboard#index"
   end
 
   # Example of regular route:

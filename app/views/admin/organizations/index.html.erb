@@ -1,0 +1,34 @@
+<div class="left">
+
+  <h1><%= t('admin.organizations.index.title') %></h1>
+
+  <table>
+    <% @organizations.each do |organization| %>
+    <tr>
+      <td><%= organization.name %></td>
+      <td><%= organization.email %></td>
+      <td><%= organization.phone_number %></td>
+      <% if organization.verified? %>
+        <td><%= t('admin.organizations.index.verified') %></td>
+      <% end %>
+      <% if can? :verify, organization %>
+        <td><%= link_to t('admin.organizations.index.verify'),
+                  verify_admin_organization_path(organization),
+                  method: :put
+            %>
+        </td>
+      <% end %>
+      <% if organization.rejected? %>
+        <td><%= t('admin.organizations.index.rejected') %></td>
+      <% end %>
+      <% if can? :reject, organization %>
+        <td><%= link_to t('admin.organizations.index.reject'),
+                  reject_admin_organization_path(organization),
+                  method: :put
+            %>
+        </td>
+      <% end %>
+    </tr>
+  <% end %>
+  </table>
+</div>
