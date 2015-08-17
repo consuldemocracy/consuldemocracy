@@ -11,7 +11,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150815154430) do
+ActiveRecord::Schema.define(version: 20150817150457) do
+
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -57,6 +58,11 @@ ActiveRecord::Schema.define(version: 20150815154430) do
   end
 
   add_index "moderators", ["user_id"], name: "index_moderators_on_user_id", using: :btree
+
+  create_table "settings", force: :cascade do |t|
+    t.string "key"
+    t.string "value"
+  end
 
   create_table "simple_captcha_data", force: :cascade do |t|
     t.string   "key",        limit: 40
@@ -111,6 +117,8 @@ ActiveRecord::Schema.define(version: 20150815154430) do
     t.boolean  "use_nickname",            default: false, null: false
     t.boolean  "email_on_debate_comment", default: false
     t.boolean  "email_on_comment_reply",  default: false
+    t.string   "official_position"
+    t.integer  "official_level",          default: 0
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree

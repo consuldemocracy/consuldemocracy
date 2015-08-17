@@ -21,3 +21,5 @@ es:
         last_name: Apellidos
         nickname: Pseudónimo
         password: Contraseña
+        official_position: Cargo público
+        official_level: Nivel del cargo

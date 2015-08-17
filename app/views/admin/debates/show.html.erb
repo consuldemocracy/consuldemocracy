@@ -1,13 +1,11 @@
-<div class="left">
-  <h1><%= t("admin.debates.index.title") %></h1>
+<h1><%= t("admin.debates.index.title") %></h1>
+
+<div>
+  <div><%= @debate.title %></div>
+  <div><%= @debate.description %></div>
 
   <div>
-    <div><%= @debate.title %></div>
-    <div><%= @debate.description %></div>
-
-    <div>
-      <%= link_to t('admin.actions.restore'), restore_admin_debate_path(@debate),
-                method: :put, data: { confirm: t('admin.actions.confirm') } %>
-    </div>
+    <%= link_to t('admin.actions.restore'), restore_admin_debate_path(@debate),
+              method: :put, data: { confirm: t('admin.actions.confirm') } %>
   </div>
 </div>

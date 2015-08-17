@@ -1,29 +1,26 @@
-<div class="left">
-  <h1><%= t("admin.tags.index.add_tag") %></h1>
+<h1><%= t("admin.tags.index.add_tag") %></h1>
 
-  <%= form_for(@tag, url: admin_tags_path, as: :tag) do |f| %>
-    <%= f.text_field :name, placeholder: t("admin.tags.name.placeholder") %>
-    <%= f.check_box :featured, label: false %>
-    <%= t("admin.tags.mark_as_featured") %>
-    <%= f.submit(class: "button radius small") %>
+<%= form_for(@tag, url: admin_tags_path, as: :tag) do |f| %>
+  <%= f.text_field :name, placeholder: t("admin.tags.name.placeholder") %>
+  <%= f.check_box :featured, label: false %>
+  <%= t("admin.tags.mark_as_featured") %>
+  <%= f.submit(class: "button radius small") %>
+<% end %>
+
+<h1><%= t("admin.tags.index.title") %></h1>
+
+<ul>
+  <% @tags.each do |tag| %>
+    <li>
+      <strong><%= tag.name %></strong>
+
+      <%= form_for(tag, url: admin_tag_path(tag), as: :tag, html: { id: "edit_tag_#{tag.id}"}) do |f| %>
+        <%= f.check_box :featured, label: false, id: "tag_featured_#{tag.id}" %>
+        <%= t("admin.tags.mark_as_featured") %>
+        <%= f.submit(class: "button radius tiny") %>
+        <%= link_to t("admin.tags.destroy"), admin_tag_path(tag), method: :delete, class: 'button tiny alert' %>
+      <% end %>
+
+    </li>
   <% end %>
-
-
-  <h1><%= t("admin.tags.index.title") %></h1>
-
-  <ul>
-    <% @tags.each do |tag| %>
-      <li>
-        <strong><%= tag.name %></strong>
-
-        <%= form_for(tag, url: admin_tag_path(tag), as: :tag, html: { id: "edit_tag_#{tag.id}"}) do |f| %>
-          <%= f.check_box :featured, label: false, id: "tag_featured_#{tag.id}" %>
-          <%= t("admin.tags.mark_as_featured") %>
-          <%= f.submit(class: "button radius tiny") %>
-          <%= link_to t("admin.tags.destroy"), admin_tag_path(tag), method: :delete, class: 'button tiny alert' %>
-        <% end %>
-
-      </li>
-    <% end %>
-  </ul>
-</div>
+</ul>

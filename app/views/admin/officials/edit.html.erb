@@ -1,0 +1,14 @@
+<h1><%= t("admin.officials.edit.title") %></h1>
+
+<%= @user.name %> (<%= @user.email %>)
+<%= form_for @user, url: admin_official_path(@user)  do |f| %>
+  <%= f.text_field :official_position %>
+  <%= f.select :official_level, official_level_options %>
+  <%= f.submit %>
+
+  <% if @user.official? %>
+    <%= link_to t("admin.officials.edit.destroy"), admin_official_path(@user), method: :delete, class: 'button tiny alert' %>
+  <% else %>
+    <%= link_to t("admin.officials.edit.cancel"), admin_officials_path, class: 'button tiny alert' %>
+  <% end %>
+<% end %>

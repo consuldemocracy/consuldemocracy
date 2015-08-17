@@ -1,14 +1,12 @@
-<div class="left">
-  <h1><%= t("admin.comments.index.title") %></h1>
+<h1><%= t("admin.comments.index.title") %></h1>
 
-  <ul>
-    <% @comments.each do |comment| %>
-      <li id="<%= dom_id(comment) %>">
-        <%= comment.body %>
+<ul>
+  <% @comments.each do |comment| %>
+    <li id="<%= dom_id(comment) %>">
+      <%= comment.body %>
 
-        <%= link_to t("admin.actions.restore"), restore_admin_comment_path(comment),
-                    method: :put, data: { confirm: t("admin.actions.confirm") } %>
-      </li>
-    <% end %>
-  </ul>
-</div>
+      <%= link_to t("admin.actions.restore"), restore_admin_comment_path(comment),
+                  method: :put, data: { confirm: t("admin.actions.confirm") } %>
+    </li>
+  <% end %>
+</ul>
