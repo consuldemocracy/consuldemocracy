@@ -10,12 +10,6 @@
             <% end %>
           ]
       </div>
-      <div class="external-links">
-        <%= link_to t("layouts.header.participation"), root_path, class: "selected" %>&nbsp;|
-        <%= link_to t("layouts.header.external_link_transparency"), "#" %>&nbsp;|
-        <%= link_to t("layouts.header.external_link_opendata"), "#" %>&nbsp;|
-        <%= link_to t("layouts.header.external_link_blog"), "#" %>
-      </div>
     </div>
   </section>
 
@@ -25,7 +19,7 @@
         <li class="name">
           <%= link_to root_path do %>
             <%= image_tag('header_logo_madrid.png', class: 'left', size: '96x96') %>
-            <%= t("layouts.header.open_gov", open: "<strong>#{t('layouts.header.open')}</strong>").html_safe %> | <span><%= t("layouts.header.participation") %></span>
+            <%= t("layouts.header.open_gov", open: "<strong>#{t('layouts.header.open')}</strong>").html_safe %> | <span><%= t("admin.dashboard.index.title") %></span>
           <% end %>
         </li>
         <li class="toggle-topbar menu-icon"><a href="#"><span><%= t("layouts.header.menu") %></span></a></li>

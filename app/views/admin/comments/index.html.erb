@@ -1,14 +1,18 @@
-<div class="left">
-  <h1><%= t("admin.comments.index.title") %></h1>
+<h2><%= t("admin.comments.index.title") %></h2>
 
-  <ul>
-    <% @comments.each do |comment| %>
-      <li id="<%= dom_id(comment) %>">
-        <%= comment.body %>
-
-        <%= link_to t("admin.actions.restore"), restore_admin_comment_path(comment),
-                    method: :put, data: { confirm: t("admin.actions.confirm") } %>
-      </li>
-    <% end %>
-  </ul>
-</div>
+<ul class="admin-list">
+  <% @comments.each do |comment| %>
+    <li id="<%= dom_id(comment) %>">
+      <div class="row">
+        <div class="small-12 medium-10 column">
+          <%= comment.body %>
+        </div>
+        <div class="small-12 medium-2 column">
+          <%= link_to t("admin.actions.restore"), restore_admin_comment_path(comment),
+                      method: :put, data: { confirm: t("admin.actions.confirm") },
+                      class: "button radius tiny success right" %>
+        </div>
+      </div>
+    </li>
+  <% end %>
+</ul>

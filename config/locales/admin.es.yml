@@ -27,5 +27,7 @@ es:
     debates:
       index:
         title: Debates ocultos
+      show:
+        back: Volver
       restore:
         success: El debate ha sido permitido

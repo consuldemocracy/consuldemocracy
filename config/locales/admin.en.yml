@@ -27,6 +27,7 @@ en:
     debates:
       index:
         title: Hidden debates
+      show:
+        back: Back
       restore:
         success: The debate has been restored
-
