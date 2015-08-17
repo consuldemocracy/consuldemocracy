@@ -3,10 +3,6 @@ module ActsAsParanoidAliases
   def self.included(base)
     base.extend(ClassMethods)
 
-    def viewable?
-      not deleted?
-    end
-
     def hide
       update_attribute(:hidden_at, Time.now)
     end
