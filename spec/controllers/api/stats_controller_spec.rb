@@ -2,16 +2,14 @@ require 'rails_helper'
 
 describe Api::StatsController do
 
-  # GET index
-  #----------------------------------------------------------------------
-
   describe 'GET index' do
-    let(:user) { create :user }
+    let(:user) { create(:administrator).user }
 
     context 'events or visits not present' do
       it 'should respond with bad_request' do
         sign_in user
         get :show
+
         expect(response).to_not be_ok
         expect(response.status).to eq 400
       end
