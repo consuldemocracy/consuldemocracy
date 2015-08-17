@@ -15,6 +15,8 @@ feature 'Moderate debates' do
       click_link 'Hide'
     end
 
+    expect(page).to have_css("#debate_#{debate.id}.faded")
+
     login_as(citizen)
     visit debates_path
 
