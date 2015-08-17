@@ -22,6 +22,11 @@ class Debate < ActiveRecord::Base
   before_validation :sanitize_description
   before_validation :sanitize_tag_list
 
+  # ahoy setup
+  #----------------------------------------------------------------------
+
+  visitable # Ahoy will automatically assign visit_id on create
+
   def self.search(params)
     if params[:tag]
       tagged_with(params[:tag])

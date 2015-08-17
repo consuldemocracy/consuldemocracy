@@ -15,6 +15,10 @@
 //= require foundation
 //= require turbolinks
 //= require ckeditor/init
+//= require ahoy
+//= require d3
+//= require c3
+//= require c3ext
 //= require social-share-button
 //= require initial
 //= require app
@@ -22,6 +26,7 @@
 
 var initialize_modules = function() {
   App.Comments.initialize();
+  App.Stats.initialize();
   App.Users.initialize();
   App.Votes.initialize();
   App.Tags.initialize();

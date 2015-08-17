@@ -16,6 +16,11 @@ Rails.application.routes.draw do
   end
 
   resource :account, controller: "account", only: [:show, :update]
+  resource :stats, only: [:show]
+
+  namespace :api do
+    resource :stats, only: [:show]
+  end
 
   namespace :admin do
     root to: "dashboard#index"
