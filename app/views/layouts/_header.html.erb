@@ -38,13 +38,13 @@
 
       <section class="subnavigation row text-center">
         <div class="small-12 medium-3 column end">
-          <%= link_to t("layouts.header.welcome"), root_path, class: "active" %>
+          <%= link_to t("layouts.header.welcome"), root_path, class: ("active" if current_page?(root_path)) %>
         </div>
         <div class="small-12 medium-3 column end">
           <%= link_to t("layouts.header.news"), "#" %>
         </div>
         <div class="small-12 medium-3 column end">
-          <%= link_to t("layouts.header.debates"), debates_path %>
+          <%= link_to t("layouts.header.debates"), debates_path, class: ("active" if current_page?(controller: 'debates')) %>
         </div>
         <div class="small-12 medium-3 column end">
           <%= link_to t("layouts.header.initiatives"), "#" %>
