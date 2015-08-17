@@ -44,7 +44,7 @@ GEM
       awesome_nested_set (>= 3.0)
     acts_as_votable (0.10.0)
     addressable (2.3.8)
-    ahoy_matey (1.2.0)
+    ahoy_matey (1.2.1)
       addressable
       browser (>= 0.4.0)
       errbase
@@ -338,7 +338,7 @@ DEPENDENCIES
   acts-as-taggable-on
   acts_as_commentable_with_threading
   acts_as_votable
-  ahoy_matey
+  ahoy_matey (~> 1.2.1)
   byebug
   cancancan
   capistrano (= 3.4.0)

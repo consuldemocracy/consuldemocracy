@@ -36,7 +36,7 @@ gem 'initialjs-rails'
 gem 'unicorn'
 gem 'paranoia'
 
-gem 'ahoy_matey'  # stats
+gem 'ahoy_matey', '~> 1.2.1'
 gem 'groupdate'   # group temporary data
 
 group :development, :test do
