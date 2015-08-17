@@ -22,15 +22,15 @@ class Ability
       end
 
       if user.moderator? || user.administrator?
-
         can :read, Organization
         can(:verify, Organization){ |o| !o.verified? }
         can(:reject, Organization){ |o| !o.rejected? }
 
         can :hide, Comment
         can :hide, Debate
+      end
 
-      elsif user.administrator?
+      if user.administrator?
         can :restore, Comment
         can :restore, Debate
       end
