@@ -1,3 +1,5 @@
-<div id="admin_menu">
-  <%= link_to t('admin.tags.index.title'), admin_tags_path %>
-</div>
+<ul id="admin_menu">
+  <li><%= link_to t('admin.menu.debate_topics'), admin_tags_path %></li>
+  <li><%= link_to t('admin.menu.hidden_debates'), admin_debates_path %></li>
+  <li><%= link_to t('admin.menu.hidden_comments'), admin_comments_path %></li>
+</ul>

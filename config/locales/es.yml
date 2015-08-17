@@ -46,6 +46,7 @@ es:
         one: 1 voto
         other: "%{count} votos"
     comment:
+      deleted: Este comentario ha sido eliminado
       responses:
         zero: Sin respuestas
         one: 1 Respuesta

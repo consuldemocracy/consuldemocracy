@@ -15,10 +15,13 @@ class Ability
 
       can [:create, :vote], Comment
 
-      if user.moderator? or user.administrator?
+      if user.moderator?
+        can [:hide], Comment
+        can [:hide], Debate
 
       elsif user.administrator?
-
+        can [:restore], Comment
+        can [:restore], Debate
       end
     end
   end
