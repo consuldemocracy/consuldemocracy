@@ -2,7 +2,7 @@
 	<div id="<%= dom_id(comment) %>" class="comment small-12 column">
 
     <% if comment.hidden? %>
-      This comment has been deleted
+      <%= t("debates.comment.deleted") %>
     <% else %>
 
       <%= avatar_image(comment.user, size: 32, class: 'left') %>
