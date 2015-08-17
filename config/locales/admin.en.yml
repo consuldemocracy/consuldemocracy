@@ -6,6 +6,19 @@ en:
     dashboard:
       index:
         title: Administration
+    organizations:
+      index:
+        title: Organizations
+        verify: Verify
+        reject: Reject
+        verified: Verified
+        rejected: Rejected
+        filter: Filtro
+        filters:
+          all: All
+          pending: Pending
+          verified: Verified
+          rejected: Rejected
     tags:
       index:
         title: 'Debate topics'
@@ -14,10 +27,4 @@ en:
       name:
         placeholder: 'Write a topic'
       destroy: Delete Tag
-    organizations:
-      index:
-        title: Organizations
-        verify: Verify
-        reject: Reject
-        verified: Verified
-        rejected: Rejected
+

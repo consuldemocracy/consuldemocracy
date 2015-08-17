@@ -2,6 +2,19 @@
 
   <h1><%= t('admin.organizations.index.title') %></h1>
 
+  <p>
+    <%= t('admin.organizations.index.filter') %>:
+
+    <% @valid_filters.each do |filter| %>
+      <% if @filter == filter %>
+        <%= t("admin.organizations.index.filters.#{filter}") %>
+      <% else %>
+        <%= link_to t("admin.organizations.index.filters.#{filter}"),
+          admin_organizations_path(filter: filter) %>
+      <% end %>
+    <% end %>
+  </p>
+
   <table>
     <% @organizations.each do |organization| %>
     <tr>
@@ -13,7 +26,7 @@
       <% end %>
       <% if can? :verify, organization %>
         <td><%= link_to t('admin.organizations.index.verify'),
-                  verify_admin_organization_path(organization),
+                  verify_admin_organization_path(organization, filter: @filter),
                   method: :put
             %>
         </td>
@@ -23,7 +36,7 @@
       <% end %>
       <% if can? :reject, organization %>
         <td><%= link_to t('admin.organizations.index.reject'),
-                  reject_admin_organization_path(organization),
+                  reject_admin_organization_path(organization, filter: @filter),
                   method: :put
             %>
         </td>
@@ -31,4 +44,5 @@
     </tr>
   <% end %>
   </table>
+
 </div>

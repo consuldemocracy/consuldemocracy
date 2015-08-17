@@ -14,9 +14,11 @@ es:
         verified: Verificado
         rejected: Rechazado
         filter: Filtro
-        filter_all: Todas
-        filter_verified: Verificadas
-        filter_rejected: Rechazadas
+        filters:
+          all: Todas
+          pending: Pendientes
+          verified: Verificadas
+          rejected: Rechazadas
     tags:
       index:
         title: 'Temas de debate'

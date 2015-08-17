@@ -3,8 +3,13 @@ class Organization < ActiveRecord::Base
   belongs_to :user
 
   validates :name, presence: true
+  validates :user_id, presence: true
 
   delegate :email, :phone_number, to: :user
+
+  scope :pending, -> { where(verified_at: nil, rejected_at: nil) }
+  scope :verified, -> { where("verified_at is not null and (rejected_at is null or rejected_at < verified_at)") }
+  scope :rejected, -> { where("rejected_at is not null and (verified_at is null or verified_at < rejected_at)") }
 
   def verify
     update(verified_at: Time.now)
