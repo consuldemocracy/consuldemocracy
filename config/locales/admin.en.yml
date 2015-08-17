@@ -13,7 +13,7 @@ en:
         reject: Reject
         verified: Verified
         rejected: Rejected
-        filter: Filtro
+        filter: Filter
         filters:
           all: All
           pending: Pending
