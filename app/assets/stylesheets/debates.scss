@@ -366,10 +366,6 @@
         color: $text-medium;
     }
 
-    .bullet {
-      color: $border;
-    }
-
     p {
       font-size: rem-calc(14);
       line-height: $line-height;
@@ -429,6 +425,10 @@
       margin-right: rem-calc(6);
     }
   }
+}
+
+.bullet {
+  color: $border;
 }
 
 // 04. New

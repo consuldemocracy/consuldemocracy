@@ -3,6 +3,7 @@
 // 01. Global styles
 // 02. Sidebar
 // 03. List elements
+// 04. Stats
 //
 
 // 01. Global styles
@@ -16,6 +17,11 @@ body.admin {
     font-weight: bold;
   }
 
+  h3 {
+    font-size: rem-calc(14);
+    font-weight: normal;
+  }
+
   form {
     .button {
       margin-top: 0;
@@ -24,15 +30,6 @@ body.admin {
 
   .button.secondary {
     margin-right: rem-calc(12);
-  }
-
-  .button.create {
-    background: #EFD90C;
-    color: $text;
-
-    &:hover {
-      background: #BDAB09;
-    }
   }
 
   .admin-content {
@@ -105,6 +102,7 @@ body.admin {
 .admin-list {
   list-style-type: none;
   margin: 0;
+  margin-bottom: rem-calc(48);
 
   form {
     clear: both;
@@ -143,11 +141,29 @@ body.admin {
 .delete {
   border-bottom: 1px dotted #CF2A0E;
   color: #F04124;
-  font-size: rem-calc(11);
-  margin-right: rem-calc(12);
+  font-size: rem-calc(12);
 
   &:hover, &:active, &:focus {
     border: 0;
     color: #cf2a0e;
   }
+}
+
+.level {
+  font-size: rem-calc(12);
+}
+
+.official {
+  background-color: #e7e7e7;
+  border-radius: rem-calc(3);
+  font-size: rem-calc(12);
+  font-weight: normal;
+  padding: rem-calc(6) rem-calc(12);
+}
+
+// 04. Stats
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+.stats {
+  background: white;
 }

@@ -16,7 +16,7 @@
     </div>
   </div>
 
-  <%= f.submit(class: "button radius create") %>
+  <%= f.submit(class: "button radius success") %>
 
 <% end %>
 
@@ -38,7 +38,7 @@
         <% end %>
 
         <%= f.submit(class: "button radius tiny success") %>
-        <br>
+
         <%= link_to t("admin.tags.destroy"), admin_tag_path(tag), method: :delete, class: "delete" %>
       <% end %>
     </li>
