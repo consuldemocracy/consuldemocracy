@@ -587,6 +587,10 @@ form {
   }
 }
 
+img.initialjs-avatar {
+  border-radius: rem-calc(1000);
+}
+
 // 11. Filters
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -623,8 +627,12 @@ form {
 // 12. Officials levels
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
-.level-0 {
-  background: $level-0;
+[class^="level-"] {
+  color: white;
+}
+
+.author-debate {
+  background: $author-debate;
 }
 
 .level-1 {

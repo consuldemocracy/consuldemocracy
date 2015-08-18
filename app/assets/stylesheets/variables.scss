@@ -4,6 +4,7 @@
 // 02. Colors
 // 03. Forms
 // 04. Alerts
+// 05. Levels
 //
 
 // 01. Fonts
@@ -38,13 +39,6 @@ $votes-unlike-act:  #BD6A6A;
 
 $check:             #46DB91;
 
-$level-0:           #F08A24;
-$level-1:           #43AC6A;
-$level-2:           #43AC6A;
-$level-3:           #43AC6A;
-$level-4:           #43AC6A;
-$level-5:           #43AC6A;
-
 // 03. Forms
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -68,3 +62,17 @@ $warning-color:     #8A6D3B;
 $alert-bg:          #F2DEDE;
 $alert-border:      #EBCCD1;
 $alert-color:       #A94442;
+
+// 05. Levels
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+$level-1:           #43AC6A;
+$level-2:           #43AC6A;
+$level-3:           #43AC6A;
+$level-4:           #43AC6A;
+$level-5:           #F08A24;
+
+$author-debate:     $debates;
+
+$comment-author:    rgba(45,144,248,.15);
+$comment-official:  rgba(255,241,204,1);

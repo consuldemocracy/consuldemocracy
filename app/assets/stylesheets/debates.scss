@@ -532,21 +532,33 @@
     }
 
     .comment-body {
-      margin-left: rem-calc(36);
+      margin-left: rem-calc(42);
 
       .reply {
         background: white;
         border: 1px solid $border;
         font-size: rem-calc(12);
-        font-weight: lighter;
         margin: rem-calc(6) 0;
         padding: rem-calc(6);
+      }
+
+      .comment-user {
+        margin-top: rem-calc(6);
+        padding: rem-calc(6) rem-calc(12);
+
+        &.official {
+          background: $comment-official;
+        }
+
+        &.author {
+          background: $comment-author;
+        }
       }
     }
 
     .comment-children {
       border-left: 1px dashed $border;
-      margin-left: rem-calc(36);
+      margin-left: rem-calc(42);
       padding-left: rem-calc(6);
 
       @media only screen and (max-width: 40em) {
@@ -558,9 +570,10 @@
       color: $text-light;
       font-size: rem-calc(13);
       font-weight: lighter;
+      margin-top: rem-calc(6);
       vertical-align: middle;
 
-      span {
+      span.user-name {
         color: $text;
         font-weight: bold;
       }
