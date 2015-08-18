@@ -143,4 +143,80 @@ describe User do
     end
   end
 
+  describe "official?" do
+    it "is false when the user is not an official" do
+      expect(subject.official_level).to eq(0)
+      expect(subject.official?).to be false
+    end
+
+    it "is true when the user is an official" do
+      subject.official_level = 3
+      subject.save
+      expect(subject.official?).to be true
+    end
+  end
+
+  describe "add_official_position!" do
+    it "is false when level not valid" do
+      expect(subject.add_official_position!("Boss", 89)).to be false
+    end
+
+    it "updates official position fields" do
+      expect(subject).not_to be_official
+      subject.add_official_position!("Veterinarian", 2)
+
+      expect(subject).to be_official
+      expect(subject.official_position).to eq("Veterinarian")
+      expect(subject.official_level).to eq(2)
+
+      subject.add_official_position!("Brain surgeon", 3)
+      expect(subject.official_position).to eq("Brain surgeon")
+      expect(subject.official_level).to eq(3)
+    end
+  end
+
+  describe "remove_official_position!" do
+    it "updates official position fields" do
+      subject.add_official_position!("Brain surgeon", 3)
+      expect(subject).to be_official
+
+      subject.remove_official_position!
+
+      expect(subject).not_to be_official
+      expect(subject.official_position).to be_nil
+      expect(subject.official_level).to eq(0)
+    end
+  end
+
+  describe "officials scope" do
+    it "returns only users with official positions" do
+      create(:user, official_position: "Mayor", official_level: 1)
+      create(:user, official_position: "Director", official_level: 3)
+      create(:user, official_position: "Math Teacher", official_level: 4)
+      create(:user, official_position: "Manager", official_level: 5)
+      2.times { create(:user) }
+
+      officials = User.officials
+      expect(officials.size).to eq(4)
+      officials.each do |user|
+        expect(user.official_level).to be > 0
+        expect(user.official_position).to be_present
+      end
+    end
+  end
+
+  describe "self.with_email" do
+    it "find users by email" do
+      user1 = create(:user, email: "larry@madrid.es")
+      create(:user, email: "bird@madrid.es")
+      search = User.with_email("larry@madrid.es")
+      expect(search.size).to eq(1)
+      expect(search.first).to eq(user1)
+    end
+
+    it "returns no results if no email provided" do
+      expect(User.with_email("    ").size).to eq(0)
+    end
+  end
+
 end

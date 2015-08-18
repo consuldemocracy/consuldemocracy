@@ -36,6 +36,9 @@ gem 'initialjs-rails'
 gem 'unicorn'
 gem 'paranoia'
 
+gem 'ahoy_matey', '~> 1.2.1'
+gem 'groupdate'   # group temporary data
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
@@ -46,6 +49,7 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.0'
   gem 'capybara'
   gem 'factory_girl_rails'
+  gem 'fuubar'
   gem 'launchy'
   gem 'quiet_assets'
   gem 'letter_opener_web', '~> 1.2.0'

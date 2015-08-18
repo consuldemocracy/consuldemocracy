@@ -21,6 +21,11 @@ Rails.application.routes.draw do
   end
 
   resource :account, controller: "account", only: [:show, :update]
+  resource :stats, only: [:show]
+
+  namespace :api do
+    resource :stats, only: [:show]
+  end
 
   namespace :admin do
     root to: "dashboard#index"
@@ -40,6 +45,11 @@ Rails.application.routes.draw do
     end
 
     resources :tags, only: [:index, :create, :update, :destroy]
+    resources :officials, only: [:index, :edit, :update, :destroy] do
+      collection { get :search}
+    end
+
+    resources :settings, only: [:index, :update]
   end
 
   namespace :moderation do

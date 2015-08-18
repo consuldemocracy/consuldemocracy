@@ -12,6 +12,7 @@ class User < ActiveRecord::Base
   validates :first_name, presence: true, if: :use_first_name?
   validates :last_name,  presence: true, if: :use_last_name?
   validates :nickname,   presence: true, if: :use_nickname?
+  validates :official_level, inclusion: {in: 0..5}
 
   validates_associated :organization, message: false
 
@@ -20,9 +21,7 @@ class User < ActiveRecord::Base
   scope :administrators, -> { joins(:administrators) }
   scope :moderators,     -> { joins(:moderator) }
   scope :organizations,  -> { joins(:organization) }
-
-  attr_accessor :organization_name
-  attr_accessor :is_organization
+  scope :officials,      -> { where("official_level > 0") }
 
   def name
     return nickname          if use_nickname?
@@ -45,6 +44,23 @@ class User < ActiveRecord::Base
 
   def organization?
     organization.present?
+  end
+
+  def official?
+    official_level && official_level > 0
+  end
+
+  def add_official_position!(position, level)
+    return if position.blank? || level.blank?
+    update official_position: position, official_level: level.to_i
+  end
+
+  def remove_official_position!
+    update official_position: nil, official_level: 0
+  end
+
+  def self.with_email(e)
+    e.present? ? where(email: e) : none
   end
 
   private

@@ -12,22 +12,26 @@
     <%= csrf_meta_tags %>
   </head>
 
-  <body>
+  <body class="admin">
     <%= render 'layouts/admin_header' %>
 
-    <% if notice %>
-      <p class="alert-box success"><%= notice %></p>
-    <% end %>
+    <div class="row">
 
-    <% if alert %>
-      <p class="alert-box"><%= alert %></p>
-    <% end %>
+      <div class="small-12 medium-3 column">
+        <%= side_menu %>
+      </div>
 
-    <div class="left" style="padding:50px;">
-      <%= side_menu %>
+      <div class="admin-content small-12 medium-9 column">
+        <% if notice %>
+          <div class="alert-box radius success"><%= notice %></div>
+        <% end %>
+
+        <% if alert %>
+          <div class="alert-box radius alert"><%= alert %></div>
+        <% end %>
+
+        <%= yield %>
+      </div>
     </div>
-
-    <%= yield %>
   </body>
-
 </html>

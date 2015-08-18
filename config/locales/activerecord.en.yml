@@ -23,5 +23,7 @@ en:
         nickname: Nickname
         password: Password
         phone_number: Phone number
+        official_position: Official position
+        official_level: Official level
       organization:
         name: Organization name

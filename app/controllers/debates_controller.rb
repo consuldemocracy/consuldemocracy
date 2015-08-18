@@ -26,7 +26,9 @@ class DebatesController < ApplicationController
   def create
     @debate = Debate.new(debate_params)
     @debate.author = current_user
+
     if @debate.save_with_captcha
+      ahoy.track :debate_created, debate_id: @debate.id
       redirect_to @debate, notice: t('flash.actions.create.notice', resource_name: 'Debate')
     else
       load_featured_tags

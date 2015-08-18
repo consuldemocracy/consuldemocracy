@@ -68,4 +68,19 @@ FactoryGirl.define do
     end
   end
 
+  factory :setting do
+    sequence(:key) { |n| "setting key number #{n}" }
+    sequence(:value) { |n| "setting number #{n} value" }
+  end
+
+  factory :ahoy_event, :class => Ahoy::Event do
+    id { SecureRandom.uuid }
+    time DateTime.now
+    sequence(:name) {|n| "Event #{n} type"}
+  end
+
+  factory :visit  do
+    id { SecureRandom.uuid }
+    started_at DateTime.now
+  end
 end

@@ -10,6 +10,7 @@
 // 08. Forms
 // 09. Alerts
 // 10. User account
+// 11. Filters
 //
 
 // 01. Variables
@@ -111,7 +112,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .sidebar {
-  margin-top: rem-calc(24);
   margin-bottom: rem-calc(48);
 }
 
@@ -581,6 +581,39 @@ form {
         color: $debates;
         content: "l ";
         font-family: "icons" !important;
+      }
+    }
+  }
+}
+
+// 11. Filters
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+.filters {
+
+  h2 {
+    display: inline-block;
+    font-size: rem-calc(24);
+    margin: rem-calc(24) 0;
+  }
+
+  select {
+    height: auto;
+    margin: rem-calc(24) rem-calc(6);
+    min-width: rem-calc(180);
+    outline: 0;
+    padding: rem-calc(12);
+    width: auto;
+
+    optgroup {
+      font-size: rem-calc(14);
+    }
+
+    option {
+
+      &:after {
+        content: "a";
+        font-family: "icons";
       }
     }
   }
