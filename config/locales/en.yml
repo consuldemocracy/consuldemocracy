@@ -93,6 +93,9 @@ en:
       recommendation_one: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore"
       recommendation_two: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore"
       recommendation_three: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore"
+  comments:
+    form:
+        leave_comment: Write a comment
   comments_helper:
     comment_link: Comment
     comment_button: Publish comment

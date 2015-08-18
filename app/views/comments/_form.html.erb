@@ -1,6 +1,6 @@
 <div id="js-comment-form-<%= dom_id(parent) %>" <%= "style='display:none'".html_safe if toggeable %>>
   <%= form_for [@debate, Comment.new], remote: true do |f| %>
-    <%= f.text_area :body %>
+    <%= f.text_area :body, label: t("comments.form.leave_comment") %>
     <%= f.hidden_field :commentable_type, value: parent.class %>
     <%= f.hidden_field :commentable_id, value: parent.id %>
 

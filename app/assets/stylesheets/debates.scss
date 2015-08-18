@@ -497,7 +497,7 @@
     font-weight: bold;
 
     span {
-      font-size: rem-calc(14);
+      font-size: rem-calc(18);
       font-weight: normal;
       opacity: .8;
     }
@@ -546,11 +546,11 @@
         margin-top: rem-calc(6);
         padding: rem-calc(6) rem-calc(12);
 
-        &.official {
+        &.is-official {
           background: $comment-official;
         }
 
-        &.author {
+        &.is-author {
           background: $comment-author;
         }
       }
