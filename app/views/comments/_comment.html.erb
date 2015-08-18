@@ -16,18 +16,23 @@
             <span class="label round level-1">
               Cargo oficial
             </span>
+          <!-- if user is a VERIFICATED association -->
+          &nbsp;&bullet;&nbsp;
+          <span class="label round is-association">
+            Puesto en la asociación
+          </span>
           <!-- if user is debate's author -->
             &nbsp;&bullet;&nbsp;
-            <span class="label round author-debate">
+            <span class="label round is-author">
               <%= t("debates.comment.author") %>
             </span>
           <!-- end -->
         </div>
 
         <!-- if user is official -->
-          <p class="comment-user official"><%= comment.body %></p>
+          <p class="comment-user is-official"><%= comment.body %></p>
         <!-- elsif user is author -->
-          <p class="comment-user author"><%= comment.body %></p>
+          <p class="comment-user is-author"><%= comment.body %></p>
         <!-- else -->
           <p class="comment-user"><%= comment.body %></p>
         <!-- end -->

@@ -10,7 +10,6 @@
         <% end %>
       <% end %>
 
-
       <h1><%= @debate.title %></h1>
 
       <div class="debate-info">
@@ -63,13 +62,10 @@
 
       <h2>
         <%= t("debates.show.comments_title") %>
-        <span>(<%= t("debates.show.comments", count: @debate.comment_threads.count) %>)</span>
+        <span>(<%= @debate.comment_threads.count %>)</span>
       </h2>
       <% if user_signed_in? %>
-        <div>
-          <%= t("debates.show.leave_comment") %>
           <%= render 'comments/form', {parent: @debate, toggeable: false} %>
-        </div>
       <% end %>
 
       <%= render @comments %>

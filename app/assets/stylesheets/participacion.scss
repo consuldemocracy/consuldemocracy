@@ -631,8 +631,12 @@ img.initialjs-avatar {
   color: white;
 }
 
-.author-debate {
-  background: $author-debate;
+.is-author {
+  background: $author;
+}
+
+.is-association {
+  background: $association;
 }
 
 .level-1 {
