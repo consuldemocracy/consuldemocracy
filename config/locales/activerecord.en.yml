@@ -6,6 +6,7 @@ en:
       tag: Topic
       user: User
       vote: Vote
+      organization: Organization
     attributes:
       comment:
         body: Comment
@@ -21,5 +22,8 @@ en:
         last_name: "Last name"
         nickname: Nickname
         password: Password
+        phone_number: Phone number
         official_position: Official position
         official_level: Official level
+      organization:
+        name: Organization name

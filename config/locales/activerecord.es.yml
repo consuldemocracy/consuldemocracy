@@ -6,6 +6,7 @@ es:
       tag: Tema
       user: Usuario
       vote: Voto
+      organization: Organización
     attributes:
       comment:
         body: Comentario
@@ -21,5 +22,8 @@ es:
         last_name: Apellidos
         nickname: Pseudónimo
         password: Contraseña
+        phone_number: Teléfono
         official_position: Cargo público
         official_level: Nivel del cargo
+      organization:
+        name: Nombre de organización

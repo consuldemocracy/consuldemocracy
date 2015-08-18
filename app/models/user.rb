@@ -5,15 +5,28 @@ class User < ActiveRecord::Base
 
   acts_as_voter
 
-  validates :first_name, presence: true, unless: :use_nickname?
-  validates :last_name, presence: true, unless: :use_nickname?
-  validates :nickname, presence: true, if: :use_nickname?
+  has_one :administrator
+  has_one :moderator
+  has_one :organization
+
+  validates :first_name, presence: true, if: :use_first_name?
+  validates :last_name,  presence: true, if: :use_last_name?
+  validates :nickname,   presence: true, if: :use_nickname?
   validates :official_level, inclusion: {in: 0..5}
 
-  scope :officials, -> { where("official_level > 0") }
+  validates_associated :organization, message: false
+
+  accepts_nested_attributes_for :organization
+
+  scope :administrators, -> { joins(:administrators) }
+  scope :moderators,     -> { joins(:moderator) }
+  scope :organizations,  -> { joins(:organization) }
+  scope :officials,      -> { where("official_level > 0") }
 
   def name
-    use_nickname? ? nickname : "#{first_name} #{last_name}"
+    return nickname          if use_nickname?
+    return organization.name if organization?
+    "#{first_name} #{last_name}"
   end
 
   def debate_votes(debates)
@@ -22,11 +35,15 @@ class User < ActiveRecord::Base
   end
 
   def administrator?
-    @is_administrator ||= Administrator.where(user_id: id).exists?
+    administrator.present?
   end
 
   def moderator?
-    @is_moderator ||= Moderator.where(user_id: id).exists?
+    moderator.present?
+  end
+
+  def organization?
+    organization.present?
   end
 
   def official?
@@ -45,4 +62,13 @@ class User < ActiveRecord::Base
   def self.with_email(e)
     e.present? ? where(email: e) : none
   end
+
+  private
+    def use_first_name?
+      !organization? && !use_nickname?
+    end
+
+    def use_last_name?
+      use_first_name?
+    end
 end

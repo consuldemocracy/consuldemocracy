@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
-  devise_for :users, controllers: { registrations: 'registrations' }
+  devise_for :users, controllers: { registrations: 'users/registrations' }
+  devise_for :organizations, class_name: 'User',
+             controllers: {
+               registrations: 'organizations/registrations',
+               sessions: 'devise/sessions'
+             }
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -24,6 +29,12 @@ Rails.application.routes.draw do
 
   namespace :admin do
     root to: "dashboard#index"
+    resources :organizations, only: :index do
+      member do
+        put :verify
+        put :reject
+      end
+    end
 
     resources :debates, only: [:index, :show] do
       member { put :restore }

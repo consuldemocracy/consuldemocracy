@@ -13,8 +13,22 @@ es:
       debate_topics: Temas de debate
       hidden_debates: Debates ocultos
       hidden_comments: Comentarios ocultos
+      organizations: Organizaciones
       officials: Cargos públicos
       stats: Estadísticas
+    organizations:
+      index:
+        title: Organizaciones
+        verify: Verificar
+        reject: Rechazar
+        verified: Verificada
+        rejected: Rechazada
+        filter: Filtro
+        filters:
+          all: Todas
+          pending: Pendientes
+          verified: Verificadas
+          rejected: Rechazadas
     actions:
       hide: Ocultar
       restore: Permitir

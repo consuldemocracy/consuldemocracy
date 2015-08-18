@@ -8,7 +8,7 @@ es:
       confirmation_instructions:
         welcome: "Bienvenido"
         text: "Puedes confirmar tu cuenta de correo electrónico en el siguiente enlace:"
-        confirm_link: "Confirmar my cuenta"
+        confirm_link: "Confirmar mi cuenta"
       reset_password_instructions:
         hello: "Hola"
         text: "Se ha solicitado un enlace para cambiar tu contraseña, puedes hacerlo en el siguiente enlace:"
@@ -35,28 +35,40 @@ es:
         title: "¿Has olvidado tu contraseña?"
         email_label: "Email"
         send_submit: "Recibir instrucciones para recuperar mi contraseña"
-    registrations:
-      edit:
-        edit: "Editar"
-        email_label: "Email"
-        waiting_for: "Esperando confirmación de:"
-        leave_blank: "Dejar en blanco si no deseas cambiarla"
-        password_label: "Contraseña nueva"
-        password_confirmation_label: "Confirmar contraseña nueva"
-        current_password_label: "Contraseña actual"
-        need_current: "Necesitamos tu contraseña actual para confirmar los cambios"
-        update_submit: "Actualizar"
-        back_link: "Atrás"
-      new:
-        title: "Registrarse"
-        first_name_label: "Nombre"
-        last_name_label: "Apellidos"
-        nickname_label: "Pseudónimo"
-        use_nickname_label: "Usar pseudónimo"
-        email_label: "Email"
-        password_label: "Contraseña"
-        password_confirmation_label: "Confirmar contraseña"
-        submit: "Registrarse"
+    users:
+      registrations:
+        edit:
+          edit: "Editar"
+          email_label: "Email"
+          waiting_for: "Esperando confirmación de:"
+          leave_blank: "Dejar en blanco si no deseas cambiarla"
+          password_label: "Contraseña nueva"
+          password_confirmation_label: "Confirmar contraseña nueva"
+          current_password_label: "Contraseña actual"
+          need_current: "Necesitamos tu contraseña actual para confirmar los cambios"
+          update_submit: "Actualizar"
+          back_link: "Atrás"
+        new:
+          title: "Registrarse"
+          first_name_label: "Nombre"
+          last_name_label: "Apellidos"
+          nickname_label: "Pseudónimo"
+          use_nickname_label: "Usar pseudónimo"
+          email_label: "Email"
+          phone_number_label: "Teléfono"
+          password_label: "Contraseña"
+          password_confirmation_label: "Confirmar contraseña"
+          submit: "Registrarse"
+    organizations:
+      registrations:
+        new:
+          title: "Registrarse como organización"
+          organization_name_label: "Nombre de la organización"
+          email_label: "Email"
+          password_label: "Contraseña"
+          phone_number_label: "Teléfono"
+          password_confirmation_label: "Confirmar contraseña"
+          submit: "Registrarse"
     sessions:
       new:
         title: "Entrar"
@@ -73,6 +85,7 @@ es:
       links:
         login: "Entrar"
         signup: "Registrarse"
+        organization_signup: "Registro para organizaciones"
         signin_with_provider: "Entrar con %{provider}"
         new_password: "¿Olvidaste tu contraseña?"
         new_confirmation: "¿No has recibido instrucciones para confirmar tu cuenta?"

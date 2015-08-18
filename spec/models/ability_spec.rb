@@ -46,6 +46,21 @@ describe Ability do
     end
   end
 
+  describe "Organization" do
+    let(:user) { create(:user) }
+    before(:each) { create(:organization, user: user) }
+
+    it { should be_able_to(:show, user) }
+    it { should be_able_to(:edit, user) }
+
+    it { should be_able_to(:index, Debate) }
+    it { should be_able_to(:show, debate) }
+    it { should_not be_able_to(:vote, debate) }
+
+    it { should be_able_to(:create, Comment) }
+    it { should_not be_able_to(:vote, Comment) }
+  end
+
   describe "Moderator" do
     let(:user) { create(:user) }
     before { create(:moderator, user: user) }
@@ -53,6 +68,23 @@ describe Ability do
     it { should be_able_to(:index, Debate) }
     it { should be_able_to(:show, debate) }
     it { should be_able_to(:vote, debate) }
+
+    it { should be_able_to(:read, Organization) }
+
+    describe "organizations" do
+      let(:pending_organization)  { create(:organization) }
+      let(:rejected_organization) { create(:rejected_organization) }
+      let(:verified_organization) { create(:verified_organization) }
+
+      it { should be_able_to(    :verify, pending_organization)  }
+      it { should be_able_to(    :reject, pending_organization)  }
+
+      it { should_not be_able_to(:verify, verified_organization) }
+      it { should be_able_to(    :reject, verified_organization) }
+
+      it { should_not be_able_to(:reject, rejected_organization) }
+      it { should be_able_to(    :verify, rejected_organization) }
+    end
 
     it { should be_able_to(:hide, comment) }
     it { should be_able_to(:hide, debate) }

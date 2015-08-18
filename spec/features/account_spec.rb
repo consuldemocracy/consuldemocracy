@@ -19,6 +19,18 @@ feature 'Account' do
     expect(page).to have_selector(avatar('Manuela Colau'), count: 1)
   end
 
+  scenario 'Show organization' do
+    create(:organization, user: @user, name: "Manuela Corp")
+
+    visit account_path
+
+    expect(page).to have_selector("input[value='Manuela Corp']")
+    expect(page).to_not have_selector("input[value='Manuela']")
+    expect(page).to_not have_selector("input[value='Colau']")
+
+    expect(page).to have_selector(avatar('Manuela Corp'), count: 1)
+  end
+
   scenario 'Edit' do
     visit account_path
 
@@ -34,6 +46,24 @@ feature 'Account' do
 
     expect(page).to have_selector("input[value='Larry']")
     expect(page).to have_selector("input[value='Bird']")
+    expect(page).to have_selector("input[id='account_email_on_debate_comment'][value='1']")
+    expect(page).to have_selector("input[id='account_email_on_comment_reply'][value='1']")
+  end
+
+  scenario 'Edit Organization' do
+    create(:organization, user: @user, name: "Manuela Corp")
+    visit account_path
+
+    fill_in 'account_organization_attributes_name', with: 'Google'
+    check 'account_email_on_debate_comment'
+    check 'account_email_on_comment_reply'
+    click_button 'Save changes'
+
+    expect(page).to have_content "Saved"
+
+    visit account_path
+
+    expect(page).to have_selector("input[value='Google']")
     expect(page).to have_selector("input[id='account_email_on_debate_comment'][value='1']")
     expect(page).to have_selector("input[id='account_email_on_comment_reply'][value='1']")
   end

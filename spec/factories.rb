@@ -43,6 +43,19 @@ FactoryGirl.define do
     user
   end
 
+  factory :organization do
+    user
+    sequence(:name) { |n| "org#{n}" }
+  end
+
+  factory :verified_organization, parent: :organization do
+    verified_at { Time.now}
+  end
+
+  factory :rejected_organization, parent: :organization do
+    rejected_at { Time.now}
+  end
+
   factory :tag, class: 'ActsAsTaggableOn::Tag' do
     sequence(:name) { |n| "Tag #{n} name" }
 

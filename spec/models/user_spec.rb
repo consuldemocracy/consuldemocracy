@@ -107,6 +107,42 @@ describe User do
     end
   end
 
+  describe "organization?" do
+    it "is false when the user is not an organization" do
+      expect(subject.organization?).to be false
+    end
+
+    describe 'when it is an organization' do
+      before(:each) { create(:organization, user: subject) }
+
+      it "is true when the user is an organization" do
+        expect(subject.organization?).to be true
+      end
+
+      it "calculates the name using the organization name" do
+        expect(subject.name).to eq(subject.organization.name)
+      end
+    end
+  end
+
+  describe "organization_attributes" do
+    before(:each) { subject.organization_attributes = {name: 'org'} }
+
+    it "triggers the creation of an associated organization" do
+      expect(subject.organization).to be
+      expect(subject.organization.name).to eq('org')
+    end
+
+    it "deactivates the validation of first_name and last_name, and activates the validation of organization" do
+      subject.first_name = nil
+      subject.last_name = nil
+      expect(subject).to be_valid
+
+      subject.organization.name= nil
+      expect(subject).to_not be_valid
+    end
+  end
+
   describe "official?" do
     it "is false when the user is not an official" do
       expect(subject.official_level).to eq(0)
@@ -172,7 +208,7 @@ describe User do
   describe "self.with_email" do
     it "find users by email" do
       user1 = create(:user, email: "larry@madrid.es")
-      user2 = create(:user, email: "bird@madrid.es")
+      create(:user, email: "bird@madrid.es")
       search = User.with_email("larry@madrid.es")
       expect(search.size).to eq(1)
       expect(search.first).to eq(user1)

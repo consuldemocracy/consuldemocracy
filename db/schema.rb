@@ -73,6 +73,15 @@ ActiveRecord::Schema.define(version: 20150817150457) do
 
   add_index "moderators", ["user_id"], name: "index_moderators_on_user_id", using: :btree
 
+  create_table "organizations", force: :cascade do |t|
+    t.integer  "user_id"
+    t.string   "name",        limit: 80
+    t.datetime "verified_at"
+    t.datetime "rejected_at"
+  end
+
+  add_index "organizations", ["user_id"], name: "index_organizations_on_user_id", using: :btree
+
   create_table "settings", force: :cascade do |t|
     t.string "key"
     t.string "value"
@@ -109,18 +118,18 @@ ActiveRecord::Schema.define(version: 20150817150457) do
   add_index "tags", ["name"], name: "index_tags_on_name", unique: true, using: :btree
 
   create_table "users", force: :cascade do |t|
-    t.string   "email",                   default: "",    null: false
-    t.string   "encrypted_password",      default: "",    null: false
+    t.string   "email",                              default: "",    null: false
+    t.string   "encrypted_password",                 default: "",    null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",           default: 0,     null: false
+    t.integer  "sign_in_count",                      default: 0,     null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.datetime "created_at",                              null: false
-    t.datetime "updated_at",                              null: false
+    t.datetime "created_at",                                         null: false
+    t.datetime "updated_at",                                         null: false
     t.string   "first_name"
     t.string   "last_name"
     t.string   "confirmation_token"
@@ -128,6 +137,7 @@ ActiveRecord::Schema.define(version: 20150817150457) do
     t.datetime "confirmation_sent_at"
     t.string   "unconfirmed_email"
     t.string   "nickname"
+    t.string   "phone_number",            limit: 30
     t.boolean  "use_nickname",            default: false, null: false
     t.boolean  "email_on_debate_comment", default: false
     t.boolean  "email_on_comment_reply",  default: false
@@ -186,4 +196,5 @@ ActiveRecord::Schema.define(version: 20150817150457) do
 
   add_foreign_key "administrators", "users"
   add_foreign_key "moderators", "users"
+  add_foreign_key "organizations", "users"
 end

@@ -25,6 +25,13 @@
       <% end %>
     </li>
 
+    <li <%= 'class=active' if controller_name == 'organizations' %>>
+      <%= link_to admin_organizations_path do %>
+        <i class="icon-comment-quotes"></i>
+        <%= t('admin.menu.organizations') %>
+      <% end %>
+    </li>
+
     <li <%= 'class=active' if controller_name == 'officials' %>>
       <%= link_to admin_officials_path do %>
         <i class="icon-chat-bubble-two"></i>

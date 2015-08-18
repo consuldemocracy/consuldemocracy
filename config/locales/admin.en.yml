@@ -13,8 +13,22 @@ en:
       debate_topics: Debate topics
       hidden_debates: Hidden debates
       hidden_comments: Hidden comments
+      organizations: Organizations
       officials: Officials
       stats: Statistics
+    organizations:
+      index:
+        title: Organizations
+        verify: Verify
+        reject: Reject
+        verified: Verified
+        rejected: Rejected
+        filter: Filter
+        filters:
+          all: All
+          pending: Pending
+          verified: Verified
+          rejected: Rejected
     actions:
       hide: Hide
       restore: Restore

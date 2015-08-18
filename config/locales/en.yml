@@ -115,6 +115,8 @@ en:
       personal: "Personal data"
       first_name_label: "First Name"
       last_name_label: "Last Name"
+      phone_number_label: "Phone number"
+      organization_name_label: "Organization name"
       use_nickname_label: "Use nickname"
       nickname_label: "Nickname"
       notifications: Notifications

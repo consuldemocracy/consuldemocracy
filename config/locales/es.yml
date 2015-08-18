@@ -115,6 +115,8 @@ es:
       personal: "Datos personales"
       first_name_label: "Nombre"
       last_name_label: "Apellidos"
+      phone_number_label: "Teléfono"
+      organization_name_label: "Nombre de la organización"
       use_nickname_label: "Usar pseudónimo"
       nickname_label: "Pseudónimo"
       notifications: Notificaciones
