@@ -16,7 +16,7 @@
 <ul class="admin-list">
   <% @users.each do |user| %>
     <li>
-      <strong><%= user.name %></strong>
+      <%= link_to user.name, edit_admin_official_path(user) %>
       <span class="bullet">&nbsp;&bullet;&nbsp;</span>
       <span class="label round level-<%= user.official_level %>">
         <%= user.official_position %>

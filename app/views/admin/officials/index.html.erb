@@ -16,7 +16,7 @@
 <ul class="admin-list">
 <% @officials.each do |official| %>
   <li>
-    <strong><%= official.name %></strong>
+    <%= link_to official.name, edit_admin_official_path(official) %>
     <span class="bullet">&nbsp;&bullet;&nbsp;</span>
     <span class="level"><%= t("admin.officials.level_#{official.official_level}") %></span>
     <span class="bullet">&nbsp;&bullet;&nbsp;</span>
