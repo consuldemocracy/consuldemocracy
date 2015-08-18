@@ -125,6 +125,25 @@ describe User do
     end
   end
 
+  describe "verified_organization?" do
+    it "is falsy when the user is not an organization" do
+      expect(subject).to_not be_verified_organization
+    end
+
+    describe 'when it is an organization' do
+      before(:each) { create(:organization, user: subject) }
+
+      it "is false when the user is not a verified organization" do
+        expect(subject).to_not be_verified_organization
+      end
+
+      it "is true when the user is a verified organization" do
+        subject.organization.verify
+        expect(subject).to be_verified_organization
+      end
+    end
+  end
+
   describe "organization_attributes" do
     before(:each) { subject.organization_attributes = {name: 'org'} }
 
