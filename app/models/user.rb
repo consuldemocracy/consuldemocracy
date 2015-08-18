@@ -18,6 +18,7 @@ class User < ActiveRecord::Base
 
   accepts_nested_attributes_for :organization
 
+  default_scope { includes(:organization) }
   scope :administrators, -> { joins(:administrators) }
   scope :moderators,     -> { joins(:moderator) }
   scope :organizations,  -> { joins(:organization) }
