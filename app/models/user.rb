@@ -47,6 +47,10 @@ class User < ActiveRecord::Base
     organization.present?
   end
 
+  def verified_organization?
+    organization && organization.verified?
+  end
+
   def official?
     official_level && official_level > 0
   end
