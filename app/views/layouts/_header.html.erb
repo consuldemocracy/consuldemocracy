@@ -6,7 +6,7 @@
           <%= t("layouts.header.language") %>
           [
             <% available_locales_to_switch.each do |locale| %>
-              <%= link_to(locale, params.merge(locale: locale), id: "locale-link-#{locale}") %>
+              <%= link_to(locale, params.merge(locale: locale), id: "locale-link-#{locale}", data: { no_turbolink: true }) %>
             <% end %>
           ]
       </div>
