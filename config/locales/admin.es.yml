@@ -58,7 +58,7 @@ es:
       edit:
         title: 'Cargos Públicos: Editar usuario'
         destroy: "Eliminar condición de 'Cargo Público'"
-        cancel: "Cancelar"
+        back: Volver
       flash:
         official_updated: 'Datos del cargo público guardados'
         official_destroyed: 'Datos guardados: el usuario ya no es cargo público'

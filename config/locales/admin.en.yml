@@ -58,7 +58,7 @@ en:
       edit:
         title: 'Officials: edit user'
         destroy: "Remove 'Official' condition"
-        cancel: "Cancel"
+        back: Back
       flash:
         official_updated: 'Official position saved!'
         official_destroyed: 'User is not an official anymore'

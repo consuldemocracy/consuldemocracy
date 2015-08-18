@@ -11,6 +11,7 @@
 // 09. Alerts
 // 10. User account
 // 11. Filters
+// 12. Official levels
 //
 
 // 01. Variables
@@ -617,4 +618,31 @@ form {
       }
     }
   }
+}
+
+// 12. Officials levels
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+.level-0 {
+  background: $level-0;
+}
+
+.level-1 {
+  background: $level-1;
+}
+
+.level-2 {
+  background: $level-2;
+}
+
+.level-3 {
+  background: $level-3;
+}
+
+.level-4 {
+  background: $level-4;
+}
+
+.level-5 {
+  background: $level-5;
 }

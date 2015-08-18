@@ -1,21 +1,30 @@
-<h1><%= t("admin.officials.search.title") %></h1>
+<h2><%= t("admin.officials.search.title") %></h2>
 
-<div>
 <%= form_for(User.new, url: search_admin_officials_path, as: :user, method: :get) do |f| %>
-  <%= text_field_tag :email, "", label: false, placeholder: t("admin.officials.index.search_email_placeholder") %>
-  <%= f.submit t("admin.officials.search.search") %>
+  <div class="row">
+    <div class="small-12 medium-6 column">
+      <%= text_field_tag :email, "", placeholder: t("admin.officials.index.search_email_placeholder") %>
+    </div>
+    <div class="small-12 medium-6 column">
+      <%= f.submit t("admin.officials.search.search"), class: "button radius success" %>
+    </div>
+  </div>
 <% end %>
-</div>
 
-<div>
-<%= page_entries_info @users %>
-</div>
+<h3><%= page_entries_info @users %></h3>
 
-<div>
-<% @users.each do |user| %>
-  <%= link_to user.name, edit_admin_official_path(user) %>
-  <%= user.official_position %>
-  <%= t("admin.officials.level_#{user.official_level}") %>
-  <%= link_to user.official? ? t("admin.officials.search.edit_official") : t("admin.officials.search.make_official"), edit_admin_official_path(user) %>
-<% end %>
-</div>
+<ul class="admin-list">
+  <% @users.each do |user| %>
+    <li>
+      <strong><%= user.name %></strong>
+      <span class="bullet">&nbsp;&bullet;&nbsp;</span>
+      <span class="label round level-<%= user.official_level %>">
+        <%= user.official_position %>
+      </span>
+      <span class="bullet">&nbsp;&bullet;&nbsp;</span>
+      <span class="level"><%= t("admin.officials.level_#{user.official_level}") %></span>
+
+    <%= link_to user.official? ? t("admin.officials.search.edit_official") : t("admin.officials.search.make_official"), edit_admin_official_path(user), class: "button radius tiny right" %>
+    </li>
+  <% end %>
+</ul>

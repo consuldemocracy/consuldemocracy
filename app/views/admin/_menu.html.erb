@@ -27,21 +27,21 @@
 
     <li <%= 'class=active' if controller_name == 'officials' %>>
       <%= link_to admin_officials_path do %>
-        <i class="icon-chat-bubble-two"></i>
+        <i class="icon-user"></i>
         <%= t('admin.menu.officials') %>
       <% end %>
     </li>
 
     <li <%= 'class=active' if controller_name == 'settings' %>>
       <%= link_to admin_settings_path do %>
-        <i class="icon-chat-bubble-two"></i>
+        <i class="icon-settings"></i>
         <%= t('admin.menu.settings') %>
       <% end %>
     </li>
 
     <li <%= 'class=active' if controller_name == 'stats' %>>
       <%= link_to stats_path do %>
-        <i class="icon-chat-bubble-two"></i>
+        <i class="icon-stats"></i>
         <%= t('admin.menu.stats') %>
       <% end %>
     </li>
