@@ -50,6 +50,7 @@ en:
         one: 1 vote
         other: "%{count} votes"
     comment:
+      author: Debate's author
       deleted: This comment has been deleted
       responses:
         zero: No Responses

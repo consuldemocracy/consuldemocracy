@@ -50,6 +50,7 @@ es:
         one: 1 voto
         other: "%{count} votos"
     comment:
+      author: Autor del debate
       deleted: Este comentario ha sido eliminado
       responses:
         zero: Sin respuestas

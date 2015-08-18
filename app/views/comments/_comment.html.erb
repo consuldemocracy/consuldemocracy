@@ -8,11 +8,29 @@
       <%= avatar_image(comment.user, size: 32, class: 'left') %>
 
       <div class="comment-body">
-        <span class="comment-info">
-          <span><%= comment.user.name %></span>&nbsp;&bullet;&nbsp;<%= time_ago_in_words(comment.created_at) %>
-        </span>
-        <p><%= comment.body %></p>
+        <div class="comment-info">
+          <span class="user-name"><%= comment.user.name %></span>
+          &nbsp;&bullet;&nbsp;<%= time_ago_in_words(comment.created_at) %>
+          <!-- if user is official (change level-X CSS class) -->
+            &nbsp;&bullet;&nbsp;
+            <span class="label round level-1">
+              Cargo oficial
+            </span>
+          <!-- if user is debate's author -->
+            &nbsp;&bullet;&nbsp;
+            <span class="label round author-debate">
+              <%= t("debates.comment.author") %>
+            </span>
+          <!-- end -->
+        </div>
 
+        <!-- if user is official -->
+          <p class="comment-user official"><%= comment.body %></p>
+        <!-- elsif user is author -->
+          <p class="comment-user author"><%= comment.body %></p>
+        <!-- else -->
+          <p class="comment-user"><%= comment.body %></p>
+        <!-- end -->
         <span id="<%= dom_id(comment) %>_votes" class="comment-votes right">
           <%= render 'comments/votes', comment: comment %>
         </span>
