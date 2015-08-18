@@ -5,7 +5,7 @@ class DebatesController < ApplicationController
   respond_to :html, :js
 
   def index
-    @debates = Debate.search(params)
+    @debates = Debate.includes(:tags).search(params)
     set_debate_votes(@debates)
   end
 
