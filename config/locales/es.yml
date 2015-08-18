@@ -134,6 +134,7 @@ es:
   shared:
     tags_cloud:
         tags: Temas
+    organization: Organización
   mailer:
     comment:
       subject: Alguien ha comentado en tu debate

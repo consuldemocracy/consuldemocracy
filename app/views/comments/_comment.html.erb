@@ -11,31 +11,33 @@
         <div class="comment-info">
           <span class="user-name"><%= comment.user.name %></span>
           &nbsp;&bullet;&nbsp;<%= time_ago_in_words(comment.created_at) %>
-          <!-- if user is official (change level-X CSS class) -->
+          <% if comment.user.official? %>
             &nbsp;&bullet;&nbsp;
-            <span class="label round level-1">
-              Cargo oficial
+            <span class="label round level-<%= comment.user.official_level %>">
+              <%= comment.user.official_position %>
             </span>
-          <!-- if user is a VERIFICATED association -->
-          &nbsp;&bullet;&nbsp;
-          <span class="label round is-association">
-            Puesto en la asociación
-          </span>
-          <!-- if user is debate's author -->
+          <% end %>
+          <% if comment.user.verified_organization? %>
+            &nbsp;&bullet;&nbsp;
+            <span class="label round is-association">
+              <%= t("shared.organization") %>
+            </span>
+          <% end %>
+          <% if comment.user == @debate.author %>
             &nbsp;&bullet;&nbsp;
             <span class="label round is-author">
               <%= t("debates.comment.author") %>
             </span>
-          <!-- end -->
+          <% end %>
         </div>
 
-        <!-- if user is official -->
+        <% if comment.user.official? %>
           <p class="comment-user is-official"><%= comment.body %></p>
-        <!-- elsif user is author -->
+        <% elsif comment.user == @debate.author %>
           <p class="comment-user is-author"><%= comment.body %></p>
-        <!-- else -->
+        <% else %>
           <p class="comment-user"><%= comment.body %></p>
-        <!-- end -->
+        <% end %>
         <span id="<%= dom_id(comment) %>_votes" class="comment-votes right">
           <%= render 'comments/votes', comment: comment %>
         </span>
