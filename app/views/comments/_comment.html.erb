@@ -30,7 +30,7 @@
               <%= t("shared.organization") %>
             </span>
           <% end %>
-          <% if comment.user == @debate.author %>
+          <% if comment.user_id == @debate.author_id %>
             &nbsp;&bullet;&nbsp;
             <span class="label round is-author">
               <%= t("debates.comment.author") %>
@@ -41,7 +41,7 @@
 
         <% if comment.user.official? %>
           <p class="comment-user level-<%= comment.user.official_level %>"><%= comment.body %></p>
-        <% elsif comment.user == @debate.author %>
+        <% elsif comment.user_id == @debate.author_id %>
           <p class="comment-user is-author"><%= comment.body %></p>
         <% else %>
           <p class="comment-user"><%= comment.body %></p>
