@@ -1,15 +1,7 @@
 <header class="<%= header_css %>">
   <section class="top-links">
     <div class="row">
-      <div class="language">
-        <span id="locale-switcher">
-          <%= t("layouts.header.language") %>
-          [
-            <% available_locales_to_switch.each do |locale| %>
-              <%= link_to(locale, params.merge(locale: locale), id: "locale-link-#{locale}") %>
-            <% end %>
-          ]
-      </div>
+      <%= render 'shared/locale_switcher' %>
     </div>
   </section>
 
