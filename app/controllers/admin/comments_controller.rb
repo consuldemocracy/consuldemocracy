@@ -1,7 +1,7 @@
 class Admin::CommentsController < Admin::BaseController
 
   def index
-    @comments = Comment.only_hidden
+    @comments = Comment.only_hidden.page(params[:page])
   end
 
   def restore

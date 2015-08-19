@@ -1,5 +1,7 @@
 <h2><%= t("admin.comments.index.title") %></h2>
 
+<h3><%= page_entries_info @comments %></h3>
+
 <ul class="admin-list">
   <% @comments.each do |comment| %>
     <li id="<%= dom_id(comment) %>">
@@ -16,3 +18,5 @@
     </li>
   <% end %>
 </ul>
+
+<%= paginate @comments %>

@@ -6,17 +6,17 @@ class Admin::OrganizationsController < Admin::BaseController
 
   def index
     @organizations = @organizations.send(@filter)
-    @organizations = @organizations.includes(:user).order(:name, 'users.email')
+    @organizations = @organizations.includes(:user).order(:name, 'users.email').page(params[:page])
   end
 
   def verify
     @organization.verify
-    redirect_to action: :index, filter: @filter
+    redirect_to request.query_parameters.merge(action: :index)
   end
 
   def reject
     @organization.reject
-    redirect_to action: :index, filter: @filter
+    redirect_to request.query_parameters.merge(action: :index)
   end
 
   private

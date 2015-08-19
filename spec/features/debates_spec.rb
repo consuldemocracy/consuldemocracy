@@ -16,6 +16,24 @@ feature 'Debates' do
     end
   end
 
+  scenario 'Paginated Index' do
+    per_page = Kaminari.config.default_per_page
+    (per_page + 2).times { create(:debate) }
+
+    visit debates_path
+
+    expect(page).to have_selector('#debates .debate', count: per_page)
+
+    within("nav.pagination") do
+      expect(page).to have_content("1")
+      expect(page).to have_content("2")
+      expect(page).to_not have_content("3")
+      click_link "Next"
+    end
+
+    expect(page).to have_selector('#debates .debate', count: 2)
+  end
+
   scenario 'Show' do
     debate = create(:debate)
 

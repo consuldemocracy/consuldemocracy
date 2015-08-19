@@ -20,7 +20,7 @@
 
 <% end %>
 
-<h3><%= t("admin.tags.index.title") %></h3>
+<h3><%= t("admin.tags.index.title") %>: <%= page_entries_info @tags %></h3>
 
 <ul class="admin-list">
   <% @tags.each do |tag| %>
@@ -44,3 +44,5 @@
     </li>
   <% end %>
 </ul>
+
+<%= paginate @tags %>

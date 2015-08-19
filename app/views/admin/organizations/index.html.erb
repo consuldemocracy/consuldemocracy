@@ -1,48 +1,48 @@
-<div class="left">
+<h2><%= t('admin.organizations.index.title') %></h2>
 
-  <h1><%= t('admin.organizations.index.title') %></h1>
+<p>
+  <%= t('admin.organizations.index.filter') %>:
 
-  <p>
-    <%= t('admin.organizations.index.filter') %>:
-
-    <% @valid_filters.each do |filter| %>
-      <% if @filter == filter %>
-        <%= t("admin.organizations.index.filters.#{filter}") %>
-      <% else %>
-        <%= link_to t("admin.organizations.index.filters.#{filter}"),
-          admin_organizations_path(filter: filter) %>
-      <% end %>
+  <% @valid_filters.each do |filter| %>
+    <% if @filter == filter %>
+      <%= t("admin.organizations.index.filters.#{filter}") %>
+    <% else %>
+      <%= link_to t("admin.organizations.index.filters.#{filter}"),
+        admin_organizations_path(filter: filter) %>
     <% end %>
-  </p>
-
-  <table>
-    <% @organizations.each do |organization| %>
-    <tr>
-      <td><%= organization.name %></td>
-      <td><%= organization.email %></td>
-      <td><%= organization.phone_number %></td>
-      <% if organization.verified? %>
-        <td><%= t('admin.organizations.index.verified') %></td>
-      <% end %>
-      <% if can? :verify, organization %>
-        <td><%= link_to t('admin.organizations.index.verify'),
-                  verify_admin_organization_path(organization, filter: @filter),
-                  method: :put
-            %>
-        </td>
-      <% end %>
-      <% if organization.rejected? %>
-        <td><%= t('admin.organizations.index.rejected') %></td>
-      <% end %>
-      <% if can? :reject, organization %>
-        <td><%= link_to t('admin.organizations.index.reject'),
-                  reject_admin_organization_path(organization, filter: @filter),
-                  method: :put
-            %>
-        </td>
-      <% end %>
-    </tr>
   <% end %>
-  </table>
+</p>
 
-</div>
+<h3><%= page_entries_info @organizations %></h3>
+
+<table>
+  <% @organizations.each do |organization| %>
+  <tr>
+    <td><%= organization.name %></td>
+    <td><%= organization.email %></td>
+    <td><%= organization.phone_number %></td>
+    <% if organization.verified? %>
+      <td><%= t('admin.organizations.index.verified') %></td>
+    <% end %>
+    <% if can? :verify, organization %>
+      <td><%= link_to t('admin.organizations.index.verify'),
+                verify_admin_organization_path(organization, request.query_parameters),
+                method: :put
+          %>
+      </td>
+    <% end %>
+    <% if organization.rejected? %>
+      <td><%= t('admin.organizations.index.rejected') %></td>
+    <% end %>
+    <% if can? :reject, organization %>
+      <td><%= link_to t('admin.organizations.index.reject'),
+                reject_admin_organization_path(organization, request.query_parameters),
+                method: :put
+          %>
+      </td>
+    <% end %>
+  </tr>
+<% end %>
+</table>
+
+<%= paginate @organizations %>
