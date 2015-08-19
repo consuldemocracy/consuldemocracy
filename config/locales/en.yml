@@ -1,4 +1,5 @@
 en:
+  locale: English
   layouts:
     header:
       external_link_transparency: Transparency
