@@ -186,7 +186,7 @@ header {
     }
   }
 
-  .language {
+  .locale {
     float: none;
     text-align: center;
 
@@ -196,7 +196,7 @@ header {
   }
 
   .external-links {
-    @extend .language;
+    @extend .locale;
 
     @media (min-width: 480px) {
       float: right;
