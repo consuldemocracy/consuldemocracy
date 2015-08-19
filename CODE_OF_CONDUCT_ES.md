@@ -10,10 +10,10 @@ Ejemplos de comportamiento inaceptable por parte de los participantes incluyen:
 * Ataques personales
 * Comentarios insultantes/despectivos
 * Acoso público o privado
-* Publicación de información privada de terceros, como la dirección física o electrónica, si permiso explícito
+* Publicación de información privada de terceros, como la dirección física o electrónica, sin permiso explícito
 * Otras conductas poco éticas o no profesionales
 
-Los administradores del proyecto tienen el derecho y la responsabilidad de eliminar, editar o rechazar comentarios, commits, código, ediciones de wikis, incidencias y otro tipo de aportaciones que no estén en línea con este Código de Conducta. El hecho de adoptar este Código de Conducta, los responsables del proyecto se comprometen a aplicar sus principios de manera justa y consistente en todos los aspectos relacionados con el desarrollo del proyecto. Los responsables del proyecto que no sigan o obliguen a cumplir este código de conducta pueden ser expulsados del equipo del proyecto.
+Los administradores del proyecto tienen el derecho y la responsabilidad de eliminar, editar o rechazar comentarios, commits, código, ediciones de wikis, incidencias y otro tipo de aportaciones que no estén en línea con este Código de Conducta. Por el hecho de adoptar este Código de Conducta, los responsables del proyecto se comprometen a aplicar sus principios de manera justa y consistente en todos los aspectos relacionados con el desarrollo del proyecto. Los responsables del proyecto que no sigan ni obliguen a cumplir este código de conducta pueden ser apartados del equipo del proyecto.
 
 Este código de conducta tiene validez tanto en el proyecto como en espacios públicos en los que un individuo esté representando al proyecto o a su comunidad.
 
