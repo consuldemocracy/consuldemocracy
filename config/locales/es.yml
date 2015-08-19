@@ -52,6 +52,7 @@ es:
     comment:
       author: Autor del debate
       deleted: Este comentario ha sido eliminado
+      user_deleted: Usuario eliminado
       responses:
         zero: Sin respuestas
         one: 1 Respuesta
@@ -73,6 +74,7 @@ es:
         Algunas recomendaciones:
     show:
       back_link: Volver
+      author_deleted: Usuario eliminado
       comments_title: Comentarios
       comments:
         zero: Sin comentarios

@@ -52,6 +52,7 @@ en:
     comment:
       author: Debate's author
       deleted: This comment has been deleted
+      user_deleted: Deleted user
       responses:
         zero: No Responses
         one: 1 Response
@@ -73,6 +74,7 @@ en:
         Some suggestions:
     show:
       back_link: Back
+      author_deleted: Deleted user
       comments_title: Comments
       comments:
         zero: No comments

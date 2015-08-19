@@ -6,10 +6,18 @@
     <% else %>
 
       <%= avatar_image(comment.user, size: 32, class: 'left') %>
+      <!-- if user deleted -->
+        <i class="icon-deleted user-deleted"></i>
+      <!-- end -->
 
       <div class="comment-body">
         <div class="comment-info">
-          <span class="user-name"><%= comment.user.name %></span>
+
+          <!-- if user deleted -->
+            <span class="user-name"><%= t("debates.comment.user_deleted") %></span>
+          <!-- else -->
+            <span class="user-name"><%= comment.user.name %></span>
+          <!-- end -->
           &nbsp;&bullet;&nbsp;<%= time_ago_in_words(comment.created_at) %>
           <% if comment.user.official? %>
             &nbsp;&bullet;&nbsp;
@@ -32,7 +40,7 @@
         </div>
 
         <% if comment.user.official? %>
-          <p class="comment-user is-official"><%= comment.body %></p>
+          <p class="comment-user level-<%= comment.user.official_level %>"><%= comment.body %></p>
         <% elsif comment.user == @debate.author %>
           <p class="comment-user is-author"><%= comment.body %></p>
         <% else %>
