@@ -1,9 +1,11 @@
 class User < ActiveRecord::Base
+  include ActsAsParanoidAliases
   apply_simple_captcha
   devise :database_authenticatable, :registerable, :confirmable,
          :recoverable, :rememberable, :trackable, :validatable
 
   acts_as_voter
+  acts_as_paranoid column: :hidden_at
 
   has_one :administrator
   has_one :moderator
