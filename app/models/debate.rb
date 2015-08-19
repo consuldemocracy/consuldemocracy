@@ -1,7 +1,7 @@
 require 'numeric'
 class Debate < ActiveRecord::Base
   include ActsAsParanoidAliases
-  default_scope { order('created_at DESC') }
+  default_scope { order(created_at: :desc) }
 
   apply_simple_captcha
   TITLE_LENGTH = Debate.columns.find { |c| c.name == 'title' }.limit
