@@ -26,7 +26,7 @@
     <% end %>
     <% if can? :verify, organization %>
       <td><%= link_to t('admin.organizations.index.verify'),
-                verify_admin_organization_path(organization, filter: @filter),
+                verify_admin_organization_path(organization, request.query_parameters),
                 method: :put
           %>
       </td>
@@ -36,7 +36,7 @@
     <% end %>
     <% if can? :reject, organization %>
       <td><%= link_to t('admin.organizations.index.reject'),
-                reject_admin_organization_path(organization, filter: @filter),
+                reject_admin_organization_path(organization, request.query_parameters),
                 method: :put
           %>
       </td>

@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-feature 'Moderations::Organizations' do
+feature 'Admin::Organizations' do
 
 
   background do
@@ -109,6 +109,20 @@ feature 'Moderations::Organizations' do
     expect(page).to_not have_content('Pending Organization')
     expect(page).to have_content('Rejected Organization')
     expect(page).to_not have_content('Verified Organization')
+  end
+
+  scenario "Verifying organization links remember the pagination setting and the filter" do
+    30.times { create(:organization) }
+
+    visit admin_organizations_path(filter: 'pending', page: 2)
+
+    click_on('Verify', match: :first)
+
+    uri = URI.parse(current_url)
+    query_params = Rack::Utils.parse_nested_query(uri.query).symbolize_keys
+
+    expect(query_params[:filter]).to eq('pending')
+    expect(query_params[:page]).to eq('2')
   end
 
 end

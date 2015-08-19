@@ -11,12 +11,12 @@ class Admin::OrganizationsController < Admin::BaseController
 
   def verify
     @organization.verify
-    redirect_to action: :index, filter: @filter
+    redirect_to request.query_parameters.merge(action: :index)
   end
 
   def reject
     @organization.reject
-    redirect_to action: :index, filter: @filter
+    redirect_to request.query_parameters.merge(action: :index)
   end
 
   private
