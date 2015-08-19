@@ -1,0 +1,32 @@
+<h2><%= t("admin.officials.index.title") %></h2>
+
+<%= form_for(User.new, url: search_admin_officials_path, as: :user, method: :get) do |f| %>
+  <div class="row">
+    <div class="small-12 medium-6 column">
+      <%= text_field_tag :email, "", placeholder: t("admin.officials.index.search_email_placeholder") %>
+    </div>
+    <div class="form-inline small-12 medium-6 column">
+      <%= f.submit t("admin.officials.index.search"), class: "button radius success" %>
+    </div>
+  </div>
+<% end %>
+
+<h3><%= page_entries_info @officials %></h3>
+
+<ul class="admin-list">
+<% @officials.each do |official| %>
+  <li>
+    <%= link_to official.name, edit_admin_official_path(official) %>
+    <span class="bullet">&nbsp;&bullet;&nbsp;</span>
+    <span class="level"><%= t("admin.officials.level_#{official.official_level}") %></span>
+    <span class="bullet">&nbsp;&bullet;&nbsp;</span>
+    <span class="label round level-<%= official.official_level %>">
+      <%= official.official_position %>
+    </span>
+
+    <%= link_to official.official? ? t("admin.officials.search.edit_official") : t("admin.officials.search.make_official"), edit_admin_official_path(official), class: "button radius tiny right" %>
+  </li>
+<% end %>
+</ul>
+
+<%= paginate @officials %>

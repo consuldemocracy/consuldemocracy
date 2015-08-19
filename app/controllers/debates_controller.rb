@@ -1,14 +1,17 @@
 class DebatesController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
+
   load_and_authorize_resource
+  respond_to :html, :js
 
   def index
-    @debates = Debate.search(params)
+    @debates = Debate.includes(:tags).search(params)
     set_debate_votes(@debates)
   end
 
   def show
     set_debate_votes(@debate)
+    @comments = @debate.root_comments.with_hidden.recent
   end
 
   def new
@@ -23,7 +26,9 @@ class DebatesController < ApplicationController
   def create
     @debate = Debate.new(debate_params)
     @debate.author = current_user
+
     if @debate.save_with_captcha
+      ahoy.track :debate_created, debate_id: @debate.id
       redirect_to @debate, notice: t('flash.actions.create.notice', resource_name: 'Debate')
     else
       load_featured_tags
@@ -45,7 +50,6 @@ class DebatesController < ApplicationController
     @debate.vote_by(voter: current_user, vote: params[:value])
     set_debate_votes(@debate)
   end
-
 
   private
 

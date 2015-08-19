@@ -77,7 +77,7 @@ feature 'Comments' do
       click_button 'Publish reply'
     end
 
-    within("#comment-#{comment.id}") do
+    within "#comment_#{comment.id}" do
       expect(page).to have_content 'It will be done next week.'
     end
 

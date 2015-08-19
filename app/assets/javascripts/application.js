@@ -17,6 +17,10 @@
 //= require ckeditor/init
 //= require social-share-button
 //= require initial
+//= require ahoy
+//= require d3
+//= require c3
+//= require c3ext
 //= require app
 //= require_tree .
 
@@ -25,6 +29,7 @@ var initialize_modules = function() {
   App.Users.initialize();
   App.Votes.initialize();
   App.Tags.initialize();
+  App.Stats.initialize();
 };
 
 $(function(){

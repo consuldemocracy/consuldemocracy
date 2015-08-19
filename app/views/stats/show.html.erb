@@ -1,0 +1,24 @@
+<div class="stats row-full">
+  <div class="row">
+    <div class="small-12 column">
+      <h2>Stats</h2>
+
+      <div class="small-12 medium-6 column">
+        <h3>Visits</h3>
+        <%= visits_chart_tag id: "visits" %>
+      </div>
+
+      <div class="small-12 medium-6 column">
+        <h3>Combined</h3>
+        <%= events_chart_tag @event_types, id: 'combined' %>
+      </div>
+
+      <div class="small-12">
+        <% @event_types.each do |event_type| %>
+          <h3><%= event_type.titleize %></h3>
+          <%= events_chart_tag event_type %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,8 +1,38 @@
 es:
   admin:
+    settings:
+      index:
+        title: Configuración global
+      flash:
+        updated: 'Valor actualizado'
     dashboard:
       index:
         title: Administración
+    menu:
+      settings: Configuración global
+      debate_topics: Temas de debate
+      hidden_debates: Debates ocultos
+      hidden_comments: Comentarios ocultos
+      organizations: Organizaciones
+      officials: Cargos públicos
+      stats: Estadísticas
+    organizations:
+      index:
+        title: Organizaciones
+        verify: Verificar
+        reject: Rechazar
+        verified: Verificada
+        rejected: Rechazada
+        filter: Filtro
+        filters:
+          all: Todas
+          pending: Pendientes
+          verified: Verificadas
+          rejected: Rechazadas
+    actions:
+      hide: Ocultar
+      restore: Permitir
+      confirm: '¿Estás seguro?'
     tags:
       index:
         title: 'Temas de debate'
@@ -11,3 +41,38 @@ es:
       name:
         placeholder: 'Escribe el nombre del tema'
       destroy: Elimina la etiqueta
+    comments:
+      index:
+        title: Comentarios ocultos
+      restore:
+        success: El comentario ha sido permitido
+    debates:
+      index:
+        title: Debates ocultos
+      show:
+        back: Volver
+      restore:
+        success: El debate ha sido permitido
+    officials:
+      level_0: Nivel 0
+      level_1: Nivel 1
+      level_2: Nivel 2
+      level_3: Nivel 3
+      level_4: Nivel 4
+      level_5: Nivel 5
+      index:
+        title: Cargos Públicos
+        search_email_placeholder: 'Buscar usuario por email'
+        search: Buscar
+      search:
+        title: 'Cargos Públicos: Búsqueda de usuarios'
+        edit_official: Editar cargo público
+        make_official: Convertir en cargo público
+        search: Buscar
+      edit:
+        title: 'Cargos Públicos: Editar usuario'
+        destroy: "Eliminar condición de 'Cargo Público'"
+        back: Volver
+      flash:
+        official_updated: 'Datos del cargo público guardados'
+        official_destroyed: 'Datos guardados: el usuario ya no es cargo público'

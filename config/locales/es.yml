@@ -13,8 +13,12 @@ es:
       see_all_debates: Ver todos los debates
       my_account_link: Mi cuenta
       language: Idioma de la página
-      administration: Administar
+      administration: Administrar
       moderation: Moderar
+      welcome: Portada
+      news: Novedades
+      debates: Debates
+      initiatives: Iniciativas
     footer:
       copyright: "Ayuntamiento de Madrid, %{year}. Todos los derechos reservados"
   form:
@@ -27,6 +31,14 @@ es:
   debates:
     index:
       create_debate: Crea un debate
+      showing: "Estás viendo"
+      tag: "con el tema"
+      filter_debates: debates
+      filter_initiatives: iniciativas
+      filter_debates_and_initiatives: debates e iniciativas
+      filter_news: "más nuevos"
+      filter_votes: "más votados"
+      filter_rated: mejor valorados
     debate:
       debate: Debate
       comments:
@@ -38,6 +50,7 @@ es:
         one: 1 voto
         other: "%{count} votos"
     comment:
+      deleted: Este comentario ha sido eliminado
       responses:
         zero: Sin respuestas
         one: 1 Respuesta
@@ -102,6 +115,8 @@ es:
       personal: "Datos personales"
       first_name_label: "Nombre"
       last_name_label: "Apellidos"
+      phone_number_label: "Teléfono"
+      organization_name_label: "Nombre de la organización"
       use_nickname_label: "Usar pseudónimo"
       nickname_label: "Pseudónimo"
       notifications: Notificaciones
@@ -122,17 +137,7 @@ es:
       subject: Alguien ha respondido a tu comentario
   unauthorized:
     default: "No tienes permiso para acceder a esta página."
-    index:
-      all: "No tienes permiso para listar %{subject}"
-    show:
-      all: "No tienes permiso para ver %{subject}"
-    edit:
-      all: "No tienes permiso para editar %{subject}"
-    update:
-      all: "No tienes permiso para modificar %{subject}"
-    create:
-      all: "No tienes permiso para crear %{subject}"
-    delete:
-      all: "No tienes permiso para borrar %{subject}"
     manage:
       all: "No tienes permiso para realizar la acción '%{action}' sobre %{subject}."
+  welcome:
+    featured_debates: Debates destacados

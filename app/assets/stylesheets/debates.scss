@@ -138,10 +138,6 @@
 // 02. Index
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
-.featured-debates {
-  margin-top: rem-calc(23);
-}
-
 .debate-featured {
 
   .panel {
@@ -244,7 +240,6 @@
 
 .debates-list {
   margin-bottom: rem-calc(48);
-  margin-top: rem-calc(24);
 }
 
 .debate {
@@ -371,10 +366,6 @@
         color: $text-medium;
     }
 
-    .bullet {
-      color: $border;
-    }
-
     p {
       font-size: rem-calc(14);
       line-height: $line-height;
@@ -434,6 +425,10 @@
       margin-right: rem-calc(6);
     }
   }
+}
+
+.bullet {
+  color: $border;
 }
 
 // 04. New
@@ -571,4 +566,9 @@
       }
     }
   }
+
+}
+
+.faded {
+  opacity: 0.4;
 }

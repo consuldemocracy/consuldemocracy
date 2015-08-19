@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
-  devise_for :users, controllers: { registrations: 'registrations' }
+  devise_for :users, controllers: { registrations: 'users/registrations' }
+  devise_for :organizations, class_name: 'User',
+             controllers: {
+               registrations: 'organizations/registrations',
+               sessions: 'devise/sessions'
+             }
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -8,27 +13,55 @@ Rails.application.routes.draw do
   root 'welcome#index'
 
   resources :debates do
-    member do
-      post :vote
-    end
+    member { post :vote }
 
     resources :comments, only: :create, shallow: true do
-      member do
-        post :vote
-      end
+      member { post :vote }
     end
   end
 
   resource :account, controller: "account", only: [:show, :update]
+  resource :stats, only: [:show]
+
+  namespace :api do
+    resource :stats, only: [:show]
+  end
 
   namespace :admin do
     root to: "dashboard#index"
+    resources :organizations, only: :index do
+      member do
+        put :verify
+        put :reject
+      end
+    end
+
+    resources :debates, only: [:index, :show] do
+      member { put :restore }
+    end
+
+    resources :comments, only: :index do
+      member { put :restore }
+    end
 
     resources :tags, only: [:index, :create, :update, :destroy]
+    resources :officials, only: [:index, :edit, :update, :destroy] do
+      collection { get :search}
+    end
+
+    resources :settings, only: [:index, :update]
   end
 
   namespace :moderation do
     root to: "dashboard#index"
+
+    resources :debates, only: [] do
+      member { put :hide }
+    end
+
+    resources :comments, only: [:index] do
+      member { put :hide }
+    end
   end
 
   # Example of regular route:

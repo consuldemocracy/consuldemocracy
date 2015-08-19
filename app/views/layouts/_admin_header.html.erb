@@ -1,0 +1,44 @@
+<header class="<%= header_css %>">
+  <section class="top-links">
+    <div class="row">
+      <div class="language">
+        <span id="locale-switcher">
+          <%= t("layouts.header.language") %>
+          [
+            <% available_locales_to_switch.each do |locale| %>
+              <%= link_to(locale, params.merge(locale: locale), id: "locale-link-#{locale}") %>
+            <% end %>
+          ]
+      </div>
+    </div>
+  </section>
+
+  <div class="contain-to-grid clear">
+    <nav class="top-bar" data-topbar role="navigation">
+      <ul class="title-area">
+        <li class="name">
+          <%= link_to root_path do %>
+            <%= image_tag('header_logo_madrid.png', class: 'left', size: '96x96') %>
+            <%= t("layouts.header.open_gov", open: "<strong>#{t('layouts.header.open')}</strong>").html_safe %> | <span><%= t("admin.dashboard.index.title") %></span>
+          <% end %>
+        </li>
+        <li class="toggle-topbar menu-icon"><a href="#"><span><%= t("layouts.header.menu") %></span></a></li>
+      </ul>
+
+      <section class="top-bar-section">
+        <%= render 'devise/menu/login_items' %>
+        <%= render 'shared/admin_login_items' %>
+      </section>
+    </nav>
+  </div>
+
+  <% if home_page? %>
+    <div class="row home-page">
+      <div class="small-12 column text-center">
+        <h1><%= t("layouts.header.open_city") %></h1>
+        <h2><%= t("layouts.header.open_city_slogan") %></h2>
+        <%= link_to t("layouts.header.see_all_debates"), debates_path, class: 'button radius' %>
+      </div>
+    </div>
+  <% end %>
+</header>

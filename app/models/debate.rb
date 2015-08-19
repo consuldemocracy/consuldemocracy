@@ -1,5 +1,6 @@
 require 'numeric'
 class Debate < ActiveRecord::Base
+  include ActsAsParanoidAliases
   default_scope { order('created_at DESC') }
 
   apply_simple_captcha
@@ -8,6 +9,7 @@ class Debate < ActiveRecord::Base
   acts_as_votable
   acts_as_commentable
   acts_as_taggable
+  acts_as_paranoid column: :hidden_at
 
   belongs_to :author, class_name: 'User', foreign_key: 'author_id'
 
@@ -19,6 +21,9 @@ class Debate < ActiveRecord::Base
 
   before_validation :sanitize_description
   before_validation :sanitize_tag_list
+
+  # Ahoy setup
+  visitable # Ahoy will automatically assign visit_id on create
 
   def self.search(params)
     if params[:tag]

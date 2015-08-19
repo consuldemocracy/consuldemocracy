@@ -1,0 +1,13 @@
+<h2><%= t("admin.debates.index.title") %></h2>
+
+<ul class="admin-list">
+  <% @debates.each do |debate| %>
+    <li id="<%= dom_id(debate) %>">
+      <%= link_to debate.title, admin_debate_path(debate) %>
+
+      <%= link_to t("admin.actions.restore"), restore_admin_debate_path(debate),
+            method: :put, data: { confirm: t("admin.actions.confirm") },
+            class: "button radius tiny success right" %>
+    </li>
+  <% end %>
+</ul>

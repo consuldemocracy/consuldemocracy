@@ -1,0 +1,169 @@
+// Table of Contents
+//
+// 01. Global styles
+// 02. Sidebar
+// 03. List elements
+// 04. Stats
+//
+
+// 01. Global styles
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+body.admin {
+  background: white;
+
+  h2 {
+    font-size: rem-calc(24);
+    font-weight: bold;
+  }
+
+  h3 {
+    font-size: rem-calc(14);
+    font-weight: normal;
+  }
+
+  form {
+    .button {
+      margin-top: 0;
+    }
+  }
+
+  .button.secondary {
+    margin-right: rem-calc(12);
+  }
+
+  .admin-content {
+    margin-top: rem-calc(24);
+  }
+
+  .is-featured {
+    margin-top: rem-calc(36);
+  }
+}
+
+// 02. Sidebar
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+.admin-sidebar {
+  margin-left: rem-calc(-15);
+  margin-top: rem-calc(-48);
+
+  ul {
+    list-style-type: none;
+    margin-left: 0;
+    padding: 0;
+
+    [class^="icon-"] {
+      display: inline-block;
+      font-size: rem-calc(24);
+      padding-right: rem-calc(24);
+      padding-top: rem-calc(4);
+    }
+
+    li {
+      background: #2E343F;
+      border-bottom: 1px solid #292f39;
+      border-top: 1px solid #353c49;
+      margin: 0;
+      outline: 0;
+
+      &:first-child {
+        background: #2B3139;
+        color: rgba(255,255,255,0.3);
+        padding: rem-calc(24) rem-calc(12);
+        text-transform: uppercase;
+      }
+
+      &.active{
+        background: #373D47;
+
+        a:not(.button) {
+          color: white;
+        }
+      }
+    }
+
+    li a:not(.button) {
+      color: rgba(255,255,255,0.3);
+      line-height: rem-calc(48);
+      padding-left: rem-calc(12);
+      vertical-align: top;
+
+      &:hover {
+        color: white;
+      }
+    }
+  }
+}
+
+// 03. List elements
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+.admin-list {
+  list-style-type: none;
+  margin: 0;
+  margin-bottom: rem-calc(48);
+
+  form {
+    clear: both;
+
+    .checkbox {
+      font-size: rem-calc(12);
+    }
+  }
+
+  li {
+    border-bottom: 1px solid #E7E9EC;
+    font-size: rem-calc(14);
+    min-height: rem-calc(72);
+    padding: rem-calc(12);
+
+    &:first-child {
+      border-top: 1px solid #E7E9EC;
+    }
+
+    &:nth-child(odd) {
+      background: #F0F2F6;
+    }
+  }
+
+  .tag {
+    float: left;
+    font-size: rem-calc(18);
+    padding: 0;
+  }
+
+  .button {
+    margin: 0;
+  }
+}
+
+.delete {
+  border-bottom: 1px dotted #CF2A0E;
+  color: #F04124;
+  font-size: rem-calc(12);
+
+  &:hover, &:active, &:focus {
+    border: 0;
+    color: #cf2a0e;
+  }
+}
+
+.level {
+  font-size: rem-calc(12);
+}
+
+.official {
+  background-color: #e7e7e7;
+  border-radius: rem-calc(3);
+  font-size: rem-calc(12);
+  font-weight: normal;
+  padding: rem-calc(6) rem-calc(12);
+}
+
+// 04. Stats
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+.stats {
+  background: white;
+}

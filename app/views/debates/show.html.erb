@@ -1,5 +1,5 @@
 <section class="debate-show">
-  <div id="debate-<%= @debate.id %>" class="row">
+  <div id="<%= dom_id(@debate) %>" class="row">
     <div class="small-12 medium-9 column">
       <i class="icon-angle-left left"></i>&nbsp;<%= link_to t("debates.show.back_link"), debates_path, class: 'left back' %>
 
@@ -21,12 +21,19 @@
         <span class="bullet">&nbsp;&bullet;&nbsp;</span>
         <%= l @debate.created_at.to_date %>
         <span class="bullet">&nbsp;&bullet;&nbsp;</span>
-        <i class="icon-chat-bubble-two"></i>&nbsp;<%= link_to t("debates.show.comments", count: @debate.comment_threads.count), "#comments" %>
+        <i class="icon-chat-bubble-two"></i>&nbsp;
+        <%= link_to t("debates.show.comments", count: @debate.comment_threads.count), "#comments" %>
       </div>
 
       <%= @debate.description %>
 
       <%= render 'shared/tags', debate: @debate %>
+
+      <% if moderator? %>
+        <div id='moderator-debate-actions'>
+          <%= render 'actions', debate: @debate %>
+        </div>
+      <% end %>
     </div>
 
     <aside class="small-12 medium-3 column">
@@ -40,7 +47,8 @@
       <div class="sidebar-divider"></div>
       <h3><%= t("debates.show.share") %></h3>
       <%= social_share_button_tag(@debate.title) %>
-      <% if user_signed_in? %>
+
+        <% if user_signed_in? %>
           <%= link_to t("debates.show.leave_comment"), "#comments", class: "leave-comment" %>
         <% else %>
           <%= link_to t("debates.show.login_to_comment"), new_user_session_path, class: "leave-comment" %>
@@ -63,7 +71,8 @@
           <%= render 'comments/form', {parent: @debate, toggeable: false} %>
         </div>
       <% end %>
-      <%= render @debate.root_comments.recent %>
+
+      <%= render @comments %>
     </div>
   </div>
 </section>

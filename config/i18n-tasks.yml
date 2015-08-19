@@ -94,13 +94,14 @@ ignore_missing:
 ## Consider these keys used:
 ignore_unused:
   - 'activerecord.*'
+  - 'admin.organizations.index.filter.*'
+  - 'unauthorized.*'
+  - 'simple_captcha.*'
+  - 'admin.officials.level_*'
 # - '{devise,kaminari,will_paginate}.*'
 # - 'simple_form.{yes,no}'
 # - 'simple_form.{placeholders,hints,labels}.*'
 # - 'simple_form.{error_notification,required}.:'
-ignore_unused:
-  - 'unauthorized.*'
-  - 'simple_captcha.*'
 
 ## Exclude these keys from the `i18n-tasks eq-base' report:
 # ignore_eq_base:

@@ -1,5 +1,8 @@
 class Comment < ActiveRecord::Base
+  include ActsAsParanoidAliases
   acts_as_nested_set scope: [:commentable_id, :commentable_type], counter_cache: :children_count
+
+  acts_as_paranoid column: :hidden_at
   acts_as_votable
 
   validates :body, presence: true
@@ -8,6 +11,7 @@ class Comment < ActiveRecord::Base
   belongs_to :commentable, polymorphic: true
   belongs_to :user
 
+  default_scope { includes(:user) }
   scope :recent, -> { order(id: :desc) }
 
   def self.build(commentable, user, body)

@@ -4,6 +4,14 @@ module AdminHelper
     render "/#{namespace}/menu"
   end
 
+  def official_level_options
+    options = []
+    (0..5).each do |i|
+      options << [[t("admin.officials.level_#{i}"), Setting.value_for("official_level_#{i}_name")].compact.join(': '), i]
+    end
+    options
+  end
+
   private
 
     def namespace

@@ -13,6 +13,10 @@ FactoryGirl.define do
     description          'Debate description'
     terms_of_service     '1'
     association :author, factory: :user
+
+    trait :hidden do
+      hidden_at Time.now
+    end
   end
 
   factory :vote do
@@ -25,6 +29,10 @@ FactoryGirl.define do
     association :commentable, factory: :debate
     user
     body 'Comment body'
+
+    trait :hidden do
+      hidden_at Time.now
+    end
   end
 
   factory :administrator do
@@ -33,6 +41,19 @@ FactoryGirl.define do
 
   factory :moderator do
     user
+  end
+
+  factory :organization do
+    user
+    sequence(:name) { |n| "org#{n}" }
+  end
+
+  factory :verified_organization, parent: :organization do
+    verified_at { Time.now}
+  end
+
+  factory :rejected_organization, parent: :organization do
+    rejected_at { Time.now}
   end
 
   factory :tag, class: 'ActsAsTaggableOn::Tag' do
@@ -47,4 +68,19 @@ FactoryGirl.define do
     end
   end
 
+  factory :setting do
+    sequence(:key) { |n| "setting key number #{n}" }
+    sequence(:value) { |n| "setting number #{n} value" }
+  end
+
+  factory :ahoy_event, :class => Ahoy::Event do
+    id { SecureRandom.uuid }
+    time DateTime.now
+    sequence(:name) {|n| "Event #{n} type"}
+  end
+
+  factory :visit  do
+    id { SecureRandom.uuid }
+    started_at DateTime.now
+  end
 end

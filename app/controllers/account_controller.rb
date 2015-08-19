@@ -11,6 +11,7 @@ class AccountController < ApplicationController
     if @account.update(account_params)
       redirect_to account_path, notice: t("flash.actions.save_changes.notice")
     else
+      @account.errors.messages.delete(:organization)
       render :show
     end
   end
@@ -22,7 +23,11 @@ class AccountController < ApplicationController
     end
 
     def account_params
-      params.require(:account).permit(:first_name, :last_name, :nickname, :use_nickname, :email_on_debate_comment, :email_on_comment_reply)
+      if @account.organization?
+        params.require(:account).permit(:phone_number, :email_on_debate_comment, :email_on_comment_reply, organization_attributes: [:name])
+      else
+        params.require(:account).permit(:first_name, :last_name, :phone_number, :nickname, :use_nickname, :email_on_debate_comment, :email_on_comment_reply)
+      end
     end
 
 end

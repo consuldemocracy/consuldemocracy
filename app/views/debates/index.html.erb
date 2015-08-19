@@ -1,6 +1,79 @@
 <section role="main">
+
+  <!-- Filters -->
+  <div class="filters row">
+    <div class="small-12 column">
+      <h2><%= t("debates.index.showing") %></h2>
+
+      <select class="inline-block">
+        <option value="filter_debates">
+          <%= t("debates.index.filter_debates") %>
+        </option>
+        <option value="filter_initiatives">
+          <%= t("debates.index.filter_initiatives") %>
+        </option>
+        <option value="filter_debates_and_initiatives">
+          <%= t("debates.index.filter_debates_and_initiatives") %>
+        </option>
+      </select>
+
+      <select class="inline-block">
+        <option value="filter_news">
+          <%= t("debates.index.filter_news") %>
+        </option>
+        <option value="filter_votes">
+          <%= t("debates.index.filter_votes") %>
+        </option>
+        <option value="filter_rated">
+          <%= t("debates.index.filter_rated") %>
+        </option>
+      </select>
+    </div>
+  </div>
+  <!-- /. Filters -->
+
+  <!-- Filter topic results -->
+  <div class="filters row">
+    <div class="small-12 column">
+      <h2><%= t("debates.index.showing") %></h2>
+
+      <select class="inline-block">
+        <option value="filter_debates">
+          <%= t("debates.index.filter_debates") %>
+        </option>
+        <option value="filter_initiatives">
+          <%= t("debates.index.filter_initiatives") %>
+        </option>
+        <option value="filter_debates_and_initiatives">
+          <%= t("debates.index.filter_debates_and_initiatives") %>
+        </option>
+      </select>
+
+      <select class="inline-block">
+        <option value="filter_news">
+          <%= t("debates.index.filter_news") %>
+        </option>
+        <option value="filter_votes">
+          <%= t("debates.index.filter_votes") %>
+        </option>
+        <option value="filter_rated">
+          <%= t("debates.index.filter_rated") %>
+        </option>
+      </select>
+
+      <h2><%= t("debates.index.tag") %></h2>
+
+      <select class="inline-block">
+        <option value="">Lista de temas</option>
+      </select>
+
+      <h2>(43)</h2>
+    </div>
+  </div>
+  <!-- /. Filter topic results -->
+
   <div class="row">
-    <div id="debates" class="small-12 medium-9 column debates-list">
+    <div id="debates" class="debates-list small-12 medium-9 column">
       <%= render @debates %>
     </div>
     <div class="small-12 medium-3 column">

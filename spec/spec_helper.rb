@@ -1,6 +1,7 @@
 require 'factory_girl_rails'
 require 'database_cleaner'
-require "email_spec"
+require 'email_spec'
+require 'devise'
 Dir["./spec/support/**/*.rb"].sort.each { |f| require f }
 
 RSpec.configure do |config|
@@ -8,6 +9,7 @@ RSpec.configure do |config|
 
   config.filter_run :focus
   config.run_all_when_everything_filtered = true
+  config.include Devise::TestHelpers, :type => :controller
   config.include FactoryGirl::Syntax::Methods
   config.include(EmailSpec::Helpers)
   config.include(EmailSpec::Matchers)

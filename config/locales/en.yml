@@ -15,6 +15,10 @@ en:
       language: Site language
       administration: Administration
       moderation: Moderation
+      welcome: Welcome
+      news: News
+      debates: Debates
+      initiatives: Initiatives
     footer:
       copyright: "Ayuntamiento de Madrid, 2015. All rights reserved"
   form:
@@ -27,6 +31,14 @@ en:
   debates:
     index:
       create_debate: Create a debate
+      showing: You are seeing
+      tag: with the topic
+      filter_debates: debates
+      filter_initiatives: initiatives
+      filter_debates_and_initiatives: debates and initiatives
+      filter_news: the newest
+      filter_votes: the most voted
+      filter_rated: the best rated
     debate:
       debate: Debate
       comments:
@@ -38,6 +50,7 @@ en:
         one: 1 vote
         other: "%{count} votes"
     comment:
+      deleted: This comment has been deleted
       responses:
         zero: No Responses
         one: 1 Response
@@ -102,6 +115,8 @@ en:
       personal: "Personal data"
       first_name_label: "First Name"
       last_name_label: "Last Name"
+      phone_number_label: "Phone number"
+      organization_name_label: "Organization name"
       use_nickname_label: "Use nickname"
       nickname_label: "Nickname"
       notifications: Notifications
@@ -124,3 +139,5 @@ en:
     default: "You are not authorized to access this page."
     manage:
       all: "You are not authorized to %{action} %{subject}."
+  welcome:
+    featured_debates: Features debates
