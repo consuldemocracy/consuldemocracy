@@ -11,7 +11,7 @@ class DebatesController < ApplicationController
 
   def show
     set_debate_votes(@debate)
-    @comments = @debate.root_comments.with_hidden.recent
+    @comments = @debate.root_comments.with_hidden.recent.page(params[:page])
   end
 
   def new

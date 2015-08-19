@@ -19,6 +19,24 @@ feature 'Comments' do
     end
   end
 
+  scenario 'Paginated comments' do
+    debate = create(:debate)
+    per_page = Kaminari.config.default_per_page
+    (per_page + 2).times { create(:comment, commentable: debate)}
+
+    visit debate_path(debate)
+
+    expect(page).to have_css('.comment', count: per_page)
+    within("nav.pagination") do
+      expect(page).to have_content("1")
+      expect(page).to have_content("2")
+      expect(page).to_not have_content("3")
+      click_link "Next"
+    end
+
+    expect(page).to have_css('.comment', count: 2)
+  end
+
   feature 'Not logged user' do
     scenario 'can not see comments forms' do
       debate = create(:debate)
