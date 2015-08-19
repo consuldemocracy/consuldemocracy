@@ -5,6 +5,10 @@
 * Enrique García Cota [github](https://github.com/kikito) | [twitter](https://twitter.com/otikik)
 * Alberto Garcia Cabeza [github](https://github.com/decabeza) | [twitter](https://twitter.com/decabeza)
 
+## Código de conducta
+
+Los miembros del proyecto y la comunidad de personas que contribuyen a él se adhieren a un código de conducta que se puede consultar en el archivo [CODE_OF_CONDUCT_ES.md](CODE_OF_CONDUCT_ES.md).
+
 ## Comunicación general y de incidencias
 
 El método preferido para informar sobre una incidencia en el proyecto es [creando una incidencia en la cuenta de Github del proyecto](https://github.com/AyuntamientoMadrid/participacion/issues/new).
