@@ -1,7 +1,7 @@
 class Admin::DebatesController < Admin::BaseController
 
   def index
-    @debates = Debate.only_hidden
+    @debates = Debate.only_hidden.page(params[:page])
   end
 
   def show

@@ -1,5 +1,7 @@
 <h2><%= t("admin.debates.index.title") %></h2>
 
+<h3><%= page_entries_info @debates %></h3>
+
 <ul class="admin-list">
   <% @debates.each do |debate| %>
     <li id="<%= dom_id(debate) %>">
@@ -11,3 +13,5 @@
     </li>
   <% end %>
 </ul>
+
+<%= paginate @debates %>

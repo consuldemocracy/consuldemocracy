@@ -6,7 +6,7 @@ class Admin::OrganizationsController < Admin::BaseController
 
   def index
     @organizations = @organizations.send(@filter)
-    @organizations = @organizations.includes(:user).order(:name, 'users.email')
+    @organizations = @organizations.includes(:user).order(:name, 'users.email').page(params[:page])
   end
 
   def verify

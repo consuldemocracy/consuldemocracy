@@ -4,7 +4,7 @@ class Admin::TagsController < Admin::BaseController
   respond_to :html, :js
 
   def index
-    @tags = ActsAsTaggableOn::Tag.order(featured: :desc)
+    @tags = ActsAsTaggableOn::Tag.order(featured: :desc).page(params[:page])
     @tag  = ActsAsTaggableOn::Tag.new
   end
 

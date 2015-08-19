@@ -13,6 +13,8 @@
   <% end %>
 </p>
 
+<h3><%= page_entries_info @organizations %></h3>
+
 <table>
   <% @organizations.each do |organization| %>
   <tr>
@@ -42,3 +44,5 @@
   </tr>
 <% end %>
 </table>
+
+<%= paginate @organizations %>
