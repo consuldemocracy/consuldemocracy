@@ -544,14 +544,24 @@
 
       .comment-user {
         margin-top: rem-calc(6);
-        padding: rem-calc(6) rem-calc(12);
+        padding: rem-calc(6) 0;
 
-        &.is-official {
-          background: $comment-official;
+        @each $n in ("1", "2", "3","4", "5") {
+          &.level-#{$n} {
+            @if $n == "5" {
+              background: $comment-level-5;
+              padding: rem-calc(6) rem-calc(12);
+            }
+            @else {
+              background: $comment-official;
+              padding: rem-calc(6) rem-calc(12);
+            }
+          }
         }
 
         &.is-author {
           background: $comment-author;
+          padding: rem-calc(6) rem-calc(12);
         }
       }
     }
@@ -579,7 +589,6 @@
       }
     }
   }
-
 }
 
 .faded {
