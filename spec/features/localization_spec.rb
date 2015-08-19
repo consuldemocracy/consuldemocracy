@@ -9,19 +9,27 @@ feature 'Localization' do
     expect(page).to have_text('Estamos abriendo Madrid')
   end
 
-  scenario 'Changing locale' do
-    visit root_path(locale: :es)
-    locale_switcher = find('#locale-switcher')
+  scenario 'Available locales appear in the locale switcher' do
+    visit '/'
 
-    expect(page).to have_text('Estamos abriendo Madrid')
-    expect(locale_switcher).to have_text('en')
-    expect(locale_switcher).to_not have_text('es')
+    within('.js-locale-switcher') do
+      expect(page).to have_content 'Español'
+      expect(page).to have_content 'English'
+    end
+  end
 
-    find('#locale-link-en').click
-    locale_switcher = find('#locale-switcher')
+  scenario 'The current locale is selected' do
+    visit '/'
+    expect(page).to have_select('locale-switcher', selected: 'English')
+  end
 
-    expect(page).to have_text('We are opening Madrid')
-    expect(locale_switcher).to have_text('es')
-    expect(locale_switcher).to_not have_text('en')
+  scenario 'Changing the locale', :js do
+    visit '/'
+    expect(page).to have_content('Site language')
+
+    select('Español', from: 'locale-switcher')
+    expect(page).to have_content('Idioma de la página')
+    expect(page).to_not have_content('Site language')
+    expect(page).to have_select('locale-switcher', selected: 'Español')
   end
 end
