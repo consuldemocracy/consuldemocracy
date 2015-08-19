@@ -133,7 +133,8 @@ en:
       debate: "secret code did not match with the image"
   shared:
     tags_cloud:
-        tags: Topics
+      tags: Topics
+    organization: Organization
   mailer:
     comment:
       subject: Someone has commented on your debate
