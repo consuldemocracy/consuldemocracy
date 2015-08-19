@@ -567,6 +567,11 @@
           background: $comment-author;
           padding: rem-calc(6) rem-calc(12);
         }
+
+        &.is-moderator {
+          background: $comment-moderator;
+          padding: rem-calc(6) rem-calc(12);
+        }
       }
     }
 

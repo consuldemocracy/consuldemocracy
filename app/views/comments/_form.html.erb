@@ -4,6 +4,13 @@
     <%= f.hidden_field :commentable_type, value: parent.class %>
     <%= f.hidden_field :commentable_id, value: parent.id %>
 
-    <%= f.submit comment_button_text(parent), class: "button radius small" %>
+    <%= f.submit comment_button_text(parent), class: "button radius small inline-block" %>
+
+    <!-- if user is moderator
+    <div class="right">
+      <%#= f.check_box :, label: false %>
+      <%#= f.label :, t("comments.form.comment_as_moderator"), class: "checkbox" %>
+    </div>
+    end -->
   <% end %>
 </div>
