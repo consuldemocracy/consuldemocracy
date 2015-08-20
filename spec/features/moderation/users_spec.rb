@@ -7,16 +7,20 @@ feature 'Moderate users' do
     moderator = create(:moderator)
 
     debate1 = create(:debate, author: citizen)
-    comment1 = create(:comment, user: citizen, commentable: debate1, body: 'SPAM')
     debate2 = create(:debate, author: citizen)
-    comment2 = create(:comment, user: citizen, commentable: debate2, body: 'Hello')
+    debate3 = create(:debate)
+    comment3 = create(:comment, user: citizen, commentable: debate3, body: 'SPAMMER')
 
     login_as(moderator.user)
-
     visit debates_path
 
     expect(page).to have_content(debate1.title)
     expect(page).to have_content(debate2.title)
+    expect(page).to have_content(debate3.title)
+
+    visit debate_path(debate3)
+
+    expect(page).to have_content(comment3.body)
 
     visit debate_path(debate1)
 
@@ -27,6 +31,11 @@ feature 'Moderate users' do
     expect(current_path).to eq(debates_path)
     expect(page).to_not have_content(debate1.title)
     expect(page).to_not have_content(debate2.title)
+    expect(page).to have_content(debate3.title)
+
+    visit debate_path(debate3)
+
+    expect(page).to_not have_content(comment3.body)
 
     click_link("Logout")
 
