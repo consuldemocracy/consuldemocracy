@@ -67,7 +67,7 @@ Rails.application.routes.draw do
       member { put :hide }
     end
 
-    resources :comments, only: [:index] do
+    resources :comments, only: [] do
       member { put :hide }
     end
   end
