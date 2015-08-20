@@ -11,6 +11,8 @@ class Comment < ActiveRecord::Base
   belongs_to :commentable, polymorphic: true
   belongs_to :user
 
+  has_many :inappropiate_flags, :as => :flaggable
+
   default_scope { includes(:user) }
   scope :recent, -> { order(id: :desc) }
 

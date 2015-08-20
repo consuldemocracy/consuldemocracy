@@ -12,6 +12,7 @@ class Debate < ActiveRecord::Base
   acts_as_paranoid column: :hidden_at
 
   belongs_to :author, class_name: 'User', foreign_key: 'author_id'
+  has_many :inappropiate_flags, :as => :flaggable
 
   validates :title, presence: true
   validates :description, presence: true

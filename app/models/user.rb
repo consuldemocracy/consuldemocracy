@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
   has_one :administrator
   has_one :moderator
   has_one :organization
+  has_many :inappropiate_flags
 
   validates :first_name, presence: true, if: :use_first_name?
   validates :last_name,  presence: true, if: :use_last_name?
