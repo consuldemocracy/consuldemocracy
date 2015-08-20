@@ -1,5 +1,5 @@
 es:
-  locale: 'Español'
+  locale: "Español"
   layouts:
     header:
       external_link_transparency: Transparencia
@@ -13,7 +13,7 @@ es:
       open_city_slogan: Para que todos los madrileños decidamos que ciudad queremos tener.
       see_all_debates: Ver todos los debates
       my_account_link: Mi cuenta
-      language: Idioma de la página
+      language: "Idioma de la página:"
       administration: Administrar
       moderation: Moderar
       welcome: Portada

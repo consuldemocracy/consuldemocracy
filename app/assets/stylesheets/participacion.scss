@@ -436,6 +436,24 @@ footer {
 // 08. Forms
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
+form.language {
+  display: inline-block;
+  position: relative;
+
+  select {
+    background-image: url("language_select.png");
+
+    &.js-locale-switcher {
+      background-color: transparent;
+      border: 0;
+      color: white;
+      outline: none;
+      padding-left: rem-calc(3);
+      padding-right: rem-calc(24);
+    }
+  }
+}
+
 form {
 
   label {
