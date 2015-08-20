@@ -70,7 +70,7 @@
     <% end %>
 
       <div class="comment-children">
-        <%= render comment.children.with_deleted.reorder('id DESC, lft') %>
+        <%= render comment.children.with_hidden.reorder('id DESC, lft') %>
       </div>
 
   </div>

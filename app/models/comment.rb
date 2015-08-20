@@ -9,7 +9,7 @@ class Comment < ActiveRecord::Base
   validates :user, presence: true
 
   belongs_to :commentable, polymorphic: true
-  belongs_to :user, -> { with_deleted }
+  belongs_to :user, -> { with_hidden }
 
   default_scope { includes(:user) }
   scope :recent, -> { order(id: :desc) }
