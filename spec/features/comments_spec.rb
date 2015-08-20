@@ -27,7 +27,7 @@ feature 'Comments' do
     visit debate_path(debate)
 
     expect(page).to have_css('.comment', count: per_page)
-    within("nav.pagination") do
+    within("ul.pagination") do
       expect(page).to have_content("1")
       expect(page).to have_content("2")
       expect(page).to_not have_content("3")
