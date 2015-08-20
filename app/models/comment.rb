@@ -34,6 +34,10 @@ class Comment < ActiveRecord::Base
     user
   end
 
+  def author=(author)
+    self.user= author
+  end
+
   def total_votes
     votes_for.size
   end

@@ -22,11 +22,47 @@ describe Ability do
     it { should be_able_to(:show, debate) }
     it { should be_able_to(:vote, debate) }
 
+
     it { should be_able_to(:show, user) }
     it { should be_able_to(:edit, user) }
 
     it { should be_able_to(:create, Comment) }
     it { should be_able_to(:vote, Comment) }
+
+    describe 'flagging content as inappropiate' do
+      it { should be_able_to(:flag_as_inappropiate, debate) }
+      it { should_not be_able_to(:undo_flag_as_inappropiate, debate) }
+      it { should be_able_to(:flag_as_inappropiate, comment) }
+      it { should_not be_able_to(:undo_flag_as_inappropiate, comment) }
+
+      describe "own comments" do
+        let(:own_comment) { create(:comment, author: user) }
+
+        it { should_not be_able_to(:flag_as_inappropiate, own_comment) }
+        it { should_not be_able_to(:undo_flag_as_inappropiate, own_comment) }
+      end
+
+      describe "own debates" do
+        let(:own_debate) { create(:debate, author: user) }
+
+        it { should_not be_able_to(:flag_as_inappropiate, own_debate) }
+        it { should_not be_able_to(:undo_flag_as_inappropiate, own_debate) }
+      end
+
+      describe "already-flagged comments" do
+        before(:each) { InappropiateFlag.flag!(user, comment) }
+
+        it { should_not be_able_to(:flag_as_inappropiate, comment) }
+        it { should be_able_to(:undo_flag_as_inappropiate, comment) }
+      end
+
+      describe "already-flagged debates" do
+        before(:each) { InappropiateFlag.flag!(user, debate) }
+
+        it { should_not be_able_to(:flag_as_inappropiate, debate) }
+        it { should be_able_to(:undo_flag_as_inappropiate, debate) }
+      end
+    end
 
     describe "other users" do
       let(:other_user) { create(:user) }

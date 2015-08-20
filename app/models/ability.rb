@@ -16,6 +16,22 @@ class Ability
       can :create, Comment
       can :create, Debate
 
+      can :flag_as_inappropiate, Comment do |comment|
+        comment.author != user && !InappropiateFlag.flagged?(user, comment)
+      end
+
+      can :undo_flag_as_inappropiate, Comment do |comment|
+        comment.author != user && InappropiateFlag.flagged?(user, comment)
+      end
+
+      can :flag_as_inappropiate, Debate do |debate|
+        debate.author != user && !InappropiateFlag.flagged?(user, debate)
+      end
+
+      can :undo_flag_as_inappropiate, Debate do |debate|
+        debate.author != user && InappropiateFlag.flagged?(user, debate)
+      end
+
       unless user.organization?
         can :vote, Debate
         can :vote, Comment
