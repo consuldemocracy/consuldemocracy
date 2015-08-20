@@ -44,11 +44,13 @@ class Ability
 
         can :hide, Comment
         can :hide, Debate
+        can :hide, User
       end
 
       if user.administrator?
         can :restore, Comment
         can :restore, Debate
+        can :restore, User
       end
     end
   end

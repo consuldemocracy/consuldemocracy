@@ -153,16 +153,18 @@ ActiveRecord::Schema.define(version: 20150820104552) do
     t.datetime "confirmation_sent_at"
     t.string   "unconfirmed_email"
     t.string   "nickname"
-    t.string   "phone_number",            limit: 30
     t.boolean  "use_nickname",                       default: false, null: false
     t.boolean  "email_on_debate_comment",            default: false
     t.boolean  "email_on_comment_reply",             default: false
     t.string   "official_position"
     t.integer  "official_level",                     default: 0
+    t.string   "phone_number",            limit: 30
+    t.datetime "hidden_at"
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["hidden_at"], name: "index_users_on_hidden_at", using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
   create_table "visits", id: :uuid, default: nil, force: :cascade do |t|

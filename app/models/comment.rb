@@ -9,7 +9,7 @@ class Comment < ActiveRecord::Base
   validates :user, presence: true
 
   belongs_to :commentable, polymorphic: true
-  belongs_to :user
+  belongs_to :user, -> { with_hidden }
 
   has_many :inappropiate_flags, :as => :flaggable
 
@@ -40,6 +40,10 @@ class Comment < ActiveRecord::Base
 
   def total_votes
     votes_for.size
+  end
+
+  def not_visible?
+    hidden? || user.hidden?
   end
 
   # TODO: faking counter cache since there is a bug with acts_as_nested_set :counter_cache

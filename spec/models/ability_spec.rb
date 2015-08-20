@@ -100,6 +100,7 @@ describe Ability do
   describe "Moderator" do
     let(:user) { create(:user) }
     before { create(:moderator, user: user) }
+    let(:other_user) { create(:user) }
 
     it { should be_able_to(:index, Debate) }
     it { should be_able_to(:show, debate) }
@@ -124,14 +125,17 @@ describe Ability do
 
     it { should be_able_to(:hide, comment) }
     it { should be_able_to(:hide, debate) }
+    it { should be_able_to(:hide, other_user) }
 
     it { should_not be_able_to(:restore, comment) }
     it { should_not be_able_to(:restore, debate) }
+    it { should_not be_able_to(:restore, other_user) }
   end
 
   describe "Administrator" do
     let(:user) { create(:user) }
     before { create(:administrator, user: user) }
+    let(:other_user) { create(:user) }
 
     it { should be_able_to(:index, Debate) }
     it { should be_able_to(:show, debate) }
@@ -139,5 +143,6 @@ describe Ability do
 
     it { should be_able_to(:restore, comment) }
     it { should be_able_to(:restore, debate) }
+    it { should be_able_to(:restore, other_user) }
   end
 end
