@@ -4,4 +4,5 @@ class Moderation::DebatesController < Moderation::BaseController
     @debate = Debate.find(params[:id])
     @debate.hide
   end
+
 end

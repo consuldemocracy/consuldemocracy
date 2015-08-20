@@ -31,6 +31,7 @@ es:
           rejected: Rechazadas
     actions:
       hide: Ocultar
+      hide_author: Bloquear al autor
       restore: Permitir
       confirm: '¿Estás seguro?'
     tags:

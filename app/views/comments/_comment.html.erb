@@ -1,21 +1,21 @@
 <div class="row">
 	<div id="<%= dom_id(comment) %>" class="comment small-12 column">
 
-    <% if comment.hidden? %>
+    <% if comment.not_visible? %>
       <%= t("debates.comment.deleted") %>
     <% else %>
 
       <%= avatar_image(comment.user, size: 32, class: 'left') %>
-      <!-- if comment.user.hidden?
+      <% if comment.user.hidden? %>
         <i class="icon-deleted user-deleted"></i>
-           end -->
+      <% end %>
 
       <div class="comment-body">
         <div class="comment-info">
 
-          <!--  if comment.user.hidden?
+          <% if comment.user.hidden? %>
             <span class="user-name"><%= t("debates.comment.user_deleted") %></span>
-                else -->
+          <% else %>
             <span class="user-name"><%= comment.user.name %></span>
             <% if comment.user.official? %>
               &nbsp;&bullet;&nbsp;
@@ -23,7 +23,7 @@
                 <%= comment.user.official_position %>
               </span>
             <% end %>
-          <!-- end -->
+          <% end %>
           <% if comment.user.verified_organization? %>
             &nbsp;&bullet;&nbsp;
             <span class="label round is-association">
