@@ -1,0 +1,18 @@
+<h2><%= t("admin.users.index.title") %></h2>
+
+<h3><%= page_entries_info @users %></h3>
+
+<ul class="admin-list">
+<% @users.each do |user| %>
+  <li>
+    <%= link_to user.name, admin_user_path(user) %>
+
+    <%= link_to t("admin.users.index.restore"), restore_admin_user_path(user),
+              method: :put, data: { confirm: t('admin.actions.confirm') }, class: "button radius tiny right" %>
+  </li>
+<% end %>
+</ul>
+
+<%= paginate @users %>
+
+

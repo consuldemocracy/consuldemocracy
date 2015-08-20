@@ -36,6 +36,10 @@ Rails.application.routes.draw do
       end
     end
 
+    resources :users, only: [:index, :show] do
+      member { put :restore }
+    end
+
     resources :debates, only: [:index, :show] do
       member { put :restore }
     end
