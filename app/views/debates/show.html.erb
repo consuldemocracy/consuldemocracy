@@ -41,6 +41,10 @@
         <span class="bullet">&nbsp;&bullet;&nbsp;</span>
         <i class="icon-chat-bubble-two"></i>&nbsp;
         <%= link_to t("debates.show.comments", count: @debate.comment_threads.count), "#comments" %>
+
+        <span class='right js-flag-as-inappropiate-actions'>
+          <%= render 'debates/flag_as_inappropiate_actions', debate: @debate %>
+        </span>
       </div>
 
       <%= @debate.description %>

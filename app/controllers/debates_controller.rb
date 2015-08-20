@@ -51,6 +51,16 @@ class DebatesController < ApplicationController
     set_debate_votes(@debate)
   end
 
+  def flag_as_inappropiate
+    InappropiateFlag.flag!(current_user, @debate)
+    respond_with @debate, template: 'debates/_refresh_flag_as_inappropiate_actions'
+  end
+
+  def undo_flag_as_inappropiate
+    InappropiateFlag.unflag!(current_user, @debate)
+    respond_with @debate, template: 'debates/_refresh_flag_as_inappropiate_actions'
+  end
+
   private
 
     def debate_params
