@@ -20,6 +20,16 @@ module ActsAsParanoidAliases
     def only_hidden
       only_deleted
     end
+
+    def hide_all(ids)
+      return if ids.blank?
+      where(id: ids).update_all(hidden_at: Time.now)
+    end
+
+    def restore_all(ids)
+      return if ids.blank?
+      only_hidden.where(id: ids).update_all(hidden_at: nil)
+    end
   end
 
 end

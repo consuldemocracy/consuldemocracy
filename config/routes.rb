@@ -36,6 +36,10 @@ Rails.application.routes.draw do
       end
     end
 
+    resources :users, only: [:index, :show] do
+      member { put :restore }
+    end
+
     resources :debates, only: [:index, :show] do
       member { put :restore }
     end
@@ -55,11 +59,15 @@ Rails.application.routes.draw do
   namespace :moderation do
     root to: "dashboard#index"
 
+    resources :users, only: [] do
+      member { put :hide }
+    end
+
     resources :debates, only: [] do
       member { put :hide }
     end
 
-    resources :comments, only: [:index] do
+    resources :comments, only: [] do
       member { put :hide }
     end
   end

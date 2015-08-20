@@ -1,2 +1,8 @@
 <%= link_to t("admin.actions.hide").capitalize, hide_moderation_debate_path(debate),
             method: :put, remote: true, data: { confirm: t('admin.actions.confirm') } %>
+
+<% unless debate.author.hidden? %>
+  &nbsp;|&nbsp;
+  <%= link_to t("admin.actions.hide_author").capitalize, hide_moderation_user_path(debate.author_id),
+              method: :put, data: { confirm: t('admin.actions.confirm') } %>
+<% end %>

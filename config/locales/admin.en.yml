@@ -13,6 +13,7 @@ en:
       debate_topics: Debate topics
       hidden_debates: Hidden debates
       hidden_comments: Hidden comments
+      hidden_users: Hidden users
       organizations: Organizations
       officials: Officials
       stats: Statistics
@@ -31,6 +32,7 @@ en:
           rejected: Rejected
     actions:
       hide: Hide
+      hide_author: Ban author
       restore: Restore
       confirm: 'Are you sure?'
     tags:
@@ -53,6 +55,19 @@ en:
         back: Back
       restore:
         success: The debate has been restored
+    users:
+      index:
+        title: Banned users
+        restore: Restore user
+      show:
+        title: "User activity from %{user}"
+        restore: Restore user
+        back: Back
+        email: "Email:"
+        registered_at: "Registered at:"
+        hidden_at: "Hidden at:"
+      restore:
+        success: The user has been restored
     officials:
       level_0: Level 0
       level_1: Level 1

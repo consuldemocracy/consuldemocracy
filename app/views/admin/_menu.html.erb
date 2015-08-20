@@ -25,6 +25,13 @@
       <% end %>
     </li>
 
+    <li <%= 'class=active' if controller_name == 'users' %>>
+      <%= link_to admin_users_path do %>
+        <i class="icon-user"></i>
+        <%= t('admin.menu.hidden_users') %>
+      <% end %>
+    </li>
+
     <li <%= 'class=active' if controller_name == 'organizations' %>>
       <%= link_to admin_organizations_path do %>
         <i class="icon-comment-quotes"></i>

@@ -1,0 +1,43 @@
+<h2><%= t("admin.users.show.title", user: @user.name) %></h2>
+
+<p>
+  <strong><%= t("admin.users.show.email") %></strong> <%= @user.email %> |
+  <strong><%= t("admin.users.show.registered_at") %></strong> <%= @user.confirmed_at %> |
+  <strong><%= t("admin.users.show.hidden_at") %></strong> <%= @user.hidden_at %>
+</p>
+<p>
+  <%= link_to t("admin.users.show.restore"), restore_admin_user_path(@user),
+              method: :put, data: { confirm: t('admin.actions.confirm') }, class: "button radius tiny" %>
+  <%= link_to t("admin.users.show.back"), admin_users_path,
+            class: "button radius tiny secondary" %>
+</p>
+
+<% if @debates.present? %>
+  <h3><%= page_entries_info @debates %></h3>
+<% end %>
+
+<ul class="admin-list">
+<% @debates.each do |debate| %>
+  <li>
+    <%= link_to debate.title, admin_debate_path(debate) %>
+  </li>
+<% end %>
+</ul>
+
+<% if @comments.present? %>
+  <h3><%= page_entries_info @comments %></h3>
+<% end %>
+
+<ul class="admin-list">
+<% @comments.each do |comment| %>
+  <li id="<%= dom_id(comment) %>">
+      <div class="row">
+        <div class="small-12 medium-10 column">
+          <%= comment.body %>
+        </div>
+      </div>
+    </li>
+<% end %>
+</ul>
+
+<%= paginate [@debates, @comments].sort_by {|x| x.size}.last %>

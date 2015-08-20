@@ -13,6 +13,7 @@ es:
       debate_topics: Temas de debate
       hidden_debates: Debates ocultos
       hidden_comments: Comentarios ocultos
+      hidden_users: Usuarios ocultos
       organizations: Organizaciones
       officials: Cargos públicos
       stats: Estadísticas
@@ -31,6 +32,7 @@ es:
           rejected: Rechazadas
     actions:
       hide: Ocultar
+      hide_author: Bloquear al autor
       restore: Permitir
       confirm: '¿Estás seguro?'
     tags:
@@ -53,6 +55,19 @@ es:
         back: Volver
       restore:
         success: El debate ha sido permitido
+    users:
+      index:
+        title: Usuarios bloqueados
+        restore: Restaurar usuario
+      show:
+        title: "Actividad del usuario %{user}"
+        restore: Restaurar usuario
+        back: Volver
+        email: "Email:"
+        registered_at: "Fecha de alta:"
+        hidden_at: "Bloqueado:"
+      restore:
+        success: El usuario y sus contenidos han sido restaurados
     officials:
       level_0: Nivel 0
       level_1: Nivel 1
