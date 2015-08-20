@@ -138,6 +138,8 @@ en:
     tags_cloud:
       tags: Topics
     organization: Organization
+    flag_as_inappropiate: Flag as inappropiate
+    undo_flag_as_inappropiate: Undo flag as inappropiate
   mailer:
     comment:
       subject: Someone has commented on your debate

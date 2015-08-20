@@ -138,6 +138,8 @@ es:
     tags_cloud:
         tags: Temas
     organization: Organización
+    flag_as_inappropiate: Denunciar como inapropiado
+    undo_flag_as_inappropiate: Deshacer denunciar como inapropiado
   mailer:
     comment:
       subject: Alguien ha comentado en tu debate
