@@ -24,7 +24,7 @@ feature 'Debates' do
 
     expect(page).to have_selector('#debates .debate', count: per_page)
 
-    within("nav.pagination") do
+    within("ul.pagination") do
       expect(page).to have_content("1")
       expect(page).to have_content("2")
       expect(page).to_not have_content("3")

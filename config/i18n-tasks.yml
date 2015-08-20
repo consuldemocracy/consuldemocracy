@@ -26,6 +26,7 @@ data:
     - config/locales/moderation.%{locale}.yml
     - config/locales/devise_views.%{locale}.yml
     - config/locales/responders.%{locale}.yml
+    - config/locales/kaminari.%{locale}.yml
 
   # Locale files to write new keys to, based on a list of key pattern => file rules. Matched from top to bottom:
   # `i18n-tasks normalize -p` will force move the keys according to these rules
@@ -98,6 +99,8 @@ ignore_unused:
   - 'unauthorized.*'
   - 'simple_captcha.*'
   - 'admin.officials.level_*'
+  - 'helpers.page_entries_info.*' # kaminari
+  - 'views.pagination.*' # kaminari
 # - '{devise,kaminari,will_paginate}.*'
 # - 'simple_form.{yes,no}'
 # - 'simple_form.{placeholders,hints,labels}.*'

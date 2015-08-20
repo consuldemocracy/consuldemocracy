@@ -12,6 +12,7 @@
 // 10. User account
 // 11. Filters
 // 12. Official levels
+// 13. Pagination
 //
 
 // 01. Variables
@@ -672,4 +673,15 @@ img.initialjs-avatar {
 
 .level-5 {
   background: $level-5;
+}
+
+// 13. Pagination
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+ul.pagination {
+  margin-top: rem-calc(24);
+
+  li {
+    color: $text-medium;
+  }
 }
