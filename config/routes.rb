@@ -13,10 +13,18 @@ Rails.application.routes.draw do
   root 'welcome#index'
 
   resources :debates do
-    member { post :vote }
+    member do
+      post :vote
+      put :flag_as_inappropiate
+      put :undo_flag_as_inappropiate
+    end
 
     resources :comments, only: :create, shallow: true do
-      member { post :vote }
+      member do
+        post :vote
+        put :flag_as_inappropiate
+        put :undo_flag_as_inappropiate
+      end
     end
   end
 

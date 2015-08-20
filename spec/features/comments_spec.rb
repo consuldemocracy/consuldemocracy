@@ -133,4 +133,39 @@ feature 'Comments' do
     expect(page).to have_css(".comment.comment.comment.comment.comment.comment.comment.comment")
   end
 
+  scenario "Flagging as inappropiate", :js do
+    user = create(:user)
+    debate = create(:debate)
+    comment = create(:comment, commentable: debate)
+
+    login_as(user)
+    visit debate_path(debate)
+
+    within "#comment_#{comment.id}" do
+      expect(page).to_not have_link "Undo flag as inappropiate"
+      click_on 'Flag as inappropiate'
+      expect(page).to have_link "Undo flag as inappropiate"
+    end
+
+    expect(InappropiateFlag.flagged?(user, comment)).to be
+  end
+
+  scenario "Undoing flagging as inappropiate", :js do
+    user = create(:user)
+    debate = create(:debate)
+    comment = create(:comment, commentable: debate)
+    InappropiateFlag.flag!(user, comment)
+
+    login_as(user)
+    visit debate_path(debate)
+
+    within "#comment_#{comment.id}" do
+      expect(page).to_not have_link("Flag as inappropiate", exact: true)
+      click_on 'Undo flag as inappropiate'
+      expect(page).to have_link("Flag as inappropiate", exact: true)
+    end
+
+    expect(InappropiateFlag.flagged?(user, comment)).to_not be
+  end
+
 end

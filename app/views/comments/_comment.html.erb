@@ -37,6 +37,11 @@
             </span>
           <% end %>
           &nbsp;&bullet;&nbsp;<%= time_ago_in_words(comment.created_at) %>
+
+          <span class="right js-flag-as-inappropiate-actions">
+            <%= render 'comments/flag_as_inappropiate_actions', comment: comment %>
+          </span>
+
         </div>
 
         <% if comment.user.official? %>
