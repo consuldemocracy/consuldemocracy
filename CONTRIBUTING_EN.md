@@ -5,6 +5,10 @@
 * Enrique García Cota [github](https://github.com/kikito) | [twitter](https://twitter.com/otikik)
 * Alberto Garcia Cabeza [github](https://github.com/decabeza) | [twitter](https://twitter.com/decabeza)
 
+## Code of conduct
+
+The team members and the project's community adopts an inclusive Code of Conduct that you can read in the [CODE_OF_CONDUCT_EN.md](CODE_OF_CONDUCT_EN.md) file.
+
 ## Report an issue
 
 The prefered way to report any bug is [opening an issue in the project's Github repo](https://github.com/AyuntamientoMadrid/participacion/issues/new).
