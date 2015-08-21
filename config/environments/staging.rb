@@ -1,3 +1,8 @@
+def deploysecret(key)
+  @deploy_secrets_yml ||= YAML.load_file('config/deploy-secrets.yml')['staging']
+  @deploy_secrets_yml[key.to_s]
+end
+
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
