@@ -39,7 +39,7 @@ en:
       index:
         title: 'Debate topics'
         add_tag: 'Add a new debate topic'
-      mark_as_featured: 'Mark as featured'
+      mark_as_featured: 'Propose topic to create debate'
       name:
         placeholder: 'Write a topic'
       destroy: Delete Tag

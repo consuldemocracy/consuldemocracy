@@ -33,13 +33,13 @@ es:
     actions:
       hide: Ocultar
       hide_author: Bloquear al autor
-      restore: Permitir
+      restore: Volver a mostrar
       confirm: '¿Estás seguro?'
     tags:
       index:
         title: 'Temas de debate'
         add_tag: 'Añade un nuevo tema de debate'
-      mark_as_featured: 'Marcar como destacado'
+      mark_as_featured: 'Proponer etiqueta al crear debate'
       name:
         placeholder: 'Escribe el nombre del tema'
       destroy: Elimina la etiqueta
