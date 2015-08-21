@@ -102,6 +102,7 @@ describe Ability do
     before { create(:moderator, user: user) }
     let(:other_user) { create(:user) }
 
+
     it { should be_able_to(:index, Debate) }
     it { should be_able_to(:show, debate) }
     it { should be_able_to(:vote, debate) }
@@ -123,13 +124,41 @@ describe Ability do
       it { should be_able_to(    :verify, rejected_organization) }
     end
 
-    it { should be_able_to(:hide, comment) }
-    it { should be_able_to(:hide, debate) }
-    it { should be_able_to(:hide, other_user) }
+    describe "hiding, reviewing and restoring" do
+      let(:own_comment) { create(:comment, author: user) }
+      let(:own_debate) { create(:debate, author: user) }
+      let(:hidden_comment) { create(:comment, hidden_at: Time.now) }
+      let(:hidden_debate) { create(:debate, hidden_at: Time.now) }
+      let(:reviewed_comment) { create(:comment, reviewed_at: Time.now) }
+      let(:reviewed_debate) { create(:debate, reviewed_at: Time.now) }
 
-    it { should_not be_able_to(:restore, comment) }
-    it { should_not be_able_to(:restore, debate) }
-    it { should_not be_able_to(:restore, other_user) }
+      it { should be_able_to(:hide, comment) }
+      it { should be_able_to(:hide_in_moderation_screen, comment) }
+      it { should_not be_able_to(:hide, hidden_comment) }
+      it { should_not be_able_to(:hide, own_comment) }
+
+      it { should be_able_to(:hide, debate) }
+      it { should be_able_to(:hide_in_moderation_screen, debate) }
+      it { should_not be_able_to(:hide, hidden_debate) }
+      it { should_not be_able_to(:hide, own_debate) }
+
+      it { should be_able_to(:mark_as_reviewed, comment) }
+      it { should_not be_able_to(:mark_as_reviewed, hidden_comment) }
+      it { should_not be_able_to(:mark_as_reviewed, reviewed_comment) }
+      it { should_not be_able_to(:mark_as_reviewed, own_comment) }
+
+      it { should be_able_to(:mark_as_reviewed, debate) }
+      it { should_not be_able_to(:mark_as_reviewed, hidden_debate) }
+      it { should_not be_able_to(:mark_as_reviewed, reviewed_debate) }
+      it { should_not be_able_to(:mark_as_reviewed, own_debate) }
+
+      it { should_not be_able_to(:hide, user) }
+      it { should be_able_to(:hide, other_user) }
+
+      it { should_not be_able_to(:restore, comment) }
+      it { should_not be_able_to(:restore, debate) }
+      it { should_not be_able_to(:restore, other_user) }
+    end
   end
 
   describe "Administrator" do
