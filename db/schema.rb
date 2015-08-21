@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150820104552) do
+ActiveRecord::Schema.define(version: 20150821180155) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -51,6 +51,7 @@ ActiveRecord::Schema.define(version: 20150820104552) do
     t.datetime "hidden_at"
     t.datetime "flagged_as_inappropiate_at"
     t.integer  "inappropiate_flags_count",   default: 0
+    t.datetime "reviewed_at"
   end
 
   add_index "comments", ["commentable_id", "commentable_type"], name: "index_comments_on_commentable_id_and_commentable_type", using: :btree
@@ -67,6 +68,7 @@ ActiveRecord::Schema.define(version: 20150820104552) do
     t.string   "visit_id"
     t.datetime "flagged_as_inappropiate_at"
     t.integer  "inappropiate_flags_count",              default: 0
+    t.datetime "reviewed_at"
   end
 
   add_index "debates", ["hidden_at"], name: "index_debates_on_hidden_at", using: :btree
@@ -153,12 +155,12 @@ ActiveRecord::Schema.define(version: 20150820104552) do
     t.datetime "confirmation_sent_at"
     t.string   "unconfirmed_email"
     t.string   "nickname"
+    t.string   "phone_number",            limit: 30
     t.boolean  "use_nickname",                       default: false, null: false
     t.boolean  "email_on_debate_comment",            default: false
     t.boolean  "email_on_comment_reply",             default: false
     t.string   "official_position"
     t.integer  "official_level",                     default: 0
-    t.string   "phone_number",            limit: 30
     t.datetime "hidden_at"
   end
 
