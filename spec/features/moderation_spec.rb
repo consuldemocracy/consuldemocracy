@@ -5,6 +5,9 @@ feature 'Admin' do
 
   scenario 'Access as regular user is not authorized' do
     login_as(user)
+    visit root_path
+
+    expect(page).to_not have_link("Moderation")
     visit moderation_root_path
 
     expect(current_path).to eq(root_path)
@@ -15,7 +18,10 @@ feature 'Admin' do
     create(:moderator, user: user)
 
     login_as(user)
-    visit moderation_root_path
+    visit root_path
+
+    expect(page).to have_link("Moderation")
+    click_on "Moderation"
 
     expect(current_path).to eq(moderation_root_path)
     expect(page).to_not have_content "not authorized"
@@ -25,7 +31,10 @@ feature 'Admin' do
     create(:administrator, user: user)
 
     login_as(user)
-    visit moderation_root_path
+    visit root_path
+
+    expect(page).to have_link("Moderation")
+    click_on "Moderation"
 
     expect(current_path).to eq(moderation_root_path)
     expect(page).to_not have_content "not authorized"
