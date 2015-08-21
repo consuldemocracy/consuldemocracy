@@ -48,9 +48,9 @@ set(:config_files, %w(
 
 namespace :deploy do
   # Check right version of deploy branch
-  before :deploy, "deploy:check_revision"
+  # before :deploy, "deploy:check_revision"
   # Run test aund continue only if passed
-  before :deploy, "deploy:run_tests"
+  # before :deploy, "deploy:run_tests"
   # Compile assets locally and then rsync
   after 'deploy:symlink:shared', 'deploy:compile_assets_locally'
   after :finishing, 'deploy:cleanup'
