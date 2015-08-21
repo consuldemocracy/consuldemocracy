@@ -136,7 +136,11 @@ header {
   min-height: rem-calc(480);
 
   &.results {
-    min-height: rem-calc(216);
+    min-height: rem-calc(48);
+
+    @media (min-width: $small-breakpoint) {
+      min-height: rem-calc(216);
+    }
   }
 
   h1 {
@@ -181,7 +185,7 @@ header {
       height: 0;
       width: 0;
       position: absolute;
-      border-top-color: #fff;
+      border-top-color: white;
       border-width: 8px;
       margin-left: -8px;
     }
@@ -212,43 +216,81 @@ header {
 .top-bar {
   background: rgba(0,0,0,.5);
   color: white;
-  height: rem-calc(96);
+  height: rem-calc(48);
   max-width: 1170px !important;
 
-  .name a {
-    color: white;
-    font-family: 'Lato';
-    font-size: rem-calc(36);
-    font-weight: lighter;
-    line-height: $line-height*4;
-    padding-left: 0;
+  @media (min-width: $small-breakpoint) {
+    height: rem-calc(96);
+  }
 
-    span {
-      font-size: rem-calc(24);
-      font-weight: normal;
-    }
+  .name {
+    height: rem-calc(48);
 
-    img {
-      margin-right: rem-calc(12);
+    a {
+      color: white;
+      font-family: 'Lato';
+      font-size: rem-calc(18);
+      font-weight: lighter;
+      line-height: $line-height*2;
+      padding-left: 0;
+
+      span {
+        font-size: rem-calc(14);
+        font-weight: normal;
+      }
+
+      @media (min-width: $small-breakpoint) {
+        line-height: $line-height*4;
+      }
+
+      @media (min-width: $medium-breakpoint) {
+        font-size: rem-calc(30);
+
+        span {
+          font-size: rem-calc(20);
+        }
+      }
+
+      img {
+        height: 48px;
+        margin-right: rem-calc(6);
+        width: 48px;
+
+        @media (min-width: $small-breakpoint) {
+          height: 96px;
+          margin-right: rem-calc(12);
+          width: 96px;
+        }
+      }
     }
   }
 }
 
 .top-bar-section {
   margin-right: rem-calc(24);
+  width: 100%;
 
   ul li > a {
     font-size: rem-calc(14);
   }
 
   ul li, ul li:hover:not(.has-form) > a {
-    background: none;
+    line-height: $line-height;
+
+    @media (min-width: $small-breakpoint) {
+      background: none;
+      border: 0;
+      line-height: $line-height*4;
+    }
   }
 
   li:not(.has-form) a:not(.button) {
     background: none;
     color: white;
-    line-height: $line-height*4;
+
+    @media (min-width: $small-breakpoint) {
+      line-height: $line-height*4;
+    }
 
     &:hover {
       background: none;
@@ -279,27 +321,31 @@ header {
 }
 
 .subnavigation {
-  background: white;
-  border-bottom: 1px solid white;
+  background: rgba(255,255,255,.95);
   clear: both;
+  text-transform: lowercase;
+
+  @media (min-width: 480px) {
+    text-align: center;
+  }
 
   a {
     color: $link;
     font-size: rem-calc(14);
-    font-weight: bold;
 
     &.active {
       color: $text;
+      font-weight: bold;
 
       &:after {
-        bottom: -17px;
+        bottom: -16px;
         left: 50%;
         border: solid transparent;
         content: " ";
         height: 0;
         width: 0;
         position: absolute;
-        border-top-color: #fff;
+        border-top-color: rgba(255,255,255,.95);
         border-width: 8px;
         margin-left: -8px;
       }

@@ -1,12 +1,11 @@
 <header class="<%= header_css %>">
-  <section class="top-links">
+  <section class="top-links show-for-medium-up">
     <div class="row">
-      <%= render 'shared/locale_switcher' %>
+      <%= render "shared/locale_switcher" %>
       <div class="external-links">
         <%= link_to t("layouts.header.participation"), root_path, class: "selected" %>&nbsp;|
         <%= link_to t("layouts.header.external_link_transparency"), "#" %>&nbsp;|
-        <%= link_to t("layouts.header.external_link_opendata"), "#" %>&nbsp;|
-        <%= link_to t("layouts.header.external_link_blog"), "#" %>
+        <%= link_to t("layouts.header.external_link_opendata"), "#" %>
       </div>
     </div>
   </section>
@@ -14,32 +13,35 @@
   <div class="contain-to-grid clear">
     <nav class="top-bar" data-topbar role="navigation">
       <ul class="title-area">
+        <li class="toggle-topbar menu-icon"><a href="#"><span><%= t("layouts.header.menu") %></span></a></li>
         <li class="name">
           <%= link_to root_path do %>
             <%= image_tag('header_logo_madrid.png', class: 'left', size: '96x96') %>
             <%= t("layouts.header.open_gov", open: "<strong>#{t('layouts.header.open')}</strong>").html_safe %> | <span><%= t("layouts.header.participation") %></span>
           <% end %>
         </li>
-        <li class="toggle-topbar menu-icon"><a href="#"><span><%= t("layouts.header.menu") %></span></a></li>
       </ul>
 
       <section class="top-bar-section">
-        <%= render 'devise/menu/login_items' %>
-        <%= render 'shared/admin_login_items' %>
+        <%= render "devise/menu/login_items" %>
+        <%= render "shared/admin_login_items" %>
       </section>
 
-      <section class="subnavigation row text-center">
-        <div class="small-12 medium-3 column end">
-          <%= link_to t("layouts.header.welcome"), root_path, class: ("active" if current_page?(root_path)) %>
+      <section class="subnavigation row">
+        <div class="small-12 medium-2 medium-offset-1 column end">
+          <%= link_to t("layouts.header.welcome"), root_path %>
         </div>
-        <div class="small-12 medium-3 column end">
-          <%= link_to t("layouts.header.news"), "#" %>
+        <div class="small-12 medium-2 column end">
+          <%= link_to t("layouts.header.debates"), debates_path, class: ("active" if current_page?(controller: "debates")) %>
         </div>
-        <div class="small-12 medium-3 column end">
-          <%= link_to t("layouts.header.debates"), debates_path, class: ("active" if current_page?(controller: 'debates')) %>
-        </div>
-        <div class="small-12 medium-3 column end">
+        <div class="small-12 medium-2 column end">
           <%= link_to t("layouts.header.initiatives"), "#" %>
+        </div>
+        <div class="small-12 medium-2 column end">
+          <%= link_to t("layouts.header.how_it_works"), "#" %>
+        </div>
+        <div class="small-12 medium-2 column end">
+          <%= link_to t("layouts.header.external_link_blog"), "#" %>
         </div>
       </section>
     </nav>
@@ -50,7 +52,7 @@
       <div class="small-12 column text-center">
         <h1><%= t("layouts.header.open_city") %></h1>
         <h2><%= t("layouts.header.open_city_slogan") %></h2>
-        <%= link_to t("layouts.header.see_all_debates"), debates_path, class: 'button radius' %>
+        <%= link_to t("layouts.header.see_all_debates"), debates_path, class: "button radius" %>
       </div>
     </div>
   <% end %>
