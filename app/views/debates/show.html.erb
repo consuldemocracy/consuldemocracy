@@ -33,7 +33,7 @@
         <% if @debate.author.verified_organization? %>
           &nbsp;&bullet;&nbsp;
           <span class="label round is-association">
-            <%= t("shared.organization") %>
+            <%= t("shared.collective") %>
           </span>
         <% end %>
         <span class="bullet">&nbsp;&bullet;&nbsp;</span>
@@ -65,12 +65,6 @@
       <div class="sidebar-divider"></div>
       <h3><%= t("debates.show.share") %></h3>
       <%= social_share_button_tag(@debate.title) %>
-
-        <% if user_signed_in? %>
-          <%= link_to t("debates.show.leave_comment"), "#comments", class: "leave-comment" %>
-        <% else %>
-          <%= link_to t("debates.show.login_to_comment"), new_user_session_path, class: "leave-comment" %>
-        <% end %>
     </aside>
   </div>
 </section>
@@ -85,6 +79,13 @@
       </h2>
       <% if user_signed_in? %>
           <%= render 'comments/form', {parent: @debate, toggeable: false} %>
+      <% else %>
+        <br>
+        <div class="alert-box radius info">
+          <%= t("debates.show.login_to_comment",
+            signin: link_to(t("votes.signin"), new_user_session_path),
+            signup: link_to(t("votes.signup"), new_user_registration_path)).html_safe %>
+        </div>
       <% end %>
 
       <%= render @comments %>

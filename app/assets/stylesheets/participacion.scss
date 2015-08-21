@@ -193,6 +193,8 @@ header {
 
   .locale {
     float: none;
+    height: rem-calc(48);
+    padding-top: rem-calc(3);
     text-align: center;
 
     @media (min-width: 480px) {
@@ -201,7 +203,9 @@ header {
   }
 
   .external-links {
-    @extend .locale;
+    float: none;
+    padding: rem-calc(12) 0;
+    text-align: center;
 
     @media (min-width: 480px) {
       float: right;
@@ -274,7 +278,11 @@ header {
     font-size: rem-calc(14);
   }
 
-  ul li, ul li:hover:not(.has-form) > a {
+  ul li > a.button:hover, .top-bar-section ul li > a.button:focus {
+    background-color: #007095 !important;
+  }
+
+  ul li, ul li:hover:not(.has-form) > a:not(.button) {
     line-height: $line-height;
 
     @media (min-width: $small-breakpoint) {
@@ -284,24 +292,28 @@ header {
     }
   }
 
-  li:not(.has-form) a:not(.button) {
-    background: none;
-    color: white;
+  ul {
+    margin-right: rem-calc(12);
 
-    @media (min-width: $small-breakpoint) {
+    li:not(.has-form) a:not(.button) {
+      background: none;
+      color: white;
+
+      @media (min-width: $small-breakpoint) {
+        line-height: $line-height*4;
+      }
+
+      &:hover {
+        background: none;
+        color: $link-hover;
+      }
+    }
+
+    li.active:not(.has-form) a:not(.button) {
+      background: none;
+      height: rem-calc(96);
       line-height: $line-height*4;
     }
-
-    &:hover {
-      background: none;
-      color: $link-hover;
-    }
-  }
-
-  li.active:not(.has-form) a:not(.button) {
-    background: none;
-    height: rem-calc(96);
-    line-height: $line-height*4;
   }
 }
 
@@ -309,7 +321,6 @@ header {
   color: white;
   font-size: rem-calc(14);
   height: rem-calc(72);
-  padding: rem-calc(12) 0;
 
   @media (min-width: 480px) {
     height: rem-calc(48);
@@ -477,6 +488,12 @@ footer {
       font-weight: bolder;
     }
   }
+
+  form {
+    .button {
+      margin-top: rem-calc(24);
+    }
+  }
 }
 
 // 08. Forms
@@ -549,10 +566,6 @@ form {
     input {
       margin-bottom: 0 !important;
     }
-  }
-
-  .button {
-    margin-top: rem-calc(24);
   }
 }
 
@@ -652,7 +665,7 @@ form {
   }
 }
 
-img.initialjs-avatar {
+img.initialjs-avatar, img.avatar {
   border-radius: rem-calc(1000);
   position: relative;
 }
