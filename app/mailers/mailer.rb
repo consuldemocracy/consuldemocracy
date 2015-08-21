@@ -10,7 +10,8 @@ class Mailer < ApplicationMailer
     @reply = reply
     @debate = @reply.debate
     parent = Comment.find(@reply.parent_id)
-    mail(to: parent.author.email, subject: t('mailer.reply.subject'))
+    @recipient = parent.author
+    mail(to: @recipient.email, subject: t('mailer.reply.subject'))
   end
 
 end
