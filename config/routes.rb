@@ -71,12 +71,20 @@ Rails.application.routes.draw do
       member { put :hide }
     end
 
-    resources :debates, only: [] do
-      member { put :hide }
+    resources :debates, only: :index do
+      member do
+        put :hide
+        put :hide_in_moderation_screen
+        put :mark_as_reviewed
+      end
     end
 
-    resources :comments, only: [] do
-      member { put :hide }
+    resources :comments, only: :index do
+      member do
+        put :hide
+        put :hide_in_moderation_screen
+        put :mark_as_reviewed
+      end
     end
   end
 
