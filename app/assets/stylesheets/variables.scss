@@ -5,6 +5,7 @@
 // 03. Forms
 // 04. Alerts
 // 05. Levels
+// 06. Responsive
 //
 
 // 01. Fonts
@@ -78,3 +79,17 @@ $association:       #222222;
 $comment-author:    rgba(45,144,248,.15);
 $comment-official:  rgba(70,219,145,.3);
 $comment-level-5:   rgba(255,241,204,1);
+
+// 06. Responsive
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+$small-breakpoint:  em-calc(640);
+$medium-breakpoint: em-calc(1024);
+$large-breakpoint:  em-calc(1440);
+$xlarge-breakpoint: em-calc(1920);
+
+$small-range:   (0, $small-breakpoint);
+$medium-range:  ($small-breakpoint  + em-calc(1), $medium-breakpoint);
+$large-range:   ($medium-breakpoint + em-calc(1), $large-breakpoint);
+$xlarge-range:  ($large-breakpoint  + em-calc(1), $xlarge-breakpoint);
+$xxlarge-range: ($xlarge-breakpoint + em-calc(1), em-calc(99999999));
