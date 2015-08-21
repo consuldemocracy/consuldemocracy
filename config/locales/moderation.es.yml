@@ -3,5 +3,14 @@ es:
     dashboard:
       index:
         title: Moderación
-
+    comments:
+      index:
+        title: Comentarios Denunciados como Inapropiados
+        debate: Debate
+        comment: Comentario
+        updated_at: Fecha
+        flags: Denuncias
+        hide: Ocultar
+        mark_as_reviewed: Marcar como revisado
+        reviewed: Revisado
 

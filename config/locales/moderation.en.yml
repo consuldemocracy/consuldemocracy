@@ -3,4 +3,14 @@ en:
     dashboard:
       index:
         title: Moderation
+    comments:
+      index:
+        title: Comments flagged as inappropiate
+        debate: Debate
+        comment: Comment
+        updated_at: Date
+        flags: Flags
+        hide: Hide
+        mark_as_reviewed: Mark as reviewed
+        reviewed: Reviewed
 
