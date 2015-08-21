@@ -32,14 +32,12 @@ en:
   debates:
     index:
       create_debate: Create a debate
-      showing: You are seeing
+      showing: You are seeing debates
       tag: with the topic
-      filter_debates: debates
-      filter_initiatives: initiatives
-      filter_debates_and_initiatives: debates and initiatives
       filter_news: the newest
       filter_votes: the most voted
       filter_rated: the best rated
+      filter_topic: "You are seeing %{number} debates with the topic '%{topic}'"
     debate:
       debate: Debate
       comments:
@@ -82,7 +80,7 @@ en:
         one: 1 Comment
         other: "%{count} Comments"
       leave_comment: Write a comment
-      login_to_comment: Log in to participate
+      login_to_comment: "You need to %{signin} or %{signup} to comment."
       edit_debate_link: Edit
       share: Share
     edit:
@@ -137,7 +135,7 @@ en:
   shared:
     tags_cloud:
       tags: Topics
-    organization: Organization
+    collective: Collective
   mailer:
     comment:
       subject: Someone has commented on your debate
@@ -148,4 +146,4 @@ en:
     manage:
       all: "You are not authorized to %{action} %{subject}."
   welcome:
-    featured_debates: Features debates
+    last_debates: Last debates

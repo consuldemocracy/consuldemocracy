@@ -32,14 +32,11 @@ es:
   debates:
     index:
       create_debate: Crea un debate
-      showing: "Estás viendo"
-      tag: "con el tema"
-      filter_debates: debates
-      filter_initiatives: iniciativas
-      filter_debates_and_initiatives: debates e iniciativas
+      showing: "Estás viendo los debates"
       filter_news: "más nuevos"
       filter_votes: "más votados"
       filter_rated: mejor valorados
+      filter_topic: "Estás viendo %{number} debates con el tema '%{topic}'"
     debate:
       debate: Debate
       comments:
@@ -82,7 +79,7 @@ es:
         one: 1 Comentario
         other: "%{count} Comentarios"
       leave_comment: Deja tu comentario
-      login_to_comment: Entra para participar
+      login_to_comment: "Necesitas %{signin} o %{signup} para comentar."
       edit_debate_link: Editar
       share: Compartir
     edit:
@@ -137,7 +134,7 @@ es:
   shared:
     tags_cloud:
         tags: Temas
-    organization: Organización
+    collective: Colectivo
   mailer:
     comment:
       subject: Alguien ha comentado en tu debate
@@ -148,4 +145,4 @@ es:
     manage:
       all: "No tienes permiso para realizar la acción '%{action}' sobre %{subject}."
   welcome:
-    featured_debates: Debates destacados
+    last_debates: Úlitmos debates

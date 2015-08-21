@@ -59,10 +59,11 @@ es:
           password_label: "Contraseña"
           password_confirmation_label: "Confirmar contraseña"
           submit: "Registrarse"
+          organization_signup: "¿Representas a una organización / colectivo?"
     organizations:
       registrations:
         new:
-          title: "Registrarse como organización"
+          title: "Registrarse como organización / colectivo"
           organization_name_label: "Nombre de la organización"
           email_label: "Email"
           password_label: "Contraseña"
@@ -85,7 +86,7 @@ es:
       links:
         login: "Entrar"
         signup: "Registrarse"
-        organization_signup: "Registro para organizaciones"
+        organization_signup: "Registro para organizaciones / colectivos"
         signin_with_provider: "Entrar con %{provider}"
         new_password: "¿Olvidaste tu contraseña?"
         new_confirmation: "¿No has recibido instrucciones para confirmar tu cuenta?"

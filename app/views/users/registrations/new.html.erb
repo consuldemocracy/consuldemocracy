@@ -4,6 +4,10 @@
       <h2><%= t("devise_views.users.registrations.new.title") %></h2>
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
         <%= render 'shared/errors', resource: resource %>
+
+        <%= link_to t("devise_views.users.registrations.new.organization_signup"), new_organization_registration_path %><br>
+        <br>
+
         <div class="row">
           <div class="small-12 column">
             <%= f.text_field :first_name, autofocus: true,

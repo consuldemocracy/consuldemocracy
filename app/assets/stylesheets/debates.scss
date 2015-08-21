@@ -552,6 +552,10 @@
               background: $comment-level-5;
               padding: rem-calc(6) rem-calc(12);
             }
+            @elseif $n == "1" {
+              background: none;
+              padding: rem-calc(6) rem-calc(12);
+            }
             @else {
               background: $comment-official;
               padding: rem-calc(6) rem-calc(12);
