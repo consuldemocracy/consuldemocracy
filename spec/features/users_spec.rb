@@ -6,8 +6,7 @@ feature 'Users' do
     visit '/'
     click_link 'Sign up'
 
-    fill_in 'user_first_name',            with: 'Manuela'
-    fill_in 'user_last_name',             with: 'Carmena'
+    fill_in 'user_username',              with: 'Manuela Carmena'
     fill_in 'user_email',                 with: 'manuela@madrid.es'
     fill_in 'user_password',              with: 'judgementday'
     fill_in 'user_password_confirmation', with: 'judgementday'

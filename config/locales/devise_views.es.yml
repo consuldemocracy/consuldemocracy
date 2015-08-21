@@ -50,12 +50,8 @@ es:
           back_link: "Atrás"
         new:
           title: "Registrarse"
-          first_name_label: "Nombre"
-          last_name_label: "Apellidos"
-          nickname_label: "Pseudónimo"
-          use_nickname_label: "Usar pseudónimo"
+          username_label: "Nombre a utilizar públicamente"
           email_label: "Email"
-          phone_number_label: "Teléfono"
           password_label: "Contraseña"
           password_confirmation_label: "Confirmar contraseña"
           submit: "Registrarse"
