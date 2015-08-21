@@ -1,0 +1,36 @@
+<h2><%= t('moderation.comments.index.title') %></h2>
+
+<h3><%= page_entries_info @comments %></h3>
+
+<table>
+  <tr>
+    <th><%= t('moderation.comments.index.flags') %></th>
+    <th><%= t('moderation.comments.index.debate') %></th>
+    <th><%= t('moderation.comments.index.comment') %></th>
+    <th><%= t('moderation.comments.index.updated_at') %></th>
+  </tr>
+  <% @comments.each do |comment| %>
+    <tr id="comment_<%= comment.id %>">
+      <td><%= comment.inappropiate_flags_count %></td>
+      <td><%= link_to(comment.debate.title, comment.debate) %></td>
+      <td><%= comment.body %></td>
+      <td><%= l comment.updated_at.to_date %></td>
+      <td>
+        <%= link_to t('moderation.comments.index.hide'), hide_in_moderation_screen_moderation_comment_path(comment), method: :put %>
+      </td>
+      <% if can? :mark_as_reviewed, comment %>
+        <td>
+          <%= link_to t('moderation.comments.index.mark_as_reviewed'), mark_as_reviewed_moderation_comment_path(comment), method: :put %>
+        </td>
+      <% end %>
+      <% if comment.reviewed? %>
+        <td>
+          <%= t('moderation.comments.index.reviewed') %>
+        </td>
+      <% end %>
+    </tr>
+  <% end %>
+</table>
+
+<%= paginate @comments %>
+
