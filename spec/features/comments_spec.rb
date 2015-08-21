@@ -43,7 +43,7 @@ feature 'Comments' do
       create(:comment, commentable: debate)
       visit debate_path(debate)
 
-      expect(page).to have_content 'Log in to participate'
+      expect(page).to have_content 'You need to sign in or sign up to comment'
       within('#comments') do
         expect(page).to_not have_content 'Write a comment'
         expect(page).to_not have_content 'Reply'

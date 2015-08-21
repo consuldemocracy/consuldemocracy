@@ -78,7 +78,6 @@ es:
         zero: Sin comentarios
         one: 1 Comentario
         other: "%{count} Comentarios"
-      leave_comment: Deja tu comentario
       login_to_comment: "Necesitas %{signin} o %{signup} para comentar."
       edit_debate_link: Editar
       share: Compartir
