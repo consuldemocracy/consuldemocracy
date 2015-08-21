@@ -50,12 +50,8 @@ en:
           back_link: "Back"
         new:
           title: "Sign up"
-          first_name_label: "First name"
-          last_name_label: "Last name"
-          nickname_label: "Nickname"
-          use_nickname_label: "Use nickname"
+          username_label: "Username to use publicly"
           email_label: "Email"
-          phone_number_label: "Phone number"
           password_label: "Password"
           password_confirmation_label: "Confirm password"
           submit: "Sign up"

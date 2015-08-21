@@ -120,12 +120,9 @@ en:
       change_credentials_link: "Change my credentials"
       avatar: "Avatar"
       personal: "Personal data"
-      first_name_label: "First Name"
-      last_name_label: "Last Name"
+      username_label: "Username"
       phone_number_label: "Phone number"
       organization_name_label: "Organization name"
-      use_nickname_label: "Use nickname"
-      nickname_label: "Nickname"
       notifications: Notifications
   simple_captcha:
     placeholder: "Enter the image value"

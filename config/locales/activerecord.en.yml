@@ -18,9 +18,7 @@ en:
         title: Title
       user:
         email: Email
-        first_name: "First name"
-        last_name: "Last name"
-        nickname: Nickname
+        username: Username
         password: Password
         phone_number: Phone number
         official_position: Official position
