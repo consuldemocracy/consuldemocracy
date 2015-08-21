@@ -80,8 +80,8 @@ feature 'Comments' do
   end
 
   scenario 'Reply', :js do
-    citizen = create(:user, first_name: 'Ana')
-    manuela = create(:user, first_name: 'Manuela')
+    citizen = create(:user, username: 'Ana')
+    manuela = create(:user, username: 'Manuela')
     debate  = create(:debate)
     comment = create(:comment, commentable: debate, user: citizen)
 
