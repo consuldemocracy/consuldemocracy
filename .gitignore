@@ -25,3 +25,4 @@
 
 # Mac finder artifacts
 .DS_Store
+.ruby-gemset
