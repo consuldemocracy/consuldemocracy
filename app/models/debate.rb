@@ -69,6 +69,14 @@ class Debate < ActiveRecord::Base
     count < 0 ? 0 : count
   end
 
+  def reviewed?
+    reviewed_at.present?
+  end
+
+  def mark_as_reviewed
+    update(reviewed_at: Time.now)
+  end
+
   protected
 
   def sanitize_description

@@ -46,6 +46,14 @@ class Comment < ActiveRecord::Base
     hidden? || user.hidden?
   end
 
+  def reviewed?
+    reviewed_at.present?
+  end
+
+  def mark_as_reviewed
+    update(reviewed_at: Time.now)
+  end
+
   # TODO: faking counter cache since there is a bug with acts_as_nested_set :counter_cache
   # Remove when https://github.com/collectiveidea/awesome_nested_set/issues/294 is fixed
   # and reset counters using
