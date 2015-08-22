@@ -114,6 +114,8 @@ en:
       login_to_comment: "You need to %{signin} or %{signup} to comment."
       edit_debate_link: Edit
       share: Share
+      anonymous: "This debate already has too much anonymous votes, %{verify_account} to continue."
+      verify_account: verify your account
     edit:
       editing: Edit debate
       show_link: Show debate
