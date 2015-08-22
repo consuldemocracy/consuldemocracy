@@ -1,5 +1,8 @@
 en:
   moderation:
+    menu:
+      flagged_debates: Debates
+      flagged_comments: Comments
     dashboard:
       index:
         title: Moderation
