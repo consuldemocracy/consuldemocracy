@@ -16,11 +16,11 @@
 
 <table>
   <tr>
-    <th><%= t('moderation.comments.index.flags') %></th>
-    <th><%= t('moderation.comments.index.updated_at') %></th>
-    <th><%= t('moderation.comments.index.commentable_type') %></th>
-    <th><%= t('moderation.comments.index.commentable') %></th>
-    <th><%= t('moderation.comments.index.comment') %></th>
+    <th><%= t('moderation.comments.index.headers.flags') %></th>
+    <th><%= t('moderation.comments.index.headers.updated_at') %></th>
+    <th><%= t('moderation.comments.index.headers.commentable_type') %></th>
+    <th><%= t('moderation.comments.index.headers.commentable') %></th>
+    <th><%= t('moderation.comments.index.headers.comment') %></th>
   </tr>
   <% @comments.each do |comment| %>
     <tr id="comment_<%= comment.id %>">

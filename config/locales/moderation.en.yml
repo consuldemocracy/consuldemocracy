@@ -6,11 +6,28 @@ en:
     comments:
       index:
         title: Comments flagged as inappropiate
-        commentable_type: Type
-        commentable: Root
-        comment: Comment
-        updated_at: Date
-        flags: Flags
+        headers:
+          flags: Flags
+          updated_at: Date
+          commentable_type: Type
+          commentable: Root
+          comment: Comment
+        hide: Hide
+        mark_as_reviewed: Mark as reviewed
+        reviewed: Reviewed
+        filter: Filter
+        filters:
+          all: All
+          pending_review: Pending
+          reviewed: Reviewed
+    debates:
+      index:
+        title: Debates flagged as inappropiate
+        headers:
+          flags: Flags
+          updated_at: Date
+          title: Title
+          description: Description
         hide: Hide
         mark_as_reviewed: Mark as reviewed
         reviewed: Reviewed

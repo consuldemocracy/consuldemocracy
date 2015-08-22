@@ -23,6 +23,11 @@ class Debate < ActiveRecord::Base
   before_validation :sanitize_description
   before_validation :sanitize_tag_list
 
+  scope :sorted_for_moderation, -> { order(inappropiate_flags_count: :desc, updated_at: :desc) }
+  scope :pending_review, -> { where(reviewed_at: nil, hidden_at: nil) }
+  scope :reviewed, -> { where("reviewed_at IS NOT NULL AND hidden_at IS NULL") }
+  scope :flagged_as_inappropiate, -> { where("inappropiate_flags_count > 0") }
+
   # Ahoy setup
   visitable # Ahoy will automatically assign visit_id on create
 

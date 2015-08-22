@@ -6,11 +6,28 @@ es:
     comments:
       index:
         title: Comentarios Denunciados como Inapropiados
-        commentable_type: Tipo
-        commentable: Raíz
-        comment: Comentario
-        updated_at: Fecha
-        flags: Denuncias
+        headers:
+          flags: Denuncias
+          updated_at: Fecha
+          commentable_type: Tipo
+          commentable: Raíz
+          comment: Comentario
+        hide: Ocultar
+        mark_as_reviewed: Marcar como revisado
+        reviewed: Revisado
+        filter: Filtrar
+        filters:
+          all: Todos
+          pending_review: Pendientes
+          reviewed: Revisados
+    debates:
+      index:
+        title: Debates Denunciados como Inapropiados
+        headers:
+          flags: Denuncias
+          updated_at: Fecha
+          title: Title
+          description: Descripción
         hide: Ocultar
         mark_as_reviewed: Marcar como revisado
         reviewed: Revisado
