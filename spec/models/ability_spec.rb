@@ -111,8 +111,8 @@ describe Ability do
 
     describe "organizations" do
       let(:pending_organization)  { create(:organization) }
-      let(:rejected_organization) { create(:rejected_organization) }
-      let(:verified_organization) { create(:verified_organization) }
+      let(:rejected_organization) { create(:organization, :rejected) }
+      let(:verified_organization) { create(:organization, :verified) }
 
       it { should be_able_to(    :verify, pending_organization)  }
       it { should be_able_to(    :reject, pending_organization)  }
@@ -125,12 +125,12 @@ describe Ability do
     end
 
     describe "hiding, reviewing and restoring" do
-      let(:own_comment) { create(:comment, author: user) }
-      let(:own_debate) { create(:debate, author: user) }
-      let(:hidden_comment) { create(:comment, hidden_at: Time.now) }
-      let(:hidden_debate) { create(:debate, hidden_at: Time.now) }
-      let(:reviewed_comment) { create(:comment, reviewed_at: Time.now) }
-      let(:reviewed_debate) { create(:debate, reviewed_at: Time.now) }
+      let(:own_comment)      { create(:comment, author: user) }
+      let(:own_debate)       { create(:debate,  author: user) }
+      let(:hidden_comment)   { create(:comment, :hidden) }
+      let(:hidden_debate)    { create(:debate,  :hidden) }
+      let(:reviewed_comment) { create(:comment, :reviewed) }
+      let(:reviewed_debate)  { create(:debate,  :reviewed) }
 
       it { should be_able_to(:hide, comment) }
       it { should be_able_to(:hide_in_moderation_screen, comment) }

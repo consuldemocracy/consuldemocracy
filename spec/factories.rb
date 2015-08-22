@@ -17,6 +17,16 @@ FactoryGirl.define do
     trait :hidden do
       hidden_at Time.now
     end
+
+    trait :reviewed do
+      reviewed_at Time.now
+    end
+
+    trait :flagged_as_inappropiate do
+      after :create do |debate|
+        InappropiateFlag.flag!(FactoryGirl.create(:user), debate)
+      end
+    end
   end
 
   factory :vote do
@@ -32,6 +42,16 @@ FactoryGirl.define do
 
     trait :hidden do
       hidden_at Time.now
+    end
+
+    trait :reviewed do
+      reviewed_at Time.now
+    end
+
+    trait :flagged_as_inappropiate do
+      after :create do |debate|
+        InappropiateFlag.flag!(FactoryGirl.create(:user), debate)
+      end
     end
   end
 
