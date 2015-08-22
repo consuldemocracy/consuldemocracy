@@ -16,6 +16,11 @@ class Comment < ActiveRecord::Base
   default_scope { includes(:user) }
   scope :recent, -> { order(id: :desc) }
 
+  scope :sorted_for_moderation, -> { order(inappropiate_flags_count: :desc, updated_at: :desc) }
+  scope :pending_review, -> { where(reviewed_at: nil, hidden_at: nil) }
+  scope :reviewed, -> { where("reviewed_at IS NOT NULL AND hidden_at IS NULL") }
+  scope :flagged_as_inappropiate, -> { where("inappropiate_flags_count > 0") }
+
   def self.build(commentable, user, body)
     new commentable: commentable,
         user_id:     user.id,

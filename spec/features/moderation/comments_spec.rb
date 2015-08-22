@@ -120,6 +120,64 @@ feature 'Moderate Comments' do
 
       expect(@comment.reload).to be_reviewed
     end
+
+    scenario "Current filter is properly highlighted" do
+      visit moderation_comments_path
+      expect(page).to_not have_link('All')
+      expect(page).to have_link('Pending')
+      expect(page).to have_link('Reviewed')
+
+      visit moderation_comments_path(filter: 'all')
+      expect(page).to_not have_link('All')
+      expect(page).to have_link('Pending')
+      expect(page).to have_link('Reviewed')
+
+      visit moderation_comments_path(filter: 'pending_review')
+      expect(page).to have_link('All')
+      expect(page).to_not have_link('Pending')
+      expect(page).to have_link('Reviewed')
+
+      visit moderation_comments_path(filter: 'reviewed')
+      expect(page).to have_link('All')
+      expect(page).to have_link('Pending')
+      expect(page).to_not have_link('Reviewed')
+    end
+
+    scenario "Filtering comments" do
+      create(:comment, :flagged_as_inappropiate, body: "Pending comment")
+      create(:comment, :flagged_as_inappropiate, :hidden, body: "Hidden comment")
+      create(:comment, :flagged_as_inappropiate, :reviewed, body: "Reviewed comment")
+
+      visit moderation_comments_path(filter: 'all')
+      expect(page).to have_content('Pending comment')
+      expect(page).to_not have_content('Hidden comment')
+      expect(page).to have_content('Reviewed comment')
+
+      visit moderation_comments_path(filter: 'pending_review')
+      expect(page).to have_content('Pending comment')
+      expect(page).to_not have_content('Hidden comment')
+      expect(page).to_not have_content('Reviewed comment')
+
+      visit moderation_comments_path(filter: 'reviewed')
+      expect(page).to_not have_content('Pending comment')
+      expect(page).to_not have_content('Hidden comment')
+      expect(page).to have_content('Reviewed comment')
+    end
+
+    scenario "Reviewing links remember the pagination setting and the filter" do
+      per_page = Kaminari.config.default_per_page
+      (per_page + 2).times { create(:comment, :flagged_as_inappropiate) }
+
+      visit moderation_comments_path(filter: 'pending_review', page: 2)
+
+      click_link('Mark as reviewed', match: :first)
+
+      uri = URI.parse(current_url)
+      query_params = Rack::Utils.parse_nested_query(uri.query).symbolize_keys
+
+      expect(query_params[:filter]).to eq('pending_review')
+      expect(query_params[:page]).to eq('2')
+    end
   end
 
 end

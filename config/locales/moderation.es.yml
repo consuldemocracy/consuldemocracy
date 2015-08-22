@@ -14,4 +14,10 @@ es:
         hide: Ocultar
         mark_as_reviewed: Marcar como revisado
         reviewed: Revisado
+        filter: Filtrar
+        filters:
+          all: Todos
+          pending_review: Pendientes
+          reviewed: Revisados
+
 

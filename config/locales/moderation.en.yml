@@ -14,4 +14,9 @@ en:
         hide: Hide
         mark_as_reviewed: Mark as reviewed
         reviewed: Reviewed
+        filter: Filter
+        filters:
+          all: All
+          pending_review: Pending
+          reviewed: Reviewed
 
