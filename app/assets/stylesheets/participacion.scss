@@ -692,7 +692,7 @@ form {
   }
 }
 
-img.moderator-avatar {
+img.admin-avatar, img.moderator-avatar {
   border-radius: rem-calc(1000);
   position: relative;
 }

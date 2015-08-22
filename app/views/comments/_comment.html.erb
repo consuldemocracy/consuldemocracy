@@ -15,9 +15,9 @@
       <% end %>
 <!--
       <% if comment.user.moderator? %> <!-- AND has activated CHECKBOX comment as moderator ->
-        <%= image_tag('moderator_avatar.png', size: 32, class: "moderator-avatar left") %>
-      <% else %>
-        <%= avatar_image(comment.user, size: 32, class: "left") %>
+        <%= image_tag("moderator_avatar.png", size: 32, class: "moderator-avatar left") %>
+      <% elsif comment.user.administrator? %> <!-- AND has activated CHECKBOX comment as admin ->
+        <%= image_tag("admin_avatar.png", size: 32, class: "admin-avatar left") %>
       <% end %>
 -->
       <div class="comment-body">
@@ -28,7 +28,9 @@
           <% else %>
 
             <% if comment.user.moderator? %> <!-- AND activate moderator CHECKBOX -->
-              <span class="user-name"><%= t("debates.comment.moderator") %></span>
+              <span class="user-name"><%= t("debates.comment.moderator") %> #ID</span> <!-- Add ID to Moderator name -->
+            <% elsif comment.user.administrator? %> <!-- AND activate administrator CHECKBOX -->
+              <span class="user-name"><%= t("debates.comment.admin") %> #ID</span> <!-- Add ID to Admin name -->
             <% else %>
               <span class="user-name"><%= comment.user.name %></span>
             <% end %>
@@ -64,8 +66,10 @@
           <p class="comment-user level-<%= comment.user.official_level %> is-author"><%= comment.body %></p>
         <% elsif comment.user.official? %>
           <p class="comment-user level-<%= comment.user.official_level %>"><%= comment.body %></p>
-        <% elsif comment.user.moderator? %> <!-- AND has activated CHECKBOX comment as moderator & all badges are hidden (100% anonymous) -->
+        <% elsif comment.user.moderator? %> <!-- AND has activated CHECKBOX comment as moderator (all badges are hidden: 100% anonymous) -->
           <p class="comment-user is-moderator"><%= comment.body %></p>
+        <% elsif comment.user.administrator? %> <!-- AND has activated CHECKBOX comment as admin (all badges are hidden: 100% anonymous) -->
+          <p class="comment-user is-admin"><%= comment.body %></p>
         <% elsif comment.user_id == @debate.author_id %>
           <p class="comment-user is-author"><%= comment.body %></p>
         <% else %>

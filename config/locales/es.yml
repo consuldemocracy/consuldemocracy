@@ -50,6 +50,7 @@ es:
     comment:
       author: Autor del debate
       moderator: Moderador
+      admin: Administrador
       deleted: Este comentario ha sido eliminado
       user_deleted: Usuario eliminado
       responses:
@@ -97,6 +98,7 @@ es:
     form:
       leave_comment: Deja tu comentario
       comment_as_moderator: Comentar como moderador
+      comment_as_admin: Comentar como administrador
   comments_helper:
     comment_link: Comentar
     comment_button: Publicar comentario
