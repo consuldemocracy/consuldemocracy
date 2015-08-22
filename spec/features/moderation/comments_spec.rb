@@ -77,48 +77,6 @@ feature 'Moderate Comments' do
     background do
       moderator = create(:moderator)
       login_as(moderator.user)
-
-      user = create(:user)
-      debate = create(:debate, title: 'Democracy')
-      @comment = create(:comment, commentable: debate, body: 'spammy spam')
-      InappropiateFlag.flag!(user, @comment)
-
-      visit moderation_comments_path
-    end
-
-    scenario 'Flagged comment shows the right params' do
-      within("#comment_#{@comment.id}") do
-        expect(page).to have_link('Democracy')
-        expect(page).to have_content('spammy spam')
-        expect(page).to have_content('1')
-        expect(page).to have_link('Hide')
-        expect(page).to have_content('Mark as reviewed')
-      end
-    end
-
-    scenario 'Hiding a comment' do
-      within("#comment_#{@comment.id}") do
-        click_link('Hide')
-      end
-
-      expect(current_path).to eq(moderation_comments_path)
-      expect(page).to_not have_selector("#comment_#{@comment.id}")
-
-      expect(@comment.reload).to be_hidden
-    end
-
-    scenario 'Marking a comment as reviewed' do
-      within("#comment_#{@comment.id}") do
-        click_link('Mark as reviewed')
-      end
-
-      expect(current_path).to eq(moderation_comments_path)
-
-      within("#comment_#{@comment.id}") do
-        expect(page).to have_content('Reviewed')
-      end
-
-      expect(@comment.reload).to be_reviewed
     end
 
     scenario "Current filter is properly highlighted" do
@@ -178,6 +136,49 @@ feature 'Moderate Comments' do
       expect(query_params[:filter]).to eq('pending_review')
       expect(query_params[:page]).to eq('2')
     end
-  end
 
+    feature 'A flagged comment exists' do
+
+      background do
+        debate = create(:debate, title: 'Democracy')
+        @comment = create(:comment, :flagged_as_inappropiate, commentable: debate, body: 'spammy spam')
+        visit moderation_comments_path
+      end
+
+      scenario 'It is displayed with the correct attributes' do
+        within("#comment_#{@comment.id}") do
+          expect(page).to have_link('Democracy')
+          expect(page).to have_content('spammy spam')
+          expect(page).to have_content('1')
+          expect(page).to have_link('Hide')
+          expect(page).to have_link('Mark as reviewed')
+        end
+      end
+
+      scenario 'Hiding the comment' do
+        within("#comment_#{@comment.id}") do
+          click_link('Hide')
+        end
+
+        expect(current_path).to eq(moderation_comments_path)
+        expect(page).to_not have_selector("#comment_#{@comment.id}")
+
+        expect(@comment.reload).to be_hidden
+      end
+
+      scenario 'Marking the comment as reviewed' do
+        within("#comment_#{@comment.id}") do
+          click_link('Mark as reviewed')
+        end
+
+        expect(current_path).to eq(moderation_comments_path)
+
+        within("#comment_#{@comment.id}") do
+          expect(page).to have_content('Reviewed')
+        end
+
+        expect(@comment.reload).to be_reviewed
+      end
+    end
+  end
 end
