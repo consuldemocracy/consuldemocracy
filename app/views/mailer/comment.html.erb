@@ -1,7 +1,6 @@
-Hello,
-
-<div><%= @comment.author.name %></div>
-
-<div><%= @comment.body %></div>
+<%= t('mailers.comment.hi', recipient: @debate.author.name) %>
 
 <div><%= link_to @debate.title, debate_url(@debate) %></div>
+<div><%= t('mailers.comment.new_comment_by', commenter: @comment.author.name) %></div>
+
+<div><%= @comment.body %></div>

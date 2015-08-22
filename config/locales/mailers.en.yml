@@ -1,0 +1,8 @@
+en:
+  mailers:
+    comment:
+      hi: "Hello, %{recipient}"
+      new_comment_by: "There'is a new comment by %{commenter}"
+    reply:
+      hi: "Hello, %{recipient}"
+      new_reply_by: "There'is a new reply by %{commenter} to your comment"
