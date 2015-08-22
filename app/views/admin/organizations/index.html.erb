@@ -1,17 +1,17 @@
 <h2><%= t('admin.organizations.index.title') %></h2>
 
-<p>
-  <%= t('admin.organizations.index.filter') %>:
+<dl class="sub-nav">
+  <dt><%= t('admin.organizations.index.filter') %>:</dt>
 
   <% @valid_filters.each do |filter| %>
     <% if @filter == filter %>
-      <%= t("admin.organizations.index.filters.#{filter}") %>
+      <dd class="active"><%= t("admin.organizations.index.filters.#{filter}") %></dd>
     <% else %>
-      <%= link_to t("admin.organizations.index.filters.#{filter}"),
-        admin_organizations_path(filter: filter) %>
+      <dd><%= link_to t("admin.organizations.index.filters.#{filter}"),
+        admin_organizations_path(filter: filter) %></dd>
     <% end %>
   <% end %>
-</p>
+</dl>
 
 <h3><%= page_entries_info @organizations %></h3>
 
@@ -22,22 +22,29 @@
     <td><%= organization.email %></td>
     <td><%= organization.phone_number %></td>
     <% if organization.verified? %>
-      <td><%= t('admin.organizations.index.verified') %></td>
-    <% end %>
-    <% if can? :verify, organization %>
-      <td><%= link_to t('admin.organizations.index.verify'),
-                verify_admin_organization_path(organization, request.query_parameters),
-                method: :put
-          %>
+      <td class="verified">
+        <i class="icon-check"></i>
+        <%= t('admin.organizations.index.verified') %>
       </td>
     <% end %>
     <% if organization.rejected? %>
-      <td><%= t('admin.organizations.index.rejected') %></td>
+      <td class="rejected">
+        <i class="icon-x"></i>
+        <%= t('admin.organizations.index.rejected') %>
+      </td>
+    <% end %>
+    <% if can? :verify, organization %>
+      <td>
+        <%= link_to t('admin.organizations.index.verify'),
+                verify_admin_organization_path(organization, request.query_parameters),
+                method: :put, class: "button radius tiny success"
+        %>
+      </td>
     <% end %>
     <% if can? :reject, organization %>
       <td><%= link_to t('admin.organizations.index.reject'),
                 reject_admin_organization_path(organization, request.query_parameters),
-                method: :put
+                method: :put, class: "button radius tiny alert"
           %>
       </td>
     <% end %>

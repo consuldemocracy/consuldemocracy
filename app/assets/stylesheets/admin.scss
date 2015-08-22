@@ -149,6 +149,20 @@ body.admin {
   }
 }
 
+.verified {
+  color: $check;
+}
+
+.verified a {
+  border-bottom: 1px dotted $check;
+  color: $check;
+  font-size: rem-calc(12);
+}
+
+.rejected {
+  color: #F04124;
+}
+
 .level {
   font-size: rem-calc(12);
 }

@@ -13,6 +13,7 @@
 // 11. Filters
 // 12. Official levels
 // 13. Pagination
+// 14. Tables
 //
 
 // 01. Variables
@@ -123,6 +124,29 @@ h1, h2, h3, h4, h5, h6 {
 
   &:first-child {
     margin-top: 0;
+  }
+}
+
+.sub-nav {
+  background-color: #f2f2f2;
+  border-radius: rem-calc(3);
+  padding: rem-calc(10) rem-calc(10) rem-calc(10) 0;
+  margin: rem-calc(12) 0;
+}
+
+.sub-nav dt, .sub-nav dd, .sub-nav li {
+
+  &.active {
+    background: #008CBA;
+    border-radius: rem-calc(3);
+    color: white;
+    cursor: default;
+    font-weight: normal;
+    padding: 0.16667rem 0.88889rem;
+
+    a:hover {
+      color: #737373;
+    }
   }
 }
 
@@ -762,3 +786,30 @@ ul.pagination {
     color: $text-medium;
   }
 }
+
+// 14. Tables
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+
+  tr {
+
+    td {
+      line-height: $line-height;
+      padding: rem-calc(12) rem-calc(6);
+    }
+
+    &:nth-child(odd) {
+      background: #F0F2F6;
+    }
+  }
+
+  .button {
+    margin: 0;
+  }
+}
+
+
