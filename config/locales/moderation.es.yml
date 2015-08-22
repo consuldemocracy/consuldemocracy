@@ -6,7 +6,8 @@ es:
     comments:
       index:
         title: Comentarios Denunciados como Inapropiados
-        debate: Debate
+        commentable_type: Tipo
+        commentable: Raíz
         comment: Comentario
         updated_at: Fecha
         flags: Denuncias

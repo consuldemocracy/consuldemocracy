@@ -5,16 +5,18 @@
 <table>
   <tr>
     <th><%= t('moderation.comments.index.flags') %></th>
-    <th><%= t('moderation.comments.index.debate') %></th>
-    <th><%= t('moderation.comments.index.comment') %></th>
     <th><%= t('moderation.comments.index.updated_at') %></th>
+    <th><%= t('moderation.comments.index.commentable_type') %></th>
+    <th><%= t('moderation.comments.index.commentable') %></th>
+    <th><%= t('moderation.comments.index.comment') %></th>
   </tr>
   <% @comments.each do |comment| %>
     <tr id="comment_<%= comment.id %>">
       <td><%= comment.inappropiate_flags_count %></td>
-      <td><%= link_to(comment.debate.title, comment.debate) %></td>
-      <td><%= comment.body %></td>
       <td><%= l comment.updated_at.to_date %></td>
+      <td><%= comment.commentable_type.constantize.model_name.human %></td>
+      <td><%= link_to comment.commentable.title, comment.commentable %></td>
+      <td><%= comment.body %></td>
       <td>
         <%= link_to t('moderation.comments.index.hide'), hide_in_moderation_screen_moderation_comment_path(comment), method: :put %>
       </td>

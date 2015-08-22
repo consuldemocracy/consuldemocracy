@@ -6,7 +6,8 @@ en:
     comments:
       index:
         title: Comments flagged as inappropiate
-        debate: Debate
+        commentable_type: Type
+        commentable: Root
         comment: Comment
         updated_at: Date
         flags: Flags

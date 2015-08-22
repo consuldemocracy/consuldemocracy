@@ -30,6 +30,10 @@ class Comment < ActiveRecord::Base
     commentable if commentable.class == Debate
   end
 
+  def author_id
+    user_id
+  end
+
   def author
     user
   end
