@@ -16,6 +16,16 @@ FactoryGirl.define do
     trait :hidden do
       hidden_at Time.now
     end
+
+    trait :reviewed do
+      reviewed_at Time.now
+    end
+
+    trait :flagged_as_inappropiate do
+      after :create do |debate|
+        InappropiateFlag.flag!(FactoryGirl.create(:user), debate)
+      end
+    end
   end
 
   factory :vote do
@@ -32,6 +42,16 @@ FactoryGirl.define do
     trait :hidden do
       hidden_at Time.now
     end
+
+    trait :reviewed do
+      reviewed_at Time.now
+    end
+
+    trait :flagged_as_inappropiate do
+      after :create do |debate|
+        InappropiateFlag.flag!(FactoryGirl.create(:user), debate)
+      end
+    end
   end
 
   factory :administrator do
@@ -45,14 +65,14 @@ FactoryGirl.define do
   factory :organization do
     user
     sequence(:name) { |n| "org#{n}" }
-  end
 
-  factory :verified_organization, parent: :organization do
-    verified_at { Time.now}
-  end
+    trait :verified do
+      verified_at Time.now
+    end
 
-  factory :rejected_organization, parent: :organization do
-    rejected_at { Time.now}
+    trait :rejected do
+      rejected_at Time.now
+    end
   end
 
   factory :tag, class: 'ActsAsTaggableOn::Tag' do
@@ -82,4 +102,5 @@ FactoryGirl.define do
     id { SecureRandom.uuid }
     started_at DateTime.now
   end
+
 end

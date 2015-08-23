@@ -130,6 +130,8 @@ es:
   shared:
     tags_cloud:
         tags: Temas
+    flag_as_inappropiate: Denunciar como inapropiado
+    undo_flag_as_inappropiate: Deshacer denunciar como inapropiado
     collective: Colectivo
   mailer:
     comment:

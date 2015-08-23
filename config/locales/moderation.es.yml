@@ -1,7 +1,43 @@
 es:
   moderation:
+    menu:
+      flagged_debates: Debates
+      flagged_comments: Comentarios
     dashboard:
       index:
         title: Moderación
+    comments:
+      index:
+        title: Comentarios Denunciados como Inapropiados
+        headers:
+          flags: Denuncias
+          updated_at: Fecha
+          commentable_type: Tipo
+          commentable: Raíz
+          comment: Comentario
+        hide: Ocultar
+        mark_as_reviewed: Marcar como revisado
+        reviewed: Revisado
+        filter: Filtrar
+        filters:
+          all: Todos
+          pending_review: Pendientes
+          reviewed: Revisados
+    debates:
+      index:
+        title: Debates Denunciados como Inapropiados
+        headers:
+          flags: Denuncias
+          updated_at: Fecha
+          title: Título
+          description: Descripción
+        hide: Ocultar
+        mark_as_reviewed: Marcar como revisado
+        reviewed: Revisado
+        filter: Filtrar
+        filters:
+          all: Todos
+          pending_review: Pendientes
+          reviewed: Revisados
 
 

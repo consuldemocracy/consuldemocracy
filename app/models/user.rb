@@ -10,6 +10,7 @@ class User < ActiveRecord::Base
   has_one :administrator
   has_one :moderator
   has_one :organization
+  has_many :inappropiate_flags
 
   validates :username,   presence: true, unless: :organization?
   validates :official_level, inclusion: {in: 0..5}

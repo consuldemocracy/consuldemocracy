@@ -25,7 +25,7 @@ feature 'Admin::Organizations' do
   end
 
   scenario "verified organizations have link to reject" do
-    organization = create(:verified_organization)
+    organization = create(:organization, :verified)
 
     visit admin_organizations_path
     expect(page).to have_content ('Verified')
@@ -40,7 +40,7 @@ feature 'Admin::Organizations' do
   end
 
   scenario "rejected organizations have link to verify" do
-    organization = create(:rejected_organization)
+    organization = create(:organization, :rejected)
 
     visit admin_organizations_path
     expect(page).to have_link('Verify')
@@ -87,8 +87,8 @@ feature 'Admin::Organizations' do
 
   scenario "Filtering organizations" do
     create(:organization, name: "Pending Organization")
-    create(:rejected_organization, name: "Rejected Organization")
-    create(:verified_organization, name: "Verified Organization")
+    create(:organization, :rejected, name: "Rejected Organization")
+    create(:organization, :verified, name: "Verified Organization")
 
     visit admin_organizations_path(filter: 'all')
     expect(page).to have_content('Pending Organization')
@@ -112,7 +112,8 @@ feature 'Admin::Organizations' do
   end
 
   scenario "Verifying organization links remember the pagination setting and the filter" do
-    30.times { create(:organization) }
+    per_page = Kaminari.config.default_per_page
+    (per_page + 2).times { create(:organization) }
 
     visit admin_organizations_path(filter: 'pending', page: 2)
 

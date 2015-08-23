@@ -5,13 +5,13 @@ class DebatesController < ApplicationController
   respond_to :html, :js
 
   def index
-    @debates = Debate.includes(:tags).search(params).page(params[:page])
+    @debates = Debate.includes(:tags).includes(:inappropiate_flags).search(params).page(params[:page])
     set_debate_votes(@debates)
   end
 
   def show
     set_debate_votes(@debate)
-    @comments = @debate.root_comments.with_hidden.recent.page(params[:page])
+    @comments = @debate.root_comments.with_hidden.includes(:inappropiate_flags).recent.page(params[:page])
   end
 
   def new
@@ -49,6 +49,16 @@ class DebatesController < ApplicationController
   def vote
     @debate.vote_by(voter: current_user, vote: params[:value])
     set_debate_votes(@debate)
+  end
+
+  def flag_as_inappropiate
+    InappropiateFlag.flag!(current_user, @debate)
+    respond_with @debate, template: 'debates/_refresh_flag_as_inappropiate_actions'
+  end
+
+  def undo_flag_as_inappropiate
+    InappropiateFlag.unflag!(current_user, @debate)
+    respond_with @debate, template: 'debates/_refresh_flag_as_inappropiate_actions'
   end
 
   private

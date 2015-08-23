@@ -1,6 +1,6 @@
 class Admin::OrganizationsController < Admin::BaseController
-  before_filter :set_valid_filters
-  before_filter :parse_filter
+  before_filter :set_valid_filters, only: :index
+  before_filter :parse_filter, only: :index
 
   load_and_authorize_resource
 

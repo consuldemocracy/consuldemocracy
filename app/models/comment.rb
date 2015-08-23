@@ -11,8 +11,15 @@ class Comment < ActiveRecord::Base
   belongs_to :commentable, polymorphic: true
   belongs_to :user, -> { with_hidden }
 
+  has_many :inappropiate_flags, :as => :flaggable
+
   default_scope { includes(:user) }
   scope :recent, -> { order(id: :desc) }
+
+  scope :sorted_for_moderation, -> { order(inappropiate_flags_count: :desc, updated_at: :desc) }
+  scope :pending_review, -> { where(reviewed_at: nil, hidden_at: nil) }
+  scope :reviewed, -> { where("reviewed_at IS NOT NULL AND hidden_at IS NULL") }
+  scope :flagged_as_inappropiate, -> { where("inappropiate_flags_count > 0") }
 
   def self.build(commentable, user, body)
     new commentable: commentable,
@@ -28,8 +35,16 @@ class Comment < ActiveRecord::Base
     commentable if commentable.class == Debate
   end
 
+  def author_id
+    user_id
+  end
+
   def author
     user
+  end
+
+  def author=(author)
+    self.user= author
   end
 
   def total_votes
@@ -38,6 +53,14 @@ class Comment < ActiveRecord::Base
 
   def not_visible?
     hidden? || user.hidden?
+  end
+
+  def reviewed?
+    reviewed_at.present?
+  end
+
+  def mark_as_reviewed
+    update(reviewed_at: Time.now)
   end
 
   # TODO: faking counter cache since there is a bug with acts_as_nested_set :counter_cache

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150821130019) do
+ActiveRecord::Schema.define(version: 20150821180155) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,14 +41,17 @@ ActiveRecord::Schema.define(version: 20150821130019) do
     t.string   "title"
     t.text     "body"
     t.string   "subject"
-    t.integer  "user_id",                      null: false
+    t.integer  "user_id",                                null: false
     t.integer  "parent_id"
     t.integer  "lft"
     t.integer  "rgt"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "children_count",   default: 0
+    t.integer  "children_count",             default: 0
     t.datetime "hidden_at"
+    t.datetime "flagged_as_inappropiate_at"
+    t.integer  "inappropiate_flags_count",   default: 0
+    t.datetime "reviewed_at"
   end
 
   add_index "comments", ["commentable_id", "commentable_type"], name: "index_comments_on_commentable_id_and_commentable_type", using: :btree
@@ -56,16 +59,31 @@ ActiveRecord::Schema.define(version: 20150821130019) do
   add_index "comments", ["user_id"], name: "index_comments_on_user_id", using: :btree
 
   create_table "debates", force: :cascade do |t|
-    t.string   "title",       limit: 80
+    t.string   "title",                      limit: 80
     t.text     "description"
     t.integer  "author_id"
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.datetime "created_at",                                        null: false
+    t.datetime "updated_at",                                        null: false
     t.datetime "hidden_at"
     t.string   "visit_id"
+    t.datetime "flagged_as_inappropiate_at"
+    t.integer  "inappropiate_flags_count",              default: 0
+    t.datetime "reviewed_at"
   end
 
   add_index "debates", ["hidden_at"], name: "index_debates_on_hidden_at", using: :btree
+
+  create_table "inappropiate_flags", force: :cascade do |t|
+    t.integer  "user_id"
+    t.string   "flaggable_type"
+    t.integer  "flaggable_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "inappropiate_flags", ["flaggable_type", "flaggable_id"], name: "index_inappropiate_flags_on_flaggable_type_and_flaggable_id", using: :btree
+  add_index "inappropiate_flags", ["user_id", "flaggable_type", "flaggable_id"], name: "access_inappropiate_flags", using: :btree
+  add_index "inappropiate_flags", ["user_id"], name: "index_inappropiate_flags_on_user_id", using: :btree
 
   create_table "moderators", force: :cascade do |t|
     t.integer "user_id"
@@ -194,6 +212,7 @@ ActiveRecord::Schema.define(version: 20150821130019) do
   add_index "votes", ["voter_id", "voter_type", "vote_scope"], name: "index_votes_on_voter_id_and_voter_type_and_vote_scope", using: :btree
 
   add_foreign_key "administrators", "users"
+  add_foreign_key "inappropiate_flags", "users"
   add_foreign_key "moderators", "users"
   add_foreign_key "organizations", "users"
 end

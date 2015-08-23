@@ -1,0 +1,6 @@
+<% if can? :flag_as_inappropiate, comment %>
+  <%= link_to t('shared.flag_as_inappropiate'), flag_as_inappropiate_comment_path(comment), method: :put, remote: true %>
+<% end %>
+<% if can? :undo_flag_as_inappropiate, comment %>
+  <%= link_to t('shared.undo_flag_as_inappropiate'), undo_flag_as_inappropiate_comment_path(comment), method: :put, remote: true %>
+<% end %>

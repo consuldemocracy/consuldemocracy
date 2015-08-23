@@ -1,0 +1,50 @@
+<h2><%= t('moderation.comments.index.title') %></h2>
+
+<p>
+  <%= t('moderation.comments.index.filter') %>:
+  <% @valid_filters.each do |filter| %>
+    <% if @filter == filter %>
+      <%= t("moderation.comments.index.filters.#{filter}") %>
+    <% else %>
+      <%= link_to t("moderation.comments.index.filters.#{filter}"),
+        moderation_comments_path(filter: filter) %>
+    <% end %>
+  <% end %>
+</p>
+
+<h3><%= page_entries_info @comments %></h3>
+
+<table>
+  <tr>
+    <th><%= t('moderation.comments.index.headers.flags') %></th>
+    <th><%= t('moderation.comments.index.headers.updated_at') %></th>
+    <th><%= t('moderation.comments.index.headers.commentable_type') %></th>
+    <th><%= t('moderation.comments.index.headers.commentable') %></th>
+    <th><%= t('moderation.comments.index.headers.comment') %></th>
+  </tr>
+  <% @comments.each do |comment| %>
+    <tr id="comment_<%= comment.id %>">
+      <td><%= comment.inappropiate_flags_count %></td>
+      <td><%= l comment.updated_at.to_date %></td>
+      <td><%= comment.commentable_type.constantize.model_name.human %></td>
+      <td><%= link_to comment.commentable.title, comment.commentable %></td>
+      <td><%= comment.body %></td>
+      <td>
+        <%= link_to t('moderation.comments.index.hide'), hide_in_moderation_screen_moderation_comment_path(comment, request.query_parameters), method: :put %>
+      </td>
+      <% if can? :mark_as_reviewed, comment %>
+        <td>
+          <%= link_to t('moderation.comments.index.mark_as_reviewed'), mark_as_reviewed_moderation_comment_path(comment, request.query_parameters), method: :put %>
+        </td>
+      <% end %>
+      <% if comment.reviewed? %>
+        <td>
+          <%= t('moderation.comments.index.reviewed') %>
+        </td>
+      <% end %>
+    </tr>
+  <% end %>
+</table>
+
+<%= paginate @comments %>
+

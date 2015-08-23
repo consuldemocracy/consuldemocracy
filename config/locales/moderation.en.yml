@@ -1,6 +1,42 @@
 en:
   moderation:
+    menu:
+      flagged_debates: Debates
+      flagged_comments: Comments
     dashboard:
       index:
         title: Moderation
+    comments:
+      index:
+        title: Comments flagged as inappropiate
+        headers:
+          flags: Flags
+          updated_at: Date
+          commentable_type: Type
+          commentable: Root
+          comment: Comment
+        hide: Hide
+        mark_as_reviewed: Mark as reviewed
+        reviewed: Reviewed
+        filter: Filter
+        filters:
+          all: All
+          pending_review: Pending
+          reviewed: Reviewed
+    debates:
+      index:
+        title: Debates flagged as inappropiate
+        headers:
+          flags: Flags
+          updated_at: Date
+          title: Title
+          description: Description
+        hide: Hide
+        mark_as_reviewed: Mark as reviewed
+        reviewed: Reviewed
+        filter: Filter
+        filters:
+          all: All
+          pending_review: Pending
+          reviewed: Reviewed
 

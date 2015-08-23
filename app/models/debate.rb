@@ -12,6 +12,7 @@ class Debate < ActiveRecord::Base
   acts_as_paranoid column: :hidden_at
 
   belongs_to :author, -> { with_hidden }, class_name: 'User', foreign_key: 'author_id'
+  has_many :inappropiate_flags, :as => :flaggable
 
   validates :title, presence: true
   validates :description, presence: true
@@ -21,6 +22,11 @@ class Debate < ActiveRecord::Base
 
   before_validation :sanitize_description
   before_validation :sanitize_tag_list
+
+  scope :sorted_for_moderation, -> { order(inappropiate_flags_count: :desc, updated_at: :desc) }
+  scope :pending_review, -> { where(reviewed_at: nil, hidden_at: nil) }
+  scope :reviewed, -> { where("reviewed_at IS NOT NULL AND hidden_at IS NULL") }
+  scope :flagged_as_inappropiate, -> { where("inappropiate_flags_count > 0") }
 
   # Ahoy setup
   visitable # Ahoy will automatically assign visit_id on create
@@ -66,6 +72,14 @@ class Debate < ActiveRecord::Base
 
     count = tags.count - limit
     count < 0 ? 0 : count
+  end
+
+  def reviewed?
+    reviewed_at.present?
+  end
+
+  def mark_as_reviewed
+    update(reviewed_at: Time.now)
   end
 
   protected

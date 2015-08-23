@@ -1,0 +1,48 @@
+<h2><%= t('moderation.debates.index.title') %></h2>
+
+<p>
+  <%= t('moderation.debates.index.filter') %>:
+  <% @valid_filters.each do |filter| %>
+    <% if @filter == filter %>
+      <%= t("moderation.debates.index.filters.#{filter}") %>
+    <% else %>
+      <%= link_to t("moderation.debates.index.filters.#{filter}"),
+        moderation_debates_path(filter: filter) %>
+    <% end %>
+  <% end %>
+</p>
+
+<h3><%= page_entries_info @debates %></h3>
+
+<table>
+  <tr>
+    <th><%= t('moderation.debates.index.headers.flags') %></th>
+    <th><%= t('moderation.debates.index.headers.updated_at') %></th>
+    <th><%= t('moderation.debates.index.headers.title') %></th>
+    <th><%= t('moderation.debates.index.headers.description') %></th>
+  </tr>
+  <% @debates.each do |debate| %>
+    <tr id="debate_<%= debate.id %>">
+      <td><%= debate.inappropiate_flags_count %></td>
+      <td><%= l debate.updated_at.to_date %></td>
+      <td><%= link_to debate.title, debate %></td>
+      <td><%= debate.description %></td>
+      <td>
+        <%= link_to t('moderation.debates.index.hide'), hide_in_moderation_screen_moderation_debate_path(debate, request.query_parameters), method: :put %>
+      </td>
+      <% if can? :mark_as_reviewed, debate %>
+        <td>
+          <%= link_to t('moderation.debates.index.mark_as_reviewed'), mark_as_reviewed_moderation_debate_path(debate, request.query_parameters), method: :put %>
+        </td>
+      <% end %>
+      <% if debate.reviewed? %>
+        <td>
+          <%= t('moderation.debates.index.reviewed') %>
+        </td>
+      <% end %>
+    </tr>
+  <% end %>
+</table>
+
+<%= paginate @debates %>
+
