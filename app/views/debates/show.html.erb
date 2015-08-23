@@ -81,10 +81,34 @@
         <%= t("debates.show.comments_title") %>
         <span>(<%= @debate.comments_count %>)</span>
       </h2>
+
+      <!-- Filter for comments -->
+      <div class="filters row">
+        <div class="small-12 column">
+          <h2>
+          <%= t("debates.show.comments_title",
+              count: @debate.comment_threads.count).html_safe
+          %>
+          </h2>
+
+          <select class="inline-block">
+            <option value="filter_news">
+              <%= t("debates.show.filter_news") %>
+            </option>
+            <option value="filter_votes">
+              <%= t("debates.show.filter_votes") %>
+            </option>
+            <option value="filter_rated">
+              <%= t("debates.show.filter_rated") %>
+            </option>
+          </select>
+        </div>
+      </div>
+      <!-- /. Filter for comments -->
+
       <% if user_signed_in? %>
           <%= render 'comments/form', {parent: @debate, toggeable: false} %>
       <% else %>
-        <br>
         <div class="alert-box radius info">
           <%= t("debates.show.login_to_comment",
             signin: link_to(t("votes.signin"), new_user_session_path),

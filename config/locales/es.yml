@@ -101,11 +101,14 @@ es:
     show:
       back_link: Volver
       author_deleted: Usuario eliminado
-      comments_title: Comentarios
+      comments_title: "Estás viendo los %{count} comentarios"
       comments:
         zero: Sin comentarios
         one: 1 Comentario
         other: "%{count} Comentarios"
+      filter_news: "más nuevos"
+      filter_votes: "más votados"
+      filter_rated: mejor valorados
       login_to_comment: "Necesitas %{signin} o %{signup} para comentar."
       edit_debate_link: Editar
       share: Compartir
