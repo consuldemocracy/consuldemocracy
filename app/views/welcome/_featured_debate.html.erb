@@ -4,10 +4,10 @@
 
       <div class="debate-content">
         <span class="label left"><%= t("debates.debate.debate") %></span>
-        <i class="icon-comment-quotes right"></i>
+        <i class="icon-debates right"></i>
         <h3><%= link_to featured_debate.title, featured_debate %></h3>
         <p class="debate-info">
-          <i class="icon-chat-bubble-two"></i>&nbsp;
+          <i class="icon-comments"></i>&nbsp;
           <%= link_to t("debates.show.comments", count: featured_debate.comment_threads.count), debate_path(featured_debate, anchor: "comments") %>
         </p>
         <div class="debate-description">

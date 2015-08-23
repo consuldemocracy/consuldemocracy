@@ -1,5 +1,5 @@
 es:
-  locale: 'Español'
+  locale: "Español"
   layouts:
     header:
       external_link_transparency: Transparencia
@@ -13,11 +13,11 @@ es:
       open_city_slogan: Para que todos los madrileños decidamos que ciudad queremos tener.
       see_all_debates: Ver todos los debates
       my_account_link: Mi cuenta
-      language: Idioma de la página
+      locale: "Idioma de la página:"
       administration: Administrar
       moderation: Moderar
       welcome: Portada
-      news: Novedades
+      how_it_works: "Cómo funciona"
       debates: Debates
       initiatives: Iniciativas
     footer:
@@ -32,14 +32,11 @@ es:
   debates:
     index:
       create_debate: Crea un debate
-      showing: "Estás viendo"
-      tag: "con el tema"
-      filter_debates: debates
-      filter_initiatives: iniciativas
-      filter_debates_and_initiatives: debates e iniciativas
+      showing: "Estás viendo los debates"
       filter_news: "más nuevos"
       filter_votes: "más votados"
       filter_rated: mejor valorados
+      filter_topic: "Estás viendo %{number} debates con el tema '%{topic}'"
     debate:
       debate: Debate
       comments:
@@ -81,8 +78,7 @@ es:
         zero: Sin comentarios
         one: 1 Comentario
         other: "%{count} Comentarios"
-      leave_comment: Deja tu comentario
-      login_to_comment: Entra para participar
+      login_to_comment: "Necesitas %{signin} o %{signup} para comentar."
       edit_debate_link: Editar
       share: Compartir
     edit:
@@ -115,17 +111,14 @@ es:
     show:
       title: "Mi cuenta"
       save_changes_submit: "Guardar cambios"
-      change_credentials_link: "Cambiar mis credenciales"
+      change_credentials_link: "Cambiar mis datos de acceso"
       email_on_debate_comment_label: "Recibir un email cuando alguien comenta en mis debates"
       email_on_comment_reply_label: "Recibir un email cuando alguien contesta a mis comentarios"
       avatar: "Avatar"
       personal: "Datos personales"
-      first_name_label: "Nombre"
-      last_name_label: "Apellidos"
+      username_label: "Nombre de usuario"
       phone_number_label: "Teléfono"
       organization_name_label: "Nombre de la organización"
-      use_nickname_label: "Usar pseudónimo"
-      nickname_label: "Pseudónimo"
       notifications: Notificaciones
   simple_captcha:
     placeholder: "Introduce el texto de la imagen"
@@ -137,9 +130,9 @@ es:
   shared:
     tags_cloud:
         tags: Temas
-    organization: Organización
     flag_as_inappropiate: Denunciar como inapropiado
     undo_flag_as_inappropiate: Deshacer denunciar como inapropiado
+    collective: Colectivo
   mailer:
     comment:
       subject: Alguien ha comentado en tu debate
@@ -150,4 +143,4 @@ es:
     manage:
       all: "No tienes permiso para realizar la acción '%{action}' sobre %{subject}."
   welcome:
-    featured_debates: Debates destacados
+    last_debates: Úlitmos debates

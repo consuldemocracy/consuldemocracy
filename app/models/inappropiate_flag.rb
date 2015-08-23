@@ -35,7 +35,7 @@ class InappropiateFlag < ActiveRecord::Base
   end
 
   def self.flagged?(user, flaggable)
-    by_user_and_flaggable(user, flaggable).exists?
+    !! by_user_and_flaggable(user, flaggable).try(:first)
   end
 
 end

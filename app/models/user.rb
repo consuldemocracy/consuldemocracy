@@ -12,9 +12,7 @@ class User < ActiveRecord::Base
   has_one :organization
   has_many :inappropiate_flags
 
-  validates :first_name, presence: true, if: :use_first_name?
-  validates :last_name,  presence: true, if: :use_last_name?
-  validates :nickname,   presence: true, if: :use_nickname?
+  validates :username,   presence: true, unless: :organization?
   validates :official_level, inclusion: {in: 0..5}
 
   validates_associated :organization, message: false
@@ -28,9 +26,7 @@ class User < ActiveRecord::Base
   scope :officials,      -> { where("official_level > 0") }
 
   def name
-    return nickname          if use_nickname?
-    return organization.name if organization?
-    "#{first_name} #{last_name}"
+    organization? ? organization.name : username
   end
 
   def debate_votes(debates)
@@ -71,12 +67,4 @@ class User < ActiveRecord::Base
     e.present? ? where(email: e) : none
   end
 
-  private
-    def use_first_name?
-      !organization? && !use_nickname?
-    end
-
-    def use_last_name?
-      use_first_name?
-    end
 end

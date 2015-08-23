@@ -1,7 +1,6 @@
-Hello,
-
-<div><%= @reply.author.name %></div>
-
-<div><%= @reply.body %></div>
+<%= t('mailers.reply.hi', recipient: @recipient.name) %>
 
 <div><%= link_to @debate.title, debate_url(@debate) %></div>
+<div><%= t('mailers.reply.new_reply_by', commenter: @reply.author.name) %></div>
+
+<div><%= @reply.body %></div>

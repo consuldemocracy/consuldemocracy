@@ -25,6 +25,7 @@ en:
         verified: Verified
         rejected: Rejected
         filter: Filter
+        edit: Edit
         filters:
           all: All
           pending: Pending
@@ -35,26 +36,38 @@ en:
       hide_author: Ban author
       restore: Restore
       confirm: 'Are you sure?'
+      archive: Archive
     tags:
       index:
         title: 'Debate topics'
         add_tag: 'Add a new debate topic'
-      mark_as_featured: 'Mark as featured'
+      mark_as_featured: 'Propose topic to create debate'
       name:
         placeholder: 'Write a topic'
       destroy: Delete Tag
     comments:
       index:
         title: Hidden comments
+        show_debate: Show debate
+        filter: Filter
       restore:
         success: The comment has been restored
+      filters:
+        all: All
+        pending: Pending
+        archived: Archived
     debates:
       index:
         title: Hidden debates
+        filter: Filter
       show:
         back: Back
       restore:
         success: The debate has been restored
+      filters:
+        all: All
+        pending: Pending
+        archived: Archived
     users:
       index:
         title: Banned users

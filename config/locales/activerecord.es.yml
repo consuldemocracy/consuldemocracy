@@ -18,9 +18,7 @@ es:
         title: Título
       user:
         email: Correo electrónico
-        first_name: Nombre
-        last_name: Apellidos
-        nickname: Pseudónimo
+        username: Nombre de usuario
         password: Contraseña
         phone_number: Teléfono
         official_position: Cargo público

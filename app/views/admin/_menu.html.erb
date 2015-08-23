@@ -4,59 +4,59 @@
       <%= t("admin.dashboard.index.title") %>
     </li>
 
-    <li <%= 'class=active' if controller_name == 'tags' %>>
+    <li <%= "class=active" if controller_name == "tags" %>>
       <%= link_to admin_tags_path do %>
-        <i class="icon-comment-quotes"></i>
-        <%= t('admin.menu.debate_topics') %>
+        <i class="icon-tag"></i>
+        <%= t("admin.menu.debate_topics") %>
       <% end %>
     </li>
 
-    <li <%= 'class=active' if controller_name == 'debates' %>>
+    <li <%= "class=active" if controller_name == "debates" %>>
       <%= link_to admin_debates_path do %>
-        <i class="icon-eye"></i>
-        <%= t('admin.menu.hidden_debates') %>
+        <i class="icon-debates"></i>
+        <%= t("admin.menu.hidden_debates") %>
       <% end %>
     </li>
 
-    <li <%= 'class=active' if controller_name == 'comments' %>>
+    <li <%= "class=active" if controller_name == "comments" %>>
       <%= link_to admin_comments_path do %>
-        <i class="icon-chat-bubble-two"></i>
-        <%= t('admin.menu.hidden_comments') %>
+        <i class="icon-comments"></i>
+        <%= t("admin.menu.hidden_comments") %>
       <% end %>
     </li>
 
-    <li <%= 'class=active' if controller_name == 'users' %>>
+    <li <%= "class=active" if controller_name == "users" %>>
       <%= link_to admin_users_path do %>
-        <i class="icon-user"></i>
-        <%= t('admin.menu.hidden_users') %>
+        <i class="icon-eye"></i>
+        <%= t("admin.menu.hidden_users") %>
       <% end %>
     </li>
 
-    <li <%= 'class=active' if controller_name == 'organizations' %>>
+    <li <%= "class=active" if controller_name == "organizations" %>>
       <%= link_to admin_organizations_path do %>
-        <i class="icon-comment-quotes"></i>
-        <%= t('admin.menu.organizations') %>
+        <i class="icon-organizations"></i>
+        <%= t("admin.menu.organizations") %>
       <% end %>
     </li>
 
-    <li <%= 'class=active' if controller_name == 'officials' %>>
+    <li <%= "class=active" if controller_name == "officials" %>>
       <%= link_to admin_officials_path do %>
         <i class="icon-user"></i>
-        <%= t('admin.menu.officials') %>
+        <%= t("admin.menu.officials") %>
       <% end %>
     </li>
 
-    <li <%= 'class=active' if controller_name == 'settings' %>>
+    <li <%= "class=active" if controller_name == "settings" %>>
       <%= link_to admin_settings_path do %>
         <i class="icon-settings"></i>
-        <%= t('admin.menu.settings') %>
+        <%= t("admin.menu.settings") %>
       <% end %>
     </li>
 
-    <li <%= 'class=active' if controller_name == 'stats' %>>
+    <li <%= "class=active" if controller_name == "stats" %>>
       <%= link_to stats_path do %>
         <i class="icon-stats"></i>
-        <%= t('admin.menu.stats') %>
+        <%= t("admin.menu.stats") %>
       <% end %>
     </li>
   </ul>

@@ -3,7 +3,7 @@ require 'rails_helper'
 feature 'Admin officials' do
 
   background do
-    @citizen = create(:user, first_name: "Citizen", last_name: "Kane")
+    @citizen = create(:user, username: "Citizen Kane")
     @official = create(:user, official_position: "Mayor", official_level: 5)
     @admin = create(:administrator)
     login_as(@admin.user)

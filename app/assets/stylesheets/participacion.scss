@@ -13,6 +13,7 @@
 // 11. Filters
 // 12. Official levels
 // 13. Pagination
+// 14. Tables
 //
 
 // 01. Variables
@@ -126,6 +127,29 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+.sub-nav {
+  background-color: #f2f2f2;
+  border-radius: rem-calc(3);
+  padding: rem-calc(10) rem-calc(10) rem-calc(10) 0;
+  margin: rem-calc(12) 0;
+}
+
+.sub-nav dt, .sub-nav dd, .sub-nav li {
+
+  &.active {
+    background: #008CBA;
+    border-radius: rem-calc(3);
+    color: white;
+    cursor: default;
+    font-weight: normal;
+    padding: 0.16667rem 0.88889rem;
+
+    a:hover {
+      color: #737373;
+    }
+  }
+}
+
 // 04. Header
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -136,7 +160,11 @@ header {
   min-height: rem-calc(480);
 
   &.results {
-    min-height: rem-calc(216);
+    min-height: rem-calc(48);
+
+    @media (min-width: $small-breakpoint) {
+      min-height: rem-calc(216);
+    }
   }
 
   h1 {
@@ -181,7 +209,7 @@ header {
       height: 0;
       width: 0;
       position: absolute;
-      border-top-color: #fff;
+      border-top-color: white;
       border-width: 8px;
       margin-left: -8px;
     }
@@ -189,6 +217,8 @@ header {
 
   .locale {
     float: none;
+    height: rem-calc(48);
+    padding-top: rem-calc(3);
     text-align: center;
 
     @media (min-width: 480px) {
@@ -197,7 +227,9 @@ header {
   }
 
   .external-links {
-    @extend .locale;
+    float: none;
+    padding: rem-calc(12) 0;
+    text-align: center;
 
     @media (min-width: 480px) {
       float: right;
@@ -212,54 +244,100 @@ header {
 .top-bar {
   background: rgba(0,0,0,.5);
   color: white;
-  height: rem-calc(96);
+  height: rem-calc(48);
   max-width: 1170px !important;
 
-  .name a {
-    color: white;
-    font-family: 'Lato';
-    font-size: rem-calc(36);
-    font-weight: lighter;
-    line-height: $line-height*4;
-    padding-left: 0;
+  @media (min-width: $small-breakpoint) {
+    height: rem-calc(96);
+  }
 
-    span {
-      font-size: rem-calc(24);
-      font-weight: normal;
-    }
+  .name {
+    height: rem-calc(48);
 
-    img {
-      margin-right: rem-calc(12);
+    a {
+      color: white;
+      font-family: 'Lato';
+      font-size: rem-calc(18);
+      font-weight: lighter;
+      line-height: $line-height*2;
+      padding-left: 0;
+
+      span {
+        font-size: rem-calc(14);
+        font-weight: normal;
+      }
+
+      @media (min-width: $small-breakpoint) {
+        line-height: $line-height*4;
+      }
+
+      @media (min-width: $medium-breakpoint) {
+        font-size: rem-calc(30);
+
+        span {
+          font-size: rem-calc(20);
+        }
+      }
+
+      img {
+        height: 48px;
+        margin-right: rem-calc(6);
+        width: 48px;
+
+        @media (min-width: $small-breakpoint) {
+          height: 96px;
+          margin-right: rem-calc(12);
+          width: 96px;
+        }
+      }
     }
   }
 }
 
 .top-bar-section {
   margin-right: rem-calc(24);
+  width: 100%;
 
   ul li > a {
     font-size: rem-calc(14);
   }
 
-  ul li, ul li:hover:not(.has-form) > a {
-    background: none;
+  ul li > a.button:hover, .top-bar-section ul li > a.button:focus {
+    background-color: #007095 !important;
   }
 
-  li:not(.has-form) a:not(.button) {
-    background: none;
-    color: white;
-    line-height: $line-height*4;
+  ul li, ul li:hover:not(.has-form) > a:not(.button) {
+    line-height: $line-height;
 
-    &:hover {
+    @media (min-width: $small-breakpoint) {
       background: none;
-      color: $link-hover;
+      border: 0;
+      line-height: $line-height*4;
     }
   }
 
-  li.active:not(.has-form) a:not(.button) {
-    background: none;
-    height: rem-calc(96);
-    line-height: $line-height*4;
+  ul {
+    margin-right: rem-calc(12);
+
+    li:not(.has-form) a:not(.button) {
+      background: none;
+      color: white;
+
+      @media (min-width: $small-breakpoint) {
+        line-height: $line-height*4;
+      }
+
+      &:hover {
+        background: none;
+        color: $link-hover;
+      }
+    }
+
+    li.active:not(.has-form) a:not(.button) {
+      background: none;
+      height: rem-calc(96);
+      line-height: $line-height*4;
+    }
   }
 }
 
@@ -267,7 +345,6 @@ header {
   color: white;
   font-size: rem-calc(14);
   height: rem-calc(72);
-  padding: rem-calc(12) 0;
 
   @media (min-width: 480px) {
     height: rem-calc(48);
@@ -279,27 +356,31 @@ header {
 }
 
 .subnavigation {
-  background: white;
-  border-bottom: 1px solid white;
+  background: rgba(255,255,255,.95);
   clear: both;
+  text-transform: lowercase;
+
+  @media (min-width: 480px) {
+    text-align: center;
+  }
 
   a {
     color: $link;
     font-size: rem-calc(14);
-    font-weight: bold;
 
     &.active {
       color: $text;
+      font-weight: bold;
 
       &:after {
-        bottom: -17px;
+        bottom: -16px;
         left: 50%;
         border: solid transparent;
         content: " ";
         height: 0;
         width: 0;
         position: absolute;
-        border-top-color: #fff;
+        border-top-color: rgba(255,255,255,.95);
         border-width: 8px;
         margin-left: -8px;
       }
@@ -431,10 +512,34 @@ footer {
       font-weight: bolder;
     }
   }
+
+  form {
+    .button {
+      margin-top: rem-calc(24);
+    }
+  }
 }
 
 // 08. Forms
 // - - - - - - - - - - - - - - - - - - - - - - - - -
+
+form.locale-form {
+  display: inline-block;
+  position: relative;
+
+  select {
+    background-image: url("language_select.png");
+
+    &.js-locale-switcher {
+      background-color: transparent;
+      border: 0;
+      color: white;
+      outline: none;
+      padding-left: rem-calc(3);
+      padding-right: rem-calc(24);
+    }
+  }
+}
 
 form {
 
@@ -486,10 +591,6 @@ form {
       margin-bottom: 0 !important;
     }
   }
-
-  .button {
-    margin-top: rem-calc(24);
-  }
 }
 
 // 09. Alerts
@@ -537,7 +638,7 @@ form {
     margin-bottom: rem-calc(24);
   }
 
-  .icon-comment-quotes {
+  .icon-debates {
     color: $debates;
     font-size: rem-calc(60);
     line-height: $line-height;
@@ -588,7 +689,7 @@ form {
   }
 }
 
-img.initialjs-avatar {
+img.initialjs-avatar, img.avatar {
   border-radius: rem-calc(1000);
   position: relative;
 }
@@ -685,3 +786,30 @@ ul.pagination {
     color: $text-medium;
   }
 }
+
+// 14. Tables
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+
+  tr {
+
+    td {
+      line-height: $line-height;
+      padding: rem-calc(12) rem-calc(6);
+    }
+
+    &:nth-child(odd) {
+      background: #F0F2F6;
+    }
+  }
+
+  .button {
+    margin: 0;
+  }
+}
+
+

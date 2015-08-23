@@ -6,11 +6,14 @@ def deploysecret(key)
   @deploy_secrets_yml[key.to_s]
 end
 
+
 set :rails_env, fetch(:stage)
 set :rvm_ruby_version, '2.2.2'
 set :rvm_type, :user
 
 set :application, 'participacion'
+set :full_app_name, deploysecret(:full_app_name)
+
 set :server_name, deploysecret(:server_name)
 #set :repo_url, 'git@github.com:AyuntamientoMadrid/participacion.git'
 # If ssh access is restricted, probably you need to use https access
@@ -45,9 +48,9 @@ set(:config_files, %w(
 
 namespace :deploy do
   # Check right version of deploy branch
-  before :deploy, "deploy:check_revision"
+  # before :deploy, "deploy:check_revision"
   # Run test aund continue only if passed
-  before :deploy, "deploy:run_tests"
+  # before :deploy, "deploy:run_tests"
   # Compile assets locally and then rsync
   after 'deploy:symlink:shared', 'deploy:compile_assets_locally'
   after :finishing, 'deploy:cleanup'

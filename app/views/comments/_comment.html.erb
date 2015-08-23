@@ -5,7 +5,11 @@
       <%= t("debates.comment.deleted") %>
     <% else %>
 
-      <%= avatar_image(comment.user, size: 32, class: 'left') %>
+      <% if comment.user.organization? %>
+        <%= image_tag("collective_avatar.png", size: 32, class: "avatar left") %>
+      <% else %>
+        <%= avatar_image(comment.user, size: 32, class: "left") %>
+      <% end %>
       <% if comment.user.hidden? %>
         <i class="icon-deleted user-deleted"></i>
       <% end %>
@@ -27,7 +31,7 @@
           <% if comment.user.verified_organization? %>
             &nbsp;&bullet;&nbsp;
             <span class="label round is-association">
-              <%= t("shared.organization") %>
+              <%= t("shared.collective") %>
             </span>
           <% end %>
           <% if comment.user_id == @debate.author_id %>
@@ -44,7 +48,9 @@
 
         </div>
 
-        <% if comment.user.official? %>
+        <% if comment.user.official? && comment.user_id == @debate.author_id %>
+          <p class="comment-user level-<%= comment.user.official_level %> is-author"><%= comment.body %></p>
+        <% elsif comment.user.official? %>
           <p class="comment-user level-<%= comment.user.official_level %>"><%= comment.body %></p>
         <% elsif comment.user_id == @debate.author_id %>
           <p class="comment-user is-author"><%= comment.body %></p>

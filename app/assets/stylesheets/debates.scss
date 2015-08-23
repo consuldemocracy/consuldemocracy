@@ -163,7 +163,7 @@
       padding-top: 0;
     }
 
-    .icon-comment-quotes {
+    .icon-debates {
       color: $debates;
       font-size: rem-calc(36);
       line-height: $line-height;
@@ -191,7 +191,7 @@
       font-weight: lighter;
       margin-bottom: 0;
 
-      .icon-chat-bubble-two {
+      .icon-comments {
         font-size: rem-calc(16);
         vertical-align: top;
       }
@@ -280,7 +280,7 @@
       }
     }
 
-    .icon-comment-quotes {
+    .icon-debates {
       font-size: rem-calc(18);
       left: rem-calc(60);
       top: 0;
@@ -450,7 +450,7 @@
     margin-bottom: rem-calc(24);
   }
 
-  .icon-comment-quotes {
+  .icon-debates {
     color: $debates;
     font-size: rem-calc(60);
     line-height: $line-height;
@@ -550,6 +550,10 @@
           &.level-#{$n} {
             @if $n == "5" {
               background: $comment-level-5;
+              padding: rem-calc(6) rem-calc(12);
+            }
+            @elseif $n == "1" {
+              background: none;
               padding: rem-calc(6) rem-calc(12);
             }
             @else {

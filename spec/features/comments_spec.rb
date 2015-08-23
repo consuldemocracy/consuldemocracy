@@ -43,7 +43,7 @@ feature 'Comments' do
       create(:comment, commentable: debate)
       visit debate_path(debate)
 
-      expect(page).to have_content 'Log in to participate'
+      expect(page).to have_content 'You need to sign in or sign up to comment'
       within('#comments') do
         expect(page).to_not have_content 'Write a comment'
         expect(page).to_not have_content 'Reply'
@@ -80,8 +80,8 @@ feature 'Comments' do
   end
 
   scenario 'Reply', :js do
-    citizen = create(:user, first_name: 'Ana')
-    manuela = create(:user, first_name: 'Manuela')
+    citizen = create(:user, username: 'Ana')
+    manuela = create(:user, username: 'Manuela')
     debate  = create(:debate)
     comment = create(:comment, commentable: debate, user: citizen)
 

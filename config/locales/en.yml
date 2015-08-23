@@ -13,11 +13,11 @@ en:
       open_city_slogan: So the citizens can decide what kind of city they want.
       see_all_debates: See all debates
       my_account_link: My account
-      language: Site language
+      locale: "Site language:"
       administration: Administration
       moderation: Moderation
       welcome: Welcome
-      news: News
+      how_it_works: How it works
       debates: Debates
       initiatives: Initiatives
     footer:
@@ -32,14 +32,11 @@ en:
   debates:
     index:
       create_debate: Create a debate
-      showing: You are seeing
-      tag: with the topic
-      filter_debates: debates
-      filter_initiatives: initiatives
-      filter_debates_and_initiatives: debates and initiatives
+      showing: You are seeing debates
       filter_news: the newest
       filter_votes: the most voted
       filter_rated: the best rated
+      filter_topic: "You are seeing %{number} debates with the topic '%{topic}'"
     debate:
       debate: Debate
       comments:
@@ -81,8 +78,7 @@ en:
         zero: No comments
         one: 1 Comment
         other: "%{count} Comments"
-      leave_comment: Write a comment
-      login_to_comment: Log in to participate
+      login_to_comment: "You need to %{signin} or %{signup} to comment."
       edit_debate_link: Edit
       share: Share
     edit:
@@ -120,12 +116,9 @@ en:
       change_credentials_link: "Change my credentials"
       avatar: "Avatar"
       personal: "Personal data"
-      first_name_label: "First Name"
-      last_name_label: "Last Name"
+      username_label: "Username"
       phone_number_label: "Phone number"
       organization_name_label: "Organization name"
-      use_nickname_label: "Use nickname"
-      nickname_label: "Nickname"
       notifications: Notifications
   simple_captcha:
     placeholder: "Enter the image value"
@@ -137,9 +130,9 @@ en:
   shared:
     tags_cloud:
       tags: Topics
-    organization: Organization
     flag_as_inappropiate: Flag as inappropiate
     undo_flag_as_inappropiate: Undo flag as inappropiate
+    collective: Collective
   mailer:
     comment:
       subject: Someone has commented on your debate
@@ -150,4 +143,4 @@ en:
     manage:
       all: "You are not authorized to %{action} %{subject}."
   welcome:
-    featured_debates: Features debates
+    last_debates: Last debates

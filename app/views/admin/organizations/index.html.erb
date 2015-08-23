@@ -1,17 +1,30 @@
-<h2><%= t('admin.organizations.index.title') %></h2>
+<h2><%= t("admin.organizations.index.title") %></h2>
 
-<p>
-  <%= t('admin.organizations.index.filter') %>:
+<!-- Search organizations -->
+<%= form_for(User.new, url: search_admin_officials_path, as: :user, method: :get) do |f| %>
+  <div class="row">
+    <div class="small-12 medium-6 column">
+      <%= text_field_tag :email, "", placeholder: t("admin.officials.index.search_email_placeholder") %>
+    </div>
+    <div class="form-inline small-12 medium-6 column">
+      <%= f.submit t("admin.officials.index.search"), class: "button radius success" %>
+    </div>
+  </div>
+<% end %>
+<!-- /. Search organizations -->
+
+<dl class="sub-nav">
+  <dt><%= t("admin.organizations.index.filter") %>:</dt>
 
   <% @valid_filters.each do |filter| %>
     <% if @filter == filter %>
-      <%= t("admin.organizations.index.filters.#{filter}") %>
+      <dd class="active"><%= t("admin.organizations.index.filters.#{filter}") %></dd>
     <% else %>
-      <%= link_to t("admin.organizations.index.filters.#{filter}"),
-        admin_organizations_path(filter: filter) %>
+      <dd><%= link_to t("admin.organizations.index.filters.#{filter}"),
+        admin_organizations_path(filter: filter) %></dd>
     <% end %>
   <% end %>
-</p>
+</dl>
 
 <h3><%= page_entries_info @organizations %></h3>
 
@@ -21,23 +34,38 @@
     <td><%= organization.name %></td>
     <td><%= organization.email %></td>
     <td><%= organization.phone_number %></td>
+    <!-- Badge collective name, "collective" by default -->
+    <td>Colectivo</td>
+    <!-- /. Badge collective name, "collective" by default -->
     <% if organization.verified? %>
-      <td><%= t('admin.organizations.index.verified') %></td>
-    <% end %>
-    <% if can? :verify, organization %>
-      <td><%= link_to t('admin.organizations.index.verify'),
-                verify_admin_organization_path(organization, request.query_parameters),
-                method: :put
-          %>
+      <td class="verified">
+        <i class="icon-check"></i>
+        <%= t("admin.organizations.index.verified") %>
       </td>
     <% end %>
     <% if organization.rejected? %>
-      <td><%= t('admin.organizations.index.rejected') %></td>
+      <td class="rejected">
+        <i class="icon-x"></i>
+        <%= t("admin.organizations.index.rejected") %>
+      </td>
+    <% end %>
+    <td>
+    <!-- Edit collective bagde, "collective" by default -->
+      <%= link_to t("admin.organizations.index.edit"), "", class: "button radius tiny secondary" %>
+    <!-- /. Edit collective bagde, "collective" by default -->
+    </td>
+    <% if can? :verify, organization %>
+      <td>
+        <%= link_to t("admin.organizations.index.verify"),
+                verify_admin_organization_path(organization, request.query_parameters),
+                method: :put, class: "button radius tiny success"
+        %>
+      </td>
     <% end %>
     <% if can? :reject, organization %>
-      <td><%= link_to t('admin.organizations.index.reject'),
+      <td><%= link_to t("admin.organizations.index.reject"),
                 reject_admin_organization_path(organization, request.query_parameters),
-                method: :put
+                method: :put, class: "button radius tiny alert"
           %>
       </td>
     <% end %>
