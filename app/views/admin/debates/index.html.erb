@@ -1,5 +1,14 @@
 <h2><%= t("admin.debates.index.title") %></h2>
 
+<!-- Filters for pending and archived debates (example on "/admin/organizations/index.html.erb")-->
+<dl class="sub-nav">
+  <dt><%= t("admin.debates.index.filter") %>:</dt>
+  <dd class="active"><%= t("admin.debates.filters.all") %></dd>
+  <dd><%= t("admin.debates.filters.pending") %></dd>
+  <dd><%= t("admin.debates.filters.archived") %></dd>
+</dl>
+<!-- Filters for pending and archived debates (example on "/admin/organizations/index.html.erb")-->
+
 <h3><%= page_entries_info @debates %></h3>
 
 <ul class="admin-list">
@@ -10,6 +19,10 @@
       <%= link_to t("admin.actions.restore"), restore_admin_debate_path(debate),
             method: :put, data: { confirm: t("admin.actions.confirm") },
             class: "button radius tiny success right" %>
+
+       <!-- Link to archive this debate -->
+          <%= link_to t("admin.actions.archive"), "#", class: "button radius tiny warning right" %>
+      <!-- /. Link to archive this debate -->
     </li>
   <% end %>
 </ul>

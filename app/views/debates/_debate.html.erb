@@ -5,10 +5,10 @@
       <div class="small-12 medium-9 column">
         <div class="debate-content">
           <span class="label left"><%= t("debates.debate.debate") %></span>
-          <i class="icon-comment-quotes"></i>
+          <i class="icon-debates"></i>
           <h3><%= link_to debate.title, debate %></h3>
           <p class="debate-info">
-            <i class="icon-chat-bubble-two"></i>&nbsp;
+            <i class="icon-comments"></i>&nbsp;
             <%= link_to t("debates.debate.comments", count: debate.comment_threads.count), debate_path(debate, anchor: "comments") %>
           </p>
           <div class="debate-description">

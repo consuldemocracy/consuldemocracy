@@ -25,6 +25,7 @@ es:
         verified: Verificada
         rejected: Rechazada
         filter: Filtro
+        edit: Editar
         filters:
           all: Todas
           pending: Pendientes
@@ -35,26 +36,38 @@ es:
       hide_author: Bloquear al autor
       restore: Volver a mostrar
       confirm: '¿Estás seguro?'
+      archive: Archivar
     tags:
       index:
         title: 'Temas de debate'
         add_tag: 'Añade un nuevo tema de debate'
-      mark_as_featured: 'Proponer etiqueta al crear debate'
+      mark_as_featured: 'Proponer tema al crear debate'
       name:
         placeholder: 'Escribe el nombre del tema'
       destroy: Elimina la etiqueta
     comments:
       index:
         title: Comentarios ocultos
+        show_debate: Ver debate
+        filter: Filtro
       restore:
         success: El comentario ha sido permitido
+      filters:
+        all: Todos
+        pending: Pendientes
+        archived: Archivados
     debates:
       index:
         title: Debates ocultos
+        filter: Filtro
       show:
         back: Volver
       restore:
         success: El debate ha sido permitido
+      filters:
+        all: Todos
+        pending: Pendientes
+        archived: Archivados
     users:
       index:
         title: Usuarios bloqueados

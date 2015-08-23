@@ -149,6 +149,20 @@ body.admin {
   }
 }
 
+.verified {
+  color: $check;
+}
+
+.verified a {
+  border-bottom: 1px dotted $check;
+  color: $check;
+  font-size: rem-calc(12);
+}
+
+.rejected {
+  color: #F04124;
+}
+
 .level {
   font-size: rem-calc(12);
 }
@@ -159,6 +173,10 @@ body.admin {
   font-size: rem-calc(12);
   font-weight: normal;
   padding: rem-calc(6) rem-calc(12);
+}
+
+.button.tiny.success {
+  margin-left: rem-calc(12);
 }
 
 // 04. Stats
