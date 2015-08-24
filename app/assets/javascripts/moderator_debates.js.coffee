@@ -5,4 +5,4 @@ App.ModeratorDebates =
     $("#comments").addClass("faded")
 
   hide_moderator_actions: (id) ->
-    $("##{id} #moderator-debate-actions:first").hide()
+    $("##{id} .js-moderator-debate-actions:first").hide()
