@@ -66,10 +66,15 @@ class Ability
         cannot :hide, User, id: user.id
       end
 
+      if user.moderator?
+        can :comment_as_moderator, [Debate, Comment]
+      end
+
       if user.administrator?
         can :restore, Comment
         can :restore, Debate
         can :restore, User
+        can :comment_as_administrator, [Debate, Comment]
       end
     end
   end

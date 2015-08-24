@@ -22,12 +22,14 @@ describe Ability do
     it { should be_able_to(:show, debate) }
     it { should be_able_to(:vote, debate) }
 
-
     it { should be_able_to(:show, user) }
     it { should be_able_to(:edit, user) }
 
     it { should be_able_to(:create, Comment) }
     it { should be_able_to(:vote, Comment) }
+
+    it { should_not be_able_to(:comment_as_administrator, debate) }
+    it { should_not be_able_to(:comment_as_moderator, debate) }
 
     describe 'flagging content as inappropiate' do
       it { should be_able_to(:flag_as_inappropiate, debate) }
@@ -158,6 +160,9 @@ describe Ability do
       it { should_not be_able_to(:restore, comment) }
       it { should_not be_able_to(:restore, debate) }
       it { should_not be_able_to(:restore, other_user) }
+
+      it { should be_able_to(:comment_as_moderator, debate) }
+      it { should_not be_able_to(:comment_as_administrator, debate) }
     end
   end
 
@@ -173,5 +178,8 @@ describe Ability do
     it { should be_able_to(:restore, comment) }
     it { should be_able_to(:restore, debate) }
     it { should be_able_to(:restore, other_user) }
+
+    it { should be_able_to(:comment_as_administrator, debate) }
+    it { should_not be_able_to(:comment_as_moderator, debate) }
   end
 end
