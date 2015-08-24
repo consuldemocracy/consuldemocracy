@@ -37,6 +37,18 @@
     </div>
   </div>
 
+  <!-- Search results -->
+  <div class="filters row">
+    <div class="small-12 column">
+      <h2>
+      <%= t("debates.index.search_results",
+          number: "N",
+          search_term: "búsqueda").html_safe%>
+    </h2>
+    </div>
+  </div>
+  <!-- /. Search results -->
+
   <div class="row">
     <div id="debates" class="debates-list small-12 medium-9 column js-order-<%= @order.dasherize %>">
       <%= render @debates %>
@@ -45,6 +57,7 @@
     <div class="small-12 medium-3 column">
       <aside class="sidebar" role="complementary">
         <%= link_to t("debates.index.start_debate"), new_debate_path, class: 'button radius expand' %>
+        <%= render "shared/search_form" %>
         <%= render "shared/tag_cloud" %>
       </aside>
     </div>
