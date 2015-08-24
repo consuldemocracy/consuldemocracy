@@ -168,4 +168,122 @@ feature 'Comments' do
     expect(InappropiateFlag.flagged?(user, comment)).to_not be
   end
 
+  feature "Moderators" do
+    scenario "can create comment as a moderator", :js do
+      moderator = create(:moderator)
+      debate = create(:debate)
+
+      login_as(moderator.user)
+      visit debate_path(debate)
+
+      fill_in "comment_body", with: "I am moderating!"
+      check "comment_as_moderator"
+      click_button "Publish comment"
+
+      within "#comments" do
+        expect(page).to have_content "I am moderating!"
+        expect(page).to have_content "Moderator ##{moderator.id}"
+        expect(page).to have_css "p.is-moderator"
+        expect(page).to have_css "img.moderator-avatar"
+      end
+    end
+
+    scenario "can create reply as a moderator", :js do
+      citizen = create(:user, username: "Ana")
+      manuela = create(:user, username: "Manuela")
+      moderator = create(:moderator, user: manuela)
+      debate  = create(:debate)
+      comment = create(:comment, commentable: debate, user: citizen)
+
+      login_as(manuela)
+      visit debate_path(debate)
+
+      click_link "Reply"
+
+      within "#js-comment-form-comment_#{comment.id}" do
+        fill_in "comment_body", with: "I am moderating!"
+        check "comment_as_moderator"
+        click_button 'Publish reply'
+      end
+
+      within "#comment_#{comment.id}" do
+        expect(page).to have_content "I am moderating!"
+        expect(page).to have_content "Moderator ##{moderator.id}"
+        expect(page).to have_css "p.is-moderator"
+        expect(page).to have_css "img.moderator-avatar"
+      end
+
+      expect(page).to_not have_selector("#js-comment-form-comment_#{comment.id}", visible: true)
+    end
+
+    scenario "can not comment as an administrator" do
+      moderator = create(:moderator)
+      debate = create(:debate)
+
+      login_as(moderator.user)
+      visit debate_path(debate)
+
+      expect(page).to_not have_content "Comment as administrator"
+    end
+  end
+
+  feature "Administrators" do
+    scenario "can create comment as an administrator", :js do
+      admin = create(:administrator)
+      debate = create(:debate)
+
+      login_as(admin.user)
+      visit debate_path(debate)
+
+      fill_in "comment_body", with: "I am your Admin!"
+      check "comment_as_administrator"
+      click_button "Publish comment"
+
+      within "#comments" do
+        expect(page).to have_content "I am your Admin!"
+        expect(page).to have_content "Administrator ##{admin.id}"
+        expect(page).to have_css "p.is-admin"
+        expect(page).to have_css "img.admin-avatar"
+      end
+    end
+
+    scenario "can create reply as an administrator", :js do
+      citizen = create(:user, username: "Ana")
+      manuela = create(:user, username: "Manuela")
+      admin   = create(:administrator, user: manuela)
+      debate  = create(:debate)
+      comment = create(:comment, commentable: debate, user: citizen)
+
+      login_as(manuela)
+      visit debate_path(debate)
+
+      click_link "Reply"
+
+      within "#js-comment-form-comment_#{comment.id}" do
+        fill_in "comment_body", with: "Top of the world!"
+        check "comment_as_administrator"
+        click_button 'Publish reply'
+      end
+
+      within "#comment_#{comment.id}" do
+        expect(page).to have_content "Top of the world!"
+        expect(page).to have_content "Administrator ##{admin.id}"
+        expect(page).to have_css "p.is-admin"
+        expect(page).to have_css "img.admin-avatar"
+      end
+
+      expect(page).to_not have_selector("#js-comment-form-comment_#{comment.id}", visible: true)
+    end
+
+    scenario "can not comment as a moderator" do
+      admin  = create(:administrator)
+      debate = create(:debate)
+
+      login_as(admin.user)
+      visit debate_path(debate)
+
+      expect(page).to_not have_content "Comment as moderator"
+    end
+  end
+
 end

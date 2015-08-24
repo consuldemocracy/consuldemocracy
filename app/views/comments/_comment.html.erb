@@ -5,71 +5,73 @@
       <%= t("debates.comment.deleted") %>
     <% else %>
 
-      <% if comment.user.organization? %>
-        <%= image_tag("collective_avatar.png", size: 32, class: "avatar left") %>
-      <% else %>
-        <%= avatar_image(comment.user, size: 32, class: "left") %>
-      <% end %>
-      <% if comment.user.hidden? %>
-        <i class="icon-deleted user-deleted"></i>
-      <% end %>
-<!--
-      <% if comment.user.moderator? %> <!-- AND has activated CHECKBOX comment as moderator ->
-        <%= image_tag("moderator_avatar.png", size: 32, class: "moderator-avatar left") %>
-      <% elsif comment.user.administrator? %> <!-- AND has activated CHECKBOX comment as admin ->
+      <% if comment.as_administrator? %>
         <%= image_tag("admin_avatar.png", size: 32, class: "admin-avatar left") %>
+      <% elsif comment.as_moderator? %>
+        <%= image_tag("moderator_avatar.png", size: 32, class: "moderator-avatar left") %>
+      <% else %>
+
+        <% if comment.user.organization? %>
+          <%= image_tag("collective_avatar.png", size: 32, class: "avatar left") %>
+        <% else %>
+          <%= avatar_image(comment.user, size: 32, class: "left") %>
+        <% end %>
+        <% if comment.user.hidden? %>
+          <i class="icon-deleted user-deleted"></i>
+        <% end %>
+
       <% end %>
--->
+
       <div class="comment-body">
         <div class="comment-info">
 
-          <% if comment.user.hidden? %>
-            <span class="user-name"><%= t("debates.comment.user_deleted") %></span>
+          <% if comment.as_administrator? %>
+            <span class="user-name"><%= t("debates.comment.admin") %> #<%= comment.administrator_id%></span>
+          <% elsif comment.as_moderator? %>
+            <span class="user-name"><%= t("debates.comment.moderator") %> #<%= comment.moderator_id%></span>
           <% else %>
 
-            <% if comment.user.moderator? %> <!-- AND activate moderator CHECKBOX -->
-              <span class="user-name"><%= t("debates.comment.moderator") %> #ID</span> <!-- Add ID to Moderator name -->
-            <% elsif comment.user.administrator? %> <!-- AND activate administrator CHECKBOX -->
-              <span class="user-name"><%= t("debates.comment.admin") %> #ID</span> <!-- Add ID to Admin name -->
+            <% if comment.user.hidden? %>
+              <span class="user-name"><%= t("debates.comment.user_deleted") %></span>
             <% else %>
               <span class="user-name"><%= comment.user.name %></span>
+              <% if comment.user.official? %>
+                &nbsp;&bullet;&nbsp;
+                <span class="label round level-<%= comment.user.official_level %>">
+                  <%= comment.user.official_position %>
+                </span>
+              <% end %>
             <% end %>
-
-            <% if comment.user.official? %>
+            <% if comment.user.verified_organization? %>
               &nbsp;&bullet;&nbsp;
-              <span class="label round level-<%= comment.user.official_level %>">
-                <%= comment.user.official_position %>
+              <span class="label round is-association">
+                <%= t("shared.collective") %>
               </span>
             <% end %>
+            <% if comment.user_id == @debate.author_id %>
+              &nbsp;&bullet;&nbsp;
+              <span class="label round is-author">
+                <%= t("debates.comment.author") %>
+              </span>
+            <% end %>
+
           <% end %>
-          <% if comment.user.verified_organization? %>
-            &nbsp;&bullet;&nbsp;
-            <span class="label round is-association">
-              <%= t("shared.collective") %>
-            </span>
-          <% end %>
-          <% if comment.user_id == @debate.author_id %>
-            &nbsp;&bullet;&nbsp;
-            <span class="label round is-author">
-              <%= t("debates.comment.author") %>
-            </span>
-          <% end %>
+
           &nbsp;&bullet;&nbsp;<%= time_ago_in_words(comment.created_at) %>
 
           <span class="right js-flag-as-inappropiate-actions">
             <%= render 'comments/flag_as_inappropiate_actions', comment: comment %>
           </span>
-
         </div>
 
-        <% if comment.user.official? && comment.user_id == @debate.author_id %>
+        <% if comment.as_administrator? %>
+          <p class="comment-user is-admin"><%= comment.body %></p>
+        <% elsif comment.as_moderator? %>
+          <p class="comment-user is-moderator"><%= comment.body %></p>
+        <% elsif comment.user.official? && comment.user_id == @debate.author_id %>
           <p class="comment-user level-<%= comment.user.official_level %> is-author"><%= comment.body %></p>
         <% elsif comment.user.official? %>
           <p class="comment-user level-<%= comment.user.official_level %>"><%= comment.body %></p>
-        <% elsif comment.user.moderator? %> <!-- AND has activated CHECKBOX comment as moderator (all badges are hidden: 100% anonymous) -->
-          <p class="comment-user is-moderator"><%= comment.body %></p>
-        <% elsif comment.user.administrator? %> <!-- AND has activated CHECKBOX comment as admin (all badges are hidden: 100% anonymous) -->
-          <p class="comment-user is-admin"><%= comment.body %></p>
         <% elsif comment.user_id == @debate.author_id %>
           <p class="comment-user is-author"><%= comment.body %></p>
         <% else %>

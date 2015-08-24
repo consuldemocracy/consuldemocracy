@@ -35,11 +35,20 @@ class CommentsController < ApplicationController
   private
 
     def comment_params
-      params.require(:comment).permit(:commentable_type, :commentable_id, :body)
+      params.require(:comment).permit(:commentable_type, :commentable_id, :body, :as_moderator, :as_administrator)
     end
 
     def build_comment
       @comment = Comment.build(debate, current_user, comment_params[:body])
+      check_for_special_comments
+    end
+
+    def check_for_special_comments
+      if ["1", true].include?(comment_params[:as_administrator]) && can?(:comment_as_administrator, debate)
+        @comment.administrator_id = current_user.administrator.id
+      elsif ["1", true].include?(comment_params[:as_moderator]) && can?(:comment_as_moderator, debate)
+        @comment.moderator_id = current_user.moderator.id
+      end
     end
 
     def debate

@@ -4,7 +4,7 @@ class Comment < ActiveRecord::Base
   acts_as_paranoid column: :hidden_at
   acts_as_votable
 
-  attr_accessor :comment_as_moderator, :comment_as_administrator
+  attr_accessor :as_moderator, :as_administrator
 
   validates :body, presence: true
   validates :user, presence: true
