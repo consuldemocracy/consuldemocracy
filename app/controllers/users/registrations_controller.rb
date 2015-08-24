@@ -17,7 +17,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     if current_user.update(sign_up_params)
       current_user.skip_reconfirmation!
       sign_in(current_user, bypass: true)
-      redirect_to root_url, notice: I18n.t('devise.registrations.updated')
+      redirect_to root_url
     else
       @show_errors = true
       render :finish_signup
