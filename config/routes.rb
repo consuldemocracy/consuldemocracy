@@ -62,6 +62,10 @@ Rails.application.routes.draw do
     end
 
     resources :settings, only: [:index, :update]
+    resources :moderators, only: [:index] do
+      member { post :toggle }
+      collection { get :search }
+    end
   end
 
   namespace :moderation do

@@ -16,6 +16,7 @@ es:
       hidden_users: Usuarios ocultos
       organizations: Organizaciones
       officials: Cargos públicos
+      moderators: Moderadores
       stats: Estadísticas
     organizations:
       index:
@@ -104,3 +105,13 @@ es:
       flash:
         official_updated: 'Datos del cargo público guardados'
         official_destroyed: 'Datos guardados: el usuario ya no es cargo público'
+    moderators:
+      index:
+        title: Moderadores
+      search:
+        email_placeholder: 'Buscar usuario por email'
+        search: Buscar
+        user_not_found: 'Usuario no encontrado'
+      moderator:
+        delete: Borrar
+        add: Añadir

@@ -67,4 +67,8 @@ class User < ActiveRecord::Base
     e.present? ? where(email: e) : none
   end
 
+  def toggle_moderator
+    moderator? ? self.moderator.destroy : create_moderator
+  end
+
 end
