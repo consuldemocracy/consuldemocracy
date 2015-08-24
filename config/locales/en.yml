@@ -148,3 +148,9 @@ en:
       all: "You are not authorized to %{action} %{subject}."
   welcome:
     last_debates: Last debates
+  omniauth:
+    finish_signup:
+      title: Add Email
+    twitter:
+      sign_in: Sign in with Twitter
+    or: or
