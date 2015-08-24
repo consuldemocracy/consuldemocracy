@@ -1,9 +1,10 @@
 class Comment < ActiveRecord::Base
   include ActsAsParanoidAliases
   acts_as_nested_set scope: [:commentable_id, :commentable_type], counter_cache: :children_count
-
   acts_as_paranoid column: :hidden_at
   acts_as_votable
+
+  attr_accessor :as_moderator, :as_administrator
 
   validates :body, presence: true
   validates :user, presence: true
@@ -57,6 +58,14 @@ class Comment < ActiveRecord::Base
 
   def reviewed?
     reviewed_at.present?
+  end
+
+  def as_administrator?
+    administrator_id.present?
+  end
+
+  def as_moderator?
+    moderator_id.present?
   end
 
   def mark_as_reviewed

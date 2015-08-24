@@ -49,6 +49,8 @@ en:
         other: "%{count} votes"
     comment:
       author: Debate's author
+      moderator: Moderator
+      admin: Administrator
       deleted: This comment has been deleted
       user_deleted: Deleted user
       responses:
@@ -94,7 +96,9 @@ en:
       recommendation_three: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore"
   comments:
     form:
-        leave_comment: Write a comment
+      leave_comment: Write a comment
+      comment_as_moderator: Comment as moderator
+      comment_as_admin: Comment as administrator
   comments_helper:
     comment_link: Comment
     comment_button: Publish comment

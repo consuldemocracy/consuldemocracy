@@ -548,19 +548,19 @@ form {
     line-height: $line-height;
   }
 
-  input[type]:not([type=submit]):not([type=file]) {
+  input[type]:not([type=submit]):not([type=file]):not([type=checkbox]) {
     background: $input-bg;
     height: rem-calc(48);
     margin-bottom: rem-calc(16);
   }
 
-  input[type="checkbox"] {
-    height: rem-calc(24) !important;
-    margin: 0 !important;
+  input[type="checkbox"] + label,
+  input[type="radio"] + label {
+    margin-right: 0;
   }
 
   input[type=file] {
-    margin: rem-calc(12) 0;
+    margin: rem-calc(12) 0 rem-calc(12) rem-calc(6);
   }
 
   .note {
@@ -579,8 +579,7 @@ form {
     font-size: rem-calc(14);
     font-weight: normal;
     line-height: $line-height;
-    margin: 0 0 0 rem-calc(6);
-    vertical-align: top;
+    vertical-align: middle;
   }
 
   .captcha {
@@ -590,6 +589,10 @@ form {
     input {
       margin-bottom: 0 !important;
     }
+  }
+
+  .button.margin-top {
+    margin-top: rem-calc(24);
   }
 }
 
@@ -689,9 +692,13 @@ form {
   }
 }
 
-img.initialjs-avatar, img.avatar {
+img.admin-avatar, img.moderator-avatar {
   border-radius: rem-calc(1000);
   position: relative;
+}
+
+img.initialjs-avatar {
+  @extend .moderator-avatar;
 }
 
 .author-deleted {
