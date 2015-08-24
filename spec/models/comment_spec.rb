@@ -38,4 +38,24 @@ describe Comment do
       expect { new_comment.destroy }.to change { comment.children_count }.from(1).to(0)
     end
   end
+
+  describe "#as_administrator?" do
+    it "should be true if comment has administrator_id, false otherway" do
+      expect(comment).not_to be_as_administrator
+
+      comment.administrator_id = 33
+
+      expect(comment).to be_as_administrator
+    end
+  end
+
+  describe "#as_moderator?" do
+    it "should be true if comment has moderator_id, false otherway" do
+      expect(comment).not_to be_as_moderator
+
+      comment.moderator_id = 21
+
+      expect(comment).to be_as_moderator
+    end
+  end
 end
