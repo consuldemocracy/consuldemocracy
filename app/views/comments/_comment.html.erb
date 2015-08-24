@@ -69,9 +69,7 @@
             <%= link_to(comment_link_text(comment), "",
                         class: "js-add-comment-link", data: {'id': dom_id(comment)}) %>
 
-            <% if moderator? %>
-               <%= render 'comments/actions', comment: comment %>
-            <% end %>
+            <%= render 'comments/actions', comment: comment %>
 
             <%= render 'comments/form', {parent: comment, toggeable: true} %>
           <% end %>

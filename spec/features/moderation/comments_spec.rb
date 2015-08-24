@@ -59,17 +59,38 @@ feature 'Moderate Comments' do
     moderator = create(:moderator)
 
     debate = create(:debate)
-    create(:comment, commentable: debate)
+    comment = create(:comment, commentable: debate)
 
     login_as(moderator.user)
     visit debate_path(debate)
 
-    expect(page).to have_css("#moderator-comment-actions")
+    within "#comment_#{comment.id}" do
+      expect(page).to have_link("Hide")
+      expect(page).to have_link("Ban author")
+    end
 
     login_as(citizen)
     visit debate_path(debate)
 
-    expect(page).to_not have_css("#moderator-comment-actions")
+    within "#comment_#{comment.id}" do
+      expect(page).to_not have_link("Hide")
+      expect(page).to_not have_link("Ban author")
+    end
+  end
+
+  scenario 'Moderator actions do not appear in own comments' do
+    moderator = create(:moderator)
+
+    debate = create(:debate)
+    comment = create(:comment, commentable: debate, user: moderator.user)
+
+    login_as(moderator.user)
+    visit debate_path(debate)
+
+    within "#comment_#{comment.id}" do
+      expect(page).to_not have_link("Hide")
+      expect(page).to_not have_link("Ban author")
+    end
   end
 
   feature '/moderation/ menu' do
