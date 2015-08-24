@@ -36,7 +36,10 @@ Para ejecutar la aplicación en local:
 bundle exec bin/rails s
 ```
 
+Prerequisitos para los tests: tener instalado PhantomJS >= 2.0 
+
 Para ejecutar los tests:
+
 ```
 bundle exec bin/rspec
 ```
