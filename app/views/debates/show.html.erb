@@ -52,7 +52,7 @@
       <%= render 'shared/tags', debate: @debate %>
 
       <% if moderator? %>
-        <div id='moderator-debate-actions'>
+        <div class='js-moderator-debate-actions'>
           <%= render 'actions', debate: @debate %>
         </div>
       <% end %>

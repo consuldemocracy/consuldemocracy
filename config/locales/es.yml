@@ -147,4 +147,4 @@ es:
     manage:
       all: "No tienes permiso para realizar la acción '%{action}' sobre %{subject}."
   welcome:
-    last_debates: Úlitmos debates
+    last_debates: Últimos debates
