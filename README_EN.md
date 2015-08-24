@@ -37,9 +37,10 @@ Run the app locally:
 bundle exec bin/rails s
 ```
 
+Prerequisites for testing: install PhantomJS >= 2.0
+
 Run the tests with:
 
-Prerequisites: install PhantomJS >= 2.0
 ```
 bundle exec bin/rspec
 ```
