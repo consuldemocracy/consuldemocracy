@@ -46,6 +46,13 @@
       <% end %>
     </li>
 
+    <li <%= 'class=active' if controller_name == 'moderators' %>>
+      <%= link_to admin_moderators_path do %>
+        <i class="icon-user"></i>
+        <%= t('admin.menu.moderators') %>
+      <% end %>
+    </li>
+
     <li <%= 'class=active' if controller_name == 'settings' %>>
       <%= link_to admin_settings_path do %>
         <i class="icon-settings"></i>

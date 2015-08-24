@@ -1,0 +1,18 @@
+<% if moderator %> 
+  <span><%= moderator.name %></span>
+  <span class="bullet">&nbsp;&bullet;&nbsp;</span>
+  <span><%= moderator.email %></span>
+  <% if moderator.moderator? %>
+    <%= link_to t('admin.moderators.moderator.delete'),
+      toggle_admin_moderator_path(moderator),
+      method: :post,
+      class: "button tiny radius alert right" %>
+  <% else %>
+    <%= link_to t('admin.moderators.moderator.add'),
+      toggle_admin_moderator_path(moderator),
+      method: :post,
+      class: "button tiny radius success right" %>
+  <% end %>
+<% else%>
+  <span><%= t('admin.moderators.search.user_not_found') %></span>
+<% end %>

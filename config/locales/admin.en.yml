@@ -16,6 +16,7 @@ en:
       hidden_users: Hidden users
       organizations: Organizations
       officials: Officials
+      moderators: Moderators
       stats: Statistics
     organizations:
       index:
@@ -91,3 +92,10 @@ en:
       flash:
         official_updated: 'Official position saved!'
         official_destroyed: 'User is not an official anymore'
+    moderators:
+      index:
+        title: Moderators
+      search:
+        email_placeholder: 'Search user by email'
+        search: Search
+        user_not_found: 'User not found'
