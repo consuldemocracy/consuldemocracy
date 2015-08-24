@@ -153,3 +153,5 @@ en:
       title: Add Email
     twitter:
       sign_in: Sign in with Twitter
+    facebook:
+      sign_in: Sign in with Facebook

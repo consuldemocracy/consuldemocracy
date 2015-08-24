@@ -152,4 +152,6 @@ es:
     finish_signup:
       title: Añade tu email
     twitter:
-      sign_in: Inicia sessión con Twitter
+      sign_in: Entra con Twitter
+    facebook:
+      sign_in: Entra con Facebook
