@@ -99,3 +99,6 @@ es:
         email_placeholder: 'Buscar usuario por email'
         search: Buscar
         user_not_found: 'Usuario no encontrado'
+      moderator:
+        delete: Borrar
+        add: Añadir
