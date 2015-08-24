@@ -1,8 +1,11 @@
-  &nbsp;|&nbsp;
-  <%= link_to t("admin.actions.hide").capitalize, hide_moderation_comment_path(comment),
-              method: :put, remote: true, data: { confirm: t('admin.actions.confirm') } %>
-  <% unless comment.user.hidden? %>
 <span class='js-moderation-actions'>
+  <% if can? :hide, comment %>
+    &nbsp;|&nbsp;
+    <%= link_to t("admin.actions.hide").capitalize, hide_moderation_comment_path(comment),
+                method: :put, remote: true, data: { confirm: t('admin.actions.confirm') } %>
+  <% end %>
+
+  <% if can? :hide, comment.user %>
     &nbsp;|&nbsp;
     <%= link_to t("admin.actions.hide_author").capitalize, hide_moderation_user_path(comment.user_id, debate_id: @debate.id),
                 method: :put, data: { confirm: t('admin.actions.confirm') } %>
