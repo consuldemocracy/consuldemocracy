@@ -66,6 +66,14 @@ es:
           phone_number_label: "Teléfono"
           password_confirmation_label: "Confirmar contraseña"
           submit: "Registrarse"
+        success:
+          title: "Registro de organización / colectivo pendiente de verificación"
+          thank_you: "Gracias por registrar tu colectivo en la web."
+          instructions:
+            En breve nos pondremos en contacto contigo para verificar que realmente representas a un colectivo.
+            Entretanto, por favor revisa tu correo electrónico. Te hemos enviado un enlace que debes pulsar para confirmar
+            tu correo. Una vez confirmado, podrás empezar a participar como colectivo no verificado.
+          back_to_index: "Entendido, volver a la página principal"
     sessions:
       new:
         title: "Entrar"
