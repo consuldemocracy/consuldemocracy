@@ -37,6 +37,8 @@ bundle exec bin/rails s
 ```
 
 Para ejecutar los tests:
+
+Prerequisitos: tener instalado PhantomJS >= 2.0 
 ```
 bundle exec bin/rspec
 ```
