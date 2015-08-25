@@ -64,6 +64,7 @@ group :test do
   gem 'database_cleaner'
   gem 'poltergeist'
   gem 'coveralls', require: false
+  gem 'bullet'
 end
 
 group :test do
