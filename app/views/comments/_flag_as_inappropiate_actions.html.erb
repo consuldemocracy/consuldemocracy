@@ -5,7 +5,7 @@
   </a>
   <ul id="drop-comment-flag-<%= comment.id %>" class="f-dropdown" data-dropdown-content aria-hidden="true" tabindex="-1">
     <li>
-    <%= link_to t("shared.flag_as_inappropiate"), flag_as_inappropiate_comment_path(comment), method: :put, remote: true %>
+    <%= link_to t("shared.flag_as_inappropiate"), flag_as_inappropiate_comment_path(comment), method: :put, remote: true, title: t("shared.flag_as_inappropiate") %>
     </li>
   </ul>
 <% end %>
@@ -17,7 +17,7 @@
   </a>
   <ul id="drop-comment-unflag-<%= comment.id %>" class="f-dropdown" data-dropdown-content aria-hidden="true" tabindex="-1">
     <li>
-    <%= link_to t("shared.undo_flag_as_inappropiate"), undo_flag_as_inappropiate_comment_path(comment), method: :put, remote: true %>
+    <%= link_to t("shared.undo_flag_as_inappropiate"), undo_flag_as_inappropiate_comment_path(comment), method: :put, remote: true, title: t("shared.undo_flag_as_inappropiate") %>
     </li>
   </ul>
 <% end %>

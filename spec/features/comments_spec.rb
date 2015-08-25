@@ -133,7 +133,7 @@ feature 'Comments' do
     expect(page).to have_css(".comment.comment.comment.comment.comment.comment.comment.comment")
   end
 
-  scenario "Flagging as inappropiate", :js do
+  scenario "Flagging as inappropriate", :js do
     user = create(:user)
     debate = create(:debate)
     comment = create(:comment, commentable: debate)
@@ -142,15 +142,15 @@ feature 'Comments' do
     visit debate_path(debate)
 
     within "#comment_#{comment.id}" do
-      expect(page).to_not have_link "Undo flag as inappropiate"
-      click_on 'Flag as inappropiate'
-      expect(page).to have_link "Undo flag as inappropiate"
+      expect(page).to_not have_link "Undo flag as inappropriate"
+      click_on 'Flag as inappropriate'
+      expect(page).to have_link "Undo flag as inappropriate"
     end
 
     expect(InappropiateFlag.flagged?(user, comment)).to be
   end
 
-  scenario "Undoing flagging as inappropiate", :js do
+  scenario "Undoing flagging as inappropriate", :js do
     user = create(:user)
     debate = create(:debate)
     comment = create(:comment, commentable: debate)
@@ -160,9 +160,9 @@ feature 'Comments' do
     visit debate_path(debate)
 
     within "#comment_#{comment.id}" do
-      expect(page).to_not have_link("Flag as inappropiate", exact: true)
+      expect(page).to_not have_link("Flag as inappropriate", exact: true)
       click_on 'Undo flag as inappropiate'
-      expect(page).to have_link("Flag as inappropiate", exact: true)
+      expect(page).to have_link("Flag as inappropriate", exact: true)
     end
 
     expect(InappropiateFlag.flagged?(user, comment)).to_not be

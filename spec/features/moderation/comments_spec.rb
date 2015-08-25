@@ -104,43 +104,43 @@ feature 'Moderate Comments' do
       visit moderation_comments_path
       expect(page).to_not have_link('All')
       expect(page).to have_link('Pending')
-      expect(page).to have_link('Reviewed')
+      expect(page).to have_link('Archived')
 
       visit moderation_comments_path(filter: 'all')
       expect(page).to_not have_link('All')
       expect(page).to have_link('Pending')
-      expect(page).to have_link('Reviewed')
+      expect(page).to have_link('Archived')
 
       visit moderation_comments_path(filter: 'pending_review')
       expect(page).to have_link('All')
       expect(page).to_not have_link('Pending')
-      expect(page).to have_link('Reviewed')
+      expect(page).to have_link('Archived')
 
-      visit moderation_comments_path(filter: 'reviewed')
+      visit moderation_comments_path(filter: 'archived')
       expect(page).to have_link('All')
       expect(page).to have_link('Pending')
-      expect(page).to_not have_link('Reviewed')
+      expect(page).to_not have_link('Archived')
     end
 
     scenario "Filtering comments" do
       create(:comment, :flagged_as_inappropiate, body: "Pending comment")
       create(:comment, :flagged_as_inappropiate, :hidden, body: "Hidden comment")
-      create(:comment, :flagged_as_inappropiate, :reviewed, body: "Reviewed comment")
+      create(:comment, :flagged_as_inappropiate, :reviewed, body: "Archived comment")
 
       visit moderation_comments_path(filter: 'all')
       expect(page).to have_content('Pending comment')
       expect(page).to_not have_content('Hidden comment')
-      expect(page).to have_content('Reviewed comment')
+      expect(page).to have_content('Archived comment')
 
       visit moderation_comments_path(filter: 'pending_review')
       expect(page).to have_content('Pending comment')
       expect(page).to_not have_content('Hidden comment')
-      expect(page).to_not have_content('Reviewed comment')
+      expect(page).to_not have_content('Archived comment')
 
-      visit moderation_comments_path(filter: 'reviewed')
+      visit moderation_comments_path(filter: 'archived')
       expect(page).to_not have_content('Pending comment')
       expect(page).to_not have_content('Hidden comment')
-      expect(page).to have_content('Reviewed comment')
+      expect(page).to have_content('Archived comment')
     end
 
     scenario "Reviewing links remember the pagination setting and the filter" do
@@ -149,7 +149,7 @@ feature 'Moderate Comments' do
 
       visit moderation_comments_path(filter: 'pending_review', page: 2)
 
-      click_link('Mark as reviewed', match: :first)
+      click_link('Archive', match: :first)
 
       uri = URI.parse(current_url)
       query_params = Rack::Utils.parse_nested_query(uri.query).symbolize_keys
@@ -172,7 +172,7 @@ feature 'Moderate Comments' do
           expect(page).to have_content('spammy spam')
           expect(page).to have_content('1')
           expect(page).to have_link('Hide')
-          expect(page).to have_link('Mark as reviewed')
+          expect(page).to have_link('Archive')
         end
       end
 
@@ -189,13 +189,13 @@ feature 'Moderate Comments' do
 
       scenario 'Marking the comment as reviewed' do
         within("#comment_#{@comment.id}") do
-          click_link('Mark as reviewed')
+          click_link('Archive')
         end
 
         expect(current_path).to eq(moderation_comments_path)
 
         within("#comment_#{@comment.id}") do
-          expect(page).to have_content('Reviewed')
+          expect(page).to have_content('Archived')
         end
 
         expect(@comment.reload).to be_reviewed
