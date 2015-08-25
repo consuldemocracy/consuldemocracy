@@ -14,7 +14,6 @@ class Comment < ActiveRecord::Base
 
   has_many :inappropiate_flags, :as => :flaggable
 
-  default_scope { includes(:user) }
   scope :recent, -> { order(id: :desc) }
 
   scope :sorted_for_moderation, -> { order(inappropiate_flags_count: :desc, updated_at: :desc) }
