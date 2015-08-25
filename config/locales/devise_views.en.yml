@@ -66,6 +66,13 @@ en:
           phone_number_label: "Phone number"
           password_confirmation_label: "Confirm password"
           submit: "Sign up"
+        success:
+          title: "Registration of organization / collective"
+          thank_you: "Thank you for registering your organization or collective in the website. Now is <b>pending verification</b>."
+          instructions_1_html: "We will <b>contact you soon</b> in order to verify that you represent your collective."
+          instructions_2_html: "Meanwhile, <b>review your email</b>. We have sent you a <b>confirmation link to activate your account</b>."
+          instructions_3_html: "When you confirm your account will then be able to participate as a non-verified organization."
+          back_to_index: "Ok, go back to index"
     sessions:
       new:
         title: "Log in"

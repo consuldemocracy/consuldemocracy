@@ -10,6 +10,10 @@ Rails.application.routes.draw do
              },
              skip: [:omniauth_callbacks]
 
+  devise_scope :organization do
+    get "organizations/sign_up/success", to: "organizations/registrations#success"
+  end
+
   devise_scope :user do
     get :finish_signup, to: 'users/registrations#finish_signup'
     patch :do_finish_signup, to: 'users/registrations#do_finish_signup'
