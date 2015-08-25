@@ -13,7 +13,7 @@
       <h1><%= @debate.title %></h1>
 
       <div class="debate-info">
-        <%= avatar_image(@debate.author, size: 32, class: 'author-photo') %>
+        <%= avatar_image(@debate.author, seed: @debate.author_id, size: 32, class: 'author-photo') %>
         <% if @debate.author.hidden? %>
           <i class="icon-deleted author-deleted"></i>
           <span class="author">

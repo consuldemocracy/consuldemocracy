@@ -26,7 +26,7 @@
 
         <div class="small-12 medium-6 column">
           <h2><%= t("account.show.avatar")%></h2>
-          <%= avatar_image(@account, size: 100) %>
+          <%= avatar_image(@account, seed: @account.id, size: 100) %>
 
           <h2><%= t("account.show.notifications")%></h2>
 

@@ -1,8 +1,12 @@
 class User < ActiveRecord::Base
   include ActsAsParanoidAliases
+
+  OMNIAUTH_EMAIL_PREFIX = 'omniauth@participacion'
+  OMNIAUTH_EMAIL_REGEX  = /\A#{OMNIAUTH_EMAIL_PREFIX}/
+
   apply_simple_captcha
   devise :database_authenticatable, :registerable, :confirmable,
-         :recoverable, :rememberable, :trackable, :validatable
+         :recoverable, :rememberable, :trackable, :validatable, :omniauthable
 
   acts_as_voter
   acts_as_paranoid column: :hidden_at
@@ -11,9 +15,11 @@ class User < ActiveRecord::Base
   has_one :moderator
   has_one :organization
   has_many :inappropiate_flags
+  has_many :identities, dependent: :destroy
 
-  validates :username,   presence: true, unless: :organization?
+  validates :username, presence: true, unless: :organization?
   validates :official_level, inclusion: {in: 0..5}
+  validates_format_of :email, without: OMNIAUTH_EMAIL_REGEX, on: :update
 
   validates_associated :organization, message: false
 
@@ -24,6 +30,43 @@ class User < ActiveRecord::Base
   scope :moderators,     -> { joins(:moderator) }
   scope :organizations,  -> { joins(:organization) }
   scope :officials,      -> { where("official_level > 0") }
+
+  def self.find_for_oauth(auth, signed_in_resource = nil)
+    # Get the identity and user if they exist
+    identity = Identity.find_for_oauth(auth)
+
+    # If a signed_in_resource is provided it always overrides the existing user
+    # to prevent the identity being locked with accidentally created accounts.
+    # Note that this may leave zombie accounts (with no associated identity) which
+    # can be cleaned up at a later date.
+    user = signed_in_resource ? signed_in_resource : identity.user
+    user ||= first_or_create_for_oauth(auth)
+
+    # Associate the identity with the user if needed
+    identity.update_user(user)
+    user
+  end
+
+  # Get the existing user by email if the provider gives us a verified email.
+  # If no verified email was provided we assign a temporary email and ask the
+  # user to verify it on the next step via RegistrationsController.finish_signup
+  def self.first_or_create_for_oauth(auth)
+    email = auth.info.email if auth.info.verified || auth.info.verified_email
+    user  = User.where(email: email).first if email
+
+    # Create the user if it's a new registration
+    if user.nil?
+      user = User.new(
+        username: auth.info.nickname || auth.extra.raw_info.name.parameterize('-') || auth.uid,
+        email: email ? email : "#{OMNIAUTH_EMAIL_PREFIX}-#{auth.uid}-#{auth.provider}.com",
+        password: Devise.friendly_token[0,20]
+      )
+      user.skip_confirmation!
+      user.save!
+    end
+
+    user
+  end
 
   def name
     organization? ? organization.name : username
@@ -67,4 +110,8 @@ class User < ActiveRecord::Base
     e.present? ? where(email: e) : none
   end
 
+  def email_provided?
+    !!(email && email !~ OMNIAUTH_EMAIL_REGEX) ||
+      !!(unconfirmed_email && unconfirmed_email !~ OMNIAUTH_EMAIL_REGEX)
+  end
 end
