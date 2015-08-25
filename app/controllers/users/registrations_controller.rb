@@ -19,7 +19,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
       sign_in(current_user, bypass: true)
       redirect_to root_url
     else
-      @show_errors = true
       render :finish_signup
     end
   end
