@@ -150,6 +150,19 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+.margin {
+  margin-top: $line-height;
+  margin-bottom: $line-height;
+}
+
+.margin-top {
+  margin-top: $line-height;
+}
+
+.margin-bottom {
+  margin-bottom: $line-height;
+}
+
 // 04. Header
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -494,9 +507,14 @@ footer {
 
   h2 {
     clear: both;
-    font-size: rem-calc(30);
+    font-size: rem-calc(18);
     font-weight: bold;
-    line-height: $line-height*2;
+    line-height: $line-height;
+
+    @media (min-width: $small-breakpoint) {
+      font-size: rem-calc(30);
+      line-height: $line-height*2;
+    }
   }
 
   .back, .icon-angle-left {

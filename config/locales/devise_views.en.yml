@@ -67,13 +67,11 @@ en:
           password_confirmation_label: "Confirm password"
           submit: "Sign up"
         success:
-          title: "Registration of organization / collective pending verification"
-          thank_you: "Thank you for registering your organization or collective in the website."
-          instructions:
-            We will contact you soon in order to verify that you represent your collective.
-            Meanwhile, please review your email. We have sent you a confirmation link which you
-            will have to click in order to activate your account. You will then be able to participate
-            as a non-verified organization.
+          title: "Registration of organization / collective"
+          thank_you: "Thank you for registering your organization or collective in the website. Now is <b>pending verification</b>."
+          instructions_1: "We will <b>contact you soon</b> in order to verify that you represent your collective."
+          instructions_2: "Meanwhile, <b>review your email</b>. We have sent you a <b>confirmation link to activate your account</b>."
+          instructions_3: "When you confirm your account will then be able to participate as a non-verified organization."
           back_to_index: "Ok, go back to index"
     sessions:
       new:
