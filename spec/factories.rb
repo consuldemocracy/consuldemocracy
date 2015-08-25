@@ -1,10 +1,15 @@
 FactoryGirl.define do
-
   factory :user do
     username         'Manuela'
     sequence(:email) { |n| "manuela#{n}@madrid.es" }
     password         'judgmentday'
     confirmed_at     { Time.now }
+  end
+
+  factory :identity do
+    user nil
+    provider "Twitter"
+    uid "MyString"
   end
 
   factory :debate do
