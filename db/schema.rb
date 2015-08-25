@@ -158,8 +158,8 @@ ActiveRecord::Schema.define(version: 20150824113326) do
     t.boolean  "email_on_comment_reply",             default: false
     t.string   "official_position"
     t.integer  "official_level",                     default: 0
-    t.datetime "hidden_at"
     t.string   "phone_number",            limit: 30
+    t.datetime "hidden_at"
     t.string   "username"
   end
 

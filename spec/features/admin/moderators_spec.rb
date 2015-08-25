@@ -2,7 +2,7 @@ require 'rails_helper'
 
 feature 'Admin moderators' do
   background do
-    @user = create(:user, first_name: 'Jose Luis', last_name: 'Balbin' )
+    @user = create(:user, username: 'Jose Luis Balbin')
     @moderator = create(:moderator)
     @admin = create(:administrator)
     login_as(@admin.user)
