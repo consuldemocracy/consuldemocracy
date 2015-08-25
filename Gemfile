@@ -24,7 +24,7 @@ gem 'devise'
 gem 'omniauth'
 gem 'omniauth-twitter'
 gem 'omniauth-facebook'
-# gem 'omniauth-google-oauth2'
+gem 'omniauth-google-oauth2'
 
 gem 'kaminari'
 gem 'acts_as_commentable_with_threading'

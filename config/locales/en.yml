@@ -155,3 +155,5 @@ en:
       sign_in: Sign in with Twitter
     facebook:
       sign_in: Sign in with Facebook
+    google_oauth2:
+      sign_in: Sign in with Google
