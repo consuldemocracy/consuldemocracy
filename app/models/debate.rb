@@ -40,11 +40,11 @@ class Debate < ActiveRecord::Base
   end
 
   def likes
-    get_likes.size
+    cached_votes_up
   end
 
   def dislikes
-    get_dislikes.size
+    cached_votes_down
   end
 
   def total_votes

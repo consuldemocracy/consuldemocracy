@@ -47,6 +47,14 @@ class Comment < ActiveRecord::Base
     self.user= author
   end
 
+  def likes
+    cached_votes_up
+  end
+
+  def dislikes
+    cached_votes_down
+  end
+
   def total_votes
     cached_votes_total
   end
