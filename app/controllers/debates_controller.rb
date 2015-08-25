@@ -1,4 +1,5 @@
 class DebatesController < ApplicationController
+  before_action :parse_filter, only: :index
   before_action :authenticate_user!, except: [:index, :show]
 
   load_and_authorize_resource
@@ -69,6 +70,11 @@ class DebatesController < ApplicationController
 
     def load_featured_tags
       @featured_tags = ActsAsTaggableOn::Tag.where(featured: true)
+    end
+
+    def parse_filter
+      @valid_filters = ['votes', 'news', 'rated']
+      @filter = @valid_filters.include?(params[:filter]) ? params[:filter] : 'news'
     end
 
 end
