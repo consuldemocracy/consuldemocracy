@@ -28,12 +28,6 @@ FactoryGirl.define do
     end
   end
 
-  factory :vote do
-    association :votable, factory: :debate
-    association :voter,   factory: :user
-    vote_flag true
-  end
-
   factory :comment do
     association :commentable, factory: :debate
     user

@@ -201,8 +201,8 @@ feature 'Debates' do
 
   scenario 'Update should not be posible if debate is not editable' do
     debate = create(:debate)
-    create(:vote, votable: debate)
-    expect(debate).to_not be_editable
+    create(:user).vote_up_for(debate)
+    expect(debate.reload).to_not be_editable
     login_as(debate.author)
 
     visit edit_debate_path(debate)

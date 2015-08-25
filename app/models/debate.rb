@@ -48,7 +48,7 @@ class Debate < ActiveRecord::Base
   end
 
   def total_votes
-    votes_for.size
+    cached_votes_total
   end
 
   def editable?
