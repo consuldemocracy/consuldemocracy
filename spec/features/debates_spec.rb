@@ -348,4 +348,67 @@ feature 'Debates' do
     expect(InappropiateFlag.flagged?(user, debate)).to_not be
   end
 
+  feature 'Debate index order filters', :js do
+
+    before do 
+      @debates = [create(:debate), create(:debate), create(:debate)]
+      create_list(:vote, 2, votable: @debates[1])
+      create_list(:vote, 2, votable: @debates[0], vote_flag: false)
+      create(:vote, votable: @debates[0])
+    end
+
+    def expect_debate_order(order)
+      debate_divs = page.all("#debates .debate")
+      (0..2).each do |n|
+        expect(debate_divs[n]).to have_content(@debates[order[n]].title)
+      end
+    end
+
+    scenario 'Default filter is newest' do
+      visit debates_path
+
+      expect(page).to have_select('filter', selected: 'the newest')
+      expect_debate_order([2, 1, 0])
+    end
+
+    scenario 'Debates are ordered by most voted' do 
+      visit debates_path
+      select 'the most voted', from: 'filter' 
+      expect(page).to have_select('filter', selected: 'the most voted')
+
+      expect(find("#debates .debate", match: :first)).to have_content(@debates[0].title) # Necessary to stall capybara until after redirect
+      expect(current_url).to include('filter=votes') 
+      expect_debate_order([0, 1, 2])
+    end
+
+    scenario 'Debates are ordered by best rated' do
+      visit debates_path
+
+      select 'the best rated', from: 'filter' 
+      expect(find("#debates .debate", match: :first)).to have_content(@debates[1].title) 
+
+      expect(current_url).to include('filter=rated') 
+      expect_debate_order([1, 0, 2])
+    end
+
+    scenario 'Debates are ordered by newest' do
+      visit debates_path
+
+      select 'the most voted', from: 'filter' 
+      expect(find("#debates .debate", match: :first)).to have_content(@debates[0].title)
+
+      select 'the newest', from: 'filter' 
+      expect(find("#debates .debate", match: :first)).to have_content(@debates[2].title)
+
+      expect(current_url).to include('filter=news') 
+      expect_debate_order([2, 1, 0])
+    end
+
+    scenario 'Index page shows only debates with selected tag' do 
+
+      pending
+
+    end
+  end
+
 end
