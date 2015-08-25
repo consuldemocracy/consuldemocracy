@@ -40,33 +40,29 @@ class User < ActiveRecord::Base
     # Note that this may leave zombie accounts (with no associated identity) which
     # can be cleaned up at a later date.
     user = signed_in_resource ? signed_in_resource : identity.user
-
-    # Create the user if needed
-    if user.nil?
-
-      # Get the existing user by email if the provider gives us a verified email.
-      # If no verified email was provided we assign a temporary email and ask the
-      # user to verify it on the next step via RegistrationsController.finish_signup
-      email_is_verified = auth.info.email && (auth.info.verified || auth.info.verified_email)
-      email = auth.info.email if email_is_verified
-      user = User.where(email: email).first if email
-
-      # Create the user if it's a new registration
-      if user.nil?
-        user = User.new(
-          username: auth.info.nickname || auth.extra.raw_info.name.parameterize('-') || auth.uid,
-          email: email ? email : "#{OMNIAUTH_EMAIL_PREFIX}-#{auth.uid}-#{auth.provider}.com",
-          password: Devise.friendly_token[0,20]
-        )
-        user.skip_confirmation!
-        user.save!
-      end
-    end
+    user ||= first_or_create_for_oauth(auth)
 
     # Associate the identity with the user if needed
-    if identity.user != user
-      identity.user = user
-      identity.save!
+    identity.update_user(user)
+    user
+  end
+
+  # Get the existing user by email if the provider gives us a verified email.
+  # If no verified email was provided we assign a temporary email and ask the
+  # user to verify it on the next step via RegistrationsController.finish_signup
+  def self.first_or_create_for_oauth(auth)
+    email = auth.info.email if auth.info.verified || auth.info.verified_email
+    user  = User.where(email: email).first if email
+
+    # Create the user if it's a new registration
+    if user.nil?
+      user = User.new(
+        username: auth.info.nickname || auth.extra.raw_info.name.parameterize('-') || auth.uid,
+        email: email ? email : "#{OMNIAUTH_EMAIL_PREFIX}-#{auth.uid}-#{auth.provider}.com",
+        password: Devise.friendly_token[0,20]
+      )
+      user.skip_confirmation!
+      user.save!
     end
 
     user
