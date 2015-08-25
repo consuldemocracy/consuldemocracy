@@ -1,5 +1,4 @@
 <span>
-  <!-- <%= t('debates.comment.votes_weighted_score', score: comment.weighted_score) %> -->
   <%= t('debates.comment.votes', count: comment.total_votes) %>
 </span>
 &nbsp;|&nbsp;
@@ -8,7 +7,7 @@
       method: "post", remote: true do %>
       <i class="icon-angle-up"></i>
   <% end %>
-  <%= comment.get_likes.size %>
+  <%= comment.total_likes %>
 </span>
 
 <span class="against">
@@ -16,5 +15,5 @@
       method: "post", remote: true do %>
       <i class="icon-angle-down"></i>
   <% end %>
-  <%= comment.get_dislikes.size %>
+  <%= comment.total_dislikes %>
 </span>
