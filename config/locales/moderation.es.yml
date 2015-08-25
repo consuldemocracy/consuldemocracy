@@ -8,7 +8,7 @@ es:
         title: Moderación
     comments:
       index:
-        title: Comentarios Denunciados como Inapropiados
+        title: Comentarios denunciados como inapropiados
         headers:
           flags: Denuncias
           updated_at: Fecha
@@ -16,28 +16,27 @@ es:
           commentable: Raíz
           comment: Comentario
         hide: Ocultar
-        mark_as_reviewed: Marcar como revisado
-        reviewed: Revisado
+        archive: Archivar
+        archived: Archivado
         filter: Filtrar
         filters:
           all: Todos
           pending_review: Pendientes
-          reviewed: Revisados
+          archived: Archivados
     debates:
       index:
-        title: Debates Denunciados como Inapropiados
+        title: Debates denunciados como inapropiados
         headers:
           flags: Denuncias
           updated_at: Fecha
           title: Título
           description: Descripción
+          actions: Acciones
         hide: Ocultar
-        mark_as_reviewed: Marcar como revisado
-        reviewed: Revisado
+        archive: Archivar
+        archived: Archivado
         filter: Filtrar
         filters:
           all: Todos
           pending_review: Pendientes
-          reviewed: Revisados
-
-
+          archived: Archivados

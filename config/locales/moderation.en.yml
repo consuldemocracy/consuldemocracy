@@ -8,7 +8,7 @@ en:
         title: Moderation
     comments:
       index:
-        title: Comments flagged as inappropiate
+        title: Comments flagged as inappropriate
         headers:
           flags: Flags
           updated_at: Date
@@ -16,27 +16,27 @@ en:
           commentable: Root
           comment: Comment
         hide: Hide
-        mark_as_reviewed: Mark as reviewed
-        reviewed: Reviewed
+        archive: Archive
+        archived: Archived
         filter: Filter
         filters:
           all: All
           pending_review: Pending
-          reviewed: Reviewed
+          archived: Archived
     debates:
       index:
-        title: Debates flagged as inappropiate
+        title: Debates flagged as inappropriate
         headers:
           flags: Flags
           updated_at: Date
           title: Title
           description: Description
+          actions: Actions
         hide: Hide
-        mark_as_reviewed: Mark as reviewed
-        reviewed: Reviewed
+        archive: Archive
+        archived: Archived
         filter: Filter
         filters:
           all: All
           pending_review: Pending
-          reviewed: Reviewed
-
+          archived: Archived

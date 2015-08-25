@@ -31,7 +31,7 @@ class Moderation::DebatesController < Moderation::BaseController
     end
 
     def set_valid_filters
-      @valid_filters = %w{all pending_review reviewed}
+      @valid_filters = %w{all pending_review archived}
     end
 
     def parse_filter

@@ -151,16 +151,27 @@ body.admin {
 
 .verified {
   color: $check;
+
+  a {
+    border-bottom: 1px dotted $check;
+    color: $check;
+    font-size: rem-calc(12);
+  }
 }
 
-.verified a {
-  border-bottom: 1px dotted $check;
-  color: $check;
+.archived {
+  color: $text-medium;
   font-size: rem-calc(12);
 }
 
 .rejected {
   color: $delete;
+}
+
+.date {
+  color: $text-medium;
+  font-size: rem-calc(12);
+  font-style: italic;
 }
 
 .level {
