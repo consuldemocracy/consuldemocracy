@@ -36,13 +36,19 @@ Para ejecutar la aplicación en local:
 bundle exec bin/rails s
 ```
 
-Prerequisitos para los tests: tener instalado PhantomJS >= 2.0 
+Prerequisitos para los tests: tener instalado PhantomJS >= 2.0
 
 Para ejecutar los tests:
 
 ```
 bundle exec bin/rspec
 ```
+
+### OAuth
+
+Para probar los servicios de autenticación mediante proveedores externos OAuth — en este momento Twitter, Facebook y Google —, necesitas crear una "aplicación" en cada una de las plataformas soportadas y configurar la *key* y el *secret* proporcionados en tu *secrets.yml*
+
+En el caso de Google, comprueba que las APIs *Contacts API* y *Google+ API* están habilitadas para la aplicación.
 
 ## Licencia
 
