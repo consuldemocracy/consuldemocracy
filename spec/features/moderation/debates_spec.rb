@@ -23,6 +23,19 @@ feature 'Moderate debates' do
     expect(page).to have_css('.debate', count: 0)
   end
 
+  scenario 'Can not hide own debate' do
+    moderator = create(:moderator)
+    debate = create(:debate, author: moderator.user)
+
+    login_as(moderator.user)
+    visit debate_path(debate)
+
+    within("#debate_#{debate.id}") do
+      expect(page).to_not have_link('Hide')
+      expect(page).to_not have_link('Block author')
+    end
+  end
+
   feature '/moderation/ menu' do
 
     background do

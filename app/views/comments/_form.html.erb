@@ -4,6 +4,19 @@
     <%= f.hidden_field :commentable_type, value: parent.class %>
     <%= f.hidden_field :commentable_id, value: parent.id %>
 
-    <%= f.submit comment_button_text(parent), class: "button radius small" %>
+    <%= f.submit comment_button_text(parent), class: "button radius small inline-block" %>
+
+    <% if can? :comment_as_moderator, @debate %>
+      <div class="right">
+        <%= f.check_box :as_moderator, label: false %>
+        <%= f.label :as_moderator, t("comments.form.comment_as_moderator"), class: "checkbox" %>
+      </div>
+    <% end %>
+    <% if can? :comment_as_administrator, @debate %>
+      <div class="right">
+        <%= f.check_box :as_administrator, label: false %>
+        <%= f.label :as_administrator, t("comments.form.comment_as_admin"), class: "checkbox" %>
+      </div>
+    <% end %>
   <% end %>
 </div>

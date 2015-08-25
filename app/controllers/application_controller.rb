@@ -13,6 +13,8 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
+  before_action :ensure_signup_complete
+
   rescue_from CanCan::AccessDenied do |exception|
     redirect_to main_app.root_url, alert: exception.message
   end
@@ -39,5 +41,14 @@ class ApplicationController < ActionController::Base
 
     def set_debate_votes(debates)
       @voted_values = current_user ? current_user.debate_votes(debates) : {}
+    end
+
+    def ensure_signup_complete
+      # Ensure we don't go into an infinite loop
+      return if action_name.in? %w(finish_signup do_finish_signup)
+
+      if user_signed_in? && !current_user.email_provided?
+        redirect_to finish_signup_path
+      end
     end
 end

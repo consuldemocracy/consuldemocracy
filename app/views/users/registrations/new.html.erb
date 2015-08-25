@@ -2,6 +2,9 @@
   <div class="small-12 medium-8 large-5 column small-centered">
     <div class="panel">
       <h2><%= t("devise_views.users.registrations.new.title") %></h2>
+
+      <%= render 'devise/omniauth_form' %>
+
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
         <%= render 'shared/errors', resource: resource %>
 

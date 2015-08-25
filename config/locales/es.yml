@@ -49,6 +49,8 @@ es:
         other: "%{count} votos"
     comment:
       author: Autor del debate
+      moderator: Moderador
+      admin: Administrador
       deleted: Este comentario ha sido eliminado
       user_deleted: Usuario eliminado
       responses:
@@ -94,7 +96,9 @@ es:
       recommendation_three: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore"
   comments:
     form:
-        leave_comment: Deja tu comentario
+      leave_comment: Deja tu comentario
+      comment_as_moderator: Comentar como moderador
+      comment_as_admin: Comentar como administrador
   comments_helper:
     comment_link: Comentar
     comment_button: Publicar comentario
@@ -143,4 +147,13 @@ es:
     manage:
       all: "No tienes permiso para realizar la acción '%{action}' sobre %{subject}."
   welcome:
-    last_debates: Úlitmos debates
+    last_debates: Últimos debates
+  omniauth:
+    finish_signup:
+      title: Añade tu email
+    twitter:
+      sign_in: Entra con Twitter
+    facebook:
+      sign_in: Entra con Facebook
+    google_oauth2:
+      sign_in: Entra con Google

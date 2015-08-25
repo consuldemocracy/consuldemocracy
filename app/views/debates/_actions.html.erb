@@ -1,7 +1,9 @@
-<%= link_to t("admin.actions.hide").capitalize, hide_moderation_debate_path(debate),
-            method: :put, remote: true, data: { confirm: t('admin.actions.confirm') } %>
+<% if can? :hide, debate %>
+  <%= link_to t("admin.actions.hide").capitalize, hide_moderation_debate_path(debate),
+              method: :put, remote: true, data: { confirm: t('admin.actions.confirm') } %>
+<% end %>
 
-<% unless debate.author.hidden? %>
+<% if can? :hide, debate.author %>
   &nbsp;|&nbsp;
   <%= link_to t("admin.actions.hide_author").capitalize, hide_moderation_user_path(debate.author_id),
               method: :put, data: { confirm: t('admin.actions.confirm') } %>

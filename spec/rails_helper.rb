@@ -22,3 +22,5 @@ RSpec.configure do |config|
 end
 
 Capybara.javascript_driver = :poltergeist
+
+OmniAuth.config.test_mode = true

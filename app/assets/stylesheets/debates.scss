@@ -249,6 +249,7 @@
 
   .panel {
     border: 0;
+    border-radius: 0;
     margin-bottom: 0;
     min-height: rem-calc(192);
     padding: 0 rem-calc(12) rem-calc(2) rem-calc(12);
@@ -566,6 +567,15 @@
         &.is-author {
           background: $comment-author;
           padding: rem-calc(6) rem-calc(12);
+        }
+
+        &.is-admin {
+          background: $comment-admin;
+          padding: rem-calc(6) rem-calc(12);
+        }
+
+        &.is-moderator {
+          @extend .is-admin;
         }
       }
     }
