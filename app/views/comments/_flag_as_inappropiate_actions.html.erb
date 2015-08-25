@@ -1,6 +1,23 @@
 <% if can? :flag_as_inappropiate, comment %>
-  <%= link_to t('shared.flag_as_inappropiate'), flag_as_inappropiate_comment_path(comment), method: :put, remote: true %>
+  <span class="divider">&nbsp;|&nbsp;</span>
+  <a data-dropdown="drop-comment-flag-<%= comment.id %>" aria-controls="drop-comment-flag-<%= comment.id %>" aria-expanded="false" title="<%= t('shared.flag_as_inappropiate') %>">
+    &nbsp;<i class="icon-flag flag-disable"></i>&nbsp;&nbsp;
+  </a>
+  <ul id="drop-comment-flag-<%= comment.id %>" class="f-dropdown" data-dropdown-content aria-hidden="true" tabindex="-1">
+    <li>
+    <%= link_to t("shared.flag_as_inappropiate"), flag_as_inappropiate_comment_path(comment), method: :put, remote: true %>
+    </li>
+  </ul>
 <% end %>
+
 <% if can? :undo_flag_as_inappropiate, comment %>
-  <%= link_to t('shared.undo_flag_as_inappropiate'), undo_flag_as_inappropiate_comment_path(comment), method: :put, remote: true %>
+  <span class="divider">&nbsp;|&nbsp;</span>
+  <a data-dropdown="drop-comment-unflag-<%= comment.id %>" aria-controls="drop-comment-unflag-<%= comment.id %>" aria-expanded="false" title="<%= t('shared.undo_flag_as_inappropiate') %>">
+    &nbsp;<i class="icon-flag flag-active"></i>&nbsp;&nbsp;
+  </a>
+  <ul id="drop-comment-unflag-<%= comment.id %>" class="f-dropdown" data-dropdown-content aria-hidden="true" tabindex="-1">
+    <li>
+    <%= link_to t("shared.undo_flag_as_inappropiate"), undo_flag_as_inappropiate_comment_path(comment), method: :put, remote: true %>
+    </li>
+  </ul>
 <% end %>

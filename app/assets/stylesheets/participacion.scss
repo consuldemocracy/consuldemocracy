@@ -150,6 +150,25 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+.f-dropdown {
+
+  li a {
+    font-size: rem-calc(12);
+
+    &:hover {
+      color: $link-hover;
+    }
+  }
+
+  li:hover, .f-dropdown li:focus {
+    background: white;
+  }
+
+  &.open {
+    outline: none;
+  }
+}
+
 // 04. Header
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -692,13 +711,13 @@ form {
   }
 }
 
-img.admin-avatar, img.moderator-avatar {
+img.avatar, img.admin-avatar, img.moderator-avatar {
   border-radius: rem-calc(1000);
   position: relative;
 }
 
 img.initialjs-avatar {
-  @extend .moderator-avatar;
+  @extend .avatar;
 }
 
 .author-deleted {

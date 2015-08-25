@@ -58,10 +58,6 @@
           <% end %>
 
           &nbsp;&bullet;&nbsp;<%= time_ago_in_words(comment.created_at) %>
-
-          <span class="right js-flag-as-inappropiate-actions">
-            <%= render 'comments/flag_as_inappropiate_actions', comment: comment %>
-          </span>
         </div>
 
         <% if comment.as_administrator? %>
@@ -81,11 +77,11 @@
           <%= render 'comments/votes', comment: comment %>
         </span>
 
-        <p class="reply">
+        <div class="reply">
           <%= t("debates.comment.responses", count: comment.children_count) %>
 
           <% if user_signed_in? %>
-            &nbsp;|&nbsp;
+            <span class="divider">&nbsp;|&nbsp;</span>
             <%= link_to(comment_link_text(comment), "",
                         class: "js-add-comment-link", data: {'id': dom_id(comment)}) %>
 
@@ -93,7 +89,7 @@
 
             <%= render 'comments/form', {parent: comment, toggeable: true} %>
           <% end %>
-        </p>
+        </div>
       </div>
 
     <% end %>
