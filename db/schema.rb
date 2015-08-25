@@ -72,8 +72,8 @@ ActiveRecord::Schema.define(version: 20150825122138) do
     t.integer  "author_id"
     t.datetime "created_at",                                        null: false
     t.datetime "updated_at",                                        null: false
-    t.datetime "hidden_at"
     t.string   "visit_id"
+    t.datetime "hidden_at"
     t.datetime "flagged_as_inappropiate_at"
     t.integer  "inappropiate_flags_count",              default: 0
     t.datetime "reviewed_at"
@@ -86,6 +86,16 @@ ActiveRecord::Schema.define(version: 20150825122138) do
   add_index "debates", ["cached_votes_total"], name: "index_debates_on_cached_votes_total", using: :btree
   add_index "debates", ["cached_votes_up"], name: "index_debates_on_cached_votes_up", using: :btree
   add_index "debates", ["hidden_at"], name: "index_debates_on_hidden_at", using: :btree
+
+  create_table "identities", force: :cascade do |t|
+    t.integer  "user_id"
+    t.string   "provider"
+    t.string   "uid"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "identities", ["user_id"], name: "index_identities_on_user_id", using: :btree
 
   create_table "inappropiate_flags", force: :cascade do |t|
     t.integer  "user_id"
@@ -169,6 +179,7 @@ ActiveRecord::Schema.define(version: 20150825122138) do
     t.string   "phone_number",            limit: 30
     t.boolean  "email_on_debate_comment",            default: false
     t.boolean  "email_on_comment_reply",             default: false
+    t.string   "phone_number",            limit: 30
     t.string   "official_position"
     t.integer  "official_level",                     default: 0
     t.datetime "hidden_at"
@@ -226,6 +237,7 @@ ActiveRecord::Schema.define(version: 20150825122138) do
   add_index "votes", ["voter_id", "voter_type", "vote_scope"], name: "index_votes_on_voter_id_and_voter_type_and_vote_scope", using: :btree
 
   add_foreign_key "administrators", "users"
+  add_foreign_key "identities", "users"
   add_foreign_key "inappropiate_flags", "users"
   add_foreign_key "moderators", "users"
   add_foreign_key "organizations", "users"

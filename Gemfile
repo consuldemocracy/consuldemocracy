@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.3'
+gem 'rails', '4.2.4'
 # Use PostgreSQL
 gem 'pg'
 # Use SCSS for stylesheets
@@ -21,6 +21,11 @@ gem 'turbolinks'
 gem 'devise'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
+gem 'omniauth'
+gem 'omniauth-twitter'
+gem 'omniauth-facebook'
+gem 'omniauth-google-oauth2'
+
 gem 'kaminari'
 gem 'acts_as_commentable_with_threading'
 gem 'acts-as-taggable-on'
@@ -32,7 +37,7 @@ gem 'simple_captcha2', require: 'simple_captcha'
 gem 'ckeditor'
 gem 'cancancan'
 gem 'social-share-button'
-gem 'initialjs-rails'
+gem 'initialjs-rails', '0.2.0'
 gem 'unicorn'
 gem 'paranoia'
 

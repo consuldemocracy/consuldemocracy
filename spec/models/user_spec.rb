@@ -51,6 +51,26 @@ describe User do
     end
   end
 
+  describe 'OmniAuth' do
+    describe '#email_provided?' do
+      it "is false if the email matchs was temporarely assigned by the OmniAuth process" do
+        subject.email = 'omniauth@participacion-ABCD-twitter.com'
+        expect(subject.email_provided?).to eq(false)
+      end
+
+      it "is true if the email is not omniauth-like" do
+        subject.email = 'manuelacarmena@example.com'
+        expect(subject.email_provided?).to eq(true)
+      end
+
+      it "is true if the user's real email is pending to be confirmed" do
+        subject.email = 'omniauth@participacion-ABCD-twitter.com'
+        subject.unconfirmed_email = 'manuelacarmena@example.com'
+        expect(subject.email_provided?).to eq(true)
+      end
+    end
+  end
+
   describe "administrator?" do
     it "is false when the user is not an admin" do
       expect(subject.administrator?).to be false
