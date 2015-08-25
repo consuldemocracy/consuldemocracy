@@ -4,18 +4,7 @@
   <div class="filters row">
     <div class="small-12 column">
       <h2><%= t("debates.index.showing") %></h2>
-
-      <select class="inline-block">
-        <option value="filter_news">
-          <%= t("debates.index.filter_news") %>
-        </option>
-        <option value="filter_votes">
-          <%= t("debates.index.filter_votes") %>
-        </option>
-        <option value="filter_rated">
-          <%= t("debates.index.filter_rated") %>
-        </option>
-      </select>
+      <%= render 'filter_selector' %>
     </div>
   </div>
   <!-- /. Filters -->

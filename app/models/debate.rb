@@ -40,6 +40,17 @@ class Debate < ActiveRecord::Base
     end
   end
 
+  def self.sort_by(filter)
+    case filter
+    when 'votes'
+      reorder(cached_votes_total: :desc)
+    when 'news'
+      reorder(created_at: :desc)
+    when 'rated'
+      reorder(cached_votes_up: :desc)
+    end
+  end
+
   def likes
     cached_votes_up
   end
