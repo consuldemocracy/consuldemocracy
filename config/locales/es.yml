@@ -152,7 +152,10 @@ es:
       title: Añade tu email
     twitter:
       sign_in: Entra con Twitter
+      sign_up: Regístrate con Twitter
     facebook:
       sign_in: Entra con Facebook
+      sign_up: Regístrate con Facebook
     google_oauth2:
       sign_in: Entra con Google
+      sign_up: Regístrate con Google
