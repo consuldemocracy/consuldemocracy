@@ -44,4 +44,13 @@ Rails.application.configure do
   # config.action_view.raise_on_missing_translations = true
 
   config.cache_store = :null_store
+
+  config.after_initialize do
+    Bullet.enable = true
+    Bullet.bullet_logger = true
+    if ENV['BULLET']
+      Bullet.rails_logger = true
+      Bullet.add_footer = true
+    end
+  end
 end
