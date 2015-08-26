@@ -61,7 +61,6 @@ en:
         zero: No votes
         one: 1 vote
         other: "%{count} votes"
-      votes_weighted_score: "Total: %{score}"
     form:
       debate_title: Debate title
       title_instructions: "SBe clear and precise with the title, but make it informative"
@@ -134,8 +133,8 @@ en:
   shared:
     tags_cloud:
       tags: Topics
-    flag_as_inappropiate: Flag as inappropiate
-    undo_flag_as_inappropiate: Undo flag as inappropiate
+    flag_as_inappropiate: Flag as inappropriate
+    undo_flag_as_inappropiate: Undo flag
     collective: Collective
   mailer:
     comment:
@@ -148,3 +147,12 @@ en:
       all: "You are not authorized to %{action} %{subject}."
   welcome:
     last_debates: Last debates
+  omniauth:
+    finish_signup:
+      title: Add Email
+    twitter:
+      sign_in: Sign in with Twitter
+    facebook:
+      sign_in: Sign in with Facebook
+    google_oauth2:
+      sign_in: Sign in with Google

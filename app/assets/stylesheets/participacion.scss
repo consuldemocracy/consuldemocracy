@@ -135,6 +135,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .sub-nav dt, .sub-nav dd, .sub-nav li {
+  padding: rem-calc(3) 0;
 
   &.active {
     background: #008CBA;
@@ -142,12 +143,43 @@ h1, h2, h3, h4, h5, h6 {
     color: white;
     cursor: default;
     font-weight: normal;
-    padding: 0.16667rem 0.88889rem;
+    padding: rem-calc(3) rem-calc(14);
 
     a:hover {
       color: #737373;
     }
   }
+}
+
+.f-dropdown {
+  li a {
+    font-size: rem-calc(12);
+
+    &:hover {
+      color: $link-hover;
+    }
+  }
+
+  li:hover, .f-dropdown li:focus {
+    background: white;
+  }
+
+  &.open {
+    outline: none;
+  }
+}
+
+.margin {
+  margin-top: $line-height;
+  margin-bottom: $line-height;
+}
+
+.margin-top {
+  margin-top: $line-height;
+}
+
+.margin-bottom {
+  margin-bottom: $line-height;
 }
 
 // 04. Header
@@ -494,9 +526,14 @@ footer {
 
   h2 {
     clear: both;
-    font-size: rem-calc(30);
+    font-size: rem-calc(18);
     font-weight: bold;
-    line-height: $line-height*2;
+    line-height: $line-height;
+
+    @media (min-width: $small-breakpoint) {
+      font-size: rem-calc(30);
+      line-height: $line-height*2;
+    }
   }
 
   .back, .icon-angle-left {
@@ -692,13 +729,13 @@ form {
   }
 }
 
-img.admin-avatar, img.moderator-avatar {
+img.avatar, img.admin-avatar, img.moderator-avatar {
   border-radius: rem-calc(1000);
   position: relative;
 }
 
 img.initialjs-avatar {
-  @extend .moderator-avatar;
+  @extend .avatar;
 }
 
 .author-deleted {

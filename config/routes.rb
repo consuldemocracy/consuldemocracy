@@ -1,10 +1,23 @@
 Rails.application.routes.draw do
-  devise_for :users, controllers: { registrations: 'users/registrations' }
+  devise_for :users, controllers: {
+                       registrations: 'users/registrations',
+                       omniauth_callbacks: 'users/omniauth_callbacks'
+                     }
   devise_for :organizations, class_name: 'User',
              controllers: {
                registrations: 'organizations/registrations',
-               sessions: 'devise/sessions'
-             }
+               sessions: 'devise/sessions',
+             },
+             skip: [:omniauth_callbacks]
+
+  devise_scope :organization do
+    get "organizations/sign_up/success", to: "organizations/registrations#success"
+  end
+
+  devise_scope :user do
+    get :finish_signup, to: 'users/registrations#finish_signup'
+    patch :do_finish_signup, to: 'users/registrations#do_finish_signup'
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -79,7 +92,7 @@ Rails.application.routes.draw do
       member do
         put :hide
         put :hide_in_moderation_screen
-        put :mark_as_reviewed
+        put :archive
       end
     end
 
@@ -87,7 +100,7 @@ Rails.application.routes.draw do
       member do
         put :hide
         put :hide_in_moderation_screen
-        put :mark_as_reviewed
+        put :archive
       end
     end
   end

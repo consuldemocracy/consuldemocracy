@@ -9,18 +9,19 @@ class Comment < ActiveRecord::Base
   validates :body, presence: true
   validates :user, presence: true
 
-  belongs_to :commentable, polymorphic: true
+  belongs_to :commentable, polymorphic: true, counter_cache: true
   belongs_to :user, -> { with_hidden }
 
   has_many :inappropiate_flags, :as => :flaggable
 
-  default_scope { includes(:user) }
   scope :recent, -> { order(id: :desc) }
 
   scope :sorted_for_moderation, -> { order(inappropiate_flags_count: :desc, updated_at: :desc) }
-  scope :pending_review, -> { where(reviewed_at: nil, hidden_at: nil) }
-  scope :reviewed, -> { where("reviewed_at IS NOT NULL AND hidden_at IS NULL") }
+  scope :pending, -> { where(archived_at: nil, hidden_at: nil) }
+  scope :archived, -> { where("archived_at IS NOT NULL AND hidden_at IS NULL") }
   scope :flagged_as_inappropiate, -> { where("inappropiate_flags_count > 0") }
+
+  scope :for_render, -> { with_hidden.includes(user: :organization) }
 
   def self.build(commentable, user, body)
     new commentable: commentable,
@@ -49,15 +50,23 @@ class Comment < ActiveRecord::Base
   end
 
   def total_votes
-    votes_for.size
+    cached_votes_total
+  end
+
+  def total_likes
+    cached_votes_up
+  end
+
+  def total_dislikes
+    cached_votes_down
   end
 
   def not_visible?
     hidden? || user.hidden?
   end
 
-  def reviewed?
-    reviewed_at.present?
+  def archived?
+    archived_at.present?
   end
 
   def as_administrator?
@@ -68,8 +77,8 @@ class Comment < ActiveRecord::Base
     moderator_id.present?
   end
 
-  def mark_as_reviewed
-    update(reviewed_at: Time.now)
+  def archive
+    update(archived_at: Time.now)
   end
 
   # TODO: faking counter cache since there is a bug with acts_as_nested_set :counter_cache
@@ -78,6 +87,10 @@ class Comment < ActiveRecord::Base
   # > Comment.find_each { |comment| Comment.reset_counters(comment.id, :children) }
   def children_count
     children.count
+  end
+
+  def after_hide
+    commentable_type.constantize.reset_counters(commentable_id, :comment_threads)
   end
 
 end

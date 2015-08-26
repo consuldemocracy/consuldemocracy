@@ -77,4 +77,7 @@ module CommonActions
     /\d errors? prohibited this (.*) from being saved:/
   end
 
+  def expect_to_be_signed_in
+    expect(find('.top-bar')).to have_content 'My account'
+  end
 end

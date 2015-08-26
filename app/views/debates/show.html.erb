@@ -13,7 +13,7 @@
       <h1><%= @debate.title %></h1>
 
       <div class="debate-info">
-        <%= avatar_image(@debate.author, size: 32, class: 'author-photo') %>
+        <%= avatar_image(@debate.author, seed: @debate.author_id, size: 32, class: 'author-photo') %>
         <% if @debate.author.hidden? %>
           <i class="icon-deleted author-deleted"></i>
           <span class="author">
@@ -40,9 +40,9 @@
         <%= l @debate.created_at.to_date %>
         <span class="bullet">&nbsp;&bullet;&nbsp;</span>
         <i class="icon-comments"></i>&nbsp;
-        <%= link_to t("debates.show.comments", count: @debate.comment_threads.count), "#comments" %>
-
-        <span class='right js-flag-as-inappropiate-actions'>
+        <%= link_to t("debates.show.comments", count: @debate.comments_count), "#comments" %>
+        <span class="bullet">&nbsp;&bullet;&nbsp;</span>
+        <span class="js-flag-as-inappropiate-actions">
           <%= render 'debates/flag_as_inappropiate_actions', debate: @debate %>
         </span>
       </div>
@@ -79,7 +79,7 @@
 
       <h2>
         <%= t("debates.show.comments_title") %>
-        <span>(<%= @debate.comment_threads.count %>)</span>
+        <span>(<%= @debate.comments_count %>)</span>
       </h2>
       <% if user_signed_in? %>
           <%= render 'comments/form', {parent: @debate, toggeable: false} %>

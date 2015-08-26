@@ -5,6 +5,9 @@ class Organizations::RegistrationsController < Devise::RegistrationsController
     end
   end
 
+  def success
+  end
+
   def create
     build_resource(sign_up_params)
     if resource.valid_with_captcha?
@@ -16,6 +19,11 @@ class Organizations::RegistrationsController < Devise::RegistrationsController
       render :new
     end
   end
+
+  protected
+    def after_inactive_sign_up_path_for(resource)
+      organizations_sign_up_success_path
+    end
 
   private
 

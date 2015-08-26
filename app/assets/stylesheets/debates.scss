@@ -5,6 +5,7 @@
 // 03. Show
 // 04. New
 // 05. Comments
+// 06. Flags
 //
 
 // 01. Debates
@@ -541,6 +542,10 @@
         font-size: rem-calc(12);
         margin: rem-calc(6) 0;
         padding: rem-calc(6);
+
+        .divider {
+          color: $text-light;
+        }
       }
 
       .comment-user {
@@ -607,4 +612,18 @@
 
 .faded {
   opacity: 0.4;
+}
+
+// 06. Flags
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+.flag-disable {
+  color: $text-medium;
+  line-height: rem-calc(24);
+  vertical-align: middle;
+}
+
+.flag-active {
+  @extend .flag-disable;
+  color: $delete;
 }

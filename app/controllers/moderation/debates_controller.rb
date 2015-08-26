@@ -19,8 +19,8 @@ class Moderation::DebatesController < Moderation::BaseController
     redirect_to request.query_parameters.merge(action: :index)
   end
 
-  def mark_as_reviewed
-    @debate.mark_as_reviewed
+  def archive
+    @debate.archive
     redirect_to request.query_parameters.merge(action: :index)
   end
 
@@ -31,7 +31,7 @@ class Moderation::DebatesController < Moderation::BaseController
     end
 
     def set_valid_filters
-      @valid_filters = %w{all pending_review reviewed}
+      @valid_filters = %w{all pending archived}
     end
 
     def parse_filter

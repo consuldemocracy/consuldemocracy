@@ -5,10 +5,14 @@ module ActsAsParanoidAliases
 
     def hide
       update_attribute(:hidden_at, Time.now)
+      after_hide
     end
 
     def hidden?
       deleted?
+    end
+
+    def after_hide
     end
   end
 

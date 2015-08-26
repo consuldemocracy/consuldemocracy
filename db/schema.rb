@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150824113326) do
+ActiveRecord::Schema.define(version: 20150826112500) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,7 +41,7 @@ ActiveRecord::Schema.define(version: 20150824113326) do
     t.string   "title"
     t.text     "body"
     t.string   "subject"
-    t.integer  "user_id",                                null: false
+    t.integer  "user_id",                                  null: false
     t.integer  "parent_id"
     t.integer  "lft"
     t.integer  "rgt"
@@ -51,11 +51,17 @@ ActiveRecord::Schema.define(version: 20150824113326) do
     t.datetime "hidden_at"
     t.datetime "flagged_as_inappropiate_at"
     t.integer  "inappropiate_flags_count",   default: 0
-    t.datetime "reviewed_at"
+    t.datetime "archived_at"
     t.integer  "moderator_id"
     t.integer  "administrator_id"
+    t.integer  "cached_votes_total",         default: 0
+    t.integer  "cached_votes_up",            default: 0
+    t.integer  "cached_votes_down",          default: 0
   end
 
+  add_index "comments", ["cached_votes_down"], name: "index_comments_on_cached_votes_down", using: :btree
+  add_index "comments", ["cached_votes_total"], name: "index_comments_on_cached_votes_total", using: :btree
+  add_index "comments", ["cached_votes_up"], name: "index_comments_on_cached_votes_up", using: :btree
   add_index "comments", ["commentable_id", "commentable_type"], name: "index_comments_on_commentable_id_and_commentable_type", using: :btree
   add_index "comments", ["hidden_at"], name: "index_comments_on_hidden_at", using: :btree
   add_index "comments", ["user_id"], name: "index_comments_on_user_id", using: :btree
@@ -64,16 +70,33 @@ ActiveRecord::Schema.define(version: 20150824113326) do
     t.string   "title",                      limit: 80
     t.text     "description"
     t.integer  "author_id"
-    t.datetime "created_at",                                        null: false
-    t.datetime "updated_at",                                        null: false
+    t.datetime "created_at",                                          null: false
+    t.datetime "updated_at",                                          null: false
     t.datetime "hidden_at"
     t.string   "visit_id"
     t.datetime "flagged_as_inappropiate_at"
     t.integer  "inappropiate_flags_count",              default: 0
-    t.datetime "reviewed_at"
+    t.integer  "cached_votes_total",                    default: 0
+    t.integer  "cached_votes_up",                       default: 0
+    t.integer  "cached_votes_down",                     default: 0
+    t.datetime "archived_at"
+    t.integer  "comments_count",                        default: 0
   end
 
+  add_index "debates", ["cached_votes_down"], name: "index_debates_on_cached_votes_down", using: :btree
+  add_index "debates", ["cached_votes_total"], name: "index_debates_on_cached_votes_total", using: :btree
+  add_index "debates", ["cached_votes_up"], name: "index_debates_on_cached_votes_up", using: :btree
   add_index "debates", ["hidden_at"], name: "index_debates_on_hidden_at", using: :btree
+
+  create_table "identities", force: :cascade do |t|
+    t.integer  "user_id"
+    t.string   "provider"
+    t.string   "uid"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "identities", ["user_id"], name: "index_identities_on_user_id", using: :btree
 
   create_table "inappropiate_flags", force: :cascade do |t|
     t.integer  "user_id"
@@ -214,6 +237,7 @@ ActiveRecord::Schema.define(version: 20150824113326) do
   add_index "votes", ["voter_id", "voter_type", "vote_scope"], name: "index_votes_on_voter_id_and_voter_type_and_vote_scope", using: :btree
 
   add_foreign_key "administrators", "users"
+  add_foreign_key "identities", "users"
   add_foreign_key "inappropiate_flags", "users"
   add_foreign_key "moderators", "users"
   add_foreign_key "organizations", "users"

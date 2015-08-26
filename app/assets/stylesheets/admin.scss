@@ -140,7 +140,7 @@ body.admin {
 
 .delete {
   border-bottom: 1px dotted #CF2A0E;
-  color: #F04124;
+  color: $delete;
   font-size: rem-calc(12);
 
   &:hover, &:active, &:focus {
@@ -151,16 +151,27 @@ body.admin {
 
 .verified {
   color: $check;
+
+  a {
+    border-bottom: 1px dotted $check;
+    color: $check;
+    font-size: rem-calc(12);
+  }
 }
 
-.verified a {
-  border-bottom: 1px dotted $check;
-  color: $check;
+.archived {
+  color: $text-medium;
   font-size: rem-calc(12);
 }
 
 .rejected {
-  color: #F04124;
+  color: $delete;
+}
+
+.date {
+  color: $text-medium;
+  font-size: rem-calc(12);
+  font-style: italic;
 }
 
 .level {

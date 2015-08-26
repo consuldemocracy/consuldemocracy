@@ -47,57 +47,57 @@ feature 'Moderate debates' do
       visit moderation_debates_path
       expect(page).to_not have_link('All')
       expect(page).to have_link('Pending')
-      expect(page).to have_link('Reviewed')
+      expect(page).to have_link('Archived')
 
       visit moderation_debates_path(filter: 'all')
       expect(page).to_not have_link('All')
       expect(page).to have_link('Pending')
-      expect(page).to have_link('Reviewed')
+      expect(page).to have_link('Archived')
 
-      visit moderation_debates_path(filter: 'pending_review')
+      visit moderation_debates_path(filter: 'pending')
       expect(page).to have_link('All')
       expect(page).to_not have_link('Pending')
-      expect(page).to have_link('Reviewed')
+      expect(page).to have_link('Archived')
 
-      visit moderation_debates_path(filter: 'reviewed')
+      visit moderation_debates_path(filter: 'archived')
       expect(page).to have_link('All')
       expect(page).to have_link('Pending')
-      expect(page).to_not have_link('Reviewed')
+      expect(page).to_not have_link('Archived')
     end
 
     scenario "Filtering debates" do
       create(:debate, :flagged_as_inappropiate, title: "Pending debate")
       create(:debate, :flagged_as_inappropiate, :hidden, title: "Hidden debate")
-      create(:debate, :flagged_as_inappropiate, :reviewed, title: "Reviewed debate")
+      create(:debate, :flagged_as_inappropiate, :archived, title: "Archived debate")
 
       visit moderation_debates_path(filter: 'all')
       expect(page).to have_content('Pending debate')
       expect(page).to_not have_content('Hidden debate')
-      expect(page).to have_content('Reviewed debate')
+      expect(page).to have_content('Archived debate')
 
-      visit moderation_debates_path(filter: 'pending_review')
+      visit moderation_debates_path(filter: 'pending')
       expect(page).to have_content('Pending debate')
       expect(page).to_not have_content('Hidden debate')
-      expect(page).to_not have_content('Reviewed debate')
+      expect(page).to_not have_content('Archived debate')
 
-      visit moderation_debates_path(filter: 'reviewed')
+      visit moderation_debates_path(filter: 'archived')
       expect(page).to_not have_content('Pending debate')
       expect(page).to_not have_content('Hidden debate')
-      expect(page).to have_content('Reviewed debate')
+      expect(page).to have_content('Archived debate')
     end
 
     scenario "Reviewing links remember the pagination setting and the filter" do
       per_page = Kaminari.config.default_per_page
       (per_page + 2).times { create(:debate, :flagged_as_inappropiate) }
 
-      visit moderation_debates_path(filter: 'pending_review', page: 2)
+      visit moderation_debates_path(filter: 'pending', page: 2)
 
-      click_link('Mark as reviewed', match: :first)
+      click_link('Archive', match: :first, exact: true)
 
       uri = URI.parse(current_url)
       query_params = Rack::Utils.parse_nested_query(uri.query).symbolize_keys
 
-      expect(query_params[:filter]).to eq('pending_review')
+      expect(query_params[:filter]).to eq('pending')
       expect(query_params[:page]).to eq('2')
     end
 
@@ -114,7 +114,7 @@ feature 'Moderate debates' do
           expect(page).to have_content('buy buy buy')
           expect(page).to have_content('1')
           expect(page).to have_link('Hide')
-          expect(page).to have_link('Mark as reviewed')
+          expect(page).to have_link('Archive')
         end
       end
 
@@ -129,18 +129,18 @@ feature 'Moderate debates' do
         expect(@debate.reload).to be_hidden
       end
 
-      scenario 'Marking the debate as reviewed' do
+      scenario 'Marking the debate as archived' do
         within("#debate_#{@debate.id}") do
-          click_link('Mark as reviewed')
+          click_link('Archive')
         end
 
         expect(current_path).to eq(moderation_debates_path)
 
         within("#debate_#{@debate.id}") do
-          expect(page).to have_content('Reviewed')
+          expect(page).to have_content('Archived')
         end
 
-        expect(@debate.reload).to be_reviewed
+        expect(@debate.reload).to be_archived
       end
     end
   end

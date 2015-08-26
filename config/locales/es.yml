@@ -61,7 +61,6 @@ es:
         zero: Sin votos
         one: 1 voto
         other: "%{count} votos"
-      votes_weighted_score: "Total: %{score}"
     form:
       debate_title: Título del debate
       title_instructions: "Sé claro y conciso a la hora de poner un título, pero recuerda que debe explicar bien tu idea, ¡es tu carta de entrada!"
@@ -135,7 +134,7 @@ es:
     tags_cloud:
         tags: Temas
     flag_as_inappropiate: Denunciar como inapropiado
-    undo_flag_as_inappropiate: Deshacer denunciar como inapropiado
+    undo_flag_as_inappropiate: Deshacer denuncia
     collective: Colectivo
   mailer:
     comment:
@@ -148,3 +147,12 @@ es:
       all: "No tienes permiso para realizar la acción '%{action}' sobre %{subject}."
   welcome:
     last_debates: Últimos debates
+  omniauth:
+    finish_signup:
+      title: Añade tu email
+    twitter:
+      sign_in: Entra con Twitter
+    facebook:
+      sign_in: Entra con Facebook
+    google_oauth2:
+      sign_in: Entra con Google

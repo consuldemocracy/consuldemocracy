@@ -1,8 +1,10 @@
 en:
   mailers:
     comment:
-      hi: "Hello, %{recipient}"
-      new_comment_by: "There'is a new comment by %{commenter}"
+      hi: Hello
+      title: New comment on your debate
+      new_comment_by_html: "There'is a new comment by <b<%{commenter}</b> on"
     reply:
-      hi: "Hello, %{recipient}"
-      new_reply_by: "There'is a new reply by %{commenter} to your comment"
+      hi: Hello
+      title: New reply on your comment
+      new_reply_by_html: "There'is a new reply by <b>%{commenter}</b> to your comment on"
