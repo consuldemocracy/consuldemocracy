@@ -1,6 +1,18 @@
-<%= t('mailers.comment.hi', recipient: @debate.author.name) %>
+<td style="padding-bottom: 20px; padding-left: 10px;">
 
-<div><%= link_to @debate.title, debate_url(@debate) %></div>
-<div><%= t('mailers.comment.new_comment_by', commenter: @comment.author.name) %></div>
+  <h1 style="font-family: 'Open Sans','Helvetica Neue',arial,sans-serif;">
+    <%= t("mailers.comment.title") %>
+  </h1>
 
-<div><%= @comment.body %></div>
+  <p style="font-family: 'Open Sans','Helvetica Neue',arial,sans-serif;font-size: 14px;font-weight: normal;line-height: 24px;">
+    <%= t("mailers.comment.hi") %> <strong><%= @debate.author.name %></strong>,
+  </p>
+
+  <p style="font-family: 'Open Sans','Helvetica Neue',arial,sans-serif;font-size: 14px;font-weight: normal;line-height: 24px;">
+    <%= t("mailers.comment.new_comment_by_html", commenter: @comment.author.name) %> <%= link_to @debate.title, debate_url(@debate), style: "color: #2895F1; text-decoration:none;" %>
+  </p>
+
+  <p style="border-left: 2px solid #DEE0E3;font-family: 'Open Sans','Helvetica Neue',arial,sans-serif;font-size: 14px;font-style: italic;font-weight: normal;line-height: 24px;margin-left: 20px;padding: 10px;">
+    <%= @comment.body %>
+  </p>
+</td>
