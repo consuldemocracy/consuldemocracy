@@ -74,7 +74,7 @@ feature 'Users' do
         expect do
           expect do
             expect do
-              click_link 'Sign in with Twitter'
+              click_link 'Sign up with Twitter'
             end.not_to change { ActionMailer::Base.deliveries.size }
           end.to change { Identity.count }.by(1)
         end.to change { User.count }.by(1)
@@ -109,7 +109,7 @@ feature 'Users' do
         expect do
           expect do
             expect do
-              click_link 'Sign in with Twitter'
+              click_link 'Sign up with Twitter'
             end.not_to change { ActionMailer::Base.deliveries.size }
           end.to change { Identity.count }.by(1)
         end.to change { User.count }.by(1)
