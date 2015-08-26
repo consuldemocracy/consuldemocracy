@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150826112411) do
+ActiveRecord::Schema.define(version: 20150826112500) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,7 +41,7 @@ ActiveRecord::Schema.define(version: 20150826112411) do
     t.string   "title"
     t.text     "body"
     t.string   "subject"
-    t.integer  "user_id",                                null: false
+    t.integer  "user_id",                                  null: false
     t.integer  "parent_id"
     t.integer  "lft"
     t.integer  "rgt"
@@ -70,16 +70,17 @@ ActiveRecord::Schema.define(version: 20150826112411) do
     t.string   "title",                      limit: 80
     t.text     "description"
     t.integer  "author_id"
-    t.datetime "created_at",                                        null: false
-    t.datetime "updated_at",                                        null: false
-    t.string   "visit_id"
+    t.datetime "created_at",                                          null: false
+    t.datetime "updated_at",                                          null: false
     t.datetime "hidden_at"
+    t.string   "visit_id"
     t.datetime "flagged_as_inappropiate_at"
     t.integer  "inappropiate_flags_count",              default: 0
     t.integer  "cached_votes_total",                    default: 0
     t.integer  "cached_votes_up",                       default: 0
     t.integer  "cached_votes_down",                     default: 0
     t.datetime "archived_at"
+    t.integer  "comments_count",                        default: 0
   end
 
   add_index "debates", ["cached_votes_down"], name: "index_debates_on_cached_votes_down", using: :btree
@@ -178,10 +179,10 @@ ActiveRecord::Schema.define(version: 20150826112411) do
     t.string   "unconfirmed_email"
     t.boolean  "email_on_debate_comment",            default: false
     t.boolean  "email_on_comment_reply",             default: false
-    t.string   "phone_number",            limit: 30
     t.string   "official_position"
     t.integer  "official_level",                     default: 0
     t.datetime "hidden_at"
+    t.string   "phone_number",            limit: 30
     t.string   "username"
   end
 
