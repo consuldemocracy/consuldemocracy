@@ -1,5 +1,42 @@
-<html>
-  <body>
-    <%= yield %>
-  </body>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="es">
+<head>
+  <title>Gobierno abierto</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="viewport" id="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0,maximum-scale=10.0"/>
+</head>
+<body style="background: #fff; font-family:font-family: 'Open Sans','Helvetica Neue',arial,sans-serif !important; margin: 0 10px; padding: 0; text-align: left;">
+
+  <table cellpadding="0" cellspacing="0" border="0" style="background: #fff; margin: 0 auto; max-width: 700px; width:100%;">
+    <tr>
+      <td>
+        <table cellpadding="0" cellspacing="0" border="0" style="width: 100%;">
+          <tr>
+            <td style="border-bottom: 1px solid #dadfe1; padding: 20px 0;">
+              <a href="#" target="_blank">
+                <%= image_tag('logo_email_gobierno_abierto.png',  style: "border: 0; display: block; width: 100%;max-width: 370px") %>
+              </a>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <%= yield %>
+    </tr>
+  </table>
+
+  <table cellpadding="0" cellspacing="0" border="0" style="margin: 0 auto; max-width: 700px; width:100%; margin-bottom: 40px; padding: 0 20px;">
+    <tbody>
+    <tr>
+      <td style="text-align: center; border-top: 1px solid #dadfe1; padding-top: 20px;">
+        <p style="font-family: 'Open Sans','Helvetica Neue',arial,sans-serif; margin: 0;padding: 0;line-height: 1.5em;color: #797f7f; font-size: 12px;">
+          <a href="#" style="font-family: 'Open Sans','Helvetica Neue',arial,sans-serif;margin: 0;padding: 0;color: #398fd1;text-decoration: none;">Preguntas frecuentes</a>&nbsp;<span style="color:#398fd1;">&bullet;</span>&nbsp;<a href="mailto:#" style="font-family: 'Open Sans','Helvetica Neue',arial,sans-serif;margin: 0;padding: 0;color: #398fd1;text-decoration: none;">tec.gobiernoabierto@madrid.es</a></p>
+        <p style="font-family: 'Open Sans','Helvetica Neue',arial,sans-serif; margin: 0;padding: 0;line-height: 1.5em;color: #797f7f; font-size: 12px;">
+        &copy; 2015 Ayuntamiento de Madrid</p>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</body>
 </html>
