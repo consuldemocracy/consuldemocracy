@@ -38,6 +38,7 @@ $votes-like-act:    #5D9E7F;
 $votes-unlike:      #EF8585;
 $votes-unlike-act:  #BD6A6A;
 
+$delete:            #F04124;
 $check:             #46DB91;
 
 // 03. Forms
@@ -84,6 +85,7 @@ $comment-official:  rgba(70,219,145,.3);
 // 06. Responsive
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
+$small:             em-calc(480);
 $small-breakpoint:  em-calc(640);
 $medium-breakpoint: em-calc(1024);
 $large-breakpoint:  em-calc(1440);

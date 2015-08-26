@@ -24,8 +24,8 @@ class Debate < ActiveRecord::Base
   before_validation :sanitize_tag_list
 
   scope :sorted_for_moderation, -> { order(inappropiate_flags_count: :desc, updated_at: :desc) }
-  scope :pending_review, -> { where(reviewed_at: nil, hidden_at: nil) }
-  scope :reviewed, -> { where("reviewed_at IS NOT NULL AND hidden_at IS NULL") }
+  scope :pending, -> { where(archived_at: nil, hidden_at: nil) }
+  scope :archived, -> { where("archived_at IS NOT NULL AND hidden_at IS NULL") }
   scope :flagged_as_inappropiate, -> { where("inappropiate_flags_count > 0") }
 
   # Ahoy setup
@@ -74,12 +74,12 @@ class Debate < ActiveRecord::Base
     count < 0 ? 0 : count
   end
 
-  def reviewed?
-    reviewed_at.present?
+  def archived?
+    archived_at.present?
   end
 
-  def mark_as_reviewed
-    update(reviewed_at: Time.now)
+  def archive
+    update(archived_at: Time.now)
   end
 
   protected

@@ -133,8 +133,8 @@ en:
   shared:
     tags_cloud:
       tags: Topics
-    flag_as_inappropiate: Flag as inappropiate
-    undo_flag_as_inappropiate: Undo flag as inappropiate
+    flag_as_inappropiate: Flag as inappropriate
+    undo_flag_as_inappropiate: Undo flag
     collective: Collective
   mailer:
     comment:
