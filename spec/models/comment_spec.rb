@@ -8,6 +8,15 @@ describe Comment do
     expect(comment).to be_valid
   end
 
+  it "should update cache_counter in debate after hide" do
+    debate  = create(:debate)
+    comment = create(:comment, commentable: debate)
+
+    expect(debate.reload.comments_count).to eq(1)
+    comment.hide
+    expect(debate.reload.comments_count).to eq(0)
+  end
+
   describe "#children_count" do
     let(:comment) { create(:comment) }
     let(:debate)  { comment.debate }
