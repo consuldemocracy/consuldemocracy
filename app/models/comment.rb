@@ -49,7 +49,15 @@ class Comment < ActiveRecord::Base
   end
 
   def total_votes
-    votes_for.size
+    cached_votes_total
+  end
+
+  def total_likes
+    cached_votes_up
+  end
+
+  def total_dislikes
+    cached_votes_down
   end
 
   def not_visible?

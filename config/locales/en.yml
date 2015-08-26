@@ -61,7 +61,6 @@ en:
         zero: No votes
         one: 1 vote
         other: "%{count} votes"
-      votes_weighted_score: "Total: %{score}"
     form:
       debate_title: Debate title
       title_instructions: "SBe clear and precise with the title, but make it informative"
