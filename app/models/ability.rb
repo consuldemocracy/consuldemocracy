@@ -53,14 +53,14 @@ class Ability
         can :hide, Comment, hidden_at: nil
         cannot :hide, Comment, user_id: user.id
 
-        can :mark_as_reviewed, Comment, reviewed_at: nil, hidden_at: nil
-        cannot :mark_as_reviewed, Comment, user_id: user.id
+        can :archive, Comment, archived_at: nil, hidden_at: nil
+        cannot :archive, Comment, user_id: user.id
 
         can :hide, Debate, hidden_at: nil
         cannot :hide, Debate, author_id: user.id
 
-        can :mark_as_reviewed, Debate, reviewed_at: nil, hidden_at: nil
-        cannot :mark_as_reviewed, Debate, author_id: user.id
+        can :archive, Debate, archived_at: nil, hidden_at: nil
+        cannot :archive, Debate, author_id: user.id
 
         can :hide, User
         cannot :hide, User, id: user.id

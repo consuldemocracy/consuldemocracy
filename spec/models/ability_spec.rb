@@ -131,8 +131,8 @@ describe Ability do
       let(:own_debate)       { create(:debate,  author: user) }
       let(:hidden_comment)   { create(:comment, :hidden) }
       let(:hidden_debate)    { create(:debate,  :hidden) }
-      let(:reviewed_comment) { create(:comment, :reviewed) }
-      let(:reviewed_debate)  { create(:debate,  :reviewed) }
+      let(:archived_comment) { create(:comment, :archived) }
+      let(:archived_debate)  { create(:debate,  :archived) }
 
       it { should be_able_to(:hide, comment) }
       it { should be_able_to(:hide_in_moderation_screen, comment) }
@@ -144,15 +144,15 @@ describe Ability do
       it { should_not be_able_to(:hide, hidden_debate) }
       it { should_not be_able_to(:hide, own_debate) }
 
-      it { should be_able_to(:mark_as_reviewed, comment) }
-      it { should_not be_able_to(:mark_as_reviewed, hidden_comment) }
-      it { should_not be_able_to(:mark_as_reviewed, reviewed_comment) }
-      it { should_not be_able_to(:mark_as_reviewed, own_comment) }
+      it { should be_able_to(:archive, comment) }
+      it { should_not be_able_to(:archive, hidden_comment) }
+      it { should_not be_able_to(:archive, archived_comment) }
+      it { should_not be_able_to(:archive, own_comment) }
 
-      it { should be_able_to(:mark_as_reviewed, debate) }
-      it { should_not be_able_to(:mark_as_reviewed, hidden_debate) }
-      it { should_not be_able_to(:mark_as_reviewed, reviewed_debate) }
-      it { should_not be_able_to(:mark_as_reviewed, own_debate) }
+      it { should be_able_to(:archive, debate) }
+      it { should_not be_able_to(:archive, hidden_debate) }
+      it { should_not be_able_to(:archive, archived_debate) }
+      it { should_not be_able_to(:archive, own_debate) }
 
       it { should_not be_able_to(:hide, user) }
       it { should be_able_to(:hide, other_user) }

@@ -88,7 +88,7 @@ Rails.application.routes.draw do
       member do
         put :hide
         put :hide_in_moderation_screen
-        put :mark_as_reviewed
+        put :archive
       end
     end
 
@@ -96,7 +96,7 @@ Rails.application.routes.draw do
       member do
         put :hide
         put :hide_in_moderation_screen
-        put :mark_as_reviewed
+        put :archive
       end
     end
   end

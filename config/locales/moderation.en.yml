@@ -21,7 +21,7 @@ en:
         filter: Filter
         filters:
           all: All
-          pending_review: Pending
+          pending: Pending
           archived: Archived
     debates:
       index:
@@ -38,5 +38,5 @@ en:
         filter: Filter
         filters:
           all: All
-          pending_review: Pending
+          pending: Pending
           archived: Archived

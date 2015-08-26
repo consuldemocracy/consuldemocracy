@@ -38,12 +38,12 @@
       <td>
         <%= link_to t("moderation.debates.index.hide"), hide_in_moderation_screen_moderation_debate_path(debate, request.query_parameters), method: :put, class: "delete" %>
       </td>
-      <% if can? :mark_as_reviewed, debate %>
+      <% if can? :archive, debate %>
         <td>
-          <%= link_to t("moderation.debates.index.archive"), mark_as_reviewed_moderation_debate_path(debate, request.query_parameters), method: :put, class: "button radius tiny warning" %>
+          <%= link_to t("moderation.debates.index.archive"), archive_moderation_debate_path(debate, request.query_parameters), method: :put, class: "button radius tiny warning" %>
         </td>
       <% end %>
-      <% if debate.reviewed? %>
+      <% if debate.archived? %>
         <td class="archived">
           <%= t("moderation.debates.index.archived") %>
         </td>

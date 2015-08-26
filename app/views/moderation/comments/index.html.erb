@@ -39,12 +39,12 @@
       <td>
         <%= link_to t("moderation.comments.index.hide"), hide_in_moderation_screen_moderation_comment_path(comment, request.query_parameters), method: :put, class: "delete" %>
       </td>
-      <% if can? :mark_as_reviewed, comment %>
+      <% if can? :archive, comment %>
         <td>
-          <%= link_to t("moderation.comments.index.archive"), mark_as_reviewed_moderation_comment_path(comment, request.query_parameters), method: :put, class: "button radius tiny warning" %>
+          <%= link_to t("moderation.comments.index.archive"), archive_moderation_comment_path(comment, request.query_parameters), method: :put, class: "button radius tiny warning" %>
         </td>
       <% end %>
-      <% if comment.reviewed? %>
+      <% if comment.archived? %>
         <td class="archived">
           <%= t("moderation.comments.index.archived") %>
         </td>

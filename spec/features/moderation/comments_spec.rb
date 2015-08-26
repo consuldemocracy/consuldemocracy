@@ -111,7 +111,7 @@ feature 'Moderate Comments' do
       expect(page).to have_link('Pending')
       expect(page).to have_link('Archived')
 
-      visit moderation_comments_path(filter: 'pending_review')
+      visit moderation_comments_path(filter: 'pending')
       expect(page).to have_link('All')
       expect(page).to_not have_link('Pending')
       expect(page).to have_link('Archived')
@@ -125,14 +125,14 @@ feature 'Moderate Comments' do
     scenario "Filtering comments" do
       create(:comment, :flagged_as_inappropiate, body: "Pending comment")
       create(:comment, :flagged_as_inappropiate, :hidden, body: "Hidden comment")
-      create(:comment, :flagged_as_inappropiate, :reviewed, body: "Archived comment")
+      create(:comment, :flagged_as_inappropiate, :archived, body: "Archived comment")
 
       visit moderation_comments_path(filter: 'all')
       expect(page).to have_content('Pending comment')
       expect(page).to_not have_content('Hidden comment')
       expect(page).to have_content('Archived comment')
 
-      visit moderation_comments_path(filter: 'pending_review')
+      visit moderation_comments_path(filter: 'pending')
       expect(page).to have_content('Pending comment')
       expect(page).to_not have_content('Hidden comment')
       expect(page).to_not have_content('Archived comment')
@@ -147,14 +147,14 @@ feature 'Moderate Comments' do
       per_page = Kaminari.config.default_per_page
       (per_page + 2).times { create(:comment, :flagged_as_inappropiate) }
 
-      visit moderation_comments_path(filter: 'pending_review', page: 2)
+      visit moderation_comments_path(filter: 'pending', page: 2)
 
       click_link('Archive', match: :first, exact: true)
 
       uri = URI.parse(current_url)
       query_params = Rack::Utils.parse_nested_query(uri.query).symbolize_keys
 
-      expect(query_params[:filter]).to eq('pending_review')
+      expect(query_params[:filter]).to eq('pending')
       expect(query_params[:page]).to eq('2')
     end
 
@@ -187,7 +187,7 @@ feature 'Moderate Comments' do
         expect(@comment.reload).to be_hidden
       end
 
-      scenario 'Marking the comment as reviewed' do
+      scenario 'Marking the comment as archived' do
         within("#comment_#{@comment.id}") do
           click_link('Archive')
         end
@@ -198,7 +198,7 @@ feature 'Moderate Comments' do
           expect(page).to have_content('Archived')
         end
 
-        expect(@comment.reload).to be_reviewed
+        expect(@comment.reload).to be_archived
       end
     end
   end
