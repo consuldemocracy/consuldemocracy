@@ -5,7 +5,7 @@ class DebatesController < ApplicationController
   respond_to :html, :js
 
   def index
-    @debates = Debate.includes(:tags).includes(:inappropiate_flags).search(params).page(params[:page])
+    @debates = Debate.search(params).page(params[:page]).for_render
     set_debate_votes(@debates)
   end
 

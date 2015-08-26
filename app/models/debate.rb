@@ -27,6 +27,7 @@ class Debate < ActiveRecord::Base
   scope :pending, -> { where(archived_at: nil, hidden_at: nil) }
   scope :archived, -> { where("archived_at IS NOT NULL AND hidden_at IS NULL") }
   scope :flagged_as_inappropiate, -> { where("inappropiate_flags_count > 0") }
+  scope :for_render, -> { includes(:tags) }
 
   # Ahoy setup
   visitable # Ahoy will automatically assign visit_id on create
