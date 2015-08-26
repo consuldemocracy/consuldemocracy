@@ -76,14 +76,10 @@ ActiveRecord::Schema.define(version: 20150826112411) do
     t.datetime "hidden_at"
     t.datetime "flagged_as_inappropiate_at"
     t.integer  "inappropiate_flags_count",              default: 0
-<<<<<<< HEAD
-    t.datetime "reviewed_at"
     t.integer  "cached_votes_total",                    default: 0
     t.integer  "cached_votes_up",                       default: 0
     t.integer  "cached_votes_down",                     default: 0
-=======
     t.datetime "archived_at"
->>>>>>> master
   end
 
   add_index "debates", ["cached_votes_down"], name: "index_debates_on_cached_votes_down", using: :btree
