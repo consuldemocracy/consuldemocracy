@@ -25,11 +25,11 @@ class User < ActiveRecord::Base
 
   accepts_nested_attributes_for :organization
 
-  default_scope { includes(:organization) }
   scope :administrators, -> { joins(:administrators) }
   scope :moderators,     -> { joins(:moderator) }
   scope :organizations,  -> { joins(:organization) }
   scope :officials,      -> { where("official_level > 0") }
+  scope :for_render,     -> { includes(:organization) }
 
   def self.find_for_oauth(auth, signed_in_resource = nil)
     # Get the identity and user if they exist
