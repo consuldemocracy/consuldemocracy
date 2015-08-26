@@ -1,21 +1,21 @@
 <% if can? :flag_as_inappropiate, debate %>
-  <a data-dropdown="drop-debate-flag-<%= debate.id %>" aria-controls="drop-debate-flag-<%= debate.id %>" aria-expanded="false" title="<%= t('shared.flag_as_inappropiate') %>">
+  <a id="flag-expand-debate-<%= debate.id %>" data-dropdown="flag-drop-debate-<%= debate.id %>" aria-controls="flag-drop-debate-<%= debate.id %>" aria-expanded="false" title="<%= t('shared.flag_as_inappropiate') %>">
     &nbsp;<i class="icon-flag flag-disable"></i>&nbsp;&nbsp;
   </a>
-  <ul id="drop-debate-flag-<%= debate.id %>" class="f-dropdown" data-dropdown-content aria-hidden="true" tabindex="-1">
+  <ul id="flag-drop-debate-<%= debate.id %>" class="f-dropdown" data-dropdown-content aria-hidden="true" tabindex="-1">
     <li>
-    <%= link_to t('shared.flag_as_inappropiate'), flag_as_inappropiate_debate_path(debate), method: :put, remote: true %>
+      <%= link_to t('shared.flag_as_inappropiate'), flag_as_inappropiate_debate_path(debate), method: :put, remote: true, id: "flag-debate-#{ debate.id }" %>
     </li>
   </ul>
 <% end %>
 
 <% if can? :undo_flag_as_inappropiate, debate %>
-  <a data-dropdown="drop-debate-unflag-<%= debate.id %>" aria-controls="drop-debate-unflag-<%= debate.id %>" aria-expanded="false" title="<%= t('shared.undo_flag_as_inappropiate') %>">
+  <a id="unflag-expand-debate-<%= debate.id %>" data-dropdown="unflag-drop-debate-<%= debate.id %>" aria-controls="unflag-drop-debate-<%= debate.id %>" aria-expanded="false" title="<%= t('shared.undo_flag_as_inappropiate') %>">
     &nbsp;<i class="icon-flag flag-active"></i>&nbsp;&nbsp;
   </a>
-  <ul id="drop-debate-unflag-<%= debate.id %>" class="f-dropdown" data-dropdown-content aria-hidden="true" tabindex="-1">
+  <ul id="unflag-drop-debate-<%= debate.id %>" class="f-dropdown" data-dropdown-content aria-hidden="true" tabindex="-1">
     <li>
-    <%= link_to t('shared.undo_flag_as_inappropiate'), undo_flag_as_inappropiate_debate_path(debate), method: :put, remote: true %>
+      <%= link_to t('shared.undo_flag_as_inappropiate'), undo_flag_as_inappropiate_debate_path(debate), method: :put, remote: true, id: "unflag-debate-#{ debate.id }" %>
     </li>
   </ul>
 <% end %>

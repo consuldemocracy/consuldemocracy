@@ -142,9 +142,10 @@ feature 'Comments' do
     visit debate_path(debate)
 
     within "#comment_#{comment.id}" do
-      expect(page).to_not have_link "Undo flag as inappropriate"
-      click_on 'Flag as inappropriate'
-      expect(page).to have_link "Undo flag as inappropriate"
+      page.find("#flag-expand-comment-#{comment.id}").click
+      page.find("#flag-comment-#{comment.id}").click
+
+      expect(page).to have_css("#unflag-expand-comment-#{comment.id}")
     end
 
     expect(InappropiateFlag.flagged?(user, comment)).to be
@@ -160,9 +161,10 @@ feature 'Comments' do
     visit debate_path(debate)
 
     within "#comment_#{comment.id}" do
-      expect(page).to_not have_link("Flag as inappropriate", exact: true)
-      click_on 'Undo flag as inappropiate'
-      expect(page).to have_link("Flag as inappropriate", exact: true)
+      page.find("#unflag-expand-comment-#{comment.id}").click
+      page.find("#unflag-comment-#{comment.id}").click
+
+      expect(page).to have_css("#flag-expand-comment-#{comment.id}")
     end
 
     expect(InappropiateFlag.flagged?(user, comment)).to_not be
