@@ -27,13 +27,13 @@ cd participacion
 bundle install
 cp config/database.yml.example config/database.yml
 cp config/secrets.yml.example config/secrets.yml
-bundle exec bin/rake db:setup
-RAILS_ENV=test bundle exec rake db:setup
+bin/rake db:setup
+RAILS_ENV=test bin/rake db:setup
 ```
 
 Para ejecutar la aplicación en local:
 ```
-bundle exec bin/rails s
+bin/rails s
 ```
 
 Prerequisitos para los tests: tener instalado PhantomJS >= 2.0
@@ -41,7 +41,7 @@ Prerequisitos para los tests: tener instalado PhantomJS >= 2.0
 Para ejecutar los tests:
 
 ```
-bundle exec bin/rspec
+bin/rspec
 ```
 
 ### OAuth
