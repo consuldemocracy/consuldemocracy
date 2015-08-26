@@ -18,8 +18,8 @@ class Comment < ActiveRecord::Base
   scope :recent, -> { order(id: :desc) }
 
   scope :sorted_for_moderation, -> { order(inappropiate_flags_count: :desc, updated_at: :desc) }
-  scope :pending_review, -> { where(reviewed_at: nil, hidden_at: nil) }
-  scope :reviewed, -> { where("reviewed_at IS NOT NULL AND hidden_at IS NULL") }
+  scope :pending, -> { where(archived_at: nil, hidden_at: nil) }
+  scope :archived, -> { where("archived_at IS NOT NULL AND hidden_at IS NULL") }
   scope :flagged_as_inappropiate, -> { where("inappropiate_flags_count > 0") }
 
   def self.build(commentable, user, body)
@@ -56,8 +56,8 @@ class Comment < ActiveRecord::Base
     hidden? || user.hidden?
   end
 
-  def reviewed?
-    reviewed_at.present?
+  def archived?
+    archived_at.present?
   end
 
   def as_administrator?
@@ -68,8 +68,8 @@ class Comment < ActiveRecord::Base
     moderator_id.present?
   end
 
-  def mark_as_reviewed
-    update(reviewed_at: Time.now)
+  def archive
+    update(archived_at: Time.now)
   end
 
   # TODO: faking counter cache since there is a bug with acts_as_nested_set :counter_cache

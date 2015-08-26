@@ -1,43 +1,51 @@
-<h2><%= t('moderation.debates.index.title') %></h2>
+<h2><%= t("moderation.debates.index.title") %></h2>
 
-<p>
-  <%= t('moderation.debates.index.filter') %>:
+<dl class="sub-nav">
+  <dt><%= t("moderation.debates.index.filter") %>:</dt>
+
   <% @valid_filters.each do |filter| %>
     <% if @filter == filter %>
-      <%= t("moderation.debates.index.filters.#{filter}") %>
+      <dd class="active"><%= t("moderation.debates.index.filters.#{filter}") %></dd>
     <% else %>
-      <%= link_to t("moderation.debates.index.filters.#{filter}"),
-        moderation_debates_path(filter: filter) %>
+      <dd><%= link_to t("moderation.debates.index.filters.#{filter}"),
+        moderation_debates_path(filter: filter) %></dd>
     <% end %>
   <% end %>
-</p>
+</dl>
 
 <h3><%= page_entries_info @debates %></h3>
 
 <table>
   <tr>
-    <th><%= t('moderation.debates.index.headers.flags') %></th>
-    <th><%= t('moderation.debates.index.headers.updated_at') %></th>
-    <th><%= t('moderation.debates.index.headers.title') %></th>
-    <th><%= t('moderation.debates.index.headers.description') %></th>
+    <th>
+      <%= t("moderation.debates.index.headers.title") %>&nbsp;|&nbsp;
+      <%= t("moderation.debates.index.headers.updated_at") %>&nbsp;|&nbsp;
+      <%= t("moderation.debates.index.headers.description") %>
+    </th>
+    <th class="text-center"><%= t("moderation.debates.index.headers.flags") %></th>
+    <th class="text-center" colspan="2"><%= t("moderation.debates.index.headers.actions") %></th>
   </tr>
   <% @debates.each do |debate| %>
     <tr id="debate_<%= debate.id %>">
-      <td><%= debate.inappropiate_flags_count %></td>
-      <td><%= l debate.updated_at.to_date %></td>
-      <td><%= link_to debate.title, debate %></td>
-      <td><%= debate.description %></td>
       <td>
-        <%= link_to t('moderation.debates.index.hide'), hide_in_moderation_screen_moderation_debate_path(debate, request.query_parameters), method: :put %>
+        <%= link_to debate.title, debate, target: "_blank" %>
+        <br>
+        <span class="date"><%= l debate.updated_at.to_date %></span>
+        <br>
+        <%= debate.description %>
       </td>
-      <% if can? :mark_as_reviewed, debate %>
+      <td class="text-center"><%= debate.inappropiate_flags_count %></td>
+      <td>
+        <%= link_to t("moderation.debates.index.hide"), hide_in_moderation_screen_moderation_debate_path(debate, request.query_parameters), method: :put, class: "delete" %>
+      </td>
+      <% if can? :archive, debate %>
         <td>
-          <%= link_to t('moderation.debates.index.mark_as_reviewed'), mark_as_reviewed_moderation_debate_path(debate, request.query_parameters), method: :put %>
+          <%= link_to t("moderation.debates.index.archive"), archive_moderation_debate_path(debate, request.query_parameters), method: :put, class: "button radius tiny warning" %>
         </td>
       <% end %>
-      <% if debate.reviewed? %>
-        <td>
-          <%= t('moderation.debates.index.reviewed') %>
+      <% if debate.archived? %>
+        <td class="archived">
+          <%= t("moderation.debates.index.archived") %>
         </td>
       <% end %>
     </tr>
@@ -45,4 +53,3 @@
 </table>
 
 <%= paginate @debates %>
-

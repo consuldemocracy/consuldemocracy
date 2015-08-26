@@ -22,8 +22,8 @@ FactoryGirl.define do
       hidden_at Time.now
     end
 
-    trait :reviewed do
-      reviewed_at Time.now
+    trait :archived do
+      archived_at Time.now
     end
 
     trait :flagged_as_inappropiate do
@@ -48,8 +48,8 @@ FactoryGirl.define do
       hidden_at Time.now
     end
 
-    trait :reviewed do
-      reviewed_at Time.now
+    trait :archived do
+      archived_at Time.now
     end
 
     trait :flagged_as_inappropiate do

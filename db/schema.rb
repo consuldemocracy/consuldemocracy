@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150824144524) do
+ActiveRecord::Schema.define(version: 20150826112411) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -51,7 +51,7 @@ ActiveRecord::Schema.define(version: 20150824144524) do
     t.datetime "hidden_at"
     t.datetime "flagged_as_inappropiate_at"
     t.integer  "inappropiate_flags_count",   default: 0
-    t.datetime "reviewed_at"
+    t.datetime "archived_at"
     t.integer  "moderator_id"
     t.integer  "administrator_id"
   end
@@ -70,7 +70,7 @@ ActiveRecord::Schema.define(version: 20150824144524) do
     t.datetime "hidden_at"
     t.datetime "flagged_as_inappropiate_at"
     t.integer  "inappropiate_flags_count",              default: 0
-    t.datetime "reviewed_at"
+    t.datetime "archived_at"
   end
 
   add_index "debates", ["hidden_at"], name: "index_debates_on_hidden_at", using: :btree

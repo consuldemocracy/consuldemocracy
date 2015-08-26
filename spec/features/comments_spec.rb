@@ -133,7 +133,7 @@ feature 'Comments' do
     expect(page).to have_css(".comment.comment.comment.comment.comment.comment.comment.comment")
   end
 
-  scenario "Flagging as inappropiate", :js do
+  scenario "Flagging as inappropriate", :js do
     user = create(:user)
     debate = create(:debate)
     comment = create(:comment, commentable: debate)
@@ -142,15 +142,16 @@ feature 'Comments' do
     visit debate_path(debate)
 
     within "#comment_#{comment.id}" do
-      expect(page).to_not have_link "Undo flag as inappropiate"
-      click_on 'Flag as inappropiate'
-      expect(page).to have_link "Undo flag as inappropiate"
+      page.find("#flag-expand-comment-#{comment.id}").click
+      page.find("#flag-comment-#{comment.id}").click
+
+      expect(page).to have_css("#unflag-expand-comment-#{comment.id}")
     end
 
     expect(InappropiateFlag.flagged?(user, comment)).to be
   end
 
-  scenario "Undoing flagging as inappropiate", :js do
+  scenario "Undoing flagging as inappropriate", :js do
     user = create(:user)
     debate = create(:debate)
     comment = create(:comment, commentable: debate)
@@ -160,9 +161,10 @@ feature 'Comments' do
     visit debate_path(debate)
 
     within "#comment_#{comment.id}" do
-      expect(page).to_not have_link("Flag as inappropiate", exact: true)
-      click_on 'Undo flag as inappropiate'
-      expect(page).to have_link("Flag as inappropiate", exact: true)
+      page.find("#unflag-expand-comment-#{comment.id}").click
+      page.find("#unflag-comment-#{comment.id}").click
+
+      expect(page).to have_css("#flag-expand-comment-#{comment.id}")
     end
 
     expect(InappropiateFlag.flagged?(user, comment)).to_not be
