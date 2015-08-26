@@ -41,7 +41,7 @@ ActiveRecord::Schema.define(version: 20150825124827) do
     t.string   "title"
     t.text     "body"
     t.string   "subject"
-    t.integer  "user_id",                                  null: false
+    t.integer  "user_id",                                null: false
     t.integer  "parent_id"
     t.integer  "lft"
     t.integer  "rgt"
@@ -55,21 +55,13 @@ ActiveRecord::Schema.define(version: 20150825124827) do
     t.integer  "moderator_id"
     t.integer  "administrator_id"
     t.integer  "cached_votes_total",         default: 0
-    t.integer  "cached_votes_score",         default: 0
     t.integer  "cached_votes_up",            default: 0
     t.integer  "cached_votes_down",          default: 0
-    t.integer  "cached_weighted_score",      default: 0
-    t.integer  "cached_weighted_total",      default: 0
-    t.float    "cached_weighted_average",    default: 0.0
   end
 
   add_index "comments", ["cached_votes_down"], name: "index_comments_on_cached_votes_down", using: :btree
-  add_index "comments", ["cached_votes_score"], name: "index_comments_on_cached_votes_score", using: :btree
   add_index "comments", ["cached_votes_total"], name: "index_comments_on_cached_votes_total", using: :btree
   add_index "comments", ["cached_votes_up"], name: "index_comments_on_cached_votes_up", using: :btree
-  add_index "comments", ["cached_weighted_average"], name: "index_comments_on_cached_weighted_average", using: :btree
-  add_index "comments", ["cached_weighted_score"], name: "index_comments_on_cached_weighted_score", using: :btree
-  add_index "comments", ["cached_weighted_total"], name: "index_comments_on_cached_weighted_total", using: :btree
   add_index "comments", ["commentable_id", "commentable_type"], name: "index_comments_on_commentable_id_and_commentable_type", using: :btree
   add_index "comments", ["hidden_at"], name: "index_comments_on_hidden_at", using: :btree
   add_index "comments", ["user_id"], name: "index_comments_on_user_id", using: :btree
@@ -86,21 +78,13 @@ ActiveRecord::Schema.define(version: 20150825124827) do
     t.integer  "inappropiate_flags_count",              default: 0
     t.datetime "reviewed_at"
     t.integer  "cached_votes_total",                    default: 0
-    t.integer  "cached_votes_score",                    default: 0
     t.integer  "cached_votes_up",                       default: 0
     t.integer  "cached_votes_down",                     default: 0
-    t.integer  "cached_weighted_score",                 default: 0
-    t.integer  "cached_weighted_total",                 default: 0
-    t.float    "cached_weighted_average",               default: 0.0
   end
 
   add_index "debates", ["cached_votes_down"], name: "index_debates_on_cached_votes_down", using: :btree
-  add_index "debates", ["cached_votes_score"], name: "index_debates_on_cached_votes_score", using: :btree
   add_index "debates", ["cached_votes_total"], name: "index_debates_on_cached_votes_total", using: :btree
   add_index "debates", ["cached_votes_up"], name: "index_debates_on_cached_votes_up", using: :btree
-  add_index "debates", ["cached_weighted_average"], name: "index_debates_on_cached_weighted_average", using: :btree
-  add_index "debates", ["cached_weighted_score"], name: "index_debates_on_cached_weighted_score", using: :btree
-  add_index "debates", ["cached_weighted_total"], name: "index_debates_on_cached_weighted_total", using: :btree
   add_index "debates", ["hidden_at"], name: "index_debates_on_hidden_at", using: :btree
 
   create_table "identities", force: :cascade do |t|
