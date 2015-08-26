@@ -55,7 +55,8 @@ describe Debate do
     end
 
     it "should be false if debate has votes" do
-      create(:vote, votable: debate)
+      create(:user).vote_up_for(debate)
+      debate.reload
       expect(debate.total_votes).to eq(1)
       expect(debate.editable?).to be false
     end
@@ -69,7 +70,8 @@ describe Debate do
     end
 
     it "should be false if debate is not editable" do
-      create(:vote, votable: debate)
+      create(:user).vote_up_for(debate)
+      debate.reload
       expect(debate.editable_by?(debate.author)).to be false
     end
 

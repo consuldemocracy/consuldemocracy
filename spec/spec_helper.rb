@@ -21,10 +21,17 @@ RSpec.configure do |config|
   config.before(:each) do |example|
     DatabaseCleaner.strategy = example.metadata[:js] ? :truncation : :transaction
     DatabaseCleaner.start
+    if example.metadata[:type] == :feature
+      Bullet.start_request
+    end
   end
 
-  config.after(:each) do
+  config.after(:each) do |example|
     DatabaseCleaner.clean
+    if example.metadata[:type] == :feature
+      Bullet.perform_out_of_channel_notifications if Bullet.notification?
+      Bullet.end_request
+    end
   end
 
   # Allows RSpec to persist some state between runs in order to support

@@ -5,14 +5,14 @@ describe 'Vote' do
   describe '#for_debates' do
     it 'returns votes for debates' do
       debate = create(:debate)
-      create(:vote, votable: debate)
+      create(:user).vote_up_for(debate)
 
       expect(Vote.for_debates.count).to eq(1)
     end
 
     it 'does not returns votes for other votables' do
       comment = create(:comment)
-      create(:vote, votable: comment)
+      create(:user).vote_up_for(comment)
 
       expect(Vote.for_debates.count).to eq(0)
     end
@@ -21,14 +21,14 @@ describe 'Vote' do
   describe '#in' do
     it 'returns debates send in parameters' do
       debate = create(:debate)
-      create(:vote, votable: debate)
+      create(:user).vote_up_for(debate)
 
       expect(Vote.in(debate).count).to eq(1)
     end
 
     it 'does not return debates not in parameters' do
       debate = create(:debate)
-      create(:vote, votable: debate)
+      create(:user).vote_up_for(debate)
 
       expect(Vote.in([]).count).to eq(0)
     end
@@ -36,11 +36,13 @@ describe 'Vote' do
 
   describe '#value' do
     it 'returns vote flag' do
-      vote = create(:vote, vote_flag: true)
-      expect(vote.value).to eq(true)
+      debate = create(:debate)
 
-      vote = create(:vote, vote_flag: false)
-      expect(vote.value).to eq(false)
+      create(:user).vote_up_for(debate)
+      create(:user).vote_down_for(debate)
+
+      expect(debate.get_positives.first.value).to eq(true)
+      expect(debate.get_negatives.first.value).to eq(false)
     end
   end
 end

@@ -1,11 +1,11 @@
 class Admin::OfficialsController < Admin::BaseController
 
   def index
-    @officials = User.officials.page(params[:page])
+    @officials = User.officials.page(params[:page]).includes(:organization)
   end
 
   def search
-    @users = User.with_email(params[:email]).page(params[:page])
+    @users = User.with_email(params[:email]).page(params[:page]).includes(:organization)
   end
 
   def edit

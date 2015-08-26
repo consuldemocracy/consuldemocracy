@@ -14,7 +14,6 @@ class Comment < ActiveRecord::Base
 
   has_many :inappropiate_flags, :as => :flaggable
 
-  default_scope { includes(:user) }
   scope :recent, -> { order(id: :desc) }
 
   scope :sorted_for_moderation, -> { order(inappropiate_flags_count: :desc, updated_at: :desc) }
@@ -48,8 +47,16 @@ class Comment < ActiveRecord::Base
     self.user= author
   end
 
+  def likes
+    cached_votes_up
+  end
+
+  def dislikes
+    cached_votes_down
+  end
+
   def total_votes
-    votes_for.size
+    cached_votes_total
   end
 
   def not_visible?

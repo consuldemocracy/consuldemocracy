@@ -13,8 +13,9 @@ describe User do
       debate1 = create(:debate)
       debate2 = create(:debate)
       debate3 = create(:debate)
-      create(:vote, voter: user, votable: debate1, vote_flag: true)
-      create(:vote, voter: user, votable: debate3, vote_flag: false)
+
+      user.vote_up_for(debate1)
+      user.vote_down_for(debate3)
 
       voted = user.debate_votes([debate1, debate2, debate3])
 

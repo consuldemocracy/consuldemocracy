@@ -17,8 +17,9 @@ feature 'Votes' do
       debate1 = create(:debate)
       debate2 = create(:debate)
       debate3 = create(:debate)
-      create(:vote, voter: @manuela, votable: debate1, vote_flag: true)
-      create(:vote, voter: @manuela, votable: debate3, vote_flag: false)
+
+      @manuela.vote_up_for(debate1)
+      @manuela.vote_down_for(debate3)
 
       visit root_path
 
@@ -65,8 +66,9 @@ feature 'Votes' do
       debate1 = create(:debate)
       debate2 = create(:debate)
       debate3 = create(:debate)
-      create(:vote, voter: @manuela, votable: debate1, vote_flag: true)
-      create(:vote, voter: @manuela, votable: debate3, vote_flag: false)
+
+      @manuela.vote_up_for(debate1)
+      @manuela.vote_down_for(debate3)
 
       visit debates_path
 
@@ -128,8 +130,8 @@ feature 'Votes' do
     end
 
     scenario 'Show' do
-      create(:vote, voter: @manuela, votable: @debate, vote_flag: true)
-      create(:vote, voter: @pablo, votable: @debate, vote_flag: false)
+      @manuela.vote_up_for(@debate)
+      @pablo.vote_down_for(@debate)
 
       visit debate_path(@debate)
 
@@ -250,8 +252,8 @@ feature 'Votes' do
     end
 
     scenario 'Show' do
-      create(:vote, voter: @manuela, votable: @comment, vote_flag: true)
-      create(:vote, voter: @pablo, votable: @comment, vote_flag: false)
+      @manuela.vote_up_for(@comment)
+      @pablo.vote_down_for(@comment)
 
       visit debate_path(@debate)
 
