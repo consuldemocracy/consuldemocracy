@@ -6,14 +6,14 @@
 
     <li <%= 'class=active' if controller_name == 'debates' %>>
       <%= link_to moderation_debates_path do %>
-        <i class="icon-eye"></i>
+        <i class="icon-debates"></i>
         <%= t('moderation.menu.flagged_debates') %>
       <% end %>
     </li>
 
     <li <%= 'class=active' if controller_name == 'comments' %>>
       <%= link_to moderation_comments_path do %>
-        <i class="icon-comment-quotes"></i>
+        <i class="icon-comments"></i>
         <%= t('moderation.menu.flagged_comments') %>
       <% end %>
     </li>
