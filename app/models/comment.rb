@@ -9,7 +9,7 @@ class Comment < ActiveRecord::Base
   validates :body, presence: true
   validates :user, presence: true
 
-  belongs_to :commentable, polymorphic: true
+  belongs_to :commentable, polymorphic: true, counter_cache: true
   belongs_to :user, -> { with_hidden }
 
   has_many :inappropiate_flags, :as => :flaggable
@@ -87,6 +87,10 @@ class Comment < ActiveRecord::Base
   # > Comment.find_each { |comment| Comment.reset_counters(comment.id, :children) }
   def children_count
     children.count
+  end
+
+  def after_hide
+    commentable_type.constantize.reset_counters(commentable_id, :comment_threads)
   end
 
 end
