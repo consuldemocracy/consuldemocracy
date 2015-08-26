@@ -323,9 +323,10 @@ feature 'Debates' do
     visit debate_path(debate)
 
     within "#debate_#{debate.id}" do
-      expect(page).to_not have_link "Undo flag as inappropiate"
-      click_on 'Flag as inappropiate'
-      expect(page).to have_link "Undo flag as inappropiate"
+      page.find("#flag-expand-debate-#{debate.id}").click
+      page.find("#flag-debate-#{debate.id}").click
+
+      expect(page).to have_css("#unflag-expand-debate-#{debate.id}")
     end
 
     expect(InappropiateFlag.flagged?(user, debate)).to be
@@ -340,9 +341,10 @@ feature 'Debates' do
     visit debate_path(debate)
 
     within "#debate_#{debate.id}" do
-      expect(page).to_not have_link("Flag as inappropiate", exact: true)
-      click_on 'Undo flag as inappropiate'
-      expect(page).to have_link("Flag as inappropiate", exact: true)
+      page.find("#unflag-expand-debate-#{debate.id}").click
+      page.find("#unflag-debate-#{debate.id}").click
+
+      expect(page).to have_css("#flag-expand-debate-#{debate.id}")
     end
 
     expect(InappropiateFlag.flagged?(user, debate)).to_not be

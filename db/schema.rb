@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150824144524) do
+ActiveRecord::Schema.define(version: 20150826112411) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -51,11 +51,17 @@ ActiveRecord::Schema.define(version: 20150824144524) do
     t.datetime "hidden_at"
     t.datetime "flagged_as_inappropiate_at"
     t.integer  "inappropiate_flags_count",   default: 0
-    t.datetime "reviewed_at"
+    t.datetime "archived_at"
     t.integer  "moderator_id"
     t.integer  "administrator_id"
+    t.integer  "cached_votes_total",         default: 0
+    t.integer  "cached_votes_up",            default: 0
+    t.integer  "cached_votes_down",          default: 0
   end
 
+  add_index "comments", ["cached_votes_down"], name: "index_comments_on_cached_votes_down", using: :btree
+  add_index "comments", ["cached_votes_total"], name: "index_comments_on_cached_votes_total", using: :btree
+  add_index "comments", ["cached_votes_up"], name: "index_comments_on_cached_votes_up", using: :btree
   add_index "comments", ["commentable_id", "commentable_type"], name: "index_comments_on_commentable_id_and_commentable_type", using: :btree
   add_index "comments", ["hidden_at"], name: "index_comments_on_hidden_at", using: :btree
   add_index "comments", ["user_id"], name: "index_comments_on_user_id", using: :btree
@@ -70,9 +76,15 @@ ActiveRecord::Schema.define(version: 20150824144524) do
     t.datetime "hidden_at"
     t.datetime "flagged_as_inappropiate_at"
     t.integer  "inappropiate_flags_count",              default: 0
-    t.datetime "reviewed_at"
+    t.integer  "cached_votes_total",                    default: 0
+    t.integer  "cached_votes_up",                       default: 0
+    t.integer  "cached_votes_down",                     default: 0
+    t.datetime "archived_at"
   end
 
+  add_index "debates", ["cached_votes_down"], name: "index_debates_on_cached_votes_down", using: :btree
+  add_index "debates", ["cached_votes_total"], name: "index_debates_on_cached_votes_total", using: :btree
+  add_index "debates", ["cached_votes_up"], name: "index_debates_on_cached_votes_up", using: :btree
   add_index "debates", ["hidden_at"], name: "index_debates_on_hidden_at", using: :btree
 
   create_table "identities", force: :cascade do |t|

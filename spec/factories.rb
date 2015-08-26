@@ -22,8 +22,8 @@ FactoryGirl.define do
       hidden_at Time.now
     end
 
-    trait :reviewed do
-      reviewed_at Time.now
+    trait :archived do
+      archived_at Time.now
     end
 
     trait :flagged_as_inappropiate do
@@ -37,6 +37,9 @@ FactoryGirl.define do
     association :votable, factory: :debate
     association :voter,   factory: :user
     vote_flag true
+    after(:create) do |vote, _|
+      vote.votable.update_cached_votes
+    end
   end
 
   factory :comment do
@@ -48,8 +51,8 @@ FactoryGirl.define do
       hidden_at Time.now
     end
 
-    trait :reviewed do
-      reviewed_at Time.now
+    trait :archived do
+      archived_at Time.now
     end
 
     trait :flagged_as_inappropiate do

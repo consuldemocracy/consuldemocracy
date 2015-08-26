@@ -61,7 +61,6 @@ en:
         zero: No votes
         one: 1 vote
         other: "%{count} votes"
-      votes_weighted_score: "Total: %{score}"
     form:
       debate_title: Debate title
       title_instructions: "SBe clear and precise with the title, but make it informative"
@@ -134,8 +133,8 @@ en:
   shared:
     tags_cloud:
       tags: Topics
-    flag_as_inappropiate: Flag as inappropiate
-    undo_flag_as_inappropiate: Undo flag as inappropiate
+    flag_as_inappropiate: Flag as inappropriate
+    undo_flag_as_inappropiate: Undo flag
     collective: Collective
   mailer:
     comment:

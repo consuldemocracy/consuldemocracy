@@ -1,45 +1,52 @@
-<h2><%= t('moderation.comments.index.title') %></h2>
+<h2><%= t("moderation.comments.index.title") %></h2>
 
-<p>
-  <%= t('moderation.comments.index.filter') %>:
+<dl class="sub-nav">
+  <dt><%= t("moderation.comments.index.filter") %>:</dt>
+
   <% @valid_filters.each do |filter| %>
     <% if @filter == filter %>
-      <%= t("moderation.comments.index.filters.#{filter}") %>
+      <dd class="active"><%= t("moderation.comments.index.filters.#{filter}") %></dd>
     <% else %>
-      <%= link_to t("moderation.comments.index.filters.#{filter}"),
-        moderation_comments_path(filter: filter) %>
+      <dd><%= link_to t("moderation.comments.index.filters.#{filter}"),
+        moderation_comments_path(filter: filter) %></dd>
     <% end %>
   <% end %>
-</p>
+</dl>
 
 <h3><%= page_entries_info @comments %></h3>
 
 <table>
   <tr>
-    <th><%= t('moderation.comments.index.headers.flags') %></th>
-    <th><%= t('moderation.comments.index.headers.updated_at') %></th>
-    <th><%= t('moderation.comments.index.headers.commentable_type') %></th>
-    <th><%= t('moderation.comments.index.headers.commentable') %></th>
-    <th><%= t('moderation.comments.index.headers.comment') %></th>
+    <th>
+      <%= t("moderation.comments.index.headers.commentable") %>&nbsp;|&nbsp;
+      <%= t("moderation.comments.index.headers.commentable_type") %>&nbsp;|&nbsp;
+      <%= t("moderation.comments.index.headers.updated_at") %>
+    </th>
+    <th><%= t("moderation.comments.index.headers.comment") %></th>
+    <th class="text-center"><%= t("moderation.comments.index.headers.flags") %></th>
+    <th class="text-center" colspan="2"><%= t("moderation.debates.index.headers.actions") %></th>
   </tr>
   <% @comments.each do |comment| %>
     <tr id="comment_<%= comment.id %>">
-      <td><%= comment.inappropiate_flags_count %></td>
-      <td><%= l comment.updated_at.to_date %></td>
-      <td><%= comment.commentable_type.constantize.model_name.human %></td>
-      <td><%= link_to comment.commentable.title, comment.commentable %></td>
-      <td><%= comment.body %></td>
       <td>
-        <%= link_to t('moderation.comments.index.hide'), hide_in_moderation_screen_moderation_comment_path(comment, request.query_parameters), method: :put %>
+        <%= link_to comment.commentable.title, comment.commentable %>
+        <br>
+        <%= comment.commentable_type.constantize.model_name.human %>
+        <span class="date"><%= l comment.updated_at.to_date %></span>
       </td>
-      <% if can? :mark_as_reviewed, comment %>
+      <td><%= comment.body %></td>
+      <td class="text-center"><%= comment.inappropiate_flags_count %></td>
+      <td>
+        <%= link_to t("moderation.comments.index.hide"), hide_in_moderation_screen_moderation_comment_path(comment, request.query_parameters), method: :put, class: "delete" %>
+      </td>
+      <% if can? :archive, comment %>
         <td>
-          <%= link_to t('moderation.comments.index.mark_as_reviewed'), mark_as_reviewed_moderation_comment_path(comment, request.query_parameters), method: :put %>
+          <%= link_to t("moderation.comments.index.archive"), archive_moderation_comment_path(comment, request.query_parameters), method: :put, class: "button radius tiny warning" %>
         </td>
       <% end %>
-      <% if comment.reviewed? %>
-        <td>
-          <%= t('moderation.comments.index.reviewed') %>
+      <% if comment.archived? %>
+        <td class="archived">
+          <%= t("moderation.comments.index.archived") %>
         </td>
       <% end %>
     </tr>
@@ -47,4 +54,3 @@
 </table>
 
 <%= paginate @comments %>
-
