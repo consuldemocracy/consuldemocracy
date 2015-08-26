@@ -6,13 +6,14 @@ en:
       submit: "Resend confirmation instructions"
     mailer:
       confirmation_instructions:
+        title: "Welcome to open government"
         welcome: "Welcome"
         text: "You can confirm your account email through the link below:"
         confirm_link: "Confirm my account"
       reset_password_instructions:
         hello: "Hello"
         title: Change your password
-        text: "Someone has requested a link to change your password. You can do this through the link below."
+        text: "Someone has requested to change your password. You can do this through the link below:"
         change_link: "Change my password"
         ignore_text: "If you didn't request this, please ignore this email."
         info_text: "Your password won't change until you access the link above and create a new one."

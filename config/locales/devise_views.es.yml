@@ -6,15 +6,16 @@ es:
       submit: "Reenviar instrucciones de confirmación"
     mailer:
       confirmation_instructions:
-        welcome: "Bienvenido"
+        title: "Bienvenido/a a gobierno abierto"
+        welcome: "Bienvenido/a"
         text: "Puedes confirmar tu cuenta de correo electrónico en el siguiente enlace:"
         confirm_link: "Confirmar mi cuenta"
       reset_password_instructions:
         hello: "Hola"
         title: "Cambiar tu contraseña"
-        text: "Se ha solicitado un enlace para cambiar tu contraseña, puedes hacerlo en el siguiente enlace:"
-        change_link: "cambiar mi contraseña"
-        ignore_text: "Si tu no lo has solicitado, puedes ignorar este email"
+        text: "Se ha solicitado cambiar tu contraseña, puedes hacerlo en el siguiente enlace:"
+        change_link: "Cambiar mi contraseña"
+        ignore_text: "Si tu no lo has solicitado, puedes ignorar este email."
         info_text: "Tu contraseña no cambiará hasta que no accedas al enlace y la modifiques."
       unlock_instructions:
         hello: "Hola"
