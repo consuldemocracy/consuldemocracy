@@ -92,7 +92,7 @@ feature 'Moderate debates' do
 
       visit moderation_debates_path(filter: 'pending_review', page: 2)
 
-      click_link('Archive', match: :first)
+      click_link('Archive', match: :first, exact: true)
 
       uri = URI.parse(current_url)
       query_params = Rack::Utils.parse_nested_query(uri.query).symbolize_keys
