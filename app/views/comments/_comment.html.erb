@@ -95,7 +95,7 @@
     <% end %>
 
       <div class="comment-children">
-        <%= render comment.children.with_hidden.reorder('id DESC, lft') %>
+        <%= render comment.children.for_render.reorder('id DESC, lft') %>
       </div>
   </div>
 </div>

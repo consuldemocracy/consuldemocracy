@@ -14,13 +14,14 @@ class Comment < ActiveRecord::Base
 
   has_many :inappropiate_flags, :as => :flaggable
 
-  default_scope { includes(:user) }
   scope :recent, -> { order(id: :desc) }
 
   scope :sorted_for_moderation, -> { order(inappropiate_flags_count: :desc, updated_at: :desc) }
   scope :pending, -> { where(archived_at: nil, hidden_at: nil) }
   scope :archived, -> { where("archived_at IS NOT NULL AND hidden_at IS NULL") }
   scope :flagged_as_inappropiate, -> { where("inappropiate_flags_count > 0") }
+
+  scope :for_render, -> { with_hidden.includes(user: :organization) }
 
   def self.build(commentable, user, body)
     new commentable: commentable,

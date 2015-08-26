@@ -27,6 +27,15 @@ RSpec.configure do |config|
     DatabaseCleaner.clean
   end
 
+  config.before(:each, type: :feature) do
+    Bullet.start_request
+  end
+
+  config.after(:each, type: :feature) do
+    Bullet.perform_out_of_channel_notifications if Bullet.notification?
+    Bullet.end_request
+  end
+
   # Allows RSpec to persist some state between runs in order to support
   # the `--only-failures` and `--next-failure` CLI options.
   config.example_status_persistence_file_path = "spec/examples.txt"
@@ -57,4 +66,6 @@ RSpec.configure do |config|
   # test failures related to randomization by passing the same `--seed` value
   # as the one that triggered the failure.
   Kernel.srand config.seed
+
+
 end

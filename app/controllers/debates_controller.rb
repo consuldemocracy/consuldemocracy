@@ -5,13 +5,13 @@ class DebatesController < ApplicationController
   respond_to :html, :js
 
   def index
-    @debates = Debate.includes(:tags).includes(:inappropiate_flags).search(params).page(params[:page])
+    @debates = Debate.search(params).page(params[:page]).for_render
     set_debate_votes(@debates)
   end
 
   def show
     set_debate_votes(@debate)
-    @comments = @debate.root_comments.with_hidden.includes(:inappropiate_flags).recent.page(params[:page])
+    @comments = @debate.root_comments.recent.page(params[:page]).for_render
   end
 
   def new
