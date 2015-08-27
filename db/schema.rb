@@ -56,7 +56,7 @@ ActiveRecord::Schema.define(version: 20150827083232) do
     t.integer  "cached_votes_total", default: 0
     t.integer  "cached_votes_up",    default: 0
     t.integer  "cached_votes_down",  default: 0
-    t.datetime "hide_reviewed_at"
+    t.datetime "confirmed_hide_at"
   end
 
   add_index "comments", ["cached_votes_down"], name: "index_comments_on_cached_votes_down", using: :btree
@@ -80,7 +80,7 @@ ActiveRecord::Schema.define(version: 20150827083232) do
     t.integer  "cached_votes_down",             default: 0
     t.datetime "ignored_flag_at"
     t.integer  "comments_count",                default: 0
-    t.datetime "hide_reviewed_at"
+    t.datetime "confirmed_hide_at"
   end
 
   add_index "debates", ["cached_votes_down"], name: "index_debates_on_cached_votes_down", using: :btree
