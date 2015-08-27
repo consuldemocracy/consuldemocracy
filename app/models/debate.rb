@@ -12,7 +12,7 @@ class Debate < ActiveRecord::Base
   acts_as_paranoid column: :hidden_at
 
   belongs_to :author, -> { with_hidden }, class_name: 'User', foreign_key: 'author_id'
-  has_many :inappropiate_flags, :as => :flaggable
+  has_many :flags, :as => :flaggable
 
   validates :title, presence: true
   validates :description, presence: true
@@ -23,10 +23,10 @@ class Debate < ActiveRecord::Base
   before_validation :sanitize_description
   before_validation :sanitize_tag_list
 
-  scope :sorted_for_moderation, -> { order(inappropiate_flags_count: :desc, updated_at: :desc) }
+  scope :sorted_for_moderation, -> { order(flags_count: :desc, updated_at: :desc) }
   scope :pending, -> { where(archived_at: nil, hidden_at: nil) }
   scope :archived, -> { where("archived_at IS NOT NULL AND hidden_at IS NULL") }
-  scope :flagged_as_inappropiate, -> { where("inappropiate_flags_count > 0") }
+  scope :flagged, -> { where("flags_count > 0") }
   scope :for_render, -> { includes(:tags) }
 
   # Ahoy setup

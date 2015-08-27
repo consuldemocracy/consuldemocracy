@@ -35,7 +35,7 @@
         <span class="date"><%= l comment.updated_at.to_date %></span>
       </td>
       <td><%= comment.body %></td>
-      <td class="text-center"><%= comment.inappropiate_flags_count %></td>
+      <td class="text-center"><%= comment.flags_count %></td>
       <td>
         <%= link_to t("moderation.comments.index.hide"), hide_in_moderation_screen_moderation_comment_path(comment, request.query_parameters), method: :put, class: "delete" %>
       </td>

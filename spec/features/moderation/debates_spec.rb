@@ -66,9 +66,9 @@ feature 'Moderate debates' do
     end
 
     scenario "Filtering debates" do
-      create(:debate, :flagged_as_inappropiate, title: "Pending debate")
-      create(:debate, :flagged_as_inappropiate, :hidden, title: "Hidden debate")
-      create(:debate, :flagged_as_inappropiate, :archived, title: "Archived debate")
+      create(:debate, :flagged, title: "Pending debate")
+      create(:debate, :flagged, :hidden, title: "Hidden debate")
+      create(:debate, :flagged, :archived, title: "Archived debate")
 
       visit moderation_debates_path(filter: 'all')
       expect(page).to have_content('Pending debate')
@@ -88,7 +88,7 @@ feature 'Moderate debates' do
 
     scenario "Reviewing links remember the pagination setting and the filter" do
       per_page = Kaminari.config.default_per_page
-      (per_page + 2).times { create(:debate, :flagged_as_inappropiate) }
+      (per_page + 2).times { create(:debate, :flagged) }
 
       visit moderation_debates_path(filter: 'pending', page: 2)
 
@@ -104,7 +104,7 @@ feature 'Moderate debates' do
     feature 'A flagged debate exists' do
 
       background do
-        @debate = create(:debate, :flagged_as_inappropiate, title: 'spammy spam', description: 'buy buy buy')
+        @debate = create(:debate, :flagged, title: 'spammy spam', description: 'buy buy buy')
         visit moderation_debates_path
       end
 

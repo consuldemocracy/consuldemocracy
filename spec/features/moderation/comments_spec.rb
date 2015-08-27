@@ -123,9 +123,9 @@ feature 'Moderate Comments' do
     end
 
     scenario "Filtering comments" do
-      create(:comment, :flagged_as_inappropiate, body: "Pending comment")
-      create(:comment, :flagged_as_inappropiate, :hidden, body: "Hidden comment")
-      create(:comment, :flagged_as_inappropiate, :archived, body: "Archived comment")
+      create(:comment, :flagged, body: "Pending comment")
+      create(:comment, :flagged, :hidden, body: "Hidden comment")
+      create(:comment, :flagged, :archived, body: "Archived comment")
 
       visit moderation_comments_path(filter: 'all')
       expect(page).to have_content('Pending comment')
@@ -145,7 +145,7 @@ feature 'Moderate Comments' do
 
     scenario "Reviewing links remember the pagination setting and the filter" do
       per_page = Kaminari.config.default_per_page
-      (per_page + 2).times { create(:comment, :flagged_as_inappropiate) }
+      (per_page + 2).times { create(:comment, :flagged) }
 
       visit moderation_comments_path(filter: 'pending', page: 2)
 
@@ -162,7 +162,7 @@ feature 'Moderate Comments' do
 
       background do
         debate = create(:debate, title: 'Democracy')
-        @comment = create(:comment, :flagged_as_inappropiate, commentable: debate, body: 'spammy spam')
+        @comment = create(:comment, :flagged, commentable: debate, body: 'spammy spam')
         visit moderation_comments_path
       end
 

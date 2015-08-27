@@ -31,38 +31,38 @@ describe Ability do
     it { should_not be_able_to(:comment_as_administrator, debate) }
     it { should_not be_able_to(:comment_as_moderator, debate) }
 
-    describe 'flagging content as inappropiate' do
-      it { should be_able_to(:flag_as_inappropiate, debate) }
-      it { should_not be_able_to(:undo_flag_as_inappropiate, debate) }
-      it { should be_able_to(:flag_as_inappropiate, comment) }
-      it { should_not be_able_to(:undo_flag_as_inappropiate, comment) }
+    describe 'flagging content' do
+      it { should be_able_to(:flag, debate) }
+      it { should_not be_able_to(:unflag, debate) }
+      it { should be_able_to(:flag, comment) }
+      it { should_not be_able_to(:unflag, comment) }
 
       describe "own comments" do
         let(:own_comment) { create(:comment, author: user) }
 
-        it { should_not be_able_to(:flag_as_inappropiate, own_comment) }
-        it { should_not be_able_to(:undo_flag_as_inappropiate, own_comment) }
+        it { should_not be_able_to(:flag, own_comment) }
+        it { should_not be_able_to(:unflag, own_comment) }
       end
 
       describe "own debates" do
         let(:own_debate) { create(:debate, author: user) }
 
-        it { should_not be_able_to(:flag_as_inappropiate, own_debate) }
-        it { should_not be_able_to(:undo_flag_as_inappropiate, own_debate) }
+        it { should_not be_able_to(:flag, own_debate) }
+        it { should_not be_able_to(:unflag, own_debate) }
       end
 
       describe "already-flagged comments" do
-        before(:each) { InappropiateFlag.flag!(user, comment) }
+        before(:each) { Flag.flag!(user, comment) }
 
-        it { should_not be_able_to(:flag_as_inappropiate, comment) }
-        it { should be_able_to(:undo_flag_as_inappropiate, comment) }
+        it { should_not be_able_to(:flag, comment) }
+        it { should be_able_to(:unflag, comment) }
       end
 
       describe "already-flagged debates" do
-        before(:each) { InappropiateFlag.flag!(user, debate) }
+        before(:each) { Flag.flag!(user, debate) }
 
-        it { should_not be_able_to(:flag_as_inappropiate, debate) }
-        it { should be_able_to(:undo_flag_as_inappropiate, debate) }
+        it { should_not be_able_to(:flag, debate) }
+        it { should be_able_to(:unflag, debate) }
       end
     end
 

@@ -27,7 +27,7 @@ class Moderation::CommentsController < Moderation::BaseController
   private
 
     def load_comments
-      @comments = Comment.accessible_by(current_ability, :hide).flagged_as_inappropiate.sorted_for_moderation.includes(:commentable)
+      @comments = Comment.accessible_by(current_ability, :hide).flagged.sorted_for_moderation.includes(:commentable)
     end
 
     def set_valid_filters

@@ -133,8 +133,8 @@ es:
   shared:
     tags_cloud:
         tags: Temas
-    flag_as_inappropiate: Denunciar como inapropiado
-    undo_flag_as_inappropiate: Deshacer denuncia
+    flag: Denunciar como inapropiado
+    unflag: Deshacer denuncia
     collective: Colectivo
   mailer:
     comment:

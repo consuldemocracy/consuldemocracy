@@ -14,7 +14,7 @@ class User < ActiveRecord::Base
   has_one :administrator
   has_one :moderator
   has_one :organization
-  has_many :inappropiate_flags
+  has_many :flags
   has_many :identities, dependent: :destroy
 
   validates :username, presence: true, unless: :organization?

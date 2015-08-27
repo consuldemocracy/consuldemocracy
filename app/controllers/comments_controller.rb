@@ -22,14 +22,14 @@ class CommentsController < ApplicationController
     respond_with @comment
   end
 
-  def flag_as_inappropiate
-    InappropiateFlag.flag!(current_user, @comment)
-    respond_with @comment, template: 'comments/_refresh_flag_as_inappropiate_actions'
+  def flag
+    Flag.flag!(current_user, @comment)
+    respond_with @comment, template: 'comments/_refresh_flag_actions'
   end
 
-  def undo_flag_as_inappropiate
-    InappropiateFlag.unflag!(current_user, @comment)
-    respond_with @comment, template: 'comments/_refresh_flag_as_inappropiate_actions'
+  def unflag
+    Flag.unflag!(current_user, @comment)
+    respond_with @comment, template: 'comments/_refresh_flag_actions'
   end
 
   private

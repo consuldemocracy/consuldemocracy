@@ -28,15 +28,15 @@ Rails.application.routes.draw do
   resources :debates do
     member do
       post :vote
-      put :flag_as_inappropiate
-      put :undo_flag_as_inappropiate
+      put :flag
+      put :unflag
     end
 
     resources :comments, only: :create, shallow: true do
       member do
         post :vote
-        put :flag_as_inappropiate
-        put :undo_flag_as_inappropiate
+        put :flag
+        put :unflag
       end
     end
   end

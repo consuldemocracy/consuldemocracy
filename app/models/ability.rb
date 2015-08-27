@@ -22,20 +22,20 @@ class Ability
       can :create, Comment
       can :create, Debate
 
-      can :flag_as_inappropiate, Comment do |comment|
-        comment.author_id != user.id && !InappropiateFlag.flagged?(user, comment)
+      can :flag, Comment do |comment|
+        comment.author_id != user.id && !Flag.flagged?(user, comment)
       end
 
-      can :undo_flag_as_inappropiate, Comment do |comment|
-        comment.author_id != user.id && InappropiateFlag.flagged?(user, comment)
+      can :unflag, Comment do |comment|
+        comment.author_id != user.id && Flag.flagged?(user, comment)
       end
 
-      can :flag_as_inappropiate, Debate do |debate|
-        debate.author_id != user.id && !InappropiateFlag.flagged?(user, debate)
+      can :flag, Debate do |debate|
+        debate.author_id != user.id && !Flag.flagged?(user, debate)
       end
 
-      can :undo_flag_as_inappropiate, Debate do |debate|
-        debate.author_id != user.id && InappropiateFlag.flagged?(user, debate)
+      can :unflag, Debate do |debate|
+        debate.author_id != user.id && Flag.flagged?(user, debate)
       end
 
       unless user.organization?

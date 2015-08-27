@@ -12,14 +12,14 @@ class Comment < ActiveRecord::Base
   belongs_to :commentable, polymorphic: true, counter_cache: true
   belongs_to :user, -> { with_hidden }
 
-  has_many :inappropiate_flags, :as => :flaggable
+  has_many :flags, :as => :flaggable
 
   scope :recent, -> { order(id: :desc) }
 
-  scope :sorted_for_moderation, -> { order(inappropiate_flags_count: :desc, updated_at: :desc) }
+  scope :sorted_for_moderation, -> { order(flags_count: :desc, updated_at: :desc) }
   scope :pending, -> { where(archived_at: nil, hidden_at: nil) }
   scope :archived, -> { where("archived_at IS NOT NULL AND hidden_at IS NULL") }
-  scope :flagged_as_inappropiate, -> { where("inappropiate_flags_count > 0") }
+  scope :flagged, -> { where("flags_count > 0") }
 
   scope :for_render, -> { with_hidden.includes(user: :organization) }
 

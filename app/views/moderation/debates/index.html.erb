@@ -34,7 +34,7 @@
         <br>
         <%= debate.description %>
       </td>
-      <td class="text-center"><%= debate.inappropiate_flags_count %></td>
+      <td class="text-center"><%= debate.flags_count %></td>
       <td>
         <%= link_to t("moderation.debates.index.hide"), hide_in_moderation_screen_moderation_debate_path(debate, request.query_parameters), method: :put, class: "delete" %>
       </td>
