@@ -151,11 +151,8 @@ feature 'Moderate Comments' do
 
       click_link('Ignore', match: :first, exact: true)
 
-      uri = URI.parse(current_url)
-      query_params = Rack::Utils.parse_nested_query(uri.query).symbolize_keys
-
-      expect(query_params[:filter]).to eq('pending_flag_review')
-      expect(query_params[:page]).to eq('2')
+      expect(current_url).to include('filter=pending_flag_review')
+      expect(current_url).to include('page=2')
     end
 
     feature 'A flagged comment exists' do
