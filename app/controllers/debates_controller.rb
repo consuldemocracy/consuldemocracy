@@ -6,7 +6,7 @@ class DebatesController < ApplicationController
   respond_to :html, :js
 
   def index
-    @debates = Debate.search(params).page(params[:page]).for_render.sort_by(@order)
+    @debates = Debate.search(params).page(params[:page]).for_render.send("sort_by_#{@order}")
     set_debate_votes(@debates)
   end
 
