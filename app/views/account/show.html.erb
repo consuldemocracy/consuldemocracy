@@ -2,6 +2,16 @@
   <div class="small-12 column">
     <%= link_to t("account.show.change_credentials_link"), edit_user_registration_path, class: 'button radius small secondary right' %>
 
+    <span class="right" style="padding-right: 30px">
+      <% if current_user.level_three_verified? %>
+        <%= t("account.show.level_three_user") %>
+      <% elsif current_user.level_two_verified? %>
+        <%= t("account.show.level_two_user") %>
+      <% else %>
+        <%= link_to "Verify my account", new_residence_path, class: 'button radius small secondary right' %>
+      <% end %>
+    </span>
+
     <h1 class="inline-block"><%= t("account.show.title") %></h1>
 
     <%= form_for @account, as: :account, url: account_path do |f| %>
