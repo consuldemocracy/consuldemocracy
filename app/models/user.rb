@@ -11,6 +11,7 @@ class User < ActiveRecord::Base
   acts_as_voter
   acts_as_paranoid column: :hidden_at
 
+  has_one :address
   has_one :administrator
   has_one :moderator
   has_one :organization
