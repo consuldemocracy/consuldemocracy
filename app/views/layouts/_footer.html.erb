@@ -1,36 +1,35 @@
 <footer>
 	<div class="row-full">
 		<div class="row">
-      <div class="small-12 column">
-        <div class="right">
-          <%= link_to "Enlace 1", "#", class: "link" %> | <%= link_to "Enlace 2", "#", class: "link" %>
+
+      <div class="small-12 medium-4 column">
+        <div class="logo">
+          <%= link_to t("layouts.header.open_gov", open: "<strong>#{t('layouts.header.open')}</strong>").html_safe %>
         </div>
 
-        <div class="logo left">
-          <%= link_to root_path do %>
-            <%= image_tag('logo_madrid_white.png', class: 'left', size: '96x96') %>
-            <%= t("layouts.header.open_gov", open: "<strong>#{t('layouts.header.open')}</strong>").html_safe %>
-          <% end %>
+        <p class="footer-description">
+          <%= t("layouts.footer.description",
+            open_source: link_to(t('layouts.footer.open_source'), t('layouts.footer.open_source_url'), target: 'blank'),
+            github_url:  link_to(t('layouts.footer.github_url'), t('layouts.footer.github_url'), target: 'blank')).html_safe
+          %>
+        </p>
+      </div>
+
+      <div class="small-12 medium-8 column">
+        <div class="small-12 medium-4 column">
+          <h4><%= t("layouts.footer.participation_title") %></h4>
+          <p><%= t("layouts.footer.participation_text") %></p>
         </div>
-      </div>
 
-      <div class="small-12 medium-3 column clear">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-      </div>
+        <div class="small-12 medium-4 column">
+          <h4><%= t("layouts.footer.transparency_title") %></h4>
+          <p><%= t("layouts.footer.transparency_text") %></p>
+        </div>
 
-      <div class="small-12 medium-3 column">
-        <h4>Lorem ipsum dolor</h4>
-        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-      </div>
-
-      <div class="small-12 medium-3 column">
-        <h4>Ut enim ad minim</h4>
-        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-      </div>
-
-      <div class="small-12 medium-3 column">
-        <h4>Duis aute irure</h4>
-        <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <div class="small-12 medium-4 column">
+          <h4><%= t("layouts.footer.open_data_title") %></h4>
+          <p><%= t("layouts.footer.open_data_text") %></p>
+        </div>
       </div>
     </div>
 
