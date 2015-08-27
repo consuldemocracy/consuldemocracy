@@ -6,7 +6,7 @@ module DebatesHelper
   private
 
     def available_order_filters_array(orders)
-      orders.map { |f| [t("debates.index.order_#{f}"), f] }
+      orders.map { |f| [t("debates.index.orders.#{f}"), f] }
     end
 
 end
