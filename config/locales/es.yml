@@ -33,9 +33,9 @@ es:
     index:
       create_debate: Crea un debate
       showing: "Estás viendo los debates"
-      filter_news: "más nuevos"
-      filter_votes: "más votados"
-      filter_rated: mejor valorados
+      order_created_at: "más nuevos"
+      order_total_votes: "más votados"
+      order_likes: mejor valorados
       filter_topic: "Estás viendo %{number} debates con el tema '%{topic}'"
     debate:
       debate: Debate

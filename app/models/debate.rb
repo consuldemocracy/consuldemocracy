@@ -28,6 +28,10 @@ class Debate < ActiveRecord::Base
   scope :archived, -> { where("archived_at IS NOT NULL AND hidden_at IS NULL") }
   scope :flagged_as_inappropiate, -> { where("inappropiate_flags_count > 0") }
   scope :for_render, -> { includes(:tags) }
+  scope :sort_by_total_votes, -> { reorder(cached_votes_total: :desc) }
+  scope :sort_by_likes , -> { reorder(cached_votes_up: :desc) }
+  scope :sort_by_created_at, -> { reorder(created_at: :desc) }
+      
 
   # Ahoy setup
   visitable # Ahoy will automatically assign visit_id on create
