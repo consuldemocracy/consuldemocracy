@@ -50,7 +50,7 @@ ActiveRecord::Schema.define(version: 20150827083232) do
     t.integer  "children_count",     default: 0
     t.datetime "hidden_at"
     t.integer  "flags_count",        default: 0
-    t.datetime "flag_ignored_at"
+    t.datetime "ignored_flag_at"
     t.integer  "moderator_id"
     t.integer  "administrator_id"
     t.integer  "cached_votes_total", default: 0
@@ -78,7 +78,7 @@ ActiveRecord::Schema.define(version: 20150827083232) do
     t.integer  "cached_votes_total",            default: 0
     t.integer  "cached_votes_up",               default: 0
     t.integer  "cached_votes_down",             default: 0
-    t.datetime "flag_ignored_at"
+    t.datetime "ignored_flag_at"
     t.integer  "comments_count",                default: 0
     t.datetime "hide_reviewed_at"
   end
