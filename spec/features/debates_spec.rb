@@ -366,44 +366,44 @@ feature 'Debates' do
       end
     end
 
-    scenario 'Default filter is newest' do
+    scenario 'Default order is newest' do
       visit debates_path
 
-      expect(page).to have_select('filter', selected: 'the newest')
+      expect(page).to have_select('order', selected: 'the newest')
       expect_debate_order([2, 1, 0])
     end
 
     scenario 'Debates are ordered by most voted' do 
       visit debates_path
 
-      select 'the most voted', from: 'filter' 
-      expect(page).to have_select('filter', selected: 'the most voted')
+      select 'the most voted', from: 'order' 
+      expect(page).to have_select('order', selected: 'the most voted')
 
       expect(find("#debates .debate", match: :first)).to have_content(@debates[0].title) # Necessary to force capybara to wait for redirect
-      expect(current_url).to include('filter=votes') 
+      expect(current_url).to include('order=votes') 
       expect_debate_order([0, 1, 2])
     end
 
     scenario 'Debates are ordered by best rated' do
       visit debates_path
 
-      select 'the best rated', from: 'filter' 
+      select 'the best rated', from: 'order' 
       expect(find("#debates .debate", match: :first)).to have_content(@debates[1].title) 
 
-      expect(current_url).to include('filter=rated') 
+      expect(current_url).to include('order=rated') 
       expect_debate_order([1, 0, 2])
     end
 
     scenario 'Debates are ordered by newest' do
       visit debates_path
 
-      select 'the most voted', from: 'filter' 
+      select 'the most voted', from: 'order' 
       expect(find("#debates .debate", match: :first)).to have_content(@debates[0].title)
 
-      select 'the newest', from: 'filter' 
+      select 'the newest', from: 'order' 
       expect(find("#debates .debate", match: :first)).to have_content(@debates[2].title)
 
-      expect(current_url).to include('filter=news') 
+      expect(current_url).to include('order=news') 
       expect_debate_order([2, 1, 0])
     end
   end

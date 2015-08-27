@@ -1,0 +1,7 @@
+<% options = @valid_orders.map { |f| [t("debates.index.order_#{f}"), f] } %>
+
+<%= form_tag('/debates', method: 'get', class: 'inline-block') do %>
+
+  <%= select_tag 'order', options_for_select(options, @order), onchange: "this.form.submit()" %>
+
+<% end %>

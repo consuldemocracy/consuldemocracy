@@ -1,12 +1,12 @@
 class DebatesController < ApplicationController
-  before_action :parse_filter, only: :index
+  before_action :parse_order, only: :index
   before_action :authenticate_user!, except: [:index, :show]
 
   load_and_authorize_resource
   respond_to :html, :js
 
   def index
-    @debates = Debate.search(params).page(params[:page]).for_render.sort_by(@filter)
+    @debates = Debate.search(params).page(params[:page]).for_render.sort_by(@order)
     set_debate_votes(@debates)
   end
 
@@ -72,9 +72,9 @@ class DebatesController < ApplicationController
       @featured_tags = ActsAsTaggableOn::Tag.where(featured: true)
     end
 
-    def parse_filter
-      @valid_filters = ['votes', 'news', 'rated']
-      @filter = @valid_filters.include?(params[:filter]) ? params[:filter] : 'news'
+    def parse_order
+      @valid_orders = ['votes', 'news', 'rated']
+      @order = @valid_orders.include?(params[:order]) ? params[:order] : 'news'
     end
 
 end

@@ -40,8 +40,8 @@ class Debate < ActiveRecord::Base
     end
   end
 
-  def self.sort_by(filter)
-    case filter
+  def self.sort_by(order)
+    case order
     when 'votes'
       reorder(cached_votes_total: :desc)
     when 'news'

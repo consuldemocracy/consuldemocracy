@@ -1,7 +1,0 @@
-<% options = @valid_filters.map { |f| [t("debates.index.filter_#{f}"), f] } %>
-
-<%= form_tag('/debates', method: 'get', class: 'inline-block') do %>
-
-  <%= select_tag 'filter', options_for_select(options, @filter), onchange: "this.form.submit()" %>
-
-<% end %>
