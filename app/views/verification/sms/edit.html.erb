@@ -1,0 +1,16 @@
+<div class="row account">
+  <div class="small-12 column">
+
+    <h1 class="inline-block"><%= t('verification.sms.edit.title') %></h1>
+
+    <%= form_for @sms, url: sms_path, method: :put do |f| %>
+      <p><%= @error %></p>
+      <%= f.text_field :confirmation_code %>
+
+      <%= f.submit t('verification.sms.edit.submit_button') %>
+    <% end %>
+
+    <%= t('verification.sms.edit.resend_sms_text') %>
+    <%= link_to t('verification.sms.edit.resend_sms_link'), verified_user_path %>
+  </div>
+</div>
