@@ -1,4 +1,5 @@
 require 'rails_helper'
+require 'support/matchers/appear_before'
 
 feature 'Admin' do
   let(:user) { create(:user) }

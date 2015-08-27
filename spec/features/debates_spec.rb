@@ -362,19 +362,13 @@ feature 'Debates' do
       create(:vote, votable: @most_voted_debate)
     end
 
-    def expect_debate_order(order)
-      debates = [@most_voted_debate, @most_liked_debate, @most_recent_debate]
-      debate_divs = page.all("#debates .debate")
-      (0..2).each do |n|
-        expect(debate_divs[n]).to have_content(debates[order[n]].title)
-      end
-    end
-
     scenario 'Default order is created_at' do
       visit debates_path
 
       expect(page).to have_select('order', selected: 'the newest')
-      expect_debate_order([2, 1, 0])
+      #expect_debate_order([2, 1, 0])
+      expect(@most_recent_debate.title).to appear_before(@most_liked_debate.title)
+      expect(@most_liked_debate.title).to appear_before(@most_voted_debate.title)
     end
 
     scenario 'Debates are ordered by most voted' do 
@@ -385,7 +379,8 @@ feature 'Debates' do
 
       expect(find("#debates .debate", match: :first)).to have_content(@most_voted_debate.title) # Necessary to force capybara to wait for redirect
       expect(current_url).to include('order=total_votes') 
-      expect_debate_order([0, 1, 2])
+      expect(@most_voted_debate.title).to appear_before(@most_liked_debate.title)
+      expect(@most_liked_debate.title).to appear_before(@most_recent_debate.title)
     end
 
     scenario 'Debates are ordered by best rated' do
@@ -395,7 +390,8 @@ feature 'Debates' do
       expect(find("#debates .debate", match: :first)).to have_content(@most_liked_debate.title) 
 
       expect(current_url).to include('order=likes') 
-      expect_debate_order([1, 0, 2])
+      expect(@most_liked_debate.title).to appear_before(@most_voted_debate.title)
+      expect(@most_voted_debate.title).to appear_before(@most_recent_debate.title)
     end
 
     scenario 'Debates are ordered by newest' do
@@ -408,7 +404,8 @@ feature 'Debates' do
       expect(find("#debates .debate", match: :first)).to have_content(@most_recent_debate.title)
 
       expect(current_url).to include('order=created_at') 
-      expect_debate_order([2, 1, 0])
+      expect(@most_recent_debate.title).to appear_before(@most_liked_debate.title)
+      expect(@most_liked_debate.title).to appear_before(@most_voted_debate.title)
     end
   end
 end
