@@ -353,16 +353,20 @@ feature 'Debates' do
   feature 'Debate index order filters', :js do
 
     before do 
-      @debates = [create(:debate), create(:debate), create(:debate)]
-      create_list(:vote, 2, votable: @debates[1])
-      create_list(:vote, 2, votable: @debates[0], vote_flag: false)
-      create(:vote, votable: @debates[0])
+      # TODO consider using debate title literally
+      @most_voted_debate  = create(:debate)
+      @most_liked_debate  = create(:debate)
+      @most_recent_debate = create(:debate)
+      create_list(:vote, 2, votable: @most_liked_debate)
+      create_list(:vote, 2, votable: @most_voted_debate, vote_flag: false)
+      create(:vote, votable: @most_voted_debate)
     end
 
     def expect_debate_order(order)
+      debates = [@most_voted_debate, @most_liked_debate, @most_recent_debate]
       debate_divs = page.all("#debates .debate")
       (0..2).each do |n|
-        expect(debate_divs[n]).to have_content(@debates[order[n]].title)
+        expect(debate_divs[n]).to have_content(debates[order[n]].title)
       end
     end
 
@@ -379,7 +383,7 @@ feature 'Debates' do
       select 'the most voted', from: 'order' 
       expect(page).to have_select('order', selected: 'the most voted')
 
-      expect(find("#debates .debate", match: :first)).to have_content(@debates[0].title) # Necessary to force capybara to wait for redirect
+      expect(find("#debates .debate", match: :first)).to have_content(@most_voted_debate.title) # Necessary to force capybara to wait for redirect
       expect(current_url).to include('order=total_votes') 
       expect_debate_order([0, 1, 2])
     end
@@ -388,7 +392,7 @@ feature 'Debates' do
       visit debates_path
 
       select 'the best rated', from: 'order' 
-      expect(find("#debates .debate", match: :first)).to have_content(@debates[1].title) 
+      expect(find("#debates .debate", match: :first)).to have_content(@most_liked_debate.title) 
 
       expect(current_url).to include('order=likes') 
       expect_debate_order([1, 0, 2])
@@ -398,10 +402,10 @@ feature 'Debates' do
       visit debates_path
 
       select 'the most voted', from: 'order' 
-      expect(find("#debates .debate", match: :first)).to have_content(@debates[0].title)
+      expect(find("#debates .debate", match: :first)).to have_content(@most_voted_debate.title)
 
       select 'the newest', from: 'order' 
-      expect(find("#debates .debate", match: :first)).to have_content(@debates[2].title)
+      expect(find("#debates .debate", match: :first)).to have_content(@most_recent_debate.title)
 
       expect(current_url).to include('order=created_at') 
       expect_debate_order([2, 1, 0])
