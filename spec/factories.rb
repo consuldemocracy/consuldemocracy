@@ -4,6 +4,10 @@ FactoryGirl.define do
     sequence(:email) { |n| "manuela#{n}@madrid.es" }
     password         'judgmentday'
     confirmed_at     { Time.now }
+
+    trait :hidden do
+      hidden_at Time.now
+    end
   end
 
   factory :identity do

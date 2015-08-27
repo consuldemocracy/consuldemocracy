@@ -72,8 +72,23 @@ class Ability
 
       if user.administrator?
         can :restore, Comment
+        cannot :restore, Comment, hidden_at: nil
+
         can :restore, Debate
+        cannot :restore, Debate, hidden_at: nil
+
         can :restore, User
+        cannot :restore, User, hidden_at: nil
+
+        can :confirm_hide, Comment
+        cannot :confirm_hide, Comment, hidden_at: nil
+
+        can :confirm_hide, Debate
+        cannot :confirm_hide, Debate, hidden_at: nil
+
+        can :confirm_hide, User
+        cannot :confirm_hide, User, hidden_at: nil
+
         can :comment_as_administrator, [Debate, Comment]
       end
     end
