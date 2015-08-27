@@ -58,7 +58,7 @@ en:
           password_label: "Password"
           password_confirmation_label: "Confirm password"
           submit: "Sign up"
-          organization_signup: "Do you represent an organization / group?"
+          organization_signup: "Do you represent an organization / group? Enter here"
     organizations:
       registrations:
         new:
