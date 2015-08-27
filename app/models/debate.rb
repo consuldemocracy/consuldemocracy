@@ -42,11 +42,11 @@ class Debate < ActiveRecord::Base
 
   def self.sort_by(order)
     case order
-    when 'votes'
+    when 'total_votes'
       reorder(cached_votes_total: :desc)
-    when 'news'
+    when 'created_at'
       reorder(created_at: :desc)
-    when 'rated'
+    when 'likes'
       reorder(cached_votes_up: :desc)
     end
   end
