@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150827081657) do
+ActiveRecord::Schema.define(version: 20150827083232) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,22 +41,21 @@ ActiveRecord::Schema.define(version: 20150827081657) do
     t.string   "title"
     t.text     "body"
     t.string   "subject"
-    t.integer  "user_id",                                null: false
+    t.integer  "user_id",                        null: false
     t.integer  "parent_id"
     t.integer  "lft"
     t.integer  "rgt"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "children_count",             default: 0
+    t.integer  "children_count",     default: 0
     t.datetime "hidden_at"
-    t.datetime "flagged_as_inappropiate_at"
-    t.integer  "flags_count",                default: 0
+    t.integer  "flags_count",        default: 0
     t.datetime "flag_ignored_at"
     t.integer  "moderator_id"
     t.integer  "administrator_id"
-    t.integer  "cached_votes_total",         default: 0
-    t.integer  "cached_votes_up",            default: 0
-    t.integer  "cached_votes_down",          default: 0
+    t.integer  "cached_votes_total", default: 0
+    t.integer  "cached_votes_up",    default: 0
+    t.integer  "cached_votes_down",  default: 0
     t.datetime "hide_reviewed_at"
   end
 
@@ -68,20 +67,19 @@ ActiveRecord::Schema.define(version: 20150827081657) do
   add_index "comments", ["user_id"], name: "index_comments_on_user_id", using: :btree
 
   create_table "debates", force: :cascade do |t|
-    t.string   "title",                      limit: 80
+    t.string   "title",              limit: 80
     t.text     "description"
     t.integer  "author_id"
-    t.datetime "created_at",                                        null: false
-    t.datetime "updated_at",                                        null: false
+    t.datetime "created_at",                                null: false
+    t.datetime "updated_at",                                null: false
     t.datetime "hidden_at"
     t.string   "visit_id"
-    t.datetime "flagged_as_inappropiate_at"
-    t.integer  "flags_count",                           default: 0
-    t.integer  "cached_votes_total",                    default: 0
-    t.integer  "cached_votes_up",                       default: 0
-    t.integer  "cached_votes_down",                     default: 0
+    t.integer  "flags_count",                   default: 0
+    t.integer  "cached_votes_total",            default: 0
+    t.integer  "cached_votes_up",               default: 0
+    t.integer  "cached_votes_down",             default: 0
     t.datetime "flag_ignored_at"
-    t.integer  "comments_count",                        default: 0
+    t.integer  "comments_count",                default: 0
     t.datetime "hide_reviewed_at"
   end
 
