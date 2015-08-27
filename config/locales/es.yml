@@ -29,6 +29,7 @@ es:
       accept_terms: Acepto la política de privacidad y el aviso legal
       user: la cuenta
       debate: el debate
+      sms: el teléfono
   debates:
     index:
       create_debate: Crea un debate
@@ -124,6 +125,8 @@ es:
       phone_number_label: "Teléfono"
       organization_name_label: "Nombre de la organización"
       notifications: Notificaciones
+      level_two_user: Eres un usuario verificado de nivel 2
+      level_three_user: Eres un usuario verificado de nivel 3
   simple_captcha:
     placeholder: "Introduce el texto de la imagen"
     label: "Introduce el texto en la caja"
