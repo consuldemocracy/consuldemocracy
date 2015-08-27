@@ -33,9 +33,10 @@ es:
     index:
       create_debate: Crea un debate
       showing: "Estás viendo los debates"
-      filter_news: "más nuevos"
-      filter_votes: "más votados"
-      filter_rated: mejor valorados
+      orders:
+        created_at: "más nuevos"
+        total_votes: "más votados"
+        likes: mejor valorados
       filter_topic: "Estás viendo %{number} debates con el tema '%{topic}'"
     debate:
       debate: Debate
@@ -152,7 +153,10 @@ es:
       title: Añade tu email
     twitter:
       sign_in: Entra con Twitter
+      sign_up: Regístrate con Twitter
     facebook:
       sign_in: Entra con Facebook
+      sign_up: Regístrate con Facebook
     google_oauth2:
       sign_in: Entra con Google
+      sign_up: Regístrate con Google

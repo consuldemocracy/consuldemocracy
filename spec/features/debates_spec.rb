@@ -350,4 +350,61 @@ feature 'Debates' do
     expect(Flag.flagged?(user, debate)).to_not be
   end
 
+  feature 'Debate index order filters', :js do
+
+    before do
+      @most_voted_debate  = create(:debate)
+      @most_liked_debate  = create(:debate)
+      @most_recent_debate = create(:debate)
+      create_list(:vote, 2, votable: @most_liked_debate)
+      create_list(:vote, 2, votable: @most_voted_debate, vote_flag: false)
+      create(:vote, votable: @most_voted_debate)
+    end
+
+    scenario 'Default order is created_at' do
+      visit debates_path
+
+      expect(page).to have_select('order-selector', selected: 'newest')
+      expect(@most_recent_debate.title).to appear_before(@most_liked_debate.title)
+    end
+
+    scenario 'Debates are ordered by most voted' do
+      visit debates_path
+
+      select 'most voted', from: 'order-selector'
+      expect(page).to have_select('order-selector', selected: 'most voted')
+      expect(find("#debates .debate", match: :first)).to have_content(@most_voted_debate.title)
+
+      expect(current_url).to include('order=total_votes')
+      expect(@most_voted_debate.title).to appear_before(@most_liked_debate.title)
+      expect(@most_liked_debate.title).to appear_before(@most_recent_debate.title)
+    end
+
+    scenario 'Debates are ordered by best rated' do
+      visit debates_path
+
+      select 'best rated', from: 'order-selector'
+      expect(page).to have_select('order-selector', selected: 'best rated')
+      expect(find("#debates .debate", match: :first)).to have_content(@most_liked_debate.title)
+
+      expect(current_url).to include('order=likes')
+      expect(@most_liked_debate.title).to appear_before(@most_voted_debate.title)
+      expect(@most_voted_debate.title).to appear_before(@most_recent_debate.title)
+    end
+
+    scenario 'Debates are ordered by newest' do
+      visit debates_path
+
+      select 'most voted', from: 'order-selector'
+      expect(find("#debates .debate", match: :first)).to have_content(@most_voted_debate.title)
+
+      select 'newest', from: 'order-selector'
+      expect(page).to have_select('order-selector', selected: 'newest')
+      expect(find("#debates .debate", match: :first)).to have_content(@most_recent_debate.title)
+
+      expect(current_url).to include('order=created_at')
+      expect(@most_recent_debate.title).to appear_before(@most_liked_debate.title)
+      expect(@most_liked_debate.title).to appear_before(@most_voted_debate.title)
+    end
+  end
 end

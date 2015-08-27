@@ -14,6 +14,7 @@
 // 12. Official levels
 // 13. Pagination
 // 14. Tables
+// 15. Social
 //
 
 // 01. Variables
@@ -856,4 +857,122 @@ table {
   }
 }
 
+// 15. Social
+// - - - - - - - - - - - - - - - - - - - - - - - - -
 
+.button.button-twitter {
+  background: #45B0E3;
+
+  &:before {
+    background: #40A2D1;
+    content: "f";
+    font-family: "icons" !important;
+    font-size: rem-calc(24);
+    left: 0;
+    line-height: $line-height*2;
+    padding: 0 rem-calc(20);
+    position: absolute;
+    top: 0;
+  }
+}
+
+.social-share-button-twitter {
+  background: #45B0E3;
+  color: white;
+  height: rem-calc(48);
+  position: relative;
+  width: rem-calc(48);
+
+  &:before {
+    content: "f";
+    font-family: "icons" !important;
+    font-size: rem-calc(24);
+    left: 50%;
+    line-height: $line-height*2;
+    margin-left: rem-calc(-11);
+    position: absolute;
+    top: 0;
+  }
+
+  &:hover {
+    color: #40A2D1;
+  }
+}
+
+.button.button-facebook {
+  background: #3B5998;
+
+  &:before {
+    background: #354F88;
+    content: "A";
+    font-family: "icons" !important;
+    font-size: rem-calc(24);
+    left: 0;
+    line-height: $line-height*2;
+    padding: 0 rem-calc(20);
+    position: absolute;
+    top: 0;
+  }
+}
+
+.social-share-button-facebook {
+  background: #3B5998;
+  color: white;
+  height: rem-calc(48);
+  position: relative;
+  width: rem-calc(48);
+
+  &:before {
+    content: "A";
+    font-family: "icons" !important;
+    font-size: rem-calc(24);
+    left: 50%;
+    line-height: $line-height*2;
+    margin-left: rem-calc(-11);
+    position: absolute;
+    top: 0;
+  }
+
+  &:hover {
+    color: #354F88;
+  }
+}
+
+.button.button-google {
+  background: #DE4C34;
+
+  &:before {
+    background: #CE3E26;
+    content: "B";
+    font-family: "icons" !important;
+    font-size: rem-calc(24);
+    left: 0;
+    line-height: $line-height*2;
+    padding: 0 rem-calc(20);
+    position: absolute;
+    top: 0;
+  }
+}
+
+.social-share-button-google_plus {
+  background: #DE4C34;
+  color: white;
+  height: rem-calc(48);
+  position: relative;
+  width: rem-calc(48);
+
+  &:before {
+    content: "B";
+    font-family: "icons" !important;
+    font-size: rem-calc(24);
+    left: 50%;
+    line-height: $line-height*2;
+    margin-left: rem-calc(-11);
+    position: absolute;
+    top: 0;
+  }
+
+  &:hover {
+    color: #CE3E26;
+  }
+}
