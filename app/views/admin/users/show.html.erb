@@ -19,7 +19,7 @@
 <ul class="admin-list">
 <% @debates.each do |debate| %>
   <li>
-    <%= link_to debate.title, admin_debate_path(debate) %>
+    <%= link_to debate.title, debate_path(debate) %>
   </li>
 <% end %>
 </ul>

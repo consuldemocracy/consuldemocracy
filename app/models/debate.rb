@@ -1,6 +1,5 @@
 require 'numeric'
 class Debate < ActiveRecord::Base
-  include ActsAsParanoidAliases
   default_scope { order(created_at: :desc) }
 
   apply_simple_captcha
@@ -10,6 +9,7 @@ class Debate < ActiveRecord::Base
   acts_as_commentable
   acts_as_taggable
   acts_as_paranoid column: :hidden_at
+  include ActsAsParanoidAliases
 
   belongs_to :author, -> { with_hidden }, class_name: 'User', foreign_key: 'author_id'
   has_many :flags, :as => :flaggable

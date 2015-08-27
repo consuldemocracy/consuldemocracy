@@ -58,15 +58,24 @@ Rails.application.routes.draw do
     end
 
     resources :users, only: [:index, :show] do
-      member { put :restore }
+      member do
+        put :restore
+        put :confirm_hide
+      end
     end
 
-    resources :debates, only: [:index, :show] do
-      member { put :restore }
+    resources :debates, only: :index do
+      member do
+        put :restore
+        put :confirm_hide
+      end
     end
 
     resources :comments, only: :index do
-      member { put :restore }
+      member do
+        put :restore
+        put :confirm_hide
+      end
     end
 
     resources :tags, only: [:index, :create, :update, :destroy]

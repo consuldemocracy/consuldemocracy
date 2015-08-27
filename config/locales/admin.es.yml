@@ -36,6 +36,7 @@ es:
       hide_author: Bloquear al autor
       restore: Volver a mostrar
       confirm: '¿Estás seguro?'
+      confirm_hide: Confirmar
       archive: Archivar
     tags:
       index:
@@ -60,14 +61,9 @@ es:
       index:
         title: Debates ocultos
         filter: Filtro
-      show:
-        back: Volver
-      restore:
-        success: El debate ha sido permitido
-      filters:
-        all: Todos
-        pending: Pendientes
-        archived: Archivados
+        filters:
+          all: Todos
+          with_confirmed_hide: Confirmados
     users:
       index:
         title: Usuarios bloqueados

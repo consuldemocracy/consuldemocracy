@@ -8,6 +8,10 @@ FactoryGirl.define do
     trait :hidden do
       hidden_at Time.now
     end
+
+    trait :with_confirmed_hide do
+      confirmed_hide_at Time.now
+    end
   end
 
   factory :identity do
@@ -28,6 +32,10 @@ FactoryGirl.define do
 
     trait :with_ignored_flag do
       ignored_flag_at Time.now
+    end
+
+    trait :with_confirmed_hide do
+      confirmed_hide_at Time.now
     end
 
     trait :flagged do
@@ -57,6 +65,10 @@ FactoryGirl.define do
 
     trait :with_ignored_flag do
       ignored_flag_at Time.now
+    end
+
+    trait :with_confirmed_hide do
+      confirmed_hide_at Time.now
     end
 
     trait :flagged do
