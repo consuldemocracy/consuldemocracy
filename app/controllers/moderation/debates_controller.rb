@@ -19,8 +19,8 @@ class Moderation::DebatesController < Moderation::BaseController
     redirect_to request.query_parameters.merge(action: :index)
   end
 
-  def archive
-    @debate.archive
+  def ignore_flag
+    @debate.ignore_flag
     redirect_to request.query_parameters.merge(action: :index)
   end
 
@@ -31,7 +31,7 @@ class Moderation::DebatesController < Moderation::BaseController
     end
 
     def set_valid_filters
-      @valid_filters = %w{all pending archived}
+      @valid_filters = %w{all pending_flag_review with_ignored_flag}
     end
 
     def parse_filter

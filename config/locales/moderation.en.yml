@@ -16,13 +16,13 @@ en:
           commentable: Root
           comment: Comment
         hide: Hide
-        archive: Archive
-        archived: Archived
+        ignore_flag: Ignore
+        ignored_flag: Ignored
         filter: Filter
         filters:
           all: All
-          pending: Pending
-          archived: Archived
+          pending_flag_review: Pending
+          with_ignored_flag: Ignored
     debates:
       index:
         title: Debates flagged as inappropriate
@@ -33,10 +33,10 @@ en:
           description: Description
           actions: Actions
         hide: Hide
-        archive: Archive
-        archived: Archived
+        ignore_flag: Ignore
+        ignored_flag: Ignored
         filter: Filter
         filters:
           all: All
-          pending: Pending
-          archived: Archived
+          pending_flag_review: Pending
+          with_ignored_flag: Ignored

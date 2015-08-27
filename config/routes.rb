@@ -88,7 +88,7 @@ Rails.application.routes.draw do
       member do
         put :hide
         put :hide_in_moderation_screen
-        put :archive
+        put :ignore_flag
       end
     end
 
@@ -96,7 +96,7 @@ Rails.application.routes.draw do
       member do
         put :hide
         put :hide_in_moderation_screen
-        put :archive
+        put :ignore_flag
       end
     end
   end

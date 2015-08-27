@@ -22,8 +22,8 @@ FactoryGirl.define do
       hidden_at Time.now
     end
 
-    trait :archived do
-      archived_at Time.now
+    trait :with_ignored_flag do
+      ignored_flag_at Time.now
     end
 
     trait :flagged do
@@ -51,8 +51,8 @@ FactoryGirl.define do
       hidden_at Time.now
     end
 
-    trait :archived do
-      archived_at Time.now
+    trait :with_ignored_flag do
+      ignored_flag_at Time.now
     end
 
     trait :flagged do

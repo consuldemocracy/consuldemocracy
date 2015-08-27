@@ -47,57 +47,57 @@ feature 'Moderate debates' do
       visit moderation_debates_path
       expect(page).to_not have_link('All')
       expect(page).to have_link('Pending')
-      expect(page).to have_link('Archived')
+      expect(page).to have_link('Ignored')
 
       visit moderation_debates_path(filter: 'all')
       expect(page).to_not have_link('All')
       expect(page).to have_link('Pending')
-      expect(page).to have_link('Archived')
+      expect(page).to have_link('Ignored')
 
-      visit moderation_debates_path(filter: 'pending')
+      visit moderation_debates_path(filter: 'pending_flag_review')
       expect(page).to have_link('All')
       expect(page).to_not have_link('Pending')
-      expect(page).to have_link('Archived')
+      expect(page).to have_link('Ignored')
 
-      visit moderation_debates_path(filter: 'archived')
+      visit moderation_debates_path(filter: 'with_ignored_flag')
       expect(page).to have_link('All')
       expect(page).to have_link('Pending')
-      expect(page).to_not have_link('Archived')
+      expect(page).to_not have_link('Ignored')
     end
 
     scenario "Filtering debates" do
       create(:debate, :flagged, title: "Pending debate")
       create(:debate, :flagged, :hidden, title: "Hidden debate")
-      create(:debate, :flagged, :archived, title: "Archived debate")
+      create(:debate, :flagged, :with_ignored_flag, title: "Ignored debate")
 
       visit moderation_debates_path(filter: 'all')
       expect(page).to have_content('Pending debate')
       expect(page).to_not have_content('Hidden debate')
-      expect(page).to have_content('Archived debate')
+      expect(page).to have_content('Ignored debate')
 
-      visit moderation_debates_path(filter: 'pending')
+      visit moderation_debates_path(filter: 'pending_flag_review')
       expect(page).to have_content('Pending debate')
       expect(page).to_not have_content('Hidden debate')
-      expect(page).to_not have_content('Archived debate')
+      expect(page).to_not have_content('Ignored debate')
 
-      visit moderation_debates_path(filter: 'archived')
+      visit moderation_debates_path(filter: 'with_ignored_flag')
       expect(page).to_not have_content('Pending debate')
       expect(page).to_not have_content('Hidden debate')
-      expect(page).to have_content('Archived debate')
+      expect(page).to have_content('Ignored debate')
     end
 
     scenario "Reviewing links remember the pagination setting and the filter" do
       per_page = Kaminari.config.default_per_page
       (per_page + 2).times { create(:debate, :flagged) }
 
-      visit moderation_debates_path(filter: 'pending', page: 2)
+      visit moderation_debates_path(filter: 'pending_flag_review', page: 2)
 
-      click_link('Archive', match: :first, exact: true)
+      click_link('Ignore', match: :first, exact: true)
 
       uri = URI.parse(current_url)
       query_params = Rack::Utils.parse_nested_query(uri.query).symbolize_keys
 
-      expect(query_params[:filter]).to eq('pending')
+      expect(query_params[:filter]).to eq('pending_flag_review')
       expect(query_params[:page]).to eq('2')
     end
 
@@ -114,7 +114,7 @@ feature 'Moderate debates' do
           expect(page).to have_content('buy buy buy')
           expect(page).to have_content('1')
           expect(page).to have_link('Hide')
-          expect(page).to have_link('Archive')
+          expect(page).to have_link('Ignore')
         end
       end
 
@@ -129,18 +129,18 @@ feature 'Moderate debates' do
         expect(@debate.reload).to be_hidden
       end
 
-      scenario 'Marking the debate as archived' do
+      scenario 'Marking the debate as ignored' do
         within("#debate_#{@debate.id}") do
-          click_link('Archive')
+          click_link('Ignore')
         end
 
         expect(current_path).to eq(moderation_debates_path)
 
         within("#debate_#{@debate.id}") do
-          expect(page).to have_content('Archived')
+          expect(page).to have_content('Ignored')
         end
 
-        expect(@debate.reload).to be_archived
+        expect(@debate.reload).to be_ignored_flag
       end
     end
   end

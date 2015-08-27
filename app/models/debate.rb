@@ -24,8 +24,8 @@ class Debate < ActiveRecord::Base
   before_validation :sanitize_tag_list
 
   scope :sorted_for_moderation, -> { order(flags_count: :desc, updated_at: :desc) }
-  scope :pending, -> { where(archived_at: nil, hidden_at: nil) }
-  scope :archived, -> { where("archived_at IS NOT NULL AND hidden_at IS NULL") }
+  scope :pending_flag_review, -> { where(ignored_flag_at: nil, hidden_at: nil) }
+  scope :with_ignored_flag, -> { where("ignored_flag_at IS NOT NULL AND hidden_at IS NULL") }
   scope :flagged, -> { where("flags_count > 0") }
   scope :for_render, -> { includes(:tags) }
 
@@ -75,12 +75,12 @@ class Debate < ActiveRecord::Base
     count < 0 ? 0 : count
   end
 
-  def archived?
-    archived_at.present?
+  def ignored_flag?
+    ignored_flag_at.present?
   end
 
-  def archive
-    update(archived_at: Time.now)
+  def ignore_flag
+    update(ignored_flag_at: Time.now)
   end
 
   protected

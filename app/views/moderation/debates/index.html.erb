@@ -38,14 +38,14 @@
       <td>
         <%= link_to t("moderation.debates.index.hide"), hide_in_moderation_screen_moderation_debate_path(debate, request.query_parameters), method: :put, class: "delete" %>
       </td>
-      <% if can? :archive, debate %>
+      <% if can? :ignore_flag, debate %>
         <td>
-          <%= link_to t("moderation.debates.index.archive"), archive_moderation_debate_path(debate, request.query_parameters), method: :put, class: "button radius tiny warning" %>
+          <%= link_to t("moderation.debates.index.ignore_flag"), ignore_flag_moderation_debate_path(debate, request.query_parameters), method: :put, class: "button radius tiny warning" %>
         </td>
       <% end %>
-      <% if debate.archived? %>
-        <td class="archived">
-          <%= t("moderation.debates.index.archived") %>
+      <% if debate.ignored_flag? %>
+        <td class="ignored">
+          <%= t("moderation.debates.index.ignored_flag") %>
         </td>
       <% end %>
     </tr>

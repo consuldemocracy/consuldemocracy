@@ -17,8 +17,8 @@ class Comment < ActiveRecord::Base
   scope :recent, -> { order(id: :desc) }
 
   scope :sorted_for_moderation, -> { order(flags_count: :desc, updated_at: :desc) }
-  scope :pending, -> { where(archived_at: nil, hidden_at: nil) }
-  scope :archived, -> { where("archived_at IS NOT NULL AND hidden_at IS NULL") }
+  scope :pending_flag_review, -> { where(ignored_flag_at: nil, hidden_at: nil) }
+  scope :with_ignored_flag, -> { where("ignored_flag_at IS NOT NULL AND hidden_at IS NULL") }
   scope :flagged, -> { where("flags_count > 0") }
 
   scope :for_render, -> { with_hidden.includes(user: :organization) }
@@ -65,8 +65,12 @@ class Comment < ActiveRecord::Base
     hidden? || user.hidden?
   end
 
-  def archived?
-    archived_at.present?
+  def ignored_flag?
+    ignored_flag_at.present?
+  end
+
+  def ignore_flag
+    update(ignored_flag_at: Time.now)
   end
 
   def as_administrator?
@@ -75,10 +79,6 @@ class Comment < ActiveRecord::Base
 
   def as_moderator?
     moderator_id.present?
-  end
-
-  def archive
-    update(archived_at: Time.now)
   end
 
   # TODO: faking counter cache since there is a bug with acts_as_nested_set :counter_cache
