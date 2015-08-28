@@ -1,0 +1,19 @@
+<div class="row account">
+  <div class="small-12 column">
+
+    <h1 class="inline-block"><%= t('verification.residence.new.title') %></h1>
+
+    <%= form_for @residence, url: residence_path do |f| %>
+      <%= render 'errors' %>
+
+      <%= f.select :document_type, document_types, prompt: "" %>
+      <%= f.text_field :document_number %>
+      <%= f.date_select :date_of_birth,
+                        prompt: true,
+                        start_year: 1900, end_year: 16.years.ago.year %>
+      <%= f.text_field :postal_code %>
+
+      <%= f.submit "Verify" %>
+    <% end %>
+  </div>
+</div>

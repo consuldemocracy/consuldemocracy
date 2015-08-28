@@ -80,4 +80,12 @@ module CommonActions
   def expect_to_be_signed_in
     expect(find('.top-bar')).to have_content 'My account'
   end
+
+  def select_date(values, selector)
+    selector = selector[:from]
+    day, month, year = values.split("-")
+    select day,   from: "#{selector}_3i"
+    select month, from: "#{selector}_2i"
+    select year,  from: "#{selector}_1i"
+  end
 end

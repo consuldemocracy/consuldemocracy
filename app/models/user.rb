@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  include Verification
 
   OMNIAUTH_EMAIL_PREFIX = 'omniauth@participacion'
   OMNIAUTH_EMAIL_REGEX  = /\A#{OMNIAUTH_EMAIL_PREFIX}/
@@ -11,6 +12,7 @@ class User < ActiveRecord::Base
   acts_as_paranoid column: :hidden_at
   include ActsAsParanoidAliases
 
+  has_one :address
   has_one :administrator
   has_one :moderator
   has_one :organization

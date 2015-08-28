@@ -51,4 +51,10 @@ class ApplicationController < ActionController::Base
         redirect_to finish_signup_path
       end
     end
+
+    def verify_resident!
+      unless current_user.residence_verified?
+        redirect_to new_residence_path, alert: t('verification.residence.alert.unconfirmed_residency')
+      end
+    end
 end

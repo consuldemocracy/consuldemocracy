@@ -3,7 +3,13 @@
     <p>
       <strong>
       <%= pluralize resource.errors.count, t("form.error"), t("form.errors") %>
-      <%= t("form.not_saved", resource: t("form.#{resource.class.to_s.downcase}")) %>
+
+      <% if local_assigns[:message].present? %>
+        <%= message %>
+      <% else %>
+        <%= t("form.not_saved", resource: t("form.#{resource.class.to_s.downcase}")) %>
+      <% end %>
+
       </strong>
     </p>
   </div>

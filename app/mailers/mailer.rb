@@ -14,4 +14,11 @@ class Mailer < ApplicationMailer
     mail(to: @recipient.email, subject: t('mailer.reply.subject'))
   end
 
+  def email_verification(user, recipient, token)
+    @user = user
+    @recipient = recipient
+    @token = token
+    mail(to: @recipient, subject: "Verifica tu email")
+  end
+
 end
