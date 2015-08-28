@@ -33,6 +33,7 @@ var initialize_modules = function() {
   App.Stats.initialize();
   App.LocaleSwitcher.initialize();
   App.DebatesOrderSelector.initialize();
+  App.DebatesTagFilter.initialize();
 };
 
 $(function(){

@@ -12,11 +12,23 @@
   <!-- Filter topic results -->
   <div class="filters row">
     <div class="small-12 column">
-      <h2>
-        <%= t("debates.index.filter_topic",
-        number: "N",
-        topic: "topic").html_safe %>
-      </h2>
+      <% if @tag_filter %>
+        <h2>
+          <%= t("debates.index.filter_topic",
+                 number: @debates.size,
+                 # TODO translation
+                 topic: @tag_filter).html_safe %>
+        </h2>
+      <% else %>
+        <h2>Filtrar por tema:  </h2>
+        <form class="inline-block">
+           <select class="js-tag-filter" name="tag-filter"> 
+             <%# select_tag 'tag-filter', nil, {prompt: 'Temas --', class: 'js-tag-filter'} do %>
+             <option value="default" disabled="disabled" selected="selected">Temas --</option>
+             <%= options_from_collection_for_select(ActsAsTaggableOn::Tag.all, :name, :name, prompt: 'Temas...') %>
+           </select>
+        </form>
+      <% end %>
     </div>
   </div>
   <!-- /. Filter topic results -->
