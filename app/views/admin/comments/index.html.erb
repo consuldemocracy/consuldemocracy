@@ -1,13 +1,17 @@
 <h2><%= t("admin.comments.index.title") %></h2>
 
-<!-- Filters for pending and archived comments (example on "/admin/organizations/index.html.erb")-->
 <dl class="sub-nav">
   <dt><%= t("admin.comments.index.filter") %>:</dt>
-  <dd class="active"><%= t("admin.comments.filters.all") %></dd>
-  <dd><%= t("admin.comments.filters.pending") %></dd>
-  <dd><%= t("admin.comments.filters.archived") %></dd>
+
+  <% @valid_filters.each do |filter| %>
+    <% if @filter == filter %>
+      <dd class="active"><%= t("admin.comments.index.filters.#{filter}") %></dd>
+    <% else %>
+      <dd><%= link_to t("admin.comments.index.filters.#{filter}"),
+        admin_comments_path(filter: filter) %></dd>
+    <% end %>
+  <% end %>
 </dl>
-<!-- Filters for pending and archived comments (example on "/admin/organizations/index.html.erb")-->
 
 <h3><%= page_entries_info @comments %></h3>
 
@@ -17,17 +21,19 @@
       <div class="row">
         <div class="small-12 medium-8 column">
           <%= comment.body %>
-          <!-- Link to debate of this comment -->
-          <%= link_to t("admin.comments.index.show_debate"), "#" %>
-          <!-- /. Link to debate of this comment -->
+          <%= link_to comment.commentable.title, comment.commentable %>
         </div>
         <div class="small-6 medium-4 column text-right">
-          <!-- Link to archive this comment -->
-          <%= link_to t("admin.actions.archive"), "#", class: "button radius tiny warning" %>
-          <!-- /. Link to archive this comment -->
-          <%= link_to t("admin.actions.restore"), restore_admin_comment_path(comment),
-                      method: :put, data: { confirm: t("admin.actions.confirm") },
-                      class: "button radius tiny success" %>
+          <%= link_to t("admin.actions.restore"),
+                restore_admin_comment_path(comment, request.query_parameters),
+                method: :put,
+                data: { confirm: t("admin.actions.confirm") },
+                class: "button radius tiny success right" %>
+
+          <%= link_to t("admin.actions.confirm_hide"),
+                confirm_hide_admin_comment_path(comment, request.query_parameters),
+                method: :put,
+                class: "button radius tiny warning right" %>
         </div>
       </div>
     </li>

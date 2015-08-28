@@ -2,27 +2,71 @@ require 'rails_helper'
 
 feature 'Admin comments' do
 
-  scenario 'Restore', :js do
-    citizen = create(:user)
+  background do
     admin = create(:administrator)
-
-    debate = create(:debate)
-    comment = create(:comment, :hidden, commentable: debate, body: 'Not really SPAM')
-
     login_as(admin.user)
+  end
+
+  scenario 'Restore', :js do
+    comment = create(:comment, :hidden, body: 'Not really SPAM')
     visit admin_comments_path
 
-    within("#comment_#{comment.id}") do
-      first(:link, "Restore").click
-    end
+    click_link 'Restore'
 
-    expect(page).to have_content 'The comment has been restored'
+    expect(page).to_not have_content(comment.body)
 
-    login_as(citizen)
-    visit debate_path(debate)
+    expect(comment.reload).to_not be_hidden
+  end
 
-    expect(page).to have_css('.comment', count: 1)
-    expect(page).to have_content('Not really SPAM')
+  scenario 'Confirm hide' do
+    comment = create(:comment, :hidden, body: 'SPAM')
+    visit admin_comments_path
+
+    click_link 'Confirm'
+
+    expect(page).to have_content(comment.body)
+    expect(page).to have_content('Confirmed')
+
+    expect(comment.reload).to be_confirmed_hide
+  end
+
+  scenario "Current filter is properly highlighted" do
+    visit admin_comments_path
+    expect(page).to_not have_link('All')
+    expect(page).to have_link('Confirmed')
+
+    visit admin_comments_path(filter: 'all')
+    expect(page).to_not have_link('All')
+    expect(page).to have_link('Confirmed')
+
+    visit admin_comments_path(filter: 'with_confirmed_hide')
+    expect(page).to have_link('All')
+    expect(page).to_not have_link('Confirmed')
+  end
+
+  scenario "Filtering comments" do
+    create(:comment, :hidden, body: "Unconfirmed comment")
+    create(:comment, :hidden, :with_confirmed_hide, body: "Confirmed comment")
+
+    visit admin_comments_path(filter: 'all')
+    expect(page).to have_content('Unconfirmed comment')
+    expect(page).to have_content('Confirmed comment')
+
+    visit admin_comments_path(filter: 'with_confirmed_hide')
+    expect(page).to_not have_content('Unconfirmed comment')
+    expect(page).to have_content('Confirmed comment')
+  end
+
+  scenario "Action links remember the pagination setting and the filter" do
+    per_page = Kaminari.config.default_per_page
+    (per_page + 2).times { create(:comment, :hidden, :with_confirmed_hide) }
+
+    visit admin_comments_path(filter: 'with_confirmed_hide', page: 2)
+
+    click_on('Restore', match: :first, exact: true)
+
+    expect(current_url).to include('filter=with_confirmed_hide')
+    expect(current_url).to include('page=2')
   end
 
 end

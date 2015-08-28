@@ -35,18 +35,18 @@
         <span class="date"><%= l comment.updated_at.to_date %></span>
       </td>
       <td><%= comment.body %></td>
-      <td class="text-center"><%= comment.inappropiate_flags_count %></td>
+      <td class="text-center"><%= comment.flags_count %></td>
       <td>
         <%= link_to t("moderation.comments.index.hide"), hide_in_moderation_screen_moderation_comment_path(comment, request.query_parameters), method: :put, class: "delete" %>
       </td>
-      <% if can? :archive, comment %>
+      <% if can? :ignore_flag, comment %>
         <td>
-          <%= link_to t("moderation.comments.index.archive"), archive_moderation_comment_path(comment, request.query_parameters), method: :put, class: "button radius tiny warning" %>
+          <%= link_to t("moderation.comments.index.ignore_flag"), ignore_flag_moderation_comment_path(comment, request.query_parameters), method: :put, class: "button radius tiny warning" %>
         </td>
       <% end %>
-      <% if comment.archived? %>
-        <td class="archived">
-          <%= t("moderation.comments.index.archived") %>
+      <% if comment.ignored_flag? %>
+        <td class="ignored">
+          <%= t("moderation.comments.index.ignored_flag") %>
         </td>
       <% end %>
     </tr>

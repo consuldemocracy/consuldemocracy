@@ -3,14 +3,24 @@ en:
   layouts:
     header:
       external_link_transparency: Transparency
+      external_link_transparency_url: "http://www.madrid.es/portales/munimadrid/es/Inicio/El-Ayuntamiento/Transparencia?vgnextfmt=default&vgnextchannel=20fd850769797310VgnVCM2000000c205a0aRCRD"
       external_link_opendata: Open data
+      external_link_opendata_url: "http://datos.madrid.es"
       external_link_blog: Blog
       open_gov: "%{open} government"
       open: "Open"
       participation: Participation
       menu: Menu
-      open_city: We are opening Madrid
-      open_city_slogan: So the citizens can decide what kind of city they want.
+      open_city_title: "The city you want, it will be the city you want."
+      open_city_slogan:
+        "Start listening to Madrid.
+        For that we open this digital Puerta del Sol, where all the locals can meet to discuss and share everything we want.
+        Also a place where you can talk directly with all the employees of the City of Madrid, from the Mayor to any officer."
+      open_city_text:
+        "Here every voice has its place, and are citizens, and no one in their name, they decide to vote debates what issues are
+        most important of every time. Officials have individual users with whom you may participate in the debates, and evaluated,
+        the same level as everyone else. Because the Madrid City Council works for its citizens, and must respond to them."
+      open_city_soon: "And soon... we opened the section of citizen proposals."
       see_all_debates: See all debates
       my_account_link: My account
       locale: "Site language:"
@@ -21,7 +31,20 @@ en:
       debates: Debates
       initiatives: Initiatives
     footer:
+      description:
+        "The city you want, it will be the city you want. Get more information here on this page.
+        This Open Government Portal is %{open_source}, and code is in %{github_url}.
+        Madrid, for the whole world."
+      open_source: "software libre AGPLv3"
+      open_source_url: "http://www.gnu.org/licenses/agpl-3.0.html"
+      github_url: "https://github.com/ayuntamientomadrid"
       copyright: "Ayuntamiento de Madrid, 2015. All rights reserved"
+      participation_title: "Participation"
+      participation_text: Decide what should be the city of Madrid you want.
+      transparency_title: Transparency
+      transparency_text: Get any information on the City of Madrid.
+      open_data_title:  Open Data
+      open_data_text: All City Council data are yours
   form:
       error: error
       errors: errors
@@ -92,9 +115,11 @@ en:
       publish_new: Publish new debate
       back_link: Back
       recommendations_title: Tips for creating a debate
-      recommendation_one: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore"
-      recommendation_two: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore"
-      recommendation_three: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore"
+      recommendation_one: "On the Internet it is easy to say things you would not dare to say face to face. The tone of what you say you will be matched by a similar tone in the answers."
+      recommendation_two: "Do not write the title of the debate or whole sentences in capital. On the Internet this is considered shouting. And nobody likes to scream."
+      recommendation_three: "Any discussion or comment that involves an illegal act will be eliminated, also intending to sabotage the debate spaces, everything else is permitted."
+      recommendation_four: "The harsh criticism are very welcome. This is a space of thought but we recommend preserving the elegance and intelligence. The world is better with them present."
+      recommendation_five: "Enjoy this space, voices that fill it, it is yours too."
   comments:
     form:
       leave_comment: Write a comment
@@ -137,8 +162,8 @@ en:
   shared:
     tags_cloud:
       tags: Topics
-    flag_as_inappropiate: Flag as inappropriate
-    undo_flag_as_inappropiate: Undo flag
+    flag: Flag as inappropriate
+    unflag: Undo flag
     collective: Collective
   mailer:
     comment:

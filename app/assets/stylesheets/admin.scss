@@ -164,6 +164,11 @@ body.admin {
   font-size: rem-calc(12);
 }
 
+.ignored {
+  color: $text-medium;
+  font-size: rem-calc(12);
+}
+
 .rejected {
   color: $delete;
 }

@@ -1,7 +1,7 @@
 class Comment < ActiveRecord::Base
-  include ActsAsParanoidAliases
   acts_as_nested_set scope: [:commentable_id, :commentable_type], counter_cache: :children_count
   acts_as_paranoid column: :hidden_at
+  include ActsAsParanoidAliases
   acts_as_votable
 
   attr_accessor :as_moderator, :as_administrator
@@ -12,14 +12,14 @@ class Comment < ActiveRecord::Base
   belongs_to :commentable, polymorphic: true, counter_cache: true
   belongs_to :user, -> { with_hidden }
 
-  has_many :inappropiate_flags, :as => :flaggable
+  has_many :flags, :as => :flaggable
 
   scope :recent, -> { order(id: :desc) }
 
-  scope :sorted_for_moderation, -> { order(inappropiate_flags_count: :desc, updated_at: :desc) }
-  scope :pending, -> { where(archived_at: nil, hidden_at: nil) }
-  scope :archived, -> { where("archived_at IS NOT NULL AND hidden_at IS NULL") }
-  scope :flagged_as_inappropiate, -> { where("inappropiate_flags_count > 0") }
+  scope :sorted_for_moderation, -> { order(flags_count: :desc, updated_at: :desc) }
+  scope :pending_flag_review, -> { where(ignored_flag_at: nil, hidden_at: nil) }
+  scope :with_ignored_flag, -> { where("ignored_flag_at IS NOT NULL AND hidden_at IS NULL") }
+  scope :flagged, -> { where("flags_count > 0") }
 
   scope :for_render, -> { with_hidden.includes(user: :organization) }
 
@@ -65,8 +65,12 @@ class Comment < ActiveRecord::Base
     hidden? || user.hidden?
   end
 
-  def archived?
-    archived_at.present?
+  def ignored_flag?
+    ignored_flag_at.present?
+  end
+
+  def ignore_flag
+    update(ignored_flag_at: Time.now)
   end
 
   def as_administrator?
@@ -75,10 +79,6 @@ class Comment < ActiveRecord::Base
 
   def as_moderator?
     moderator_id.present?
-  end
-
-  def archive
-    update(archived_at: Time.now)
   end
 
   # TODO: faking counter cache since there is a bug with acts_as_nested_set :counter_cache

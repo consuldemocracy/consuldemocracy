@@ -315,7 +315,7 @@ feature 'Debates' do
     end
   end
 
-  scenario "Flagging as inappropiate", :js do
+  scenario "Flagging", :js do
     user = create(:user)
     debate = create(:debate)
 
@@ -329,13 +329,13 @@ feature 'Debates' do
       expect(page).to have_css("#unflag-expand-debate-#{debate.id}")
     end
 
-    expect(InappropiateFlag.flagged?(user, debate)).to be
+    expect(Flag.flagged?(user, debate)).to be
   end
 
-  scenario "Undoing flagging as inappropiate", :js do
+  scenario "Unflagging", :js do
     user = create(:user)
     debate = create(:debate)
-    InappropiateFlag.flag!(user, debate)
+    Flag.flag!(user, debate)
 
     login_as(user)
     visit debate_path(debate)
@@ -347,7 +347,7 @@ feature 'Debates' do
       expect(page).to have_css("#flag-expand-debate-#{debate.id}")
     end
 
-    expect(InappropiateFlag.flagged?(user, debate)).to_not be
+    expect(Flag.flagged?(user, debate)).to_not be
   end
 
   feature 'Debate index order filters', :js do

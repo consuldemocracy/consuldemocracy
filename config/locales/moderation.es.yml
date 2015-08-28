@@ -16,13 +16,13 @@ es:
           commentable: Raíz
           comment: Comentario
         hide: Ocultar
-        archive: Archivar
-        archived: Archivado
+        ignore_flag: Ignorar
+        ignored_flag: Ignorado
         filter: Filtrar
         filters:
           all: Todos
-          pending: Pendientes
-          archived: Archivados
+          pending_flag_review: Pendientes
+          with_ignored_flag: Ignorados
     debates:
       index:
         title: Debates denunciados como inapropiados
@@ -33,10 +33,10 @@ es:
           description: Descripción
           actions: Acciones
         hide: Ocultar
-        archive: Archivar
-        archived: Archivado
+        ignore_flag: Ignorar
+        ignored_flag: Ignorado
         filter: Filtrar
         filters:
           all: Todos
-          pending: Pendientes
-          archived: Archivados
+          pending_flag_review: Pendientes
+          with_ignored_flag: Ignorados

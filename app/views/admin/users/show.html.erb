@@ -6,8 +6,6 @@
   <strong><%= t("admin.users.show.hidden_at") %></strong> <%= @user.hidden_at %>
 </p>
 <p>
-  <%= link_to t("admin.users.show.restore"), restore_admin_user_path(@user),
-              method: :put, data: { confirm: t('admin.actions.confirm') }, class: "button radius tiny" %>
   <%= link_to t("admin.users.show.back"), admin_users_path,
             class: "button radius tiny secondary" %>
 </p>
@@ -19,7 +17,7 @@
 <ul class="admin-list">
 <% @debates.each do |debate| %>
   <li>
-    <%= link_to debate.title, admin_debate_path(debate) %>
+    <%= link_to debate.title, debate_path(debate) %>
   </li>
 <% end %>
 </ul>

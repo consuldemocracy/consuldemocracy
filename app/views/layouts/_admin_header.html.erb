@@ -23,14 +23,4 @@
       </section>
     </nav>
   </div>
-
-  <% if home_page? %>
-    <div class="row home-page">
-      <div class="small-12 column text-center">
-        <h1><%= t("layouts.header.open_city") %></h1>
-        <h2><%= t("layouts.header.open_city_slogan") %></h2>
-        <%= link_to t("layouts.header.see_all_debates"), debates_path, class: 'button radius' %>
-      </div>
-    </div>
-  <% end %>
 </header>
