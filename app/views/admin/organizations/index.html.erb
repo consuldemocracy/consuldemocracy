@@ -37,29 +37,29 @@
     <!-- Badge collective name, "collective" by default -->
     <td>Colectivo</td>
     <!-- /. Badge collective name, "collective" by default -->
+    <td>
+    <!-- Edit collective bagde, "collective" by default -->
+      <%= link_to t("admin.organizations.index.edit"), "", class: "button radius tiny" %>
+    <!-- /. Edit collective bagde, "collective" by default -->
+    </td>
     <% if organization.verified? %>
       <td class="verified">
         <i class="icon-check"></i>
         <%= t("admin.organizations.index.verified") %>
       </td>
     <% end %>
-    <% if organization.rejected? %>
-      <td class="rejected">
-        <i class="icon-x"></i>
-        <%= t("admin.organizations.index.rejected") %>
-      </td>
-    <% end %>
-    <td>
-    <!-- Edit collective bagde, "collective" by default -->
-      <%= link_to t("admin.organizations.index.edit"), "", class: "button radius tiny secondary" %>
-    <!-- /. Edit collective bagde, "collective" by default -->
-    </td>
     <% if can? :verify, organization %>
       <td>
         <%= link_to t("admin.organizations.index.verify"),
                 verify_admin_organization_path(organization, request.query_parameters),
                 method: :put, class: "button radius tiny success"
         %>
+      </td>
+    <% end %>
+    <% if organization.rejected? %>
+      <td class="rejected">
+        <i class="icon-x"></i>
+        <%= t("admin.organizations.index.rejected") %>
       </td>
     <% end %>
     <% if can? :reject, organization %>

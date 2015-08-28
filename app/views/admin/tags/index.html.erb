@@ -32,10 +32,12 @@
           as: :tag,
           html: { id: "edit_tag_#{tag.id}", class: "text-right"}) do |f| %>
 
-        <%= f.label "featured_#{tag.id}" do %>
-          <%= f.check_box :featured, label: false, id: "tag_featured_#{tag.id}", class: "left" %>
-          <span class="checkbox left"><%= t("admin.tags.mark_as_featured") %></span>
-        <% end %>
+          <span class="left">
+            <%= f.label "featured_#{tag.id}" do %>
+              <%= f.check_box :featured, label: false, id: "tag_featured_#{tag.id}", class: "inline-block" %>
+              <span class="checkbox inline-block"><%= t("admin.tags.mark_as_featured") %></span>
+            <% end %>
+          </span>
 
         <%= f.submit(class: "button radius tiny success") %>
 
