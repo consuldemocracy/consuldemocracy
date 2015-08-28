@@ -12,7 +12,7 @@ feature 'Localization' do
   scenario 'Available locales appear in the locale switcher' do
     visit '/'
 
-    within('.js-locale-switcher') do
+    within('.locale-form .js-location-changer') do
       expect(page).to have_content 'Español'
       expect(page).to have_content 'English'
     end

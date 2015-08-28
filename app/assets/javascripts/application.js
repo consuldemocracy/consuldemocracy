@@ -31,7 +31,7 @@ var initialize_modules = function() {
   App.Votes.initialize();
   App.Tags.initialize();
   App.Stats.initialize();
-  App.LocaleSwitcher.initialize();
+  App.LocationChanger.initialize();
   App.DebatesOrderSelector.initialize();
 };
 

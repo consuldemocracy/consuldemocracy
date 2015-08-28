@@ -14,13 +14,4 @@ module ApplicationHelper
     home_page? ? '' : 'results'
   end
 
-  def available_locale_options_for_select
-    options_for_select(available_locales_array, I18n.locale)
-  end
-
-  private
-    def available_locales_array
-      I18n.available_locales.map { |loc| [I18n.t('locale', locale: loc), loc] }
-    end
-
 end
