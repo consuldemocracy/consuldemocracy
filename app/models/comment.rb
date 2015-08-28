@@ -61,10 +61,6 @@ class Comment < ActiveRecord::Base
     cached_votes_down
   end
 
-  def not_visible?
-    hidden? || user.hidden?
-  end
-
   def ignored_flag?
     ignored_flag_at.present?
   end

@@ -4,7 +4,7 @@ feature 'Moderate Comments' do
 
   feature 'Hiding Comments' do
 
-    scenario 'Hide', :js do
+    scenario 'Hide without children hides the comment completely', :js do
       citizen = create(:user)
       moderator = create(:moderator)
 
@@ -23,7 +23,7 @@ feature 'Moderate Comments' do
       visit debate_path(debate)
 
       expect(page).to have_css('.comment', count: 1)
-      expect(page).to have_content('This comment has been deleted')
+      expect(page).to_not have_content('This comment has been deleted')
       expect(page).to_not have_content('SPAM')
     end
 
