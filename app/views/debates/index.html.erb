@@ -4,7 +4,11 @@
   <div class="filters row">
     <div class="small-12 column">
       <h2><%= t("debates.index.showing") %></h2>
-      <%= render 'order_selector' %>
+      <form class="inline-block">
+         <select class="js-order-selector" name="order-selector"> 
+           <%= available_options_for_order_selector(@valid_orders, @order) %>
+         </select>
+      </form>
     </div>
   </div>
   <!-- /. Filters -->
