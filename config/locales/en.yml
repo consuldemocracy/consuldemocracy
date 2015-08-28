@@ -32,7 +32,6 @@ en:
   debates:
     index:
       create_debate: Create a debate
-      showing: You are seeing debates
       select_order: Order by 
       orders:
         created_at: newest

@@ -32,7 +32,6 @@ es:
   debates:
     index:
       create_debate: Crea un debate
-      showing: "Estás viendo los debates"
       select_order: Ordenar por
       orders:
         created_at: "más nuevos"
