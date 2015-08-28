@@ -1,0 +1,71 @@
+es:
+  verification:
+    residence:
+      new:
+        title: 'Verificar residencia'
+        document_type:
+          spanish_id: 'DNI'
+          passport: 'Pasaporte'
+          residence_card: 'Tarjeta de residencia'
+        form_errors: 'evitaron verificar tu residencia'
+        error_verifying_census: 'El Padrón de Madrid no pudo verificar tu información. Revisa la información ó ponte en contacto con nosotros.'
+      create:
+        flash:
+          success: 'Residencia verificada'
+      alert:
+        verify_attemps_left: 'Has llegado al máximo número de intentos de verificar tu residencia.'
+        unconfirmed_residency: 'Aún no has verificado tu residencia'
+    sms:
+      new:
+        title: Verificación de teléfono móvil
+        submit_button: Enviar
+      create:
+        flash:
+          success: 'Introduce el código de confirmación que te hemos enviado por mensaje de texto'
+      edit:
+        title: 'Confirmación de código de seguridad'
+        resend_sms_text: '¿No has recibido un mensaje de texto con tu código de confirmación?'
+        resend_sms_link: 'Haz click aquí para volver a enviártelo'
+        submit_button: Enviar
+      update:
+        error: 'Código de confirmación incorrecto'
+        flash:
+          level_three:
+            success: 'Código correcto. Ya eres un usuario verificado'
+          level_two:
+            success: 'Código incorrecto'
+      form:
+        submit_button: Enviar
+      alert:
+        verify_attemps_left: 'Has llegado al máximo número de intentos de verificar tu teléfono.'
+    email:
+      show:
+        flash:
+          success: 'Eres un usuario verificado'
+        alert:
+          failure: 'Código de verificación incorrecto'
+      create:
+        flash:
+          success: "Te hemos enviado un email de confirmación a tu cuenta: %{email}"
+        alert:
+          failure: "Hubo un problema enviándote un email a tu cuenta"
+      form:
+        submit_button: Enviar
+    letter:
+      new:
+        title: Final Verification
+        explanation: 'To completely verify your account we need to go to one of these offices or send you a letter with a special code to your home address'
+        submit_button: 'Send me a letter'
+      create:
+        flash:
+          success: "You will receive a letter to your home address in the next couple of days"
+        alert:
+          failure: "We could not verify your address with the Census please try again later"
+      alert:
+        unconfirmed_personal_data: 'You have not yet confirmed your personal data'
+    verified_user:
+      show:
+        title: Información disponible
+        email_title: Emails
+        phone_title: Teléfonos
+        use_another_phone: Utilizar otro teléfono

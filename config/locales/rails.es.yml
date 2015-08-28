@@ -125,6 +125,7 @@ es:
       too_short: es demasiado corto (%{count} caracteres mínimo)
       wrong_length: no tiene la longitud correcta (%{count} caracteres exactos)
       other_than: debe ser distinto de %{count}
+      invalid_date: "no es una fecha valida"
     template:
       body: 'Se encontraron problemas con los siguientes campos:'
       header:

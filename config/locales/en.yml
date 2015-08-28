@@ -52,15 +52,18 @@ en:
       accept_terms: I accept the privacy policy and the legal terms
       user: account
       debate: debate
+      sms: phone
   debates:
     index:
       create_debate: Create a debate
-      showing: You are seeing debates
+      select_order: Order by 
       orders:
         created_at: newest
         total_votes: most voted
         likes: best rated
+      select_topic: "Filter by topic:"
       filter_topic: "You are seeing %{number} debates with the topic '%{topic}'"
+      all: All
     debate:
       debate: Debate
       comments:
@@ -149,6 +152,9 @@ en:
       phone_number_label: "Phone number"
       organization_name_label: "Organization name"
       notifications: Notifications
+      level_two_user: You are a level 2 user
+      level_three_user: You are a level 3 user
+      verify_my_account: Verify my account
   simple_captcha:
     placeholder: "Enter the image value"
     label: "Enter the code in the box"

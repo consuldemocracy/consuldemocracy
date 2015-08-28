@@ -24,6 +24,7 @@ data:
     - config/locales/%{locale}.yml
     - config/locales/admin.%{locale}.yml
     - config/locales/moderation.%{locale}.yml
+    - config/locales/verification.%{locale}.yml
     - config/locales/mailers.%{locale}.yml
     - config/locales/devise_views.%{locale}.yml
     - config/locales/responders.%{locale}.yml

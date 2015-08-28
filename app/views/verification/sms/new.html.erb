@@ -1,0 +1,14 @@
+<div class="row account">
+  <div class="small-12 column">
+
+    <h1 class="inline-block"><%= t('verification.sms.new.title') %></h1>
+
+    <%= form_for @sms, url: sms_path do |f| %>
+      <%= render 'shared/errors', resource: @sms %>
+
+      <%= f.text_field :phone %>
+
+      <%= f.submit t('verification.sms.new.submit_button') %>
+    <% end %>
+  </div>
+</div>

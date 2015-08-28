@@ -20,6 +20,33 @@ FactoryGirl.define do
     uid "MyString"
   end
 
+  factory :residence do
+    document_number  '12345678Z'
+    document_type    1
+    date_of_birth    Date.new(1980, 12, 31)
+    postal_code      "28013"
+  end
+
+  factory :sms do
+    phone "699999999"
+  end
+
+  factory :letter do
+    user
+    address
+  end
+
+  factory :address do
+    street_type   "Calle"
+    street        "Alcalá"
+    number        "1"
+  end
+
+  factory :verified_user do
+    document_number  '12345678Z'
+    document_type    'dni'
+  end
+
   factory :debate do
     sequence(:title)     { |n| "Debate #{n} title" }
     description          'Debate description'

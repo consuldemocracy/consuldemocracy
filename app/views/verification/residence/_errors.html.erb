@@ -1,0 +1,12 @@
+<% if @residence.errors[:residence_in_madrid].present? %>
+
+  <div id="error_explanation" class="alert-box alert radius">
+    <%= t('verification.residence.new.error_verifying_census') %>
+    <%= mail_to "tec.gobiernoabierto@madrid.es" %>
+  </div>
+
+<% else %>
+  <%= render 'shared/errors',
+             resource: @residence,
+             message: t('verification.residence.new.form_errors')  %>
+<% end %>

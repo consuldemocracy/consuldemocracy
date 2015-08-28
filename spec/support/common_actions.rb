@@ -30,7 +30,7 @@ module CommonActions
     login_as(user2)
     visit debate_path(debate)
 
-    fill_in 'comment_body', with: 'Have you thought about...?'
+    fill_in "comment-body-debate_#{debate.id}", with: 'Have you thought about...?'
     click_button 'Publish comment'
     expect(page).to have_content 'Have you thought about...?'
   end
@@ -45,7 +45,7 @@ module CommonActions
 
     click_link "Reply"
     within "#js-comment-form-comment_#{comment.id}" do
-      fill_in 'comment_body', with: 'It will be done next week.'
+      fill_in "comment-body-comment_#{comment.id}", with: 'It will be done next week.'
       click_button 'Publish reply'
     end
     expect(page).to have_content 'It will be done next week.'
@@ -79,5 +79,13 @@ module CommonActions
 
   def expect_to_be_signed_in
     expect(find('.top-bar')).to have_content 'My account'
+  end
+
+  def select_date(values, selector)
+    selector = selector[:from]
+    day, month, year = values.split("-")
+    select day,   from: "#{selector}_3i"
+    select month, from: "#{selector}_2i"
+    select year,  from: "#{selector}_1i"
   end
 end

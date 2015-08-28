@@ -42,10 +42,13 @@ Rails.application.routes.draw do
   end
 
   resource :account, controller: "account", only: [:show, :update]
-  resource :stats, only: [:show]
 
-  namespace :api do
-    resource :stats, only: [:show]
+  scope module: :verification do
+    resource :residence, controller: "residence", only: [:new, :create]
+    resource :sms, controller: "sms", only: [:new, :create, :edit, :update]
+    resource :verified_user, controller: "verified_user", only: [:show]
+    resource :email, controller: "email", only: [:new, :show, :create]
+    resource :letter, controller: "letter", only: [:new, :create]
   end
 
   namespace :admin do
@@ -108,6 +111,12 @@ Rails.application.routes.draw do
         put :ignore_flag
       end
     end
+  end
+
+  resource :stats, only: [:show]
+
+  namespace :api do
+    resource :stats, only: [:show]
   end
 
   # Example of regular route:

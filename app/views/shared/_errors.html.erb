@@ -1,8 +1,14 @@
 <% if resource.errors.any? %>
   <div id="error_explanation" class="alert-box alert radius">
-    <strong>
-    <%= pluralize resource.errors.count, t("form.error"), t("form.errors") %>
-    <%= t("form.not_saved", resource: t("form.#{resource.class.to_s.downcase}")) %>
-    </strong>
+      <strong>
+      <%= pluralize resource.errors.count, t("form.error"), t("form.errors") %>
+
+      <% if local_assigns[:message].present? %>
+        <%= message %>
+      <% else %>
+        <%= t("form.not_saved", resource: t("form.#{resource.class.to_s.downcase}")) %>
+      <% end %>
+
+      </strong>
   </div>
 <% end %>

@@ -639,7 +639,7 @@ form.locale-form {
   position: relative;
 
   select {
-    background-image: url("language_select.png");
+    background-image: image-url("language_select.png");
 
     &.js-locale-switcher {
       background-color: transparent;
@@ -878,6 +878,10 @@ img.initialjs-avatar {
 
 .is-association {
   background: $association;
+}
+
+.is-deleted {
+  background: $deleted;
 }
 
 .level-1 {

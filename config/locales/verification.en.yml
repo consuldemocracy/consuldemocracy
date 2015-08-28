@@ -1,0 +1,72 @@
+en:
+  verification:
+    residence:
+      new:
+        title: 'Verify residence'
+        document_type:
+          spanish_id: 'Spanish ID'
+          passport: 'Passport'
+          residence_card: 'Residence card'
+        form_errors: 'prevented your residence verification'
+        error_verifying_census: 'The census of the city of Madrid could not verify your information. Pero revise de information and try again or get in touch with us.'
+      create:
+        flash:
+          success: 'Residence verified'
+      alert:
+        verify_attemps_left: 'You have reached the maximum number of Census verification tries'
+        unconfirmed_residency: 'You have not yet confirmed your residence'
+    sms:
+      new:
+        title: Phone verification
+        submit_button: Send
+      create:
+        flash:
+          success: 'Enter the confirmation code we have sent your phone'
+      edit:
+        title: Security code confirmation
+        resend_sms_text: You have not received the confirmation code in your phone?
+        resend_sms_link: Click here to send the confirmation code again
+        submit_button: Send
+      update:
+        error: 'Incorrect confirmation code'
+        flash:
+          level_three:
+            success: 'Correct code. You are now a verified user'
+          level_two:
+            success: 'Correct code'
+      form:
+        submit_button: Send
+      alert:
+        verify_attemps_left: 'You have reached the maximum number of sms verification tries'
+    email:
+      show:
+        flash:
+          success: 'You are now a verified user'
+        alert:
+          failure: 'Incorrect verification code'
+      create:
+        flash:
+          success: "We have send you a confirmation email to your email account: %{email}"
+        alert:
+          failure: "There was a problem sending you an email to your account"
+      form:
+        submit_button: Send
+    letter:
+      new:
+        title: Final Verification
+        explanation: 'To completely verify your account we need to go to one of these offices or send you a letter with a special code to your home address'
+        submit_button: 'Send me a letter'
+      create:
+        flash:
+          success: "You will receive a letter to your home address in the next couple of days"
+        alert:
+          failure: "We could not verify your address with the Census please try again later"
+      alert:
+        unconfirmed_personal_data: 'You have not yet confirmed your personal data'
+    verified_user:
+      show:
+        title: Available information
+        email_title: Emails
+        phone_title: Phones
+        use_another_phone: Use another phone
+

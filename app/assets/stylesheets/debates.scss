@@ -596,6 +596,8 @@
           padding: rem-calc(6) rem-calc(12);
         }
 
+
+
         &.is-admin {
           background: $comment-admin;
           padding: rem-calc(6) rem-calc(12);
@@ -605,6 +607,12 @@
           @extend .is-admin;
         }
       }
+    }
+
+    .is-deleted {
+      background: $deleted;
+      margin-left: rem-calc(42);
+      padding: rem-calc(6) rem-calc(12);
     }
 
     .comment-children {
