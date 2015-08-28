@@ -14,9 +14,26 @@ module ActsAsParanoidAliases
 
     def after_hide
     end
+
+    def confirmed_hide?
+      confirmed_hide_at.present?
+    end
+
+    def confirm_hide
+      update_attribute(:confirmed_hide_at, Time.now)
+    end
+
+    def restore(opts={})
+      super(opts)
+      update_attribute(:confirmed_hide_at, nil)
+    end
   end
 
   module ClassMethods
+    def with_confirmed_hide
+      where("confirmed_hide_at IS NOT NULL")
+    end
+
     def with_hidden
       with_deleted
     end
@@ -35,9 +52,5 @@ module ActsAsParanoidAliases
       only_hidden.where(id: ids).update_all(hidden_at: nil)
     end
   end
-
 end
 
-module ActsAsParanoid
-  include ActsAsParanoidAliases
-end

@@ -1,7 +1,7 @@
-class InappropiateFlag < ActiveRecord::Base
+class Flag < ActiveRecord::Base
 
   belongs_to :user
-  belongs_to :flaggable, polymorphic: true, counter_cache: true, touch: :flagged_as_inappropiate_at
+  belongs_to :flaggable, polymorphic: true, counter_cache: true
 
   scope(:by_user_and_flaggable, lambda do |user, flaggable|
     where(user_id: user.id,
@@ -12,13 +12,13 @@ class InappropiateFlag < ActiveRecord::Base
 
   class AlreadyFlaggedError < StandardError
     def initialize
-      super "The flaggable was already flagged as inappropiate by this user"
+      super "The flaggable was already flagged by this user"
     end
   end
 
   class NotFlaggedError < StandardError
     def initialize
-      super "The flaggable was not flagged as inappropiate by this user"
+      super "The flaggable was not flagged by this user"
     end
   end
 

@@ -36,7 +36,7 @@ es:
       hide_author: Bloquear al autor
       restore: Volver a mostrar
       confirm: '¿Estás seguro?'
-      archive: Archivar
+      confirm_hide: Confirmar
     tags:
       index:
         title: 'Temas de debate'
@@ -48,39 +48,30 @@ es:
     comments:
       index:
         title: Comentarios ocultos
-        show_debate: Ver debate
-        filter: Filtro
-      restore:
-        success: El comentario ha sido permitido
-      filters:
-        all: Todos
-        pending: Pendientes
-        archived: Archivados
+        filter: Firar
+        filters:
+          all: Todos
+          with_confirmed_hide: Confirmados
     debates:
       index:
         title: Debates ocultos
         filter: Filtro
-      show:
-        back: Volver
-      restore:
-        success: El debate ha sido permitido
-      filters:
-        all: Todos
-        pending: Pendientes
-        archived: Archivados
+        filters:
+          all: Todos
+          with_confirmed_hide: Confirmados
     users:
       index:
         title: Usuarios bloqueados
-        restore: Restaurar usuario
+        filter: Filro
+        filters:
+          all: Todos
+          with_confirmed_hide: Confirmados
       show:
         title: "Actividad del usuario %{user}"
-        restore: Restaurar usuario
         back: Volver
         email: "Email:"
         registered_at: "Fecha de alta:"
         hidden_at: "Bloqueado:"
-      restore:
-        success: El usuario y sus contenidos han sido restaurados
     officials:
       level_0: Nivel 0
       level_1: Nivel 1

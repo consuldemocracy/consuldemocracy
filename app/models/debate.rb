@@ -1,6 +1,5 @@
 require 'numeric'
 class Debate < ActiveRecord::Base
-  include ActsAsParanoidAliases
   default_scope { order(created_at: :desc) }
 
   apply_simple_captcha
@@ -10,9 +9,10 @@ class Debate < ActiveRecord::Base
   acts_as_commentable
   acts_as_taggable
   acts_as_paranoid column: :hidden_at
+  include ActsAsParanoidAliases
 
   belongs_to :author, -> { with_hidden }, class_name: 'User', foreign_key: 'author_id'
-  has_many :inappropiate_flags, :as => :flaggable
+  has_many :flags, :as => :flaggable
 
   validates :title, presence: true
   validates :description, presence: true
@@ -23,11 +23,15 @@ class Debate < ActiveRecord::Base
   before_validation :sanitize_description
   before_validation :sanitize_tag_list
 
-  scope :sorted_for_moderation, -> { order(inappropiate_flags_count: :desc, updated_at: :desc) }
-  scope :pending, -> { where(archived_at: nil, hidden_at: nil) }
-  scope :archived, -> { where("archived_at IS NOT NULL AND hidden_at IS NULL") }
-  scope :flagged_as_inappropiate, -> { where("inappropiate_flags_count > 0") }
+  scope :sorted_for_moderation, -> { order(flags_count: :desc, updated_at: :desc) }
+  scope :pending_flag_review, -> { where(ignored_flag_at: nil, hidden_at: nil) }
+  scope :with_ignored_flag, -> { where("ignored_flag_at IS NOT NULL AND hidden_at IS NULL") }
+  scope :flagged, -> { where("flags_count > 0") }
   scope :for_render, -> { includes(:tags) }
+  scope :sort_by_total_votes, -> { reorder(cached_votes_total: :desc) }
+  scope :sort_by_likes , -> { reorder(cached_votes_up: :desc) }
+  scope :sort_by_created_at, -> { reorder(created_at: :desc) }
+      
 
   # Ahoy setup
   visitable # Ahoy will automatically assign visit_id on create
@@ -75,12 +79,12 @@ class Debate < ActiveRecord::Base
     count < 0 ? 0 : count
   end
 
-  def archived?
-    archived_at.present?
+  def ignored_flag?
+    ignored_flag_at.present?
   end
 
-  def archive
-    update(archived_at: Time.now)
+  def ignore_flag
+    update(ignored_flag_at: Time.now)
   end
 
   protected

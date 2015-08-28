@@ -119,11 +119,8 @@ feature 'Admin::Organizations' do
 
     click_on('Verify', match: :first)
 
-    uri = URI.parse(current_url)
-    query_params = Rack::Utils.parse_nested_query(uri.query).symbolize_keys
-
-    expect(query_params[:filter]).to eq('pending')
-    expect(query_params[:page]).to eq('2')
+    expect(current_url).to include('filter=pending')
+    expect(current_url).to include('page=2')
   end
 
 end

@@ -187,7 +187,7 @@ h1, h2, h3, h4, h5, h6 {
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
 header {
-  background: url('home_header_bg.jpg');
+  background: image-url('home_header_bg.jpg');
   background-position: 50% 50%;
   background-size: cover;
   min-height: rem-calc(480);
@@ -215,6 +215,12 @@ header {
     font-weight: normal;
     line-height: $line-height*2;
     margin: 0;
+  }
+
+  p {
+    color: white;
+    font-size: rem-calc(18);
+    line-height: $line-height;
   }
 
   .button {
@@ -431,6 +437,11 @@ footer {
 
   .logo {
     @include logo;
+
+    a {
+      line-height: rem-calc(36);
+      padding-left: 0;
+    }
   }
 
   h4 {
@@ -444,6 +455,16 @@ footer {
     &.link:hover {
       color: white;
       opacity: .5;
+    }
+  }
+
+  .footer-description {
+    a {
+      text-decoration: underline;
+
+      &:hover {
+        color: rgba(255,255,255,.6);
+      }
     }
   }
 }
@@ -566,7 +587,7 @@ form.locale-form {
   position: relative;
 
   select {
-    background-image: url("language_select.png");
+    background-image: image-url("language_select.png");
 
     &.js-locale-switcher {
       background-color: transparent;

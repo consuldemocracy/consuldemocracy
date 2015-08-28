@@ -1,5 +1,18 @@
 <h2><%= t("admin.users.index.title") %></h2>
 
+<dl class="sub-nav">
+  <dt><%= t("admin.users.index.filter") %>:</dt>
+
+  <% @valid_filters.each do |filter| %>
+    <% if @filter == filter %>
+      <dd class="active"><%= t("admin.users.index.filters.#{filter}") %></dd>
+    <% else %>
+      <dd><%= link_to t("admin.users.index.filters.#{filter}"),
+        admin_users_path(filter: filter) %></dd>
+    <% end %>
+  <% end %>
+</dl>
+
 <h3><%= page_entries_info @users %></h3>
 
 <ul class="admin-list">
@@ -7,8 +20,16 @@
   <li>
     <%= link_to user.name, admin_user_path(user) %>
 
-    <%= link_to t("admin.users.index.restore"), restore_admin_user_path(user),
-              method: :put, data: { confirm: t('admin.actions.confirm') }, class: "button radius tiny right" %>
+    <%= link_to t("admin.actions.restore"),
+          restore_admin_user_path(user, request.query_parameters),
+          method: :put,
+          data: { confirm: t("admin.actions.confirm") },
+          class: "button radius tiny success right" %>
+
+    <%= link_to t("admin.actions.confirm_hide"),
+          confirm_hide_admin_user_path(user, request.query_parameters),
+          method: :put,
+          class: "button radius tiny warning right" %>
   </li>
 <% end %>
 </ul>

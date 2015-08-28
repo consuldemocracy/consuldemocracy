@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe 'Paranoid methods' do
 
-  describe '#hide_all' do
+  describe '.hide_all' do
     it 'hides all instances in the id list' do
       debate1 = create(:debate)
       debate2 = create(:debate)
@@ -17,7 +17,7 @@ describe 'Paranoid methods' do
     end
   end
 
-  describe '#restore_all' do
+  describe '.restore_all' do
     it 'restores all instances in the id list' do
       debate1 = create(:debate)
       debate2 = create(:debate)
@@ -31,6 +31,16 @@ describe 'Paranoid methods' do
       Debate.restore_all [debate1, debate3].map(&:id)
 
       expect(Debate.all.sort).to eq([debate1, debate2, debate3].sort)
+    end
+  end
+
+  describe '#restore' do
+    it 'resets the confirmed_hide_at attribute' do
+      debate = create(:debate, :hidden, :with_confirmed_hide)
+
+      debate.restore
+
+      expect(debate.reload.confirmed_hide?).to_not be
     end
   end
 

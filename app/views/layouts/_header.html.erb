@@ -4,8 +4,8 @@
       <%= render "shared/locale_switcher" %>
       <div class="external-links">
         <%= link_to t("layouts.header.participation"), root_path, class: "selected" %>&nbsp;|
-        <%= link_to t("layouts.header.external_link_transparency"), "#" %>&nbsp;|
-        <%= link_to t("layouts.header.external_link_opendata"), "#" %>
+        <%= link_to t("layouts.header.external_link_transparency"), t("layouts.header.external_link_transparency_url"), target: "_blank" %>&nbsp;|
+        <%= link_to t("layouts.header.external_link_opendata"), t("layouts.header.external_link_opendata_url"), target: "_blank"  %>
       </div>
     </div>
   </section>
@@ -32,7 +32,7 @@
           <%= link_to t("layouts.header.welcome"), root_path %>
         </div>
         <div class="small-12 medium-2 column end">
-          <%= link_to t("layouts.header.debates"), debates_path, class: ("active" if current_page?(controller: "debates")) %>
+          <%= link_to t("layouts.header.debates"), debates_path, class: ("active" if current_page?(controller: "/debates")) %>
         </div>
         <div class="small-12 medium-2 column end">
           <%= link_to t("layouts.header.initiatives"), "#" %>
@@ -50,8 +50,10 @@
   <% if home_page? %>
     <div class="row home-page">
       <div class="small-12 column text-center">
-        <h1><%= t("layouts.header.open_city") %></h1>
-        <h2><%= t("layouts.header.open_city_slogan") %></h2>
+        <h1><%= t("layouts.header.open_city_title") %></h1>
+        <p><%= t("layouts.header.open_city_slogan") %></p>
+        <p><%= t("layouts.header.open_city_text") %></p>
+        <p><%= t("layouts.header.open_city_soon") %></p>
         <%= link_to t("layouts.header.see_all_debates"), debates_path, class: "button radius" %>
       </div>
     </div>

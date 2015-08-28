@@ -1,11 +1,12 @@
 class DebatesController < ApplicationController
+  before_action :parse_order, only: :index
   before_action :authenticate_user!, except: [:index, :show]
 
   load_and_authorize_resource
   respond_to :html, :js
 
   def index
-    @debates = Debate.search(params).page(params[:page]).for_render
+    @debates = Debate.search(params).page(params[:page]).for_render.send("sort_by_#{@order}")
     set_debate_votes(@debates)
   end
 
@@ -51,14 +52,14 @@ class DebatesController < ApplicationController
     set_debate_votes(@debate)
   end
 
-  def flag_as_inappropiate
-    InappropiateFlag.flag!(current_user, @debate)
-    respond_with @debate, template: 'debates/_refresh_flag_as_inappropiate_actions'
+  def flag
+    Flag.flag!(current_user, @debate)
+    respond_with @debate, template: 'debates/_refresh_flag_actions'
   end
 
-  def undo_flag_as_inappropiate
-    InappropiateFlag.unflag!(current_user, @debate)
-    respond_with @debate, template: 'debates/_refresh_flag_as_inappropiate_actions'
+  def unflag
+    Flag.unflag!(current_user, @debate)
+    respond_with @debate, template: 'debates/_refresh_flag_actions'
   end
 
   private
@@ -69,6 +70,11 @@ class DebatesController < ApplicationController
 
     def load_featured_tags
       @featured_tags = ActsAsTaggableOn::Tag.where(featured: true)
+    end
+
+    def parse_order
+      @valid_orders = ['total_votes', 'created_at', 'likes']
+      @order = @valid_orders.include?(params[:order]) ? params[:order] : 'created_at'
     end
 
 end

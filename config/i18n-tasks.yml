@@ -24,6 +24,7 @@ data:
     - config/locales/%{locale}.yml
     - config/locales/admin.%{locale}.yml
     - config/locales/moderation.%{locale}.yml
+    - config/locales/verification.%{locale}.yml
     - config/locales/mailers.%{locale}.yml
     - config/locales/devise_views.%{locale}.yml
     - config/locales/responders.%{locale}.yml
@@ -102,6 +103,7 @@ ignore_unused:
   - 'admin.officials.level_*'
   - 'helpers.page_entries_info.*' # kaminari
   - 'views.pagination.*' # kaminari
+  - 'debates.index.orders.*' #order filters for debates
 # - '{devise,kaminari,will_paginate}.*'
 # - 'simple_form.{yes,no}'
 # - 'simple_form.{placeholders,hints,labels}.*'

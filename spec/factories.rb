@@ -4,12 +4,47 @@ FactoryGirl.define do
     sequence(:email) { |n| "manuela#{n}@madrid.es" }
     password         'judgmentday'
     confirmed_at     { Time.now }
+
+    trait :hidden do
+      hidden_at Time.now
+    end
+
+    trait :with_confirmed_hide do
+      confirmed_hide_at Time.now
+    end
   end
 
   factory :identity do
     user nil
     provider "Twitter"
     uid "MyString"
+  end
+
+  factory :residence do
+    document_number  '12345678Z'
+    document_type    1
+    date_of_birth    Date.new(1980, 12, 31)
+    postal_code      "28013"
+  end
+
+  factory :sms do
+    phone "699999999"
+  end
+
+  factory :letter do
+    user
+    address
+  end
+
+  factory :address do
+    street_type   "Calle"
+    street        "Alcalá"
+    number        "1"
+  end
+
+  factory :verified_user do
+    document_number  '12345678Z'
+    document_type    'dni'
   end
 
   factory :debate do
@@ -22,13 +57,17 @@ FactoryGirl.define do
       hidden_at Time.now
     end
 
-    trait :archived do
-      archived_at Time.now
+    trait :with_ignored_flag do
+      ignored_flag_at Time.now
     end
 
-    trait :flagged_as_inappropiate do
+    trait :with_confirmed_hide do
+      confirmed_hide_at Time.now
+    end
+
+    trait :flagged do
       after :create do |debate|
-        InappropiateFlag.flag!(FactoryGirl.create(:user), debate)
+        Flag.flag!(FactoryGirl.create(:user), debate)
       end
     end
   end
@@ -51,13 +90,17 @@ FactoryGirl.define do
       hidden_at Time.now
     end
 
-    trait :archived do
-      archived_at Time.now
+    trait :with_ignored_flag do
+      ignored_flag_at Time.now
     end
 
-    trait :flagged_as_inappropiate do
+    trait :with_confirmed_hide do
+      confirmed_hide_at Time.now
+    end
+
+    trait :flagged do
       after :create do |debate|
-        InappropiateFlag.flag!(FactoryGirl.create(:user), debate)
+        Flag.flag!(FactoryGirl.create(:user), debate)
       end
     end
   end
