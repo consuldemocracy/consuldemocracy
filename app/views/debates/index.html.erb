@@ -1,41 +1,37 @@
 <section role="main">
 
-  <!-- Filters -->
   <div class="filters row">
-    <div class="small-12 column">
-      <h2><%= t("debates.index.showing") %></h2>
-      <form class="inline-block">
-         <select class="js-order-selector" name="order-selector"> 
-           <%= available_options_for_order_selector(@valid_orders, @order) %>
-         </select>
-      </form>
-    </div>
-  </div>
-  <!-- /. Filters -->
+    <div class="small-9 column">
 
-  <!-- Filter topic results -->
-  <div class="filters row">
-    <div class="small-12 column">
-      <% if @tag_filter %>
-        <h2>
-          <%= t("debates.index.filter_topic",
-                 number: @debates.size,
-                 # TODO translation
-                 topic: @tag_filter).html_safe %>
-        </h2>
-      <% else %>
-        <h2>Filtrar por tema:  </h2>
+      <div class="inline-block" >
+        <% if @tag_filter %>
+          <h2>
+            <%= t("debates.index.filter_topic",
+                   number: @debates.size,
+                   topic: @tag_filter).html_safe %>
+          </h2>
+        <% else %>
+          <h2><%= t("debates.index.select_topic") %></h2>
+          <form class="inline-block">
+             <select class="js-tag-filter" name="tag-filter"> 
+               <option value="all" selected="selected"><%= t("debates.index.all") %></option>
+               <%= options_from_collection_for_select(ActsAsTaggableOn::Tag.all, :name, :name) %>
+             </select>
+          </form>
+        <% end %>
+      </div>
+
+      <div class="inline-block right">
+        <h6 class="inline-block"><%= t("debates.index.select_order") %></h6>
         <form class="inline-block">
-           <select class="js-tag-filter" name="tag-filter"> 
-             <%# select_tag 'tag-filter', nil, {prompt: 'Temas --', class: 'js-tag-filter'} do %>
-             <option value="default" disabled="disabled" selected="selected">Temas --</option>
-             <%= options_from_collection_for_select(ActsAsTaggableOn::Tag.all, :name, :name, prompt: 'Temas...') %>
+           <select class="js-order-selector" name="order-selector"> 
+             <%= available_options_for_order_selector(@valid_orders, @order) %>
            </select>
         </form>
-      <% end %>
+      </div>
+
     </div>
   </div>
-  <!-- /. Filter topic results -->
 
   <div class="row">
     <div id="debates" class="debates-list small-12 medium-9 column">
