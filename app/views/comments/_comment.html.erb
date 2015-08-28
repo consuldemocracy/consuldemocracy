@@ -1,12 +1,13 @@
 <div class="row">
 	<div id="<%= dom_id(comment) %>" class="comment small-12 column">
 
-    <% if comment.not_visible? && comment.children_count > 0 %>
-      <div class="is-deleted">
-        <p><%= t("debates.comment.deleted") %></p>
-      </div>
+    <% if comment.hidden? || comment.user.hidden? %>
+      <% if comment.children_count > 0 %>
+        <div class="is-deleted">
+          <p><%= t("debates.comment.deleted") %></p>
+        </div>
+      <% end %>
     <% else %>
-
       <% if comment.as_administrator? %>
         <%= image_tag("admin_avatar.png", size: 32, class: "admin-avatar left") %>
       <% elsif comment.as_moderator? %>
