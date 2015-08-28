@@ -1,4 +1,4 @@
-class UserApi
+class CensusApi
   attr_accessor :client, :citizen, :response
 
   def initialize(citizen)
