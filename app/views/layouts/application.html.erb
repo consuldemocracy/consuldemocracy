@@ -9,17 +9,18 @@
         <%= javascript_include_tag "vendor/modernizr" %>
         <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
         <%= csrf_meta_tags %>
+        <%= favicon_link_tag "favicon.ico" %>
     </head>
-  <body>
+  <body class="<%= "bg-white" if current_page?(root_path) %>">
 
     <%= render 'layouts/header' %>
 
     <% if notice %>
-        <p class="alert-box success"><%= notice %></p>
+        <p class="alert-box success alert-layout"><%= notice %></p>
     <% end %>
 
     <% if alert %>
-        <p class="alert-box"><%= alert %></p>
+        <p class="alert-box alert alert-layout"><%= alert %></p>
     <% end %>
 
     <%= yield %>
