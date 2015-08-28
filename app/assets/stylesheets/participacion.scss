@@ -187,7 +187,7 @@ h1, h2, h3, h4, h5, h6 {
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
 header {
-  background: url('home_header_bg.jpg');
+  background: image-url('home_header_bg.jpg');
   background-position: 50% 50%;
   background-size: cover;
   min-height: rem-calc(480);
@@ -587,7 +587,7 @@ form.locale-form {
   position: relative;
 
   select {
-    background-image: url("language_select.png");
+    background-image: image-url("language_select.png");
 
     &.js-locale-switcher {
       background-color: transparent;
