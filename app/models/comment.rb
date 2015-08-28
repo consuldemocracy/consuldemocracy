@@ -1,7 +1,7 @@
 class Comment < ActiveRecord::Base
-  include ActsAsParanoidAliases
   acts_as_nested_set scope: [:commentable_id, :commentable_type], counter_cache: :children_count
   acts_as_paranoid column: :hidden_at
+  include ActsAsParanoidAliases
   acts_as_votable
 
   attr_accessor :as_moderator, :as_administrator
