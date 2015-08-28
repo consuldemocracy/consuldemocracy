@@ -59,7 +59,7 @@ feature 'Comments' do
     login_as(user)
     visit debate_path(debate)
 
-    fill_in 'comment_body', with: 'Have you thought about...?'
+    fill_in "comment-body-debate_#{debate.id}", with: 'Have you thought about...?'
     click_button 'Publish comment'
 
     within "#comments" do
@@ -91,7 +91,7 @@ feature 'Comments' do
     click_link "Reply"
 
     within "#js-comment-form-comment_#{comment.id}" do
-      fill_in 'comment_body', with: 'It will be done next week.'
+      fill_in "comment-body-comment_#{comment.id}", with: 'It will be done next week.'
       click_button 'Publish reply'
     end
 
@@ -178,8 +178,8 @@ feature 'Comments' do
       login_as(moderator.user)
       visit debate_path(debate)
 
-      fill_in "comment_body", with: "I am moderating!"
-      check "comment_as_moderator"
+      fill_in "comment-body-debate_#{debate.id}", with: "I am moderating!"
+      check "comment-as-moderator-debate_#{debate.id}"
       click_button "Publish comment"
 
       within "#comments" do
@@ -203,8 +203,8 @@ feature 'Comments' do
       click_link "Reply"
 
       within "#js-comment-form-comment_#{comment.id}" do
-        fill_in "comment_body", with: "I am moderating!"
-        check "comment_as_moderator"
+        fill_in "comment-body-comment_#{comment.id}", with: "I am moderating!"
+        check "comment-as-moderator-comment_#{comment.id}"
         click_button 'Publish reply'
       end
 
@@ -237,8 +237,8 @@ feature 'Comments' do
       login_as(admin.user)
       visit debate_path(debate)
 
-      fill_in "comment_body", with: "I am your Admin!"
-      check "comment_as_administrator"
+      fill_in "comment-body-debate_#{debate.id}", with: "I am your Admin!"
+      check "comment-as-administrator-debate_#{debate.id}"
       click_button "Publish comment"
 
       within "#comments" do
@@ -262,8 +262,8 @@ feature 'Comments' do
       click_link "Reply"
 
       within "#js-comment-form-comment_#{comment.id}" do
-        fill_in "comment_body", with: "Top of the world!"
-        check "comment_as_administrator"
+        fill_in "comment-body-comment_#{comment.id}", with: "Top of the world!"
+        check "comment-as-administrator-comment_#{comment.id}"
         click_button 'Publish reply'
       end
 

@@ -1,16 +1,18 @@
 <div class="row">
 	<div id="<%= dom_id(comment) %>" class="comment small-12 column">
 
-    <% if comment.not_visible? %>
-      <%= t("debates.comment.deleted") %>
+    <% if comment.hidden? || comment.user.hidden? %>
+      <% if comment.children_count > 0 %>
+        <div class="is-deleted">
+          <p><%= t("debates.comment.deleted") %></p>
+        </div>
+      <% end %>
     <% else %>
-
       <% if comment.as_administrator? %>
         <%= image_tag("admin_avatar.png", size: 32, class: "admin-avatar left") %>
       <% elsif comment.as_moderator? %>
         <%= image_tag("moderator_avatar.png", size: 32, class: "moderator-avatar left") %>
       <% else %>
-
         <% if comment.user.organization? %>
           <%= image_tag("collective_avatar.png", size: 32, class: "avatar left") %>
         <% else %>
@@ -19,7 +21,6 @@
         <% if comment.user.hidden? %>
           <i class="icon-deleted user-deleted"></i>
         <% end %>
-
       <% end %>
 
       <div class="comment-body">
@@ -91,11 +92,10 @@
           <% end %>
         </div>
       </div>
-
     <% end %>
 
-      <div class="comment-children">
-        <%= render comment.children.for_render.reorder('id DESC, lft') %>
-      </div>
+    <div class="comment-children">
+      <%= render comment.children.for_render.reorder('id DESC, lft') %>
+    </div>
   </div>
 </div>

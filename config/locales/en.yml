@@ -56,12 +56,14 @@ en:
   debates:
     index:
       create_debate: Create a debate
-      showing: You are seeing debates
+      select_order: Order by 
       orders:
         created_at: newest
         total_votes: most voted
         likes: best rated
+      select_topic: "Filter by topic:"
       filter_topic: "You are seeing %{number} debates with the topic '%{topic}'"
+      all: All
     debate:
       debate: Debate
       comments:

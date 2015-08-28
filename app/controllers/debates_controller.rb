@@ -1,5 +1,5 @@
 class DebatesController < ApplicationController
-  before_action :parse_order, only: :index
+  before_action :parse_order, :parse_tag_filter, only: :index
   before_action :authenticate_user!, except: [:index, :show]
 
   load_and_authorize_resource
@@ -7,6 +7,7 @@ class DebatesController < ApplicationController
 
   def index
     @debates = Debate.search(params).page(params[:page]).for_render.send("sort_by_#{@order}")
+    @tags = ActsAsTaggableOn::Tag.all
     set_debate_votes(@debates)
   end
 
@@ -75,6 +76,11 @@ class DebatesController < ApplicationController
     def parse_order
       @valid_orders = ['total_votes', 'created_at', 'likes']
       @order = @valid_orders.include?(params[:order]) ? params[:order] : 'created_at'
+    end
+
+    def parse_tag_filter
+      valid_tags = ActsAsTaggableOn::Tag.all.map(&:name)
+      @tag_filter = params[:tag] if valid_tags.include?(params[:tag])
     end
 
 end

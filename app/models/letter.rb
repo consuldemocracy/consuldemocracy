@@ -18,7 +18,7 @@ class Letter
   end
 
   def address
-    @address ||= UserApi.new(user).address
+    @address ||= CensusApi.new(user).address
   end
 
   def letter_requested!

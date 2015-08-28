@@ -1,4 +1,4 @@
-class UserApi
+class CensusApi
   attr_accessor :client, :citizen, :response
 
   def initialize(citizen)
@@ -42,6 +42,8 @@ class UserApi
   end
 
   def valid?
+    return false unless data[:datos_habitante][:item].present?
+
     citizen.date_of_birth == date_of_birth &&
     citizen.postal_code   == postal_code
   end

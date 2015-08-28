@@ -1,34 +1,45 @@
 <section role="main">
 
-  <!-- Filters -->
   <div class="filters row">
-    <div class="small-12 column">
-      <h2><%= t("debates.index.showing") %></h2>
-      <form class="inline-block">
-         <select class="js-location-changer" name="order-selector">
-           <% @valid_orders.each do |order| %>
-             <option <%= 'selected' if order == @order %>
-                     value='<%= url_for(request.query_parameters.merge(order: order))%>'>
-               <%= t("debates.index.orders.#{order}") %>
-             </option>
-           <% end %>
-         </select>
-      </form>
-    </div>
-  </div>
-  <!-- /. Filters -->
+    <div class="small-9 column">
 
-  <!-- Filter topic results -->
-  <div class="filters row">
-    <div class="small-12 column">
-      <h2>
-        <%= t("debates.index.filter_topic",
-        number: "N",
-        topic: "topic").html_safe %>
-      </h2>
+      <div class="inline-block" >
+        <% if @tag_filter %>
+          <h2>
+            <%= t("debates.index.filter_topic",
+                   number: @debates.size,
+                   topic: @tag_filter) %>
+          </h2>
+        <% else %>
+          <h2><%= t("debates.index.select_topic") %></h2>
+          <form class="inline-block">
+             <select class="js-location-changer" name="tag-filter">
+               <option value="/" selected="selected"><%= t("debates.index.all") %></option>
+               <% @tags.each do |tag| %>
+                 <option value='<%= url_for(request.query_parameters.merge(tag: tag.name))%>'>
+                   <%= tag.name %>
+                 </option>
+               <% end %>
+             </select>
+          </form>
+        <% end %>
+      </div>
+
+      <div class="inline-block right">
+        <h6 class="inline-block"><%= t("debates.index.select_order") %></h6>
+        <form class="inline-block">
+           <select class="js-location-changer" name="order-selector">
+             <% @valid_orders.each do |order| %>
+               <option <%= 'selected' if order == @order %>
+                       value='<%= url_for(request.query_parameters.merge(order: order))%>'>
+                 <%= t("debates.index.orders.#{order}") %>
+               </option>
+             <% end %>
+           </select>
+        </form>
+      </div>
     </div>
   </div>
-  <!-- /. Filter topic results -->
 
   <div class="row">
     <div id="debates" class="debates-list small-12 medium-9 column">
