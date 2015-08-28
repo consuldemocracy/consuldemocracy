@@ -13,13 +13,13 @@ feature 'Verify Letter' do
     expect(page).to have_content "You will receive a letter to your home address"
   end
 
-  scenario "Error accessing address from UserApi" do
+  scenario "Error accessing address from CensusApi" do
     user = create(:user, residence_verified_at: Time.now, confirmed_phone: "611111111")
 
     login_as(user)
     visit new_letter_path
 
-    allow_any_instance_of(UserApi).to receive(:address).and_return(nil)
+    allow_any_instance_of(CensusApi).to receive(:address).and_return(nil)
 
     click_button "Send me a letter"
 

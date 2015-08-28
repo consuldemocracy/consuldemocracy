@@ -36,7 +36,7 @@ class Residence
 
     self.date_of_birth = date_to_string(date_of_birth)
 
-    residency = UserApi.new(self)
+    residency = CensusApi.new(self)
     errors.add(:residence_in_madrid, false) unless residency.valid?
 
     self.date_of_birth = string_to_date(date_of_birth)
