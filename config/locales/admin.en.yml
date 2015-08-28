@@ -36,7 +36,7 @@ en:
       hide_author: Ban author
       restore: Restore
       confirm: 'Are you sure?'
-      archive: Archive
+      confirm_hide: Confirm
     tags:
       index:
         title: 'Debate topics'
@@ -48,39 +48,30 @@ en:
     comments:
       index:
         title: Hidden comments
-        show_debate: Show debate
         filter: Filter
-      restore:
-        success: The comment has been restored
-      filters:
-        all: All
-        pending: Pending
-        archived: Archived
+        filters:
+          all: All
+          with_confirmed_hide: Confirmed
     debates:
       index:
         title: Hidden debates
         filter: Filter
-      show:
-        back: Back
-      restore:
-        success: The debate has been restored
-      filters:
-        all: All
-        pending: Pending
-        archived: Archived
+        filters:
+          all: All
+          with_confirmed_hide: Confirmed
     users:
       index:
         title: Banned users
-        restore: Restore user
+        filter: Filter
+        filters:
+          all: All
+          with_confirmed_hide: Confirmed
       show:
         title: "User activity from %{user}"
-        restore: Restore user
         back: Back
         email: "Email:"
         registered_at: "Registered at:"
         hidden_at: "Hidden at:"
-      restore:
-        success: The user has been restored
     officials:
       level_0: Level 0
       level_1: Level 1

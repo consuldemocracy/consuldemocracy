@@ -19,19 +19,19 @@ class Moderation::CommentsController < Moderation::BaseController
     redirect_to request.query_parameters.merge(action: :index)
   end
 
-  def archive
-    @comment.archive
+  def ignore_flag
+    @comment.ignore_flag
     redirect_to request.query_parameters.merge(action: :index)
   end
 
   private
 
     def load_comments
-      @comments = Comment.accessible_by(current_ability, :hide).flagged_as_inappropiate.sorted_for_moderation.includes(:commentable)
+      @comments = Comment.accessible_by(current_ability, :hide).flagged.sorted_for_moderation.includes(:commentable)
     end
 
     def set_valid_filters
-      @valid_filters = %w{all pending archived}
+      @valid_filters = %w{all pending_flag_review with_ignored_flag}
     end
 
     def parse_filter

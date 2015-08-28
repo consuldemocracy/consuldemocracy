@@ -28,15 +28,15 @@ Rails.application.routes.draw do
   resources :debates do
     member do
       post :vote
-      put :flag_as_inappropiate
-      put :undo_flag_as_inappropiate
+      put :flag
+      put :unflag
     end
 
     resources :comments, only: :create, shallow: true do
       member do
         post :vote
-        put :flag_as_inappropiate
-        put :undo_flag_as_inappropiate
+        put :flag
+        put :unflag
       end
     end
   end
@@ -58,15 +58,24 @@ Rails.application.routes.draw do
     end
 
     resources :users, only: [:index, :show] do
-      member { put :restore }
+      member do
+        put :restore
+        put :confirm_hide
+      end
     end
 
-    resources :debates, only: [:index, :show] do
-      member { put :restore }
+    resources :debates, only: :index do
+      member do
+        put :restore
+        put :confirm_hide
+      end
     end
 
     resources :comments, only: :index do
-      member { put :restore }
+      member do
+        put :restore
+        put :confirm_hide
+      end
     end
 
     resources :tags, only: [:index, :create, :update, :destroy]
@@ -88,7 +97,7 @@ Rails.application.routes.draw do
       member do
         put :hide
         put :hide_in_moderation_screen
-        put :archive
+        put :ignore_flag
       end
     end
 
@@ -96,7 +105,7 @@ Rails.application.routes.draw do
       member do
         put :hide
         put :hide_in_moderation_screen
-        put :archive
+        put :ignore_flag
       end
     end
   end

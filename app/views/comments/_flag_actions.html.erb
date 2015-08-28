@@ -1,0 +1,23 @@
+<% if can? :flag, comment %>
+  <span class="divider">&nbsp;|&nbsp;</span>
+  <a id="flag-expand-comment-<%= comment.id %>" data-dropdown="flag-drop-comment-<%= comment.id %>" aria-controls="flag-drop-comment-<%= comment.id %>" aria-expanded="false" title="<%= t('shared.flag') %>">
+    &nbsp;<i class="icon-flag flag-disable"></i>&nbsp;&nbsp;
+  </a>
+  <ul id="flag-drop-comment-<%= comment.id %>" class="f-dropdown" data-dropdown-content aria-hidden="true" tabindex="-1">
+    <li>
+      <%= link_to t("shared.flag"), flag_comment_path(comment), method: :put, remote: true, id: "flag-comment-#{comment.id}" %>
+    </li>
+  </ul>
+<% end %>
+
+<% if can? :unflag, comment %>
+  <span class="divider">&nbsp;|&nbsp;</span>
+  <a id="unflag-expand-comment-<%= comment.id %>" data-dropdown="unflag-drop-comment-<%= comment.id %>" aria-controls="unflag-drop-comment-<%= comment.id %>" aria-expanded="false" title="<%= t('shared.unflag') %>">
+    &nbsp;<i class="icon-flag flag-active"></i>&nbsp;&nbsp;
+  </a>
+  <ul id="unflag-drop-comment-<%= comment.id %>" class="f-dropdown" data-dropdown-content aria-hidden="true" tabindex="-1">
+    <li>
+      <%= link_to t("shared.unflag"), unflag_comment_path(comment), method: :put, remote: true, id: "unflag-comment-#{comment.id}" %>
+    </li>
+  </ul>
+<% end %>

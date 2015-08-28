@@ -2,22 +2,71 @@ require 'rails_helper'
 
 feature 'Admin debates' do
 
-  scenario 'Restore', :js do
-    citizen = create(:user)
+  background do
     admin = create(:administrator)
-
-    debate = create(:debate, :hidden)
-
     login_as(admin.user)
-    visit admin_debate_path(debate)
+  end
+
+  scenario 'Restore' do
+    debate = create(:debate, :hidden)
+    visit admin_debates_path
 
     click_link 'Restore'
 
-    expect(page).to have_content 'The debate has been restored'
+    expect(page).to_not have_content(debate.title)
 
-    login_as(citizen)
-    visit debates_path
-
-    expect(page).to have_css('.debate', count: 1)
+    expect(debate.reload).to_not be_hidden
   end
+
+  scenario 'Confirm hide' do
+    debate = create(:debate, :hidden)
+    visit admin_debates_path
+
+    click_link 'Confirm'
+
+    expect(page).to have_content(debate.title)
+    expect(page).to have_content('Confirmed')
+
+    expect(debate.reload).to be_confirmed_hide
+  end
+
+  scenario "Current filter is properly highlighted" do
+    visit admin_debates_path
+    expect(page).to_not have_link('All')
+    expect(page).to have_link('Confirmed')
+
+    visit admin_debates_path(filter: 'all')
+    expect(page).to_not have_link('All')
+    expect(page).to have_link('Confirmed')
+
+    visit admin_debates_path(filter: 'with_confirmed_hide')
+    expect(page).to have_link('All')
+    expect(page).to_not have_link('Confirmed')
+  end
+
+  scenario "Filtering debates" do
+    create(:debate, :hidden, title: "Unconfirmed debate")
+    create(:debate, :hidden, :with_confirmed_hide, title: "Confirmed debate")
+
+    visit admin_debates_path(filter: 'all')
+    expect(page).to have_content('Unconfirmed debate')
+    expect(page).to have_content('Confirmed debate')
+
+    visit admin_debates_path(filter: 'with_confirmed_hide')
+    expect(page).to_not have_content('Unconfirmed debate')
+    expect(page).to have_content('Confirmed debate')
+  end
+
+  scenario "Action links remember the pagination setting and the filter" do
+    per_page = Kaminari.config.default_per_page
+    (per_page + 2).times { create(:debate, :hidden, :with_confirmed_hide) }
+
+    visit admin_debates_path(filter: 'with_confirmed_hide', page: 2)
+
+    click_on('Restore', match: :first, exact: true)
+
+    expect(current_url).to include('filter=with_confirmed_hide')
+    expect(current_url).to include('page=2')
+  end
+
 end

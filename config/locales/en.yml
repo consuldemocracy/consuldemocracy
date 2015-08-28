@@ -159,8 +159,8 @@ en:
   shared:
     tags_cloud:
       tags: Topics
-    flag_as_inappropiate: Flag as inappropriate
-    undo_flag_as_inappropiate: Undo flag
+    flag: Flag as inappropriate
+    unflag: Undo flag
     collective: Collective
   mailer:
     comment:

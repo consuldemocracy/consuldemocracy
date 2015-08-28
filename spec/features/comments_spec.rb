@@ -148,14 +148,14 @@ feature 'Comments' do
       expect(page).to have_css("#unflag-expand-comment-#{comment.id}")
     end
 
-    expect(InappropiateFlag.flagged?(user, comment)).to be
+    expect(Flag.flagged?(user, comment)).to be
   end
 
   scenario "Undoing flagging as inappropriate", :js do
     user = create(:user)
     debate = create(:debate)
     comment = create(:comment, commentable: debate)
-    InappropiateFlag.flag!(user, comment)
+    Flag.flag!(user, comment)
 
     login_as(user)
     visit debate_path(debate)
@@ -167,7 +167,7 @@ feature 'Comments' do
       expect(page).to have_css("#flag-expand-comment-#{comment.id}")
     end
 
-    expect(InappropiateFlag.flagged?(user, comment)).to_not be
+    expect(Flag.flagged?(user, comment)).to_not be
   end
 
   feature "Moderators" do

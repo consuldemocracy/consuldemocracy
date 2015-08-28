@@ -19,19 +19,19 @@ class Moderation::DebatesController < Moderation::BaseController
     redirect_to request.query_parameters.merge(action: :index)
   end
 
-  def archive
-    @debate.archive
+  def ignore_flag
+    @debate.ignore_flag
     redirect_to request.query_parameters.merge(action: :index)
   end
 
   private
 
     def load_debates
-      @debates = Debate.accessible_by(current_ability, :hide).flagged_as_inappropiate.sorted_for_moderation
+      @debates = Debate.accessible_by(current_ability, :hide).flagged.sorted_for_moderation
     end
 
     def set_valid_filters
-      @valid_filters = %w{all pending archived}
+      @valid_filters = %w{all pending_flag_review with_ignored_flag}
     end
 
     def parse_filter

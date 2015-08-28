@@ -4,6 +4,14 @@ FactoryGirl.define do
     sequence(:email) { |n| "manuela#{n}@madrid.es" }
     password         'judgmentday'
     confirmed_at     { Time.now }
+
+    trait :hidden do
+      hidden_at Time.now
+    end
+
+    trait :with_confirmed_hide do
+      confirmed_hide_at Time.now
+    end
   end
 
   factory :identity do
@@ -22,13 +30,17 @@ FactoryGirl.define do
       hidden_at Time.now
     end
 
-    trait :archived do
-      archived_at Time.now
+    trait :with_ignored_flag do
+      ignored_flag_at Time.now
     end
 
-    trait :flagged_as_inappropiate do
+    trait :with_confirmed_hide do
+      confirmed_hide_at Time.now
+    end
+
+    trait :flagged do
       after :create do |debate|
-        InappropiateFlag.flag!(FactoryGirl.create(:user), debate)
+        Flag.flag!(FactoryGirl.create(:user), debate)
       end
     end
   end
@@ -51,13 +63,17 @@ FactoryGirl.define do
       hidden_at Time.now
     end
 
-    trait :archived do
-      archived_at Time.now
+    trait :with_ignored_flag do
+      ignored_flag_at Time.now
     end
 
-    trait :flagged_as_inappropiate do
+    trait :with_confirmed_hide do
+      confirmed_hide_at Time.now
+    end
+
+    trait :flagged do
       after :create do |debate|
-        InappropiateFlag.flag!(FactoryGirl.create(:user), debate)
+        Flag.flag!(FactoryGirl.create(:user), debate)
       end
     end
   end
