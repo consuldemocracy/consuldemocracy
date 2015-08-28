@@ -16,7 +16,7 @@
              <select class="js-location-changer" name="tag-filter">
                <option value="/" selected="selected"><%= t("debates.index.all") %></option>
                <% @tags.each do |tag| %>
-                 <option value='<%= url_for(request.query_parameters.merge(tag: tag.name))%>'>
+                 <option value='<%= current_path_with_query_params(tag: tag.name) %>'>
                    <%= tag.name %>
                  </option>
                <% end %>
@@ -31,7 +31,7 @@
            <select class="js-location-changer" name="order-selector">
              <% @valid_orders.each do |order| %>
                <option <%= 'selected' if order == @order %>
-                       value='<%= url_for(request.query_parameters.merge(order: order))%>'>
+                       value='<%= current_path_with_query_params(order: order) %>'>
                  <%= t("debates.index.orders.#{order}") %>
                </option>
              <% end %>

@@ -8,7 +8,7 @@
       <dd class="active"><%= t("moderation.comments.index.filters.#{filter}") %></dd>
     <% else %>
       <dd><%= link_to t("moderation.comments.index.filters.#{filter}"),
-        moderation_comments_path(filter: filter) %></dd>
+        current_path_with_query_params(filter: filter) %></dd>
     <% end %>
   <% end %>
 </dl>

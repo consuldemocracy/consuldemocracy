@@ -4,7 +4,7 @@
     <select class="js-location-changer locale-switcher" name="locale-switcher">
       <% I18n.available_locales.map do |loc| %>
         <option <%= 'selected' if loc == I18n.locale %>
-                value='<%= url_for(request.query_parameters.merge(locale: loc))%>'>
+                value='<%= current_path_with_query_params(locale: loc) %>'>
           <%= I18n.t('locale', locale: loc) %>
         </option>
       <% end %>
