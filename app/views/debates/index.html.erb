@@ -4,7 +4,16 @@
   <div class="filters row">
     <div class="small-12 column">
       <h2><%= t("debates.index.showing") %></h2>
-      <%= render 'order_selector' %>
+      <form class="inline-block">
+         <select class="js-location-changer" name="order-selector">
+           <% @valid_orders.each do |order| %>
+             <option <%= 'selected' if order == @order %>
+                     value='<%= url_for(request.query_parameters.merge(order: order))%>'>
+               <%= t("debates.index.orders.#{order}") %>
+             </option>
+           <% end %>
+         </select>
+      </form>
     </div>
   </div>
   <!-- /. Filters -->
