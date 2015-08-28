@@ -217,6 +217,12 @@ header {
     margin: 0;
   }
 
+  p {
+    color: white;
+    font-size: rem-calc(18);
+    line-height: $line-height;
+  }
+
   .button {
     color: white;
     font-family: inherit;
@@ -431,6 +437,11 @@ footer {
 
   .logo {
     @include logo;
+
+    a {
+      line-height: rem-calc(36);
+      padding-left: 0;
+    }
   }
 
   h4 {
@@ -444,6 +455,16 @@ footer {
     &.link:hover {
       color: white;
       opacity: .5;
+    }
+  }
+
+  .footer-description {
+    a {
+      text-decoration: underline;
+
+      &:hover {
+        color: rgba(255,255,255,.6);
+      }
     }
   }
 }
