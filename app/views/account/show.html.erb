@@ -8,7 +8,7 @@
       <% elsif current_user.level_two_verified? %>
         <%= t("account.show.level_two_user") %>
       <% else %>
-        <%= link_to "Verify my account", new_residence_path, class: 'button radius small secondary right' %>
+        <%= link_to t("account.show.verify_my_account"), new_residence_path, class: 'button radius small secondary right' %>
       <% end %>
     </span>
 
