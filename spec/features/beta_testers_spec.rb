@@ -10,7 +10,7 @@ feature 'Beta testers' do
     to receive(:beta_testers).and_return(['isabel@example.com'])
   end
 
-  scenario 'Beta testers should have access', :focus do
+  scenario 'Beta testers should have access' do
     visit root_path
     sign_up('isabel@example.com', 'secretpassword')
     confirm_email
@@ -22,7 +22,7 @@ feature 'Beta testers' do
     expect(page).to have_content "Signed in successfully."
   end
 
-  scenario 'Non beta testers should not have access', :focus do
+  scenario 'Non beta testers should not have access' do
     visit root_path
     sign_up('other@example.com', 'secretpassword')
     confirm_email
