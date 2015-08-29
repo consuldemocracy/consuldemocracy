@@ -55,7 +55,7 @@ es:
     comments:
       index:
         title: Comentarios ocultos
-        filter: Firar
+        filter: Filtro
         filters:
           all: Todos
           with_confirmed_hide: Confirmados
@@ -69,7 +69,7 @@ es:
     users:
       index:
         title: Usuarios bloqueados
-        filter: Filro
+        filter: Filtro
         filters:
           all: Todos
           with_confirmed_hide: Confirmados
