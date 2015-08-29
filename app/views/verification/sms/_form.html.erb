@@ -1,4 +1,4 @@
-<%= form_for sms, url: sms_path do |f| %>
+<%= form_for sms, as: "sms", url: sms_path do |f| %>
   <%= render 'shared/errors', resource: sms %>
   <%= f.hidden_field :phone %>
   <%= f.submit t('verification.sms.form.submit_button') %>

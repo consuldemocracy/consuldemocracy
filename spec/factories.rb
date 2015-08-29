@@ -27,7 +27,7 @@ FactoryGirl.define do
     postal_code      "28013"
   end
 
-  factory :sms do
+  factory :verification_sms, class: Verification::Sms do
     phone "699999999"
   end
 
