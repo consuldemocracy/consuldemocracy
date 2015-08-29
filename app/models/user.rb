@@ -110,8 +110,8 @@ class User < ActiveRecord::Base
     update official_position: nil, official_level: 0
   end
 
-  def self.with_email(e)
-    e.present? ? where(email: e) : none
+  def self.search(term)
+    term.present? ? where("email = ? OR username ILIKE ?", term, "%#{term}%") : none
   end
 
   def email_provided?

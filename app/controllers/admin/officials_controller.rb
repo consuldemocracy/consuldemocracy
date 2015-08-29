@@ -5,7 +5,7 @@ class Admin::OfficialsController < Admin::BaseController
   end
 
   def search
-    @users = User.with_email(params[:email]).page(params[:page]).for_render
+    @users = User.search(params[:name_or_email]).page(params[:page]).for_render
   end
 
   def edit
