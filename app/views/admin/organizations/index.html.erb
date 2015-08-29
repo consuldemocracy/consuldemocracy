@@ -34,14 +34,6 @@
     <td><%= organization.name %></td>
     <td><%= organization.email %></td>
     <td><%= organization.phone_number %></td>
-    <!-- Badge collective name, "collective" by default -->
-    <td><%= t("shared.collective") %></td>
-    <!-- /. Badge collective name, "collective" by default -->
-    <td>
-    <!-- Edit collective bagde, "collective" by default -->
-      <%= link_to t("admin.organizations.index.edit"), "", class: "button radius tiny" %>
-    <!-- /. Edit collective bagde, "collective" by default -->
-    </td>
     <% if organization.verified? %>
       <td class="verified">
         <i class="icon-check"></i>

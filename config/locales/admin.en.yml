@@ -27,7 +27,6 @@ en:
         verified: Verified
         rejected: Rejected
         filter: Filter
-        edit: Edit
         filters:
           all: All
           pending: Pending

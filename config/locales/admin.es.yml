@@ -27,7 +27,6 @@ es:
         verified: Verificada
         rejected: Rechazada
         filter: Filtro
-        edit: Editar
         filters:
           all: Todas
           pending: Pendientes
