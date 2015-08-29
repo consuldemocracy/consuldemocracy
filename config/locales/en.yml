@@ -102,9 +102,6 @@ en:
         zero: No comments
         one: 1 Comment
         other: "%{count} Comments"
-      filter_news: the newest
-      filter_votes: the most voted
-      filter_rated: the best rated
       login_to_comment: "You need to %{signin} or %{signup} to comment."
       edit_debate_link: Edit
       share: Share
