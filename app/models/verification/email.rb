@@ -1,4 +1,4 @@
-class Email
+class Verification::Email
   include ActiveModel::Model
 
   attr_accessor :verified_user, :recipient, :plain_token, :encrypted_token
