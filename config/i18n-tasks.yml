@@ -97,6 +97,7 @@ ignore_missing:
 ## Consider these keys used:
 ignore_unused:
   - 'activerecord.*'
+  - 'activemodel.*'
   - 'admin.organizations.index.filter.*'
   - 'unauthorized.*'
   - 'simple_captcha.*'
