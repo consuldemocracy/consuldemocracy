@@ -51,8 +51,12 @@
     <div class="row home-page">
       <div class="small-12 column text-center">
         <h1><%= t("layouts.header.open_city_title") %></h1>
-        <p><%= t("layouts.header.open_city_slogan") %></p>
-        <p><%= t("layouts.header.open_city_text") %></p>
+        <div class="small-12 medium-10 column small-centered">
+          <p><%= t("layouts.header.open_city_slogan") %></p>
+        </div>
+        <div class="small-12 medium-10 column small-centered">
+          <p><%= t("layouts.header.open_city_text") %></p>
+        </div>
         <p><%= t("layouts.header.open_city_soon") %></p>
         <%= link_to t("layouts.header.see_all_debates"), debates_path, class: "button radius" %>
       </div>

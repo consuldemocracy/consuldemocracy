@@ -1,6 +1,5 @@
 <% if resource.errors.any? %>
   <div id="error_explanation" class="alert-box alert radius">
-    <p>
       <strong>
       <%= pluralize resource.errors.count, t("form.error"), t("form.errors") %>
 
@@ -11,6 +10,5 @@
       <% end %>
 
       </strong>
-    </p>
   </div>
 <% end %>

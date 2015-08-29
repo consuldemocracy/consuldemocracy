@@ -256,7 +256,11 @@
     padding: 0 rem-calc(12) rem-calc(2) rem-calc(12);
 
     &:first-child {
-      padding-top: rem-calc(24);
+      padding-top: rem-calc(12);
+
+      @media (min-width: $small-breakpoint) {
+        padding-top: rem-calc(24);
+      }
     }
 
     .label {
@@ -298,10 +302,14 @@
     border: 1px solid $votes-border;
     border-top-left-radius: 3px;
     border-bottom-left-radius: 3px;
-    margin: 0 rem-calc(-24) 0 rem-calc(12);
+    margin: 0 rem-calc(-12);
+
+    @media (min-width: $small-breakpoint) {
+      margin: 0 rem-calc(-24) 0 rem-calc(12);
+    }
 
     &:after {
-      content: "";
+      content: none;
       position: absolute;
       display: block;
       border-style: solid;
@@ -311,12 +319,26 @@
       border-right-color: transparent;
       right: rem-calc(-1);
       border-width: 1em 1em 0 0;
+
+      @media (min-width: $small-breakpoint) {
+        content: "";
+      }
     }
 
     .total-votes {
-      display: block;
+      display: inline-block;
       float: none;
       line-height: $line-height;
+      margin-left: rem-calc(24);
+      padding-top: rem-calc(12);
+      vertical-align: top;
+
+      @media (min-width: $small-breakpoint) {
+        display: block;
+        line-height: $line-height*2;
+        margin-left: 0;
+        padding-top: 0;
+      }
     }
 
     .like {

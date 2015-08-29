@@ -47,7 +47,7 @@
       vertical-align: top;
     }
 
-    @media (min-width: 480px) {
+    @media (min-width: $small-breakpoint) {
       font-size: rem-calc(28);
       span {
         font-size: rem-calc(20);
@@ -74,6 +74,10 @@ body {
   &::selection, ::-moz-selection {
     background: $brand !important;
     color: white !important;
+  }
+
+  &.bg-white {
+    background: white;
   }
 }
 
@@ -187,9 +191,11 @@ h1, h2, h3, h4, h5, h6 {
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
 header {
-  background: image-url('home_header_bg.jpg');
+  background: url('header_bg.jpg');
   background-position: 50% 50%;
   background-size: cover;
+  box-shadow: 0 1px 3px #999;
+  color: $text;
   min-height: rem-calc(480);
 
   &.results {
@@ -201,39 +207,31 @@ header {
   }
 
   h1 {
-    color: white;
-    font-size: rem-calc(45);
+    font-size: rem-calc(36);
     font-weight: bolder;
-    line-height: $line-height*3;
-    margin: rem-calc(24) 0 0 0;
+    line-height: $line-height*2;
+    margin: rem-calc(24) 0;
     padding: 0;
   }
 
-  h2 {
-    @extend h1;
-    font-size: rem-calc(24);
-    font-weight: normal;
-    line-height: $line-height*2;
-    margin: 0;
-  }
-
   p {
-    color: white;
-    font-size: rem-calc(18);
+    font-size: rem-calc(14);
     line-height: $line-height;
   }
 
   .button {
     color: white;
     font-family: inherit;
-    margin-top: rem-calc(24);
+    margin-top: 0;
   }
 
   .home-page {
+    background-color: rgba(255,255,255,.85);
+
     .button {
       color: white;
       font-family: inherit;
-      margin-top: rem-calc(48);
+      margin-top: 0;
     }
   }
 
@@ -260,7 +258,7 @@ header {
     padding-top: rem-calc(3);
     text-align: center;
 
-    @media (min-width: 480px) {
+    @media (min-width: $small-breakpoint) {
       float: left;
     }
   }
@@ -270,7 +268,7 @@ header {
     padding: rem-calc(12) 0;
     text-align: center;
 
-    @media (min-width: 480px) {
+    @media (min-width: $small-breakpoint) {
       float: right;
     }
   }
@@ -331,11 +329,46 @@ header {
       }
     }
   }
+
+  &.expanded .title-area {
+    background: none;
+  }
+
+  .toggle-topbar a {
+    font-size: rem-calc(10);
+  }
+
+  &.expanded .toggle-topbar a {
+    color: white;
+  }
+
+  &.expanded .toggle-topbar a span::after {
+    box-shadow: 0 0 0 1px #FFFFFF, 0 7px 0 1px #FFFFFF, 0 14px 0 1px #FFFFFF;
+  }
 }
 
 .top-bar-section {
   margin-right: rem-calc(24);
   width: 100%;
+
+  ul li > a {
+    font-size: rem-calc(14);
+
+    &.button {
+      border-radius: 0;
+      line-height: $line-height*1.5;
+      text-align: left;
+    }
+
+    @media (min-width: $small-breakpoint) {
+      &.button {
+        border-radius: rem-calc(3);
+        line-height: normal;
+        margin-top: rem-calc(24);
+        text-align: center;
+      }
+    }
+  }
 
   ul li > a {
     font-size: rem-calc(14);
@@ -356,7 +389,15 @@ header {
   }
 
   ul {
-    margin-right: rem-calc(12);
+    margin-left: rem-calc(12);
+
+    @media (min-width: $small-breakpoint) {
+      margin-left: 0;
+
+      &.right:first-child {
+        margin-right: rem-calc(12);
+      }
+    }
 
     li:not(.has-form) a:not(.button) {
       background: none;
@@ -385,8 +426,13 @@ header {
   font-size: rem-calc(14);
   height: rem-calc(72);
 
-  @media (min-width: 480px) {
+  @media (min-width: $small-breakpoint) {
     height: rem-calc(48);
+  }
+
+  .row {
+    background-color: rgba(0,0,0,.5);
+    padding: 0 rem-calc(10);
   }
 
   a {
@@ -399,7 +445,7 @@ header {
   clear: both;
   text-transform: lowercase;
 
-  @media (min-width: 480px) {
+  @media (min-width: $small-breakpoint) {
     text-align: center;
   }
 
@@ -467,6 +513,10 @@ footer {
       }
     }
   }
+
+  .footer-sections {
+    padding-left: 0;
+  }
 }
 
 .subfooter {
@@ -531,11 +581,13 @@ footer {
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
 .auth-page {
-  background: url('auth_bg.jpg');
-  margin-top: rem-calc(24);
+  background: #065687 url("auth_bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: rem-calc(24);
 
-  @media (min-width: 480px) {
-    margin-top: rem-calc(48);
+  @media (min-width: $small-breakpoint) {
+    padding-top: rem-calc(48);
   }
 
   h1 {
@@ -683,6 +735,12 @@ form {
     border-color: $alert-border;
     color: $alert-color;
   }
+}
+
+.alert-layout {
+  position: absolute;
+  top: 0;
+  width: 100%;
 }
 
 // 10. User account
