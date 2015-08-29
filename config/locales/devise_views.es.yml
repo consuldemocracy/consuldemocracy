@@ -71,7 +71,7 @@ es:
           submit: "Registrarse"
         success:
           title: "Registro de organización / colectivo"
-          thank_you: "Gracias por registrar tu colectivo en la web. Ahora está <b>pendiente de verificación</b>."
+          thank_you_html: "Gracias por registrar tu colectivo en la web. Ahora está <b>pendiente de verificación</b>."
           instructions_1_html: "En breve <b>nos pondremos en contacto contigo</b> para verificar que realmente representas a este colectivo."
           instructions_2_html: "Mientras <b>revisa tu correo electrónico</b>, te hemos enviado un <b>enlace para confirmar tu cuenta</b>."
           instructions_3_html: "Una vez confirmado, podrás empezar a participar como colectivo no verificado."
