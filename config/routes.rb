@@ -175,4 +175,8 @@ Rails.application.routes.draw do
   if Rails.env.development?
     mount LetterOpenerWeb::Engine, at: "/letter_opener"
   end
+
+  # static pages
+  get "/:action", controller: "pages"
+
 end
