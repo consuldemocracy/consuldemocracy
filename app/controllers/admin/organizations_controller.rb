@@ -2,11 +2,15 @@ class Admin::OrganizationsController < Admin::BaseController
   before_filter :set_valid_filters, only: :index
   before_filter :parse_filter, only: :index
 
-  load_and_authorize_resource
+  load_and_authorize_resource except: :search
 
   def index
     @organizations = @organizations.send(@filter)
     @organizations = @organizations.includes(:user).order(:name, 'users.email').page(params[:page])
+  end
+
+  def search
+    @organizations = Organization.search(params[:term]).page(params[:page])
   end
 
   def verify

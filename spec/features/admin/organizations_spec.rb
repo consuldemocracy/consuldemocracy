@@ -2,7 +2,6 @@ require 'rails_helper'
 
 feature 'Admin::Organizations' do
 
-
   background do
     administrator = create(:user)
     create(:administrator, user: administrator)
@@ -10,7 +9,64 @@ feature 'Admin::Organizations' do
     login_as(administrator)
   end
 
-  scenario "pending organizations have links to verify and reject" do
+  context "Search" do
+
+    background do
+      @user = create(:user, email: "marley@humanrights.com", phone_number: "6764440002")
+      organization = create(:organization, user: @user, name: "Get up, Stand up")
+    end
+
+    scenario "returns no results if search term is empty" do
+      visit admin_organizations_path
+      expect(page).to have_content("Get up, Stand up")
+
+      fill_in "term", with: "      "
+      click_button "Search"
+
+      expect(current_path).to eq(search_admin_organizations_path)
+      within("#search-results") do
+        expect(page).to_not have_content("Get up, Stand up")
+      end
+    end
+
+    scenario "finds by name" do
+      visit search_admin_organizations_path
+      expect(page).to_not have_content("Get up, Stand up")
+
+      fill_in "term", with: "Up, sta"
+      click_button "Search"
+
+      within("#search-results") do
+        expect(page).to have_content("Get up, Stand up")
+      end
+    end
+
+    scenario "finds by users email" do
+      visit search_admin_organizations_path
+      expect(page).to_not have_content("Get up, Stand up")
+
+      fill_in "term", with: @user.email
+      click_button "Search"
+
+      within("#search-results") do
+        expect(page).to have_content("Get up, Stand up")
+      end
+    end
+
+    scenario "finds by users phone number" do
+      visit search_admin_organizations_path
+      expect(page).to_not have_content("Get up, Stand up")
+
+      fill_in "term", with: @user.phone_number
+      click_button "Search"
+
+      within("#search-results") do
+        expect(page).to have_content("Get up, Stand up")
+      end
+    end
+  end
+
+  scenario "Pending organizations have links to verify and reject" do
     organization = create(:organization)
 
     visit admin_organizations_path
@@ -24,7 +80,7 @@ feature 'Admin::Organizations' do
     expect(organization.reload.verified?).to eq(true)
   end
 
-  scenario "verified organizations have link to reject" do
+  scenario "Verified organizations have link to reject" do
     organization = create(:organization, :verified)
 
     visit admin_organizations_path
@@ -39,7 +95,7 @@ feature 'Admin::Organizations' do
     expect(organization.reload.rejected?).to eq(true)
   end
 
-  scenario "rejected organizations have link to verify" do
+  scenario "Rejected organizations have link to verify" do
     organization = create(:organization, :rejected)
 
     visit admin_organizations_path

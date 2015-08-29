@@ -3,6 +3,7 @@ en:
     settings:
       index:
         title: Global settings
+        update_setting: Update
       flash:
         updated: 'Setting updated!'
     dashboard:
@@ -21,17 +22,20 @@ en:
     organizations:
       index:
         title: Organizations
+        search_placeholder: "Name, email or phone"
+        search: Search
         verify: Verify
         reject: Reject
         verified: Verified
         rejected: Rejected
         filter: Filter
-        edit: Edit
         filters:
           all: All
           pending: Pending
           verified: Verified
           rejected: Rejected
+      search:
+        title: "Search Organizations"
     actions:
       hide: Hide
       hide_author: Ban author
@@ -45,7 +49,9 @@ en:
       mark_as_featured: 'Propose topic to create debate'
       name:
         placeholder: 'Write a topic'
-      destroy: Delete Tag
+      create: Create Topic
+      update: Update Topic
+      destroy: Delete Topic
     comments:
       index:
         title: Hidden comments

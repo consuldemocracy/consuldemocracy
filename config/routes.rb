@@ -54,6 +54,7 @@ Rails.application.routes.draw do
   namespace :admin do
     root to: "dashboard#index"
     resources :organizations, only: :index do
+      collection { get :search }
       member do
         put :verify
         put :reject

@@ -3,6 +3,7 @@ es:
     settings:
       index:
         title: Configuración global
+        update_setting: Actualizar
       flash:
         updated: 'Valor actualizado'
     dashboard:
@@ -21,17 +22,20 @@ es:
     organizations:
       index:
         title: Organizaciones
+        search_placeholder: "Nombre, email o teléfono"
+        search: Buscar
         verify: Verificar
         reject: Rechazar
         verified: Verificada
         rejected: Rechazada
         filter: Filtro
-        edit: Editar
         filters:
           all: Todas
           pending: Pendientes
           verified: Verificadas
           rejected: Rechazadas
+      search:
+        title: "Buscar Organizaciones"
     actions:
       hide: Ocultar
       hide_author: Bloquear al autor
@@ -45,11 +49,13 @@ es:
       mark_as_featured: 'Proponer tema al crear debate'
       name:
         placeholder: 'Escribe el nombre del tema'
-      destroy: Elimina la etiqueta
+      create: Crear Tema
+      update: Actualizar Tema
+      destroy: Eliminar Tema
     comments:
       index:
         title: Comentarios ocultos
-        filter: Firar
+        filter: Filtro
         filters:
           all: Todos
           with_confirmed_hide: Confirmados
@@ -63,7 +69,7 @@ es:
     users:
       index:
         title: Usuarios bloqueados
-        filter: Filro
+        filter: Filtro
         filters:
           all: Todos
           with_confirmed_hide: Confirmados

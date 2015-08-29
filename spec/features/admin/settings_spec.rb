@@ -22,7 +22,7 @@ feature 'Admin settings' do
 
     within("#edit_setting_#{@setting2.id}") do
       fill_in "setting_#{@setting2.id}", with: 'Super Users of level 2'
-      click_button 'Update Setting'
+      click_button 'Update'
     end
 
     expect(page).to have_content 'Setting updated!'

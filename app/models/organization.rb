@@ -28,4 +28,8 @@ class Organization < ActiveRecord::Base
       (verified_at.blank? || verified_at < rejected_at)
   end
 
+  def self.search(text)
+    text.present? ? joins(:user).where("users.email = ? OR users.phone_number = ? OR organizations.name ILIKE ?", text, text, "%#{text}%") : none
+  end
+
 end
