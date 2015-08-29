@@ -53,10 +53,13 @@ en:
       user: account
       debate: debate
       sms: phone
+  application:
+    alert:
+      only_beta_testers: "Sorry only Beta Testers are allowed access at the moment"
   debates:
     index:
       create_debate: Create a debate
-      select_order: Order by 
+      select_order: Order by
       orders:
         created_at: newest
         total_votes: most voted
