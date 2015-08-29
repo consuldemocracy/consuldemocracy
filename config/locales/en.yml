@@ -57,10 +57,6 @@ en:
     index:
       create_debate: Create a debate
       select_order: Order by 
-      orders:
-        created_at: newest
-        total_votes: most voted
-        likes: best rated
       select_topic: "Filter by topic:"
       filter_topic: "You are seeing %{number} debates with the topic '%{topic}'"
       all: All
@@ -122,6 +118,10 @@ en:
       recommendation_three: "Any discussion or comment that involves an illegal act will be eliminated, also intending to sabotage the debate spaces, everything else is permitted."
       recommendation_four: "The harsh criticism are very welcome. This is a space of thought but we recommend preserving the elegance and intelligence. The world is better with them present."
       recommendation_five: "Enjoy this space, voices that fill it, it is yours too."
+    orders:
+      created_at: newest
+      total_votes: most voted
+      likes: best rated
   comments:
     form:
       leave_comment: Write a comment
