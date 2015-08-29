@@ -21,7 +21,6 @@
 //= require d3
 //= require c3
 //= require c3ext
-//= require qp
 //= require app
 //= require_tree .
 
@@ -31,9 +30,7 @@ var initialize_modules = function() {
   App.Votes.initialize();
   App.Tags.initialize();
   App.Stats.initialize();
-  App.LocaleSwitcher.initialize();
-  App.DebatesOrderSelector.initialize();
-  App.DebatesTagFilter.initialize();
+  App.LocationChanger.initialize();
 };
 
 $(function(){

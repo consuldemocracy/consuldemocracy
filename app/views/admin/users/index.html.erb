@@ -8,7 +8,7 @@
       <dd class="active"><%= t("admin.users.index.filters.#{filter}") %></dd>
     <% else %>
       <dd><%= link_to t("admin.users.index.filters.#{filter}"),
-        admin_users_path(filter: filter) %></dd>
+        current_path_with_query_params(filter: filter) %></dd>
     <% end %>
   <% end %>
 </dl>

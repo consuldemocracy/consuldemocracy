@@ -14,13 +14,10 @@ module ApplicationHelper
     home_page? ? '' : 'results'
   end
 
-  def available_locale_options_for_select
-    options_for_select(available_locales_array, I18n.locale)
+  # if current path is /debates current_path_with_query_params(foo: 'bar') returns /debates?foo=bar
+  # notice: if query_params have a param which also exist in current path, it "overrides" (query_params is merged last)
+  def current_path_with_query_params(query_parameters)
+    url_for(request.query_parameters.merge(query_parameters))
   end
-
-  private
-    def available_locales_array
-      I18n.available_locales.map { |loc| [I18n.t('locale', locale: loc), loc] }
-    end
 
 end
