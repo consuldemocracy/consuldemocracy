@@ -1,4 +1,4 @@
-class Sms
+class Verification::Sms
   include ActiveModel::Model
 
   attr_accessor :user, :phone, :confirmation_code

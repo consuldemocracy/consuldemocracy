@@ -4,7 +4,7 @@ class Verification::EmailController < ApplicationController
   skip_authorization_check
 
   def show
-    if Email.find(current_user, params[:email_verification_token])
+    if Verification::Email.find(current_user, params[:email_verification_token])
       current_user.update(verified_at: Time.now)
       redirect_to account_path, notice: t('verification.email.show.flash.success')
     else
@@ -13,7 +13,7 @@ class Verification::EmailController < ApplicationController
   end
 
   def create
-    @email = Email.new(@verified_user)
+    @email = Verification::Email.new(@verified_user)
     if @email.save
       current_user.reload
       Mailer.email_verification(current_user, @email.recipient, @email.encrypted_token).deliver_now

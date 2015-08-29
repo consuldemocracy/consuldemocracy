@@ -7,7 +7,7 @@
       <%= t('verification.letter.new.explanation') %>
     </div>
 
-    <%= form_for @letter, url: letter_path do |f| %>
+    <%= form_for @letter, as: "letter", url: letter_path do |f| %>
       <%= render 'shared/errors', resource: @letter %>
       <%= f.submit t('verification.letter.new.submit_button') %>
     <% end %>

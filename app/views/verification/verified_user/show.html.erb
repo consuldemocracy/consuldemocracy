@@ -32,7 +32,7 @@
                 <%= verified_user.phone %>
               </span>
               <span style="float:left;padding-left:30px">
-                <%= render '/verification/sms/form', sms: Sms.new(phone: verified_user.phone) %>
+                <%= render '/verification/sms/form', sms: Verification::Sms.new(phone: verified_user.phone) %>
               </span>
             </li>
             <br/><br/><br/>

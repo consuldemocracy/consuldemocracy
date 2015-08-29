@@ -7,7 +7,6 @@ en:
       user: User
       vote: Vote
       organization: Organization
-      residence: Residencia
     attributes:
       comment:
         body: Comment

@@ -3,7 +3,7 @@
 
     <h1 class="inline-block"><%= t('verification.residence.new.title') %></h1>
 
-    <%= form_for @residence, url: residence_path do |f| %>
+    <%= form_for @residence, as: "residence", url: residence_path do |f| %>
       <%= render 'errors' %>
 
       <%= f.select :document_type, document_types, prompt: "" %>

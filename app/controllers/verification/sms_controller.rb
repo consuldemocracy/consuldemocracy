@@ -6,11 +6,11 @@ class Verification::SmsController < ApplicationController
   skip_authorization_check
 
   def new
-    @sms = Sms.new(phone: params[:phone])
+    @sms = Verification::Sms.new(phone: params[:phone])
   end
 
   def create
-    @sms = Sms.new(sms_params.merge(user: current_user))
+    @sms = Verification::Sms.new(sms_params.merge(user: current_user))
     if @sms.save
       redirect_to edit_sms_path, notice: t('verification.sms.create.flash.success')
     else
@@ -19,11 +19,11 @@ class Verification::SmsController < ApplicationController
   end
 
   def edit
-    @sms = Sms.new
+    @sms = Verification::Sms.new
   end
 
   def update
-    @sms = Sms.new(sms_params.merge(user: current_user))
+    @sms = Verification::Sms.new(sms_params.merge(user: current_user))
     if @sms.verify?
       current_user.update(confirmed_phone: current_user.unconfirmed_phone)
 

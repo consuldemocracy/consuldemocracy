@@ -5,11 +5,11 @@ class Verification::LetterController < ApplicationController
   skip_authorization_check
 
   def new
-    @letter = Letter.new(user: current_user)
+    @letter = Verification::Letter.new(user: current_user)
   end
 
   def create
-    @letter = Letter.new(user: current_user)
+    @letter = Verification::Letter.new(user: current_user)
     if @letter.save
       redirect_to account_path, notice: t('verification.letter.create.flash.success')
     else

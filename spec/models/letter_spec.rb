@@ -1,12 +1,12 @@
 require 'rails_helper'
 
-describe 'Letter' do
+describe 'Verification::Letter' do
 
   let(:user)   { create(:user)  }
 
   describe "validations" do
 
-    let(:letter) { build(:letter) }
+    let(:letter) { build(:verification_letter) }
 
     it "should be valid" do
       expect(letter).to be_valid
@@ -27,7 +27,7 @@ describe 'Letter' do
   describe "save" do
 
     before(:each) do
-      letter = Letter.new(user: user)
+      letter = Verification::Letter.new(user: user)
       letter.save
       user.reload
     end

@@ -1,4 +1,4 @@
-class Residence
+class Verification::Residence
   include ActiveModel::Model
   include ActiveModel::Dates
 

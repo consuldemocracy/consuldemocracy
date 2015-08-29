@@ -3,7 +3,7 @@
 
     <h1 class="inline-block"><%= t('verification.sms.edit.title') %></h1>
 
-    <%= form_for @sms, url: sms_path, method: :put do |f| %>
+    <%= form_for @sms, as: "sms", url: sms_path, method: :put do |f| %>
       <p><%= @error %></p>
       <%= f.text_field :confirmation_code %>
 
