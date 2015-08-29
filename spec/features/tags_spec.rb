@@ -47,13 +47,17 @@ feature 'Tags' do
   scenario 'Tag Cloud' do
     1.times  { create(:debate, tag_list: 'Medio Ambiente') }
     5.times  { create(:debate, tag_list: 'Corrupción') }
+    5.times  { create(:debate, tag_list: 'Educación') }
     10.times { create(:debate, tag_list: 'Economía') }
 
     visit debates_path
 
-    within(:css, "#tag-cloud .s") { expect(page).to have_content('Medio Ambiente 1') }
-    within(:css, "#tag-cloud .m") { expect(page).to have_content('Corrupción 5') }
-    within(:css, "#tag-cloud .l") { expect(page).to have_content('Economía 10') }
+    within(:css, "#tag-cloud") do
+      expect(page.find("a:eq(1)")).to have_content("Economía 10")
+      expect(page.find("a:eq(2)")).to have_content("Corrupción 5")
+      expect(page.find("a:eq(3)")).to have_content("Educación 5")
+      expect(page.find("a:eq(4)")).to have_content("Medio Ambiente 1")
+    end
   end
 
   scenario 'Create' do
