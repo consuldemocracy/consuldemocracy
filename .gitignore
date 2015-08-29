@@ -23,6 +23,8 @@
 
 /coverage
 
+/config/beta-testers.txt
+
 # Mac finder artifacts
 .DS_Store
 .ruby-gemset

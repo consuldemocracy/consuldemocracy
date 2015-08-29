@@ -1,16 +1,25 @@
 module CommonActions
 
-  def sign_up
+  def sign_up(email='manuela@madrid.es', password='judgementday')
     visit '/'
     click_link 'Sign up'
 
     fill_in 'user_username',              with: 'Manuela Carmena'
-    fill_in 'user_email',                 with: 'manuela@madrid.es'
-    fill_in 'user_password',              with: 'judgementday'
-    fill_in 'user_password_confirmation', with: 'judgementday'
+    fill_in 'user_email',                 with: email
+    fill_in 'user_password',              with: password
+    fill_in 'user_password_confirmation', with: password
     fill_in 'user_captcha',               with: correct_captcha_text
 
     click_button 'Sign up'
+  end
+
+  def confirm_email
+    expect(page).to have_content "A message with a confirmation link has been sent to your email address."
+
+    sent_token = /.*confirmation_token=(.*)".*/.match(ActionMailer::Base.deliveries.last.body.to_s)[1]
+    visit user_confirmation_path(confirmation_token: sent_token)
+
+    expect(page).to have_content "Your email address has been successfully confirmed"
   end
 
   def reset_password

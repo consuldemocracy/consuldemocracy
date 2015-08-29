@@ -1,7 +1,11 @@
 require "application_responder"
 
 class ApplicationController < ActionController::Base
-  before_filter :authenticate
+  before_filter :authenticate_http_basic
+
+  before_filter :authenticate_user!, unless: :devise_controller?, if: :beta_site?
+  before_filter :authenticate_beta_tester!, unless: :devise_controller?, if: :beta_site?
+
   check_authorization unless: :devise_controller?
   include SimpleCaptcha::ControllerHelpers
   self.responder = ApplicationResponder
@@ -16,19 +20,34 @@ class ApplicationController < ActionController::Base
 
   before_action :ensure_signup_complete
 
-  def authenticate
-    if Rails.env.staging? || Rails.env.production?
-      authenticate_or_request_with_http_basic do |username, password|
-        username == Rails.application.secrets.username && password == Rails.application.secrets.password
-      end
-    end
-  end
-
   rescue_from CanCan::AccessDenied do |exception|
     redirect_to main_app.root_url, alert: exception.message
   end
 
   private
+
+    def authenticate_http_basic
+      if Rails.env.staging? || Rails.env.production?
+        authenticate_or_request_with_http_basic do |username, password|
+          username == Rails.application.secrets.username && password == Rails.application.secrets.password
+        end
+      end
+    end
+
+    def authenticate_beta_tester!
+      unless beta_testers.include?(current_user.email)
+        sign_out(current_user)
+        redirect_to new_user_session_path, alert: t('application.alert.only_beta_testers')
+      end
+    end
+
+    def beta_testers
+      File.readlines('config/beta-testers.txt').map {|email| email }
+    end
+
+    def beta_site?
+      Rails.application.secrets.beta_site
+    end
 
     def set_locale
       if params[:locale] && I18n.available_locales.include?(params[:locale].to_sym)
