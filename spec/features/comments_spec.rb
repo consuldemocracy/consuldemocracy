@@ -288,4 +288,56 @@ feature 'Comments' do
     end
   end
 
+  feature 'Select order for comments', :js do
+
+    background do
+      @debate = create(:debate)
+      @most_voted_comment  = create(:comment, commentable: @debate, body: 'Body 1')
+      @most_liked_comment  = create(:comment, commentable: @debate, body: 'Body 2')
+      @most_recent_comment = create(:comment, commentable: @debate, body: 'Body 3')
+      create_list(:vote, 2, votable: @most_liked_comment)
+      create_list(:vote, 2, votable: @most_voted_comment, vote_flag: false)
+      create(:vote, votable: @most_voted_comment)
+    end
+
+    scenario 'Default order is most voted' do
+      visit debate_path(@debate)
+
+      expect(page).to have_select('order-selector', selected: 'most voted')
+      expect(@most_voted_comment.body).to appear_before(@most_liked_comment.body)
+      expect(@most_voted_comment.body).to appear_before(@most_recent_comment.body)
+    end
+
+    scenario 'Comments are ordered by newest' do
+      visit debate_path(@debate)
+
+      select('newest', from: 'order-selector')
+
+      expect(find("#comments .comment", match: :first)).to have_content(@most_recent_comment.body)
+
+      expect(@most_recent_comment.body).to appear_before(@most_liked_comment.body)
+      expect(@most_liked_comment.body).to appear_before(@most_voted_comment.body)
+    end
+
+    scenario 'Comments are ordered by most liked' do
+      visit debate_path(@debate)
+
+      select('best rated', from: 'order-selector')
+      expect(find("#comments .comment", match: :first)).to have_content(@most_liked_comment.body)
+
+      expect(@most_liked_comment.body).to appear_before(@most_voted_comment.body)
+      expect(@most_voted_comment.body).to appear_before(@most_recent_comment.body)
+    end
+
+    scenario 'New comment is displayed first until page is refreshed' do
+      comment_on(@debate)
+
+      new_comment = Comment.last
+      expect(new_comment.body).to appear_before(@most_voted_comment.body)
+
+      visit debate_path(@debate)
+
+      expect(@most_voted_comment.body).to appear_before(new_comment.body)
+    end
+  end
 end
