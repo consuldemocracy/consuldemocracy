@@ -22,6 +22,8 @@ es:
     organizations:
       index:
         title: Organizaciones
+        search_placeholder: "Nombre, email o teléfono"
+        search: Buscar
         verify: Verificar
         reject: Rechazar
         verified: Verificada
@@ -32,6 +34,8 @@ es:
           pending: Pendientes
           verified: Verificadas
           rejected: Rechazadas
+      search:
+        title: "Buscar Organizaciones"
     actions:
       hide: Ocultar
       hide_author: Bloquear al autor

@@ -22,6 +22,8 @@ en:
     organizations:
       index:
         title: Organizations
+        search_placeholder: "Name, email or phone"
+        search: Search
         verify: Verify
         reject: Reject
         verified: Verified
@@ -32,6 +34,8 @@ en:
           pending: Pending
           verified: Verified
           rejected: Rejected
+      search:
+        title: "Search Organizations"
     actions:
       hide: Hide
       hide_author: Ban author

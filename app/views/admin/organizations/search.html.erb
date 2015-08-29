@@ -1,4 +1,4 @@
-<h2><%= t("admin.organizations.index.title") %></h2>
+<h2><%= t("admin.organizations.search.title") %></h2>
 
 <!-- Search organizations -->
 <%= form_for(Organization.new, url: search_admin_organizations_path, method: :get) do |f| %>
@@ -13,22 +13,9 @@
 <% end %>
 <!-- /. Search organizations -->
 
-<dl class="sub-nav">
-  <dt><%= t("admin.organizations.index.filter") %>:</dt>
-
-  <% @valid_filters.each do |filter| %>
-    <% if @filter == filter %>
-      <dd class="active"><%= t("admin.organizations.index.filters.#{filter}") %></dd>
-    <% else %>
-      <dd><%= link_to t("admin.organizations.index.filters.#{filter}"),
-        current_path_with_query_params(filter: filter) %></dd>
-    <% end %>
-  <% end %>
-</dl>
-
 <h3><%= page_entries_info @organizations %></h3>
 
-<table>
+<table id="search-results">
   <% @organizations.each do |organization| %>
   <tr>
     <td><%= organization.name %></td>
