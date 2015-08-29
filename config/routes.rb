@@ -87,6 +87,9 @@ Rails.application.routes.draw do
     end
 
     resources :settings, only: [:index, :update]
+    resources :moderators, only: [:index, :create, :destroy] do
+      collection { get :search }
+    end
   end
 
   namespace :moderation do

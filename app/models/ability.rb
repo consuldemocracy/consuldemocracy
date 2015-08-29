@@ -90,6 +90,8 @@ class Ability
         cannot :confirm_hide, User, hidden_at: nil
 
         can :comment_as_administrator, [Debate, Comment]
+
+        can :manage, Moderator
       end
     end
   end
