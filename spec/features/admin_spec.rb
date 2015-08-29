@@ -85,7 +85,7 @@ feature 'Admin' do
 
       fill_in 'tag_name', with: 'Papeleras'
 
-      click_on 'Create Tag'
+      click_on 'Create Topic'
 
       expect(page).to have_content 'Papeleras'
     end
@@ -97,7 +97,7 @@ feature 'Admin' do
 
       expect(page).to have_content 'Mi barrio'
 
-      click_link 'Delete Tag'
+      click_link 'Delete Topic'
 
       expect(page).not_to have_content 'Mi barrio'
     end
@@ -110,7 +110,7 @@ feature 'Admin' do
       expect(page).to have_content 'Mi barrio'
 
       check "tag_featured_#{unfeatured_tag.id}"
-      click_button 'Update Tag'
+      click_button 'Update Topic'
 
       expect(page).to have_checked_field("tag_featured_#{unfeatured_tag.id}")
     end
