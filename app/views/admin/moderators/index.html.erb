@@ -13,7 +13,7 @@
 </div>
 <div id="search-result" class="row small"></div>
 <h3><%= page_entries_info @moderators %></h3>
-<ul class="admin-list">
+<ul id="moderators" class="admin-list">
   <% @moderators.each do |moderator| %>
     <li>
       <%= render 'moderator', moderator: moderator %>

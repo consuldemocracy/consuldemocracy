@@ -22,15 +22,18 @@ feature 'Admin moderators' do
 
     expect(page).to have_content @user.name
     click_link 'Add'
-
-    expect(page).to have_content @user.name
+    within("#moderators") do
+      expect(page).to have_content @user.name
+    end
   end
 
   scenario 'Delete Moderator' do
     visit admin_moderators_path
     click_link 'Delete'
 
-    expect(page).to_not have_content @moderator.name
+    within("#moderators") do
+      expect(page).to_not have_content @moderator.name
+    end
   end
 end
 
