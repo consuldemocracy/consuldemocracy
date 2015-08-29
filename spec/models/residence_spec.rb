@@ -1,8 +1,8 @@
 require 'rails_helper'
 
-describe Residence do
+describe Verification::Residence do
 
-  let(:residence) { build(:residence) }
+  let(:residence) { build(:verification_residence) }
 
   describe "validations" do
 
@@ -12,12 +12,12 @@ describe Residence do
 
     describe "dates" do
       it "should be valid with a valid date of birth" do
-        residence = Residence.new({"date_of_birth(3i)"=>"1", "date_of_birth(2i)"=>"1", "date_of_birth(1i)"=>"1980"})
+        residence = Verification::Residence.new({"date_of_birth(3i)"=>"1", "date_of_birth(2i)"=>"1", "date_of_birth(1i)"=>"1980"})
         expect(residence.errors[:date_of_birth].size).to eq(0)
       end
 
       it "should not be valid without a date of birth" do
-        residence = Residence.new({"date_of_birth(3i)"=>"", "date_of_birth(2i)"=>"", "date_of_birth(1i)"=>""})
+        residence = Verification::Residence.new({"date_of_birth(3i)"=>"", "date_of_birth(2i)"=>"", "date_of_birth(1i)"=>""})
         residence.valid?
         expect(residence.errors[:date_of_birth]).to include("can't be blank")
       end
@@ -28,7 +28,7 @@ describe Residence do
       residence.user = user
       residence.save
 
-      residence2 = build(:residence)
+      residence2 = build(:verification_residence)
 
       residence.valid?
       expect(residence.errors[:document_number]).to include("Already in use")
