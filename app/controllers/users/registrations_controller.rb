@@ -29,4 +29,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
       params.require(:user).permit(:username, :email, :password, :password_confirmation, :captcha, :captcha_key)
     end
 
+    def after_inactive_sign_up_path_for(resource_or_scope)
+      beta_site? ? new_user_session_path : super
+    end
+
 end
