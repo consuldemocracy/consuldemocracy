@@ -8,6 +8,7 @@ class DebatesController < ApplicationController
   def index
     @debates = Debate.search(params).page(params[:page]).for_render.send("sort_by_#{@order}")
     @tags = ActsAsTaggableOn::Tag.all
+    @tag_cloud = Debate.tag_counts.order('count desc, name asc')
     set_debate_votes(@debates)
   end
 
