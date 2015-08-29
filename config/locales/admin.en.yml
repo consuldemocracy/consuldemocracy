@@ -3,6 +3,7 @@ en:
     settings:
       index:
         title: Global settings
+        update_setting: Update
       flash:
         updated: 'Setting updated!'
     dashboard:
@@ -45,7 +46,9 @@ en:
       mark_as_featured: 'Propose topic to create debate'
       name:
         placeholder: 'Write a topic'
-      destroy: Delete Tag
+      create: Create Topic
+      update: Update Topic
+      destroy: Delete Topic
     comments:
       index:
         title: Hidden comments

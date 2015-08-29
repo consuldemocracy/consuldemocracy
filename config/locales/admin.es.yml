@@ -3,6 +3,7 @@ es:
     settings:
       index:
         title: Configuración global
+        update_setting: Actualizar
       flash:
         updated: 'Valor actualizado'
     dashboard:
@@ -45,7 +46,9 @@ es:
       mark_as_featured: 'Proponer tema al crear debate'
       name:
         placeholder: 'Escribe el nombre del tema'
-      destroy: Elimina la etiqueta
+      create: Crear Tema
+      update: Actualizar Tema
+      destroy: Eliminar Tema
     comments:
       index:
         title: Comentarios ocultos
