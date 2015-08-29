@@ -77,14 +77,27 @@
   <div class="row">
     <div id="comments" class="small-12 column">
 
-      <h2>
-        <%= t("debates.show.comments_title") %>
-        <span>(<%= @debate.comments_count %>)</span>
-      </h2>
+      <div class="filters row">
+        <div class"small-12 column">
+          <h2>
+            <%= t("debates.show.comments_title",
+                count: @debate.comment_threads.count).html_safe
+            %>
+          </h2>
+          <select class="inline-block js-location-changer" name="order-selector">
+            <% @valid_comment_orders.each do |order| %>
+              <option <%= 'selected' if order == @order %>
+                      value='<%= current_path_with_query_params(order: order) %>'>
+                <%= t("debates.orders.#{order}") %>
+              </option>
+            <% end %>
+          </select>
+        </div>
+      </div>
+
       <% if user_signed_in? %>
           <%= render 'comments/form', {parent: @debate, toggeable: false} %>
       <% else %>
-        <br>
         <div class="alert-box radius info">
           <%= t("debates.show.login_to_comment",
             signin: link_to(t("votes.signin"), new_user_session_path),

@@ -104,7 +104,7 @@ ignore_unused:
   - 'admin.officials.level_*'
   - 'helpers.page_entries_info.*' # kaminari
   - 'views.pagination.*' # kaminari
-  - 'debates.index.orders.*' #order filters for debates
+  - 'debates.orders.*' #order filters for debates and comments
 # - '{devise,kaminari,will_paginate}.*'
 # - 'simple_form.{yes,no}'
 # - 'simple_form.{placeholders,hints,labels}.*'
