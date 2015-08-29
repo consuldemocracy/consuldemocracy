@@ -1,4 +1,4 @@
-class Letter
+class Verification::Letter
   include ActiveModel::Model
 
   attr_accessor :user, :address

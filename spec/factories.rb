@@ -31,7 +31,7 @@ FactoryGirl.define do
     phone "699999999"
   end
 
-  factory :letter do
+  factory :verification_letter, class: Verification::Letter do
     user
     address
   end
