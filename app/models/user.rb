@@ -110,10 +110,6 @@ class User < ActiveRecord::Base
     e.present? ? where(email: e) : none
   end
 
-  def toggle_moderator
-    moderator? ? self.moderator.destroy : create_moderator
-  end
-
   def email_provided?
     !!(email && email !~ OMNIAUTH_EMAIL_REGEX) ||
       !!(unconfirmed_email && unconfirmed_email !~ OMNIAUTH_EMAIL_REGEX)

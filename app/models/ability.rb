@@ -75,6 +75,8 @@ class Ability
         can :restore, Debate
         can :restore, User
         can :comment_as_administrator, [Debate, Comment]
+
+        can :manage, Moderator
       end
     end
   end

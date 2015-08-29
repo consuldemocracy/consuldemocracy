@@ -41,7 +41,7 @@ ActiveRecord::Schema.define(version: 20150826112500) do
     t.string   "title"
     t.text     "body"
     t.string   "subject"
-    t.integer  "user_id",                                  null: false
+    t.integer  "user_id",                                null: false
     t.integer  "parent_id"
     t.integer  "lft"
     t.integer  "rgt"
@@ -70,16 +70,16 @@ ActiveRecord::Schema.define(version: 20150826112500) do
     t.string   "title",                      limit: 80
     t.text     "description"
     t.integer  "author_id"
-    t.datetime "created_at",                                          null: false
-    t.datetime "updated_at",                                          null: false
+    t.datetime "created_at",                                        null: false
+    t.datetime "updated_at",                                        null: false
     t.datetime "hidden_at"
     t.string   "visit_id"
     t.datetime "flagged_as_inappropiate_at"
     t.integer  "inappropiate_flags_count",              default: 0
+    t.datetime "archived_at"
     t.integer  "cached_votes_total",                    default: 0
     t.integer  "cached_votes_up",                       default: 0
     t.integer  "cached_votes_down",                     default: 0
-    t.datetime "archived_at"
     t.integer  "comments_count",                        default: 0
   end
 
