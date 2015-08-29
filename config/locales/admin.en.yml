@@ -88,7 +88,7 @@ en:
       level_5: Level 5
       index:
         title: Officials
-        search_email_placeholder: 'Search user by email'
+        search_placeholder: 'Search user by name or email'
         search: Search
       search:
         title: 'Officials: Search users'

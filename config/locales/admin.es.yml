@@ -88,7 +88,7 @@ es:
       level_5: Nivel 5
       index:
         title: Cargos Públicos
-        search_email_placeholder: 'Buscar usuario por email'
+        search_placeholder: 'Buscar usuario por nombre o email'
         search: Buscar
       search:
         title: 'Cargos Públicos: Búsqueda de usuarios'

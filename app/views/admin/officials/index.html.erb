@@ -3,7 +3,7 @@
 <%= form_for(User.new, url: search_admin_officials_path, as: :user, method: :get) do |f| %>
   <div class="row">
     <div class="small-12 medium-6 column">
-      <%= text_field_tag :email, "", placeholder: t("admin.officials.index.search_email_placeholder") %>
+      <%= text_field_tag :name_or_email, "", placeholder: t("admin.officials.index.search_placeholder") %>
     </div>
     <div class="form-inline small-12 medium-6 column">
       <%= f.submit t("admin.officials.index.search"), class: "button radius success" %>

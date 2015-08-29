@@ -43,7 +43,7 @@ feature 'Admin officials' do
 
   scenario 'Create an official' do
     visit admin_officials_path
-    fill_in 'email', with: @citizen.email
+    fill_in 'name_or_email', with: @citizen.email
     click_button 'Search'
 
     expect(current_path).to eq(search_admin_officials_path)
