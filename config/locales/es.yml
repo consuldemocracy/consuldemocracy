@@ -101,7 +101,7 @@ es:
     show:
       back_link: Volver
       author_deleted: Usuario eliminado
-      comments_title: Comentarios
+      comments_title: "Estás viendo los %{count} comentarios"
       comments:
         zero: Sin comentarios
         one: 1 Comentario

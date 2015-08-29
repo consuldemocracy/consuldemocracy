@@ -20,6 +20,9 @@ class Comment < ActiveRecord::Base
   scope :pending_flag_review, -> { where(ignored_flag_at: nil, hidden_at: nil) }
   scope :with_ignored_flag, -> { where("ignored_flag_at IS NOT NULL AND hidden_at IS NULL") }
   scope :flagged, -> { where("flags_count > 0") }
+  scope :sort_by_total_votes, -> { reorder(cached_votes_total: :desc) }
+  scope :sort_by_likes , -> { reorder(cached_votes_up: :desc) }
+  scope :sort_by_created_at, -> { reorder(created_at: :desc) }
 
   scope :for_render, -> { with_hidden.includes(user: :organization) }
 

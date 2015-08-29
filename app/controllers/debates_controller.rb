@@ -1,5 +1,6 @@
 class DebatesController < ApplicationController
   before_action :parse_order, :parse_tag_filter, only: :index
+  before_action :parse_comment_order, only: :show
   before_action :authenticate_user!, except: [:index, :show]
 
   load_and_authorize_resource
@@ -13,7 +14,7 @@ class DebatesController < ApplicationController
 
   def show
     set_debate_votes(@debate)
-    @comments = @debate.root_comments.recent.page(params[:page]).for_render
+    @comments = @debate.root_comments.recent.page(params[:page]).for_render.send("sort_by_#{@comment_order}")
   end
 
   def new
@@ -81,6 +82,11 @@ class DebatesController < ApplicationController
     def parse_tag_filter
       valid_tags = ActsAsTaggableOn::Tag.all.map(&:name)
       @tag_filter = params[:tag] if valid_tags.include?(params[:tag])
+    end
+
+    def parse_comment_order
+      @valid_comment_orders = ['total_votes', 'created_at', 'likes']
+      @comment_order = @valid_comment_orders.include?(params[:order]) ? params[:order] : 'total_votes'
     end
 
 end

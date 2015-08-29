@@ -101,7 +101,7 @@ en:
     show:
       back_link: Back
       author_deleted: Deleted user
-      comments_title: Comments
+      comments_title: "You are seeing the %{count} comments"
       comments:
         zero: No comments
         one: 1 Comment
