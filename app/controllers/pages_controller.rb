@@ -8,7 +8,10 @@ class PagesController < ApplicationController
   def legal
   end
 
-  def terms
+  def general_terms
+  end
+
+  def census_terms
   end
 
   def transparency
