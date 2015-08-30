@@ -9,19 +9,9 @@ class Flag < ActiveRecord::Base
           flaggable_id: flaggable.id)
   end)
 
-
-  class AlreadyFlaggedError < StandardError
-    def initialize
-      super "The flaggable was already flagged by this user"
-    end
-  end
-
-  class NotFlaggedError < StandardError
-    def initialize
-      super "The flaggable was not flagged by this user"
-    end
-  end
-
+  scope(:by_user_and_flaggables, lambda do |user, flaggables|
+    where(build_query_for_user_and_flaggables(user, flaggables))
+  end)
 
   def self.flag!(user, flaggable)
     raise AlreadyFlaggedError if flagged?(user, flaggable)
@@ -38,4 +28,51 @@ class Flag < ActiveRecord::Base
     !! by_user_and_flaggable(user, flaggable).try(:first)
   end
 
+  class Cache
+    def initialize(user, flaggables)
+      @cache = {}
+      flags = Flag.by_user_and_flaggables(user, flaggables)
+      flags.each do |flag|
+        @cache[flag.flaggable_type] ||= {}
+        @cache[flag.flaggable_type][flag.flaggable_id] = true
+      end
+    end
+
+    def flagged?(flaggable)
+      @cache[flaggable.class.name].to_h[flaggable.id]
+    end
+  end
+
+  class AlreadyFlaggedError < StandardError
+    def initialize
+      super "The flaggable was already flagged by this user"
+    end
+  end
+
+  class NotFlaggedError < StandardError
+    def initialize
+      super "The flaggable was not flagged by this user"
+    end
+  end
+
+  private
+    def self.build_query_for_user_and_flaggables(user, flaggables)
+      return ['FALSE'] if flaggables.empty?
+
+      ids_by_type = {}
+      flaggables.each do |flaggable|
+        type = flaggable.class.name
+        ids_by_type[type] ||= []
+        ids_by_type[type] << flaggable.id
+      end
+
+      query_strings = []
+      query_values = []
+      ids_by_type.each do |type, ids|
+        query_strings << "(flags.flaggable_type = ? AND flags.flaggable_id IN (?))"
+        query_values << type << ids
+      end
+      query_string = "(flags.user_id = ?) AND (#{query_strings.join(' OR ')})"
+      [query_string, user.id] + query_values
+    end
 end

@@ -53,4 +53,48 @@ describe Flag do
     end
   end
 
+  describe '.by_user_and_flaggables' do
+    let(:user) { create(:user) }
+    let(:debate) { create(:debate) }
+    let(:comment) { create(:comment) }
+    it 'returns an empty scope when no flaggables are given' do
+      Flag.flag!(user, create(:debate))
+      expect(Flag.by_user_and_flaggables(user, [])).to be_empty
+    end
+    it 'returns an empty list of flags if there are no flags' do
+      expect(Flag.by_user_and_flaggables(user, [debate, comment])).to be_empty
+    end
+
+    it 'builds a single query to retrieve all the flags' do
+      Flag.flag!(user, debate)
+      Flag.flag!(user, comment)
+      flags = Flag.by_user_and_flaggables(user, [debate, comment])
+      expect(flags.count).to eq(2)
+      expect(flags.pluck(:flaggable_type).sort).to eq(['Comment', 'Debate'])
+      expect(flags.pluck(:flaggable_id)).to include(debate.id, comment.id)
+    end
+  end
+
+
+  describe Flag::Cache do
+    it 'accepts a user and a collection of flaggables' do
+      expect{ Flag::Cache.new(create(:user), [create(:comment), create(:debate)]) }.to_not raise_error
+    end
+
+    describe '.flagged?' do
+      let(:debate) { create(:debate) }
+      let(:user) { create(:user) }
+      it 'returns false if the item was not flagged by the user' do
+        cache = Flag::Cache.new(user, [debate])
+        expect(cache.flagged?(debate)).to_not be
+      end
+
+      it 'returns true if the item was flagged by the user' do
+        Flag.flag!(user, debate)
+        cache = Flag::Cache.new(user, [debate])
+        expect(cache.flagged?(debate)).to be
+      end
+    end
+  end
+
 end
