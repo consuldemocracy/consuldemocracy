@@ -13,8 +13,13 @@ describe PagesController do
       expect(response).to be_ok
     end
 
+    it 'should include a general terms page' do
+      get :general_terms
+      expect(response).to be_ok
+    end
+
     it 'should include a terms page' do
-      get :terms
+      get :census_terms
       expect(response).to be_ok
     end
   end
