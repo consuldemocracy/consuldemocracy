@@ -18,7 +18,7 @@ feature 'Verify email' do
     visit verified_user_path
 
     within("#verified_user_#{verified_user.id}_email") do
-      expect(page).to have_content 'rock@example.com'
+      expect(page).to have_content 'roc*@example.com'
       click_button "Send"
     end
 
