@@ -33,6 +33,11 @@ describe Verification::Residence do
       residence.valid?
       expect(residence.errors[:document_number]).to include("Already in use")
     end
+
+    it "should validate census terms" do
+      residence.terms_of_service = nil
+      expect(residence).to_not be_valid
+    end
   end
 
   describe "save" do

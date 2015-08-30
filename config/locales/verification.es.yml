@@ -7,6 +7,8 @@ es:
           spanish_id: 'DNI'
           passport: 'Pasaporte'
           residence_card: 'Tarjeta de residencia'
+        accept_terms_text: "Acepto los terminos de acceso al Padrón"
+        accept_terms_link: "Leer términos"
         form_errors: 'evitaron verificar tu residencia'
         error_verifying_census: 'El Padrón de Madrid no pudo verificar tu información. Revisa la información ó ponte en contacto con nosotros.'
       create:

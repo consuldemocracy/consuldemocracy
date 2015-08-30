@@ -7,6 +7,8 @@ en:
           spanish_id: 'Spanish ID'
           passport: 'Passport'
           residence_card: 'Residence card'
+        accept_terms_text: "I accept the terms to access the city Census"
+        accept_terms_link: "Read terms"
         form_errors: 'prevented your residence verification'
         error_verifying_census: 'The census of the city of Madrid could not verify your information. Pero revise de information and try again or get in touch with us.'
       create:

@@ -13,6 +13,7 @@ feature 'Residence' do
     select 'Spanish ID', from: 'residence_document_type'
     select_date '31-December-1980', from: 'residence_date_of_birth'
     fill_in 'residence_postal_code', with: '28013'
+    check 'residence_terms_of_service'
 
     click_button 'Verify'
 
@@ -44,6 +45,7 @@ feature 'Residence' do
     select 'January', from: 'residence_date_of_birth_2i'
     select '1', from: 'residence_date_of_birth_3i'
     fill_in 'residence_postal_code', with: '28013'
+    check 'residence_terms_of_service'
 
     click_button 'Verify'
 
@@ -64,6 +66,7 @@ feature 'Residence' do
       select 'January', from: 'residence_date_of_birth_2i'
       select '1', from: 'residence_date_of_birth_3i'
       fill_in 'residence_postal_code', with: '28013'
+      check 'residence_terms_of_service'
 
       click_button 'Verify'
       expect(page).to have_content 'The census of the city of Madrid could not verify your information'

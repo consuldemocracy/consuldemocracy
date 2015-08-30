@@ -3,9 +3,71 @@ es:
     legal:
       "Legal"
     privacy:
-     "Privacidad"
-    terms:
+      "Privacidad"
+    general_terms:
       "Términos y Condiciones"
+    census_terms:
+      "Ley Orgánica 15/1999 (LOPD):
+
+      1º).- En el tratamiento y comprobación de datos de los usuarios que se den de alta en la Web, va a existir una recogida y comunicación de sus datos entre varias Direcciones Generales del Ayuntamiento, responsable cada una de sus propios ficheros de datos, que son los que van a dar cobertura jurídica LOPD al proyecto:
+
+      Fichero: “Gestión de procesos participativos” cuyo responsable es la Dirección General de Participación Ciudadana y es donde se van a recoger y tratar los datos de todos los usuarios de la web.
+
+      Fichero: “Padrón Municipal de Habitantes” cuyo responsable es la Dirección General de Estadística y donde constan todos los ciudadanos empadronados en Madrid
+
+      Fichero: “Servicios Atención al Ciudadano” cuyo responsable es la Dirección General de Calidad y Atención al Ciudadano y donde se trata la información entre otras de los datos registrados en el CRM en el que figura información detallada de las personas que han realizado alguna gestión en el Ayuntamiento a través de Línea Madrid.
+
+      2º).- El tratamiento de los usuarios que se den de alta en la Web va a tener varios niveles de acceso y en cada uno de ellos se van a tratar y recoger diversos datos, en función de que se precise autenticar o no el usuario, y que le van a habilitar a su vez para realizar una serie de acciones (que tenéis que definir).
+
+      a) El usuario se da de alta inicial en la Web aportando únicamente un correo electrónico. Este nivel 1 le permitirá........(lo tenéis que definir e informar al usuario).
+
+      La edad mínima para darse de alta es 16 años, de lo que habrá que informar, aunque en este nivel no se va a contrastar este dato.
+
+      La leyenda informativa de protección de datos que tendría que aparecer aquí sería la siguiente:
+
+      Los usuarios serán mayores de 16 años y los datos aportados serán incorporados y tratados por el Ayuntamiento de Madrid de acuerdo con la descripción del fichero que figura al final de esta información. Con carácter general los datos recogidos no podrán ser cedidos a terceros salvo en los supuestos previstos en el artículo 11 de la Ley Orgánica 15/1999, de 13 de diciembre, de Protección de Datos de carácter Personal. El interesado podrá ejercer los derechos de acceso, rectificación, cancelación y oposición, ante el órgano responsable que aparece al final de la información, todo lo cual se informa en el cumplimiento del artículo 5 de la Ley Orgánica 15/1999, de 13 de diciembre, de Protección de Datos de Carácter Personal.
+
+      Nombre del fichero/tratamiento: GESTIÓN DE PROCESOS PARTICIPATIVOS
+      Finalidad del fichero/tratamiento: Gestionar los procesos participativos para el control de la habilitación de las personas que participan en los mismos y recuento meramente numérico y estadístico de los resultados derivados de los procesos de participación ciudadana
+      Órgano responsable: DIRECCIÓN GENERAL DE PARTICIPACIÓN CIUDADANA (c/ Alcalá 45, 28014-Madrid)
+
+      b) Desde el nivel 1, se le dará la posibilidad al usuario de que pueda acceder a un nivel superior (nivel 3) que le permitirá......... (lo tenéis que definir e informar al usuario).
+
+      Para acceder a este nivel 3, sería necesario estar empadronado en Madrid, ser mayor de edad y disponer de un código de verificación que le será facilitado por el Ayuntamiento (DG de Participación Ciudadana).
+
+      Para ello el usuario deberá aportar los siguientes datos:
+
+      Nombre y apellidos; DNI-pasaporte o tarjeta residencia; fecha de nacimiento. (No he incluido el domicilio pues con el campo DNI, tanto padrón como CRM os chequea la información).
+
+      Estos datos se contrastarán (con el consentimiento del usuario) con Padrón y con CRM, con el objeto de autenticar el empadronamiento y comprobar si ya disponemos de teléfonos móviles o correos electrónicos que el usuario nos haya aportado previamente y que se le mostrarán en pantalla, al objeto de que confirme en cual de ellos quiere recibir el código de verificación que le acreditará en el nivel 3.
+
+      En el caso de que no exista información previa de correo electrónico o móvil del usuario, o existiendo y mostrada al usuario, este no confirme dicho canal para recibir el código de verificación, se le dará la posibilidad de recibirlo en el domicilio que figure en el padrón municipal o pasarse por una OAC de Línea Madrid para que se lo faciliten (tenéis que definir como se le informa de ambas posibilidades)
+
+      La leyenda informativa de protección de datos que tendría que aparecer aquí sería la siguiente:
+
+      Para disponer del código de verificación hay que ser mayor de edad y estar empadronado en Madrid aportando los datos indicados anteriormente, los cuales serán contrastados por la Dirección General de Participación Ciudadana con los ficheros “Padrón Municipal de Habitantes” cuyo responsable es la Dirección General de Estadística y “Servicios Atención al Ciudadano” cuyo responsable es la Dirección General de Calidad y Atención al Ciudadano.
+
+      Para contrastar esta información se precisa su consentimiento marcando esta casilla □
+
+      Los datos aportados serán incorporados y tratados por la Dirección General de Participación Ciudadana en el fichero “Gestión de Procesos Participativos” indicado anteriormente.
+
+      Nota sobre la mayoría de edad para el nivel 3.
+
+      He diferenciado entre nivel 1 (mayor de 16 años), del nivel 3 (mayoría de edad), teniendo en consideración que por la información que me habéis pasado y dado que en el nivel 3 se va a poder presentar iniciativas normativas, he tomado como referencia, creo, que la única ley que se podría aplicar por analogía y es la Ley Orgánica 3/1984 reguladora de la iniciativa legislativa popular, en cuyo artículo 1 establece la necesidad de ser mayor de edad. (No obstante el tema de la edad lo tendréis que valorar y decidir).
+
+      c) Por último, también existirá la posibilidad para aquellos usuarios que no sean mayores de edad, o siéndolo, no estén empadronados en Madrid, de que puedan disponer de un nivel superior (nivel 2) que no precisará autenticación de datos por el Ayuntamiento.
+
+      Para ello desde el nivel 1, se informará que en el caso de no ser mayor de edad, o siendolo, no se este empadronado en Madrid se podrá disponer de un código de acceso que se le enviará al número de móvil que nos facilite y que le permitirá.....( lo tenéis que definir e informar al usuario).
+
+      La leyenda informativa de protección de datos que tendría que aparecer aquí sería la siguiente:
+
+      Los datos aportados serán incorporados y tratados por la Dirección General de Participación Ciudadana en el fichero “Gestión de Procesos Participativos” indicado anteriormente.
+
+      3º) Teniendo en cuenta lo anterior, cumpliremos con las obligaciones de información y consentimiento previstas en la LOPD.
+
+      No obstante y teniendo en consideración que en un primer momento vais a disponer, tratar y contrastar una gran cantidad de datos de los usuarios en los diferentes perfiles de acceso, es necesario que seáis especialmente cuidadosos con el principio de calidad de los datos, todo ello a los efectos de evitar errores en la recogida y tratamiento de los datos, teniendo especial importancia el disponer siempre de la prueba del consentimiento de los usuarios en el nivel 3, para la comprobación de sus datos en los dos ficheros.
+
+      4º) Para terminar tenemos que trabajar conjuntamente con la DG de Participación Ciudadana en las medidas de seguridad LOPD a aplicar a la Web y en como se documentan dichas medidas."
     transparency:
       "Transparencia"
     opendata:
