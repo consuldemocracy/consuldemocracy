@@ -1,4 +1,0 @@
-<%= form_for Verification::Email.new(verified_user), as: "email", url: email_path, method: :post do |f| %>
-  <%= hidden_field_tag :recipient, verified_user.email %>
-  <%= f.submit t('verification.email.form.submit_button') %>
-<% end %>
