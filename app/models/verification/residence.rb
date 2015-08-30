@@ -2,12 +2,13 @@ class Verification::Residence
   include ActiveModel::Model
   include ActiveModel::Dates
 
-  attr_accessor :user, :document_number, :document_type, :date_of_birth, :postal_code
+  attr_accessor :user, :document_number, :document_type, :date_of_birth, :postal_code, :terms_of_service
 
   validates_presence_of :document_number
   validates_presence_of :document_type
   validates_presence_of :date_of_birth
   validates_presence_of :postal_code
+  validates :terms_of_service, acceptance: { allow_nil: false }
 
   validates :postal_code, length: { is: 5 }
 
