@@ -34,8 +34,6 @@ es:
             success: 'Código correcto. Ya eres un usuario verificado'
           level_two:
             success: 'Código incorrecto'
-      form:
-        submit_button: Enviar
       alert:
         verify_attemps_left: 'Has llegado al máximo número de intentos de verificar tu teléfono.'
     email:
@@ -49,8 +47,6 @@ es:
           success: "Te hemos enviado un email de confirmación a tu cuenta: %{email}"
         alert:
           failure: "Hubo un problema enviándote un email a tu cuenta"
-      form:
-        submit_button: Enviar
     letter:
       new:
         title: Final Verification
@@ -69,3 +65,5 @@ es:
         email_title: Emails
         phone_title: Teléfonos
         use_another_phone: Utilizar otro teléfono
+      form:
+        submit_button: Enviar

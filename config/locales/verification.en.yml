@@ -34,8 +34,6 @@ en:
             success: 'Correct code. You are now a verified user'
           level_two:
             success: 'Correct code'
-      form:
-        submit_button: Send
       alert:
         verify_attemps_left: 'You have reached the maximum number of sms verification tries'
     email:
@@ -49,8 +47,6 @@ en:
           success: "We have send you a confirmation email to your email account: %{email}"
         alert:
           failure: "There was a problem sending you an email to your account"
-      form:
-        submit_button: Send
     letter:
       new:
         title: Final Verification
@@ -69,4 +65,5 @@ en:
         email_title: Emails
         phone_title: Phones
         use_another_phone: Use another phone
-
+      form:
+        submit_button: Send

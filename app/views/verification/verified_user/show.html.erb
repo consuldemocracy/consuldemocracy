@@ -13,7 +13,7 @@
                 <%= mask_email(verified_user.email) %>
               </span>
               <span style="float:left;padding-left:30px">
-                <%= render '/verification/email/form', verified_user: verified_user %>
+                <%= render 'form', url: email_path, verified_user: verified_user %>
               </span>
             </li>
             <br/><br/><br/>
@@ -32,7 +32,7 @@
                 <%= mask_phone(verified_user.phone) %>
               </span>
               <span style="float:left;padding-left:30px">
-                <%= render '/verification/sms/form', sms: Verification::Sms.new(phone: verified_user.phone) %>
+                <%= render 'form', url: sms_path, verified_user: verified_user %>
               </span>
             </li>
             <br/><br/><br/>
