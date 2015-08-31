@@ -28,6 +28,14 @@ body.admin {
     }
   }
 
+  .dashboard {
+    text-align: justify;
+
+    h3 {
+      font-weight: bold;
+    }
+  }
+
   .button.secondary {
     margin-right: rem-calc(12);
   }

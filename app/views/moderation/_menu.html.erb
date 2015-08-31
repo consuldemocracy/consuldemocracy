@@ -1,7 +1,7 @@
 <nav class="admin-sidebar">
   <ul id="moderation_menu">
     <li>
-      <%= t("moderation.dashboard.index.title") %>
+      <%= link_to t("moderation.dashboard.index.title"), moderation_root_path %>
     </li>
 
     <li <%= "class=active" if controller_name == "debates" %>>
