@@ -53,32 +53,26 @@ describe Flag do
     end
   end
 
-  describe Flag::Cache do
+  describe '.create_cache' do
     let(:user) { create(:user) }
     let(:debate1) { create(:debate) }
     let(:debate2) { create(:debate) }
 
-    it 'accepts a user and a collection of flaggables' do
-      expect{ Flag::Cache.new(user, [debate2, debate1]) }.to_not raise_error
+    it 'accepts a user & collection of flaggables' do
+      expect{ Flag.build_cache(user, [debate2, debate1]) }.to_not raise_error
     end
 
-    describe '#flagged?' do
-      it 'returns false if the item was not flagged by the user' do
-        cache = Flag::Cache.new(user, [debate1, debate2])
-        expect(cache.flagged?(debate1)).to eq(false)
-      end
+    it 'returns nil if the item was not used for building the cache' do
+      cache = Flag.build_cache(user, [debate2])
+      expect(cache[debate1.id]).to eq(nil)
+    end
 
-      it 'returns true if the item was flagged by the user' do
-        Flag.flag!(user, debate1)
-        cache = Flag::Cache.new(user, [debate1, debate2])
-        expect(cache.flagged?(debate1)).to eq(true)
-        expect(cache.flagged?(debate2)).to eq(false)
-      end
-
-      it 'returns nil if the item was not used for building the cache' do
-        cache = Flag::Cache.new(user, [debate2])
-        expect(cache.flagged?(debate1)).to eq(nil)
-      end
+    it 'returns true if the item was flagged by the user, false if not' do
+      Flag.flag!(user, debate1)
+      cache = Flag.build_cache(user, [debate1, debate2])
+      expect(cache[debate1.id]).to eq(true)
+      expect(cache[debate2.id]).to eq(false)
     end
   end
+
 end

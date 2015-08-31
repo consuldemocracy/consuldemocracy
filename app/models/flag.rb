@@ -30,20 +30,12 @@ class Flag < ActiveRecord::Base
     !! by_user_and_flaggable(user, flaggable).try(:first)
   end
 
-  class Cache
-    attr_accessor :user
-
-    def initialize(user, flaggables)
-      @user = user
-      @cache = {}
-      flags = Flag.by_user_and_flaggables(user, flaggables)
-      flags.each{ |flag| @cache[flag.flaggable_id] = true }
-      flaggables.each{ |flaggable| @cache[flaggable.id] = !! @cache[flaggable.id] }
-    end
-
-    def flagged?(flaggable)
-      @cache[flaggable.id]
-    end
+  def self.build_cache(user, flaggables)
+    hash = {}
+    flags = Flag.by_user_and_flaggables(user, flaggables)
+    flags.each{ |flag| hash[flag.flaggable_id]= true }
+    flaggables.each{ |flaggable| hash[flaggable.id]= !! hash[flaggable.id] }
+    hash
   end
 
   class AlreadyFlaggedError < StandardError

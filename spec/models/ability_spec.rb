@@ -213,14 +213,14 @@ describe Ability do
 
     it 'calls Flag.flagged? when the flag_cache is set, but it does not know the flaggable' do
       ability.flag_cache = double(:cache, user: user)
-      expect(ability.flag_cache).to receive(:flagged?).with(comment).and_return(nil)
+      expect(ability.flag_cache).to receive(:[]).with(comment.id).and_return(nil)
       expect(Flag).to receive(:flagged?).with(user, comment).and_return(false)
       ability.flagged?(comment)
     end
 
     it 'calls flag_cache.flagged? when the flag_cache is set and it knows the flaggable' do
       ability.flag_cache = double(:cache, user: user)
-      expect(ability.flag_cache).to receive(:flagged?).with(comment).and_return(true)
+      expect(ability.flag_cache).to receive(:[]).with(comment.id).and_return(true)
       expect(Flag).to_not receive(:flagged?)
       ability.flagged?(comment)
     end

@@ -100,7 +100,7 @@ class Ability
   end
 
   def flagged?(flaggable)
-    is_flagged = flag_cache && flag_cache.flagged?(flaggable)
+    is_flagged = flag_cache && flag_cache[flaggable.id]
     is_flagged.nil? ? Flag.flagged?(@user, flaggable) : is_flagged
   end
 
