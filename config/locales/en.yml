@@ -7,6 +7,7 @@ en:
       external_link_opendata: Open data
       external_link_opendata_url: "http://datos.madrid.es"
       external_link_blog: Blog
+      external_link_blog_url: "http://diario.madrid.es/participa/"
       open_gov: "%{open} government"
       open: "Open"
       participation: Participation
@@ -23,13 +24,14 @@ en:
       open_city_soon: "And soon... we opened the section of citizen proposals."
       see_all_debates: See all debates
       my_account_link: My account
-      locale: "Site language:"
+      locale: "Language:"
       administration: Administration
       moderation: Moderation
-      welcome: Welcome
+      # welcome: Welcome
       how_it_works: How it works
+      help: Help
       debates: Debates
-      initiatives: Initiatives
+      # initiatives: Initiatives
     footer:
       description:
         "The city you want, it will be the city you want. Get more information here on this page.

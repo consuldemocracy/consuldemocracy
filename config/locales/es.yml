@@ -7,6 +7,7 @@ es:
       external_link_opendata: Datos abiertos
       external_link_opendata_url: "http://datos.madrid.es"
       external_link_blog: Blog
+      external_link_blog_url: "http://diario.madrid.es/participa/"
       open_gov: "Gobierno %{open}"
       open: "abierto"
       participation: Participación
@@ -23,13 +24,14 @@ es:
       open_city_soon: "Y muy pronto... abrimos la sección de propuestas ciudadanas."
       see_all_debates: Ver todos los debates
       my_account_link: Mi cuenta
-      locale: "Idioma de la página:"
+      locale: "Idioma:"
       administration: Administrar
       moderation: Moderar
-      welcome: Portada
+      # welcome: Portada
       how_it_works: "Cómo funciona"
+      help: Ayuda
       debates: Debates
-      initiatives: Iniciativas
+      # initiatives: Iniciativas
     footer:
       description:
         "La ciudad que quieres, será la ciudad que quieras. Obtén aquí más información sobre esta página.

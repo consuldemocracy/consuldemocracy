@@ -6,23 +6,33 @@
     <%= form_for @residence, as: "residence", url: residence_path do |f| %>
       <%= render 'errors' %>
 
-      <%= f.select :document_type, document_types, prompt: "" %>
-      <%= f.text_field :document_number %>
+      <div class="small-12 medium-6">
+        <div class="small-6 medium-3">
+        <%= f.select :document_type, document_types, prompt: "" %>
+        </div>
+        <div class="small-6 medium-8">
+        <%= f.text_field :document_number %>
+        </div>
+      </div>
+
+      <div class="date small-12 medium-6">
       <%= f.date_select :date_of_birth,
                         prompt: true,
                         start_year: 1900, end_year: 16.years.ago.year %>
-      <%= f.text_field :postal_code %>
-
-      <div class="small-12 column">
-        <span class="left">
-          <%= f.check_box :terms_of_service, label: t("verification.residence.new.accept_terms_text") %>
-        </span>
-        <span class="left" style="padding-left: 20px">
-          <%= link_to t("verification.residence.new.accept_terms_link"), '/census_terms', target: "_blank" %>
-        </span>
       </div>
 
-      <%= f.submit "Verify" %>
+      <div class="small-12 medium-4 clear">
+        <%= f.text_field :postal_code %>
+      </div>
+
+      <div class="small-12">
+          <%= f.check_box :terms_of_service, label: t("verification.residence.new.accept_terms_text") %>
+          <%= link_to t("verification.residence.new.accept_terms_link"), '/census_terms', target: "_blank" %>
+      </div>
+
+      <div class="small-12 clear">
+        <%= f.submit "Verify" %>
+      </div>
     <% end %>
   </div>
 </div>

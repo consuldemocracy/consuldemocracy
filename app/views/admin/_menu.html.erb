@@ -1,7 +1,7 @@
 <nav class="admin-sidebar">
   <ul id="admin_menu">
     <li>
-      <%= t("admin.dashboard.index.title") %>
+      <%= link_to t("admin.dashboard.index.title"), admin_root_path %>
     </li>
 
     <li <%= "class=active" if controller_name == "tags" %>>
