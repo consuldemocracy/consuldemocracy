@@ -52,14 +52,14 @@ describe Ability do
       end
 
       describe "already-flagged comments" do
-        before(:each) { Flag.flag!(user, comment) }
+        before(:each) { Flag.flag(user, comment) }
 
         it { should_not be_able_to(:flag, comment) }
         it { should be_able_to(:unflag, comment) }
       end
 
       describe "already-flagged debates" do
-        before(:each) { Flag.flag!(user, debate) }
+        before(:each) { Flag.flag(user, debate) }
 
         it { should_not be_able_to(:flag, debate) }
         it { should be_able_to(:unflag, debate) }

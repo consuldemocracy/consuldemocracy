@@ -9,28 +9,14 @@ class Flag < ActiveRecord::Base
           flaggable_id: flaggable.id)
   end)
 
-
-  class AlreadyFlaggedError < StandardError
-    def initialize
-      super "The flaggable was already flagged by this user"
-    end
-  end
-
-  class NotFlaggedError < StandardError
-    def initialize
-      super "The flaggable was not flagged by this user"
-    end
-  end
-
-
-  def self.flag!(user, flaggable)
-    raise AlreadyFlaggedError if flagged?(user, flaggable)
+  def self.flag(user, flaggable)
+    return false if flagged?(user, flaggable)
     create(user: user, flaggable: flaggable)
   end
 
-  def self.unflag!(user, flaggable)
+  def self.unflag(user, flaggable)
     flags = by_user_and_flaggable(user, flaggable)
-    raise NotFlaggedError if flags.empty?
+    return false if flags.empty?
     flags.destroy_all
   end
 

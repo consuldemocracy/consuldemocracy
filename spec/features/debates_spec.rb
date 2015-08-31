@@ -335,7 +335,7 @@ feature 'Debates' do
   scenario "Unflagging", :js do
     user = create(:user)
     debate = create(:debate)
-    Flag.flag!(user, debate)
+    Flag.flag(user, debate)
 
     login_as(user)
     visit debate_path(debate)
@@ -432,9 +432,9 @@ feature 'Debates' do
       expect(current_url).to include('tag=Deporte')
 
       expect(page).to have_selector('#debates .debate', count: 2)
-      expect(page).to_not have_content(debate3.title) 
-      expect(page).to have_content(debate1.title) 
-      expect(page).to have_content(debate2.title) 
+      expect(page).to_not have_content(debate3.title)
+      expect(page).to have_content(debate1.title)
+      expect(page).to have_content(debate2.title)
     end
   end
 end

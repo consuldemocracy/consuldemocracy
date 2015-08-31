@@ -23,12 +23,12 @@ class CommentsController < ApplicationController
   end
 
   def flag
-    Flag.flag!(current_user, @comment)
+    Flag.flag(current_user, @comment)
     respond_with @comment, template: 'comments/_refresh_flag_actions'
   end
 
   def unflag
-    Flag.unflag!(current_user, @comment)
+    Flag.unflag(current_user, @comment)
     respond_with @comment, template: 'comments/_refresh_flag_actions'
   end
 

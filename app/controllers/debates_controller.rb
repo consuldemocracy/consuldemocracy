@@ -55,12 +55,12 @@ class DebatesController < ApplicationController
   end
 
   def flag
-    Flag.flag!(current_user, @debate)
+    Flag.flag(current_user, @debate)
     respond_with @debate, template: 'debates/_refresh_flag_actions'
   end
 
   def unflag
-    Flag.unflag!(current_user, @debate)
+    Flag.unflag(current_user, @debate)
     respond_with @debate, template: 'debates/_refresh_flag_actions'
   end
 
