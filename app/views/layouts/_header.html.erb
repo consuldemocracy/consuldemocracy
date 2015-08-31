@@ -4,8 +4,8 @@
       <%= render "shared/locale_switcher" %>
       <div class="external-links">
         <%= link_to t("layouts.header.participation"), root_path, class: "selected" %>&nbsp;|
-        <%= link_to t("layouts.header.external_link_transparency"), t("layouts.header.external_link_transparency_url"), target: "_blank" %>&nbsp;|
-        <%= link_to t("layouts.header.external_link_opendata"), t("layouts.header.external_link_opendata_url"), target: "_blank"  %>
+        <%= link_to t("layouts.header.external_link_transparency"), "/transparency" %>&nbsp;|
+        <%= link_to t("layouts.header.external_link_opendata"), "/opendata" %>
       </div>
     </div>
   </section>
@@ -28,20 +28,23 @@
       </section>
 
       <section class="subnavigation row">
-        <div class="small-12 medium-2 medium-offset-1 column end">
-          <%= link_to t("layouts.header.welcome"), root_path %>
-        </div>
+        <!-- <div class="small-12 medium-2 medium-offset-1 column end">
+          <%#= link_to t("layouts.header.welcome"), root_path %>
+        </div> -->
         <div class="small-12 medium-2 column end">
           <%= link_to t("layouts.header.debates"), debates_path, class: ("active" if current_page?(controller: "/debates")) %>
         </div>
+        <!-- <div class="small-12 medium-2 column end">
+          <%#= link_to t("layouts.header.initiatives"), "#" %>
+        </div> -->
         <div class="small-12 medium-2 column end">
-          <%= link_to t("layouts.header.initiatives"), "#" %>
+          <%= link_to t("layouts.header.how_it_works"), "/how_it_works" %>
         </div>
         <div class="small-12 medium-2 column end">
-          <%= link_to t("layouts.header.how_it_works"), "#" %>
+          <%= link_to t("layouts.header.help"), "/help" %>
         </div>
         <div class="small-12 medium-2 column end">
-          <%= link_to t("layouts.header.external_link_blog"), "#" %>
+          <%= link_to t("layouts.header.external_link_blog"), t("layouts.header.external_link_blog_url"), target: "_blank" %>
         </div>
       </section>
     </nav>
