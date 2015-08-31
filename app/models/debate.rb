@@ -72,6 +72,7 @@ class Debate < ActiveRecord::Base
   end
 
   def anonymous_votes_ratio
+    return 0 if cached_votes_total == 0
     (cached_anonymous_votes_total.to_f / cached_votes_total) * 100
   end
 

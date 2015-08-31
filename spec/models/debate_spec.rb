@@ -81,7 +81,7 @@ describe Debate do
   describe "#votable_by?" do
     let(:debate) { create(:debate) }
 
-    before(:all) do
+    before(:each) do
       Setting.find_by(key: "max_ratio_anon_votes_on_debates").update(value: 50)
     end
 

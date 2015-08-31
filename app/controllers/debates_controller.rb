@@ -53,7 +53,7 @@ class DebatesController < ApplicationController
   end
 
   def vote
-    @debate.vote_by(voter: current_user, vote: params[:value])
+    @debate.vote_by(voter: current_user, vote: params[:value]) if @debate.votable_by?(current_user)
     set_debate_votes(@debate)
   end
 
