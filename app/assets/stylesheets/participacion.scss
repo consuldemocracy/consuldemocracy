@@ -15,6 +15,7 @@
 // 13. Pagination
 // 14. Tables
 // 15. Social
+// 16. Pages
 //
 
 // 01. Variables
@@ -97,6 +98,31 @@ a {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: $font-family-sans-serif;
+  font-weight: bold;
+}
+
+h1 {
+  font-size: rem-calc(30);
+}
+
+h2 {
+  font-size: rem-calc(24);
+}
+
+h3 {
+  font-size: rem-calc(20);
+}
+
+h4 {
+  font-size: rem-calc(18);
+}
+
+h5 {
+  font-size: rem-calc(16);
+}
+
+h6 {
+  font-size: rem-calc(14);
 }
 
 .button {
@@ -187,6 +213,14 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: $line-height;
 }
 
+.back, .icon-angle-left {
+  @include back;
+
+  & + h1 {
+    clear:both;
+  }
+}
+
 // 04. Header
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -194,9 +228,8 @@ header {
   background: url('header_bg.jpg');
   background-position: 50% 50%;
   background-size: cover;
-  box-shadow: 0 1px 3px #999;
   color: $text;
-  min-height: rem-calc(480);
+  min-height: rem-calc(600);
 
   &.results {
     min-height: rem-calc(48);
@@ -227,6 +260,11 @@ header {
 
   .home-page {
     background-color: rgba(255,255,255,.85);
+    clear: both;
+
+    @media (min-width: $small-breakpoint) {
+      margin-top: rem-calc(66);
+    }
 
     .button {
       color: white;
@@ -260,6 +298,12 @@ header {
 
     @media (min-width: $small-breakpoint) {
       float: left;
+    }
+
+    .icon-language {
+      font-size: rem-calc(16);
+      line-height: rem-calc(24);
+      vertical-align: middle;
     }
   }
 
@@ -480,6 +524,7 @@ footer {
   background: $brand;
   color: white;
   padding: rem-calc(24) 0 rem-calc(48) 0;
+  text-align: justify;
 
   .logo {
     @include logo;
@@ -750,14 +795,6 @@ form {
   background: white;
   padding-top: rem-calc(24);
 
-  h1 {
-    clear: both;
-    font-size: rem-calc(36);
-    font-weight: bold;
-    line-height: $line-height*2;
-    margin-bottom: rem-calc(24);
-  }
-
   .icon-debates {
     color: $debates;
     font-size: rem-calc(60);
@@ -771,15 +808,6 @@ form {
 
   .initialjs-avatar {
     margin-bottom: $line-height;
-  }
-
-  h2 {
-    clear: both;
-    font-size: rem-calc(30);
-    font-weight: bold;
-    line-height: $line-height;
-    margin: 0;
-    margin-bottom: rem-calc(12);
   }
 
   h3 {
@@ -805,6 +833,29 @@ form {
         content: "l ";
         font-family: "icons" !important;
       }
+    }
+  }
+
+  select {
+    height: rem-calc(48);
+    margin-right: rem-calc(12);
+  }
+
+  .date {
+
+    select {
+      float: left;
+      width: 25%;
+    }
+  }
+
+  .verify-account {
+    padding-right: rem-calc(12);
+
+    .verified {
+      color: $check;
+      font-weight: bold;
+      line-height: rem-calc(42);
     }
   }
 }
@@ -1059,3 +1110,38 @@ table {
     color: #CE3E26;
   }
 }
+
+// 16. Pages
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+.page {
+  background: white;
+  min-height: 100%;
+
+  .menu {
+    margin-top: rem-calc(24);
+
+    a {
+      display: block;
+      margin-bottom: rem-calc(12);
+    }
+  }
+
+  .text {
+    margin-top: rem-calc(24);
+    text-align: justify;
+
+    ul {
+
+      li {
+        font-size: rem-calc(13);
+        margin-bottom: rem-calc(12);
+      }
+    }
+  }
+}
+
+
+
+
+
