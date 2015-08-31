@@ -53,73 +53,32 @@ describe Flag do
     end
   end
 
-  describe '.by_user_and_flaggables' do
-    let(:user) { create(:user) }
-    let(:debate) { create(:debate) }
-    let(:comment) { create(:comment) }
-    it 'returns an empty scope when no flaggables are given' do
-      Flag.flag!(user, create(:debate))
-      expect(Flag.by_user_and_flaggables(user, [])).to be_empty
-    end
-    it 'returns an empty list of flags if there are no flags' do
-      expect(Flag.by_user_and_flaggables(user, [debate, comment])).to be_empty
-    end
-
-    it 'builds a single query to retrieve all the flags' do
-      Flag.flag!(user, debate)
-      Flag.flag!(user, comment)
-      flags = Flag.by_user_and_flaggables(user, [debate, comment])
-      expect(flags.count).to eq(2)
-      expect(flags.pluck(:flaggable_type).sort).to eq(['Comment', 'Debate'])
-      expect(flags.pluck(:flaggable_id)).to include(debate.id, comment.id)
-    end
-  end
-
-
   describe Flag::Cache do
     let(:user) { create(:user) }
-    let(:debate) { create(:debate) }
-    let(:comment) { create(:comment) }
+    let(:debate1) { create(:debate) }
+    let(:debate2) { create(:debate) }
 
     it 'accepts a user and a collection of flaggables' do
-      expect{ Flag::Cache.new(user, [comment, debate]) }.to_not raise_error
+      expect{ Flag::Cache.new(user, [debate2, debate1]) }.to_not raise_error
     end
 
     describe '#flagged?' do
       it 'returns false if the item was not flagged by the user' do
-        cache = Flag::Cache.new(user, [debate, comment])
-        expect(cache.flagged?(debate)).to eq(false)
+        cache = Flag::Cache.new(user, [debate1, debate2])
+        expect(cache.flagged?(debate1)).to eq(false)
       end
 
       it 'returns true if the item was flagged by the user' do
-        Flag.flag!(user, debate)
-        cache = Flag::Cache.new(user, [debate, comment])
-        expect(cache.flagged?(debate)).to eq(true)
-        expect(cache.flagged?(comment)).to eq(false)
+        Flag.flag!(user, debate1)
+        cache = Flag::Cache.new(user, [debate1, debate2])
+        expect(cache.flagged?(debate1)).to eq(true)
+        expect(cache.flagged?(debate2)).to eq(false)
       end
 
       it 'returns nil if the item was not used for building the cache' do
-        cache = Flag::Cache.new(user, [comment])
-        expect(cache.flagged?(debate)).to eq(nil)
+        cache = Flag::Cache.new(user, [debate2])
+        expect(cache.flagged?(debate1)).to eq(nil)
       end
     end
-
-    describe '#knows?' do
-      it 'returns false if the flaggable was not used for building the cache' do
-        cache = Flag::Cache.new(user, [debate])
-        expect(cache.knows?(comment)).to eq(false)
-      end
-
-      it 'returns true if the flaggable was used for building the cache, independently of wether it was flagged or not' do
-        cache = Flag::Cache.new(user, [debate])
-        expect(cache.knows?(debate)).to eq(true)
-
-        Flag.flag!(user, debate)
-        cache = Flag::Cache.new(user, [debate])
-        expect(cache.knows?(debate)).to eq(true)
-      end
-    end
-
   end
-
 end

@@ -10,7 +10,9 @@ class Flag < ActiveRecord::Base
   end)
 
   scope(:by_user_and_flaggables, lambda do |user, flaggables|
-    where(build_query_for_user_and_flaggables(user, flaggables))
+    return where('FALSE') if flaggables.empty? || user.nil? || user.id.nil?
+    where([ "flags.user_id = ? and flags.flaggable_type = ? and flags.flaggable_id IN (?)",
+            user.id, flaggables.first.class.name, flaggables.collect(&:id) ])
   end)
 
   def self.flag!(user, flaggable)
@@ -35,27 +37,12 @@ class Flag < ActiveRecord::Base
       @user = user
       @cache = {}
       flags = Flag.by_user_and_flaggables(user, flaggables)
-
-      # Fill up the "trues"
-      flags.each do |flag|
-        @cache[flag.flaggable_type] ||= {}
-        @cache[flag.flaggable_type][flag.flaggable_id] = true
-      end
-
-      # Fill up the "falses"
-      flaggables.each do |flaggable|
-        type = flaggable.class.name
-        @cache[type] ||= {}
-        @cache[type][flaggable.id] = !! @cache[type][flaggable.id]
-      end
+      flags.each{ |flag| @cache[flag.flaggable_id] = true }
+      flaggables.each{ |flaggable| @cache[flaggable.id] = !! @cache[flaggable.id] }
     end
 
     def flagged?(flaggable)
-      @cache[flaggable.class.name].to_h[flaggable.id]
-    end
-
-    def knows?(flaggable)
-      flagged?(flaggable) != nil
+      @cache[flaggable.id]
     end
   end
 
@@ -70,25 +57,4 @@ class Flag < ActiveRecord::Base
       super "The flaggable was not flagged by this user"
     end
   end
-
-  private
-    def self.build_query_for_user_and_flaggables(user, flaggables)
-      return ['FALSE'] if flaggables.empty?
-
-      ids_by_type = {}
-      flaggables.each do |flaggable|
-        type = flaggable.class.name
-        ids_by_type[type] ||= []
-        ids_by_type[type] << flaggable.id
-      end
-
-      query_strings = []
-      query_values = []
-      ids_by_type.each do |type, ids|
-        query_strings << "(flags.flaggable_type = ? AND flags.flaggable_id IN (?))"
-        query_values << type << ids
-      end
-      query_string = "(flags.user_id = ?) AND (#{query_strings.join(' OR ')})"
-      [query_string, user.try(:id)] + query_values
-    end
 end

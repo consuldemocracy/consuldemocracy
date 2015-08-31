@@ -205,30 +205,24 @@ describe Ability do
   describe '#flagged?' do
     let(:user) { create(:user) }
     let(:comment) { create(:comment) }
+
     it 'calls Flag.flagged? when the flag_cache is not set' do
       expect(Flag).to receive(:flagged?).with(user, comment).and_return(false)
-      expect(ability.flagged?(comment)).to_not be
-    end
-
-    it 'calls Flag.flagged? when the flag_cache is set but its user is different' do
-      ability.flag_cache = double(:cache, user: create(:user))
-      expect(Flag).to receive(:flagged?).with(user, comment).and_return(false)
-      expect(ability.flagged?(comment)).to_not be
+      ability.flagged?(comment)
     end
 
     it 'calls Flag.flagged? when the flag_cache is set, but it does not know the flaggable' do
       ability.flag_cache = double(:cache, user: user)
-      expect(ability.flag_cache).to receive(:knows?).with(comment).and_return(false)
+      expect(ability.flag_cache).to receive(:flagged?).with(comment).and_return(nil)
       expect(Flag).to receive(:flagged?).with(user, comment).and_return(false)
-      expect(ability.flagged?(comment)).to_not be
+      ability.flagged?(comment)
     end
 
-    it 'calls flag_cache.flagged? when the flag_cache is set, the user is correct, and it knows the flaggable' do
+    it 'calls flag_cache.flagged? when the flag_cache is set and it knows the flaggable' do
       ability.flag_cache = double(:cache, user: user)
-      expect(ability.flag_cache).to receive(:knows?).with(comment).and_return(true)
-      expect(ability.flag_cache).to receive(:flagged?).with(comment).and_return(false)
+      expect(ability.flag_cache).to receive(:flagged?).with(comment).and_return(true)
       expect(Flag).to_not receive(:flagged?)
-      expect(ability.flagged?(comment)).to_not be
+      ability.flagged?(comment)
     end
   end
 end
