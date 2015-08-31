@@ -42,7 +42,7 @@ class ApplicationController < ActionController::Base
     end
 
     def beta_testers
-      File.readlines('config/beta-testers.txt').map {|email| email }
+      File.readlines('config/beta-testers.txt').map {|email| email.strip }
     end
 
     def beta_site?
