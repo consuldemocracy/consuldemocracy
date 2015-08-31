@@ -31,7 +31,6 @@ class Debate < ActiveRecord::Base
   scope :sort_by_total_votes, -> { reorder(cached_votes_total: :desc) }
   scope :sort_by_likes , -> { reorder(cached_votes_up: :desc) }
   scope :sort_by_created_at, -> { reorder(created_at: :desc) }
-      
 
   # Ahoy setup
   visitable # Ahoy will automatically assign visit_id on create
@@ -56,12 +55,24 @@ class Debate < ActiveRecord::Base
     cached_votes_total
   end
 
+  def total_anonymous_votes
+    cached_anonymous_votes_total
+  end
+
   def editable?
     total_votes == 0
   end
 
   def editable_by?(user)
     editable? && author == user
+  end
+
+  def votable_by?(user)
+    user.level_three_verified? || user.level_two_verified? || anonymous_votes_ratio < Setting.value_for('max_ratio_anon_votes_on_debates').to_i
+  end
+
+  def anonymous_votes_ratio
+    (cached_anonymous_votes_total.to_f / cached_votes_total) * 100
   end
 
   def description

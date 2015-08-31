@@ -78,6 +78,36 @@ describe Debate do
     end
   end
 
+  describe "#votable_by?" do
+    let(:debate) { create(:debate) }
+
+    before(:all) do
+      create(:setting, key: "max_ratio_anon_votes_on_debates", value: "50")
+    end
+
+    it "should be true for level two verified users" do
+      user = create(:user, residence_verified_at: Time.now, confirmed_phone: "666333111")
+      expect(debate.votable_by?(user)).to be true
+    end
+
+    it "should be true for level three verified users" do
+      user = create(:user, verified_at: Time.now)
+      expect(debate.votable_by?(user)).to be true
+    end
+
+    it "should be true for anonymous users if allowed anonymous votes" do
+      debate.update(cached_anonymous_votes_total: 42, cached_votes_total: 100)
+      user = create(:user)
+      expect(debate.votable_by?(user)).to be true
+    end
+
+    it "should be false for anonymous users if too many anonymous votes" do
+      debate.update(cached_anonymous_votes_total: 52, cached_votes_total: 100)
+      user = create(:user)
+      expect(debate.votable_by?(user)).to be false
+    end
+  end
+
   describe "#search" do
     let!(:economy) { create(:debate, tag_list: "Economy") }
     let!(:health)  { create(:debate, tag_list: "Health")  }
@@ -99,6 +129,13 @@ describe Debate do
 
     it "returns debates ordered by last one first" do
       expect(Debate.all).to eq([health, economy])
+    end
+  end
+
+  describe '#anonymous_votes_ratio' do
+    it "returns the percentage of anonymous votes of the total votes" do
+      debate = create(:debate, cached_anonymous_votes_total: 25, cached_votes_total: 100)
+      expect(debate.anonymous_votes_ratio).to eq(25.0)
     end
   end
 
