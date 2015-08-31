@@ -1,28 +1,30 @@
-<div id="<%= dom_id(debate) %>" class="debate">
-  <div class="panel">
-    <div class="row">
+<% cache [locale_and_user_status, debate] do %>
+  <div id="<%= dom_id(debate) %>" class="debate">
+    <div class="panel">
+      <div class="row">
 
-      <div class="small-12 medium-9 column">
-        <div class="debate-content">
-          <span class="label left"><%= t("debates.debate.debate") %></span>
-          <i class="icon-debates"></i>
-          <h3><%= link_to debate.title, debate %></h3>
-          <p class="debate-info">
-            <i class="icon-comments"></i>&nbsp;
-            <%= link_to t("debates.debate.comments", count: debate.comments_count), debate_path(debate, anchor: "comments") %>
-          </p>
-          <div class="debate-description">
-            <%= link_to debate.description, debate %>
-            <div class="truncate"></div>
+        <div class="small-12 medium-9 column">
+          <div class="debate-content">
+            <span class="label left"><%= t("debates.debate.debate") %></span>
+            <i class="icon-debates"></i>
+            <h3><%= link_to debate.title, debate %></h3>
+            <p class="debate-info">
+              <i class="icon-comments"></i>&nbsp;
+              <%= link_to t("debates.debate.comments", count: debate.comments_count), debate_path(debate, anchor: "comments") %>
+            </p>
+            <div class="debate-description">
+              <%= link_to debate.description, debate %>
+              <div class="truncate"></div>
+            </div>
+            <%= render "shared/tags", debate: debate, limit: 5 %>
           </div>
-          <%= render "shared/tags", debate: debate, limit: 5 %>
         </div>
-      </div>
 
-      <div id="<%= dom_id(debate) %>_votes" class="small-12 medium-3 column text-center">
-          <%= render 'debates/votes', debate: debate %>
-      </div>
+        <div id="<%= dom_id(debate) %>_votes" class="small-12 medium-3 column text-center">
+            <%= render 'debates/votes', debate: debate %>
+        </div>
 
+      </div>
     </div>
   </div>
-</div>
+<% end %>
