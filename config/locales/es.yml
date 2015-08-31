@@ -27,11 +27,11 @@ es:
       locale: "Idioma:"
       administration: Administrar
       moderation: Moderar
-      welcome: Portada
+      # welcome: Portada
       how_it_works: "Cómo funciona"
       help: Ayuda
       debates: Debates
-      initiatives: Iniciativas
+      # initiatives: Iniciativas
     footer:
       description:
         "La ciudad que quieres, será la ciudad que quieras. Obtén aquí más información sobre esta página.

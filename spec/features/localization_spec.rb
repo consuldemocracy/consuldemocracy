@@ -25,11 +25,11 @@ feature 'Localization' do
 
   scenario 'Changing the locale', :js do
     visit '/'
-    expect(page).to have_content('Site language')
+    expect(page).to have_content('Language')
 
     select('Español', from: 'locale-switcher')
-    expect(page).to have_content('Idioma de la página')
-    expect(page).to_not have_content('Site language')
+    expect(page).to have_content('Idioma')
+    expect(page).to_not have_content('Language')
     expect(page).to have_select('locale-switcher', selected: 'Español')
   end
 end
