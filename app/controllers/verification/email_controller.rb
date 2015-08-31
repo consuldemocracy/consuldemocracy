@@ -1,6 +1,6 @@
 class Verification::EmailController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_verified_user
+  before_action :set_verified_user, only: :create
   skip_authorization_check
 
   def show
@@ -26,6 +26,10 @@ class Verification::EmailController < ApplicationController
   private
 
     def set_verified_user
-      @verified_user = VerifiedUser.by_user(current_user).by_email(params[:recipient]).first
+      @verified_user = VerifiedUser.by_user(current_user).where(id: verified_user_params[:id]).first
+    end
+
+    def verified_user_params
+      params.require(:verified_user).permit(:id)
     end
 end

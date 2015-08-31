@@ -7,6 +7,8 @@ en:
           spanish_id: 'Spanish ID'
           passport: 'Passport'
           residence_card: 'Residence card'
+        accept_terms_text: "I accept the terms to access the city Census"
+        accept_terms_link: "Read terms"
         form_errors: 'prevented your residence verification'
         error_verifying_census: 'The census of the city of Madrid could not verify your information. Pero revise de information and try again or get in touch with us.'
       create:
@@ -34,8 +36,6 @@ en:
             success: 'Correct code. You are now a verified user'
           level_two:
             success: 'Correct code'
-      form:
-        submit_button: Send
       alert:
         verify_attemps_left: 'You have reached the maximum number of sms verification tries'
     email:
@@ -49,8 +49,6 @@ en:
           success: "We have send you a confirmation email to your email account: %{email}"
         alert:
           failure: "There was a problem sending you an email to your account"
-      form:
-        submit_button: Send
     letter:
       new:
         title: Final Verification
@@ -69,4 +67,5 @@ en:
         email_title: Emails
         phone_title: Phones
         use_another_phone: Use another phone
-
+      form:
+        submit_button: Send

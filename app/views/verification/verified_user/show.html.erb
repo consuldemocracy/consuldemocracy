@@ -10,10 +10,10 @@
           <% if verified_user.email.present? %>
             <li id="<%= dom_id(verified_user) %>_email" style="float:left">
               <span style="float:left">
-                <%= verified_user.email %>
+                <%= mask_email(verified_user.email) %>
               </span>
               <span style="float:left;padding-left:30px">
-                <%= render '/verification/email/form', verified_user: verified_user %>
+                <%= render 'form', url: email_path, verified_user: verified_user %>
               </span>
             </li>
             <br/><br/><br/>
@@ -29,10 +29,10 @@
           <% if verified_user.phone.present? %>
             <li id="<%= dom_id(verified_user) %>_phone" style="float:left">
               <span style="float:left">
-                <%= verified_user.phone %>
+                <%= mask_phone(verified_user.phone) %>
               </span>
               <span style="float:left;padding-left:30px">
-                <%= render '/verification/sms/form', sms: Verification::Sms.new(phone: verified_user.phone) %>
+                <%= render 'form', url: sms_path, verified_user: verified_user %>
               </span>
             </li>
             <br/><br/><br/>

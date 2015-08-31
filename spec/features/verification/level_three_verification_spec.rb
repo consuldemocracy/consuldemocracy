@@ -14,14 +14,7 @@ feature 'Level three verification' do
     visit account_path
     click_link 'Verify my account'
 
-    select 'Spanish ID', from: 'residence_document_type'
-    fill_in 'residence_document_number', with: "12345678Z"
-    select_date '31-December-1980', from: 'residence_date_of_birth'
-    fill_in 'residence_postal_code', with: '28013'
-
-    click_button 'Verify'
-
-    expect(page).to have_content 'Residence verified'
+    verify_residence
 
     within("#verified_user_#{verified_user.id}_phone") do
       click_button "Send"
@@ -54,14 +47,7 @@ feature 'Level three verification' do
     visit account_path
     click_link 'Verify my account'
 
-    select 'Spanish ID', from: 'residence_document_type'
-    fill_in 'residence_document_number', with: "12345678Z"
-    select_date '31-December-1980', from: 'residence_date_of_birth'
-    fill_in 'residence_postal_code', with: '28013'
-
-    click_button 'Verify'
-
-    expect(page).to have_content 'Residence verified'
+    verify_residence
 
     within("#verified_user_#{verified_user.id}_email") do
       click_button "Send"
@@ -86,14 +72,7 @@ feature 'Level three verification' do
     visit account_path
     click_link 'Verify my account'
 
-    select 'Spanish ID', from: 'residence_document_type'
-    fill_in 'residence_document_number', with: "12345678Z"
-    select_date '31-December-1980', from: 'residence_date_of_birth'
-    fill_in 'residence_postal_code', with: '28013'
-
-    click_button 'Verify'
-
-    expect(page).to have_content 'Residence verified'
+    verify_residence
 
     fill_in 'sms_phone', with: "611111111"
     click_button 'Send'

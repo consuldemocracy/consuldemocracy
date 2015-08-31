@@ -4,8 +4,10 @@ en:
       "Legal"
     privacy:
       "Privacy"
-    terms:
+    general_terms:
       "Terms and Conditions"
+    census_terms:
+      "Census Terms"
     transparency:
       "Transparency"
     opendata:

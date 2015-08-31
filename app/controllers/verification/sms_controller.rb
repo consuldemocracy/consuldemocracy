@@ -2,6 +2,7 @@ class Verification::SmsController < ApplicationController
   before_action :authenticate_user!
   before_action :verify_resident!
   before_action :verify_attemps_left!, only: [:new, :create]
+  before_action :set_phone, only: :create
 
   skip_authorization_check
 
@@ -10,7 +11,7 @@ class Verification::SmsController < ApplicationController
   end
 
   def create
-    @sms = Verification::Sms.new(sms_params.merge(user: current_user))
+    @sms = Verification::Sms.new(phone: @phone, user: current_user)
     if @sms.save
       redirect_to edit_sms_path, notice: t('verification.sms.create.flash.success')
     else
@@ -42,6 +43,19 @@ class Verification::SmsController < ApplicationController
 
     def sms_params
       params.require(:sms).permit(:phone, :confirmation_code)
+    end
+
+    def set_phone
+      if verified_user
+        @phone = @verified_user.phone
+      else
+        @phone = sms_params[:phone]
+      end
+    end
+
+    def verified_user
+      return false unless params[:verified_user]
+      @verified_user = VerifiedUser.by_user(current_user).where(id: params[:verified_user][:id]).first
     end
 
     def redirect_to_next_path

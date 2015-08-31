@@ -26,8 +26,8 @@ feature 'Verified users' do
     login_as(user)
     visit verified_user_path
 
-    expect(page).to have_content 'rock@example.com'
-    expect(page).to have_content 'roll@example.com'
+    expect(page).to have_content 'roc*@example.com'
+    expect(page).to have_content 'rol*@example.com'
   end
 
   scenario "Verified phones" do
@@ -44,18 +44,18 @@ feature 'Verified users' do
     create(:verified_user,
             document_number: '12345678Z',
             document_type:   '2',
-            email:           '622222222')
+            phone:           '622222222')
 
     create(:verified_user,
             document_number: '99999999R',
             document_type:   '2',
-            email:           '633333333')
+            phone:           '633333333')
 
     login_as(user)
     visit verified_user_path
 
-    expect(page).to have_content '611111111'
-    expect(page).to have_content '622222222'
+    expect(page).to have_content '******111'
+    expect(page).to have_content '******222'
   end
 
   scenario "Select a verified email" do
