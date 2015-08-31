@@ -29,7 +29,10 @@ class Flag < ActiveRecord::Base
   end
 
   class Cache
+    attr_accessor :user
+
     def initialize(user, flaggables)
+      @user = user
       @cache = {}
       flags = Flag.by_user_and_flaggables(user, flaggables)
 
