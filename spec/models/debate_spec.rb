@@ -82,7 +82,7 @@ describe Debate do
     let(:debate) { create(:debate) }
 
     before(:all) do
-      create(:setting, key: "max_ratio_anon_votes_on_debates", value: "50")
+      Setting.find_by(key: "max_ratio_anon_votes_on_debates").update(value: 50)
     end
 
     it "should be true for level two verified users" do
