@@ -44,7 +44,7 @@ Rails.application.configure do
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
 
-  config.cache_store = :null_store
+  config.cache_store = :dalli_store
 
   config.after_initialize do
     Bullet.enable = true
