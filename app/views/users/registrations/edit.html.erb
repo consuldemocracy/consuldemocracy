@@ -3,14 +3,14 @@
 
     <i class="icon-angle-left left"></i>&nbsp;<%= link_to t("devise_views.users.registrations.edit.back_link"), :back, class: "left back" %>
 
-    <h1><%= t("devise_views.users.registrations.edit.edit") %> <%= resource_name.to_s.humanize %></h1>
+    <h1><%= t("devise_views.users.registrations.edit.edit") %></h1>
 
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
       <%= devise_error_messages! %>
       <div class="row">
         <div class="small-12 column">
           <%= f.label :email, t("devise_views.users.registrations.edit.email_label") %>
-          <%= f.email_field :email, autofocus: true, placeholder: t("devise_views.users.registrations.edit.email_label") %>
+          <%= f.email_field :email, label: false, autofocus: true, placeholder: t("devise_views.users.registrations.edit.email_label") %>
         </div>
 
         <div class="small-12 column">
@@ -27,13 +27,13 @@
 
         <div class="small-12 column">
           <%= f.label :password_confirmation, t("devise_views.users.registrations.edit.password_confirmation_label") %>
-          <%= f.password_field :password_confirmation, autocomplete: "off", placeholder: t("devise_views.users.registrations.edit.password_confirmation_label") %>
+          <%= f.password_field :password_confirmation, label: false, autocomplete: "off", placeholder: t("devise_views.users.registrations.edit.password_confirmation_label") %>
         </div>
 
         <div class="small-12 column">
           <%= f.label :current_password, t("devise_views.users.registrations.edit.current_password_label") %>
           <span class="note"><%= t("devise_views.users.registrations.edit.need_current") %></span>
-          <%= f.password_field :current_password, autocomplete: "off", placeholder:  t("devise_views.users.registrations.edit.current_password_label") %>
+          <%= f.password_field :current_password, label: false, autocomplete: "off", placeholder:  t("devise_views.users.registrations.edit.current_password_label") %>
         </div>
 
         <div class="small-12 column">
