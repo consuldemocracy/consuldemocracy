@@ -32,14 +32,27 @@ class Flag < ActiveRecord::Base
     def initialize(user, flaggables)
       @cache = {}
       flags = Flag.by_user_and_flaggables(user, flaggables)
+
+      # Fill up the "trues"
       flags.each do |flag|
         @cache[flag.flaggable_type] ||= {}
         @cache[flag.flaggable_type][flag.flaggable_id] = true
+      end
+
+      # Fill up the "falses"
+      flaggables.each do |flaggable|
+        type = flaggable.class.name
+        @cache[type] ||= {}
+        @cache[type][flaggable.id] = !! @cache[type][flaggable.id]
       end
     end
 
     def flagged?(flaggable)
       @cache[flaggable.class.name].to_h[flaggable.id]
+    end
+
+    def knows?(flaggable)
+      flagged?(flaggable) != nil
     end
   end
 
