@@ -89,6 +89,6 @@ class Flag < ActiveRecord::Base
         query_values << type << ids
       end
       query_string = "(flags.user_id = ?) AND (#{query_strings.join(' OR ')})"
-      [query_string, user.id] + query_values
+      [query_string, user.try(:id)] + query_values
     end
 end
