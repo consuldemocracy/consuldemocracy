@@ -15,6 +15,8 @@ class DebatesController < ApplicationController
   def show
     set_debate_votes(@debate)
     @comments = @debate.root_comments.recent.page(params[:page]).for_render
+    all_comments = @debate.comment_threads
+    current_ability.flag_cache = Flag::Cache.new(current_user, all_comments)
   end
 
   def new
