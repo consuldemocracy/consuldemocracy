@@ -2,13 +2,13 @@
   <div class="small-12 column">
     <%= link_to t("account.show.change_credentials_link"), edit_user_registration_path, class: 'button radius small secondary right' %>
 
-    <span class="right" style="padding-right: 30px">
+    <span class="right verify-account">
       <% if current_user.level_three_verified? %>
-        <%= t("account.show.level_three_user") %>
+        <p class="verified"><%= t("account.show.level_three_user") %></p>
       <% elsif current_user.level_two_verified? %>
-        <%= t("account.show.level_two_user") %>
+        <p class="verified"><%= t("account.show.level_two_user") %></p>
       <% else %>
-        <%= link_to t("account.show.verify_my_account"), new_residence_path, class: 'button radius small secondary right' %>
+        <%= link_to t("account.show.verify_my_account"), new_residence_path, class: 'button radius small success right' %>
       <% end %>
     </span>
 
@@ -18,25 +18,23 @@
       <%= render 'shared/errors', resource: @account %>
 
       <div class="row">
-        <div class="small-12 medium-6 column">
+        <div class="small-12 column">
+          <h2><%= t("account.show.avatar")%></h2>
+          <%= avatar_image(@account, seed: @account.id, size: 60) %>
+
           <h2><%= t("account.show.personal")%></h2>
 
+            <div class="small-12 medium-4">
           <% if @account.organization? %>
-
             <%= f.fields_for :organization do |fo| %>
               <%= fo.text_field :name, autofocus: true, placeholder: t("account.show.organization_name_label") %>
             <% end %>
             <%= f.text_field :phone_number, placeholder: t("account.show.phone_number_label") %>
 
-          <% else %>
+            <% else %>
             <%= f.text_field :username, placeholder: t("account.show.username_label") %>
           <% end %>
-
-        </div>
-
-        <div class="small-12 medium-6 column">
-          <h2><%= t("account.show.avatar")%></h2>
-          <%= avatar_image(@account, seed: @account.id, size: 100) %>
+          </div>
 
           <h2><%= t("account.show.notifications")%></h2>
 
