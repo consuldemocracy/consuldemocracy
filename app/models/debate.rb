@@ -67,8 +67,17 @@ class Debate < ActiveRecord::Base
     editable? && author == user
   end
 
+  def register_vote(user, vote_value)
+    if votable_by?(user)
+      Debate.increment_counter(:cached_anonymous_votes_total, id) if (user.unverified? && !user.voted_for?(self))
+      vote_by(voter: user, vote: vote_value)
+    end
+  end
+
   def votable_by?(user)
-    user.level_three_verified? || user.level_two_verified? || anonymous_votes_ratio < Setting.value_for('max_ratio_anon_votes_on_debates').to_i
+    !user.unverified? ||
+      anonymous_votes_ratio < Setting.value_for('max_ratio_anon_votes_on_debates').to_i ||
+      user.voted_for?(self)
   end
 
   def anonymous_votes_ratio

@@ -78,6 +78,66 @@ describe Debate do
     end
   end
 
+  describe "#register_vote" do
+    let(:debate) { create(:debate) }
+
+    before(:each) do
+      Setting.find_by(key: "max_ratio_anon_votes_on_debates").update(value: 50)
+    end
+
+    describe "from level two verified users" do
+      it "should register vote" do
+        user = create(:user, residence_verified_at: Time.now, confirmed_phone: "666333111")
+        expect {debate.register_vote(user, 'yes')}.to change{debate.reload.votes_for.size}.by(1)
+      end
+
+      it "should not increase anonymous votes counter " do
+        user = create(:user, residence_verified_at: Time.now, confirmed_phone: "666333111")
+        expect {debate.register_vote(user, 'yes')}.to_not change{debate.reload.cached_anonymous_votes_total}
+      end
+    end
+
+    describe "from level three verified users" do
+      it "should register vote" do
+        user = create(:user, verified_at: Time.now)
+        expect {debate.register_vote(user, 'yes')}.to change{debate.reload.votes_for.size}.by(1)
+      end
+
+      it "should not increase anonymous votes counter " do
+        user = create(:user, verified_at: Time.now)
+        expect {debate.register_vote(user, 'yes')}.to_not change{debate.reload.cached_anonymous_votes_total}
+      end
+    end
+
+    describe "from anonymous users when anonymous votes are allowed" do
+      before(:each) {debate.update(cached_anonymous_votes_total: 42, cached_votes_total: 100)}
+
+      it "should register vote " do
+        user = create(:user)
+        expect {debate.register_vote(user, 'yes')}.to change {debate.reload.votes_for.size}.by(1)
+      end
+
+      it "should increase anonymous votes counter " do
+        user = create(:user)
+        expect {debate.register_vote(user, 'yes')}.to change {debate.reload.cached_anonymous_votes_total}.by(1)
+      end
+    end
+
+    describe "from anonymous users when there are too many anonymous votes" do
+      before(:each) {debate.update(cached_anonymous_votes_total: 52, cached_votes_total: 100)}
+
+      it "should not register vote " do
+        user = create(:user)
+        expect {debate.register_vote(user, 'yes')}.to_not change {debate.reload.votes_for.size}
+      end
+
+      it "should not increase anonymous votes counter " do
+        user = create(:user)
+        expect {debate.register_vote(user, 'yes')}.to_not change {debate.reload.cached_anonymous_votes_total}
+      end
+    end
+  end
+
   describe "#votable_by?" do
     let(:debate) { create(:debate) }
 
