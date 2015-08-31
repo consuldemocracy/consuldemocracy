@@ -6,6 +6,7 @@ namespace :deploy do
         execute"rsync -av ./config/beta-testers.txt #{role.user}@#{role.hostname}:#{shared_path}/config/beta-testers.txt;"
       end
       "chmod -R 755 #{shared_path}/config/beta-testers.txt"
+      execute "ln -nfs #{shared_path}/config/beta-testers.txt #{current_path}/config/beta-testers.txt"
     end
   end
 end
