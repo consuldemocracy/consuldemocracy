@@ -41,6 +41,7 @@ gem 'initialjs-rails', '0.2.0'
 gem 'unicorn'
 gem 'paranoia'
 gem 'savon'
+gem 'dalli'
 
 gem 'ahoy_matey', '~> 1.2.1'
 gem 'groupdate'   # group temporary data
