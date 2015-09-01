@@ -68,7 +68,7 @@ class ApplicationController < ActionController::Base
     end
 
     def set_debate_votes(debates)
-      @voted_values = current_user ? current_user.debate_votes(debates) : {}
+      @debate_votes = current_user ? current_user.debate_votes(debates) : {}
     end
 
     def ensure_signup_complete
