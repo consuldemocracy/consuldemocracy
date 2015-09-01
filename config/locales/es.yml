@@ -144,7 +144,7 @@ es:
     unauthenticated: "Necesitas %{signin} o %{signup} para continuar."
     signin: iniciar sesión
     signup: registrarte
-    anonymous: "Este debate ya tiene demasiados votos anónimos, para continuar %{verify_account}."
+    anonymous: "Este debate ya tiene demasiados votos anónimos, para poder votar %{verify_account}."
     verify_account: verifica tu cuenta
   account:
     show:

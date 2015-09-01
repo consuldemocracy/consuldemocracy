@@ -144,7 +144,7 @@ en:
     unauthenticated: "You need to %{signin} or %{signup} before continuing."
     signin: sign in
     signup: sign up
-    anonymous: "This debate already has too much anonymous votes, %{verify_account} to continue."
+    anonymous: "This debate already has too much anonymous votes, %{verify_account} to vote."
     verify_account: verify your account
   account:
     show:
