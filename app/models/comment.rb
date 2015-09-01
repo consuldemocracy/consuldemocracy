@@ -9,7 +9,7 @@ class Comment < ActiveRecord::Base
   validates :body, presence: true
   validates :user, presence: true
 
-  belongs_to :commentable, polymorphic: true, counter_cache: true
+  belongs_to :commentable, -> { with_hidden }, polymorphic: true, counter_cache: true
   belongs_to :user, -> { with_hidden }
 
   has_many :flags, :as => :flaggable
