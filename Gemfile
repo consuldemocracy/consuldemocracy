@@ -66,6 +66,7 @@ group :development, :test do
   gem "capistrano-rails", '1.1.3',     require: false
   gem "capistrano-rvm",                require: false
   gem "bullet"
+  gem "faker"
 end
 
 group :test do
