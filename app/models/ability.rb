@@ -22,21 +22,11 @@ class Ability
       can :create, Comment
       can :create, Debate
 
-      can :flag, Comment do |comment|
-        comment.author_id != user.id && !Flag.flagged?(user, comment)
-      end
+      can [:flag, :unflag], Comment
+      cannot [:flag, :unflag], Comment, user_id: user.id
 
-      can :unflag, Comment do |comment|
-        comment.author_id != user.id && Flag.flagged?(user, comment)
-      end
-
-      can :flag, Debate do |debate|
-        debate.author_id != user.id && !Flag.flagged?(user, debate)
-      end
-
-      can :unflag, Debate do |debate|
-        debate.author_id != user.id && Flag.flagged?(user, debate)
-      end
+      can [:flag, :unflag], Debate
+      cannot [:flag, :unflag], Debate, author_id: user.id
 
       unless user.organization?
         can :vote, Debate

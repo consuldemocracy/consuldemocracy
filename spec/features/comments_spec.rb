@@ -155,7 +155,7 @@ feature 'Comments' do
     user = create(:user)
     debate = create(:debate)
     comment = create(:comment, commentable: debate)
-    Flag.flag!(user, comment)
+    Flag.flag(user, comment)
 
     login_as(user)
     visit debate_path(debate)

@@ -1,4 +1,4 @@
-<% voted_classes = css_classes_for_debate_vote(@voted_values, debate) %>
+<% voted_classes = css_classes_for_debate_vote(@debate_votes, debate) %>
 <div class="votes">
   <div class="in-favor inline-block">
     <%= link_to vote_debate_path(debate, value: 'yes'),

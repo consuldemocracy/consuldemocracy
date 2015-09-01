@@ -68,7 +68,7 @@ FactoryGirl.define do
 
     trait :flagged do
       after :create do |debate|
-        Flag.flag!(FactoryGirl.create(:user), debate)
+        Flag.flag(FactoryGirl.create(:user), debate)
       end
     end
   end
@@ -101,7 +101,7 @@ FactoryGirl.define do
 
     trait :flagged do
       after :create do |debate|
-        Flag.flag!(FactoryGirl.create(:user), debate)
+        Flag.flag(FactoryGirl.create(:user), debate)
       end
     end
   end

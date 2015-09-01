@@ -24,6 +24,28 @@ describe User do
     end
   end
 
+  describe "#comment_flags" do
+    let(:user) { create(:user) }
+
+    it "returns {} if no comment" do
+      expect(user.comment_flags([])).to eq({})
+    end
+
+    it "returns a hash of flaggable_ids with 'true' if they were flagged by the user" do
+      comment1 = create(:comment)
+      comment2 = create(:comment)
+      comment3 = create(:comment)
+      Flag.flag(user, comment1)
+      Flag.flag(user, comment3)
+
+      flagged = user.comment_flags([comment1, comment2, comment3])
+
+      expect(flagged[comment1.id]).to be
+      expect(flagged[comment2.id]).to_not be
+      expect(flagged[comment3.id]).to be
+    end
+  end
+
   subject { build(:user) }
 
   it "is valid" do
