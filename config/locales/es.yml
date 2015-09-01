@@ -114,8 +114,6 @@ es:
       login_to_comment: "Necesitas %{signin} o %{signup} para comentar."
       edit_debate_link: Editar
       share: Compartir
-      anonymous: "Este debate ya tiene demasiados votos anónimos, para continuar %{verify_account}."
-      verify_account: verifica tu cuenta
     edit:
       editing: Editar debate
       show_link: Ver debate
@@ -146,6 +144,8 @@ es:
     unauthenticated: "Necesitas %{signin} o %{signup} para continuar."
     signin: iniciar sesión
     signup: registrarte
+    anonymous: "Este debate ya tiene demasiados votos anónimos, para continuar %{verify_account}."
+    verify_account: verifica tu cuenta
   account:
     show:
       title: "Mi cuenta"
