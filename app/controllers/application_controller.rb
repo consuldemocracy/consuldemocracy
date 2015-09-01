@@ -29,7 +29,7 @@ class ApplicationController < ActionController::Base
     def authenticate_http_basic
       if Rails.env.staging? || Rails.env.production?
         authenticate_or_request_with_http_basic do |username, password|
-          username == Rails.application.secrets.username && password == Rails.application.secrets.password
+          username == Rails.application.secrets.http_basic_username && password == Rails.application.secrets.http_basic_password
         end
       end
     end
