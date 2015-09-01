@@ -71,6 +71,10 @@ class ApplicationController < ActionController::Base
       @debate_votes = current_user ? current_user.debate_votes(debates) : {}
     end
 
+    def set_comment_flags(comments)
+      @comment_flags = current_user ? current_user.comment_flags(comments) : {}
+    end
+
     def ensure_signup_complete
       # Ensure we don't go into an infinite loop
       return if action_name.in? %w(finish_signup do_finish_signup)

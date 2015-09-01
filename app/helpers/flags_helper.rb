@@ -10,7 +10,11 @@ module FlagsHelper
   private
 
   def flagged?(flaggable)
-    Flag.flagged?(current_user, flaggable)
+    if flaggable.is_a? Comment
+      @comment_flags[flaggable.id]
+    else
+      Flag.flagged?(current_user, flaggable)
+    end
   end
 
   def own_flaggable?(flaggable)
