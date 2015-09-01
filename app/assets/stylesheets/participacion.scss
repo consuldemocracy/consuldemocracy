@@ -225,7 +225,7 @@ h6 {
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
 header {
-  background: url('header_bg.jpg');
+  background: image-url('header_bg.jpg');
   background-position: 50% 50%;
   background-size: cover;
   color: $text;
@@ -626,7 +626,7 @@ footer {
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
 .auth-page {
-  background: #065687 url("auth_bg.jpg");
+  background: #065687 image-url("auth_bg.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   padding-top: rem-calc(24);
