@@ -134,6 +134,31 @@
       text-decoration: underline;
     }
   }
+
+  .anonymous-votes {
+    background: $warning-bg;
+    color: $warning-color;
+    height: 100%;
+    left: 0;
+    line-height: $line-height;
+    padding-top: rem-calc(12);
+    position: absolute;
+    text-align: center;
+    top: 0;
+    width: 100%;
+
+    p {
+      color: $warning-color;
+      margin: 0 rem-calc(12);
+      text-align: left;
+    }
+
+    a {
+      color: $warning-color;
+      font-weight: bold;
+      text-decoration: underline;
+    }
+  }
 }
 
 // 02. Index
@@ -353,6 +378,10 @@
     .not-logged {
       line-height: $line-height;
       padding-top: rem-calc(36);
+    }
+
+    .anonymous-votes {
+      padding-top: rem-calc(24);
     }
   }
 }

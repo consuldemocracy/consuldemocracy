@@ -61,12 +61,6 @@
     <aside class="small-12 medium-3 column">
       <div class="sidebar-divider"></div>
       <h3><%= t("votes.supports") %></h3>
-      <!-- If there is too much anonymous comments -->
-      <div class="alert-box radius warning">
-      <%= t("debates.show.anonymous",
-        verify_account: link_to(t("debates.show.verify_account"), "verify path" )).html_safe %>
-      </div>
-      <!-- /. If there is too much anonymous comments -->
       <div class="text-center">
         <div id="<%= dom_id(@debate) %>_votes">
          <%= render 'debates/votes', debate: @debate %>

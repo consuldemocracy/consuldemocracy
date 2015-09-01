@@ -21,6 +21,13 @@
     <%= t("debates.debate.votes", count: debate.total_votes) %>
   </span>
 
+  <div class="anonymous-votes">
+    <p>
+      <%= t("debates.show.anonymous",
+          verify_account: link_to(t("debates.show.verify_account"), new_residence_path )).html_safe %>
+    </p>
+  </div>
+
   <% unless user_signed_in? %>
   <div class="not-logged" style='display:none'>
     <%= t("votes.unauthenticated",
