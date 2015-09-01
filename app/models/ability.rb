@@ -1,7 +1,10 @@
 class Ability
   include CanCan::Ability
 
+  attr_accessor :flag_cache
+
   def initialize(user)
+    @user = user
 
     # If someone can hide something, he can also hide it
     # from the moderation screen
@@ -23,19 +26,19 @@ class Ability
       can :create, Debate
 
       can :flag, Comment do |comment|
-        comment.author_id != user.id && !Flag.flagged?(user, comment)
+        comment.author_id != user.id && !flagged?(comment)
       end
 
       can :unflag, Comment do |comment|
-        comment.author_id != user.id && Flag.flagged?(user, comment)
+        comment.author_id != user.id && flagged?(comment)
       end
 
       can :flag, Debate do |debate|
-        debate.author_id != user.id && !Flag.flagged?(user, debate)
+        debate.author_id != user.id && !flagged?(debate)
       end
 
       can :unflag, Debate do |debate|
-        debate.author_id != user.id && Flag.flagged?(user, debate)
+        debate.author_id != user.id && flagged?(debate)
       end
 
       unless user.organization?
@@ -94,6 +97,11 @@ class Ability
         can :manage, Moderator
       end
     end
+  end
+
+  def flagged?(flaggable)
+    is_flagged = flag_cache && flag_cache[flaggable.id]
+    is_flagged.nil? ? Flag.flagged?(@user, flaggable) : is_flagged
   end
 
 end

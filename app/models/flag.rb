@@ -9,19 +9,11 @@ class Flag < ActiveRecord::Base
           flaggable_id: flaggable.id)
   end)
 
-
-  class AlreadyFlaggedError < StandardError
-    def initialize
-      super "The flaggable was already flagged by this user"
-    end
-  end
-
-  class NotFlaggedError < StandardError
-    def initialize
-      super "The flaggable was not flagged by this user"
-    end
-  end
-
+  scope(:by_user_and_flaggables, lambda do |user, flaggables|
+    return where('FALSE') if flaggables.empty? || user.nil? || user.id.nil?
+    where([ "flags.user_id = ? and flags.flaggable_type = ? and flags.flaggable_id IN (?)",
+            user.id, flaggables.first.class.name, flaggables.collect(&:id) ])
+  end)
 
   def self.flag!(user, flaggable)
     raise AlreadyFlaggedError if flagged?(user, flaggable)
@@ -38,4 +30,23 @@ class Flag < ActiveRecord::Base
     !! by_user_and_flaggable(user, flaggable).try(:first)
   end
 
+  def self.build_cache(user, flaggables)
+    hash = {}
+    flags = Flag.by_user_and_flaggables(user, flaggables)
+    flags.each{ |flag| hash[flag.flaggable_id]= true }
+    flaggables.each{ |flaggable| hash[flaggable.id]= !! hash[flaggable.id] }
+    hash
+  end
+
+  class AlreadyFlaggedError < StandardError
+    def initialize
+      super "The flaggable was already flagged by this user"
+    end
+  end
+
+  class NotFlaggedError < StandardError
+    def initialize
+      super "The flaggable was not flagged by this user"
+    end
+  end
 end
