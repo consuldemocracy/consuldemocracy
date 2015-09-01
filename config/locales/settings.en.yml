@@ -1,0 +1,8 @@
+en:
+  settings:
+    official_level_1_name: "Level 1 official positions"
+    official_level_2_name: "Level 2 official positions"
+    official_level_3_name: "Level 3 official positions"
+    official_level_4_name: "Level 4 official positions"
+    official_level_5_name: "Level 5 official positions"
+    max_ratio_anon_votes_on_debates: "Max allowed percentage of anonymous votes per debate"

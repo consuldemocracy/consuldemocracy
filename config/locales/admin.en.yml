@@ -80,7 +80,7 @@ en:
         registered_at: "Registered at:"
         hidden_at: "Hidden at:"
     officials:
-      level_0: Level 0
+      level_0: Not an official
       level_1: Level 1
       level_2: Level 2
       level_3: Level 3

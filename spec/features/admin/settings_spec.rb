@@ -12,9 +12,9 @@ feature 'Admin settings' do
   scenario 'Index' do
     visit admin_settings_path
 
-    expect(page).to have_content @setting1.key.classify
-    expect(page).to have_content @setting2.key.classify
-    expect(page).to have_content @setting3.key.classify
+    expect(page).to have_content @setting1.key
+    expect(page).to have_content @setting2.key
+    expect(page).to have_content @setting3.key
   end
 
   scenario 'Update' do
