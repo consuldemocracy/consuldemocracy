@@ -45,12 +45,12 @@
 
 @font-face {
   font-family: 'Open Sans';
-  src: url('opensans-italic.eot');
-  src: url('opensans-italic.eot?#iefix') format('embedded-opentype'),
-       url('opensans-italic.woff2') format('woff2'),
-       url('opensans-italic.woff') format('woff'),
-       url('opensans-italic.ttf') format('truetype'),
-       url('opensans-italic.svg#open_sansitalic') format('svg');
+  src: font-url('opensans-italic.eot');
+  src: font-url('opensans-italic.eot?#iefix') format('embedded-opentype'),
+       font-url('opensans-italic.woff2') format('woff2'),
+       font-url('opensans-italic.woff') format('woff'),
+       font-url('opensans-italic.ttf') format('truetype'),
+       font-url('opensans-italic.svg#open_sansitalic') format('svg');
   font-weight: normal;
   font-style: italic;
 }
@@ -69,12 +69,12 @@
 
 @font-face {
   font-family: 'Open Sans';
-  src: url('opensans-bolditalic.eot');
-  src: url('opensans-bolditalic.eot?#iefix') format('embedded-opentype'),
-       url('opensans-bolditalic.woff2') format('woff2'),
-       url('opensans-bolditalic.woff') format('woff'),
-       url('opensans-bolditalic.ttf') format('truetype'),
-       url('opensans-bolditalic.svg#open_sansbold_italic') format('svg');
+  src: font-url('opensans-bolditalic.eot');
+  src: font-url('opensans-bolditalic.eot?#iefix') format('embedded-opentype'),
+       font-url('opensans-bolditalic.woff2') format('woff2'),
+       font-url('opensans-bolditalic.woff') format('woff'),
+       font-url('opensans-bolditalic.ttf') format('truetype'),
+       font-url('opensans-bolditalic.svg#open_sansbold_italic') format('svg');
   font-weight: bold;
   font-style: italic;
 }
