@@ -6,3 +6,6 @@ Setting.create(key: 'official_level_2_name', value: 'Organización Municipal')
 Setting.create(key: 'official_level_3_name', value: 'Directores generales')
 Setting.create(key: 'official_level_4_name', value: 'Concejales')
 Setting.create(key: 'official_level_5_name', value: 'Alcaldesa')
+
+# Max percentage of allowed anonymous votes on a debate
+Setting.create(key: 'max_ratio_anon_votes_on_debates', value: '50')

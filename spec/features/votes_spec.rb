@@ -5,7 +5,7 @@ feature 'Votes' do
   feature 'Debates' do
 
     background do
-      @manuela = create(:user)
+      @manuela = create(:user, verified_at: Time.now)
       @pablo = create(:user)
       @debate = create(:debate)
 

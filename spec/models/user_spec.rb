@@ -254,4 +254,49 @@ describe User do
     end
   end
 
+  describe "verification levels" do
+    it "residence_verified? is true only if residence_verified_at" do
+      user = create(:user, residence_verified_at: Time.now)
+      expect(user.residence_verified?).to eq(true)
+
+      user = create(:user, residence_verified_at: nil)
+      expect(user.residence_verified?).to eq(false)
+    end
+
+    it "sms_verified? is true only if confirmed_phone" do
+      user = create(:user, confirmed_phone: "123456789")
+      expect(user.sms_verified?).to eq(true)
+
+      user = create(:user, confirmed_phone: nil)
+      expect(user.sms_verified?).to eq(false)
+    end
+
+    it "level_two_verified? is true only if residence_verified_at and confirmed_phone" do
+      user = create(:user, confirmed_phone: "123456789", residence_verified_at: Time.now)
+      expect(user.level_two_verified?).to eq(true)
+
+      user = create(:user, confirmed_phone: nil, residence_verified_at: Time.now)
+      expect(user.level_two_verified?).to eq(false)
+
+      user = create(:user, confirmed_phone: "123456789", residence_verified_at: nil)
+      expect(user.level_two_verified?).to eq(false)
+    end
+
+    it "level_three_verified? is true only if verified_at" do
+      user = create(:user, verified_at: Time.now)
+      expect(user.level_three_verified?).to eq(true)
+
+      user = create(:user, verified_at: nil)
+      expect(user.level_three_verified?).to eq(false)
+    end
+
+    it "unverified? is true only if not level_three_verified and not level_two_verified" do
+      user = create(:user, verified_at: nil, confirmed_phone: nil)
+      expect(user.unverified?).to eq(true)
+
+      user = create(:user, verified_at: Time.now, confirmed_phone: "123456789", residence_verified_at: Time.now)
+      expect(user.unverified?).to eq(false)
+    end
+  end
+
 end

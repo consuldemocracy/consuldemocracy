@@ -773,6 +773,12 @@ form {
     background-color: $warning-bg;
     border-color: $warning-border;
     color: $warning-color;
+
+    a {
+      color: $warning-color;
+      font-weight: bold;
+      text-decoration: underline;
+    }
   }
 
   &.alert {
