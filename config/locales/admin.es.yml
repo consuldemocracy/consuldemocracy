@@ -80,7 +80,7 @@ es:
         registered_at: "Fecha de alta:"
         hidden_at: "Bloqueado:"
     officials:
-      level_0: Nivel 0
+      level_0: "No es cargo público"
       level_1: Nivel 1
       level_2: Nivel 2
       level_3: Nivel 3
