@@ -140,8 +140,8 @@ FactoryGirl.define do
   end
 
   factory :setting do
-    sequence(:key) { |n| "setting key number #{n}" }
-    sequence(:value) { |n| "setting number #{n} value" }
+    sequence(:key) { |n| "Setting Key #{n}" }
+    sequence(:value) { |n| "Setting #{n} Value" }
   end
 
   factory :ahoy_event, :class => Ahoy::Event do

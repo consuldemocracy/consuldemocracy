@@ -1,0 +1,8 @@
+es:
+  settings:
+    official_level_1_name: "Cargos públicos de nivel 1"
+    official_level_2_name: "Cargos públicos de nivel 2"
+    official_level_3_name: "Cargos públicos de nivel 3"
+    official_level_4_name: "Cargos públicos de nivel 4"
+    official_level_5_name: "Cargos públicos de nivel 5"
+    max_ratio_anon_votes_on_debates: "Porcentaje máximo de votos anónimos por debate"
