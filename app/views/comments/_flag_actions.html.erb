@@ -1,4 +1,4 @@
-<% if can? :flag, comment %>
+<% if show_flag_action? comment %>
   <span class="divider">&nbsp;|&nbsp;</span>
   <a id="flag-expand-comment-<%= comment.id %>" data-dropdown="flag-drop-comment-<%= comment.id %>" aria-controls="flag-drop-comment-<%= comment.id %>" aria-expanded="false" title="<%= t('shared.flag') %>">
     &nbsp;<i class="icon-flag flag-disable"></i>&nbsp;&nbsp;
@@ -10,7 +10,7 @@
   </ul>
 <% end %>
 
-<% if can? :unflag, comment %>
+<% if show_unflag_action? comment %>
   <span class="divider">&nbsp;|&nbsp;</span>
   <a id="unflag-expand-comment-<%= comment.id %>" data-dropdown="unflag-drop-comment-<%= comment.id %>" aria-controls="unflag-drop-comment-<%= comment.id %>" aria-expanded="false" title="<%= t('shared.unflag') %>">
     &nbsp;<i class="icon-flag flag-active"></i>&nbsp;&nbsp;

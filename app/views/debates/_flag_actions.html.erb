@@ -1,4 +1,4 @@
-<% if can? :flag, debate %>
+<% if show_flag_action? debate %>
   <a id="flag-expand-debate-<%= debate.id %>" data-dropdown="flag-drop-debate-<%= debate.id %>" aria-controls="flag-drop-debate-<%= debate.id %>" aria-expanded="false" title="<%= t('shared.flag') %>">
     &nbsp;<i class="icon-flag flag-disable"></i>&nbsp;&nbsp;
   </a>
@@ -9,7 +9,7 @@
   </ul>
 <% end %>
 
-<% if can? :unflag, debate %>
+<% if show_unflag_action? debate %>
   <a id="unflag-expand-debate-<%= debate.id %>" data-dropdown="unflag-drop-debate-<%= debate.id %>" aria-controls="unflag-drop-debate-<%= debate.id %>" aria-expanded="false" title="<%= t('shared.unflag') %>">
     &nbsp;<i class="icon-flag flag-active"></i>&nbsp;&nbsp;
   </a>
