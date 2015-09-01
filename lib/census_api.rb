@@ -6,7 +6,7 @@ class CensusApi
   end
 
   def client
-    @client = Savon.client(wsdl: Rails.application.secrets.padron_end_point)
+    @client = Savon.client(wsdl: Rails.application.secrets.census_api_end_point)
   end
 
   def response
@@ -16,9 +16,9 @@ class CensusApi
 
   def request
     { request:
-      { codigo_institucion: Rails.application.secrets.institution_code,
-        codigo_portal:      Rails.application.secrets.portal_name,
-        codigo_usuario:     Rails.application.secrets.user_code,
+      { codigo_institucion: Rails.application.secrets.census_api_institution_code,
+        codigo_portal:      Rails.application.secrets.census_api_portal_name,
+        codigo_usuario:     Rails.application.secrets.census_api_user_code,
         documento:          citizen.document_number,
         tipo_documento:     citizen.document_type,
         codigo_idioma:      102,
