@@ -285,6 +285,7 @@ GEM
       http-cookie (>= 1.0.2, < 2.0)
       mime-types (>= 1.16, < 3.0)
       netrc (~> 0.7)
+    rollbar (2.2.1)
     rspec (3.3.0)
       rspec-core (~> 3.3.0)
       rspec-expectations (~> 3.3.0)
@@ -428,6 +429,7 @@ DEPENDENCIES
   quiet_assets
   rails (= 4.2.4)
   responders
+  rollbar (~> 2.2.1)
   rspec-rails (~> 3.0)
   sass-rails (~> 5.0)
   savon
