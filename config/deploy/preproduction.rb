@@ -3,8 +3,8 @@ set :server_name, deploysecret(:server_name)
 set :db_server, deploysecret(:db_server)
 set :branch, :master
 set :ssh_options, port: deploysecret(:ssh_port)
-set :stage, :production
-set :rails_env, :production
+set :stage, :preproduction
+set :rails_env, :preproduction
 
 server deploysecret(:server1), user: deploysecret(:user), roles: %w(web app db importer)
 server deploysecret(:server2), user: deploysecret(:user), roles: %w(web app db importer)
