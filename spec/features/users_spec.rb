@@ -44,7 +44,7 @@ feature 'Users' do
     end
   end
 
-  context 'OAuth authentication' do
+  xcontext 'OAuth authentication' do
     context 'Twitter' do
       background do
         #request.env["devise.mapping"] = Devise.mappings[:user]
