@@ -3,7 +3,6 @@ require 'database_cleaner'
 DatabaseCleaner.clean_with :truncation
 
 puts "Creating Settings"
-Setting.create(key: 'official_level_0_name', value: 'No cargo público')
 Setting.create(key: 'official_level_1_name', value: 'Empleados públicos')
 Setting.create(key: 'official_level_2_name', value: 'Organización Municipal')
 Setting.create(key: 'official_level_3_name', value: 'Directores generales')
