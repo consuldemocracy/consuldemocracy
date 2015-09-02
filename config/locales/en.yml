@@ -146,6 +146,7 @@ en:
     signup: sign up
     anonymous: "This debate already has too much anonymous votes, %{verify_account} to vote."
     verify_account: verify your account
+    organizations: Organizations can not vote
   account:
     show:
       title: "My account"
