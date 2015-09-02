@@ -21,7 +21,13 @@
     <%= t("debates.debate.votes", count: debate.total_votes) %>
   </span>
 
-  <% if user_signed_in? && current_user.unverified? && !debate.votable_by?(current_user)%>
+  <% if user_signed_in? && current_user.organization? %>
+  <div class="organizations-votes" style='display:none'>
+    <p>
+      <%= t("votes.organizations") %>
+    </p>
+  </div>
+  <% elsif user_signed_in? && current_user.unverified? && !debate.votable_by?(current_user)%>
   <div class="anonymous-votes" style='display:none'>
     <p>
       <%= t("votes.anonymous",

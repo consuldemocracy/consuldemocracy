@@ -135,7 +135,7 @@
     }
   }
 
-  .anonymous-votes {
+  .anonymous-votes, .organizations-votes {
     background: $warning-bg;
     color: $warning-color;
     height: 100%;
@@ -380,7 +380,7 @@
       padding-top: rem-calc(36);
     }
 
-    .anonymous-votes {
+    .anonymous-votes, .organizations-votes {
       padding-top: rem-calc(24);
     }
   }
