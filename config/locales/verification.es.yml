@@ -74,6 +74,13 @@ es:
           success: "Gracias por solicitar tu código de máxima seguridad, en unos días te lo enviaremos a la dirección que figura en tus datos del padrón. Recuerda que puedes ahorrar el envío recogiendo tu código en cualquiera de las Oficinas de Atención al Ciudadano."
         alert:
           failure: "No podemos verificar tu dirección con el Padrón, por favor inténtalo otra vez más tarde"
+      edit:
+        title: "Confirmación de código de seguridad"
+        confirmation_code: "Introduce el código que has recibido en tu carta"
+      update:
+        error: "Código de verificación incorrecto"
+        flash:
+          success: "Código correcto. Tu cuenta ya está verificada"
       alert:
         unconfirmed_code: "Todavía no has introducido el código de confirmación"
     verified_user:

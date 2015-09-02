@@ -71,9 +71,16 @@ en:
         send_code: "Send"
       create:
         flash:
-          success: "Thank you for requesting a code maximum security in a few days we will send it to the address on your census data. Remember that you can save shipping collecting your code in any of the Office of Citizen Services."
+          success: "Thank you for requesting a maximum security code in a few days we will send it to the address on your census data. Remember that you can save shipping collecting your code in any of the Office of Citizen Services."
         alert:
           failure: "We could not verify your address with the Census please try again later"
+      edit:
+        title: "Security code confirmation"
+        confirmation_code: "Code confirmation in your letter"
+      update:
+        error: "Incorrect confirmation code"
+        flash:
+          success: "Correct code. Your account is verified"
       alert:
         unconfirmed_code: "You have not yet enter the confirmation code"
     verified_user:
