@@ -1,22 +1,23 @@
-<div id="js-comment-form-<%= dom_id(parent) %>" <%= "style='display:none'".html_safe if toggeable %>>
-  <%= form_for [@debate, Comment.new], remote: true do |f| %>
-    <%= label_tag "comment-body-#{dom_id(parent)}", t("comments.form.leave_comment") %>
-    <%= f.text_area :body, id: "comment-body-#{dom_id(parent)}", label: false %>
-    <%= f.hidden_field :commentable_type, value: parent.class %>
-    <%= f.hidden_field :commentable_id, value: parent.id %>
+<div id="js-comment-form-<%= dom_id(commentable) %>" <%= "style='display:none'".html_safe if toggeable %>>
+  <%= form_for [commentable, Comment.new], remote: true do |f| %>
+    <%= label_tag "comment-body-#{dom_id(commentable)}", t("comments.form.leave_comment") %>
+    <%= f.text_area :body, id: "comment-body-#{dom_id(commentable)}", label: false %>
+    <%= f.hidden_field :commentable_type, value: commentable.class %>
+    <%= f.hidden_field :commentable_id, value: commentable.id %>
+    <%= f.hidden_field :parent_id, value: parent_id %>
 
-    <%= f.submit comment_button_text(parent), class: "button radius small inline-block" %>
+    <%= f.submit comment_button_text(parent_id), class: "button radius small inline-block" %>
 
-    <% if can? :comment_as_moderator, @debate %>
+    <% if can? :comment_as_moderator, commentable %>º
       <div class="right">
-        <%= f.check_box :as_moderator, id: "comment-as-moderator-#{dom_id(parent)}", label: false %>
-        <%= label_tag "comment-as-moderator-#{dom_id(parent)}", t("comments.form.comment_as_moderator"), class: "checkbox" %>
+        <%= f.check_box :as_moderator, id: "comment-as-moderator-#{dom_id(commentable)}", label: false %>
+        <%= label_tag "comment-as-moderator-#{dom_id(commentable)}", t("comments.form.comment_as_moderator"), class: "checkbox" %>
       </div>
     <% end %>
-    <% if can? :comment_as_administrator, @debate %>
+    <% if can? :comment_as_administrator, commentable %>
       <div class="right">
-        <%= f.check_box :as_administrator, id: "comment-as-administrator-#{dom_id(parent)}",label: false %>
-        <%= label_tag "comment-as-administrator-#{dom_id(parent)}", t("comments.form.comment_as_admin"), class: "checkbox" %>
+        <%= f.check_box :as_administrator, id: "comment-as-administrator-#{dom_id(commentable)}",label: false %>
+        <%= label_tag "comment-as-administrator-#{dom_id(commentable)}", t("comments.form.comment_as_admin"), class: "checkbox" %>
       </div>
     <% end %>
   <% end %>

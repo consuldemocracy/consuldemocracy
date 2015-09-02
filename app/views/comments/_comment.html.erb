@@ -88,14 +88,14 @@
 
             <%= render 'comments/actions', comment: comment %>
 
-            <%= render 'comments/form', {parent: comment, toggeable: true} %>
+            <%= render 'comments/form', {commentable: @debate, parent_id: comment.id, toggeable: true} %>
           <% end %>
         </div>
       </div>
     <% end %>
 
     <div class="comment-children">
-      <%= render comment.children.for_render.reorder('id DESC, lft') %>
+      <%= render comment.children.for_render.reorder('id DESC') %>
     </div>
   </div>
 </div>
