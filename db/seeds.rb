@@ -1,3 +1,7 @@
+# Default admin user (change password after first deploy to a server!)
+admin = User.create!(username: 'admin', email: 'admin@madrid.es', password: '12345678', password_confirmation: '12345678', confirmed_at: Time.now)
+admin.create_administrator
+
 # Names for the moderation console, as a hint for moderators
 # to know better how to assign users with official positions
 Setting.create(key: 'official_level_1_name', value: 'Empleados públicos')
