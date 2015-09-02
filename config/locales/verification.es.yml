@@ -35,7 +35,7 @@ es:
           level_three:
             success: 'Código correcto. Ya eres un usuario verificado'
           level_two:
-            success: 'Código incorrecto'
+            success: 'Código correcto'
       alert:
         verify_attemps_left: 'Has llegado al máximo número de intentos de verificar tu teléfono.'
     email:
