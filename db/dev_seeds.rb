@@ -52,12 +52,15 @@ not_org_users = User.where(['users.id NOT IN(?)', org_user_ids])
 
 puts "Creating Debates"
 
+tags = Faker::Lorem.words(25)
+
 (1..30).each do |i|
   author = User.reorder("RANDOM()").first
   description = "<p>#{Faker::Lorem.paragraphs.join('</p></p>')}</p>"
   debate = Debate.create!(author: author,
                           title: Faker::Lorem.sentence(3),
                           description: description,
+                          tag_list: tags.sample(3).join(','),
                           terms_of_service: "1")
   puts "    #{debate.title}"
 end
