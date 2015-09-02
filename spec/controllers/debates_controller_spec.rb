@@ -35,7 +35,7 @@ describe DebatesController do
 
     it 'should not allow vote if user is not allowed' do
       Setting.find_by(key: "max_ratio_anon_votes_on_debates").update(value: 0)
-      debate = create(:debate)
+      debate = create(:debate, cached_votes_total: 1000)
       sign_in create(:user)
 
       expect do
