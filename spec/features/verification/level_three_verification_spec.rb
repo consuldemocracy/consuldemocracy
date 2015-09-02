@@ -26,8 +26,6 @@ feature 'Level three verification' do
     fill_in 'sms_confirmation_code', with: user.sms_confirmation_code
     click_button 'Send'
 
-    expect(page).to have_content 'Correct code'
-
     expect(page).to have_content "Correct code. Your account is verified"
 
     expect(page).to_not have_link "Verify my account"

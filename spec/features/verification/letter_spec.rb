@@ -35,7 +35,6 @@ feature 'Verify Letter' do
     visit new_letter_path
 
     click_button "Send me a letter with the code"
-
     expect(page).to have_content "Thank you for requesting a maximum security code in a few days we will send it to the address on your census data."
 
     fill_in "letter_verification_code", with: "1"
