@@ -1,5 +1,4 @@
 class Admin::CommentsController < Admin::BaseController
-
   has_filters %w{all with_confirmed_hide}
 
   before_filter :load_comment, only: [:confirm_hide, :restore]

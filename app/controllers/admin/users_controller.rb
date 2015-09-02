@@ -1,5 +1,4 @@
 class Admin::UsersController < Admin::BaseController
-
   has_filters %w{all with_confirmed_hide}, only: :index
 
   before_filter :load_user, only: [:confirm_hide, :restore]
