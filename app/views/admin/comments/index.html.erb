@@ -4,7 +4,7 @@
   <dt><%= t("admin.comments.index.filter") %>:</dt>
 
   <% @valid_filters.each do |filter| %>
-    <% if @filter == filter %>
+    <% if @current_filter == filter %>
       <dd class="active"><%= t("admin.comments.index.filters.#{filter}") %></dd>
     <% else %>
       <dd><%= link_to t("admin.comments.index.filters.#{filter}"),
