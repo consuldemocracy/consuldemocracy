@@ -60,7 +60,7 @@ feature 'Debates' do
     fill_in 'debate_captcha', with: correct_captcha_text
     check 'debate_terms_of_service'
 
-    click_button 'Create Debate'
+    click_button 'Start a debate'
 
     expect(page).to have_content 'Debate was successfully created.'
     expect(page).to have_content 'Acabar con los desahucios'
@@ -78,13 +78,13 @@ feature 'Debates' do
     fill_in 'debate_captcha', with: "wrongText!"
     check 'debate_terms_of_service'
 
-    click_button "Create Debate"
+    click_button "Start a debate"
 
     expect(page).to_not have_content "Debate was successfully created."
     expect(page).to have_content "1 error"
 
     fill_in 'debate_captcha', with: correct_captcha_text
-    click_button "Create Debate"
+    click_button "Start a debate"
 
     expect(page).to have_content "Debate was successfully created."
   end
@@ -100,7 +100,7 @@ feature 'Debates' do
     fill_in 'debate_captcha', with: correct_captcha_text
     check 'debate_terms_of_service'
 
-    click_button "Create Debate"
+    click_button "Start a debate"
 
     expect(page).to_not have_content "Debate was successfully created."
     expect(page).to have_content "1 error"
@@ -115,7 +115,7 @@ feature 'Debates' do
     login_as(author)
 
     visit new_debate_path
-    click_button 'Create Debate'
+    click_button 'Start a debate'
     expect(page).to have_content error_message
   end
 
@@ -129,7 +129,7 @@ feature 'Debates' do
     fill_in 'debate_captcha', with: correct_captcha_text
     check 'debate_terms_of_service'
 
-    click_button 'Create Debate'
+    click_button 'Start a debate'
 
     expect(page).to have_content 'Debate was successfully created.'
     expect(page).to have_content 'A test'
@@ -161,7 +161,7 @@ feature 'Debates' do
         find('.js-add-tag-link', text: tag_name).click
       end
 
-      click_button 'Create Debate'
+      click_button 'Start a debate'
 
       expect(page).to have_content 'Debate was successfully created.'
       ['Medio Ambiente', 'Ciencia'].each do |tag_name|
@@ -179,7 +179,7 @@ feature 'Debates' do
 
       fill_in 'debate_tag_list', with: 'user_id=1, &a=3, <script>alert("hey");</script>'
 
-      click_button 'Create Debate'
+      click_button 'Start a debate'
 
       expect(page).to have_content 'Debate was successfully created.'
       expect(page).to have_content 'user_id1'
@@ -222,7 +222,7 @@ feature 'Debates' do
     fill_in 'debate_description', with: "Let's..."
     fill_in 'debate_captcha', with: correct_captcha_text
 
-    click_button "Update Debate"
+    click_button "Start a debate"
 
     expect(page).to have_content "Debate was successfully updated."
     expect(page).to have_content "End child poverty"
@@ -235,7 +235,7 @@ feature 'Debates' do
 
     visit edit_debate_path(debate)
     fill_in 'debate_title', with: ""
-    click_button 'Update Debate'
+    click_button 'Start a debate'
 
     expect(page).to have_content error_message
   end
@@ -249,13 +249,13 @@ feature 'Debates' do
 
     fill_in 'debate_title', with: "New title"
     fill_in 'debate_captcha', with: "wrong!"
-    click_button "Update Debate"
+    click_button "Start a debate"
 
     expect(page).to_not have_content "Debate was successfully updated."
     expect(page).to have_content "1 error"
 
     fill_in 'debate_captcha', with: correct_captcha_text
-    click_button "Update Debate"
+    click_button "Start a debate"
 
     expect(page).to have_content "Debate was successfully updated."
   end
@@ -271,7 +271,7 @@ feature 'Debates' do
 
     fill_in 'debate_title', with: ""
     fill_in 'debate_captcha', with: correct_captcha_text
-    click_button "Update Debate"
+    click_button "Start a debate"
 
     expect(page).to_not have_content "Debate was successfully updated."
     expect(page).to have_content "1 error"

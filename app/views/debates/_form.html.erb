@@ -4,14 +4,12 @@
   <div class="row">
     <div class="small-12 column">
       <%= f.label :title, t("debates.form.debate_title") %>
-      <span class="note"><%= t("debates.form.title_instructions") %></span>
-      <%= f.text_field :title, maxlength: Debate::TITLE_LENGTH, placeholder: t("debates.form.debate_title") %>
+      <%= f.text_field :title, maxlength: Debate::TITLE_LENGTH, placeholder: t("debates.form.debate_title"), label: false %>
     </div>
 
     <div class="ckeditor small-12 column">
       <%= f.label :description, t("debates.form.debate_text") %>
-      <span class="note"><%= t("debates.form.text_instructions") %></span>
-      <%= f.cktext_area :description, ckeditor: { language: I18n.locale } %>
+      <%= f.cktext_area :description, ckeditor: { language: I18n.locale }, label: false %>
     </div>
 
     <div class="small-12 column">
@@ -22,7 +20,7 @@
           <a class="js-add-tag-link"><%= tag.name %></a>
         <% end %>
       </span>
-      <%= f.text_field :tag_list, value: @debate.tag_list.to_s %>
+      <%= f.text_field :tag_list, value: @debate.tag_list.to_s, label: false %>
     </div>
 
     <div class="small-12 column">
@@ -36,7 +34,7 @@
     </div>
 
     <div class="actions small-12 column">
-      <%= f.submit(class: "button radius") %>
+      <%= f.submit(class: "button radius", value: t("debates.form.start_debate")) %>
     </div>
   </div>
 <% end %>

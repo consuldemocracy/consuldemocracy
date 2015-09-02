@@ -53,7 +53,8 @@ es:
           back_link: "Atrás"
         new:
           title: "Registrarse"
-          username_label: "Nombre a utilizar públicamente"
+          username_label: "Nombre de usuario"
+          username_note: "Nombre que aparecerá en tus publicaciones"
           email_label: "Email"
           password_label: "Contraseña"
           password_confirmation_label: "Confirmar contraseña"
