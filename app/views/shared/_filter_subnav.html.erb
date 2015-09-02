@@ -1,0 +1,17 @@
+<% # Params:
+   #
+   #   i18n_namespace: for example "moderation.debates.index"
+%>
+
+<dl class="sub-nav">
+  <dt><%= t("#{i18n_namespace}.filter") %>: </dt>
+
+  <% @valid_filters.each do |filter| %>
+    <% if @current_filter == filter %>
+      <dd class="active"><%= t("#{i18n_namespace}.filters.#{filter}") %></dd>
+    <% else %>
+      <dd><%= link_to t("#{i18n_namespace}.filters.#{filter}"),
+        current_path_with_query_params(filter: filter) %></dd>
+    <% end %>
+  <% end %>
+</dl>

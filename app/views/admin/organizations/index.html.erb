@@ -13,18 +13,7 @@
 <% end %>
 <!-- /. Search organizations -->
 
-<dl class="sub-nav">
-  <dt><%= t("admin.organizations.index.filter") %>:</dt>
-
-  <% @valid_filters.each do |filter| %>
-    <% if @current_filter == filter %>
-      <dd class="active"><%= t("admin.organizations.index.filters.#{filter}") %></dd>
-    <% else %>
-      <dd><%= link_to t("admin.organizations.index.filters.#{filter}"),
-        current_path_with_query_params(filter: filter) %></dd>
-    <% end %>
-  <% end %>
-</dl>
+<%= render 'shared/filter_subnav', i18n_namespace: "admin.organizations.index" %>
 
 <h3><%= page_entries_info @organizations %></h3>
 
