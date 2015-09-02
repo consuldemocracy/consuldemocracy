@@ -1,7 +1,7 @@
 class Moderation::CommentsController < Moderation::BaseController
   has_filters %w{all pending_flag_review with_ignored_flag}, only: :index
 
-  before_filter :load_comments, only: :index
+  before_action :load_comments, only: :index
 
   load_and_authorize_resource
 
