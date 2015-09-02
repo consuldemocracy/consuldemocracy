@@ -85,8 +85,14 @@ feature 'Level three verification' do
 
     expect(page).to have_content 'Correct code'
 
-    click_button "Send me a letter"
+    click_button "Send me a letter with the code"
 
-    expect(page).to have_content "Thank you for requesting a code maximum security in a few days we will send it to the address on your census data. Remember that you can save shipping collecting your code in any of the Office of Citizen Services."
+    expect(page).to have_content "Thank you for requesting a maximum security code in a few days we will send it to the address on your census data."
+
+    user.reload
+    fill_in "letter_verification_code", with: user.letter_verification_code
+    click_button "Send"
+
+    expect(page).to have_content "Correct code. Your account is verified"
   end
 end
