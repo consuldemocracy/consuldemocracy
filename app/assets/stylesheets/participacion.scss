@@ -229,7 +229,7 @@ header {
   background-position: 50% 50%;
   background-size: cover;
   color: $text;
-  min-height: rem-calc(600);
+  min-height: rem-calc(624);
 
   &.results {
     min-height: rem-calc(48);
@@ -543,9 +543,14 @@ footer {
   a {
     color: white;
 
-    &.link:hover {
+    &:hover {
       color: white;
       opacity: .5;
+      transition: opacity 275ms;
+    }
+
+    &:active, &:focus {
+      color: white;
     }
   }
 
@@ -554,7 +559,14 @@ footer {
       text-decoration: underline;
 
       &:hover {
-        color: rgba(255,255,255,.6);
+        color: white;
+        opacity: .5;
+        transition: opacity 275ms;
+      }
+
+      &:active, &:focus {
+        color: white;
+        opacity: 1;
       }
     }
   }
@@ -749,6 +761,13 @@ form {
 
   .button.margin-top {
     margin-top: rem-calc(24);
+  }
+}
+
+.captcha {
+
+  label {
+    display: none;
   }
 }
 
@@ -1122,13 +1141,23 @@ table {
 
 .page {
   background: white;
-  min-height: 100%;
+  min-height: rem-calc(600);
 
   .menu {
     margin-top: rem-calc(24);
 
+    ul {
+      list-style-type: none;
+      margin-left: 0;
+
+      & ul {
+        margin-left: rem-calc(12);
+      }
+    }
+
     a {
       display: block;
+      font-size: rem-calc(13);
       margin-bottom: rem-calc(12);
     }
   }
@@ -1137,7 +1166,12 @@ table {
     margin-top: rem-calc(24);
     text-align: justify;
 
-    ul {
+    h1, h2, h3, h4, h5, h6 {
+      text-align: left;
+    }
+
+    ul, ol {
+      margin-left: rem-calc(12);
 
       li {
         font-size: rem-calc(13);
@@ -1146,8 +1180,3 @@ table {
     }
   }
 }
-
-
-
-
-

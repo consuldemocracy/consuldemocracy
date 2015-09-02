@@ -3,9 +3,9 @@
     <div class="row">
       <%= render "shared/locale_switcher" %>
       <div class="external-links">
-        <%= link_to t("layouts.header.participation"), root_path, class: "selected" %>&nbsp;|
-        <%= link_to t("layouts.header.external_link_transparency"), "/transparency" %>&nbsp;|
-        <%= link_to t("layouts.header.external_link_opendata"), "/opendata" %>
+        <%= link_to t("layouts.header.participation"), root_path, class: ("selected" unless current_page?("/transparency") || current_page?("/opendata")) %>&nbsp;|
+        <%= link_to t("layouts.header.external_link_transparency"), "/transparency", class: ("selected" if current_page?("/transparency")) %>&nbsp;|
+        <%= link_to t("layouts.header.external_link_opendata"), "/opendata", class: ("selected" if current_page?("/opendata")) %>
       </div>
     </div>
   </section>
@@ -38,10 +38,7 @@
           <%#= link_to t("layouts.header.initiatives"), "#" %>
         </div> -->
         <div class="small-12 medium-2 column end">
-          <%= link_to t("layouts.header.how_it_works"), "/how_it_works" %>
-        </div>
-        <div class="small-12 medium-2 column end">
-          <%= link_to t("layouts.header.help"), "/help" %>
+          <%= link_to t("layouts.header.more_information"), "/more_information" %>
         </div>
         <div class="small-12 medium-2 column end">
           <%= link_to t("layouts.header.external_link_blog"), t("layouts.header.external_link_blog_url"), target: "_blank" %>
