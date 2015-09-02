@@ -72,7 +72,7 @@ feature 'Tags' do
 
     fill_in 'debate_tag_list', with: "Impuestos, Economía, Hacienda"
 
-    click_button 'Create Debate'
+    click_button 'Start a debate'
 
     expect(page).to have_content 'Debate was successfully created.'
     expect(page).to have_content 'Economía'
@@ -90,7 +90,7 @@ feature 'Tags' do
 
     fill_in 'debate_tag_list', with: "Economía, Hacienda"
     fill_in 'debate_captcha', with: correct_captcha_text
-    click_button 'Update Debate'
+    click_button 'Start a debate'
 
     expect(page).to have_content 'Debate was successfully updated.'
     within('.tags') do
@@ -107,7 +107,7 @@ feature 'Tags' do
 
     fill_in 'debate_tag_list', with: ""
     fill_in 'debate_captcha', with: correct_captcha_text
-    click_button 'Update Debate'
+    click_button 'Start a debate'
 
     expect(page).to have_content 'Debate was successfully updated.'
     expect(page).to_not have_content 'Economía'
