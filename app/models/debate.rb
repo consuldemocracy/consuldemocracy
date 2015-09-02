@@ -75,7 +75,9 @@ class Debate < ActiveRecord::Base
   end
 
   def votable_by?(user)
-    !user.unverified? ||
+    total_votes <= 100 ||
+      !user.unverified? ||
+      Setting.value_for('max_ratio_anon_votes_on_debates').to_i == 100 ||
       anonymous_votes_ratio < Setting.value_for('max_ratio_anon_votes_on_debates').to_i ||
       user.voted_for?(self)
   end
