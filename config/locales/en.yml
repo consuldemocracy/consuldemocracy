@@ -157,8 +157,8 @@ en:
       phone_number_label: "Phone number"
       organization_name_label: "Organization name"
       notifications: Notifications
-      level_two_user: You are a level 2 user
-      level_three_user: You are a level 3 user
+      finish_verification: "Finish verification"
+      verified_account: Verified account
       verify_my_account: Verify my account
   simple_captcha:
     placeholder: "Enter the image value"

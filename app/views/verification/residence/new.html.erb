@@ -1,37 +1,63 @@
-<div class="row account">
+<div class="verification account row">
   <div class="small-12 column">
 
-    <h1 class="inline-block"><%= t('verification.residence.new.title') %></h1>
+    <div class="text-center">
+      <div class="small-4 column verification-step active">
+        <%= t("verification.step_1") %>
+      </div>
+      <div class="small-4 column verification-step">
+        <%= t("verification.step_2") %>
+      </div>
+      <div class="small-4 column verification-step">
+        <%= t("verification.step_3") %>
+      </div>
+    </div>
+
+    <div class="progress small-12 success round">
+      <span class="meter" style="width: 33%"></span>
+    </div>
+
+    <h1 class="inline-block"><%= t("verification.residence.new.title") %></h1>
 
     <%= form_for @residence, as: "residence", url: residence_path do |f| %>
-      <%= render 'errors' %>
+      <%= render "errors" %>
 
-      <div class="small-12 medium-6">
-        <div class="small-6 medium-3">
-        <%= f.select :document_type, document_types, prompt: "" %>
+      <div class="small-12 medium-8">
+        <div class="small-12 medium-4 left">
+        <%= f.label t("verification.residence.new.document_type_label") %>
+        <%= f.select :document_type, document_types, prompt: "", label: false %>
         </div>
-        <div class="small-6 medium-8">
-        <%= f.text_field :document_number %>
+        <div class="small-12 medium-5 left">
+        <%= f.label t("verification.residence.new.document_number") %>
+        <%= f.text_field :document_number, label: false %>
         </div>
       </div>
 
-      <div class="date small-12 medium-6">
+      <div class="date small-12 medium-6 clear">
+      <%= f.label t("verification.residence.new.date_of_birth") %>
       <%= f.date_select :date_of_birth,
                         prompt: true,
-                        start_year: 1900, end_year: 16.years.ago.year %>
+                        start_year: 1900, end_year: 16.years.ago.year,
+                        label: false %>
       </div>
 
       <div class="small-12 medium-4 clear">
-        <%= f.text_field :postal_code %>
+        <%= f.label t("verification.residence.new.postal_code") %>
+        <%= f.text_field :postal_code, label: false %>
       </div>
 
       <div class="small-12">
-          <%= f.check_box :terms_of_service, label: t("verification.residence.new.accept_terms_text") %>
-          <%= link_to t("verification.residence.new.accept_terms_link"), '/census_terms', target: "_blank" %>
+        <%= f.check_box :terms_of_service, label: false %>
+        <%= f.label :terms_of_service do %>
+          <%= t("verification.residence.new.accept_terms_text",
+              terms_url: link_to(t("verification.residence.new.terms"), "/census_terms",
+              target: "_blank")).html_safe
+          %>
+        <% end %>
       </div>
 
       <div class="small-12 clear">
-        <%= f.submit "Verify" %>
+        <%= f.submit t("verification.residence.new.verify_residence") %>
       </div>
     <% end %>
   </div>
