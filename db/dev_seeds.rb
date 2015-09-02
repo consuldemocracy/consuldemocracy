@@ -122,13 +122,19 @@ end
 puts "Ignoring flags in Debates & comments"
 
 Debate.flagged.reorder("RANDOM()").limit(10).each(&:ignore_flag)
-Comment.flagged.reorder("RANDOM()").limit(20).each(&:ignore_flag)
+Comment.flagged.reorder("RANDOM()").limit(30).each(&:ignore_flag)
 
 
 puts "Hiding debates & comments"
 
+Comment.with_hidden.flagged.reorder("RANDOM()").limit(30).each(&:hide)
 Debate.with_hidden.flagged.reorder("RANDOM()").limit(5).each(&:hide)
-Comment.with_hidden.flagged.reorder("RANDOM()").limit(30).each{ |c| c.hide rescue nil }
+
+
+puts "Confirming hiding in debates & comments"
+
+Comment.only_hidden.flagged.reorder("RANDOM()").limit(10).each(&:confirm_hide)
+Debate.only_hidden.flagged.reorder("RANDOM()").limit(5).each(&:confirm_hide)
 
 
 
