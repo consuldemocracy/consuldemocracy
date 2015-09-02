@@ -54,7 +54,7 @@ es:
       accept_terms: Acepto la política de privacidad y el aviso legal
       user: la cuenta
       debate: el debate
-      sms: el teléfono
+      verification::sms: el teléfono
   application:
     alert:
       only_beta_testers: "Lo sentimos sólo los usuarios de pruebas tienen acceso de momento"
