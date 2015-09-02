@@ -16,6 +16,7 @@
 // 14. Tables
 // 15. Social
 // 16. Pages
+// 17. Verification
 //
 
 // 01. Variables
@@ -126,6 +127,7 @@ h6 {
 }
 
 .button {
+  font-size: rem-calc(13);
   padding: rem-calc(15) rem-calc(32);
 }
 
@@ -219,6 +221,11 @@ h6 {
   & + h1 {
     clear:both;
   }
+}
+
+.progress {
+  background-color: rgba(0,0,0,.06);
+  border: 0;
 }
 
 // 04. Header
@@ -847,22 +854,8 @@ form {
     margin-right: rem-calc(12);
   }
 
-  .date {
-
-    select {
-      float: left;
-      width: 25%;
-    }
-  }
-
   .verify-account {
     padding-right: rem-calc(12);
-
-    .verified {
-      color: $check;
-      font-weight: bold;
-      line-height: rem-calc(42);
-    }
   }
 }
 
@@ -1147,7 +1140,91 @@ table {
   }
 }
 
+// 17. Verification
+// - - - - - - - - - - - - - - - - - - - - - - - - -
 
+.verification {
+  min-height: 60%;
 
+  @media (min-width: $small-breakpoint) {
+    .left + .left {
+      margin-left: rem-calc(12);
+    }
+  }
 
+  .verify-account {
+    padding-right: rem-calc(12);
 
+    .verified {
+      color: $check;
+      font-weight: bold;
+      line-height: rem-calc(42);
+    }
+  }
+
+  .date {
+
+    select {
+      float: left;
+      width: 30%;
+
+      @media (min-width: $small-breakpoint) {
+        width: 25%;
+      }
+    }
+  }
+
+  .progress {
+    height: rem-calc(48);
+
+    @media (min-width: $small-breakpoint) {
+      height: rem-calc(24);
+    }
+
+    .meter {
+      background: #63D1C4;
+    }
+  }
+
+  .verification-step {
+    font-size: rem-calc(11);
+    padding-top: rem-calc(10);
+
+    @media (min-width: $small-breakpoint) {
+      line-height: $line-height;
+      padding-top: 0;
+    }
+
+    &.active {
+      color: white;
+    }
+
+    &.completed {
+      color: rgba(255,255,255,.5);
+    }
+  }
+
+  .send-letter {
+    background: none;
+    color: $link;
+
+    &:hover {
+      color: $link-hover;
+    }
+  }
+
+  .button + form {
+    display: inline-block;
+    margin-left: rem-calc(12);
+  }
+
+  .verification-list {
+    font-size: rem-calc(13);
+    list-style-type: none;
+    margin-left: 0;
+
+    span {
+      display: inline-block;
+    }
+  }
+}

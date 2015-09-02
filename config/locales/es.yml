@@ -160,8 +160,8 @@ es:
       phone_number_label: "Teléfono"
       organization_name_label: "Nombre de la organización"
       notifications: Notificaciones
-      level_two_user: Eres un usuario verificado de nivel 2
-      level_three_user: Eres un usuario verificado de nivel 3
+      finish_verification: "Finalizar verificación"
+      verified_account: Cuenta verificada
       verify_my_account: Verificar mi cuenta
   simple_captcha:
     placeholder: "Introduce el texto de la imagen"

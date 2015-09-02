@@ -1,14 +1,33 @@
-<div class="row account">
+<div class="verification account row">
   <div class="small-12 column">
+    <div class="text-center">
 
-    <h1 class="inline-block"><%= t('verification.sms.new.title') %></h1>
+      <div class="small-4 column verification-step completed">
+        <%= t("verification.step_1") %>
+      </div>
+      <div class="small-4 column verification-step active">
+        <%= t("verification.step_2") %>
+      </div>
+      <div class="small-4 column verification-step">
+        <%= t("verification.step_3") %>
+      </div>
+    </div>
+
+    <div class="progress small-12 success round">
+      <span class="meter" style="width: 66%"></span>
+    </div>
+
+    <h1 class="inline-block"><%= t("verification.sms.new.title") %></h1>
 
     <%= form_for @sms, as: "sms", url: sms_path do |f| %>
-      <%= render 'shared/errors', resource: @sms %>
+      <%= render "shared/errors", resource: @sms %>
 
-      <%= f.text_field :phone %>
+      <div class="small-12 medium-6">
+        <%= f.label t("verification.sms.new.phone") %>
+        <%= f.text_field :phone, label: false %>
+      </div>
 
-      <%= f.submit t('verification.sms.new.submit_button') %>
+      <%= f.submit t("verification.sms.new.submit_button") %>
     <% end %>
   </div>
 </div>

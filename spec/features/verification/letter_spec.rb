@@ -10,7 +10,7 @@ feature 'Verify Letter' do
 
     click_button "Send me a letter"
 
-    expect(page).to have_content "You will receive a letter to your home address"
+    expect(page).to have_content "Thank you for requesting a code maximum security in a few days we will send it to the address on your census data. Remember that you can save shipping collecting your code in any of the Office of Citizen Services."
   end
 
   scenario "Error accessing address from CensusApi" do
@@ -34,7 +34,7 @@ feature 'Verify Letter' do
 
     click_button "Send me a letter"
 
-    expect(page).to have_content "You will receive a letter to your home address"
+    expect(page).to have_content "Thank you for requesting a code maximum security in a few days we will send it to the address on your census data. Remember that you can save shipping collecting your code in any of the Office of Citizen Services."
   end
 
   scenario "Deny access unless verified residence" do
@@ -53,7 +53,7 @@ feature 'Verify Letter' do
     login_as(user)
     visit new_letter_path
 
-    expect(page).to have_content 'You have not yet confirmed your personal data'
+    expect(page).to have_content 'You have not yet enter the confirmation code'
     expect(URI.parse(current_url).path).to eq(new_sms_path)
   end
 

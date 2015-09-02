@@ -28,10 +28,10 @@ feature 'Level three verification' do
 
     expect(page).to have_content 'Correct code'
 
-    expect(page).to have_content "You are now a verified user"
+    expect(page).to have_content "Correct code. Your account is verified"
 
     expect(page).to_not have_link "Verify my account"
-    expect(page).to have_content "You are a level 3 user"
+    expect(page).to have_content "Verified account"
   end
 
   scenario 'Verification with residency and verified email' do
@@ -61,7 +61,7 @@ feature 'Level three verification' do
     expect(page).to have_content "You are now a verified user"
 
     expect(page).to_not have_link "Verify my account"
-    expect(page).to have_content "You are a level 3 user"
+    expect(page).to have_content "Verified account"
   end
 
   scenario 'Verification with residency and sms and letter' do
@@ -87,6 +87,6 @@ feature 'Level three verification' do
 
     click_button "Send me a letter"
 
-    expect(page).to have_content "You will receive a letter to your home address"
+    expect(page).to have_content "Thank you for requesting a code maximum security in a few days we will send it to the address on your census data. Remember that you can save shipping collecting your code in any of the Office of Citizen Services."
   end
 end
