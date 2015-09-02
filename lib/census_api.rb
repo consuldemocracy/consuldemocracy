@@ -49,7 +49,7 @@ class CensusApi
   end
 
   def end_point_available?
-    Rails.env.staging? || Rails.env.production?
+    Rails.env.staging? || Rails.env.preproduction? || Rails.env.production?
   end
 
   def stubbed_response
