@@ -3,17 +3,25 @@
 </span>
 &nbsp;|&nbsp;
 <span class="in_favor">
-  <%= link_to vote_comment_path(comment, value: 'yes'),
-      method: "post", remote: true do %>
-      <i class="icon-angle-up"></i>
+  <% if can?(:vote, comment) %>
+    <%= link_to vote_comment_path(comment, value: 'yes'),
+        method: "post", remote: true do %>
+        <i class="icon-angle-up"></i>
+    <% end %>
+  <% else %>
+    <i class="icon-angle-up"></i>
   <% end %>
   <%= comment.total_likes %>
 </span>
 
 <span class="against">
-  <%= link_to vote_comment_path(comment, value: 'no'),
-      method: "post", remote: true do %>
-      <i class="icon-angle-down"></i>
+  <% if can?(:vote, comment) %>
+    <%= link_to vote_comment_path(comment, value: 'no'),
+        method: "post", remote: true do %>
+        <i class="icon-angle-down"></i>
+    <% end %>
+  <% else %>
+    <i class="icon-angle-down"></i>
   <% end %>
   <%= comment.total_dislikes %>
 </span>
