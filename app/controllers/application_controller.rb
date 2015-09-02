@@ -1,6 +1,8 @@
 require "application_responder"
 
 class ApplicationController < ActionController::Base
+  include HasFilters
+
   before_filter :authenticate_http_basic
 
   before_filter :authenticate_user!, unless: :devise_controller?, if: :beta_site?

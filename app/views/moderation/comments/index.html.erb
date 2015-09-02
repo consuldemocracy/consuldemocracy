@@ -1,17 +1,6 @@
 <h2><%= t("moderation.comments.index.title") %></h2>
 
-<dl class="sub-nav">
-  <dt><%= t("moderation.comments.index.filter") %>:</dt>
-
-  <% @valid_filters.each do |filter| %>
-    <% if @filter == filter %>
-      <dd class="active"><%= t("moderation.comments.index.filters.#{filter}") %></dd>
-    <% else %>
-      <dd><%= link_to t("moderation.comments.index.filters.#{filter}"),
-        current_path_with_query_params(filter: filter) %></dd>
-    <% end %>
-  <% end %>
-</dl>
+<%= render 'shared/filter_subnav', i18n_namespace: "moderation.comments.index" %>
 
 <h3><%= page_entries_info @comments %></h3>
 
