@@ -1,7 +1,7 @@
 class Verification::LetterController < ApplicationController
   before_action :authenticate_user!
   before_action :verify_resident!
-  before_action :verify_phone_or_email!
+  before_action :verify_phone!
   skip_authorization_check
 
   def new
@@ -39,7 +39,7 @@ class Verification::LetterController < ApplicationController
       params.require(:letter).permit(:verification_code)
     end
 
-    def verify_phone_or_email!
+    def verify_phone!
       unless current_user.confirmed_phone?
         redirect_to verified_user_path, alert: t('verification.letter.alert.unconfirmed_code')
       end

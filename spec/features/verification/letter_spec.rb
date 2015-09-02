@@ -57,17 +57,6 @@ feature 'Verify Letter' do
     expect(page).to have_content "We could not verify your address with the Census please try again later"
   end
 
-  scenario 'Send letter level 2 user verified with email' do
-    user = create(:user, residence_verified_at: Time.now, confirmed_phone: "611111111")
-
-    login_as(user)
-    visit new_letter_path
-
-    click_button "Send me a letter"
-
-    expect(page).to have_content "Thank you for requesting a code maximum security in a few days we will send it to the address on your census data. Remember that you can save shipping collecting your code in any of the Office of Citizen Services."
-  end
-
   scenario "Deny access unless verified residence" do
     user = create(:user)
 
