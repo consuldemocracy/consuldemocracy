@@ -1,21 +1,26 @@
 <div class="row account">
   <div class="small-12 column">
-    <%= link_to t("account.show.change_credentials_link"), edit_user_registration_path, class: 'button radius small secondary right' %>
+    <%= link_to t("account.show.change_credentials_link"), edit_user_registration_path, class: "button radius small secondary right" %>
 
-    <span class="right verify-account">
-      <% if current_user.level_three_verified? %>
-        <p class="verified"><%= t("account.show.level_three_user") %></p>
-      <% elsif current_user.level_two_verified? %>
-        <p class="verified"><%= t("account.show.level_two_user") %></p>
-      <% else %>
-        <%= link_to t("account.show.verify_my_account"), new_residence_path, class: 'button radius small success right' %>
-      <% end %>
-    </span>
+    <div class="verification">
+      <span class="right verify-account">
+        <% if current_user.level_three_verified? %>
+          <p class="verified">
+            <i class="icon-check"></i>
+            <%= t("account.show.verified_account") %>
+          </p>
+        <% elsif current_user.level_two_verified? %>
+          <%= link_to t("account.show.finish_verification"), new_letter_path, class: "button radius small success right" %>
+        <% else %>
+          <%= link_to t("account.show.verify_my_account"), new_residence_path, class: "button radius small success right" %>
+        <% end %>
+      </span>
+    </div>
 
     <h1 class="inline-block"><%= t("account.show.title") %></h1>
 
     <%= form_for @account, as: :account, url: account_path do |f| %>
-      <%= render 'shared/errors', resource: @account %>
+      <%= render "shared/errors", resource: @account %>
 
       <div class="row">
         <div class="small-12 column">

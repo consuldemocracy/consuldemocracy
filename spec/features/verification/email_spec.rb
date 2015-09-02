@@ -30,7 +30,7 @@ feature 'Verify email' do
     expect(page).to have_content "You are now a verified user"
 
     expect(page).to_not have_link "Verify my account"
-    expect(page).to have_content "You are a level 3 user"
+    expect(page).to have_content "Verified account"
   end
 
   scenario "Errors on token verification" do

@@ -1,15 +1,49 @@
-<div class="row account">
+<div class="verification account row">
   <div class="small-12 column">
 
-    <h1 class="inline-block"><%= t('verification.letter.new.title') %></h1>
+    <div class="text-center">
+      <div class="small-4 column verification-step completed">
+        <%= t("verification.step_1") %>
+      </div>
+      <div class="small-4 column verification-step completed">
+        <%= t("verification.step_2") %>
+      </div>
+      <div class="small-4 column verification-step active">
+        <%= t("verification.step_3") %>
+      </div>
 
-    <div>
-      <%= t('verification.letter.new.explanation') %>
+      <div class="progress small-12 success round">
+        <span class="meter" style="width: 100%"></span>
+      </div>
     </div>
 
-    <%= form_for @letter, as: "letter", url: letter_path do |f| %>
-      <%= render 'shared/errors', resource: @letter %>
-      <%= f.submit t('verification.letter.new.submit_button') %>
-    <% end %>
+    <div class="small-12 medium-12 column">
+
+      <h1 class="inline-block"><%= t("verification.letter.new.title") %></h1>
+
+      <%= t("verification.letter.new.explanation_html") %>
+
+      <%= link_to t("verification.letter.new.offices"), t("verification.letter.new.offices_url"),
+          target: "_blank", class: "button radius inline-block"
+      %>
+
+      <%= form_for @letter, as: "letter", url: letter_path do |f| %>
+        <%= render "shared/errors", resource: @letter %>
+        <%= f.submit t("verification.letter.new.send_letter"), class: "button radius secondary inline-block" %>
+      <% end %>
+
+      <!-- Show this if user clics on 'Send me a letter' -->
+      <div class="alert-box success radius">
+      Gracias por solicitar tu código de máxima seguridad, en unos días te lo enviaremos a la dirección que figura en tus datos del padrón. Recuerda que puedes ahorrar el envío recogiendo tu código en cualquiera de las Oficinas de Atención al Ciudadano.
+      </div>
+      <div class="small-12 medium-6">
+        <%= form_tag do %>
+          <%= label_tag t("verification.letter.new.introduce_code") %>
+          <%= text_field_tag(:q) %>
+          <%= submit_tag t("verification.letter.new.send_code"), class: "button radius success" %>
+        <% end %>
+      </div>
+      <!-- /. Show this if user clics on 'Send me a letter' -->
+    </div>
   </div>
 </div>

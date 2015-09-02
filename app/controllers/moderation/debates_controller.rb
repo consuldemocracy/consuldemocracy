@@ -1,13 +1,13 @@
 class Moderation::DebatesController < Moderation::BaseController
-  before_filter :set_valid_filters, only: :index
-  before_filter :parse_filter, only: :index
+
+  has_filters %w{all pending_flag_review with_ignored_flag}, only: :index
+
   before_filter :load_debates, only: :index
 
   load_and_authorize_resource
 
   def index
-    @debates = @debates.send(@filter)
-    @debates = @debates.page(params[:page])
+    @debates = @debates.send(@current_filter).page(params[:page])
   end
 
   def hide
@@ -28,15 +28,6 @@ class Moderation::DebatesController < Moderation::BaseController
 
     def load_debates
       @debates = Debate.accessible_by(current_ability, :hide).flagged.sorted_for_moderation
-    end
-
-    def set_valid_filters
-      @valid_filters = %w{all pending_flag_review with_ignored_flag}
-    end
-
-    def parse_filter
-      @filter = params[:filter]
-      @filter = 'all' unless @valid_filters.include?(@filter)
     end
 
 end

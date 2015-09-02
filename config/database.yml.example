@@ -6,18 +6,20 @@ default: &default
   username:
   password:
 
-development:
+development: &development
   <<: *default
   database: participacion_development
 
+# The staging, preproduction and production dbs are only needed
+# for running rake assets:precompile locally before deploying
 staging:
-  <<: *default
+  <<: *development
 
 preproduction:
-  <<: *default
+  <<: *development
 
 production:
-  <<: *default
+  <<: *development
 
 test:
   <<: *default

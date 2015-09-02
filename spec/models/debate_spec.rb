@@ -124,7 +124,7 @@ describe Debate do
     end
 
     describe "from anonymous users when there are too many anonymous votes" do
-      before(:each) {debate.update(cached_anonymous_votes_total: 52, cached_votes_total: 100)}
+      before(:each) {debate.update(cached_anonymous_votes_total: 520, cached_votes_total: 1000)}
 
       it "should not register vote " do
         user = create(:user)
@@ -156,13 +156,19 @@ describe Debate do
     end
 
     it "should be true for anonymous users if allowed anonymous votes" do
-      debate.update(cached_anonymous_votes_total: 42, cached_votes_total: 100)
+      debate.update(cached_anonymous_votes_total: 420, cached_votes_total: 1000)
+      user = create(:user)
+      expect(debate.votable_by?(user)).to be true
+    end
+
+    it "should be true for anonymous users if less than 100 votes" do
+      debate.update(cached_anonymous_votes_total: 90, cached_votes_total: 92)
       user = create(:user)
       expect(debate.votable_by?(user)).to be true
     end
 
     it "should be false for anonymous users if too many anonymous votes" do
-      debate.update(cached_anonymous_votes_total: 52, cached_votes_total: 100)
+      debate.update(cached_anonymous_votes_total: 520, cached_votes_total: 1000)
       user = create(:user)
       expect(debate.votable_by?(user)).to be false
     end

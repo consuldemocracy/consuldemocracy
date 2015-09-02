@@ -99,13 +99,18 @@ ignore_missing:
 ignore_unused:
   - 'activerecord.*'
   - 'activemodel.*'
-  - 'admin.organizations.index.filter.*'
   - 'unauthorized.*'
   - 'simple_captcha.*'
   - 'admin.officials.level_*'
+  - 'admin.comments.index.filter*'
+  - 'admin.debates.index.filter*'
+  - 'admin.organizations.index.filter*'
+  - 'admin.users.index.filter*'
+  - 'moderation.comments.index.filter*'
+  - 'moderation.debates.index.filter*'
+  - 'debates.index.orders.*'
   - 'helpers.page_entries_info.*' # kaminari
   - 'views.pagination.*' # kaminari
-  - 'debates.index.orders.*' #order filters for debates
 # - '{devise,kaminari,will_paginate}.*'
 # - 'simple_form.{yes,no}'
 # - 'simple_form.{placeholders,hints,labels}.*'
