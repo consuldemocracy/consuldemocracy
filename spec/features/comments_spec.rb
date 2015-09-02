@@ -124,8 +124,7 @@ feature 'Comments' do
     parent = create(:comment, commentable: debate)
 
     7.times do
-      create(:comment, commentable: debate).
-      move_to_child_of(parent)
+      create(:comment, commentable: debate, parent: parent)
       parent = parent.children.first
     end
 

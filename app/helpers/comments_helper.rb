@@ -8,4 +8,8 @@ module CommentsHelper
     parent_id.present?  ? t("comments_helper.reply_button") : t("comments_helper.comment_button")
   end
 
+  def parent_or_commentable_dom_id(parent_id, commentable)
+    parent_id.blank? ? dom_id(commentable) : "comment_#{parent_id}"
+  end
+
 end

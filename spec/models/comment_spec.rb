@@ -25,24 +25,22 @@ describe Comment do
       parent = comment
 
       3.times do
-        create(:comment, commentable: debate).
-        move_to_child_of(parent)
+        create(:comment, commentable: debate, parent: parent)
         parent = parent.children.first
       end
 
       expect(comment.children_count).to eq(1)
-      expect(debate.comment_threads.count).to eq(4)
+      expect(debate.comments.count).to eq(4)
     end
 
     it "should increase children count" do
       expect do
-        create(:comment, commentable: debate).
-        move_to_child_of(comment)
+        create(:comment, commentable: debate, parent: comment)
       end.to change { comment.children_count }.from(0).to(1)
     end
 
     it "should decrease children count" do
-      new_comment = create(:comment, commentable: debate).move_to_child_of(comment)
+      new_comment = create(:comment, commentable: debate, parent: comment)
 
       expect { new_comment.destroy }.to change { comment.children_count }.from(1).to(0)
     end

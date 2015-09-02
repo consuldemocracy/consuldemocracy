@@ -34,13 +34,14 @@ module CommonActions
   end
 
   def comment_on(debate)
-    user2 = create(:user)
+    user = create(:user)
 
-    login_as(user2)
+    login_as(user)
     visit debate_path(debate)
 
     fill_in "comment-body-debate_#{debate.id}", with: 'Have you thought about...?'
     click_button 'Publish comment'
+
     expect(page).to have_content 'Have you thought about...?'
   end
 

@@ -49,7 +49,7 @@
                 <%= t("shared.collective") %>
               </span>
             <% end %>
-            <% if comment.user_id == @debate.author_id %>
+            <% if comment.user_id == @commentable.author_id %>
               &nbsp;&bullet;&nbsp;
               <span class="label round is-author">
                 <%= t("debates.comment.author") %>
@@ -65,11 +65,11 @@
           <p class="comment-user is-admin"><%= comment.body %></p>
         <% elsif comment.as_moderator? %>
           <p class="comment-user is-moderator"><%= comment.body %></p>
-        <% elsif comment.user.official? && comment.user_id == @debate.author_id %>
+        <% elsif comment.user.official? && comment.user_id == @commentable.author_id %>
           <p class="comment-user level-<%= comment.user.official_level %> is-author"><%= comment.body %></p>
         <% elsif comment.user.official? %>
           <p class="comment-user level-<%= comment.user.official_level %>"><%= comment.body %></p>
-        <% elsif comment.user_id == @debate.author_id %>
+        <% elsif comment.user_id == @commentable.author_id %>
           <p class="comment-user is-author"><%= comment.body %></p>
         <% else %>
           <p class="comment-user"><%= comment.body %></p>
@@ -88,7 +88,7 @@
 
             <%= render 'comments/actions', comment: comment %>
 
-            <%= render 'comments/form', {commentable: @debate, parent_id: comment.id, toggeable: true} %>
+            <%= render 'comments/form', {commentable: @commentable, parent_id: comment.id, toggeable: true} %>
           <% end %>
         </div>
       </div>

@@ -1,8 +1,9 @@
-<div id="js-comment-form-<%= dom_id(commentable) %>" <%= "style='display:none'".html_safe if toggeable %>>
+<% css_id = parent_or_commentable_dom_id(parent_id, commentable) %>
+<div id="js-comment-form-<%= css_id %>" <%= "style='display:none'".html_safe if toggeable %>>
   <%= form_for [commentable, Comment.new], remote: true do |f| %>
-    <%= label_tag "comment-body-#{dom_id(commentable)}", t("comments.form.leave_comment") %>
-    <%= f.text_area :body, id: "comment-body-#{dom_id(commentable)}", label: false %>
-    <%= f.hidden_field :commentable_type, value: commentable.class %>
+    <%= label_tag "comment-body-#{css_id}", t("comments.form.leave_comment") %>
+    <%= f.text_area :body, id: "comment-body-#{css_id}", label: false %>
+    <%= f.hidden_field :commentable_type, value: commentable.class.name %>
     <%= f.hidden_field :commentable_id, value: commentable.id %>
     <%= f.hidden_field :parent_id, value: parent_id %>
 
@@ -10,14 +11,14 @@
 
     <% if can? :comment_as_moderator, commentable %>º
       <div class="right">
-        <%= f.check_box :as_moderator, id: "comment-as-moderator-#{dom_id(commentable)}", label: false %>
-        <%= label_tag "comment-as-moderator-#{dom_id(commentable)}", t("comments.form.comment_as_moderator"), class: "checkbox" %>
+        <%= f.check_box :as_moderator, id: "comment-as-moderator-#{css_id}", label: false %>
+        <%= label_tag "comment-as-moderator-#{css_id}", t("comments.form.comment_as_moderator"), class: "checkbox" %>
       </div>
     <% end %>
     <% if can? :comment_as_administrator, commentable %>
       <div class="right">
-        <%= f.check_box :as_administrator, id: "comment-as-administrator-#{dom_id(commentable)}",label: false %>
-        <%= label_tag "comment-as-administrator-#{dom_id(commentable)}", t("comments.form.comment_as_admin"), class: "checkbox" %>
+        <%= f.check_box :as_administrator, id: "comment-as-administrator-#{css_id}",label: false %>
+        <%= label_tag "comment-as-administrator-#{css_id}", t("comments.form.comment_as_admin"), class: "checkbox" %>
       </div>
     <% end %>
   <% end %>
