@@ -11,8 +11,16 @@ module ApplicationHelper
     request.path == '/'
   end
 
+  def transparency_page?
+    request.path == '/transparency'
+  end
+
+  def opendata_page?
+    request.path == '/opendata'
+  end
+
   def header_css
-    home_page? ? '' : 'results'
+    home_page? || transparency_page? || opendata_page? ? '' : 'results'
   end
 
   # if current path is /debates current_path_with_query_params(foo: 'bar') returns /debates?foo=bar

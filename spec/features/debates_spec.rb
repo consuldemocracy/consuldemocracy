@@ -222,7 +222,7 @@ feature 'Debates' do
     fill_in 'debate_description', with: "Let's..."
     fill_in 'debate_captcha', with: correct_captcha_text
 
-    click_button "Start a debate"
+    click_button "Save changes"
 
     expect(page).to have_content "Debate was successfully updated."
     expect(page).to have_content "End child poverty"
@@ -235,7 +235,7 @@ feature 'Debates' do
 
     visit edit_debate_path(debate)
     fill_in 'debate_title', with: ""
-    click_button 'Start a debate'
+    click_button "Save changes"
 
     expect(page).to have_content error_message
   end
@@ -249,13 +249,13 @@ feature 'Debates' do
 
     fill_in 'debate_title', with: "New title"
     fill_in 'debate_captcha', with: "wrong!"
-    click_button "Start a debate"
+    click_button "Save changes"
 
     expect(page).to_not have_content "Debate was successfully updated."
     expect(page).to have_content "1 error"
 
     fill_in 'debate_captcha', with: correct_captcha_text
-    click_button "Start a debate"
+    click_button "Save changes"
 
     expect(page).to have_content "Debate was successfully updated."
   end
@@ -271,7 +271,7 @@ feature 'Debates' do
 
     fill_in 'debate_title', with: ""
     fill_in 'debate_captcha', with: correct_captcha_text
-    click_button "Start a debate"
+    click_button "Save changes"
 
     expect(page).to_not have_content "Debate was successfully updated."
     expect(page).to have_content "1 error"

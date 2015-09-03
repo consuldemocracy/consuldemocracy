@@ -6,7 +6,7 @@ en:
       submit: "Resend confirmation instructions"
     mailer:
       confirmation_instructions:
-        title: "Welcome to open government"
+        title: "Welcome to open government portal"
         welcome: "Welcome"
         text: "You can confirm your account email through the link below:"
         confirm_link: "Confirm my account"

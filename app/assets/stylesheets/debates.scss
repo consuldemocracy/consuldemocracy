@@ -383,6 +383,16 @@
     .anonymous-votes, .organizations-votes {
       padding-top: rem-calc(24);
     }
+
+    .divider {
+      display: none;
+    }
+
+    @media (min-width: $medium-breakpoint) {
+      .divider {
+        display: inline-block;
+      }
+    }
   }
 }
 
@@ -463,6 +473,23 @@
       line-height: $line-height;
       padding: rem-calc(24);
     }
+
+    @media (min-width: $small-breakpoint  + em-calc(1)) and (max-width:$medium-breakpoint) {
+      .in-favor, .against {
+        text-align: left;
+        width: rem-calc(100);
+      }
+    }
+
+    .divider {
+      display: none;
+    }
+
+    @media (min-width: $medium-breakpoint) {
+      .divider {
+        display: inline-block;
+      }
+    }
   }
 
   .leave-comment {
@@ -534,6 +561,10 @@
       }
     }
   }
+}
+
+.debate-edit {
+  @extend .debate-new;
 }
 
 // 05. Comments

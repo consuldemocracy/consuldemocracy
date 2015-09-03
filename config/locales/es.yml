@@ -105,9 +105,8 @@ es:
       tags_label: Temas
       tags_instructions: >
         Etiqueta este debate. Puedes elegir entre nuestras propuestas o introducir las que desees.
-        Para ello solo tienes que escribir las etiquetas que desees separadas por "," y pulsar "intro".
+        Para ello solo tienes que escribir las etiquetas que desees separadas por ",".
         Algunas recomendaciones:
-      start_debate: Empieza un debate
     show:
       back_link: Volver
       author_deleted: Usuario eliminado
@@ -123,6 +122,8 @@ es:
       editing: Editar debate
       show_link: Ver debate
       back_link: Volver
+      form:
+        submit_button: "Guardar cambios"
     new:
       start_new: Empezar un debate
       back_link: Volver
@@ -132,6 +133,14 @@ es:
       recommendation_three: "Cualquier debate o comentario que implique una acción ilegal será eliminado, también los que tengan la intención de sabotear los espacios de debate, todo lo demás está permitido."
       recommendation_four: "Las críticas despiadadas son muy bienvenidas. Este es un espacio de pensamiento. Pero te recomendamos conservar la elegancia y la inteligencia. El mundo es mejor con ellas presentes."
       recommendation_five: "Disfruta de este espacio, de las voces que lo llenan, también es tuyo."
+      form:
+        submit_button: "Empieza un debate"
+    create:
+      form:
+        submit_button: "Empieza un debate"
+    update:
+      form:
+        submit_button: "Guardar cambios"
   comments:
     form:
       leave_comment: Deja tu comentario
