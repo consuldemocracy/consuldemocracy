@@ -70,7 +70,6 @@ es:
       select_order_long: Estás viendo los debates
       orders:
         created_at: "más nuevos"
-        total_votes: "más votados"
         score: "mejor valorados"
       filter_topic:
         one: "Estás viendo un debate con el tema ''%{topic}''"

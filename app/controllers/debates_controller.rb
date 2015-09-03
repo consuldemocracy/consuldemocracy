@@ -82,7 +82,7 @@ class DebatesController < ApplicationController
     end
 
     def parse_order
-      @valid_orders = ['total_votes', 'created_at', 'score']
+      @valid_orders = ['created_at', 'score']
       @order = @valid_orders.include?(params[:order]) ? params[:order] : 'created_at'
     end
 

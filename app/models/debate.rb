@@ -28,7 +28,6 @@ class Debate < ActiveRecord::Base
   scope :with_ignored_flag, -> { where("ignored_flag_at IS NOT NULL AND hidden_at IS NULL") }
   scope :flagged, -> { where("flags_count > 0") }
   scope :for_render, -> { includes(:tags) }
-  scope :sort_by_total_votes, -> { reorder(cached_votes_total: :desc) }
   scope :sort_by_score , -> { reorder(cached_votes_score: :desc) }
   scope :sort_by_created_at, -> { reorder(created_at: :desc) }
 

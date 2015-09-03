@@ -70,7 +70,6 @@ en:
       select_order_long: Order debates by
       orders:
         created_at: newest
-        total_votes: most voted
         score: best rated
       filter_topic:
         one: "You are seeing one debate with the topic '%{topic}'"

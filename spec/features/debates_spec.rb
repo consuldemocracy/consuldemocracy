@@ -368,18 +368,6 @@ feature 'Debates' do
       expect(@most_recent_debate.title).to appear_before(@most_score_debate.title)
     end
 
-    scenario 'Debates are ordered by most voted' do
-      visit debates_path
-
-      select 'most voted', from: 'order-selector'
-      expect(page).to have_select('order-selector', selected: 'most voted')
-      expect(find("#debates .debate", match: :first)).to have_content(@most_voted_debate.title)
-
-      expect(current_url).to include('order=total_votes')
-      expect(@most_voted_debate.title).to appear_before(@most_score_debate.title)
-      expect(@most_score_debate.title).to appear_before(@most_recent_debate.title)
-    end
-
     scenario 'Debates are ordered by best rated' do
       visit debates_path
 
@@ -395,8 +383,8 @@ feature 'Debates' do
     scenario 'Debates are ordered by newest' do
       visit debates_path
 
-      select 'most voted', from: 'order-selector'
-      expect(find("#debates .debate", match: :first)).to have_content(@most_voted_debate.title)
+      select 'best rated', from: 'order-selector'
+      expect(find("#debates .debate", match: :first)).to have_content(@most_score_debate.title)
 
       select 'newest', from: 'order-selector'
       expect(page).to have_select('order-selector', selected: 'newest')
