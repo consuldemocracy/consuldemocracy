@@ -1,5 +1,4 @@
 class Admin::OrganizationsController < Admin::BaseController
-
   has_filters %w{all pending verified rejected}, only: :index
 
   load_and_authorize_resource except: :search

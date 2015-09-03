@@ -1,4 +1,5 @@
 module FlagsHelper
+
   def show_flag_action?(flaggable)
     current_user && !own_flaggable?(flaggable) && !flagged?(flaggable)
   end
@@ -24,4 +25,5 @@ module FlagsHelper
       flaggable.author_id == current_user.id
     end
   end
+
 end

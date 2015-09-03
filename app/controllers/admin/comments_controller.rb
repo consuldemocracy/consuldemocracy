@@ -1,8 +1,7 @@
 class Admin::CommentsController < Admin::BaseController
-
   has_filters %w{all with_confirmed_hide}
 
-  before_filter :load_comment, only: [:confirm_hide, :restore]
+  before_action :load_comment, only: [:confirm_hide, :restore]
 
   def index
     @comments = Comment.only_hidden.send(@current_filter).page(params[:page])

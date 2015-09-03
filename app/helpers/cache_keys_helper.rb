@@ -1,4 +1,5 @@
 module CacheKeysHelper
+
   def locale_and_user_status
     @cache_key_user ||= calculate_user_status
     "#{I18n.locale}/#{@cache_key_user}"
@@ -17,4 +18,5 @@ module CacheKeysHelper
 
     user_status
   end
+
 end

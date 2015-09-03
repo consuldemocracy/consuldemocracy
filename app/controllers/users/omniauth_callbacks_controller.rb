@@ -1,4 +1,5 @@
 class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
+
   def self.provides_callback_for(provider)
     class_eval %Q{
       def #{provider}
@@ -26,4 +27,5 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       finish_signup_path
     end
   end
+
 end
