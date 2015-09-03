@@ -105,7 +105,7 @@ module CommonActions
     fill_in 'residence_postal_code', with: '28013'
     check 'residence_terms_of_service'
 
-    click_button 'Verify'
+    click_button 'Verify residence'
     expect(page).to have_content 'Residence verified'
   end
 end

@@ -17,7 +17,7 @@ feature 'Level three verification' do
     verify_residence
 
     within("#verified_user_#{verified_user.id}_phone") do
-      click_button "Send"
+      click_button "Send code"
     end
 
     expect(page).to have_content 'Security code confirmation'
@@ -48,7 +48,7 @@ feature 'Level three verification' do
     verify_residence
 
     within("#verified_user_#{verified_user.id}_email") do
-      click_button "Send"
+      click_button "Send code"
     end
 
     expect(page).to have_content 'We have send you a confirmation email to your email account: rock@example.com'

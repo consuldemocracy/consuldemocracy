@@ -25,7 +25,7 @@ feature 'Verify Letter' do
     login_as(user)
     visit new_letter_path
 
-    expect(page).to have_link "Office of Citizen", href: "http://www.madrid.es/portales/munimadrid/es/Inicio/El-Ayuntamiento/Atencion-al-ciudadano/Oficinas-de-Atencion-al-Ciudadano?vgnextfmt=default&vgnextchannel=5b99cde2e09a4310VgnVCM1000000b205a0aRCRD"
+    expect(page).to have_link "See Office of Citizen", href: "http://www.madrid.es/portales/munimadrid/es/Inicio/El-Ayuntamiento/Atencion-al-ciudadano/Oficinas-de-Atencion-al-Ciudadano?vgnextfmt=default&vgnextchannel=5b99cde2e09a4310VgnVCM1000000b205a0aRCRD"
   end
 
   scenario 'Errors on verification code' do
@@ -51,7 +51,7 @@ feature 'Verify Letter' do
 
     allow_any_instance_of(CensusApi).to receive(:address).and_return(nil)
 
-    click_button "Send me a letter"
+    click_button "Send me a letter with the code"
 
     expect(page).to have_content "We could not verify your address with the Census please try again later"
   end
