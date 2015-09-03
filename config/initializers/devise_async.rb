@@ -1,5 +1,5 @@
 Devise::Async.setup do |config|
-  if Rails.env.test?
+  if Rails.env.test? || Rails.env.development?
     config.enabled = false
   else
     config.enabled = true
