@@ -354,9 +354,9 @@ feature 'Debates' do
 
     before do
       @most_voted_debate  = create(:debate)
-      @most_liked_debate  = create(:debate)
+      @most_score_debate  = create(:debate)
       @most_recent_debate = create(:debate)
-      create_list(:vote, 2, votable: @most_liked_debate)
+      create_list(:vote, 2, votable: @most_score_debate)
       create_list(:vote, 2, votable: @most_voted_debate, vote_flag: false)
       create(:vote, votable: @most_voted_debate)
     end
@@ -365,7 +365,7 @@ feature 'Debates' do
       visit debates_path
 
       expect(page).to have_select('order-selector', selected: 'newest')
-      expect(@most_recent_debate.title).to appear_before(@most_liked_debate.title)
+      expect(@most_recent_debate.title).to appear_before(@most_score_debate.title)
     end
 
     scenario 'Debates are ordered by most voted' do
@@ -376,8 +376,8 @@ feature 'Debates' do
       expect(find("#debates .debate", match: :first)).to have_content(@most_voted_debate.title)
 
       expect(current_url).to include('order=total_votes')
-      expect(@most_voted_debate.title).to appear_before(@most_liked_debate.title)
-      expect(@most_liked_debate.title).to appear_before(@most_recent_debate.title)
+      expect(@most_voted_debate.title).to appear_before(@most_score_debate.title)
+      expect(@most_score_debate.title).to appear_before(@most_recent_debate.title)
     end
 
     scenario 'Debates are ordered by best rated' do
@@ -385,11 +385,11 @@ feature 'Debates' do
 
       select 'best rated', from: 'order-selector'
       expect(page).to have_select('order-selector', selected: 'best rated')
-      expect(find("#debates .debate", match: :first)).to have_content(@most_liked_debate.title)
+      expect(find("#debates .debate", match: :first)).to have_content(@most_score_debate.title)
 
-      expect(current_url).to include('order=likes')
-      expect(@most_liked_debate.title).to appear_before(@most_voted_debate.title)
-      expect(@most_voted_debate.title).to appear_before(@most_recent_debate.title)
+      expect(current_url).to include('order=score')
+      expect(@most_score_debate.title).to appear_before(@most_recent_debate.title)
+      expect(@most_recent_debate.title).to appear_before(@most_voted_debate.title)
     end
 
     scenario 'Debates are ordered by newest' do
@@ -403,8 +403,8 @@ feature 'Debates' do
       expect(find("#debates .debate", match: :first)).to have_content(@most_recent_debate.title)
 
       expect(current_url).to include('order=created_at')
-      expect(@most_recent_debate.title).to appear_before(@most_liked_debate.title)
-      expect(@most_liked_debate.title).to appear_before(@most_voted_debate.title)
+      expect(@most_recent_debate.title).to appear_before(@most_score_debate.title)
+      expect(@most_score_debate.title).to appear_before(@most_voted_debate.title)
     end
   end
 end

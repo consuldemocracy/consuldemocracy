@@ -71,7 +71,7 @@ en:
       orders:
         created_at: newest
         total_votes: most voted
-        likes: best rated
+        score: best rated
       filter_topic:
         one: "You are seeing one debate with the topic '%{topic}'"
         other: "You are seeing %{count} debates with the topic '%{topic}'"
