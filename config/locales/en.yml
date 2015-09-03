@@ -104,9 +104,8 @@ en:
       tags_label: Topics
       tags_instructions: >
         Tag this debate. You can choose among our proposals on the list or add any other topic you want by
-        writing them separated by "," and then pressing "enter".
+        writing them separated by ",".
         Some suggestions:
-      start_debate: Start a debate
     show:
       back_link: Back
       author_deleted: Deleted user
@@ -122,6 +121,8 @@ en:
       editing: Edit debate
       show_link: Show debate
       back_link: Back
+      form:
+        submit_button: "Save changes"
     new:
       start_new: Start a debate
       back_link: Back
@@ -131,6 +132,14 @@ en:
       recommendation_three: "Any discussion or comment that involves an illegal act will be eliminated, also intending to sabotage the debate spaces, everything else is permitted."
       recommendation_four: "The harsh criticism are very welcome. This is a space of thought but we recommend preserving the elegance and intelligence. The world is better with them present."
       recommendation_five: "Enjoy this space, voices that fill it, it is yours too."
+      form:
+        submit_button: "Start a debate"
+    create:
+      form:
+        submit_button: "Start a debate"
+    update:
+      form:
+        submit_button: "Save changes"
   comments:
     form:
       leave_comment: Write a comment
