@@ -3,30 +3,24 @@
   <div class="filters row">
     <div class="small-9 column">
 
-      <div class="inline-block" >
-        <% if @tag_filter %>
-          <h2>
-            <%= t("debates.index.filter_topic",
-                   number: @debates.size,
-                   topic: @tag_filter) %>
-          </h2>
-        <% else %>
-          <h2><%= t("debates.index.select_topic") %></h2>
-          <form class="inline-block">
-             <select class="js-location-changer" name="tag-filter">
-               <option value="/" selected="selected"><%= t("debates.index.all") %></option>
-               <% @tags.each do |tag| %>
-                 <option value='<%= current_path_with_query_params(tag: tag.name) %>'>
-                   <%= tag.name %>
-                 </option>
-               <% end %>
-             </select>
-          </form>
-        <% end %>
-      </div>
+      <% if @tag_filter %>
+        <div class="inline-block small-8" >
+            <h2>
+              <%= t("debates.index.filter_topic",
+                     count: @debates.size,
+                     topic: @tag_filter) %>
+            </h2>
+        </div>
+      <% end %>
 
-      <div class="inline-block right">
-        <h6 class="inline-block"><%= t("debates.index.select_order") %></h6>
+      <div class="inline-block <%= 'right' if @tag_filter %>">
+        <h6 class="inline-block">
+          <% if @tag_filter %>
+            <%= t("debates.index.select_order") %>
+          <% else %>
+            <%= t("debates.index.select_order_long") %>
+          <% end %>
+        </h6>
         <form class="inline-block">
            <select class="js-location-changer" name="order-selector">
              <% @valid_orders.each do |order| %>
