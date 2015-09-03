@@ -1,13 +1,14 @@
 class Comment < ActiveRecord::Base
-  acts_as_nested_set scope: [:commentable_id, :commentable_type], counter_cache: :children_count
   acts_as_paranoid column: :hidden_at
   include ActsAsParanoidAliases
   acts_as_votable
+  has_ancestry
 
   attr_accessor :as_moderator, :as_administrator
 
   validates :body, presence: true
   validates :user, presence: true
+  validates_inclusion_of :commentable_type, in: ["Debate"]
 
   belongs_to :commentable, -> { with_hidden }, polymorphic: true, counter_cache: true
   belongs_to :user, -> { with_hidden }
@@ -23,14 +24,15 @@ class Comment < ActiveRecord::Base
 
   scope :for_render, -> { with_hidden.includes(user: :organization) }
 
-  def self.build(commentable, user, body)
+  def self.build(commentable, user, body, p_id=nil)
     new commentable: commentable,
         user_id:     user.id,
-        body:        body
+        body:        body,
+        parent_id:   p_id
   end
 
-  def self.find_parent(params)
-    params[:commentable_type].constantize.find(params[:commentable_id])
+  def self.find_commentable(c_type, c_id)
+    c_type.constantize.find(c_id)
   end
 
   def debate
@@ -77,16 +79,12 @@ class Comment < ActiveRecord::Base
     moderator_id.present?
   end
 
-  # TODO: faking counter cache since there is a bug with acts_as_nested_set :counter_cache
-  # Remove when https://github.com/collectiveidea/awesome_nested_set/issues/294 is fixed
-  # and reset counters using
-  # > Comment.find_each { |comment| Comment.reset_counters(comment.id, :children) }
-  def children_count
-    children.count
+  def after_hide
+    commentable_type.constantize.reset_counters(commentable_id, :comments)
   end
 
-  def after_hide
-    commentable_type.constantize.reset_counters(commentable_id, :comment_threads)
+  def reply?
+    !root?
   end
 
 end

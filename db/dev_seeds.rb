@@ -85,8 +85,8 @@ puts "Commenting Comments"
   comment = Comment.create!(user: author,
                   commentable_id: parent.commentable_id,
                   commentable_type: parent.commentable_type,
-                  body: Faker::Lorem.sentence)
-  comment.move_to_child_of(parent)
+                  body: Faker::Lorem.sentence,
+                  parent: parent)
 end
 
 

@@ -21,7 +21,7 @@ feature 'Comments' do
 
   scenario 'Paginated comments' do
     debate = create(:debate)
-    per_page = Kaminari.config.default_per_page
+    per_page = 10
     (per_page + 2).times { create(:comment, commentable: debate)}
 
     visit debate_path(debate)
@@ -124,8 +124,7 @@ feature 'Comments' do
     parent = create(:comment, commentable: debate)
 
     7.times do
-      create(:comment, commentable: debate).
-      move_to_child_of(parent)
+      create(:comment, commentable: debate, parent: parent)
       parent = parent.children.first
     end
 

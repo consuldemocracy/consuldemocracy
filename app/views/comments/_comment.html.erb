@@ -2,7 +2,7 @@
 	<div id="<%= dom_id(comment) %>" class="comment small-12 column">
 
     <% if comment.hidden? || comment.user.hidden? %>
-      <% if comment.children_count > 0 %>
+      <% if select_children(@comments, comment).size > 0 %>
         <div class="is-deleted">
           <p><%= t("debates.comment.deleted") %></p>
         </div>
@@ -49,7 +49,7 @@
                 <%= t("shared.collective") %>
               </span>
             <% end %>
-            <% if comment.user_id == @debate.author_id %>
+            <% if comment.user_id == @commentable.author_id %>
               &nbsp;&bullet;&nbsp;
               <span class="label round is-author">
                 <%= t("debates.comment.author") %>
@@ -65,11 +65,11 @@
           <p class="comment-user is-admin"><%= comment.body %></p>
         <% elsif comment.as_moderator? %>
           <p class="comment-user is-moderator"><%= comment.body %></p>
-        <% elsif comment.user.official? && comment.user_id == @debate.author_id %>
+        <% elsif comment.user.official? && comment.user_id == @commentable.author_id %>
           <p class="comment-user level-<%= comment.user.official_level %> is-author"><%= comment.body %></p>
         <% elsif comment.user.official? %>
           <p class="comment-user level-<%= comment.user.official_level %>"><%= comment.body %></p>
-        <% elsif comment.user_id == @debate.author_id %>
+        <% elsif comment.user_id == @commentable.author_id %>
           <p class="comment-user is-author"><%= comment.body %></p>
         <% else %>
           <p class="comment-user"><%= comment.body %></p>
@@ -79,7 +79,7 @@
         </span>
 
         <div class="reply">
-          <%= t("debates.comment.responses", count: comment.children_count) %>
+          <%= t("debates.comment.responses", count: select_children(@comments, comment).size) %>
 
           <% if user_signed_in? %>
             <span class="divider">&nbsp;|&nbsp;</span>
@@ -88,14 +88,14 @@
 
             <%= render 'comments/actions', comment: comment %>
 
-            <%= render 'comments/form', {parent: comment, toggeable: true} %>
+            <%= render 'comments/form', {commentable: @commentable, parent_id: comment.id, toggeable: true} %>
           <% end %>
         </div>
       </div>
     <% end %>
 
     <div class="comment-children">
-      <%= render comment.children.for_render.reorder('id DESC, lft') %>
+      <%= render select_children(@comments, comment) if @comments.present? %>
     </div>
   </div>
 </div>

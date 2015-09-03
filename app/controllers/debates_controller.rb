@@ -16,9 +16,11 @@ class DebatesController < ApplicationController
 
   def show
     set_debate_votes(@debate)
-    @comments = @debate.root_comments.recent.page(params[:page]).for_render
-    # TODO limit this list to the paginated root comment's children once we have ancestry
-    all_visible_comments = @debate.comment_threads
+    @commentable = @debate
+    @root_comments = @debate.comments.roots.recent.page(params[:page]).per(10).for_render
+    @comments = @root_comments.inject([]){|all, root| all + root.descendants}
+
+    all_visible_comments = @root_comments + @comments
     set_comment_flags(all_visible_comments)
   end
 
