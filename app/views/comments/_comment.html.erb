@@ -2,7 +2,7 @@
 	<div id="<%= dom_id(comment) %>" class="comment small-12 column">
 
     <% if comment.hidden? || comment.user.hidden? %>
-      <% if children_of_in(comment, @comments).size > 0 %>
+      <% if select_children(@comments, comment).size > 0 %>
         <div class="is-deleted">
           <p><%= t("debates.comment.deleted") %></p>
         </div>
@@ -79,7 +79,7 @@
         </span>
 
         <div class="reply">
-          <%= t("debates.comment.responses", count: children_of_in(comment, @comments).size) %>
+          <%= t("debates.comment.responses", count: select_children(@comments, comment).size) %>
 
           <% if user_signed_in? %>
             <span class="divider">&nbsp;|&nbsp;</span>
@@ -95,7 +95,7 @@
     <% end %>
 
     <div class="comment-children">
-      <%= render children_of_in(comment, @comments) if @comments.present? %>
+      <%= render select_children(@comments, comment) if @comments.present? %>
     </div>
   </div>
 </div>
