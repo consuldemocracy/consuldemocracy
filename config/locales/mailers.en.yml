@@ -12,4 +12,5 @@ en:
       title: Please verify yourself
       instructions_html: "We need to verify you using this email, which we got from the Census. %{verification_link}"
       click_here_to_verify: "Please click here to verify yourself"
+      thanks: "Thanks"
 

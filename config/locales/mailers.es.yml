@@ -9,6 +9,7 @@ es:
       title: Nueva respuesta a tu comentario
       new_reply_by_html: "Hay una nueva respuesta de <b>%{commenter}</b> a tu comentario en"
     email_verification:
-      title: Por favor verifícate
-      instructions_html: "Vamos a proceder a verificar tu cuenta en la aplicación de participación ciudadana utilizando esta cuenta de correo que sacamos del padrón. %{verification_link}."
-      click_here_to_verify: "Por favor pulsa este enlace para verificarte"
+      title:  Verifica tu cuenta con el siguiente enlace
+      instructions_html: "Para terminar de verificar tu cuenta de usuario en el Portal de Gobierno Abierto del Ayuntamiento de Madrid, necesitamos que pulses %{verification_link}."
+      click_here_to_verify: "en este enlace"
+      thanks: "Muchas gracias."
