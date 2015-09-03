@@ -8,8 +8,8 @@ class CommentsController < ApplicationController
 
   def create
     if @comment.save
-      Mailer.comment(@comment).deliver_now if email_on_debate_comment?
-      Mailer.reply(@comment).deliver_now if email_on_comment_reply?
+      Mailer.comment(@comment).deliver_later if email_on_debate_comment?
+      Mailer.reply(@comment).deliver_later if email_on_comment_reply?
     else
       render :new
     end

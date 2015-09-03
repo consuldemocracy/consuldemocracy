@@ -27,7 +27,7 @@ set :pty, true
 set :use_sudo, false
 
 set :linked_files, %w{config/database.yml config/secrets.yml}
-set :linked_dirs, %w{log tmp public/system public/assets}
+set :linked_dirs, %w{log tmp public/system public/assets tmp/pids}
 
 set :keep_releases, 5
 
@@ -35,6 +35,9 @@ set :local_user, ENV['USER']
 
 # Run test before deploy
 set :tests, ["spec"]
+
+set :delayed_job_server_role, :worker
+set :delayed_job_args, "-n 2"
 
 # Config files should be copied by deploy:setup_config
 set(:config_files, %w(
@@ -55,6 +58,8 @@ namespace :deploy do
   after 'deploy:symlink:shared', 'deploy:compile_assets_locally'
   after :finishing, 'deploy:beta_testers'
   after :finishing, 'deploy:cleanup'
+  # Restart Delayed Job
+  after 'deploy:publishing', 'delayed_job:restart'
   # Restart unicorn
   after 'deploy:publishing', 'deploy:restart'
 end
