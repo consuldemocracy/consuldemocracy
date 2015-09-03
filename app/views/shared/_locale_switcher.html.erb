@@ -1,16 +1,18 @@
-<div class="locale">
-  <span class="inline-block">
-    <i class="icon-language"></i>
-    <%= t("layouts.header.locale") %>
-  </span>
-  <form class="locale-form">
-    <select class="js-location-changer locale-switcher" name="locale-switcher">
-      <% I18n.available_locales.map do |loc| %>
-        <option <%= 'selected' if loc == I18n.locale %>
-                value='<%= current_path_with_query_params(locale: loc) %>'>
-          <%= I18n.t('locale', locale: loc) %>
-        </option>
-      <% end %>
-    </select>
-  </form>
-</div>
+<% if I18n.available_locales.size > 1 %>
+  <div class="locale">
+    <span class="inline-block">
+      <i class="icon-language"></i>
+      <%= t("layouts.header.locale") %>
+    </span>
+    <form class="locale-form">
+      <select class="js-location-changer locale-switcher" name="locale-switcher">
+        <% I18n.available_locales.map do |loc| %>
+          <option <%= "selected" if loc == I18n.locale %>
+                  value="<%= current_path_with_query_params(locale: loc) %>">
+            <%= I18n.t("locale", locale: loc) %>
+          </option>
+        <% end %>
+      </select>
+    </form>
+  </div>
+<% end %>
