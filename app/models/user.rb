@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
 
   apply_simple_captcha
   devise :database_authenticatable, :registerable, :confirmable,
-         :recoverable, :rememberable, :trackable, :validatable, :omniauthable
+         :recoverable, :rememberable, :trackable, :validatable, :omniauthable, :async
 
   acts_as_voter
   acts_as_paranoid column: :hidden_at

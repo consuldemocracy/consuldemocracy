@@ -123,6 +123,8 @@ GEM
       responders
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
+    devise-async (0.10.1)
+      devise (~> 3.2)
     diff-lcs (1.2.5)
     docile (1.1.5)
     domain_name (0.5.24)
@@ -413,6 +415,7 @@ DEPENDENCIES
   database_cleaner
   delayed_job_active_record
   devise
+  devise-async
   email_spec
   factory_girl_rails
   faker
