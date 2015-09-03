@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150903155146) do
+ActiveRecord::Schema.define(version: 20150903171309) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -101,6 +101,7 @@ ActiveRecord::Schema.define(version: 20150903155146) do
     t.datetime "confirmed_hide_at"
     t.integer  "cached_anonymous_votes_total",            default: 0
     t.integer  "cached_votes_score",                      default: 0
+    t.integer  "hot_score",                    limit: 8,  default: 0
   end
 
   add_index "debates", ["cached_votes_down"], name: "index_debates_on_cached_votes_down", using: :btree
@@ -130,6 +131,16 @@ ActiveRecord::Schema.define(version: 20150903155146) do
   end
 
   add_index "identities", ["user_id"], name: "index_identities_on_user_id", using: :btree
+
+  create_table "inappropiate_flags", force: :cascade do |t|
+    t.integer  "user_id"
+    t.string   "flaggable_type"
+    t.integer  "flaggable_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "inappropiate_flags", ["flaggable_type", "flaggable_id"], name: "index_inappropiate_flags_on_flaggable_type_and_flaggable_id", using: :btree
 
   create_table "moderators", force: :cascade do |t|
     t.integer "user_id"
