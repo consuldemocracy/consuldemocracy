@@ -2,9 +2,9 @@ class Moderation::BaseController < ApplicationController
   layout 'admin'
 
   before_action :authenticate_user!
+  before_action :verify_moderator
 
   skip_authorization_check
-  before_action :verify_moderator
 
   private
 

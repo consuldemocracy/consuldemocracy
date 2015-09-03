@@ -1,49 +1,59 @@
 es:
   verification:
+    step_1: "1. Residencia"
+    step_2: "2. Código de confirmación"
+    step_3: "3. Verificación final"
     residence:
       new:
-        title: 'Verificar residencia'
+        title: "Verificar residencia"
+        document_type_label: "Tipo de documento"
         document_type:
-          spanish_id: 'DNI'
-          passport: 'Pasaporte'
-          residence_card: 'Tarjeta de residencia'
-        accept_terms_text: "Acepto los terminos de acceso al Padrón"
-        accept_terms_link: "Leer términos"
-        form_errors: 'evitaron verificar tu residencia'
-        error_verifying_census: 'El Padrón de Madrid no pudo verificar tu información. Revisa la información ó ponte en contacto con nosotros.'
+          spanish_id: "DNI"
+          passport: "Pasaporte"
+          residence_card: "Tarjeta de residencia"
+        document_number: "Número de documento"
+        date_of_birth: "Fecha de nacimiento"
+        postal_code: "Código postal"
+        accept_terms_text: "Acepto %{terms_url} al Padrón"
+        terms: "los terminos de acceso"
+        verify_residence: "Verificar residencia"
+        form_errors: "evitaron verificar tu residencia"
+        error_verifying_census: "El Padrón de Madrid no pudo verificar tu información. Revisa la información ó ponte en contacto con nosotros."
       create:
         flash:
-          success: 'Residencia verificada'
+          success: "Residencia verificada"
       alert:
-        verify_attemps_left: 'Has llegado al máximo número de intentos de verificar tu residencia.'
-        unconfirmed_residency: 'Aún no has verificado tu residencia'
+        verify_attemps_left: "Has llegado al máximo número de intentos de verificar tu residencia."
+        unconfirmed_residency: "Aún no has verificado tu residencia"
     sms:
       new:
-        title: Verificación de teléfono móvil
-        submit_button: Enviar
+        title: "Recibir código de confirmación"
+        phone: "Introduce tu teléfono móvil para recibir el código"
+        submit_button: "Enviar"
       create:
         flash:
-          success: 'Introduce el código de confirmación que te hemos enviado por mensaje de texto'
+          success: "Introduce el código de confirmación que te hemos enviado por mensaje de texto"
       edit:
-        title: 'Confirmación de código de seguridad'
-        resend_sms_text: '¿No has recibido un mensaje de texto con tu código de confirmación?'
-        resend_sms_link: 'Haz click aquí para volver a enviártelo'
-        submit_button: Enviar
+        title: "Confirmación de código de seguridad"
+        confirmation_code: "Introduce el código que has recibido en tu móvil"
+        resend_sms_text: "¿No has recibido un mensaje de texto con tu código de confirmación?"
+        resend_sms_link: "Haz click aquí para volver a enviártelo"
+        submit_button: "Enviar"
       update:
-        error: 'Código de confirmación incorrecto'
+        error: "Código de confirmación incorrecto"
         flash:
           level_three:
-            success: 'Código correcto. Ya eres un usuario verificado'
+            success: "Código correcto. Tu cuenta ya está verificada"
           level_two:
-            success: 'Código incorrecto'
+            success: "Código correcto"
       alert:
-        verify_attemps_left: 'Has llegado al máximo número de intentos de verificar tu teléfono.'
+        verify_attemps_left: "Has llegado al máximo número de intentos de verificar tu teléfono."
     email:
       show:
         flash:
-          success: 'Eres un usuario verificado'
+          success: "Eres un usuario verificado"
         alert:
-          failure: 'Código de verificación incorrecto'
+          failure: "Código de verificación incorrecto"
       create:
         flash:
           success: "Te hemos enviado un email de confirmación a tu cuenta: %{email}"
@@ -51,21 +61,33 @@ es:
           failure: "Hubo un problema enviándote un email a tu cuenta"
     letter:
       new:
-        title: Final Verification
-        explanation: 'To completely verify your account we need to go to one of these offices or send you a letter with a special code to your home address'
-        submit_button: 'Send me a letter'
+        title: "Verificación Final"
+        explanation_html:
+          "<p>¡Felicidades! Ya puedes participar en debates o apoyar propuestas de otras personas.</p><p>Para terminar de verificar tu cuenta completamente necesitamos proporcionarte un <b>código de máxima seguridad</b>, que nos asegure que nadie está utilizando tus datos en tu nombre.</p><p>Este requerimiento es esencial para participar en las votaciones finales de las propuestas. Para ello puedes acercarte a cualquier <b>Oficina de Atención al Ciudadano</b> donde te verificarán presencialmente, o en caso de que te sea imposible, podemos mandarte una carta a casa con el código.</p>"
+        offices: "Ver Oficinas de Atención al Ciudadano"
+        offices_url: "http://www.madrid.es/portales/munimadrid/es/Inicio/El-Ayuntamiento/Atencion-al-ciudadano/Oficinas-de-Atencion-al-Ciudadano?vgnextfmt=default&vgnextchannel=5b99cde2e09a4310VgnVCM1000000b205a0aRCRD"
+        send_letter: "Enviarme una carta con el código"
+        send_code: "Enviar"
       create:
         flash:
-          success: "You will receive a letter to your home address in the next couple of days"
+          success: "Gracias por solicitar tu código de máxima seguridad, en unos días te lo enviaremos a la dirección que figura en tus datos del padrón. Recuerda que puedes ahorrar el envío recogiendo tu código en cualquiera de las Oficinas de Atención al Ciudadano."
         alert:
-          failure: "We could not verify your address with the Census please try again later"
+          failure: "No podemos verificar tu dirección con el Padrón, por favor inténtalo otra vez más tarde"
+      edit:
+        title: "Confirmación de código de seguridad"
+        confirmation_code: "Introduce el código que has recibido en tu carta"
+      update:
+        error: "Código de verificación incorrecto"
+        flash:
+          success: "Código correcto. Tu cuenta ya está verificada"
       alert:
-        unconfirmed_personal_data: 'You have not yet confirmed your personal data'
+        unconfirmed_code: "Todavía no has introducido el código de confirmación"
     verified_user:
       show:
-        title: Información disponible
-        email_title: Emails
-        phone_title: Teléfonos
-        use_another_phone: Utilizar otro teléfono
+        title: "Información disponible"
+        explanation: "Actualmente disponemos de los siguientes datos en el Padrón, selecciona donde quieres que enviemos el código de confirmación."
+        email_title: "Emails"
+        phone_title: "Teléfonos"
+        use_another_phone: "Utilizar otro teléfono"
       form:
-        submit_button: Enviar
+        submit_button: "Enviar código"

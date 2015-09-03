@@ -8,8 +8,8 @@ describe PagesController do
       expect(response).to be_ok
     end
 
-    it 'should include a legal page' do
-      get :legal
+    it 'should include a conditions page' do
+      get :conditions
       expect(response).to be_ok
     end
 

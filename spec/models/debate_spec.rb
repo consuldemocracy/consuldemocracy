@@ -174,21 +174,6 @@ describe Debate do
     end
   end
 
-  describe "#search" do
-    let!(:economy) { create(:debate, tag_list: "Economy") }
-    let!(:health)  { create(:debate, tag_list: "Health")  }
-
-    it "returns debates tagged with params tag" do
-      params = {tag: "Economy"}
-      expect(Debate.search(params)).to match_array([economy])
-    end
-
-    it "returns all debates if no parameters" do
-      params = {}
-      expect(Debate.search(params)).to match_array([economy, health])
-    end
-  end
-
   describe '#default_order' do
     let!(:economy) { create(:debate) }
     let!(:health)  { create(:debate) }

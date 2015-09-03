@@ -1,5 +1,5 @@
 class Users::RegistrationsController < Devise::RegistrationsController
-  prepend_before_filter :authenticate_scope!, only: [:edit, :update, :destroy, :finish_signup, :do_finish_signup]
+  prepend_before_action :authenticate_scope!, only: [:edit, :update, :destroy, :finish_signup, :do_finish_signup]
 
   def create
     build_resource(sign_up_params)

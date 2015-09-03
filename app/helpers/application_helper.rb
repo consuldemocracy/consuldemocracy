@@ -1,4 +1,5 @@
 module ApplicationHelper
+
   def percentage(vote, debate)
     return "0%" if debate.total_votes == 0
     debate.send(vote).percent_of(debate.total_votes).to_s + "%"

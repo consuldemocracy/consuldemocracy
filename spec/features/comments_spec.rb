@@ -31,7 +31,7 @@ feature 'Comments' do
       expect(page).to have_content("1")
       expect(page).to have_content("2")
       expect(page).to_not have_content("3")
-      click_link "Next"
+      click_link "Next", exact: false
     end
 
     expect(page).to have_css('.comment', count: 2)

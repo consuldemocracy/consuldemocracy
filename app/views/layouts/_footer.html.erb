@@ -9,9 +9,13 @@
 
         <p class="footer-description">
           <%= t("layouts.footer.description",
-            open_source: link_to(t('layouts.footer.open_source'), t('layouts.footer.open_source_url'), target: 'blank'),
-            github_url:  link_to(t('layouts.footer.github_url'), t('layouts.footer.github_url'), target: 'blank')).html_safe
+            more_info: link_to(t("layouts.footer.more_info"), t("layouts.footer.more_info_url")),
+            open_source: link_to(t("layouts.footer.open_source"), t("layouts.footer.open_source_url"), target: "blank"),
+            github:  link_to(t("layouts.footer.github"), t("layouts.footer.github_url"), target: "blank")).html_safe
           %>
+          <br>
+          <%= t("layouts.footer.contact_us") %>
+          <%= mail_to "web.gobiernoabierto@madrid.es" %>
         </p>
       </div>
 
@@ -35,7 +39,9 @@
 
     <div class="subfooter row">
       <div class="small-12 column">
-        <%= t("layouts.footer.copyright", year: Time.now.year) %>
+        <%= t("layouts.footer.copyright", year: Time.now.year) %>&nbsp;|&nbsp;
+        <%= link_to t("layouts.footer.privacy"), "/privacy" %>&nbsp;|&nbsp;
+        <%= link_to t("layouts.footer.conditions"), "/conditions" %>
       </div>
     </div>
   </div>

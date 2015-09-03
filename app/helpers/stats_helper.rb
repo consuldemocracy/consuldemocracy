@@ -1,4 +1,5 @@
 module StatsHelper
+
   def events_chart_tag(events, opt={})
     events = events.join(',') if events.is_a? Array
     opt[:data] ||= {}

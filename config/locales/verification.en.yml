@@ -1,49 +1,59 @@
 en:
   verification:
+    step_1: "1. Residence"
+    step_2: "2. Confirmation code"
+    step_3: "3. Final verification"
     residence:
       new:
-        title: 'Verify residence'
+        title: "Verify residence"
+        document_type_label: "Document type"
         document_type:
-          spanish_id: 'Spanish ID'
-          passport: 'Passport'
-          residence_card: 'Residence card'
-        accept_terms_text: "I accept the terms to access the city Census"
-        accept_terms_link: "Read terms"
-        form_errors: 'prevented your residence verification'
-        error_verifying_census: 'The census of the city of Madrid could not verify your information. Pero revise de information and try again or get in touch with us.'
+          spanish_id: "Spanish ID"
+          passport: "Passport"
+          residence_card: "Residence card"
+        document_number: "Document number"
+        date_of_birth: "Date of birth"
+        postal_code: "Postal code"
+        accept_terms_text: "I accept %{terms_url} to access the city Census"
+        terms: "the terms"
+        verify_residence: "Verify residence"
+        form_errors: "prevented your residence verification"
+        error_verifying_census: "The census of the city of Madrid could not verify your information. Pero revise de information and try again or get in touch with us."
       create:
         flash:
-          success: 'Residence verified'
+          success: "Residence verified"
       alert:
-        verify_attemps_left: 'You have reached the maximum number of Census verification tries'
-        unconfirmed_residency: 'You have not yet confirmed your residence'
+        verify_attemps_left: "You have reached the maximum number of Census verification tries"
+        unconfirmed_residency: "You have not yet confirmed your residence"
     sms:
       new:
-        title: Phone verification
-        submit_button: Send
+        title: "Phone verification"
+        phone: "Enter your phone for recive the code"
+        submit_button: "Send"
       create:
         flash:
-          success: 'Enter the confirmation code we have sent your phone'
+          success: "Enter the confirmation code we have sent your phone"
       edit:
-        title: Security code confirmation
-        resend_sms_text: You have not received the confirmation code in your phone?
-        resend_sms_link: Click here to send the confirmation code again
-        submit_button: Send
+        title: "Security code confirmation"
+        confirmation_code: "Code confirmation"
+        resend_sms_text: "You have not received the confirmation code in your phone?"
+        resend_sms_link: "Click here to send the confirmation code again"
+        submit_button: "Send"
       update:
-        error: 'Incorrect confirmation code'
+        error: "Incorrect confirmation code"
         flash:
           level_three:
-            success: 'Correct code. You are now a verified user'
+            success: "Correct code. Your account is verified"
           level_two:
-            success: 'Correct code'
+            success: "Correct code"
       alert:
-        verify_attemps_left: 'You have reached the maximum number of sms verification tries'
+        verify_attemps_left: "You have reached the maximum number of sms verification tries"
     email:
       show:
         flash:
-          success: 'You are now a verified user'
+          success: "You are now a verified user"
         alert:
-          failure: 'Incorrect verification code'
+          failure: "Incorrect verification code"
       create:
         flash:
           success: "We have send you a confirmation email to your email account: %{email}"
@@ -51,21 +61,33 @@ en:
           failure: "There was a problem sending you an email to your account"
     letter:
       new:
-        title: Final Verification
-        explanation: 'To completely verify your account we need to go to one of these offices or send you a letter with a special code to your home address'
-        submit_button: 'Send me a letter'
+        title: "Final Verification"
+        explanation_html:
+          "<p>Congratulations! You can now participate in discussions or support proposals of others.</p><p>To finish we need to verify your account completely provide you with a <b>maximum security code</b>, we ensure that no one is using your data on your behalf.</p><p>This requirement is essential to participate in final votes on motions. This can approach any <b>Office of Citizen</b> where you will verify in person, or in case you is impossible, we can send you a letter home with the code.</p>"
+        offices: "See Office of Citizen"
+        offices_url: "http://www.madrid.es/portales/munimadrid/es/Inicio/El-Ayuntamiento/Atencion-al-ciudadano/Oficinas-de-Atencion-al-Ciudadano?vgnextfmt=default&vgnextchannel=5b99cde2e09a4310VgnVCM1000000b205a0aRCRD"
+        send_letter: "Send me a letter with the code"
+        send_code: "Send"
       create:
         flash:
-          success: "You will receive a letter to your home address in the next couple of days"
+          success: "Thank you for requesting a maximum security code in a few days we will send it to the address on your census data. Remember that you can save shipping collecting your code in any of the Office of Citizen Services."
         alert:
           failure: "We could not verify your address with the Census please try again later"
+      edit:
+        title: "Security code confirmation"
+        confirmation_code: "Enter the security code in your letter"
+      update:
+        error: "Incorrect confirmation code"
+        flash:
+          success: "Correct code. Your account is verified"
       alert:
-        unconfirmed_personal_data: 'You have not yet confirmed your personal data'
+        unconfirmed_code: "You have not yet enter the confirmation code"
     verified_user:
       show:
-        title: Available information
-        email_title: Emails
-        phone_title: Phones
-        use_another_phone: Use another phone
+        title: "Available information"
+        explanation: "We currently have the following data in the Census, choose where you want to send the confirmation code."
+        email_title: "Emails"
+        phone_title: "Phones"
+        use_another_phone: "Use another phone"
       form:
-        submit_button: Send
+        submit_button: "Send code"

@@ -1,4 +1,5 @@
 class Api::StatsController < Api::ApiController
+
   def show
     unless params[:events].present? || params[:visits].present?
       return render json: {}, status: :bad_request
@@ -19,4 +20,5 @@ class Api::StatsController < Api::ApiController
 
     render json: ds.build
   end
+
 end

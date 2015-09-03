@@ -73,7 +73,7 @@ feature 'Verified users' do
     visit verified_user_path
 
     within("#verified_user_#{verified_user.id}_email") do
-     click_button "Send"
+     click_button "Send code"
     end
 
     expect(page).to have_content 'We have send you a confirmation email to your email account: rock@example.com'
@@ -95,7 +95,7 @@ feature 'Verified users' do
     visit verified_user_path
 
     within("#verified_user_#{verified_user.id}_phone") do
-      click_button "Send"
+      click_button "Send code"
     end
 
     expect(page).to have_content 'Enter the confirmation code'

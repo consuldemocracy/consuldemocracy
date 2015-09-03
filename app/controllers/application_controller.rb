@@ -1,28 +1,27 @@
 require "application_responder"
 
 class ApplicationController < ActionController::Base
-  before_filter :authenticate_http_basic
-
-  before_filter :authenticate_user!, unless: :devise_controller?, if: :beta_site?
-  before_filter :authenticate_beta_tester!, unless: :devise_controller?, if: :beta_site?
-
-  check_authorization unless: :devise_controller?
   include SimpleCaptcha::ControllerHelpers
-  self.responder = ApplicationResponder
-  respond_to :html
+  include HasFilters
 
-  before_action :set_locale
-  layout :set_layout
-
-  # Prevent CSRF attacks by raising an exception.
-  # For APIs, you may want to use :null_session instead.
-  protect_from_forgery with: :exception
+  before_action :authenticate_http_basic
+  before_action :authenticate_user!, unless: :devise_controller?, if: :beta_site?
+  before_action :authenticate_beta_tester!, unless: :devise_controller?, if: :beta_site?
 
   before_action :ensure_signup_complete
+  before_action :set_locale
+
+  check_authorization unless: :devise_controller?
+  self.responder = ApplicationResponder
+
+  protect_from_forgery with: :exception
 
   rescue_from CanCan::AccessDenied do |exception|
     redirect_to main_app.root_url, alert: exception.message
   end
+
+  layout :set_layout
+  respond_to :html
 
   private
 

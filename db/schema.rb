@@ -65,6 +65,7 @@ ActiveRecord::Schema.define(version: 20150903142924) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.datetime "hidden_at"
+    t.integer  "children_count",     default: 0
     t.integer  "flags_count",        default: 0
     t.datetime "ignored_flag_at"
     t.integer  "moderator_id"
@@ -90,8 +91,8 @@ ActiveRecord::Schema.define(version: 20150903142924) do
     t.integer  "author_id"
     t.datetime "created_at",                                          null: false
     t.datetime "updated_at",                                          null: false
-    t.datetime "hidden_at"
     t.string   "visit_id"
+    t.datetime "hidden_at"
     t.integer  "flags_count",                             default: 0
     t.datetime "ignored_flag_at"
     t.integer  "cached_votes_total",                      default: 0
@@ -198,13 +199,12 @@ ActiveRecord::Schema.define(version: 20150903142924) do
     t.string   "unconfirmed_email"
     t.boolean  "email_on_debate_comment",                 default: false
     t.boolean  "email_on_comment_reply",                  default: false
+    t.string   "phone_number",                 limit: 30
     t.string   "official_position"
     t.integer  "official_level",                          default: 0
     t.datetime "hidden_at"
-    t.string   "phone_number",                 limit: 30
-    t.string   "username"
-    t.datetime "confirmed_hide_at"
     t.string   "sms_confirmation_code"
+    t.string   "username"
     t.string   "document_number"
     t.string   "document_type"
     t.datetime "residence_verified_at"
@@ -216,6 +216,8 @@ ActiveRecord::Schema.define(version: 20150903142924) do
     t.string   "unconfirmed_phone"
     t.string   "confirmed_phone"
     t.datetime "letter_requested_at"
+    t.datetime "confirmed_hide_at"
+    t.string   "letter_verification_code"
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree

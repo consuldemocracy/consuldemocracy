@@ -1,6 +1,6 @@
 class StatsController < ApplicationController
-  skip_authorization_check
   before_action :verify_administrator
+  skip_authorization_check
 
   def show
     @event_types = Ahoy::Event.select(:name).uniq.pluck(:name)

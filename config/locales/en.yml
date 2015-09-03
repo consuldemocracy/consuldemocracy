@@ -16,10 +16,10 @@ en:
       open_city_slogan:
         "Start listening to Madrid.
         For that we open this digital Puerta del Sol, where all the locals can meet to discuss and share everything we want.
-        Also a place where you can talk directly with all the employees of the City of Madrid, from the Mayor to any officer."
+        Also a place where you can talk directly with all the employees of the City of Madrid, from the Mayor to any public employee of the City hall."
       open_city_text:
-        "Here every voice has its place, and are citizens, and no one in their name, they decide to vote debates what issues are
-        most important of every time. Officials have individual users with whom you may participate in the debates, and evaluated,
+        "Here every voice has its place and are citizens, and no one in their name, they decide to vote debates what issues are
+        most important of every time. Government officials have individual users with whom you may participate in the debates, and evaluated,
         the same level as everyone else. Because the Madrid City Council works for its citizens, and must respond to them."
       open_city_soon: "And soon... we opened the section of citizen proposals."
       see_all_debates: See all debates
@@ -28,25 +28,30 @@ en:
       administration: Administration
       moderation: Moderation
       # welcome: Welcome
-      how_it_works: How it works
-      help: Help
+      more_information: "More information"
       debates: Debates
       # initiatives: Initiatives
     footer:
       description:
-        "The city you want, it will be the city you want. Get more information here on this page.
-        This Open Government Portal is %{open_source}, and code is in %{github_url}.
+        "The city you want, it will be the city you want. %{more_info} here on this page.
+        This Open Government Portal is %{open_source}, and code is in %{github}.
         Madrid, for the whole world."
+      more_info: Get more information
+      more_info_url: "/more_information"
       open_source: "software libre AGPLv3"
       open_source_url: "http://www.gnu.org/licenses/agpl-3.0.html"
+      github: "github"
       github_url: "https://github.com/ayuntamientomadrid"
-      copyright: "Ayuntamiento de Madrid, 2015. All rights reserved"
+      copyright: "Ayuntamiento de Madrid, %{year}"
       participation_title: "Participation"
       participation_text: Decide what should be the city of Madrid you want.
       transparency_title: Transparency
       transparency_text: Get any information on the City of Madrid.
       open_data_title:  Open Data
-      open_data_text: All City Council data are yours
+      open_data_text: "All City Council data are yours."
+      contact_us: "Contact us"
+      privacy: "Privacy Policy"
+      conditions: "Terms of use"
   form:
       error: error
       errors: errors
@@ -54,21 +59,22 @@ en:
       accept_terms: I accept the privacy policy and the legal terms
       user: account
       debate: debate
-      sms: phone
+      verification::sms: phone
   application:
     alert:
       only_beta_testers: "Sorry only Beta Testers are allowed access at the moment"
   debates:
     index:
-      create_debate: Create a debate
+      start_debate: Start a debate
       select_order: Order by
+      select_order_long: Order debates by
       orders:
         created_at: newest
         total_votes: most voted
         likes: best rated
-      select_topic: "Filter by topic:"
-      filter_topic: "You are seeing %{number} debates with the topic '%{topic}'"
-      all: All
+      filter_topic:
+        one: "You are seeing one debate with the topic '%{topic}'"
+        other: "You are seeing %{count} debates with the topic '%{topic}'"
     debate:
       debate: Debate
       comments:
@@ -95,14 +101,13 @@ en:
         other: "%{count} votes"
     form:
       debate_title: Debate title
-      title_instructions: "SBe clear and precise with the title, but make it informative"
-      debate_text: Ellaborate your opinion
-      text_instructions: "Explain your opinion, go into details, tell us what's the purpose of your idea"
+      debate_text: Initial text for debate
       tags_label: Topics
       tags_instructions: >
-        Tag this idea. You can choose among our proposals on the list or add any other topic you want by
+        Tag this debate. You can choose among our proposals on the list or add any other topic you want by
         writing them separated by "," and then pressing "enter".
         Some suggestions:
+      start_debate: Start a debate
     show:
       back_link: Back
       author_deleted: Deleted user
@@ -119,7 +124,7 @@ en:
       show_link: Show debate
       back_link: Back
     new:
-      publish_new: Publish new debate
+      start_new: Start a debate
       back_link: Back
       recommendations_title: Tips for creating a debate
       recommendation_one: "On the Internet it is easy to say things you would not dare to say face to face. The tone of what you say you will be matched by a similar tone in the answers."
@@ -160,12 +165,12 @@ en:
       phone_number_label: "Phone number"
       organization_name_label: "Organization name"
       notifications: Notifications
-      level_two_user: You are a level 2 user
-      level_three_user: You are a level 3 user
+      finish_verification: "Finish verification"
+      verified_account: Verified account
       verify_my_account: Verify my account
   simple_captcha:
     placeholder: "Enter the image value"
-    label: "Enter the code in the box"
+    label: "Enter the image value in the next form"
     refresh_button_text: "Refresh"
     message:
       user: "secret code did not match with the image"

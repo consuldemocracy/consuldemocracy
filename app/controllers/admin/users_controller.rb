@@ -1,11 +1,10 @@
 class Admin::UsersController < Admin::BaseController
-  before_filter :set_valid_filters, only: :index
-  before_filter :parse_filter, only: :index
+  has_filters %w{all with_confirmed_hide}, only: :index
 
-  before_filter :load_user, only: [:confirm_hide, :restore]
+  before_action :load_user, only: [:confirm_hide, :restore]
 
   def index
-    @users = User.only_hidden.send(@filter).page(params[:page])
+    @users = User.only_hidden.send(@current_filter).page(params[:page])
   end
 
   def show
@@ -28,15 +27,6 @@ class Admin::UsersController < Admin::BaseController
 
     def load_user
       @user = User.with_hidden.find(params[:id])
-    end
-
-    def set_valid_filters
-      @valid_filters = %w{all with_confirmed_hide}
-    end
-
-    def parse_filter
-      @filter = params[:filter]
-      @filter = 'all' unless @valid_filters.include?(@filter)
     end
 
 end

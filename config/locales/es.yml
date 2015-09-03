@@ -16,10 +16,10 @@ es:
       open_city_slogan:
         "Empecemos escuchando qué tiene que decir Madrid.
         Para ello abrimos esta Puerta del Sol digital, donde todos los madrileños podemos encontrarnos para debatir y compartir todo lo que queramos.
-        También un espacio donde poder hablar directamente con todos los trabajadores del Ayuntamiento de Madrid, desde la Alcaldesa hasta cualquier funcionario."
+        También un espacio donde poder hablar directamente con todos los trabajadores del Ayuntamiento de Madrid, desde la Alcaldesa hasta cualquier trabajador público del Ayuntamiento."
       open_city_text:
-        "Aquí cualquier voz tiene su espacio, y son los ciudadanos, y nadie en su nombre, los que deciden votando los debates cuáles son los temas
-        más importantes de cada momento. Los funcionarios tienen usuarios propios con los que podrán participar en los debates, y ser evaluados,
+        "Aquí cualquier voz tiene su espacio y son los ciudadanos, y nadie en su nombre, los que deciden votando los debates cuáles son los temas
+        más importantes de cada momento. Los responsables del gobierno tienen usuarios propios con los que podrán participar en los debates, y ser evaluados,
         al mismo nivel que todos los demás. Porque el Ayuntamiento de Madrid trabaja para sus ciudadanos, y ante ellos debe responder."
       open_city_soon: "Y muy pronto... abrimos la sección de propuestas ciudadanas."
       see_all_debates: Ver todos los debates
@@ -28,25 +28,30 @@ es:
       administration: Administrar
       moderation: Moderar
       # welcome: Portada
-      how_it_works: "Cómo funciona"
-      help: Ayuda
+      more_information: "Más información"
       debates: Debates
       # initiatives: Iniciativas
     footer:
       description:
-        "La ciudad que quieres, será la ciudad que quieras. Obtén aquí más información sobre esta página.
-        Este Portal de Gobierno Abierto es %{open_source}, y su código se encuentra en %{github_url}.
+        "La ciudad que quieres, será la ciudad que quieras. %{more_info} sobre esta página.
+        Este Portal de Gobierno Abierto es %{open_source}, y su código se encuentra en %{github}.
         De Madrid, para el mundo entero."
+      more_info: Obtén más información
+      more_info_url: "/more_information"
       open_source: "software libre AGPLv3"
       open_source_url: "http://www.gnu.org/licenses/agpl-3.0.html"
+      github: "github"
       github_url: "https://github.com/ayuntamientomadrid"
-      copyright: "Ayuntamiento de Madrid, %{year}. Todos los derechos reservados"
+      copyright: "Ayuntamiento de Madrid, %{year}"
       participation_title: "Participación"
       participation_text: "Decide cómo debe ser la ciudad de Madrid que quieres."
       transparency_title: Transparencia
       transparency_text: "Obtén cualquier información sobre el Ayuntamiento de Madrid."
       open_data_title: Datos Abiertos
-      open_data_text: Todos los datos del Ayuntamiento son tuyos
+      open_data_text: "Todos los datos del Ayuntamiento son tuyos."
+      contact_us: "Contacta con nosotros en"
+      privacy: "Política de privacidad"
+      conditions: "Condiciones de uso"
   form:
       error: error
       errors: errores
@@ -54,21 +59,22 @@ es:
       accept_terms: Acepto la política de privacidad y el aviso legal
       user: la cuenta
       debate: el debate
-      sms: el teléfono
+      verification::sms: el teléfono
   application:
     alert:
       only_beta_testers: "Lo sentimos sólo los usuarios de pruebas tienen acceso de momento"
   debates:
     index:
-      create_debate: Crea un debate
+      start_debate: Empieza un debate
       select_order: Ordenar por
+      select_order_long: Estás viendo los debates
       orders:
         created_at: "más nuevos"
         total_votes: "más votados"
-        likes: mejor valorados
-      select_topic: "Filtrar por tema:"
-      filter_topic: "Estás viendo %{number} debates con el tema '%{topic}'"
-      all: Todos
+        likes: "mejor valorados"
+      filter_topic:
+        one: "Estás viendo un debate con el tema ''%{topic}''"
+        other: "Estás viendo %{count} debates con el tema '%{topic}'"
     debate:
       debate: Debate
       comments:
@@ -95,14 +101,13 @@ es:
         other: "%{count} votos"
     form:
       debate_title: Título del debate
-      title_instructions: "Sé claro y conciso a la hora de poner un título, pero recuerda que debe explicar bien tu idea, ¡es tu carta de entrada!"
-      debate_text: Describe tu opinión
-      text_instructions: "Explica con todo el detalle que puedas y de una manera sencilla la idea y que crees que conseguiríamos con ella"
+      debate_text: Texto inicial del debate
       tags_label: Temas
       tags_instructions: >
-        Etiqueta esta idea. Puedes elegir entre nuestras propuestas o introducir las que desees.
+        Etiqueta este debate. Puedes elegir entre nuestras propuestas o introducir las que desees.
         Para ello solo tienes que escribir las etiquetas que desees separadas por "," y pulsar "intro".
         Algunas recomendaciones:
+      start_debate: Empieza un debate
     show:
       back_link: Volver
       author_deleted: Usuario eliminado
@@ -119,7 +124,7 @@ es:
       show_link: Ver debate
       back_link: Volver
     new:
-      publish_new: Publicar debate nuevo
+      start_new: Empezar un debate
       back_link: Volver
       recommendations_title: Recomendaciones para crear un debate
       recommendation_one: "En internet es fácil decir cosas que uno no se atrevería a decir cara a cara. El tono de lo que digas será correspondido con un tono similar en las respuestas."
@@ -160,12 +165,12 @@ es:
       phone_number_label: "Teléfono"
       organization_name_label: "Nombre de la organización"
       notifications: Notificaciones
-      level_two_user: Eres un usuario verificado de nivel 2
-      level_three_user: Eres un usuario verificado de nivel 3
+      finish_verification: "Finalizar verificación"
+      verified_account: Cuenta verificada
       verify_my_account: Verificar mi cuenta
   simple_captcha:
     placeholder: "Introduce el texto de la imagen"
-    label: "Introduce el texto en la caja"
+    label: "Introduce el texto de la imagen en la siguiente caja"
     refresh_button_text: "Refrescar"
     message:
       user: "el código secreto no coincide con la imagen"

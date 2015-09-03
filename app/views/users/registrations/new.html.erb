@@ -13,7 +13,11 @@
 
         <div class="row">
           <div class="small-12 column">
-            <%= f.text_field  :username,  placeholder: t("devise_views.users.registrations.new.username_label") %>
+
+            <%= f.label t("devise_views.users.registrations.new.username_label") %>
+            <span class="note"><%= t("devise_views.users.registrations.new.username_note") %></span>
+            <%= f.text_field  :username,  placeholder: t("devise_views.users.registrations.new.username_label"), label: false %>
+
             <%= f.email_field :email,     placeholder: t("devise_views.users.registrations.new.email_label") %>
 
             <%= f.password_field :password, autocomplete: "off",

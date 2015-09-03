@@ -53,7 +53,8 @@ en:
           back_link: "Back"
         new:
           title: "Sign up"
-          username_label: "Username to use publicly"
+          username_label: "Username"
+          username_note: "Username which will appear in your publications"
           email_label: "Email"
           password_label: "Password"
           password_confirmation_label: "Confirm password"
