@@ -460,7 +460,10 @@ header {
 
       &:hover {
         background: none;
-        color: $link-hover;
+        // color: $link-hover;
+        color: white;
+        text-decoration: underline;
+        transition: text-decoration 275ms;
       }
     }
 
@@ -488,6 +491,10 @@ header {
 
   a {
     color: white;
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
 }
 
@@ -502,7 +509,15 @@ header {
 
   a {
     color: $link;
+    display: inline-block;
     font-size: rem-calc(14);
+    min-width: rem-calc(192);
+    position: relative;
+
+    &:hover {
+      color: $text;
+      text-decoration: underline;
+    }
 
     &.active {
       color: $text;
@@ -745,8 +760,7 @@ form {
   }
 
   .ckeditor {
-    margin-bottom: rem-calc(24);
-    min-height: rem-calc(336);
+    min-height: rem-calc(312);
   }
 
   .checkbox {
@@ -1172,6 +1186,53 @@ table {
       }
     }
   }
+
+  .more-information {
+    margin-top: rem-calc(24);
+
+    ul {
+      list-style-type: none;
+      margin-left: 0;
+
+      a:first-child {
+        border-top: 1px solid $border;
+        display: block;
+        padding-top: rem-calc(12);
+      }
+
+      li {
+        border-bottom: 1px solid $border;
+        font-size: rem-calc(16);
+        padding-bottom: rem-calc(12);
+        padding-left: rem-calc(36);
+        position: relative;
+
+        span {
+          color: $text-medium;
+          display: block;
+          font-size: rem-calc(13);
+        }
+
+        &:before {
+          content: 'D';
+          color: $link;
+          font-family: "icons" !important;
+          left: 0;
+          margin-right: rem-calc(12);
+          position: absolute;
+        }
+
+        &:after {
+          content: 'c';
+          color: $text-light;
+          font-family: "icons" !important;
+          position: absolute;
+          right: 0;
+          top: rem-calc(6);
+        }
+      }
+    }
+  }
 }
 
 // 17. Verification
@@ -1259,6 +1320,7 @@ table {
 
     span {
       display: inline-block;
+      min-width: rem-calc(288);
     }
   }
 }
