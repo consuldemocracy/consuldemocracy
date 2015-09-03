@@ -71,6 +71,7 @@ en:
       orders:
         created_at: newest
         score: best rated
+        most_commented: "most commented"
       filter_topic:
         one: "You are seeing one debate with the topic '%{topic}'"
         other: "You are seeing %{count} debates with the topic '%{topic}'"
