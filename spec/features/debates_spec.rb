@@ -409,5 +409,24 @@ feature 'Debates' do
       expect(@most_recent_debate.title).to appear_before(@most_score_debate.title)
       expect(@most_score_debate.title).to appear_before(@most_commented_debate.title)
     end
+
+    scenario 'Debates are ordered randomly' do
+      create_list(:debate, 12)
+      visit debates_path
+
+      select 'random', from: 'order-selector'
+      expect(page).to have_select('order-selector', selected: 'random')
+      debates_first_time = find("#debates").text
+
+      select 'most commented', from: 'order-selector'
+      expect(page).to have_select('order-selector', selected: 'most commented')
+      expect(find("#debates .debate", match: :first)).to have_content(@most_commented_debate.title)
+
+      select 'random', from: 'order-selector'
+      expect(page).to have_select('order-selector', selected: 'random')
+      debates_second_time = find("#debates").text
+
+      expect(debates_first_time).to_not eq(debates_second_time)
+    end
   end
 end
