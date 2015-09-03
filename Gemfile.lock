@@ -79,6 +79,8 @@ GEM
     capistrano-rvm (0.1.2)
       capistrano (~> 3.0)
       sshkit (~> 1.2)
+    capistrano3-delayed-job (1.4.0)
+      capistrano (>= 3.0.0)
     capybara (2.5.0)
       mime-types (>= 1.16)
       nokogiri (>= 1.3.3)
@@ -406,6 +408,7 @@ DEPENDENCIES
   capistrano-bundler (= 1.1.4)
   capistrano-rails (= 1.1.3)
   capistrano-rvm
+  capistrano3-delayed-job (~> 1.0)
   capybara
   ckeditor
   coffee-rails (~> 4.1.0)
