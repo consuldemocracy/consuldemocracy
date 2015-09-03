@@ -15,7 +15,7 @@ feature 'Residence' do
     fill_in 'residence_postal_code', with: '28013'
     check 'residence_terms_of_service'
 
-    click_button 'Verify'
+    click_button 'Verify residence'
 
     expect(page).to have_content 'Residence verified'
   end
@@ -27,7 +27,7 @@ feature 'Residence' do
     visit account_path
     click_link 'Verify my account'
 
-    click_button 'Verify'
+    click_button 'Verify residence'
 
     expect(page).to have_content /\d errors? prevented your residence verification/
   end
@@ -47,7 +47,7 @@ feature 'Residence' do
     fill_in 'residence_postal_code', with: '28013'
     check 'residence_terms_of_service'
 
-    click_button 'Verify'
+    click_button 'Verify residence'
 
     expect(page).to have_content 'The census of the city of Madrid could not verify your information'
   end
@@ -68,11 +68,11 @@ feature 'Residence' do
       fill_in 'residence_postal_code', with: '28013'
       check 'residence_terms_of_service'
 
-      click_button 'Verify'
+      click_button 'Verify residence'
       expect(page).to have_content 'The census of the city of Madrid could not verify your information'
     end
 
-    click_button 'Verify'
+    click_button 'Verify residence'
     expect(page).to have_content 'You have reached the maximum number of Census verification tries'
     expect(URI.parse(current_url).path).to eq(account_path)
 

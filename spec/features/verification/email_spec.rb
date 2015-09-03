@@ -19,7 +19,7 @@ feature 'Verify email' do
 
     within("#verified_user_#{verified_user.id}_email") do
       expect(page).to have_content 'roc*@example.com'
-      click_button "Send"
+      click_button "Send code"
     end
 
     expect(page).to have_content 'We have send you a confirmation email to your email account: rock@example.com'
@@ -58,7 +58,7 @@ feature 'Verify email' do
     visit verified_user_path
 
     verified_user.destroy
-    click_button "Send"
+    click_button "Send code"
 
     expect(page).to have_content "There was a problem sending you an email to your account"
   end
