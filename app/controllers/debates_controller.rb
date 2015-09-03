@@ -10,7 +10,7 @@ class DebatesController < ApplicationController
     @debates = Debate.all
     @debates = @debates.tagged_with(@tag_filter) if @tag_filter
     @debates = @debates.page(params[:page]).for_render.send("sort_by_#{@order}")
-    @tag_cloud = Debate.tag_counts.order('count desc, name asc')
+    @tag_cloud = Debate.tag_counts.order(taggings_count: :desc, name: :asc).limit(20)
     set_debate_votes(@debates)
   end
 
