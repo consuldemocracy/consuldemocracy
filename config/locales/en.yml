@@ -59,7 +59,7 @@ en:
       accept_terms: I accept the privacy policy and the legal terms
       user: account
       debate: debate
-      sms: phone
+      verification::sms: phone
   application:
     alert:
       only_beta_testers: "Sorry only Beta Testers are allowed access at the moment"

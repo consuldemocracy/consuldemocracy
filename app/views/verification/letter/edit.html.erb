@@ -19,17 +19,18 @@
 
     <div class="small-12 medium-12 column">
 
-      <h1 class="inline-block"><%= t("verification.letter.new.title") %></h1>
+      <h1 class="inline-block"><%= t("verification.letter.edit.title") %></h1>
 
-      <%= t("verification.letter.new.explanation_html") %>
+      <div class="small-12 medium-6">
+        <%= form_for @letter, as: "letter", url: letter_path, method: :put do |f| %>
+          <% if @error %>
+            <div class="alert-box alert radius"><%= @error %></div>
+          <% end %>
 
-      <%= link_to t("verification.letter.new.offices"), t("verification.letter.new.offices_url"),
-          target: "_blank", class: "button radius inline-block"
-      %>
-
-      <%= form_for @letter, as: "letter", url: letter_path do |f| %>
-        <%= f.submit t("verification.letter.new.send_letter"), class: "button radius secondary inline-block" %>
-      <% end %>
+          <%= f.text_field :verification_code, label: t("verification.letter.edit.confirmation_code") %>
+          <%= f.submit t("verification.letter.new.send_code"), class: "button radius success" %>
+        <% end %>
+      </div>
 
     </div>
   </div>
