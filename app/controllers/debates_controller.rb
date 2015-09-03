@@ -85,8 +85,9 @@ class DebatesController < ApplicationController
     end
 
     def parse_tag_filter
-      valid_tags = ActsAsTaggableOn::Tag.all.map(&:name)
-      @tag_filter = params[:tag] if valid_tags.include?(params[:tag])
+      if params[:tag].present?
+        @tag_filter = params[:tag] if ActsAsTaggableOn::Tag.where(name: params[:tag]).exists?
+      end
     end
 
 end
