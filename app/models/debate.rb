@@ -35,14 +35,6 @@ class Debate < ActiveRecord::Base
   # Ahoy setup
   visitable # Ahoy will automatically assign visit_id on create
 
-  def self.search(params)
-    if params[:tag]
-      tagged_with(params[:tag])
-    else
-      all
-    end
-  end
-
   def likes
     cached_votes_up
   end
