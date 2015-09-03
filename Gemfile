@@ -43,6 +43,8 @@ gem 'paranoia'
 gem 'savon'
 gem 'dalli'
 gem 'rollbar', '~> 2.2.1'
+gem 'delayed_job_active_record'
+gem 'daemons'
 
 gem 'ahoy_matey', '~> 1.2.1'
 gem 'groupdate'   # group temporary data
