@@ -32,7 +32,7 @@ feature 'Organizations' do
 
   scenario 'Shared links' do
     visit new_user_registration_path
-    expect(page).to have_link "Sign up as an organization"
+    expect(page).to have_link "Sign up as an organization / collective"
 
     visit new_organization_registration_path
     expect(page).to have_link "Sign up"

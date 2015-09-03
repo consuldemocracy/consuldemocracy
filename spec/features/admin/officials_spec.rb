@@ -29,7 +29,7 @@ feature 'Admin officials' do
     expect(page).to have_content @official.email
 
     fill_in 'user_official_position', with: 'School Teacher'
-    select '3', from: 'user_official_level'
+    select '3', from: 'user_official_level', exact: false
     click_button 'Update User'
 
     expect(page).to have_content 'Official position saved!'
@@ -52,7 +52,7 @@ feature 'Admin officials' do
     click_link @citizen.name
 
     fill_in 'user_official_position', with: 'Hospital manager'
-    select '4', from: 'user_official_level'
+    select '4', from: 'user_official_level', exact: false
     click_button 'Update User'
 
     expect(page).to have_content 'Official position saved!'
