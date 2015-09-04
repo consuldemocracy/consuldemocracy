@@ -350,67 +350,63 @@ feature 'Debates' do
     expect(Flag.flagged?(user, debate)).to_not be
   end
 
-  feature 'Debate index order filters', :js do
+  feature 'Debate index order filters' do
 
-    before do
-      @most_commented_debate  = create(:debate)
-      @most_score_debate      = create(:debate)
-      @most_recent_debate     = create(:debate)
-      create_list(:comment, 2, commentable: @most_commented_debate)
-      create_list(:vote, 2, votable: @most_score_debate)
-      create_list(:vote, 2, votable: @most_recent_debate, vote_flag: false)
-      create(:vote, votable: @most_recent_debate)
-      create(:comment, commentable: @most_recent_debate)
-    end
+    scenario 'Default order is hot_score', :js do
+      create(:debate, title: 'best',   hot_score: 10)
+      create(:debate, title: 'medium', hot_score: 5)
+      create(:debate, title: 'worst',  hot_score: 2)
 
-    scenario 'Default order is created_at' do
       visit debates_path
 
-      expect(page).to have_select('order-selector', selected: 'newest')
-      expect(@most_recent_debate.title).to appear_before(@most_score_debate.title)
-      expect(@most_score_debate.title).to appear_before(@most_commented_debate.title)
+      expect(page).to have_select('order-selector', selected: 'most active')
+      expect('best').to appear_before('medium')
+      expect('medium').to appear_before('worst')
     end
 
-    scenario 'Debates are ordered by best rated' do
-      visit debates_path
+    scenario 'Debates are ordered by best rated', :js do
+      create(:debate, title: 'best',   cached_votes_score: 10)
+      create(:debate, title: 'medium', cached_votes_score: 5)
+      create(:debate, title: 'worst',  cached_votes_score: 2)
 
+      visit debates_path
       select 'best rated', from: 'order-selector'
+
       expect(page).to have_select('order-selector', selected: 'best rated')
-      expect(find("#debates .debate", match: :first)).to have_content(@most_score_debate.title)
-
+      expect('best').to appear_before('medium')
+      expect('medium').to appear_before('worst')
       expect(current_url).to include('order=score')
-      expect(@most_score_debate.title).to appear_before(@most_commented_debate.title)
-      expect(@most_commented_debate.title).to appear_before(@most_recent_debate.title)
     end
 
-    scenario 'Debates are ordered by most commented' do
-      visit debates_path
+    scenario 'Debates are ordered by most commented', :js do
+      create(:debate, title: 'best',   comments_count: 10)
+      create(:debate, title: 'medium', comments_count: 5)
+      create(:debate, title: 'worst',  comments_count: 2)
 
+      visit debates_path
       select 'most commented', from: 'order-selector'
+
       expect(page).to have_select('order-selector', selected: 'most commented')
-      expect(find("#debates .debate", match: :first)).to have_content(@most_commented_debate.title)
-
+      expect('best').to appear_before('medium')
+      expect('medium').to appear_before('worst')
       expect(current_url).to include('order=most_commented')
-      expect(@most_commented_debate.title).to appear_before(@most_recent_debate.title)
-      expect(@most_recent_debate.title).to appear_before(@most_score_debate.title)
     end
 
-    scenario 'Debates are ordered by newest' do
+    scenario 'Debates are ordered by newest', :js do
+      create(:debate, title: 'best',   created_at: Time.now)
+      create(:debate, title: 'medium', created_at: Time.now - 1.hour)
+      create(:debate, title: 'worst',  created_at: Time.now - 1.day)
+
       visit debates_path
-
-      select 'best rated', from: 'order-selector'
-      expect(find("#debates .debate", match: :first)).to have_content(@most_score_debate.title)
-
       select 'newest', from: 'order-selector'
-      expect(page).to have_select('order-selector', selected: 'newest')
-      expect(find("#debates .debate", match: :first)).to have_content(@most_recent_debate.title)
 
+      expect(page).to have_select('order-selector', selected: 'newest')
+      expect('best').to appear_before('medium')
+      expect('medium').to appear_before('worst')
       expect(current_url).to include('order=created_at')
-      expect(@most_recent_debate.title).to appear_before(@most_score_debate.title)
-      expect(@most_score_debate.title).to appear_before(@most_commented_debate.title)
     end
 
-    scenario 'Debates are ordered randomly' do
+    scenario 'Debates are ordered randomly', :js do
       create_list(:debate, 12)
       visit debates_path
 
@@ -420,7 +416,6 @@ feature 'Debates' do
 
       select 'most commented', from: 'order-selector'
       expect(page).to have_select('order-selector', selected: 'most commented')
-      expect(find("#debates .debate", match: :first)).to have_content(@most_commented_debate.title)
 
       select 'random', from: 'order-selector'
       expect(page).to have_select('order-selector', selected: 'random')

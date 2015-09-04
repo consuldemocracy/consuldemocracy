@@ -82,8 +82,8 @@ class DebatesController < ApplicationController
     end
 
     def parse_order
-      @valid_orders = ['created_at', 'score', 'most_commented', 'random']
-      @order = @valid_orders.include?(params[:order]) ? params[:order] : 'created_at'
+      @valid_orders = ['hot_score', 'created_at', 'score', 'most_commented', 'random']
+      @order = @valid_orders.include?(params[:order]) ? params[:order] : @valid_orders.first
     end
 
     def parse_tag_filter
