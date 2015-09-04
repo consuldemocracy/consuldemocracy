@@ -1,9 +1,9 @@
 FactoryGirl.define do
   factory :user do
-    username         'Manuela'
-    sequence(:email) { |n| "manuela#{n}@madrid.es" }
-    password         'judgmentday'
-    confirmed_at     { Time.now }
+    sequence(:username) { |n| "Manuela#{n}" }
+    sequence(:email)    { |n| "manuela#{n}@madrid.es" }
+    password            'judgmentday'
+    confirmed_at        { Time.now }
 
     trait :hidden do
       hidden_at Time.now

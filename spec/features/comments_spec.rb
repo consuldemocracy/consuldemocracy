@@ -11,7 +11,7 @@ feature 'Comments' do
 
     expect(page).to have_css('.comment', count: 3)
 
-    comment = Comment.first
+    comment = Comment.last
     within first('.comment') do
       expect(page).to have_content comment.user.name
       expect(page).to have_content time_ago_in_words(comment.created_at)

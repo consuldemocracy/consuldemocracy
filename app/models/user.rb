@@ -22,6 +22,7 @@ class User < ActiveRecord::Base
   has_many :comments, -> { with_hidden }
 
   validates :username, presence: true, unless: :organization?
+  validates :username, uniqueness: true, unless: :organization?
   validates :official_level, inclusion: {in: 0..5}
   validates_format_of :email, without: OMNIAUTH_EMAIL_REGEX, on: :update
 
