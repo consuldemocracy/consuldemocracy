@@ -7,7 +7,7 @@ en:
       external_link_opendata: Open data
       external_link_opendata_url: "http://datos.madrid.es"
       external_link_blog: Blog
-      external_link_blog_url: "http://diario.madrid.es/"
+      external_link_blog_url: "http://diario.madrid.es/participa/"
       open_gov: "%{open} government"
       open: "Open"
       participation: Participation
@@ -130,11 +130,10 @@ en:
       start_new: Start a debate
       back_link: Back
       recommendations_title: Tips for creating a debate
-      recommendation_one: "On the Internet it is easy to say things you would not dare to say face to face. The tone of what you say you will be matched by a similar tone in the answers."
-      recommendation_two: "Do not write the title of the debate or whole sentences in capital. On the Internet this is considered shouting. And nobody likes to scream."
-      recommendation_three: "Any discussion or comment that involves an illegal act will be eliminated, also intending to sabotage the debate spaces, everything else is permitted."
-      recommendation_four: "The harsh criticism are very welcome. This is a space of thought but we recommend preserving the elegance and intelligence. The world is better with them present."
-      recommendation_five: "Enjoy this space, voices that fill it, it is yours too."
+      recommendation_one: "Do not write the title of the debate or whole sentences in capital. On the Internet this is considered shouting. And nobody likes to scream."
+      recommendation_two: "Any discussion or comment that involves an illegal act will be eliminated, also intending to sabotage the debate spaces, everything else is permitted."
+      recommendation_three: "The harsh criticism are very welcome. This is a space of thought but we recommend preserving the elegance and intelligence. The world is better with them present."
+      recommendation_four: "Enjoy this space, voices that fill it, it is yours too."
       form:
         submit_button: "Start a debate"
     create:
