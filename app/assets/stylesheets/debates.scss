@@ -276,7 +276,7 @@
   .panel {
     border: 0;
     border-radius: 0;
-    margin-bottom: 0;
+    margin-bottom: rem-calc(2);
     min-height: rem-calc(192);
     padding: 0 rem-calc(12) rem-calc(2) rem-calc(12);
 
@@ -416,6 +416,10 @@
     font-size: rem-calc(24);
     font-weight: bold;
     margin: 0;
+  }
+
+  .edit-debate {
+    margin-bottom: 0;
   }
 
   .debate-info {
