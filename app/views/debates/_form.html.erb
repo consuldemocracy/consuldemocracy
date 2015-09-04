@@ -25,7 +25,12 @@
 
     <div class="small-12 column">
       <% if @debate.new_record? %>
-        <%= f.check_box :terms_of_service, label: t("form.accept_terms") %>
+        <%= f.label :terms_of_service do %>
+          <%= f.check_box :terms_of_service, label: false %>
+          <%= t("form.accept_terms",
+              policy: link_to(t("form.policy"), "/privacy", target: "blank"), conditions: link_to(t("form.conditions"), "/conditions", target: "blank")).html_safe
+          %>
+        <% end %>
       <% end %>
     </div>
 
@@ -38,3 +43,5 @@
     </div>
   </div>
 <% end %>
+
+

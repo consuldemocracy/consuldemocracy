@@ -10,8 +10,8 @@ en:
       external_link_blog_url: "http://diario.madrid.es/participa/"
       open_gov: "%{open} government"
       open: "Open"
+      logo: "Open government | Participation"
       participation: Participation
-      menu: Menu
       open_city_title: "The city you want, it will be the city you want."
       open_city_slogan:
         "Start listening to Madrid.
@@ -56,7 +56,9 @@ en:
       error: error
       errors: errors
       not_saved: "prohibited this %{resource} from being saved:"
-      accept_terms: "I accept the Privacy policy and the Terms of use"
+      accept_terms: "I accept the %{policy} and the %{conditions}"
+      policy: "Privacy policy"
+      conditions: "Terms of use"
       user: account
       debate: debate
       verification::sms: phone
