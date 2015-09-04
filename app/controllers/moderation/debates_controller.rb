@@ -26,7 +26,7 @@ class Moderation::DebatesController < Moderation::BaseController
   private
 
     def load_debates
-      @debates = Debate.accessible_by(current_ability, :hide).flagged.sorted_for_moderation
+      @debates = Debate.accessible_by(current_ability, :hide).flagged.sort_for_moderation
     end
 
 end

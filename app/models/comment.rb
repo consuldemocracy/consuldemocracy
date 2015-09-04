@@ -17,7 +17,7 @@ class Comment < ActiveRecord::Base
 
   scope :recent, -> { order(id: :desc) }
 
-  scope :sorted_for_moderation, -> { order(flags_count: :desc, updated_at: :desc) }
+  scope :sort_for_moderation, -> { order(flags_count: :desc, updated_at: :desc) }
   scope :pending_flag_review, -> { where(ignored_flag_at: nil, hidden_at: nil) }
   scope :with_ignored_flag, -> { where("ignored_flag_at IS NOT NULL AND hidden_at IS NULL") }
   scope :flagged, -> { where("flags_count > 0") }
