@@ -45,8 +45,8 @@ feature 'Moderate debates' do
 
     scenario "Current filter is properly highlighted" do
       visit moderation_debates_path
-      expect(page).to_not have_link('All')
-      expect(page).to have_link('Pending')
+      expect(page).to_not have_link('Pending')
+      expect(page).to have_link('All')
       expect(page).to have_link('Ignored')
 
       visit moderation_debates_path(filter: 'all')
@@ -132,6 +132,8 @@ feature 'Moderate debates' do
         end
 
         expect(current_path).to eq(moderation_debates_path)
+
+        click_link('All')
 
         within("#debate_#{@debate.id}") do
           expect(page).to have_content('Ignored')
