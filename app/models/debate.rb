@@ -105,7 +105,7 @@ class Debate < ActiveRecord::Base
   end
 
   def after_commented
-    save # updates teh hot_score because there is a before_save
+    save # updates the hot_score because there is a before_save
   end
 
   def calculate_hot_score
