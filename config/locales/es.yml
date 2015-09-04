@@ -7,7 +7,7 @@ es:
       external_link_opendata: Datos abiertos
       external_link_opendata_url: "http://datos.madrid.es"
       external_link_blog: Blog
-      external_link_blog_url: "http://diario.madrid.es/participa/"
+      external_link_blog_url: "http://diario.madrid.es/"
       open_gov: "Gobierno %{open}"
       open: "abierto"
       participation: Participación
@@ -56,7 +56,7 @@ es:
       error: error
       errors: errores
       not_saved: "impidieron guardar %{resource}:"
-      accept_terms: Acepto la política de privacidad y el aviso legal
+      accept_terms: "Acepto la Política de privacidad y las Condiciones de uso"
       user: la cuenta
       debate: el debate
       verification::sms: el teléfono
