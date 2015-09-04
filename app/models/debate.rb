@@ -106,20 +106,22 @@ class Debate < ActiveRecord::Base
 
   def calculate_hot_score
     z          = 1.96 # Normal distribution with a confidence of 0.95
-    time_unit  = 12.hours
+    time_unit  = 1.0 * 12.hours
     start      = Time.new(2015, 6, 15)
+    comments_weight = 1.0/3 # 3 comments == 1 positive vote
 
-    n   = cached_votes_total + comments_count / 3
-    pos = cached_votes_up + comments_count / 3
+    weighted_score = 0
 
-    phat = 1.0 * pos / n
+    n = cached_votes_total + comments_weight * comments_count
+    if n > 0 then
+      pos = cached_votes_up + comments_weight * comments_count
+      phat = 1.0 * pos / n
+      weighted_score = (phat + z*z/(2*n) - z * Math.sqrt((phat*(1-phat)+z*z/(4*n))/n))/(1+z*z/n)
+    end
 
-    weigted_score = n == 0 ? 0 :
-      (phat + z*z/(2*n) - z * Math.sqrt((phat*(1-phat)+z*z/(4*n))/n))/(1+z*z/n)
+    age_in_units = 1.0 * ((created_at || Time.now) - start) / time_unit
 
-    age_in_units = ((created_at || Time.now) - start) / time_unit
-
-    self.hot_score = (age_in_units**3 + weigted_score * 1000).round
+    self.hot_score = (age_in_units**3 + weighted_score * 1000).round
   end
 
   protected
