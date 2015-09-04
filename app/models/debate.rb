@@ -104,6 +104,10 @@ class Debate < ActiveRecord::Base
     update(ignored_flag_at: Time.now)
   end
 
+  def after_commented
+    save # updates teh hot_score because there is a before_save
+  end
+
   def calculate_hot_score
     z          = 1.96 # Normal distribution with a confidence of 0.95
     time_unit  = 1.0 * 12.hours

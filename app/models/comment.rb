@@ -24,6 +24,8 @@ class Comment < ActiveRecord::Base
 
   scope :for_render, -> { with_hidden.includes(user: :organization) }
 
+  after_create :call_after_commented
+
   def self.build(commentable, user, body, p_id=nil)
     new commentable: commentable,
         user_id:     user.id,
@@ -85,6 +87,10 @@ class Comment < ActiveRecord::Base
 
   def reply?
     !root?
+  end
+
+  def call_after_commented
+    self.commentable.try(:after_commented)
   end
 
 end

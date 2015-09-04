@@ -229,6 +229,12 @@ describe Debate do
         3.times { debate.register_vote(create(:user), false) }
         expect(previous).to be > debate.hot_score
       end
+
+      it "increases with comments" do
+        previous = debate.hot_score
+        Comment.create(user: create(:user), commentable: debate, body: 'foo')
+        expect(previous).to be < debate.hot_score
+      end
     end
 
   end
