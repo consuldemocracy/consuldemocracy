@@ -44,13 +44,17 @@
           <h2><%= t("account.show.notifications")%></h2>
 
           <div>
-            <%= f.check_box :email_on_debate_comment, label: false %>
-            <span class="checkbox"><%= t("account.show.email_on_debate_comment_label") %></span>
+            <%= f.label :email_on_debate_comment do %>
+              <%= f.check_box :email_on_debate_comment, label: false %>
+              <span class="checkbox"><%= t("account.show.email_on_debate_comment_label") %></span>
+            <% end %>
           </div>
 
           <div>
-            <%= f.check_box :email_on_comment_reply, label: false %>
-            <span class="checkbox"><%= t("account.show.email_on_comment_reply_label") %></span>
+            <%= f.label :email_on_comment_reply do %>
+              <%= f.check_box :email_on_comment_reply, label: false %>
+              <span class="checkbox"><%= t("account.show.email_on_comment_reply_label") %></span>
+            <% end %>
           </div>
         </div>
 
