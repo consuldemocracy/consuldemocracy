@@ -43,6 +43,9 @@ gem 'paranoia'
 gem 'savon'
 gem 'dalli'
 gem 'rollbar', '~> 2.2.1'
+gem 'delayed_job_active_record'
+gem 'daemons'
+gem 'devise-async'
 
 gem 'ahoy_matey', '~> 1.2.1'
 gem 'groupdate'   # group temporary data
@@ -66,6 +69,7 @@ group :development, :test do
   gem "capistrano-bundler", '1.1.4',   require: false
   gem "capistrano-rails", '1.1.3',     require: false
   gem "capistrano-rvm",                require: false
+  gem 'capistrano3-delayed-job', '~> 1.0'
   gem "bullet"
   gem "faker"
 end

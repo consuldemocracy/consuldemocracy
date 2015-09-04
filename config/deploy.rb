@@ -36,6 +36,8 @@ set :local_user, ENV['USER']
 # Run test before deploy
 set :tests, ["spec"]
 
+set :delayed_job_workers, 2
+
 # Config files should be copied by deploy:setup_config
 set(:config_files, %w(
   log_rotation
@@ -57,4 +59,6 @@ namespace :deploy do
   after :finishing, 'deploy:cleanup'
   # Restart unicorn
   after 'deploy:publishing', 'deploy:restart'
+  # Restart Delayed Jobs
+  after 'deploy:published', 'delayed_job:restart'
 end

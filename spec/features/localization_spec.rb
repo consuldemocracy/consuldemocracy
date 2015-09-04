@@ -32,4 +32,15 @@ feature 'Localization' do
     expect(page).to_not have_content('Language')
     expect(page).to have_select('locale-switcher', selected: 'Español')
   end
+
+  scenario 'Locale switcher not present if only one locale' do
+    initial_locales = I18n.available_locales
+    I18n.available_locales = [:en]
+
+    visit '/'
+    expect(page).to_not have_content('Language')
+    expect(page).to_not have_css('div.locale')
+
+    I18n.available_locales = initial_locales
+  end
 end
