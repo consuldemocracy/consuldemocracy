@@ -174,20 +174,71 @@ describe Debate do
     end
   end
 
-  describe '#default_order' do
-    let!(:economy) { create(:debate) }
-    let!(:health)  { create(:debate) }
-
-    it "returns debates ordered by last one first" do
-      expect(Debate.all).to eq([health, economy])
-    end
-  end
-
   describe '#anonymous_votes_ratio' do
     it "returns the percentage of anonymous votes of the total votes" do
       debate = create(:debate, cached_anonymous_votes_total: 25, cached_votes_total: 100)
       expect(debate.anonymous_votes_ratio).to eq(25.0)
     end
   end
+
+  describe '#hot_score' do
+    let(:now) { Time.now }
+
+    it "increases for newer debates" do
+      old = create(:debate, :with_hot_score, created_at: now - 1.day)
+      new = create(:debate, :with_hot_score, created_at: now)
+      expect(new.hot_score).to be > old.hot_score
+    end
+
+    it "increases for debates with more comments" do
+      more_comments = create(:debate, :with_hot_score, created_at: now, comments_count: 10)
+      less_comments = create(:debate, :with_hot_score, created_at: now, comments_count: 1)
+      expect(more_comments.hot_score).to be > less_comments.hot_score
+    end
+
+    it "increases for debates with more positive votes" do
+      more_likes = create(:debate, :with_hot_score, created_at: now, cached_votes_total: 10, cached_votes_up: 5)
+      less_likes = create(:debate, :with_hot_score, created_at: now, cached_votes_total: 10, cached_votes_up: 1)
+      expect(more_likes.hot_score).to be > less_likes.hot_score
+    end
+
+    it "increases for debates with more confidence" do
+      more_confidence = create(:debate, :with_hot_score, created_at: now, cached_votes_total: 1000, cached_votes_up: 700)
+      less_confidence = create(:debate, :with_hot_score, created_at: now, cached_votes_total: 10, cached_votes_up: 9)
+      expect(more_confidence.hot_score).to be > less_confidence.hot_score
+    end
+
+    it "decays in older debates, even if they have more votes" do
+      older_more_voted = create(:debate, :with_hot_score, created_at: now - 2.days, cached_votes_total: 1000, cached_votes_up: 900)
+      new_less_voted   = create(:debate, :with_hot_score, created_at: now, cached_votes_total: 10, cached_votes_up: 9)
+      expect(new_less_voted.hot_score).to be > older_more_voted.hot_score
+    end
+
+    describe 'actions which affect it' do
+      let(:debate) { create(:debate, :with_hot_score) }
+
+      it "increases with likes" do
+        previous = debate.hot_score
+        5.times { debate.register_vote(create(:user), true) }
+        expect(previous).to be < debate.hot_score
+      end
+
+      it "decreases with dislikes" do
+        debate.register_vote(create(:user), true)
+        previous = debate.hot_score
+        3.times { debate.register_vote(create(:user), false) }
+        expect(previous).to be > debate.hot_score
+      end
+
+      it "increases with comments" do
+        previous = debate.hot_score
+        Comment.create(user: create(:user), commentable: debate, body: 'foo')
+        expect(previous).to be < debate.hot_score
+      end
+    end
+
+  end
+
+
 
 end

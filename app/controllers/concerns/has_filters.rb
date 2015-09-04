@@ -5,8 +5,7 @@ module HasFilters
     def has_filters(valid_filters, *args)
       before_action(*args) do
         @valid_filters = valid_filters
-        @current_filter = params[:filter]
-        @current_filter = @valid_filters.first unless @valid_filters.include?(@current_filter)
+        @current_filter = @valid_filters.include?(params[:filter]) ? params[:filter] : @valid_filters.first
       end
     end
   end

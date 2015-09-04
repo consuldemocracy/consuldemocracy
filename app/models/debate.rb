@@ -1,7 +1,5 @@
 require 'numeric'
 class Debate < ActiveRecord::Base
-  default_scope { order(created_at: :desc) }
-
   apply_simple_captcha
   TITLE_LENGTH = Debate.columns.find { |c| c.name == 'title' }.limit
 
@@ -23,15 +21,18 @@ class Debate < ActiveRecord::Base
   before_validation :sanitize_description
   before_validation :sanitize_tag_list
 
-  scope :sorted_for_moderation, -> { order(flags_count: :desc, updated_at: :desc) }
+  before_save :calculate_hot_score
+
+  scope :sort_for_moderation, -> { order(flags_count: :desc, updated_at: :desc) }
   scope :pending_flag_review, -> { where(ignored_flag_at: nil, hidden_at: nil) }
   scope :with_ignored_flag, -> { where("ignored_flag_at IS NOT NULL AND hidden_at IS NULL") }
   scope :flagged, -> { where("flags_count > 0") }
   scope :for_render, -> { includes(:tags) }
-  scope :sort_by_score , -> { reorder(cached_votes_score: :desc) }
-  scope :sort_by_created_at, -> { reorder(created_at: :desc) }
-  scope :sort_by_most_commented, -> { reorder(comments_count: :desc) }
-  scope :sort_by_random, -> { reorder("RANDOM()") }
+  scope :sort_by_hot_score , -> { order(hot_score: :desc) }
+  scope :sort_by_score , -> { order(cached_votes_score: :desc) }
+  scope :sort_by_created_at, -> { order(created_at: :desc) }
+  scope :sort_by_most_commented, -> { order(comments_count: :desc) }
+  scope :sort_by_random, -> { order("RANDOM()") }
 
   # Ahoy setup
   visitable # Ahoy will automatically assign visit_id on create
@@ -103,6 +104,30 @@ class Debate < ActiveRecord::Base
     update(ignored_flag_at: Time.now)
   end
 
+  def after_commented
+    save # updates teh hot_score because there is a before_save
+  end
+
+  def calculate_hot_score
+    z          = 1.96 # Normal distribution with a confidence of 0.95
+    time_unit  = 1.0 * 12.hours
+    start      = Time.new(2015, 6, 15)
+    comments_weight = 1.0/3 # 3 comments == 1 positive vote
+
+    weighted_score = 0
+
+    n = cached_votes_total + comments_weight * comments_count
+    if n > 0 then
+      pos = cached_votes_up + comments_weight * comments_count
+      phat = 1.0 * pos / n
+      weighted_score = (phat + z*z/(2*n) - z * Math.sqrt((phat*(1-phat)+z*z/(4*n))/n))/(1+z*z/n)
+    end
+
+    age_in_units = 1.0 * ((created_at || Time.now) - start) / time_unit
+
+    self.hot_score = (age_in_units**3 + weighted_score * 1000).round
+  end
+
   protected
 
   def sanitize_description
@@ -112,5 +137,4 @@ class Debate < ActiveRecord::Base
   def sanitize_tag_list
     self.tag_list = TagSanitizer.new.sanitize_tag_list(self.tag_list)
   end
-
 end

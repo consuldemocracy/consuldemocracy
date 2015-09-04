@@ -59,6 +59,7 @@ tags = Faker::Lorem.words(25)
   description = "<p>#{Faker::Lorem.paragraphs.join('</p></p>')}</p>"
   debate = Debate.create!(author: author,
                           title: Faker::Lorem.sentence(3),
+                          created_at: rand((Time.now - 1.week) .. Time.now),
                           description: description,
                           tag_list: tags.sample(3).join(','),
                           terms_of_service: "1")
@@ -72,6 +73,7 @@ puts "Commenting Debates"
   author = User.reorder("RANDOM()").first
   debate = Debate.reorder("RANDOM()").first
   Comment.create!(user: author,
+                  created_at: rand(debate.created_at .. Time.now),
                   commentable: debate,
                   body: Faker::Lorem.sentence)
 end
@@ -82,7 +84,8 @@ puts "Commenting Comments"
 (1..100).each do |i|
   author = User.reorder("RANDOM()").first
   parent = Comment.reorder("RANDOM()").first
-  comment = Comment.create!(user: author,
+  Comment.create!(user: author,
+                  created_at: rand(parent.created_at .. Time.now),
                   commentable_id: parent.commentable_id,
                   commentable_type: parent.commentable_type,
                   body: Faker::Lorem.sentence,

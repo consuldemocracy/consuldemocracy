@@ -101,6 +101,7 @@ ActiveRecord::Schema.define(version: 20150903200440) do
     t.datetime "confirmed_hide_at"
     t.integer  "cached_anonymous_votes_total",            default: 0
     t.integer  "cached_votes_score",                      default: 0
+    t.integer  "hot_score",                    limit: 8,  default: 0
   end
 
   add_index "debates", ["cached_votes_down"], name: "index_debates_on_cached_votes_down", using: :btree
