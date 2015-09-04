@@ -181,4 +181,38 @@ describe Debate do
     end
   end
 
+  describe '#hot_score' do
+    let(:now) { Time.now }
+
+    it "gets bigger for newer debates" do
+      old = create(:debate, :with_hot_score, created_at: now - 1.day)
+      new = create(:debate, :with_hot_score, created_at: now)
+      expect(new.hot_score).to be > old.hot_score
+    end
+
+    it "gets bigger for debates with more comments" do
+      more_comments = create(:debate, :with_hot_score, created_at: now, comments_count: 10)
+      less_comments = create(:debate, :with_hot_score, created_at: now, comments_count: 1)
+      expect(more_comments.hot_score).to be > less_comments.hot_score
+    end
+
+    it "gets bigger for debates with more positive votes" do
+      more_likes = create(:debate, :with_hot_score, created_at: now, cached_votes_total: 10, cached_votes_up: 5)
+      less_likes = create(:debate, :with_hot_score, created_at: now, cached_votes_total: 10, cached_votes_up: 1)
+      expect(more_likes.hot_score).to be > less_likes.hot_score
+    end
+
+    it "gets bigger for debates with more confidence" do
+      more_confidence = create(:debate, :with_hot_score, created_at: now, cached_votes_total: 1000, cached_votes_up: 700)
+      less_confidence = create(:debate, :with_hot_score, created_at: now, cached_votes_total: 10, cached_votes_up: 9)
+      expect(more_confidence.hot_score).to be > less_confidence.hot_score
+    end
+
+    it "decays older debates, even if they have more votes" do
+      older_more_voted = create(:debate, :with_hot_score, created_at: now - 2.days, cached_votes_total: 1000, cached_votes_up: 900)
+      new_less_voted   = create(:debate, :with_hot_score, created_at: now, cached_votes_total: 10, cached_votes_up: 9)
+      expect(new_less_voted.hot_score).to be > older_more_voted.hot_score
+    end
+  end
+
 end

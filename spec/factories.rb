@@ -71,6 +71,10 @@ FactoryGirl.define do
         Flag.flag(FactoryGirl.create(:user), debate)
       end
     end
+
+    trait :with_hot_score do
+      before(:save) { |d| d.calculate_hot_score }
+    end
   end
 
   factory :vote do
