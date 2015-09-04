@@ -174,15 +174,6 @@ describe Debate do
     end
   end
 
-  describe '#default_order' do
-    let!(:economy) { create(:debate) }
-    let!(:health)  { create(:debate) }
-
-    it "returns debates ordered by last one first" do
-      expect(Debate.all).to eq([health, economy])
-    end
-  end
-
   describe '#anonymous_votes_ratio' do
     it "returns the percentage of anonymous votes of the total votes" do
       debate = create(:debate, cached_anonymous_votes_total: 25, cached_votes_total: 100)

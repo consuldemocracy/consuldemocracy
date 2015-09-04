@@ -1,7 +1,5 @@
 require 'numeric'
 class Debate < ActiveRecord::Base
-  default_scope { order(created_at: :desc) }
-
   apply_simple_captcha
   TITLE_LENGTH = Debate.columns.find { |c| c.name == 'title' }.limit
 
