@@ -1,7 +1,12 @@
 <div class="verification account row">
   <div class="small-12 column">
 
-    <h1 class="inline-block"><%= t("verification.verified_user.show.title") %></h1>
+    <%= link_to account_path, class: "left back clear" do %>
+      <i class="icon-angle-left left"></i>
+      <%= t("verification.back") %>
+    <% end %>
+
+    <h1><%= t("verification.verified_user.show.title") %></h1>
 
     <p><%= t("verification.verified_user.show.explanation") %></p>
 

@@ -66,6 +66,10 @@
   padding: 0;
 }
 
+html, body {
+  height: 100%;
+}
+
 body {
   background: $body;
   font-family: $font-family-sans-serif;
@@ -226,6 +230,22 @@ h6 {
 .progress {
   background-color: rgba(0,0,0,.06);
   border: 0;
+}
+
+.wrapper {
+  min-height: 100%;
+  margin: 0 auto rem-calc(-288);
+  height: auto !important;
+  height: 100%;
+}
+
+.footer, .push {
+  clear: both;
+  min-height: rem-calc(288);
+}
+
+.footer {
+  background: $brand;
 }
 
 // 04. Header
@@ -460,7 +480,6 @@ header {
 
       &:hover {
         background: none;
-        // color: $link-hover;
         color: white;
         text-decoration: underline;
         transition: text-decoration 275ms;
@@ -499,41 +518,58 @@ header {
 }
 
 .subnavigation {
-  background: rgba(255,255,255,.95);
+  background: white;
   clear: both;
-  text-transform: lowercase;
 
   @media (min-width: $small-breakpoint) {
     text-align: center;
   }
 
   a {
-    color: $link;
-    display: inline-block;
+    color: $text;
+    display: block;
     font-size: rem-calc(14);
+    font-weight: bold;
     min-width: rem-calc(192);
     position: relative;
+    text-align: left;
+    margin-left: rem-calc(12);
+
+    @media (min-width: $small-breakpoint) {
+      display: inline-block;
+      line-height: $line-height*2;
+      margin-left: 0;
+      min-width: rem-calc(192);
+      text-align: center;
+    }
 
     &:hover {
-      color: $text;
-      text-decoration: underline;
+      color: $link;
+
+      @media (min-width: $small-breakpoint) {
+        background: rgba(0,119,185,.25);
+      }
     }
 
     &.active {
-      color: $text;
-      font-weight: bold;
+      color: $link;
 
-      &:after {
-        bottom: -16px;
-        left: 50%;
-        border: solid transparent;
-        content: " ";
-        height: 0;
-        width: 0;
-        position: absolute;
-        border-top-color: rgba(255,255,255,.95);
-        border-width: 8px;
-        margin-left: -8px;
+      @media (min-width: $small-breakpoint) {
+        background: $brand;
+        color: white;
+
+        &:after {
+          bottom: -16px;
+          left: 50%;
+          border: solid transparent;
+          content: " ";
+          height: 0;
+          width: 0;
+          position: absolute;
+          border-top-color: $brand;
+          border-width: 8px;
+          margin-left: -8px;
+        }
       }
     }
   }
@@ -543,7 +579,6 @@ header {
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
 footer {
-  background: $brand;
   color: white;
   padding: rem-calc(24) 0 rem-calc(48) 0;
   text-align: justify;
@@ -608,21 +643,20 @@ footer {
 .tags {
 
   a {
-    background: $background;
-    border: 1px solid $border;
-    border-radius: 3px;
-    color: $text-medium;
+    background: #f2f2f2;
+    border-radius: rem-calc(30);
+    color: #4d4d4d;
     display: inline-block;
     font-size: rem-calc(13);
+    font-weight: bold;
     line-height: rem-calc(22);
     margin-bottom: rem-calc(8);
-    padding: 0 rem-calc(6);
+    padding: 0 rem-calc(8);
 
     &:hover {
       color: $link;
       cursor: pointer;
       background: #E5F1F8;
-      border: 1px solid $brand;
     }
   }
 }
@@ -742,6 +776,10 @@ form {
     background: $input-bg;
     height: rem-calc(48);
     margin-bottom: rem-calc(16);
+
+    &.error {
+      margin-bottom: rem-calc(1);
+    }
   }
 
   input[type="checkbox"] + label,
@@ -832,6 +870,22 @@ form {
   position: absolute;
   top: 0;
   width: 100%;
+}
+
+span.error, small.error {
+  background: $alert-bg;
+  color: $alert-color;
+}
+
+.error small.error {
+  background: $alert-bg;
+  color: $alert-color;
+  display: inline-block;
+  margin: 0 rem-calc(6);
+}
+
+label.error, label.error a {
+  color: $alert-color;
 }
 
 // 10. User account
@@ -1148,7 +1202,7 @@ table {
 
 .page {
   background: white;
-  min-height: rem-calc(600);
+  padding-bottom: rem-calc(48);
 
   .menu {
     margin-top: rem-calc(24);
@@ -1282,8 +1336,8 @@ table {
   }
 
   .verification-step {
-    font-size: rem-calc(11);
-    padding-top: rem-calc(10);
+    font-size: rem-calc(12);
+    padding-top: rem-calc(6);
 
     @media (min-width: $small-breakpoint) {
       line-height: $line-height;

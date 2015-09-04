@@ -1,5 +1,6 @@
 en:
   verification:
+    back: "Back to my account"
     step_1: "1. Residence"
     step_2: "2. Confirmation code"
     step_3: "3. Final verification"

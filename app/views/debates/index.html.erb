@@ -1,10 +1,10 @@
 <section role="main">
 
   <div class="filters row">
-    <div class="small-9 column">
+    <div class="small-12 medium-9 column">
 
       <% if @tag_filter %>
-        <div class="inline-block small-8" >
+        <div class="inline-block small-12 medium-8" >
             <h2>
               <%= t("debates.index.filter_topic",
                      count: @debates.size,
@@ -14,13 +14,15 @@
       <% end %>
 
       <div class="inline-block <%= 'right' if @tag_filter %>">
-        <h6 class="inline-block">
           <% if @tag_filter %>
-            <%= t("debates.index.select_order") %>
+            <h6 class="inline-block">
+              <%= t("debates.index.select_order") %>
+            </h6>
           <% else %>
-            <%= t("debates.index.select_order_long") %>
+            <h2 class="inline-block">
+              <%= t("debates.index.select_order_long") %>
+            </h2>
           <% end %>
-        </h6>
         <form class="inline-block">
            <select class="js-location-changer" name="order-selector">
              <% @valid_orders.each do |order| %>

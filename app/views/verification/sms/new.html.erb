@@ -17,7 +17,12 @@
       <span class="meter" style="width: 66%"></span>
     </div>
 
-    <h1 class="inline-block"><%= t("verification.sms.new.title") %></h1>
+    <%= link_to account_path, class: "left back clear" do %>
+      <i class="icon-angle-left left"></i>
+      <%= t("verification.back") %>
+    <% end %>
+
+    <h1><%= t("verification.sms.new.title") %></h1>
 
     <%= form_for @sms, as: "sms", url: sms_path do |f| %>
       <%= render "shared/errors", resource: @sms %>
