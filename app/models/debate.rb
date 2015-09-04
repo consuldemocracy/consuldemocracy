@@ -26,11 +26,11 @@ class Debate < ActiveRecord::Base
   scope :with_ignored_flag, -> { where("ignored_flag_at IS NOT NULL AND hidden_at IS NULL") }
   scope :flagged, -> { where("flags_count > 0") }
   scope :for_render, -> { includes(:tags) }
-  scope :sort_by_score , -> { reorder(cached_votes_score: :desc) }
-  scope :sort_by_created_at, -> { reorder(created_at: :desc) }
-  scope :sort_by_most_commented, -> { reorder(comments_count: :desc) }
-  scope :sort_by_random, -> { reorder("RANDOM()") }
   scope :sort_by_hot_score , -> { order(hot_score: :desc) }
+  scope :sort_by_score , -> { order(cached_votes_score: :desc) }
+  scope :sort_by_created_at, -> { order(created_at: :desc) }
+  scope :sort_by_most_commented, -> { order(comments_count: :desc) }
+  scope :sort_by_random, -> { order("RANDOM()") }
 
   # Ahoy setup
   visitable # Ahoy will automatically assign visit_id on create
