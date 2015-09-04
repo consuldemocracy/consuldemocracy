@@ -70,7 +70,7 @@ feature 'Admin::Organizations' do
     organization = create(:organization)
 
     visit admin_organizations_path
-    within("organization_#{organization.id}") do
+    within("#organization_#{organization.id}") do
       expect(current_path).to eq(admin_organizations_path)
       expect(page).to have_link('Verify')
       expect(page).to have_link('Reject')
@@ -88,7 +88,7 @@ feature 'Admin::Organizations' do
 
     visit admin_organizations_path
     expect(current_path).to eq(admin_organizations_path)
-    within("organization_#{organization.id}") do
+    within("#organization_#{organization.id}") do
       expect(page).to have_content ('Verified')
       expect(page).to_not have_link('Verify')
       expect(page).to have_link('Reject')
@@ -106,7 +106,7 @@ feature 'Admin::Organizations' do
 
     visit admin_organizations_path
     expect(current_path).to eq(admin_organizations_path)
-    within("organization_#{organization.id}") do
+    within("#organization_#{organization.id}") do
       expect(page).to have_link('Verify')
       expect(page).to_not have_link('Reject', exact: true)
 
