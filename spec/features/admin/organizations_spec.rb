@@ -13,7 +13,7 @@ feature 'Admin::Organizations' do
 
     background do
       @user = create(:user, email: "marley@humanrights.com", phone_number: "6764440002")
-      organization = create(:organization, user: @user, name: "Get up, Stand up")
+      create(:organization, user: @user, name: "Get up, Stand up")
     end
 
     scenario "returns no results if search term is empty" do
@@ -70,11 +70,13 @@ feature 'Admin::Organizations' do
     organization = create(:organization)
 
     visit admin_organizations_path
-    expect(current_path).to eq(admin_organizations_path)
-    expect(page).to have_link('Verify')
-    expect(page).to have_link('Reject')
+    within("organization_#{organization.id}") do
+      expect(current_path).to eq(admin_organizations_path)
+      expect(page).to have_link('Verify')
+      expect(page).to have_link('Reject')
 
-    click_on 'Verify'
+      click_on 'Verify'
+    end
     expect(current_path).to eq(admin_organizations_path)
     expect(page).to have_content ('Verified')
 
@@ -86,11 +88,13 @@ feature 'Admin::Organizations' do
 
     visit admin_organizations_path
     expect(current_path).to eq(admin_organizations_path)
-    expect(page).to have_content ('Verified')
-    expect(page).to_not have_link('Verify')
-    expect(page).to have_link('Reject')
+    within("organization_#{organization.id}") do
+      expect(page).to have_content ('Verified')
+      expect(page).to_not have_link('Verify')
+      expect(page).to have_link('Reject')
 
-    click_on 'Reject'
+      click_on 'Reject'
+    end
     expect(current_path).to eq(admin_organizations_path)
     expect(page).to have_content ('Rejected')
 
@@ -102,10 +106,12 @@ feature 'Admin::Organizations' do
 
     visit admin_organizations_path
     expect(current_path).to eq(admin_organizations_path)
-    expect(page).to have_link('Verify')
-    expect(page).to_not have_link('Reject', exact: true)
+    within("organization_#{organization.id}") do
+      expect(page).to have_link('Verify')
+      expect(page).to_not have_link('Reject', exact: true)
 
-    click_on 'Verify'
+      click_on 'Verify'
+    end
     expect(current_path).to eq(admin_organizations_path)
     expect(page).to have_content ('Verified')
 

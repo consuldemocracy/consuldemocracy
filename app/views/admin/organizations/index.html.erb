@@ -19,7 +19,7 @@
 
 <table>
   <% @organizations.each do |organization| %>
-  <tr>
+    <tr id="<%= dom_id(oganization) %>">
     <td><%= organization.name %></td>
     <td><%= organization.email %></td>
     <td><%= organization.phone_number %></td>
