@@ -17,7 +17,12 @@
       <span class="meter" style="width: 33%"></span>
     </div>
 
-    <h1 class="inline-block"><%= t("verification.residence.new.title") %></h1>
+    <%= link_to account_path, class: "left back clear" do %>
+      <i class="icon-angle-left left"></i>
+      <%= t("verification.back") %>
+    <% end %>
+
+    <h1><%= t("verification.residence.new.title") %></h1>
 
     <%= form_for @residence, as: "residence", url: residence_path do |f| %>
       <%= render "errors" %>
@@ -47,8 +52,8 @@
       </div>
 
       <div class="small-12">
-        <%= f.check_box :terms_of_service, label: false %>
         <%= f.label :terms_of_service do %>
+          <%= f.check_box :terms_of_service, label: false %>
           <%= t("verification.residence.new.accept_terms_text",
               terms_url: link_to(t("verification.residence.new.terms"), "/census_terms",
               target: "_blank")).html_safe
