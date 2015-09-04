@@ -2,17 +2,14 @@ require 'rails_helper'
 
 feature 'Votes' do
 
+  background do
+    @manuela = create(:user, verified_at: Time.now)
+    @pablo = create(:user)
+
+    login_as(@manuela)
+  end
+
   feature 'Debates' do
-
-    background do
-      @manuela = create(:user, verified_at: Time.now)
-      @pablo = create(:user)
-      @debate = create(:debate)
-
-      login_as(@manuela)
-      visit debate_path(@debate)
-    end
-
     scenario "Home shows user votes on featured debates" do
       debate1 = create(:debate)
       debate2 = create(:debate)
@@ -109,63 +106,87 @@ feature 'Votes' do
       end
     end
 
-    scenario 'Show no votes' do
-      visit debate_path(@debate)
-
-      expect(page).to have_content "No votes"
-
-      within('.in-favor') do
-        expect(page).to have_content "0%"
-        expect(page).to_not have_css("a.voted")
-        expect(page).to_not have_css("a.no-voted")
+    feature 'Single debate' do
+      background do
+        @debate = create(:debate)
       end
 
-      within('.against') do
-        expect(page).to have_content "0%"
-        expect(page).to_not have_css("a.voted")
-        expect(page).to_not have_css("a.no-voted")
-      end
-    end
+      scenario 'Show no votes' do
+        visit debate_path(@debate)
 
-    scenario 'Show' do
-      create(:vote, voter: @manuela, votable: @debate, vote_flag: true)
-      create(:vote, voter: @pablo, votable: @debate, vote_flag: false)
+        expect(page).to have_content "No votes"
 
-      visit debate_path(@debate)
+        within('.in-favor') do
+          expect(page).to have_content "0%"
+          expect(page).to_not have_css("a.voted")
+          expect(page).to_not have_css("a.no-voted")
+        end
 
-      expect(page).to have_content "2 votes"
-
-      within('.in-favor') do
-        expect(page).to have_content "50%"
-        expect(page).to have_css("a.voted")
+        within('.against') do
+          expect(page).to have_content "0%"
+          expect(page).to_not have_css("a.voted")
+          expect(page).to_not have_css("a.no-voted")
+        end
       end
 
-      within('.against') do
-        expect(page).to have_content "50%"
-        expect(page).to have_css("a.no-voted")
+      scenario 'Update', :js do
+        visit debate_path(@debate)
+
+        find('.in-favor a').click
+        find('.against a').click
+
+        within('.in-favor') do
+          expect(page).to have_content "0%"
+          expect(page).to have_css("a.no-voted")
+        end
+
+        within('.against') do
+          expect(page).to have_content "100%"
+          expect(page).to have_css("a.voted")
+        end
+
+        expect(page).to have_content "1 vote"
       end
-    end
 
-    scenario 'Create from debate show', :js do
-      find('.in-favor a').click
+      scenario 'Trying to vote multiple times', :js do
+        visit debate_path(@debate)
 
-      within('.in-favor') do
-        expect(page).to have_content "100%"
-        expect(page).to have_css("a.voted")
+        find('.in-favor a').click
+        find('.in-favor a').click
+
+        within('.in-favor') do
+          expect(page).to have_content "100%"
+        end
+
+        within('.against') do
+          expect(page).to have_content "0%"
+        end
+
+        expect(page).to have_content "1 vote"
       end
 
-      within('.against') do
-        expect(page).to have_content "0%"
-        expect(page).to have_css("a.no-voted")
+      scenario 'Show' do
+        create(:vote, voter: @manuela, votable: @debate, vote_flag: true)
+        create(:vote, voter: @pablo, votable: @debate, vote_flag: false)
+
+        visit debate_path(@debate)
+
+        expect(page).to have_content "2 votes"
+
+        within('.in-favor') do
+          expect(page).to have_content "50%"
+          expect(page).to have_css("a.voted")
+        end
+
+        within('.against') do
+          expect(page).to have_content "50%"
+          expect(page).to have_css("a.no-voted")
+        end
       end
 
-      expect(page).to have_content "1 vote"
-    end
+      scenario 'Create from debate show', :js do
+        visit debate_path(@debate)
 
-    scenario 'Create from debate featured', :js do
-      visit root_path
-
-      within("#featured-debates") do
         find('.in-favor a').click
 
         within('.in-favor') do
@@ -180,73 +201,56 @@ feature 'Votes' do
 
         expect(page).to have_content "1 vote"
       end
-      expect(URI.parse(current_url).path).to eq(root_path)
-    end
 
-    scenario 'Create from debate index', :js do
-      visit debates_path
+      scenario 'Create in featured', :js do
+        visit root_path
 
-      within("#debates") do
+        within("#featured-debates") do
+          find('.in-favor a').click
 
-        find('.in-favor a').click
+          within('.in-favor') do
+            expect(page).to have_content "100%"
+            expect(page).to have_css("a.voted")
+          end
 
-        within('.in-favor') do
-          expect(page).to have_content "100%"
-          expect(page).to have_css("a.voted")
+          within('.against') do
+            expect(page).to have_content "0%"
+            expect(page).to have_css("a.no-voted")
+          end
+
+          expect(page).to have_content "1 vote"
         end
+        expect(URI.parse(current_url).path).to eq(root_path)
+      end
 
-        within('.against') do
-          expect(page).to have_content "0%"
-          expect(page).to have_css("a.no-voted")
+      scenario 'Create in index', :js do
+        visit debates_path
+
+        within("#debates") do
+
+          find('.in-favor a').click
+
+          within('.in-favor') do
+            expect(page).to have_content "100%"
+            expect(page).to have_css("a.voted")
+          end
+
+          within('.against') do
+            expect(page).to have_content "0%"
+            expect(page).to have_css("a.no-voted")
+          end
+
+          expect(page).to have_content "1 vote"
         end
-
-        expect(page).to have_content "1 vote"
+        expect(URI.parse(current_url).path).to eq(debates_path)
       end
-      expect(URI.parse(current_url).path).to eq(debates_path)
-    end
-
-    scenario 'Update', :js do
-      find('.in-favor a').click
-      find('.against a').click
-
-      within('.in-favor') do
-        expect(page).to have_content "0%"
-        expect(page).to have_css("a.no-voted")
-      end
-
-      within('.against') do
-        expect(page).to have_content "100%"
-        expect(page).to have_css("a.voted")
-      end
-
-      expect(page).to have_content "1 vote"
-    end
-
-    scenario 'Trying to vote multiple times', :js do
-      find('.in-favor a').click
-      find('.in-favor a').click
-
-      within('.in-favor') do
-        expect(page).to have_content "100%"
-      end
-
-      within('.against') do
-        expect(page).to have_content "0%"
-      end
-
-      expect(page).to have_content "1 vote"
     end
   end
 
   feature 'Comments' do
     background do
-      @manuela = create(:user)
-      @pablo = create(:user)
       @debate = create(:debate)
       @comment = create(:comment, commentable: @debate)
-
-      login_as(@manuela)
-      visit debate_path(@debate)
     end
 
     scenario 'Show' do
@@ -269,6 +273,8 @@ feature 'Votes' do
     end
 
     scenario 'Create', :js do
+      visit debate_path(@debate)
+
       within("#comment_#{@comment.id}_votes") do
         find(".in_favor a").click
 
@@ -285,6 +291,8 @@ feature 'Votes' do
     end
 
     scenario 'Update', :js do
+      visit debate_path(@debate)
+
       within("#comment_#{@comment.id}_votes") do
         find('.in_favor a').click
         find('.against a').click
@@ -302,6 +310,8 @@ feature 'Votes' do
     end
 
     scenario 'Trying to vote multiple times', :js do
+      visit debate_path(@debate)
+
       within("#comment_#{@comment.id}_votes") do
         find('.in_favor a').click
         find('.in_favor a').click
@@ -317,6 +327,5 @@ feature 'Votes' do
         expect(page).to have_content "1 vote"
       end
     end
-
   end
 end
