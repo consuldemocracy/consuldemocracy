@@ -51,6 +51,7 @@
 
     @media (min-width: $small-breakpoint) {
       font-size: rem-calc(28);
+
       span {
         font-size: rem-calc(20);
       }
@@ -405,8 +406,15 @@ header {
     background: none;
   }
 
-  .toggle-topbar a {
-    font-size: rem-calc(10);
+  .toggle-topbar {
+
+    a {
+      font-size: rem-calc(10);
+    }
+
+    &.menu-icon a {
+      padding: 0 rem-calc(24);
+    }
   }
 
   &.expanded .toggle-topbar a {
@@ -643,7 +651,7 @@ footer {
 .tags {
 
   a {
-    background: #f2f2f2;
+    background: $border;
     border-radius: rem-calc(30);
     color: #4d4d4d;
     display: inline-block;
@@ -705,6 +713,14 @@ footer {
 
   h1 {
     @include logo;
+
+    a {
+      line-height: $line-height;
+
+      span {
+        vertical-align: middle;
+      }
+    }
   }
 }
 
@@ -1202,6 +1218,7 @@ table {
 
 .page {
   background: white;
+  min-height: rem-calc(480);
   padding-bottom: rem-calc(48);
 
   .menu {
@@ -1260,6 +1277,7 @@ table {
         padding-bottom: rem-calc(12);
         padding-left: rem-calc(36);
         position: relative;
+        text-align: left;
 
         span {
           color: $text-medium;
@@ -1277,12 +1295,16 @@ table {
         }
 
         &:after {
-          content: 'c';
+          content: none;
           color: $text-light;
           font-family: "icons" !important;
           position: absolute;
           right: 0;
           top: rem-calc(6);
+
+          @media (min-width: $small-breakpoint) {
+            content: 'c';
+          }
         }
       }
     }
