@@ -373,7 +373,6 @@ feature 'Debates' do
 
       visit debates_path
 
-      expect(page).to have_select('order-selector', selected: 'most active')
       expect('best').to appear_before('medium')
       expect('medium').to appear_before('worst')
     end
@@ -385,9 +384,8 @@ feature 'Debates' do
 
       visit debates_path
       select 'best rated', from: 'order-selector'
-      expect(page).to have_select('order-selector', selected: 'best rated')
 
-      within '#debates' do
+      within '#debates.js-order-score' do
         expect('best').to appear_before('medium')
         expect('medium').to appear_before('worst')
       end
@@ -402,9 +400,8 @@ feature 'Debates' do
 
       visit debates_path
       select 'most commented', from: 'order-selector'
-      expect(page).to have_select('order-selector', selected: 'most commented')
 
-      within '#debates' do
+      within '#debates.js-order-most-commented' do
         expect('best').to appear_before('medium')
         expect('medium').to appear_before('worst')
       end
@@ -419,9 +416,8 @@ feature 'Debates' do
 
       visit debates_path
       select 'newest', from: 'order-selector'
-      expect(page).to have_select('order-selector', selected: 'newest')
 
-      within '#debates' do
+      within '#debates.js-order-created-at' do
         expect('best').to appear_before('medium')
         expect('medium').to appear_before('worst')
       end
@@ -434,18 +430,13 @@ feature 'Debates' do
       visit debates_path
 
       select 'random', from: 'order-selector'
-      expect(page).to have_select('order-selector', selected: 'random')
-      expect(page).to have_selector('#debates')
-      debates_first_time = find("#debates").text
+      debates_first_time = find("#debates.js-order-random").text
 
       select 'most commented', from: 'order-selector'
-      expect(page).to have_select('order-selector', selected: 'most commented')
-      expect(page).to have_selector('#debates')
+      expect(page).to have_selector('#debates.js-order-most-commented')
 
       select 'random', from: 'order-selector'
-      expect(page).to have_select('order-selector', selected: 'random')
-      expect(page).to have_selector('#debates')
-      debates_second_time = find("#debates").text
+      debates_second_time = find("#debates.js-order-random").text
 
       expect(debates_first_time).to_not eq(debates_second_time)
     end

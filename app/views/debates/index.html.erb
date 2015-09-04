@@ -38,7 +38,7 @@
   </div>
 
   <div class="row">
-    <div id="debates" class="debates-list small-12 medium-9 column">
+    <div id="debates" class="debates-list small-12 medium-9 column js-order-<%= @order.dasherize %>">
       <%= render @debates %>
       <%= paginate @debates %>
     </div>
