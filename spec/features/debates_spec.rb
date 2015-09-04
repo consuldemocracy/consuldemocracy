@@ -435,13 +435,16 @@ feature 'Debates' do
 
       select 'random', from: 'order-selector'
       expect(page).to have_select('order-selector', selected: 'random')
+      expect(page).to have_selector('#debates')
       debates_first_time = find("#debates").text
 
       select 'most commented', from: 'order-selector'
       expect(page).to have_select('order-selector', selected: 'most commented')
+      expect(page).to have_selector('#debates')
 
       select 'random', from: 'order-selector'
       expect(page).to have_select('order-selector', selected: 'random')
+      expect(page).to have_selector('#debates')
       debates_second_time = find("#debates").text
 
       expect(debates_first_time).to_not eq(debates_second_time)
