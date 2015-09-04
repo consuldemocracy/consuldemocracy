@@ -367,9 +367,9 @@ feature 'Debates' do
   feature 'Debate index order filters' do
 
     scenario 'Default order is hot_score', :js do
-      create(:debate, title: 'best',   hot_score: 10)
-      create(:debate, title: 'medium', hot_score: 5)
-      create(:debate, title: 'worst',  hot_score: 2)
+      create(:debate, title: 'best').update_column(:hot_score, 10)
+      create(:debate, title: 'worst').update_column(:hot_score, 2)
+      create(:debate, title: 'medium').update_column(:hot_score, 5)
 
       visit debates_path
 
