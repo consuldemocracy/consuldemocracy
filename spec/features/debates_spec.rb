@@ -430,7 +430,6 @@ feature 'Debates' do
 
       select 'most commented', from: 'order-selector'
       expect(page).to have_select('order-selector', selected: 'most commented')
-      expect(find("#debates .debate", match: :first)).to have_content(@most_commented_debate.title)
 
       select 'random', from: 'order-selector'
       expect(page).to have_select('order-selector', selected: 'random')
