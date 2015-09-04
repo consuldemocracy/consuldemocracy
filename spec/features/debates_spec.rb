@@ -69,6 +69,20 @@ feature 'Debates' do
     expect(page).to have_content I18n.l(Debate.last.created_at.to_date)
   end
 
+  scenario 'CKEditor is present before & after turbolinks update page', :js do
+    author = create(:user)
+    login_as(author)
+
+    visit new_debate_path
+
+    expect(page).to have_css "#cke_debate_description"
+
+    click_link 'Debates'
+    click_link 'Start a debate'
+
+    expect(page).to have_css "#cke_debate_description"
+  end
+
   scenario 'Captcha is required for debate creation' do
     login_as(create(:user))
 
