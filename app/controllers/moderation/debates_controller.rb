@@ -1,5 +1,5 @@
 class Moderation::DebatesController < Moderation::BaseController
-  has_filters %w{all pending_flag_review with_ignored_flag}, only: :index
+  has_filters %w{pending_flag_review all with_ignored_flag}, only: :index
 
   before_action :load_debates, only: :index
 

@@ -87,7 +87,9 @@ feature 'Admin::Organizations' do
     organization = create(:organization, :verified)
 
     visit admin_organizations_path
-    expect(current_path).to eq(admin_organizations_path)
+
+    click_on "Verified"
+
     within("#organization_#{organization.id}") do
       expect(page).to have_content ('Verified')
       expect(page).to_not have_link('Verify')
@@ -96,7 +98,11 @@ feature 'Admin::Organizations' do
       click_on 'Reject'
     end
     expect(current_path).to eq(admin_organizations_path)
+    expect(page).to_not have_content (organization.name)
+
+    click_on 'Rejected'
     expect(page).to have_content ('Rejected')
+    expect(page).to have_content (organization.name)
 
     expect(organization.reload.rejected?).to eq(true)
   end
@@ -105,7 +111,8 @@ feature 'Admin::Organizations' do
     organization = create(:organization, :rejected)
 
     visit admin_organizations_path
-    expect(current_path).to eq(admin_organizations_path)
+    click_on "Rejected"
+
     within("#organization_#{organization.id}") do
       expect(page).to have_link('Verify')
       expect(page).to_not have_link('Reject', exact: true)
@@ -113,15 +120,18 @@ feature 'Admin::Organizations' do
       click_on 'Verify'
     end
     expect(current_path).to eq(admin_organizations_path)
-    expect(page).to have_content ('Verified')
+    expect(page).to_not have_content (organization.name)
+    click_on('Verified')
+
+    expect(page).to have_content (organization.name)
 
     expect(organization.reload.verified?).to eq(true)
   end
 
   scenario "Current filter is properly highlighted" do
     visit admin_organizations_path
-    expect(page).to_not have_link('All')
-    expect(page).to have_link('Pending')
+    expect(page).to_not have_link('Pending')
+    expect(page).to have_link('All')
     expect(page).to have_link('Verified')
     expect(page).to have_link('Rejected')
 

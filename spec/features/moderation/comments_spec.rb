@@ -102,8 +102,8 @@ feature 'Moderate Comments' do
 
     scenario "Current filter is properly highlighted" do
       visit moderation_comments_path
-      expect(page).to_not have_link('All')
-      expect(page).to have_link('Pending')
+      expect(page).to_not have_link('Pending')
+      expect(page).to have_link('All')
       expect(page).to have_link('Ignored')
 
       visit moderation_comments_path(filter: 'all')
@@ -190,6 +190,8 @@ feature 'Moderate Comments' do
         end
 
         expect(current_path).to eq(moderation_comments_path)
+
+        click_link('Ignored')
 
         within("#comment_#{@comment.id}") do
           expect(page).to have_content('Ignored')
