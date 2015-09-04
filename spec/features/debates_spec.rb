@@ -385,10 +385,13 @@ feature 'Debates' do
 
       visit debates_path
       select 'best rated', from: 'order-selector'
-
       expect(page).to have_select('order-selector', selected: 'best rated')
-      expect('best').to appear_before('medium')
-      expect('medium').to appear_before('worst')
+
+      within '#debates' do
+        expect('best').to appear_before('medium')
+        expect('medium').to appear_before('worst')
+      end
+
       expect(current_url).to include('order=score')
     end
 
@@ -399,10 +402,13 @@ feature 'Debates' do
 
       visit debates_path
       select 'most commented', from: 'order-selector'
-
       expect(page).to have_select('order-selector', selected: 'most commented')
-      expect('best').to appear_before('medium')
-      expect('medium').to appear_before('worst')
+
+      within '#debates' do
+        expect('best').to appear_before('medium')
+        expect('medium').to appear_before('worst')
+      end
+
       expect(current_url).to include('order=most_commented')
     end
 
@@ -413,10 +419,13 @@ feature 'Debates' do
 
       visit debates_path
       select 'newest', from: 'order-selector'
-
       expect(page).to have_select('order-selector', selected: 'newest')
-      expect('best').to appear_before('medium')
-      expect('medium').to appear_before('worst')
+
+      within '#debates' do
+        expect('best').to appear_before('medium')
+        expect('medium').to appear_before('worst')
+      end
+
       expect(current_url).to include('order=created_at')
     end
 
