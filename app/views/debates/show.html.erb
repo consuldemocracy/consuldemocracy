@@ -1,99 +1,81 @@
-<section class="debate-show">
-  <div id="<%= dom_id(@debate) %>" class="row">
-    <div class="small-12 medium-9 column">
-      <i class="icon-angle-left left"></i>&nbsp;<%= link_to t("debates.show.back_link"), debates_path, class: 'left back' %>
+<% cache [locale_and_user_status, @debate, Flag.flagged?(current_user, @debate)] do %>
+  <section class="debate-show">
+    <div id="<%= dom_id(@debate) %>" class="row">
+      <div class="small-12 medium-9 column">
+        <i class="icon-angle-left left"></i>&nbsp;
+        <%= link_to t("debates.show.back_link"), debates_path, class: 'left back' %>
 
-      <% if current_user && @debate.editable_by?(current_user) %>
-        <%= link_to edit_debate_path(@debate), :class => 'edit-debate button success tiny radius right' do %>
-          <i class="icon-edit"></i>
-          <%= t("debates.show.edit_debate_link") %>
-        <% end %>
-      <% end %>
-
-      <h1><%= @debate.title %></h1>
-
-      <div class="debate-info">
-        <%= avatar_image(@debate.author, seed: @debate.author_id, size: 32, class: 'author-photo') %>
-        <% if @debate.author.hidden? %>
-          <i class="icon-deleted author-deleted"></i>
-          <span class="author">
-              <%= t("debates.show.author_deleted") %>
-          </span>
-        <% else %>
-          <span class="author">
-              <%= @debate.author.name %>
-          </span>
-          <% if @debate.author.official? %>
-            &nbsp;&bullet;&nbsp;
-            <span class="label round level-<%= @debate.author.official_level %>">
-              <%= @debate.author.official_position %>
-            </span>
+        <% if current_user && @debate.editable_by?(current_user) %>
+          <%= link_to edit_debate_path(@debate), class: 'edit-debate button success tiny radius right' do %>
+            <i class="icon-edit"></i>
+            <%= t("debates.show.edit_debate_link") %>
           <% end %>
         <% end %>
-        <% if @debate.author.verified_organization? %>
-          &nbsp;&bullet;&nbsp;
-          <span class="label round is-association">
-            <%= t("shared.collective") %>
+
+        <h1><%= @debate.title %></h1>
+
+        <div class="debate-info">
+          <%= avatar_image(@debate.author, seed: @debate.author_id, size: 32, class: 'author-photo') %>
+
+          <% if @debate.author.hidden? %>
+            <i class="icon-deleted author-deleted"></i>
+            <span class="author">
+                <%= t("debates.show.author_deleted") %>
+            </span>
+          <% else %>
+            <span class="author">
+                <%= @debate.author.name %>
+            </span>
+            <% if @debate.author.official? %>
+              &nbsp;&bullet;&nbsp;
+              <span class="label round level-<%= @debate.author.official_level %>">
+                <%= @debate.author.official_position %>
+              </span>
+            <% end %>
+          <% end %>
+
+          <% if @debate.author.verified_organization? %>
+            &nbsp;&bullet;&nbsp;
+            <span class="label round is-association">
+              <%= t("shared.collective") %>
+            </span>
+          <% end %>
+
+          <span class="bullet">&nbsp;&bullet;&nbsp;</span>
+          <%= l @debate.created_at.to_date %>
+          <span class="bullet">&nbsp;&bullet;&nbsp;</span>
+          <i class="icon-comments"></i>&nbsp;
+          <%= link_to t("debates.show.comments", count: @debate.comments_count), "#comments" %>
+          <span class="bullet">&nbsp;&bullet;&nbsp;</span>
+          <span class="js-flag-actions">
+            <%= render 'debates/flag_actions', debate: @debate %>
           </span>
+        </div>
+
+        <%= @debate.description %>
+
+        <%= render 'shared/tags', debate: @debate %>
+
+        <% if moderator? %>
+          <div class='js-moderator-debate-actions'>
+            <%= render 'actions', debate: @debate %>
+          </div>
         <% end %>
-        <span class="bullet">&nbsp;&bullet;&nbsp;</span>
-        <%= l @debate.created_at.to_date %>
-        <span class="bullet">&nbsp;&bullet;&nbsp;</span>
-        <i class="icon-comments"></i>&nbsp;
-        <%= link_to t("debates.show.comments", count: @debate.comments_count), "#comments" %>
-        <span class="bullet">&nbsp;&bullet;&nbsp;</span>
-        <span class="js-flag-actions">
-          <%= render 'debates/flag_actions', debate: @debate %>
-        </span>
       </div>
 
-      <%= @debate.description %>
-
-      <%= render 'shared/tags', debate: @debate %>
-
-      <% if moderator? %>
-        <div class='js-moderator-debate-actions'>
-          <%= render 'actions', debate: @debate %>
+      <aside class="small-12 medium-3 column">
+        <div class="sidebar-divider"></div>
+        <h3><%= t("votes.supports") %></h3>
+        <div class="text-center">
+          <div id="<%= dom_id(@debate) %>_votes">
+           <%= render 'debates/votes', debate: @debate %>
+          </div>
         </div>
-      <% end %>
+        <div class="sidebar-divider"></div>
+        <h3><%= t("debates.show.share") %></h3>
+        <%= social_share_button_tag(@debate.title) %>
+      </aside>
     </div>
-
-    <aside class="small-12 medium-3 column">
-      <div class="sidebar-divider"></div>
-      <h3><%= t("votes.supports") %></h3>
-      <div class="text-center">
-        <div id="<%= dom_id(@debate) %>_votes">
-         <%= render 'debates/votes', debate: @debate %>
-        </div>
-      </div>
-      <div class="sidebar-divider"></div>
-      <h3><%= t("debates.show.share") %></h3>
-      <%= social_share_button_tag(@debate.title) %>
-    </aside>
-  </div>
-</section>
-
-<section class="row-full comments">
-  <div class="row">
-    <div id="comments" class="small-12 column">
-
-      <h2>
-        <%= t("debates.show.comments_title") %>
-        <span>(<%= @debate.comments_count %>)</span>
-      </h2>
-      <% if user_signed_in? %>
-          <%= render 'comments/form', {commentable: @debate, parent_id: nil, toggeable: false} %>
-      <% else %>
-        <br>
-        <div class="alert-box radius info">
-          <%= t("debates.show.login_to_comment",
-            signin: link_to(t("votes.signin"), new_user_session_path),
-            signup: link_to(t("votes.signup"), new_user_registration_path)).html_safe %>
-        </div>
-      <% end %>
-
-      <%= render @root_comments %>
-      <%= paginate @root_comments %>
-    </div>
-  </div>
-</section>
+  </section>
+<% end %>
+<%= render "comments" %>
