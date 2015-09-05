@@ -7,7 +7,7 @@ es:
       external_link_opendata: Datos abiertos
       external_link_opendata_url: "http://datos.madrid.es"
       external_link_blog: Blog
-      external_link_blog_url: "http://diario.madrid.es/participa/"
+      external_link_blog_url: "http://diario.madrid.es/blog/category/gobiernoabierto"
       open_gov: "Gobierno %{open}"
       open: "abierto"
       logo: "Gobierno abierto | Participación"
