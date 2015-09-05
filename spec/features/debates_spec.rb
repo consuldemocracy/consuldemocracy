@@ -441,4 +441,23 @@ feature 'Debates' do
       expect(debates_first_time).to_not eq(debates_second_time)
     end
   end
+
+  scenario 'Debate index search' do
+    debate1 = create(:debate, title: "Show me what you got")
+    debate2 = create(:debate, title: "Get Schwifty")
+    debate3 = create(:debate, description: "Unity")
+    debate4 = create(:debate, description: "Schwifty in here")
+
+    visit debates_path
+    fill_in "search", with: "Schwifty"
+    click_button "Search"
+
+    within("#debates") do
+      expect(page).to have_css('.debate', count: 2)
+      expect(page).to have_content(debate2.title)
+      expect(page).to have_content(debate4.title)
+      expect(page).to_not have_content(debate1.title)
+      expect(page).to_not have_content(debate3.title)
+    end
+  end
 end

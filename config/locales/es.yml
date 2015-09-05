@@ -77,9 +77,11 @@ es:
         most_commented: "más comentados"
         random: "aleatorio"
       filter_topic:
-        one: "Estás viendo un debate con el tema ''%{topic}''"
-        other: "Estás viendo %{count} debates con el tema '%{topic}'"
-      search_results: "Mostrando %{number} debates que contienen '%{search_term}'"
+        one: " con el tema '%{topic}'"
+        other: " con el tema '%{topic}'"
+      search_results:
+        one: " que contiene '%{search_term}'"
+        other: " que contienen '%{search_term}'"
     debate:
       debate: Debate
       comments:
