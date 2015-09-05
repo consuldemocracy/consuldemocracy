@@ -19,6 +19,7 @@ class Verification::Residence
     self.date_of_birth = parse_date('date_of_birth', attrs)
     attrs = remove_date('date_of_birth', attrs)
     super
+    self.document_number.upcase!
   end
 
   def save
