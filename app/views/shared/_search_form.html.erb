@@ -1,0 +1,21 @@
+<div class="search-form">
+  <div class="sidebar-divider"></div>
+  <h3><%= t("shared.search_form.search_title") %></h3>
+  <br>
+  <div class="row">
+    <%= form_tag debates_path, method: :get do %>
+      <div class="small-12 columns">
+        <div class="row collapse">
+
+          <div class="small-9 medium-12 large-9 columns">
+            <input type="text" name="search" placeholder="<%= t("shared.search_form.search_placeholder") %>">
+          </div>
+          <div class="small-3 medium-12 large-3 columns">
+            <input type="submit" class="button warning postfix" value="<%= t('shared.search_form.search_button') %>">
+          </div>
+
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

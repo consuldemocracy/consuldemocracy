@@ -128,6 +128,10 @@ class Debate < ActiveRecord::Base
     self.hot_score = (age_in_units**3 + weighted_score * 1000).round
   end
 
+  def self.search(terms)
+    terms.present? ? where("title ILIKE ? OR description ILIKE ?", "%#{terms}%", "%#{terms}%") : none
+  end
+
   protected
 
   def sanitize_description

@@ -1,13 +1,14 @@
 class DebatesController < ApplicationController
   before_action :parse_order, only: :index
   before_action :parse_tag_filter, only: :index
+  before_action :parse_search_terms, only: :index
   before_action :authenticate_user!, except: [:index, :show]
 
   load_and_authorize_resource
   respond_to :html, :js
 
   def index
-    @debates = Debate.all
+    @debates = @search_terms.present? ? Debate.search(@search_terms) : Debate.all
     @debates = @debates.tagged_with(@tag_filter) if @tag_filter
     @debates = @debates.page(params[:page]).for_render.send("sort_by_#{@order}")
     @tag_cloud = Debate.tag_counts.order(taggings_count: :desc, name: :asc).limit(20)
@@ -90,6 +91,10 @@ class DebatesController < ApplicationController
       if params[:tag].present?
         @tag_filter = params[:tag] if ActsAsTaggableOn::Tag.where(name: params[:tag]).exists?
       end
+    end
+
+    def parse_search_terms
+      @search_terms = params[:search] if params[:search].present?
     end
 
 end

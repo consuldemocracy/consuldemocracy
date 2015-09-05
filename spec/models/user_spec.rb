@@ -249,7 +249,7 @@ describe User do
       expect(search.first).to eq(user1)
     end
 
-    it "returns no results if no email provided" do
+    it "returns no results if no search term provided" do
       expect(User.search("    ").size).to eq(0)
     end
   end

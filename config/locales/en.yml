@@ -77,8 +77,11 @@ en:
         most_commented: most commented
         random: random
       filter_topic:
-        one: "You are seeing one debate with the topic '%{topic}'"
-        other: "You are seeing %{count} debates with the topic '%{topic}'"
+        one: " with the topic '%{topic}'"
+        other: " with the topic '%{topic}'"
+      search_results:
+        one: " containing '%{search_term}'"
+        other: " containing '%{search_term}'"
     debate:
       debate: Debate
       comments:
@@ -193,6 +196,10 @@ en:
     flag: Flag as inappropriate
     unflag: Undo flag
     collective: Collective
+    search_form:
+      search_title: Search
+      search_button: Search
+      search_placeholder: "Search..."
   mailer:
     comment:
       subject: Someone has commented on your debate

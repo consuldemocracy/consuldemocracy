@@ -239,6 +239,33 @@ describe Debate do
 
   end
 
+  describe "self.search" do
+    it "find debates by title" do
+      debate1 = create(:debate, title: "Karpov vs Kasparov")
+      create(:debate, title: "Bird vs Magic")
+      search = Debate.search("Kasparov")
+      expect(search.size).to eq(1)
+      expect(search.first).to eq(debate1)
+    end
 
+    it "find debates by description" do
+      debate1 = create(:debate, description: "...chess masters...")
+      create(:debate, description: "...basket masters...")
+      search = Debate.search("chess")
+      expect(search.size).to eq(1)
+      expect(search.first).to eq(debate1)
+    end
+
+    it "find debates by title and description" do
+      create(:debate, title: "Karpov vs Kasparov", description: "...played like Gauss...")
+      create(:debate, title: "Euler vs Gauss", description: "...math masters...")
+      search = Debate.search("Gauss")
+      expect(search.size).to eq(2)
+    end
+
+    it "returns no results if no search term provided" do
+      expect(Debate.search("    ").size).to eq(0)
+    end
+  end
 
 end

@@ -77,8 +77,11 @@ es:
         most_commented: "más comentados"
         random: "aleatorio"
       filter_topic:
-        one: "Estás viendo un debate con el tema ''%{topic}''"
-        other: "Estás viendo %{count} debates con el tema '%{topic}'"
+        one: " con el tema '%{topic}'"
+        other: " con el tema '%{topic}'"
+      search_results:
+        one: " que contiene '%{search_term}'"
+        other: " que contienen '%{search_term}'"
     debate:
       debate: Debate
       comments:
@@ -189,10 +192,14 @@ es:
       debate: "el código secreto no coincide con la imagen"
   shared:
     tags_cloud:
-        tags: Temas
+      tags: Temas
     flag: Denunciar como inapropiado
     unflag: Deshacer denuncia
     collective: Colectivo
+    search_form:
+      search_title: Buscar
+      search_button: Buscar
+      search_placeholder: "Buscar..."
   mailer:
     comment:
       subject: Alguien ha comentado en tu debate
