@@ -169,6 +169,21 @@ feature 'Comments' do
     expect(Flag.flagged?(user, comment)).to_not be
   end
 
+  scenario "Flagging turbolinks sanity check", :js do
+    user = create(:user)
+    debate = create(:debate, title: "Should we change the world?")
+    comment = create(:comment, commentable: debate)
+
+    login_as(user)
+    visit debates_path
+    click_link "Should we change the world?"
+
+    within "#comment_#{comment.id}" do
+      page.find("#flag-expand-comment-#{comment.id}").click
+      expect(page).to have_selector("#flag-comment-#{comment.id}")
+    end
+  end
+
   feature "Moderators" do
     scenario "can create comment as a moderator", :js do
       moderator = create(:moderator)
