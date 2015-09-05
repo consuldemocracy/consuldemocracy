@@ -33,4 +33,8 @@ class PagesController < ApplicationController
 
   def transparency
   end
+
+  def blog
+    redirect_to "http://diario.madrid.es/blog/category/gobiernoabierto/"
+  end
 end
