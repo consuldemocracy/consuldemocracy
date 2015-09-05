@@ -64,7 +64,7 @@ describe PagesController do
 
     it 'should include a blog page' do
       get :blog
-      expect(response).to be_ok
+      expect(response).to be_redirect
     end
   end
 
