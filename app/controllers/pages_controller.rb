@@ -7,10 +7,13 @@ class PagesController < ApplicationController
   def conditions
   end
 
-  def cooming_soon
+  def general_terms
   end
 
-  def general_terms
+  def privacy
+  end
+
+  def cooming_soon
   end
 
   def how_it_works
@@ -26,9 +29,6 @@ class PagesController < ApplicationController
   end
 
   def participation
-  end
-
-  def privacy
   end
 
   def transparency
