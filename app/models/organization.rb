@@ -1,5 +1,5 @@
 class Organization < ActiveRecord::Base
-  belongs_to :user
+  belongs_to :user, touch: true
 
   validates :name, presence: true
 
