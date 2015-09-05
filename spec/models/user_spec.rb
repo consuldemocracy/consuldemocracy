@@ -299,4 +299,25 @@ describe User do
     end
   end
 
+  describe "cache" do
+    let(:user) { create(:user) }
+
+    it "should expire cache with becoming a moderator" do
+      expect { create(:moderator, user: user) }
+      .to change { user.updated_at}
+    end
+
+    it "should expire cache with becoming an admin" do
+      expect { create(:administrator, user: user) }
+      .to change { user.updated_at}
+    end
+
+    it "should expire cache with becoming a veridied organization" do
+      create(:organization, user: user)
+      expect { user.organization.verify }
+      .to change { user.reload.updated_at}
+    end
+
+  end
+
 end
