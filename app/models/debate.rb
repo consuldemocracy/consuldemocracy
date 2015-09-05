@@ -9,8 +9,8 @@ class Debate < ActiveRecord::Base
   include ActsAsParanoidAliases
 
   belongs_to :author, -> { with_hidden }, class_name: 'User', foreign_key: 'author_id'
-  has_many :flags, :as => :flaggable
   has_many :comments, as: :commentable
+  has_many :flags, as: :flaggable
 
   validates :title, presence: true
   validates :description, presence: true

@@ -13,7 +13,7 @@ class Comment < ActiveRecord::Base
   belongs_to :commentable, -> { with_hidden }, polymorphic: true, counter_cache: true
   belongs_to :user, -> { with_hidden }
 
-  has_many :flags, :as => :flaggable
+  has_many :flags, as: :flaggable
 
   scope :recent, -> { order(id: :desc) }
 
