@@ -36,4 +36,36 @@ describe PagesController do
     end
   end
 
+  describe 'Info pages' do
+    it 'should include a coming_soon page' do
+      get :coming_soon
+      expect(response).to be_ok
+    end
+
+    it 'should include a how_it_works page' do
+      get :how_it_works
+      expect(response).to be_ok
+    end
+
+    it 'should include a how_to_use page' do
+      get :how_to_use
+      expect(response).to be_ok
+    end
+
+    it 'should include a more_information page' do
+      get :more_information
+      expect(response).to be_ok
+    end
+
+    it 'should include a participation page' do
+      get :participation
+      expect(response).to be_ok
+    end
+
+    it 'should include a blog page' do
+      get :blog
+      expect(response).to be_redirect
+    end
+  end
+
 end

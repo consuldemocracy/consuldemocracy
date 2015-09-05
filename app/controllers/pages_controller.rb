@@ -7,10 +7,13 @@ class PagesController < ApplicationController
   def conditions
   end
 
-  def cooming_soon
+  def general_terms
   end
 
-  def general_terms
+  def privacy
+  end
+
+  def cooming_soon
   end
 
   def how_it_works
@@ -28,9 +31,10 @@ class PagesController < ApplicationController
   def participation
   end
 
-  def privacy
+  def transparency
   end
 
-  def transparency
+  def blog
+    redirect_to "http://diario.madrid.es/blog/category/gobiernoabierto/"
   end
 end
