@@ -34,12 +34,14 @@ class Verification::Residence
 
   def residence_in_madrid
     return if errors.any?
-
     self.date_of_birth = date_to_string(date_of_birth)
 
     residency = CensusApi.new(self)
-    errors.add(:residence_in_madrid, false) unless residency.valid?
 
+    unless residency.valid?
+      errors.add(:residence_in_madrid, false)
+      user.update(residence_verification_tries: user.residence_verification_tries += 1)
+    end
     self.date_of_birth = string_to_date(date_of_birth)
   end
 

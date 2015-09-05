@@ -21,6 +21,7 @@ FactoryGirl.define do
   end
 
   factory :verification_residence, class: Verification::Residence do
+    user
     document_number  '12345678Z'
     document_type    1
     date_of_birth    Date.new(1980, 12, 31)

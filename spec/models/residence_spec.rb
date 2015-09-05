@@ -54,4 +54,19 @@ describe Verification::Residence do
 
   end
 
+  describe "tries" do
+    it "should increase tries after a call to the Census" do
+      residence.postal_code = "12345"
+
+      expect { residence.valid? }.to change{
+      residence.user.residence_verification_tries }.from(0).to(1)
+    end
+
+    it "should not increase tries after a validation error" do
+      residence.postal_code = ""
+      expect { residence.valid? }.to_not change{
+      residence.user.residence_verification_tries }
+    end
+  end
+
 end

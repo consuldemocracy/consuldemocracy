@@ -12,7 +12,6 @@ class Verification::ResidenceController < ApplicationController
     if @residence.save
       redirect_to verified_user_path, notice: t('verification.residence.create.flash.success')
     else
-      current_user.update(residence_verification_tries: current_user.residence_verification_tries += 1)
       render :new
     end
   end
