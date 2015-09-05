@@ -21,8 +21,8 @@ class DebatesController < ApplicationController
     @root_comments = @debate.comments.roots.recent.page(params[:page]).per(10).for_render
     @comments = @root_comments.inject([]){|all, root| all + root.descendants}
 
-    all_visible_comments = @root_comments + @comments
-    set_comment_flags(all_visible_comments)
+    @all_visible_comments = @root_comments + @comments
+    set_comment_flags(@all_visible_comments)
   end
 
   def new
