@@ -268,4 +268,34 @@ describe Debate do
     end
   end
 
+  describe "cache" do
+    let(:debate) { create(:debate) }
+
+    it "should expire cache when it has a new comment" do
+      expect { create(:comment, commentable: debate) }
+      .to change { debate.updated_at }
+    end
+
+    it "should expire cache when it has a new vote" do
+      expect { create(:vote, votable: debate) }
+      .to change { debate.updated_at }
+    end
+
+    it "should expire cache when it has a new tag" do
+      expect { debate.update(tag_list: "new tag") }
+      .to change { debate.updated_at }
+    end
+
+    it "should expire cache when its author changes" do
+      expect { debate.author.update(username: "Eva") }
+      .to change { debate.reload.updated_at }
+    end
+
+    it "should expire cache when the author's organization get verified" do
+      create(:organization, user: debate.author)
+      expect { debate.author.organization.verify }
+      .to change { debate.reload.updated_at}
+    end
+  end
+
 end

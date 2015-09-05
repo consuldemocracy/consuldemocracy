@@ -12,6 +12,8 @@ module CacheKeysHelper
       user_status += ":signed"
       user_status += ":verified" if current_user.verified_at.present?
       user_status += ":org" if current_user.organization?
+      user_status += ":admin" if current_user.administrator?
+      user_status += ":moderator" if current_user.moderator?
     else
       user_status += ":visitor"
     end
