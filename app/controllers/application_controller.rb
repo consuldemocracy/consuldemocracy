@@ -34,7 +34,7 @@ class ApplicationController < ActionController::Base
     end
 
     def authenticate_beta_tester!
-      unless beta_testers.include?(current_user.email)
+      unless signed_in? && beta_testers.include?(current_user.email)
         sign_out(current_user)
         redirect_to new_user_session_path, alert: t('application.alert.only_beta_testers')
       end
