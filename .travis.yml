@@ -7,4 +7,5 @@ cache: bundler
 before_script:
   - "for i in config/*.example; do cp \"$i\" \"${i/.example}\"; done"
   - bundle exec rake db:setup
+  - mkdir -p tmp/cache
 script: bundle exec rake
