@@ -40,23 +40,32 @@ feature 'Admin users' do
 
     click_link 'Confirm'
 
+    expect(page).to_not have_content(user.username)
+    click_link('Confirmed')
     expect(page).to have_content(user.username)
-    expect(page).to have_content('Confirmed')
 
     expect(user.reload).to be_confirmed_hide
   end
 
   scenario "Current filter is properly highlighted" do
     visit admin_users_path
-    expect(page).to_not have_link('All')
+    expect(page).to_not have_link('Pending')
+    expect(page).to have_link('All')
+    expect(page).to have_link('Confirmed')
+
+    visit admin_users_path(filter: 'Pending')
+    expect(page).to_not have_link('Pending')
+    expect(page).to have_link('All')
     expect(page).to have_link('Confirmed')
 
     visit admin_users_path(filter: 'all')
+    expect(page).to have_link('Pending')
     expect(page).to_not have_link('All')
     expect(page).to have_link('Confirmed')
 
     visit admin_users_path(filter: 'with_confirmed_hide')
     expect(page).to have_link('All')
+    expect(page).to have_link('Pending')
     expect(page).to_not have_link('Confirmed')
   end
 

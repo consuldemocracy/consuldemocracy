@@ -59,6 +59,7 @@ en:
         filters:
           all: All
           with_confirmed_hide: Confirmed
+          without_confirmed_hide: Pending
     debates:
       index:
         title: Hidden debates
@@ -66,6 +67,7 @@ en:
         filters:
           all: All
           with_confirmed_hide: Confirmed
+          without_confirmed_hide: Pending
     users:
       index:
         title: Banned users
@@ -73,6 +75,7 @@ en:
         filters:
           all: All
           with_confirmed_hide: Confirmed
+          without_confirmed_hide: Pending
       show:
         title: "User activity from %{user}"
         back: Back

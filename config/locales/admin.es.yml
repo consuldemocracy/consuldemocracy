@@ -59,6 +59,7 @@ es:
         filters:
           all: Todos
           with_confirmed_hide: Confirmados
+          without_confirmed_hide: Pendientes
     debates:
       index:
         title: Debates ocultos
@@ -66,6 +67,7 @@ es:
         filters:
           all: Todos
           with_confirmed_hide: Confirmados
+          without_confirmed_hide: Pendientes
     users:
       index:
         title: Usuarios bloqueados
@@ -73,6 +75,7 @@ es:
         filters:
           all: Todos
           with_confirmed_hide: Confirmados
+          without_confirmed_hide: Pendientes
       show:
         title: "Actividad del usuario %{user}"
         back: Volver

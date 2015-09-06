@@ -1,10 +1,10 @@
 class Admin::DebatesController < Admin::BaseController
-  has_filters %w{all with_confirmed_hide}, only: :index
+  has_filters %w{without_confirmed_hide all with_confirmed_hide}, only: :index
 
   before_action :load_debate, only: [:confirm_hide, :restore]
 
   def index
-    @debates = Debate.only_hidden.send(@current_filter).page(params[:page])
+    @debates = Debate.only_hidden.send(@current_filter).order(hidden_at: :desc).page(params[:page])
   end
 
   def confirm_hide

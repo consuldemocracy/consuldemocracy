@@ -15,10 +15,12 @@
             data: { confirm: t("admin.actions.confirm") },
             class: "button radius tiny success right" %>
 
-      <%= link_to t("admin.actions.confirm_hide"),
-            confirm_hide_admin_debate_path(debate, request.query_parameters),
-            method: :put,
-            class: "button radius tiny warning right" %>
+      <% unless debate.confirmed_hide? %>
+        <%= link_to t("admin.actions.confirm_hide"),
+              confirm_hide_admin_debate_path(debate, request.query_parameters),
+              method: :put,
+              class: "button radius tiny warning right" %>
+      <% end %>
     </li>
   <% end %>
 </ul>

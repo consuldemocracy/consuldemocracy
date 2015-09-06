@@ -34,6 +34,10 @@ module ActsAsParanoidAliases
       where("confirmed_hide_at IS NOT NULL")
     end
 
+    def without_confirmed_hide
+      where("confirmed_hide_at IS NULL")
+    end
+
     def with_hidden
       with_deleted
     end
