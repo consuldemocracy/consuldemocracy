@@ -16,7 +16,8 @@
       <%= render 'layouts/header' %>
 
       <% if notice %>
-        <div class="alert-box success alert-layout">
+        <div data-alert class="alert-box success alert-layout">
+          <a href="#" class="close">&times;</a>
           <div class="row">
             <%= notice %>
           </div>
@@ -24,7 +25,8 @@
       <% end %>
 
       <% if alert %>
-        <div class="alert-box alert alert-layout">
+        <div data-alert class="alert-box alert alert-layout">
+          <a href="#" class="close">&times;</a>
           <div class="row">
             <%= alert %>
           </div>

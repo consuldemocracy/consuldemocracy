@@ -24,11 +24,17 @@
 
       <div class="admin-content small-12 medium-9 column">
         <% if notice %>
-          <div class="alert-box radius success"><%= notice %></div>
+          <div data-alert class="alert-box radius success">
+            <a href="#" class="close">&times;</a>
+            <%= notice %>
+          </div>
         <% end %>
 
         <% if alert %>
-          <div class="alert-box radius alert"><%= alert %></div>
+          <div data-alert class="alert-box radius alert">
+            <a href="#" class="close">&times;</a>
+            <%= alert %>
+          </div>
         <% end %>
 
         <%= yield %>

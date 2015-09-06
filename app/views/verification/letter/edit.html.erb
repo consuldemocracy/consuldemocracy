@@ -29,7 +29,10 @@
       <div class="small-12 medium-6">
         <%= form_for @letter, as: "letter", url: letter_path, method: :put do |f| %>
           <% if @error %>
-            <div class="alert-box alert radius"><%= @error %></div>
+            <div data-alert class="alert-box alert radius">
+              <a href="#" class="close">&times;</a>
+              <%= @error %>
+            </div>
           <% end %>
 
           <%= f.text_field :verification_code, label: t("verification.letter.edit.confirmation_code") %>
