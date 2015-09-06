@@ -59,7 +59,10 @@ en:
           password_label: "Password"
           password_confirmation_label: "Confirm password"
           submit: "Sign up"
-          organization_signup: "Do you represent an organization / group? Enter here"
+          organization_signup: "Do you represent an organization / group? %{signup_link}"
+          organization_signup_link: "Sign up here"
+          terms: "To sign up in this site your accept the %{terms}"
+          terms_link: "terms of use"
     organizations:
       registrations:
         new:
@@ -92,7 +95,8 @@ en:
     shared:
       links:
         login: "Log in"
-        signup: "Sign up"
+        signup: "Don't have an account? %{signup_link}"
+        signup_link: "Sign up"
         signin_with_provider: "Sign in with %{provider}"
         organization_signup: "Sign up as an organization / collective"
         new_password: "Forgot your password?"

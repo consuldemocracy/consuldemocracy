@@ -1,22 +1,16 @@
-<div class="row auth">
-  <div class="small-12 medium-8 large-5 column small-centered">
-    <div class="panel">
-      <h1 class="text-center"><%= t("devise_views.passwords.new.title") %></h1>
-      <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-        <%= render 'shared/errors', resource: resource %>
+<h1 class="text-center"><%= t("devise_views.passwords.new.title") %></h1>
+<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+  <%= render 'shared/errors', resource: resource %>
 
-        <div class="row">
-          <div class="small-12 column">
-            <%= f.email_field :email, autofocus: true, placeholder: t("devise_views.passwords.new.email_label") %>
-          </div>
+  <div class="row">
+    <div class="small-12 column">
+      <%= f.email_field :email, autofocus: true, placeholder: t("devise_views.passwords.new.email_label") %>
+    </div>
 
-          <div class="small-12 column text-center">
-            <%= f.submit t("devise_views.passwords.new.send_submit"), class: "button radius expand" %>
-          </div>
-        </div>
-      <% end %>
-
-      <%= render "devise/shared/links" %>
+    <div class="small-12 column text-center">
+      <%= f.submit t("devise_views.passwords.new.send_submit"), class: "button radius expand" %>
     </div>
   </div>
-</div>
+<% end %>
+
+<%= render "devise/shared/links" %>
