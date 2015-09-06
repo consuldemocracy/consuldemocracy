@@ -1,5 +1,5 @@
-<% css_id = parent_or_commentable_dom_id(parent_id, commentable) %>
-<% cache [locale_and_user_status, css_id] do %>
+<% cache [locale_and_user_status, parent_id, commentable] do %>
+  <% css_id = parent_or_commentable_dom_id(parent_id, commentable) %>
   <div id="js-comment-form-<%= css_id %>" <%= "style='display:none'".html_safe if toggeable %>>
     <%= form_for [commentable, Comment.new], remote: true do |f| %>
       <%= label_tag "comment-body-#{css_id}", t("comments.form.leave_comment") %>
