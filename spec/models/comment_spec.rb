@@ -52,18 +52,18 @@ describe Comment do
 
     it "should expire cache when the author is hidden" do
       expect { comment.user.hide }
-      .to change { comment.reload.updated_at }
+      .to change { [comment.reload.updated_at, comment.author.updated_at] }
     end
 
     it "should expire cache when the author changes" do
       expect { comment.user.update(username: "Isabel") }
-      .to change { comment.reload.updated_at }
+      .to change { [comment.reload.updated_at, comment.author.updated_at] }
     end
 
     it "should expire cache when the author's organization get verified" do
       create(:organization, user: comment.user)
       expect { comment.user.organization.verify }
-      .to change { comment.reload.updated_at}
+      .to change { [comment.reload.updated_at, comment.author.updated_at] }
     end
   end
 end
