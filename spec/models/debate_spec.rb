@@ -288,13 +288,13 @@ describe Debate do
 
     it "should expire cache when its author changes" do
       expect { debate.author.update(username: "Eva") }
-      .to change { debate.reload.updated_at }
+      .to change { [debate.reload.updated_at, debate.author.updated_at] }
     end
 
     it "should expire cache when the author's organization get verified" do
       create(:organization, user: debate.author)
       expect { debate.author.organization.verify }
-      .to change { debate.reload.updated_at}
+      .to change { [debate.reload.updated_at, debate.author.updated_at] }
     end
   end
 

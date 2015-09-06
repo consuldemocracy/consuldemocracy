@@ -36,17 +36,6 @@ class User < ActiveRecord::Base
   scope :officials,      -> { where("official_level > 0") }
   scope :for_render,     -> { includes(:organization) }
 
-  after_update :touch_debates, :touch_comments
-  after_touch :touch_debates, :touch_comments
-
-  def touch_debates
-    debates.map(&:touch)
-  end
-
-  def touch_comments
-    comments.map(&:touch)
-  end
-
   def self.find_for_oauth(auth, signed_in_resource = nil)
     # Get the identity and user if they exist
     identity = Identity.find_for_oauth(auth)
