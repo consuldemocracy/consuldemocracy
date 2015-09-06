@@ -47,14 +47,15 @@ set(:config_files, %w(
   sidekiq.yml
 ))
 
-
 namespace :deploy do
   # Check right version of deploy branch
   # before :deploy, "deploy:check_revision"
   # Run test aund continue only if passed
   # before :deploy, "deploy:run_tests"
-  # Compile assets locally and then rsync
-  after 'deploy:symlink:shared', 'deploy:compile_assets_locally'
+
+  # Custom compile and rsync of assets - works, but it is very slow
+  #after 'deploy:symlink:shared', 'deploy:compile_assets_locally'
+
   after :finishing, 'deploy:beta_testers'
   after :finishing, 'deploy:cleanup'
   # Restart unicorn
