@@ -1,4 +1,4 @@
-<% cache [locale_and_user_status, comment, @commentable, comment.author, (@comment_flags[comment.id] if @comment_flags)] do %>
+<% cache [locale_and_user_status(comment), comment, @commentable, comment.author, (@comment_flags[comment.id] if @comment_flags)] do %>
   <div class="row">
   	<div id="<%= dom_id(comment) %>" class="comment small-12 column">
 
