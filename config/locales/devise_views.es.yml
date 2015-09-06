@@ -97,7 +97,7 @@ es:
         login: "Entrar"
         signup: "¿No tienes una cuenta? %{signup_link}"
         signup_link: "Regístrate"
-        organization_signup: "Registro para organizaciones / colectivos"
+        #organization_signup: "Registro para organizaciones / colectivos"
         signin_with_provider: "Entrar con %{provider}"
         new_password: "¿Olvidaste tu contraseña?"
         new_confirmation: "¿No has recibido instrucciones para confirmar tu cuenta?"
