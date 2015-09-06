@@ -24,29 +24,42 @@ feature 'Admin debates' do
 
     click_link 'Confirm'
 
+    expect(page).to_not have_content(debate.title)
+    click_link('Confirmed')
     expect(page).to have_content(debate.title)
-    expect(page).to have_content('Confirmed')
 
     expect(debate.reload).to be_confirmed_hide
   end
 
   scenario "Current filter is properly highlighted" do
     visit admin_debates_path
-    expect(page).to_not have_link('All')
+    expect(page).to_not have_link('Pending')
+    expect(page).to have_link('All')
+    expect(page).to have_link('Confirmed')
+
+    visit admin_debates_path(filter: 'Pending')
+    expect(page).to_not have_link('Pending')
+    expect(page).to have_link('All')
     expect(page).to have_link('Confirmed')
 
     visit admin_debates_path(filter: 'all')
+    expect(page).to have_link('Pending')
     expect(page).to_not have_link('All')
     expect(page).to have_link('Confirmed')
 
     visit admin_debates_path(filter: 'with_confirmed_hide')
     expect(page).to have_link('All')
+    expect(page).to have_link('Pending')
     expect(page).to_not have_link('Confirmed')
   end
 
   scenario "Filtering debates" do
     create(:debate, :hidden, title: "Unconfirmed debate")
     create(:debate, :hidden, :with_confirmed_hide, title: "Confirmed debate")
+
+    visit admin_debates_path(filter: 'pending')
+    expect(page).to have_content('Unconfirmed debate')
+    expect(page).to_not have_content('Confirmed debate')
 
     visit admin_debates_path(filter: 'all')
     expect(page).to have_content('Unconfirmed debate')

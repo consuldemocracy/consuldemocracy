@@ -66,6 +66,7 @@ en:
         filters:
           all: All
           with_confirmed_hide: Confirmed
+          without_confirmed_hide: Pending
     users:
       index:
         title: Banned users

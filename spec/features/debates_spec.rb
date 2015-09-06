@@ -302,7 +302,7 @@ feature 'Debates' do
 
     scenario 'Index page shows up to 5 tags per debate' do
       debate
-      visible_tags = ["Medio Ambiente", "Corrupción", "Fiestas populares", "Prensa", "Huelgas"]
+      visible_tags = ["Hacienda", "Economía", "Medio Ambiente", "Corrupción", "Fiestas populares"]
 
       visit debates_path
 

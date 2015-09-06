@@ -66,6 +66,7 @@ es:
         filters:
           all: Todos
           with_confirmed_hide: Confirmados
+          without_confirmed_hide: Pendientes
     users:
       index:
         title: Usuarios bloqueados
