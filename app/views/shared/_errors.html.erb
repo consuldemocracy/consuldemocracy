@@ -1,7 +1,7 @@
 <% if resource.errors.any? %>
-  <div id="error_explanation" data-lert class="alert-box alert radius">
+  <div id="error_explanation" data-alert class="alert-box alert radius">
     <a href="#" class="close">&times;</a>
-    
+
     <strong>
       <%= pluralize resource.errors.count, t("form.error"), t("form.errors") %>
 
