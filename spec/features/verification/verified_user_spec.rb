@@ -5,22 +5,18 @@ feature 'Verified users' do
   scenario "Verified emails" do
     user = create(:user,
                   residence_verified_at: Time.now,
-                  document_number:       '12345678Z',
-                  document_type:         '2')
+                  document_number:       '12345678Z')
 
     create(:verified_user,
            document_number: '12345678Z',
-           document_type:   '2',
            email:           'rock@example.com')
 
     create(:verified_user,
             document_number: '12345678Z',
-            document_type:   '2',
             email:           'roll@example.com')
 
     create(:verified_user,
             document_number: '99999999R',
-            document_type:   '2',
             email:           'another@example.com')
 
     login_as(user)
@@ -33,22 +29,18 @@ feature 'Verified users' do
   scenario "Verified phones" do
     user = create(:user,
                   residence_verified_at: Time.now,
-                  document_number:       '12345678Z',
-                  document_type:         '2')
+                  document_number:       '12345678Z')
 
     create(:verified_user,
            document_number: '12345678Z',
-           document_type:   '2',
            phone:           '611111111')
 
     create(:verified_user,
             document_number: '12345678Z',
-            document_type:   '2',
             phone:           '622222222')
 
     create(:verified_user,
             document_number: '99999999R',
-            document_type:   '2',
             phone:           '633333333')
 
     login_as(user)
@@ -61,12 +53,10 @@ feature 'Verified users' do
   scenario "Select a verified email" do
     user = create(:user,
               residence_verified_at: Time.now,
-              document_number:       '12345678Z',
-              document_type:         '2')
+              document_number:       '12345678Z')
 
     verified_user = create(:verified_user,
                            document_number: '12345678Z',
-                           document_type:   '2',
                            email:           'rock@example.com')
 
     login_as(user)
@@ -83,12 +73,10 @@ feature 'Verified users' do
   scenario "Select a verified phone" do
     user = create(:user,
                   residence_verified_at: Time.now,
-                  document_number:       '12345678Z',
-                  document_type:         '2')
+                  document_number:       '12345678Z')
 
     verified_user = create(:verified_user,
                            document_number: '12345678Z',
-                           document_type:   '2',
                            phone:           '611111111')
 
     login_as(user)
@@ -104,12 +92,10 @@ feature 'Verified users' do
   scenario "Continue without selecting any verified information" do
     user = create(:user,
                   residence_verified_at: Time.now,
-                  document_number:       '12345678Z',
-                  document_type:         '2')
+                  document_number:       '12345678Z')
 
     create(:verified_user,
            document_number: '12345678Z',
-           document_type:   '2',
            phone:           '611111111')
 
     login_as(user)
