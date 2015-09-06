@@ -276,17 +276,10 @@
   .panel {
     border: 0;
     border-radius: 0;
-    margin-bottom: rem-calc(2);
+    border-bottom: 1px solid rgba(0,0,0,.1);
+    margin-bottom: rem-calc(12);
     min-height: rem-calc(192);
-    padding: 0 rem-calc(12) rem-calc(2) rem-calc(12);
-
-    &:first-child {
-      padding-top: rem-calc(12);
-
-      @media (min-width: $small-breakpoint) {
-        padding-top: rem-calc(24);
-      }
-    }
+    padding: rem-calc(12);
 
     .label {
       line-height: $line-height;
@@ -660,8 +653,6 @@
           padding: rem-calc(6) rem-calc(12);
         }
 
-
-
         &.is-admin {
           background: $comment-admin;
           padding: rem-calc(6) rem-calc(12);
@@ -669,6 +660,11 @@
 
         &.is-moderator {
           @extend .is-admin;
+        }
+
+        &.level-5 {
+          background: $comment-level-5;
+          padding: rem-calc(6) rem-calc(12);
         }
       }
     }

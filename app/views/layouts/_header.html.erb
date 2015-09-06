@@ -17,7 +17,7 @@
         <li class="name">
           <%= link_to root_path do %>
             <%= image_tag('header_logo_madrid.png', class: 'left', size: '96x96') %>
-            <%= t("layouts.header.open_gov", open: "<strong>#{t('layouts.header.open')}</strong>").html_safe %> | <span><%= t("layouts.header.participation") %></span>
+            <%= t("layouts.header.open_gov", open: "#{t('layouts.header.open')}").html_safe %> <span>|</span> <span class="logo-site"><%= t("layouts.header.participation") %></span>
           <% end %>
         </li>
       </ul>
@@ -61,7 +61,7 @@
 
         <p>Por ahora puedes visitar el portal que existía hasta ahora:</p>
 
-        <%= link_to "Ir al Portal de Transparencia existente anteriormente", t("layouts.header.external_link_transparency_url"), target: "_blank", class: "button radius" %>
+        <%= link_to "Ir al Portal de Transparencia", t("layouts.header.external_link_transparency_url"), target: "_blank", class: "button radius" %>
 
         <p>Mientras acabamos el nuevo portal, te invitamos a visitar el <a href="/blog" target="_blank">blog del Área de Participación Ciudadana, Transparencia y Gobierno Abierto</a> para conocer nuestros avances y novedades; o la <a href="/">sección de Participación Ciudadana</a> donde poder decidir qué ciudad es la que quieres.</p>
       </div>
@@ -75,9 +75,9 @@
         <h1><%= t("pages.opendata") %></h1>
 
       <div class="small-12 medium-10 column small-centered">
-       <p>Estamos trabajando en el nuevo Portal de Datos Abiertos de Ayuntamiento de Madrid, para que puedas reutilizar todos los datos de Ayuntamiento como quieras. Por ahora puedes visitar el portal qu existía hasta ahora:</p>
+       <p>Estamos trabajando en el nuevo Portal de Datos Abiertos del Ayuntamiento de Madrid, por ahora puedes visitar el portal que existía hasta ahora:</p>
 
-        <%= link_to "Ir al Portal de Datos Abiertos existente anteriormente", t("layouts.header.external_link_opendata_url"), target: "_blank", class: "button radius" %>
+        <%= link_to "Ir al Portal de Datos Abiertos", t("layouts.header.external_link_opendata_url"), target: "_blank", class: "button radius" %>
 
         <p>Mientras acabamos el nuevo portal, te invitamos a visitar el <a href="/blog" target="_blank">blog del Área de Participación Ciudadana, Transparencia y Gobierno Abierto</a> para conocer nuestros avances y novedades; o la <a href="/">sección de Participación Ciudadana</a> donde poder decidir qué ciudad es la que quieres.</p>
       </div>

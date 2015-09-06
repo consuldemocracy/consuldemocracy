@@ -44,9 +44,14 @@
     padding-left: rem-calc(6);
 
     span {
-      font-size: rem-calc(16);
-      font-weight: lighter;
-      vertical-align: top;
+      opacity: .5;
+
+      &.logo-site {
+        font-size: rem-calc(16);
+        font-weight: lighter;
+        opacity: 1;
+        vertical-align: top;
+      }
     }
 
     @media (min-width: $small-breakpoint) {
@@ -132,6 +137,7 @@ h6 {
 }
 
 .button {
+  background: $brand;
   font-size: rem-calc(13);
   font-family: $font-family-sans-serif !important;
   padding: rem-calc(15) rem-calc(32);
@@ -158,6 +164,7 @@ h6 {
 }
 
 .sidebar {
+  margin-top: rem-calc(24);
   margin-bottom: rem-calc(48);
 }
 
@@ -245,6 +252,10 @@ h6 {
   height: 100%;
 }
 
+.wrap {
+  background: white;
+}
+
 .footer, .push {
   clear: both;
   min-height: rem-calc(288);
@@ -262,13 +273,14 @@ header {
   background-position: 50% 50%;
   background-size: cover;
   color: $text;
-  min-height: rem-calc(624);
+  min-height: rem-calc(696);
 
   &.results {
+    border-bottom: rem-calc(1) solid $border;
     min-height: rem-calc(48);
 
     @media (min-width: $small-breakpoint) {
-      min-height: rem-calc(216);
+      min-height: rem-calc(192);
     }
   }
 
@@ -377,8 +389,11 @@ header {
       padding-left: 0;
 
       span {
-        font-size: rem-calc(14);
-        font-weight: normal;
+        opacity: .5;
+
+        &.logo-site {
+          opacity: 1;
+        }
       }
 
       @media (min-width: $small-breakpoint) {
@@ -510,11 +525,6 @@ header {
 .top-links {
   color: white;
   font-size: rem-calc(14);
-  height: rem-calc(72);
-
-  @media (min-width: $small-breakpoint) {
-    height: rem-calc(48);
-  }
 
   .row {
     background-color: rgba(0,0,0,.5);
@@ -533,6 +543,7 @@ header {
 .subnavigation {
   background: white;
   clear: both;
+  height: rem-calc(47);
 
   @media (min-width: $small-breakpoint) {
     text-align: center;
@@ -570,19 +581,6 @@ header {
       @media (min-width: $small-breakpoint) {
         background: $brand;
         color: white;
-
-        &:after {
-          bottom: -16px;
-          left: 50%;
-          border: solid transparent;
-          content: " ";
-          height: 0;
-          width: 0;
-          position: absolute;
-          border-top-color: $brand;
-          border-width: 8px;
-          margin-left: -8px;
-        }
       }
     }
   }
@@ -716,6 +714,10 @@ footer {
     padding-top: rem-calc(48);
   }
 
+  p {
+    font-size: rem-calc(14);
+  }
+
   h1 {
     @include logo;
 
@@ -797,6 +799,14 @@ form {
     background: $input-bg;
     height: rem-calc(48);
     margin-bottom: rem-calc(16);
+
+    &.search-form {
+      height: rem-calc(37);
+
+      @media (min-width: $small-breakpoint) {
+        border-right: 0;
+      }
+    }
 
     &.error {
       margin-bottom: rem-calc(1);
@@ -884,6 +894,10 @@ form {
     background-color: $alert-bg;
     border-color: $alert-border;
     color: $alert-color;
+  }
+
+  .close {
+    text-decoration: none !important;
   }
 }
 
