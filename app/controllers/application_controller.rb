@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   include SimpleCaptcha::ControllerHelpers
   include HasFilters
 
-  before_action :authenticate_http_basic
+  before_action :authenticate_http_basic, if: :http_basic_auth_site?
   before_action :authenticate_user!, unless: :devise_controller?, if: :beta_site?
   before_action :authenticate_beta_tester!, unless: :devise_controller?, if: :beta_site?
 
@@ -26,10 +26,8 @@ class ApplicationController < ActionController::Base
   private
 
     def authenticate_http_basic
-      if Rails.env.staging? || Rails.env.preproduction? || Rails.env.production?
-        authenticate_or_request_with_http_basic do |username, password|
-          username == Rails.application.secrets.http_basic_username && password == Rails.application.secrets.http_basic_password
-        end
+      authenticate_or_request_with_http_basic do |username, password|
+        username == Rails.application.secrets.http_basic_username && password == Rails.application.secrets.http_basic_password
       end
     end
 
@@ -46,6 +44,10 @@ class ApplicationController < ActionController::Base
 
     def beta_site?
       Rails.application.secrets.beta_site
+    end
+
+    def http_basic_auth_site?
+      Rails.application.secrets.http_basic_auth
     end
 
     def set_locale
