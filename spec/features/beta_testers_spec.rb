@@ -34,4 +34,11 @@ feature 'Beta testers' do
     expect(page).to have_content "Sorry only Beta Testers are allowed access at the moment"
   end
 
+  scenario "Trying to access site without being logged in" do
+    visit debates_path
+
+    expect(page).to have_content "Sorry only Beta Testers are allowed access at the moment"
+    expect(current_path).to eq(new_user_session_path)
+  end
+
 end
