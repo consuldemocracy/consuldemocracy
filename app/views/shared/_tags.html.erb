@@ -3,7 +3,7 @@
 <% if debate.tags.any? %>
   <span class='tags'>
     <% debate.tag_list_with_limit(limit).each do |tag| %>
-      <%= link_to sanitize(tag), debates_path(tag: tag) %>
+      <%= link_to sanitize(tag.name), debates_path(tag: tag.name) %>
     <% end %>
 
     <% if debate.tags_count_out_of_limit(limit) > 0 %>
