@@ -28,14 +28,14 @@
 
       <%= f.simple_captcha input_html: {required: false} %>
 
-      <!-- Makes me work! -->
-      <%= f.label :remember_me do %>
-        <%= f.check_box :remember_me, label: false %>
+
+      <%= f.label :terms_of_service do %>
+        <%= f.check_box :terms_of_service, label: false %>
         <span class="checkbox">
           <%= t("devise_views.users.registrations.new.terms",
               terms: link_to(t("devise_views.users.registrations.new.terms_link"), "/conditions", target: "_blank")).html_safe %></span>
       <% end %>
-      <!-- /. Makes me work! -->
+
 
       <%= f.submit t("devise_views.users.registrations.new.submit"), class: "button radius expand" %>
     </div>

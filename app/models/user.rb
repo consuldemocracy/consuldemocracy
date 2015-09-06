@@ -25,6 +25,7 @@ class User < ActiveRecord::Base
   validates :username, uniqueness: true, unless: :organization?
   validates :official_level, inclusion: {in: 0..5}
   validates_format_of :email, without: OMNIAUTH_EMAIL_REGEX, on: :update
+  validates :terms_of_service, acceptance: { allow_nil: false }, on: :create
 
   validates_associated :organization, message: false
 

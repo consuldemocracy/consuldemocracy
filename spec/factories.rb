@@ -3,6 +3,7 @@ FactoryGirl.define do
     sequence(:username) { |n| "Manuela#{n}" }
     sequence(:email)    { |n| "manuela#{n}@madrid.es" }
     password            'judgmentday'
+    terms_of_service     '1'
     confirmed_at        { Time.now }
 
     trait :hidden do

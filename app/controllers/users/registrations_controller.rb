@@ -26,7 +26,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   private
 
     def sign_up_params
-      params.require(:user).permit(:username, :email, :password, :password_confirmation, :captcha, :captcha_key)
+      params.require(:user).permit(:username, :email, :password, :password_confirmation, :captcha, :captcha_key, :terms_of_service)
     end
 
     def after_inactive_sign_up_path_for(resource_or_scope)
