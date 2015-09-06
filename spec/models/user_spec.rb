@@ -52,6 +52,13 @@ describe User do
     expect(subject).to be_valid
   end
 
+  describe "#terms" do
+    it "is not valid without accepting the terms of service" do
+      subject.terms_of_service = nil
+      expect(subject).to_not be_valid
+    end
+  end
+
   describe "#name" do
     it "is the username when the user is not an organization" do
       expect(subject.name).to eq(subject.username)

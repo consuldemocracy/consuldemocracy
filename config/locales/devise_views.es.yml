@@ -59,7 +59,10 @@ es:
           password_label: "Contraseña"
           password_confirmation_label: "Confirmar contraseña"
           submit: "Registrarse"
-          organization_signup: "¿Representas a una organización / colectivo? Entra aquí"
+          organization_signup: "¿Representas a una organización / colectivo? %{signup_link}"
+          organization_signup_link: "Regístrate aquí"
+          terms: "Al registrarte aceptas las %{terms}"
+          terms_link: "condiciones de uso"
     organizations:
       registrations:
         new:
@@ -92,8 +95,9 @@ es:
     shared:
       links:
         login: "Entrar"
-        signup: "Registrarse"
-        organization_signup: "Registro para organizaciones / colectivos"
+        signup: "¿No tienes una cuenta? %{signup_link}"
+        signup_link: "Regístrate"
+        #organization_signup: "Registro para organizaciones / colectivos"
         signin_with_provider: "Entrar con %{provider}"
         new_password: "¿Olvidaste tu contraseña?"
         new_confirmation: "¿No has recibido instrucciones para confirmar tu cuenta?"

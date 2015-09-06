@@ -9,6 +9,7 @@ module CommonActions
     fill_in 'user_password',              with: password
     fill_in 'user_password_confirmation', with: password
     fill_in 'user_captcha',               with: correct_captcha_text
+    check 'user_terms_of_service'
 
     click_button 'Sign up'
   end

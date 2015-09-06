@@ -14,24 +14,6 @@
 
   <body class="auth-page">
 
-    <% if notice %>
-      <div data-alert class="alert-box success alert-layout">
-        <a href="#" class="close">&times;</a>
-        <div class="row">
-          <%= notice %>
-        </div>
-      </div>
-    <% end %>
-
-    <% if alert %>
-      <div data-alert class="alert-box alert alert-layout">
-        <a href="#" class="close">&times;</a>
-        <div class="row">
-          <%= alert %>
-        </div>
-      </div>
-    <% end %>
-
     <div class="row">
       <div class="small-12 medium-8 large-5 column small-centered">
         <h1>
@@ -42,7 +24,27 @@
       </div>
     </div>
 
-    <%= yield %>
+    <div class="row auth">
+    <div class="small-12 medium-8 large-5 column small-centered">
+      <div class="panel">
+        <% if notice %>
+          <div data-alert class="alert-box radius success">
+            <a href="#" class="close">&times;</a>
+              <%= notice %>
+          </div>
+        <% end %>
 
+        <% if alert %>
+          <div data-alert class="alert-box radius warning">
+            <a href="#" class="close">&times;</a>
+              <%= alert %>
+          </div>
+        <% end %>
+
+        <%= yield %>
+
+      </div>
+    </div>
+  </div>
   </body>
 </html>
