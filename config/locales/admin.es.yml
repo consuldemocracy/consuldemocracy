@@ -59,6 +59,7 @@ es:
         filters:
           all: Todos
           with_confirmed_hide: Confirmados
+          without_confirmed_hide: Pendientes
     debates:
       index:
         title: Debates ocultos

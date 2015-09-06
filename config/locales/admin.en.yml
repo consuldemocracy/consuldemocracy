@@ -59,6 +59,7 @@ en:
         filters:
           all: All
           with_confirmed_hide: Confirmed
+          without_confirmed_hide: Pending
     debates:
       index:
         title: Hidden debates
