@@ -14,11 +14,12 @@
           method: :put,
           data: { confirm: t("admin.actions.confirm") },
           class: "button radius tiny success right" %>
-
-    <%= link_to t("admin.actions.confirm_hide"),
+    <% unless user.confirmed_hide? %>
+      <%= link_to t("admin.actions.confirm_hide"),
           confirm_hide_admin_user_path(user, request.query_parameters),
           method: :put,
           class: "button radius tiny warning right" %>
+    <% end %>
   </li>
 <% end %>
 </ul>
