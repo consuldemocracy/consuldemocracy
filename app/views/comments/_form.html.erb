@@ -10,7 +10,7 @@
 
       <%= f.submit comment_button_text(parent_id), class: "button radius small inline-block" %>
 
-      <% if can? :comment_as_moderator, commentable %>º
+      <% if can? :comment_as_moderator, commentable %>
         <div class="right">
           <%= f.check_box :as_moderator, id: "comment-as-moderator-#{css_id}", label: false %>
           <%= label_tag "comment-as-moderator-#{css_id}", t("comments.form.comment_as_moderator"), class: "checkbox" %>
