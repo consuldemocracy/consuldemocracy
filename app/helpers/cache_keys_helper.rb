@@ -1,11 +1,11 @@
 module CacheKeysHelper
 
-  def locale_and_user_status
-    @cache_key_user ||= calculate_user_status
+  def locale_and_user_status(authorable=nil)
+    @cache_key_user ||= calculate_user_status(authorable)
     "#{I18n.locale}/#{@cache_key_user}"
   end
 
-  def calculate_user_status
+  def calculate_user_status(authorable=nil)
     user_status = "user"
 
     if user_signed_in?
@@ -14,6 +14,7 @@ module CacheKeysHelper
       user_status += ":org" if current_user.organization?
       user_status += ":admin" if current_user.administrator?
       user_status += ":moderator" if current_user.moderator?
+      user_status += ":author" if authorable && authorable.author == current_user
     else
       user_status += ":visitor"
     end
