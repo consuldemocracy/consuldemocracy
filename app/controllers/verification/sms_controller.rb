@@ -68,7 +68,7 @@ class Verification::SmsController < ApplicationController
     end
 
     def verify_attemps_left!
-      if current_user.sms_confirmation_tries >= 3
+      if Verification::Sms.new(user: current_user).user_is_locked?
         redirect_to account_path, notice: t('verification.sms.alert.verify_attemps_left')
       end
     end

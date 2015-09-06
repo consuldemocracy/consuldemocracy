@@ -77,4 +77,21 @@ feature 'SMS Verification' do
     expect(URI.parse(current_url).path).to eq(account_path)
   end
 
+  scenario 'User locked is unlocked after a while' do
+    user = create(:user, residence_verified_at: Time.now, sms_confirmation_tries: 3)
+    login_as(user)
+    visit new_sms_path
+
+    expect(page).to have_content 'You have reached the maximum number of sms verification tries'
+    expect(URI.parse(current_url).path).to eq(account_path)
+
+    #Expires the sms locker
+    Rails.cache.clear
+
+    visit new_sms_path
+    fill_in 'sms_phone', with: "611111111"
+    click_button 'Send'
+    expect(page).to have_content 'Security code confirmation'
+  end
+
 end
