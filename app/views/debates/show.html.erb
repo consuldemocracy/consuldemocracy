@@ -13,11 +13,11 @@
         <% end %>
 
         <h1><%= @debate.title %></h1>
-        <!-- SI HAY 1 DENUNCIA POR CADA 5 VOTOS POSITIVOS MUESTRA ESTE MENSAJE -->
-        <div class="alert-box alert radius margin-top">
-          <strong><%= t("debates.show.flag") %></strong>
-        </div>
-        <!-- /. SI HAY 1 DENUNCIA POR CADA 5 VOTOS POSITIVOS MUESTRA ESTE MENSAJE -->
+        <% if @debate.conflictive? %>
+          <div class="alert-box alert radius margin-top">
+            <strong><%= t("debates.show.flag") %></strong>
+          </div>
+        <% end %>
 
         <div class="debate-info">
           <%= avatar_image(@debate.author, seed: @debate.author_id, size: 32, class: 'author-photo') %>
