@@ -136,7 +136,7 @@ class Debate < ActiveRecord::Base
 
   def conflictive?
     return false unless flags_count > 0 && cached_votes_up > 0
-    flags_count / cached_votes_up.to_f > 0.2
+    cached_votes_up/flags_count.to_f < 5
   end
 
   protected
