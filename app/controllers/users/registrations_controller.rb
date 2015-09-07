@@ -10,6 +10,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
     end
   end
 
+  def success
+  end
+
   def finish_signup
   end
 
@@ -30,7 +33,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     end
 
     def after_inactive_sign_up_path_for(resource_or_scope)
-      beta_site? ? new_user_session_path : super
+      users_sign_up_success_path
     end
 
 end
