@@ -56,11 +56,9 @@
 
         <%= render 'shared/tags', debate: @debate %>
 
-        <% if moderator? %>
-          <div class='js-moderator-debate-actions'>
-            <%= render 'actions', debate: @debate %>
-          </div>
-        <% end %>
+        <div class='js-moderator-debate-actions'>
+          <%= render 'actions', debate: @debate %>
+        </div>
       </div>
 
       <aside class="small-12 medium-3 column">
