@@ -453,4 +453,15 @@ feature 'Debates' do
       expect(page).to_not have_content(debate3.title)
     end
   end
+
+  scenario 'Conflictive' do
+    good_debate = create(:debate)
+    conflictive_debate = create(:debate, :conflictive)
+
+    visit debate_path(conflictive_debate)
+    expect(page).to have_content "This debate has been flag as innapropiate for some users."
+
+    visit debate_path(good_debate)
+    expect(page).to_not have_content "This debate has been flag as innapropiate for some users."
+  end
 end

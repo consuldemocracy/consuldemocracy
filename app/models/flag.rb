@@ -1,6 +1,6 @@
 class Flag < ActiveRecord::Base
   belongs_to :user
-  belongs_to :flaggable, polymorphic: true, counter_cache: true
+  belongs_to :flaggable, polymorphic: true, counter_cache: true, touch: true
 
   scope(:by_user_and_flaggable, lambda do |user, flaggable|
     where(user_id: user.id,
