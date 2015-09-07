@@ -77,6 +77,13 @@ FactoryGirl.define do
     trait :with_hot_score do
       before(:save) { |d| d.calculate_hot_score }
     end
+
+    trait :conflictive do
+      after :create do |debate|
+        Flag.flag(FactoryGirl.create(:user), debate)
+        4.times { create(:vote, votable: debate) }
+      end
+    end
   end
 
   factory :vote do
@@ -86,6 +93,11 @@ FactoryGirl.define do
     after(:create) do |vote, _|
       vote.votable.update_cached_votes
     end
+  end
+
+  factory :flag do
+    association :flaggable, factory: :debate
+    association :user, factory: :user
   end
 
   factory :comment do

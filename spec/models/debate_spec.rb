@@ -281,6 +281,11 @@ describe Debate do
       .to change { debate.updated_at }
     end
 
+    it "should expire cache when it has a new flag", :focus do
+      expect { create(:flag, flaggable: debate) }
+      .to change { debate.reload.updated_at }
+    end
+
     it "should expire cache when it has a new tag" do
       expect { debate.update(tag_list: "new tag") }
       .to change { debate.updated_at }
