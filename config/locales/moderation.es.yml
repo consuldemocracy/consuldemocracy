@@ -3,6 +3,7 @@ es:
     menu:
       flagged_debates: Debates
       flagged_comments: Comentarios
+      users: Bloquear usuarios
     dashboard:
       index:
         title: Moderación
