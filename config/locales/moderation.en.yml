@@ -3,6 +3,7 @@ en:
     menu:
       flagged_debates: Debates
       flagged_comments: Comments
+      users: Ban users
     dashboard:
       index:
         title: Moderation
@@ -40,3 +41,11 @@ en:
           all: All
           pending_flag_review: Pending
           with_ignored_flag: Ignored
+    users:
+      notice_hide: User banned.
+      index:
+        title: User search and banning
+        search_placeholder: email or username
+        search: Search
+        hide: Ban
+        hidden: Banned

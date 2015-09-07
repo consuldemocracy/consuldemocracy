@@ -48,4 +48,28 @@ feature 'Moderate users' do
     expect(current_path).to eq(new_user_session_path)
   end
 
+  scenario 'Search and ban users' do
+    citizen = create(:user, username: 'Wanda Maximoff')
+    moderator = create(:moderator)
+
+    login_as(moderator.user)
+
+    visit moderation_users_path
+
+    expect(page).not_to have_content citizen.name
+    fill_in 'name_or_email', with: 'Wanda'
+    click_button 'Search'
+
+    within(".admin-list") do
+        expect(page).to have_content citizen.name
+        expect(page).not_to have_content "Banned"
+        click_link 'Ban'
+    end
+
+    within(".admin-list") do
+      expect(page).to have_content citizen.name
+      expect(page).to have_content "Banned"
+    end
+  end
+
 end
