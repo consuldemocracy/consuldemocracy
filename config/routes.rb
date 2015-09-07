@@ -96,8 +96,11 @@ Rails.application.routes.draw do
   namespace :moderation do
     root to: "dashboard#index"
 
-    resources :users, only: [] do
-      member { put :hide }
+    resources :users, only: :index do
+      member do
+        put :hide
+        put :hide_in_moderation_screen
+      end
     end
 
     resources :debates, only: :index do
