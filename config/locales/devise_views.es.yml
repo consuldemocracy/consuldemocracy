@@ -63,6 +63,12 @@ es:
           organization_signup_link: "Regístrate aquí"
           terms: "Al registrarte aceptas las %{terms}"
           terms_link: "condiciones de uso"
+        success:
+          title: "Revisa tu correo"
+          thank_you_html: "Gracias por registrarte en la web. Ahora debes <b>confirmar tu correo</b>."
+          instructions_1_html: "Por favor <b>revisa tu correo electrónico</b> - te hemos enviado un <b>enlace para confirmar tu cuenta</b>."
+          instructions_2_html: "Una vez confirmado, podrás empezar a participar."
+          back_to_index: "Entendido, volver a la página principal"
     organizations:
       registrations:
         new:

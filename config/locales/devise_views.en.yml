@@ -63,6 +63,12 @@ en:
           organization_signup_link: "Sign up here"
           terms: "To sign up in this site your accept the %{terms}"
           terms_link: "terms of use"
+        success:
+          title: "Review your email inbox"
+          thank_you_html: "Thank you for registering. Now you must <b>confirm your email account</b>."
+          instructions_1_html: "Please <b>review your email inbox</b> - we have sent you a <b>link to confirm your account</b>."
+          instructions_2_html: "Once you click that link, you will be able to start participating"
+          back_to_index: "Understood, take me back to the home page"
     organizations:
       registrations:
         new:
@@ -79,7 +85,7 @@ en:
           instructions_1_html: "We will <b>contact you soon</b> in order to verify that you represent your collective."
           instructions_2_html: "Meanwhile, <b>review your email</b>. We have sent you a <b>confirmation link to activate your account</b>."
           instructions_3_html: "When you confirm your account will then be able to participate as a non-verified organization."
-          back_to_index: "Ok, go back to index"
+          back_to_index: "Understood, take me back to the home page"
     sessions:
       new:
         title: "Log in"
