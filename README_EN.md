@@ -1,4 +1,6 @@
-# Ayuntamiento de Madrid (Madrid city's government) eParticipation application
+# Consul 0.9
+
+## Madrid City Council eParticipation site
 
 [![Build Status](https://travis-ci.org/AyuntamientoMadrid/participacion.svg?branch=master)](https://travis-ci.org/AyuntamientoMadrid/participacion)
 [![Code Climate](https://codeclimate.com/github/AyuntamientoMadrid/participacion/badges/gpa.svg)](https://codeclimate.com/github/AyuntamientoMadrid/participacion)
