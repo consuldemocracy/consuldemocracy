@@ -1,4 +1,4 @@
-<% cache [locale_and_user_status, featured_debate, 'featured'] do %>
+<% cache [locale_and_user_status, featured_debate, @debate_votes[featured_debate.id],'featured'] do %>
   <div class="small-12 medium-4 column end">
     <div id="<%= dom_id featured_debate %>" class="debate-featured">
       <div class="panel">
