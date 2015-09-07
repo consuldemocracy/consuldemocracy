@@ -281,7 +281,7 @@ describe Debate do
       .to change { debate.updated_at }
     end
 
-    it "should expire cache when it has a new flag", :focus do
+    it "should expire cache when it has a new flag" do
       expect { create(:flag, flaggable: debate) }
       .to change { debate.reload.updated_at }
     end
@@ -316,34 +316,34 @@ describe Debate do
   describe "conflictive debates" do
 
     it "should return true when it has more than 1 flag for 5 positive votes" do
-      debate.update(flags_count: 1)
       debate.update(cached_votes_up: 4)
+      debate.update(flags_count: 1)
       expect(debate).to be_conflictive
 
-      debate.update(flags_count: 2)
       debate.update(cached_votes_up: 9)
+      debate.update(flags_count: 2)
       expect(debate).to be_conflictive
 
-      debate.update(flags_count: 3)
       debate.update(cached_votes_up: 14)
+      debate.update(flags_count: 3)
       expect(debate).to be_conflictive
 
-      debate.update(flags_count: 20)
       debate.update(cached_votes_up: 2)
+      debate.update(flags_count: 20)
       expect(debate).to be_conflictive
     end
 
     it "should return false when it has less than or equal to 1 flag for 5 positive votes" do
-      debate.update(flags_count: 1)
       debate.update(cached_votes_up: 5)
+      debate.update(flags_count: 1)
       expect(debate).to_not be_conflictive
 
-      debate.update(flags_count: 2)
       debate.update(cached_votes_up: 10)
+      debate.update(flags_count: 2)
       expect(debate).to_not be_conflictive
 
-      debate.update(flags_count: 2)
       debate.update(cached_votes_up: 100)
+      debate.update(flags_count: 2)
       expect(debate).to_not be_conflictive
     end
 
