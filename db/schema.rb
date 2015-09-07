@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150903200440) do
+ActiveRecord::Schema.define(version: 20150907064631) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -109,6 +109,7 @@ ActiveRecord::Schema.define(version: 20150903200440) do
   add_index "debates", ["cached_votes_total"], name: "index_debates_on_cached_votes_total", using: :btree
   add_index "debates", ["cached_votes_up"], name: "index_debates_on_cached_votes_up", using: :btree
   add_index "debates", ["hidden_at"], name: "index_debates_on_hidden_at", using: :btree
+  add_index "debates", ["hot_score"], name: "index_debates_on_hot_score", using: :btree
 
   create_table "delayed_jobs", force: :cascade do |t|
     t.integer  "priority",   default: 0, null: false
