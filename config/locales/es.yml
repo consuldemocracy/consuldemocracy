@@ -34,7 +34,7 @@ es:
     footer:
       description:
         "La ciudad que quieres, será la ciudad que quieras. %{more_info} sobre esta página.
-        Este Portal de Gobierno Abierto es %{open_source}, y su código se encuentra en %{github}.
+        Este Portal de Gobierno Abierto usa la aplicación Consul v.0.9 que es %{open_source}, y su código se encuentra en %{github}.
         De Madrid, para el mundo entero."
       more_info: Obtén más información
       more_info_url: "/more_information"
@@ -112,8 +112,7 @@ es:
       tags_label: Temas
       tags_instructions: >
         Etiqueta este debate. Puedes elegir entre nuestras propuestas o introducir las que desees.
-        Para ello solo tienes que escribir las etiquetas que desees separadas por ",".
-        Algunas recomendaciones:
+      tags_placeholder: "Escribe las etiquetas que desees separadas por ','"
     show:
       back_link: Volver
       author_deleted: Usuario eliminado
@@ -125,6 +124,7 @@ es:
       login_to_comment: "Necesitas %{signin} o %{signup} para comentar."
       edit_debate_link: Editar
       share: Compartir
+      flag: "Este debate ha sido marcado como inapropiado por varios usuarios."
     edit:
       editing: Editar debate
       show_link: Ver debate
