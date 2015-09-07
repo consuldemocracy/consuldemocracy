@@ -308,4 +308,50 @@ describe Debate do
     end
   end
 
+  describe "conflictive debates" do
+
+    it "should return true when it has more than 1 flag for 5 positive votes" do
+      debate.update(flags_count: 1)
+      debate.update(cached_votes_up: 4)
+      expect(debate).to be_conflictive
+
+      debate.update(flags_count: 2)
+      debate.update(cached_votes_up: 9)
+      expect(debate).to be_conflictive
+
+      debate.update(flags_count: 3)
+      debate.update(cached_votes_up: 14)
+      expect(debate).to be_conflictive
+
+      debate.update(flags_count: 20)
+      debate.update(cached_votes_up: 2)
+      expect(debate).to be_conflictive
+    end
+
+    it "should return false when it has less than or equal to 1 flag for 5 positive votes" do
+      debate.update(flags_count: 1)
+      debate.update(cached_votes_up: 5)
+      expect(debate).to_not be_conflictive
+
+      debate.update(flags_count: 2)
+      debate.update(cached_votes_up: 10)
+      expect(debate).to_not be_conflictive
+
+      debate.update(flags_count: 2)
+      debate.update(cached_votes_up: 100)
+      expect(debate).to_not be_conflictive
+    end
+
+    it "should return false when it has no flags" do
+      debate.update(flags_count: 0)
+      expect(debate).to_not be_conflictive
+    end
+
+    it "should return false when it has not votes up" do
+      debate.update(cached_votes_up: 0)
+      expect(debate).to_not be_conflictive
+    end
+
+  end
+
 end

@@ -134,6 +134,11 @@ class Debate < ActiveRecord::Base
     terms.present? ? where("title ILIKE ? OR description ILIKE ?", "%#{terms}%", "%#{terms}%") : none
   end
 
+  def conflictive?
+    return false unless flags_count > 0 && cached_votes_up > 0
+    flags_count / cached_votes_up.to_f > 0.2
+  end
+
   protected
 
   def sanitize_description
