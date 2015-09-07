@@ -1,6 +1,6 @@
-# Consul 0.9
+# Consul
 
-## Aplicación de Gobierno Abierto del Ayuntamiento de Madrid
+Gobierno abierto del Ayuntamiento de Madrid
 
 [![Build Status](https://travis-ci.org/AyuntamientoMadrid/participacion.svg?branch=master)](https://travis-ci.org/AyuntamientoMadrid/participacion)
 [![Code Climate](https://codeclimate.com/github/AyuntamientoMadrid/participacion/badges/gpa.svg)](https://codeclimate.com/github/AyuntamientoMadrid/participacion)

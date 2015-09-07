@@ -1,6 +1,6 @@
-# Consul 0.9
+# Consul
 
-## Madrid City Council eParticipation site
+Madrid City Council participation site
 
 [![Build Status](https://travis-ci.org/AyuntamientoMadrid/participacion.svg?branch=master)](https://travis-ci.org/AyuntamientoMadrid/participacion)
 [![Code Climate](https://codeclimate.com/github/AyuntamientoMadrid/participacion/badges/gpa.svg)](https://codeclimate.com/github/AyuntamientoMadrid/participacion)
