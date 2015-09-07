@@ -1,30 +1,28 @@
-<% cache [locale_and_user_status, @all_visible_comments, @all_visible_comments.map(&:author), @debate.comments_count, @comment_flags] do %>
-  <section class="row-full comments">
-    <div class="row">
-      <div id="comments" class="small-12 column">
+<section class="row-full comments">
+  <div class="row">
+    <div id="comments" class="small-12 column">
 
-        <h2>
-          <%= t("debates.show.comments_title") %>
-          <span>(<%= @debate.comments_count %>)</span>
-        </h2>
+      <h2>
+        <%= t("debates.show.comments_title") %>
+        <span>(<%= @debate.comments_count %>)</span>
+      </h2>
 
-        <% if user_signed_in? %>
-          <%= render 'comments/form', {commentable: @debate, parent_id: nil, toggeable: false} %>
-        <% else %>
-        <br>
+      <% if user_signed_in? %>
+        <%= render 'comments/form', {commentable: @debate, parent_id: nil, toggeable: false} %>
+      <% else %>
+      <br>
 
-        <div class="alert-box radius info">
-          <%= t("debates.show.login_to_comment",
-              signin: link_to(t("votes.signin"), new_user_session_path),
-              signup: link_to(t("votes.signup"), new_user_registration_path)).html_safe %>
-          </div>
-        <% end %>
+      <div class="alert-box radius info">
+        <%= t("debates.show.login_to_comment",
+            signin: link_to(t("votes.signin"), new_user_session_path),
+            signup: link_to(t("votes.signup"), new_user_registration_path)).html_safe %>
+        </div>
+      <% end %>
 
-        <% @root_comments.each do |comment| %>
-          <%= render 'comments/comment', comment: comment  %>
-        <% end %>
-        <%= paginate @root_comments %>
-      </div>
+      <% @root_comments.each do |comment| %>
+        <%= render 'comments/comment', comment: comment  %>
+      <% end %>
+      <%= paginate @root_comments %>
     </div>
-  </section>
-<% end %>
+  </div>
+</section>
