@@ -34,7 +34,7 @@ en:
     footer:
       description:
         "The city you want, it will be the city you want. %{more_info} here on this page.
-        This Open Government Portal is %{open_source}, and code is in %{github}.
+        This Open Government Portal use Consul v.0.9 application, is %{open_source}, and code is in %{github}.
         Madrid, for the whole world."
       more_info: Get more information
       more_info_url: "/more_information"
@@ -111,9 +111,8 @@ en:
       debate_text: Initial text for debate
       tags_label: Topics
       tags_instructions: >
-        Tag this debate. You can choose among our proposals on the list or add any other topic you want by
-        writing them separated by ",".
-        Some suggestions:
+        Tag this debate. You can choose among our proposals on the list or add any other topic you want.
+      tags_placeholder: "Add topics writing them separated by ','"
     show:
       back_link: Back
       author_deleted: Deleted user
@@ -125,6 +124,7 @@ en:
       login_to_comment: "You need to %{signin} or %{signup} to comment."
       edit_debate_link: Edit
       share: Share
+      flag: "This debate has been flag as innapropiate for some users."
     edit:
       editing: Edit debate
       show_link: Show debate

@@ -20,16 +20,18 @@
           <a class="js-add-tag-link"><%= tag.name %></a>
         <% end %>
       </span>
-      <%= f.text_field :tag_list, value: @debate.tag_list.to_s, label: false %>
+      <%= f.text_field :tag_list, value: @debate.tag_list.to_s, label: false, placeholder: t("debates.form.tags_placeholder") %>
     </div>
 
     <div class="small-12 column">
       <% if @debate.new_record? %>
         <%= f.label :terms_of_service do %>
           <%= f.check_box :terms_of_service, label: false %>
-          <%= t("form.accept_terms",
-              policy: link_to(t("form.policy"), "/privacy", target: "blank"), conditions: link_to(t("form.conditions"), "/conditions", target: "blank")).html_safe
-          %>
+          <span class="checkbox">
+            <%= t("form.accept_terms",
+                policy: link_to(t("form.policy"), "/privacy", target: "blank"),
+                conditions: link_to(t("form.conditions"), "/conditions", target: "blank")).html_safe %>
+          </span>
         <% end %>
       <% end %>
     </div>

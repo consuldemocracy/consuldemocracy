@@ -240,6 +240,14 @@
       a {
         color: $text;
       }
+
+      ul, ol {
+
+        li {
+          font-size: rem-calc(13);
+          margin-bottom: rem-calc(12);
+        }
+      }
     }
 
     .truncate {
@@ -430,6 +438,14 @@
       font-size: rem-calc(14);
       line-height: $line-height;
       margin-bottom: 0;
+    }
+  }
+
+  ul, ol {
+
+    li {
+      font-size: rem-calc(13);
+      margin-bottom: rem-calc(12);
     }
   }
 

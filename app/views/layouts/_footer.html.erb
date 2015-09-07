@@ -21,17 +21,23 @@
 
       <div class="footer-sections small-12 medium-8 column">
         <div class="small-12 medium-4 column">
-          <h4><%= t("layouts.footer.participation_title") %></h4>
+          <h4>
+            <%= link_to t("layouts.footer.participation_title"), root_path %>
+          </h4>
           <p><%= t("layouts.footer.participation_text") %></p>
         </div>
 
         <div class="small-12 medium-4 column">
-          <h4><%= t("layouts.footer.transparency_title") %></h4>
+          <h4>
+            <%= link_to t("layouts.footer.transparency_title"), "/transparency" %>
+          </h4>
           <p><%= t("layouts.footer.transparency_text") %></p>
         </div>
 
         <div class="small-12 medium-4 column">
-          <h4><%= t("layouts.footer.open_data_title") %></h4>
+          <h4>
+            <%= link_to t("layouts.footer.open_data_title"), "/opendata" %>
+          </h4>
           <p><%= t("layouts.footer.open_data_text") %></p>
         </div>
       </div>
