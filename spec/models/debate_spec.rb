@@ -242,19 +242,19 @@ describe Debate do
 
     it "takes into account percentage of total votes and total_positive and total negative votes" do
       debate = create(:debate, :with_confidence_score, cached_votes_up: 100, cached_votes_score: 100, cached_votes_total: 100)
-      expect(debate.confidence_score).to eq(100)
+      expect(debate.confidence_score).to eq(10000)
 
       debate = create(:debate, :with_confidence_score, cached_votes_up: 0, cached_votes_score: -100, cached_votes_total: 100)
       expect(debate.confidence_score).to eq(0)
 
       debate = create(:debate, :with_confidence_score, cached_votes_up: 50, cached_votes_score: 50, cached_votes_total: 100)
-      expect(debate.confidence_score).to eq(25)
+      expect(debate.confidence_score).to eq(2500)
 
       debate = create(:debate, :with_confidence_score, cached_votes_up: 500, cached_votes_score: 500, cached_votes_total: 1000)
-      expect(debate.confidence_score).to eq(250)
+      expect(debate.confidence_score).to eq(25000)
 
       debate = create(:debate, :with_confidence_score, cached_votes_up: 10, cached_votes_score: -80, cached_votes_total: 100)
-      expect(debate.confidence_score).to eq(-8)
+      expect(debate.confidence_score).to eq(-800)
     end
 
     describe 'actions which affect it' do
