@@ -71,9 +71,9 @@ es:
       select_order: Ordenar por
       select_order_long: Estás viendo los debates
       orders:
+        confidence_score: "mejor valorados"
         hot_score: "más activos"
         created_at: "más nuevos"
-        score: "mejor valorados"
         most_commented: "más comentados"
         random: "aleatorio"
       filter_topic:

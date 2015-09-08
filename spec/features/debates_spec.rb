@@ -359,10 +359,10 @@ feature 'Debates' do
 
   feature 'Debate index order filters' do
 
-    scenario 'Default order is hot_score', :js do
-      create(:debate, title: 'best').update_column(:hot_score, 10)
-      create(:debate, title: 'worst').update_column(:hot_score, 2)
-      create(:debate, title: 'medium').update_column(:hot_score, 5)
+    scenario 'Default order is confidence_score', :js do
+      create(:debate, title: 'best').update_column(:confidence_score, 10)
+      create(:debate, title: 'worst').update_column(:confidence_score, 2)
+      create(:debate, title: 'medium').update_column(:confidence_score, 5)
 
       visit debates_path
 
@@ -370,20 +370,20 @@ feature 'Debates' do
       expect('medium').to appear_before('worst')
     end
 
-    scenario 'Debates are ordered by best rated', :js do
-      create(:debate, title: 'best',   cached_votes_score: 10)
-      create(:debate, title: 'medium', cached_votes_score: 5)
-      create(:debate, title: 'worst',  cached_votes_score: 2)
+    scenario 'Debates are ordered by hot_score', :js do
+      create(:debate, title: 'best').update_column(:hot_score, 10)
+      create(:debate, title: 'worst').update_column(:hot_score, 2)
+      create(:debate, title: 'medium').update_column(:hot_score, 5)
 
       visit debates_path
-      select 'best rated', from: 'order-selector'
+      select 'most active', from: 'order-selector'
 
-      within '#debates.js-order-score' do
+      within '#debates.js-order-hot-score' do
         expect('best').to appear_before('medium')
         expect('medium').to appear_before('worst')
       end
 
-      expect(current_url).to include('order=score')
+      expect(current_url).to include('order=hot_score')
     end
 
     scenario 'Debates are ordered by most commented', :js do
