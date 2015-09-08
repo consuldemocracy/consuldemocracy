@@ -34,6 +34,9 @@ es:
           pending: Pendientes
           verified: Verificadas
           rejected: Rechazadas
+        hidden_count:
+          one: "Hay además una organización sin usuario o con el usuario bloqueado"
+          other: "Hay %{count} organizaciones sin usuario o con el usuario bloqueado"
       search:
         title: "Buscar Organizaciones"
     actions:

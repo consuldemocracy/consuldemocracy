@@ -34,6 +34,9 @@ en:
           pending: Pending
           verified: Verified
           rejected: Rejected
+        hidden_count:
+          one: "There is %{count} organization without user or with the user banned"
+          other: "There is %{count} organizations without user or with the user banned"
       search:
         title: "Search Organizations"
     actions:

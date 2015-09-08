@@ -9,7 +9,7 @@ class Admin::OrganizationsController < Admin::BaseController
   end
 
   def search
-    @organizations = Organization.search(params[:term]).page(params[:page])
+    @organizations = Organization.includes(:user).search(params[:term]).page(params[:page])
   end
 
   def verify

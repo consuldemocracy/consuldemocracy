@@ -18,7 +18,9 @@
 <h3><%= page_entries_info @organizations %></h3>
 
 <table>
+  <% hidden = 0 %>
   <% @organizations.each do |organization| %>
+    <% hidden += 1 and next if organization.user.nil? || organization.user.hidden? %>
     <tr id="<%= dom_id(organization) %>">
     <td><%= organization.name %></td>
     <td><%= organization.email %></td>
@@ -53,5 +55,7 @@
   </tr>
 <% end %>
 </table>
+
+<%= t("admin.organizations.index.hidden_count", count: hidden) if hidden > 0 %>
 
 <%= paginate @organizations %>
