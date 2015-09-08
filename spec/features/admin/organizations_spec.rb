@@ -9,6 +9,23 @@ feature 'Admin::Organizations' do
     login_as(administrator)
   end
 
+  context "Index" do
+    scenario "shows info on organizations with hidden users" do
+      troll = create(:user, email: "trol@troller.com")
+      create(:organization, user: troll, name: "Greentroll")
+      org = create(:organization, name: "Human Rights")
+      troll.hide
+
+      visit admin_organizations_path
+
+      expect(page).to have_content("Human Rights")
+      expect(page).to have_content(org.user.email)
+      expect(page).to_not have_content("Greentroll")
+      expect(page).to_not have_content("trol@troller.com")
+      expect(page).to have_content("There is 1 organization without user or with the user banned")
+    end
+  end
+
   context "Search" do
 
     background do
