@@ -1,0 +1,39 @@
+<h2><%= t("moderation.bulk.index.title") %></h2>
+
+<h3><%= page_entries_info @debates %></h3>
+
+<%= form_tag moderation_bulk_hide_path, method: :put do %>
+  <table>
+    <tr>
+      <th>
+        <%= t("moderation.bulk.index.headers.debate") %>
+      </th>
+      <th class="text-center"><%= t("moderation.bulk.index.headers.flags") %></th>
+      <th>
+       <%= t("moderation.bulk.index.headers.moderate") %>
+      </th>
+    </tr>
+    <% @debates.each do |debate| %>
+      <tr id="debate_<%= debate.id %>">
+        <td>
+          <%= link_to debate.title, debate, target: "_blank" %>
+          <span class="bullet">&nbsp;&bullet;&nbsp;</span>
+          <%= debate.author.username %>
+          <span class="bullet">&nbsp;&bullet;&nbsp;</span>
+          <span class="date"><%= l debate.updated_at.to_date %></span>
+          <br>
+          <%= debate.description %>
+        </td>
+        <td class="text-center"><%= debate.flags_count %></td>
+        <td class="text-center">
+          <%= check_box_tag "debate_ids[]", debate.id, nil, id: "#{dom_id(debate)}_check" %>
+        </td>
+      </tr>
+    <% end %>
+  </table>
+
+  <%= submit_tag t('moderation.bulk.index.hide_debates'), class: "button radius", data: {confirm: t('moderation.bulk.index.confirm')} %>
+  <%= submit_tag t('moderation.bulk.index.block_authors'), class: "button radius", data: {confirm: t('moderation.bulk.index.confirm')} %>
+<% end %>
+
+<%= paginate @debates %>
