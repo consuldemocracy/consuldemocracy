@@ -132,7 +132,7 @@ class Debate < ActiveRecord::Base
 
   def calculate_confidence_score
     return unless cached_votes_total > 0
-    self.confidence_score = cached_votes_score * cached_votes_up / cached_votes_total
+    self.confidence_score = cached_votes_score * (cached_votes_up / cached_votes_total.to_f) * 100
   end
 
   def self.search(terms)
