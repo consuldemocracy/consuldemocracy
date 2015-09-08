@@ -133,6 +133,8 @@ es:
         submit_button: "Guardar cambios"
     new:
       start_new: Empezar un debate
+      info: "Un debate es un foro de discusión, no una propuesta ciudadana. Muy pronto abriremos la sección de propuestas ciudadanas, donde cualquiera podrá presentar propuestas y, si reciben apoyo, serán puestas en marcha por el Ayuntamiento."
+      more_info: "Más información"
       back_link: Volver
       recommendations_title: Recomendaciones para crear un debate
       recommendation_one: "No escribas el título del debate o frases enteras en mayúsculas. En internet eso se considera gritar. Y a nadie le gusta que le griten."
