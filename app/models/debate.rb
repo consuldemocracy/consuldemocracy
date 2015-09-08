@@ -114,7 +114,7 @@ class Debate < ActiveRecord::Base
     z          = 1.96 # Normal distribution with a confidence of 0.95
     time_unit  = 1.0 * 12.hours
     start      = Time.new(2015, 6, 15)
-    comments_weight = 1.0/3 # 3 comments == 1 positive vote
+    comments_weight = 1.0/20 # 1 positive vote / x comments
 
     weighted_score = 0
 
@@ -127,7 +127,7 @@ class Debate < ActiveRecord::Base
 
     age_in_units = 1.0 * ((created_at || Time.now) - start) / time_unit
 
-    self.hot_score = (age_in_units**3 + weighted_score * 1000).round
+    self.hot_score = ((age_in_units**2 + weighted_score)*1000).round
   end
 
   def self.search(terms)
