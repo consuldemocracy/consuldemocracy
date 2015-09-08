@@ -117,6 +117,15 @@ class User < ActiveRecord::Base
     update official_position: nil, official_level: 0
   end
 
+  def block
+    debates_ids = Debate.where(author_id: id).pluck(:id)
+    comments_ids = Comment.where(user_id: id).pluck(:id)
+
+    self.hide
+    Debate.hide_all debates_ids
+    Comment.hide_all comments_ids
+  end
+
   def self.search(term)
     term.present? ? where("email = ? OR username ILIKE ?", term, "%#{term}%") : none
   end
