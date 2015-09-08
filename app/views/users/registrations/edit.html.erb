@@ -19,7 +19,7 @@
     <div class="small-12 column">
       <%= f.label :password, t("devise_views.users.registrations.edit.password_label") %>
       <span class="note"><%= t("devise_views.users.registrations.edit.leave_blank") %></span>
-      <%= f.password_field :password, autocomplete: "off", placeholder: t("devise_views.users.registrations.edit.password_label") %>
+      <%= f.password_field :password, autocomplete: "off", label: false, placeholder: t("devise_views.users.registrations.edit.password_label") %>
     </div>
 
     <div class="small-12 column">
