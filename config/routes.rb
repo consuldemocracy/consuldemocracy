@@ -119,6 +119,9 @@ Rails.application.routes.draw do
         put :ignore_flag
       end
     end
+
+    get '/bulk', to: "bulk#index"
+    put '/bulk/hide', to: "bulk#hide"
   end
 
   resource :stats, only: [:show]
