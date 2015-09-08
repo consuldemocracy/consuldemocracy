@@ -236,6 +236,43 @@ describe Debate do
         expect(previous).to be < debate.hot_score
       end
     end
+  end
+
+  describe "#confidence_score" do
+
+    it "takes into account percentage of total votes and total_positive and total negative votes" do
+      debate = create(:debate, :with_confidence_score, cached_votes_up: 100, cached_votes_score: 100, cached_votes_total: 100)
+      expect(debate.confidence_score).to eq(100)
+
+      debate = create(:debate, :with_confidence_score, cached_votes_up: 0, cached_votes_score: -100, cached_votes_total: 100)
+      expect(debate.confidence_score).to eq(0)
+
+      debate = create(:debate, :with_confidence_score, cached_votes_up: 50, cached_votes_score: 50, cached_votes_total: 100)
+      expect(debate.confidence_score).to eq(25)
+
+      debate = create(:debate, :with_confidence_score, cached_votes_up: 500, cached_votes_score: 500, cached_votes_total: 1000)
+      expect(debate.confidence_score).to eq(250)
+
+      debate = create(:debate, :with_confidence_score, cached_votes_up: 10, cached_votes_score: -80, cached_votes_total: 100)
+      expect(debate.confidence_score).to eq(-8)
+    end
+
+    describe 'actions which affect it' do
+      let(:debate) { create(:debate, :with_confidence_score) }
+
+      it "increases with like" do
+        previous = debate.confidence_score
+        5.times { debate.register_vote(create(:user), true) }
+        expect(previous).to be < debate.confidence_score
+      end
+
+      it "decreases with dislikes" do
+        debate.register_vote(create(:user), true)
+        previous = debate.confidence_score
+        3.times { debate.register_vote(create(:user), false) }
+        expect(previous).to be > debate.confidence_score
+      end
+    end
 
   end
 

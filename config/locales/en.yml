@@ -71,9 +71,9 @@ en:
       select_order: Order by
       select_order_long: Order debates by
       orders:
+        confidence_score: best rated
         hot_score: most active
         created_at: newest
-        score: best rated
         most_commented: most commented
         random: random
       filter_topic:

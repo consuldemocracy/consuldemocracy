@@ -17,4 +17,15 @@ feature "Home" do
 
   end
 
+  scenario "Order by confidence score" do
+    create(:debate, confidence_score: 100, title: 'best')
+    create(:debate, confidence_score: -20, title: 'worst')
+    create(:debate, confidence_score: 50,  title: 'medium')
+
+    visit root_path
+
+    expect('best').to appear_before('medium')
+    expect('medium').to appear_before('worst')
+  end
+
 end

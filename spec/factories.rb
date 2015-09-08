@@ -78,6 +78,10 @@ FactoryGirl.define do
       before(:save) { |d| d.calculate_hot_score }
     end
 
+    trait :with_confidence_score do
+      before(:save) { |d| d.calculate_confidence_score }
+    end
+
     trait :conflictive do
       after :create do |debate|
         Flag.flag(FactoryGirl.create(:user), debate)
