@@ -257,6 +257,23 @@ describe Debate do
       expect(debate.confidence_score).to eq(-8)
     end
 
+    describe 'actions which affect it' do
+      let(:debate) { create(:debate, :with_confidence_score) }
+
+      it "increases with like" do
+        previous = debate.confidence_score
+        5.times { debate.register_vote(create(:user), true) }
+        expect(previous).to be < debate.confidence_score
+      end
+
+      it "decreases with dislikes" do
+        debate.register_vote(create(:user), true)
+        previous = debate.confidence_score
+        3.times { debate.register_vote(create(:user), false) }
+        expect(previous).to be > debate.confidence_score
+      end
+    end
+
   end
 
   describe "self.search" do
