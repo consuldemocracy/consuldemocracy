@@ -1,13 +1,14 @@
 require 'rails_helper'
 
 feature 'Moderate in bulk' do
+  background do
+    moderator = create(:moderator)
+    login_as(moderator.user)
+  end
 
   feature "When a debate has been selected for moderation" do
     background do
-      moderator = create(:moderator)
       @debate = create(:debate)
-
-      login_as(moderator.user)
       visit moderation_bulk_path
 
       within("#debate_#{@debate.id}") do
@@ -29,6 +30,22 @@ feature 'Moderate in bulk' do
       expect(page).to_not have_css("debate_#{@debate.id}")
       expect(@debate.reload).to be_hidden
       expect(@debate.author).to be_hidden
+    end
+  end
+
+  scenario "select all/none", :js do
+    create_list(:debate, 20)
+
+    visit moderation_bulk_path
+
+    click_on 'All'
+    all('input[type=checkbox]').each do |checkbox|
+      expect(checkbox).to be_checked
+    end
+
+    click_on 'None'
+    all('input[type=checkbox]').each do |checkbox|
+      expect(checkbox).to_not be_checked
     end
   end
 

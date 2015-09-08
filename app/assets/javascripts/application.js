@@ -32,6 +32,7 @@ var initialize_modules = function() {
   App.Stats.initialize();
   App.Dropdown.initialize();
   App.LocationChanger.initialize();
+  App.CheckAllNone.initialize();
 };
 
 $(function(){

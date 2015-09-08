@@ -52,6 +52,9 @@ en:
         hide_debates: Hide debates
         block_authors: Block authors
         confirm: Are you sure?
+        check: Select
+        check_all: All
+        check_none: None
     users:
       notice_hide: User banned.
       index:

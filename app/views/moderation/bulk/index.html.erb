@@ -3,6 +3,13 @@
 <h3><%= page_entries_info @debates %></h3>
 
 <%= form_tag moderation_bulk_hide_path, method: :put do %>
+  <p class="right">
+  <%= t('moderation.bulk.index.check') %>:
+    <%= link_to t('moderation.bulk.index.check_all'), '#', data: {check_all: "debate_ids[]"} %>
+    |
+    <%= link_to t('moderation.bulk.index.check_none'), '#', data: {check_none: "debate_ids[]"} %>
+  </p>
+
   <table>
     <tr>
       <th>

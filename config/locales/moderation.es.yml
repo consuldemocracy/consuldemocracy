@@ -52,6 +52,9 @@ es:
         hide_debates: Ocultar debates
         block_authors: Bloquear usuarios
         confirm: ¿Estás seguro?
+        check: Seleccionar
+        check_all: Todos
+        check_none: Ninguno
     users:
       notice_hide: Usuario bloqueado. Se han ocultado todos sus debates y comentarios.
       index:
