@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150907064631) do
+ActiveRecord::Schema.define(version: 20150908102936) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -102,12 +102,14 @@ ActiveRecord::Schema.define(version: 20150907064631) do
     t.integer  "cached_anonymous_votes_total",            default: 0
     t.integer  "cached_votes_score",                      default: 0
     t.integer  "hot_score",                    limit: 8,  default: 0
+    t.integer  "confidence_score",                        default: 0
   end
 
   add_index "debates", ["cached_votes_down"], name: "index_debates_on_cached_votes_down", using: :btree
   add_index "debates", ["cached_votes_score"], name: "index_debates_on_cached_votes_score", using: :btree
   add_index "debates", ["cached_votes_total"], name: "index_debates_on_cached_votes_total", using: :btree
   add_index "debates", ["cached_votes_up"], name: "index_debates_on_cached_votes_up", using: :btree
+  add_index "debates", ["confidence_score"], name: "index_debates_on_confidence_score", using: :btree
   add_index "debates", ["hidden_at"], name: "index_debates_on_hidden_at", using: :btree
   add_index "debates", ["hot_score"], name: "index_debates_on_hot_score", using: :btree
 

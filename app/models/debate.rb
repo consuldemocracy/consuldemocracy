@@ -21,7 +21,7 @@ class Debate < ActiveRecord::Base
   before_validation :sanitize_description
   before_validation :sanitize_tag_list
 
-  before_save :calculate_hot_score
+  before_save :calculate_hot_score, :calculate_confidence_score
 
   scope :sort_for_moderation, -> { order(flags_count: :desc, updated_at: :desc) }
   scope :pending_flag_review, -> { where(ignored_flag_at: nil, hidden_at: nil) }
@@ -29,7 +29,7 @@ class Debate < ActiveRecord::Base
   scope :flagged, -> { where("flags_count > 0") }
   scope :for_render, -> { includes(:tags) }
   scope :sort_by_hot_score , -> { order(hot_score: :desc) }
-  scope :sort_by_score , -> { order(cached_votes_score: :desc) }
+  scope :sort_by_confidence_score , -> { order(confidence_score: :desc) }
   scope :sort_by_created_at, -> { order(created_at: :desc) }
   scope :sort_by_most_commented, -> { order(comments_count: :desc) }
   scope :sort_by_random, -> { order("RANDOM()") }
@@ -128,6 +128,11 @@ class Debate < ActiveRecord::Base
     age_in_units = 1.0 * ((created_at || Time.now) - start) / time_unit
 
     self.hot_score = (age_in_units**3 + weighted_score * 1000).round
+  end
+
+  def calculate_confidence_score
+    return unless cached_votes_total > 0
+    self.confidence_score = cached_votes_score * cached_votes_up / cached_votes_total
   end
 
   def self.search(terms)
