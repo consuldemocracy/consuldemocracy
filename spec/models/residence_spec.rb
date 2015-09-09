@@ -76,4 +76,20 @@ describe Verification::Residence do
     end
   end
 
+  describe "Failed census call" do
+    it "stores failed census API calls" do
+      residence = build(:verification_residence, :invalid)
+      residence.save
+
+      expect(FailedCensusCall.count).to eq(1)
+      expect(FailedCensusCall.first).to have_attributes({
+        user_id:         residence.user.id,
+        document_number: "12345678Z",
+        document_type:   "1",
+        date_of_birth:   Date.new(1980, 12, 31),
+        postal_code:     "12345"
+      })
+    end
+  end
+
 end

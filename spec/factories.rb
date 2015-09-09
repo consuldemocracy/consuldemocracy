@@ -28,6 +28,10 @@ FactoryGirl.define do
     date_of_birth    Date.new(1980, 12, 31)
     postal_code      "28013"
     terms_of_service '1'
+
+    trait :invalid do
+      postal_code "12345"
+    end
   end
 
   factory :verification_sms, class: Verification::Sms do
