@@ -383,7 +383,7 @@ header {
     a {
       color: white;
       font-family: 'Lato';
-      font-size: rem-calc(18);
+      font-size: rem-calc(16);
       font-weight: lighter;
       line-height: $line-height*2;
       padding-left: 0;
@@ -392,18 +392,25 @@ header {
         opacity: .5;
 
         &.logo-site {
+          font-size: rem-calc(14);
           opacity: 1;
         }
       }
 
       @media (min-width: $small-breakpoint) {
+        font-size: rem-calc(24);
         line-height: $line-height*4;
+
+        span, span.logo-site {
+          font-size: rem-calc(16);
+        }
       }
 
       @media (min-width: $medium-breakpoint) {
         font-size: rem-calc(30);
+        line-height: $line-height*4;
 
-        span {
+        span, span.logo-site {
           font-size: rem-calc(20);
         }
       }
