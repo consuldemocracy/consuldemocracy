@@ -34,6 +34,9 @@ class Debate < ActiveRecord::Base
   scope :sort_by_most_commented, -> { order(comments_count: :desc) }
   scope :sort_by_random, -> { order("RANDOM()") }
 
+  # Ahoy setup
+  visitable # Ahoy will automatically assign visit_id on create
+
   def likes
     cached_votes_up
   end

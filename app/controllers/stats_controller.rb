@@ -4,7 +4,6 @@ class StatsController < ApplicationController
 
   def show
     @event_types = Ahoy::Event.select(:name).uniq.pluck(:name)
-    @debates_created_count = Ahoy::Event.where(name: 'debate_created').count
   end
 
   private

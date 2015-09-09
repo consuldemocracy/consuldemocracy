@@ -11,30 +11,6 @@ describe DebatesController do
     SimpleCaptcha.always_pass = @original_captcha_pass_value
   end
 
-  describe 'GET show' do
-    it 'should create an ahoy visit' do
-      debate = create(:debate)
-      sign_in create(:user)
-
-      get :show, id: debate.id
-
-      expect(Visit.count).to eq 1
-      expect(Visit.first.landing_page).to eq debate_url(debate)
-    end
-  end
-
-  describe 'GET index' do
-    it 'should create an ahoy visit' do
-      debate = create(:debate)
-      sign_in create(:user)
-
-      get :index
-
-      expect(Visit.count).to eq 1
-      expect(Visit.first.landing_page).to eq debates_url
-    end
-  end
-
   describe 'POST create' do
     it 'should create an ahoy event' do
 
