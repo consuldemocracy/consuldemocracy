@@ -156,6 +156,6 @@ class Debate < ActiveRecord::Base
   end
 
   def sanitize_tag_list
-    #self.tag_list = TagSanitizer.new.sanitize_tag_list(self.tag_list)
+    self.tag_list = TagSanitizer.new.sanitize_tag_list(self.tag_list)
   end
 end
