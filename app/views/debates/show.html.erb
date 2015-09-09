@@ -32,7 +32,7 @@
                 <%= @debate.author.name %>
             </span>
             <% if @debate.author.official? %>
-              &nbsp;&bullet;&nbsp;
+              &nbsp;&bull;&nbsp;
               <span class="label round level-<%= @debate.author.official_level %>">
                 <%= @debate.author.official_position %>
               </span>
@@ -40,18 +40,18 @@
           <% end %>
 
           <% if @debate.author.verified_organization? %>
-            &nbsp;&bullet;&nbsp;
+            &nbsp;&bull;&nbsp;
             <span class="label round is-association">
               <%= t("shared.collective") %>
             </span>
           <% end %>
 
-          <span class="bullet">&nbsp;&bullet;&nbsp;</span>
+          <span class="bullet">&nbsp;&bull;&nbsp;</span>
           <%= l @debate.created_at.to_date %>
-          <span class="bullet">&nbsp;&bullet;&nbsp;</span>
+          <span class="bullet">&nbsp;&bull;&nbsp;</span>
           <i class="icon-comments"></i>&nbsp;
           <%= link_to t("debates.show.comments", count: @debate.comments_count), "#comments" %>
-          <span class="bullet">&nbsp;&bullet;&nbsp;</span>
+          <span class="bullet">&nbsp;&bull;&nbsp;</span>
           <span class="js-flag-actions">
             <%= render 'debates/flag_actions', debate: @debate %>
           </span>

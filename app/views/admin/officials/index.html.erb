@@ -17,9 +17,9 @@
 <% @officials.each do |official| %>
   <li>
     <%= link_to official.name, edit_admin_official_path(official) %>
-    <span class="bullet">&nbsp;&bullet;&nbsp;</span>
+    <span class="bullet">&nbsp;&bull;&nbsp;</span>
     <span class="level"><%= t("admin.officials.level_#{official.official_level}") %></span>
-    <span class="bullet">&nbsp;&bullet;&nbsp;</span>
+    <span class="bullet">&nbsp;&bull;&nbsp;</span>
     <span class="label round level-<%= official.official_level %>">
       <%= official.official_position %>
     </span>
