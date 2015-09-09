@@ -1,8 +1,10 @@
 class User < ActiveRecord::Base
-  include Verification
-
   OMNIAUTH_EMAIL_PREFIX = 'omniauth@participacion'
   OMNIAUTH_EMAIL_REGEX  = /\A#{OMNIAUTH_EMAIL_PREFIX}/
+
+  USERNAME_LENGTH = {maximum: User.columns.find { |c| c.name == 'username' }.limit || 60}
+
+  include Verification
 
   apply_simple_captcha
   devise :database_authenticatable, :registerable, :confirmable,
@@ -23,6 +25,7 @@ class User < ActiveRecord::Base
 
   validates :username, presence: true, unless: :organization?
   validates :username, uniqueness: true, unless: :organization?
+  validates :username, length: USERNAME_LENGTH
   validates :official_level, inclusion: {in: 0..5}
   validates_format_of :email, without: OMNIAUTH_EMAIL_REGEX, on: :update
   validates :terms_of_service, acceptance: { allow_nil: false }, on: :create

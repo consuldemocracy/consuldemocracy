@@ -1,4 +1,6 @@
 class Comment < ActiveRecord::Base
+  BODY_LENGTH = {minimum: 10, maximum: 2000}
+
   acts_as_paranoid column: :hidden_at
   include ActsAsParanoidAliases
   acts_as_votable
@@ -9,6 +11,8 @@ class Comment < ActiveRecord::Base
   validates :body, presence: true
   validates :user, presence: true
   validates_inclusion_of :commentable_type, in: ["Debate"]
+
+  validates :body, length: BODY_LENGTH
 
   belongs_to :commentable, -> { with_hidden }, polymorphic: true, counter_cache: true
   belongs_to :user, -> { with_hidden }

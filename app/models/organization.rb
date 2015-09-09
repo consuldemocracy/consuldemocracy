@@ -1,7 +1,11 @@
 class Organization < ActiveRecord::Base
+  NAME_LENGTH = {maximum: Organization.columns.find { |c| c.name == 'name' }.limit || 60}
+
   belongs_to :user, touch: true
 
   validates :name, presence: true
+  validates :name, length: NAME_LENGTH
+  validates :name, uniqueness: true
 
   delegate :email, :phone_number, to: :user
 

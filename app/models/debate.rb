@@ -1,7 +1,9 @@
 require 'numeric'
 class Debate < ActiveRecord::Base
+  TITLE_LENGTH       = {minimum: 10, maximum: Debate.columns.find { |c| c.name == 'title' }.limit || 80 }
+  DESCRIPTION_LENGTH = {minimum: 10, maximum: 6000}
+
   apply_simple_captcha
-  TITLE_LENGTH = Debate.columns.find { |c| c.name == 'title' }.limit
 
   acts_as_votable
   acts_as_taggable
@@ -15,6 +17,9 @@ class Debate < ActiveRecord::Base
   validates :title, presence: true
   validates :description, presence: true
   validates :author, presence: true
+
+  validates :title, length: TITLE_LENGTH
+  validates :description, length: DESCRIPTION_LENGTH
 
   validates :terms_of_service, acceptance: { allow_nil: false }, on: :create
 
@@ -148,6 +153,6 @@ class Debate < ActiveRecord::Base
   end
 
   def sanitize_tag_list
-    self.tag_list = TagSanitizer.new.sanitize_tag_list(self.tag_list)
+    #self.tag_list = TagSanitizer.new.sanitize_tag_list(self.tag_list)
   end
 end
