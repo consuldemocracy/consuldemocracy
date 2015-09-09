@@ -22,4 +22,9 @@ module CacheKeysHelper
     user_status
   end
 
+  # when commentable id and type are used but no need to update cache on updated_at changes
+  def commentable_cache_key(commentable)
+    "#{commentable.class.name}-#{commentable.id}"
+  end
+
 end

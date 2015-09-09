@@ -4,7 +4,7 @@ class Comment < ActiveRecord::Base
   acts_as_paranoid column: :hidden_at
   include ActsAsParanoidAliases
   acts_as_votable
-  has_ancestry
+  has_ancestry touch: true
 
   attr_accessor :as_moderator, :as_administrator
 

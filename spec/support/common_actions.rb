@@ -34,17 +34,6 @@ module CommonActions
     click_button 'Send me reset password instructions'
   end
 
-  def create_a_debate
-    fill_in 'debate_title', with: 'Acabar con los desahucios'
-    fill_in 'debate_description', with: 'Esto es un tema muy importante porque...'
-    fill_in 'debate_captcha', with: correct_captcha_text
-    check 'debate_terms_of_service'
-
-    click_button 'Start a debate'
-
-    expect(page).to have_content 'Debate was successfully created.'
-  end
-
   def comment_on(debate)
     user = create(:user)
 

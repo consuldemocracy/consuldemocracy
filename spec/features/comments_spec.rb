@@ -14,7 +14,7 @@ feature 'Comments' do
     comment = Comment.last
     within first('.comment') do
       expect(page).to have_content comment.user.name
-      expect(page).to have_content time_ago_in_words(comment.created_at)
+      expect(page).to have_content I18n.l(comment.created_at, format: :datetime)
       expect(page).to have_content comment.body
     end
   end
