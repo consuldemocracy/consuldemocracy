@@ -59,7 +59,7 @@
 
             <% end %>
 
-            &nbsp;&bullet;&nbsp;<%= time_ago_in_words(comment.created_at) %>
+            &nbsp;&bullet;&nbsp;<%= l comment.created_at.to_datetime, format: :datetime %>
           </div>
 
           <% if comment.as_administrator? %>

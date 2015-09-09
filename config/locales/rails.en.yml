@@ -20,3 +20,6 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  time:
+    formats:
+      datetime: "%Y-%m-%d %H:%M:%S"
