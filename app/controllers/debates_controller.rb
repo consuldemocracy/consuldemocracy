@@ -13,6 +13,7 @@ class DebatesController < ApplicationController
     @debates = @debates.page(params[:page]).for_render.send("sort_by_#{@order}")
     @tag_cloud = Debate.tag_counts.order(taggings_count: :desc, name: :asc).limit(20)
     set_debate_votes(@debates)
+    ahoy.track_visit
   end
 
   def show
@@ -23,6 +24,7 @@ class DebatesController < ApplicationController
 
     @all_visible_comments = @root_comments + @comments
     set_comment_flags(@all_visible_comments)
+    ahoy.track_visit
   end
 
   def new
