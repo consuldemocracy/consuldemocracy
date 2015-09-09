@@ -14,7 +14,10 @@
                      rel: "apple-touch-icon",
                      sizes: "200x200",
                      type: "image/png" %>
-    </head>
+    <!--[if lt IE 9]>
+      <%= javascript_include_tag "respond" %>
+    <![endif]-->
+  </head>
   <body class="<%= "bg-white" if current_page?(root_path) %>">
     <div class="wrapper">
       <%= render 'layouts/header' %>
@@ -48,4 +51,7 @@
       <%= render 'layouts/footer' %>
     </div>
   </body>
+  <!--[if lt IE 9]>
+    <%= javascript_include_tag "rem" %>
+  <![endif]-->
 </html>

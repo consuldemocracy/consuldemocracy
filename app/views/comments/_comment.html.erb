@@ -38,20 +38,20 @@
               <% else %>
                 <span class="user-name"><%= comment.user.name %></span>
                 <% if comment.user.official? %>
-                  &nbsp;&bullet;&nbsp;
+                  &nbsp;&bull;&nbsp;
                   <span class="label round level-<%= comment.user.official_level %>">
                     <%= comment.user.official_position %>
                   </span>
                 <% end %>
               <% end %>
               <% if comment.user.verified_organization? %>
-                &nbsp;&bullet;&nbsp;
+                &nbsp;&bull;&nbsp;
                 <span class="label round is-association">
                   <%= t("shared.collective") %>
                 </span>
               <% end %>
               <% if comment.user_id == @commentable.author_id %>
-                &nbsp;&bullet;&nbsp;
+                &nbsp;&bull;&nbsp;
                 <span class="label round is-author">
                   <%= t("debates.comment.author") %>
                 </span>
@@ -59,7 +59,7 @@
 
             <% end %>
 
-            &nbsp;&bullet;&nbsp;<time><%= l comment.created_at.to_datetime, format: :datetime %></time>
+            &nbsp;&bull;&nbsp;<time><%= l comment.created_at.to_datetime, format: :datetime %></time>
           </div>
 
           <% if comment.as_administrator? %>

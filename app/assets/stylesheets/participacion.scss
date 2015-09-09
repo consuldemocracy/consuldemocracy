@@ -271,9 +271,12 @@ h6 {
 header {
   background: image-url('header_bg.jpg');
   background-position: 50% 50%;
+  background-repeat: no-repeat;
   background-size: cover;
   color: $text;
   min-height: rem-calc(696);
+  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='assets/header_bg.jpg', sizingMethod='scale');
+  -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='assets/header_bg.jpg',sizingMethod='scale')";
 
   &.results {
     border-bottom: rem-calc(1) solid $border;
@@ -306,6 +309,7 @@ header {
   .home-page {
     background-color: rgba(255,255,255,.85);
     clear: both;
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#ffffff', endColorstr='#ffffff'); /* IE */
 
     @media (min-width: $small-breakpoint) {
       margin-top: rem-calc(66);
@@ -389,9 +393,11 @@ header {
       padding-left: 0;
 
       span {
+        *display: inline; /* IE */
         opacity: .5;
 
         &.logo-site {
+          *display: inline; /* IE */
           font-size: rem-calc(14);
           opacity: 1;
         }
@@ -431,6 +437,12 @@ header {
 
   &.expanded .title-area {
     background: none;
+  }
+
+  @media screen\0 {
+    .title-area {
+      min-width: rem-calc(475);
+    }
   }
 
   .toggle-topbar {
@@ -599,7 +611,6 @@ header {
 footer {
   color: white;
   padding: rem-calc(24) 0 rem-calc(48) 0;
-  text-align: justify;
 
   .logo {
     @include logo;

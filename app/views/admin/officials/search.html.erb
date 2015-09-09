@@ -17,11 +17,11 @@
   <% @users.each do |user| %>
     <li>
       <%= link_to user.name, edit_admin_official_path(user) %>
-      <span class="bullet">&nbsp;&bullet;&nbsp;</span>
+      <span class="bullet">&nbsp;&bull;&nbsp;</span>
       <span class="label round level-<%= user.official_level %>">
         <%= user.official_position %>
       </span>
-      <span class="bullet">&nbsp;&bullet;&nbsp;</span>
+      <span class="bullet">&nbsp;&bull;&nbsp;</span>
       <span class="level"><%= t("admin.officials.level_#{user.official_level}") %></span>
 
     <%= link_to user.official? ? t("admin.officials.search.edit_official") : t("admin.officials.search.make_official"), edit_admin_official_path(user), class: "button radius tiny right" %>
