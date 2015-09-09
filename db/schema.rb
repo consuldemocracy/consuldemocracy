@@ -224,7 +224,7 @@ ActiveRecord::Schema.define(version: 20150909135032) do
     t.integer  "official_level",                           default: 0
     t.datetime "hidden_at"
     t.string   "sms_confirmation_code"
-    t.string   "username",                     limit: 200
+    t.string   "username",                     limit: 60
     t.string   "document_number"
     t.string   "document_type"
     t.datetime "residence_verified_at"
