@@ -12,6 +12,12 @@ describe TagSanitizer do
     it 'filters out dangerous strings' do
       expect(subject.sanitize_tag('user_id=1')).to eq('user_id1')
     end
+
+    it 'sets up a max length for each tag' do
+      long_tag = '1' * (TagSanitizer::TAG_MAX_LENGTH + 100)
+
+      expect(subject.sanitize_tag(long_tag).size).to eq(TagSanitizer::TAG_MAX_LENGTH)
+    end
   end
 
   describe '#sanitize_tag_list' do

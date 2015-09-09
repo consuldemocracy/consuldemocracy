@@ -1,4 +1,5 @@
 class TagSanitizer
+  TAG_MAX_LENGTH = 40
 
   DISALLOWED_STRINGS = %w(? < > = /)
 
@@ -7,7 +8,7 @@ class TagSanitizer
     DISALLOWED_STRINGS.each do |s|
       tag.gsub!(s, '')
     end
-    tag
+    tag.truncate(TAG_MAX_LENGTH)
   end
 
   def sanitize_tag_list(tag_list)
