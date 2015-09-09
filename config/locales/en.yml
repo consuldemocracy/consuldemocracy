@@ -133,6 +133,8 @@ en:
         submit_button: "Save changes"
     new:
       start_new: Start a debate
+      info: "A debate is a discussion forum, not a proposal. And soon... we opened the section of citizen proposals."
+      more_info: "More info"
       back_link: Back
       recommendations_title: Tips for creating a debate
       recommendation_one: "Do not write the title of the debate or whole sentences in capital. On the Internet this is considered shouting. And nobody likes to scream."

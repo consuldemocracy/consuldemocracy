@@ -6,6 +6,12 @@
       <%= t("debates.new.back_link") %>
     <% end %>
     <h1><%= t("debates.new.start_new") %></h1>
+    <div class="alert-box info radius">
+      <%= t("debates.new.info")%>
+      <%= link_to "/more_information", target: "_blank" do %>
+        <strong><%= t("debates.new.more_info")%></strong>
+      <% end %>
+    </div>
     <%= render "form" %>
   </div>
 
