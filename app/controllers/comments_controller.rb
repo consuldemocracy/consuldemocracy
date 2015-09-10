@@ -15,7 +15,7 @@ class CommentsController < ApplicationController
   end
 
   def vote
-    @comment.vote_by(voter: current_user, vote: params[:value])
+    Vote.vote_or_unvote_for(voter: current_user, votable: @comment, value: params[:value])
     respond_with @comment
   end
 

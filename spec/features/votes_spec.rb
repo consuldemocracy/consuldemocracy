@@ -319,6 +319,14 @@ feature 'Votes' do
         end
 
         expect(page).to have_content "1 vote"
+
+        find('.against a').click
+
+        within('.against') do
+          expect(page).to have_content "0"
+        end
+
+        expect(page).to have_content "No votes"
       end
     end
 
