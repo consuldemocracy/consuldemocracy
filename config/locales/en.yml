@@ -15,13 +15,12 @@ en:
       open_city_title: "The city you want, it will be the city you want."
       open_city_slogan:
         "Start listening to Madrid.
-        For that we open this digital Puerta del Sol, where all the locals can meet to discuss and share everything we want.
-        Also a place where you can talk directly with all the employees of the City of Madrid, from the Mayor to any public employee of the City hall."
-      open_city_text:
-        "Here every voice has its place and are citizens, and no one in their name, they decide to vote debates what issues are
-        most important of every time. Government officials have individual users with whom you may participate in the debates, and evaluated,
-        the same level as everyone else. Because the Madrid City Council works for its citizens, and must respond to them."
-      open_city_soon: "And soon... we'll open the section for citizen proposals."
+        For that we open this digital Puerta del Sol, where all the locals can meet to discuss and share everything we want."
+      # open_city_text:
+      #   "Here every voice has its place and are citizens, and no one in their name, they decide to vote debates what issues are
+      #   most important of every time. Government officials have individual users with whom you may participate in the debates, and evaluated,
+      #   the same level as everyone else. Because the Madrid City Council works for its citizens, and must respond to them."
+      # open_city_soon: "And soon... we'll open the section for citizen proposals."
       see_all_debates: See all debates
       my_account_link: My account
       locale: "Language:"
@@ -32,16 +31,11 @@ en:
       debates: Debates
       # initiatives: Initiatives
     footer:
-      description:
-        "The city you want, it will be the city you want. %{more_info} here on this page.
-        This Open Government Portal use Consul v.0.9 application, is %{open_source}, and code is in %{github}.
-        Madrid, for the whole world."
-      more_info: Get more information
-      more_info_url: "/more_information"
-      open_source: "software libre AGPLv3"
+      description: "This portal use %{consul}, is %{open_source}. Madrid, for the whole world."
+      open_source: "software libre"
       open_source_url: "http://www.gnu.org/licenses/agpl-3.0.html"
-      github: "github"
-      github_url: "https://github.com/ayuntamientomadrid"
+      consul: "Consul application"
+      consul_url: "https://github.com/ayuntamientomadrid"
       copyright: "Ayuntamiento de Madrid, %{year}"
       participation_title: "Participation"
       participation_text: Decide what should be the city of Madrid you want.
@@ -52,6 +46,7 @@ en:
       contact_us: "Contact us"
       privacy: "Privacy Policy"
       conditions: "Terms of use"
+      more_info: "More information"
   form:
       error: error
       errors: errors
@@ -201,7 +196,7 @@ en:
     search_form:
       search_title: Search
       search_button: Search
-      search_placeholder: "Search..."
+      search_placeholder: "Search on debates..."
   mailer:
     comment:
       subject: Someone has commented on your debate
