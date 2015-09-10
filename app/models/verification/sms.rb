@@ -35,7 +35,7 @@ class Verification::Sms
     user.update(sms_confirmation_tries: user.sms_confirmation_tries += 1)
   end
 
-  def verify?
+  def verified?
     user.sms_confirmation_code == confirmation_code
   end
 

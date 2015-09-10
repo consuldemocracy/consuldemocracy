@@ -78,12 +78,15 @@ es:
         title: "Confirmación de código de seguridad"
         confirmation_code: "Introduce el código que has recibido en tu carta"
       update:
-        error: "Código de verificación incorrecto"
         flash:
           success: "Código correcto. Tu cuenta ya está verificada"
       alert:
         unconfirmed_code: "Todavía no has introducido el código de confirmación"
         verify_attemps_left: "Has llegado al máximo número de intentos de verificar tu carta."
+      errors:
+        letter_not_sent: "Aún no te hemos enviado la carta con el código"
+        incorect_code: "Código de verificación incorrecto"
+        address_not_found: "No se ha encontrado una dirección"
     verified_user:
       show:
         title: "Información disponible"
