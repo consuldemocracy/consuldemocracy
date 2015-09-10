@@ -1,7 +1,7 @@
 App.PreventDoubleSubmission =
   disable_button: (button) ->
     unless button.hasClass('disabled')
-      loading = button.data('loading') ? 'Sending ...'
+      loading = button.data('loading') ? '...'
       button.addClass('disabled').attr('disabled', 'disabled')
       button.data('text', button.val())
       button.val(loading)
