@@ -262,7 +262,8 @@ h6 {
 }
 
 .footer {
-  background: $brand;
+  background: #DEE0E2;
+  border-top: rem-calc(10) solid $brand;
 }
 
 // 04. Header
@@ -542,6 +543,7 @@ header {
 }
 
 .top-links {
+  background: #0B0C0C;
   color: white;
   font-size: rem-calc(14);
 
@@ -609,61 +611,55 @@ header {
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
 footer {
-  color: white;
-  padding: rem-calc(24) 0 rem-calc(48) 0;
+  color: #171819;
+  padding: rem-calc(48) 0;
 
   .logo {
     @include logo;
 
     a {
+      color: #454A4C;
       line-height: rem-calc(36);
       padding-left: 0;
+      text-decoration: none;
     }
   }
 
-  h4 {
-    color: white;
-    font-weight: normal;
+  p {
+    font-size: rem-calc(14);
   }
 
-  a {
-    color: white;
+  a, a:active, a:focus {
+    color: #454A4C;
+    text-decoration: underline;
 
     &:hover {
-      color: white;
-      opacity: .5;
-      transition: opacity 275ms;
-    }
-
-    &:active, &:focus {
-      color: white;
-    }
-  }
-
-  .footer-description {
-    a {
-      text-decoration: underline;
-
-      &:hover {
-        color: white;
-        opacity: .5;
-        transition: opacity 275ms;
-      }
-
-      &:active, &:focus {
-        color: white;
-        opacity: 1;
-      }
+      color: #171819;
     }
   }
 
   .footer-sections {
     padding-left: 0;
   }
+
+  h4 {
+
+    a {
+      border-bottom: 1px solid #BFC1C3;
+      display: block;
+      margin-bottom: rem-calc(6);
+      padding-bottom: rem-calc(6);
+      text-decoration: none;
+    }
+  }
 }
 
 .subfooter {
-  padding-top: $line-height;
+  border-top: 1px solid #BFC1C3;
+  opacity: .75;
+  margin-top: rem-calc(24);
+  padding-top: rem-calc(12);
+
 }
 
 // 06. Tags

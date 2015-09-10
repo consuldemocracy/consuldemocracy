@@ -2,23 +2,22 @@
 	<div class="row-full">
 		<div class="row">
 
-      <div class="small-12 medium-4 column">
+      <div class="small-12 large-4 column">
         <div class="logo">
           <%= link_to t("layouts.header.open_gov", open: "#{t('layouts.header.open')}").html_safe %>
         </div>
 
-        <p class="footer-description">
+        <p>
           <%= t("layouts.footer.description",
-            more_info: link_to(t("layouts.footer.more_info"), t("layouts.footer.more_info_url")),
             open_source: link_to(t("layouts.footer.open_source"), t("layouts.footer.open_source_url"), target: "blank"),
-            github:  link_to(t("layouts.footer.github"), t("layouts.footer.github_url"), target: "blank")).html_safe
+            consul:  link_to(t("layouts.footer.consul"), t("layouts.footer.consul_url"), target: "blank")).html_safe
           %>
           <%= t("layouts.footer.contact_us") %>
           <%= mail_to "web.gobiernoabierto@madrid.es" %>
         </p>
       </div>
 
-      <div class="footer-sections small-12 medium-8 column">
+      <div class="footer-sections small-12 large-8 column">
         <div class="small-12 medium-4 column">
           <h4>
             <%= link_to t("layouts.footer.participation_title"), root_path %>
@@ -45,6 +44,7 @@
     <div class="subfooter row">
       <div class="small-12 column">
         <%= t("layouts.footer.copyright", year: Time.now.year) %>&nbsp;|&nbsp;
+        <%= link_to t("layouts.footer.more_info"), "/more_information" %>&nbsp;|&nbsp;
         <%= link_to t("layouts.footer.privacy"), "/privacy" %>&nbsp;|&nbsp;
         <%= link_to t("layouts.footer.conditions"), "/conditions" %>
       </div>

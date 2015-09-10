@@ -32,16 +32,11 @@ es:
       debates: Debates
       # initiatives: Iniciativas
     footer:
-      description:
-        "La ciudad que quieres, será la ciudad que quieras. %{more_info} sobre esta página.
-        Este Portal de Gobierno Abierto usa la aplicación Consul v.0.9 que es %{open_source}, y su código se encuentra en %{github}.
-        De Madrid, para el mundo entero."
-      more_info: Obtén más información
-      more_info_url: "/more_information"
-      open_source: "software libre AGPLv3"
+      description: "Este portal usa la %{consul} que es %{open_source}. De Madrid, para el mundo entero."
+      open_source: "software libre"
       open_source_url: "http://www.gnu.org/licenses/agpl-3.0.html"
-      github: "github"
-      github_url: "https://github.com/ayuntamientomadrid"
+      consul: "aplicación Consul"
+      consul_url: "https://github.com/ayuntamientomadrid"
       copyright: "Ayuntamiento de Madrid, %{year}"
       participation_title: "Participación"
       participation_text: "Decide cómo debe ser la ciudad de Madrid que quieres."
@@ -52,6 +47,7 @@ es:
       contact_us: "Contacta con nosotros en"
       privacy: "Política de privacidad"
       conditions: "Condiciones de uso"
+      more_info: "Más información"
   form:
       error: error
       errors: errores
