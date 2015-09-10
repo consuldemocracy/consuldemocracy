@@ -1,1 +1,3 @@
 $("#<%= dom_id(@debate) %>_votes").html('<%= j render("debates/votes", debate: @debate) %>');
+
+App.PreventDoubleSubmission.initialize();
