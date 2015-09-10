@@ -14,6 +14,16 @@ module CommonActions
     click_button 'Sign up'
   end
 
+  def login_through_form_as(user)
+    visit root_path
+    click_link 'Log in'
+
+    fill_in 'user_email', with: user.email
+    fill_in 'user_password', with: user.password
+
+    click_button 'Log in'
+  end
+
   def confirm_email
     expect(page).to have_content "A message with a confirmation link has been sent to your email address."
 
