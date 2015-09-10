@@ -3,7 +3,7 @@ class StatsController < ApplicationController
   skip_authorization_check
 
   def show
-    @event_types = Ahoy::Event.select(:name).uniq.pluck(:name)
+    @event_types = Ahoy::Event.group(:name).count
   end
 
   private
