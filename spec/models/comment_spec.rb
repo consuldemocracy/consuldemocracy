@@ -17,6 +17,16 @@ describe Comment do
     expect(debate.reload.comments_count).to eq(0)
   end
 
+  it "should update cache_counter in debate after restore" do
+    debate  = create(:debate)
+    comment = create(:comment, commentable: debate)
+
+    comment.hide
+    expect(debate.reload.comments_count).to eq(0)
+    comment.restore
+    expect(debate.reload.comments_count).to eq(1)
+  end
+
   describe "#as_administrator?" do
     it "should be true if comment has administrator_id, false otherway" do
       expect(comment).not_to be_as_administrator

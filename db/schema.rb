@@ -89,8 +89,8 @@ ActiveRecord::Schema.define(version: 20150910092713) do
     t.integer  "author_id"
     t.datetime "created_at",                                          null: false
     t.datetime "updated_at",                                          null: false
-    t.string   "visit_id"
     t.datetime "hidden_at"
+    t.string   "visit_id"
     t.integer  "flags_count",                             default: 0
     t.datetime "ignored_flag_at"
     t.integer  "cached_votes_total",                      default: 0
@@ -219,9 +219,9 @@ ActiveRecord::Schema.define(version: 20150910092713) do
     t.string   "unconfirmed_email"
     t.boolean  "email_on_debate_comment",                 default: false
     t.boolean  "email_on_comment_reply",                  default: false
-    t.string   "phone_number",                 limit: 30
     t.string   "official_position"
     t.integer  "official_level",                          default: 0
+    t.string   "phone_number",                 limit: 30
     t.datetime "hidden_at"
     t.string   "sms_confirmation_code"
     t.string   "username",                     limit: 60
