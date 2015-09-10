@@ -15,8 +15,7 @@ es:
       open_city_title: "La ciudad que quieres será la ciudad que quieras."
       open_city_slogan:
         "Empecemos escuchando qué tiene que decir Madrid.
-        Para ello abrimos esta Puerta del Sol digital, donde toda la gente de Madrid podemos encontrarnos para debatir y compartir todo lo que queramos.
-        Es también un espacio donde poder hablar directamente con las personas que trabajamos en el Ayuntamiento de Madrid, incluyendo a los concejales y a la Alcaldesa."
+        Para ello abrimos esta Puerta del Sol digital, donde toda la gente de Madrid podemos encontrarnos para debatir y compartir todo lo que queramos."
       open_city_text:
         "Aquí cualquier voz tiene su espacio y son los ciudadanos y ciudadanas, y nadie en su nombre, quienes deciden votando los debates cuáles son los temas
          más importantes de cada momento. Los responsables del gobierno tienen cuentas de usuario propias con las que podrán participar en los debates, y ser evaluados
@@ -197,7 +196,7 @@ es:
     search_form:
       search_title: Buscar
       search_button: Buscar
-      search_placeholder: "Buscar..."
+      search_placeholder: "Buscar en debates..."
   mailer:
     comment:
       subject: Alguien ha comentado en tu debate

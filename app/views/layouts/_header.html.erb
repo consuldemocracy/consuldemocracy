@@ -26,60 +26,72 @@
         <%= render "devise/menu/login_items" %>
         <%= render "shared/admin_login_items" %>
       </section>
-
-      <section class="subnavigation row text-center">
-        <%#= link_to t("layouts.header.welcome"), root_path %>
-        <%#= link_to t("layouts.header.initiatives"), "#" %>
-        <%= link_to t("layouts.header.debates"), debates_path, class: ("active" if current_page?(controller: "/debates")) %><%= link_to t("layouts.header.more_information"), "/more_information", class: ("active" if current_page?("/more_information"))  %><%= link_to t("layouts.header.external_link_blog"), t("layouts.header.external_link_blog_url"), target: "_blank" %>
-      </section>
     </nav>
   </div>
 
-  <% if home_page? %>
-    <div class="row home-page">
-      <div class="small-12 column text-center">
-        <h1><%= t("layouts.header.open_city_title") %></h1>
-        <div class="small-12 medium-10 column small-centered">
-          <p><%= t("layouts.header.open_city_slogan") %></p>
-        </div>
-        <div class="small-12 medium-10 column small-centered">
-          <p><%= t("layouts.header.open_city_text") %></p>
-        </div>
-        <p><%= t("layouts.header.open_city_soon") %></p>
-        <%= link_to t("layouts.header.see_all_debates"), debates_path, class: "button radius" %>
+  <div class="row-full subnavigation-container">
+    <section class="subnavigation row">
+      <%#= link_to t("layouts.header.welcome"), root_path %>
+      <%#= link_to t("layouts.header.initiatives"), "#" %>
+      <div class="small-8 column">
+      <%= link_to t("layouts.header.debates"), debates_path, class: ("active" if current_page?(controller: "/debates")) %>
+      <%= link_to t("layouts.header.more_information"), "/more_information", class: ("active" if current_page?("/more_information"))  %>
+      <%= link_to t("layouts.header.external_link_blog_url"), target: "_blank" do %>
+        <%= t("layouts.header.external_link_blog") %>
+        <i class="icon-external"></i>
+      <% end %>
       </div>
+      <div class="small-4 column right">
+        <%= render "shared/search_form_header" %>
+      </div>
+    </section>
+  </div>
+
+  <% if home_page? %>
+    <div class="row">
+      <div class="small-12 medium-7 column">
+        <h1><%= t("layouts.header.open_city_title") %></h1>
+        <p><%= t("layouts.header.open_city_slogan") %></p>
+        <%= link_to t("layouts.header.see_all_debates"), debates_path, class: "button radius" %>
+        <%= link_to t("layouts.header.more_information"), "/more_information", class: "more-info" %>
+      </div>
+
+      <div class="show-for-medium-up small-12 medium-5 column text-center">
+        <i class="icon-debates icon-home-big"></i>
+        <i class="icon-debates icon-home-small"></i>
+      </div>
+        <!-- <div class="small-12 medium-10 column small-centered">
+          <p><%#= t("layouts.header.open_city_text") %></p>
+        </div> -->
+        <!-- <p><%#= t("layouts.header.open_city_soon") %></p> -->
     </div>
   <% end %>
 
   <% if transparency_page? %>
     <div class="row home-page">
-      <div class="small-12 column text-center">
+      <div class="small-12 medium-7 column">
         <h1><%= t("pages.transparency") %></h1>
-
-      <div class="small-12 medium-10 column small-centered">
         <p>Estamos trabajando en el nuevo Portal de Transparencia del Ayuntamiento de Madrid, para que no quede ni una esquina del Ayuntamiento que no puedas ver.</p>
-
         <p>Por ahora puedes visitar el portal que existía hasta ahora:</p>
-
         <%= link_to "Ir al Portal de Transparencia", t("layouts.header.external_link_transparency_url"), target: "_blank", class: "button radius" %>
-
-        <p>Mientras acabamos el nuevo portal, te invitamos a visitar el <a href="/blog" target="_blank">blog del Área de Participación Ciudadana, Transparencia y Gobierno Abierto</a> para conocer nuestros avances y novedades; o la <a href="/">sección de Participación Ciudadana</a> donde poder decidir qué ciudad es la que quieres.</p>
       </div>
+      <div class="show-for-medium-up small-12 medium-5 column text-center">
+        <i class="icon-debates icon-home-big"></i>
+        <i class="icon-debates icon-home-small"></i>
       </div>
     </div>
   <% end %>
 
   <% if opendata_page? %>
     <div class="row home-page">
-      <div class="small-12 column text-center">
+      <div class="small-12 medium-7 column">
         <h1><%= t("pages.opendata") %></h1>
-
-      <div class="small-12 medium-10 column small-centered">
-       <p>Estamos trabajando en el nuevo Portal de Datos Abiertos del Ayuntamiento de Madrid, por ahora puedes visitar el portal que existía hasta ahora:</p>
-
+        <p>Estamos trabajando en el nuevo Portal de Datos Abiertos del Ayuntamiento de Madrid, por ahora puedes visitar el portal que existía hasta ahora:</p>
         <%= link_to "Ir al Portal de Datos Abiertos", t("layouts.header.external_link_opendata_url"), target: "_blank", class: "button radius" %>
-
-        <p>Mientras acabamos el nuevo portal, te invitamos a visitar el <a href="/blog" target="_blank">blog del Área de Participación Ciudadana, Transparencia y Gobierno Abierto</a> para conocer nuestros avances y novedades; o la <a href="/">sección de Participación Ciudadana</a> donde poder decidir qué ciudad es la que quieres.</p>
+      </div>
+      <div class="show-for-medium-up small-12 medium-5 column text-center">
+        <i class="icon-debates icon-home-big"></i>
+        <i class="icon-debates icon-home-small"></i>
       </div>
     </div>
   <% end %>
