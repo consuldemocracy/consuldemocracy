@@ -7,7 +7,9 @@ class CommentsController < ApplicationController
   respond_to :html, :js
 
   def create
-    unless @comment.save
+    if @comment.save
+      CommentNotifier.new(comment: @comment).process
+    else
       render :new
     end
   end
