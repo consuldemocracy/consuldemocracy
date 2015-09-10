@@ -65,8 +65,18 @@ class Debate < ActiveRecord::Base
 
   def register_vote(user, vote_value)
     if votable_by?(user)
+      return unless %w(yes no).include?(vote_value)
+      vote_value = vote_value == 'yes' ? true : false
+
       Debate.increment_counter(:cached_anonymous_votes_total, id) if (user.unverified? && !user.voted_for?(self))
-      vote_by(voter: user, vote: vote_value)
+
+      previous_vote = user.voted_as_when_voted_for(self)
+
+      if previous_vote == vote_value
+        unvote_by(user)
+      else
+        vote_by(voter: user, vote: vote_value)
+      end
     end
   end
 

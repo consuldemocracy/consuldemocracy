@@ -146,6 +146,19 @@ feature 'Votes' do
         end
 
         expect(page).to have_content "1 vote"
+
+        find('.against a').click
+
+        expect(page).not_to have_content "100%"
+
+        within('.against') do
+          expect(page).not_to have_content "100%"
+          expect(page).to have_content "0%"
+          expect(page).not_to have_css("a.no-voted")
+          expect(page).not_to have_css("a.voted")
+        end
+
+        expect(page).to have_content "No votes"
       end
 
       scenario 'Trying to vote multiple times', :js do
