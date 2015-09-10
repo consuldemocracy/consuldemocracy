@@ -83,6 +83,7 @@ es:
           success: "Código correcto. Tu cuenta ya está verificada"
       alert:
         unconfirmed_code: "Todavía no has introducido el código de confirmación"
+        verify_attemps_left: "Has llegado al máximo número de intentos de verificar tu carta."
     verified_user:
       show:
         title: "Información disponible"

@@ -2,6 +2,7 @@ class Verification::LetterController < ApplicationController
   before_action :authenticate_user!
   before_action :verify_resident!
   before_action :verify_phone!
+  before_action :verify_attemps_left!
   skip_authorization_check
 
   def new
@@ -28,6 +29,7 @@ class Verification::LetterController < ApplicationController
       current_user.update(verified_at: Time.now)
       redirect_to account_path, notice: t('verification.letter.update.flash.success')
     else
+      @letter.increase_letter_verification_tries
       @error = t('verification.letter.update.error')
       render :edit
     end
@@ -42,6 +44,12 @@ class Verification::LetterController < ApplicationController
     def verify_phone!
       unless current_user.confirmed_phone?
         redirect_to verified_user_path, alert: t('verification.letter.alert.unconfirmed_code')
+      end
+    end
+
+    def verify_attemps_left!
+      if current_user.letter_verification_tries >= 2
+        redirect_to account_path, alert: t('verification.letter.alert.verify_attemps_left')
       end
     end
 end

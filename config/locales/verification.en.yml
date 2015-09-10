@@ -83,6 +83,7 @@ en:
           success: "Correct code. Your account is verified"
       alert:
         unconfirmed_code: "You have not yet enter the confirmation code"
+        verify_attemps_left: "You have reached the maximum number of letter verification tries"
     verified_user:
       show:
         title: "Available information"
