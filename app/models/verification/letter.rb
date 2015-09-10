@@ -21,7 +21,7 @@ class Verification::Letter
     user.update(letter_requested_at: Time.now, letter_verification_code: generate_verification_code)
   end
 
-  def verify?
+  def verified?
     validate_letter_sent
     validate_correct_code
     errors.blank?

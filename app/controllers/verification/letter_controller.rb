@@ -25,7 +25,7 @@ class Verification::LetterController < ApplicationController
 
   def update
     @letter = Verification::Letter.new(letter_params.merge(user: current_user))
-    if @letter.verify?
+    if @letter.verified?
       current_user.update(verified_at: Time.now)
       redirect_to account_path, notice: t('verification.letter.update.flash.success')
     else
