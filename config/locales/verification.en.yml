@@ -78,12 +78,15 @@ en:
         title: "Security code confirmation"
         confirmation_code: "Enter the security code in your letter"
       update:
-        error: "Incorrect confirmation code"
         flash:
           success: "Correct code. Your account is verified"
       alert:
         unconfirmed_code: "You have not yet enter the confirmation code"
         verify_attemps_left: "You have reached the maximum number of letter verification tries"
+      errors:
+        letter_not_sent: "We have not sent you the letter with the code yet"
+        incorect_code: "Incorrect confirmation code"
+        address_not_found: "Address not found"
     verified_user:
       show:
         title: "Available information"
