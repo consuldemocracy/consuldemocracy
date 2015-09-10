@@ -33,6 +33,7 @@ var initialize_modules = function() {
   App.Dropdown.initialize();
   App.LocationChanger.initialize();
   App.CheckAllNone.initialize();
+  App.PreventDoubleSubmission.initialize();
 };
 
 $(function(){
