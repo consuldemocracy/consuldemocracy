@@ -44,8 +44,8 @@ module CommonActions
     click_button 'Send me reset password instructions'
   end
 
-  def comment_on(debate, options = {})
-    user = options.fetch(:user) { create(:user) }
+  def comment_on(debate, user = nil)
+    user ||= create(:user)
 
     login_as(user)
     visit debate_path(debate)
@@ -56,8 +56,9 @@ module CommonActions
     expect(page).to have_content 'Have you thought about...?'
   end
 
-  def reply_to(original_user, options = {})
-    manuela = options.fetch(:user) { create(:user) }
+  def reply_to(original_user, manuela = nil)
+    manuela ||= create(:user)
+
     debate  = create(:debate)
     comment = create(:comment, commentable: debate, user: original_user)
 

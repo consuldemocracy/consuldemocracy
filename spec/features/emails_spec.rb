@@ -39,7 +39,7 @@ feature 'Emails' do
     scenario 'Do not send email about own debate comments', :js do
       user = create(:user, email_on_debate_comment: true)
       debate = create(:debate, author: user)
-      comment_on(debate, user: user)
+      comment_on(debate, user)
 
       expect { open_last_email }.to raise_error "No email has been sent!"
     end
@@ -66,7 +66,7 @@ feature 'Emails' do
 
     scenario "Do not send email about own replies to own comments", :js do
       user = create(:user, email_on_comment_reply: true)
-      reply_to(user, user: user)
+      reply_to(user, user)
 
       expect { open_last_email }.to raise_error "No email has been sent!"
     end
