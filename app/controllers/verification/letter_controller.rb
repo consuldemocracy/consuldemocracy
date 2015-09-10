@@ -30,7 +30,6 @@ class Verification::LetterController < ApplicationController
       redirect_to account_path, notice: t('verification.letter.update.flash.success')
     else
       @letter.increase_letter_verification_tries
-      @error = t('verification.letter.update.error')
       render :edit
     end
   end
