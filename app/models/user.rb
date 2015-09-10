@@ -135,4 +135,8 @@ class User < ActiveRecord::Base
       !!(unconfirmed_email && unconfirmed_email !~ OMNIAUTH_EMAIL_REGEX)
   end
 
+  def show_welcome_screen?
+    sign_in_count == 1 && unverified? && !organization
+  end
+
 end
