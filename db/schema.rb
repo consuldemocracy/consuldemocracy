@@ -58,7 +58,6 @@ ActiveRecord::Schema.define(version: 20150910092713) do
   create_table "comments", force: :cascade do |t|
     t.integer  "commentable_id"
     t.string   "commentable_type"
-    t.string   "title"
     t.text     "body"
     t.string   "subject"
     t.integer  "user_id",                        null: false
@@ -159,7 +158,7 @@ ActiveRecord::Schema.define(version: 20150910092713) do
 
   create_table "organizations", force: :cascade do |t|
     t.integer  "user_id"
-    t.string   "name",        limit: 80
+    t.string   "name",        limit: 60
     t.datetime "verified_at"
     t.datetime "rejected_at"
   end
@@ -194,9 +193,9 @@ ActiveRecord::Schema.define(version: 20150910092713) do
   add_index "taggings", ["taggable_id", "taggable_type", "context"], name: "index_taggings_on_taggable_id_and_taggable_type_and_context", using: :btree
 
   create_table "tags", force: :cascade do |t|
-    t.string  "name"
-    t.integer "taggings_count", default: 0
-    t.boolean "featured",       default: false
+    t.string  "name",           limit: 40
+    t.integer "taggings_count",            default: 0
+    t.boolean "featured",                  default: false
   end
 
   add_index "tags", ["name"], name: "index_tags_on_name", unique: true, using: :btree
@@ -225,7 +224,7 @@ ActiveRecord::Schema.define(version: 20150910092713) do
     t.integer  "official_level",                          default: 0
     t.datetime "hidden_at"
     t.string   "sms_confirmation_code"
-    t.string   "username"
+    t.string   "username",                     limit: 60
     t.string   "document_number"
     t.string   "document_type"
     t.datetime "residence_verified_at"

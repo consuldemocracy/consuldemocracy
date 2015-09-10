@@ -1,4 +1,5 @@
 class Comment < ActiveRecord::Base
+
   acts_as_paranoid column: :hidden_at
   include ActsAsParanoidAliases
   acts_as_votable
@@ -9,6 +10,8 @@ class Comment < ActiveRecord::Base
   validates :body, presence: true
   validates :user, presence: true
   validates_inclusion_of :commentable_type, in: ["Debate"]
+
+  validate :validate_body_length
 
   belongs_to :commentable, -> { with_hidden }, polymorphic: true, counter_cache: true
   belongs_to :user, -> { with_hidden }
@@ -92,5 +95,18 @@ class Comment < ActiveRecord::Base
   def call_after_commented
     self.commentable.try(:after_commented)
   end
+
+  def self.body_max_length
+    1000
+  end
+
+  private
+
+    def validate_body_length
+      validator = ActiveModel::Validations::LengthValidator.new(
+        attributes: :body,
+        maximum: Comment.body_max_length)
+      validator.validate(self)
+    end
 
 end

@@ -117,7 +117,7 @@ feature 'Debates' do
     click_button "Start a debate"
 
     expect(page).to_not have_content "Debate was successfully created."
-    expect(page).to have_content "1 error"
+    expect(page).to have_content "error"
     within(".tags") do
       expect(page).to have_content featured_tag.name
       expect(page).to_not have_content tag.name
@@ -138,7 +138,7 @@ feature 'Debates' do
     login_as(author)
 
     visit new_debate_path
-    fill_in 'debate_title', with: 'A test'
+    fill_in 'debate_title', with: 'Testing an attack'
     fill_in 'debate_description', with: '<p>This is <script>alert("an attack");</script></p>'
     fill_in 'debate_captcha', with: correct_captcha_text
     check 'debate_terms_of_service'
@@ -146,7 +146,7 @@ feature 'Debates' do
     click_button 'Start a debate'
 
     expect(page).to have_content 'Debate was successfully created.'
-    expect(page).to have_content 'A test'
+    expect(page).to have_content 'Testing an attack'
     expect(page.html).to include '<p>This is alert("an attack");</p>'
     expect(page.html).to_not include '<script>alert("an attack");</script>'
     expect(page.html).to_not include '&lt;p&gt;This is'
@@ -186,8 +186,8 @@ feature 'Debates' do
     scenario 'using dangerous strings' do
       visit new_debate_path
 
-      fill_in 'debate_title', with: 'A test'
-      fill_in 'debate_description', with: 'A test'
+      fill_in 'debate_title', with: 'A test of dangerous strings'
+      fill_in 'debate_description', with: 'A description suitable for this test'
       fill_in 'debate_captcha', with: correct_captcha_text
       check 'debate_terms_of_service'
 
@@ -233,14 +233,14 @@ feature 'Debates' do
     expect(current_path).to eq(edit_debate_path(debate))
 
     fill_in 'debate_title', with: "End child poverty"
-    fill_in 'debate_description', with: "Let's..."
+    fill_in 'debate_description', with: "Let's do something to end child poverty"
     fill_in 'debate_captcha', with: correct_captcha_text
 
     click_button "Save changes"
 
     expect(page).to have_content "Debate was successfully updated."
     expect(page).to have_content "End child poverty"
-    expect(page).to have_content "Let's..."
+    expect(page).to have_content "Let's do something to end child poverty"
   end
 
   scenario 'Errors on update' do
@@ -266,7 +266,7 @@ feature 'Debates' do
     click_button "Save changes"
 
     expect(page).to_not have_content "Debate was successfully updated."
-    expect(page).to have_content "1 error"
+    expect(page).to have_content "error"
 
     fill_in 'debate_captcha', with: correct_captcha_text
     click_button "Save changes"
@@ -288,7 +288,7 @@ feature 'Debates' do
     click_button "Save changes"
 
     expect(page).to_not have_content "Debate was successfully updated."
-    expect(page).to have_content "1 error"
+    expect(page).to have_content "error"
     within(".tags") do
       expect(page).to have_content featured_tag.name
       expect(page).to_not have_content tag.name
@@ -438,7 +438,7 @@ feature 'Debates' do
   scenario 'Debate index search' do
     debate1 = create(:debate, title: "Show me what you got")
     debate2 = create(:debate, title: "Get Schwifty")
-    debate3 = create(:debate, description: "Unity")
+    debate3 = create(:debate)
     debate4 = create(:debate, description: "Schwifty in here")
 
     visit debates_path
