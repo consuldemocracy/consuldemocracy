@@ -55,7 +55,7 @@ class Comment < ActiveRecord::Base
 
   def body
     unprocessed = super
-    unprocessed ? Rinku.auto_link(unprocessed).html_safe : unprocessed
+    unprocessed ? Rinku.auto_link(unprocessed, :all, 'target="_blank" rel="nofollow"').html_safe : unprocessed
   end
 
   def total_votes
