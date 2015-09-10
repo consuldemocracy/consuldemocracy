@@ -62,4 +62,23 @@ feature 'Admin tags' do
     expect(page).to_not have_content tag2.name
   end
 
+  scenario 'Delete tag with hidden taggables' do
+    tag2 = create(:tag, name: 'bad tag')
+    debate = create(:debate, tag_list: tag2.name)
+    debate.hide
+
+    visit admin_tags_path
+
+    expect(page).to have_content @tag1.name
+    expect(page).to have_content tag2.name
+
+    within("#edit_tag_#{tag2.id}") do
+      click_link 'Delete Topic'
+    end
+
+    visit admin_tags_path
+    expect(page).to have_content @tag1.name
+    expect(page).to_not have_content tag2.name
+  end
+
 end
