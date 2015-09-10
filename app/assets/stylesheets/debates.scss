@@ -288,9 +288,8 @@
   margin-top: 0;
 
   .panel {
-    border: 0;
     border-radius: 0;
-    border-bottom: 1px solid rgba(0,0,0,.1);
+    box-shadow: 0px 1px 3px 0 $border;
     margin-bottom: rem-calc(12);
     min-height: rem-calc(192);
     padding: rem-calc(12);
