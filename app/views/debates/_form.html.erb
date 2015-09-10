@@ -4,12 +4,12 @@
   <div class="row">
     <div class="small-12 column">
       <%= f.label :title, t("debates.form.debate_title") %>
-      <%= f.text_field :title, maxlength: Debate::TITLE_LENGTH[:maximum], placeholder: t("debates.form.debate_title"), label: false %>
+      <%= f.text_field :title, maxlength: Debate.title_max_length, placeholder: t("debates.form.debate_title"), label: false %>
     </div>
 
     <div class="ckeditor small-12 column">
       <%= f.label :description, t("debates.form.debate_text") %>
-      <%= f.cktext_area :description, maxlength: Debate::DESCRIPTION_LENGTH[:maximum], ckeditor: { language: I18n.locale }, label: false %>
+      <%= f.cktext_area :description, maxlength: Debate.description_max_length, ckeditor: { language: I18n.locale }, label: false %>
     </div>
 
     <div class="small-12 column">

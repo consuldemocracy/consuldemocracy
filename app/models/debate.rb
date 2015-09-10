@@ -1,8 +1,5 @@
 require 'numeric'
 class Debate < ActiveRecord::Base
-  TITLE_LENGTH       = {minimum: 10, maximum: Debate.columns.find { |c| c.name == 'title' }.limit || 80 }
-  DESCRIPTION_LENGTH = {minimum: 10, maximum: 6000}
-
   apply_simple_captcha
 
   acts_as_votable
@@ -18,8 +15,8 @@ class Debate < ActiveRecord::Base
   validates :description, presence: true
   validates :author, presence: true
 
-  validates :title, length: TITLE_LENGTH
-  validates :description, length: DESCRIPTION_LENGTH
+  validate :validate_title_length
+  validate :validate_description_length
 
   validates :terms_of_service, acceptance: { allow_nil: false }, on: :create
 
@@ -149,13 +146,40 @@ class Debate < ActiveRecord::Base
     cached_votes_up/flags_count.to_f < 5
   end
 
+  def self.title_max_length
+    @@title_max_length ||= self.columns.find { |c| c.name == 'title' }.limit
+  end
+
+  def self.description_max_length
+    6000
+  end
+
   protected
 
-  def sanitize_description
-    self.description = WYSIWYGSanitizer.new.sanitize(description)
-  end
+    def sanitize_description
+      self.description = WYSIWYGSanitizer.new.sanitize(description)
+    end
 
-  def sanitize_tag_list
-    self.tag_list = TagSanitizer.new.sanitize_tag_list(self.tag_list)
-  end
+    def sanitize_tag_list
+      self.tag_list = TagSanitizer.new.sanitize_tag_list(self.tag_list)
+    end
+
+  private
+
+    def validate_description_length
+      validator = ActiveModel::Validations::LengthValidator.new(
+        attributes: :description,
+        minimum: 10,
+        maximum: Debate.description_max_length)
+      validator.validate(self)
+    end
+
+    def validate_title_length
+      validator = ActiveModel::Validations::LengthValidator.new(
+        attributes: :title,
+        minimum: 4,
+        maximum: Debate.title_max_length)
+      validator.validate(self)
+    end
+
 end

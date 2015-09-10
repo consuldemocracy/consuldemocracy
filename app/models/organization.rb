@@ -4,8 +4,8 @@ class Organization < ActiveRecord::Base
   belongs_to :user, touch: true
 
   validates :name, presence: true
-  validates :name, length: NAME_LENGTH
   validates :name, uniqueness: true
+  validate :validate_name_length
 
   delegate :email, :phone_number, to: :user
 
@@ -34,5 +34,18 @@ class Organization < ActiveRecord::Base
   def self.search(text)
     text.present? ? joins(:user).where("users.email = ? OR users.phone_number = ? OR organizations.name ILIKE ?", text, text, "%#{text}%") : none
   end
+
+  def self.name_max_length
+    @@name_max_length ||= self.columns.find { |c| c.name == 'name' }.limit
+  end
+
+  private
+
+    def validate_name_length
+      validator = ActiveModel::Validations::LengthValidator.new(
+        attributes: :name,
+        maximum: Organization.name_max_length)
+      validator.validate(self)
+    end
 
 end

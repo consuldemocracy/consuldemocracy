@@ -2,8 +2,6 @@ class User < ActiveRecord::Base
   OMNIAUTH_EMAIL_PREFIX = 'omniauth@participacion'
   OMNIAUTH_EMAIL_REGEX  = /\A#{OMNIAUTH_EMAIL_PREFIX}/
 
-  USERNAME_LENGTH = {maximum: User.columns.find { |c| c.name == 'username' }.limit || 60}
-
   include Verification
 
   apply_simple_captcha
@@ -25,7 +23,8 @@ class User < ActiveRecord::Base
 
   validates :username, presence: true, unless: :organization?
   validates :username, uniqueness: true, unless: :organization?
-  validates :username, length: USERNAME_LENGTH
+  validate :validate_username_length
+
   validates :official_level, inclusion: {in: 0..5}
   validates_format_of :email, without: OMNIAUTH_EMAIL_REGEX, on: :update
   validates :terms_of_service, acceptance: { allow_nil: false }, on: :create
@@ -129,13 +128,26 @@ class User < ActiveRecord::Base
     Comment.hide_all comments_ids
   end
 
-  def self.search(term)
-    term.present? ? where("email = ? OR username ILIKE ?", term, "%#{term}%") : none
-  end
-
   def email_provided?
     !!(email && email !~ OMNIAUTH_EMAIL_REGEX) ||
       !!(unconfirmed_email && unconfirmed_email !~ OMNIAUTH_EMAIL_REGEX)
   end
+
+  def self.search(term)
+    term.present? ? where("email = ? OR username ILIKE ?", term, "%#{term}%") : none
+  end
+
+  def self.username_max_length
+    @@username_max_length ||= self.columns.find { |c| c.name == 'username' }.limit
+  end
+
+  private
+
+    def validate_username_length
+      validator = ActiveModel::Validations::LengthValidator.new(
+        attributes: :username,
+        maximum: User.username_max_length)
+      validator.validate(self)
+    end
 
 end
