@@ -18,7 +18,7 @@ class Verification::Letter
   end
 
   def letter_requested!
-    user.update(letter_requested_at: Time.now, letter_verification_code: four_digit_code)
+    user.update(letter_requested_at: Time.now, letter_verification_code: generate_verification_code)
   end
 
   def verify?
@@ -54,8 +54,8 @@ class Verification::Letter
       district:      address[:nombre_distrito] }
   end
 
-  def four_digit_code
-    rand.to_s[2..5]
+  def generate_verification_code
+    rand.to_s[2..7]
   end
 
 end
