@@ -38,6 +38,9 @@
           </form>
         </div>
       </div>
+      <div class="show-for-small-only">
+        <%= link_to t("debates.index.start_debate"), new_debate_path, class: 'button radius expand' %>
+      </div>
       <%= render @debates %>
       <%= paginate @debates %>
     </div>

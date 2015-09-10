@@ -90,8 +90,8 @@ body {
 }
 
 p {
-  font-size: rem-calc(13);
-  line-height: $line-height;
+  font-size: rem-calc(15);
+  line-height: $line-height*1.25;
   margin-bottom: rem-calc(12);
 }
 
@@ -134,7 +134,7 @@ h6 {
 
 .button {
   background: $brand;
-  font-size: rem-calc(13);
+  font-size: rem-calc(14);
   font-family: $font-family-sans-serif !important;
   padding: rem-calc(15) rem-calc(32);
 }
@@ -278,10 +278,6 @@ header {
   &.results {
     border-bottom: rem-calc(1) solid $border;
     min-height: rem-calc(48);
-
-    @media (min-width: $small-breakpoint) {
-      min-height: 189px;
-    }
   }
 
   h1 {
@@ -334,9 +330,6 @@ header {
   }
 
   .icon-external {
-    position: absolute;
-    top: 3px;
-    right: -20px;
     color: #D01A6C;
     font-size: rem-calc(12);
   }
@@ -413,7 +406,11 @@ header {
       font-size: rem-calc(16);
       font-weight: lighter;
       line-height: $line-height*2;
-      padding-left: 0;
+      padding-left: rem-calc(12);
+
+      @media (min-width: $small-breakpoint) {
+        padding-left: 0;
+      }
 
       span {
         *display: inline; /* IE */
@@ -446,12 +443,13 @@ header {
 
       img {
         height: 48px;
-        margin-right: rem-calc(6);
+        margin-top: rem-calc(24);
         width: 48px;
 
-        @media (min-width: $small-breakpoint) {
+        @media (min-width: $medium-breakpoint) {
           height: 96px;
           margin-right: rem-calc(12);
+          margin-top: 0;
           width: 96px;
         }
       }
@@ -534,10 +532,6 @@ header {
 
     @media (min-width: $small-breakpoint) {
       margin-left: 0;
-
-      &.right:first-child {
-        margin-right: rem-calc(12);
-      }
     }
 
     li:not(.has-form) a:not(.button) {
@@ -585,10 +579,12 @@ header {
 .subnavigation {
   background: white;
   clear: both;
-  height: rem-calc(72);
+  min-height: rem-calc(72);
 
-  & > .column {
-    padding-left: 0;
+  @media (min-width: $small-breakpoint) {
+    & > .column {
+      padding-left: 0;
+    }
   }
 
   a {
@@ -596,13 +592,14 @@ header {
     display: block;
     font-size: rem-calc(14);
     font-weight: bold;
+    line-height: $line-height*2;
     position: relative;
     text-align: left;
-    margin-left: rem-calc(12);
 
     @media (min-width: $small-breakpoint) {
       display: inline-block;
       line-height: $line-height*3;
+      margin-left: rem-calc(12);
       margin-right: rem-calc(72);
     }
 
@@ -836,6 +833,7 @@ form {
 
     &.search-form {
       height: rem-calc(37);
+      padding: 0 rem-calc(6);
     }
 
     &.error {
@@ -1041,17 +1039,25 @@ img.initialjs-avatar {
   h2 {
     display: inline-block;
     font-size: rem-calc(24);
-    margin: rem-calc(24) 0;
+    margin: rem-calc(24) 0 rem-calc(12);
+
+    @media (min-width: $small-breakpoint) {
+      margin: rem-calc(24) 0;
+    }
   }
 
   select {
     background-color: #DEE0E2;
     height: auto;
-    margin: rem-calc(24) rem-calc(6);
+    margin-bottom: rem-calc(24);
     min-width: rem-calc(180);
     outline: 0;
     padding: rem-calc(12);
     width: auto;
+
+    @media (min-width: $small-breakpoint) {
+      margin: 0 rem-calc(6) rem-calc(24);
+    }
 
     optgroup {
       font-size: rem-calc(14);
@@ -1315,7 +1321,7 @@ table {
       margin-left: rem-calc(12);
 
       li {
-        font-size: rem-calc(13);
+        font-size: rem-calc(15);
         margin-bottom: rem-calc(12);
       }
     }

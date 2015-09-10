@@ -16,7 +16,7 @@
         <li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li>
         <li class="name">
           <%= link_to root_path do %>
-            <%= image_tag('header_logo_madrid.png', class: 'left', size: '96x96') %>
+            <%= image_tag('header_logo_madrid.png', class: 'show-for-medium-up left', size: '96x96') %>
             <%= t("layouts.header.open_gov", open: "#{t('layouts.header.open')}").html_safe %> <span>|</span> <span class="logo-site"><%= t("layouts.header.participation") %></span>
           <% end %>
         </li>
@@ -41,7 +41,7 @@
         <i class="icon-external"></i>
       <% end %>
       </div>
-      <div class="small-4 column right">
+      <div class="small-12 medium-4 column right">
         <%= render "shared/search_form_header" %>
       </div>
     </section>
@@ -60,10 +60,6 @@
         <i class="icon-debates icon-home-big"></i>
         <i class="icon-debates icon-home-small"></i>
       </div>
-        <!-- <div class="small-12 medium-10 column small-centered">
-          <p><%#= t("layouts.header.open_city_text") %></p>
-        </div> -->
-        <!-- <p><%#= t("layouts.header.open_city_soon") %></p> -->
     </div>
   <% end %>
 

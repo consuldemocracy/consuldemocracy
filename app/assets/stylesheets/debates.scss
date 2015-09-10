@@ -2,6 +2,8 @@
 //
 // 01. Debates
 // 02. Index
+//  02.1. Featured
+//  02.2. List
 // 03. Show
 // 04. New
 // 05. Comments
@@ -165,6 +167,9 @@
 // 02. Index
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
+// 02.1. Featured
+// - - - - - - - - - - - - -
+
 .debate-featured {
 
   .panel {
@@ -267,9 +272,13 @@
 
     p {
       color: $text;
-      font-size: rem-calc(13);
+      font-size: rem-calc(14);
       line-height: $line-height;
       margin-bottom: rem-calc(12);
+
+      &.debate-info {
+        font-size: rem-calc(13);
+      }
     }
   }
 
@@ -278,8 +287,14 @@
   }
 }
 
+// 02.2. List
+// - - - - - - - - - - - - -
+
 .debates-list {
-  margin-bottom: rem-calc(48);
+
+  @media (min-width: $small-breakpoint) {
+    margin-bottom: rem-calc(48);
+  }
 }
 
 .debate {
@@ -292,7 +307,11 @@
     box-shadow: 0px 1px 3px 0 $border;
     margin-bottom: rem-calc(12);
     min-height: rem-calc(192);
-    padding: rem-calc(12);
+    padding-top: rem-calc(12);
+
+    @media (min-width: $small-breakpoint) {
+      padding-bottom: rem-calc(12);
+    }
 
     .label {
       line-height: $line-height;
@@ -302,10 +321,6 @@
     h3 {
       margin-top: 0;
       min-height: rem-calc(48);
-    }
-
-    p {
-      text-align: justify;
     }
 
     .debate-content {
@@ -331,11 +346,11 @@
 
   .votes {
     border: 1px solid $votes-border;
-    border-top-left-radius: 3px;
-    border-bottom-left-radius: 3px;
     margin: 0 rem-calc(-12);
 
     @media (min-width: $small-breakpoint) {
+      border-top-left-radius: 3px;
+      border-bottom-left-radius: 3px;
       margin: 0 rem-calc(-24) 0 rem-calc(12);
     }
 
@@ -372,12 +387,13 @@
       }
     }
 
-    .like {
+    @media (min-width: $small-breakpoint) {
+      .like {
 
-      span {
-        color: white;
-        display: block;
-        line-height: $line-height/2;
+        span {
+          display: block;
+          line-height: $line-height/2;
+        }
       }
     }
 
@@ -406,8 +422,7 @@
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
 .debate-show {
-  background: white;
-  padding: rem-calc(24) rem-calc(12) 0;
+  padding-top: rem-calc(12);
 
   .back {
     @include back;
@@ -419,7 +434,7 @@
 
   h1 {
     clear: both;
-    font-size: rem-calc(24);
+    font-size: rem-calc(30);
     font-weight: bold;
     margin: 0;
     text-transform: lowercase;
@@ -445,7 +460,7 @@
     }
 
     p {
-      font-size: rem-calc(14);
+      font-size: rem-calc(15);
       line-height: $line-height;
       margin-bottom: 0;
     }
@@ -472,7 +487,7 @@
   }
 
   h3 {
-    border-top: 1px solid $votes-border;
+    border-top: 2px solid $brand;
     display: inline-block;
     font-size: rem-calc(16);
     margin: -1px 0 rem-calc(12);
@@ -482,8 +497,8 @@
 
   .votes {
     @include votes;
-    border: 1px solid $votes-border;
-    border-radius: rem-calc(3);
+    border: 0;
+    border-radius: 0;
     margin: 0;
 
     .total-votes {
@@ -522,7 +537,7 @@
 
   .tags {
     display: block;
-    margin-top: rem-calc(24);
+    margin: rem-calc(24) 0;
 
     a {
       margin-right: rem-calc(6);
@@ -640,6 +655,10 @@
 
     .comment-body {
       margin-left: rem-calc(42);
+
+      p {
+        font-size: rem-calc(14);
+      }
 
       .reply {
         background: white;
