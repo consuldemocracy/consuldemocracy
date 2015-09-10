@@ -24,9 +24,9 @@
       <tr id="debate_<%= debate.id %>">
         <td>
           <%= link_to debate.title, debate, target: "_blank" %>
-          <span class="bullet">&nbsp;&bullet;&nbsp;</span>
+          <span class="bullet">&nbsp;&bull;&nbsp;</span>
           <%= debate.author.username %>
-          <span class="bullet">&nbsp;&bullet;&nbsp;</span>
+          <span class="bullet">&nbsp;&bull;&nbsp;</span>
           <span class="date"><%= l debate.updated_at.to_date %></span>
           <br>
           <%= debate.description %>

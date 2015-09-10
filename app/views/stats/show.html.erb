@@ -10,13 +10,13 @@
 
       <div class="small-12 medium-6 column">
         <h3>Combined</h3>
-        <%= events_chart_tag @event_types, id: 'combined' %>
+        <%= events_chart_tag @event_types.keys, id: 'combined' %>
       </div>
 
       <div class="small-12">
-        <% @event_types.each do |event_type| %>
-          <h3><%= event_type.titleize %></h3>
-          <%= events_chart_tag event_type %>
+        <% @event_types.each do |event, count| %>
+          <h3><%= event.titleize %> (<%= count %>)</h3>
+          <%= events_chart_tag event %>
         <% end %>
       </div>
     </div>

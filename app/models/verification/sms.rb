@@ -24,7 +24,7 @@ class Verification::Sms
   end
 
   def update_user_phone_information
-    user.update(unconfirmed_phone: phone, sms_confirmation_code: four_digit_code)
+    user.update(unconfirmed_phone: phone, sms_confirmation_code: generate_confirmation_code)
   end
 
   def send_sms
@@ -41,7 +41,7 @@ class Verification::Sms
 
   private
 
-    def four_digit_code
+    def generate_confirmation_code
       rand.to_s[2..5]
     end
 end

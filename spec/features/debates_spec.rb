@@ -360,59 +360,59 @@ feature 'Debates' do
   feature 'Debate index order filters' do
 
     scenario 'Default order is confidence_score', :js do
-      create(:debate, title: 'best').update_column(:confidence_score, 10)
-      create(:debate, title: 'worst').update_column(:confidence_score, 2)
-      create(:debate, title: 'medium').update_column(:confidence_score, 5)
+      create(:debate, title: 'Best').update_column(:confidence_score, 10)
+      create(:debate, title: 'Worst').update_column(:confidence_score, 2)
+      create(:debate, title: 'Medium').update_column(:confidence_score, 5)
 
       visit debates_path
 
-      expect('best').to appear_before('medium')
-      expect('medium').to appear_before('worst')
+      expect('Best').to appear_before('Medium')
+      expect('Medium').to appear_before('Worst')
     end
 
     scenario 'Debates are ordered by hot_score', :js do
-      create(:debate, title: 'best').update_column(:hot_score, 10)
-      create(:debate, title: 'worst').update_column(:hot_score, 2)
-      create(:debate, title: 'medium').update_column(:hot_score, 5)
+      create(:debate, title: 'Best').update_column(:hot_score, 10)
+      create(:debate, title: 'Worst').update_column(:hot_score, 2)
+      create(:debate, title: 'Medium').update_column(:hot_score, 5)
 
       visit debates_path
       select 'most active', from: 'order-selector'
 
       within '#debates.js-order-hot-score' do
-        expect('best').to appear_before('medium')
-        expect('medium').to appear_before('worst')
+        expect('Best').to appear_before('Medium')
+        expect('Medium').to appear_before('Worst')
       end
 
       expect(current_url).to include('order=hot_score')
     end
 
     scenario 'Debates are ordered by most commented', :js do
-      create(:debate, title: 'best',   comments_count: 10)
-      create(:debate, title: 'medium', comments_count: 5)
-      create(:debate, title: 'worst',  comments_count: 2)
+      create(:debate, title: 'Best',   comments_count: 10)
+      create(:debate, title: 'Medium', comments_count: 5)
+      create(:debate, title: 'Worst',  comments_count: 2)
 
       visit debates_path
       select 'most commented', from: 'order-selector'
 
       within '#debates.js-order-most-commented' do
-        expect('best').to appear_before('medium')
-        expect('medium').to appear_before('worst')
+        expect('Best').to appear_before('Medium')
+        expect('Medium').to appear_before('Worst')
       end
 
       expect(current_url).to include('order=most_commented')
     end
 
     scenario 'Debates are ordered by newest', :js do
-      create(:debate, title: 'best',   created_at: Time.now)
-      create(:debate, title: 'medium', created_at: Time.now - 1.hour)
-      create(:debate, title: 'worst',  created_at: Time.now - 1.day)
+      create(:debate, title: 'Best',   created_at: Time.now)
+      create(:debate, title: 'Medium', created_at: Time.now - 1.hour)
+      create(:debate, title: 'Worst',  created_at: Time.now - 1.day)
 
       visit debates_path
       select 'newest', from: 'order-selector'
 
       within '#debates.js-order-created-at' do
-        expect('best').to appear_before('medium')
-        expect('medium').to appear_before('worst')
+        expect('Best').to appear_before('Medium')
+        expect('Medium').to appear_before('Worst')
       end
 
       expect(current_url).to include('order=created_at')

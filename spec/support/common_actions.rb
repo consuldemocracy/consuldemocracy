@@ -110,4 +110,17 @@ module CommonActions
     click_button 'Verify residence'
     expect(page).to have_content 'Residence verified'
   end
+
+  def confirm_phone
+    fill_in 'sms_phone', with: "611111111"
+    click_button 'Send'
+
+    expect(page).to have_content 'Security code confirmation'
+
+    user = User.last.reload
+    fill_in 'sms_confirmation_code', with: user.sms_confirmation_code
+    click_button 'Send'
+
+    expect(page).to have_content 'Correct code'
+  end
 end

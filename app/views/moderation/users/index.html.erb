@@ -19,7 +19,7 @@
   <% @users.each do |user| %>
     <li>
       <%= user.name %>
-      <span class="bullet">&nbsp;&bullet;&nbsp;</span>
+      <span class="bullet">&nbsp;&bull;&nbsp;</span>
       <% if user.hidden? %>
         <%= t("moderation.users.index.hidden") %>
       <% else %>
