@@ -3,7 +3,9 @@ require 'rails_helper'
 feature 'Verify Letter' do
 
   scenario 'Verify' do
-    user = create(:user, residence_verified_at: Time.now, confirmed_phone: "611111111")
+    user = create(:user, residence_verified_at: Time.now,
+                         confirmed_phone:       "611111111",
+                         letter_sent_at:        1.day.ago)
 
     login_as(user)
     visit new_letter_path
@@ -20,7 +22,9 @@ feature 'Verify Letter' do
   end
 
   scenario 'Go to office instead of send letter' do
-    user = create(:user, residence_verified_at: Time.now, confirmed_phone: "611111111")
+    user = create(:user, residence_verified_at: Time.now,
+                         confirmed_phone:       "611111111",
+                         letter_sent_at:        1.day.ago)
 
     login_as(user)
     visit new_letter_path
@@ -29,7 +33,9 @@ feature 'Verify Letter' do
   end
 
   scenario 'Errors on verification code' do
-    user = create(:user, residence_verified_at: Time.now, confirmed_phone: "611111111")
+    user = create(:user, residence_verified_at: Time.now,
+                         confirmed_phone:       "611111111",
+                         letter_sent_at:        1.day.ago)
 
     login_as(user)
     visit new_letter_path
@@ -44,7 +50,9 @@ feature 'Verify Letter' do
   end
 
   scenario "Error accessing address from CensusApi" do
-    user = create(:user, residence_verified_at: Time.now, confirmed_phone: "611111111")
+    user = create(:user, residence_verified_at: Time.now,
+                         confirmed_phone:       "611111111",
+                         letter_sent_at:        1.day.ago)
 
     login_as(user)
     visit new_letter_path
