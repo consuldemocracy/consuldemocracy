@@ -138,7 +138,7 @@ class Debate < ActiveRecord::Base
   end
 
   def self.search(terms)
-    terms.present? ? where("title ILIKE ? OR description ILIKE ?", "%#{terms}%", "%#{terms}%") : none
+    terms.present? ? where("unaccent(title) ILIKE unaccent(?) OR unaccent(description) ILIKE unaccent(?)", "%#{terms}%", "%#{terms}%") : none
   end
 
   def conflictive?
