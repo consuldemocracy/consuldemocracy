@@ -213,6 +213,14 @@ en:
       all: "You are not authorized to %{action} %{subject}."
   welcome:
     last_debates: Last debates
+    welcome:
+      title: Account verification
+      instructions_1_html: "Welcome to the public participation website."
+      instructions_2_html: "We have detected that <b>your email is confirmed but we were not able to verify your citizen data</b>."
+      instructions_3_html: "Without verifying them, <b>you have only partial access to the website</b>. You need to be verified, for example, in order to participate in public proposals."
+      verify_account: "Verify my account now"
+      go_to_index: "I prefer to continue as a non-verified user with limited access"
+      instructions_4_html: "If you want to verify your account later on, you can do so in <i>My account -> Verify my account</i>."
   omniauth:
     finish_signup:
       title: Add Email

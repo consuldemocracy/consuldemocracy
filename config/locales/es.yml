@@ -213,6 +213,14 @@ es:
       all: "No tienes permiso para realizar la acción '%{action}' sobre %{subject}."
   welcome:
     last_debates: Últimos debates
+    welcome:
+      title: Verificación de cuenta
+      instructions_1_html: "Bienvenido a la página de participación ciudadana"
+      instructions_2_html: "Hemos detectado que <b>tu email está confirmada pero no hemos verificado tus datos todavía</b>."
+      instructions_3_html: "Sin verificar tus datos <b>el acceso que tienes es limitado</b>. Verificarlos ahora te permitirá, por ejemplo, apoyar propuestas ciudadanas."
+      verify_account: "Verificar mi cuenta"
+      go_to_index: "Quiero entrar como un usuario no verificado (acceso limitado)"
+      instructions_4_html: "Si quieres verificarte más tarde, puedes hacerlo en <i>Mi cuenta -> Verificar mi cuenta</i>."
   omniauth:
     finish_signup:
       title: Añade tu email
