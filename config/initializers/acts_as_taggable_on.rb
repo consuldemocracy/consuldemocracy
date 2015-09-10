@@ -2,7 +2,7 @@ ActsAsTaggableOn::Tagging.class_eval do
   after_destroy :touch_taggable
 
   def touch_taggable
-    taggable.touch
+    taggable.touch if taggable.present?
   end
 
 end
