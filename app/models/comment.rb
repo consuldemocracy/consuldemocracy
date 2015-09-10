@@ -53,11 +53,6 @@ class Comment < ActiveRecord::Base
     self.user= author
   end
 
-  def body
-    unprocessed = super
-    unprocessed ? Rinku.auto_link(unprocessed, :all, 'target="_blank" rel="nofollow"').html_safe : unprocessed
-  end
-
   def total_votes
     cached_votes_total
   end
