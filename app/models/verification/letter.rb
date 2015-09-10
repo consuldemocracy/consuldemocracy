@@ -25,6 +25,10 @@ class Verification::Letter
     user.letter_verification_code == verification_code
   end
 
+  def increase_letter_verification_tries
+    user.update(letter_verification_tries: user.letter_verification_tries += 1)
+  end
+
   def update_user_address
     user.address = Address.new(parsed_address)
     user.save
