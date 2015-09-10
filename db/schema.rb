@@ -128,6 +128,18 @@ ActiveRecord::Schema.define(version: 20150910092713) do
 
   add_index "delayed_jobs", ["priority", "run_at"], name: "delayed_jobs_priority", using: :btree
 
+  create_table "failed_census_calls", force: :cascade do |t|
+    t.integer  "user_id"
+    t.string   "document_number"
+    t.string   "document_type"
+    t.date     "date_of_birth"
+    t.string   "postal_code"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  add_index "failed_census_calls", ["user_id"], name: "index_failed_census_calls_on_user_id", using: :btree
+
   create_table "flags", force: :cascade do |t|
     t.integer  "user_id"
     t.string   "flaggable_type"
@@ -301,6 +313,7 @@ ActiveRecord::Schema.define(version: 20150910092713) do
   add_index "votes", ["voter_id", "voter_type", "vote_scope"], name: "index_votes_on_voter_id_and_voter_type_and_vote_scope", using: :btree
 
   add_foreign_key "administrators", "users"
+  add_foreign_key "failed_census_calls", "users"
   add_foreign_key "flags", "users"
   add_foreign_key "identities", "users"
   add_foreign_key "moderators", "users"

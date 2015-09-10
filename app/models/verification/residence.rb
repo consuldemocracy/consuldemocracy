@@ -42,8 +42,19 @@ class Verification::Residence
     unless residency.valid?
       errors.add(:residence_in_madrid, false)
       user.update(residence_verification_tries: user.residence_verification_tries += 1)
+      store_failed_attempt
     end
     self.date_of_birth = string_to_date(date_of_birth)
+  end
+
+  def store_failed_attempt
+    FailedCensusCall.create({
+      user: user,
+      document_number: document_number,
+      document_type:   document_type,
+      date_of_birth:   date_of_birth,
+      postal_code:     postal_code
+    })
   end
 
 end
