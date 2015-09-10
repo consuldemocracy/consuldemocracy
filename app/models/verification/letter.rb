@@ -54,8 +54,10 @@ class Verification::Letter
       district:      address[:nombre_distrito] }
   end
 
-  def generate_verification_code
-    rand.to_s[2..7]
-  end
+  private
+
+    def generate_verification_code
+      rand.to_s[2..7]
+    end
 
 end
