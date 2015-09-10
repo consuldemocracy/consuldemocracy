@@ -7,9 +7,9 @@ class Organization < ActiveRecord::Base
 
   delegate :email, :phone_number, to: :user
 
-  scope :pending, -> { where('organizations.verified_at is null and rejected_at is null') }
-  scope :verified, -> { where("organizations.verified_at is not null and (rejected_at is null or rejected_at < organizations.verified_at)") }
-  scope :rejected, -> { where("rejected_at is not null and (organizations.verified_at is null or organizations.verified_at < rejected_at)") }
+  scope :pending, -> { where(verified_at: nil, rejected_at: nil) }
+  scope :verified, -> { where.not(verified_at: nil).where("(rejected_at IS NULL or rejected_at < organizations.verified_at)") }
+  scope :rejected, -> { where.not(rejected_at: nil).where("(organizations.verified_at IS NULL or organizations.verified_at < rejected_at)") }
 
   def verify
     update(verified_at: Time.now)
