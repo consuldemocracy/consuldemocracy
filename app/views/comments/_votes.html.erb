@@ -5,7 +5,7 @@
 <span class="in_favor">
   <% if can?(:vote, comment) %>
     <%= link_to vote_comment_path(comment, value: 'yes'),
-        method: "post", remote: true do %>
+        class: 'js-prevent-double-submit', method: "post", remote: true do %>
         <i class="icon-angle-up"></i>
     <% end %>
   <% else %>
@@ -17,7 +17,7 @@
 <span class="against">
   <% if can?(:vote, comment) %>
     <%= link_to vote_comment_path(comment, value: 'no'),
-        method: "post", remote: true do %>
+        class: 'js-prevent-double-submit', method: "post", remote: true do %>
         <i class="icon-angle-down"></i>
     <% end %>
   <% else %>
