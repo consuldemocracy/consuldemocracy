@@ -1,4 +1,5 @@
 FactoryGirl.define do
+
   factory :user do
     sequence(:username) { |n| "Manuela#{n}" }
     sequence(:email)    { |n| "manuela#{n}@madrid.es" }
@@ -41,6 +42,12 @@ FactoryGirl.define do
   factory :verification_letter, class: Verification::Letter do
     user
     address
+  end
+
+  factory :lock do
+    user
+    tries 0
+    locked_until Time.now
   end
 
   factory :address do
