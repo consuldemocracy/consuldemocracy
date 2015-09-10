@@ -9,7 +9,7 @@
     <li id="<%= dom_id(comment) %>">
       <div class="row">
         <div class="small-12 medium-8 column">
-          <%= comment.body %>
+          <%= text_with_links comment.body %>
           <%= link_to comment.commentable.title, comment.commentable %>
         </div>
         <div class="small-6 medium-4 column text-right">
