@@ -32,7 +32,7 @@
             <div class="small-12 medium-4">
           <% if @account.organization? %>
             <%= f.fields_for :organization do |fo| %>
-              <%= fo.text_field :name, autofocus: true, maxlength: Organization::NAME_LENGTH[:maximum], placeholder: t("account.show.organization_name_label") %>
+              <%= fo.text_field :name, autofocus: true, maxlength: Organization.name_max_length, placeholder: t("account.show.organization_name_label") %>
             <% end %>
             <%= f.text_field :phone_number, placeholder: t("account.show.phone_number_label") %>
 
