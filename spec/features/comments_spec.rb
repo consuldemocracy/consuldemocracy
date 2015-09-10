@@ -34,13 +34,14 @@ feature 'Comments' do
   end
 
   scenario 'Sanitizes comment body for security' do
-    create :comment, commentable: debate, body: "<script>alert('hola')</script> http://madrid.es"
+    create :comment, commentable: debate, body: "<script>alert('hola')</script> <a href=\"javascript:alert('sorpresa!')\">click me<a/> http://madrid.es"
 
     visit debate_path(debate)
 
     within first('.comment') do
-      expect(page).to have_content "alert('hola') http://madrid.es"
+      expect(page).to have_content "click me http://madrid.es"
       expect(page).to have_link('http://madrid.es', href: 'http://madrid.es')
+      expect(page).not_to have_link('click me')
     end
   end
 
