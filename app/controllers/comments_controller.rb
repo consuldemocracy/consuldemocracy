@@ -7,10 +7,7 @@ class CommentsController < ApplicationController
   respond_to :html, :js
 
   def create
-    if @comment.save
-      Mailer.comment(@comment).deliver_later if email_on_debate_comment?
-      Mailer.reply(@comment).deliver_later if email_on_comment_reply?
-    else
+    unless @comment.save
       render :new
     end
   end
@@ -53,14 +50,6 @@ class CommentsController < ApplicationController
 
     def load_commentable
       @commentable = Comment.find_commentable(comment_params[:commentable_type], comment_params[:commentable_id])
-    end
-
-    def email_on_debate_comment?
-      @comment.commentable.author.email_on_debate_comment?
-    end
-
-    def email_on_comment_reply?
-      @comment.reply? && @comment.parent.author.email_on_comment_reply?
     end
 
     def administrator_comment?

@@ -24,40 +24,59 @@ feature 'Emails' do
     expect(email).to have_body_text(edit_user_password_path)
   end
 
-  scenario "Debate comment", :js do
-    user = create(:user, email_on_debate_comment: true)
-    debate = create(:debate, author: user)
-    comment_on(debate)
+  context 'Debate comments' do
+    scenario "Send email on debate comment", :js do
+      user = create(:user, email_on_debate_comment: true)
+      debate = create(:debate, author: user)
+      comment_on(debate)
 
-    email = open_last_email
-    expect(email).to have_subject('Someone has commented on your debate')
-    expect(email).to deliver_to(debate.author)
-    expect(email).to have_body_text(debate_path(debate))
+      email = open_last_email
+      expect(email).to have_subject('Someone has commented on your debate')
+      expect(email).to deliver_to(debate.author)
+      expect(email).to have_body_text(debate_path(debate))
+    end
+
+    scenario 'Do not send email about own debate comments', :js do
+      user = create(:user, email_on_debate_comment: true)
+      debate = create(:debate, author: user)
+      comment_on(debate, user: user)
+
+      expect { open_last_email }.to raise_error "No email has been sent!"
+    end
+
+    scenario 'Do not send email about debate comment unless set in preferences', :js do
+      user = create(:user, email_on_debate_comment: false)
+      debate = create(:debate, author: user)
+      comment_on(debate)
+
+      expect { open_last_email }.to raise_error "No email has been sent!"
+    end
   end
 
-  scenario "Comment reply", :js do
-    user = create(:user, email_on_comment_reply: true)
-    reply_to(user)
+  context 'Comment replies' do
+    scenario "Send email on comment reply", :js do
+      user = create(:user, email_on_comment_reply: true)
+      reply_to(user)
 
-    email = open_last_email
-    expect(email).to have_subject('Someone has replied to your comment')
-    expect(email).to deliver_to(user)
-    expect(email).to have_body_text(debate_path(Comment.first.debate))
-  end
+      email = open_last_email
+      expect(email).to have_subject('Someone has replied to your comment')
+      expect(email).to deliver_to(user)
+      expect(email).to have_body_text(debate_path(Comment.first.debate))
+    end
 
-  scenario 'Do not send email about debate comment unless set in preferences', :js do
-    user = create(:user, email_on_debate_comment: false)
-    debate = create(:debate, author: user)
-    comment_on(debate)
+    scenario "Do not send email about own replies to own comments", :js do
+      user = create(:user, email_on_comment_reply: true)
+      reply_to(user, user: user)
 
-    expect { open_last_email }.to raise_error "No email has been sent!"
-  end
+      expect { open_last_email }.to raise_error "No email has been sent!"
+    end
 
-  scenario "Do not send email about comment reply unless set in preferences", :js do
-    user = create(:user, email_on_comment_reply: false)
-    reply_to(user)
+    scenario "Do not send email about comment reply unless set in preferences", :js do
+      user = create(:user, email_on_comment_reply: false)
+      reply_to(user)
 
-    expect { open_last_email }.to raise_error "No email has been sent!"
+      expect { open_last_email }.to raise_error "No email has been sent!"
+    end
   end
 
 end
