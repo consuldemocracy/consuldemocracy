@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: {
                        registrations: 'users/registrations',
+                       sessions: 'users/sessions',
                        omniauth_callbacks: 'users/omniauth_callbacks'
                      }
   devise_for :organizations, class_name: 'User',
@@ -25,6 +26,8 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root 'welcome#index'
+  get '/welcome', to: 'welcome#welcome'
+
 
   resources :debates do
     member do
