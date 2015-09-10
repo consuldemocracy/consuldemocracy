@@ -380,6 +380,12 @@ header {
 
   .search-form {
     padding-top: rem-calc(14);
+
+    .postfix {
+      background: $brand;
+      border: 0;
+      color: white;
+    }
   }
 }
 
