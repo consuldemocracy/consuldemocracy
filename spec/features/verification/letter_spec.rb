@@ -84,23 +84,23 @@ feature 'Verify Letter' do
     expect(URI.parse(current_url).path).to eq(new_sms_path)
   end
 
-  scenario '3 tries allowed' do
+  scenario '6 tries allowed' do
     user = create(:user, residence_verified_at: Time.now, confirmed_phone: "611111111")
     login_as(user)
 
     visit new_letter_path
     click_button 'Send me a letter with the code'
 
-    3.times do
+    6.times do
       fill_in 'letter_verification_code', with: "999999"
       click_button 'Send'
     end
 
-    expect(page).to have_content 'You have reached the maximum number of letter verification tries'
+    expect(page).to have_content "You have reached the maximum number of verification tries. Please try again later."
     expect(URI.parse(current_url).path).to eq(account_path)
 
     visit new_letter_path
-    expect(page).to have_content 'You have reached the maximum number of letter verification tries'
+    expect(page).to have_content "You have reached the maximum number of verification tries. Please try again later."
     expect(URI.parse(current_url).path).to eq(account_path)
   end
 

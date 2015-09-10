@@ -41,8 +41,8 @@ class Verification::Residence
 
     unless residency.valid?
       errors.add(:residence_in_madrid, false)
-      user.update(residence_verification_tries: user.residence_verification_tries += 1)
       store_failed_attempt
+      Lock.increase_tries(user)
     end
     self.date_of_birth = string_to_date(date_of_birth)
   end

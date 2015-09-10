@@ -16,6 +16,7 @@ class User < ActiveRecord::Base
   has_one :administrator
   has_one :moderator
   has_one :organization
+  has_one :lock
   has_many :flags
   has_many :identities, dependent: :destroy
   has_many :debates, -> { with_hidden }, foreign_key: :author_id
@@ -128,9 +129,14 @@ class User < ActiveRecord::Base
     Comment.hide_all comments_ids
   end
 
+
   def email_provided?
     !!(email && email !~ OMNIAUTH_EMAIL_REGEX) ||
       !!(unconfirmed_email && unconfirmed_email !~ OMNIAUTH_EMAIL_REGEX)
+  end
+
+  def locked?
+    Lock.find_or_create_by(user: self).locked?
   end
 
   def self.search(term)
