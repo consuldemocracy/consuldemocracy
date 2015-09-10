@@ -22,17 +22,17 @@ class Verification::Letter
   end
 
   def verify?
-    letter_sent?
-    correct_code?
+    validate_letter_sent
+    validate_correct_code
     errors.blank?
   end
 
-  def letter_sent?
+  def validate_letter_sent
     errors.add(:verification_code, I18n.t('verification.letter.errors.letter_not_sent')) unless
     user.letter_sent_at.present?
   end
 
-  def correct_code?
+  def validate_correct_code
     errors.add(:verification_code, I18n.t('verification.letter.errors.incorect_code')) unless
     user.letter_verification_code == verification_code
   end
