@@ -2,7 +2,7 @@ require 'rails_helper'
 
 feature 'Stats' do
 
-  scenario 'Level 2 user', :focus do
+  scenario 'Level 2 user' do
     admin = create(:administrator)
     user = create(:user)
     login_as(user)
