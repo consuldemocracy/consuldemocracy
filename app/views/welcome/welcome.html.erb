@@ -1,0 +1,13 @@
+<h2><%= t("welcome.welcome.title") %></h2>
+<p><%= t("welcome.welcome.instructions_1_html") %></p>
+<p><%= t("welcome.welcome.instructions_2_html") %></p>
+<p><%= t("welcome.welcome.instructions_3_html") %></p>
+<p>
+  <%= link_to t("welcome.welcome.verify_account"),
+      new_residence_path, class: "button large success radius margin-top expand" %>
+</p>
+<p class="text-center">
+  <%= link_to t("welcome.welcome.go_to_index"),
+      root_path, class: "small margin-top expand" %>
+</p>
+<p><%= t("welcome.welcome.instructions_4_html") %></p>

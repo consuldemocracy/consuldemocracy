@@ -141,6 +141,10 @@ class User < ActiveRecord::Base
     @@username_max_length ||= self.columns.find { |c| c.name == 'username' }.limit
   end
 
+  def show_welcome_screen?
+    sign_in_count == 1 && unverified? && !organization
+  end
+
   private
 
     def validate_username_length
