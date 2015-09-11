@@ -259,7 +259,7 @@ h6 {
 
 .footer {
   background: #DEE0E2;
-  border-top: rem-calc(10) solid $brand;
+  border-top: rem-calc(6) solid $brand;
 }
 
 // 04. Header
@@ -330,8 +330,14 @@ header {
   }
 
   .icon-external {
-    color: #D01A6C;
     font-size: rem-calc(12);
+    opacity: .5;
+
+    @media (min-width: $small-breakpoint) {
+      position: absolute;
+      right: -18px;
+      top: 3px;
+    }
   }
 
   .selected {
@@ -398,6 +404,7 @@ header {
   color: white;
   height: rem-calc(48);
   max-width: 1170px !important;
+  padding: 0 rem-calc(12);
 
   @media (min-width: $small-breakpoint) {
     height: rem-calc(96);
@@ -543,9 +550,11 @@ header {
     li:not(.has-form) a:not(.button) {
       background: none;
       color: white;
+      padding: 0 rem-calc(6);
 
       @media (min-width: $small-breakpoint) {
         line-height: $line-height*4;
+        padding: 0 rem-calc(12);
       }
 
       &:hover {
@@ -568,6 +577,10 @@ header {
   background: #0B0C0C;
   color: white;
   font-size: rem-calc(14);
+
+  .row {
+    padding: 0 rem-calc(12);
+  }
 
   a {
     color: white;
@@ -725,7 +738,7 @@ footer {
       color: white;
 
       &.info {
-        background: $brand;
+        background: rgba(0,0,0,.5);
       }
     }
 
@@ -1045,11 +1058,7 @@ img.initialjs-avatar {
   h2 {
     display: inline-block;
     font-size: rem-calc(24);
-    margin: rem-calc(24) 0 rem-calc(12);
-
-    @media (min-width: $small-breakpoint) {
-      margin: rem-calc(24) 0;
-    }
+    margin-left: rem-calc(-17);
   }
 
   select {
@@ -1061,8 +1070,12 @@ img.initialjs-avatar {
     padding: rem-calc(12);
     width: auto;
 
+    @media (max-width: $small) {
+      margin-left: rem-calc(-17);
+    }
+
     @media (min-width: $small-breakpoint) {
-      margin: 0 rem-calc(6) rem-calc(24);
+      margin: 0 0 rem-calc(24) rem-calc(12);
     }
 
     optgroup {
@@ -1075,6 +1088,18 @@ img.initialjs-avatar {
         content: "a";
         font-family: "icons";
       }
+    }
+  }
+
+  .debates-order {
+    text-align: left;
+
+    @media (min-width: $small-breakpoint) {
+      text-align: right;
+    }
+
+    select {
+      margin-left: 0;
     }
   }
 }

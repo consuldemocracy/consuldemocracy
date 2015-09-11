@@ -189,7 +189,7 @@ en:
       debate: "secret code did not match with the image"
   shared:
     tags_cloud:
-      tags: Topics
+      tags: Trend
     flag: Flag as inappropriate
     unflag: Undo flag
     collective: Collective
