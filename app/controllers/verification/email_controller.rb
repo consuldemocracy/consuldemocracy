@@ -1,5 +1,6 @@
 class Verification::EmailController < ApplicationController
   before_action :authenticate_user!
+  before_action :verify_verified!
   before_action :set_verified_user, only: :create
   skip_authorization_check
 

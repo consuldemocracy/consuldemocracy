@@ -10,9 +10,9 @@
             <%= t("account.show.verified_account") %>
           </p>
         <% elsif current_user.level_two_verified? %>
-          <%= link_to t("account.show.finish_verification"), new_letter_path, class: "button radius small success right" %>
+          <%= link_to t("account.show.finish_verification"), verification_path, class: "button radius small success right" %>
         <% else %>
-          <%= link_to t("account.show.verify_my_account"), new_residence_path, class: "button radius small success right" %>
+          <%= link_to t("account.show.verify_my_account"), verification_path, class: "button radius small success right" %>
         <% end %>
       </span>
     </div>

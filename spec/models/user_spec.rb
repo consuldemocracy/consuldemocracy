@@ -304,6 +304,42 @@ describe User do
       user = create(:user, verified_at: Time.now, confirmed_phone: "123456789", residence_verified_at: Time.now)
       expect(user.unverified?).to eq(false)
     end
+
+    it "verification_email_sent? is true only if user has email_verification_token" do
+      user = create(:user, email_verification_token: "xxxxxxx")
+      expect(user.verification_email_sent?).to eq(true)
+
+      user = create(:user, email_verification_token: nil)
+      expect(user.verification_email_sent?).to eq(false)
+    end
+
+    it "verification_sms_sent? is true only if user has unconfirmed_phone and sms_confirmation_code" do
+      user = create(:user, unconfirmed_phone: "666666666", sms_confirmation_code: "666")
+      expect(user.verification_sms_sent?).to eq(true)
+
+      user = create(:user, unconfirmed_phone: nil, sms_confirmation_code: "666")
+      expect(user.verification_sms_sent?).to eq(false)
+
+      user = create(:user, unconfirmed_phone: "666666666", sms_confirmation_code: nil)
+      expect(user.verification_sms_sent?).to eq(false)
+
+      user = create(:user, unconfirmed_phone: nil, sms_confirmation_code: nil)
+      expect(user.verification_sms_sent?).to eq(false)
+    end
+
+    it "verification_letter_sent? is true only if user has letter_requested_at and letter_verification_code" do
+      user = create(:user, letter_requested_at: Time.now, letter_verification_code: "666")
+      expect(user.verification_letter_sent?).to eq(true)
+
+      user = create(:user, letter_requested_at: nil, letter_verification_code: "666")
+      expect(user.verification_letter_sent?).to eq(false)
+
+      user = create(:user, letter_requested_at: Time.now, letter_verification_code: nil)
+      expect(user.verification_letter_sent?).to eq(false)
+
+      user = create(:user, letter_requested_at: nil, letter_verification_code: nil)
+      expect(user.verification_letter_sent?).to eq(false)
+    end
   end
 
   describe "cache" do

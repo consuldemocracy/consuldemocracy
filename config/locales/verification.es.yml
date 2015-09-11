@@ -94,3 +94,6 @@ es:
         use_another_phone: "Utilizar otro teléfono"
       form:
         submit_button: "Enviar código"
+    redirect_notices:
+      email_already_sent: "Ya te enviamos un email con un enlace de confirmación, si no lo encuentras puedes solicitar aquí que te lo reenviemos"
+      already_verified: "Tu cuenta ya está verificada"
