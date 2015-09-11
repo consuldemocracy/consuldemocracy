@@ -1,3 +1,8 @@
+set :whenever_command, "bundle exec whenever"
+set :whenever_environment, defer { stage }
+set :whenever_roles, [ :cron ]
+require 'whenever/capistrano'
+
 # config valid only for current version of Capistrano
 lock '3.4.0'
 
