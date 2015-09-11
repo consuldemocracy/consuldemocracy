@@ -3,34 +3,35 @@
   <div class="wrap row">
     <div id="debates" class="debates-list small-12 medium-9 column js-order-<%= @order.dasherize %>">
       <div class="filters">
-        <div class="small-12 medium-8 column">
+        <div class="small-12 medium-7 column">
           <% if @search_terms %>
-              <h2>
+              <h2 class="margin-top">
                 <%= page_entries_info @debates %>
                 <%= t("debates.index.search_results", count: @debates.size, search_term: @search_terms) %>
               </h2>
           <% elsif @tag_filter %>
-              <h2>
+              <h2 class="margin-top">
                 <%= page_entries_info @debates %>
                 <%= t("debates.index.filter_topic", count: @debates.size, topic: @tag_filter) %>
               </h2>
           <% end %>
         </div>
-        <div class="inline-block <%= 'right' if (@tag_filter || @search_terms) %>">
-            <% if @tag_filter || @search_terms %>
-              <h6 class="inline-block">
-                <%= t("debates.index.select_order") %>
-              </h6>
-            <% else %>
-              <h2 class="inline-block">
-                <%= t("debates.index.select_order_long") %>
-              </h2>
-            <% end %>
+        <% if @tag_filter || @search_terms %>
+          <div class="small-12 medium-5 margin-top inline-block debates-order">
+            <h6 class="inline-block">
+              <%= t("debates.index.select_order") %>
+            </h6>
+        <% else %>
+          <div class="small-12 column margin-top inline-block">
+          <h2 class="inline-block">
+            <%= t("debates.index.select_order_long") %>
+          </h2>
+        <% end %>
           <form class="inline-block">
              <select class="js-location-changer" name="order-selector">
                <% @valid_orders.each do |order| %>
                  <option <%= 'selected' if order == @order %>
-                         value='<%= current_path_with_query_params(order: order) %>'>
+                         value='<%= current_path_with_query_params(order: order, page: 1) %>'>
                    <%= t("debates.index.orders.#{order}") %>
                  </option>
                <% end %>

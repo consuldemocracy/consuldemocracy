@@ -96,4 +96,8 @@ class ApplicationController < ActionController::Base
         redirect_to new_residence_path, alert: t('verification.residence.alert.unconfirmed_residency')
       end
     end
+
+    def verify_verified!
+      redirect_to(account_path, notice: t('verification.redirect_notices.already_verified')) if current_user.level_three_verified?
+    end
 end
