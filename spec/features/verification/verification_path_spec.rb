@@ -74,4 +74,18 @@ feature 'Verification path' do
 
     expect(current_path).to eq new_residence_path
   end
+
+  scenario "A verified user can not access verification pages" do
+    user = create(:user, verified_at: Time.now)
+
+    login_as(user)
+
+    verification_paths = [new_residence_path, verified_user_path, edit_sms_path, new_letter_path, edit_letter_path]
+    verification_paths.each do |step_path|
+      visit step_path
+
+      expect(current_path).to eq account_path
+      expect(page).to have_content 'You are a verified user!'
+    end
+  end
 end

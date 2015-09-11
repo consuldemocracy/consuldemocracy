@@ -1,6 +1,7 @@
 class Verification::SmsController < ApplicationController
   before_action :authenticate_user!
   before_action :verify_resident!
+  before_action :verify_verified!
   before_action :verify_lock, only: [:new, :create]
   before_action :set_phone, only: :create
 
