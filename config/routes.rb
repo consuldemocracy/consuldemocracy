@@ -46,6 +46,7 @@ Rails.application.routes.draw do
   end
 
   resource :account, controller: "account", only: [:show, :update]
+  resource :verification, controller: "verification", only: [:show]
 
   scope module: :verification do
     resource :residence, controller: "residence", only: [:new, :create]
