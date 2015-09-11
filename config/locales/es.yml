@@ -189,7 +189,7 @@ es:
       debate: "el código secreto no coincide con la imagen"
   shared:
     tags_cloud:
-      tags: Temas
+      tags: Tendencias
     flag: Denunciar como inapropiado
     unflag: Deshacer denuncia
     collective: Colectivo
