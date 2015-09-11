@@ -31,11 +31,11 @@ module ActsAsParanoidAliases
 
   module ClassMethods
     def with_confirmed_hide
-      where("confirmed_hide_at IS NOT NULL")
+      where.not(confirmed_hide_at: nil)
     end
 
     def without_confirmed_hide
-      where("confirmed_hide_at IS NULL")
+      where(confirmed_hide_at: nil)
     end
 
     def with_hidden
@@ -57,4 +57,3 @@ module ActsAsParanoidAliases
     end
   end
 end
-

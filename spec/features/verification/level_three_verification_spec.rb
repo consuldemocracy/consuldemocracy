@@ -91,6 +91,6 @@ feature 'Level three verification' do
     fill_in "letter_verification_code", with: user.letter_verification_code
     click_button "Send"
 
-    expect(page).to have_content "Correct code. Your account is verified"
+    expect(page).to have_content "We have not sent you the letter with the code yet"
   end
 end

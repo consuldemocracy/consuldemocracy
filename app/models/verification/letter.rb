@@ -21,21 +21,30 @@ class Verification::Letter
     user.update(letter_requested_at: Time.now, letter_verification_code: generate_verification_code)
   end
 
-  def verify?
+  def verified?
+    validate_letter_sent
+    validate_correct_code
+    errors.blank?
+  end
+
+  def validate_letter_sent
+    errors.add(:verification_code, I18n.t('verification.letter.errors.letter_not_sent')) unless
+    user.letter_sent_at.present?
+  end
+
+  def validate_correct_code
+    errors.add(:verification_code, I18n.t('verification.letter.errors.incorect_code')) unless
     user.letter_verification_code == verification_code
   end
 
-  def increase_letter_verification_tries
-    user.update(letter_verification_tries: user.letter_verification_tries += 1)
+  def correct_address
+    errors.add(:address, I18n.t('verification.letter.errors.address_not_found')) unless
+    address.present?
   end
 
   def update_user_address
     user.address = Address.new(parsed_address)
     user.save
-  end
-
-  def correct_address
-    errors.add(:address, "Address not found") unless address.present?
   end
 
   def parsed_address
@@ -52,6 +61,10 @@ class Verification::Letter
       km:            address[:km],
       neighbourhood: address[:nombre_barrio],
       district:      address[:nombre_distrito] }
+  end
+
+  def increase_letter_verification_tries
+    user.update(letter_verification_tries: user.letter_verification_tries += 1)
   end
 
   private

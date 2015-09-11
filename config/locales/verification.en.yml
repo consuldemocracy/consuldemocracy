@@ -4,6 +4,8 @@ en:
     step_1: "1. Residence"
     step_2: "2. Confirmation code"
     step_3: "3. Final verification"
+    alert:
+      lock: "You have reached the maximum number of verification tries. Please try again later."
     residence:
       new:
         title: "Verify residence"
@@ -24,7 +26,6 @@ en:
         flash:
           success: "Residence verified"
       alert:
-        verify_attemps_left: "You have reached the maximum number of Census verification tries"
         unconfirmed_residency: "You have not yet confirmed your residence"
     sms:
       new:
@@ -47,8 +48,6 @@ en:
             success: "Correct code. Your account is verified"
           level_two:
             success: "Correct code"
-      alert:
-        verify_attemps_left: "You have reached the maximum number of sms verification tries"
     email:
       show:
         flash:
@@ -78,12 +77,14 @@ en:
         title: "Security code confirmation"
         confirmation_code: "Enter the security code in your letter"
       update:
-        error: "Incorrect confirmation code"
         flash:
           success: "Correct code. Your account is verified"
       alert:
         unconfirmed_code: "You have not yet enter the confirmation code"
-        verify_attemps_left: "You have reached the maximum number of letter verification tries"
+      errors:
+        letter_not_sent: "We have not sent you the letter with the code yet"
+        incorect_code: "Incorrect confirmation code"
+        address_not_found: "Address not found"
     verified_user:
       show:
         title: "Available information"

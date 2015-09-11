@@ -4,6 +4,8 @@ es:
     step_1: "1. Residencia"
     step_2: "2. Código de confirmación"
     step_3: "3. Verificación final"
+    alert:
+      lock: "Has llegado al máximo número de intentos. Por favor intentalo de nuevo más tarde."
     residence:
       new:
         title: "Verificar residencia"
@@ -24,7 +26,6 @@ es:
         flash:
           success: "Residencia verificada"
       alert:
-        verify_attemps_left: "Has llegado al máximo número de intentos de verificar tu residencia."
         unconfirmed_residency: "Aún no has verificado tu residencia"
     sms:
       new:
@@ -47,8 +48,6 @@ es:
             success: "Código correcto. Tu cuenta ya está verificada"
           level_two:
             success: "Código correcto"
-      alert:
-        verify_attemps_left: "Has llegado al máximo número de intentos de verificar tu teléfono."
     email:
       show:
         flash:
@@ -78,12 +77,14 @@ es:
         title: "Confirmación de código de seguridad"
         confirmation_code: "Introduce el código que has recibido en tu carta"
       update:
-        error: "Código de verificación incorrecto"
         flash:
           success: "Código correcto. Tu cuenta ya está verificada"
       alert:
         unconfirmed_code: "Todavía no has introducido el código de confirmación"
-        verify_attemps_left: "Has llegado al máximo número de intentos de verificar tu carta."
+      errors:
+        letter_not_sent: "Aún no te hemos enviado la carta con el código"
+        incorect_code: "Código de verificación incorrecto"
+        address_not_found: "No se ha encontrado una dirección"
     verified_user:
       show:
         title: "Información disponible"

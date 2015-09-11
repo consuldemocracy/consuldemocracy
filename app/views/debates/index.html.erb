@@ -38,13 +38,15 @@
           </form>
         </div>
       </div>
+      <div class="show-for-small-only">
+        <%= link_to t("debates.index.start_debate"), new_debate_path, class: 'button radius expand' %>
+      </div>
       <%= render @debates %>
       <%= paginate @debates %>
     </div>
     <div class="small-12 medium-3 column">
       <aside class="sidebar" role="complementary">
         <%= link_to t("debates.index.start_debate"), new_debate_path, class: 'button radius expand' %>
-        <%= render "shared/search_form" %>
         <%= render "shared/tag_cloud" %>
       </aside>
     </div>

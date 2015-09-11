@@ -1,4 +1,5 @@
 FactoryGirl.define do
+
   factory :user do
     sequence(:username) { |n| "Manuela#{n}" }
     sequence(:email)    { |n| "manuela#{n}@madrid.es" }
@@ -28,6 +29,10 @@ FactoryGirl.define do
     date_of_birth    Date.new(1980, 12, 31)
     postal_code      "28013"
     terms_of_service '1'
+
+    trait :invalid do
+      postal_code "12345"
+    end
   end
 
   factory :verification_sms, class: Verification::Sms do
@@ -37,6 +42,12 @@ FactoryGirl.define do
   factory :verification_letter, class: Verification::Letter do
     user
     address
+  end
+
+  factory :lock do
+    user
+    tries 0
+    locked_until Time.now
   end
 
   factory :address do

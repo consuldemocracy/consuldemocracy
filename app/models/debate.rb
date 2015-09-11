@@ -27,7 +27,7 @@ class Debate < ActiveRecord::Base
 
   scope :sort_for_moderation, -> { order(flags_count: :desc, updated_at: :desc) }
   scope :pending_flag_review, -> { where(ignored_flag_at: nil, hidden_at: nil) }
-  scope :with_ignored_flag, -> { where("ignored_flag_at IS NOT NULL AND hidden_at IS NULL") }
+  scope :with_ignored_flag, -> { where.not(ignored_flag_at: nil).where(hidden_at: nil) }
   scope :flagged, -> { where("flags_count > 0") }
   scope :for_render, -> { includes(:tags) }
   scope :sort_by_hot_score , -> { order(hot_score: :desc) }
@@ -138,7 +138,7 @@ class Debate < ActiveRecord::Base
   end
 
   def self.search(terms)
-    terms.present? ? where("title ILIKE ? OR description ILIKE ?", "%#{terms}%", "%#{terms}%") : none
+    terms.present? ? where("unaccent(title) ILIKE unaccent(?) OR unaccent(description) ILIKE unaccent(?)", "%#{terms}%", "%#{terms}%") : none
   end
 
   def conflictive?

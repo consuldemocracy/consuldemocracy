@@ -2,9 +2,10 @@ require 'rails_helper'
 include ActionView::Helpers::DateHelper
 
 feature 'Comments' do
+  let(:user)   { create :user }
+  let(:debate) { create :debate }
 
   scenario 'Index' do
-    debate = create(:debate)
     3.times { create(:comment, commentable: debate) }
 
     visit debate_path(debate)
@@ -19,8 +20,32 @@ feature 'Comments' do
     end
   end
 
+  scenario 'Turns links into html links' do
+    create :comment, commentable: debate, body: 'Built with http://rubyonrails.org/'
+
+    visit debate_path(debate)
+
+    within first('.comment') do
+      expect(page).to have_content 'Built with http://rubyonrails.org/'
+      expect(page).to have_link('http://rubyonrails.org/', href: 'http://rubyonrails.org/')
+      expect(find_link('http://rubyonrails.org/')[:rel]).to eq('nofollow')
+      expect(find_link('http://rubyonrails.org/')[:target]).to eq('_blank')
+    end
+  end
+
+  scenario 'Sanitizes comment body for security' do
+    create :comment, commentable: debate, body: "<script>alert('hola')</script> <a href=\"javascript:alert('sorpresa!')\">click me<a/> http://madrid.es"
+
+    visit debate_path(debate)
+
+    within first('.comment') do
+      expect(page).to have_content "click me http://madrid.es"
+      expect(page).to have_link('http://madrid.es', href: 'http://madrid.es')
+      expect(page).not_to have_link('click me')
+    end
+  end
+
   scenario 'Paginated comments' do
-    debate = create(:debate)
     per_page = 10
     (per_page + 2).times { create(:comment, commentable: debate)}
 
@@ -39,7 +64,6 @@ feature 'Comments' do
 
   feature 'Not logged user' do
     scenario 'can not see comments forms' do
-      debate = create(:debate)
       create(:comment, commentable: debate)
       visit debate_path(debate)
 
@@ -53,9 +77,6 @@ feature 'Comments' do
   end
 
   scenario 'Create', :js do
-    user = create(:user)
-    debate = create(:debate)
-
     login_as(user)
     visit debate_path(debate)
 
@@ -68,9 +89,6 @@ feature 'Comments' do
   end
 
   scenario 'Errors on create', :js do
-    user = create(:user)
-    debate = create(:debate)
-
     login_as(user)
     visit debate_path(debate)
 
@@ -82,7 +100,6 @@ feature 'Comments' do
   scenario 'Reply', :js do
     citizen = create(:user, username: 'Ana')
     manuela = create(:user, username: 'Manuela')
-    debate  = create(:debate)
     comment = create(:comment, commentable: debate, user: citizen)
 
     login_as(manuela)
@@ -103,8 +120,6 @@ feature 'Comments' do
   end
 
   scenario 'Errors on reply', :js do
-    user = create(:user)
-    debate = create(:debate)
     comment = create(:comment, commentable: debate, user: user)
 
     login_as(user)
@@ -120,7 +135,6 @@ feature 'Comments' do
   end
 
   scenario "N replies", :js do
-    debate = create(:debate)
     parent = create(:comment, commentable: debate)
 
     7.times do
@@ -133,8 +147,6 @@ feature 'Comments' do
   end
 
   scenario "Flagging as inappropriate", :js do
-    user = create(:user)
-    debate = create(:debate)
     comment = create(:comment, commentable: debate)
 
     login_as(user)
@@ -151,8 +163,6 @@ feature 'Comments' do
   end
 
   scenario "Undoing flagging as inappropriate", :js do
-    user = create(:user)
-    debate = create(:debate)
     comment = create(:comment, commentable: debate)
     Flag.flag(user, comment)
 
@@ -170,7 +180,6 @@ feature 'Comments' do
   end
 
   scenario "Flagging turbolinks sanity check", :js do
-    user = create(:user)
     debate = create(:debate, title: "Should we change the world?")
     comment = create(:comment, commentable: debate)
 
@@ -187,7 +196,6 @@ feature 'Comments' do
   feature "Moderators" do
     scenario "can create comment as a moderator", :js do
       moderator = create(:moderator)
-      debate = create(:debate)
 
       login_as(moderator.user)
       visit debate_path(debate)
@@ -208,7 +216,6 @@ feature 'Comments' do
       citizen = create(:user, username: "Ana")
       manuela = create(:user, username: "Manuela")
       moderator = create(:moderator, user: manuela)
-      debate  = create(:debate)
       comment = create(:comment, commentable: debate, user: citizen)
 
       login_as(manuela)
@@ -234,7 +241,6 @@ feature 'Comments' do
 
     scenario "can not comment as an administrator" do
       moderator = create(:moderator)
-      debate = create(:debate)
 
       login_as(moderator.user)
       visit debate_path(debate)
@@ -246,7 +252,6 @@ feature 'Comments' do
   feature "Administrators" do
     scenario "can create comment as an administrator", :js do
       admin = create(:administrator)
-      debate = create(:debate)
 
       login_as(admin.user)
       visit debate_path(debate)
@@ -267,7 +272,6 @@ feature 'Comments' do
       citizen = create(:user, username: "Ana")
       manuela = create(:user, username: "Manuela")
       admin   = create(:administrator, user: manuela)
-      debate  = create(:debate)
       comment = create(:comment, commentable: debate, user: citizen)
 
       login_as(manuela)
@@ -293,7 +297,6 @@ feature 'Comments' do
 
     scenario "can not comment as a moderator" do
       admin  = create(:administrator)
-      debate = create(:debate)
 
       login_as(admin.user)
       visit debate_path(debate)

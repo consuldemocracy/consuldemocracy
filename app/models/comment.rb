@@ -22,7 +22,7 @@ class Comment < ActiveRecord::Base
 
   scope :sort_for_moderation, -> { order(flags_count: :desc, updated_at: :desc) }
   scope :pending_flag_review, -> { where(ignored_flag_at: nil, hidden_at: nil) }
-  scope :with_ignored_flag, -> { where("ignored_flag_at IS NOT NULL AND hidden_at IS NULL") }
+  scope :with_ignored_flag, -> { where(hidden_at: nil).where.not(ignored_flag_at: nil) }
   scope :flagged, -> { where("flags_count > 0") }
 
   scope :for_render, -> { with_hidden.includes(user: :organization) }

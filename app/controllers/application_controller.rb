@@ -50,6 +50,12 @@ class ApplicationController < ActionController::Base
       Rails.application.secrets.http_basic_auth
     end
 
+    def verify_lock
+      if current_user.locked?
+        redirect_to account_path, alert: t('verification.alert.lock')
+      end
+    end
+
     def set_locale
       if params[:locale] && I18n.available_locales.include?(params[:locale].to_sym)
         session[:locale] = params[:locale]
