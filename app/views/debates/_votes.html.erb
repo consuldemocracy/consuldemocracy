@@ -2,7 +2,7 @@
 <div class="votes">
   <div class="in-favor inline-block">
     <%= link_to vote_debate_path(debate, value: 'yes'),
-        class: "like #{voted_classes[:in_favor]}", title: t('votes.agree'), method: "post", remote: true do %>
+        class: "like #{voted_classes[:in_favor]} js-prevent-double-submit", title: t('votes.agree'), method: "post", remote: true do %>
       <i class="icon-like"></i>
       <span><%= percentage('likes', debate) %></span>
     <% end %>
@@ -11,7 +11,7 @@
   <span class="divider"></span>
 
   <div class="against inline-block">
-    <%= link_to vote_debate_path(debate, value: 'no'), class: "unlike #{voted_classes[:against]}", title: t('votes.disagree'), method: "post", remote: true do %>
+    <%= link_to vote_debate_path(debate, value: 'no'), class: "unlike #{voted_classes[:against]} js-prevent-double-submit", title: t('votes.disagree'), method: "post", remote: true do %>
       <i class="icon-unlike"></i>
       <span><%= percentage('dislikes', debate) %></span>
     <% end %>
@@ -22,23 +22,23 @@
   </span>
 
   <% if user_signed_in? && current_user.organization? %>
-  <div class="organizations-votes" style='display:none'>
-    <p>
-      <%= t("votes.organizations") %>
-    </p>
-  </div>
+    <div class="organizations-votes" style='display:none'>
+      <p>
+        <%= t("votes.organizations") %>
+      </p>
+    </div>
   <% elsif user_signed_in? && !debate.votable_by?(current_user)%>
-  <div class="anonymous-votes" style='display:none'>
-    <p>
-      <%= t("votes.anonymous",
-          verify_account: link_to(t("votes.verify_account"), new_residence_path )).html_safe %>
-    </p>
-  </div>
+    <div class="anonymous-votes" style='display:none'>
+      <p>
+        <%= t("votes.anonymous",
+            verify_account: link_to(t("votes.verify_account"), new_residence_path )).html_safe %>
+      </p>
+    </div>
   <% elsif !user_signed_in? %>
-  <div class="not-logged" style='display:none'>
-    <%= t("votes.unauthenticated",
-      signin: link_to(t("votes.signin"), new_user_session_path),
-      signup: link_to(t("votes.signup"), new_user_registration_path)).html_safe %>
-  </div>
+    <div class="not-logged" style='display:none'>
+      <%= t("votes.unauthenticated",
+        signin: link_to(t("votes.signin"), new_user_session_path),
+        signup: link_to(t("votes.signup"), new_user_registration_path)).html_safe %>
+    </div>
   <% end %>
 </div>
