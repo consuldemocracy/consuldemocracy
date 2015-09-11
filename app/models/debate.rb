@@ -147,7 +147,7 @@ class Debate < ActiveRecord::Base
   end
 
   def self.title_max_length
-    @@title_max_length ||= self.columns.find { |c| c.name == 'title' }.limit
+    @@title_max_length ||= self.columns.find { |c| c.name == 'title' }.limit || 80
   end
 
   def self.description_max_length
