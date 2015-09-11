@@ -439,10 +439,10 @@ feature 'Debates' do
     debate1 = create(:debate, title: "Show me what you got")
     debate2 = create(:debate, title: "Get Schwifty")
     debate3 = create(:debate)
-    debate4 = create(:debate, description: "Schwíftÿ in here")
+    debate4 = create(:debate, description: "Schwifty in here")
 
     visit debates_path
-    fill_in "search", with: "Schwìfty"
+    fill_in "search", with: "Schwifty"
     click_button "Search"
 
     within("#debates") do
