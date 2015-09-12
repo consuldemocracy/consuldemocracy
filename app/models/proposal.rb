@@ -5,12 +5,15 @@ class Proposal < ActiveRecord::Base
   has_many :comments, as: :commentable
   has_many :flags, as: :flaggable
 
+  acts_as_taggable
+
   validates :title, presence: true
+  validates :question, presence: true
   validates :description, presence: true
   validates :author, presence: true
-  validates :question, presence: true
 
   validate :validate_title_length
+  validate :validate_question_length
   validate :validate_description_length
 
   validates :terms_of_service, acceptance: { allow_nil: false }, on: :create
@@ -20,6 +23,10 @@ class Proposal < ActiveRecord::Base
 
   def self.title_max_length
     @@title_max_length ||= self.columns.find { |c| c.name == 'title' }.limit || 80
+  end
+
+  def self.question_max_length
+    140
   end
 
   def self.description_max_length
@@ -51,6 +58,14 @@ class Proposal < ActiveRecord::Base
         attributes: :title,
         minimum: 4,
         maximum: Proposal.title_max_length)
+      validator.validate(self)
+    end
+
+    def validate_question_length
+      validator = ActiveModel::Validations::LengthValidator.new(
+        attributes: :title,
+        minimum: 10,
+        maximum: Proposal.question_max_length)
       validator.validate(self)
     end
 

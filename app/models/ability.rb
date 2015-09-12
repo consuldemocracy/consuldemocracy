@@ -19,8 +19,14 @@ class Ability
         debate.editable_by?(user)
       end
 
+      can :read, Proposal
+      can :update, Proposal do |proposal|
+        proposal.editable_by?(user)
+      end
+
       can :create, Comment
       can :create, Debate
+      can :create, Proposal
 
       can [:flag, :unflag], Comment
       cannot [:flag, :unflag], Comment, user_id: user.id

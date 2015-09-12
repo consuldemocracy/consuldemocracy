@@ -16,6 +16,12 @@ es:
         description: Opinión
         terms_of_service: Términos de servicio
         title: Título
+      propuesta:
+        author: Autor
+        title: Título
+        question: Pregunta
+        description: Descripción
+        terms_of_service: Términos de servicio
       user:
         email: Correo electrónico
         username: Nombre de usuario

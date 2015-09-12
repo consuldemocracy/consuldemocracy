@@ -56,6 +56,7 @@ en:
       conditions: "Terms of use"
       user: account
       debate: debate
+      proposal: proposal
       verification::sms: phone
   application:
     alert:
@@ -144,6 +145,30 @@ en:
     update:
       form:
         submit_button: "Save changes"
+  debates:
+    new:
+      start_new: Start a proposal
+      info: "A proposal is a discussion forum, not a proposal. And soon... we opened the section of citizen proposals."
+      more_info: "More info"
+      back_link: Back
+      recommendations_title: Tips for creating a proposal
+      recommendation_one: "Do not write the title of the debate or whole sentences in capital. On the Internet this is considered shouting. And nobody likes to scream."
+      recommendation_two: "Any discussion or comment that involves an illegal act will be eliminated, also intending to sabotage the debate spaces, everything else is permitted."
+      recommendation_three: "The harsh criticism are very welcome. This is a space of thought but we recommend preserving the elegance and intelligence. The world is better with them present."
+      recommendation_four: "Enjoy this space, voices that fill it, it is yours too."
+      form:
+        submit_button: "Start a proposal"
+    form:
+      proposal_title: Proposal title
+      proposal_question: Proposal question
+      proposal_text: Initial text for proposal
+      tags_label: Topics
+      tags_instructions: >
+        Tag this proposal. You can choose among our proposals on the list or add any other topic you want.
+      tags_placeholder: "Add topics writing them separated by ','"
+    create:
+      form:
+        submit_button: "Start a proposal"
   comments:
     form:
       leave_comment: Write a comment

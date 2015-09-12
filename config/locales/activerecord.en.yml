@@ -16,6 +16,12 @@ en:
         description: Opinion
         terms_of_service: Terms of service
         title: Title
+      proposal:
+        author: Author
+        title: Title
+        question: Question
+        description: Description
+        terms_of_service: Terms of service
       user:
         email: Email
         username: Username
