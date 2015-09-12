@@ -63,7 +63,7 @@ class Proposal < ActiveRecord::Base
   end
 
   def editable?
-    total_votes <= 1000
+    total_votes <= Setting.value_for("max_votes_for_proposal_edit").to_i
   end
 
   def editable_by?(user)
