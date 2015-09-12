@@ -55,11 +55,11 @@ class CommentsController < ApplicationController
     end
 
     def administrator_comment?
-      ["1", true].include?(comment_params[:as_administrator]) && can?(:comment_as_administrator, Debate)
+      ["1", true].include?(comment_params[:as_administrator]) && can?(:comment_as_administrator, @commentable)
     end
 
     def moderator_comment?
-      ["1", true].include?(comment_params[:as_moderator]) && can?(:comment_as_moderator, Debate)
+      ["1", true].include?(comment_params[:as_moderator]) && can?(:comment_as_moderator, @commentable)
     end
 
 end
