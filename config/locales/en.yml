@@ -164,6 +164,10 @@ en:
       filter_topic:
         one: " with the topic '%{topic}'"
         other: " with the topic '%{topic}'"
+      search_form:
+        title: Search
+        button: Search
+        placeholder: "Search proposals..."
       search_results:
         one: " containing '%{search_term}'"
         other: " containing '%{search_term}'"

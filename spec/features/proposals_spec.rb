@@ -139,4 +139,27 @@ feature 'Proposals' do
       expect(current_url).to include('page=1')
     end
   end
+
+  scenario 'proposal index search' do
+    proposal1 = create(:proposal, title: "Show me what you got")
+    proposal2 = create(:proposal, title: "Get Schwifty")
+    proposal3 = create(:proposal)
+    proposal4 = create(:proposal, description: "Schwifty in here")
+    proposal5 = create(:proposal, question: "Schwifty in here")
+
+    visit proposals_path
+    fill_in "search", with: "Schwifty"
+    click_button "Search"
+
+    expect(current_path).to eq(proposals_path)
+
+    within("#proposals") do
+      expect(page).to have_css('.proposal', count: 3)
+      expect(page).to have_content(proposal2.title)
+      expect(page).to have_content(proposal4.title)
+      expect(page).to have_content(proposal5.title)
+      expect(page).to_not have_content(proposal1.title)
+      expect(page).to_not have_content(proposal3.title)
+    end
+  end
 end

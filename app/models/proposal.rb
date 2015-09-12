@@ -65,6 +65,10 @@ class Proposal < ActiveRecord::Base
     6000
   end
 
+  def self.search(terms)
+    terms.present? ? where("title ILIKE ? OR description ILIKE ? OR question ILIKE ?", "%#{terms}%", "%#{terms}%", "%#{terms}%") : none
+  end
+
   def editable?
     total_votes <= Setting.value_for("max_votes_for_proposal_edit").to_i
   end

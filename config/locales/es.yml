@@ -164,6 +164,10 @@ es:
       filter_topic:
         one: " con el tema '%{topic}'"
         other: " con el tema '%{topic}'"
+      search_form:
+        title: Search
+        button: Search
+        placeholder: "Buscar propuestas ciudadanas..."
       search_results:
         one: " que contiene '%{search_term}'"
         other: " que contienen '%{search_term}'"

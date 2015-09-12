@@ -1,3 +1,9 @@
+<% content_for :header_addon do %>
+  <%= render "shared/search_form_header",
+             search_path: proposals_path(page: 1),
+             i18n_namespace: "proposals.index.search_form" %>
+<% end %>
+
 <section role="main">
 
   <div class="wrap row">
