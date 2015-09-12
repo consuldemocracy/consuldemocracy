@@ -74,6 +74,10 @@ class Proposal < ActiveRecord::Base
     user.level_two_verified? || !user.voted_for?(self)
   end
 
+  def code
+    "#{Setting.value_for("proposal_code_prefix")}-#{created_at.strftime('%Y-%M')}-#{id}"
+  end
+
   protected
 
     def sanitize_description

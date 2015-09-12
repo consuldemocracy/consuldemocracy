@@ -46,6 +46,12 @@ describe Proposal do
     expect(proposal).to_not be_valid
   end
 
+  it "should have a code" do
+    Setting.find_by(key: "proposal_code_prefix").update(value: "TEST")
+    proposal = create(:proposal)
+    expect(proposal.code).to eq "TEST-#{proposal.created_at.strftime('%Y-%M')}-#{proposal.id}"
+  end
+
   describe "#editable?" do
     let(:proposal) { create(:proposal) }
     before(:each) {Setting.find_by(key: "max_votes_for_proposal_edit").update(value: 100)}
