@@ -29,7 +29,7 @@ en:
       # welcome: Welcome
       more_information: "More information"
       debates: Debates
-      # initiatives: Initiatives
+      proposals: Proposals
     footer:
       description: "This portal use %{consul}, is %{open_source}. Madrid, for the whole world."
       open_source: "software libre"

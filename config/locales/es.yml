@@ -29,7 +29,7 @@ es:
       # welcome: Portada
       more_information: "Más información"
       debates: Debates
-      # initiatives: Iniciativas
+      proposals: Propuestas ciudadanas
     footer:
       description: "Este portal usa la %{consul} que es %{open_source}. De Madrid, para el mundo entero."
       open_source: "software libre"
@@ -285,7 +285,7 @@ es:
     search_form:
       search_title: Buscar
       search_button: Buscar
-      search_placeholder: "Buscar en propuestas..."
+      search_placeholder: "Buscar en debates..."
   mailer:
     comment:
       subject: Alguien ha comentado en tu propuesta
