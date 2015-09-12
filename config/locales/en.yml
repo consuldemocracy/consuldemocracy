@@ -76,6 +76,10 @@ en:
       filter_topic:
         one: " with the topic '%{topic}'"
         other: " with the topic '%{topic}'"
+      search_form:
+        title: Search
+        button: Search
+        placeholder: "Search debates..."
       search_results:
         one: " containing '%{search_term}'"
         other: " containing '%{search_term}'"
@@ -283,10 +287,6 @@ en:
     flag: Flag as inappropriate
     unflag: Undo flag
     collective: Collective
-    search_form:
-      search_title: Search
-      search_button: Search
-      search_placeholder: "Search on debates..."
   mailer:
     comment:
       subject: Someone has commented on your debate

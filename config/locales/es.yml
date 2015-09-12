@@ -76,6 +76,10 @@ es:
       filter_topic:
         one: " con el tema '%{topic}'"
         other: " con el tema '%{topic}'"
+      search_form:
+        title: Buscar
+        button: Buscar
+        placeholder: "Buscar debates..."
       search_results:
         one: " que contiene '%{search_term}'"
         other: " que contienen '%{search_term}'"
@@ -283,10 +287,6 @@ es:
     flag: Denunciar como inapropiado
     unflag: Deshacer denuncia
     collective: Colectivo
-    search_form:
-      search_title: Buscar
-      search_button: Buscar
-      search_placeholder: "Buscar en debates..."
   mailer:
     comment:
       subject: Alguien ha comentado en tu propuesta
