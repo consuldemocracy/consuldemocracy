@@ -1,7 +1,7 @@
 <section role="main">
 
   <div class="wrap row">
-    <div id="proposals" class="Proposals-list small-12 medium-9 column js-order-<%= @current_order.dasherize %>">
+    <div id="proposals" class="Proposals-list small-12 medium-9 column">
       <div class="filters">
         <div class="small-12 medium-7 column">
           <% if @search_terms %>
@@ -27,7 +27,7 @@
             <%= t("proposals.index.select_order_long") %>
           </h2>
         <% end %>
-        <%= render 'shared/order_select', i18n_namespace: "proposals.index" %>
+        <%= render 'shared/order_selector', i18n_namespace: "proposals.index" %>
       </div>
       <div class="show-for-small-only">
         <%= link_to t("proposals.index.start_proposal"), new_proposal_path, class: 'button radius expand' %>

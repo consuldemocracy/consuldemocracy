@@ -71,7 +71,9 @@ feature 'Proposals' do
       visit proposals_path
       select 'most active', from: 'order-selector'
 
-      within '#proposals.js-order-hot-score' do
+      expect(page).to have_selector('.js-order-selector[data-order="hot_score"]')
+
+      within '#proposals' do
         expect('Best Proposal').to appear_before('Medium Proposal')
         expect('Medium Proposal').to appear_before('Worst Proposal')
       end
@@ -88,7 +90,9 @@ feature 'Proposals' do
       visit proposals_path
       select 'most commented', from: 'order-selector'
 
-      within '#proposals.js-order-most-commented' do
+      expect(page).to have_selector('.js-order-selector[data-order="most_commented"]')
+
+      within '#proposals' do
         expect('Best Proposal').to appear_before('Medium Proposal')
         expect('Medium Proposal').to appear_before('Worst Proposal')
       end
@@ -105,7 +109,9 @@ feature 'Proposals' do
       visit proposals_path
       select 'newest', from: 'order-selector'
 
-      within '#proposals.js-order-created-at' do
+      expect(page).to have_selector('.js-order-selector[data-order="created_at"]')
+
+      within '#proposals' do
         expect('Best Proposal').to appear_before('Medium Proposal')
         expect('Medium Proposal').to appear_before('Worst Proposal')
       end
@@ -119,13 +125,15 @@ feature 'Proposals' do
       visit proposals_path
 
       select 'random', from: 'order-selector'
-      proposals_first_time = find("#proposals.js-order-random").text
+      expect(page).to have_selector('.js-order-selector[data-order="random"]')
+      proposals_first_time = find("#proposals").text
 
       select 'most commented', from: 'order-selector'
-      expect(page).to have_selector('#proposals.js-order-most-commented')
+      expect(page).to have_selector('.js-order-selector[data-order="most_commented"]')
 
       select 'random', from: 'order-selector'
-      proposals_second_time = find("#proposals.js-order-random").text
+      expect(page).to have_selector('.js-order-selector[data-order="random"]')
+      proposals_second_time = find("#proposals").text
 
       expect(proposals_first_time).to_not eq(proposals_second_time)
       expect(current_url).to include('page=1')

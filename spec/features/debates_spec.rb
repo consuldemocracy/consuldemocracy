@@ -378,7 +378,9 @@ feature 'Debates' do
       visit debates_path
       select 'most active', from: 'order-selector'
 
-      within '#debates.js-order-hot-score' do
+      expect(page).to have_selector('.js-order-selector[data-order="hot_score"]')
+
+      within '#debates' do
         expect('Best').to appear_before('Medium')
         expect('Medium').to appear_before('Worst')
       end
@@ -395,7 +397,9 @@ feature 'Debates' do
       visit debates_path
       select 'most commented', from: 'order-selector'
 
-      within '#debates.js-order-most-commented' do
+      expect(page).to have_selector('.js-order-selector[data-order="most_commented"]')
+
+      within '#debates' do
         expect('Best').to appear_before('Medium')
         expect('Medium').to appear_before('Worst')
       end
@@ -412,7 +416,9 @@ feature 'Debates' do
       visit debates_path
       select 'newest', from: 'order-selector'
 
-      within '#debates.js-order-created-at' do
+      expect(page).to have_selector('.js-order-selector[data-order="created_at"]')
+
+      within '#debates' do
         expect('Best').to appear_before('Medium')
         expect('Medium').to appear_before('Worst')
       end
@@ -426,13 +432,15 @@ feature 'Debates' do
       visit debates_path
 
       select 'random', from: 'order-selector'
-      debates_first_time = find("#debates.js-order-random").text
+      expect(page).to have_selector('.js-order-selector[data-order="random"]')
+      debates_first_time = find("#debates").text
 
       select 'most commented', from: 'order-selector'
-      expect(page).to have_selector('#debates.js-order-most-commented')
+      expect(page).to have_selector('.js-order-selector[data-order="most_commented"]')
 
       select 'random', from: 'order-selector'
-      debates_second_time = find("#debates.js-order-random").text
+      expect(page).to have_selector('.js-order-selector[data-order="random"]')
+      debates_second_time = find("#debates").text
 
       expect(debates_first_time).to_not eq(debates_second_time)
       expect(current_url).to include('page=1')
