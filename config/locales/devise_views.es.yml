@@ -3,7 +3,7 @@ es:
     confirmations:
       title: "Reenviar instrucciones de confirmación"
       email_label: Email
-      submit: "Reenviar instrucciones de confirmación"
+      submit: "Reenviar instrucciones"
     mailer:
       confirmation_instructions:
         title: "Te damos la bienvenida al Portal de Gobierno Abierto del Ayuntamiento de Madrid"
@@ -37,7 +37,7 @@ es:
       new:
         title: "¿Has olvidado tu contraseña?"
         email_label: "Email"
-        send_submit: "Recibir instrucciones para recuperar mi contraseña"
+        send_submit: "Recibir instrucciones"
     users:
       registrations:
         edit:

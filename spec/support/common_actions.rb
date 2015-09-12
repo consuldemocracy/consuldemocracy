@@ -41,7 +41,7 @@ module CommonActions
     click_link 'Forgot your password?'
 
     fill_in 'user_email', with: 'manuela@madrid.es'
-    click_button 'Send me reset password instructions'
+    click_button 'Send me reset password'
   end
 
   def comment_on(debate, user = nil)
