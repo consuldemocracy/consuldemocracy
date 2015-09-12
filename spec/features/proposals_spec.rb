@@ -49,4 +49,86 @@ feature 'Proposals' do
       expect(page.all('a').count).to be(3) # Twitter, Facebook, Google+
     end
   end
+
+  feature 'Proposal index order filters' do
+
+    scenario 'Default order is confidence_score', :js do
+      create(:proposal, title: 'Best Proposal').update_column(:confidence_score, 10)
+      create(:proposal, title: 'Worst Proposal').update_column(:confidence_score, 2)
+      create(:proposal, title: 'Medium Proposal').update_column(:confidence_score, 5)
+
+      visit proposals_path
+
+      expect('Best Proposal').to appear_before('Medium Proposal')
+      expect('Medium Proposal').to appear_before('Worst Proposal')
+    end
+
+    scenario 'Proposals are ordered by hot_score', :js do
+      create(:proposal, title: 'Best Proposal').update_column(:hot_score, 10)
+      create(:proposal, title: 'Worst Proposal').update_column(:hot_score, 2)
+      create(:proposal, title: 'Medium Proposal').update_column(:hot_score, 5)
+
+      visit proposals_path
+      select 'most active', from: 'order-selector'
+
+      within '#proposals.js-order-hot-score' do
+        expect('Best Proposal').to appear_before('Medium Proposal')
+        expect('Medium Proposal').to appear_before('Worst Proposal')
+      end
+
+      expect(current_url).to include('order=hot_score')
+      expect(current_url).to include('page=1')
+    end
+
+    scenario 'Proposals are ordered by most commented', :js do
+      create(:proposal, title: 'Best Proposal',   comments_count: 10)
+      create(:proposal, title: 'Medium Proposal', comments_count: 5)
+      create(:proposal, title: 'Worst Proposal',  comments_count: 2)
+
+      visit proposals_path
+      select 'most commented', from: 'order-selector'
+
+      within '#proposals.js-order-most-commented' do
+        expect('Best Proposal').to appear_before('Medium Proposal')
+        expect('Medium Proposal').to appear_before('Worst Proposal')
+      end
+
+      expect(current_url).to include('order=most_commented')
+      expect(current_url).to include('page=1')
+    end
+
+    scenario 'Proposals are ordered by newest', :js do
+      create(:proposal, title: 'Best Proposal',   created_at: Time.now)
+      create(:proposal, title: 'Medium Proposal', created_at: Time.now - 1.hour)
+      create(:proposal, title: 'Worst Proposal',  created_at: Time.now - 1.day)
+
+      visit proposals_path
+      select 'newest', from: 'order-selector'
+
+      within '#proposals.js-order-created-at' do
+        expect('Best Proposal').to appear_before('Medium Proposal')
+        expect('Medium Proposal').to appear_before('Worst Proposal')
+      end
+
+      expect(current_url).to include('order=created_at')
+      expect(current_url).to include('page=1')
+    end
+
+    scenario 'Proposals are ordered randomly', :js do
+      create_list(:proposal, 12)
+      visit proposals_path
+
+      select 'random', from: 'order-selector'
+      proposals_first_time = find("#proposals.js-order-random").text
+
+      select 'most commented', from: 'order-selector'
+      expect(page).to have_selector('#proposals.js-order-most-commented')
+
+      select 'random', from: 'order-selector'
+      proposals_second_time = find("#proposals.js-order-random").text
+
+      expect(proposals_first_time).to_not eq(proposals_second_time)
+      expect(current_url).to include('page=1')
+    end
+  end
 end
