@@ -1,0 +1,83 @@
+<section class="proposal-show">
+  <div id="<%= dom_id(@proposal) %>" class="row">
+    <div class="small-12 medium-9 column">
+      <i class="icon-angle-left left"></i>&nbsp;
+      <%= link_to t("proposals.show.back_link"), proposals_path, class: 'left back' %>
+
+      <% if current_user && @proposal.editable_by?(current_user) %>
+        <%= link_to edit_proposal_path(@proposal), class: 'edit-proposal button success tiny radius right' do %>
+          <i class="icon-edit"></i>
+          <%= t("proposals.show.edit_proposal_link") %>
+        <% end %>
+      <% end %>
+
+      <h1><%= @proposal.title %></h1>
+      <% if @proposal.conflictive? %>
+        <div class="alert-box alert radius margin-top">
+          <strong><%= t("proposals.show.flag") %></strong>
+        </div>
+      <% end %>
+
+      <div class="proposal-info">
+        <%= avatar_image(@proposal.author, seed: @proposal.author_id, size: 32, class: 'author-photo') %>
+
+        <% if @proposal.author.hidden? %>
+          <i class="icon-deleted author-deleted"></i>
+          <span class="author">
+              <%= t("proposals.show.author_deleted") %>
+          </span>
+        <% else %>
+          <span class="author">
+              <%= @proposal.author.name %>
+          </span>
+          <% if @proposal.author.official? %>
+            &nbsp;&bull;&nbsp;
+            <span class="label round level-<%= @proposal.author.official_level %>">
+              <%= @proposal.author.official_position %>
+            </span>
+          <% end %>
+        <% end %>
+
+        <% if @proposal.author.verified_organization? %>
+          &nbsp;&bull;&nbsp;
+          <span class="label round is-association">
+            <%= t("shared.collective") %>
+          </span>
+        <% end %>
+
+        <span class="bullet">&nbsp;&bull;&nbsp;</span>
+        <%= l @proposal.created_at.to_date %>
+        <span class="bullet">&nbsp;&bull;&nbsp;</span>
+        <i class="icon-comments"></i>&nbsp;
+        <%= link_to t("proposals.show.comments", count: @proposal.comments_count), "#comments" %>
+        <span class="bullet">&nbsp;&bull;&nbsp;</span>
+        <span class="js-flag-actions">
+          <%= render 'proposals/flag_actions', proposal: @proposal %>
+        </span>
+      </div>
+
+      <%= @proposal.description %>
+
+      <%= render 'shared/tags', proposal: @proposal %>
+
+      <div class='js-moderator-proposal-actions'>
+        <%= render 'actions', proposal: @proposal %>
+      </div>
+    </div>
+
+    <aside class="small-12 medium-3 column">
+      <div class="sidebar-divider"></div>
+      <h3><%= t("votes.supports") %></h3>
+      <div class="text-center">
+        <div id="<%= dom_id(@proposal) %>_votes">
+         <%= render 'proposals/votes', proposal: @proposal %>
+        </div>
+      </div>
+      <div class="sidebar-divider"></div>
+      <h3><%= t("proposals.show.share") %></h3>
+      <%= social_share_button_tag(@proposal.title) %>
+    </aside>
+  </div>
+</section>
+
+<%= render "comments" %>

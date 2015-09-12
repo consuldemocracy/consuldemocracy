@@ -1,13 +1,15 @@
 <%- limit ||= nil %>
+<%= taggable = defined?(debate) ? debate : proposal %>
 
-<% if debate.tags.any? %>
+<% if taggable.tags.any? %>
   <span class='tags'>
-    <% debate.tag_list_with_limit(limit).each do |tag| %>
-      <%= link_to sanitize(tag.name), debates_path(tag: tag.name) %>
+    <% taggable.tag_list_with_limit(limit).each do |tag| %>
+      <%= link_to sanitize(tag.name), send("#{taggable.class.to_s.downcase}_path", tag: tag.name) %>
     <% end %>
 
-    <% if debate.tags_count_out_of_limit(limit) > 0 %>
-      <%= link_to "#{debate.tags_count_out_of_limit(limit)}+", debate_path(debate) %>
+    <% if taggable.tags_count_out_of_limit(limit) > 0 %>
+      <%= link_to "#{taggable.tags_count_out_of_limit(limit)}+",
+                  send("#{taggable.class.to_s.downcase}_path", taggable) %>
     <% end %>
   </span>
 <% end %>

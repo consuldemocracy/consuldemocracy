@@ -1,11 +1,11 @@
 class Proposal < ActiveRecord::Base
   apply_simple_captcha
+  acts_as_votable
+  acts_as_taggable
 
   belongs_to :author, -> { with_hidden }, class_name: 'User', foreign_key: 'author_id'
   has_many :comments, as: :commentable
   has_many :flags, as: :flaggable
-
-  acts_as_taggable
 
   validates :title, presence: true
   validates :question, presence: true
@@ -21,6 +21,28 @@ class Proposal < ActiveRecord::Base
   before_validation :sanitize_description
   before_validation :sanitize_tag_list
 
+  def total_votes
+    cached_votes_up
+  end
+
+  def conflictive?
+    return false unless flags_count > 0 && cached_votes_up > 0
+    cached_votes_up/flags_count.to_f < 5
+  end
+
+  def tag_list_with_limit(limit = nil)
+    return tags if limit.blank?
+
+    tags.sort{|a,b| b.taggings_count <=> a.taggings_count}[0, limit]
+  end
+
+  def tags_count_out_of_limit(limit = nil)
+    return 0 unless limit
+
+    count = tags.size - limit
+    count < 0 ? 0 : count
+  end
+
   def self.title_max_length
     @@title_max_length ||= self.columns.find { |c| c.name == 'title' }.limit || 80
   end
@@ -31,6 +53,18 @@ class Proposal < ActiveRecord::Base
 
   def self.description_max_length
     6000
+  end
+
+  def editable?
+    total_votes <= 1000
+  end
+
+  def editable_by?(user)
+    editable? && author == user
+  end
+
+  def votable_by?(user)
+    user.level_two_verified? || !user.voted_for?(self)
   end
 
   protected

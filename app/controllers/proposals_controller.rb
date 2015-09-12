@@ -5,7 +5,13 @@ class ProposalsController < ApplicationController
   respond_to :html, :js
 
   def show
-    render text: ""
+    set_proposal_votes(@proposal)
+    @commentable = @proposal
+    @root_comments = @proposal.comments.roots.recent.page(params[:page]).per(10).for_render
+    @comments = @root_comments.inject([]){|all, root| all + Comment.descendants_of(root).for_render}
+
+    @all_visible_comments = @root_comments + @comments
+    set_comment_flags(@all_visible_comments)
   end
 
   def new

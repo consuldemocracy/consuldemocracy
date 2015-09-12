@@ -45,7 +45,21 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :proposals
+  resources :proposals do
+    member do
+      post :vote
+      put :flag
+      put :unflag
+    end
+
+    resources :comments, only: :create, shallow: true do
+      member do
+        post :vote
+        put :flag
+        put :unflag
+      end
+    end
+  end
 
   resource :account, controller: "account", only: [:show, :update]
   resource :verification, controller: "verification", only: [:show]

@@ -11,4 +11,13 @@ module VotesHelper
     end
   end
 
+  def css_classes_for_proposal_vote(proposal_votes, proposal)
+    case proposal_votes[proposal.id]
+    when true
+      {in_favor: "voted"}
+    else
+      {in_favor: ""}
+    end
+  end
+
 end

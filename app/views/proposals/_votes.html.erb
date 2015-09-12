@@ -1,0 +1,37 @@
+<% voted_classes = css_classes_for_proposal_vote(@proposal_votes, proposal) %>
+<div class="votes">
+  <div class="in-favor inline-block">
+    <%= link_to vote_proposal_path(proposal, value: 'yes'),
+        class: "like #{voted_classes[:in_favor]}", title: t('votes.agree'), method: "post", remote: true do %>
+      <i class="icon-like"></i>
+      <span><%= percentage('likes', proposal) %></span>
+    <% end %>
+  </div>
+
+  <span class="divider"></span>
+
+  <span class="total-votes">
+    <%= t("proposals.proposal.votes", count: proposal.total_votes) %>
+  </span>
+
+  <% if user_signed_in? && current_user.organization? %>
+  <div class="organizations-votes" style='display:none'>
+    <p>
+      <%= t("votes.organizations") %>
+    </p>
+  </div>
+  <% elsif user_signed_in? && !proposal.votable_by?(current_user)%>
+  <div class="anonymous-votes" style='display:none'>
+    <p>
+      <%= t("votes.anonymous",
+          verify_account: link_to(t("votes.verify_account"), verification_path )).html_safe %>
+    </p>
+  </div>
+  <% elsif !user_signed_in? %>
+  <div class="not-logged" style='display:none'>
+    <%= t("votes.unauthenticated",
+      signin: link_to(t("votes.signin"), new_user_session_path),
+      signup: link_to(t("votes.signup"), new_user_registration_path)).html_safe %>
+  </div>
+  <% end %>
+</div>
