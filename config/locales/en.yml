@@ -176,6 +176,7 @@ en:
       username_label: "Username"
       phone_number_label: "Phone number"
       organization_name_label: "Organization name"
+      organization_responsible_name_placeholder: "The responsible representative of the organization"
       notifications: Notifications
       finish_verification: "Finish verification"
       verified_account: Verified account
