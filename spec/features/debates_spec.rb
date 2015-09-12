@@ -384,6 +384,7 @@ feature 'Debates' do
       end
 
       expect(current_url).to include('order=hot_score')
+      expect(current_url).to include('page=1')
     end
 
     scenario 'Debates are ordered by most commented', :js do
@@ -400,6 +401,7 @@ feature 'Debates' do
       end
 
       expect(current_url).to include('order=most_commented')
+      expect(current_url).to include('page=1')
     end
 
     scenario 'Debates are ordered by newest', :js do
@@ -416,6 +418,7 @@ feature 'Debates' do
       end
 
       expect(current_url).to include('order=created_at')
+      expect(current_url).to include('page=1')
     end
 
     scenario 'Debates are ordered randomly', :js do
@@ -432,6 +435,7 @@ feature 'Debates' do
       debates_second_time = find("#debates.js-order-random").text
 
       expect(debates_first_time).to_not eq(debates_second_time)
+      expect(current_url).to include('page=1')
     end
   end
 
@@ -439,10 +443,10 @@ feature 'Debates' do
     debate1 = create(:debate, title: "Show me what you got")
     debate2 = create(:debate, title: "Get Schwifty")
     debate3 = create(:debate)
-    debate4 = create(:debate, description: "Schwíftÿ in here")
+    debate4 = create(:debate, description: "Schwifty in here")
 
     visit debates_path
-    fill_in "search", with: "Schwìfty"
+    fill_in "search", with: "Schwifty"
     click_button "Search"
 
     within("#debates") do

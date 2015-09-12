@@ -144,7 +144,7 @@ class User < ActiveRecord::Base
   end
 
   def self.username_max_length
-    @@username_max_length ||= self.columns.find { |c| c.name == 'username' }.limit
+    @@username_max_length ||= self.columns.find { |c| c.name == 'username' }.limit || 60
   end
 
   def show_welcome_screen?

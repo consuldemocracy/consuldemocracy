@@ -2,6 +2,7 @@ class Verification::LetterController < ApplicationController
   before_action :authenticate_user!
   before_action :verify_resident!
   before_action :verify_phone!
+  before_action :verify_verified!
   before_action :verify_lock
   skip_authorization_check
 

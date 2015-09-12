@@ -94,3 +94,6 @@ en:
         use_another_phone: "Use another phone"
       form:
         submit_button: "Send code"
+    redirect_notices:
+      email_already_sent: "We already sent you a confirmation email, if you have not received it you can try resend it here"
+      already_verified: "You are a verified user!"

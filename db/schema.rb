@@ -11,11 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150910185110) do
+ActiveRecord::Schema.define(version: 20150910152734) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-  enable_extension "unaccent"
 
   create_table "addresses", force: :cascade do |t|
     t.integer  "user_id"

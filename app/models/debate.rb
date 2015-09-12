@@ -138,7 +138,7 @@ class Debate < ActiveRecord::Base
   end
 
   def self.search(terms)
-    terms.present? ? where("unaccent(title) ILIKE unaccent(?) OR unaccent(description) ILIKE unaccent(?)", "%#{terms}%", "%#{terms}%") : none
+    terms.present? ? where("title ILIKE ? OR description ILIKE ?", "%#{terms}%", "%#{terms}%") : none
   end
 
   def conflictive?
@@ -147,7 +147,7 @@ class Debate < ActiveRecord::Base
   end
 
   def self.title_max_length
-    @@title_max_length ||= self.columns.find { |c| c.name == 'title' }.limit
+    @@title_max_length ||= self.columns.find { |c| c.name == 'title' }.limit || 80
   end
 
   def self.description_max_length

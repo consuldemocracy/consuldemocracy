@@ -34,7 +34,7 @@ class Organization < ActiveRecord::Base
   end
 
   def self.name_max_length
-    @@name_max_length ||= self.columns.find { |c| c.name == 'name' }.limit
+    @@name_max_length ||= self.columns.find { |c| c.name == 'name' }.limit || 60
   end
 
   private

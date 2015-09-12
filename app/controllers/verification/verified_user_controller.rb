@@ -1,5 +1,6 @@
 class Verification::VerifiedUserController < ApplicationController
   before_action :authenticate_user!
+  before_action :verify_verified!
   skip_authorization_check
 
   def show

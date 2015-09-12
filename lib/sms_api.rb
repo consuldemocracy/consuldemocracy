@@ -25,7 +25,7 @@ class SMSApi
   def request(phone, code)
     { autorizacion:  authorization,
       destinatarios: { destinatario: phone },
-      texto_mensaje: "Código de verificación: #{code}",
+      texto_mensaje: "Clave para verificarte: #{code}. Gobierno Abierto - Ayuntamiento de Madrid",
       solicita_notificacion: "All" }
   end
 

@@ -189,7 +189,7 @@ es:
       debate: "el código secreto no coincide con la imagen"
   shared:
     tags_cloud:
-      tags: Temas
+      tags: Tendencias
     flag: Denunciar como inapropiado
     unflag: Deshacer denuncia
     collective: Colectivo
@@ -211,7 +211,7 @@ es:
     welcome:
       title: Verificación de cuenta
       instructions_1_html: "Bienvenido a la página de participación ciudadana"
-      instructions_2_html: "Hemos detectado que <b>tu email está confirmada pero no hemos verificado tus datos todavía</b>."
+      instructions_2_html: "Hemos detectado que <b>tu dirección de email está confirmada pero no hemos verificado tus datos todavía</b>."
       instructions_3_html: "Sin verificar tus datos <b>el acceso que tienes es limitado</b>. Verificarlos ahora te permitirá, por ejemplo, apoyar propuestas ciudadanas."
       verify_account: "Verificar mi cuenta"
       go_to_index: "Quiero entrar como un usuario no verificado (acceso limitado)"
