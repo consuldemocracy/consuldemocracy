@@ -161,11 +161,12 @@ describe User do
   end
 
   describe "organization_attributes" do
-    before(:each) { subject.organization_attributes = {name: 'org'} }
+    before(:each) { subject.organization_attributes = {name: 'org', responsible_name: 'julia'} }
 
     it "triggers the creation of an associated organization" do
       expect(subject.organization).to be
       expect(subject.organization.name).to eq('org')
+      expect(subject.organization.responsible_name).to eq('julia')
     end
 
     it "deactivates the validation of username, and activates the validation of organization" do

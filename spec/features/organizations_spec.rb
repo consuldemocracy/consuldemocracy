@@ -9,6 +9,7 @@ feature 'Organizations' do
     visit new_organization_registration_path
 
     fill_in 'user_organization_attributes_name',  with: 'Greenpeace'
+    fill_in 'user_organization_attributes_responsible_name', with: 'Dorothy Stowe'
     fill_in 'user_email',                         with: 'green@peace.com'
     fill_in 'user_password',                      with: 'greenpeace'
     fill_in 'user_password_confirmation',         with: 'greenpeace'

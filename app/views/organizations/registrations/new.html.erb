@@ -7,9 +7,12 @@
 
       <%= f.fields_for :organization do |fo| %>
         <%= fo.text_field :name, autofocus: true, maxlength: Organization.name_max_length, placeholder: t("devise_views.organizations.registrations.new.organization_name_label") %>
+        <%= fo.label t("devise_views.organizations.registrations.new.responsible_name_label") %>
+        <span class="note"><%= t("devise_views.organizations.registrations.new.responsible_name_note") %></span>
+        <%= fo.text_field :responsible_name, maxlength: Organization.responsible_name_max_length, label: false %>
       <% end %>
 
-      <%= f.email_field :email,     placeholder: t("devise_views.organizations.registrations.new.email_label") %>
+      <%= f.email_field :email, placeholder: t("devise_views.organizations.registrations.new.email_label") %>
 
       <%= f.text_field  :phone_number,  placeholder: t("devise_views.organizations.registrations.new.phone_number_label") %>
 

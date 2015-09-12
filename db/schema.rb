@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150910152734) do
+ActiveRecord::Schema.define(version: 20150912145218) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -165,7 +165,7 @@ ActiveRecord::Schema.define(version: 20150910152734) do
   create_table "locks", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "tries",        default: 0
-    t.datetime "locked_until", default: '2015-09-10 13:46:11', null: false
+    t.datetime "locked_until", default: '2015-09-11 17:24:30', null: false
     t.datetime "created_at",                                   null: false
     t.datetime "updated_at",                                   null: false
   end
@@ -180,9 +180,10 @@ ActiveRecord::Schema.define(version: 20150910152734) do
 
   create_table "organizations", force: :cascade do |t|
     t.integer  "user_id"
-    t.string   "name",        limit: 60
+    t.string   "name",             limit: 60
     t.datetime "verified_at"
     t.datetime "rejected_at"
+    t.string   "responsible_name", limit: 60
   end
 
   add_index "organizations", ["user_id"], name: "index_organizations_on_user_id", using: :btree
@@ -246,7 +247,7 @@ ActiveRecord::Schema.define(version: 20150910152734) do
     t.integer  "official_level",                      default: 0
     t.datetime "hidden_at"
     t.string   "sms_confirmation_code"
-    t.string   "username",                     limit: 60
+    t.string   "username",                 limit: 60
     t.string   "document_number"
     t.string   "document_type"
     t.datetime "residence_verified_at"

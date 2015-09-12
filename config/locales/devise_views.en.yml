@@ -74,6 +74,8 @@ en:
         new:
           title: "Sign up as organization / collective"
           organization_name_label: "Organization name"
+          responsible_name_label: "Name and surname of the person in charge"
+          responsible_name_note: "The responsible representative of the organization"
           email_label: "Email"
           password_label: "Password"
           phone_number_label: "Phone number"

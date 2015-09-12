@@ -175,6 +175,7 @@ es:
       username_label: "Nombre de usuario"
       phone_number_label: "Teléfono"
       organization_name_label: "Nombre de la organización"
+      organization_responsible_name_placeholder: "Representante de la asociación/colectivo"
       notifications: Notificaciones
       finish_verification: "Finalizar verificación"
       verified_account: Cuenta verificada
