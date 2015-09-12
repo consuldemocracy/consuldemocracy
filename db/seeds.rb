@@ -1,6 +1,8 @@
 # Default admin user (change password after first deploy to a server!)
-admin = User.create!(username: 'admin', email: 'admin@madrid.es', password: '12345678', password_confirmation: '12345678', confirmed_at: Time.now, terms_of_service: "1")
-admin.create_administrator
+if Administrator.count == 0
+  admin = User.create!(username: 'admin', email: 'admin@madrid.es', password: '12345678', password_confirmation: '12345678', confirmed_at: Time.now, terms_of_service: "1")
+  admin.create_administrator
+end
 
 # Names for the moderation console, as a hint for moderators
 # to know better how to assign users with official positions
