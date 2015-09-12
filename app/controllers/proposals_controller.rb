@@ -32,6 +32,20 @@ class ProposalsController < ApplicationController
     end
   end
 
+  def edit
+    load_featured_tags
+  end
+
+  def update
+    @proposal.assign_attributes(proposal_params)
+    if @proposal.save_with_captcha
+      redirect_to @proposal, notice: t('flash.actions.update.notice', resource_name: 'Proposal')
+    else
+      load_featured_tags
+      render :edit
+    end
+  end
+
   private
 
     def proposal_params

@@ -1,0 +1,17 @@
+<div class="proposal-edit row">
+
+  <div class="small-12 column">
+    <%= link_to proposals_path, class: "left back clear" do %>
+      <i class="icon-angle-left left"></i>
+      <%= t("proposals.edit.back_link") %>
+    <% end %>
+
+    <div class="right">
+      <%= link_to t("proposals.edit.show_link"), @proposal %>
+    </div>
+
+    <h1><%= t("proposals.edit.editing") %></h1>
+
+    <%= render "form" %>
+  </div>
+</div>
