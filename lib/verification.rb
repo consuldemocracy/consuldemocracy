@@ -41,8 +41,7 @@ module Verification
   end
 
   def unverified?
-    !level_two_verified? && !level_three_verified?
+    !level_two_or_three_verified?
   end
-
 
 end
