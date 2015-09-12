@@ -3,7 +3,9 @@ class Organization < ActiveRecord::Base
 
   validates :name, presence: true
   validates :name, uniqueness: true
-  validate :validate_name_length
+  validate  :validate_name_length
+  validates :responsible_name, presence: true
+  validate  :validate_responsible_name_length
 
   delegate :email, :phone_number, to: :user
 
@@ -37,12 +39,23 @@ class Organization < ActiveRecord::Base
     @@name_max_length ||= self.columns.find { |c| c.name == 'name' }.limit || 60
   end
 
+  def self.responsible_name_max_length
+    @@responsible_name_max_length ||= self.columns.find { |c| c.name == 'responsible_name' }.limit || 60
+  end
+
   private
 
     def validate_name_length
       validator = ActiveModel::Validations::LengthValidator.new(
         attributes: :name,
         maximum: Organization.name_max_length)
+      validator.validate(self)
+    end
+
+    def validate_responsible_name_length
+      validator = ActiveModel::Validations::LengthValidator.new(
+        attributes: :responsible_name,
+        maximum: Organization.responsible_name_max_length)
       validator.validate(self)
     end
 

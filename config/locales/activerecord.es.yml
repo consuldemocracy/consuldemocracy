@@ -25,3 +25,4 @@ es:
         official_level: Nivel del cargo
       organization:
         name: Nombre de organización
+        responsible_name: Persona responsable del colectivo

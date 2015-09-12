@@ -74,6 +74,8 @@ es:
         new:
           title: "Registrarse como organización / colectivo"
           organization_name_label: "Nombre de la organización"
+          responsible_name_label: "Nombre y apellidos de la persona responsable del colectivo"
+          responsible_name_note: "Será la persona representante de la asociación/colectivo en cuyo nombre se presenten las propuestas"
           email_label: "Email"
           password_label: "Contraseña"
           phone_number_label: "Teléfono"
