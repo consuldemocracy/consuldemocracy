@@ -40,4 +40,26 @@ describe Proposal do
     proposal.terms_of_service = nil
     expect(proposal).to_not be_valid
   end
+
+  describe "#editable?" do
+    let(:proposal) { create(:proposal) }
+    before(:each) {Setting.find_by(key: "max_votes_for_proposal_edit").update(value: 100)}
+
+    it "should be true if proposal has no votes yet" do
+      expect(proposal.total_votes).to eq(0)
+      expect(proposal.editable?).to be true
+    end
+
+    it "should be true if proposal has less than limit votes" do
+      create_list(:vote, 91, votable: proposal)
+      expect(proposal.total_votes).to eq(91)
+      expect(proposal.editable?).to be true
+    end
+
+    it "should be false if proposal has more than limit votes" do
+      create_list(:vote, 102, votable: proposal)
+      expect(proposal.total_votes).to eq(102)
+      expect(proposal.editable?).to be false
+    end
+  end
 end
