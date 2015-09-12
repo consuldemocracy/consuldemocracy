@@ -1,22 +1,22 @@
 <div class="row account">
   <div class="small-12 column">
     <%= link_to t("account.show.change_credentials_link"), edit_user_registration_path, class: "button radius small secondary right" %>
-
-    <div>
-      <span class="right verify-account">
-        <% if current_user.level_three_verified? %>
-          <p class="verified">
-            <i class="icon-check"></i>
-            <%= t("account.show.verified_account") %>
-          </p>
-        <% elsif current_user.level_two_verified? %>
-          <%= link_to t("account.show.finish_verification"), verification_path, class: "button radius small success right" %>
-        <% else %>
-          <%= link_to t("account.show.verify_my_account"), verification_path, class: "button radius small success right" %>
-        <% end %>
-      </span>
-    </div>
-
+    <% unless @account.organization? %>
+      <div>
+        <span class="right verify-account">
+          <% if current_user.level_three_verified? %>
+            <p class="verified">
+              <i class="icon-check"></i>
+              <%= t("account.show.verified_account") %>
+            </p>
+          <% elsif current_user.level_two_verified? %>
+            <%= link_to t("account.show.finish_verification"), verification_path, class: "button radius small success right" %>
+          <% else %>
+            <%= link_to t("account.show.verify_my_account"), verification_path, class: "button radius small success right" %>
+          <% end %>
+        </span>
+      </div>
+    <% end %>
     <h1 class="inline-block"><%= t("account.show.title") %></h1>
 
     <%= form_for @account, as: :account, url: account_path do |f| %>

@@ -11,7 +11,9 @@ class VerificationController < ApplicationController
   private
 
     def next_step_path(user = current_user)
-      if user.level_three_verified?
+      if user.organization?
+        { path: account_path }
+      elsif user.level_three_verified?
         { path: account_path, notice: t('verification.redirect_notices.already_verified') }
       elsif user.verification_letter_sent?
         { path: edit_letter_path }

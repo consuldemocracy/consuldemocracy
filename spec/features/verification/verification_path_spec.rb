@@ -2,6 +2,16 @@ require 'rails_helper'
 
 feature 'Verification path' do
 
+  scenario "User is an organization" do
+    user = create(:user, verified_at: Time.now)
+    create(:organization, user: user)
+
+    login_as(user)
+    visit verification_path
+
+    expect(current_path).to eq account_path
+  end
+
   scenario "User is verified" do
     user = create(:user, verified_at: Time.now)
 
