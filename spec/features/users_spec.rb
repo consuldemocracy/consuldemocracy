@@ -176,7 +176,7 @@ feature 'Users' do
     click_link 'Forgot your password?'
 
     fill_in 'user_email', with: 'manuela@madrid.es'
-    click_button 'Send me reset password instructions'
+    click_button 'Send me reset password'
 
     expect(page).to have_content "You will receive an email with instructions on how to reset your password in a few minutes."
 
