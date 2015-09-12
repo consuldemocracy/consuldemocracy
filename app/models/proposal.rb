@@ -21,6 +21,13 @@ class Proposal < ActiveRecord::Base
   before_validation :sanitize_description
   before_validation :sanitize_tag_list
 
+  scope :for_render, -> { includes(:tags) }
+  scope :sort_by_hot_score , -> { order(hot_score: :desc) }
+  scope :sort_by_confidence_score , -> { order(confidence_score: :desc) }
+  scope :sort_by_created_at, -> { order(created_at: :desc) }
+  scope :sort_by_most_commented, -> { order(comments_count: :desc) }
+  scope :sort_by_random, -> { order("RANDOM()") }
+
   def total_votes
     cached_votes_up
   end

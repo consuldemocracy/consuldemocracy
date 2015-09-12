@@ -1,8 +1,19 @@
 class ProposalsController < ApplicationController
+  before_action :parse_order, only: :index
+  before_action :parse_tag_filter, only: :index
+  before_action :parse_search_terms, only: :index
   before_action :authenticate_user!, except: [:index, :show]
 
   load_and_authorize_resource
   respond_to :html, :js
+
+  def index
+    @proposals = @search_terms.present? ? Proposal.search(@search_terms) : Proposal.all
+    @proposals = @proposals.tagged_with(@tag_filter) if @tag_filter
+    @proposals = @proposals.page(params[:page]).for_render.send("sort_by_#{@order}")
+    @tag_cloud = Proposal.tag_counts.order(taggings_count: :desc, name: :asc).limit(20)
+    set_proposal_votes(@proposals)
+  end
 
   def show
     set_proposal_votes(@proposal)
@@ -54,5 +65,20 @@ class ProposalsController < ApplicationController
 
     def load_featured_tags
       @featured_tags = ActsAsTaggableOn::Tag.where(featured: true)
+    end
+
+    def parse_order
+      @valid_orders = ['confidence_score', 'hot_score', 'created_at', 'most_commented', 'random']
+      @order = @valid_orders.include?(params[:order]) ? params[:order] : @valid_orders.first
+    end
+
+    def parse_tag_filter
+      if params[:tag].present?
+        @tag_filter = params[:tag] if ActsAsTaggableOn::Tag.where(name: params[:tag]).exists?
+      end
+    end
+
+    def parse_search_terms
+      @search_terms = params[:search] if params[:search].present?
     end
 end
