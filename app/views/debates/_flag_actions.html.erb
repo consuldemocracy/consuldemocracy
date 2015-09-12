@@ -1,21 +1,23 @@
-<% if show_flag_action? debate %>
-  <a id="flag-expand-debate-<%= debate.id %>" data-dropdown="flag-drop-debate-<%= debate.id %>" aria-controls="flag-drop-debate-<%= debate.id %>" aria-expanded="false" title="<%= t('shared.flag') %>">
-    &nbsp;<i class="icon-flag flag-disable"></i>&nbsp;&nbsp;
-  </a>
-  <ul id="flag-drop-debate-<%= debate.id %>" class="f-dropdown" data-dropdown-content aria-hidden="true" tabindex="-1">
-    <li>
-      <%= link_to t('shared.flag'), flag_debate_path(debate), method: :put, remote: true, id: "flag-debate-#{ debate.id }" %>
-    </li>
-  </ul>
-<% end %>
+<span class="flag-content">
+  <% if show_flag_action? debate %>
+    <a class="button" id="flag-expand-debate-<%= debate.id %>" data-dropdown="flag-drop-debate-<%= debate.id %>" aria-controls="flag-drop-debate-<%= debate.id %>" aria-expanded="false" title="<%= t('shared.flag') %>">
+      &nbsp;<i class="icon-flag flag-disable"></i>&nbsp;&nbsp;
+    </a>
+    <ul id="flag-drop-debate-<%= debate.id %>" class="f-dropdown" data-dropdown-content aria-hidden="true" tabindex="-1">
+      <li>
+        <%= link_to t('shared.flag'), flag_debate_path(debate), method: :put, remote: true, id: "flag-debate-#{ debate.id }" %>
+      </li>
+    </ul>
+  <% end %>
 
-<% if show_unflag_action? debate %>
-  <a id="unflag-expand-debate-<%= debate.id %>" data-dropdown="unflag-drop-debate-<%= debate.id %>" aria-controls="unflag-drop-debate-<%= debate.id %>" aria-expanded="false" title="<%= t('shared.unflag') %>">
-    &nbsp;<i class="icon-flag flag-active"></i>&nbsp;&nbsp;
-  </a>
-  <ul id="unflag-drop-debate-<%= debate.id %>" class="f-dropdown" data-dropdown-content aria-hidden="true" tabindex="-1">
-    <li>
-      <%= link_to t('shared.unflag'), unflag_debate_path(debate), method: :put, remote: true, id: "unflag-debate-#{ debate.id }" %>
-    </li>
-  </ul>
-<% end %>
+  <% if show_unflag_action? debate %>
+    <a class="button" id="unflag-expand-debate-<%= debate.id %>" data-dropdown="unflag-drop-debate-<%= debate.id %>" aria-controls="unflag-drop-debate-<%= debate.id %>" aria-expanded="false" title="<%= t('shared.unflag') %>">
+      &nbsp;<i class="icon-flag flag-active"></i>&nbsp;&nbsp;
+    </a>
+    <ul id="unflag-drop-debate-<%= debate.id %>" class="f-dropdown" data-dropdown-content aria-hidden="true" tabindex="-1">
+      <li>
+        <%= link_to t('shared.unflag'), unflag_debate_path(debate), method: :put, remote: true, id: "unflag-debate-#{ debate.id }" %>
+      </li>
+    </ul>
+  <% end %>
+</span>
