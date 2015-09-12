@@ -29,6 +29,8 @@ class Comment < ActiveRecord::Base
 
   after_create :call_after_commented
 
+  after_restore :restore_count
+
   def self.build(commentable, user, body, p_id=nil)
     new commentable: commentable,
         user_id:     user.id,
@@ -98,6 +100,10 @@ class Comment < ActiveRecord::Base
 
   def self.body_max_length
     1000
+  end
+
+  def restore_count
+    self.commentable.increment!(:comments_count)  if commentable.respond_to? :comments_count
   end
 
   private
