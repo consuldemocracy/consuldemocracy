@@ -10,6 +10,7 @@ Setting.create(key: 'official_level_4_name', value: 'Concejales')
 Setting.create(key: 'official_level_5_name', value: 'Alcaldesa')
 Setting.create(key: 'max_ratio_anon_votes_on_debates', value: '50')
 Setting.create(key: 'max_votes_for_proposal_edit', value: '1000')
+Setting.create(key: 'proposal_code_prefix', value: 'MAD')
 
 puts "Creating Users"
 
