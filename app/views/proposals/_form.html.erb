@@ -18,6 +18,11 @@
     </div>
 
     <div class="small-12 column">
+      <%= f.label :external_url, t("proposals.form.proposal_external_url") %>
+      <%= f.text_field :external_url, placeholder: t("proposals.form.proposal_external_url"), label: false %>
+    </div>
+
+    <div class="small-12 column">
       <%= f.label :tag_list, t("proposals.form.tags_label") %>
       <span class="note"><%= t("proposals.form.tags_instructions") %></span>
       <span class="tags">

@@ -60,7 +60,7 @@ class ProposalsController < ApplicationController
   private
 
     def proposal_params
-      params.require(:proposal).permit(:title, :question, :description, :tag_list, :terms_of_service, :captcha, :captcha_key)
+      params.require(:proposal).permit(:title, :question, :description, :external_url, :tag_list, :terms_of_service, :captcha, :captcha_key)
     end
 
     def load_featured_tags
