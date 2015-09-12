@@ -4,7 +4,7 @@
     <%= link_to vote_proposal_path(proposal, value: 'yes'),
         class: "like #{voted_classes[:in_favor]}", title: t('votes.agree'), method: "post", remote: true do %>
       <i class="icon-like"></i>
-      <span><%= percentage('likes', proposal) %></span>
+      <span><%= percentage('total_votes', proposal) %></span>
     <% end %>
   </div>
 
