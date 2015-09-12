@@ -1,8 +1,3 @@
-set :whenever_command, "bundle exec whenever"
-set :whenever_environment, -> { stage }
-set :whenever_roles, [ :cron ]
-require 'whenever/capistrano'
-
 # config valid only for current version of Capistrano
 lock '3.4.0'
 
@@ -10,7 +5,6 @@ def deploysecret(key)
   @deploy_secrets_yml ||= YAML.load_file('config/deploy-secrets.yml')[fetch(:stage).to_s]
   @deploy_secrets_yml.fetch(key.to_s, 'undefined')
 end
-
 
 set :rails_env, fetch(:stage)
 set :rvm_ruby_version, '2.2.3'
@@ -51,6 +45,10 @@ set(:config_files, %w(
   unicorn.rb
   sidekiq.yml
 ))
+
+set :whenever_command, "bundle exec whenever"
+set :whenever_environment, -> { fetch(:stage) }
+set :whenever_roles, [ :cron ]
 
 namespace :deploy do
   # Check right version of deploy branch
