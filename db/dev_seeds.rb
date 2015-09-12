@@ -45,7 +45,13 @@ end
 end
 
 (1..40).each do |i|
-  create_user("user#{i}@madrid.es")
+  user = create_user("user#{i}@madrid.es")
+  level = [1,2,3].sample
+  if level == 2 then
+    user.update(residence_verified_at: Time.now, confirmed_phone: Faker::PhoneNumber.phone_number )
+  elsif level == 3 then
+    user.update(verified_at: Time.now)
+  end
 end
 
 org_user_ids = User.organizations.pluck(:id)
@@ -68,6 +74,24 @@ tags = Faker::Lorem.words(25)
   puts "    #{debate.title}"
 end
 
+puts "Creating Proposals"
+
+tags = Faker::Lorem.words(25)
+
+(1..30).each do |i|
+  author = User.reorder("RANDOM()").first
+  description = "<p>#{Faker::Lorem.paragraphs.join('</p></p>')}</p>"
+  proposal = Proposal.create!(author: author,
+                              title: Faker::Lorem.sentence(3),
+                              question: Faker::Lorem.sentence(3),
+                              external_url: Faker::Internet.url,
+                              description: description,
+                              created_at: rand((Time.now - 1.week) .. Time.now),
+                              tag_list: tags.sample(3).join(','),
+                              terms_of_service: "1")
+  puts "    #{proposal.title}"
+end
+
 
 puts "Commenting Debates"
 
@@ -81,9 +105,21 @@ puts "Commenting Debates"
 end
 
 
-puts "Commenting Comments"
+puts "Commenting Proposals"
 
 (1..100).each do |i|
+  author = User.reorder("RANDOM()").first
+  proposal = Proposal.reorder("RANDOM()").first
+  Comment.create!(user: author,
+                  created_at: rand(proposal.created_at .. Time.now),
+                  commentable: proposal,
+                  body: Faker::Lorem.sentence)
+end
+
+
+puts "Commenting Comments"
+
+(1..200).each do |i|
   author = User.reorder("RANDOM()").first
   parent = Comment.reorder("RANDOM()").first
   Comment.create!(user: author,
@@ -95,7 +131,7 @@ puts "Commenting Comments"
 end
 
 
-puts "Voting Debates & Comments"
+puts "Voting Debates, Proposals & Comments"
 
 (1..100).each do |i|
   voter  = not_org_users.reorder("RANDOM()").first
@@ -109,6 +145,12 @@ end
   vote   = [true, false].sample
   comment = Comment.reorder("RANDOM()").first
   comment.vote_by(voter: voter, vote: vote)
+end
+
+(1..100).each do |i|
+  voter  = User.level_two_or_three_verified.reorder("RANDOM()").first
+  proposal = Proposal.reorder("RANDOM()").first
+  proposal.vote_by(voter: voter, vote: true)
 end
 
 
@@ -126,23 +168,32 @@ end
   Flag.flag(flagger, comment)
 end
 
+(1..40).each do |i|
+  proposal = Proposal.reorder("RANDOM()").first
+  flagger = User.where(["users.id <> ?", proposal.author_id]).reorder("RANDOM()").first
+  Flag.flag(flagger, proposal)
+end
 
-puts "Ignoring flags in Debates & comments"
+
+puts "Ignoring flags in Debates, comments & proposals"
 
 Debate.flagged.reorder("RANDOM()").limit(10).each(&:ignore_flag)
 Comment.flagged.reorder("RANDOM()").limit(30).each(&:ignore_flag)
+Proposal.flagged.reorder("RANDOM()").limit(10).each(&:ignore_flag)
 
 
-puts "Hiding debates & comments"
+puts "Hiding debates, comments & proposals"
 
 Comment.with_hidden.flagged.reorder("RANDOM()").limit(30).each(&:hide)
 Debate.with_hidden.flagged.reorder("RANDOM()").limit(5).each(&:hide)
+Proposal.with_hidden.flagged.reorder("RANDOM()").limit(10).each(&:hide)
 
 
-puts "Confirming hiding in debates & comments"
+puts "Confirming hiding in debates, comments & proposals"
 
 Comment.only_hidden.flagged.reorder("RANDOM()").limit(10).each(&:confirm_hide)
 Debate.only_hidden.flagged.reorder("RANDOM()").limit(5).each(&:confirm_hide)
+Proposal.only_hidden.flagged.reorder("RANDOM()").limit(5).each(&:confirm_hide)
 
 
 
