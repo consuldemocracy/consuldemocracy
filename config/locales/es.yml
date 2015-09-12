@@ -256,7 +256,8 @@ es:
       title: "Mi cuenta"
       save_changes_submit: "Guardar cambios"
       change_credentials_link: "Cambiar mis datos de acceso"
-      email_on_proposal_comment_label: "Recibir un email cuando alguien comenta en mis debates"
+      email_on_debate_comment_label: "Recibir un email cuando alguien comenta en mis debates"
+      email_on_proposal_comment_label: "Recibir un email cuando alguien comenta en mis propuestas"
       email_on_comment_reply_label: "Recibir un email cuando alguien contesta a mis comentarios"
       avatar: "Avatar"
       personal: "Datos personales"
@@ -273,6 +274,7 @@ es:
     refresh_button_text: "Refrescar"
     message:
       user: "el código secreto no coincide con la imagen"
+      debate: "el código secreto no coincide con la imagen"
       proposal: "el código secreto no coincide con la imagen"
   shared:
     tags_cloud:
@@ -294,6 +296,7 @@ es:
     manage:
       all: "No tienes permiso para realizar la acción '%{action}' sobre %{subject}."
   welcome:
+    last_debates: Últimos debates
     last_proposals: Últimas propuestas
     welcome:
       title: Verificación de cuenta

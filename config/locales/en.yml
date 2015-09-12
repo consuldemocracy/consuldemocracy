@@ -147,7 +147,7 @@ en:
         submit_button: "Save changes"
   proposals:
     index:
-      start_debate: Start a proposal
+      start_proposal: Start a proposal
       select_order: Order by
       select_order_long: Order proposals by
       orders:
@@ -256,6 +256,7 @@ en:
       title: "My account"
       save_changes_submit: "Save changes"
       email_on_debate_comment_label: "Receive email when someone comments on my debates"
+      email_on_proposal_comment_label: "Receive email when someone comments on my proposals"
       email_on_comment_reply_label: "Receive email when someone replies to my comments"
       change_credentials_link: "Change my credentials"
       avatar: "Avatar"
@@ -274,6 +275,7 @@ en:
     message:
       user: "secret code did not match with the image"
       debate: "secret code did not match with the image"
+      proposal: "secret code did not match with the image"
   shared:
     tags_cloud:
       tags: Trend
@@ -295,6 +297,7 @@ en:
       all: "You are not authorized to %{action} %{subject}."
   welcome:
     last_debates: Last debates
+    last_proposals: Last proposals
     welcome:
       title: Account verification
       instructions_1_html: "Welcome to the public participation website."
