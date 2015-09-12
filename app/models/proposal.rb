@@ -1,11 +1,14 @@
 class Proposal < ActiveRecord::Base
+  include Flaggable
+
   apply_simple_captcha
   acts_as_votable
   acts_as_taggable
+  acts_as_paranoid column: :hidden_at
+  include ActsAsParanoidAliases
 
   belongs_to :author, -> { with_hidden }, class_name: 'User', foreign_key: 'author_id'
   has_many :comments, as: :commentable
-  has_many :flags, as: :flaggable
 
   validates :title, presence: true
   validates :question, presence: true
