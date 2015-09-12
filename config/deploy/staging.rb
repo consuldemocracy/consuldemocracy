@@ -6,6 +6,6 @@ set :ssh_options, port: deploysecret(:ssh_port)
 set :stage, :staging
 set :rails_env, :staging
 
-server deploysecret(:server), user: deploysecret(:user), roles: %w(web app db importer)
+server deploysecret(:server), user: deploysecret(:user), roles: %w(web app db importer cron)
 
 
