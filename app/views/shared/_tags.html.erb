@@ -1,5 +1,5 @@
 <%- limit ||= nil %>
-<%= taggable = defined?(debate) ? debate : proposal %>
+<%- taggable = defined?(debate) ? debate : proposal %>
 
 <% if taggable.tags.any? %>
   <span class='tags'>
