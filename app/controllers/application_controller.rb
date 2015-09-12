@@ -3,6 +3,7 @@ require "application_responder"
 class ApplicationController < ActionController::Base
   include SimpleCaptcha::ControllerHelpers
   include HasFilters
+  include HasOrders
 
   before_action :authenticate_http_basic, if: :http_basic_auth_site?
   before_action :authenticate_user!, unless: :devise_controller?, if: :beta_site?
