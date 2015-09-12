@@ -106,6 +106,12 @@ describe Ability do
 
       it { should be_able_to(:vote, Proposal) }
     end
+
+    describe "when level 3 verified" do
+      before{ user.update(verified_at: Time.now) }
+
+      it { should be_able_to(:vote, Proposal) }
+    end
   end
 
   describe "Organization" do

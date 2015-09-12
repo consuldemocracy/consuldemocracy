@@ -42,7 +42,7 @@ class Ability
         can :vote, Comment
       end
 
-      if user.level_two_verified?
+      if user.level_two_or_three_verified?
         can :vote, Proposal
       end
 
