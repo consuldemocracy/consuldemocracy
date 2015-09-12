@@ -12,6 +12,11 @@ describe Proposal do
     expect(proposal).to_not be_valid
   end
 
+  it "should not be valid without an question" do
+    proposal.question = nil
+    expect(proposal).to_not be_valid
+  end
+
   it "should not be valid without a title" do
     proposal.title = nil
     expect(proposal).to_not be_valid
