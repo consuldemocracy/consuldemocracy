@@ -1,4 +1,5 @@
 class Comment < ActiveRecord::Base
+  include Flaggable
 
   acts_as_paranoid column: :hidden_at
   include ActsAsParanoidAliases
@@ -16,14 +17,9 @@ class Comment < ActiveRecord::Base
   belongs_to :commentable, -> { with_hidden }, polymorphic: true, counter_cache: true
   belongs_to :user, -> { with_hidden }
 
-  has_many :flags, as: :flaggable
-
   scope :recent, -> { order(id: :desc) }
 
   scope :sort_for_moderation, -> { order(flags_count: :desc, updated_at: :desc) }
-  scope :pending_flag_review, -> { where(ignored_flag_at: nil, hidden_at: nil) }
-  scope :with_ignored_flag, -> { where(hidden_at: nil).where.not(ignored_flag_at: nil) }
-  scope :flagged, -> { where("flags_count > 0") }
 
   scope :for_render, -> { with_hidden.includes(user: :organization) }
 
@@ -66,14 +62,6 @@ class Comment < ActiveRecord::Base
 
   def total_dislikes
     cached_votes_down
-  end
-
-  def ignored_flag?
-    ignored_flag_at.present?
-  end
-
-  def ignore_flag
-    update(ignored_flag_at: Time.now)
   end
 
   def as_administrator?

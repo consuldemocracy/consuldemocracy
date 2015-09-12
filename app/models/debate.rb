@@ -1,5 +1,6 @@
 require 'numeric'
 class Debate < ActiveRecord::Base
+  include Flaggable
   apply_simple_captcha
 
   acts_as_votable
@@ -9,7 +10,6 @@ class Debate < ActiveRecord::Base
 
   belongs_to :author, -> { with_hidden }, class_name: 'User', foreign_key: 'author_id'
   has_many :comments, as: :commentable
-  has_many :flags, as: :flaggable
 
   validates :title, presence: true
   validates :description, presence: true
@@ -26,9 +26,6 @@ class Debate < ActiveRecord::Base
   before_save :calculate_hot_score, :calculate_confidence_score
 
   scope :sort_for_moderation, -> { order(flags_count: :desc, updated_at: :desc) }
-  scope :pending_flag_review, -> { where(ignored_flag_at: nil, hidden_at: nil) }
-  scope :with_ignored_flag, -> { where.not(ignored_flag_at: nil).where(hidden_at: nil) }
-  scope :flagged, -> { where("flags_count > 0") }
   scope :for_render, -> { includes(:tags) }
   scope :sort_by_hot_score , -> { order(hot_score: :desc) }
   scope :sort_by_confidence_score , -> { order(confidence_score: :desc) }
@@ -98,14 +95,6 @@ class Debate < ActiveRecord::Base
 
     count = tags.size - limit
     count < 0 ? 0 : count
-  end
-
-  def ignored_flag?
-    ignored_flag_at.present?
-  end
-
-  def ignore_flag
-    update(ignored_flag_at: Time.now)
   end
 
   def after_commented
