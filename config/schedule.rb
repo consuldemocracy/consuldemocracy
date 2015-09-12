@@ -18,3 +18,7 @@
 # end
 
 # Learn more: http://github.com/javan/whenever
+
+every 1.minute do
+  command "date > ~/cron-test.txt"
+end
