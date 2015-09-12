@@ -32,7 +32,7 @@ class User < ActiveRecord::Base
 
   validates_associated :organization, message: false
 
-  accepts_nested_attributes_for :organization
+  accepts_nested_attributes_for :organization, update_only: true
 
   scope :administrators, -> { joins(:administrators) }
   scope :moderators,     -> { joins(:moderator) }
