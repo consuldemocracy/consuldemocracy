@@ -70,7 +70,7 @@ class Proposal < ActiveRecord::Base
   end
 
   def editable_by?(user)
-    editable? && author_id == user.id
+    author_id == user.id && editable?
   end
 
   def votable_by?(user)
