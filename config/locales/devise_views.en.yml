@@ -3,7 +3,7 @@ en:
     confirmations:
       title: "Resend confirmation instructions"
       email_label: Email
-      submit: "Resend confirmation instructions"
+      submit: "Resend confirmation"
     mailer:
       confirmation_instructions:
         title: "Welcome to open government portal"
@@ -37,7 +37,7 @@ en:
       new:
         title: "Forgot your password?"
         email_label: "Email"
-        send_submit: "Send me reset password instructions"
+        send_submit: "Send me reset password"
     users:
       registrations:
         edit:
