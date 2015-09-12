@@ -305,11 +305,12 @@
   .panel {
     border-radius: 0;
     box-shadow: 0px 1px 3px 0 $border;
-    margin-bottom: rem-calc(4);
+    margin-bottom: rem-calc(12);
     min-height: rem-calc(192);
     padding-top: rem-calc(12);
 
     @media (min-width: $small-breakpoint) {
+      margin-bottom: rem-calc(-1);
       padding-bottom: rem-calc(12);
     }
 
@@ -373,7 +374,6 @@
 
     .total-votes {
       display: inline-block;
-      float: none;
       line-height: $line-height;
       margin-left: rem-calc(24);
       padding-top: rem-calc(12);
@@ -381,6 +381,7 @@
 
       @media (min-width: $small-breakpoint) {
         display: block;
+        float: none;
         line-height: $line-height*2;
         margin-left: 0;
         padding-top: 0;
@@ -399,7 +400,7 @@
 
     .not-logged {
       line-height: $line-height;
-      padding-top: rem-calc(36);
+      padding-top: rem-calc(24);
     }
 
     .anonymous-votes, .organizations-votes {
@@ -751,6 +752,14 @@
 
 // 06. Flags
 // - - - - - - - - - - - - - - - - - - - - - - - - -
+
+.flag-content {
+
+  .button {
+    background: none;
+    padding: 0;
+  }
+}
 
 .flag-disable {
   color: $text-medium;

@@ -301,13 +301,36 @@ header {
     font-family: inherit;
     font-size: rem-calc(16);
     margin-top: 0;
+
+    &.see-more {
+      width: 100%;
+
+      @media (min-width: $small-breakpoint) {
+        width: auto;
+      }
+    }
+  }
+
+  .home-page {
+    text-align: center;
+
+    @media (min-width: $small-breakpoint) {
+      text-align: left;
+    }
   }
 
   .more-info {
     color: white;
+    display: block;
     font-size: rem-calc(14);
-    margin-left: rem-calc(24);
+    margin-bottom: rem-calc(24);
     text-decoration: underline;
+
+    @media (min-width: $small-breakpoint) {
+      display: inline-block;
+      margin-bottom: 0;
+      margin-left: rem-calc(24);
+    }
 
     &:hover {
       opacity: .75;
@@ -330,10 +353,14 @@ header {
   }
 
   .icon-external {
+    display: inline-block;
     font-size: rem-calc(12);
     opacity: .5;
+    padding-top: rem-calc(3);
+    vertical-align: top;
 
     @media (min-width: $small-breakpoint) {
+      padding-top: 0;
       position: absolute;
       right: -18px;
       top: 3px;
@@ -419,11 +446,6 @@ header {
       font-size: rem-calc(16);
       font-weight: lighter;
       line-height: $line-height*2;
-      padding-left: rem-calc(12);
-
-      @media (min-width: $small-breakpoint) {
-        padding-left: 0;
-      }
 
       span {
         *display: inline; /* IE */
@@ -503,6 +525,18 @@ header {
   margin-right: rem-calc(24);
   width: 100%;
 
+  ul {
+    margin-left: 0;
+
+    @media (min-width: $small-breakpoint) {
+      margin-left:rem-calc(24);
+    }
+  }
+
+  ul li {
+    background: none;
+  }
+
   ul li > a {
     font-size: rem-calc(14);
 
@@ -510,13 +544,17 @@ header {
       border-radius: 0;
       line-height: $line-height*1.5;
       text-align: left;
+      background: none;
+      padding-left: rem-calc(6);
     }
 
     @media (min-width: $small-breakpoint) {
       &.button {
+        background: $brand;
         border-radius: rem-calc(3);
         line-height: rem-calc(15);
         margin-top: rem-calc(24);
+        padding-left: rem-calc(15);
         text-align: center;
       }
     }
@@ -550,7 +588,7 @@ header {
     li:not(.has-form) a:not(.button) {
       background: none;
       color: white;
-      padding: 0 rem-calc(6);
+      padding: rem-calc(12) 0;
 
       @media (min-width: $small-breakpoint) {
         line-height: $line-height*4;
@@ -608,7 +646,7 @@ header {
 
   a {
     color: $text;
-    display: block;
+    display: inline-block;
     font-size: rem-calc(14);
     font-weight: bold;
     line-height: $line-height*2;
@@ -616,10 +654,24 @@ header {
     text-align: left;
 
     @media (min-width: $small-breakpoint) {
-      display: inline-block;
       line-height: $line-height*3;
       margin-left: rem-calc(12);
       margin-right: rem-calc(72);
+    }
+
+    &:after {
+      color: $border;
+      content: "|";
+      padding: 0 rem-calc(12);
+
+      @media (min-width: $small-breakpoint) {
+        content: none;
+        padding: 0;
+      }
+    }
+
+    &:last-child:after {
+      content: none;
     }
 
     &:hover {
@@ -758,7 +810,6 @@ footer {
   background: #065687 image-url("auth_bg.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  padding-top: rem-calc(24);
 
   @media (min-width: $small-breakpoint) {
     padding-top: rem-calc(48);
@@ -772,9 +823,8 @@ footer {
     @include logo;
 
     a {
-      line-height: $line-height;
 
-      span {
+      span.logo-site {
         vertical-align: middle;
       }
     }
@@ -1058,7 +1108,11 @@ img.initialjs-avatar {
   h2 {
     display: inline-block;
     font-size: rem-calc(24);
-    margin-left: rem-calc(-17);
+    margin: rem-calc(12) 0;
+
+    @media (min-width: $small-breakpoint) {
+      margin: rem-calc(24) 0;
+    }
   }
 
   select {
@@ -1069,10 +1123,6 @@ img.initialjs-avatar {
     outline: 0;
     padding: rem-calc(12);
     width: auto;
-
-    @media (max-width: $small) {
-      margin-left: rem-calc(-17);
-    }
 
     @media (min-width: $small-breakpoint) {
       margin: 0 0 rem-calc(24) rem-calc(12);

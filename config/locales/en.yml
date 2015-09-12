@@ -10,7 +10,6 @@ en:
       external_link_blog_url: "/blog"
       open_gov: "%{open} government"
       open: "Open"
-      logo: "Open government | Participation"
       participation: Participation
       open_city_title: "The city you want, it will be the city you want."
       open_city_slogan:
@@ -273,6 +272,7 @@ en:
       username_label: "Username"
       phone_number_label: "Phone number"
       organization_name_label: "Organization name"
+      organization_responsible_name_placeholder: "The responsible representative of the organization"
       notifications: Notifications
       finish_verification: "Finish verification"
       verified_account: Verified account

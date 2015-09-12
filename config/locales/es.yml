@@ -10,7 +10,6 @@ es:
       external_link_blog_url: "/blog"
       open_gov: "Gobierno %{open}"
       open: "abierto"
-      logo: "Gobierno abierto | Participación"
       participation: Participación
       open_city_title: "La ciudad que quieres será la ciudad que quieras."
       open_city_slogan:
@@ -273,6 +272,7 @@ es:
       username_label: "Nombre de usuario"
       phone_number_label: "Teléfono"
       organization_name_label: "Nombre de la organización"
+      organization_responsible_name_placeholder: "Representante de la asociación/colectivo"
       notifications: Notificaciones
       finish_verification: "Finalizar verificación"
       verified_account: Cuenta verificada
@@ -310,7 +310,7 @@ es:
       instructions_3_html: "Sin verificar tus datos <b>el acceso que tienes es limitado</b>. Verificarlos ahora te permitirá, por ejemplo, apoyar propuestas ciudadanas."
       verify_account: "Verificar mi cuenta"
       go_to_index: "Quiero entrar como un usuario no verificado (acceso limitado)"
-      instructions_4_html: "Si quieres verificarte más tarde, puedes hacerlo en <i>Mi cuenta -> Verificar mi cuenta</i>."
+      instructions_4_html: "Si quieres verificarte más tarde, puedes hacerlo en <i>Mi cuenta > Verificar mi cuenta</i>."
   omniauth:
     finish_signup:
       title: Añade tu email

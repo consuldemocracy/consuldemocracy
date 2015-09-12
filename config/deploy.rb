@@ -6,7 +6,6 @@ def deploysecret(key)
   @deploy_secrets_yml.fetch(key.to_s, 'undefined')
 end
 
-
 set :rails_env, fetch(:stage)
 set :rvm_ruby_version, '2.2.3'
 set :rvm_type, :user
@@ -46,6 +45,8 @@ set(:config_files, %w(
   unicorn.rb
   sidekiq.yml
 ))
+
+set :whenever_roles, -> { :cron }
 
 namespace :deploy do
   # Check right version of deploy branch

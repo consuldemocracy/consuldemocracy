@@ -191,6 +191,7 @@ FactoryGirl.define do
 
   factory :organization do
     user
+    responsible_name "Johnny Utah"
     sequence(:name) { |n| "org#{n}" }
 
     trait :verified do

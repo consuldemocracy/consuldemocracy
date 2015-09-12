@@ -29,7 +29,8 @@ moderator.create_moderator
 (1..10).each do |i|
   org_name = Faker::Company.name
   org_user = create_user("org#{i}@madrid.es", org_name)
-  org = org_user.create_organization(name: org_name)
+  org_responsible_name = Faker::Name.name
+  org = org_user.create_organization(name: org_name, responsible_name: org_responsible_name)
 
   verified = [true, false].sample
   if verified then

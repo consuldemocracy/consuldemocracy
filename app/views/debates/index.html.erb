@@ -9,17 +9,17 @@
   <div class="wrap row">
     <div id="debates" class="debates-list small-12 medium-9 column">
       <div class="filters">
-        <div class="small-12 medium-7 column">
+        <div class="small-12 medium-7 left">
           <% if @search_terms %>
-              <h2 class="margin-top">
-                <%= page_entries_info @debates %>
-                <%= t("debates.index.search_results", count: @debates.size, search_term: @search_terms) %>
-              </h2>
+            <h2 class="margin-top">
+              <%= page_entries_info @debates %>
+              <%= t("debates.index.search_results", count: @debates.size, search_term: @search_terms) %>
+            </h2>
           <% elsif @tag_filter %>
-              <h2 class="margin-top">
-                <%= page_entries_info @debates %>
-                <%= t("debates.index.filter_topic", count: @debates.size, topic: @tag_filter) %>
-              </h2>
+            <h2 class="margin-top">
+              <%= page_entries_info @debates %>
+              <%= t("debates.index.filter_topic", count: @debates.size, topic: @tag_filter) %>
+            </h2>
           <% end %>
         </div>
         <% if @tag_filter || @search_terms %>
@@ -28,10 +28,10 @@
               <%= t("debates.index.select_order") %>
             </h6>
         <% else %>
-          <div class="small-12 column margin-top inline-block">
-          <h2 class="inline-block">
-            <%= t("debates.index.select_order_long") %>
-          </h2>
+          <div class="small-12 inline-block">
+            <h2 class="inline-block">
+              <%= t("debates.index.select_order_long") %>
+            </h2>
         <% end %>
         <%= render 'shared/order_selector', i18n_namespace: "debates.index" %>
       </div>
