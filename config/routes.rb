@@ -35,14 +35,6 @@ Rails.application.routes.draw do
       put :flag
       put :unflag
     end
-
-    resources :comments, only: :create, shallow: true do
-      member do
-        post :vote
-        put :flag
-        put :unflag
-      end
-    end
   end
 
   resources :proposals do
@@ -51,13 +43,13 @@ Rails.application.routes.draw do
       put :flag
       put :unflag
     end
+  end
 
-    resources :comments, only: :create, shallow: true do
-      member do
-        post :vote
-        put :flag
-        put :unflag
-      end
+  resources :comments, only: :create, shallow: true do
+    member do
+      post :vote
+      put :flag
+      put :unflag
     end
   end
 
