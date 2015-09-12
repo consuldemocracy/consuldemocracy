@@ -46,9 +46,7 @@ set(:config_files, %w(
   sidekiq.yml
 ))
 
-set :whenever_command, "bundle exec whenever"
-set :whenever_environment, -> { fetch(:stage) }
-set :whenever_roles, [ :cron ]
+set :whenever_roles, -> { :cron }
 
 namespace :deploy do
   # Check right version of deploy branch
