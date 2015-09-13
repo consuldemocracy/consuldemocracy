@@ -30,6 +30,7 @@ class Proposal < ActiveRecord::Base
   scope :sort_by_created_at, -> { order(created_at: :desc) }
   scope :sort_by_most_commented, -> { order(comments_count: :desc) }
   scope :sort_by_random, -> { order("RANDOM()") }
+  scope :sort_by_flags, -> { order(flags_count: :desc, updated_at: :desc) }
 
   def total_votes
     cached_votes_up
