@@ -18,7 +18,6 @@
         </div>
       <% end %>
 
-      <h2><%= @proposal.question %></h2>
 
       <div class="proposal-info">
         <%= avatar_image(@proposal.author, seed: @proposal.author_id, size: 32, class: 'author-photo') %>
@@ -58,8 +57,14 @@
         </span>
       </div>
 
+      <h3><%= @proposal.question %></h3>
+
+      <% if @proposal.external_url.present? %>
+        <div><%= link_to(@proposal.external_url) %></div>
+      <% end %>
+
       <%= @proposal.description %>
-      <div><%= @proposal.external_url %></div>
+
 
       <%= render 'shared/tags', proposal: @proposal %>
 

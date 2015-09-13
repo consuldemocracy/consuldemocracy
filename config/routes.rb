@@ -88,6 +88,13 @@ Rails.application.routes.draw do
       end
     end
 
+    resources :proposals, only: :index do
+      member do
+        put :restore
+        put :confirm_hide
+      end
+    end
+
     resources :comments, only: :index do
       member do
         put :restore
@@ -117,6 +124,14 @@ Rails.application.routes.draw do
     end
 
     resources :debates, only: :index do
+      member do
+        put :hide
+        put :hide_in_moderation_screen
+        put :ignore_flag
+      end
+    end
+
+    resources :proposals, only: :index do
       member do
         put :hide
         put :hide_in_moderation_screen

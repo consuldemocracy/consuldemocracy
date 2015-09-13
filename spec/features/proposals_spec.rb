@@ -451,4 +451,39 @@ feature 'Proposals' do
     visit proposal_path(good_proposal)
     expect(page).to_not have_content "This proposal has been flag as innapropiate for some users."
   end
+
+  scenario "Flagging", :js do
+    user = create(:user)
+    proposal = create(:proposal)
+
+    login_as(user)
+    visit proposal_path(proposal)
+
+    within "#proposal_#{proposal.id}" do
+      page.find("#flag-expand-proposal-#{proposal.id}").click
+      page.find("#flag-proposal-#{proposal.id}").click
+
+      expect(page).to have_css("#unflag-expand-proposal-#{proposal.id}")
+    end
+
+    expect(Flag.flagged?(user, proposal)).to be
+  end
+
+  scenario "Unflagging", :js do
+    user = create(:user)
+    proposal = create(:proposal)
+    Flag.flag(user, proposal)
+
+    login_as(user)
+    visit proposal_path(proposal)
+
+    within "#proposal_#{proposal.id}" do
+      page.find("#unflag-expand-proposal-#{proposal.id}").click
+      page.find("#unflag-proposal-#{proposal.id}").click
+
+      expect(page).to have_css("#flag-expand-proposal-#{proposal.id}")
+    end
+
+    expect(Flag.flagged?(user, proposal)).to_not be
+  end
 end

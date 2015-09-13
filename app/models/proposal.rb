@@ -57,20 +57,8 @@ class Proposal < ActiveRecord::Base
     count < 0 ? 0 : count
   end
 
-  def self.title_max_length
-    @@title_max_length ||= self.columns.find { |c| c.name == 'title' }.limit || 80
-  end
-
-  def self.question_max_length
-    140
-  end
-
-  def self.description_max_length
-    6000
-  end
-
-  def self.search(terms)
-    terms.present? ? where("title ILIKE ? OR description ILIKE ? OR question ILIKE ?", "%#{terms}%", "%#{terms}%", "%#{terms}%") : none
+  def description
+    super.try :html_safe
   end
 
   def editable?
@@ -87,6 +75,22 @@ class Proposal < ActiveRecord::Base
 
   def code
     "#{Setting.value_for("proposal_code_prefix")}-#{created_at.strftime('%Y-%M')}-#{id}"
+  end
+
+  def self.title_max_length
+    @@title_max_length ||= self.columns.find { |c| c.name == 'title' }.limit || 80
+  end
+
+  def self.question_max_length
+    140
+  end
+
+  def self.description_max_length
+    6000
+  end
+
+  def self.search(terms)
+    terms.present? ? where("title ILIKE ? OR description ILIKE ? OR question ILIKE ?", "%#{terms}%", "%#{terms}%", "%#{terms}%") : none
   end
 
   protected
