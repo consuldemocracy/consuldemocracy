@@ -1,18 +1,18 @@
 <% voted_classes = css_classes_for_proposal_vote(@proposal_votes, proposal) %>
-<div class="votes">
-  <div class="in-favor inline-block">
-    <%= link_to vote_proposal_path(proposal, value: 'yes'),
-        class: "like #{voted_classes[:in_favor]}", title: t('votes.agree'), method: "post", remote: true do %>
-      <i class="icon-like"></i>
-      <span><%= percentage('total_votes', proposal) %></span>
-    <% end %>
+<div class="supports">
+
+  <div class="progress small-12 radius">
+    <span class="meter" style="width: 10%;"></span>
   </div>
 
-  <span class="divider"></span>
-
-  <span class="total-votes">
-    <%= t("proposals.proposal.votes", count: proposal.total_votes) %>
+  <span class="total-supports">
+    <%= t("proposals.proposal.supports", count: proposal.total_votes) %>&nbsp;<span><%= t("proposals.proposal.supports_necessary") %></span>
   </span>
+
+  <%= link_to vote_proposal_path(proposal, value: 'yes'), class: "button button-support tiny radius expand #{voted_classes[:in_favor]}",
+      title: t('proposals.proposal.support'), method: "post", remote: true do %>
+        <%= t("proposals.proposal.support") %>
+  <% end %>
 
   <% if user_signed_in? && current_user.organization? %>
   <div class="organizations-votes" style='display:none'>

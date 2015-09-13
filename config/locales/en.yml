@@ -158,14 +158,16 @@ en:
         other: " containing '%{search_term}'"
     proposal:
       proposal: Proposal
+      support: "Support"
       comments:
         zero: No comments
         one: 1 Comment
         other: "%{count} Comments"
-      votes:
-        zero: No votes
-        one: 1 vote
-        other: "%{count} votes"
+      supports:
+        zero: No supports
+        one: 1 support
+        other: "%{count} supports"
+      supports_necessary: "/ 53.726"
     form:
       proposal_title: Proposal title
       proposal_question: Proposal question

@@ -158,14 +158,16 @@ es:
         other: " que contienen '%{search_term}'"
     proposal:
       proposal: Propuesta
+      support: "Apoyar"
       comments:
         zero: Sin comentarios
         one: 1 Comentario
         other: "%{count} Comentarios"
-      votes:
-        zero: Sin votos
-        one: 1 voto
-        other: "%{count} votos"
+      supports:
+        zero: Sin apoyos
+        one: 1 apoyo
+        other: "%{count} apoyos"
+      supports_necessary: "/ 53.726"
     form:
       proposal_title: Título de la propuesta
       proposal_question: Pregunta de la propuesta
