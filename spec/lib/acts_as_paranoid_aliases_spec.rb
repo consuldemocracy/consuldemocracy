@@ -15,6 +15,19 @@ describe 'Paranoid methods' do
 
       expect(Debate.all).to eq([debate3])
     end
+
+    it 'set the cache counters ' do
+
+      debate1 = create(:debate)
+      5.times do
+        create :comment , commentable: debate1
+      end
+      Comment.hide_all debate1.comments.pluck(:id)
+      expect(Comment.count).to be 0
+      expect(debate1.comments.count).to be debate1.reload.comments_count
+    end
+
+
   end
 
   describe '.restore_all' do
