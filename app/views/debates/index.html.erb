@@ -5,9 +5,9 @@
 <% end %>
 
 <section role="main">
-
   <div class="wrap row">
     <div id="debates" class="debates-list small-12 medium-9 column">
+
       <div class="filters">
         <div class="small-12 medium-7 left">
           <% if @search_terms %>
@@ -22,25 +22,32 @@
             </h2>
           <% end %>
         </div>
+
         <% if @tag_filter || @search_terms %>
-          <div class="small-12 medium-5 margin-top inline-block debates-order">
+          <div class="small-12 inline-block medium-5 margin-top inline-block debates-order">
             <h6 class="inline-block">
               <%= t("debates.index.select_order") %>
             </h6>
+            <%= render 'shared/order_selector', i18n_namespace: "debates.index" %>
+          </div>
         <% else %>
           <div class="small-12 inline-block">
             <h2 class="inline-block">
               <%= t("debates.index.select_order_long") %>
             </h2>
+            <%= render 'shared/order_selector', i18n_namespace: "debates.index" %>
+          </div>
         <% end %>
-        <%= render 'shared/order_selector', i18n_namespace: "debates.index" %>
+
+        <div class="show-for-small-only">
+          <%= link_to t("debates.index.start_debate"), new_debate_path, class: 'button radius expand' %>
+        </div>
+
+        <%= render @debates %>
+        <%= paginate @debates %>
       </div>
-      <div class="show-for-small-only">
-        <%= link_to t("debates.index.start_debate"), new_debate_path, class: 'button radius expand' %>
-      </div>
-      <%= render @debates %>
-      <%= paginate @debates %>
     </div>
+
     <div class="small-12 medium-3 column">
       <aside class="sidebar" role="complementary">
         <%= link_to t("debates.index.start_debate"), new_debate_path, class: 'button radius expand' %>
