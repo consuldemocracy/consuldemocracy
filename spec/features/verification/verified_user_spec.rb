@@ -24,6 +24,7 @@ feature 'Verified users' do
 
     expect(page).to have_content 'roc*@example.com'
     expect(page).to have_content 'rol*@example.com'
+    expect(page).not_to have_content 'ano*@example.com'
   end
 
   scenario "Verified phones" do
@@ -48,7 +49,26 @@ feature 'Verified users' do
 
     expect(page).to have_content '******111'
     expect(page).to have_content '******222'
+    expect(page).not_to have_content '******333'
   end
+
+  scenario "No emails or phones" do
+    user = create(:user,
+                  residence_verified_at: Time.now,
+                  document_number:       '12345678Z')
+
+    create(:verified_user,
+           document_number: '12345678Z')
+
+    create(:verified_user,
+            document_number: '12345678Z')
+
+    login_as(user)
+    visit verified_user_path
+
+    expect(current_path).to eq new_sms_path
+  end
+
 
   scenario "Select a verified email" do
     user = create(:user,
@@ -67,7 +87,7 @@ feature 'Verified users' do
     end
 
     expect(page).to have_content 'We have send you a confirmation email to your email account: rock@example.com'
-    expect(URI.parse(current_url).path).to eq(account_path)
+    expect(current_path).to eq(account_path)
   end
 
   scenario "Select a verified phone" do
@@ -103,7 +123,7 @@ feature 'Verified users' do
 
     click_link "Use another phone"
 
-    expect(URI.parse(current_url).path).to eq(new_sms_path)
+    expect(current_path).to eq(new_sms_path)
   end
 
   scenario "No verified information" do
@@ -112,7 +132,7 @@ feature 'Verified users' do
     login_as(user)
     visit verified_user_path
 
-    expect(URI.parse(current_url).path).to eq(new_sms_path)
+    expect(current_path).to eq(new_sms_path)
   end
 
 end

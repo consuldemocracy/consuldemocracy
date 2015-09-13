@@ -54,7 +54,7 @@ feature 'SMS Verification' do
     visit new_sms_path
 
     expect(page).to have_content 'You have not yet confirmed your residence'
-    expect(URI.parse(current_url).path).to eq(new_residence_path)
+    expect(current_path).to eq(new_residence_path)
   end
 
   scenario '5 tries allowed' do
@@ -70,11 +70,11 @@ feature 'SMS Verification' do
     end
 
     expect(page).to have_content "You have reached the maximum number of verification tries. Please try again later."
-    expect(URI.parse(current_url).path).to eq(account_path)
+    expect(current_path).to eq(account_path)
 
     visit new_sms_path
     expect(page).to have_content "You have reached the maximum number of verification tries. Please try again later."
-    expect(URI.parse(current_url).path).to eq(account_path)
+    expect(current_path).to eq(account_path)
   end
 
 end

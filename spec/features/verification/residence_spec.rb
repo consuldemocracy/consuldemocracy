@@ -74,10 +74,10 @@ feature 'Residence' do
 
     click_button 'Verify residence'
     expect(page).to have_content "You have reached the maximum number of verification tries. Please try again later."
-    expect(URI.parse(current_url).path).to eq(account_path)
+    expect(current_path).to eq(account_path)
 
     visit new_residence_path
     expect(page).to have_content "You have reached the maximum number of verification tries. Please try again later."
-    expect(URI.parse(current_url).path).to eq(account_path)
+    expect(current_path).to eq(account_path)
   end
 end

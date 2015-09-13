@@ -220,7 +220,7 @@ feature 'Votes' do
 
           expect(page).to have_content "1 vote"
         end
-        expect(URI.parse(current_url).path).to eq(root_path)
+        expect(current_path).to eq(root_path)
       end
 
       scenario 'Create in index', :js do
@@ -242,7 +242,7 @@ feature 'Votes' do
 
           expect(page).to have_content "1 vote"
         end
-        expect(URI.parse(current_url).path).to eq(debates_path)
+        expect(current_path).to eq(debates_path)
       end
     end
   end
