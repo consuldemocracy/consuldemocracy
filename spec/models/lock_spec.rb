@@ -10,7 +10,7 @@ describe Lock do
       expect(lock.locked?).to be true
     end
 
-    it "return false if locked_until is before curren time" do
+    it "return false if locked_until is before current time" do
       lock.locked_until = 1.day.ago
       expect(lock.locked?).to be false
     end

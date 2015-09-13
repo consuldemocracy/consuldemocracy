@@ -150,6 +150,50 @@ feature 'Proposals' do
     expect(page.html).to_not include '&lt;p&gt;This is'
   end
 
+  scenario 'Autolinking is applied to description' do
+    author = create(:user)
+    login_as(author)
+
+    visit new_proposal_path
+    fill_in 'proposal_title', with: 'Testing auto link'
+    fill_in 'proposal_question', with: 'Should I stay or should I go?'
+    fill_in 'proposal_description', with: '<p>This is a link www.example.org</p>'
+    fill_in 'proposal_captcha', with: correct_captcha_text
+    check 'proposal_terms_of_service'
+
+    click_button 'Start a proposal'
+
+    expect(page).to have_content 'Proposal was successfully created.'
+    expect(page).to have_content 'Testing auto link'
+    expect(page).to have_link('www.example.org', href: 'http://www.example.org')
+  end
+
+  scenario 'JS injection is prevented but autolinking is respected' do
+    author = create(:user)
+    login_as(author)
+
+    visit new_proposal_path
+    fill_in 'proposal_title', with: 'Testing auto link'
+    fill_in 'proposal_question', with: 'Should I stay or should I go?'
+    fill_in 'proposal_description', with: "<script>alert('hey')</script> <a href=\"javascript:alert('surprise!')\">click me<a/> http://example.org"
+    fill_in 'proposal_captcha', with: correct_captcha_text
+    check 'proposal_terms_of_service'
+
+    click_button 'Start a proposal'
+
+    expect(page).to have_content 'Proposal was successfully created.'
+    expect(page).to have_content 'Testing auto link'
+    expect(page).to have_link('http://example.org', href: 'http://example.org')
+    expect(page).not_to have_link('click me')
+    expect(page.html).to_not include "<script>alert('hey')</script>"
+
+    click_link 'Edit'
+
+    expect(current_path).to eq edit_proposal_path(Proposal.last)
+    expect(page).not_to have_link('click me')
+    expect(page.html).to_not include "<script>alert('hey')</script>"
+  end
+
   context 'Tagging proposals' do
     let(:author) { create(:user) }
 

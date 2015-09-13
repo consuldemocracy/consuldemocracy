@@ -57,14 +57,13 @@
         </span>
       </div>
 
-      <h3><%= @proposal.question %></h3>
+      <%= safe_html_with_links @proposal.description %>
 
       <% if @proposal.external_url.present? %>
         <div><%= link_to(@proposal.external_url) %></div>
       <% end %>
 
-      <%= @proposal.description %>
-
+      <h4><%= @proposal.question %></h4>
 
       <%= render 'shared/tags', proposal: @proposal %>
 
