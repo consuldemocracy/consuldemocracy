@@ -71,7 +71,7 @@ feature 'Verify Letter' do
     visit new_letter_path
 
     expect(page).to have_content 'You have not yet confirmed your residence'
-    expect(URI.parse(current_url).path).to eq(new_residence_path)
+    expect(current_path).to eq(new_residence_path)
   end
 
   scenario "Deny access unless verified phone/email" do
@@ -81,7 +81,7 @@ feature 'Verify Letter' do
     visit new_letter_path
 
     expect(page).to have_content 'You have not yet enter the confirmation code'
-    expect(URI.parse(current_url).path).to eq(new_sms_path)
+    expect(current_path).to eq(new_sms_path)
   end
 
   scenario '6 tries allowed' do
@@ -97,11 +97,11 @@ feature 'Verify Letter' do
     end
 
     expect(page).to have_content "You have reached the maximum number of verification tries. Please try again later."
-    expect(URI.parse(current_url).path).to eq(account_path)
+    expect(current_path).to eq(account_path)
 
     visit new_letter_path
     expect(page).to have_content "You have reached the maximum number of verification tries. Please try again later."
-    expect(URI.parse(current_url).path).to eq(account_path)
+    expect(current_path).to eq(account_path)
   end
 
 end
