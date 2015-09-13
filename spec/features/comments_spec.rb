@@ -76,17 +76,7 @@ feature 'Comments' do
     end
   end
 
-  scenario 'Create', :js do
-    login_as(user)
-    visit debate_path(debate)
 
-    fill_in "comment-body-debate_#{debate.id}", with: 'Have you thought about...?'
-    click_button 'Publish comment'
-
-    within "#comments" do
-      expect(page).to have_content 'Have you thought about...?'
-    end
-  end
 
   scenario 'Errors on create', :js do
     login_as(user)

@@ -59,6 +59,23 @@ describe User do
     end
   end
 
+  describe "#block}" do
+    let(:user) { create(:user, username: 'Hideable Smith') }
+
+    it "all comments and debates should be invisible after blocking"  do
+      debate = create :debate, author: user
+      5.times do
+        create :comment, user: user, commentable: debate
+      end
+      user.block
+      user.reload
+      expect(user.hidden_at).not_to be_nil
+
+      expect(Comment.count).to be 0
+      expect(Debate.count).to be 0
+    end
+  end
+
   describe "#name" do
     it "is the username when the user is not an organization" do
       expect(subject.name).to eq(subject.username)

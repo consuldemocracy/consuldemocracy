@@ -15,6 +15,7 @@ ActiveRecord::Schema.define(version: 20150912145218) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+  enable_extension "unaccent"
 
   create_table "addresses", force: :cascade do |t|
     t.integer  "user_id"
@@ -89,8 +90,8 @@ ActiveRecord::Schema.define(version: 20150912145218) do
     t.integer  "author_id"
     t.datetime "created_at",                                          null: false
     t.datetime "updated_at",                                          null: false
-    t.string   "visit_id"
     t.datetime "hidden_at"
+    t.string   "visit_id"
     t.integer  "flags_count",                             default: 0
     t.datetime "ignored_flag_at"
     t.integer  "cached_votes_total",                      default: 0
@@ -165,7 +166,7 @@ ActiveRecord::Schema.define(version: 20150912145218) do
   create_table "locks", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "tries",        default: 0
-    t.datetime "locked_until", default: '2015-09-11 17:24:30', null: false
+    t.datetime "locked_until", default: '2015-09-11 06:42:50', null: false
     t.datetime "created_at",                                   null: false
     t.datetime "updated_at",                                   null: false
   end
@@ -242,9 +243,9 @@ ActiveRecord::Schema.define(version: 20150912145218) do
     t.string   "unconfirmed_email"
     t.boolean  "email_on_debate_comment",             default: false
     t.boolean  "email_on_comment_reply",              default: false
-    t.string   "phone_number",             limit: 30
     t.string   "official_position"
     t.integer  "official_level",                      default: 0
+    t.string   "phone_number",             limit: 30
     t.datetime "hidden_at"
     t.string   "sms_confirmation_code"
     t.string   "username",                 limit: 60

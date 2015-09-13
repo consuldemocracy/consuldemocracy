@@ -125,8 +125,10 @@ class User < ActiveRecord::Base
     comments_ids = Comment.where(user_id: id).pluck(:id)
 
     self.hide
-    Debate.hide_all debates_ids
+    # The order is relevant in the hiding order.
+    # Comment must be first as needs it's associated Debate not to be hidden.
     Comment.hide_all comments_ids
+    Debate.hide_all debates_ids
   end
 
 
