@@ -283,6 +283,9 @@ es:
     flag: Denunciar como inapropiado
     unflag: Deshacer denuncia
     collective: Colectivo
+    check: Seleccionar
+    check_all: Todos
+    check_none: Ninguno
   mailer:
     comment:
       subject: Alguien ha comentado en tu propuesta

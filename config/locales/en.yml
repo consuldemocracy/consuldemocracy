@@ -281,6 +281,9 @@ en:
     flag: Flag as inappropriate
     unflag: Undo flag
     collective: Collective
+    check: Select
+    check_all: All
+    check_none: None
   mailer:
     comment:
       subject: Someone has commented on your debate

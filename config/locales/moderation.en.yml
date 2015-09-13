@@ -42,6 +42,28 @@ en:
           all: All
           pending_flag_review: Pending
           with_ignored_flag: Ignored
+    proposals:
+      index:
+        hide_proposals: Hide proposals
+        block_authors: Block authors
+        ignore_flags: Ignore flags
+        title: Proposals
+        headers:
+          proposal: Proposal
+          moderate: Moderate
+        hide: Hide
+        ignore_flag: Ignore
+        ignored_flag: Ignored
+        filter: Filter
+        filters:
+          all: All
+          pending_flag_review: Pending
+          with_ignored_flag: Ignored
+        order: Order
+        orders:
+          created_at: Newest
+          flags: Most flagged
+        confirm: Are you sure?
     bulk:
       index:
         title: Bulk moderation
