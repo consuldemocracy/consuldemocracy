@@ -40,6 +40,10 @@ class Proposal < ActiveRecord::Base
     cached_votes_up/flags_count.to_f < 5
   end
 
+  def description
+    super.try :html_safe
+  end
+
   def tag_list_with_limit(limit = nil)
     return tags if limit.blank?
 
