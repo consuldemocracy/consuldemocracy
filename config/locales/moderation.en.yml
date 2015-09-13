@@ -1,6 +1,7 @@
 en:
   moderation:
     menu:
+      proposals: Proposals
       flagged_debates: Debates
       flagged_comments: Comments
       users: Ban users

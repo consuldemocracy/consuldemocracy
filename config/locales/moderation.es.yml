@@ -1,6 +1,7 @@
 es:
   moderation:
     menu:
+      proposals: Propuestas
       flagged_debates: Debates
       flagged_comments: Comentarios
       users: Bloquear usuarios
