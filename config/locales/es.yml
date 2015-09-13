@@ -289,6 +289,7 @@ es:
   welcome:
     last_debates: Últimos debates
     last_proposals: Últimas propuestas
+    signed_in_home_title: Actividad reciente
     welcome:
       title: Verificación de cuenta
       instructions_1_html: "Bienvenido a la página de participación ciudadana"

@@ -289,6 +289,7 @@ en:
   welcome:
     last_debates: Last debates
     last_proposals: Last proposals
+    signed_in_home_title: Recent activity
     welcome:
       title: Account verification
       instructions_1_html: "Welcome to the public participation website."

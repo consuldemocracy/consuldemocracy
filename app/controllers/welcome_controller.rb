@@ -4,11 +4,31 @@ class WelcomeController < ApplicationController
   layout "devise", only: :welcome
 
   def index
-    @featured_debates = Debate.sort_by_confidence_score.limit(3).for_render
-    set_debate_votes(@featured_debates)
+    current_user ? signed_in_home : public_home
   end
 
   def welcome
   end
 
+  private
+    def public_home
+      @featured_debates = Debate.sort_by_confidence_score.limit(3).for_render
+      set_debate_votes(@featured_debates)
+
+      @featured_proposals = Proposal.sort_by_confidence_score.limit(3).for_render
+      set_proposal_votes(@featured_proposals)
+    end
+
+    def signed_in_home
+      debates = Debate.sort_by_hot_score.page(params[:page]).per(10).for_render
+      set_debate_votes(debates)
+
+      proposals = Proposal.sort_by_hot_score.page(params[:page]).per(10).for_render
+      set_proposal_votes(proposals)
+
+      @list = (debates.to_a + proposals.to_a).sort{|a, b| b.hot_score <=> a.hot_score}
+      @paginator = debates.total_pages > proposals.total_pages ? debates : proposals
+
+      render 'signed_in_home'
+    end
 end
