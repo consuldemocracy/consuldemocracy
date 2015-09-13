@@ -26,7 +26,7 @@ en:
       locale: "Language:"
       administration: Administration
       moderation: Moderation
-      # welcome: Welcome
+      welcome: "Welcome"
       more_information: "More information"
       debates: Debates
       proposals: Proposals
@@ -159,6 +159,7 @@ en:
     proposal:
       proposal: Proposal
       support: "Support"
+      support_title: "Support this proposal"
       comments:
         zero: No comments
         one: 1 Comment

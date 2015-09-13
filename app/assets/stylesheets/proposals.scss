@@ -75,6 +75,7 @@
   // }
 
   .total-supports {
+    color: $proposals;
     float: right;
     font-size: rem-calc(14);
 
@@ -342,7 +343,6 @@
     // }
 
     .total-supports {
-      color: $proposals;
       display: inline-block;
       line-height: $line-height;
       margin-left: rem-calc(24);
@@ -456,13 +456,16 @@
     font-weight: bold;
   }
 
-  h3 {
-    border-top: 2px solid $brand;
-    display: inline-block;
-    font-size: rem-calc(16);
-    margin: -1px 0 rem-calc(12);
-    padding-top: rem-calc(6);
-    text-transform: uppercase;
+  aside {
+
+    h3 {
+      border-top: 2px solid $brand;
+      display: inline-block;
+      font-size: rem-calc(16);
+      margin: -1px 0 rem-calc(12);
+      padding-top: rem-calc(6);
+      text-transform: uppercase;
+    }
   }
 
   .supports {
@@ -539,8 +542,8 @@
   }
 
   .icon-proposals {
-    color: $debates;
-    font-size: rem-calc(60);
+    color: $proposals;
+    font-size: rem-calc(50);
     line-height: $line-height;
     opacity: .5;
   }
@@ -563,7 +566,7 @@
       margin: rem-calc(12) 0;
 
       &:before {
-        color: $debates;
+        color: $proposals;
         content: "l ";
         font-family: "icons" !important;
       }

@@ -26,7 +26,7 @@ es:
       locale: "Idioma:"
       administration: Administrar
       moderation: Moderar
-      # welcome: Portada
+      welcome: "Portada"
       more_information: "Más información"
       debates: Debates
       proposals: Propuestas ciudadanas
@@ -159,6 +159,7 @@ es:
     proposal:
       proposal: Propuesta
       support: "Apoyar"
+      support_title: "Apoyar esta propuesta"
       comments:
         zero: Sin comentarios
         one: 1 Comentario
