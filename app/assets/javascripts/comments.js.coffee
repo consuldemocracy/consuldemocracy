@@ -22,6 +22,9 @@ App.Comments =
   toggle_form: (id) ->
     $("#js-comment-form-#{id}").toggle()
 
+  update_comments_counter: (counter_text) ->
+    $("a[href='#comments']").html(counter_text)
+
   initialize: ->
     $('body .js-add-comment-link').each ->
       $this = $(this)

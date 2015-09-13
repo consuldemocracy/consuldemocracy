@@ -1,8 +1,10 @@
 var comment_html = "<%= j(render @comment) %>"
+var comments_counter = "<%= j( link_to t("debates.show.comments", count: @commentable.comments_count), "#comments") %>"
 
+App.Comments.update_comments_counter(comments_counter)
 <% if @comment.root? -%>
   var commentable_id = '<%= dom_id(@commentable) %>';
-  App.Comments.reset_form(commentable_id);
+   App.Comments.reset_form(commentable_id);
   App.Comments.add_comment(commentable_id, comment_html);
 <% else -%>
   var parent_id = '<%= "comment_#{@comment.parent_id}" %>';
