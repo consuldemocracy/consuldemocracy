@@ -128,10 +128,13 @@ class User < ActiveRecord::Base
   def block
     debates_ids = Debate.where(author_id: id).pluck(:id)
     comments_ids = Comment.where(user_id: id).pluck(:id)
+    proposal_ids = Proposal.where(author_id: id).pluck(:id)
 
     self.hide
+
     Debate.hide_all debates_ids
     Comment.hide_all comments_ids
+    Proposal.hide_all proposal_ids
   end
 
 
