@@ -1,5 +1,5 @@
-module WaitForAjax
-  def wait_for_ajax
+module WaitingForAjax
+  def waiting_for_ajax
     Timeout.timeout(1) do
       loop until finished_all_ajax_requests?
     end
@@ -11,5 +11,5 @@ module WaitForAjax
 end
 
 RSpec.configure do |config|
-  config.include WaitForAjax, type: :feature
+  config.include WaitingForAjax, type: :feature
 end

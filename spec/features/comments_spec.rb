@@ -76,17 +76,14 @@ feature 'Comments' do
     end
   end
 
-
   scenario 'Count comments', :js do
     login_as(user)
     visit debate_path(debate)
-
     2.times do |time|
       fill_in "comment-body-debate_#{debate.id}", with: "Have you thought about...#{time}?"
       click_button 'Publish comment'
-      wait_for_ajax
+      waiting_for_ajax
     end
-
     expect(page).not_to have_content 'No comments'
 
     within '.debate-info' do
@@ -97,7 +94,6 @@ feature 'Comments' do
       expect(page).to have_content 'Have you thought about...1?'
     end
   end
-
 
   scenario 'Errors on create', :js do
     login_as(user)
