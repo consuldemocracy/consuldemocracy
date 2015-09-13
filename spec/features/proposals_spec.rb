@@ -40,7 +40,9 @@ feature 'Proposals' do
     visit proposal_path(proposal)
 
     expect(page).to have_content proposal.title
+    expect(page).to have_content "Proposal question"
     expect(page).to have_content "Proposal description"
+    expect(page).to have_content "http://external_documention.es"
     expect(page).to have_content proposal.author.name
     expect(page).to have_content I18n.l(proposal.created_at.to_date)
     expect(page).to have_selector(avatar(proposal.author.name))

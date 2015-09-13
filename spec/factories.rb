@@ -105,7 +105,7 @@ FactoryGirl.define do
     sequence(:title)     { |n| "Proposal #{n} title" }
     description          'Proposal description'
     question             'Proposal question'
-    external_url         'http://decide.madrid.es'
+    external_url         'http://external_documention.es'
     terms_of_service     '1'
     association :author, factory: :user
 
