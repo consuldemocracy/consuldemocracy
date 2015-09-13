@@ -12,7 +12,7 @@ en:
       open: "Open"
       participation: Participation
       open_city_title: "The city you want, it will be the city you want."
-      open_city_slogan:
+      open_city_slogan_html:
         "Start listening to Madrid.
         For that we open this digital Puerta del Sol, where all the locals can meet to discuss and share everything we want."
       # open_city_text:
@@ -26,7 +26,7 @@ en:
       locale: "Language:"
       administration: Administration
       moderation: Moderation
-      # welcome: Welcome
+      welcome: "Welcome"
       more_information: "More information"
       debates: Debates
       proposals: Proposals
@@ -159,6 +159,7 @@ en:
     proposal:
       proposal: Proposal
       support: "Support"
+      support_title: "Support this proposal"
       comments:
         zero: No comments
         one: 1 Comment

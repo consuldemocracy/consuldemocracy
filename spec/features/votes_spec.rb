@@ -569,3 +569,6 @@ feature 'Votes' do
     end
   end
 end
+
+
+pending "Remove support button text - tested in Update spec"

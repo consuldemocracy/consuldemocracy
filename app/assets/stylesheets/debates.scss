@@ -487,13 +487,16 @@
     font-weight: bold;
   }
 
-  h3 {
-    border-top: 2px solid $brand;
-    display: inline-block;
-    font-size: rem-calc(16);
-    margin: -1px 0 rem-calc(12);
-    padding-top: rem-calc(6);
-    text-transform: uppercase;
+  aside {
+
+    h3 {
+      border-top: 2px solid $brand;
+      display: inline-block;
+      font-size: rem-calc(16);
+      margin: -1px 0 rem-calc(12);
+      padding-top: rem-calc(6);
+      text-transform: uppercase;
+    }
   }
 
   .votes {

@@ -302,11 +302,19 @@ header {
     font-size: rem-calc(16);
     margin-top: 0;
 
-    &.see-more {
+    &.see-more-debates {
       width: 100%;
 
       @media (min-width: $small-breakpoint) {
         width: auto;
+      }
+    }
+
+    &.see-more-proposals {
+     @extend .see-more-debates;
+
+     @media (min-width: $small-breakpoint) {
+        margin-left: rem-calc(12);
       }
     }
   }
@@ -329,7 +337,7 @@ header {
     @media (min-width: $small-breakpoint) {
       display: inline-block;
       margin-bottom: 0;
-      margin-left: rem-calc(24);
+      margin-left: rem-calc(12);
     }
 
     &:hover {
@@ -656,7 +664,7 @@ header {
     @media (min-width: $small-breakpoint) {
       line-height: $line-height*3;
       margin-left: rem-calc(12);
-      margin-right: rem-calc(72);
+      margin-right: rem-calc(36);
     }
 
     &:after {
@@ -772,7 +780,7 @@ footer {
   @extend .tags;
 
   h3 {
-    border-top: 1px solid $votes-border;
+    border-top: 2px solid $brand;
     display: inline-block;
     font-family: $font-family-sans-serif;
     font-size: rem-calc(16);
@@ -1403,6 +1411,7 @@ table {
 
       li {
         font-size: rem-calc(15);
+        line-height: rem-calc(30);
         margin-bottom: rem-calc(12);
       }
     }

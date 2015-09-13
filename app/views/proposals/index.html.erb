@@ -9,7 +9,7 @@
     <div id="proposals" class="proposals-list small-12 medium-9 column">
 
       <div class="filters">
-        <div class="small-12 medium-7 column">
+        <div class="small-12 medium-7 left">
           <% if @search_terms %>
             <h2 class="margin-top">
               <%= page_entries_info @proposals %>
@@ -24,14 +24,14 @@
         </div>
 
         <% if @tag_filter || @search_terms %>
-          <div class="small-12 medium-5 margin-top inline-block proposals-order">
+          <div class="small-12 medium-5 margin-top margin-top inline-block proposals-order">
             <h6 class="inline-block">
               <%= t("proposals.index.select_order") %>
             </h6>
             <%= render 'shared/order_selector', i18n_namespace: "proposals.index" %>
           </div>
         <% else %>
-          <div class="small-12 column margin-top inline-block">
+          <div class="small-12 inline-block">
             <h2 class="inline-block">
               <%= t("proposals.index.select_order_long") %>
             </h2>

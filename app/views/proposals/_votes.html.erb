@@ -1,8 +1,8 @@
 <% voted_classes = css_classes_for_vote(@proposal_votes, proposal) %>
 <div class="supports">
 
-  <div class="progress small-12 radius">
-    <span class="meter" style="width: 10%;"></span>
+  <div class="progress small-12 round">
+    <span class="meter" style="width: <%= progress_bar_percentage(proposal) %>%;"></span>
   </div>
 
   <span class="total-supports">
@@ -10,8 +10,8 @@
   </span>
 
   <div class="in-favor">
-      <%= link_to vote_proposal_path(proposal, value: 'yes'), class: "button button-support tiny radius expand #{voted_classes[:in_favor]}",
-      title: t('proposals.proposal.support'), method: "post", remote: true do %>
+  <%= link_to vote_proposal_path(proposal, value: 'yes'), class: "button button-support tiny radius expand #{voted_classes[:in_favor]}",
+      title: t('proposals.proposal.support_title'), method: "post", remote: true do %>
         <%= t("proposals.proposal.support") %>
       <% end %>
   </div>

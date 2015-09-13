@@ -102,6 +102,10 @@ class Proposal < ActiveRecord::Base
     terms.present? ? where("title ILIKE ? OR description ILIKE ? OR question ILIKE ?", "%#{terms}%", "%#{terms}%", "%#{terms}%") : none
   end
 
+  def self.votes_needed_for_success
+    53726
+  end
+
   protected
 
     def sanitize_description
