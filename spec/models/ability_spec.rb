@@ -198,8 +198,14 @@ describe Ability do
       it { should_not be_able_to(:ignore_flag, ignored_proposal) }
       it { should_not be_able_to(:ignore_flag, own_proposal) }
 
+      it { should be_able_to(:moderate, proposal) }
+      it { should_not be_able_to(:moderate, own_proposal) }
+
       it { should_not be_able_to(:hide, user) }
       it { should be_able_to(:hide, other_user) }
+
+      it { should_not be_able_to(:block, user) }
+      it { should be_able_to(:block, other_user) }
 
       it { should_not be_able_to(:restore, comment) }
       it { should_not be_able_to(:restore, debate) }

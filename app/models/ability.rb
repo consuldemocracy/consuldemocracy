@@ -71,8 +71,14 @@ class Ability
         can :ignore_flag, Proposal, ignored_flag_at: nil, hidden_at: nil
         cannot :ignore_flag, Proposal, author_id: user.id
 
+        can :moderate, Proposal
+        cannot :moderate, Proposal, author_id: user.id
+
         can :hide, User
         cannot :hide, User, id: user.id
+
+        can :block, User
+        cannot :block, User, id: user.id
       end
 
       if user.moderator?
