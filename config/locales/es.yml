@@ -244,7 +244,8 @@ es:
     unauthenticated: "Necesitas %{signin} o %{signup} para continuar."
     signin: iniciar sesión
     signup: registrarte
-    anonymous: "Esta propuesta ya tiene demasiados votos anónimos, para poder votar %{verify_account}."
+    anonymous: "Demasiados votos anónimos, para poder votar %{verify_account}."
+    verified_only: "Esta propuesta sólo puede ser votada por usuarios verificados, %{verify_account}."
     verify_account: verifica tu cuenta
     organizations: Las organizaciones no pueden votar
   account:

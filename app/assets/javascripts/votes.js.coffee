@@ -12,8 +12,5 @@ App.Votes =
 
   initialize: ->
     App.Votes.hoverize votes for votes in $("div.votes")
+    App.Votes.hoverize votes for votes in $("div.supports")
     false
-
-
-
-

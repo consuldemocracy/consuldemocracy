@@ -73,4 +73,23 @@ describe Proposal do
       expect(proposal.editable?).to be false
     end
   end
+
+  describe "#votable_by?" do
+    let(:proposal) { create(:proposal) }
+
+    it "should be true for level two verified users" do
+      user = create(:user, residence_verified_at: Time.now, confirmed_phone: "666333111")
+      expect(proposal.votable_by?(user)).to be true
+    end
+
+    it "should be true for level three verified users" do
+      user = create(:user, verified_at: Time.now)
+      expect(proposal.votable_by?(user)).to be true
+    end
+
+    it "should be false for anonymous users" do
+      user = create(:user)
+      expect(proposal.votable_by?(user)).to be false
+    end
+  end
 end

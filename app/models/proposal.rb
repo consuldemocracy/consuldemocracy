@@ -70,7 +70,16 @@ class Proposal < ActiveRecord::Base
   end
 
   def votable_by?(user)
-    user.level_two_verified? || !user.voted_for?(self)
+    user.level_two_or_three_verified?
+  end
+
+  def register_vote(user, vote_value)
+    return unless votable_by?(user)
+    if user.voted_for?(self)
+      unvote_by(user)
+    else
+      vote_by(voter: user, vote: vote_value)
+    end
   end
 
   def code

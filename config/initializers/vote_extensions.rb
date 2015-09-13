@@ -4,7 +4,7 @@ ActsAsVotable::Vote.class_eval do
   end
 
   def self.for_proposals(proposals)
-    where(votable_type: 'Debate', votable_id: proposals)
+    where(votable_type: 'Proposal', votable_id: proposals)
   end
 
   def value

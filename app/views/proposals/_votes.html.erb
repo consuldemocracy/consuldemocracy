@@ -1,4 +1,4 @@
-<% voted_classes = css_classes_for_proposal_vote(@proposal_votes, proposal) %>
+<% voted_classes = css_classes_for_vote(@proposal_votes, proposal) %>
 <div class="supports">
 
   <div class="progress small-12 radius">
@@ -9,10 +9,12 @@
     <%= t("proposals.proposal.supports", count: proposal.total_votes) %>&nbsp;<span><%= t("proposals.proposal.supports_necessary") %></span>
   </span>
 
-  <%= link_to vote_proposal_path(proposal, value: 'yes'), class: "button button-support tiny radius expand #{voted_classes[:in_favor]}",
+  <div class="in-favor">
+      <%= link_to vote_proposal_path(proposal, value: 'yes'), class: "button button-support tiny radius expand #{voted_classes[:in_favor]}",
       title: t('proposals.proposal.support'), method: "post", remote: true do %>
         <%= t("proposals.proposal.support") %>
-  <% end %>
+      <% end %>
+  </div>
 
   <% if user_signed_in? && current_user.organization? %>
   <div class="organizations-votes" style='display:none'>
@@ -23,7 +25,7 @@
   <% elsif user_signed_in? && !proposal.votable_by?(current_user)%>
   <div class="anonymous-votes" style='display:none'>
     <p>
-      <%= t("votes.anonymous",
+      <%= t("votes.verified_only",
           verify_account: link_to(t("votes.verify_account"), verification_path )).html_safe %>
     </p>
   </div>

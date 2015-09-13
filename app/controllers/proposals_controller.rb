@@ -67,6 +67,11 @@ class ProposalsController < ApplicationController
     respond_with @proposal, template: 'proposals/_refresh_flag_actions'
   end
 
+  def vote
+    @proposal.register_vote(current_user, 'yes')
+    set_proposal_votes(@proposal)
+  end
+
   private
 
     def proposal_params

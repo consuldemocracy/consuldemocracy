@@ -135,4 +135,19 @@ module CommonActions
     expect(page).to have_content 'Correct code'
   end
 
+  def expect_message_you_need_to_sign_in
+    expect(page).to have_content 'You need to sign in or sign up before continuing'
+    expect(page).to have_selector('.in-favor a', visible: false)
+  end
+
+  def expect_message_to_many_anonymous_votes
+    expect(page).to have_content 'Too many anonymous votes, verify your account to vote.'
+    expect(page).to have_selector('.in-favor a', visible: false)
+  end
+
+  def expect_message_only_verified_can_vote
+    expect(page).to have_content 'This proposal can only be voted by verified users, verify your account.'
+    expect(page).to have_selector('.in-favor a', visible: false)
+  end
+
 end
