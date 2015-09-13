@@ -19,41 +19,39 @@ feature 'Votes' do
 
       visit root_path
 
-      within("#featured-debates") do
-        within("#debate_#{debate1.id}_votes") do
-          within(".in-favor") do
-            expect(page).to have_css("a.voted")
-            expect(page).to_not have_css("a.no-voted")
-          end
-
-          within(".against") do
-            expect(page).to have_css("a.no-voted")
-            expect(page).to_not have_css("a.voted")
-          end
+      within("#debate_#{debate1.id}_votes") do
+        within(".in-favor") do
+          expect(page).to have_css("a.voted")
+          expect(page).to_not have_css("a.no-voted")
         end
 
-        within("#debate_#{debate2.id}_votes") do
-          within(".in-favor") do
-            expect(page).to_not have_css("a.voted")
-            expect(page).to_not have_css("a.no-voted")
-          end
+        within(".against") do
+          expect(page).to have_css("a.no-voted")
+          expect(page).to_not have_css("a.voted")
+        end
+      end
 
-          within(".against") do
-            expect(page).to_not have_css("a.no-voted")
-            expect(page).to_not have_css("a.voted")
-          end
+      within("#debate_#{debate2.id}_votes") do
+        within(".in-favor") do
+          expect(page).to_not have_css("a.voted")
+          expect(page).to_not have_css("a.no-voted")
         end
 
-        within("#debate_#{debate3.id}_votes") do
-          within(".in-favor") do
-            expect(page).to have_css("a.no-voted")
-            expect(page).to_not have_css("a.voted")
-          end
+        within(".against") do
+          expect(page).to_not have_css("a.no-voted")
+          expect(page).to_not have_css("a.voted")
+        end
+      end
 
-          within(".against") do
-            expect(page).to have_css("a.voted")
-            expect(page).to_not have_css("a.no-voted")
-          end
+      within("#debate_#{debate3.id}_votes") do
+        within(".in-favor") do
+          expect(page).to have_css("a.no-voted")
+          expect(page).to_not have_css("a.voted")
+        end
+
+        within(".against") do
+          expect(page).to have_css("a.voted")
+          expect(page).to_not have_css("a.no-voted")
         end
       end
     end
@@ -205,21 +203,19 @@ feature 'Votes' do
       scenario 'Create in featured', :js do
         visit root_path
 
-        within("#featured-debates") do
-          find('.in-favor a').click
+        find('.in-favor a').click
 
-          within('.in-favor') do
-            expect(page).to have_content "100%"
-            expect(page).to have_css("a.voted")
-          end
-
-          within('.against') do
-            expect(page).to have_content "0%"
-            expect(page).to have_css("a.no-voted")
-          end
-
-          expect(page).to have_content "1 vote"
+        within('.in-favor') do
+          expect(page).to have_content "100%"
+          expect(page).to have_css("a.voted")
         end
+
+        within('.against') do
+          expect(page).to have_content "0%"
+          expect(page).to have_css("a.no-voted")
+        end
+
+        expect(page).to have_content "1 vote"
         expect(current_path).to eq(root_path)
       end
 
