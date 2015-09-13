@@ -36,7 +36,7 @@ class ProposalsController < ApplicationController
 
     if @proposal.save_with_captcha
       ahoy.track :proposal_created, proposal_id: @proposal.id
-      redirect_to @proposal, notice: t('flash.actions.create.notice', resource_name: 'proposal')
+      redirect_to @proposal, notice: t('flash.actions.create.notice', resource_name: 'Proposal')
     else
       load_featured_tags
       render :new

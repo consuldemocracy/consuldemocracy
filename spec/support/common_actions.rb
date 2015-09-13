@@ -134,4 +134,5 @@ module CommonActions
 
     expect(page).to have_content 'Correct code'
   end
+
 end

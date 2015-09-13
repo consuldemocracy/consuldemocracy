@@ -55,32 +55,18 @@ feature 'Debates' do
     login_as(author)
 
     visit new_debate_path
-    fill_in 'debate_title', with: 'Acabar con los desahucios'
-    fill_in 'debate_description', with: 'Esto es un tema muy importante porque...'
+    fill_in 'debate_title', with: 'End evictions'
+    fill_in 'debate_description', with: 'This is very important because...'
     fill_in 'debate_captcha', with: correct_captcha_text
     check 'debate_terms_of_service'
 
     click_button 'Start a debate'
 
     expect(page).to have_content 'Debate was successfully created.'
-    expect(page).to have_content 'Acabar con los desahucios'
-    expect(page).to have_content 'Esto es un tema muy importante porque...'
+    expect(page).to have_content 'End evictions'
+    expect(page).to have_content 'This is very important because...'
     expect(page).to have_content author.name
     expect(page).to have_content I18n.l(Debate.last.created_at.to_date)
-  end
-
-  scenario 'CKEditor is present before & after turbolinks update page', :js do
-    author = create(:user)
-    login_as(author)
-
-    visit new_debate_path
-
-    expect(page).to have_css "#cke_debate_description"
-
-    click_link 'Debates'
-    click_link 'Start a debate'
-
-    expect(page).to have_css "#cke_debate_description"
   end
 
   scenario 'Captcha is required for debate creation' do

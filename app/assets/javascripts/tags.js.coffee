@@ -1,7 +1,7 @@
 App.Tags =
 
   initialize: ->
-    $tag_input = $('input#debate_tag_list')
+    $tag_input = $('input.js-tag-list')
 
     $('body .js-add-tag-link').each ->
       $this = $(this)

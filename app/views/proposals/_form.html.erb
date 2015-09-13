@@ -30,7 +30,7 @@
           <a class="js-add-tag-link"><%= tag.name %></a>
         <% end %>
       </span>
-      <%= f.text_field :tag_list, value: @proposal.tag_list.to_s, label: false, placeholder: t("proposals.form.tags_placeholder") %>
+      <%= f.text_field :tag_list, value: @proposal.tag_list.to_s, label: false, placeholder: t("proposals.form.tags_placeholder"), class: 'js-tag-list' %>
     </div>
 
     <div class="small-12 column">

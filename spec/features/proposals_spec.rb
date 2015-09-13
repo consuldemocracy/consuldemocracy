@@ -52,6 +52,282 @@ feature 'Proposals' do
     end
   end
 
+  scenario 'Create' do
+    author = create(:user)
+    login_as(author)
+
+    visit new_proposal_path
+    fill_in 'proposal_title', with: 'Help refugees'
+    fill_in 'proposal_question', with: '¿Would you like to give assistance to war refugees?'
+    fill_in 'proposal_description', with: 'This is very important because...'
+    fill_in 'proposal_external_url', with: 'http://rescue.org/refugees'
+    fill_in 'proposal_captcha', with: correct_captcha_text
+    check 'proposal_terms_of_service'
+
+    click_button 'Start a proposal'
+
+    expect(page).to have_content 'Proposal was successfully created.'
+    expect(page).to have_content 'Help refugees'
+    expect(page).to have_content '¿Would you like to give assistance to war refugees?'
+    expect(page).to have_content 'This is very important because...'
+    expect(page).to have_content 'http://rescue.org/refugees'
+    expect(page).to have_content author.name
+    expect(page).to have_content I18n.l(Proposal.last.created_at.to_date)
+  end
+
+  scenario 'Captcha is required for proposal creation' do
+    login_as(create(:user))
+
+    visit new_proposal_path
+    fill_in 'proposal_title', with: "Great title"
+    fill_in 'proposal_question', with: '¿Would you like to give assistance to war refugees?'
+    fill_in 'proposal_description', with: 'Very important issue...'
+    fill_in 'proposal_external_url', with: 'http://rescue.org/refugees'
+    fill_in 'proposal_captcha', with: "wrongText!"
+    check 'proposal_terms_of_service'
+
+    click_button "Start a proposal"
+
+    expect(page).to_not have_content "Proposal was successfully created."
+    expect(page).to have_content "1 error"
+
+    fill_in 'proposal_captcha', with: correct_captcha_text
+    click_button "Start a proposal"
+
+    expect(page).to have_content "Proposal was successfully created."
+  end
+
+  scenario 'Failed creation goes back to new showing featured tags' do
+    featured_tag = create(:tag, :featured)
+    tag = create(:tag)
+    login_as(create(:user))
+
+    visit new_proposal_path
+    fill_in 'proposal_title', with: ""
+    fill_in 'proposal_question', with: '¿Would you like to give assistance to war refugees?'
+    fill_in 'proposal_description', with: 'Very important issue...'
+    fill_in 'proposal_external_url', with: 'http://rescue.org/refugees'
+    fill_in 'proposal_captcha', with: correct_captcha_text
+    check 'proposal_terms_of_service'
+
+    click_button "Start a proposal"
+
+    expect(page).to_not have_content "Proposal was successfully created."
+    expect(page).to have_content "error"
+    within(".tags") do
+      expect(page).to have_content featured_tag.name
+      expect(page).to_not have_content tag.name
+    end
+  end
+
+  scenario 'Errors on create' do
+    author = create(:user)
+    login_as(author)
+
+    visit new_proposal_path
+    click_button 'Start a proposal'
+    expect(page).to have_content error_message
+  end
+
+  scenario 'JS injection is prevented but safe html is respected' do
+    author = create(:user)
+    login_as(author)
+
+    visit new_proposal_path
+    fill_in 'proposal_title', with: 'Testing an attack'
+    fill_in 'proposal_question', with: '¿Would you like to give assistance to war refugees?'
+    fill_in 'proposal_description', with: '<p>This is <script>alert("an attack");</script></p>'
+    fill_in 'proposal_external_url', with: 'http://rescue.org/refugees'
+    fill_in 'proposal_captcha', with: correct_captcha_text
+    check 'proposal_terms_of_service'
+
+    click_button 'Start a proposal'
+
+    expect(page).to have_content 'Proposal was successfully created.'
+    expect(page).to have_content 'Testing an attack'
+    expect(page.html).to include '<p>This is alert("an attack");</p>'
+    expect(page.html).to_not include '<script>alert("an attack");</script>'
+    expect(page.html).to_not include '&lt;p&gt;This is'
+  end
+
+  context 'Tagging proposals' do
+    let(:author) { create(:user) }
+
+    background do
+      login_as(author)
+    end
+
+    scenario 'using featured tags', :js do
+      ['Medio Ambiente', 'Ciencia'].each do |tag_name|
+        create(:tag, :featured, name: tag_name)
+      end
+
+      visit new_proposal_path
+
+      fill_in 'proposal_title', with: 'A test with enough characters'
+      fill_in 'proposal_question', with: '¿Would you like to give assistance to war refugees?'
+      fill_in_ckeditor 'proposal_description', with: 'A description with enough characters'
+      fill_in 'proposal_external_url', with: 'http://rescue.org/refugees'
+      fill_in 'proposal_captcha', with: correct_captcha_text
+      check 'proposal_terms_of_service'
+
+      ['Medio Ambiente', 'Ciencia'].each do |tag_name|
+        find('.js-add-tag-link', text: tag_name).click
+      end
+
+      click_button 'Start a proposal'
+
+      expect(page).to have_content 'Proposal was successfully created.'
+      ['Medio Ambiente', 'Ciencia'].each do |tag_name|
+        expect(page).to have_content tag_name
+      end
+    end
+
+    scenario 'using dangerous strings' do
+      visit new_proposal_path
+
+      fill_in 'proposal_title', with: 'A test of dangerous strings'
+      fill_in 'proposal_question', with: '¿Would you like to give assistance to war refugees?'
+      fill_in 'proposal_description', with: 'A description suitable for this test'
+      fill_in 'proposal_external_url', with: 'http://rescue.org/refugees'
+      fill_in 'proposal_captcha', with: correct_captcha_text
+      check 'proposal_terms_of_service'
+
+      fill_in 'proposal_tag_list', with: 'user_id=1, &a=3, <script>alert("hey");</script>'
+
+      click_button 'Start a proposal'
+
+      expect(page).to have_content 'Proposal was successfully created.'
+      expect(page).to have_content 'user_id1'
+      expect(page).to have_content 'a3'
+      expect(page).to have_content 'scriptalert("hey");script'
+      expect(page.html).to_not include 'user_id=1, &a=3, <script>alert("hey");</script>'
+    end
+  end
+
+  scenario 'Update should not be posible if logged user is not the author' do
+    proposal = create(:proposal)
+    expect(proposal).to be_editable
+    login_as(create(:user))
+
+    visit edit_proposal_path(proposal)
+    expect(current_path).to eq(root_path)
+    expect(page).to have_content 'not authorized'
+  end
+
+  scenario 'Update should not be posible if proposal is not editable' do
+    proposal = create(:proposal)
+    Setting.find_by(key: "max_votes_for_proposal_edit").update(value: 10)
+    11.times { create(:vote, votable: proposal) }
+
+    expect(proposal).to_not be_editable
+
+    login_as(proposal.author)
+    visit edit_proposal_path(proposal)
+
+    expect(current_path).to eq(root_path)
+    expect(page).to have_content 'not authorized'
+  end
+
+  scenario 'Update should be posible for the author of an editable proposal' do
+    proposal = create(:proposal)
+    login_as(proposal.author)
+
+    visit edit_proposal_path(proposal)
+    expect(current_path).to eq(edit_proposal_path(proposal))
+
+    fill_in 'proposal_title', with: "End child poverty"
+    fill_in 'proposal_question', with: '¿Would you like to give assistance to war refugees?'
+    fill_in 'proposal_description', with: "Let's do something to end child poverty"
+    fill_in 'proposal_external_url', with: 'http://rescue.org/refugees'
+    fill_in 'proposal_captcha', with: correct_captcha_text
+
+    click_button "Save changes"
+
+    expect(page).to have_content "Proposal was successfully updated."
+    expect(page).to have_content "End child poverty"
+    expect(page).to have_content "Let's do something to end child poverty"
+  end
+
+  scenario 'Errors on update' do
+    proposal = create(:proposal)
+    login_as(proposal.author)
+
+    visit edit_proposal_path(proposal)
+    fill_in 'proposal_title', with: ""
+    click_button "Save changes"
+
+    expect(page).to have_content error_message
+  end
+
+  scenario 'Captcha is required to update a proposal' do
+    proposal = create(:proposal)
+    login_as(proposal.author)
+
+    visit edit_proposal_path(proposal)
+    expect(current_path).to eq(edit_proposal_path(proposal))
+
+    fill_in 'proposal_title', with: "New cool title"
+    fill_in 'proposal_captcha', with: "wrong!"
+    click_button "Save changes"
+
+    expect(page).to_not have_content "Proposal was successfully updated."
+    expect(page).to have_content "error"
+
+    fill_in 'proposal_captcha', with: correct_captcha_text
+    click_button "Save changes"
+
+    expect(page).to have_content "Proposal was successfully updated."
+  end
+
+  scenario 'Failed update goes back to edit showing featured tags' do
+    proposal       = create(:proposal)
+    featured_tag = create(:tag, :featured)
+    tag = create(:tag)
+    login_as(proposal.author)
+
+    visit edit_proposal_path(proposal)
+    expect(current_path).to eq(edit_proposal_path(proposal))
+
+    fill_in 'proposal_title', with: ""
+    fill_in 'proposal_captcha', with: correct_captcha_text
+    click_button "Save changes"
+
+    expect(page).to_not have_content "Proposal was successfully updated."
+    expect(page).to have_content "error"
+    within(".tags") do
+      expect(page).to have_content featured_tag.name
+      expect(page).to_not have_content tag.name
+    end
+  end
+
+  describe 'Limiting tags shown' do
+    scenario 'Index page shows up to 5 tags per proposal' do
+      tag_list = ["Hacienda", "Economía", "Medio Ambiente", "Corrupción", "Fiestas populares", "Prensa", "Huelgas"]
+      create :proposal, tag_list: tag_list
+
+      visit proposals_path
+
+      within('.proposal .tags') do
+        expect(page).to have_content '2+'
+      end
+    end
+
+    scenario 'Index page shows 3 tags with no plus link' do
+      tag_list = ["Medio Ambiente", "Corrupción", "Fiestas populares"]
+      create :proposal, tag_list: tag_list
+
+      visit proposals_path
+
+      within('.proposal .tags') do
+        tag_list.each do |tag|
+          expect(page).to have_content tag
+        end
+        expect(page).not_to have_content '+'
+      end
+    end
+  end
+
   feature 'Proposal index order filters' do
 
     scenario 'Default order is confidence_score', :js do
@@ -163,5 +439,16 @@ feature 'Proposals' do
       expect(page).to_not have_content(proposal1.title)
       expect(page).to_not have_content(proposal3.title)
     end
+  end
+
+  scenario 'Conflictive' do
+    good_proposal = create(:proposal)
+    conflictive_proposal = create(:proposal, :conflictive)
+
+    visit proposal_path(conflictive_proposal)
+    expect(page).to have_content "This proposal has been flag as innapropiate for some users."
+
+    visit proposal_path(good_proposal)
+    expect(page).to_not have_content "This proposal has been flag as innapropiate for some users."
   end
 end
