@@ -331,20 +331,20 @@ feature 'Proposals' do
   feature 'Proposal index order filters' do
 
     scenario 'Default order is confidence_score', :js do
-      create(:proposal, title: 'Best Proposal').update_column(:confidence_score, 10)
-      create(:proposal, title: 'Worst Proposal').update_column(:confidence_score, 2)
-      create(:proposal, title: 'Medium Proposal').update_column(:confidence_score, 5)
+      create(:proposal, title: 'Best proposal').update_column(:confidence_score, 10)
+      create(:proposal, title: 'Worst proposal').update_column(:confidence_score, 2)
+      create(:proposal, title: 'Medium proposal').update_column(:confidence_score, 5)
 
       visit proposals_path
 
-      expect('Best Proposal').to appear_before('Medium Proposal')
-      expect('Medium Proposal').to appear_before('Worst Proposal')
+      expect('Best proposal').to appear_before('Medium proposal')
+      expect('Medium proposal').to appear_before('Worst proposal')
     end
 
     scenario 'Proposals are ordered by hot_score', :js do
-      create(:proposal, title: 'Best Proposal').update_column(:hot_score, 10)
-      create(:proposal, title: 'Worst Proposal').update_column(:hot_score, 2)
-      create(:proposal, title: 'Medium Proposal').update_column(:hot_score, 5)
+      create(:proposal, title: 'Best proposal').update_column(:hot_score, 10)
+      create(:proposal, title: 'Worst proposal').update_column(:hot_score, 2)
+      create(:proposal, title: 'Medium proposal').update_column(:hot_score, 5)
 
       visit proposals_path
       select 'most active', from: 'order-selector'
@@ -352,8 +352,8 @@ feature 'Proposals' do
       expect(page).to have_selector('.js-order-selector[data-order="hot_score"]')
 
       within '#proposals' do
-        expect('Best Proposal').to appear_before('Medium Proposal')
-        expect('Medium Proposal').to appear_before('Worst Proposal')
+        expect('Best proposal').to appear_before('Medium proposal')
+        expect('Medium proposal').to appear_before('Worst proposal')
       end
 
       expect(current_url).to include('order=hot_score')
@@ -361,9 +361,9 @@ feature 'Proposals' do
     end
 
     scenario 'Proposals are ordered by most commented', :js do
-      create(:proposal, title: 'Best Proposal',   comments_count: 10)
-      create(:proposal, title: 'Medium Proposal', comments_count: 5)
-      create(:proposal, title: 'Worst Proposal',  comments_count: 2)
+      create(:proposal, title: 'Best proposal',   comments_count: 10)
+      create(:proposal, title: 'Medium proposal', comments_count: 5)
+      create(:proposal, title: 'Worst proposal',  comments_count: 2)
 
       visit proposals_path
       select 'most commented', from: 'order-selector'
@@ -371,8 +371,8 @@ feature 'Proposals' do
       expect(page).to have_selector('.js-order-selector[data-order="most_commented"]')
 
       within '#proposals' do
-        expect('Best Proposal').to appear_before('Medium Proposal')
-        expect('Medium Proposal').to appear_before('Worst Proposal')
+        expect('Best proposal').to appear_before('Medium proposal')
+        expect('Medium proposal').to appear_before('Worst proposal')
       end
 
       expect(current_url).to include('order=most_commented')
@@ -380,9 +380,9 @@ feature 'Proposals' do
     end
 
     scenario 'Proposals are ordered by newest', :js do
-      create(:proposal, title: 'Best Proposal',   created_at: Time.now)
-      create(:proposal, title: 'Medium Proposal', created_at: Time.now - 1.hour)
-      create(:proposal, title: 'Worst Proposal',  created_at: Time.now - 1.day)
+      create(:proposal, title: 'Best proposal',   created_at: Time.now)
+      create(:proposal, title: 'Medium proposal', created_at: Time.now - 1.hour)
+      create(:proposal, title: 'Worst proposal',  created_at: Time.now - 1.day)
 
       visit proposals_path
       select 'newest', from: 'order-selector'
@@ -390,8 +390,8 @@ feature 'Proposals' do
       expect(page).to have_selector('.js-order-selector[data-order="created_at"]')
 
       within '#proposals' do
-        expect('Best Proposal').to appear_before('Medium Proposal')
-        expect('Medium Proposal').to appear_before('Worst Proposal')
+        expect('Best proposal').to appear_before('Medium proposal')
+        expect('Medium proposal').to appear_before('Worst proposal')
       end
 
       expect(current_url).to include('order=created_at')
