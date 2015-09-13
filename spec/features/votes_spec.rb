@@ -568,7 +568,6 @@ feature 'Votes' do
       expect_message_only_verified_can_vote
     end
   end
+
+  xscenario "Remove support button text - tested in Update spec"
 end
-
-
-pending "Remove support button text - tested in Update spec"
