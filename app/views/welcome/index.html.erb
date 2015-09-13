@@ -1,6 +1,28 @@
 <% cache [locale_and_user_status, @featured_debates, @debate_votes, 'featured'] do %>
   <section role="main">
+    <div class="row text-center">
+      <div class="small-12 medium-3 column">
+        <%= image_tag("icon_home_debates.png") %>
+        <h2>Debates</h2>
+        <p>Encontrarnos, debatir y compartir lo que nos parece conveniente, importante o necesario para nuestra ciudad.</p>
+      </div>
+      <div class="small-12 medium-3 column">
+        <%= image_tag("icon_home_propones.png") %>
+        <h2>Propones</h2>
+        <p>Hay también un espacio abierto para propuestas ciudadanas sobre el tipo de ciudad en el que queremos vivir.</p>
+      </div>
 
+      <div class="small-12 medium-3 column">
+        <%= image_tag("icon_home_decides.png") %>
+        <h2>Decides</h2>
+        <p>Cuando una propuesta es apoyada pasa a un espacio de votación en el que se invita a toda la ciudadanía a apoyarla o rechazarla como propuesta colectiva.</p>
+      </div>
+      <div class="small-12 medium-3 column">
+        <%= image_tag("icon_home_sehace.png") %>
+        <h2>Se hace</h2>
+        <p>Si la propuesta es aceptada en mayoría, se emitirán los informes adecuados para llevarla a cabo dentro de los cauces legales, presupuestarios y de viabilidad.</p>
+      </div>
+    </div>
     <div class="filters row">
       <div class="small-12 column">
         <h2><%= t("welcome.last_proposals") %></h2>

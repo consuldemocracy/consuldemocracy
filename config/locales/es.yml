@@ -12,9 +12,11 @@ es:
       open: "abierto"
       participation: Participación
       open_city_title: "La ciudad que quieres será la ciudad que quieras."
-      open_city_slogan:
-        "Empecemos escuchando qué tiene que decir Madrid.
-        Para ello abrimos esta Puerta del Sol digital, donde toda la gente de Madrid podemos encontrarnos para debatir y compartir todo lo que queramos."
+      open_city_slogan_html:
+        "Existen ciudades gobernadas directamente por sus habitantes, que <b>debaten</b> sobre temas que les preocupan, <b>proponen</b> ideas para mejorar
+        sus vidas y <b>deciden</b> entre todas y todos las que se llevan a cabo. Madrid ya es una de ellas."
+      #"Empecemos escuchando qué tiene que decir Madrid.
+      #Para ello abrimos esta Puerta del Sol digital, donde toda la gente de Madrid podemos encontrarnos para debatir y compartir todo lo que queramos."
       # open_city_text:
       #   "Aquí cualquier voz tiene su espacio y son los ciudadanos y ciudadanas, y nadie en su nombre, quienes deciden votando los debates cuáles son los temas
       #    más importantes de cada momento. Los responsables del gobierno tienen cuentas de usuario propias con las que podrán participar en los debates, y ser evaluados
