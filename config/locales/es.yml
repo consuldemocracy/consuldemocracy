@@ -92,20 +92,6 @@ es:
         zero: Sin votos
         one: 1 voto
         other: "%{count} votos"
-    comment:
-      author: Autor del debate
-      moderator: Moderador
-      admin: Administrador
-      deleted: Este comentario ha sido eliminado
-      user_deleted: Usuario eliminado
-      responses:
-        zero: Sin respuestas
-        one: 1 Respuesta
-        other: "%{count} Respuestas"
-      votes:
-        zero: Sin votos
-        one: 1 voto
-        other: "%{count} votos"
     form:
       debate_title: Título del debate
       debate_text: Texto inicial del debate
@@ -180,20 +166,6 @@ es:
         zero: Sin votos
         one: 1 voto
         other: "%{count} votos"
-    comment:
-      author: Autor de la propuesta
-      moderator: Moderador
-      admin: Administrador
-      deleted: Este comentario ha sido eliminado
-      user_deleted: Usuario eliminado
-      responses:
-        zero: Sin respuestas
-        one: 1 Respuesta
-        other: "%{count} Respuestas"
-      votes:
-        zero: Sin votos
-        one: 1 voto
-        other: "%{count} votos"
     form:
       proposal_title: Título de la propuesta
       proposal_question: Pregunta de la propuesta
@@ -244,6 +216,20 @@ es:
       leave_comment: Deja tu comentario
       comment_as_moderator: Comentar como moderador
       comment_as_admin: Comentar como administrador
+    comment:
+      author: Autor
+      moderator: Moderador
+      admin: Administrador
+      deleted: Este comentario ha sido eliminado
+      user_deleted: Usuario eliminado
+      responses:
+        zero: Sin respuestas
+        one: 1 Respuesta
+        other: "%{count} Respuestas"
+      votes:
+        zero: Sin votos
+        one: 1 voto
+        other: "%{count} votos"
   comments_helper:
     comment_link: Comentar
     comment_button: Publicar comentario

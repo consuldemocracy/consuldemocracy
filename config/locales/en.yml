@@ -92,20 +92,6 @@ en:
         zero: No votes
         one: 1 vote
         other: "%{count} votes"
-    comment:
-      author: Debate's author
-      moderator: Moderator
-      admin: Administrator
-      deleted: This comment has been deleted
-      user_deleted: Deleted user
-      responses:
-        zero: No Responses
-        one: 1 Response
-        other: "%{count} Responses"
-      votes:
-        zero: No votes
-        one: 1 vote
-        other: "%{count} votes"
     form:
       debate_title: Debate title
       debate_text: Initial text for debate
@@ -180,20 +166,6 @@ en:
         zero: No votes
         one: 1 vote
         other: "%{count} votes"
-    comment:
-      author: Proposal's author
-      moderator: Moderator
-      admin: Administrator
-      deleted: This comment has been deleted
-      user_deleted: Deleted user
-      responses:
-        zero: No Responses
-        one: 1 Response
-        other: "%{count} Responses"
-      votes:
-        zero: No votes
-        one: 1 vote
-        other: "%{count} votes"
     form:
       proposal_title: Proposal title
       proposal_question: Proposal question
@@ -244,6 +216,20 @@ en:
       leave_comment: Write a comment
       comment_as_moderator: Comment as moderator
       comment_as_admin: Comment as administrator
+    comment:
+      author: Author
+      moderator: Moderator
+      admin: Administrator
+      deleted: This comment has been deleted
+      user_deleted: Deleted user
+      responses:
+        zero: No Responses
+        one: 1 Response
+        other: "%{count} Responses"
+      votes:
+        zero: No votes
+        one: 1 vote
+        other: "%{count} votes"
   comments_helper:
     comment_link: Comment
     comment_button: Publish comment
