@@ -12,7 +12,7 @@ describe Proposal do
     expect(proposal).to_not be_valid
   end
 
-  it "should not be valid without an question" do
+  it "should not be valid without a question" do
     proposal.question = nil
     expect(proposal).to_not be_valid
   end
