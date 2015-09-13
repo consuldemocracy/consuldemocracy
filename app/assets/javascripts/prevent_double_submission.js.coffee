@@ -1,14 +1,18 @@
 App.PreventDoubleSubmission =
-  disable_button: (buttons) ->
-    buttons.each (button)->
-      unless button.hasClass('disabled')
-        loading = button.data('loading') ? '...'
-        button.addClass('disabled').attr('disabled', 'disabled')
-        button.data('text', button.val())
-        button.val(loading)
+  disable_buttons: (buttons) ->
+    setTimeout ->
+      buttons.each ->
+        button = $(this)
+        unless button.hasClass('disabled')
+          loading = button.data('loading') ? '...'
+          button.addClass('disabled').attr('disabled', 'disabled')
+          button.data('text', button.val())
+          button.val(loading)
+    , 1
 
-  reset_button: (buttons) ->
-    buttons.each (button)->
+  reset_buttons: (buttons) ->
+    buttons.each ->
+      button = $(this)
       if button.hasClass('disabled')
         button_text = button.data('text')
         button.removeClass('disabled').attr('disabled', null)
