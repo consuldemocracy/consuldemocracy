@@ -108,7 +108,12 @@ ignore_unused:
   - 'admin.users.index.filter*'
   - 'moderation.comments.index.filter*'
   - 'moderation.debates.index.filter*'
+  - 'moderation.proposals.index.filter*'
+  - 'moderation.proposals.index.order*'
   - 'debates.index.orders.*'
+  - 'debates.index.search_form.*'
+  - 'proposals.index.orders.*'
+  - 'proposals.index.search_form.*'
   - 'helpers.page_entries_info.*' # kaminari
   - 'views.pagination.*' # kaminari
 # - '{devise,kaminari,will_paginate}.*'

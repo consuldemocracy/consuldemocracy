@@ -52,9 +52,6 @@ es:
         headers:
           proposal: Propuesta
           moderate: Moderar
-        hide: Hide
-        ignore_flag: Ignore
-        ignored_flag: Ignored
         filter: Filtro
         filters:
           all: Todas
