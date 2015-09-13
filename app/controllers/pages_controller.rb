@@ -34,6 +34,15 @@ class PagesController < ApplicationController
   def transparency
   end
 
+  def proposals_info
+  end
+
+  def participation_facts
+  end
+
+  def participation_world
+  end
+
   def blog
     redirect_to "http://diario.madrid.es/blog/category/gobiernoabierto/"
   end
