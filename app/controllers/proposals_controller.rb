@@ -57,6 +57,16 @@ class ProposalsController < ApplicationController
     end
   end
 
+  def flag
+    Flag.flag(current_user, @proposal)
+    respond_with @proposal, template: 'proposals/_refresh_flag_actions'
+  end
+
+  def unflag
+    Flag.unflag(current_user, @proposal)
+    respond_with @proposal, template: 'proposals/_refresh_flag_actions'
+  end
+
   private
 
     def proposal_params
