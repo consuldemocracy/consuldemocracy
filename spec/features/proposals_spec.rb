@@ -255,7 +255,8 @@ feature 'Proposals' do
     login_as(create(:user))
 
     visit edit_proposal_path(proposal)
-    expect(current_path).to eq(root_path)
+    expect(current_path).not_to eq(edit_proposal_path(proposal))
+    expect(current_path).to eq(highlights_path)
     expect(page).to have_content 'not authorized'
   end
 
@@ -269,7 +270,8 @@ feature 'Proposals' do
     login_as(proposal.author)
     visit edit_proposal_path(proposal)
 
-    expect(current_path).to eq(root_path)
+    expect(current_path).not_to eq(edit_proposal_path(proposal))
+    expect(current_path).to eq(highlights_path)
     expect(page).to have_content 'not authorized'
   end
 
