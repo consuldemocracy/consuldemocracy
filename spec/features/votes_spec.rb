@@ -10,53 +10,6 @@ feature 'Votes' do
   end
 
   feature 'Debates' do
-    xscenario "Home shows user votes on featured debates" do
-      pending "logged in user cannot see this page"
-
-      debate1 = create(:debate)
-      debate2 = create(:debate)
-      debate3 = create(:debate)
-      create(:vote, voter: @manuela, votable: debate1, vote_flag: true)
-      create(:vote, voter: @manuela, votable: debate3, vote_flag: false)
-
-      visit root_path
-
-      within("#debate_#{debate1.id}_votes") do
-        within(".in-favor") do
-          expect(page).to have_css("a.voted")
-          expect(page).to_not have_css("a.no-voted")
-        end
-
-        within(".against") do
-          expect(page).to have_css("a.no-voted")
-          expect(page).to_not have_css("a.voted")
-        end
-      end
-
-      within("#debate_#{debate2.id}_votes") do
-        within(".in-favor") do
-          expect(page).to_not have_css("a.voted")
-          expect(page).to_not have_css("a.no-voted")
-        end
-
-        within(".against") do
-          expect(page).to_not have_css("a.no-voted")
-          expect(page).to_not have_css("a.voted")
-        end
-      end
-
-      within("#debate_#{debate3.id}_votes") do
-        within(".in-favor") do
-          expect(page).to have_css("a.no-voted")
-          expect(page).to_not have_css("a.voted")
-        end
-
-        within(".against") do
-          expect(page).to have_css("a.voted")
-          expect(page).to_not have_css("a.no-voted")
-        end
-      end
-    end
 
     scenario "Index shows user votes on debates" do
       debate1 = create(:debate)
@@ -251,11 +204,6 @@ feature 'Votes' do
       visit "/"
       click_link "Logout"
 
-      within("#debate_#{debate.id}") do
-        find("div.votes").hover
-        expect_message_you_need_to_sign_in
-      end
-
       visit debates_path
       within("#debate_#{debate.id}") do
         find("div.votes").hover
@@ -293,39 +241,6 @@ feature 'Votes' do
   end
 
   feature 'Proposals' do
-    xscenario "Home shows user votes on featured proposals" do
-      pending "logged in user cannot see this page"
-      proposal1 = create(:proposal)
-      proposal2 = create(:proposal)
-      proposal3 = create(:proposal)
-      create(:vote, voter: @manuela, votable: proposal1, vote_flag: true)
-      create(:vote, voter: @manuela, votable: proposal3, vote_flag: false)
-
-      visit root_path
-
-      within("#featured-proposals") do
-        within("#proposal_#{proposal1.id}_votes") do
-          within(".supports") do
-            expect(page).to have_css("a.voted")
-            expect(page).to_not have_css("a.no-voted")
-          end
-        end
-
-        within("#proposal_#{proposal2.id}_votes") do
-          within(".supports") do
-            expect(page).to_not have_css("a.voted")
-            expect(page).to_not have_css("a.no-voted")
-          end
-        end
-
-        within("#proposal_#{proposal3.id}_votes") do
-          within(".supports") do
-            expect(page).to have_css("a.no-voted")
-            expect(page).to_not have_css("a.voted")
-          end
-        end
-      end
-    end
 
     scenario "Index shows user votes on proposals" do
       proposal1 = create(:proposal)
@@ -436,11 +351,6 @@ feature 'Votes' do
     visit "/"
     click_link "Logout"
     expect(page).to have_content "Signed out successfully."
-
-    within("#proposal_#{proposal.id}") do
-      find("div.supports").hover
-      expect_message_you_need_to_sign_in
-    end
 
     visit proposals_path
     within("#proposal_#{proposal.id}") do

@@ -4,7 +4,12 @@ class WelcomeController < ApplicationController
   layout "devise", only: :welcome
 
   def index
-    current_user ? (redirect_to :highlights) : public_home
+    if current_user
+      redirect_to :highlights
+    end
+  end
+
+  def welcome
   end
 
   def highlights
@@ -19,18 +24,6 @@ class WelcomeController < ApplicationController
 
     render 'highlights'
   end
-
-  def welcome
-  end
-
-  private
-    def public_home
-      @featured_debates = Debate.sort_by_confidence_score.limit(3).for_render
-      set_debate_votes(@featured_debates)
-
-      @featured_proposals = Proposal.sort_by_confidence_score.limit(3).for_render
-      set_proposal_votes(@featured_proposals)
-    end
 
 
 end
