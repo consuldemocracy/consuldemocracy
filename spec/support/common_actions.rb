@@ -145,8 +145,8 @@ module CommonActions
     expect(page).to have_selector('.in-favor a', visible: false)
   end
 
-  def expect_message_only_verified_can_vote
-    expect(page).to have_content 'This proposal can only be voted by verified users, verify your account.'
+  def expect_message_only_verified_can_vote_proposals
+    expect(page).to have_content 'Proposals can only be voted by verified users, verify your account.'
     expect(page).to have_selector('.in-favor a', visible: false)
   end
 

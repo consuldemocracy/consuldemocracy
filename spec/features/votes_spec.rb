@@ -463,13 +463,13 @@ feature 'Votes' do
 
     within("#proposal_#{proposal.id}") do
       find("div.supports").hover
-      expect_message_only_verified_can_vote
+      expect_message_only_verified_can_vote_proposals
     end
 
     visit proposal_path(proposal)
     within("#proposal_#{proposal.id}") do
       find("div.supports").hover
-      expect_message_only_verified_can_vote
+      expect_message_only_verified_can_vote_proposals
     end
   end
 
