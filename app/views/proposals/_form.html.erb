@@ -9,8 +9,16 @@
 
     <div class="small-12 column">
       <%= f.label :question, t("proposals.form.proposal_question") %>
-      <span class="note"><strong>Debe ser resumida en una pregunta cuya respuesta sea Sí o No.</strong> <em>Ej. "¿Está usted de acuerdo en peatonalizar la calle ?"</span>
+      <span class="note-marked">
+        <%= t("proposals.form.proposal_question_example_html") %>
+      </span>
       <%= f.text_field :question, maxlength: Proposal.question_max_length, placeholder: t("proposals.form.proposal_question"), label: false %>
+    </div>
+
+    <div class="small-12 column">
+      <%= f.label :question, t("proposals.form.proposal_summary") %>
+      <span class="note"><%= t("proposals.form.proposal_summary_note") %></span>
+      <textarea rows="4" placeholder="<%= t('proposals.form.proposal_summary') %>"></textarea>
     </div>
 
     <div class="ckeditor small-12 column">
@@ -37,6 +45,7 @@
     <% if current_user.unverified? %>
       <div class="small-12 column">
         <%= f.label :responsible_name, t("proposals.form.proposal_responsible_name") %>
+        <span class="note"><%= t("proposals.form.proposal_responsible_name_note") %></span>
         <%= f.text_field :responsible_name, placeholder: t("proposals.form.proposal_responsible_name"), label: false %>
       </div>
     <% end %>

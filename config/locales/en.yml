@@ -175,9 +175,13 @@ en:
     form:
       proposal_title: Proposal title
       proposal_question: Proposal question
+      proposal_question_example_html: "Debe ser resumida en una pregunta cuya respuesta sea Sí o No. <em>Ej. '¿Está usted de acuerdo en peatonalizar la calle Mayor?'</em>"
       proposal_text: Initial text for proposal
       proposal_external_url: Link to additional documentation
+      proposal_summary: "Proposal summary"
+      proposal_summary_note: "200 chars. maximum"
       proposal_responsible_name: "First and last name of the person making this proposal"
+      proposal_responsible_name_note: "(individualmente o como representante de un colectivo; no se mostrará públicamente)"
       tags_label: Topics
       tags_instructions: >
         Tag this proposal. You can choose among our proposals on the list or add any other topic you want.
@@ -202,14 +206,12 @@ en:
         submit_button: "Save changes"
     new:
       start_new: Start a proposal
-      info: "Please explain your proposal crearly. If the proposal get enough support and advances to referendum phase, it must be condensed to a question with a Yes/No anwser. If your proposal is not clear or you just have to share your opinion please consider starting a debate instead"
-      more_info: "More info"
+      more_info: "¿Cómo funcionan las propuestas ciudadanas?"
       back_link: Back
       recommendations_title: Tips for creating a proposal
       recommendation_one: "Do not write the title of the proposal or whole sentences in capital. On the Internet this is considered shouting. And nobody likes to scream."
       recommendation_two: "Any discussion or comment that involves an illegal act will be eliminated, also intending to sabotage the proposal spaces, everything else is permitted."
-      recommendation_three: "The harsh criticism are very welcome. This is a space of thought but we recommend preserving the elegance and intelligence. The world is better with them present."
-      recommendation_four: "Enjoy this space, voices that fill it, it is yours too."
+      recommendation_three: "Enjoy this space, voices that fill it, it is yours too."
       form:
         submit_button: "Start a proposal"
     create:
