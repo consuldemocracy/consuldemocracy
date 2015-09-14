@@ -27,13 +27,13 @@
       <%= f.cktext_area :description, maxlength: Proposal.description_max_length, ckeditor: { language: I18n.locale }, label: false %>
     </div>
 
-    <!-- link for external video URL -->
-    <!-- <div class="small-12 column">
-      <%#= f.label :external_url, t("proposals.form.proposal_external_video_url") %>
-      <span class="note"><%#= t("proposals.form.proposal_external_video_url_note") %></span>
-      <%#= f.text_field :external_url, placeholder: t("proposals.form.proposal_external_video_url"), label: false %>
-    </div> -->
-    <!-- /. link for external video URL -->
+
+    <div class="small-12 column">
+      <%= f.label :video_url, t("proposals.form.proposal_video_url") %>
+      <span class="note"><%= t("proposals.form.proposal_video_url_note") %></span>
+      <%= f.text_field :video_url, placeholder: t("proposals.form.proposal_video_url"), label: false %>
+    </div>
+
     <div class="small-12 column">
       <%= f.label :external_url, t("proposals.form.proposal_external_url") %>
       <%= f.text_field :external_url, placeholder: t("proposals.form.proposal_external_url"), label: false %>

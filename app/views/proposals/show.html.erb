@@ -65,7 +65,11 @@
         <%= safe_html_with_links @proposal.description %>
 
         <% if @proposal.external_url.present? %>
-          <div><%= link_to(@proposal.external_url) %></div>
+          <div><%= text_with_links @proposal.external_url %></div>
+        <% end %>
+
+        <% if @proposal.video_url.present? %>
+          <div><%= text_with_links @proposal.video_url %></div>
         <% end %>
 
         <h4><%= @proposal.question %></h4>

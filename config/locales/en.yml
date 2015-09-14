@@ -178,8 +178,8 @@ en:
       proposal_question_example_html: "Debe ser resumida en una pregunta cuya respuesta sea Sí o No. <em>Ej. '¿Está usted de acuerdo en peatonalizar la calle Mayor?'</em>"
       proposal_text: Initial text for proposal
       proposal_external_url: Link to additional documentation
-      proposal_external_video_url: "Enlace a vídeo externo"
-      proposal_external_video_url_note: "Puedes añadir un enlace a YouTube o Vimeo"
+      proposal_video_url: "Enlace a vídeo externo"
+      proposal_video_url_note: "Puedes añadir un enlace a YouTube o Vimeo"
       proposal_summary: "Proposal summary"
       proposal_summary_note: "200 chars. maximum"
       proposal_responsible_name: "First and last name of the person making this proposal"

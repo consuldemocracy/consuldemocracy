@@ -180,8 +180,8 @@ es:
       proposal_summary_note: "(máximo 200 caracteres)"
       proposal_text: Texto desarrollado de la propuesta
       proposal_external_url: Enlace a documentación adicional
-      proposal_external_video_url: "Enlace a vídeo externo"
-      proposal_external_video_url_note: "Puedes añadir un enlace a YouTube o Vimeo"
+      proposal_video_url: "Enlace a vídeo externo"
+      proposal_video_url_note: "Puedes añadir un enlace a YouTube o Vimeo"
       proposal_responsible_name: "Nombre y apellidos de la persona que hace esta propuesta"
       proposal_responsible_name_note: "(individualmente o como representante de un colectivo; no se mostrará públicamente)"
       tags_label: Temas
