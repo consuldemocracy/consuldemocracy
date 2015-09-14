@@ -679,6 +679,7 @@
       .comment-user {
         margin-top: rem-calc(6);
         padding: rem-calc(6) 0;
+        overflow: hidden;
 
         @each $n in ("1", "2", "3","4", "5") {
           &.level-#{$n} {
