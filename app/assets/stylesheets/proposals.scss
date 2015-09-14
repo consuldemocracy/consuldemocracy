@@ -29,12 +29,21 @@
   position: relative;
 
   .progress {
-    background-color: white;
-    height: rem-calc(18);
+    background-color: rgba(255,255,255,.8);
+    height: rem-calc(12);
     margin-bottom: rem-calc(6);
+    margin-top: rem-calc(4);
 
     .meter {
-      background: $proposals;
+      background: $votes-like;
+    }
+  }
+
+  abbr {
+    color: white;
+
+    &[title] {
+      border-bottom: 1px dotted white;
     }
   }
 
@@ -58,11 +67,13 @@
 
   .total-supports {
     color: white;
-    float: right;
+    text-align: center;
     font-size: rem-calc(14);
 
     span {
+      display: block;
       font-size: rem-calc(11);
+      opacity: .75;
     }
   }
 
@@ -93,7 +104,7 @@
     background: $warning-bg;
     color: $warning-color;
     height: 100%;
-    left: -3px;
+    left: 0;
     line-height: $line-height;
     padding-top: rem-calc(12);
     position: absolute;
@@ -116,6 +127,7 @@
 
   .supported {
     color: white;
+    margin-top: rem-calc(12);
   }
 }
 
@@ -330,7 +342,6 @@
     .total-supports {
       display: inline-block;
       line-height: $line-height;
-      margin-left: rem-calc(24);
       padding-top: rem-calc(12);
       vertical-align: top;
 
@@ -339,16 +350,6 @@
         float: none;
         margin-left: 0;
         padding-top: 0;
-      }
-    }
-
-    @media (min-width: $small-breakpoint) {
-      .like {
-
-        span {
-          display: block;
-          line-height: $line-height/2;
-        }
       }
     }
 

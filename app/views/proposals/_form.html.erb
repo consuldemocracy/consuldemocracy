@@ -9,6 +9,7 @@
 
     <div class="small-12 column">
       <%= f.label :question, t("proposals.form.proposal_question") %>
+      <span class="note"><strong>Debe ser resumida en una pregunta cuya respuesta sea Sí o No.</strong> <em>Ej. "¿Está usted de acuerdo en peatonalizar la calle ?"</span>
       <%= f.text_field :question, maxlength: Proposal.question_max_length, placeholder: t("proposals.form.proposal_question"), label: false %>
     </div>
 

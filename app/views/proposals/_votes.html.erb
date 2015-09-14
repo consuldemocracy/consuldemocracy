@@ -6,7 +6,15 @@
   </div>
 
   <span class="total-supports">
-    <%= t("proposals.proposal.supports", count: proposal.total_votes) %>&nbsp;<span><%= t("proposals.proposal.supports_necessary") %></span>
+    <%= t("proposals.proposal.supports", count: proposal.total_votes) %>&nbsp;
+    <!-- percentage of supports -->
+      (0.1%)
+    <!-- /. percentage of supports -->
+    <span>
+      <abbr title="<%= t("proposals.proposal.census_percent") %>">
+        <%= t("proposals.proposal.supports_necessary") %>
+      </abbr>
+    </span>
   </span>
 
   <div class="in-favor">
@@ -15,7 +23,7 @@
         <%= t("proposals.proposal.support") %>
   <% end %>
   <!-- if user supported dissapear the button and appear this :) -->
-    <div class="supported">
+    <div class="supported" style="display: none;">
       <%= t("proposals.proposal.already_supported") %>
     </div>
   <!-- /. if user supported dissapear the button and appear this :) -->
