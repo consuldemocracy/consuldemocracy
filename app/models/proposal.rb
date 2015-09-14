@@ -101,7 +101,7 @@ class Proposal < ActiveRecord::Base
   end
 
   def self.votes_needed_for_success
-    53726
+    Setting.value_for('votes_for_proposal_success').to_i
   end
 
   protected
