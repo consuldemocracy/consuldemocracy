@@ -14,7 +14,7 @@ describe VotesHelper do
       proposal = create(:proposal)
       votes = {proposal.id => nil}
 
-      expect(voted_for?(votes, proposal)).to eq(false)
+      expect(voted_for?(votes, proposal)).to eq(nil)
     end
   end
 

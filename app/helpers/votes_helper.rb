@@ -12,7 +12,7 @@ module VotesHelper
   end
 
   def voted_for?(votes, votable)
-    return false unless votes[votable.id]
+    votes[votable.id]
   end
 
 end
