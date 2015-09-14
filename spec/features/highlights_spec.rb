@@ -22,4 +22,13 @@ feature "Highlights" do
     expect('worst proposal 60').to  appear_before('worst debate 50')
   end
 
+  scenario 'create debate and create proposal links' do
+    login_as(create(:user))
+
+    visit highlights_path
+
+    expect(page).to have_link("Start a proposal")
+    expect(page).to have_link("Start a debate")
+  end
+
 end
