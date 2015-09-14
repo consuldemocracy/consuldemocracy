@@ -61,6 +61,7 @@ feature 'Proposals' do
     fill_in 'proposal_question', with: '¿Would you like to give assistance to war refugees?'
     fill_in 'proposal_description', with: 'This is very important because...'
     fill_in 'proposal_external_url', with: 'http://rescue.org/refugees'
+    fill_in 'proposal_responsible_name', with: 'Isabel Garcia'
     fill_in 'proposal_captcha', with: correct_captcha_text
     check 'proposal_terms_of_service'
 
@@ -75,6 +76,45 @@ feature 'Proposals' do
     expect(page).to have_content I18n.l(Proposal.last.created_at.to_date)
   end
 
+  scenario 'Responsible name is stored for anonymous users' do
+    author = create(:user)
+    login_as(author)
+
+    visit new_proposal_path
+    fill_in 'proposal_title', with: 'Help refugees'
+    fill_in 'proposal_question', with: '¿Would you like to give assistance to war refugees?'
+    fill_in 'proposal_description', with: 'This is very important because...'
+    fill_in 'proposal_external_url', with: 'http://rescue.org/refugees'
+    fill_in 'proposal_responsible_name', with: 'Isabel Garcia'
+    fill_in 'proposal_captcha', with: correct_captcha_text
+    fill_in 'proposal_responsible_name', with: 'Isabel Garcia'
+    check 'proposal_terms_of_service'
+
+    click_button 'Start a proposal'
+
+    expect(page).to have_content 'Proposal was successfully created.'
+    expect(Proposal.last.responsible_name).to eq('Isabel Garcia')
+  end
+
+  scenario 'Responsible name field is not shown for verified users' do
+    author = create(:user, :level_two)
+    login_as(author)
+
+    visit new_proposal_path
+    expect(page).to_not have_selector('#proposal_responsible_name')
+
+    fill_in 'proposal_title', with: 'Help refugees'
+    fill_in 'proposal_question', with: '¿Would you like to give assistance to war refugees?'
+    fill_in 'proposal_description', with: 'This is very important because...'
+    fill_in 'proposal_external_url', with: 'http://rescue.org/refugees'
+    fill_in 'proposal_captcha', with: correct_captcha_text
+    check 'proposal_terms_of_service'
+
+    click_button 'Start a proposal'
+
+    expect(page).to have_content 'Proposal was successfully created.'
+  end
+
   scenario 'Captcha is required for proposal creation' do
     login_as(create(:user))
 
@@ -83,6 +123,7 @@ feature 'Proposals' do
     fill_in 'proposal_question', with: '¿Would you like to give assistance to war refugees?'
     fill_in 'proposal_description', with: 'Very important issue...'
     fill_in 'proposal_external_url', with: 'http://rescue.org/refugees'
+    fill_in 'proposal_responsible_name', with: 'Isabel Garcia'
     fill_in 'proposal_captcha', with: "wrongText!"
     check 'proposal_terms_of_service'
 
@@ -107,6 +148,7 @@ feature 'Proposals' do
     fill_in 'proposal_question', with: '¿Would you like to give assistance to war refugees?'
     fill_in 'proposal_description', with: 'Very important issue...'
     fill_in 'proposal_external_url', with: 'http://rescue.org/refugees'
+    fill_in 'proposal_responsible_name', with: 'Isabel Garcia'
     fill_in 'proposal_captcha', with: correct_captcha_text
     check 'proposal_terms_of_service'
 
@@ -138,6 +180,7 @@ feature 'Proposals' do
     fill_in 'proposal_question', with: '¿Would you like to give assistance to war refugees?'
     fill_in 'proposal_description', with: '<p>This is <script>alert("an attack");</script></p>'
     fill_in 'proposal_external_url', with: 'http://rescue.org/refugees'
+    fill_in 'proposal_responsible_name', with: 'Isabel Garcia'
     fill_in 'proposal_captcha', with: correct_captcha_text
     check 'proposal_terms_of_service'
 
@@ -158,6 +201,7 @@ feature 'Proposals' do
     fill_in 'proposal_title', with: 'Testing auto link'
     fill_in 'proposal_question', with: 'Should I stay or should I go?'
     fill_in 'proposal_description', with: '<p>This is a link www.example.org</p>'
+    fill_in 'proposal_responsible_name', with: 'Isabel Garcia'
     fill_in 'proposal_captcha', with: correct_captcha_text
     check 'proposal_terms_of_service'
 
@@ -176,6 +220,7 @@ feature 'Proposals' do
     fill_in 'proposal_title', with: 'Testing auto link'
     fill_in 'proposal_question', with: 'Should I stay or should I go?'
     fill_in 'proposal_description', with: "<script>alert('hey')</script> <a href=\"javascript:alert('surprise!')\">click me<a/> http://example.org"
+    fill_in 'proposal_responsible_name', with: 'Isabel Garcia'
     fill_in 'proposal_captcha', with: correct_captcha_text
     check 'proposal_terms_of_service'
 
@@ -212,6 +257,7 @@ feature 'Proposals' do
       fill_in 'proposal_question', with: '¿Would you like to give assistance to war refugees?'
       fill_in_ckeditor 'proposal_description', with: 'A description with enough characters'
       fill_in 'proposal_external_url', with: 'http://rescue.org/refugees'
+      fill_in 'proposal_responsible_name', with: 'Isabel Garcia'
       fill_in 'proposal_captcha', with: correct_captcha_text
       check 'proposal_terms_of_service'
 
@@ -234,6 +280,7 @@ feature 'Proposals' do
       fill_in 'proposal_question', with: '¿Would you like to give assistance to war refugees?'
       fill_in 'proposal_description', with: 'A description suitable for this test'
       fill_in 'proposal_external_url', with: 'http://rescue.org/refugees'
+      fill_in 'proposal_responsible_name', with: 'Isabel Garcia'
       fill_in 'proposal_captcha', with: correct_captcha_text
       check 'proposal_terms_of_service'
 
@@ -286,6 +333,7 @@ feature 'Proposals' do
     fill_in 'proposal_question', with: '¿Would you like to give assistance to war refugees?'
     fill_in 'proposal_description', with: "Let's do something to end child poverty"
     fill_in 'proposal_external_url', with: 'http://rescue.org/refugees'
+    fill_in 'proposal_responsible_name', with: 'Isabel Garcia'
     fill_in 'proposal_captcha', with: correct_captcha_text
 
     click_button "Save changes"

@@ -33,6 +33,13 @@
       <%= f.text_field :tag_list, value: @proposal.tag_list.to_s, label: false, placeholder: t("proposals.form.tags_placeholder"), class: 'js-tag-list' %>
     </div>
 
+    <% if current_user.unverified? %>
+      <div class="small-12 column">
+        <%= f.label :responsible_name, t("proposals.form.proposal_responsible_name") %>
+        <%= f.text_field :responsible_name, placeholder: t("proposals.form.proposal_responsible_name"), label: false %>
+      </div>
+    <% end %>
+
     <div class="small-12 column">
       <% if @proposal.new_record? %>
         <%= f.label :terms_of_service do %>
