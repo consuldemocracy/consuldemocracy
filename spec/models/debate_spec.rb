@@ -191,7 +191,7 @@ describe Debate do
     end
 
     it "increases for debates with more comments" do
-      more_comments = create(:debate, :with_hot_score, created_at: now, comments_count: 10)
+      more_comments = create(:debate, :with_hot_score, created_at: now, comments_count: 25)
       less_comments = create(:debate, :with_hot_score, created_at: now, comments_count: 1)
       expect(more_comments.hot_score).to be > less_comments.hot_score
     end
@@ -232,8 +232,8 @@ describe Debate do
 
       it "increases with comments" do
         previous = debate.hot_score
-        Comment.create(user: create(:user), commentable: debate, body: 'foo')
-        expect(previous).to be < debate.hot_score
+        25.times{ Comment.create(user: create(:user), commentable: debate, body: 'foobarbaz') }
+        expect(previous).to be < debate.reload.hot_score
       end
     end
   end
