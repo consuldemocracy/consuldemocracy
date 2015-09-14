@@ -302,19 +302,11 @@ header {
     font-size: rem-calc(16);
     margin-top: 0;
 
-    &.see-more-debates {
+    &.see-more {
       width: 100%;
 
       @media (min-width: $small-breakpoint) {
         width: auto;
-      }
-    }
-
-    &.see-more-proposals {
-     @extend .see-more-debates;
-
-     @media (min-width: $small-breakpoint) {
-        margin-left: rem-calc(12);
       }
     }
   }

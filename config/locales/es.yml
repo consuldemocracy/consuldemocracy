@@ -22,8 +22,7 @@ es:
       #    más importantes de cada momento. Los responsables del gobierno tienen cuentas de usuario propias con las que podrán participar en los debates, y ser evaluados
       #    al mismo nivel que todos los demás."
       # open_city_soon: "Muy pronto abriremos la sección de propuestas ciudadanas, donde cualquiera podrá presentar propuestas y, si reciben apoyo, serán puestas en marcha por el Ayuntamiento."
-      see_all_debates: Ver todos los debates
-      see_all_proposals: Ver todas las propuestas
+      see_all: Ver debates y propuestas
       my_account_link: Mi cuenta
       locale: "Idioma:"
       administration: Administrar
@@ -299,6 +298,18 @@ es:
     last_debates: Últimos debates
     last_proposals: Últimas propuestas
     signed_in_home_title: Actividad reciente
+    debates:
+      title: "Debates"
+      description: "Encontrarnos, debatir y compartir lo que nos parece importante en nuestra ciudad."
+    proposal:
+      title: "Propones"
+      description: "Espacio abierto para propuestas ciudadanas sobre el tipo de ciudad en el que queremos vivir."
+    decide:
+      title: "Decides"
+      description: "La ciudadanía decide si acepta o rechaza las propuestas más apoyadas."
+    do:
+      title: "Se hace"
+      description: "Si la propuesta es aceptada mayoritariamente, el Ayuntamiento la asume como propia y se hace."
     welcome:
       title: Verificación de cuenta
       instructions_1_html: "Bienvenido a la página de participación ciudadana"
