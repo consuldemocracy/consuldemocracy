@@ -50,9 +50,9 @@ end
   user = create_user("user#{i}@madrid.es")
   level = [1,2,3].sample
   if level == 2 then
-    user.update(residence_verified_at: Time.now, confirmed_phone: Faker::PhoneNumber.phone_number )
+    user.update(residence_verified_at: Time.now, confirmed_phone: Faker::PhoneNumber.phone_number, document_number: Faker::Number.number(10) )
   elsif level == 3 then
-    user.update(verified_at: Time.now)
+    user.update(verified_at: Time.now, document_number: Faker::Number.number(10) )
   end
 end
 
@@ -86,6 +86,8 @@ tags = Faker::Lorem.words(25)
   proposal = Proposal.create!(author: author,
                               title: Faker::Lorem.sentence(3),
                               question: Faker::Lorem.sentence(3),
+                              summary: Faker::Lorem.sentence(3),
+                              responsible_name: Faker::Name.name,
                               external_url: Faker::Internet.url,
                               description: description,
                               created_at: rand((Time.now - 1.week) .. Time.now),
