@@ -102,24 +102,15 @@ class Debate < ActiveRecord::Base
   end
 
   def calculate_hot_score
-    start           = Time.new(2015, 6, 15)
-    comments_weight = 1.0/20 # 1 positive vote / x comments
-    time_unit       = 12.hours.to_f
-
-    total   = cached_votes_total + comments_weight * comments_count
-    ups     = cached_votes_up    + comments_weight * comments_count
-    downs   = total - ups
-    score   = ups - downs
-    order   = Math.log([score.abs, 1].max, 10)
-    sign    = (score <=> 0).to_f
-    seconds = ((created_at || Time.now) - start).to_f
-
-    self.hot_score = (((order * sign) + (seconds/time_unit)) * 1000000).round
+    self.hot_score = ScoreCalculator.hot_score(created_at,
+                                               cached_votes_total,
+                                               cached_votes_up,
+                                               comments_count)
   end
 
   def calculate_confidence_score
-    return unless cached_votes_total > 0
-    self.confidence_score = cached_votes_score * (cached_votes_up / cached_votes_total.to_f) * 100
+    self.confidence_score = ScoreCalculator.confidence_score(cached_votes_total,
+                                                             cached_votes_up)
   end
 
   def self.search(terms)
