@@ -13,7 +13,7 @@ class Verification::LetterController < ApplicationController
   def create
     @letter = Verification::Letter.new(user: current_user)
     if @letter.save
-      redirect_to edit_letter_path, notice: t('verification.letter.create.flash.success')
+      redirect_to edit_letter_path
     else
       flash.now.alert = t('verification.letter.create.alert.failure')
       render :new
