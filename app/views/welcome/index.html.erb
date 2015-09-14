@@ -24,23 +24,5 @@
         <p><%= t("welcome.do.description") %></p>
       </div>
     </div>
-    <div class="filters row">
-      <div class="small-12 column">
-        <h2><%= t("welcome.last_proposals") %></h2>
-      </div>
-    </div>
-    <div id="featured-proposals" class="row">
-      <%= render partial: "featured_proposal", collection: @featured_proposals %>
-    </div>
-
-    <div class="filters row">
-      <div class="small-12 column">
-        <h2><%= t("welcome.last_debates") %></h2>
-      </div>
-    </div>
-    <div id="featured-debates" class="row">
-      <%= render partial: "featured_debate", collection: @featured_debates %>
-    </div>
-
   </section>
 <% end %>
