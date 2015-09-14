@@ -78,6 +78,42 @@ describe Debate do
     end
   end
 
+  describe "#votable_by?" do
+    let(:debate) { create(:debate) }
+
+    before(:each) do
+      Setting.find_by(key: "max_ratio_anon_votes_on_debates").update(value: 50)
+    end
+
+    it "should be true for level two verified users" do
+      user = create(:user, residence_verified_at: Time.now, confirmed_phone: "666333111")
+      expect(debate.votable_by?(user)).to be true
+    end
+
+    it "should be true for level three verified users" do
+      user = create(:user, verified_at: Time.now)
+      expect(debate.votable_by?(user)).to be true
+    end
+
+    it "should be true for anonymous users if allowed anonymous votes" do
+      debate.update(cached_anonymous_votes_total: 420, cached_votes_total: 1000)
+      user = create(:user)
+      expect(debate.votable_by?(user)).to be true
+    end
+
+    it "should be true for anonymous users if less than 100 votes" do
+      debate.update(cached_anonymous_votes_total: 90, cached_votes_total: 92)
+      user = create(:user)
+      expect(debate.votable_by?(user)).to be true
+    end
+
+    it "should be false for anonymous users if too many anonymous votes" do
+      debate.update(cached_anonymous_votes_total: 520, cached_votes_total: 1000)
+      user = create(:user)
+      expect(debate.votable_by?(user)).to be false
+    end
+  end
+
   describe "#register_vote" do
     let(:debate) { create(:debate) }
 
@@ -135,42 +171,6 @@ describe Debate do
         user = create(:user)
         expect {debate.register_vote(user, 'yes')}.to_not change {debate.reload.cached_anonymous_votes_total}
       end
-    end
-  end
-
-  describe "#votable_by?" do
-    let(:debate) { create(:debate) }
-
-    before(:each) do
-      Setting.find_by(key: "max_ratio_anon_votes_on_debates").update(value: 50)
-    end
-
-    it "should be true for level two verified users" do
-      user = create(:user, residence_verified_at: Time.now, confirmed_phone: "666333111")
-      expect(debate.votable_by?(user)).to be true
-    end
-
-    it "should be true for level three verified users" do
-      user = create(:user, verified_at: Time.now)
-      expect(debate.votable_by?(user)).to be true
-    end
-
-    it "should be true for anonymous users if allowed anonymous votes" do
-      debate.update(cached_anonymous_votes_total: 420, cached_votes_total: 1000)
-      user = create(:user)
-      expect(debate.votable_by?(user)).to be true
-    end
-
-    it "should be true for anonymous users if less than 100 votes" do
-      debate.update(cached_anonymous_votes_total: 90, cached_votes_total: 92)
-      user = create(:user)
-      expect(debate.votable_by?(user)).to be true
-    end
-
-    it "should be false for anonymous users if too many anonymous votes" do
-      debate.update(cached_anonymous_votes_total: 520, cached_votes_total: 1000)
-      user = create(:user)
-      expect(debate.votable_by?(user)).to be false
     end
   end
 
