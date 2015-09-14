@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150914181921) do
+ActiveRecord::Schema.define(version: 20150914182652) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -105,6 +105,8 @@ ActiveRecord::Schema.define(version: 20150914181921) do
     t.integer  "confidence_score",                        default: 0
   end
 
+  add_index "debates", ["author_id", "hidden_at"], name: "index_debates_on_author_id_and_hidden_at", using: :btree
+  add_index "debates", ["author_id"], name: "index_debates_on_author_id", using: :btree
   add_index "debates", ["cached_votes_down"], name: "index_debates_on_cached_votes_down", using: :btree
   add_index "debates", ["cached_votes_score"], name: "index_debates_on_cached_votes_score", using: :btree
   add_index "debates", ["cached_votes_total"], name: "index_debates_on_cached_votes_total", using: :btree
@@ -209,10 +211,19 @@ ActiveRecord::Schema.define(version: 20150914181921) do
     t.text     "summary"
   end
 
+  add_index "proposals", ["author_id", "hidden_at"], name: "index_proposals_on_author_id_and_hidden_at", using: :btree
+  add_index "proposals", ["author_id"], name: "index_proposals_on_author_id", using: :btree
+  add_index "proposals", ["cached_votes_up"], name: "index_proposals_on_cached_votes_up", using: :btree
+  add_index "proposals", ["confidence_score"], name: "index_proposals_on_confidence_score", using: :btree
+  add_index "proposals", ["hidden_at"], name: "index_proposals_on_hidden_at", using: :btree
+  add_index "proposals", ["hot_score"], name: "index_proposals_on_hot_score", using: :btree
+
   create_table "settings", force: :cascade do |t|
     t.string "key"
     t.string "value"
   end
+
+  add_index "settings", ["key"], name: "index_settings_on_key", using: :btree
 
   create_table "simple_captcha_data", force: :cascade do |t|
     t.string   "key",        limit: 40
@@ -295,6 +306,10 @@ ActiveRecord::Schema.define(version: 20150914181921) do
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
   end
+
+  add_index "verified_users", ["document_number"], name: "index_verified_users_on_document_number", using: :btree
+  add_index "verified_users", ["email"], name: "index_verified_users_on_email", using: :btree
+  add_index "verified_users", ["phone"], name: "index_verified_users_on_phone", using: :btree
 
   create_table "visits", id: :uuid, default: nil, force: :cascade do |t|
     t.uuid     "visitor_id"
