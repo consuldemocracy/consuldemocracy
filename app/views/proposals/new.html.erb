@@ -7,9 +7,8 @@
     <% end %>
     <h1><%= t("proposals.new.start_new") %></h1>
     <div class="alert-box info radius">
-      <%= t("proposals.new.info")%>
-      <%= link_to "/more_information", target: "_blank" do %>
-        <strong><%= t("proposals.new.more_info")%></strong>
+      <%= link_to "/proposals_info", target: "_blank" do %>
+        <%= t("proposals.new.more_info")%>
       <% end %>
     </div>
     <%= render "form" %>
@@ -22,7 +21,6 @@
       <li><%= t("proposals.new.recommendation_one") %></li>
       <li><%= t("proposals.new.recommendation_two") %></li>
       <li><%= t("proposals.new.recommendation_three") %></li>
-      <li><%= t("proposals.new.recommendation_four") %></li>
     </ul>
   </div>
 </div>

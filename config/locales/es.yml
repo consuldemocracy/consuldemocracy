@@ -27,7 +27,7 @@ es:
       locale: "Idioma:"
       administration: Administrar
       moderation: Moderar
-      welcome: "Portada"
+      highlights: "Destacados"
       more_information: "Más información"
       debates: Debates
       proposals: Propuestas ciudadanas
@@ -138,7 +138,7 @@ es:
         submit_button: "Guardar cambios"
   proposals:
     index:
-      start_proposal: Empieza una propuesta
+      start_proposal: Crea una propuesta
       select_order: Ordenar por
       select_order_long: Estás viendo las propuestas
       orders:
@@ -175,9 +175,13 @@ es:
     form:
       proposal_title: Título de la propuesta
       proposal_question: Pregunta de la propuesta
-      proposal_text: Texto inicial de la propuesta
+      proposal_question_example_html: "Debe ser resumida en una pregunta cuya respuesta sea Sí o No. <em>Ej. '¿Está usted de acuerdo en peatonalizar la calle Mayor?'</em>"
+      proposal_summary: "Resumen de la propuesta"
+      proposal_summary_note: "(máximo 200 caracteres)"
+      proposal_text: Texto desarrollado de la propuesta
       proposal_external_url: Enlace a documentación adicional
       proposal_responsible_name: "Nombre y apellidos de la persona que hace esta propuesta"
+      proposal_responsible_name_note: "(individualmente o como representante de un colectivo; no se mostrará públicamente)"
       tags_label: Temas
       tags_instructions: >
         Etiqueta esta propuesta. Puedes elegir entre nuestras propuestas o introducir las que desees.
@@ -201,20 +205,18 @@ es:
       form:
         submit_button: "Guardar cambios"
     new:
-      start_new: Empezar una propuesta
-      info: "Si quieres que tu propuesta consiga apoyos has de explicarla claramente y de forma que se entienda. Si consigue el número adecuado de apoyos y es llevada a consulta debe ser resumida en una pregunta cuya respuesta sea Sí o No."
-      more_info: "Más información"
+      start_new: Crear una propuesta
+      more_info: "¿Cómo funcionan las propuestas ciudadanas?"
       back_link: Volver
       recommendations_title: Recomendaciones para crear una propuesta
       recommendation_one: "No escribas el título de la propuesta o frases enteras en mayúsculas. En internet eso se considera gritar. Y a nadie le gusta que le griten."
       recommendation_two: "Cualquier propuesta o comentario que implique una acción ilegal será eliminada, también las que tengan la intención de sabotear los espacios de propuesta, todo lo demás está permitido."
-      recommendation_three: "Las críticas despiadadas son muy bienvenidas. Este es un espacio de pensamiento. Pero te recomendamos conservar la elegancia y la inteligencia. El mundo es mejor con ellas presentes."
-      recommendation_four: "Disfruta de este espacio, de las voces que lo llenan, también es tuyo."
+      recommendation_three: "Disfruta de este espacio, de las voces que lo llenan, también es tuyo."
       form:
-        submit_button: "Empieza una propuesta"
+        submit_button: "Crear propuesta"
     create:
       form:
-        submit_button: "Empieza una propuesta"
+        submit_button: "Crear propuesta"
     update:
       form:
         submit_button: "Guardar cambios"

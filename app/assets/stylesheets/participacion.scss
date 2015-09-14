@@ -925,6 +925,18 @@ form {
     margin-bottom: rem-calc(12);
   }
 
+  .note-marked {
+    @extend .note;
+    background: yellow;
+    display: inline-block;
+
+    em {
+      background: white;
+      display: inline-block;
+      padding-left: rem-calc(6);
+    }
+  }
+
   .ckeditor {
     min-height: rem-calc(312);
   }
