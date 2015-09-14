@@ -155,26 +155,6 @@ feature 'Votes' do
         expect(page).to have_content "1 vote"
       end
 
-      xscenario 'Create in featured', :js do
-        pending "logged in user cannot see this page"
-        visit root_path
-
-        find('.in-favor a').click
-
-        within('.in-favor') do
-          expect(page).to have_content "100%"
-          expect(page).to have_css("a.voted")
-        end
-
-        within('.against') do
-          expect(page).to have_content "0%"
-          expect(page).to have_css("a.no-voted")
-        end
-
-        expect(page).to have_content "1 vote"
-        expect(current_path).to eq(root_path)
-      end
-
       scenario 'Create in index', :js do
         visit debates_path
 
