@@ -246,7 +246,7 @@ en:
     signin: sign in
     signup: sign up
     anonymous: "Too many anonymous votes, %{verify_account} to vote."
-    verified_only: "This proposal can only be voted by verified users, %{verify_account}."
+    verified_only: "Proposals can only be voted by verified users, %{verify_account}."
     verify_account: verify your account
     organizations: Organizations can not vote
   account:
