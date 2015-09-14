@@ -40,6 +40,7 @@ feature 'Proposals' do
     visit proposal_path(proposal)
 
     expect(page).to have_content proposal.title
+    expect(page).to have_content proposal.code
     expect(page).to have_content "Proposal question"
     expect(page).to have_content "Proposal description"
     expect(page).to have_content "http://external_documention.es"
@@ -314,7 +315,7 @@ feature 'Proposals' do
 
     visit edit_proposal_path(proposal)
     expect(current_path).not_to eq(edit_proposal_path(proposal))
-    expect(current_path).to eq(highlights_path)
+    expect(current_path).to eq(proposals_path)
     expect(page).to have_content 'not authorized'
   end
 
@@ -329,7 +330,7 @@ feature 'Proposals' do
     visit edit_proposal_path(proposal)
 
     expect(current_path).not_to eq(edit_proposal_path(proposal))
-    expect(current_path).to eq(highlights_path)
+    expect(current_path).to eq(proposals_path)
     expect(page).to have_content 'not authorized'
   end
 

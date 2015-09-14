@@ -11,24 +11,11 @@ feature "Home" do
   end
 
   feature "For signed in users" do
-    scenario 'Debates and proposals order by hot_score' do
-      create(:debate, title: 'best debate 100').update_column(:hot_score, 100)
-      create(:debate, title: 'worst debate 50').update_column(:hot_score, 50)
-      create(:debate, title: 'medium debate 70').update_column(:hot_score, 70)
-
-      create(:proposal, title: 'best proposal 90').update_column(:hot_score, 90)
-      create(:proposal, title: 'worst proposal 60').update_column(:hot_score, 60)
-      create(:proposal, title: 'medium proposal 80').update_column(:hot_score, 80)
-
+    scenario 'Redirect to proposals' do
       login_as(create(:user))
-
       visit root_path
 
-      expect('best debate 100').to    appear_before('best proposal 90')
-      expect('best proposal 90').to   appear_before('medium proposal 80')
-      expect('medium proposal 80').to appear_before('medium debate 70')
-      expect('medium debate 70').to   appear_before('worst proposal 60')
-      expect('worst proposal 60').to  appear_before('worst debate 50')
+      expect(current_path).to eq proposals_path
     end
   end
 

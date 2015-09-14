@@ -82,7 +82,7 @@
   }
 
   .not-logged {
-    background: rgba(22,99,135,.9);
+    background: rgba(255,164,45,.9);
     color: white;
     height: 100%;
     left: 0;
@@ -594,7 +594,7 @@
     .comment-votes {
       color: $text-medium;
       font-weight: lighter;
-      margin: rem-calc(15) rem-calc(6) 0;
+      margin: rem-calc(8) rem-calc(12) rem-calc(6) 0;
 
       a {
         color: $text-light;
@@ -608,7 +608,7 @@
 
       [class^="icon-"] {
         font-size: rem-calc(20);
-        vertical-align: top;
+        vertical-align: middle;
       }
     }
 
