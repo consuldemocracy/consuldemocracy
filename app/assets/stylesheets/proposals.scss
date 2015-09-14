@@ -52,28 +52,6 @@
     }
   }
 
-  // .voted {
-  //   .icon-like {
-  //     @extend .icon-like;
-  //     background: $votes-like;
-  //     border-color: white;
-  //     color: white;
-  //   }
-
-  //   .icon-unlike {
-  //     @extend .icon-unlike;
-  //     background: $votes-unlike;
-  //     border-color: white;
-  //     color: white;
-  //   }
-  // }
-
-  // .no-voted {
-  //   .icon-like, .icon-unlike {
-  //     opacity: .5;
-  //   }
-  // }
-
   .total-supports {
     color: $proposals;
     float: right;
@@ -112,7 +90,7 @@
     background: $warning-bg;
     color: $warning-color;
     height: 100%;
-    left: 0;
+    left: -3px;
     line-height: $line-height;
     padding-top: rem-calc(12);
     position: absolute;
@@ -729,6 +707,7 @@
 
   .button {
     background: none;
+    margin-bottom: 0;
     padding: 0;
   }
 }
