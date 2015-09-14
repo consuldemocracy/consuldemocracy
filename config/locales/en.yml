@@ -171,7 +171,7 @@ en:
         other: "%{count} supports"
       supports_necessary: "53.726 necessary supports"
       census_percent: "2% of census"
-      already_supported: "¡You already supported this proposal!"
+      already_supported: "You already supported this proposal!"
     form:
       proposal_title: Proposal title
       proposal_question: Proposal question

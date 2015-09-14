@@ -227,24 +227,20 @@ feature 'Votes' do
       proposal2 = create(:proposal)
       proposal3 = create(:proposal)
       create(:vote, voter: @manuela, votable: proposal1, vote_flag: true)
-      create(:vote, voter: @manuela, votable: proposal3, vote_flag: false)
 
       visit proposals_path
 
       within("#proposals") do
         within("#proposal_#{proposal1.id}_votes") do
-          expect(page).to have_css("a.voted")
-          expect(page).to_not have_css("a.no-voted")
+          expect(page).to have_content "You already supported this proposal!"
         end
 
         within("#proposal_#{proposal2.id}_votes") do
-          expect(page).to_not have_css("a.voted")
-          expect(page).to_not have_css("a.no-voted")
+          expect(page).to_not have_content "You already supported this proposal!"
         end
 
         within("#proposal_#{proposal3.id}_votes") do
-          expect(page).to have_css("a.no-voted")
-          expect(page).to_not have_css("a.voted")
+          expect(page).to_not have_content "You already supported this proposal!"
         end
       end
     end
@@ -256,13 +252,7 @@ feature 'Votes' do
 
       scenario 'Show no votes' do
         visit proposal_path(@proposal)
-
         expect(page).to have_content "No supports"
-
-        within('.supports') do
-          expect(page).to_not have_css("a.voted")
-          expect(page).to_not have_css("a.no-voted")
-        end
       end
 
       scenario 'Trying to vote multiple times', :js do
@@ -294,7 +284,7 @@ feature 'Votes' do
           find('.in-favor a').click
 
           expect(page).to have_content "1 support"
-          expect(page).to have_css("a.voted")
+          expect(page).to have_content "You already supported this proposal!"
         end
       end
 
@@ -305,7 +295,7 @@ feature 'Votes' do
           find('.in-favor a').click
 
           expect(page).to have_content "1 support"
-          expect(page).to have_css("a.voted")
+          expect(page).to have_content "You already supported this proposal!"
         end
         expect(URI.parse(current_url).path).to eq(proposals_path)
       end
@@ -350,6 +340,4 @@ feature 'Votes' do
       expect_message_only_verified_can_vote_proposals
     end
   end
-
-  xscenario "Change button text after voting"
 end

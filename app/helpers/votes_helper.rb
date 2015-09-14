@@ -11,4 +11,8 @@ module VotesHelper
     end
   end
 
+  def voted_for?(votes, votable)
+    return false unless votes[votable.id]
+  end
+
 end
