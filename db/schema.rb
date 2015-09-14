@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150914173834) do
+ActiveRecord::Schema.define(version: 20150914181921) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -51,6 +51,7 @@ ActiveRecord::Schema.define(version: 20150914173834) do
     t.string   "ip"
   end
 
+  add_index "ahoy_events", ["name", "time"], name: "index_ahoy_events_on_name_and_time", using: :btree
   add_index "ahoy_events", ["time"], name: "index_ahoy_events_on_time", using: :btree
   add_index "ahoy_events", ["user_id"], name: "index_ahoy_events_on_user_id", using: :btree
   add_index "ahoy_events", ["visit_id"], name: "index_ahoy_events_on_visit_id", using: :btree
@@ -323,6 +324,7 @@ ActiveRecord::Schema.define(version: 20150914173834) do
     t.datetime "started_at"
   end
 
+  add_index "visits", ["started_at"], name: "index_visits_on_started_at", using: :btree
   add_index "visits", ["user_id"], name: "index_visits_on_user_id", using: :btree
 
   create_table "votes", force: :cascade do |t|
