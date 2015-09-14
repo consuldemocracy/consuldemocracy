@@ -17,7 +17,7 @@ class WelcomeController < ApplicationController
     @list = (debates.to_a + proposals.to_a).sort{|a, b| b.hot_score <=> a.hot_score}
     @paginator = debates.total_pages > proposals.total_pages ? debates : proposals
 
-    render 'signed_in_home'
+    render 'highlights'
   end
 
   def welcome
