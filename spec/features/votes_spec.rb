@@ -435,6 +435,7 @@ feature 'Votes' do
 
     visit "/"
     click_link "Logout"
+    expect(page).to have_content "Signed out successfully."
 
     within("#proposal_#{proposal.id}") do
       find("div.supports").hover
