@@ -254,8 +254,7 @@ en:
     show:
       title: "My account"
       save_changes_submit: "Save changes"
-      email_on_debate_comment_label: "Receive email when someone comments on my debates"
-      email_on_proposal_comment_label: "Receive email when someone comments on my proposals"
+      email_on_comment_label: "Receive email when someone comments on my debates or proposals"
       email_on_comment_reply_label: "Receive email when someone replies to my comments"
       change_credentials_link: "Change my credentials"
       avatar: "Avatar"

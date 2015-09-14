@@ -33,7 +33,7 @@ feature 'Account' do
     visit account_path
 
     fill_in 'account_username', with: 'Larry Bird'
-    check 'account_email_on_debate_comment'
+    check 'account_email_on_comment'
     check 'account_email_on_comment_reply'
     click_button 'Save changes'
 
@@ -42,7 +42,7 @@ feature 'Account' do
     visit account_path
 
     expect(page).to have_selector("input[value='Larry Bird']")
-    expect(page).to have_selector("input[id='account_email_on_debate_comment'][value='1']")
+    expect(page).to have_selector("input[id='account_email_on_comment'][value='1']")
     expect(page).to have_selector("input[id='account_email_on_comment_reply'][value='1']")
   end
 
@@ -51,7 +51,7 @@ feature 'Account' do
     visit account_path
 
     fill_in 'account_organization_attributes_name', with: 'Google'
-    check 'account_email_on_debate_comment'
+    check 'account_email_on_comment'
     check 'account_email_on_comment_reply'
     click_button 'Save changes'
 
@@ -60,7 +60,7 @@ feature 'Account' do
     visit account_path
 
     expect(page).to have_selector("input[value='Google']")
-    expect(page).to have_selector("input[id='account_email_on_debate_comment'][value='1']")
+    expect(page).to have_selector("input[id='account_email_on_comment'][value='1']")
     expect(page).to have_selector("input[id='account_email_on_comment_reply'][value='1']")
   end
 
