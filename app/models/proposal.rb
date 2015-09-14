@@ -75,10 +75,7 @@ class Proposal < ActiveRecord::Base
   end
 
   def register_vote(user, vote_value)
-    return unless votable_by?(user)
-    if user.voted_for?(self)
-      unvote_by(user)
-    else
+    if votable_by?(user)
       vote_by(voter: user, vote: vote_value)
     end
   end

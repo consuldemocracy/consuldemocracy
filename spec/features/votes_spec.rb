@@ -452,20 +452,6 @@ feature 'Votes' do
         end
       end
 
-      scenario 'Update', :js do
-        visit proposal_path(@proposal)
-
-        within('.supports') do
-          find('.in-favor a').click
-          expect(page).to have_content "1 support"
-          expect(page).to have_css("a.voted")
-
-          find('.in-favor a').click
-          expect(page).to have_content "No supports"
-          expect(page).to_not have_css("a.no-voted")
-        end
-      end
-
       scenario 'Trying to vote multiple times', :js do
         visit proposal_path(@proposal)
 
@@ -484,7 +470,7 @@ feature 'Votes' do
         visit proposal_path(@proposal)
 
         within('.supports') do
-          expect(page).to have_content "2 supports / 53.726"
+          expect(page).to have_content "2 supports"
         end
       end
 
@@ -569,5 +555,5 @@ feature 'Votes' do
     end
   end
 
-  xscenario "Remove support button text - tested in Update spec"
+  xscenario "Change button text after voting"
 end
