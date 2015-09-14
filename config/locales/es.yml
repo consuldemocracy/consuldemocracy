@@ -176,6 +176,7 @@ es:
       proposal_question: Pregunta de la propuesta
       proposal_text: Texto inicial de la propuesta
       proposal_external_url: Enlace a documentación adicional
+      proposal_responsible_name: "Nombre y apellidos de la persona que hace esta propuesta"
       tags_label: Temas
       tags_instructions: >
         Etiqueta esta propuesta. Puedes elegir entre nuestras propuestas o introducir las que desees.

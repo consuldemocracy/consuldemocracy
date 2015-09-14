@@ -7,6 +7,17 @@ FactoryGirl.define do
     terms_of_service     '1'
     confirmed_at        { Time.now }
 
+    trait :level_two do
+      residence_verified_at Time.now
+      confirmed_phone "611111111"
+      document_number "12345678Z"
+    end
+
+    trait :level_three do
+      verified_at Time.now
+      document_number "12345678Z"
+    end
+
     trait :hidden do
       hidden_at Time.now
     end
@@ -106,6 +117,7 @@ FactoryGirl.define do
     description          'Proposal description'
     question             'Proposal question'
     external_url         'http://external_documention.es'
+    responsible_name     'John Snow'
     terms_of_service     '1'
     association :author, factory: :user
 

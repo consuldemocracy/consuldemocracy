@@ -12,13 +12,13 @@ describe Proposal do
     expect(proposal).to_not be_valid
   end
 
-  it "should not be valid without a question" do
-    proposal.question = nil
+  it "should not be valid without a title" do
+    proposal.title = nil
     expect(proposal).to_not be_valid
   end
 
-  it "should not be valid without a title" do
-    proposal.title = nil
+  it "should not be valid without a question" do
+    proposal.question = nil
     expect(proposal).to_not be_valid
   end
 
@@ -32,6 +32,31 @@ describe Proposal do
       proposal.description = "<script>alert('danger');</script>"
       proposal.valid?
       expect(proposal.description).to eq("alert('danger');")
+    end
+  end
+
+  describe "#responsible" do
+    it "should be mandatory" do
+        proposal.responsible_name = nil
+        expect(proposal).to_not be_valid
+      end
+
+    it "should be the document_number if level two user" do
+      author = create(:user, :level_two, document_number: "12345678Z")
+      proposal.author = author
+      proposal.responsible_name = nil
+
+      expect(proposal).to be_valid
+      proposal.responsible_name = "12345678Z"
+    end
+
+     it "should be the document_number if level two user" do
+      author = create(:user, :level_three, document_number: "12345678Z")
+      proposal.author = author
+      proposal.responsible_name = nil
+
+      expect(proposal).to be_valid
+      proposal.responsible_name = "12345678Z"
     end
   end
 

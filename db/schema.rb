@@ -11,10 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150912145218) do
+ActiveRecord::Schema.define(version: 20150914113251) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+  enable_extension "unaccent"
 
   create_table "addresses", force: :cascade do |t|
     t.integer  "user_id"
@@ -165,7 +166,7 @@ ActiveRecord::Schema.define(version: 20150912145218) do
   create_table "locks", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "tries",        default: 0
-    t.datetime "locked_until", default: '2015-09-11 17:24:30', null: false
+    t.datetime "locked_until", default: '2015-09-10 13:46:11', null: false
     t.datetime "created_at",                                   null: false
     t.datetime "updated_at",                                   null: false
   end
@@ -204,6 +205,7 @@ ActiveRecord::Schema.define(version: 20150912145218) do
     t.integer  "confidence_score",             default: 0
     t.datetime "created_at",                               null: false
     t.datetime "updated_at",                               null: false
+    t.string   "responsible_name",  limit: 60
   end
 
   create_table "settings", force: :cascade do |t|
