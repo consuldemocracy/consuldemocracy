@@ -248,7 +248,7 @@ es:
     signin: iniciar sesión
     signup: registrarte
     anonymous: "Demasiados votos anónimos, para poder votar %{verify_account}."
-    verified_only: "Esta propuesta sólo puede ser votada por usuarios verificados, %{verify_account}."
+    verified_only: "Las propuestas sólo pueden ser votadas por usuarios verificados, %{verify_account}."
     verify_account: verifica tu cuenta
     organizations: Las organizaciones no pueden votar
   account:
