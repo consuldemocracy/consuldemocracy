@@ -318,19 +318,6 @@ feature 'Votes' do
         end
       end
 
-      xscenario 'Create in featured', :js do
-        pending "logged in user cannot see this page"
-        visit root_path
-
-        within("#featured-proposals") do
-          find('.in-favor a').click
-
-          expect(page).to have_content "1 support"
-          expect(page).to have_css("a.voted")
-        end
-        expect(URI.parse(current_url).path).to eq(root_path)
-      end
-
       scenario 'Create in index', :js do
         visit proposals_path
 
