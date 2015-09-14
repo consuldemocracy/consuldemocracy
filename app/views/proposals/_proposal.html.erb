@@ -14,7 +14,7 @@
             <%= l proposal.created_at.to_date %>
           </p>
           <div class="proposal-description">
-            <%= link_to proposal.description, proposal %>
+            <%= link_to proposal.summary, proposal %>
             <div class="truncate"></div>
           </div>
           <%= render "shared/tags", proposal: proposal, limit: 5 %>

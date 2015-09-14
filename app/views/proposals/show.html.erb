@@ -58,6 +58,8 @@
           </span>
         </div>
 
+        <div><%= @proposal.summary %></div>
+
         <%= safe_html_with_links @proposal.description %>
 
         <% if @proposal.external_url.present? %>

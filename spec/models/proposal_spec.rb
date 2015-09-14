@@ -22,12 +22,12 @@ describe Proposal do
     expect(proposal).to_not be_valid
   end
 
-  describe "#description" do
-    it "should be mandatory" do
-      proposal.description = nil
-      expect(proposal).to_not be_valid
-    end
+  it "should not be valid without a summary" do
+    proposal.summary = nil
+    expect(proposal).to_not be_valid
+  end
 
+  describe "#description" do
     it "should be sanitized" do
       proposal.description = "<script>alert('danger');</script>"
       proposal.valid?

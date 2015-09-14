@@ -11,7 +11,7 @@ feature 'Proposals' do
     proposal.each do |proposal|
       within('#proposals') do
         expect(page).to have_content proposal.title
-        expect(page).to have_css("a[href='#{proposal_path(proposal)}']", text: proposal.description)
+        expect(page).to have_css("a[href='#{proposal_path(proposal)}']", text: proposal.summary)
       end
     end
   end
@@ -59,6 +59,7 @@ feature 'Proposals' do
     visit new_proposal_path
     fill_in 'proposal_title', with: 'Help refugees'
     fill_in 'proposal_question', with: '¿Would you like to give assistance to war refugees?'
+    fill_in 'proposal_summary', with: 'In summary, what we want is...'
     fill_in 'proposal_description', with: 'This is very important because...'
     fill_in 'proposal_external_url', with: 'http://rescue.org/refugees'
     fill_in 'proposal_responsible_name', with: 'Isabel Garcia'
@@ -70,6 +71,7 @@ feature 'Proposals' do
     expect(page).to have_content 'Proposal was successfully created.'
     expect(page).to have_content 'Help refugees'
     expect(page).to have_content '¿Would you like to give assistance to war refugees?'
+    expect(page).to have_content 'In summary, what we want is...'
     expect(page).to have_content 'This is very important because...'
     expect(page).to have_content 'http://rescue.org/refugees'
     expect(page).to have_content author.name
@@ -83,6 +85,7 @@ feature 'Proposals' do
     visit new_proposal_path
     fill_in 'proposal_title', with: 'Help refugees'
     fill_in 'proposal_question', with: '¿Would you like to give assistance to war refugees?'
+    fill_in 'proposal_summary', with: 'In summary, what we want is...'
     fill_in 'proposal_description', with: 'This is very important because...'
     fill_in 'proposal_external_url', with: 'http://rescue.org/refugees'
     fill_in 'proposal_responsible_name', with: 'Isabel Garcia'
@@ -105,6 +108,7 @@ feature 'Proposals' do
 
     fill_in 'proposal_title', with: 'Help refugees'
     fill_in 'proposal_question', with: '¿Would you like to give assistance to war refugees?'
+    fill_in 'proposal_summary', with: 'In summary, what we want is...'
     fill_in 'proposal_description', with: 'This is very important because...'
     fill_in 'proposal_external_url', with: 'http://rescue.org/refugees'
     fill_in 'proposal_captcha', with: correct_captcha_text
@@ -121,6 +125,7 @@ feature 'Proposals' do
     visit new_proposal_path
     fill_in 'proposal_title', with: "Great title"
     fill_in 'proposal_question', with: '¿Would you like to give assistance to war refugees?'
+    fill_in 'proposal_summary', with: 'In summary, what we want is...'
     fill_in 'proposal_description', with: 'Very important issue...'
     fill_in 'proposal_external_url', with: 'http://rescue.org/refugees'
     fill_in 'proposal_responsible_name', with: 'Isabel Garcia'
@@ -146,6 +151,7 @@ feature 'Proposals' do
     visit new_proposal_path
     fill_in 'proposal_title', with: ""
     fill_in 'proposal_question', with: '¿Would you like to give assistance to war refugees?'
+    fill_in 'proposal_summary', with: 'In summary, what we want is...'
     fill_in 'proposal_description', with: 'Very important issue...'
     fill_in 'proposal_external_url', with: 'http://rescue.org/refugees'
     fill_in 'proposal_responsible_name', with: 'Isabel Garcia'
@@ -178,6 +184,7 @@ feature 'Proposals' do
     visit new_proposal_path
     fill_in 'proposal_title', with: 'Testing an attack'
     fill_in 'proposal_question', with: '¿Would you like to give assistance to war refugees?'
+    fill_in 'proposal_summary', with: 'In summary, what we want is...'
     fill_in 'proposal_description', with: '<p>This is <script>alert("an attack");</script></p>'
     fill_in 'proposal_external_url', with: 'http://rescue.org/refugees'
     fill_in 'proposal_responsible_name', with: 'Isabel Garcia'
@@ -200,6 +207,7 @@ feature 'Proposals' do
     visit new_proposal_path
     fill_in 'proposal_title', with: 'Testing auto link'
     fill_in 'proposal_question', with: 'Should I stay or should I go?'
+    fill_in 'proposal_summary', with: 'In summary, what we want is...'
     fill_in 'proposal_description', with: '<p>This is a link www.example.org</p>'
     fill_in 'proposal_responsible_name', with: 'Isabel Garcia'
     fill_in 'proposal_captcha', with: correct_captcha_text
@@ -219,6 +227,7 @@ feature 'Proposals' do
     visit new_proposal_path
     fill_in 'proposal_title', with: 'Testing auto link'
     fill_in 'proposal_question', with: 'Should I stay or should I go?'
+    fill_in 'proposal_summary', with: 'In summary, what we want is...'
     fill_in 'proposal_description', with: "<script>alert('hey')</script> <a href=\"javascript:alert('surprise!')\">click me<a/> http://example.org"
     fill_in 'proposal_responsible_name', with: 'Isabel Garcia'
     fill_in 'proposal_captcha', with: correct_captcha_text
@@ -255,6 +264,7 @@ feature 'Proposals' do
 
       fill_in 'proposal_title', with: 'A test with enough characters'
       fill_in 'proposal_question', with: '¿Would you like to give assistance to war refugees?'
+      fill_in 'proposal_summary', with: 'In summary, what we want is...'
       fill_in_ckeditor 'proposal_description', with: 'A description with enough characters'
       fill_in 'proposal_external_url', with: 'http://rescue.org/refugees'
       fill_in 'proposal_responsible_name', with: 'Isabel Garcia'
@@ -278,6 +288,7 @@ feature 'Proposals' do
 
       fill_in 'proposal_title', with: 'A test of dangerous strings'
       fill_in 'proposal_question', with: '¿Would you like to give assistance to war refugees?'
+      fill_in 'proposal_summary', with: 'In summary, what we want is...'
       fill_in 'proposal_description', with: 'A description suitable for this test'
       fill_in 'proposal_external_url', with: 'http://rescue.org/refugees'
       fill_in 'proposal_responsible_name', with: 'Isabel Garcia'
@@ -331,6 +342,7 @@ feature 'Proposals' do
 
     fill_in 'proposal_title', with: "End child poverty"
     fill_in 'proposal_question', with: '¿Would you like to give assistance to war refugees?'
+    fill_in 'proposal_summary', with: 'Basically...'
     fill_in 'proposal_description', with: "Let's do something to end child poverty"
     fill_in 'proposal_external_url', with: 'http://rescue.org/refugees'
     fill_in 'proposal_responsible_name', with: 'Isabel Garcia'
@@ -339,6 +351,7 @@ feature 'Proposals' do
     click_button "Save changes"
 
     expect(page).to have_content "Proposal was successfully updated."
+    expect(page).to have_content "Basically..."
     expect(page).to have_content "End child poverty"
     expect(page).to have_content "Let's do something to end child poverty"
   end

@@ -16,9 +16,10 @@
     </div>
 
     <div class="small-12 column">
-      <%= f.label :question, t("proposals.form.proposal_summary") %>
+      <%= f.label :summary, t("proposals.form.proposal_summary") %>
       <span class="note"><%= t("proposals.form.proposal_summary_note") %></span>
-      <textarea rows="4" placeholder="<%= t('proposals.form.proposal_summary') %>"></textarea>
+      <%= f.text_area :summary, rows: 4, maxlength: 200, label: false,
+                      placeholder: t('proposals.form.proposal_summary') %>
     </div>
 
     <div class="ckeditor small-12 column">

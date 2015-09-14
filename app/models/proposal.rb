@@ -12,7 +12,7 @@ class Proposal < ActiveRecord::Base
 
   validates :title, presence: true
   validates :question, presence: true
-  validates :description, presence: true
+  validates :summary, presence: true
   validates :author, presence: true
   validates :responsible_name, presence: true
 
@@ -131,7 +131,6 @@ class Proposal < ActiveRecord::Base
     def validate_description_length
       validator = ActiveModel::Validations::LengthValidator.new(
         attributes: :description,
-        minimum: 10,
         maximum: Proposal.description_max_length)
       validator.validate(self)
     end
