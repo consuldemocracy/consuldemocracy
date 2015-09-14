@@ -92,4 +92,29 @@ describe Proposal do
       expect(proposal.votable_by?(user)).to be false
     end
   end
+
+  describe "#register_vote" do
+    let(:proposal) { create(:proposal) }
+
+    describe "from level two verified users" do
+      it "should register vote" do
+        user = create(:user, residence_verified_at: Time.now, confirmed_phone: "666333111")
+        expect {proposal.register_vote(user, 'yes')}.to change{proposal.reload.votes_for.size}.by(1)
+      end
+    end
+
+    describe "from level three verified users" do
+      it "should register vote" do
+        user = create(:user, verified_at: Time.now)
+        expect {proposal.register_vote(user, 'yes')}.to change{proposal.reload.votes_for.size}.by(1)
+      end
+    end
+
+    describe "from anonymous users" do
+      it "should not register vote" do
+        user = create(:user)
+        expect {proposal.register_vote(user, 'yes')}.to change{proposal.reload.votes_for.size}.by(0)
+      end
+    end
+  end
 end
