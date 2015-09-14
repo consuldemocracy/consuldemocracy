@@ -12,6 +12,7 @@ es:
     menu:
       settings: Configuración global
       debate_topics: Temas de debate
+      hidden_proposals: Propuestas ocultas
       hidden_debates: Debates ocultos
       hidden_comments: Comentarios ocultos
       hidden_users: Usuarios bloqueados
@@ -70,6 +71,14 @@ es:
         filters:
           all: Todos
           with_confirmed_hide: Confirmados
+          without_confirmed_hide: Pendientes
+    proposals:
+      index:
+        title: Propuestas ocultos
+        filter: Filtro
+        filters:
+          all: Todas
+          with_confirmed_hide: Confirmadas
           without_confirmed_hide: Pendientes
     users:
       index:

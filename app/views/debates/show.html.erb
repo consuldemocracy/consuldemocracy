@@ -57,7 +57,7 @@
           </span>
         </div>
 
-        <%= @debate.description %>
+        <%= safe_html_with_links @debate.description %>
 
         <%= render 'shared/tags', debate: @debate %>
 
@@ -81,4 +81,5 @@
     </div>
   </section>
 <% end %>
+
 <%= render "comments" %>

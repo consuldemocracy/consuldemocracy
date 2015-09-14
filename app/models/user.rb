@@ -86,6 +86,11 @@ class User < ActiveRecord::Base
     voted.each_with_object({}) { |v, h| h[v.votable_id] = v.value }
   end
 
+  def proposal_votes(proposals)
+    voted = votes.for_proposals(proposals)
+    voted.each_with_object({}) { |v, h| h[v.votable_id] = v.value }
+  end
+
   def comment_flags(comments)
     comment_flags = flags.for_comments(comments)
     comment_flags.each_with_object({}){ |f, h| h[f.flaggable_id] = true }
@@ -123,10 +128,13 @@ class User < ActiveRecord::Base
   def block
     debates_ids = Debate.where(author_id: id).pluck(:id)
     comments_ids = Comment.where(user_id: id).pluck(:id)
+    proposal_ids = Proposal.where(author_id: id).pluck(:id)
 
     self.hide
+
     Debate.hide_all debates_ids
     Comment.hide_all comments_ids
+    Proposal.hide_all proposal_ids
   end
 
 

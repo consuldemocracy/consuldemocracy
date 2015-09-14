@@ -5,7 +5,7 @@
       <% if comment.hidden? || comment.user.hidden? %>
         <% if select_children(@comments, comment).size > 0 %>
           <div class="is-deleted">
-            <p><%= t("debates.comment.deleted") %></p>
+            <p><%= t("comments.comment.deleted") %></p>
           </div>
         <% end %>
       <% else %>
@@ -28,13 +28,13 @@
           <div class="comment-info">
 
             <% if comment.as_administrator? %>
-              <span class="user-name"><%= t("debates.comment.admin") %> #<%= comment.administrator_id%></span>
+              <span class="user-name"><%= t("comments.comment.admin") %> #<%= comment.administrator_id%></span>
             <% elsif comment.as_moderator? %>
-              <span class="user-name"><%= t("debates.comment.moderator") %> #<%= comment.moderator_id%></span>
+              <span class="user-name"><%= t("comments.comment.moderator") %> #<%= comment.moderator_id%></span>
             <% else %>
 
               <% if comment.user.hidden? %>
-                <span class="user-name"><%= t("debates.comment.user_deleted") %></span>
+                <span class="user-name"><%= t("comments.comment.user_deleted") %></span>
               <% else %>
                 <span class="user-name"><%= comment.user.name %></span>
                 <% if comment.user.official? %>
@@ -53,7 +53,7 @@
               <% if comment.user_id == @commentable.author_id %>
                 &nbsp;&bull;&nbsp;
                 <span class="label round is-author">
-                  <%= t("debates.comment.author") %>
+                  <%= t("comments.comment.author") %>
                 </span>
               <% end %>
 
@@ -80,7 +80,7 @@
           </span>
 
           <div class="reply">
-            <%= t("debates.comment.responses", count: select_children(@comments, comment).size) %>
+            <%= t("comments.comment.responses", count: select_children(@comments, comment).size) %>
 
             <% if user_signed_in? %>
               <span class="divider">&nbsp;|&nbsp;</span>

@@ -55,32 +55,18 @@ feature 'Debates' do
     login_as(author)
 
     visit new_debate_path
-    fill_in 'debate_title', with: 'Acabar con los desahucios'
-    fill_in 'debate_description', with: 'Esto es un tema muy importante porque...'
+    fill_in 'debate_title', with: 'End evictions'
+    fill_in 'debate_description', with: 'This is very important because...'
     fill_in 'debate_captcha', with: correct_captcha_text
     check 'debate_terms_of_service'
 
     click_button 'Start a debate'
 
     expect(page).to have_content 'Debate was successfully created.'
-    expect(page).to have_content 'Acabar con los desahucios'
-    expect(page).to have_content 'Esto es un tema muy importante porque...'
+    expect(page).to have_content 'End evictions'
+    expect(page).to have_content 'This is very important because...'
     expect(page).to have_content author.name
     expect(page).to have_content I18n.l(Debate.last.created_at.to_date)
-  end
-
-  scenario 'CKEditor is present before & after turbolinks update page', :js do
-    author = create(:user)
-    login_as(author)
-
-    visit new_debate_path
-
-    expect(page).to have_css "#cke_debate_description"
-
-    click_link 'Debates'
-    click_link 'Start a debate'
-
-    expect(page).to have_css "#cke_debate_description"
   end
 
   scenario 'Captcha is required for debate creation' do
@@ -152,6 +138,48 @@ feature 'Debates' do
     expect(page.html).to_not include '&lt;p&gt;This is'
   end
 
+  scenario 'Autolinking is applied to description' do
+    author = create(:user)
+    login_as(author)
+
+    visit new_debate_path
+    fill_in 'debate_title', with: 'Testing auto link'
+    fill_in 'debate_description', with: '<p>This is a link www.example.org</p>'
+    fill_in 'debate_captcha', with: correct_captcha_text
+    check 'debate_terms_of_service'
+
+    click_button 'Start a debate'
+
+    expect(page).to have_content 'Debate was successfully created.'
+    expect(page).to have_content 'Testing auto link'
+    expect(page).to have_link('www.example.org', href: 'http://www.example.org')
+  end
+
+  scenario 'JS injection is prevented but autolinking is respected' do
+    author = create(:user)
+    login_as(author)
+
+    visit new_debate_path
+    fill_in 'debate_title', with: 'Testing auto link'
+    fill_in 'debate_description', with: "<script>alert('hey')</script> <a href=\"javascript:alert('surprise!')\">click me<a/> http://example.org"
+    fill_in 'debate_captcha', with: correct_captcha_text
+    check 'debate_terms_of_service'
+
+    click_button 'Start a debate'
+
+    expect(page).to have_content 'Debate was successfully created.'
+    expect(page).to have_content 'Testing auto link'
+    expect(page).to have_link('http://example.org', href: 'http://example.org')
+    expect(page).not_to have_link('click me')
+    expect(page.html).to_not include "<script>alert('hey')</script>"
+
+    click_link 'Edit'
+
+    expect(current_path).to eq edit_debate_path(Debate.last)
+    expect(page).not_to have_link('click me')
+    expect(page.html).to_not include "<script>alert('hey')</script>"
+  end
+
   context 'Tagging debates' do
     let(:author) { create(:user) }
 
@@ -209,7 +237,8 @@ feature 'Debates' do
     login_as(create(:user))
 
     visit edit_debate_path(debate)
-    expect(current_path).to eq(root_path)
+    expect(current_path).not_to eq(edit_debate_path(debate))
+    expect(current_path).to eq(proposals_path)
     expect(page).to have_content 'not authorized'
   end
 
@@ -221,7 +250,8 @@ feature 'Debates' do
 
     visit edit_debate_path(debate)
 
-    expect(current_path).to eq(root_path)
+    expect(current_path).not_to eq(edit_debate_path(debate))
+    expect(current_path).to eq(proposals_path)
     expect(page).to have_content 'not authorized'
   end
 
@@ -378,7 +408,9 @@ feature 'Debates' do
       visit debates_path
       select 'most active', from: 'order-selector'
 
-      within '#debates.js-order-hot-score' do
+      expect(page).to have_selector('.js-order-selector[data-order="hot_score"]')
+
+      within '#debates' do
         expect('Best').to appear_before('Medium')
         expect('Medium').to appear_before('Worst')
       end
@@ -395,7 +427,9 @@ feature 'Debates' do
       visit debates_path
       select 'most commented', from: 'order-selector'
 
-      within '#debates.js-order-most-commented' do
+      expect(page).to have_selector('.js-order-selector[data-order="most_commented"]')
+
+      within '#debates' do
         expect('Best').to appear_before('Medium')
         expect('Medium').to appear_before('Worst')
       end
@@ -412,7 +446,9 @@ feature 'Debates' do
       visit debates_path
       select 'newest', from: 'order-selector'
 
-      within '#debates.js-order-created-at' do
+      expect(page).to have_selector('.js-order-selector[data-order="created_at"]')
+
+      within '#debates' do
         expect('Best').to appear_before('Medium')
         expect('Medium').to appear_before('Worst')
       end
@@ -426,13 +462,15 @@ feature 'Debates' do
       visit debates_path
 
       select 'random', from: 'order-selector'
-      debates_first_time = find("#debates.js-order-random").text
+      expect(page).to have_selector('.js-order-selector[data-order="random"]')
+      debates_first_time = find("#debates").text
 
       select 'most commented', from: 'order-selector'
-      expect(page).to have_selector('#debates.js-order-most-commented')
+      expect(page).to have_selector('.js-order-selector[data-order="most_commented"]')
 
       select 'random', from: 'order-selector'
-      debates_second_time = find("#debates.js-order-random").text
+      expect(page).to have_selector('.js-order-selector[data-order="random"]')
+      debates_second_time = find("#debates").text
 
       expect(debates_first_time).to_not eq(debates_second_time)
       expect(current_url).to include('page=1')

@@ -66,9 +66,9 @@ describe User do
   end
 
   describe 'preferences' do
-    describe 'email_on_debate_comment' do
+    describe 'email_on_comment' do
       it 'should be false by default' do
-        expect(subject.email_on_debate_comment).to eq(false)
+        expect(subject.email_on_comment).to eq(false)
       end
     end
 

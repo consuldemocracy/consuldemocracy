@@ -104,11 +104,17 @@ ignore_unused:
   - 'admin.officials.level_*'
   - 'admin.comments.index.filter*'
   - 'admin.debates.index.filter*'
+  - 'admin.proposals.index.filter*'
   - 'admin.organizations.index.filter*'
   - 'admin.users.index.filter*'
   - 'moderation.comments.index.filter*'
   - 'moderation.debates.index.filter*'
+  - 'moderation.proposals.index.filter*'
+  - 'moderation.proposals.index.order*'
   - 'debates.index.orders.*'
+  - 'debates.index.search_form.*'
+  - 'proposals.index.orders.*'
+  - 'proposals.index.search_form.*'
   - 'helpers.page_entries_info.*' # kaminari
   - 'views.pagination.*' # kaminari
 # - '{devise,kaminari,will_paginate}.*'

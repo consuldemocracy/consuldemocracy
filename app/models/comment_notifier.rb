@@ -12,16 +12,16 @@ class CommentNotifier
   private
 
   def send_comment_email
-    Mailer.comment(@comment).deliver_later if email_on_debate_comment?
+    Mailer.comment(@comment).deliver_later if email_on_comment?
   end
 
   def send_reply_email
     Mailer.reply(@comment).deliver_later if email_on_comment_reply?
   end
 
-  def email_on_debate_comment?
+  def email_on_comment?
     commentable_author = @comment.commentable.author
-    commentable_author != @author && commentable_author.email_on_debate_comment?
+    commentable_author != @author && commentable_author.email_on_comment?
   end
 
   def email_on_comment_reply?

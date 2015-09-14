@@ -1,4 +1,9 @@
 <div class="verification account row">
+
+  <div class="alert-box success radius">
+    <%= t('verification.letter.create.flash.success') %>
+  </div>
+
   <div class="small-12 column">
 
     <div class="text-center">
@@ -25,6 +30,13 @@
       <% end %>
 
       <h1><%= t("verification.letter.edit.title") %></h1>
+
+      <%= t("verification.letter.new.explanation_html") %>
+
+      <%= link_to t("verification.letter.new.offices"), t("verification.letter.new.offices_url"),
+          target: "_blank", class: "button radius inline-block"
+      %>
+
 
       <div class="small-12 medium-6">
         <%= form_for @letter, as: "letter", url: letter_path, method: :put do |f| %>

@@ -27,6 +27,7 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'welcome#index'
   get '/welcome', to: 'welcome#welcome'
+  get '/highlights', to: 'welcome#highlights', as: :highlights
 
 
   resources :debates do
@@ -35,13 +36,21 @@ Rails.application.routes.draw do
       put :flag
       put :unflag
     end
+  end
 
-    resources :comments, only: :create, shallow: true do
-      member do
-        post :vote
-        put :flag
-        put :unflag
-      end
+  resources :proposals do
+    member do
+      post :vote
+      put :flag
+      put :unflag
+    end
+  end
+
+  resources :comments, only: :create, shallow: true do
+    member do
+      post :vote
+      put :flag
+      put :unflag
     end
   end
 
@@ -74,6 +83,13 @@ Rails.application.routes.draw do
     end
 
     resources :debates, only: :index do
+      member do
+        put :restore
+        put :confirm_hide
+      end
+    end
+
+    resources :proposals, only: :index do
       member do
         put :restore
         put :confirm_hide
@@ -113,6 +129,15 @@ Rails.application.routes.draw do
         put :hide
         put :hide_in_moderation_screen
         put :ignore_flag
+      end
+    end
+
+    resources :proposals, only: :index do
+      member do
+        put :hide
+      end
+      collection do
+        put :moderate
       end
     end
 

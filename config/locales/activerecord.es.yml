@@ -1,12 +1,33 @@
 es:
   activerecord:
     models:
-      comment: Comentario
-      debate: Debate
-      tag: Tema
-      user: Usuario
-      vote: Voto
-      organization: Organización
+      comment:
+        one: Comentario
+        other: Comentarios
+      debate:
+        one: Debate
+        other: Debates
+      tag:
+        one: Tema
+        other: Temas
+      user:
+        one: Usuario
+        other: Usuarios
+      moderator:
+        one: Moderador
+        other: Moderadores
+      administrator:
+        one: Administrador
+        other: Administradores
+      vote:
+        one: Voto
+        other: Voto
+      organization:
+        one: Organización
+        other: Organizaciones
+      proposal:
+        one: Propuesta ciudadana
+        other: Propuestas ciudadanas
     attributes:
       comment:
         body: Comentario
@@ -16,6 +37,12 @@ es:
         description: Opinión
         terms_of_service: Términos de servicio
         title: Título
+      proposal:
+        author: Autor
+        title: Título
+        question: Pregunta
+        description: Descripción
+        terms_of_service: Términos de servicio
       user:
         email: Correo electrónico
         username: Nombre de usuario

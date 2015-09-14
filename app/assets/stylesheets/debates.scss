@@ -352,7 +352,7 @@
     @media (min-width: $small-breakpoint) {
       border-top-left-radius: 3px;
       border-bottom-left-radius: 3px;
-      margin: 0 rem-calc(-24) 0 rem-calc(12);
+      margin: 0 rem-calc(-25) 0 rem-calc(12);
     }
 
     &:after {
@@ -487,13 +487,16 @@
     font-weight: bold;
   }
 
-  h3 {
-    border-top: 2px solid $brand;
-    display: inline-block;
-    font-size: rem-calc(16);
-    margin: -1px 0 rem-calc(12);
-    padding-top: rem-calc(6);
-    text-transform: uppercase;
+  aside {
+
+    h3 {
+      border-top: 2px solid $brand;
+      display: inline-block;
+      font-size: rem-calc(16);
+      margin: -1px 0 rem-calc(12);
+      padding-top: rem-calc(6);
+      text-transform: uppercase;
+    }
   }
 
   .votes {
@@ -636,7 +639,7 @@
     .comment-votes {
       color: $text-medium;
       font-weight: lighter;
-      margin: rem-calc(15) rem-calc(6) 0;
+      margin: rem-calc(8) rem-calc(12) rem-calc(6) 0;
 
       a {
         color: $text-light;
@@ -650,7 +653,7 @@
 
       [class^="icon-"] {
         font-size: rem-calc(20);
-        vertical-align: top;
+        vertical-align: middle;
       }
     }
 
@@ -676,6 +679,7 @@
       .comment-user {
         margin-top: rem-calc(6);
         padding: rem-calc(6) 0;
+        overflow: hidden;
 
         @each $n in ("1", "2", "3","4", "5") {
           &.level-#{$n} {
@@ -757,6 +761,7 @@
 
   .button {
     background: none;
+    margin-bottom: 0;
     padding: 0;
   }
 }

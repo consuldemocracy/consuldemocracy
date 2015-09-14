@@ -12,23 +12,25 @@ es:
       open: "abierto"
       participation: Participación
       open_city_title: "La ciudad que quieres será la ciudad que quieras."
-      open_city_slogan:
-        "Empecemos escuchando qué tiene que decir Madrid.
-        Para ello abrimos esta Puerta del Sol digital, donde toda la gente de Madrid podemos encontrarnos para debatir y compartir todo lo que queramos."
+      open_city_slogan_html:
+        "Existen ciudades gobernadas directamente por sus habitantes, que <b>debaten</b> sobre temas que les preocupan, <b>proponen</b> ideas para mejorar
+        sus vidas y <b>deciden</b> entre todas y todos las que se llevan a cabo. Madrid ya es una de ellas."
+      #"Empecemos escuchando qué tiene que decir Madrid.
+      #Para ello abrimos esta Puerta del Sol digital, donde toda la gente de Madrid podemos encontrarnos para debatir y compartir todo lo que queramos."
       # open_city_text:
       #   "Aquí cualquier voz tiene su espacio y son los ciudadanos y ciudadanas, y nadie en su nombre, quienes deciden votando los debates cuáles son los temas
       #    más importantes de cada momento. Los responsables del gobierno tienen cuentas de usuario propias con las que podrán participar en los debates, y ser evaluados
       #    al mismo nivel que todos los demás."
       # open_city_soon: "Muy pronto abriremos la sección de propuestas ciudadanas, donde cualquiera podrá presentar propuestas y, si reciben apoyo, serán puestas en marcha por el Ayuntamiento."
-      see_all_debates: Ver todos los debates
+      see_all: Ver debates y propuestas
       my_account_link: Mi cuenta
       locale: "Idioma:"
       administration: Administrar
       moderation: Moderar
-      # welcome: Portada
+      highlights: "Portada"
       more_information: "Más información"
       debates: Debates
-      # initiatives: Iniciativas
+      proposals: Propuestas ciudadanas
     footer:
       description: "Este portal usa la %{consul} que es %{open_source}. De Madrid, para el mundo entero."
       open_source: "software libre"
@@ -55,6 +57,7 @@ es:
       conditions: "Condiciones de uso"
       user: la cuenta
       debate: el debate
+      proposal: la propuesta
       verification::sms: el teléfono
   application:
     alert:
@@ -73,6 +76,10 @@ es:
       filter_topic:
         one: " con el tema '%{topic}'"
         other: " con el tema '%{topic}'"
+      search_form:
+        title: Buscar
+        button: Buscar
+        placeholder: "Buscar debates..."
       search_results:
         one: " que contiene '%{search_term}'"
         other: " que contienen '%{search_term}'"
@@ -86,27 +93,13 @@ es:
         zero: Sin votos
         one: 1 voto
         other: "%{count} votos"
-    comment:
-      author: Autor del debate
-      moderator: Moderador
-      admin: Administrador
-      deleted: Este comentario ha sido eliminado
-      user_deleted: Usuario eliminado
-      responses:
-        zero: Sin respuestas
-        one: 1 Respuesta
-        other: "%{count} Respuestas"
-      votes:
-        zero: Sin votos
-        one: 1 voto
-        other: "%{count} votos"
     form:
       debate_title: Título del debate
       debate_text: Texto inicial del debate
       tags_label: Temas
       tags_instructions: >
         Etiqueta este debate. Puedes elegir entre nuestras propuestas o introducir las que desees.
-      tags_placeholder: "Escribe las etiquetas que desees separadas por ','"
+      tags_placeholder: "Escribe las etiquetas que desees separadas por coma (',')"
     show:
       back_link: Volver
       author_deleted: Usuario eliminado
@@ -143,11 +136,111 @@ es:
     update:
       form:
         submit_button: "Guardar cambios"
+  proposals:
+    index:
+      start_proposal: Crea una propuesta
+      select_order: Ordenar por
+      select_order_long: Estás viendo las propuestas
+      orders:
+        confidence_score: "mejor valoradas"
+        hot_score: "más activas"
+        created_at: "más nuevas"
+        most_commented: "más comentadas"
+        random: "aleatorias"
+      filter_topic:
+        one: " con el tema '%{topic}'"
+        other: " con el tema '%{topic}'"
+      search_form:
+        title: Search
+        button: Search
+        placeholder: "Buscar propuestas ciudadanas..."
+      search_results:
+        one: " que contiene '%{search_term}'"
+        other: " que contienen '%{search_term}'"
+    proposal:
+      proposal: Propuesta
+      support: "Apoyar"
+      support_title: "Apoyar esta propuesta"
+      comments:
+        zero: Sin comentarios
+        one: 1 Comentario
+        other: "%{count} Comentarios"
+      supports:
+        zero: Sin apoyos
+        one: 1 apoyo
+        other: "%{count} apoyos"
+      supports_necessary: "53.726 apoyos necesarios"
+      census_percent: "2% del Censo"
+      already_supported: "¡Ya has apoyado esta propuesta!"
+    form:
+      proposal_title: Título de la propuesta
+      proposal_question: Pregunta de la propuesta
+      proposal_question_example_html: "Debe ser resumida en una pregunta cuya respuesta sea Sí o No. <em>Ej. '¿Está usted de acuerdo en peatonalizar la calle Mayor?'</em>"
+      proposal_summary: "Resumen de la propuesta"
+      proposal_summary_note: "(máximo 200 caracteres)"
+      proposal_text: Texto desarrollado de la propuesta
+      proposal_external_url: Enlace a documentación adicional
+      proposal_video_url: "Enlace a vídeo externo"
+      proposal_video_url_note: "Puedes añadir un enlace a YouTube o Vimeo"
+      proposal_responsible_name: "Nombre y apellidos de la persona que hace esta propuesta"
+      proposal_responsible_name_note: "(individualmente o como representante de un colectivo; no se mostrará públicamente)"
+      tags_label: Temas
+      tags_instructions: >
+        Etiqueta esta propuesta. Puedes elegir entre nuestras propuestas o introducir las que desees.
+      tags_placeholder: "Escribe las etiquetas que desees separadas por una coma (',')"
+    show:
+      back_link: Volver
+      author_deleted: Usuario eliminado
+      comments_title: Comentarios
+      comments:
+        zero: Sin comentarios
+        one: 1 Comentario
+        other: "%{count} Comentarios"
+      login_to_comment: "Necesitas %{signin} o %{signup} para comentar."
+      edit_proposal_link: Editar
+      share: Compartir
+      flag: "Esta propuesta ha sido marcada como inapropiada por varios usuarios."
+    edit:
+      editing: Editar propuesta
+      show_link: Ver propuesta
+      back_link: Volver
+      form:
+        submit_button: "Guardar cambios"
+    new:
+      start_new: Crear una propuesta
+      more_info: "¿Cómo funcionan las propuestas ciudadanas?"
+      back_link: Volver
+      recommendations_title: Recomendaciones para crear una propuesta
+      recommendation_one: "No escribas el título de la propuesta o frases enteras en mayúsculas. En internet eso se considera gritar. Y a nadie le gusta que le griten."
+      recommendation_two: "Cualquier propuesta o comentario que implique una acción ilegal será eliminada, también las que tengan la intención de sabotear los espacios de propuesta, todo lo demás está permitido."
+      recommendation_three: "Disfruta de este espacio, de las voces que lo llenan, también es tuyo."
+      form:
+        submit_button: "Crear propuesta"
+    create:
+      form:
+        submit_button: "Crear propuesta"
+    update:
+      form:
+        submit_button: "Guardar cambios"
   comments:
     form:
       leave_comment: Deja tu comentario
       comment_as_moderator: Comentar como moderador
       comment_as_admin: Comentar como administrador
+    comment:
+      author: Autor
+      moderator: Moderador
+      admin: Administrador
+      deleted: Este comentario ha sido eliminado
+      user_deleted: Usuario eliminado
+      responses:
+        zero: Sin respuestas
+        one: 1 Respuesta
+        other: "%{count} Respuestas"
+      votes:
+        zero: Sin votos
+        one: 1 voto
+        other: "%{count} votos"
   comments_helper:
     comment_link: Comentar
     comment_button: Publicar comentario
@@ -160,7 +253,8 @@ es:
     unauthenticated: "Necesitas %{signin} o %{signup} para continuar."
     signin: iniciar sesión
     signup: registrarte
-    anonymous: "Este debate ya tiene demasiados votos anónimos, para poder votar %{verify_account}."
+    anonymous: "Demasiados votos anónimos, para poder votar %{verify_account}."
+    verified_only: "Las propuestas sólo pueden ser votadas por usuarios verificados, %{verify_account}."
     verify_account: verifica tu cuenta
     organizations: Las organizaciones no pueden votar
   account:
@@ -168,7 +262,7 @@ es:
       title: "Mi cuenta"
       save_changes_submit: "Guardar cambios"
       change_credentials_link: "Cambiar mis datos de acceso"
-      email_on_debate_comment_label: "Recibir un email cuando alguien comenta en mis debates"
+      email_on_comment_label: "Recibir un email cuando alguien comenta en mis propuestas o debates"
       email_on_comment_reply_label: "Recibir un email cuando alguien contesta a mis comentarios"
       avatar: "Avatar"
       personal: "Datos personales"
@@ -187,19 +281,19 @@ es:
     message:
       user: "el código secreto no coincide con la imagen"
       debate: "el código secreto no coincide con la imagen"
+      proposal: "el código secreto no coincide con la imagen"
   shared:
     tags_cloud:
       tags: Tendencias
     flag: Denunciar como inapropiado
     unflag: Deshacer denuncia
     collective: Colectivo
-    search_form:
-      search_title: Buscar
-      search_button: Buscar
-      search_placeholder: "Buscar en debates..."
+    check: Seleccionar
+    check_all: Todos
+    check_none: Ninguno
   mailer:
     comment:
-      subject: Alguien ha comentado en tu debate
+      subject: Alguien ha comentado en tu propuesta
     reply:
       subject: Alguien ha respondido a tu comentario
   unauthorized:
@@ -207,7 +301,19 @@ es:
     manage:
       all: "No tienes permiso para realizar la acción '%{action}' sobre %{subject}."
   welcome:
-    last_debates: Últimos debates
+    signed_in_home_title: Actividad reciente
+    debates:
+      title: "Debates"
+      description: "Encontrarnos, debatir y compartir lo que nos parece importante en nuestra ciudad."
+    proposal:
+      title: "Propones"
+      description: "Espacio abierto para propuestas ciudadanas sobre el tipo de ciudad en el que queremos vivir."
+    decide:
+      title: "Decides"
+      description: "La ciudadanía decide si acepta o rechaza las propuestas más apoyadas."
+    do:
+      title: "Se hace"
+      description: "Si la propuesta es aceptada mayoritariamente, el Ayuntamiento la asume como propia y se hace."
     welcome:
       title: Verificación de cuenta
       instructions_1_html: "Bienvenido a la página de participación ciudadana"

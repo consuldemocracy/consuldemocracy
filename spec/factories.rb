@@ -7,6 +7,17 @@ FactoryGirl.define do
     terms_of_service     '1'
     confirmed_at        { Time.now }
 
+    trait :level_two do
+      residence_verified_at Time.now
+      confirmed_phone "611111111"
+      document_number "12345678Z"
+    end
+
+    trait :level_three do
+      verified_at Time.now
+      document_number "12345678Z"
+    end
+
     trait :hidden do
       hidden_at Time.now
     end
@@ -64,6 +75,50 @@ FactoryGirl.define do
   factory :debate do
     sequence(:title)     { |n| "Debate #{n} title" }
     description          'Debate description'
+    terms_of_service     '1'
+    association :author, factory: :user
+
+    trait :hidden do
+      hidden_at Time.now
+    end
+
+    trait :with_ignored_flag do
+      ignored_flag_at Time.now
+    end
+
+    trait :with_confirmed_hide do
+      confirmed_hide_at Time.now
+    end
+
+    trait :flagged do
+      after :create do |debate|
+        Flag.flag(FactoryGirl.create(:user), debate)
+      end
+    end
+
+    trait :with_hot_score do
+      before(:save) { |d| d.calculate_hot_score }
+    end
+
+    trait :with_confidence_score do
+      before(:save) { |d| d.calculate_confidence_score }
+    end
+
+    trait :conflictive do
+      after :create do |debate|
+        Flag.flag(FactoryGirl.create(:user), debate)
+        4.times { create(:vote, votable: debate) }
+      end
+    end
+  end
+
+  factory :proposal do
+    sequence(:title)     { |n| "Proposal #{n} title" }
+    summary              'In summary, what we want is...'
+    description          'Proposal description'
+    question             'Proposal question'
+    external_url         'http://external_documention.es'
+    responsible_name     'John Snow'
     terms_of_service     '1'
     association :author, factory: :user
 

@@ -11,7 +11,7 @@
 
   <% if can? :hide, comment.user %>
     <span class="divider">&nbsp;&bull;&nbsp;</span>
-    <%= link_to t("admin.actions.hide_author").capitalize, hide_moderation_user_path(comment.user_id, debate_id: @debate.id),
+    <%= link_to t("admin.actions.hide_author").capitalize, hide_moderation_user_path(comment.user_id),
                 method: :put, data: { confirm: t('admin.actions.confirm') } %>
   <% end %>
 </span>

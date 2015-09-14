@@ -1,0 +1,23 @@
+<span class="flag-content">
+  <% if show_flag_action? proposal %>
+    <a id="flag-expand-proposal-<%= proposal.id %>" data-dropdown="flag-drop-proposal-<%= proposal.id %>" aria-controls="flag-drop-proposal-<%= proposal.id %>" aria-expanded="false" title="<%= t('shared.flag') %>">
+      &nbsp;<i class="icon-flag flag-disable"></i>&nbsp;&nbsp;
+    </a>
+    <ul id="flag-drop-proposal-<%= proposal.id %>" class="f-dropdown" data-dropdown-content aria-hidden="true" tabindex="-1">
+      <li>
+        <%= link_to t('shared.flag'), flag_proposal_path(proposal), method: :put, remote: true, id: "flag-proposal-#{ proposal.id }" %>
+      </li>
+    </ul>
+  <% end %>
+
+  <% if show_unflag_action? proposal %>
+    <a id="unflag-expand-proposal-<%= proposal.id %>" data-dropdown="unflag-drop-proposal-<%= proposal.id %>" aria-controls="unflag-drop-proposal-<%= proposal.id %>" aria-expanded="false" title="<%= t('shared.unflag') %>">
+      &nbsp;<i class="icon-flag flag-active"></i>&nbsp;&nbsp;
+    </a>
+    <ul id="unflag-drop-proposal-<%= proposal.id %>" class="f-dropdown" data-dropdown-content aria-hidden="true" tabindex="-1">
+      <li>
+        <%= link_to t('shared.unflag'), unflag_proposal_path(proposal), method: :put, remote: true, id: "unflag-proposal-#{ proposal.id }" %>
+      </li>
+    </ul>
+  <% end %>
+</span>

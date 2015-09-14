@@ -10,7 +10,8 @@ feature 'Admin' do
     expect(page).to_not have_link("Moderation")
     visit moderation_root_path
 
-    expect(current_path).to eq(root_path)
+    expect(current_path).not_to eq(moderation_root_path)
+    expect(current_path).to eq(proposals_path)
     expect(page).to have_content "not authorized"
   end
 

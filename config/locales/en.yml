@@ -12,23 +12,25 @@ en:
       open: "Open"
       participation: Participation
       open_city_title: "The city you want, it will be the city you want."
-      open_city_slogan:
+      open_city_slogan_html:
         "Start listening to Madrid.
         For that we open this digital Puerta del Sol, where all the locals can meet to discuss and share everything we want."
+      #   "Existen ciudades gobernadas directamente por sus habitantes, que <b>debaten</b> sobre temas que les preocupan, <b>proponen</b> ideas para mejorar
+      # sus vidas y <b>deciden</b> entre todas y todos las que se llevan a cabo. Madrid ya es una de ellas."
       # open_city_text:
       #   "Here every voice has its place and are citizens, and no one in their name, they decide to vote debates what issues are
       #   most important of every time. Government officials have individual users with whom you may participate in the debates, and evaluated,
       #   the same level as everyone else. Because the Madrid City Council works for its citizens, and must respond to them."
       # open_city_soon: "And soon... we'll open the section for citizen proposals."
-      see_all_debates: See all debates
+      see_all: See debates and proposals
       my_account_link: My account
       locale: "Language:"
       administration: Administration
       moderation: Moderation
-      # welcome: Welcome
+      highlights: "Highlights"
       more_information: "More information"
       debates: Debates
-      # initiatives: Initiatives
+      proposals: Proposals
     footer:
       description: "This portal use %{consul}, is %{open_source}. Madrid, for the whole world."
       open_source: "software libre"
@@ -55,6 +57,7 @@ en:
       conditions: "Terms of use"
       user: account
       debate: debate
+      proposal: proposal
       verification::sms: phone
   application:
     alert:
@@ -73,6 +76,10 @@ en:
       filter_topic:
         one: " with the topic '%{topic}'"
         other: " with the topic '%{topic}'"
+      search_form:
+        title: Search
+        button: Search
+        placeholder: "Search debates..."
       search_results:
         one: " containing '%{search_term}'"
         other: " containing '%{search_term}'"
@@ -82,20 +89,6 @@ en:
         zero: No comments
         one: 1 Comment
         other: "%{count} Comments"
-      votes:
-        zero: No votes
-        one: 1 vote
-        other: "%{count} votes"
-    comment:
-      author: Debate's author
-      moderator: Moderator
-      admin: Administrator
-      deleted: This comment has been deleted
-      user_deleted: Deleted user
-      responses:
-        zero: No Responses
-        one: 1 Response
-        other: "%{count} Responses"
       votes:
         zero: No votes
         one: 1 vote
@@ -143,11 +136,111 @@ en:
     update:
       form:
         submit_button: "Save changes"
+  proposals:
+    index:
+      start_proposal: Start a proposal
+      select_order: Order by
+      select_order_long: Order proposals by
+      orders:
+        confidence_score: best rated
+        hot_score: most active
+        created_at: newest
+        most_commented: most commented
+        random: random
+      filter_topic:
+        one: " with the topic '%{topic}'"
+        other: " with the topic '%{topic}'"
+      search_form:
+        title: Search
+        button: Search
+        placeholder: "Search proposals..."
+      search_results:
+        one: " containing '%{search_term}'"
+        other: " containing '%{search_term}'"
+    proposal:
+      proposal: Proposal
+      support: "Support"
+      support_title: "Support this proposal"
+      comments:
+        zero: No comments
+        one: 1 Comment
+        other: "%{count} Comments"
+      supports:
+        zero: No supports
+        one: 1 support
+        other: "%{count} supports"
+      supports_necessary: "53.726 necessary supports"
+      census_percent: "2% of census"
+      already_supported: "You already supported this proposal!"
+    form:
+      proposal_title: Proposal title
+      proposal_question: Proposal question
+      proposal_question_example_html: "Debe ser resumida en una pregunta cuya respuesta sea Sí o No. <em>Ej. '¿Está usted de acuerdo en peatonalizar la calle Mayor?'</em>"
+      proposal_text: Initial text for proposal
+      proposal_external_url: Link to additional documentation
+      proposal_video_url: "Enlace a vídeo externo"
+      proposal_video_url_note: "Puedes añadir un enlace a YouTube o Vimeo"
+      proposal_summary: "Proposal summary"
+      proposal_summary_note: "200 chars. maximum"
+      proposal_responsible_name: "First and last name of the person making this proposal"
+      proposal_responsible_name_note: "(individualmente o como representante de un colectivo; no se mostrará públicamente)"
+      tags_label: Topics
+      tags_instructions: >
+        Tag this proposal. You can choose among our proposals on the list or add any other topic you want.
+      tags_placeholder: "Add topics writing them separated by ','"
+    show:
+      back_link: Back
+      author_deleted: Deleted user
+      comments_title: Comments
+      comments:
+        zero: No comments
+        one: 1 Comment
+        other: "%{count} Comments"
+      login_to_comment: "You need to %{signin} or %{signup} to comment."
+      edit_proposal_link: Edit
+      share: Share
+      flag: "This proposal has been flag as innapropiate for some users."
+    edit:
+      editing: Edit proposal
+      show_link: Show proposal
+      back_link: Back
+      form:
+        submit_button: "Save changes"
+    new:
+      start_new: Start a proposal
+      more_info: "¿Cómo funcionan las propuestas ciudadanas?"
+      back_link: Back
+      recommendations_title: Tips for creating a proposal
+      recommendation_one: "Do not write the title of the proposal or whole sentences in capital. On the Internet this is considered shouting. And nobody likes to scream."
+      recommendation_two: "Any discussion or comment that involves an illegal act will be eliminated, also intending to sabotage the proposal spaces, everything else is permitted."
+      recommendation_three: "Enjoy this space, voices that fill it, it is yours too."
+      form:
+        submit_button: "Start a proposal"
+    create:
+      form:
+        submit_button: "Start a proposal"
+    update:
+      form:
+        submit_button: "Save changes"
   comments:
     form:
       leave_comment: Write a comment
       comment_as_moderator: Comment as moderator
       comment_as_admin: Comment as administrator
+    comment:
+      author: Author
+      moderator: Moderator
+      admin: Administrator
+      deleted: This comment has been deleted
+      user_deleted: Deleted user
+      responses:
+        zero: No Responses
+        one: 1 Response
+        other: "%{count} Responses"
+      votes:
+        zero: No votes
+        one: 1 vote
+        other: "%{count} votes"
   comments_helper:
     comment_link: Comment
     comment_button: Publish comment
@@ -160,14 +253,15 @@ en:
     unauthenticated: "You need to %{signin} or %{signup} before continuing."
     signin: sign in
     signup: sign up
-    anonymous: "This debate already has too much anonymous votes, %{verify_account} to vote."
+    anonymous: "Too many anonymous votes, %{verify_account} to vote."
+    verified_only: "Proposals can only be voted by verified users, %{verify_account}."
     verify_account: verify your account
     organizations: Organizations can not vote
   account:
     show:
       title: "My account"
       save_changes_submit: "Save changes"
-      email_on_debate_comment_label: "Receive email when someone comments on my debates"
+      email_on_comment_label: "Receive email when someone comments on my debates or proposals"
       email_on_comment_reply_label: "Receive email when someone replies to my comments"
       change_credentials_link: "Change my credentials"
       avatar: "Avatar"
@@ -187,16 +281,16 @@ en:
     message:
       user: "secret code did not match with the image"
       debate: "secret code did not match with the image"
+      proposal: "secret code did not match with the image"
   shared:
     tags_cloud:
       tags: Trend
     flag: Flag as inappropriate
     unflag: Undo flag
     collective: Collective
-    search_form:
-      search_title: Search
-      search_button: Search
-      search_placeholder: "Search on debates..."
+    check: Select
+    check_all: All
+    check_none: None
   mailer:
     comment:
       subject: Someone has commented on your debate
@@ -207,7 +301,20 @@ en:
     manage:
       all: "You are not authorized to %{action} %{subject}."
   welcome:
-    last_debates: Last debates
+    signed_in_home_title: Recent activity
+    signed_in_home_title: Actividad reciente
+    debates:
+      title: "Debate"
+      description: "Meet, discuss and share what we think is important in our city."
+    proposal:
+      title: "You propose"
+      description: "Open to citizens proposals on the kind of city we want to live."
+    decide:
+      title: "You decide"
+      description: "Citizenship decide whether to accept or reject the most supported proposals."
+    do:
+      title: "It does"
+      description: "If the proposal is accepted mostly, the City Council makes his own and done."
     welcome:
       title: Account verification
       instructions_1_html: "Welcome to the public participation website."

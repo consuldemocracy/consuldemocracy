@@ -31,10 +31,10 @@
 
   <div class="row-full subnavigation-container">
     <section class="subnavigation row">
-      <%#= link_to t("layouts.header.welcome"), root_path %>
-      <%#= link_to t("layouts.header.initiatives"), "#" %>
       <div class="small-12 medium-8 column">
+      <%= link_to t("layouts.header.highlights"), highlights_path, class: ("active" if current_page? highlights_path) %>
       <%= link_to t("layouts.header.debates"), debates_path, class: ("active" if current_page?(controller: "/debates")) %>
+      <%= link_to t("layouts.header.proposals"), proposals_path, class: ("active" if current_page?(controller: "/proposals")) %>
       <%= link_to t("layouts.header.more_information"), "/more_information", class: ("active" if current_page?("/more_information"))  %>
       <%= link_to t("layouts.header.external_link_blog_url"), target: "_blank" do %>
         <%= t("layouts.header.external_link_blog") %>
@@ -42,7 +42,7 @@
       <% end %>
       </div>
       <div class="small-12 medium-4 column right">
-        <%= render "shared/search_form_header" %>
+        <%= yield :header_addon %>
       </div>
     </section>
   </div>
@@ -51,8 +51,8 @@
     <div class="row home-page">
       <div class="small-12 medium-7 column">
         <h1><%= t("layouts.header.open_city_title") %></h1>
-        <p><%= t("layouts.header.open_city_slogan") %></p>
-        <%= link_to t("layouts.header.see_all_debates"), debates_path, class: "button radius see-more" %>
+        <p><%= t("layouts.header.open_city_slogan_html") %></p>
+        <%= link_to t("layouts.header.see_all"), highlights_path, class: "button radius see-more warning" %>
         <%= link_to t("layouts.header.more_information"), "/more_information", class: "more-info" %>
       </div>
 

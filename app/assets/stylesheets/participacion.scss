@@ -329,7 +329,7 @@ header {
     @media (min-width: $small-breakpoint) {
       display: inline-block;
       margin-bottom: 0;
-      margin-left: rem-calc(24);
+      margin-left: rem-calc(12);
     }
 
     &:hover {
@@ -656,7 +656,7 @@ header {
     @media (min-width: $small-breakpoint) {
       line-height: $line-height*3;
       margin-left: rem-calc(12);
-      margin-right: rem-calc(72);
+      margin-right: rem-calc(36);
     }
 
     &:after {
@@ -772,7 +772,7 @@ footer {
   @extend .tags;
 
   h3 {
-    border-top: 1px solid $votes-border;
+    border-top: 2px solid $brand;
     display: inline-block;
     font-family: $font-family-sans-serif;
     font-size: rem-calc(16);
@@ -923,6 +923,18 @@ form {
     display: block;
     font-size: rem-calc(13);
     margin-bottom: rem-calc(12);
+  }
+
+  .note-marked {
+    @extend .note;
+    background: yellow;
+    display: inline-block;
+
+    em {
+      background: white;
+      display: inline-block;
+      padding-left: rem-calc(6);
+    }
   }
 
   .ckeditor {
@@ -1403,6 +1415,7 @@ table {
 
       li {
         font-size: rem-calc(15);
+        line-height: rem-calc(30);
         margin-bottom: rem-calc(12);
       }
     }

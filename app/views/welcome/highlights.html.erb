@@ -1,0 +1,27 @@
+<% cache [locale_and_user_status, @list, @debate_votes, @proposal_votes, @paginator.current_page, @paginator.total_pages] do %>
+  <section role="main">
+    <div class="wrap row">
+      <div id="activities" class="debates-list small-12 medium-9 column">
+
+        <div class="filters">
+
+          <div class="small-12 medium-7 left">
+              <h2 class="margin-top">
+                <%= t('welcome.signed_in_home_title') %>
+              </h2>
+          </div>
+
+          <%= render @list %>
+          <%= paginate @paginator %>
+        </div>
+      </div>
+
+      <div class="small-12 medium-3 column">
+        <aside class="sidebar" role="complementary">
+          <%= link_to t("proposals.index.start_proposal"), new_proposal_path, class: 'button radius expand' %>
+          <%= link_to t("debates.index.start_debate"), new_debate_path, class: 'button radius expand' %>
+        </aside>
+      </div>
+    </div>
+  </section>
+<% end %>

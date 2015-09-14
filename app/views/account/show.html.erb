@@ -29,25 +29,25 @@
 
           <h2><%= t("account.show.personal")%></h2>
 
-            <div class="small-12 medium-4">
-          <% if @account.organization? %>
-            <%= f.fields_for :organization do |fo| %>
-              <%= fo.text_field :name, autofocus: true, maxlength: Organization.name_max_length, placeholder: t("account.show.organization_name_label") %>
-              <%= fo.text_field :responsible_name, autofocus: true, maxlength: Organization.responsible_name_max_length, placeholder: t("account.show.organization_responsible_name_placeholder") %>
-            <% end %>
-            <%= f.text_field :phone_number, placeholder: t("account.show.phone_number_label") %>
+          <div class="small-12 medium-4">
+            <% if @account.organization? %>
+              <%= f.fields_for :organization do |fo| %>
+                <%= fo.text_field :name, autofocus: true, maxlength: Organization.name_max_length, placeholder: t("account.show.organization_name_label") %>
+                <%= fo.text_field :responsible_name, autofocus: true, maxlength: Organization.responsible_name_max_length, placeholder: t("account.show.organization_responsible_name_placeholder") %>
+              <% end %>
+              <%= f.text_field :phone_number, placeholder: t("account.show.phone_number_label") %>
 
             <% else %>
-            <%= f.text_field :username, maxlength: User.username_max_length, placeholder: t("account.show.username_label") %>
-          <% end %>
+              <%= f.text_field :username, maxlength: User.username_max_length, placeholder: t("account.show.username_label") %>
+            <% end %>
           </div>
 
           <h2><%= t("account.show.notifications")%></h2>
 
           <div>
-            <%= f.label :email_on_debate_comment do %>
-              <%= f.check_box :email_on_debate_comment, label: false %>
-              <span class="checkbox"><%= t("account.show.email_on_debate_comment_label") %></span>
+            <%= f.label :email_on_comment do %>
+              <%= f.check_box :email_on_comment, label: false %>
+              <span class="checkbox"><%= t("account.show.email_on_comment_label") %></span>
             <% end %>
           </div>
 

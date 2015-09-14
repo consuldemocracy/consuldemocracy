@@ -3,6 +3,7 @@ require "application_responder"
 class ApplicationController < ActionController::Base
   include SimpleCaptcha::ControllerHelpers
   include HasFilters
+  include HasOrders
 
   before_action :authenticate_http_basic, if: :http_basic_auth_site?
   before_action :authenticate_user!, unless: :devise_controller?, if: :beta_site?
@@ -76,6 +77,10 @@ class ApplicationController < ActionController::Base
 
     def set_debate_votes(debates)
       @debate_votes = current_user ? current_user.debate_votes(debates) : {}
+    end
+
+    def set_proposal_votes(proposals)
+      @proposal_votes = current_user ? current_user.proposal_votes(proposals) : {}
     end
 
     def set_comment_flags(comments)

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150912145218) do
+ActiveRecord::Schema.define(version: 20150914191003) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -51,6 +51,7 @@ ActiveRecord::Schema.define(version: 20150912145218) do
     t.string   "ip"
   end
 
+  add_index "ahoy_events", ["name", "time"], name: "index_ahoy_events_on_name_and_time", using: :btree
   add_index "ahoy_events", ["time"], name: "index_ahoy_events_on_time", using: :btree
   add_index "ahoy_events", ["user_id"], name: "index_ahoy_events_on_user_id", using: :btree
   add_index "ahoy_events", ["visit_id"], name: "index_ahoy_events_on_visit_id", using: :btree
@@ -104,13 +105,17 @@ ActiveRecord::Schema.define(version: 20150912145218) do
     t.integer  "confidence_score",                        default: 0
   end
 
+  add_index "debates", ["author_id", "hidden_at"], name: "index_debates_on_author_id_and_hidden_at", using: :btree
+  add_index "debates", ["author_id"], name: "index_debates_on_author_id", using: :btree
   add_index "debates", ["cached_votes_down"], name: "index_debates_on_cached_votes_down", using: :btree
   add_index "debates", ["cached_votes_score"], name: "index_debates_on_cached_votes_score", using: :btree
   add_index "debates", ["cached_votes_total"], name: "index_debates_on_cached_votes_total", using: :btree
   add_index "debates", ["cached_votes_up"], name: "index_debates_on_cached_votes_up", using: :btree
   add_index "debates", ["confidence_score"], name: "index_debates_on_confidence_score", using: :btree
+  add_index "debates", ["description"], name: "index_debates_on_description", using: :btree
   add_index "debates", ["hidden_at"], name: "index_debates_on_hidden_at", using: :btree
   add_index "debates", ["hot_score"], name: "index_debates_on_hot_score", using: :btree
+  add_index "debates", ["title"], name: "index_debates_on_title", using: :btree
 
   create_table "delayed_jobs", force: :cascade do |t|
     t.integer  "priority",   default: 0, null: false
@@ -188,10 +193,44 @@ ActiveRecord::Schema.define(version: 20150912145218) do
 
   add_index "organizations", ["user_id"], name: "index_organizations_on_user_id", using: :btree
 
+  create_table "proposals", force: :cascade do |t|
+    t.string   "title",             limit: 80
+    t.text     "description"
+    t.string   "question"
+    t.string   "external_url"
+    t.integer  "author_id"
+    t.datetime "hidden_at"
+    t.integer  "flags_count",                  default: 0
+    t.datetime "ignored_flag_at"
+    t.integer  "cached_votes_up",              default: 0
+    t.integer  "comments_count",               default: 0
+    t.datetime "confirmed_hide_at"
+    t.integer  "hot_score",         limit: 8,  default: 0
+    t.integer  "confidence_score",             default: 0
+    t.datetime "created_at",                               null: false
+    t.datetime "updated_at",                               null: false
+    t.string   "responsible_name",  limit: 60
+    t.text     "summary"
+    t.string   "video_url"
+  end
+
+  add_index "proposals", ["author_id", "hidden_at"], name: "index_proposals_on_author_id_and_hidden_at", using: :btree
+  add_index "proposals", ["author_id"], name: "index_proposals_on_author_id", using: :btree
+  add_index "proposals", ["cached_votes_up"], name: "index_proposals_on_cached_votes_up", using: :btree
+  add_index "proposals", ["confidence_score"], name: "index_proposals_on_confidence_score", using: :btree
+  add_index "proposals", ["description"], name: "index_proposals_on_description", using: :btree
+  add_index "proposals", ["hidden_at"], name: "index_proposals_on_hidden_at", using: :btree
+  add_index "proposals", ["hot_score"], name: "index_proposals_on_hot_score", using: :btree
+  add_index "proposals", ["question"], name: "index_proposals_on_question", using: :btree
+  add_index "proposals", ["summary"], name: "index_proposals_on_summary", using: :btree
+  add_index "proposals", ["title"], name: "index_proposals_on_title", using: :btree
+
   create_table "settings", force: :cascade do |t|
     t.string "key"
     t.string "value"
   end
+
+  add_index "settings", ["key"], name: "index_settings_on_key", using: :btree
 
   create_table "simple_captcha_data", force: :cascade do |t|
     t.string   "key",        limit: 40
@@ -240,7 +279,7 @@ ActiveRecord::Schema.define(version: 20150912145218) do
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
     t.string   "unconfirmed_email"
-    t.boolean  "email_on_debate_comment",             default: false
+    t.boolean  "email_on_comment",                    default: false
     t.boolean  "email_on_comment_reply",              default: false
     t.string   "phone_number",             limit: 30
     t.string   "official_position"
@@ -275,6 +314,10 @@ ActiveRecord::Schema.define(version: 20150912145218) do
     t.datetime "updated_at",      null: false
   end
 
+  add_index "verified_users", ["document_number"], name: "index_verified_users_on_document_number", using: :btree
+  add_index "verified_users", ["email"], name: "index_verified_users_on_email", using: :btree
+  add_index "verified_users", ["phone"], name: "index_verified_users_on_phone", using: :btree
+
   create_table "visits", id: :uuid, default: nil, force: :cascade do |t|
     t.uuid     "visitor_id"
     t.string   "ip"
@@ -303,6 +346,7 @@ ActiveRecord::Schema.define(version: 20150912145218) do
     t.datetime "started_at"
   end
 
+  add_index "visits", ["started_at"], name: "index_visits_on_started_at", using: :btree
   add_index "visits", ["user_id"], name: "index_visits_on_user_id", using: :btree
 
   create_table "votes", force: :cascade do |t|

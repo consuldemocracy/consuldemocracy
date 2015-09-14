@@ -1,17 +1,23 @@
+<% # Params:
+   #
+   #   search_path: for example debates_path
+   #   i18n_namespace: for example "debates.index.search_form"
+%>
+
 <div class="search-form">
   <div class="sidebar-divider"></div>
-  <h3><%= t("shared.search_form.search_title") %></h3>
+  <h3><%= t("#{i18n_namespace}.title") %></h3>
   <br>
   <div class="row">
-    <%= form_tag debates_path, method: :get do %>
+    <%= form_tag search_path, method: :get do %>
       <div class="small-12 columns">
         <div class="row collapse">
 
           <div class="small-9 medium-12 large-9 columns">
-            <input type="text" name="search" placeholder="<%= t("shared.search_form.search_placeholder") %>" class="search-form">
+            <input type="text" name="search" placeholder="<%= t("#{i18n_namespace}.placeholder") %>" class="search-form">
           </div>
           <div class="small-3 medium-12 large-3 columns">
-            <input type="submit" class="button secondary postfix" value="<%= t('shared.search_form.search_button') %>">
+            <input type="submit" class="button secondary postfix" value="<%= t("#{i18n_namespace}.button") %>">
           </div>
 
         </div>

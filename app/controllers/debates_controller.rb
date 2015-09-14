@@ -1,16 +1,17 @@
 class DebatesController < ApplicationController
-  before_action :parse_order, only: :index
   before_action :parse_tag_filter, only: :index
   before_action :parse_search_terms, only: :index
   before_action :authenticate_user!, except: [:index, :show]
+  has_orders %w{confidence_score hot_score created_at most_commented random}, only: :index
 
   load_and_authorize_resource
+
   respond_to :html, :js
 
   def index
     @debates = @search_terms.present? ? Debate.search(@search_terms) : Debate.all
     @debates = @debates.tagged_with(@tag_filter) if @tag_filter
-    @debates = @debates.page(params[:page]).for_render.send("sort_by_#{@order}")
+    @debates = @debates.page(params[:page]).for_render.send("sort_by_#{@current_order}")
     @tag_cloud = Debate.tag_counts.order(taggings_count: :desc, name: :asc).limit(20)
     set_debate_votes(@debates)
   end
@@ -80,11 +81,6 @@ class DebatesController < ApplicationController
 
     def load_featured_tags
       @featured_tags = ActsAsTaggableOn::Tag.where(featured: true)
-    end
-
-    def parse_order
-      @valid_orders = ['confidence_score', 'hot_score', 'created_at', 'most_commented', 'random']
-      @order = @valid_orders.include?(params[:order]) ? params[:order] : @valid_orders.first
     end
 
     def parse_tag_filter

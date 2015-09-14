@@ -1,5 +1,6 @@
 require 'numeric'
 class Debate < ActiveRecord::Base
+  include Flaggable
   apply_simple_captcha
 
   acts_as_votable
@@ -9,7 +10,6 @@ class Debate < ActiveRecord::Base
 
   belongs_to :author, -> { with_hidden }, class_name: 'User', foreign_key: 'author_id'
   has_many :comments, as: :commentable
-  has_many :flags, as: :flaggable
 
   validates :title, presence: true
   validates :description, presence: true
@@ -26,9 +26,6 @@ class Debate < ActiveRecord::Base
   before_save :calculate_hot_score, :calculate_confidence_score
 
   scope :sort_for_moderation, -> { order(flags_count: :desc, updated_at: :desc) }
-  scope :pending_flag_review, -> { where(ignored_flag_at: nil, hidden_at: nil) }
-  scope :with_ignored_flag, -> { where.not(ignored_flag_at: nil).where(hidden_at: nil) }
-  scope :flagged, -> { where("flags_count > 0") }
   scope :for_render, -> { includes(:tags) }
   scope :sort_by_hot_score , -> { order(hot_score: :desc) }
   scope :sort_by_confidence_score , -> { order(confidence_score: :desc) }
@@ -100,37 +97,20 @@ class Debate < ActiveRecord::Base
     count < 0 ? 0 : count
   end
 
-  def ignored_flag?
-    ignored_flag_at.present?
-  end
-
-  def ignore_flag
-    update(ignored_flag_at: Time.now)
-  end
-
   def after_commented
     save # updates the hot_score because there is a before_save
   end
 
   def calculate_hot_score
-    start           = Time.new(2015, 6, 15)
-    comments_weight = 1.0/20 # 1 positive vote / x comments
-    time_unit       = 12.hours.to_f
-
-    total   = cached_votes_total + comments_weight * comments_count
-    ups     = cached_votes_up    + comments_weight * comments_count
-    downs   = total - ups
-    score   = ups - downs
-    order   = Math.log([score.abs, 1].max, 10)
-    sign    = (score <=> 0).to_f
-    seconds = ((created_at || Time.now) - start).to_f
-
-    self.hot_score = (((order * sign) + (seconds/time_unit)) * 1000000).round
+    self.hot_score = ScoreCalculator.hot_score(created_at,
+                                               cached_votes_total,
+                                               cached_votes_up,
+                                               comments_count)
   end
 
   def calculate_confidence_score
-    return unless cached_votes_total > 0
-    self.confidence_score = cached_votes_score * (cached_votes_up / cached_votes_total.to_f) * 100
+    self.confidence_score = ScoreCalculator.confidence_score(cached_votes_total,
+                                                             cached_votes_up)
   end
 
   def self.search(terms)
