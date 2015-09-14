@@ -26,7 +26,7 @@ feature 'Emails' do
 
   context 'Debate comments' do
     scenario "Send email on debate comment", :js do
-      user = create(:user, email_on_debate_comment: true)
+      user = create(:user, email_on_comment: true)
       debate = create(:debate, author: user)
       comment_on(debate)
 
@@ -37,7 +37,7 @@ feature 'Emails' do
     end
 
     scenario 'Do not send email about own debate comments', :js do
-      user = create(:user, email_on_debate_comment: true)
+      user = create(:user, email_on_comment: true)
       debate = create(:debate, author: user)
       comment_on(debate, user)
 
@@ -45,7 +45,7 @@ feature 'Emails' do
     end
 
     scenario 'Do not send email about debate comment unless set in preferences', :js do
-      user = create(:user, email_on_debate_comment: false)
+      user = create(:user, email_on_comment: false)
       debate = create(:debate, author: user)
       comment_on(debate)
 

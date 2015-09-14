@@ -20,3 +20,6 @@ Setting.create(key: 'max_votes_for_proposal_edit', value: '1000')
 
 # Prefix for the Proposal codes
 Setting.create(key: 'proposal_code_prefix', value: 'MAD')
+
+# Number of votes needed for proposal success
+Setting.create(key: 'votes_for_proposal_success', value: '53726')

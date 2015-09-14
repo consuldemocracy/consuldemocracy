@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150914113251) do
+ActiveRecord::Schema.define(version: 20150914114019) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -260,7 +260,7 @@ ActiveRecord::Schema.define(version: 20150914113251) do
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
     t.string   "unconfirmed_email"
-    t.boolean  "email_on_debate_comment",             default: false
+    t.boolean  "email_on_comment",                    default: false
     t.boolean  "email_on_comment_reply",              default: false
     t.string   "phone_number",             limit: 30
     t.string   "official_position"

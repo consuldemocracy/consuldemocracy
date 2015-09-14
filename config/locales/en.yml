@@ -15,13 +15,14 @@ en:
       open_city_slogan_html:
         "Start listening to Madrid.
         For that we open this digital Puerta del Sol, where all the locals can meet to discuss and share everything we want."
+      #   "Existen ciudades gobernadas directamente por sus habitantes, que <b>debaten</b> sobre temas que les preocupan, <b>proponen</b> ideas para mejorar
+      # sus vidas y <b>deciden</b> entre todas y todos las que se llevan a cabo. Madrid ya es una de ellas."
       # open_city_text:
       #   "Here every voice has its place and are citizens, and no one in their name, they decide to vote debates what issues are
       #   most important of every time. Government officials have individual users with whom you may participate in the debates, and evaluated,
       #   the same level as everyone else. Because the Madrid City Council works for its citizens, and must respond to them."
       # open_city_soon: "And soon... we'll open the section for citizen proposals."
-      see_all_debates: See all debates
-      see_all_proposals: See all proposals
+      see_all: See debates and proposals
       my_account_link: My account
       locale: "Language:"
       administration: Administration
@@ -254,8 +255,7 @@ en:
     show:
       title: "My account"
       save_changes_submit: "Save changes"
-      email_on_debate_comment_label: "Receive email when someone comments on my debates"
-      email_on_proposal_comment_label: "Receive email when someone comments on my proposals"
+      email_on_comment_label: "Receive email when someone comments on my debates or proposals"
       email_on_comment_reply_label: "Receive email when someone replies to my comments"
       change_credentials_link: "Change my credentials"
       avatar: "Avatar"
@@ -298,6 +298,19 @@ en:
     last_debates: Last debates
     last_proposals: Last proposals
     signed_in_home_title: Recent activity
+    signed_in_home_title: Actividad reciente
+    debates:
+      title: "Debate"
+      description: "Meet, discuss and share what we think is important in our city."
+    proposal:
+      title: "You propose"
+      description: "Open to citizens proposals on the kind of city we want to live."
+    decide:
+      title: "You decide"
+      description: "Citizenship decide whether to accept or reject the most supported proposals."
+    do:
+      title: "It does"
+      description: "If the proposal is accepted mostly, the City Council makes his own and done."
     welcome:
       title: Account verification
       instructions_1_html: "Welcome to the public participation website."

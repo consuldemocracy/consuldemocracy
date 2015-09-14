@@ -8,3 +8,4 @@ en:
     max_ratio_anon_votes_on_debates: "Max allowed percentage of anonymous votes per Debate"
     max_votes_for_proposal_edit: "Number of votes where a Proposal is not editable anymore"
     proposal_code_prefix: "Prefix for Proposals codes"
+    votes_for_proposal_success: "Number of votes needed for Proposal approval"
