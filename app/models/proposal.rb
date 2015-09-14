@@ -27,6 +27,8 @@ class Proposal < ActiveRecord::Base
   before_validation :sanitize_tag_list
   before_validation :set_responsible_name
 
+  before_save :calculate_hot_score, :calculate_confidence_score
+
   scope :for_render, -> { includes(:tags) }
   scope :sort_by_hot_score , -> { order(hot_score: :desc) }
   scope :sort_by_confidence_score , -> { order(confidence_score: :desc) }
@@ -87,6 +89,22 @@ class Proposal < ActiveRecord::Base
     "#{Setting.value_for("proposal_code_prefix")}-#{created_at.strftime('%Y-%M')}-#{id}"
   end
 
+  def after_commented
+    save # updates the hot_score because there is a before_save
+  end
+
+  def calculate_hot_score
+    self.hot_score = ScoreCalculator.hot_score(created_at,
+                                               cached_votes_up,
+                                               cached_votes_up,
+                                               comments_count)
+  end
+
+  def calculate_confidence_score
+    self.confidence_score = ScoreCalculator.confidence_score(cached_votes_up,
+                                                             cached_votes_up)
+  end
+
   def self.title_max_length
     @@title_max_length ||= self.columns.find { |c| c.name == 'title' }.limit || 80
   end
@@ -126,6 +144,7 @@ class Proposal < ActiveRecord::Base
         self.responsible_name = author.document_number
       end
     end
+
   private
 
     def validate_description_length

@@ -4,16 +4,16 @@ module ScoreCalculator
   COMMENT_WEIGHT = 1.0/20 # 1 positive vote / x comments
   TIME_UNIT      = 12.hours.to_f
 
-  def self.hot_score(date, votes_total, votes_up,  comments_count)
-    total   = votes_total + COMMENT_WEIGHT * comments_count
-    ups     = votes_up    + COMMENT_WEIGHT * comments_count
+  def self.hot_score(date, votes_total, votes_up, comments_count)
+    total   = (votes_total + COMMENT_WEIGHT * comments_count).to_f
+    ups     = (votes_up    + COMMENT_WEIGHT * comments_count).to_f
     downs   = total - ups
     score   = ups - downs
-    order   = Math.log([score.abs, 1].max, 10)
-    sign    = (score <=> 0).to_f
+    offset  = Math.log([score.abs, 1].max, 10) * (ups / [total, 1].max)
+    sign    = score <=> 0
     seconds = ((date || Time.now) - EPOC).to_f
 
-    (((order * sign) + (seconds/TIME_UNIT)) * 10000000).round
+    (((offset * sign) + (seconds/TIME_UNIT)) * 10000000).round
   end
 
   def self.confidence_score(votes_total, votes_up)
