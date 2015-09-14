@@ -13,7 +13,12 @@
   <%= link_to vote_proposal_path(proposal, value: 'yes'), class: "button button-support tiny radius expand #{voted_classes[:in_favor]}",
       title: t('proposals.proposal.support_title'), method: "post", remote: true do %>
         <%= t("proposals.proposal.support") %>
-      <% end %>
+  <% end %>
+  <!-- if user supported dissapear the button and appear this :) -->
+    <div class="supported">
+      <%= t("proposals.proposal.already_supported") %>
+    </div>
+  <!-- /. if user supported dissapear the button and appear this :) -->
   </div>
 
   <% if user_signed_in? && current_user.organization? %>

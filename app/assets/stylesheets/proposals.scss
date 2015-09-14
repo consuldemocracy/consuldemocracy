@@ -22,10 +22,14 @@
 }
 
 @mixin supports {
-  margin-top: rem-calc(24);
+  background: $proposals;
+  border-top: 1px solid $proposals-border;
+  margin: 0 rem-calc(-12);
+  padding: rem-calc(14) rem-calc(12);
+  position: relative;
 
   .progress {
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: white;
     height: rem-calc(18);
     margin-bottom: rem-calc(6);
 
@@ -35,8 +39,8 @@
   }
 
   .button-support {
-    background: $proposals;
-    color: white;
+    background: white;
+    color: $proposals;
     display: inline-block;
     font-size: rem-calc(14);
     margin-top: rem-calc(12);
@@ -53,13 +57,12 @@
   }
 
   .total-supports {
-    color: $proposals;
+    color: white;
     float: right;
     font-size: rem-calc(14);
 
     span {
-      color: $text-medium;
-      font-size: rem-calc(12);
+      font-size: rem-calc(11);
     }
   }
 
@@ -109,6 +112,10 @@
       font-weight: bold;
       text-decoration: underline;
     }
+  }
+
+  .supported {
+    color: white;
   }
 }
 
@@ -294,31 +301,31 @@
   }
 
   .supports {
-    // border: 1px solid $proposals-border;
-    // margin: 0 rem-calc(-12);
+    border: 1px solid $proposals-border;
+    margin: 0 rem-calc(-12);
 
-    // @media (min-width: $small-breakpoint) {
-    //   border-top-left-radius: 3px;
-    //   border-bottom-left-radius: 3px;
-    //   margin: 0 rem-calc(-24) 0 rem-calc(12);
-    // }
+    @media (min-width: $small-breakpoint) {
+      border-top-left-radius: 3px;
+      border-bottom-left-radius: 3px;
+      margin: 0 rem-calc(-25) 0 rem-calc(12);
+    }
 
-    // &:after {
-    //   content: none;
-    //   position: absolute;
-    //   display: block;
-    //   border-style: solid;
-    //   border-color: #664212 transparent transparent transparent;
-    //   bottom: rem-calc(-14);
-    //   border-left-width: 0;
-    //   border-right-color: transparent;
-    //   right: rem-calc(-1);
-    //   border-width: 1em 1em 0 0;
+    &:after {
+      content: none;
+      position: absolute;
+      display: block;
+      border-style: solid;
+      border-color: #664212 transparent transparent transparent;
+      bottom: rem-calc(-14);
+      border-left-width: 0;
+      border-right-color: transparent;
+      right: rem-calc(-1);
+      border-width: 1em 1em 0 0;
 
-    //   @media (min-width: $small-breakpoint) {
-    //     content: "";
-    //   }
-    // }
+      @media (min-width: $small-breakpoint) {
+        content: "";
+      }
+    }
 
     .total-supports {
       display: inline-block;

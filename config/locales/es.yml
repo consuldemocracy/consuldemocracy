@@ -170,6 +170,7 @@ es:
         one: 1 apoyo
         other: "%{count} apoyos"
       supports_necessary: "/ 53.726"
+      already_supported: "¡Ya has apoyado esta propuesta!"
     form:
       proposal_title: Título de la propuesta
       proposal_question: Pregunta de la propuesta
