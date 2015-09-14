@@ -238,7 +238,7 @@ feature 'Debates' do
 
     visit edit_debate_path(debate)
     expect(current_path).not_to eq(edit_debate_path(debate))
-    expect(current_path).to eq(highlights_path)
+    expect(current_path).to eq(proposals_path)
     expect(page).to have_content 'not authorized'
   end
 
@@ -251,7 +251,7 @@ feature 'Debates' do
     visit edit_debate_path(debate)
 
     expect(current_path).not_to eq(edit_debate_path(debate))
-    expect(current_path).to eq(highlights_path)
+    expect(current_path).to eq(proposals_path)
     expect(page).to have_content 'not authorized'
   end
 

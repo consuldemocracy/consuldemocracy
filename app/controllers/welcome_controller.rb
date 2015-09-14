@@ -5,7 +5,7 @@ class WelcomeController < ApplicationController
 
   def index
     if current_user
-      redirect_to :highlights
+      redirect_to :proposals
     end
   end
 
