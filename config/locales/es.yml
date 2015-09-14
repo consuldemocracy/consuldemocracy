@@ -299,8 +299,6 @@ es:
     manage:
       all: "No tienes permiso para realizar la acción '%{action}' sobre %{subject}."
   welcome:
-    last_debates: Últimos debates
-    last_proposals: Últimas propuestas
     signed_in_home_title: Actividad reciente
     debates:
       title: "Debates"

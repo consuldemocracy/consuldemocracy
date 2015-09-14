@@ -299,8 +299,6 @@ en:
     manage:
       all: "You are not authorized to %{action} %{subject}."
   welcome:
-    last_debates: Last debates
-    last_proposals: Last proposals
     signed_in_home_title: Recent activity
     signed_in_home_title: Actividad reciente
     debates:
