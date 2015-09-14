@@ -40,6 +40,7 @@ feature 'Proposals' do
     visit proposal_path(proposal)
 
     expect(page).to have_content proposal.title
+    expect(page).to have_content proposal.code
     expect(page).to have_content "Proposal question"
     expect(page).to have_content "Proposal description"
     expect(page).to have_content "http://external_documention.es"
