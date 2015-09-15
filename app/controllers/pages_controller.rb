@@ -13,7 +13,7 @@ class PagesController < ApplicationController
   def privacy
   end
 
-  def cooming_soon
+  def coming_soon
   end
 
   def how_it_works

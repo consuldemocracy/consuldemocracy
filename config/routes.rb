@@ -213,6 +213,20 @@ Rails.application.routes.draw do
   end
 
   # static pages
-  get "/:action", controller: "pages"
+  get "/census_terms", to: "pages#census_terms"
+  get "/conditions", to: "pages#conditions"
+  get "/general_terms", to: "pages#general_terms"
+  get "/privacy", to: "pages#privacy"
+  get "/coming_soon", to: "pages#coming_soon"
+  get "/how_it_works", to: "pages#how_it_works"
+  get "/how_to_use", to: "pages#how_to_use"
+  get "/more_information", to: "pages#more_information"
+  get "/opendata", to: "pages#opendata"
+  get "/participation", to: "pages#participation"
+  get "/transparency", to: "pages#transparency"
+  get "/proposals_info", to: "pages#proposals_info"
+  get "/participation_facts", to: "pages#participation_facts"
+  get "/participation_world", to: "pages#participation_world"
+  get "/blog", to: "pages#blog"
 
 end
