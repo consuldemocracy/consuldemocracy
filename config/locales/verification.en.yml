@@ -15,6 +15,7 @@ en:
           passport: "Passport"
           residence_card: "Residence card"
         document_number: "Document number"
+        document_number_placeholder: "Format: 12345678X"
         date_of_birth: "Date of birth"
         postal_code: "Postal code"
         accept_terms_text: "I accept %{terms_url} to access the city Census"
