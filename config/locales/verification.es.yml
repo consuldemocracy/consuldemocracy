@@ -15,6 +15,7 @@ es:
           passport: "Pasaporte"
           residence_card: "Tarjeta de residencia"
         document_number: "Número de documento"
+        document_number_placeholder: "Formato: 12345678X"
         date_of_birth: "Fecha de nacimiento"
         postal_code: "Código postal"
         accept_terms_text: "Acepto %{terms_url} al Padrón"
