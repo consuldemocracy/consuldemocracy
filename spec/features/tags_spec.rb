@@ -19,12 +19,22 @@ feature 'Tags' do
 
   scenario 'Filtered' do
     debate1 = create(:debate, tag_list: 'Salud')
-    debate2 = create(:debate, tag_list: 'Salud')
+    debate2 = create(:debate, tag_list: 'salud')
     debate3 = create(:debate, tag_list: 'Hacienda')
     debate4 = create(:debate, tag_list: 'Hacienda')
 
     visit debates_path
-    first(:link, "Salud").click
+    first(:link, 'Salud').click
+
+    within("#debates") do
+      expect(page).to have_css('.debate', count: 2)
+      expect(page).to have_content(debate1.title)
+      expect(page).to have_content(debate2.title)
+      expect(page).to_not have_content(debate3.title)
+      expect(page).to_not have_content(debate4.title)
+    end
+
+    visit debates_path(tag: 'salud')
 
     within("#debates") do
       expect(page).to have_css('.debate', count: 2)
