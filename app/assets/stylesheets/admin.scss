@@ -203,6 +203,12 @@ body.admin {
   margin-left: rem-calc(12);
 }
 
+.proposal-description {
+  height: rem-calc(60);
+  overflow: hidden;
+  max-width: rem-calc(750);
+}
+
 // 04. Stats
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 

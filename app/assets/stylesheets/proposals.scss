@@ -39,6 +39,15 @@
     }
   }
 
+  .percentage {
+    font-size: rem-calc(10);
+    color: $brand;
+    vertical-align: top;
+    position: absolute;
+    top: 17px;
+    right: 18px;
+  }
+
   abbr {
     color: white;
 
@@ -400,6 +409,10 @@
     }
   }
 
+  h4 {
+    margin: rem-calc(12) 0;
+  }
+
   .edit-proposal {
     margin-bottom: 0;
   }
@@ -422,11 +435,17 @@
     }
   }
 
+  .proposal-description {
+    font-size: rem-calc(15);
+    line-height: rem-calc(30);
+  }
+
   ul, ol {
+    margin: rem-calc(12) 0;
 
     li {
-      font-size: rem-calc(13);
-      margin-bottom: rem-calc(12);
+      font-size: rem-calc(15);
+      margin-bottom: rem-calc(15);
     }
   }
 
@@ -454,6 +473,45 @@
     }
   }
 
+  blockquote {
+    margin-top: rem-calc(12);
+    padding-top: 0;
+    font-size: rem-calc(15);
+    line-height: rem-calc(30);
+  }
+
+  .document-link {
+    border: 1px solid $border;
+    display: block;
+    margin-top: rem-calc(12);
+    padding: rem-calc(12);
+    position: relative;
+
+    a {
+      padding-left: rem-calc(24);
+    }
+
+    :before {
+      color: #007BB7;
+      content: "G";
+      font-family: "icons" !important;
+      font-size: rem-calc(24);
+      left: rem-calc(6);
+      padding-top: rem-calc(3);
+      position: absolute;
+      top: 0;
+    }
+  }
+
+  .video-link {
+    @extend .document-link;
+
+    :before {
+      color: #CC181E;
+      content: "D";
+    }
+  }
+
   .supports {
     @include supports;
     border: 0;
@@ -469,23 +527,6 @@
     .not-logged {
       line-height: $line-height;
       padding: rem-calc(24);
-    }
-
-    @media (min-width: $small-breakpoint  + em-calc(1)) and (max-width:$medium-breakpoint) {
-      .in-favor, .against {
-        text-align: left;
-        width: rem-calc(100);
-      }
-    }
-
-    .divider {
-      display: none;
-    }
-
-    @media (min-width: $medium-breakpoint) {
-      .divider {
-        display: inline-block;
-      }
     }
   }
 

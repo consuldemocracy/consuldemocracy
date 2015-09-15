@@ -1,10 +1,5 @@
 module ApplicationHelper
 
-  def percentage(vote, debate)
-    return "0%" if debate.total_votes == 0
-    debate.send(vote).percent_of(debate.total_votes).to_s + "%"
-  end
-
   def home_page?
     return false if user_signed_in?
     # Using path because fullpath yields false negatives since it contains
