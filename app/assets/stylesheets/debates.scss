@@ -467,11 +467,17 @@
     }
   }
 
+  .debate-description {
+    font-size: rem-calc(15);
+    line-height: rem-calc(30);
+  }
+
   ul, ol {
+    margin: rem-calc(12) 0;
 
     li {
-      font-size: rem-calc(13);
-      margin-bottom: rem-calc(12);
+      font-size: rem-calc(15);
+      margin-bottom: rem-calc(15);
     }
   }
 
