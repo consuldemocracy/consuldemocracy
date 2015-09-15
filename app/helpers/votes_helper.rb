@@ -1,11 +1,15 @@
 module VotesHelper
 
+  def debate_percentage_of_likes(debate)
+    debate.likes.percent_of(debate.total_votes)
+  end
+
   def votes_percentage(vote, debate)
     return "0%" if debate.total_votes == 0
     if vote == 'likes'
-      debate.likes.percent_of(debate.total_votes).to_s + "%"
+      debate_percentage_of_likes(debate).to_s + "%"
     elsif vote == 'dislikes'
-      (100 - debate.likes.percent_of(debate.total_votes)).to_s + "%"
+      (100 - debate_percentage_of_likes(debate)).to_s + "%"
     end
   end
 
