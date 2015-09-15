@@ -1,8 +1,12 @@
 module ApplicationHelper
 
-  def percentage(vote, debate)
+  def votes_percentage(vote, debate)
     return "0%" if debate.total_votes == 0
-    debate.send(vote).percent_of(debate.total_votes).to_s + "%"
+    if vote == 'likes'
+      debate.likes.percent_of(debate.total_votes).to_s + "%"
+    elsif vote == 'dislikes'
+      (100 - debate.likes.percent_of(debate.total_votes)).to_s + "%"
+    end
   end
 
   def home_page?
