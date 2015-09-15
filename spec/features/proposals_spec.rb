@@ -3,12 +3,12 @@ require 'rails_helper'
 feature 'Proposals' do
 
   scenario 'Index' do
-    proposal = [create(:proposal), create(:proposal), create(:proposal)]
+    proposals = [create(:proposal), create(:proposal), create(:proposal)]
 
     visit proposals_path
 
     expect(page).to have_selector('#proposals .proposal', count: 3)
-    proposal.each do |proposal|
+    proposals.each do |proposal|
       within('#proposals') do
         expect(page).to have_content proposal.title
         expect(page).to have_css("a[href='#{proposal_path(proposal)}']", text: proposal.summary)
@@ -440,10 +440,10 @@ feature 'Proposals' do
 
   feature 'Proposal index order filters' do
 
-    scenario 'Default order is confidence_score', :js do
-      create(:proposal, title: 'Best proposal').update_column(:confidence_score, 10)
-      create(:proposal, title: 'Worst proposal').update_column(:confidence_score, 2)
-      create(:proposal, title: 'Medium proposal').update_column(:confidence_score, 5)
+    scenario 'Default order is hot_score', :js do
+      create(:proposal, title: 'Best proposal').update_column(:hot_score, 10)
+      create(:proposal, title: 'Worst proposal').update_column(:hot_score, 2)
+      create(:proposal, title: 'Medium proposal').update_column(:hot_score, 5)
 
       visit proposals_path
 
@@ -451,22 +451,22 @@ feature 'Proposals' do
       expect('Medium proposal').to appear_before('Worst proposal')
     end
 
-    scenario 'Proposals are ordered by hot_score', :js do
-      create(:proposal, title: 'Best proposal').update_column(:hot_score, 10)
-      create(:proposal, title: 'Worst proposal').update_column(:hot_score, 2)
-      create(:proposal, title: 'Medium proposal').update_column(:hot_score, 5)
+    scenario 'Proposals are ordered by confidence_score', :js do
+      create(:proposal, title: 'Best proposal').update_column(:confidence_score, 10)
+      create(:proposal, title: 'Worst proposal').update_column(:confidence_score, 2)
+      create(:proposal, title: 'Medium proposal').update_column(:confidence_score, 5)
 
       visit proposals_path
-      select 'most active', from: 'order-selector'
+      select 'best rated', from: 'order-selector'
 
-      expect(page).to have_selector('.js-order-selector[data-order="hot_score"]')
+      expect(page).to have_selector('.js-order-selector[data-order="confidence_score"]')
 
       within '#proposals' do
         expect('Best proposal').to appear_before('Medium proposal')
         expect('Medium proposal').to appear_before('Worst proposal')
       end
 
-      expect(current_url).to include('order=hot_score')
+      expect(current_url).to include('order=confidence_score')
       expect(current_url).to include('page=1')
     end
 

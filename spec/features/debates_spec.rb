@@ -389,10 +389,10 @@ feature 'Debates' do
 
   feature 'Debate index order filters' do
 
-    scenario 'Default order is confidence_score', :js do
-      create(:debate, title: 'Best').update_column(:confidence_score, 10)
-      create(:debate, title: 'Worst').update_column(:confidence_score, 2)
-      create(:debate, title: 'Medium').update_column(:confidence_score, 5)
+    scenario 'Default order is hot_score', :js do
+      create(:debate, title: 'Best').update_column(:hot_score, 10)
+      create(:debate, title: 'Worst').update_column(:hot_score, 2)
+      create(:debate, title: 'Medium').update_column(:hot_score, 5)
 
       visit debates_path
 
@@ -400,22 +400,22 @@ feature 'Debates' do
       expect('Medium').to appear_before('Worst')
     end
 
-    scenario 'Debates are ordered by hot_score', :js do
-      create(:debate, title: 'Best').update_column(:hot_score, 10)
-      create(:debate, title: 'Worst').update_column(:hot_score, 2)
-      create(:debate, title: 'Medium').update_column(:hot_score, 5)
+    scenario 'Debates are ordered by confidence_score', :js do
+      create(:debate, title: 'Best').update_column(:confidence_score, 10)
+      create(:debate, title: 'Worst').update_column(:confidence_score, 2)
+      create(:debate, title: 'Medium').update_column(:confidence_score, 5)
 
       visit debates_path
-      select 'most active', from: 'order-selector'
+      select 'best rated', from: 'order-selector'
 
-      expect(page).to have_selector('.js-order-selector[data-order="hot_score"]')
+      expect(page).to have_selector('.js-order-selector[data-order="confidence_score"]')
 
       within '#debates' do
         expect('Best').to appear_before('Medium')
         expect('Medium').to appear_before('Worst')
       end
 
-      expect(current_url).to include('order=hot_score')
+      expect(current_url).to include('order=confidence_score')
       expect(current_url).to include('page=1')
     end
 

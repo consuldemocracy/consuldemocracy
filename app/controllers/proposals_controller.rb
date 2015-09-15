@@ -2,7 +2,7 @@ class ProposalsController < ApplicationController
   before_action :parse_tag_filter, only: :index
   before_action :parse_search_terms, only: :index
   before_action :authenticate_user!, except: [:index, :show]
-  has_orders %w{confidence_score hot_score created_at most_commented random}, only: :index
+  has_orders %w{hot_score confidence_score created_at most_commented random}, only: :index
 
   load_and_authorize_resource
   respond_to :html, :js
