@@ -135,10 +135,4 @@ module CommonActions
     expect(page).to have_content 'Correct code'
   end
 
-  def wait_for_ajax
-    Timeout.timeout(Capybara.default_wait_time) do
-      loop until finished_all_ajax_requests?
-    end
-  end
-
 end

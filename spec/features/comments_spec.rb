@@ -82,9 +82,8 @@ feature 'Comments' do
     2.times do |time|
       fill_in "comment-body-debate_#{debate.id}", with: "Have you thought about...#{time}?"
       click_button 'Publish comment'
-      waiting_for_ajax
+      expect(page).not_to have_content 'No comments'
     end
-    expect(page).not_to have_content 'No comments'
 
     within '.debate-info' do
       expect(page).to have_content '2 Comments'
