@@ -40,7 +40,7 @@
           <span class="bullet">&nbsp;&bull;&nbsp;</span>
           <%= proposal.author.username %>
           <br>
-          <div style="height: 4rem; overflow: hidden;">
+          <div style="proposal-description">
             <%= proposal.description %>
           </div>
         </td>
@@ -50,7 +50,6 @@
       </tr>
     <% end %>
   </table>
-
 
   <%= submit_tag t('moderation.proposals.index.block_authors'),
     name: "block_authors",
