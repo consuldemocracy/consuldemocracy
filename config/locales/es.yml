@@ -171,6 +171,7 @@ es:
         other: "%{count} apoyos"
       supports_necessary: "53.726 apoyos necesarios"
       census_percent: "2% del Censo"
+      total_percent: "100%"
       already_supported: "¡Ya has apoyado esta propuesta!"
     form:
       proposal_title: Título de la propuesta
@@ -191,6 +192,7 @@ es:
     show:
       back_link: Volver
       author_deleted: Usuario eliminado
+      code: "Código de la propuesta:"
       comments_title: Comentarios
       comments:
         zero: Sin comentarios
