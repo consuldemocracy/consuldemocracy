@@ -34,7 +34,7 @@ feature 'Moderate in bulk' do
   end
 
   scenario "select all/none", :js do
-    create_list(:debate, 20)
+    create_list(:debate, 2)
 
     visit moderation_bulk_path
 

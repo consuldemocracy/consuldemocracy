@@ -80,7 +80,7 @@ feature 'Moderate proposals' do
       end
 
       scenario "select all/none", :js do
-        create_list(:proposal, 20)
+        create_list(:proposal, 2)
 
         visit moderation_proposals_path
 
@@ -98,7 +98,7 @@ feature 'Moderate proposals' do
       end
 
       scenario "remembering page, filter and order" do
-        create_list(:proposal, 55)
+        create_list(:proposal, 52)
 
         visit moderation_proposals_path(filter: 'all', page: '2', order: 'created_at')
 
