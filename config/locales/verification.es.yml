@@ -18,7 +18,7 @@ es:
         date_of_birth: "Fecha de nacimiento"
         postal_code: "Código postal"
         accept_terms_text: "Acepto %{terms_url} al Padrón"
-        terms: "los terminos de acceso"
+        terms: "los términos de acceso"
         verify_residence: "Verificar residencia"
         form_errors: "evitaron verificar tu residencia"
         error_verifying_census: "El Padrón de Madrid no pudo verificar tu información. Revisa la información ó ponte en contacto con nosotros."
