@@ -68,7 +68,7 @@ tags = Faker::Lorem.words(25)
   author = User.reorder("RANDOM()").first
   description = "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>"
   debate = Debate.create!(author: author,
-                          title: Faker::Lorem.sentence(3),
+                          title: Faker::Lorem.sentence(3).truncate(60),
                           created_at: rand((Time.now - 1.week) .. Time.now),
                           description: description,
                           tag_list: tags.sample(3).join(','),
@@ -84,7 +84,7 @@ tags = Faker::Lorem.words(25)
   author = User.reorder("RANDOM()").first
   description = "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>"
   proposal = Proposal.create!(author: author,
-                              title: Faker::Lorem.sentence(3),
+                              title: Faker::Lorem.sentence(3).truncate(60),
                               question: Faker::Lorem.sentence(3),
                               summary: Faker::Lorem.sentence(3),
                               responsible_name: Faker::Name.name,
