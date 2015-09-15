@@ -18,6 +18,9 @@ Setting.create(key: 'max_ratio_anon_votes_on_debates', value: '50')
 # Max votes where a proposal is still editable
 Setting.create(key: 'max_votes_for_proposal_edit', value: '1000')
 
+# Max votes where a debate is still editable
+Setting.create(key: 'max_votes_for_debate_edit', value: '1000')
+
 # Prefix for the Proposal codes
 Setting.create(key: 'proposal_code_prefix', value: 'MAD')
 
