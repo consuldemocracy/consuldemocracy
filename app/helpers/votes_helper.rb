@@ -1,5 +1,14 @@
 module VotesHelper
 
+  def votes_percentage(vote, debate)
+    return "0%" if debate.total_votes == 0
+    if vote == 'likes'
+      debate.likes.percent_of(debate.total_votes).to_s + "%"
+    elsif vote == 'dislikes'
+      (100 - debate.likes.percent_of(debate.total_votes)).to_s + "%"
+    end
+  end
+
   def css_classes_for_vote(votes, votable)
     case votes[votable.id]
     when true

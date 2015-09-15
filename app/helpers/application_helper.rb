@@ -1,14 +1,5 @@
 module ApplicationHelper
 
-  def votes_percentage(vote, debate)
-    return "0%" if debate.total_votes == 0
-    if vote == 'likes'
-      debate.likes.percent_of(debate.total_votes).to_s + "%"
-    elsif vote == 'dislikes'
-      (100 - debate.likes.percent_of(debate.total_votes)).to_s + "%"
-    end
-  end
-
   def home_page?
     return false if user_signed_in?
     # Using path because fullpath yields false negatives since it contains
