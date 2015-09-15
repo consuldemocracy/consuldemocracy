@@ -74,7 +74,7 @@
 
         <h4><%= @proposal.question %></h4>
 
-        <%= render 'shared/tags', proposal: @proposal %>
+        <%= render 'shared/tags', taggable: @proposal %>
 
         <div class='js-moderator-proposal-actions'>
           <%= render 'actions', proposal: @proposal %>

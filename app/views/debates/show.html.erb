@@ -59,7 +59,7 @@
 
         <%= safe_html_with_links @debate.description %>
 
-        <%= render 'shared/tags', debate: @debate %>
+        <%= render 'shared/tags', taggable: @debate %>
 
         <div class='js-moderator-debate-actions'>
           <%= render 'actions', debate: @debate %>
