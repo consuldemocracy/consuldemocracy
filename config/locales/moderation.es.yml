@@ -42,7 +42,7 @@ es:
         filters:
           all: Todos
           pending_flag_review: Pendientes
-          with_ignored_flag: Ignorados
+          with_ignored_flag: Marcados como revisados
     proposals:
       index:
         hide_proposals: Ocultar Propuestas
