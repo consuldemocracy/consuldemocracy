@@ -18,9 +18,15 @@ describe Verification::Residence do
 
       it "should not be valid without a date of birth" do
         residence = Verification::Residence.new({"date_of_birth(3i)"=>"", "date_of_birth(2i)"=>"", "date_of_birth(1i)"=>""})
-        residence.valid?
+        expect(residence).to_not be_valid
         expect(residence.errors[:date_of_birth]).to include("can't be blank")
       end
+    end
+
+    it "should validate user has allowed age" do
+        residence = Verification::Residence.new({"date_of_birth(3i)"=>"1", "date_of_birth(2i)"=>"1", "date_of_birth(1i)"=>"#{5.year.ago.year}"})
+        expect(residence).to_not be_valid
+        expect(residence.errors[:date_of_birth]).to include("You need yo be at least 16 years old")
     end
 
     it "should validate uniquness of document_number" do
@@ -38,6 +44,7 @@ describe Verification::Residence do
       residence.terms_of_service = nil
       expect(residence).to_not be_valid
     end
+
   end
 
   describe "new" do

@@ -12,8 +12,9 @@ class Verification::Residence
 
   validates :postal_code, length: { is: 5 }
 
-  validate :residence_in_madrid
+  validate :allowed_age
   validate :document_number_uniqueness
+  validate :residence_in_madrid
 
   def initialize(attrs={})
     self.date_of_birth = parse_date('date_of_birth', attrs)
@@ -45,6 +46,11 @@ class Verification::Residence
       Lock.increase_tries(user)
     end
     self.date_of_birth = string_to_date(date_of_birth)
+  end
+
+  def allowed_age
+    return if errors[:date_of_birth].any?
+    errors.add(:date_of_birth, I18n.t('verification.residence.new.error_not_allowed_age')) unless self.date_of_birth <= 16.years.ago
   end
 
   def store_failed_attempt
