@@ -48,6 +48,15 @@ es:
       privacy: "Política de privacidad"
       conditions: "Condiciones de uso"
       more_info: "Más información"
+    application:
+      ie_title: "Esta web no está optimizada para tu navegador"
+      ie:
+        "Hemos detectado que estás navegando desde Internet Explorer.
+        Para una mejor experiencia te recomendamos utilizar %{chrome} o %{firefox}."
+      chrome: "Google Chrome"
+      chrome_url: "https://www.google.com/chrome/browser/desktop/"
+      firefox: "Firefox"
+      firefox_url: "https://www.mozilla.org/firefox"
   form:
       error: error
       errors: errores

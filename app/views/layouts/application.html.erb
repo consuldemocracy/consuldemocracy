@@ -22,6 +22,23 @@
     <div class="wrapper">
       <%= render 'layouts/header' %>
 
+      <!--[if lt IE 9]>
+      <% if browser.ie? %>
+        <div data-alert class="alert-box info ie-alert-box">
+          <a href="#" class="close">&times;</a>
+          <h2><%= t("layouts.application.ie_title") %></h2>
+          <p>
+            <%= t("layouts.application.ie",
+            chrome: link_to(
+                    t("layouts.application.chrome"), t("layouts.application.chrome_url"), target: "_blank"),
+            firefox: link_to(
+                     t("layouts.application.firefox"), t("layouts.application.firefox_url"), target: "_blank")
+            ).html_safe %>
+          </p>
+        </div>
+      <% end %>
+      <![endif]-->
+
       <% if notice %>
       <div class="alert-messages">
         <div class="row">
