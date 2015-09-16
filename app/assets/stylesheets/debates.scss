@@ -184,11 +184,12 @@
       min-height: rem-calc(353);
     }
 
-    .label {
+    .label-debate {
       background: none;
       clear: both;
       color: $debates;
       display: block;
+      font-size: rem-calc(12);
       font-weight: bold;
       text-transform: uppercase;
       padding-left: 0;
@@ -314,7 +315,7 @@
       padding-bottom: rem-calc(12);
     }
 
-    .label {
+    .label-debate {
       line-height: $line-height;
       padding-bottom: 0;
     }

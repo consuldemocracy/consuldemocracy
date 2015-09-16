@@ -52,12 +52,12 @@
           <i class="icon-comments"></i>&nbsp;
           <%= link_to t("proposals.show.comments", count: @proposal.comments_count), "#comments" %>
           <span class="bullet">&nbsp;&bull;&nbsp;</span>
-          <%= link_to t("proposals.show.code") %>
-          <%= @proposal.code %>
-          <span class="bullet">&nbsp;&bull;&nbsp;</span>
           <span class="js-flag-actions">
             <%= render 'proposals/flag_actions', proposal: @proposal %>
           </span>
+          <br>
+            <%= t("proposals.show.code") %>
+            <%= @proposal.code %>
         </div>
 
         <blockquote><%= @proposal.summary %></blockquote>
