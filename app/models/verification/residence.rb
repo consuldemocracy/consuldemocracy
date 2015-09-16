@@ -19,7 +19,7 @@ class Verification::Residence
     self.date_of_birth = parse_date('date_of_birth', attrs)
     attrs = remove_date('date_of_birth', attrs)
     super
-    self.document_number.upcase! unless self.document_number.blank?
+    clean_document_number
   end
 
   def save
@@ -56,5 +56,11 @@ class Verification::Residence
       postal_code:     postal_code
     })
   end
+
+  private
+
+    def clean_document_number
+      self.document_number = self.document_number.gsub(/[^a-z0-9]+/i, "").upcase unless self.document_number.blank?
+    end
 
 end

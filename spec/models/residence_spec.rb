@@ -45,6 +45,11 @@ describe Verification::Residence do
       residence = Verification::Residence.new({document_number: "x1234567z"})
       expect(residence.document_number).to eq("X1234567Z")
     end
+
+    it "should remove all characters except numbers and letters" do
+      residence = Verification::Residence.new({document_number: " 12.345.678 - B"})
+      expect(residence.document_number).to eq("12345678B")
+    end
   end
 
   describe "save" do
