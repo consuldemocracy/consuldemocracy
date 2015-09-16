@@ -31,7 +31,7 @@ describe Verification::Residence do
       residence2 = build(:verification_residence)
 
       residence.valid?
-      expect(residence.errors[:document_number]).to include("Already in use")
+      expect(residence.errors[:document_number]).to include("has already been taken")
     end
 
     it "should validate census terms" do
