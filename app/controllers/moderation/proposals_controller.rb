@@ -1,7 +1,7 @@
 class Moderation::ProposalsController < Moderation::BaseController
 
   has_filters %w{pending_flag_review all with_ignored_flag}, only: :index
-  has_orders %w{created_at flags}, only: :index
+  has_orders %w{flags created_at}, only: :index
 
   before_filter :load_proposals, only: [:index, :moderate]
 
