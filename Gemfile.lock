@@ -406,6 +406,7 @@ DEPENDENCIES
   acts_as_votable
   ahoy_matey (~> 1.2.1)
   ancestry
+  browser
   bullet
   byebug
   cancancan

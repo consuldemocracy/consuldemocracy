@@ -48,6 +48,13 @@ en:
       privacy: "Privacy Policy"
       conditions: "Terms of use"
       more_info: "More information"
+    application:
+      ie_title: "This site is not optimized for your browser"
+      ie:
+        "You are using Internet Explorer.
+        For a better experience we recommend use %{chrome} or %{firefox}."
+      chrome: "Google Chrome"
+      firefox: "Firefox"
   form:
       error: error
       errors: errors
