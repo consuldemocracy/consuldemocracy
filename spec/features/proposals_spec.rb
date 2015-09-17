@@ -457,7 +457,7 @@ feature 'Proposals' do
       create(:proposal, title: 'Medium proposal').update_column(:confidence_score, 5)
 
       visit proposals_path
-      select 'best rated', from: 'order-selector'
+      select 'most supported', from: 'order-selector'
 
       expect(page).to have_selector('.js-order-selector[data-order="confidence_score"]')
 

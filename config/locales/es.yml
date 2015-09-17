@@ -149,7 +149,7 @@ es:
       select_order: Ordenar por
       select_order_long: Estás viendo las propuestas
       orders:
-        confidence_score: "mejor valoradas"
+        confidence_score: "más apoyadas"
         hot_score: "más activas"
         created_at: "más nuevas"
         most_commented: "más comentadas"

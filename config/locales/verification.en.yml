@@ -1,9 +1,9 @@
 en:
   verification:
     back: "Back to my account"
-    step_1: "1. Residence"
-    step_2: "2. Confirmation code"
-    step_3: "3. Final verification"
+    step_1: "Residence"
+    step_2: "Confirmation code"
+    step_3: "Final verification"
     alert:
       lock: "You have reached the maximum number of verification tries. Please try again later."
     residence:
