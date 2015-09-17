@@ -193,6 +193,20 @@ describe Proposal do
     end
   end
 
+  describe "custom tag counters when hiding/restoring" do
+    it "decreases the tag counter when hiden, and increases it when restored" do
+      proposal = create(:proposal, tag_list: "foo")
+      tag = ActsAsTaggableOn::Tag.where(name: 'foo').first
+      expect(tag.proposals_count).to eq(1)
+
+      proposal.hide
+      expect(tag.reload.proposals_count).to eq(0)
+
+      proposal.restore
+      expect(tag.reload.proposals_count).to eq(1)
+    end
+  end
+
   describe "#confidence_score" do
 
     it "takes into account votes" do

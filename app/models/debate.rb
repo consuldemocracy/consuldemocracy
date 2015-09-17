@@ -127,6 +127,14 @@ class Debate < ActiveRecord::Base
     cached_votes_up/flags_count.to_f < 5
   end
 
+  def after_hide
+    self.tags.each{ |t| t.decrement_custom_counter_for('Debate') }
+  end
+
+  def after_restore
+    self.tags.each{ |t| t.increment_custom_counter_for('Debate') }
+  end
+
   def self.title_max_length
     @@title_max_length ||= self.columns.find { |c| c.name == 'title' }.limit || 80
   end

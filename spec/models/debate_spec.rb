@@ -350,6 +350,20 @@ describe Debate do
     end
   end
 
+  describe "custom tag counters when hiding/restoring" do
+    it "decreases the tag counter when hiden, and increases it when restored" do
+      debate = create(:debate, tag_list: "foo")
+      tag = ActsAsTaggableOn::Tag.where(name: 'foo').first
+      expect(tag.debates_count).to eq(1)
+
+      debate.hide
+      expect(tag.reload.debates_count).to eq(0)
+
+      debate.restore
+      expect(tag.reload.debates_count).to eq(1)
+    end
+  end
+
   describe "conflictive debates" do
 
     it "should return true when it has more than 1 flag for 5 positive votes" do
