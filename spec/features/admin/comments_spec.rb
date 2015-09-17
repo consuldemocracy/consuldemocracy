@@ -7,7 +7,26 @@ feature 'Admin comments' do
     login_as(admin.user)
   end
 
-  scenario 'Restore', :js do
+  scenario "Do not show comments from blocked users" do
+    comment = create(:comment, :hidden, body: "SPAM from SPAMMER")
+    proposal = create(:proposal, author: comment.author)
+    create(:comment, commentable: proposal, user: comment.author, body: "Good Proposal!")
+
+    visit admin_comments_path
+    expect(page).to have_content("SPAM from SPAMMER")
+    expect(page).not_to have_content("Good Proposal!")
+
+    visit proposal_path(proposal)
+    within("#proposal_#{proposal.id}") do
+      click_link 'Ban author'
+    end
+
+    visit admin_comments_path
+    expect(page).to_not have_content("SPAM from SPAMMER")
+    expect(page).not_to have_content("Good Proposal!")
+  end
+
+  scenario "Restore" do
     comment = create(:comment, :hidden, body: 'Not really SPAM')
     visit admin_comments_path
 
@@ -18,7 +37,7 @@ feature 'Admin comments' do
     expect(comment.reload).to_not be_hidden
   end
 
-  scenario 'Confirm hide' do
+  scenario "Confirm hide" do
     comment = create(:comment, :hidden, body: 'SPAM')
     visit admin_comments_path
 

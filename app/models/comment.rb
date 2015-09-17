@@ -18,10 +18,9 @@ class Comment < ActiveRecord::Base
   belongs_to :user, -> { with_hidden }
 
   scope :recent, -> { order(id: :desc) }
-
   scope :sort_for_moderation, -> { order(flags_count: :desc, updated_at: :desc) }
-
   scope :for_render, -> { with_hidden.includes(user: :organization) }
+  scope :with_visible_author, -> { joins(:user).where("users.hidden_at IS NULL") }
 
   after_create :call_after_commented
 
