@@ -116,8 +116,10 @@ class Debate < ActiveRecord::Base
   def self.search(terms)
     return none unless terms.present?
 
-    ids = where("debates.title ILIKE ? OR debates.description ILIKE ?", "%#{terms}%", "%#{terms}%").pluck(:id) | tagged_with(terms).pluck(:id)
-    where(id: ids)
+    debate_ids = where("debates.title ILIKE ? OR debates.description ILIKE ?",
+                       "%#{terms}%", "%#{terms}%").pluck(:id)
+    tag_ids = tagged_with(terms, wild: true, any: true).pluck(:id)
+    where(id: [debate_ids, tag_ids].flatten.compact)
   end
 
   def conflictive?
