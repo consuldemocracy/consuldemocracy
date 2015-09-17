@@ -11,7 +11,7 @@ class ProposalsController < ApplicationController
     @proposals = @search_terms.present? ? Proposal.search(@search_terms) : Proposal.all
     @proposals = @proposals.tagged_with(@tag_filter) if @tag_filter
     @proposals = @proposals.page(params[:page]).for_render.send("sort_by_#{@current_order}")
-    @tag_cloud = Proposal.tag_counts.order(taggings_count: :desc, name: :asc).limit(20)
+    @tag_cloud = Proposal.tag_counts.order(proposals_count: :desc, name: :asc).limit(20)
     set_proposal_votes(@proposals)
   end
 
