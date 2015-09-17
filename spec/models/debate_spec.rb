@@ -55,13 +55,13 @@ describe Debate do
       expect(debate.editable?).to be true
     end
 
-    it "should be true if proposal has less than limit votes" do
+    it "should be true if debate has less than limit votes" do
       create_list(:vote, 2, votable: debate)
       expect(debate.total_votes).to eq(2)
       expect(debate.editable?).to be true
     end
 
-    it "should be false if proposal has more than limit votes" do
+    it "should be false if debate has more than limit votes" do
       create_list(:vote, 4, votable: debate)
       expect(debate.total_votes).to eq(4)
       expect(debate.editable?).to be false
