@@ -12,14 +12,15 @@ class Verification::Residence
 
   validates :postal_code, length: { is: 5 }
 
-  validate :residence_in_madrid
+  validate :allowed_age
   validate :document_number_uniqueness
+  validate :residence_in_madrid
 
   def initialize(attrs={})
     self.date_of_birth = parse_date('date_of_birth', attrs)
     attrs = remove_date('date_of_birth', attrs)
     super
-    self.document_number.upcase! unless self.document_number.blank?
+    clean_document_number
   end
 
   def save
@@ -30,7 +31,7 @@ class Verification::Residence
   end
 
   def document_number_uniqueness
-    errors.add(:document_number, "Already in use") if User.where(document_number: document_number).any?
+    errors.add(:document_number, I18n.t('errors.messages.taken')) if User.where(document_number: document_number).any?
   end
 
   def residence_in_madrid
@@ -47,6 +48,11 @@ class Verification::Residence
     self.date_of_birth = string_to_date(date_of_birth)
   end
 
+  def allowed_age
+    return if errors[:date_of_birth].any?
+    errors.add(:date_of_birth, I18n.t('verification.residence.new.error_not_allowed_age')) unless self.date_of_birth <= 16.years.ago
+  end
+
   def store_failed_attempt
     FailedCensusCall.create({
       user: user,
@@ -56,5 +62,11 @@ class Verification::Residence
       postal_code:     postal_code
     })
   end
+
+  private
+
+    def clean_document_number
+      self.document_number = self.document_number.gsub(/[^a-z0-9]+/i, "").upcase unless self.document_number.blank?
+    end
 
 end

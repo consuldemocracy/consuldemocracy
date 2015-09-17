@@ -22,6 +22,7 @@ en:
         verify_residence: "Verify residence"
         form_errors: "prevented your residence verification"
         error_verifying_census: "The census of the city of Madrid could not verify your information. Pero revise de information and try again or get in touch with us."
+        error_not_allowed_age: "You need yo be at least 16 years old"
       create:
         flash:
           success: "Residence verified"

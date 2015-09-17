@@ -22,6 +22,7 @@ es:
         verify_residence: "Verificar residencia"
         form_errors: "evitaron verificar tu residencia"
         error_verifying_census: "El Padrón de Madrid no pudo verificar tu información. Revisa la información ó ponte en contacto con nosotros."
+        error_not_allowed_age: "Hay que tener al menos 16 años"
       create:
         flash:
           success: "Residencia verificada"
