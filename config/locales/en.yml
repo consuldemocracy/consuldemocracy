@@ -149,7 +149,7 @@ en:
       select_order: Order by
       select_order_long: Order proposals by
       orders:
-        confidence_score: best rated
+        confidence_score: "most supported"
         hot_score: most active
         created_at: newest
         most_commented: most commented
