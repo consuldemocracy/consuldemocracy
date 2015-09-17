@@ -5,7 +5,7 @@
 
         <div class="small-12 medium-9 column">
           <div class="debate-content">
-            <span class="label left"><%= t("debates.debate.debate") %></span>
+            <span class="label-debate left"><%= t("debates.debate.debate") %></span>
             <i class="icon-debates"></i>
             <h3><%= link_to debate.title, debate %></h3>
             <p class="debate-info">
@@ -13,6 +13,30 @@
               <%= link_to t("debates.debate.comments", count: debate.comments_count), debate_path(debate, anchor: "comments") %>
               <span class="bullet">&nbsp;&bull;&nbsp;</span>
               <%= l debate.created_at.to_date %>
+              <% if debate.author.hidden? %>
+                <span class="bullet">&nbsp;&bull;&nbsp;</span>
+                <span class="author">
+                  <%= t("debates.show.author_deleted") %>
+                </span>
+              <% else %>
+                <span class="bullet">&nbsp;&bull;&nbsp;</span>
+                <span class="author">
+                  <%= debate.author.name %>
+                </span>
+                <% if debate.author.official? %>
+                  <span class="bullet">&nbsp;&bull;&nbsp;</span>
+                  <span class="label round level-<%= debate.author.official_level %>">
+                    <%= debate.author.official_position %>
+                  </span>
+                <% end %>
+              <% end %>
+
+              <% if debate.author.verified_organization? %>
+                <span class="bullet">&nbsp;&bull;&nbsp;</span>
+                <span class="label round is-association">
+                  <%= t("shared.collective") %>
+                </span>
+              <% end %>
             </p>
             <div class="debate-description">
               <%= link_to debate.description, debate %>

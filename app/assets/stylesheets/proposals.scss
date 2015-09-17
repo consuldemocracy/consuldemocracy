@@ -160,11 +160,12 @@
       min-height: rem-calc(353);
     }
 
-    .label {
+    .label-proposal {
       background: none;
       clear: both;
       color: $proposals;
       display: block;
+      font-size: rem-calc(12);
       font-weight: bold;
       text-transform: uppercase;
       padding-left: 0;
@@ -290,7 +291,7 @@
       padding-bottom: rem-calc(12);
     }
 
-    .label {
+    .label-proposal {
       line-height: $line-height;
       padding-bottom: 0;
     }
