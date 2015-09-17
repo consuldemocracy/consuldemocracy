@@ -54,9 +54,7 @@ en:
         "You are using Internet Explorer.
         For a better experience we recommend use %{chrome} or %{firefox}."
       chrome: "Google Chrome"
-      chrome_url: "https://www.google.com/chrome/browser/desktop/"
       firefox: "Firefox"
-      firefox_url: "https://www.mozilla.org/firefox"
   form:
       error: error
       errors: errors
