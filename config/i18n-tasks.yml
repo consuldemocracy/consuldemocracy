@@ -108,6 +108,7 @@ ignore_unused:
   - 'admin.proposals.index.filter*'
   - 'admin.organizations.index.filter*'
   - 'admin.users.index.filter*'
+  - 'admin.comments.index.hidden_*'
   - 'moderation.comments.index.filter*'
   - 'moderation.debates.index.filter*'
   - 'moderation.proposals.index.filter*'

@@ -3,6 +3,7 @@ en:
     models:
       comment: Comment
       debate: Debate
+      proposal: Proposal
       tag: Topic
       user: User
       vote: Vote

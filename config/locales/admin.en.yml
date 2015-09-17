@@ -59,6 +59,8 @@ en:
     comments:
       index:
         title: Hidden comments
+        hidden_proposal: "Hidden proposal"
+        hidden_debate: "Hidden debate"
         filter: Filter
         filters:
           all: All

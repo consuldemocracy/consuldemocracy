@@ -59,6 +59,8 @@ es:
     comments:
       index:
         title: Comentarios ocultos
+        hidden_proposal: "Propuesta oculta"
+        hidden_debate: "Debate oculto"
         filter: Filtro
         filters:
           all: Todos
