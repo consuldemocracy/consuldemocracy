@@ -9,8 +9,12 @@
     <li id="<%= dom_id(comment) %>">
       <div class="row">
         <div class="small-12 medium-8 column">
-          <%= text_with_links comment.body %>
-          <%= link_to comment.commentable.title, comment.commentable %>
+          <%= text_with_links comment.body %><br>
+          <% if comment.commentable.hidden? %>
+            (<%= t("admin.comments.index.hidden_#{comment.commentable_type.downcase}") %>: <%= comment.commentable.title %>)
+          <% else %>
+            <%= link_to comment.commentable.title, comment.commentable %>
+          <% end %>
         </div>
         <div class="small-6 medium-4 column text-right">
           <%= link_to t("admin.actions.restore"),
