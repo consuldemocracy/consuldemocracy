@@ -482,15 +482,19 @@ feature 'Debates' do
     debate2 = create(:debate, title: "Get Schwifty")
     debate3 = create(:debate)
     debate4 = create(:debate, description: "Schwifty in here")
+    debate5 = create(:debate, tag_list: 'schwifty')
+    debate6 = create(:debate, tag_list: ['awesome foreign schwifty', 'major'])
 
     visit debates_path
     fill_in "search", with: "Schwifty"
     click_button "Search"
 
     within("#debates") do
-      expect(page).to have_css('.debate', count: 2)
+      expect(page).to have_css('.debate', count: 4)
       expect(page).to have_content(debate2.title)
       expect(page).to have_content(debate4.title)
+      expect(page).to have_content(debate5.title)
+      expect(page).to have_content(debate6.title)
       expect(page).to_not have_content(debate1.title)
       expect(page).to_not have_content(debate3.title)
     end
