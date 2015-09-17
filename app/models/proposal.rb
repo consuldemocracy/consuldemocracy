@@ -105,6 +105,14 @@ class Proposal < ActiveRecord::Base
                                                              cached_votes_up)
   end
 
+  def after_hide
+    self.tags.each{ |t| t.decrement_custom_counter_for('Proposal') }
+  end
+
+  def after_restore
+    self.tags.each{ |t| t.increment_custom_counter_for('Proposal') }
+  end
+
   def self.title_max_length
     @@title_max_length ||= self.columns.find { |c| c.name == 'title' }.limit || 80
   end
