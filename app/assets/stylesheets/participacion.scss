@@ -273,6 +273,10 @@ h6 {
   }
 }
 
+.moderator-actions {
+  margin: rem-calc(24) 0;
+}
+
 // 04. Header
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -1494,16 +1498,6 @@ table {
     }
   }
 
-  .verify-account {
-    padding-right: rem-calc(12);
-
-    .verified {
-      color: $check;
-      font-weight: bold;
-      line-height: rem-calc(42);
-    }
-  }
-
   .date {
 
     select {
@@ -1517,24 +1511,38 @@ table {
   }
 
   .progress {
-    height: rem-calc(48);
+    height: rem-calc(72);
 
     @media (min-width: $small-breakpoint) {
-      height: rem-calc(24);
-    }
-
-    .meter {
-      background: #63D1C4;
+      height: rem-calc(48);
     }
   }
 
   .verification-step {
-    font-size: rem-calc(12);
+    font-weight: bold;
+    line-height: rem-calc(20);
     padding-top: rem-calc(6);
+    text-transform: uppercase;
+    vertical-align: top;
 
     @media (min-width: $small-breakpoint) {
-      line-height: $line-height;
-      padding-top: 0;
+      line-height: rem-calc(48);
+      padding: 0;
+    }
+
+    .number {
+      display: block;
+
+      @media (min-width: $small-breakpoint) {
+        background-color: white;
+        border-radius: rem-calc(30);
+        color: #43AC6A;
+        display: inline-block;
+        height: rem-calc(30);
+        line-height: rem-calc(30);
+        vertical-align: middle;
+        width: rem-calc(30);
+      }
     }
 
     &.active {
@@ -1543,6 +1551,10 @@ table {
 
     &.completed {
       color: rgba(255,255,255,.5);
+
+      .number {
+        opacity: .5;
+      }
     }
   }
 
@@ -1568,6 +1580,21 @@ table {
     span {
       display: inline-block;
       min-width: rem-calc(288);
+    }
+  }
+}
+
+.verify-account {
+  padding-right: rem-calc(12);
+
+  .already-verified {
+    color: $check;
+    line-height: rem-calc(48);
+
+    .icon-check {
+      font-size: rem-calc(24);
+      line-height: rem-calc(45);
+      vertical-align: middle;
     }
   }
 }
