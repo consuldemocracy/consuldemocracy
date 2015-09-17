@@ -34,6 +34,7 @@ var initialize_modules = function() {
   App.LocationChanger.initialize();
   App.CheckAllNone.initialize();
   App.PreventDoubleSubmission.initialize();
+  App.IeAlert.initialize();
 };
 
 $(function(){

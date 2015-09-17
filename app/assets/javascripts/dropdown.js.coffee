@@ -1,4 +1,4 @@
 App.Dropdown =
 
   initialize: ->
-    $(document).foundation();
+    $(document).foundation()
