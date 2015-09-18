@@ -48,6 +48,9 @@ feature 'Moderate proposals' do
         background do
           @proposal = create(:proposal)
           visit moderation_proposals_path
+          within('.sub-nav') do
+            click_link "All"
+          end
 
           within("#proposal_#{@proposal.id}") do
             check "proposal_#{@proposal.id}_check"
@@ -141,21 +144,25 @@ feature 'Moderate proposals' do
     end
 
     scenario "Filtering proposals" do
-      create(:proposal, title: "Pending proposal")
+      create(:proposal, title: "Regular proposal")
+      create(:proposal, :flagged, title: "Pending proposal")
       create(:proposal, :hidden, title: "Hidden proposal")
-      create(:proposal, :with_ignored_flag, title: "Ignored proposal")
+      create(:proposal, :flagged, :with_ignored_flag, title: "Ignored proposal")
 
       visit moderation_proposals_path(filter: 'all')
+      expect(page).to have_content('Regular proposal')
       expect(page).to have_content('Pending proposal')
       expect(page).to_not have_content('Hidden proposal')
       expect(page).to have_content('Ignored proposal')
 
       visit moderation_proposals_path(filter: 'pending_flag_review')
+      expect(page).to_not have_content('Regular proposal')
       expect(page).to have_content('Pending proposal')
       expect(page).to_not have_content('Hidden proposal')
       expect(page).to_not have_content('Ignored proposal')
 
       visit moderation_proposals_path(filter: 'with_ignored_flag')
+      expect(page).to_not have_content('Regular proposal')
       expect(page).to_not have_content('Pending proposal')
       expect(page).to_not have_content('Hidden proposal')
       expect(page).to have_content('Ignored proposal')
@@ -163,15 +170,26 @@ feature 'Moderate proposals' do
 
     scenario "sorting proposals" do
       create(:proposal, title: "Flagged proposal", created_at: Time.now - 1.day, flags_count: 5)
+      create(:proposal, title: "Flagged newer proposal", created_at: Time.now - 12.hours, flags_count: 3)
       create(:proposal, title: "Newer proposal", created_at: Time.now)
 
       visit moderation_proposals_path(order: 'created_at')
 
-      expect("Newer proposal").to appear_before("Flagged proposal")
+      expect("Flagged newer proposal").to appear_before("Flagged proposal")
 
       visit moderation_proposals_path(order: 'flags')
 
-      expect("Flagged proposal").to appear_before("Newer proposal")
+      expect("Flagged proposal").to appear_before("Flagged newer proposal")
+
+      visit moderation_proposals_path(filter: 'all', order: 'created_at')
+
+      expect("Newer proposal").to appear_before("Flagged newer proposal")
+      expect("Flagged newer proposal").to appear_before("Flagged proposal")
+
+      visit moderation_proposals_path(filter: 'all', order: 'flags')
+
+      expect("Flagged proposal").to appear_before("Flagged newer proposal")
+      expect("Flagged newer proposal").to appear_before("Newer proposal")
     end
   end
 end
