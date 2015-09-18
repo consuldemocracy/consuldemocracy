@@ -53,6 +53,14 @@ feature 'Proposals' do
     end
   end
 
+  scenario 'Social Media Cards' do
+    proposal = create(:proposal)
+
+    visit proposal_path(proposal)
+    expect(page.html).to include "<meta name=\"twitter:title\" content=\"#{proposal.title}\" />"
+    expect(page.html).to include "<meta id=\"ogtitle\" property=\"og:title\" content=\"#{proposal.title}\"/>"
+  end
+
   scenario 'Create' do
     author = create(:user)
     login_as(author)
