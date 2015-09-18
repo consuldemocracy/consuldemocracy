@@ -8,13 +8,15 @@ describe Comment do
     expect(comment).to be_valid
   end
 
-  it "should update cache_counter in debate after hide" do
+  it "updates cache_counter in debate after hide and restore" do
     debate  = create(:debate)
     comment = create(:comment, commentable: debate)
 
     expect(debate.reload.comments_count).to eq(1)
     comment.hide
     expect(debate.reload.comments_count).to eq(0)
+    comment.restore
+    expect(debate.reload.comments_count).to eq(1)
   end
 
   describe "#as_administrator?" do
