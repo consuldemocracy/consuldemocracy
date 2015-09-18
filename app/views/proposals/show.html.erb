@@ -1,3 +1,9 @@
+<% provide :social_media_meta_tags do %>
+<%= render "shared/social_media_meta_tags",
+            url: proposal_url(@proposal),
+            title: @proposal.title,
+            description: @proposal.summary %>
+<% end %>
 <% cache [locale_and_user_status(@proposal), @proposal, @proposal.author, Flag.flagged?(current_user, @proposal), @proposal_votes] do %>
   <section class="proposal-show">
     <div id="<%= dom_id(@proposal) %>" class="row">
