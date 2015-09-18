@@ -117,11 +117,12 @@ class Debate < ActiveRecord::Base
     return none unless query.present?
 
     query = I18n.transliterate(query.strip)
+    pattern = "%#{query}%"
 
     found_ids = where(%{ unaccent(debates.title) ILIKE ? OR
                          unaccent(debates.description) ILIKE ? },
-                      "%#{query}%",
-                      "%#{query}%").pluck(:id)
+                       pattern,
+                       pattern).pluck(:id)
 
     tagged_ids = tagged_with(query, wild: true, any: true).pluck(:id)
 

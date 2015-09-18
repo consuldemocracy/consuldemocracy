@@ -538,23 +538,26 @@ feature 'Proposals' do
   end
 
   scenario 'proposal index search' do
-    proposal1 = create(:proposal, title: "Show me what you got")
+    proposal1 = create(:proposal)
     proposal2 = create(:proposal, title: "Get Schwifty")
     proposal3 = create(:proposal)
     proposal4 = create(:proposal, description: "Schwifty in here")
     proposal5 = create(:proposal, question: "Schwifty in here")
+    proposal6 = create(:proposal, tag_list: 'schwifty')
+    proposal7 = create(:proposal, tag_list: ['awesome foreign schwifty', 'major'])
+    proposal8 = create(:proposal, description: "Schwíftÿ in here")
 
     visit proposals_path
-    fill_in "search", with: "Schwifty"
+    fill_in "search", with: "Schwïfty"
     click_button "Search"
 
-    expect(current_path).to eq(proposals_path)
-
     within("#proposals") do
-      expect(page).to have_css('.proposal', count: 3)
       expect(page).to have_content(proposal2.title)
       expect(page).to have_content(proposal4.title)
       expect(page).to have_content(proposal5.title)
+      expect(page).to have_content(proposal6.title)
+      expect(page).to have_content(proposal7.title)
+      expect(page).to have_content(proposal8.title)
       expect(page).to_not have_content(proposal1.title)
       expect(page).to_not have_content(proposal3.title)
     end

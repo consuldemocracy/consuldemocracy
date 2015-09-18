@@ -129,8 +129,22 @@ class Proposal < ActiveRecord::Base
     60
   end
 
-  def self.search(terms)
-    terms.present? ? where("title ILIKE ? OR description ILIKE ? OR question ILIKE ?", "%#{terms}%", "%#{terms}%", "%#{terms}%") : none
+  def self.search(query)
+    return none unless query.present?
+
+    query = I18n.transliterate(query.strip)
+    pattern = "%#{query}%"
+
+    found_ids = where(%{ unaccent(proposals.title) ILIKE ? OR
+                         unaccent(proposals.question) ILIKE ? OR
+                         unaccent(proposals.description) ILIKE ? },
+                      pattern,
+                      pattern,
+                      pattern).pluck(:id)
+
+    tagged_ids = tagged_with(query, wild: true, any: true).pluck(:id)
+
+    where(id: (found_ids | tagged_ids))
   end
 
   def self.votes_needed_for_success
