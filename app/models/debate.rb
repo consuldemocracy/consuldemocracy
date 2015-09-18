@@ -113,13 +113,19 @@ class Debate < ActiveRecord::Base
                                                              cached_votes_up)
   end
 
-  def self.search(terms)
-    return none unless terms.present?
+  def self.search(query)
+    return none unless query.present?
 
-    debate_ids = where("unaccent(debates.title) ILIKE unaccent(?) OR unaccent(debates.description) ILIKE unaccent(?)",
-                       "%#{terms}%", "%#{terms}%").pluck(:id)
-    tagged_ids = tagged_with(terms, wild: true, any: true).pluck(:id)
-    where(id: [debate_ids, tagged_ids].flatten.compact.uniq)
+    query = I18n.transliterate(query.strip)
+
+    found_ids = where(%{ unaccent(debates.title) ILIKE ? OR
+                         unaccent(debates.description) ILIKE ? },
+                      "%#{query}%",
+                      "%#{query}%").pluck(:id)
+
+    tagged_ids = tagged_with(query, wild: true, any: true).pluck(:id)
+
+    where(id: (found_ids | tagged_ids))
   end
 
   def conflictive?
