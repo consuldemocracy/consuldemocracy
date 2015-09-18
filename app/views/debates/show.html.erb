@@ -1,3 +1,4 @@
+<% provide :title do %><%= @debate.title %><% end %>
 <% cache [locale_and_user_status(@debate), @debate, @debate.author, Flag.flagged?(current_user, @debate), @debate_votes] do %>
   <section class="debate-show">
     <div id="<%= dom_id(@debate) %>" class="row">
