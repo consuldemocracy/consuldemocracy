@@ -119,8 +119,8 @@ class Debate < ActiveRecord::Base
     query = I18n.transliterate(query.strip)
     pattern = "%#{query}%"
 
-    found_ids = where(%{ unaccent(debates.title) ILIKE ? OR
-                         unaccent(debates.description) ILIKE ? },
+    found_ids = where(%{ public.unaccent(debates.title) ILIKE ? OR
+                         public.unaccent(debates.description) ILIKE ? },
                        pattern,
                        pattern).pluck(:id)
 
