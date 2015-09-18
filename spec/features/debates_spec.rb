@@ -485,9 +485,10 @@ feature 'Debates' do
     debate4 = create(:debate, description: "Schwifty in here")
     debate5 = create(:debate, tag_list: 'schwifty')
     debate6 = create(:debate, tag_list: ['awesome foreign schwifty', 'major'])
+    debate7 = create(:debate, description: "Schwíftÿ in here")
 
     visit debates_path
-    fill_in "search", with: "Schwifty"
+    fill_in "search", with: "Schwìfty"
     click_button "Search"
 
     within("#debates") do
@@ -496,6 +497,7 @@ feature 'Debates' do
       expect(page).to have_content(debate4.title)
       expect(page).to have_content(debate5.title)
       expect(page).to have_content(debate6.title)
+      expect(page).to have_content(debate7.title)
       expect(page).to_not have_content(debate1.title)
       expect(page).to_not have_content(debate3.title)
     end
