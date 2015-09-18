@@ -75,6 +75,10 @@ class Comment < ActiveRecord::Base
     commentable_type.constantize.reset_counters(commentable_id, :comments)
   end
 
+  def after_restore
+    commentable_type.constantize.reset_counters(commentable_id, :comments)
+  end
+
   def reply?
     !root?
   end
