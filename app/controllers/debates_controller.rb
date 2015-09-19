@@ -13,7 +13,6 @@ class DebatesController < ApplicationController
     @debates = @debates.page(params[:page]).for_render.send("sort_by_#{@order}")
     @tag_cloud = Debate.tag_counts.order(taggings_count: :desc, name: :asc).limit(20)
     set_debate_votes(@debates)
-    set_return_query_params(@order)
   end
 
   def show
@@ -92,11 +91,6 @@ class DebatesController < ApplicationController
       if params[:tag].present?
         @tag_filter = params[:tag] if ActsAsTaggableOn::Tag.where(name: params[:tag]).exists?
       end
-    end
-
-    def set_return_query_params(order)
-      session[:return_page] = params[:page] if params[:page]
-      session[:return_order] = order
     end
 
     def parse_search_terms
