@@ -50,6 +50,16 @@ feature 'Debates' do
     end
   end
 
+  scenario 'Show' do
+    debate = create(:debate, title: 'Test Debate 1')
+
+    visit debates_path( order: :hot_score, page: 1)
+    find(:xpath, "//a[@href='/debates/#{debate.id}']", match: :first).click
+    click_link('Back')
+    
+    expect(current_url).to include(debates_path order: :hot_score, page: 1)
+  end
+
   scenario 'Create' do
     author = create(:user)
     login_as(author)
