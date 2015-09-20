@@ -50,7 +50,7 @@ feature 'Debates' do
     end
   end
 
-  scenario 'Show' do
+  scenario 'Show: "Back" link directs to previous page' do
     debate = create(:debate, title: 'Test Debate 1')
 
     visit debates_path( order: :hot_score, page: 1)
