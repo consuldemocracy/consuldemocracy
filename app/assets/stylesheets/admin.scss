@@ -204,9 +204,19 @@ body.admin {
 }
 
 .proposal-description {
-  height: rem-calc(60);
+  max-height: rem-calc(65);
   overflow: hidden;
   max-width: rem-calc(750);
+
+  &:hover {
+    cursor: text;
+    max-height: rem-calc(1000);
+    outline: 3px solid #ffbf47;
+    padding: rem-calc(12);
+    transition: max-height 0.9s;
+    -moz-transition: max-height 0.9s;
+    -webkit-transition: max-height 0.9s;
+  }
 }
 
 // 04. Stats
