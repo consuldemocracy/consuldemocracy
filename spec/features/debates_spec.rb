@@ -56,15 +56,15 @@ feature 'Debates' do
     login_as(author)
 
     visit new_debate_path
-    fill_in 'debate_title', with: 'End evictions'
+    fill_in 'debate_title', with: 'A title for a debate'
     fill_in 'debate_description', with: 'This is very important because...'
     fill_in 'debate_captcha', with: correct_captcha_text
     check 'debate_terms_of_service'
 
     click_button 'Start a debate'
 
+    expect(page).to have_content 'A title for a debate'
     expect(page).to have_content 'Debate was successfully created.'
-    expect(page).to have_content 'End evictions'
     expect(page).to have_content 'This is very important because...'
     expect(page).to have_content author.name
     expect(page).to have_content I18n.l(Debate.last.created_at.to_date)

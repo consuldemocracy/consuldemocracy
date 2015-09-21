@@ -5,7 +5,6 @@ en:
       flagged_debates: Debates
       flagged_comments: Comments
       users: Ban users
-      bulk: Bulk moderation
     dashboard:
       index:
         title: Moderation
@@ -28,21 +27,23 @@ en:
           with_ignored_flag: Ignored
     debates:
       index:
-        title: Debates flagged as inappropriate
+        hide_debates: Hide debates
+        block_authors: Block authors
+        ignore_flags: Ignore flags
+        title: Debates
         headers:
-          flags: Flags
-          updated_at: Date
-          title: Title
-          description: Description
-          actions: Actions
-        hide: Hide
-        ignore_flag: Ignore
-        ignored_flag: Ignored
+          debate: Debate
+          moderate: Moderate
         filter: Filter
         filters:
           all: All
           pending_flag_review: Pending
           with_ignored_flag: Ignored
+        order: Order
+        orders:
+          created_at: Newest
+          flags: Most flagged
+        confirm: Are you sure?
     proposals:
       index:
         hide_proposals: Hide proposals
@@ -62,19 +63,6 @@ en:
           created_at: Newest
           flags: Most flagged
         confirm: Are you sure?
-    bulk:
-      index:
-        title: Bulk moderation
-        headers:
-          debate: Debate
-          flags: Denuncias
-          moderate: Moderar
-        hide_debates: Hide debates
-        block_authors: Block authors
-        confirm: Are you sure?
-        check: Select
-        check_all: All
-        check_none: None
     users:
       notice_hide: User banned.
       index:

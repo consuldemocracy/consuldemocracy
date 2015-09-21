@@ -31,12 +31,5 @@
         <%= t("moderation.menu.users") %>
       <% end %>
     </li>
-
-    <li <%= "class=active" if controller_name == "bulk" %>>
-      <%= link_to moderation_bulk_path do %>
-        <i class="icon-debates"></i>
-        <%= t("moderation.menu.bulk") %>
-      <% end %>
-    </li>
   </ul>
 </nav>

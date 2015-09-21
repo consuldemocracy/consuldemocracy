@@ -127,8 +127,9 @@ Rails.application.routes.draw do
     resources :debates, only: :index do
       member do
         put :hide
-        put :hide_in_moderation_screen
-        put :ignore_flag
+      end
+      collection do
+        put :moderate
       end
     end
 
@@ -148,9 +149,6 @@ Rails.application.routes.draw do
         put :ignore_flag
       end
     end
-
-    get '/bulk', to: "bulk#index"
-    put '/bulk/hide', to: "bulk#hide"
   end
 
   resource :stats, only: [:show]

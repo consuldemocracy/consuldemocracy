@@ -25,13 +25,13 @@ class Debate < ActiveRecord::Base
 
   before_save :calculate_hot_score, :calculate_confidence_score
 
-  scope :sort_for_moderation, -> { order(flags_count: :desc, updated_at: :desc) }
   scope :for_render, -> { includes(:tags) }
   scope :sort_by_hot_score , -> { order(hot_score: :desc) }
   scope :sort_by_confidence_score , -> { order(confidence_score: :desc) }
   scope :sort_by_created_at, -> { order(created_at: :desc) }
   scope :sort_by_most_commented, -> { order(comments_count: :desc) }
   scope :sort_by_random, -> { order("RANDOM()") }
+  scope :sort_by_flags, -> { order(flags_count: :desc, updated_at: :desc) }
 
   # Ahoy setup
   visitable # Ahoy will automatically assign visit_id on create

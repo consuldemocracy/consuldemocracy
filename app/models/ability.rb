@@ -65,6 +65,9 @@ class Ability
         can :ignore_flag, Debate, ignored_flag_at: nil, hidden_at: nil
         cannot :ignore_flag, Debate, author_id: user.id
 
+        can :moderate, Debate
+        cannot :moderate, Debate, author_id: user.id
+
         can :hide, Proposal, hidden_at: nil
         cannot :hide, Proposal, author_id: user.id
 
