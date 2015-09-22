@@ -140,4 +140,121 @@ feature 'Admin activity' do
     end
   end
 
+  context "User" do
+    scenario "Shows moderation activity on users" do
+      proposal = create(:proposal)
+
+      visit proposal_path(proposal)
+
+      within("#proposal_#{proposal.id}") do
+        click_link 'Ban author'
+      end
+
+      visit admin_activity_path
+
+      within("#activity_#{Activity.last.id}") do
+        expect(page).to have_content(proposal.author.username)
+        expect(page).to have_content(proposal.author.email)
+        expect(page).to have_content(@admin.user.username)
+        expect(page).not_to have_content(proposal.title)
+      end
+    end
+
+    scenario "Shows moderation activity from moderation screen" do
+      user = create(:user)
+
+      visit moderation_users_path(name_or_email: user.username)
+
+      within(".admin-list") do
+        click_link 'Ban'
+      end
+
+      visit admin_activity_path
+
+      within("#activity_#{Activity.last.id}") do
+        expect(page).to have_content(user.username)
+        expect(page).to have_content(user.email)
+        expect(page).to have_content(@admin.user.username)
+      end
+    end
+
+    scenario "Shows moderation activity from proposals moderation screen" do
+      proposal1 = create(:proposal)
+      proposal2 = create(:proposal)
+      proposal3 = create(:proposal)
+
+      visit moderation_proposals_path(filter: 'all')
+
+      within("#proposal_#{proposal1.id}") do
+        check "proposal_#{proposal1.id}_check"
+      end
+
+      within("#proposal_#{proposal3.id}") do
+        check "proposal_#{proposal3.id}_check"
+      end
+
+      click_on "Block authors"
+
+      visit admin_activity_path
+
+      expect(page).to have_content(proposal1.author.username)
+      expect(page).to have_content(proposal1.author.email)
+      expect(page).to have_content(proposal3.author.username)
+      expect(page).to have_content(proposal3.author.email)
+      expect(page).to_not have_content(proposal2.author.username)
+    end
+
+    scenario "Shows moderation activity from debates moderation screen" do
+      debate1 = create(:debate)
+      debate2 = create(:debate)
+      debate3 = create(:debate)
+
+      visit moderation_debates_path(filter: 'all')
+
+      within("#debate_#{debate1.id}") do
+        check "debate_#{debate1.id}_check"
+      end
+
+      within("#debate_#{debate3.id}") do
+        check "debate_#{debate3.id}_check"
+      end
+
+      click_on "Block authors"
+
+      visit admin_activity_path
+
+      expect(page).to have_content(debate1.author.username)
+      expect(page).to have_content(debate1.author.email)
+      expect(page).to have_content(debate3.author.username)
+      expect(page).to have_content(debate3.author.email)
+      expect(page).to_not have_content(debate2.author.username)
+    end
+
+    scenario "Shows moderation activity from comments moderation screen" do
+      comment1 = create(:comment, body: "SPAM")
+      comment2 = create(:comment)
+      comment3 = create(:comment, body: "Offensive!")
+
+      visit moderation_comments_path(filter: 'all')
+
+      within("#comment_#{comment1.id}") do
+        check "comment_#{comment1.id}_check"
+      end
+
+      within("#comment_#{comment3.id}") do
+        check "comment_#{comment3.id}_check"
+      end
+
+      click_on "Block authors"
+
+      visit admin_activity_path
+
+      expect(page).to have_content(comment1.author.username)
+      expect(page).to have_content(comment1.author.email)
+      expect(page).to have_content(comment3.author.username)
+      expect(page).to have_content(comment3.author.email)
+      expect(page).to_not have_content(comment2.author.username)
+    end
+  end
+
 end

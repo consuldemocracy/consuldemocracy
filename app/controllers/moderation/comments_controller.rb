@@ -28,7 +28,7 @@ class Moderation::CommentsController < Moderation::BaseController
 
     elsif params[:block_authors].present?
       author_ids = @comments.pluck(:user_id).uniq
-      User.where(id: author_ids).accessible_by(current_ability, :block).each(&:block)
+      User.where(id: author_ids).accessible_by(current_ability, :block).each {|user| block_user user}
     end
 
     redirect_to request.query_parameters.merge(action: :index)
@@ -43,6 +43,11 @@ class Moderation::CommentsController < Moderation::BaseController
     def hide_comment(comment)
       comment.hide
       Activity.log(current_user, :hide, comment)
+    end
+
+    def block_user(user)
+      user.block
+      Activity.log(current_user, :block, user)
     end
 
 end

@@ -29,7 +29,7 @@ class Moderation::ProposalsController < Moderation::BaseController
 
     elsif params[:block_authors].present?
       author_ids = @proposals.pluck(:author_id).uniq
-      User.where(id: author_ids).accessible_by(current_ability, :block).each(&:block)
+      User.where(id: author_ids).accessible_by(current_ability, :block).each {|user| block_user user}
     end
 
     redirect_to request.query_parameters.merge(action: :index)
@@ -44,6 +44,11 @@ class Moderation::ProposalsController < Moderation::BaseController
     def hide_proposal(proposal)
       proposal.hide
       Activity.log(current_user, :hide, proposal)
+    end
+
+    def block_user(user)
+      user.block
+      Activity.log(current_user, :block, user)
     end
 
 end
