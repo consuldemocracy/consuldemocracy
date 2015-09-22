@@ -15,15 +15,14 @@ class Moderation::ProposalsController < Moderation::BaseController
   end
 
   def hide
-    @proposal.hide
-    Activity.log(current_user, :hide, @proposal)
+    hide_proposal @proposal
   end
 
   def moderate
     @proposals = @proposals.where(id: params[:proposal_ids])
 
     if params[:hide_proposals].present?
-      @proposals.accessible_by(current_ability, :hide).each(&:hide)
+      @proposals.accessible_by(current_ability, :hide).each{|proposal| hide_proposal proposal}
 
     elsif params[:ignore_flags].present?
       @proposals.accessible_by(current_ability, :ignore_flag).each(&:ignore_flag)
@@ -40,6 +39,11 @@ class Moderation::ProposalsController < Moderation::BaseController
 
     def load_proposals
       @proposals = Proposal.accessible_by(current_ability, :moderate)
+    end
+
+    def hide_proposal(proposal)
+      proposal.hide
+      Activity.log(current_user, :hide, proposal)
     end
 
 end
