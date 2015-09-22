@@ -70,6 +70,7 @@ en:
   application:
     alert:
       only_beta_testers: "Sorry only Beta Testers are allowed access at the moment"
+    close: "Close"
   debates:
     index:
       start_debate: Start a debate

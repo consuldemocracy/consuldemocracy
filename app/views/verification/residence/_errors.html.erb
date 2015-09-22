@@ -1,7 +1,7 @@
 <% if @residence.errors[:residence_in_madrid].present? %>
 
   <div id="error_explanation" data-alert class="alert-box alert radius">
-  	<a href="#" class="close">&times;</a>
+  	<a href="#" class="close" title="<%= t("application.close") %>">&times;</a>
     <%= t("verification.residence.new.error_verifying_census") %>
     <%= mail_to "web.gobiernoabierto@madrid.es" %>
   </div>
