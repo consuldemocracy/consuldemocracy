@@ -66,6 +66,11 @@ describe PagesController do
       get :blog
       expect(response).to be_redirect
     end
+
+    it 'should include a accessibility page' do
+      get :accessibility
+      expect(response).to be_ok
+    end
   end
 
 end
