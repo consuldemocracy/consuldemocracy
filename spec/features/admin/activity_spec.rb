@@ -51,4 +51,48 @@ feature 'Admin activity' do
     end
   end
 
+  context "Debates" do
+    scenario "Shows moderation activity on debates", :js do
+      debate = create(:debate)
+
+      visit debate_path(debate)
+
+      within("#debate_#{debate.id}") do
+        click_link 'Hide'
+      end
+
+      visit admin_activity_path
+
+      within("#activity_#{Activity.last.id}") do
+        expect(page).to have_content(debate.title)
+        expect(page).to have_content(@admin.user.username)
+      end
+    end
+
+    scenario "Shows moderation activity from moderation screen" do
+      debate1 = create(:debate)
+      debate2 = create(:debate)
+      debate3 = create(:debate)
+
+      visit moderation_debates_path(filter: 'all')
+
+      within("#debate_#{debate1.id}") do
+        check "debate_#{debate1.id}_check"
+      end
+
+      within("#debate_#{debate3.id}") do
+        check "debate_#{debate3.id}_check"
+      end
+
+      click_on "Hide debates"
+
+      visit admin_activity_path
+
+
+      expect(page).to have_content(debate1.title)
+      expect(page).to_not have_content(debate2.title)
+      expect(page).to have_content(debate3.title)
+    end
+  end
+
 end

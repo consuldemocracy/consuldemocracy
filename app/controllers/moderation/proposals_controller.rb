@@ -22,7 +22,7 @@ class Moderation::ProposalsController < Moderation::BaseController
     @proposals = @proposals.where(id: params[:proposal_ids])
 
     if params[:hide_proposals].present?
-      @proposals.accessible_by(current_ability, :hide).each{|proposal| hide_proposal proposal}
+      @proposals.accessible_by(current_ability, :hide).each {|proposal| hide_proposal proposal}
 
     elsif params[:ignore_flags].present?
       @proposals.accessible_by(current_ability, :ignore_flag).each(&:ignore_flag)
