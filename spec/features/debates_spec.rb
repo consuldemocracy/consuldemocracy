@@ -51,6 +51,15 @@ feature 'Debates' do
     end
   end
 
+  scenario 'Show: "Back" link directs to previous page', :js do
+    debate = create(:debate, title: 'Test Debate 1')
+
+    visit debates_path(order: :hot_score, page: 1)
+    find(:xpath, "//a[@href='/debates/#{debate.id}']", match: :first).click
+
+    expect(find_link('Back')[:href]).to include(debates_path order: :hot_score, page: 1)
+  end
+
   scenario 'Create' do
     author = create(:user)
     login_as(author)

@@ -4,7 +4,7 @@
     <div id="<%= dom_id(@debate) %>" class="row">
       <div class="small-12 medium-9 column">
         <i class="icon-angle-left left"></i>&nbsp;
-        <%= link_to t("debates.show.back_link"), debates_path, class: 'left back' %>
+        <%= link_to t("debates.show.back_link"), :back, class: 'left back' %>
 
         <% if current_user && @debate.editable_by?(current_user) %>
           <%= link_to edit_debate_path(@debate), class: 'edit-debate button success tiny radius right' do %>
