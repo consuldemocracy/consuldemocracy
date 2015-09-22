@@ -66,4 +66,23 @@ describe Activity do
     end
   end
 
+  describe "scopes by actionable" do
+    it "should filter by actionable type" do
+      on_proposal = create(:activity, actionable: create(:proposal))
+      on_debate   = create(:activity, actionable: create(:debate))
+      on_comment  = create(:activity, actionable: create(:comment))
+      on_user     = create(:activity, actionable: create(:user))
+
+      expect(Activity.on_proposals.size).to eq 1
+      expect(Activity.on_debates.size).to eq 1
+      expect(Activity.on_comments.size).to eq 1
+      expect(Activity.on_users.size).to eq 1
+
+      expect(Activity.on_proposals.first).to eq on_proposal
+      expect(Activity.on_debates.first).to eq on_debate
+      expect(Activity.on_comments.first).to eq on_comment
+      expect(Activity.on_users.first).to eq on_user
+    end
+  end
+
 end
