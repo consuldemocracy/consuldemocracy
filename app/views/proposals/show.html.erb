@@ -10,7 +10,7 @@
     <div id="<%= dom_id(@proposal) %>" class="row">
       <div class="small-12 medium-9 column">
         <i class="icon-angle-left left"></i>&nbsp;
-        <%= link_to t("proposals.show.back_link"), proposals_path, class: 'left back' %>
+        <%= link_to t("proposals.show.back_link"), :back, class: 'left back' %>
 
         <% if current_user && @proposal.editable_by?(current_user) %>
           <%= link_to edit_proposal_path(@proposal), class: 'edit-proposal button success tiny radius right' do %>
