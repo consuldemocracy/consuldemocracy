@@ -68,7 +68,8 @@ class User < ActiveRecord::Base
       user = User.new(
         username: auth.info.nickname || auth.extra.raw_info.name.parameterize('-') || auth.uid,
         email: email ? email : "#{OMNIAUTH_EMAIL_PREFIX}-#{auth.uid}-#{auth.provider}.com",
-        password: Devise.friendly_token[0,20]
+        password: Devise.friendly_token[0,20],
+        terms_of_service: '1'
       )
       user.skip_confirmation!
       user.save!
