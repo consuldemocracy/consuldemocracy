@@ -479,23 +479,24 @@ feature 'Debates' do
   end
 
   scenario 'Debate index search' do
-    debate1 = create(:debate, title: "Show me what you got")
+    debate1 = create(:debate, title: "Not found")
     debate2 = create(:debate, title: "Get Schwifty")
-    debate3 = create(:debate)
+    debate3 = create(:debate, title: "Not found either")
     debate4 = create(:debate, description: "Schwifty in here")
     debate5 = create(:debate, tag_list: 'schwifty')
     debate6 = create(:debate, tag_list: ['awesome foreign schwifty', 'major'])
+    debate7 = create(:debate, description: "Schwíftÿ in here")
 
     visit debates_path
-    fill_in "search", with: "Schwifty"
+    fill_in "search", with: "Schwïfty"
     click_button "Search"
 
     within("#debates") do
-      expect(page).to have_css('.debate', count: 4)
       expect(page).to have_content(debate2.title)
       expect(page).to have_content(debate4.title)
       expect(page).to have_content(debate5.title)
       expect(page).to have_content(debate6.title)
+      expect(page).to have_content(debate7.title)
       expect(page).to_not have_content(debate1.title)
       expect(page).to_not have_content(debate3.title)
     end
