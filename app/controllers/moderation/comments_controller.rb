@@ -14,14 +14,14 @@ class Moderation::CommentsController < Moderation::BaseController
   end
 
   def hide
-    @comment.hide
+    hide_comment @comment
   end
 
   def moderate
     @comments = @comments.where(id: params[:comment_ids])
 
     if params[:hide_comments].present?
-      @comments.accessible_by(current_ability, :hide).each(&:hide)
+      @comments.accessible_by(current_ability, :hide).each {|comment| hide_comment comment}
 
     elsif params[:ignore_flags].present?
       @comments.accessible_by(current_ability, :ignore_flag).each(&:ignore_flag)
@@ -38,6 +38,11 @@ class Moderation::CommentsController < Moderation::BaseController
 
     def load_comments
       @comments = Comment.accessible_by(current_ability, :moderate)
+    end
+
+    def hide_comment(comment)
+      comment.hide
+      Activity.log(current_user, :hide, comment)
     end
 
 end

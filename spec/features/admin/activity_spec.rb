@@ -95,4 +95,49 @@ feature 'Admin activity' do
     end
   end
 
+  context "Comments" do
+    scenario "Shows moderation activity on comments", :js do
+      debate = create(:debate)
+      comment = create(:comment, commentable: debate)
+
+      visit debate_path(debate)
+
+      within("#comment_#{comment.id}") do
+        click_link 'Hide'
+      end
+
+      visit admin_activity_path
+
+      within("#activity_#{Activity.last.id}") do
+        expect(page).to have_content(comment.body)
+        expect(page).to have_content(@admin.user.username)
+      end
+    end
+
+    scenario "Shows moderation activity from moderation screen" do
+      comment1 = create(:comment, body: "SPAM")
+      comment2 = create(:comment)
+      comment3 = create(:comment, body: "Offensive!")
+
+      visit moderation_comments_path(filter: 'all')
+
+      within("#comment_#{comment1.id}") do
+        check "comment_#{comment1.id}_check"
+      end
+
+      within("#comment_#{comment3.id}") do
+        check "comment_#{comment3.id}_check"
+      end
+
+      click_on "Hide comments"
+
+      visit admin_activity_path
+
+
+      expect(page).to have_content(comment1.body)
+      expect(page).to_not have_content(comment2.body)
+      expect(page).to have_content(comment3.body)
+    end
+  end
+
 end
