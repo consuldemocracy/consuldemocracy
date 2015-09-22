@@ -21,6 +21,7 @@ feature 'Admin activity' do
 
       within("#activity_#{Activity.last.id}") do
         expect(page).to have_content(proposal.title)
+        expect(page).to have_content("Hidden")
         expect(page).to have_content(@admin.user.username)
       end
     end
@@ -44,10 +45,27 @@ feature 'Admin activity' do
 
       visit admin_activity_path
 
-
       expect(page).to have_content(proposal1.title)
       expect(page).to_not have_content(proposal2.title)
       expect(page).to have_content(proposal3.title)
+    end
+
+    scenario "Shows admin restores" do
+      proposal = create(:proposal, :hidden)
+
+      visit admin_proposals_path
+
+      within("#proposal_#{proposal.id}") do
+        click_on "Restore"
+      end
+
+      visit admin_activity_path
+
+      within("#activity_#{Activity.last.id}") do
+        expect(page).to have_content(proposal.title)
+        expect(page).to have_content("Restored")
+        expect(page).to have_content(@admin.user.username)
+      end
     end
   end
 
@@ -65,6 +83,7 @@ feature 'Admin activity' do
 
       within("#activity_#{Activity.last.id}") do
         expect(page).to have_content(debate.title)
+        expect(page).to have_content("Hidden")
         expect(page).to have_content(@admin.user.username)
       end
     end
@@ -88,10 +107,27 @@ feature 'Admin activity' do
 
       visit admin_activity_path
 
-
       expect(page).to have_content(debate1.title)
       expect(page).to_not have_content(debate2.title)
       expect(page).to have_content(debate3.title)
+    end
+
+    scenario "Shows admin restores" do
+      debate = create(:debate, :hidden)
+
+      visit admin_debates_path
+
+      within("#debate_#{debate.id}") do
+        click_on "Restore"
+      end
+
+      visit admin_activity_path
+
+      within("#activity_#{Activity.last.id}") do
+        expect(page).to have_content(debate.title)
+        expect(page).to have_content("Restored")
+        expect(page).to have_content(@admin.user.username)
+      end
     end
   end
 
@@ -110,6 +146,7 @@ feature 'Admin activity' do
 
       within("#activity_#{Activity.last.id}") do
         expect(page).to have_content(comment.body)
+        expect(page).to have_content("Hidden")
         expect(page).to have_content(@admin.user.username)
       end
     end
@@ -133,10 +170,27 @@ feature 'Admin activity' do
 
       visit admin_activity_path
 
-
       expect(page).to have_content(comment1.body)
       expect(page).to_not have_content(comment2.body)
       expect(page).to have_content(comment3.body)
+    end
+
+    scenario "Shows admin restores" do
+      comment = create(:comment, :hidden)
+
+      visit admin_comments_path
+
+      within("#comment_#{comment.id}") do
+        click_on "Restore"
+      end
+
+      visit admin_activity_path
+
+      within("#activity_#{Activity.last.id}") do
+        expect(page).to have_content(comment.body)
+        expect(page).to have_content("Restored")
+        expect(page).to have_content(@admin.user.username)
+      end
     end
   end
 
@@ -153,6 +207,7 @@ feature 'Admin activity' do
       visit admin_activity_path
 
       within("#activity_#{Activity.last.id}") do
+        expect(page).to have_content("Blocked")
         expect(page).to have_content(proposal.author.username)
         expect(page).to have_content(proposal.author.email)
         expect(page).to have_content(@admin.user.username)
@@ -254,6 +309,25 @@ feature 'Admin activity' do
       expect(page).to have_content(comment3.author.username)
       expect(page).to have_content(comment3.author.email)
       expect(page).to_not have_content(comment2.author.username)
+    end
+
+    scenario "Shows admin restores" do
+      user = create(:user, :hidden)
+
+      visit admin_users_path
+
+      within("#user_#{user.id}") do
+        click_on "Restore"
+      end
+
+      visit admin_activity_path
+
+      within("#activity_#{Activity.last.id}") do
+        expect(page).to have_content(user.username)
+        expect(page).to have_content(user.email)
+        expect(page).to have_content("Restored")
+        expect(page).to have_content(@admin.user.username)
+      end
     end
   end
 

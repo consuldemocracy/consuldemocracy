@@ -20,6 +20,7 @@ class Admin::UsersController < Admin::BaseController
 
   def restore
     @user.restore
+    Activity.log(current_user, :restore, @user)
     redirect_to request.query_parameters.merge(action: :index)
   end
 

@@ -14,6 +14,7 @@ class Admin::ProposalsController < Admin::BaseController
 
   def restore
     @proposal.restore
+    Activity.log(current_user, :restore, @proposal)
     redirect_to request.query_parameters.merge(action: :index)
   end
 
