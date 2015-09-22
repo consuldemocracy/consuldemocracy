@@ -19,8 +19,8 @@
   <div class="in-favor">
     <% if voted_for?(@proposal_votes, proposal) %>
       <div class="supported">
-      <%= t("proposals.proposal.already_supported") %>
-    </div>
+        <%= t("proposals.proposal.already_supported") %>
+      </div>
     <% else %>
       <%= link_to vote_proposal_path(proposal, value: 'yes'),
           class: "button button-support tiny radius expand",
@@ -49,5 +49,11 @@
       signin: link_to(t("votes.signin"), new_user_session_path),
       signup: link_to(t("votes.signup"), new_user_registration_path)).html_safe %>
   </div>
+  <% end %>
+
+  <% if voted_for?(@proposal_votes, proposal) %>
+    <div class="share-supported">
+      <%= social_share_button_tag(proposal.title) %>
+    </div>
   <% end %>
 </div>

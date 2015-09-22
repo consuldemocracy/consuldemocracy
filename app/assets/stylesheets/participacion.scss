@@ -1393,6 +1393,37 @@ table {
   }
 }
 
+.share-supported {
+
+  .social-share-button {
+    display: inline-block;
+  }
+
+  .social-share-button-twitter {
+    @extend .social-share-button-twitter;
+    background: none;
+    color: white;
+    height: rem-calc(24);
+    width: rem-calc(48);
+  }
+
+  .social-share-button-facebook {
+    @extend .social-share-button-facebook;
+    background: none;
+    color: white;
+    height: rem-calc(24);
+    width: rem-calc(48);
+  }
+
+  .social-share-button-google_plus {
+    @extend .social-share-button-google_plus;
+    background: none;
+    color: white;
+    height: rem-calc(24);
+    width: rem-calc(48);
+  }
+}
+
 // 16. Pages
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 

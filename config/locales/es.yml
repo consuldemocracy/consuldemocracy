@@ -179,7 +179,7 @@ es:
       supports_necessary: "53.726 apoyos necesarios"
       census_percent: "2% del Censo"
       total_percent: "100%"
-      already_supported: "¡Ya has apoyado esta propuesta!"
+      already_supported: "¡Ya has apoyado esta propuesta, compártela!"
     form:
       proposal_title: Título de la propuesta
       proposal_question: Pregunta de la propuesta
