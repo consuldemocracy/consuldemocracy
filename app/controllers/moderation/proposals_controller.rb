@@ -16,6 +16,7 @@ class Moderation::ProposalsController < Moderation::BaseController
 
   def hide
     @proposal.hide
+    Activity.log(current_user, :hide, @proposal)
   end
 
   def moderate

@@ -20,6 +20,7 @@ en:
       officials: Officials
       moderators: Moderators
       stats: Statistics
+      activity: Moderation Activity
     organizations:
       index:
         title: Organizations
@@ -129,4 +130,18 @@ en:
       moderator:
         delete: Delete
         add: Add
+    activity:
+      show:
+        title: Activity of Moderators
+        filter: Show
+        filters:
+          all: All
+          on_proposals: On Proposals
+          on_debates: On Debates
+          on_comments: On Comments
+          on_users: On Users
+        actions:
+          hide: Hidden
+          restore: Restored
+          block: Blocked
 

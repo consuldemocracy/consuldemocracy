@@ -1,0 +1,43 @@
+<h2><%= t("admin.activity.show.title") %></h2>
+
+<%= render 'shared/filter_subnav', i18n_namespace: "admin.activity.show" %>
+
+<h3><%= page_entries_info @activity %></h3>
+
+<table>
+  <tr>
+    <th><%= t("admin.activity.show.type") %></th>
+    <th><%= t("admin.activity.show.action") %></th>
+    <th> </th>
+    <th><%= t("admin.activity.show.by") %></th>
+  </tr>
+  <% @activity.each do |activity| %>
+    <tr id="<%= dom_id(activity) %>">
+      <td>
+        <%= activity.actionable_type.constantize.model_name.human %><br>
+        <span class="date"><%= l activity.actionable.created_at.to_date %></span>
+      </td>
+      <td>
+        <%= t("admin.activity.show.actions.#{activity.action}") %><br>
+        <span class="date"><%= l activity.created_at.to_date %></span>
+      </td>
+      <td>
+        <% case activity.actionable_type %>
+        <% when "User" %>
+          <%= activity.actionable.username %> (<%= activity.actionable.email %>)
+        <% when "Comment" %>
+          <%= activity.actionable.body %>
+        <% else %>
+          <strong><%= activity.actionable.title %></strong>
+          <br>
+          <div class="proposal-description">
+            <%= activity.actionable.description %>
+          </div>
+        <% end %>
+      </td>
+      <td><%= activity.user.name %> (<%= activity.user.email %>)</td>
+    </tr>
+  <% end %>
+</table>
+
+<%= paginate @activity %>
