@@ -110,6 +110,7 @@ ignore_unused:
   - 'admin.users.index.filter*'
   - 'admin.comments.index.hidden_*'
   - 'moderation.comments.index.filter*'
+  - 'moderation.comments.index.order*'
   - 'moderation.debates.index.filter*'
   - 'moderation.proposals.index.filter*'
   - 'moderation.proposals.index.order*'

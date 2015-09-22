@@ -145,8 +145,9 @@ Rails.application.routes.draw do
     resources :comments, only: :index do
       member do
         put :hide
-        put :hide_in_moderation_screen
-        put :ignore_flag
+      end
+      collection do
+        put :moderate
       end
     end
   end

@@ -59,6 +59,9 @@ class Ability
         can :ignore_flag, Comment, ignored_flag_at: nil, hidden_at: nil
         cannot :ignore_flag, Comment, user_id: user.id
 
+        can :moderate, Comment
+        cannot :moderate, Comment, user_id: user.id
+
         can :hide, Debate, hidden_at: nil
         cannot :hide, Debate, author_id: user.id
 

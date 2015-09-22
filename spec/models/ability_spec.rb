@@ -173,6 +173,9 @@ describe Ability do
       it { should_not be_able_to(:hide, hidden_comment) }
       it { should_not be_able_to(:hide, own_comment) }
 
+      it { should be_able_to(:moderate, comment) }
+      it { should_not be_able_to(:moderate, own_comment) }
+
       it { should be_able_to(:hide, debate) }
       it { should be_able_to(:hide_in_moderation_screen, debate) }
       it { should_not be_able_to(:hide, hidden_debate) }
@@ -192,6 +195,9 @@ describe Ability do
       it { should_not be_able_to(:ignore_flag, hidden_debate) }
       it { should_not be_able_to(:ignore_flag, ignored_debate) }
       it { should_not be_able_to(:ignore_flag, own_debate) }
+
+      it { should be_able_to(:moderate, debate) }
+      it { should_not be_able_to(:moderate, own_debate) }
 
       it { should be_able_to(:ignore_flag, proposal) }
       it { should_not be_able_to(:ignore_flag, hidden_proposal) }

@@ -10,21 +10,23 @@ en:
         title: Moderation
     comments:
       index:
-        title: Comments flagged as inappropriate
+        hide_comments: Hide comments
+        block_authors: Block authors
+        ignore_flags: Ignore flags
+        title: Comments
         headers:
-          flags: Flags
-          updated_at: Date
-          commentable_type: Type
-          commentable: Root
           comment: Comment
-        hide: Hide
-        ignore_flag: Ignore
-        ignored_flag: Ignored
+          moderate: Moderate
         filter: Filter
         filters:
           all: All
           pending_flag_review: Pending
           with_ignored_flag: Ignored
+        order: Order
+        orders:
+          created_at: Newest
+          flags: Most flagged
+        confirm: Are you sure?
     debates:
       index:
         hide_debates: Hide debates

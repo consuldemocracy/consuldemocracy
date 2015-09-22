@@ -10,21 +10,23 @@ es:
         title: Moderación
     comments:
       index:
-        title: Comentarios denunciados como inapropiados
+        hide_comments: Ocultar comentarios
+        block_authors: Bloquear autores
+        ignore_flags: Marcar como revisados
+        title: Comentarios
         headers:
-          flags: Denuncias
-          updated_at: Fecha
-          commentable_type: Tipo
-          commentable: Raíz
           comment: Comentario
-        hide: Ocultar
-        ignore_flag: Ignorar
-        ignored_flag: Ignorado
+          moderate: Moderar
         filter: Filtrar
         filters:
           all: Todos
           pending_flag_review: Pendientes
-          with_ignored_flag: Ignorados
+          with_ignored_flag: Marcados como revisados
+        order: Orden
+        orders:
+          created_at: Más nuevos
+          flags: Más denunciados
+        confirm: ¿Estás seguro?
     debates:
       index:
         hide_debates: Ocultar debates
