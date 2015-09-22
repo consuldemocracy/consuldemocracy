@@ -232,15 +232,15 @@ feature 'Votes' do
 
       within("#proposals") do
         within("#proposal_#{proposal1.id}_votes") do
-          expect(page).to have_content "You already supported this proposal!"
+          expect(page).to have_content "You already supported this proposal, share it!"
         end
 
         within("#proposal_#{proposal2.id}_votes") do
-          expect(page).to_not have_content "You already supported this proposal!"
+          expect(page).to_not have_content "You already supported this proposal, share it!"
         end
 
         within("#proposal_#{proposal3.id}_votes") do
-          expect(page).to_not have_content "You already supported this proposal!"
+          expect(page).to_not have_content "You already supported this proposal, share it!"
         end
       end
     end
@@ -284,7 +284,7 @@ feature 'Votes' do
           find('.in-favor a').click
 
           expect(page).to have_content "1 support"
-          expect(page).to have_content "You already supported this proposal!"
+          expect(page).to have_content "You already supported this proposal, share it!"
         end
       end
 
@@ -295,7 +295,7 @@ feature 'Votes' do
           find('.in-favor a').click
 
           expect(page).to have_content "1 support"
-          expect(page).to have_content "You already supported this proposal!"
+          expect(page).to have_content "You already supported this proposal, share it!"
         end
         expect(URI.parse(current_url).path).to eq(proposals_path)
       end
