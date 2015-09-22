@@ -133,6 +133,9 @@ en:
     activity:
       show:
         title: Activity of Moderators
+        action: Action
+        by: Moderated by
+        type: Type
         filter: Show
         filters:
           all: All
@@ -144,4 +147,3 @@ en:
           hide: Hidden
           restore: Restored
           block: Blocked
-

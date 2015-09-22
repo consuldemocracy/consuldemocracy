@@ -133,6 +133,9 @@ es:
     activity:
       show:
         title: Actividad de los Moderadores
+        action: 'Acción'
+        by: Moderado por
+        type: Tipo
         filter: Mostrar
         filters:
           all: Todo
