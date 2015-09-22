@@ -1,103 +1,119 @@
 require 'rails_helper'
 
-feature 'Moderate Comments' do
+feature 'Moderate comments' do
 
-  feature 'Hiding Comments' do
-
-    scenario 'Hide without children hides the comment completely', :js do
-      citizen = create(:user)
-      moderator = create(:moderator)
-
-      debate = create(:debate)
-      comment = create(:comment, commentable: debate, body: 'SPAM')
-
-      login_as(moderator.user)
-      visit debate_path(debate)
-
-      within("#comment_#{comment.id}") do
-        click_link 'Hide'
-        expect(page).to have_css('.comment .faded')
-      end
-
-      login_as(citizen)
-      visit debate_path(debate)
-
-      expect(page).to have_css('.comment', count: 1)
-      expect(page).to_not have_content('This comment has been deleted')
-      expect(page).to_not have_content('SPAM')
-    end
-
-    scenario 'Children visible', :js do
-      citizen = create(:user)
-      moderator = create(:moderator)
-
-      debate = create(:debate)
-      comment = create(:comment, commentable: debate, body: 'SPAM')
-      create(:comment, commentable: debate, body: 'Acceptable reply', parent_id: comment.id)
-
-      login_as(moderator.user)
-      visit debate_path(debate)
-
-      within("#comment_#{comment.id}") do
-        first(:link, "Hide").click
-        expect(page).to have_css('.comment .faded')
-      end
-
-      login_as(citizen)
-      visit debate_path(debate)
-
-      expect(page).to have_css('.comment', count: 2)
-      expect(page).to have_content('This comment has been deleted')
-      expect(page).to_not have_content('SPAM')
-
-      expect(page).to have_content('Acceptable reply')
-    end
-  end
-
-  scenario 'Moderator actions in the comment' do
+  scenario 'Hide', :js do
     citizen = create(:user)
     moderator = create(:moderator)
 
-    debate = create(:debate)
-    comment = create(:comment, commentable: debate)
+    comment = create(:comment)
 
     login_as(moderator.user)
-    visit debate_path(debate)
+    visit debate_path(comment.commentable)
 
-    within "#comment_#{comment.id}" do
-      expect(page).to have_link("Hide")
-      expect(page).to have_link("Ban author")
+    within("#comment_#{comment.id}") do
+      click_link 'Hide'
+      expect(page).to have_css('.comment .faded')
     end
 
     login_as(citizen)
-    visit debate_path(debate)
+    visit debate_path(comment.commentable)
 
-    within "#comment_#{comment.id}" do
-      expect(page).to_not have_link("Hide")
-      expect(page).to_not have_link("Ban author")
-    end
+    expect(page).to have_css('.comment', count: 1)
+    expect(page).to_not have_content('This comment has been deleted')
+    expect(page).to_not have_content('SPAM')
   end
 
-  scenario 'Moderator actions do not appear in own comments' do
+  scenario 'Can not hide own comment' do
     moderator = create(:moderator)
-
-    debate = create(:debate)
-    comment = create(:comment, commentable: debate, user: moderator.user)
+    comment = create(:comment, user: moderator.user)
 
     login_as(moderator.user)
-    visit debate_path(debate)
+    visit debate_path(comment.commentable)
 
-    within "#comment_#{comment.id}" do
-      expect(page).to_not have_link("Hide")
-      expect(page).to_not have_link("Ban author")
+    within("#comment_#{comment.id}") do
+      expect(page).to_not have_link('Hide')
+      expect(page).to_not have_link('Block author')
     end
   end
 
-  feature '/moderation/ menu' do
+  feature '/moderation/ screen' do
 
     background do
       moderator = create(:moderator)
       login_as(moderator.user)
+    end
+
+    feature 'moderate in bulk' do
+      feature "When a comment has been selected for moderation" do
+        background do
+          @comment = create(:comment)
+          visit moderation_comments_path
+          within('.sub-nav') do
+            click_link "All"
+          end
+
+          within("#comment_#{@comment.id}") do
+            check "comment_#{@comment.id}_check"
+          end
+
+          expect(page).to_not have_css("comment_#{@comment.id}")
+        end
+
+        scenario 'Hide the comment' do
+          click_on "Hide comments"
+          expect(page).to_not have_css("comment_#{@comment.id}")
+          expect(@comment.reload).to be_hidden
+          expect(@comment.user).to_not be_hidden
+        end
+
+        scenario 'Block the user' do
+          click_on "Block authors"
+          expect(page).to_not have_css("comment_#{@comment.id}")
+          expect(@comment.reload).to be_hidden
+          expect(@comment.user).to be_hidden
+        end
+
+        scenario 'Ignore the comment' do
+          click_on "Ignore flags"
+          expect(page).to_not have_css("comment_#{@comment.id}")
+          expect(@comment.reload).to be_ignored_flag
+          expect(@comment.reload).to_not be_hidden
+          expect(@comment.user).to_not be_hidden
+        end
+      end
+
+      scenario "select all/none", :js do
+        create_list(:comment, 2)
+
+        visit moderation_comments_path
+
+        within('.js-check') { click_on 'All' }
+
+        all('input[type=checkbox]').each do |checkbox|
+          expect(checkbox).to be_checked
+        end
+
+        within('.js-check') { click_on 'None' }
+
+        all('input[type=checkbox]').each do |checkbox|
+          expect(checkbox).to_not be_checked
+        end
+      end
+
+      scenario "remembering page, filter and order" do
+        create_list(:comment, 52)
+
+        visit moderation_comments_path(filter: 'all', page: '2', order: 'created_at')
+
+        click_on "Ignore flags"
+
+        expect(page).to have_selector('.js-order-selector[data-order="created_at"]')
+
+        expect(current_url).to include('filter=all')
+        expect(current_url).to include('page=2')
+        expect(current_url).to include('order=created_at')
+      end
     end
 
     scenario "Current filter is properly highlighted" do
@@ -107,98 +123,74 @@ feature 'Moderate Comments' do
       expect(page).to have_link('Ignored')
 
       visit moderation_comments_path(filter: 'all')
-      expect(page).to_not have_link('All')
-      expect(page).to have_link('Pending')
-      expect(page).to have_link('Ignored')
+      within('.sub-nav') do
+        expect(page).to_not have_link('All')
+        expect(page).to have_link('Pending')
+        expect(page).to have_link('Ignored')
+      end
 
       visit moderation_comments_path(filter: 'pending_flag_review')
-      expect(page).to have_link('All')
-      expect(page).to_not have_link('Pending')
-      expect(page).to have_link('Ignored')
+      within('.sub-nav') do
+        expect(page).to have_link('All')
+        expect(page).to_not have_link('Pending')
+        expect(page).to have_link('Ignored')
+      end
 
       visit moderation_comments_path(filter: 'with_ignored_flag')
-      expect(page).to have_link('All')
-      expect(page).to have_link('Pending')
-      expect(page).to_not have_link('Ignored')
+      within('.sub-nav') do
+        expect(page).to have_link('All')
+        expect(page).to have_link('Pending')
+        expect(page).to_not have_link('Ignored')
+      end
     end
 
     scenario "Filtering comments" do
+      create(:comment, body: "Regular comment")
       create(:comment, :flagged, body: "Pending comment")
-      create(:comment, :flagged, :hidden, body: "Hidden comment")
+      create(:comment, :hidden, body: "Hidden comment")
       create(:comment, :flagged, :with_ignored_flag, body: "Ignored comment")
 
       visit moderation_comments_path(filter: 'all')
+      expect(page).to have_content('Regular comment')
       expect(page).to have_content('Pending comment')
       expect(page).to_not have_content('Hidden comment')
       expect(page).to have_content('Ignored comment')
 
       visit moderation_comments_path(filter: 'pending_flag_review')
+      expect(page).to_not have_content('Regular comment')
       expect(page).to have_content('Pending comment')
       expect(page).to_not have_content('Hidden comment')
       expect(page).to_not have_content('Ignored comment')
 
       visit moderation_comments_path(filter: 'with_ignored_flag')
+      expect(page).to_not have_content('Regular comment')
       expect(page).to_not have_content('Pending comment')
       expect(page).to_not have_content('Hidden comment')
       expect(page).to have_content('Ignored comment')
     end
 
-    scenario "Reviewing links remember the pagination setting and the filter" do
-      per_page = Kaminari.config.default_per_page
-      (per_page + 2).times { create(:comment, :flagged) }
+    scenario "sorting comments" do
+      create(:comment, body: "Flagged comment", created_at: Time.now - 1.day, flags_count: 5)
+      create(:comment, body: "Flagged newer comment", created_at: Time.now - 12.hours, flags_count: 3)
+      create(:comment, body: "Newer comment", created_at: Time.now)
 
-      visit moderation_comments_path(filter: 'pending_flag_review', page: 2)
+      visit moderation_comments_path(order: 'created_at')
 
-      click_link('Ignore', match: :first, exact: true)
+      expect("Flagged newer comment").to appear_before("Flagged comment")
 
-      expect(current_url).to include('filter=pending_flag_review')
-      expect(current_url).to include('page=2')
-    end
+      visit moderation_comments_path(order: 'flags')
 
-    feature 'A flagged comment exists' do
+      expect("Flagged comment").to appear_before("Flagged newer comment")
 
-      background do
-        debate = create(:debate, title: 'Democracy')
-        @comment = create(:comment, :flagged, commentable: debate, body: 'spammy spam')
-        visit moderation_comments_path
-      end
+      visit moderation_comments_path(filter: 'all', order: 'created_at')
 
-      scenario 'It is displayed with the correct attributes' do
-        within("#comment_#{@comment.id}") do
-          expect(page).to have_link('Democracy')
-          expect(page).to have_content('spammy spam')
-          expect(page).to have_content('1')
-          expect(page).to have_link('Hide')
-          expect(page).to have_link('Ignore')
-        end
-      end
+      expect("Newer comment").to appear_before("Flagged newer comment")
+      expect("Flagged newer comment").to appear_before("Flagged comment")
 
-      scenario 'Hiding the comment' do
-        within("#comment_#{@comment.id}") do
-          click_link('Hide')
-        end
+      visit moderation_comments_path(filter: 'all', order: 'flags')
 
-        expect(current_path).to eq(moderation_comments_path)
-        expect(page).to_not have_selector("#comment_#{@comment.id}")
-
-        expect(@comment.reload).to be_hidden
-      end
-
-      scenario 'Marking the comment as ignored' do
-        within("#comment_#{@comment.id}") do
-          click_link('Ignore')
-        end
-
-        expect(current_path).to eq(moderation_comments_path)
-
-        click_link('Ignored')
-
-        within("#comment_#{@comment.id}") do
-          expect(page).to have_content('Ignored')
-        end
-
-        expect(@comment.reload).to be_ignored_flag
-      end
+      expect("Flagged comment").to appear_before("Flagged newer comment")
+      expect("Flagged newer comment").to appear_before("Newer comment")
     end
   end
 end
