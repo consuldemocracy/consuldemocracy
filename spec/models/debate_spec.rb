@@ -48,28 +48,36 @@ describe Debate do
 
   describe "#editable?" do
     let(:debate) { create(:debate) }
+    before(:each) { Setting.find_by(key: "max_votes_for_debate_edit").update(value: 3) }
 
     it "should be true if debate has no votes yet" do
       expect(debate.total_votes).to eq(0)
       expect(debate.editable?).to be true
     end
 
-    it "should be false if debate has votes" do
-      create(:vote, votable: debate)
-      expect(debate.total_votes).to eq(1)
+    it "should be true if debate has less than limit votes" do
+      create_list(:vote, 2, votable: debate)
+      expect(debate.total_votes).to eq(2)
+      expect(debate.editable?).to be true
+    end
+
+    it "should be false if debate has more than limit votes" do
+      create_list(:vote, 4, votable: debate)
+      expect(debate.total_votes).to eq(4)
       expect(debate.editable?).to be false
     end
   end
 
   describe "#editable_by?" do
     let(:debate) { create(:debate) }
+    before(:each) { Setting.find_by(key: "max_votes_for_debate_edit").update(value: 1) }
 
     it "should be true if user is the author and debate is editable" do
       expect(debate.editable_by?(debate.author)).to be true
     end
 
     it "should be false if debate is not editable" do
-      create(:vote, votable: debate)
+      create_list(:vote, 2, votable: debate)
       expect(debate.editable_by?(debate.author)).to be false
     end
 

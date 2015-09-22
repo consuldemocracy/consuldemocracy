@@ -53,7 +53,7 @@ class Debate < ActiveRecord::Base
   end
 
   def editable?
-    total_votes == 0
+    total_votes <= Setting.value_for('max_votes_for_debate_edit').to_i
   end
 
   def editable_by?(user)

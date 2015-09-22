@@ -9,6 +9,7 @@ Setting.create(key: 'official_level_3_name', value: 'Directores generales')
 Setting.create(key: 'official_level_4_name', value: 'Concejales')
 Setting.create(key: 'official_level_5_name', value: 'Alcaldesa')
 Setting.create(key: 'max_ratio_anon_votes_on_debates', value: '50')
+Setting.create(key: 'max_votes_for_debate_edit', value: '1000')
 Setting.create(key: 'max_votes_for_proposal_edit', value: '1000')
 Setting.create(key: 'proposal_code_prefix', value: 'MAD')
 Setting.create(key: 'votes_for_proposal_success', value: '100')
@@ -198,8 +199,3 @@ puts "Confirming hiding in debates, comments & proposals"
 Comment.only_hidden.flagged.reorder("RANDOM()").limit(10).each(&:confirm_hide)
 Debate.only_hidden.flagged.reorder("RANDOM()").limit(5).each(&:confirm_hide)
 Proposal.only_hidden.flagged.reorder("RANDOM()").limit(5).each(&:confirm_hide)
-
-
-
-
-
