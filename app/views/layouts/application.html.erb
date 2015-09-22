@@ -24,9 +24,9 @@
       <%= render 'layouts/header' %>
 
       <!--[if lt IE 9]>
-      <% if browser.ie? %>
+      <% if browser.ie? && cookies['ie_alert_closed'] != 'true' %>
         <div data-alert class="alert-box info ie-alert-box">
-          <a href="#" class="close">&times;</a>
+          <a href="#" class="close ie-alert-box-close-js">&times;</a>
           <h2><%= t("layouts.application.ie_title") %></h2>
           <p>
             <%= t("layouts.application.ie",
