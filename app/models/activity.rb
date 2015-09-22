@@ -1,7 +1,7 @@
 class Activity < ActiveRecord::Base
 
-  belongs_to :actionable, polymorphic: true
-  belongs_to :user
+  belongs_to :actionable,  -> { with_hidden }, polymorphic: true
+  belongs_to :user, -> { with_hidden }
 
   VALID_ACTIONS = %w( hide block restore )
 
