@@ -39,7 +39,7 @@
             <% end %>
           </p>
           <div class="proposal-description">
-            <%= link_to proposal.summary, proposal %>
+            <p><%= link_to proposal.summary, proposal %></p>
             <div class="truncate"></div>
           </div>
           <%= render "shared/tags", taggable: proposal, limit: 5 %>
