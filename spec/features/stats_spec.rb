@@ -13,7 +13,7 @@ feature 'Stats' do
     confirm_phone
 
     login_as(admin.user)
-    visit stats_path
+    visit admin_stats_path
 
     expect(page).to have_content "Level 2 User (1)"
   end
