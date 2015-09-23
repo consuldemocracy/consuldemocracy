@@ -20,6 +20,7 @@ class User < ActiveRecord::Base
   has_many :flags
   has_many :identities, dependent: :destroy
   has_many :debates, -> { with_hidden }, foreign_key: :author_id
+  has_many :proposals, -> { with_hidden }, foreign_key: :author_id
   has_many :comments, -> { with_hidden }
 
   validates :username, presence: true, unless: :organization?
