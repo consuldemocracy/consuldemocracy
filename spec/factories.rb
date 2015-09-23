@@ -42,7 +42,7 @@ FactoryGirl.define do
     terms_of_service '1'
 
     trait :invalid do
-      postal_code "12345"
+      postal_code "28001"
     end
   end
 

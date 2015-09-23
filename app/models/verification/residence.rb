@@ -75,7 +75,7 @@ class Verification::Residence
     end
 
     def valid_postal_code?
-      postal_code.match /^280/
+      postal_code =~ /^280/
     end
 
 end

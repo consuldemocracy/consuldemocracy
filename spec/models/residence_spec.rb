@@ -32,17 +32,21 @@ describe Verification::Residence do
     describe "postal code" do
       it "should be valid with postal codes starting with 280" do
         residence.postal_code = "28012"
+        residence.valid?
         expect(residence.errors[:postal_code].size).to eq(0)
 
         residence.postal_code = "28023"
+        residence.valid?
         expect(residence.errors[:postal_code].size).to eq(0)
       end
 
       it "should not be valid with postal codes not starting with 280" do
         residence.postal_code = "12345"
+        residence.valid?
         expect(residence.errors[:postal_code].size).to eq(1)
 
         residence.postal_code = "13280"
+        residence.valid?
         expect(residence.errors[:postal_code].size).to eq(1)
         expect(residence.errors[:postal_code]).to include("Please, to verify your account you need to be in the census of the Madrid town.")
       end
@@ -94,7 +98,7 @@ describe Verification::Residence do
 
   describe "tries" do
     it "should increase tries after a call to the Census" do
-      residence.postal_code = "12345"
+      residence.postal_code = "28011"
       residence.valid?
       expect(residence.user.lock.tries).to eq(1)
     end
@@ -117,7 +121,7 @@ describe Verification::Residence do
         document_number: "12345678Z",
         document_type:   "1",
         date_of_birth:   Date.new(1980, 12, 31),
-        postal_code:     "12345"
+        postal_code:     "28001"
       })
     end
   end
