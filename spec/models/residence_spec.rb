@@ -29,6 +29,25 @@ describe Verification::Residence do
       expect(residence.errors[:date_of_birth]).to include("You need yo be at least 16 years old")
     end
 
+    describe "postal code" do
+      it "should be valid with postal codes starting with 280" do
+        residence.postal_code = "28012"
+        expect(residence.errors[:postal_code].size).to eq(0)
+
+        residence.postal_code = "28023"
+        expect(residence.errors[:postal_code].size).to eq(0)
+      end
+
+      it "should not be valid with postal codes not starting with 280" do
+        residence.postal_code = "12345"
+        expect(residence.errors[:postal_code].size).to eq(1)
+
+        residence.postal_code = "13280"
+        expect(residence.errors[:postal_code].size).to eq(1)
+        expect(residence.errors[:postal_code]).to include("Please, to verify your account you need to be in the census of the Madrid town.")
+      end
+    end
+
     it "should validate uniquness of document_number" do
       user = create(:user)
       residence.user = user
