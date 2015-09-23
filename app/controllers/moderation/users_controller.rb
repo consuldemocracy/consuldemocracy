@@ -8,12 +8,14 @@ class Moderation::UsersController < Moderation::BaseController
   end
 
   def hide_in_moderation_screen
-    @user.block
+    block_user
+
     redirect_to request.query_parameters.merge(action: :index), notice: I18n.t('moderation.users.notice_hide')
   end
 
   def hide
-    @user.block
+    block_user
+
     redirect_to debates_path
   end
 
@@ -21,6 +23,11 @@ class Moderation::UsersController < Moderation::BaseController
 
   def load_users
     @users = User.with_hidden.search(params[:name_or_email]).page(params[:page]).for_render
+  end
+
+  def block_user
+    @user.block
+    Activity.log(current_user, :block, @user)
   end
 
 end

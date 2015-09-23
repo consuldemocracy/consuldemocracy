@@ -112,6 +112,8 @@ Rails.application.routes.draw do
     resources :moderators, only: [:index, :create, :destroy] do
       collection { get :search }
     end
+
+    resource :activity, controller: :activity, only: :show
   end
 
   namespace :moderation do

@@ -14,21 +14,21 @@ class Moderation::DebatesController < Moderation::BaseController
   end
 
   def hide
-    @debate.hide
+    hide_debate @debate
   end
 
   def moderate
     @debates = @debates.where(id: params[:debate_ids])
 
     if params[:hide_debates].present?
-      @debates.accessible_by(current_ability, :hide).each(&:hide)
+      @debates.accessible_by(current_ability, :hide).each {|debate| hide_debate debate}
 
     elsif params[:ignore_flags].present?
       @debates.accessible_by(current_ability, :ignore_flag).each(&:ignore_flag)
 
     elsif params[:block_authors].present?
       author_ids = @debates.pluck(:author_id).uniq
-      User.where(id: author_ids).accessible_by(current_ability, :block).each(&:block)
+      User.where(id: author_ids).accessible_by(current_ability, :block).each {|user| block_user user}
     end
 
     redirect_to request.query_parameters.merge(action: :index)
@@ -38,6 +38,16 @@ class Moderation::DebatesController < Moderation::BaseController
 
     def load_debates
       @debates = Debate.accessible_by(current_ability, :moderate)
+    end
+
+    def hide_debate(debate)
+      debate.hide
+      Activity.log(current_user, :hide, debate)
+    end
+
+    def block_user(user)
+      user.block
+      Activity.log(current_user, :block, user)
     end
 
 end

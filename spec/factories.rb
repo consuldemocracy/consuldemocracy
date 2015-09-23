@@ -33,6 +33,12 @@ FactoryGirl.define do
     uid "MyString"
   end
 
+  factory :activity do
+    user
+    action "hide"
+    association :actionable, factory: :proposal
+  end
+
   factory :verification_residence, class: Verification::Residence do
     user
     document_number  '12345678Z'

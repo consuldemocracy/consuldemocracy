@@ -1,6 +1,7 @@
 en:
   activerecord:
     models:
+      activity: Activity
       comment: Comment
       debate: Debate
       proposal: Proposal

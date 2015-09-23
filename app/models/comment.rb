@@ -73,11 +73,11 @@ class Comment < ActiveRecord::Base
   end
 
   def after_hide
-    commentable_type.constantize.reset_counters(commentable_id, :comments)
+    commentable_type.constantize.with_hidden.reset_counters(commentable_id, :comments)
   end
 
   def after_restore
-    commentable_type.constantize.reset_counters(commentable_id, :comments)
+    commentable_type.constantize.with_hidden.reset_counters(commentable_id, :comments)
   end
 
   def reply?

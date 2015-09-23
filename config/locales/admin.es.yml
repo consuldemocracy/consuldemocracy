@@ -20,6 +20,7 @@ es:
       officials: Cargos públicos
       moderators: Moderadores
       stats: Estadísticas
+      activity: Actividad de moderadores
     organizations:
       index:
         title: Organizaciones
@@ -129,3 +130,20 @@ es:
       moderator:
         delete: Borrar
         add: Añadir
+    activity:
+      show:
+        title: Actividad de los Moderadores
+        action: 'Acción'
+        by: Moderado por
+        type: Tipo
+        filter: Mostrar
+        filters:
+          all: Todo
+          on_proposals: Propuestas
+          on_debates: Debates
+          on_comments: Comentarios
+          on_users: Usuarios
+        actions:
+          hide: Ocultado
+          restore: Restaurado
+          block: Bloqueado

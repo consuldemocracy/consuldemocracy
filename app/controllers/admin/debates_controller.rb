@@ -14,6 +14,7 @@ class Admin::DebatesController < Admin::BaseController
 
   def restore
     @debate.restore
+    Activity.log(current_user, :restore, @debate)
     redirect_to request.query_parameters.merge(action: :index)
   end
 

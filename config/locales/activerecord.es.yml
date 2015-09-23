@@ -1,6 +1,9 @@
 es:
   activerecord:
     models:
+      activity:
+        one: actividad
+        other: actividades
       comment:
         one: Comentario
         other: Comentarios
