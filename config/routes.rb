@@ -114,6 +114,7 @@ Rails.application.routes.draw do
     end
 
     resource :activity, controller: :activity, only: :show
+    resource :stats, only: :show
   end
 
   namespace :moderation do
@@ -153,8 +154,6 @@ Rails.application.routes.draw do
       end
     end
   end
-
-  resource :stats, only: [:show]
 
   namespace :api do
     resource :stats, only: [:show]

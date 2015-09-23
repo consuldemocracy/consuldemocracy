@@ -15,21 +15,32 @@
 //= require foundation
 //= require turbolinks
 //= require ckeditor/init
+//= require_directory ./ckeditor
 //= require social-share-button
 //= require initial
 //= require ahoy
-//= require d3
-//= require c3
-//= require c3ext
 //= require app
-//= require_tree .
+//= require check_all_none
+//= require comments
+//= require dropdown
+//= require ie_alert
+//= require location_changer
+//= require moderator_comment
+//= require moderator_debates
+//= require moderator_proposals
+//= require prevent_double_submission
+//= require rem.min
+//= require respond.min
+//= require tags
+//= require users
+//= require votes
+
 
 var initialize_modules = function() {
   App.Comments.initialize();
   App.Users.initialize();
   App.Votes.initialize();
   App.Tags.initialize();
-  App.Stats.initialize();
   App.Dropdown.initialize();
   App.LocationChanger.initialize();
   App.CheckAllNone.initialize();
