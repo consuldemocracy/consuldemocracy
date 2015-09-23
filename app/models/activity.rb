@@ -18,7 +18,7 @@ class Activity < ActiveRecord::Base
   end
 
   def self.on(actionable)
-    where(actionable_type: actionable.class.name, actionable_id: actionable.id)
+    where(actionable: actionable)
   end
 
   def self.by(user)
