@@ -1,5 +1,6 @@
 class Mailer < ApplicationMailer
   helper :text_with_links
+  helper :mailer
 
   def comment(comment)
     @comment = comment
