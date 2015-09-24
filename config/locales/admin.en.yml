@@ -101,6 +101,8 @@ en:
     verifications:
       index:
         title: Incomplete verifications
+        search_placeholder: 'Search user by name or email'
+        search: Search
     officials:
       level_0: Not an official
       level_1: Level 1

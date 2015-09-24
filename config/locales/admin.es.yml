@@ -101,6 +101,8 @@ es:
     verifications:
       index:
         title: Verificaciones incompletas
+        search_placeholder: 'Buscar usuario por nombre o email'
+        search: Buscar
     officials:
       level_0: "No es cargo público"
       level_1: Nivel 1
