@@ -22,6 +22,10 @@ en:
       moderators: Moderators
       stats: Statistics
       activity: Moderation Activity
+    shared:
+      user_search:
+        placeholder: 'Search user by name or email'
+        button: 'Search'
     organizations:
       index:
         title: Organizations
@@ -101,8 +105,6 @@ en:
     verifications:
       index:
         title: Incomplete verifications
-        search_placeholder: 'Search user by name or email'
-        search: 'Search'
         phone_not_given: 'Phone not given'
         sms_code_not_confirmed: 'Has not confirmed the sms code'
     officials:
@@ -114,8 +116,6 @@ en:
       level_5: Level 5
       index:
         title: Officials
-        search_placeholder: 'Search user by name or email'
-        search: Search
       search:
         title: 'Officials: Search users'
         edit_official: Edit official

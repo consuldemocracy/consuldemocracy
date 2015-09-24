@@ -22,6 +22,10 @@ es:
       moderators: Moderadores
       stats: Estadísticas
       activity: Actividad de moderadores
+    shared:
+      user_search:
+        placeholder: 'Buscar usuario por nombre o email'
+        button: 'Buscar'
     organizations:
       index:
         title: Organizaciones
@@ -101,8 +105,6 @@ es:
     verifications:
       index:
         title: Verificaciones incompletas
-        search_placeholder: 'Buscar usuario por nombre o email'
-        search: 'Buscar'
         phone_not_given: 'No ha dado su teléfono'
         sms_code_not_confirmed: 'No ha introducido su código de seguridad'
     officials:
@@ -114,8 +116,6 @@ es:
       level_5: Nivel 5
       index:
         title: Cargos Públicos
-        search_placeholder: 'Buscar usuario por nombre o email'
-        search: Buscar
       search:
         title: 'Cargos Públicos: Búsqueda de usuarios'
         edit_official: Editar cargo público
