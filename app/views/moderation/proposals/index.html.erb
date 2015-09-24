@@ -13,7 +13,7 @@
 </div>
 
 <%= form_tag moderate_moderation_proposals_path(request.query_parameters), method: :put do %>
-  <p class="right js-check">
+  <p class="left js-check">
     <%= t('shared.check') %>:
     <%= link_to t('shared.check_all'), '#', data: {check_all: "proposal_ids[]"} %>
     |

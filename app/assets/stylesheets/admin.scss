@@ -47,6 +47,10 @@ body.admin {
   .is-featured {
     margin-top: rem-calc(36);
   }
+
+  .select-order {
+    min-width: rem-calc(160);
+  }
 }
 
 // 02. Sidebar
@@ -201,12 +205,16 @@ body.admin {
 
 .button.tiny.success {
   margin-left: rem-calc(12);
+
+  &.no-margin {
+    margin-left: 0;
+  }
 }
 
 .moderation-description {
   max-height: rem-calc(65);
   overflow: hidden;
-  max-width: rem-calc(750);
+  max-width: rem-calc(590);
 
   &:hover {
     cursor: text;
