@@ -44,13 +44,14 @@ module CommonActions
     click_button 'Send me reset password'
   end
 
-  def comment_on(debate, user = nil)
+  def comment_on(commentable, user = nil)
     user ||= create(:user)
 
     login_as(user)
-    visit debate_path(debate)
+    commentable_path = commentable.is_a?(Proposal) ? proposal_path(commentable) : debate_path(commentable)
+    visit commentable_path
 
-    fill_in "comment-body-debate_#{debate.id}", with: 'Have you thought about...?'
+    fill_in "comment-body-#{commentable.class.name.downcase}_#{commentable.id}", with: 'Have you thought about...?'
     click_button 'Publish comment'
 
     expect(page).to have_content 'Have you thought about...?'
