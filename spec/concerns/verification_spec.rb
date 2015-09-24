@@ -55,27 +55,20 @@ shared_examples_for "verifiable" do
       end
     end
 
-    describe "#with_failed_attempts" do
-      it "returns users with failed verification attempts" do
-        user1 = create(:user, verified_at: nil, confirmed_phone: nil)
-        user2 = create(:user, verified_at: nil, confirmed_phone: nil)
-        create(:failed_census_call, user: user1)
-
-        expect(model.with_failed_attempts).to include(user1)
-        expect(model.with_failed_attempts).to_not include(user2)
-      end
-    end
-
     describe "#incomplete_verification" do
       it "returns users with incomplete verifications" do
         user1 = create(:user, verified_at: nil, confirmed_phone: nil)
-        user2 = create(:user, verified_at: nil, confirmed_phone: nil)
-        user3 = create(:user, verified_at: Time.now, residence_verified_at: Time.now, confirmed_phone: "123456789")
         create(:failed_census_call, user: user1)
 
-        expect(model.with_failed_attempts).to include(user1)
-        expect(model.with_failed_attempts).to_not include(user2)
-        expect(model.with_failed_attempts).to_not include(user3)
+        user2 = create(:user, verified_at: nil, residence_verified_at: Time.now, unconfirmed_phone: nil)
+        user3 = create(:user, verified_at: nil, confirmed_phone: nil)
+        user4 = create(:user, verified_at: Time.now, residence_verified_at: Time.now, unconfirmed_phone: "123456789", confirmed_phone: "123456789")
+
+
+        expect(model.incomplete_verification).to include(user1)
+        expect(model.incomplete_verification).to include(user2)
+        expect(model.incomplete_verification).to_not include(user3)
+        expect(model.incomplete_verification).to_not include(user4)
       end
     end
   end
