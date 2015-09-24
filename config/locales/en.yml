@@ -300,11 +300,6 @@ en:
     check: Select
     check_all: All
     check_none: None
-  mailer:
-    comment:
-      subject: Someone has commented on your debate
-    reply:
-      subject: Someone has replied to your comment
   unauthorized:
     default: "You are not authorized to access this page."
     manage:

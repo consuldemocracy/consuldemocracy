@@ -300,11 +300,6 @@ es:
     check: Seleccionar
     check_all: Todos
     check_none: Ninguno
-  mailer:
-    comment:
-      subject: Alguien ha comentado en tu propuesta
-    reply:
-      subject: Alguien ha respondido a tu comentario
   unauthorized:
     default: "No tienes permiso para acceder a esta página."
     manage:

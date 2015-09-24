@@ -1,14 +1,17 @@
 en:
   mailers:
     comment:
+      subject: "Someone has commented on your %{commentable}"
       hi: Hello
-      title: New comment on your debate
+      title: New comment
       new_comment_by_html: "There is a new comment by <b>%{commenter}</b> on"
     reply:
+      subject: Someone has replied to your comment
       hi: Hello
       title: New reply on your comment
       new_reply_by_html: "There'is a new reply by <b>%{commenter}</b> to your comment on"
     email_verification:
+      subject: Verify your email
       title: Please verify yourself
       instructions_html: "We need to verify you using this email, which we got from the Census. %{verification_link}"
       click_here_to_verify: "Please click here to verify yourself"
