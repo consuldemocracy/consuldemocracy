@@ -4,25 +4,32 @@
 
 <h3><%= page_entries_info @proposals %></h3>
 
-<ul class="admin-list">
+<table>
   <% @proposals.each do |proposal| %>
-    <li id="<%= dom_id(proposal) %>">
-      <%= link_to proposal.title, proposal_path(proposal) %>
-
-      <%= link_to t("admin.actions.restore"),
-            restore_admin_proposal_path(proposal, request.query_parameters),
-            method: :put,
-            data: { confirm: t("admin.actions.confirm") },
-            class: "button radius tiny success right" %>
-
-      <% unless proposal.confirmed_hide? %>
-        <%= link_to t("admin.actions.confirm_hide"),
-              confirm_hide_admin_proposal_path(proposal, request.query_parameters),
+    <tr id="<%= dom_id(proposal) %>">
+      <td>
+        <strong><%= proposal.title %></strong>
+        <br>
+        <div class="moderation-description">
+          <%= proposal.description %>
+        </div>
+      </td>
+      <td>
+        <%= link_to t("admin.actions.restore"),
+              restore_admin_proposal_path(proposal, request.query_parameters),
               method: :put,
-              class: "button radius tiny warning right" %>
-      <% end %>
-    </li>
+              data: { confirm: t("admin.actions.confirm") },
+              class: "button radius tiny success right" %>
+
+        <% unless proposal.confirmed_hide? %>
+          <%= link_to t("admin.actions.confirm_hide"),
+                confirm_hide_admin_proposal_path(proposal, request.query_parameters),
+                method: :put,
+                class: "button radius tiny warning right" %>
+        <% end %>
+      </td>
+    </tr>
   <% end %>
-</ul>
+</table>
 
 <%= paginate @proposals %>
