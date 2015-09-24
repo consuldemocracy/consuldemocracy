@@ -36,10 +36,6 @@ class Comment < ActiveRecord::Base
     c_type.constantize.find(c_id)
   end
 
-  def debate
-    commentable if commentable.class == Debate
-  end
-
   def author_id
     user_id
   end

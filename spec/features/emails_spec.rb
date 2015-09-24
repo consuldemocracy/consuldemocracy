@@ -24,6 +24,35 @@ feature 'Emails' do
     expect(email).to have_body_text(edit_user_password_path)
   end
 
+  context 'Proposal comments' do
+    scenario "Send email on proposal comment", :js do
+      user = create(:user, email_on_comment: true)
+      proposal = create(:proposal, author: user)
+      comment_on(proposal)
+
+      email = open_last_email
+      expect(email).to have_subject('Someone has commented on your proposal')
+      expect(email).to deliver_to(proposal.author)
+      expect(email).to have_body_text(proposal_path(proposal))
+    end
+
+    scenario 'Do not send email about own proposal comments', :js do
+      user = create(:user, email_on_comment: true)
+      proposal = create(:proposal, author: user)
+      comment_on(proposal, user)
+
+      expect { open_last_email }.to raise_error "No email has been sent!"
+    end
+
+    scenario 'Do not send email about proposal comment unless set in preferences', :js do
+      user = create(:user, email_on_comment: false)
+      proposal = create(:proposal, author: user)
+      comment_on(proposal)
+
+      expect { open_last_email }.to raise_error "No email has been sent!"
+    end
+  end
+
   context 'Debate comments' do
     scenario "Send email on debate comment", :js do
       user = create(:user, email_on_comment: true)
@@ -61,7 +90,7 @@ feature 'Emails' do
       email = open_last_email
       expect(email).to have_subject('Someone has replied to your comment')
       expect(email).to deliver_to(user)
-      expect(email).to have_body_text(debate_path(Comment.first.debate))
+      expect(email).to have_body_text(debate_path(Comment.first.commentable))
     end
 
     scenario "Do not send email about own replies to own comments", :js do

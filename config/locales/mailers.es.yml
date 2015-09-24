@@ -1,14 +1,17 @@
 es:
   mailers:
     comment:
+      subject: "Alguien ha comentado en tu %{commentable}"
       hi: Hola
-      title: Nuevo comentario en tu debate
+      title: Nuevo comentario
       new_comment_by_html: "Hay un nuevo comentario de <b>%{commenter}</b> en"
     reply:
+      subject: Alguien ha respondido a tu comentario
       hi: Hola
       title: Nueva respuesta a tu comentario
       new_reply_by_html: "Hay una nueva respuesta de <b>%{commenter}</b> a tu comentario en"
     email_verification:
+      subject: Verifica tu email
       title:  Verifica tu cuenta con el siguiente enlace
       instructions_html: "Para terminar de verificar tu cuenta de usuario en el Portal de Gobierno Abierto del Ayuntamiento de Madrid, necesitamos que pulses %{verification_link}."
       click_here_to_verify: "en este enlace"
