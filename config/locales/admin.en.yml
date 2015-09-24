@@ -102,8 +102,9 @@ en:
       index:
         title: Incomplete verifications
         search_placeholder: 'Search user by name or email'
-        search: Search
-        phone_not_given: Phone not given
+        search: 'Search'
+        phone_not_given: 'Phone not given'
+        sms_code_not_confirmed: 'Has not confirmed the sms code'
     officials:
       level_0: Not an official
       level_1: Level 1

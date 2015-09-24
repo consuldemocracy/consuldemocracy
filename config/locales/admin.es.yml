@@ -102,8 +102,9 @@ es:
       index:
         title: Verificaciones incompletas
         search_placeholder: 'Buscar usuario por nombre o email'
-        search: Buscar
-        phone_not_given: No ha dado su teléfono
+        search: 'Buscar'
+        phone_not_given: 'No ha dado su teléfono'
+        sms_code_not_confirmed: 'No ha introducido su código de seguridad'
     officials:
       level_0: "No es cargo público"
       level_1: Nivel 1
