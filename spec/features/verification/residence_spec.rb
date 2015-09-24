@@ -32,6 +32,26 @@ feature 'Residence' do
     expect(page).to have_content /\d errors? prevented your residence verification/
   end
 
+  scenario 'Error on postal code not in Madrid census' do
+    user = create(:user)
+    login_as(user)
+
+    visit account_path
+    click_link 'Verify my account'
+
+    fill_in 'residence_document_number', with: "12345678Z"
+    select 'Spanish ID', from: 'residence_document_type'
+    select '1997', from: 'residence_date_of_birth_1i'
+    select 'January', from: 'residence_date_of_birth_2i'
+    select '1', from: 'residence_date_of_birth_3i'
+    fill_in 'residence_postal_code', with: '12345'
+    check 'residence_terms_of_service'
+
+    click_button 'Verify residence'
+
+    expect(page).to have_content 'Please, to verify your account you need to be in the census of the Madrid town.'
+  end
+
   scenario 'Error on Madrid census' do
     user = create(:user)
     login_as(user)
