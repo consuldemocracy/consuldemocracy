@@ -5,7 +5,9 @@ module Verification
     scope :level_three_verified, -> { where.not(verified_at: nil) }
     scope :level_two_verified, -> { where("users.confirmed_phone IS NOT NULL AND users.residence_verified_at IS NOT NULL") }
     scope :level_two_or_three_verified, -> { where("users.verified_at IS NOT NULL OR (users.confirmed_phone IS NOT NULL AND users.residence_verified_at IS NOT NULL)") }
-    scope :unverified, -> { where("users.verified_at IS NULL AND (users.confirmed_phone IS NULL OR users.residence_verified_at IS NOT NULL)") }
+    scope :unverified, -> { where("users.verified_at IS NULL AND (users.residence_verified_at IS NULL OR users.confirmed_phone IS NULL)") }
+    scope :with_failed_attempts, -> { where("users.failed_census_calls_count > ?", 0) }
+    scope :incomplete_verification, -> { unverified.with_failed_attempts }
   end
 
   def verification_email_sent?
