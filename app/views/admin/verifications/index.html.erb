@@ -19,6 +19,10 @@
     <%= link_to user.name, admin_user_path(user) %>
     <% if !user.residence_verified? %>
       <%= render partial: 'failed_census_call', collection: user.failed_census_calls %>
+    <% elsif !user.verification_sms_sent? %>
+      <div>
+        <%= t("admin.verifications.index.phone_not_given") %>
+      </div>
     <% end %>
   </li>
 <% end %>
