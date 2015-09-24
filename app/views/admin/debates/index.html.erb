@@ -4,25 +4,33 @@
 
 <h3><%= page_entries_info @debates %></h3>
 
-<ul class="admin-list">
+<table>
   <% @debates.each do |debate| %>
-    <li id="<%= dom_id(debate) %>">
-      <%= link_to debate.title, debate_path(debate) %>
-
-      <%= link_to t("admin.actions.restore"),
-            restore_admin_debate_path(debate, request.query_parameters),
-            method: :put,
-            data: { confirm: t("admin.actions.confirm") },
-            class: "button radius tiny success right" %>
-
-      <% unless debate.confirmed_hide? %>
-        <%= link_to t("admin.actions.confirm_hide"),
-              confirm_hide_admin_debate_path(debate, request.query_parameters),
+    <tr id="<%= dom_id(debate) %>">
+      <td>
+        <strong><%= debate.title %></strong>
+        <br>
+        <div class="moderation-description">
+          <%= debate.description %>
+        </div>
+      </td>
+      <td>
+        <%= link_to t("admin.actions.restore"),
+              restore_admin_debate_path(debate, request.query_parameters),
               method: :put,
-              class: "button radius tiny warning right" %>
-      <% end %>
-    </li>
+              data: { confirm: t("admin.actions.confirm") },
+              class: "button radius tiny success no-margin" %>
+      </td>
+      <td>
+        <% unless debate.confirmed_hide? %>
+          <%= link_to t("admin.actions.confirm_hide"),
+                confirm_hide_admin_debate_path(debate, request.query_parameters),
+                method: :put,
+                class: "button radius tiny warning right" %>
+        <% end %>
+      </td>
+    </tr>
   <% end %>
-</ul>
+</table>
 
 <%= paginate @debates %>

@@ -13,14 +13,14 @@
 </div>
 
 <%= form_tag moderate_moderation_debates_path(request.query_parameters), method: :put do %>
-  <p class="right js-check">
+  <p class="left js-check">
     <%= t('shared.check') %>:
     <%= link_to t('shared.check_all'), '#', data: {check_all: "debate_ids[]"} %>
     |
     <%= link_to t('shared.check_none'), '#', data: {check_none: "debate_ids[]"} %>
   </p>
 
-  <table>
+  <table class="clear">
     <tr>
       <th>
         <%= t("moderation.debates.index.headers.debate") %>
