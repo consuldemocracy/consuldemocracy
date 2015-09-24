@@ -1,4 +1,4 @@
-class Api::StatsController < Api::ApiController
+class Admin::Api::StatsController < Admin::Api::BaseController
 
   def show
     unless params[:events].present? || params[:visits].present?

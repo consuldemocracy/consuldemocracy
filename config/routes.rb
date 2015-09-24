@@ -115,6 +115,10 @@ Rails.application.routes.draw do
 
     resource :activity, controller: :activity, only: :show
     resource :stats, only: :show
+
+    namespace :api do
+      resource :stats, only: :show
+    end
   end
 
   namespace :moderation do
@@ -155,9 +159,7 @@ Rails.application.routes.draw do
     end
   end
 
-  namespace :api do
-    resource :stats, only: [:show]
-  end
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
