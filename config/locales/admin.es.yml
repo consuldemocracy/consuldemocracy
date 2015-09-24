@@ -120,7 +120,6 @@ es:
         title: 'Cargos Públicos: Búsqueda de usuarios'
         edit_official: Editar cargo público
         make_official: Convertir en cargo público
-        search: Buscar
       edit:
         title: 'Cargos Públicos: Editar usuario'
         destroy: "Eliminar condición de 'Cargo Público'"

@@ -120,7 +120,6 @@ en:
         title: 'Officials: Search users'
         edit_official: Edit official
         make_official: Make this user an official
-        search: Search
       edit:
         title: 'Officials: edit user'
         destroy: "Remove 'Official' condition"
