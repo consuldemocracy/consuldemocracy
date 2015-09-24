@@ -98,6 +98,9 @@ es:
         email: "Email:"
         registered_at: "Fecha de alta:"
         hidden_at: "Bloqueado:"
+    verifications:
+      index:
+        title: Verificaciones incompletas
     officials:
       level_0: "No es cargo público"
       level_1: Nivel 1

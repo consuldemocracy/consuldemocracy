@@ -98,6 +98,9 @@ en:
         email: "Email:"
         registered_at: "Registered at:"
         hidden_at: "Hidden at:"
+    verifications:
+      index:
+        title: Incomplete verifications
     officials:
       level_0: Not an official
       level_1: Level 1
