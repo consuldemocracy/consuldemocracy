@@ -45,4 +45,15 @@ module Verification
     !level_two_or_three_verified?
   end
 
+  def failed_residence_verification?
+    !residence_verified? && failed_census_calls.size > 0
+  end
+
+  def no_phone_available?
+    !verification_sms_sent?
+  end
+
+  def sms_code_not_confirmed?
+    !sms_verified?
+  end
 end
