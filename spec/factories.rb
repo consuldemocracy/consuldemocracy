@@ -7,9 +7,17 @@ FactoryGirl.define do
     terms_of_service     '1'
     confirmed_at        { Time.now }
 
+    trait :incomplete_verification do
+      after :create do |user|
+        create(:failed_census_call, user: user)
+      end
+    end
+
     trait :level_two do
       residence_verified_at Time.now
+      unconfirmed_phone "611111111"
       confirmed_phone "611111111"
+      sms_confirmation_code "1234"
       document_number "12345678Z"
     end
 
@@ -50,6 +58,14 @@ FactoryGirl.define do
     trait :invalid do
       postal_code "28001"
     end
+  end
+
+  factory :failed_census_call do
+    user
+    document_number '11111111A'
+    document_type 1
+    date_of_birth Date.new(1900, 1, 1)
+    postal_code '28000'
   end
 
   factory :verification_sms, class: Verification::Sms do
