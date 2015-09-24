@@ -113,6 +113,7 @@ Rails.application.routes.draw do
       collection { get :search }
     end
 
+    resources :verifications, controller: :verifications, only: :index
     resource :activity, controller: :activity, only: :show
     resource :stats, only: :show
 
