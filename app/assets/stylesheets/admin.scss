@@ -29,7 +29,22 @@ body.admin {
   }
 
   .dashboard {
-    text-align: justify;
+    margin-bottom: rem-calc(48);
+
+    ul, ol {
+      margin-left: rem-calc(12);
+
+      li {
+        font-size: rem-calc(15);
+        line-height: rem-calc(30);
+        margin-bottom: rem-calc(12);
+      }
+    }
+
+    p {
+      font-size: rem-calc(15);
+      line-height: rem-calc(30);
+    }
 
     h3 {
       font-weight: bold;
