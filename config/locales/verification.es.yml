@@ -21,7 +21,7 @@ es:
         terms: "los términos de acceso"
         verify_residence: "Verificar residencia"
         form_errors: "evitaron verificar tu residencia"
-        error_verifying_census: "El Padrón de Madrid no pudo verificar tu información. Revisa la información ó ponte en contacto con nosotros."
+        error_verifying_census: "El Padrón de Madrid no pudo verificar tu información. Por favor, confirma que tus datos de empadronamiento sean correctos llamando al 010 o ponte en contacto con nosotros."
         error_not_allowed_age: "Hay que tener al menos 16 años"
         error_not_allowed_postal_code: "Por favor, para verificarte debes estar empadronado en el municipio de Madrid."
       create:
