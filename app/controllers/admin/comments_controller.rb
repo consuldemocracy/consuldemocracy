@@ -14,6 +14,7 @@ class Admin::CommentsController < Admin::BaseController
 
   def restore
     @comment.restore
+    @comment.ignore_flag
     Activity.log(current_user, :restore, @comment)
     redirect_to request.query_parameters.merge(action: :index)
   end
