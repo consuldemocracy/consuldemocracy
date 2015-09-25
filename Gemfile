@@ -47,7 +47,7 @@ gem 'rollbar', '~> 2.3.0'
 gem 'delayed_job_active_record'
 gem 'daemons'
 gem 'devise-async'
-gem 'newrelic_rpm'
+gem 'newrelic_rpm', '~> 3.13.1'
 gem 'whenever', require: false
 
 gem 'ahoy_matey', '~> 1.2.1'
