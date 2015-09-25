@@ -35,6 +35,7 @@ feature 'Admin comments' do
     expect(page).to_not have_content(comment.body)
 
     expect(comment.reload).to_not be_hidden
+    expect(comment).to be_ignored_flag
   end
 
   scenario "Confirm hide" do

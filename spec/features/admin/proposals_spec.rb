@@ -28,6 +28,7 @@ feature 'Admin proposals' do
     expect(page).to_not have_content(proposal.title)
 
     expect(proposal.reload).to_not be_hidden
+    expect(proposal).to be_ignored_flag
   end
 
   scenario 'Confirm hide' do
