@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150921095553) do
+ActiveRecord::Schema.define(version: 20150926113052) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,26 +27,6 @@ ActiveRecord::Schema.define(version: 20150921095553) do
 
   add_index "activities", ["actionable_id", "actionable_type"], name: "index_activities_on_actionable_id_and_actionable_type", using: :btree
   add_index "activities", ["user_id"], name: "index_activities_on_user_id", using: :btree
-
-  create_table "addresses", force: :cascade do |t|
-    t.integer  "user_id"
-    t.string   "street"
-    t.string   "street_type"
-    t.string   "number"
-    t.string   "number_type"
-    t.string   "letter"
-    t.string   "portal"
-    t.string   "stairway"
-    t.string   "floor"
-    t.string   "door"
-    t.string   "km"
-    t.string   "neighbourhood"
-    t.string   "district"
-    t.string   "postal_code"
-    t.string   "toponymy"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
-  end
 
   create_table "administrators", force: :cascade do |t|
     t.integer "user_id"

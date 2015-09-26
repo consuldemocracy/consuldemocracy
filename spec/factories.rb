@@ -58,19 +58,12 @@ FactoryGirl.define do
 
   factory :verification_letter, class: Verification::Letter do
     user
-    address
   end
 
   factory :lock do
     user
     tries 0
     locked_until Time.now
-  end
-
-  factory :address do
-    street_type   "Calle"
-    street        "Alcalá"
-    number        "1"
   end
 
   factory :verified_user do
