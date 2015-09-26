@@ -147,3 +147,23 @@ en:
           hide: Hidden
           restore: Restored
           block: Blocked
+    stats:
+      show:
+        summary_title: Summary
+        stats_title: Stats
+        visits_title: Visits
+        combined_title: Combined
+        summary:
+          visits: Visits
+          debates: Debates
+          proposals: Proposals
+          comments: Comments
+          debate_votes: Debate votes
+          proposal_votes: Proposal votes
+          comment_votes: Comment votes
+          votes: Total votes
+          user_level_three: Level three users
+          user_level_two: Level two users
+          unverified_users: Unverified users
+          verified_users: Verified users
+          users: Total users
