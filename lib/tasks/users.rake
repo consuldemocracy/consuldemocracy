@@ -1,7 +1,7 @@
-namespace :failed_census_calls do
+namespace :users do
 
   desc "Recalculates all the failed census calls counters for users"
-  task count: :environment do
+  task count_failed_census_calls: :environment do
     User.all.pluck(:id).each{ |id| User.reset_counters(id, :failed_census_calls) }
   end
 
