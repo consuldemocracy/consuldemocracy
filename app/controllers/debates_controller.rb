@@ -1,4 +1,6 @@
 class DebatesController < ApplicationController
+  include FlagActions
+
   before_action :parse_tag_filter, only: :index
   before_action :parse_search_terms, only: :index
   before_action :authenticate_user!, except: [:index, :show]
@@ -60,16 +62,6 @@ class DebatesController < ApplicationController
   def vote
     @debate.register_vote(current_user, params[:value])
     set_debate_votes(@debate)
-  end
-
-  def flag
-    Flag.flag(current_user, @debate)
-    respond_with @debate, template: 'debates/_refresh_flag_actions'
-  end
-
-  def unflag
-    Flag.unflag(current_user, @debate)
-    respond_with @debate, template: 'debates/_refresh_flag_actions'
   end
 
   private

@@ -1,4 +1,6 @@
 class ProposalsController < ApplicationController
+  include FlagActions
+
   before_action :parse_tag_filter, only: :index
   before_action :parse_search_terms, only: :index
   before_action :authenticate_user!, except: [:index, :show]
@@ -60,16 +62,6 @@ class ProposalsController < ApplicationController
   def vote
     @proposal.register_vote(current_user, 'yes')
     set_proposal_votes(@proposal)
-  end
-
-  def flag
-    Flag.flag(current_user, @proposal)
-    respond_with @proposal, template: 'proposals/_refresh_flag_actions'
-  end
-
-  def unflag
-    Flag.unflag(current_user, @proposal)
-    respond_with @proposal, template: 'proposals/_refresh_flag_actions'
   end
 
   private
