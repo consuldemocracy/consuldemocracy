@@ -4,6 +4,7 @@ class Debate < ActiveRecord::Base
   include Taggable
   include Conflictable
   include Measurable
+  include Sanitizable
 
   apply_simple_captcha
 
@@ -23,9 +24,6 @@ class Debate < ActiveRecord::Base
 
   validates :terms_of_service, acceptance: { allow_nil: false }, on: :create
 
-  before_validation :sanitize_description
-  before_validation :sanitize_tag_list
-
   before_save :calculate_hot_score, :calculate_confidence_score
 
   scope :for_render, -> { includes(:tags) }
@@ -38,6 +36,10 @@ class Debate < ActiveRecord::Base
 
   # Ahoy setup
   visitable # Ahoy will automatically assign visit_id on create
+
+  def description
+    super.try :html_safe
+  end
 
   def likes
     cached_votes_up
@@ -83,10 +85,6 @@ class Debate < ActiveRecord::Base
     (cached_anonymous_votes_total.to_f / cached_votes_total) * 100
   end
 
-  def description
-    super.try :html_safe
-  end
-
   def after_commented
     save # updates the hot_score because there is a before_save
   end
@@ -119,15 +117,5 @@ class Debate < ActiveRecord::Base
   def after_restore
     self.tags.each{ |t| t.increment_custom_counter_for('Debate') }
   end
-
-  protected
-
-    def sanitize_description
-      self.description = WYSIWYGSanitizer.new.sanitize(description)
-    end
-
-    def sanitize_tag_list
-      self.tag_list = TagSanitizer.new.sanitize_tag_list(self.tag_list)
-    end
 
 end

@@ -3,6 +3,7 @@ class Proposal < ActiveRecord::Base
   include Taggable
   include Conflictable
   include Measurable
+  include Sanitizable
 
   apply_simple_captcha
   acts_as_votable
@@ -25,8 +26,6 @@ class Proposal < ActiveRecord::Base
 
   validates :terms_of_service, acceptance: { allow_nil: false }, on: :create
 
-  before_validation :sanitize_description
-  before_validation :sanitize_tag_list
   before_validation :set_responsible_name
 
   before_save :calculate_hot_score, :calculate_confidence_score
@@ -39,16 +38,12 @@ class Proposal < ActiveRecord::Base
   scope :sort_by_random, -> { order("RANDOM()") }
   scope :sort_by_flags, -> { order(flags_count: :desc, updated_at: :desc) }
 
+  def description
+    super.try :html_safe
+  end
+
   def total_votes
     cached_votes_up
-  end
-
-  def description
-    super.try :html_safe
-  end
-
-  def description
-    super.try :html_safe
   end
 
   def editable?
@@ -106,14 +101,6 @@ class Proposal < ActiveRecord::Base
   end
 
   protected
-
-    def sanitize_description
-      self.description = WYSIWYGSanitizer.new.sanitize(description)
-    end
-
-    def sanitize_tag_list
-      self.tag_list = TagSanitizer.new.sanitize_tag_list(self.tag_list)
-    end
 
     def set_responsible_name
       if author && author.level_two_or_three_verified?
