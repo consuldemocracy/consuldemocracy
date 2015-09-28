@@ -5,7 +5,6 @@ class DebatesController < ApplicationController
   has_orders %w{hot_score confidence_score created_at most_commented random}, only: :index
 
   load_and_authorize_resource
-
   respond_to :html, :js
 
   def index
@@ -31,10 +30,6 @@ class DebatesController < ApplicationController
     load_featured_tags
   end
 
-  def edit
-    load_featured_tags
-  end
-
   def create
     @debate = Debate.new(debate_params)
     @debate.author = current_user
@@ -46,6 +41,10 @@ class DebatesController < ApplicationController
       load_featured_tags
       render :new
     end
+  end
+
+  def edit
+    load_featured_tags
   end
 
   def update
@@ -92,5 +91,4 @@ class DebatesController < ApplicationController
     def parse_search_terms
       @search_terms = params[:search] if params[:search].present?
     end
-
 end

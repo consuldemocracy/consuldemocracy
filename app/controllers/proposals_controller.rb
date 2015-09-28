@@ -57,6 +57,11 @@ class ProposalsController < ApplicationController
     end
   end
 
+  def vote
+    @proposal.register_vote(current_user, 'yes')
+    set_proposal_votes(@proposal)
+  end
+
   def flag
     Flag.flag(current_user, @proposal)
     respond_with @proposal, template: 'proposals/_refresh_flag_actions'
@@ -65,11 +70,6 @@ class ProposalsController < ApplicationController
   def unflag
     Flag.unflag(current_user, @proposal)
     respond_with @proposal, template: 'proposals/_refresh_flag_actions'
-  end
-
-  def vote
-    @proposal.register_vote(current_user, 'yes')
-    set_proposal_votes(@proposal)
   end
 
   private
