@@ -2,6 +2,7 @@ class Proposal < ActiveRecord::Base
   include Flaggable
   include Taggable
   include Conflictable
+  include Measurable
 
   apply_simple_captcha
   acts_as_votable
@@ -17,10 +18,10 @@ class Proposal < ActiveRecord::Base
   validates :author, presence: true
   validates :responsible_name, presence: true
 
-  validate :validate_title_length
-  validate :validate_question_length
-  validate :validate_description_length
-  validate :validate_responsible_length
+  validates :title, length: { in: 4..Proposal.title_max_length }
+  validates :description, length: { maximum: Proposal.description_max_length }
+  validates :question, length: { in: 10..Proposal.question_max_length }
+  validates :responsible_name, length: { in: 6..Proposal.responsible_name_max_length }
 
   validates :terms_of_service, acceptance: { allow_nil: false }, on: :create
 
@@ -96,22 +97,6 @@ class Proposal < ActiveRecord::Base
     self.tags.each{ |t| t.increment_custom_counter_for('Proposal') }
   end
 
-  def self.title_max_length
-    @@title_max_length ||= self.columns.find { |c| c.name == 'title' }.limit || 80
-  end
-
-  def self.question_max_length
-    140
-  end
-
-  def self.description_max_length
-    6000
-  end
-
-  def self.responsible_name_max_length
-    60
-  end
-
   def self.search(terms)
     terms.present? ? where("title ILIKE ? OR description ILIKE ? OR question ILIKE ?", "%#{terms}%", "%#{terms}%", "%#{terms}%") : none
   end
@@ -134,39 +119,6 @@ class Proposal < ActiveRecord::Base
       if author && author.level_two_or_three_verified?
         self.responsible_name = author.document_number
       end
-    end
-
-  private
-
-    def validate_description_length
-      validator = ActiveModel::Validations::LengthValidator.new(
-        attributes: :description,
-        maximum: Proposal.description_max_length)
-      validator.validate(self)
-    end
-
-    def validate_title_length
-      validator = ActiveModel::Validations::LengthValidator.new(
-        attributes: :title,
-        minimum: 4,
-        maximum: Proposal.title_max_length)
-      validator.validate(self)
-    end
-
-    def validate_question_length
-      validator = ActiveModel::Validations::LengthValidator.new(
-        attributes: :title,
-        minimum: 10,
-        maximum: Proposal.question_max_length)
-      validator.validate(self)
-    end
-
-    def validate_responsible_length
-      validator = ActiveModel::Validations::LengthValidator.new(
-        attributes: :title,
-        minimum: 6,
-        maximum: Proposal.responsible_name_max_length)
-      validator.validate(self)
     end
 
 end

@@ -12,19 +12,26 @@ describe Proposal do
     expect(proposal).to_not be_valid
   end
 
-  it "should not be valid without a title" do
-    proposal.title = nil
-    expect(proposal).to_not be_valid
-  end
-
-  it "should not be valid without a question" do
-    proposal.question = nil
-    expect(proposal).to_not be_valid
-  end
-
   it "should not be valid without a summary" do
     proposal.summary = nil
     expect(proposal).to_not be_valid
+  end
+
+  describe "#title" do
+    it "should not be valid without a title" do
+      proposal.title = nil
+      expect(proposal).to_not be_valid
+    end
+
+    it "should not be valid when very short" do
+      proposal.title = "abc"
+      expect(proposal).to_not be_valid
+    end
+
+    it "should not be valid when very long" do
+      proposal.title = "a" * 81
+      expect(proposal).to_not be_valid
+    end
   end
 
   describe "#description" do
@@ -33,13 +40,45 @@ describe Proposal do
       proposal.valid?
       expect(proposal.description).to eq("alert('danger');")
     end
+
+    it "should not be valid when very long" do
+      proposal.description = "a" * 6001
+      expect(proposal).to_not be_valid
+    end
   end
 
-  describe "#responsible" do
+  describe "#question" do
+    it "should not be valid without a question" do
+      proposal.question = nil
+      expect(proposal).to_not be_valid
+    end
+
+    it "should not be valid when very short" do
+      proposal.question = "abc"
+      expect(proposal).to_not be_valid
+    end
+
+    it "should not be valid when very long" do
+      proposal.question = "a" * 141
+      expect(proposal).to_not be_valid
+    end
+  end
+
+  describe "#responsible_name" do
     it "should be mandatory" do
-        proposal.responsible_name = nil
-        expect(proposal).to_not be_valid
-      end
+      proposal.responsible_name = nil
+      expect(proposal).to_not be_valid
+    end
+
+    it "should not be valid when very short" do
+      proposal.responsible_name = "abc"
+      expect(proposal).to_not be_valid
+    end
+
+    it "should not be valid when very long" do
+      proposal.responsible_name = "a" * 61
+      expect(proposal).to_not be_valid
+    end
 
     it "should be the document_number if level two user" do
       author = create(:user, :level_two, document_number: "12345678Z")

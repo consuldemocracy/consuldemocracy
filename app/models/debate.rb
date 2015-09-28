@@ -3,6 +3,7 @@ class Debate < ActiveRecord::Base
   include Flaggable
   include Taggable
   include Conflictable
+  include Measurable
 
   apply_simple_captcha
 
@@ -17,8 +18,8 @@ class Debate < ActiveRecord::Base
   validates :description, presence: true
   validates :author, presence: true
 
-  validate :validate_title_length
-  validate :validate_description_length
+  validates :title, length: { in: 4..Debate.title_max_length }
+  validates :description, length: { in: 10..Debate.description_max_length }
 
   validates :terms_of_service, acceptance: { allow_nil: false }, on: :create
 
@@ -119,14 +120,6 @@ class Debate < ActiveRecord::Base
     self.tags.each{ |t| t.increment_custom_counter_for('Debate') }
   end
 
-  def self.title_max_length
-    @@title_max_length ||= self.columns.find { |c| c.name == 'title' }.limit || 80
-  end
-
-  def self.description_max_length
-    6000
-  end
-
   protected
 
     def sanitize_description
@@ -135,24 +128,6 @@ class Debate < ActiveRecord::Base
 
     def sanitize_tag_list
       self.tag_list = TagSanitizer.new.sanitize_tag_list(self.tag_list)
-    end
-
-  private
-
-    def validate_description_length
-      validator = ActiveModel::Validations::LengthValidator.new(
-        attributes: :description,
-        minimum: 10,
-        maximum: Debate.description_max_length)
-      validator.validate(self)
-    end
-
-    def validate_title_length
-      validator = ActiveModel::Validations::LengthValidator.new(
-        attributes: :title,
-        minimum: 4,
-        maximum: Debate.title_max_length)
-      validator.validate(self)
     end
 
 end
