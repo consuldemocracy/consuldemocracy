@@ -12,7 +12,7 @@ class Verification::LetterController < ApplicationController
 
   def create
     @letter = Verification::Letter.new(user: current_user)
-    @letter.save!
+    @letter.save
     redirect_to edit_letter_path
   end
 
