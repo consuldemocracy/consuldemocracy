@@ -26,26 +26,30 @@
     </div>
 
     <div class="row auth">
-    <div class="small-12 medium-8 large-5 column small-centered">
-      <div class="panel">
-        <% if notice %>
-          <div data-alert class="alert-box radius success">
-            <a href="#" class="close" title="<%= t("application.close") %>">&times;</a>
-              <%= notice %>
-          </div>
-        <% end %>
+      <div class="small-12 medium-8 large-5 column small-centered">
+        <div class="panel">
+          <% if notice %>
+            <div data-alert class="alert-box radius success">
+              <a href="#" class="close" title="<%= t("application.close") %>">&times;</a>
+                <%= notice %>
+            </div>
+          <% end %>
 
-        <% if alert %>
-          <div data-alert class="alert-box radius warning">
-            <a href="#" class="close" title="<%= t("application.close") %>">&times;</a>
-              <%= alert %>
-          </div>
-        <% end %>
+          <% if alert %>
+            <div data-alert class="alert-box radius warning">
+              <a href="#" class="close" title="<%= t("application.close") %>">&times;</a>
+                <%= alert %>
+            </div>
+          <% end %>
 
-        <%= yield %>
+          <%= yield %>
 
+        </div>
       </div>
     </div>
-  </div>
+
+    <div class="footer">
+      <%= render 'layouts/footer' %>
+    </div>
   </body>
 </html>
