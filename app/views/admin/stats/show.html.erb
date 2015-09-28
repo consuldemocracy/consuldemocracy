@@ -6,36 +6,92 @@
     <div class="small-12 column">
       <h1><%= t "admin.stats.show.stats_title" %></h1>
 
-      <h2><%= t "admin.stats.show.summary_title" %></h2>
-      <ul>
-        <li><strong><%= t "admin.stats.show.summary.visits" %>: <%= @visits %></strong></li>
-        <li><%= t "admin.stats.show.summary.debates" %>: <%= @debates %></li>
-        <li><%= t "admin.stats.show.summary.proposals" %>: <%= @proposals %></li>
-        <li><%= t "admin.stats.show.summary.comments" %>: <%= @comments %></li>
-        <li><%= t "admin.stats.show.summary.debate_votes" %>: <%= @debate_votes %></li>
-        <li><strong><%= t "admin.stats.show.summary.proposal_votes" %>: <%= @proposal_votes %></strong></li>
-        <li><%= t "admin.stats.show.summary.comment_votes" %>: <%= @comment_votes %></li>
-        <li><%= t "admin.stats.show.summary.votes" %>: <%= @votes %></li>
-        <li><%= t "admin.stats.show.summary.user_level_two" %>: <%= @user_level_two %></li>
-        <li><%= t "admin.stats.show.summary.user_level_three" %>: <%= @user_level_three %></li>
-        <li><strong><%= t "admin.stats.show.summary.verified_users" %>: <%= @verified_users %></strong></li>
-        <li><strong><%= t "admin.stats.show.summary.unverified_users" %>: <%= @unverified_users %><strong></li>
-        <li><strong><%= t "admin.stats.show.summary.users" %>: <%= @users %></strong></li>
-      </ul>
+      <div class="row stats-numbers">
+        <div class="small-12 medium-3 column">
+          <p class="featured">
+            <%= t "admin.stats.show.summary.visits" %><br>
+            <span class="number"><%= @visits %></span>
+          </p>
 
-      <div class="small-12 medium-6 column">
-        <h3><%= t "admin.stats.show.combined_title" %></h3>
+          <p>
+            <%= t "admin.stats.show.summary.debates" %><br>
+            <span class="number"><%= @debates %></span>
+          </p>
+          <p>
+            <%= t "admin.stats.show.summary.proposals" %><br>
+            <span class="number"><%= @proposals %></span>
+          </p>
+          <p>
+            <%= t "admin.stats.show.summary.comments" %><br>
+            <span class="number"><%= @comments %></span>
+          </p>
+        </div>
+
+        <div class="small-12 medium-3 column">
+          <p class="featured">
+            <%= t "admin.stats.show.summary.proposal_votes" %><br>
+            <span class="number"><%= @proposal_votes %><br></span>
+          </p>
+
+          <p>
+            <%= t "admin.stats.show.summary.debate_votes" %><br>
+            <span class="number"><%= @debate_votes %></span>
+          </p>
+
+          <p>
+            <%= t "admin.stats.show.summary.comment_votes" %><br>
+            <span class="number"><%= @comment_votes %></span>
+          </p>
+
+          <p>
+            <%= t "admin.stats.show.summary.votes" %><br>
+            <span class="number"><%= @votes %></span>
+          </p>
+        </div>
+
+        <div class="small-12 medium-3 column">
+          <p class="featured">
+            <%= t "admin.stats.show.summary.verified_users" %><br>
+            <span class="number"><%= @verified_users %></span>
+          </p>
+
+          <p class="featured">
+            <%= t "admin.stats.show.summary.unverified_users" %><br>
+            <span class="number"><%= @unverified_users %></span>
+          </p>
+        </div>
+
+        <div class="small-12 medium-3 column">
+          <p class="featured">
+            <%= t "admin.stats.show.summary.users" %><br>
+            <span class="number"><%= @users %></span>
+          </p>
+
+          <p>
+            <%= t "admin.stats.show.summary.user_level_two" %><br>
+            <span class="number"><%= @user_level_two %></span>
+          </p>
+
+          <p>
+            <%= t "admin.stats.show.summary.user_level_three" %><br>
+            <span class="number"><%= @user_level_three %></span>
+          </p>
+        </div>
+      </div>
+
+      <div class="small-12 medium-6 left">
+        <h2><%= t "admin.stats.show.combined_title" %></h2>
         <%= visits_chart_tag id: "visits" %>
       </div>
 
-      <div class="small-12 medium-6 column">
-        <h3><%= t "admin.stats.show.visits_title" %></h3>
+      <div class="small-12 medium-6 left">
+        <h2><%= t "admin.stats.show.visits_title" %></h2>
         <%= events_chart_tag @event_types.keys, id: 'combined' %>
       </div>
 
       <div class="small-12">
         <% @event_types.each do |event, count| %>
-          <h3><%= event.titleize %> (<%= count %>)</h3>
+          <h2><%= event.titleize %> (<%= count %>)</h2>
           <%= events_chart_tag event %>
         <% end %>
       </div>

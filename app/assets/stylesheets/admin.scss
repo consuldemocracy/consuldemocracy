@@ -72,8 +72,11 @@ body.admin {
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
 .admin-sidebar {
-  margin-left: rem-calc(-20);
   margin-top: rem-calc(24);
+
+  @media (min-width: $small-breakpoint) {
+    margin-left: rem-calc(-20);
+  }
 
   ul {
     list-style-type: none;
@@ -247,4 +250,25 @@ body.admin {
 
 .stats {
   background: white;
+}
+
+.stats-numbers {
+  p {
+    color: $text-medium;
+    font-size: rem-calc(13);
+    padding: rem-calc(6);
+    text-transform: uppercase;
+
+    &.featured {
+      background: $info-bg;
+      border: 1px solid $info-border;
+      font-weight: bold;
+    }
+
+    .number {
+      color: $text;
+      font-size: rem-calc(30);
+      font-weight: bold;
+    }
+  }
 }
