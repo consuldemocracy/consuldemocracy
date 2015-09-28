@@ -154,3 +154,23 @@ es:
           hide: Ocultado
           restore: Restaurado
           block: Bloqueado
+    stats:
+      show:
+        summary_title: Resumen
+        stats_title: Estadísticas
+        visits_title: Visitas
+        combined_title: Combinado
+        summary:
+          visits: Visitas
+          debates: Debates
+          proposals: Propuestas
+          comments: Comentarios
+          debate_votes: Votes en debates
+          proposal_votes: Votos en propuestas
+          comment_votes: Votso en comentarios
+          votes: Votos
+          user_level_three: Usuarios de nivel tres
+          user_level_two: Usuarios de nivel dos
+          unverified_users: Usuarios sin verificar
+          verified_users: Usuarios verificados
+          users: Usuarios

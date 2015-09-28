@@ -4,15 +4,32 @@
 <div class="stats row-full">
   <div class="row">
     <div class="small-12 column">
-      <h2>Stats</h2>
+      <h1><%= t "admin.stats.show.stats_title" %></h1>
+
+      <h2><%= t "admin.stats.show.summary_title" %></h2>
+      <ul>
+        <li><strong><%= t "admin.stats.show.summary.visits" %>: <%= @visits %></strong></li>
+        <li><%= t "admin.stats.show.summary.debates" %>: <%= @debates %></li>
+        <li><%= t "admin.stats.show.summary.proposals" %>: <%= @proposals %></li>
+        <li><%= t "admin.stats.show.summary.comments" %>: <%= @comments %></li>
+        <li><%= t "admin.stats.show.summary.debate_votes" %>: <%= @debate_votes %></li>
+        <li><strong><%= t "admin.stats.show.summary.proposal_votes" %>: <%= @proposal_votes %></strong></li>
+        <li><%= t "admin.stats.show.summary.comment_votes" %>: <%= @comment_votes %></li>
+        <li><%= t "admin.stats.show.summary.votes" %>: <%= @votes %></li>
+        <li><%= t "admin.stats.show.summary.user_level_two" %>: <%= @user_level_two %></li>
+        <li><%= t "admin.stats.show.summary.user_level_three" %>: <%= @user_level_three %></li>
+        <li><strong><%= t "admin.stats.show.summary.verified_users" %>: <%= @verified_users %></strong></li>
+        <li><strong><%= t "admin.stats.show.summary.unverified_users" %>: <%= @unverified_users %><strong></li>
+        <li><strong><%= t "admin.stats.show.summary.users" %>: <%= @users %></strong></li>
+      </ul>
 
       <div class="small-12 medium-6 column">
-        <h3>Visits</h3>
+        <h3><%= t "admin.stats.show.combined_title" %></h3>
         <%= visits_chart_tag id: "visits" %>
       </div>
 
       <div class="small-12 medium-6 column">
-        <h3>Combined</h3>
+        <h3><%= t "admin.stats.show.visits_title" %></h3>
         <%= events_chart_tag @event_types.keys, id: 'combined' %>
       </div>
 

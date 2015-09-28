@@ -2,17 +2,73 @@ require 'rails_helper'
 
 feature 'Stats' do
 
-  scenario 'Level 2 user' do
+  background do
     admin = create(:administrator)
-    user = create(:user)
-    login_as(user)
+    login_as(admin.user)
+  end
 
+  context 'Summary' do
+
+    scenario 'General' do
+      create(:debate)
+      2.times { create(:proposal) }
+      3.times { create(:comment, commentable: Debate.first) }
+      4.times { create(:visit) }
+
+      visit admin_stats_path
+
+      expect(page).to have_content "Debates: 1"
+      expect(page).to have_content "Proposals: 2"
+      expect(page).to have_content "Comments: 3"
+      expect(page).to have_content "Visits: 4"
+    end
+
+    scenario 'Votes' do
+      debate = create(:debate)
+      create(:vote, votable: debate)
+
+      proposal = create(:proposal)
+      2.times { create(:vote, votable: proposal) }
+
+      comment = create(:comment)
+      3.times { create(:vote, votable: comment) }
+
+      visit admin_stats_path
+
+      expect(page).to have_content "Debate votes: 1"
+      expect(page).to have_content "Proposal votes: 2"
+      expect(page).to have_content "Comment votes: 3"
+      expect(page).to have_content "Total votes: 6"
+    end
+
+    scenario 'Users' do
+      Administrator.destroy_all
+      User.all.map(&:really_destroy!)
+
+      1.times { create(:user, :level_three) }
+      2.times { create(:user, :level_two) }
+      3.times { create(:user) }
+
+      admin = create(:administrator)
+      login_as(admin.user)
+
+      visit admin_stats_path
+
+      expect(page).to have_content "Level three users: 1"
+      expect(page).to have_content "Level two users: 2"
+      expect(page).to have_content "Verified users: 3"
+      expect(page).to have_content "Unverified users: 4"
+      expect(page).to have_content "Total users: 7"
+    end
+
+  end
+
+  scenario 'Level 2 user' do
     visit account_path
     click_link 'Verify my account'
     verify_residence
     confirm_phone
 
-    login_as(admin.user)
     visit admin_stats_path
 
     expect(page).to have_content "Level 2 User (1)"
