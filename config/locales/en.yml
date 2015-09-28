@@ -311,7 +311,6 @@ en:
       all: "You are not authorized to %{action} %{subject}."
   welcome:
     signed_in_home_title: Recent activity
-    signed_in_home_title: Actividad reciente
     debates:
       title: "Debate"
       description: "Meet, discuss and share what we think is important in our city."
