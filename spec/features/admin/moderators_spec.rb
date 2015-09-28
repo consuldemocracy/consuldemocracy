@@ -2,21 +2,20 @@ require 'rails_helper'
 
 feature 'Admin moderators' do
   background do
-    @user = create(:user, username: 'Jose Luis Balbin')
-    @moderator = create(:moderator)
     @admin = create(:administrator)
+    @user  = create(:user, username: 'Jose Luis Balbin')
+    @moderator = create(:moderator)
     login_as(@admin.user)
+    visit admin_moderators_path
   end
 
   scenario 'Index' do
-    visit admin_moderators_path
     expect(page).to have_content @moderator.name
     expect(page).to have_content @moderator.email
     expect(page).to_not have_content @user.name
   end
 
   scenario 'Create Moderator', :js do
-    visit admin_moderators_path
     fill_in 'email', with: @user.email
     click_button 'Search'
 
@@ -28,7 +27,6 @@ feature 'Admin moderators' do
   end
 
   scenario 'Delete Moderator' do
-    visit admin_moderators_path
     click_link 'Delete'
 
     within("#moderators") do
