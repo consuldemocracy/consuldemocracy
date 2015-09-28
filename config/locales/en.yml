@@ -74,6 +74,7 @@ en:
     menu: "Menu"
   debates:
     index:
+      title: Debates
       start_debate: Start a debate
       select_order: Order by
       select_order_long: Order debates by
@@ -148,6 +149,7 @@ en:
         submit_button: "Save changes"
   proposals:
     index:
+      title: Proposals
       start_proposal: Start a proposal
       select_order: Order by
       select_order_long: Order proposals by
@@ -309,7 +311,6 @@ en:
       all: "You are not authorized to %{action} %{subject}."
   welcome:
     signed_in_home_title: Recent activity
-    signed_in_home_title: Actividad reciente
     debates:
       title: "Debate"
       description: "Meet, discuss and share what we think is important in our city."

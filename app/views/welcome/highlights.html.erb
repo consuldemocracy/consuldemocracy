@@ -1,3 +1,4 @@
+<% provide :title do %><%= t('welcome.signed_in_home_title') %><% end %>
 <% cache [locale_and_user_status, @list, @debate_votes, @proposal_votes, @paginator.current_page, @paginator.total_pages] do %>
   <section role="main">
     <div class="wrap row">

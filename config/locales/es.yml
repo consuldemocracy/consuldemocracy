@@ -74,6 +74,7 @@ es:
     menu: "Menú"
   debates:
     index:
+      title: Debates
       start_debate: Empieza un debate
       select_order: Ordenar por
       select_order_long: Estás viendo los debates
@@ -148,6 +149,7 @@ es:
         submit_button: "Guardar cambios"
   proposals:
     index:
+      title: Propuestas ciudadanas
       start_proposal: Crea una propuesta
       select_order: Ordenar por
       select_order_long: Estás viendo las propuestas
