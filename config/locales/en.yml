@@ -48,6 +48,7 @@ en:
       privacy: "Privacy Policy"
       conditions: "Terms of use"
       more_info: "More information"
+      accessibility: "Accessibility"
     application:
       ie_title: "This site is not optimized for your browser"
       ie:
@@ -69,6 +70,8 @@ en:
   application:
     alert:
       only_beta_testers: "Sorry only Beta Testers are allowed access at the moment"
+    close: "Close"
+    menu: "Menu"
   debates:
     index:
       start_debate: Start a debate

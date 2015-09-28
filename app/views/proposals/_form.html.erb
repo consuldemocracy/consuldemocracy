@@ -17,7 +17,7 @@
 
     <div class="small-12 column">
       <%= f.label :summary, t("proposals.form.proposal_summary") %>
-      <span class="note"><%= t("proposals.form.proposal_summary_note") %></span>
+      <p class="note"><%= t("proposals.form.proposal_summary_note") %></p>
       <%= f.text_area :summary, rows: 4, maxlength: 200, label: false,
                       placeholder: t('proposals.form.proposal_summary') %>
     </div>
@@ -30,7 +30,7 @@
 
     <div class="small-12 column">
       <%= f.label :video_url, t("proposals.form.proposal_video_url") %>
-      <span class="note"><%= t("proposals.form.proposal_video_url_note") %></span>
+      <p class="note"><%= t("proposals.form.proposal_video_url_note") %></p>
       <%= f.text_field :video_url, placeholder: t("proposals.form.proposal_video_url"), label: false %>
     </div>
 
@@ -41,7 +41,7 @@
 
     <div class="small-12 column">
       <%= f.label :tag_list, t("proposals.form.tags_label") %>
-      <span class="note"><%= t("proposals.form.tags_instructions") %></span>
+      <p class="note"><%= t("proposals.form.tags_instructions") %></p>
       <span class="tags">
         <% @featured_tags.each do |tag| %>
           <a class="js-add-tag-link"><%= tag.name %></a>
@@ -53,7 +53,7 @@
     <% if current_user.unverified? %>
       <div class="small-12 column">
         <%= f.label :responsible_name, t("proposals.form.proposal_responsible_name") %>
-        <span class="note"><%= t("proposals.form.proposal_responsible_name_note") %></span>
+        <p class="note"><%= t("proposals.form.proposal_responsible_name_note") %></p>
         <%= f.text_field :responsible_name, placeholder: t("proposals.form.proposal_responsible_name"), label: false %>
       </div>
     <% end %>

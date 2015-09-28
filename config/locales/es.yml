@@ -48,6 +48,7 @@ es:
       privacy: "Política de privacidad"
       conditions: "Condiciones de uso"
       more_info: "Más información"
+      accessibility: "Accesibilidad"
     application:
       ie_title: "Esta web no está optimizada para tu navegador"
       ie:
@@ -69,6 +70,8 @@ es:
   application:
     alert:
       only_beta_testers: "Lo sentimos sólo los usuarios de pruebas tienen acceso de momento"
+    close: "Cerrar"
+    menu: "Menú"
   debates:
     index:
       start_debate: Empieza un debate

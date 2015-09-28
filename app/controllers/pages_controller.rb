@@ -1,6 +1,9 @@
 class PagesController < ApplicationController
   skip_authorization_check
 
+  def accessibility
+  end
+
   def census_terms
   end
 

@@ -524,6 +524,10 @@ header {
 
     &.menu-icon a {
       padding: 0 rem-calc(24);
+
+      span::after {
+        right: 0;
+      }
     }
   }
 

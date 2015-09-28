@@ -18,7 +18,7 @@
 
     <div class="small-12 column">
       <%= f.label :password, t("devise_views.users.registrations.edit.password_label") %>
-      <span class="note"><%= t("devise_views.users.registrations.edit.leave_blank") %></span>
+      <p class="note"><%= t("devise_views.users.registrations.edit.leave_blank") %></p>
       <%= f.password_field :password, autocomplete: "off", label: false, placeholder: t("devise_views.users.registrations.edit.password_label") %>
     </div>
 
@@ -29,7 +29,7 @@
 
     <div class="small-12 column">
       <%= f.label :current_password, t("devise_views.users.registrations.edit.current_password_label") %>
-      <span class="note"><%= t("devise_views.users.registrations.edit.need_current") %></span>
+      <p class="note"><%= t("devise_views.users.registrations.edit.need_current") %></p>
       <%= f.password_field :current_password, label: false, autocomplete: "off", placeholder:  t("devise_views.users.registrations.edit.current_password_label") %>
     </div>
 

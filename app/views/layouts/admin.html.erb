@@ -26,14 +26,14 @@
       <div class="admin-content small-12 medium-9 column">
         <% if notice %>
           <div data-alert class="alert-box radius success">
-            <a href="#" class="close">&times;</a>
+            <a href="#" class="close" title="<%= t("application.close") %>">&times;</a>
             <%= notice %>
           </div>
         <% end %>
 
         <% if alert %>
           <div data-alert class="alert-box radius alert">
-            <a href="#" class="close">&times;</a>
+            <a href="#" class="close" title="<%= t("application.close") %>">&times;</a>
             <%= alert %>
           </div>
         <% end %>
