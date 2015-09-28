@@ -493,8 +493,11 @@ header {
 
       img {
         height: 48px;
-        margin-top: rem-calc(24);
         width: 48px;
+
+        @media (min-width: $small-breakpoint) {
+          margin-top: rem-calc(24);
+        }
 
         @media (min-width: $medium-breakpoint) {
           height: 96px;

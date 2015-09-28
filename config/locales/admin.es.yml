@@ -149,7 +149,6 @@ es:
           block: Bloqueado
     stats:
       show:
-        summary_title: Resumen
         stats_title: Estadísticas
         visits_title: Visitas
         combined_title: Combinado
@@ -158,9 +157,9 @@ es:
           debates: Debates
           proposals: Propuestas
           comments: Comentarios
-          debate_votes: Votes en debates
+          debate_votes: Votos en debates
           proposal_votes: Votos en propuestas
-          comment_votes: Votso en comentarios
+          comment_votes: Votos en comentarios
           votes: Votos
           user_level_three: Usuarios de nivel tres
           user_level_two: Usuarios de nivel dos

@@ -149,7 +149,6 @@ en:
           block: Blocked
     stats:
       show:
-        summary_title: Summary
         stats_title: Stats
         visits_title: Visits
         combined_title: Combined
