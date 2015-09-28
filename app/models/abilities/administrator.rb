@@ -31,7 +31,7 @@ module Abilities
 
       can :comment_as_administrator, [Debate, Comment, Proposal]
 
-      can :manage, Moderator
+      can [:create, :read, :update, :destroy], Moderator
     end
   end
 end
