@@ -2,41 +2,42 @@ module Commentable
   extend ActiveSupport::Concern
 
   def index
-    @commentables = @search_terms.present? ? commentable_model.search(@search_terms) : commentable_model.all
-    @commentables = @commentables.tagged_with(@tag_filter) if @tag_filter
-    @commentables = @commentables.page(params[:page]).for_render.send("sort_by_#{@current_order}")
+    @resources = @search_terms.present? ? resource_model.search(@search_terms) : resource_model.all
+    @resources = @resources.tagged_with(@tag_filter) if @tag_filter
+    @resources = @resources.page(params[:page]).for_render.send("sort_by_#{@current_order}")
     @tag_cloud = tag_cloud
 
-    set_commentable_votes(@commentables)
-    set_commentables_instance
+    set_resource_votes(@resources)
+    set_resources_instance
   end
 
   def show
-    set_commentable_votes(commentable)
-    @root_comments = commentable.comments.roots.recent.page(params[:page]).per(10).for_render
+    set_resource_votes(resource)
+    @commentable = resource
+    @root_comments = resource.comments.roots.recent.page(params[:page]).per(10).for_render
     @comments = @root_comments.inject([]){|all, root| all + Comment.descendants_of(root).for_render}
     @all_visible_comments = @root_comments + @comments
 
     set_comment_flags(@all_visible_comments)
-    set_commentable_instance
+    set_resource_instance
   end
 
   def new
-    @commentable = commentable_model.new
-    set_commentable_instance
+    @resource = resource_model.new
+    set_resource_instance
     load_featured_tags
   end
 
   def create
-    @commentable = commentable_model.new(strong_params)
-    @commentable.author = current_user
+    @resource = resource_model.new(strong_params)
+    @resource.author = current_user
 
-    if @commentable.save_with_captcha
+    if @resource.save_with_captcha
       track_event
-      redirect_to @commentable, notice: t('flash.actions.create.notice', resource_name: "#{commentable_name.capitalize}")
+      redirect_to @resource, notice: t('flash.actions.create.notice', resource_name: "#{resource_name.capitalize}")
     else
       load_featured_tags
-      set_commentable_instance
+      set_resource_instance
       render :new
     end
   end
@@ -46,51 +47,51 @@ module Commentable
   end
 
   def update
-    commentable.assign_attributes(strong_params)
-    if commentable.save_with_captcha
-      redirect_to commentable, notice: t('flash.actions.update.notice', resource_name: "#{commentable_name.capitalize}")
+    resource.assign_attributes(strong_params)
+    if resource.save_with_captcha
+      redirect_to resource, notice: t('flash.actions.update.notice', resource_name: "#{resource_name.capitalize}")
     else
       load_featured_tags
-      set_commentable_instance
+      set_resource_instance
       render :edit
     end
   end
 
   private
-    def commentable
-      @commentable ||= instance_variable_get("@#{commentable_name}")
+    def resource
+      @resource ||= instance_variable_get("@#{resource_name}")
     end
 
-    def commentable_name
-      @commentable_name ||= resource_class.to_s.downcase.singularize
+    def resource_name
+      @resource_name ||= resource_class.to_s.downcase.singularize
     end
 
-    def commentable_model
-      @commentable_model ||= commentable_name.capitalize.constantize
+    def resource_model
+      @resource_model ||= resource_name.capitalize.constantize
     end
 
-    def set_commentable_instance
-      instance_variable_set("@#{commentable_name}", @commentable)
+    def set_resource_instance
+      instance_variable_set("@#{resource_name}", @resource)
     end
 
-    def set_commentables_instance
-      instance_variable_set("@#{commentable_name.pluralize}", @commentables)
+    def set_resources_instance
+      instance_variable_set("@#{resource_name.pluralize}", @resources)
     end
 
-    def set_commentable_votes(instance)
-      send("set_#{commentable_name}_votes", instance)
+    def set_resource_votes(instance)
+      send("set_#{resource_name}_votes", instance)
     end
 
     def strong_params
-      send("#{commentable_name}_params")
+      send("#{resource_name}_params")
     end
 
     def track_event
-      ahoy.track "#{commentable_name}_created".to_sym, "#{commentable_name}_id": commentable.id
+      ahoy.track "#{resource_name}_created".to_sym, "#{resource_name}_id": resource.id
     end
 
     def tag_cloud
-      commentable_model.tag_counts.order("#{commentable_name.pluralize}_count": :desc, name: :asc).limit(20)
+      resource_model.tag_counts.order("#{resource_name.pluralize}_count": :desc, name: :asc).limit(20)
     end
 
     def load_featured_tags
