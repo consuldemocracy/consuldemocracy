@@ -37,10 +37,6 @@ class CensusApi
     data[:datos_vivienda][:item][:codigo_postal]
   end
 
-  def address
-    response[:get_habita_datos_response][:get_habita_datos_return][:datos_vivienda][:item]
-  end
-
   def valid?
     return false unless data[:datos_habitante][:item].present?
 
@@ -53,6 +49,6 @@ class CensusApi
   end
 
   def stubbed_response
-    {:get_habita_datos_response=>{:get_habita_datos_return=>{:hay_errores=>false, :datos_habitante=>{:item=>{:fecha_nacimiento_string=>"31-12-1980", :identificador_documento=>"12345678Z", }}, :datos_vivienda=>{:item=>{:codigo_postal=>"28013", :escalera=>"4", :km=>"0", :letra_via=>"B", :nombre_barrio=>"JUSTICIA", :nombre_distrito=>"CENTRO", :nombre_via=>"ALCALÁ", :nominal_via=>"NUM", :numero_via=>"1", :planta=>"PB", :portal=>"1", :puerta=>"DR", :sigla_via=>"CALLE"}}}}}
+    {:get_habita_datos_response=>{:get_habita_datos_return=>{:hay_errores=>false, :datos_habitante=>{:item=>{:fecha_nacimiento_string=>"31-12-1980", :identificador_documento=>"12345678Z", }}, :datos_vivienda=>{:item=>{:codigo_postal=>"28013"}}}}}
   end
 end

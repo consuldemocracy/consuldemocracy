@@ -75,8 +75,6 @@ es:
           success_html: "Gracias por solicitar tu <b>código de máxima seguridad (solo necesario para las votaciones finales)</b>, en unos días te lo enviaremos a la dirección que figura en tus datos del padrón. Recuerda que puedes ahorrar el envío recogiendo tu código en cualquiera de las %{offices}."
           offices: "Oficinas de Atención al Ciudadano"
           offices_url: "http://www.madrid.es/portales/munimadrid/es/Inicio/El-Ayuntamiento/Atencion-al-ciudadano/Oficinas-de-Atencion-al-Ciudadano?vgnextfmt=default&vgnextchannel=5b99cde2e09a4310VgnVCM1000000b205a0aRCRD"
-        alert:
-          failure: "No podemos verificar tu dirección con el Padrón, por favor inténtalo otra vez más tarde"
       edit:
         title: "Empieza a participar"
         confirmation_code: "Introduce aquí el código de máxima seguridad cuando recibas tu carta"
@@ -91,7 +89,6 @@ es:
       errors:
         letter_not_sent: "Aún no te hemos enviado la carta con el código"
         incorect_code: "Código de verificación incorrecto"
-        address_not_found: "No se ha encontrado una dirección"
     verified_user:
       show:
         title: "Información disponible"

@@ -49,21 +49,6 @@ feature 'Verify Letter' do
     expect(page).to have_content "Incorrect confirmation code"
   end
 
-  scenario "Error accessing address from CensusApi" do
-    user = create(:user, residence_verified_at: Time.now,
-                         confirmed_phone:       "611111111",
-                         letter_sent_at:        1.day.ago)
-
-    login_as(user)
-    visit new_letter_path
-
-    allow_any_instance_of(CensusApi).to receive(:address).and_return(nil)
-
-    click_button "Send me a letter with the code"
-
-    expect(page).to have_content "We could not verify your address with the Census please try again later"
-  end
-
   scenario "Deny access unless verified residence" do
     user = create(:user)
 
