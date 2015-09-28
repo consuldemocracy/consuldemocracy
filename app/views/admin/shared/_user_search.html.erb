@@ -1,0 +1,10 @@
+<%= form_for(User.new, url: url, as: :user, method: :get) do |f| %>
+  <div class="row">
+    <div class="small-12 medium-6 column">
+      <%= text_field_tag :name_or_email, "", placeholder: t("admin.shared.user_search.placeholder") %>
+    </div>
+    <div class="form-inline small-12 medium-6 column">
+      <%= f.submit t("admin.shared.user_search.button"), class: "button radius success" %>
+    </div>
+  </div>
+<% end %>

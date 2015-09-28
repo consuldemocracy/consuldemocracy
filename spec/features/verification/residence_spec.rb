@@ -49,7 +49,7 @@ feature 'Residence' do
 
     click_button 'Verify residence'
 
-    expect(page).to have_content 'Please, to verify your account you need to be in the census of the Madrid town.'
+    expect(page).to have_content 'To verify your account you need to be in the census of the Madrid town.'
   end
 
   scenario 'Error on Madrid census' do

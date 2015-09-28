@@ -16,11 +16,16 @@ en:
       hidden_debates: Hidden debates
       hidden_comments: Hidden comments
       hidden_users: Blocked users
+      incomplete_verifications: Incomplete verifications
       organizations: Organizations
       officials: Officials
       moderators: Moderators
       stats: Statistics
       activity: Moderation Activity
+    shared:
+      user_search:
+        placeholder: 'Search user by name or email'
+        button: 'Search'
     organizations:
       index:
         title: Organizations
@@ -97,6 +102,11 @@ en:
         email: "Email:"
         registered_at: "Registered at:"
         hidden_at: "Hidden at:"
+    verifications:
+      index:
+        title: Incomplete verifications
+        phone_not_given: 'Phone not given'
+        sms_code_not_confirmed: 'Has not confirmed the sms code'
     officials:
       level_0: Not an official
       level_1: Level 1
@@ -106,13 +116,10 @@ en:
       level_5: Level 5
       index:
         title: Officials
-        search_placeholder: 'Search user by name or email'
-        search: Search
       search:
         title: 'Officials: Search users'
         edit_official: Edit official
         make_official: Make this user an official
-        search: Search
       edit:
         title: 'Officials: edit user'
         destroy: "Remove 'Official' condition"

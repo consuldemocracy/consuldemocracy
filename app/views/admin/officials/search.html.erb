@@ -1,15 +1,6 @@
 <h2><%= t("admin.officials.search.title") %></h2>
 
-<%= form_for(User.new, url: search_admin_officials_path, as: :user, method: :get) do |f| %>
-  <div class="row">
-    <div class="small-12 medium-6 column">
-      <%= text_field_tag :name_or_email, "", placeholder: t("admin.officials.index.search_placeholder") %>
-    </div>
-    <div class="small-12 medium-6 column">
-      <%= f.submit t("admin.officials.search.search"), class: "button radius success" %>
-    </div>
-  </div>
-<% end %>
+<%= render 'admin/shared/user_search', url: search_admin_officials_path %>
 
 <h3><%= page_entries_info @users %></h3>
 

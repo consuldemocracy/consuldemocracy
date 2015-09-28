@@ -16,11 +16,16 @@ es:
       hidden_debates: Debates ocultos
       hidden_comments: Comentarios ocultos
       hidden_users: Usuarios bloqueados
+      incomplete_verifications: Verificaciones incompletas
       organizations: Organizaciones
       officials: Cargos públicos
       moderators: Moderadores
       stats: Estadísticas
       activity: Actividad de moderadores
+    shared:
+      user_search:
+        placeholder: 'Buscar usuario por nombre o email'
+        button: 'Buscar'
     organizations:
       index:
         title: Organizaciones
@@ -97,6 +102,11 @@ es:
         email: "Email:"
         registered_at: "Fecha de alta:"
         hidden_at: "Bloqueado:"
+    verifications:
+      index:
+        title: Verificaciones incompletas
+        phone_not_given: 'No ha dado su teléfono'
+        sms_code_not_confirmed: 'No ha introducido su código de seguridad'
     officials:
       level_0: "No es cargo público"
       level_1: Nivel 1
@@ -106,13 +116,10 @@ es:
       level_5: Nivel 5
       index:
         title: Cargos Públicos
-        search_placeholder: 'Buscar usuario por nombre o email'
-        search: Buscar
       search:
         title: 'Cargos Públicos: Búsqueda de usuarios'
         edit_official: Editar cargo público
         make_official: Convertir en cargo público
-        search: Buscar
       edit:
         title: 'Cargos Públicos: Editar usuario'
         destroy: "Eliminar condición de 'Cargo Público'"

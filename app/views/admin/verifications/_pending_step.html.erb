@@ -1,0 +1,7 @@
+<% if user.failed_residence_verification? %>
+  <%= render partial: 'failed_census_call', collection: user.failed_census_calls %>
+<% elsif user.no_phone_available? %>
+  <p><%= t("admin.verifications.index.phone_not_given") %></p>
+<% elsif user.sms_code_not_confirmed? %>
+  <p><%= t("admin.verifications.index.sms_code_not_confirmed") %></p>
+<% end %>

@@ -1,0 +1,16 @@
+<h2><%= t("admin.verifications.index.title") %></h2>
+
+<%= render 'admin/shared/user_search', url: search_admin_verifications_path %>
+
+<h3><%= page_entries_info @users %></h3>
+
+<ul class="admin-list">
+<% @users.each do |user| %>
+  <li id="<%= dom_id(user) %>">
+    <%= link_to user.name, admin_user_path(user) %>
+    <%= render "pending_step", user: user %>
+  </li>
+<% end %>
+</ul>
+
+<%= paginate @users %>

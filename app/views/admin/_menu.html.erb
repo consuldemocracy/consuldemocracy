@@ -39,6 +39,13 @@
       <% end %>
     </li>
 
+    <li <%= "class=active" if controller_name == "verifications" %>>
+      <%= link_to admin_verifications_path do %>
+        <i class="icon-eye"></i>
+        <%= t("admin.menu.incomplete_verifications") %>
+      <% end %>
+    </li>
+
     <li <%= "class=active" if controller_name == "organizations" %>>
       <%= link_to admin_organizations_path do %>
         <i class="icon-organizations"></i>
