@@ -61,12 +61,12 @@ module Commentable
       @commentable ||= instance_variable_get("@#{commentable_name}")
     end
 
-    def commentable_model
-      @commentable_model ||= commentable_name.capitalize.constantize
+    def commentable_name
+      @commentable_name ||= controller_name.singularize
     end
 
-    def commentable_name
-      controller_name.singularize
+    def commentable_model
+      @commentable_model ||= commentable_name.capitalize.constantize
     end
 
     def set_commentable_instance
