@@ -5,7 +5,7 @@ class Mailer < ApplicationMailer
   def comment(comment)
     @comment = comment
     @commentable = comment.commentable
-    mail(to: @commentable.author.email, subject: t('mailers.comment.subject', commentable: t("activerecord.models.#{@commentable.class.name.downcase}").downcase)) if @commentable.present? && @commentable.author.present?
+    mail(to: @commentable.author.email, subject: t('mailers.comment.subject', commentable: t("activerecord.models.#{@commentable.class.name.downcase}", count: 1).downcase)) if @commentable.present? && @commentable.author.present?
   end
 
   def reply(reply)

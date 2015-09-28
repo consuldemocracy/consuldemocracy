@@ -16,6 +16,7 @@ feature 'Admin debates' do
     expect(page).to_not have_content(debate.title)
 
     expect(debate.reload).to_not be_hidden
+    expect(debate).to be_ignored_flag
   end
 
   scenario 'Confirm hide' do
