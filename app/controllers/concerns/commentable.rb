@@ -33,7 +33,7 @@ module Commentable
 
     if @commentable.save_with_captcha
       track_event
-      redirect_to @commentable, notice: t('flash.actions.create.notice', resource_name: "#{controller_name.singularize.capitalize}")
+      redirect_to @commentable, notice: t('flash.actions.create.notice', resource_name: "#{commentable_name.capitalize}")
     else
       load_featured_tags
       set_commentable_instance
@@ -48,7 +48,7 @@ module Commentable
   def update
     commentable.assign_attributes(strong_params)
     if commentable.save_with_captcha
-      redirect_to commentable, notice: t('flash.actions.update.notice', resource_name: "#{controller_name.singularize.capitalize}")
+      redirect_to commentable, notice: t('flash.actions.update.notice', resource_name: "#{commentable_name.capitalize}")
     else
       load_featured_tags
       set_commentable_instance
@@ -58,35 +58,39 @@ module Commentable
 
   private
     def commentable
-      @commentable ||= instance_variable_get("@#{controller_name.singularize}")
+      @commentable ||= instance_variable_get("@#{commentable_name}")
     end
 
     def commentable_model
-      @commentable_model ||= controller_name.singularize.capitalize.constantize
+      @commentable_model ||= commentable_name.capitalize.constantize
+    end
+
+    def commentable_name
+      controller_name.singularize
     end
 
     def set_commentable_instance
-      instance_variable_set("@#{controller_name.singularize}", @commentable)
+      instance_variable_set("@#{commentable_name}", @commentable)
     end
 
     def set_commentables_instance
-      instance_variable_set("@#{controller_name}", @commentables)
+      instance_variable_set("@#{commentable_name.pluralize}", @commentables)
     end
 
     def set_commentable_votes(instance)
-      send("set_#{controller_name.singularize}_votes", instance)
+      send("set_#{commentable_name}_votes", instance)
     end
 
     def strong_params
-      send("#{controller_name.singularize}_params")
+      send("#{commentable_name}_params")
     end
 
     def track_event
-      ahoy.track "#{controller_name.singularize}_created".to_sym, "#{controller_name.singularize}_id": commentable.id
+      ahoy.track "#{commentable_name}_created".to_sym, "#{commentable_name}_id": commentable.id
     end
 
     def tag_cloud
-      commentable_model.tag_counts.order("#{controller_name}_count": :desc, name: :asc).limit(20)
+      commentable_model.tag_counts.order("#{commentable_name.pluralize}_count": :desc, name: :asc).limit(20)
     end
 
     def load_featured_tags
