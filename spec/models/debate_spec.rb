@@ -12,13 +12,25 @@ describe Debate do
     expect(debate).to_not be_valid
   end
 
-  it "should not be valid without a title" do
-    debate.title = nil
-    expect(debate).to_not be_valid
+  describe "#title" do
+    it "should not be valid without a title" do
+      debate.title = nil
+      expect(debate).to_not be_valid
+    end
+
+    it "should not be valid when very short" do
+      debate.title = "abc"
+      expect(debate).to_not be_valid
+    end
+
+    it "should not be valid when very long" do
+      debate.title = "a" * 81
+      expect(debate).to_not be_valid
+    end
   end
 
   describe "#description" do
-    it "should be mandatory" do
+    it "should not be valid without a description" do
       debate.description = nil
       expect(debate).to_not be_valid
     end
@@ -32,6 +44,16 @@ describe Debate do
     it "should be html_safe" do
       debate.description = "<script>alert('danger');</script>"
       expect(debate.description).to be_html_safe
+    end
+
+    it "should not be valid when very short" do
+      debate.description = "abc"
+      expect(debate).to_not be_valid
+    end
+
+    it "should not be valid when very long" do
+      debate.description = "a" * 6001
+      expect(debate).to_not be_valid
     end
   end
 

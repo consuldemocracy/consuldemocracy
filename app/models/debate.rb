@@ -1,10 +1,13 @@
 require 'numeric'
 class Debate < ActiveRecord::Base
   include Flaggable
-  apply_simple_captcha
+  include Taggable
+  include Conflictable
+  include Measurable
+  include Sanitizable
 
+  apply_simple_captcha
   acts_as_votable
-  acts_as_taggable
   acts_as_paranoid column: :hidden_at
   include ActsAsParanoidAliases
 
@@ -15,13 +18,10 @@ class Debate < ActiveRecord::Base
   validates :description, presence: true
   validates :author, presence: true
 
-  validate :validate_title_length
-  validate :validate_description_length
+  validates :title, length: { in: 4..Debate.title_max_length }
+  validates :description, length: { in: 10..Debate.description_max_length }
 
   validates :terms_of_service, acceptance: { allow_nil: false }, on: :create
-
-  before_validation :sanitize_description
-  before_validation :sanitize_tag_list
 
   before_save :calculate_hot_score, :calculate_confidence_score
 
@@ -35,6 +35,10 @@ class Debate < ActiveRecord::Base
 
   # Ahoy setup
   visitable # Ahoy will automatically assign visit_id on create
+
+  def description
+    super.try :html_safe
+  end
 
   def likes
     cached_votes_up
@@ -80,23 +84,6 @@ class Debate < ActiveRecord::Base
     (cached_anonymous_votes_total.to_f / cached_votes_total) * 100
   end
 
-  def description
-    super.try :html_safe
-  end
-
-  def tag_list_with_limit(limit = nil)
-    return tags if limit.blank?
-
-    tags.sort{|a,b| b.taggings_count <=> a.taggings_count}[0, limit]
-  end
-
-  def tags_count_out_of_limit(limit = nil)
-    return 0 unless limit
-
-    count = tags.size - limit
-    count < 0 ? 0 : count
-  end
-
   def after_commented
     save # updates the hot_score because there is a before_save
   end
@@ -122,11 +109,6 @@ class Debate < ActiveRecord::Base
     where(id: [debate_ids, tag_ids].flatten.compact)
   end
 
-  def conflictive?
-    return false unless flags_count > 0 && cached_votes_up > 0
-    cached_votes_up/flags_count.to_f < 5
-  end
-
   def after_hide
     self.tags.each{ |t| t.decrement_custom_counter_for('Debate') }
   end
@@ -134,41 +116,5 @@ class Debate < ActiveRecord::Base
   def after_restore
     self.tags.each{ |t| t.increment_custom_counter_for('Debate') }
   end
-
-  def self.title_max_length
-    @@title_max_length ||= self.columns.find { |c| c.name == 'title' }.limit || 80
-  end
-
-  def self.description_max_length
-    6000
-  end
-
-  protected
-
-    def sanitize_description
-      self.description = WYSIWYGSanitizer.new.sanitize(description)
-    end
-
-    def sanitize_tag_list
-      self.tag_list = TagSanitizer.new.sanitize_tag_list(self.tag_list)
-    end
-
-  private
-
-    def validate_description_length
-      validator = ActiveModel::Validations::LengthValidator.new(
-        attributes: :description,
-        minimum: 10,
-        maximum: Debate.description_max_length)
-      validator.validate(self)
-    end
-
-    def validate_title_length
-      validator = ActiveModel::Validations::LengthValidator.new(
-        attributes: :title,
-        minimum: 4,
-        maximum: Debate.title_max_length)
-      validator.validate(self)
-    end
 
 end
