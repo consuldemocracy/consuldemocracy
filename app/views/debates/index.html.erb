@@ -1,3 +1,4 @@
+<% provide :title do %><%= t('debates.index.title') %><% end %>
 <% content_for :header_addon do %>
   <%= render "shared/search_form_header",
              search_path: debates_path(page: 1),
