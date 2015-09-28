@@ -1,5 +1,11 @@
 en:
   pages:
+    titles:
+      more_information: "More information"
+      privacy: "Privacy Policy"
+      transparency: "Transparency"
+      opendata: "Open Data"
+      conditions: "Terms of use"
     conditions:
       "Terms of use"
     privacy:
