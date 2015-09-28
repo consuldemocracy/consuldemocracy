@@ -62,7 +62,7 @@ module Commentable
     end
 
     def commentable_name
-      @commentable_name ||= controller_name.singularize
+      @commentable_name ||= resource_class.to_s.downcase.singularize
     end
 
     def commentable_model
