@@ -2,6 +2,7 @@ require 'numeric'
 class Debate < ActiveRecord::Base
   include Flaggable
   include Taggable
+  include Conflictable
 
   apply_simple_captcha
 
@@ -108,11 +109,6 @@ class Debate < ActiveRecord::Base
                        "%#{terms}%", "%#{terms}%").pluck(:id)
     tag_ids = tagged_with(terms, wild: true, any: true).pluck(:id)
     where(id: [debate_ids, tag_ids].flatten.compact)
-  end
-
-  def conflictive?
-    return false unless flags_count > 0 && cached_votes_up > 0
-    cached_votes_up/flags_count.to_f < 5
   end
 
   def after_hide

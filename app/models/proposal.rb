@@ -1,7 +1,7 @@
 class Proposal < ActiveRecord::Base
   include Flaggable
   include Taggable
-
+  include Conflictable
 
   apply_simple_captcha
   acts_as_votable
@@ -40,11 +40,6 @@ class Proposal < ActiveRecord::Base
 
   def total_votes
     cached_votes_up
-  end
-
-  def conflictive?
-    return false unless flags_count > 0 && cached_votes_up > 0
-    cached_votes_up/flags_count.to_f < 5
   end
 
   def description
