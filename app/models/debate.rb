@@ -1,10 +1,11 @@
 require 'numeric'
 class Debate < ActiveRecord::Base
   include Flaggable
+  include Taggable
+
   apply_simple_captcha
 
   acts_as_votable
-  acts_as_taggable
   acts_as_paranoid column: :hidden_at
   include ActsAsParanoidAliases
 
@@ -82,19 +83,6 @@ class Debate < ActiveRecord::Base
 
   def description
     super.try :html_safe
-  end
-
-  def tag_list_with_limit(limit = nil)
-    return tags if limit.blank?
-
-    tags.sort{|a,b| b.taggings_count <=> a.taggings_count}[0, limit]
-  end
-
-  def tags_count_out_of_limit(limit = nil)
-    return 0 unless limit
-
-    count = tags.size - limit
-    count < 0 ? 0 : count
   end
 
   def after_commented
