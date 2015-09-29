@@ -1,54 +1,69 @@
 class CensusApi
-  attr_accessor :client, :citizen, :response
+  attr_accessor :document_type, :document_number
 
-  def initialize(citizen)
-    @citizen = citizen
+  def initialize(document_type, document_number)
+    @document_type = document_type
+    @document_number = document_number
   end
 
-  def client
-    @client = Savon.client(wsdl: Rails.application.secrets.census_api_end_point)
+  def call
+    Response.new(get_response_body)
   end
 
-  def response
-    return stubbed_response unless end_point_available?
-    client.call(:get_habita_datos, message: request).body
+  class Response
+    def initialize(body)
+      @body = body
+    end
+
+    def date_of_birth
+      data[:datos_habitante][:item][:fecha_nacimiento_string]
+    end
+
+    def postal_code
+      data[:datos_vivienda][:item][:codigo_postal]
+    end
+
+    def valid?
+      data[:datos_habitante][:item].present?
+    end
+
+    private
+
+      def data
+        @body[:get_habita_datos_response][:get_habita_datos_return]
+      end
   end
 
-  def request
-    { request:
-      { codigo_institucion: Rails.application.secrets.census_api_institution_code,
-        codigo_portal:      Rails.application.secrets.census_api_portal_name,
-        codigo_usuario:     Rails.application.secrets.census_api_user_code,
-        documento:          citizen.document_number,
-        tipo_documento:     citizen.document_type,
-        codigo_idioma:      102,
-        nivel: 3 }}
-  end
+  private
 
-  def data
-    response[:get_habita_datos_response][:get_habita_datos_return]
-  end
+    def get_response_body
+      if end_point_available
+        client.call(:get_habita_datos, message: request).body
+      else
+        stubbed_response_body
+      end
+    end
 
-  def date_of_birth
-    data[:datos_habitante][:item][:fecha_nacimiento_string]
-  end
+    def client
+      @client = Savon.client(wsdl: Rails.application.secrets.census_api_end_point)
+    end
 
-  def postal_code
-    data[:datos_vivienda][:item][:codigo_postal]
-  end
+    def request
+      { request:
+        { codigo_institucion: Rails.application.secrets.census_api_institution_code,
+          codigo_portal:      Rails.application.secrets.census_api_portal_name,
+          codigo_usuario:     Rails.application.secrets.census_api_user_code,
+          documento:          document_number,
+          tipo_documento:     document_type,
+          codigo_idioma:      102,
+          nivel: 3 }}
+    end
 
-  def valid?
-    return false unless data[:datos_habitante][:item].present?
+    def end_point_available?
+      Rails.env.staging? || Rails.env.preproduction? || Rails.env.production?
+    end
 
-    citizen.date_of_birth == date_of_birth &&
-    citizen.postal_code   == postal_code
-  end
-
-  def end_point_available?
-    Rails.env.staging? || Rails.env.preproduction? || Rails.env.production?
-  end
-
-  def stubbed_response
-    {:get_habita_datos_response=>{:get_habita_datos_return=>{:hay_errores=>false, :datos_habitante=>{:item=>{:fecha_nacimiento_string=>"31-12-1980", :identificador_documento=>"12345678Z", }}, :datos_vivienda=>{:item=>{:codigo_postal=>"28013"}}}}}
-  end
+    def stubbed_response_body
+      {:get_habita_datos_response=>{:get_habita_datos_return=>{:hay_errores=>false, :datos_habitante=>{:item=>{:fecha_nacimiento_string=>"31-12-1980", :identificador_documento=>"12345678Z", }}, :datos_vivienda=>{:item=>{:codigo_postal=>"28013"}}}}}
+    end
 end

@@ -46,16 +46,12 @@ class Verification::Residence
 
   def residence_in_madrid
     return if errors.any?
-    self.date_of_birth = date_to_string(date_of_birth)
 
-    residency = CensusApi.new(self)
-
-    unless residency.valid?
+    unless residency_valid?
       errors.add(:residence_in_madrid, false)
       store_failed_attempt
       Lock.increase_tries(user)
     end
-    self.date_of_birth = string_to_date(date_of_birth)
   end
 
   def store_failed_attempt
@@ -69,6 +65,14 @@ class Verification::Residence
   end
 
   private
+
+    def residency_valid?
+      response = CensusApi.new(document_type, document_number).call
+
+      response.valid? &&
+        response.postal_code == postal_code &&
+        response.date_of_birth == date_to_string(date_of_birth)
+    end
 
     def clean_document_number
       self.document_number = self.document_number.gsub(/[^a-z0-9]+/i, "").upcase unless self.document_number.blank?
