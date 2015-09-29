@@ -80,12 +80,12 @@
       </div>
 
       <div class="small-12 medium-6 left">
-        <h2><%= t "admin.stats.show.combined_title" %></h2>
+        <h2><%= t "admin.stats.show.visits_title" %></h2>
         <%= visits_chart_tag id: "visits" %>
       </div>
 
       <div class="small-12 medium-6 left">
-        <h2><%= t "admin.stats.show.visits_title" %></h2>
+        <h2><%= t "admin.stats.show.combined_title" %></h2>
         <%= events_chart_tag @event_types.keys, id: 'combined' %>
       </div>
 
