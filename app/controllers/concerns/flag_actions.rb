@@ -14,7 +14,7 @@ module FlagActions
   private
 
     def flaggable
-      instance_variable_get("@#{controller_name.singularize}")
+      instance_variable_get("@#{resource_model.to_s.downcase}")
     end
 
 end
