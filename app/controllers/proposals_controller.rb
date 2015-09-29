@@ -1,5 +1,5 @@
 class ProposalsController < ApplicationController
-  include Commentable
+  include CommentableActions
   include FlagActions
 
   before_action :parse_search_terms, only: :index

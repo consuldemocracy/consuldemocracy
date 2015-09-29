@@ -1,4 +1,4 @@
-module Commentable
+module CommentableActions
   extend ActiveSupport::Concern
 
   def index
