@@ -2,18 +2,18 @@ module FlagActions
   extend ActiveSupport::Concern
 
   def flag
-    Flag.flag(current_user, flagable)
-    respond_with flagable, template: "#{controller_name}/_refresh_flag_actions"
+    Flag.flag(current_user, flaggable)
+    respond_with flaggable, template: "#{controller_name}/_refresh_flag_actions"
   end
 
   def unflag
-    Flag.unflag(current_user, flagable)
-    respond_with flagable, template: "#{controller_name}/_refresh_flag_actions"
+    Flag.unflag(current_user, flaggable)
+    respond_with flaggable, template: "#{controller_name}/_refresh_flag_actions"
   end
 
   private
 
-    def flagable
+    def flaggable
       instance_variable_get("@#{controller_name.singularize}")
     end
 
