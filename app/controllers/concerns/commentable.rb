@@ -63,11 +63,7 @@ module Commentable
     end
 
     def resource_name
-      @resource_name ||= resource_class.to_s.downcase.singularize
-    end
-
-    def resource_model
-      @resource_model ||= resource_name.capitalize.constantize
+      @resource_name ||= resource_model.to_s.downcase.singularize
     end
 
     def set_resource_instance

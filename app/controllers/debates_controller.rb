@@ -22,7 +22,7 @@ class DebatesController < ApplicationController
       params.require(:debate).permit(:title, :description, :tag_list, :terms_of_service, :captcha, :captcha_key)
     end
 
-    def resource_class
+    def resource_model
       Debate
     end
 

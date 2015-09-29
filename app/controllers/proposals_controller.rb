@@ -22,7 +22,7 @@ class ProposalsController < ApplicationController
       params.require(:proposal).permit(:title, :question, :summary, :description, :external_url, :video_url, :responsible_name, :tag_list, :terms_of_service, :captcha, :captcha_key)
     end
 
-    def resource_class
+    def resource_model
       Proposal
     end
 end
