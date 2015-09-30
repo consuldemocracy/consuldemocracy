@@ -1,0 +1,41 @@
+es:
+  management:
+    print: "Imprimir"
+    print_info: "Imprimir esta información"
+    username_label: "Nombre de usuario"
+    email_label: "Email"
+    check: "Comprobar"
+    document_number: "Número de documento"
+    document_type_label: "Tipo de documento"
+    on_site_verifications:
+      title: "Gestionar usuario"
+
+    users:
+      title: "Gestionar usuario"
+      census_error: "Este documento no está registrado en el Padrón Municipal de Madrid."
+      census_error_info: "Las personas no empadronadas en Madrid pueden participar en el Portal de Gobierno Abierto del Ayuntamiento de Madrid con las siguientes posibilidades:"
+      census_success: "Este documento está en el registro del padrón municipal, pero todavía no tiene una cuenta de usuario asociada. Elige una de las opciones siguientes:"
+      census_success_info: "Este usuario puede participar en el Portal de Gobierno Abierto del Ayuntamiento de Madrid con las siguientes posibilidades:"
+      census_success_account: "Compruebe que los datos anteriores son correctos para proceder a verificar la cuenta completamente."
+      user_permission_debates: "Participar en debates"
+      user_permission_proposal: "Crear nuevas propuestas"
+      user_permission_support_proposal: "Apoyar propuestas"
+      user_permission_votes: "Participar en las votaciones finales"
+      has_not_account_html: "Para crear un usuario entre en %{url} y haga clic en la opción <b>'Registrarse'</b> en la parte superior derecha de la pantalla."
+      portal_url: "http://decide.madrid.es"
+      already_verified: "Esta cuenta de usuario ya está verificada."
+      has_account: "Si la persona ya ha creado una cuenta de usuario en la web"
+      has_not_account: "Si la persona todavía no ha creado una cuenta de usuario en la web"
+      has_account_note: "Introduce el email con el que creó la cuenta:"
+      has_account_placeholder: "Introduce el email de registro"
+      has_account_send_email: "Enviar email de verificación"
+      email_sent: "Para terminar de verificar esta cuenta es necesario que haga clic en el enlace que le hemos enviado a la dirección de correo que figura arriba. Este paso es necesario para confirmar que dicha cuenta de usuario es suya."
+      create_user: "Crear nueva cuenta de usuario"
+      create_user_info: "Procedemos a crear un usuario con la siguiente información:"
+      create_user_submit: "Crear usuario"
+      create_user_success_html:
+        "Le hemos mandado un correo electrónico a la dirección de correo anterior para verificar que es suya.
+        Le recomendamos cambiar la contraseña en su primer uso. Para ello entre en %{url} con su usuario y contraseña,
+        acceda a la sección <b>'Mi cuenta'</b> y haga clic en el botón <b>'Cambiar datos de acceso'</b>"
+      verify: "Verificar usuario"
+

@@ -1,0 +1,27 @@
+<p class="account-info">
+  <%= t("management.document_type_label") %> <strong><%= humanize_document_type(@verification_on_site.document_type) %></strong>
+  <%= t("management.document_number") %> <strong><%= @verification_on_site.document_number %></strong>
+</p>
+
+<div class="alert-box alert radius">
+  <%= t("management.users.census_error") %>
+</div>
+
+<div class="user-permissions">
+
+  <p><%= t("management.users.census_error_info") %></p>
+
+  <ul>
+    <li><i class="icon-check"></i> <%= t("management.users.user_permission_debates") %></li>
+    <li><i class="icon-check"></i> <%= t("management.users.user_permission_proposal") %></li>
+    <li><i class="icon-x"></i> <%= t("management.users.user_permission_support_proposal") %></li>
+    <li><i class="icon-x"></i> <%= t("management.users.user_permission_votes") %></li>
+  </ul>
+
+  <p>
+    <%= t("management.users.has_not_account_html",
+        url: link_to(t("management.users.portal_url"), t("management.users.portal_url"),
+        target: "_blank")).html_safe %>
+  </p>
+
+</div>

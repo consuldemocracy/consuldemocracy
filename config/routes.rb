@@ -165,6 +165,13 @@ Rails.application.routes.draw do
 
   namespace :management do
 
+    resources :on_site_verifications, only: [:index, :new, :create] do
+      collection do
+        post :check
+        post :send_email
+      end
+    end
+
   end
 
   # Example of regular route:

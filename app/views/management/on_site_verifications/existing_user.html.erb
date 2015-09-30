@@ -1,0 +1,31 @@
+<p class="account-info">
+  <%= t("management.document_type_label") %> <strong><%= humanize_document_type(@verification_on_site.document_type) %></strong>
+  <%= t("management.document_number") %> <strong><%= @verification_on_site.document_number %></strong>
+</p>
+
+<div class="alert-box success radius">
+  <%= t("management.users.census_success") %>
+</div>
+
+<ul>
+  <li>
+    <strong><%= t("management.users.has_account") %></strong>
+
+    <p><%= t("management.users.has_account_note") %></p>
+
+    <%= form_for @verification_on_site, url: send_email_management_on_site_verifications_path do |f| %>
+      <%= f.hidden_field :document_type %>
+      <%= f.hidden_field :document_number %>
+      <%= f.text_field :email, label: false, placeholder: t('management.users.has_account_placeholder') %>
+      <%= f.submit t("management.users.has_account_send_email"), class: "button success radius" %>
+    <% end %>
+  </li>
+
+  <li>
+    <strong><%= t("management.users.has_not_account") %></strong>
+
+    <p class="margin-top">
+      <a href="#" class="button radius success"><%= t("management.users.create_user") %></a>
+    </p>
+  </li>
+</ul>

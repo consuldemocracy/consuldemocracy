@@ -1,0 +1,25 @@
+<p class="account-info">
+  <%= t("management.document_type_label") %> <strong><%= humanize_document_type(@verification_on_site.document_type) %></strong>
+  <%= t("management.document_number") %> <strong><%= @verification_on_site.document_number %></strong>
+  <%= t("management.username_label") %> <strong><%= @verification_on_site.user.username %></strong>
+  <%= t("management.email_label") %> <strong><%= @verification_on_site.user.email %></strong>
+</p>
+
+<div class="alert-box success radius">
+  <%= t("management.users.already_verified") %>
+</div>
+
+<div class="user-permissions">
+
+  <p><%= t("management.users.census_success_info") %></p>
+
+  <ul>
+    <li><i class="icon-check"></i> <%= t("management.users.user_permission_debates") %></li>
+    <li><i class="icon-check"></i> <%= t("management.users.user_permission_proposal") %></li>
+    <li><i class="icon-check"></i> <%= t("management.users.user_permission_support_proposal") %></li>
+    <li><i class="icon-check"></i> <%= t("management.users.user_permission_votes") %></li>
+  </ul>
+
+</div>
+
+<a href="javascript:window.print();" class="button warning radius"><%= t("management.print_info") %></a>
