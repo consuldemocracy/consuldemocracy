@@ -67,7 +67,7 @@ class Verification::Residence
   private
 
     def residency_valid?
-      response = CensusApi.new(document_type, document_number).call
+      response = CensusApi.new.call(document_type, document_number)
 
       response.valid? &&
         response.postal_code == postal_code &&

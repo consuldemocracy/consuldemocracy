@@ -1,18 +1,16 @@
 class CensusApi
-  attr_accessor :document_type, :document_number
 
-  def initialize(document_type, document_number)
-    @document_type = document_type
-    @document_number = document_number
-  end
-
-  def call
-    Response.new(get_response_body)
+  def call(document_type, document_number)
+    Response.new(get_response_body(document_type, document_number))
   end
 
   class Response
     def initialize(body)
       @body = body
+    end
+
+    def valid?
+      data[:datos_habitante][:item].present?
     end
 
     def date_of_birth
@@ -21,10 +19,6 @@ class CensusApi
 
     def postal_code
       data[:datos_vivienda][:item][:codigo_postal]
-    end
-
-    def valid?
-      data[:datos_habitante][:item].present?
     end
 
     private
@@ -36,9 +30,9 @@ class CensusApi
 
   private
 
-    def get_response_body
-      if end_point_available
-        client.call(:get_habita_datos, message: request).body
+    def get_response_body(document_type, document_number)
+      if end_point_available?
+        client.call(:get_habita_datos, message: request(document_type, document_number)).body
       else
         stubbed_response_body
       end
@@ -48,7 +42,7 @@ class CensusApi
       @client = Savon.client(wsdl: Rails.application.secrets.census_api_end_point)
     end
 
-    def request
+    def request(document_type, document_number)
       { request:
         { codigo_institucion: Rails.application.secrets.census_api_institution_code,
           codigo_portal:      Rails.application.secrets.census_api_portal_name,
