@@ -40,6 +40,7 @@ class User < ActiveRecord::Base
   scope :organizations,  -> { joins(:organization) }
   scope :officials,      -> { where("official_level > 0") }
   scope :for_render,     -> { includes(:organization) }
+  scope :by_document,    -> (document_type, document_number) { where(document_type: document_type, document_number: document_number) }
 
   def self.find_for_oauth(auth, signed_in_resource = nil)
     # Get the identity and user if they exist
