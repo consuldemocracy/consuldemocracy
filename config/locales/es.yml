@@ -49,6 +49,9 @@ es:
       conditions: "Condiciones de uso"
       more_info: "Más información"
       accessibility: "Accesibilidad"
+      twitter: "Twitter"
+      facebook: "Facebook"
+      blog: "Blog"
     application:
       ie_title: "Esta web no está optimizada para tu navegador"
       ie:

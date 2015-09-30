@@ -42,12 +42,24 @@
     </div>
 
     <div class="subfooter row">
-      <div class="small-12 column">
+      <div class="small-12 medium-10 column">
         <%= t("layouts.footer.copyright", year: Time.now.year) %>&nbsp;|&nbsp;
         <%= link_to t("layouts.footer.more_info"), "/more_information" %>&nbsp;|&nbsp;
         <%= link_to t("layouts.footer.privacy"), "/privacy" %>&nbsp;|&nbsp;
         <%= link_to t("layouts.footer.conditions"), "/conditions" %>&nbsp;|&nbsp;
         <%= link_to t("layouts.footer.accessibility"), "/accessibility" %>
+      </div>
+
+      <div class="small-12 medium-2 column social">
+        <%= link_to "https://twitter.com/abriendomadrid", target: "_blank", title: t("layouts.footer.twitter") do %>
+          <i class="icon-twitter"></i>
+        <% end %>
+        <%= link_to "https://www.facebook.com/Abriendo-Madrid-1475577616080350/", target: "_blank", title: t("layouts.footer.facebook") do %>
+          <i class="icon-facebook"></i>
+        <% end %>
+        <%= link_to "http://diario.madrid.es/blog/category/gobiernoabierto/", target: "_blank", title: t("layouts.footer.blog") do %>
+          <i class="icon-blog"></i>
+        <% end %>
       </div>
     </div>
   </div>

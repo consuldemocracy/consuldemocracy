@@ -49,6 +49,9 @@ en:
       conditions: "Terms of use"
       more_info: "More information"
       accessibility: "Accessibility"
+      twitter: "Twitter"
+      facebook: "Facebook"
+      blog: "Blog"
     application:
       ie_title: "This site is not optimized for your browser"
       ie:
