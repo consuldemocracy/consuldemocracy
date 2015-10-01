@@ -1,11 +1,9 @@
 <p class="account-info">
-  <%= t("management.document_type_label") %> <strong><%= humanize_document_type(@verification_on_site.document_type) %></strong>
-  <%= t("management.document_number") %> <strong><%= @verification_on_site.document_number %></strong>
-  <%= t("management.username_label") %> <strong><%= @verification_on_site.user.username %></strong>
-  <%= t("management.email_label") %> <strong><%= @verification_on_site.user.email %></strong>
+  <%= t("management.document_type_label") %> <strong><%= humanize_document_type(@verification_on_site_email.document_type) %></strong>
+  <%= t("management.document_number") %> <strong><%= @verification_on_site_email.document_number %></strong>
+  <%= t("management.username_label") %> <strong><%= @verification_on_site_email.user.username %></strong>
+  <%= t("management.email_label") %> <strong><%= @verification_on_site_email.user.email %></strong>
 </p>
-
-<p class="account-info"><%= t("management.document_type_label") %> <strong>DNI</strong>  <%= t("management.document_number") %> <strong>73562454D</strong>  <%= t("management.username_label") %> <strong>Alberto</strong>  <%= t("management.email_label") %> <strong>alberto@mail.com</strong> </p>
 
 <div class="alert-box success radius">
   <%= t("management.users.email_sent") %>

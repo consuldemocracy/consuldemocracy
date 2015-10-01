@@ -1,0 +1,14 @@
+<nav class="admin-sidebar">
+  <ul id="admin_menu">
+    <li>
+      <%= link_to t("management.dashboard.index.title"), management_root_path %>
+    </li>
+
+    <li <%= "class=active" if controller_name == "on_site_verifications" %>>
+      <%= link_to management_on_site_verifications_path do %>
+        <i class="icon-tag"></i>
+        <%= t("management.menu.on_site_verifications") %>
+      <% end %>
+    </li>
+  </ul>
+</nav>

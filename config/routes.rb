@@ -169,9 +169,11 @@ Rails.application.routes.draw do
     resources :on_site_verifications, only: [:index, :new, :create] do
       collection do
         post :check
-        post :send_email
       end
     end
+
+    resources :on_site_verification_emails, only: [:new, :create]
+
 
   end
 

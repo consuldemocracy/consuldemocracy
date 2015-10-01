@@ -1,4 +1,4 @@
-class Management::OnSiteVerificationsController < ActionController::Base
+class Management::OnSiteVerificationsController < Management::BaseController
 
   def index
     @verification_on_site = Verification::OnSite.new()
@@ -13,7 +13,7 @@ class Management::OnSiteVerificationsController < ActionController::Base
       elsif @verification_on_site.user?
         render :new
       elsif @verification_on_site.in_census?
-        render :existing_user
+        redirect_to new_management_on_site_verification_email_path(verification_on_site_email: verification_on_site_params)
       else
         render :invalid_document
       end
@@ -28,27 +28,13 @@ class Management::OnSiteVerificationsController < ActionController::Base
     render :verified
   end
 
-  def send_email
-    @verification_on_site = Verification::OnSite.new(verification_on_site_with_email_params)
-    @verification_on_site.should_validate_email = true
-
-    if @verification_on_site.valid?
-      @verification_on_site.send_verification_email
-      render :email_sent
-    else
-      render :existing_user
-    end
-  end
-
   private
 
   def verification_on_site_params
     params.require(:verification_on_site).permit(:document_type, :document_number)
   end
 
-  def verification_on_site_with_email_params
-    params.require(:verification_on_site).permit(:document_type, :document_number, :email)
-  end
+
 end
 
 
