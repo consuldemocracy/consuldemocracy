@@ -6,6 +6,18 @@
         <%= link_to t("layouts.header.participation"), root_path, class: ("selected" unless current_page?("/transparency") || current_page?("/opendata")) %>&nbsp;|
         <%= link_to t("layouts.header.external_link_transparency"), "/transparency", class: ("selected" if current_page?("/transparency")) %>&nbsp;|
         <%= link_to t("layouts.header.external_link_opendata"), "/opendata", class: ("selected" if current_page?("/opendata")) %>
+          &nbsp;|&nbsp;
+          <div class="social inline-block">
+            <%= link_to "https://twitter.com/abriendomadrid", target: "_blank", title: t("social.twitter") do %>
+              <i class="icon-twitter"></i>
+            <% end %>
+            <%= link_to "https://www.facebook.com/Abriendo-Madrid-1475577616080350/", target: "_blank", title: t("social.facebook") do %>
+              <i class="icon-facebook"></i>
+            <% end %>
+            <%= link_to "http://diario.madrid.es/blog/category/gobiernoabierto/", target: "_blank", title: t("social.blog") do %>
+              <i class="icon-blog"></i>
+            <% end %>
+          </div>
       </div>
     </div>
   </section>

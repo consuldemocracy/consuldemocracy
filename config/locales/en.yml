@@ -56,6 +56,10 @@ en:
         For a better experience we recommend use %{chrome} or %{firefox}."
       chrome: "Google Chrome"
       firefox: "Firefox"
+  social:
+    twitter: "Twitter"
+    facebook: "Facebook"
+    blog: "Blog"
   form:
       error: error
       errors: errors

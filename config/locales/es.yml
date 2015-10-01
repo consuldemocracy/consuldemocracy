@@ -56,6 +56,10 @@ es:
         Para una mejor experiencia te recomendamos utilizar %{chrome} o %{firefox}."
       chrome: "Google Chrome"
       firefox: "Firefox"
+  social:
+    twitter: "Twitter"
+    facebook: "Facebook"
+    blog: "Blog"
   form:
       error: error
       errors: errores
