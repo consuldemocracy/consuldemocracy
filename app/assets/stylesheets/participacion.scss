@@ -763,30 +763,6 @@ footer {
   opacity: .75;
   margin-top: rem-calc(24);
   padding-top: rem-calc(12);
-
-  .social {
-    margin-top: rem-calc(24);
-    text-align: center;
-
-    @media (min-width: $small-breakpoint) {
-      margin-top: 0;
-      text-align: right;
-    }
-
-    a {
-      font-size: rem-calc(24);
-      margin: 0 rem-calc(12);
-      text-decoration: none;
-
-      @media (min-width: $small-breakpoint) {
-        font-size: rem-calc(18);
-      }
-
-      &:last-child {
-        margin-right: 0;
-      }
-    }
-  }
 }
 
 // 06. Tags
@@ -1420,6 +1396,37 @@ table {
 
   &:hover {
     color: #CE3E26;
+  }
+}
+
+.social {
+  margin-top: rem-calc(24);
+  text-align: center;
+
+  @media (min-width: $small-breakpoint) {
+    margin-top: 0;
+    text-align: right;
+  }
+
+  a {
+    font-size: rem-calc(24);
+    line-height: rem-calc(24);
+    margin: 0 rem-calc(12);
+    text-decoration: none;
+    vertical-align: middle;
+
+    &:hover {
+      opacity: .5;
+      text-decoration: none;
+    }
+
+    @media (min-width: $small-breakpoint) {
+      font-size: rem-calc(18);
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
   }
 }
 

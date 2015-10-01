@@ -49,9 +49,6 @@ en:
       conditions: "Terms of use"
       more_info: "More information"
       accessibility: "Accessibility"
-      twitter: "Twitter"
-      facebook: "Facebook"
-      blog: "Blog"
     application:
       ie_title: "This site is not optimized for your browser"
       ie:
@@ -59,6 +56,10 @@ en:
         For a better experience we recommend use %{chrome} or %{firefox}."
       chrome: "Google Chrome"
       firefox: "Firefox"
+  social:
+    twitter: "Twitter"
+    facebook: "Facebook"
+    blog: "Blog"
   form:
       error: error
       errors: errors

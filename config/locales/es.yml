@@ -49,9 +49,6 @@ es:
       conditions: "Condiciones de uso"
       more_info: "Más información"
       accessibility: "Accesibilidad"
-      twitter: "Twitter"
-      facebook: "Facebook"
-      blog: "Blog"
     application:
       ie_title: "Esta web no está optimizada para tu navegador"
       ie:
@@ -59,6 +56,10 @@ es:
         Para una mejor experiencia te recomendamos utilizar %{chrome} o %{firefox}."
       chrome: "Google Chrome"
       firefox: "Firefox"
+  social:
+    twitter: "Twitter"
+    facebook: "Facebook"
+    blog: "Blog"
   form:
       error: error
       errors: errores
