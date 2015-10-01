@@ -1,0 +1,5 @@
+es:
+  management:
+    dashboard:
+      index:
+       title: Gestión
