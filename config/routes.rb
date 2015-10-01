@@ -164,6 +164,7 @@ Rails.application.routes.draw do
   end
 
   namespace :management do
+    root to: "dashboard#index"
 
     resources :on_site_verifications, only: [:index, :new, :create] do
       collection do
