@@ -4,9 +4,9 @@ class Manager < ActiveRecord::Base
 
   has_secure_password
 
-  def self.valid_auth?(username = nil, password = nil)
+  def self.valid_manager(username = nil, password = nil)
     return false unless username.present? && password.present?
-    Manager.find_by(username: username).try(:authenticate, password).present?
+    Manager.find_by(username: username).try(:authenticate, password)
   end
 
 end
