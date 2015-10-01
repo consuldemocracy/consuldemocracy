@@ -164,6 +164,7 @@ Rails.application.routes.draw do
   end
 
   namespace :management do
+    root to: "dashboard#index"
 
   end
 
