@@ -4,8 +4,9 @@
       <%= link_to t("management.dashboard.index.title"), management_root_path %>
     </li>
 
-    <li <%= "class=active" if controller_name == "on_site_verifications" %>>
-      <%= link_to management_on_site_verifications_path do %>
+    <li <%= "class=active" if controller_name == "document_verifications" ||
+                              controller_name == "email_verifications" %>>
+      <%= link_to management_document_verifications_path do %>
         <i class="icon-tag"></i>
         <%= t("management.menu.on_site_verifications") %>
       <% end %>

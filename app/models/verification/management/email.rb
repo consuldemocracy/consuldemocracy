@@ -1,4 +1,4 @@
-class Verification::OnSiteEmail
+class Verification::Management::Email
   include ActiveModel::Model
 
   attr_accessor :document_type

@@ -2,7 +2,10 @@
 
 <div class="row">
   <div class="small-12 medium-8 column">
-    <%= form_for @verification_on_site, url: check_management_on_site_verifications_path do |f| %>
+    <%= form_for(@document_verification,
+                 as: :document_verification,
+                 url: check_management_document_verifications_path) do |f| %>
+
       <div class="small-12 medium-4">
         <%= f.select(:document_type,
                      [[humanize_document_type("1"), 1],

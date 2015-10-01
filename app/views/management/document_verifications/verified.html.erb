@@ -1,8 +1,8 @@
 <p class="account-info">
-  <%= t("management.document_type_label") %> <strong><%= humanize_document_type(@verification_on_site.document_type) %></strong>
-  <%= t("management.document_number") %> <strong><%= @verification_on_site.document_number %></strong>
-  <%= t("management.username_label") %> <strong><%= @verification_on_site.user.username %></strong>
-  <%= t("management.email_label") %> <strong><%= @verification_on_site.user.email %></strong>
+  <%= t("management.document_type_label") %> <strong><%= humanize_document_type(@document_verification.document_type) %></strong>
+  <%= t("management.document_number") %> <strong><%= @document_verification.document_number %></strong>
+  <%= t("management.username_label") %> <strong><%= @document_verification.user.username %></strong>
+  <%= t("management.email_label") %> <strong><%= @document_verification.user.email %></strong>
 </p>
 
 <div class="alert-box success radius">

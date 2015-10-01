@@ -166,15 +166,13 @@ Rails.application.routes.draw do
   namespace :management do
     root to: "dashboard#index"
 
-    resources :on_site_verifications, only: [:index, :new, :create] do
+    resources :document_verifications, only: [:index, :new, :create] do
       collection do
         post :check
       end
     end
 
-    resources :on_site_verification_emails, only: [:new, :create]
-
-
+    resources :email_verifications, only: [:new, :create]
   end
 
   # Example of regular route:

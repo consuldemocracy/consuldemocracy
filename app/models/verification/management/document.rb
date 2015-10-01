@@ -1,4 +1,4 @@
-class Verification::OnSite
+class Verification::Management::Document
   include ActiveModel::Model
 
   attr_accessor :document_type

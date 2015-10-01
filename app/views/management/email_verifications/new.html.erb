@@ -1,6 +1,6 @@
 <p class="account-info">
-  <%= t("management.document_type_label") %> <strong><%= humanize_document_type(@verification_on_site_email.document_type) %></strong>
-  <%= t("management.document_number") %> <strong><%= @verification_on_site_email.document_number %></strong>
+  <%= t("management.document_type_label") %> <strong><%= humanize_document_type(@email_verification.document_type) %></strong>
+  <%= t("management.document_number") %> <strong><%= @email_verification.document_number %></strong>
 </p>
 
 <div class="alert-box success radius">
@@ -13,7 +13,9 @@
 
     <p><%= t("management.users.has_account_note") %></p>
 
-    <%= form_for @verification_on_site_email, url: management_on_site_verification_emails_path do |f| %>
+    <%= form_for @email_verification,
+        as: :email_verification,
+        url: management_email_verifications_path do |f| %>
       <%= f.hidden_field :document_type %>
       <%= f.hidden_field :document_number %>
       <%= f.text_field :email, label: false, placeholder: t('management.users.has_account_placeholder') %>
