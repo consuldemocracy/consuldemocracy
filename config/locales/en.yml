@@ -340,6 +340,9 @@ en:
     facebook:
       sign_in: Sign in with Facebook
       sign_up: Sign up with Facebook
+    participa:
+      sign_in: Sign in with Participa
+      sign_up: Sign up with Participa
     google_oauth2:
       sign_in: Sign in with Google
       sign_up: Sign up with Google

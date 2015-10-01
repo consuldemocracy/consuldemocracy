@@ -1361,6 +1361,45 @@ table {
   }
 }
 
+.button.button-participa {
+  background: #612D62;
+
+  &:before {
+    background: #612D62;
+    content: "P";
+    font-family: "icons" !important;
+    font-size: rem-calc(24);
+    left: 0;
+    line-height: $line-height*2;
+    padding: 0 rem-calc(20);
+    position: absolute;
+    top: 0;
+  }
+}
+
+.social-share-button-participa {
+  background: #612D62;
+  color: white;
+  height: rem-calc(48);
+  position: relative;
+  width: rem-calc(48);
+
+  &:before {
+    content: "P";
+    font-family: "icons" !important;
+    font-size: rem-calc(24);
+    left: 50%;
+    line-height: $line-height*2;
+    margin-left: rem-calc(-11);
+    position: absolute;
+    top: 0;
+  }
+
+  &:hover {
+    color: #814D82;
+  }
+}
+
 .button.button-google {
   background: #DE4C34;
 

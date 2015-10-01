@@ -50,7 +50,7 @@ feature 'Proposals' do
     expect(page.html).to include "<title>#{proposal.title}</title>"
 
     within('.social-share-button') do
-      expect(page.all('a').count).to be(3) # Twitter, Facebook, Google+
+      expect(page.all('a').count).to be(4) # Twitter, Facebook, Participa, Google+
     end
   end
 

@@ -25,6 +25,8 @@ gem 'omniauth'
 gem 'omniauth-twitter'
 gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2', '~> 0.2.7'
+gem 'omniauth-openid'
+gem 'omniauth-openid-connect'
 
 gem 'kaminari'
 gem 'ancestry'
