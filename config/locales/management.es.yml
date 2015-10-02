@@ -34,6 +34,7 @@ es:
       has_account_placeholder: "Introduce el email de registro"
       has_account_send_email: "Enviar email de verificación"
       email_sent: "Para terminar de verificar esta cuenta es necesario que haga clic en el enlace que le hemos enviado a la dirección de correo que figura arriba. Este paso es necesario para confirmar que dicha cuenta de usuario es suya."
+      document_mismatch: "Ese email corresponde a un usuario que ya tiene asociado el documento %{document_number}(%{document_type})"
       create_user: "Crear nueva cuenta de usuario"
       create_user_info: "Procedemos a crear un usuario con la siguiente información:"
       create_user_submit: "Crear usuario"
