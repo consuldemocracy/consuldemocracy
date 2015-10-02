@@ -7,8 +7,7 @@ class Management::EmailVerificationsController < Management::BaseController
   def create
     @email_verification = Verification::Management::Email.new(email_verification_params)
 
-    if @email_verification.valid?
-      @email_verification.send_email
+    if @email_verification.save
       render :sent
     else
       render :new
