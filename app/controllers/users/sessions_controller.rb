@@ -4,7 +4,7 @@ class Users::SessionsController < Devise::SessionsController
     if stored_path_allows_welcome_screen? && resource.show_welcome_screen?
       welcome_path
     else
-      root_path
+      super
     end
   end
 
