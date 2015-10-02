@@ -20,7 +20,7 @@ feature 'Level three verification' do
       click_button "Send code"
     end
 
-    expect(page).to have_content 'Security code confirmation'
+    expect(page).to have_content 'Phone confirmation'
 
     user = user.reload
     fill_in 'sms_confirmation_code', with: user.sms_confirmation_code
@@ -75,7 +75,7 @@ feature 'Level three verification' do
     fill_in 'sms_phone', with: "611111111"
     click_button 'Send'
 
-    expect(page).to have_content 'Security code confirmation'
+    expect(page).to have_content 'Phone confirmation'
 
     user = user.reload
     fill_in 'sms_confirmation_code', with: user.sms_confirmation_code
@@ -83,14 +83,8 @@ feature 'Level three verification' do
 
     expect(page).to have_content 'Correct code'
 
-    click_button "Send me a letter with the code"
+    click_link "Request a letter"
 
-    expect(page).to have_content "Thank you for requesting a maximum security code in a few days we will send it to the address on your census data."
-
-    user.reload
-    fill_in "letter_verification_code", with: user.letter_verification_code
-    click_button "Send"
-
-    expect(page).to have_content "We have not sent you the letter with the code yet"
+    expect(page).to have_content "Before voting you'll receive a letter whith the instructions for verify your account."
   end
 end

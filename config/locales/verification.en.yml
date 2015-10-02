@@ -76,7 +76,7 @@ en:
         office: "Verify in any %{office}"
         offices: "Office of Citizen"
         offices_url: "http://www.madrid.es/portales/munimadrid/es/Inicio/El-Ayuntamiento/Atencion-al-ciudadano/Oficinas-de-Atencion-al-Ciudadano?vgnextfmt=default&vgnextchannel=5b99cde2e09a4310VgnVCM1000000b205a0aRCRD"
-        send_letter: "request a letter"
+        send_letter: "Request a letter"
         go_to_index: "See proposals and debates"
       create:
         flash:
@@ -85,7 +85,7 @@ en:
           offices_url: "http://www.madrid.es/portales/munimadrid/es/Inicio/El-Ayuntamiento/Atencion-al-ciudadano/Oficinas-de-Atencion-al-Ciudadano?vgnextfmt=default&vgnextchannel=5b99cde2e09a4310VgnVCM1000000b205a0aRCRD"
       edit:
         title: "Letter requested"
-        see_all: "Ver debates y propuestas"
+        see_all: "See proposals and debates"
       update:
         flash:
           success: "Correct code. Your account is verified"
