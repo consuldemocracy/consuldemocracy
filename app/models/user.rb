@@ -159,7 +159,7 @@ class User < ActiveRecord::Base
   end
 
   def show_welcome_screen?
-    sign_in_count == 1 && unverified? && !organization
+    sign_in_count == 1 && unverified? && !organization && !administrator?
   end
 
   private
