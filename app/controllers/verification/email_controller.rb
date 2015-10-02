@@ -6,7 +6,11 @@ class Verification::EmailController < ApplicationController
 
   def show
     if Verification::Email.find(current_user, params[:email_verification_token])
-      current_user.update(verified_at: Time.now)
+
+      current_user.update(verified_at: Time.now,
+                          document_number: current_user.document_number || current_user.unconfirmed_document_number,
+                          residence_verified_at: current_user.residence_verified_at || Time.now)
+
       redirect_to account_path, notice: t('verification.email.show.flash.success')
     else
       redirect_to verified_user_path, alert: t('verification.email.show.alert.failure')

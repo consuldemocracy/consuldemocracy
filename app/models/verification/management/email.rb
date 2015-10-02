@@ -21,7 +21,11 @@ class Verification::Management::Email
     return false unless valid?
 
     plain_token, encrypted_token = Devise.token_generator.generate(User, :email_verification_token)
-    user.update(email_verification_token: plain_token)
+
+    user.update(document_type: document_type,
+                unconfirmed_document_number: document_number,
+                email_verification_token: plain_token)
+
     Mailer.email_verification(user, email, encrypted_token, document_type, document_number).deliver_later
     true
   end
