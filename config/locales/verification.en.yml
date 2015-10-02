@@ -2,10 +2,15 @@ en:
   verification:
     back: "Back to my account"
     step_1: "Residence"
-    step_2: "Confirmation code"
+    step_2: "SMS confirmation"
     step_3: "Final verification"
     alert:
       lock: "You have reached the maximum number of verification tries. Please try again later."
+    user_permission_info: "Verifing your information you'll be able to..."
+    user_permission_debates: "Participar en debates"
+    user_permission_proposal: "Crear nuevas propuestas"
+    user_permission_support_proposal: "Apoyar propuestas*"
+    user_permission_votes: "Participar en las votaciones finales*"
     residence:
       new:
         title: "Verify residence"
@@ -17,6 +22,7 @@ en:
         document_number: "Document number"
         date_of_birth: "Date of birth"
         postal_code: "Postal code"
+        postal_code_note: "To verify your account you must be on Madrid city Census"
         accept_terms_text: "I accept %{terms_url} to access the city Census"
         terms: "the terms"
         verify_residence: "Verify residence"
@@ -33,15 +39,16 @@ en:
       new:
         title: "Phone verification"
         phone: "Enter your phone for recive the code"
+        phone_note: "We only user your phone for send to you a code, we never contact to you."
         submit_button: "Send"
       create:
         flash:
           success: "Enter the confirmation code we have sent your phone"
       edit:
-        title: "Security code confirmation"
+        title: "Phone confirmation"
         confirmation_code: "Code confirmation"
         resend_sms_text: "You have not received the confirmation code in your phone?"
-        resend_sms_link: "Click here to send the confirmation code again"
+        resend_sms_link: "Request a new code"
         submit_button: "Send"
       update:
         error: "Incorrect confirmation code"
@@ -64,22 +71,20 @@ en:
     letter:
       new:
         title: "Final Verification"
-        explanation_html:
-          "<p>Congratulations! You can now participate in discussions or support proposals of others.</p><p>To finish we need to verify your account completely provide you with a <b>maximum security code</b>, we ensure that no one is using your data on your behalf.</p><p>This requirement is essential to participate in final votes on motions. This can approach any <b>Office of Citizen</b> where you will verify in person, or in case you is impossible, we can send you a letter home with the code.</p>"
-        offices: "See Office of Citizen"
+        user_permission_info: "With your account you can..."
+        explanation: "For participate on final voting you can:"
+        office: "Verify in any %{office}"
+        offices: "Office of Citizen"
         offices_url: "http://www.madrid.es/portales/munimadrid/es/Inicio/El-Ayuntamiento/Atencion-al-ciudadano/Oficinas-de-Atencion-al-Ciudadano?vgnextfmt=default&vgnextchannel=5b99cde2e09a4310VgnVCM1000000b205a0aRCRD"
-        send_letter: "Send me a letter with the code"
-        send_code: "Send"
+        send_letter: "request a letter"
+        go_to_index: "See proposals and debates"
       create:
         flash:
-          success_html: "Thank you for requesting a maximum security code in a few days we will send it to the address on your census data."
-          offices: "Oficinas de Atención al Ciudadano"
+          success_html: "Before voting you'll receive a letter whith the instructions for verify your account.<br> Remember you can verify your information in any %{offices}."
+          offices: "Office of Citizen"
           offices_url: "http://www.madrid.es/portales/munimadrid/es/Inicio/El-Ayuntamiento/Atencion-al-ciudadano/Oficinas-de-Atencion-al-Ciudadano?vgnextfmt=default&vgnextchannel=5b99cde2e09a4310VgnVCM1000000b205a0aRCRD"
       edit:
-        title: "Empieza a participar"
-        confirmation_code: "Introduce aquí el código de máxima seguridad cuando recibas tu carta"
-        explanation_html:
-          "<p><b>¡Felicidades! Ya puedes participar en debates o apoyar propuestas de otras personas.</p>"
+        title: "Letter requested"
         see_all: "Ver debates y propuestas"
       update:
         flash:
