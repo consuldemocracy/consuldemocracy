@@ -56,3 +56,13 @@ es:
       organization:
         name: Nombre de organización
         responsible_name: Persona responsable del colectivo
+    errors:
+      models:
+        debate:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: los temas deben ser menor o igual que %{count}
+        proposal:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: los temas deben ser menor o igual que %{count}

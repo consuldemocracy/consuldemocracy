@@ -34,3 +34,13 @@ en:
       organization:
         name: Organization name
         responsible_name: Person in charge
+    errors:
+      models:
+        debate:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: tags must be less than or equal to %{count}
+        proposal:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: tags must be less than or equal to %{count}
