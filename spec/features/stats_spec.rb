@@ -42,15 +42,9 @@ feature 'Stats' do
     end
 
     scenario 'Users' do
-      Administrator.destroy_all
-      User.all.map(&:really_destroy!)
-
       1.times { create(:user, :level_three) }
       2.times { create(:user, :level_two) }
       3.times { create(:user) }
-
-      admin = create(:administrator)
-      login_as(admin.user)
 
       visit admin_stats_path
 
