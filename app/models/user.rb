@@ -67,8 +67,8 @@ class User < ActiveRecord::Base
     # Create the user if it's a new registration
     if user.nil?
       user = User.new(
-        username: auth.info.nickname || auth.extra.raw_info.name.parameterize('-') || auth.uid,
-        email: email ? email : "#{OMNIAUTH_EMAIL_PREFIX}-#{auth.uid}-#{auth.provider}.com",
+        username: auth.info.nickname || auth.info.name || auth.extra.raw_info.name.parameterize('-') || auth.uid ,
+        email: email ? email : auth.info.email ? auth.info.email : "#{OMNIAUTH_EMAIL_PREFIX}-#{auth.uid}-#{auth.provider}.com",
         password: Devise.friendly_token[0,20],
         terms_of_service: '1'
       )

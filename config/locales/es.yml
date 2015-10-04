@@ -340,7 +340,7 @@ es:
     facebook:
       sign_in: Entra con Facebook
       sign_up: Regístrate con Facebook
-    participa:
+    openid:
       sign_in: Entra con Participa
       sign_up: Regístrate con Participa
     google_oauth2:
