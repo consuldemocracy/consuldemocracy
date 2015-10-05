@@ -646,7 +646,8 @@
     .comment-votes {
       color: $text-medium;
       font-weight: lighter;
-      margin: rem-calc(8) rem-calc(12) rem-calc(6) 0;
+      line-height: rem-calc(24);
+      margin: rem-calc(10) rem-calc(12) rem-calc(6) 0;
 
       a {
         color: $text-light;

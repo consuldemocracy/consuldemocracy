@@ -13,39 +13,41 @@
   </head>
 
   <body class="auth-page">
-
-    <div class="row">
-      <div class="small-12 medium-8 large-5 column small-centered">
-        <h1>
-          <%= link_to root_path do %>
-            <%= image_tag('header_logo_madrid.png', class: 'show-for-medium-up left', size: '96x96') %>
-            <%= t("layouts.header.open_gov", open: "#{t('layouts.header.open')}").html_safe %>
-          <% end %>
-        </h1>
-      </div>
-    </div>
-
-    <div class="row auth">
-      <div class="small-12 medium-8 large-5 column small-centered">
-        <div class="panel">
-          <% if notice %>
-            <div data-alert class="alert-box radius success">
-              <a href="#" class="close" title="<%= t("application.close") %>">&times;</a>
-                <%= notice %>
-            </div>
-          <% end %>
-
-          <% if alert %>
-            <div data-alert class="alert-box radius warning">
-              <a href="#" class="close" title="<%= t("application.close") %>">&times;</a>
-                <%= alert %>
-            </div>
-          <% end %>
-
-          <%= yield %>
-
+    <div class="wrapper">
+      <div class="row">
+        <div class="small-12 medium-8 large-5 column small-centered">
+          <h1>
+            <%= link_to root_path do %>
+              <%= image_tag('header_logo_madrid.png', class: 'show-for-medium-up left', size: '96x96') %>
+              <%= t("layouts.header.open_gov", open: "#{t('layouts.header.open')}").html_safe %>
+            <% end %>
+          </h1>
         </div>
       </div>
+
+      <div class="row auth">
+        <div class="small-12 medium-8 large-5 column small-centered">
+          <div class="panel">
+            <% if notice %>
+              <div data-alert class="alert-box radius success">
+                <a href="#" class="close" title="<%= t("application.close") %>">&times;</a>
+                  <%= notice %>
+              </div>
+            <% end %>
+
+            <% if alert %>
+              <div data-alert class="alert-box radius warning">
+                <a href="#" class="close" title="<%= t("application.close") %>">&times;</a>
+                  <%= alert %>
+              </div>
+            <% end %>
+
+            <%= yield %>
+
+          </div>
+        </div>
+      </div>
+      <div class="push"></div>
     </div>
 
     <div class="footer">

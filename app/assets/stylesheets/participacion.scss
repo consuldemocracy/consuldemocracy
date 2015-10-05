@@ -277,6 +277,10 @@ h6 {
   margin: rem-calc(24) 0;
 }
 
+.text-medium {
+  font-size: rem-calc(16) !important;
+}
+
 // 04. Header
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -1074,6 +1078,10 @@ label.error, label.error a {
     margin-bottom: $line-height;
   }
 
+  h1.avatar {
+    margin-left: rem-calc(12);
+  }
+
   h3 {
     clear: both;
     font-size: rem-calc(20);
@@ -1108,6 +1116,25 @@ label.error, label.error a {
   .verify-account {
     padding-right: rem-calc(12);
   }
+
+  .final-votes-info {
+    background: $warning-bg;
+    border: 1px solid $warning-border;
+    color: $warning-color;
+    margin-top: rem-calc(24);
+    padding: rem-calc(12);
+
+    ul li {
+      margin: rem-calc(12) 0;
+    }
+
+    .icon-box {
+      color: #D4A26D;
+      font-size: rem-calc(120);
+      line-height: rem-calc(120);
+      vertical-align: top;
+    }
+  }
 }
 
 img.avatar, img.admin-avatar, img.moderator-avatar {
@@ -1131,6 +1158,40 @@ img.initialjs-avatar {
 .user-deleted {
   @extend .author-deleted;
   top: -9px;
+}
+
+.user-permissions {
+
+  p {
+    span {
+      color: $text-medium;
+      font-size: rem-calc(12);
+    }
+  }
+
+  ul {
+    list-style-type: none;
+    margin-bottom: 0;
+    margin-left: 0;
+
+    li {
+      font-size: rem-calc(14);
+      margin-bottom: rem-calc(12);
+
+      span {
+        color: $text-medium;
+        font-size: rem-calc(12);
+      }
+
+      .icon-check {
+        color: $check;
+      }
+
+      .icon-x {
+        color: $delete;
+      }
+    }
+  }
 }
 
 // 11. Filters & search
