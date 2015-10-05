@@ -1,0 +1,35 @@
+<div id="<%= dom_id(proposal) %>" class="proposal clear">
+  <div class="panel">
+    <div class="row">
+
+      <div class="small-12 medium-9 column">
+        <div class="proposal-content">
+          <span class="label-proposal left"><%= t("proposals.proposal.proposal") %></span>
+          <i class="icon-proposals"></i>
+          <h3><%= link_to proposal.title, "#" %></h3>
+
+          <p class="proposal-info">
+            <i class="icon-comments"></i>&nbsp;
+            <span class="bullet">&nbsp;&bull;&nbsp;</span>
+            <%= l proposal.created_at.to_date %>
+            <span class="bullet">&nbsp;&bull;&nbsp;</span>
+            <span class="author">
+              <%= proposal.try(:author).try(:name) %>
+            </span>
+          </p>
+
+          <div class="proposal-description">
+            <p><%= proposal.summary %></p>
+            <div class="truncate"></div>
+          </div>
+
+          <%= render "shared/tags", taggable: proposal, limit: 5 %>
+        </div>
+      </div>
+
+      <div id="<%= dom_id(proposal) %>_votes" class="small-12 medium-3 column text-center">
+        <%= render 'votes', proposal: proposal %>
+      </div>
+    </div>
+  </div>
+</div>
