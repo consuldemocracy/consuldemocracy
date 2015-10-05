@@ -19,8 +19,8 @@ class Management::ProposalsController < Management::BaseController
       @proposal = Proposal.find(params[:id])
     end
 
-    def set_proposal_votes(proposals)
-      @proposal_votes = current_user ? current_user.proposal_votes(proposals) : {}
+    def proposal_params
+      params.require(:proposal).permit(:title, :question, :summary, :description, :external_url, :video_url, :responsible_name, :tag_list, :terms_of_service, :captcha, :captcha_key)
     end
 
     def current_user
