@@ -1,4 +1,4 @@
-<%= form_for(@proposal) do |f| %>
+<%= form_for(@proposal, url: form_url) do |f| %>
   <%= render 'shared/errors', resource: @proposal %>
 
   <div class="row">

@@ -12,6 +12,6 @@
 
     <h1><%= t("proposals.edit.editing") %></h1>
 
-    <%= render "form" %>
+    <%= render "form", form_url: proposal_url(@proposal) %>
   </div>
 </div>
