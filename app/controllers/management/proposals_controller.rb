@@ -1,13 +1,12 @@
 class Management::ProposalsController < Management::BaseController
   skip_before_action :verify_manager
   include HasOrders
+  include CommentableActions
 
   before_action :set_proposal, only: :vote
-  has_orders %w{hot_score confidence_score created_at most_commented random}, only: :index
+  before_action :parse_search_terms, only: :index
 
-  def index
-    @proposals = Proposal.all.limit(10).page(params[:page])
-  end
+  has_orders %w{hot_score confidence_score created_at most_commented random}, only: :index
 
   def vote
     @proposal.register_vote(current_user, 'yes')
@@ -28,6 +27,10 @@ class Management::ProposalsController < Management::BaseController
       #CHANGE ME
       #Should be user being managed
       User.first
+    end
+
+    def resource_model
+      Proposal
     end
 
 end
