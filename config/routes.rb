@@ -169,6 +169,7 @@ Rails.application.routes.draw do
     get 'sign_in', to: 'sessions#create'
 
     resources :sessions, only: :create
+    resources :proposals, only: :index
   end
 
   # Example of regular route:

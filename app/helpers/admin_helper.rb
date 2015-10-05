@@ -1,7 +1,7 @@
 module AdminHelper
 
   def side_menu
-    render "/#{namespace}/menu"
+    #render "/#{namespace}/menu"
   end
 
   def official_level_options
