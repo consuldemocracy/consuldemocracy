@@ -90,6 +90,24 @@ feature 'Tags' do
     expect(page).to have_content 'Impuestos'
   end
 
+  scenario 'Create with too many tags' do
+    user = create(:user)
+    login_as(user)
+
+    visit new_debate_path
+    fill_in 'debate_title', with: 'Title'
+    fill_in 'debate_description', with: 'Description'
+    fill_in 'debate_captcha', with: correct_captcha_text
+    check 'debate_terms_of_service'
+
+    fill_in 'debate_tag_list', with: "Impuestos, Economía, Hacienda, Sanidad, Educación, Política, Igualdad"
+
+    click_button 'Start a debate'
+
+    expect(page).to have_content '1 error prohibited this debate from being saved:'
+    expect(page).to have_content 'tags must be less than or equal to 6'
+  end
+
   scenario 'Update' do
     debate = create(:debate, tag_list: 'Economía')
 

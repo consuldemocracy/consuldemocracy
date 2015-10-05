@@ -339,13 +339,13 @@ feature 'Debates' do
 
   describe 'Limiting tags shown' do
     scenario 'Index page shows up to 5 tags per debate' do
-      tag_list = ["Hacienda", "Economía", "Medio Ambiente", "Corrupción", "Fiestas populares", "Prensa", "Huelgas"]
+      tag_list = ["Hacienda", "Economía", "Medio Ambiente", "Corrupción", "Fiestas populares", "Prensa"]
       create :debate, tag_list: tag_list
 
       visit debates_path
 
       within('.debate .tags') do
-        expect(page).to have_content '2+'
+        expect(page).to have_content '1+'
       end
     end
 
