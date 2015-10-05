@@ -55,9 +55,10 @@ feature 'Debates' do
     debate = create(:debate, title: 'Test Debate 1')
 
     visit debates_path(order: :hot_score, page: 1)
-    find(:xpath, "//a[@href='/debates/#{debate.id}']", match: :first).click
+    first(:link, debate.title).click
+    link_text = find_link('Back')[:href]
 
-    expect(find_link('Back')[:href]).to include(debates_path order: :hot_score, page: 1)
+    expect(link_text).to include(debates_path order: :hot_score, page: 1)
   end
 
   scenario 'Create' do
