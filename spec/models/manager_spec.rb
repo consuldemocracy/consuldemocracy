@@ -20,26 +20,26 @@ describe Manager do
     end
   end
 
-  describe "self.valid_auth?" do
+  describe "self.valid_manager" do
     before(:all) { create(:manager, username: "Silvia" ,password: "supersecret") }
 
     it "is false when username is blank" do
-      expect(Manager.valid_auth?(nil, "supersecret")).to be false
+      expect(Manager.valid_manager(nil, "supersecret")).to be_blank
     end
     it "is false when password is blank" do
-      expect(Manager.valid_auth?("Silvia", nil)).to be false
+      expect(Manager.valid_manager("Silvia", nil)).to be_blank
     end
 
     it "is false if manager unexistent" do
-      expect(Manager.valid_auth?("Manager", "supersecret")).to be false
+      expect(Manager.valid_manager("Manager", "supersecret")).to be_blank
     end
 
     it "is false if wrong password unexistent" do
-      expect(Manager.valid_auth?("Silvia", "wrong")).to be false
+      expect(Manager.valid_manager("Silvia", "wrong")).to be_blank
     end
 
     it "is true if right username/password combination" do
-      expect(Manager.valid_auth?("Silvia", "supersecret")).to be true
+      expect(Manager.valid_manager("Silvia", "supersecret")).to be_present
     end
   end
 
