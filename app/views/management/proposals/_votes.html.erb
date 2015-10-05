@@ -1,0 +1,9 @@
+<div class="supports">
+  <div class="in-favor">
+    <%= link_to vote_management_proposal_path(proposal, value: 'yes'),
+        class: "button button-support tiny radius expand",
+        title: t('proposals.proposal.support_title'), method: "post" do %>
+      <%= t("proposals.proposal.support") %>
+    <% end %>
+  </div>
+</div>
