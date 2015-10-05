@@ -26,6 +26,9 @@ es:
       user_search:
         placeholder: 'Buscar usuario por nombre o email'
         button: 'Buscar'
+      proposal_search:
+        placeholder: 'Buscar propuestas por título, descripción o pregunta'
+        button: 'Buscar'
     organizations:
       index:
         title: Organizaciones
