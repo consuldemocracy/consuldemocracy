@@ -1,7 +1,4 @@
-<p class="account-info">
-  <%= t("management.document_type_label") %> <strong><%= humanize_document_type(@email_verification.document_type) %></strong>
-  <%= t("management.document_number") %> <strong><%= @email_verification.document_number %></strong>
-</p>
+<%= render 'management/account_info.html', verification: @email_verification %>
 
 <div class="alert-box success radius">
   <%= t("management.users.census_success") %>

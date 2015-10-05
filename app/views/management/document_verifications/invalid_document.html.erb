@@ -1,27 +1,15 @@
-<p class="account-info">
-  <%= t("management.document_type_label") %> <strong><%= humanize_document_type(@document_verification.document_type) %></strong>
-  <%= t("management.document_number") %> <strong><%= @document_verification.document_number %></strong>
-</p>
+<%= render 'management/account_info.html', verification: @document_verification %>
 
 <div class="alert-box alert radius">
   <%= t("management.users.census_error") %>
 </div>
 
-<div class="user-permissions">
+<%= render 'management/user_permissions',
+      message: t("management.users.census_error_info"),
+      permissions: [:debates, :proposal] %>
 
-  <p><%= t("management.users.census_error_info") %></p>
-
-  <ul>
-    <li><i class="icon-check"></i> <%= t("management.users.user_permission_debates") %></li>
-    <li><i class="icon-check"></i> <%= t("management.users.user_permission_proposal") %></li>
-    <li><i class="icon-x"></i> <%= t("management.users.user_permission_support_proposal") %></li>
-    <li><i class="icon-x"></i> <%= t("management.users.user_permission_votes") %></li>
-  </ul>
-
-  <p>
-    <%= t("management.users.has_not_account_html",
-        url: link_to(t("management.users.portal_url"), t("management.users.portal_url"),
-        target: "_blank")).html_safe %>
-  </p>
-
-</div>
+<p>
+  <%= t("management.users.has_not_account_html",
+      url: link_to(t("management.users.portal_url"), t("management.users.portal_url"),
+      target: "_blank")).html_safe %>
+</p>

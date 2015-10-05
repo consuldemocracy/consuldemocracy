@@ -1,26 +1,14 @@
-<p class="account-info">
-  <%= t("management.document_type_label") %> <strong><%= humanize_document_type(@email_verification.document_type) %></strong>
-  <%= t("management.document_number") %> <strong><%= @email_verification.document_number %></strong>
-  <%= t("management.username_label") %> <strong><%= @email_verification.user.username %></strong>
-  <%= t("management.email_label") %> <strong><%= @email_verification.user.email %></strong>
-</p>
+<%= render 'management/account_info.html', verification: @email_verification %>
 
 <div class="alert-box success radius">
   <%= t("management.users.email_sent") %>
 </div>
 
-<div class="user-permissions">
+<%= render 'management/user_permissions',
+      message: t("management.users.census_success_info"),
+      permissions: [:debates, :proposal, :support_proposal, :votes] %>
 
-  <p><%= t("management.users.census_success_info") %></p>
-
-  <ul>
-    <li><i class="icon-check"></i> <%= t("management.users.user_permission_debates") %></li>
-    <li><i class="icon-check"></i> <%= t("management.users.user_permission_proposal") %></li>
-    <li><i class="icon-check"></i> <%= t("management.users.user_permission_support_proposal") %></li>
-    <li><i class="icon-check"></i> <%= t("management.users.user_permission_votes") %></li>
-  </ul>
-
-</div>
-
-<a href="javascript:window.print();" class="button warning radius"><%= t("management.print_info") %></a>
+<p>
+  <a href="javascript:window.print();" class="button warning radius"><%= t("management.print_info") %></a>
+</p>
 

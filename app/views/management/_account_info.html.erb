@@ -1,0 +1,8 @@
+<p class="account-info">
+  <%= t("management.document_type_label") %> <strong><%= humanize_document_type(verification.document_type) %></strong>
+  <%= t("management.document_number") %> <strong><%= verification.document_number %></strong>
+  <% if verification.user? %>
+    <%= t("management.username_label") %> <strong><%= verification.user.username %></strong>
+    <%= t("management.email_label") %> <strong><%= verification.user.email %></strong>
+  <% end %>
+</p>
