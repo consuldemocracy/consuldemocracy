@@ -18,11 +18,13 @@ FactoryGirl.define do
       unconfirmed_phone "611111111"
       confirmed_phone "611111111"
       sms_confirmation_code "1234"
+      document_type "1"
       document_number "12345678Z"
     end
 
     trait :level_three do
       verified_at Time.now
+      document_type "1"
       document_number "12345678Z"
     end
 
