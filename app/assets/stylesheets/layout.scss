@@ -1767,6 +1767,19 @@ table {
   }
 }
 
+.verify {
+  margin: rem-calc(24) 0 rem-calc(48);
+
+  h1 {
+    color: $check;
+
+    .icon-check {
+      line-height: rem-calc(30);
+      vertical-align: middle;
+    }
+  }
+}
+
 // 18. Comments
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 

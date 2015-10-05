@@ -19,3 +19,10 @@ en:
       "Transparency"
     opendata:
       "Open Data"
+    verify:
+      title: "Verify your account"
+      info: "Introduce your access data and the code you received in letter."
+      email: "Email"
+      password: "Password"
+      code: "Secure code"
+      submit: "Verify my account"
