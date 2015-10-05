@@ -1,28 +1,28 @@
 <%= render 'management/account_info.html', verification: @email_verification %>
 
 <div class="alert-box success radius">
-  <%= t("management.users.census_success") %>
+  <%= t("management.email_verifications.document_found_in_census") %>
 </div>
 
 <ul>
   <li>
-    <strong><%= t("management.users.has_account") %></strong>
+    <strong><%= t("management.email_verifications.if_existing_account") %></strong>
 
-    <p><%= t("management.users.has_account_note") %></p>
+    <p><%= t("management.email_verifications.introduce_email") %></p>
 
     <%= form_for @email_verification,
         as: :email_verification,
         url: management_email_verifications_path do |f| %>
       <%= f.hidden_field :document_type %>
       <%= f.hidden_field :document_number %>
-      <%= f.text_field :email, label: false, placeholder: t('management.users.has_account_placeholder') %>
+      <%= f.text_field :email, label: false, placeholder: t('management.email_verifications.email_placeholder') %>
 
-      <%= f.submit t("management.users.has_account_send_email"), class: "button success radius" %>
+      <%= f.submit t("management.email_verifications.send_email"), class: "button success radius" %>
     <% end %>
   </li>
 
   <li>
-    <strong><%= t("management.users.has_not_account") %></strong>
+    <strong><%= t("management.emails_verifications.if_no_existing_account") %></strong>
 
     <p class="margin-top">
       <a href="javascript:window.print();" class="button warning radius"><%= t("management.print_info") %></a>

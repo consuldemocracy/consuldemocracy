@@ -1,12 +1,12 @@
 <%= render 'management/account_info.html', verification: @email_verification %>
 
 <div class="alert-box success radius">
-  <%= t("management.users.email_sent") %>
+  <%= t("management.email_verifications.email_sent_instructions") %>
 </div>
 
 <%= render 'management/user_permissions',
-      message: t("management.users.census_success_info"),
-      permissions: [:debates, :proposal, :support_proposal, :votes] %>
+      message: t("management.email_verifications.document_found_in_census"),
+      permissions: [:debates, :create_proposals, :support_proposals, :vote_proposals] %>
 
 <p>
   <a href="javascript:window.print();" class="button warning radius"><%= t("management.print_info") %></a>
