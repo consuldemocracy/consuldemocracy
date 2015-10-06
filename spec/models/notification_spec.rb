@@ -41,4 +41,14 @@ describe Notification do
       expect(notification.timestamp).to eq comment.created_at
     end
   end
+
+  describe "#mark_as_read" do
+    it "set up read flag to true" do
+      notification = create :notification
+      expect(notification.read).to be false
+
+      notification.mark_as_read!
+      expect(notification.read).to be true
+    end
+  end
 end

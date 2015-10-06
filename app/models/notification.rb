@@ -9,4 +9,8 @@ class Notification < ActiveRecord::Base
   def timestamp
     activity.trackable.created_at
   end
+
+  def mark_as_read!
+    update_attribute :read, true
+  end
 end
