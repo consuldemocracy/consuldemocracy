@@ -12,7 +12,7 @@ class Users::SessionsController < Devise::SessionsController
 
     def stored_path_allows_welcome_screen?
       stored_path = session[stored_location_key_for(resource)]
-      stored_path[0..5] != "/email"
+      stored_path && stored_path[0..5] != "/email"
     end
 
 end
