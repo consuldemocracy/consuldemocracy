@@ -1,0 +1,11 @@
+<div class="row">
+  <ul>
+    <% @notifications.each do |notification| %>
+    <li>
+      <time><%= l notification.timestamp.to_datetime, format: :datetime %></time>&nbsp;&bull;&nbsp;
+      <%= notification.activity.username %> <%= notification_text_for(notification) %> 
+      <%= link_to notification.activity.trackable.debate.title, notification.activity.trackable.debate %>
+    </li>
+    <% end %>
+  </ul>
+</div>

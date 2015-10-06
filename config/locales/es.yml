@@ -267,6 +267,9 @@ es:
         zero: "Sin votos"
         one: "1 voto"
         other: "%{count} votos"
+    notifications:
+      commented_on_your_debate: "ha comentado en tu debate"
+      replied_to_your_comment: "ha respondido a tu comentario en"
   comments_helper:
     comment_link: "Comentar"
     comment_button: "Publicar comentario"

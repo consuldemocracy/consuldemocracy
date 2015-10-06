@@ -74,6 +74,9 @@ Rails.application.routes.draw do
   resource :account, controller: "account", only: [:show, :update, :delete] do
     collection { get :erase }
   end
+
+  resources :notifications, only: :index
+
   resource :verification, controller: "verification", only: [:show]
 
   scope module: :verification do
