@@ -4,6 +4,7 @@ class NotificationsController < ApplicationController
 
   def index
     @notifications = current_user.notifications.unread.recent.for_render
+    @notifications.each { |notification| notification.mark_as_read! }
   end
 
 end

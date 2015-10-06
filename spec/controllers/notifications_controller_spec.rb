@@ -4,13 +4,18 @@ describe NotificationsController do
 
   describe "#index" do
     let(:user) { create :user }
-    let(:notification) { create :notification, user: user }
 
-    it "assigns @notifications" do
+    it "mark all notifications as read" do
+      notifications = [create(:notification, user: user), create(:notification, user: user)]
+      Notification.all.each do |notification|
+        expect(notification.read).to be false
+      end
+
       sign_in user
-
-      get :index, debate: { title: 'A sample debate', description: 'this is a sample debate', terms_of_service: 1 }
-      expect(assigns(:notifications)).to eq user.notifications.unread.recent.for_render
+      get :index
+      Notification.all.each do |notification|
+        expect(notification.read).to be true
+      end
     end
   end
 end
