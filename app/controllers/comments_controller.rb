@@ -9,6 +9,7 @@ class CommentsController < ApplicationController
   def create
     if @comment.save
       CommentNotifier.new(comment: @comment).process
+      track_activity @comment
     else
       render :new
     end

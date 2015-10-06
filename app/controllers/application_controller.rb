@@ -108,4 +108,12 @@ class ApplicationController < ActionController::Base
         store_location_for(:user, request.path)
       end
     end
+
+    def track_activity(trackable)
+      if trackable.is_a? Comment
+        action = trackable.root? ? "debate_comment" : "comment_reply"
+        activity = current_user.activities.create! action: action, trackable: trackable
+        add_notifications_for activity
+      end
+    end
 end
