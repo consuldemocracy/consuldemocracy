@@ -268,7 +268,7 @@ en:
         one: "1 vote"
         other: "%{count} votes"
     notifications:
-      commented_on_your_debate: "commented on yout debate"
+      commented_on_your_debate: "commented on your debate"
       replied_to_your_comment: "replied to your comment on"
   comments_helper:
     comment_link: "Comment"
