@@ -163,7 +163,13 @@ Rails.application.routes.draw do
     end
   end
 
+  namespace :management do
+    root to: "dashboard#index"
 
+    get 'sign_in', to: 'sessions#create'
+
+    resources :sessions, only: :create
+  end
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

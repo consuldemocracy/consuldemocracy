@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150926115929) do
+ActiveRecord::Schema.define(version: 20150930082311) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -167,6 +167,16 @@ ActiveRecord::Schema.define(version: 20150926115929) do
   end
 
   add_index "locks", ["user_id"], name: "index_locks_on_user_id", using: :btree
+
+  create_table "managers", force: :cascade do |t|
+    t.string   "username",        null: false
+    t.string   "password_digest", null: false
+    t.datetime "last_login_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "managers", ["username"], name: "index_managers_on_username", using: :btree
 
   create_table "moderators", force: :cascade do |t|
     t.integer "user_id"

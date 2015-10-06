@@ -218,6 +218,11 @@ FactoryGirl.define do
     user
   end
 
+  factory :manager do
+    sequence(:username) { |n| "manager#{n}" }
+    password            'supersecret'
+  end
+
   factory :organization do
     user
     responsible_name "Johnny Utah"
