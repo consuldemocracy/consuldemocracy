@@ -173,6 +173,10 @@ Rails.application.routes.draw do
       member do
         post :vote
       end
+
+      collection do
+        get :print
+      end
     end
   end
 
