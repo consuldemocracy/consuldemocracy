@@ -244,4 +244,9 @@ FactoryGirl.define do
     started_at DateTime.now
   end
 
+  factory :activity do
+    association :user, factory: :user
+    association :trackable, factory: :comment
+  end
+
 end

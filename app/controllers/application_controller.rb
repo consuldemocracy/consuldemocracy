@@ -105,4 +105,12 @@ class ApplicationController < ActionController::Base
     def verify_verified!
       redirect_to(account_path, notice: t('verification.redirect_notices.already_verified')) if current_user.level_three_verified?
     end
+
+    def track_activity(trackable)
+      if trackable.is_a? Comment
+        action = trackable.root? ? "debate_comment" : "comment_reply"
+        activity = current_user.activities.create! action: action, trackable: trackable
+        add_notifications_for activity
+      end
+    end
 end
