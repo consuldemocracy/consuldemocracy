@@ -54,6 +54,8 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :notifications, only: :index
+
   resource :account, controller: "account", only: [:show, :update]
   resource :verification, controller: "verification", only: [:show]
 

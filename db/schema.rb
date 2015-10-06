@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150914191003) do
+ActiveRecord::Schema.define(version: 20150928115005) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -192,6 +192,17 @@ ActiveRecord::Schema.define(version: 20150914191003) do
   end
 
   add_index "moderators", ["user_id"], name: "index_moderators_on_user_id", using: :btree
+
+  create_table "notifications", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "activity_id"
+    t.boolean  "read",        default: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+  end
+
+  add_index "notifications", ["activity_id"], name: "index_notifications_on_activity_id", using: :btree
+  add_index "notifications", ["user_id"], name: "index_notifications_on_user_id", using: :btree
 
   create_table "organizations", force: :cascade do |t|
     t.integer  "user_id"
@@ -380,5 +391,7 @@ ActiveRecord::Schema.define(version: 20150914191003) do
   add_foreign_key "identities", "users"
   add_foreign_key "locks", "users"
   add_foreign_key "moderators", "users"
+  add_foreign_key "notifications", "activities"
+  add_foreign_key "notifications", "users"
   add_foreign_key "organizations", "users"
 end

@@ -6,6 +6,9 @@
     <li>
       <%= link_to(t("devise_views.menu.login_items.logout"), destroy_user_session_path, method: :delete) %>
     </li>
+    <li>
+      <%= link_to 'Notificaciones', notifications_path, class: notifications_class_for(current_user) %>
+    </li>
   <% else %>
     <li>
       <%= link_to(t("devise_views.menu.login_items.login"), new_user_session_path)  %>

@@ -22,6 +22,7 @@ class User < ActiveRecord::Base
   has_many :debates, -> { with_hidden }, foreign_key: :author_id
   has_many :comments, -> { with_hidden }
   has_many :activities
+  has_many :notifications
 
   validates :username, presence: true, unless: :organization?
   validates :username, uniqueness: true, unless: :organization?
