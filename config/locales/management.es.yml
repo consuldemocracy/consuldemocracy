@@ -19,6 +19,7 @@ es:
       support_proposals: "Apoyar propuestas"
       vote_proposals: "Participar en las votaciones finales"
     document_verifications:
+      title: "Gestión de usuarios"
       please_check_account_data: "Compruebe que los datos anteriores son correctos para proceder a verificar la cuenta completamente."
       already_verified: "Esta cuenta de usuario ya está verificada."
       in_census_has_following_permissions: "Este usuario puede participar en el Portal de Gobierno Abierto del Ayuntamiento de Madrid con las siguientes posibilidades:"
@@ -41,6 +42,7 @@ es:
 
 
       document_mismatch: "Ese email corresponde a un usuario que ya tiene asociado el documento %{document_number}(%{document_type})"
+      already_verified: "Esta cuenta de usuario ya está verificada."
       create_user: "Crear nueva cuenta de usuario"
       create_user_info: "Procedemos a crear un usuario con la siguiente información:"
       create_user_submit: "Crear usuario"
