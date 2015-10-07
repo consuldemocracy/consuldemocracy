@@ -35,19 +35,14 @@ es:
       send_email: "Enviar email de verificación"
       if_no_existing_account: "Si la persona todavía no ha creado una cuenta de usuario en la web"
       email_sent_instructions: "Para terminar de verificar esta cuenta es necesario que haga clic en el enlace que le hemos enviado a la dirección de correo que figura arriba. Este paso es necesario para confirmar que dicha cuenta de usuario es suya."
-
-
-    users:
-      title: "Gestionar usuario"
-
-
       document_mismatch: "Ese email corresponde a un usuario que ya tiene asociado el documento %{document_number}(%{document_type})"
       already_verified: "Esta cuenta de usuario ya está verificada."
+    users:
       create_user: "Crear nueva cuenta de usuario"
       create_user_info: "Procedemos a crear un usuario con la siguiente información:"
       create_user_submit: "Crear usuario"
       create_user_success_html:
         "Le hemos mandado un correo electrónico a la dirección de correo anterior para verificar que es suya.
-        Le recomendamos cambiar la contraseña en su primer uso. Para ello entre en %{url} con su usuario y contraseña,
+        Le recomendamos cambiar la contraseña en su primer uso. Para ello entre en %{link} con su usuario y contraseña,
         acceda a la sección <b>'Mi cuenta'</b> y haga clic en el botón <b>'Cambiar datos de acceso'</b>"
 
