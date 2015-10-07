@@ -1,5 +1,11 @@
 en:
   activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              password_already_set: "This user already has a password"
     models:
       activity: Activity
       comment: Comment

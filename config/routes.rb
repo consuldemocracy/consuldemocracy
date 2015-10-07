@@ -1,7 +1,13 @@
 Rails.application.routes.draw do
+
+  as :user do
+      match '/user/confirmation' => 'users/confirmations#update', :via => :patch, :as => :update_user_confirmation
+  end
+
   devise_for :users, controllers: {
                        registrations: 'users/registrations',
                        sessions: 'users/sessions',
+                       confirmations: 'users/confirmations',
                        omniauth_callbacks: 'users/omniauth_callbacks'
                      }
   devise_for :organizations, class_name: 'User',
