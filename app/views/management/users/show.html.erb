@@ -1,0 +1,9 @@
+<%= render 'management/account_info.html', account: @user %>
+
+<p><%= t("management.users.create_user_success_html",
+         link: link_to("http://decide.madrid.es", "http://decide.madrid.es", target: "_blank")) %>
+</p>
+
+<%= render 'management/user_permissions',
+      message: t("management.document_verifications.in_census_has_following_permissions"),
+      permissions: [:debates, :create_proposals, :support_proposals, :vote_proposals] %>

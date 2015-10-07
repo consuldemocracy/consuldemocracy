@@ -35,6 +35,8 @@ class User < ActiveRecord::Base
 
   accepts_nested_attributes_for :organization, update_only: true
 
+  attr_accessor :skip_password_validation
+
   scope :administrators, -> { joins(:administrators) }
   scope :moderators,     -> { joins(:moderator) }
   scope :organizations,  -> { joins(:organization) }
@@ -160,6 +162,11 @@ class User < ActiveRecord::Base
 
   def show_welcome_screen?
     sign_in_count == 1 && unverified? && !organization && !administrator?
+  end
+
+  def password_required?
+    return false if skip_password_validation
+    super
   end
 
   private

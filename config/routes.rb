@@ -173,6 +173,8 @@ Rails.application.routes.draw do
     end
 
     resources :email_verifications, only: [:new, :create]
+
+    resources :users, only: [:new, :create]
   end
 
   # Example of regular route:

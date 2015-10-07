@@ -36,3 +36,11 @@ en:
       if_no_existing_account: "If this person has not created an account yet"
       document_mismatch: "This email belongs to a user which already has an associated id: %{document_number}(%{document_type})"
       already_verified: "This user account is already verified."
+    users:
+      create_user: "Create a new account"
+      create_user_info: "We will create an account with the following data:"
+      create_user_submit: "Create user"
+      create_user_success_html:
+        "We have sent an email to the email address used to create the account in order to verify that it belongs to him.
+        We recommend changing the password on the first login. In order to do that go to %{link} with your user and password,
+        and enter the <b>'My account / Change access data'</b> section"
