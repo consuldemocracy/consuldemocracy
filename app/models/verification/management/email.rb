@@ -9,6 +9,8 @@ class Verification::Management::Email
   validates :email, format: { with: Devise.email_regexp }, allow_blank: true
   validate :validate_user
 
+  delegate :username, to: :user, allow_nil: true
+
   def user
     @user ||= User.where(email: email).first
   end
