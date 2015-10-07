@@ -346,3 +346,7 @@ en:
     google_oauth2:
       sign_in: Sign in with Google
       sign_up: Sign up with Google
+    reddit:
+      sign_in: Sign in with Reddit
+      sign_up: Sign up with Reddit
+      verified_account: Reddit verified

@@ -26,6 +26,7 @@ gem 'omniauth-twitter'
 gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2', '~> 0.2.7'
 gem 'omniauth-openid'
+gem 'omniauth-reddit' , :git => 'git://github.com/jackdempsey/omniauth-reddit.git'
 
 gem 'kaminari'
 gem 'ancestry'

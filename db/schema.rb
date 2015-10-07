@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150926115929) do
+ActiveRecord::Schema.define(version: 20151005100448) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -293,6 +293,8 @@ ActiveRecord::Schema.define(version: 20150926115929) do
     t.datetime "confirmed_hide_at"
     t.string   "letter_verification_code"
     t.integer  "failed_census_calls_count",            default: 0
+    t.string   "reddit_user"
+    t.string   "reddit_uid"
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree

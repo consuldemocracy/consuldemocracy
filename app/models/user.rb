@@ -79,6 +79,22 @@ class User < ActiveRecord::Base
     user
   end
 
+
+  def self.add_reddituser!(auth,cu)
+    user = User.find(cu.id)
+    reddit_user = auth.info.name
+    reddit_uid = auth.uid
+    if !reddit_user.blank? && !reddit_uid.blank?
+      user.reddit_user = reddit_user
+      user.reddit_uid = reddit_uid
+      user.save
+    end
+  end
+
+  def remove_user_reddit!
+    update reddit_user: nil, reddit_uid:nil
+  end
+
   def name
     organization? ? organization.name : username
   end

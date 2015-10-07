@@ -22,11 +22,11 @@ def create_user(email, username = Faker::Name.name)
   User.create!(username: username, email: email, password: pwd, password_confirmation: pwd, confirmed_at: Time.now, terms_of_service: "1")
 end
 
-admin = create_user('admin@madrid.es', 'admin')
-admin.create_administrator
+#admin = create_user('admin@madrid.es', 'admin')
+#admin.create_administrator
 
-moderator = create_user('mod@madrid.es', 'mod')
-moderator.create_moderator
+#moderator = create_user('mod@madrid.es', 'mod')
+#moderator.create_moderator
 
 (1..10).each do |i|
   org_name = Faker::Company.name
