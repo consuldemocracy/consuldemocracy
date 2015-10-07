@@ -1,5 +1,5 @@
 class Management::BaseController < ActionController::Base
-  layout 'admin'
+  layout 'management'
 
   before_action :verify_manager
 
