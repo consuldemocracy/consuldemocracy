@@ -28,6 +28,13 @@ module CommonActions
     visit management_sign_in_path(login: manager.username, clave_usuario: manager.password)
   end
 
+  def login_managed_user(user)
+    ####
+    # CHANGE ME
+    # Should identify the user being managed
+    ####
+  end
+
   def confirm_email
     expect(page).to have_content "A message with a confirmation link has been sent to your email address."
 

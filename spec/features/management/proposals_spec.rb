@@ -2,16 +2,16 @@ require 'rails_helper'
 
 feature 'Proposals' do
 
+  background do
+    manager = create(:manager)
+    login_as_manager(manager)
+  end
+
   context "Create" do
 
     scenario 'Creating proposals on behalve of someone' do
-      ####CHANGE ME
-      ####Should identify the user being managed
-      managed_user = create(:user, :level_two)
-      ####
-
-      manager = create(:manager)
-      login_as_manager(manager)
+      user = create(:user, :level_two)
+      login_managed_user(user)
 
       visit new_management_proposal_path
 
@@ -34,18 +34,13 @@ feature 'Proposals' do
       expect(page).to have_content 'This is very important because...'
       expect(page).to have_content 'http://rescue.org/refugees'
       expect(page).to have_content 'http://youtube.com'
-      expect(page).to have_content managed_user.name
+      expect(page).to have_content user.name
       expect(page).to have_content I18n.l(Proposal.last.created_at.to_date)
     end
 
     scenario "Should not allow unverified users to create proposals" do
-      ####CHANGE ME
-      ####Should identify the user being managed
-      unverified_user = create(:user)
-      ####
-
-      manager = create(:manager)
-      login_as_manager(manager)
+      user = create(:user)
+      login_managed_user(user)
 
       visit new_management_proposal_path
 
@@ -58,13 +53,8 @@ feature 'Proposals' do
     scenario 'Voting proposals on behalve of someone', :js do
       proposal = create(:proposal)
 
-      ####CHANGE ME
-      ####Should identify the user being managed
-      managed_user = create(:user, :level_two)
-      ####
-
-      manager = create(:manager)
-      login_as_manager(manager)
+      user = create(:user, :level_two)
+      login_managed_user(user)
 
       visit management_proposals_path
 
@@ -77,16 +67,11 @@ feature 'Proposals' do
       expect(URI.parse(current_url).path).to eq(management_proposals_path)
     end
 
-    scenario "Should not allow unverified users to vote proposals", :focus do
+    scenario "Should not allow unverified users to vote proposals" do
       proposal = create(:proposal)
 
-      ####CHANGE ME
-      ####Should identify the user being managed
-      unverified_user = create(:user)
-      ####
-
-      manager = create(:manager)
-      login_as_manager(manager)
+      user = create(:user)
+      login_managed_user(user)
 
       visit management_proposals_path
 
@@ -97,13 +82,8 @@ feature 'Proposals' do
       proposal1 = create(:proposal, title: "Show me what you got")
       proposal2 = create(:proposal, title: "Get Schwifty")
 
-      manager = create(:manager)
-      login_as_manager(manager)
-
-      ####CHANGE ME
-      ####Should identify the user being managed
-      managed_user = create(:user, :level_two)
-      ####
+      user = create(:user, :level_two)
+      login_managed_user(user)
 
       visit management_proposals_path
 
@@ -124,9 +104,6 @@ feature 'Proposals' do
     scenario 'Printing proposals', :js do
       5.times { create(:proposal) }
 
-      manager = create(:manager)
-      visit management_sign_in_path(login: manager.username, clave_usuario: manager.password)
-
       visit print_management_proposals_path
 
       find("#print_link").click
@@ -137,18 +114,13 @@ feature 'Proposals' do
       ###
     end
 
-    scenario "Filtering", :js do
+    scenario "Filtering proposals to be printed", :js do
       create(:proposal, title: 'Best proposal').update_column(:confidence_score, 10)
       create(:proposal, title: 'Worst proposal').update_column(:confidence_score, 2)
       create(:proposal, title: 'Medium proposal').update_column(:confidence_score, 5)
 
-      manager = create(:manager)
-      login_as_manager(manager)
-
-      ####CHANGE ME
-      ####Should identify the user being managed
-      managed_user = create(:user, :level_two)
-      ####
+      user = create(:user, :level_two)
+      login_managed_user(user)
 
       visit print_management_proposals_path
 
