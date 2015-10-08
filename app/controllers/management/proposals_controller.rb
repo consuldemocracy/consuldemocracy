@@ -4,6 +4,8 @@ class Management::ProposalsController < Management::BaseController
   include HasOrders
   include CommentableActions
 
+  before_action :check_verified_user, except: :print
+
   before_action :set_proposal, only: :vote
   before_action :parse_search_terms, only: :index
 
@@ -37,6 +39,12 @@ class Management::ProposalsController < Management::BaseController
 
     def resource_model
       Proposal
+    end
+
+    def check_verified_user
+      unless current_user.level_two_or_three_verified?
+        redirect_to management_root_path, alert: 'User is not verified'
+      end
     end
 
     #Duplicated in application_controller. Move to a concenrn.
