@@ -31,7 +31,7 @@ class Management::ProposalsController < Management::BaseController
     def current_user
       #CHANGE ME
       #Should be user being managed
-      User.first
+      User.last
     end
 
     def resource_model
