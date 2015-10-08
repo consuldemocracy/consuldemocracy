@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe AdminHelper do
+describe UserHelper do
 
   describe '#humanize_document_type' do
     it "should return a humanized document type" do
