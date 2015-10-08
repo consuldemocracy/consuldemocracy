@@ -63,22 +63,30 @@ class User < ActiveRecord::Base
   def self.first_or_create_for_oauth(auth)
     email = auth.info.email if auth.info.verified || auth.info.verified_email
     user  = User.where(email: email).first if email
-
+    dni = User.dni_from_id(auth.uid.split('/').pop)
     # Create the user if it's a new registration
     if user.nil?
       user = User.new(
         username: auth.info.nickname || auth.info.name || auth.extra.raw_info.name.parameterize('-') || auth.uid ,
         email: email ? email : auth.info.email ? auth.info.email : "#{OMNIAUTH_EMAIL_PREFIX}-#{auth.uid}-#{auth.provider}.com",
-        password: Devise.friendly_token[0,20],
-        terms_of_service: '1'
+        password: Devise.friendly_token[0,20], terms_of_service: '1', document_type: 'Spanish ID', document_number: dni,
+        verified_at: DateTime.now
       )
       user.skip_confirmation!
       user.save!
+
+      verified =VerifiedUser.new(
+        document_number:dni, document_type: 'Spanish ID', email: email
+        )
+      verified.save
     end
 
     user
   end
 
+  def self.dni_from_id(id)
+    return (dni=id.to_s.rjust(8,'0'))+"TRWAGMYFPDXBNJZSQVHLCKE"[dni.to_i%23]
+  end
 
   def self.add_reddituser!(auth,cu)
     user = User.find(cu.id)
