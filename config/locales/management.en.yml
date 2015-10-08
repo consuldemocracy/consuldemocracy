@@ -41,6 +41,6 @@ en:
       create_user_info: "We will create an account with the following data:"
       create_user_submit: "Create user"
       create_user_success_html:
-        "We have sent an email to the email address used to create the account in order to verify that it belongs to him.
-        We recommend changing the password on the first login. In order to do that go to %{link} with your user and password,
-        and enter the <b>'My account / Change access data'</b> section"
+        "We have sent an email to the email address <b>%{email}</b> in order to verify that it belongs to this user.
+        It contains a link they have to click. Then they will have to set their access password before being able
+        to log in to the website"
