@@ -1,6 +1,4 @@
 class Management::ProposalsController < Management::BaseController
-  skip_before_action :verify_manager
-
   include HasOrders
   include CommentableActions
 
