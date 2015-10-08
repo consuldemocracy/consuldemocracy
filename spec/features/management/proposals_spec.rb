@@ -9,7 +9,7 @@ feature 'Proposals' do
 
   context "Create" do
 
-    scenario 'Creating proposals on behalve of someone' do
+    scenario 'Creating proposals on behalf of someone' do
       user = create(:user, :level_two)
       login_managed_user(user)
 
@@ -50,7 +50,7 @@ feature 'Proposals' do
 
   context "Voting" do
 
-    scenario 'Voting proposals on behalve of someone', :js do
+    scenario 'Voting proposals on behalf of someone', :js do
       proposal = create(:proposal)
 
       user = create(:user, :level_two)
