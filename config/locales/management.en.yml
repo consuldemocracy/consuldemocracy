@@ -1,6 +1,5 @@
 en:
   management:
-    print: "Print"
     print_info: "Print this info"
     username_label: "User name"
     email_label: "Email"
@@ -8,7 +7,8 @@ en:
     document_number: "Document number"
     document_type_label: "Document type"
     menu:
-      document_verifications: "Users"
+      title: "Management"
+      users: "Users"
     dashboard:
       index:
         title: "Management"

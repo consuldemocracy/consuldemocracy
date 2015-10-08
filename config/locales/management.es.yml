@@ -1,6 +1,5 @@
 es:
   management:
-    print: "Imprimir"
     print_info: "Imprimir esta información"
     username_label: "Nombre de usuario"
     email_label: "Email"
@@ -8,8 +7,8 @@ es:
     document_number: "Número de documento"
     document_type_label: "Tipo de documento"
     menu:
-      on_site_verifications: "Usuarios"
-      title: "Gestionar usuario"
+      title: "Gestión"
+      users: "Usuarios"
     dashboard:
       index:
         title: "Gestión"
