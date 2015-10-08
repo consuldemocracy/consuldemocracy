@@ -92,6 +92,32 @@ feature 'Proposals' do
 
       expect(page).to have_content "User is not verified"
     end
+
+    scenario "Searching" do
+      proposal1 = create(:proposal, title: "Show me what you got")
+      proposal2 = create(:proposal, title: "Get Schwifty")
+
+      manager = create(:manager)
+      login_as_manager(manager)
+
+      ####CHANGE ME
+      ####Should identify the user being managed
+      managed_user = create(:user, :level_two)
+      ####
+
+      visit management_proposals_path
+
+      fill_in "search", with: "what you got"
+      click_button "Search"
+
+      expect(current_path).to eq(management_proposals_path)
+
+      within("#proposals") do
+        expect(page).to have_css('.proposal', count: 1)
+        expect(page).to have_content(proposal1.title)
+        expect(page).to_not have_content(proposal2.title)
+      end
+    end
   end
 
   scenario 'Printing proposals', :js do
