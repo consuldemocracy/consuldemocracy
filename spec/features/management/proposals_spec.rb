@@ -11,7 +11,7 @@ feature 'Proposals' do
       ####
 
       manager = create(:manager)
-      visit management_sign_in_path(login: manager.username, clave_usuario: manager.password)
+      login_as_manager(manager)
 
       visit new_management_proposal_path
 
@@ -45,7 +45,7 @@ feature 'Proposals' do
       ####
 
       manager = create(:manager)
-      visit management_sign_in_path(login: manager.username, clave_usuario: manager.password)
+      login_as_manager(manager)
 
       visit new_management_proposal_path
 
@@ -64,7 +64,7 @@ feature 'Proposals' do
       ####
 
       manager = create(:manager)
-      visit management_sign_in_path(login: manager.username, clave_usuario: manager.password)
+      login_as_manager(manager)
 
       visit management_proposals_path
 
@@ -86,7 +86,7 @@ feature 'Proposals' do
       ####
 
       manager = create(:manager)
-      visit management_sign_in_path(login: manager.username, clave_usuario: manager.password)
+      login_as_manager(manager)
 
       visit management_proposals_path
 

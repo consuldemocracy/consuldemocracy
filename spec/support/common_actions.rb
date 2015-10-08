@@ -24,6 +24,10 @@ module CommonActions
     click_button 'Log in'
   end
 
+  def login_as_manager(manager)
+    visit management_sign_in_path(login: manager.username, clave_usuario: manager.password)
+  end
+
   def confirm_email
     expect(page).to have_content "A message with a confirmation link has been sent to your email address."
 
