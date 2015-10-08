@@ -62,7 +62,7 @@ feature 'Proposals' do
         find('.in-favor a').click
 
         expect(page).to have_content "1 support"
-        expect(page).to have_content "You already supported this proposal, share it!"
+        expect(page).to have_content "You already supported this proposal"
       end
       expect(URI.parse(current_url).path).to eq(management_proposals_path)
     end

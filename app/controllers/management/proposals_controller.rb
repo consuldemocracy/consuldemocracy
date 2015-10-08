@@ -3,7 +3,6 @@ class Management::ProposalsController < Management::BaseController
   include CommentableActions
 
   before_action :check_verified_user, except: :print
-
   before_action :set_proposal, only: :vote
   before_action :parse_search_terms, only: :index
 
