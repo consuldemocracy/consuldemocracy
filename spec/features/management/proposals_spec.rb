@@ -37,7 +37,28 @@ feature 'Proposals' do
     expect(page).to have_content I18n.l(Proposal.last.created_at.to_date)
   end
 
-  scenario 'Voting proposals on behalve of someone'
+  scenario 'Voting proposals on behalve of someone', :js do
+    proposal = create(:proposal)
+
+    ####CHANGE ME
+    ####Should identify the user being managed
+    managed_user = create(:user, :level_two)
+    ####
+
+    manager = create(:manager)
+    visit management_sign_in_path(login: manager.username, clave_usuario: manager.password)
+
+    visit management_proposals_path
+
+    within("#proposals") do
+      find('.in-favor a').click
+
+      expect(page).to have_content "1 support"
+      expect(page).to have_content "You already supported this proposal, share it!"
+    end
+    expect(URI.parse(current_url).path).to eq(management_proposals_path)
+  end
+
   scenario 'Printing proposals'
 
 end
