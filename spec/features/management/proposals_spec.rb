@@ -59,6 +59,20 @@ feature 'Proposals' do
     expect(URI.parse(current_url).path).to eq(management_proposals_path)
   end
 
-  scenario 'Printing proposals'
+  scenario 'Printing proposals', :js do
+    5.times { create(:proposal) }
+
+    manager = create(:manager)
+    visit management_sign_in_path(login: manager.username, clave_usuario: manager.password)
+
+    visit print_management_proposals_path
+
+    find("#print_link").click
+
+    ### CHANGE ME
+    # should probably test something else here
+    # maybe that we are loading a print.css stylesheet?
+    ###
+  end
 
 end
