@@ -25,6 +25,7 @@ class User < ActiveRecord::Base
 
   validates :username, presence: true, unless: :organization?
   validates :username, uniqueness: true, unless: :organization?
+  validates :document_number, uniqueness: { scope: :document_type }, allow_nil: true
   validate :validate_username_length
 
   validates :official_level, inclusion: {in: 0..5}
@@ -43,6 +44,8 @@ class User < ActiveRecord::Base
   scope :officials,      -> { where("official_level > 0") }
   scope :for_render,     -> { includes(:organization) }
   scope :by_document,    -> (document_type, document_number) { where(document_type: document_type, document_number: document_number) }
+
+  before_validation :clean_document_number
 
   def self.find_for_oauth(auth, signed_in_resource = nil)
     # Get the identity and user if they exist
@@ -170,6 +173,10 @@ class User < ActiveRecord::Base
   end
 
   private
+
+    def clean_document_number
+      self.document_number = self.document_number.gsub(/[^a-z0-9]+/i, "").upcase unless self.document_number.blank?
+    end
 
     def validate_username_length
       validator = ActiveModel::Validations::LengthValidator.new(
