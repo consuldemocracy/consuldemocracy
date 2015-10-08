@@ -17,6 +17,8 @@
 // 15. Social
 // 16. Pages
 // 17. Verification
+// 18. Comments
+// 19. Flags
 //
 
 // 01. Variables
@@ -1726,4 +1728,173 @@ table {
       vertical-align: middle;
     }
   }
+}
+
+// 18. Comments
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+.comments {
+  background: $white;
+  background-repeat: repeat-x;
+  padding-top: rem-calc(24);
+  padding-bottom: rem-calc(96);
+
+  h2 {
+    margin: 0;
+    font-weight: bold;
+
+    span {
+      font-size: rem-calc(18);
+      font-weight: normal;
+      opacity: .8;
+    }
+  }
+
+  .comment {
+    margin: rem-calc(6) 0;
+
+    p {
+      margin-bottom: 0;
+    }
+
+    .comment-votes {
+      color: $text-medium;
+      font-weight: lighter;
+      line-height: rem-calc(24);
+      margin: rem-calc(10) rem-calc(12) rem-calc(6) 0;
+
+      a {
+        color: $text-light;
+        display: inline-block;
+        vertical-align: top;
+
+        &:hover {
+          color: $text-medium;
+        }
+      }
+
+      [class^="icon-"] {
+        font-size: rem-calc(20);
+        vertical-align: middle;
+      }
+    }
+
+    .comment-body {
+      margin-left: rem-calc(42);
+
+      p {
+        font-size: rem-calc(14);
+      }
+
+      .reply {
+        background: white;
+        border: 1px solid $border;
+        font-size: rem-calc(12);
+        margin: rem-calc(6) 0;
+        padding: rem-calc(6);
+
+        .divider {
+          color: $text-light;
+        }
+      }
+
+      .comment-user {
+        margin-top: rem-calc(6);
+        padding: rem-calc(6) 0;
+        overflow: hidden;
+
+        @each $n in ("1", "2", "3","4", "5") {
+          &.level-#{$n} {
+            @if $n == "5" {
+              background: $comment-level-5;
+              padding: rem-calc(6) rem-calc(12);
+            }
+            @elseif $n == "1" {
+              background: none;
+              padding: rem-calc(6) rem-calc(12);
+            }
+            @else {
+              background: $comment-official;
+              padding: rem-calc(6) rem-calc(12);
+            }
+          }
+        }
+
+        &.is-author {
+          background: $comment-author;
+          padding: rem-calc(6) rem-calc(12);
+        }
+
+        &.is-admin {
+          background: $comment-admin;
+          padding: rem-calc(6) rem-calc(12);
+        }
+
+        &.is-moderator {
+          @extend .is-admin;
+        }
+
+        &.level-5 {
+          background: $comment-level-5;
+          padding: rem-calc(6) rem-calc(12);
+        }
+      }
+    }
+
+    .is-deleted {
+      background: $deleted;
+      margin-left: rem-calc(42);
+      padding: rem-calc(6) rem-calc(12);
+    }
+
+    .comment-children {
+      border-left: 1px dashed $border;
+      margin-left: rem-calc(42);
+      padding-left: rem-calc(6);
+
+      @media only screen and (max-width: 40em) {
+        margin-left: rem-calc(16);
+      }
+    }
+
+    .comment-info {
+      color: $text-light;
+      font-size: rem-calc(13);
+      font-weight: lighter;
+      margin-top: rem-calc(6);
+      vertical-align: middle;
+
+      span.user-name {
+        color: $text;
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+.faded {
+  opacity: 0.4;
+}
+
+// 19. Flags
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+.flag-content {
+
+  .button {
+    background: none;
+    margin-bottom: 0;
+    padding: 0;
+  }
+}
+
+.flag-disable {
+  color: $text-medium;
+  line-height: rem-calc(24);
+  vertical-align: middle;
+}
+
+.flag-active {
+  @extend .flag-disable;
+  color: $delete;
 }
