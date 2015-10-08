@@ -11,7 +11,7 @@ class Management::ProposalsController < Management::BaseController
 
   def vote
     @proposal.register_vote(current_user, 'yes')
-    redirect_to management_proposals_url, notice: "Succesfully voted"
+    set_proposal_votes(@proposal)
   end
 
   def print
