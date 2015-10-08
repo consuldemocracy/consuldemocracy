@@ -120,20 +120,50 @@ feature 'Proposals' do
     end
   end
 
-  scenario 'Printing proposals', :js do
-    5.times { create(:proposal) }
+  context "Printing" do
+    scenario 'Printing proposals', :js do
+      5.times { create(:proposal) }
 
-    manager = create(:manager)
-    visit management_sign_in_path(login: manager.username, clave_usuario: manager.password)
+      manager = create(:manager)
+      visit management_sign_in_path(login: manager.username, clave_usuario: manager.password)
 
-    visit print_management_proposals_path
+      visit print_management_proposals_path
 
-    find("#print_link").click
+      find("#print_link").click
 
-    ### CHANGE ME
-    # should probably test something else here
-    # maybe that we are loading a print.css stylesheet?
-    ###
+      ### CHANGE ME
+      # should probably test something else here
+      # maybe that we are loading a print.css stylesheet?
+      ###
+    end
+
+    scenario "Filtering", :js do
+      create(:proposal, title: 'Best proposal').update_column(:confidence_score, 10)
+      create(:proposal, title: 'Worst proposal').update_column(:confidence_score, 2)
+      create(:proposal, title: 'Medium proposal').update_column(:confidence_score, 5)
+
+      manager = create(:manager)
+      login_as_manager(manager)
+
+      ####CHANGE ME
+      ####Should identify the user being managed
+      managed_user = create(:user, :level_two)
+      ####
+
+      visit print_management_proposals_path
+
+      select 'most supported', from: 'order-selector'
+
+      expect(page).to have_selector('.js-order-selector[data-order="confidence_score"]')
+
+      within '#proposals' do
+        expect('Best proposal').to appear_before('Medium proposal')
+        expect('Medium proposal').to appear_before('Worst proposal')
+      end
+
+      expect(current_url).to include('order=confidence_score')
+      expect(current_url).to include('page=1')
+    end
   end
 
 end
