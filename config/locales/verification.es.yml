@@ -77,7 +77,7 @@ es:
         offices: "Oficina de Atención al Ciudadano"
         offices_url: "http://www.madrid.es/portales/munimadrid/es/Inicio/El-Ayuntamiento/Atencion-al-ciudadano/Oficinas-de-Atencion-al-Ciudadano?vgnextfmt=default&vgnextchannel=5b99cde2e09a4310VgnVCM1000000b205a0aRCRD"
         send_letter: "Solicitar una carta por correo postal"
-        go_to_index: "Ver propuestas y debates"
+        go_to_index: "Ver propuestas"
       create:
         flash:
           success_html: "Antes de las votaciones recibirás una carta con las instrucciones para verificar tu cuenta.<br> Recuerda que puedes ahorrar el envío verificándote presencialmente en cualquiera de las %{offices}."
@@ -85,7 +85,7 @@ es:
           offices_url: "http://www.madrid.es/portales/munimadrid/es/Inicio/El-Ayuntamiento/Atencion-al-ciudadano/Oficinas-de-Atencion-al-Ciudadano?vgnextfmt=default&vgnextchannel=5b99cde2e09a4310VgnVCM1000000b205a0aRCRD"
       edit:
         title: "Carta solicitada"
-        see_all: "Ver debates y propuestas"
+        see_all: "Ver propuestas"
       update:
         flash:
           success: "Código correcto. Tu cuenta ya está verificada"
