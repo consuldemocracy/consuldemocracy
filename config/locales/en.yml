@@ -53,6 +53,7 @@ en:
     twitter: "Twitter"
     facebook: "Facebook"
     blog: "Blog"
+    youtube: "YouTube"
   form:
       error: error
       errors: errors
