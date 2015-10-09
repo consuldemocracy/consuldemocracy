@@ -10,7 +10,9 @@ en:
       external_link_blog_url: "/blog"
       open_gov: "%{open} government"
       open: "Open"
-      participation: Participation
+      participation: "Participation"
+      transparency: "Transparency"
+      open_data: "Open data"
       open_city_title: "The city you want, it will be the city you want."
       open_city_slogan_html:
         "Start listening to Madrid.
@@ -117,7 +119,7 @@ en:
         one: 1 Comment
         other: "%{count} Comments"
       login_to_comment: "You need to %{signin} or %{signup} to comment."
-      edit_debate_link: Edit
+      edit_debate_link: "Edit debate"
       share: Share
       flag: "This debate has been flag as innapropiate for some users."
     edit:
@@ -208,7 +210,7 @@ en:
         one: 1 Comment
         other: "%{count} Comments"
       login_to_comment: "You need to %{signin} or %{signup} to comment."
-      edit_proposal_link: Edit
+      edit_proposal_link: "Edit proposal"
       share: Share
       flag: "This proposal has been flag as innapropiate for some users."
     edit:

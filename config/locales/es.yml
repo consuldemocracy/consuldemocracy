@@ -10,7 +10,9 @@ es:
       external_link_blog_url: "/blog"
       open_gov: "Gobierno %{open}"
       open: "abierto"
-      participation: Participación
+      participation: "Participación"
+      transparency: "Transparencia"
+      open_data: "Datos abiertos"
       open_city_title: "La ciudad que quieres será la ciudad que quieras."
       open_city_slogan_html:
         "Existen ciudades gobernadas directamente por sus habitantes, que <b>debaten</b> sobre temas que les preocupan, <b>proponen</b> ideas para mejorar
@@ -117,7 +119,7 @@ es:
         one: 1 Comentario
         other: "%{count} Comentarios"
       login_to_comment: "Necesitas %{signin} o %{signup} para comentar."
-      edit_debate_link: Editar
+      edit_debate_link: "Editar debate"
       share: Compartir
       flag: "Este debate ha sido marcado como inapropiado por varios usuarios."
     edit:
@@ -208,7 +210,7 @@ es:
         one: 1 Comentario
         other: "%{count} Comentarios"
       login_to_comment: "Necesitas %{signin} o %{signup} para comentar."
-      edit_proposal_link: Editar
+      edit_proposal_link: "Editar propuesta"
       share: Compartir
       flag: "Esta propuesta ha sido marcada como inapropiada por varios usuarios."
     edit:
