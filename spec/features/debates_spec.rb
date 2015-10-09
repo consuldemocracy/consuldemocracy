@@ -184,7 +184,7 @@ feature 'Debates' do
     expect(page).not_to have_link('click me')
     expect(page.html).to_not include "<script>alert('hey')</script>"
 
-    click_link 'Edit'
+    click_link 'Edit debate'
 
     expect(current_path).to eq edit_debate_path(Debate.last)
     expect(page).not_to have_link('click me')
