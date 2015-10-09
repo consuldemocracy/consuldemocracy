@@ -15,5 +15,6 @@ en:
       title: Please verify yourself
       instructions_html: "We need to verify you using this email, which we got from the Census. %{verification_link}"
       click_here_to_verify: "Please click here to verify yourself"
+      instructions_2_html: "This email will verify your account with <b>%{document_type} %{document_number}</b>. If these don't belong to you, please don't click on the previous link and ignore this email."
       thanks: "Thanks"
 

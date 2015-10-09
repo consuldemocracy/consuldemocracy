@@ -50,9 +50,10 @@ end
 (1..40).each do |i|
   user = create_user("user#{i}@madrid.es")
   level = [1,2,3].sample
-  if level == 2 then
-    user.update(residence_verified_at: Time.now, confirmed_phone: Faker::PhoneNumber.phone_number, document_number: Faker::Number.number(10) )
-  elsif level == 3 then
+  if level >= 2 then
+    user.update(residence_verified_at: Time.now, confirmed_phone: Faker::PhoneNumber.phone_number, document_number: Faker::Number.number(10), document_type: "1" )
+  end
+  if level == 3 then
     user.update(verified_at: Time.now, document_number: Faker::Number.number(10) )
   end
 end
