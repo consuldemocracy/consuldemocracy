@@ -14,6 +14,10 @@ module CommonActions
     click_button 'Sign up'
   end
 
+  def login_as_manager(manager)
+    visit management_sign_in_path(login: manager.username, clave_usuario: manager.password)
+  end
+
   def login_through_form_as(user)
     visit root_path
     click_link 'Log in'

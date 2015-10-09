@@ -1,5 +1,11 @@
 es:
   activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              password_already_set: "Este usuario ya tiene una clave asociada"
     models:
       activity:
         one: actividad

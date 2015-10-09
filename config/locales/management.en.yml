@@ -1,10 +1,51 @@
 en:
   management:
+    print_info: "Print this info"
+    username_label: "User name"
+    email_label: "Email"
+    check: "Check"
+    document_number: "Document number"
+    document_type_label: "Document type"
+    menu:
+      title: "Management"
+      users: "Users"
     dashboard:
       index:
-        title: Management Dashboard
+        title: "Management"
     proposals:
       print:
        print_button: Print
       alert:
         unverified_user: User is not verified
+    permissions:
+      debates: "Engage in debates"
+      create_proposals: "Create proposals"
+      support_proposals: "Support proposals"
+      vote_proposals: "Vote proposals"
+    document_verifications:
+      title: "User management"
+      please_check_account_data: "Please check that the account data above are correct."
+      already_verified: "This user account is already verified."
+      in_census_has_following_permissions: "This user can participate in the website with the following permissions:"
+      not_in_census: "This document is not registered in Madrid."
+      not_in_census_info: "Citizens not in the Census can participate in the website with the following permissions:"
+      has_no_account_html: "In order to create an account, go to %{link} and click in <b>'Register'</b> in the upper-left part of the screen."
+      verify: "Verify"
+    email_verifications:
+      document_found_in_census: "This document was found in the census, but it has no user account associated to it. Please choose one of the following options:"
+      if_existing_account: "If the person has already a user account created in the website,"
+      introduce_email: "Please introduce the email used on the account:"
+      email_placeholder: "Write the email this person used to create his or her account"
+      send_email: "Send verification email"
+      email_sent_instructions: "In order to completely verify this user, it is necessary that the user clicks on a link which we have sent to the email address above. This step is needed in order to confirm that the address belongs to him."
+      if_no_existing_account: "If this person has not created an account yet"
+      document_mismatch: "This email belongs to a user which already has an associated id: %{document_number}(%{document_type})"
+      already_verified: "This user account is already verified."
+    users:
+      create_user: "Create a new account"
+      create_user_info: "We will create an account with the following data:"
+      create_user_submit: "Create user"
+      create_user_success_html:
+        "We have sent an email to the email address <b>%{email}</b> in order to verify that it belongs to this user.
+        It contains a link they have to click. Then they will have to set their access password before being able
+        to log in to the website"

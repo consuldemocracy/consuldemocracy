@@ -1,9 +1,17 @@
 en:
   devise_views:
     confirmations:
-      title: "Resend confirmation instructions"
-      email_label: Email
-      submit: "Resend confirmation"
+      new:
+        title: "Resend confirmation instructions"
+        email_label: Email
+        submit: "Resend confirmation"
+      show:
+        title: "Confirm my account"
+        instructions_html: "Confirming the account with email %{email}"
+        please_set_password: "Please choose your new pasword (it will allow you to login with the email above)"
+        new_password_label: "New access password"
+        new_password_confirmation_label: "Repeat access password"
+        submit: "Confirm"
     mailer:
       confirmation_instructions:
         title: "Welcome to open government portal"
