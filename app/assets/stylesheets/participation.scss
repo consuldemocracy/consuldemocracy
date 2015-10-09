@@ -1,11 +1,9 @@
-// Table of Contents
+// Table of Contents - Styles for debates and proposals
 //
-// Styles for debates and proposals
 // 01. Votes and supports
 // 02. New participation
 // 03. Show participation
-// 04. Featured
-// 05.
+// 04. List participation
 //
 
 // 01. Votes and supports
@@ -83,14 +81,12 @@
 
   .voted {
     .icon-like {
-      @extend .icon-like;
       background: $votes-like;
       border-color: white;
       color: white;
     }
 
     .icon-unlike {
-      @extend .icon-unlike;
       background: $votes-unlike;
       border-color: white;
       color: white;
@@ -442,7 +438,7 @@
     line-height: rem-calc(30);
   }
 
-  .document-link {
+  .document-link, .video-link {
     border: 1px solid $border;
     display: block;
     margin-top: rem-calc(12);
@@ -466,7 +462,6 @@
   }
 
   .video-link {
-    @extend .document-link;
 
     :before {
       color: #CC181E;
@@ -546,21 +541,33 @@
   color: $border;
 }
 
-// 04. Featured
+// 04. List participation
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
-.debate-featured, .proposal-featured {
+.debates-list, .proposals-list {
+
+  @media (min-width: $small-breakpoint) {
+    margin-bottom: rem-calc(48);
+  }
+}
+
+.debate, .proposal {
+  margin-bottom: 0;
+  margin-top: 0;
 
   .panel {
     background: white;
     border: 1px solid;
-    border-color: #E5E6E9 #DFE0E4 #D0D1D5;
-    border-radius: rem-calc(3);
-    margin-bottom: rem-calc(24);
-    padding: rem-calc(24) rem-calc(12) 0 rem-calc(12);
+    border-color: #e5e6e9 #dfe0e4 #d0d1d5;
+    border-radius: 0;
+    box-shadow: 0px 1px 3px 0 $border;
+    margin-bottom: rem-calc(12);
+    min-height: rem-calc(192);
+    padding: rem-calc(12) rem-calc(12) 0 rem-calc(12);
 
-    .debate-content, .proposal-content {
-      min-height: rem-calc(353);
+    @media (min-width: $small-breakpoint) {
+      margin-bottom: rem-calc(-1);
+      padding-bottom: rem-calc(12);
     }
 
     .label-debate, .label-proposal {
@@ -569,9 +576,11 @@
       display: block;
       font-size: rem-calc(12);
       font-weight: bold;
-      text-transform: uppercase;
+      line-height: $line-height;
+      padding-bottom: 0;
       padding-left: 0;
       padding-top: 0;
+      text-transform: uppercase;
     }
 
     .label-debate {
@@ -582,26 +591,10 @@
       color: $proposals;
     }
 
-    .icon-debates, .icon-proposals {
-      font-size: rem-calc(36);
-      line-height: $line-height;
-      position: absolute;
-      right: rem-calc(18);
-      top: rem-calc(12);
-    }
-
-    .icon-debates {
-      color: $debates;
-    }
-
-    .icon-proposals {
-      color: $proposals;
-    }
-
     h3 {
       font-weight: bold;
-      margin: rem-calc(8) 0 0 0;
-      min-height: rem-calc(65);
+      margin: 0;
+      min-height: rem-calc(48);
 
       a {
         clear: both;
@@ -615,6 +608,32 @@
           text-transform: uppercase;
         }
       }
+    }
+
+    .debate-content, .proposal-content {
+      margin: 0;
+      min-height: rem-calc(180);
+
+      .tags {
+        display: block;
+      }
+    }
+
+    .icon-debates, .icon-proposals {
+      font-size: rem-calc(18);
+      line-height: $line-height;
+      position: absolute;
+      top: 0;
+    }
+
+    .icon-debates {
+      color: $debates;
+      left: rem-calc(60);
+    }
+
+    .icon-proposals {
+      color: $proposals;
+      left: rem-calc(88);
     }
 
     .debate-info, .proposal-info {
@@ -635,10 +654,10 @@
     .debate-description, .proposal-description {
       color: $text;
       font-size: rem-calc(13);
-      height: rem-calc(156);
+      height: rem-calc(72);
       line-height: $line-height;
       margin-bottom: rem-calc(12);
-      margin-top: rem-calc(24);
+      margin-top: 0;
       overflow: hidden;
       position: relative;
 
@@ -676,15 +695,126 @@
     }
   }
 
-  .supports {
-    @include supports;
+  .not-logged {
+    line-height: $line-height;
+    padding-top: rem-calc(24);
   }
 
-  .votes {
-    @include votes;
+  .anonymous-votes, .organizations-votes {
+    padding-top: rem-calc(24);
+  }
+
+  .divider {
+    display: none;
+  }
+
+  @media (min-width: $medium-breakpoint) {
+    .divider {
+      display: inline-block;
+    }
   }
 }
 
+.debate {
 
+  .votes {
+    @include votes;
+    border: 1px solid $votes-border;
+    margin: 0 rem-calc(-12);
 
+    @media (min-width: $small-breakpoint) {
+      border-top-left-radius: 3px;
+      border-bottom-left-radius: 3px;
+      margin: 0 rem-calc(-25) 0 rem-calc(12);
+    }
 
+    &:after {
+      content: none;
+      position: absolute;
+      display: block;
+      border-style: solid;
+      border-color: #166387 transparent transparent transparent;
+      bottom: rem-calc(-14);
+      border-left-width: 0;
+      border-right-color: transparent;
+      right: rem-calc(-1);
+      border-width: 1em 1em 0 0;
+
+      @media (min-width: $small-breakpoint) {
+        content: "";
+      }
+    }
+
+    .total-votes {
+      display: inline-block;
+      line-height: $line-height;
+      margin-left: rem-calc(24);
+      padding-top: rem-calc(12);
+      vertical-align: top;
+
+      @media (min-width: $small-breakpoint) {
+        display: block;
+        float: none;
+        line-height: $line-height*2;
+        margin-left: 0;
+        padding-top: 0;
+      }
+    }
+
+    @media (min-width: $small-breakpoint) {
+      .like, .unlike {
+
+        span {
+          display: block;
+          line-height: $line-height/2;
+        }
+      }
+    }
+  }
+}
+
+.proposal {
+
+  .supports {
+    @include supports;
+    border: 1px solid $proposals-border;
+    margin: 0 rem-calc(-12);
+
+    @media (min-width: $small-breakpoint) {
+      border-top-left-radius: 3px;
+      border-bottom-left-radius: 3px;
+      margin: 0 rem-calc(-25) 0 rem-calc(12);
+    }
+
+    &:after {
+      content: none;
+      position: absolute;
+      display: block;
+      border-style: solid;
+      border-color: #664212 transparent transparent transparent;
+      bottom: rem-calc(-14);
+      border-left-width: 0;
+      border-right-color: transparent;
+      right: rem-calc(-1);
+      border-width: 1em 1em 0 0;
+
+      @media (min-width: $small-breakpoint) {
+        content: "";
+      }
+    }
+
+    .total-supports {
+      display: inline-block;
+      line-height: $line-height;
+      padding-top: rem-calc(12);
+      vertical-align: top;
+
+      @media (min-width: $small-breakpoint) {
+        display: block;
+        float: none;
+        margin-left: 0;
+        padding-top: 0;
+      }
+    }
+  }
+}
