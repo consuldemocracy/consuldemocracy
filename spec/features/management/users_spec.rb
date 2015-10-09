@@ -4,6 +4,8 @@ feature 'users' do
 
   scenario 'Creating a level 3 user from scratch' do
 
+    login_as_manager(create(:manager))
+
     visit management_document_verifications_path
     fill_in 'document_verification_document_number', with: '1234'
     click_button 'Check'

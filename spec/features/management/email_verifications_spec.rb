@@ -4,6 +4,8 @@ feature 'EmailVerifications' do
 
   scenario 'Verifying a level 1 user via email' do
 
+    login_as_manager(create(:manager))
+
     user = create(:user)
 
     visit management_document_verifications_path
