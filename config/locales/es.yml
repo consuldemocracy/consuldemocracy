@@ -15,7 +15,7 @@ es:
       open_city_slogan_html:
         "Existen ciudades gobernadas directamente por sus habitantes, que <b>debaten</b> sobre temas que les preocupan, <b>proponen</b> ideas para mejorar
         sus vidas y <b>deciden</b> entre todas y todos las que se llevan a cabo. Madrid ya es una de ellas."
-      see_all: Ver debates y propuestas
+      see_all: "Ver propuestas"
       my_account_link: Mi cuenta
       locale: "Idioma:"
       administration: Administrar
@@ -37,7 +37,7 @@ es:
       transparency_text: "Obtén cualquier información sobre el Ayuntamiento de Madrid."
       open_data_title: Datos Abiertos
       open_data_text: "Todos los datos del Ayuntamiento son tuyos."
-      contact_us: "Contacta con nosotros en"
+      contact_us: "Para asistencia técnica contáctenos en"
       privacy: "Política de privacidad"
       conditions: "Condiciones de uso"
       more_info: "Más información"
@@ -152,7 +152,7 @@ es:
       select_order_long: Estás viendo las propuestas
       orders:
         confidence_score: "más apoyadas"
-        hot_score: "más activas"
+        hot_score: "más activas hoy"
         created_at: "más nuevas"
         most_commented: "más comentadas"
         random: "aleatorias"

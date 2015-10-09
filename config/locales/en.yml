@@ -15,7 +15,7 @@ en:
       open_city_slogan_html:
         "Start listening to Madrid.
         For that we open this digital Puerta del Sol, where all the locals can meet to discuss and share everything we want."
-      see_all: See debates and proposals
+      see_all: "See proposals"
       my_account_link: My account
       locale: "Language:"
       administration: Administration
@@ -37,7 +37,7 @@ en:
       transparency_text: Get any information on the City of Madrid.
       open_data_title:  Open Data
       open_data_text: "All City Council data are yours."
-      contact_us: "Contact us"
+      contact_us: "For technical support contact us"
       privacy: "Privacy Policy"
       conditions: "Terms of use"
       more_info: "More information"
@@ -152,7 +152,7 @@ en:
       select_order_long: Order proposals by
       orders:
         confidence_score: "most supported"
-        hot_score: most active
+        hot_score: "most active today"
         created_at: newest
         most_commented: most commented
         random: random
