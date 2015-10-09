@@ -444,7 +444,7 @@ header {
 }
 
 .contain-to-grid {
-  background: rgba(0,0,0,.5);
+  background: #112E51;
 }
 
 .top-bar {
@@ -774,15 +774,14 @@ footer {
 // 06. Tags
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
-.tags {
+.tags, .tag-cloud {
 
   a {
     background: $border;
-    border-radius: rem-calc(30);
+    border-radius: rem-calc(6);
     color: #4d4d4d;
     display: inline-block;
     font-size: rem-calc(13);
-    font-weight: bold;
     line-height: rem-calc(22);
     margin-bottom: rem-calc(8);
     padding: 0 rem-calc(8);
@@ -796,7 +795,6 @@ footer {
 }
 
 .tag-cloud {
-  @extend .tags;
 
   h3 {
     border-top: 2px solid $brand;
@@ -946,14 +944,13 @@ form {
     margin: rem-calc(12) 0 rem-calc(12) rem-calc(6);
   }
 
-  .note {
+  .note, .note-marked {
     display: block;
     font-size: rem-calc(13);
     margin-bottom: rem-calc(12);
   }
 
   .note-marked {
-    @extend .note;
     background: yellow;
     display: inline-block;
 
@@ -1139,16 +1136,12 @@ label.error, label.error a {
   }
 }
 
-img.avatar, img.admin-avatar, img.moderator-avatar {
+img.avatar, img.admin-avatar, img.moderator-avatar, img.initialjs-avatar {
   border-radius: rem-calc(1000);
   position: relative;
 }
 
-img.initialjs-avatar {
-  @extend .avatar;
-}
-
-.author-deleted {
+.author-deleted, .user-deleted {
   background-color: rgba(255,255,255,.5);
   color: rgba(0,0,0,.4);
   font-size: rem-calc(40);
@@ -1158,7 +1151,6 @@ img.initialjs-avatar {
 }
 
 .user-deleted {
-  @extend .author-deleted;
   top: -9px;
 }
 
@@ -1199,7 +1191,7 @@ img.initialjs-avatar {
 // 11. Filters & search
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
-.filters {
+.filters, .search-results {
 
   h2 {
     display: inline-block;
@@ -1248,10 +1240,6 @@ img.initialjs-avatar {
       margin-left: 0;
     }
   }
-}
-
-.search-results {
-  @extend .filters;
 }
 
 .search-form {
@@ -1380,6 +1368,7 @@ table {
   }
 
   &:hover {
+    background: white;
     color: #40A2D1;
   }
 }
@@ -1419,6 +1408,7 @@ table {
   }
 
   &:hover {
+    background: white;
     color: #354F88;
   }
 }
@@ -1458,6 +1448,7 @@ table {
   }
 
   &:hover {
+    background: white;
     color: #CE3E26;
   }
 }
@@ -1500,27 +1491,72 @@ table {
   }
 
   .social-share-button-twitter {
-    @extend .social-share-button-twitter;
     background: none;
     color: white;
     height: rem-calc(24);
+    position: relative;
     width: rem-calc(48);
+
+    &:before {
+      content: "f";
+      font-family: "icons" !important;
+      font-size: rem-calc(24);
+      left: 50%;
+      line-height: $line-height*2;
+      margin-left: rem-calc(-11);
+      position: absolute;
+      top: 0;
+    }
+
+    &:hover {
+      color: #40A2D1;
+    }
   }
 
   .social-share-button-facebook {
-    @extend .social-share-button-facebook;
     background: none;
     color: white;
     height: rem-calc(24);
+    position: relative;
     width: rem-calc(48);
+
+    &:before {
+      content: "A";
+      font-family: "icons" !important;
+      font-size: rem-calc(24);
+      left: 50%;
+      line-height: $line-height*2;
+      margin-left: rem-calc(-11);
+      position: absolute;
+      top: 0;
+    }
+
+    &:hover {
+      color: #354F88;
+    }
   }
 
   .social-share-button-google_plus {
-    @extend .social-share-button-google_plus;
     background: none;
     color: white;
     height: rem-calc(24);
+    position: relative;
     width: rem-calc(48);
+
+    &:before {
+      content: "B";
+      font-family: "icons" !important;
+      font-size: rem-calc(24);
+      left: 50%;
+      line-height: $line-height*2;
+      margin-left: rem-calc(-11);
+      position: absolute;
+      top: 0;
+    }
+
+    &:hover {
+      color: #CE3E26;
+    }
   }
 }
 
@@ -1825,13 +1861,9 @@ table {
           padding: rem-calc(6) rem-calc(12);
         }
 
-        &.is-admin {
+        &.is-admin, &.is-moderator {
           background: $comment-admin;
           padding: rem-calc(6) rem-calc(12);
-        }
-
-        &.is-moderator {
-          @extend .is-admin;
         }
 
         &.level-5 {
@@ -1888,13 +1920,15 @@ table {
   }
 }
 
-.flag-disable {
-  color: $text-medium;
+.flag-disable, .flag-active {
   line-height: rem-calc(24);
   vertical-align: middle;
 }
 
+.flag-disable {
+  color: $text-medium;
+}
+
 .flag-active {
-  @extend .flag-disable;
   color: $delete;
 }
