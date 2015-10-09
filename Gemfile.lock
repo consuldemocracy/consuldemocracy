@@ -74,7 +74,7 @@ GEM
       activesupport (>= 3.0.0)
       uniform_notifier (~> 1.9.0)
     byebug (6.0.2)
-    cancancan (1.12.0)
+    cancancan (1.13.0)
     capistrano (3.4.0)
       i18n
       rake (>= 10.0.0)
