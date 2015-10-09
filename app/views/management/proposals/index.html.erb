@@ -1,0 +1,22 @@
+<section role="main">
+  <%= render 'admin/shared/proposal_search', url: management_proposals_path %>
+
+  <div class="wrap row">
+    <div id="proposals" class="proposals-list small-12 medium-9 column">
+
+      <div class="filters">
+        <div class="small-12 medium-7 left">
+          <% if @search_terms %>
+            <h2 class="margin-top">
+              <%= page_entries_info @proposals %>
+              <%= t("proposals.index.search_results", count: @proposals.size, search_term: @search_terms) %>
+            </h2>
+          <% end %>
+        </div>
+
+        <%= render @proposals %>
+        <%= paginate @proposals %>
+      </div>
+    </div>
+  </div>
+</section>

@@ -12,6 +12,11 @@ en:
     dashboard:
       index:
         title: "Management"
+    proposals:
+      print:
+       print_button: Print
+      alert:
+        unverified_user: User is not verified
     permissions:
       debates: "Engage in debates"
       create_proposals: "Create proposals"

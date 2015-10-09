@@ -11,7 +11,12 @@ es:
       users: "Usuarios"
     dashboard:
       index:
-        title: "Gestión"
+       title: "Gestión"
+    proposals:
+      print:
+       print_button: Imprimir
+      alert:
+        unverified_user: Este usuario no está verificado
     permissions:
       debates: "Participar en debates"
       create_proposals: "Crear nuevas propuestas"

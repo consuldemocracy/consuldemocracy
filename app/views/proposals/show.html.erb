@@ -97,7 +97,8 @@
         <h3><%= t("votes.supports") %></h3>
         <div class="text-center">
           <div id="<%= dom_id(@proposal) %>_votes">
-           <%= render 'proposals/votes', proposal: @proposal %>
+           <%= render 'votes',
+                      { proposal: @proposal, vote_url: vote_proposal_path(@proposal, value: 'yes') } %>
           </div>
         </div>
         <div class="sidebar-divider"></div>
