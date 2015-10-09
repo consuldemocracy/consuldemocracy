@@ -1,5 +1,6 @@
 class Users::ConfirmationsController < Devise::ConfirmationsController
 
+  # new action, PATCH does not exist in the default Devise::ConfirmationsController
   # PATCH /resource/confirmation
   def update
     self.resource = resource_class.find_by_confirmation_token(params[:confirmation_token])
@@ -23,12 +24,17 @@ class Users::ConfirmationsController < Devise::ConfirmationsController
 
   # GET /resource/confirmation?confirmation_token=abcdef
   def show
+    # In the default implementation, this already confirms the resource:
+    # self.resource = self.resource = resource_class.confirm_by_token(params[:confirmation_token])
     self.resource = resource_class.find_by_confirmation_token(params[:confirmation_token])
 
+    yield resource if block_given?
+
+    # New condition added to if: when no password was given, display the "show" view (which uses "update" above)
     if resource.encrypted_password.blank?
       respond_with_navigational(resource){ render :show }
     elsif resource.errors.empty?
-      resource.confirm
+      resource.confirm # Last change: confirm happens here for people with passwords instead of af the top of the show action
       set_flash_message(:notice, :confirmed) if is_flashing_format?
       respond_with_navigational(resource){ redirect_to after_confirmation_path_for(resource_name, resource) }
     else
