@@ -1,4 +1,5 @@
 class Management::UsersController < Management::BaseController
+
   def new
     @user = User.new(user_params)
   end
@@ -22,4 +23,5 @@ class Management::UsersController < Management::BaseController
     def user_params
       params.require(:user).permit(:document_type, :document_number, :username, :email)
     end
+
 end

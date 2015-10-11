@@ -41,7 +41,5 @@ feature 'users' do
 
     expect(page).to have_content "Your email address has been successfully confirmed."
   end
+
 end
-
-
-

@@ -34,8 +34,4 @@ class Management::DocumentVerificationsController < Management::BaseController
     params.require(:document_verification).permit(:document_type, :document_number)
   end
 
-
 end
-
-
-

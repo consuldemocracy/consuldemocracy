@@ -21,4 +21,3 @@ class Management::EmailVerificationsController < Management::BaseController
   end
 
 end
-

@@ -101,6 +101,7 @@ feature 'Proposals' do
   end
 
   context "Printing" do
+
     scenario 'Printing proposals', :js do
       5.times { create(:proposal) }
 
@@ -136,6 +137,6 @@ feature 'Proposals' do
       expect(current_url).to include('order=confidence_score')
       expect(current_url).to include('page=1')
     end
-  end
 
+  end
 end

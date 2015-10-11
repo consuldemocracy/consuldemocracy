@@ -14,4 +14,5 @@ class Management::SessionsController < ActionController::Base
     def destroy_session
       session["manager_id"] = nil
     end
+
 end
