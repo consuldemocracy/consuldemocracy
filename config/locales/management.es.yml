@@ -9,6 +9,9 @@ es:
     menu:
       title: "Gestión"
       users: "Usuarios"
+    account_info:
+      managed_user_title: "Identified como:"
+      logout: "Salir"
     dashboard:
       index:
        title: "Gestión"

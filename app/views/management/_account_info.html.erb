@@ -1,6 +1,6 @@
 <p class="account-info">
   <% if current_user %>
-    Identified as:
+    <%= t("management.account_info.managed_user_title") %>
   <% end %>
 
   <% if account.username.present? %>
@@ -19,5 +19,5 @@
   <%= t("management.document_number") %>
   <strong><%= account.document_number %></strong>
 
-  <%= link_to(t("devise_views.menu.login_items.logout"), management_session_path, method: :delete) %>
+  <%= link_to(t("management.account_info.logout"), management_session_path, method: :delete) %>
 </p>
