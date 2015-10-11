@@ -1,10 +1,23 @@
 <p class="account-info">
-  <%= t("management.document_type_label") %> <strong><%= humanize_document_type(account.document_type) %></strong>
-  <%= t("management.document_number") %> <strong><%= account.document_number %></strong>
+  <% if current_user %>
+    Identified as:
+  <% end %>
+
   <% if account.username.present? %>
-    <%= t("management.username_label") %> <strong><%= account.username %></strong>
+    <%= t("management.username_label") %>
+    <strong><%= account.username %></strong>
   <% end %>
+
   <% if account.email.present? %>
-    <%= t("management.email_label") %> <strong><%= account.email %></strong>
+    <%= t("management.email_label") %>
+    <strong><%= account.email %></strong>
   <% end %>
+
+  <%= t("management.document_type_label") %>
+  <strong><%= humanize_document_type(account.document_type) %></strong>
+
+  <%= t("management.document_number") %>
+  <strong><%= account.document_number %></strong>
+
+  <%= link_to(t("devise_views.menu.login_items.logout"), management_session_path, method: :delete) %>
 </p>
