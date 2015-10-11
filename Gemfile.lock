@@ -160,7 +160,7 @@ GEM
       i18n (~> 0.5)
     faraday (0.9.1)
       multipart-post (>= 1.2, < 3)
-    foundation-rails (5.5.2.1)
+    foundation-rails (5.5.3.1)
       railties (>= 3.1.0)
       sass (>= 3.3.0, < 3.5)
     foundation_rails_helper (1.0.0)
@@ -438,7 +438,7 @@ DEPENDENCIES
   email_spec
   factory_girl_rails
   faker
-  foundation-rails
+  foundation-rails (~> 5.5.3.1)
   foundation_rails_helper
   fuubar
   groupdate
