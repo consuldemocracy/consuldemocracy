@@ -1,5 +1,6 @@
 module CommentableActions
   extend ActiveSupport::Concern
+  include Polymorphic
 
   def index
     @resources = @search_terms.present? ? resource_model.search(@search_terms) : resource_model.all
@@ -58,29 +59,6 @@ module CommentableActions
   end
 
   private
-    def resource
-      @resource ||= instance_variable_get("@#{resource_name}")
-    end
-
-    def resource_name
-      @resource_name ||= resource_model.to_s.downcase
-    end
-
-    def set_resource_instance
-      instance_variable_set("@#{resource_name}", @resource)
-    end
-
-    def set_resources_instance
-      instance_variable_set("@#{resource_name.pluralize}", @resources)
-    end
-
-    def set_resource_votes(instance)
-      send("set_#{resource_name}_votes", instance)
-    end
-
-    def strong_params
-      send("#{resource_name}_params")
-    end
 
     def track_event
       ahoy.track "#{resource_name}_created".to_sym, "#{resource_name}_id": resource.id
@@ -102,5 +80,9 @@ module CommentableActions
 
     def parse_search_terms
       @search_terms = params[:search] if params[:search].present?
+    end
+
+    def set_resource_votes(instance)
+      send("set_#{resource_name}_votes", instance)
     end
 end
