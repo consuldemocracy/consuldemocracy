@@ -184,7 +184,7 @@ Rails.application.routes.draw do
 
     get 'sign_in', to: 'sessions#create'
 
-    resources :sessions, only: :create
+    resource :session, only: [:create, :destroy]
     resources :proposals, only: [:index, :new, :create] do
       member do
         post :vote
