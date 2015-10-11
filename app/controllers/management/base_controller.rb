@@ -13,4 +13,12 @@ class Management::BaseController < ActionController::Base
       @current_manager ||= Manager.find(session["manager_id"]) if session["manager_id"]
     end
 
+    def current_user
+      @current_user ||= User.find(session["managed_user_id"]) if session["managed_user_id"]
+    end
+
+    def set_managed_user(user)
+      session["managed_user_id"] = user.id
+    end
+
 end

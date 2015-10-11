@@ -9,6 +9,7 @@ class Management::DocumentVerificationsController < Management::BaseController
 
     if @document_verification.valid?
       if @document_verification.verified?
+        set_managed_user(@document_verification.user)
         render :verified
       elsif @document_verification.user?
         render :new
@@ -25,6 +26,7 @@ class Management::DocumentVerificationsController < Management::BaseController
   def create
     @document_verification = Verification::Management::Document.new(document_verification_params)
     @document_verification.verify
+    set_managed_user(@document_verification.user)
     render :verified
   end
 

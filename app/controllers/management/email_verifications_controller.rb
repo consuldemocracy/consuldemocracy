@@ -8,6 +8,7 @@ class Management::EmailVerificationsController < Management::BaseController
     @email_verification = Verification::Management::Email.new(email_verification_params)
 
     if @email_verification.save
+      set_managed_user(@email_verification.user)
       render :sent
     else
       render :new

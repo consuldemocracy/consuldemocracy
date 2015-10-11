@@ -28,12 +28,6 @@ class Management::ProposalsController < Management::BaseController
       params.require(:proposal).permit(:title, :question, :summary, :description, :external_url, :video_url, :responsible_name, :tag_list, :terms_of_service, :captcha, :captcha_key)
     end
 
-    def current_user
-      #CHANGE ME
-      #Should be user being managed
-      User.last
-    end
-
     def resource_model
       Proposal
     end

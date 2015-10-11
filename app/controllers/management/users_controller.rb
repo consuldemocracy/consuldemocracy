@@ -12,6 +12,7 @@ class Management::UsersController < Management::BaseController
     @user.verified_at = Time.now
 
     if @user.save then
+      set_managed_user(@user)
       render :show
     else
       render :new

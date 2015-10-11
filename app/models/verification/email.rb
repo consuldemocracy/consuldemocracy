@@ -15,8 +15,11 @@ class Verification::Email
     return false unless valid?
 
     generate_token
-    user = User.where(document_number: verified_user.document_number).first
     user.update(email_verification_token: @plain_token)
+  end
+
+  def user
+    User.where(document_number: verified_user.document_number).first
   end
 
   def generate_token
