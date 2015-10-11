@@ -9,12 +9,14 @@ en:
     menu:
       title: "Management"
       users: "Users"
-    account_info:
-      managed_user_title: "Identified as:"
-      logout: "Logout"
     dashboard:
       index:
         title: "Management"
+    account_info:
+      managed_user_title: "Identified as:"
+      logout: "Logout"
+    sessions:
+      signed_out: "Signed out successfully."
     proposals:
       print:
        print_button: Print

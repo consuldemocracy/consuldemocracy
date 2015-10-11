@@ -9,12 +9,14 @@ es:
     menu:
       title: "Gestión"
       users: "Usuarios"
-    account_info:
-      managed_user_title: "Identified como:"
-      logout: "Salir"
     dashboard:
       index:
        title: "Gestión"
+    account_info:
+      managed_user_title: "Identified como:"
+      logout: "Salir"
+    sessions:
+      signed_out: "Has cerrado la sesión correctamente."
     proposals:
       print:
        print_button: Imprimir

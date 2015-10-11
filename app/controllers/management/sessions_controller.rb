@@ -12,7 +12,7 @@ class Management::SessionsController < ActionController::Base
 
   def destroy
     destroy_session
-    redirect_to root_path, notice: t("devise.sessions.signed_out")
+    redirect_to root_path, notice: t("management.sessions.signed_out")
   end
 
   private
