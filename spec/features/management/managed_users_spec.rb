@@ -25,7 +25,7 @@ feature 'Managed User' do
       end
     end
 
-    scenario "User is verified as level three" do
+    scenario "User becomes verified as level three" do
       user = create(:user, :level_two)
 
       visit management_document_verifications_path
@@ -46,7 +46,7 @@ feature 'Managed User' do
       end
     end
 
-    scenario "User is verified as level two (pending email confirmation for level three)" do
+    scenario "User becomes verified as level two (pending email confirmation for level three)" do
       login_as_manager(create(:manager))
 
       user = create(:user)
@@ -70,7 +70,7 @@ feature 'Managed User' do
       end
     end
 
-    scenario "User is creating as level 3 from scratch" do
+    scenario "User is created as level three from scratch" do
       login_as_manager(create(:manager))
 
       visit management_document_verifications_path
@@ -115,7 +115,7 @@ feature 'Managed User' do
     end
 
     expect(page).to have_content "Signed out successfully."
-    expect(current_path).to eq(root_path)
+    expect(current_path).to eq(management_root_path)
   end
 
 end
