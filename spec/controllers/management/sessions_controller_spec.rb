@@ -28,12 +28,10 @@ describe Management::SessionsController do
   describe 'Sign out' do
     it "should destroy the session and redirect" do
       session[:manager_id] = 1
-      session[:managed_user_id] = 1
 
       delete :destroy
 
       expect(session[:manager_id]).to be_nil
-      expect(session[:managed_user_id]).to be_nil
       expect(response).to be_redirect
     end
   end
