@@ -194,6 +194,22 @@ describe Proposal do
     end
   end
 
+  describe '#cached_votes_up' do
+
+    describe "with deprecated long tag list" do
+
+      it "should increase number of cached_total_votes" do
+        proposal = create(:proposal)
+
+        tag_list = ["tag1", "tag2", "tag3", "tag4", "tag5", "tag6", "tag7"]
+        proposal.update_attribute(:tag_list, tag_list)
+
+        expect(proposal.update_cached_votes).to eq(true)
+      end
+
+    end
+  end
+
   describe '#hot_score' do
     let(:now) { Time.now }
 
