@@ -1,23 +1,25 @@
-<p class="account-info">
-  <% if current_user %>
-    <%= t("management.account_info.managed_user_title") %>
-  <% end %>
+<% if current_user.document_number.present? %>
+  <span class="account-info right">
+    <% if current_user.level_two_or_three_verified? %>
+      <%= t("management.account_info.identified_label") %>
+    <% end %>
 
-  <% if account.username.present? %>
-    <%= t("management.username_label") %>
-    <strong><%= account.username %></strong>
-  <% end %>
+    <% if current_user.username.present? %>
+      <%= t("management.account_info.username_label") %>
+      <strong><%= current_user.username %></strong>
+    <% end %>
 
-  <% if account.email.present? %>
-    <%= t("management.email_label") %>
-    <strong><%= account.email %></strong>
-  <% end %>
+    <% if current_user.email.present? %>
+      <%= t("management.account_info.email_label") %>
+      <strong><%= current_user.email %></strong>
+    <% end %>
 
-  <%= t("management.document_type_label") %>
-  <strong><%= humanize_document_type(account.document_type) %></strong>
+    <%= t("management.account_info.document_type_label") %>
+    <strong><%= humanize_document_type(current_user.document_type) %></strong>
 
-  <%= t("management.document_number") %>
-  <strong><%= account.document_number %></strong>
+    <%= t("management.account_info.document_number_label") %>
+    <strong><%= current_user.document_number %></strong>
 
-  <%= link_to(t("management.account_info.logout"), management_session_path, method: :delete) %>
-</p>
+      <%= link_to(t("management.account_info.logout"), logout_management_users_path, method: :delete) %>
+  </span>
+<% end %>

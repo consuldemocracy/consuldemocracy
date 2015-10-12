@@ -14,11 +14,7 @@ class Management::BaseController < ActionController::Base
     end
 
     def current_user
-      @current_user ||= User.find(session["managed_user_id"]) if session["managed_user_id"]
-    end
-
-    def set_managed_user(user)
-      session["managed_user_id"] = user.id
+      @current_user ||= Verification::Management::ManagedUser.find(session[:document_type], session[:document_number])
     end
 
 end

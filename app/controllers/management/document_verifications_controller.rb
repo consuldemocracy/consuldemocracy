@@ -1,5 +1,7 @@
 class Management::DocumentVerificationsController < Management::BaseController
 
+  before_action :set_document, only: :check
+
   def index
     @document_verification = Verification::Management::Document.new()
   end
@@ -9,7 +11,6 @@ class Management::DocumentVerificationsController < Management::BaseController
 
     if @document_verification.valid?
       if @document_verification.verified?
-        set_managed_user(@document_verification.user)
         render :verified
       elsif @document_verification.user?
         render :new
@@ -26,7 +27,6 @@ class Management::DocumentVerificationsController < Management::BaseController
   def create
     @document_verification = Verification::Management::Document.new(document_verification_params)
     @document_verification.verify
-    set_managed_user(@document_verification.user)
     render :verified
   end
 
@@ -34,6 +34,11 @@ class Management::DocumentVerificationsController < Management::BaseController
 
   def document_verification_params
     params.require(:document_verification).permit(:document_type, :document_number)
+  end
+
+  def set_document
+    session[:document_type] = params[:document_verification][:document_type]
+    session[:document_number] = params[:document_verification][:document_number]
   end
 
 end
