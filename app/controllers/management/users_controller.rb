@@ -18,10 +18,20 @@ class Management::UsersController < Management::BaseController
     end
   end
 
+  def logout
+    destroy_session
+    redirect_to management_root_url, notice: t("management.sessions.signed_out_managed_user")
+  end
+
   private
 
     def user_params
       params.require(:user).permit(:document_type, :document_number, :username, :email)
+    end
+
+    def destroy_session
+      session[:document_type] =   nil
+      session[:document_number] = nil
     end
 
 end

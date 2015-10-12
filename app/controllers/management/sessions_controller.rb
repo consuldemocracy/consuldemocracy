@@ -19,7 +19,6 @@ class Management::SessionsController < ActionController::Base
 
     def destroy_session
       session["manager_id"] = nil
-      session["managed_user_id"] = nil
     end
 
 end
