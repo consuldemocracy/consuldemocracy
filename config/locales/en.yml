@@ -2,6 +2,7 @@ en:
   locale: English
   layouts:
     header:
+      logo: "Madrid"
       external_link_transparency: Transparency
       external_link_transparency_url: "http://www.madrid.es/portales/munimadrid/es/Inicio/El-Ayuntamiento/Transparencia?vgnextfmt=default&vgnextchannel=20fd850769797310VgnVCM2000000c205a0aRCRD"
       external_link_opendata: Open data
@@ -317,6 +318,7 @@ en:
     manage:
       all: "You are not authorized to %{action} %{subject}."
   welcome:
+    highlights: "Highlights: "
     signed_in_home_title: Recent activity
     debates:
       title: "Debate"

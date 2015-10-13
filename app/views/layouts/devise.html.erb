@@ -18,7 +18,7 @@
         <div class="small-12 medium-8 large-5 column small-centered">
           <h1>
             <%= link_to root_path do %>
-              <%= image_tag('header_logo_madrid.png', class: 'show-for-medium-up left', size: '96x96') %>
+              <%= image_tag('header_logo_madrid.png', class: 'show-for-medium-up left', size: '96x96', alt: t("layouts.header.logo")) %>
               <%= t("layouts.header.open_gov", open: "#{t('layouts.header.open')}").html_safe %>
             <% end %>
           </h1>
