@@ -9,6 +9,9 @@ en:
     menu:
       title: "Management"
       users: "Users"
+      create_proposal: "Create proposal"
+      support_proposals: "Support proposals"
+      print_proposals: "Print proposals"
     dashboard:
       index:
         title: "Management"

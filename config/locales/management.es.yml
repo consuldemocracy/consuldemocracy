@@ -9,6 +9,9 @@ es:
     menu:
       title: "Gestión"
       users: "Usuarios"
+      create_proposal: "Crear propuesta"
+      support_proposals: "Apoyar propuestas"
+      print_proposals: "Imprimir propuestas"
     dashboard:
       index:
        title: "Gestión"
