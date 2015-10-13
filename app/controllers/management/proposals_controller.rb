@@ -38,6 +38,10 @@ class Management::ProposalsController < Management::BaseController
       end
     end
 
+    def current_user
+      managed_user
+    end
+
     #Duplicated in application_controller. Move to a concenrn.
     def set_proposal_votes(proposals)
       @proposal_votes = current_user ? current_user.proposal_votes(proposals) : {}

@@ -3,6 +3,8 @@ class Management::BaseController < ActionController::Base
 
   before_action :verify_manager
 
+  helper_method :managed_user
+
   private
 
     def verify_manager
@@ -13,8 +15,8 @@ class Management::BaseController < ActionController::Base
       @current_manager ||= Manager.find(session["manager_id"]) if session["manager_id"]
     end
 
-    def current_user
-      @current_user ||= Verification::Management::ManagedUser.find(session[:document_type], session[:document_number])
+    def managed_user
+      @managed_user ||= Verification::Management::ManagedUser.find(session[:document_type], session[:document_number])
     end
 
 end

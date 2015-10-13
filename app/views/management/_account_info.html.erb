@@ -1,24 +1,24 @@
-<% if current_user.document_number.present? %>
+<% if managed_user.document_number.present? %>
   <span class="account-info right">
-    <% if current_user.level_two_or_three_verified? %>
+    <% if managed_user.level_two_or_three_verified? %>
       <%= t("management.account_info.identified_label") %>
     <% end %>
 
-    <% if current_user.username.present? %>
+    <% if managed_user.username.present? %>
       <%= t("management.account_info.username_label") %>
-      <strong><%= current_user.username %></strong>
+      <strong><%= managed_user.username %></strong>
     <% end %>
 
-    <% if current_user.email.present? %>
+    <% if managed_user.email.present? %>
       <%= t("management.account_info.email_label") %>
-      <strong><%= current_user.email %></strong>
+      <strong><%= managed_user.email %></strong>
     <% end %>
 
     <%= t("management.account_info.document_type_label") %>
-    <strong><%= humanize_document_type(current_user.document_type) %></strong>
+    <strong><%= humanize_document_type(managed_user.document_type) %></strong>
 
     <%= t("management.account_info.document_number_label") %>
-    <strong><%= current_user.document_number %></strong>
+    <strong><%= managed_user.document_number %></strong>
 
       <%= link_to(t("management.account_info.logout"), logout_management_users_path, method: :delete) %>
   </span>

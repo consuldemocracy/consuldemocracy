@@ -29,7 +29,7 @@ module CommonActions
   end
 
   def login_managed_user(user)
-    allow_any_instance_of(Management::BaseController).to receive(:current_user).and_return(user)
+    allow_any_instance_of(Management::BaseController).to receive(:managed_user).and_return(user)
   end
 
   def confirm_email
