@@ -3,9 +3,9 @@ module Verification
 
   included do
     scope :level_three_verified, -> { where.not(verified_at: nil) }
-    scope :level_two_verified, -> { where("users.confirmed_phone IS NOT NULL AND users.residence_verified_at IS NOT NULL") }
-    scope :level_two_or_three_verified, -> { where("users.verified_at IS NOT NULL OR (users.confirmed_phone IS NOT NULL AND users.residence_verified_at IS NOT NULL)") }
-    scope :unverified, -> { where("users.verified_at IS NULL AND (users.residence_verified_at IS NULL OR users.confirmed_phone IS NULL)") }
+    scope :level_two_verified, -> { where("users.level_two_verified_at IS NOT NULL OR (users.confirmed_phone IS NOT NULL AND users.residence_verified_at IS NOT NULL)") }
+    scope :level_two_or_three_verified, -> { where("users.verified_at IS NOT NULL OR users.level_two_verified_at IS NOT NULL OR (users.confirmed_phone IS NOT NULL AND users.residence_verified_at IS NOT NULL)") }
+    scope :unverified, -> { where("users.verified_at IS NULL AND (users.level_two_verified_at IS NULL AND (users.residence_verified_at IS NULL OR users.confirmed_phone IS NULL))") }
     scope :incomplete_verification, -> { where("(users.residence_verified_at IS NULL AND users.failed_census_calls_count > ?) OR (users.residence_verified_at IS NOT NULL AND (users.unconfirmed_phone IS NULL OR users.confirmed_phone IS NULL))", 0)  }
   end
 
@@ -30,7 +30,7 @@ module Verification
   end
 
   def level_two_verified?
-    residence_verified? && sms_verified?
+    level_two_verified_at.present? || (residence_verified? && sms_verified?)
   end
 
   def level_three_verified?
