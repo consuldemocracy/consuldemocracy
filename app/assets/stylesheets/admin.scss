@@ -307,3 +307,16 @@ body.admin {
     }
   }
 }
+
+.account-info, .login-as {
+  background-color: #e7e7e7;
+  border-radius: rem-calc(3);
+  font-size: rem-calc(16);
+  font-weight: normal;
+  margin-bottom: rem-calc(12);
+  padding: rem-calc(6) rem-calc(12);
+
+  strong {
+    font-size: rem-calc(18);
+  }
+}

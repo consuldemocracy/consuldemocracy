@@ -1,25 +1,29 @@
 <% if managed_user.document_number.present? %>
-  <span class="account-info right">
-    <% if managed_user.level_two_or_three_verified? %>
-      <%= t("management.account_info.identified_label") %>
-    <% end %>
+  <section class="small-12 medium-9 column margin-top">
+    <div class="account-info">
 
-    <% if managed_user.username.present? %>
-      <%= t("management.account_info.username_label") %>
-      <strong><%= managed_user.username %></strong>
-    <% end %>
+      <%= link_to(t("management.account_info.logout"), logout_management_users_path, method: :delete, class: 'right') %>
 
-    <% if managed_user.email.present? %>
-      <%= t("management.account_info.email_label") %>
-      <strong><%= managed_user.email %></strong>
-    <% end %>
+      <% if managed_user.level_two_or_three_verified? %>
+        <p><%= t("management.account_info.identified_label") %></p>
+      <% end %>
 
-    <%= t("management.account_info.document_type_label") %>
-    <strong><%= humanize_document_type(managed_user.document_type) %></strong>
+      <% if managed_user.username.present? %>
+        <p><%= t("management.account_info.username_label") %>
+        <strong><%= managed_user.username %></strong></p>
+      <% end %>
 
-    <%= t("management.account_info.document_number_label") %>
-    <strong><%= managed_user.document_number %></strong>
+      <% if managed_user.email.present? %>
+        <p><%= t("management.account_info.email_label") %>
+        <strong><%= managed_user.email %></strong></p>
+      <% end %>
 
-      <%= link_to(t("management.account_info.logout"), logout_management_users_path, method: :delete) %>
-  </span>
+      <p><%= t("management.account_info.document_type_label") %>
+      <strong><%= humanize_document_type(managed_user.document_type) %></strong>
+
+      <p><%= t("management.account_info.document_number_label") %>
+      <strong><%= managed_user.document_number %></strong></p>
+    </span>
+  </section>
 <% end %>
+

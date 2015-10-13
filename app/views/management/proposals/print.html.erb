@@ -1,19 +1,15 @@
 <section id="printme" role="main">
-  <a id="print_link" onclick="print();" class="button warning radius">
-    <%= t('management.proposals.print.print_button') %>
-  </a>
-  <div class="wrap row">
-    <div id="proposals" class="proposals-list small-12 medium-9 column">
+  <div class="row">
+    <div id="proposals" class="proposals-list small-12 column">
+      <a id="print_link" href="javascript:window.print(); void 0;" class="button warning radius right">
+        <%= t('management.proposals.print.print_button') %>
+      </a>
 
       <div class="filters">
-        <div class="small-12 medium-7 left">
-          <div class="small-12 inline-block">
-            <h2 class="inline-block">
-              <%= t("proposals.index.select_order_long") %>
-            </h2>
-            <%= render 'shared/order_selector', i18n_namespace: "proposals.index" %>
-          </div>
-        </div>
+        <h2 class="inline-block">
+          <%= t("proposals.index.select_order_long") %>
+        </h2>
+        <%= render 'shared/order_selector', i18n_namespace: "proposals.index" %>
       </div>
 
       <%= render @proposals %>
@@ -21,15 +17,3 @@
     </div>
   </div>
 </section>
-
-
-<script type="text/javascript">
-  function print(){
-    var object=document.getElementById('printme');
-    var browser=window.open('','_blank');
-    browser.document.write(object.innerHTML);
-    browser.document.close();
-    browser.print();
-    browser.close();
-  }
-</script>

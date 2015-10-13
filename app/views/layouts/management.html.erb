@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title><%= content_for?(:title) ? yield(:title) : "Admin" %></title>
-    <%= stylesheet_link_tag    "application" %>
+    <%= stylesheet_link_tag  "application", media: "all" %>
+    <%= stylesheet_link_tag  "print", media: "print" %>
     <%= javascript_include_tag "vendor/modernizr" %>
     <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
     <%= content_for :head %>
@@ -42,9 +43,7 @@
         <%= render "/management/menu" %>
       </div>
 
-      <section class="top-bar-section">
-        <%= render "management/account_info" %>
-      </section>
+      <%= render "management/account_info" %>
 
       <div class="admin-content small-12 medium-9 column">
         <% if notice %>
