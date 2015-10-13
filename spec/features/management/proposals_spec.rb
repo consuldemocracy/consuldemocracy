@@ -36,6 +36,8 @@ feature 'Proposals' do
       expect(page).to have_content 'http://youtube.com'
       expect(page).to have_content user.name
       expect(page).to have_content I18n.l(Proposal.last.created_at.to_date)
+
+      expect(URI.parse(current_url).path).to eq(management_proposal_path(Proposal.last))
     end
 
     scenario "Should not allow unverified users to create proposals" do
