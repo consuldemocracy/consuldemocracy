@@ -180,12 +180,16 @@ Rails.application.routes.draw do
 
     resources :email_verifications, only: [:new, :create]
 
-    resources :users, only: [:new, :create]
+    resources :users, only: [:new, :create] do
+      collection do
+        delete :logout
+      end
+    end
 
     get 'sign_in', to: 'sessions#create'
 
-    resources :sessions, only: :create
-    resources :proposals, only: [:index, :new, :create] do
+    resource :session, only: [:create, :destroy]
+    resources :proposals, only: [:index, :new, :create, :show] do
       member do
         post :vote
       end

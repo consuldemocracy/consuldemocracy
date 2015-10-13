@@ -12,5 +12,26 @@
         <%= t("management.menu.users") %>
       <% end %>
     </li>
+
+    <li <%= "class=active" if controller_name == "proposals" and action_name == "new" %>>
+      <%= link_to new_management_proposal_path do %>
+        <i class="icon-proposals"></i>
+        <%= t("management.menu.create_proposal") %>
+      <% end %>
+    </li>
+
+    <li <%= "class=active" if controller_name == "proposals" and action_name == "index"  %>>
+      <%= link_to management_proposals_path do %>
+        <i class="icon-like"></i>
+        <%= t("management.menu.support_proposals") %>
+      <% end %>
+    </li>
+
+    <li <%= "class=active" if controller_name == "proposals" and action_name == "print" %>>
+      <%= link_to print_management_proposals_path do %>
+        <i class="icon-print"></i>
+        <%= t("management.menu.print_proposals") %>
+      <% end %>
+    </li>
   </ul>
 </nav>

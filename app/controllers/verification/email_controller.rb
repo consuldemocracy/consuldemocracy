@@ -6,11 +6,7 @@ class Verification::EmailController < ApplicationController
 
   def show
     if Verification::Email.find(current_user, params[:email_verification_token])
-
-      current_user.update(verified_at: Time.now,
-                          document_number: current_user.document_number || current_user.unconfirmed_document_number,
-                          residence_verified_at: current_user.residence_verified_at || Time.now)
-
+      current_user.update(verified_at: Time.now)
       redirect_to account_path, notice: t('verification.email.show.flash.success')
     else
       redirect_to verified_user_path, alert: t('verification.email.show.alert.failure')
@@ -26,7 +22,10 @@ class Verification::EmailController < ApplicationController
                                 @email.encrypted_token,
                                 @verified_user.document_type,
                                 @verified_user.document_number).deliver_later
+      ###CHANGE ME
+      #we should not have access to the account_page of a managed_user
       redirect_to account_path, notice: t('verification.email.create.flash.success', email: @verified_user.email)
+      ###
     else
       redirect_to verified_user_path, alert: t('verification.email.create.alert.failure')
     end

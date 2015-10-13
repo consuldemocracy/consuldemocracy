@@ -6,7 +6,7 @@ describe Management::SessionsController do
     create(:manager, username: "supermanager" , password: "secret")
   end
 
-  describe 'Sign up' do
+  describe 'Sign in' do
     it "should return 404 if not username/password" do
       expect { get :create }.to raise_error "Not Found"
     end
@@ -21,6 +21,17 @@ describe Management::SessionsController do
 
     it "should redirect to management root path if right credentials" do
       get :create, login: "supermanager" , clave_usuario: "secret"
+      expect(response).to be_redirect
+    end
+  end
+
+  describe 'Sign out' do
+    it "should destroy the session and redirect" do
+      session[:manager_id] = 1
+
+      delete :destroy
+
+      expect(session[:manager_id]).to be_nil
       expect(response).to be_redirect
     end
   end

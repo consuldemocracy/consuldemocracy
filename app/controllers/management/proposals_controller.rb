@@ -3,7 +3,7 @@ class Management::ProposalsController < Management::BaseController
   include CommentableActions
 
   before_action :check_verified_user, except: :print
-  before_action :set_proposal, only: :vote
+  before_action :set_proposal, only: [:vote, :show]
   before_action :parse_search_terms, only: :index
 
   has_orders %w{hot_score confidence_score created_at most_commented random}, only: [:index, :print]
@@ -28,12 +28,6 @@ class Management::ProposalsController < Management::BaseController
       params.require(:proposal).permit(:title, :question, :summary, :description, :external_url, :video_url, :responsible_name, :tag_list, :terms_of_service, :captcha, :captcha_key)
     end
 
-    def current_user
-      #CHANGE ME
-      #Should be user being managed
-      User.last
-    end
-
     def resource_model
       Proposal
     end
@@ -44,9 +38,18 @@ class Management::ProposalsController < Management::BaseController
       end
     end
 
-    #Duplicated in application_controller. Move to a concenrn.
+    def current_user
+      managed_user
+    end
+
+    ### Duplicated in application_controller. Move to a concenrn.
     def set_proposal_votes(proposals)
       @proposal_votes = current_user ? current_user.proposal_votes(proposals) : {}
     end
+
+    def set_comment_flags(comments)
+      @comment_flags = current_user ? current_user.comment_flags(comments) : {}
+    end
+    ###
 
 end

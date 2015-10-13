@@ -9,9 +9,22 @@ es:
     menu:
       title: "Gestión"
       users: "Usuarios"
+      create_proposal: "Crear propuesta"
+      support_proposals: "Apoyar propuestas"
+      print_proposals: "Imprimir propuestas"
     dashboard:
       index:
        title: "Gestión"
+    account_info:
+      identified_label: "Identificado como:"
+      username_label: "Usuario:"
+      email_label: "Email:"
+      document_number_label: "Número de documento:"
+      document_type_label: "Tipo de documento:"
+      logout: "Salir"
+    sessions:
+      signed_out: "Has cerrado la sesión correctamente."
+      signed_out_managed_user: "Has cerrado la sesión correctamente."
     proposals:
       print:
        print_button: Imprimir

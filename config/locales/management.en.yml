@@ -1,7 +1,7 @@
 en:
   management:
     print_info: "Print this info"
-    username_label: "User name"
+    username_label: "Username"
     email_label: "Email"
     check: "Check"
     document_number: "Document number"
@@ -9,9 +9,22 @@ en:
     menu:
       title: "Management"
       users: "Users"
+      create_proposal: "Create proposal"
+      support_proposals: "Support proposals"
+      print_proposals: "Print proposals"
     dashboard:
       index:
         title: "Management"
+    account_info:
+      identified_label: "Identified as:"
+      username_label: "Username"
+      email_label: "Email"
+      document_number_label: "Document number"
+      document_type_label: "Document type"
+      logout: "Logout"
+    sessions:
+      signed_out: "Signed out successfully."
+      signed_out_managed_user: "Signed out successfully."
     proposals:
       print:
        print_button: Print

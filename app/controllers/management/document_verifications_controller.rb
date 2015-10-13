@@ -1,5 +1,7 @@
 class Management::DocumentVerificationsController < Management::BaseController
 
+  before_action :set_document, only: :check
+
   def index
     @document_verification = Verification::Management::Document.new()
   end
@@ -34,8 +36,9 @@ class Management::DocumentVerificationsController < Management::BaseController
     params.require(:document_verification).permit(:document_type, :document_number)
   end
 
+  def set_document
+    session[:document_type] = params[:document_verification][:document_type]
+    session[:document_number] = params[:document_verification][:document_number]
+  end
 
 end
-
-
-

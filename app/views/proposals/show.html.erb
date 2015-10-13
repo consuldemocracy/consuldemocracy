@@ -88,7 +88,7 @@
         <%= render 'shared/tags', taggable: @proposal %>
 
         <div class="js-moderator-proposal-actions moderator-actions">
-          <%= render 'actions', proposal: @proposal %>
+          <%= render 'proposals/actions', proposal: @proposal %>
         </div>
       </div>
 
@@ -108,4 +108,4 @@
     </div>
   </section>
 <% end %>
-<%= render "comments" %>
+<%= render "proposals/comments" %>

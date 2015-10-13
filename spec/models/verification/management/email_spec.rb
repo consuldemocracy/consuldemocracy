@@ -40,10 +40,13 @@ describe Verification::Management::Email do
       allow(validation).to receive(:user).and_return user
       expect(mail).to receive(:deliver_later)
       expect(Devise.token_generator).to receive(:generate).with(User, :email_verification_token).and_return(["1","2"])
-      expect(user).to receive(:update).with(document_type: "1", unconfirmed_document_number: "1234", email_verification_token: "1")
       expect(Mailer).to receive(:email_verification).with(user, user.email, "2", "1", "1234").and_return(mail)
 
       validation.save
+
+      expect(user.reload).to be_level_two_verified
+      expect(user.document_type).to eq("1")
+      expect(user.document_number).to eq("1234")
     end
   end
 end
