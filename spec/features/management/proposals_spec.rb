@@ -13,7 +13,7 @@ feature 'Proposals' do
       user = create(:user, :level_two)
       login_managed_user(user)
 
-      visit new_management_proposal_path
+      click_link "Create proposal"
 
       fill_in 'proposal_title', with: 'Help refugees'
       fill_in 'proposal_question', with: '¿Would you like to give assistance to war refugees?'
@@ -42,7 +42,7 @@ feature 'Proposals' do
       user = create(:user)
       login_managed_user(user)
 
-      visit new_management_proposal_path
+      click_link "Create proposal"
 
       expect(page).to have_content "User is not verified"
     end
@@ -56,7 +56,7 @@ feature 'Proposals' do
       user = create(:user, :level_two)
       login_managed_user(user)
 
-      visit management_proposals_path
+      click_link "Support proposals"
 
       within("#proposals") do
         find('.in-favor a').click
@@ -73,7 +73,7 @@ feature 'Proposals' do
       user = create(:user)
       login_managed_user(user)
 
-      visit management_proposals_path
+      click_link "Support proposals"
 
       expect(page).to have_content "User is not verified"
     end
@@ -85,7 +85,7 @@ feature 'Proposals' do
       user = create(:user, :level_two)
       login_managed_user(user)
 
-      visit management_proposals_path
+      click_link "Support proposals"
 
       fill_in "search", with: "what you got"
       click_button "Search"
@@ -105,7 +105,7 @@ feature 'Proposals' do
     scenario 'Printing proposals', :js do
       5.times { create(:proposal) }
 
-      visit print_management_proposals_path
+      click_link "Print proposals"
 
       find("#print_link").click
 
@@ -123,7 +123,7 @@ feature 'Proposals' do
       user = create(:user, :level_two)
       login_managed_user(user)
 
-      visit print_management_proposals_path
+      click_link "Print proposals"
 
       select 'most supported', from: 'order-selector'
 
