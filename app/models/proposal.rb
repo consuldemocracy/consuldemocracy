@@ -65,7 +65,7 @@ class Proposal < ActiveRecord::Base
   end
 
   def code
-    "#{Setting.value_for("proposal_code_prefix")}-#{created_at.strftime('%Y-%M')}-#{id}"
+    "#{Setting.value_for("proposal_code_prefix")}-#{created_at.strftime('%Y-%m')}-#{id}"
   end
 
   def after_commented
