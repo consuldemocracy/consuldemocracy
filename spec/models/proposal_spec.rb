@@ -125,7 +125,7 @@ describe Proposal do
   it "should have a code" do
     Setting.find_by(key: "proposal_code_prefix").update(value: "TEST")
     proposal = create(:proposal)
-    expect(proposal.code).to eq "TEST-#{proposal.created_at.strftime('%Y-%M')}-#{proposal.id}"
+    expect(proposal.code).to eq "TEST-#{proposal.created_at.strftime('%Y-%m')}-#{proposal.id}"
   end
 
   describe "#editable?" do
