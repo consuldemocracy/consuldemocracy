@@ -9,11 +9,15 @@ p.proposal-info span:nth-child(3) {
   display: none !important;
 }
 
+.top-links {
+  display: none !important;
+}
+
 .select-order {
   border: 0;
   font-size: 24px;
   font-weight: bold;
-  margin-left: -12px;
+  margin-left: -6px;
 }
 
 p.proposal-info {
