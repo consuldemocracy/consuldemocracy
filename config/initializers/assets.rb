@@ -12,3 +12,4 @@ Rails.application.config.assets.version = '1.0'
 Rails.application.config.assets.precompile += %w( ckeditor/* )
 Rails.application.config.assets.precompile += %w( rem.min.js, respond.min.js )
 Rails.application.config.assets.precompile += %w( stat_graphs.js )
+Rails.application.config.assets.precompile += %w( print.css )

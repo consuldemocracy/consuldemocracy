@@ -1,7 +1,13 @@
 Rails.application.routes.draw do
+
+  as :user do
+      match '/user/confirmation' => 'users/confirmations#update', :via => :patch, :as => :update_user_confirmation
+  end
+
   devise_for :users, controllers: {
                        registrations: 'users/registrations',
                        sessions: 'users/sessions',
+                       confirmations: 'users/confirmations',
                        omniauth_callbacks: 'users/omniauth_callbacks'
                      }
   devise_for :organizations, class_name: 'User',
@@ -163,7 +169,36 @@ Rails.application.routes.draw do
     end
   end
 
+  namespace :management do
+    root to: "dashboard#index"
 
+    resources :document_verifications, only: [:index, :new, :create] do
+      collection do
+        post :check
+      end
+    end
+
+    resources :email_verifications, only: [:new, :create]
+
+    resources :users, only: [:new, :create] do
+      collection do
+        delete :logout
+      end
+    end
+
+    get 'sign_in', to: 'sessions#create'
+
+    resource :session, only: [:create, :destroy]
+    resources :proposals, only: [:index, :new, :create, :show] do
+      member do
+        post :vote
+      end
+
+      collection do
+        get :print
+      end
+    end
+  end
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

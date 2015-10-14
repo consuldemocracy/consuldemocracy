@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title><%= content_for?(:title) ? yield(:title) : "Admin" %></title>
+    <%= stylesheet_link_tag  "application", media: "all" %>
+    <%= stylesheet_link_tag  "print", media: "print" %>
+    <%= javascript_include_tag "vendor/modernizr" %>
+    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+    <%= content_for :head %>
+    <%= csrf_meta_tags %>
+    <%= favicon_link_tag "favicon.ico" %>
+  </head>
+
+  <body class="admin">
+    <header class="<%= header_css %>">
+      <section class="top-links">
+        <div class="row">
+          <%= render 'shared/locale_switcher' %>
+        </div>
+      </section>
+
+      <div class="contain-to-grid clear">
+        <nav class="top-bar" data-topbar role="navigation">
+          <ul class="title-area">
+            <li class="name">
+              <%= link_to root_path do %>
+                <%= image_tag('header_logo_madrid.png', class: 'left', size: '96x96') %>
+                <%= t("layouts.header.open_gov", open: "<strong>#{t('layouts.header.open')}</strong>").html_safe %> <span>|</span> <span class="logo-site"><%= t("management.dashboard.index.title") %></span>
+              <% end %>
+            </li>
+            <li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <div class="row">
+
+      <div class="small-12 medium-3 column">
+        <%= render "/management/menu" %>
+      </div>
+
+      <%= render "management/account_info" %>
+
+      <div class="admin-content small-12 medium-9 column">
+        <% if notice %>
+          <div data-alert class="alert-box radius success">
+            <a href="#" class="close" title="<%= t("application.close") %>">&times;</a>
+            <%= notice %>
+          </div>
+        <% end %>
+
+        <% if alert %>
+          <div data-alert class="alert-box radius alert">
+            <a href="#" class="close" title="<%= t("application.close") %>">&times;</a>
+            <%= alert %>
+          </div>
+        <% end %>
+
+        <%= yield %>
+      </div>
+    </div>
+  </body>
+</html>

@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe Verification::Residence do
 
-  let(:residence) { build(:verification_residence) }
+  let(:residence) { build(:verification_residence, document_number: "12345678Z") }
 
   describe "validations" do
 
@@ -57,7 +57,7 @@ describe Verification::Residence do
       residence.user = user
       residence.save
 
-      residence2 = build(:verification_residence)
+      build(:verification_residence)
 
       residence.valid?
       expect(residence.errors[:document_number]).to include("has already been taken")
@@ -112,7 +112,7 @@ describe Verification::Residence do
 
   describe "Failed census call" do
     it "stores failed census API calls" do
-      residence = build(:verification_residence, :invalid)
+      residence = build(:verification_residence, :invalid, document_number: "12345678Z")
       residence.save
 
       expect(FailedCensusCall.count).to eq(1)

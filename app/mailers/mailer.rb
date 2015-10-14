@@ -1,6 +1,7 @@
 class Mailer < ApplicationMailer
   helper :text_with_links
   helper :mailer
+  helper :user
 
   def comment(comment)
     @comment = comment
@@ -16,10 +17,12 @@ class Mailer < ApplicationMailer
     mail(to: @recipient.email, subject: t('mailers.reply.subject')) if @commentable.present? && @recipient.present?
   end
 
-  def email_verification(user, recipient, token)
+  def email_verification(user, recipient, token, document_type, document_number)
     @user = user
     @recipient = recipient
     @token = token
+    @document_type = document_type
+    @document_number = document_number
     mail(to: @recipient, subject: t('mailers.email_verification.subject'))
   end
 

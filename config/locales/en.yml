@@ -1,5 +1,8 @@
 en:
   locale: English
+  errors:
+    messages:
+      user_not_found: "User not found"
   layouts:
     header:
       logo: "Madrid"

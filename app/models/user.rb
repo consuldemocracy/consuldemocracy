@@ -25,6 +25,7 @@ class User < ActiveRecord::Base
 
   validates :username, presence: true, unless: :organization?
   validates :username, uniqueness: true, unless: :organization?
+  validates :document_number, uniqueness: { scope: :document_type }, allow_nil: true
   validate :validate_username_length
 
   validates :official_level, inclusion: {in: 0..5}
@@ -35,11 +36,16 @@ class User < ActiveRecord::Base
 
   accepts_nested_attributes_for :organization, update_only: true
 
+  attr_accessor :skip_password_validation
+
   scope :administrators, -> { joins(:administrators) }
   scope :moderators,     -> { joins(:moderator) }
   scope :organizations,  -> { joins(:organization) }
   scope :officials,      -> { where("official_level > 0") }
   scope :for_render,     -> { includes(:organization) }
+  scope :by_document,    -> (document_type, document_number) { where(document_type: document_type, document_number: document_number) }
+
+  before_validation :clean_document_number
 
   def self.find_for_oauth(auth, signed_in_resource = nil)
     # Get the identity and user if they exist
@@ -158,10 +164,19 @@ class User < ActiveRecord::Base
   end
 
   def show_welcome_screen?
-    sign_in_count == 1 && unverified? && !organization
+    sign_in_count == 1 && unverified? && !organization && !administrator?
+  end
+
+  def password_required?
+    return false if skip_password_validation
+    super
   end
 
   private
+
+    def clean_document_number
+      self.document_number = self.document_number.gsub(/[^a-z0-9]+/i, "").upcase unless self.document_number.blank?
+    end
 
     def validate_username_length
       validator = ActiveModel::Validations::LengthValidator.new(

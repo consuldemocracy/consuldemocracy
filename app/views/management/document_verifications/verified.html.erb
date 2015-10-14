@@ -1,0 +1,9 @@
+<div class="alert-box success radius">
+  <%= t("management.document_verifications.already_verified") %>
+</div>
+
+<%= render 'management/user_permissions',
+      message: t("management.document_verifications.in_census_has_following_permissions"),
+      permissions: [:debates, :create_proposals, :support_proposals, :vote_proposals] %>
+
+<a href="javascript:window.print();" class="button warning radius"><%= t("management.print_info") %></a>

@@ -17,8 +17,15 @@ class Verification::EmailController < ApplicationController
     @email = Verification::Email.new(@verified_user)
     if @email.save
       current_user.reload
-      Mailer.email_verification(current_user, @email.recipient, @email.encrypted_token).deliver_later
+      Mailer.email_verification(current_user,
+                                @email.recipient,
+                                @email.encrypted_token,
+                                @verified_user.document_type,
+                                @verified_user.document_number).deliver_later
+      ###CHANGE ME
+      #we should not have access to the account_page of a managed_user
       redirect_to account_path, notice: t('verification.email.create.flash.success', email: @verified_user.email)
+      ###
     else
       redirect_to verified_user_path, alert: t('verification.email.create.alert.failure')
     end

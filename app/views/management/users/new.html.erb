@@ -1,0 +1,23 @@
+<p><%= t("management.users.create_user_info") %></p>
+
+<%= render 'management/user_permissions',
+      message: t("management.document_verifications.in_census_has_following_permissions"),
+      permissions: [:debates, :create_proposals, :support_proposals, :vote_proposals] %>
+
+<div class="row">
+  <div class="small-12 medium-9 column">
+    <%= form_for @user, url: management_users_path do |f| %>
+      <%= f.hidden_field :document_type %>
+      <%= f.hidden_field :document_number %>
+      <%= f.text_field :username,
+          label: t('management.username_label'),
+          placeholder: t('management.username_label') %>
+      <%= f.text_field :email,
+          label: t('management.email_label'),
+          placeholder: t('management.email_label') %>
+
+      <%= f.submit t("management.users.create_user_submit"), class: "button success radius" %>
+    <% end %>
+  </div>
+</div>
+

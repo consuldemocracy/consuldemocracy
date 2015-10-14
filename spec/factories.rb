@@ -1,8 +1,11 @@
 FactoryGirl.define do
 
+  sequence(:document_number) { |n| "#{n.to_s.rjust(8, '0')}X" }
+
   factory :user do
     sequence(:username) { |n| "Manuela#{n}" }
     sequence(:email)    { |n| "manuela#{n}@madrid.es" }
+
     password            'judgmentday'
     terms_of_service     '1'
     confirmed_at        { Time.now }
@@ -18,12 +21,14 @@ FactoryGirl.define do
       unconfirmed_phone "611111111"
       confirmed_phone "611111111"
       sms_confirmation_code "1234"
-      document_number "12345678Z"
+      document_type "1"
+      document_number
     end
 
     trait :level_three do
       verified_at Time.now
-      document_number "12345678Z"
+      document_type "1"
+      document_number
     end
 
     trait :hidden do
@@ -49,8 +54,8 @@ FactoryGirl.define do
 
   factory :verification_residence, class: Verification::Residence do
     user
-    document_number  '12345678Z'
-    document_type    1
+    document_number
+    document_type    "1"
     date_of_birth    Date.new(1980, 12, 31)
     postal_code      "28013"
     terms_of_service '1'
@@ -62,7 +67,7 @@ FactoryGirl.define do
 
   factory :failed_census_call do
     user
-    document_number '11111111A'
+    document_number
     document_type 1
     date_of_birth Date.new(1900, 1, 1)
     postal_code '28000'
@@ -83,7 +88,7 @@ FactoryGirl.define do
   end
 
   factory :verified_user do
-    document_number  '12345678Z'
+    document_number
     document_type    'dni'
   end
 
@@ -216,6 +221,11 @@ FactoryGirl.define do
 
   factory :moderator do
     user
+  end
+
+  factory :manager do
+    sequence(:username) { |n| "manager#{n}" }
+    password            'supersecret'
   end
 
   factory :organization do

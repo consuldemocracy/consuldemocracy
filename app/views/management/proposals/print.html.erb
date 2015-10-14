@@ -1,0 +1,19 @@
+<section id="printme" role="main">
+  <div class="row">
+    <div id="proposals" class="proposals-list small-12 column">
+      <a id="print_link" href="javascript:window.print(); void 0;" class="button warning radius right">
+        <%= t('management.proposals.print.print_button') %>
+      </a>
+
+      <div class="filters">
+        <h2 class="inline-block">
+          <%= t("proposals.index.select_order_long") %>
+        </h2>
+        <%= render 'shared/order_selector', i18n_namespace: "proposals.index" %>
+      </div>
+
+      <%= render @proposals %>
+      <%= paginate @proposals %>
+    </div>
+  </div>
+</section>

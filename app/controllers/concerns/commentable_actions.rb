@@ -34,7 +34,8 @@ module CommentableActions
 
     if @resource.save_with_captcha
       track_event
-      redirect_to @resource, notice: t('flash.actions.create.notice', resource_name: "#{resource_name.capitalize}")
+      redirect_path = url_for(controller: controller_name, action: :show, id: @resource.id)
+      redirect_to redirect_path, notice: t('flash.actions.create.notice', resource_name: "#{resource_name.capitalize}")
     else
       load_featured_tags
       set_resource_instance

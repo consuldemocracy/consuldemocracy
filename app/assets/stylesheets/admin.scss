@@ -4,6 +4,7 @@
 // 02. Sidebar
 // 03. List elements
 // 04. Stats
+// 05. Management
 //
 
 // 01. Global styles
@@ -270,5 +271,52 @@ body.admin {
       font-size: rem-calc(30);
       font-weight: bold;
     }
+  }
+}
+
+// 05. Management
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+.postfix {
+  height: rem-calc(48);
+  line-height: rem-calc(48);
+}
+
+.user-permissions {
+
+  ul {
+    list-style-type: none;
+    margin-left: 0;
+
+    li {
+      font-size: rem-calc(14);
+      margin-bottom: rem-calc(12);
+
+      span {
+        color: $text-medium;
+        font-size: rem-calc(12);
+      }
+
+      .icon-check {
+        color: $check;
+      }
+
+      .icon-x {
+        color: $delete;
+      }
+    }
+  }
+}
+
+.account-info, .login-as {
+  background-color: #e7e7e7;
+  border-radius: rem-calc(3);
+  font-size: rem-calc(16);
+  font-weight: normal;
+  margin-bottom: rem-calc(12);
+  padding: rem-calc(6) rem-calc(12);
+
+  strong {
+    font-size: rem-calc(18);
   }
 }

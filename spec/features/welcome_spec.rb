@@ -10,6 +10,24 @@ feature "Welcome screen" do
     expect(current_path).to eq(welcome_path)
   end
 
+  scenario 'a regular user does not see it when coing to /email' do
+
+    plain, encrypted = Devise.token_generator.generate(User, :email_verification_token)
+
+    user = create(:user, email_verification_token: plain)
+
+    visit email_path(email_verification_token: encrypted)
+
+    fill_in 'user_email', with: user.email
+    fill_in 'user_password', with: user.password
+
+    click_button 'Log in'
+
+    expect(page).to have_content("You are now a verified user")
+
+    expect(current_path).to eq(account_path)
+  end
+
   scenario 'it is not shown more than once' do
     user = create(:user, sign_in_count: 2)
 
@@ -38,6 +56,14 @@ feature "Welcome screen" do
     user = create(:user, verified_at: Time.now)
 
     login_through_form_as(user)
+
+    expect(current_path).to eq(proposals_path)
+  end
+
+  scenario 'is not shown to administrators' do
+    administrator = create(:administrator)
+
+    login_through_form_as(administrator.user)
 
     expect(current_path).to eq(proposals_path)
   end

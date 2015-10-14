@@ -1,9 +1,17 @@
 es:
   devise_views:
     confirmations:
-      title: "Reenviar instrucciones de confirmación"
-      email_label: Email
-      submit: "Reenviar instrucciones"
+      new:
+        title: "Reenviar instrucciones de confirmación"
+        email_label: Email
+        submit: "Reenviar instrucciones"
+      show:
+        title: "Confirmar mi cuenta"
+        instructions_html: "Vamos a proceder a confirmar la cuenta con el email <b>%{email}</b>"
+        please_set_password: "Por favor introduce una nueva clave de acceso para su cuenta (te permitirá hacer login con el email de más arriba)"
+        new_password_label: "Nueva clave de acceso"
+        new_password_confirmation_label: "Repite la clave de nuevo"
+        submit: "Confirmar"
     mailer:
       confirmation_instructions:
         title: "Te damos la bienvenida al Portal de Gobierno Abierto del Ayuntamiento de Madrid"

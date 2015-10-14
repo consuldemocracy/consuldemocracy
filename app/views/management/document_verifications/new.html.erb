@@ -1,0 +1,15 @@
+<div class="alert-box success radius">
+  <%= t("management.document_verifications.please_check_account_data") %>
+</div>
+
+<%= render 'management/user_permissions',
+      message: t("management.document_verifications.in_census_has_following_permissions"),
+      permissions: [:debates, :create_proposals, :support_proposals] %>
+
+<%= form_for @document_verification,
+    as: :document_verification,
+    url: management_document_verifications_path do |f| %>
+  <%= f.hidden_field :document_type %>
+  <%= f.hidden_field :document_number %>
+  <%= f.submit t("management.document_verifications.verify"), class: "button success radius" %>
+<% end %>

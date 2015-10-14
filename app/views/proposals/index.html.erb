@@ -44,7 +44,7 @@
           <%= link_to t("proposals.index.start_proposal"), new_proposal_path, class: 'button radius expand' %>
         </div>
 
-        <%= render @proposals %>
+        <%= render partial: 'proposals/proposal', collection: @proposals %>
         <%= paginate @proposals %>
       </div>
     </div>

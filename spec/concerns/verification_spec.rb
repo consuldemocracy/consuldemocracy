@@ -19,10 +19,12 @@ shared_examples_for "verifiable" do
         user1 = create(:user, confirmed_phone: "123456789", residence_verified_at: Time.now)
         user2 = create(:user, confirmed_phone: "123456789", residence_verified_at: nil)
         user3 = create(:user, confirmed_phone: nil, residence_verified_at: Time.now)
+        user4 = create(:user, level_two_verified_at: Time.now)
 
         expect(model.level_two_verified).to include(user1)
         expect(model.level_two_verified).to_not include(user2)
         expect(model.level_two_verified).to_not include(user3)
+        expect(model.level_two_verified).to include(user4)
       end
     end
 
@@ -32,12 +34,13 @@ shared_examples_for "verifiable" do
         user2 = create(:user, verified_at: Time.now)
         user3 = create(:user, confirmed_phone: "123456789", residence_verified_at: nil)
         user4 = create(:user, confirmed_phone: nil, residence_verified_at: Time.now)
-
+        user5 = create(:user, level_two_verified_at: Time.now)
 
         expect(model.level_two_or_three_verified).to include(user1)
         expect(model.level_two_or_three_verified).to include(user2)
         expect(model.level_two_or_three_verified).to_not include(user3)
         expect(model.level_two_or_three_verified).to_not include(user4)
+        expect(model.level_two_or_three_verified).to include(user5)
       end
     end
 
@@ -47,11 +50,13 @@ shared_examples_for "verifiable" do
         user2 = create(:user, verified_at: nil, residence_verified_at: nil, confirmed_phone: "123456789")
         user3 = create(:user, verified_at: nil, residence_verified_at: Time.now, confirmed_phone: nil)
         user4 = create(:user, verified_at: Time.now, residence_verified_at: Time.now, confirmed_phone: "123456789")
+        user5 = create(:user, level_two_verified_at: Time.now)
 
         expect(model.unverified).to include(user1)
         expect(model.unverified).to include(user2)
         expect(model.unverified).to include(user3)
         expect(model.unverified).to_not include(user4)
+        expect(model.unverified).to_not include(user5)
       end
     end
 
@@ -90,7 +95,10 @@ shared_examples_for "verifiable" do
       expect(user.sms_verified?).to eq(false)
     end
 
-    it "level_two_verified? is true only if residence_verified_at and confirmed_phone" do
+    it "level_two_verified? is true if manually set, or if residence_verified_at and confirmed_phone" do
+      user = create(:user, level_two_verified_at: Time.now)
+      expect(user.level_two_verified?).to eq(true)
+
       user = create(:user, confirmed_phone: "123456789", residence_verified_at: Time.now)
       expect(user.level_two_verified?).to eq(true)
 
