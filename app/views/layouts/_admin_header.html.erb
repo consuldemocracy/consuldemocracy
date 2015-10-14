@@ -6,11 +6,11 @@
   </section>
 
   <div class="contain-to-grid clear">
-    <nav class="top-bar" data-topbar role="navigation">
+    <nav class="top-bar" data-topbar>
       <ul class="title-area">
         <li class="name">
           <%= link_to root_path do %>
-            <%= image_tag('header_logo_madrid.png', class: 'left', size: '96x96') %>
+            <%= image_tag('header_logo_madrid.png', class: 'left', size: '96x96', alt: t("layouts.header.logo")) %>
             <%= t("layouts.header.open_gov", open: "<strong>#{t('layouts.header.open')}</strong>").html_safe %> <span>|</span> <span class="logo-site"><%= t("admin.dashboard.index.title") %></span>
           <% end %>
         </li>

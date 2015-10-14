@@ -14,7 +14,7 @@
   <div class="row">
     <div class="small-12 column">
 
-      <%= f.label t("devise_views.users.registrations.new.username_label") %>
+      <%= f.label :username %>
       <p class="note"><%= t("devise_views.users.registrations.new.username_note") %></p>
       <%= f.text_field  :username, maxlength: User.username_max_length, placeholder: t("devise_views.users.registrations.new.username_label"), label: false %>
 

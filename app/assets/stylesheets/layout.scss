@@ -19,6 +19,7 @@
 // 17. Verification
 // 18. Comments
 // 19. Flags
+// 20. Accesibility
 //
 
 // 01. Variables
@@ -310,10 +311,11 @@ header {
     padding: 0;
   }
 
-  p {
+  h2 {
     color: white;
     font-size: rem-calc(16);
-    line-height:  rem-calc(30);
+    font-weight: normal;
+    line-height: rem-calc(30);
   }
 
   .button {
@@ -1642,7 +1644,7 @@ table {
           font-family: "icons" !important;
           position: absolute;
           right: 0;
-          top: rem-calc(6);
+          top: rem-calc(12);
 
           @media (min-width: $small-breakpoint) {
             content: 'c';
@@ -1931,4 +1933,18 @@ table {
 
 .flag-active {
   color: $delete;
+}
+
+// 20. Accesibility
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
 }

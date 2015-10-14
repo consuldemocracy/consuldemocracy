@@ -11,10 +11,12 @@
     <div class="small-12 columns">
       <div class="row collapse">
         <div class="small-10 column">
-          <input type="text" name="search" placeholder="<%= t("#{i18n_namespace}.placeholder") %>" class="search-form">
+          <label for="search-form-header" class="sr-only"><%= t("debates.index.search_form.title") %></label>
+          <input type="text" id="search-form-header" name="search" placeholder="<%= t("#{i18n_namespace}.placeholder") %>" class="search-form">
         </div>
         <div class="small-2 column">
           <button type="submit" class="button postfix" title="<%= t("#{i18n_namespace}.button") %>">
+            <span class="sr-only"><%= t("debates.index.search_form.button") %></span>
             <i class="icon-search"></i>
           </button>
         </div>
