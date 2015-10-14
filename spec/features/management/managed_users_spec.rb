@@ -111,7 +111,7 @@ feature 'Managed User' do
       expect(page).to have_content "Identified as"
       expect(page).to have_content "#{user.username}"
 
-      click_link "Logout"
+      click_link "Change user"
     end
 
     expect(page).to have_content "Signed out successfully."
