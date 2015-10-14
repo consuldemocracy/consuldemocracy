@@ -1,5 +1,6 @@
 <% provide :title do %><%= t("devise_views.confirmations.new.title") %><% end %>
-<h1 class="text-center"><%= t("devise_views.confirmations.new.title") %></h1>
+<h2 class="text-center"><%= t("devise_views.confirmations.new.title") %></h2>
+
 
 <%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
   <%= render 'shared/errors', resource: resource %>

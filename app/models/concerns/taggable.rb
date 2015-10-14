@@ -3,6 +3,7 @@ module Taggable
 
   included do
     acts_as_taggable
+    validate :max_number_of_tags
   end
 
   def tag_list_with_limit(limit = nil)
@@ -16,5 +17,9 @@ module Taggable
 
     count = tags.size - limit
     count < 0 ? 0 : count
+  end
+
+  def max_number_of_tags
+    errors.add(:tag_list, :less_than_or_equal_to, count: 6) if tag_list.count > 6
   end
 end

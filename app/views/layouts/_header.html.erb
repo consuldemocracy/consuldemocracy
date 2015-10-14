@@ -6,18 +6,46 @@
         <%= link_to t("layouts.header.participation"), root_path, class: ("selected" unless current_page?("/transparency") || current_page?("/opendata")) %>&nbsp;|
         <%= link_to t("layouts.header.external_link_transparency"), "/transparency", class: ("selected" if current_page?("/transparency")) %>&nbsp;|
         <%= link_to t("layouts.header.external_link_opendata"), "/opendata", class: ("selected" if current_page?("/opendata")) %>
+          &nbsp;|&nbsp;
+          <div class="social inline-block">
+            <%= link_to "https://twitter.com/abriendomadrid", target: "_blank", title: t("social.twitter") do %>
+              <span class="sr-only"><%= t("social.twitter") %></span>
+              <i class="icon-twitter"></i>
+            <% end %>
+            <%= link_to "https://www.facebook.com/Abriendo-Madrid-1475577616080350/", target: "_blank", title: t("social.facebook") do %>
+              <span class="sr-only"><%= t("social.facebook") %></span>
+              <i class="icon-facebook"></i>
+            <% end %>
+            <%= link_to "/blog", target: "_blank", title: t("social.blog") do %>
+              <span class="sr-only"><%= t("social.blog") %></span>
+              <i class="icon-blog"></i>
+            <% end %>
+            <%= link_to "https://www.youtube.com/channel/UCFmaChI9quIY7lwHplnacfg", target: "_blank", title: t("social.youtube") do %>
+              <span class="sr-only"><%= t("social.youtube") %></span>
+              <i class="icon-youtube"></i>
+            <% end %>
+          </div>
       </div>
     </div>
   </section>
 
   <div class="contain-to-grid clear">
-    <nav class="top-bar" data-topbar role="navigation">
+    <nav class="top-bar" data-topbar>
       <ul class="title-area">
         <li class="toggle-topbar menu-icon"><a href="#"><span><%= t("application.menu")%></span></a></li>
         <li class="name">
           <%= link_to root_path do %>
-            <%= image_tag('header_logo_madrid.png', class: 'show-for-medium-up left', size: '96x96') %>
-            <%= t("layouts.header.open_gov", open: "#{t('layouts.header.open')}").html_safe %> <span>|</span> <span class="logo-site"><%= t("layouts.header.participation") %></span>
+            <%= image_tag('header_logo_madrid.png', class: 'show-for-medium-up left', size: '96x96', alt: t("layouts.header.logo")) %>
+            <%= t("layouts.header.open_gov", open: "#{t('layouts.header.open')}").html_safe %> <span>|</span>
+            <span class="logo-site">
+              <% if transparency_page? %>
+                <%= t("layouts.header.transparency") %>
+              <% elsif opendata_page? %>
+                <%= t("layouts.header.open_data") %>
+              <% else %>
+                <%= t("layouts.header.participation") %>
+              <% end %>
+            </span>
           <% end %>
         </li>
       </ul>
@@ -51,8 +79,8 @@
     <div class="row home-page">
       <div class="small-12 medium-7 column">
         <h1><%= t("layouts.header.open_city_title") %></h1>
-        <p><%= t("layouts.header.open_city_slogan_html") %></p>
-        <%= link_to t("layouts.header.see_all"), highlights_path, class: "button radius see-more warning" %>
+        <h2><%= t("layouts.header.open_city_slogan_html") %></h2>
+        <%= link_to t("layouts.header.see_all"), proposals_path, class: "button radius see-more warning" %>
         <%= link_to t("layouts.header.more_information"), "/more_information", class: "more-info" %>
       </div>
 

@@ -43,7 +43,7 @@ gem 'paranoia'
 gem 'rinku', require: 'rails_rinku'
 gem 'savon'
 gem 'dalli'
-gem 'rollbar', '~> 2.3.0'
+gem 'rollbar', '~> 2.4.0'
 gem 'delayed_job_active_record', '~> 4.1.0'
 gem 'daemons'
 gem 'devise-async'
@@ -72,7 +72,7 @@ group :development, :test do
   gem 'i18n-tasks'
   gem 'capistrano', '3.4.0',           require: false
   gem "capistrano-bundler", '1.1.4',   require: false
-  gem "capistrano-rails", '1.1.3',     require: false
+  gem "capistrano-rails", '1.1.4',     require: false
   gem "capistrano-rvm",                require: false
   gem 'capistrano3-delayed-job', '~> 1.0'
   gem "bullet"

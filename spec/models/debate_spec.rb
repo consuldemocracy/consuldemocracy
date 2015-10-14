@@ -57,10 +57,22 @@ describe Debate do
     end
   end
 
-  it "should sanitize the tag list" do
-    debate.tag_list = "user_id=1"
-    debate.valid?
-    expect(debate.tag_list).to eq(['user_id1'])
+  describe "#tag_list" do
+    it "should sanitize the tag list" do
+      debate.tag_list = "user_id=1"
+      debate.valid?
+      expect(debate.tag_list).to eq(['user_id1'])
+    end
+
+    it "should not be valid with a tag list of more than 6 elements" do
+      debate.tag_list = ["Hacienda", "Economía", "Medio Ambiente", "Corrupción", "Fiestas populares", "Prensa", "Huelgas"]
+      expect(debate).to_not be_valid
+    end
+
+    it "should be valid with a tag list of  6 elements" do
+      debate.tag_list = ["Hacienda", "Economía", "Medio Ambiente", "Corrupción", "Fiestas populares", "Prensa"]
+      expect(debate).to be_valid
+    end
   end
 
   it "should not be valid without accepting terms of service" do

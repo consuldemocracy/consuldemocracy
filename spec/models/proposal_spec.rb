@@ -99,10 +99,22 @@ describe Proposal do
     end
   end
 
-  it "should sanitize the tag list" do
-    proposal.tag_list = "user_id=1"
-    proposal.valid?
-    expect(proposal.tag_list).to eq(['user_id1'])
+  describe "tag_list" do
+    it "should sanitize the tag list" do
+      proposal.tag_list = "user_id=1"
+      proposal.valid?
+      expect(proposal.tag_list).to eq(['user_id1'])
+    end
+
+    it "should not be valid with a tag list of more than 6 elements" do
+      proposal.tag_list = ["Hacienda", "Economía", "Medio Ambiente", "Corrupción", "Fiestas populares", "Prensa", "Huelgas"]
+      expect(proposal).to_not be_valid
+    end
+
+    it "should be valid with a tag list of more than 6 elements" do
+      proposal.tag_list = ["Hacienda", "Economía", "Medio Ambiente", "Corrupción", "Fiestas populares", "Prensa"]
+      expect(proposal).to be_valid
+    end
   end
 
   it "should not be valid without accepting terms of service" do
@@ -113,7 +125,7 @@ describe Proposal do
   it "should have a code" do
     Setting.find_by(key: "proposal_code_prefix").update(value: "TEST")
     proposal = create(:proposal)
-    expect(proposal.code).to eq "TEST-#{proposal.created_at.strftime('%Y-%M')}-#{proposal.id}"
+    expect(proposal.code).to eq "TEST-#{proposal.created_at.strftime('%Y-%m')}-#{proposal.id}"
   end
 
   describe "#editable?" do

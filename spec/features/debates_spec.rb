@@ -55,9 +55,10 @@ feature 'Debates' do
     debate = create(:debate, title: 'Test Debate 1')
 
     visit debates_path(order: :hot_score, page: 1)
-    find(:xpath, "//a[@href='/debates/#{debate.id}']", match: :first).click
+    first(:link, debate.title).click
+    link_text = find_link('Back')[:href]
 
-    expect(find_link('Back')[:href]).to include(debates_path order: :hot_score, page: 1)
+    expect(link_text).to include(debates_path order: :hot_score, page: 1)
   end
 
   scenario 'Create' do
@@ -183,7 +184,7 @@ feature 'Debates' do
     expect(page).not_to have_link('click me')
     expect(page.html).to_not include "<script>alert('hey')</script>"
 
-    click_link 'Edit'
+    click_link 'Edit debate'
 
     expect(current_path).to eq edit_debate_path(Debate.last)
     expect(page).not_to have_link('click me')
@@ -339,13 +340,13 @@ feature 'Debates' do
 
   describe 'Limiting tags shown' do
     scenario 'Index page shows up to 5 tags per debate' do
-      tag_list = ["Hacienda", "Economía", "Medio Ambiente", "Corrupción", "Fiestas populares", "Prensa", "Huelgas"]
+      tag_list = ["Hacienda", "Economía", "Medio Ambiente", "Corrupción", "Fiestas populares", "Prensa"]
       create :debate, tag_list: tag_list
 
       visit debates_path
 
       within('.debate .tags') do
-        expect(page).to have_content '2+'
+        expect(page).to have_content '1+'
       end
     end
 

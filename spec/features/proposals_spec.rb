@@ -253,7 +253,7 @@ feature 'Proposals' do
     expect(page).not_to have_link('click me')
     expect(page.html).to_not include "<script>alert('hey')</script>"
 
-    click_link 'Edit'
+    click_link 'Edit proposal'
 
     expect(current_path).to eq edit_proposal_path(Proposal.last)
     expect(page).not_to have_link('click me')
@@ -422,13 +422,13 @@ feature 'Proposals' do
 
   describe 'Limiting tags shown' do
     scenario 'Index page shows up to 5 tags per proposal' do
-      tag_list = ["Hacienda", "Economía", "Medio Ambiente", "Corrupción", "Fiestas populares", "Prensa", "Huelgas"]
+      tag_list = ["Hacienda", "Economía", "Medio Ambiente", "Corrupción", "Fiestas populares", "Prensa"]
       create :proposal, tag_list: tag_list
 
       visit proposals_path
 
       within('.proposal .tags') do
-        expect(page).to have_content '2+'
+        expect(page).to have_content '1+'
       end
     end
 

@@ -5,6 +5,7 @@ es:
       user_not_found: "No se encontró el usuario"
   layouts:
     header:
+      logo: "Madrid"
       external_link_transparency: Transparencia
       external_link_transparency_url: "http://www.madrid.es/portales/munimadrid/es/Inicio/El-Ayuntamiento/Transparencia?vgnextfmt=default&vgnextchannel=20fd850769797310VgnVCM2000000c205a0aRCRD"
       external_link_opendata: Datos abiertos
@@ -13,19 +14,14 @@ es:
       external_link_blog_url: "/blog"
       open_gov: "Gobierno %{open}"
       open: "abierto"
-      participation: Participación
+      participation: "Participación"
+      transparency: "Transparencia"
+      open_data: "Datos abiertos"
       open_city_title: "La ciudad que quieres será la ciudad que quieras."
       open_city_slogan_html:
         "Existen ciudades gobernadas directamente por sus habitantes, que <b>debaten</b> sobre temas que les preocupan, <b>proponen</b> ideas para mejorar
         sus vidas y <b>deciden</b> entre todas y todos las que se llevan a cabo. Madrid ya es una de ellas."
-      #"Empecemos escuchando qué tiene que decir Madrid.
-      #Para ello abrimos esta Puerta del Sol digital, donde toda la gente de Madrid podemos encontrarnos para debatir y compartir todo lo que queramos."
-      # open_city_text:
-      #   "Aquí cualquier voz tiene su espacio y son los ciudadanos y ciudadanas, y nadie en su nombre, quienes deciden votando los debates cuáles son los temas
-      #    más importantes de cada momento. Los responsables del gobierno tienen cuentas de usuario propias con las que podrán participar en los debates, y ser evaluados
-      #    al mismo nivel que todos los demás."
-      # open_city_soon: "Muy pronto abriremos la sección de propuestas ciudadanas, donde cualquiera podrá presentar propuestas y, si reciben apoyo, serán puestas en marcha por el Ayuntamiento."
-      see_all: Ver debates y propuestas
+      see_all: "Ver propuestas"
       my_account_link: Mi cuenta
       locale: "Idioma:"
       administration: Administrar
@@ -47,7 +43,7 @@ es:
       transparency_text: "Obtén cualquier información sobre el Ayuntamiento de Madrid."
       open_data_title: Datos Abiertos
       open_data_text: "Todos los datos del Ayuntamiento son tuyos."
-      contact_us: "Contacta con nosotros en"
+      contact_us: "Para asistencia técnica contáctenos en"
       privacy: "Política de privacidad"
       conditions: "Condiciones de uso"
       more_info: "Más información"
@@ -59,6 +55,11 @@ es:
         Para una mejor experiencia te recomendamos utilizar %{chrome} o %{firefox}."
       chrome: "Google Chrome"
       firefox: "Firefox"
+  social:
+    twitter: "Twitter"
+    facebook: "Facebook"
+    blog: "Blog"
+    youtube: "YouTube"
   form:
       error: error
       errors: errores
@@ -123,7 +124,7 @@ es:
         one: 1 Comentario
         other: "%{count} Comentarios"
       login_to_comment: "Necesitas %{signin} o %{signup} para comentar."
-      edit_debate_link: Editar
+      edit_debate_link: "Editar debate"
       share: Compartir
       flag: "Este debate ha sido marcado como inapropiado por varios usuarios."
     edit:
@@ -158,7 +159,7 @@ es:
       select_order_long: Estás viendo las propuestas
       orders:
         confidence_score: "más apoyadas"
-        hot_score: "más activas"
+        hot_score: "más activas hoy"
         created_at: "más nuevas"
         most_commented: "más comentadas"
         random: "aleatorias"
@@ -214,7 +215,7 @@ es:
         one: 1 Comentario
         other: "%{count} Comentarios"
       login_to_comment: "Necesitas %{signin} o %{signup} para comentar."
-      edit_proposal_link: Editar
+      edit_proposal_link: "Editar propuesta"
       share: Compartir
       flag: "Esta propuesta ha sido marcada como inapropiada por varios usuarios."
     edit:
@@ -281,7 +282,6 @@ es:
       change_credentials_link: "Cambiar mis datos de acceso"
       email_on_comment_label: "Recibir un email cuando alguien comenta en mis propuestas o debates"
       email_on_comment_reply_label: "Recibir un email cuando alguien contesta a mis comentarios"
-      avatar: "Avatar"
       personal: "Datos personales"
       username_label: "Nombre de usuario"
       phone_number_label: "Teléfono"
@@ -291,6 +291,14 @@ es:
       finish_verification: "Finalizar verificación"
       verified_account: Cuenta verificada
       verify_my_account: Verificar mi cuenta
+      user_permission_title: "Participación"
+      user_permission_info: "Con tu cuenta ya puedes..."
+      user_permission_debates: "Participar en debates"
+      user_permission_proposal: "Crear nuevas propuestas"
+      user_permission_support_proposal: "Apoyar propuestas*"
+      user_permission_votes: "Participar en las votaciones finales*"
+      user_permission_verify: "Para poder realizar todas las acciones verifica tu cuenta."
+      user_permission_verify_info: "* Sólo usuarios empadronados en el municipio de Madrid."
   simple_captcha:
     placeholder: "Introduce el texto de la imagen"
     label: "Introduce el texto de la imagen en la siguiente caja"
@@ -313,6 +321,7 @@ es:
     manage:
       all: "No tienes permiso para realizar la acción '%{action}' sobre %{subject}."
   welcome:
+    highlights: "Portada: "
     signed_in_home_title: Actividad reciente
     debates:
       title: "Debates"
@@ -327,13 +336,16 @@ es:
       title: "Se hace"
       description: "Si la propuesta es aceptada mayoritariamente, el Ayuntamiento la asume como propia y se hace."
     welcome:
-      title: Verificación de cuenta
-      instructions_1_html: "Bienvenido a la página de participación ciudadana"
-      instructions_2_html: "Hemos detectado que <b>tu dirección de email está confirmada pero no hemos verificado tus datos todavía</b>."
-      instructions_3_html: "Sin verificar tus datos <b>el acceso que tienes es limitado</b>. Verificarlos ahora te permitirá, por ejemplo, apoyar propuestas ciudadanas."
-      verify_account: "Verificar mi cuenta"
-      go_to_index: "Quiero entrar como un usuario no verificado (acceso limitado)"
-      instructions_4_html: "Si quieres verificarte más tarde, puedes hacerlo en <i>Mi cuenta > Verificar mi cuenta</i>."
+      title: "Empieza a participar"
+      go_to_index: "Ver propuestas y debates"
+      user_permission_info: "Con tu cuenta ya puedes..."
+      user_permission_debates: "Participar en debates"
+      user_permission_proposal: "Crear nuevas propuestas"
+      user_permission_support_proposal: "Apoyar propuestas*"
+      user_permission_votes: "Participar en las votaciones finales*"
+      user_permission_verify: "Para poder realizar todas las acciones %{verify}."
+      user_permission_verify_url: "verifica tu cuenta"
+      user_permission_verify_info: "* Sólo usuarios empadronados en el municipio de Madrid."
   omniauth:
     finish_signup:
       title: Añade tu email

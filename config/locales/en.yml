@@ -5,6 +5,7 @@ en:
       user_not_found: "User not found"
   layouts:
     header:
+      logo: "Madrid"
       external_link_transparency: Transparency
       external_link_transparency_url: "http://www.madrid.es/portales/munimadrid/es/Inicio/El-Ayuntamiento/Transparencia?vgnextfmt=default&vgnextchannel=20fd850769797310VgnVCM2000000c205a0aRCRD"
       external_link_opendata: Open data
@@ -13,19 +14,14 @@ en:
       external_link_blog_url: "/blog"
       open_gov: "%{open} government"
       open: "Open"
-      participation: Participation
+      participation: "Participation"
+      transparency: "Transparency"
+      open_data: "Open data"
       open_city_title: "The city you want, it will be the city you want."
       open_city_slogan_html:
         "Start listening to Madrid.
         For that we open this digital Puerta del Sol, where all the locals can meet to discuss and share everything we want."
-      #   "Existen ciudades gobernadas directamente por sus habitantes, que <b>debaten</b> sobre temas que les preocupan, <b>proponen</b> ideas para mejorar
-      # sus vidas y <b>deciden</b> entre todas y todos las que se llevan a cabo. Madrid ya es una de ellas."
-      # open_city_text:
-      #   "Here every voice has its place and are citizens, and no one in their name, they decide to vote debates what issues are
-      #   most important of every time. Government officials have individual users with whom you may participate in the debates, and evaluated,
-      #   the same level as everyone else. Because the Madrid City Council works for its citizens, and must respond to them."
-      # open_city_soon: "And soon... we'll open the section for citizen proposals."
-      see_all: See debates and proposals
+      see_all: "See proposals"
       my_account_link: My account
       locale: "Language:"
       administration: Administration
@@ -47,7 +43,7 @@ en:
       transparency_text: Get any information on the City of Madrid.
       open_data_title:  Open Data
       open_data_text: "All City Council data are yours."
-      contact_us: "Contact us"
+      contact_us: "For technical support contact us"
       privacy: "Privacy Policy"
       conditions: "Terms of use"
       more_info: "More information"
@@ -59,6 +55,11 @@ en:
         For a better experience we recommend use %{chrome} or %{firefox}."
       chrome: "Google Chrome"
       firefox: "Firefox"
+  social:
+    twitter: "Twitter"
+    facebook: "Facebook"
+    blog: "Blog"
+    youtube: "YouTube"
   form:
       error: error
       errors: errors
@@ -123,7 +124,7 @@ en:
         one: 1 Comment
         other: "%{count} Comments"
       login_to_comment: "You need to %{signin} or %{signup} to comment."
-      edit_debate_link: Edit
+      edit_debate_link: "Edit debate"
       share: Share
       flag: "This debate has been flag as innapropiate for some users."
     edit:
@@ -158,7 +159,7 @@ en:
       select_order_long: Order proposals by
       orders:
         confidence_score: "most supported"
-        hot_score: most active
+        hot_score: "most active today"
         created_at: newest
         most_commented: most commented
         random: random
@@ -214,7 +215,7 @@ en:
         one: 1 Comment
         other: "%{count} Comments"
       login_to_comment: "You need to %{signin} or %{signup} to comment."
-      edit_proposal_link: Edit
+      edit_proposal_link: "Edit proposal"
       share: Share
       flag: "This proposal has been flag as innapropiate for some users."
     edit:
@@ -278,10 +279,9 @@ en:
     show:
       title: "My account"
       save_changes_submit: "Save changes"
+      change_credentials_link: "Change my credentials"
       email_on_comment_label: "Receive email when someone comments on my debates or proposals"
       email_on_comment_reply_label: "Receive email when someone replies to my comments"
-      change_credentials_link: "Change my credentials"
-      avatar: "Avatar"
       personal: "Personal data"
       username_label: "Username"
       phone_number_label: "Phone number"
@@ -291,6 +291,14 @@ en:
       finish_verification: "Finish verification"
       verified_account: Verified account
       verify_my_account: Verify my account
+      user_permission_title: "Participation"
+      user_permission_info: "With your account you can..."
+      user_permission_debates: "Participate on debates"
+      user_permission_proposal: "Create new proposals"
+      user_permission_support_proposal: "Support proposals"
+      user_permission_votes: "Participate on final voting"
+      user_permission_verify: "To perform all the actions verify your account."
+      user_permission_verify_info: "* Only for users on Madrid City Census."
   simple_captcha:
     placeholder: "Enter the image value"
     label: "Enter the image value in the next form"
@@ -313,6 +321,7 @@ en:
     manage:
       all: "You are not authorized to %{action} %{subject}."
   welcome:
+    highlights: "Highlights: "
     signed_in_home_title: Recent activity
     debates:
       title: "Debate"
@@ -327,13 +336,16 @@ en:
       title: "It does"
       description: "If the proposal is accepted mostly, the City Council makes his own and done."
     welcome:
-      title: Account verification
-      instructions_1_html: "Welcome to the public participation website."
-      instructions_2_html: "We have detected that <b>your email is confirmed but we were not able to verify your citizen data</b>."
-      instructions_3_html: "Without verifying them, <b>you have only partial access to the website</b>. You need to be verified, for example, in order to participate in public proposals."
-      verify_account: "Verify my account now"
-      go_to_index: "I prefer to continue as a non-verified user with limited access"
-      instructions_4_html: "If you want to verify your account later on, you can do so in <i>My account -> Verify my account</i>."
+      title: "Participate"
+      go_to_index: "See proposals and debates"
+      user_permission_info: "With your account you can..."
+      user_permission_debates: "Participate on debates"
+      user_permission_proposal: "Create new proposals"
+      user_permission_support_proposal: "Support proposals*"
+      user_permission_votes: "Participate on final voting*"
+      user_permission_verify: "To perform all the actions %{verify}."
+      user_permission_verify_url: "verify your account"
+      user_permission_verify_info: "* Only for users on Madrid City Census."
   omniauth:
     finish_signup:
       title: Add Email

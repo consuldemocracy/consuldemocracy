@@ -135,7 +135,7 @@ module CommonActions
     fill_in 'sms_phone', with: "611111111"
     click_button 'Send'
 
-    expect(page).to have_content 'Security code confirmation'
+    expect(page).to have_content 'Phone confirmation'
 
     user = User.last.reload
     fill_in 'sms_confirmation_code', with: user.sms_confirmation_code

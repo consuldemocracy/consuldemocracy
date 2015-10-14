@@ -1,0 +1,820 @@
+// Table of Contents - Styles for debates and proposals
+//
+// 01. Votes and supports
+// 02. New participation
+// 03. Show participation
+// 04. List participation
+//
+
+// 01. Votes and supports
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+@mixin votes {
+  background: $votes-bg;
+  border-top: 1px solid $votes-border;
+  margin: 0 rem-calc(-12);
+  padding: rem-calc(14) rem-calc(12);
+  position: relative;
+
+  .icon-like {
+    background: white;
+    border: 2px solid $votes-border;
+    border-radius: rem-calc(3);
+    color: $text-light;
+    display: inline-block;
+    font-size: rem-calc(30);
+    line-height: rem-calc(30);
+    padding: rem-calc(3) rem-calc(6);
+    position: relative;
+
+    &:hover {
+      background: $votes-like;
+      border-color: white;
+      color: white;
+      cursor: pointer;
+      opacity: 1 !important;
+    }
+
+    &:active {
+      border-color: $votes-like-act;
+    }
+  }
+
+  .icon-unlike {
+    background: white;
+    border: 2px solid $votes-border;
+    border-radius: rem-calc(3);
+    color: $text-light;
+    display: inline-block;
+    font-size: rem-calc(30);
+    line-height: rem-calc(30);
+    padding: rem-calc(3) rem-calc(6);
+    position: relative;
+
+    &:hover {
+      background: $votes-unlike;
+      border-color: white;
+      color: white;
+      cursor: pointer;
+      opacity: 1 !important;
+    }
+
+    &:active {
+      border-color: $votes-unlike-act;
+    }
+  }
+
+  .like, .unlike {
+    line-height: rem-calc(48);
+    vertical-align: super;
+
+    span {
+      color: white;
+      display: inline-block;
+      font-size: rem-calc(16);
+      font-weight: lighter;
+      line-height: $line-height*2;
+      padding-left: rem-calc(8);
+      vertical-align: top;
+    }
+  }
+
+  .voted {
+    .icon-like {
+      background: $votes-like;
+      border-color: white;
+      color: white;
+    }
+
+    .icon-unlike {
+      background: $votes-unlike;
+      border-color: white;
+      color: white;
+    }
+  }
+
+  .no-voted {
+    .icon-like, .icon-unlike {
+      opacity: .5;
+    }
+  }
+
+  .total-votes {
+    color: white;
+    float: right;
+    line-height: $line-height*2;
+  }
+
+  .divider {
+    margin: 0 rem-calc(6);
+  }
+
+  .not-logged {
+    background: rgba(22,99,135,.9);
+    color: white;
+    height: 100%;
+    left: 0;
+    line-height: $line-height*2;
+    padding-top: rem-calc(12);
+    position: absolute;
+    text-align: center;
+    top: 0;
+    width: 100%;
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#222222', endColorstr='#222222'); /* IE */
+
+    a {
+      color: white;
+      text-decoration: underline;
+    }
+  }
+
+  .anonymous-votes, .organizations-votes {
+    background: $warning-bg;
+    color: $warning-color;
+    height: 100%;
+    left: 0;
+    line-height: $line-height;
+    padding-top: rem-calc(12);
+    position: absolute;
+    text-align: center;
+    top: 0;
+    width: 100%;
+
+    p {
+      color: $warning-color;
+      margin: 0 rem-calc(12);
+      text-align: left;
+    }
+
+    a {
+      color: $warning-color;
+      font-weight: bold;
+      text-decoration: underline;
+    }
+  }
+}
+
+@mixin supports {
+  background: $proposals;
+  border-top: 1px solid $proposals-border;
+  margin: 0 rem-calc(-12);
+  padding: rem-calc(14) rem-calc(12);
+  position: relative;
+
+  .progress {
+    background-color: rgba(255,255,255,.8);
+    height: rem-calc(12);
+    margin-bottom: rem-calc(6);
+    margin-top: rem-calc(4);
+
+    .meter {
+      background: $votes-like;
+    }
+  }
+
+  .percentage {
+    font-size: rem-calc(10);
+    color: $brand;
+    vertical-align: top;
+    position: absolute;
+    top: 17px;
+    right: 18px;
+  }
+
+  abbr {
+    color: white;
+
+    &[title] {
+      border-bottom: 1px dotted white;
+    }
+  }
+
+  .button-support {
+    background: white;
+    color: $proposals;
+    display: inline-block;
+    font-size: rem-calc(14);
+    margin-top: rem-calc(12);
+
+    &:hover {
+      background: $proposals-border;
+      color: white;
+      cursor: pointer;
+    }
+
+    &:active {
+      opacity: .75;
+    }
+  }
+
+  .total-supports {
+    color: white;
+    text-align: center;
+    font-size: rem-calc(14);
+
+    span {
+      display: block;
+      font-size: rem-calc(11);
+      opacity: .75;
+    }
+  }
+
+  .divider {
+    margin: 0 rem-calc(6);
+  }
+
+  .not-logged {
+    background: rgba(255,164,45,.9);
+    color: white;
+    height: 100%;
+    left: 0;
+    line-height: $line-height*2;
+    padding-top: rem-calc(12);
+    position: absolute;
+    text-align: center;
+    top: 0;
+    width: 100%;
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#222222', endColorstr='#222222'); /* IE */
+
+    a {
+      color: white;
+      text-decoration: underline;
+    }
+  }
+
+  .anonymous-votes, .organizations-votes {
+    background: $warning-bg;
+    color: $warning-color;
+    height: 100%;
+    left: 0;
+    line-height: $line-height;
+    padding-top: rem-calc(12);
+    position: absolute;
+    text-align: center;
+    top: 0;
+    width: 100%;
+
+    p {
+      color: $warning-color;
+      margin: 0 rem-calc(12);
+      text-align: left;
+    }
+
+    a {
+      color: $warning-color;
+      font-weight: bold;
+      text-decoration: underline;
+    }
+  }
+
+  .supported {
+    color: white;
+    margin-top: rem-calc(12);
+  }
+}
+
+// 02. New participation
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+.debate-new, .debate-edit, .proposal-new, .proposal-edit,  {
+  background: white;
+  padding-top: rem-calc(24);
+
+  .back {
+    @include back;
+  }
+
+  h1 {
+    clear: both;
+    font-size: rem-calc(36);
+    font-weight: bold;
+    line-height: $line-height*2;
+    margin-bottom: rem-calc(24);
+  }
+
+  .icon-debates {
+    color: $debates;
+    font-size: rem-calc(60);
+    line-height: $line-height;
+    opacity: .5;
+  }
+
+  .icon-proposals {
+    color: $proposals;
+    font-size: rem-calc(50);
+    line-height: $line-height;
+    opacity: .5;
+  }
+
+  h2 {
+    clear: both;
+    font-size: rem-calc(20);
+    font-weight: bold;
+    line-height: $line-height;
+    margin: 0;
+  }
+
+  .recommendations {
+    list-style-type: none;
+    margin-left: 0;
+    margin-top: rem-calc(24);
+
+    li {
+      font-size: rem-calc(12);
+      margin: rem-calc(12) 0;
+
+      &:before {
+        content: "l ";
+        font-family: "icons" !important;
+      }
+    }
+  }
+}
+
+.debate-new, .debate-edit {
+
+  .recommendations li:before {
+    color: $debates;
+  }
+}
+
+.proposal-new, .proposal-edit {
+
+  .recommendations li:before {
+    color: $proposals;
+  }
+}
+
+// 02. Show participation
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+.debate-show, .proposal-show {
+  padding-top: rem-calc(12);
+
+  .back, .icon-angle-left {
+    @include back;
+  }
+
+  h1 {
+    clear: both;
+    font-size: rem-calc(30);
+    font-weight: bold;
+    margin: 0;
+    text-transform: lowercase;
+
+    &:first-letter {
+      text-transform: uppercase;
+    }
+  }
+
+  h4 {
+    margin: rem-calc(12) 0;
+  }
+
+  .edit-debate, .edit-proposal {
+    margin-bottom: 0;
+  }
+
+  .debate-info, .proposal-info {
+    clear: both;
+    color: $text-medium;
+    font-weight: lighter;
+    line-height: $line-height*2;
+    text-align: justify;
+
+    a {
+        color: $text-medium;
+    }
+
+    p {
+      font-size: rem-calc(15);
+      line-height: $line-height;
+      margin-bottom: 0;
+    }
+  }
+
+  .debate-description, .proposal-description {
+    font-size: rem-calc(15);
+    line-height: rem-calc(30);
+  }
+
+  ul, ol {
+    margin: rem-calc(12) 0;
+
+    li {
+      font-size: rem-calc(15);
+      margin-bottom: rem-calc(15);
+    }
+  }
+
+  .author-photo {
+    line-height: $line-height*2;
+    margin-right: rem-calc(6);
+    vertical-align: middle;
+    width: 32px;
+  }
+
+  .author {
+    color: $text;
+    font-weight: bold;
+  }
+
+  aside {
+
+    h3 {
+      border-top: 2px solid $brand;
+      display: inline-block;
+      font-size: rem-calc(16);
+      margin: -1px 0 rem-calc(12);
+      padding-top: rem-calc(6);
+      text-transform: uppercase;
+    }
+  }
+
+  blockquote {
+    margin-top: rem-calc(12);
+    padding-top: 0;
+    font-size: rem-calc(15);
+    line-height: rem-calc(30);
+  }
+
+  .document-link, .video-link {
+    border: 1px solid $border;
+    display: block;
+    margin-top: rem-calc(12);
+    padding: rem-calc(12);
+    position: relative;
+
+    a {
+      padding-left: rem-calc(24);
+    }
+
+    :before {
+      color: #007BB7;
+      content: "G";
+      font-family: "icons" !important;
+      font-size: rem-calc(24);
+      left: rem-calc(6);
+      padding-top: rem-calc(3);
+      position: absolute;
+      top: 0;
+    }
+  }
+
+  .video-link {
+
+    :before {
+      color: #CC181E;
+      content: "D";
+    }
+  }
+
+  .votes {
+    @include votes;
+    border: 0;
+    border-radius: 0;
+    margin: 0;
+
+    .total-votes {
+      display: block;
+      float: none;
+      line-height: $line-height;
+    }
+
+    .not-logged {
+      line-height: $line-height;
+      padding: rem-calc(24);
+    }
+
+    @media (min-width: $small-breakpoint  + em-calc(1)) and (max-width:$medium-breakpoint) {
+      .in-favor, .against {
+        text-align: left;
+        width: rem-calc(100);
+      }
+    }
+
+    .divider {
+      display: none;
+    }
+
+    @media (min-width: $medium-breakpoint) {
+      .divider {
+        display: inline-block;
+      }
+    }
+  }
+
+  .supports {
+    @include supports;
+    border: 0;
+    border-radius: 0;
+    margin: 0;
+
+    .total-supports {
+      display: block;
+      float: none;
+      line-height: $line-height;
+    }
+
+    .not-logged {
+      line-height: $line-height;
+      padding: rem-calc(24);
+    }
+  }
+
+  .leave-comment {
+    display: inline-block;
+    margin-top: rem-calc(24);
+  }
+
+  .tags {
+    display: block;
+    margin: rem-calc(24) 0;
+
+    a {
+      margin-right: rem-calc(6);
+    }
+  }
+}
+
+.bullet {
+  color: $border;
+}
+
+// 04. List participation
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+.debates-list, .proposals-list {
+
+  @media (min-width: $small-breakpoint) {
+    margin-bottom: rem-calc(48);
+  }
+}
+
+.debate, .proposal {
+  margin-bottom: 0;
+  margin-top: 0;
+
+  .panel {
+    background: white;
+    border: 1px solid;
+    border-color: #e5e6e9 #dfe0e4 #d0d1d5;
+    border-radius: 0;
+    box-shadow: 0px 1px 3px 0 $border;
+    margin-bottom: rem-calc(12);
+    min-height: rem-calc(192);
+    padding: rem-calc(12) rem-calc(12) 0 rem-calc(12);
+
+    @media (min-width: $small-breakpoint) {
+      margin-bottom: rem-calc(-1);
+      padding-bottom: rem-calc(12);
+    }
+
+    .label-debate, .label-proposal {
+      background: none;
+      clear: both;
+      display: block;
+      font-size: rem-calc(12);
+      font-weight: bold;
+      line-height: $line-height;
+      padding-bottom: 0;
+      padding-left: 0;
+      padding-top: 0;
+      text-transform: uppercase;
+    }
+
+    .label-debate {
+      color: $debates;
+    }
+
+    .label-proposal {
+      color: $proposals;
+    }
+
+    h3 {
+      font-weight: bold;
+      margin: 0;
+      min-height: rem-calc(48);
+
+      a {
+        clear: both;
+        color: $text;
+        display: block;
+        font-size: rem-calc(16);
+        line-height: $line-height;
+        text-transform: lowercase;
+
+        &:first-letter {
+          text-transform: uppercase;
+        }
+      }
+    }
+
+    .debate-content, .proposal-content {
+      margin: 0;
+      min-height: rem-calc(180);
+
+      .tags {
+        display: block;
+      }
+    }
+
+    .icon-debates, .icon-proposals {
+      font-size: rem-calc(18);
+      line-height: $line-height;
+      position: absolute;
+      top: 0;
+    }
+
+    .icon-debates {
+      color: $debates;
+      left: rem-calc(60);
+    }
+
+    .icon-proposals {
+      color: $proposals;
+      left: rem-calc(88);
+    }
+
+    .debate-info, .proposal-info {
+      color: $text-medium;
+      font-weight: lighter;
+      margin-bottom: 0;
+
+      .icon-comments {
+        font-size: rem-calc(16);
+        vertical-align: top;
+      }
+
+      a {
+        color: $text-medium;
+      }
+    }
+
+    .debate-description, .proposal-description {
+      color: $text;
+      font-size: rem-calc(13);
+      height: rem-calc(72);
+      line-height: $line-height;
+      margin-bottom: rem-calc(12);
+      margin-top: 0;
+      overflow: hidden;
+      position: relative;
+
+      a {
+        color: $text;
+      }
+
+      ul, ol {
+
+        li {
+          font-size: rem-calc(13);
+          margin-bottom: rem-calc(12);
+        }
+      }
+    }
+
+    .truncate {
+      background: image-url('truncate.png');
+      background-repeat: repeat-x;
+      bottom: 0;
+      height: 24px;
+      position: absolute;
+      width: 100%;
+    }
+
+    p {
+      color: $text;
+      font-size: rem-calc(14);
+      line-height: $line-height;
+      margin-bottom: rem-calc(12);
+
+      &.debate-info {
+        font-size: rem-calc(13);
+      }
+    }
+  }
+
+  .not-logged {
+    line-height: $line-height;
+    padding-top: rem-calc(24);
+  }
+
+  .anonymous-votes, .organizations-votes {
+    padding-top: rem-calc(24);
+  }
+
+  .divider {
+    display: none;
+  }
+
+  @media (min-width: $medium-breakpoint) {
+    .divider {
+      display: inline-block;
+    }
+  }
+}
+
+.debate {
+
+  .votes {
+    @include votes;
+    border: 1px solid $votes-border;
+    margin: 0 rem-calc(-12);
+
+    @media (min-width: $small-breakpoint) {
+      border-top-left-radius: 3px;
+      border-bottom-left-radius: 3px;
+      margin: 0 rem-calc(-25) 0 rem-calc(12);
+    }
+
+    &:after {
+      content: none;
+      position: absolute;
+      display: block;
+      border-style: solid;
+      border-color: #166387 transparent transparent transparent;
+      bottom: rem-calc(-14);
+      border-left-width: 0;
+      border-right-color: transparent;
+      right: rem-calc(-1);
+      border-width: 1em 1em 0 0;
+
+      @media (min-width: $small-breakpoint) {
+        content: "";
+      }
+    }
+
+    .total-votes {
+      display: inline-block;
+      line-height: $line-height;
+      margin-left: rem-calc(24);
+      padding-top: rem-calc(12);
+      vertical-align: top;
+
+      @media (min-width: $small-breakpoint) {
+        display: block;
+        float: none;
+        line-height: $line-height*2;
+        margin-left: 0;
+        padding-top: 0;
+      }
+    }
+
+    @media (min-width: $small-breakpoint) {
+      .like, .unlike {
+
+        span {
+          display: block;
+          line-height: $line-height/2;
+        }
+      }
+    }
+  }
+}
+
+.proposal {
+
+  .supports {
+    @include supports;
+    border: 1px solid $proposals-border;
+    margin: 0 rem-calc(-12);
+
+    @media (min-width: $small-breakpoint) {
+      border-top-left-radius: 3px;
+      border-bottom-left-radius: 3px;
+      margin: 0 rem-calc(-25) 0 rem-calc(12);
+    }
+
+    &:after {
+      content: none;
+      position: absolute;
+      display: block;
+      border-style: solid;
+      border-color: #664212 transparent transparent transparent;
+      bottom: rem-calc(-14);
+      border-left-width: 0;
+      border-right-color: transparent;
+      right: rem-calc(-1);
+      border-width: 1em 1em 0 0;
+
+      @media (min-width: $small-breakpoint) {
+        content: "";
+      }
+    }
+
+    .total-supports {
+      display: inline-block;
+      line-height: $line-height;
+      padding-top: rem-calc(12);
+      vertical-align: top;
+
+      @media (min-width: $small-breakpoint) {
+        display: block;
+        float: none;
+        margin-left: 0;
+        padding-top: 0;
+      }
+    }
+  }
+}

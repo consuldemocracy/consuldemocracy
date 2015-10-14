@@ -17,6 +17,9 @@
 // 15. Social
 // 16. Pages
 // 17. Verification
+// 18. Comments
+// 19. Flags
+// 20. Accesibility
 //
 
 // 01. Variables
@@ -277,6 +280,10 @@ h6 {
   margin: rem-calc(24) 0;
 }
 
+.text-medium {
+  font-size: rem-calc(16) !important;
+}
+
 // 04. Header
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -304,10 +311,11 @@ header {
     padding: 0;
   }
 
-  p {
+  h2 {
     color: white;
     font-size: rem-calc(16);
-    line-height:  rem-calc(30);
+    font-weight: normal;
+    line-height: rem-calc(30);
   }
 
   .button {
@@ -438,7 +446,7 @@ header {
 }
 
 .contain-to-grid {
-  background: rgba(0,0,0,.5);
+  background: #112E51;
 }
 
 .top-bar {
@@ -763,21 +771,19 @@ footer {
   opacity: .75;
   margin-top: rem-calc(24);
   padding-top: rem-calc(12);
-
 }
 
 // 06. Tags
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
-.tags {
+.tags, .tag-cloud {
 
   a {
     background: $border;
-    border-radius: rem-calc(30);
+    border-radius: rem-calc(6);
     color: #4d4d4d;
     display: inline-block;
     font-size: rem-calc(13);
-    font-weight: bold;
     line-height: rem-calc(22);
     margin-bottom: rem-calc(8);
     padding: 0 rem-calc(8);
@@ -791,7 +797,6 @@ footer {
 }
 
 .tag-cloud {
-  @extend .tags;
 
   h3 {
     border-top: 2px solid $brand;
@@ -941,14 +946,13 @@ form {
     margin: rem-calc(12) 0 rem-calc(12) rem-calc(6);
   }
 
-  .note {
+  .note, .note-marked {
     display: block;
     font-size: rem-calc(13);
     margin-bottom: rem-calc(12);
   }
 
   .note-marked {
-    @extend .note;
     background: yellow;
     display: inline-block;
 
@@ -1075,6 +1079,10 @@ label.error, label.error a {
     margin-bottom: $line-height;
   }
 
+  h1.avatar {
+    margin-left: rem-calc(12);
+  }
+
   h3 {
     clear: both;
     font-size: rem-calc(20);
@@ -1109,18 +1117,33 @@ label.error, label.error a {
   .verify-account {
     padding-right: rem-calc(12);
   }
+
+  .final-votes-info {
+    background: $warning-bg;
+    border: 1px solid $warning-border;
+    color: $warning-color;
+    margin-top: rem-calc(24);
+    padding: rem-calc(12);
+
+    ul li {
+      margin: rem-calc(12) 0;
+    }
+
+    .icon-box {
+      color: #D4A26D;
+      font-size: rem-calc(120);
+      line-height: rem-calc(120);
+      vertical-align: top;
+    }
+  }
 }
 
-img.avatar, img.admin-avatar, img.moderator-avatar {
+img.avatar, img.admin-avatar, img.moderator-avatar, img.initialjs-avatar {
   border-radius: rem-calc(1000);
   position: relative;
 }
 
-img.initialjs-avatar {
-  @extend .avatar;
-}
-
-.author-deleted {
+.author-deleted, .user-deleted {
   background-color: rgba(255,255,255,.5);
   color: rgba(0,0,0,.4);
   font-size: rem-calc(40);
@@ -1130,14 +1153,47 @@ img.initialjs-avatar {
 }
 
 .user-deleted {
-  @extend .author-deleted;
   top: -9px;
+}
+
+.user-permissions {
+
+  p {
+    span {
+      color: $text-medium;
+      font-size: rem-calc(12);
+    }
+  }
+
+  ul {
+    list-style-type: none;
+    margin-bottom: 0;
+    margin-left: 0;
+
+    li {
+      font-size: rem-calc(14);
+      margin-bottom: rem-calc(12);
+
+      span {
+        color: $text-medium;
+        font-size: rem-calc(12);
+      }
+
+      .icon-check {
+        color: $check;
+      }
+
+      .icon-x {
+        color: $delete;
+      }
+    }
+  }
 }
 
 // 11. Filters & search
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
-.filters {
+.filters, .search-results {
 
   h2 {
     display: inline-block;
@@ -1186,10 +1242,6 @@ img.initialjs-avatar {
       margin-left: 0;
     }
   }
-}
-
-.search-results {
-  @extend .filters;
 }
 
 .search-form {
@@ -1318,6 +1370,7 @@ table {
   }
 
   &:hover {
+    background: white;
     color: #40A2D1;
   }
 }
@@ -1357,6 +1410,7 @@ table {
   }
 
   &:hover {
+    background: white;
     color: #354F88;
   }
 }
@@ -1396,7 +1450,39 @@ table {
   }
 
   &:hover {
+    background: white;
     color: #CE3E26;
+  }
+}
+
+.social {
+  margin-top: rem-calc(24);
+  text-align: center;
+
+  @media (min-width: $small-breakpoint) {
+    margin-top: 0;
+    text-align: right;
+  }
+
+  a {
+    font-size: rem-calc(24);
+    line-height: rem-calc(24);
+    margin: 0 rem-calc(12);
+    text-decoration: none;
+    vertical-align: middle;
+
+    &:hover {
+      opacity: .5;
+      text-decoration: none;
+    }
+
+    @media (min-width: $small-breakpoint) {
+      font-size: rem-calc(18);
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
   }
 }
 
@@ -1407,27 +1493,72 @@ table {
   }
 
   .social-share-button-twitter {
-    @extend .social-share-button-twitter;
     background: none;
     color: white;
     height: rem-calc(24);
+    position: relative;
     width: rem-calc(48);
+
+    &:before {
+      content: "f";
+      font-family: "icons" !important;
+      font-size: rem-calc(24);
+      left: 50%;
+      line-height: $line-height*2;
+      margin-left: rem-calc(-11);
+      position: absolute;
+      top: 0;
+    }
+
+    &:hover {
+      color: #40A2D1;
+    }
   }
 
   .social-share-button-facebook {
-    @extend .social-share-button-facebook;
     background: none;
     color: white;
     height: rem-calc(24);
+    position: relative;
     width: rem-calc(48);
+
+    &:before {
+      content: "A";
+      font-family: "icons" !important;
+      font-size: rem-calc(24);
+      left: 50%;
+      line-height: $line-height*2;
+      margin-left: rem-calc(-11);
+      position: absolute;
+      top: 0;
+    }
+
+    &:hover {
+      color: #354F88;
+    }
   }
 
   .social-share-button-google_plus {
-    @extend .social-share-button-google_plus;
     background: none;
     color: white;
     height: rem-calc(24);
+    position: relative;
     width: rem-calc(48);
+
+    &:before {
+      content: "B";
+      font-family: "icons" !important;
+      font-size: rem-calc(24);
+      left: 50%;
+      line-height: $line-height*2;
+      margin-left: rem-calc(-11);
+      position: absolute;
+      top: 0;
+    }
+
+    &:hover {
+      color: #CE3E26;
+    }
   }
 }
 
@@ -1513,7 +1644,7 @@ table {
           font-family: "icons" !important;
           position: absolute;
           right: 0;
-          top: rem-calc(6);
+          top: rem-calc(12);
 
           @media (min-width: $small-breakpoint) {
             content: 'c';
@@ -1635,4 +1766,185 @@ table {
       vertical-align: middle;
     }
   }
+}
+
+// 18. Comments
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+.comments {
+  background: $white;
+  background-repeat: repeat-x;
+  padding-top: rem-calc(24);
+  padding-bottom: rem-calc(96);
+
+  h2 {
+    margin: 0;
+    font-weight: bold;
+
+    span {
+      font-size: rem-calc(18);
+      font-weight: normal;
+      opacity: .8;
+    }
+  }
+
+  .comment {
+    margin: rem-calc(6) 0;
+
+    p {
+      margin-bottom: 0;
+    }
+
+    .comment-votes {
+      color: $text-medium;
+      font-weight: lighter;
+      line-height: rem-calc(24);
+      margin: rem-calc(10) rem-calc(12) rem-calc(6) 0;
+
+      a {
+        color: $text-light;
+        display: inline-block;
+        vertical-align: top;
+
+        &:hover {
+          color: $text-medium;
+        }
+      }
+
+      [class^="icon-"] {
+        font-size: rem-calc(20);
+        vertical-align: middle;
+      }
+    }
+
+    .comment-body {
+      margin-left: rem-calc(42);
+
+      p {
+        font-size: rem-calc(14);
+      }
+
+      .reply {
+        background: white;
+        border: 1px solid $border;
+        font-size: rem-calc(12);
+        margin: rem-calc(6) 0;
+        padding: rem-calc(6);
+
+        .divider {
+          color: $text-light;
+        }
+      }
+
+      .comment-user {
+        margin-top: rem-calc(6);
+        padding: rem-calc(6) 0;
+        overflow: hidden;
+
+        @each $n in ("1", "2", "3","4", "5") {
+          &.level-#{$n} {
+            @if $n == "5" {
+              background: $comment-level-5;
+              padding: rem-calc(6) rem-calc(12);
+            }
+            @elseif $n == "1" {
+              background: none;
+              padding: rem-calc(6) rem-calc(12);
+            }
+            @else {
+              background: $comment-official;
+              padding: rem-calc(6) rem-calc(12);
+            }
+          }
+        }
+
+        &.is-author {
+          background: $comment-author;
+          padding: rem-calc(6) rem-calc(12);
+        }
+
+        &.is-admin, &.is-moderator {
+          background: $comment-admin;
+          padding: rem-calc(6) rem-calc(12);
+        }
+
+        &.level-5 {
+          background: $comment-level-5;
+          padding: rem-calc(6) rem-calc(12);
+        }
+      }
+    }
+
+    .is-deleted {
+      background: $deleted;
+      margin-left: rem-calc(42);
+      padding: rem-calc(6) rem-calc(12);
+    }
+
+    .comment-children {
+      border-left: 1px dashed $border;
+      margin-left: rem-calc(42);
+      padding-left: rem-calc(6);
+
+      @media only screen and (max-width: 40em) {
+        margin-left: rem-calc(16);
+      }
+    }
+
+    .comment-info {
+      color: $text-light;
+      font-size: rem-calc(13);
+      font-weight: lighter;
+      margin-top: rem-calc(6);
+      vertical-align: middle;
+
+      span.user-name {
+        color: $text;
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+.faded {
+  opacity: 0.4;
+}
+
+// 19. Flags
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+.flag-content {
+
+  .button {
+    background: none;
+    margin-bottom: 0;
+    padding: 0;
+  }
+}
+
+.flag-disable, .flag-active {
+  line-height: rem-calc(24);
+  vertical-align: middle;
+}
+
+.flag-disable {
+  color: $text-medium;
+}
+
+.flag-active {
+  color: $delete;
+}
+
+// 20. Accesibility
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
 }

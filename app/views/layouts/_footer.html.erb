@@ -3,9 +3,9 @@
 		<div class="row">
 
       <div class="small-12 large-4 column">
-        <div class="logo">
+        <h3 class="logo">
           <%= link_to t("layouts.header.open_gov", open: "#{t('layouts.header.open')}").html_safe %>
-        </div>
+        </h3>
 
         <p>
           <%= t("layouts.footer.description",
@@ -42,12 +42,31 @@
     </div>
 
     <div class="subfooter row">
-      <div class="small-12 column">
+      <div class="small-12 medium-10 column">
         <%= t("layouts.footer.copyright", year: Time.now.year) %>&nbsp;|&nbsp;
         <%= link_to t("layouts.footer.more_info"), "/more_information" %>&nbsp;|&nbsp;
         <%= link_to t("layouts.footer.privacy"), "/privacy" %>&nbsp;|&nbsp;
         <%= link_to t("layouts.footer.conditions"), "/conditions" %>&nbsp;|&nbsp;
         <%= link_to t("layouts.footer.accessibility"), "/accessibility" %>
+      </div>
+
+      <div class="small-12 medium-2 column social">
+        <%= link_to "https://twitter.com/abriendomadrid", target: "_blank", title: t("social.twitter") do %>
+          <span class="sr-only"><%= t("social.twitter") %></span>
+          <i class="icon-twitter"></i>
+        <% end %>
+        <%= link_to "https://www.facebook.com/Abriendo-Madrid-1475577616080350/", target: "_blank", title: t("social.facebook") do %>
+          <span class="sr-only"><%= t("social.facebook") %></span>
+          <i class="icon-facebook"></i>
+        <% end %>
+        <%= link_to "/blog", target: "_blank", title: t("social.blog") do %>
+          <span class="sr-only"><%= t("social.blog") %></span>
+          <i class="icon-blog"></i>
+        <% end %>
+        <%= link_to "https://www.youtube.com/channel/UCFmaChI9quIY7lwHplnacfg", target: "_blank", title: t("social.youtube") do %>
+          <span class="sr-only"><%= t("social.youtube") %></span>
+          <i class="icon-youtube"></i>
+        <% end %>
       </div>
     </div>
   </div>

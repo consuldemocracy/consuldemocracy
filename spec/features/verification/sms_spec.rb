@@ -11,7 +11,7 @@ feature 'SMS Verification' do
     fill_in 'sms_phone', with: "611111111"
     click_button 'Send'
 
-    expect(page).to have_content 'Security code confirmation'
+    expect(page).to have_content 'Phone confirmation'
 
     user = user.reload
     fill_in 'sms_confirmation_code', with: user.sms_confirmation_code
@@ -40,7 +40,7 @@ feature 'SMS Verification' do
     fill_in 'sms_phone', with: "611111111"
     click_button 'Send'
 
-    expect(page).to have_content 'Security code confirmation'
+    expect(page).to have_content 'Phone confirmation'
 
     click_button 'Send'
 
@@ -66,7 +66,7 @@ feature 'SMS Verification' do
     5.times do
       fill_in 'sms_phone', with: "611111111"
       click_button 'Send'
-      click_link 'Click here to send the confirmation code again'
+      click_link 'Request a new code'
     end
 
     expect(page).to have_content "You have reached the maximum number of verification tries. Please try again later."

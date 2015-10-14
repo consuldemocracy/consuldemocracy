@@ -2,10 +2,15 @@ es:
   verification:
     back: "Volver a mi cuenta"
     step_1: "Residencia"
-    step_2: "Código de confirmación"
+    step_2: "SMS de confirmación"
     step_3: "Verificación final"
     alert:
       lock: "Has llegado al máximo número de intentos. Por favor intentalo de nuevo más tarde."
+    user_permission_info: "Al verificar tus datos podrás..."
+    user_permission_debates: "Participar en debates"
+    user_permission_proposal: "Crear nuevas propuestas"
+    user_permission_support_proposal: "Apoyar propuestas"
+    user_permission_votes: "Participar en las votaciones finales"
     residence:
       new:
         title: "Verificar residencia"
@@ -17,6 +22,7 @@ es:
         document_number: "Número de documento"
         date_of_birth: "Fecha de nacimiento"
         postal_code: "Código postal"
+        postal_code_note: "Para verificar tus datos debes estar empadronado en el municipio de Madrid"
         accept_terms_text: "Acepto %{terms_url} al Padrón"
         terms: "los términos de acceso"
         verify_residence: "Verificar residencia"
@@ -31,17 +37,18 @@ es:
         unconfirmed_residency: "Aún no has verificado tu residencia"
     sms:
       new:
-        title: "Recibir código de confirmación"
+        title: "SMS de confirmación"
         phone: "Introduce tu teléfono móvil para recibir el código"
+        phone_note: "Sólo usaremos tu teléfono para enviarte un código, nunca te contactaremos."
         submit_button: "Enviar"
       create:
         flash:
           success: "Introduce el código de confirmación que te hemos enviado por mensaje de texto"
       edit:
-        title: "Confirmación de código de seguridad"
+        title: "SMS de confirmación"
         confirmation_code: "Introduce el código que has recibido en tu móvil"
         resend_sms_text: "¿No has recibido un mensaje de texto con tu código de confirmación?"
-        resend_sms_link: "Haz click aquí para volver a enviártelo"
+        resend_sms_link: "Solicitar un nuevo código"
         submit_button: "Enviar"
       update:
         error: "Código de confirmación incorrecto"
@@ -63,24 +70,22 @@ es:
           failure: "Hubo un problema enviándote un email a tu cuenta"
     letter:
       new:
-        title: "Verificación Final"
-        explanation_html:
-          "<p>¡Felicidades! Ya puedes participar en debates o apoyar propuestas de otras personas.</p><p>Para terminar de verificar tu cuenta completamente necesitamos proporcionarte un <b>código de máxima seguridad</b>, que nos asegure que nadie está utilizando tus datos en tu nombre.</p><p>Este requerimiento es esencial para participar en las votaciones finales de las propuestas. Para ello puedes acercarte a cualquier <b>Oficina de Atención al Ciudadano</b> donde te verificarán presencialmente, o en caso de que te sea imposible, podemos mandarte una carta a casa con el código.</p>"
-        offices: "Ver Oficinas de Atención al Ciudadano"
+        title: "¡Felicidades!"
+        user_permission_info: "Con tu cuenta ya puedes..."
+        explanation: "Para participar en las votaciones finales puedes:"
+        office: "Verificarte presencialmente en cualquier %{office}"
+        offices: "Oficina de Atención al Ciudadano"
         offices_url: "http://www.madrid.es/portales/munimadrid/es/Inicio/El-Ayuntamiento/Atencion-al-ciudadano/Oficinas-de-Atencion-al-Ciudadano?vgnextfmt=default&vgnextchannel=5b99cde2e09a4310VgnVCM1000000b205a0aRCRD"
-        send_letter: "Enviarme una carta con el código"
-        send_code: "Enviar"
+        send_letter: "Solicitar una carta por correo postal"
+        go_to_index: "Ver propuestas"
       create:
         flash:
-          success_html: "Gracias por solicitar tu <b>código de máxima seguridad (solo necesario para las votaciones finales)</b>, en unos días te lo enviaremos a la dirección que figura en tus datos del padrón. Recuerda que puedes ahorrar el envío recogiendo tu código en cualquiera de las %{offices}."
+          success_html: "Antes de las votaciones recibirás una carta con las instrucciones para verificar tu cuenta.<br> Recuerda que puedes ahorrar el envío verificándote presencialmente en cualquiera de las %{offices}."
           offices: "Oficinas de Atención al Ciudadano"
           offices_url: "http://www.madrid.es/portales/munimadrid/es/Inicio/El-Ayuntamiento/Atencion-al-ciudadano/Oficinas-de-Atencion-al-Ciudadano?vgnextfmt=default&vgnextchannel=5b99cde2e09a4310VgnVCM1000000b205a0aRCRD"
       edit:
-        title: "Empieza a participar"
-        confirmation_code: "Introduce aquí el código de máxima seguridad cuando recibas tu carta"
-        explanation_html:
-          "<p><b>¡Felicidades! Ya puedes participar en debates o apoyar propuestas de otras personas.</p>"
-        see_all: "Ver debates y propuestas"
+        title: "Carta solicitada"
+        see_all: "Ver propuestas"
       update:
         flash:
           success: "Código correcto. Tu cuenta ya está verificada"
