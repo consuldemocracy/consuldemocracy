@@ -3,7 +3,7 @@ require 'rails_helper'
 feature 'DocumentVerifications' do
 
   background do
-    login_as_manager(create(:manager))
+    login_as_manager
   end
 
   scenario 'Verifying a level 3 user shows an "already verified" page' do

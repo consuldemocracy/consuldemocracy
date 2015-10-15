@@ -3,8 +3,7 @@ require 'rails_helper'
 feature 'Proposals' do
 
   background do
-    manager = create(:manager)
-    login_as_manager(manager)
+    login_as_manager
   end
 
   context "Create" do
