@@ -43,6 +43,23 @@ describe ManagerAuthenticator do
 
       expect(@authenticator.auth).to be_truthy
     end
+  end
 
+  describe 'SOAP' do
+    before(:all) do
+      @authenticator = ManagerAuthenticator.new({login: "JJB033", clave_usuario: "31415926", fecha_conexion: "20151031135905"})
+    end
+
+    it 'should call the verification user method' do
+      allow(@authenticator).to receive(:application_authorized?).and_return(true)
+      expect(@authenticator.send(:client)).to receive(:call).with(:get_status_user_data, message: { ub: {user_key: "31415926", date: "20151031135905"} })
+      @authenticator.auth
+    end
+
+    it 'should call the permissions check method' do
+      allow(@authenticator).to receive(:manager_exists?).and_return(true)
+      expect(@authenticator.send(:client)).to receive(:call).with(:get_applications_user_list, message: { ub: {user_key: "31415926"} })
+      @authenticator.auth
+    end
   end
 end
