@@ -82,6 +82,35 @@ feature 'Emails' do
     end
   end
 
+  context 'Medida comments' do
+    scenario "Send email on medida comment", :js do
+      user = create(:user, email_on_comment: true)
+      medida = create(:medida, author: user)
+      comment_on(medida)
+
+      email = open_last_email
+      expect(email).to have_subject('Someone has commented on your medida')
+      expect(email).to deliver_to(medida.author)
+      expect(email).to have_body_text(medida_path(medida))
+    end
+
+    scenario 'Do not send email about own medida comments', :js do
+      user = create(:user, email_on_comment: true)
+      medida = create(:medida, author: user)
+      comment_on(medida, user)
+
+      expect { open_last_email }.to raise_error "No email has been sent!"
+    end
+
+    scenario 'Do not send email about medida comment unless set in preferences', :js do
+      user = create(:user, email_on_comment: false)
+      medida = create(:medida, author: user)
+      comment_on(medida)
+
+      expect { open_last_email }.to raise_error "No email has been sent!"
+    end
+  end
+
   context 'Comment replies' do
     scenario "Send email on comment reply", :js do
       user = create(:user, email_on_comment_reply: true)
@@ -90,7 +119,7 @@ feature 'Emails' do
       email = open_last_email
       expect(email).to have_subject('Someone has replied to your comment')
       expect(email).to deliver_to(user)
-      expect(email).to have_body_text(debate_path(Comment.first.commentable))
+      expect(email).to have_body_text(medida_path(Comment.first.commentable))
     end
 
     scenario "Do not send email about own replies to own comments", :js do

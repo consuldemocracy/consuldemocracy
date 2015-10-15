@@ -19,6 +19,10 @@ describe DebatesController do
       post :create, debate: { title: 'A sample debate', description: 'this is a sample debate', terms_of_service: 1 }
       expect(Ahoy::Event.where(name: :debate_created).count).to eq 1
       expect(Ahoy::Event.last.properties['debate_id']).to eq Debate.last.id
+
+      post :create, medida: { title: 'A sample measure', description: 'this is a sample measure', terms_of_service: 1 }
+      expect(Ahoy::Event.where(name: :measure_created).count).to eq 1
+      expect(Ahoy::Event.last.properties['measure_id']).to eq Measure.last.id
     end
   end
 

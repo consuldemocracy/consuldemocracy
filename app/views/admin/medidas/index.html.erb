@@ -1,0 +1,36 @@
+<h2><%= t("admin.medidas.index.title") %></h2>
+
+<%= render 'shared/filter_subnav', i18n_namespace: "admin.medidas.index" %>
+
+<h3><%= page_entries_info @medidas %></h3>
+
+<table>
+  <% @medidas.each do |medida| %>
+    <tr id="<%= dom_id(medida) %>">
+      <td>
+        <strong><%= medida.title %></strong>
+        <br>
+        <div class="moderation-description">
+          <%= medida.description %>
+        </div>
+      </td>
+      <td>
+        <%= link_to t("admin.actions.restore"),
+              restore_admin_medida_path(medida, request.query_parameters),
+              method: :put,
+              data: { confirm: t("admin.actions.confirm") },
+              class: "button radius tiny success no-margin" %>
+      </td>
+      <td>
+        <% unless medida.confirmed_hide? %>
+          <%= link_to t("admin.actions.confirm_hide"),
+                confirm_hide_admin_medida_path(medida, request.query_parameters),
+                method: :put,
+                class: "button radius tiny warning right" %>
+        <% end %>
+      </td>
+    </tr>
+  <% end %>
+</table>
+
+<%= paginate @medidas %>

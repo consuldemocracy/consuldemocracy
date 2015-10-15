@@ -1,0 +1,47 @@
+<%= form_for(@medida) do |f| %>
+  <%= render 'shared/errors', resource: @medida %>
+
+  <div class="row">
+    <div class="small-12 column">
+      <%= f.label :title, t("medidas.form.medida_title") %>
+      <%= f.text_field :title, maxlength: Medida.title_max_length, placeholder: t("medidas.form.medida_title"), label: false %>
+    </div>
+
+    <div class="ckeditor small-12 column">
+      <%= f.label :description, t("medidas.form.medida_text") %>
+      <%= f.cktext_area :description, maxlength: Medida.description_max_length, ckeditor: { language: I18n.locale }, label: false %>
+    </div>
+
+    <div class="small-12 column">
+      <%= f.label :tag_list, t("medidas.form.tags_label") %>
+      <p class="note"><%= t("medidas.form.tags_instructions") %></p>
+      <span class="tags">
+        <% @featured_tags.each do |tag| %>
+          <a class="js-add-tag-link"><%= tag.name %></a>
+        <% end %>
+      </span>
+      <%= f.text_field :tag_list, value: @medida.tag_list.to_s, label: false, placeholder: t("medidas.form.tags_placeholder"), class: 'js-tag-list' %>
+    </div>
+
+    <div class="small-12 column">
+      <% if @medida.new_record? %>
+        <%= f.label :terms_of_service do %>
+          <%= f.check_box :terms_of_service, label: false %>
+          <span class="checkbox">
+            <%= t("form.accept_terms",
+                policy: link_to(t("form.policy"), "/privacy", target: "blank"),
+                conditions: link_to(t("form.conditions"), "/conditions", target: "blank")).html_safe %>
+          </span>
+        <% end %>
+      <% end %>
+    </div>
+
+    <div class="small-12 column">
+      <%= f.simple_captcha input_html: { required: false } %>
+    </div>
+
+    <div class="actions small-12 column">
+      <%= f.submit(class: "button radius", value: t("medidas.#{action_name}.form.submit_button")) %>
+    </div>
+  </div>
+<% end %>

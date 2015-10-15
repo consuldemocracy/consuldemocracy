@@ -27,6 +27,7 @@
 //= require location_changer
 //= require moderator_comment
 //= require moderator_debates
+//= require moderator_medidas
 //= require moderator_proposals
 //= require prevent_double_submission
 //= require rem.min

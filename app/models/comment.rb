@@ -10,7 +10,7 @@ class Comment < ActiveRecord::Base
 
   validates :body, presence: true
   validates :user, presence: true
-  validates_inclusion_of :commentable_type, in: ["Debate", "Proposal"]
+  validates_inclusion_of :commentable_type, in: ["Debate", "Proposal","Medida"]
 
   validate :validate_body_length
 

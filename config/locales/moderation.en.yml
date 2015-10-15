@@ -3,6 +3,7 @@ en:
     menu:
       proposals: Proposals
       flagged_debates: Debates
+      flagged_medidas: Measures
       flagged_comments: Comments
       users: Ban users
     dashboard:
@@ -35,6 +36,26 @@ en:
         title: Debates
         headers:
           debate: Debate
+          moderate: Moderate
+        filter: Filter
+        filters:
+          all: All
+          pending_flag_review: Pending
+          with_ignored_flag: Ignored
+        order: Order
+        orders:
+          created_at: Newest
+          flags: Most flagged
+        confirm: Are you sure?
+
+    medidas:
+      index:
+        hide_medidas: Hide measures
+        block_authors: Block authors
+        ignore_flags: Ignore flags
+        title: Measures
+        headers:
+          medida: Measure
           moderate: Moderate
         filter: Filter
         filters:

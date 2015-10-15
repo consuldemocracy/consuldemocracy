@@ -1,0 +1,56 @@
+<% cache [locale_and_user_status, medida, @medida_votes[medida.id]] do %>
+  <div id="<%= dom_id(medida) %>" class="medida clear">
+    <div class="panel">
+      <div class="row">
+
+        <div class="small-12 medium-9 column">
+          <div class="medida-content">
+            <span class="label-medida left"><%= t("medidas.medida.medida") %></span>
+            <i class="icon-medidas"></i>
+            <h3><%= link_to medida.title, medida %></h3>
+            <p class="medida-info">
+              <i class="icon-comments"></i>&nbsp;
+              <%= link_to t("medidas.medida.comments", count: medida.comments_count), medida_path(medida, anchor: "comments") %>
+              <span class="bullet">&nbsp;&bull;&nbsp;</span>
+              <%= l medida.created_at.to_date %>
+              <% if medida.author.hidden? %>
+                <span class="bullet">&nbsp;&bull;&nbsp;</span>
+                <span class="author">
+                  <%= t("medidas.show.author_deleted") %>
+                </span>
+              <% else %>
+                <span class="bullet">&nbsp;&bull;&nbsp;</span>
+                <span class="author">
+                  <%= medida.author.name %>
+                </span>
+                <% if medida.author.official? %>
+                  <span class="bullet">&nbsp;&bull;&nbsp;</span>
+                  <span class="label round level-<%= medida.author.official_level %>">
+                    <%= medida.author.official_position %>
+                  </span>
+                <% end %>
+              <% end %>
+
+              <% if medida.author.verified_organization? %>
+                <span class="bullet">&nbsp;&bull;&nbsp;</span>
+                <span class="label round is-association">
+                  <%= t("shared.collective") %>
+                </span>
+              <% end %>
+            </p>
+            <div class="medida-description">
+              <%= link_to medida.description, medida %>
+              <div class="truncate"></div>
+            </div>
+            <%= render "shared/tags", taggable: medida, limit: 5 %>
+          </div>
+        </div>
+
+        <div id="<%= dom_id(medida) %>_votes" class="small-12 medium-3 column text-center">
+          <%= render 'medida/votes', medida: medida %>
+        </div>
+
+      </div>
+    </div>
+  </div>
+<% end %>

@@ -131,12 +131,93 @@ feature 'Admin activity' do
     end
   end
 
+  context "Medidas" do
+    scenario "Shows moderation activity on medidas", :js do
+      medida = create(:medida)
+
+      visit medida_path(medida)
+
+      within("#medida_#{medida.id}") do
+        click_link 'Hide'
+      end
+
+      visit admin_activity_path
+
+      within("#activity_#{Activity.last.id}") do
+        expect(page).to have_content(medida.title)
+        expect(page).to have_content("Hidden")
+        expect(page).to have_content(@admin.user.username)
+      end
+    end
+
+    scenario "Shows moderation activity from moderation screen" do
+      medida1 = create(:medida)
+      medida2 = create(:medida)
+      medida3 = create(:medida)
+
+      visit moderation_medidas_path(filter: 'all')
+
+      within("#medida_#{medida1.id}") do
+        check "medida_#{medida1.id}_check"
+      end
+
+      within("#medida_#{medida3.id}") do
+        check "medida_#{medida3.id}_check"
+      end
+
+      click_on "Hide medidas"
+
+      visit admin_activity_path
+
+      expect(page).to have_content(medida1.title)
+      expect(page).to_not have_content(medida2.title)
+      expect(page).to have_content(medida3.title)
+    end
+
+    scenario "Shows admin restores" do
+      medida = create(:medida, :hidden)
+
+      visit admin_medidas_path
+
+      within("#medida_#{medida.id}") do
+        click_on "Restore"
+      end
+
+      visit admin_activity_path
+
+      within("#activity_#{Activity.last.id}") do
+        expect(page).to have_content(medida.title)
+        expect(page).to have_content("Restored")
+        expect(page).to have_content(@admin.user.username)
+      end
+    end
+  end
+
   context "Comments" do
     scenario "Shows moderation activity on comments", :js do
       debate = create(:debate)
       comment = create(:comment, commentable: debate)
 
       visit debate_path(debate)
+
+      within("#comment_#{comment.id}") do
+        click_link 'Hide'
+      end
+
+      visit admin_activity_path
+
+      within("#activity_#{Activity.last.id}") do
+        expect(page).to have_content(comment.body)
+        expect(page).to have_content("Hidden")
+        expect(page).to have_content(@admin.user.username)
+      end
+    end
+
+    scenario "Shows moderation activity on comments over medidas", :js do
+      medida = create(:medida)
+      comment = create(:comment, commentable: medida)
+
+      visit medida_path(medida)
 
       within("#comment_#{comment.id}") do
         click_link 'Hide'

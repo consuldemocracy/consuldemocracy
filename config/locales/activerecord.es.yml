@@ -10,6 +10,9 @@ es:
       debate:
         one: Debate
         other: Debates
+      medida:
+        one: Medida
+        other: Medidas
       tag:
         one: Tema
         other: Temas
@@ -36,6 +39,11 @@ es:
         body: Comentario
         user: Usuario
       debate:
+        author: Autor
+        description: Opinión
+        terms_of_service: Términos de servicio
+        title: Título
+      medida:
         author: Autor
         description: Opinión
         terms_of_service: Términos de servicio

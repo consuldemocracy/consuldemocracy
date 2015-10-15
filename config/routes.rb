@@ -38,6 +38,14 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :medidas do
+    member do
+      post :vote
+      put :flag
+      put :unflag
+    end
+  end
+
   resources :proposals do
     member do
       post :vote
@@ -83,6 +91,13 @@ Rails.application.routes.draw do
     end
 
     resources :debates, only: :index do
+      member do
+        put :restore
+        put :confirm_hide
+      end
+    end
+
+    resources :medidas, only: :index do
       member do
         put :restore
         put :confirm_hide
@@ -136,6 +151,15 @@ Rails.application.routes.draw do
     end
 
     resources :debates, only: :index do
+      member do
+        put :hide
+      end
+      collection do
+        put :moderate
+      end
+    end
+
+    resources :medidas, only: :index do
       member do
         put :hide
       end

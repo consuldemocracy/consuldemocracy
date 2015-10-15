@@ -25,6 +25,13 @@
       <% end %>
     </li>
 
+    <li <%= "class=active" if controller_name == "medidas" %>>
+      <%= link_to admin_medidas_path do %>
+        <i class="icon-medidas"></i>
+      <%= t("admin.menu.hidden_medidas") %>
+      <% end %>
+    </li>
+
     <li <%= "class=active" if controller_name == "comments" %>>
       <%= link_to admin_comments_path do %>
         <i class="icon-comments"></i>

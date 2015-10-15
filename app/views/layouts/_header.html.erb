@@ -34,6 +34,7 @@
       <div class="small-12 medium-8 column">
       <%= link_to t("layouts.header.highlights"), highlights_path, class: ("active" if current_page? highlights_path) %>
       <%= link_to t("layouts.header.debates"), debates_path, class: ("active" if current_page?(controller: "/debates")) %>
+      <%= link_to t("layouts.header.medidas"), medidas_path, class: ("active" if current_page?(controller: "/medidas")) %>
       <%= link_to t("layouts.header.proposals"), proposals_path, class: ("active" if current_page?(controller: "/proposals")) %>
       <%= link_to t("layouts.header.more_information"), "/more_information", class: ("active" if current_page?("/more_information"))  %>
       <%= link_to t("layouts.header.external_link_blog_url"), target: "_blank" do %>
@@ -60,6 +61,11 @@
         <i class="icon-debates icon-home-big"></i>
         <i class="icon-debates icon-home-small"></i>
       </div>
+
+      <div class="show-for-medium-up small-12 medium-5 column text-center">
+        <i class="icon-medidas icon-home-big"></i>
+        <i class="icon-medidas icon-home-small"></i>
+      </div>
     </div>
   <% end %>
 
@@ -75,6 +81,10 @@
         <i class="icon-debates icon-home-big"></i>
         <i class="icon-debates icon-home-small"></i>
       </div>
+      <div class="show-for-medium-up small-12 medium-5 column text-center">
+        <i class="icon-medidas icon-home-big"></i>
+        <i class="icon-medidas icon-home-small"></i>
+      </div>
     </div>
   <% end %>
 
@@ -88,6 +98,10 @@
       <div class="show-for-medium-up small-12 medium-5 column text-center">
         <i class="icon-debates icon-home-big"></i>
         <i class="icon-debates icon-home-small"></i>
+      </div>
+      <div class="show-for-medium-up small-12 medium-5 column text-center">
+        <i class="icon-medidas icon-home-big"></i>
+        <i class="icon-medidas icon-home-small"></i>
       </div>
     </div>
   <% end %>

@@ -1,0 +1,28 @@
+<div class="medida-new row">
+
+  <div class="small-12 medium-9 column">
+    <%= link_to medidas_path, class: "left back" do %>
+      <i class="icon-angle-left left"></i>
+    <%= t("medidas.new.back_link") %>
+    <% end %>
+    <h1><%= t("medidas.new.start_new") %></h1>
+    <div class="alert-box info radius">
+      <%= t("medidas.new.info")%>
+      <%= link_to "/more_information", target: "_blank" do %>
+      <strong><%= t("medidas.new.more_info")%></strong>
+      <% end %>
+    </div>
+    <%= render "form" %>
+  </div>
+
+  <div class="small-12 medium-3 column">
+    <i class="icon-medidas right"></i>
+    <h2><%= t("medidas.new.recommendations_title") %></h2>
+    <ul class="recommendations">
+      <li><%= t("medidas.new.recommendation_one") %></li>
+      <li><%= t("medidas.new.recommendation_two") %></li>
+      <li><%= t("medidas.new.recommendation_three") %></li>
+      <li><%= t("medidas.new.recommendation_four") %></li>
+    </ul>
+  </div>
+</div>

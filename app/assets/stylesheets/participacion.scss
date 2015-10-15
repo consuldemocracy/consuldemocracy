@@ -1067,6 +1067,13 @@ label.error, label.error a {
     opacity: .5;
   }
 
+  .icon-medidas {
+    color: $medidas;
+    font-size: rem-calc(60);
+    line-height: $line-height;
+    opacity: .5;
+  }
+
   .avatar {
     margin-bottom: rem-calc(24);
   }
@@ -1176,6 +1183,18 @@ img.initialjs-avatar {
   }
 
   .debates-order {
+    text-align: left;
+
+    @media (min-width: $small-breakpoint) {
+      text-align: right;
+    }
+
+    select {
+      margin-left: 0;
+    }
+  }
+
+  .medidas-order {
     text-align: left;
 
     @media (min-width: $small-breakpoint) {

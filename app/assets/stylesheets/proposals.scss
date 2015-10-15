@@ -1,6 +1,6 @@
 // Table of Contents
 //
-// 01. Debates
+// 01. Proposals
 // 02. Index
 //  02.1. Featured
 //  02.2. List
@@ -254,6 +254,10 @@
       margin-bottom: rem-calc(12);
 
       &.debate-info {
+        font-size: rem-calc(13);
+      }
+
+      &.medida-info {
         font-size: rem-calc(13);
       }
     }

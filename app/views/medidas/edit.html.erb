@@ -1,0 +1,17 @@
+<div class="medida-edit row">
+
+  <div class="small-12 column">
+    <%= link_to medidas_path, class: "left back clear" do %>
+      <i class="icon-angle-left left"></i>
+    <%= t("medidas.edit.back_link") %>
+    <% end %>
+
+    <div class="right">
+      <%= link_to t("medidas.edit.show_link"), @medida %>
+    </div>
+
+    <h1><%= t("medidas.edit.editing") %></h1>
+
+    <%= render "form" %>
+  </div>
+</div>

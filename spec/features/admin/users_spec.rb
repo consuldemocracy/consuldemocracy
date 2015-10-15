@@ -23,6 +23,22 @@ feature 'Admin users' do
     expect(page).to have_content(comment2.body)
   end
 
+  scenario 'Show user activity2' do
+    user = create(:user, :hidden)
+
+    medida1 = create(:medida, :hidden, author: user)
+    medida2 = create(:medida, author: user)
+    comment1 = create(:comment, :hidden, user: user, commentable: medida2, body: "You have the manners of a beggar")
+    comment2 = create(:comment, user: user, commentable: medida2, body: 'Not Spam')
+
+    visit admin_user_path(user)
+
+    expect(page).to have_content(medida1.title)
+    expect(page).to have_content(medida2.title)
+    expect(page).to have_content(comment1.body)
+    expect(page).to have_content(comment2.body)
+  end
+
   scenario 'Restore' do
     user = create(:user, :hidden)
     visit admin_users_path

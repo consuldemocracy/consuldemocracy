@@ -12,6 +12,11 @@ module Abilities
         debate.editable_by?(user)
       end
 
+      can :read, Medida
+      can :update, Medida do |medida|
+        medida.editable_by?(user)
+      end
+
       can :read, Proposal
       can :update, Proposal do |proposal|
         proposal.editable_by?(user)
@@ -19,6 +24,7 @@ module Abilities
 
       can :create, Comment
       can :create, Debate
+      can :create, Medida
       can :create, Proposal
 
       can [:flag, :unflag], Comment
@@ -27,11 +33,15 @@ module Abilities
       can [:flag, :unflag], Debate
       cannot [:flag, :unflag], Debate, author_id: user.id
 
+      can [:flag, :unflag], Medida
+      cannot [:flag, :unflag], Medida, author_id: user.id
+
       can [:flag, :unflag], Proposal
       cannot [:flag, :unflag], Proposal, author_id: user.id
 
       unless user.organization?
         can :vote, Debate
+        can :vote, Medida
         can :vote, Comment
       end
 

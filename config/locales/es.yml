@@ -147,6 +147,82 @@ es:
     update:
       form:
         submit_button: "Guardar cambios"
+
+  medidas:
+    index:
+      title: Medidas
+      start_medida: Empieza un medida
+      select_order: Ordenar por
+      select_order_long: Estás viendo las medidas
+      orders:
+        confidence_score: "mejor valorados"
+        hot_score: "más activos"
+        created_at: "más nuevos"
+        most_commented: "más comentados"
+        random: "aleatorio"
+      filter_topic:
+        one: " con el tema '%{topic}'"
+        other: " con el tema '%{topic}'"
+      search_form:
+        title: Buscar
+        button: Buscar
+        placeholder: "Buscar medidas..."
+      search_results:
+        one: " que contiene '%{search_term}'"
+        other: " que contienen '%{search_term}'"
+    medida:
+      medida: medida
+      comments:
+        zero: Sin comentarios
+        one: 1 Comentario
+        other: "%{count} Comentarios"
+      votes:
+        zero: Sin votos
+        one: 1 voto
+        other: "%{count} votos"
+    form:
+      medida_title: Título de la medida
+      medida_text: Texto inicial de la medida
+      tags_label: Temas
+      tags_instructions: >
+        Etiqueta este medida. Puedes elegir entre nuestras propuestas o introducir las que desees.
+      tags_placeholder: "Escribe las etiquetas que desees separadas por coma (',')"
+    show:
+      back_link: Volver
+      author_deleted: Usuario eliminado
+      comments_title: Comentarios
+      comments:
+        zero: Sin comentarios
+        one: 1 Comentario
+        other: "%{count} Comentarios"
+      login_to_comment: "Necesitas %{signin} o %{signup} para comentar."
+      edit_medida_link: Editar
+      share: Compartir
+      flag: "Este medida ha sido marcado como inapropiado por varios usuarios."
+    edit:
+      editing: Editar medida
+      show_link: Ver medida
+      back_link: Volver
+      form:
+        submit_button: "Guardar cambios"
+    new:
+      start_new: Empezar un medida
+      info: "Un medida es un foro de discusión, no una propuesta ciudadana. Muy pronto abriremos la sección de propuestas ciudadanas, donde cualquiera podrá presentar propuestas y, si reciben apoyo, serán puestas en marcha por el Ayuntamiento."
+      more_info: "Más información"
+      back_link: Volver
+      recommendations_title: Recomendaciones para crear un medida
+      recommendation_one: "No escribas el título de la medida o frases enteras en mayúsculas. En internet eso se considera gritar. Y a nadie le gusta que le griten."
+      recommendation_two: "Cualquier medida o comentario que implique una acción ilegal será eliminado, también los que tengan la intención de sabotear los espacios de medida, todo lo demás está permitido."
+      recommendation_three: "Las críticas despiadadas son muy bienvenidas. Este es un espacio de pensamiento. Pero te recomendamos conservar la elegancia y la inteligencia. El mundo es mejor con ellas presentes."
+      recommendation_four: "Disfruta de este espacio, de las voces que lo llenan, también es tuyo."
+      form:
+        submit_button: "Empieza un medida"
+    create:
+      form:
+        submit_button: "Empieza un medida"
+    update:
+      form:
+        submit_button: "Guardar cambios"
   proposals:
     index:
       title: Propuestas ciudadanas

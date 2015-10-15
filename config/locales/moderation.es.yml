@@ -3,6 +3,7 @@ es:
     menu:
       proposals: Propuestas
       flagged_debates: Debates
+      flagged_medidas: Medidas
       flagged_comments: Comentarios
       users: Bloquear usuarios
     dashboard:
@@ -46,6 +47,25 @@ es:
           created_at: Más nuevos
           flags: Más denunciados
         confirm: ¿Estás seguro?
+    medidas:
+      index:
+        hide_medidas: Ocultar medidas
+        block_authors: Bloquear autores
+        ignore_flags: Marcar como revisados
+        title: Medidas
+        headers:
+          medida: Medida
+          moderate: Moderar
+        filter: Filtrar
+        filters:
+          all: Todos
+          pending_flag_review: Pendientes
+          with_ignored_flag: Marcadas como revisadas
+        order: Orden
+        orders:
+          created_at: Más nuevas
+          flags: Más denunciadas
+        confirm: ¿Estás seguro?
     proposals:
       index:
         hide_proposals: Ocultar Propuestas
@@ -66,7 +86,7 @@ es:
           flags: Más denunciadas
         confirm: ¿Estás seguro?
     users:
-      notice_hide: Usuario bloqueado. Se han ocultado todos sus debates y comentarios.
+      notice_hide: Usuario bloqueado. Se han ocultado todos sus debates, medidas y comentarios.
       index:
         title: Bloquear usuarios
         search_placeholder: email o nombre de usuario
