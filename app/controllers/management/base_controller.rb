@@ -12,7 +12,7 @@ class Management::BaseController < ActionController::Base
     end
 
     def current_manager
-      @current_manager ||= Manager.find(session["manager_id"]) if session["manager_id"]
+      session["manager"]
     end
 
     def managed_user

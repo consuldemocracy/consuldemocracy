@@ -1,7 +1,7 @@
 class ManagerAuthenticator
 
   def initialize(data={})
-    @manager = {login: data[:login], user_key: data[:user_key], date: data[:date]}
+    @manager = {login: data[:login], user_key: data[:clave_usuario], date: data[:fecha_conexion]}
   end
 
   def auth
