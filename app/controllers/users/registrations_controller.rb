@@ -10,6 +10,22 @@ class Users::RegistrationsController < Devise::RegistrationsController
     end
   end
 
+  def delete_form
+    build_resource({})
+  end
+
+  def delete
+    # The only difference between this version of delete and the original are the following two lines
+    # (we build the resource differently and we also call erase instead of destroy)
+    build_resource(erase_params)
+    resource.erase(params[:erase_reason])
+
+    yield resource if block_given?
+    Devise.sign_out_all_scopes ? sign_out : sign_out(resource_name)
+    set_flash_message :notice, :destroyed if is_flashing_format?
+    respond_with_navigational(resource){ redirect_to after_sign_out_path_for(resource_name) }
+  end
+
   def success
   end
 
@@ -30,6 +46,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
     def sign_up_params
       params.require(:user).permit(:username, :email, :password, :password_confirmation, :captcha, :captcha_key, :terms_of_service)
+    end
+
+    def erase_params
+      params.require(:user).permit(:erase_reason)
     end
 
     def after_inactive_sign_up_path_for(resource_or_scope)

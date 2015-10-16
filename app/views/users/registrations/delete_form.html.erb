@@ -1,0 +1,27 @@
+<i class="icon-angle-left left"></i>&nbsp;<%= link_to t("devise_views.users.registrations.edit.back_link"), :back, class: "left back" %>
+
+<h1><%= t("devise_views.users.registrations.delete_form.title") %></h1>
+
+<%= form_for(resource, as: resource_name,
+             url: users_registrations_path,
+             html: { method: :delete }) do |f| %>
+  <%= devise_error_messages! %>
+  <p>
+    <%= t("devise_views.users.registrations.delete_form.info") %>
+  </p>
+
+  <div class="row">
+    <div class="small-12 column">
+      <%= f.text_field :erase_reason,
+            autofocus: true,
+            placeholder: t("devise_views.users.registrations.delete_form.erase_reason_label"),
+            label: t("devise_views.users.registrations.delete_form.erase_reason_label") %>
+    </div>
+
+    <div class="small-12 column">
+      <%= f.submit t("devise_views.users.registrations.delete_form.submit"), class: "button radius danger" %>
+    </div>
+  </div>
+<% end %>
+
+

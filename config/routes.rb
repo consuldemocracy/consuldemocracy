@@ -1,9 +1,5 @@
 Rails.application.routes.draw do
 
-  as :user do
-      match '/user/confirmation' => 'users/confirmations#update', :via => :patch, :as => :update_user_confirmation
-  end
-
   devise_for :users, controllers: {
                        registrations: 'users/registrations',
                        sessions: 'users/sessions',
@@ -22,7 +18,11 @@ Rails.application.routes.draw do
   end
 
   devise_scope :user do
+    patch '/user/confirmation', to: 'users/confirmations#update', as: :update_user_confirmation
+
     get 'users/sign_up/success', to: 'users/registrations#success'
+    get 'users/registrations/delete_form', to: 'users/registrations#delete_form'
+    delete 'users/registrations', to: 'users/registrations#delete'
     get :finish_signup, to: 'users/registrations#finish_signup'
     patch :do_finish_signup, to: 'users/registrations#do_finish_signup'
   end
@@ -60,7 +60,9 @@ Rails.application.routes.draw do
     end
   end
 
-  resource :account, controller: "account", only: [:show, :update]
+  resource :account, controller: "account", only: [:show, :update, :delete] do
+    collection { get :erase }
+  end
   resource :verification, controller: "verification", only: [:show]
 
   scope module: :verification do

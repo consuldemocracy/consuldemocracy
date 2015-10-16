@@ -59,6 +59,11 @@ en:
           need_current: "We need your current password to confirm your changes"
           update_submit: "Update"
           back_link: "Back"
+        delete_form:
+          title: "Erase account"
+          info: "This action can not be undone. Please make sure this is what you want. If you want, you can leave us a reason (this is not mandatory)"
+          erase_reason_label: "Reason"
+          submit: "Erase my account"
         new:
           title: "Sign up"
           username_label: "Username"

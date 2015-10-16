@@ -282,6 +282,7 @@ en:
       change_credentials_link: "Change my credentials"
       email_on_comment_label: "Receive email when someone comments on my debates or proposals"
       email_on_comment_reply_label: "Receive email when someone replies to my comments"
+      erase_account_link: "Erase my account"
       personal: "Personal data"
       username_label: "Username"
       phone_number_label: "Phone number"

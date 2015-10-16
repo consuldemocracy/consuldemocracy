@@ -77,6 +77,11 @@ es:
           instructions_1_html: "Por favor <b>revisa tu correo electrónico</b> - te hemos enviado un <b>enlace para confirmar tu cuenta</b>."
           instructions_2_html: "Una vez confirmado, podrás empezar a participar."
           back_to_index: "Entendido, volver a la página principal"
+        delete_form:
+          title: "Darme de baja"
+          info: "Esta acción no se puede deshacer. Una vez que des de baja tu cuenta, no podrás volver a hacer login con ella. Si quieres, puedes informarnos de la razón por la que de tas de baja (no es obligatorio)."
+          erase_reason_label: "Razón de la baja"
+          submit: "Borrar mi cuenta"
     organizations:
       registrations:
         new:
