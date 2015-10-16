@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151013145757) do
+ActiveRecord::Schema.define(version: 20151016110703) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -304,6 +304,7 @@ ActiveRecord::Schema.define(version: 20151013145757) do
     t.string   "letter_verification_code"
     t.integer  "failed_census_calls_count",            default: 0
     t.datetime "level_two_verified_at"
+    t.string   "erase_reason"
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree
