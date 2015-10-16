@@ -243,7 +243,7 @@ Devise.setup do |config|
   config.omniauth :facebook, Rails.application.secrets.facebook_key, Rails.application.secrets.facebook_secret
   config.omniauth :google_oauth2, Rails.application.secrets.google_oauth2_key, Rails.application.secrets.google_oauth2_secret
   #config.omniauth :openid, :name =>'openid', :identifier =>'localhost:3003/es/openid/discover'
-  config.omniauth :openid, :name =>Rails.application.secrets.openid_name, :identifier =>Rails.application.secrets.openid_identifier, :mode =>'checkid_immediate'
+  config.omniauth :openid, :name =>Rails.application.secrets.openid_name, :identifier =>Rails.application.secrets.openid_identifier
   config.omniauth :reddit, Rails.application.secrets.reddit_key, Rails.application.secrets.reddit_secret, { scope: "identity"}
 
 
