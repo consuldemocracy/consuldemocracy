@@ -26,6 +26,7 @@ class User < ActiveRecord::Base
   validates :username, presence: true, unless: :organization?
   validates :username, uniqueness: true, unless: :organization?
   validates :document_number, uniqueness: { scope: :document_type }, allow_nil: true
+
   validate :validate_username_length
 
   validates :official_level, inclusion: {in: 0..5}
@@ -145,6 +146,22 @@ class User < ActiveRecord::Base
     Proposal.hide_all proposal_ids
   end
 
+  def erase(erase_reason = nil)
+    self.update(
+      erase_reason: erase_reason,
+      username: nil,
+      email: "",
+      unconfirmed_email: nil,
+      document_number: nil,
+      phone_number: nil,
+      encrypted_password: "",
+      confirmation_token: nil,
+      reset_password_token: nil,
+      email_verification_token: nil
+    )
+
+    self.hide
+  end
 
   def email_provided?
     !!(email && email !~ OMNIAUTH_EMAIL_REGEX) ||
