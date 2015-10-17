@@ -27,7 +27,7 @@
         <nav class="top-bar" data-topbar role="navigation">
           <ul class="title-area">
             <li class="name">
-              <%= link_to root_path do %>
+              <%= link_to management_root_path do %>
                 <%= image_tag('header_logo_madrid.png', class: 'left', size: '96x96') %>
                 <%= t("layouts.header.open_gov", open: "<strong>#{t('layouts.header.open')}</strong>").html_safe %> <span>|</span> <span class="logo-site"><%= t("management.dashboard.index.title") %></span>
               <% end %>
