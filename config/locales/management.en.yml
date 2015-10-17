@@ -17,10 +17,10 @@ en:
         title: "Management"
     account_info:
       identified_label: "Identified as:"
-      username_label: "Username"
-      email_label: "Email"
-      document_number_label: "Document number"
-      document_type_label: "Document type"
+      username_label: "Username:"
+      email_label: "Email:"
+      document_number_label: "Document number:"
+      document_type_label: "Document type:"
       change_user: "Change user"
     sessions:
       signed_out: "Signed out successfully."
