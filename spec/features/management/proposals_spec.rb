@@ -117,16 +117,14 @@ feature 'Proposals' do
     end
 
     scenario "Filtering proposals to be printed", :js do
-      create(:proposal, title: 'Best proposal').update_column(:confidence_score, 10)
       create(:proposal, title: 'Worst proposal').update_column(:confidence_score, 2)
+      create(:proposal, title: 'Best proposal').update_column(:confidence_score, 10)
       create(:proposal, title: 'Medium proposal').update_column(:confidence_score, 5)
 
       user = create(:user, :level_two)
       login_managed_user(user)
 
       click_link "Print proposals"
-
-      select 'most supported', from: 'order-selector'
 
       expect(page).to have_selector('.js-order-selector[data-order="confidence_score"]')
 
@@ -135,8 +133,17 @@ feature 'Proposals' do
         expect('Medium proposal').to appear_before('Worst proposal')
       end
 
-      expect(current_url).to include('order=confidence_score')
+      select 'newest', from: 'order-selector'
+
+      expect(page).to have_selector('.js-order-selector[data-order="created_at"]')
+
+      expect(current_url).to include('order=created_at')
       expect(current_url).to include('page=1')
+
+      within '#proposals' do
+        expect('Medium proposal').to appear_before('Best proposal')
+        expect('Best proposal').to appear_before('Worst proposal')
+      end
     end
 
   end
