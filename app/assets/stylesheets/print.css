@@ -22,11 +22,17 @@ img.left { display: none !important; }
 
 .icon-proposals { display: none !important; }
 
+.captcha { display: none !important; }
+
 li.name span { display: none !important; }
 
 p.proposal-info span:nth-child(3) { display: none !important; }
 
 .top-links { display: none !important; }
+
+.button { display: none !important; }
+
+input[type="submit"] { display: none !important; }
 
 .select-order {
   border: 0;
