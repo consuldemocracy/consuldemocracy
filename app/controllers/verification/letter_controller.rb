@@ -6,8 +6,6 @@ class Verification::LetterController < ApplicationController
   before_action :verify_lock
   skip_authorization_check
 
-  layout :pages, only: :edit
-
   def new
     @letter = Verification::Letter.new(user: current_user)
   end
