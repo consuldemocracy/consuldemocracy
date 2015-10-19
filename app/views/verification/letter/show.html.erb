@@ -1,0 +1,22 @@
+<div class="verification account row">
+
+  <%= link_to account_path, class: "left back clear" do %>
+    <i class="icon-angle-left left"></i>
+    <%= t("verification.back") %>
+  <% end %>
+
+  <div class="small-12 column">
+
+    <h1><%= t("verification.letter.edit.title") %></h1>
+
+    <div class="alert-box success radius clear margin-top">
+      <%= t("verification.letter.create.flash.success_html",
+          offices: link_to(t("verification.letter.create.flash.offices"),
+                           t("verification.letter.create.flash.offices_url"),
+                           target: "_blank")).html_safe
+      %>
+    </div>
+
+    <%= link_to t("verification.letter.edit.see_all"), proposals_path, class: "button warning radius" %>
+  </div>
+</div>

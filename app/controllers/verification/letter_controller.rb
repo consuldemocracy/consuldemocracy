@@ -13,7 +13,10 @@ class Verification::LetterController < ApplicationController
   def create
     @letter = Verification::Letter.new(user: current_user)
     @letter.save
-    redirect_to edit_letter_path
+    redirect_to letter_path
+  end
+
+  def show
   end
 
   def edit
