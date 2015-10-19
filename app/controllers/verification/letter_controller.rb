@@ -1,10 +1,12 @@
 class Verification::LetterController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: :edit
   before_action :verify_resident!
   before_action :verify_phone!
   before_action :verify_verified!
   before_action :verify_lock
   skip_authorization_check
+
+  layout :pages, only: :edit
 
   def new
     @letter = Verification::Letter.new(user: current_user)
@@ -20,7 +22,7 @@ class Verification::LetterController < ApplicationController
   end
 
   def edit
-    @letter = Verification::Letter.new(user: current_user)
+    @letter = Verification::Letter.new
   end
 
   def update
