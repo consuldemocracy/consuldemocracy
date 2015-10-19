@@ -17,7 +17,21 @@ class Verification::Management::Document
   end
 
   def in_census?
-    CensusApi.new.call(document_type, document_number).valid?
+    response = CensusApi.new.call(document_type, document_number)
+    response.valid? && valid_age?(response)
+  end
+
+  def valid_age?(response)
+    if under_sixteen?(response)
+      errors.add(:age, true)
+      return false
+    else
+      return true
+    end
+  end
+
+  def under_sixteen?(response)
+    16.years.ago.year < response.date_of_birth.to_date.year
   end
 
   def verified?
@@ -29,6 +43,3 @@ class Verification::Management::Document
   end
 
 end
-
-
-
