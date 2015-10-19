@@ -310,6 +310,8 @@ en:
   shared:
     tags_cloud:
       tags: Trend
+    print:
+      print_button: "Print this info"
     flag: Flag as inappropriate
     unflag: Undo flag
     collective: Collective
