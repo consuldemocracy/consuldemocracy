@@ -1,9 +1,12 @@
 class Verification::Letter
   include ActiveModel::Model
 
-  attr_accessor :user, :verification_code, :email, :password
+  attr_accessor :user, :verification_code, :email, :password, :verify
 
-  validates :user, presence: true
+  validates :user, presence: true, on: :create
+
+  validate :letter_sent, if: :verify?
+  validate :correct_code, if: :verify?
 
   def save
     valid? &&
@@ -14,20 +17,18 @@ class Verification::Letter
     user.update(letter_requested_at: Time.now, letter_verification_code: generate_verification_code)
   end
 
-  def verified?
-    validate_letter_sent
-    validate_correct_code
-    errors.blank?
-  end
-
-  def validate_letter_sent
+  def letter_sent
     errors.add(:verification_code, I18n.t('verification.letter.errors.letter_not_sent')) unless
     user.letter_sent_at.present?
   end
 
-  def validate_correct_code
+  def correct_code
     errors.add(:verification_code, I18n.t('verification.letter.errors.incorect_code')) unless
     user.letter_verification_code == verification_code
+  end
+
+  def verify?
+    verify.present?
   end
 
   def increase_letter_verification_tries

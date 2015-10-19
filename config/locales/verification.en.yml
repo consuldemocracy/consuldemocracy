@@ -88,7 +88,7 @@ en:
         see_all: "See proposals"
       update:
         flash:
-          success: "Correct code. Your account is verified"
+          success: "Your account has been verified"
       alert:
         unconfirmed_code: "You have not yet enter the confirmation code"
       errors:

@@ -71,6 +71,7 @@ en:
       debate: debate
       proposal: proposal
       verification::sms: phone
+      verification::letter: verification
   application:
     alert:
       only_beta_testers: "Sorry only Beta Testers are allowed access at the moment"
