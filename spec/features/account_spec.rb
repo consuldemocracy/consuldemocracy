@@ -81,4 +81,20 @@ feature 'Account' do
 
     expect(page).to have_content error_message
   end
+
+  scenario 'Erasing account' do
+    visit account_path
+
+    click_link 'Erase my account'
+
+    fill_in 'user_erase_reason', with: 'a test'
+
+    click_button 'Erase my account'
+
+    expect(page).to have_content "Your account has been successfully cancelled"
+
+    login_through_form_as(@user)
+
+    expect(page).to have_content "Invalid email or password"
+  end
 end
