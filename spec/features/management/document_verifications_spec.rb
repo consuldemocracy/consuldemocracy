@@ -53,4 +53,13 @@ feature 'DocumentVerifications' do
     expect(page).to have_content "Please introduce the email used on the account"
   end
 
+  scenario 'Document number is format-standarized' do
+
+    visit management_document_verifications_path
+    fill_in 'document_verification_document_number', with: '12345 - h'
+    click_button 'Check'
+
+    expect(page).to have_content "Document number: 12345H"
+  end
+
 end
