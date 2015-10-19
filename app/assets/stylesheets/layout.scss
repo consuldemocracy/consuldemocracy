@@ -958,8 +958,7 @@ form {
 
     em {
       background: white;
-      display: inline-block;
-      padding-left: rem-calc(6);
+      display: block;
     }
   }
 
@@ -1147,9 +1146,9 @@ img.avatar, img.admin-avatar, img.moderator-avatar, img.initialjs-avatar {
   background-color: rgba(255,255,255,.5);
   color: rgba(0,0,0,.4);
   font-size: rem-calc(40);
-  left: 11px;
+  left: rem-calc(11);
   position: absolute;
-  top: 63px;
+  top: rem-calc(72);
 }
 
 .user-deleted {

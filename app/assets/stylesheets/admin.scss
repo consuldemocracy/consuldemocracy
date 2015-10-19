@@ -68,6 +68,14 @@ body.admin {
     .filters h2 {
       margin-top: 0;
     }
+
+    .proposal-new, .proposal-edit {
+      padding-top: 0;
+    }
+
+    .proposal-show {
+      padding-top: rem-calc(54);
+    }
   }
 
   .is-featured {
@@ -292,11 +300,6 @@ body.admin {
 
 // 05. Management
 // - - - - - - - - - - - - - - - - - - - - - - - - -
-
-.postfix {
-  height: rem-calc(48);
-  line-height: rem-calc(48);
-}
 
 .user-permissions {
 

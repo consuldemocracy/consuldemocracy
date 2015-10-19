@@ -26,6 +26,7 @@ es:
       signed_out: "Has cerrado la sesión correctamente."
       signed_out_managed_user: "Se ha cerrado correctamente la sesión del usuario."
     proposals:
+      create_proposal: "Crear propuesta"
       print:
        print_button: Imprimir
       alert:
