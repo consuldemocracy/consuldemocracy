@@ -320,7 +320,7 @@ describe User do
 
       expect(user.username).to be_nil
 
-      expect(user.email).to be_empty
+      expect(user.email).to be_nil
       expect(user.unconfirmed_email).to be_nil
       expect(user.document_number).to be_nil
       expect(user.phone_number).to be_nil

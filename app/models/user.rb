@@ -151,7 +151,7 @@ class User < ActiveRecord::Base
     self.update(
       erase_reason: erase_reason,
       username: nil,
-      email: "",
+      email: nil,
       unconfirmed_email: nil,
       document_number: nil,
       phone_number: nil,
