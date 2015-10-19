@@ -1,5 +1,6 @@
 class Verification::Management::Document
   include ActiveModel::Model
+  include ActiveModel::Dates
 
   attr_accessor :document_type
   attr_accessor :document_number
@@ -31,7 +32,7 @@ class Verification::Management::Document
   end
 
   def under_sixteen?(response)
-    16.years.ago.year < response.date_of_birth.to_date.year
+    16.years.ago < string_to_date(response.date_of_birth)
   end
 
   def verified?
