@@ -10,18 +10,13 @@
     </div>
 
     <div class="medium-6 small-centered column">
-      <form>
-        <label><%= t("pages.verify.email") %></label>
-        <input type="text" placeholder="<%= t("pages.verify.email") %>">
+      <%= form_for @letter, url: edit_letter_path do |f| %>
+        <%= f.text_field :email, label: t("pages.verify.email") %>
+        <%= f.password_field :password, label: t("pages.verify.password") %>
+        <%= f.text_field :verification_code, label: t("pages.verify.code") %>
 
-        <label><%= t("pages.verify.password") %></label>
-        <input type="password" placeholder="<%= t("pages.verify.password") %>">
-
-        <label><%= t("pages.verify.code") %></label>
-        <input type="text" placeholder="<%= t("pages.verify.code") %>">
-
-        <input type="submit" value="<%= t("pages.verify.submit") %>" class="button radius success expand">
-      </form>
+        <%= f.submit(class: "button radius success expand", value: t("pages.verify.submit")) %>
+      <% end %>
     </div>
   </div>
 </div>

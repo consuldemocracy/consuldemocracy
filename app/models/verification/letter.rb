@@ -1,7 +1,7 @@
 class Verification::Letter
   include ActiveModel::Model
 
-  attr_accessor :user, :verification_code
+  attr_accessor :user, :verification_code, :email, :password
 
   validates :user, presence: true
 
