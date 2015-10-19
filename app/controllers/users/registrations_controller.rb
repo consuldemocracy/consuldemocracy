@@ -17,8 +17,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def delete
     # The only difference between this version of delete and the original are the following two lines
     # (we build the resource differently and we also call erase instead of destroy)
-    build_resource(erase_params)
-    resource.erase(params[:erase_reason])
+    resource = current_user
+    current_user.erase(erase_params[:erase_reason])
 
     yield resource if block_given?
     Devise.sign_out_all_scopes ? sign_out : sign_out(resource_name)
