@@ -3,7 +3,7 @@ class Verification::Letter
 
   attr_accessor :user, :verification_code, :email, :password, :verify
 
-  validates :user, presence: true, on: :create
+  validates :user, presence: true
 
   validate :letter_sent, if: :verify?
   validate :correct_code, if: :verify?
