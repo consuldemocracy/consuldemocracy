@@ -3,7 +3,7 @@ module Taggable
 
   included do
     acts_as_taggable
-    validate :max_number_of_tags
+    validate :max_number_of_tags, on: :create
   end
 
   def tag_list_with_limit(limit = nil)

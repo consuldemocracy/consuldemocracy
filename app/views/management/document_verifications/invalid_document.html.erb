@@ -1,5 +1,9 @@
 <div class="alert-box alert radius">
-  <%= t("management.document_verifications.not_in_census") %>
+  <% if @document_verification.errors[:age].any? %>
+    <%= t("management.document_verifications.under_age") %>
+  <% else %>
+    <%= t("management.document_verifications.not_in_census") %>
+  <% end %>
 </div>
 
 <%= render 'management/user_permissions',

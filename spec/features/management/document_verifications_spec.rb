@@ -3,7 +3,7 @@ require 'rails_helper'
 feature 'DocumentVerifications' do
 
   background do
-    login_as_manager(create(:manager))
+    login_as_manager
   end
 
   scenario 'Verifying a level 3 user shows an "already verified" page' do
@@ -51,6 +51,25 @@ feature 'DocumentVerifications' do
     click_button 'Check'
 
     expect(page).to have_content "Please introduce the email used on the account"
+  end
+
+  scenario 'Document number is format-standarized' do
+
+    visit management_document_verifications_path
+    fill_in 'document_verification_document_number', with: '12345 - h'
+    click_button 'Check'
+
+    expect(page).to have_content "Document number: 12345H"
+  end
+
+  scenario 'User age is checked' do
+    expect_any_instance_of(Verification::Management::Document).to receive(:under_sixteen?).and_return(true)
+
+    visit management_document_verifications_path
+    fill_in 'document_verification_document_number', with: '1234'
+    click_button 'Check'
+
+    expect(page).to have_content "You must be over 16 to verify your account."
   end
 
 end

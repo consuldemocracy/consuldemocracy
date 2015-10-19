@@ -21,11 +21,12 @@ es:
       email_label: "Email:"
       document_number_label: "Número de documento:"
       document_type_label: "Tipo de documento:"
-      logout: "Salir"
+      change_user: "Cambiar usuario"
     sessions:
       signed_out: "Has cerrado la sesión correctamente."
-      signed_out_managed_user: "Has cerrado la sesión correctamente."
+      signed_out_managed_user: "Se ha cerrado correctamente la sesión del usuario."
     proposals:
+      create_proposal: "Crear propuesta"
       print:
        print_button: Imprimir
       alert:
@@ -41,6 +42,7 @@ es:
       already_verified: "Esta cuenta de usuario ya está verificada."
       in_census_has_following_permissions: "Este usuario puede participar en el Portal de Gobierno Abierto del Ayuntamiento de Madrid con las siguientes posibilidades:"
       not_in_census: "Este documento no está registrado en el Padrón Municipal de Madrid."
+      under_age: "Debes ser mayor de 16 años para verificar tu cuenta."
       not_in_census_info: "Las personas no empadronadas en Madrid pueden participar en el Portal de Gobierno Abierto del Ayuntamiento de Madrid con las siguientes posibilidades:"
       has_no_account_html: "Para crear un usuario entre en %{link} y haga clic en la opción <b>'Registrarse'</b> en la parte superior derecha de la pantalla."
       verify: "Verificar usuario"

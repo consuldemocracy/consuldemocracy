@@ -3,7 +3,7 @@ require 'rails_helper'
 feature 'Managed User' do
 
   background do
-    login_as_manager(create(:manager))
+    login_as_manager
   end
 
   context "Currently managed user" do
@@ -47,7 +47,7 @@ feature 'Managed User' do
     end
 
     scenario "User becomes verified as level two (pending email confirmation for level three)" do
-      login_as_manager(create(:manager))
+      login_as_manager
 
       user = create(:user)
 
@@ -71,7 +71,7 @@ feature 'Managed User' do
     end
 
     scenario "User is created as level three from scratch" do
-      login_as_manager(create(:manager))
+      login_as_manager
 
       visit management_document_verifications_path
       fill_in 'document_verification_document_number', with: '1234'
@@ -111,10 +111,10 @@ feature 'Managed User' do
       expect(page).to have_content "Identified as"
       expect(page).to have_content "#{user.username}"
 
-      click_link "Logout"
+      click_link "Change user"
     end
 
-    expect(page).to have_content "Signed out successfully."
+    expect(page).to have_content "User session signed out successfully."
     expect(current_path).to eq(management_root_path)
   end
 

@@ -311,6 +311,8 @@ es:
   shared:
     tags_cloud:
       tags: Tendencias
+    print:
+      print_button: "Imprimir esta información"
     flag: Denunciar como inapropiado
     unflag: Deshacer denuncia
     collective: Colectivo

@@ -27,6 +27,12 @@ body.admin {
     .button {
       margin-top: 0;
     }
+
+    input[type="text"] {
+      height: 36px\9;
+      line-height: 36px\9;
+      margin-bottom: 24px\9;
+    }
   }
 
   .dashboard {
@@ -58,6 +64,18 @@ body.admin {
 
   .admin-content {
     margin-top: rem-calc(24);
+
+    .filters h2 {
+      margin-top: 0;
+    }
+
+    .proposal-new, .proposal-edit {
+      padding-top: 0;
+    }
+
+    .proposal-show {
+      padding-top: rem-calc(54);
+    }
   }
 
   .is-featured {
@@ -79,6 +97,10 @@ body.admin {
     margin-left: rem-calc(-20);
   }
 
+  a {
+    color: white\9 !important;
+  }
+
   ul {
     list-style-type: none;
     margin-left: 0;
@@ -89,6 +111,8 @@ body.admin {
       font-size: rem-calc(24);
       padding-right: rem-calc(24);
       padding-top: rem-calc(4);
+      padding-left: 12px\9 !important;
+      padding-right: 12px\9 !important;
     }
 
     li {
@@ -276,11 +300,6 @@ body.admin {
 
 // 05. Management
 // - - - - - - - - - - - - - - - - - - - - - - - - -
-
-.postfix {
-  height: rem-calc(48);
-  line-height: rem-calc(48);
-}
 
 .user-permissions {
 

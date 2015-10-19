@@ -6,7 +6,7 @@ class Management::ProposalsController < Management::BaseController
   before_action :set_proposal, only: [:vote, :show]
   before_action :parse_search_terms, only: :index
 
-  has_orders %w{hot_score confidence_score created_at most_commented random}, only: [:index, :print]
+  has_orders %w{confidence_score hot_score created_at most_commented random}, only: [:index, :print]
 
   def vote
     @proposal.register_vote(current_user, 'yes')
@@ -34,7 +34,7 @@ class Management::ProposalsController < Management::BaseController
 
     def check_verified_user
       unless current_user.level_two_or_three_verified?
-        redirect_to management_root_path, alert: t("management.proposals.alert.unverified_user")
+        redirect_to management_document_verifications_path, alert: t("management.proposals.alert.unverified_user")
       end
     end
 
