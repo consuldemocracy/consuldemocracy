@@ -24,7 +24,7 @@ en:
       change_user: "Change user"
     sessions:
       signed_out: "Signed out successfully."
-      signed_out_managed_user: "Signed out successfully."
+      signed_out_managed_user: "User session signed out successfully."
     proposals:
       print:
        print_button: Print

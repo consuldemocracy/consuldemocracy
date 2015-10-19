@@ -24,7 +24,7 @@ es:
       change_user: "Cambiar usuario"
     sessions:
       signed_out: "Has cerrado la sesión correctamente."
-      signed_out_managed_user: "Has cerrado la sesión correctamente."
+      signed_out_managed_user: "Se ha cerrado correctamente la sesión del usuario."
     proposals:
       print:
        print_button: Imprimir

@@ -114,7 +114,7 @@ feature 'Managed User' do
       click_link "Change user"
     end
 
-    expect(page).to have_content "Signed out successfully."
+    expect(page).to have_content "User session signed out successfully."
     expect(current_path).to eq(management_root_path)
   end
 
