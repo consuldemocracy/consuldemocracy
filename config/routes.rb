@@ -270,6 +270,6 @@ Rails.application.routes.draw do
   get "/participation_world", to: "pages#participation_world"
   get "/blog", to: "pages#blog"
   get "/accessibility", to: "pages#accessibility"
-  get "/verifica", to: "pages#verifica"
+  get "/verifica", to: "pages#verify"
 
 end

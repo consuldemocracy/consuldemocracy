@@ -46,7 +46,7 @@ class PagesController < ApplicationController
   def participation_world
   end
 
-  def verifica
+  def verify
   end
 
   def blog
