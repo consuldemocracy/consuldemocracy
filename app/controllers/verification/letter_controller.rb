@@ -2,10 +2,10 @@ class Verification::LetterController < ApplicationController
   before_action :authenticate_user!, except: [:edit, :update]
   before_action :login_via_form, only: :update
 
-  before_action :verify_resident!, except: :edit, if: :signed_in?
-  before_action :verify_phone!, except: :edit, if: :signed_in?
-  before_action :verify_verified!, except: :edit, if: :signed_in?
-  before_action :verify_lock, except: :edit, if: :signed_in?
+  before_action :verify_resident!, if: :signed_in?
+  before_action :verify_phone!, if: :signed_in?
+  before_action :verify_verified!, if: :signed_in?
+  before_action :verify_lock, if: :signed_in?
 
   skip_authorization_check
 
