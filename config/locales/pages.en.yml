@@ -21,8 +21,9 @@ en:
       "Open Data"
     verify:
       title: "Verify your account"
-      info: "Introduce your access data and the code you received in letter."
+      info: "For verufy your account introduce your access data:"
+      info_code: "Now introduce the code you received in letter:"
       email: "Email"
       password: "Password"
-      code: "Secure code"
+      code: "Code you received in letter"
       submit: "Verify my account"
