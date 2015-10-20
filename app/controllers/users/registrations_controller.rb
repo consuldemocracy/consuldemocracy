@@ -10,6 +10,16 @@ class Users::RegistrationsController < Devise::RegistrationsController
     end
   end
 
+  def delete_form
+    build_resource({})
+  end
+
+  def delete
+    current_user.erase(erase_params[:erase_reason])
+    sign_out
+    redirect_to root_url, notice: t("devise.registrations.destroyed")
+  end
+
   def success
   end
 
@@ -30,6 +40,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
     def sign_up_params
       params.require(:user).permit(:username, :email, :password, :password_confirmation, :captcha, :captcha_key, :terms_of_service)
+    end
+
+    def erase_params
+      params.require(:user).permit(:erase_reason)
     end
 
     def after_inactive_sign_up_path_for(resource_or_scope)

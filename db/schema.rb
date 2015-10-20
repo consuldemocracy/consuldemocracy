@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151015135154) do
+ActiveRecord::Schema.define(version: 20151019133719) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -257,7 +257,7 @@ ActiveRecord::Schema.define(version: 20151015135154) do
   add_index "tags", ["proposals_count"], name: "index_tags_on_proposals_count", using: :btree
 
   create_table "users", force: :cascade do |t|
-    t.string   "email",                                default: "",    null: false
+    t.string   "email",                                default: ""
     t.string   "encrypted_password",                   default: "",    null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
@@ -294,6 +294,7 @@ ActiveRecord::Schema.define(version: 20151015135154) do
     t.string   "letter_verification_code"
     t.integer  "failed_census_calls_count",            default: 0
     t.datetime "level_two_verified_at"
+    t.string   "erase_reason"
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree
