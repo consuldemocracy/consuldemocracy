@@ -97,6 +97,7 @@ ignore_missing:
   - 'errors.messages.blank'
   - 'errors.messages.taken'
   - 'devise.failure.invalid'
+  - 'devise.registrations.destroyed'
 
 ## Consider these keys used:
 ignore_unused:

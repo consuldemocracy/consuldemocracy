@@ -104,16 +104,12 @@ feature 'Proposals' do
   context "Printing" do
 
     scenario 'Printing proposals', :js do
-      5.times { create(:proposal) }
+      6.times { create(:proposal) }
 
       click_link "Print proposals"
 
-      find("#print_link").click
-
-      ### CHANGE ME
-      # should probably test something else here
-      # maybe that we are loading a print.css stylesheet?
-      ###
+      expect(page).to have_css('.proposal', count: 5)
+      expect(page).to have_css("a[href='javascript:window.print();']", text: 'Print')
     end
 
     scenario "Filtering proposals to be printed", :js do

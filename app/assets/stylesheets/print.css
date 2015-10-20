@@ -32,6 +32,8 @@ p.proposal-info span:nth-child(3) { display: none !important; }
 
 .button { display: none !important; }
 
+.change-user { display: none !important; }
+
 input[type="submit"] { display: none !important; }
 
 .select-order {

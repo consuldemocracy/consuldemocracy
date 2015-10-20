@@ -14,7 +14,7 @@ class Management::ProposalsController < Management::BaseController
   end
 
   def print
-    @proposals = Proposal.all.page(params[:page]).for_render.send("sort_by_#{@current_order}")
+    @proposals = Proposal.send("sort_by_#{@current_order}").for_render.limit(5)
     set_proposal_votes(@proposal)
   end
 

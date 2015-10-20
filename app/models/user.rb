@@ -23,9 +23,10 @@ class User < ActiveRecord::Base
   has_many :comments, -> { with_hidden }
   has_many :failed_census_calls
 
-  validates :username, presence: true, unless: :organization?
-  validates :username, uniqueness: true, unless: :organization?
+  validates :username, presence: true, if: :username_required?
+  validates :username, uniqueness: true, if: :username_required?
   validates :document_number, uniqueness: { scope: :document_type }, allow_nil: true
+
   validate :validate_username_length
 
   validates :official_level, inclusion: {in: 0..5}
@@ -145,6 +146,21 @@ class User < ActiveRecord::Base
     Proposal.hide_all proposal_ids
   end
 
+  def erase(erase_reason = nil)
+    self.hide
+    self.update(
+      erase_reason: erase_reason,
+      username: nil,
+      email: nil,
+      unconfirmed_email: nil,
+      document_number: nil,
+      phone_number: nil,
+      encrypted_password: "",
+      confirmation_token: nil,
+      reset_password_token: nil,
+      email_verification_token: nil
+    )
+  end
 
   def email_provided?
     !!(email && email !~ OMNIAUTH_EMAIL_REGEX) ||
@@ -172,8 +188,15 @@ class User < ActiveRecord::Base
     super
   end
 
-  private
+  def username_required?
+    !organization? && !hidden?
+  end
 
+  def email_required?
+    !hidden?
+  end
+
+  private
     def clean_document_number
       self.document_number = self.document_number.gsub(/[^a-z0-9]+/i, "").upcase unless self.document_number.blank?
     end

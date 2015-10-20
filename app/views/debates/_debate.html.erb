@@ -13,6 +13,7 @@
               <%= link_to t("debates.debate.comments", count: debate.comments_count), debate_path(debate, anchor: "comments") %>
               <span class="bullet">&nbsp;&bull;&nbsp;</span>
               <%= l debate.created_at.to_date %>
+
               <% if debate.author.hidden? %>
                 <span class="bullet">&nbsp;&bull;&nbsp;</span>
                 <span class="author">
@@ -37,6 +38,7 @@
                   <%= t("shared.collective") %>
                 </span>
               <% end %>
+
             </p>
             <div class="debate-description">
               <%= link_to debate.description, debate %>

@@ -1,6 +1,10 @@
 <div class="row account">
   <div class="small-12 column">
-    <%= link_to t("account.show.change_credentials_link"), edit_user_registration_path, class: "button radius small secondary right" %>
+    <div class="right text-right">
+      <%= link_to t("account.show.change_credentials_link"), edit_user_registration_path, class: "button radius small secondary" %>
+      <br>
+      <%= link_to t("account.show.erase_account_link"), users_registrations_delete_form_path, class: "delete" %>
+    </div>
 
     <%= avatar_image(@account, seed: @account.id, size: 60) %>
 
