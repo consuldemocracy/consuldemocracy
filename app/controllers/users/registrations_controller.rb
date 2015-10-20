@@ -15,15 +15,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   def delete
-    # The only difference between this version of delete and the original are the following two lines
-    # (we build the resource differently and we also call erase instead of destroy)
-    resource = current_user
     current_user.erase(erase_params[:erase_reason])
-
-    yield resource if block_given?
-    Devise.sign_out_all_scopes ? sign_out : sign_out(resource_name)
-    set_flash_message :notice, :destroyed if is_flashing_format?
-    respond_with_navigational(resource){ redirect_to after_sign_out_path_for(resource_name) }
+    sign_out
+    redirect_to root_url, notice: t("devise.registrations.destroyed")
   end
 
   def success
