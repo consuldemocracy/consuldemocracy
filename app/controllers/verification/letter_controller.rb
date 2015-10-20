@@ -1,6 +1,6 @@
 class Verification::LetterController < ApplicationController
   before_action :authenticate_user!, except: [:edit, :update]
-  before_action :check_credentials, only: :update
+  before_action :login_via_form, only: :update
 
   before_action :verify_resident!, except: :edit
   before_action :verify_phone!, except: :edit
@@ -32,7 +32,7 @@ class Verification::LetterController < ApplicationController
       current_user.update(verified_at: Time.now)
       redirect_to account_path, notice: t('verification.letter.update.flash.success')
     else
-      Lock.increase_tries(@letter.user)
+      Lock.increase_tries(@letter.user) if @letter.user
       render :edit
     end
   end
@@ -44,18 +44,17 @@ class Verification::LetterController < ApplicationController
     end
 
     def verify_phone!
-      unless current_user.confirmed_phone?
+      if current_user && !current_user.confirmed_phone?
         redirect_to verified_user_path, alert: t('verification.letter.alert.unconfirmed_code')
       end
     end
 
-    def check_credentials
-      user = User.where(email: letter_params[:email]).first
+    def login_via_form
+      user = User.find_by_email(letter_params[:email])
       if user && user.valid_password?(letter_params[:password])
         sign_in(user)
-      else
-        redirect_to edit_letter_path, alert: t('devise.failure.invalid', authentication_keys: 'email')
       end
     end
+
 
 end

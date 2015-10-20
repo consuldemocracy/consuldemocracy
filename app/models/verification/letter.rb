@@ -3,9 +3,12 @@ class Verification::Letter
 
   attr_accessor :user, :verification_code, :email, :password, :verify
 
-  validates :user, presence: true
+  validates :email, presence: true
+  validates :password, presence: true
+  validates :verification_code, presence: true
 
-  validate :correct_code, if: :verify?
+  validate :validate_existing_user
+  validate :validate_correct_code, if: :verify?
 
   def save
     valid? &&
@@ -16,9 +19,17 @@ class Verification::Letter
     user.update(letter_requested_at: Time.now, letter_verification_code: generate_verification_code)
   end
 
-  def correct_code
-    errors.add(:verification_code, I18n.t('verification.letter.errors.incorrect_code')) unless
-    user.letter_verification_code == verification_code
+  def validate_existing_user
+    unless user
+      errors.add(:email, I18n.t('devise.failure.invalid', authentication_keys: 'email'))
+    end
+  end
+
+  def validate_correct_code
+    return if errors.include?(:verification_code)
+    if user.try(:letter_verification_code) != verification_code
+      errors.add(:verification_code, I18n.t('verification.letter.errors.incorrect_code'))
+    end
   end
 
   def verify?

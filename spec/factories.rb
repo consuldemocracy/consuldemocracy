@@ -79,6 +79,9 @@ FactoryGirl.define do
 
   factory :verification_letter, class: Verification::Letter do
     user
+    email 'user@madrid.es'
+    password '1234'
+    verification_code '5555'
   end
 
   factory :lock do

@@ -21,14 +21,10 @@ describe 'Verification::Letter' do
 
   describe "save" do
 
-    before(:each) do
-      letter = Verification::Letter.new(user: user)
-      letter.save
-      user.reload
-    end
-
     it "should update letter_requested" do
-      expect(user.letter_requested_at).to be
+      letter = build(:verification_letter)
+      letter.save
+      expect(letter.user.letter_requested_at).to be
     end
 
   end
@@ -39,7 +35,7 @@ describe 'Verification::Letter' do
 
     it "incorrect code" do
       letter.user.update(letter_verification_code: "123456")
-      letter.verification_code = nil
+      letter.verification_code = "5555"
 
       expect(letter.valid?).to eq(false)
       expect(letter.errors[:verification_code].first).to eq("Incorrect confirmation code")

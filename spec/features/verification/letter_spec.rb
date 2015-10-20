@@ -96,7 +96,7 @@ feature 'Verify Letter' do
       fill_in "verification_letter_password", with: user.password
       click_button "Verify my account"
 
-      expect(page).to have_content error_message
+      expect(page).to have_content "can't be blank"
     end
 
     scenario '6 tries allowed' do

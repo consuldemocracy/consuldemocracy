@@ -11,7 +11,6 @@
 
     <div class="medium-6 small-centered column">
       <%= form_for @letter, url: letter_path, method: :patch do |f| %>
-        <%= render "/shared/errors", resource: @letter %>
         <%= f.text_field :email, label: t("pages.verify.email") %>
         <%= f.password_field :password, label: t("pages.verify.password") %>
         <%= f.text_field :verification_code, label: t("pages.verify.code") %>

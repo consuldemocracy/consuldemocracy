@@ -52,7 +52,7 @@ class ApplicationController < ActionController::Base
     end
 
     def verify_lock
-      if current_user.locked?
+      if current_user.try(:locked?)
         redirect_to account_path, alert: t('verification.alert.lock')
       end
     end
@@ -97,12 +97,14 @@ class ApplicationController < ActionController::Base
     end
 
     def verify_resident!
-      unless current_user.residence_verified?
+      if current_user && !current_user.residence_verified?
         redirect_to new_residence_path, alert: t('verification.residence.alert.unconfirmed_residency')
       end
     end
 
     def verify_verified!
-      redirect_to(account_path, notice: t('verification.redirect_notices.already_verified')) if current_user.level_three_verified?
+      if current_user.try(:level_three_verified?)
+        redirect_to(account_path, notice: t('verification.redirect_notices.already_verified'))
+      end
     end
 end
