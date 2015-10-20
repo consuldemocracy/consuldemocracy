@@ -59,11 +59,6 @@ en:
           need_current: "We need your current password to confirm your changes"
           update_submit: "Update"
           back_link: "Back"
-        delete_form:
-          title: "Erase account"
-          info: "This action can not be undone. Please make sure this is what you want. If you want, you can leave us a reason (this is not mandatory)"
-          erase_reason_label: "Reason"
-          submit: "Erase my account"
         new:
           title: "Sign up"
           username_label: "Username"
@@ -82,6 +77,12 @@ en:
           instructions_1_html: "Please <b>review your email inbox</b> - we have sent you a <b>link to confirm your account</b>."
           instructions_2_html: "Once you click that link, you will be able to start participating"
           back_to_index: "Understood, take me back to the home page"
+        delete_form:
+          title: "Erase account"
+          info: "This action can not be undone. Please make sure this is what you want."
+          info_reason: "If you want, leave us a reason (optional)"
+          erase_reason_label: "Reason"
+          submit: "Erase my account"
     organizations:
       registrations:
         new:

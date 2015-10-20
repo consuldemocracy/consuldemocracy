@@ -79,7 +79,8 @@ es:
           back_to_index: "Entendido, volver a la página principal"
         delete_form:
           title: "Darme de baja"
-          info: "Esta acción no se puede deshacer. Una vez que des de baja tu cuenta, no podrás volver a hacer login con ella. Si quieres, puedes informarnos de la razón por la que de tas de baja (no es obligatorio)."
+          info: "Esta acción no se puede deshacer. Una vez que des de baja tu cuenta, no podrás volver a hacer login con ella."
+          info_reason: "Si quieres, escribe el motivo por el que te das de baja (opcional)."
           erase_reason_label: "Razón de la baja"
           submit: "Borrar mi cuenta"
     organizations:
