@@ -55,7 +55,7 @@ class Proposal < ActiveRecord::Base
   end
 
   def votable_by?(user)
-    user.level_two_or_three_verified?
+    user && user.level_two_or_three_verified?
   end
 
   def register_vote(user, vote_value)
