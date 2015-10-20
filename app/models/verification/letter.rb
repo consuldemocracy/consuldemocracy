@@ -5,7 +5,6 @@ class Verification::Letter
 
   validates :user, presence: true
 
-  validate :letter_sent, if: :verify?
   validate :correct_code, if: :verify?
 
   def save
@@ -17,13 +16,8 @@ class Verification::Letter
     user.update(letter_requested_at: Time.now, letter_verification_code: generate_verification_code)
   end
 
-  def letter_sent
-    errors.add(:verification_code, I18n.t('verification.letter.errors.letter_not_sent')) unless
-    user.letter_sent_at.present?
-  end
-
   def correct_code
-    errors.add(:verification_code, I18n.t('verification.letter.errors.incorect_code')) unless
+    errors.add(:verification_code, I18n.t('verification.letter.errors.incorrect_code')) unless
     user.letter_verification_code == verification_code
   end
 

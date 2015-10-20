@@ -4,8 +4,7 @@ feature 'Verify Letter' do
 
   scenario 'Request a letter' do
     user = create(:user, residence_verified_at: Time.now,
-                         confirmed_phone:       "611111111",
-                         letter_sent_at:        1.day.ago)
+                         confirmed_phone:       "611111111")
 
     login_as(user)
     visit new_letter_path
@@ -17,8 +16,7 @@ feature 'Verify Letter' do
 
   scenario 'Go to office instead of send letter' do
     user = create(:user, residence_verified_at: Time.now,
-                         confirmed_phone:       "611111111",
-                         letter_sent_at:        1.day.ago)
+                         confirmed_phone:       "611111111")
 
     login_as(user)
     visit new_letter_path
@@ -51,7 +49,6 @@ feature 'Verify Letter' do
     scenario "Valid verification user logged in" do
       user = create(:user, residence_verified_at: Time.now,
                            confirmed_phone:       "611111111",
-                           letter_sent_at:        1.day.ago,
                            letter_verification_code: "123456")
 
       login_as(user)
@@ -69,7 +66,6 @@ feature 'Verify Letter' do
     scenario "Valid verification user not logged in" do
       user = create(:user, residence_verified_at: Time.now,
                            confirmed_phone:       "611111111",
-                           letter_sent_at:        1.day.ago,
                            letter_verification_code: "123456")
 
       visit edit_letter_path
@@ -106,7 +102,6 @@ feature 'Verify Letter' do
     scenario '6 tries allowed' do
       user = create(:user, residence_verified_at:    Time.now,
                            confirmed_phone:          "611111111",
-                           letter_sent_at:           1.day.ago,
                            letter_verification_code: "123456")
 
       visit edit_letter_path
