@@ -3,7 +3,7 @@ en:
     confirmations:
       new:
         title: "Re-send confirmation instructions"
-        email_label: Email
+        email_label: "Email"
         submit: "Re-send instructions"
       show:
         title: "Confirm my account"
@@ -27,7 +27,7 @@ en:
         info_text: "Your password will not be changed unless you access the link and edit it."
       unlock_instructions:
         hello: "Hello"
-        title: Your account has been locked
+        title: "Your account has been locked"
         info_text: "Your account has been blocked due to an excessive number of failed sign-in attempts."
         instructions_text: "Please click on this link to unlock your account:"
         unlock_link: "Unlock my account"
@@ -119,7 +119,6 @@ en:
         login: "Enter"
         signup: "Don't have an account? %{signup_link}"
         signup_link: "Sign up"
-        #organization_signup: "Registration for organisations / collectives"
         signin_with_provider: "Sign in with %{provider}"
         new_password: "Forgotten your password?"
         new_confirmation: "Haven't received instructions to activate your account?"

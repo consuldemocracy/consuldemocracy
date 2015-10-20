@@ -28,9 +28,9 @@ en:
     proposals:
       create_proposal: "Create proposal"
       print:
-       print_button: Print
+       print_button: "Print"
       alert:
-        unverified_user: User is not verified
+        unverified_user: "User is not verified"
     permissions:
       debates: "Engage in debates"
       create_proposals: "Create proposals"
