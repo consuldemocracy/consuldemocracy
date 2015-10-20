@@ -23,8 +23,9 @@ es:
       "Datos abiertos"
     verify:
       title: "Verifica tu cuenta"
-      info: "Introduce tus datos con los que te registraste y el código que has recibido en tu carta."
+      info: "Para verificar tu cuenta introduce los datos con los que te registraste:"
+      info_code: "Ahora introduce el código que has recibido en tu carta:"
       email: "Email"
       password: "Contraseña"
-      code: "Código de seguridad"
+      code: "Código que has recibido en tu carta"
       submit: "Verificar mi cuenta"
