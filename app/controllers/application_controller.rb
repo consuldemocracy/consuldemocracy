@@ -11,6 +11,7 @@ class ApplicationController < ActionController::Base
 
   before_action :ensure_signup_complete
   before_action :set_locale
+  before_action :track_email_campaign
 
   check_authorization unless: :devise_controller?
   self.responder = ApplicationResponder
@@ -105,6 +106,13 @@ class ApplicationController < ActionController::Base
     def verify_verified!
       if current_user.level_three_verified?
         redirect_to(account_path, notice: t('verification.redirect_notices.already_verified'))
+      end
+    end
+
+    def track_email_campaign
+      if params[:track_id]
+        campaign = Campaign.where(track_id: params[:track_id]).first
+        ahoy.track campaign.name if campaign.present?
       end
     end
 end

@@ -268,4 +268,9 @@ FactoryGirl.define do
     started_at DateTime.now
   end
 
+  factory :campaign do
+    sequence(:name) { |n| "Campaign #{n}" }
+    sequence(:track_id) { |n| "#{n}" }
+  end
+
 end
