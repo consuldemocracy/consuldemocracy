@@ -2,10 +2,10 @@ class Verification::LetterController < ApplicationController
   before_action :authenticate_user!, except: [:edit, :update]
   before_action :login_via_form, only: :update
 
-  before_action :verify_resident!, except: :edit
-  before_action :verify_phone!, except: :edit
-  before_action :verify_verified!, except: :edit
-  before_action :verify_lock, except: :edit
+  before_action :verify_resident!, except: :edit, if: :signed_in?
+  before_action :verify_phone!, except: :edit, if: :signed_in?
+  before_action :verify_verified!, except: :edit, if: :signed_in?
+  before_action :verify_lock, except: :edit, if: :signed_in?
 
   skip_authorization_check
 
@@ -44,13 +44,13 @@ class Verification::LetterController < ApplicationController
     end
 
     def verify_phone!
-      if current_user && !current_user.confirmed_phone?
+      unless current_user.confirmed_phone?
         redirect_to verified_user_path, alert: t('verification.letter.alert.unconfirmed_code')
       end
     end
 
     def login_via_form
-      user = User.find_by_email(letter_params[:email])
+      user = User.find_by email: letter_params[:email]
       if user && user.valid_password?(letter_params[:password])
         sign_in(user)
       end
