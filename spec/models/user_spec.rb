@@ -317,6 +317,7 @@ describe User do
       user.reload
 
       expect(user.erase_reason).to eq('a test')
+      expect(user.hidden_at).to be
 
       expect(user.username).to be_nil
 
