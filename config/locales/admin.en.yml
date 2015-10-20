@@ -2,37 +2,37 @@ en:
   admin:
     settings:
       index:
-        title: Global settings
+        title: General settings
         update_setting: Update
       flash:
-        updated: 'Setting updated!'
+        updated: 'Value updated'
     dashboard:
       index:
         title: Administration
     menu:
-      settings: Global settings
+      settings: General settings
       debate_topics: Debate topics
       hidden_proposals: Hidden proposals
       hidden_debates: Hidden debates
       hidden_comments: Hidden comments
-      hidden_users: Blocked users
+      hidden_users: Hidden users
       incomplete_verifications: Incomplete verifications
-      organizations: Organizations
+      organizations: Organisations
       officials: Officials
       moderators: Moderators
       stats: Statistics
-      activity: Moderation Activity
+      activity: Moderator activity
     shared:
       user_search:
-        placeholder: 'Search user by name or email'
-        button: 'Search'
+        placeholder: "Search user by name or email'"
+        button: "Search"
       proposal_search:
-        placeholder: 'Search proposals by title, description or question'
-        button: 'Search'
+        placeholder: "Search proposals by title, description or question"
+        button: "Search"
     organizations:
       index:
-        title: Organizations
-        search_placeholder: "Name, email or phone"
+        title: Organisations
+        search_placeholder: "Name, email or phone number"
         search: Search
         verify: Verify
         reject: Reject
@@ -45,13 +45,13 @@ en:
           verified: Verified
           rejected: Rejected
         hidden_count:
-          one: "There is %{count} organization without user or with the user banned"
-          other: "There is %{count} organizations without user or with the user banned"
+          one: "There is also one organisation with no users or with a hidden user"
+          other: "There are %{count} organisations with no users or with a hidden user"
       search:
-        title: "Search Organizations"
+        title: "Search Organisations"
     actions:
       hide: Hide
-      hide_author: Ban author
+      hide_author: Hide author
       restore: Restore
       confirm: 'Are you sure?'
       confirm_hide: Confirm
@@ -59,12 +59,12 @@ en:
       index:
         title: 'Debate topics'
         add_tag: 'Add a new debate topic'
-      mark_as_featured: 'Propose topic to create debate'
+      mark_as_featured: 'Propose topic upon creating debate'
       name:
-        placeholder: 'Write a topic'
+        placeholder: 'Type the name of the topic'
       create: Create Topic
       update: Update Topic
-      destroy: Delete Topic
+      destroy: Destroy Topic
     comments:
       index:
         title: Hidden comments
@@ -93,14 +93,14 @@ en:
           without_confirmed_hide: Pending
     users:
       index:
-        title: Banned users
+        title: Hidden users
         filter: Filter
         filters:
           all: All
           with_confirmed_hide: Confirmed
           without_confirmed_hide: Pending
       show:
-        title: "User activity from %{user}"
+        title: "Activity of user %{user}"
         back: Back
         email: "Email:"
         registered_at: "Registered at:"
@@ -111,7 +111,7 @@ en:
         phone_not_given: 'Phone not given'
         sms_code_not_confirmed: 'Has not confirmed the sms code'
     officials:
-      level_0: Not an official
+      level_0: "Not official"
       level_1: Level 1
       level_2: Level 2
       level_3: Level 3
@@ -119,17 +119,20 @@ en:
       level_5: Level 5
       index:
         title: Officials
+        search_placeholder: 'Search user by name or email'
+        search: Search
       search:
-        title: 'Officials: Search users'
+        title: 'Official positions: User search'
         edit_official: Edit official
-        make_official: Make this user an official
+        make_official: Make official
+        search: Search
       edit:
-        title: 'Officials: edit user'
-        destroy: "Remove 'Official' condition"
+        title: 'Officials: Edit user'
+        destroy: "Remove 'Official' status"
         back: Back
       flash:
-        official_updated: 'Official position saved!'
-        official_destroyed: 'User is not an official anymore'
+        official_updated: 'Details of official saved'
+        official_destroyed: 'Details saved: the user is no longer an official'
     moderators:
       index:
         title: Moderators
@@ -142,17 +145,17 @@ en:
         add: Add
     activity:
       show:
-        title: Activity of Moderators
-        action: Action
+        title: Moderator activity
+        action: 'Action'
         by: Moderated by
         type: Type
         filter: Show
         filters:
           all: All
-          on_proposals: On Proposals
-          on_debates: On Debates
-          on_comments: On Comments
-          on_users: On Users
+          on_proposals: Proposals
+          on_debates: Debates
+          on_comments: Comments
+          on_users: Users
         actions:
           hide: Hidden
           restore: Restored
@@ -175,4 +178,4 @@ en:
           user_level_two: Level two users
           unverified_users: Unverified users
           verified_users: Verified users
-          users: Total users
+          users: Total users 

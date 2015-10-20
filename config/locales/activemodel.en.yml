@@ -2,17 +2,17 @@ en:
   activemodel:
     models:
       verification:
-        residence: Residence
-        sms: SMS
+        residence: "Residence"
+        sms: "SMS"
     attributes:
       verification:
         residence:
-          document_type: Document type
-          document_number: Document number(including letter)
-          date_of_birth: Date of birth
-          postal_code: Postal code
+          document_type: "Document type"
+          document_number: "Document number (including letters)"
+          date_of_birth: "Date of birth"
+          postal_code: "Postcode"
         sms:
-          phone: 'Phone'
-          confirmation_code: 'Confirmation code'
+          phone: "Telephone"
+          confirmation_code: "Confirmation code"
         email:
-          recipient: 'Email'
+          recipient: "Email"
