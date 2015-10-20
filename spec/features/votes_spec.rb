@@ -5,13 +5,13 @@ feature 'Votes' do
   background do
     @manuela = create(:user, verified_at: Time.now)
     @pablo = create(:user)
-
-    login_as(@manuela)
   end
 
   feature 'Debates' do
+    background { login_as(@manuela) }
 
     scenario "Index shows user votes on debates" do
+
       debate1 = create(:debate)
       debate2 = create(:debate)
       debate3 = create(:debate)
@@ -178,49 +178,11 @@ feature 'Votes' do
       end
     end
 
-    scenario 'Not logged user trying to vote', :js do
-      debate = create(:debate)
 
-      visit "/"
-      click_link "Logout"
-
-      visit debates_path
-      within("#debate_#{debate.id}") do
-        find("div.votes").hover
-        expect_message_you_need_to_sign_in
-      end
-
-      visit debate_path(debate)
-      within("#debate_#{debate.id}") do
-        find("div.votes").hover
-        expect_message_you_need_to_sign_in
-      end
-    end
-
-    scenario 'Anonymous user trying to vote', :js do
-      user = create(:user)
-      debate = create(:debate)
-
-      Setting.find_by(key: "max_ratio_anon_votes_on_debates").update(value: 50)
-      debate.update(cached_anonymous_votes_total: 520, cached_votes_total: 1000)
-
-      login_as(user)
-
-      visit debates_path
-      within("#debate_#{debate.id}") do
-        find("div.votes").hover
-        expect_message_to_many_anonymous_votes
-      end
-
-      visit debate_path(debate)
-      within("#debate_#{debate.id}") do
-        find("div.votes").hover
-        expect_message_to_many_anonymous_votes
-      end
-    end
   end
 
   feature 'Proposals' do
+    background { login_as(@manuela) }
 
     scenario "Index shows user votes on proposals" do
       proposal1 = create(:proposal)
@@ -302,12 +264,24 @@ feature 'Votes' do
     end
   end
 
-  scenario 'Not logged user trying to vote', :js do
-    proposal = create(:proposal)
+  scenario 'Not logged user trying to vote debates', :js do
+    debate = create(:debate)
 
-    visit "/"
-    click_link "Logout"
-    expect(page).to have_content "Signed out successfully."
+    visit debates_path
+    within("#debate_#{debate.id}") do
+      find("div.votes").hover
+      expect_message_you_need_to_sign_in
+    end
+
+    visit debate_path(debate)
+    within("#debate_#{debate.id}") do
+      find("div.votes").hover
+      expect_message_you_need_to_sign_in
+    end
+  end
+
+  scenario 'Not logged user trying to vote proposals', :js do
+    proposal = create(:proposal)
 
     visit proposals_path
     within("#proposal_#{proposal.id}") do
@@ -322,7 +296,29 @@ feature 'Votes' do
     end
   end
 
-  scenario "Anonymous user trying to vote", :js do
+  scenario 'Anonymous user trying to vote debates', :js do
+    user = create(:user)
+    debate = create(:debate)
+
+    Setting.find_by(key: "max_ratio_anon_votes_on_debates").update(value: 50)
+    debate.update(cached_anonymous_votes_total: 520, cached_votes_total: 1000)
+
+    login_as(user)
+
+    visit debates_path
+    within("#debate_#{debate.id}") do
+      find("div.votes").hover
+      expect_message_to_many_anonymous_votes
+    end
+
+    visit debate_path(debate)
+    within("#debate_#{debate.id}") do
+      find("div.votes").hover
+      expect_message_to_many_anonymous_votes
+    end
+  end
+
+  scenario "Anonymous user trying to vote proposals", :js do
     user = create(:user)
     proposal = create(:proposal)
 
