@@ -105,7 +105,9 @@ feature 'Votes' do
         visit debate_path(@debate)
 
         find('.in-favor a').click
+        expect(page).to have_content "1 vote"
         find('.in-favor a').click
+        expect(page).to_not have_content "2 votes"
 
         within('.in-favor') do
           expect(page).to have_content "100%"
@@ -114,8 +116,6 @@ feature 'Votes' do
         within('.against') do
           expect(page).to have_content "0%"
         end
-
-        expect(page).to have_content "1 vote"
       end
 
       scenario 'Show' do
@@ -222,9 +222,11 @@ feature 'Votes' do
 
         within('.supports') do
           find('.in-favor a').click
-          find('.in-favor a').click
-
           expect(page).to have_content "1 support"
+
+          find('.in-favor a').click
+          expect(page).to have_content "1 support"
+          expect(page).to_not have_content "2 supports"
         end
       end
 
