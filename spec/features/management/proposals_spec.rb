@@ -104,10 +104,11 @@ feature 'Proposals' do
   context "Printing" do
 
     scenario 'Printing proposals', :js do
-      5.times { create(:proposal) }
+      6.times { create(:proposal) }
 
       click_link "Print proposals"
 
+      expect(page).to have_css('.proposal', count: 5)
       find("#print_link").click
 
       ### CHANGE ME
