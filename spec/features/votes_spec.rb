@@ -224,9 +224,7 @@ feature 'Votes' do
           find('.in-favor a').click
           expect(page).to have_content "1 support"
 
-          find('.in-favor a').click
-          expect(page).to have_content "1 support"
-          expect(page).to_not have_content "2 supports"
+          expect(page).to_not have_selector ".in-favor a"
         end
       end
 
