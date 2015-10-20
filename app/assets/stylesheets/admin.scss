@@ -28,11 +28,16 @@ body.admin {
       margin-top: 0;
     }
 
-    input[type="text"] {
-      height: 36px\9;
-      line-height: 36px\9;
+    input[type="text"], textarea {
+      height: 48px\9;
+      line-height: 48px\9;
       margin-bottom: 24px\9;
+      width: 100%;
     }
+  }
+
+  #proposals {
+    width: 100% !important;
   }
 
   .dashboard {

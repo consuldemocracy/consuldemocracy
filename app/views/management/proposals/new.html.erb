@@ -1,8 +1,9 @@
-<%= render '/shared/print' %>
-
 <div class="proposal-new row">
+
+  <%= render '/shared/print' %>
+
   <div class="small-12 medium-9 column">
-    <h1><%= t("management.proposals.create_proposal") %></h1>
+    <h1 class=""><%= t("management.proposals.create_proposal") %></h1>
     <%= render "proposals/form", form_url: management_proposals_url %>
   </div>
 
