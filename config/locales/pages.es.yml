@@ -21,3 +21,11 @@ es:
       "Transparencia"
     opendata:
       "Datos abiertos"
+    verify:
+      title: "Verifica tu cuenta"
+      info: "Para verificar tu cuenta introduce los datos con los que te registraste:"
+      info_code: "Ahora introduce el código que has recibido en tu carta:"
+      email: "Email"
+      password: "Contraseña"
+      code: "Código que has recibido en tu carta"
+      submit: "Verificar mi cuenta"

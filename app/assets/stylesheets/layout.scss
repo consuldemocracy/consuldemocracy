@@ -1761,6 +1761,38 @@ table {
   }
 }
 
+.verify {
+  margin-bottom: rem-calc(48);
+  margin-top: rem-calc(24);
+
+  h1 {
+    color: $check;
+
+    .icon-check {
+      line-height: rem-calc(30);
+      vertical-align: middle;
+    }
+  }
+
+  .letter-divider {
+    border-top: 1px solid #DDDDDD;
+    clear: both;
+    height: 0;
+    margin: rem-calc(24) 0;
+    position: relative;
+
+    .icon-letter {
+      background: white;
+      color: $info-color;
+      font-size: rem-calc(24);
+      margin-left: rem-calc(-27);
+      padding: 0 rem-calc(12);
+      position: absolute;
+      top: rem-calc(-12);
+    }
+  }
+}
+
 // 18. Comments
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 

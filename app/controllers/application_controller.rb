@@ -103,6 +103,8 @@ class ApplicationController < ActionController::Base
     end
 
     def verify_verified!
-      redirect_to(account_path, notice: t('verification.redirect_notices.already_verified')) if current_user.level_three_verified?
+      if current_user.level_three_verified?
+        redirect_to(account_path, notice: t('verification.redirect_notices.already_verified'))
+      end
     end
 end

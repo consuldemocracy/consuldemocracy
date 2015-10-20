@@ -70,7 +70,7 @@ Rails.application.routes.draw do
     resource :sms, controller: "sms", only: [:new, :create, :edit, :update]
     resource :verified_user, controller: "verified_user", only: [:show]
     resource :email, controller: "email", only: [:new, :show, :create]
-    resource :letter, controller: "letter", only: [:new, :create, :edit, :update]
+    resource :letter, controller: "letter", only: [:new, :create, :show, :edit, :update]
   end
 
   namespace :admin do
@@ -272,5 +272,5 @@ Rails.application.routes.draw do
   get "/participation_world", to: "pages#participation_world"
   get "/blog", to: "pages#blog"
   get "/accessibility", to: "pages#accessibility"
-
+  get "/verifica", to: "verification/letter#edit"
 end

@@ -88,12 +88,11 @@ en:
         see_all: "See proposals"
       update:
         flash:
-          success: "Correct code. Your account is verified"
+          success: "Your account has been verified"
       alert:
         unconfirmed_code: "You have not yet enter the confirmation code"
       errors:
-        letter_not_sent: "We have not sent you the letter with the code yet"
-        incorect_code: "Incorrect confirmation code"
+        incorrect_code: "Incorrect confirmation code"
     verified_user:
       show:
         title: "Available information"

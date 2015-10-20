@@ -88,12 +88,11 @@ es:
         see_all: "Ver propuestas"
       update:
         flash:
-          success: "Código correcto. Tu cuenta ya está verificada"
+          success: "Tu cuenta ya está verificada"
       alert:
         unconfirmed_code: "Todavía no has introducido el código de confirmación"
       errors:
-        letter_not_sent: "Aún no te hemos enviado la carta con el código"
-        incorect_code: "Código de verificación incorrecto"
+        incorrect_code: "Código de verificación incorrecto"
     verified_user:
       show:
         title: "Información disponible"
