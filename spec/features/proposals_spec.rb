@@ -617,4 +617,56 @@ feature 'Proposals' do
     visit proposal_path(proposal)
     expect(page).to have_content('Deleted user')
   end
+
+  context "Featured proposals" do
+
+    background do
+      @most_popular = create(:proposal, cached_votes_up: 20, title: "most popular")
+      create(:proposal, cached_votes_up: 10, title: "a little popular")
+      create(:proposal, cached_votes_up: 18, title: "quite popular")
+
+      create(:proposal, cached_votes_up: 1, title: "unpopular")
+    end
+
+    scenario "Display in most active proposals" do
+      visit proposals_path
+
+      within "#featured_proposals" do
+        expect(page).to have_css(".featured-proposal", count: 3)
+
+        expect('most popular').to appear_before('quite popular')
+        expect('quite popular').to appear_before('a little popular')
+
+        expect(page).to_not have_content("unpopular")
+      end
+    end
+
+    scenario "Do not display in other filters" do
+      visit proposals_path(order: 'confidence_score')
+      expect(page).to_not have_css("#featured_proposals")
+
+      visit proposals_path(order: 'most_commented')
+      expect(page).to_not have_css("#featured_proposals")
+
+      visit proposals_path(order: 'created_at')
+      expect(page).to_not have_css("#featured_proposals")
+    end
+
+    scenario "Vote", :js do
+      login_as create(:user, :level_two)
+
+      visit proposals_path
+
+      within("#featured_proposal_#{@most_popular.id}") do
+        find(".in-favor a").click
+        expect(page).to have_content "You already supported this proposal, share it!"
+      end
+      expect(URI.parse(current_url).path).to eq(proposals_path)
+
+      visit proposal_path(@most_popular)
+
+      expect(page).to have_content "You already supported this proposal, share it!"
+    end
+  end
+
 end
