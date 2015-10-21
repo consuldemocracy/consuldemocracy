@@ -2,7 +2,8 @@ module CommonActions
 
   def sign_up(email='manuela@madrid.es', password='judgementday')
     visit '/'
-    click_link 'Sign up'
+
+    click_link 'Register'
 
     fill_in 'user_username',              with: "Manuela Carmena #{rand(99999)}"
     fill_in 'user_email',                 with: email
@@ -11,17 +12,17 @@ module CommonActions
     fill_in 'user_captcha',               with: correct_captcha_text
     check 'user_terms_of_service'
 
-    click_button 'Sign up'
+    click_button 'Register'
   end
 
   def login_through_form_as(user)
     visit root_path
-    click_link 'Log in'
+    click_link 'Sign in'
 
     fill_in 'user_email', with: user.email
     fill_in 'user_password', with: user.password
 
-    click_button 'Log in'
+    click_button 'Enter'
   end
 
   def login_as_manager
@@ -47,11 +48,11 @@ module CommonActions
     create(:user, email: 'manuela@madrid.es')
 
     visit '/'
-    click_link 'Log in'
-    click_link 'Forgot your password?'
+    click_link 'Sign in'
+    click_link 'Forgotten your password?'
 
     fill_in 'user_email', with: 'manuela@madrid.es'
-    click_button 'Send me reset password'
+    click_button 'Send instructions'
   end
 
   def comment_on(commentable, user = nil)
@@ -107,7 +108,7 @@ module CommonActions
   end
 
   def error_message
-    /\d errors? prohibited this (.*) from being saved:/
+    /\d errors? prevented this (.*) from being saved:/
   end
 
   def expect_to_be_signed_in
@@ -123,7 +124,7 @@ module CommonActions
   end
 
   def verify_residence
-    select 'Spanish ID', from: 'residence_document_type'
+    select 'DNI', from: 'residence_document_type'
     fill_in 'residence_document_number', with: "12345678Z"
     select_date '31-December-1980', from: 'residence_date_of_birth'
     fill_in 'residence_postal_code', with: '28013'
@@ -137,27 +138,27 @@ module CommonActions
     fill_in 'sms_phone', with: "611111111"
     click_button 'Send'
 
-    expect(page).to have_content 'Phone confirmation'
+    expect(page).to have_content 'Enter the confirmation code sent to you by text message'
 
     user = User.last.reload
     fill_in 'sms_confirmation_code', with: user.sms_confirmation_code
     click_button 'Send'
 
-    expect(page).to have_content 'Correct code'
+    expect(page).to have_content 'Code correct'
   end
 
   def expect_message_you_need_to_sign_in
-    expect(page).to have_content 'You need to sign in or sign up before continuing'
+    expect(page).to have_content 'You must Sign in or Sign up to continue'
     expect(page).to have_selector('.in-favor a', visible: false)
   end
 
   def expect_message_to_many_anonymous_votes
-    expect(page).to have_content 'Too many anonymous votes, verify your account to vote.'
+    expect(page).to have_content 'Too many anonymous votes to admit vote'
     expect(page).to have_selector('.in-favor a', visible: false)
   end
 
   def expect_message_only_verified_can_vote_proposals
-    expect(page).to have_content 'Proposals can only be voted by verified users, verify your account.'
+    expect(page).to have_content 'Only verified users can vote on proposals'
     expect(page).to have_selector('.in-favor a', visible: false)
   end
 

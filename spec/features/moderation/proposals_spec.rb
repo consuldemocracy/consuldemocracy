@@ -74,7 +74,7 @@ feature 'Moderate proposals' do
         end
 
         scenario 'Ignore the proposal' do
-          click_on "Ignore flags"
+          click_button "Mark as viewed"
           expect(page).to_not have_css("proposal_#{@proposal.id}")
           expect(@proposal.reload).to be_ignored_flag
           expect(@proposal.reload).to_not be_hidden
@@ -105,7 +105,7 @@ feature 'Moderate proposals' do
 
         visit moderation_proposals_path(filter: 'all', page: '2', order: 'created_at')
 
-        click_on "Ignore flags"
+        click_button "Mark as viewed"
 
         expect(page).to have_selector('.js-order-selector[data-order="created_at"]')
 
@@ -119,27 +119,27 @@ feature 'Moderate proposals' do
       visit moderation_proposals_path
       expect(page).to_not have_link('Pending')
       expect(page).to have_link('All')
-      expect(page).to have_link('Ignored')
+      expect(page).to have_link('Mark as viewed')
 
       visit moderation_proposals_path(filter: 'all')
       within('.sub-nav') do
         expect(page).to_not have_link('All')
-        expect(page).to have_link('Pending')
-        expect(page).to have_link('Ignored')
+        expect(page).to have_link('Pending review')
+        expect(page).to have_link('Mark as viewed')
       end
 
       visit moderation_proposals_path(filter: 'pending_flag_review')
       within('.sub-nav') do
         expect(page).to have_link('All')
         expect(page).to_not have_link('Pending')
-        expect(page).to have_link('Ignored')
+        expect(page).to have_link('Marked as viewed')
       end
 
       visit moderation_proposals_path(filter: 'with_ignored_flag')
       within('.sub-nav') do
         expect(page).to have_link('All')
         expect(page).to have_link('Pending')
-        expect(page).to_not have_link('Ignored')
+        expect(page).to_not have_link('Marked as viewed')
       end
     end
 

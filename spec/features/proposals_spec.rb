@@ -87,9 +87,9 @@ feature 'Proposals' do
     fill_in 'proposal_captcha', with: correct_captcha_text
     check 'proposal_terms_of_service'
 
-    click_button 'Start a proposal'
+    click_button 'Create proposal'
 
-    expect(page).to have_content 'Proposal was successfully created.'
+    expect(page).to have_content 'Proposal created successfully.'
     expect(page).to have_content 'Help refugees'
     expect(page).to have_content '¿Would you like to give assistance to war refugees?'
     expect(page).to have_content 'In summary, what we want is...'
@@ -115,9 +115,9 @@ feature 'Proposals' do
     fill_in 'proposal_responsible_name', with: 'Isabel Garcia'
     check 'proposal_terms_of_service'
 
-    click_button 'Start a proposal'
+    click_button 'Create proposal'
 
-    expect(page).to have_content 'Proposal was successfully created.'
+    expect(page).to have_content 'Proposal created successfully.'
     expect(Proposal.last.responsible_name).to eq('Isabel Garcia')
   end
 
@@ -136,9 +136,9 @@ feature 'Proposals' do
     fill_in 'proposal_captcha', with: correct_captcha_text
     check 'proposal_terms_of_service'
 
-    click_button 'Start a proposal'
+    click_button 'Create proposal'
 
-    expect(page).to have_content 'Proposal was successfully created.'
+    expect(page).to have_content 'Proposal created successfully.'
   end
 
   scenario 'Captcha is required for proposal creation' do
@@ -154,15 +154,15 @@ feature 'Proposals' do
     fill_in 'proposal_captcha', with: "wrongText!"
     check 'proposal_terms_of_service'
 
-    click_button "Start a proposal"
+    click_button "Create proposal"
 
-    expect(page).to_not have_content "Proposal was successfully created."
+    expect(page).to_not have_content "Proposal created successfully."
     expect(page).to have_content "1 error"
 
     fill_in 'proposal_captcha', with: correct_captcha_text
-    click_button "Start a proposal"
+    click_button "Create proposal"
 
-    expect(page).to have_content "Proposal was successfully created."
+    expect(page).to have_content "Proposal created successfully."
   end
 
   scenario 'Failed creation goes back to new showing featured tags' do
@@ -180,9 +180,9 @@ feature 'Proposals' do
     fill_in 'proposal_captcha', with: correct_captcha_text
     check 'proposal_terms_of_service'
 
-    click_button "Start a proposal"
+    click_button "Create proposal"
 
-    expect(page).to_not have_content "Proposal was successfully created."
+    expect(page).to_not have_content "Proposal created successfully."
     expect(page).to have_content "error"
     within(".tags") do
       expect(page).to have_content featured_tag.name
@@ -195,7 +195,7 @@ feature 'Proposals' do
     login_as(author)
 
     visit new_proposal_path
-    click_button 'Start a proposal'
+    click_button 'Create proposal'
     expect(page).to have_content error_message
   end
 
@@ -213,9 +213,9 @@ feature 'Proposals' do
     fill_in 'proposal_captcha', with: correct_captcha_text
     check 'proposal_terms_of_service'
 
-    click_button 'Start a proposal'
+    click_button 'Create proposal'
 
-    expect(page).to have_content 'Proposal was successfully created.'
+    expect(page).to have_content 'Proposal created successfully.'
     expect(page).to have_content 'Testing an attack'
     expect(page.html).to include '<p>This is alert("an attack");</p>'
     expect(page.html).to_not include '<script>alert("an attack");</script>'
@@ -235,9 +235,9 @@ feature 'Proposals' do
     fill_in 'proposal_captcha', with: correct_captcha_text
     check 'proposal_terms_of_service'
 
-    click_button 'Start a proposal'
+    click_button 'Create proposal'
 
-    expect(page).to have_content 'Proposal was successfully created.'
+    expect(page).to have_content 'Proposal created successfully.'
     expect(page).to have_content 'Testing auto link'
     expect(page).to have_link('www.example.org', href: 'http://www.example.org')
   end
@@ -255,15 +255,15 @@ feature 'Proposals' do
     fill_in 'proposal_captcha', with: correct_captcha_text
     check 'proposal_terms_of_service'
 
-    click_button 'Start a proposal'
+    click_button 'Create proposal'
 
-    expect(page).to have_content 'Proposal was successfully created.'
+    expect(page).to have_content 'Proposal created successfully.'
     expect(page).to have_content 'Testing auto link'
     expect(page).to have_link('http://example.org', href: 'http://example.org')
     expect(page).not_to have_link('click me')
     expect(page.html).to_not include "<script>alert('hey')</script>"
 
-    click_link 'Edit proposal'
+    click_link 'Edit'
 
     expect(current_path).to eq edit_proposal_path(Proposal.last)
     expect(page).not_to have_link('click me')
@@ -297,9 +297,9 @@ feature 'Proposals' do
         find('.js-add-tag-link', text: tag_name).click
       end
 
-      click_button 'Start a proposal'
+      click_button 'Create proposal'
 
-      expect(page).to have_content 'Proposal was successfully created.'
+      expect(page).to have_content 'Proposal created successfully.'
       ['Medio Ambiente', 'Ciencia'].each do |tag_name|
         expect(page).to have_content tag_name
       end
@@ -319,9 +319,9 @@ feature 'Proposals' do
 
       fill_in 'proposal_tag_list', with: 'user_id=1, &a=3, <script>alert("hey");</script>'
 
-      click_button 'Start a proposal'
+      click_button 'Create proposal'
 
-      expect(page).to have_content 'Proposal was successfully created.'
+      expect(page).to have_content 'Proposal created successfully.'
       expect(page).to have_content 'user_id1'
       expect(page).to have_content 'a3'
       expect(page).to have_content 'scriptalert("hey");script'
@@ -337,7 +337,7 @@ feature 'Proposals' do
     visit edit_proposal_path(proposal)
     expect(current_path).not_to eq(edit_proposal_path(proposal))
     expect(current_path).to eq(proposals_path)
-    expect(page).to have_content 'not authorized'
+    expect(page).to have_content 'You do not have permission'
   end
 
   scenario 'Update should not be posible if proposal is not editable' do
@@ -352,7 +352,7 @@ feature 'Proposals' do
 
     expect(current_path).not_to eq(edit_proposal_path(proposal))
     expect(current_path).to eq(proposals_path)
-    expect(page).to have_content 'not authorized'
+    expect(page).to have_content 'You do not have permission'
   end
 
   scenario 'Update should be posible for the author of an editable proposal' do
@@ -372,7 +372,7 @@ feature 'Proposals' do
 
     click_button "Save changes"
 
-    expect(page).to have_content "Proposal was successfully updated."
+    expect(page).to have_content "Proposal updated successfully."
     expect(page).to have_content "Basically..."
     expect(page).to have_content "End child poverty"
     expect(page).to have_content "Let's do something to end child poverty"
@@ -400,13 +400,13 @@ feature 'Proposals' do
     fill_in 'proposal_captcha', with: "wrong!"
     click_button "Save changes"
 
-    expect(page).to_not have_content "Proposal was successfully updated."
+    expect(page).to_not have_content "Proposal updated successfully."
     expect(page).to have_content "error"
 
     fill_in 'proposal_captcha', with: correct_captcha_text
     click_button "Save changes"
 
-    expect(page).to have_content "Proposal was successfully updated."
+    expect(page).to have_content "Proposal updated successfully."
   end
 
   scenario 'Failed update goes back to edit showing featured tags' do
@@ -422,7 +422,7 @@ feature 'Proposals' do
     fill_in 'proposal_captcha', with: correct_captcha_text
     click_button "Save changes"
 
-    expect(page).to_not have_content "Proposal was successfully updated."
+    expect(page).to_not have_content "Proposal updated successfully."
     expect(page).to have_content "error"
     within(".tags") do
       expect(page).to have_content featured_tag.name
@@ -482,7 +482,7 @@ feature 'Proposals' do
       create(:proposal, title: 'Medium proposal').update_column(:confidence_score, 5)
 
       visit proposals_path
-      select 'most supported', from: 'order-selector'
+      select 'highest rated', from: 'order-selector'
 
       expect(page).to have_selector('.js-order-selector[data-order="confidence_score"]')
 
@@ -587,10 +587,10 @@ feature 'Proposals' do
     conflictive_proposal = create(:proposal, :conflictive)
 
     visit proposal_path(conflictive_proposal)
-    expect(page).to have_content "This proposal has been flag as innapropiate for some users."
+    expect(page).to have_content "This proposal has been flagged as inappropriate by several users."
 
     visit proposal_path(good_proposal)
-    expect(page).to_not have_content "This proposal has been flag as innapropiate for some users."
+    expect(page).to_not have_content "This proposal has been flagged as inappropriate by several users."
   end
 
   scenario "Flagging", :js do

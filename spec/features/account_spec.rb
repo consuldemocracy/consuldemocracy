@@ -37,7 +37,7 @@ feature 'Account' do
     check 'account_email_on_comment_reply'
     click_button 'Save changes'
 
-    expect(page).to have_content "Saved"
+    expect(page).to have_content "Changes saved"
 
     visit account_path
 
@@ -55,7 +55,7 @@ feature 'Account' do
     check 'account_email_on_comment_reply'
     click_button 'Save changes'
 
-    expect(page).to have_content "Saved"
+    expect(page).to have_content "Changes saved"
 
     visit account_path
 

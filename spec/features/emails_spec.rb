@@ -31,7 +31,7 @@ feature 'Emails' do
       comment_on(proposal)
 
       email = open_last_email
-      expect(email).to have_subject('Someone has commented on your proposal')
+      expect(email).to have_subject('Someone has commented on your citizen proposal')
       expect(email).to deliver_to(proposal.author)
       expect(email).to have_body_text(proposal_path(proposal))
     end
@@ -88,7 +88,7 @@ feature 'Emails' do
       reply_to(user)
 
       email = open_last_email
-      expect(email).to have_subject('Someone has replied to your comment')
+      expect(email).to have_subject('Someone has responded to your comment')
       expect(email).to deliver_to(user)
       expect(email).to have_body_text(debate_path(Comment.first.commentable))
     end

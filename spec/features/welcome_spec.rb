@@ -21,9 +21,9 @@ feature "Welcome screen" do
     fill_in 'user_email', with: user.email
     fill_in 'user_password', with: user.password
 
-    click_button 'Log in'
+    click_button 'Enter'
 
-    expect(page).to have_content("You are now a verified user")
+    expect(page).to have_content("You are a verified user")
 
     expect(current_path).to eq(account_path)
   end

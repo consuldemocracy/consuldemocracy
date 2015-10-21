@@ -43,7 +43,7 @@ feature 'Incomplete verifications' do
     visit admin_verifications_path
 
     within "#user_#{incompletely_verified_user.id}" do
-      expect(page).to have_content "Spanish ID"
+      expect(page).to have_content "DNI"
       expect(page).to have_content incompletely_verified_user.document_number
       expect(page).to have_content Date.new(1900, 1, 1)
       expect(page).to have_content "28000"

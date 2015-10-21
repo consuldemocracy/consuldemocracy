@@ -86,7 +86,7 @@ feature 'Verified users' do
      click_button "Send code"
     end
 
-    expect(page).to have_content 'We have send you a confirmation email to your email account: rock@example.com'
+    expect(page).to have_content 'We have sent a confirmation email to your account: rock@example.com'
     expect(current_path).to eq(account_path)
   end
 
@@ -121,7 +121,7 @@ feature 'Verified users' do
     login_as(user)
     visit verified_user_path
 
-    click_link "Use another phone"
+    click_link "Use other phone"
 
     expect(current_path).to eq(new_sms_path)
   end

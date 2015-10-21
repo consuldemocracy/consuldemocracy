@@ -119,13 +119,10 @@ en:
       level_5: "Level 5"
       index:
         title: "Officials"
-        search_placeholder: "Search user by name or email"
-        search: "Search"
       search:
         title: "Official positions: User search"
         edit_official: "Edit official"
         make_official: "Make official"
-        search: "Search"
       edit:
         title: "Officials: Edit user"
         destroy: "Remove 'Official' status"

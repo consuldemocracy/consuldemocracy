@@ -35,7 +35,7 @@ feature 'Verify Letter' do
     login_as(user)
     visit new_letter_path
 
-    expect(page).to have_content 'You have not yet confirmed your residence'
+    expect(page).to have_content 'You have not yet confirmed your residency'
     expect(current_path).to eq(new_residence_path)
   end
 
@@ -45,7 +45,7 @@ feature 'Verify Letter' do
     login_as(user)
     visit new_letter_path
 
-    expect(page).to have_content 'You have not yet enter the confirmation code'
+    expect(page).to have_content 'You have not yet entered the confirmation code'
     expect(current_path).to eq(new_sms_path)
   end
 

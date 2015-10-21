@@ -39,7 +39,7 @@ feature 'users' do
 
     expect(user.reload).to be_confirmed
 
-    expect(page).to have_content "Your email address has been successfully confirmed."
+    expect(page).to have_content "Your account has been confirmed."
   end
 
 end
