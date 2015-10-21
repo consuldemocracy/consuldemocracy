@@ -310,6 +310,8 @@ es:
       debate: "el código secreto no coincide con la imagen"
       proposal: "el código secreto no coincide con la imagen"
   shared:
+    author_info:
+      author_deleted: Usuario eliminado
     tags_cloud:
       tags: Tendencias
     print:
