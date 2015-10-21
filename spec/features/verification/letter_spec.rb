@@ -12,6 +12,11 @@ feature 'Verify Letter' do
     click_link "Request a letter"
 
     expect(page).to have_content "Before voting you'll receive a letter whith the instructions for verify your account."
+
+    user.reload
+
+    expect(user.letter_requested_at).to be
+    expect(user.letter_verification_code).to be
   end
 
   scenario 'Go to office instead of send letter' do
