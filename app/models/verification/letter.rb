@@ -3,11 +3,12 @@ class Verification::Letter
 
   attr_accessor :user, :verification_code, :email, :password, :verify
 
-  validates :email, presence: true
-  validates :password, presence: true
-  validates :verification_code, presence: true
-
   validate :validate_existing_user
+
+  validates :email, presence: true, if: :verify?
+  validates :password, presence: true, if: :verify?
+  validates :verification_code, presence: true, if: :verify?
+
   validate :validate_correct_code, if: :verify?
 
   def save
