@@ -1,6 +1,6 @@
 # Código de conducta
 
-Como las personas encargadas de contribuir código y responsables de mantener este proyecto, y con la intención de crear una comunidad abierta en la que sentirse bienvenido acordamos respetar a toda persona que contribuya al proyecto reportando incidencias, creando peticiones de funcionalidades, actualizando la documentación, enviando parches código o de alguna otra manera.
+Como las personas encargadas de contribuir código y responsables de mantener este proyecto, y con la intención de crear una comunidad abierta en la que sentirse bienvenido acordamos respetar a toda persona que contribuya al proyecto reportando incidencias, creando peticiones de funcionalidades, actualizando la documentación, enviando parches de código o de alguna otra manera.
 
 Estamos comprometidos a hacer de la participación en este proyecto una experiencia libre de acoso para todo el mundo, independientemente del nivel de experiencia, género, identidad y expresión de género, orientación sexual, discapacidad, apariencia personal, raza, etnia, edad, religión o nacionalidad.
 
