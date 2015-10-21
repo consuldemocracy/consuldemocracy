@@ -6,6 +6,7 @@ module CommentableActions
     @resources = @search_terms.present? ? resource_model.search(@search_terms) : resource_model.all
     @resources = @resources.tagged_with(@tag_filter) if @tag_filter
     @resources = @resources.page(params[:page]).for_render.send("sort_by_#{@current_order}")
+    index_customization if index_customization.present?
     @tag_cloud = tag_cloud
 
     set_resource_votes(@resources)
@@ -85,5 +86,9 @@ module CommentableActions
 
     def set_resource_votes(instance)
       send("set_#{resource_name}_votes", instance)
+    end
+
+    def index_customization
+      nil
     end
 end
