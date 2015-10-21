@@ -1,1 +1,36 @@
-.top-links {background: #612d62;}
+/*---------- VARIABLES ---------------*/
+
+$morado: #612d62;
+$verde: #78bbb1;
+
+
+/*---------- CLASES ---------------*/
+
+header {background: none;}
+
+.contain-to-grid {background: #eee;}
+.top-bar .name a img {height: auto; margin-top: 1.25rem; width: auto;}
+
+header .search-form .postfix,
+.button,
+.top-links,
+.top-bar-section ul li > a.button {background: $morado;}
+.tag-cloud h3, .footer {border-color: $morado;}
+.button:hover, .top-bar-section ul li > a.button:hover {background: $verde !important;}
+.top-bar-section ul li {margin-left: 1rem;}
+
+.subnavigation-container {padding: 1.5rem 0;}
+.subnavigation {min-height: 0;}
+.subnavigation a {line-height: 1rem;}
+.subnavigation a:hover {color: $morado; border-bottom: 2px solid $morado;}
+.subnavigation a.active {border-bottom-color: $morado; color: $morado;}
+
+.wrapper-home {background: url(/assets/foto-home-plaza.jpg) no-repeat; padding: 1rem 0;}
+
+.button {padding: 0.75rem 1.5rem;}
+.button.radius {border-radius: 15px;}
+.button.warning {background-color: $morado; border:0;}
+
+header .more-info {text-decoration: none;}
+header .more-info:hover {opacity: inherit; color: $morado;}
+.top-links a:hover {color:$verde; text-decoration: none;}

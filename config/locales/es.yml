@@ -11,10 +11,9 @@ es:
       open_gov: "Gobierno %{open}"
       open: "abierto"
       participation: Participación
-      open_city_title: "La ciudad que quieres será la ciudad que quieras."
+      open_city_title: "Un lugar de encuentro para construir PODEMOS."
       open_city_slogan_html:
-        "Existen ciudades gobernadas directamente por sus habitantes, que <b>debaten</b> sobre temas que les preocupan, <b>proponen</b> ideas para mejorar
-        sus vidas y <b>deciden</b> entre todas y todos las que se llevan a cabo. Madrid ya es una de ellas."
+        "Esta plaza es un espacio de participación en el que puedes hacer propuestas, debatir y econtrarte con otros para construir la organización del cambio."
       #"Empecemos escuchando qué tiene que decir Madrid.
       #Para ello abrimos esta Puerta del Sol digital, donde toda la gente de Madrid podemos encontrarnos para debatir y compartir todo lo que queramos."
       # open_city_text:
@@ -30,7 +29,7 @@ es:
       highlights: "Portada"
       more_information: "Más información"
       debates: Debates
-      proposals: Propuestas ciudadanas
+      proposals: Propuestas
     footer:
       description: "Este portal usa la %{consul} que es %{open_source}. De Madrid, para el mundo entero."
       open_source: "software libre"
