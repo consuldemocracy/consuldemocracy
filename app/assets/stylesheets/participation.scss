@@ -4,6 +4,7 @@
 // 02. New participation
 // 03. Show participation
 // 04. List participation
+// 05. Featured proposals
 //
 
 // 01. Votes and supports
@@ -815,6 +816,159 @@
         float: none;
         margin-left: 0;
         padding-top: 0;
+      }
+    }
+  }
+}
+
+// 05. Featured proposals
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+.featured-proposals-container {
+  background: #FED900;
+  margin: 0 !important;
+
+  @media (min-width: $medium-breakpoint) {
+    margin-left: 0 !important;
+    margin-right: rem-calc(-15) !important;
+  }
+
+  h2 {
+    color: $text;
+    font-size: rem-calc(24);
+    margin: rem-calc(12) 0 0;
+    position: relative;
+    text-transform: uppercase;
+
+    @media (min-width: $medium-breakpoint) {
+      margin-bottom: rem-calc(27);
+    }
+
+    .icon-proposals {
+      font-size: rem-calc(20);
+      position: absolute;
+      right: -26px;
+      top: -5px;
+    }
+  }
+
+  .proposals-list {
+    margin: rem-calc(6) 0;
+
+    @media (min-width: $medium-breakpoint) {
+      border-left: 1px solid #D2B400;
+    }
+
+    &:after {
+      content: none;
+      position: absolute;
+      display: block;
+      border-style: solid;
+      border-color: #C9AF00 transparent transparent transparent;
+      bottom: rem-calc(-20);
+      border-left-width: 0;
+      border-right-color: transparent;
+      right: rem-calc(1);
+      border-width: rem-calc(14) rem-calc(14) 0 0;
+
+      @media (min-width: $medium-breakpoint) {
+        content: " ";
+      }
+    }
+  }
+}
+
+.proposal-featured {
+  background: #FED900;
+  margin-bottom: 0;
+  margin-top: 0;
+  padding-left: 0;
+
+  .panel {
+    background: none;
+    border: 0;
+    margin-bottom: 0;
+    padding: 0 rem-calc(12);
+
+    h3 {
+      font-weight: bold;
+      margin: rem-calc(8) 0 0 0;
+      min-height: auto;
+
+      a {
+        clear: both;
+        color: $text;
+        display: block;
+        font-size: rem-calc(14);
+        line-height: $line-height;
+        text-transform: lowercase;
+
+        &:first-letter {
+          text-transform: uppercase;
+        }
+      }
+    }
+  }
+
+  .content {
+    height: rem-calc(60);
+    overflow: hidden;
+  }
+
+  .info {
+    color: #806C00 !important;
+  }
+
+  .supports {
+    @include supports;
+    background: none;
+    border: 0;
+    padding: 0;
+    padding-left: rem-calc(13);
+    margin-right: rem-calc(-26);
+
+    &:after {
+      content: none;
+    }
+
+    .total-supports {
+      display: none;
+    }
+
+    .not-logged, .organizations-votes {
+      background: #FED900;
+      line-height: rem-calc(24);
+      padding-top: rem-calc(6);
+    }
+
+    .organizations-votes p {
+      color: $text;
+      line-height: rem-calc(24);
+      padding-top: rem-calc(6);
+      text-align: center;
+    }
+
+    .button-support {
+      margin-top: rem-calc(4);
+    }
+
+    .supported {
+      margin-top: 0;
+    }
+
+    .share-supported {
+
+      .social-share-button-twitter,
+      .social-share-button-facebook,
+      .social-share-button-google_plus {
+        height: rem-calc(33);
+      }
+
+      .social-share-button-twitter:before,
+      .social-share-button-facebook:before,
+      .social-share-button-google_plus:before {
+        font-size: rem-calc(18);
+        line-height: rem-calc(33);
       }
     }
   }

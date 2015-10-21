@@ -11,6 +11,11 @@ class ProposalsController < ApplicationController
   load_and_authorize_resource
   respond_to :html, :js
 
+  def index
+    @featured_proposals = Proposal.sort_by_confidence_score.limit(3)
+    super
+  end
+
   def vote
     @proposal.register_vote(current_user, 'yes')
     set_proposal_votes(@proposal)
