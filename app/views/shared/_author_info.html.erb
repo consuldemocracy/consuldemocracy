@@ -1,0 +1,25 @@
+<%= avatar_image(resource.author, seed: resource.author_id, size: 32, class: 'author-photo') %>
+
+<% if resource.author.hidden? || resource.author.erased? %>
+  <i class="icon-deleted author-deleted"></i>
+  <span class="author">
+      <%= t("shared.author_info.author_deleted") %>
+  </span>
+<% else %>
+  <span class="author">
+      <%= resource.author.name %>
+  </span>
+  <% if resource.author.official? %>
+    &nbsp;&bull;&nbsp;
+    <span class="label round level-<%= resource.author.official_level %>">
+      <%= resource.author.official_position %>
+    </span>
+  <% end %>
+<% end %>
+
+<% if resource.author.verified_organization? %>
+  &nbsp;&bull;&nbsp;
+  <span class="label round is-association">
+    <%= t("shared.collective") %>
+  </span>
+<% end %>

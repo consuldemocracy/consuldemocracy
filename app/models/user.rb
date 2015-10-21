@@ -147,8 +147,8 @@ class User < ActiveRecord::Base
   end
 
   def erase(erase_reason = nil)
-    self.hide
     self.update(
+      erased_at: Time.now,
       erase_reason: erase_reason,
       username: nil,
       email: nil,
@@ -160,6 +160,10 @@ class User < ActiveRecord::Base
       reset_password_token: nil,
       email_verification_token: nil
     )
+  end
+
+  def erased?
+    erased_at.present?
   end
 
   def email_provided?
@@ -189,11 +193,11 @@ class User < ActiveRecord::Base
   end
 
   def username_required?
-    !organization? && !hidden?
+    !organization? && !erased?
   end
 
   def email_required?
-    !hidden?
+    !erased?
   end
 
   private

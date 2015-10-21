@@ -605,4 +605,16 @@ feature 'Proposals' do
 
     expect(Flag.flagged?(user, proposal)).to_not be
   end
+
+  scenario 'Erased author' do
+    user = create(:user)
+    proposal = create(:proposal, author: user)
+    user.erase
+
+    visit proposals_path
+    expect(page).to have_content('Deleted user')
+
+    visit proposal_path(proposal)
+    expect(page).to have_content('Deleted user')
+  end
 end

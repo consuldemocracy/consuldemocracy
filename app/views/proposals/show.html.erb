@@ -27,31 +27,7 @@
         <% end %>
 
         <div class="proposal-info">
-          <%= avatar_image(@proposal.author, seed: @proposal.author_id, size: 32, class: 'author-photo') %>
-
-          <% if @proposal.author.hidden? %>
-            <i class="icon-deleted author-deleted"></i>
-            <span class="author">
-                <%= t("proposals.show.author_deleted") %>
-            </span>
-          <% else %>
-            <span class="author">
-                <%= @proposal.author.name %>
-            </span>
-            <% if @proposal.author.official? %>
-              &nbsp;&bull;&nbsp;
-              <span class="label round level-<%= @proposal.author.official_level %>">
-                <%= @proposal.author.official_position %>
-              </span>
-            <% end %>
-          <% end %>
-
-          <% if @proposal.author.verified_organization? %>
-            &nbsp;&bull;&nbsp;
-            <span class="label round is-association">
-              <%= t("shared.collective") %>
-            </span>
-          <% end %>
+          <%= render '/shared/author_info', resource: @proposal %>
 
           <span class="bullet">&nbsp;&bull;&nbsp;</span>
           <%= l @proposal.created_at.to_date %>

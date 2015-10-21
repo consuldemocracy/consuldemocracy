@@ -193,6 +193,18 @@ feature 'Commenting proposals' do
     end
   end
 
+  scenario "Erasing a comment's author" do
+    proposal = create(:proposal)
+    comment = create(:comment, commentable: proposal, body: "this should be visible")
+    comment.user.erase
+
+    visit proposal_path(proposal)
+    within "#comment_#{comment.id}" do
+      expect(page).to have_content('Deleted user')
+      expect(page).to have_content('this should be visible')
+    end
+  end
+
   feature "Moderators" do
     scenario "can create comment as a moderator", :js do
       moderator = create(:moderator)

@@ -193,6 +193,18 @@ feature 'Commenting debates' do
     end
   end
 
+  scenario "Erasing a comment's author" do
+    debate = create(:debate)
+    comment = create(:comment, commentable: debate, body: 'this should be visible')
+    comment.user.erase
+
+    visit debate_path(debate)
+    within "#comment_#{comment.id}" do
+      expect(page).to have_content('Deleted user')
+      expect(page).to have_content('this should be visible')
+    end
+  end
+
   feature "Moderators" do
     scenario "can create comment as a moderator", :js do
       moderator = create(:moderator)
