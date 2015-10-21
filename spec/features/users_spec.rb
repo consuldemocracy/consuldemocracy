@@ -178,7 +178,7 @@ feature 'Users' do
     fill_in 'user_email', with: 'manuela@madrid.es'
     click_button 'Send instructions'
 
-    expect(page).to have_content "You will receive an email with instructions on how to reset your password in a few minutes."
+    expect(page).to have_content "In a few minutes, you will receive an email containing instructions on resetting your password."
 
     sent_token = /.*reset_password_token=(.*)".*/.match(ActionMailer::Base.deliveries.last.body.to_s)[1]
     visit edit_user_password_path(reset_password_token: sent_token)
@@ -187,6 +187,6 @@ feature 'Users' do
     fill_in 'user_password_confirmation', with: 'new password'
     click_button 'Change my password'
 
-    expect(page).to have_content "Your password has been changed successfully. You are now signed in."
+    expect(page).to have_content "Your password has been changed successfully."
   end
 end

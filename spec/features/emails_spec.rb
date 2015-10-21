@@ -19,7 +19,7 @@ feature 'Emails' do
     reset_password
 
     email = open_last_email
-    expect(email).to have_subject('Reset password instructions')
+    expect(email).to have_subject('Instructions for resetting your password')
     expect(email).to deliver_to('manuela@madrid.es')
     expect(email).to have_body_text(edit_user_password_path)
   end

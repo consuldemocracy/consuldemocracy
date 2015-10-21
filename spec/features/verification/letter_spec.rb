@@ -9,9 +9,9 @@ feature 'Verify Letter' do
     login_as(user)
     visit new_letter_path
 
-    click_link "Request a letter"
+    click_link "Send me a letter with the code"
 
-    expect(page).to have_content "Before voting you'll receive a letter whith the instructions for verify your account."
+    expect(page).to have_content "Thank you for requesting your maximum security code (only required for the final votes). In a few days we will send it to the address featuring in the data we have on file."
 
     user.reload
 
@@ -26,7 +26,7 @@ feature 'Verify Letter' do
     login_as(user)
     visit new_letter_path
 
-    expect(page).to have_link "Office of Citizen", href: "http://www.madrid.es/portales/munimadrid/es/Inicio/El-Ayuntamiento/Atencion-al-ciudadano/Oficinas-de-Atencion-al-Ciudadano?vgnextfmt=default&vgnextchannel=5b99cde2e09a4310VgnVCM1000000b205a0aRCRD"
+    expect(page).to have_link "Citizen Support Offices", href: "http://www.madrid.es/portales/munimadrid/es/Inicio/El-Ayuntamiento/Atencion-al-ciudadano/Oficinas-de-Atencion-al-Ciudadano?vgnextfmt=default&vgnextchannel=5b99cde2e09a4310VgnVCM1000000b205a0aRCRD"
   end
 
   scenario "Deny access unless verified residence" do
@@ -64,7 +64,7 @@ feature 'Verify Letter' do
       fill_in "verification_letter_verification_code", with: user.letter_verification_code
       click_button "Verify my account"
 
-      expect(page).to have_content "Your account has been verified"
+      expect(page).to have_content "Code correct. Your account is now verified"
       expect(current_path).to eq(account_path)
     end
 
@@ -97,7 +97,7 @@ feature 'Verify Letter' do
       fill_in "verification_letter_verification_code", with: user.letter_verification_code
       click_button "Verify my account"
 
-      expect(page).to have_content "Your account has been verified"
+      expect(page).to have_content "Code correct. Your account is now verified"
       expect(current_path).to eq(account_path)
     end
 
@@ -135,7 +135,7 @@ feature 'Verify Letter' do
         click_button "Verify my account"
       end
 
-      expect(page).to have_content "You have reached the maximum number of verification tries. Please try again later."
+      expect(page).to have_content "You have reached the maximum number of attempts. Please try again later."
       expect(current_path).to eq(account_path)
     end
 

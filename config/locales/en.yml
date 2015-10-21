@@ -71,6 +71,7 @@ en:
     debate: "Debate"
     proposal: "Proposal"
     verification::sms: "Telephone"
+    verification::letter: "the verification"
   application:
     alert:
       only_beta_testers: "Sorry: only beta testers have access at this time"
@@ -309,7 +310,7 @@ en:
       proposal: "the secret code does not match the image"
   shared:
     author_info:
-      author_deleted: Deleted user
+      author_deleted: "User deleted"
     tags_cloud:
       tags: "Trending"
     print:

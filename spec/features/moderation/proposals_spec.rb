@@ -132,13 +132,13 @@ feature 'Moderate proposals' do
       within('.sub-nav') do
         expect(page).to have_link('All')
         expect(page).to_not have_link('Pending')
-        expect(page).to have_link('Marked as viewed')
+        expect(page).to have_link('Mark as viewed')
       end
 
       visit moderation_proposals_path(filter: 'with_ignored_flag')
       within('.sub-nav') do
         expect(page).to have_link('All')
-        expect(page).to have_link('Pending')
+        expect(page).to have_link('Pending review')
         expect(page).to_not have_link('Marked as viewed')
       end
     end

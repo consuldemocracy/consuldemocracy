@@ -201,7 +201,7 @@ feature 'Commenting debates' do
 
     visit debate_path(debate)
     within "#comment_#{comment.id}" do
-      expect(page).to have_content('Deleted user')
+      expect(page).to have_content('User deleted')
       expect(page).to have_content('this should be visible')
     end
   end

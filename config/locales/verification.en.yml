@@ -93,7 +93,7 @@ en:
       alert:
         unconfirmed_code: "You have not yet entered the confirmation code"
       errors:
-        incorect_code: "Verification code incorrect"
+        incorrect_code: "Verification code incorrect"
     verified_user:
       show:
         title: "Available information"

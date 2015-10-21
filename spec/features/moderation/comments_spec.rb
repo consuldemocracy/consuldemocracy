@@ -75,7 +75,7 @@ feature 'Moderate comments' do
         end
 
         scenario 'Ignore the comment' do
-          click_on "Marked as viewed"
+          click_on "Mark as viewed"
           expect(page).to_not have_css("comment_#{@comment.id}")
           expect(@comment.reload).to be_ignored_flag
           expect(@comment.reload).to_not be_hidden
@@ -106,7 +106,7 @@ feature 'Moderate comments' do
 
         visit moderation_comments_path(filter: 'all', page: '2', order: 'created_at')
 
-        click_on "Marked as viewed"
+        click_on "Mark as viewed"
 
         expect(page).to have_selector('.js-order-selector[data-order="created_at"]')
 

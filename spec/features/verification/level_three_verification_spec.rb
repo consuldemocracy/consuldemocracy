@@ -85,6 +85,6 @@ feature 'Level three verification' do
 
     click_link "Send me a letter with the code"
 
-    expect(page).to have_content "Before voting you'll receive a letter whith the instructions for verify your account."
+    expect(page).to have_content "Thank you for requesting your maximum security code (only required for the final votes). In a few days we will send it to the address featuring in the data we have on file."
   end
 end

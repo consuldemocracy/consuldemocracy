@@ -74,7 +74,7 @@ feature 'Moderate debates' do
         end
 
         scenario 'Ignore the debate' do
-          click_on "Marked as viewed"
+          click_on "Mark as viewed"
           expect(page).to_not have_css("debate_#{@debate.id}")
           expect(@debate.reload).to be_ignored_flag
           expect(@debate.reload).to_not be_hidden
@@ -105,7 +105,7 @@ feature 'Moderate debates' do
 
         visit moderation_debates_path(filter: 'all', page: '2', order: 'created_at')
 
-        click_on "Marked as viewed"
+        click_on "Mark as viewed"
 
         expect(page).to have_selector('.js-order-selector[data-order="created_at"]')
 

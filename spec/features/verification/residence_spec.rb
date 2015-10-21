@@ -29,7 +29,7 @@ feature 'Residence' do
 
     click_button 'Verify residence'
 
-    expect(page).to have_content /\d errors? prevented your residence verification/
+    expect(page).to have_content /\d errors? prevented the verification of your residence/
   end
 
   scenario 'Error on postal code not in Madrid census' do

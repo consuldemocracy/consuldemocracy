@@ -530,9 +530,9 @@ feature 'Debates' do
     user.erase
 
     visit debates_path
-    expect(page).to have_content('Deleted user')
+    expect(page).to have_content('User deleted')
 
     visit debate_path(debate)
-    expect(page).to have_content('Deleted user')
+    expect(page).to have_content('User deleted')
   end
 end

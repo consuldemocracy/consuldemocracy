@@ -634,14 +634,14 @@ feature 'Proposals' do
     user.erase
 
     visit proposals_path
-    expect(page).to have_content('Deleted user')
+    expect(page).to have_content('User deleted')
 
     visit proposal_path(proposal)
-    expect(page).to have_content('Deleted user')
+    expect(page).to have_content('User deleted')
 
     create_featured_proposals
 
     visit proposals_path
-    expect(page).to have_content('Deleted user')
+    expect(page).to have_content('User deleted')
   end
 end
