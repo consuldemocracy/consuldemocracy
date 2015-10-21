@@ -29,7 +29,7 @@
         <div class="proposal-info">
           <%= avatar_image(@proposal.author, seed: @proposal.author_id, size: 32, class: 'author-photo') %>
 
-          <% if @proposal.author.hidden? %>
+          <% if @proposal.author.hidden? || @proposal.author.erased? %>
             <i class="icon-deleted author-deleted"></i>
             <span class="author">
                 <%= t("proposals.show.author_deleted") %>

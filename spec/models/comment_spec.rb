@@ -57,6 +57,11 @@ describe Comment do
       .to change { [comment.reload.updated_at, comment.author.updated_at] }
     end
 
+    it "expires cache when the author is erased" do
+      expect { comment.user.erase }
+      .to change { [comment.reload.updated_at, comment.author.updated_at] }
+    end
+
     it "expires cache when the author changes" do
       expect { comment.user.update(username: "Isabel") }
       .to change { [comment.reload.updated_at, comment.author.updated_at] }

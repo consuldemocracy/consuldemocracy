@@ -19,7 +19,7 @@
           <% else %>
             <%= avatar_image(comment.user, seed: comment.user_id, size: 32, class: "left") %>
           <% end %>
-          <% if comment.user.hidden? %>
+          <% if comment.user.hidden? || comment.user.erased? %>
             <i class="icon-deleted user-deleted"></i>
           <% end %>
         <% end %>
@@ -33,7 +33,7 @@
               <span class="user-name"><%= t("comments.comment.moderator") %> #<%= comment.moderator_id%></span>
             <% else %>
 
-              <% if comment.user.hidden? %>
+              <% if comment.user.hidden? || comment.user.erased? %>
                 <span class="user-name"><%= t("comments.comment.user_deleted") %></span>
               <% else %>
                 <span class="user-name"><%= comment.user.name %></span>

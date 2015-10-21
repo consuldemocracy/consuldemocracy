@@ -13,7 +13,7 @@
             <span class="bullet">&nbsp;&bull;&nbsp;</span>
             <%= l proposal.created_at.to_date %>
 
-            <% if proposal.author.hidden? %>
+            <% if proposal.author.hidden? || proposal.author.erased? %>
               <span class="bullet">&nbsp;&bull;&nbsp;</span>
               <span class="author">
                 <%= t("proposals.show.author_deleted") %>

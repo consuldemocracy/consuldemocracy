@@ -523,4 +523,16 @@ feature 'Debates' do
     visit debate_path(good_debate)
     expect(page).to_not have_content "This debate has been flag as innapropiate for some users."
   end
+
+  scenario 'Erased author' do
+    user = create(:user)
+    debate = create(:debate, author: user)
+    user.erase
+
+    visit debates_path
+    expect(page).to have_content('Deleted user')
+
+    visit debate_path(debate)
+    expect(page).to have_content('Deleted user')
+  end
 end

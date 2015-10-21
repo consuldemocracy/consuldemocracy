@@ -380,6 +380,11 @@ describe Debate do
       .to change { [debate.reload.updated_at, debate.author.updated_at] }
     end
 
+    it "should expire cache when the author is erased" do
+      expect { debate.author.erase }
+      .to change { [debate.reload.updated_at, debate.author.updated_at] }
+    end
+
     it "should expire cache when its author changes" do
       expect { debate.author.update(username: "Eva") }
       .to change { [debate.reload.updated_at, debate.author.updated_at] }

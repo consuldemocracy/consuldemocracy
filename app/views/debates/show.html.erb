@@ -23,7 +23,7 @@
         <div class="debate-info">
           <%= avatar_image(@debate.author, seed: @debate.author_id, size: 32, class: 'author-photo') %>
 
-          <% if @debate.author.hidden? %>
+          <% if @debate.author.hidden? || @debate.author.erased? %>
             <i class="icon-deleted author-deleted"></i>
             <span class="author">
                 <%= t("debates.show.author_deleted") %>
