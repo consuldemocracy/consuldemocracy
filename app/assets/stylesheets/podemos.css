@@ -1,0 +1,87 @@
+/*---------- VARIABLES ---------------*/
+/*---------- CLASES ---------------*/
+/* line 9, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
+header {
+  background: none; }
+
+/* line 11, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
+.contain-to-grid {
+  background: #eee; }
+
+/* line 12, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
+.top-bar .name a img {
+  height: auto;
+  margin-top: 1.25rem;
+  width: auto; }
+
+/* line 17, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
+header .search-form .postfix, .button, .top-links, .top-bar-section ul li > a.button {
+  background: #612d62; }
+
+/* line 18, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
+.tag-cloud h3, .footer {
+  border-color: #612d62; }
+
+/* line 19, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
+.button:hover, .top-bar-section ul li > a.button:hover {
+  background: #78bbb1 !important; }
+
+/* line 20, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
+.top-bar-section ul li {
+  margin-left: 1rem; }
+
+/* line 22, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
+.subnavigation-container {
+  padding: 1.5rem 0; }
+
+/* line 23, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
+.subnavigation {
+  min-height: 0; }
+
+/* line 24, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
+.subnavigation a {
+  line-height: 1rem; }
+
+/* line 25, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
+.subnavigation a:hover {
+  color: #612d62;
+  border-bottom: 2px solid #612d62; }
+
+/* line 26, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
+.subnavigation a.active {
+  border-bottom-color: #612d62;
+  color: #612d62; }
+
+/* line 28, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
+.wrapper-home {
+  background: url(/assets/foto-home-plaza.jpg) no-repeat;
+  padding: 1rem 0; }
+
+/* line 30, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
+.button {
+  padding: 0.75rem 1.5rem; }
+
+/* line 31, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
+.button.radius {
+  border-radius: 15px; }
+
+/* line 32, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
+.button.warning {
+  background-color: #612d62;
+  border: 0; }
+
+/* line 34, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
+header .more-info {
+  text-decoration: none; }
+
+/* line 35, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
+header .more-info:hover {
+  opacity: inherit;
+  color: #612d62; }
+
+/* line 36, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
+.top-links a:hover {
+  color: #78bbb1;
+  text-decoration: none; }
+
+/*# sourceMappingURL=podemos.css.map */

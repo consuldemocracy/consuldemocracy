@@ -8,7 +8,7 @@
     </li>
   <% else %>
     <li>
-      <%= link_to(t("devise_views.menu.login_items.login"), user_omniauth_authorize_path(:openid))  %>
+      <%= link_to(t("devise_views.menu.login_items.login"), user_omniauth_authorize_path(:openid), class: "button radius small") %>
     </li>
     <li>
       <%= link_to(t("devise_views.menu.login_items.signup"), user_omniauth_authorize_path(:openid), class: "button radius small") %>
