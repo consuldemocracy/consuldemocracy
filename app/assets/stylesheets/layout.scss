@@ -1580,6 +1580,10 @@ table {
     }
   }
 
+  .icon-check {
+    color: $check;
+  }
+
   .text {
     margin-top: rem-calc(24);
 
@@ -1609,12 +1613,6 @@ table {
     ul {
       list-style-type: none;
       margin-left: 0;
-
-      a:first-child {
-        border-top: 1px solid $border;
-        display: block;
-        padding-top: rem-calc(12);
-      }
 
       li {
         border-bottom: 1px solid $border;
