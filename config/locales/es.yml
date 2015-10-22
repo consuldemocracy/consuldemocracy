@@ -344,7 +344,7 @@ es:
       description: "Si la propuesta es aceptada mayoritariamente, el Ayuntamiento la asume como propia y se hace."
     welcome:
       title: "Empieza a participar"
-      go_to_index: "Ver propuestas y debates"
+      go_to_index: "Ver propuestas"
       user_permission_info: "Con tu cuenta ya puedes..."
       user_permission_debates: "Participar en debates"
       user_permission_proposal: "Crear nuevas propuestas"
