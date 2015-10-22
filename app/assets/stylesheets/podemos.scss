@@ -11,10 +11,13 @@ header {background: none;}
 .contain-to-grid {background: #fff; border-bottom: 1px solid #ddd;}
 .top-bar .name a img {height: auto; margin-top: 1.25rem; width: auto;}
 
-header .search-form .postfix,
-.button, .top-links, .top-bar-section ul li > a.button {background: $morado;}
+header .search-form .postfix, .button,
+.top-links, .top-bar-section ul li > a.button {background: $morado;}
 .tag-cloud h3, .footer {border-color: $morado;}
-.button:hover, .top-bar-section ul li > a.button:hover {background: $verde !important;}
+.search-form .button.postfix,
+button:hover, button:focus, .button:hover, .button:focus{background: $verde;}
+.search-form .button.postfix:hover {background: $morado;}
+.top-bar-section ul li > a.button:hover {background: $verde !important;}
 .top-bar-section ul li {margin-left: 1rem;}
 
 .subnavigation-container {padding: 1.5rem 0;}
