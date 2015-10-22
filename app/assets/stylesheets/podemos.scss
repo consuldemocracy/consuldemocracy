@@ -2,12 +2,19 @@
 
 $morado: #612d62;
 $verde: #78bbb1;
+$morado-claro: #B37EB4;
 
 
 /*---------- CLASES ---------------*/
 
-header {background: none;}
-header .search-form {padding-top: 0;}
+header {
+    background: none;
+    .search-form {padding-top: 0;}
+    .more-info {
+        text-decoration: none;
+        &:hover {opacity: inherit; color: $morado;}
+    }
+}
 
 .contain-to-grid {background: #fff; border-bottom: 1px solid #ddd;}
 .top-bar .name a img {height: auto; margin-top: 1.25rem; width: auto;}
@@ -34,8 +41,6 @@ button:hover, button:focus, .button:hover, .button:focus{background: $verde;}
 .button.warning {background-color: $morado; border:0;}
 button.warning:hover, button.warning:focus, .button.warning:hover, .button.warning:focus {background: $verde;}
 
-header .more-info {text-decoration: none;}
-header .more-info:hover {opacity: inherit; color: $morado;}
 .top-links a:hover {color:$verde; text-decoration: none;}
 h3, .page .more-information ul a, .top-bar-section ul li > a {color: $morado !important;}
 .footer {margin-top: 1rem;}
@@ -43,3 +48,40 @@ h3, .page .more-information ul a, .top-bar-section ul li > a {color: $morado !im
 .top-bar-section ul li > a.button {color: #fff !important;}
 form input[type]:not([type=submit]):not([type=file]):not([type=checkbox]),
 .search-form .button.postfix {margin-bottom: 0;}
+
+.proposal {margin-top: 0.5rem;}
+.proposal .panel {box-shadow: none; min-height: 0 !important; padding: 0;}
+.proposal .panel .label-proposal,
+.proposal .panel .icon-proposals,
+.proposal-featured .panel .proposal-info,
+.proposal .panel .proposal-info {color: $morado-claro;}
+.proposal .supports {margin: 0;}
+
+.proposal-featured .panel .proposal-info .author,
+.proposal .panel .proposal-info .author {color: #999;}
+.proposal-featured .supports, .proposal .supports {background: #ddd; border-color: #ddd; padding-bottom: 2rem; padding-top: 2rem;}
+.proposal-featured .supports .button-support,
+.proposal .supports .button-support {background: $morado; color: #fff;}
+.proposal-featured .supports .button-support:hover,
+.proposal .supports .button-support:hover {background: $verde;}
+.proposal .supports .total-supports {font-weight: bold; color: #333;}
+.proposal-featured .supports abbr, .proposal .supports abbr {color: #333;}
+.proposal .supports:after {content: none;}
+
+.tags a, .tag-cloud a {background: #fff; border: 1px solid #ddd; margin-right: 10px; margin-bottom: 0;}
+.sidebar {
+    .tags a, .tag-cloud a, .tag-cloud a {margin-bottom: 1rem;}
+    .button.radius {border-radius: 0; background: $verde;}
+}
+.tags a:hover, .tag-cloud a:hover {background: #fff; color: $verde;}
+.proposal .panel .proposal-content {padding: 1rem;}
+.proposal .panel .icon-proposals {left: 6.5rem; top: 1rem;}
+.proposal-featured .supports abbr[title], .proposal .supports abbr[title] {border-bottom-color: #333;}
+.proposal-featured .supports .percentage, .proposal .supports .percentage {color: #333;}
+abbr, acronym {font-size: 100%; color: #333;}
+.proposal-featured .panel .proposal-info a, .proposal .panel .proposal-info a {color: $morado-claro;}
+.in-favor .button.expand {padding: 0.8rem 2rem;}
+.tag-cloud a .label.info {background: #aaa;}
+
+.filters select, .search-results select {border-radius: 10px; background-color: #eee; border: 0; cursor: pointer;}
+
