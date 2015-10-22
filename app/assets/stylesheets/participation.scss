@@ -437,7 +437,6 @@
     padding-top: 0;
     font-size: rem-calc(15);
     line-height: rem-calc(30);
-    overflow: hidden;
   }
 
   .document-link, .video-link {
@@ -910,6 +909,10 @@
     }
   }
 
+  .progress {
+    display: none !important;
+  }
+
   .content {
     height: rem-calc(60);
     overflow: hidden;
@@ -937,8 +940,26 @@
 
     .not-logged, .organizations-votes {
       background: #FED900;
+      color: $warning-color;
       line-height: rem-calc(24);
       padding-top: rem-calc(6);
+
+      a {
+        color: $warning-color;
+        font-weight: bold;
+      }
+    }
+
+    .anonymous-votes {
+      background: #FED900;
+      padding: 0;
+      padding-top: rem-calc(6);
+
+      p {
+        font-size: rem-calc(12);
+        line-height: rem-calc(20);
+        margin: 0;
+      }
     }
 
     .organizations-votes p {
