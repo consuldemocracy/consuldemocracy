@@ -8,13 +8,11 @@ $verde: #78bbb1;
 
 header {background: none;}
 
-.contain-to-grid {background: #eee;}
+.contain-to-grid {background: #fff; border-bottom: 1px solid #ddd;}
 .top-bar .name a img {height: auto; margin-top: 1.25rem; width: auto;}
 
 header .search-form .postfix,
-.button,
-.top-links,
-.top-bar-section ul li > a.button {background: $morado;}
+.button, .top-links, .top-bar-section ul li > a.button {background: $morado;}
 .tag-cloud h3, .footer {border-color: $morado;}
 .button:hover, .top-bar-section ul li > a.button:hover {background: $verde !important;}
 .top-bar-section ul li {margin-left: 1rem;}
@@ -34,3 +32,5 @@ header .search-form .postfix,
 header .more-info {text-decoration: none;}
 header .more-info:hover {opacity: inherit; color: $morado;}
 .top-links a:hover {color:$verde; text-decoration: none;}
+h3, .page .more-information ul a, .top-bar-section ul li > a {color: $morado !important;}
+.footer {margin-top: 1rem;}

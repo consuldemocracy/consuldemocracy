@@ -388,12 +388,12 @@ es:
     signed_in_home_title: Actividad reciente
     debates:
       title: "Debates"
-      description: "Encontrarnos, debatir y compartir lo que nos parece importante en nuestra ciudad."
+      description: "Exprésate, debate con otros y contribuye a enriquecer el pensamiento colectivo."
     proposal:
-      title: "Propones"
-      description: "Espacio abierto para propuestas ciudadanas sobre el tipo de ciudad en el que queremos vivir."
-    decide:
-      title: "Decides"
+      title: "Propuestas"
+      description: "Puedes hacer propuestas que, si son apoyadas por el 10% de los participantes, se llevarán a referendum interno vinculante."
+    programa:
+      title: "Programa"
       description: "La ciudadanía decide si acepta o rechaza las propuestas más apoyadas."
     do:
       title: "Se hace"

@@ -1,20 +1,18 @@
 <% cache [locale_and_user_status, @featured_debates, @featured_medidas, @featured_proposals, 'featured'] do %>
   <section role="main">
-    <div class="row text-center">
-      <div class="small-12 medium-4 column">
-        <h3><%= t("welcome.debates.title") %></h3>
-        <p><%= t("welcome.debates.description") %></p>
-
-      </div>
-      <div class="small-12 medium-4 column">
-        <h3><%= t("welcome.medidas.title") %></h3>
-        <p><%= t("welcome.medidas.description") %></p>
-
-      </div>
-      <div class="small-12 medium-4 column">
-        <h3><%= t("welcome.proposal.title") %></h3>
-        <p><%= t("welcome.proposal.description") %></p>
-      </div>
+    <div class="row">
+        <div class="small-12 medium-4 column">
+            <h3><%= t("welcome.proposal.title") %></h3>
+            <p><%= t("welcome.proposal.description") %></p>
+        </div>
+        <div class="small-12 medium-4 column">
+            <h3><%= t("welcome.debates.title") %></h3>
+            <p><%= t("welcome.debates.description") %></p>
+        </div>
+        <div class="small-12 medium-4 column">
+            <h3><%= t("welcome.programa.title") %></h3>
+            <p><%= t("welcome.programa.description") %></p>
+        </div>
     </div>
   </section>
 <% end %>
