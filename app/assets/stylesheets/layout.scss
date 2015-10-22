@@ -1676,6 +1676,10 @@ table {
     @media (min-width: $small-breakpoint) {
       height: rem-calc(48);
     }
+
+    &.success .meter {
+      float: none;
+    }
   }
 
   .verification-step {
