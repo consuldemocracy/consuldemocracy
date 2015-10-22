@@ -26,6 +26,7 @@ describe "Abilities::Common" do
   it { should be_able_to(:index, Proposal) }
   it { should be_able_to(:show, proposal) }
   it { should_not be_able_to(:vote, Proposal) }
+  it { should_not be_able_to(:vote_featured, Proposal) }
 
   it { should_not be_able_to(:comment_as_administrator, debate) }
   it { should_not be_able_to(:comment_as_moderator, debate) }
@@ -82,11 +83,13 @@ describe "Abilities::Common" do
     before{ user.update(residence_verified_at: Time.now, confirmed_phone: "1") }
 
     it { should be_able_to(:vote, Proposal) }
+    it { should be_able_to(:vote_featured, Proposal) }
   end
 
   describe "when level 3 verified" do
     before{ user.update(verified_at: Time.now) }
 
     it { should be_able_to(:vote, Proposal) }
+    it { should be_able_to(:vote_featured, Proposal) }
   end
 end

@@ -155,6 +155,7 @@ es:
   proposals:
     index:
       title: Propuestas ciudadanas
+      featured_proposals_html: "Propuestas<br>destacadas"
       start_proposal: Crea una propuesta
       select_order: Ordenar por
       select_order_long: Estás viendo las propuestas
