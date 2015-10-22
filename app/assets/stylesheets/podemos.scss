@@ -2,12 +2,19 @@
 
 $morado: #612d62;
 $verde: #78bbb1;
+$morado-claro: #B37EB4;
 
 
 /*---------- CLASES ---------------*/
 
-header {background: none;}
-header .search-form {padding-top: 0;}
+header {
+    background: none;
+    .search-form {padding-top: 0;}
+    .more-info {
+        text-decoration: none;
+        &:hover {opacity: inherit; color: $morado;}
+    }
+}
 
 .contain-to-grid {background: #fff; border-bottom: 1px solid #ddd;}
 .top-bar .name a img {height: auto; margin-top: 1.25rem; width: auto;}
@@ -21,11 +28,16 @@ button:hover, button:focus, .button:hover, .button:focus{background: $verde;}
 .top-bar-section ul li > a.button:hover {background: $verde !important;}
 .top-bar-section ul li {margin-left: 1rem;}
 
+.subnavigation {
+    min-height: 0;
+    a {
+        line-height: 1rem;
+        &:hover {color: $morado; border-bottom: 2px solid $morado;}
+        &.active {border-bottom-color: $morado; color: $morado;}
+    }
+}
+
 .subnavigation-container {min-height: 85px; padding: 1.5rem 0;}
-.subnavigation {min-height: 0;}
-.subnavigation a {line-height: 1rem;}
-.subnavigation a:hover {color: $morado; border-bottom: 2px solid $morado;}
-.subnavigation a.active {border-bottom-color: $morado; color: $morado;}
 
 .wrapper-home {background: url(/assets/foto-home-plaza.jpg) no-repeat; padding: 1rem 0;}
 
@@ -34,8 +46,6 @@ button:hover, button:focus, .button:hover, .button:focus{background: $verde;}
 .button.warning {background-color: $morado; border:0;}
 button.warning:hover, button.warning:focus, .button.warning:hover, .button.warning:focus {background: $verde;}
 
-header .more-info {text-decoration: none;}
-header .more-info:hover {opacity: inherit; color: $morado;}
 .top-links a:hover {color:$verde; text-decoration: none;}
 h3, .page .more-information ul a, .top-bar-section ul li > a {color: $morado !important;}
 .footer {margin-top: 1rem;}
@@ -43,3 +53,78 @@ h3, .page .more-information ul a, .top-bar-section ul li > a {color: $morado !im
 .top-bar-section ul li > a.button {color: #fff !important;}
 form input[type]:not([type=submit]):not([type=file]):not([type=checkbox]),
 .search-form .button.postfix {margin-bottom: 0;}
+
+.proposal {
+    margin-bottom: 1rem; margin-top: 0.5rem;
+    .panel {
+        box-shadow: none; min-height: 0 !important; padding: 0;
+        .proposal-content {padding: 1rem;}
+        .icon-proposals {left: 6.5rem; top: 1rem;}
+    }
+    .supports {margin: 0;}
+}
+
+.proposal .panel .label-proposal,
+.proposal .panel .icon-proposals,
+.proposal-featured .panel .proposal-info,
+.proposal .panel .proposal-info {color: $morado-claro;}
+
+.proposal-featured .panel .proposal-info .author,
+.proposal .panel .proposal-info .author {color: #999;}
+
+.proposal .supports,
+.proposal-featured .supports,
+.proposal-show .supports {background: #ddd; border-color: #ddd; padding-bottom: 2rem; padding-top: 2rem;}
+
+.proposal .supports .button-support,
+.proposal-featured .supports .button-support,
+.proposal-show .supports .button-support {background: $morado; color: #fff;}
+
+.proposal .supports .button-support:hover,
+.proposal-featured .supports .button-support:hover,
+.proposal-show .supports .button-support:hover {background: $verde;}
+
+.proposal .supports .total-supports {font-weight: bold; color: #333;}
+
+.proposal .supports abbr,
+.proposal-featured .supports abbr,
+.proposal-show .supports abbr {color: #333;}
+
+.proposal .supports:after {content: none;}
+
+.proposal .supports .percentage,
+.proposal-featured .supports .percentage,
+.proposal-show .supports .percentage {color: #333;}
+
+.proposal .supports abbr[title],
+.proposal-featured .supports abbr[title],
+.proposal-show .supports abbr[title] {border-bottom-color: #333;}
+
+abbr, acronym {font-size: 100%; color: #333;}
+
+.tags a, .tag-cloud a {background: #fff; border: 1px solid #ddd; margin-right: 10px; margin-bottom: 0;}
+
+.sidebar {
+    .tags a, .tag-cloud a, .tag-cloud a {margin-bottom: 1rem;}
+    .button.radius {
+        border-radius: 0;
+        background: $verde;
+        &:hover {background: $morado;}
+    }
+}
+
+.tags a:hover, .tag-cloud a:hover {background: #fff; color: $verde;}
+
+.proposal-featured .panel .proposal-info a, .proposal .panel .proposal-info a {color: $morado-claro;}
+.in-favor .button.expand {padding: 0.8rem 2rem;}
+.tag-cloud a .label.info {background: #aaa;}
+
+.filters select, .search-results select {border-radius: 10px; background-color: #eee; border: 0; cursor: pointer;}
+
+button.success, .button.success {background: $verde;}
+button.success:hover, .button.success:hover {background: $morado-claro;}
+
+.debate-show .votes {background: #ccc;}
+.debate-show .votes .icon-like, .debate-show .votes .voted .icon-like {border-color: #7BD2A8;}
+.debate-show .votes .icon-unlike {border-color: #EF8585;}
+
