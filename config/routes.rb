@@ -271,6 +271,7 @@ Rails.application.routes.draw do
   get "/proposals_info", to: "pages#proposals_info"
   get "/participation_facts", to: "pages#participation_facts"
   get "/participation_world", to: "pages#participation_world"
+  get "/faq", to: "pages#faq"
   get "/blog", to: "pages#blog"
   get "/accessibility", to: "pages#accessibility"
   get "/verifica", to: "verification/letter#edit"
