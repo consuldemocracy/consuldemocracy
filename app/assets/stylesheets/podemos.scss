@@ -15,6 +15,7 @@ $morado-claro: #B37EB4;
 
 header {
     background: none;
+    .locale {display: none;}
     .search-form {padding-top: 0;}
     .more-info {
         text-decoration: none;
@@ -45,7 +46,9 @@ button:hover, button:focus, .button:hover, .button:focus{background: $verde;}
 
 .subnavigation-container {min-height: 85px; padding: 1.5rem 0;}
 
-.wrapper-home {background: url(/assets/foto-home-plaza.jpg) no-repeat; padding: 1rem 0;}
+.wrapper-home {background: url(/assets/home-plaza.jpg) no-repeat; padding: 1rem 0;}
+
+.contain-to-grid {background: url(/assets/cabecera-popular.jpg) no-repeat;}
 
 .button {padding: 0.75rem 1.5rem;}
 .button.radius {border-radius: 15px;}
@@ -53,14 +56,17 @@ button:hover, button:focus, .button:hover, .button:focus{background: $verde;}
 button.warning:hover, button.warning:focus, .button.warning:hover, .button.warning:focus {background: $verde;}
 
 .top-links a:hover {color:$verde; text-decoration: none;}
-h3, .page .more-information ul a, .top-bar-section ul li > a {color: $morado !important;}
+.top-bar-section ul li > a {color: white !important;}
+h3, .page .more-information ul a {color: $morado !important;}
+.page .more-information ul a:hover {color: $verde !important;}
+
 .footer {margin-top: 1rem;}
 
 .top-bar-section ul li > a.button {color: white !important;}
 form input[type]:not([type=submit]):not([type=file]):not([type=checkbox]),
 .search-form .button.postfix {margin-bottom: 0;}
 
-.proposal {
+.proposal, .proposal-show {
     margin-bottom: 1rem; margin-top: 0.5rem;
     .panel {
         box-shadow: none; min-height: 0 !important; padding: 0;
@@ -92,6 +98,29 @@ form input[type]:not([type=submit]):not([type=file]):not([type=checkbox]),
     }
 }
 
+.medida-show .votes, .debate-show .votes {
+    background: #ddd;
+    .icon-like, .icon-unlike {background: #B37EB4; border:0; border-radius: 5px;}
+    .total-votes {color: #333; font-weight: bold;}
+    .like span, .unlike-span {color: #333; font-weight: bold;}
+}
+
+.medida {
+    margin-bottom: 1rem; margin-top: 0.5rem;
+    .panel {
+        box-shadow: none; min-height: 0 !important; padding: 0;
+        .medida-content {padding: 1rem;}
+        .icon-medidas {left: 5.2rem; top: 1rem;}
+    }
+    .votes {
+        background: #ddd; border-color: #ddd; padding-bottom: 3rem; padding-top: 3rem;
+        margin: 0;
+        &:after {content: none;}
+        .icon-like, .icon-unlike {background: #B37EB4; border:0; border-radius: 5px;}
+        .like span, .medida .votes .unlike span, .total-votes {color: #333; font-weight: bold;}
+    }
+}
+
 .proposal .panel .label-proposal,
 .proposal .panel .icon-proposals,
 .proposal-featured .panel .proposal-info,
@@ -99,11 +128,16 @@ form input[type]:not([type=submit]):not([type=file]):not([type=checkbox]),
 .debate .panel .label-debate,
 .debate .panel .icon-debates,
 .debate .panel .debate-info,
-.debate .panel .debate-info a {color: $morado-claro;}
+.debate .panel .debate-info a,
+.medida .panel .label-medida,
+.medida .panel .icon-medidas,
+.medida .panel .medida-info,
+.medida .panel .medida-info a{color: $morado-claro;}
 
 .proposal-featured .panel .proposal-info .author,
 .proposal .panel .proposal-info .author,
-.debate .panel .debate-info .author {color: #999;}
+.debate .panel .debate-info .author,
+.medida .panel .medida-info .author {color: #999;}
 
 .proposal .supports, .proposal-featured .supports, .proposal-show .supports {background: #ddd; border-color: #ddd; padding-bottom: 2rem; padding-top: 2rem;}
 
@@ -142,10 +176,30 @@ button.success, .button.success {background: $verde;}
 button.success:hover, .button.success:hover {background: $morado-claro;}
 
 .debate-show .votes {
-    background: #ccc;
+    background: #ddd;
 }
 
 .tag-cloud h3 {text-transform: none;}
 
 .medida-new .icon-medidas, .medida-edit .icon-medidas {display: none;}
+
+.top-bar-section {top: 2rem;}
+.top-bar-section ul li:not(.has-form) a:not(.button) {
+    line-height: 1rem;
+    padding: 0.5rem 0.75rem;
+    background: rgba(0, 0, 0, 0.6);
+    border: 1px solid white;
+}
+
+.top-bar-section ul li:not(.has-form) a:not(.button):hover {
+    line-height: 1rem;
+    border: 1px solid white;
+    text-decoration: none;
+}
+
+.top-bar-section ul li > a.button {margin-top: 0; top: 0;}
+
+.debate-new a, .debate-edit a,.proposal-show .document-link a, .proposal-show .video-link a, {color: $morado;}
+.debate-new a:hover, .debate-edit a:hover,.proposal-show .document-link a:hover, .proposal-show .video-link a:hover, .page .menu a:hover, .page .text a:hover {color: $verde;}
+.page .text a, .page .menu a {color: $morado-claro;}
 
