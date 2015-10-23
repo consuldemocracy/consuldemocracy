@@ -49,9 +49,52 @@ feature 'Proposals' do
     end
   end
 
+  scenario "Searching" do
+    proposal1 = create(:proposal, title: "Show me what you got")
+    proposal2 = create(:proposal, title: "Get Schwifty")
+
+    user = create(:user, :level_two)
+    login_managed_user(user)
+
+    click_link "Support proposals"
+
+    fill_in "search", with: "what you got"
+    click_button "Search"
+
+    expect(current_path).to eq(management_proposals_path)
+
+    within("#proposals") do
+      expect(page).to have_css('.proposal', count: 1)
+      expect(page).to have_content(proposal1.title)
+      expect(page).to_not have_content(proposal2.title)
+      expect(page).to have_css("a[href='#{management_proposal_path(proposal1)}']", text: proposal1.title)
+      expect(page).to have_css("a[href='#{management_proposal_path(proposal1)}']", text: proposal1.summary)
+    end
+  end
+
+  scenario "Listing" do
+    proposal1 = create(:proposal, title: "Show me what you got")
+    proposal2 = create(:proposal, title: "Get Schwifty")
+
+    user = create(:user, :level_two)
+    login_managed_user(user)
+
+    click_link "Support proposals"
+
+    expect(current_path).to eq(management_proposals_path)
+
+    within("#proposals") do
+      expect(page).to have_css('.proposal', count: 2)
+      expect(page).to have_css("a[href='#{management_proposal_path(proposal1)}']", text: proposal1.title)
+      expect(page).to have_css("a[href='#{management_proposal_path(proposal1)}']", text: proposal1.summary)
+      expect(page).to have_css("a[href='#{management_proposal_path(proposal2)}']", text: proposal2.title)
+      expect(page).to have_css("a[href='#{management_proposal_path(proposal2)}']", text: proposal2.summary)
+    end
+  end
+
   context "Voting" do
 
-    scenario 'Voting proposals on behalf of someone', :js do
+    scenario 'Voting proposals on behalf of someone in index view', :js do
       proposal = create(:proposal)
 
       user = create(:user, :level_two)
@@ -68,6 +111,24 @@ feature 'Proposals' do
       expect(URI.parse(current_url).path).to eq(management_proposals_path)
     end
 
+    scenario 'Voting proposals on behalf of someone in show view', :js do
+      proposal = create(:proposal)
+
+      user = create(:user, :level_two)
+      login_managed_user(user)
+
+      click_link "Support proposals"
+
+      within("#proposals") do
+        click_link proposal.title
+      end
+
+      find('.in-favor a').click
+      expect(page).to have_content "1 support"
+      expect(page).to have_content "You already supported this proposal"
+      expect(current_path).to eq(management_proposal_path(proposal))
+    end
+
     scenario "Should not allow unverified users to vote proposals" do
       proposal = create(:proposal)
 
@@ -77,27 +138,6 @@ feature 'Proposals' do
       click_link "Support proposals"
 
       expect(page).to have_content "User is not verified"
-    end
-
-    scenario "Searching" do
-      proposal1 = create(:proposal, title: "Show me what you got")
-      proposal2 = create(:proposal, title: "Get Schwifty")
-
-      user = create(:user, :level_two)
-      login_managed_user(user)
-
-      click_link "Support proposals"
-
-      fill_in "search", with: "what you got"
-      click_button "Search"
-
-      expect(current_path).to eq(management_proposals_path)
-
-      within("#proposals") do
-        expect(page).to have_css('.proposal', count: 1)
-        expect(page).to have_content(proposal1.title)
-        expect(page).to_not have_content(proposal2.title)
-      end
     end
   end
 
