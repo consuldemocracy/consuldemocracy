@@ -47,7 +47,8 @@ es:
       has_no_account_html: "Para crear un usuario entre en %{link} y haga clic en la opción <b>'Registrarse'</b> en la parte superior derecha de la pantalla."
       verify: "Verificar usuario"
     email_verifications:
-      document_found_in_census: "Este documento está en el registro del padrón municipal, pero todavía no tiene una cuenta de usuario asociada. Elige una de las opciones siguientes:"
+      document_found_in_census: "Este documento está en el registro del padrón municipal, pero todavía no tiene una cuenta de usuario asociada."
+      choose_options: "Elige una de las opciones siguientes:"
       if_existing_account: "Si la persona ya ha creado una cuenta de usuario en la web"
       introduce_email: "Introduce el email con el que creó la cuenta:"
       email_placeholder: "Introduce el email de registro"

@@ -47,7 +47,8 @@ en:
       has_no_account_html: "In order to create an account, go to %{link} and click in <b>'Register'</b> in the upper-left part of the screen."
       verify: "Verify"
     email_verifications:
-      document_found_in_census: "This document was found in the census, but it has no user account associated to it. Please choose one of the following options:"
+      document_found_in_census: "This document was found in the census, but it has no user account associated to it."
+      choose_options: "Please choose one of the following options:"
       if_existing_account: "If the person has already a user account created in the website,"
       introduce_email: "Please introduce the email used on the account:"
       email_placeholder: "Write the email this person used to create his or her account"
