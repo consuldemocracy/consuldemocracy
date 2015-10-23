@@ -352,8 +352,6 @@ GEM
     ruby-progressbar (1.7.5)
     rubyzip (1.1.7)
 <<<<<<< HEAD
-    sass (3.4.18)
-=======
     sass (3.4.19)
 >>>>>>> omniauth
     sass-rails (5.0.4)
