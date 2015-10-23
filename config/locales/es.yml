@@ -2,8 +2,9 @@ es:
   locale: "Español"
   layouts:
     header:
+      programa: Programa
       external_link_transparency: Transparencia
-      external_link_transparency_url: "http://www.madrid.es/portales/munimadrid/es/Inicio/El-Ayuntamiento/Transparencia?vgnextfmt=default&vgnextchannel=20fd850769797310VgnVCM2000000c205a0aRCRD"
+      external_link_transparency_url: "https://transparencia.podemos.info/"
       external_link_opendata: Datos abiertos
       external_link_opendata_url: "http://datos.madrid.es"
       external_link_blog: Blog
@@ -27,7 +28,7 @@ es:
       administration: Administrar
       moderation: Moderar
       highlights: "Portada"
-      more_information: "Más información"
+      more_information: "+ Información"
       debates: Debates
       proposals: Propuestas
     footer:
@@ -74,7 +75,7 @@ es:
   debates:
     index:
       title: Debates
-      start_debate: Empieza un debate
+      start_debate: Comienza un debate
       select_order: Ordenar por
       select_order_long: Estás viendo los debates
       orders:
@@ -139,10 +140,10 @@ es:
       recommendation_three: "Las críticas despiadadas son muy bienvenidas. Este es un espacio de pensamiento. Pero te recomendamos conservar la elegancia y la inteligencia. El mundo es mejor con ellas presentes."
       recommendation_four: "Disfruta de este espacio, de las voces que lo llenan, también es tuyo."
       form:
-        submit_button: "Empieza un debate"
+        submit_button: "Comienza un debate"
     create:
       form:
-        submit_button: "Empieza un debate"
+        submit_button: "Comienza un debate"
     update:
       form:
         submit_button: "Guardar cambios"
@@ -150,7 +151,7 @@ es:
   medidas:
     index:
       title: Medidas
-      start_medida: Empieza un medida
+      start_medida: Propón una medida
       select_order: Ordenar por
       select_order_long: Estás viendo las medidas
       orders:

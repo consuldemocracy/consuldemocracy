@@ -4,6 +4,12 @@ $morado: #612d62;
 $verde: #78bbb1;
 $morado-claro: #B37EB4;
 
+/*---------- MIXINS ---------------*/
+
+@mixin supports {
+
+}
+
 
 /*---------- CLASES ---------------*/
 
@@ -16,7 +22,7 @@ header {
     }
 }
 
-.contain-to-grid {background: #fff; border-bottom: 1px solid #ddd;}
+.contain-to-grid {background: white; border-bottom: 1px solid #ddd;}
 .top-bar .name a img {height: auto; margin-top: 1.25rem; width: auto;}
 
 header .search-form .postfix, .button,
@@ -33,7 +39,7 @@ button:hover, button:focus, .button:hover, .button:focus{background: $verde;}
     a {
         line-height: 1rem;
         &:hover {color: $morado; border-bottom: 2px solid $morado;}
-        &.active {border-bottom-color: $morado; color: $morado;}
+        &.active {border-bottom-color: $morado; color: $morado; line-height: 1rem;}
     }
 }
 
@@ -50,7 +56,7 @@ button.warning:hover, button.warning:focus, .button.warning:hover, .button.warni
 h3, .page .more-information ul a, .top-bar-section ul li > a {color: $morado !important;}
 .footer {margin-top: 1rem;}
 
-.top-bar-section ul li > a.button {color: #fff !important;}
+.top-bar-section ul li > a.button {color: white !important;}
 form input[type]:not([type=submit]):not([type=file]):not([type=checkbox]),
 .search-form .button.postfix {margin-bottom: 0;}
 
@@ -61,48 +67,59 @@ form input[type]:not([type=submit]):not([type=file]):not([type=checkbox]),
         .proposal-content {padding: 1rem;}
         .icon-proposals {left: 6.5rem; top: 1rem;}
     }
-    .supports {margin: 0;}
+    .supports {
+        margin: 0;
+        &:after {content: none;}
+        .progress .meter {color: $morado-claro;}
+        .supported {color: #333;}
+        .total-supports {font-weight: bold; color: #333;}
+    }
+}
+
+.debate {
+    margin-bottom: 1rem; margin-top: 0.5rem;
+    .panel {
+        box-shadow: none; min-height: 0 !important; padding: 0;
+        .debate-content {padding: 1rem;}
+        .icon-debates {left: 5.2rem; top: 1rem;}
+    }
+    .votes {
+        background: #ddd; border-color: #ddd; padding-bottom: 3rem; padding-top: 3rem;
+        margin: 0;
+        &:after {content: none;}
+        .icon-like, .icon-unlike {background: #B37EB4; border:0; border-radius: 5px;}
+        .like span, .debate .votes .unlike span, .total-votes {color: #333; font-weight: bold;}
+    }
 }
 
 .proposal .panel .label-proposal,
 .proposal .panel .icon-proposals,
 .proposal-featured .panel .proposal-info,
-.proposal .panel .proposal-info {color: $morado-claro;}
+.proposal .panel .proposal-info,
+.debate .panel .label-debate,
+.debate .panel .icon-debates,
+.debate .panel .debate-info,
+.debate .panel .debate-info a {color: $morado-claro;}
 
 .proposal-featured .panel .proposal-info .author,
-.proposal .panel .proposal-info .author {color: #999;}
+.proposal .panel .proposal-info .author,
+.debate .panel .debate-info .author {color: #999;}
 
-.proposal .supports,
-.proposal-featured .supports,
-.proposal-show .supports {background: #ddd; border-color: #ddd; padding-bottom: 2rem; padding-top: 2rem;}
+.proposal .supports, .proposal-featured .supports, .proposal-show .supports {background: #ddd; border-color: #ddd; padding-bottom: 2rem; padding-top: 2rem;}
 
-.proposal .supports .button-support,
-.proposal-featured .supports .button-support,
-.proposal-show .supports .button-support {background: $morado; color: #fff;}
+.proposal .supports .button-support, .proposal-featured .supports .button-support, .proposal-show .supports .button-support {background: $morado; color: white;}
 
-.proposal .supports .button-support:hover,
-.proposal-featured .supports .button-support:hover,
-.proposal-show .supports .button-support:hover {background: $verde;}
+.proposal .supports .button-support:hover, .proposal-featured .supports .button-support:hover, .proposal-show .supports .button-support:hover {background: $verde;}
 
-.proposal .supports .total-supports {font-weight: bold; color: #333;}
+.proposal .supports abbr, .proposal-featured .supports abbr, .proposal-show .supports abbr {color: #333;}
 
-.proposal .supports abbr,
-.proposal-featured .supports abbr,
-.proposal-show .supports abbr {color: #333;}
+.proposal .supports .percentage, .proposal-featured .supports .percentage, .proposal-show .supports .percentage {color: #333;}
 
-.proposal .supports:after {content: none;}
-
-.proposal .supports .percentage,
-.proposal-featured .supports .percentage,
-.proposal-show .supports .percentage {color: #333;}
-
-.proposal .supports abbr[title],
-.proposal-featured .supports abbr[title],
-.proposal-show .supports abbr[title] {border-bottom-color: #333;}
+.proposal .supports abbr[title], .proposal-featured .supports abbr[title], .proposal-show .supports abbr[title] {border-bottom-color: #333;}
 
 abbr, acronym {font-size: 100%; color: #333;}
 
-.tags a, .tag-cloud a {background: #fff; border: 1px solid #ddd; margin-right: 10px; margin-bottom: 0;}
+.tags a, .tag-cloud a {background: white; border: 1px solid #ddd; margin-right: 10px; margin-bottom: 0;}
 
 .sidebar {
     .tags a, .tag-cloud a, .tag-cloud a {margin-bottom: 1rem;}
@@ -113,7 +130,7 @@ abbr, acronym {font-size: 100%; color: #333;}
     }
 }
 
-.tags a:hover, .tag-cloud a:hover {background: #fff; color: $verde;}
+.tags a:hover, .tag-cloud a:hover {background: white; color: $verde;}
 
 .proposal-featured .panel .proposal-info a, .proposal .panel .proposal-info a {color: $morado-claro;}
 .in-favor .button.expand {padding: 0.8rem 2rem;}
@@ -124,7 +141,11 @@ abbr, acronym {font-size: 100%; color: #333;}
 button.success, .button.success {background: $verde;}
 button.success:hover, .button.success:hover {background: $morado-claro;}
 
-.debate-show .votes {background: #ccc;}
-.debate-show .votes .icon-like, .debate-show .votes .voted .icon-like {border-color: #7BD2A8;}
-.debate-show .votes .icon-unlike {border-color: #EF8585;}
+.debate-show .votes {
+    background: #ccc;
+}
+
+.tag-cloud h3 {text-transform: none;}
+
+.medida-new .icon-medidas, .medida-edit .icon-medidas {display: none;}
 
