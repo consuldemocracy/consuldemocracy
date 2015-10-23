@@ -18,12 +18,16 @@ describe Management::SessionsController do
   end
 
   describe 'Sign out' do
-    it "should destroy the session and redirect" do
+    it "should destroy the session data and redirect" do
       session[:manager] = {user_key: "31415926" , date: "20151031135905", login: "JJB033"}
+      session[:document_type] =  "1"
+      session[:document_number] = "12345678Z"
 
       delete :destroy
 
       expect(session[:manager]).to be_nil
+      expect(session[:document_type]).to be_nil
+      expect(session[:document_number]).to be_nil
       expect(response).to be_redirect
     end
   end
