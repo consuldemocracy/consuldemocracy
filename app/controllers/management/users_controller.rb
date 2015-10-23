@@ -30,7 +30,7 @@ class Management::UsersController < Management::BaseController
     end
 
     def destroy_session
-      session[:document_type] =   nil
+      session[:document_type] = nil
       session[:document_number] = nil
     end
 

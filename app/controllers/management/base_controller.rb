@@ -13,7 +13,7 @@ class Management::BaseController < ActionController::Base
     end
 
     def current_manager
-      session["manager"]
+      session[:manager]
     end
 
     def managed_user

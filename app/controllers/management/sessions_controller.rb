@@ -5,7 +5,7 @@ class Management::SessionsController < ActionController::Base
   def create
     destroy_session
     if manager = ManagerAuthenticator.new(params).auth
-      session["manager"] = manager
+      session[:manager] = manager
       redirect_to management_root_path
     else
       raise ActionController::RoutingError.new('Not Found')
