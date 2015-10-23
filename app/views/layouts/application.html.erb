@@ -19,7 +19,11 @@
       <%= javascript_include_tag "respond" %>
     <![endif]-->
   </head>
-  <body>
+  <% if current_page?(root_url) %>
+      <body class="home-plaza-podemos">
+    <% else %>
+      <body>
+    <% end %>
     <div class="wrapper">
       <%= render 'layouts/header' %>
 
