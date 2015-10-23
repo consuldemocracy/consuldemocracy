@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151013104956) do
+ActiveRecord::Schema.define(version: 20151023092249) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -282,9 +282,11 @@ ActiveRecord::Schema.define(version: 20151013104956) do
     t.boolean "featured",                   default: false
     t.integer "debates_count",              default: 0
     t.integer "proposals_count",            default: 0
+    t.integer "medidas_count",              default: 0
   end
 
   add_index "tags", ["debates_count"], name: "index_tags_on_debates_count", using: :btree
+  add_index "tags", ["medidas_count"], name: "index_tags_on_medidas_count", using: :btree
   add_index "tags", ["name"], name: "index_tags_on_name", unique: true, using: :btree
   add_index "tags", ["proposals_count"], name: "index_tags_on_proposals_count", using: :btree
 
@@ -327,6 +329,7 @@ ActiveRecord::Schema.define(version: 20151013104956) do
     t.integer  "failed_census_calls_count",            default: 0
     t.string   "reddit_user"
     t.string   "reddit_uid"
+    t.integer  "circle_agent",                         default: 0
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree
