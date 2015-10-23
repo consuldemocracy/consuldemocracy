@@ -36,7 +36,7 @@ feature 'Proposals' do
       expect(page).to have_content user.name
       expect(page).to have_content I18n.l(Proposal.last.created_at.to_date)
 
-      expect(URI.parse(current_url).path).to eq(management_proposal_path(Proposal.last))
+      expect(current_path).to eq(management_proposal_path(Proposal.last))
     end
 
     scenario "Should not allow unverified users to create proposals" do
@@ -108,7 +108,7 @@ feature 'Proposals' do
         expect(page).to have_content "1 support"
         expect(page).to have_content "You already supported this proposal"
       end
-      expect(URI.parse(current_url).path).to eq(management_proposals_path)
+      expect(current_path).to eq(management_proposals_path)
     end
 
     scenario 'Voting proposals on behalf of someone in show view', :js do
