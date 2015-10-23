@@ -2,8 +2,9 @@
 
   <div id="error_explanation" data-alert class="alert-box alert radius">
   	<a href="#" class="close" title="<%= t("application.close") %>">&times;</a>
-    <%= t("verification.residence.new.error_verifying_census") %>
-    <%= mail_to "web.gobiernoabierto@madrid.es" %>
+    <%= t("verification.residence.new.error_verifying_census",
+    offices: link_to( t("verification.residence.new.error_verifying_census_offices"),
+    "http://www.madrid.es/portales/munimadrid/es/Inicio/El-Ayuntamiento/Atencion-al-ciudadano/Oficinas-de-Atencion-al-Ciudadano?vgnextfmt=default&vgnextchannel=5b99cde2e09a4310VgnVCM1000000b205a0aRCRD", target: "_blank")).html_safe %>
   </div>
 
 <% else %>
