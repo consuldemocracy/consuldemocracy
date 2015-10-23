@@ -5,6 +5,7 @@ feature 'Stats' do
   background do
     admin = create(:administrator)
     login_as(admin.user)
+    visit root_path
   end
 
   context 'Summary' do
