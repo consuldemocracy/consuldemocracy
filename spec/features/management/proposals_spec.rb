@@ -14,6 +14,13 @@ feature 'Proposals' do
 
       click_link "Create proposal"
 
+      within(".account-info") do
+        expect(page).to have_content "Identified as"
+        expect(page).to have_content "#{user.username}"
+        expect(page).to have_content "#{user.email}"
+        expect(page).to have_content "#{user.document_number}"
+      end
+
       fill_in 'proposal_title', with: 'Help refugees'
       fill_in 'proposal_question', with: '¿Would you like to give assistance to war refugees?'
       fill_in 'proposal_summary', with: 'In summary, what we want is...'
@@ -82,6 +89,13 @@ feature 'Proposals' do
     click_link "Support proposals"
 
     expect(current_path).to eq(management_proposals_path)
+
+    within(".account-info") do
+      expect(page).to have_content "Identified as"
+      expect(page).to have_content "#{user.username}"
+      expect(page).to have_content "#{user.email}"
+      expect(page).to have_content "#{user.document_number}"
+    end
 
     within("#proposals") do
       expect(page).to have_css('.proposal', count: 2)
