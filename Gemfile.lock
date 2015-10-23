@@ -324,6 +324,9 @@ GEM
     rinku (1.7.3)
     rollbar (2.3.0)
       oj (~> 2.12.14)
+    roo (2.1.1)
+      nokogiri (~> 1)
+      rubyzip (~> 1.1, < 2.0.0)
     rspec (3.3.0)
       rspec-core (~> 3.3.0)
       rspec-expectations (~> 3.3.0)
@@ -347,6 +350,7 @@ GEM
     rspec-support (3.3.0)
     ruby-openid (2.7.0)
     ruby-progressbar (1.7.5)
+    rubyzip (1.1.7)
     sass (3.4.18)
     sass-rails (5.0.4)
       railties (>= 4.0.0, < 5.0)
@@ -478,6 +482,7 @@ DEPENDENCIES
   responders
   rinku
   rollbar (~> 2.3.0)
+  roo
   rspec-rails (~> 3.0)
   sass-rails (~> 5.0)
   savon
