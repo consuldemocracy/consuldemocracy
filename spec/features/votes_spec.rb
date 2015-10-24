@@ -260,7 +260,7 @@ feature 'Votes' do
           expect(page).to have_content "1 support"
           expect(page).to have_content "You already supported this proposal, share it!"
         end
-        expect(URI.parse(current_url).path).to eq(proposals_path)
+        expect(current_path).to eq(proposals_path)
       end
 
       scenario 'Create in featured proposal in index', :js do
@@ -271,7 +271,7 @@ feature 'Votes' do
 
           expect(page).to have_content "You already supported this proposal, share it!"
         end
-        expect(URI.parse(current_url).path).to eq(proposals_path)
+        expect(current_path).to eq(proposals_path)
       end
     end
   end

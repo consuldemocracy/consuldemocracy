@@ -8,6 +8,11 @@ feature 'Managed User' do
 
   context "Currently managed user" do
 
+    scenario "No managed user" do
+      visit management_document_verifications_path
+      expect(page).not_to have_css ".account-info"
+    end
+
     scenario "User is already level three verified" do
       user = create(:user, :level_three)
 
@@ -54,6 +59,15 @@ feature 'Managed User' do
       visit management_document_verifications_path
       fill_in 'document_verification_document_number', with: '1234'
       click_button 'Check'
+
+      within(".account-info") do
+        expect(page).not_to have_content "Identified as"
+        expect(page).not_to have_content "Username"
+        expect(page).not_to have_content "Email"
+        expect(page).to have_content "Document type"
+        expect(page).to have_content "Document number"
+        expect(page).to have_content "1234"
+      end
 
       expect(page).to have_content "Please introduce the email used on the account"
 
@@ -115,6 +129,8 @@ feature 'Managed User' do
     end
 
     expect(page).to have_content "User session signed out successfully."
+    expect(page).to_not have_content "Identified as"
+    expect(page).to_not have_content "#{user.username}"
     expect(current_path).to eq(management_root_path)
   end
 
