@@ -62,19 +62,12 @@
             &nbsp;&bull;&nbsp;<time><%= l comment.created_at.to_datetime, format: :datetime %></time>
           </div>
 
-          <% if comment.as_administrator? %>
-            <div class="comment-user is-admin"><%= simple_format text_with_links comment.body %></div>
-          <% elsif comment.as_moderator? %>
-            <div class="comment-user is-moderator"><%= simple_format text_with_links comment.body %></div>
-          <% elsif comment.user.official? && comment.user_id == @commentable.author_id %>
-            <div class="comment-user level-<%= comment.user.official_level %> is-author"><%= simple_format text_with_links comment.body %></div>
-          <% elsif comment.user.official? %>
-            <div class="comment-user level-<%= comment.user.official_level %>"><%= simple_format text_with_links comment.body %></div>
-          <% elsif comment.user_id == @commentable.author_id %>
-            <div class="comment-user is-author"><%= simple_format text_with_links comment.body %></div>
-          <% else %>
-            <div class="comment-user"><%= simple_format text_with_links comment.body %></div>
-          <% end %>
+          <div class="comment-user
+                    <%= user_level_class comment %>
+                    <%= comment_author_class comment, @commentable.author_id %>">
+            <%= text_with_links comment.body %>
+          </div>
+
           <span id="<%= dom_id(comment) %>_votes" class="comment-votes right">
             <%= render 'comments/votes', comment: comment %>
           </span>

@@ -17,4 +17,23 @@ module CommentsHelper
     comments.select{|c| c.parent_id == parent.id}
   end
 
+  def user_level_class(comment)
+    if comment.as_administrator?
+      "is-admin"
+    elsif comment.as_moderator?
+      "is-moderator"
+    elsif comment.user.official?
+      "level-#{comment.user.official_level}"
+    else
+      "" # Default no special user class
+    end
+  end
+
+  def comment_author_class(comment, author_id)
+    if comment.user_id == author_id
+      "is-author"
+    else
+      "" # Default not author class
+    end
+  end
 end
