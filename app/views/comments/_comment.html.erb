@@ -63,17 +63,17 @@
           </div>
 
           <% if comment.as_administrator? %>
-            <p class="comment-user is-admin"><%= text_with_links comment.body %></p>
+            <div class="comment-user is-admin"><%= simple_format text_with_links comment.body %></div>
           <% elsif comment.as_moderator? %>
-            <p class="comment-user is-moderator"><%= text_with_links comment.body %></p>
+            <div class="comment-user is-moderator"><%= simple_format text_with_links comment.body %></div>
           <% elsif comment.user.official? && comment.user_id == @commentable.author_id %>
-            <p class="comment-user level-<%= comment.user.official_level %> is-author"><%= text_with_links comment.body %></p>
+            <div class="comment-user level-<%= comment.user.official_level %> is-author"><%= simple_format text_with_links comment.body %></div>
           <% elsif comment.user.official? %>
-            <p class="comment-user level-<%= comment.user.official_level %>"><%= text_with_links comment.body %></p>
+            <div class="comment-user level-<%= comment.user.official_level %>"><%= simple_format text_with_links comment.body %></div>
           <% elsif comment.user_id == @commentable.author_id %>
-            <p class="comment-user is-author"><%= text_with_links comment.body %></p>
+            <div class="comment-user is-author"><%= simple_format text_with_links comment.body %></div>
           <% else %>
-            <p class="comment-user"><%= text_with_links comment.body %></p>
+            <div class="comment-user"><%= simple_format text_with_links comment.body %></div>
           <% end %>
           <span id="<%= dom_id(comment) %>_votes" class="comment-votes right">
             <%= render 'comments/votes', comment: comment %>
