@@ -42,7 +42,7 @@ i18n_namespace: "medidas.index.search_form" %>
         <% end %>
         -->
 
-        <div class="smal-12 medium-12 menu-programa">
+        <div class="small-12 medium-12 menu-programa">
             <a href="">Eje 1</a>
             <a href="">Eje 2</a>
             <a href="">Eje 3</a>
@@ -50,9 +50,9 @@ i18n_namespace: "medidas.index.search_form" %>
             <a href="">Eje 5</a>
         </div>
 
-        <div class="show-for-small-only">
+        <!--div class="show-for-small-only">
           <%= link_to t("medidas.index.start_medida"), new_medida_path, class: 'button radius expand' %>
-        </div>
+        </div-->
 
         <%= render @medidas %>
         <%= paginate @medidas %>

@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title><%= content_for?(:title) ? yield(:title) : "Gobierno abierto" %></title>
+    <title><%= content_for?(:title) ? yield(:title) : "Plaza Podemos 2.0" %></title>
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "vendor/modernizr" %>
     <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
@@ -18,8 +18,8 @@
       <div class="small-12 medium-8 large-5 column small-centered">
         <h1>
           <%= link_to root_path do %>
-            <%= image_tag('header_logo_madrid.png', class: 'show-for-medium-up left', size: '96x96') %>
-            <%= t("layouts.header.open_gov", open: "#{t('layouts.header.open')}").html_safe %>
+            <%= image_tag('header_logo_plaza.png', class: 'show-for-medium-up left') %>
+            <!--%= t("layouts.header.open_gov", open: "#{t('layouts.header.open')}").html_safe %-->
           <% end %>
         </h1>
       </div>

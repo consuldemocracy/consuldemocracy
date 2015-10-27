@@ -10,6 +10,7 @@ es:
       external_link_blog: Blog
       external_link_blog_url: "/blog"
       open_gov: "Gobierno %{open}"
+      plaza_podemos: "Plaza Podemos 2.0"
       open: "abierto"
       participation: Participación
       open_city_title: "Un lugar de encuentro para construir PODEMOS."
@@ -32,12 +33,12 @@ es:
       debates: Debates
       proposals: Propuestas
     footer:
-      description: "Este portal usa la %{consul} que es %{open_source}. De Madrid, para el mundo entero."
+      description: "Este portal usa la %{consul}, que es %{open_source}, y está basado en el portal de <a href='https://decide.madrid.es/' target='_blank'>Participación</a> del Ayuntamiento de Madrid."
       open_source: "software libre"
       open_source_url: "http://www.gnu.org/licenses/agpl-3.0.html"
       consul: "aplicación Consul"
       consul_url: "https://github.com/ayuntamientomadrid"
-      copyright: "Ayuntamiento de Madrid, %{year}"
+      copyright: "Podemos, %{year}"
       participation_title: "Participación"
       participation_text: "Decide cómo debe ser la ciudad de Madrid que quieres."
       transparency_title: Transparencia
@@ -131,7 +132,7 @@ es:
         submit_button: "Guardar cambios"
     new:
       start_new: Empezar un debate
-      info: "Un debate es un foro de discusión, no una propuesta ciudadana. Muy pronto abriremos la sección de propuestas ciudadanas, donde cualquiera podrá presentar propuestas y, si reciben apoyo, serán puestas en marcha por el Ayuntamiento."
+      info: "Un debate es un foro de discusión, no una propuesta ciudadana."
       more_info: "Más información"
       back_link: Volver
       recommendations_title: Recomendaciones para crear un debate
@@ -150,7 +151,7 @@ es:
 
   medidas:
     index:
-      title: Medidas
+      title: Programa
       start_medida: Propón una medida
       select_order: Ordenar por
       select_order_long: Estás viendo las medidas
@@ -207,7 +208,7 @@ es:
         submit_button: "Guardar cambios"
     new:
       start_new: Empezar un medida
-      info: "Un medida es un foro de discusión, no una propuesta ciudadana. Muy pronto abriremos la sección de propuestas ciudadanas, donde cualquiera podrá presentar propuestas y, si reciben apoyo, serán puestas en marcha por el Ayuntamiento."
+      info: "Un medida es un foro de discusión, no una propuesta ciudadana."
       more_info: "Más información"
       back_link: Volver
       recommendations_title: Recomendaciones para crear un medida
@@ -398,7 +399,7 @@ es:
       description: "La ciudadanía decide si acepta o rechaza las propuestas más apoyadas."
     do:
       title: "Se hace"
-      description: "Si la propuesta es aceptada mayoritariamente, el Ayuntamiento la asume como propia y se hace."
+      description: "Si la propuesta es aceptada mayoritariamente se asume como propia y se hace."
     welcome:
       title: Verificación de cuenta
       instructions_1_html: "Bienvenido a la página de participación ciudadana"
