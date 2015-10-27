@@ -68,6 +68,23 @@ feature 'Verify Letter' do
       expect(current_path).to eq(account_path)
     end
 
+    scenario "Valid verification of user failing to add trailing zeros" do
+      user = create(:user, residence_verified_at: Time.now,
+                           confirmed_phone:       "611111111",
+                           letter_verification_code: "012345")
+
+      login_as(user)
+      visit edit_letter_path
+
+      fill_in "verification_letter_email", with: user.email
+      fill_in "verification_letter_password", with: user.password
+      fill_in "verification_letter_verification_code", with: "12345"
+      click_button "Verify my account"
+
+      expect(page).to have_content "Your account has been verified"
+      expect(current_path).to eq(account_path)
+    end
+
     scenario "Valid verification user not logged in" do
       user = create(:user, residence_verified_at: Time.now,
                            confirmed_phone:       "611111111",

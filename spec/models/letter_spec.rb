@@ -48,6 +48,14 @@ describe 'Verification::Letter' do
       expect(letter.valid?).to eq(true)
       expect(letter.errors).to be_empty
     end
+
+    it "ignores trailing zeros" do
+      letter.user.update(letter_verification_code: "003456")
+      letter.verification_code = "3456"
+
+      expect(letter.valid?).to eq(true)
+      expect(letter.errors).to be_empty
+    end
   end
 
 end
