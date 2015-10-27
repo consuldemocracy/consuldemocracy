@@ -414,4 +414,19 @@ button.success:hover, .button.success:hover {
 .page .text a, .page .menu a {
   color: #B37EB4; }
 
+/* line 207, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
+.menu-programa {
+  float: left;
+  margin: 2em 0; }
+  /* line 210, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
+  .menu-programa a {
+    color: #612d62;
+    font-weight: bold;
+    float: left;
+    text-align: center;
+    width: 20%; }
+    /* line 216, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
+    .menu-programa a:hover {
+      color: #78bbb1; }
+
 /*# sourceMappingURL=podemos.css.map */

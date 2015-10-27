@@ -24,6 +24,7 @@ i18n_namespace: "medidas.index.search_form" %>
           <% end %>
         </div>
 
+        <!--
         <% if @tag_filter || @search_terms %>
           <div class="small-12 medium-5 margin-top inline-block medidas-order">
             <h6 class="inline-block">
@@ -39,6 +40,15 @@ i18n_namespace: "medidas.index.search_form" %>
             <%= render 'shared/order_selector', i18n_namespace: "medidas.index" %>
           </div>
         <% end %>
+        -->
+
+        <div class="smal-12 medium-12 menu-programa">
+            <a href="">Eje 1</a>
+            <a href="">Eje 2</a>
+            <a href="">Eje 3</a>
+            <a href="">Eje 4</a>
+            <a href="">Eje 5</a>
+        </div>
 
         <div class="show-for-small-only">
           <%= link_to t("medidas.index.start_medida"), new_medida_path, class: 'button radius expand' %>
@@ -49,11 +59,19 @@ i18n_namespace: "medidas.index.search_form" %>
       </div>
     </div>
 
-    <!--div class="small-12 medium-3 column">
+    <div class="small-12 medium-3 column">
       <aside class="sidebar" role="complementary">
-        <%= link_to t("medidas.index.start_medida"), new_medida_path, class: 'button radius expand' %>
-        <%= render "shared/tag_cloud", taggable: 'medida' %>
+        <!--%= link_to t("medidas.index.start_medida"), new_medida_path, class: 'button radius expand' %-->
+        <!--%= render "shared/tag_cloud", taggable: 'medida' %-->
+        <div class="tag-cloud">
+            <div class="sidebar-divider"></div>
+            <h3>Eje seleccionado</h3>
+            <br>
+            <a href="" class="l">Sub-eje 1</a>
+            <a href="" class="l">Sub-eje 2</a>
+            <a href="" class="l">Sub-eje 3</a>
+        </div>
       </aside>
-    </div-->
+    </div>
   </div>
 </section>
