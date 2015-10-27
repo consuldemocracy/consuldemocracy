@@ -33,10 +33,26 @@ namespace :init do
     #Medida.delete_all
     xlsx= Roo::Spreadsheet.open('programa.xlsx')
     xlsxs.sheet(0).each_row(offset: 1) do |row|
-      Medida.new do |m|
-        m.id = row[0].to_i
-        m.nombre_oficial = row[-1]
-        m.slug = row[-1].to_slug
+      Medida.new do |t|
+        t.ID =r[0]
+        t.title =r[1]
+        t.description=r[2]+r[3]+r[4]
+        t.author_id
+        t.created_at
+        t.updated_at
+        t.visit_id
+        t.hidden_at
+        t.flags_count
+        t.ignored_flag_at
+        t.cached_votes_total
+        t.cached_votes_up
+        t.cached_votes_down
+        t.comments_count
+        t.confirmed_hide_at
+        t.cached_anonymous_votes_total
+        t.cached_votes_score
+        t.hot_score
+        t.confidence_score
       end .save!
       progress.inc
     end
