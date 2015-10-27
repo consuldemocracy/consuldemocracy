@@ -85,6 +85,7 @@ feature 'Commenting proposals' do
 
     within "#comments" do
       expect(page).to have_content 'Have you thought about...?'
+      expect(page).to have_content '(1)'
     end
   end
 
