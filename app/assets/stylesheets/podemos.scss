@@ -6,10 +6,6 @@ $morado-claro: #B37EB4;
 
 /*---------- MIXINS ---------------*/
 
-@mixin supports {
-
-}
-
 
 /*---------- CLASES ---------------*/
 
@@ -18,7 +14,7 @@ $morado-claro: #B37EB4;
 header {
     background: none;
     .locale {display: none;}
-    .search-form {padding-top: 0;}
+    .search-form {padding-top:0;}
     .more-info {
         text-decoration: none;
         &:hover {opacity: inherit; color: $morado;}
