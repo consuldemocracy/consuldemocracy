@@ -26,7 +26,7 @@ end
 namespace :init do
 
   desc "[init] Cargar datos de territorios"
-  task :territorios => :environment do
+  task :importacion => :environment do
 
     progress = RakeProgressbar.new(%x(cat lib/tasks/init/territorios/* | wc -l).to_i + 1)
 
@@ -45,76 +45,5 @@ namespace :init do
       end .save!
       progress.inc
     end
-
-    Comunidad.delete_all
-    CSV.foreach "lib/tasks/init/territorios/comunidades.csv", {:col_sep => "\t"} do |row|
-      Comunidad.new do |c|
-        c.id = row[0][2..-1].to_i
-        nombres = row[1].split("/")
-        c.nombre_oficial = nombres[0]
-        c.nombre_cooficial = nombres[1]
-        c.slug = row[4]
-        c.poblacion = row[2].to_i
-        c.superficie = row[3].to_i
-      end .save!
-      progress.inc
-    end
-
-    Provincia.delete_all
-    capitales = {}
-    CSV.foreach "lib/tasks/init/territorios/provincias.csv", {:col_sep => "\t"} do |row|
-      Provincia.new do |p|
-        p.id = row[0][2..-1].to_i
-        p.comunidad_id = row[3][2..-1].to_i
-        nombres = row[1].split("/")
-        p.nombre_oficial = nombres[0]
-        p.nombre_cooficial = nombres[1]
-        p.slug = nombres[0].to_slug
-        p.poblacion = row[5].to_i
-        p.superficie = row[6].to_i
-        capitales[row[2]] = p
-      end .save!
-      progress.inc
-    end
-
-    Isla.delete_all
-    islas = {}
-    CSV.foreach "lib/tasks/init/territorios/islas.tsv", {:col_sep => "\t"} do |row|
-      provincia_id = row[0][2..4].to_i
-      id = row[2][2..-1].to_i
-      Isla.new do |i|
-        i.id = id
-        i.provincia_id = provincia_id
-        nombres = row[3].split("/")
-        i.nombre_oficial = nombres[0]
-        i.nombre_cooficial = nombres[1]
-        i.slug = nombres[0].to_slug
-      end .save! if not islas.values.member? id
-      islas[row[0]] = id
-      progress.inc
-    end
-
-    Municipio.delete_all
-    CSV.foreach "lib/tasks/init/territorios/municipios.csv", {:col_sep => "\t"} do |row|
-      municipio = Municipio.new do |m|
-        m.id = "#{row[0][2..3]}#{row[0][5..7]}#{row[0][9]}".to_i
-        m.provincia_id = row[2][2..-1].to_i
-        m.isla_id = islas[row[0]]
-        nombres = row[1].split("/")
-        m.nombre_oficial = nombres[0]
-        m.nombre_cooficial = nombres[1]
-        m.slug = nombres[0].to_slug
-        m.poblacion = row[6].to_i
-        m.superficie = row[7].to_i
-        m.longitud = row[8].to_f
-        m.latitud = row[9].to_f
-      end
-
-      municipio.save!
-      capital = capitales[row[1]]
-      municipio.capital_de = capital if capital and capital.id == municipio.provincia_id
-      progress.inc
-    end
   end
-
 end
