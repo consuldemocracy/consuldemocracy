@@ -19,6 +19,11 @@ header {
     }
 }
 
+.home-plaza-podemos {
+   .contain-to-grid {background: none;}
+    section[role="main"] {padding: 2.5em 0 1em;}
+}
+
 .contain-to-grid {background: white; border-bottom: 1px solid #ddd;}
 .top-bar .name a img {height: auto; margin-top: 1.25rem; width: auto;}
 
