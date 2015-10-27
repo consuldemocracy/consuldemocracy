@@ -4,7 +4,7 @@
       <div id="comments" class="small-12 column">
         <h2>
           <%= t("debates.show.comments_title") %>
-          <span>(<%= @debate.comments_count %>)</span>
+          <span class="js-comments-count">(<%= @debate.comments_count %>)</span>
         </h2>
 
         <% if user_signed_in? %>
