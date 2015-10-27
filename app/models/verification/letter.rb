@@ -43,8 +43,9 @@ class Verification::Letter
 
   private
 
+    # six-digit numbers, zero not the first digit
     def generate_verification_code
-      rand.to_s[2..7]
+      rand(100000..999999).to_s
     end
 
 end
