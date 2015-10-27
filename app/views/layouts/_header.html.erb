@@ -4,7 +4,7 @@
       <%= render "shared/locale_switcher" %>
       <div class="external-links">
         <%= link_to t("layouts.header.participation"), root_path, class: ("selected" unless current_page?("/transparency") || current_page?("/opendata")) %>&nbsp;|
-        <%= link_to t("layouts.header.external_link_transparency"), "/transparency", class: ("selected" if current_page?("/transparency")) %>&nbsp;
+        <a href="http://transparencia.podemos.info" target="_blank">Transparencia</a>
         <!--%= link_to t("layouts.header.external_link_opendata"), "/opendata", class: ("selected" if current_page?("/opendata")) %-->
       </div>
     </div>

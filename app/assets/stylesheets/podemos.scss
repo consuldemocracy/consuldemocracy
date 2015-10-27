@@ -6,6 +6,11 @@ $morado-claro: #B37EB4;
 
 /*---------- MIXINS ---------------*/
 
+@mixin titulo-temas {
+    padding: 1rem;
+    h3 a:hover {color: $verde;}
+}
+
 
 /*---------- CLASES ---------------*/
 
@@ -73,7 +78,7 @@ form input[type]:not([type=submit]):not([type=file]):not([type=checkbox]),
     margin-bottom: 1rem; margin-top: 0.5rem;
     .panel {
         box-shadow: none; min-height: 0 !important; padding: 0;
-        .proposal-content {padding: 1rem;}
+        .proposal-content {@include titulo-temas;}
         .icon-proposals {left: 6.5rem; top: 1rem;}
     }
     .supports {
@@ -89,7 +94,7 @@ form input[type]:not([type=submit]):not([type=file]):not([type=checkbox]),
     margin-bottom: 1rem; margin-top: 0.5rem;
     .panel {
         box-shadow: none; min-height: 0 !important; padding: 0;
-        .debate-content {padding: 1rem;}
+        .debate-content {@include titulo-temas;}
         .icon-debates {left: 5.2rem; top: 1rem;}
     }
     .votes {
@@ -112,7 +117,7 @@ form input[type]:not([type=submit]):not([type=file]):not([type=checkbox]),
     margin-bottom: 1rem; margin-top: 0.5rem;
     .panel {
         box-shadow: none; min-height: 0 !important; padding: 0;
-        .medida-content {padding: 1rem;}
+        .medida-content {@include titulo-temas;}
         .icon-medidas {left: 5.2rem; top: 1rem;}
     }
     .votes {
@@ -169,7 +174,11 @@ abbr, acronym {font-size: 100%; color: #333;}
 
 .tags a:hover, .tag-cloud a:hover {background: white; color: $verde;}
 
-.proposal-featured .panel .proposal-info a, .proposal .panel .proposal-info a {color: $morado-claro;}
+.proposal-featured .panel .proposal-info a, .proposal .panel .proposal-info a {
+    color: $morado-claro;
+}
+
+.proposal-info a:hover, .debate-info a:hover, .medida-info a:hover {color: $morado !important;}
 .in-favor .button.expand {padding: 0.8rem 2rem;}
 .tag-cloud a .label.info {background: #aaa;}
 
@@ -202,8 +211,8 @@ button.success:hover, .button.success:hover {background: $morado-claro;}
 
 .top-bar-section ul li > a.button {margin-top: 0; top: 0;}
 
-.debate-new a, .debate-edit a,.proposal-show .document-link a, .proposal-show .video-link a, {color: $morado;}
-.debate-new a:hover, .debate-edit a:hover,.proposal-show .document-link a:hover, .proposal-show .video-link a:hover, .page .menu a:hover, .page .text a:hover {color: $verde;}
+.debate-new a, .debate-edit a, .proposal-new a, .proposal-show .document-link a, .proposal-show .video-link a, {color: $morado;}
+.debate-new a:hover, .proposal-new a:hover, .debate-edit a:hover,.proposal-show .document-link a:hover, .proposal-show .video-link a:hover, .page .menu a:hover, .page .text a:hover {color: $verde;}
 .page .text a, .page .menu a {color: $morado-claro;}
 
 .menu-programa {
@@ -218,4 +227,29 @@ button.success:hover, .button.success:hover {background: $morado-claro;}
         &:hover {color: $verde;}
     }
 }
+
+.comments .comment .comment-body .comment-user.is-author {background: #ddd;}
+
+.comments .comment-children .comment-body .comment-user.is-author {background: #eee;}
+
+.is-author {background: $verde;}
+
+.js-add-comment-link, .verify-account .already-verified {color: $verde;}
+
+.auth-page {
+    background: #ddd;
+    a.back, i {color: $morado;}
+}
+
+footer {
+    padding: 4rem 0 0;
+    .logo a {font-size: 1.35rem;}
+}
+
+.admin {
+    .title-area {display: none;}
+}
+
+.proposal-new .icon-proposals,
+.debate-new .icon-debates {display: none;}
 
