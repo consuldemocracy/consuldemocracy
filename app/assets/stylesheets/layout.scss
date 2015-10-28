@@ -1937,6 +1937,25 @@ table {
   opacity: 0.4;
 }
 
+.filter-comments {
+  float: none;
+  margin-top: 0;
+
+  @media (min-width: $small-breakpoint) {
+    float: right;
+    margin-top: rem-calc(-24);
+  }
+
+  label {
+    padding-right: rem-calc(12);
+    float: none;
+
+    @media (min-width: $small-breakpoint) {
+      float: right;
+    }
+  }
+}
+
 // 19. Flags
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
