@@ -8,22 +8,7 @@
           <span class="js-comments-count">(<%= @proposal.comments_count %>)</span>
         </h2>
 
-        <!-- Filter for comments -->
-        <div class="filter-comments small-12 medium-8">
-          <form>
-            <div class="small-12 medium-8 left">
-              <label for="order-selector-participation"><%= t("debates.index.select_order") %></label>
-            </div>
-            <div class="small-12 medium-4 left">
-              <select class="js-location-changer js-order-selector select-order" data-order="<%= @current_order %>" name="order-selector" id="order-selector-participation">
-                <option>Más votados</option>
-                <option>Más nuevos</option>
-                <option>Aleatorios</option>
-              </select>
-            </div>
-          </form>
-        </div>
-        <!-- /. Filter for comments -->
+        <%= render 'shared/wide_order_selector', i18n_namespace: "comments" %>
 
         <% if user_signed_in? %>
           <%= render 'comments/form', {commentable: @proposal, parent_id: nil, toggeable: false} %>

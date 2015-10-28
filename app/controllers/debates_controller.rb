@@ -7,6 +7,7 @@ class DebatesController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
 
   has_orders %w{hot_score confidence_score created_at most_commented random}, only: :index
+  has_orders %w{most_voted created_at}, only: :show
 
   load_and_authorize_resource
   respond_to :html, :js

@@ -243,6 +243,10 @@ en:
       form:
         submit_button: "Save changes"
   comments:
+    select_order: "Sort by"
+    orders:
+      most_voted: "Most voted"
+      created_at: "Newest"
     form:
       leave_comment: Write a comment
       comment_as_moderator: Comment as moderator
