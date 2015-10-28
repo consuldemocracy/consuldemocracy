@@ -17,6 +17,11 @@ module CommentsHelper
     comments.select{|c| c.parent_id == parent.id}
   end
 
+  def count_children(comments, parent)
+    return 0 if comments.blank?
+    comments.count{ |c| c.parent_id == parent.id }
+  end
+
   def user_level_class(comment)
     if comment.as_administrator?
       "is-admin"
