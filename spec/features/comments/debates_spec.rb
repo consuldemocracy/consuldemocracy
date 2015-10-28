@@ -71,7 +71,6 @@ feature 'Commenting debates' do
       within('#comments') do
         expect(page).to_not have_content 'Write a comment'
         expect(page).to_not have_content 'Reply'
-        expect(page).to_not have_css('form')
       end
     end
   end
