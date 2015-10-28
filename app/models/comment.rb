@@ -19,11 +19,10 @@ class Comment < ActiveRecord::Base
 
   before_save :calculate_confidence_score
 
-  scope :recent, -> { order(id: :desc) }
   scope :for_render, -> { with_hidden.includes(user: :organization) }
   scope :with_visible_author, -> { joins(:user).where("users.hidden_at IS NULL") }
   scope :sort_by_flags, -> { order(flags_count: :desc, updated_at: :desc) }
-  scope :sort_by_confidence_score , -> { order(confidence_score: :desc) }
+  scope :sort_by_confidence_score , -> { order(confidence_score: :desc, created_at: :desc) }
   scope :sort_by_created_at, -> { order(created_at: :desc) }
 
   after_create :call_after_commented
