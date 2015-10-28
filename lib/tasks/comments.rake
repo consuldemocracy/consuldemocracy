@@ -6,4 +6,11 @@ namespace :comments do
     Proposal.all.pluck(:id).each{ |id| Proposal.reset_counters(id, :comments) }
   end
 
+  desc "Recalculates all the comment confidence scores (used for sorting comments)"
+  task confidence_score: :environment do
+    Comment.find_in_batches do |comments|
+      comments.each(&:save)
+    end
+  end
+
 end
