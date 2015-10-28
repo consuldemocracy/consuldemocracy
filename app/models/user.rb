@@ -67,8 +67,11 @@ class User < ActiveRecord::Base
     dni = User.dni_from_id(auth.uid.split('/').pop)
     # Create the user if it's a new registration
     if user.nil?
+      name_parts=auth.info.name.split(' ')
+      user_alias= name_parts[0][0]+name_parts[1]
       user = User.new(
-        username: auth.info.nickname || auth.info.name || auth.extra.raw_info.name.parameterize('-') || auth.uid ,
+        #username: auth.info.nickname || auth.info.name || auth.extra.raw_info.name.parameterize('-') || auth.uid ,
+        username: user_alias ,
         email: email ? email : auth.info.email ? auth.info.email : "#{OMNIAUTH_EMAIL_PREFIX}-#{auth.uid}-#{auth.provider}.com",
         password: Devise.friendly_token[0,20], terms_of_service: '1', document_type: 'Spanish ID', document_number: dni,
         verified_at: DateTime.now
