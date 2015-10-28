@@ -267,7 +267,7 @@ feature 'Votes' do
         within("#proposal_#{@proposal.id}") do
           find('.in-favor a').click
 
-          expect(page).to have_content "You already supported this proposal, share it!"
+          expect(page).to have_content "You have already supported this proposal. Share it!"
         end
         expect(current_path).to eq(proposals_path)
       end
