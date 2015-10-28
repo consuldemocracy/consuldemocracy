@@ -20,6 +20,22 @@ feature 'Commenting proposals' do
     end
   end
 
+ scenario 'Comment order' do
+    c1 = create(:comment, :with_confidence_score, commentable: proposal, cached_votes_up: 100, cached_votes_total: 120, created_at: Time.now - 2)
+    c2 = create(:comment, :with_confidence_score, commentable: proposal, cached_votes_up: 10, cached_votes_total: 12, created_at: Time.now - 1)
+    c3 = create(:comment, :with_confidence_score, commentable: proposal, cached_votes_up: 1, cached_votes_total: 2, created_at: Time.now)
+
+    visit proposal_path(proposal)
+
+    expect(c1.body).to appear_before(c2.body)
+    expect(c2.body).to appear_before(c3.body)
+
+    visit proposal_path(proposal, order: :created_at)
+
+    expect(c3.body).to appear_before(c2.body)
+    expect(c2.body).to appear_before(c1.body)
+  end
+
   scenario 'Turns links into html links' do
     create :comment, commentable: proposal, body: 'Built with http://rubyonrails.org/'
 

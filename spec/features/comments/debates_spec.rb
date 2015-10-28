@@ -20,6 +20,22 @@ feature 'Commenting debates' do
     end
   end
 
+  scenario 'Comment order' do
+    c1 = create(:comment, :with_confidence_score, commentable: debate, cached_votes_up: 100, cached_votes_total: 120, created_at: Time.now - 2)
+    c2 = create(:comment, :with_confidence_score, commentable: debate, cached_votes_up: 10, cached_votes_total: 12, created_at: Time.now - 1)
+    c3 = create(:comment, :with_confidence_score, commentable: debate, cached_votes_up: 1, cached_votes_total: 2, created_at: Time.now)
+
+    visit debate_path(debate)
+
+    expect(c1.body).to appear_before(c2.body)
+    expect(c2.body).to appear_before(c3.body)
+
+    visit debate_path(debate, order: :created_at)
+
+    expect(c3.body).to appear_before(c2.body)
+    expect(c2.body).to appear_before(c1.body)
+  end
+
   scenario 'Turns links into html links' do
     create :comment, commentable: debate, body: 'Built with http://rubyonrails.org/'
 

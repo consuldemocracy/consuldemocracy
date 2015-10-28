@@ -16,7 +16,7 @@ module CommentableActions
   def show
     set_resource_votes(resource)
     @commentable = resource
-    @root_comments = resource.comments.roots.recent.page(params[:page]).per(10).for_render
+    @root_comments = resource.comments.roots.send("sort_by_#{@current_order}").page(params[:page]).per(10).for_render
     @comments = @root_comments.inject([]){|all, root| all + Comment.descendants_of(root).for_render}
     @all_visible_comments = @root_comments + @comments
 

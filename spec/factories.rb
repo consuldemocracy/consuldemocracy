@@ -197,7 +197,7 @@ FactoryGirl.define do
   factory :comment do
     association :commentable, factory: :debate
     user
-    body 'Comment body'
+    sequence(:body) { |n| "Comment body #{n}" }
 
     trait :hidden do
       hidden_at Time.now
