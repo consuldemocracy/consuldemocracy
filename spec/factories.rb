@@ -216,6 +216,10 @@ FactoryGirl.define do
         Flag.flag(FactoryGirl.create(:user), debate)
       end
     end
+
+    trait :with_confidence_score do
+      before(:save) { |d| d.calculate_confidence_score }
+    end
   end
 
   factory :administrator do
