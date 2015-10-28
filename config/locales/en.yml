@@ -245,7 +245,7 @@ en:
   comments:
     select_order: "Sort by"
     orders:
-      most_voted: "Most voted"
+      confidence_score: "Most voted"
       created_at: "Newest"
     form:
       leave_comment: Write a comment

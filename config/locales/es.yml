@@ -245,7 +245,7 @@ es:
   comments:
     select_order: "Ordenar por"
     orders:
-      most_voted: "Más votados"
+      confidence_score: "Más votados"
       created_at: "Más nuevos"
     form:
       leave_comment: Deja tu comentario
