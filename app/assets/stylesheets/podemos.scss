@@ -218,12 +218,12 @@ button.success:hover, .button.success:hover {background: $morado-claro;}
 .menu-programa {
     float: left;
     margin: 2em 0;
-    >a {
+    a {
         color: $morado;
         font-weight: bold;
         float:left;
         text-align: center;
-        width: 16%;
+        width: 20%;
         &:hover {color: $verde;}
     }
 }
@@ -259,17 +259,39 @@ footer {
   display: none;
 }
 
-.condiciones-generales {
-    h2 {margin-top: 0.5rem;}
-    h3 {font-size: 1rem; margin-top: 1rem;}
-    strong {font-size: 1rem;}
-}
+/*
+.nav > li {
+				float:left;
+			}
 
-.f-dropdown li a {
-    color: $morado;
-    &:hover {color:$verde;}
-}
+			.nav li a {
+				background-color:#000;
+				color:#fff;
+				text-decoration:none;
+				padding:10px 12px;
+				display:block;
+			}
 
-#epi-bloque3.f-dropdown li,
-#epi-bloque6.f-dropdown li{display: inline-block;}
+			.nav li a:hover {
+				background-color:#434343;
+			}
 
+			.nav li ul {
+				display:none;
+				position:absolute;
+				min-width:140px;
+			}
+
+			.nav li:hover > ul {
+				display:block;
+			}
+
+			.nav li ul li {
+				position:relative;
+			}
+
+			.nav li ul li ul {
+				right:-140px;
+				top:0px;
+			}
+*/
