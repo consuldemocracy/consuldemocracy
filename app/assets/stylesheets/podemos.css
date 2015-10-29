@@ -486,18 +486,33 @@ footer {
   display: none; }
 
 /* line 257, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
-.condiciones-generales p, .condiciones-generales strong {
-  font-size: 1rem; }
+[class*='bloque1-epi'], [class*='bloque2-epi'], [class*='bloque3-epi'],
+[class*='bloque4-epi'], [class*='bloque5-epi'], [class*='bloque6-epi'] {
+  display: none; }
 
-/* line 258, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
+/* line 263, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
 .condiciones-generales h2 {
-  font-size: 1.25rem;
-  font-weight: bold;
-  margin: 1rem 0; }
+  margin-top: 0.5rem; }
 
-/* line 259, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
+/* line 264, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
 .condiciones-generales h3 {
   font-size: 1rem;
   margin-top: 1rem; }
+
+/* line 265, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
+.condiciones-generales strong {
+  font-size: 1rem; }
+
+/* line 268, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
+.f-dropdown li a {
+  color: #612d62; }
+  /* line 270, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
+  .f-dropdown li a:hover {
+    color: #78bbb1; }
+
+/* line 274, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
+#epi-bloque3.f-dropdown li,
+#epi-bloque6.f-dropdown li {
+  display: inline-block; }
 
 /*# sourceMappingURL=podemos.css.map */

@@ -259,39 +259,16 @@ footer {
   display: none;
 }
 
-/*
-.nav > li {
-				float:left;
-			}
+.condiciones-generales {
+    h2 {margin-top: 0.5rem;}
+    h3 {font-size: 1rem; margin-top: 1rem;}
+    strong {font-size: 1rem;}
+}
 
-			.nav li a {
-				background-color:#000;
-				color:#fff;
-				text-decoration:none;
-				padding:10px 12px;
-				display:block;
-			}
+.f-dropdown li a {
+    color: $morado;
+    &:hover {color:$verde;}
+}
 
-			.nav li a:hover {
-				background-color:#434343;
-			}
-
-			.nav li ul {
-				display:none;
-				position:absolute;
-				min-width:140px;
-			}
-
-			.nav li:hover > ul {
-				display:block;
-			}
-
-			.nav li ul li {
-				position:relative;
-			}
-
-			.nav li ul li ul {
-				right:-140px;
-				top:0px;
-			}
-*/
+#epi-bloque3.f-dropdown li,
+#epi-bloque6.f-dropdown li{display: inline-block;}
