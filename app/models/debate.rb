@@ -5,6 +5,7 @@ class Debate < ActiveRecord::Base
   include Conflictable
   include Measurable
   include Sanitizable
+  include PgSearch
 
   apply_simple_captcha
   acts_as_votable
@@ -35,6 +36,22 @@ class Debate < ActiveRecord::Base
 
   # Ahoy setup
   visitable # Ahoy will automatically assign visit_id on create
+
+  pg_search_scope :pg_search, {
+    against: {
+      title:       'A',
+      description: 'B'
+    },
+    associated_against: {
+      tags: :name
+    },
+    using: {
+      tsearch: { dictionary: "spanish" },
+      trigram: { threshold: 0.1 },
+    },
+    ranked_by: '(:tsearch + debates.cached_votes_up)',
+    order_within_rank: "debates.created_at DESC"
+  }
 
   def description
     super.try :html_safe
@@ -102,12 +119,7 @@ class Debate < ActiveRecord::Base
   end
 
   def self.search(terms)
-    return none unless terms.present?
-
-    debate_ids = where("debates.title ILIKE ? OR debates.description ILIKE ?",
-                       "%#{terms}%", "%#{terms}%").pluck(:id)
-    tag_ids = tagged_with(terms, wild: true, any: true).pluck(:id)
-    where(id: [debate_ids, tag_ids].flatten.compact)
+    self.pg_search(terms)
   end
 
   def after_hide
