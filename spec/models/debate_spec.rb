@@ -318,35 +318,6 @@ describe Debate do
 
   end
 
-  describe "self.search" do
-    it "find debates by title" do
-      debate1 = create(:debate, title: "Karpov vs Kasparov")
-      create(:debate, title: "Bird vs Magic")
-      search = Debate.search("Kasparov")
-      expect(search.size).to eq(1)
-      expect(search.first).to eq(debate1)
-    end
-
-    it "find debates by description" do
-      debate1 = create(:debate, description: "...chess masters...")
-      create(:debate, description: "...basket masters...")
-      search = Debate.search("chess")
-      expect(search.size).to eq(1)
-      expect(search.first).to eq(debate1)
-    end
-
-    it "find debates by title and description" do
-      create(:debate, title: "Karpov vs Kasparov", description: "...played like Gauss...")
-      create(:debate, title: "Euler vs Gauss", description: "...math masters...")
-      search = Debate.search("Gauss")
-      expect(search.size).to eq(2)
-    end
-
-    it "returns no results if no search term provided" do
-      expect(Debate.search("    ").size).to eq(0)
-    end
-  end
-
   describe "cache" do
     let(:debate) { create(:debate) }
 
@@ -453,6 +424,171 @@ describe Debate do
     it "should return false when it has not votes up" do
       debate.update(cached_votes_up: 0)
       expect(debate).to_not be_conflictive
+    end
+
+  end
+
+  describe "search" do
+
+    context "attributes" do
+
+      it "searches by title" do
+        debate = create(:debate, title: 'save the world')
+        results = Debate.search('save the world')
+        expect(results).to eq([debate])
+      end
+
+      it "searches by description" do
+        debate = create(:debate, description: 'in order to save the world one must think about...')
+        results = Debate.search('one must think')
+        expect(results).to eq([debate])
+      end
+
+    end
+
+    context "stemming" do
+
+      it "searches word stems" do
+        debate = create(:debate, title: 'limpiar')
+
+        results = Debate.search('limpiará')
+        expect(results).to eq([debate])
+
+        results = Debate.search('limpiémos')
+        expect(results).to eq([debate])
+
+        results = Debate.search('limpió')
+        expect(results).to eq([debate])
+      end
+
+    end
+
+    context "accents" do
+
+      it "searches with accents" do
+        debate = create(:debate, title: 'difusión')
+
+        results = Debate.search('difusion')
+        expect(results).to eq([debate])
+
+        debate2 = create(:debate, title: 'estadisticas')
+        results = Debate.search('estadísticas')
+        expect(results).to eq([debate2])
+      end
+
+    end
+
+    context "case" do
+
+      it "searches case insensite" do
+        debate = create(:debate, title: 'SHOUT')
+
+        results = Debate.search('shout')
+        expect(results).to eq([debate])
+
+        debate2 = create(:debate, title: "scream")
+        results = Debate.search("SCREAM")
+        expect(results).to eq([debate2])
+      end
+
+    end
+
+    context "typos" do
+
+      it "searches with typos" do
+        debate = create(:debate, title: 'difusión')
+
+        results = Debate.search('difuon')
+        expect(results).to eq([debate])
+
+        debate2 = create(:debate, title: 'desarrollo')
+        results = Debate.search('desarolo')
+        expect(results).to eq([debate2])
+      end
+
+    end
+
+    context "order" do
+
+      it "orders by weight" do
+        debate_description = create(:debate,  description: 'stop corruption')
+        debate_title       = create(:debate,  title:       'stop corruption')
+
+        results = Debate.search('stop corruption')
+
+        expect(results.first).to eq(debate_title)
+        expect(results.second).to eq(debate_description)
+      end
+
+      it "orders by weight and then votes" do
+        title_some_votes    = create(:debate, title: 'stop corruption', cached_votes_up: 5)
+        title_least_voted   = create(:debate, title: 'stop corruption', cached_votes_up: 2)
+        title_most_voted    = create(:debate, title: 'stop corruption', cached_votes_up: 10)
+        description_most_voted  = create(:debate, description: 'stop corruption', cached_votes_up: 10)
+
+        results = Debate.search('stop corruption')
+
+        expect(results.first).to eq(title_most_voted)
+        expect(results.second).to eq(description_most_voted)
+        expect(results.third).to eq(title_some_votes)
+        expect(results.fourth).to eq(title_least_voted)
+      end
+
+      it "orders by weight and then votes and then created_at" do
+        newest = create(:debate, title: 'stop corruption', cached_votes_up: 5, created_at: Time.now)
+        oldest = create(:debate, title: 'stop corruption', cached_votes_up: 5, created_at: 1.month.ago)
+        old    = create(:debate, title: 'stop corruption', cached_votes_up: 5, created_at: 1.week.ago)
+
+        results = Debate.search('stop corruption')
+
+        expect(results.first).to eq(newest)
+        expect(results.second).to eq(old)
+        expect(results.third).to eq(oldest)
+      end
+
+    end
+
+    context "tags" do
+
+      it "searches by tags" do
+        debate = create(:debate, tag_list: 'Latina')
+
+        results = Debate.search('Latina')
+        expect(results.first).to eq(debate)
+      end
+
+    end
+
+    context "no results" do
+
+      it "no words match" do
+        debate = create(:debate, title: 'save world')
+
+        results = Debate.search('destroy planet')
+        expect(results).to eq([])
+      end
+
+      it "too many typos" do
+        debate = create(:debate, title: 'fantastic')
+
+        results = Debate.search('frantac')
+        expect(results).to eq([])
+      end
+
+      it "too much stemming" do
+        debate = create(:debate, title: 'reloj')
+
+        results = Debate.search('superrelojimetro')
+        expect(results).to eq([])
+      end
+
+      it "empty" do
+        debate = create(:debate, title: 'great')
+
+        results = Debate.search('')
+        expect(results).to eq([])
+      end
+
     end
 
   end

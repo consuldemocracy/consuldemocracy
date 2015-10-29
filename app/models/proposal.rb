@@ -4,6 +4,7 @@ class Proposal < ActiveRecord::Base
   include Conflictable
   include Measurable
   include Sanitizable
+  include PgSearch
 
   apply_simple_captcha
   acts_as_votable
@@ -37,6 +38,24 @@ class Proposal < ActiveRecord::Base
   scope :sort_by_most_commented, -> { order(comments_count: :desc) }
   scope :sort_by_random, -> { order("RANDOM()") }
   scope :sort_by_flags, -> { order(flags_count: :desc, updated_at: :desc) }
+
+  pg_search_scope :pg_search, {
+    against: {
+      title:       'A',
+      question:    'B',
+      summary:     'C',
+      description: 'D'
+    },
+    associated_against: {
+      tags: :name
+    },
+    using: {
+      tsearch: { dictionary: "spanish" },
+      trigram: { threshold: 0.1 },
+    },
+    ranked_by: '(:tsearch + proposals.cached_votes_up)',
+    order_within_rank: "proposals.created_at DESC"
+  }
 
   def description
     super.try :html_safe
@@ -93,7 +112,7 @@ class Proposal < ActiveRecord::Base
   end
 
   def self.search(terms)
-    terms.present? ? where("title ILIKE ? OR description ILIKE ? OR question ILIKE ?", "%#{terms}%", "%#{terms}%", "%#{terms}%") : none
+    self.pg_search(terms)
   end
 
   def self.votes_needed_for_success
