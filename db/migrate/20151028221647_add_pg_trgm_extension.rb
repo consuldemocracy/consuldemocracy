@@ -1,5 +1,5 @@
 class AddPgTrgmExtension < ActiveRecord::Migration
   def change
-    execute "create extension pg_trgm"
+    execute "create extension pg_trgm if not exists pg_trgm"
   end
 end
