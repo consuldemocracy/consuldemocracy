@@ -73,8 +73,6 @@ es:
     verification::sms: "el teléfono"
     verification::letter: "la verificación"
   application:
-    alert:
-      only_beta_testers: "Lo sentimos sólo los usuarios de pruebas tienen acceso de momento"
     close: "Cerrar"
     menu: "Menú"
   debates:

@@ -73,8 +73,6 @@ en:
     verification::sms: "Telephone"
     verification::letter: "the verification"
   application:
-    alert:
-      only_beta_testers: "Sorry: only beta testers have access at this time"
     close: "Close"
     menu: "Menu"
   debates:

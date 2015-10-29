@@ -57,7 +57,6 @@ namespace :deploy do
   # Custom compile and rsync of assets - works, but it is very slow
   #after 'deploy:symlink:shared', 'deploy:compile_assets_locally'
 
-  after :finishing, 'deploy:beta_testers'
   after :finishing, 'deploy:cleanup'
   # Restart unicorn
   after 'deploy:publishing', 'deploy:restart'
