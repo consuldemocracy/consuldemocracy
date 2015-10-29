@@ -218,12 +218,12 @@ button.success:hover, .button.success:hover {background: $morado-claro;}
 .menu-programa {
     float: left;
     margin: 2em 0;
-    a {
+    >a {
         color: $morado;
         font-weight: bold;
         float:left;
         text-align: center;
-        width: 20%;
+        width: 16%;
         &:hover {color: $verde;}
     }
 }

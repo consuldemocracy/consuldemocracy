@@ -436,14 +436,14 @@ button.success:hover, .button.success:hover {
   float: left;
   margin: 2em 0; }
   /* line 221, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
-  .menu-programa a {
+  .menu-programa > a {
     color: #612d62;
     font-weight: bold;
     float: left;
     text-align: center;
-    width: 20%; }
+    width: 16%; }
     /* line 227, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
-    .menu-programa a:hover {
+    .menu-programa > a:hover {
       color: #78bbb1; }
 
 /* line 231, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
