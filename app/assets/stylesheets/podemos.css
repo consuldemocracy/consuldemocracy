@@ -2,276 +2,280 @@
 /*---------- MIXINS ---------------*/
 /*---------- CLASES ---------------*/
 /* line 17, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
+.home-plaza-podemos .contain-to-grid {
+  background: none; }
+
+/* line 19, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
 header {
   background: none; }
-  /* line 19, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
+  /* line 21, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
   header .locale {
     display: none; }
-  /* line 20, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
+  /* line 22, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
   header .search-form {
     padding-top: 0; }
-  /* line 21, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
+  /* line 23, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
   header .more-info {
     text-decoration: none; }
-    /* line 23, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
+    /* line 25, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
     header .more-info:hover {
       opacity: inherit;
       color: #612d62; }
 
-/* line 28, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
+/* line 30, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
 .home-plaza-podemos .contain-to-grid {
   background: none; }
 
-/* line 29, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
+/* line 31, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
 .home-plaza-podemos section[role="main"] {
   padding: 2.5em 0 1em; }
 
-/* line 32, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
+/* line 34, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
 .contain-to-grid {
   background: white;
   border-bottom: 1px solid #ddd; }
 
-/* line 33, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
+/* line 35, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
 .top-bar .name a img {
   height: auto;
   margin-top: 1.25rem;
   width: auto; }
 
-/* line 36, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
+/* line 38, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
 header .search-form .postfix, .button,
 .top-links, .top-bar-section ul li > a.button {
   background: #612d62; }
 
-/* line 37, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
+/* line 39, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
 .tag-cloud h3, .footer {
   border-color: #612d62; }
 
-/* line 39, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
+/* line 41, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
 .search-form .button.postfix,
 button:hover, button:focus, .button:hover, .button:focus {
   background: #78bbb1; }
 
-/* line 40, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
+/* line 42, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
 .search-form .button.postfix:hover {
   background: #612d62; }
 
-/* line 41, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
+/* line 43, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
 .top-bar-section ul li > a.button:hover {
   background: #78bbb1 !important; }
 
-/* line 42, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
+/* line 44, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
 .top-bar-section ul li {
   margin-left: 1rem; }
 
-/* line 44, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
+/* line 46, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
 .subnavigation {
   min-height: 0; }
-  /* line 46, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
+  /* line 48, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
   .subnavigation a {
     line-height: 1rem; }
-    /* line 48, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
+    /* line 50, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
     .subnavigation a:hover {
       color: #612d62;
       border-bottom: 2px solid #612d62; }
-    /* line 49, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
+    /* line 51, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
     .subnavigation a.active {
       border-bottom-color: #612d62;
       color: #612d62;
       line-height: 1rem; }
 
-/* line 53, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
+/* line 55, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
 .subnavigation-container {
   min-height: 85px;
   padding: 1.5rem 0; }
 
-/* line 55, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
+/* line 57, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
 .wrapper-home {
   background: url(/assets/home-plaza.jpg) no-repeat;
   padding: 1rem 0; }
 
-/* line 57, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
+/* line 59, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
 .contain-to-grid {
   background: url(/assets/cabecera-popular.jpg) no-repeat; }
 
-/* line 59, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
+/* line 61, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
 .button {
   padding: 0.75rem 1.5rem; }
 
-/* line 60, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
+/* line 62, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
 .button.radius {
   border-radius: 15px; }
 
-/* line 61, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
+/* line 63, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
 .button.warning {
   background-color: #612d62;
   border: 0; }
 
-/* line 62, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
+/* line 64, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
 button.warning:hover, button.warning:focus, .button.warning:hover, .button.warning:focus {
   background: #78bbb1; }
 
-/* line 64, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
+/* line 66, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
 .top-links a:hover {
   color: #78bbb1;
   text-decoration: none; }
 
-/* line 65, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
+/* line 67, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
 .top-bar-section ul li > a {
   color: white !important; }
 
-/* line 66, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
+/* line 68, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
 h3, .page .more-information ul a {
   color: #612d62 !important; }
 
-/* line 67, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
+/* line 69, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
 .page .more-information ul a:hover {
   color: #78bbb1 !important; }
 
-/* line 69, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
+/* line 71, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
 .footer {
   margin-top: 1rem; }
 
-/* line 71, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
+/* line 73, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
 .top-bar-section ul li > a.button {
   color: white !important; }
 
-/* line 73, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
+/* line 75, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
 form input[type]:not([type=submit]):not([type=file]):not([type=checkbox]),
 .search-form .button.postfix {
   margin-bottom: 0; }
 
-/* line 75, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
+/* line 77, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
 .proposal, .proposal-show {
   margin-bottom: 1rem;
   margin-top: 0.5rem; }
-  /* line 77, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
+  /* line 79, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
   .proposal .panel, .proposal-show .panel {
     box-shadow: none;
     min-height: 0 !important;
     padding: 0; }
-    /* line 79, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
+    /* line 81, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
     .proposal .panel .proposal-content, .proposal-show .panel .proposal-content {
       padding: 1rem; }
       /* line 11, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
       .proposal .panel .proposal-content h3 a:hover, .proposal-show .panel .proposal-content h3 a:hover {
         color: #78bbb1; }
-    /* line 80, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
+    /* line 82, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
     .proposal .panel .icon-proposals, .proposal-show .panel .icon-proposals {
       left: 6.5rem;
       top: 1rem; }
-  /* line 82, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
+  /* line 84, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
   .proposal .supports, .proposal-show .supports {
     margin: 0; }
-    /* line 84, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
+    /* line 86, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
     .proposal .supports:after, .proposal-show .supports:after {
       content: none; }
-    /* line 85, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
+    /* line 87, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
     .proposal .supports .progress .meter, .proposal-show .supports .progress .meter {
       color: #B37EB4; }
-    /* line 86, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
+    /* line 88, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
     .proposal .supports .supported, .proposal-show .supports .supported {
       color: #333; }
-    /* line 87, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
+    /* line 89, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
     .proposal .supports .total-supports, .proposal-show .supports .total-supports {
       font-weight: bold;
       color: #333; }
 
-/* line 91, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
+/* line 93, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
 .debate {
   margin-bottom: 1rem;
   margin-top: 0.5rem; }
-  /* line 93, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
+  /* line 95, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
   .debate .panel {
     box-shadow: none;
     min-height: 0 !important;
     padding: 0; }
-    /* line 95, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
+    /* line 97, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
     .debate .panel .debate-content {
       padding: 1rem; }
       /* line 11, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
       .debate .panel .debate-content h3 a:hover {
         color: #78bbb1; }
-    /* line 96, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
+    /* line 98, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
     .debate .panel .icon-debates {
       left: 5.2rem;
       top: 1rem; }
-  /* line 98, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
+  /* line 100, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
   .debate .votes {
     background: #ddd;
     border-color: #ddd;
     padding-bottom: 3rem;
     padding-top: 3rem;
     margin: 0; }
-    /* line 101, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
+    /* line 103, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
     .debate .votes:after {
       content: none; }
-    /* line 102, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
+    /* line 104, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
     .debate .votes .icon-like, .debate .votes .icon-unlike {
       background: #B37EB4;
       border: 0;
       border-radius: 5px; }
-    /* line 103, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
+    /* line 105, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
     .debate .votes .like span, .debate .votes .debate .votes .unlike span, .debate .votes .total-votes {
       color: #333;
       font-weight: bold; }
 
-/* line 107, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
+/* line 109, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
 .medida-show .votes, .debate-show .votes {
   background: #ddd; }
-  /* line 109, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
+  /* line 111, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
   .medida-show .votes .icon-like, .medida-show .votes .icon-unlike, .debate-show .votes .icon-like, .debate-show .votes .icon-unlike {
     background: #B37EB4;
     border: 0;
     border-radius: 5px; }
-  /* line 110, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
+  /* line 112, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
   .medida-show .votes .total-votes, .debate-show .votes .total-votes {
     color: #333;
     font-weight: bold; }
-  /* line 111, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
+  /* line 113, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
   .medida-show .votes .like span, .medida-show .votes .unlike-span, .debate-show .votes .like span, .debate-show .votes .unlike-span {
     color: #333;
     font-weight: bold; }
 
-/* line 114, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
+/* line 116, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
 .medida {
   margin-bottom: 1rem;
   margin-top: 0.5rem; }
-  /* line 116, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
+  /* line 118, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
   .medida .panel {
     box-shadow: none;
     min-height: 0 !important;
     padding: 0; }
-    /* line 118, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
+    /* line 120, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
     .medida .panel .medida-content {
       padding: 1rem; }
       /* line 11, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
       .medida .panel .medida-content h3 a:hover {
         color: #78bbb1; }
-    /* line 119, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
+    /* line 121, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
     .medida .panel .icon-medidas {
       left: 5.2rem;
       top: 1rem; }
-  /* line 121, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
+  /* line 123, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
   .medida .votes {
     background: #ddd;
     border-color: #ddd;
     padding-bottom: 3rem;
     padding-top: 3rem;
     margin: 0; }
-    /* line 124, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
+    /* line 126, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
     .medida .votes:after {
       content: none; }
-    /* line 125, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
+    /* line 127, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
     .medida .votes .icon-like, .medida .votes .icon-unlike {
       background: #B37EB4;
       border: 0;
       border-radius: 5px; }
-    /* line 126, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
+    /* line 128, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
     .medida .votes .like span, .medida .votes .medida .votes .unlike span, .medida .votes .total-votes {
       color: #333;
       font-weight: bold; }
 
-/* line 141, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
+/* line 143, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
 .proposal .panel .label-proposal,
 .proposal .panel .icon-proposals,
 .proposal-featured .panel .proposal-info,
@@ -286,199 +290,214 @@ form input[type]:not([type=submit]):not([type=file]):not([type=checkbox]),
 .medida .panel .medida-info a {
   color: #B37EB4; }
 
-/* line 146, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
+/* line 148, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
 .proposal-featured .panel .proposal-info .author,
 .proposal .panel .proposal-info .author,
 .debate .panel .debate-info .author,
 .medida .panel .medida-info .author {
   color: #999; }
 
-/* line 148, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
+/* line 150, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
 .proposal .supports, .proposal-featured .supports, .proposal-show .supports {
   background: #ddd;
   border-color: #ddd;
   padding-bottom: 2rem;
   padding-top: 2rem; }
 
-/* line 150, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
+/* line 152, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
 .proposal .supports .button-support, .proposal-featured .supports .button-support, .proposal-show .supports .button-support {
   background: #612d62;
   color: white; }
 
-/* line 152, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
+/* line 154, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
 .proposal .supports .button-support:hover, .proposal-featured .supports .button-support:hover, .proposal-show .supports .button-support:hover {
   background: #78bbb1; }
 
-/* line 154, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
+/* line 156, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
 .proposal .supports abbr, .proposal-featured .supports abbr, .proposal-show .supports abbr {
   color: #333; }
 
-/* line 156, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
+/* line 158, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
 .proposal .supports .percentage, .proposal-featured .supports .percentage, .proposal-show .supports .percentage {
   color: #333; }
 
-/* line 158, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
+/* line 160, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
 .proposal .supports abbr[title], .proposal-featured .supports abbr[title], .proposal-show .supports abbr[title] {
   border-bottom-color: #333; }
 
-/* line 160, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
+/* line 162, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
 abbr, acronym {
   font-size: 100%;
   color: #333; }
 
-/* line 162, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
+/* line 164, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
 .tags a, .tag-cloud a {
   background: white;
   border: 1px solid #ddd;
   margin-right: 10px;
   margin-bottom: 0; }
 
-/* line 165, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
+/* line 167, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
 .sidebar .tags a, .sidebar .tag-cloud a, .sidebar .tag-cloud a {
   margin-bottom: 1rem; }
 
-/* line 166, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
+/* line 168, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
 .sidebar .button.radius {
   border-radius: 0;
   background: #78bbb1; }
-  /* line 169, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
+  /* line 171, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
   .sidebar .button.radius:hover {
     background: #612d62; }
 
-/* line 173, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
+/* line 175, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
 .tags a:hover, .tag-cloud a:hover {
   background: white;
   color: #78bbb1; }
 
-/* line 175, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
+/* line 177, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
 .proposal-featured .panel .proposal-info a, .proposal .panel .proposal-info a {
   color: #B37EB4; }
 
-/* line 179, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
+/* line 181, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
 .proposal-info a:hover, .debate-info a:hover, .medida-info a:hover {
   color: #612d62 !important; }
 
-/* line 180, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
+/* line 182, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
 .in-favor .button.expand {
   padding: 0.8rem 2rem; }
 
-/* line 181, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
+/* line 183, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
 .tag-cloud a .label.info {
   background: #aaa; }
 
-/* line 183, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
+/* line 185, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
 .filters select, .search-results select {
   border-radius: 10px;
   background-color: #eee;
   border: 0;
   cursor: pointer; }
 
-/* line 185, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
+/* line 187, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
 button.success, .button.success {
   background: #78bbb1; }
 
-/* line 186, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
+/* line 188, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
 button.success:hover, .button.success:hover {
   background: #B37EB4; }
 
-/* line 188, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
+/* line 190, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
 .debate-show .votes {
   background: #ddd; }
 
-/* line 192, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
+/* line 194, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
 .tag-cloud h3 {
   text-transform: none; }
 
-/* line 194, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
+/* line 196, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
 .medida-new .icon-medidas, .medida-edit .icon-medidas {
   display: none; }
 
-/* line 196, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
+/* line 198, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
 .top-bar-section {
   top: 2rem; }
 
-/* line 197, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
+/* line 199, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
 .top-bar-section ul li:not(.has-form) a:not(.button) {
   line-height: 1rem;
   padding: 0.5rem 0.75rem;
   background: rgba(0, 0, 0, 0.6);
   border: 1px solid white; }
 
-/* line 204, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
+/* line 206, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
 .top-bar-section ul li:not(.has-form) a:not(.button):hover {
   line-height: 1rem;
   border: 1px solid white;
   text-decoration: none; }
 
-/* line 210, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
+/* line 212, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
 .top-bar-section ul li > a.button {
   margin-top: 0;
   top: 0; }
 
-/* line 212, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
+/* line 214, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
 .debate-new a, .debate-edit a, .proposal-new a, .proposal-show .document-link a, .proposal-show .video-link a {
   color: #612d62; }
 
-/* line 213, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
+/* line 215, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
 .debate-new a:hover, .proposal-new a:hover, .debate-edit a:hover, .proposal-show .document-link a:hover, .proposal-show .video-link a:hover, .page .menu a:hover, .page .text a:hover {
   color: #78bbb1; }
 
-/* line 214, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
+/* line 216, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
 .page .text a, .page .menu a {
   color: #B37EB4; }
 
-/* line 216, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
+/* line 218, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
 .menu-programa {
   float: left;
   margin: 2em 0; }
-  /* line 219, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
+  /* line 221, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
   .menu-programa a {
     color: #612d62;
     font-weight: bold;
     float: left;
     text-align: center;
     width: 20%; }
-    /* line 225, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
+    /* line 227, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
     .menu-programa a:hover {
       color: #78bbb1; }
 
-/* line 229, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
+/* line 231, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
 .comments .comment .comment-body .comment-user.is-author {
   background: #ddd; }
 
-/* line 231, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
+/* line 233, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
 .comments .comment-children .comment-body .comment-user.is-author {
   background: #eee; }
 
-/* line 233, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
+/* line 235, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
 .is-author {
   background: #78bbb1; }
 
-/* line 235, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
+/* line 237, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
 .js-add-comment-link, .verify-account .already-verified {
   color: #78bbb1; }
 
-/* line 237, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
+/* line 239, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
 .auth-page {
   background: #ddd; }
-  /* line 239, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
+  /* line 241, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
   .auth-page a.back, .auth-page i {
     color: #612d62; }
 
-/* line 242, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
+/* line 244, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
 footer {
   padding: 4rem 0 0; }
-  /* line 244, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
+  /* line 246, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
   footer .logo a {
     font-size: 1.35rem; }
 
-/* line 248, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
+/* line 250, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
 .admin .title-area {
   display: none; }
 
-/* line 252, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
+/* line 254, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
 .proposal-new .icon-proposals,
 .debate-new .icon-debates {
   display: none; }
+
+/* line 257, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
+.condiciones-generales p, .condiciones-generales strong {
+  font-size: 1rem; }
+
+/* line 258, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
+.condiciones-generales h2 {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin: 1rem 0; }
+
+/* line 259, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
+.condiciones-generales h3 {
+  font-size: 1rem;
+  margin-top: 1rem; }
 
 /*# sourceMappingURL=podemos.css.map */
