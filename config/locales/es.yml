@@ -324,6 +324,19 @@ es:
     check: "Seleccionar"
     check_all: "Todos"
     check_none: "Ninguno"
+  users:
+    show:
+      filters:
+        proposals:
+          one: "1 Propuesta"
+          other: "%{count} Propuestas"
+        debates:
+          one: "1 Debate"
+          other: "%{count} Debates"
+        comments:
+          one: "1 Comentario"
+          other: "%{count} Comentarios"
+      no_activity: "Usuario sin actividad pública"
   unauthorized:
     default: "No tienes permiso para acceder a esta página."
     manage:

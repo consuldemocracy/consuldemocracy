@@ -324,6 +324,19 @@ en:
     check: "Select"
     check_all: "All"
     check_none: "None"
+  users:
+    show:
+      filters:
+        proposals:
+          one: "1 Proposal"
+          other: "%{count} Proposals"
+        debates:
+          one: "1 Debate"
+          other: "%{count} Debates"
+        comments:
+          one: "1 Comment"
+          other: "%{count} Comments"
+      no_activity: "Usuario sin actividad pública"
   unauthorized:
     default: "You do not have permission to access this page."
     manage:
