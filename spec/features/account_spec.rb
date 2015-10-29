@@ -37,7 +37,7 @@ feature 'Account' do
     check 'account_email_on_comment_reply'
     click_button 'Save changes'
 
-    expect(page).to have_content "Saved"
+    expect(page).to have_content "Changes saved"
 
     visit account_path
 
@@ -55,7 +55,7 @@ feature 'Account' do
     check 'account_email_on_comment_reply'
     click_button 'Save changes'
 
-    expect(page).to have_content "Saved"
+    expect(page).to have_content "Changes saved"
 
     visit account_path
 
@@ -91,7 +91,7 @@ feature 'Account' do
 
     click_button 'Erase my account'
 
-    expect(page).to have_content "Your account has been successfully cancelled"
+    expect(page).to have_content "Goodbye! Your account has been cancelled. We hope to see you again soon."
 
     login_through_form_as(@user)
 

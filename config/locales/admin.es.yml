@@ -2,177 +2,177 @@ es:
   admin:
     settings:
       index:
-        title: Configuración global
-        update_setting: Actualizar
+        title: "Configuración global"
+        update_setting: "Actualizar"
       flash:
-        updated: 'Valor actualizado'
+        updated: "Valor actualizado"
     dashboard:
       index:
-        title: Administración
+        title: "Administración"
     menu:
-      settings: Configuración global
-      debate_topics: Temas de debate
-      hidden_proposals: Propuestas ocultas
-      hidden_debates: Debates ocultos
-      hidden_comments: Comentarios ocultos
-      hidden_users: Usuarios bloqueados
-      incomplete_verifications: Verificaciones incompletas
-      organizations: Organizaciones
-      officials: Cargos públicos
-      moderators: Moderadores
-      stats: Estadísticas
-      activity: Actividad de moderadores
+      settings: "Configuración global"
+      debate_topics: "Temas de debate"
+      hidden_proposals: "Propuestas ocultas"
+      hidden_debates: "Debates ocultos"
+      hidden_comments: "Comentarios ocultos"
+      hidden_users: "Usuarios bloqueados"
+      incomplete_verifications: "Verificaciones incompletas"
+      organizations: "Organizaciones"
+      officials: "Cargos públicos"
+      moderators: "Moderadores"
+      stats: "Estadísticas"
+      activity: "Actividad de moderadores"
     shared:
       user_search:
-        placeholder: 'Buscar usuario por nombre o email'
-        button: 'Buscar'
+        placeholder: "Buscar usuario por nombre o email"
+        button: "Buscar"
       proposal_search:
-        placeholder: 'Buscar propuestas por título, descripción o pregunta'
-        button: 'Buscar'
+        placeholder: "Buscar propuestas por título, descripción o pregunta"
+        button: "Buscar"
     organizations:
       index:
-        title: Organizaciones
+        title: "Organizaciones"
         search_placeholder: "Nombre, email o teléfono"
-        search: Buscar
-        verify: Verificar
-        reject: Rechazar
-        verified: Verificada
-        rejected: Rechazada
-        filter: Filtro
+        search: "Buscar"
+        verify: "Verificar"
+        reject: "Rechazar"
+        verified: "Verificada"
+        rejected: "Rechazada"
+        filter: "Filtro"
         filters:
-          all: Todas
-          pending: Pendientes
-          verified: Verificadas
-          rejected: Rechazadas
+          all: "Todas"
+          pending: "Pendientes"
+          verified: "Verificadas"
+          rejected: "Rechazadas"
         hidden_count:
           one: "Hay además una organización sin usuario o con el usuario bloqueado"
           other: "Hay %{count} organizaciones sin usuario o con el usuario bloqueado"
       search:
         title: "Buscar Organizaciones"
     actions:
-      hide: Ocultar
-      hide_author: Bloquear al autor
-      restore: Volver a mostrar
-      confirm: '¿Estás seguro?'
-      confirm_hide: Confirmar
+      hide: "Ocultar"
+      hide_author: "Bloquear al autor"
+      restore: "Volver a mostrar"
+      confirm: "¿Estás seguro?"
+      confirm_hide: "Confirmar"
     tags:
       index:
-        title: 'Temas de debate'
-        add_tag: 'Añade un nuevo tema de debate'
-      mark_as_featured: 'Proponer tema al crear debate'
+        title: "Temas de debate"
+        add_tag: "Añade un nuevo tema de debate"
+      mark_as_featured: "Proponer tema al crear debate"
       name:
-        placeholder: 'Escribe el nombre del tema'
-      create: Crear Tema
-      update: Actualizar Tema
-      destroy: Eliminar Tema
+        placeholder: "Escribe el nombre del tema"
+      create: "Crear Tema"
+      update: "Actualizar Tema"
+      destroy: "Eliminar Tema"
     comments:
       index:
-        title: Comentarios ocultos
+        title: "Comentarios ocultos"
         hidden_proposal: "Propuesta oculta"
         hidden_debate: "Debate oculto"
-        filter: Filtro
+        filter: "Filtro"
         filters:
-          all: Todos
-          with_confirmed_hide: Confirmados
-          without_confirmed_hide: Pendientes
+          all: "Todos"
+          with_confirmed_hide: "Confirmados"
+          without_confirmed_hide: "Pendientes"
     debates:
       index:
-        title: Debates ocultos
-        filter: Filtro
+        title: "Debates ocultos"
+        filter: "Filtro"
         filters:
-          all: Todos
-          with_confirmed_hide: Confirmados
-          without_confirmed_hide: Pendientes
+          all: "Todos"
+          with_confirmed_hide: "Confirmados"
+          without_confirmed_hide: "Pendientes"
     proposals:
       index:
-        title: Propuestas ocultos
-        filter: Filtro
+        title: "Propuestas ocultos"
+        filter: "Filtro"
         filters:
-          all: Todas
-          with_confirmed_hide: Confirmadas
-          without_confirmed_hide: Pendientes
+          all: "Todas"
+          with_confirmed_hide: "Confirmadas"
+          without_confirmed_hide: "Pendientes"
     users:
       index:
-        title: Usuarios bloqueados
-        filter: Filtro
+        title: "Usuarios bloqueados"
+        filter: "Filtro"
         filters:
-          all: Todos
-          with_confirmed_hide: Confirmados
-          without_confirmed_hide: Pendientes
+          all: "Todos"
+          with_confirmed_hide: "Confirmados"
+          without_confirmed_hide: "Pendientes"
       show:
         title: "Actividad del usuario %{user}"
-        back: Volver
+        back: "Volver"
         email: "Email:"
         registered_at: "Fecha de alta:"
         hidden_at: "Bloqueado:"
     verifications:
       index:
-        title: Verificaciones incompletas
-        phone_not_given: 'No ha dado su teléfono'
-        sms_code_not_confirmed: 'No ha introducido su código de seguridad'
+        title: "Verificaciones incompletas"
+        phone_not_given: "No ha dado su teléfono"
+        sms_code_not_confirmed: "No ha introducido su código de seguridad"
     officials:
       level_0: "No es cargo público"
-      level_1: Nivel 1
-      level_2: Nivel 2
-      level_3: Nivel 3
-      level_4: Nivel 4
-      level_5: Nivel 5
+      level_1: "Nivel 1"
+      level_2: "Nivel 2"
+      level_3: "Nivel 3"
+      level_4: "Nivel 4"
+      level_5: "Nivel 5"
       index:
-        title: Cargos Públicos
+        title: "Cargos Públicos"
       search:
-        title: 'Cargos Públicos: Búsqueda de usuarios'
-        edit_official: Editar cargo público
-        make_official: Convertir en cargo público
+        title: "Cargos Públicos: Búsqueda de usuarios"
+        edit_official: "Editar cargo público"
+        make_official: "Convertir en cargo público"
       edit:
-        title: 'Cargos Públicos: Editar usuario'
+        title: "Cargos Públicos: Editar usuario"
         destroy: "Eliminar condición de 'Cargo Público'"
-        back: Volver
+        back: "Volver"
       flash:
-        official_updated: 'Datos del cargo público guardados'
-        official_destroyed: 'Datos guardados: el usuario ya no es cargo público'
+        official_updated: "Datos del cargo público guardados"
+        official_destroyed: "Datos guardados: el usuario ya no es cargo público"
     moderators:
       index:
-        title: Moderadores
+        title: "Moderadores"
       search:
-        email_placeholder: 'Buscar usuario por email'
-        search: Buscar
-        user_not_found: 'Usuario no encontrado'
+        email_placeholder: "Buscar usuario por email"
+        search: "Buscar"
+        user_not_found: "Usuario no encontrado"
       moderator:
-        delete: Borrar
-        add: Añadir
+        delete: "Borrar"
+        add: "Añadir"
     activity:
       show:
-        title: Actividad de los Moderadores
-        action: 'Acción'
-        by: Moderado por
-        type: Tipo
-        filter: Mostrar
+        title: "Actividad de los Moderadores"
+        action: "Acción"
+        by: "Moderado por"
+        type: "Tipo"
+        filter: "Mostrar"
         filters:
-          all: Todo
-          on_proposals: Propuestas
-          on_debates: Debates
-          on_comments: Comentarios
-          on_users: Usuarios
+          all: "Todo"
+          on_proposals: "Propuestas"
+          on_debates: "Debates"
+          on_comments: "Comentarios"
+          on_users: "Usuarios"
         actions:
-          hide: Ocultado
-          restore: Restaurado
-          block: Bloqueado
+          hide: "Ocultado"
+          restore: "Restaurado"
+          block: "Bloqueado"
     stats:
       show:
-        stats_title: Estadísticas
-        visits_title: Visitas
-        combined_title: Combinado
+        stats_title: "Estadísticas"
+        visits_title: "Visitas"
+        combined_title: "Combinado"
         summary:
-          visits: Visitas
-          debates: Debates
-          proposals: Propuestas
-          comments: Comentarios
-          debate_votes: Votos en debates
-          proposal_votes: Votos en propuestas
-          comment_votes: Votos en comentarios
-          votes: Votos
-          user_level_three: Usuarios de nivel tres
-          user_level_two: Usuarios de nivel dos
-          unverified_users: Usuarios sin verificar
-          verified_users: Usuarios verificados
-          users: Usuarios
+          visits: "Visitas"
+          debates: "Debates"
+          proposals: "Propuestas"
+          comments: "Comentarios"
+          debate_votes: "Votos en debates"
+          proposal_votes: "Votos en propuestas"
+          comment_votes: "Votos en comentarios"
+          votes: "Votos"
+          user_level_three: "Usuarios de nivel tres"
+          user_level_two: "Usuarios de nivel dos"
+          unverified_users: "Usuarios sin verificar"
+          verified_users: "Usuarios verificados"
+          users: "Usuarios"

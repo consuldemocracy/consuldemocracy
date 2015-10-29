@@ -74,7 +74,7 @@ feature 'Moderate debates' do
         end
 
         scenario 'Ignore the debate' do
-          click_on "Ignore flags"
+          click_on "Mark as viewed"
           expect(page).to_not have_css("debate_#{@debate.id}")
           expect(@debate.reload).to be_ignored_flag
           expect(@debate.reload).to_not be_hidden
@@ -105,7 +105,7 @@ feature 'Moderate debates' do
 
         visit moderation_debates_path(filter: 'all', page: '2', order: 'created_at')
 
-        click_on "Ignore flags"
+        click_on "Mark as viewed"
 
         expect(page).to have_selector('.js-order-selector[data-order="created_at"]')
 
@@ -119,27 +119,27 @@ feature 'Moderate debates' do
       visit moderation_debates_path
       expect(page).to_not have_link('Pending')
       expect(page).to have_link('All')
-      expect(page).to have_link('Ignored')
+      expect(page).to have_link('Marked as viewed')
 
       visit moderation_debates_path(filter: 'all')
       within('.sub-nav') do
         expect(page).to_not have_link('All')
         expect(page).to have_link('Pending')
-        expect(page).to have_link('Ignored')
+        expect(page).to have_link('Marked as viewed')
       end
 
       visit moderation_debates_path(filter: 'pending_flag_review')
       within('.sub-nav') do
         expect(page).to have_link('All')
         expect(page).to_not have_link('Pending')
-        expect(page).to have_link('Ignored')
+        expect(page).to have_link('Marked as viewed')
       end
 
       visit moderation_debates_path(filter: 'with_ignored_flag')
       within('.sub-nav') do
         expect(page).to have_link('All')
         expect(page).to have_link('Pending')
-        expect(page).to_not have_link('Ignored')
+        expect(page).to_not have_link('Marked as viewed')
       end
     end
 

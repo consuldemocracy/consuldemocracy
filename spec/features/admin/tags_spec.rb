@@ -54,7 +54,7 @@ feature 'Admin tags' do
     expect(page).to have_content tag2.name
 
     within("#edit_tag_#{tag2.id}") do
-      click_link 'Delete Topic'
+      click_link 'Destroy Topic'
     end
 
     visit admin_tags_path
@@ -73,7 +73,7 @@ feature 'Admin tags' do
     expect(page).to have_content tag2.name
 
     within("#edit_tag_#{tag2.id}") do
-      click_link 'Delete Topic'
+      click_link 'Destroy Topic'
     end
 
     visit admin_tags_path

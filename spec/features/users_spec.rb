@@ -5,7 +5,7 @@ feature 'Users' do
   context 'Regular authentication' do
     scenario 'Sign up' do
       visit '/'
-      click_link 'Sign up'
+      click_link 'Register'
 
       fill_in 'user_username',              with: 'Manuela Carmena'
       fill_in 'user_email',                 with: 'manuela@madrid.es'
@@ -14,20 +14,20 @@ feature 'Users' do
       fill_in 'user_captcha',               with: correct_captcha_text
       check 'user_terms_of_service'
 
-      click_button 'Sign up'
+      click_button 'Register'
 
-      expect(page).to have_content "A message with a confirmation link has been sent to your email address. Please follow the link to activate your account."
+      expect(page).to have_content "You have been sent a message containing a verification link. Please click on this link to activate your account."
 
       sent_token = /.*confirmation_token=(.*)".*/.match(ActionMailer::Base.deliveries.last.body.to_s)[1]
       visit user_confirmation_path(confirmation_token: sent_token)
 
-      expect(page).to have_content "Your email address has been successfully confirmed"
+      expect(page).to have_content "Your account has been confirmed."
     end
 
     scenario 'Errors on sign up' do
       visit '/'
-      click_link 'Sign up'
-      click_button 'Sign up'
+      click_link 'Register'
+      click_button 'Register'
 
       expect(page).to have_content error_message
     end
@@ -36,12 +36,12 @@ feature 'Users' do
       create(:user, email: 'manuela@madrid.es', password: 'judgementday')
 
       visit '/'
-      click_link 'Log in'
+      click_link 'Sign in'
       fill_in 'user_email',    with: 'manuela@madrid.es'
       fill_in 'user_password', with: 'judgementday'
-      click_button 'Log in'
+      click_button 'Enter'
 
-      expect(page).to have_content 'Signed in successfully.'
+      expect(page).to have_content 'You have been signed in successfully.'
     end
   end
 
@@ -70,7 +70,7 @@ feature 'Users' do
         OmniAuth.config.add_mock(:twitter, omniauth_twitter_hash)
 
         visit '/'
-        click_link 'Sign up'
+        click_link 'Register'
 
         expect do
           expect do
@@ -105,7 +105,7 @@ feature 'Users' do
         OmniAuth.config.add_mock(:twitter, omniauth_twitter_hash)
 
         visit '/'
-        click_link 'Sign up'
+        click_link 'Register'
 
         expect do
           expect do
@@ -122,7 +122,7 @@ feature 'Users' do
         expect(user.email).to eq("omniauth@participacion-12345-twitter.com")
 
         fill_in 'user_email', with: 'manueladelascarmenas@example.com'
-        click_button 'Sign up'
+        click_button 'Register'
 
         sent_token = /.*confirmation_token=(.*)".*/.match(ActionMailer::Base.deliveries.last.body.to_s)[1]
         visit user_confirmation_path(confirmation_token: sent_token)
@@ -145,7 +145,7 @@ feature 'Users' do
         OmniAuth.config.add_mock(:twitter, omniauth_twitter_hash)
 
         visit '/'
-        click_link 'Log in'
+        click_link 'Sign in'
 
         expect do
           expect do
@@ -163,22 +163,22 @@ feature 'Users' do
     login_as(user)
 
     visit "/"
-    click_link 'Logout'
+    click_link 'Sign out'
 
-    expect(page).to have_content 'Signed out successfully.'
+    expect(page).to have_content 'You have been signed out successfully.'
   end
 
   scenario 'Reset password' do
     create(:user, email: 'manuela@madrid.es')
 
     visit '/'
-    click_link 'Log in'
-    click_link 'Forgot your password?'
+    click_link 'Sign in'
+    click_link 'Forgotten your password?'
 
     fill_in 'user_email', with: 'manuela@madrid.es'
-    click_button 'Send me reset password'
+    click_button 'Send instructions'
 
-    expect(page).to have_content "You will receive an email with instructions on how to reset your password in a few minutes."
+    expect(page).to have_content "In a few minutes, you will receive an email containing instructions on resetting your password."
 
     sent_token = /.*reset_password_token=(.*)".*/.match(ActionMailer::Base.deliveries.last.body.to_s)[1]
     visit edit_user_password_path(reset_password_token: sent_token)
@@ -187,6 +187,6 @@ feature 'Users' do
     fill_in 'user_password_confirmation', with: 'new password'
     click_button 'Change my password'
 
-    expect(page).to have_content "Your password has been changed successfully. You are now signed in."
+    expect(page).to have_content "Your password has been changed successfully."
   end
 end

@@ -27,7 +27,7 @@ feature "Highlights" do
 
     visit highlights_path
 
-    expect(page).to have_link("Start a proposal")
+    expect(page).to have_link("Create a proposal")
     expect(page).to have_link("Start a debate")
   end
 

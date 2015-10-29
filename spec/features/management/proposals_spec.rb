@@ -30,9 +30,9 @@ feature 'Proposals' do
       fill_in 'proposal_captcha', with: correct_captcha_text
       check 'proposal_terms_of_service'
 
-      click_button 'Start a proposal'
+      click_button 'Create proposal'
 
-      expect(page).to have_content 'Proposal was successfully created.'
+      expect(page).to have_content 'Proposal created successfully.'
 
       expect(page).to have_content 'Help refugees'
       expect(page).to have_content '¿Would you like to give assistance to war refugees?'
@@ -120,7 +120,7 @@ feature 'Proposals' do
         find('.in-favor a').click
 
         expect(page).to have_content "1 support"
-        expect(page).to have_content "You already supported this proposal"
+        expect(page).to have_content "You have already supported this proposal. Share it!"
       end
       expect(current_path).to eq(management_proposals_path)
     end
@@ -139,7 +139,7 @@ feature 'Proposals' do
 
       find('.in-favor a').click
       expect(page).to have_content "1 support"
-      expect(page).to have_content "You already supported this proposal"
+      expect(page).to have_content "You have already supported this proposal. Share it!"
       expect(current_path).to eq(management_proposal_path(proposal))
     end
 

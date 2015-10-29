@@ -38,7 +38,7 @@ describe 'Verification::Letter' do
       letter.verification_code = "5555"
 
       expect(letter.valid?).to eq(false)
-      expect(letter.errors[:verification_code].first).to eq("Incorrect confirmation code")
+      expect(letter.errors[:verification_code].first).to eq("Verification code incorrect")
     end
 
     it "correct code" do

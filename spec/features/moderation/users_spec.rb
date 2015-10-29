@@ -25,7 +25,7 @@ feature 'Moderate users' do
     visit debate_path(debate1)
 
     within("#debate_#{debate1.id}") do
-      click_link 'Ban author'
+      click_link 'Hide author'
     end
 
     expect(current_path).to eq(debates_path)
@@ -37,12 +37,12 @@ feature 'Moderate users' do
 
     expect(page).to_not have_content(comment3.body)
 
-    click_link("Logout")
+    click_link("Sign out")
 
-    click_link 'Log in'
+    click_link 'Sign in'
     fill_in 'user_email',    with: citizen.email
     fill_in 'user_password', with: citizen.password
-    click_button 'Log in'
+    click_button 'Enter'
 
     expect(page).to have_content 'Invalid email or password'
     expect(current_path).to eq(new_user_session_path)
@@ -62,13 +62,13 @@ feature 'Moderate users' do
 
     within(".admin-list") do
         expect(page).to have_content citizen.name
-        expect(page).not_to have_content "Banned"
-        click_link 'Ban'
+        expect(page).not_to have_content "Blocked"
+        click_link 'Block'
     end
 
     within(".admin-list") do
       expect(page).to have_content citizen.name
-      expect(page).to have_content "Banned"
+      expect(page).to have_content "Blocked"
     end
   end
 

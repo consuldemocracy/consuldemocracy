@@ -3,7 +3,7 @@ es:
     confirmations:
       new:
         title: "Reenviar instrucciones de confirmación"
-        email_label: Email
+        email_label: "Email"
         submit: "Reenviar instrucciones"
       show:
         title: "Confirmar mi cuenta"
@@ -27,7 +27,7 @@ es:
         info_text: "Tu contraseña no cambiará hasta que no accedas al enlace y la modifiques."
       unlock_instructions:
         hello: "Hola"
-        title: Tu cuenta ha sido bloqueada
+        title: "Tu cuenta ha sido bloqueada"
         info_text: "Tu cuenta ha sido bloqueada debido a un excesivo número de intentos fallidos de alta."
         instructions_text: "Sigue el siguiente enlace para desbloquear tu cuenta:"
         unlock_link: "Desbloquear mi cuenta"
@@ -119,7 +119,6 @@ es:
         login: "Entrar"
         signup: "¿No tienes una cuenta? %{signup_link}"
         signup_link: "Regístrate"
-        #organization_signup: "Registro para organizaciones / colectivos"
         signin_with_provider: "Entrar con %{provider}"
         new_password: "¿Olvidaste tu contraseña?"
         new_confirmation: "¿No has recibido instrucciones para confirmar tu cuenta?"

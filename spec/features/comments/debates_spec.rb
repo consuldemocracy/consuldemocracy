@@ -67,7 +67,7 @@ feature 'Commenting debates' do
       create(:comment, commentable: debate)
       visit debate_path(debate)
 
-      expect(page).to have_content 'You need to sign in or sign up to comment'
+      expect(page).to have_content 'You must Sign in or Sign up to leave a comment'
       within('#comments') do
         expect(page).to_not have_content 'Write a comment'
         expect(page).to_not have_content 'Reply'
@@ -201,7 +201,7 @@ feature 'Commenting debates' do
 
     visit debate_path(debate)
     within "#comment_#{comment.id}" do
-      expect(page).to have_content('Deleted user')
+      expect(page).to have_content('User deleted')
       expect(page).to have_content('this should be visible')
     end
   end
