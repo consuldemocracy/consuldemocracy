@@ -6,8 +6,6 @@ class ApplicationController < ActionController::Base
   include HasOrders
 
   before_action :authenticate_http_basic, if: :http_basic_auth_site?
-  before_action :authenticate_user!, unless: :devise_controller?, if: :beta_site?
-  before_action :authenticate_beta_tester!, unless: :devise_controller?, if: :beta_site?
 
   before_action :ensure_signup_complete
   before_action :set_locale
@@ -31,21 +29,6 @@ class ApplicationController < ActionController::Base
       authenticate_or_request_with_http_basic do |username, password|
         username == Rails.application.secrets.http_basic_username && password == Rails.application.secrets.http_basic_password
       end
-    end
-
-    def authenticate_beta_tester!
-      unless signed_in? && beta_testers.include?(current_user.email)
-        sign_out(current_user)
-        redirect_to new_user_session_path, alert: t('application.alert.only_beta_testers')
-      end
-    end
-
-    def beta_testers
-      File.readlines('config/beta-testers.txt').map {|email| email.strip }
-    end
-
-    def beta_site?
-      Rails.application.secrets.beta_site
     end
 
     def http_basic_auth_site?
