@@ -574,9 +574,11 @@ feature 'Proposals' do
 
     within("#proposals") do
       expect(page).to have_css('.proposal', count: 3)
+
       expect(page).to have_content(proposal2.title)
       expect(page).to have_content(proposal4.title)
       expect(page).to have_content(proposal5.title)
+
       expect(page).to_not have_content(proposal1.title)
       expect(page).to_not have_content(proposal3.title)
     end

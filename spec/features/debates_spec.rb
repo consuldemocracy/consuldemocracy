@@ -504,10 +504,12 @@ feature 'Debates' do
 
     within("#debates") do
       expect(page).to have_css('.debate', count: 4)
+
       expect(page).to have_content(debate2.title)
       expect(page).to have_content(debate4.title)
       expect(page).to have_content(debate5.title)
       expect(page).to have_content(debate6.title)
+
       expect(page).to_not have_content(debate1.title)
       expect(page).to_not have_content(debate3.title)
     end

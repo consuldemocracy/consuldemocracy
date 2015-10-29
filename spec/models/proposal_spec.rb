@@ -355,4 +355,185 @@ describe Proposal do
     end
   end
 
+  describe "search" do
+
+    context "attributes" do
+
+      it "searches by title" do
+        proposal = create(:proposal, title: 'save the world')
+        results = Proposal.search('save the world')
+        expect(results).to eq([proposal])
+      end
+
+      it "searches by summary" do
+        proposal = create(:proposal, summary: 'basically...')
+        results = Proposal.search('basically')
+        expect(results).to eq([proposal])
+      end
+
+      it "searches by description" do
+        proposal = create(:proposal, description: 'in order to save the world one must think about...')
+        results = Proposal.search('one must think')
+        expect(results).to eq([proposal])
+      end
+
+      it "searches by question" do
+        proposal = create(:proposal, question: 'to be or not to be')
+        results = Proposal.search('to be or not to be')
+        expect(results).to eq([proposal])
+      end
+
+    end
+
+    context "stemming" do
+
+      it "searches word stems" do
+        proposal = create(:proposal, summary: 'limpiar')
+
+        results = Proposal.search('limpiará')
+        expect(results).to eq([proposal])
+
+        results = Proposal.search('limpiémos')
+        expect(results).to eq([proposal])
+
+        results = Proposal.search('limpió')
+        expect(results).to eq([proposal])
+      end
+
+    end
+
+    context "accents" do
+
+      it "searches with accents" do
+        proposal = create(:proposal, summary: 'difusión')
+
+        results = Proposal.search('difusion')
+        expect(results).to eq([proposal])
+
+        proposal2 = create(:proposal, summary: 'estadisticas')
+        results = Proposal.search('estadísticas')
+        expect(results).to eq([proposal2])
+      end
+
+    end
+
+    context "case" do
+
+      it "searches case insensite" do
+        proposal = create(:proposal, title: 'SHOUT')
+
+        results = Proposal.search('shout')
+        expect(results).to eq([proposal])
+
+        proposal2 = create(:proposal, title: "scream")
+        results = Proposal.search("SCREAM")
+        expect(results).to eq([proposal2])
+      end
+
+    end
+
+    context "typos" do
+
+      it "searches with typos" do
+        proposal = create(:proposal, summary: 'difusión')
+
+        results = Proposal.search('difuon')
+        expect(results).to eq([proposal])
+
+        proposal2 = create(:proposal, summary: 'desarrollo')
+        results = Proposal.search('desarolo')
+        expect(results).to eq([proposal2])
+      end
+
+    end
+
+    context "order" do
+
+      it "orders by weight" do
+        proposal_question     = create(:proposal, question:    'stop corruption')
+        proposal_title       = create(:proposal,  title:       'stop corruption')
+        proposal_description = create(:proposal,  description: 'stop corruption')
+        proposal_summary     = create(:proposal,  summary:     'stop corruption')
+
+        results = Proposal.search('stop corruption')
+
+        expect(results.first).to eq(proposal_title)
+        expect(results.second).to eq(proposal_question)
+        expect(results.third).to eq(proposal_summary)
+        expect(results.fourth).to eq(proposal_description)
+      end
+
+      it "orders by weight and then votes" do
+        title_some_votes    = create(:proposal, title: 'stop corruption', cached_votes_up: 5)
+        title_least_voted   = create(:proposal, title: 'stop corruption', cached_votes_up: 2)
+        title_most_voted    = create(:proposal, title: 'stop corruption', cached_votes_up: 10)
+        summary_most_voted  = create(:proposal, summary: 'stop corruption', cached_votes_up: 10)
+
+        results = Proposal.search('stop corruption')
+
+        expect(results.first).to eq(title_most_voted)
+        expect(results.second).to eq(summary_most_voted)
+        expect(results.third).to eq(title_some_votes)
+        expect(results.fourth).to eq(title_least_voted)
+      end
+
+      it "orders by weight and then votes and then created_at" do
+        newest = create(:proposal, title: 'stop corruption', cached_votes_up: 5, created_at: Time.now)
+        oldest = create(:proposal, title: 'stop corruption', cached_votes_up: 5, created_at: 1.month.ago)
+        old    = create(:proposal, title: 'stop corruption', cached_votes_up: 5, created_at: 1.week.ago)
+
+        results = Proposal.search('stop corruption')
+
+        expect(results.first).to eq(newest)
+        expect(results.second).to eq(old)
+        expect(results.third).to eq(oldest)
+      end
+
+    end
+
+    context "tags" do
+
+      it "searches by tags" do
+        proposal = create(:proposal, tag_list: 'Latina')
+
+        results = Proposal.search('Latina')
+        expect(results.first).to eq(proposal)
+      end
+
+    end
+
+    context "no results" do
+
+      it "no words match" do
+        proposal = create(:proposal, title: 'save world')
+
+        results = Proposal.search('destroy planet')
+        expect(results).to eq([])
+      end
+
+      it "too many typos" do
+        proposal = create(:proposal, title: 'fantastic')
+
+        results = Proposal.search('frantac')
+        expect(results).to eq([])
+      end
+
+      it "too much stemming" do
+        proposal = create(:proposal, title: 'reloj')
+
+        results = Proposal.search('superrelojimetro')
+        expect(results).to eq([])
+      end
+
+      it "empty" do
+        proposal = create(:proposal, title: 'great')
+
+        results = Proposal.search('')
+        expect(results).to eq([])
+      end
+
+    end
+
+  end
+
 end
