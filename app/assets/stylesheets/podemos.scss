@@ -222,8 +222,8 @@ button.success:hover, .button.success:hover {background: $morado-claro;}
         color: $morado;
         font-weight: bold;
         float:left;
-        text-align: center;
-        width: 16%;
+        text-align: left;
+        padding-right: 2rem;
         &:hover {color: $verde;}
     }
 }

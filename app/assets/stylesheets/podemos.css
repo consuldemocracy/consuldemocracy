@@ -440,8 +440,8 @@ button.success:hover, .button.success:hover {
     color: #612d62;
     font-weight: bold;
     float: left;
-    text-align: center;
-    width: 16%; }
+    text-align: left;
+    padding-right: 2rem; }
     /* line 227, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
     .menu-programa > a:hover {
       color: #78bbb1; }
