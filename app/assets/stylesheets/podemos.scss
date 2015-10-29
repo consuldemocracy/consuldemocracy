@@ -253,7 +253,14 @@ footer {
 .proposal-new .icon-proposals,
 .debate-new .icon-debates {display: none;}
 
-			.nav > li {
+[class*='bloque1-epi'], [class*='bloque2-epi'], [class*='bloque3-epi'],
+[class*='bloque4-epi'], [class*='bloque5-epi'], [class*='bloque6-epi']
+{
+  display: none;
+}
+
+/*
+.nav > li {
 				float:left;
 			}
 
@@ -287,3 +294,4 @@ footer {
 				right:-140px;
 				top:0px;
 			}
+*/
