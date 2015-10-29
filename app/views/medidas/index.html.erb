@@ -43,11 +43,10 @@ i18n_namespace: "medidas.index.search_form" %>
         -->
 
         <div id="header" class="small-12 medium-12 menu-programa">
-  			<ul class="nav">
-  				<li><%= link_to taggable_path('medida', 'BLOQUE I. LA ECONOMÍA DEL CAMBIO.'), class: 'm' do %>
+          <%= link_to taggable_path('medida', 'BLOQUE I. LA ECONOMÍA DEL CAMBIO.'), class: 'm', :data =>{:dropdown =>'epi-bloque1'} do %>
                 BLOQUE I. LA ECONOMÍA DEL CAMBIO.
-            <% end %>
-          <ul>
+          <% end %>
+          <ul id='epi-bloque1' class='medium f-dropdown m-menu' data-dropdown-content>
   						<li><%= link_to taggable_path('medida', '1 Las políticas macroeconómicas en el marco europeo: terminar con la austeridad fiscal y salarial.'), class: 'm' do %>
                 1 Las políticas macroeconómicas en el marco europeo: terminar con la austeridad fiscal y salarial.
             <% end %></li>
@@ -79,14 +78,14 @@ i18n_namespace: "medidas.index.search_form" %>
                 10 PYMES, autónomos y Economía Social
             <% end %></li>
           </ul>
-          <li><%= link_to taggable_path('medida', 'BLOQUE II. DEMOCRACIA.'), class: 'm' do %>
+          <%= link_to taggable_path('medida', 'BLOQUE II. DEMOCRACIA.'), class: 'm', :data =>{:dropdown =>'epi-bloque2'} do %>
             BLOQUE II. DEMOCRACIA.
-            <% end %>
-          <ul>
-            <li><%= link_to taggable_path('medida', 'Administraciones accesibles, seguras, libres y eficientes'), class: 'm' do %>
+          <% end %>
+          <ul id='epi-bloque2' class='medium f-dropdown' data-dropdown-content>
+            <li><%= link_to taggable_path('medida', 'Administraciones accesibles, seguras, libres y eficientes'), class: 'm', :data =>{:dropdown =>'subepi1-bloque2'} do %>
                   Administraciones accesibles, seguras, libres y eficientes
               <% end %>
-              <ul>
+              <ul id='subepi1-bloque2' class='medium f-dropdown' data-dropdown-content>
                 <li><%= link_to taggable_path('medida', 'Formas de gestión'), class: 'm' do %>
                   Formas de gestión
                 <% end %></li>
@@ -101,10 +100,10 @@ i18n_namespace: "medidas.index.search_form" %>
                 <% end %></li>
               </ul>
             </li>
-						<li><%= link_to taggable_path('medida', 'Libertades y derechos humanos'), class: 'm' do %>
+						<li><%= link_to taggable_path('medida', 'Libertades y derechos humanos'), class: 'm', :data =>{:dropdown =>'subepi2-bloque2'} do %>
               Libertades y derechos humanos
               <% end %>
-              <ul>
+              <ul id='subepi2-bloque2' class='medium f-dropdown' data-dropdown-content>
   							<li><%= link_to taggable_path('medida', 'Consumo'), class: 'm' do %>
                   Consumo
                   <% end %></li>
@@ -125,25 +124,25 @@ i18n_namespace: "medidas.index.search_form" %>
             <li><%= link_to taggable_path('medida', 'Poderes Públicos'), class: 'm' do %>
                 Poderes Públicos
             <% end %></li>
-						<li><%= link_to taggable_path('medida', 'Recuperar las instituciones para la gente'), class: 'm' do %>
+						<li><%= link_to taggable_path('medida', 'Recuperar las instituciones para la gente'), class: 'm', :data =>{:dropdown =>'subepi6-bloque2'} do %>
               Recuperar las instituciones para la gente
               <% end %>
-              <ul>
-    								<li><%= link_to taggable_path('medida', 'Despolitizar las administraciones públicas'), class: 'm' do %>
-                  Despolitizar las administraciones públicas
-              <% end %></li>
-    								<li><%= link_to taggable_path('medida', 'Evaluación y Rendición de cuentas'), class: 'm' do %>
-                  Evaluación y Rendición de cuentas
-              <% end %></li>
-    							</ul>
+              <ul id='subepi6-bloque2' class='medium f-dropdown' data-dropdown-content>
+                <li><%= link_to taggable_path('medida', 'Despolitizar las administraciones públicas'), class: 'm' do %>
+              Despolitizar las administraciones públicas
+          <% end %></li>
+                <li><%= link_to taggable_path('medida', 'Evaluación y Rendición de cuentas'), class: 'm' do %>
+              Evaluación y Rendición de cuentas
+          <% end %></li>
+              </ul>
             </li>
             <li><%= link_to taggable_path('medida', 'Sistema Electoral'), class: 'm' do %>
                 Sistema Electoral
-            <% end %></li>
-						<li><%= link_to taggable_path('medida', 'Seguridad  y Defensa.'), class: 'm' do %>
+              <% end %></li>
+						<li><%= link_to taggable_path('medida', 'Seguridad  y Defensa.'), class: 'm', :data =>{:dropdown =>'subepi8-bloque2'} do %>
               Seguridad  y Defensa.
-            <% end %>
-            <ul>
+              <% end %>
+            <ul id='subepi8-bloque2' class='medium f-dropdown' data-dropdown-content>
 							<li><%= link_to taggable_path('medida', 'Seguridad'), class: 'm' do %>
               Seguridad
               <% end %></li>
@@ -151,11 +150,12 @@ i18n_namespace: "medidas.index.search_form" %>
               Defensa
               <% end %></li>
 						</ul>
-          </li>
-          <%= link_to taggable_path('medida', 'BLOQUE III. JUSTICIA Y BIENESTAR SOCIAL.'), class: 'm' do %>
+            </li>
+          </ul>
+          <%= link_to taggable_path('medida', 'BLOQUE III. JUSTICIA Y BIENESTAR SOCIAL.'), class: 'm', :data =>{:dropdown =>'epi-bloque3'} do %>
               BLOQUE III. JUSTICIA Y BIENESTAR SOCIAL.
           <% end %>
-        <ul>
+        <ul id='epi-bloque3' class='medium f-dropdown' data-dropdown-content>
 						<li><%= link_to taggable_path('medida', 'Sanidad.'), class: 'm' do %>
               Sanidad.
           <% end %></li>
@@ -202,10 +202,10 @@ i18n_namespace: "medidas.index.search_form" %>
             Servicios Sociales.
         <% end %></li>
       </ul>
-          <li><%= link_to taggable_path('medida', 'BLOQUE IV. CULTURA. Y COMUNICACIÓN'), class: 'm' do %>
+          <%= link_to taggable_path('medida', 'BLOQUE IV. CULTURA. Y COMUNICACIÓN'), class: 'm', :data =>{:dropdown =>'epi-bloque4'} do %>
               BLOQUE IV. CULTURA. Y COMUNICACIÓN
           <% end %>
-        <ul>
+        <ul id='epi-bloque4' class='medium f-dropdown' data-dropdown-content>
 						<li><%= link_to taggable_path('medida', '1. Cultura y Comunicación como enfoque estratégico'), class: 'm' do %>
               1. Cultura y Comunicación como enfoque estratégico
           <% end %></li>
@@ -221,10 +221,12 @@ i18n_namespace: "medidas.index.search_form" %>
           <li><%= link_to taggable_path('medida', '5. Diversidad e igualdad en la cultura y la comunicación'), class: 'm' do %>
               5. Diversidad e igualdad en la cultura y la comunicación
           <% end %></li>
-          <li><%= link_to taggable_path('medida', 'BLOQUE V. INTERNACIONAL.'), class: 'm' do %>
+          </ul>
+
+          <%= link_to taggable_path('medida', 'BLOQUE V. INTERNACIONAL.'), class: 'm', :data =>{:dropdown =>'epi-bloque5'} do %>
               BLOQUE V. INTERNACIONAL.
           <% end %>
-        <ul>
+        <ul id='epi-bloque5' class='medium f-dropdown' data-dropdown-content>
 						<li><%= link_to taggable_path('medida', 'XXXXXXXXXXXXXXXXXXXXX'), class: 'm' do %>
               XXXXXXXXXXXXXXXXXXXXX
           <% end %></li>
@@ -255,10 +257,11 @@ i18n_namespace: "medidas.index.search_form" %>
 						<li><%= link_to taggable_path('medida', 'XXXXXXXXXXXXXXXXXXXXX'), class: 'm' do %>
               XXXXXXXXXXXXXXXXXXXXX
           <% end %></li>
-          <li><%= link_to taggable_path('medida', 'BLOQUE PROPUESTAS TERRITORIALES'), class: 'm' do %>
+          </ul>
+        <%= link_to taggable_path('medida', 'BLOQUE PROPUESTAS TERRITORIALES'), class: 'm', :data =>{:dropdown =>'epi-bloque6'} do %>
               BLOQUE PROPUESTAS TERRITORIALES
           <% end %>
-        <ul>
+        <ul id='epi-bloque6' class='medium f-dropdown' data-dropdown-content>
 						<li><%= link_to taggable_path('medida', 'Andalucía'), class: 'm' do %>
               Andalucía
           <% end %></li>
@@ -310,44 +313,7 @@ i18n_namespace: "medidas.index.search_form" %>
           <li><%= link_to taggable_path('medida', 'Región de Murcia'), class: 'm' do %>
               Región de Murcia
           <% end %></li>
-          <li><a href="">Submenu1</a></li>
-						<li><a href="">Submenu2</a></li>
 					</ul>
-
-        </li>
-				<li><a href="">Servicios</a>
-					<ul>
-						<li><a href="">Submenu1</a></li>
-						<li><a href="">Submenu2</a></li>
-						<li><a href="">Submenu3</a></li>
-						<li><a href="">Submenu4</a>
-							<ul>
-								<li><%= link_to taggable_path('medida', 'XXXXXXXXXXXXXXXXXXXXX'), class: 'm' do %>
-              XXXXXXXXXXXXXXXXXXXXX
-          <% end %></li>
-								<li><%= link_to taggable_path('medida', 'XXXXXXXXXXXXXXXXXXXXX'), class: 'm' do %>
-              XXXXXXXXXXXXXXXXXXXXX
-          <% end %></li>
-								<li><%= link_to taggable_path('medida', 'XXXXXXXXXXXXXXXXXXXXX'), class: 'm' do %>
-              XXXXXXXXXXXXXXXXXXXXX
-          <% end %></li>
-								<li><%= link_to taggable_path('medida', 'XXXXXXXXXXXXXXXXXXXXX'), class: 'm' do %>
-              XXXXXXXXXXXXXXXXXXXXX
-          <% end %></li>
-							</ul>
-						</li>
-					</ul>
-				</li>
-				<li><a href="">Acerca de</a>
-					<ul>
-						<li><a href="">Submenu1</a></li>
-						<li><a href="">Submenu2</a></li>
-						<li><a href="">Submenu3</a></li>
-						<li><a href="">Submenu4</a></li>
-					</ul>
-				</li>
-				<li><a href="">Contacto</a></li>
-			</ul>
 		</div>
 
 
