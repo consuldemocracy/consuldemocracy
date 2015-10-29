@@ -1,4 +1,4 @@
-<% cache [locale_and_user_status, commentable_cache_key(@proposal), @all_visible_comments, @all_visible_comments.map(&:author), @proposal.comments_count, @comment_flags] do %>
+<% cache [locale_and_user_status, commentable_cache_key(@proposal), @current_order, @all_visible_comments, @all_visible_comments.map(&:author), @proposal.comments_count, @comment_flags] do %>
   <section class="row-full comments">
     <div class="row">
       <div id="comments" class="small-12 column">
