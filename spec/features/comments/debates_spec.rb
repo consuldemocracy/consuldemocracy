@@ -36,6 +36,23 @@ feature 'Commenting debates' do
     expect(c2.body).to appear_before(c1.body)
   end
 
+  scenario 'Creation date works differently in roots and in child comments, even when sorting by confidence_score' do
+    old_root = create(:comment, commentable: debate, created_at: Time.now - 10)
+    new_root = create(:comment, commentable: debate, created_at: Time.now)
+    old_child = create(:comment, commentable: debate, parent_id: new_root.id, created_at: Time.now - 10)
+    new_child = create(:comment, commentable: debate, parent_id: new_root.id, created_at: Time.now)
+
+    visit debate_path(debate)
+
+    expect(new_root.body).to appear_before(old_root.body)
+    expect(old_child.body).to appear_before(new_child.body)
+
+    visit debate_path(debate, order: :created_at)
+
+    expect(new_root.body).to appear_before(old_root.body)
+    expect(old_child.body).to appear_before(new_child.body)
+  end
+
   scenario 'Turns links into html links' do
     create :comment, commentable: debate, body: 'Built with http://rubyonrails.org/'
 
