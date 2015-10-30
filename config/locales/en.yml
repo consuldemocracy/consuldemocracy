@@ -26,7 +26,7 @@ en:
       locale: "Language:"
       administration: "Administration"
       moderation: "Moderation"
-      highlights: "Highlights"
+      # highlights: "Highlights"
       more_information: "More information"
       debates: "Debates"
       proposals: "Citizen proposals"
