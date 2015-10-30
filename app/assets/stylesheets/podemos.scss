@@ -27,20 +27,25 @@ header {
 }
 
 .home-plaza-podemos {
-   .contain-to-grid {background: none;}
+    .contain-to-grid {background: none;}
     section[role="main"] {padding: 2.5em 0 1em;}
+    .top-bar-section ul li > a.button {background: $morado; border: 0;}
+
 }
 
 .contain-to-grid {background: white; border-bottom: 1px solid #ddd;}
 .top-bar .name a img {height: auto; margin-top: 1.25rem; width: auto;}
 
 header .search-form .postfix, .button,
-.top-links, .top-bar-section ul li > a.button {background: $morado;}
+.top-links {background: $morado;}
+.top-bar-section ul li > a.button {
+    background: rgba(0, 0, 0, 0.6); border: 1px solid white;
+    &:hover {background: none !important;}
+}
 .tag-cloud h3, .footer {border-color: $morado;}
 .search-form .button.postfix,
 button:hover, button:focus, .button:hover, .button:focus{background: $verde;}
 .search-form .button.postfix:hover {background: $morado;}
-.top-bar-section ul li > a.button:hover {background: $verde !important;}
 .top-bar-section ul li {margin-left: 1rem;}
 
 .subnavigation {
@@ -256,7 +261,7 @@ footer {
 [class*='bloque1-epi'], [class*='bloque2-epi'], [class*='bloque3-epi'],
 [class*='bloque4-epi'], [class*='bloque5-epi'], [class*='bloque6-epi']
 {
-  display: none;
+  display:none;
 }
 
 .condiciones-generales {
@@ -272,3 +277,41 @@ footer {
 
 #epi-bloque3.f-dropdown li,
 #epi-bloque6.f-dropdown li{display: inline-block;}
+
+#barraaceptacion {
+    display:none;
+    position:fixed;
+    left:0px;
+    right:0px;
+    bottom:0px;
+    padding-bottom:20px;
+    width:100%;
+    text-align:center;
+    min-height:40px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color:#fff;
+    z-index:99999;
+}
+
+.inner {
+    width:100%;
+    position:absolute;
+    padding-left:5px;
+    font-family:verdana;
+    font-size:12px;
+    top:30%;
+}
+
+.inner a.ok {
+    padding:4px;
+    color: white;
+    text-decoration:none;
+    &:hover {color: $verde;}
+}
+
+.inner a.info {
+    padding-left:5px;
+    text-decoration:none;
+    color: white;
+    &:hover {color: $verde;}
+}
