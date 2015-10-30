@@ -121,7 +121,7 @@ es:
         zero: Sin comentarios
         one: 1 Comentario
         other: "%{count} Comentarios"
-      login_to_comment: "Necesitas %{signin} o %{signup} para comentar."
+      login_to_comment: "Necesitas %{signin} para comentar."
       edit_debate_link: Editar
       share: Compartir
       flag: "Este debate ha sido marcado como inapropiado por varios usuarios."
@@ -197,7 +197,7 @@ es:
         zero: Sin comentarios
         one: 1 Comentario
         other: "%{count} Comentarios"
-      login_to_comment: "Necesitas %{signin} o %{signup} para comentar."
+      login_to_comment: "Necesitas %{signin} para comentar."
       edit_medida_link: Editar
       share: Compartir
       flag: "Este medida ha sido marcado como inapropiado por varios usuarios."
@@ -288,7 +288,7 @@ es:
         zero: Sin comentarios
         one: 1 Comentario
         other: "%{count} Comentarios"
-      login_to_comment: "Necesitas %{signin} o %{signup} para comentar."
+      login_to_comment: "Necesitas %{signin} para comentar."
       edit_proposal_link: Editar
       share: Compartir
       flag: "Esta propuesta ha sido marcada como inapropiada por varios usuarios."
@@ -342,7 +342,7 @@ es:
     agree: Estoy de acuerdo
     disagree: No estoy de acuerdo
     supports: Apoyos
-    unauthenticated: "Necesitas %{signin} o %{signup} para continuar."
+    unauthenticated: "Necesitas %{signin} para continuar."
     signin: iniciar sesión
     signup: registrarte
     anonymous: "Demasiados votos anónimos, para poder votar %{verify_account}."
