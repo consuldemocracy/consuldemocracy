@@ -43,6 +43,9 @@ i18n_namespace: "medidas.index.search_form" %>
         -->
 
         <div id="header" class="small-12 medium-12 menu-programa">
+          <%= link_to taggable_path('medida', t('programa.bloque_1')), class: 'm', :data =>{:dropdown =>'epi-bloque1'} do %>
+             <%=  t('programa.bloque_1') %>
+          <% end %>
           <%= link_to taggable_path('medida', 'BLOQUE I. LA ECONOMÍA DEL CAMBIO.'), class: 'm', :data =>{:dropdown =>'epi-bloque1'} do %>
                 BLOQUE I. LA ECONOMÍA DEL CAMBIO.
           <% end %>
