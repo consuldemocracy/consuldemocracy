@@ -218,6 +218,10 @@ i18n_namespace: "medidas.index.search_form" %>
           <% end %>
           <ul id='epi-bloque7' class='medium f-dropdown' data-dropdown-content>
 
+            <li><%= link_to taggable_path('medida', 'epigrafe_7_1'), class: 'm' do %>
+                  <%=  t('programa.epigrafe_7_1') %>
+              <% end %></li>
+
           </ul>
 
           <%= link_to taggable_path('medida', 'bloque_8'), class: 'm', :data =>{:dropdown =>'epi-bloque8'} do %>
