@@ -46,7 +46,6 @@ class Debate < ActiveRecord::Base
       tags: :name
     },
     using: {
-      tsearch: {},
       trigram: { threshold: 0.9 },
     },
     ranked_by: '(:tsearch + debates.cached_votes_up)',
