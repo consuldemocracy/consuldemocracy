@@ -119,7 +119,12 @@ class Debate < ActiveRecord::Base
   end
 
   def self.search(terms)
-    self.pg_search(terms)
+    return none unless terms.present?
+
+    debate_ids = where("debates.title ILIKE ? OR debates.description ILIKE ?",
+                       "%#{terms}%", "%#{terms}%").pluck(:id)
+    tag_ids = tagged_with(terms, wild: true, any: true).pluck(:id)
+    where(id: [debate_ids, tag_ids].flatten.compact)
   end
 
   def after_hide

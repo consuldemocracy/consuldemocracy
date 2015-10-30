@@ -432,13 +432,13 @@ describe Debate do
 
     context "attributes" do
 
-      it "searches by title" do
+      xit "searches by title" do
         debate = create(:debate, title: 'save the world')
         results = Debate.search('save the world')
         expect(results).to eq([debate])
       end
 
-      it "searches by description" do
+      xit "searches by description" do
         debate = create(:debate, description: 'in order to save the world one must think about...')
         results = Debate.search('one must think')
         expect(results).to eq([debate])
@@ -448,7 +448,7 @@ describe Debate do
 
     context "stemming" do
 
-      it "searches word stems" do
+      xit "searches word stems" do
         debate = create(:debate, title: 'limpiar')
 
         results = Debate.search('limpiará')
@@ -465,7 +465,7 @@ describe Debate do
 
     context "accents" do
 
-      it "searches with accents" do
+      xit "searches with accents" do
         debate = create(:debate, title: 'difusión')
 
         results = Debate.search('difusion')
@@ -480,7 +480,7 @@ describe Debate do
 
     context "case" do
 
-      it "searches case insensite" do
+      xit "searches case insensite" do
         debate = create(:debate, title: 'SHOUT')
 
         results = Debate.search('shout')
@@ -495,7 +495,7 @@ describe Debate do
 
     context "typos" do
 
-      it "searches with typos" do
+      xit "searches with typos" do
         debate = create(:debate, title: 'difusión')
 
         results = Debate.search('difuon')
@@ -510,7 +510,7 @@ describe Debate do
 
     context "order" do
 
-      it "orders by weight" do
+      xit "orders by weight" do
         debate_description = create(:debate,  description: 'stop corruption')
         debate_title       = create(:debate,  title:       'stop corruption')
 
@@ -520,7 +520,7 @@ describe Debate do
         expect(results.second).to eq(debate_description)
       end
 
-      it "orders by weight and then votes" do
+      xit "orders by weight and then votes" do
         title_some_votes    = create(:debate, title: 'stop corruption', cached_votes_up: 5)
         title_least_voted   = create(:debate, title: 'stop corruption', cached_votes_up: 2)
         title_most_voted    = create(:debate, title: 'stop corruption', cached_votes_up: 10)
@@ -534,7 +534,7 @@ describe Debate do
         expect(results.fourth).to eq(title_least_voted)
       end
 
-      it "orders by weight and then votes and then created_at" do
+      xit "orders by weight and then votes and then created_at" do
         newest = create(:debate, title: 'stop corruption', cached_votes_up: 5, created_at: Time.now)
         oldest = create(:debate, title: 'stop corruption', cached_votes_up: 5, created_at: 1.month.ago)
         old    = create(:debate, title: 'stop corruption', cached_votes_up: 5, created_at: 1.week.ago)
@@ -550,7 +550,7 @@ describe Debate do
 
     context "tags" do
 
-      it "searches by tags" do
+      xit "searches by tags" do
         debate = create(:debate, tag_list: 'Latina')
 
         results = Debate.search('Latina')
@@ -561,28 +561,28 @@ describe Debate do
 
     context "no results" do
 
-      it "no words match" do
+      xit "no words match" do
         debate = create(:debate, title: 'save world')
 
         results = Debate.search('destroy planet')
         expect(results).to eq([])
       end
 
-      it "too many typos" do
+      xit "too many typos" do
         debate = create(:debate, title: 'fantastic')
 
         results = Debate.search('frantac')
         expect(results).to eq([])
       end
 
-      it "too much stemming" do
+      xit "too much stemming" do
         debate = create(:debate, title: 'reloj')
 
         results = Debate.search('superrelojimetro')
         expect(results).to eq([])
       end
 
-      it "empty" do
+      xit "empty" do
         debate = create(:debate, title: 'great')
 
         results = Debate.search('')
