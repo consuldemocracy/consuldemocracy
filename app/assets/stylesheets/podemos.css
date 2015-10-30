@@ -566,4 +566,8 @@ footer {
   .inner a.info:hover {
     color: #78bbb1; }
 
+/* line 319, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
+.proposal-featured .supports .progress .meter, .proposal .supports .progress .meter {
+  background: #78bbb1; }
+
 /*# sourceMappingURL=podemos.css.map */
