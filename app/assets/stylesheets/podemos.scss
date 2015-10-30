@@ -14,8 +14,6 @@ $morado-claro: #B37EB4;
 
 /*---------- CLASES ---------------*/
 
-.home-plaza-podemos .contain-to-grid {background:none;}
-
 header {
     background: none;
     .locale {display: none;}
@@ -30,6 +28,7 @@ header {
     .contain-to-grid {background: none;}
     section[role="main"] {padding: 2.5em 0 1em;}
     .top-bar-section ul li > a.button {background: $morado; border: 0;}
+    .top-bar-section ul li > a.button:hover {background: $verde !important;}
 
 }
 
@@ -315,3 +314,5 @@ footer {
     color: white;
     &:hover {color: $verde;}
 }
+
+.proposal-featured .supports .progress .meter, .proposal .supports .progress .meter {background: $verde;}
