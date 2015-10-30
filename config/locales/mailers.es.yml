@@ -13,6 +13,6 @@ es:
     email_verification:
       subject: Verifica tu email
       title:  Verifica tu cuenta con el siguiente enlace
-      instructions_html: "Para terminar de verificar tu cuenta de usuario en el Portal de Gobierno Abierto del Ayuntamiento de Madrid, necesitamos que pulses %{verification_link}."
+      instructions_html: "Para terminar de verificar tu cuenta de usuario, necesitamos que pulses %{verification_link}."
       click_here_to_verify: "en este enlace"
       thanks: "Muchas gracias."
