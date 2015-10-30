@@ -47,7 +47,7 @@ class Debate < ActiveRecord::Base
     },
     using: {
       tsearch: {},
-      trigram: { threshold: 0.1 },
+      trigram: { threshold: 0.9 },
     },
     ranked_by: '(:tsearch + debates.cached_votes_up)',
     order_within_rank: "debates.created_at DESC"
