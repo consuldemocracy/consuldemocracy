@@ -26,7 +26,7 @@ es:
       locale: "Idioma:"
       administration: "Administrar"
       moderation: "Moderar"
-      highlights: "Portada"
+      # highlights: "Portada"
       more_information: "Más información"
       debates: "Debates"
       proposals: "Propuestas ciudadanas"
