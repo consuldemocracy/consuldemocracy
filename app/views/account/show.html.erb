@@ -1,6 +1,18 @@
 <div class="row account">
   <div class="small-12 column">
     <%= link_to t("account.show.change_credentials_link"), edit_user_registration_path, class: "button radius small secondary right" %>
+     <div>
+        <span class="right verify-account">
+          <% if current_user.reddit_user.blank? %>
+            <%= link_to t("omniauth.reddit.sign_in"), user_omniauth_authorize_path(:reddit), class: "button radius small secondary right" %>
+          <% else %>
+              <p class="already-verified">
+                <i class="icon-check"></i>
+                <%= t("omniauth.reddit.verified_account") %>
+              </p>
+          <%end %>
+        </span>
+      </div>
     <% unless @account.organization? %>
       <div>
         <span class="right verify-account">

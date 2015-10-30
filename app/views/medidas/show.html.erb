@@ -1,0 +1,86 @@
+<% provide :title do %><%= @medida.title %><% end %>
+<% cache [locale_and_user_status(@medida), @medida, @medida.author, Flag.flagged?(current_user, @medida), @medida_votes] do %>
+  <section class="medida-show">
+    <div id="<%= dom_id(@medida) %>" class="row">
+      <div class="small-12 medium-9 column">
+        <i class="icon-angle-left left"></i>&nbsp;
+        <%= link_to t("medidas.show.back_link"), :back, class: 'left back' %>
+
+        <% if current_user && @medida.editable_by?(current_user) %>
+          <%= link_to edit_medida_path(@medida), class: 'edit-medida button success tiny radius right' do %>
+            <i class="icon-edit"></i>
+            <%= t("medidas.show.edit_medida_link") %>
+          <% end %>
+        <% end %>
+
+        <h1><%= @medida.title %></h1>
+        <% if @medida.conflictive? %>
+          <div class="alert-box alert radius margin-top">
+            <strong><%= t("medidas.show.flag") %></strong>
+          </div>
+        <% end %>
+
+        <div class="medida-info">
+          <%= avatar_image(@medida.author, seed: @medida.author_id, size: 32, class: 'author-photo') %>
+
+          <% if @medida.author.hidden? %>
+            <i class="icon-deleted author-deleted"></i>
+            <span class="author">
+                <%= t("medidas.show.author_deleted") %>
+            </span>
+          <% else %>
+            <span class="author">
+                <%= @medida.author.name %>
+            </span>
+            <% if @medida.author.official? %>
+              &nbsp;&bull;&nbsp;
+              <span class="label round level-<%= @medida.author.official_level %>">
+                <%= @medida.author.official_position %>
+              </span>
+            <% end %>
+          <% end %>
+
+          <% if @medida.author.verified_organization? %>
+            &nbsp;&bull;&nbsp;
+            <span class="label round is-association">
+              <%= t("shared.collective") %>
+            </span>
+          <% end %>
+
+          <span class="bullet">&nbsp;&bull;&nbsp;</span>
+          <%= l @medida.created_at.to_date %>
+          <span class="bullet">&nbsp;&bull;&nbsp;</span>
+          <i class="icon-comments"></i>&nbsp;
+          <%= link_to t("medidas.show.comments", count: @medida.comments_count), "#comments" %>
+          <span class="bullet">&nbsp;&bull;&nbsp;</span>
+          <span class="js-flag-actions">
+            <%= render 'medidas/flag_actions', medida: @medida %>
+          </span>
+        </div>
+
+        <%= safe_html_with_links @medida.description %>
+
+        <%= render 'shared/tags', taggable: @medida %>
+
+        <div class="js-moderator-medida-actions moderator-actions">
+          <%= render 'actions', medida: @medida %>
+        </div>
+      </div>
+
+      <aside class="small-12 medium-3 column">
+        <div class="sidebar-divider"></div>
+        <h3><%= t("votes.supports") %></h3>
+        <div class="text-center">
+          <div id="<%= dom_id(@medida) %>_votes">
+           <%= render 'medidas/votes', medida: @medida %>
+          </div>
+        </div>
+        <div class="sidebar-divider"></div>
+        <h3><%= t("medidas.show.share") %></h3>
+        <%= social_share_button_tag(@medida.title) %>
+      </aside>
+    </div>
+  </section>
+<% end %>
+
+<%= render "comments" %>

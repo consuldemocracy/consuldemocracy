@@ -239,9 +239,13 @@ Devise.setup do |config|
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
-  config.omniauth :twitter, Rails.application.secrets.twitter_key, Rails.application.secrets.twitter_secret
-  config.omniauth :facebook, Rails.application.secrets.facebook_key, Rails.application.secrets.facebook_secret
-  config.omniauth :google_oauth2, Rails.application.secrets.google_oauth2_key, Rails.application.secrets.google_oauth2_secret
+  #config.omniauth :twitter, Rails.application.secrets.twitter_key, Rails.application.secrets.twitter_secret
+  #config.omniauth :facebook, Rails.application.secrets.facebook_key, Rails.application.secrets.facebook_secret
+  #config.omniauth :google_oauth2, Rails.application.secrets.google_oauth2_key, Rails.application.secrets.google_oauth2_secret
+  #config.omniauth :openid, :name =>'openid', :identifier =>'localhost:3003/es/openid/discover'
+  config.omniauth :openid, :name =>Rails.application.secrets.openid_name, :identifier =>Rails.application.secrets.openid_identifier
+  config.omniauth :reddit, Rails.application.secrets.reddit_key, Rails.application.secrets.reddit_secret, { scope: "identity"}
+
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or

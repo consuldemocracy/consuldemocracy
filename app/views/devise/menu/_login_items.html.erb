@@ -8,10 +8,10 @@
     </li>
   <% else %>
     <li>
-      <%= link_to(t("devise_views.menu.login_items.login"), new_user_session_path)  %>
+      <%= link_to(t("devise_views.menu.login_items.login"), user_omniauth_authorize_path(:openid), class: "button radius small") %>
     </li>
-    <li>
-      <%= link_to(t("devise_views.menu.login_items.signup"), new_user_registration_path, class: "button radius small") %>
-    </li>
+    <!--li>
+      <%= link_to(t("devise_views.menu.login_items.signup"), user_omniauth_authorize_path(:openid), class: "button radius small") %>
+    </li-->
   <% end %>
 </ul>

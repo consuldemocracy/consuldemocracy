@@ -127,6 +127,46 @@ FactoryGirl.define do
     end
   end
 
+  factory :medida do
+    sequence(:title)     { |n| "Medida #{n} title" }
+    description          'Medida description'
+    terms_of_service     '1'
+    association :author, factory: :user
+
+    trait :hidden do
+      hidden_at Time.now
+    end
+
+    trait :with_ignored_flag do
+      ignored_flag_at Time.now
+    end
+
+    trait :with_confirmed_hide do
+      confirmed_hide_at Time.now
+    end
+
+    trait :flagged do
+      after :create do |medida|
+        Flag.flag(FactoryGirl.create(:user), medida)
+      end
+    end
+
+    trait :with_hot_score do
+      before(:save) { |d| d.calculate_hot_score }
+    end
+
+    trait :with_confidence_score do
+      before(:save) { |d| d.calculate_confidence_score }
+    end
+
+    trait :conflictive do
+      after :create do |medida|
+        Flag.flag(FactoryGirl.create(:user), medida)
+        4.times { create(:vote, votable: medida) }
+      end
+    end
+  end
+
   factory :proposal do
     sequence(:title)     { |n| "Proposal #{n} title" }
     summary              'In summary, what we want is...'

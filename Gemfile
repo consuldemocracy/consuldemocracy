@@ -25,6 +25,8 @@ gem 'omniauth'
 gem 'omniauth-twitter'
 gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2', '~> 0.2.7'
+gem 'omniauth-openid'
+gem 'omniauth-reddit' , :git => 'git://github.com/jackdempsey/omniauth-reddit.git'
 
 gem 'kaminari'
 gem 'ancestry'
@@ -54,6 +56,8 @@ gem 'ahoy_matey', '~> 1.2.1'
 gem 'groupdate'   # group temporary data
 
 gem 'browser'
+
+gem 'roo'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

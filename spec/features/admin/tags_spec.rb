@@ -13,7 +13,15 @@ feature 'Admin tags' do
 
     expect(page).to have_content @tag1.name
     expect(page).to have_content 'supertag'
+
+    create(:medida, tag_list: 'supertag2')
+    visit admin_tags_path
+
+    expect(page).to have_content @tag1.name
+    expect(page).to have_content 'supertag2'
   end
+
+
 
   scenario 'Create' do
     visit admin_tags_path

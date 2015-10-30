@@ -2,9 +2,9 @@
 	<div class="row-full">
 		<div class="row">
 
-      <div class="small-12 large-4 column">
+      <div class="small-12 large-12 column">
         <div class="logo">
-          <%= link_to t("layouts.header.open_gov", open: "#{t('layouts.header.open')}").html_safe %>
+          <%= link_to t("layouts.header.plaza_podemos", open: "#{t('layouts.header.open')}").html_safe %>
         </div>
 
         <p>
@@ -12,32 +12,32 @@
             open_source: link_to(t("layouts.footer.open_source"), t("layouts.footer.open_source_url"), target: "blank"),
             consul:  link_to(t("layouts.footer.consul"), t("layouts.footer.consul_url"), target: "blank")).html_safe
           %>
-          <%= t("layouts.footer.contact_us") %>
-          <%= mail_to "web.gobiernoabierto@madrid.es" %>
+          <!--%= t("layouts.footer.contact_us") %-->
+          <!--%= mail_to "web.gobiernoabierto@madrid.es" %-->
         </p>
       </div>
 
-      <div class="footer-sections small-12 large-8 column">
+      <!--div class="footer-sections small-12 large-8 column">
         <div class="small-12 medium-4 column">
           <h4>
             <%= link_to t("layouts.footer.participation_title"), root_path %>
           </h4>
           <p><%= t("layouts.footer.participation_text") %></p>
-        </div>
+        </div-->
 
-        <div class="small-12 medium-4 column">
+        <!--div class="small-12 medium-6 column">
           <h4>
             <%= link_to t("layouts.footer.transparency_title"), "/transparency" %>
           </h4>
           <p><%= t("layouts.footer.transparency_text") %></p>
-        </div>
+        </div-->
 
-        <div class="small-12 medium-4 column">
+        <!--div class="small-12 medium-4 column">
           <h4>
             <%= link_to t("layouts.footer.open_data_title"), "/opendata" %>
           </h4>
           <p><%= t("layouts.footer.open_data_text") %></p>
-        </div>
+        </div-->
       </div>
     </div>
 
@@ -45,10 +45,55 @@
       <div class="small-12 column">
         <%= t("layouts.footer.copyright", year: Time.now.year) %>&nbsp;|&nbsp;
         <%= link_to t("layouts.footer.more_info"), "/more_information" %>&nbsp;|&nbsp;
-        <%= link_to t("layouts.footer.privacy"), "/privacy" %>&nbsp;|&nbsp;
-        <%= link_to t("layouts.footer.conditions"), "/conditions" %>&nbsp;|&nbsp;
-        <%= link_to t("layouts.footer.accessibility"), "/accessibility" %>
+        <%= link_to t("layouts.footer.podemos_privacy"), "/privacy" %>
+        <!--%= link_to t("layouts.footer.conditions"), "/conditions" %-->
+        <!--%= link_to t("layouts.footer.accessibility"), "/accessibility" %-->
       </div>
     </div>
-  </div>
 </footer>
+
+<!--//BLOQUE COOKIES-->
+<div id="barraaceptacion" style="display: block;">
+    <div class="inner">
+Utilizamos cookies para asegurar que damos la mejor experiencia al usuario en nuestra página web. Al utilizar nuestros servicios, aceptas el uso que hacemos de las cookies.
+        <a href="javascript:void(0);" class="ok" onclick="PonerCookie();">ACEPTAR</a> |
+        <a href="http://plazapodemos.com/privacy" target="_blank" class="info">Más información</a>
+    </div>
+</div>
+
+<script>
+function getCookie(c_name){
+    var c_value = document.cookie;
+    var c_start = c_value.indexOf(" " + c_name + "=");
+    if (c_start == -1){
+        c_start = c_value.indexOf(c_name + "=");
+    }
+    if (c_start == -1){
+        c_value = null;
+    }else{
+        c_start = c_value.indexOf("=", c_start) + 1;
+        var c_end = c_value.indexOf(";", c_start);
+        if (c_end == -1){
+            c_end = c_value.length;
+        }
+        c_value = unescape(c_value.substring(c_start,c_end));
+    }
+    return c_value;
+}
+
+function setCookie(c_name,value,exdays){
+    var exdate=new Date();
+    exdate.setDate(exdate.getDate() + exdays);
+    var c_value=escape(value) + ((exdays==null) ? "" : "; expires="+exdate.toUTCString());
+    document.cookie=c_name + "=" + c_value;
+}
+
+if(getCookie('tiendaaviso')!="1"){
+    document.getElementById("barraaceptacion").style.display="block";
+}
+function PonerCookie(){
+    setCookie('tiendaaviso','1',365);
+    document.getElementById("barraaceptacion").style.display="none";
+}
+</script>
+<!--//FIN BLOQUE COOKIES-->

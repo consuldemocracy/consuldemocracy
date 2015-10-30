@@ -18,6 +18,10 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://decide.madrid.es/medidas</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://decide.madrid.es/users/sign_up</loc>
   </url>
   <url>

@@ -16,6 +16,9 @@ class WelcomeController < ApplicationController
     debates = Debate.sort_by_hot_score.page(params[:page]).per(10).for_render
     set_debate_votes(debates)
 
+    medidas = Medida.sort_by_hot_score.page(params[:page]).per(10).for_render
+    set_medida_votes(medidas)
+
     proposals = Proposal.sort_by_hot_score.page(params[:page]).per(10).for_render
     set_proposal_votes(proposals)
 

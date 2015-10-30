@@ -1,0 +1,10 @@
+<% if can? :hide, medida %>
+<%= link_to t("admin.actions.hide").capitalize, hide_moderation_medida_path(medida),
+              method: :put, remote: true, data: { confirm: t('admin.actions.confirm') } %>
+<% end %>
+
+<% if can? :hide, medida.author %>
+  &nbsp;|&nbsp;
+<%= link_to t("admin.actions.hide_author").capitalize, hide_moderation_user_path(medida.author_id),
+              method: :put, data: { confirm: t('admin.actions.confirm') } %>
+<% end %>

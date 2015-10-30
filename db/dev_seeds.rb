@@ -9,6 +9,7 @@ Setting.create(key: 'official_level_3_name', value: 'Directores generales')
 Setting.create(key: 'official_level_4_name', value: 'Concejales')
 Setting.create(key: 'official_level_5_name', value: 'Alcaldesa')
 Setting.create(key: 'max_ratio_anon_votes_on_debates', value: '50')
+Setting.create(key: 'max_ratio_anon_votes_on_medidas', value: '50')
 Setting.create(key: 'max_votes_for_debate_edit', value: '1000')
 Setting.create(key: 'max_votes_for_proposal_edit', value: '1000')
 Setting.create(key: 'proposal_code_prefix', value: 'MAD')
@@ -22,11 +23,11 @@ def create_user(email, username = Faker::Name.name)
   User.create!(username: username, email: email, password: pwd, password_confirmation: pwd, confirmed_at: Time.now, terms_of_service: "1")
 end
 
-admin = create_user('admin@madrid.es', 'admin')
-admin.create_administrator
+#admin = create_user('admin@madrid.es', 'admin')
+#admin.create_administrator
 
-moderator = create_user('mod@madrid.es', 'mod')
-moderator.create_moderator
+#moderator = create_user('mod@madrid.es', 'mod')
+#moderator.create_moderator
 
 (1..10).each do |i|
   org_name = Faker::Company.name
@@ -77,6 +78,22 @@ tags = Faker::Lorem.words(25)
   puts "    #{debate.title}"
 end
 
+puts "Creating Medidas"
+
+tags = Faker::Lorem.words(25)
+
+(1..30).each do |i|
+  author = User.reorder("RANDOM()").first
+  description = "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>"
+medida = Medida.create!(author: author,
+                          title: Faker::Lorem.sentence(3).truncate(60),
+                          created_at: rand((Time.now - 1.week) .. Time.now),
+                          description: description,
+                          tag_list: tags.sample(3).join(','),
+                          terms_of_service: "1")
+puts "    #{medida.title}"
+end
+
 puts "Creating Proposals"
 
 tags = Faker::Lorem.words(25)
@@ -109,6 +126,16 @@ puts "Commenting Debates"
                   body: Faker::Lorem.sentence)
 end
 
+puts "Commenting Medidas"
+
+(1..100).each do |i|
+  author = User.reorder("RANDOM()").first
+  medida = Medida.reorder("RANDOM()").first
+  Comment.create!(user: author,
+    created_at: rand(medida.created_at .. Time.now),
+    commentable: medida,
+                  body: Faker::Lorem.sentence)
+end
 
 puts "Commenting Proposals"
 
@@ -136,13 +163,20 @@ puts "Commenting Comments"
 end
 
 
-puts "Voting Debates, Proposals & Comments"
+puts "Voting Debates, Medidas, Proposals & Comments"
 
 (1..100).each do |i|
   voter  = not_org_users.reorder("RANDOM()").first
   vote   = [true, false].sample
   debate = Debate.reorder("RANDOM()").first
   debate.vote_by(voter: voter, vote: vote)
+end
+
+(1..100).each do |i|
+  voter  = not_org_users.reorder("RANDOM()").first
+  vote   = [true, false].sample
+  medida = Medida.reorder("RANDOM()").first
+  medida.vote_by(voter: voter, vote: vote)
 end
 
 (1..100).each do |i|
@@ -159,12 +193,18 @@ end
 end
 
 
-puts "Flagging Debates & Comments"
+puts "Flagging Debates, Medidas & Comments"
 
 (1..40).each do |i|
   debate = Debate.reorder("RANDOM()").first
   flagger = User.where(["users.id <> ?", debate.author_id]).reorder("RANDOM()").first
   Flag.flag(flagger, debate)
+end
+
+(1..40).each do |i|
+  medida = Medida.reorder("RANDOM()").first
+  flagger = User.where(["users.id <> ?", medida.author_id]).reorder("RANDOM()").first
+  Flag.flag(flagger, medida)
 end
 
 (1..40).each do |i|
@@ -180,22 +220,25 @@ end
 end
 
 
-puts "Ignoring flags in Debates, comments & proposals"
+puts "Ignoring flags in Debates, Medidas, comments & proposals"
 
 Debate.flagged.reorder("RANDOM()").limit(10).each(&:ignore_flag)
+Medida.flagged.reorder("RANDOM()").limit(10).each(&:ignore_flag)
 Comment.flagged.reorder("RANDOM()").limit(30).each(&:ignore_flag)
 Proposal.flagged.reorder("RANDOM()").limit(10).each(&:ignore_flag)
 
 
-puts "Hiding debates, comments & proposals"
+puts "Hiding debates, medidas, comments & proposals"
 
 Comment.with_hidden.flagged.reorder("RANDOM()").limit(30).each(&:hide)
 Debate.with_hidden.flagged.reorder("RANDOM()").limit(5).each(&:hide)
+Medida.with_hidden.flagged.reorder("RANDOM()").limit(5).each(&:hide)
 Proposal.with_hidden.flagged.reorder("RANDOM()").limit(10).each(&:hide)
 
 
-puts "Confirming hiding in debates, comments & proposals"
+puts "Confirming hiding in debates, medidas, comments & proposals"
 
 Comment.only_hidden.flagged.reorder("RANDOM()").limit(10).each(&:confirm_hide)
 Debate.only_hidden.flagged.reorder("RANDOM()").limit(5).each(&:confirm_hide)
+Medida.only_hidden.flagged.reorder("RANDOM()").limit(5).each(&:confirm_hide)
 Proposal.only_hidden.flagged.reorder("RANDOM()").limit(5).each(&:confirm_hide)

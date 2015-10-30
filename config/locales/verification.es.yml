@@ -65,7 +65,7 @@ es:
       new:
         title: "Verificación Final"
         explanation_html:
-          "<p>¡Felicidades! Ya puedes participar en debates o apoyar propuestas de otras personas.</p><p>Para terminar de verificar tu cuenta completamente necesitamos proporcionarte un <b>código de máxima seguridad</b>, que nos asegure que nadie está utilizando tus datos en tu nombre.</p><p>Este requerimiento es esencial para participar en las votaciones finales de las propuestas. Para ello puedes acercarte a cualquier <b>Oficina de Atención al Ciudadano</b> donde te verificarán presencialmente, o en caso de que te sea imposible, podemos mandarte una carta a casa con el código.</p>"
+          "<p>¡Felicidades! Ya puedes participar en debates y medidas o apoyar propuestas de otras personas.</p><p>Para terminar de verificar tu cuenta completamente necesitamos proporcionarte un <b>código de máxima seguridad</b>, que nos asegure que nadie está utilizando tus datos en tu nombre.</p><p>Este requerimiento es esencial para participar en las votaciones finales de las propuestas. Para ello puedes acercarte a cualquier <b>Oficina de Atención al Ciudadano</b> donde te verificarán presencialmente, o en caso de que te sea imposible, podemos mandarte una carta a casa con el código.</p>"
         offices: "Ver Oficinas de Atención al Ciudadano"
         offices_url: "http://www.madrid.es/portales/munimadrid/es/Inicio/El-Ayuntamiento/Atencion-al-ciudadano/Oficinas-de-Atencion-al-Ciudadano?vgnextfmt=default&vgnextchannel=5b99cde2e09a4310VgnVCM1000000b205a0aRCRD"
         send_letter: "Enviarme una carta con el código"
@@ -79,7 +79,7 @@ es:
         title: "Empieza a participar"
         confirmation_code: "Introduce aquí el código de máxima seguridad cuando recibas tu carta"
         explanation_html:
-          "<p><b>¡Felicidades! Ya puedes participar en debates o apoyar propuestas de otras personas.</p>"
+          "<p><b>¡Felicidades! Ya puedes participar en debates y medidas o apoyar propuestas de otras personas.</p>"
         see_all: "Ver debates y propuestas"
       update:
         flash:

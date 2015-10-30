@@ -28,3 +28,6 @@
 # Mac finder artifacts
 .DS_Store
 .ruby-gemset
+
+# Gemfile local machine file
+Gemfile.lock

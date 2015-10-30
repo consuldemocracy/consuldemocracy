@@ -2,42 +2,43 @@ es:
   locale: "Español"
   layouts:
     header:
+      programa: Programa
       external_link_transparency: Transparencia
-      external_link_transparency_url: "http://www.madrid.es/portales/munimadrid/es/Inicio/El-Ayuntamiento/Transparencia?vgnextfmt=default&vgnextchannel=20fd850769797310VgnVCM2000000c205a0aRCRD"
+      external_link_transparency_url: "https://transparencia.podemos.info/"
       external_link_opendata: Datos abiertos
       external_link_opendata_url: "http://datos.madrid.es"
       external_link_blog: Blog
       external_link_blog_url: "/blog"
       open_gov: "Gobierno %{open}"
+      plaza_podemos: "Plaza Podemos 2.0"
       open: "abierto"
       participation: Participación
-      open_city_title: "La ciudad que quieres será la ciudad que quieras."
+      open_city_title: "Un lugar de encuentro para construir PODEMOS."
       open_city_slogan_html:
-        "Existen ciudades gobernadas directamente por sus habitantes, que <b>debaten</b> sobre temas que les preocupan, <b>proponen</b> ideas para mejorar
-        sus vidas y <b>deciden</b> entre todas y todos las que se llevan a cabo. Madrid ya es una de ellas."
+        "Esta plaza es un espacio de participación en el que puedes hacer propuestas, debatir y econtrarte con otros para construir la organización del cambio."
       #"Empecemos escuchando qué tiene que decir Madrid.
       #Para ello abrimos esta Puerta del Sol digital, donde toda la gente de Madrid podemos encontrarnos para debatir y compartir todo lo que queramos."
       # open_city_text:
       #   "Aquí cualquier voz tiene su espacio y son los ciudadanos y ciudadanas, y nadie en su nombre, quienes deciden votando los debates cuáles son los temas
       #    más importantes de cada momento. Los responsables del gobierno tienen cuentas de usuario propias con las que podrán participar en los debates, y ser evaluados
       #    al mismo nivel que todos los demás."
-      # open_city_soon: "Muy pronto abriremos la sección de propuestas ciudadanas, donde cualquiera podrá presentar propuestas y, si reciben apoyo, serán puestas en marcha por el Ayuntamiento."
+      # open_city_soon: "Muy pronto abriremos la sección de propuestas, donde cualquiera podrá presentar propuestas y, si reciben apoyo, serán puestas en marcha por el Ayuntamiento."
       see_all: Ver debates y propuestas
       my_account_link: Mi cuenta
       locale: "Idioma:"
       administration: Administrar
       moderation: Moderar
       highlights: "Portada"
-      more_information: "Más información"
+      more_information: "+ Información"
       debates: Debates
-      proposals: Propuestas ciudadanas
+      proposals: Propuestas
     footer:
-      description: "Este portal usa la %{consul} que es %{open_source}. De Madrid, para el mundo entero."
+      description: "Este portal usa la %{consul}, que es %{open_source}, y está basado en el portal de <a href='https://decide.madrid.es/' target='_blank'>Participación</a> del Ayuntamiento de Madrid."
       open_source: "software libre"
       open_source_url: "http://www.gnu.org/licenses/agpl-3.0.html"
       consul: "aplicación Consul"
       consul_url: "https://github.com/ayuntamientomadrid"
-      copyright: "Ayuntamiento de Madrid, %{year}"
+      copyright: "Podemos, %{year}"
       participation_title: "Participación"
       participation_text: "Decide cómo debe ser la ciudad de Madrid que quieres."
       transparency_title: Transparencia
@@ -45,6 +46,7 @@ es:
       open_data_title: Datos Abiertos
       open_data_text: "Todos los datos del Ayuntamiento son tuyos."
       contact_us: "Contacta con nosotros en"
+      podemos_privacy: "Condiciones generales de uso, empleo de cookies y política de privacidad"
       privacy: "Política de privacidad"
       conditions: "Condiciones de uso"
       more_info: "Más información"
@@ -131,7 +133,7 @@ es:
         submit_button: "Guardar cambios"
     new:
       start_new: Empezar un debate
-      info: "Un debate es un foro de discusión, no una propuesta ciudadana. Muy pronto abriremos la sección de propuestas ciudadanas, donde cualquiera podrá presentar propuestas y, si reciben apoyo, serán puestas en marcha por el Ayuntamiento."
+      info: "Un debate es un foro de discusión, no una propuesta ciudadana."
       more_info: "Más información"
       back_link: Volver
       recommendations_title: Recomendaciones para crear un debate
@@ -147,9 +149,85 @@ es:
     update:
       form:
         submit_button: "Guardar cambios"
+
+  medidas:
+    index:
+      title: Programa
+      start_medida: Propón una medida
+      select_order: Ordenar por
+      select_order_long: Estás viendo las medidas
+      orders:
+        confidence_score: "mejor valorados"
+        hot_score: "más activos"
+        created_at: "más nuevos"
+        most_commented: "más comentados"
+        random: "aleatorio"
+      filter_topic:
+        one: " con el tema '%{topic}'"
+        other: " con el tema '%{topic}'"
+      search_form:
+        title: Buscar
+        button: Buscar
+        placeholder: "Buscar medidas..."
+      search_results:
+        one: " que contiene '%{search_term}'"
+        other: " que contienen '%{search_term}'"
+    medida:
+      medida: medida
+      comments:
+        zero: Sin comentarios
+        one: 1 Comentario
+        other: "%{count} Comentarios"
+      votes:
+        zero: Sin votos
+        one: 1 voto
+        other: "%{count} votos"
+    form:
+      medida_title: Título de la medida
+      medida_text: Texto inicial de la medida
+      tags_label: Temas
+      tags_instructions: >
+        Etiqueta este medida. Puedes elegir entre nuestras propuestas o introducir las que desees.
+      tags_placeholder: "Escribe las etiquetas que desees separadas por coma (',')"
+    show:
+      back_link: Volver
+      author_deleted: Usuario eliminado
+      comments_title: Comentarios
+      comments:
+        zero: Sin comentarios
+        one: 1 Comentario
+        other: "%{count} Comentarios"
+      login_to_comment: "Necesitas %{signin} o %{signup} para comentar."
+      edit_medida_link: Editar
+      share: Compartir
+      flag: "Este medida ha sido marcado como inapropiado por varios usuarios."
+    edit:
+      editing: Editar medida
+      show_link: Ver medida
+      back_link: Volver
+      form:
+        submit_button: "Guardar cambios"
+    new:
+      start_new: Empezar un medida
+      info: "Un medida es un foro de discusión, no una propuesta ciudadana."
+      more_info: "Más información"
+      back_link: Volver
+      recommendations_title: Recomendaciones para crear un medida
+      recommendation_one: "No escribas el título de la medida o frases enteras en mayúsculas. En internet eso se considera gritar. Y a nadie le gusta que le griten."
+      recommendation_two: "Cualquier medida o comentario que implique una acción ilegal será eliminado, también los que tengan la intención de sabotear los espacios de medida, todo lo demás está permitido."
+      recommendation_three: "Las críticas despiadadas son muy bienvenidas. Este es un espacio de pensamiento. Pero te recomendamos conservar la elegancia y la inteligencia. El mundo es mejor con ellas presentes."
+      recommendation_four: "Disfruta de este espacio, de las voces que lo llenan, también es tuyo."
+      form:
+        submit_button: "Propón un medida"
+    create:
+      form:
+        submit_button: "Propón un medida"
+    update:
+      form:
+        submit_button: "Guardar cambios"
   proposals:
     index:
-      title: Propuestas ciudadanas
+      title: Propuestas
       start_proposal: Crea una propuesta
       select_order: Ordenar por
       select_order_long: Estás viendo las propuestas
@@ -165,7 +243,7 @@ es:
       search_form:
         title: Search
         button: Search
-        placeholder: "Buscar propuestas ciudadanas..."
+        placeholder: "Buscar propuestas..."
       search_results:
         one: " que contiene '%{search_term}'"
         other: " que contienen '%{search_term}'"
@@ -222,7 +300,7 @@ es:
         submit_button: "Guardar cambios"
     new:
       start_new: Crear una propuesta
-      more_info: "¿Cómo funcionan las propuestas ciudadanas?"
+      more_info: "¿Cómo funcionan las propuestas?"
       back_link: Volver
       recommendations_title: Recomendaciones para crear una propuesta
       recommendation_one: "No escribas el título de la propuesta o frases enteras en mayúsculas. En internet eso se considera gritar. Y a nadie le gusta que le griten."
@@ -313,21 +391,21 @@ es:
     signed_in_home_title: Actividad reciente
     debates:
       title: "Debates"
-      description: "Encontrarnos, debatir y compartir lo que nos parece importante en nuestra ciudad."
+      description: "Exprésate, debate con otros y contribuye a enriquecer el pensamiento colectivo."
     proposal:
-      title: "Propones"
-      description: "Espacio abierto para propuestas ciudadanas sobre el tipo de ciudad en el que queremos vivir."
-    decide:
-      title: "Decides"
+      title: "Propuestas"
+      description: "Puedes hacer propuestas que, si son apoyadas por el 10% de los participantes, se llevarán a referendum interno vinculante."
+    programa:
+      title: "Programa"
       description: "La ciudadanía decide si acepta o rechaza las propuestas más apoyadas."
     do:
       title: "Se hace"
-      description: "Si la propuesta es aceptada mayoritariamente, el Ayuntamiento la asume como propia y se hace."
+      description: "Si la propuesta es aceptada mayoritariamente se asume como propia y se hace."
     welcome:
       title: Verificación de cuenta
       instructions_1_html: "Bienvenido a la página de participación ciudadana"
       instructions_2_html: "Hemos detectado que <b>tu dirección de email está confirmada pero no hemos verificado tus datos todavía</b>."
-      instructions_3_html: "Sin verificar tus datos <b>el acceso que tienes es limitado</b>. Verificarlos ahora te permitirá, por ejemplo, apoyar propuestas ciudadanas."
+      instructions_3_html: "Sin verificar tus datos <b>el acceso que tienes es limitado</b>. Verificarlos ahora te permitirá, por ejemplo, apoyar propuestas."
       verify_account: "Verificar mi cuenta"
       go_to_index: "Quiero entrar como un usuario no verificado (acceso limitado)"
       instructions_4_html: "Si quieres verificarte más tarde, puedes hacerlo en <i>Mi cuenta > Verificar mi cuenta</i>."
@@ -340,6 +418,13 @@ es:
     facebook:
       sign_in: Entra con Facebook
       sign_up: Regístrate con Facebook
+    openid:
+      sign_in: Entra con Participa
+      sign_up: Regístrate con Participa
     google_oauth2:
       sign_in: Entra con Google
       sign_up: Regístrate con Google
+    reddit:
+      sign_in: Entra con Reddit
+      sign_up: Regístrate con Reddit
+      verified_account: Reddit Verificado

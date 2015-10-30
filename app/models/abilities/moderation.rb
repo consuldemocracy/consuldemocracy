@@ -29,6 +29,15 @@ module Abilities
       can :moderate, Debate
       cannot :moderate, Debate, author_id: user.id
 
+      can :hide, Medida, hidden_at: nil
+      cannot :hide, Medida, author_id: user.id
+
+      can :ignore_flag, Medida, ignored_flag_at: nil, hidden_at: nil
+      cannot :ignore_flag, Medida, author_id: user.id
+
+      can :moderate, Medida
+      cannot :moderate, Medida, author_id: user.id
+
       can :hide, Proposal, hidden_at: nil
       cannot :hide, Proposal, author_id: user.id
 

@@ -1,11 +1,13 @@
 <% if current_page?(new_user_session_path) %>
   <%= link_to t("omniauth.twitter.sign_in"), user_omniauth_authorize_path(:twitter), class: "button-twitter button radius expand" %>
   <%= link_to t("omniauth.facebook.sign_in"), user_omniauth_authorize_path(:facebook), class: "button-facebook button radius expand" %>
+<%= link_to t("omniauth.openid.sign_in"), user_omniauth_authorize_path(:openid), class: "button-openid button radius expand" %>
   <%= link_to t("omniauth.google_oauth2.sign_in"), user_omniauth_authorize_path(:google_oauth2), class: "button-google button radius expand" %>
   <hr/>
 <% elsif current_page?(new_user_registration_path) %>
   <%= link_to t("omniauth.twitter.sign_up"), user_omniauth_authorize_path(:twitter), class: "button-twitter button radius expand" %>
-  <%= link_to t("omniauth.facebook.sign_up"), user_omniauth_authorize_path(:facebook), class: "button-facebook button radius expand" %>
+  <%= link_to t("omniauth.sign_up"), user_omniauth_authorize_path(:facebook), class: "button-facebook button radius expand" %>
+<%= link_to t("omniauth.openid.sign_up"), user_omniauth_authorize_path(:openid), class: "button-openid button radius expand" %>
   <%= link_to t("omniauth.google_oauth2.sign_up"), user_omniauth_authorize_path(:google_oauth2), class: "button-google button radius expand" %>
   <p>Al hacer login con una red social, usted está aceptando los términos legales.</p>
   <hr/>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150926115929) do
+ActiveRecord::Schema.define(version: 20151030000629) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -168,6 +168,38 @@ ActiveRecord::Schema.define(version: 20150926115929) do
 
   add_index "locks", ["user_id"], name: "index_locks_on_user_id", using: :btree
 
+  create_table "medidas", force: :cascade do |t|
+    t.string   "title",                        limit: 800
+    t.text     "description"
+    t.integer  "author_id"
+    t.datetime "created_at",                                           null: false
+    t.datetime "updated_at",                                           null: false
+    t.string   "visit_id"
+    t.datetime "hidden_at"
+    t.integer  "flags_count",                              default: 0
+    t.datetime "ignored_flag_at"
+    t.integer  "cached_votes_total",                       default: 0
+    t.integer  "cached_votes_up",                          default: 0
+    t.integer  "cached_votes_down",                        default: 0
+    t.integer  "comments_count",                           default: 0
+    t.datetime "confirmed_hide_at"
+    t.integer  "cached_anonymous_votes_total",             default: 0
+    t.integer  "cached_votes_score",                       default: 0
+    t.integer  "hot_score",                    limit: 8,   default: 0
+    t.integer  "confidence_score",                         default: 0
+  end
+
+  add_index "medidas", ["author_id", "hidden_at"], name: "index_medidas_on_author_id_and_hidden_at", using: :btree
+  add_index "medidas", ["author_id"], name: "index_medidas_on_author_id", using: :btree
+  add_index "medidas", ["cached_votes_down"], name: "index_medidas_on_cached_votes_down", using: :btree
+  add_index "medidas", ["cached_votes_score"], name: "index_medidas_on_cached_votes_score", using: :btree
+  add_index "medidas", ["cached_votes_total"], name: "index_medidas_on_cached_votes_total", using: :btree
+  add_index "medidas", ["cached_votes_up"], name: "index_medidas_on_cached_votes_up", using: :btree
+  add_index "medidas", ["confidence_score"], name: "index_medidas_on_confidence_score", using: :btree
+  add_index "medidas", ["hidden_at"], name: "index_medidas_on_hidden_at", using: :btree
+  add_index "medidas", ["hot_score"], name: "index_medidas_on_hot_score", using: :btree
+  add_index "medidas", ["title"], name: "index_medidas_on_title", using: :btree
+
   create_table "moderators", force: :cascade do |t|
     t.integer "user_id"
   end
@@ -245,14 +277,16 @@ ActiveRecord::Schema.define(version: 20150926115929) do
   add_index "taggings", ["taggable_id", "taggable_type", "context"], name: "index_taggings_on_taggable_id_and_taggable_type_and_context", using: :btree
 
   create_table "tags", force: :cascade do |t|
-    t.string  "name",            limit: 40
-    t.integer "taggings_count",             default: 0
-    t.boolean "featured",                   default: false
-    t.integer "debates_count",              default: 0
-    t.integer "proposals_count",            default: 0
+    t.string  "name",            limit: 400
+    t.integer "taggings_count",              default: 0
+    t.boolean "featured",                    default: false
+    t.integer "debates_count",               default: 0
+    t.integer "proposals_count",             default: 0
+    t.integer "medidas_count",               default: 0
   end
 
   add_index "tags", ["debates_count"], name: "index_tags_on_debates_count", using: :btree
+  add_index "tags", ["medidas_count"], name: "index_tags_on_medidas_count", using: :btree
   add_index "tags", ["name"], name: "index_tags_on_name", unique: true, using: :btree
   add_index "tags", ["proposals_count"], name: "index_tags_on_proposals_count", using: :btree
 
@@ -293,6 +327,9 @@ ActiveRecord::Schema.define(version: 20150926115929) do
     t.datetime "confirmed_hide_at"
     t.string   "letter_verification_code"
     t.integer  "failed_census_calls_count",            default: 0
+    t.string   "reddit_user"
+    t.string   "reddit_uid"
+    t.integer  "circle_agent",                         default: 0
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree

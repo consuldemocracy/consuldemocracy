@@ -1,0 +1,318 @@
+/*---------- VARIABLES ---------------*/
+
+$morado: #612d62;
+$verde: #78bbb1;
+$morado-claro: #B37EB4;
+
+/*---------- MIXINS ---------------*/
+
+@mixin titulo-temas {
+    padding: 1rem;
+    h3 a:hover {color: $verde;}
+}
+
+
+/*---------- CLASES ---------------*/
+
+header {
+    background: none;
+    .locale {display: none;}
+    .search-form {padding-top:0;}
+    .more-info {
+        text-decoration: none;
+        &:hover {opacity: inherit; color: $morado;}
+    }
+}
+
+.home-plaza-podemos {
+    .contain-to-grid {background: none;}
+    section[role="main"] {padding: 2.5em 0 1em;}
+    .top-bar-section ul li > a.button {background: $morado; border: 0;}
+    .top-bar-section ul li > a.button:hover {background: $verde !important;}
+
+}
+
+.contain-to-grid {background: white; border-bottom: 1px solid #ddd;}
+.top-bar .name a img {height: auto; margin-top: 1.25rem; width: auto;}
+
+header .search-form .postfix, .button,
+.top-links {background: $morado;}
+.top-bar-section ul li > a.button {
+    background: rgba(0, 0, 0, 0.6); border: 1px solid white;
+    &:hover {background: none !important;}
+}
+.tag-cloud h3, .footer {border-color: $morado;}
+.search-form .button.postfix,
+button:hover, button:focus, .button:hover, .button:focus{background: $verde;}
+.search-form .button.postfix:hover {background: $morado;}
+.top-bar-section ul li {margin-left: 1rem;}
+
+.subnavigation {
+    min-height: 0;
+    a {
+        line-height: 1rem;
+        &:hover {color: $morado; border-bottom: 2px solid $morado;}
+        &.active {border-bottom-color: $morado; color: $morado; line-height: 1rem;}
+    }
+}
+
+.subnavigation-container {min-height: 85px; padding: 1.5rem 0;}
+
+.wrapper-home {background: url(/assets/home-plaza.jpg) no-repeat; padding: 1rem 0;}
+
+.contain-to-grid {background: url(/assets/cabecera-popular.jpg) no-repeat;}
+
+.button {padding: 0.75rem 1.5rem;}
+.button.radius {border-radius: 15px;}
+.button.warning {background-color: $morado; border:0;}
+button.warning:hover, button.warning:focus, .button.warning:hover, .button.warning:focus {background: $verde;}
+
+.top-links a:hover {color:$verde; text-decoration: none;}
+.top-bar-section ul li > a {color: white !important;}
+h3, .page .more-information ul a {color: $morado !important;}
+.page .more-information ul a:hover {color: $verde !important;}
+
+.footer {margin-top: 1rem;}
+
+.top-bar-section ul li > a.button {color: white !important;}
+form input[type]:not([type=submit]):not([type=file]):not([type=checkbox]),
+.search-form .button.postfix {margin-bottom: 0;}
+
+.proposal, .proposal-show {
+    margin-bottom: 1rem; margin-top: 0.5rem;
+    .panel {
+        box-shadow: none; min-height: 0 !important; padding: 0;
+        .proposal-content {@include titulo-temas;}
+        .icon-proposals {left: 6.5rem; top: 1rem;}
+    }
+    .supports {
+        margin: 0;
+        &:after {content: none;}
+        .progress .meter {color: $morado-claro;}
+        .supported {color: #333;}
+        .total-supports {font-weight: bold; color: #333;}
+    }
+}
+
+.debate {
+    margin-bottom: 1rem; margin-top: 0.5rem;
+    .panel {
+        box-shadow: none; min-height: 0 !important; padding: 0;
+        .debate-content {@include titulo-temas;}
+        .icon-debates {left: 5.2rem; top: 1rem;}
+    }
+    .votes {
+        background: #ddd; border-color: #ddd; padding-bottom: 3rem; padding-top: 3rem;
+        margin: 0;
+        &:after {content: none;}
+        .icon-like, .icon-unlike {background: #B37EB4; border:0; border-radius: 5px;}
+        .like span, .debate .votes .unlike span, .total-votes {color: #333; font-weight: bold;}
+    }
+}
+
+.medida-show .votes, .debate-show .votes {
+    background: #ddd;
+    .icon-like, .icon-unlike {background: #B37EB4; border:0; border-radius: 5px;}
+    .total-votes {color: #333; font-weight: bold;}
+    .like span, .unlike-span {color: #333; font-weight: bold;}
+}
+
+.medida {
+    margin-bottom: 1rem; margin-top: 0.5rem;
+    .panel {
+        box-shadow: none; min-height: 0 !important; padding: 0;
+        .medida-content {@include titulo-temas;}
+        .icon-medidas {left: 5.2rem; top: 1rem;}
+    }
+    .votes {
+        background: #ddd; border-color: #ddd; padding-bottom: 3rem; padding-top: 3rem;
+        margin: 0;
+        &:after {content: none;}
+        .icon-like, .icon-unlike {background: #B37EB4; border:0; border-radius: 5px;}
+        .like span, .medida .votes .unlike span, .total-votes {color: #333; font-weight: bold;}
+    }
+}
+
+.proposal .panel .label-proposal,
+.proposal .panel .icon-proposals,
+.proposal-featured .panel .proposal-info,
+.proposal .panel .proposal-info,
+.debate .panel .label-debate,
+.debate .panel .icon-debates,
+.debate .panel .debate-info,
+.debate .panel .debate-info a,
+.medida .panel .label-medida,
+.medida .panel .icon-medidas,
+.medida .panel .medida-info,
+.medida .panel .medida-info a{color: $morado-claro;}
+
+.proposal-featured .panel .proposal-info .author,
+.proposal .panel .proposal-info .author,
+.debate .panel .debate-info .author,
+.medida .panel .medida-info .author {color: #999;}
+
+.proposal .supports, .proposal-featured .supports, .proposal-show .supports {background: #ddd; border-color: #ddd; padding-bottom: 2rem; padding-top: 2rem;}
+
+.proposal .supports .button-support, .proposal-featured .supports .button-support, .proposal-show .supports .button-support {background: $morado; color: white;}
+
+.proposal .supports .button-support:hover, .proposal-featured .supports .button-support:hover, .proposal-show .supports .button-support:hover {background: $verde;}
+
+.proposal .supports abbr, .proposal-featured .supports abbr, .proposal-show .supports abbr {color: #333;}
+
+.proposal .supports .percentage, .proposal-featured .supports .percentage, .proposal-show .supports .percentage {color: #333;}
+
+.proposal .supports abbr[title], .proposal-featured .supports abbr[title], .proposal-show .supports abbr[title] {border-bottom-color: #333;}
+
+abbr, acronym {font-size: 100%; color: #333;}
+
+.tags a, .tag-cloud a {background: white; border: 1px solid #ddd; margin-right: 10px; margin-bottom: 0;}
+
+.sidebar {
+    .tags a, .tag-cloud a, .tag-cloud a {margin-bottom: 1rem;}
+    .button.radius {
+        border-radius: 0;
+        background: $verde;
+        &:hover {background: $morado;}
+    }
+}
+
+.tags a:hover, .tag-cloud a:hover {background: white; color: $verde;}
+
+.proposal-featured .panel .proposal-info a, .proposal .panel .proposal-info a {
+    color: $morado-claro;
+}
+
+.proposal-info a:hover, .debate-info a:hover, .medida-info a:hover {color: $morado !important;}
+.in-favor .button.expand {padding: 0.8rem 2rem;}
+.tag-cloud a .label.info {background: #aaa;}
+
+.filters select, .search-results select {border-radius: 10px; background-color: #eee; border: 0; cursor: pointer;}
+
+button.success, .button.success {background: $verde;}
+button.success:hover, .button.success:hover {background: $morado-claro;}
+
+.debate-show .votes {
+    background: #ddd;
+}
+
+.tag-cloud h3 {text-transform: none;}
+
+.medida-new .icon-medidas, .medida-edit .icon-medidas {display: none;}
+
+.top-bar-section {top: 2rem;}
+.top-bar-section ul li:not(.has-form) a:not(.button) {
+    line-height: 1rem;
+    padding: 0.5rem 0.75rem;
+    background: rgba(0, 0, 0, 0.6);
+    border: 1px solid white;
+}
+
+.top-bar-section ul li:not(.has-form) a:not(.button):hover {
+    line-height: 1rem;
+    border: 1px solid white;
+    text-decoration: none;
+}
+
+.top-bar-section ul li > a.button {margin-top: 0; top: 0;}
+
+.debate-new a, .debate-edit a, .proposal-new a, .proposal-show .document-link a, .proposal-show .video-link a, {color: $morado;}
+.debate-new a:hover, .proposal-new a:hover, .debate-edit a:hover,.proposal-show .document-link a:hover, .proposal-show .video-link a:hover, .page .menu a:hover, .page .text a:hover {color: $verde;}
+.page .text a, .page .menu a {color: $morado-claro;}
+
+.menu-programa {
+    float: left;
+    margin: 2em 0;
+    >a {
+        color: $morado;
+        font-weight: bold;
+        float:left;
+        text-align: left;
+        padding-right: 2rem;
+        &:hover {color: $verde;}
+    }
+}
+
+.comments .comment .comment-body .comment-user.is-author {background: #ddd;}
+
+.comments .comment-children .comment-body .comment-user.is-author {background: #eee;}
+
+.is-author {background: $verde;}
+
+.js-add-comment-link, .verify-account .already-verified {color: $verde;}
+
+.auth-page {
+    background: #ddd;
+    a.back, i {color: $morado;}
+}
+
+footer {
+    padding: 4rem 0 0;
+    .logo a {font-size: 1.35rem;}
+}
+
+.admin {
+    .title-area {display: none;}
+}
+
+.proposal-new .icon-proposals,
+.debate-new .icon-debates {display: none;}
+
+[class*='bloque1-epi'], [class*='bloque2-epi'], [class*='bloque3-epi'],
+[class*='bloque4-epi'], [class*='bloque5-epi'], [class*='bloque6-epi']
+{
+  display:none;
+}
+
+.condiciones-generales {
+    h2 {margin-top: 0.5rem;}
+    h3 {font-size: 1rem; margin-top: 1rem;}
+    strong {font-size: 1rem;}
+}
+
+.f-dropdown li a {
+    color: $morado;
+    &:hover {color:$verde;}
+}
+
+#epi-bloque3.f-dropdown li,
+#epi-bloque6.f-dropdown li{display: inline-block;}
+
+#barraaceptacion {
+    display:none;
+    position:fixed;
+    left:0px;
+    right:0px;
+    bottom:0px;
+    padding-bottom:20px;
+    width:100%;
+    text-align:center;
+    min-height:40px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color:#fff;
+    z-index:99999;
+}
+
+.inner {
+    width:100%;
+    position:absolute;
+    padding-left:5px;
+    font-family:verdana;
+    font-size:12px;
+    top:30%;
+}
+
+.inner a.ok {
+    padding:4px;
+    color: white;
+    text-decoration:none;
+    &:hover {color: $verde;}
+}
+
+.inner a.info {
+    padding-left:5px;
+    text-decoration:none;
+    color: white;
+    &:hover {color: $verde;}
+}
+
+.proposal-featured .supports .progress .meter, .proposal .supports .progress .meter {background: $verde;}

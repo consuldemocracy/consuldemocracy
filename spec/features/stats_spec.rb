@@ -11,6 +11,7 @@ feature 'Stats' do
 
     scenario 'General' do
       create(:debate)
+      create(:medida)
       2.times { create(:proposal) }
       3.times { create(:comment, commentable: Debate.first) }
       4.times { create(:visit) }
@@ -18,6 +19,7 @@ feature 'Stats' do
       visit admin_stats_path
 
       expect(page).to have_content "Debates 1"
+      expect(page).to have_content "Medidas 1"
       expect(page).to have_content "Proposals 2"
       expect(page).to have_content "Comments 3"
       expect(page).to have_content "Visits 4"
@@ -26,6 +28,9 @@ feature 'Stats' do
     scenario 'Votes' do
       debate = create(:debate)
       create(:vote, votable: debate)
+
+      medida = create(:medida)
+      create(:vote, votable: medida)
 
       proposal = create(:proposal)
       2.times { create(:vote, votable: proposal) }
@@ -36,6 +41,7 @@ feature 'Stats' do
       visit admin_stats_path
 
       expect(page).to have_content "Debate votes 1"
+      expect(page).to have_content "Medida votes 1"
       expect(page).to have_content "Proposal votes 2"
       expect(page).to have_content "Comment votes 3"
       expect(page).to have_content "Total votes 6"

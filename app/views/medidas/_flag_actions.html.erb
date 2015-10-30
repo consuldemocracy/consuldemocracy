@@ -1,0 +1,23 @@
+<span class="flag-content">
+  <% if show_flag_action? medida %>
+  <a class="button" id="flag-expand-medida-<%= medida.id %>" data-dropdown="flag-drop-medida-<%= medida.id %>" aria-controls="flag-drop-medida-<%= medida.id %>" aria-expanded="false" title="<%= t('shared.flag') %>">
+      &nbsp;<i class="icon-flag flag-disable"></i>&nbsp;&nbsp;
+    </a>
+  <ul id="flag-drop-medida-<%= medida.id %>" class="f-dropdown" data-dropdown-content aria-hidden="true" tabindex="-1">
+      <li>
+        <%= link_to t('shared.flag'), flag_medida_path(medida), method: :put, remote: true, id: "flag-medida-#{ medida.id }" %>
+      </li>
+    </ul>
+  <% end %>
+
+  <% if show_unflag_action? medida %>
+    <a class="button" id="unflag-expand-medida-<%= medida.id %>" data-dropdown="unflag-drop-medida-<%= medida.id %>" aria-controls="unflag-drop-medida-<%= medida.id %>" aria-expanded="false" title="<%= t('shared.unflag') %>">
+      &nbsp;<i class="icon-flag flag-active"></i>&nbsp;&nbsp;
+    </a>
+  <ul id="unflag-drop-medida-<%= medida.id %>" class="f-dropdown" data-dropdown-content aria-hidden="true" tabindex="-1">
+      <li>
+        <%= link_to t('shared.unflag'), unflag_medida_path(medida), method: :put, remote: true, id: "unflag-medida-#{ medida.id }" %>
+      </li>
+    </ul>
+  <% end %>
+</span>

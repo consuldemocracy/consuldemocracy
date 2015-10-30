@@ -79,8 +79,8 @@ en:
         title: "Empieza a participar"
         confirmation_code: "Introduce aquí el código de máxima seguridad cuando recibas tu carta"
         explanation_html:
-          "<p><b>¡Felicidades! Ya puedes participar en debates o apoyar propuestas de otras personas.</p>"
-        see_all: "Ver debates y propuestas"
+          "<p><b>¡Felicidades! Ya puedes participar en debates y medidas o apoyar propuestas de otras personas.</p>"
+        see_all: "Ver debates, medidas y propuestas"
       update:
         flash:
           success: "Correct code. Your account is verified"

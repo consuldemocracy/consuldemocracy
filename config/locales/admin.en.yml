@@ -12,8 +12,10 @@ en:
     menu:
       settings: Global settings
       debate_topics: Debate topics
+      medida_topics: Measure topics
       hidden_proposals: Hidden proposals
       hidden_debates: Hidden debates
+      hidden_medidas: Hidden measures
       hidden_comments: Hidden comments
       hidden_users: Blocked users
       incomplete_verifications: Incomplete verifications
@@ -67,6 +69,7 @@ en:
         title: Hidden comments
         hidden_proposal: "Hidden proposal"
         hidden_debate: "Hidden debate"
+        hidden_medida: "Hidden measure"
         filter: Filter
         filters:
           all: All
@@ -75,6 +78,14 @@ en:
     debates:
       index:
         title: Hidden debates
+        filter: Filter
+        filters:
+          all: All
+          with_confirmed_hide: Confirmed
+          without_confirmed_hide: Pending
+    medidas:
+      index:
+        title: Hidden measures
         filter: Filter
         filters:
           all: All
@@ -148,6 +159,7 @@ en:
           all: All
           on_proposals: On Proposals
           on_debates: On Debates
+          on_medidas: On Measures
           on_comments: On Comments
           on_users: On Users
         actions:

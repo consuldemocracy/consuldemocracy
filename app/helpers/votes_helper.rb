@@ -4,12 +4,25 @@ module VotesHelper
     debate.likes.percent_of(debate.total_votes)
   end
 
+  def medida_percentage_of_likes(medida)
+    medida.likes.percent_of(medida.total_votes)
+  end
+
   def votes_percentage(vote, debate)
     return "0%" if debate.total_votes == 0
     if vote == 'likes'
       debate_percentage_of_likes(debate).to_s + "%"
     elsif vote == 'dislikes'
       (100 - debate_percentage_of_likes(debate)).to_s + "%"
+    end
+  end
+
+  def votes_medida_percentage(vote, medida)
+    return "0%" if medida.total_votes == 0
+    if vote == 'likes'
+      medida_percentage_of_likes(medida).to_s + "%"
+    elsif vote == 'dislikes'
+      (100 - medida_percentage_of_likes(medida)).to_s + "%"
     end
   end
 
