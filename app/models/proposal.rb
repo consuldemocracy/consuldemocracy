@@ -93,14 +93,13 @@ class Proposal < ActiveRecord::Base
 
   def calculate_hot_score
     self.hot_score = ScoreCalculator.hot_score(created_at,
-                                               cached_votes_up,
-                                               cached_votes_up,
+                                               total_votes,
+                                               total_votes,
                                                comments_count)
   end
 
   def calculate_confidence_score
-    self.confidence_score = ScoreCalculator.confidence_score(cached_votes_up,
-                                                             cached_votes_up)
+    self.confidence_score = ScoreCalculator.confidence_score(total_votes, total_votes)
   end
 
   def after_hide
