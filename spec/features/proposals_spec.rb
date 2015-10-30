@@ -559,7 +559,7 @@ feature 'Proposals' do
     end
   end
 
-  scenario 'proposal index search' do
+  scenario 'Proposal index search' do
     proposal1 = create(:proposal, title: "Show me what you got")
     proposal2 = create(:proposal, title: "Get Schwifty")
     proposal3 = create(:proposal)
@@ -582,6 +582,28 @@ feature 'Proposals' do
       expect(page).to_not have_content(proposal1.title)
       expect(page).to_not have_content(proposal3.title)
     end
+  end
+
+  scenario 'Index search does not show featured proposals' do
+    featured_proposals = create_featured_proposals
+    proposal = create(:proposal, title: "Abcdefghi")
+
+    visit proposals_path
+    fill_in "search", with: proposal.title
+    click_button "Search"
+
+    expect(page).to_not have_selector('#proposals .proposal-featured')
+    expect(page).to_not have_selector('#featured-proposals')
+  end
+
+  scenario 'Tag index tag does not show featured proposals' do
+    featured_proposals = create_featured_proposals
+    proposal = create(:proposal, tag_list: "123")
+
+    visit proposals_path(tag: "123")
+
+    expect(page).to_not have_selector('#proposals .proposal-featured')
+    expect(page).to_not have_selector('#featured-proposals')
   end
 
   scenario 'Conflictive' do
