@@ -27,20 +27,25 @@ header {
 }
 
 .home-plaza-podemos {
-   .contain-to-grid {background: none;}
+    .contain-to-grid {background: none;}
     section[role="main"] {padding: 2.5em 0 1em;}
+    .top-bar-section ul li > a.button {background: $morado; border: 0;}
+
 }
 
 .contain-to-grid {background: white; border-bottom: 1px solid #ddd;}
 .top-bar .name a img {height: auto; margin-top: 1.25rem; width: auto;}
 
 header .search-form .postfix, .button,
-.top-links, .top-bar-section ul li > a.button {background: $morado;}
+.top-links {background: $morado;}
+.top-bar-section ul li > a.button {
+    background: rgba(0, 0, 0, 0.6); border: 1px solid white;
+    &:hover {background: none !important;}
+}
 .tag-cloud h3, .footer {border-color: $morado;}
 .search-form .button.postfix,
 button:hover, button:focus, .button:hover, .button:focus{background: $verde;}
 .search-form .button.postfix:hover {background: $morado;}
-.top-bar-section ul li > a.button:hover {background: $verde !important;}
 .top-bar-section ul li {margin-left: 1rem;}
 
 .subnavigation {
