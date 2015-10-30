@@ -2,7 +2,7 @@ class AddTableMedidas < ActiveRecord::Migration
   def change
 
     create_table "medidas", force: :cascade do |t|
-    t.string   "title",                        limit: 80
+    t.string   "title",                        limit: 800
     t.text     "description"
     t.integer  "author_id"
     t.datetime "created_at",                                          null: false
