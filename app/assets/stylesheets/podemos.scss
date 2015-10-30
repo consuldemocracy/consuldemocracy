@@ -58,9 +58,9 @@ button:hover, button:focus, .button:hover, .button:focus{background: $verde;}
 
 .subnavigation-container {min-height: 85px; padding: 1.5rem 0;}
 
-.wrapper-home {background: url(/assets/home-plaza.jpg) no-repeat; padding: 1rem 0;}
+.wrapper-home {background: image-url("home-plaza.jpg") no-repeat; padding: 1rem 0;}
 
-.contain-to-grid {background: url(/assets/cabecera-popular.jpg) no-repeat;}
+.contain-to-grid {background: image-url("cabecera-popular.jpg") no-repeat;}
 
 .button {padding: 0.75rem 1.5rem;}
 .button.radius {border-radius: 15px;}
