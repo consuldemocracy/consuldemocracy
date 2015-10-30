@@ -46,7 +46,8 @@ class Debate < ActiveRecord::Base
       tags: :name
     },
     using: {
-      trigram: { threshold: 0.9 },
+      tsearch: { dictionary: "spanish" },
+      trigram: { threshold: 0.1 },
     },
     ranked_by: '(:tsearch + debates.cached_votes_up)',
     order_within_rank: "debates.created_at DESC"
