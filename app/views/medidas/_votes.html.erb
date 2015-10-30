@@ -37,7 +37,7 @@
   <% elsif !user_signed_in? %>
   <div class="not-logged" style='display:none'>
     <%= t("votes.unauthenticated",
-      signin: link_to(t("votes.signin"), user_omniauth_authorize_path(:openid)) %>
+      signin: link_to(t("votes.signin"), user_omniauth_authorize_path(:openid))).html_safe %>
   </div>
   <% end %>
 </div>
