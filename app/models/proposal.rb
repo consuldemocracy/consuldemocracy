@@ -62,7 +62,7 @@ class Proposal < ActiveRecord::Base
   end
 
   def total_votes
-    cached_votes_up
+    cached_votes_up + physical_votes
   end
 
   def editable?
