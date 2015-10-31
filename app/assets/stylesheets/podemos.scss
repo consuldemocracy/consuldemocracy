@@ -226,6 +226,7 @@ button.success:hover, .button.success:hover {background: $morado-claro;}
         color: $morado;
         font-weight: bold;
         float:left;
+        margin-bottom: 1rem;
         text-align: left;
         padding-right: 2rem;
         &:hover {color: $verde;}
@@ -274,8 +275,7 @@ footer {
     &:hover {color:$verde;}
 }
 
-#epi-bloque3.f-dropdown li,
-#epi-bloque6.f-dropdown li{display: inline-block;}
+#epi-bloque8.f-dropdown li{display: inline-block;}
 
 #barraaceptacion {
     display:none;
