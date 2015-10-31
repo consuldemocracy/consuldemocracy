@@ -19,7 +19,7 @@ i18n_namespace: "medidas.index.search_form" %>
           <% elsif @tag_filter %>
             <h2 class="margin-top">
               <%= page_entries_info @medidas %>
-              <%= t("medidas.index.filter_topic", count: @medidas.size, topic: @tag_filter) %>
+              <%= t("medidas.index.filter_topic", count: @medidas.size, topic: t("programa.#{@tag_filter}") %>
             </h2>
           <% end %>
         </div>
