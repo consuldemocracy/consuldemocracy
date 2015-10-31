@@ -316,3 +316,8 @@ footer {
 }
 
 .proposal-featured .supports .progress .meter, .proposal .supports .progress .meter {background: $verde;}
+
+ul.pagination li.current a,
+ul.pagination li.current button {
+    background: $morado;
+}

@@ -570,4 +570,9 @@ footer {
 .proposal-featured .supports .progress .meter, .proposal .supports .progress .meter {
   background: #78bbb1; }
 
+/* line 321, /Users/slozano/Sites/Podemos/participacion/app/assets/stylesheets/podemos.scss */
+ul.pagination li.current a,
+ul.pagination li.current button {
+  background: #612d62; }
+
 /*# sourceMappingURL=podemos.css.map */
