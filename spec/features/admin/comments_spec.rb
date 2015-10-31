@@ -18,7 +18,7 @@ feature 'Admin comments' do
 
     visit proposal_path(proposal)
     within("#proposal_#{proposal.id}") do
-      click_link 'Ban author'
+      click_link 'Hide author'
     end
 
     visit admin_comments_path

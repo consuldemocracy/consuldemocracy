@@ -1,58 +1,58 @@
 en:
-  locale: English
+  locale: "English"
   errors:
     messages:
       user_not_found: "User not found"
   layouts:
     header:
       logo: "Madrid"
-      external_link_transparency: Transparency
+      external_link_transparency: "Transparency"
       external_link_transparency_url: "http://www.madrid.es/portales/munimadrid/es/Inicio/El-Ayuntamiento/Transparencia?vgnextfmt=default&vgnextchannel=20fd850769797310VgnVCM2000000c205a0aRCRD"
-      external_link_opendata: Open data
+      external_link_opendata: "Open data"
       external_link_opendata_url: "http://datos.madrid.es"
-      external_link_blog: Blog
+      external_link_blog: "Blog"
       external_link_blog_url: "/blog"
       open_gov: "%{open} government"
-      open: "Open"
+      open: "open"
       participation: "Participation"
       transparency: "Transparency"
       open_data: "Open data"
-      open_city_title: "The city you want, it will be the city you want."
+      open_city_title: "Love the city, and it will become a city you love."
       open_city_slogan_html:
-        "Start listening to Madrid.
-        For that we open this digital Puerta del Sol, where all the locals can meet to discuss and share everything we want."
+        "There are cities that are governed directly by their inhabitants, who <b>discuss</b> the topics they are concerned about, <b>propose</b> ideas to improve
+        their lives and <b>decide</b> among themselves which ones will be carried out. Madrid is already one of these cities."
       see_all: "See proposals"
-      my_account_link: My account
+      my_account_link: "My account"
       locale: "Language:"
-      administration: Administration
-      moderation: Moderation
-      highlights: "Highlights"
+      administration: "Administration"
+      moderation: "Moderation"
+      # highlights: "Highlights"
       more_information: "More information"
-      debates: Debates
-      proposals: Proposals
+      debates: "Debates"
+      proposals: "Citizen proposals"
     footer:
-      description: "This portal use %{consul}, is %{open_source}. Madrid, for the whole world."
-      open_source: "software libre"
+      description: "This portal uses the %{consul} which is %{open_source}. From Madrid out into the world."
+      open_source: "open-source software"
       open_source_url: "http://www.gnu.org/licenses/agpl-3.0.html"
       consul: "Consul application"
       consul_url: "https://github.com/ayuntamientomadrid"
       copyright: "Ayuntamiento de Madrid, %{year}"
       participation_title: "Participation"
-      participation_text: Decide what should be the city of Madrid you want.
-      transparency_title: Transparency
-      transparency_text: Get any information on the City of Madrid.
-      open_data_title:  Open Data
-      open_data_text: "All City Council data are yours."
-      contact_us: "For technical support contact us"
+      participation_text: "Decide how to shape the Madrid you want to live in."
+      transparency_title: "Transparency"
+      transparency_text: "Find out anything about the Madrid City Council."
+      open_data_title: "Open data"
+      open_data_text: "Every detail about the City Council is yours to access."
+      contact_us: "Contact us at"
       privacy: "Privacy Policy"
-      conditions: "Terms of use"
+      conditions: "Terms and conditions of use"
       more_info: "More information"
       accessibility: "Accessibility"
     application:
-      ie_title: "This site is not optimized for your browser"
+      ie_title: "This website is not optimised for your browser"
       ie:
-        "You are using Internet Explorer.
-        For a better experience we recommend use %{chrome} or %{firefox}."
+        "We have detected that you are browsing with Internet Explorer.
+        For an enhanced experience, we recommend using %{chrome} or %{firefox}."
       chrome: "Google Chrome"
       firefox: "Firefox"
   social:
@@ -61,89 +61,86 @@ en:
     blog: "Blog"
     youtube: "YouTube"
   form:
-      error: error
-      errors: errors
-      not_saved: "prohibited this %{resource} from being saved:"
-      accept_terms: "I accept the %{policy} and the %{conditions}"
-      policy: "Privacy policy"
-      conditions: "Terms of use"
-      user: account
-      debate: debate
-      proposal: proposal
-      verification::sms: phone
-      verification::letter: verification
+    error: "error"
+    errors: "errors"
+    not_saved: "prevented this %{resource} from being saved:"
+    accept_terms: "I agree to the %{policy} and the %{conditions}"
+    policy: "Privacy Policy"
+    conditions: "Terms and conditions of use"
+    user: "Account"
+    debate: "Debate"
+    proposal: "Proposal"
+    verification::sms: "Telephone"
+    verification::letter: "the verification"
   application:
-    alert:
-      only_beta_testers: "Sorry only Beta Testers are allowed access at the moment"
     close: "Close"
     menu: "Menu"
   debates:
     index:
-      title: Debates
-      start_debate: Start a debate
-      select_order: Order by
-      select_order_long: Order debates by
+      title: "Debates"
+      start_debate: "Start a debate"
+      select_order: "Order by"
+      select_order_long: "You are viewing debates according to:"
       orders:
-        confidence_score: best rated
-        hot_score: most active
-        created_at: newest
-        most_commented: most commented
-        random: random
+        confidence_score: "highest rated"
+        hot_score: "most active"
+        created_at: "newest"
+        most_commented: "most commented"
+        random: "random"
       filter_topic:
-        one: " with the topic '%{topic}'"
-        other: " with the topic '%{topic}'"
+        one: " with topic '%{topic}'"
+        other: " with topic '%{topic}'"
       search_form:
-        title: Search
-        button: Search
+        title: "Search"
+        button: "Search"
         placeholder: "Search debates..."
       search_results:
-        one: " containing '%{search_term}'"
-        other: " containing '%{search_term}'"
+        one: " containing the term '%{search_term}'"
+        other: " containing the term '%{search_term}'"
     debate:
-      debate: Debate
+      debate: "Debate"
       comments:
-        zero: No comments
-        one: 1 Comment
-        other: "%{count} Comments"
+        zero: "No comments"
+        one: "1 comment"
+        other: "%{count} comments"
       votes:
-        zero: No votes
-        one: 1 vote
+        zero: "No votes"
+        one: "1 vote"
         other: "%{count} votes"
     form:
-      debate_title: Debate title
-      debate_text: Initial text for debate
-      tags_label: Topics
-      tags_instructions: >
-        Tag this debate. You can choose among our proposals on the list or add any other topic you want.
-      tags_placeholder: "Add topics writing them separated by ','"
+      debate_title: "Debate title"
+      debate_text: "Initial debate text"
+      tags_label: "Topics"
+      tags_instructions: "Tag this debate. You can choose from our suggestions or enter your own."
+      tags_placeholder: "Enter the tags you would like to use, separated by commas (',')"
     show:
-      back_link: Back
-      author_deleted: Deleted user
-      comments_title: Comments
+      back_link: "Go back"
+      author_deleted: "User deleted"
+      comments_title: "Comments"
       comments:
-        zero: No comments
-        one: 1 Comment
-        other: "%{count} Comments"
-      login_to_comment: "You need to %{signin} or %{signup} to comment."
-      edit_debate_link: "Edit debate"
-      share: Share
-      flag: "This debate has been flag as innapropiate for some users."
+        zero: "No comments"
+        one: "1 comment"
+        other: "%{count} comments"
+      login_to_comment: "You must %{signin} or %{signup} to leave a comment."
+      edit_debate_link: "Edit"
+      share: "Share"
+      flag: "This debate has been flagged as inappropriate by several users."
     edit:
-      editing: Edit debate
-      show_link: Show debate
-      back_link: Back
+      editing: "Edit debate"
+      show_link: "View debate"
+      back_link: "Go back"
       form:
         submit_button: "Save changes"
     new:
-      start_new: Start a debate
-      info: "A debate is a discussion forum, not a proposal. And soon... we opened the section of citizen proposals."
-      more_info: "More info"
-      back_link: Back
-      recommendations_title: Tips for creating a debate
-      recommendation_one: "Do not write the title of the debate or whole sentences in capital. On the Internet this is considered shouting. And nobody likes to scream."
-      recommendation_two: "Any discussion or comment that involves an illegal act will be eliminated, also intending to sabotage the debate spaces, everything else is permitted."
-      recommendation_three: "The harsh criticism are very welcome. This is a space of thought but we recommend preserving the elegance and intelligence. The world is better with them present."
-      recommendation_four: "Enjoy this space, voices that fill it, it is yours too."
+      start_new: "Start a debate"
+      info: "A debate is a discussion forum, not a citizen proposal. Very soon we will be opening the citizen proposal section, where anyone will be able to present a proposal which, if they receive support, will be implemented by the City Council."
+      more_info: "More information"
+      back_link: "Go back"
+      recommendations_title: "Recommendations for creating a debate"
+      recommendation_one: "Do not use capital letters for the debate title or for whole sentences. On the internet, this is considered shouting. And nobody likes being shouted at."
+      recommendation_two: "Any debate or comment suggesting illegal action will be deleted, as well as those intending to sabotage the debate spaces. Anything else is allowed."
+      recommendation_three: "Ruthless criticism is very welcome. This is a space for reflection. But we recommend that you stick to elegance and intelligence. The world is a better place with these virtues in it."
+      recommendation_four: "Enjoy this space and the voices that fill it. It belongs to you too."
       form:
         submit_button: "Start a debate"
     create:
@@ -154,91 +151,90 @@ en:
         submit_button: "Save changes"
   proposals:
     index:
-      title: Proposals
+      title: "Proposals"
       featured_proposals_html: "Featured<br>proposals"
-      start_proposal: Start a proposal
-      select_order: Order by
-      select_order_long: Order proposals by
+      start_proposal: "Create a proposal"
+      select_order: "Order by"
+      select_order_long: "You are viewing proposals according to:"
       orders:
-        confidence_score: "most supported"
-        hot_score: "most active today"
-        created_at: newest
-        most_commented: most commented
-        random: random
+        confidence_score: "highest rated"
+        hot_score: "most active"
+        created_at: "newest"
+        most_commented: "most commented"
+        random: "random"
       filter_topic:
-        one: " with the topic '%{topic}'"
-        other: " with the topic '%{topic}'"
+        one: " with topic '%{topic}'"
+        other: " with topic '%{topic}'"
       search_form:
-        title: Search
-        button: Search
-        placeholder: "Search proposals..."
+        title: "Search"
+        button: "Search"
+        placeholder: "Search citizen proposals..."
       search_results:
-        one: " containing '%{search_term}'"
-        other: " containing '%{search_term}'"
+        one: " containing the term '%{search_term}'"
+        other: " containing the term '%{search_term}'"
     proposal:
-      proposal: Proposal
+      proposal: "Proposal"
       support: "Support"
       support_title: "Support this proposal"
       comments:
-        zero: No comments
-        one: 1 Comment
-        other: "%{count} Comments"
+        zero: "No comments"
+        one: "1 comment"
+        other: "%{count} comments"
       supports:
-        zero: No supports
-        one: 1 support
+        zero: "No supports"
+        one: "1 support"
         other: "%{count} supports"
-      supports_necessary: "53.726 necessary supports"
-      census_percent: "2% of census"
+      supports_necessary: "53,726 supports needed"
+      census_percent: "2% of Census"
       total_percent: "100%"
-      already_supported: "You already supported this proposal, share it!"
+      already_supported: "You have already supported this proposal. Share it!"
     form:
-      proposal_title: Proposal title
-      proposal_question: Proposal question
-      proposal_question_example_html: "Debe ser resumida en una pregunta cuya respuesta sea Sí o No. <em>Ej. '¿Está usted de acuerdo en peatonalizar la calle Mayor?'</em>"
-      proposal_text: Initial text for proposal
-      proposal_external_url: Link to additional documentation
-      proposal_video_url: "Enlace a vídeo externo"
-      proposal_video_url_note: "Puedes añadir un enlace a YouTube o Vimeo"
+      proposal_title: "Proposal title"
+      proposal_question: "Proposal question"
+      proposal_question_example_html: "Must be summarised in one question with a Yes or No answer. <em>E.g. 'Do you agree with the pedestrianisation of Calle Mayor?'</em>"
       proposal_summary: "Proposal summary"
-      proposal_summary_note: "200 chars. maximum"
-      proposal_responsible_name: "First and last name of the person making this proposal"
-      proposal_responsible_name_note: "(individualmente o como representante de un colectivo; no se mostrará públicamente)"
-      tags_label: Topics
-      tags_instructions: >
-        Tag this proposal. You can choose among our proposals on the list or add any other topic you want.
-      tags_placeholder: "Add topics writing them separated by ','"
+      proposal_summary_note: "(maximum 200 characters)"
+      proposal_text: "Proposal text"
+      proposal_external_url: "Link to additional documentation"
+      proposal_video_url: "Link to external video"
+      proposal_video_url_note: "You may add a link to YouTube or Vimeo"
+      proposal_responsible_name: "Full name of the person submitting the proposal"
+      proposal_responsible_name_note: "(individually or as representative of a collective; will not be displayed publically)"
+      tags_label: "Tags"
+      tags_instructions: "Tag this proposal. You can choose from our tags or add your own."
+      tags_placeholder: "Enter the tags you would like to use, separated by commas (',')"
     show:
-      back_link: Back
-      author_deleted: Deleted user
+      back_link: "Go back"
+      author_deleted: "User deleted"
       code: "Proposal code:"
-      comments_title: Comments
+      comments_title: "Comments"
       comments:
-        zero: No comments
-        one: 1 Comment
-        other: "%{count} Comments"
-      login_to_comment: "You need to %{signin} or %{signup} to comment."
-      edit_proposal_link: "Edit proposal"
-      share: Share
-      flag: "This proposal has been flag as innapropiate for some users."
+        zero: "No comments"
+        one: "1 comment"
+        other: "%{count} comments"
+      login_to_comment: "You must %{signin} or %{signup} to leave a comment."
+      edit_proposal_link: "Edit"
+      share: "Share"
+      flag: "This proposal has been flagged as inappropriate by several users."
     edit:
-      editing: Edit proposal
-      show_link: Show proposal
-      back_link: Back
+      editing: "Edit proposal"
+      show_link: "View proposal"
+      back_link: "Go back"
       form:
         submit_button: "Save changes"
     new:
-      start_new: Start a proposal
-      more_info: "¿Cómo funcionan las propuestas ciudadanas?"
-      back_link: Back
-      recommendations_title: Tips for creating a proposal
-      recommendation_one: "Do not write the title of the proposal or whole sentences in capital. On the Internet this is considered shouting. And nobody likes to scream."
-      recommendation_two: "Any discussion or comment that involves an illegal act will be eliminated, also intending to sabotage the proposal spaces, everything else is permitted."
-      recommendation_three: "Enjoy this space, voices that fill it, it is yours too."
+      start_new: "Create new proposal"
+      more_info: "How do citizen proposals work?"
+      back_link: "Go back"
+      recommendations_title: "Recommendations for creating a proposal"
+      recommendation_one: "Do not use capital letters for the proposal title or for whole sentences. On the internet, this is considered shouting. And nobody likes being shouted at."
+      recommendation_two: "Any proposal or comment suggesting illegal action will be deleted, as well as those intending to sabotage the debate spaces. Anything else is allowed."
+      recommendation_three: "Enjoy this space and the voices that fill it. It belongs to you too."
       form:
-        submit_button: "Start a proposal"
+        submit_button: "Create proposal"
     create:
       form:
-        submit_button: "Start a proposal"
+        submit_button: "Create proposal"
     update:
       form:
         submit_button: "Save changes"
@@ -248,56 +244,56 @@ en:
       confidence_score: "Most voted"
       created_at: "Newest"
     form:
-      leave_comment: Write a comment
-      comment_as_moderator: Comment as moderator
-      comment_as_admin: Comment as administrator
+      leave_comment: "Leave your comment"
+      comment_as_moderator: "Comment as moderator"
+      comment_as_admin: "Comment as admin"
     comment:
-      author: Author
-      moderator: Moderator
-      admin: Administrator
-      deleted: This comment has been deleted
-      user_deleted: Deleted user
+      author: "Author"
+      moderator: "Moderator"
+      admin: "Administrator"
+      deleted: "This comment has been deleted"
+      user_deleted: "User deleted"
       responses:
-        zero: No Responses
-        one: 1 Response
-        other: "%{count} Responses"
+        zero: "No responses"
+        one: "1 response"
+        other: "%{count} responses"
       votes:
-        zero: No votes
-        one: 1 vote
+        zero: "No votes"
+        one: "1 vote"
         other: "%{count} votes"
   comments_helper:
-    comment_link: Comment
-    comment_button: Publish comment
-    reply_link: Reply
-    reply_button: Publish reply
+    comment_link: "Comment"
+    comment_button: "Publish comment"
+    reply_link: "Reply"
+    reply_button: "Publish reply"
   votes:
-    agree: I agree
-    disagree: I disagree
-    supports: Supports
-    unauthenticated: "You need to %{signin} or %{signup} before continuing."
-    signin: sign in
-    signup: sign up
-    anonymous: "Too many anonymous votes, %{verify_account} to vote."
-    verified_only: "Proposals can only be voted by verified users, %{verify_account}."
-    verify_account: verify your account
-    organizations: Organizations can not vote
+    agree: "I agree"
+    disagree: "I disagree"
+    supports: "Supports"
+    unauthenticated: "You must %{signin} or %{signup} to continue."
+    signin: "Sign in"
+    signup: "Sign up"
+    anonymous: "Too many anonymous votes to admit vote %{verify_account}."
+    verified_only: "Only verified users can vote on proposals; %{verify_account}."
+    verify_account: "verify your account"
+    organizations: "Organisations are not permitted to vote"
   account:
     show:
       title: "My account"
       save_changes_submit: "Save changes"
       change_credentials_link: "Change my credentials"
-      email_on_comment_label: "Receive email when someone comments on my debates or proposals"
-      email_on_comment_reply_label: "Receive email when someone replies to my comments"
+      email_on_comment_label: "Notify me by email when someone comments on my proposals or debates"
+      email_on_comment_reply_label: "Notify me by email when someone replies to my comments"
       erase_account_link: "Erase my account"
-      personal: "Personal data"
+      personal: "Personal details"
       username_label: "Username"
       phone_number_label: "Phone number"
-      organization_name_label: "Organization name"
-      organization_responsible_name_placeholder: "The responsible representative of the organization"
-      notifications: Notifications
-      finish_verification: "Finish verification"
-      verified_account: Verified account
-      verify_my_account: Verify my account
+      organization_name_label: "Name of organisation"
+      organization_responsible_name_placeholder: "Representative of the organisation/collective"
+      notifications: "Notifications"
+      finish_verification: "Complete verification"
+      verified_account: "Account verified"
+      verify_my_account: "Verify my account"
       user_permission_title: "Participation"
       user_permission_info: "With your account you can..."
       user_permission_debates: "Participate on debates"
@@ -307,45 +303,45 @@ en:
       user_permission_verify: "To perform all the actions verify your account."
       user_permission_verify_info: "* Only for users on Madrid City Census."
   simple_captcha:
-    placeholder: "Enter the image value"
-    label: "Enter the image value in the next form"
+    placeholder: "Enter the text from the image"
+    label: "Enter the text from the image in the box below"
     refresh_button_text: "Refresh"
     message:
-      user: "secret code did not match with the image"
-      debate: "secret code did not match with the image"
-      proposal: "secret code did not match with the image"
+      user: "the secret code does not match the image"
+      debate: "the secret code does not match the image"
+      proposal: "the secret code does not match the image"
   shared:
     author_info:
-      author_deleted: Deleted user
+      author_deleted: "User deleted"
     tags_cloud:
-      tags: Trend
+      tags: "Trending"
     print:
       print_button: "Print this info"
-    flag: Flag as inappropriate
-    unflag: Undo flag
-    collective: Collective
-    check: Select
-    check_all: All
-    check_none: None
+    flag: "Flag as inappropriate"
+    unflag: "Unflag"
+    collective: "Collective"
+    check: "Select"
+    check_all: "All"
+    check_none: "None"
   unauthorized:
-    default: "You are not authorized to access this page."
+    default: "You do not have permission to access this page."
     manage:
-      all: "You are not authorized to %{action} %{subject}."
+      all: "You do not have permission to carry out the action '%{action}' on %{subject}."
   welcome:
     highlights: "Highlights: "
-    signed_in_home_title: Recent activity
+    signed_in_home_title: "Recent activity"
     debates:
-      title: "Debate"
-      description: "Meet, discuss and share what we think is important in our city."
+      title: "Debates"
+      description: "For meeting, discussing and sharing the things that matter to us in our city."
     proposal:
       title: "You propose"
-      description: "Open to citizens proposals on the kind of city we want to live."
+      description: "Open space for citizen proposals about the kind of city we want to live in."
     decide:
       title: "You decide"
-      description: "Citizenship decide whether to accept or reject the most supported proposals."
+      description: "The public decides if it accepts or rejects the most supported proposals."
     do:
-      title: "It does"
-      description: "If the proposal is accepted mostly, the City Council makes his own and done."
+      title: "It gets done"
+      description: "If the proposal is accepted by the majority, the City Council accepts it as its own and it gets done."
     welcome:
       title: "Participate"
       go_to_index: "See proposals and debates"
@@ -353,19 +349,19 @@ en:
       user_permission_debates: "Participate on debates"
       user_permission_proposal: "Create new proposals"
       user_permission_support_proposal: "Support proposals*"
-      user_permission_votes: "Participate on final voting*"
+      user_permission_votes: "Participate on final voting"
       user_permission_verify: "To perform all the actions %{verify}."
       user_permission_verify_url: "verify your account"
-      user_permission_verify_info: "* Only for users on Madrid City Census."
+      user_permission_verify_info: "* Only for users on Madrid Census."
   omniauth:
     finish_signup:
-      title: Add Email
+      title: "Add your email address"
     twitter:
-      sign_in: Sign in with Twitter
-      sign_up: Sign up with Twitter
+      sign_in: "Sign in with Twitter"
+      sign_up: "Sign up with Twitter"
     facebook:
-      sign_in: Sign in with Facebook
-      sign_up: Sign up with Facebook
+      sign_in: "Sign in with Facebook"
+      sign_up: "Sign up with Facebook"
     google_oauth2:
-      sign_in: Sign in with Google
-      sign_up: Sign up with Google
+      sign_in: "Sign in with Google"
+      sign_up: "Sign up with Google"

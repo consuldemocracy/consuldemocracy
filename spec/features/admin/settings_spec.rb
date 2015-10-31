@@ -25,6 +25,6 @@ feature 'Admin settings' do
       click_button 'Update'
     end
 
-    expect(page).to have_content 'Setting updated!'
+    expect(page).to have_content 'Value updated'
   end
 end

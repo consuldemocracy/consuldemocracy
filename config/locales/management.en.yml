@@ -28,9 +28,9 @@ en:
     proposals:
       create_proposal: "Create proposal"
       print:
-       print_button: Print
+       print_button: "Print"
       alert:
-        unverified_user: User is not verified
+        unverified_user: "User is not verified"
     permissions:
       debates: "Engage in debates"
       create_proposals: "Create proposals"
@@ -65,3 +65,7 @@ en:
         "We have sent an email to the email address <b>%{email}</b> in order to verify that it belongs to this user.
         It contains a link they have to click. Then they will have to set their access password before being able
         to log in to the website"
+    print:
+      proposals_title: "Proposals:"
+      info: "Create yor proposal on http://decide.madrid.es"
+      note: "The proposals more supported will be voted. If are accepted by a majority, the city Council shall be carried out."

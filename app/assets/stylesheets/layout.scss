@@ -687,6 +687,7 @@ header {
       line-height: $line-height*3;
       margin-left: rem-calc(12);
       margin-right: rem-calc(36);
+      margin-right: 12px\9;
     }
 
     &:after {
@@ -898,6 +899,13 @@ form.locale-form {
   select {
     background-image: image-url("language_select.png");
 
+    option {
+      background: white;
+      color: $text;
+      border: 0;
+      outline: none;
+    }
+
     &.locale-switcher {
       background-color: transparent;
       border: 0;
@@ -914,6 +922,19 @@ form {
   label {
     font-weight: bold;
     line-height: $line-height;
+  }
+
+  input, textarea {
+    height: 48px\9;
+    line-height: 48px\9;
+    margin-bottom: 24px\9;
+    width: 100%\9;
+  }
+
+  input[type="checkbox"] {
+    height: auto\9;
+    line-height: inherit\9;
+    width: auto\9;
   }
 
   input[type]:not([type=submit]):not([type=file]):not([type=checkbox]) {

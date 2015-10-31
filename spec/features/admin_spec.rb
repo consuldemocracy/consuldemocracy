@@ -17,7 +17,7 @@ feature 'Admin' do
 
     expect(current_path).not_to eq(admin_root_path)
     expect(current_path).to eq(proposals_path)
-    expect(page).to have_content "not authorized"
+    expect(page).to have_content "You do not have permission to access this page"
   end
 
   scenario 'Access as a moderator is not authorized' do
@@ -26,7 +26,7 @@ feature 'Admin' do
 
     expect(current_path).not_to eq(admin_root_path)
     expect(current_path).to eq(proposals_path)
-    expect(page).to have_content "not authorized"
+    expect(page).to have_content "You do not have permission to access this page"
   end
 
   scenario 'Access as an administrator is authorized' do
@@ -34,7 +34,7 @@ feature 'Admin' do
     visit admin_root_path
 
     expect(current_path).to eq(admin_root_path)
-    expect(page).to_not have_content "not authorized"
+    expect(page).to_not have_content "You do not have permission to access this page"
   end
 
   scenario "Admin access links" do
@@ -99,7 +99,7 @@ feature 'Admin' do
 
       expect(page).to have_content 'Mi barrio'
 
-      click_link 'Delete Topic'
+      click_link 'Destroy Topic'
 
       expect(page).not_to have_content 'Mi barrio'
     end

@@ -2,9 +2,9 @@ en:
   devise_views:
     confirmations:
       new:
-        title: "Resend confirmation instructions"
-        email_label: Email
-        submit: "Resend confirmation"
+        title: "Re-send confirmation instructions"
+        email_label: "Email"
+        submit: "Re-send instructions"
       show:
         title: "Confirm my account"
         instructions_html: "Confirming the account with email %{email}"
@@ -14,28 +14,28 @@ en:
         submit: "Confirm"
     mailer:
       confirmation_instructions:
-        title: "Welcome to open government portal"
+        title: "Welcome to the Open Government Portal of the Madrid City Council"
         welcome: "Welcome"
-        text: "You can confirm your account email through the link below:"
+        text: "You can confirm your email account at the following link:"
         confirm_link: "Confirm my account"
       reset_password_instructions:
         hello: "Hello"
-        title: Change your password
-        text: "Someone has requested to change your password. You can do this through the link below:"
+        title: "Change your password"
+        text: "We have received a request to change your password. You can do this at the following link:"
         change_link: "Change my password"
-        ignore_text: "If you didn't request this, please ignore this email."
-        info_text: "Your password won't change until you access the link above and create a new one."
+        ignore_text: "If you did not request a password change, you can ignore this email."
+        info_text: "Your password will not be changed unless you access the link and edit it."
       unlock_instructions:
         hello: "Hello"
-        title: Your account has been locked
-        info_text: "Your account has been locked due to an excessive number of unsuccessful sign in attempts."
-        instructions_text: "Click the link below to unlock your account:"
+        title: "Your account has been locked"
+        info_text: "Your account has been blocked due to an excessive number of failed sign-in attempts."
+        instructions_text: "Please click on this link to unlock your account:"
         unlock_link: "Unlock my account"
     menu:
       login_items:
-        logout: "Logout"
-        signup: "Sign up"
-        login: "Log in"
+        logout: "Sign out"
+        signup: "Register"
+        login: "Sign in"
     passwords:
       edit:
         title: "Change your password"
@@ -43,40 +43,40 @@ en:
         password_confirmation_label: "Confirm new password"
         change_submit: "Change my password"
       new:
-        title: "Forgot your password?"
+        title: "Forgotten password?"
         email_label: "Email"
-        send_submit: "Send me reset password"
+        send_submit: "Send instructions"
     users:
       registrations:
         edit:
           edit: "Edit"
           email_label: "Email"
-          waiting_for: "Currently waiting confirmation for:"
-          leave_blank: "Leave blank if you don't want to change it"
+          waiting_for: "Awaiting confirmation of:"
+          leave_blank: "Leave blank if you do not wish to modify"
           password_label: "New password"
           password_confirmation_label: "Confirm new password"
           current_password_label: "Current password"
-          need_current: "We need your current password to confirm your changes"
+          need_current: "We need your current password to confirm the changes"
           update_submit: "Update"
           back_link: "Back"
         new:
-          title: "Sign up"
+          title: "Register"
           username_label: "Username"
-          username_note: "Username which will appear in your publications"
+          username_note: "Name that appears next to your posts"
           email_label: "Email"
           password_label: "Password"
           password_confirmation_label: "Confirm password"
-          submit: "Sign up"
-          organization_signup: "Do you represent an organization / group? %{signup_link}"
+          submit: "Register"
+          organization_signup: "Do you represent an organisation or collective? %{signup_link}"
           organization_signup_link: "Sign up here"
-          terms: "To sign up in this site your accept the %{terms}"
-          terms_link: "terms of use"
+          terms: "By registering you accept the %{terms}"
+          terms_link: "terms and conditions of use"
         success:
-          title: "Review your email inbox"
-          thank_you_html: "Thank you for registering. Now you must <b>confirm your email account</b>."
-          instructions_1_html: "Please <b>review your email inbox</b> - we have sent you a <b>link to confirm your account</b>."
-          instructions_2_html: "Once you click that link, you will be able to start participating"
-          back_to_index: "Understood, take me back to the home page"
+          title: "Modify your email"
+          thank_you_html: "Thank you for registering for the website. You must now <b>confirm your email address</b>."
+          instructions_1_html: "Please <b>check your email</b> - we have sent you a <b>link to confirm your account</b>."
+          instructions_2_html: "Once confirmed, you may begin participation."
+          back_to_index: "I understand; go back to main page"
         delete_form:
           title: "Erase account"
           info: "This action can not be undone. Please make sure this is what you want."
@@ -86,41 +86,40 @@ en:
     organizations:
       registrations:
         new:
-          title: "Sign up as organization / collective"
-          organization_name_label: "Organization name"
-          responsible_name_label: "Name and surname of the person in charge"
-          responsible_name_note: "The responsible representative of the organization"
+          title: "Register as an organisation or collective"
+          organization_name_label: "Name of organisation"
+          responsible_name_label: "Full name of the person responsible for the collective"
+          responsible_name_note: "This would be the person representing the association/collective in whose name the proposals are presented"
           email_label: "Email"
           password_label: "Password"
           phone_number_label: "Phone number"
           password_confirmation_label: "Confirm password"
-          submit: "Sign up"
+          submit: "Register"
         success:
-          title: "Registration of organization / collective"
-          thank_you_html: "Thank you for registering your organization or collective in the website. Now is <b>pending verification</b>."
-          instructions_1_html: "We will <b>contact you soon</b> in order to verify that you represent your collective."
-          instructions_2_html: "Meanwhile, <b>review your email</b>. We have sent you a <b>confirmation link to activate your account</b>."
-          instructions_3_html: "When you confirm your account will then be able to participate as a non-verified organization."
-          back_to_index: "Understood, take me back to the home page"
+          title: "Registration of organisation / collective"
+          thank_you_html: "Thank you for registering your collective on the website. It is now <b>pending verification</b>."
+          instructions_1_html: "<b>We will contact you soon</b> to verify that you do in fact represent this collective."
+          instructions_2_html: "While your <b>email is reviewed</b>, we have sent you a <b>link to confirm your account</b>."
+          instructions_3_html: "Once confirmed, you may begin to participate as an unverified collective."
+          back_to_index: "I understand; go back to main page"
     sessions:
       new:
-        title: "Log in"
+        title: "Sign in"
         email_label: "Email"
         password_label: "Password"
         remember_me: "Remember me"
-        submit: "Log in"
+        submit: "Enter"
     unlocks:
       new:
-        title: "Resend unlock instructions"
+        title: "Re-sent unlocking instructions"
         email_label: "Email"
-        submit: "Resend unlock instructions"
+        submit: "Re-send unlocking instructions"
     shared:
       links:
-        login: "Log in"
+        login: "Enter"
         signup: "Don't have an account? %{signup_link}"
         signup_link: "Sign up"
-        #organization_signup: "Sign up as an organization / collective"
         signin_with_provider: "Sign in with %{provider}"
-        new_password: "Forgot your password?"
-        new_confirmation: "Didn't receive confirmation instructions?"
-        new_unlock: "Didn't receive unlock instructions?"
+        new_password: "Forgotten your password?"
+        new_confirmation: "Haven't received instructions to activate your account?"
+        new_unlock: "Haven't received unlocking instructions?"

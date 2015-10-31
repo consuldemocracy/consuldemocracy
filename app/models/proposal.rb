@@ -4,6 +4,7 @@ class Proposal < ActiveRecord::Base
   include Conflictable
   include Measurable
   include Sanitizable
+  include PgSearch
 
   apply_simple_captcha
   acts_as_votable
@@ -38,12 +39,30 @@ class Proposal < ActiveRecord::Base
   scope :sort_by_random, -> { order("RANDOM()") }
   scope :sort_by_flags, -> { order(flags_count: :desc, updated_at: :desc) }
 
+  pg_search_scope :pg_search, {
+    against: {
+      title:       'A',
+      question:    'B',
+      summary:     'C',
+      description: 'D'
+    },
+    associated_against: {
+      tags: :name
+    },
+    using: {
+      tsearch: { dictionary: "spanish" },
+      trigram: { threshold: 0.1 },
+    },
+    ranked_by: '(:tsearch + proposals.cached_votes_up)',
+    order_within_rank: "proposals.created_at DESC"
+  }
+
   def description
     super.try :html_safe
   end
 
   def total_votes
-    cached_votes_up
+    cached_votes_up + physical_votes
   end
 
   def editable?
@@ -74,14 +93,13 @@ class Proposal < ActiveRecord::Base
 
   def calculate_hot_score
     self.hot_score = ScoreCalculator.hot_score(created_at,
-                                               cached_votes_up,
-                                               cached_votes_up,
+                                               total_votes,
+                                               total_votes,
                                                comments_count)
   end
 
   def calculate_confidence_score
-    self.confidence_score = ScoreCalculator.confidence_score(cached_votes_up,
-                                                             cached_votes_up)
+    self.confidence_score = ScoreCalculator.confidence_score(total_votes, total_votes)
   end
 
   def after_hide
@@ -93,7 +111,7 @@ class Proposal < ActiveRecord::Base
   end
 
   def self.search(terms)
-    terms.present? ? where("title ILIKE ? OR description ILIKE ? OR question ILIKE ?", "%#{terms}%", "%#{terms}%", "%#{terms}%") : none
+    self.pg_search(terms)
   end
 
   def self.votes_needed_for_success

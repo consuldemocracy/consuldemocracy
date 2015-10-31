@@ -2,17 +2,17 @@ es:
   mailers:
     comment:
       subject: "Alguien ha comentado en tu %{commentable}"
-      hi: Hola
-      title: Nuevo comentario
+      hi: "Hola"
+      title: "Nuevo comentario"
       new_comment_by_html: "Hay un nuevo comentario de <b>%{commenter}</b> en"
     reply:
-      subject: Alguien ha respondido a tu comentario
-      hi: Hola
-      title: Nueva respuesta a tu comentario
+      subject: "Alguien ha respondido a tu comentario"
+      hi: "Hola"
+      title: "Nueva respuesta a tu comentario"
       new_reply_by_html: "Hay una nueva respuesta de <b>%{commenter}</b> a tu comentario en"
     email_verification:
-      subject: Verifica tu email
-      title:  Verifica tu cuenta con el siguiente enlace
+      subject: "Verifica tu email"
+      title:  "Verifica tu cuenta con el siguiente enlace"
       instructions_html: "Para terminar de verificar tu cuenta de usuario en el Portal de Gobierno Abierto del Ayuntamiento de Madrid, necesitamos que pulses %{verification_link}."
       click_here_to_verify: "en este enlace"
       instructions_2_html: "Este email es para verificar tu cuenta con <b>%{document_type} %{document_number}</b>. Si esos no son tus datos, por favor no pulses el enlace anterior e ignora este email."

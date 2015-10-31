@@ -201,7 +201,7 @@ feature 'Admin activity' do
       visit proposal_path(proposal)
 
       within("#proposal_#{proposal.id}") do
-        click_link 'Ban author'
+        click_link 'Hide author'
       end
 
       visit admin_activity_path
@@ -221,7 +221,7 @@ feature 'Admin activity' do
       visit moderation_users_path(name_or_email: user.username)
 
       within(".admin-list") do
-        click_link 'Ban'
+        click_link 'Block'
       end
 
       visit admin_activity_path

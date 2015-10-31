@@ -16,7 +16,7 @@ feature 'Organizations' do
     fill_in 'user_captcha', with: correct_captcha_text
     check 'user_terms_of_service'
 
-    click_button 'Sign up'
+    click_button 'Register'
 
     user = User.organizations.where(email: 'green@peace.com').first
     expect(user).to be
@@ -27,7 +27,7 @@ feature 'Organizations' do
   scenario 'Errors on create' do
     visit new_organization_registration_path
 
-    click_button 'Sign up'
+    click_button 'Register'
 
     expect(page).to have_content error_message
   end

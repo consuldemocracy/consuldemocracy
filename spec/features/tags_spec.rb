@@ -84,7 +84,7 @@ feature 'Tags' do
 
     click_button 'Start a debate'
 
-    expect(page).to have_content 'Debate was successfully created.'
+    expect(page).to have_content 'Debate created successfully.'
     expect(page).to have_content 'Economía'
     expect(page).to have_content 'Hacienda'
     expect(page).to have_content 'Impuestos'
@@ -104,7 +104,7 @@ feature 'Tags' do
 
     click_button 'Start a debate'
 
-    expect(page).to have_content '1 error prohibited this debate from being saved:'
+    expect(page).to have_content error_message
     expect(page).to have_content 'tags must be less than or equal to 6'
   end
 
@@ -120,7 +120,7 @@ feature 'Tags' do
     fill_in 'debate_captcha', with: correct_captcha_text
     click_button 'Save changes'
 
-    expect(page).to have_content 'Debate was successfully updated.'
+    expect(page).to have_content 'Debate updated successfully.'
     within('.tags') do
       expect(page).to have_css('a', text: 'Economía')
       expect(page).to have_css('a', text: 'Hacienda')
@@ -137,7 +137,7 @@ feature 'Tags' do
     fill_in 'debate_captcha', with: correct_captcha_text
     click_button 'Save changes'
 
-    expect(page).to have_content 'Debate was successfully updated.'
+    expect(page).to have_content 'Debate updated successfully.'
     expect(page).to_not have_content 'Economía'
   end
 

@@ -25,10 +25,10 @@ feature 'EmailVerifications' do
     sent_token = /.*email_verification_token=(.*)".*/.match(ActionMailer::Base.deliveries.last.body.to_s)[1]
     visit email_path(email_verification_token: sent_token)
 
-    expect(page).to have_content "You are now a verified user"
+    expect(page).to have_content "You are a verified user"
 
     expect(page).to_not have_link "Verify my account"
-    expect(page).to have_content "Verified account"
+    expect(page).to have_content "Account verified"
 
     expect(user.reload.document_number).to eq('1234')
     expect(user).to be_level_three_verified

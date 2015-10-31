@@ -177,8 +177,6 @@ feature 'Votes' do
         expect(current_path).to eq(debates_path)
       end
     end
-
-
   end
 
   feature 'Proposals' do
@@ -194,15 +192,15 @@ feature 'Votes' do
 
       within("#proposals") do
         within("#proposal_#{proposal1.id}_votes") do
-          expect(page).to have_content "You already supported this proposal, share it!"
+          expect(page).to have_content "You have already supported this proposal. Share it!"
         end
 
         within("#proposal_#{proposal2.id}_votes") do
-          expect(page).to_not have_content "You already supported this proposal, share it!"
+          expect(page).to_not have_content "You have already supported this proposal. Share it!"
         end
 
         within("#proposal_#{proposal3.id}_votes") do
-          expect(page).to_not have_content "You already supported this proposal, share it!"
+          expect(page).to_not have_content "You have already supported this proposal. Share it!"
         end
       end
     end
@@ -246,7 +244,7 @@ feature 'Votes' do
           find('.in-favor a').click
 
           expect(page).to have_content "1 support"
-          expect(page).to have_content "You already supported this proposal, share it!"
+          expect(page).to have_content "You have already supported this proposal. Share it!"
         end
       end
 
@@ -258,7 +256,7 @@ feature 'Votes' do
           find('.in-favor a').click
 
           expect(page).to have_content "1 support"
-          expect(page).to have_content "You already supported this proposal, share it!"
+          expect(page).to have_content "You have already supported this proposal. Share it!"
         end
         expect(current_path).to eq(proposals_path)
       end
@@ -269,7 +267,7 @@ feature 'Votes' do
         within("#proposal_#{@proposal.id}") do
           find('.in-favor a').click
 
-          expect(page).to have_content "You already supported this proposal, share it!"
+          expect(page).to have_content "You have already supported this proposal. Share it!"
         end
         expect(current_path).to eq(proposals_path)
       end
@@ -280,12 +278,6 @@ feature 'Votes' do
     debate = create(:debate)
 
     visit debates_path
-    within("#debate_#{debate.id}") do
-      find("div.votes").hover
-      expect_message_you_need_to_sign_in
-    end
-
-    visit debate_path(debate)
     within("#debate_#{debate.id}") do
       find("div.votes").hover
       expect_message_you_need_to_sign_in

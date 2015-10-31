@@ -22,7 +22,7 @@ feature 'Admin::Organizations' do
       expect(page).to have_content(org.user.email)
       expect(page).to_not have_content("Greentroll")
       expect(page).to_not have_content("trol@troller.com")
-      expect(page).to have_content("There is 1 organization without user or with the user banned")
+      expect(page).to have_content("There is also one organisation with no users or with a hidden user")
     end
   end
 

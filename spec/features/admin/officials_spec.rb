@@ -32,7 +32,7 @@ feature 'Admin officials' do
     select '3', from: 'user_official_level', exact: false
     click_button 'Update User'
 
-    expect(page).to have_content 'Official position saved!'
+    expect(page).to have_content 'Details of official saved'
 
     visit admin_officials_path
 
@@ -55,7 +55,7 @@ feature 'Admin officials' do
     select '4', from: 'user_official_level', exact: false
     click_button 'Update User'
 
-    expect(page).to have_content 'Official position saved!'
+    expect(page).to have_content 'Details of official saved'
 
     visit admin_officials_path
 
@@ -68,9 +68,9 @@ feature 'Admin officials' do
   scenario 'Destroy' do
     visit edit_admin_official_path(@official)
 
-    click_link "Remove 'Official' condition"
+    click_link "Remove 'Official' status"
 
-    expect(page).to have_content 'User is not an official anymore'
+    expect(page).to have_content 'Details saved: the user is no longer an official'
     expect(current_path).to eq(admin_officials_path)
     expect(page).to_not have_content @citizen.name
     expect(page).to_not have_content @official.name

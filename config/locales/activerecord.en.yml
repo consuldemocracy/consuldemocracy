@@ -7,46 +7,68 @@ en:
             email:
               password_already_set: "This user already has a password"
     models:
-      activity: Activity
-      comment: Comment
-      debate: Debate
-      proposal: Proposal
-      tag: Topic
-      user: User
-      vote: Vote
-      organization: Organization
+      activity:
+        one: "activity"
+        other: "activities"
+      comment:
+        one: "Comment"
+        other: "Comments"
+      debate:
+        one: "Debate"
+        other: "Debates"
+      tag:
+        one: "Tag"
+        other: "Tags"
+      user:
+        one: "User"
+        other: "Users"
+      moderator:
+        one: "Moderator"
+        other: "Moderators"
+      administrator:
+        one: "Administrator"
+        other: "Administrators"
+      vote:
+        one: "Vote"
+        other: "Votes"
+      organization:
+        one: "Organisation"
+        other: "Organisations"
+      proposal:
+        one: "Citizen proposal"
+        other: "Citizen proposals"
     attributes:
       comment:
-        body: Comment
-        user: User
+        body: "Comment"
+        user: "User"
       debate:
-        author: Author
-        description: Opinion
-        terms_of_service: Terms of service
-        title: Title
+        author: "Author"
+        description: "Opinion"
+        terms_of_service: "Terms of service"
+        title: "Title"
       proposal:
-        author: Author
-        title: Title
-        question: Question
-        description: Description
-        terms_of_service: Terms of service
+        author: "Author"
+        title: "Title"
+        question: "Question"
+        description: "Description"
+        terms_of_service: "Terms of service"
       user:
-        email: Email
-        username: Username
-        password: Password
-        phone_number: Phone number
-        official_position: Official position
-        official_level: Official level
+        email: "Email"
+        username: "Username"
+        password: "Password"
+        phone_number: "Phone number"
+        official_position: "Official position"
+        official_level: "Official level"
       organization:
-        name: Organization name
-        responsible_name: Person in charge
+        name: "Name of organisation"
+        responsible_name: "Person responsible for the group"
     errors:
       models:
         debate:
           attributes:
             tag_list:
-              less_than_or_equal_to: tags must be less than or equal to %{count}
+              less_than_or_equal_to: "tags must be less than or equal to %{count}"
         proposal:
           attributes:
             tag_list:
-              less_than_or_equal_to: tags must be less than or equal to %{count}
+              less_than_or_equal_to: "tags must be less than or equal to %{count}"
