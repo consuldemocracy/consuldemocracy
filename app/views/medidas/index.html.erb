@@ -19,7 +19,7 @@ i18n_namespace: "medidas.index.search_form" %>
           <% elsif @tag_filter %>
             <h2 class="margin-top">
               <%= page_entries_info @medidas %>
-              <%= t("medidas.index.filter_topic", count: @medidas.size, topic: @tag_filter) %>
+              <%= t("medidas.index.filter_topic", count: @medidas.size, topic: t("programa.#{@tag_filter}")) %>
             </h2>
           <% end %>
         </div>
@@ -300,39 +300,6 @@ i18n_namespace: "medidas.index.search_form" %>
           </ul>
 
 		</div>
-
-
-
-        <div class="small-12 medium-12 menu-programa">
-
-
-
-
-          <div class="small-12 medium-12 epigrafe">
-        Administraciones accesibles, seguras, libres y eficientes
-
-        Libertades y derechos humanos
-
-        </div>
-
-          <div class="small-12 medium-12 subepigrafe">
-          Formas de gestión
-Herramientas para la gestión
-Participación Ciudadana
-Transparencia
-
-
-          </div>
-
-
-
-
-
-        </div>
-
-
-
-
 
 
         <!--div class="show-for-small-only">
