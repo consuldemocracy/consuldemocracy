@@ -259,7 +259,7 @@ es:
         zero: Sin apoyos
         one: 1 apoyo
         other: "%{count} apoyos"
-      supports_necessary: "53.726 apoyos necesarios"
+      supports_necessary: "7.641 apoyos necesarios"
       census_percent: "2% del Censo"
       total_percent: "100%"
       already_supported: "¡Ya has apoyado esta propuesta, compártela!"
