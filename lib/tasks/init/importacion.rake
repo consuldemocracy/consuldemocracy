@@ -1,4 +1,5 @@
 require 'roo'
+require 'yaml'
 
 class String
   def to_slug
@@ -17,6 +18,15 @@ class String
   end
 end
 
+def tag_code (tag)
+  programa = YAML.load_file('config/locales/programa.es.yml')
+  programa = programa["es"]["programa"]
+  programa.each do |clave, valor|
+    tag = clave if valor == tag
+  end
+  tag
+end
+
 namespace :init do
   desc "[init] Cargar datos de medidas"
   task :importacion => :environment do
@@ -29,30 +39,19 @@ namespace :init do
         #puts r.inspect
         #puts "#{r[1]} #{r[2]}"
       if r[0].to_i > 0 && !r[1].nil?
+puts "ID: #{r[0].to_i} \t tag_list: #{tag_code(r[3])}, #{tag_code(r[4])}"
         Medida.new do |t|
           t.id =r[0].to_i
           t.title =r[1]
           t.description="#{r[2]}\n#{r[3]}"
           t.author_id = 2
-          t.tag_list =[ r[4], r[5], r[6] ]
-          #t.created_at
-          #t.updated_at
-          #t.visit_id
-          #t.hidden_at
-          #t.flags_count
-          #t.ignored_flag_at
-          #t.cached_votes_total
-          #t.cached_votes_up
-          #t.cached_votes_down
-          #t.comments_count
-          #t.confirmed_hide_at
-          #t.cached_anonymous_votes_total
-          #t.cached_votes_score
-          #t.hot_score
-          #t.confidence_score
+          t.tag_list =[ tag_code(r[3]), tag_code(r[4]) ]
           #puts "#{t.id}" #{t.title} #{t.description} #{t.author_id} #{t.tag_list} "
         end .save!(:validate => false)
       end
     end
   end
 end
+
+
+

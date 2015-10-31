@@ -14,8 +14,7 @@
 
         <div class="alert-box radius info">
           <%= t("medidas.show.login_to_comment",
-              signin: link_to(t("votes.signin"), new_user_session_path),
-              signup: link_to(t("votes.signup"), new_user_registration_path)).html_safe %>
+              signin: link_to(t("votes.signin"), user_omniauth_authorize_path(:openid))).html_safe %>
           </div>
         <% end %>
 

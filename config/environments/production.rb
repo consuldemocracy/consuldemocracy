@@ -46,7 +46,7 @@ Rails.application.configure do
 
   # Use the lowest log level to ensure availability of diagnostic information
   # when problems arise.
-  config.log_level = :debug
+  config.log_level = :info
 
   # Prepend all log lines with the following tags.
   # config.log_tags = [ :subdomain, :uuid ]
@@ -65,6 +65,18 @@ Rails.application.configure do
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.default_url_options = { host: Rails.application.secrets.server_name }
   config.action_mailer.asset_host = "https://#{Rails.application.secrets.server_name}"
+
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    :address              => Rails.application.secrets.smtp["address"],
+    :user_name            => Rails.application.secrets.smtp["user_name"],
+    :password             => Rails.application.secrets.smtp["password"],
+    :port                 => Rails.application.secrets.smtp["port"],
+    :domain               => Rails.application.secrets.smtp["domain"],
+    :authentication       => Rails.application.secrets.smtp["authentication"],
+    :enable_starttls_auto => Rails.application.secrets.smtp["enable_starttls_auto"],
+    :openssl_verify_mode  => Rails.application.secrets.smtp["openssl_verify_mode"]
+  }
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation cannot be found).
