@@ -46,7 +46,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :proposals do
+  resources :proposals, path: 'propuestas' do
     member do
       post :vote
       put :flag
@@ -246,11 +246,11 @@ Rails.application.routes.draw do
   get "/census_terms", to: "pages#census_terms"
   get "/conditions", to: "pages#conditions"
   get "/general_terms", to: "pages#general_terms"
-  get "/privacy", to: "pages#privacy"
+  get "/privacidad", to: "pages#privacy"
   get "/coming_soon", to: "pages#coming_soon"
   get "/how_it_works", to: "pages#how_it_works"
   get "/how_to_use", to: "pages#how_to_use"
-  get "/more_information", to: "pages#more_information"
+  get "/mas-informacion", to: "pages#more_information"
   get "/opendata", to: "pages#opendata"
   get "/participation", to: "pages#participation"
   get "/transparency", to: "pages#transparency"
