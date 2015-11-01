@@ -35,7 +35,7 @@
 //= require tags
 //= require users
 //= require votes
-
+//= require legal_cookie
 
 var initialize_modules = function() {
   App.Comments.initialize();
