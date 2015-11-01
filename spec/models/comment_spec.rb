@@ -39,6 +39,12 @@ describe Comment do
     end
   end
 
+  describe "#author_id?" do
+    it "returns the user's id" do
+      expect(comment.author_id).to eq(comment.user.id)
+    end
+  end
+
   describe "#confidence_score" do
 
     it "takes into account percentage of total votes and total_positive and total negative votes" do
