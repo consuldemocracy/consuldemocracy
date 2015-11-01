@@ -1,40 +1,51 @@
 // Legal Cookie 0.1
 
-function getCookie(c_name){
-    var c_value = document.cookie;
-    var c_start = c_value.indexOf(" " + c_name + "=");
-    if (c_start == -1){
-        c_start = c_value.indexOf(c_name + "=");
-    }
-    if (c_start == -1){
-        c_value = null;
-    }else{
-        c_start = c_value.indexOf("=", c_start) + 1;
-        var c_end = c_value.indexOf(";", c_start);
-        if (c_end == -1){
-            c_end = c_value.length;
-        }
-        c_value = unescape(c_value.substring(c_start,c_end));
-    }
-    return c_value;
-}
+var galleta = {
 
-function setCookie(c_name,value,exdays){
-    var exdate=new Date();
-    exdate.setDate(exdate.getDate() + exdays);
-    var c_value=escape(value) + ((exdays==null) ? "" : "; expires="+exdate.toUTCString());
-    document.cookie=c_name + "=" + c_value;
-}
+  nueva: function(name, value, days) {
+    var expires = "";
+    if (days) {
+      var date = new Date();
+      date.setTime(date.getTime()+(days*24*60*60*1000));
+      expires = "; expires="+date.toGMTString();
+    }
+    document.cookie = name+"="+value+expires+"; path=/";
+  },
+
+  leer: function(name) {
+    var nameEQ = name + "="
+      , ca = document.cookie.split(';');
+    for(var i=0;i < ca.length;i++) {
+      var c = ca[i];
+      while (c.charAt(0)==' ') c = c.substring(1,c.length);
+      if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+    }
+    return null;
+  },
+
+  borrar: function(name) {
+    galleta.nueva(name,"",-1);
+  }
+
+};
+
 
 $(function() {
-  var barra_legal = $('#barra_legal_cookie');
-  barra_legal.hide();
-  if (getCookie('aviso-legal-cookie-plazapodemos')=="1") {
-    barra_legal.show();
+
+  var barra = $('#barra_legal_cookie')
+    , mi_galleta = galleta.leer('aviso-legal-cookie-plazapodemos');
+
+  if (mi_galleta == 'acepto') {
+    $(barra).hide();
+  } else {
+    $(barra).show();
   }
-  barra_legal.find('.ok').on('click', function(e) {
+
+  $(barra).find('.ok').on('click', function(e) {
     e.preventDefault();
-    setCookie('aviso-legal-cookie-plazapodemos','1',365);
-    barra_legal.fadeOut();    
+    galleta.nueva('aviso-legal-cookie-plazapodemos', 'acepto', 365);
+    $(barra).fadeOut();
   });
+
 });
+
