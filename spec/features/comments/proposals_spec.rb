@@ -36,11 +36,11 @@ feature 'Commenting proposals' do
     expect(c2.body).to appear_before(c1.body)
   end
 
-  scenario 'Creation date works differently in roots and in child comments, even when sorting by confidence_score' do
-   old_root = create(:comment, commentable: proposal, created_at: Time.now - 10)
-   new_root = create(:comment, commentable: proposal, created_at: Time.now)
-   old_child = create(:comment, commentable: proposal, parent_id: new_root.id, created_at: Time.now - 10)
-   new_child = create(:comment, commentable: proposal, parent_id: new_root.id, created_at: Time.now)
+  scenario 'Children comments order' do
+   old_root = create(:comment, commentable: proposal, cached_votes_up: 1, cached_votes_total: 2, created_at: Time.now - 10)
+   new_root = create(:comment, commentable: proposal, cached_votes_up: 10, cached_votes_total: 12, created_at: Time.now)
+   old_child = create(:comment, commentable: proposal, parent_id: new_root.id, cached_votes_up: 10, cached_votes_total: 12, created_at: Time.now - 10)
+   new_child = create(:comment, commentable: proposal, parent_id: new_root.id, cached_votes_up: 1, cached_votes_total: 2, created_at: Time.now)
 
    visit proposal_path(proposal)
 
@@ -50,7 +50,7 @@ feature 'Commenting proposals' do
    visit proposal_path(proposal, order: :created_at)
 
    expect(new_root.body).to appear_before(old_root.body)
-   expect(old_child.body).to appear_before(new_child.body)
+   expect(new_child.body).to appear_before(old_child.body)
   end
 
   scenario 'Turns links into html links' do

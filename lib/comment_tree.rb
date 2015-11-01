@@ -8,7 +8,7 @@ class CommentTree
     @root_comments = commentable.comments.roots.send("sort_by_#{order}").page(page).per(ROOT_COMMENTS_PER_PAGE).for_render
 
     root_descendants = @root_comments.each_with_object([]) do |root, col|
-      col.concat(Comment.descendants_of(root).send("sort_descendants_by_#{order}").for_render.to_a)
+      col.concat(Comment.descendants_of(root).send("sort_by_#{order}").for_render.to_a)
     end
 
     @comments = root_comments + root_descendants
