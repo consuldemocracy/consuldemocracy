@@ -24,7 +24,7 @@ es:
           with_ignored_flag: "Marcados como revisados"
         order: "Orden"
         orders:
-          created_at: "Más nuevos"
+          newest: "Más nuevos"
           flags: "Más denunciados"
         confirm: "¿Estás seguro?"
     debates:

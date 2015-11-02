@@ -24,7 +24,7 @@ en:
           with_ignored_flag: "Marked as viewed"
         order: "Order"
         orders:
-          created_at: "Newest"
+          newest: "Newest"
           flags: "Most flagged"
         confirm: "Are you sure?"
     debates:
