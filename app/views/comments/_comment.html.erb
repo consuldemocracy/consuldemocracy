@@ -17,7 +17,13 @@
           <% if comment.user.organization? %>
             <%= image_tag("collective_avatar.png", size: 32, class: "avatar left") %>
           <% else %>
-            <%= avatar_image(comment.user, seed: comment.user_id, size: 32, class: "left") %>
+            <%= image_tag(
+                  comment.user.gravatar_url(
+                    size: 32,
+                    default: 'identicon'
+                  ),
+                  size: 32,
+                  class: "avatar left") %>
           <% end %>
           <% if comment.user.hidden? %>
             <i class="icon-deleted user-deleted"></i>

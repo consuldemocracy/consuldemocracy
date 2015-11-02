@@ -27,7 +27,13 @@
         <% end %>
 
         <div class="proposal-info">
-          <%= avatar_image(@proposal.author, seed: @proposal.author_id, size: 32, class: 'author-photo') %>
+		  <%= image_tag(
+		        @proposal.author.gravatar_url(
+		          size: 32,
+		          default: 'identicon'
+		        ),
+		        size: 32,
+		        class: 'author-photo') %>
 
           <% if @proposal.author.hidden? %>
             <i class="icon-deleted author-deleted"></i>

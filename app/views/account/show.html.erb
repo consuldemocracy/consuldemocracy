@@ -37,7 +37,16 @@
       <div class="row">
         <div class="small-12 column">
           <h2><%= t("account.show.avatar")%></h2>
-          <%= avatar_image(@account, seed: @account.id, size: 60) %>
+          <a href="https://es.gravatar.com" target="_blank">
+          <%= image_tag(
+                @account.gravatar_url(
+                  size: 60,
+                  default: 'identicon'
+                ),
+                size: 60,
+                class: "avatar") %>
+          <%= t("account.show.gravatar_text") %>
+          </a>
 
           <h2><%= t("account.show.personal")%></h2>
 

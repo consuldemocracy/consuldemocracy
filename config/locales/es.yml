@@ -366,6 +366,7 @@ es:
       finish_verification: "Finalizar verificación"
       verified_account: Cuenta verificada
       verify_my_account: Verificar mi cuenta
+      gravatar_text: "Cambiar tu avatar con Gravatar"
   simple_captcha:
     placeholder: "Introduce el texto de la imagen"
     label: "Introduce el texto de la imagen en la siguiente caja"
