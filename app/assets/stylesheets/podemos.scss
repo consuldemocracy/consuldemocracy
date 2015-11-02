@@ -125,12 +125,20 @@ form input[type]:not([type=submit]):not([type=file]):not([type=checkbox]),
         .icon-medidas {left: 5.2rem; top: 1rem;}
     }
     .votes {
-        background: #ddd; border-color: #ddd; padding-bottom: 3rem; padding-top: 3rem;
+        background: #ddd;
+        border-color: #ddd;
+        padding-bottom: 3rem;
+        padding-top: 3rem;
         margin: 0;
         &:after {content: none;}
         .icon-like, .icon-unlike {background: #B37EB4; border:0; border-radius: 5px;}
         .like span, .medida .votes .unlike span, .total-votes {color: #333; font-weight: bold;}
     }
+}
+
+#medidas .vota-participa a {
+    color: $verde;
+    &:hover {color: $morado;}
 }
 
 .proposal .panel .label-proposal,

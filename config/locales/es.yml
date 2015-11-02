@@ -30,8 +30,8 @@ es:
       moderation: Moderar
       highlights: "Portada"
       more_information: "+ Información"
-      debates: Debates
-      proposals: Propuestas
+      debates: Debates y Opinión
+      proposals: ICPs
     footer:
       description: "Este portal usa la %{consul}, que es %{open_source}, y está basado en el portal de <a href='https://decide.madrid.es/' target='_blank'>Participación</a> del Ayuntamiento de Madrid."
       open_source: "software libre"
@@ -76,7 +76,7 @@ es:
     menu: "Menú"
   debates:
     index:
-      title: Debates
+      title: Debates y Opinión
       start_debate: Empieza un debate
       select_order: Ordenar por
       select_order_long: Estás viendo los debates
@@ -227,7 +227,7 @@ es:
         submit_button: "Guardar cambios"
   proposals:
     index:
-      title: Propuestas
+      title: ICPs
       start_proposal: Crea una propuesta
       select_order: Ordenar por
       select_order_long: Estás viendo las propuestas
@@ -391,11 +391,11 @@ es:
   welcome:
     signed_in_home_title: Actividad reciente
     debates:
-      title: "Debates"
+      title: "Debates y Opinión"
       description: "Exprésate, debate con otros y contribuye a enriquecer el pensamiento colectivo."
     proposal:
-      title: "Propuestas"
-      description: "Puedes hacer propuestas que, si son apoyadas por el 10% de los participantes, se llevarán a referendum interno vinculante."
+      title: "ICPs"
+      description: "Las que tengan un 10% de apoyos del resto de participantes se trasladarán al portal de participación y si reciben el apoyo de los inscritos se llevarán a referéndum interno vinculante."
     programa:
       title: "Programa"
       description: "La ciudadanía decide si acepta o rechaza las propuestas más apoyadas."
