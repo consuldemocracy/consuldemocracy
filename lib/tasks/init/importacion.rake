@@ -43,7 +43,7 @@ namespace :init do
           t.author_id = 2
           t.tag_list = [ tag_code(r[3], programa), tag_code(r[4], programa) ]
         end .save!(:validate => false)
-        puts "ID: #{r[0].to_i} \t\t tag_list: '#{tag_code(r[3])}', '#{tag_code(r[4])}'"
+        puts "ID: #{r[0].to_i} \t\t tag_list: '#{tag_code(r[3], programa)}', '#{tag_code(r[4], programa)}'"
       end
     end
   end
