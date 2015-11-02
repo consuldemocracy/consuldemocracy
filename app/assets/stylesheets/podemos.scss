@@ -315,9 +315,13 @@ footer {
     &:hover {color: $verde;}
 }
 
-.proposal-featured .supports .progress .meter, .proposal .supports .progress .meter {background: $verde;}
+.proposal-featured .supports .progress .meter, .proposal .supports .progress .meter, ul.pagination li.current a:hover, ul.pagination li.current a:focus, ul.pagination li.current button:hover, ul.pagination li.current button:focus {background: $verde;}
 
 ul.pagination li.current a,
-ul.pagination li.current button {
-    background: $morado;
+ul.pagination li.current button,
+.proposal-featured .supports .not-logged,
+.proposal .supports .not-logged,
+.debate-featured .votes .not-logged,
+.debate .votes .not-logged {
+    background: $verde;
 }
