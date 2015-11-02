@@ -216,11 +216,11 @@
         display: block;
         font-size: rem-calc(16);
         line-height: $line-height;
-        text-transform: lowercase;
+        /*text-transform: lowercase;
 
         &:first-letter {
           text-transform: uppercase;
-        }
+        }*/
       }
     }
 
@@ -439,11 +439,11 @@
     font-size: rem-calc(30);
     font-weight: bold;
     margin: 0;
-    text-transform: lowercase;
+    /*text-transform: lowercase;
 
     &:first-letter {
       text-transform: uppercase;
-    }
+    }*/
   }
 
   .edit-medida {
