@@ -12,9 +12,9 @@ module CommentsHelper
     parent_id.blank? ? dom_id(commentable) : "comment_#{parent_id}"
   end
 
-  def select_children(comments, parent)
-    return [] if comments.blank?
-    comments.select{|c| c.parent_id == parent.id}
+  def child_comments_of(parent)
+    return [] unless @comment_tree
+    @comment_tree.children_of(parent)
   end
 
   def user_level_class(comment)

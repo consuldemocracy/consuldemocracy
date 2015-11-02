@@ -75,6 +75,7 @@ ActiveRecord::Schema.define(version: 20151030182217) do
     t.integer  "cached_votes_down",  default: 0
     t.datetime "confirmed_hide_at"
     t.string   "ancestry"
+    t.integer  "confidence_score"
   end
 
   add_index "comments", ["ancestry"], name: "index_comments_on_ancestry", using: :btree

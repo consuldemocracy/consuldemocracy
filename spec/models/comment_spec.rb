@@ -39,6 +39,44 @@ describe Comment do
     end
   end
 
+  describe "#confidence_score" do
+
+    it "takes into account percentage of total votes and total_positive and total negative votes" do
+      comment = create(:comment, :with_confidence_score, cached_votes_up: 100, cached_votes_total: 100)
+      expect(comment.confidence_score).to eq(10000)
+
+      comment = create(:comment, :with_confidence_score, cached_votes_up: 0, cached_votes_total: 100)
+      expect(comment.confidence_score).to eq(0)
+
+      comment = create(:comment, :with_confidence_score, cached_votes_up: 75, cached_votes_total: 100)
+      expect(comment.confidence_score).to eq(3750)
+
+      comment = create(:comment, :with_confidence_score, cached_votes_up: 750, cached_votes_total: 1000)
+      expect(comment.confidence_score).to eq(37500)
+
+      comment = create(:comment, :with_confidence_score, cached_votes_up: 10, cached_votes_total: 100)
+      expect(comment.confidence_score).to eq(-800)
+    end
+
+    describe 'actions which affect it' do
+      let(:comment) { create(:comment, :with_confidence_score) }
+
+      it "increases with like" do
+        previous = comment.confidence_score
+        5.times { comment.vote_by(voter: create(:user), vote: true) }
+        expect(previous).to be < comment.confidence_score
+      end
+
+      it "decreases with dislikes" do
+        comment.vote_by(voter: create(:user), vote: true)
+        previous = comment.confidence_score
+        3.times { comment.vote_by(voter: create(:user), vote: false) }
+        expect(previous).to be > comment.confidence_score
+      end
+    end
+
+  end
+
   describe "cache" do
     let(:comment) { create(:comment) }
 
@@ -71,6 +109,12 @@ describe Comment do
       create(:organization, user: comment.user)
       expect { comment.user.organization.verify }
       .to change { [comment.reload.updated_at, comment.author.updated_at] }
+    end
+  end
+
+  describe "#author_id?" do
+    it "returns the user's id" do
+      expect(comment.author_id).to eq(comment.user.id)
     end
   end
 end

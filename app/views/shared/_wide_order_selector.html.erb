@@ -1,0 +1,24 @@
+<% # Params:
+   #
+   #   i18n_namespace: for example "moderation.debates.index"
+%>
+
+<div class="wide-order-selector small-12 medium-8">
+  <form>
+    <div class="small-12 medium-8 left">
+      <label for="order-selector-participation">
+        <%= t("#{i18n_namespace}.select_order") %>
+      </label>
+    </div>
+    <div class="small-12 medium-4 left">
+      <select class="js-location-changer js-order-selector select-order" data-order="<%= @current_order %>" name="order-selector" id="order-selector-participation">
+         <% @valid_orders.each do |order| %>
+           <option <%= 'selected' if order == @current_order %>
+                   value='<%= current_path_with_query_params(order: order, page: 1) %>'>
+             <%= t("#{i18n_namespace}.orders.#{order}") %>
+           </option>
+         <% end %>
+       </select>
+     </div>
+  </form>
+</div>

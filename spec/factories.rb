@@ -197,7 +197,7 @@ FactoryGirl.define do
   factory :comment do
     association :commentable, factory: :debate
     user
-    body 'Comment body'
+    sequence(:body) { |n| "Comment body #{n}" }
 
     trait :hidden do
       hidden_at Time.now
@@ -215,6 +215,10 @@ FactoryGirl.define do
       after :create do |debate|
         Flag.flag(FactoryGirl.create(:user), debate)
       end
+    end
+
+    trait :with_confidence_score do
+      before(:save) { |d| d.calculate_confidence_score }
     end
   end
 

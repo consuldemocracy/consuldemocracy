@@ -17,11 +17,20 @@ class Comment < ActiveRecord::Base
   belongs_to :commentable, -> { with_hidden }, polymorphic: true, counter_cache: true
   belongs_to :user, -> { with_hidden }
 
-  scope :recent, -> { order(id: :desc) }
+  before_save :calculate_confidence_score
+
   scope :for_render, -> { with_hidden.includes(user: :organization) }
   scope :with_visible_author, -> { joins(:user).where("users.hidden_at IS NULL") }
   scope :sort_by_flags, -> { order(flags_count: :desc, updated_at: :desc) }
-  scope :sort_by_created_at, -> { order(created_at: :desc) }
+
+  scope :sort_by_most_voted , -> { order(confidence_score: :desc, created_at: :desc) }
+  scope :sort_descendants_by_most_voted , -> { order(confidence_score: :desc, created_at: :asc) }
+
+  scope :sort_by_newest, -> { order(created_at: :desc) }
+  scope :sort_descendants_by_newest, -> { order(created_at: :desc) }
+
+  scope :sort_by_oldest, -> { order(created_at: :asc) }
+  scope :sort_descendants_by_oldest, -> { order(created_at: :asc) }
 
   after_create :call_after_commented
 
@@ -86,6 +95,11 @@ class Comment < ActiveRecord::Base
 
   def self.body_max_length
     1000
+  end
+
+  def calculate_confidence_score
+    self.confidence_score = ScoreCalculator.confidence_score(cached_votes_total,
+                                                             cached_votes_up)
   end
 
   private
