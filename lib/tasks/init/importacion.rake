@@ -18,8 +18,7 @@ class String
   end
 end
 
-def tag_code (tag)
-  programa = YAML.load_file('config/locales/programa.es.yml')
+def tag_code (tag, programa)
   programa = programa["es"]["programa"]
   programa.each do |clave, valor|
     tag = clave if valor == tag
@@ -30,28 +29,23 @@ end
 namespace :init do
   desc "[init] Cargar datos de medidas"
   task :importacion => :environment do
-    #progress = RakeProgressbar.new(%x(cat lib/tasks/init/* | wc -l).to_i + 1)
     Medida.delete_all
-    xlsx= Roo::Spreadsheet.open("lib/tasks/init/Programa.xlsx")
-    sheet=xlsx.sheet(0)
-    headers={ID: "ID", titulo: "Titulo de la medida", descripcion: "Literal", memoria:"Mem. Jur.", bloque: "Bloque", epigrafe: "Epígrafe", subepigrafe: "Subepígrafe", oficial: "oficial"}
+    xlsx = Roo::Spreadsheet.open("lib/tasks/init/Programa.xlsx")
+    sheet = xlsx.sheet(0)
+    headers = { ID: "ID", titulo: "Titulo de la medida", descripcion: "Literal", bloque: "Bloque", epigrafe: "Epígrafe", oficial: "oficial" }
+    programa = YAML.load_file('config/locales/programa.es.yml')
     sheet.each do |r|
-        #puts r.inspect
-        #puts "#{r[1]} #{r[2]}"
       if r[0].to_i > 0 && !r[1].nil?
-puts "ID: #{r[0].to_i} \t tag_list: #{tag_code(r[3])}, #{tag_code(r[4])}"
         Medida.new do |t|
-          t.id =r[0].to_i
-          t.title =r[1]
-          t.description="#{r[2]}\n#{r[3]}"
+          t.id = r[0].to_i
+          t.title = r[1]
+          t.description = r[2].gsub("\n","<br>\n")
           t.author_id = 2
-          t.tag_list =[ tag_code(r[3]), tag_code(r[4]) ]
-          #puts "#{t.id}" #{t.title} #{t.description} #{t.author_id} #{t.tag_list} "
+          t.tag_list = [ tag_code(r[3], programa), tag_code(r[4], programa) ]
         end .save!(:validate => false)
+        puts "ID: #{r[0].to_i} \t\t tag_list: '#{tag_code(r[3])}', '#{tag_code(r[4])}'"
       end
     end
   end
 end
-
-
 
