@@ -241,8 +241,9 @@ en:
   comments:
     select_order: "Sort by"
     orders:
-      confidence_score: "Most voted"
-      created_at: "Newest"
+      most_voted: "Most voted"
+      newest: "Newest first"
+      oldest: "Oldest first"
     form:
       leave_comment: "Leave your comment"
       comment_as_moderator: "Comment as moderator"

@@ -22,10 +22,15 @@ class Comment < ActiveRecord::Base
   scope :for_render, -> { with_hidden.includes(user: :organization) }
   scope :with_visible_author, -> { joins(:user).where("users.hidden_at IS NULL") }
   scope :sort_by_flags, -> { order(flags_count: :desc, updated_at: :desc) }
-  scope :sort_by_confidence_score , -> { order(confidence_score: :desc, created_at: :desc) }
-  scope :sort_descendants_by_confidence_score , -> { order(confidence_score: :desc, created_at: :asc) }
-  scope :sort_by_created_at, -> { order(created_at: :desc) }
-  scope :sort_descendants_by_created_at, -> { order(created_at: :asc) }
+
+  scope :sort_by_most_voted , -> { order(confidence_score: :desc, created_at: :desc) }
+  scope :sort_descendants_by_most_voted , -> { order(confidence_score: :desc, created_at: :asc) }
+
+  scope :sort_by_newest, -> { order(created_at: :desc) }
+  scope :sort_descendants_by_newest, -> { order(created_at: :desc) }
+
+  scope :sort_by_oldest, -> { order(created_at: :asc) }
+  scope :sort_descendants_by_oldest, -> { order(created_at: :asc) }
 
   after_create :call_after_commented
 

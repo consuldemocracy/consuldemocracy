@@ -25,15 +25,20 @@ feature 'Commenting debates' do
     c2 = create(:comment, :with_confidence_score, commentable: debate, cached_votes_up: 10, cached_votes_total: 12, created_at: Time.now - 1)
     c3 = create(:comment, :with_confidence_score, commentable: debate, cached_votes_up: 1, cached_votes_total: 2, created_at: Time.now)
 
-    visit debate_path(debate)
+    visit debate_path(debate, order: :most_voted)
 
     expect(c1.body).to appear_before(c2.body)
     expect(c2.body).to appear_before(c3.body)
 
-    visit debate_path(debate, order: :created_at)
+    visit debate_path(debate, order: :newest)
 
     expect(c3.body).to appear_before(c2.body)
     expect(c2.body).to appear_before(c1.body)
+
+    visit debate_path(debate, order: :oldest)
+
+    expect(c1.body).to appear_before(c2.body)
+    expect(c2.body).to appear_before(c3.body)
   end
 
   scenario 'Creation date works differently in roots and in child comments, even when sorting by confidence_score' do
@@ -42,14 +47,19 @@ feature 'Commenting debates' do
     old_child = create(:comment, commentable: debate, parent_id: new_root.id, created_at: Time.now - 10)
     new_child = create(:comment, commentable: debate, parent_id: new_root.id, created_at: Time.now)
 
-    visit debate_path(debate)
+    visit debate_path(debate, order: :most_voted)
 
     expect(new_root.body).to appear_before(old_root.body)
     expect(old_child.body).to appear_before(new_child.body)
 
-    visit debate_path(debate, order: :created_at)
+    visit debate_path(debate, order: :newest)
 
     expect(new_root.body).to appear_before(old_root.body)
+    expect(new_child.body).to appear_before(old_child.body)
+
+    visit debate_path(debate, order: :oldest)
+
+    expect(old_root.body).to appear_before(new_root.body)
     expect(old_child.body).to appear_before(new_child.body)
   end
 
