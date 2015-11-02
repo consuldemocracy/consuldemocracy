@@ -111,4 +111,10 @@ describe Comment do
       .to change { [comment.reload.updated_at, comment.author.updated_at] }
     end
   end
+
+  describe "#author_id?" do
+    it "returns the user's id" do
+      expect(comment.author_id).to eq(comment.user.id)
+    end
+  end
 end
