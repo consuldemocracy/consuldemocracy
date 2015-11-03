@@ -396,6 +396,9 @@ es:
     proposal:
       title: "ICPs"
       description: "Las que tengan un 10% de apoyos del resto de participantes se trasladarán al portal de participación y si reciben el apoyo de los inscritos se llevarán a referéndum interno vinculante."
+    podemos-proposal:
+      title: "ICPs"
+      description: "Las que tengan un 10% de apoyos del resto de participantes se trasladarán al portal de participación y si reciben el apoyo de los inscritos se llevarán a referéndum interno vinculante."
     programa:
       title: "Programa"
       description: "La ciudadanía decide si acepta o rechaza las propuestas más apoyadas."
