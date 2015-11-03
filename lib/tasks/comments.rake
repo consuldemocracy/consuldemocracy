@@ -8,7 +8,7 @@ namespace :comments do
 
   desc "Recalculates all the comment confidence scores (used for sorting comments)"
   task confidence_score: :environment do
-    Comment.find_in_batches do |comments|
+    Comment.with_hidden.find_in_batches do |comments|
       comments.each(&:save)
     end
   end
