@@ -57,7 +57,7 @@ describe "Abilities::Common" do
 
   describe "other users" do
     let(:other_user) { create(:user) }
-    it { should_not be_able_to(:show, other_user) }
+    it { should be_able_to(:show, other_user) }
     it { should_not be_able_to(:edit, other_user) }
   end
 

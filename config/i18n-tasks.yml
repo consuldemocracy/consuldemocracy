@@ -120,6 +120,7 @@ ignore_unused:
   - 'moderation.proposals.index.order*'
   - 'moderation.debates.index.filter*'
   - 'moderation.debates.index.order*'
+  - 'users.show.filters.*'
   - 'debates.index.orders.*'
   - 'debates.index.search_form.*'
   - 'proposals.index.orders.*'
