@@ -58,7 +58,7 @@ button:hover, button:focus, .button:hover, .button:focus{background: $verde;}
 
 .subnavigation-container {min-height: 85px; padding: 1.5rem 0;}
 
-.wrapper-home {background: image-url("home-plaza.jpg") no-repeat; padding: 1rem 0;}
+.wrapper-home {background: image-url("home-plaza.jpg") no-repeat; background-size: cover; padding: 1rem 0;}
 
 .contain-to-grid {background: image-url("cabecera-popular.jpg") no-repeat;}
 
@@ -332,4 +332,8 @@ ul.pagination li.current button,
 .debate-featured .votes .not-logged,
 .debate .votes .not-logged {
     background: $verde;
+}
+
+@media screen and (max-width: 768px) {
+    .subnavigation a {margin-bottom: 1rem;}
 }
