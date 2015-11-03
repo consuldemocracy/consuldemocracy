@@ -336,7 +336,8 @@ en:
         comments:
           one: "1 Comment"
           other: "%{count} Comments"
-      no_activity: "Usuario sin actividad pública"
+      no_activity: "User has no public activity"
+      comment_to: "Comment in "
   unauthorized:
     default: "You do not have permission to access this page."
     manage:

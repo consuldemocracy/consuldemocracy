@@ -1,0 +1,13 @@
+<table class="clear">
+  <% @comments.each do |comment| %>
+    <tr id="debate_<%= comment.id %>">
+      <td>
+        <i><%= t("users.show.comment_to") %> <%= link_to comment.commentable.title, comment.commentable %></i>
+        <br>
+        <%= comment.body %>
+      </td>
+    </tr>
+  <% end %>
+</table>
+
+<%= paginate @comments %>
