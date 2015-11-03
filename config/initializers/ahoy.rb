@@ -1,3 +1,5 @@
+Ahoy.geocode = false
+
 class Ahoy::Store < Ahoy::Stores::ActiveRecordStore
 
   # Track user IP
