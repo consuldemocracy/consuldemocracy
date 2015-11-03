@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151030182217) do
+ActiveRecord::Schema.define(version: 20151103175139) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -75,7 +75,7 @@ ActiveRecord::Schema.define(version: 20151030182217) do
     t.integer  "cached_votes_down",  default: 0
     t.datetime "confirmed_hide_at"
     t.string   "ancestry"
-    t.integer  "confidence_score"
+    t.integer  "confidence_score",   default: 0, null: false
   end
 
   add_index "comments", ["ancestry"], name: "index_comments_on_ancestry", using: :btree
