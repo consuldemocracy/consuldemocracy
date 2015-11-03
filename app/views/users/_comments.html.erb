@@ -2,7 +2,10 @@
   <% @comments.each do |comment| %>
     <tr id="debate_<%= comment.id %>">
       <td>
-        <i><%= t("users.show.comment_to") %> <%= link_to comment.commentable.title, comment.commentable %></i>
+        <i>
+          <%= t("users.show.comment_to") %>
+          <%= comment.commentable.hidden? ? comment.commentable.title : link_to(comment.commentable.title, comment.commentable) %>
+        </i>
         <br>
         <%= comment.body %>
       </td>

@@ -337,7 +337,7 @@ es:
           one: "1 Comentario"
           other: "%{count} Comentarios"
       no_activity: "Usuario sin actividad pública"
-      comment_to: "Comentario en "
+      comment_to: "Comentario en: "
   unauthorized:
     default: "No tienes permiso para acceder a esta página."
     manage:

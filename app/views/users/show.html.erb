@@ -1,17 +1,25 @@
-<h1><%= avatar_image(@user, seed: @user.id, size: 60) %> <%= @user.name %></h1>
+<section role="main">
+  <div class="wrap row">
+    <div class="small-12 medium-9 column">
 
-<dl class="sub-nav">
-  <% @valid_filters.each do |filter| %>
-    <% if @activity_counts[filter] > 0 %>
-      <% if @current_filter == filter %>
-        <dd class="active"> <%= t("users.show.filters.#{filter}", count: @activity_counts[filter]) %></dd>
-      <% else %>
-        <dd><%= link_to t("users.show.filters.#{filter}", count: @activity_counts[filter]),
-          current_path_with_query_params(filter: filter, page: 1) %></dd>
-      <% end %>
-    <% end %>
-  <% end %>
-  <%= t("users.show.no_activity") if @activity_counts.values.inject(&:+) == 0 %>
-</dl>
+      <h2><%= avatar_image(@user, seed: @user.id, size: 60) %> <%= @user.name %></h2>
 
-<%= render "activity_page" %>
+      <dl class="sub-nav">
+        <% @valid_filters.each do |filter| %>
+          <% if @activity_counts[filter] > 0 %>
+            <% if @current_filter == filter %>
+              <dd class="active"> <%= t("users.show.filters.#{filter}", count: @activity_counts[filter]) %></dd>
+            <% else %>
+              <dd><%= link_to t("users.show.filters.#{filter}", count: @activity_counts[filter]),
+                current_path_with_query_params(filter: filter, page: 1) %></dd>
+            <% end %>
+          <% end %>
+        <% end %>
+        <%= t("users.show.no_activity") if @activity_counts.values.inject(&:+) == 0 %>
+      </dl>
+
+      <%= render "activity_page" %>
+
+    </div>
+  </div>
+</section>
