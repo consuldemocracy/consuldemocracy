@@ -13,3 +13,5 @@
   <% end %>
   <%= t("users.show.no_activity") if @activity_counts.values.inject(&:+) == 0 %>
 </dl>
+
+<%= render "activity_page" %>
