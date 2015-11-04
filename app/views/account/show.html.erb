@@ -31,6 +31,13 @@
             <% end %>
           </div>
 
+          <div>
+            <%= f.label :public_activity do %>
+              <%= f.check_box :public_activity, label: false %>
+              <span class="checkbox"><%= t("account.show.public_activity_label") %></span>
+            <% end %>
+          </div>
+
           <h2><%= t("account.show.notifications")%></h2>
 
           <div>

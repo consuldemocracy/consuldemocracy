@@ -22,6 +22,7 @@ en:
         "There are cities that are governed directly by their inhabitants, who <b>discuss</b> the topics they are concerned about, <b>propose</b> ideas to improve
         their lives and <b>decide</b> among themselves which ones will be carried out. Madrid is already one of these cities."
       see_all: "See proposals"
+      my_activity_link: "My activity"
       my_account_link: "My account"
       locale: "Language:"
       administration: "Administration"

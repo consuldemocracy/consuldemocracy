@@ -22,6 +22,7 @@ es:
         "Existen ciudades gobernadas directamente por sus habitantes, que <b>debaten</b> sobre temas que les preocupan, <b>proponen</b> ideas para mejorar
         sus vidas y <b>deciden</b> entre todas y todos las que se llevan a cabo. Madrid ya es una de ellas."
       see_all: "Ver propuestas"
+      my_activity_link: "Mi actividad"
       my_account_link: "Mi cuenta"
       locale: "Idioma:"
       administration: "Administrar"
