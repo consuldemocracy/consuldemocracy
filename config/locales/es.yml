@@ -283,6 +283,7 @@ es:
       title: "Mi cuenta"
       save_changes_submit: "Guardar cambios"
       change_credentials_link: "Cambiar mis datos de acceso"
+      public_activity_label: "Mostrar públicamente mi lista de actividades"
       email_on_comment_label: "Recibir un email cuando alguien comenta en mis propuestas o debates"
       email_on_comment_reply_label: "Recibir un email cuando alguien contesta a mis comentarios"
       erase_account_link: "Darme de baja"
@@ -337,6 +338,7 @@ es:
           one: "1 Comentario"
           other: "%{count} Comentarios"
       no_activity: "Usuario sin actividad pública"
+      private_activity: "Este usuario ha decidido mantener en privado su lista de actividades"
       comment_to: "Comentario en: "
   unauthorized:
     default: "No tienes permiso para acceder a esta página."

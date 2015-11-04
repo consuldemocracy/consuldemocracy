@@ -65,4 +65,69 @@ feature 'Users' do
 
   end
 
+  feature 'Public activity' do
+    background do
+      @user = create(:user)
+    end
+
+    scenario 'visible by default' do
+      visit user_path(@user)
+
+      expect(page).to have_content(@user.username)
+      expect(page).to_not have_content('activity list private')
+    end
+
+    scenario 'user can hide public page' do
+      login_as(@user)
+      visit account_path
+
+      uncheck 'account_public_activity'
+      click_button 'Save changes'
+
+      logout
+
+      visit user_path(@user)
+      expect(page).to have_content('activity list private')
+    end
+
+    scenario 'is always visible for the owner' do
+      login_as(@user)
+      visit account_path
+
+      uncheck 'account_public_activity'
+      click_button 'Save changes'
+
+      visit user_path(@user)
+      expect(page).to_not have_content('activity list private')
+    end
+
+    scenario 'is always visible for admins' do
+      login_as(@user)
+      visit account_path
+
+      uncheck 'account_public_activity'
+      click_button 'Save changes'
+
+      logout
+
+      login_as(create(:administrator).user)
+      visit user_path(@user)
+      expect(page).to_not have_content('activity list private')
+    end
+
+    scenario 'is always visible for moderators' do
+      login_as(@user)
+      visit account_path
+
+      uncheck 'account_public_activity'
+      click_button 'Save changes'
+
+      logout
+
+      login_as(create(:moderator).user)
+      visit user_path(@user)
+      expect(page).to_not have_content('activity list private')
+    end
+  end
+
 end

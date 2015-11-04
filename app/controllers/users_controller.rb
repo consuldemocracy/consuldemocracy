@@ -3,10 +3,8 @@ class UsersController < ApplicationController
 
   load_and_authorize_resource
 
-  before_action :set_activity_counts, only: :show
-
   def show
-    load_filtered_activity
+    load_filtered_activity if valid_access?
   end
 
   private
@@ -18,6 +16,7 @@ class UsersController < ApplicationController
     end
 
     def load_filtered_activity
+      set_activity_counts
       case params[:filter]
       when "proposals" then load_proposals
       when "debates"   then load_debates
@@ -51,4 +50,11 @@ class UsersController < ApplicationController
       @comments = Comment.where(user_id: @user.id).includes(:commentable).order(created_at: :desc).page(params[:page])
     end
 
+    def valid_access?
+      @user.public_activity || authorized_current_user?
+    end
+
+    def authorized_current_user?
+      @authorized_current_user ||= current_user && (current_user == @user || current_user.moderator? || current_user.administrator?)
+    end
 end

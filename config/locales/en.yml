@@ -283,6 +283,7 @@ en:
       title: "My account"
       save_changes_submit: "Save changes"
       change_credentials_link: "Change my credentials"
+      public_activity_label: "Keep my list of activities public"
       email_on_comment_label: "Notify me by email when someone comments on my proposals or debates"
       email_on_comment_reply_label: "Notify me by email when someone replies to my comments"
       erase_account_link: "Erase my account"
@@ -337,6 +338,7 @@ en:
           one: "1 Comment"
           other: "%{count} Comments"
       no_activity: "User has no public activity"
+      private_activity: "This user decided to keep the activity list private"
       comment_to: "Comment in: "
   unauthorized:
     default: "You do not have permission to access this page."

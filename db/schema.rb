@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151103175139) do
+ActiveRecord::Schema.define(version: 20151103194329) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -306,6 +306,7 @@ ActiveRecord::Schema.define(version: 20151103175139) do
     t.datetime "level_two_verified_at"
     t.string   "erase_reason"
     t.datetime "erased_at"
+    t.boolean  "public_activity",                      default: true
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree
