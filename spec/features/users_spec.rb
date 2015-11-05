@@ -19,6 +19,14 @@ feature 'Users' do
       expect(page).to have_content('3 Comments')
     end
 
+    scenario 'shows only items where user has activity' do
+      @user.proposals.destroy_all
+
+      expect(page).to_not have_content('0 Proposals')
+      expect(page).to have_content('1 Debate')
+      expect(page).to have_content('3 Comments')
+    end
+
     scenario 'default filter is proposals' do
       @user.proposals.each do |proposal|
         expect(page).to have_content(proposal.title)
@@ -30,6 +38,23 @@ feature 'Users' do
 
       @user.comments.each do |comment|
         expect(page).to_not have_content(comment.body)
+      end
+    end
+
+    scenario 'shows debates by default if user has no proposals' do
+      @user.proposals.destroy_all
+      visit user_path(@user)
+
+      expect(page).to have_content(@user.debates.first.title)
+    end
+
+    scenario 'shows comments by default if user has no proposals nor debates' do
+      @user.proposals.destroy_all
+      @user.debates.destroy_all
+      visit user_path(@user)
+
+      @user.comments.each do |comment|
+        expect(page).to have_content(comment.body)
       end
     end
 
@@ -56,6 +81,20 @@ feature 'Users' do
 
       @user.proposals.each do |proposal|
         expect(page).to_not have_content(proposal.title)
+      end
+
+      @user.debates.each do |debate|
+        expect(page).to_not have_content(debate.title)
+      end
+
+      click_link '2 Proposals'
+
+      @user.proposals.each do |proposal|
+        expect(page).to have_content(proposal.title)
+      end
+
+      @user.comments.each do |comment|
+        expect(page).to_not have_content(comment.body)
       end
 
       @user.debates.each do |debate|
