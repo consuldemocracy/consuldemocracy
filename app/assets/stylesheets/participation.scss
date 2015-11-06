@@ -416,8 +416,15 @@
   }
 
   .author {
-    color: $text;
     font-weight: bold;
+
+    a {
+      color: $link !important;
+
+      &:hover {
+        color: $link-hover !important;
+      }
+    }
   }
 
   aside {

@@ -340,7 +340,6 @@ es:
           other: "%{count} Comentarios"
       no_activity: "Usuario sin actividad pública"
       private_activity: "Este usuario ha decidido mantener en privado su lista de actividades"
-      comment_to: "Comentario en: "
   unauthorized:
     default: "No tienes permiso para acceder a esta página."
     manage:

@@ -1,11 +1,8 @@
-<table class="clear">
+<table class="clear activity-comments">
   <% @comments.each do |comment| %>
     <tr id="debate_<%= comment.id %>">
       <td>
-        <i>
-          <%= t("users.show.comment_to") %>
-          <%= comment.commentable.hidden? ? comment.commentable.title : link_to(comment.commentable.title, comment.commentable) %>
-        </i>
+        <%= comment.commentable.hidden? ? comment.commentable.title : link_to(comment.commentable.title, comment.commentable) %>
         <br>
         <%= comment.body %>
       </td>
