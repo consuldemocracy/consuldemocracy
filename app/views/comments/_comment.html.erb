@@ -36,7 +36,7 @@
               <% if comment.user.hidden? || comment.user.erased? %>
                 <span class="user-name"><%= t("comments.comment.user_deleted") %></span>
               <% else %>
-                <span class="user-name"><%= comment.user.name %></span>
+                <span class="user-name"><%= link_to comment.user.name, user_path(comment.user) %></span>
                 <% if comment.user.official? %>
                   &nbsp;&bull;&nbsp;
                   <span class="label round level-<%= comment.user.official_level %>">

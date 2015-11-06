@@ -20,6 +20,7 @@
 // 18. Comments
 // 19. Flags
 // 20. Accesibility
+// 21. Activity
 //
 
 // 01. Variables
@@ -2014,4 +2015,59 @@ table {
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
   border: 0;
+}
+
+// 21. Activity
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+.activity {
+  margin-bottom: rem-calc(48);
+  margin-top: rem-calc(24);
+
+  .sub-nav {
+    background: none;
+    border-bottom: 1px solid $border;
+    border-radius: 0;
+    padding-bottom: 0;
+
+    dd.active {
+      background: none;
+      border-bottom: 2px solid $brand;
+      border-radius: 0;
+      color: $brand;
+    }
+  }
+
+  table {
+    border: 0;
+
+    td {
+      padding-left: rem-calc(36);
+      position: relative;
+
+      &:before {
+        color: $brand;
+        font-family: "icons" !important;
+        font-size: rem-calc(24);
+        left: 4px;
+        position: absolute;
+
+      }
+    }
+
+    &.activity-comments td:before {
+      content: "e";
+      top: 18px;
+    }
+
+    &.activity-debates td:before {
+      content: "i";
+      top: 14px;
+    }
+
+    &.activity-proposals td:before {
+      content: "h";
+      top: 18px;
+    }
+  }
 }

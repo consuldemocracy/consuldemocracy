@@ -1,0 +1,13 @@
+<table class="clear activity-comments">
+  <% @comments.each do |comment| %>
+    <tr id="debate_<%= comment.id %>">
+      <td>
+        <%= comment.commentable.hidden? ? comment.commentable.title : link_to(comment.commentable.title, comment.commentable) %>
+        <br>
+        <%= comment.body %>
+      </td>
+    </tr>
+  <% end %>
+</table>
+
+<%= paginate @comments %>

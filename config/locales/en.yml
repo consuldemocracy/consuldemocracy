@@ -22,6 +22,7 @@ en:
         "There are cities that are governed directly by their inhabitants, who <b>discuss</b> the topics they are concerned about, <b>propose</b> ideas to improve
         their lives and <b>decide</b> among themselves which ones will be carried out. Madrid is already one of these cities."
       see_all: "See proposals"
+      my_activity_link: "My activity"
       my_account_link: "My account"
       locale: "Language:"
       administration: "Administration"
@@ -283,6 +284,7 @@ en:
       title: "My account"
       save_changes_submit: "Save changes"
       change_credentials_link: "Change my credentials"
+      public_activity_label: "Keep my list of activities public"
       email_on_comment_label: "Notify me by email when someone comments on my proposals or debates"
       email_on_comment_reply_label: "Notify me by email when someone replies to my comments"
       erase_account_link: "Erase my account"
@@ -324,6 +326,20 @@ en:
     check: "Select"
     check_all: "All"
     check_none: "None"
+  users:
+    show:
+      filters:
+        proposals:
+          one: "1 Proposal"
+          other: "%{count} Proposals"
+        debates:
+          one: "1 Debate"
+          other: "%{count} Debates"
+        comments:
+          one: "1 Comment"
+          other: "%{count} Comments"
+      no_activity: "User has no public activity"
+      private_activity: "This user decided to keep the activity list private"
   unauthorized:
     default: "You do not have permission to access this page."
     manage:

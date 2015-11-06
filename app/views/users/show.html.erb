@@ -1,0 +1,29 @@
+<section role="main">
+  <div class="activity row">
+    <div class="small-12 column">
+
+      <h2><%= avatar_image(@user, seed: @user.id, size: 60) %> <%= @user.name %></h2>
+
+      <% if @user.public_activity || @authorized_current_user %>
+        <dl class="sub-nav">
+          <% @valid_filters.each do |filter| %>
+            <% if @activity_counts[filter] > 0 %>
+              <% if @current_filter == filter %>
+                <dd class="active"> <%= t("users.show.filters.#{filter}", count: @activity_counts[filter]) %></dd>
+              <% else %>
+                <dd><%= link_to t("users.show.filters.#{filter}", count: @activity_counts[filter]),
+                  current_path_with_query_params(filter: filter, page: 1) %></dd>
+              <% end %>
+            <% end %>
+          <% end %>
+          <%= t("users.show.no_activity") if @activity_counts.values.inject(&:+) == 0 %>
+        </dl>
+
+        <%= render "activity_page" %>
+      <% else %>
+        <p><%= t('users.show.private_activity') %></p>
+      <% end %>
+
+    </div>
+  </div>
+</section>

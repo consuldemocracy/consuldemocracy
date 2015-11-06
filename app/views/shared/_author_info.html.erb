@@ -7,7 +7,7 @@
   </span>
 <% else %>
   <span class="author">
-      <%= resource.author.name %>
+      <%= link_to resource.author.name, user_path(resource.author) %>
   </span>
   <% if resource.author.official? %>
     &nbsp;&bull;&nbsp;
