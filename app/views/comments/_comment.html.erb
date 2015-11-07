@@ -65,7 +65,7 @@
           <div class="comment-user
                     <%= user_level_class comment %>
                     <%= comment_author_class comment, @commentable.author_id %>">
-            <%= text_with_links comment.body %>
+            <%= simple_format text_with_links comment.body %>
           </div>
 
           <span id="<%= dom_id(comment) %>_votes" class="comment-votes right">
