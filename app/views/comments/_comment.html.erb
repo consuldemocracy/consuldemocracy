@@ -14,13 +14,12 @@
         <% elsif comment.as_moderator? %>
           <%= image_tag("moderator_avatar.png", size: 32, class: "moderator-avatar left") %>
         <% else %>
-          <% if comment.user.organization? %>
+        <% if comment.user.hidden? || comment.user.erased? %>
+            <i class="icon-deleted user-deleted"></i>
+          <% elsif comment.user.organization? %>
             <%= image_tag("collective_avatar.png", size: 32, class: "avatar left") %>
           <% else %>
             <%= avatar_image(comment.user, seed: comment.user_id, size: 32, class: "left") %>
-          <% end %>
-          <% if comment.user.hidden? || comment.user.erased? %>
-            <i class="icon-deleted user-deleted"></i>
           <% end %>
         <% end %>
 
