@@ -340,6 +340,9 @@ es:
           other: "%{count} Comentarios"
       no_activity: "Usuario sin actividad pública"
       private_activity: "Este usuario ha decidido mantener en privado su lista de actividades"
+      deleted: "Eliminado"
+      deleted_debate: "Este debate ha sido eliminado"
+      deleted_proposal: "Este propuesta ha sido eliminada"
   unauthorized:
     default: "No tienes permiso para acceder a esta página."
     manage:
