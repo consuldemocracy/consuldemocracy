@@ -36,7 +36,7 @@ describe UsersHelper do
       expect(comment_commentable_title(comment)).to eq link_to comment.commentable.title, comment.commentable
     end
 
-    it "should return a hint if the commentable has been deleted", :focus do
+    it "should return a hint if the commentable has been deleted" do
       comment = create(:comment)
       comment.commentable.hide
       expect(comment_commentable_title(comment)).to eq "<abbr title='This debate has been deleted'>#{comment.commentable.title}</abbr>"
