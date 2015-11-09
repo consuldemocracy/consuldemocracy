@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title><%= content_for?(:title) ? yield(:title) : "Admin" %></title>
+    <title><%= content_for?(:title) ? yield(:title) : "Management" %></title>
     <%= stylesheet_link_tag  "application", media: "all" %>
     <%= stylesheet_link_tag  "print", media: "print" %>
     <%= javascript_include_tag "vendor/modernizr" %>
@@ -29,7 +29,7 @@
             <li class="name">
               <%= link_to management_root_path do %>
                 <%= image_tag('header_logo_madrid.png', class: 'left', size: '96x96') %>
-                <%= t("layouts.header.open_gov", open: "<strong>#{t('layouts.header.open')}</strong>").html_safe %> <span>|</span> <span class="logo-site"><%= t("management.dashboard.index.title") %></span>
+                <%= t("layouts.header.participation_html") %> <span>|</span> <span class="logo-site"><%= t("management.dashboard.index.title") %></span>
               <% end %>
             </li>
             <li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li>
