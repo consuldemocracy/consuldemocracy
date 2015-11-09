@@ -340,6 +340,7 @@ en:
           other: "%{count} Comments"
       no_activity: "User has no public activity"
       private_activity: "This user decided to keep the activity list private"
+      deleted: "Deleted"
       deleted_debate: "This debate has been deleted"
       deleted_proposal: "This proposal has been deleted"
   unauthorized:

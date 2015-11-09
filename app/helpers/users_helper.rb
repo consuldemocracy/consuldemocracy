@@ -13,7 +13,9 @@ module UsersHelper
 
   def comment_commentable_title(comment)
     commentable = comment.commentable
-    if commentable.hidden?
+    if commentable.nil?
+      deleted_commentable_text(comment)
+    elsif commentable.hidden?
       "<abbr title='#{deleted_commentable_text(comment)}'>".html_safe +
       commentable.title +
       "</abbr>".html_safe
@@ -28,6 +30,8 @@ module UsersHelper
       t("users.show.deleted_proposal")
     when "Debate"
       t("users.show.deleted_debate")
+    else
+      t("users.show.deleted")
     end
   end
 
