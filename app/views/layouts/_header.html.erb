@@ -36,16 +36,17 @@
         <li class="name">
           <%= link_to root_path do %>
             <%= image_tag('header_logo_madrid.png', class: 'show-for-medium-up left', size: '96x96', alt: t("layouts.header.logo")) %>
-            <%= t("layouts.header.open_gov", open: "#{t('layouts.header.open')}").html_safe %> <span>|</span>
-            <span class="logo-site">
-              <% if transparency_page? %>
-                <%= t("layouts.header.transparency") %>
-              <% elsif opendata_page? %>
-                <%= t("layouts.header.open_data") %>
-              <% else %>
-                <%= t("layouts.header.participation") %>
-              <% end %>
-            </span>
+
+            <% if transparency_page? %>
+              <%= t("layouts.header.open_gov", open: "#{t('layouts.header.open')}") %> <span>|</span>
+              <span class="logo-site"><%= t("layouts.header.transparency") %></span>
+            <% elsif opendata_page? %>
+              <%= t("layouts.header.open_gov", open: "#{t('layouts.header.open')}") %> <span>|</span>
+              <span class="logo-site"><%= t("layouts.header.open_data") %></span>
+            <% else %>
+               <%= t("layouts.header.participation") %>
+            <% end %>
+
           <% end %>
         </li>
       </ul>
