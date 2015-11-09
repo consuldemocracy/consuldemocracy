@@ -1,7 +1,7 @@
 class Mailer < ApplicationMailer
   helper :text_with_links
   helper :mailer
-  helper :user
+  helper :users
 
   def comment(comment)
     @comment = comment
