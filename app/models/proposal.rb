@@ -28,6 +28,7 @@ class Proposal < ActiveRecord::Base
   validates :terms_of_service, acceptance: { allow_nil: false }, on: :create
 
   before_validation :set_responsible_name
+  before_validation :calculate_tsvector
 
   before_save :calculate_hot_score, :calculate_confidence_score
 
@@ -50,12 +51,25 @@ class Proposal < ActiveRecord::Base
       tags: :name
     },
     using: {
-      tsearch: { dictionary: "spanish" },
+      tsearch: { dictionary: "spanish", tsvector_column: 'tsv' },
       trigram: { threshold: 0.1 },
     },
     ranked_by: '(:tsearch + proposals.cached_votes_up)',
     order_within_rank: "proposals.created_at DESC"
   }
+
+  #remember to add tags.name
+  def searchable_fields
+    %w(title question summary description)
+  end
+
+  def searchable_fields_to_sql
+    searchable_fields.collect { |field| "coalesce(#{field},'')" }.join(" || ' ' || ")
+  end
+
+  def calculate_tsvector
+    ActiveRecord::Base.connection.execute("UPDATE proposals SET tsv = (to_tsvector('spanish', #{searchable_fields_to_sql})) WHERE id = #{self.id}")
+  end
 
   def description
     super.try :html_safe
