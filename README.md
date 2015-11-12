@@ -27,6 +27,7 @@ cd participacion
 bundle install
 cp config/database.yml.example config/database.yml
 cp config/secrets.yml.example config/secrets.yml
+rake db:create
 bin/rake db:setup
 bin/rake db:dev_seed
 RAILS_ENV=test bin/rake db:setup
