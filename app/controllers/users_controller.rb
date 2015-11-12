@@ -47,7 +47,7 @@ class UsersController < ApplicationController
     end
 
     def load_comments
-      @comments = Comment.where(user_id: @user.id).includes(:commentable).order(created_at: :desc).page(params[:page])
+      @comments = Comment.not_as_admin_or_moderator.where(user_id: @user.id).includes(:commentable).order(created_at: :desc).page(params[:page])
     end
 
     def valid_access?
