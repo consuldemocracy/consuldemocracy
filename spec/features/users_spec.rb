@@ -167,6 +167,38 @@ feature 'Users' do
       visit user_path(@user)
       expect(page).to_not have_content('activity list private')
     end
+
+    feature 'User email' do
+
+      background do
+        @user = create(:user)
+      end
+
+      scenario "is not shown if no user logged in" do
+        visit user_path(@user)
+        expect(page).to_not have_content(@user.email)
+      end
+
+      scenario "is not shown if logged in user is a regular user" do
+        login_as(create(:user))
+        visit user_path(@user)
+        expect(page).to_not have_content(@user.email)
+      end
+
+      scenario "is not shown if logged in user is moderator" do
+        login_as(create(:moderator).user)
+        visit user_path(@user)
+        expect(page).to_not have_content(@user.email)
+      end
+
+      scenario "is shown if logged in user is admin" do
+        login_as(create(:administrator).user)
+        visit user_path(@user)
+        expect(page).to have_content(@user.email)
+      end
+
+    end
+
   end
 
 end
