@@ -933,6 +933,12 @@
 
   .panel h3 a {
     color: #0D3F54;
+
+    text-transform: none;
+
+    &:first-letter {
+      text-transform: none;
+    }
   }
 
   .info, .info a {
@@ -949,6 +955,11 @@
 
   .panel h3 a {
     color: $text;
+    text-transform: lowercase;
+
+    &:first-letter {
+      text-transform: uppercase;
+    }
   }
 
   .info {
@@ -981,11 +992,6 @@
         display: block;
         font-size: rem-calc(14);
         line-height: $line-height;
-        text-transform: lowercase;
-
-        &:first-letter {
-          text-transform: uppercase;
-        }
       }
     }
   }
