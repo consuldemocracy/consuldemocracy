@@ -12,9 +12,22 @@ class DebatesController < ApplicationController
   load_and_authorize_resource
   respond_to :html, :js
 
+  def index_customization
+    @featured_debates = Debate.all.sort_by_confidence_score.limit(3) if (@search_terms.blank? && @tag_filter.blank?)
+    if @featured_debates.present?
+      set_featured_debate_votes(@featured_debates)
+      @resources = @resources.where('debates.id NOT IN (?)', @featured_debates.map(&:id))
+    end
+  end
+
   def vote
     @debate.register_vote(current_user, params[:value])
     set_debate_votes(@debate)
+  end
+
+  def vote_featured
+    @debate.register_vote(current_user, 'yes')
+    set_featured_debate_votes(@debate)
   end
 
   private
@@ -27,4 +40,7 @@ class DebatesController < ApplicationController
       Debate
     end
 
+    def set_featured_debate_votes(debates)
+      @featured_debates_votes = current_user ? current_user.debate_votes(debates) : {}
+    end
 end

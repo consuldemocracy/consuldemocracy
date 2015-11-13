@@ -1,0 +1,18 @@
+<div id="<%= dom_id(debate) %>" class="debate-featured small-12 column">
+  <div class="panel">
+    <div class="content small-12 medium-9 left">
+      <h3><%= link_to debate.title, debate %></h3>
+      <div class="info">
+        <span class="author">
+          <% if debate.author.hidden? || debate.author.erased? %>
+            <%= t("debates.show.author_deleted") %>
+          <% else %>
+            <%= debate.author.name %>
+          <% end %>
+        </span>
+        <span>&nbsp;&bull;&nbsp;</span>
+        <%= t("debates.debate.votes", count: debate.total_votes) %>
+      </div>
+    </div>
+  </div>
+</div>
