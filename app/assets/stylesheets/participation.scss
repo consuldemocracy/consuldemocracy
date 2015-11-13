@@ -929,12 +929,13 @@
 
 .debate-featured {
   background: $votes-bg;
+  margin: rem-calc(12) 0 !important;
 
   .panel h3 a {
     color: #0D3F54;
   }
 
-  .info {
+  .info, .info a {
     color: white !important;
   }
 
@@ -960,7 +961,6 @@
 }
 
 .debate-featured, .proposal-featured {
-
   margin-bottom: 0;
   margin-top: 0;
   padding-left: 0;
