@@ -44,6 +44,8 @@
           <%= link_to t("debates.index.start_debate"), new_debate_path, class: 'button radius expand' %>
         </div>
 
+        <%= render "featured_debates_static" %>
+
         <%= render @debates %>
         <%= paginate @debates %>
       </div>

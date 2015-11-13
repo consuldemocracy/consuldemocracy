@@ -79,6 +79,7 @@ es:
   debates:
     index:
       title: "Debates"
+      featured_debates_html: "Debates<br>destacados"
       start_debate: "Empieza un debate"
       select_order: "Ordenar por"
       select_order_long: "Estás viendo los debates"
