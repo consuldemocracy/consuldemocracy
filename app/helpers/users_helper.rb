@@ -35,4 +35,8 @@ module UsersHelper
     end
   end
 
+  def current_administrator?
+    current_user && current_user.administrator?
+  end
+
 end

@@ -167,6 +167,60 @@ feature 'Users' do
       visit user_path(@user)
       expect(page).to_not have_content('activity list private')
     end
+
+    feature 'User email' do
+
+      background do
+        @user = create(:user)
+      end
+
+      scenario 'is not shown if no user logged in' do
+        visit user_path(@user)
+        expect(page).to_not have_content(@user.email)
+      end
+
+      scenario 'is not shown if logged in user is a regular user' do
+        login_as(create(:user))
+        visit user_path(@user)
+        expect(page).to_not have_content(@user.email)
+      end
+
+      scenario 'is not shown if logged in user is moderator' do
+        login_as(create(:moderator).user)
+        visit user_path(@user)
+        expect(page).to_not have_content(@user.email)
+      end
+
+      scenario 'is shown if logged in user is admin' do
+        login_as(create(:administrator).user)
+        visit user_path(@user)
+        expect(page).to have_content(@user.email)
+      end
+
+    end
+  end
+
+  feature 'Special comments' do
+
+    scenario 'comments posted as moderator are not visible in user activity' do
+      moderator = create(:administrator).user
+      comment = create(:comment, user: moderator)
+      moderator_comment = create(:comment, user: moderator, moderator_id: moderator.id)
+
+      visit user_path(moderator)
+      expect(page).to have_content(comment.body)
+      expect(page).to_not have_content(moderator_comment.body)
+    end
+
+    scenario 'comments posted as admin are not visible in user activity' do
+      admin = create(:administrator).user
+      comment = create(:comment, user: admin)
+      admin_comment = create(:comment, user: admin, administrator_id: admin.id)
+
+      visit user_path(admin)
+      expect(page).to have_content(comment.body)
+      expect(page).to_not have_content(admin_comment.body)
+    end
   end
 
 end

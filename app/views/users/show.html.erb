@@ -2,7 +2,13 @@
   <div class="activity row">
     <div class="small-12 column">
 
-      <h2><%= avatar_image(@user, seed: @user.id, size: 60) %> <%= @user.name %></h2>
+      <h2>
+        <%= avatar_image(@user, seed: @user.id, size: 60) %>
+        <%= @user.name %>
+        <% if current_administrator? %>
+          <small><%= @user.email %></small>
+        <% end %>
+      </h2>
 
       <% if @user.public_activity || @authorized_current_user %>
         <dl class="sub-nav">
