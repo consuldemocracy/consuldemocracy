@@ -2,7 +2,7 @@ module ScoreCalculator
 
   EPOC           = Time.new(2015, 6, 15)
   COMMENT_WEIGHT = 1.0/5 # 1 positive vote / x comments
-  TIME_UNIT      = 6.hours.to_f
+  TIME_UNIT      = 48.hours.to_f
 
   def self.hot_score(date, votes_total, votes_up, comments_count)
     total   = (votes_total + COMMENT_WEIGHT * comments_count).to_f
