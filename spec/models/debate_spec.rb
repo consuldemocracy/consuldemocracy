@@ -81,25 +81,22 @@ describe Debate do
   end
 
   describe "#editable?" do
-    let(:debate) { create(:debate) }
-    before(:each) { Setting.find_by(key: "max_votes_for_debate_edit").update(value: 3) }
 
-    it "should be true if debate has no votes yet" do
-      expect(debate.total_votes).to eq(0)
+    it "should be true if debate was created now" do
+      debate = create(:debate, created_at: Time.now)
       expect(debate.editable?).to be true
     end
 
-    it "should be true if debate has less than limit votes" do
-      create_list(:vote, 2, votable: debate)
-      expect(debate.total_votes).to eq(2)
+    it "should be true if debate was created less than 48 hours ago" do
+      debate = create(:debate, created_at: 47.hours.ago)
       expect(debate.editable?).to be true
     end
 
-    it "should be false if debate has more than limit votes" do
-      create_list(:vote, 4, votable: debate)
-      expect(debate.total_votes).to eq(4)
+    it "should be false if debate was created more than 48 hours ago" do
+      debate = create(:debate, created_at: 49.hours.ago)
       expect(debate.editable?).to be false
     end
+
   end
 
   describe "#editable_by?" do

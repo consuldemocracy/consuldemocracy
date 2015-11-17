@@ -74,7 +74,7 @@ class Debate < ActiveRecord::Base
   end
 
   def editable?
-    total_votes <= Setting.value_for('max_votes_for_debate_edit').to_i
+    created_at > 48.hours.ago
   end
 
   def editable_by?(user)
