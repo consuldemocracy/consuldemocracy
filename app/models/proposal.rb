@@ -58,17 +58,21 @@ class Proposal < ActiveRecord::Base
     order_within_rank: "proposals.created_at DESC"
   }
 
-  #remember to add tags.name
   def searchable_fields
-    %w(title question summary description)
+    %w(title question summary description) << tags_to_sql
   end
 
-  def searchable_fields_to_sql
+  def tags_to_sql
+    "\'#{tag_list.join(' ')}\'"
+  end
+
+  def searchable_content
     searchable_fields.collect { |field| "coalesce(#{field},'')" }.join(" || ' ' || ")
   end
 
   def calculate_tsvector
-    ActiveRecord::Base.connection.execute("UPDATE proposals SET tsv = (to_tsvector('spanish', #{searchable_fields_to_sql})) WHERE id = #{self.id}")
+    ActiveRecord::Base.connection.execute("
+      UPDATE proposals SET tsv = (to_tsvector('spanish', #{searchable_content})) WHERE id = #{self.id}")
   end
 
   def description
