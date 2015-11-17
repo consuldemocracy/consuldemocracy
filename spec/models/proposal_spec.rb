@@ -238,7 +238,7 @@ describe Proposal do
     end
 
     it "decays in older proposals, even if they have more votes" do
-      older_more_voted = create(:proposal, :with_hot_score, created_at: now - 2.days, cached_votes_up: 900)
+      older_more_voted = create(:proposal, :with_hot_score, created_at: now - 5.days, cached_votes_up: 900)
       new_less_voted   = create(:proposal, :with_hot_score, created_at: now, cached_votes_up: 9)
       expect(new_less_voted.hot_score).to be > older_more_voted.hot_score
     end

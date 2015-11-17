@@ -251,7 +251,7 @@ describe Debate do
     end
 
     it "decays in older debates, even if they have more votes" do
-      older_more_voted = create(:debate, :with_hot_score, created_at: now - 2.days, cached_votes_total: 1000, cached_votes_up: 900)
+      older_more_voted = create(:debate, :with_hot_score, created_at: now - 5.days, cached_votes_total: 1000, cached_votes_up: 900)
       new_less_voted   = create(:debate, :with_hot_score, created_at: now, cached_votes_total: 10, cached_votes_up: 9)
       expect(new_less_voted.hot_score).to be > older_more_voted.hot_score
     end
