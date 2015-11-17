@@ -40,6 +40,8 @@ module Abilities
         can :vote_featured, Proposal
       end
 
+      can :manage, Annotation
+
     end
   end
 end

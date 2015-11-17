@@ -50,6 +50,17 @@ ActiveRecord::Schema.define(version: 20151111202657) do
   add_index "ahoy_events", ["user_id"], name: "index_ahoy_events_on_user_id", using: :btree
   add_index "ahoy_events", ["visit_id"], name: "index_ahoy_events_on_visit_id", using: :btree
 
+  create_table "annotations", force: :cascade do |t|
+    t.string   "quote"
+    t.text     "ranges"
+    t.text     "text"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "proposal_id"
+  end
+
+  add_index "annotations", ["proposal_id"], name: "index_annotations_on_proposal_id", using: :btree
+
   create_table "campaigns", force: :cascade do |t|
     t.string   "name"
     t.string   "track_id"
@@ -171,7 +182,7 @@ ActiveRecord::Schema.define(version: 20151111202657) do
   create_table "locks", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "tries",        default: 0
-    t.datetime "locked_until", default: '2000-01-01 00:01:01', null: false
+    t.datetime "locked_until", default: '2000-01-01 08:01:01', null: false
     t.datetime "created_at",                                   null: false
     t.datetime "updated_at",                                   null: false
   end
@@ -376,6 +387,7 @@ ActiveRecord::Schema.define(version: 20151111202657) do
   add_index "votes", ["voter_id", "voter_type", "vote_scope"], name: "index_votes_on_voter_id_and_voter_type_and_vote_scope", using: :btree
 
   add_foreign_key "administrators", "users"
+  add_foreign_key "annotations", "proposals"
   add_foreign_key "failed_census_calls", "users"
   add_foreign_key "flags", "users"
   add_foreign_key "identities", "users"
