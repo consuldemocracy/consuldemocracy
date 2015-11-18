@@ -53,6 +53,7 @@ class Proposal < ActiveRecord::Base
     using: {
       tsearch: { dictionary: "spanish", tsvector_column: 'tsv' }
     },
+    ignoring: :accents,
     ranked_by: '(:tsearch + proposals.cached_votes_up)',
     order_within_rank: "proposals.created_at DESC"
   }
