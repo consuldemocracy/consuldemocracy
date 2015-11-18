@@ -7,19 +7,20 @@ module SearchCache
 
   def calculate_tsvector
     ActiveRecord::Base.connection.execute("
-      UPDATE proposals SET tsv = (to_tsvector('spanish', #{fields_to_sql})) WHERE id = #{self.id}")
+      UPDATE proposals SET tsv = (#{searchable_values_sql}) WHERE id = #{self.id}")
   end
 
-  def fields_to_sql
-    fields.collect { |field| "coalesce(#{field},'')" }.join(" || ' ' || ")
-  end
+  private
 
-  def fields
-    searchable_fields << tags_to_sql
-  end
-
-  def tags_to_sql
-    "\'#{tag_list.join(' ')}\'"
+  def searchable_values_sql
+    cx = ActiveRecord::Base.connection
+    arr = []
+    searchable_values.each do |val, weight|
+      if val.present?
+        arr << "setweight(to_tsvector('spanish', coalesce(#{cx.quote(val)}, '')), #{cx.quote(weight)})"
+      end
+    end
+    arr.join(" || ")
   end
 
 end

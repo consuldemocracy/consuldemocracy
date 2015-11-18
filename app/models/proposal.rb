@@ -58,8 +58,15 @@ class Proposal < ActiveRecord::Base
     order_within_rank: "proposals.created_at DESC"
   }
 
-  def searchable_fields
-    %w(title question summary description)
+  def searchable_values
+    values = {
+      title => 'A',
+      question => 'B',
+      summary => 'C',
+      description => 'D'
+    }
+    tag_list.each{ |tag| values[tag] = 'D' }
+    values
   end
 
   def description
