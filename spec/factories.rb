@@ -1,4 +1,9 @@
 FactoryGirl.define do
+  factory :annotation do
+    quote "MyString"
+    text "MyText"
+  end
+
 
   sequence(:document_number) { |n| "#{n.to_s.rjust(8, '0')}X" }
 
