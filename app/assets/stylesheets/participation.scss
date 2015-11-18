@@ -381,6 +381,7 @@
     color: $text-medium;
     font-weight: lighter;
     line-height: $line-height*2;
+    position: relative;
     text-align: justify;
 
     a {
@@ -391,6 +392,15 @@
       font-size: rem-calc(15);
       line-height: $line-height;
       margin-bottom: 0;
+    }
+
+    .author-deleted {
+      left: 0;
+      top: 4px;
+    }
+
+    .author.deleted {
+      margin-left: rem-calc(48);
     }
   }
 
