@@ -5,6 +5,7 @@ class Proposal < ActiveRecord::Base
   include Measurable
   include Sanitizable
   include PgSearch
+  include SearchCache
 
   apply_simple_captcha
   acts_as_votable
@@ -50,12 +51,23 @@ class Proposal < ActiveRecord::Base
       tags: :name
     },
     using: {
-      tsearch: { dictionary: "spanish" },
+      tsearch: { dictionary: "spanish", tsvector_column: 'tsv' },
       trigram: { threshold: 0.1 },
     },
     ranked_by: '(:tsearch + proposals.cached_votes_up)',
     order_within_rank: "proposals.created_at DESC"
   }
+
+  def searchable_values
+    values = {
+      title       => 'A',
+      question    => 'B',
+      summary     => 'C',
+      description => 'D'
+    }
+    tag_list.each{ |tag| values[tag] = 'D' }
+    values
+  end
 
   def description
     super.try :html_safe
