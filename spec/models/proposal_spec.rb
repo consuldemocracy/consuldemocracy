@@ -388,15 +388,15 @@ describe Proposal do
     context "stemming" do
 
       it "searches word stems" do
-        proposal = create(:proposal, summary: 'limpiar')
+        proposal = create(:proposal, summary: 'biblioteca')
 
-        results = Proposal.search('limpiará')
+        results = Proposal.search('bibliotecas')
         expect(results).to eq([proposal])
 
-        results = Proposal.search('limpiémos')
+        results = Proposal.search('bibliotec')
         expect(results).to eq([proposal])
 
-        results = Proposal.search('limpió')
+        results = Proposal.search('biblioteco')
         expect(results).to eq([proposal])
       end
 
@@ -427,21 +427,6 @@ describe Proposal do
 
         proposal2 = create(:proposal, title: "scream")
         results = Proposal.search("SCREAM")
-        expect(results).to eq([proposal2])
-      end
-
-    end
-
-    context "typos" do
-
-      it "searches with typos" do
-        proposal = create(:proposal, summary: 'difusión')
-
-        results = Proposal.search('difuon')
-        expect(results).to eq([proposal])
-
-        proposal2 = create(:proposal, summary: 'desarrollo')
-        results = Proposal.search('desarolo')
         expect(results).to eq([proposal2])
       end
 
