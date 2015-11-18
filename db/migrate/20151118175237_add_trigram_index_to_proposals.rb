@@ -1,6 +1,6 @@
 class AddTrigramIndexToProposals < ActiveRecord::Migration
   def up
-    add_index :proposals, :description, using: :gist
+    execute "CREATE INDEX index_proposals_on_description ON proposals USING gist (description gist_trgm_ops);"
   end
 
   def down
