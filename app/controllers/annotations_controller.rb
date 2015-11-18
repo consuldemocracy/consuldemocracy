@@ -9,6 +9,13 @@ class AnnotationsController < ApplicationController
     end
   end
 
+  def update
+    @annotation = Annotation.find(params[:id])
+    if @annotation.update_attributes(annotation_params)
+      render json: @annotation.to_json
+    end
+  end
+
   private
   def annotation_params
     params
