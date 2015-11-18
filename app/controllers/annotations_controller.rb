@@ -22,6 +22,12 @@ class AnnotationsController < ApplicationController
     render json: { status: :ok }
   end
 
+  def search
+    @annotations = Annotation.where(proposal_id: params[:proposal_id])
+    annotations_hash = { total: @annotations.size, rows: @annotations }
+    render json: annotations_hash.to_json
+  end
+
   private
 
   def annotation_params
