@@ -393,7 +393,7 @@ GEM
     unf (0.1.4)
       unf_ext
     unf_ext (0.0.7.1)
-    unicorn (5.0.0)
+    unicorn (5.0.1)
       kgio (~> 2.6)
       rack
       raindrops (~> 0.7)
@@ -480,7 +480,7 @@ DEPENDENCIES
   spring
   turbolinks
   uglifier (>= 1.3.0)
-  unicorn
+  unicorn (~> 5.0.1)
   web-console (~> 2.0)
   whenever
 
