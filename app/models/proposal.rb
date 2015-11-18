@@ -60,9 +60,9 @@ class Proposal < ActiveRecord::Base
 
   def searchable_values
     values = {
-      title => 'A',
-      question => 'B',
-      summary => 'C',
+      title       => 'A',
+      question    => 'B',
+      summary     => 'C',
       description => 'D'
     }
     tag_list.each{ |tag| values[tag] = 'D' }
