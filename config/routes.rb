@@ -61,7 +61,11 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :annotations
+  resources :annotations do
+    collection do
+      get :search
+    end
+  end
 
   resources :users, only: [:show]
 
