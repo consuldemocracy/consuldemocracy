@@ -13,14 +13,15 @@ module SearchCache
   private
 
   def searchable_values_sql
-    cx = ActiveRecord::Base.connection
-    arr = []
-    searchable_values.each do |val, weight|
-      if val.present?
-        arr << "setweight(to_tsvector('spanish', coalesce(#{cx.quote(val)}, '')), #{cx.quote(weight)})"
-      end
-    end
-    arr.join(" || ")
+    searchable_values.collect { |value, weight| set_tsvector(value, weight) }.join(" || ")
+  end
+
+  def set_tsvector(value, weight)
+    "setweight(to_tsvector('spanish', coalesce(#{quote(value)}, '')), #{quote(weight)})"
+  end
+
+  def quote(value)
+    ActiveRecord::Base.connection.quote(value)
   end
 
 end
