@@ -5,6 +5,7 @@ class Proposal < ActiveRecord::Base
   include Measurable
   include Sanitizable
   include PgSearch
+  include SearchCache
 
   apply_simple_captcha
   acts_as_votable
@@ -28,7 +29,6 @@ class Proposal < ActiveRecord::Base
   validates :terms_of_service, acceptance: { allow_nil: false }, on: :create
 
   before_validation :set_responsible_name
-  before_validation :calculate_tsvector
 
   before_save :calculate_hot_score, :calculate_confidence_score
 
@@ -59,20 +59,7 @@ class Proposal < ActiveRecord::Base
   }
 
   def searchable_fields
-    %w(title question summary description) << tags_to_sql
-  end
-
-  def tags_to_sql
-    "\'#{tag_list.join(' ')}\'"
-  end
-
-  def searchable_content
-    searchable_fields.collect { |field| "coalesce(#{field},'')" }.join(" || ' ' || ")
-  end
-
-  def calculate_tsvector
-    ActiveRecord::Base.connection.execute("
-      UPDATE proposals SET tsv = (to_tsvector('spanish', #{searchable_content})) WHERE id = #{self.id}")
+    %w(title question summary description)
   end
 
   def description
