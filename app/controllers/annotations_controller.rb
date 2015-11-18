@@ -34,6 +34,6 @@ class AnnotationsController < ApplicationController
     params
       .require(:annotation)
       .permit(:quote, :text, ranges: [:start, :startOffset, :end, :endOffset])
-      .merge(proposal_id: params[:proposal_id])
+      .merge(proposal_id: params[:proposal_id], user_id: params[:user_id])
   end
 end

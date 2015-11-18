@@ -1,9 +1,10 @@
 proposalSelector =  ".proposal-show"
 
-proposalId =  ->
+annotationsMetadata =  ->
   return {
     beforeAnnotationCreated: (ann) ->
-      ann.proposal_id = $(proposalSelector).data("id")
+      ann.proposal_id = $(proposalSelector).data("id");
+      ann.user_id = $(proposalSelector).data("user-id");
   };
 
 App.annotations =
@@ -11,7 +12,7 @@ App.annotations =
     app = new annotator.App()
       .include(annotator.ui.main, { element: $(proposalSelector)[0] })
       .include(annotator.storage.http, { prefix: "", urls: { search: "/annotations/search" } })
-      .include(proposalId)
+      .include(annotationsMetadata)
 
     app.start()
       .then( ->

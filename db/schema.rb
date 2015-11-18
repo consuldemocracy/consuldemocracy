@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151111202657) do
+ActiveRecord::Schema.define(version: 20151118160928) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -57,9 +57,11 @@ ActiveRecord::Schema.define(version: 20151111202657) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.integer  "proposal_id"
+    t.integer  "user_id"
   end
 
   add_index "annotations", ["proposal_id"], name: "index_annotations_on_proposal_id", using: :btree
+  add_index "annotations", ["user_id"], name: "index_annotations_on_user_id", using: :btree
 
   create_table "campaigns", force: :cascade do |t|
     t.string   "name"
@@ -182,7 +184,7 @@ ActiveRecord::Schema.define(version: 20151111202657) do
   create_table "locks", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "tries",        default: 0
-    t.datetime "locked_until", default: '2000-01-01 08:01:01', null: false
+    t.datetime "locked_until", default: '2000-01-01 07:01:01', null: false
     t.datetime "created_at",                                   null: false
     t.datetime "updated_at",                                   null: false
   end
@@ -388,6 +390,7 @@ ActiveRecord::Schema.define(version: 20151111202657) do
 
   add_foreign_key "administrators", "users"
   add_foreign_key "annotations", "proposals"
+  add_foreign_key "annotations", "users"
   add_foreign_key "failed_census_calls", "users"
   add_foreign_key "flags", "users"
   add_foreign_key "identities", "users"
