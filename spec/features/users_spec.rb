@@ -208,6 +208,7 @@ feature 'Users' do
       moderator_comment = create(:comment, user: moderator, moderator_id: moderator.id)
 
       visit user_path(moderator)
+      expect(page).to have_content("1 Comment")
       expect(page).to have_content(comment.body)
       expect(page).to_not have_content(moderator_comment.body)
     end
