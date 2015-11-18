@@ -435,7 +435,7 @@ describe Proposal do
     context "order" do
 
       it "orders by weight" do
-        proposal_question     = create(:proposal, question:    'stop corruption')
+        proposal_question    = create(:proposal, question:    'stop corruption')
         proposal_title       = create(:proposal,  title:       'stop corruption')
         proposal_description = create(:proposal,  description: 'stop corruption')
         proposal_summary     = create(:proposal,  summary:     'stop corruption')
@@ -448,30 +448,29 @@ describe Proposal do
         expect(results.fourth).to eq(proposal_description)
       end
 
-      it "orders by weight and then votes" do
+      it "orders by weight and then by votes" do
         title_some_votes    = create(:proposal, title: 'stop corruption', cached_votes_up: 5)
         title_least_voted   = create(:proposal, title: 'stop corruption', cached_votes_up: 2)
         title_most_voted    = create(:proposal, title: 'stop corruption', cached_votes_up: 10)
+
         summary_most_voted  = create(:proposal, summary: 'stop corruption', cached_votes_up: 10)
 
         results = Proposal.search('stop corruption')
 
         expect(results.first).to eq(title_most_voted)
-        expect(results.second).to eq(summary_most_voted)
-        expect(results.third).to eq(title_some_votes)
-        expect(results.fourth).to eq(title_least_voted)
+        expect(results.second).to eq(title_some_votes)
+        expect(results.third).to eq(title_least_voted)
+        expect(results.fourth).to eq(summary_most_voted)
       end
 
-      it "orders by weight and then votes and then created_at" do
-        newest = create(:proposal, title: 'stop corruption', cached_votes_up: 5, created_at: Time.now)
-        oldest = create(:proposal, title: 'stop corruption', cached_votes_up: 5, created_at: 1.month.ago)
-        old    = create(:proposal, title: 'stop corruption', cached_votes_up: 5, created_at: 1.week.ago)
+      it "gives much more weight to word matches than votes" do
+        exact_title_few_votes    = create(:proposal, title: 'stop corruption', cached_votes_up: 5)
+        similar_title_many_votes = create(:proposal, title: 'stop some of the corruption', cached_votes_up: 500)
 
         results = Proposal.search('stop corruption')
 
-        expect(results.first).to eq(newest)
-        expect(results.second).to eq(old)
-        expect(results.third).to eq(oldest)
+        expect(results.first).to eq(exact_title_few_votes)
+        expect(results.second).to eq(similar_title_many_votes)
       end
 
     end
