@@ -16,7 +16,14 @@ class AnnotationsController < ApplicationController
     end
   end
 
+  def destroy
+    @annotation = Annotation.find(params[:id])
+    @annotation.destroy
+    render json: { status: :ok }
+  end
+
   private
+
   def annotation_params
     params
       .require(:annotation)
