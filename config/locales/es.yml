@@ -36,7 +36,7 @@ es:
       open_source: "software libre"
       open_source_url: "http://www.gnu.org/licenses/agpl-3.0.html"
       consul: "aplicación Consul"
-      consul_url: "https://github.com/ayuntamientomadrid"
+      consul_url: "https://github.com/consul/consul"
       copyright: "Ayuntamiento de Madrid, %{year}"
       participation_title: "Participación"
       participation_text: "Decide cómo debe ser la ciudad de Madrid que quieres."
