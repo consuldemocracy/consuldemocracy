@@ -2,10 +2,10 @@
 
 Gobierno abierto del Ayuntamiento de Madrid
 
-[![Build Status](https://travis-ci.org/AyuntamientoMadrid/participacion.svg?branch=master)](https://travis-ci.org/AyuntamientoMadrid/participacion)
-[![Code Climate](https://codeclimate.com/github/AyuntamientoMadrid/participacion/badges/gpa.svg)](https://codeclimate.com/github/AyuntamientoMadrid/participacion)
-[![Dependency Status](https://gemnasium.com/AyuntamientoMadrid/participacion.svg)](https://gemnasium.com/AyuntamientoMadrid/participacion)
-[![Coverage Status](https://coveralls.io/repos/AyuntamientoMadrid/participacion/badge.svg?branch=master&service=github)](https://coveralls.io/github/AyuntamientoMadrid/participacion?branch=master)
+[![Build Status](https://travis-ci.org/consul/consul.svg?branch=master)](https://travis-ci.org/AyuntamientoMadrid/participacion)
+[![Code Climate](https://codeclimate.com/github/consul/consul/badges/gpa.svg)](https://codeclimate.com/github/AyuntamientoMadrid/participacion)
+[![Dependency Status](https://gemnasium.com/consul/consul.svg)](https://gemnasium.com/AyuntamientoMadrid/participacion)
+[![Coverage Status](https://coveralls.io/repos/consul/consul/badge.svg?branch=master&service=github)](https://coveralls.io/github/consul/consul?branch=master)
 
 Este es el repositorio de código abierto de la Aplicación de Participación Ciudadana del Ayuntamiento de Madrid.
 
