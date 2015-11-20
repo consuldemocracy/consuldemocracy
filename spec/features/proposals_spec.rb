@@ -606,6 +606,35 @@ feature 'Proposals' do
     expect(page).to_not have_selector('#featured-proposals')
   end
 
+  scenario "Reorder search results", :focus do
+    proposal1 = create(:proposal, title: "Show me what you got", cached_votes_up: 1)
+    proposal2 = create(:proposal, title: "Show what you got", cached_votes_up: 100)
+    proposal3 = create(:proposal, title: "Show a what you got", cached_votes_up: 10)
+
+    visit proposals_path
+    fill_in "search", with: "Show me what you got"
+    click_button "Search"
+
+    within("#proposals") do
+      expect(page).to have_css('.proposal', count: 3)
+
+      expect(page).to have_content(proposal1.title)
+      expect(page).to have_content(proposal2.title)
+      expect(page).to have_content(proposal3.title)
+    end
+
+    select 'highest rated', from: 'order-selector'
+    expect(page).to have_selector('.js-order-selector[data-order="confidence_score"]')
+
+    within("#proposals") do
+      expect(page).to have_css('.proposal', count: 3)
+
+      expect(page).to have_content(proposal2.title)
+      expect(page).to have_content(proposal3.title)
+      expect(page).to have_content(proposal1.title)
+    end
+  end
+
   scenario 'Conflictive' do
     good_proposal = create(:proposal)
     conflictive_proposal = create(:proposal, :conflictive)
