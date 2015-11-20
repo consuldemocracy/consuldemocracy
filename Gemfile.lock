@@ -98,13 +98,13 @@ GEM
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
     chronic (0.10.2)
-    ckeditor (4.1.4)
+    ckeditor (4.1.5)
       cocaine
       orm_adapter (~> 0.5.0)
     climate_control (0.0.3)
       activesupport (>= 3.0)
     cliver (0.3.2)
-    cocaine (0.5.7)
+    cocaine (0.5.8)
       climate_control (>= 0.0.3, < 1.0)
     coffee-rails (4.1.0)
       coffee-script (>= 2.2.0)
@@ -318,7 +318,7 @@ GEM
       mime-types (>= 1.16, < 3.0)
       netrc (~> 0.7)
     rinku (1.7.3)
-    rollbar (2.6.0)
+    rollbar (2.6.1)
       multi_json
     rspec (3.4.0)
       rspec-core (~> 3.4.0)
@@ -436,7 +436,7 @@ DEPENDENCIES
   capistrano-rvm
   capistrano3-delayed-job (~> 1.0)
   capybara
-  ckeditor
+  ckeditor (~> 4.1.5)
   coffee-rails (~> 4.1.0)
   coveralls
   daemons
@@ -471,7 +471,7 @@ DEPENDENCIES
   rails (= 4.2.5)
   responders
   rinku
-  rollbar (~> 2.6.0)
+  rollbar (~> 2.6.1)
   rspec-rails (~> 3.3)
   sass-rails (~> 5.0)
   savon
