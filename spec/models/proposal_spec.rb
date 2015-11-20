@@ -432,6 +432,17 @@ describe Proposal do
 
     end
 
+    context "tags" do
+
+      it "searches by tags" do
+        proposal = create(:proposal, tag_list: 'Latina')
+
+        results = Proposal.search('Latina')
+        expect(results.first).to eq(proposal)
+      end
+
+    end
+
     context "order" do
 
       it "orders by weight" do
@@ -471,17 +482,6 @@ describe Proposal do
 
         expect(results.first).to eq(exact_title_few_votes)
         expect(results.second).to eq(similar_title_many_votes)
-      end
-
-    end
-
-    context "tags" do
-
-      it "searches by tags" do
-        proposal = create(:proposal, tag_list: 'Latina')
-
-        results = Proposal.search('Latina')
-        expect(results.first).to eq(proposal)
       end
 
     end
