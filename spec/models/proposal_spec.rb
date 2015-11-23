@@ -97,6 +97,17 @@ describe Proposal do
       expect(proposal).to be_valid
       proposal.responsible_name = "12345678Z"
     end
+
+    it "should not be updated when the author is deleted" do
+      author = create(:user, :level_three, document_number: "12345678Z")
+      proposal.author = author
+      proposal.save
+
+      proposal.author.erase
+
+      proposal.save
+      expect(proposal.responsible_name).to eq "12345678Z"
+    end
   end
 
   describe "tag_list" do
