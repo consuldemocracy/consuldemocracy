@@ -90,6 +90,7 @@ es:
         created_at: "más nuevos"
         most_commented: "más comentados"
         random: "aleatorio"
+        relevance: "relevancia"
       filter_topic:
         one: " con el tema '%{topic}'"
         other: " con el tema '%{topic}'"
@@ -166,6 +167,7 @@ es:
         created_at: "más nuevas"
         most_commented: "más comentadas"
         random: "aleatorias"
+        relevance: "relevancia"
       filter_topic:
         one: " con el tema '%{topic}'"
         other: " con el tema '%{topic}'"

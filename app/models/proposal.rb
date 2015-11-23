@@ -32,13 +32,14 @@ class Proposal < ActiveRecord::Base
 
   before_save :calculate_hot_score, :calculate_confidence_score
 
-  scope :for_render, -> { includes(:tags) }
-  scope :sort_by_hot_score , -> { order(hot_score: :desc) }
-  scope :sort_by_confidence_score , -> { order(confidence_score: :desc) }
-  scope :sort_by_created_at, -> { order(created_at: :desc) }
-  scope :sort_by_most_commented, -> { order(comments_count: :desc) }
-  scope :sort_by_random, -> { order("RANDOM()") }
-  scope :sort_by_flags, -> { order(flags_count: :desc, updated_at: :desc) }
+  scope :for_render,               -> { includes(:tags) }
+  scope :sort_by_hot_score ,       -> { reorder(hot_score: :desc) }
+  scope :sort_by_confidence_score, -> { reorder(confidence_score: :desc) }
+  scope :sort_by_created_at,       -> { reorder(created_at: :desc) }
+  scope :sort_by_most_commented,   -> { reorder(comments_count: :desc) }
+  scope :sort_by_random,           -> { reorder("RANDOM()") }
+  scope :sort_by_relevance ,       -> { all }
+  scope :sort_by_flags,            -> { order(flags_count: :desc, updated_at: :desc) }
 
   pg_search_scope :pg_search, {
     against: {
