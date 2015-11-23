@@ -90,6 +90,7 @@ en:
         created_at: "newest"
         most_commented: "most commented"
         random: "random"
+        relevance: "relevance"
       filter_topic:
         one: " with topic '%{topic}'"
         other: " with topic '%{topic}'"
@@ -166,6 +167,7 @@ en:
         created_at: "newest"
         most_commented: "most commented"
         random: "random"
+        relevance: "relevance"
       filter_topic:
         one: " with topic '%{topic}'"
         other: " with topic '%{topic}'"
