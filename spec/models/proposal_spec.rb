@@ -486,6 +486,90 @@ describe Proposal do
 
     end
 
+    context "reorder" do
+
+      it "should be able to reorder by hot_score after searching" do
+        lowest_score  = create(:proposal,  title: 'stop corruption', cached_votes_up: 1)
+        highest_score = create(:proposal,  title: 'stop corruption', cached_votes_up: 2)
+        average_score = create(:proposal,  title: 'stop corruption', cached_votes_up: 3)
+
+        lowest_score.update_column(:hot_score, 1)
+        highest_score.update_column(:hot_score, 100)
+        average_score.update_column(:hot_score, 10)
+
+        results = Proposal.search('stop corruption')
+
+        expect(results.first).to eq(average_score)
+        expect(results.second).to eq(highest_score)
+        expect(results.third).to eq(lowest_score)
+
+        results = results.sort_by_hot_score
+
+        expect(results.first).to eq(highest_score)
+        expect(results.second).to eq(average_score)
+        expect(results.third).to eq(lowest_score)
+      end
+
+      it "should be able to reorder by confidence_score after searching" do
+        lowest_score  = create(:proposal,  title: 'stop corruption', cached_votes_up: 1)
+        highest_score = create(:proposal,  title: 'stop corruption', cached_votes_up: 2)
+        average_score = create(:proposal,  title: 'stop corruption', cached_votes_up: 3)
+
+        lowest_score.update_column(:confidence_score, 1)
+        highest_score.update_column(:confidence_score, 100)
+        average_score.update_column(:confidence_score, 10)
+
+        results = Proposal.search('stop corruption')
+
+        expect(results.first).to eq(average_score)
+        expect(results.second).to eq(highest_score)
+        expect(results.third).to eq(lowest_score)
+
+        results = results.sort_by_confidence_score
+
+        expect(results.first).to eq(highest_score)
+        expect(results.second).to eq(average_score)
+        expect(results.third).to eq(lowest_score)
+      end
+
+      it "should be able to reorder by created_at after searching" do
+        recent  = create(:proposal,  title: 'stop corruption', cached_votes_up: 1, created_at: 1.week.ago)
+        newest  = create(:proposal,  title: 'stop corruption', cached_votes_up: 2, created_at: Time.now)
+        oldest  = create(:proposal,  title: 'stop corruption', cached_votes_up: 3, created_at: 1.month.ago)
+
+        results = Proposal.search('stop corruption')
+
+        expect(results.first).to eq(oldest)
+        expect(results.second).to eq(newest)
+        expect(results.third).to eq(recent)
+
+        results = results.sort_by_created_at
+
+        expect(results.first).to eq(newest)
+        expect(results.second).to eq(recent)
+        expect(results.third).to eq(oldest)
+      end
+
+      it "should be able to reorder by most commented after searching" do
+        least_commented = create(:proposal,  title: 'stop corruption',  cached_votes_up: 1, comments_count: 1)
+        most_commented  = create(:proposal,  title: 'stop corruption',  cached_votes_up: 2, comments_count: 100)
+        some_comments   = create(:proposal,  title: 'stop corruption',  cached_votes_up: 3, comments_count: 10)
+
+        results = Proposal.search('stop corruption')
+
+        expect(results.first).to eq(some_comments)
+        expect(results.second).to eq(most_commented)
+        expect(results.third).to eq(least_commented)
+
+        results = results.sort_by_most_commented
+
+        expect(results.first).to eq(most_commented)
+        expect(results.second).to eq(some_comments)
+        expect(results.third).to eq(least_commented)
+      end
+
+    end
+
     context "no results" do
 
       it "no words match" do

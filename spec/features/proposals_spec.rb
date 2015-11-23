@@ -584,6 +584,45 @@ feature 'Proposals' do
     end
   end
 
+  scenario "Order by relevance by default", :js do
+    proposal1 = create(:proposal, title: "Show you got",      cached_votes_up: 10)
+    proposal2 = create(:proposal, title: "Show what you got", cached_votes_up: 1)
+    proposal3 = create(:proposal, title: "Show you got",      cached_votes_up: 100)
+
+    visit proposals_path
+    fill_in "search", with: "Show what you got"
+    click_button "Search"
+
+    expect(page).to have_selector('.js-order-selector[data-order="relevance"]')
+
+    within("#proposals") do
+      expect(all(".proposal")[0].text).to match "Show what you got"
+      expect(all(".proposal")[1].text).to match "Show you got"
+      expect(all(".proposal")[2].text).to match "Show you got"
+    end
+  end
+
+  scenario "Reorder results maintaing search", :js do
+    proposal1 = create(:proposal, title: "Show you got",      cached_votes_up: 10,  created_at: 1.week.ago)
+    proposal2 = create(:proposal, title: "Show what you got", cached_votes_up: 1,   created_at: 1.month.ago)
+    proposal3 = create(:proposal, title: "Show you got",      cached_votes_up: 100, created_at: Time.now)
+    proposal4 = create(:proposal, title: "Do not display",    cached_votes_up: 1,   created_at: 1.week.ago)
+
+    visit proposals_path
+    fill_in "search", with: "Show what you got"
+    click_button "Search"
+
+    select 'newest', from: 'order-selector'
+    expect(page).to have_selector('.js-order-selector[data-order="created_at"]')
+
+    within("#proposals") do
+      expect(all(".proposal")[0].text).to match "Show you got"
+      expect(all(".proposal")[1].text).to match "Show you got"
+      expect(all(".proposal")[2].text).to match "Show what you got"
+      expect(page).to_not have_content "Do not display"
+    end
+  end
+
   scenario 'Index search does not show featured proposals' do
     featured_proposals = create_featured_proposals
     proposal = create(:proposal, title: "Abcdefghi")
@@ -596,7 +635,7 @@ feature 'Proposals' do
     expect(page).to_not have_selector('#featured-proposals')
   end
 
-  scenario 'Tag index tag does not show featured proposals' do
+  scenario 'Index tag does not show featured proposals' do
     featured_proposals = create_featured_proposals
     proposal = create(:proposal, tag_list: "123")
 
@@ -604,35 +643,6 @@ feature 'Proposals' do
 
     expect(page).to_not have_selector('#proposals .proposal-featured')
     expect(page).to_not have_selector('#featured-proposals')
-  end
-
-  scenario "Reorder search results", :focus do
-    proposal1 = create(:proposal, title: "Show me what you got", cached_votes_up: 1)
-    proposal2 = create(:proposal, title: "Show what you got", cached_votes_up: 100)
-    proposal3 = create(:proposal, title: "Show a what you got", cached_votes_up: 10)
-
-    visit proposals_path
-    fill_in "search", with: "Show me what you got"
-    click_button "Search"
-
-    within("#proposals") do
-      expect(page).to have_css('.proposal', count: 3)
-
-      expect(page).to have_content(proposal1.title)
-      expect(page).to have_content(proposal2.title)
-      expect(page).to have_content(proposal3.title)
-    end
-
-    select 'highest rated', from: 'order-selector'
-    expect(page).to have_selector('.js-order-selector[data-order="confidence_score"]')
-
-    within("#proposals") do
-      expect(page).to have_css('.proposal', count: 3)
-
-      expect(page).to have_content(proposal2.title)
-      expect(page).to have_content(proposal3.title)
-      expect(page).to have_content(proposal1.title)
-    end
   end
 
   scenario 'Conflictive' do
