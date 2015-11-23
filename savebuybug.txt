@@ -1,0 +1,3 @@
+set autoirb false
+set autolist true
+set basename false

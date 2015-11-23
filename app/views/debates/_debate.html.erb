@@ -31,7 +31,7 @@
                   </span>
                 <% end %>
               <% end %>
-
+             
               <% if debate.author.verified_organization? %>
                 <span class="bullet">&nbsp;&bull;&nbsp;</span>
                 <span class="label round is-association">
@@ -41,7 +41,13 @@
 
             </p>
             <div class="debate-description">
-              <%= link_to debate.description, debate %>
+              <% if debate.description.present? %>
+                 <%= link_to debate.description, debate %> 
+              <% end %>
+              <% if debate.external_link.present? %>
+                 <%= link_to debate.external_link, debate %> 
+              <% end %>
+
               <div class="truncate"></div>
             </div>
             <%= render "shared/tags", taggable: debate, limit: 5 %>

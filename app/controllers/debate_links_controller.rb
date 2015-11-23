@@ -1,4 +1,4 @@
-class DebatesController < ApplicationController
+class DebateLinksController < ApplicationController
   include CommentableActions
   include FlagActions
 
@@ -9,7 +9,8 @@ class DebatesController < ApplicationController
   has_orders %w{hot_score confidence_score created_at most_commented random}, only: :index
   has_orders %w{most_voted newest oldest}, only: :show
 
-  load_and_authorize_resource
+  load_and_authorize_resource class: "Debate"
+
   respond_to :html, :js
 
   def vote
@@ -18,13 +19,19 @@ class DebatesController < ApplicationController
   end
 
   private
+    def create_params
+       params.require(:debate).permit(:title,  :external_link, :tag_list, :terms_of_service, :captcha, :captcha_key)
+    end
 
     def debate_params
-      params.require(:debate).permit(:title, :description, :external_link, :tag_list, :terms_of_service, :captcha, :captcha_key)
+       params.require(:debate).permit(:title,  :external_link, :tag_list, :terms_of_service, :captcha, :captcha_key)
     end
 
     def resource_model
       Debate
-    end
+    end 
 
+    def after_create_path
+     debate_path(@resource)
+   end
 end

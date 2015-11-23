@@ -153,6 +153,18 @@ es:
     update:
       form:
         submit_button: "Guardar cambios"
+  debate_links:
+    index:
+      start_debate: "Comparte un enlace"
+    form:
+      debate_link: "Enlace"
+    new:
+      start_new: "Compartir un enlace"
+      form:
+        submit_button: "Comparte un enlace"
+    create:
+      form:
+        submit_button: "Comparte un enlace"
   proposals:
     index:
       title: "Propuestas ciudadanas"
