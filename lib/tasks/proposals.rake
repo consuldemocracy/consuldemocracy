@@ -12,17 +12,17 @@ namespace :proposals do
     Proposal.find_in_batches do |proposals|
 
       proposals.each do |proposal|
-        title = proposal.title
+        title = proposal.title || ""
         if title.size < 4
           proposal.update_attribute(:title, title.ljust(4))
         end
 
-        question = proposal.question
+        question = proposal.question || ""
         if question.size < 10
           proposal.update_attribute(:question, question.ljust(10))
         end
 
-        responsible = proposal.responsible_name
+        responsible = proposal.responsible_name || ""
         if responsible.size < 6
           proposal.update_attribute(:responsible_name, responsible.ljust(6))
         end
