@@ -153,6 +153,18 @@ en:
     update:
       form:
         submit_button: "Save changes"
+  debate_links:
+    index:
+      start_debate: "Share a link"
+    form:
+      debate_link: "Link"
+    new:
+      start_new: "Share a link"
+      form:
+        submit_button: "Share link"
+    create:
+      form:
+        submit_button: "Share link"
   proposals:
     index:
       title: "Proposals"

@@ -80,6 +80,24 @@ feature 'Debates' do
     expect(page).to have_content I18n.l(Debate.last.created_at.to_date)
   end
 
+  scenario 'Create_link' do
+    author = create(:user)
+    login_as(author)
+
+    visit debate_links_new_path
+    fill_in 'debate_title', with: 'A title for a debate'
+    fill_in 'debate_external_link', with: 'http://localhost:3000'
+    fill_in 'debate_captcha', with: correct_captcha_text
+    check 'debate_terms_of_service'
+
+    click_button 'Share link'
+
+    expect(page).to have_content 'A title for a debate'
+    expect(page).to have_content 'Debate created successfully.'
+    expect(page).to have_content author.name
+    expect(page).to have_content I18n.l(Debate.last.created_at.to_date)
+  end
+
   scenario 'Captcha is required for debate creation' do
     login_as(create(:user))
 
@@ -99,7 +117,7 @@ feature 'Debates' do
 
     expect(page).to have_content "Debate created successfully."
   end
-
+  
   scenario 'Failed creation goes back to new showing featured tags' do
     featured_tag = create(:tag, :featured)
     tag = create(:tag)
