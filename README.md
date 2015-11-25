@@ -1,13 +1,13 @@
 # Consul
 
-Madrid City Council participation site
+Citizen Particition and Open Government Application
 
 [![Build Status](https://travis-ci.org/consul/consul.svg?branch=master)](https://travis-ci.org/consul/consul)
 [![Code Climate](https://codeclimate.com/github/consul/consul/badges/gpa.svg)](https://codeclimate.com/github/consul/consul)
 [![Dependency Status](https://gemnasium.com/consul/consul.svg)](https://gemnasium.com/consul/consul)
 [![Coverage Status](https://coveralls.io/repos/consul/consul/badge.svg?branch=master&service=github)](https://coveralls.io/github/consul/consul?branch=master)
 
-This is the opensource code repository of Madrid City government eParticipation website
+This is the opensource code repository of the eParticipation website originally developed for the Madrid City government eParticipation website
 
 ## Current state
 

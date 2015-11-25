@@ -10,7 +10,7 @@ set :rails_env, fetch(:stage)
 set :rvm_ruby_version, '2.2.3'
 set :rvm_type, :user
 
-set :application, 'participacion'
+set :application, 'consul'
 set :full_app_name, deploysecret(:full_app_name)
 
 set :server_name, deploysecret(:server_name)
