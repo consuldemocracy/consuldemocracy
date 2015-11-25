@@ -281,6 +281,8 @@ GEM
     quiet_assets (1.1.0)
       railties (>= 3.1, < 5.0)
     rack (1.6.4)
+    rack-accept (0.4.5)
+      rack (>= 0.4)
     rack-test (0.6.3)
       rack (>= 1.0)
     rails (4.2.5)
@@ -385,6 +387,9 @@ GEM
     tins (1.6.0)
     turbolinks (2.5.3)
       coffee-rails
+    turnout (2.2.0)
+      rack (~> 1.3)
+      rack-accept (~> 0.4)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
     uglifier (2.7.2)
@@ -479,6 +484,7 @@ DEPENDENCIES
   social-share-button!
   spring
   turbolinks
+  turnout
   uglifier (>= 1.3.0)
   unicorn (~> 5.0.1)
   web-console (~> 2.0)

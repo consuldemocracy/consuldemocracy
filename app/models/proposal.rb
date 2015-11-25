@@ -134,7 +134,7 @@ class Proposal < ActiveRecord::Base
   protected
 
     def set_responsible_name
-      if author && author.level_two_or_three_verified?
+      if author && author.document_number?
         self.responsible_name = author.document_number
       end
     end
