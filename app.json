@@ -1,0 +1,23 @@
+{
+  "name": "Consul",
+  "description": "Consul - Open Government and E-Participation Web Software",
+  "repository": "https://github.com/consul/consul",
+  "scripts": {
+    "postdeploy": "bundle exec rake db:setup"
+  },
+  "env": {
+    "RAILS_ENV": {
+      "description": "The rails environment to set up this deployment with.",
+      "required": true,
+      "value": "staging"
+    },
+    "SECRET_KEY_BASE": {
+      "description": "A secret key for verifying the integrity of signed cookies.",
+      "generator": "secret"
+    }
+  },
+  "addons": [
+    "heroku-postgresql",
+    "heroku-redis"
+  ]
+}
