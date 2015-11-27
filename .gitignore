@@ -17,7 +17,6 @@
 /tmp
 
 /spec/examples.txt
-/config/database.yml
 /config/deploy-secrets.yml
 
 /coverage
