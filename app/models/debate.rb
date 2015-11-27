@@ -15,12 +15,13 @@ class Debate < ActiveRecord::Base
   belongs_to :author, -> { with_hidden }, class_name: 'User', foreign_key: 'author_id'
   has_many :comments, as: :commentable
 
-  validates :title, presence: true
-  validates :description, presence: true
-  validates :author, presence: true
-
+  validates :title, presence: true   
+  validates :external_link, presence: true, if: :external_link?   
+  validates :description, presence: true, if: :description?    
+  validates :author, presence: true    
+           
   validates :title, length: { in: 4..Debate.title_max_length }
-  validates :description, length: { in: 10..Debate.description_max_length }
+  validates :description, length: { in: 10..Debate.description_max_length }, if: :description?  
 
   validates :terms_of_service, acceptance: { allow_nil: false }, on: :create
 
@@ -53,6 +54,23 @@ class Debate < ActiveRecord::Base
     order_within_rank: "debates.created_at DESC"
   }
 
+  def description? 
+    if self.external_link == nil
+       return true
+    else
+      return false
+    end  
+  end
+
+
+  def external_link? 
+    if self.external_link == nil
+       return false
+    else
+      return true
+    end
+  end
+  
   def description
     super.try :html_safe
   end

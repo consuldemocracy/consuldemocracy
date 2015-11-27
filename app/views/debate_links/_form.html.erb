@@ -1,22 +1,15 @@
-<%= form_for(@debate) do |f| %>
+<%= form_for @debate, url: debate_links_path  do |f| %>
   <%= render 'shared/errors', resource: @debate %>
 
-  <div class="row">
+   <div class="row">
     <div class="small-12 column">
-      <%= f.label :title, t("debates.form.debate_title") %>
+       <%= f.label :title, t("debates.form.debate_title") %>
       <%= f.text_field :title, maxlength: Debate.title_max_length, placeholder: t("debates.form.debate_title"), label: false %>
     </div>
-    <%if @debate.external_link != nil %>
      <div class="small-12 column">   
      <%= f.label :external_link, t("debate_links.form.external_link") %>
-      <%= f.text_field :external_link, placeholder: t("debate_links.form.external_link"), label: false %>
+      <%= f.text_field :external_link, maxlength: Debate.external_link_max_length, placeholder: t("debate_links.form.external_link"), label: false %>
     </div>
-    <%else%>
-      <div class="ckeditor small-12 column">
-        <%= f.label :description, t("debates.form.debate_text") %>
-        <%= f.cktext_area :description, maxlength: Debate.description_max_length, ckeditor: { language: I18n.locale }, label: false %>
-      </div>
-    <%end%>
     <div class="small-12 column">
       <%= f.label :tag_list, t("debates.form.tags_label") %>
       <p class="note"><%= t("debates.form.tags_instructions") %></p>
@@ -27,7 +20,6 @@
       </span>
       <%= f.text_field :tag_list, value: @debate.tag_list.to_s, label: false, placeholder: t("debates.form.tags_placeholder"), class: 'js-tag-list' %>
     </div>
-
     <div class="small-12 column">
       <% if @debate.new_record? %>
         <%= f.label :terms_of_service do %>
@@ -40,13 +32,15 @@
         <% end %>
       <% end %>
     </div>
-
     <div class="small-12 column">
-      <%= f.simple_captcha input_html: { required: false } %>
+      <%= f.simple_captcha input_html: { required: false } %>   
     </div>
 
-    <div class="actions small-12 column">
-      <%= f.submit(class: "button radius", value: t("debates.#{action_name}.form.submit_button")) %>
+    <div class="actions small-12 column">     
+      <%= f.submit(class: "button radius", value: t("debate_links.#{action_name}.form.submit_button"))%>
+        <!--%= f.submit(class: "button radius", value: t("debates.new.form.submit_url_button")) -->
     </div>
-  </div>
+  </div>     
 <% end %>
+
+

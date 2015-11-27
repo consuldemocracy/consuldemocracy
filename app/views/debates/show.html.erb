@@ -33,9 +33,11 @@
             <%= render 'debates/flag_actions', debate: @debate %>
           </span>
         </div>
-
-        <%= safe_html_with_links @debate.description %>
-
+        <%if @debate.external_link.present? %>
+          <%= safe_html_with_links @debate.external_link %>
+        <%else%>
+          <%= safe_html_with_links @debate.description %>
+        <%end%>
         <%= render 'shared/tags', taggable: @debate %>
 
         <div class="js-moderator-debate-actions moderator-actions">

@@ -91,7 +91,7 @@ es:
       recommendation_four: "Disfruta de este espacio, de las voces que lo llenan, también es tuyo."
       form:
         submit_button: "Compartir enlace"
-    create:			
+    create:		
       form:
         submit_button: "Compartir enlace"
     form:
