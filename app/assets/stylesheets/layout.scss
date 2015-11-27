@@ -38,32 +38,24 @@
 }
 
 @mixin logo {
+  color: white;
+  font-family: 'Lato' !important;
+  font-weight: lighter;
 
-  a {
-    color: white;
-    font-family: 'Lato' !important;
-    font-size: rem-calc(20);
-    font-weight: lighter;
-    line-height: $line-height*4;
-    padding-left: rem-calc(6);
+  @media (min-width: $small-breakpoint) {
+    font-size: rem-calc(24);
+    line-height: rem-calc(48);
+  }
 
-    span {
-      opacity: .5;
-
-      &.logo-site {
-        font-size: rem-calc(16);
-        font-weight: lighter;
-        opacity: 1;
-        vertical-align: top;
-      }
-    }
+  img {
+    height: 48px;
+    width: 48px;
 
     @media (min-width: $small-breakpoint) {
-      font-size: rem-calc(28);
-
-      span {
-        font-size: rem-calc(20);
-      }
+      height: 80px;
+      margin-right: rem-calc(12);
+      margin-top: 0;
+      width: 80px;
     }
   }
 }
@@ -392,27 +384,13 @@ header {
   }
 
   .selected {
+    border-bottom: 2px solid white;
+    padding-bottom: rem-calc(2);
     position: relative;
-
-    &:before {
-      top: -14px;
-      left: 50%;
-      border: solid transparent;
-      content: " ";
-      height: 0;
-      width: 0;
-      position: absolute;
-      border-top-color: white;
-      border-width: 8px;
-      margin-left: -8px;
-    }
   }
 
   .locale {
     float: none;
-    height: rem-calc(48);
-    padding-top: rem-calc(3);
-    text-align: center;
 
     @media (min-width: $small-breakpoint) {
       float: left;
@@ -427,7 +405,7 @@ header {
 
   .external-links {
     float: none;
-    padding: rem-calc(12) 0;
+    padding: rem-calc(6) 0;
     text-align: center;
 
     @media (min-width: $small-breakpoint) {
@@ -447,73 +425,33 @@ header {
 }
 
 .contain-to-grid {
-  background: #112E51;
+  background: $brand;
 }
 
 .top-bar {
-  background: #112E51 !important;
+  background: $brand !important;
   color: white;
-  height: rem-calc(48);
+  min-height: rem-calc(48);
   max-width: 1170px !important;
   padding: 0 rem-calc(12);
 
   @media (min-width: $small-breakpoint) {
-    height: rem-calc(96);
+    height: auto;
+    padding: 0;
   }
 
   .name {
-    height: rem-calc(48);
+
+    @media (min-width: $small-breakpoint) {
+      margin-left: rem-calc(12);
+    }
 
     a {
-      color: white;
-      font-family: 'Lato';
-      font-size: rem-calc(16);
-      font-weight: lighter;
-      line-height: $line-height*2;
-
-      span {
-        *display: inline; /* IE */
-        opacity: .5;
-
-        &.logo-site {
-          *display: inline; /* IE */
-          font-size: rem-calc(14);
-          opacity: 1;
-        }
-      }
+      @include logo;
+      line-height: rem-calc(48);
 
       @media (min-width: $small-breakpoint) {
-        font-size: rem-calc(24);
-        line-height: $line-height*4;
-
-        span, span.logo-site {
-          font-size: rem-calc(16);
-        }
-      }
-
-      @media (min-width: $medium-breakpoint) {
-        font-size: rem-calc(30);
-        line-height: $line-height*4;
-
-        span, span.logo-site {
-          font-size: rem-calc(20);
-        }
-      }
-
-      img {
-        height: 48px;
-        width: 48px;
-
-        @media (min-width: $small-breakpoint) {
-          margin-top: rem-calc(24);
-        }
-
-        @media (min-width: $medium-breakpoint) {
-          height: 96px;
-          margin-right: rem-calc(12);
-          margin-top: 0;
-          width: 96px;
-        }
+        line-height: rem-calc(80);
       }
     }
   }
@@ -558,9 +496,10 @@ header {
 
   ul {
     margin-left: 0;
+    margin-right: rem-calc(12);
 
     @media (min-width: $small-breakpoint) {
-      margin-left:rem-calc(24);
+      margin-left: rem-calc(24);
     }
   }
 
@@ -581,10 +520,11 @@ header {
 
     @media (min-width: $small-breakpoint) {
       &.button {
-        background: $brand;
+        background: white;
         border-radius: rem-calc(3);
+        color: $brand;
         line-height: rem-calc(15);
-        margin-top: rem-calc(24);
+        margin-top: rem-calc(16);
         padding-left: rem-calc(15);
         text-align: center;
       }
@@ -600,12 +540,11 @@ header {
   }
 
   ul li, ul li:hover:not(.has-form) > a:not(.button) {
-    line-height: $line-height;
 
     @media (min-width: $small-breakpoint) {
       background: none;
       border: 0;
-      line-height: $line-height*4;
+      line-height: rem-calc(80);
     }
   }
 
@@ -622,7 +561,7 @@ header {
       padding: rem-calc(12) 0;
 
       @media (min-width: $small-breakpoint) {
-        line-height: $line-height*4;
+        line-height: rem-calc(80);
         padding: 0 rem-calc(12);
       }
 
@@ -643,20 +582,21 @@ header {
 }
 
 .top-links {
-  background: #0B0C0C;
+  background: $dark;
   color: white;
   font-size: rem-calc(14);
-
-  .row {
-    padding: 0 rem-calc(12);
-  }
+  padding-right: rem-calc(12);
 
   a {
     color: white;
+    margin: 0 rem-calc(6);
 
     &:hover {
       text-decoration: underline;
     }
+  }
+  .social {
+    padding-top: rem-calc(6);
   }
 }
 
@@ -850,13 +790,6 @@ footer {
 
   h1 {
     @include logo;
-
-    a {
-
-      span.logo-site {
-        vertical-align: middle;
-      }
-    }
   }
 }
 
@@ -911,6 +844,7 @@ form.locale-form {
       background-color: transparent;
       border: 0;
       color: white;
+      margin-bottom: 0;
       outline: none;
       padding-left: rem-calc(3);
       padding-right: rem-calc(24);
