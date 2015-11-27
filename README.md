@@ -13,6 +13,10 @@ This is the opensource code repository of the eParticipation website originally 
 
 Development started on [2015 July 15th](https://github.com/consul/consul/commit/8db36308379accd44b5de4f680a54c41a0cc6fc6). Code was deployed to production on 2015 september 7th to [decide.madrid.es](https://decide.madrid.es). Since then new features are added often. You can take a look at a roadmap and future features in the [open issues list](https://github.com/consul/consul/issues).
 
+## Roadmap
+
+See [ROADMAP_ES.md](ROADMAP_ES.md)
+
 ## Tech stack
 
 The application backend is written in the [Ruby language](https://www.ruby-lang.org/) using the [Ruby on Rails](http://rubyonrails.org/) framework.
