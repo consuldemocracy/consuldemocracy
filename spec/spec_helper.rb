@@ -16,7 +16,6 @@ RSpec.configure do |config|
   config.include(CommonActions)
   config.before(:suite) do
     DatabaseCleaner.clean_with :truncation
-    I18n.locale = :en
   end
 
   config.before(:each) do |example|
