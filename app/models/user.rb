@@ -47,6 +47,8 @@ class User < ActiveRecord::Base
   scope :by_document,    -> (document_type, document_number) { where(document_type: document_type, document_number: document_number) }
 
   before_validation :clean_document_number
+  
+  before_create :check_email_domain
 
   def self.find_for_oauth(auth, signed_in_resource = nil)
     # Get the identity and user if they exist
@@ -198,6 +200,18 @@ class User < ActiveRecord::Base
 
   def email_required?
     !erased?
+  end
+  
+  def has_officials_email_domain?
+    domain = Setting.value_for 'email_domain_for_officials'
+    email.end_with? "@#{domain}"
+  end
+  
+  def check_email_domain
+    if !official? and has_officials_email_domain?
+      self.official_level = 1
+      self.official_position = Setting.value_for 'official_level_1_name'
+    end
   end
 
   private
