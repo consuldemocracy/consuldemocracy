@@ -7,6 +7,14 @@ GIT
       coffee-rails
       sass-rails
 
+GIT
+  remote: https://github.com/xuanxu/foundation-rails.git
+  revision: 2b64c6b9434922808c601bc1413461b0eafa0f28
+  specs:
+    foundation-rails (5.5.3.2)
+      railties (>= 3.1.0)
+      sass (>= 3.3.0, < 3.5)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -162,9 +170,6 @@ GEM
       i18n (~> 0.5)
     faraday (0.9.2)
       multipart-post (>= 1.2, < 3)
-    foundation-rails (5.5.3.2)
-      railties (>= 3.1.0)
-      sass (>= 3.3.0, < 3.5)
     foundation_rails_helper (1.0.0)
       actionpack (~> 4.1, >= 4.1.1)
       activemodel (~> 4.1, >= 4.1.1)
@@ -453,7 +458,7 @@ DEPENDENCIES
   email_spec
   factory_girl_rails
   faker
-  foundation-rails
+  foundation-rails!
   foundation_rails_helper
   fuubar
   groupdate
