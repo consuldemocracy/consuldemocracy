@@ -239,6 +239,15 @@ describe User do
       end
     end
   end
+  
+  describe "check_email_domain" do
+    it "assigns official level to users with the officials' email domain" do
+      user1 = create(:user, email: "john@madrid.es")
+      user2 = create(:user, email: "john@example.org")
+      expect(user1.official_level).to eq(1)
+      expect(user2.official?).to_not eq(true)
+    end
+  end
 
   describe "self.search" do
     it "find users by email" do
