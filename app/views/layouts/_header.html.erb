@@ -94,10 +94,9 @@
   <% if transparency_page? %>
     <div class="row home-page">
       <div class="small-12 medium-7 column">
-        <h1><%= t("pages.transparency") %></h1>
-        <p>Estamos trabajando en el nuevo Portal de Transparencia del Ayuntamiento de Madrid, para que no quede ni una esquina del Ayuntamiento que no puedas ver.</p>
-        <p>Por ahora puedes visitar el portal que existía hasta ahora:</p>
-        <%= link_to "Ir al Portal de Transparencia", t("layouts.header.external_link_transparency_url"), target: "_blank", class: "button radius" %>
+        <h1><%= t("pages.transparency.title") %></h1>
+        <h2><%= t("pages.transparency.slogan_html") %></h2>
+        <%= link_to t("pages.transparency.go_old"), t("layouts.header.external_link_transparency_url"), target: "_blank", class: "button radius" %>
       </div>
       <div class="show-for-medium-up small-12 medium-5 column text-center">
         <i class="icon-debates icon-home-big"></i>
@@ -109,9 +108,9 @@
   <% if opendata_page? %>
     <div class="row home-page">
       <div class="small-12 medium-7 column">
-        <h1><%= t("pages.opendata") %></h1>
-        <p>Estamos trabajando en el nuevo Portal de Datos Abiertos del Ayuntamiento de Madrid, por ahora puedes visitar el portal que existía hasta ahora:</p>
-        <%= link_to "Ir al Portal de Datos Abiertos", t("layouts.header.external_link_opendata_url"), target: "_blank", class: "button radius" %>
+        <h1><%= t("pages.opendata.title") %></h1>
+        <h2><%= t("pages.opendata.slogan_html") %></h2>
+        <%= link_to t("pages.opendata.go_old"), t("layouts.header.external_link_opendata_url"), target: "_blank", class: "button radius" %>
       </div>
       <div class="show-for-medium-up small-12 medium-5 column text-center">
         <i class="icon-debates icon-home-big"></i>
