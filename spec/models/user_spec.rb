@@ -240,12 +240,26 @@ describe User do
     end
   end
   
-  describe "check_email_domain" do
-    it "assigns official level to users with the officials' email domain" do
-      user1 = create(:user, email: "john@madrid.es")
-      user2 = create(:user, email: "john@example.org")
+  describe "check_if_officials_email_domain" do
+    it "assigns official level to confirmed users with the officials' email domain" do
+      # We will use empleados.madrid.es as the officials' domain
+      # Subdomains are also accepted
+      Setting.find_by(key: 'email_domain_for_officials').update(value: 'officials.madrid.es')
+      
+      user1 = create(:user, email: "john@officials.madrid.es", confirmed_at: Time.now)
+      user2 = create(:user, email: "john@yes.officials.madrid.es", confirmed_at: Time.now)
+      user3 = create(:user, email: "john@unofficials.madrid.es", confirmed_at: Time.now)
+      user4 = create(:user, email: "john@example.org", confirmed_at: Time.now)
+      
       expect(user1.official_level).to eq(1)
-      expect(user2.official?).to_not eq(true)
+      expect(user2.official_level).to eq(1)
+      expect(user3.official?).to_not eq(true)
+      expect(user4.official?).to_not eq(true)
+      
+      [user1, user2, user3, user4].each { |user| user.destroy }
+      
+      # We reset the officials' domain setting
+      Setting.find_by(key: 'email_domain_for_officials').update(value: '')
     end
   end
 

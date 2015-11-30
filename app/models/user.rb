@@ -48,7 +48,7 @@ class User < ActiveRecord::Base
 
   before_validation :clean_document_number
   
-  before_create :check_email_domain
+  before_save :check_if_confirmation
 
   def self.find_for_oauth(auth, signed_in_resource = nil)
     # Get the identity and user if they exist
@@ -204,13 +204,23 @@ class User < ActiveRecord::Base
   
   def has_officials_email_domain?
     domain = Setting.value_for 'email_domain_for_officials'
-    email.end_with? "@#{domain}"
+    return false if !email or !domain or domain.length == 0
+    (email.end_with? "@#{domain}") or (email.end_with? ".#{domain}")
   end
   
-  def check_email_domain
-    if !official? and has_officials_email_domain?
+  # Check if the user is confirmed and has an official email address
+  # In that case, we assign a level 1 official level
+  def check_if_officials_email_domain
+    if confirmed_at and !official? and has_officials_email_domain?
       self.official_level = 1
       self.official_position = Setting.value_for 'official_level_1_name'
+    end
+  end
+  
+  def check_if_confirmation
+    # If we are confirming the mail address, we check if the user is an official
+    if confirmed_at and confirmed_at_changed?
+      check_if_officials_email_domain
     end
   end
 
