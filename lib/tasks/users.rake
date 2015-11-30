@@ -6,15 +6,15 @@ namespace :users do
   end
   
   desc "Assigns official level to users with the officials' email domain"
-  task check_if_officials_email_domains: :environment do
+  task check_for_official_emails: :environment do
     domain = Setting.value_for 'email_domain_for_officials'
     
     # We end the task if there is no email domain configured
     if domain.length > 0
       # We filter the mail addresses with SQL to speed up the process
-      # The real check will be done by check_if_officials_email_domains, however.
+      # The real check will be done by check_if_official_email, however.
       User.where('official_level = 0 and email like ?', "%#{domain}").find_each do |user|
-        user.check_if_officials_email_domain
+        user.check_if_official_email
         puts "#{user.username} (#{user.email}) is now a level-1 official." if user.official?
         user.save
       end

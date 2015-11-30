@@ -202,7 +202,7 @@ class User < ActiveRecord::Base
     !erased?
   end
   
-  def has_officials_email_domain?
+  def has_official_email?
     domain = Setting.value_for 'email_domain_for_officials'
     return false if !email or !domain or domain.length == 0
     (email.end_with? "@#{domain}") or (email.end_with? ".#{domain}")
@@ -210,8 +210,8 @@ class User < ActiveRecord::Base
   
   # Check if the user is confirmed and has an official email address
   # In that case, we assign a level 1 official level
-  def check_if_officials_email_domain
-    if confirmed_at and !official? and has_officials_email_domain?
+  def check_if_official_email
+    if confirmed_at and !official? and has_official_email?
       self.official_level = 1
       self.official_position = Setting.value_for 'official_level_1_name'
     end
@@ -220,7 +220,7 @@ class User < ActiveRecord::Base
   def check_if_confirmation
     # If we are confirming the mail address, we check if the user is an official
     if confirmed_at and confirmed_at_changed?
-      check_if_officials_email_domain
+      check_if_official_email
     end
   end
 

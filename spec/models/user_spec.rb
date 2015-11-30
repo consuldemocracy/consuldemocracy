@@ -240,7 +240,7 @@ describe User do
     end
   end
   
-  describe "check_if_officials_email_domain" do
+  describe "check_if_official_email" do
     it "assigns official level to confirmed users with the officials' email domain" do
       # We will use empleados.madrid.es as the officials' domain
       # Subdomains are also accepted
