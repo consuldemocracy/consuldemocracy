@@ -27,7 +27,10 @@ Las herramientas utilizadas para el frontend no están cerradas aún. Los estilo
 Prerequisitos: tener instalado git, ImageMagick, Ruby 2.2.3, la gema `bundler`, ghostscript y PostgreSQL (9.4 o superior).
 
 ```
+<<<<<<< HEAD
 git clone https://github.com/consul/consul.git
+=======
+>>>>>>> upstream/master
 cd consul
 bundle install
 cp config/database.yml.example config/database.yml
