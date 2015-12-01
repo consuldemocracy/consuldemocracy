@@ -17,9 +17,15 @@ en:
       "To confirm the account, you must be 16 or older and be registered as resident in Madrid, having provided the information requested previously, which the Directorate-General of Civil Participation will verify against the files 'Municipal Census of Inhabitants', for which the Directorate-General for Statistics is responsible, and the 'Citizen Support Services', for which the Directorate-General for Quality and Citizen Services is responsible.
       By accepting the verification process, you also consent to the verification of this information, as well as the contact methods featuring in said files.
       The data provided will be acquired and processed by the Directorate-General for Civil Participation in the file 'Management of Participatory Activities' mentioned previously in the terms and conditions of use for the Portal."
+    while_unfinished_html: 'While we finish, we encourage you to visit the <a href="/blog" target="_blank">Citizen Participation Area, Transparency and Open Government blog</a> to know about our progress and news; or the <a href="/">Citizen Participation section</a> where you can decide which is the city you want.'
     transparency:
-      "Transparency"
-    opendata: "Open Data"
+      title: "Transparency"
+      slogan_html: "We are working on the new Madrid City Council Transparency Portal, so that there is absolutely nothing about the city council you can not see.<br>Meanwhile you can visit the actual Transparency Portal:"
+      go_old: "Go to Transparency Portal"
+    opendata:
+      title: "Open Data"
+      slogan_html: "We are working on the new Madrid City Council Open Data Portal, meanwhile you can visit the actual Open Data Portal:"
+      go_old: "Go to Open Data Portal"
     verify:
       title: "Verify your account"
       info: "For verufy your account introduce your access data:"
