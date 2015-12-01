@@ -47,8 +47,6 @@ class User < ActiveRecord::Base
   scope :by_document,    -> (document_type, document_number) { where(document_type: document_type, document_number: document_number) }
 
   before_validation :clean_document_number
-  
-  before_save :check_if_confirmation
 
   def self.find_for_oauth(auth, signed_in_resource = nil)
     # Get the identity and user if they exist
@@ -204,24 +202,7 @@ class User < ActiveRecord::Base
   
   def has_official_email?
     domain = Setting.value_for 'email_domain_for_officials'
-    return false if !email or !domain or domain.length == 0
-    (email.end_with? "@#{domain}") or (email.end_with? ".#{domain}")
-  end
-  
-  # Check if the user is confirmed and has an official email address
-  # In that case, we assign a level 1 official level
-  def check_if_official_email
-    if confirmed_at and !official? and has_official_email?
-      self.official_level = 1
-      self.official_position = Setting.value_for 'official_level_1_name'
-    end
-  end
-  
-  def check_if_confirmation
-    # If we are confirming the mail address, we check if the user is an official
-    if confirmed_at and confirmed_at_changed?
-      check_if_official_email
-    end
+    !email.blank? && ( (email.end_with? "@#{domain}") || (email.end_with? ".#{domain}") )
   end
 
   private
