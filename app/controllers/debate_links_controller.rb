@@ -26,9 +26,6 @@ class DebateLinksController < ApplicationController
     def create_params
       params.require(:debate).permit(:title, :external_link, :tag_list, :terms_of_service, :captcha, :captcha_key)
     end        
-  #  def update_params
-  #    params.require(:debate).permit(:title, :external_link, :tag_list, :terms_of_service, :captcha, :captcha_key)
-  #  end
     def debate_params
       params.require(:debate).permit(:title, :external_link, :tag_list, :terms_of_service, :captcha, :captcha_key)
     end

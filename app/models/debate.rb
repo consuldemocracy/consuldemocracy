@@ -16,12 +16,14 @@ class Debate < ActiveRecord::Base
   has_many :comments, as: :commentable
 
   validates :title, presence: true   
-  validates :external_link, presence: true, if: :external_link?   
-  validates :description, presence: true, if: :description?    
+  validates :external_link, presence: true, if: :link_required?   
+  validates :description, presence: true, if: :description_required?    
   validates :author, presence: true    
            
   validates :title, length: { in: 4..Debate.title_max_length }
-  validates :description, length: { in: 10..Debate.description_max_length }, if: :description?  
+  validates :external_link, length: { in: 10..Debate.external_link_max_length }, if: :link_required?  
+  validates :external_link, format: { with: /https?:\/\/*/}, if: :link_required?  
+  validates :description, length: { in: 10..Debate.description_max_length }, if: :description_required?  
 
   validates :terms_of_service, acceptance: { allow_nil: false }, on: :create
 
@@ -54,7 +56,7 @@ class Debate < ActiveRecord::Base
     order_within_rank: "debates.created_at DESC"
   }
 
-  def description? 
+  def description_required? 
     if self.external_link == nil
        return true
     else
@@ -63,7 +65,7 @@ class Debate < ActiveRecord::Base
   end
 
 
-  def external_link? 
+  def link_required?
     if self.external_link == nil
        return false
     else

@@ -7,8 +7,8 @@
       <%= f.text_field :title, maxlength: Debate.title_max_length, placeholder: t("debates.form.debate_title"), label: false %>
     </div>
      <div class="small-12 column">   
-     <%= f.label :external_link, t("debate_links.form.external_link") %>
-      <%= f.text_field :external_link, maxlength: Debate.external_link_max_length, placeholder: t("debate_links.form.external_link"), label: false %>
+     <%= f.label :external_link, t("debate_links.form.debate_external_link") %>
+      <%= f.text_field :external_link, maxlength: Debate.external_link_max_length, placeholder: t("debate_links.form.debate_external_link"), label: false %>
     </div>
     <div class="small-12 column">
       <%= f.label :tag_list, t("debates.form.tags_label") %>
@@ -38,7 +38,6 @@
 
     <div class="actions small-12 column">     
       <%= f.submit(class: "button radius", value: t("debate_links.#{action_name}.form.submit_button"))%>
-        <!--%= f.submit(class: "button radius", value: t("debates.new.form.submit_url_button")) -->
     </div>
   </div>     
 <% end %>
