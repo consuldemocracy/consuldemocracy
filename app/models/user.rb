@@ -199,6 +199,11 @@ class User < ActiveRecord::Base
   def email_required?
     !erased?
   end
+  
+  def has_official_email?
+    domain = Setting.value_for 'email_domain_for_officials'
+    !email.blank? && ( (email.end_with? "@#{domain}") || (email.end_with? ".#{domain}") )
+  end
 
   private
     def clean_document_number

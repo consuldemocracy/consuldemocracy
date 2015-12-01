@@ -10,6 +10,7 @@ class Users::ConfirmationsController < Devise::ConfirmationsController
 
       if resource.valid? # password is set correctly
         resource.save
+        set_official_position if resource.has_official_email?
         resource.confirm
         set_flash_message(:notice, :confirmed) if is_flashing_format?
         sign_in_and_redirect(resource_name, resource)
@@ -34,6 +35,7 @@ class Users::ConfirmationsController < Devise::ConfirmationsController
     if resource.encrypted_password.blank?
       respond_with_navigational(resource){ render :show }
     elsif resource.errors.empty?
+      set_official_position if resource.has_official_email?
       resource.confirm # Last change: confirm happens here for people with passwords instead of af the top of the show action
       set_flash_message(:notice, :confirmed) if is_flashing_format?
       respond_with_navigational(resource){ redirect_to after_confirmation_path_for(resource_name, resource) }
@@ -46,6 +48,12 @@ class Users::ConfirmationsController < Devise::ConfirmationsController
 
     def resource_params
       params.require(resource_name).permit(:password, :password_confirmation, :email)
+    end
+
+  private
+
+    def set_official_position
+      resource.add_official_position! (Setting.value_for 'official_level_1_name'), 1
     end
 
 end
