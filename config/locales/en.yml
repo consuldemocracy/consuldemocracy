@@ -74,14 +74,26 @@ en:
     proposal: "Proposal"
     verification::sms: "Telephone"
     verification::letter: "the verification"
-  application:
+  application: 
     close: "Close"
     menu: "Menu"
+  debate_links:
+    new:
+      share_debate: "Share a link"
+      form:
+        submit_button: "Share link"
+    form:
+      debate_external_link: "Link"
+      external_link: "Link"
+    create:
+      form:
+        submit_button: "Share link"
   debates:
     index:
       title: "Debates"
       featured_debates_html: "Featured<br>debates"
       start_debate: "Start a debate"
+      share_debate: "Share a link" 
       select_order: "Order by"
       select_order_long: "You are viewing debates according to:"
       orders:

@@ -31,12 +31,15 @@
           <span class="bullet">&nbsp;&bull;&nbsp;</span>
           <span class="js-flag-actions">
             <%= render 'debates/flag_actions', debate: @debate %>
-          </span>
-        </div>
-
-        <%= safe_html_with_links @debate.description %>
-
-        <%= render 'shared/tags', taggable: @debate %>
+          </span>   
+        </div> 
+        <%if @debate.external_link.present? %>
+          <%= safe_html_with_links @debate.external_link %>
+        <%end%>
+        <%if @debate.description.present? %>
+          <%= safe_html_with_links @debate.description %>
+        <%end%>
+       <%= render 'shared/tags', taggable: @debate %>
 
         <div class="js-moderator-debate-actions moderator-actions">
           <%= render 'actions', debate: @debate %>

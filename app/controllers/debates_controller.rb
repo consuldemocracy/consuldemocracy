@@ -18,10 +18,10 @@ class DebatesController < ApplicationController
     set_debate_votes(@debate)
   end
 
-  private
-
+  private      
+    
     def debate_params
-      params.require(:debate).permit(:title, :description, :tag_list, :terms_of_service, :captcha, :captcha_key)
+      params.require(:debate).permit(:title, :external_link, :description, :tag_list, :terms_of_service, :captcha, :captcha_key)
     end
 
     def resource_model

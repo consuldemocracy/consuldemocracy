@@ -35,6 +35,8 @@ Rails.application.routes.draw do
   get '/welcome', to: 'welcome#welcome'
   get '/highlights', to: 'welcome#highlights', as: :highlights
 
+  get  'debate_links/new' => 'debate_links#new'   
+  post 'debate_links' => 'debate_links#create'  
 
   resources :debates do
     member do

@@ -2,6 +2,13 @@ module CommentableActions
   extend ActiveSupport::Concern
   include Polymorphic
 
+
+
+  def after_create_path
+    url_for(controller: controller_name, action: :show, id: @resource.id)
+  end
+
+
   def index
     @resources = @search_terms.present? ? resource_model.search(@search_terms) : resource_model.all
     @resources = @resources.tagged_with(@tag_filter) if @tag_filter
@@ -33,7 +40,7 @@ module CommentableActions
 
     if @resource.save_with_captcha
       track_event
-      redirect_path = url_for(controller: controller_name, action: :show, id: @resource.id)
+      redirect_path = after_create_path
       redirect_to redirect_path, notice: t('flash.actions.create.notice', resource_name: "#{resource_name.capitalize}")
     else
       load_featured_tags

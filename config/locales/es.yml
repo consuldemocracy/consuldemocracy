@@ -76,12 +76,24 @@ es:
     verification::letter: "la verificación"
   application:
     close: "Cerrar"
-    menu: "Menú"
+    menu: "Menú"  
+  debate_links:
+    new:
+      share_debate: "Comparte un enlace"
+      form:
+        submit_button: "Compartir enlace"
+    form:
+      debate_external_link: "Enlace"
+      external_link: "Enlace"
+    create:
+      form:
+        submit_button: "Compartir enlace"    
   debates:
     index:
       title: "Debates"
       featured_debates_html: "Debates<br>destacados"
       start_debate: "Empieza un debate"
+      share_debate: "Comparte un enlace" 
       select_order: "Ordenar por"
       select_order_long: "Estás viendo los debates"
       orders:
