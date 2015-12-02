@@ -5,6 +5,7 @@ class Proposal < ActiveRecord::Base
   include Measurable
   include Sanitizable
   include PgSearch
+  include SearchCache
 
   apply_simple_captcha
   acts_as_votable
@@ -31,13 +32,14 @@ class Proposal < ActiveRecord::Base
 
   before_save :calculate_hot_score, :calculate_confidence_score
 
-  scope :for_render, -> { includes(:tags) }
-  scope :sort_by_hot_score , -> { order(hot_score: :desc) }
-  scope :sort_by_confidence_score , -> { order(confidence_score: :desc) }
-  scope :sort_by_created_at, -> { order(created_at: :desc) }
-  scope :sort_by_most_commented, -> { order(comments_count: :desc) }
-  scope :sort_by_random, -> { order("RANDOM()") }
-  scope :sort_by_flags, -> { order(flags_count: :desc, updated_at: :desc) }
+  scope :for_render,               -> { includes(:tags) }
+  scope :sort_by_hot_score ,       -> { reorder(hot_score: :desc) }
+  scope :sort_by_confidence_score, -> { reorder(confidence_score: :desc) }
+  scope :sort_by_created_at,       -> { reorder(created_at: :desc) }
+  scope :sort_by_most_commented,   -> { reorder(comments_count: :desc) }
+  scope :sort_by_random,           -> { reorder("RANDOM()") }
+  scope :sort_by_relevance ,       -> { all }
+  scope :sort_by_flags,            -> { order(flags_count: :desc, updated_at: :desc) }
 
   pg_search_scope :pg_search, {
     against: {
@@ -50,12 +52,23 @@ class Proposal < ActiveRecord::Base
       tags: :name
     },
     using: {
-      tsearch: { dictionary: "spanish" },
-      trigram: { threshold: 0.1 },
+      tsearch: { dictionary: "spanish", tsvector_column: 'tsv' }
     },
-    ranked_by: '(:tsearch + proposals.cached_votes_up)',
-    order_within_rank: "proposals.created_at DESC"
+    ignoring: :accents,
+    ranked_by: '(:tsearch)',
+    order_within_rank: "proposals.cached_votes_up DESC"
   }
+
+  def searchable_values
+    values = {
+      title       => 'A',
+      question    => 'B',
+      summary     => 'C',
+      description => 'D'
+    }
+    tag_list.each{ |tag| values[tag] = 'D' }
+    values
+  end
 
   def description
     super.try :html_safe
@@ -121,7 +134,7 @@ class Proposal < ActiveRecord::Base
   protected
 
     def set_responsible_name
-      if author && author.level_two_or_three_verified?
+      if author && author.document_number?
         self.responsible_name = author.document_number
       end
     end

@@ -7,7 +7,8 @@
     <% end %>
     <h1><%= t("debates.new.start_new") %></h1>
     <div class="alert-box info radius">
-      <%= t("debates.new.info")%>
+      <%= t("debates.new.info",
+      info_link: link_to(t("debates.new.info_link"), new_proposal_path )).html_safe %>
       <%= link_to "/more_information", target: "_blank" do %>
         <strong><%= t("debates.new.more_info")%></strong>
       <% end %>

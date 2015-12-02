@@ -97,6 +97,17 @@ describe Proposal do
       expect(proposal).to be_valid
       proposal.responsible_name = "12345678Z"
     end
+
+    it "should not be updated when the author is deleted" do
+      author = create(:user, :level_three, document_number: "12345678Z")
+      proposal.author = author
+      proposal.save
+
+      proposal.author.erase
+
+      proposal.save
+      expect(proposal.responsible_name).to eq "12345678Z"
+    end
   end
 
   describe "tag_list" do
@@ -238,7 +249,7 @@ describe Proposal do
     end
 
     it "decays in older proposals, even if they have more votes" do
-      older_more_voted = create(:proposal, :with_hot_score, created_at: now - 2.days, cached_votes_up: 900)
+      older_more_voted = create(:proposal, :with_hot_score, created_at: now - 5.days, cached_votes_up: 900)
       new_less_voted   = create(:proposal, :with_hot_score, created_at: now, cached_votes_up: 9)
       expect(new_less_voted.hot_score).to be > older_more_voted.hot_score
     end
@@ -388,15 +399,15 @@ describe Proposal do
     context "stemming" do
 
       it "searches word stems" do
-        proposal = create(:proposal, summary: 'limpiar')
+        proposal = create(:proposal, summary: 'biblioteca')
 
-        results = Proposal.search('limpiará')
+        results = Proposal.search('bibliotecas')
         expect(results).to eq([proposal])
 
-        results = Proposal.search('limpiémos')
+        results = Proposal.search('bibliotec')
         expect(results).to eq([proposal])
 
-        results = Proposal.search('limpió')
+        results = Proposal.search('biblioteco')
         expect(results).to eq([proposal])
       end
 
@@ -432,17 +443,13 @@ describe Proposal do
 
     end
 
-    context "typos" do
+    context "tags" do
 
-      it "searches with typos" do
-        proposal = create(:proposal, summary: 'difusión')
+      it "searches by tags" do
+        proposal = create(:proposal, tag_list: 'Latina')
 
-        results = Proposal.search('difuon')
-        expect(results).to eq([proposal])
-
-        proposal2 = create(:proposal, summary: 'desarrollo')
-        results = Proposal.search('desarolo')
-        expect(results).to eq([proposal2])
+        results = Proposal.search('Latina')
+        expect(results.first).to eq(proposal)
       end
 
     end
@@ -450,7 +457,7 @@ describe Proposal do
     context "order" do
 
       it "orders by weight" do
-        proposal_question     = create(:proposal, question:    'stop corruption')
+        proposal_question    = create(:proposal, question:    'stop corruption')
         proposal_title       = create(:proposal,  title:       'stop corruption')
         proposal_description = create(:proposal,  description: 'stop corruption')
         proposal_summary     = create(:proposal,  summary:     'stop corruption')
@@ -463,41 +470,113 @@ describe Proposal do
         expect(results.fourth).to eq(proposal_description)
       end
 
-      it "orders by weight and then votes" do
+      it "orders by weight and then by votes" do
         title_some_votes    = create(:proposal, title: 'stop corruption', cached_votes_up: 5)
         title_least_voted   = create(:proposal, title: 'stop corruption', cached_votes_up: 2)
         title_most_voted    = create(:proposal, title: 'stop corruption', cached_votes_up: 10)
+
         summary_most_voted  = create(:proposal, summary: 'stop corruption', cached_votes_up: 10)
 
         results = Proposal.search('stop corruption')
 
         expect(results.first).to eq(title_most_voted)
-        expect(results.second).to eq(summary_most_voted)
-        expect(results.third).to eq(title_some_votes)
-        expect(results.fourth).to eq(title_least_voted)
+        expect(results.second).to eq(title_some_votes)
+        expect(results.third).to eq(title_least_voted)
+        expect(results.fourth).to eq(summary_most_voted)
       end
 
-      it "orders by weight and then votes and then created_at" do
-        newest = create(:proposal, title: 'stop corruption', cached_votes_up: 5, created_at: Time.now)
-        oldest = create(:proposal, title: 'stop corruption', cached_votes_up: 5, created_at: 1.month.ago)
-        old    = create(:proposal, title: 'stop corruption', cached_votes_up: 5, created_at: 1.week.ago)
+      it "gives much more weight to word matches than votes" do
+        exact_title_few_votes    = create(:proposal, title: 'stop corruption', cached_votes_up: 5)
+        similar_title_many_votes = create(:proposal, title: 'stop some of the corruption', cached_votes_up: 500)
 
         results = Proposal.search('stop corruption')
 
-        expect(results.first).to eq(newest)
-        expect(results.second).to eq(old)
-        expect(results.third).to eq(oldest)
+        expect(results.first).to eq(exact_title_few_votes)
+        expect(results.second).to eq(similar_title_many_votes)
       end
 
     end
 
-    context "tags" do
+    context "reorder" do
 
-      it "searches by tags" do
-        proposal = create(:proposal, tag_list: 'Latina')
+      it "should be able to reorder by hot_score after searching" do
+        lowest_score  = create(:proposal,  title: 'stop corruption', cached_votes_up: 1)
+        highest_score = create(:proposal,  title: 'stop corruption', cached_votes_up: 2)
+        average_score = create(:proposal,  title: 'stop corruption', cached_votes_up: 3)
 
-        results = Proposal.search('Latina')
-        expect(results.first).to eq(proposal)
+        lowest_score.update_column(:hot_score, 1)
+        highest_score.update_column(:hot_score, 100)
+        average_score.update_column(:hot_score, 10)
+
+        results = Proposal.search('stop corruption')
+
+        expect(results.first).to eq(average_score)
+        expect(results.second).to eq(highest_score)
+        expect(results.third).to eq(lowest_score)
+
+        results = results.sort_by_hot_score
+
+        expect(results.first).to eq(highest_score)
+        expect(results.second).to eq(average_score)
+        expect(results.third).to eq(lowest_score)
+      end
+
+      it "should be able to reorder by confidence_score after searching" do
+        lowest_score  = create(:proposal,  title: 'stop corruption', cached_votes_up: 1)
+        highest_score = create(:proposal,  title: 'stop corruption', cached_votes_up: 2)
+        average_score = create(:proposal,  title: 'stop corruption', cached_votes_up: 3)
+
+        lowest_score.update_column(:confidence_score, 1)
+        highest_score.update_column(:confidence_score, 100)
+        average_score.update_column(:confidence_score, 10)
+
+        results = Proposal.search('stop corruption')
+
+        expect(results.first).to eq(average_score)
+        expect(results.second).to eq(highest_score)
+        expect(results.third).to eq(lowest_score)
+
+        results = results.sort_by_confidence_score
+
+        expect(results.first).to eq(highest_score)
+        expect(results.second).to eq(average_score)
+        expect(results.third).to eq(lowest_score)
+      end
+
+      it "should be able to reorder by created_at after searching" do
+        recent  = create(:proposal,  title: 'stop corruption', cached_votes_up: 1, created_at: 1.week.ago)
+        newest  = create(:proposal,  title: 'stop corruption', cached_votes_up: 2, created_at: Time.now)
+        oldest  = create(:proposal,  title: 'stop corruption', cached_votes_up: 3, created_at: 1.month.ago)
+
+        results = Proposal.search('stop corruption')
+
+        expect(results.first).to eq(oldest)
+        expect(results.second).to eq(newest)
+        expect(results.third).to eq(recent)
+
+        results = results.sort_by_created_at
+
+        expect(results.first).to eq(newest)
+        expect(results.second).to eq(recent)
+        expect(results.third).to eq(oldest)
+      end
+
+      it "should be able to reorder by most commented after searching" do
+        least_commented = create(:proposal,  title: 'stop corruption',  cached_votes_up: 1, comments_count: 1)
+        most_commented  = create(:proposal,  title: 'stop corruption',  cached_votes_up: 2, comments_count: 100)
+        some_comments   = create(:proposal,  title: 'stop corruption',  cached_votes_up: 3, comments_count: 10)
+
+        results = Proposal.search('stop corruption')
+
+        expect(results.first).to eq(some_comments)
+        expect(results.second).to eq(most_commented)
+        expect(results.third).to eq(least_commented)
+
+        results = results.sort_by_most_commented
+
+        expect(results.first).to eq(most_commented)
+        expect(results.second).to eq(some_comments)
+        expect(results.third).to eq(least_commented)
       end
 
     end

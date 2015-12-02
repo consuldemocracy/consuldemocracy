@@ -4,7 +4,7 @@
 // 02. New participation
 // 03. Show participation
 // 04. List participation
-// 05. Featured proposals
+// 05. Featured
 //
 
 // 01. Votes and supports
@@ -381,6 +381,7 @@
     color: $text-medium;
     font-weight: lighter;
     line-height: $line-height*2;
+    position: relative;
     text-align: justify;
 
     a {
@@ -391,6 +392,15 @@
       font-size: rem-calc(15);
       line-height: $line-height;
       margin-bottom: 0;
+    }
+
+    .author-deleted {
+      left: 0;
+      top: 4px;
+    }
+
+    .author.deleted {
+      margin-left: rem-calc(48);
     }
   }
 
@@ -827,12 +837,28 @@
   }
 }
 
-// 05. Featured proposals
+// 05. Featured
 // - - - - - - - - - - - - - - - - - - - - - - - - -
+
+.featured-debates-container {
+  background: $votes-bg;
+
+  @media (min-width: $medium-breakpoint) {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  h2 {
+    color: white;
+  }
+
+  .debates-list {
+    margin-bottom: 0;
+  }
+}
 
 .featured-proposals-container {
   background: #FED900;
-  margin: 0 !important;
 
   @media (min-width: $medium-breakpoint) {
     margin-left: 0 !important;
@@ -841,14 +867,21 @@
 
   h2 {
     color: $text;
-    font-size: rem-calc(24);
-    margin: rem-calc(12) 0 0;
-    position: relative;
-    text-transform: uppercase;
 
     @media (min-width: $medium-breakpoint) {
       margin-bottom: rem-calc(27);
     }
+  }
+}
+
+.featured-debates-container, .featured-proposals-container {
+  margin: 0 !important;
+
+  h2 {
+    font-size: rem-calc(24);
+    margin: rem-calc(12) 0 0;
+    position: relative;
+    text-transform: uppercase;
 
     .icon-proposals {
       font-size: rem-calc(20);
@@ -858,34 +891,97 @@
     }
   }
 
+  .debates-list {
+
+    @media (min-width: $medium-breakpoint) {
+      border-left: 1px solid $votes-border;
+    }
+
+    &:after {
+
+      @media (min-width: $medium-breakpoint) {
+        content: none;
+      }
+    }
+  }
+
   .proposals-list {
-    margin: rem-calc(6) 0;
 
     @media (min-width: $medium-breakpoint) {
       border-left: 1px solid #D2B400;
     }
 
     &:after {
-      content: none;
-      position: absolute;
-      display: block;
-      border-style: solid;
       border-color: #C9AF00 transparent transparent transparent;
-      bottom: rem-calc(-20);
-      border-left-width: 0;
-      border-right-color: transparent;
-      right: rem-calc(1);
-      border-width: rem-calc(14) rem-calc(14) 0 0;
 
       @media (min-width: $medium-breakpoint) {
         content: " ";
       }
     }
   }
+
+  .debates-list, .proposals-list {
+    margin: rem-calc(6) 0;
+
+    &:after {
+      content: none;
+      position: absolute;
+      display: block;
+      border-style: solid;
+      bottom: rem-calc(-20);
+      border-left-width: 0;
+      border-right-color: transparent;
+      right: rem-calc(1);
+      border-width: rem-calc(14) rem-calc(14) 0 0;
+    }
+  }
+}
+
+.debate-featured {
+  background: $votes-bg;
+  margin: rem-calc(12) 0 !important;
+
+  .panel h3 a {
+    color: #0D3F54;
+
+    text-transform: none;
+
+    &:first-letter {
+      text-transform: none;
+    }
+  }
+
+  .info, .info a {
+    color: white !important;
+  }
+
+  .content {
+    height: auto;
+  }
 }
 
 .proposal-featured {
   background: #FED900;
+
+  .panel h3 a {
+    color: $text;
+    text-transform: lowercase;
+
+    &:first-letter {
+      text-transform: uppercase;
+    }
+  }
+
+  .info {
+    color: #806C00 !important;
+  }
+
+  .content {
+    height: rem-calc(60);
+  }
+}
+
+.debate-featured, .proposal-featured {
   margin-bottom: 0;
   margin-top: 0;
   padding-left: 0;
@@ -903,15 +999,9 @@
 
       a {
         clear: both;
-        color: $text;
         display: block;
         font-size: rem-calc(14);
         line-height: $line-height;
-        text-transform: lowercase;
-
-        &:first-letter {
-          text-transform: uppercase;
-        }
       }
     }
   }
@@ -921,12 +1011,7 @@
   }
 
   .content {
-    height: rem-calc(60);
     overflow: hidden;
-  }
-
-  .info {
-    color: #806C00 !important;
   }
 
   .supports {

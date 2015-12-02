@@ -11,7 +11,7 @@ The team members and the project's community adopts an inclusive Code of Conduct
 
 ## Report an issue
 
-The prefered way to report any bug is [opening an issue in the project's Github repo](https://github.com/AyuntamientoMadrid/participacion/issues/new).
+The prefered way to report any bug is [opening an issue in the project's Github repo](https://github.com/consul/consul/issues/new).
 
 For more informal communication, contact team members via twitter
 
@@ -19,7 +19,7 @@ For more informal communication, contact team members via twitter
 
 Admins tag issues using two label related with collaboration availability:
 
-* `PRs-welcome`: [issues labeled with PRs-welcome](https://github.com/AyuntamientoMadrid/participacion/labels/PRs-welcome) are well defined features ready to be implemented by whoever wants to do it.
+* `PRs-welcome`: [issues labeled with PRs-welcome](https://github.com/consul/consul/labels/PRs-welcome) are well defined features ready to be implemented by whoever wants to do it.
 
 * `Not-ready`: with this label admins mark features or changes that are not well defined yet or subject to an internal decision. Is not a good idea to start implementation of these issues.
 

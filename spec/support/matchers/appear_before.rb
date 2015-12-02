@@ -4,4 +4,3 @@ RSpec::Matchers.define :appear_before do |later_content|
     text.index(earlier_content) < text.index(later_content)
   end
 end
-

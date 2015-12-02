@@ -117,4 +117,15 @@ describe Comment do
       expect(comment.author_id).to eq(comment.user.id)
     end
   end
+
+  describe "not_as_admin_or_moderator" do
+    it "returns only comments posted as regular user" do
+      comment1 = create(:comment)
+      create(:comment, administrator_id: create(:administrator).id)
+      create(:comment, moderator_id: create(:moderator).id)
+
+      expect(Comment.not_as_admin_or_moderator.size).to eq(1)
+      expect(Comment.not_as_admin_or_moderator.first).to eq(comment1)
+    end
+  end
 end

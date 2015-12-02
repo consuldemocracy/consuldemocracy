@@ -534,6 +534,67 @@ feature 'Debates' do
     end
   end
 
+  pending "Order by relevance by default", :js do
+    debate1 = create(:debate, title: "Show you got",      cached_votes_up: 10)
+    debate2 = create(:debate, title: "Show what you got", cached_votes_up: 1)
+    debate3 = create(:debate, title: "Show you got",      cached_votes_up: 100)
+
+    visit debates_path
+    fill_in "search", with: "Show what you got"
+    click_button "Search"
+
+    expect(page).to have_selector('.js-order-selector[data-order="relevance"]')
+
+    within("#debates") do
+      expect(all(".debate")[0].text).to match "Show what you got"
+      expect(all(".debate")[1].text).to match "Show you got"
+      expect(all(".debate")[2].text).to match "Show you got"
+    end
+  end
+
+  pending "Reorder results maintaing search", :js do
+    debate1 = create(:debate, title: "Show you got",      cached_votes_up: 10,  created_at: 1.week.ago)
+    debate2 = create(:debate, title: "Show what you got", cached_votes_up: 1,   created_at: 1.month.ago)
+    debate3 = create(:debate, title: "Show you got",      cached_votes_up: 100, created_at: Time.now)
+    debate4 = create(:debate, title: "Do not display",    cached_votes_up: 1,   created_at: 1.week.ago)
+
+    visit debates_path
+    fill_in "search", with: "Show what you got"
+    click_button "Search"
+
+    select 'newest', from: 'order-selector'
+    expect(page).to have_selector('.js-order-selector[data-order="created_at"]')
+
+    within("#debates") do
+      expect(all(".debate")[0].text).to match "Show you got"
+      expect(all(".debate")[1].text).to match "Show you got"
+      expect(all(".debate")[2].text).to match "Show what you got"
+      expect(page).to_not have_content "Do not display"
+    end
+  end
+
+  scenario 'Index search does not show featured debates' do
+    featured_debates = create_featured_debates
+    debate = create(:debate, title: "Abcdefghi")
+
+    visit debates_path
+    fill_in "search", with: debate.title
+    click_button "Search"
+
+    expect(page).to_not have_selector('#debates .debate-featured')
+    expect(page).to_not have_selector('#featured-debates')
+  end
+
+  scenario 'Index tag does not show featured debates' do
+    featured_debates = create_featured_debates
+    debates = create(:debate, tag_list: "123")
+
+    visit debates_path(tag: "123")
+
+    expect(page).to_not have_selector('#debates .debate-featured')
+    expect(page).to_not have_selector('#featured-debates')
+  end
+
   scenario 'Conflictive' do
     good_debate = create(:debate)
     conflictive_debate = create(:debate, :conflictive)

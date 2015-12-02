@@ -11,6 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 20151127094347) do
 
   # These are extensions that must be enabled in order to support this database
@@ -94,12 +95,12 @@ ActiveRecord::Schema.define(version: 20151127094347) do
     t.datetime "updated_at",                                           null: false
     t.string   "visit_id"
     t.datetime "hidden_at"
-    t.integer  "flags_count",                              default: 0
-    t.integer  "cached_votes_total",                       default: 0
-    t.integer  "cached_votes_up",                          default: 0
-    t.integer  "cached_votes_down",                        default: 0
+    t.integer  "flags_count",                             default: 0
     t.datetime "ignored_flag_at"
-    t.integer  "comments_count",                           default: 0
+    t.integer  "cached_votes_total",                      default: 0
+    t.integer  "cached_votes_up",                         default: 0
+    t.integer  "cached_votes_down",                       default: 0
+    t.integer  "comments_count",                          default: 0
     t.datetime "confirmed_hide_at"
     t.integer  "cached_anonymous_votes_total",             default: 0
     t.integer  "cached_votes_score",                       default: 0
@@ -115,7 +116,6 @@ ActiveRecord::Schema.define(version: 20151127094347) do
   add_index "debates", ["cached_votes_total"], name: "index_debates_on_cached_votes_total", using: :btree
   add_index "debates", ["cached_votes_up"], name: "index_debates_on_cached_votes_up", using: :btree
   add_index "debates", ["confidence_score"], name: "index_debates_on_confidence_score", using: :btree
-  add_index "debates", ["description"], name: "index_debates_on_description", using: :btree
   add_index "debates", ["hidden_at"], name: "index_debates_on_hidden_at", using: :btree
   add_index "debates", ["hot_score"], name: "index_debates_on_hot_score", using: :btree
   add_index "debates", ["title"], name: "index_debates_on_title", using: :btree
@@ -216,18 +216,19 @@ ActiveRecord::Schema.define(version: 20151127094347) do
     t.text     "summary"
     t.string   "video_url"
     t.integer  "physical_votes",               default: 0
+    t.tsvector "tsv"
   end
 
   add_index "proposals", ["author_id", "hidden_at"], name: "index_proposals_on_author_id_and_hidden_at", using: :btree
   add_index "proposals", ["author_id"], name: "index_proposals_on_author_id", using: :btree
   add_index "proposals", ["cached_votes_up"], name: "index_proposals_on_cached_votes_up", using: :btree
   add_index "proposals", ["confidence_score"], name: "index_proposals_on_confidence_score", using: :btree
-  add_index "proposals", ["description"], name: "index_proposals_on_description", using: :btree
   add_index "proposals", ["hidden_at"], name: "index_proposals_on_hidden_at", using: :btree
   add_index "proposals", ["hot_score"], name: "index_proposals_on_hot_score", using: :btree
   add_index "proposals", ["question"], name: "index_proposals_on_question", using: :btree
   add_index "proposals", ["summary"], name: "index_proposals_on_summary", using: :btree
   add_index "proposals", ["title"], name: "index_proposals_on_title", using: :btree
+  add_index "proposals", ["tsv"], name: "index_proposals_on_tsv", using: :gin
 
   create_table "settings", force: :cascade do |t|
     t.string "key"

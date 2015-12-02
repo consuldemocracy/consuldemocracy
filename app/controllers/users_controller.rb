@@ -12,7 +12,7 @@ class UsersController < ApplicationController
       @activity_counts = HashWithIndifferentAccess.new(
                           proposals: Proposal.where(author_id: @user.id).count,
                           debates: Debate.where(author_id: @user.id).count,
-                          comments: Comment.where(user_id: @user.id).count)
+                          comments: Comment.not_as_admin_or_moderator.where(user_id: @user.id).count)
     end
 
     def load_filtered_activity
@@ -47,7 +47,7 @@ class UsersController < ApplicationController
     end
 
     def load_comments
-      @comments = Comment.where(user_id: @user.id).includes(:commentable).order(created_at: :desc).page(params[:page])
+      @comments = Comment.not_as_admin_or_moderator.where(user_id: @user.id).includes(:commentable).order(created_at: :desc).page(params[:page])
     end
 
     def valid_access?

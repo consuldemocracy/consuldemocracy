@@ -88,6 +88,12 @@ module CommentableActions
       @search_terms = params[:search] if params[:search].present?
     end
 
+    def set_search_order
+      if params[:search].present? && params[:order].blank?
+        params[:order] = 'relevance'
+      end
+    end
+
     def set_resource_votes(instance)
       send("set_#{resource_name}_votes", instance)
     end

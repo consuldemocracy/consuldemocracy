@@ -273,7 +273,7 @@ describe Debate do
     end
 
     it "decays in older debates, even if they have more votes" do
-      older_more_voted = create(:debate, :with_hot_score, created_at: now - 2.days, cached_votes_total: 1000, cached_votes_up: 900)
+      older_more_voted = create(:debate, :with_hot_score, created_at: now - 5.days, cached_votes_total: 1000, cached_votes_up: 900)
       new_less_voted   = create(:debate, :with_hot_score, created_at: now, cached_votes_total: 10, cached_votes_up: 9)
       expect(new_less_voted.hot_score).to be > older_more_voted.hot_score
     end
@@ -566,6 +566,90 @@ describe Debate do
         expect(results.first).to eq(newest)
         expect(results.second).to eq(old)
         expect(results.third).to eq(oldest)
+      end
+
+    end
+
+    context "reorder" do
+
+      xit "should be able to reorder by hot_score after searching" do
+        lowest_score  = create(:debate,  title: 'stop corruption', cached_votes_up: 1)
+        highest_score = create(:debate,  title: 'stop corruption', cached_votes_up: 2)
+        average_score = create(:debate,  title: 'stop corruption', cached_votes_up: 3)
+
+        lowest_score.update_column(:hot_score, 1)
+        highest_score.update_column(:hot_score, 100)
+        average_score.update_column(:hot_score, 10)
+
+        results = Debate.search('stop corruption')
+
+        expect(results.first).to eq(average_score)
+        expect(results.second).to eq(highest_score)
+        expect(results.third).to eq(lowest_score)
+
+        results = results.sort_by_hot_score
+
+        expect(results.first).to eq(highest_score)
+        expect(results.second).to eq(average_score)
+        expect(results.third).to eq(lowest_score)
+      end
+
+      xit "should be able to reorder by confidence_score after searching" do
+        lowest_score  = create(:debate,  title: 'stop corruption', cached_votes_up: 1)
+        highest_score = create(:debate,  title: 'stop corruption', cached_votes_up: 2)
+        average_score = create(:debate,  title: 'stop corruption', cached_votes_up: 3)
+
+        lowest_score.update_column(:confidence_score, 1)
+        highest_score.update_column(:confidence_score, 100)
+        average_score.update_column(:confidence_score, 10)
+
+        results = Debate.search('stop corruption')
+
+        expect(results.first).to eq(average_score)
+        expect(results.second).to eq(highest_score)
+        expect(results.third).to eq(lowest_score)
+
+        results = results.sort_by_confidence_score
+
+        expect(results.first).to eq(highest_score)
+        expect(results.second).to eq(average_score)
+        expect(results.third).to eq(lowest_score)
+      end
+
+      xit "should be able to reorder by created_at after searching" do
+        recent  = create(:debate,  title: 'stop corruption', cached_votes_up: 1, created_at: 1.week.ago)
+        newest  = create(:debate,  title: 'stop corruption', cached_votes_up: 2, created_at: Time.now)
+        oldest  = create(:debate,  title: 'stop corruption', cached_votes_up: 3, created_at: 1.month.ago)
+
+        results = Debate.search('stop corruption')
+
+        expect(results.first).to eq(oldest)
+        expect(results.second).to eq(newest)
+        expect(results.third).to eq(recent)
+
+        results = results.sort_by_created_at
+
+        expect(results.first).to eq(newest)
+        expect(results.second).to eq(recent)
+        expect(results.third).to eq(oldest)
+      end
+
+      xit "should be able to reorder by most commented after searching" do
+        least_commented = create(:debate,  title: 'stop corruption',  cached_votes_up: 1, comments_count: 1)
+        most_commented  = create(:debate,  title: 'stop corruption',  cached_votes_up: 2, comments_count: 100)
+        some_comments   = create(:debate,  title: 'stop corruption',  cached_votes_up: 3, comments_count: 10)
+
+        results = Debate.search('stop corruption')
+
+        expect(results.first).to eq(some_comments)
+        expect(results.second).to eq(most_commented)
+        expect(results.third).to eq(least_commented)
+
+        results = results.sort_by_most_commented
+
+        expect(results.first).to eq(most_commented)
+        expect(results.second).to eq(some_comments)
+        expect(results.third).to eq(least_commented)
       end
 
     end
