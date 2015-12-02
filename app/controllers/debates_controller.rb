@@ -7,7 +7,7 @@ class DebatesController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
 
   has_orders %w{hot_score confidence_score created_at most_commented random}, only: :index
-  has_orders %w{most_voted newest oldest}, only: :show 
+  has_orders %w{most_voted newest oldest}, only: :show
 
   load_and_authorize_resource
   respond_to :html, :js
@@ -17,8 +17,7 @@ class DebatesController < ApplicationController
     set_debate_votes(@debate)
   end
 
-  private      
-    
+  private 
     def debate_params
       params.require(:debate).permit(:title, :external_link, :description, :tag_list, :terms_of_service, :captcha, :captcha_key)
     end
