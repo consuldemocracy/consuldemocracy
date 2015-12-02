@@ -1,7 +1,7 @@
-# Consul
-
 ![Logotipo de Consul]
 (https://raw.githubusercontent.com/consul/consul/master/public/consul_logo.png)
+
+# Consul
 
 Aplicación de Participación Ciudadana y Gobierno Abierto
 
