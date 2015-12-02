@@ -1,9 +1,9 @@
-# Consul
-
 ![Logo of Consul]
 (https://raw.githubusercontent.com/consul/consul/master/public/consul_logo.png)
 
-Citizen Particition and Open Government Application
+# Consul
+
+Citizen Participation and Open Government Application
 
 [![Build Status](https://travis-ci.org/consul/consul.svg?branch=master)](https://travis-ci.org/consul/consul)
 [![Code Climate](https://codeclimate.com/github/consul/consul/badges/gpa.svg)](https://codeclimate.com/github/consul/consul)
