@@ -1,5 +1,8 @@
 # Consul
 
+![Logotipo de Consul]
+(https://raw.githubusercontent.com/consul/consul/master/public/consul_logo.png)
+
 Aplicación de Participación Ciudadana y Gobierno Abierto
 
 [![Build Status](https://travis-ci.org/consul/consul.svg?branch=master)](https://travis-ci.org/consul/consul)
