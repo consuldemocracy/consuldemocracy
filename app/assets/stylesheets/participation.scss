@@ -275,19 +275,10 @@
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
 .debate-new, .debate-edit, .proposal-new, .proposal-edit,  {
-  background: white;
-  padding-top: rem-calc(24);
+  padding-top: $line-height;
 
   .back {
     @include back;
-  }
-
-  h1 {
-    clear: both;
-    font-size: rem-calc(36);
-    font-weight: bold;
-    line-height: $line-height*2;
-    margin-bottom: rem-calc(24);
   }
 
   .icon-debates {

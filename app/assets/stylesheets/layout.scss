@@ -32,9 +32,9 @@
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
 @mixin back {
-  color: $text-light;
-  font-size: rem-calc(13);
-  line-height: $line-height;
+  color: $text-medium;
+  font-family: $font-sans;
+  font-size: $small-font-size;
 }
 
 @mixin logo {
@@ -852,32 +852,33 @@ footer {
     padding-top: rem-calc(48);
   }
 
-  p {
-    font-size: $small-font-size;
-  }
-
   h1 {
     @include logo;
+
+    a {
+      color: white;
+      display: block;
+      line-height: rem-calc(80);
+      text-align: center;
+
+      @media (min-width: $small-breakpoint) {
+        display: inline-block;
+        text-align: left;
+      }
+    }
   }
 }
 
 .auth {
   min-height: rem-calc(480);
 
-  h2 {
-    clear: both;
-    font-size: rem-calc(18);
-    font-weight: bold;
-    line-height: $line-height;
-
-    @media (min-width: $small-breakpoint) {
-      font-size: rem-calc(30);
-      line-height: $line-height*2;
-    }
-  }
-
   .back, .icon-angle-left {
     @include back;
+  }
+
+  p, a {
+    font-family: $font-sans;
+    font-size: $small-font-size;
   }
 
   .panel {
