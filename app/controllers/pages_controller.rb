@@ -34,9 +34,6 @@ class PagesController < ApplicationController
   def participation
   end
 
-  def transparency
-  end
-
   def proposals_info
   end
 

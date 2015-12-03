@@ -7,7 +7,7 @@ en:
     header:
       logo: "Madrid"
       external_link_transparency: "Transparency"
-      external_link_transparency_url: "http://www.madrid.es/portales/munimadrid/es/Inicio/El-Ayuntamiento/Transparencia?vgnextfmt=default&vgnextchannel=20fd850769797310VgnVCM2000000c205a0aRCRD"
+      external_link_transparency_url: "https://transparencia.madrid.es"
       external_link_opendata: "Open data"
       external_link_opendata_url: "http://datos.madrid.es"
       external_link_blog: "Blog"
@@ -15,7 +15,6 @@ en:
       open_gov: "Open government"
       open: "open"
       participation_html: "Madrid Decide"
-      transparency: "Transparency"
       open_data: "Open data"
       open_city_title: "Love the city, and it will become a city you love."
       open_city_slogan_html:
@@ -41,6 +40,7 @@ en:
       participation_title: "Participation"
       participation_text: "Decide how to shape the Madrid you want to live in."
       transparency_title: "Transparency"
+      transparency_url: "https://transparencia.madrid.es"
       transparency_text: "Find out anything about the Madrid City Council."
       open_data_title: "Open data"
       open_data_text: "Every detail about the City Council is yours to access."
