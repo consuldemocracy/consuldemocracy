@@ -3,7 +3,6 @@ es:
     titles:
       more_information: "Más información"
       privacy: "Política de Privacidad"
-      transparency: "Transparencia"
       opendata: "Datos abiertos"
       conditions: "Condiciones de uso"
       accessibility: "Accesibilidad"
@@ -18,10 +17,6 @@ es:
       Aceptando el proceso de verificación acepta dar su consentimiento para contrastar dicha información, así como medios de contacto que figuren en dichos ficheros.
       Los datos aportados serán incorporados y tratados por la Dirección General de Participación Ciudadana en el fichero 'Gestión de Procesos Participativos' indicado anteriormente en las condiciones de uso del portal."
     while_unfinished_html: 'Mientras acabamos el nuevo portal, te invitamos a visitar el <a href="/blog" target="_blank">blog del Área de Participación Ciudadana, Transparencia y Gobierno Abierto</a> para conocer nuestros avances y novedades; o la <a href="/">sección de Participación Ciudadana</a> donde poder decidir qué ciudad es la que quieres.'
-    transparency:
-      title: "Transparencia"
-      slogan_html: "Estamos trabajando en el nuevo Portal de Transparencia del Ayuntamiento de Madrid, para que no quede ni una esquina del Ayuntamiento que no puedas ver.<br>Por ahora puedes visitar el portal que existía hasta ahora:"
-      go_old: "Ir al Portal de Transparencia"
     opendata:
       title: "Datos abiertos"
       slogan_html: "Estamos trabajando en el nuevo Portal de Datos Abiertos del Ayuntamiento de Madrid, por ahora puedes visitar el portal que existía hasta ahora:"
