@@ -7,7 +7,6 @@ es:
     header:
       logo: "Madrid"
       external_link_transparency: "Transparencia"
-      external_link_transparency_url: "http://www.madrid.es/portales/munimadrid/es/Inicio/El-Ayuntamiento/Transparencia?vgnextfmt=default&vgnextchannel=20fd850769797310VgnVCM2000000c205a0aRCRD"
       external_link_opendata: "Datos abiertos"
       external_link_opendata_url: "http://datos.madrid.es"
       external_link_blog: "Blog"
@@ -15,7 +14,6 @@ es:
       open_gov: "Gobierno %{open}"
       open: "abierto"
       participation_html: "Madrid Decide"
-      transparency: "Transparencia"
       open_data: "Datos abiertos"
       open_city_title: "La ciudad que quieres será la ciudad que quieras."
       open_city_slogan_html:
