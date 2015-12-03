@@ -27,10 +27,9 @@ es:
       locale: "Idioma:"
       administration: "Administrar"
       moderation: "Moderar"
-      # highlights: "Portada"
       more_information: "Más información"
       debates: "Debates"
-      proposals: "Propuestas ciudadanas"
+      proposals: "Propuestas"
     footer:
       description: "Este portal usa la %{consul} que es %{open_source}. De Madrid, para el mundo entero."
       open_source: "software libre"

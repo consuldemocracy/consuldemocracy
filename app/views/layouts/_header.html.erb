@@ -4,9 +4,8 @@
       <%= render "shared/locale_switcher" %>
       <div class="external-links">
         <%= link_to t("layouts.header.participation_html"), root_path, class: ("selected" unless current_page?("/transparency") || current_page?("/opendata")) %>&nbsp;|
-        <%= link_to t("layouts.header.external_link_transparency"), "/transparency", class: ("selected" if current_page?("/transparency")) %>&nbsp;|
-        <%= link_to t("layouts.header.external_link_opendata"), "/opendata", class: ("selected" if current_page?("/opendata")) %>
-          &nbsp;|&nbsp;
+        <%= link_to t("layouts.header.external_link_transparency"), "https://transparencia.madrid.es/" %>&nbsp;|
+        <%= link_to t("layouts.header.external_link_opendata"), "/opendata", class: ("selected" if current_page?("/opendata")) %>&nbsp;|&nbsp;
           <div class="social inline-block">
             <%= link_to "https://twitter.com/abriendomadrid", target: "_blank", title: t("social.twitter") do %>
               <span class="sr-only"><%= t("social.twitter") %></span>
@@ -36,17 +35,12 @@
         <li class="name">
           <%= link_to root_path do %>
             <%= image_tag('header_logo_madrid.png', class: 'show-for-medium-up left', size: '80x80', alt: t("layouts.header.logo")) %>
-
-            <% if transparency_page? %>
-              <%= t("layouts.header.open_gov", open: "#{t('layouts.header.open')}") %> <span>|</span>
-              <span class="logo-site"><%= t("layouts.header.transparency") %></span>
-            <% elsif opendata_page? %>
+            <% if opendata_page? %>
               <%= t("layouts.header.open_gov", open: "#{t('layouts.header.open')}") %> <span>|</span>
               <span class="logo-site"><%= t("layouts.header.open_data") %></span>
             <% else %>
                <%= t("layouts.header.participation_html") %>
             <% end %>
-
           <% end %>
         </li>
       </ul>
@@ -84,20 +78,6 @@
         <%= link_to t("layouts.header.more_information"), "/more_information", class: "more-info" %>
       </div>
 
-      <div class="show-for-medium-up small-12 medium-5 column text-center">
-        <i class="icon-debates icon-home-big"></i>
-        <i class="icon-debates icon-home-small"></i>
-      </div>
-    </div>
-  <% end %>
-
-  <% if transparency_page? %>
-    <div class="row home-page">
-      <div class="small-12 medium-7 column">
-        <h1><%= t("pages.transparency.title") %></h1>
-        <h2><%= t("pages.transparency.slogan_html") %></h2>
-        <%= link_to t("pages.transparency.go_old"), t("layouts.header.external_link_transparency_url"), target: "_blank", class: "button radius" %>
-      </div>
       <div class="show-for-medium-up small-12 medium-5 column text-center">
         <i class="icon-debates icon-home-big"></i>
         <i class="icon-debates icon-home-small"></i>
