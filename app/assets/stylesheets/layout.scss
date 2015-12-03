@@ -224,8 +224,12 @@ a {
 .button {
   background: $brand;
   font-size: $small-font-size;
-  font-family: $font-family-sans-serif !important;
+  font-family: $font-sans !important;
   padding: rem-calc(15) rem-calc(32);
+
+  &:hover {
+    text-decoration: none !important;
+  }
 }
 
 .postfix.button {
@@ -774,6 +778,7 @@ footer {
 .footer {
   background: #DEE0E2;
   border-top: rem-calc(6) solid $brand;
+  padding-top: $line-height;
 }
 
 .subfooter {
@@ -844,7 +849,7 @@ footer {
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
 .auth-page {
-  background: #065687 image-url("auth_bg.jpg");
+  background: $brand image-url("auth_bg.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 
@@ -989,7 +994,6 @@ form {
 
   .checkbox {
     display: inline-block;
-    font-size: $small-font-size;
     font-weight: normal;
     line-height: $line-height;
     vertical-align: middle;
@@ -1085,6 +1089,10 @@ label.error, label.error a {
 .account {
   background: white;
   padding-top: rem-calc(24);
+
+  a {
+    font-family: $font-sans;
+  }
 
   .icon-debates {
     color: $debates;
@@ -1714,6 +1722,7 @@ table {
   }
 
   .verification-step {
+    font-family: $font-sans;
     font-weight: bold;
     line-height: rem-calc(20);
     padding-top: rem-calc(6);

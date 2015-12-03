@@ -113,6 +113,7 @@
   .not-logged {
     background: rgba(22,99,135,.9);
     color: white;
+    font-size: $small-font-size;
     height: 100%;
     left: 0;
     position: absolute;
@@ -193,7 +194,7 @@
     background: white;
     color: $proposals;
     display: inline-block;
-    font-size: rem-calc(14);
+    font-size: $small-font-size;
     margin-top: rem-calc(12);
 
     &:hover {
@@ -210,12 +211,10 @@
   .total-supports {
     color: white;
     text-align: center;
-    font-size: rem-calc(14);
+    font-size: $small-font-size;
 
     span {
       display: block;
-      font-size: rem-calc(11);
-      opacity: .75;
     }
   }
 
@@ -226,6 +225,7 @@
   .not-logged {
     background: rgba(255,164,45,.9);
     color: white;
+    font-size: $small-font-size;
     height: 100%;
     left: 0;
     position: absolute;
@@ -781,11 +781,11 @@
       display: block;
       border-style: solid;
       border-color: #664212 transparent transparent transparent;
-      bottom: rem-calc(-14);
+      bottom: -14px;
       border-left-width: 0;
       border-right-color: transparent;
-      right: rem-calc(-1);
-      border-width: 1em 1em 0 0;
+      right: -1px;
+      border-width: 13px 13px 0 0;
 
       @media (min-width: $small-breakpoint) {
         content: "";
@@ -960,6 +960,7 @@
     .not-logged, .organizations-votes {
       background: #FED900;
       color: $warning-color;
+      font-size: $small-font-size;
       line-height: rem-calc(24);
       padding-top: rem-calc(6);
 
@@ -1026,6 +1027,7 @@
 
   .info, .info a {
     color: white !important;
+    font-family: $font-sans;
     font-size: $small-font-size;
   }
 
