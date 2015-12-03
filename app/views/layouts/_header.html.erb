@@ -5,8 +5,7 @@
       <div class="external-links">
         <%= link_to t("layouts.header.participation_html"), root_path, class: ("selected" unless current_page?("/opendata")) %>&nbsp;|
         <%= link_to t("layouts.header.external_link_transparency"), t("layouts.header.external_link_transparency_url") %>&nbsp;|
-        <%= link_to t("layouts.header.external_link_opendata"), "/opendata", class: ("selected" if current_page?("/opendata")) %>
-          &nbsp;|&nbsp;
+        <%= link_to t("layouts.header.external_link_opendata"), "/opendata", class: ("selected" if current_page?("/opendata")) %>&nbsp;|&nbsp;
           <div class="social inline-block">
             <%= link_to "https://twitter.com/abriendomadrid", target: "_blank", title: t("social.twitter") do %>
               <span class="sr-only"><%= t("social.twitter") %></span>
@@ -36,14 +35,12 @@
         <li class="name">
           <%= link_to root_path do %>
             <%= image_tag('header_logo_madrid.png', class: 'show-for-medium-up left', size: '80x80', alt: t("layouts.header.logo")) %>
-
             <% if opendata_page? %>
               <%= t("layouts.header.open_gov", open: "#{t('layouts.header.open')}") %> <span>|</span>
               <span class="logo-site"><%= t("layouts.header.open_data") %></span>
             <% else %>
                <%= t("layouts.header.participation_html") %>
             <% end %>
-
           <% end %>
         </li>
       </ul>

@@ -32,14 +32,14 @@
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
 @mixin back {
-  color: $text-light;
-  font-size: rem-calc(13);
-  line-height: $line-height;
+  color: $text-medium;
+  font-family: $font-sans;
+  font-size: $small-font-size;
 }
 
 @mixin logo {
   color: white;
-  font-family: 'Lato' !important;
+  font-family: $font-logo;
   font-weight: lighter;
 
   @media (min-width: $small-breakpoint) {
@@ -60,6 +60,103 @@
   }
 }
 
+@mixin title {
+  font-size: $title-font-size;
+  font-weight: $font-bold;
+}
+
+@mixin h1 {
+  font-family: $font-sans;
+  font-size: $h2-font-size;
+  font-weight: $font-bold;
+
+  @media (min-width: $small-breakpoint) {
+    font-size: $h1-font-size;
+  }
+}
+
+@mixin h2 {
+  font-family: $font-sans;
+  font-size: $h3-font-size;
+  font-weight: $font-bold;
+
+  @media (min-width: $small-breakpoint) {
+    font-size: $h2-font-size;
+  }
+}
+
+@mixin h3 {
+  font-family: $font-sans;
+  font-size: $h4-font-size;
+  font-weight: $font-bold;
+
+  @media (min-width: $small-breakpoint) {
+    font-size: $h3-font-size;
+  }
+}
+
+@mixin h4 {
+  font-family: $font-sans;
+  font-size: $h5-font-size;
+  font-weight: $font-bold;
+
+  @media (min-width: $small-breakpoint) {
+    font-size: $h4-font-size;
+  }
+}
+
+@mixin h5 {
+  font-family: $font-sans;
+  font-size: $h6-font-size;
+  font-weight: $font-bold;
+
+  @media (min-width: $small-breakpoint) {
+    font-size: $h5-font-size;
+  }
+}
+
+@mixin h6 {
+  font-family: $font-sans;
+  font-size: $h6-font-size;
+  font-weight: $font-normal;
+  text-transform: uppercase;
+}
+
+h1 {
+  @include h1();
+}
+
+h2 {
+  @include h2();
+}
+
+h3 {
+  @include h3();
+}
+
+h4 {
+  @include h4();
+}
+
+h5 {
+  @include h5();
+}
+
+h6 {
+  @include h6();
+}
+
+h1, h2, h3, h4, h5, h6 {
+
+  &.lead {
+    border-bottom: rem-calc(6) solid $brand;
+  }
+
+  &.secondary {
+    color: $text-medium;
+  }
+}
+
 // 03. Global styles
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -74,8 +171,9 @@ html, body {
 
 body {
   background: white;
-  font-family: $font-family-sans-serif;
-  font-size: rem-calc(13);
+  color: $text;
+  font-family: $font-serif;
+  font-size: $base-font-size;
   font-weight: normal;
   text-rendering: optimizeLegibility;
 
@@ -85,54 +183,53 @@ body {
   }
 }
 
+p, ul, table {
+  font-family: $font-serif;
+}
+
 p {
-  font-size: rem-calc(15);
-  line-height: $line-height*1.25;
-  margin-bottom: rem-calc(12);
+  color: $text;
+  line-height: $base-line-height;
+  margin: rem-calc(6) 0;
+}
+
+ol, ul, li, p {
+  font-size: $small-font-size;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  clear: both;
+  font-family: $font-sans;
+  line-height: $heading-line-height;
+  margin: rem-calc(12) 0 rem-calc(6);
 }
 
 a {
   color: $link;
 
-  &:hover {
+  &:hover, &:active {
     color: $link-hover;
+    text-decoration: underline;
+
+    h1, h2, h3, h4, h5, h6 {
+      color: $link-hover;
+    }
   }
-}
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: $font-family-sans-serif;
-  font-weight: bold;
-}
-
-h1 {
-  font-size: rem-calc(30);
-}
-
-h2 {
-  font-size: rem-calc(24);
-}
-
-h3 {
-  font-size: rem-calc(20);
-}
-
-h4 {
-  font-size: rem-calc(18);
-}
-
-h5 {
-  font-size: rem-calc(16);
-}
-
-h6 {
-  font-size: rem-calc(14);
+  &:focus {
+    outline: 0;
+  }
 }
 
 .button {
   background: $brand;
-  font-size: rem-calc(14);
-  font-family: $font-family-sans-serif !important;
+  font-size: $small-font-size;
+  font-family: $font-sans !important;
   padding: rem-calc(15) rem-calc(32);
+
+  &:hover {
+    text-decoration: none !important;
+  }
 }
 
 .postfix.button {
@@ -253,11 +350,6 @@ h6 {
   min-height: rem-calc(288);
 }
 
-.footer {
-  background: #DEE0E2;
-  border-top: rem-calc(6) solid $brand;
-}
-
 .ie-alert-box {
   position: absolute;
   top: 0;
@@ -281,31 +373,18 @@ h6 {
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
 header {
-  background: image-url('header_bg.jpg');
-  background-position: bottom;
-  background-repeat: no-repeat;
-  background-size: cover;
-  color: $text;
-  min-height: rem-calc(552);
-  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='assets/header_bg.jpg', sizingMethod='scale');
-  -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='assets/header_bg.jpg',sizingMethod='scale')";
+  background: #E7F2FC;
+  border-bottom: rem-calc(1) solid $border;
 
-  &.results {
-    border-bottom: rem-calc(1) solid $border;
-    min-height: rem-calc(48);
+  a {
+    font-family: $font-sans;
   }
 
   h1 {
-    color: white;
-    font-size: rem-calc(36);
-    font-weight: bolder;
-    line-height: $line-height*2;
     margin: rem-calc(24) 0;
-    padding: 0;
   }
 
   h2 {
-    color: white;
     font-size: rem-calc(16);
     font-weight: normal;
     line-height: rem-calc(30);
@@ -336,9 +415,7 @@ header {
   }
 
   .more-info {
-    color: white;
     display: block;
-    font-size: rem-calc(14);
     margin-bottom: rem-calc(24);
     text-decoration: underline;
 
@@ -347,21 +424,17 @@ header {
       margin-bottom: 0;
       margin-left: rem-calc(12);
     }
-
-    &:hover {
-      opacity: .75;
-    }
   }
 
   .icon-home-big {
-    color: white;
+    color: $brand;
     font-size: rem-calc(300);
     line-height: rem-calc(300);
     opacity: .75;
   }
 
   .icon-home-small {
-    color: white;
+    color: $brand;
     font-size: rem-calc(100);
     opacity: .75;
     position: absolute;
@@ -391,15 +464,15 @@ header {
 
   .locale {
     float: none;
+    font-family: $font-sans;
 
     @media (min-width: $small-breakpoint) {
       float: left;
+      margin-left: rem-calc(12);
     }
 
     .icon-language {
-      font-size: rem-calc(16);
-      line-height: rem-calc(24);
-      vertical-align: middle;
+      vertical-align: text-top;
     }
   }
 
@@ -414,12 +487,14 @@ header {
   }
 
   .search-form {
-    padding-top: rem-calc(14);
+    padding-top: rem-calc(6);
+    margin-bottom: 0 !important;
 
     .postfix {
       background: $brand;
       border: 0;
       color: white;
+      margin-bottom: 0;
     }
   }
 }
@@ -508,14 +583,13 @@ header {
   }
 
   ul li > a {
-    font-size: rem-calc(14);
+    font-size: $small-font-size;
 
     &.button {
       border-radius: 0;
       line-height: $line-height*1.5;
       text-align: left;
       background: none;
-      padding-left: rem-calc(6);
     }
 
     @media (min-width: $small-breakpoint) {
@@ -532,7 +606,7 @@ header {
   }
 
   ul li > a {
-    font-size: rem-calc(14);
+    font-size: $small-font-size;
   }
 
   ul li > a.button:hover, .top-bar-section ul li > a.button:focus {
@@ -558,7 +632,6 @@ header {
     li:not(.has-form) a:not(.button) {
       background: none;
       color: white;
-      padding: rem-calc(12) 0;
 
       @media (min-width: $small-breakpoint) {
         line-height: rem-calc(80);
@@ -584,7 +657,7 @@ header {
 .top-links {
   background: $dark;
   color: white;
-  font-size: rem-calc(14);
+  font-size: $small-font-size;
   padding-right: rem-calc(12);
 
   a {
@@ -595,9 +668,6 @@ header {
       text-decoration: underline;
     }
   }
-  .social {
-    padding-top: rem-calc(6);
-  }
 }
 
 .subnavigation-container {
@@ -607,9 +677,11 @@ header {
 .subnavigation {
   background: white;
   clear: both;
-  min-height: rem-calc(72);
+  padding-left: rem-calc(12);
 
   @media (min-width: $small-breakpoint) {
+    padding-left: 0;
+
     & > .column {
       padding-left: 0;
     }
@@ -618,14 +690,12 @@ header {
   a {
     color: $text;
     display: inline-block;
-    font-size: rem-calc(14);
     font-weight: bold;
     line-height: $line-height*2;
     position: relative;
     text-align: left;
 
     @media (min-width: $small-breakpoint) {
-      line-height: $line-height*3;
       margin-left: rem-calc(12);
       margin-right: rem-calc(36);
       margin-right: 12px\9;
@@ -655,7 +725,6 @@ header {
 
       @media (min-width: $small-breakpoint) {
         border-bottom: 2px solid $brand;
-        line-height: rem-calc(24);
       }
     }
   }
@@ -666,7 +735,6 @@ header {
 
 footer {
   color: #171819;
-  padding: rem-calc(48) 0;
 
   .logo {
     @include logo;
@@ -680,7 +748,7 @@ footer {
   }
 
   p {
-    font-size: rem-calc(14);
+    font-size: $small-font-size;
   }
 
   a, a:active, a:focus {
@@ -701,11 +769,16 @@ footer {
     a {
       border-bottom: 1px solid #BFC1C3;
       display: block;
-      margin-bottom: rem-calc(6);
       padding-bottom: rem-calc(6);
       text-decoration: none;
     }
   }
+}
+
+.footer {
+  background: #DEE0E2;
+  border-top: rem-calc(6) solid $brand;
+  padding-top: $line-height;
 }
 
 .subfooter {
@@ -719,14 +792,14 @@ footer {
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
 .tags, .tag-cloud {
+  font-family: $font-sans;
 
   a {
     background: $border;
     border-radius: rem-calc(6);
     color: #4d4d4d;
     display: inline-block;
-    font-size: rem-calc(13);
-    line-height: rem-calc(22);
+    font-size: $small-font-size;
     margin-bottom: rem-calc(8);
     padding: 0 rem-calc(8);
 
@@ -776,7 +849,7 @@ footer {
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
 .auth-page {
-  background: #065687 image-url("auth_bg.jpg");
+  background: $brand image-url("auth_bg.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 
@@ -784,32 +857,33 @@ footer {
     padding-top: rem-calc(48);
   }
 
-  p {
-    font-size: rem-calc(14);
-  }
-
   h1 {
     @include logo;
+
+    a {
+      color: white;
+      display: block;
+      line-height: rem-calc(80);
+      text-align: center;
+
+      @media (min-width: $small-breakpoint) {
+        display: inline-block;
+        text-align: left;
+      }
+    }
   }
 }
 
 .auth {
   min-height: rem-calc(480);
 
-  h2 {
-    clear: both;
-    font-size: rem-calc(18);
-    font-weight: bold;
-    line-height: $line-height;
-
-    @media (min-width: $small-breakpoint) {
-      font-size: rem-calc(30);
-      line-height: $line-height*2;
-    }
-  }
-
   .back, .icon-angle-left {
     @include back;
+  }
+
+  p, a {
+    font-family: $font-sans;
+    font-size: $small-font-size;
   }
 
   .panel {
@@ -853,8 +927,10 @@ form.locale-form {
 }
 
 form {
+  font-family: $font-sans;
 
   label {
+    font-size: $base-font-size;
     font-weight: bold;
     line-height: $line-height;
   }
@@ -918,7 +994,6 @@ form {
 
   .checkbox {
     display: inline-block;
-    font-size: rem-calc(14);
     font-weight: normal;
     line-height: $line-height;
     vertical-align: middle;
@@ -949,6 +1024,8 @@ form {
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
 .alert-box {
+  font-family: $font-sans;
+  font-size: $small-font-size;
 
   &.success {
     background-color: $success-bg;
@@ -1012,6 +1089,10 @@ label.error, label.error a {
 .account {
   background: white;
   padding-top: rem-calc(24);
+
+  a {
+    font-family: $font-sans;
+  }
 
   .icon-debates {
     color: $debates;
@@ -1120,7 +1201,7 @@ img.avatar, img.admin-avatar, img.moderator-avatar, img.initialjs-avatar {
     margin-left: 0;
 
     li {
-      font-size: rem-calc(14);
+      font-size: $small-font-size;
       margin-bottom: rem-calc(12);
 
       span {
@@ -1168,7 +1249,7 @@ img.avatar, img.admin-avatar, img.moderator-avatar, img.initialjs-avatar {
     }
 
     optgroup {
-      font-size: rem-calc(14);
+      font-size: $small-font-size;
     }
 
     option {
@@ -1406,7 +1487,9 @@ table {
 
 .social {
   margin-top: rem-calc(24);
+  padding-top: rem-calc(6);
   text-align: center;
+  vertical-align: middle;
 
   @media (min-width: $small-breakpoint) {
     margin-top: 0;
@@ -1581,7 +1664,7 @@ table {
         span {
           color: $text-medium;
           display: block;
-          font-size: rem-calc(14);
+          font-size: $small-font-size;
           font-weight: normal;
         }
 
@@ -1639,6 +1722,7 @@ table {
   }
 
   .verification-step {
+    font-family: $font-sans;
     font-weight: bold;
     line-height: rem-calc(20);
     padding-top: rem-calc(6);
@@ -1780,8 +1864,9 @@ table {
 
     .comment-votes {
       color: $text-medium;
-      font-weight: lighter;
-      line-height: rem-calc(24);
+      font-family: $font-sans;
+      font-size: $small-font-size;
+      line-height: $line-height;
       margin: rem-calc(10) rem-calc(12) rem-calc(6) 0;
 
       a {
@@ -1804,12 +1889,13 @@ table {
       margin-left: rem-calc(42);
 
       p {
-        font-size: rem-calc(14);
+        font-size: $small-font-size;
       }
 
       .reply {
         background: white;
         border: 1px solid $border;
+        font-family: $font-sans;
         font-size: rem-calc(12);
         margin: rem-calc(6) 0;
         padding: rem-calc(6);
@@ -1875,9 +1961,9 @@ table {
     }
 
     .comment-info {
-      color: $text-light;
-      font-size: rem-calc(13);
-      font-weight: lighter;
+      color: $text-medium;
+      font-family: $font-sans;
+      font-size: $small-font-size;
       margin-top: rem-calc(6);
       vertical-align: middle;
 
