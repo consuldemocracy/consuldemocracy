@@ -7,6 +7,7 @@ es:
     header:
       logo: "Madrid"
       external_link_transparency: "Transparencia"
+      external_link_transparency_url: "https://transparencia.madrid.es"
       external_link_opendata: "Datos abiertos"
       external_link_opendata_url: "http://datos.madrid.es"
       external_link_blog: "Blog"
@@ -38,6 +39,7 @@ es:
       participation_title: "Participación"
       participation_text: "Decide cómo debe ser la ciudad de Madrid que quieres."
       transparency_title: "Transparencia"
+      transparency_url: "https://transparencia.madrid.es"
       transparency_text: "Obtén cualquier información sobre el Ayuntamiento de Madrid."
       open_data_title: "Datos Abiertos"
       open_data_text: "Todos los datos del Ayuntamiento son tuyos."
