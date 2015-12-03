@@ -239,6 +239,27 @@ describe User do
       end
     end
   end
+  
+  describe "has_official_email" do
+    it "checks if the mail address has the officials domain" do
+      # We will use empleados.madrid.es as the officials' domain
+      # Subdomains are also accepted
+      Setting.find_by(key: 'email_domain_for_officials').update(value: 'officials.madrid.es')
+      
+      user1 = create(:user, email: "john@officials.madrid.es", confirmed_at: Time.now)
+      user2 = create(:user, email: "john@yes.officials.madrid.es", confirmed_at: Time.now)
+      user3 = create(:user, email: "john@unofficials.madrid.es", confirmed_at: Time.now)
+      user4 = create(:user, email: "john@example.org", confirmed_at: Time.now)
+      
+      expect(user1.has_official_email?).to eq(true)
+      expect(user2.has_official_email?).to eq(true)
+      expect(user3.has_official_email?).to eq(false)
+      expect(user4.has_official_email?).to eq(false)
+      
+      # We reset the officials' domain setting
+      Setting.find_by(key: 'email_domain_for_officials').update(value: '')
+    end
+  end
 
   describe "self.search" do
     it "find users by email" do

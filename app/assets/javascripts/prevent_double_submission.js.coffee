@@ -21,7 +21,7 @@ App.PreventDoubleSubmission =
           button.data('text', null)
 
   initialize: ->
-    $('form').on('submit', event, ->
+    $('form').on('submit', (event) ->
       buttons = $(this).find(':button, :submit')
       App.PreventDoubleSubmission.disable_buttons(buttons)
     ).on('ajax:success', ->

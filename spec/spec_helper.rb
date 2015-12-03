@@ -21,6 +21,7 @@ RSpec.configure do |config|
   config.before(:each) do |example|
     DatabaseCleaner.strategy = example.metadata[:js] ? :truncation : :transaction
     DatabaseCleaner.start
+    I18n.locale = :en
     load "#{Rails.root}/db/seeds.rb"
   end
 

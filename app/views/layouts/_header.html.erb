@@ -3,8 +3,8 @@
     <div class="row">
       <%= render "shared/locale_switcher" %>
       <div class="external-links">
-        <%= link_to t("layouts.header.participation_html"), root_path, class: ("selected" unless current_page?("/transparency") || current_page?("/opendata")) %>&nbsp;|
-        <%= link_to t("layouts.header.external_link_transparency"), "https://transparencia.madrid.es/", class: ("selected" if current_page?("/transparency")) %>&nbsp;|
+        <%= link_to t("layouts.header.participation_html"), root_path, class: ("selected" unless current_page?("/opendata")) %>&nbsp;|
+        <%= link_to t("layouts.header.external_link_transparency"), t("layouts.header.external_link_transparency_url") %>&nbsp;|
         <%= link_to t("layouts.header.external_link_opendata"), "/opendata", class: ("selected" if current_page?("/opendata")) %>
           &nbsp;|&nbsp;
           <div class="social inline-block">
@@ -35,12 +35,9 @@
         <li class="toggle-topbar menu-icon"><a href="#"><span><%= t("application.menu")%></span></a></li>
         <li class="name">
           <%= link_to root_path do %>
-            <%= image_tag('header_logo_madrid.png', class: 'show-for-medium-up left', size: '96x96', alt: t("layouts.header.logo")) %>
+            <%= image_tag('header_logo_madrid.png', class: 'show-for-medium-up left', size: '80x80', alt: t("layouts.header.logo")) %>
 
-            <% if transparency_page? %>
-              <%= t("layouts.header.open_gov", open: "#{t('layouts.header.open')}") %> <span>|</span>
-              <span class="logo-site"><%= t("layouts.header.transparency") %></span>
-            <% elsif opendata_page? %>
+            <% if opendata_page? %>
               <%= t("layouts.header.open_gov", open: "#{t('layouts.header.open')}") %> <span>|</span>
               <span class="logo-site"><%= t("layouts.header.open_data") %></span>
             <% else %>
@@ -91,27 +88,12 @@
     </div>
   <% end %>
 
-  <% if transparency_page? %>
-    <div class="row home-page">
-      <div class="small-12 medium-7 column">
-        <h1><%= t("pages.transparency") %></h1>
-        <p>Estamos trabajando en el nuevo Portal de Transparencia del Ayuntamiento de Madrid, para que no quede ni una esquina del Ayuntamiento que no puedas ver.</p>
-        <p>Por ahora puedes visitar el portal que existía hasta ahora:</p>
-        <%= link_to "Ir al Portal de Transparencia", t("layouts.header.external_link_transparency_url"), target: "_blank", class: "button radius" %>
-      </div>
-      <div class="show-for-medium-up small-12 medium-5 column text-center">
-        <i class="icon-debates icon-home-big"></i>
-        <i class="icon-debates icon-home-small"></i>
-      </div>
-    </div>
-  <% end %>
-
   <% if opendata_page? %>
     <div class="row home-page">
       <div class="small-12 medium-7 column">
-        <h1><%= t("pages.opendata") %></h1>
-        <p>Estamos trabajando en el nuevo Portal de Datos Abiertos del Ayuntamiento de Madrid, por ahora puedes visitar el portal que existía hasta ahora:</p>
-        <%= link_to "Ir al Portal de Datos Abiertos", t("layouts.header.external_link_opendata_url"), target: "_blank", class: "button radius" %>
+        <h1><%= t("pages.opendata.title") %></h1>
+        <h2><%= t("pages.opendata.slogan_html") %></h2>
+        <%= link_to t("pages.opendata.go_old"), t("layouts.header.external_link_opendata_url"), target: "_blank", class: "button radius" %>
       </div>
       <div class="show-for-medium-up small-12 medium-5 column text-center">
         <i class="icon-debates icon-home-big"></i>

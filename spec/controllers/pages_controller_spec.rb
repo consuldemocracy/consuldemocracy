@@ -25,11 +25,6 @@ describe PagesController do
   end
 
   describe 'Provisional pages' do
-    it 'should include a transparency page' do
-      get :transparency
-      expect(response).to be_ok
-    end
-
     it 'should include a opendata page' do
       get :opendata
       expect(response).to be_ok

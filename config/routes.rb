@@ -269,7 +269,6 @@ Rails.application.routes.draw do
   get "/more_information", to: "pages#more_information"
   get "/opendata", to: "pages#opendata"
   get "/participation", to: "pages#participation"
-  get "/transparency", to: "pages#transparency"
   get "/proposals_info", to: "pages#proposals_info"
   get "/participation_facts", to: "pages#participation_facts"
   get "/participation_world", to: "pages#participation_world"
