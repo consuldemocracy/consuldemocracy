@@ -35,7 +35,6 @@
         <li class="name">
           <%= link_to root_path do %>
             <%= image_tag('header_logo_madrid.png', class: 'show-for-medium-up left', size: '80x80', alt: t("layouts.header.logo")) %>
-
             <% if opendata_page? %>
               <%= t("layouts.header.open_gov", open: "#{t('layouts.header.open')}") %> <span>|</span>
               <span class="logo-site"><%= t("layouts.header.open_data") %></span>
