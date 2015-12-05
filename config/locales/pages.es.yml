@@ -32,6 +32,22 @@ es:
     more_information:
       titles:
         how_it_works: "¿Cómo funciona este Portal de Gobierno Abierto?"
+        how_to_use: "Utilízalo en tu municipio"
+        participation: "Participación y Transparencia en Madrid - Próximas novedades"
+        proposals_info: "¿Cómo funcionan las propuestas ciudadanas?"
+        participation_world: "Participación ciudadana directa en el mundo"
+        participation_facts: "Hechos sobre participación ciudadana y democracia directa"
+        faq: "Soluciones a problemas técnicos (FAQ)"
+        signature_sheet: "Hojas de firmas"
+      description:
+        how_it_works: "Descubre todo lo que puedes hacer en esta web"
+        how_to_use: "Utilízalo libremente o ayúdanos a mejorarlo, es software libre"
+        participation: "Participación Ciudadana, Transparencia y Gobierno Abierto"
+        proposals_info: "Crea tus propias propuestas"
+        participation_world: "Sistemas de participación ciudadana que ya existen en el mundo"
+        participation_facts: "Para perderle el miedo"
+        faq: "Preguntas frecuentes sobre problemas técnicos"
+        signature_sheet: "Hojas de firmas para recoger apoyos"
       how_it_works:
         i: "Participación"
         i1: "Espacio de debate"

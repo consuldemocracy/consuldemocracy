@@ -31,6 +31,23 @@ en:
       submit: "Verify my account"
     more_information:
       titles:
+        how_it_works: "How does this Open Government Portal work?"
+        how_to_use: "Use it in your local government"
+        participation: "Madrid Participation and Transparency y Transparencia - coming news"
+        proposals_info: "How does citizen proposals work?"
+        participation_world: "Direct citizen participation in the world"
+        participation_facts: "Facts about citizen participation and direct democracy"
+        faq: "Solution to tecnical problemas (FAQ)"
+        signature_sheet: "Signature sheet"
+      description:
+        how_it_works: "Find out all you can do with this web site"
+        how_to_use: "Use it freely or help us to improve it, it is free software"
+        participation: "Citizen participation, transparency and open government"
+        proposals_info: "Create your own proposals"
+        participation_world: "Systems of citizen participation that exist in the world"
+        participation_facts: "To lose your fear"
+        faq: "Frecuently asked question about tecnical problems"
+        signature_sheet: "Sheet collecting signatures for support"
       how_it_works:
         i: "Participation"
         i1: "Debates area"
