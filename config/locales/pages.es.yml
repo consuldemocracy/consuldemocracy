@@ -86,3 +86,14 @@ es:
 
 
                 Una vez que una propuesta alcance una cantidad de apoyos equivalente al 2% del censo de Madrid (unos 53000), automaticamente pasa a ser estudiada por un grupo de trabajo del Ayuntamiento y pasará a la siguiente fase de consulta popular, en la que la ciudadanía de Madrid votará si se lleva a cabo o no. El plazo máximo para recabar los apoyos necesarios será de 12 meses."
+      how_to_use:
+        text:  "Utilízalo en tu municipio libremente o ayúdanos a mejorarlo, es software libre.
+
+
+                Este Portal de Gobierno Abierto usa la [aplicación Consul](https://github.com/ayuntamientomadrid 'github consul' ) que es software libre, con [licencia AGPLv3](http://www.gnu.org/licenses/agpl-3.0.html 'AGPLv3 gnu' ), esto significa en palabras sencillas, que cualquiera puede libremente usar el código, copiarlo, verlo en detalle, modificarlo, y redistribuirlo al mundo con las modificaciones que quiera (manteniendo el que otros puedan a su vez hacer lo mismo). Porque creemos que la cultura es mejor y más rica cuando se libera.
+
+
+                No sólo puedes utilizar libremente este portal en tu municipio, sino que desde el Ayuntamiento de Madrid vamos a ayudarte todo lo posible a que lo hagas, así que si estás interesado, escríbenos a <a href='mailto:ag.gobiernoabierto@madrid.es'>ag.gobiernoabierto@madrid.es</a>
+
+
+                Si eres programador, puedes ver el código y ayudarnos a mejorarlo en [aplicación Consul](https://github.com/ayuntamientomadrid 'github consul' )."
