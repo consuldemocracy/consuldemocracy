@@ -26,7 +26,7 @@ module ApplicationHelper
     render_options = {
       filter_html:     false,
       hard_wrap:       true,
-      link_attributes: { }
+      link_attributes: {  target: "_blank" }
     }
     renderer = Redcarpet::Render::HTML.new(render_options)
     extensions = {
