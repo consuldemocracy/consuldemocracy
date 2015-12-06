@@ -311,6 +311,7 @@ GEM
       thor (>= 0.18.1, < 2.0)
     raindrops (0.15.0)
     rake (10.4.2)
+    redcarpet (3.3.3)
     referer-parser (0.3.0)
     request_store (1.2.1)
     responders (2.1.0)
@@ -474,6 +475,7 @@ DEPENDENCIES
   poltergeist
   quiet_assets
   rails (= 4.2.5)
+  redcarpet
   responders
   rinku
   rollbar (~> 2.6.1)
