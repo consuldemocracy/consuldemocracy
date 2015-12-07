@@ -1,3 +1,6 @@
+![Logotipo de Consul]
+(https://raw.githubusercontent.com/consul/consul/master/public/consul_logo.png)
+
 # Consul
 
 Aplicación de Participación Ciudadana y Gobierno Abierto
@@ -27,7 +30,9 @@ Las herramientas utilizadas para el frontend no están cerradas aún. Los estilo
 Prerequisitos: tener instalado git, ImageMagick, Ruby 2.2.3, la gema `bundler`, ghostscript y PostgreSQL (9.4 o superior).
 
 ```
-cd participacion
+
+git clone https://github.com/consul/consul.git
+cd consul
 bundle install
 cp config/database.yml.example config/database.yml
 cp config/secrets.yml.example config/secrets.yml

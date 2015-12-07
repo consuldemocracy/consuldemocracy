@@ -7,16 +7,12 @@ module ApplicationHelper
     request.path == '/'
   end
 
-  def transparency_page?
-    request.path == '/transparency'
-  end
-
   def opendata_page?
     request.path == '/opendata'
   end
 
   def header_css
-    home_page? || transparency_page? || opendata_page? ? '' : 'results'
+    home_page? || opendata_page? ? '' : 'results'
   end
 
   # if current path is /debates current_path_with_query_params(foo: 'bar') returns /debates?foo=bar
@@ -25,4 +21,22 @@ module ApplicationHelper
     url_for(request.query_parameters.merge(query_parameters))
   end
 
+  def markdown(text)
+    # See https://github.com/vmg/redcarpet for options
+    render_options = {
+      filter_html:     false,
+      hard_wrap:       true,
+      link_attributes: {  target: "_blank" }
+    }
+    renderer = Redcarpet::Render::HTML.new(render_options)
+    extensions = {
+      autolink:           true,
+      fenced_code_blocks: true,
+      lax_spacing:        true,
+      no_intra_emphasis:  true,
+      strikethrough:      true,
+      superscript:        true
+    }
+    Redcarpet::Markdown.new(renderer, extensions).render(text).html_safe
+  end
 end

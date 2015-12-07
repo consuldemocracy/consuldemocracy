@@ -248,6 +248,18 @@ feature 'Commenting debates' do
     end
   end
 
+  scenario 'Submit button is disabled after clicking', :js do
+    login_as(user)
+    visit debate_path(debate)
+
+    fill_in "comment-body-debate_#{debate.id}", with: 'Testing submit button!'
+    click_button 'Publish comment'
+    
+    # The button's text should now be "..."
+    # This should be checked before the Ajax request is finished
+    expect(page).to_not have_button 'Publish comment'
+  end
+
   feature "Moderators" do
     scenario "can create comment as a moderator", :js do
       moderator = create(:moderator)

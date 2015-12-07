@@ -27,7 +27,7 @@
 
         <div class="small-12 medium-4 column">
           <h4>
-            <%= link_to t("layouts.footer.transparency_title"), "/transparency" %>
+            <%= link_to t("layouts.footer.transparency_title"), t("layouts.footer.transparency_url") %>
           </h4>
           <p><%= t("layouts.footer.transparency_text") %></p>
         </div>
@@ -43,11 +43,13 @@
 
     <div class="subfooter row">
       <div class="small-12 medium-9 column">
-        <%= t("layouts.footer.copyright", year: Time.now.year) %>&nbsp;|&nbsp;
-        <%= link_to t("layouts.footer.more_info"), "/more_information" %>&nbsp;|&nbsp;
-        <%= link_to t("layouts.footer.privacy"), "/privacy" %>&nbsp;|&nbsp;
-        <%= link_to t("layouts.footer.conditions"), "/conditions" %>&nbsp;|&nbsp;
-        <%= link_to t("layouts.footer.accessibility"), "/accessibility" %>
+        <p>
+          <%= t("layouts.footer.copyright", year: Time.now.year) %>&nbsp;|&nbsp;
+          <%= link_to t("layouts.footer.more_info"), "/more_information" %>&nbsp;|&nbsp;
+          <%= link_to t("layouts.footer.privacy"), "/privacy" %>&nbsp;|&nbsp;
+          <%= link_to t("layouts.footer.conditions"), "/conditions" %>&nbsp;|&nbsp;
+          <%= link_to t("layouts.footer.accessibility"), "/accessibility" %>
+        </p>
       </div>
 
       <div class="small-12 medium-3 column social">

@@ -1,85 +1,113 @@
-// List of fonts
+// Fonts
 //
-// 01. Open Sans (http://www.fontsquirrel.com/fonts/open-sans)
-// 02. Lato (http://www.fontsquirrel.com/fonts/lato)
+// 01. Source Sans Pro (https://www.google.com/fonts/specimen/Source+Sans+Pro)
+// 02. Merriweather (https://www.google.com/fonts/specimen/Merriweather)
+// 03. Lato (https://www.google.com/fonts/specimen/Lato)
 //
 
-// 01. Open Sans
+// 01. Source Sans Pro
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
 @font-face {
-  font-family: 'Open Sans';
-  src: font-url('opensans-light.eot');
-  src: font-url('opensans-light.eot?#iefix') format('embedded-opentype'),
-       font-url('opensans-light.woff2') format('woff2'),
-       font-url('opensans-light.woff') format('woff'),
-       font-url('opensans-light.ttf') format('truetype'),
-       font-url('opensans-light.svg#open_sanslight') format('svg');
-  font-weight: lighter;
+  font-family: 'Source Sans Pro';
   font-style: normal;
+  font-weight: 300;
+  src: font-url('sourcesanspro-light-webfont.eot');
+  src: font-url('sourcesanspro-light-webfont.eot?#iefix') format('embedded-opentype'),
+       font-url('sourcesanspro-light-webfont.woff2') format('woff2'),
+       font-url('sourcesanspro-light-webfont.woff') format('woff'),
+       font-url('sourcesanspro-light-webfont.ttf') format('truetype'),
+       font-url('sourcesanspro-light-webfont.svg#source_sans_prolight') format('svg')
 }
 
 @font-face {
-  font-family: 'Open Sans';
-  src: font-url('opensans-lightitalic.eot');
-  src: font-url('opensans-lightitalic.eot?#iefix') format('embedded-opentype'),
-       font-url('opensans-lightitalic.woff2') format('woff2'),
-       font-url('opensans-lightitalic.woff') format('woff'),
-       font-url('opensans-lightitalic.ttf') format('truetype'),
-       font-url('opensans-lightitalic.svg#open_sanslight_italic') format('svg');
-  font-weight: lighter;
-  font-style: italic;
-}
-
-@font-face {
-  font-family: 'Open Sans';
-  src: font-url('opensans-regular.eot');
-  src: font-url('opensans-regular.eot?#iefix') format('embedded-opentype'),
-       font-url('opensans-regular.woff2') format('woff2'),
-       font-url('opensans-regular.woff') format('woff'),
-       font-url('opensans-regular.ttf') format('truetype'),
-       font-url('opensans-regular.svg#open_sansregular') format('svg');
-  font-weight: normal;
+  font-family: 'Source Sans Pro';
   font-style: normal;
+  font-weight: 400;
+  src: font-url('sourcesanspro-regular-webfont.eot');
+  src: font-url('sourcesanspro-regular-webfont.eot?#iefix') format('embedded-opentype'),
+       font-url('sourcesanspro-regular-webfont.woff2') format('woff2'),
+       font-url('sourcesanspro-regular-webfont.woff') format('woff'),
+       font-url('sourcesanspro-regular-webfont.ttf') format('truetype'),
+       font-url('sourcesanspro-regular-webfont.svg#source_sans_proregular') format('svg');
 }
 
 @font-face {
-  font-family: 'Open Sans';
-  src: font-url('opensans-italic.eot');
-  src: font-url('opensans-italic.eot?#iefix') format('embedded-opentype'),
-       font-url('opensans-italic.woff2') format('woff2'),
-       font-url('opensans-italic.woff') format('woff'),
-       font-url('opensans-italic.ttf') format('truetype'),
-       font-url('opensans-italic.svg#open_sansitalic') format('svg');
-  font-weight: normal;
+  font-family: 'Source Sans Pro';
   font-style: italic;
+  font-weight: 400;
+  src: font-url('sourcesanspro-italic-webfont.eot');
+  src: font-url('sourcesanspro-italic-webfont.eot?#iefix') format('embedded-opentype'),
+       font-url('sourcesanspro-italic-webfont.woff2') format('woff2'),
+       font-url('sourcesanspro-italic-webfont.woff') format('woff'),
+       font-url('sourcesanspro-italic-webfont.ttf') format('truetype'),
+       font-url('sourcesanspro-italic-webfont.svg#source_sans_proitalic') format('svg');
 }
 
 @font-face {
-  font-family: 'Open Sans';
-  src: font-url('opensans-bold.eot');
-  src: font-url('opensans-bold.eot?#iefix') format('embedded-opentype'),
-       font-url('opensans-bold.woff2') format('woff2'),
-       font-url('opensans-bold.woff') format('woff'),
-       font-url('opensans-bold.ttf') format('truetype'),
-       font-url('opensans-bold.svg#open_sansbold') format('svg');
-  font-weight: bold;
+  font-family: 'Source Sans Pro';
   font-style: normal;
+  font-weight: 700;
+  src: font-url('sourcesanspro-bold-webfont.eot');
+  src: font-url('sourcesanspro-bold-webfont.eot?#iefix') format('embedded-opentype'),
+       font-url('sourcesanspro-bold-webfont.woff2') format('woff2'),
+       font-url('sourcesanspro-bold-webfont.woff') format('woff'),
+       font-url('sourcesanspro-bold-webfont.ttf') format('truetype'),
+       font-url('sourcesanspro-bold-webfont.svg#source_sans_probold') format('svg');
+}
+
+// 02. Merriweather
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+@font-face {
+  font-family: 'Merriweather';
+  font-style: normal;
+  font-weight: 300;
+  src: font-url('merriweather-light-webfont.eot');
+  src: font-url('merriweather-light-webfont.eot?#iefix') format('embedded-opentype'),
+       font-url('merriweather-light-webfont.woff2') format('woff2'),
+       font-url('merriweather-light-webfont.woff') format('woff'),
+       font-url('merriweather-light-webfont.ttf') format('truetype'),
+       font-url('merriweather-light-webfont.svg#source_sans_proregular') format('svg');
 }
 
 @font-face {
-  font-family: 'Open Sans';
-  src: font-url('opensans-bolditalic.eot');
-  src: font-url('opensans-bolditalic.eot?#iefix') format('embedded-opentype'),
-       font-url('opensans-bolditalic.woff2') format('woff2'),
-       font-url('opensans-bolditalic.woff') format('woff'),
-       font-url('opensans-bolditalic.ttf') format('truetype'),
-       font-url('opensans-bolditalic.svg#open_sansbold_italic') format('svg');
-  font-weight: bold;
-  font-style: italic;
+  font-family: 'Merriweather';
+  font-style: normal;
+  font-weight: 400;
+  src: font-url('merriweather-regular-webfont.eot');
+  src: font-url('merriweather-regular-webfont.eot?#iefix') format('embedded-opentype'),
+       font-url('merriweather-regular-webfont.woff2') format('woff2'),
+       font-url('merriweather-regular-webfont.woff') format('woff'),
+       font-url('merriweather-regular-webfont.ttf') format('truetype'),
+       font-url('merriweather-regular-webfont.svg#source_sans_proitalic') format('svg');
 }
 
-// 02. Lato
+@font-face {
+  font-family: 'Merriweather';
+  font-style: italic;
+  font-weight: 400;
+  src: font-url('merriweather-italic-webfont.eot');
+  src: font-url('merriweather-italic-webfont.eot?#iefix') format('embedded-opentype'),
+       font-url('merriweather-italic-webfont.woff2') format('woff2'),
+       font-url('merriweather-italic-webfont.woff') format('woff'),
+       font-url('merriweather-italic-webfont.ttf') format('truetype'),
+       font-url('merriweather-italic-webfont.svg#source_sans_proitalic') format('svg');
+}
+
+@font-face {
+  font-family: 'Merriweather';
+  font-style: normal;
+  font-weight: 700;
+  src: font-url('merriweather-bold-webfont.eot');
+  src: font-url('merriweather-bold-webfont.eot?#iefix') format('embedded-opentype'),
+       font-url('merriweather-bold-webfont.woff2') format('woff2'),
+       font-url('merriweather-bold-webfont.woff') format('woff'),
+       font-url('merriweather-bold-webfont.ttf') format('truetype'),
+       font-url('merriweather-bold-webfont.svg#source_sans_probold') format('svg');
+}
+
+// 03. Lato
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
 @font-face {
@@ -91,7 +119,7 @@
        font-url('lato-light.ttf') format('truetype'),
        font-url('lato-light.svg#latolight') format('svg');
   font-weight: lighter;
-  font-style: normal;
+  font-style: normal
 }
 
 @font-face {
@@ -103,7 +131,7 @@
        font-url('lato-regular.ttf') format('truetype'),
        font-url('lato-regular.svg#latoregular') format('svg');
   font-weight: normal;
-  font-style: normal;
+  font-style: normal
 }
 
 @font-face {
@@ -115,5 +143,5 @@
        font-url('lato-bold.ttf') format('truetype'),
        font-url('lato-bold.svg#latobold') format('svg');
   font-weight: bold;
-  font-style: normal;
+  font-style: normal
 }

@@ -3,7 +3,6 @@ en:
     titles:
       more_information: "More information"
       privacy: "Privacy Policy"
-      transparency: "Transparency"
       opendata: "Open Data"
       conditions: "Terms of use"
       accessibility: "Accessibility"
@@ -17,9 +16,11 @@ en:
       "To confirm the account, you must be 16 or older and be registered as resident in Madrid, having provided the information requested previously, which the Directorate-General of Civil Participation will verify against the files 'Municipal Census of Inhabitants', for which the Directorate-General for Statistics is responsible, and the 'Citizen Support Services', for which the Directorate-General for Quality and Citizen Services is responsible.
       By accepting the verification process, you also consent to the verification of this information, as well as the contact methods featuring in said files.
       The data provided will be acquired and processed by the Directorate-General for Civil Participation in the file 'Management of Participatory Activities' mentioned previously in the terms and conditions of use for the Portal."
-    transparency:
-      "Transparency"
-    opendata: "Open Data"
+    while_unfinished_html: 'While we finish, we encourage you to visit the <a href="/blog" target="_blank">Citizen Participation Area, Transparency and Open Government blog</a> to know about our progress and news; or the <a href="/">Citizen Participation section</a> where you can decide which is the city you want.'
+    opendata:
+      title: "Open Data"
+      slogan_html: "We are working on the new Madrid City Council Open Data Portal, meanwhile you can visit the actual Open Data Portal:"
+      go_old: "Go to Open Data Portal"
     verify:
       title: "Verify your account"
       info: "For verufy your account introduce your access data:"
@@ -28,3 +29,71 @@ en:
       password: "Password"
       code: "Code you received in letter"
       submit: "Verify my account"
+    more_information:
+      titles:
+        how_it_works: "How does this Open Government Portal work?"
+        how_to_use: "Use it in your local government"
+        participation: "Madrid Participation and Transparency y Transparencia - coming news"
+        proposals_info: "How does citizen proposals work?"
+        participation_world: "Direct citizen participation in the world"
+        participation_facts: "Facts about citizen participation and direct democracy"
+        faq: "Solution to tecnical problemas (FAQ)"
+        signature_sheet: "Signature sheet"
+      description:
+        how_it_works: "Find out all you can do with this web site"
+        how_to_use: "Use it freely or help us to improve it, it is free software"
+        participation: "Citizen participation, transparency and open government"
+        proposals_info: "Create your own proposals"
+        participation_world: "Systems of citizen participation that exist in the world"
+        participation_facts: "To lose your fear"
+        faq: "Frecuently asked question about tecnical problems"
+        signature_sheet: "Sheet collecting signatures for support"
+      how_it_works:
+        i: "Participation"
+        i1: "Debates area"
+        i2: "Proposals area"
+        text:  "The new Open Government Portal is divided in three parts: Participation, Transparency and Open Data (you can see the links in the upper right-hand part).
+
+                >**I. Participation:** In this part we can decide which city we want (using citizen proposals, debate areas, participatory budgets , collaborative legislation, and many others we will implement).
+
+                **II. Transparency:** In this part information about how Madrid is managed will be published every day: name, position, salary, contracts, agenda,... of the persons in charge. It is also the place where exercise your right to access information, having the chance to request any information about Madrid City Council easily and rapidly.
+
+                **III. Open data:** In this part the city council databases are posted, so that anyone can use information directly, without having to ask. It can also be requested the publication of more databases.
+
+
+                We have opened the new Participation portal and we will open the new Transparency and Open Data seccion shortly (meanwhile the links to existing sites are kept).
+
+                ## <a id='i'></a> I. Participation
+
+                The participation section will have different ways to participate: citizen proposals, debate areas, participatory budgets , collaborative legislation, and many others. You can currently visit the debate area and the citizen proposals will be ready very soon.
+
+                ## <a id='i1'></a>I.I. Debates area
+
+                In the debates area everyone can open a discussion thread about any topic, creating an independent space where people could debate about the proposed topic. In this way, in this digital space there will be hundreds of different debate spaces which citizens could see, joining the ones they find more interesting.
+
+
+                Both threads and comments could be valued by anyone, so the citizenship, and not someone in its name, will decide which are the most important issues in every moment. These will be showed in the main page of the space, being able to access also the rest of issues in following pages, or using others order criteria (the most commented, the newst, the most controversial, etc.).
+
+
+                Every city council employee has its own user, which will be designated as such, allowing them to participate in debates at the same level than the rest of citizens. That will allow creating direct communication spaces between them, avoiding the problems that implies the measured communication, and following clear approach of the new Madrid City Council by virtue of which the city council works for the citizenship.
+
+                ## <a id='i2'></a> I.I. Proposals area
+
+                In the proposals area everyone can propose an initiative with the intention of collecting support enough for the idea being consulting to the whole citizenship with binding effect.
+
+
+                The proposals can be supported by every citizen registered in Madrid that has verified their account in the participation platform. In this way, the citizenship, and not someone in its name, will decide which are the proposals that are worthwhile to carry out.
+
+
+                One that the proposal has achive support of 2% Madrid census (arround 53000 people), it will be studied by a city council group and to move beyond the popular referendum phase, in which Madrid citizenship will vote if it is carried out or not. The maximum period to obtain support enough is 12 months."
+      how_to_use:
+        text:  "Use it in your local government or help us to improve it, it is free software.
+
+
+                This Open Government Portal use the [Consul app](https://github.com/ayuntamientomadrid 'consul github') that is free software, with [licence AGPLv3](http://www.gnu.org/licenses/agpl-3.0.html 'AGPLv3 gnu' ), that means in simple words that anyone can use the code freely, copy it, see it in detail, modify it and redistribute it to the word with the modifications he wants (allowing others to do the same). Because we think culture is better and richer when it is released.
+
+
+                Not only can you use freely this portal in yout local government, but you also will be helped by Madrid city council as much as possible to do it, so if you are interested write us: <a href='mailto:ag.gobiernoabierto@madrid.es'>ag.gobiernoabierto@madrid.es</a>
+
+
+                If you are a programmer, you can see the code and help us to improve it at [Consul app](https://github.com/ayuntamientomadrid 'consul github ' )."
