@@ -29,6 +29,7 @@ en:
       more_information: "More information"
       debates: "Debates"
       proposals: "Proposals"
+      processes: "Open processes"
     footer:
       description: "This portal uses the %{consul} which is %{open_source}. From Madrid out into the world."
       open_source: "open-source software"

@@ -1,0 +1,21 @@
+<div class="row-full jumbo">
+  <div class="row">
+    <div class="small-12 medium-6 column">
+      <h1><%= t("pages.processes.process_1.title") %></h1>
+      <%= link_to "#", class: "button radius margin-top" do %>
+        <%= t("pages.processes.process_1.button") %>
+        <i class="icon-external"></i>
+      <% end %>
+    </div>
+    <div class="show-for-medium-up">
+      <%= image_tag "processes_ordinance_page.png", class: "absolute" %>
+    </div>
+  </div>
+</div>
+
+<div class="process row margin">
+  <div class="small-12 medium-6 column">
+    <%= markdown t("pages.processes.process_1.text") %>
+  </div>
+</div>
+
