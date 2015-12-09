@@ -276,4 +276,6 @@ Rails.application.routes.draw do
   get "/blog", to: "pages#blog"
   get "/accessibility", to: "pages#accessibility"
   get "/verifica", to: "verification/letter#edit"
+  get "/processes", to: "pages#processes"
+  get "/processes_ordinance", to: "pages#processes_ordinance"
 end
