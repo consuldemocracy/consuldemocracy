@@ -82,6 +82,7 @@ es:
       title: "Debates"
       featured_debates_html: "Debates<br>destacados"
       start_debate: "Empieza un debate"
+      share_debate: "Comparte un debate"
       select_order: "Ordenar por"
       select_order_long: "Estás viendo los debates"
       orders:
@@ -154,12 +155,11 @@ es:
       form:
         submit_button: "Guardar cambios"
   debate_links:
-    index:
-      start_debate: "Comparte un enlace"
     form:
       debate_link: "Enlace"
     new:
       start_new: "Compartir un enlace"
+      recommendations_title: "Recomendaciones para compartir un enlace"      
       form:
         submit_button: "Comparte un enlace"
     create:

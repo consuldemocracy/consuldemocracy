@@ -9,14 +9,14 @@
 
     <% if @debate.external_link != nil %>
         <div class="small-12 column">
-        <%= f.label :external_link, t("debate_links.form.debate_link") %>
-        <%= f.text_field :external_link, maxlength: Debate.title_max_length, placeholder: t("debates.form.debate_title"), label: false %>
-      </div>
+          <%= f.label :external_link, t("debate_links.form.debate_link") %>
+          <%= f.text_field :external_link, maxlength: Debate.external_link_max_length, placeholder: t("debates.form.debate_title"), label: false %>
+        </div>
     <% else%>
-    <div class="ckeditor small-12 column">
-      <%= f.label :description, t("debates.form.debate_text") %>
-      <%= f.cktext_area :description, maxlength: Debate.description_max_length, ckeditor: { language: I18n.locale }, label: false %>   
-    </div> 
+       <div class="ckeditor small-12 column">
+         <%= f.label :description, t("debates.form.debate_text") %>
+         <%= f.cktext_area :description, maxlength: Debate.description_max_length, ckeditor: { language: I18n.locale }, label: false %>   
+       </div> 
     <% end %>
 
     <div class="small-12 column">

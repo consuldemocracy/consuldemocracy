@@ -138,8 +138,7 @@ class Debate < ActiveRecord::Base
   end
   
   def description_required?
-#    !external_link
-   if self.external_link == nil
+    if self.external_link == nil
        return true
     else
       return false
@@ -147,8 +146,7 @@ class Debate < ActiveRecord::Base
   end
   
   def link_required?
-#    !description
-if self.external_link == nil
+    if self.external_link == nil
        return false
     else
       return true

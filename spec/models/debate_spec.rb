@@ -28,7 +28,7 @@ describe Debate do
       expect(debate).to_not be_valid
     end
   end
-
+  
   describe "#external_link" do
 
     it "should not be valid without a url" do
