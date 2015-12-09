@@ -23,6 +23,9 @@
 // 21. Activity
 //
 
+@import "layout/progress_bar";
+@import "layout/application_title";
+
 // 01. Variables
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -373,7 +376,7 @@ a {
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
 header {
-  background: #E7F2FC;
+  background: $background;
   border-bottom: rem-calc(1) solid $border;
 
   a {
@@ -610,7 +613,7 @@ header {
   }
 
   ul li > a.button:hover, .top-bar-section ul li > a.button:focus {
-    background-color: #007095 !important;
+    background-color: $link-hover !important;
   }
 
   ul li, ul li:hover:not(.has-form) > a:not(.button) {

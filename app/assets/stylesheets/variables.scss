@@ -38,21 +38,22 @@ $line-height: rem-calc(24);
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
 $body:              #E9E9E9;
-$background:        #EDEFF0;
+$background:        #ededed;
 $dark:              #0B0C0C;
-$border:            #DEE0E3;
-$brand:             #004A83;
+$border:            darken($background, 10%);
+$brand:             #E9283D;
 
 $text:              #222222;
 $text-medium:       #999999;
 $text-light:        #CCCCCC;
+$text-inverse:      #fff;
 
-$link:              #2895F1;
-$link-hover:        #2178BF;
+$link:              $brand;
+$link-hover:        darken($brand, 10%);
 
-$debates:           #008CCF;
-$votes-bg:          #26AEEE;
-$votes-border:      #1F94CB;
+$debates:           darken($brand, 10%);
+$votes-bg:          lighten($brand, 10%);
+$votes-border:      $brand;
 
 $votes-like:        #7BD2A8;
 $votes-like-act:    #5D9E7F;
@@ -77,9 +78,9 @@ $success-bg:        #DFF0D8;
 $success-border:    #D6E9C6;
 $success-color:     #3C763D;
 
-$info-bg:	          #D9EDF7;
-$info-border:       #BCE8F1;
-$info-color:        #31708F;
+$info-bg:	          #FEF9CE;
+$info-border:       #F8DB31;
+$info-color:        #DF9823;
 
 $warning-bg:        #FCF8E3;
 $warning-border:    #FAEBCC;
