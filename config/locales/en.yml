@@ -82,6 +82,7 @@ en:
       title: "Debates"
       featured_debates_html: "Featured<br>debates"
       start_debate: "Start a debate"
+      share_debate: "Share a link"
       select_order: "Order by"
       select_order_long: "You are viewing debates according to:"
       orders:
@@ -154,8 +155,6 @@ en:
       form:
         submit_button: "Save changes"
   debate_links:
-    index:
-      start_debate: "Share a link"
     form:
       debate_link: "Link"
     new:
