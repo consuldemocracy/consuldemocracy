@@ -5,10 +5,10 @@
 
 Citizen Participation and Open Government Application
 
-[![Build Status](https://travis-ci.org/codegram/consul.svg?branch=master)](https://travis-ci.org/codegram/consul)
-[![Code Climate](https://codeclimate.com/github/codegram/consul/badges/gpa.svg)](https://codeclimate.com/github/codegram/consul)
-[![Dependency Status](https://gemnasium.com/codegram/consul.svg)](https://gemnasium.com/codegram/consul)
-[![Coverage Status](https://coveralls.io/repos/codegram/consul/badge.svg?branch=master&service=github)](https://coveralls.io/github/codegram/consul?branch=master)
+[![Build Status](https://travis-ci.org/codegram/barcelona-participa.svg?branch=master)](https://travis-ci.org/consul/consul)
+[![Code Climate](https://codeclimate.com/github/codegram/barcelona-participa/badges/gpa.svg)](https://codeclimate.com/github/codegram/barcelona-participa)
+[![Dependency Status](https://gemnasium.com/codegram/barcelona-participa.svg)](https://gemnasium.com/codegram/barcelona-participa)
+[![Coverage Status](https://coveralls.io/repos/codegram/barcelona-participa/badge.svg?branch=master&service=github)](https://coveralls.io/github/codegram/barcelona-participa?branch=master)
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
 This is the opensource code repository of the eParticipation website originally developed for the Madrid City government eParticipation website
