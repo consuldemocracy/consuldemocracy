@@ -5,7 +5,7 @@ es:
       user_not_found: "No se encontró el usuario"
   layouts:
     header:
-      logo: "Madrid"
+      logo: "Barcelona"
       external_link_transparency: "Transparencia"
       external_link_transparency_url: "https://transparencia.madrid.es"
       external_link_opendata: "Datos abiertos"
@@ -14,7 +14,7 @@ es:
       external_link_blog_url: "/blog"
       open_gov: "Gobierno %{open}"
       open: "abierto"
-      participation_html: "Madrid Decide"
+      participation_html: "Barcelona Participa"
       open_data: "Datos abiertos"
       open_city_title: "La ciudad que quieres será la ciudad que quieras."
       open_city_slogan_html:

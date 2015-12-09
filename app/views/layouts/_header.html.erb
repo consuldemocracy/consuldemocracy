@@ -33,8 +33,7 @@
       <ul class="title-area">
         <li class="toggle-topbar menu-icon"><a href="#"><span><%= t("application.menu")%></span></a></li>
         <li class="name">
-          <%= link_to root_path do %>
-            <%= image_tag('header_logo_madrid.png', class: 'show-for-medium-up left', size: '80x80', alt: t("layouts.header.logo")) %>
+          <%= link_to root_path, id: 'application-title' do %>
             <% if opendata_page? %>
               <%= t("layouts.header.open_gov", open: "#{t('layouts.header.open')}") %> <span>|</span>
               <span class="logo-site"><%= t("layouts.header.open_data") %></span>
