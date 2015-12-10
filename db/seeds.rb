@@ -31,3 +31,13 @@ Setting["votes_for_proposal_success"] = 53726
 # Users with this email domain will automatically be marked as level 1 officials
 # Emails under the domain's subdomains will also be included
 Setting["email_domain_for_officials"] = ''
+
+
+# Social settings
+Setting["twitter_handle"] = nil
+Setting["facebook_handle"] = nil
+Setting["youtube_handle"] = nil
+Setting["blog_url"] = nil
+
+# Public-facing URL of the app.
+Setting["url"] = "http://example.com"
