@@ -79,7 +79,6 @@ en:
   debates:
     index:
       title: "Debates"
-      featured_debates_html: "Featured<br>debates"
       start_debate: "Start a debate"
       select_order: "Order by"
       select_order_long: "You are viewing debates according to:"
