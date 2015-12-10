@@ -7,13 +7,17 @@
     <%= image_tag "processes_ordinance.jpg" %>
     <h2><%= t("pages.processes.index.process_1_title") %></h2>
     <p><%= t("pages.processes.index.process_1_description") %></p>
-    <%= link_to t("pages.processes.index.process_1_button"), "/processes_ordinance", class: "button radius" %>
+    <div class="small-12 medium-8 large-6">
+      <%= link_to t("pages.processes.index.process_1_button"), "/processes_ordinance", class: "button radius expand" %>
+    </div>
   </div>
 
   <div class="small-12 medium-6 column">
     <%= image_tag "processes_plaza_espana.jpg" %>
     <h2><%= t("pages.processes.index.process_2_title") %></h2>
     <p><%= t("pages.processes.index.process_2_description") %></p>
-    <%= link_to t("pages.processes.index.process_2_button"), "#", class: "button radius secondary" %>
+    <div class="small-12 medium-8 large-6">
+      <%= link_to t("pages.processes.index.process_2_button"), "#", class: "button radius secondary expand" %>
+    </div>
   </div>
 </div>
