@@ -321,6 +321,10 @@ a {
   margin-bottom: $line-height;
 }
 
+.absolute {
+  position: absolute;
+}
+
 .back, .icon-angle-left {
   @include back;
 
@@ -367,6 +371,14 @@ a {
 
 .text-medium {
   font-size: rem-calc(16) !important;
+}
+
+.process {
+  min-height: $line-height*12;
+
+  p {
+    margin: 1em 0;
+  }
 }
 
 // 04. Header
@@ -651,6 +663,18 @@ header {
       height: rem-calc(96);
       line-height: $line-height*4;
     }
+  }
+}
+
+.jumbo {
+  background: $highlight;
+
+  @media (min-width: $small-breakpoint) {
+    padding: rem-calc(24) 0;
+  }
+
+  h1, p {
+    color: $highlight-color;
   }
 }
 
