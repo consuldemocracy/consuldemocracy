@@ -1,3 +1,4 @@
+# coding: utf-8
 require 'rails_helper'
 
 feature 'Proposals' do
@@ -342,7 +343,7 @@ feature 'Proposals' do
 
   scenario 'Update should not be posible if proposal is not editable' do
     proposal = create(:proposal)
-    Setting.find_by(key: "max_votes_for_proposal_edit").update(value: 10)
+    Setting.override("max_votes_for_proposal_edit", 10)
     11.times { create(:vote, votable: proposal) }
 
     expect(proposal).to_not be_editable
