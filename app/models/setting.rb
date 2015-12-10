@@ -3,7 +3,16 @@ class Setting < ActiveRecord::Base
 
   default_scope { order(id: :asc) }
 
-  def self.value_for(key)
-    where(key: key).pluck(:value).first
+  class << self
+    def [](key)
+      where(key: key).pluck(:value).first
+    end
+
+    def []=(key, value)
+      setting = where(key: key).first || new(key: key)
+      setting.value = value
+      setting.save!
+      value
+    end
   end
 end
