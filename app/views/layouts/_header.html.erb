@@ -7,21 +7,29 @@
         <%= link_to t("layouts.header.external_link_transparency"), t("layouts.header.external_link_transparency_url") %>&nbsp;|
         <%= link_to t("layouts.header.external_link_opendata"), "/opendata", class: ("selected" if current_page?("/opendata")) %>&nbsp;|&nbsp;
           <div class="social inline-block">
-            <%= link_to "https://twitter.com/abriendomadrid", target: "_blank", title: t("social.twitter") do %>
-              <span class="sr-only"><%= t("social.twitter") %></span>
-              <i class="icon-twitter"></i>
+            <% if setting('twitter_handle') %>
+              <%= link_to "https://twitter.com/#{setting('twitter_handle')}", target: "_blank", title: t("social.twitter") do %>
+                <span class="sr-only"><%= t("social.twitter") %></span>
+                <i class="icon-twitter"></i>
+              <% end %>
             <% end %>
-            <%= link_to "https://www.facebook.com/Abriendo-Madrid-1475577616080350/", target: "_blank", title: t("social.facebook") do %>
-              <span class="sr-only"><%= t("social.facebook") %></span>
-              <i class="icon-facebook"></i>
+            <% if setting('facebook_handle') %>
+              <%= link_to "https://www.facebook.com/#{setting 'facebook_handle'}/", target: "_blank", title: t("social.facebook") do %>
+                <span class="sr-only"><%= t("social.facebook") %></span>
+                <i class="icon-facebook"></i>
+              <% end %>
             <% end %>
-            <%= link_to "/blog", target: "_blank", title: t("social.blog") do %>
-              <span class="sr-only"><%= t("social.blog") %></span>
-              <i class="icon-blog"></i>
+            <%  if setting('blog_url') %>
+              <%= link_to "/blog", target: "_blank", title: t("social.blog") do %>
+                <span class="sr-only"><%= t("social.blog") %></span>
+                <i class="icon-blog"></i>
+              <% end %>
             <% end %>
-            <%= link_to "https://www.youtube.com/channel/UCFmaChI9quIY7lwHplnacfg", target: "_blank", title: t("social.youtube") do %>
-              <span class="sr-only"><%= t("social.youtube") %></span>
-              <i class="icon-youtube"></i>
+            <% if setting('youtube_handle') %>
+              <%= link_to "https://www.youtube.com/#{setting 'youtube_handle'}", target: "_blank", title: t("social.youtube") do %>
+                <span class="sr-only"><%= t("social.youtube") %></span>
+                <i class="icon-youtube"></i>
+              <% end %>
             <% end %>
           </div>
       </div>
@@ -58,9 +66,11 @@
       <%= link_to t("layouts.header.debates"), debates_path, class: ("active" if current_page?(controller: "/debates")) %>
       <%= link_to t("layouts.header.proposals"), proposals_path, class: ("active" if current_page?(controller: "/proposals")) %>
       <%= link_to t("layouts.header.more_information"), "/more_information", class: ("active" if current_page?("/more_information"))  %>
-      <%= link_to t("layouts.header.external_link_blog_url"), target: "_blank" do %>
-        <%= t("layouts.header.external_link_blog") %>
-        <i class="icon-external"></i>
+      <% if setting('blog_url') %>
+        <%= link_to setting('blog_url'), target: "_blank" do %>
+          <%= t("layouts.header.external_link_blog") %>
+          <i class="icon-external"></i>
+        <% end %>
       <% end %>
       </div>
       <div class="small-12 medium-4 column right">

@@ -11,7 +11,6 @@ es:
       external_link_opendata: "Datos abiertos"
       external_link_opendata_url: "http://datos.madrid.es"
       external_link_blog: "Blog"
-      external_link_blog_url: "/blog"
       open_gov: "Gobierno %{open}"
       open: "abierto"
       participation_html: "Madrid Decide"

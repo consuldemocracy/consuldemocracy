@@ -26,6 +26,13 @@ defaults: &defaults
   # Emails under the domain's subdomains will also be included
   email_domain_for_officials: ''
 
+  twitter_handle: ~
+  facebook_handle: ~
+  youtube_handle: ~
+  blog_url: ~
+
+  url: "http://example.com"
+
 development:
   <<: *defaults
 
