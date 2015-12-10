@@ -3,7 +3,7 @@
     <div class="row">
       <%= render "shared/locale_switcher" %>
       <div class="external-links">
-        <%= link_to t("layouts.header.participation_html"), root_path, class: ("selected" unless current_page?("/opendata")) %>&nbsp;|
+        <%= link_to setting('brand_name'), root_path, class: ("selected" unless current_page?("/opendata")) %>&nbsp;|
         <%= link_to t("layouts.header.external_link_transparency"), t("layouts.header.external_link_transparency_url") %>&nbsp;|
         <%= link_to t("layouts.header.external_link_opendata"), "/opendata", class: ("selected" if current_page?("/opendata")) %>&nbsp;|&nbsp;
           <div class="social inline-block">
@@ -47,7 +47,7 @@
               <%= t("layouts.header.open_gov", open: "#{t('layouts.header.open')}") %> <span>|</span>
               <span class="logo-site"><%= t("layouts.header.open_data") %></span>
             <% else %>
-               <%= t("layouts.header.participation_html") %>
+               <%= setting 'brand_name' %>
             <% end %>
           <% end %>
         </li>
