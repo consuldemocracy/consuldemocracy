@@ -159,7 +159,7 @@ es:
       debate_link: "Enlace"
     new:
       start_new: "Compartir un enlace"
-      recommendations_title: "Recomendaciones para compartir un enlace"      
+      recommendations_title: "Recomendaciones para compartir un enlace"    
       form:
         submit_button: "Comparte un enlace"
     create:
