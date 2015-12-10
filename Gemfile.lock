@@ -371,6 +371,7 @@ GEM
       nokogiri (>= 1.4.0)
       nori (~> 2.4)
       wasabi (~> 3.4)
+    settingslogic (2.0.9)
     simple_captcha2 (0.3.4)
       rails (>= 4.1)
     simplecov (0.10.0)
@@ -495,6 +496,7 @@ DEPENDENCIES
   rspec-rails (~> 3.3)
   sassc-rails
   savon
+  settingslogic
   simple_captcha2
   social-share-button!
   spring
