@@ -184,7 +184,6 @@ en:
       administration: Administration
       debates: Debates
       external_link_blog: Blog
-      external_link_blog_url: "/blog"
       external_link_opendata: Open data
       external_link_opendata_url: http://datos.madrid.es
       external_link_transparency: Transparency
@@ -204,7 +203,6 @@ en:
       open_city_title: Love the city, and it will become a city you love.
       open_data: Open data
       open_gov: Open government
-      participation_html: Madrid Decide
       proposals: Proposals
       see_all: See proposals
       spending_proposals: Spending proposals

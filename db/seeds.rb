@@ -33,4 +33,19 @@ Setting["votes_for_proposal_success"] = 53726
 Setting["email_domain_for_officials"] = ''
 
 # Code to be included at the top (header) of every page (useful for tracking)
-Setting['per_page_code', value: '']
+Setting['per_page_code'] =  ''
+
+# Social settings
+Setting["twitter_handle"] = nil
+Setting["facebook_handle"] = nil
+Setting["youtube_handle"] = nil
+Setting["blog_url"] = nil
+
+# Public-facing URL of the app.
+Setting["url"] = "http://example.com"
+
+# Consul installation's organization name
+Setting["org_name"] = "Consul"
+
+# Consul installation place name (City, Country...)
+Setting["place_name"] = "Consul-land"
