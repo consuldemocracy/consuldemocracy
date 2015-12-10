@@ -56,6 +56,8 @@ gem 'pg_search'
 gem 'ahoy_matey', '~> 1.2.1'
 gem 'groupdate'   # group temporary data
 
+gem "settingslogic"
+
 gem 'browser'
 gem 'turnout'
 gem 'redcarpet'
