@@ -79,7 +79,7 @@ class Proposal < ActiveRecord::Base
   end
 
   def editable?
-    total_votes <= Setting.value_for("max_votes_for_proposal_edit").to_i
+    total_votes <= Setting["max_votes_for_proposal_edit"].to_i
   end
 
   def editable_by?(user)
@@ -97,7 +97,7 @@ class Proposal < ActiveRecord::Base
   end
 
   def code
-    "#{Setting.value_for("proposal_code_prefix")}-#{created_at.strftime('%Y-%m')}-#{id}"
+    "#{Setting["proposal_code_prefix"]}-#{created_at.strftime('%Y-%m')}-#{id}"
   end
 
   def after_commented
@@ -128,7 +128,7 @@ class Proposal < ActiveRecord::Base
   end
 
   def self.votes_needed_for_success
-    Setting.value_for('votes_for_proposal_success').to_i
+    Setting['votes_for_proposal_success'].to_i
   end
 
   protected
