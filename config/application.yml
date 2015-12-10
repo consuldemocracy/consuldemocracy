@@ -1,9 +1,9 @@
 defaults: &defaults
   # Brand name of the website.
-  brand_name: "Consul"
+  brand_name: "Barcelona Participa"
 
   # City or organization.
-  place_name: "Consul"
+  place_name: "Barcelona"
 
   # Names for the moderation console, as a hint for moderators
   # to know better how to assign users with official positions
