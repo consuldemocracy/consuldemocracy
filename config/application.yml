@@ -1,4 +1,10 @@
 defaults: &defaults
+  # Brand name of the website.
+  brand_name: "Consul"
+
+  # City or organization.
+  place_name: "Consul"
+
   # Names for the moderation console, as a hint for moderators
   # to know better how to assign users with official positions
   official_level_1_name: "Empleados públicos"
@@ -25,6 +31,13 @@ defaults: &defaults
   # Users with this email domain will automatically be marked as level 1 officials
   # Emails under the domain's subdomains will also be included
   email_domain_for_officials: ''
+
+  twitter_handle: ~
+  facebook_handle: ~
+  youtube_handle: ~
+  blog_url: ~
+
+  url: "http://example.com"
 
 development:
   <<: *defaults
