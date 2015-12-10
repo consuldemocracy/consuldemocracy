@@ -41,3 +41,9 @@ Setting["blog_url"] = nil
 
 # Public-facing URL of the app.
 Setting["url"] = "http://example.com"
+
+# Consul installation's brand name
+Setting["brand_name"] = "Consul"
+
+# Consul installation place name (City, Country...)
+Setting["place_name"] = "Consul-land"
