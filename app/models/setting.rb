@@ -15,36 +15,17 @@ class Setting < ActiveRecord::Base
       where(key: key).pluck(:value).first || StaticSetting[key]
     end
 
-    # Public: Overrides the YAML setting or any previously overriden setting
-    # given a key and value.
+    # Sets a setting value given a key.
     #
     # key   - The setting's key to override.
     # value - The setting's value.
     #
     # Returns the setting's Value.
-    def override(key, value)
-      (where(key: key).first || create(key: key)).update(value: value)
+    def []=(key, value)
+      setting = where(key: key).first || new(key: key)
+      setting.value = value
+      setting.save!
       value
-    end
-
-    # Public: Deletes a previously overriden setting.
-    #
-    # key - The setting key to un-override.
-    #
-    # Returns the setting's key.
-    def delete_override(key)
-      where(key: key).first.try(:destroy)
-      key
-    end
-
-    # Deprecated: Returns a setting's value given a key. Using [] is
-    # recommended.
-    #
-    # key - The setting's key.
-    #
-    # Returns the Value of the setting.
-    def value_for(key)
-      self[key]
     end
   end
 

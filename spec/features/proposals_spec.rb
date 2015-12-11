@@ -343,7 +343,7 @@ feature 'Proposals' do
 
   scenario 'Update should not be posible if proposal is not editable' do
     proposal = create(:proposal)
-    Setting.override("max_votes_for_proposal_edit", 10)
+    Setting["max_votes_for_proposal_edit"] = 10
     11.times { create(:vote, votable: proposal) }
 
     expect(proposal).to_not be_editable
