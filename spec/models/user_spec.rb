@@ -244,7 +244,7 @@ describe User do
     it "checks if the mail address has the officials domain" do
       # We will use empleados.madrid.es as the officials' domain
       # Subdomains are also accepted
-      Setting.find_by(key: 'email_domain_for_officials').update(value: 'officials.madrid.es')
+      Setting['email_domain_for_officials'] = 'officials.madrid.es'
       
       user1 = create(:user, email: "john@officials.madrid.es", confirmed_at: Time.now)
       user2 = create(:user, email: "john@yes.officials.madrid.es", confirmed_at: Time.now)
