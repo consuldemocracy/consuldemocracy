@@ -304,7 +304,7 @@ feature 'Votes' do
     user = create(:user)
     debate = create(:debate)
 
-    Setting.override("max_ratio_anon_votes_on_debates", 50)
+    Setting["max_ratio_anon_votes_on_debates"] = 50
     debate.update(cached_anonymous_votes_total: 520, cached_votes_total: 1000)
 
     login_as(user)

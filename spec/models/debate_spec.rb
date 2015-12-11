@@ -83,7 +83,7 @@ describe Debate do
 
   describe "#editable?" do
     let(:debate) { create(:debate) }
-    before(:each) { Setting.override("max_votes_for_debate_edit", 3) }
+    before(:each) { Setting["max_votes_for_debate_edit"] = 3 }
 
     it "should be true if debate has no votes yet" do
       expect(debate.total_votes).to eq(0)
@@ -105,7 +105,7 @@ describe Debate do
 
   describe "#editable_by?" do
     let(:debate) { create(:debate) }
-    before(:each) { Setting.override("max_votes_for_debate_edit", 1) }
+    before(:each) { Setting["max_votes_for_debate_edit"] = 1 }
 
     it "should be true if user is the author and debate is editable" do
       expect(debate.editable_by?(debate.author)).to be true
@@ -125,7 +125,7 @@ describe Debate do
     let(:debate) { create(:debate) }
 
     before(:each) do
-      Setting.override("max_ratio_anon_votes_on_debates", 50)
+      Setting["max_ratio_anon_votes_on_debates"] = 50
     end
 
     it "should be true for level two verified users" do
@@ -161,7 +161,7 @@ describe Debate do
     let(:debate) { create(:debate) }
 
     before(:each) do
-      Setting.override("max_ratio_anon_votes_on_debates", 50)
+      Setting["max_ratio_anon_votes_on_debates"] = 50
     end
 
     describe "from level two verified users" do
