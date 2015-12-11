@@ -6,7 +6,11 @@
             social_description: @proposal.summary %>
 <% end %>
 <% cache [locale_and_user_status(@proposal), @proposal, @proposal.author, Flag.flagged?(current_user, @proposal), @proposal_votes] do %>
-  <section class="proposal-show">
+  <% if current_user %>
+    <section class="proposal-show annotate" data-id=<%= @proposal.id %> data-user-id=<%= current_user.id %>>
+  <% else %>
+    <section class="proposal-show">
+  <% end %>
     <div id="<%= dom_id(@proposal) %>" class="row">
       <div class="small-12 medium-9 column">
         <i class="icon-angle-left left"></i>&nbsp;

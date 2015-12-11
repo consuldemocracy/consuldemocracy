@@ -61,6 +61,12 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :annotations do
+    collection do
+      get :search
+    end
+  end
+
   resources :users, only: [:show]
 
   resource :account, controller: "account", only: [:show, :update, :delete] do
