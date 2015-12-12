@@ -9,8 +9,7 @@
     <nav class="top-bar" data-topbar>
       <ul class="title-area">
         <li class="name">
-          <%= link_to root_path do %>
-            <%= image_tag('header_logo_madrid.png', class: 'left', size: '96x96', alt: t("layouts.header.logo")) %>
+          <%= link_to root_path, id: 'application-title' do %>
             <%= setting('brand_name') %> <span>|</span> <span class="logo-site"><%= t("admin.dashboard.index.title") %></span>
           <% end %>
         </li>
