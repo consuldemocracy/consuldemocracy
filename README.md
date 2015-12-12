@@ -5,7 +5,7 @@
 
 Citizen Participation and Open Government Application
 
-[![Build Status](https://travis-ci.org/codegram/barcelona-participa.svg?branch=master)](https://travis-ci.org/consul/consul)
+[![Build Status](https://travis-ci.org/codegram/barcelona-participa.svg?branch=master)](https://travis-ci.org/codegram/barcelona-participa)
 [![Code Climate](https://codeclimate.com/github/codegram/barcelona-participa/badges/gpa.svg)](https://codeclimate.com/github/codegram/barcelona-participa)
 [![Dependency Status](https://gemnasium.com/codegram/barcelona-participa.svg)](https://gemnasium.com/codegram/barcelona-participa)
 [![Coverage Status](https://coveralls.io/repos/codegram/barcelona-participa/badge.svg?branch=master&service=github)](https://coveralls.io/github/codegram/barcelona-participa?branch=master)
