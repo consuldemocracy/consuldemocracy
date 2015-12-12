@@ -32,12 +32,12 @@ defaults: &defaults
   # Emails under the domain's subdomains will also be included
   email_domain_for_officials: ''
 
-  twitter_handle: ~
+  twitter_handle: "bcn_ajuntament"
   facebook_handle: ~
-  youtube_handle: ~
+  youtube_handle: "bcnajuntament"
   blog_url: ~
 
-  url: "http://example.com"
+  url: "https://barcelona-participa.herokuapp.com"
 
 development:
   <<: *defaults
