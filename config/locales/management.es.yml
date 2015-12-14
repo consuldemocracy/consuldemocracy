@@ -44,7 +44,6 @@ es:
       not_in_census: "Este documento no está registrado en el Padrón Municipal de Barcelona."
       under_age: "Debes ser mayor de 16 años para verificar tu cuenta."
       not_in_census_info: "Las personas no empadronadas en Barcelona pueden participar con las siguientes posibilidades:"
-      has_no_account_html: "Para crear un usuario entre en %{link} y haga clic en la opción <b>'Registrarse'</b> en la parte superior derecha de la pantalla."
       verify: "Verificar usuario"
     email_verifications:
       document_found_in_census: "Este documento está en el registro del padrón municipal, pero todavía no tiene una cuenta de usuario asociada."
@@ -67,5 +66,5 @@ es:
         una clave de acceso, y entrar en la web de participación."
     print:
       proposals_title: "Propuestas:"
-      info: "Haz tu propuesta en http://decide.madrid.es"
+      info: "Haz tu propuesta"
       note: "Las propuestas más apoyadas serán llevadas a votación. Y si las acepta una mayoría, el Ayuntamiento las llevará a cabo."

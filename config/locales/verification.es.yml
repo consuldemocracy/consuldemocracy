@@ -27,7 +27,7 @@ es:
         terms: "los términos de acceso"
         verify_residence: "Verificar residencia"
         form_errors: "evitaron verificar tu residencia"
-        error_verifying_census: "El Padrón de Madrid no pudo verificar tu información. Por favor, confirma que tus datos de empadronamiento sean correctos o visita cualquiera de las %{offices}."
+        error_verifying_census: "El Padrón no pudo verificar tu información. Por favor, confirma que tus datos de empadronamiento sean correctos o visita cualquiera de las %{offices}."
         error_verifying_census_offices: "26 Oficinas de Atención al Ciudadano"
         error_not_allowed_age: "Hay que tener al menos 16 años"
         error_not_allowed_postal_code: "Para verificarte debes estar empadronado en el municipio de Barcelona."
@@ -76,14 +76,14 @@ es:
         explanation: "Para participar en las votaciones finales puedes:"
         office: "Verificarte presencialmente en cualquier %{office}"
         offices: "Oficina de Atención al Ciudadano"
-        offices_url: "http://www.madrid.es/portales/munimadrid/es/Inicio/El-Ayuntamiento/Atencion-al-ciudadano/Oficinas-de-Atencion-al-Ciudadano?vgnextfmt=default&vgnextchannel=5b99cde2e09a4310VgnVCM1000000b205a0aRCRD"
+        offices_url: ""
         send_letter: "Solicitar una carta por correo postal"
         go_to_index: "Ver propuestas"
       create:
         flash:
           success_html: "Antes de las votaciones recibirás una carta con las instrucciones para verificar tu cuenta.<br> Recuerda que puedes ahorrar el envío verificándote presencialmente en cualquiera de las %{offices}."
           offices: "Oficinas de Atención al Ciudadano"
-          offices_url: "http://www.madrid.es/portales/munimadrid/es/Inicio/El-Ayuntamiento/Atencion-al-ciudadano/Oficinas-de-Atencion-al-Ciudadano?vgnextfmt=default&vgnextchannel=5b99cde2e09a4310VgnVCM1000000b205a0aRCRD"
+          offices_url: ""
       edit:
         title: "Carta solicitada"
         see_all: "Ver propuestas"

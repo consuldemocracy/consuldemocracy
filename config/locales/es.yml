@@ -5,15 +5,13 @@ es:
       user_not_found: "No se encontró el usuario"
   layouts:
     header:
-      logo: "Barcelona"
       external_link_blog: "Blog"
       open_gov: "Gobierno %{open}"
       open: "abierto"
       open_data: "Datos abiertos"
       open_city_title: "La ciudad que quieres será la ciudad que quieras."
       open_city_slogan_html:
-        "Existen ciudades gobernadas directamente por sus habitantes, que <b>debaten</b> sobre temas que les preocupan, <b>proponen</b> ideas para mejorar
-        sus vidas y <b>deciden</b> entre todas y todos las que se llevan a cabo. Barcelona ya es una de ellas."
+        "Existen ciudades gobernadas directamente por sus habitantes, que <b>debaten</b> sobre temas que les preocupan, <b>proponen</b> ideas para mejorar sus vidas y <b>deciden</b> entre todas y todos las que se llevan a cabo. Barcelona ya es una de ellas."
       see_all: "Ver propuestas"
       my_activity_link: "Mi actividad"
       my_account_link: "Mi cuenta"

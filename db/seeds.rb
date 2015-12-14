@@ -13,12 +13,12 @@ if ENV["SEED"]
   end
 
   puts "Creating users"
-  moderator = create_user('mod@madrid.es', 'mod')
+  moderator = create_user('mod@bcn.cat', 'mod')
   moderator.create_moderator
 
   (1..10).each do |i|
     org_name = Faker::Company.name
-    org_user = create_user("org#{i}@madrid.es", org_name)
+    org_user = create_user("org#{i}@bcn.cat", org_name)
     org_responsible_name = Faker::Name.name
     org = org_user.create_organization(name: org_name, responsible_name: org_responsible_name)
 
@@ -31,12 +31,12 @@ if ENV["SEED"]
   end
 
   (1..5).each do |i|
-    official = create_user("official#{i}@madrid.es")
+    official = create_user("official#{i}@bcn.cat")
     official.update(official_level: i, official_position: "Official position #{i}")
   end
 
   (1..40).each do |i|
-    user = create_user("user#{i}@madrid.es")
+    user = create_user("user#{i}@bcn.cat")
     level = [1,2,3].sample
     if level >= 2 then
       user.update(residence_verified_at: Time.now, confirmed_phone: Faker::PhoneNumber.phone_number, document_number: Faker::Number.number(10), document_type: "1" )

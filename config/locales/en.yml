@@ -5,7 +5,6 @@ en:
       user_not_found: "User not found"
   layouts:
     header:
-      logo: "Barcelona"
       external_link_blog: "Blog"
       open_gov: "Open government"
       open: "open"
