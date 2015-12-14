@@ -781,14 +781,11 @@ footer {
 .footer {
   background: #DEE0E2;
   border-top: rem-calc(6) solid $brand;
-  padding-top: $line-height;
 }
 
 .subfooter {
-  border-top: 1px solid #BFC1C3;
   opacity: .75;
   margin-top: rem-calc(24);
-  padding-top: rem-calc(12);
 }
 
 // 06. Tags

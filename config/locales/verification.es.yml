@@ -22,15 +22,15 @@ es:
         document_number: "Número de documento"
         date_of_birth: "Fecha de nacimiento"
         postal_code: "Código postal"
-        postal_code_note: "Para verificar tus datos debes estar empadronado en el municipio de Madrid"
+        postal_code_note: "Para verificar tus datos debes estar empadronado en el municipio de Barcelona."
         accept_terms_text: "Acepto %{terms_url} al Padrón"
         terms: "los términos de acceso"
         verify_residence: "Verificar residencia"
         form_errors: "evitaron verificar tu residencia"
-        error_verifying_census: "El Padrón de Madrid no pudo verificar tu información. Por favor, confirma que tus datos de empadronamiento sean correctos llamando al 010 (o a su versión gratuita 915298210) o visita cualquiera de las %{offices}."
+        error_verifying_census: "El Padrón de Madrid no pudo verificar tu información. Por favor, confirma que tus datos de empadronamiento sean correctos o visita cualquiera de las %{offices}."
         error_verifying_census_offices: "26 Oficinas de Atención al Ciudadano"
         error_not_allowed_age: "Hay que tener al menos 16 años"
-        error_not_allowed_postal_code: "Para verificarte debes estar empadronado en el municipio de Madrid."
+        error_not_allowed_postal_code: "Para verificarte debes estar empadronado en el municipio de Barcelona."
       create:
         flash:
           success: "Residencia verificada"

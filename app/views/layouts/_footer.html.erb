@@ -1,46 +1,5 @@
 <footer>
 	<div class="row-full">
-		<div class="row">
-
-      <div class="small-12 large-4 column">
-        <h3 class="logo">
-          <%= link_to t("layouts.header.open_gov", open: "#{t('layouts.header.open')}").html_safe %>
-        </h3>
-
-        <p>
-          <%= t("layouts.footer.description",
-            open_source: link_to(t("layouts.footer.open_source"), t("layouts.footer.open_source_url"), target: "blank"),
-            consul:  link_to(t("layouts.footer.consul"), t("layouts.footer.consul_url"), target: "blank")).html_safe
-          %>
-          <%= t("layouts.footer.contact_us") %>
-          <%= link_to t("layouts.footer.faq"), page_path('faq') %>
-        </p>
-      </div>
-
-      <div class="footer-sections small-12 large-8 column">
-        <div class="small-12 medium-4 column">
-          <h4>
-            <%= link_to t("layouts.footer.participation_title"), root_path %>
-          </h4>
-          <p><%= t("layouts.footer.participation_text") %></p>
-        </div>
-
-        <div class="small-12 medium-4 column">
-          <h4>
-            <%= link_to t("layouts.footer.transparency_title"), t("layouts.footer.transparency_url") %>
-          </h4>
-          <p><%= t("layouts.footer.transparency_text") %></p>
-        </div>
-
-        <div class="small-12 medium-4 column">
-          <h4>
-            <%= link_to t("layouts.footer.open_data_title"), "/opendata" %>
-          </h4>
-          <p><%= t("layouts.footer.open_data_text") %></p>
-        </div>
-      </div>
-    </div>
-
     <div class="subfooter row">
       <div class="small-12 medium-9 column">
         <p>

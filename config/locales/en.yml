@@ -5,7 +5,7 @@ en:
       user_not_found: "User not found"
   layouts:
     header:
-      logo: "Madrid"
+      logo: "Barcelona"
       external_link_blog: "Blog"
       open_gov: "Open government"
       open: "open"
@@ -13,7 +13,7 @@ en:
       open_city_title: "Love the city, and it will become a city you love."
       open_city_slogan_html:
         "There are cities that are governed directly by their inhabitants, who <b>discuss</b> the topics they are concerned about, <b>propose</b> ideas to improve
-        their lives and <b>decide</b> among themselves which ones will be carried out. Madrid is already one of these cities."
+        their lives and <b>decide</b> among themselves which ones will be carried out. Barcelona is already one of these cities."
       see_all: "See proposals"
       my_activity_link: "My activity"
       my_account_link: "My account"
@@ -24,20 +24,6 @@ en:
       debates: "Debates"
       proposals: "Proposals"
     footer:
-      description: "This portal uses the %{consul} which is %{open_source}. From Madrid out into the world."
-      open_source: "open-source software"
-      open_source_url: "http://www.gnu.org/licenses/agpl-3.0.html"
-      consul: "Consul application"
-      consul_url: "https://github.com/consul/consul"
-      participation_title: "Participation"
-      participation_text: "Decide how to shape the Madrid you want to live in."
-      transparency_title: "Transparency"
-      transparency_url: "https://transparencia.madrid.es"
-      transparency_text: "Find out anything about the Madrid City Council."
-      open_data_title: "Open data"
-      open_data_text: "Every detail about the City Council is yours to access."
-      contact_us: "For technical assistance enters"
-      faq: "technical assistance"
       privacy: "Privacy Policy"
       conditions: "Terms and conditions of use"
       more_info: "More information"
@@ -300,7 +286,7 @@ en:
       user_permission_support_proposal: "Support proposals"
       user_permission_votes: "Participate on final voting"
       user_permission_verify: "To perform all the actions verify your account."
-      user_permission_verify_info: "* Only for users on Madrid City Census."
+      user_permission_verify_info: "* Only for users on the Barcelona City Census."
   simple_captcha:
     placeholder: "Enter the text from the image"
     label: "Enter the text from the image in the box below"
@@ -368,7 +354,7 @@ en:
       user_permission_votes: "Participate on final voting"
       user_permission_verify: "To perform all the actions %{verify}."
       user_permission_verify_url: "verify your account"
-      user_permission_verify_info: "* Only for users on Madrid Census."
+      user_permission_verify_info: "* Only for users on the Barcelona City Census."
   omniauth:
     finish_signup:
       title: "Add your email address"

@@ -14,7 +14,7 @@ en:
         submit: "Confirm"
     mailer:
       confirmation_instructions:
-        title: "Welcome to the Open Government Portal of the Madrid City Council"
+        title: "Welcome to the Open Government Portal of the Barcelona City Council"
         welcome: "Welcome"
         text: "You can confirm your email account at the following link:"
         confirm_link: "Confirm my account"

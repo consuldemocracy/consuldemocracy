@@ -14,7 +14,7 @@ es:
         submit: "Confirmar"
     mailer:
       confirmation_instructions:
-        title: "Te damos la bienvenida al Portal de Gobierno Abierto del Ayuntamiento de Madrid"
+        title: "Te damos la bienvenida al Portal de Gobierno Abierto del Ayuntamiento de Barcelona"
         welcome: "Bienvenido/a"
         text: "Puedes confirmar tu cuenta de correo electrónico en el siguiente enlace:"
         confirm_link: "Confirmar mi cuenta"
