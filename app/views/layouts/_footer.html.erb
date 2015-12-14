@@ -13,7 +13,7 @@
             consul:  link_to(t("layouts.footer.consul"), t("layouts.footer.consul_url"), target: "blank")).html_safe
           %>
           <%= t("layouts.footer.contact_us") %>
-          <%= link_to t("layouts.footer.faq"), faq_path %>
+          <%= link_to t("layouts.footer.faq"), page_path('faq') %>
         </p>
       </div>
 
@@ -45,10 +45,10 @@
       <div class="small-12 medium-9 column">
         <p>
           <%= t("layouts.footer.copyright", year: Time.now.year) %>&nbsp;|&nbsp;
-          <%= link_to t("layouts.footer.more_info"), "/more_information" %>&nbsp;|&nbsp;
-          <%= link_to t("layouts.footer.privacy"), "/privacy" %>&nbsp;|&nbsp;
-          <%= link_to t("layouts.footer.conditions"), "/conditions" %>&nbsp;|&nbsp;
-          <%= link_to t("layouts.footer.accessibility"), "/accessibility" %>
+          <%= link_to t("layouts.footer.more_info"), page_path('/more_information') %>&nbsp;|&nbsp;
+          <%= link_to t("layouts.footer.privacy"), page_path('privacy') %>&nbsp;|&nbsp;
+          <%= link_to t("layouts.footer.conditions"), page_path('conditions') %>&nbsp;|&nbsp;
+          <%= link_to t("layouts.footer.accessibility"), page_path('/accessibility') %>
         </p>
       </div>
 
