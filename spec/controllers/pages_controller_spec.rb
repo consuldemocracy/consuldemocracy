@@ -32,11 +32,6 @@ describe PagesController do
   end
 
   describe 'Info pages' do
-    it 'should include a coming_soon page' do
-      get :show, id: :coming_soon
-      expect(response).to be_ok
-    end
-
     it 'should include a how_it_works page' do
       get :show, id: :how_it_works
       expect(response).to be_ok
