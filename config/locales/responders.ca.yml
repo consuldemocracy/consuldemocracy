@@ -1,0 +1,10 @@
+---
+ca:
+  flash:
+    actions:
+      create:
+        notice: "%{resource_name} creat correctament."
+      save_changes:
+        notice: Canvis guardats
+      update:
+        notice: "%{resource_name} actualitzat correctament."

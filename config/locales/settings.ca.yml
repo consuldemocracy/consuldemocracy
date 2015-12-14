@@ -1,0 +1,14 @@
+---
+ca:
+  settings:
+    email_domain_for_officials: Domini de correu electrònic per a càrrecs públics
+    max_ratio_anon_votes_on_debates: Percentatge màxim de vots anònims per Debate
+    max_votes_for_debate_edit: Nombre de vots en què un Debat deixa de poder-se editar
+    max_votes_for_proposal_edit: Nombre de vots en què una Proposta deixa de poder-se editar
+    official_level_1_name: Càrrecs públics de nivell 1
+    official_level_2_name: Càrrecs públics de nivell 2
+    official_level_3_name: Càrrecs públics de nivell 3
+    official_level_4_name: Càrrecs públics de nivell 4
+    official_level_5_name: Càrrecs públics de nivell 5
+    proposal_code_prefix: Prefix per als codis de Propostes
+    votes_for_proposal_success: Nombre de vots necessaris per aprovar una Proposta

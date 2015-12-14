@@ -1,0 +1,16 @@
+<% provide :title do %><%= t('pages.titles.more_information') %><% end %>
+<div class="page row-full">
+  <div class="row">
+    <div class="more-information text small-12 medium-8 column">
+      <h1>Més informació</h1>
+      <ul>
+        <li>
+          <%= link_to page_path('faq') do %>
+            Preguntes freqüents
+            <span>Preguntes freqüents</span>
+          <% end %>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

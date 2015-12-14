@@ -1,0 +1,68 @@
+---
+ca:
+  management:
+    account_info:
+      change_user: Canviar usuari
+      document_number_label: 'Nombre de document:'
+      document_type_label: 'Tipus de document:'
+      email_label: 'E-mail:'
+      identified_label: 'Identificat com:'
+      username_label: 'Usuari:'
+    check: Comprovar
+    dashboard:
+      index:
+        title: Gestió
+    document_number: Nombre de document
+    document_type_label: Tipus de document
+    document_verifications:
+      already_verified: Aquest compte d'usuari ja està verificada.
+      in_census_has_following_permissions: 'Aquest usuari pot participar al Portal de Govern Obert de l''Ajuntament de Barcelona amb les següents possibilitats:'
+      not_in_census: Aquest document no està registrat en el Padró Municipal de Barcelona.
+      not_in_census_info: 'Les persones no empadronades a Barcelona poden participar amb les següents possibilitats:'
+      please_check_account_data: Comprovi que les dades anteriors són correctes per procedir a verificar el compte completament.
+      title: Gestió d'usuaris
+      under_age: Has de ser major de 16 anys per verificar el vostre compte.
+      verify: Verificar usuari
+    email_label: Email
+    email_verifications:
+      already_verified: Aquest compte d'usuari ja està verificada.
+      choose_options: 'Tria una de les opcions següents:'
+      document_found_in_census: Aquest document està en el registre del padró municipal, però encara no té un compte d'usuari associat.
+      document_mismatch: Aquest email correspon a un usuari que ja té associat el document %{document_number} (%{document_type})
+      email_placeholder: Introdueix l'email de registre
+      email_sent_instructions: Per acabar d'verificar aquest compte cal que feu clic a l'enllaç que li hem enviat a l'adreça de correu que figura a dalt. Aquest pas és necessari per confirmar que aquest compte d'usuari és seva.
+      if_existing_account: Si la persona ja ha creat un compte d'usuari a la web
+      if_no_existing_account: Si la persona encara no ha creat un compte d'usuari a la web
+      introduce_email: 'Introdueix el email amb el que va crear el compte:'
+      send_email: Enviar email de verificació
+    menu:
+      create_proposal: Crear proposta
+      print_proposals: Imprimir propostes
+      support_proposals: Donar suport propostes
+      title: Gestió
+      users: Usuaris
+    permissions:
+      create_proposals: Crear noves propostes
+      debates: Participar en debats
+      support_proposals: Donar suport propostes
+      vote_proposals: Participar en les votacions finals
+    print:
+      info: Fes la teva proposta
+      note: Les propostes més recolzades seran portades a votació. I si les accepta una majoria, l'Ajuntament les durà a terme.
+      proposals_title: 'Propostes:'
+    print_info: Imprimir aquesta informació
+    proposals:
+      alert:
+        unverified_user: Aquest usuari no està verificat
+      create_proposal: Crear proposta
+      print:
+        print_button: Imprimir
+    sessions:
+      signed_out: Has tancat la sessió correctament.
+      signed_out_managed_user: S'ha tancat correctament la sessió de l'usuari.
+    username_label: Nom d'usuari
+    users:
+      create_user: Crea un compte d'usuari
+      create_user_info: 'Procedim a crear un usuari amb la següent informació:'
+      create_user_submit: Crear usuari
+      create_user_success_html: Hem enviat un correu electrònic a <b>%{email}</b> per verificar que és seva. El correu enviat conté un link que l'usuari haurà de prémer. Llavors podreu seleccionar una clau d'accés, i entrar al web de participació.
