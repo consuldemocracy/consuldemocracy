@@ -6,10 +6,6 @@ en:
   layouts:
     header:
       logo: "Madrid"
-      external_link_transparency: "Transparency"
-      external_link_transparency_url: "https://transparencia.madrid.es"
-      external_link_opendata: "Open data"
-      external_link_opendata_url: "http://datos.madrid.es"
       external_link_blog: "Blog"
       open_gov: "Open government"
       open: "open"
@@ -33,7 +29,6 @@ en:
       open_source_url: "http://www.gnu.org/licenses/agpl-3.0.html"
       consul: "Consul application"
       consul_url: "https://github.com/consul/consul"
-      copyright: "Ayuntamiento de Madrid, %{year}"
       participation_title: "Participation"
       participation_text: "Decide how to shape the Madrid you want to live in."
       transparency_title: "Transparency"
