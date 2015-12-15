@@ -11,7 +11,7 @@ feature 'Legislation' do
     expect(page).to have_content 'To achieve this...'
   end
 
-  context 'Annotations', :js, :focus do
+  context 'Annotations', :js do
 
     scenario 'Create' do
       user = create(:user)
@@ -49,7 +49,28 @@ feature 'Legislation' do
       end
     end
 
-    scenario 'Update'
+    scenario 'Update' do
+      user = create(:user)
+      legislation = create(:legislation, title: 'Participatory Democracy', body: "In order to achieve...")
+      annotation = create(:annotation, legislation: legislation, text: "this one" , quote: "In order to achieve...", ranges: [{"start"=>"/div[2]", "startOffset"=>12, "end"=>"/div[2]", "endOffset"=>19}])
+
+      login_as(user)
+      visit legislation_path(legislation)
+
+      page.find(:css, ".annotator-hl").click
+      page.find(:css, ".annotator-edit").click
+
+      fill_in 'annotator-field-0', with: 'editing my annotation'
+      page.find(:css, ".annotator-controls a[href='#save']").click
+
+      page.find(:css, ".annotator-hl").click
+      expect(page).to have_css ".annotator-item", text: 'editing my annotation'
+
+      visit legislation_path(legislation)
+      page.find(:css, ".annotator-hl").click
+      expect(page).to have_css ".annotator-item", text: 'editing my annotation'
+    end
+
     scenario 'Destroy'
   end
 
