@@ -11,10 +11,6 @@ module ApplicationHelper
     request.path == '/opendata'
   end
 
-  def header_css
-    home_page? || opendata_page? ? '' : 'results'
-  end
-
   # if current path is /debates current_path_with_query_params(foo: 'bar') returns /debates?foo=bar
   # notice: if query_params have a param which also exist in current path, it "overrides" (query_params is merged last)
   def current_path_with_query_params(query_parameters)
