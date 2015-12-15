@@ -11,7 +11,7 @@ en:
         title: "Administration"
     menu:
       settings: "General settings"
-      debate_topics: "Debate topics"
+      debate_topics: "Debate topics and prop."
       hidden_proposals: "Hidden proposals"
       hidden_debates: "Hidden debates"
       hidden_comments: "Hidden comments"
@@ -57,11 +57,15 @@ en:
       confirm_hide: "Confirm"
     tags:
       index:
-        title: "Debate topics"
+        title: "Debate and Proposal topics"
         add_tag: "Add a new debate topic"
       mark_as_featured: "Propose topic upon creating debate"
       name:
-        placeholder: "Type the name of the topic"
+        placeholder: "Type the name of the topic"   
+      kind:
+        placeholder: "Type the group of the topic"  
+      context:
+        placeholder: "Type the context of the topic"
       create: "Create Topic"
       update: "Update Topic"
       destroy: "Destroy Topic"

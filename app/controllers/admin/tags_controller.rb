@@ -4,7 +4,7 @@ class Admin::TagsController < Admin::BaseController
   respond_to :html, :js
 
   def index
-    @tags = ActsAsTaggableOn::Tag.order(featured: :desc).page(params[:page])
+    @tags = ActsAsTaggableOn::Tag.order(kind: :asc, featured: :desc, ).page(params[:page])
     @tag  = ActsAsTaggableOn::Tag.new
   end
 
@@ -26,11 +26,10 @@ class Admin::TagsController < Admin::BaseController
   private
 
     def tag_params
-      params.require(:tag).permit(:featured, :name)
+      params.require(:tag).permit(:featured, :name, :kind)
     end
 
     def find_tag
       @tag = ActsAsTaggableOn::Tag.find(params[:id])
     end
-
 end

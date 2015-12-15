@@ -22,12 +22,14 @@ feature 'Admin tags' do
 
     within("form.new_tag") do
       fill_in "tag_name", with: 'important issues'
+#      fill_in "tag_kind", with: 'category'      
       click_button 'Create Topic'
     end
 
     visit admin_tags_path
 
     expect(page).to have_content 'important issues'
+    expect(page).to have_content 'category'
   end
 
   scenario 'Update' do

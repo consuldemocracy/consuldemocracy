@@ -34,6 +34,10 @@ class Debate < ActiveRecord::Base
   scope :sort_by_random,           -> { reorder("RANDOM()") }
   scope :sort_by_relevance,        -> { all }
   scope :sort_by_flags,            -> { order(flags_count: :desc, updated_at: :desc) }
+  scope :today,                    -> { where("created_at >= ?", 24.hours.ago) }
+  scope :last_week,                -> { where("created_at >= ?", 7.days.ago)}
+  scope :last_month,               -> { where("created_at >= ?", 1.month.ago) }
+  scope :always,                   -> { where("created_at < ?", 1.century.ago) }
 
   # Ahoy setup
   visitable # Ahoy will automatically assign visit_id on create

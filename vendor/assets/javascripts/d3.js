@@ -236,6 +236,7 @@
     return d3.zip.apply(d3, matrix);
   };
   d3.keys = function(map) {
+    
     var keys = [];
     for (var key in map) keys.push(key);
     return keys;

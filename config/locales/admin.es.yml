@@ -11,7 +11,7 @@ es:
         title: "Administración"
     menu:
       settings: "Configuración global"
-      debate_topics: "Temas de debate"
+      debate_topics: "Temas de debate y prop." 
       hidden_proposals: "Propuestas ocultas"
       hidden_debates: "Debates ocultos"
       hidden_comments: "Comentarios ocultos"
@@ -57,11 +57,13 @@ es:
       confirm_hide: "Confirmar"
     tags:
       index:
-        title: "Temas de debate"
+        title: "Temas de debate y propuestas"
         add_tag: "Añade un nuevo tema de debate"
-      mark_as_featured: "Proponer tema al crear debate"
+      mark_as_featured: "Proponer tema al crear debate o propuesta"
       name:
-        placeholder: "Escribe el nombre del tema"
+        placeholder: "Escribe el nombre del tema"      
+      kind:
+        placeholder: "Escribe el grupo del tema"
       create: "Crear Tema"
       update: "Actualizar Tema"
       destroy: "Eliminar Tema"

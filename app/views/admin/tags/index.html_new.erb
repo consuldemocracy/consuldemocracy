@@ -1,4 +1,8 @@
 <h2><%= t("admin.tags.index.add_tag") %></h2>
+
+
+
+
 <%= form_for(@tag, url: admin_tags_path, as: :tag) do |f| %>
   <div class="row">
     <div class="small-12 medium-6 column">
@@ -16,8 +20,15 @@
       <% end %>
     </div>
   </div>
+
   <%= f.submit(t("admin.tags.create"), class: "button radius success") %>
+
 <% end %>
+
+
+
+
+
 <h3><%= t("admin.tags.index.title") %>: <%= page_entries_info @tags %></h3>
 
 <ul class="admin-list">

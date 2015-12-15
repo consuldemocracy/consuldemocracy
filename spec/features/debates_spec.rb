@@ -199,7 +199,7 @@ feature 'Debates' do
     end
 
     scenario 'using featured tags', :js do
-      ['Medio Ambiente', 'Ciencia'].each do |tag_name|
+      ['Deportes', 'Cultura'].each do |tag_name|
         create(:tag, :featured, name: tag_name)
       end
 
@@ -210,14 +210,14 @@ feature 'Debates' do
       fill_in 'debate_captcha', with: correct_captcha_text
       check 'debate_terms_of_service'
 
-      ['Medio Ambiente', 'Ciencia'].each do |tag_name|
+      ['Deportes', 'Cultura'].each do |tag_name|
         find('.js-add-tag-link', text: tag_name).click
       end
 
       click_button 'Start a debate'
 
       expect(page).to have_content 'Debate created successfully.'
-      ['Medio Ambiente', 'Ciencia'].each do |tag_name|
+      ['Deportes', 'Cultura'].each do |tag_name|
         expect(page).to have_content tag_name
       end
     end
