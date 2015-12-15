@@ -23,7 +23,8 @@
   "addons": [
     "heroku-postgresql",
     "heroku-redis",
-    "rollbar:free"
+    "rollbar:free",
+    "sendgrid:starter"
   ],
   "formation": [
     { "process": "web",    "quantity": 1},
