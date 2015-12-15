@@ -61,6 +61,8 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :legislations, only: [:show]
+
   resources :annotations do
     collection do
       get :search
