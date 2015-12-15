@@ -26,17 +26,13 @@ feature 'Legislation' do
       page.find(:css, ".annotator-controls a[href='#save']").click
 
       within ".annotate" do
-        expect(page).to have_css ".annotator-hl"
-      end
-
-      annotation = Annotation.last
-      within ".annotate" do
-        expect(page).to have_css ".annotator-hl[data-annotation-id='#{annotation.id}']"
+        expect(page).to have_css ".annotator-hl[data-annotation-id]"
       end
 
       visit legislation_path(legislation)
+
       within ".annotate" do
-        expect(page).to have_css ".annotator-hl[data-annotation-id='#{annotation.id}']"
+        expect(page).to have_css ".annotator-hl[data-annotation-id]"
       end
     end
 
