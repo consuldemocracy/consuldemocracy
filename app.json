@@ -14,6 +14,10 @@
     "SECRET_KEY_BASE": {
       "description": "A secret key for verifying the integrity of signed cookies.",
       "generator": "secret"
+    },
+    "SEED": {
+      "description": "Yes if wanting to seed test data",
+      "value": "yes"
     }
   },
   "addons": [
