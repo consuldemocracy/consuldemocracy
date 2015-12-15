@@ -13,11 +13,11 @@ feature 'Legislation' do
 
   context 'Annotations', :js do
 
+    background { login_as(create :user) }
+
     scenario 'Create' do
-      user = create(:user)
       legislation = create(:legislation, title: 'Participatory Democracy', body: "In order to achieve...")
 
-      login_as(user)
       visit legislation_path(legislation)
 
       page.find(:css, "#test").double_click
@@ -37,11 +37,9 @@ feature 'Legislation' do
     end
 
     scenario 'Search' do
-      user = create(:user)
       legislation = create(:legislation, title: 'Participatory Democracy', body: "In order to achieve...")
       annotation = create(:annotation, legislation: legislation, text: "this one" , quote: "achieve", ranges: [{"start"=>"/div[2]", "startOffset"=>12, "end"=>"/div[2]", "endOffset"=>19}])
 
-      login_as(user)
       visit legislation_path(legislation)
 
       within ".annotate" do
@@ -71,7 +69,20 @@ feature 'Legislation' do
       expect(page).to have_css ".annotator-item", text: 'editing my annotation'
     end
 
-    scenario 'Destroy'
+    scenario 'Destroy' do
+      legislation = create(:legislation, title: 'Participatory Democracy', body: "In order to achieve...")
+      annotation = create(:annotation, legislation: legislation, text: "this one" , quote: "achieve", ranges: [{"start"=>"/div[2]", "startOffset"=>12, "end"=>"/div[2]", "endOffset"=>19}])
+
+      visit legislation_path(legislation)
+
+      expect(page).to have_css ".annotator-hl[data-annotation-id='#{annotation.id}']"
+
+      page.find(:css, ".annotator-hl").click
+      page.find(:css, ".annotator-delete").click
+
+      expect(page).to_not have_css ".annotator-hl[data-annotation-id='#{annotation.id}']"
+    end
+
   end
 
 end
