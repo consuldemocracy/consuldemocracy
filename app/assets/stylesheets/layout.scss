@@ -176,24 +176,17 @@ html, body {
 body {
   background: white;
   color: $text;
-  font-family: $font-serif;
-  font-size: $base-font-size;
-  font-weight: normal;
+  font-family: $font-sans;
+  font-size: rem-calc(17);
+  font-weight: 400;
+  line-height: rem-calc(26);
   text-rendering: optimizeLegibility;
 }
 
-p, ul, table {
-  font-family: $font-serif;
-}
-
 p {
-  color: $text;
-  line-height: $base-line-height;
-  margin: rem-calc(6) 0;
-}
-
-ol, ul, li, p {
-  font-size: $small-font-size;
+  font-size: rem-calc(17);
+  font-weight: 400;
+  line-height: rem-calc(26);
 }
 
 a {
@@ -215,9 +208,7 @@ a {
 
 .button {
   background: $brand;
-  font-size: $small-font-size;
   font-family: $font-sans !important;
-  padding: rem-calc(15) rem-calc(32);
 
   &:hover {
     text-decoration: none !important;
