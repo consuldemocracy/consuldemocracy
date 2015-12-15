@@ -5,10 +5,10 @@
 
 Citizen Participation and Open Government Application
 
-[![Build Status](https://travis-ci.org/AjuntamentDeBarcelona/barcelona-participa.svg?branch=master)](https://travis-ci.org/AjuntamentDeBarcelona/barcelona-participa)
-[![Code Climate](https://codeclimate.com/github/AjuntamentDeBarcelona/barcelona-participa/badges/gpa.svg)](https://codeclimate.com/github/AjuntamentDeBarcelona/barcelona-participa)
-[![Dependency Status](https://gemnasium.com/AjuntamentDeBarcelona/barcelona-participa.svg)](https://gemnasium.com/AjuntamentDeBarcelona/barcelona-participa)
-[![Coverage Status](https://coveralls.io/repos/AjuntamentDeBarcelona/barcelona-participa/badge.svg?branch=master&service=github)](https://coveralls.io/github/AjuntamentDeBarcelona/barcelona-participa?branch=master)
+[![Build Status](https://travis-ci.org/AjuntamentdeBarcelona/barcelona-participa.svg?branch=master)](https://travis-ci.org/AjuntamentdeBarcelona/barcelona-participa)
+[![Code Climate](https://codeclimate.com/github/AjuntamentdeBarcelona/barcelona-participa/badges/gpa.svg)](https://codeclimate.com/github/AjuntamentdeBarcelona/barcelona-participa)
+[![Dependency Status](https://gemnasium.com/AjuntamentdeBarcelona/barcelona-participa.svg)](https://gemnasium.com/AjuntamentdeBarcelona/barcelona-participa)
+[![Coverage Status](https://coveralls.io/repos/AjuntamentdeBarcelona/barcelona-participa/badge.svg?branch=master&service=github)](https://coveralls.io/github/AjuntamentdeBarcelona/barcelona-participa?branch=master)
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
 This is the opensource code repository of the eParticipation website originally developed for the Madrid City government eParticipation website
