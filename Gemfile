@@ -60,6 +60,8 @@ gem "settingslogic"
 gem 'browser'
 gem 'turnout'
 gem 'redcarpet'
+gem "faker"
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
@@ -77,7 +79,6 @@ group :development, :test do
   gem 'letter_opener_web', '~> 1.3.0'
   gem 'i18n-tasks'
   gem "bullet"
-  gem "faker"
 end
 
 group :test do
