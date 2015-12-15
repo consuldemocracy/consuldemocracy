@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: "participacion@barcelona.es"
+  default from: Rails.application.secrets.email
   layout 'mailer'
 end
