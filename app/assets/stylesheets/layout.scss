@@ -147,6 +147,10 @@ h6 {
 }
 
 h1, h2, h3, h4, h5, h6 {
+  clear: both;
+  font-family: $font-sans;
+  line-height: $heading-line-height;
+  margin: rem-calc(12) 0 rem-calc(6);
 
   &.lead {
     border-bottom: rem-calc(6) solid $brand;
@@ -176,11 +180,6 @@ body {
   font-size: $base-font-size;
   font-weight: normal;
   text-rendering: optimizeLegibility;
-
-  &::selection, ::-moz-selection {
-    background: $brand !important;
-    color: white !important;
-  }
 }
 
 p, ul, table {
@@ -195,13 +194,6 @@ p {
 
 ol, ul, li, p {
   font-size: $small-font-size;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  clear: both;
-  font-family: $font-sans;
-  line-height: $heading-line-height;
-  margin: rem-calc(12) 0 rem-calc(6);
 }
 
 a {
@@ -373,72 +365,11 @@ a {
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
 header {
-  background: #E7F2FC;
+  background: $highlight;
   border-bottom: rem-calc(1) solid $border;
 
-  a {
-    font-family: $font-sans;
-  }
-
-  h1 {
-    margin: rem-calc(24) 0;
-  }
-
-  h2 {
-    font-size: rem-calc(16);
-    font-weight: normal;
-    line-height: rem-calc(30);
-  }
-
-  .button {
-    background: white;
-    color: $brand;
-    font-family: inherit;
-    font-size: rem-calc(16);
-    margin-top: 0;
-
-    &.see-more {
-      width: 100%;
-
-      @media (min-width: $small-breakpoint) {
-        width: auto;
-      }
-    }
-  }
-
   .home-page {
-    text-align: center;
-
-    @media (min-width: $small-breakpoint) {
-      text-align: left;
-    }
-  }
-
-  .more-info {
-    display: block;
-    margin-bottom: rem-calc(24);
-    text-decoration: underline;
-
-    @media (min-width: $small-breakpoint) {
-      display: inline-block;
-      margin-bottom: 0;
-      margin-left: rem-calc(12);
-    }
-  }
-
-  .icon-home-big {
-    color: $brand;
-    font-size: rem-calc(300);
-    line-height: rem-calc(300);
-    opacity: .75;
-  }
-
-  .icon-home-small {
-    color: $brand;
-    font-size: rem-calc(100);
-    opacity: .75;
-    position: absolute;
-    right: rem-calc(24);
+    padding-top: rem-calc(24);
   }
 
   .icon-external {
@@ -690,6 +621,7 @@ header {
   a {
     color: $text;
     display: inline-block;
+    font-family: $font-sans;
     font-weight: bold;
     line-height: $line-height*2;
     position: relative;
