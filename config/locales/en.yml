@@ -331,18 +331,6 @@ en:
   welcome:
     highlights: "Highlights: "
     signed_in_home_title: "Recent activity"
-    debates:
-      title: "Debates"
-      description: "For meeting, discussing and sharing the things that matter to us in our city."
-    proposal:
-      title: "You propose"
-      description: "Open space for citizen proposals about the kind of city we want to live in."
-    decide:
-      title: "You decide"
-      description: "The public decides if it accepts or rejects the most supported proposals."
-    do:
-      title: "It gets done"
-      description: "If the proposal is accepted by the majority, the City Council accepts it as its own and it gets done."
     welcome:
       title: "Participate"
       go_to_index: "See proposals and debates"

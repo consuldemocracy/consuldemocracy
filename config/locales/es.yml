@@ -330,18 +330,6 @@ es:
   welcome:
     highlights: "Portada: "
     signed_in_home_title: "Actividad reciente"
-    debates:
-      title: "Debates"
-      description: "Encontrarnos, debatir y compartir lo que nos parece importante en nuestra ciudad."
-    proposal:
-      title: "Propones"
-      description: "Espacio abierto para propuestas ciudadanas sobre el tipo de ciudad en el que queremos vivir."
-    decide:
-      title: "Decides"
-      description: "La ciudadanía decide si acepta o rechaza las propuestas más apoyadas."
-    do:
-      title: "Se hace"
-      description: "Si la propuesta es aceptada mayoritariamente, el Ayuntamiento la asume como propia y se hace."
     welcome:
       title: "Empieza a participar"
       go_to_index: "Ver propuestas"

@@ -184,7 +184,7 @@ body {
 
   position: static;
   height: auto;
-  margin: 0 0 $footer-height;
+  margin: 0 0 $footer-height + rem-calc(24);
 
   &::selection, ::-moz-selection {
     background: $brand !important;
