@@ -1,9 +1,4 @@
 FactoryGirl.define do
-  factory :annotation do
-    quote "MyString"
-    text "MyText"
-  end
-
 
   sequence(:document_number) { |n| "#{n.to_s.rjust(8, '0')}X" }
 
@@ -225,6 +220,18 @@ FactoryGirl.define do
     trait :with_confidence_score do
       before(:save) { |d| d.calculate_confidence_score }
     end
+  end
+
+  factory :legislation do
+    sequence(:title) { |n| "Legislation #{n}" }
+    body "In order to achieve this..."
+  end
+
+  factory :annotation do
+    quote "ipsum"
+    text "Loremp ipsum dolor"
+    legislation
+    user
   end
 
   factory :administrator do
