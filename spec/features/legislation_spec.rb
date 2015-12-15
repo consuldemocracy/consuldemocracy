@@ -16,12 +16,13 @@ feature 'Legislation' do
     background { login_as(create :user) }
 
     scenario 'Create' do
-      legislation = create(:legislation, title: 'Participatory Democracy', body: "In order to achieve...")
+      legislation = create(:legislation, body: "In order to achieve...")
 
       visit legislation_path(legislation)
 
       page.find(:css, "#test").double_click
       page.find(:css, ".annotator-adder button").click
+
       fill_in 'annotator-field-0', with: 'this is my annotation'
       page.find(:css, ".annotator-controls a[href='#save']").click
 
@@ -36,23 +37,10 @@ feature 'Legislation' do
       end
     end
 
-    scenario 'Search' do
-      legislation = create(:legislation, title: 'Participatory Democracy', body: "In order to achieve...")
-      annotation = create(:annotation, legislation: legislation, text: "this one" , quote: "achieve", ranges: [{"start"=>"/div[2]", "startOffset"=>12, "end"=>"/div[2]", "endOffset"=>19}])
-
-      visit legislation_path(legislation)
-
-      within ".annotate" do
-        expect(page).to have_css ".annotator-hl[data-annotation-id='#{annotation.id}']"
-      end
-    end
-
     scenario 'Update' do
-      user = create(:user)
-      legislation = create(:legislation, title: 'Participatory Democracy', body: "In order to achieve...")
+      legislation = create(:legislation, body: "In order to achieve...")
       annotation = create(:annotation, legislation: legislation, text: "this one" , quote: "In order to achieve...", ranges: [{"start"=>"/div[2]", "startOffset"=>12, "end"=>"/div[2]", "endOffset"=>19}])
 
-      login_as(user)
       visit legislation_path(legislation)
 
       page.find(:css, ".annotator-hl").click
@@ -65,12 +53,13 @@ feature 'Legislation' do
       expect(page).to have_css ".annotator-item", text: 'editing my annotation'
 
       visit legislation_path(legislation)
+
       page.find(:css, ".annotator-hl").click
       expect(page).to have_css ".annotator-item", text: 'editing my annotation'
     end
 
     scenario 'Destroy' do
-      legislation = create(:legislation, title: 'Participatory Democracy', body: "In order to achieve...")
+      legislation = create(:legislation, body: "In order to achieve...")
       annotation = create(:annotation, legislation: legislation, text: "this one" , quote: "achieve", ranges: [{"start"=>"/div[2]", "startOffset"=>12, "end"=>"/div[2]", "endOffset"=>19}])
 
       visit legislation_path(legislation)
@@ -81,6 +70,19 @@ feature 'Legislation' do
       page.find(:css, ".annotator-delete").click
 
       expect(page).to_not have_css ".annotator-hl[data-annotation-id='#{annotation.id}']"
+    end
+
+    scenario 'Search' do
+      legislation = create(:legislation, body: "In order to achieve...")
+      annotation1 = create(:annotation, legislation: legislation, text: "this one" , quote: "achieve", ranges: [{"start"=>"/div[2]", "startOffset"=>12, "end"=>"/div[2]", "endOffset"=>19}])
+      annotation2 = create(:annotation, legislation: legislation, text: "this one" , quote: "achieve", ranges: [{"start"=>"/div[2]", "startOffset"=>5, "end"=>"/div[2]", "endOffset"=>10}])
+
+      visit legislation_path(legislation)
+
+      within ".annotate" do
+        expect(page).to have_css ".annotator-hl[data-annotation-id='#{annotation1.id}']"
+        expect(page).to have_css ".annotator-hl[data-annotation-id='#{annotation2.id}']"
+      end
     end
 
   end
