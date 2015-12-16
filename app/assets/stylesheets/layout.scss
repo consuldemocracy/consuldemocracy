@@ -226,7 +226,7 @@ header {
 
   .selected {
     border-bottom: 2px solid white;
-    padding-bottom: rem-calc(2);
+    padding-bottom: $line-height/12;
     position: relative;
   }
 
@@ -236,7 +236,7 @@ header {
 
     @media (min-width: $small-breakpoint) {
       float: left;
-      margin-left: rem-calc(12);
+      margin-left: $line-height/2;
     }
   }
 
@@ -251,7 +251,7 @@ header {
   }
 
   .search-form {
-    padding-top: rem-calc(6);
+    padding-top: $line-height/4;
     margin-bottom: 0 !important;
 
     .postfix {
@@ -270,9 +270,9 @@ header {
 .top-bar {
   background: $brand !important;
   color: white;
-  min-height: rem-calc(48);
+  min-height: $line-height*2;
   max-width: 1170px !important;
-  padding: 0 rem-calc(12);
+  padding: 0 $line-height/2;
 
   @media (min-width: $small-breakpoint) {
     height: auto;
@@ -282,15 +282,15 @@ header {
   .name {
 
     @media (min-width: $small-breakpoint) {
-      margin-left: rem-calc(12);
+      margin-left: $line-height/2;
     }
 
     a {
       @include logo;
-      line-height: rem-calc(48);
+      line-height: $line-height*2;
 
       @media (min-width: $small-breakpoint) {
-        line-height: rem-calc(80);
+        line-height: rem-calc(80); // Same as logo image height
       }
     }
   }
@@ -312,7 +312,7 @@ header {
     }
 
     &.menu-icon a {
-      padding: 0 rem-calc(24);
+      padding: 0 $line-height;
 
       span::after {
         right: 0;
@@ -330,11 +330,11 @@ header {
 }
 
 .top-bar-section {
-  margin-right: rem-calc(24);
+  margin-right: $line-height;
   width: 100%;
 
   ul {
-    margin-left: rem-calc(12);
+    margin-left: $line-height/2;
 
     @media (min-width: $small-breakpoint) {
       margin-left: 0;
@@ -353,8 +353,8 @@ header {
 
         @media (min-width: $small-breakpoint) {
           background: none;
-          line-height: rem-calc(80);
-          padding: 0 rem-calc(12);
+          line-height: rem-calc(80); // Same as logo image height
+          padding: 0 $line-height/2;
         }
       }
 
@@ -367,7 +367,7 @@ header {
 
       &.active:not(.has-form) a:not(.button) {
         background: none;
-        height: rem-calc(96);
+        height: $line-height*4;
         line-height: $line-height*4;
       }
     }
@@ -405,7 +405,7 @@ header {
   background: $dark;
   color: white;
   font-size: $small-font-size;
-  padding-right: rem-calc(12);
+  padding-right: $line-height/2;
 
   a {
     color: white;
@@ -424,7 +424,7 @@ header {
 .subnavigation {
   background: white;
   clear: both;
-  padding-left: rem-calc(12);
+  padding-left: $line-height/2;
 
   @media (min-width: $small-breakpoint) {
     padding-left: 0;
@@ -444,15 +444,15 @@ header {
     text-align: left;
 
     @media (min-width: $small-breakpoint) {
-      margin-left: rem-calc(12);
-      margin-right: rem-calc(36);
+      margin-left: $line-height/2;
+      margin-right: $line-height*1.5;
       margin-right: 12px\9;
     }
 
     &:after {
       color: $border;
       content: "|";
-      padding: 0 rem-calc(12);
+      padding: 0 $line-height/2;
 
       @media (min-width: $small-breakpoint) {
         content: none;
@@ -526,13 +526,13 @@ footer {
 
 .footer {
   background: $footer-bg;
-  border-top: rem-calc(6) solid $brand;
+  border-top: 6px solid $brand;
   padding-top: $line-height;
 }
 
 .subfooter {
   border-top: 1px solid $footer-border;
-  padding-top: rem-calc(12);
+  padding-top: $line-height/2;
 }
 
 // 04. Tags
@@ -546,8 +546,8 @@ footer {
     color: #4d4d4d;
     display: inline-block;
     font-size: $small-font-size;
-    margin-bottom: rem-calc(8);
-    padding: 0 rem-calc(8);
+    margin-bottom: $line-height/3;
+    padding: 0 $line-height/3;
 
     &:hover {
       color: $link;
@@ -565,14 +565,14 @@ footer {
     font-family: $font-family-sans-serif;
     font-size: rem-calc(16);
     margin: -1px 0 rem-calc(12);
-    padding-top: rem-calc(6);
+    padding-top: $line-height/4;
     text-transform: uppercase;
   }
 
   a {
     background: white;
     border: 2px solid $border;
-    padding: rem-calc(6) rem-calc(8);
+    padding: $line-height/4 $line-height/3;
 
     .label {
       color: white;
@@ -600,7 +600,7 @@ footer {
   background-size: cover;
 
   @media (min-width: $small-breakpoint) {
-    padding-top: rem-calc(48);
+    padding-top: $line-height*2;
   }
 
   h1 {
@@ -609,7 +609,7 @@ footer {
     a {
       color: white;
       display: block;
-      line-height: rem-calc(80);
+      line-height: rem-calc(80); // Same as logo image height
       text-align: center;
 
       @media (min-width: $small-breakpoint) {
@@ -621,7 +621,7 @@ footer {
 }
 
 .auth {
-  min-height: rem-calc(480);
+  min-height: $line-height*20;
 
   .back, .icon-angle-left {
     @include back;
@@ -667,7 +667,7 @@ form.locale-form {
       margin-bottom: 0;
       outline: none;
       padding-left: rem-calc(3);
-      padding-right: rem-calc(24);
+      padding-right: $line-height;
     }
   }
 }
@@ -696,7 +696,7 @@ form {
 
   input[type]:not([type=submit]):not([type=file]):not([type=checkbox]) {
     background: $input-bg;
-    height: rem-calc(48);
+    height: $line-height*2;
     margin-bottom: rem-calc(16);
 
     &.search-form {
@@ -715,13 +715,13 @@ form {
   }
 
   input[type=file] {
-    margin: rem-calc(12) 0 rem-calc(12) rem-calc(6);
+    margin: $line-height/2 0 $line-height/2 $line-height/4;
   }
 
   .note, .note-marked {
     display: block;
     font-size: rem-calc(13);
-    margin-bottom: rem-calc(12);
+    margin-bottom: $line-height/2;
   }
 
   .note-marked {
@@ -735,7 +735,7 @@ form {
   }
 
   .ckeditor {
-    min-height: rem-calc(312);
+    min-height: $line-height*13;
   }
 
   .checkbox {
@@ -747,7 +747,7 @@ form {
 
   .captcha {
     border: 0;
-    padding: rem-calc(12) 0;
+    padding: $line-height/2 0;
 
     input {
       margin-bottom: 0 !important;
@@ -755,7 +755,7 @@ form {
   }
 
   .button.margin-top {
-    margin-top: rem-calc(24);
+    margin-top: $line-height;
   }
 }
 
@@ -817,7 +817,7 @@ span.error, small.error {
   background: $alert-bg;
   color: $alert-color;
   display: inline-block;
-  margin: 0 rem-calc(6);
+  margin: 0 $line-height/4;
 }
 
 label.error, label.error a {
@@ -826,7 +826,7 @@ label.error, label.error a {
 
 .alert-messages {
   background-color: white;
-  padding-top: rem-calc(24);
+  padding-top: $line-height;
 }
 
 // 08. User account
@@ -834,26 +834,26 @@ label.error, label.error a {
 
 .account {
   background: white;
-  padding-top: rem-calc(24);
+  padding-top: $line-height;
 
   select {
-    height: rem-calc(48);
-    margin-right: rem-calc(12);
+    height: $line-height*2;
+    margin-right: $line-height/2;
   }
 
   .verify-account {
-    padding-right: rem-calc(12);
+    padding-right: $line-height/2;
   }
 
   .final-votes-info {
     background: $warning-bg;
     border: 1px solid $warning-border;
     color: $warning-color;
-    margin-top: rem-calc(24);
-    padding: rem-calc(12);
+    margin-top: $line-height;
+    padding: $line-height/2;
 
     ul li {
-      margin: rem-calc(12) 0;
+      margin: $line-height/2 0;
     }
 
     .icon-box {
@@ -874,9 +874,9 @@ img.avatar, img.admin-avatar, img.moderator-avatar, img.initialjs-avatar {
   background-color: rgba(255,255,255,.5);
   color: rgba(0,0,0,.4);
   font-size: rem-calc(40);
-  left: rem-calc(11);
+  left: 11px;
   position: absolute;
-  top: rem-calc(72);
+  top: 72px;
 }
 
 .user-deleted {
@@ -899,7 +899,7 @@ img.avatar, img.admin-avatar, img.moderator-avatar, img.initialjs-avatar {
 
     li {
       font-size: $small-font-size;
-      margin-bottom: rem-calc(12);
+      margin-bottom: $line-height/2;
 
       span {
         color: $text-medium;
@@ -925,24 +925,24 @@ img.avatar, img.admin-avatar, img.moderator-avatar, img.initialjs-avatar {
   h2 {
     display: inline-block;
     font-size: rem-calc(24);
-    margin: rem-calc(12) 0;
+    margin: $line-height/2 0;
 
     @media (min-width: $small-breakpoint) {
-      margin: rem-calc(24) 0;
+      margin: $line-height 0;
     }
   }
 
   select {
     background-color: #DEE0E2;
     height: auto;
-    margin-bottom: rem-calc(24);
-    min-width: rem-calc(180);
+    margin-bottom: $line-height;
+    min-width: $line-height*7.5;
     outline: 0;
-    padding: rem-calc(12);
+    padding: $line-height/2;
     width: auto;
 
     @media (min-width: $small-breakpoint) {
-      margin: 0 0 rem-calc(24) rem-calc(12);
+      margin: 0 0 $line-height $line-height/2;
     }
 
     optgroup {
@@ -978,8 +978,8 @@ img.avatar, img.admin-avatar, img.moderator-avatar, img.initialjs-avatar {
     display: inline-block;
     font-family: $font-family-sans-serif;
     font-size: rem-calc(16);
-    margin: -1px 0 rem-calc(12);
-    padding-top: rem-calc(6);
+    margin: -1px 0 $line-height/2;
+    padding-top: $line-height/4;
     text-transform: uppercase;
   }
 }
@@ -1027,7 +1027,7 @@ img.avatar, img.admin-avatar, img.moderator-avatar, img.initialjs-avatar {
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
 ul.pagination {
-  margin-top: rem-calc(24);
+  margin-top: $line-height;
 
   li {
     color: $text-medium;
@@ -1046,7 +1046,7 @@ table {
 
     td {
       line-height: $line-height;
-      padding: rem-calc(12) rem-calc(6);
+      padding: $line-height/2 $line-height/4;
     }
 
     &:nth-child(odd) {
@@ -1081,9 +1081,9 @@ table {
 .social-share-button-twitter {
   background: #45B0E3;
   color: white;
-  height: rem-calc(48);
+  height: $line-height*2;
   position: relative;
-  width: rem-calc(48);
+  width: $line-height*2;
 
   &:before {
     content: "f";
@@ -1161,9 +1161,9 @@ table {
 .social-share-button-google_plus {
   background: #DE4C34;
   color: white;
-  height: rem-calc(48);
+  height: $line-height*2;
   position: relative;
-  width: rem-calc(48);
+  width: $line-height*2;
 
   &:before {
     content: "B";
@@ -1183,8 +1183,8 @@ table {
 }
 
 .social {
-  margin-top: rem-calc(24);
-  padding-top: rem-calc(6);
+  margin-top: $line-height;
+  padding-top: $line-height/4;
   text-align: center;
   vertical-align: middle;
 
@@ -1195,8 +1195,8 @@ table {
 
   a {
     font-size: rem-calc(24);
-    line-height: rem-calc(24);
-    margin: 0 rem-calc(12);
+    line-height: $line-height;
+    margin: 0 $line-height/2;
     text-decoration: none;
     vertical-align: middle;
 
@@ -1224,9 +1224,9 @@ table {
   .social-share-button-twitter {
     background: none;
     color: white;
-    height: rem-calc(24);
+    height: $line-height;
     position: relative;
-    width: rem-calc(48);
+    width: $line-height*2;
 
     &:before {
       content: "f";
@@ -1295,24 +1295,24 @@ table {
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
 .page {
-  padding-bottom: rem-calc(48);
+  padding-bottom: $line-height*2;
 
   .menu {
-    margin-top: rem-calc(24);
+    margin-top: $line-height;
 
     ul {
       list-style-type: none;
       margin-left: 0;
 
       & ul {
-        margin-left: rem-calc(12);
+        margin-left: $line-height/2;
       }
     }
 
     a {
       display: block;
       font-size: rem-calc(13);
-      margin-bottom: rem-calc(12);
+      margin-bottom: $line-height/2;
     }
   }
 
@@ -1321,19 +1321,19 @@ table {
   }
 
   .text {
-    margin-top: rem-calc(24);
+    margin-top: $line-height;
 
     h1, h2, h3, h4, h5, h6 {
       text-align: left;
     }
 
     ul, ol {
-      margin-left: rem-calc(12);
+      margin-left: $line-height/2;
 
       li {
         font-size: rem-calc(15);
         line-height: rem-calc(30);
-        margin-bottom: rem-calc(12);
+        margin-bottom: $line-height/2;
       }
     }
 
@@ -1344,7 +1344,7 @@ table {
   }
 
   .more-information {
-    margin-top: rem-calc(24);
+    margin-top: $line-height;
 
     ul {
       list-style-type: none;
@@ -1354,7 +1354,7 @@ table {
         border-bottom: 1px solid $border;
         font-size: rem-calc(16);
         font-weight: bold;
-        padding-bottom: rem-calc(12);
+        padding-bottom: $line-height/2;
         position: relative;
         text-align: left;
 
@@ -1386,11 +1386,11 @@ table {
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
 .verification {
-  min-height: rem-calc(600);
+  min-height: $line-height*25;
 
   @media (min-width: $small-breakpoint) {
     .left + .left {
-      margin-left: rem-calc(12);
+      margin-left: $line-height/2;
     }
   }
 
@@ -1407,10 +1407,10 @@ table {
   }
 
   .progress {
-    height: rem-calc(72);
+    height: $line-height*3;
 
     @media (min-width: $small-breakpoint) {
-      height: rem-calc(48);
+      height: $line-height*2;
     }
 
     &.success .meter {
@@ -1422,12 +1422,12 @@ table {
     font-family: $font-sans;
     font-weight: bold;
     line-height: rem-calc(20);
-    padding-top: rem-calc(6);
+    padding-top: $line-height/4;
     text-transform: uppercase;
     vertical-align: top;
 
     @media (min-width: $small-breakpoint) {
-      line-height: rem-calc(48);
+      line-height: $line-height*2;
       padding: 0;
     }
 
@@ -1470,7 +1470,7 @@ table {
 
   .button + form {
     display: inline-block;
-    margin-left: rem-calc(12);
+    margin-left: $line-height/2;
   }
 
   .verification-list {
@@ -1480,17 +1480,17 @@ table {
 
     span {
       display: inline-block;
-      min-width: rem-calc(288);
+      min-width: $line-height*12;
     }
   }
 }
 
 .verify-account {
-  padding-right: rem-calc(12);
+  padding-right: $line-height/2;
 
   .already-verified {
     color: $check;
-    line-height: rem-calc(48);
+    line-height: $line-height*2;
 
     .icon-check {
       font-size: rem-calc(24);
@@ -1501,8 +1501,8 @@ table {
 }
 
 .verify {
-  margin-bottom: rem-calc(48);
-  margin-top: rem-calc(24);
+  margin-bottom: $line-height*2;
+  margin-top: $line-height;
 
   h1 {
     color: $check;
@@ -1524,10 +1524,10 @@ table {
       background: white;
       color: $info-color;
       font-size: rem-calc(24);
-      margin-left: rem-calc(-27);
-      padding: 0 rem-calc(12);
+      margin-left: -27px;
+      padding: 0 $line-height/2;
       position: absolute;
-      top: rem-calc(-12);
+      top: -12px;
     }
   }
 }
@@ -1538,8 +1538,8 @@ table {
 .comments {
   background: $white;
   background-repeat: repeat-x;
-  padding-top: rem-calc(24);
-  padding-bottom: rem-calc(96);
+  padding-top: $line-height;
+  padding-bottom: $line-height*4;
 
   h2 {
     margin: 0;
@@ -1553,7 +1553,7 @@ table {
   }
 
   .comment {
-    margin: rem-calc(6) 0;
+    margin: $line-height/4 0;
 
     p {
       margin-bottom: 0;
@@ -1564,7 +1564,7 @@ table {
       font-family: $font-sans;
       font-size: $small-font-size;
       line-height: $line-height;
-      margin: rem-calc(10) rem-calc(12) rem-calc(6) 0;
+      margin: rem-calc(10) $line-height/2 $line-height/4 0;
 
       a {
         color: $text-light;
@@ -1603,40 +1603,40 @@ table {
       }
 
       .comment-user {
-        margin-top: rem-calc(6);
-        padding: rem-calc(6) 0;
+        margin-top: $line-height/4;
+        padding: $line-height/4 0;
         overflow: hidden;
 
         @each $n in ("1", "2", "3","4", "5") {
           &.level-#{$n} {
             @if $n == "5" {
               background: $comment-level-5;
-              padding: rem-calc(6) rem-calc(12);
+              padding: $line-height/4 $line-height/2;
             }
             @elseif $n == "1" {
               background: none;
-              padding: rem-calc(6) rem-calc(12);
+              padding: $line-height/4 $line-height/2;
             }
             @else {
               background: $comment-official;
-              padding: rem-calc(6) rem-calc(12);
+              padding: $line-height/4 $line-height/2;
             }
           }
         }
 
         &.is-author {
           background: $comment-author;
-          padding: rem-calc(6) rem-calc(12);
+          padding: $line-height/4 $line-height/2;
         }
 
         &.is-admin, &.is-moderator {
           background: $comment-admin;
-          padding: rem-calc(6) rem-calc(12);
+          padding: $line-height/4 $line-height/2;
         }
 
         &.level-5 {
           background: $comment-level-5;
-          padding: rem-calc(6) rem-calc(12);
+          padding: $line-height/4 $line-height/2;
         }
       }
     }
@@ -1644,13 +1644,13 @@ table {
     .is-deleted {
       background: $deleted;
       margin-left: rem-calc(42);
-      padding: rem-calc(6) rem-calc(12);
+      padding: $line-height/4 $line-height/2;
     }
 
     .comment-children {
       border-left: 1px dashed $border;
       margin-left: rem-calc(42);
-      padding-left: rem-calc(6);
+      padding-left: $line-height/4;
 
       @media only screen and (max-width: 40em) {
         margin-left: rem-calc(16);
@@ -1661,7 +1661,7 @@ table {
       color: $text-medium;
       font-family: $font-sans;
       font-size: $small-font-size;
-      margin-top: rem-calc(6);
+      margin-top: $line-height/4;
       vertical-align: middle;
 
       span.user-name {
@@ -1686,7 +1686,7 @@ table {
   }
 
   label {
-    padding-right: rem-calc(12);
+    padding-right: $line-height/2;
     float: none;
 
     @media (min-width: $small-breakpoint) {
@@ -1708,7 +1708,7 @@ table {
 }
 
 .flag-disable, .flag-active {
-  line-height: rem-calc(24);
+  line-height: $line-height;
   vertical-align: middle;
 }
 
@@ -1741,7 +1741,7 @@ table {
     border: 0;
 
     td {
-      padding-left: rem-calc(36);
+      padding-left: $line-height*1.5;
       position: relative;
 
       &:before {
