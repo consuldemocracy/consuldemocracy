@@ -205,7 +205,7 @@ body.admin {
 .delete {
   border-bottom: 1px dotted #CF2A0E;
   color: $delete;
-  font-size: rem-calc(12);
+  font-size: $small-font-size;
 
   &:hover, &:active, &:focus {
     border-bottom: 1px dotted white;

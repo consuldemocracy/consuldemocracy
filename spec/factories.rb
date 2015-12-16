@@ -222,6 +222,19 @@ FactoryGirl.define do
     end
   end
 
+  factory :legislation do
+    sequence(:title) { |n| "Legislation #{n}" }
+    body "In order to achieve this..."
+  end
+
+  factory :annotation do
+    quote "ipsum"
+    text "Loremp ipsum dolor"
+    ranges [{"start"=>"/div[2]", "startOffset"=>5, "end"=>"/div[2]", "endOffset"=>10}]
+    legislation
+    user
+  end
+
   factory :administrator do
     user
   end

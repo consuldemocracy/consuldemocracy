@@ -11,28 +11,35 @@
 // 01. Typography
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
-$base-font-size:      rem-calc(17);
-$small-font-size:     rem-calc(14);
-$lead-font-size:      rem-calc(20);
-$title-font-size:     rem-calc(52);
-$h1-font-size:        rem-calc(40);
-$h2-font-size:        rem-calc(30);
-$h3-font-size:        rem-calc(20);
-$h4-font-size:        rem-calc(17);
-$h5-font-size:        rem-calc(15);
-$h6-font-size:        rem-calc(13);
-$base-line-height:    1.5;
-$heading-line-height: 1.3;
-$lead-line-height:    1.7;
-
-$font-sans:           'Source Sans Pro', 'Helvetica', 'Arial', sans-serif;
-$font-serif:          'Merriweather', 'Georgia', 'Times New Roman', serif;
 $font-logo:           'Lato' !important;
+$font-sans:           'Source Sans Pro', 'Helvetica', 'Arial', sans-serif !important;
 
 $font-normal:         400;
 $font-bold:           700;
 
-$line-height: rem-calc(24);
+$base-font-size:      rem-calc(17);
+$base-line-height:    rem-calc(26);
+
+$h1-font-size:        rem-calc(44);
+$h1-line-height:      rem-calc(57);
+
+$h2-font-size:        rem-calc(34);
+$h2-line-height:      rem-calc(44);
+
+$h3-font-size:        rem-calc(24);
+$h3-line-height:      rem-calc(31);
+
+$h4-font-size:        rem-calc(19);
+$h4-line-height:      rem-calc(25);
+
+$h5-font-size:        rem-calc(16);
+$h5-line-height:      rem-calc(21);
+
+$h6-font-size:        rem-calc(13);
+$h6-line-height:      rem-calc(17);
+
+$small-font-size:     rem-calc(14);
+$line-height:         rem-calc(24);
 
 // 02. Colors
 // - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -65,6 +72,13 @@ $check:             #46DB91;
 
 $proposals:         #FFA42D;
 $proposals-border:  #CC8425;
+
+$highlight:         $background;
+
+$footer-bg:         #DEE0E2;
+$footer-color:      #171819;
+$footer-link:       #454A4C;
+$footer-border:     #BFC1C3;
 
 // 03. Forms
 // - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -116,12 +130,5 @@ $small-breakpoint:  em-calc(640);
 $medium-breakpoint: em-calc(1024);
 $large-breakpoint:  em-calc(1440);
 $xlarge-breakpoint: em-calc(1920);
-
-$small-range:   (0, $small-breakpoint);
-$medium-range:  ($small-breakpoint  + em-calc(1), $medium-breakpoint);
-$large-range:   ($medium-breakpoint + em-calc(1), $large-breakpoint);
-$xlarge-range:  ($large-breakpoint  + em-calc(1), $xlarge-breakpoint);
-$xxlarge-range: ($xlarge-breakpoint + em-calc(1), em-calc(99999999));
-
 
 $footer-height: rem-calc(64);

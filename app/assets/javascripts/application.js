@@ -29,9 +29,11 @@
 //= require moderator_debates
 //= require moderator_proposals
 //= require prevent_double_submission
+//= require annotator
 //= require tags
 //= require users
 //= require votes
+//= require annotatable
 
 
 var initialize_modules = function() {
@@ -44,6 +46,7 @@ var initialize_modules = function() {
   App.CheckAllNone.initialize();
   App.PreventDoubleSubmission.initialize();
   App.IeAlert.initialize();
+  App.Annotatable.initialize();
 };
 
 $(function(){
