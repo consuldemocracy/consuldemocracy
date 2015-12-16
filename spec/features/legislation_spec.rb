@@ -26,15 +26,11 @@ feature 'Legislation' do
       fill_in 'annotator-field-0', with: 'this is my annotation'
       page.find(:css, ".annotator-controls a[href='#save']").click
 
-      within ".annotate" do
-        expect(page).to have_css ".annotator-hl[data-annotation-id]"
-      end
+      expect(page).to have_css ".annotator-hl[data-annotation-id]"
 
       visit legislation_path(legislation)
 
-      within ".annotate" do
-        expect(page).to have_css ".annotator-hl[data-annotation-id]"
-      end
+      expect(page).to have_css ".annotator-hl[data-annotation-id]"
     end
 
     scenario 'Update' do
@@ -79,10 +75,8 @@ feature 'Legislation' do
 
       visit legislation_path(legislation)
 
-      within ".annotate" do
-        expect(page).to have_css ".annotator-hl[data-annotation-id='#{annotation1.id}']"
-        expect(page).to have_css ".annotator-hl[data-annotation-id='#{annotation2.id}']"
-      end
+      expect(page).to have_css ".annotator-hl[data-annotation-id='#{annotation1.id}']"
+      expect(page).to have_css ".annotator-hl[data-annotation-id='#{annotation2.id}']"
     end
 
   end
