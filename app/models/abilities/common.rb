@@ -40,7 +40,8 @@ module Abilities
         can :vote_featured, Proposal
       end
 
-      can :manage, Annotation
+      can :create, Annotation
+      can [:update, :delete], Annotation, user_id: user.id
 
     end
   end
