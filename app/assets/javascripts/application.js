@@ -29,8 +29,6 @@
 //= require moderator_debates
 //= require moderator_proposals
 //= require prevent_double_submission
-//= require rem.min
-//= require respond.min
 //= require tags
 //= require users
 //= require votes

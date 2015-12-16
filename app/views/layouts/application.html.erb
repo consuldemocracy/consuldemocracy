@@ -15,9 +15,6 @@
                      sizes: "200x200",
                      type: "image/png" %>
     <%= content_for :social_media_meta_tags %>
-    <!--[if lt IE 9]>
-      <%= javascript_include_tag "respond" %>
-    <![endif]-->
   </head>
   <body>
     <div class="wrapper">
@@ -70,6 +67,6 @@
     </div>
   </body>
   <!--[if lt IE 9]>
-    <%= javascript_include_tag "rem" %>
+    <%= javascript_include_tag "ie_lt9" %>
   <![endif]-->
 </html>
