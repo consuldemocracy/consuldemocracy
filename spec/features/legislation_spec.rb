@@ -13,7 +13,8 @@ feature 'Legislation' do
 
   context 'Annotations', :js do
 
-    background { login_as(create :user) }
+    let(:user) { create(:user) }
+    background { login_as user }
 
     scenario 'Create' do
       legislation = create(:legislation, body: "In order to achieve...")
@@ -35,7 +36,7 @@ feature 'Legislation' do
 
     scenario 'Update' do
       legislation = create(:legislation, body: "In order to achieve...")
-      annotation = create(:annotation, legislation: legislation, text: "this one" , quote: "In order to achieve...", ranges: [{"start"=>"/div[2]", "startOffset"=>12, "end"=>"/div[2]", "endOffset"=>19}])
+      create(:annotation, user: user, legislation: legislation, text: "this one" , quote: "In order to achieve...", ranges: [{"start"=>"/div[2]", "startOffset"=>12, "end"=>"/div[2]", "endOffset"=>19}])
 
       visit legislation_path(legislation)
 
@@ -56,7 +57,7 @@ feature 'Legislation' do
 
     scenario 'Destroy' do
       legislation = create(:legislation, body: "In order to achieve...")
-      annotation = create(:annotation, legislation: legislation, text: "this one" , quote: "achieve", ranges: [{"start"=>"/div[2]", "startOffset"=>12, "end"=>"/div[2]", "endOffset"=>19}])
+      annotation = create(:annotation, user: user, legislation: legislation, text: "this one" , quote: "achieve", ranges: [{"start"=>"/div[2]", "startOffset"=>12, "end"=>"/div[2]", "endOffset"=>19}])
 
       visit legislation_path(legislation)
 
