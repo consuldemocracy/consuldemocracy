@@ -1,0 +1,69 @@
+---
+ca:
+  activerecord:
+    attributes:
+      comment:
+        body: Comentari
+        user: Usuari
+      debate:
+        author: Autor
+        description: Opinió
+        terms_of_service: Termes de servei
+        title: Títol
+      organization:
+        name: Nom d'organització
+        responsible_name: Persona responsable del col·lectiu
+      proposal:
+        author: Autor
+        description: Descripció
+        question: Pregunta
+        terms_of_service: Termes de servei
+        title: Títol
+      user:
+        email: Correu electrònic
+        official_level: Nivell del càrrec
+        official_position: Càrrec públic
+        password: Clau
+        phone_number: Telèfon
+        username: Nom d'usuari
+    errors:
+      models:
+        debate:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: els temes han de ser menor o igual que %{count}
+        proposal:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: els temes han de ser menor o igual que %{count}
+    models:
+      activity:
+        one: activitat
+        other: activitats
+      administrator:
+        one: Administrador
+        other: Administradors
+      comment:
+        one: Comentari
+        other: Comentaris
+      debate:
+        one: Debat
+        other: Debats
+      moderator:
+        one: Moderador
+        other: Moderadors
+      organization:
+        one: Organització
+        other: Organitzacions
+      proposal:
+        one: Proposta ciutadana
+        other: Propostes ciutadanes
+      tag:
+        one: Tema
+        other: Temes
+      user:
+        one: Usuari
+        other: Usuaris
+      vote:
+        one: Vot
+        other: Vots

@@ -1,0 +1,109 @@
+---
+ca:
+  verification:
+    alert:
+      lock: Has arribat al màxim nombre d'intents. Si us plau intenta-ho més tard.
+    back: Tornar al meu compte
+    email:
+      create:
+        alert:
+          failure: Hi va haver un problema enviant-te un correu electrònic al teu compte
+        flash:
+          success: 'T''hem enviat un email de confirmació al teu compte: %{email}'
+      show:
+        alert:
+          failure: Codi de verificació incorrecte
+        flash:
+          success: Ets un usuari verificat
+    letter:
+      alert:
+        unconfirmed_code: Encara no has introduït el codi de confirmació
+      create:
+        flash:
+          offices: Oficines d'Atenció al Ciutadà
+          offices_url: ''
+          success_html: Abans de les votacions rebràs una carta amb les instruccions per verificar el vostre compte. <br> Recorda que pots estalviar l'enviament verificándote presencialment a qualsevol de les %{offices}.
+      edit:
+        see_all: Veure propostes
+        title: Carta sol·licitada
+      errors:
+        incorrect_code: Codi de verificació incorrecte
+      new:
+        explanation: 'Per participar en les votacions finals pots:'
+        go_to_index: Veure propostes
+        office: Verificarte presencialment a qualsevol %{office}
+        offices: Oficina d'Atenció al Ciutadà
+        offices_url: ''
+        send_letter: Demana una carta per correu postal
+        title: Felicitats!
+        user_permission_info: Amb el teu compte ja pots ...
+      update:
+        flash:
+          success: El teu compte ja està verificada
+    redirect_notices:
+      already_verified: El teu compte ja està verificada
+      email_already_sent: Ja et vam enviar un email amb un enllaç de confirmació, si no el trobes, pots sol·licitar aquí que t'ho reexpedim
+    residence:
+      alert:
+        unconfirmed_residency: Encara no has verificat la teva residència
+      create:
+        flash:
+          success: Residència verificada
+      new:
+        accept_terms_text: Estic d'acord amb %{terms_url} al Padró
+        date_of_birth: Data de naixement
+        document_number: Nombre de document
+        document_type:
+          passport: Passaport
+          residence_card: Targeta de residència
+          spanish_id: DNI
+        document_type_label: Tipus de document
+        error_not_allowed_age: Cal tenir almenys 16 anys
+        error_not_allowed_postal_code: Per verificarte has d'estar empadronat al municipi de Barcelona.
+        error_verifying_census: El Padró no va poder verificar la teva informació. Confirmeu que les teves dades d'empadronament siguin correctes o visita qualsevol de les %{offices}.
+        error_verifying_census_offices: 26 Oficines d'Atenció al Ciutadà
+        form_errors: van evitar verificar la teva residència
+        postal_code: Codi postal
+        postal_code_note: Per verificar les teves dades has d'estar empadronat al municipi de Barcelona.
+        terms: els termes d'accés
+        title: Verificar residència
+        verify_residence: Verificar residència
+    sms:
+      create:
+        flash:
+          success: Introdueix el codi de confirmació que t'hem enviat per missatge de text
+      edit:
+        confirmation_code: Introdueix el codi que has rebut al teu mòbil
+        resend_sms_link: Sol·licitar un nou codi
+        resend_sms_text: No has rebut un missatge de text amb el teu codi de confirmació?
+        submit_button: Enviar
+        title: SMS de confirmació
+      new:
+        phone: Introdueix el teu telèfon mòbil per rebre el codi
+        phone_note: Només farem servir el teu telèfon per enviar-te un codi, mai et contactarem.
+        submit_button: Enviar
+        title: SMS de confirmació
+      update:
+        error: Codi de confirmació incorrecte
+        flash:
+          level_three:
+            success: Codi correcte. El teu compte ja està verificada
+          level_two:
+            success: Codi correcte
+    step_1: Residència
+    step_2: SMS de confirmació
+    step_3: Verificació final
+    user_permission_debates: Participar en debats
+    user_permission_info: En verificar les teves dades podràs ...
+    user_permission_proposal: Crear noves propostes
+    user_permission_support_proposal: Donar suport propostes
+    user_permission_votes: Participar en les votacions finals
+    verified_user:
+      form:
+        submit_button: Envia la
+      show:
+        email_title: Emails
+        explanation: Actualment disposem de les següents dades al Padró, selecciona on vols que enviem el codi de confirmació.
+        phone_title: Telèfons
+        title: Informació disponible
+        use_another_phone: Utilitzar un altre telèfon

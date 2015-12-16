@@ -1,0 +1,349 @@
+---
+ca:
+  account:
+    show:
+      change_credentials_link: Canviar les meves dades d'accés
+      email_on_comment_label: Rebre un email quan algú comenta en les meves propostes o debats
+      email_on_comment_reply_label: Rebre un email quan algú contesta els meus comentaris
+      erase_account_link: Donar-me de baixa
+      finish_verification: Finalitzar verificació
+      notifications: Notificacions
+      organization_name_label: Nom de l'organització
+      organization_responsible_name_placeholder: Representant de l'associació / col·lectiu
+      personal: Dades personals
+      phone_number_label: Telèfon
+      public_activity_label: Mostrar públicament el meu llista d'activitats
+      save_changes_submit: Desa els canvis
+      title: El meu compte
+      user_permission_debates: Participar en debats
+      user_permission_info: Amb el teu compte ja pots ...
+      user_permission_proposal: Crear noves propostes
+      user_permission_support_proposal: Donar suport propostes *
+      user_permission_title: Participació
+      user_permission_verify: Per poder realitzar totes les accions verifica el teu compte.
+      user_permission_verify_info: "* Només usuaris empadronats al municipi de Barcelona."
+      user_permission_votes: Participar en les votacions finals *
+      username_label: Nom d'usuari
+      verified_account: Compte verificat
+      verify_my_account: Verificar el meu compte
+  application:
+    close: Tancar
+    menu: Menú
+  comments:
+    comment:
+      admin: Administrador
+      author: Autor
+      deleted: Aquest comentari ha estat eliminat
+      moderator: Moderador
+      responses:
+        one: 1 resposta
+        other: "%{count} Respostes"
+        zero: Sense respostes
+      user_deleted: Usuari eliminat
+      votes:
+        one: 1 vot
+        other: "%{count} vots"
+        zero: Sense vots
+    form:
+      comment_as_admin: Comentar com a administrador
+      comment_as_moderator: Comentar com a moderador
+      leave_comment: Deixa el teu comentari
+    orders:
+      most_voted: Més votats
+      newest: Més nous primer
+      oldest: Més antics primer
+    select_order: Ordenar per
+  comments_helper:
+    comment_button: Afegeix un comentari
+    comment_link: Comentar
+    reply_button: Publica resposta
+    reply_link: Respondre
+  debates:
+    create:
+      form:
+        submit_button: Comença un debat
+    debate:
+      comments:
+        one: 1 Comentari
+        other: "%{count} Comentaris"
+        zero: Sense comentaris
+      debate: Debat
+      votes:
+        one: 1 vot
+        other: "%{count} vots"
+        zero: Sense vots
+    edit:
+      back_link: Tornar
+      editing: Edita debat
+      form:
+        submit_button: Desa els canvis
+      show_link: Veure debat
+    form:
+      debate_text: Text inicial del debat
+      debate_title: Títol del debat
+      tags_instructions: Etiqueta aquest debat. Pots triar entre les nostres propostes o introduir les que vulguis.
+      tags_label: Temes
+      tags_placeholder: Escriu les etiquetes que vulguis separades per coma (',')
+    index:
+      filter_topic:
+        one: " amb el tema '%{topic}'"
+        other: " amb el tema '%{topic}'"
+      orders:
+        confidence_score: millor valorats
+        created_at: més nous
+        hot_score: més actius
+        most_commented: més comentats
+        random: aleatori
+        relevance: rellevància
+      search_form:
+        button: Cercar
+        placeholder: Cercar debats ...
+        title: Cercar
+      search_results:
+        one: " que conté '%{search_term}'"
+        other: " que contenen '%{search_term}'"
+      select_order: Ordenar per
+      select_order_long: Estàs veient els debats
+      start_debate: Comença un debat
+      title: Debats
+    new:
+      back_link: Tornar
+      form:
+        submit_button: Comença un debat
+      info: Si el que vols és fer una proposta, aquesta és la secció incorrecta, entra en %{info_link}.
+      info_link: crear nova proposta
+      more_info: Més informació
+      recommendation_four: Gaudeix d'aquest espai, de les veus que l'omplen, també és teu.
+      recommendation_one: No escriguis el títol del debat o frases senceres en majúscules. A internet això es considera cridar. I a ningú li agrada que li cridin.
+      recommendation_three: Les crítiques despietades són molt benvingudes. Aquest és un espai de pensament. Però et recomanem conservar l'elegància i la intel·ligència. El món és millor amb elles presents.
+      recommendation_two: Qualsevol debat o comentari que impliqui una acció il·legal serà eliminat, també els que tinguin la intenció de sabotejar els espais de debat, tota la resta està permès.
+      recommendations_title: Recomanacions per crear un debat
+      start_new: Començar un debat
+    show:
+      author_deleted: Usuari eliminat
+      back_link: Tornar
+      comments:
+        one: 1 Comentari
+        other: "%{count} Comentaris"
+        zero: Sense comentaris
+      comments_title: Comentaris
+      edit_debate_link: Edita debat
+      flag: Aquest debat ha estat marcat com inapropiat per diversos usuaris.
+      login_to_comment: Necessites %{signin} o %{signup} per fer comentaris.
+      share: Compartir
+    update:
+      form:
+        submit_button: Desa els canvis
+  errors:
+    messages:
+      user_not_found: No s'ha trobat l'usuari
+  form:
+    accept_terms: Accepto la %{policy} i les %{conditions}
+    conditions: Condicions d'ús
+    debate: el debat
+    error: error
+    errors: errors
+    not_saved: 'impedir guardar %{resource}:'
+    policy: Política de privacitat
+    proposal: la proposta
+    user: el compte
+    verification::letter: la verificació
+    verification::sms: el telèfon
+  layouts:
+    application:
+      chrome: Google Chrome
+      firefox: Firefox
+      ie: Hem detectat que estàs navegant des d'Internet Explorer. Per a una millor experiència et recomanem utilitzar %{chrome} o %{firefox}.
+      ie_title: Aquest web no està optimitzada per al teu navegador
+    footer:
+      accessibility: Accessibilitat
+      conditions: Condicions d'ús
+      more_info: Més informació
+      privacy: Política de privacitat
+    header:
+      administration: Administrar
+      debates: Debats
+      external_link_blog: Bloc
+      locale: 'Idioma:'
+      moderation: Moderar
+      more_information: Més informació
+      my_account_link: El meu compte
+      my_activity_link: La meva activitat
+      open: obert
+      open_city_slogan_html: Hi ciutats governades directament pels seus habitants, <b>que</b> debaten sobre temes que els preocupen, <b>proposen</b> idees per millorar les seves vides i <b>decideixen entre</b> totes i tots les que es duen a terme. Barcelona ja és una d'elles.
+      open_city_title: La ciutat que vols serà la ciutat que vulguis.
+      open_data: Dades obertes
+      open_gov: Govern %{open}
+      proposals: Propostes
+      see_all: Veure propostes
+  locale: Català
+  omniauth:
+    facebook:
+      sign_in: Entra amb Facebook
+      sign_up: Registra't amb Facebook
+    finish_signup:
+      title: Afegeix el teu email
+    google_oauth2:
+      sign_in: Entra amb Google
+      sign_up: Registra't amb Google
+    twitter:
+      sign_in: Entra amb Twitter
+      sign_up: Registra't amb Twitter
+  proposals:
+    create:
+      form:
+        submit_button: Crear proposta
+    edit:
+      back_link: Tornar
+      editing: Edita proposta
+      form:
+        submit_button: Desa els canvis
+      show_link: Veure proposta
+    form:
+      proposal_external_url: Enllaç a documentació addicional
+      proposal_question: Pregunta de la proposta
+      proposal_question_example_html: Ha de ser resumida en una pregunta la resposta sigui Sí o No. <em>Ex. 'Està vostè d'acord en vianants el carrer Major?'</em>
+      proposal_responsible_name: Nom i cognoms de la persona que fa aquesta proposta
+      proposal_responsible_name_note: "(individualment o com a representant d'un col·lectiu, no es mostrarà públicament)"
+      proposal_summary: Resum de la proposta
+      proposal_summary_note: "(màxim 200 caràcters)"
+      proposal_text: Text desenvolupat de la proposta
+      proposal_title: Títol de la proposta
+      proposal_video_url: Enllaç a vídeo extern
+      proposal_video_url_note: Pots afegir un enllaç a YouTube o Vimeo
+      tags_instructions: Etiqueta aquesta proposta. Pots triar entre les nostres propostes o introduir les que vulguis.
+      tags_label: Temes
+      tags_placeholder: Escriu les etiquetes que vulguis separades per una coma (',')
+    index:
+      featured_proposals_html: Propostes <br> destacades
+      filter_topic:
+        one: " amb el tema '%{topic}'"
+        other: " amb el tema '%{topic}'"
+      orders:
+        confidence_score: més recolzades
+        created_at: més noves
+        hot_score: més actives avui
+        most_commented: més comentades
+        random: aleatòries
+        relevance: rellevància
+      search_form:
+        button: Cercar
+        placeholder: Cerca propostes ciutadanes ...
+        title: Cercar
+      search_results:
+        one: " que conté '%{search_term}'"
+        other: " que contenen '%{search_term}'"
+      select_order: Ordenar per
+      select_order_long: Estàs veient les propostes
+      start_proposal: Crea una proposta
+      title: Propostes ciutadanes
+    new:
+      back_link: Tornar
+      form:
+        submit_button: Crear proposta
+      more_info: Com funcionen les propostes ciutadanes?
+      recommendation_one: No escriguis el títol de la proposta o frases senceres en majúscules. A internet això es considera cridar. I a ningú li agrada que li cridin.
+      recommendation_three: Gaudeix d'aquest espai, de les veus que l'omplen, també és teu.
+      recommendation_two: Qualsevol proposta o comentari que impliqui una acció il·legal serà eliminada, també les que tinguin la intenció de sabotejar els espais de proposta, tota la resta està permès.
+      recommendations_title: Recomanacions per crear una proposta
+      start_new: Crear una proposta
+    proposal:
+      already_supported: Ja has donat suport a aquesta proposta, comparteix-la!
+      comments:
+        one: 1 Comentari
+        other: "%{count} Comentaris"
+        zero: Sense comentaris
+      proposal: Proposta
+      reason_for_supports_necessary: 2% del Cens
+      support: Donar suport
+      support_title: Donar suport a aquesta proposta
+      supports:
+        one: 1 suport
+        other: "%{count} suports"
+        zero: Sense suports
+      supports_necessary: "%{number} suports necessaris"
+      total_percent: 100%
+    show:
+      author_deleted: Usuari eliminat
+      back_link: Tornar
+      code: 'Codi de la proposta:'
+      comments:
+        one: 1 Comentari
+        other: "%{count} Comentaris"
+        zero: Sense comentaris
+      comments_title: Comentaris
+      edit_proposal_link: Edita proposta
+      flag: Aquesta proposta ha estat marcada com inapropiada per diversos usuaris.
+      login_to_comment: Necessites %{signin} o %{signup} per fer comentaris.
+      share: Compartir
+    update:
+      form:
+        submit_button: Desa els canvis
+  shared:
+    author_info:
+      author_deleted: Usuari eliminat
+    check: Seleccionar
+    check_all: Tots
+    check_none: Cap
+    collective: Col·lectiu
+    flag: Denunciar com inapropiat
+    print:
+      print_button: Imprimir aquesta informació
+    tags_cloud:
+      tags: Tendències
+    unflag: Desfer denúncia
+  simple_captcha:
+    label: Introdueix el text de la imatge en la següent caixa
+    message:
+      debate: el codi secret no coincideix amb la imatge
+      proposal: el codi secret no coincideix amb la imatge
+      user: el codi secret no coincideix amb la imatge
+    placeholder: Introdueix el text de la imatge
+    refresh_button_text: Refrescar
+  social:
+    blog: Bloc
+    facebook: Facebook
+    twitter: Twitter
+    youtube: YouTube
+  users:
+    show:
+      deleted: Eliminat
+      deleted_debate: Aquest debat ha estat eliminat
+      deleted_proposal: Aquest proposta ha estat eliminada
+      filters:
+        comments:
+          one: 1 Comentari
+          other: "%{count} Comentaris"
+        debates:
+          one: 1 Debat
+          other: "%{count} Debats"
+        proposals:
+          one: 1 Proposta
+          other: "%{count} Propostes"
+      no_activity: Usuari sense activitat pública
+      private_activity: Aquest usuari ha decidit mantenir en privat la seva llista d'activitats
+  votes:
+    agree: Estic d'acord
+    anonymous: Massa vots anònims, per poder votar %{verify_account}.
+    disagree: No estic d'acord
+    organizations: Les organitzacions no poden votar
+    signin: iniciar sessió
+    signup: registrar-
+    supports: Suports
+    unauthenticated: Necessites %{signin} o %{signup} per continuar.
+    verified_only: Les propostes només poden ser votades per usuaris verificats, %{verify_account}.
+    verify_account: verifica el teu compte
+  welcome:
+    highlights: 'Portada:'
+    signed_in_home_title: Activitat recent
+    welcome:
+      go_to_index: Veure propostes
+      title: Comença a participar
+      user_permission_debates: Participar en debats
+      user_permission_info: Amb el teu compte ja pots ...
+      user_permission_proposal: Crear noves propostes
+      user_permission_support_proposal: Donar suport propostes *
+      user_permission_verify: Per poder realitzar totes les accions %{verify}.
+      user_permission_verify_info: "* Només usuaris empadronats al municipi de Barcelona."
+      user_permission_verify_url: verifica el teu compte
+      user_permission_votes: Participar en les votacions finals *
