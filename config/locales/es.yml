@@ -358,15 +358,19 @@ es:
     debates:
       title: "Debates"
       description: "Encontrarnos, debatir y compartir lo que nos parece importante en nuestra ciudad."
+      alt: "Icono debates"
     proposal:
       title: "Propones"
       description: "Espacio abierto para propuestas ciudadanas sobre el tipo de ciudad en el que queremos vivir."
+      alt: "Icono propones"
     decide:
       title: "Decides"
       description: "La ciudadanía decide si acepta o rechaza las propuestas más apoyadas."
+      alt: "Icono decides"
     do:
       title: "Se hace"
       description: "Si la propuesta es aceptada mayoritariamente, el Ayuntamiento la asume como propia y se hace."
+      alt: "Icono se hace"
     welcome:
       title: "Empieza a participar"
       go_to_index: "Ver propuestas"

@@ -3,4 +3,8 @@ class Annotation < ActiveRecord::Base
 
   belongs_to :legislation
   belongs_to :user
+
+  def permissions
+    { update: [user_id], delete: [user_id] }
+  end
 end

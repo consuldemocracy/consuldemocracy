@@ -1,4 +1,4 @@
-<header class="<%= header_css %>">
+<header>
   <section class="top-links show-for-medium-up">
     <div class="row">
       <%= render "shared/locale_switcher" %>
@@ -61,7 +61,7 @@
       <%= link_to t("layouts.header.more_information"), page_path('more_information'), class: ("active" if current_page?("/more_information"))  %>
       <%= link_to t("layouts.header.external_link_blog_url"), target: "_blank" do %>
         <%= t("layouts.header.external_link_blog") %>
-        <i class="icon-external"></i>
+        <small><i class="icon-external"></i></small>
       <% end %>
       </div>
       <div class="small-12 medium-4 column right">
@@ -74,14 +74,17 @@
     <div class="row home-page">
       <div class="small-12 medium-7 column">
         <h1><%= t("layouts.header.open_city_title") %></h1>
-        <h2><%= t("layouts.header.open_city_slogan_html") %></h2>
-        <%= link_to t("layouts.header.see_all"), proposals_path, class: "button radius see-more warning" %>
-        <%= link_to t("layouts.header.more_information"), "/more_information", class: "more-info" %>
+        <p>
+          <%= t("layouts.header.open_city_slogan_html") %>&nbsp;
+          <%= link_to t("layouts.header.more_information"), page_path('more_information') %>
+        </p>
+        <div class="small-12 medium-6">
+          <%= link_to t("layouts.header.see_all"), proposals_path, class: "button radius see-more warning expand" %>
+        </div>
       </div>
 
       <div class="show-for-medium-up small-12 medium-5 column text-center">
-        <i class="icon-debates icon-home-big"></i>
-        <i class="icon-debates icon-home-small"></i>
+        <%= image_tag("icon_home.png", size: "330x240", alt:"", role:"presentation") %>
       </div>
     </div>
   <% end %>
@@ -94,8 +97,7 @@
         <%= link_to t("pages.opendata.go_old"), t("layouts.header.external_link_opendata_url"), target: "_blank", class: "button radius" %>
       </div>
       <div class="show-for-medium-up small-12 medium-5 column text-center">
-        <i class="icon-debates icon-home-big"></i>
-        <i class="icon-debates icon-home-small"></i>
+        <%= image_tag("icon_home.png", size: "330x240", alt:"", role:"presentation") %>
       </div>
     </div>
   <% end %>

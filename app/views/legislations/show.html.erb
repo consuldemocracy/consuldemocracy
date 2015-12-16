@@ -1,10 +1,7 @@
-<% if current_user %>
-  <section class="annotate" data-id=<%= @legislation.id %> data-user-id=<%= current_user.id %>>
-<% else %>
-  <section>
-<% end %>
+<section data-annotatable-type="legislation"
+         data-annotatable-id="<%= @legislation.id %>">
 
 <div><%= @legislation.title %></div>
-<div id="test"><%= @legislation.body %></div>
+<div id="legislation_body"><%= @legislation.body %></div>
 
 </section>
