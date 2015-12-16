@@ -5,7 +5,7 @@ gem 'rails', '4.2.5'
 # Use PostgreSQL
 gem 'pg'
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 5.0'
+gem 'sassc-rails'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
@@ -43,7 +43,7 @@ gem 'paranoia'
 gem 'rinku', require: 'rails_rinku'
 gem 'savon'
 gem 'dalli'
-gem 'rollbar', '~> 2.6.1'
+gem 'rollbar', '~> 2.7.0'
 gem 'delayed_job_active_record', '~> 4.1.0'
 gem 'daemons'
 gem 'devise-async'

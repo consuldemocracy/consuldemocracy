@@ -4,66 +4,56 @@ describe PagesController do
 
   describe 'Static pages' do
     it 'should include a privacy page' do
-      get :privacy
+      get :show, id: :privacy
       expect(response).to be_ok
     end
 
     it 'should include a conditions page' do
-      get :conditions
+      get :show, id: :conditions
       expect(response).to be_ok
     end
 
     it 'should include a general terms page' do
-      get :general_terms
+      get :show, id: :general_terms
       expect(response).to be_ok
     end
 
     it 'should include a terms page' do
-      get :census_terms
+      get :show, id: :census_terms
       expect(response).to be_ok
     end
   end
 
   describe 'Provisional pages' do
     it 'should include a opendata page' do
-      get :opendata
+      get :show, id: :opendata
       expect(response).to be_ok
     end
   end
 
   describe 'Info pages' do
-    it 'should include a coming_soon page' do
-      get :coming_soon
-      expect(response).to be_ok
-    end
-
     it 'should include a how_it_works page' do
-      get :how_it_works
+      get :show, id: :how_it_works
       expect(response).to be_ok
     end
 
     it 'should include a how_to_use page' do
-      get :how_to_use
+      get :show, id: :how_to_use
       expect(response).to be_ok
     end
 
     it 'should include a more_information page' do
-      get :more_information
+      get :show, id: :more_information
       expect(response).to be_ok
     end
 
     it 'should include a participation page' do
-      get :participation
+      get :show, id: :participation
       expect(response).to be_ok
     end
 
-    it 'should include a blog page' do
-      get :blog
-      expect(response).to be_redirect
-    end
-
     it 'should include a accessibility page' do
-      get :accessibility
+      get :show, id: :accessibility
       expect(response).to be_ok
     end
   end

@@ -29,11 +29,11 @@
 //= require moderator_debates
 //= require moderator_proposals
 //= require prevent_double_submission
-//= require rem.min
-//= require respond.min
+//= require annotator.min
 //= require tags
 //= require users
 //= require votes
+//= require annotations
 
 
 var initialize_modules = function() {
@@ -46,6 +46,7 @@ var initialize_modules = function() {
   App.CheckAllNone.initialize();
   App.PreventDoubleSubmission.initialize();
   App.IeAlert.initialize();
+  App.annotations.initialize();
 };
 
 $(function(){
