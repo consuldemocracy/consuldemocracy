@@ -10,7 +10,7 @@ App.Annotable =
         .include(annotator.ui.main, { element: this })
         .include(annotator.storage.http, { prefix: "", urls: { search: "/annotations/search" } })
         .include ->
-          beforeannotationCreated: (ann) ->
+          beforeAnnotationCreated: (ann) ->
             ann[ann_type + "_id"] = ann_id
             ann.user_id           = ann_user_id
 
