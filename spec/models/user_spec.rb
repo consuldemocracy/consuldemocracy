@@ -77,6 +77,12 @@ describe User do
         expect(subject.email_on_comment_reply).to eq(false)
       end
     end
+
+    describe 'subscription_to_website_newsletter' do
+      it 'should be false by default' do
+        expect(subject.subscription_to_website_newsletter).to eq(false)
+      end
+    end
   end
 
   describe 'OmniAuth' do
