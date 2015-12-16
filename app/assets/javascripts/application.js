@@ -33,7 +33,7 @@
 //= require tags
 //= require users
 //= require votes
-//= require annotable
+//= require annotatable
 
 
 var initialize_modules = function() {
@@ -46,7 +46,7 @@ var initialize_modules = function() {
   App.CheckAllNone.initialize();
   App.PreventDoubleSubmission.initialize();
   App.IeAlert.initialize();
-  App.Annotable.initialize();
+  App.Annotatable.initialize();
 };
 
 $(function(){

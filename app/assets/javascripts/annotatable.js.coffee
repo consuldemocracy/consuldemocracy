@@ -1,9 +1,9 @@
-App.Annotable =
+App.Annotatable =
   initialize: ->
-    $("[data-annotable-type]").each ->
+    $("[data-annotatable-type]").each ->
       $this       = $(this)
-      ann_type    = $this.data("annotable-type")
-      ann_id      = $this.data("annotable-id")
+      ann_type    = $this.data("annotatable-type")
+      ann_id      = $this.data("annotatable-id")
 
       app = new annotator.App()
         .include(annotator.ui.main, { element: this })
