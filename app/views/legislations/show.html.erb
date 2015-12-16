@@ -1,0 +1,10 @@
+<% if current_user %>
+  <section class="annotate" data-id=<%= @legislation.id %> data-user-id=<%= current_user.id %>>
+<% else %>
+  <section>
+<% end %>
+
+<div><%= @legislation.title %></div>
+<div id="test"><%= @legislation.body %></div>
+
+</section>
