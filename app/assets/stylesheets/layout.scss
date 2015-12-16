@@ -168,8 +168,10 @@ h1, h2, h3, h4, h5, h6 {
   padding: 0;
 }
 
-html, body {
-  height: 100%;
+html{
+  position: relative;
+  min-height: 100%;
+  height: auto;
 }
 
 body {
@@ -179,6 +181,10 @@ body {
   font-size: $base-font-size;
   font-weight: normal;
   text-rendering: optimizeLegibility;
+
+  position: static;
+  height: auto;
+  margin: 0 0 $footer-height + rem-calc(24);
 
   &::selection, ::-moz-selection {
     background: $brand !important;
@@ -338,10 +344,8 @@ a {
 }
 
 .wrapper {
-  min-height: 100%;
-  margin: 0 auto rem-calc(-288);
+  margin: 0 auto;
   height: auto !important;
-  height: 100%;
 }
 
 .wrap {
@@ -350,7 +354,6 @@ a {
 
 .footer, .push {
   clear: both;
-  min-height: rem-calc(288);
 }
 
 .ie-alert-box {
@@ -781,14 +784,18 @@ footer {
 .footer {
   background: #DEE0E2;
   border-top: rem-calc(6) solid $brand;
-  padding-top: $line-height;
+  padding-top: rem-calc(12);
+  padding-bottom: rem-calc(12);
+
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: $footer-height;
 }
 
 .subfooter {
-  border-top: 1px solid #BFC1C3;
   opacity: .75;
-  margin-top: rem-calc(24);
-  padding-top: rem-calc(12);
 }
 
 // 06. Tags

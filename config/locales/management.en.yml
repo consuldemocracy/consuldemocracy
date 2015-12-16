@@ -41,10 +41,9 @@ en:
       please_check_account_data: "Please check that the account data above are correct."
       already_verified: "This user account is already verified."
       in_census_has_following_permissions: "This user can participate in the website with the following permissions:"
-      not_in_census: "This document is not registered in Madrid."
+      not_in_census: "This document is not registered in Barcelona."
       under_age: "You must be over 16 to verify your account."
       not_in_census_info: "Citizens not in the Census can participate in the website with the following permissions:"
-      has_no_account_html: "In order to create an account, go to %{link} and click in <b>'Register'</b> in the upper-left part of the screen."
       verify: "Verify"
     email_verifications:
       document_found_in_census: "This document was found in the census, but it has no user account associated to it."
@@ -67,5 +66,5 @@ en:
         to log in to the website"
     print:
       proposals_title: "Proposals:"
-      info: "Create yor proposal on http://decide.madrid.es"
+      info: "Create yor proposal"
       note: "The proposals more supported will be voted. If are accepted by a majority, the city Council shall be carried out."

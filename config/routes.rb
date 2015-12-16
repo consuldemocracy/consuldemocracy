@@ -260,6 +260,5 @@ Rails.application.routes.draw do
 
   # static pages
 
-  get '/blog' => redirect("http://diario.madrid.es/participa/")
   resources :pages, path: '/', only: [:show]
 end

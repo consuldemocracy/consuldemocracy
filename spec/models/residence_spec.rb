@@ -48,7 +48,7 @@ describe Verification::Residence do
         residence.postal_code = "13280"
         residence.valid?
         expect(residence.errors[:postal_code].size).to eq(1)
-        expect(residence.errors[:postal_code]).to include("In order to be verified, you must be registered in the municipality of Madrid.")
+        expect(residence.errors[:postal_code].first).to include("In order to be verified, you must be registered")
       end
     end
 

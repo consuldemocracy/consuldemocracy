@@ -5,19 +5,13 @@ es:
       user_not_found: "No se encontró el usuario"
   layouts:
     header:
-      logo: "Barcelona"
-      external_link_transparency: "Transparencia"
-      external_link_transparency_url: "https://transparencia.madrid.es"
-      external_link_opendata: "Datos abiertos"
-      external_link_opendata_url: "http://datos.madrid.es"
       external_link_blog: "Blog"
       open_gov: "Gobierno %{open}"
       open: "abierto"
       open_data: "Datos abiertos"
       open_city_title: "La ciudad que quieres será la ciudad que quieras."
       open_city_slogan_html:
-        "Existen ciudades gobernadas directamente por sus habitantes, que <b>debaten</b> sobre temas que les preocupan, <b>proponen</b> ideas para mejorar
-        sus vidas y <b>deciden</b> entre todas y todos las que se llevan a cabo. Madrid ya es una de ellas."
+        "Existen ciudades gobernadas directamente por sus habitantes, que <b>debaten</b> sobre temas que les preocupan, <b>proponen</b> ideas para mejorar sus vidas y <b>deciden</b> entre todas y todos las que se llevan a cabo. Barcelona ya es una de ellas."
       see_all: "Ver propuestas"
       my_activity_link: "Mi actividad"
       my_account_link: "Mi cuenta"
@@ -28,21 +22,6 @@ es:
       debates: "Debates"
       proposals: "Propuestas"
     footer:
-      description: "Este portal usa la %{consul} que es %{open_source}. De Madrid, para el mundo entero."
-      open_source: "software libre"
-      open_source_url: "http://www.gnu.org/licenses/agpl-3.0.html"
-      consul: "aplicación Consul"
-      consul_url: "https://github.com/consul/consul"
-      copyright: "Ayuntamiento de Madrid, %{year}"
-      participation_title: "Participación"
-      participation_text: "Decide cómo debe ser la ciudad de Madrid que quieres."
-      transparency_title: "Transparencia"
-      transparency_url: "https://transparencia.madrid.es"
-      transparency_text: "Obtén cualquier información sobre el Ayuntamiento de Madrid."
-      open_data_title: "Datos Abiertos"
-      open_data_text: "Todos los datos del Ayuntamiento son tuyos."
-      contact_us: "Para asistencia técnica entra en"
-      faq: "Asistencia técnica"
       privacy: "Política de privacidad"
       conditions: "Condiciones de uso"
       more_info: "Más información"
@@ -305,7 +284,7 @@ es:
       user_permission_support_proposal: "Apoyar propuestas*"
       user_permission_votes: "Participar en las votaciones finales*"
       user_permission_verify: "Para poder realizar todas las acciones verifica tu cuenta."
-      user_permission_verify_info: "* Sólo usuarios empadronados en el municipio de Madrid."
+      user_permission_verify_info: "* Sólo usuarios empadronados en el municipio de Barcelona."
   simple_captcha:
     placeholder: "Introduce el texto de la imagen"
     label: "Introduce el texto de la imagen en la siguiente caja"
@@ -351,18 +330,6 @@ es:
   welcome:
     highlights: "Portada: "
     signed_in_home_title: "Actividad reciente"
-    debates:
-      title: "Debates"
-      description: "Encontrarnos, debatir y compartir lo que nos parece importante en nuestra ciudad."
-    proposal:
-      title: "Propones"
-      description: "Espacio abierto para propuestas ciudadanas sobre el tipo de ciudad en el que queremos vivir."
-    decide:
-      title: "Decides"
-      description: "La ciudadanía decide si acepta o rechaza las propuestas más apoyadas."
-    do:
-      title: "Se hace"
-      description: "Si la propuesta es aceptada mayoritariamente, el Ayuntamiento la asume como propia y se hace."
     welcome:
       title: "Empieza a participar"
       go_to_index: "Ver propuestas"
@@ -373,7 +340,7 @@ es:
       user_permission_votes: "Participar en las votaciones finales*"
       user_permission_verify: "Para poder realizar todas las acciones %{verify}."
       user_permission_verify_url: "verifica tu cuenta"
-      user_permission_verify_info: "* Sólo usuarios empadronados en el municipio de Madrid."
+      user_permission_verify_info: "* Sólo usuarios empadronados en el municipio de Barcelona."
   omniauth:
     finish_signup:
       title: "Añade tu email"

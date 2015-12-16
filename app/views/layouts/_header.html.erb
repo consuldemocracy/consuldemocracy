@@ -3,9 +3,7 @@
     <div class="row">
       <%= render "shared/locale_switcher" %>
       <div class="external-links">
-        <%= link_to setting('brand_name'), root_path, class: ("selected" unless current_page?("/opendata")) %>&nbsp;|
-        <%= link_to t("layouts.header.external_link_transparency"), t("layouts.header.external_link_transparency_url") %>&nbsp;|
-        <%= link_to t("layouts.header.external_link_opendata"), "/opendata", class: ("selected" if current_page?("/opendata")) %>&nbsp;|&nbsp;
+        <%= link_to setting('brand_name'), root_path, class: ("selected") %>&nbsp;|
           <div class="social inline-block">
             <% if setting('twitter_handle') %>
               <%= link_to "https://twitter.com/#{setting('twitter_handle')}", target: "_blank", title: t("social.twitter") do %>
@@ -64,7 +62,7 @@
       <div class="small-12 medium-8 column">
       <%= link_to t("layouts.header.debates"), debates_path, class: ("active" if current_page?(controller: "/debates")) %>
       <%= link_to t("layouts.header.proposals"), proposals_path, class: ("active" if current_page?(controller: "/proposals")) %>
-      <%= link_to t("layouts.header.more_information"), page_path("/more_information"), class: ("active" if current_page?("/more_information"))  %>
+      <%= link_to t("layouts.header.more_information"), page_path("more_information"), class: ("active" if current_page?("/more_information"))  %>
       <% if setting('blog_url') %>
         <%= link_to setting('blog_url'), target: "_blank" do %>
           <%= t("layouts.header.external_link_blog") %>
@@ -78,33 +76,5 @@
     </section>
   </div>
 
-  <% if home_page? %>
-    <div class="row home-page">
-      <div class="small-12 medium-7 column">
-        <h1><%= t("layouts.header.open_city_title") %></h1>
-        <h2><%= t("layouts.header.open_city_slogan_html") %></h2>
-        <%= link_to t("layouts.header.see_all"), proposals_path, class: "button radius see-more warning" %>
-        <%= link_to t("layouts.header.more_information"), "/more_information", class: "more-info" %>
-      </div>
-
-      <div class="show-for-medium-up small-12 medium-5 column text-center">
-        <i class="icon-debates icon-home-big"></i>
-        <i class="icon-debates icon-home-small"></i>
-      </div>
-    </div>
-  <% end %>
-
-  <% if opendata_page? %>
-    <div class="row home-page">
-      <div class="small-12 medium-7 column">
-        <h1><%= t("pages.opendata.title") %></h1>
-        <h2><%= t("pages.opendata.slogan_html") %></h2>
-        <%= link_to t("pages.opendata.go_old"), t("layouts.header.external_link_opendata_url"), target: "_blank", class: "button radius" %>
-      </div>
-      <div class="show-for-medium-up small-12 medium-5 column text-center">
-        <i class="icon-debates icon-home-big"></i>
-        <i class="icon-debates icon-home-small"></i>
-      </div>
-    </div>
-  <% end %>
+  <%= yield :header %>
 </header>
