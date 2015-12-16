@@ -39,7 +39,7 @@ feature 'Legislation' do
 
     scenario 'Update' do
       legislation = create(:legislation)
-      annotation = create(:annotation, legislation: legislation, text: "my annotation")
+      annotation = create(:annotation, legislation: legislation, user: user, text: "my annotation")
 
       visit legislation_path(legislation)
 
@@ -60,7 +60,7 @@ feature 'Legislation' do
 
     scenario 'Destroy' do
       legislation = create(:legislation)
-      annotation = create(:annotation, legislation: legislation)
+      annotation = create(:annotation, legislation: legislation, user: user)
 
       visit legislation_path(legislation)
 
