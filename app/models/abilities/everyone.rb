@@ -7,6 +7,7 @@ module Abilities
       can :read, Proposal
       can :read, Legislation
       can :read, User
+      can [:search, :read], Annotation
     end
   end
 end

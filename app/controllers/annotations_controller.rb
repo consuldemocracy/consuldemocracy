@@ -4,15 +4,16 @@ class AnnotationsController < ApplicationController
 
   def create
     @annotation = Annotation.new(annotation_params)
+    @annotation.user = current_user
     if @annotation.save
-      render json: @annotation.to_json
+      render json: @annotation.to_json(methods: :permissions)
     end
   end
 
   def update
     @annotation = Annotation.find(params[:id])
     if @annotation.update_attributes(annotation_params)
-      render json: @annotation.to_json
+      render json: @annotation.to_json(methods: :permissions)
     end
   end
 
@@ -25,7 +26,7 @@ class AnnotationsController < ApplicationController
   def search
     @annotations = Annotation.where(legislation_id: params[:legislation_id])
     annotations_hash = { total: @annotations.size, rows: @annotations }
-    render json: annotations_hash.to_json
+    render json: annotations_hash.to_json(methods: :permissions)
   end
 
   private
@@ -34,6 +35,6 @@ class AnnotationsController < ApplicationController
     params
       .require(:annotation)
       .permit(:quote, :text, ranges: [:start, :startOffset, :end, :endOffset])
-      .merge(legislation_id: params[:legislation_id], user_id: params[:user_id])
+      .merge(legislation_id: params[:legislation_id])
   end
 end

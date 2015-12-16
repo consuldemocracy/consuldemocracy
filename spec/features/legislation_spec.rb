@@ -13,7 +13,8 @@ feature 'Legislation' do
 
   context 'Annotations', :js do
 
-    background { login_as(create :user) }
+    let(:user) { create(:user) }
+    background { login_as user }
 
     scenario 'Create' do
       legislation = create(:legislation, body: "In order to achieve...")
@@ -26,20 +27,16 @@ feature 'Legislation' do
       fill_in 'annotator-field-0', with: 'this is my annotation'
       page.find(:css, ".annotator-controls a[href='#save']").click
 
-      within ".annotate" do
-        expect(page).to have_css ".annotator-hl[data-annotation-id]"
-      end
+      expect(page).to have_css ".annotator-hl[data-annotation-id]"
 
       visit legislation_path(legislation)
 
-      within ".annotate" do
-        expect(page).to have_css ".annotator-hl[data-annotation-id]"
-      end
+      expect(page).to have_css ".annotator-hl[data-annotation-id]"
     end
 
     scenario 'Update' do
       legislation = create(:legislation, body: "In order to achieve...")
-      annotation = create(:annotation, legislation: legislation, text: "this one" , quote: "In order to achieve...", ranges: [{"start"=>"/div[2]", "startOffset"=>12, "end"=>"/div[2]", "endOffset"=>19}])
+      create(:annotation, user: user, legislation: legislation, text: "this one" , quote: "In order to achieve...", ranges: [{"start"=>"/div[2]", "startOffset"=>12, "end"=>"/div[2]", "endOffset"=>19}])
 
       visit legislation_path(legislation)
 
@@ -60,7 +57,7 @@ feature 'Legislation' do
 
     scenario 'Destroy' do
       legislation = create(:legislation, body: "In order to achieve...")
-      annotation = create(:annotation, legislation: legislation, text: "this one" , quote: "achieve", ranges: [{"start"=>"/div[2]", "startOffset"=>12, "end"=>"/div[2]", "endOffset"=>19}])
+      annotation = create(:annotation, user: user, legislation: legislation, text: "this one" , quote: "achieve", ranges: [{"start"=>"/div[2]", "startOffset"=>12, "end"=>"/div[2]", "endOffset"=>19}])
 
       visit legislation_path(legislation)
 
@@ -79,10 +76,8 @@ feature 'Legislation' do
 
       visit legislation_path(legislation)
 
-      within ".annotate" do
-        expect(page).to have_css ".annotator-hl[data-annotation-id='#{annotation1.id}']"
-        expect(page).to have_css ".annotator-hl[data-annotation-id='#{annotation2.id}']"
-      end
+      expect(page).to have_css ".annotator-hl[data-annotation-id='#{annotation1.id}']"
+      expect(page).to have_css ".annotator-hl[data-annotation-id='#{annotation2.id}']"
     end
 
   end
