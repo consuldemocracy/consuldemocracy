@@ -41,7 +41,7 @@ module Abilities
       end
 
       can :create, Annotation
-      can [:update, :delete], Annotation, user_id: user.id
+      can [:update, :destroy], Annotation, user_id: user.id
 
     end
   end
