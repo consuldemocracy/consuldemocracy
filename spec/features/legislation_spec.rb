@@ -17,7 +17,7 @@ feature 'Legislation' do
     background { login_as user }
 
     scenario 'Create' do
-      legislation = create(:legislation, body: "In order to achieve...")
+      legislation = create(:legislation)
 
       visit legislation_path(legislation)
 
@@ -38,8 +38,8 @@ feature 'Legislation' do
     end
 
     scenario 'Update' do
-      legislation = create(:legislation, body: "In order to achieve...")
-      annotation = create(:annotation, legislation: legislation, text: "my annotation" , quote: "In order to achieve...", ranges: [{"start"=>"/div[2]", "startOffset"=>12, "end"=>"/div[2]", "endOffset"=>19}])
+      legislation = create(:legislation)
+      annotation = create(:annotation, legislation: legislation, text: "my annotation")
 
       visit legislation_path(legislation)
 
@@ -59,8 +59,8 @@ feature 'Legislation' do
     end
 
     scenario 'Destroy' do
-      legislation = create(:legislation, body: "In order to achieve...")
-      annotation = create(:annotation, user: user, legislation: legislation, text: "this one" , quote: "achieve", ranges: [{"start"=>"/div[2]", "startOffset"=>12, "end"=>"/div[2]", "endOffset"=>19}])
+      legislation = create(:legislation)
+      annotation = create(:annotation, legislation: legislation)
 
       visit legislation_path(legislation)
 
@@ -73,9 +73,9 @@ feature 'Legislation' do
     end
 
     scenario 'Search' do
-      legislation = create(:legislation, body: "In order to achieve...")
-      annotation1 = create(:annotation, legislation: legislation, text: "my annotation" , quote: "achieve", ranges: [{"start"=>"/div[2]", "startOffset"=>5, "end"=>"/div[2]", "endOffset"=>10}])
-      annotation2 = create(:annotation, legislation: legislation, text: "my other annotation" , quote: "achieve", ranges: [{"start"=>"/div[2]", "startOffset"=>12, "end"=>"/div[2]", "endOffset"=>19}])
+      legislation = create(:legislation)
+      annotation1 = create(:annotation, legislation: legislation, text: "my annotation",       ranges: [{"start"=>"/div[2]", "startOffset"=>5, "end"=>"/div[2]", "endOffset"=>10}])
+      annotation2 = create(:annotation, legislation: legislation, text: "my other annotation", ranges: [{"start"=>"/div[2]", "startOffset"=>12, "end"=>"/div[2]", "endOffset"=>19}])
 
       visit legislation_path(legislation)
 
