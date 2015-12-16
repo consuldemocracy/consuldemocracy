@@ -13,6 +13,8 @@ App.Annotable =
             ann[ann_type + "_id"] = ann_id
 
       app.start().then ->
+        app.ident.identity = $('html').data('current-user-id')
+
         options = {}
         options[ann_type + "_id"] = ann_id
         app.annotations.load(options)
