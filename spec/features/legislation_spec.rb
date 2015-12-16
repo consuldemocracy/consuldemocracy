@@ -21,9 +21,8 @@ feature 'Legislation' do
 
       visit legislation_path(legislation)
 
-      page.find(:css, "#test").double_click
+      page.find(:css, "#legislation_body").double_click
       page.find(:css, ".annotator-adder button").click
-
       fill_in 'annotator-field-0', with: 'this is my annotation'
       page.find(:css, ".annotator-controls a[href='#save']").click
 
