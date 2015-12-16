@@ -4,6 +4,7 @@ class AnnotationsController < ApplicationController
 
   def create
     @annotation = Annotation.new(annotation_params)
+    @annotation.user = current_user
     if @annotation.save
       render json: @annotation.to_json
     end

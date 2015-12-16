@@ -12,7 +12,6 @@ App.Annotable =
         .include ->
           beforeAnnotationCreated: (ann) ->
             ann[ann_type + "_id"] = ann_id
-            ann.user_id           = ann_user_id
 
       app.start().then ->
         options = {}
