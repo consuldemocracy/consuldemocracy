@@ -4,7 +4,6 @@ App.Annotable =
       $this       = $(this)
       ann_type    = $this.data("annotable-type")
       ann_id      = $this.data("annotable-id")
-      ann_user_id = $this.data("annotable-user-id")
 
       app = new annotator.App()
         .include(annotator.ui.main, { element: this })
