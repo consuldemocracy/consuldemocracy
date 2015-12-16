@@ -11,14 +11,14 @@ class AnnotationsController < ApplicationController
   end
 
   def update
-    @annotation = Annotation.find!(params[:id])
+    @annotation = Annotation.find(params[:id])
     if @annotation.update_attributes(annotation_params)
       render json: @annotation.to_json(methods: :permissions)
     end
   end
 
   def destroy
-    @annotation = Annotation.find!(params[:id])
+    @annotation = Annotation.find(params[:id])
     @annotation.destroy
     render json: { status: :ok }
   end
