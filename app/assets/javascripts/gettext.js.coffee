@@ -3,7 +3,7 @@ i18n = {
     "Comments": "Comentarios",
     "Cancel": "Cancelar",
     "Save": "Guardar",
-    "Unregistered": "Necesitas <a href='/users/sign_in'>iniciar sesión</a> o <a href='/users/sign_up'>registratre</a> para continuar."
+    "Unregistered": "Necesitas <a href='/users/sign_in'>iniciar sesión</a> o <a href='/users/sign_up'>registrarte</a> para continuar."
   },
   en: {
     "Comments": "Coments",
