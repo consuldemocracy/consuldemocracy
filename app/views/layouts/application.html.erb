@@ -15,14 +15,6 @@
                      sizes: "200x200",
                      type: "image/png" %>
     <%= content_for :social_media_meta_tags %>
-    <% unless user_signed_in? %>
-      <style type="text/css">
-      .annotator-adder {
-        border: 1px solid red;
-        display: none;
-      }
-      </style>
-    <% end %>
   </head>
   <body>
     <div class="wrapper">
