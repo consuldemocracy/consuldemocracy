@@ -1,9 +1,10 @@
-<section data-annotatable-type="legislation"
-         data-annotatable-id="<%= @legislation.id %>">
-  <div class="row margin-top">
-    <div class="small-12 medium-9 small-centered column">
+<div class="row margin-top">
+  <div class="small-12 medium-9 small-centered column">
+    <section data-annotatable-type="legislation"
+             data-annotatable-id="<%= @legislation.id %>">
       <h1 class="text-center"><%= @legislation.title %></h1>
       <div id="legislation_body"><%= @legislation.body %></div>
-    </div>
+    </section>
   </div>
-</section>
+</div>
+
