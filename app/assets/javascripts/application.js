@@ -29,6 +29,7 @@
 //= require moderator_debates
 //= require moderator_proposals
 //= require prevent_double_submission
+//= require gettext
 //= require annotator
 //= require tags
 //= require users

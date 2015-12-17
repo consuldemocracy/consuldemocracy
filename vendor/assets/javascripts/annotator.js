@@ -3,9 +3,9 @@
 "use strict";
 
 // Inject Annotator CSS
-var insertCss = require('insert-css');
-var css = require('./css/annotator.css');
-insertCss(css);
+// var insertCss = require('insert-css');
+// var css = require('./css/annotator.css');
+// insertCss(css);
 
 var app = require('./src/app');
 var util = require('./src/util');

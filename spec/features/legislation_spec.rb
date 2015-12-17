@@ -74,8 +74,8 @@ feature 'Legislation' do
 
     scenario 'Search' do
       legislation = create(:legislation)
-      annotation1 = create(:annotation, legislation: legislation, text: "my annotation",       ranges: [{"start"=>"/div[2]", "startOffset"=>5, "end"=>"/div[2]", "endOffset"=>10}])
-      annotation2 = create(:annotation, legislation: legislation, text: "my other annotation", ranges: [{"start"=>"/div[2]", "startOffset"=>12, "end"=>"/div[2]", "endOffset"=>19}])
+      annotation1 = create(:annotation, legislation: legislation, text: "my annotation",       ranges: [{"start"=>"/div[1]", "startOffset"=>5, "end"=>"/div[1]", "endOffset"=>10}])
+      annotation2 = create(:annotation, legislation: legislation, text: "my other annotation", ranges: [{"start"=>"/div[1]", "startOffset"=>12, "end"=>"/div[1]", "endOffset"=>19}])
 
       visit legislation_path(legislation)
 
