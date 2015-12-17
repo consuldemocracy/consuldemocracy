@@ -28,6 +28,11 @@
   font-size: $base-font-size;
   line-height: $line-height;
   min-width: $line-height*13;
+
+  p {
+    color: $text;
+    padding: $line-height/2;
+  }
 }
 
 .annotator-item,
