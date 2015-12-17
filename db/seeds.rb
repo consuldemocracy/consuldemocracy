@@ -168,6 +168,9 @@ if ENV["SEED"]
     Flag.flag(flagger, proposal)
   end
 
+  puts "Creating Legislation"
+
+  Legislation.create!(title: 'Participatory Democracy', body: 'In order to achieve...')
 
   puts "Ignoring flags in Debates, comments & proposals"
 
