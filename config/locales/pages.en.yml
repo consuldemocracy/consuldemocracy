@@ -108,7 +108,6 @@ en:
         process_2_button: "Coming soon..."
       process_1:
         title: "Help us improve transparency Ordinance of the City of Madrid"
-        button: "Comment ordinance"
         comment: "leave your comments here"
         text:  "Until next January 15 you can %{comment} to the draft Transparency Ordinance of the City of Madrid or sending an email to transparencia@madrid.es.
 

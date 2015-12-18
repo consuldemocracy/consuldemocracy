@@ -108,7 +108,6 @@ es:
         process_2_button: "Próximamente..."
       process_1:
         title: "Ayúdanos a mejorar la Ordenanza de Transparencia de la Ciudad de Madrid"
-        button: "Comentar Ordenanza"
         comment: "dejar tus comentarios aquí"
         text:  "Hasta el próximo 15 de enero podrás %{comment} sobre el borrador de la Ordenanza de Transparencia de la Ciudad de Madrid, o bien enviarlos a través de un email a transparencia@madrid.es.
 
