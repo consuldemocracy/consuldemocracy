@@ -213,6 +213,13 @@ a {
   border: 0;
 }
 
+#drop-help.f-dropdown.content {
+
+  @media (min-width: $small-breakpoint) {
+    max-width: $line-height*15;
+  }
+}
+
 // 02. Header
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
