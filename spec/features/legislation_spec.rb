@@ -43,11 +43,14 @@ feature 'Legislation' do
 
       visit legislation_path(legislation)
 
+      expect(page).to have_css ".annotator-hl"
       page.find(:css, ".annotator-hl").click
       page.find(:css, ".annotator-edit").click
 
       fill_in 'annotator-field-0', with: 'edited annotation'
       page.find(:css, ".annotator-controls a[href='#save']").click
+
+      expect(page).to_not have_css('span', text: 'my annotation')
 
       page.find(:css, ".annotator-hl").click
       expect(page).to have_content "edited annotation"
