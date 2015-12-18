@@ -219,9 +219,14 @@ a {
 
 .process {
   min-height: $line-height*12;
-
   p {
-    margin: 1em 0;
+    margin: $line-height 0;
+  }
+}
+
+#drop-help.f-dropdown.content {
+  @media (min-width: $small-breakpoint) {
+    max-width: $line-height*15;
   }
 }
 
