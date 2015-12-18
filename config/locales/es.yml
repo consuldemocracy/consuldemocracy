@@ -155,6 +155,7 @@ es:
       form:
         submit_button: "Guardar cambios"
   proposals:
+    detail: "Propuesta ciudadana" 
     index:
       title: "Propuestas ciudadanas"
       featured_proposals_html: "Propuestas<br>destacadas"
