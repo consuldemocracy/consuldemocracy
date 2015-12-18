@@ -26,8 +26,7 @@
 
 <div class="row">
   <div class="small-12 medium-9 small-centered column">
-    <section data-annotatable-type="legislation"
-             data-annotatable-id="<%= @legislation.id %>">
+    <section data-annotatable-type="legislation" data-annotatable-id="<%= @legislation.id %>">
 
       <h1 class="text-center">ORDENANZA DE TRANSPARENCIA DE LA CIUDAD DE MADRID</h1>
 
@@ -1182,6 +1181,11 @@
         <li>b) La ordenanza entrará en vigor el día siguiente al de su publicación en el Boletín Oficial de la Comunidad de Madrid, salvo en lo que afecta a las obligaciones de publicidad activa no previstas en la Ley 19/2013, de 9 de diciembre, que lo harán en el plazo de seis meses desde aquella fecha de publicación.</li>
         <li>c) Sin perjuicio de lo anterior, el acuerdo de aprobación se remitirá a la Administración General del Estado y a la Administración de la Comunidad de Madrid.</li>
       </ul>
+
+
+      <h1 class="text-center"><%= @legislation.title %></h1>
+      <div id="legislation_body"><%= @legislation.body %></div>
+
     </section>
   </div>
 </div>
