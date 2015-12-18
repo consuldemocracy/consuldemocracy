@@ -100,7 +100,7 @@ en:
     processes:
       title: "Decide how you want your city."
       index:
-        process_1_title: "Help us improve transparency Ordinance of the City of Madrid"
+        process_1_title: "Help us improve transparency Ordinance of Madrid"
         process_1_description: "The City of Madrid wants launch a system of public transparency at the level of the most advanced in the world, and we need your help."
         process_1_button: "Comment ordinance"
         process_2_title: "Remodeling of the Plaza España"
@@ -108,7 +108,9 @@ en:
         process_2_button: "Coming soon..."
       process_1:
         title: "Help us improve transparency Ordinance of the City of Madrid"
-        text:  "Starting today, December 10, until next January 15 you can send your comments to the draft Transparency Ordinance of the City of Madrid by sending an email with your comments to transparencia@madrid.es.
+        button: "Comment ordinance"
+        comment: "leave your comments here"
+        text:  "Until next January 15 you can %{comment} to the draft Transparency Ordinance of the City of Madrid or sending an email to transparencia@madrid.es.
 
 
                 You can now see the [final draft Transparency Ordinance of the City of Madrid](/docs/ordenanza_de_transparencia_de_la_ciudad_de_madrid.doc 'Transparency Ordinance of the City of Madrid')."
