@@ -167,6 +167,10 @@ a {
   margin-bottom: $line-height;
 }
 
+.absolute {
+  position: absolute;
+}
+
 .back, .icon-angle-left {
   @include back;
 
@@ -213,8 +217,14 @@ a {
   border: 0;
 }
 
-#drop-help.f-dropdown.content {
+.process {
+  min-height: $line-height*12;
+  p {
+    margin: $line-height 0;
+  }
+}
 
+#drop-help.f-dropdown.content {
   @media (min-width: $small-breakpoint) {
     max-width: $line-height*15;
   }
@@ -405,6 +415,18 @@ header {
         text-align: center;
       }
     }
+  }
+}
+
+.jumbo {
+  background: $highlight;
+
+  @media (min-width: $small-breakpoint) {
+    padding: rem-calc(24) 0;
+  }
+
+  h1, p {
+    color: $highlight-color;
   }
 }
 
