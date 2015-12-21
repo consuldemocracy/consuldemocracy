@@ -1,6 +1,6 @@
 class Moderation::UsersController < Moderation::BaseController
 
-  before_filter :load_users, only: :index
+  before_action :load_users, only: :index
 
   load_and_authorize_resource
 

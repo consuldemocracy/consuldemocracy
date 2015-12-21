@@ -43,11 +43,14 @@ feature 'Legislation' do
 
       visit legislation_path(legislation)
 
+      expect(page).to have_css ".annotator-hl"
       page.find(:css, ".annotator-hl").click
       page.find(:css, ".annotator-edit").click
 
       fill_in 'annotator-field-0', with: 'edited annotation'
       page.find(:css, ".annotator-controls a[href='#save']").click
+
+      expect(page).to_not have_css('span', text: 'my annotation')
 
       page.find(:css, ".annotator-hl").click
       expect(page).to have_content "edited annotation"
@@ -74,8 +77,8 @@ feature 'Legislation' do
 
     scenario 'Search' do
       legislation = create(:legislation)
-      annotation1 = create(:annotation, legislation: legislation, text: "my annotation",       ranges: [{"start"=>"/div[2]", "startOffset"=>5, "end"=>"/div[2]", "endOffset"=>10}])
-      annotation2 = create(:annotation, legislation: legislation, text: "my other annotation", ranges: [{"start"=>"/div[2]", "startOffset"=>12, "end"=>"/div[2]", "endOffset"=>19}])
+      annotation1 = create(:annotation, legislation: legislation, text: "my annotation",       ranges: [{"start"=>"/div[1]", "startOffset"=>5, "end"=>"/div[1]", "endOffset"=>10}])
+      annotation2 = create(:annotation, legislation: legislation, text: "my other annotation", ranges: [{"start"=>"/div[1]", "startOffset"=>12, "end"=>"/div[1]", "endOffset"=>19}])
 
       visit legislation_path(legislation)
 

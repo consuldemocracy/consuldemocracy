@@ -5,6 +5,6 @@ class Annotation < ActiveRecord::Base
   belongs_to :user
 
   def permissions
-    { update: [user_id], delete: [user_id] }
+    { update: [user_id], delete: [user_id], admin: [] }
   end
 end

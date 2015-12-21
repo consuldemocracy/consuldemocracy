@@ -1,0 +1,99 @@
+// Overrides styles of annotator.min
+//
+
+.annotator-editor .annotator-controls,
+.annotator-filter, .annotator-filter
+.annotator-filter-navigation button {
+  background: #F3F3F3;
+  background-image: none;
+  border: 0;
+  border-radius: 0;
+  border-top: 1px solid $border;
+  box-shadow: none;
+  padding: $line-height/2 $line-height/4;
+}
+
+.annotator-adder {
+  background-image: image-url("annotator_adder.png");
+  margin-top: -52px;
+}
+
+.annotator-widget {
+  background: white;
+  border: 1px solid $border;
+  border-radius: 0;
+  bottom: $line-height;
+  box-shadow: 0 0 5px rgba(0,0,0,0.05);
+  font-family: $font-sans;
+  font-size: $base-font-size;
+  line-height: $line-height;
+  min-width: $line-height*13;
+
+  p {
+    color: $text;
+    padding: $line-height/2;
+  }
+}
+
+.annotator-item,
+.annotator-editor .annotator-item input:focus,
+.annotator-editor .annotator-item textarea:focus {
+  background: white;
+}
+
+.annotator-widget:after,
+.annotator-editor.annotator-invert-y .annotator-widget:after {
+  background-image: image-url("annotator_items.png");
+}
+
+.annotator-editor a,
+.annotator-filter .annotator-filter-property label {
+  padding: 0 $line-height/4;
+}
+
+.annotator-editor a {
+  background: none;
+  background-image: none;
+  border: none;
+  box-shadow: none;
+  color: $link;
+  font-family: $font-sans;
+  font-size: $base-font-size;
+  font-weight: normal;
+  text-shadow: none;
+  padding: 0;
+
+  &:hover, &:active, &:focus {
+    background: none;
+    background-image: none;
+    color: $link-hover;
+    text-decoration: underline;
+    text-shadow: none;
+  }
+
+  &:after {
+    content: none;
+  }
+
+  &.annotator-cancel {
+    background: #F04124;
+    color: white;
+    padding: $line-height/4 $line-height/2;
+
+    &:hover {
+      background: darken(#F04124, 20);
+      text-decoration: none;
+    }
+  }
+
+  &.annotator-save {
+    background: #43AC6A;
+    color: white;
+    padding: $line-height/4 $line-height/2;
+
+    &:hover {
+      background: darken(#43AC6A, 20);
+      text-decoration: none;
+    }
+  }
+}
