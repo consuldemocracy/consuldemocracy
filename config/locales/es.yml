@@ -205,7 +205,6 @@ es:
         submit_button: "Guardar cambios"
     new:
       start_new: "Crear una propuesta"
-      more_info: "¿Cómo funcionan las propuestas ciudadanas?"
       back_link: "Volver"
       recommendations_title: "Recomendaciones para crear una propuesta"
       recommendation_one: "No escribas el título de la propuesta o frases enteras en mayúsculas. En internet eso se considera gritar. Y a nadie le gusta que le griten."

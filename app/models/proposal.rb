@@ -6,6 +6,7 @@ class Proposal < ActiveRecord::Base
   include Sanitizable
   include PgSearch
   include SearchCache
+  include Categorizable
 
   apply_simple_captcha
   acts_as_votable
@@ -20,6 +21,8 @@ class Proposal < ActiveRecord::Base
   validates :summary, presence: true
   validates :author, presence: true
   validates :responsible_name, presence: true
+
+  validates :category, presence: true
 
   validates :title, length: { in: 4..Proposal.title_max_length }
   validates :description, length: { maximum: Proposal.description_max_length }

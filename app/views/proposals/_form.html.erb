@@ -27,6 +27,9 @@
       <%= f.cktext_area :description, maxlength: Proposal.description_max_length, ckeditor: { language: I18n.locale }, label: false %>
     </div>
 
+    <div class="small-12 column">
+      <%= proposal_category_picker(@proposal) %>
+    </div>
 
     <div class="small-12 column">
       <%= f.label :video_url, t("proposals.form.proposal_video_url") %>

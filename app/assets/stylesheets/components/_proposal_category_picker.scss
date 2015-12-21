@@ -1,0 +1,8 @@
+.category-picker, .subcategory-picker{
+  li{
+    cursor: pointer;
+    &.selected{
+      font-weight: bold;
+    }
+  }
+}
