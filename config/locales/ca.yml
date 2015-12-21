@@ -176,6 +176,13 @@ ca:
       open_gov: Govern %{open}
       proposals: Propostes
       see_all: Veure propostes
+  legislation:
+    help:
+      alt: Selecciona el text que vols comentar i prem el botó amb el llapis.
+      text: Per comentar aquest document has de %{sign_in} o %{sign_up}. Després selecciona el text que vols comentar i prem el botó amb el llapis.
+      text_sign_in: iniciar sessió
+      text_sign_up: registrar-
+      title: Com puc comentar aquest document?
   locale: Català
   omniauth:
     facebook:
