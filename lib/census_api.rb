@@ -23,10 +23,10 @@ class CensusApi
         letter = nil
       end
 
-      document_number = document_number.last(8) # Keep only the last 7 digits
+      document_number = document_number.last(8) # Keep only the last x digits
       document_number = document_number.gsub(/^0+/, '') # Removes leading zeros
 
-      # if the number has less than 7 digits, pad with zeros to the left and add each variant to the list
+      # if the number has less digits than it should, pad with zeros to the left and add each variant to the list
       # For example, if the initial document_number is 1234, possible numbers should have
       # [1234, 01234, 001234, 0001234]
       possible_numbers = []
