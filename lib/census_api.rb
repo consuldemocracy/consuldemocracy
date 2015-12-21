@@ -1,13 +1,18 @@
 class CensusApi
 
   def call(document_type, document_number)
-    Response.new(get_response_body(document_type, document_number))
+    response = nil
+    get_document_number_variants(document_type, document_number).each do |variant|
+      response = Response.new(get_response_body(document_type, variant))
+      return response if response.valid?
+    end
+    response
   end
 
-  def get_tried_numbers(document_type, document_number)
+  def get_document_number_variants(document_type, document_number)
     # Delete all non-alphanumerics
     document_number = document_number.to_s.gsub(/[^0-9A-Za-z]/i, '')
-    result = []
+    variants = []
 
     if is_dni?(document_type)
       # If a letter exists at the end, delete it and put it on the letter var
@@ -21,8 +26,7 @@ class CensusApi
       document_number = document_number.last(8) # Keep only the last 7 digits
       document_number = document_number.gsub(/^0+/, '') # Removes leading zeros
 
-
-      # if the number has less than 7 digits, pad with zeros to the left and add each variation to the list
+      # if the number has less than 7 digits, pad with zeros to the left and add each variant to the list
       # For example, if the initial document_number is 1234, possible numbers should have
       # [1234, 01234, 001234, 0001234]
       possible_numbers = []
@@ -32,19 +36,19 @@ class CensusApi
         possible_numbers << document_number
       end
 
-      result += possible_numbers
+      variants += possible_numbers
 
-      # if a letter was given, try the numbers followed by the letter in uppercase and lowercase, too
+      # if a letter was given, try the numbers followed by the letter in upper and lowercase
       if letter.present? then
         possible_numbers.each do |number|
-          result << number + letter.downcase << number + letter.upcase
+          variants << number + letter.downcase << number + letter.upcase
         end
       end
-    else
-      result << document_number
+    else # not a DNI
+      variants << document_number
     end
 
-    result
+    variants
   end
 
   class Response
@@ -72,8 +76,6 @@ class CensusApi
   end
 
   private
-
-
 
     def get_response_body(document_type, document_number)
       if end_point_available?
