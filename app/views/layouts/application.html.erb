@@ -16,9 +16,7 @@
                      type: "image/png" %>
     <%= content_for :social_media_meta_tags %>
 
-    <%= javascript_tag do %>
-      <%= Setting.value_for(:per_page_javascript).try(:html_safe) %>
-    <% end %>
+    <%= Setting.value_for(:per_page_javascript).try(:html_safe) %>
 
   </head>
   <body>
