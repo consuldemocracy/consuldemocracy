@@ -17,7 +17,7 @@ module SearchCache
   end
 
   def set_tsvector(value, weight)
-    "setweight(to_tsvector('spanish', coalesce(#{quote(value)}, '')), #{quote(weight)})"
+    "setweight(to_tsvector('#{dictionary_for_searches}', coalesce(#{quote(value)}, '')), #{quote(weight)})"
   end
 
   def quote(value)

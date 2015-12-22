@@ -131,6 +131,10 @@ class Proposal < ActiveRecord::Base
     Setting.value_for('votes_for_proposal_success').to_i
   end
 
+  def self.dictionary_for_searches
+    Setting.value_for('dictionary_for_searches')
+  end
+
   protected
 
     def set_responsible_name
