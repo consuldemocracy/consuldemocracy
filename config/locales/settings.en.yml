@@ -11,4 +11,4 @@ en:
     proposal_code_prefix: "Prefix for Proposal codes"
     votes_for_proposal_success: "Number of votes necessary for approval of a Proposal"
     email_domain_for_officials: "Email domain for public officials"
-    per_page_javascript: "Javascript a incluir en cada página"
+    per_page_javascript: "Code to be included on every page"
