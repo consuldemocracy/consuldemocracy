@@ -17,7 +17,7 @@
     <%= content_for :social_media_meta_tags %>
 
     <%= javascript_tag do %>
-      <%= Setting.value_for(:per_page_javascript).html_safe %>
+      <%= Setting.value_for(:per_page_javascript).try(:html_safe) %>
     <% end %>
 
   </head>
