@@ -30,3 +30,6 @@ Setting.create(key: 'votes_for_proposal_success', value: '53726')
 # Users with this email domain will automatically be marked as level 1 officials
 # Emails under the domain's subdomains will also be included
 Setting.create(key: 'email_domain_for_officials', value: '')
+
+# Javascript to be included at the top of every page (useful for tracking)
+Setting.create(key: 'per_page_javascript', value: '')

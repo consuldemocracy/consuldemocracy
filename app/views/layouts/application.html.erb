@@ -15,6 +15,11 @@
                      sizes: "200x200",
                      type: "image/png" %>
     <%= content_for :social_media_meta_tags %>
+
+    <%= javascript_tag do %>
+      <%= Setting.value_for(:per_page_javascript).html_safe %>
+    <% end %>
+
   </head>
   <body>
     <div class="wrapper">
