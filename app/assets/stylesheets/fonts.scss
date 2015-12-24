@@ -1,8 +1,7 @@
 // Fonts
 //
 // 01. Source Sans Pro (https://www.google.com/fonts/specimen/Source+Sans+Pro)
-// 02. Merriweather (https://www.google.com/fonts/specimen/Merriweather)
-// 03. Lato (https://www.google.com/fonts/specimen/Lato)
+// 02. Lato (https://www.google.com/fonts/specimen/Lato)
 //
 
 // 01. Source Sans Pro
@@ -56,58 +55,7 @@
        font-url('sourcesanspro-bold-webfont.svg#source_sans_probold') format('svg');
 }
 
-// 02. Merriweather
-// - - - - - - - - - - - - - - - - - - - - - - - - -
-
-@font-face {
-  font-family: 'Merriweather';
-  font-style: normal;
-  font-weight: 300;
-  src: font-url('merriweather-light-webfont.eot');
-  src: font-url('merriweather-light-webfont.eot?#iefix') format('embedded-opentype'),
-       font-url('merriweather-light-webfont.woff2') format('woff2'),
-       font-url('merriweather-light-webfont.woff') format('woff'),
-       font-url('merriweather-light-webfont.ttf') format('truetype'),
-       font-url('merriweather-light-webfont.svg#source_sans_proregular') format('svg');
-}
-
-@font-face {
-  font-family: 'Merriweather';
-  font-style: normal;
-  font-weight: 400;
-  src: font-url('merriweather-regular-webfont.eot');
-  src: font-url('merriweather-regular-webfont.eot?#iefix') format('embedded-opentype'),
-       font-url('merriweather-regular-webfont.woff2') format('woff2'),
-       font-url('merriweather-regular-webfont.woff') format('woff'),
-       font-url('merriweather-regular-webfont.ttf') format('truetype'),
-       font-url('merriweather-regular-webfont.svg#source_sans_proitalic') format('svg');
-}
-
-@font-face {
-  font-family: 'Merriweather';
-  font-style: italic;
-  font-weight: 400;
-  src: font-url('merriweather-italic-webfont.eot');
-  src: font-url('merriweather-italic-webfont.eot?#iefix') format('embedded-opentype'),
-       font-url('merriweather-italic-webfont.woff2') format('woff2'),
-       font-url('merriweather-italic-webfont.woff') format('woff'),
-       font-url('merriweather-italic-webfont.ttf') format('truetype'),
-       font-url('merriweather-italic-webfont.svg#source_sans_proitalic') format('svg');
-}
-
-@font-face {
-  font-family: 'Merriweather';
-  font-style: normal;
-  font-weight: 700;
-  src: font-url('merriweather-bold-webfont.eot');
-  src: font-url('merriweather-bold-webfont.eot?#iefix') format('embedded-opentype'),
-       font-url('merriweather-bold-webfont.woff2') format('woff2'),
-       font-url('merriweather-bold-webfont.woff') format('woff'),
-       font-url('merriweather-bold-webfont.ttf') format('truetype'),
-       font-url('merriweather-bold-webfont.svg#source_sans_probold') format('svg');
-}
-
-// 03. Lato
+// 02. Lato
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
 @font-face {

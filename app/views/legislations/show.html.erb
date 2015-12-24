@@ -1,0 +1,28 @@
+<div class="row margin-top">
+  <div class="small-12 column">
+    <div class="right">
+      <a data-dropdown="drop-help" aria-controls="drop-help" aria-expanded="false" class="button radius warning">
+        <sub><i class="icon-edit"></i></sub>&nbsp;
+        <%= t("legislation.help.title") %>
+      </a>
+      <div id="drop-help" data-dropdown-content class="f-dropdown content" aria-hidden="true" tabindex="-1">
+        <p>
+          <%= t("legislation.help.text",
+              sign_in: link_to(t("legislation.help.text_sign_in"), new_user_session_path),
+              sign_up: link_to(t("legislation.help.text_sign_up"), new_user_registration_path)).html_safe %>
+          <%= image_tag ("annotator_help.gif"), alt: t("legislation.help.alt") %>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="small-12 medium-9 small-centered column">
+    <section data-annotatable-type="legislation"
+             data-annotatable-id="<%= @legislation.id %>">
+      <h1 class="text-center"><%= @legislation.title %></h1>
+      <div id="legislation_body"><%= @legislation.body %></div>
+    </section>
+  </div>
+</div>

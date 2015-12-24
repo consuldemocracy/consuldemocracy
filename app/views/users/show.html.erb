@@ -11,7 +11,7 @@
       </h2>
 
       <% if @user.public_activity || @authorized_current_user %>
-        <dl class="sub-nav">
+        <dl class="sub-nav margin-top">
           <% @valid_filters.each do |filter| %>
             <% if @activity_counts[filter] > 0 %>
               <% if @current_filter == filter %>

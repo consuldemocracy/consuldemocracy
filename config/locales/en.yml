@@ -358,15 +358,19 @@ en:
     debates:
       title: "Debates"
       description: "For meeting, discussing and sharing the things that matter to us in our city."
+      alt: "Icon debates"
     proposal:
       title: "You propose"
       description: "Open space for citizen proposals about the kind of city we want to live in."
+      alt: "Icon propose"
     decide:
       title: "You decide"
       description: "The public decides if it accepts or rejects the most supported proposals."
+      alt: "Icon decide"
     do:
       title: "It gets done"
       description: "If the proposal is accepted by the majority, the City Council accepts it as its own and it gets done."
+      alt: "Icon it gets done"
     welcome:
       title: "Participate"
       go_to_index: "See proposals and debates"
@@ -390,3 +394,10 @@ en:
     google_oauth2:
       sign_in: "Sign in with Google"
       sign_up: "Sign up with Google"
+  legislation:
+    help:
+      title: "How I can comment this document?"
+      text: "To comment this document you must %{sign_in} or %{sign_up}. Then select the text you want to comment and press the button with the pencil."
+      text_sign_in: "login"
+      text_sign_up: "sign up"
+      alt: "Select the text you want to comment and press the button with the pencil."
