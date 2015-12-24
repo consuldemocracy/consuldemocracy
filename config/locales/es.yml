@@ -291,6 +291,7 @@ es:
       public_activity_label: "Mostrar públicamente mi lista de actividades"
       email_on_comment_label: "Recibir un email cuando alguien comenta en mis propuestas o debates"
       email_on_comment_reply_label: "Recibir un email cuando alguien contesta a mis comentarios"
+      subscription_to_website_newsletter_label: "Recibir emails con información interesante sobre la web"
       erase_account_link: "Darme de baja"
       personal: "Datos personales"
       username_label: "Nombre de usuario"

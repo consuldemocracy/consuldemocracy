@@ -291,6 +291,7 @@ en:
       public_activity_label: "Keep my list of activities public"
       email_on_comment_label: "Notify me by email when someone comments on my proposals or debates"
       email_on_comment_reply_label: "Notify me by email when someone replies to my comments"
+      subscription_to_website_newsletter_label: "Receive by email website relevant information"
       erase_account_link: "Erase my account"
       personal: "Personal details"
       username_label: "Username"
