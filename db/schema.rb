@@ -270,30 +270,30 @@ ActiveRecord::Schema.define(version: 20151215165824) do
   add_index "tags", ["proposals_count"], name: "index_tags_on_proposals_count", using: :btree
 
   create_table "users", force: :cascade do |t|
-    t.string   "email",                                         default: ""
-    t.string   "encrypted_password",                            default: "",    null: false
+    t.string   "email",                                default: ""
+    t.string   "encrypted_password",                   default: "",    null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",                                 default: 0,     null: false
+    t.integer  "sign_in_count",                        default: 0,     null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.datetime "created_at",                                                    null: false
-    t.datetime "updated_at",                                                    null: false
+    t.datetime "created_at",                                           null: false
+    t.datetime "updated_at",                                           null: false
     t.string   "confirmation_token"
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
     t.string   "unconfirmed_email"
-    t.boolean  "email_on_comment",                              default: false
-    t.boolean  "email_on_comment_reply",                        default: false
-    t.string   "phone_number",                       limit: 30
+    t.boolean  "email_on_comment",                     default: false
+    t.boolean  "email_on_comment_reply",               default: false
+    t.string   "phone_number",              limit: 30
     t.string   "official_position"
-    t.integer  "official_level",                                default: 0
+    t.integer  "official_level",                       default: 0
     t.datetime "hidden_at"
     t.string   "sms_confirmation_code"
-    t.string   "username",                           limit: 60
+    t.string   "username",                  limit: 60
     t.string   "document_number"
     t.string   "document_type"
     t.datetime "residence_verified_at"
@@ -304,12 +304,12 @@ ActiveRecord::Schema.define(version: 20151215165824) do
     t.datetime "letter_requested_at"
     t.datetime "confirmed_hide_at"
     t.string   "letter_verification_code"
-    t.integer  "failed_census_calls_count",                     default: 0
+    t.integer  "failed_census_calls_count",            default: 0
     t.datetime "level_two_verified_at"
     t.string   "erase_reason"
     t.datetime "erased_at"
-    t.boolean  "public_activity",                               default: true
-    t.boolean  "subscription_to_website_newsletter",            default: false
+    t.boolean  "public_activity",                      default: true
+    t.boolean  "newsletter",                           default: false
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree
