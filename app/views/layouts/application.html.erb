@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="<%= I18n.locale %>" data-current-user-id="<%= current_user.try(:id) %>">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -15,6 +15,9 @@
                      sizes: "200x200",
                      type: "image/png" %>
     <%= content_for :social_media_meta_tags %>
+
+    <%= Setting.value_for(:per_page_code).try(:html_safe) %>
+
   </head>
   <body>
     <div class="wrapper">

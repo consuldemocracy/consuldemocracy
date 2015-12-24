@@ -10,6 +10,7 @@ class ApplicationController < ActionController::Base
   before_action :ensure_signup_complete
   before_action :set_locale
   before_action :track_email_campaign
+  before_action :set_return_url
 
   check_authorization unless: :devise_controller?
   self.responder = ApplicationResponder
@@ -17,7 +18,10 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   rescue_from CanCan::AccessDenied do |exception|
-    redirect_to main_app.root_url, alert: exception.message
+    respond_to do |format|
+      format.html { redirect_to main_app.root_url, alert: exception.message }
+      format.json { render json: {error: exception.message}, status: :forbidden }
+    end
   end
 
   layout :set_layout
@@ -96,6 +100,12 @@ class ApplicationController < ActionController::Base
       if params[:track_id]
         campaign = Campaign.where(track_id: params[:track_id]).first
         ahoy.track campaign.name if campaign.present?
+      end
+    end
+
+    def set_return_url
+      if !devise_controller? && controller_name != 'welcome' && is_navigational_format?
+        store_location_for(:user, request.path)
       end
     end
 end

@@ -1,125 +1,48 @@
 // Table of Contents
 //
-// 01. Variables
-// 02. Mixins
-// 03. Global styles
-// 04. Header
-// 05. Footer
-// 06. Tags
-// 07. Auth pages
-// 08. Forms
-// 09. Alerts
-// 10. User account
-// 11. Filters & search
-// 12. Official levels
-// 13. Pagination
-// 14. Tables
-// 15. Social
-// 16. Pages
-// 17. Verification
-// 18. Comments
-// 19. Flags
-// 20. Accesibility
-// 21. Activity
+// 01. Global styles
+// 02. Header
+// 03. Footer
+// 04. Tags
+// 05. Auth pages
+// 06. Forms
+// 07. Alerts
+// 08. User account
+// 09. Filters & search
+// 10. Official levels
+// 11. Pagination
+// 12. Tables
+// 13. Social
+// 14. Pages
+// 15. Verification
+// 16. Comments
+// 17. Flags
+// 18. Activity
 //
 
-// 01. Variables
+// 01. Global styles
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
-@import "variables";
+*, html {
+  margin: 0;
+  padding: 0;
+}
 
-// 02. Mixins
-// - - - - - - - - - - - - - - - - - - - - - - - - -
+html, body {
+  height: 100%;
+}
 
-@mixin back {
-  color: $text-medium;
+body {
+  background: white;
+  color: $text;
   font-family: $font-sans;
-  font-size: $small-font-size;
+  font-size: $base-font-size;
 }
 
-@mixin logo {
-  color: white;
-  font-family: $font-logo;
-  font-weight: lighter;
-
-  @media (min-width: $small-breakpoint) {
-    font-size: rem-calc(24);
-    line-height: rem-calc(48);
-  }
-
-  img {
-    height: 48px;
-    width: 48px;
-
-    @media (min-width: $small-breakpoint) {
-      height: 80px;
-      margin-right: rem-calc(12);
-      margin-top: 0;
-      width: 80px;
-    }
-  }
-}
-
-@mixin title {
-  font-size: $title-font-size;
+h1, h2, h3, h4, h5, h6 {
+  clear: both;
+  font-family: $font-sans;
   font-weight: $font-bold;
-}
-
-@mixin h1 {
-  font-family: $font-sans;
-  font-size: $h2-font-size;
-  font-weight: $font-bold;
-
-  @media (min-width: $small-breakpoint) {
-    font-size: $h1-font-size;
-  }
-}
-
-@mixin h2 {
-  font-family: $font-sans;
-  font-size: $h3-font-size;
-  font-weight: $font-bold;
-
-  @media (min-width: $small-breakpoint) {
-    font-size: $h2-font-size;
-  }
-}
-
-@mixin h3 {
-  font-family: $font-sans;
-  font-size: $h4-font-size;
-  font-weight: $font-bold;
-
-  @media (min-width: $small-breakpoint) {
-    font-size: $h3-font-size;
-  }
-}
-
-@mixin h4 {
-  font-family: $font-sans;
-  font-size: $h5-font-size;
-  font-weight: $font-bold;
-
-  @media (min-width: $small-breakpoint) {
-    font-size: $h4-font-size;
-  }
-}
-
-@mixin h5 {
-  font-family: $font-sans;
-  font-size: $h6-font-size;
-  font-weight: $font-bold;
-
-  @media (min-width: $small-breakpoint) {
-    font-size: $h5-font-size;
-  }
-}
-
-@mixin h6 {
-  font-family: $font-sans;
-  font-size: $h6-font-size;
-  font-weight: $font-normal;
-  text-transform: uppercase;
 }
 
 h1 {
@@ -144,64 +67,13 @@ h5 {
 
 h6 {
   @include h6();
-}
-
-h1, h2, h3, h4, h5, h6 {
-
-  &.lead {
-    border-bottom: rem-calc(6) solid $brand;
-  }
-
-  &.secondary {
-    color: $text-medium;
-  }
-}
-
-// 03. Global styles
-// - - - - - - - - - - - - - - - - - - - - - - - - -
-
-*, html {
-  margin: 0;
-  padding: 0;
-}
-
-html, body {
-  height: 100%;
-}
-
-body {
-  background: white;
-  color: $text;
-  font-family: $font-serif;
-  font-size: $base-font-size;
-  font-weight: normal;
-  text-rendering: optimizeLegibility;
-
-  &::selection, ::-moz-selection {
-    background: $brand !important;
-    color: white !important;
-  }
-}
-
-p, ul, table {
-  font-family: $font-serif;
+  font-weight: $font-normal;
 }
 
 p {
-  color: $text;
+  font-size: $base-font-size;
+  font-weight: $font-normal;
   line-height: $base-line-height;
-  margin: rem-calc(6) 0;
-}
-
-ol, ul, li, p {
-  font-size: $small-font-size;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  clear: both;
-  font-family: $font-sans;
-  line-height: $heading-line-height;
-  margin: rem-calc(12) 0 rem-calc(6);
 }
 
 a {
@@ -223,9 +95,7 @@ a {
 
 .button {
   background: $brand;
-  font-size: $small-font-size;
-  font-family: $font-sans !important;
-  padding: rem-calc(15) rem-calc(32);
+  font-family: $font-sans;
 
   &:hover {
     text-decoration: none !important;
@@ -253,46 +123,22 @@ a {
 }
 
 .sidebar {
-  margin-top: rem-calc(24);
-  margin-bottom: rem-calc(48);
+  margin-top: $line-height;
+  margin-bottom: $line-height*2;
 }
 
 .sidebar-divider {
   border-top: 1px solid $border;
-  margin-top: rem-calc(24);
+  margin-top: $line-height;
 
   &:first-child {
     margin-top: 0;
   }
 }
 
-.sub-nav {
-  background-color: #f2f2f2;
-  border-radius: rem-calc(3);
-  padding: rem-calc(10) rem-calc(10) rem-calc(10) 0;
-  margin: rem-calc(12) 0;
-}
-
-.sub-nav dt, .sub-nav dd, .sub-nav li {
-  padding: rem-calc(3) 0;
-
-  &.active {
-    background: #008CBA;
-    border-radius: rem-calc(3);
-    color: white;
-    cursor: default;
-    font-weight: normal;
-    padding: rem-calc(3) rem-calc(14);
-
-    a:hover {
-      color: #737373;
-    }
-  }
-}
-
 .f-dropdown {
   li a {
-    font-size: rem-calc(12);
+    font-size: $small-font-size;
 
     &:hover {
       color: $link-hover;
@@ -329,14 +175,9 @@ a {
   }
 }
 
-.progress {
-  background-color: rgba(0,0,0,.06);
-  border: 0;
-}
-
 .wrapper {
   min-height: 100%;
-  margin: 0 auto rem-calc(-288);
+  margin: 0 auto (-$line-height)*12;
   height: auto !important;
   height: 100%;
 }
@@ -347,7 +188,7 @@ a {
 
 .footer, .push {
   clear: both;
-  min-height: rem-calc(288);
+  min-height: $line-height*12;
 }
 
 .ie-alert-box {
@@ -356,109 +197,43 @@ a {
   width: 100%;
 
   a.close {
-    font-size: 36px;
+    font-size: $h2-font-size;
     top: 20%;
   }
 }
 
-.moderator-actions {
-  margin: rem-calc(24) 0;
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
 }
 
-.text-medium {
-  font-size: rem-calc(16) !important;
+#drop-help.f-dropdown.content {
+
+  @media (min-width: $small-breakpoint) {
+    max-width: $line-height*15;
+  }
 }
 
-// 04. Header
+// 02. Header
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
 header {
-  background: #E7F2FC;
-  border-bottom: rem-calc(1) solid $border;
-
-  a {
-    font-family: $font-sans;
-  }
-
-  h1 {
-    margin: rem-calc(24) 0;
-  }
-
-  h2 {
-    font-size: rem-calc(16);
-    font-weight: normal;
-    line-height: rem-calc(30);
-  }
-
-  .button {
-    background: white;
-    color: $brand;
-    font-family: inherit;
-    font-size: rem-calc(16);
-    margin-top: 0;
-
-    &.see-more {
-      width: 100%;
-
-      @media (min-width: $small-breakpoint) {
-        width: auto;
-      }
-    }
-  }
+  background: $highlight;
+  border-bottom: 1px solid $border;
 
   .home-page {
-    text-align: center;
-
-    @media (min-width: $small-breakpoint) {
-      text-align: left;
-    }
-  }
-
-  .more-info {
-    display: block;
-    margin-bottom: rem-calc(24);
-    text-decoration: underline;
-
-    @media (min-width: $small-breakpoint) {
-      display: inline-block;
-      margin-bottom: 0;
-      margin-left: rem-calc(12);
-    }
-  }
-
-  .icon-home-big {
-    color: $brand;
-    font-size: rem-calc(300);
-    line-height: rem-calc(300);
-    opacity: .75;
-  }
-
-  .icon-home-small {
-    color: $brand;
-    font-size: rem-calc(100);
-    opacity: .75;
-    position: absolute;
-    right: rem-calc(24);
-  }
-
-  .icon-external {
-    display: inline-block;
-    font-size: rem-calc(12);
-    opacity: .5;
-    padding-top: rem-calc(3);
-    vertical-align: top;
-
-    @media (min-width: $small-breakpoint) {
-      padding-top: 0;
-      position: absolute;
-      right: -18px;
-      top: 3px;
-    }
+    padding: $line-height 0;
   }
 
   .selected {
     border-bottom: 2px solid white;
-    padding-bottom: rem-calc(2);
+    padding-bottom: $line-height/12;
     position: relative;
   }
 
@@ -468,11 +243,7 @@ header {
 
     @media (min-width: $small-breakpoint) {
       float: left;
-      margin-left: rem-calc(12);
-    }
-
-    .icon-language {
-      vertical-align: text-top;
+      margin-left: $line-height/2;
     }
   }
 
@@ -487,7 +258,7 @@ header {
   }
 
   .search-form {
-    padding-top: rem-calc(6);
+    padding-top: $line-height/4;
     margin-bottom: 0 !important;
 
     .postfix {
@@ -506,9 +277,9 @@ header {
 .top-bar {
   background: $brand !important;
   color: white;
-  min-height: rem-calc(48);
+  min-height: $line-height*2;
   max-width: 1170px !important;
-  padding: 0 rem-calc(12);
+  padding: 0 $line-height/2;
 
   @media (min-width: $small-breakpoint) {
     height: auto;
@@ -518,15 +289,15 @@ header {
   .name {
 
     @media (min-width: $small-breakpoint) {
-      margin-left: rem-calc(12);
+      margin-left: $line-height/2;
     }
 
     a {
       @include logo;
-      line-height: rem-calc(48);
+      line-height: $line-height*2;
 
       @media (min-width: $small-breakpoint) {
-        line-height: rem-calc(80);
+        line-height: rem-calc(80); // Same as logo image height
       }
     }
   }
@@ -548,7 +319,7 @@ header {
     }
 
     &.menu-icon a {
-      padding: 0 rem-calc(24);
+      padding: 0 $line-height;
 
       span::after {
         right: 0;
@@ -558,28 +329,55 @@ header {
 
   &.expanded .toggle-topbar a {
     color: white;
-  }
 
-  &.expanded .toggle-topbar a span::after {
-    box-shadow: 0 0 0 1px #FFFFFF, 0 7px 0 1px #FFFFFF, 0 14px 0 1px #FFFFFF;
+    span::after {
+      box-shadow: 0 0 0 1px #FFFFFF, 0 7px 0 1px #FFFFFF, 0 14px 0 1px #FFFFFF;
+    }
   }
 }
 
 .top-bar-section {
-  margin-right: rem-calc(24);
+  margin-right: $line-height;
   width: 100%;
 
   ul {
-    margin-left: 0;
-    margin-right: rem-calc(12);
+    margin-left: $line-height/2;
 
     @media (min-width: $small-breakpoint) {
-      margin-left: rem-calc(24);
+      margin-left: 0;
     }
-  }
 
-  ul li {
-    background: none;
+    li {
+      background: none;
+
+      &:not(.has-form) a:not(.button) {
+        background: none;
+        color: white;
+
+        &:hover {
+          background: none;
+        }
+
+        @media (min-width: $small-breakpoint) {
+          background: none;
+          line-height: rem-calc(80); // Same as logo image height
+          padding: 0 $line-height/2;
+        }
+      }
+
+      &:hover {
+        background: none;
+        color: white;
+        text-decoration: underline;
+        transition: text-decoration 275ms;
+      }
+
+      &.active:not(.has-form) a:not(.button) {
+        background: none;
+        height: $line-height*4;
+        line-height: $line-height*4;
+      }
+    }
   }
 
   ul li > a {
@@ -590,6 +388,10 @@ header {
       line-height: $line-height*1.5;
       text-align: left;
       background: none;
+
+      &:hover, &:focus {
+        background-color: #007095 !important;
+      }
     }
 
     @media (min-width: $small-breakpoint) {
@@ -604,61 +406,13 @@ header {
       }
     }
   }
-
-  ul li > a {
-    font-size: $small-font-size;
-  }
-
-  ul li > a.button:hover, .top-bar-section ul li > a.button:focus {
-    background-color: #007095 !important;
-  }
-
-  ul li, ul li:hover:not(.has-form) > a:not(.button) {
-
-    @media (min-width: $small-breakpoint) {
-      background: none;
-      border: 0;
-      line-height: rem-calc(80);
-    }
-  }
-
-  ul {
-    margin-left: rem-calc(12);
-
-    @media (min-width: $small-breakpoint) {
-      margin-left: 0;
-    }
-
-    li:not(.has-form) a:not(.button) {
-      background: none;
-      color: white;
-
-      @media (min-width: $small-breakpoint) {
-        line-height: rem-calc(80);
-        padding: 0 rem-calc(12);
-      }
-
-      &:hover {
-        background: none;
-        color: white;
-        text-decoration: underline;
-        transition: text-decoration 275ms;
-      }
-    }
-
-    li.active:not(.has-form) a:not(.button) {
-      background: none;
-      height: rem-calc(96);
-      line-height: $line-height*4;
-    }
-  }
 }
 
 .top-links {
   background: $dark;
   color: white;
   font-size: $small-font-size;
-  padding-right: rem-calc(12);
+  padding-right: $line-height/2;
 
   a {
     color: white;
@@ -677,7 +431,7 @@ header {
 .subnavigation {
   background: white;
   clear: both;
-  padding-left: rem-calc(12);
+  padding-left: $line-height/2;
 
   @media (min-width: $small-breakpoint) {
     padding-left: 0;
@@ -690,21 +444,22 @@ header {
   a {
     color: $text;
     display: inline-block;
+    font-family: $font-sans;
     font-weight: bold;
     line-height: $line-height*2;
     position: relative;
     text-align: left;
 
     @media (min-width: $small-breakpoint) {
-      margin-left: rem-calc(12);
-      margin-right: rem-calc(36);
+      margin-left: $line-height/2;
+      margin-right: $line-height*1.5;
       margin-right: 12px\9;
     }
 
     &:after {
       color: $border;
       content: "|";
-      padding: 0 rem-calc(12);
+      padding: 0 $line-height/2;
 
       @media (min-width: $small-breakpoint) {
         content: none;
@@ -730,33 +485,34 @@ header {
   }
 }
 
-// 05. Footer
+// 03. Footer
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
 footer {
-  color: #171819;
+  color: $footer-color;
 
-  .logo {
-    @include logo;
+  .logo a {
+    font-family: $font-logo;
+    text-decoration: none;
 
-    a {
-      color: #454A4C;
-      line-height: rem-calc(36);
-      padding-left: 0;
-      text-decoration: none;
+    &:hover {
+      text-decoration: underline;
     }
   }
 
   p {
     font-size: $small-font-size;
+
+    .info a {
+      text-decoration: underline;
+    }
   }
 
   a, a:active, a:focus {
-    color: #454A4C;
-    text-decoration: underline;
+    color: $footer-link;
 
     &:hover {
-      color: #171819;
+      color: $footer-color;
     }
   }
 
@@ -764,35 +520,32 @@ footer {
     padding-left: 0;
   }
 
-  h4 {
+  h2 a {
 
-    a {
-      border-bottom: 1px solid #BFC1C3;
-      display: block;
-      padding-bottom: rem-calc(6);
-      text-decoration: none;
-    }
+    border-bottom: 1px solid $footer-border;
+    display: block;
+    font-size: $h3-font-size;
+    line-height: $h3-line-height;
+    padding-bottom: $line-height/4;
+    text-decoration: none;
   }
 }
 
 .footer {
-  background: #DEE0E2;
-  border-top: rem-calc(6) solid $brand;
+  background: $footer-bg;
+  border-top: 6px solid $brand;
   padding-top: $line-height;
 }
 
 .subfooter {
-  border-top: 1px solid #BFC1C3;
-  opacity: .75;
-  margin-top: rem-calc(24);
-  padding-top: rem-calc(12);
+  border-top: 1px solid $footer-border;
+  padding-top: $line-height/2;
 }
 
-// 06. Tags
+// 04. Tags
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
 .tags, .tag-cloud {
-  font-family: $font-sans;
 
   a {
     background: $border;
@@ -800,8 +553,8 @@ footer {
     color: #4d4d4d;
     display: inline-block;
     font-size: $small-font-size;
-    margin-bottom: rem-calc(8);
-    padding: 0 rem-calc(8);
+    margin-bottom: $line-height/3;
+    padding: 0 $line-height/3;
 
     &:hover {
       color: $link;
@@ -819,14 +572,14 @@ footer {
     font-family: $font-family-sans-serif;
     font-size: rem-calc(16);
     margin: -1px 0 rem-calc(12);
-    padding-top: rem-calc(6);
+    padding-top: $line-height/4;
     text-transform: uppercase;
   }
 
   a {
     background: white;
     border: 2px solid $border;
-    padding: rem-calc(6) rem-calc(8);
+    padding: $line-height/4 $line-height/3;
 
     .label {
       color: white;
@@ -845,7 +598,7 @@ footer {
   }
 }
 
-// 07. Auth pages
+// 05. Auth pages
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
 .auth-page {
@@ -854,7 +607,7 @@ footer {
   background-size: cover;
 
   @media (min-width: $small-breakpoint) {
-    padding-top: rem-calc(48);
+    padding-top: $line-height*2;
   }
 
   h1 {
@@ -863,7 +616,7 @@ footer {
     a {
       color: white;
       display: block;
-      line-height: rem-calc(80);
+      line-height: rem-calc(80); // Same as logo image height
       text-align: center;
 
       @media (min-width: $small-breakpoint) {
@@ -875,7 +628,7 @@ footer {
 }
 
 .auth {
-  min-height: rem-calc(480);
+  min-height: $line-height*20;
 
   .back, .icon-angle-left {
     @include back;
@@ -897,7 +650,7 @@ footer {
   }
 }
 
-// 08. Forms
+// 06. Forms
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
 form.locale-form {
@@ -921,7 +674,7 @@ form.locale-form {
       margin-bottom: 0;
       outline: none;
       padding-left: rem-calc(3);
-      padding-right: rem-calc(24);
+      padding-right: $line-height;
     }
   }
 }
@@ -950,7 +703,7 @@ form {
 
   input[type]:not([type=submit]):not([type=file]):not([type=checkbox]) {
     background: $input-bg;
-    height: rem-calc(48);
+    height: $line-height*2;
     margin-bottom: rem-calc(16);
 
     &.search-form {
@@ -969,13 +722,13 @@ form {
   }
 
   input[type=file] {
-    margin: rem-calc(12) 0 rem-calc(12) rem-calc(6);
+    margin: $line-height/2 0 $line-height/2 $line-height/4;
   }
 
   .note, .note-marked {
     display: block;
     font-size: rem-calc(13);
-    margin-bottom: rem-calc(12);
+    margin-bottom: $line-height/2;
   }
 
   .note-marked {
@@ -989,7 +742,7 @@ form {
   }
 
   .ckeditor {
-    min-height: rem-calc(312);
+    min-height: $line-height*13;
   }
 
   .checkbox {
@@ -1001,7 +754,7 @@ form {
 
   .captcha {
     border: 0;
-    padding: rem-calc(12) 0;
+    padding: $line-height/2 0;
 
     input {
       margin-bottom: 0 !important;
@@ -1009,7 +762,7 @@ form {
   }
 
   .button.margin-top {
-    margin-top: rem-calc(24);
+    margin-top: $line-height;
   }
 }
 
@@ -1020,7 +773,7 @@ form {
   }
 }
 
-// 09. Alerts
+// 07. Alerts
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
 .alert-box {
@@ -1071,7 +824,7 @@ span.error, small.error {
   background: $alert-bg;
   color: $alert-color;
   display: inline-block;
-  margin: 0 rem-calc(6);
+  margin: 0 $line-height/4;
 }
 
 label.error, label.error a {
@@ -1080,83 +833,34 @@ label.error, label.error a {
 
 .alert-messages {
   background-color: white;
-  padding-top: rem-calc(24);
+  padding-top: $line-height;
 }
 
-// 10. User account
+// 08. User account
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
 .account {
   background: white;
-  padding-top: rem-calc(24);
-
-  a {
-    font-family: $font-sans;
-  }
-
-  .icon-debates {
-    color: $debates;
-    font-size: rem-calc(60);
-    line-height: $line-height;
-    opacity: .5;
-  }
-
-  .avatar {
-    margin-bottom: rem-calc(24);
-  }
-
-  .initialjs-avatar {
-    margin-bottom: $line-height;
-  }
-
-  h1.avatar {
-    margin-left: rem-calc(12);
-  }
-
-  h3 {
-    clear: both;
-    font-size: rem-calc(20);
-    font-weight: bold;
-    line-height: $line-height;
-    margin: 0;
-    margin-bottom: rem-calc(12);
-  }
-
-  .recommendations {
-    list-style-type: none;
-    margin-left: 0;
-    margin-top: rem-calc(24);
-
-    li {
-      font-size: rem-calc(12);
-      margin: rem-calc(12) 0;
-
-      &:before {
-        color: $debates;
-        content: "l ";
-        font-family: "icons" !important;
-      }
-    }
-  }
+  padding-top: $line-height;
 
   select {
-    height: rem-calc(48);
-    margin-right: rem-calc(12);
+    height: $line-height*2;
+    margin-right: $line-height/2;
   }
 
   .verify-account {
-    padding-right: rem-calc(12);
+    padding-right: $line-height/2;
   }
 
   .final-votes-info {
     background: $warning-bg;
     border: 1px solid $warning-border;
     color: $warning-color;
-    margin-top: rem-calc(24);
-    padding: rem-calc(12);
+    margin-top: $line-height;
+    padding: $line-height/2;
 
     ul li {
-      margin: rem-calc(12) 0;
+      margin: $line-height/2 0;
     }
 
     .icon-box {
@@ -1177,9 +881,9 @@ img.avatar, img.admin-avatar, img.moderator-avatar, img.initialjs-avatar {
   background-color: rgba(255,255,255,.5);
   color: rgba(0,0,0,.4);
   font-size: rem-calc(40);
-  left: rem-calc(11);
+  left: 11px;
   position: absolute;
-  top: rem-calc(72);
+  top: 72px;
 }
 
 .user-deleted {
@@ -1202,7 +906,7 @@ img.avatar, img.admin-avatar, img.moderator-avatar, img.initialjs-avatar {
 
     li {
       font-size: $small-font-size;
-      margin-bottom: rem-calc(12);
+      margin-bottom: $line-height/2;
 
       span {
         color: $text-medium;
@@ -1220,7 +924,7 @@ img.avatar, img.admin-avatar, img.moderator-avatar, img.initialjs-avatar {
   }
 }
 
-// 11. Filters & search
+// 09. Filters & search
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
 .filters, .search-results {
@@ -1228,24 +932,24 @@ img.avatar, img.admin-avatar, img.moderator-avatar, img.initialjs-avatar {
   h2 {
     display: inline-block;
     font-size: rem-calc(24);
-    margin: rem-calc(12) 0;
+    margin: $line-height/2 0;
 
     @media (min-width: $small-breakpoint) {
-      margin: rem-calc(24) 0;
+      margin: $line-height 0;
     }
   }
 
   select {
     background-color: #DEE0E2;
     height: auto;
-    margin-bottom: rem-calc(24);
-    min-width: rem-calc(180);
+    margin-bottom: $line-height;
+    min-width: $line-height*7.5;
     outline: 0;
-    padding: rem-calc(12);
+    padding: $line-height/2;
     width: auto;
 
     @media (min-width: $small-breakpoint) {
-      margin: 0 0 rem-calc(24) rem-calc(12);
+      margin: 0 0 $line-height $line-height/2;
     }
 
     optgroup {
@@ -1281,13 +985,13 @@ img.avatar, img.admin-avatar, img.moderator-avatar, img.initialjs-avatar {
     display: inline-block;
     font-family: $font-family-sans-serif;
     font-size: rem-calc(16);
-    margin: -1px 0 rem-calc(12);
-    padding-top: rem-calc(6);
+    margin: -1px 0 $line-height/2;
+    padding-top: $line-height/4;
     text-transform: uppercase;
   }
 }
 
-// 12. Officials levels
+// 10. Officials levels
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
 [class^="level-"] {
@@ -1326,18 +1030,18 @@ img.avatar, img.admin-avatar, img.moderator-avatar, img.initialjs-avatar {
   background: $level-5;
 }
 
-// 13. Pagination
+// 11. Pagination
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
 ul.pagination {
-  margin-top: rem-calc(24);
+  margin-top: $line-height;
 
   li {
     color: $text-medium;
   }
 }
 
-// 14. Tables
+// 12. Tables
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
 table {
@@ -1349,7 +1053,7 @@ table {
 
     td {
       line-height: $line-height;
-      padding: rem-calc(12) rem-calc(6);
+      padding: $line-height/2 $line-height/4;
     }
 
     &:nth-child(odd) {
@@ -1362,7 +1066,7 @@ table {
   }
 }
 
-// 15. Social
+// 13. Social
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
 .button.button-twitter {
@@ -1384,9 +1088,9 @@ table {
 .social-share-button-twitter {
   background: #45B0E3;
   color: white;
-  height: rem-calc(48);
+  height: $line-height*2;
   position: relative;
-  width: rem-calc(48);
+  width: $line-height*2;
 
   &:before {
     content: "f";
@@ -1464,9 +1168,9 @@ table {
 .social-share-button-google_plus {
   background: #DE4C34;
   color: white;
-  height: rem-calc(48);
+  height: $line-height*2;
   position: relative;
-  width: rem-calc(48);
+  width: $line-height*2;
 
   &:before {
     content: "B";
@@ -1486,8 +1190,8 @@ table {
 }
 
 .social {
-  margin-top: rem-calc(24);
-  padding-top: rem-calc(6);
+  margin-top: $line-height;
+  padding-top: $line-height/4;
   text-align: center;
   vertical-align: middle;
 
@@ -1498,8 +1202,8 @@ table {
 
   a {
     font-size: rem-calc(24);
-    line-height: rem-calc(24);
-    margin: 0 rem-calc(12);
+    line-height: $line-height;
+    margin: 0 $line-height/2;
     text-decoration: none;
     vertical-align: middle;
 
@@ -1527,9 +1231,9 @@ table {
   .social-share-button-twitter {
     background: none;
     color: white;
-    height: rem-calc(24);
+    height: $line-height;
     position: relative;
-    width: rem-calc(48);
+    width: $line-height*2;
 
     &:before {
       content: "f";
@@ -1594,28 +1298,28 @@ table {
   }
 }
 
-// 16. Pages
+// 14. Pages
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
 .page {
-  padding-bottom: rem-calc(48);
+  padding-bottom: $line-height*2;
 
   .menu {
-    margin-top: rem-calc(24);
+    margin-top: $line-height;
 
     ul {
       list-style-type: none;
       margin-left: 0;
 
       & ul {
-        margin-left: rem-calc(12);
+        margin-left: $line-height/2;
       }
     }
 
     a {
       display: block;
       font-size: rem-calc(13);
-      margin-bottom: rem-calc(12);
+      margin-bottom: $line-height/2;
     }
   }
 
@@ -1624,19 +1328,19 @@ table {
   }
 
   .text {
-    margin-top: rem-calc(24);
+    margin-top: $line-height;
 
     h1, h2, h3, h4, h5, h6 {
       text-align: left;
     }
 
     ul, ol {
-      margin-left: rem-calc(12);
+      margin-left: $line-height/2;
 
       li {
         font-size: rem-calc(15);
         line-height: rem-calc(30);
-        margin-bottom: rem-calc(12);
+        margin-bottom: $line-height/2;
       }
     }
 
@@ -1647,7 +1351,7 @@ table {
   }
 
   .more-information {
-    margin-top: rem-calc(24);
+    margin-top: $line-height;
 
     ul {
       list-style-type: none;
@@ -1657,7 +1361,7 @@ table {
         border-bottom: 1px solid $border;
         font-size: rem-calc(16);
         font-weight: bold;
-        padding-bottom: rem-calc(12);
+        padding-bottom: $line-height/2;
         position: relative;
         text-align: left;
 
@@ -1685,15 +1389,15 @@ table {
   }
 }
 
-// 17. Verification
+// 15. Verification
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
 .verification {
-  min-height: rem-calc(600);
+  min-height: $line-height*25;
 
   @media (min-width: $small-breakpoint) {
     .left + .left {
-      margin-left: rem-calc(12);
+      margin-left: $line-height/2;
     }
   }
 
@@ -1710,10 +1414,10 @@ table {
   }
 
   .progress {
-    height: rem-calc(72);
+    height: $line-height*3;
 
     @media (min-width: $small-breakpoint) {
-      height: rem-calc(48);
+      height: $line-height*2;
     }
 
     &.success .meter {
@@ -1725,12 +1429,12 @@ table {
     font-family: $font-sans;
     font-weight: bold;
     line-height: rem-calc(20);
-    padding-top: rem-calc(6);
+    padding-top: $line-height/4;
     text-transform: uppercase;
     vertical-align: top;
 
     @media (min-width: $small-breakpoint) {
-      line-height: rem-calc(48);
+      line-height: $line-height*2;
       padding: 0;
     }
 
@@ -1773,7 +1477,7 @@ table {
 
   .button + form {
     display: inline-block;
-    margin-left: rem-calc(12);
+    margin-left: $line-height/2;
   }
 
   .verification-list {
@@ -1783,17 +1487,17 @@ table {
 
     span {
       display: inline-block;
-      min-width: rem-calc(288);
+      min-width: $line-height*12;
     }
   }
 }
 
 .verify-account {
-  padding-right: rem-calc(12);
+  padding-right: $line-height/2;
 
   .already-verified {
     color: $check;
-    line-height: rem-calc(48);
+    line-height: $line-height*2;
 
     .icon-check {
       font-size: rem-calc(24);
@@ -1804,8 +1508,8 @@ table {
 }
 
 .verify {
-  margin-bottom: rem-calc(48);
-  margin-top: rem-calc(24);
+  margin-bottom: $line-height*2;
+  margin-top: $line-height;
 
   h1 {
     color: $check;
@@ -1827,22 +1531,22 @@ table {
       background: white;
       color: $info-color;
       font-size: rem-calc(24);
-      margin-left: rem-calc(-27);
-      padding: 0 rem-calc(12);
+      margin-left: -27px;
+      padding: 0 $line-height/2;
       position: absolute;
-      top: rem-calc(-12);
+      top: -12px;
     }
   }
 }
 
-// 18. Comments
+// 16. Comments
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
 .comments {
   background: $white;
   background-repeat: repeat-x;
-  padding-top: rem-calc(24);
-  padding-bottom: rem-calc(96);
+  padding-top: $line-height;
+  padding-bottom: $line-height*4;
 
   h2 {
     margin: 0;
@@ -1856,7 +1560,7 @@ table {
   }
 
   .comment {
-    margin: rem-calc(6) 0;
+    margin: $line-height/4 0;
 
     p {
       margin-bottom: 0;
@@ -1867,7 +1571,7 @@ table {
       font-family: $font-sans;
       font-size: $small-font-size;
       line-height: $line-height;
-      margin: rem-calc(10) rem-calc(12) rem-calc(6) 0;
+      margin: rem-calc(10) $line-height/2 $line-height/4 0;
 
       a {
         color: $text-light;
@@ -1906,40 +1610,40 @@ table {
       }
 
       .comment-user {
-        margin-top: rem-calc(6);
-        padding: rem-calc(6) 0;
+        margin-top: $line-height/4;
+        padding: $line-height/4 0;
         overflow: hidden;
 
         @each $n in ("1", "2", "3","4", "5") {
           &.level-#{$n} {
             @if $n == "5" {
               background: $comment-level-5;
-              padding: rem-calc(6) rem-calc(12);
+              padding: $line-height/4 $line-height/2;
             }
             @elseif $n == "1" {
               background: none;
-              padding: rem-calc(6) rem-calc(12);
+              padding: $line-height/4 $line-height/2;
             }
             @else {
               background: $comment-official;
-              padding: rem-calc(6) rem-calc(12);
+              padding: $line-height/4 $line-height/2;
             }
           }
         }
 
         &.is-author {
           background: $comment-author;
-          padding: rem-calc(6) rem-calc(12);
+          padding: $line-height/4 $line-height/2;
         }
 
         &.is-admin, &.is-moderator {
           background: $comment-admin;
-          padding: rem-calc(6) rem-calc(12);
+          padding: $line-height/4 $line-height/2;
         }
 
         &.level-5 {
           background: $comment-level-5;
-          padding: rem-calc(6) rem-calc(12);
+          padding: $line-height/4 $line-height/2;
         }
       }
     }
@@ -1947,13 +1651,13 @@ table {
     .is-deleted {
       background: $deleted;
       margin-left: rem-calc(42);
-      padding: rem-calc(6) rem-calc(12);
+      padding: $line-height/4 $line-height/2;
     }
 
     .comment-children {
       border-left: 1px dashed $border;
       margin-left: rem-calc(42);
-      padding-left: rem-calc(6);
+      padding-left: $line-height/4;
 
       @media only screen and (max-width: 40em) {
         margin-left: rem-calc(16);
@@ -1964,7 +1668,7 @@ table {
       color: $text-medium;
       font-family: $font-sans;
       font-size: $small-font-size;
-      margin-top: rem-calc(6);
+      margin-top: $line-height/4;
       vertical-align: middle;
 
       span.user-name {
@@ -1989,7 +1693,7 @@ table {
   }
 
   label {
-    padding-right: rem-calc(12);
+    padding-right: $line-height/2;
     float: none;
 
     @media (min-width: $small-breakpoint) {
@@ -1998,7 +1702,7 @@ table {
   }
 }
 
-// 19. Flags
+// 17. Flags
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
 .flag-content {
@@ -2011,7 +1715,7 @@ table {
 }
 
 .flag-disable, .flag-active {
-  line-height: rem-calc(24);
+  line-height: $line-height;
   vertical-align: middle;
 }
 
@@ -2023,38 +1727,20 @@ table {
   color: $delete;
 }
 
-// 20. Accesibility
-// - - - - - - - - - - - - - - - - - - - - - - - - -
-
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  border: 0;
-}
-
-// 21. Activity
+// 18. Activity
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
 .activity {
-  margin-bottom: rem-calc(48);
-  margin-top: rem-calc(24);
+  margin-bottom: $line-height*2;
+  margin-top: $line-height;
 
   .sub-nav {
-    background: none;
     border-bottom: 1px solid $border;
-    border-radius: 0;
-    padding-bottom: 0;
 
     dd.active {
-      background: none;
       border-bottom: 2px solid $brand;
-      border-radius: 0;
       color: $brand;
+      padding-bottom: $line-height/4;
     }
   }
 
@@ -2062,7 +1748,7 @@ table {
     border: 0;
 
     td {
-      padding-left: rem-calc(36);
+      padding-left: $line-height*1.5;
       position: relative;
 
       &:before {
@@ -2071,7 +1757,6 @@ table {
         font-size: rem-calc(24);
         left: 4px;
         position: absolute;
-
       }
     }
 
