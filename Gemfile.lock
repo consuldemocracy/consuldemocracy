@@ -1,4 +1,11 @@
 GIT
+  remote: git://github.com/fnando/i18n-js.git
+  revision: 3b5f9826aaff28117d53c0e1c3574352a5625852
+  specs:
+    i18n-js (3.0.0.rc11)
+      i18n (~> 0.6, >= 0.6.6)
+
+GIT
   remote: https://github.com/huacnlee/social-share-button.git
   revision: e46a6a3e82b86023bc43b72c9379d3c6afe36b6b
   ref: e46a6a3e82b86023bc
@@ -66,6 +73,10 @@ GEM
       activerecord (>= 3.0.0)
     arel (6.0.3)
     ast (2.2.0)
+    babel-source (5.8.34)
+    babel-transpiler (0.7.0)
+      babel-source (>= 4.0, < 6)
+      execjs (~> 2.0)
     bcrypt (3.1.10)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
@@ -99,6 +110,7 @@ GEM
       execjs
     coffee-script-source (1.10.0)
     concurrent-ruby (1.0.0)
+    connection_pool (2.2.0)
     coveralls (0.8.10)
       json (~> 1.8)
       rest-client (>= 1.6.8, < 2)
@@ -303,6 +315,13 @@ GEM
       thor (>= 0.18.1, < 2.0)
     raindrops (0.15.0)
     rake (10.4.2)
+    react-rails (1.5.0)
+      babel-transpiler (>= 0.7.0)
+      coffee-script-source (~> 1.8)
+      connection_pool
+      execjs
+      rails (>= 3.2)
+      tilt
     redcarpet (3.3.3)
     referer-parser (0.3.0)
     request_store (1.2.1)
@@ -455,6 +474,7 @@ DEPENDENCIES
   foundation_rails_helper
   fuubar
   groupdate
+  i18n-js!
   i18n-tasks
   initialjs-rails (= 0.2.0.1)
   jquery-rails
@@ -475,6 +495,7 @@ DEPENDENCIES
   rails (= 4.2.5)
   rails-i18n
   rails_12factor
+  react-rails
   redcarpet
   responders
   rinku

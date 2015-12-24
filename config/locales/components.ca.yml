@@ -1,0 +1,7 @@
+ca:
+  components:
+    category_picker:
+      category:
+        label: Eix
+      subcategory:
+        label: Línia d'acció

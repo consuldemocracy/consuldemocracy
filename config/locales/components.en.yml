@@ -1,0 +1,7 @@
+en:
+  components:
+    category_picker:
+      category:
+        label: Axis
+      subcategory:
+        label: Action Line

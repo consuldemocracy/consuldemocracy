@@ -1,5 +1,4 @@
 FactoryGirl.define do
-
   sequence(:document_number) { |n| "#{n.to_s.rjust(8, '0')}X" }
 
   factory :user do
@@ -145,6 +144,7 @@ FactoryGirl.define do
     responsible_name     'John Snow'
     terms_of_service     '1'
     association :author, factory: :user
+    association :category, factory: :category
 
     trait :hidden do
       hidden_at Time.now
@@ -290,4 +290,23 @@ FactoryGirl.define do
     sequence(:track_id) { |n| "#{n}" }
   end
 
+  factory :category do
+    sequence(:name) do |n|
+      I18n.available_locales.inject({}) do |result, locale|
+        result[locale.to_s] = "Axis #{n}"
+        result
+      end
+    end
+  end
+
+  factory :subcategory do
+    sequence(:name) do |n|
+      I18n.available_locales.inject({}) do |result, locale|
+        result[locale.to_s] = "Action Line #{n}"
+        result
+      end
+    end
+
+    association :category, factory: :category
+  end
 end

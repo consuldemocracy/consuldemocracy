@@ -66,6 +66,9 @@ if ENV["SEED"]
     puts "    #{debate.title}"
   end
 
+  puts "Creating Axis, Action Lines and Goals"
+  CategoryImporter.import(Rails.root.join('db', 'seeds', 'categories.json'))
+
   puts "Creating Proposals"
 
   tags = Faker::Lorem.words(25)
@@ -73,6 +76,8 @@ if ENV["SEED"]
   (1..30).each do |i|
     author = User.reorder("RANDOM()").first
     description = "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>"
+    subcategory = Subcategory.offset(rand(Subcategory.count)).first
+
     proposal = Proposal.create!(author: author,
                                 title: Faker::Lorem.sentence(3).truncate(60),
                                 question: Faker::Lorem.sentence(3),
@@ -82,6 +87,8 @@ if ENV["SEED"]
                                 description: description,
                                 created_at: rand((Time.now - 1.week) .. Time.now),
                                 tag_list: tags.sample(3).join(','),
+                                subcategory: subcategory,
+                                category: subcategory.category,
                                 terms_of_service: "1")
     puts "    #{proposal.title}"
   end

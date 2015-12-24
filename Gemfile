@@ -64,6 +64,9 @@ gem "faker"
 
 gem 'rails-i18n'
 
+gem 'react-rails'
+gem 'i18n-js', github: 'fnando/i18n-js'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'

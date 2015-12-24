@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151215115319) do
+ActiveRecord::Schema.define(version: 20151221103153) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -66,6 +66,12 @@ ActiveRecord::Schema.define(version: 20151215115319) do
   create_table "campaigns", force: :cascade do |t|
     t.string   "name"
     t.string   "track_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "categories", force: :cascade do |t|
+    t.text     "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -191,7 +197,7 @@ ActiveRecord::Schema.define(version: 20151215115319) do
   create_table "locks", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "tries",        default: 0
-    t.datetime "locked_until", default: '2000-01-01 07:01:01', null: false
+    t.datetime "locked_until", default: '2000-01-01 00:01:01', null: false
     t.datetime "created_at",                                   null: false
     t.datetime "updated_at",                                   null: false
   end
@@ -235,6 +241,8 @@ ActiveRecord::Schema.define(version: 20151215115319) do
     t.string   "video_url"
     t.integer  "physical_votes",               default: 0
     t.tsvector "tsv"
+    t.integer  "category_id"
+    t.integer  "subcategory_id"
   end
 
   add_index "proposals", ["author_id", "hidden_at"], name: "index_proposals_on_author_id_and_hidden_at", using: :btree
@@ -263,6 +271,14 @@ ActiveRecord::Schema.define(version: 20151215115319) do
   end
 
   add_index "simple_captcha_data", ["key"], name: "idx_key", using: :btree
+
+  create_table "subcategories", force: :cascade do |t|
+    t.text     "name"
+    t.text     "description"
+    t.integer  "category_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
 
   create_table "taggings", force: :cascade do |t|
     t.integer  "tag_id"

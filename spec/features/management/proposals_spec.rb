@@ -1,3 +1,4 @@
+# coding: utf-8
 require 'rails_helper'
 
 feature 'Proposals' do
@@ -6,9 +7,12 @@ feature 'Proposals' do
     login_as_manager
   end
 
+  let!(:subcategory) { create(:subcategory) }
+  let(:category) { subcategory.category }
+
   context "Create" do
 
-    scenario 'Creating proposals on behalf of someone' do
+    scenario 'Creating proposals on behalf of someone', :js do
       user = create(:user, :level_two)
       login_managed_user(user)
 
@@ -24,13 +28,18 @@ feature 'Proposals' do
       fill_in 'proposal_title', with: 'Help refugees'
       fill_in 'proposal_question', with: '¿Would you like to give assistance to war refugees?'
       fill_in 'proposal_summary', with: 'In summary, what we want is...'
-      fill_in 'proposal_description', with: 'This is very important because...'
+      fill_in_ckeditor 'proposal_description', with: 'This is very important because...'
       fill_in 'proposal_external_url', with: 'http://rescue.org/refugees'
       fill_in 'proposal_video_url', with: 'http://youtube.com'
       fill_in 'proposal_captcha', with: correct_captcha_text
       check 'proposal_terms_of_service'
 
+      find('li', text: category.name["en"]).click
+      find('li', text: subcategory.name["en"]).click
+
       click_button 'Create proposal'
+
+      save_and_open_page
 
       expect(page).to have_content 'Proposal created successfully.'
 

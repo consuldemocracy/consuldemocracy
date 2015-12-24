@@ -206,7 +206,6 @@ en:
         submit_button: "Save changes"
     new:
       start_new: "Create new proposal"
-      more_info: "How do citizen proposals work?"
       back_link: "Go back"
       recommendations_title: "Recommendations for creating a proposal"
       recommendation_one: "Do not use capital letters for the proposal title or for whole sentences. On the internet, this is considered shouting. And nobody likes being shouted at."

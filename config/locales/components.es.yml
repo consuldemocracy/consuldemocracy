@@ -1,0 +1,7 @@
+es:
+  components:
+    category_picker:
+      category:
+        label: Eje
+      subcategory:
+        label: Línea de actuación

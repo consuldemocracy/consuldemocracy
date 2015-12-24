@@ -6,11 +6,6 @@
       <%= t("proposals.new.back_link") %>
     <% end %>
     <h1><%= t("proposals.new.start_new") %></h1>
-    <div class="alert-box info radius">
-      <%= link_to "/proposals_info", target: "_blank" do %>
-        <%= t("proposals.new.more_info")%>
-      <% end %>
-    </div>
     <%= render "proposals/form", form_url: proposals_url %>
   </div>
 

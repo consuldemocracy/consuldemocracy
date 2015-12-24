@@ -2,6 +2,8 @@
 require 'rails_helper'
 
 feature 'Proposals' do
+  let!(:subcategory) { create(:subcategory) }
+  let(:category) { subcategory.category }
 
   scenario 'Index' do
     featured_proposals = create_featured_proposals
@@ -73,20 +75,24 @@ feature 'Proposals' do
     expect(page.html).to include "<meta id=\"ogtitle\" property=\"og:title\" content=\"#{proposal.title}\"/>"
   end
 
-  scenario 'Create' do
+  scenario 'Create', :js do
     author = create(:user)
     login_as(author)
 
     visit new_proposal_path
+
     fill_in 'proposal_title', with: 'Help refugees'
     fill_in 'proposal_question', with: '¿Would you like to give assistance to war refugees?'
     fill_in 'proposal_summary', with: 'In summary, what we want is...'
-    fill_in 'proposal_description', with: 'This is very important because...'
+    fill_in_ckeditor 'proposal_description', with: 'This is very important because...'
     fill_in 'proposal_external_url', with: 'http://rescue.org/refugees'
     fill_in 'proposal_video_url', with: 'http://youtube.com'
     fill_in 'proposal_responsible_name', with: 'Isabel Garcia'
     fill_in 'proposal_captcha', with: correct_captcha_text
     check 'proposal_terms_of_service'
+
+    find('li', text: category.name["en"]).click
+    find('li', text: subcategory.name["en"]).click
 
     click_button 'Create proposal'
 
@@ -101,20 +107,23 @@ feature 'Proposals' do
     expect(page).to have_content I18n.l(Proposal.last.created_at.to_date)
   end
 
-  scenario 'Responsible name is stored for anonymous users' do
+  scenario 'Responsible name is stored for anonymous users', :js do
     author = create(:user)
+
     login_as(author)
 
     visit new_proposal_path
     fill_in 'proposal_title', with: 'Help refugees'
     fill_in 'proposal_question', with: '¿Would you like to give assistance to war refugees?'
     fill_in 'proposal_summary', with: 'In summary, what we want is...'
-    fill_in 'proposal_description', with: 'This is very important because...'
+    fill_in_ckeditor 'proposal_description', with: 'This is very important because...'
     fill_in 'proposal_external_url', with: 'http://rescue.org/refugees'
     fill_in 'proposal_responsible_name', with: 'Isabel Garcia'
     fill_in 'proposal_captcha', with: correct_captcha_text
     fill_in 'proposal_responsible_name', with: 'Isabel Garcia'
     check 'proposal_terms_of_service'
+    find('li', text: category.name["en"]).click
+    find('li', text: subcategory.name["en"]).click
 
     click_button 'Create proposal'
 
@@ -122,7 +131,7 @@ feature 'Proposals' do
     expect(Proposal.last.responsible_name).to eq('Isabel Garcia')
   end
 
-  scenario 'Responsible name field is not shown for verified users' do
+  scenario 'Responsible name field is not shown for verified users', :js do
     author = create(:user, :level_two)
     login_as(author)
 
@@ -132,28 +141,32 @@ feature 'Proposals' do
     fill_in 'proposal_title', with: 'Help refugees'
     fill_in 'proposal_question', with: '¿Would you like to give assistance to war refugees?'
     fill_in 'proposal_summary', with: 'In summary, what we want is...'
-    fill_in 'proposal_description', with: 'This is very important because...'
+    fill_in_ckeditor 'proposal_description', with: 'This is very important because...'
     fill_in 'proposal_external_url', with: 'http://rescue.org/refugees'
     fill_in 'proposal_captcha', with: correct_captcha_text
     check 'proposal_terms_of_service'
+    find('li', text: category.name["en"]).click
+    find('li', text: subcategory.name["en"]).click
 
     click_button 'Create proposal'
 
     expect(page).to have_content 'Proposal created successfully.'
   end
 
-  scenario 'Captcha is required for proposal creation' do
+  scenario 'Captcha is required for proposal creation', :js do
     login_as(create(:user))
 
     visit new_proposal_path
     fill_in 'proposal_title', with: "Great title"
     fill_in 'proposal_question', with: '¿Would you like to give assistance to war refugees?'
     fill_in 'proposal_summary', with: 'In summary, what we want is...'
-    fill_in 'proposal_description', with: 'Very important issue...'
+    fill_in_ckeditor 'proposal_description', with: 'Very important issue...'
     fill_in 'proposal_external_url', with: 'http://rescue.org/refugees'
     fill_in 'proposal_responsible_name', with: 'Isabel Garcia'
     fill_in 'proposal_captcha', with: "wrongText!"
     check 'proposal_terms_of_service'
+    find('li', text: category.name["en"]).click
+    find('li', text: subcategory.name["en"]).click
 
     click_button "Create proposal"
 
@@ -166,7 +179,7 @@ feature 'Proposals' do
     expect(page).to have_content "Proposal created successfully."
   end
 
-  scenario 'Failed creation goes back to new showing featured tags' do
+  scenario 'Failed creation goes back to new showing featured tags', :js do
     featured_tag = create(:tag, :featured)
     tag = create(:tag)
     login_as(create(:user))
@@ -175,11 +188,13 @@ feature 'Proposals' do
     fill_in 'proposal_title', with: ""
     fill_in 'proposal_question', with: '¿Would you like to give assistance to war refugees?'
     fill_in 'proposal_summary', with: 'In summary, what we want is...'
-    fill_in 'proposal_description', with: 'Very important issue...'
+    fill_in_ckeditor 'proposal_description', with: 'Very important issue...'
     fill_in 'proposal_external_url', with: 'http://rescue.org/refugees'
     fill_in 'proposal_responsible_name', with: 'Isabel Garcia'
     fill_in 'proposal_captcha', with: correct_captcha_text
     check 'proposal_terms_of_service'
+    find('li', text: category.name["en"]).click
+    find('li', text: subcategory.name["en"]).click
 
     click_button "Create proposal"
 
@@ -200,19 +215,22 @@ feature 'Proposals' do
     expect(page).to have_content error_message
   end
 
-  scenario 'JS injection is prevented but safe html is respected' do
+  scenario 'JS injection is prevented but safe html is respected', :js do
     author = create(:user)
+
     login_as(author)
 
     visit new_proposal_path
     fill_in 'proposal_title', with: 'Testing an attack'
     fill_in 'proposal_question', with: '¿Would you like to give assistance to war refugees?'
     fill_in 'proposal_summary', with: 'In summary, what we want is...'
-    fill_in 'proposal_description', with: '<p>This is <script>alert("an attack");</script></p>'
+    fill_in_ckeditor 'proposal_description', with: '<p>This is <script>alert("an attack");</script></p>'
     fill_in 'proposal_external_url', with: 'http://rescue.org/refugees'
     fill_in 'proposal_responsible_name', with: 'Isabel Garcia'
     fill_in 'proposal_captcha', with: correct_captcha_text
     check 'proposal_terms_of_service'
+    find('li', text: category.name["en"]).click
+    find('li', text: subcategory.name["en"]).click
 
     click_button 'Create proposal'
 
@@ -223,7 +241,7 @@ feature 'Proposals' do
     expect(page.html).to_not include '&lt;p&gt;This is'
   end
 
-  scenario 'Autolinking is applied to description' do
+  scenario 'Autolinking is applied to description', :js do
     author = create(:user)
     login_as(author)
 
@@ -231,10 +249,12 @@ feature 'Proposals' do
     fill_in 'proposal_title', with: 'Testing auto link'
     fill_in 'proposal_question', with: 'Should I stay or should I go?'
     fill_in 'proposal_summary', with: 'In summary, what we want is...'
-    fill_in 'proposal_description', with: '<p>This is a link www.example.org</p>'
+    fill_in_ckeditor 'proposal_description', with: '<p>This is a link www.example.org</p>'
     fill_in 'proposal_responsible_name', with: 'Isabel Garcia'
     fill_in 'proposal_captcha', with: correct_captcha_text
     check 'proposal_terms_of_service'
+    find('li', text: category.name["en"]).click
+    find('li', text: subcategory.name["en"]).click
 
     click_button 'Create proposal'
 
@@ -243,7 +263,7 @@ feature 'Proposals' do
     expect(page).to have_link('www.example.org', href: 'http://www.example.org')
   end
 
-  scenario 'JS injection is prevented but autolinking is respected' do
+  scenario 'JS injection is prevented but autolinking is respected', :js do
     author = create(:user)
     login_as(author)
 
@@ -251,10 +271,12 @@ feature 'Proposals' do
     fill_in 'proposal_title', with: 'Testing auto link'
     fill_in 'proposal_question', with: 'Should I stay or should I go?'
     fill_in 'proposal_summary', with: 'In summary, what we want is...'
-    fill_in 'proposal_description', with: "<script>alert('hey')</script> <a href=\"javascript:alert('surprise!')\">click me<a/> http://example.org"
+    fill_in_ckeditor 'proposal_description', with: '<script>alert("hey")</script>http://example.org'
     fill_in 'proposal_responsible_name', with: 'Isabel Garcia'
     fill_in 'proposal_captcha', with: correct_captcha_text
     check 'proposal_terms_of_service'
+    find('li', text: category.name["en"]).click
+    find('li', text: subcategory.name["en"]).click
 
     click_button 'Create proposal'
 
@@ -293,6 +315,8 @@ feature 'Proposals' do
       fill_in 'proposal_responsible_name', with: 'Isabel Garcia'
       fill_in 'proposal_captcha', with: correct_captcha_text
       check 'proposal_terms_of_service'
+      find('li', text: category.name["en"]).click
+      find('li', text: subcategory.name["en"]).click
 
       ['Medio Ambiente', 'Ciencia'].each do |tag_name|
         find('.js-add-tag-link', text: tag_name).click
@@ -306,17 +330,19 @@ feature 'Proposals' do
       end
     end
 
-    scenario 'using dangerous strings' do
+    scenario 'using dangerous strings', :js do
       visit new_proposal_path
 
       fill_in 'proposal_title', with: 'A test of dangerous strings'
       fill_in 'proposal_question', with: '¿Would you like to give assistance to war refugees?'
       fill_in 'proposal_summary', with: 'In summary, what we want is...'
-      fill_in 'proposal_description', with: 'A description suitable for this test'
+      fill_in_ckeditor 'proposal_description', with: 'A description suitable for this test'
       fill_in 'proposal_external_url', with: 'http://rescue.org/refugees'
       fill_in 'proposal_responsible_name', with: 'Isabel Garcia'
       fill_in 'proposal_captcha', with: correct_captcha_text
       check 'proposal_terms_of_service'
+      find('li', text: category.name["en"]).click
+      find('li', text: subcategory.name["en"]).click
 
       fill_in 'proposal_tag_list', with: 'user_id=1, &a=3, <script>alert("hey");</script>'
 
@@ -356,7 +382,7 @@ feature 'Proposals' do
     expect(page).to have_content 'You do not have permission'
   end
 
-  scenario 'Update should be posible for the author of an editable proposal' do
+  scenario 'Update should be posible for the author of an editable proposal', :js do
     proposal = create(:proposal)
     login_as(proposal.author)
 
@@ -366,7 +392,7 @@ feature 'Proposals' do
     fill_in 'proposal_title', with: "End child poverty"
     fill_in 'proposal_question', with: '¿Would you like to give assistance to war refugees?'
     fill_in 'proposal_summary', with: 'Basically...'
-    fill_in 'proposal_description', with: "Let's do something to end child poverty"
+    fill_in_ckeditor 'proposal_description', with: "Let\\'s do something to end child poverty"
     fill_in 'proposal_external_url', with: 'http://rescue.org/refugees'
     fill_in 'proposal_responsible_name', with: 'Isabel Garcia'
     fill_in 'proposal_captcha', with: correct_captcha_text
