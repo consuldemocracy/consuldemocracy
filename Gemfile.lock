@@ -310,7 +310,7 @@ GEM
       thor (>= 0.18.1, < 2.0)
     raindrops (0.15.0)
     rake (10.4.2)
-    redcarpet (3.3.3)
+    redcarpet (3.3.4)
     referer-parser (0.3.0)
     request_store (1.2.1)
     responders (2.1.1)
