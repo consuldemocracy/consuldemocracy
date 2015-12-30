@@ -17,9 +17,12 @@ module Abilities
         proposal.editable_by?(user)
       end
 
+      can :read, SpendingProposal
+
       can :create, Comment
       can :create, Debate
       can :create, Proposal
+      can :create, SpendingProposal
 
       can [:flag, :unflag], Comment
       cannot [:flag, :unflag], Comment, user_id: user.id
