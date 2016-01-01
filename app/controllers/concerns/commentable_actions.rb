@@ -4,6 +4,8 @@ module CommentableActions
 
   def index
     @resources = @search_terms.present? ? resource_model.search(@search_terms) : resource_model.all
+
+    #advanced search filters
     if @params_author
       author = User.where(username: @params_author)
       @resources = author.count > 0 ? @resources.where(author_id: author.first.id) : resource_model.none
@@ -24,11 +26,16 @@ module CommentableActions
       end
       @resources = @resources.where('created_at >= ?', min_date_time) if min_date_time
     end
+    if @params_author_type
+      authors = User.where(official_level: @params_author_type.to_i)
+      @resources = @resources.where('author_id IN (?)', authors.map(&:id))
+    end
+
     @resources = @resources.tagged_with(@tag_filter) if @tag_filter
     @resources = @resources.page(params[:page]).for_render.send("sort_by_#{@current_order}")
     index_customization if index_customization.present?
+    
     @tag_cloud = tag_cloud
-
     set_resource_votes(@resources)
     set_resources_instance
   end
