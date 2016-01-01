@@ -1,41 +1,40 @@
 <% # Params:
    #
-   #   i18n_namespace: for example "proposals.index.search_form"
+   #   i18n_namespace: for example "proposals.index.advanced_search"
    #   search_path: for example proposals_path
 %>
 
 <div class="small-12 medium-12 columns">
-  <h4 class='advanced-search-title'>Búsqueda avanzada</h4>
+  <h4 class='advanced-search-title'><%= t("proposals.index.advanced_search.title") %></h4>
 </div>
 
 <%= form_tag search_path, method: :get do %>
   <div id='advanced-search'>
 
     <div class="small-12 medium-12 advanced-search columns">
-      <h5 class='search-option inline-block'>Con el texto</h5>
-      <%= text_field_tag "search", @search_terms, placeholder: "Escribe el texto" %>
+      <h5 class='search-option inline-block'><%= t("proposals.index.advanced_search.general") %></h5>
+      <%= text_field_tag "search", @search_terms, placeholder: t("proposals.index.advanced_search.general") %>
     </div>
 
     <div class="small-12 medium-6 advanced-search columns">
-      <h5 class='search-option inline-block'>Por nombre de autor</h5>
-      <%= text_field_tag "advanced_search[author]", @params_author, placeholder: "Escribe el nombre del autor" %>
+      <h5 class='search-option inline-block'><%= t("proposals.index.advanced_search.author") %></h5>
+      <%= text_field_tag "advanced_search[author]", @params_author, placeholder: t("proposals.index.advanced_search.author_placeholder") %>
     </div>
 
     <div class="small-12 medium-6 advanced-search columns">
-      <h5 class='search-option'>Por categoría de autor</h5>
-      <%= select_tag('advanced_search[author_type]', options_for_select([['Concejal', 1], ['Cargo directivo', 2]], @params_author_type), include_blank: 'Elige una categoría') %>
-      <%# text_field_tag "advanced_search[author_type]", @params_author_type, placeholder: "Escribe la categoría" %>
+      <h5 class='search-option'><%= t("proposals.index.advanced_search.author_type") %></h5>
+      <%= select_tag('advanced_search[author_type]', options_for_select([[t("proposals.index.advanced_search.author_type_1"), 1], [t("proposals.index.advanced_search.author_type_2"), 2],[t("proposals.index.advanced_search.author_type_3"), 3],[t("proposals.index.advanced_search.author_type_4"), 4],[t("proposals.index.advanced_search.author_type_5"), 5]], @params_author_type), include_blank: t("proposals.index.advanced_search.author_type_blank")) %>
     </div>
 
     <div class="small-12 advanced-search columns">
-      <h5 class='search-option'>Por fecha</h5>
-      <%= select_tag('advanced_search[date]', options_for_select([['Últimas 24 horas', 1], ['Última semana', 2], ['Últimos 30 días', 3],['Último año', 4], ['Personalizada', 5]], @params_date), include_blank: 'Elige una fecha') %>
+      <h5 class='search-option'><%= t("proposals.index.advanced_search.date") %></h5>
+      <%= select_tag('advanced_search[date]', options_for_select([[t("proposals.index.advanced_search.date_1"), 1], [t("proposals.index.advanced_search.date_2"), 2], [t("proposals.index.advanced_search.date_3"), 3],[t("proposals.index.advanced_search.date_4"), 4], [t("proposals.index.advanced_search.date_5"), 5]], @params_date), include_blank: 'Elige una fecha') %>
       <div class='customized-date inline-block'>
-        &nbsp;&nbsp;Desde:
+        &nbsp;&nbsp;<%= t("proposals.index.advanced_search.from") %>:
         <div class='inline-block'>
         <%= date_field 'advanced_search', 'date_min', max:Date.today, value: @params_date_min %>
         </div>
-        &nbsp;&nbsp;Hasta:
+        &nbsp;&nbsp;<%= t("proposals.index.advanced_search.to") %>:
         <div class='inline-block'>
         <%= date_field 'advanced_search', 'date_max', max:Date.today, value: @params_date_max %>
         </div>
@@ -44,7 +43,7 @@
 
 
     <div class="small-6 medium-3 offset advanced-search columns">
-      <%= submit_tag 'Buscar', class: 'button postfix' %>
+      <%= submit_tag t("proposals.index.advanced_search.search"), class: 'button postfix' %>
     </div>
 
   </div>
