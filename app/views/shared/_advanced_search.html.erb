@@ -1,0 +1,93 @@
+<% # Params:
+   #
+   #   i18n_namespace: for example "proposals.index.search_form"
+   #   search_path: for example proposals_path
+%>
+
+<div class="small-12 medium-12 columns">
+  <h4 class='advanced-search-title'>Búsqueda avanzada</h4>
+</div>
+
+<%= form_tag search_path, method: :get do %>
+  <div id='advanced-search'>
+
+    <div class="small-12 medium-12 advanced-search columns">
+      <h5 class='search-option inline-block'>Con el texto</h5>
+      <%= text_field_tag "search", @search_terms, placeholder: "Escribe el texto" %>
+    </div>
+
+    <div class="small-12 medium-6 advanced-search columns">
+      <h5 class='search-option inline-block'>Por nombre de autor</h5>
+      <%= text_field_tag "advanced_search[author]", @params_author, placeholder: "Escribe el nombre del autor" %>
+    </div>
+
+    <div class="small-12 medium-6 advanced-search columns">
+      <h5 class='search-option'>Por categoría de autor</h5>
+      <%= select_tag('advanced_search[author_type]', options_for_select([['Concejal', 1], ['Cargo directivo', 2]], @params_author_type), include_blank: 'Elige una categoría') %>
+      <%# text_field_tag "advanced_search[author_type]", @params_author_type, placeholder: "Escribe la categoría" %>
+    </div>
+
+    <div class="small-12 advanced-search columns">
+      <h5 class='search-option'>Por fecha</h5>
+      <%= select_tag('advanced_search[date]', options_for_select([['Últimas 24 horas', 1], ['Última semana', 2], ['Últimos 30 días', 3],['Último año', 4], ['Personalizada', 5]], @params_date), include_blank: 'Elige una fecha') %>
+      <div class='customized-date inline-block'>
+        &nbsp;&nbsp;Desde:
+        <div class='inline-block'>
+        <%= date_field 'advanced_search', 'date_min', max:Date.today, value: @params_date_min %>
+        </div>
+        &nbsp;&nbsp;Hasta:
+        <div class='inline-block'>
+        <%= date_field 'advanced_search', 'date_max', max:Date.today, value: @params_date_max %>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="small-6 medium-3 offset advanced-search columns">
+      <%= submit_tag 'Buscar', class: 'button postfix' %>
+    </div>
+
+  </div>
+
+<% end %>
+
+<hr>
+
+<script type="text/javascript">
+
+//open advantage options menu
+
+var open = <%= raw @advanced_search_present.to_json.html_safe %>;
+
+if(!open) $('#advanced-search').hide();
+
+$('.advanced-search-title').on({
+  click: function(){
+    $('#advanced-search').slideToggle();
+  },
+  mouseenter:  function(){
+    $(this).addClass('blue');
+  },
+  mouseleave:  function(){
+    $(this).removeClass('blue');
+  }
+});
+
+//hide customized-date if it is not selected
+
+if($('#advanced_search_date').val() != 5){
+  $('.customized-date').hide();
+}
+
+$('#advanced_search_date').on('change',function(e){
+  var next = $(e.target).next();
+  if($(this).val() == 5){
+    next.show();
+  }
+  else{
+    next.hide();
+  }
+
+});
+
+</script>
