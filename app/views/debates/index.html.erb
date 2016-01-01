@@ -11,10 +11,12 @@
 
       <div class="filters">
         <div class="small-12 medium-7 left">
-          <% if @search_terms %>
+          <% if @search_terms || @advanced_search_present %>
             <h2 class="margin-top">
               <%= page_entries_info @debates %>
-              <%= t("debates.index.search_results", count: @debates.size, search_term: @search_terms) %>
+              <% if !@advanced_search_present %>
+                <%= t("debates.index.search_results", count: @debates.size, search_term: @search_terms) %>
+              <% end %>
             </h2>
           <% elsif @tag_filter %>
             <h2 class="margin-top">
@@ -29,6 +31,27 @@
         <% end %>
 
         <%= render 'shared/order_links', i18n_namespace: "debates.index" %>
+
+        <% if @tag_filter || @search_terms || @advanced_search_present %>
+          <div class="small-12 medium-5 margin-top inline-block debates-order">
+            <h6 class="inline-block">
+              <%= t("debates.index.select_order") %>
+            </h6>
+            <%= render 'shared/order_selector', i18n_namespace: "debates.index" %>
+          </div>
+        <% else %>
+          <div class="small-12 inline-block">
+            <h2 class="inline-block">
+              <%= t("debates.index.select_order_long") %>
+            </h2>
+            <%= render 'shared/order_selector', i18n_namespace: "debates.index" %>
+          </div>
+        <% end %>
+
+        <div class="small-12 medium-12 advanced-search row">
+          <%= render "shared/advanced_search",
+                     search_path: debates_path(page: 1) %>
+        </div>
 
         <div class="show-for-small-only">
           <%= link_to t("debates.index.start_debate"), new_debate_path, class: 'button radius expand' %>
