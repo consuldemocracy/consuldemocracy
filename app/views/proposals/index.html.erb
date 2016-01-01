@@ -11,10 +11,12 @@
 
       <div class="filters">
         <div class="small-12 medium-7 left">
-          <% if @search_terms %>
+          <% if @search_terms || @advanced_search_present %>
             <h2 class="margin-top">
               <%= page_entries_info @proposals %>
-              <%= t("proposals.index.search_results", count: @proposals.size, search_term: @search_terms) %>
+              <% if !@advanced_search_present %>
+                <%= t("proposals.index.search_results", count: @proposals.size, search_term: @search_terms) %>
+              <% end %>
             </h2>
           <% elsif @tag_filter %>
             <h2 class="margin-top">
@@ -22,6 +24,32 @@
               <%= t("proposals.index.filter_topic", count: @proposals.size, topic: @tag_filter) %>
             </h2>
           <% end %>
+        </div>
+
+        <% if @tag_filter || @search_terms || @advanced_search_present %>
+          <div class="small-12 medium-5 margin-top margin-top inline-block proposals-order">
+            <h6 class="inline-block">
+              <%= t("proposals.index.select_order") %>
+            </h6>
+            <%= render 'shared/order_selector', i18n_namespace: "proposals.index" %>
+          </div>
+        <% else %>
+          <div class="small-12 inline-block">
+            <h2 class="inline-block">
+              <%= t("proposals.index.select_order_long") %>
+            </h2>
+            <%= render 'shared/order_selector', i18n_namespace: "proposals.index" %>
+          </div>
+        <% end %>
+
+        <div class="small-12 medium-12 advanced-search row">
+          <%= render "shared/advanced_search",
+                     search_path: proposals_path(page: 1),
+                     i18n_namespace: "proposals.index.search_form" %>
+        </div>
+
+        <div class="show-for-small-only">
+          <%= link_to t("proposals.index.start_proposal"), new_proposal_path, class: 'button radius expand' %>
         </div>
 
         <% if @featured_proposals.present? %>
