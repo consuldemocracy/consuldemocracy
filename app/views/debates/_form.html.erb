@@ -16,7 +16,13 @@
       <%= f.label :tag_list, t("debates.form.tags_label") %>
       <p class="note"><%= t("debates.form.tags_instructions") %></p>
       <span class="tags">
-        <% @featured_tags.each do |tag| %>
+        <%= f.label :tag_list, t("debates.form.tag_category_label") %>  
+        <% @category_tags.each do |tag| %>
+          <a class="js-add-tag-link"><%= tag.name %></a>
+        <% end %>
+        <hr widht="30%" align="left">
+        <%= f.label :tag_list, t("debates.form.tag_district_label") %>  
+        <% @district_tags.each do |tag| %>
           <a class="js-add-tag-link"><%= tag.name %></a>
         <% end %>
       </span>

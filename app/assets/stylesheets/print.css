@@ -28,6 +28,12 @@ img.left { display: none !important; }
 
 li.name  { display: none !important; }
 
+li.kind  { display: none !important; }
+
+li.searchname  { display: none !important; }
+
+li.searchkind  { display: none !important; }
+
 p.proposal-info span:nth-child(3) { display: none !important; }
 
 .top-links { display: none !important; }

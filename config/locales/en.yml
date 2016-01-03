@@ -114,7 +114,9 @@ en:
       debate_title: "Debate title"
       debate_text: "Initial debate text"
       tags_label: "Topics"
-      tags_instructions: "Tag this debate. You can choose from our suggestions or enter your own."
+      tag_category_label: "Categories"
+      tag_district_label: "Districts"
+      tags_instructions: "Tag this debate. You can choose from Categories and Districs suggestions or enter your own"
       tags_placeholder: "Enter the tags you would like to use, separated by commas (',')"
     show:
       back_link: "Go back"
@@ -206,7 +208,9 @@ en:
       proposal_responsible_name: "Full name of the person submitting the proposal"
       proposal_responsible_name_note: "(individually or as representative of a collective; will not be displayed publically)"
       tags_label: "Tags"
-      tags_instructions: "Tag this proposal. You can choose from our tags or add your own."
+      tag_category_label: "Category"
+      tag_district_label: "District"
+      tags_instructions: "Tag this proposal. You can choose from Categories and Districs tags or add your own."
       tags_placeholder: "Enter the tags you would like to use, separated by commas (',')"
     show:
       back_link: "Go back"
