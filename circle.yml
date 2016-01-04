@@ -11,7 +11,7 @@ database:
     - docker-compose build
     - docker-compose run app bundle install
   override:
-    - docker-compose run app db:create
+    - docker-compose run app rake db:create
 
 test:
   override:
