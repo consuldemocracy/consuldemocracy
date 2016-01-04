@@ -33,15 +33,16 @@
       </section>
 
       <section class="subnavigation row">
+
         <div class="small-12 medium-9 column">
-        <%= link_to t("layouts.header.debates"), debates_path, class: ("active" if current_page?(controller: "/debates")) %>
-        <%= link_to t("layouts.header.proposals"), proposals_path, class: ("active" if current_page?(controller: "/proposals")) %>
-        <%= link_to t("layouts.header.spending_proposals"), spending_proposals_path, class: ("active" if current_page?(controller: "/spending_proposals")) %>
-        <%= link_to t("layouts.header.more_information"), page_path('more_information'), class: ("active" if current_page?("/more_information"))  %>
-        <%= link_to t("layouts.header.external_link_blog_url"), target: "_blank" do %>
-          <%= t("layouts.header.external_link_blog") %>
-          <small><i class="icon-external"></i></small>
-        <% end %>
+          <%= link_to t("layouts.header.debates"), debates_path, class: ("active" if controller_name == "debates") %>
+          <%= link_to t("layouts.header.proposals"), proposals_path, class: ("active" if  controller_name == "proposals") %>
+          <%= link_to t("layouts.header.spending_proposals"), spending_proposals_path, class: ("active" if controller_name == "spending_proposals") %>
+          <%= link_to t("layouts.header.more_information"), page_path('more_information'), class: ("active" if current_page?("/more_information"))  %>
+          <%= link_to t("layouts.header.external_link_blog_url"), target: "_blank" do %>
+            <%= t("layouts.header.external_link_blog") %>
+            <small><i class="icon-external"></i></small>
+          <% end %>
         </div>
         <div class="small-12 medium-3 column">
           <%= yield :header_addon %>
