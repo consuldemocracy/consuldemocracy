@@ -29,6 +29,7 @@ es:
       more_information: "Más información"
       debates: "Debates"
       proposals: "Propuestas"
+      spending_proposals: "Presupuestos ciudadanos"
       new_notifications:
         one: "Tienes una nueva notificación"
         other: "Tienes %{count} notificaciones nuevas"
@@ -75,6 +76,7 @@ es:
     user: "la cuenta"
     debate: "el debate"
     proposal: "la propuesta"
+    spending_proposal: "la propuesta de gasto"
     verification::sms: "el teléfono"
     verification::letter: "la verificación"
   application:
@@ -244,6 +246,11 @@ es:
     update:
       form:
         submit_button: "Guardar cambios"
+  spending_proposals:
+    index:
+      title: "Presupuestos ciudadanos"
+      text: "Desde esta sección podrás sugerir propuestas de gasto que irán asociadas a las partidas de presupuestos ciudadanos. El requisito principal es que sean propuestas presupuestables."
+      create_link: "Enviar propuesta de gasto"
   comments:
     show:
       return_to_commentable: "Volver a "

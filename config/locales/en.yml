@@ -29,6 +29,7 @@ en:
       more_information: "More information"
       debates: "Debates"
       proposals: "Proposals"
+      spending_proposals: "Spending proposals"
       new_notifications:
         one: "You have a new notification"
         other: "You have %{count} new notifications"
@@ -75,6 +76,7 @@ en:
     user: "Account"
     debate: "Debate"
     proposal: "Proposal"
+    spending_proposal: "Spending proposal"
     verification::sms: "Telephone"
     verification::letter: "the verification"
   application:
@@ -244,6 +246,11 @@ en:
     update:
       form:
         submit_button: "Save changes"
+  spending_proposals:
+    index:
+      title: "Citizen budget"
+      text: "Here you can send spending proposals to be considered in the frame of the annual citizen budgets."
+      create_link: "Create spending proposal"
   comments:
     show:
       return_to_commentable: "Go back to "

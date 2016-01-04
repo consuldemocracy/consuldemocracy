@@ -61,6 +61,8 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :spending_proposals, only: [:index, :new, :create]
+
   resources :legislations, only: [:show]
 
   resources :annotations do
