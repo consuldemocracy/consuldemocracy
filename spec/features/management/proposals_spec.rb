@@ -39,8 +39,6 @@ feature 'Proposals' do
 
       click_button 'Create proposal'
 
-      save_and_open_page
-
       expect(page).to have_content 'Proposal created successfully.'
 
       expect(page).to have_content 'Help refugees'

@@ -27,6 +27,15 @@ The application backend is written in the [Ruby language](https://www.ruby-lang.
 
 Frontend tools used include [SCSS](http://sass-lang.com/) over [Foundation](http://foundation.zurb.com/) for the styles.
 
+## Configuration for development environment using docker
+
+```
+docker-compose build
+docker-compose run --rm app db:create           
+docker-compose run --rm app db:setup SEED=true
+docker-compose up
+```
+
 ## Configuration for development and test environments
 
 Prerequisites: install git, ImageMagick, Ruby 2.2.3, bundler gem, ghostscript and PostgreSQL (>=9.4).
