@@ -8,7 +8,7 @@ dependencies:
 
 database:
   pre:
-    - docker-compose build --rm=false
+    - docker-compose build
     - docker-compose run app bundle install
   override:
     - docker-compose run app db:create
