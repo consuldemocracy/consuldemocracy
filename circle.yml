@@ -1,0 +1,12 @@
+machine:
+  services:
+    - docker
+
+  dependencies:
+    override:
+      - pip install docker-compose
+    test:
+      pre:
+        - docker-compose run app bundle install
+      override:
+        - docker-compose run app bundle exec rspec
