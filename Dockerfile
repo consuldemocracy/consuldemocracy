@@ -1,13 +1,13 @@
-FROM ruby:2.2
+FROM ultrayoshi/ruby-node-phantomjs
+MAINTAINER david@adverway.com
 
-RUN apt-get update && apt-get install -y nodejs --no-install-recommends && rm -rf /var/lib/apt/lists/*
-RUN apt-get update && apt-get install -y postgresql-client --no-install-recommends && rm -rf /var/lib/apt/lists/*
+# Create working directory
+ENV APP_HOME /barcelona-participa
+RUN mkdir $APP_HOME
+WORKDIR $APP_HOME
 
-# throw errors if Gemfile has been modified since Gemfile.lock
-RUN bundle config --global frozen 1
+# Add source code
+ADD . $APP_HOME
 
-RUN mkdir -p /usr/src/app
-COPY . /usr/src/app
-WORKDIR /usr/src/app
-
-RUN bundle install --jobs 4
+# Run rails server by default
+CMD ["bundle" "exec" "puma", "-C config/puma.rb"]

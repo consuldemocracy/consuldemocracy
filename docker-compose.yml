@@ -1,23 +1,50 @@
-db:
-  image: postgres
-
-worker: &worker
+app:
   build: .
-  command: rake jobs:work
+  command: "bundle exec puma -C config/puma.rb"
   environment:
     - DATABASE_HOST=db
     - DATABASE_USERNAME=postgres
     - DATABASE_PASSWORD=
     - DATABASE_NAME=postgres
+    - GEM_HOME=/bundle
   volumes:
     - .:/usr/src/app
+  volumes_from:
+    - bundle
   links:
     - db
-
-web:
-  <<: *worker
-  command: puma -C config/puma.rb
   ports:
     - "3000:3000"
-  expose:
-    - 3000
+
+worker:
+  image: barcelonaparticipa_app
+  environment: 
+    - DATABASE_HOST=db
+    - DATABASE_USERNAME=postgres
+    - DATABASE_PASSWORD=
+    - DATABASE_NAME=postgres
+    - GEM_HOME=/bundle
+  volumes:
+    - .:/usr/src/app
+  volumes_from:
+    - bundle
+  links:
+    - db
+  command: rake jobs:work
+
+bundle:
+  image: ubuntu:15.04
+  command: echo 'Nothing to do here'
+  volumes:
+    - /bundle
+
+db:
+  image: postgres
+  volumes_from:
+    - db_data
+
+db_data:
+  image: ubuntu:15.04
+  command: echo 'Nothing to do here'
+  volumes:
+    - /var/lib/postgresql/data
