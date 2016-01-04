@@ -248,9 +248,27 @@ en:
         submit_button: "Save changes"
   spending_proposals:
     index:
-      title: "Citizen budget"
-      text: "Here you can send spending proposals to be considered in the frame of the annual citizen budgets."
+      title: "Participatory budgeting"
+      text: "Here you can send spending proposals to be considered in the frame of the annual participatory budgeting."
       create_link: "Create spending proposal"
+    new:
+      back_link: Back
+      start_new: "Create spending proposal"
+      more_info: "How do participatory bufgeting works?"
+      recommendations_title: "Recommendations for creating a spending proposal"
+      recommendation_one: "It's mandatory that the proposal makes reference to a budgetable action."
+      recommendation_two: "Any proposal or comment suggesting illegal action will be deleted."
+      recommendation_three: "Try to go into details when describing your spending proposal so the reviewing team undertands your points."
+    form:
+      title: "Spending proposal title"
+      description: "Description"
+      external_url: "Link to additional documentation"
+      tags_label: "Tags"
+      tags_instructions: "Tag this spending proposal. You can choose from our tags or add your own."
+      tags_placeholder: "Enter the tags you would like to use, separated by commas (',')"
+      submit_buttons:
+        new: Create
+        create: Create
   comments:
     show:
       return_to_commentable: "Go back to "
@@ -338,6 +356,7 @@ en:
       user: "the secret code does not match the image"
       debate: "the secret code does not match the image"
       proposal: "the secret code does not match the image"
+      spendingproposal: "the secret code does not match the image"
   shared:
     author_info:
       author_deleted: "User deleted"

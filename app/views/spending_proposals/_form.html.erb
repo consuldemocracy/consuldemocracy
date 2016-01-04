@@ -1,0 +1,52 @@
+<%= form_for(@spending_proposal, url: form_url) do |f| %>
+  <%= render 'shared/errors', resource: @spending_proposal %>
+
+  <div class="row">
+    <div class="small-12 column">
+      <%= f.label :title, t("spending_proposals.form.title") %>
+      <%= f.text_field :title, maxlength: SpendingProposal.title_max_length, placeholder: t("spending_proposals.form.title"), label: false %>
+    </div>
+
+    <div class="ckeditor small-12 column">
+      <%= f.label :description, t("spending_proposals.form.description") %>
+      <%= f.cktext_area :description, maxlength: SpendingProposal.description_max_length, ckeditor: { language: I18n.locale }, label: false %>
+    </div>
+
+    <div class="small-12 column">
+      <%= f.label :external_url, t("spending_proposals.form.external_url") %>
+      <%= f.text_field :external_url, placeholder: t("spending_proposals.form.external_url"), label: false %>
+    </div>
+
+    <div class="small-12 column">
+      <%= f.label :tag_list, t("spending_proposals.form.tags_label") %>
+      <p class="note"><%= t("spending_proposals.form.tags_instructions") %></p>
+      <span class="tags">
+        <% @featured_tags.each do |tag| %>
+          <a class="js-add-tag-link"><%= tag.name %></a>
+        <% end %>
+      </span>
+      <%= f.text_field :tag_list, value: @spending_proposal.tag_list.to_s, label: false, placeholder: t("spending_proposals.form.tags_placeholder"), class: 'js-tag-list' %>
+    </div>
+
+    <div class="small-12 column">
+      <% if @spending_proposal.new_record? %>
+        <%= f.label :terms_of_service do %>
+          <%= f.check_box :terms_of_service, label: false %>
+          <span class="checkbox">
+            <%= t("form.accept_terms",
+                policy: link_to(t("form.policy"), "/privacy", target: "blank"),
+                conditions: link_to(t("form.conditions"), "/conditions", target: "blank")).html_safe %>
+          </span>
+        <% end %>
+      <% end %>
+    </div>
+
+    <div class="small-12 column">
+      <%= f.simple_captcha input_html: { required: false } %>
+    </div>
+
+    <div class="actions small-12 column">
+      <%= f.submit(class: "button radius", value: t("spending_proposals.form.submit_buttons.#{action_name}")) %>
+    </div>
+  </div>
+<% end %>
