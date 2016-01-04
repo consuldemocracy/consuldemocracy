@@ -22,6 +22,15 @@
                       placeholder: t('proposals.form.proposal_summary') %>
     </div>
 
+    <div class="small-12 column">
+      <%= f.label :scope, t("proposals.form.proposal_scope") %>
+      <p class="note"><%= t("proposals.form.proposal_scope_note") %></p>
+      <%= f.radio_button :scope, :district, :checked => true %> 
+      <%= label :scope_district, t("proposals.form.proposal_scope_district") %>
+      <%= f.radio_button :scope, :city %>
+      <%= label :scope_city, t("proposals.form.proposal_scope_city") %>
+    </div>
+
     <div class="ckeditor small-12 column">
       <%= f.label :description, t("proposals.form.proposal_text") %>
       <%= f.cktext_area :description, maxlength: Proposal.description_max_length, ckeditor: { language: I18n.locale }, label: false %>
