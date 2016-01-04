@@ -4,11 +4,11 @@ machine:
 
 dependencies:
   override:
-    - sudo curl -L https://github.com/docker/compose/releases/download/1.4.0rc2/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose
-    - sudo chmod +x /usr/local/bin/docker-compose
+    - sudo pip install --upgrade docker-compose==1.5.2
 
 test:
   pre:
+    - docker-compose build --rm=false
     - docker-compose run app bundle install
   override:
     - docker-compose run app bundle exec rspec
