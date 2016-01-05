@@ -135,6 +135,8 @@ class Proposal < ActiveRecord::Base
     Setting['votes_for_proposal_success'].to_i
   end
 
+  DISTRICTS = YAML::load_file("#{Rails.root}/config/districts.yml").sort
+
   protected
 
     def set_responsible_name
