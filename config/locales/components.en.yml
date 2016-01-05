@@ -5,3 +5,12 @@ en:
         label: Axis
       subcategory:
         label: Action Line
+    proposal_filter_option_group:
+      scope: "Scope"
+      district: "District"
+      category_id: "Axis"
+      subcategory_id: "Action Line"
+    proposal_filter_option:
+      district: "A district"
+      city: "Whole city"
+

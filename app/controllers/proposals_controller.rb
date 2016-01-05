@@ -2,9 +2,7 @@ class ProposalsController < ApplicationController
   include CommentableActions
   include FlagActions
 
-  before_action :parse_search_terms, only: :index
-  before_action :parse_tag_filter, only: :index
-  before_action :set_search_order, only: :index
+  before_action :set_search_order, only: [:index]
   before_action :authenticate_user!, except: [:index, :show]
 
   has_orders %w{hot_score confidence_score created_at most_commented random relevance}, only: :index
@@ -13,11 +11,18 @@ class ProposalsController < ApplicationController
   load_and_authorize_resource
   respond_to :html, :js
 
-  def index_customization
-    @featured_proposals = Proposal.all.sort_by_confidence_score.limit(3) if (@search_terms.blank? && @tag_filter.blank?)
+  def index
+    @filter = ProposalFilter.new(params)
+    @proposals = @filter.collection
+
+    @proposals = @proposals.page(params[:page]).for_render.send("sort_by_#{@current_order}")
+
+    set_resource_votes(@proposals)
+
+    @featured_proposals = Proposal.all.sort_by_confidence_score.limit(3) if (@filter.search_filter.blank? && @filter.tag_filter.blank?)
     if @featured_proposals.present?
       set_featured_proposal_votes(@featured_proposals)
-      @resources = @resources.where('proposals.id NOT IN (?)', @featured_proposals.map(&:id))
+      @proposals = @proposals.where('proposals.id NOT IN (?)', @featured_proposals.map(&:id))
     end
   end
 

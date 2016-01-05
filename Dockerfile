@@ -1,5 +1,5 @@
 FROM ultrayoshi/ruby-node-phantomjs
-MAINTAINER david@adverway.com
+MAINTAINER david.morcillo@codegram.com
 
 # Create working directory
 ENV APP_HOME /decidimbcn

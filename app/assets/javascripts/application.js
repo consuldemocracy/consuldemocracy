@@ -43,6 +43,7 @@
 
 //= require react
 //= require react_ujs
+//= require immutable
 //= require components
 
 var initialize_modules = function() {

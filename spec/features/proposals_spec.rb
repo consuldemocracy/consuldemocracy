@@ -47,6 +47,23 @@ feature 'Proposals' do
     expect(page).to have_selector('#proposals .proposal', count: 2)
   end
 
+  scenario 'Filtered Index', :js do
+    create_featured_proposals
+    proposals = [
+      create(:proposal, title: 'Proposal with city scope 1', scope: 'city'), 
+      create(:proposal, title: 'Proposal with district scope', scope: 'district'), 
+      create(:proposal, title: 'Proposal with city scope 2', scope: 'city')
+    ]
+
+    visit proposals_path
+
+    check 'proposal_filter_scope_city'
+
+    expect(page).to have_content 'Proposal with city scope 1'
+    expect(page).to have_content 'Proposal with city scope 2'
+    expect(page).to_not have_content 'Proposal with district scope'
+  end
+
   scenario 'Show' do
     proposal = create(:proposal)
 

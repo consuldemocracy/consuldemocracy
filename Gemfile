@@ -67,6 +67,7 @@ gem "faker"
 gem 'rails-i18n'
 
 gem 'react-rails'
+gem 'immutablejs-rails', '>= 2.0.17'
 gem 'i18n-js', github: 'fnando/i18n-js'
 
 group :development, :test do
