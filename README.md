@@ -5,7 +5,7 @@
 
 Citizen Participation and Open Government Application
 
-[![Build Status](https://travis-ci.org/AjuntamentdeBarcelona/barcelona-participa.svg?branch=master)](https://travis-ci.org/AjuntamentdeBarcelona/barcelona-participa)
+[![Circle CI](https://circleci.com/gh/AjuntamentdeBarcelona/barcelona-participa/tree/master.svg?style=svg)](https://circleci.com/gh/AjuntamentdeBarcelona/barcelona-participa/tree/master)
 [![Code Climate](https://codeclimate.com/github/AjuntamentdeBarcelona/barcelona-participa/badges/gpa.svg)](https://codeclimate.com/github/AjuntamentdeBarcelona/barcelona-participa)
 [![Dependency Status](https://gemnasium.com/AjuntamentdeBarcelona/barcelona-participa.svg)](https://gemnasium.com/AjuntamentdeBarcelona/barcelona-participa)
 [![Coverage Status](https://coveralls.io/repos/AjuntamentdeBarcelona/barcelona-participa/badge.svg?branch=master&service=github)](https://coveralls.io/github/AjuntamentdeBarcelona/barcelona-participa?branch=master)
