@@ -214,6 +214,10 @@ ca:
       proposal_responsible_name_note: "(individualment o com a representant d'un col·lectiu, no es mostrarà públicament)"
       proposal_summary: Resum de la proposta
       proposal_summary_note: "(màxim 200 caràcters)"
+      proposal_scope: "Àmbit"
+      proposal_scope_note: "Es una mesura per a tota la ciutat o només per a un districte?"
+      proposal_scope_city: "Tota la ciutat"
+      proposal_scope_district: "Un districte"
       proposal_text: Text desenvolupat de la proposta
       proposal_title: Títol de la proposta
       proposal_video_url: Enllaç a vídeo extern
