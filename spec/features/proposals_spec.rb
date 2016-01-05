@@ -86,6 +86,7 @@ feature 'Proposals' do
     fill_in 'proposal_summary', with: 'In summary, what we want is...'
     fill_in_ckeditor 'proposal_description', with: 'This is very important because...'
     choose 'proposal_scope_district'
+    select 'Ciutat Vella', from: 'proposal_district'
     fill_in 'proposal_external_url', with: 'http://rescue.org/refugees'
     fill_in 'proposal_video_url', with: 'http://youtube.com'
     fill_in 'proposal_responsible_name', with: 'Isabel Garcia'
