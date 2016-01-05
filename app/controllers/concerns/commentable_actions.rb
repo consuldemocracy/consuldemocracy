@@ -34,7 +34,7 @@ module CommentableActions
     @resources = @resources.tagged_with(@tag_filter) if @tag_filter
     @resources = @resources.page(params[:page]).for_render.send("sort_by_#{@current_order}")
     index_customization if index_customization.present?
-    
+
     @tag_cloud = tag_cloud
     set_resource_votes(@resources)
     set_resources_instance
@@ -116,6 +116,7 @@ module CommentableActions
         @params_date = search[:date] if search[:date].present?
         @params_date_min = search[:date_min] if (@params_date == '5') && search[:date_min].present?
         @params_date_max = search[:date_max] if (@params_date == '5') && search[:date_max].present?
+        @search_terms = search[:search] if search[:search].present?
         @advanced_search_present = true if params[:commit] || @params_author || @params_author_type || @params_date
       end
     end
