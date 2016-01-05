@@ -55,7 +55,6 @@ feature 'Proposals' do
     expect(page).to have_content proposal.title
     expect(page).to have_content proposal.code
     expect(page).to have_content "Proposal question"
-    expect(page).to have_content "Proposal description"
     expect(page).to have_content "http://external_documention.es"
     expect(page).to have_content proposal.author.name
     expect(page).to have_content I18n.l(proposal.created_at.to_date)
@@ -84,7 +83,6 @@ feature 'Proposals' do
     fill_in 'proposal_title', with: 'Help refugees'
     fill_in 'proposal_question', with: '¿Would you like to give assistance to war refugees?'
     fill_in 'proposal_summary', with: 'In summary, what we want is...'
-    fill_in_ckeditor 'proposal_description', with: 'This is very important because...'
     choose 'proposal_scope_district'
     select 'Ciutat Vella', from: 'proposal_district'
     fill_in 'proposal_external_url', with: 'http://rescue.org/refugees'
@@ -102,9 +100,7 @@ feature 'Proposals' do
     expect(page).to have_content 'Help refugees'
     expect(page).to have_content '¿Would you like to give assistance to war refugees?'
     expect(page).to have_content 'In summary, what we want is...'
-    expect(page).to have_content 'This is very important because...'
     expect(page).to have_content 'http://rescue.org/refugees'
-    expect(page).to have_content 'http://youtube.com'
     expect(page).to have_content author.name
     expect(page).to have_content I18n.l(Proposal.last.created_at.to_date)
   end
@@ -118,7 +114,6 @@ feature 'Proposals' do
     fill_in 'proposal_title', with: 'Help refugees'
     fill_in 'proposal_question', with: '¿Would you like to give assistance to war refugees?'
     fill_in 'proposal_summary', with: 'In summary, what we want is...'
-    fill_in_ckeditor 'proposal_description', with: 'This is very important because...'
     fill_in 'proposal_external_url', with: 'http://rescue.org/refugees'
     fill_in 'proposal_responsible_name', with: 'Isabel Garcia'
     fill_in 'proposal_captcha', with: correct_captcha_text
@@ -143,7 +138,6 @@ feature 'Proposals' do
     fill_in 'proposal_title', with: 'Help refugees'
     fill_in 'proposal_question', with: '¿Would you like to give assistance to war refugees?'
     fill_in 'proposal_summary', with: 'In summary, what we want is...'
-    fill_in_ckeditor 'proposal_description', with: 'This is very important because...'
     fill_in 'proposal_external_url', with: 'http://rescue.org/refugees'
     fill_in 'proposal_captcha', with: correct_captcha_text
     check 'proposal_terms_of_service'
@@ -162,7 +156,6 @@ feature 'Proposals' do
     fill_in 'proposal_title', with: "Great title"
     fill_in 'proposal_question', with: '¿Would you like to give assistance to war refugees?'
     fill_in 'proposal_summary', with: 'In summary, what we want is...'
-    fill_in_ckeditor 'proposal_description', with: 'Very important issue...'
     fill_in 'proposal_external_url', with: 'http://rescue.org/refugees'
     fill_in 'proposal_responsible_name', with: 'Isabel Garcia'
     fill_in 'proposal_captcha', with: "wrongText!"
@@ -190,7 +183,6 @@ feature 'Proposals' do
     fill_in 'proposal_title', with: ""
     fill_in 'proposal_question', with: '¿Would you like to give assistance to war refugees?'
     fill_in 'proposal_summary', with: 'In summary, what we want is...'
-    fill_in_ckeditor 'proposal_description', with: 'Very important issue...'
     fill_in 'proposal_external_url', with: 'http://rescue.org/refugees'
     fill_in 'proposal_responsible_name', with: 'Isabel Garcia'
     fill_in 'proposal_captcha', with: correct_captcha_text
@@ -225,8 +217,7 @@ feature 'Proposals' do
     visit new_proposal_path
     fill_in 'proposal_title', with: 'Testing an attack'
     fill_in 'proposal_question', with: '¿Would you like to give assistance to war refugees?'
-    fill_in 'proposal_summary', with: 'In summary, what we want is...'
-    fill_in_ckeditor 'proposal_description', with: '<p>This is <script>alert("an attack");</script></p>'
+    fill_in 'proposal_summary', with: '<p>This is alert("an attack");</p>'
     fill_in 'proposal_external_url', with: 'http://rescue.org/refugees'
     fill_in 'proposal_responsible_name', with: 'Isabel Garcia'
     fill_in 'proposal_captcha', with: correct_captcha_text
@@ -238,7 +229,7 @@ feature 'Proposals' do
 
     expect(page).to have_content 'Proposal created successfully.'
     expect(page).to have_content 'Testing an attack'
-    expect(page.html).to include '<p>This is alert("an attack");</p>'
+    expect(page.html).to include 'This is alert("an attack");'
     expect(page.html).to_not include '<script>alert("an attack");</script>'
     expect(page.html).to_not include '&lt;p&gt;This is'
   end
@@ -250,8 +241,7 @@ feature 'Proposals' do
     visit new_proposal_path
     fill_in 'proposal_title', with: 'Testing auto link'
     fill_in 'proposal_question', with: 'Should I stay or should I go?'
-    fill_in 'proposal_summary', with: 'In summary, what we want is...'
-    fill_in_ckeditor 'proposal_description', with: '<p>This is a link www.example.org</p>'
+    fill_in 'proposal_summary', with: '<p>This is a link www.example.org</p>'
     fill_in 'proposal_responsible_name', with: 'Isabel Garcia'
     fill_in 'proposal_captcha', with: correct_captcha_text
     check 'proposal_terms_of_service'
@@ -272,8 +262,7 @@ feature 'Proposals' do
     visit new_proposal_path
     fill_in 'proposal_title', with: 'Testing auto link'
     fill_in 'proposal_question', with: 'Should I stay or should I go?'
-    fill_in 'proposal_summary', with: 'In summary, what we want is...'
-    fill_in_ckeditor 'proposal_description', with: '<script>alert("hey")</script>http://example.org'
+    fill_in 'proposal_summary', with: '<script>alert("hey")</script>http://example.org'
     fill_in 'proposal_responsible_name', with: 'Isabel Garcia'
     fill_in 'proposal_captcha', with: correct_captcha_text
     check 'proposal_terms_of_service'
@@ -312,7 +301,6 @@ feature 'Proposals' do
       fill_in 'proposal_title', with: 'A test with enough characters'
       fill_in 'proposal_question', with: '¿Would you like to give assistance to war refugees?'
       fill_in 'proposal_summary', with: 'In summary, what we want is...'
-      fill_in_ckeditor 'proposal_description', with: 'A description with enough characters'
       fill_in 'proposal_external_url', with: 'http://rescue.org/refugees'
       fill_in 'proposal_responsible_name', with: 'Isabel Garcia'
       fill_in 'proposal_captcha', with: correct_captcha_text
@@ -338,7 +326,6 @@ feature 'Proposals' do
       fill_in 'proposal_title', with: 'A test of dangerous strings'
       fill_in 'proposal_question', with: '¿Would you like to give assistance to war refugees?'
       fill_in 'proposal_summary', with: 'In summary, what we want is...'
-      fill_in_ckeditor 'proposal_description', with: 'A description suitable for this test'
       fill_in 'proposal_external_url', with: 'http://rescue.org/refugees'
       fill_in 'proposal_responsible_name', with: 'Isabel Garcia'
       fill_in 'proposal_captcha', with: correct_captcha_text
@@ -394,7 +381,6 @@ feature 'Proposals' do
     fill_in 'proposal_title', with: "End child poverty"
     fill_in 'proposal_question', with: '¿Would you like to give assistance to war refugees?'
     fill_in 'proposal_summary', with: 'Basically...'
-    fill_in_ckeditor 'proposal_description', with: "Let\\'s do something to end child poverty"
     fill_in 'proposal_external_url', with: 'http://rescue.org/refugees'
     fill_in 'proposal_responsible_name', with: 'Isabel Garcia'
     fill_in 'proposal_captcha', with: correct_captcha_text
@@ -404,7 +390,6 @@ feature 'Proposals' do
     expect(page).to have_content "Proposal updated successfully."
     expect(page).to have_content "Basically..."
     expect(page).to have_content "End child poverty"
-    expect(page).to have_content "Let's do something to end child poverty"
   end
 
   scenario 'Errors on update' do

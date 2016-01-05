@@ -3,7 +3,7 @@
 <%= render "shared/social_media_meta_tags",
             social_url: proposal_url(@proposal),
             social_title: @proposal.title,
-            social_description: @proposal.summary %>
+            social_description: text_with_links(@proposal.summary) %>
 <% end %>
 <% cache [locale_and_user_status(@proposal), @proposal, @proposal.author, Flag.flagged?(current_user, @proposal), @proposal_votes] do %>
 
@@ -44,9 +44,7 @@
             <%= @proposal.code %>
         </div>
 
-        <blockquote><%= @proposal.summary %></blockquote>
-
-        <%= safe_html_with_links @proposal.description %>
+        <blockquote><%= text_with_links @proposal.summary %></blockquote>
 
         <% if @proposal.external_url.present? %>
           <div class="document-link">

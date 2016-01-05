@@ -40,9 +40,6 @@
           <span class="bullet">&nbsp;&bull;&nbsp;</span>
           <%= proposal.author.username %>
           <br>
-          <div class="moderation-description">
-            <%= proposal.description %>
-          </div>
         </td>
         <td class="text-center">
           <%= check_box_tag "proposal_ids[]", proposal.id, nil, id: "#{dom_id(proposal)}_check" %>
