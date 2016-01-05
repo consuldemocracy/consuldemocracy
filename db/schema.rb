@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160105073248) do
+ActiveRecord::Schema.define(version: 20160105094729) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -234,8 +234,8 @@ ActiveRecord::Schema.define(version: 20160105073248) do
     t.datetime "confirmed_hide_at"
     t.integer  "hot_score",         limit: 8,  default: 0
     t.integer  "confidence_score",             default: 0
-    t.datetime "created_at",                               null: false
-    t.datetime "updated_at",                               null: false
+    t.datetime "created_at",                                        null: false
+    t.datetime "updated_at",                                        null: false
     t.string   "responsible_name",  limit: 60
     t.text     "summary"
     t.string   "video_url"
@@ -243,7 +243,7 @@ ActiveRecord::Schema.define(version: 20160105073248) do
     t.tsvector "tsv"
     t.integer  "category_id"
     t.integer  "subcategory_id"
-    t.string   "scope"
+    t.string   "scope",                        default: "district"
     t.string   "district"
   end
 
