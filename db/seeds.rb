@@ -89,6 +89,7 @@ if ENV["SEED"]
                                 tag_list: tags.sample(3).join(','),
                                 subcategory: subcategory,
                                 category: subcategory.category,
+                                scope: 'city',
                                 terms_of_service: "1")
     puts "    #{proposal.title}"
   end

@@ -48,6 +48,23 @@ describe Proposal do
     end
   end
 
+  describe "#scope" do
+    it "should be valid with 'city' value" do
+      proposal.scope = 'city'
+      expect(proposal).to be_valid
+    end
+
+    it "should be valid with 'district' value" do
+      proposal.scope = 'district'
+      expect(proposal).to be_valid
+    end
+
+    it "should not be valid with an arbitrary value" do
+      proposal.scope = 'whatever'
+      expect(proposal).to_not be_valid
+    end
+  end
+
   describe "#question" do
     it "should not be valid without a question" do
       proposal.question = nil

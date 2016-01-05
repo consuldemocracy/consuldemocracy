@@ -138,6 +138,7 @@ FactoryGirl.define do
     sequence(:title)     { |n| "Proposal #{n} title" }
     summary              'In summary, what we want is...'
     description          'Proposal description'
+    scope                'city'
     question             'Proposal question'
     external_url         'http://external_documention.es'
     video_url            'http://video_link.com'

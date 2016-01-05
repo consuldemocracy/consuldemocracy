@@ -727,7 +727,13 @@ form {
     width: auto\9;
   }
 
-  input[type]:not([type=submit]):not([type=file]):not([type=checkbox]) {
+  input[type="radio"] {
+    height: auto\9;
+    line-height: inherit\9;
+    width: auto\9;
+  }
+
+  input[type]:not([type=submit]):not([type=file]):not([type=checkbox]):not([type=radio]) {
     background: $input-bg;
     height: $line-height*2;
     margin-bottom: rem-calc(16);
