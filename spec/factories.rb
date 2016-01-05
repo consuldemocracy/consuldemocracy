@@ -303,4 +303,7 @@ FactoryGirl.define do
     association :notifiable, factory: :proposal
   end
 
+  factory :geozone do
+    sequence(:name) { |n| "District #{n}" }
+  end
 end

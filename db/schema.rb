@@ -171,6 +171,14 @@ ActiveRecord::Schema.define(version: 20160108133501) do
   add_index "flags", ["user_id", "flaggable_type", "flaggable_id"], name: "access_inappropiate_flags", using: :btree
   add_index "flags", ["user_id"], name: "index_flags_on_user_id", using: :btree
 
+  create_table "geozones", force: :cascade do |t|
+    t.string   "name"
+    t.string   "html_map_coordinates"
+    t.string   "external_code"
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+  end
+
   create_table "identities", force: :cascade do |t|
     t.integer  "user_id"
     t.string   "provider"
