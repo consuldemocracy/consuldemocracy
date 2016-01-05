@@ -15,4 +15,4 @@ database:
 
 test:
   override:
-    - docker-compose run -e COVERALLS_RUN_LOCALLY=true app bundle exec rspec
+    - docker-compose run -e CI_PULL_REQUEST=$CI_PULL_REQUEST -e CI=true app bundle exec rspec
