@@ -39,6 +39,7 @@
 //= require votes
 //= require annotatable
 //= require i18n
+//= require proposals
 
 //= require react
 //= require react_ujs
@@ -55,6 +56,7 @@ var initialize_modules = function() {
   App.PreventDoubleSubmission.initialize();
   App.IeAlert.initialize();
   App.Annotatable.initialize();
+  App.Proposals.initialize();
 };
 
 $(function(){
