@@ -352,7 +352,7 @@ en:
       date_5: 'Customized'
       from: 'From'
       to: 'To'
-      search: 'Search'
+      search: 'Filter'
   users:
     show:
       filters:

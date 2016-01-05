@@ -352,7 +352,7 @@ es:
       date_5: 'Personalizada'
       from: 'Desde'
       to: 'Hasta'
-      search: 'Buscar'
+      search: 'Filtrar'
   users:
     show:
       filters:
