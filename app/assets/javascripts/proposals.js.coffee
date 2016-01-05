@@ -8,7 +8,7 @@ App.Proposals =
 
     currentScope = this.proposalScopeRadio.filter((index, radio) => $(radio).attr('checked'))
 
-    if currentScope
+    if currentScope.length > 0
       this.checkDistrictSelectVisibility(currentScope[0].value)
 
   checkDistrictSelectVisibility: (scope) ->
