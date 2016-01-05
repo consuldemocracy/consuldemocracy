@@ -258,14 +258,30 @@ header {
   }
 
   .search-form {
-    padding-top: $line-height/4;
-    margin-bottom: 0 !important;
+
+    @media (min-width: $small-breakpoint) {
+      margin-bottom: 0 !important;
+    }
 
     .postfix {
-      background: $brand;
-      border: 0;
-      color: white;
-      margin-bottom: 0;
+      height: rem-calc(37);
+    }
+
+    input, .button {
+     top: $line-height/4;
+    }
+
+    @media (max-width: $small-breakpoint) {
+
+      .postfix {
+        font-size: $h3-font-size;
+        padding-top: $line-height/6;
+        top: 0;
+      }
+
+      .column {
+        padding: 0;
+      }
     }
   }
 }
@@ -381,10 +397,11 @@ header {
   }
 
   ul li > a {
-    font-size: $small-font-size;
+    font-size: $base-font-size;
 
     &.button {
       border-radius: 0;
+      font-size: $base-font-size;
       line-height: $line-height*1.5;
       text-align: left;
       background: none;
@@ -395,10 +412,14 @@ header {
     }
 
     @media (min-width: $small-breakpoint) {
+
+      font-size: $small-font-size;
+
       &.button {
         background: white;
         border-radius: rem-calc(3);
         color: $brand;
+        font-size: $small-font-size;
         line-height: rem-calc(15);
         margin-top: rem-calc(16);
         padding-left: rem-calc(15);
@@ -426,14 +447,15 @@ header {
 
 .subnavigation-container {
   background: white;
+  height: rem-calc(50);
+  margin-top: rem-calc(-50);
 }
 
 .subnavigation {
-  background: white;
   clear: both;
-  padding-left: $line-height/2;
 
   @media (min-width: $small-breakpoint) {
+    background: white;
     padding-left: 0;
 
     & > .column {
@@ -442,44 +464,33 @@ header {
   }
 
   a {
-    color: $text;
+    color: white;
     display: inline-block;
     font-family: $font-sans;
-    font-weight: bold;
     line-height: $line-height*2;
     position: relative;
     text-align: left;
+    width: 100%;
 
     @media (min-width: $small-breakpoint) {
+      color: $text;
+      font-weight: bold;
       margin-left: $line-height/2;
       margin-right: $line-height*1.5;
       margin-right: 12px\9;
-    }
+      width: auto;
 
-    &:after {
-      color: $border;
-      content: "|";
-      padding: 0 $line-height/2;
-
-      @media (min-width: $small-breakpoint) {
-        content: none;
-        padding: 0;
+      &:hover {
+        color: $link;
       }
     }
 
-    &:last-child:after {
-      content: none;
-    }
-
-    &:hover {
-      color: $link;
-    }
-
     &.active {
-      color: $brand;
+      color: white;
 
       @media (min-width: $small-breakpoint) {
         border-bottom: 2px solid $brand;
+        color: $brand;
       }
     }
   }
