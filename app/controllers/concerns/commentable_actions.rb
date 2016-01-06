@@ -13,7 +13,7 @@ module CommentableActions
     if @params_date
       case @params_date
       when '1'
-        min_date_time = DateTime.now -24.hour
+        min_date_time = DateTime.now - 24.hour
       when '2'
         min_date_time = DateTime.now - 7.day
       when '3'
