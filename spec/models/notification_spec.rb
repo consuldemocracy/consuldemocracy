@@ -26,8 +26,8 @@ describe Notification do
   end
 
   describe "#for_render (scope)" do
-    it "returns notifications with including activity, user and trackable info" do
-      expect(Notification).to receive(:includes).with(activity: [:user, :trackable]).exactly(:once)
+    it "returns notifications including notifiable and user" do
+      expect(Notification).to receive(:includes).with(notifiable: [:user]).exactly(:once)
       Notification.for_render
     end
   end
@@ -35,8 +35,7 @@ describe Notification do
   describe "#timestamp" do
     it "returns the timestamp of the trackable object" do
       comment = create :comment
-      activity = create :activity, trackable: comment
-      notification = create :notification, activity: activity
+      notification = create :notification, notifiable: comment
 
       expect(notification.timestamp).to eq comment.created_at
     end
@@ -51,4 +50,13 @@ describe Notification do
       expect(notification.read).to be true
     end
   end
+
+  describe "#username" do
+    it "returns the username of the activity's author" do
+      comment = create :comment
+      notification = create :notification, notifiable: comment
+      expect(notification.username).to eq comment.author.username
+    end
+  end
+
 end

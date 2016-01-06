@@ -1,16 +1,19 @@
 class Notification < ActiveRecord::Base
   belongs_to :user
-  belongs_to :activity
+  belongs_to :notifiable, polymorphic: true
 
-  scope :unread, -> { where(read: false) }
+  scope :unread, -> { all }
   scope :recent, -> { order(id: :desc) }
-  scope :for_render, -> { includes(activity: [:user, :trackable]) }
+  scope :for_render, -> { includes(notifiable: [:user]) }
+
+  def username
+    notifiable.user.username
+  end
 
   def timestamp
-    activity.trackable.created_at
+    notifiable.created_at
   end
 
   def mark_as_read!
-    update_attribute :read, true
   end
 end

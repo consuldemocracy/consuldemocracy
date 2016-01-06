@@ -3,8 +3,8 @@
     <% @notifications.each do |notification| %>
     <li>
       <time><%= l notification.timestamp, format: :datetime %></time>&nbsp;&bull;&nbsp;
-      <%= notification.activity.username %> <%= notification_text_for(notification) %> 
-      <%= link_to notification.activity.trackable.debate.title, notification.activity.trackable.debate %>
+      <%= notification.username %> <%= notification_text_for(notification) %>
+      <%= link_to notification.notifiable.commentable.title, notification.notifiable.commentable %>
     </li>
     <% end %>
   </ul>

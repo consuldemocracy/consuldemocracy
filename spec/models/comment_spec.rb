@@ -128,4 +128,19 @@ describe Comment do
       expect(Comment.not_as_admin_or_moderator.first).to eq(comment1)
     end
   end
+
+  describe "#made_by?" do
+    let(:author)  { create :user }
+    let(:comment) { create :comment, user: author }
+
+    it "returns true if comment was made by user" do
+      expect(comment.made_by?(author)).to be true
+    end
+
+    it "returns false if comment was not made by user" do
+      not_author = create :user
+      expect(comment.made_by?(not_author)).to be false
+    end
+  end
+
 end

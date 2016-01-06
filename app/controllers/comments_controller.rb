@@ -9,7 +9,7 @@ class CommentsController < ApplicationController
   def create
     if @comment.save
       CommentNotifier.new(comment: @comment).process
-      track_activity @comment
+      add_notification @comment
     else
       render :new
     end
@@ -62,5 +62,14 @@ class CommentsController < ApplicationController
     def moderator_comment?
       ["1", true].include?(comment_params[:as_moderator]) && can?(:comment_as_moderator, @commentable)
     end
+
+    def add_notification(comment)
+      if comment.reply?
+        author = comment.parent.author
+      else
+        author = comment.commentable.author
+      end
+      author.notifications.create!(notifiable: comment) unless comment.made_by? author
+   end
 
 end

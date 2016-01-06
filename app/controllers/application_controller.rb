@@ -109,21 +109,4 @@ class ApplicationController < ActionController::Base
       end
     end
 
-    def track_activity(trackable)
-      if trackable.is_a? Comment
-        action = trackable.root? ? "debate_comment" : "comment_reply"
-        activity = current_user.activities.create! action: action, trackable: trackable
-        add_notifications_for activity
-      end
-    end
-
-    def add_notifications_for(activity)
-      case activity.action
-      when "debate_comment"
-        author = activity.trackable.debate.author
-      when "comment_reply"
-        author = activity.trackable.parent.author
-      end
-      author.notifications.create!(activity: activity) unless activity.made_by? author
-    end
 end

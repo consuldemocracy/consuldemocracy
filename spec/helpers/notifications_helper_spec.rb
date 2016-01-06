@@ -3,20 +3,21 @@ require 'rails_helper'
 describe NotificationsHelper do
 
   describe "#notification_text_for" do
-    let(:comment_activity) { create :activity, action: "debate_comment" }
-    let(:reply_activity) { create :activity, action: "comment_reply" }
+    let(:debate) { create :debate }
+    let(:debate_comment) { create :comment, commentable: debate }
+    let(:comment_reply)  { create :comment, commentable: debate, parent: debate_comment }
 
     context "when action was comment on a debate" do
-      it "returns 'commented_on_your_debate' locale text" do
-        notification = create :notification, activity: comment_activity
-        expect(notification_text_for(notification)).to eq t("comments.notifications.commented_on_your_debate")
+      it "returns correct text when someone comments on your debate" do
+        notification = create :notification, notifiable: debate_comment
+        expect(notification_text_for(notification)).to eq "commented on your debate"
       end
     end
 
     context "when action was comment on a debate" do
-      it "returns 'replied_to_your_comment' locale text" do
-        notification = create :notification, activity: reply_activity
-        expect(notification_text_for(notification)).to eq t("comments.notifications.replied_to_your_comment")
+      it "returns correct text when someone replies to your comment" do
+        notification = create :notification, notifiable: comment_reply
+        expect(notification_text_for(notification)).to eq "replied to your comment on"
       end
     end
   end

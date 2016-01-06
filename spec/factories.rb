@@ -291,9 +291,8 @@ FactoryGirl.define do
   end
 
   factory :notification do
-    association :user, factory: :user
-    association :activity, factory: :activity
-    read false
+    user
+    association :notifiable, factory: :comment
   end
 
 end

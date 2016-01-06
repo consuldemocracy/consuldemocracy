@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151215165824) do
+ActiveRecord::Schema.define(version: 20160105170113) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -205,14 +205,11 @@ ActiveRecord::Schema.define(version: 20151215165824) do
   add_index "moderators", ["user_id"], name: "index_moderators_on_user_id", using: :btree
 
   create_table "notifications", force: :cascade do |t|
-    t.integer  "user_id"
-    t.integer  "activity_id"
-    t.boolean  "read",        default: false
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
+    t.integer "user_id"
+    t.integer "notifiable_id"
+    t.string  "notifiable_type"
   end
 
-  add_index "notifications", ["activity_id"], name: "index_notifications_on_activity_id", using: :btree
   add_index "notifications", ["user_id"], name: "index_notifications_on_user_id", using: :btree
 
   create_table "organizations", force: :cascade do |t|
@@ -407,7 +404,6 @@ ActiveRecord::Schema.define(version: 20151215165824) do
   add_index "votes", ["votable_id", "votable_type", "vote_scope"], name: "index_votes_on_votable_id_and_votable_type_and_vote_scope", using: :btree
   add_index "votes", ["voter_id", "voter_type", "vote_scope"], name: "index_votes_on_voter_id_and_voter_type_and_vote_scope", using: :btree
 
-  add_foreign_key "activities", "users"
   add_foreign_key "administrators", "users"
   add_foreign_key "annotations", "legislations"
   add_foreign_key "annotations", "users"
@@ -416,7 +412,6 @@ ActiveRecord::Schema.define(version: 20151215165824) do
   add_foreign_key "identities", "users"
   add_foreign_key "locks", "users"
   add_foreign_key "moderators", "users"
-  add_foreign_key "notifications", "activities"
   add_foreign_key "notifications", "users"
   add_foreign_key "organizations", "users"
 end

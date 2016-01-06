@@ -90,6 +90,10 @@ class Comment < ActiveRecord::Base
     !root?
   end
 
+  def made_by?(user)
+    self.user == user
+  end
+
   def call_after_commented
     self.commentable.try(:after_commented)
   end

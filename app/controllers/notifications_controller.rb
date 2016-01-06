@@ -3,8 +3,7 @@ class NotificationsController < ApplicationController
   load_and_authorize_resource class: "User"
 
   def index
-    @notifications = current_user.notifications.unread.recent.for_render
-    @notifications.each { |notification| notification.mark_as_read! }
+    @notifications = current_user.notifications.recent.for_render
   end
 
 end
