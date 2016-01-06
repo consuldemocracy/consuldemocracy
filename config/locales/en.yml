@@ -263,9 +263,6 @@ en:
       title: "Spending proposal title"
       description: "Description"
       external_url: "Link to additional documentation"
-      tags_label: "Tags"
-      tags_instructions: "Tag this spending proposal. You can choose from our tags or add your own."
-      tags_placeholder: "Enter the tags you would like to use, separated by commas (',')"
       submit_buttons:
         new: Create
         create: Create

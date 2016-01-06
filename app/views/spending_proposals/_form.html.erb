@@ -18,17 +18,6 @@
     </div>
 
     <div class="small-12 column">
-      <%= f.label :tag_list, t("spending_proposals.form.tags_label") %>
-      <p class="note"><%= t("spending_proposals.form.tags_instructions") %></p>
-      <span class="tags">
-        <% @featured_tags.each do |tag| %>
-          <a class="js-add-tag-link"><%= tag.name %></a>
-        <% end %>
-      </span>
-      <%= f.text_field :tag_list, value: @spending_proposal.tag_list.to_s, label: false, placeholder: t("spending_proposals.form.tags_placeholder"), class: 'js-tag-list' %>
-    </div>
-
-    <div class="small-12 column">
       <% if @spending_proposal.new_record? %>
         <%= f.label :terms_of_service do %>
           <%= f.check_box :terms_of_service, label: false %>

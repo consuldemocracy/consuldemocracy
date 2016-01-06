@@ -26,7 +26,7 @@ class SpendingProposalsController < ApplicationController
   private
 
     def spending_proposal_params
-      params.require(:spending_proposal).permit(:title, :description, :external_url, :tag_list, :terms_of_service, :captcha, :captcha_key)
+      params.require(:spending_proposal).permit(:title, :description, :external_url, :terms_of_service, :captcha, :captcha_key)
     end
 
 end

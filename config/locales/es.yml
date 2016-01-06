@@ -263,9 +263,6 @@ es:
       title: "Título de la propuesta de gasto"
       description: "Descripción detallada"
       external_url: "Enlace a documentación adicional"
-      tags_label: "Temas"
-      tags_instructions: "Etiqueta esta propuesta de gasto. Puedes elegir entre nuestras sugerencias o introducir las que desees."
-      tags_placeholder: "Escribe las etiquetas que desees separadas por una coma (',')"
       submit_buttons:
         new: Crear
         create: Crear
