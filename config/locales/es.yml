@@ -331,6 +331,28 @@ es:
     check: "Seleccionar"
     check_all: "Todos"
     check_none: "Ninguno"
+    advanced_search:
+      title: 'Búsqueda avanzada'
+      general: 'Con el texto'
+      general_placeholder: 'Escribe el texto'
+      author: 'Por nombre de autor'
+      author_placeholder: 'Escribe el nombre del autor'
+      author_type: 'Por categoría de autor'
+      author_type_blank: 'Elige una categoría'
+      author_type_1: 'Empleado público'
+      author_type_2: 'Organización Municipal'
+      author_type_3: 'Director general'
+      author_type_4: 'Concejal'
+      author_type_5: 'Alcaldesa'
+      date: 'Por fecha'
+      date_1: 'Últimas 24 horas'
+      date_2: 'Última semana'
+      date_3: 'Últimos 30 días'
+      date_4: 'Último año'
+      date_5: 'Personalizada'
+      from: 'Desde'
+      to: 'Hasta'
+      search: 'Filtrar'
   users:
     show:
       filters:
