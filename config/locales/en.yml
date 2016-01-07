@@ -173,7 +173,7 @@ en:
       search_form:
         title: "Search"
         button: "Search"
-        placeholder: "Search citizen proposals..."
+        placeholder: "Search proposals..."
       search_results:
         one: " containing the term '%{search_term}'"
         other: " containing the term '%{search_term}'"

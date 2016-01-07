@@ -173,7 +173,7 @@ es:
       search_form:
         title: "Buscar"
         button: "Buscar"
-        placeholder: "Buscar propuestas ciudadanas..."
+        placeholder: "Buscar propuestas..."
       search_results:
         one: " que contiene '%{search_term}'"
         other: " que contienen '%{search_term}'"
