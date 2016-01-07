@@ -511,8 +511,7 @@ header {
     color: $text;
     display: inline-block;
     font-weight: bold;
-    margin-right: $line-height;
-    margin-right: 12px\9;
+    margin-right: $line-height/2;
     position: relative;
     text-align: left;
 
