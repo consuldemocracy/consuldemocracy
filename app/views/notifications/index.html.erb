@@ -1,11 +1,14 @@
-<div class="row">
-  <ul>
-    <% @notifications.each do |notification| %>
-    <li>
-      <time><%= l notification.timestamp, format: :datetime %></time>&nbsp;&bull;&nbsp;
-      <%= notification.username %> <%= notification_text_for(notification) %>
-      <%= link_to notification.notifiable.commentable.title, notification.notifiable.commentable %>
-    </li>
-    <% end %>
-  </ul>
-</div>
+<% if @notifications.empty? %>
+  <div><%= t("notifications.index.empty_notifications") %></div>
+<% else %>
+  <div class="row">
+    <ul>
+      <%= render @notifications %>
+    </ul>
+
+    <div>
+      <%= link_to t("notifications.index.mark_all_as_read"),
+                  mark_all_as_read_notifications_path, method: :put %>
+    </div>
+  </div>
+<% end %>

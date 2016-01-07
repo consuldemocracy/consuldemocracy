@@ -4,12 +4,8 @@ describe Notification do
 
   describe "#unread (scope)" do
     it "returns only unread notifications" do
-      unread_notification = create :notification
-      read_notification = create :notification, read: true
-
-      unread_notifications = Notification.unread
-      expect(unread_notifications.size).to be 1
-      expect(unread_notifications.first).to eq unread_notification
+      2.times { create :notification }
+      expect(Notification.unread.size).to be 2
     end
   end
 
@@ -42,12 +38,12 @@ describe Notification do
   end
 
   describe "#mark_as_read" do
-    it "set up read flag to true" do
+    it "destroys notification" do
       notification = create :notification
-      expect(notification.read).to be false
+      expect(Notification.unread.size).to eq 1
 
-      notification.mark_as_read!
-      expect(notification.read).to be true
+      notification.mark_as_read
+      expect(Notification.unread.size).to eq 0
     end
   end
 

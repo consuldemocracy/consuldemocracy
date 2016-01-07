@@ -14,6 +14,7 @@ class Notification < ActiveRecord::Base
     notifiable.created_at
   end
 
-  def mark_as_read!
+  def mark_as_read
+    self.destroy
   end
 end

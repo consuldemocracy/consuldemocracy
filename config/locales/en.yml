@@ -267,9 +267,6 @@ en:
         zero: "No votes"
         one: "1 vote"
         other: "%{count} votes"
-    notifications:
-      commented_on_your_debate: "commented on your debate"
-      replied_to_your_comment: "replied to your comment on"
   comments_helper:
     comment_link: "Comment"
     comment_button: "Publish comment"
@@ -313,6 +310,12 @@ en:
       user_permission_votes: "Participate on final voting"
       user_permission_verify: "To perform all the actions verify your account."
       user_permission_verify_info: "* Only for users on Madrid City Census."
+  notifications:
+    index:
+      mark_all_as_read: "Mark all as read"
+      empty_notifications: "There are no new notifications."
+      commented_on_your_debate: "commented on your debate"
+      replied_to_your_comment: "replied to your comment on"
   simple_captcha:
     placeholder: "Enter the text from the image"
     label: "Enter the text from the image in the box below"

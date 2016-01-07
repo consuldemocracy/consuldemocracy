@@ -75,7 +75,9 @@ Rails.application.routes.draw do
     collection { get :erase }
   end
 
-  resources :notifications, only: :index
+  resources :notifications, only: [:index, :show] do
+    collection { put :mark_all_as_read }
+  end
 
   resource :verification, controller: "verification", only: [:show]
 
