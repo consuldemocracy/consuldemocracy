@@ -18,7 +18,7 @@
     <div class="small-12 column">
       <%= f.label :summary, t("proposals.form.proposal_summary") %>
       <p class="note"><%= t("proposals.form.proposal_summary_note") %></p>
-      <%= f.text_area :summary, rows: 4, maxlength: 200, label: false,
+      <%= f.text_area :summary, rows: 4, maxlength: 350, label: false,
                       placeholder: t('proposals.form.proposal_summary') %>
     </div>
 
@@ -35,11 +35,6 @@
 
     <div class="small-12 column">
       <%= f.select :district, Proposal::DISTRICTS %>
-    </div>
-
-    <div class="ckeditor small-12 column">
-      <%= f.label :description, t("proposals.form.proposal_text") %>
-      <%= f.cktext_area :description, maxlength: Proposal.description_max_length, ckeditor: { language: I18n.locale }, label: false %>
     </div>
 
     <div class="small-12 column">
