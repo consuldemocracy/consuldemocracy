@@ -41,4 +41,16 @@ describe SpendingProposal do
       expect(spending_proposal).to_not be_valid
     end
   end
+
+  describe "resolution status" do
+    it "can be accepted" do
+      spending_proposal.accept
+      expect(spending_proposal.reload.resolution).to eq("accepted")
+    end
+
+    it "can be rejected" do
+      spending_proposal.reject
+      expect(spending_proposal.reload.resolution).to eq("rejected")
+    end
+  end
 end

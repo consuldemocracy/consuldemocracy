@@ -4,6 +4,8 @@ class SpendingProposal < ActiveRecord::Base
 
   apply_simple_captcha
 
+  RESOLUTIONS = ["accepted", "rejected"]
+
   belongs_to :author, -> { with_hidden }, class_name: 'User', foreign_key: 'author_id'
   belongs_to :geozone
 
@@ -13,6 +15,14 @@ class SpendingProposal < ActiveRecord::Base
 
   validates :title, length: { in: 4..SpendingProposal.title_max_length }
   validates :description, length: { maximum: SpendingProposal.description_max_length }
-
+  validates :resolution,  inclusion: { in: RESOLUTIONS, allow_nil: true }
   validates :terms_of_service, acceptance: { allow_nil: false }, on: :create
+
+  def accept
+    update_attribute(:resolution, "accepted")
+  end
+
+  def reject
+    update_attribute(:resolution, "rejected")
+  end
 end
