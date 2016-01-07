@@ -125,6 +125,8 @@ ignore_unused:
   - 'debates.index.search_form.*'
   - 'proposals.index.orders.*'
   - 'proposals.index.search_form.*'
+  - 'notifications.index.commented_on_your_debate'
+  - 'notifications.index.replied_to_your_comment'
   - 'helpers.page_entries_info.*' # kaminari
   - 'views.pagination.*' # kaminari
 # - '{devise,kaminari,will_paginate}.*'
