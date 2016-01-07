@@ -17,6 +17,7 @@ feature 'Spending proposals' do
     fill_in 'spending_proposal_description', with: 'I want to live in a high tower over the clouds'
     fill_in 'spending_proposal_external_url', with: 'http://http://skyscraperpage.com/'
     fill_in 'spending_proposal_captcha', with: correct_captcha_text
+    select  'All city', from: 'spending_proposal_geozone_id'
     check 'spending_proposal_terms_of_service'
 
     click_button 'Create'

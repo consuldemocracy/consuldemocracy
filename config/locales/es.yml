@@ -263,9 +263,12 @@ es:
       title: "Título de la propuesta de gasto"
       description: "Descripción detallada"
       external_url: "Enlace a documentación adicional"
+      geozone: "Nivel de actuación"
       submit_buttons:
         new: Crear
         create: Crear
+  geozones:
+    none: "Toda la ciudad"
   comments:
     show:
       return_to_commentable: "Volver a "

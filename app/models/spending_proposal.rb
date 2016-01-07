@@ -5,6 +5,7 @@ class SpendingProposal < ActiveRecord::Base
   apply_simple_captcha
 
   belongs_to :author, -> { with_hidden }, class_name: 'User', foreign_key: 'author_id'
+  belongs_to :geozone
 
   validates :title, presence: true
   validates :author, presence: true

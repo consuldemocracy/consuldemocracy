@@ -18,6 +18,11 @@
     </div>
 
     <div class="small-12 column">
+      <%= f.label :geozone_id,  t("spending_proposals.form.geozone") %>
+      <%= f.select :geozone_id, Geozone.all.collect { |g| [ g.name, g.id ] }, {include_blank: t("geozones.none"), label: false} %>
+    </div>
+
+    <div class="small-12 column">
       <% if @spending_proposal.new_record? %>
         <%= f.label :terms_of_service do %>
           <%= f.check_box :terms_of_service, label: false %>

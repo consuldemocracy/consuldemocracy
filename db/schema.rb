@@ -288,9 +288,11 @@ ActiveRecord::Schema.define(version: 20160108133501) do
     t.string   "external_url"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+    t.integer  "geozone_id"
   end
 
   add_index "spending_proposals", ["author_id"], name: "index_spending_proposals_on_author_id", using: :btree
+  add_index "spending_proposals", ["geozone_id"], name: "index_spending_proposals_on_geozone_id", using: :btree
 
   create_table "taggings", force: :cascade do |t|
     t.integer  "tag_id"

@@ -263,9 +263,12 @@ en:
       title: "Spending proposal title"
       description: "Description"
       external_url: "Link to additional documentation"
+      geozone: "Area of operation"
       submit_buttons:
         new: Create
         create: Create
+  geozones:
+    none: "All city"
   comments:
     show:
       return_to_commentable: "Go back to "
