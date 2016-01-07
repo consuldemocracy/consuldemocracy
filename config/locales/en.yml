@@ -244,6 +244,8 @@ en:
       form:
         submit_button: "Save changes"
   comments:
+    show:
+      return_to_commentable: "Go back to "
     select_order: "Sort by"
     orders:
       most_voted: "Most voted"

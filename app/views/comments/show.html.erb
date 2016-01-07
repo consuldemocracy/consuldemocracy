@@ -1,0 +1,12 @@
+<div>
+  <%= link_to t("comments.show.return_to_commentable") + @comment.commentable.title,
+              @comment.commentable %>
+</div>
+
+<section class="row-full comments">
+  <div class="row">
+    <div id="comments" class="small-12 column">
+      <%= render @comment %>
+    </div>
+  </div>
+</section>

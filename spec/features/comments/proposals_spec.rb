@@ -20,6 +20,21 @@ feature 'Commenting proposals' do
     end
   end
 
+  scenario 'Show' do
+    parent_comment = create(:comment, commentable: proposal)
+    first_child    = create(:comment, commentable: proposal, parent: parent_comment)
+    second_child   = create(:comment, commentable: proposal, parent: parent_comment)
+
+    visit comment_path(parent_comment)
+
+    expect(page).to have_css(".comment", count: 3)
+    expect(page).to have_content parent_comment.body
+    expect(page).to have_content first_child.body
+    expect(page).to have_content second_child.body
+
+    expect(page).to have_link "Go back to #{proposal.title}", proposal_path(proposal)
+  end
+
   scenario 'Comment order' do
     c1 = create(:comment, :with_confidence_score, commentable: proposal, cached_votes_up: 100, cached_votes_total: 120, created_at: Time.now - 2)
     c2 = create(:comment, :with_confidence_score, commentable: proposal, cached_votes_up: 10, cached_votes_total: 12, created_at: Time.now - 1)
