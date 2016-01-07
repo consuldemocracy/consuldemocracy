@@ -2,7 +2,7 @@ FROM ultrayoshi/ruby-node-phantomjs
 MAINTAINER david@adverway.com
 
 # Create working directory
-ENV APP_HOME /barcelona-participa
+ENV APP_HOME /decidimbcn
 RUN mkdir $APP_HOME
 WORKDIR $APP_HOME
 
