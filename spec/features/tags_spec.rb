@@ -63,10 +63,10 @@ feature 'Tags' do
     visit debates_path
 
     within(:css, "#tag-cloud") do
-      expect(page.find("a:eq(1)")).to have_content("Economía 10")
-      expect(page.find("a:eq(2)")).to have_content("Corrupción 5")
-      expect(page.find("a:eq(3)")).to have_content("Educación 5")
-      expect(page.find("a:eq(4)")).to have_content("Medio Ambiente 1")
+      expect(page.find("a:eq(1)")).to have_content("Economía (10)")
+      expect(page.find("a:eq(2)")).to have_content("Corrupción (5)")
+      expect(page.find("a:eq(3)")).to have_content("Educación (5)")
+      expect(page.find("a:eq(4)")).to have_content("Medio Ambiente (1)")
     end
   end
 
