@@ -49,26 +49,25 @@
         <%= render "devise/menu/login_items" %>
         <%= render "shared/admin_login_items" %>
       </section>
+
+      <section class="subnavigation row">
+        <div class="small-12 medium-8 column">
+        <%= link_to t("layouts.header.debates"), debates_path, class: ("active" if current_page?(controller: "/debates")) %>
+        <%= link_to t("layouts.header.proposals"), proposals_path, class: ("active" if current_page?(controller: "/proposals")) %>
+        <%= link_to t("layouts.header.more_information"), page_path('more_information'), class: ("active" if current_page?("/more_information"))  %>
+        <%= link_to t("layouts.header.external_link_blog_url"), target: "_blank" do %>
+          <%= t("layouts.header.external_link_blog") %>
+          <small><i class="icon-external"></i></small>
+        <% end %>
+        </div>
+        <div class="small-12 medium-4 column right">
+          <%= yield :header_addon %>
+        </div>
+      </section>
     </nav>
   </div>
 
-  <div class="row-full subnavigation-container">
-    <section class="subnavigation row">
-      <div class="small-12 medium-8 column">
-      <%= link_to t("layouts.header.debates"), debates_path, class: ("active" if current_page?(controller: "/debates")) %>
-      <%= link_to t("layouts.header.proposals"), proposals_path, class: ("active" if current_page?(controller: "/proposals")) %>
-      <%= link_to t("layouts.header.processes"), "/processes", class: ("active" if current_page?("/processes") || current_page?("/processes_ordinance")) %>
-      <%= link_to t("layouts.header.more_information"), page_path('more_information'), class: ("active" if current_page?("/more_information"))  %>
-      <%= link_to t("layouts.header.external_link_blog_url"), target: "_blank" do %>
-        <%= t("layouts.header.external_link_blog") %>
-        <small><i class="icon-external"></i></small>
-      <% end %>
-      </div>
-      <div class="small-12 medium-4 column right">
-        <%= yield :header_addon %>
-      </div>
-    </section>
-  </div>
+  <div class="row-full subnavigation-container"></div>
 
   <% if home_page? %>
     <div class="row home-page">

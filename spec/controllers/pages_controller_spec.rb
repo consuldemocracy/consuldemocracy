@@ -58,4 +58,10 @@ describe PagesController do
     end
   end
 
+  describe 'Not found pages' do
+    it 'should return a 404 message' do
+      expect { get :show, id: "nonExistentPage" }.to raise_error(ActionController::RoutingError)
+    end
+  end
+
 end
