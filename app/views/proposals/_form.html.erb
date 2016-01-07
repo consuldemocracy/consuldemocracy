@@ -37,11 +37,6 @@
       <%= f.select :district, Proposal::DISTRICTS %>
     </div>
 
-    <div class="ckeditor small-12 column">
-      <%= f.label :description, t("proposals.form.proposal_text") %>
-      <%= f.cktext_area :description, maxlength: Proposal.description_max_length, ckeditor: { language: I18n.locale }, label: false %>
-    </div>
-
     <div class="small-12 column">
       <%= proposal_category_picker(@proposal) %>
     </div>
