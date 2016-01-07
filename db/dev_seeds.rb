@@ -14,6 +14,9 @@ Setting.create(key: 'max_votes_for_proposal_edit', value: '1000')
 Setting.create(key: 'proposal_code_prefix', value: 'MAD')
 Setting.create(key: 'votes_for_proposal_success', value: '100')
 
+puts "Creating Geozones"
+('A'..'Z').each{ |i| Geozone.create(name: "District #{i}") }
+
 puts "Creating Users"
 
 def create_user(email, username = Faker::Name.name)
