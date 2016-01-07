@@ -445,7 +445,7 @@ header {
   }
 }
 
-.subnavigation-container {
+.subnavigation-background {
   background: white;
   height: rem-calc(50);
   margin-top: rem-calc(-50);
@@ -456,17 +456,11 @@ header {
 
   @media (min-width: $small-breakpoint) {
     background: white;
-    padding-left: 0;
-
-    & > .column {
-      padding-left: 0;
-    }
   }
 
   a {
     color: white;
     display: inline-block;
-    font-family: $font-sans;
     line-height: $line-height*2;
     position: relative;
     text-align: left;
@@ -475,7 +469,6 @@ header {
     @media (min-width: $small-breakpoint) {
       color: $text;
       font-weight: bold;
-      margin-left: $line-height/2;
       margin-right: $line-height*1.5;
       margin-right: 12px\9;
       width: auto;
@@ -492,6 +485,36 @@ header {
         border-bottom: 2px solid $brand;
         color: $brand;
       }
+    }
+  }
+}
+
+.submenu {
+  background: white;
+  border-bottom: 1px solid $border;
+  clear: both;
+  margin: $line-height 0 $line-height/2;
+
+  a {
+    color: $text;
+    display: inline-block;
+    font-weight: bold;
+    margin-right: $line-height;
+    margin-right: 12px\9;
+    position: relative;
+    text-align: left;
+
+    @media (min-width: $small-breakpoint) {
+      margin-right: $line-height*1.5;
+    }
+
+    &:hover {
+      color: $link;
+    }
+
+    &.active {
+      border-bottom: 2px solid $brand;
+      color: $brand;
     }
   }
 }
