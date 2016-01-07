@@ -160,6 +160,8 @@ GEM
     faraday (0.9.2)
       multipart-post (>= 1.2, < 3)
     ffi (1.9.10)
+    font-awesome-rails (4.5.0.0)
+      railties (>= 3.2, < 5.0)
     foundation-rails (5.5.3.2)
       railties (>= 3.1.0)
       sass (>= 3.3.0, < 3.5)
@@ -470,6 +472,7 @@ DEPENDENCIES
   email_spec
   factory_girl_rails
   faker
+  font-awesome-rails
   foundation-rails
   foundation_rails_helper
   fuubar
@@ -516,4 +519,4 @@ DEPENDENCIES
   whenever
 
 BUNDLED WITH
-   1.10.6
+   1.11.2
