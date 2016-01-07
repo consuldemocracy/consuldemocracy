@@ -53,4 +53,37 @@ describe SpendingProposal do
       expect(spending_proposal.reload.resolution).to eq("rejected")
     end
   end
+
+  describe "scopes" do
+    before(:each) do
+      2.times { create(:spending_proposal, resolution: "accepted") }
+      2.times { create(:spending_proposal, resolution: "rejected") }
+      2.times { create(:spending_proposal, resolution: nil) }
+    end
+
+    describe "unresolved" do
+      it "should return all spending proposals without resolution" do
+        unresolved = SpendingProposal.all.unresolved
+        expect(unresolved.size).to eq(2)
+        unresolved.each {|u| expect(u.resolution).to be_nil}
+      end
+    end
+
+    describe "accepted" do
+      it "should return all accepted spending proposals" do
+        accepted = SpendingProposal.all.accepted
+        expect(accepted.size).to eq(2)
+        accepted.each {|a| expect(a.resolution).to eq("accepted")}
+      end
+    end
+
+    describe "rejected" do
+      it "should return all rejected spending proposals" do
+        rejected = SpendingProposal.all.rejected
+        expect(rejected.size).to eq(2)
+        rejected.each {|r| expect(r.resolution).to eq("rejected")}
+      end
+    end
+  end
+
 end

@@ -18,6 +18,10 @@ class SpendingProposal < ActiveRecord::Base
   validates :resolution,  inclusion: { in: RESOLUTIONS, allow_nil: true }
   validates :terms_of_service, acceptance: { allow_nil: false }, on: :create
 
+  scope :accepted, -> { where(resolution: "accepted") }
+  scope :rejected, -> { where(resolution: "rejected") }
+  scope :unresolved, -> { where(resolution: nil) }
+
   def accept
     update_attribute(:resolution, "accepted")
   end
