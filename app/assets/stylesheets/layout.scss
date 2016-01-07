@@ -565,18 +565,17 @@ footer {
 .tags, .tag-cloud {
 
   a {
-    background: $border;
+    background: #ececec;
     border-radius: rem-calc(6);
-    color: #4d4d4d;
+    color: $text;
     display: inline-block;
     font-size: $small-font-size;
     margin-bottom: $line-height/3;
-    padding: 0 $line-height/3;
+    padding: $line-height/4 $line-height/3;
+    text-decoration: none;
 
     &:hover {
-      color: $link;
-      cursor: pointer;
-      background: #E5F1F8;
+      background: #e0e0e0;
     }
   }
 }
@@ -591,27 +590,6 @@ footer {
     margin: -1px 0 rem-calc(12);
     padding-top: $line-height/4;
     text-transform: uppercase;
-  }
-
-  a {
-    background: white;
-    border: 2px solid $border;
-    padding: $line-height/4 $line-height/3;
-
-    .label {
-      color: white;
-
-      &.info {
-        background: rgba(0,0,0,.5);
-      }
-    }
-
-    &:hover {
-
-      .label {
-        background: $brand;
-      }
-    }
   }
 }
 
