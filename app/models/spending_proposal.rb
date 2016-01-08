@@ -29,4 +29,16 @@ class SpendingProposal < ActiveRecord::Base
   def reject
     update_attribute(:resolution, "rejected")
   end
+
+  def accepted?
+    resolution == "accepted"
+  end
+
+  def rejected?
+    resolution == "rejected"
+  end
+
+  def unresolved?
+    resolution.blank?
+  end
 end

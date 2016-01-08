@@ -43,6 +43,15 @@ describe SpendingProposal do
   end
 
   describe "resolution status" do
+    it "should be valid" do
+      spending_proposal.resolution = "accepted"
+      expect(spending_proposal).to be_valid
+      spending_proposal.resolution = "rejected"
+      expect(spending_proposal).to be_valid
+      spending_proposal.resolution = "wrong"
+      expect(spending_proposal).to_not be_valid
+    end
+
     it "can be accepted" do
       spending_proposal.accept
       expect(spending_proposal.reload.resolution).to eq("accepted")
@@ -51,6 +60,48 @@ describe SpendingProposal do
     it "can be rejected" do
       spending_proposal.reject
       expect(spending_proposal.reload.resolution).to eq("rejected")
+    end
+
+    describe "#accepted?" do
+      it "should be true if resolution equals 'accepted'" do
+        spending_proposal.resolution = "accepted"
+        expect(spending_proposal.accepted?).to eq true
+      end
+
+      it "should be false otherwise" do
+        spending_proposal.resolution = "rejected"
+        expect(spending_proposal.accepted?).to eq false
+        spending_proposal.resolution = nil
+        expect(spending_proposal.accepted?).to eq false
+      end
+    end
+
+    describe "#rejected?" do
+      it "should be true if resolution equals 'rejected'" do
+        spending_proposal.resolution = "rejected"
+        expect(spending_proposal.rejected?).to eq true
+      end
+
+      it "should be false otherwise" do
+        spending_proposal.resolution = "accepted"
+        expect(spending_proposal.rejected?).to eq false
+        spending_proposal.resolution = nil
+        expect(spending_proposal.rejected?).to eq false
+      end
+    end
+
+    describe "#unresolved?" do
+      it "should be true if resolution is blank" do
+        spending_proposal.resolution = nil
+        expect(spending_proposal.unresolved?).to eq true
+      end
+
+      it "should be false otherwise" do
+        spending_proposal.resolution = "accepted"
+        expect(spending_proposal.unresolved?).to eq false
+        spending_proposal.resolution = "rejected"
+        expect(spending_proposal.unresolved?).to eq false
+      end
     end
   end
 
