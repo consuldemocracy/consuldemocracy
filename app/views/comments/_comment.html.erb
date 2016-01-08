@@ -67,7 +67,7 @@
             <%= simple_format text_with_links comment.body %>
           </div>
 
-          <div class="reply">
+          <div id="<%= dom_id(comment) %>_reply" class="reply">
             <span id="<%= dom_id(comment) %>_votes" class="comment-votes right">
               <%= render 'comments/votes', comment: comment %>
             </span>
