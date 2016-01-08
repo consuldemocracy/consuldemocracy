@@ -24,6 +24,8 @@ module CommentableActions
   def new
     @resource = resource_model.new
     set_resource_instance
+    load_category_tags
+    load_district_tags
     load_featured_tags
   end
 
@@ -33,9 +35,13 @@ module CommentableActions
 
     if @resource.save_with_captcha
       track_event
+      load_category_tags
+      load_district_tags
       redirect_path = url_for(controller: controller_name, action: :show, id: @resource.id)
       redirect_to redirect_path, notice: t('flash.actions.create.notice', resource_name: "#{resource_name.capitalize}")
     else
+      load_category_tags
+      load_district_tags
       load_featured_tags
       set_resource_instance
       render :new
@@ -44,6 +50,8 @@ module CommentableActions
 
   def edit
     load_featured_tags
+    load_category_tags
+    load_district_tags
   end
 
   def update
@@ -52,6 +60,8 @@ module CommentableActions
       redirect_to resource, notice: t('flash.actions.update.notice', resource_name: "#{resource_name.capitalize}")
     else
       load_featured_tags
+      load_category_tags
+      load_district_tags
       set_resource_instance
       render :edit
     end
@@ -67,6 +77,16 @@ module CommentableActions
       resource_model.tag_counts.order("#{resource_name.pluralize}_count": :desc, name: :asc).limit(20)
     end
 
+    def load_category_tags
+       @category_tags = ActsAsTaggableOn::Tag.select("tags.*").
+                                              where("kind = 'category' and tags.featured = true").
+                                              order(kind: :asc, id: :asc) 
+    end
+    def load_district_tags
+      @district_tags = ActsAsTaggableOn::Tag.select("tags.*").
+                                             where("kind = 'district' and tags.featured = true").
+                                              order(kind: :asc, id: :asc)  
+    end      
     def load_featured_tags
       @featured_tags = ActsAsTaggableOn::Tag.where(featured: true)
     end
