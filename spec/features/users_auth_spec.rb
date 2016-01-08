@@ -127,7 +127,7 @@ feature 'Users' do
         sent_token = /.*confirmation_token=(.*)".*/.match(ActionMailer::Base.deliveries.last.body.to_s)[1]
         visit user_confirmation_path(confirmation_token: sent_token)
 
-        expect(page).to have_content "Your email address has been successfully confirmed"
+        expect(page).to have_content "Your account has been confirmed"
 
         expect(user.reload.email).to eq('manueladelascarmenas@example.com')
       end
