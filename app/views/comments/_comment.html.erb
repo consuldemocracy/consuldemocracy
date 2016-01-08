@@ -71,7 +71,7 @@
             <%= render 'comments/votes', comment: comment %>
           </span>
 
-          <div class="reply">
+          <div id="<%= dom_id(comment) %>_reply" class="reply">
             <%= t("comments.comment.responses", count: child_comments_of(comment).size) %>
 
             <% if user_signed_in? %>

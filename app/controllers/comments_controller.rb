@@ -69,7 +69,7 @@ class CommentsController < ApplicationController
       else
         notifiable = comment.commentable
       end
-      Notification.create!(user_id: notifiable.author_id, notifiable: comment) unless comment.author_id == notifiable.author_id
+      Notification.add(notifiable.author_id, notifiable) unless comment.author_id == notifiable.author_id
    end
 
 end

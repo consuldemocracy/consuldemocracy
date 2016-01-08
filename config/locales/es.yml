@@ -313,8 +313,12 @@ es:
     index:
       mark_all_as_read: "Marcar todas como leídas"
       empty_notifications: "No tienes notificaciones nuevas."
-      commented_on_your_debate: "ha comentado en tu debate"
-      replied_to_your_comment: "ha respondido a tu comentario en"
+      comments_on:
+        one: "Hay un nuevo comentario en"
+        other: "Hay %{count} comentarios nuevos en"
+      replies_to:
+        one: "Hay una respuesta nueva a tu comentario en"
+        other: "Hay %{count} nuevas respuestas a tu comentario en"
   simple_captcha:
     placeholder: "Introduce el texto de la imagen"
     label: "Introduce el texto de la imagen en la siguiente caja"

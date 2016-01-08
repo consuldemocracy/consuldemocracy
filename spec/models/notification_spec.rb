@@ -23,7 +23,7 @@ describe Notification do
 
   describe "#for_render (scope)" do
     it "returns notifications including notifiable and user" do
-      expect(Notification).to receive(:includes).with(notifiable: [:user]).exactly(:once)
+      expect(Notification).to receive(:includes).with(:notifiable).exactly(:once)
       Notification.for_render
     end
   end
@@ -44,14 +44,6 @@ describe Notification do
 
       notification.mark_as_read
       expect(Notification.unread.size).to eq 0
-    end
-  end
-
-  describe "#username" do
-    it "returns the username of the activity's author" do
-      comment = create :comment
-      notification = create :notification, notifiable: comment
-      expect(notification.username).to eq comment.author.username
     end
   end
 
