@@ -24,26 +24,6 @@
           <% end %>
         </div>
 
-        <% if @tag_filter || @search_terms %>
-          <div class="small-12 medium-5 margin-top margin-top inline-block proposals-order">
-            <h6 class="inline-block">
-              <%= t("proposals.index.select_order") %>
-            </h6>
-            <%= render 'shared/order_selector', i18n_namespace: "proposals.index" %>
-          </div>
-        <% else %>
-          <div class="small-12 inline-block">
-            <h2 class="inline-block">
-              <%= t("proposals.index.select_order_long") %>
-            </h2>
-            <%= render 'shared/order_selector', i18n_namespace: "proposals.index" %>
-          </div>
-        <% end %>
-
-        <div class="show-for-small-only">
-          <%= link_to t("proposals.index.start_proposal"), new_proposal_path, class: 'button radius expand' %>
-        </div>
-
         <% if @featured_proposals.present? %>
           <div id="featured-proposals" class="row featured-proposals-container">
             <div class="small-12 medium-3 column">
@@ -61,6 +41,12 @@
             </div>
           </div>
         <% end %>
+
+        <%= render 'shared/order_links', i18n_namespace: "proposals.index" %>
+
+        <div class="show-for-small-only">
+          <%= link_to t("proposals.index.start_proposal"), new_proposal_path, class: 'button radius expand' %>
+        </div>
 
         <%= render partial: 'proposals/proposal', collection: @proposals %>
         <%= paginate @proposals %>

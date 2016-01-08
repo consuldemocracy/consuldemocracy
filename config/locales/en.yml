@@ -30,6 +30,8 @@ en:
       debates: "Debates"
       proposals: "Proposals"
       processes: "Open processes"
+      new_notifications: "You have %{count} new notifications"
+      no_notifications: "You don't have new notifications"
     footer:
       description: "This portal uses the %{consul} which is %{open_source}. From Madrid out into the world."
       open_source: "open-source software"
@@ -83,13 +85,11 @@ en:
       featured_debates_html: "Featured<br>debates"
       start_debate: "Start a debate"
       select_order: "Order by"
-      select_order_long: "You are viewing debates according to:"
       orders:
         confidence_score: "highest rated"
         hot_score: "most active"
         created_at: "newest"
         most_commented: "most commented"
-        random: "random"
         relevance: "relevance"
       filter_topic:
         one: " with topic '%{topic}'"
@@ -159,14 +159,13 @@ en:
       title: "Proposals"
       featured_proposals_html: "Featured<br>proposals"
       start_proposal: "Create a proposal"
-      select_order: "Order by"
       select_order_long: "You are viewing proposals according to:"
+      select_order: "Order by"
       orders:
         confidence_score: "highest rated"
         hot_score: "most active"
         created_at: "newest"
         most_commented: "most commented"
-        random: "random"
         relevance: "relevance"
       filter_topic:
         one: " with topic '%{topic}'"
@@ -174,7 +173,7 @@ en:
       search_form:
         title: "Search"
         button: "Search"
-        placeholder: "Search citizen proposals..."
+        placeholder: "Search proposals..."
       search_results:
         one: " containing the term '%{search_term}'"
         other: " containing the term '%{search_term}'"
@@ -245,6 +244,8 @@ en:
       form:
         submit_button: "Save changes"
   comments:
+    show:
+      return_to_commentable: "Go back to "
     select_order: "Sort by"
     orders:
       most_voted: "Most voted"
@@ -292,6 +293,7 @@ en:
       public_activity_label: "Keep my list of activities public"
       email_on_comment_label: "Notify me by email when someone comments on my proposals or debates"
       email_on_comment_reply_label: "Notify me by email when someone replies to my comments"
+      subscription_to_website_newsletter_label: "Receive by email website relevant information"
       erase_account_link: "Erase my account"
       personal: "Personal details"
       username_label: "Username"
@@ -310,6 +312,16 @@ en:
       user_permission_votes: "Participate on final voting"
       user_permission_verify: "To perform all the actions verify your account."
       user_permission_verify_info: "* Only for users on Madrid City Census."
+  notifications:
+    index:
+      mark_all_as_read: "Mark all as read"
+      empty_notifications: "You don't have new notifications."
+      comments_on:
+        one: "Someone commented on"
+        other: "There are %{count} new comments on"
+      replies_to:
+        one: "Someone replied to your comment on"
+        other: "There are %{count} new replies to your comment on"
   simple_captcha:
     placeholder: "Enter the text from the image"
     label: "Enter the text from the image in the box below"

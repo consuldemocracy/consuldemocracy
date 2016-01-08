@@ -63,6 +63,8 @@ feature 'Emails' do
       expect(email).to have_subject('Someone has commented on your debate')
       expect(email).to deliver_to(debate.author)
       expect(email).to have_body_text(debate_path(debate))
+      expect(email).to have_body_text(I18n.t("mailers.config.manage_email_subscriptions"))
+      expect(email).to have_body_text(account_path)
     end
 
     scenario 'Do not send email about own debate comments', :js do
@@ -91,6 +93,8 @@ feature 'Emails' do
       expect(email).to have_subject('Someone has responded to your comment')
       expect(email).to deliver_to(user)
       expect(email).to have_body_text(debate_path(Comment.first.commentable))
+      expect(email).to have_body_text(I18n.t("mailers.config.manage_email_subscriptions"))
+      expect(email).to have_body_text(account_path)
     end
 
     scenario "Do not send email about own replies to own comments", :js do

@@ -10,6 +10,7 @@ class ApplicationController < ActionController::Base
   before_action :ensure_signup_complete
   before_action :set_locale
   before_action :track_email_campaign
+  before_action :set_return_url
 
   check_authorization unless: :devise_controller?
   self.responder = ApplicationResponder
@@ -101,4 +102,11 @@ class ApplicationController < ActionController::Base
         ahoy.track campaign.name if campaign.present?
       end
     end
+
+    def set_return_url
+      if !devise_controller? && controller_name != 'welcome' && is_navigational_format?
+        store_location_for(:user, request.path)
+      end
+    end
+
 end

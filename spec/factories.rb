@@ -290,4 +290,9 @@ FactoryGirl.define do
     sequence(:track_id) { |n| "#{n}" }
   end
 
+  factory :notification do
+    user
+    association :notifiable, factory: :proposal
+  end
+
 end

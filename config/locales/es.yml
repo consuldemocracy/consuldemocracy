@@ -30,6 +30,8 @@ es:
       debates: "Debates"
       proposals: "Propuestas"
       processes: "Procesos abiertos"
+      new_notifications: "Tienes %{count} notificaciones nuevas"
+      no_notifications: "No tienes notificaciones nuevas"
     footer:
       description: "Este portal usa la %{consul} que es %{open_source}. De Madrid, para el mundo entero."
       open_source: "software libre"
@@ -83,14 +85,12 @@ es:
       featured_debates_html: "Debates<br>destacados"
       start_debate: "Empieza un debate"
       select_order: "Ordenar por"
-      select_order_long: "Estás viendo los debates"
       orders:
-        confidence_score: "mejor valorados"
-        hot_score: "más activos"
-        created_at: "más nuevos"
-        most_commented: "más comentados"
-        random: "aleatorio"
-        relevance: "relevancia"
+        confidence_score: "Mejor valorados"
+        hot_score: "Más activos hoy"
+        created_at: "Nuevos"
+        most_commented: "Más comentados"
+        relevance: "Más relevantes"
       filter_topic:
         one: " con el tema '%{topic}'"
         other: " con el tema '%{topic}'"
@@ -159,22 +159,21 @@ es:
       title: "Propuestas ciudadanas"
       featured_proposals_html: "Propuestas<br>destacadas"
       start_proposal: "Crea una propuesta"
+      select_order_long: "Estas viendo las propuestas"
       select_order: "Ordenar por"
-      select_order_long: "Estás viendo las propuestas"
       orders:
-        confidence_score: "más apoyadas"
-        hot_score: "más activas hoy"
-        created_at: "más nuevas"
-        most_commented: "más comentadas"
-        random: "aleatorias"
-        relevance: "relevancia"
+        confidence_score: "Más apoyadas"
+        hot_score: "Más activas hoy"
+        created_at: "Nuevas"
+        most_commented: "Más comentadas"
+        relevance: "Más relevantes"
       filter_topic:
         one: " con el tema '%{topic}'"
         other: " con el tema '%{topic}'"
       search_form:
         title: "Buscar"
         button: "Buscar"
-        placeholder: "Buscar propuestas ciudadanas..."
+        placeholder: "Buscar propuestas..."
       search_results:
         one: " que contiene '%{search_term}'"
         other: " que contienen '%{search_term}'"
@@ -245,6 +244,8 @@ es:
       form:
         submit_button: "Guardar cambios"
   comments:
+    show:
+      return_to_commentable: "Volver a "
     select_order: "Ordenar por"
     orders:
       most_voted: "Más votados"
@@ -292,6 +293,7 @@ es:
       public_activity_label: "Mostrar públicamente mi lista de actividades"
       email_on_comment_label: "Recibir un email cuando alguien comenta en mis propuestas o debates"
       email_on_comment_reply_label: "Recibir un email cuando alguien contesta a mis comentarios"
+      subscription_to_website_newsletter_label: "Recibir emails con información interesante sobre la web"
       erase_account_link: "Darme de baja"
       personal: "Datos personales"
       username_label: "Nombre de usuario"
@@ -310,6 +312,16 @@ es:
       user_permission_votes: "Participar en las votaciones finales*"
       user_permission_verify: "Para poder realizar todas las acciones verifica tu cuenta."
       user_permission_verify_info: "* Sólo usuarios empadronados en el municipio de Madrid."
+  notifications:
+    index:
+      mark_all_as_read: "Marcar todas como leídas"
+      empty_notifications: "No tienes notificaciones nuevas."
+      comments_on:
+        one: "Hay un nuevo comentario en"
+        other: "Hay %{count} comentarios nuevos en"
+      replies_to:
+        one: "Hay una respuesta nueva a tu comentario en"
+        other: "Hay %{count} nuevas respuestas a tu comentario en"
   simple_captcha:
     placeholder: "Introduce el texto de la imagen"
     label: "Introduce el texto de la imagen en la siguiente caja"

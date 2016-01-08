@@ -24,6 +24,7 @@
 /coverage
 
 /config/beta-testers.txt
+.byebug_history
 
 # Mac finder artifacts
 .DS_Store

@@ -5,6 +5,7 @@ module Abilities
     def initialize(user)
       can :read, Debate
       can :read, Proposal
+      can :read, Comment
       can :read, Legislation
       can :read, User
       can [:search, :read], Annotation
