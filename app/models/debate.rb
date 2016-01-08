@@ -54,6 +54,10 @@ class Debate < ActiveRecord::Base
     order_within_rank: "debates.cached_votes_up DESC"
   }
 
+  def to_param
+    "#{id}-#{title}".parameterize
+  end
+
   def description
     super.try :html_safe
   end

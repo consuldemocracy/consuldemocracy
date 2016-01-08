@@ -59,6 +59,10 @@ class Proposal < ActiveRecord::Base
     order_within_rank: "proposals.cached_votes_up DESC"
   }
 
+  def to_param
+    "#{id}-#{title}".parameterize
+  end
+
   def searchable_values
     values = {
       title       => 'A',
