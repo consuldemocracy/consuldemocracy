@@ -82,13 +82,11 @@ en:
       featured_debates_html: "Featured<br>debates"
       start_debate: "Start a debate"
       select_order: "Order by"
-      select_order_long: "You are viewing debates according to:"
       orders:
         confidence_score: "highest rated"
         hot_score: "most active"
         created_at: "newest"
         most_commented: "most commented"
-        random: "random"
         relevance: "relevance"
       filter_topic:
         one: " with topic '%{topic}'"
@@ -158,14 +156,13 @@ en:
       title: "Proposals"
       featured_proposals_html: "Featured<br>proposals"
       start_proposal: "Create a proposal"
-      select_order: "Order by"
       select_order_long: "You are viewing proposals according to:"
+      select_order: "Order by"
       orders:
         confidence_score: "highest rated"
         hot_score: "most active"
         created_at: "newest"
         most_commented: "most commented"
-        random: "random"
         relevance: "relevance"
       filter_topic:
         one: " with topic '%{topic}'"
@@ -173,7 +170,7 @@ en:
       search_form:
         title: "Search"
         button: "Search"
-        placeholder: "Search citizen proposals..."
+        placeholder: "Search proposals..."
       search_results:
         one: " containing the term '%{search_term}'"
         other: " containing the term '%{search_term}'"
