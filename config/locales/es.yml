@@ -30,7 +30,9 @@ es:
       debates: "Debates"
       proposals: "Propuestas"
       processes: "Procesos abiertos"
-      new_notifications: "Tienes %{count} notificaciones nuevas"
+      new_notifications:
+        one: "Tienes una nueva notificación"
+        other: "Tienes %{count} notificaciones nuevas"
       no_notifications: "No tienes notificaciones nuevas"
     footer:
       description: "Este portal usa la %{consul} que es %{open_source}. De Madrid, para el mundo entero."
