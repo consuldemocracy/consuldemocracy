@@ -1,6 +1,17 @@
 <ul class="right">
   <% if user_signed_in? %>
     <li>
+      <%= link_to notifications_path, class: "notifications" do %>
+        <% if current_user.notifications_count > 0 %>
+          <i class="icon-circle"></i>
+          <i class="icon-notification" title="<%= t('layouts.header.new_notifications', count: current_user.notifications_count).html_safe %>">
+          </i>
+        <% else %>
+          <i class="icon-no-notification" title="<%= t('layouts.header.no_notifications') %>"></i>
+        <% end %>
+      <% end %>
+    </li>
+    <li>
       <%= link_to(t("layouts.header.my_activity_link"), user_path(current_user)) %>
     </li>
     <li>

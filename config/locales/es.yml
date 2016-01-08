@@ -29,6 +29,8 @@ es:
       more_information: "Más información"
       debates: "Debates"
       proposals: "Propuestas"
+      new_notifications: "Tienes %{count} notificaciones nuevas"
+      no_notifications: "No tienes notificaciones nuevas"
     footer:
       description: "Este portal usa la %{consul} que es %{open_source}. De Madrid, para el mundo entero."
       open_source: "software libre"
@@ -309,6 +311,16 @@ es:
       user_permission_votes: "Participar en las votaciones finales*"
       user_permission_verify: "Para poder realizar todas las acciones verifica tu cuenta."
       user_permission_verify_info: "* Sólo usuarios empadronados en el municipio de Madrid."
+  notifications:
+    index:
+      mark_all_as_read: "Marcar todas como leídas"
+      empty_notifications: "No tienes notificaciones nuevas."
+      comments_on:
+        one: "Hay un nuevo comentario en"
+        other: "Hay %{count} comentarios nuevos en"
+      replies_to:
+        one: "Hay una respuesta nueva a tu comentario en"
+        other: "Hay %{count} nuevas respuestas a tu comentario en"
   simple_captcha:
     placeholder: "Introduce el texto de la imagen"
     label: "Introduce el texto de la imagen en la siguiente caja"

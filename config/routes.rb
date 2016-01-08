@@ -74,6 +74,11 @@ Rails.application.routes.draw do
   resource :account, controller: "account", only: [:show, :update, :delete] do
     collection { get :erase }
   end
+
+  resources :notifications, only: [:index, :show] do
+    collection { put :mark_all_as_read }
+  end
+
   resource :verification, controller: "verification", only: [:show]
 
   scope module: :verification do
