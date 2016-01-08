@@ -1,8 +1,10 @@
 <li id="<%= dom_id(notification) %>" class="notification">
   <%= link_to notification do %>
-    <time><%= l notification.timestamp, format: :datetime %></time>&nbsp;&bull;&nbsp;
-    <span><%= notification.username %> </span>
-    <span><%= t("notifications.index.#{notification_action(notification)}") %></span>
-    <span><%= notification.notifiable.commentable.title %></span>
+    <p>
+      <strong><%= notification.username %></strong>
+      <em><%= t("notifications.index.#{notification_action(notification)}") %></em>
+      <strong><%= notification.notifiable.commentable.title %></strong>
+    </p>
+    <p class="time"><%= l notification.timestamp, format: :datetime %></p>
   <% end %>
 </li>

@@ -29,6 +29,8 @@ es:
       more_information: "Más información"
       debates: "Debates"
       proposals: "Propuestas"
+      new_notifications: "Tienes %{count} notificaciones nuevas"
+      no_notifications: "No tienes notificaciones nuevas"
     footer:
       description: "Este portal usa la %{consul} que es %{open_source}. De Madrid, para el mundo entero."
       open_source: "software libre"
@@ -313,7 +315,7 @@ es:
   notifications:
     index:
       mark_all_as_read: "Marcar todas como leídas"
-      empty_notifications: "No hay notificaciones nuevas."
+      empty_notifications: "No tienes notificaciones nuevas."
       commented_on_your_debate: "ha comentado en tu debate"
       replied_to_your_comment: "ha respondido a tu comentario en"
   simple_captcha:
