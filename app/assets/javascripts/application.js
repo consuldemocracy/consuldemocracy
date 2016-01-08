@@ -35,6 +35,7 @@
 //= require users
 //= require votes
 //= require annotatable
+//= require registration_form
 
 
 var initialize_modules = function() {
@@ -48,6 +49,7 @@ var initialize_modules = function() {
   App.PreventDoubleSubmission.initialize();
   App.IeAlert.initialize();
   App.Annotatable.initialize();
+  App.RegistrationForm.initialize();
 };
 
 $(function(){

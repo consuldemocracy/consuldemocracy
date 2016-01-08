@@ -36,6 +36,12 @@ class Users::RegistrationsController < Devise::RegistrationsController
     end
   end
 
+  def validate
+    build_resource(sign_up_params)
+    resource.valid?
+    render json: resource.errors
+  end
+
   private
 
     def sign_up_params
