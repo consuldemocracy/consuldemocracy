@@ -67,11 +67,11 @@
             <%= simple_format text_with_links comment.body %>
           </div>
 
-          <span id="<%= dom_id(comment) %>_votes" class="comment-votes right">
-            <%= render 'comments/votes', comment: comment %>
-          </span>
-
           <div class="reply">
+            <span id="<%= dom_id(comment) %>_votes" class="comment-votes right">
+              <%= render 'comments/votes', comment: comment %>
+            </span>
+
             <%= t("comments.comment.responses", count: comment.children.size) %>
 
             <% if user_signed_in? %>

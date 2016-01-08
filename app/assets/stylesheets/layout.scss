@@ -1582,7 +1582,6 @@ table {
       font-family: $font-sans;
       font-size: $small-font-size;
       line-height: $line-height;
-      margin: rem-calc(10) $line-height/2 $line-height/4 0;
 
       a {
         color: $text-light;
@@ -1603,15 +1602,12 @@ table {
     .comment-body {
       margin-left: rem-calc(42);
 
-      p {
-        font-size: $small-font-size;
-      }
-
       .reply {
         background: white;
         border: 1px solid $border;
-        font-family: $font-sans;
-        font-size: rem-calc(12);
+        border-left: 0;
+        border-right: 0;
+        font-size: $small-font-size;
         margin: rem-calc(6) 0;
         padding: rem-calc(6);
 

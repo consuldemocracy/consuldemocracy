@@ -1,9 +1,13 @@
-<div>
-  <%= link_to t("comments.show.return_to_commentable") + @comment.commentable.title,
-              @comment.commentable %>
+<div class="row">
+  <div class="small-12 column margin-top">
+    <%= link_to @comment.commentable, class: "left back"  do %>
+      <i class="icon-angle-left left"></i>
+      <%= t("comments.show.return_to_commentable") + @comment.commentable.title %>
+    <% end %>
+  </div>
 </div>
 
-<section class="row-full comments">
+<section class="comments">
   <div class="row">
     <div id="comments" class="small-12 column">
       <%= render @comment %>
