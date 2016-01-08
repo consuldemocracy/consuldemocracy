@@ -615,4 +615,10 @@ describe Proposal do
 
   end
 
+  describe "#to_param" do
+    it "should return a friendly url" do
+      expect(proposal.to_param).to eq "#{proposal.id} #{proposal.title}".parameterize
+    end
+  end
+
 end

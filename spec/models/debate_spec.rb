@@ -677,4 +677,10 @@ describe Debate do
 
   end
 
+  describe "#to_param" do
+    it "should return a friendly url" do
+      expect(debate.to_param).to eq "#{debate.id} #{debate.title}".parameterize
+    end
+  end
+
 end
