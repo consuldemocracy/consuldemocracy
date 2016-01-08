@@ -241,6 +241,8 @@ es:
       form:
         submit_button: "Guardar cambios"
   comments:
+    show:
+      return_to_commentable: "Volver a "
     select_order: "Ordenar por"
     orders:
       most_voted: "Más votados"

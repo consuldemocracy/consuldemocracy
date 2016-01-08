@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, only: :create
   before_action :load_commentable, only: :create
   before_action :build_comment, only: :create
 
@@ -12,6 +12,11 @@ class CommentsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def show
+    @comment = Comment.find(params[:id])
+    set_comment_flags(@comment.subtree)
   end
 
   def vote

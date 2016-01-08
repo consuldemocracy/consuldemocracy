@@ -21,4 +21,6 @@ describe "Abilities::Everyone" do
   it { should_not be_able_to(:vote, Proposal) }
   it { should_not be_able_to(:flag, Proposal) }
   it { should_not be_able_to(:unflag, Proposal) }
+
+  it { should be_able_to(:show, Comment) }
 end
