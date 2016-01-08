@@ -65,11 +65,11 @@ class CommentsController < ApplicationController
 
     def add_notification(comment)
       if comment.reply?
-        author = comment.parent.author
+        notifiable = comment.parent
       else
-        author = comment.commentable.author
+        notifiable = comment.commentable
       end
-      author.notifications.create!(notifiable: comment) unless comment.made_by? author
+      Notification.create!(user_id: notifiable.author_id, notifiable: comment) unless comment.author_id == notifiable.author_id
    end
 
 end
