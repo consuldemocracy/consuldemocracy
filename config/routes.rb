@@ -53,7 +53,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :comments, only: :create, shallow: true do
+  resources :comments, only: [:create, :show], shallow: true do
     member do
       post :vote
       put :flag
