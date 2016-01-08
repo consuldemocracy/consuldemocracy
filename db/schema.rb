@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160105170113) do
+ActiveRecord::Schema.define(version: 20160108133501) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -208,6 +208,7 @@ ActiveRecord::Schema.define(version: 20160105170113) do
     t.integer "user_id"
     t.integer "notifiable_id"
     t.string  "notifiable_type"
+    t.integer "counter",         default: 1
   end
 
   add_index "notifications", ["user_id"], name: "index_notifications_on_user_id", using: :btree
@@ -338,6 +339,7 @@ ActiveRecord::Schema.define(version: 20160105170113) do
     t.datetime "erased_at"
     t.boolean  "public_activity",                      default: true
     t.boolean  "newsletter",                           default: false
+    t.integer  "notifications_count",                  default: 0
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree

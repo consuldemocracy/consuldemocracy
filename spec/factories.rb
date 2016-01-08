@@ -292,7 +292,7 @@ FactoryGirl.define do
 
   factory :notification do
     user
-    association :notifiable, factory: :comment
+    association :notifiable, factory: :proposal
   end
 
 end

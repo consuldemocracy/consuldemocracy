@@ -4,6 +4,7 @@ feature "Notifications" do
   let(:author) { create :user }
   let(:user) { create :user }
   let(:debate) { create :debate, author: author }
+  let(:proposal) { create :proposal, author: author }
 
   scenario "User commented on my debate", :js do
     login_as user
@@ -18,12 +19,44 @@ feature "Notifications" do
     logout
     login_as author
     visit root_path
-    expect(page).to have_xpath "//a[@class='with_notifications' and @href='#{notifications_path}' and text()='Notificaciones']"
 
-    click_link "Notificaciones"
+    find(".icon-notification").click
+
     expect(page).to have_css ".notification", count: 1
-    expect(page).to have_content user.username
-    expect(page).to have_content "commented on your debate"
+
+    expect(page).to have_content "Someone commented on"
+    expect(page).to have_xpath "//a[@href='#{notification_path(Notification.last)}']"
+  end
+
+  scenario "Multiple comments on my proposal", :js do
+    login_as user
+    visit proposal_path proposal
+
+    fill_in "comment-body-proposal_#{proposal.id}", with: "I agree"
+    click_button "Publish comment"
+    within "#comments" do
+      expect(page).to have_content "I agree"
+    end
+
+    logout
+    login_as create(:user)
+    visit proposal_path proposal
+
+    fill_in "comment-body-proposal_#{proposal.id}", with: "I disagree"
+    click_button "Publish comment"
+    within "#comments" do
+      expect(page).to have_content "I disagree"
+    end
+
+    logout
+    login_as author
+    visit root_path
+
+    find(".icon-notification").click
+
+    expect(page).to have_css ".notification", count: 1
+
+    expect(page).to have_content "There are 2 new comments on"
     expect(page).to have_xpath "//a[@href='#{notification_path(Notification.last)}']"
   end
 
@@ -45,12 +78,39 @@ feature "Notifications" do
     logout
     login_as author
     visit root_path
-    expect(page).to have_xpath "//a[@class='with_notifications' and @href='#{notifications_path}' and text()='Notificaciones']"
 
-    visit notifications_path
+    find(".icon-notification").click
+
     expect(page).to have_css ".notification", count: 1
-    expect(page).to have_content user.username
-    expect(page).to have_content "replied to your comment on"
+    expect(page).to have_content "Someone replied to your comment on"
+    expect(page).to have_xpath "//a[@href='#{notification_path(Notification.last)}']"
+  end
+
+  scenario "Multiple replies to my comment", :js do
+    comment = create :comment, commentable: debate, user: author
+    3.times do |n|
+      login_as create(:user)
+      visit debate_path debate
+
+      within("#comment_#{comment.id}_reply") { click_link "Reply" }
+      within "#js-comment-form-comment_#{comment.id}" do
+        fill_in "comment-body-comment_#{comment.id}", with: "Reply number #{n}"
+        click_button "Publish reply"
+      end
+
+      within "#comment_#{comment.id}" do
+        expect(page).to have_content "Reply number #{n}"
+      end
+      logout
+    end
+
+    login_as author
+    visit root_path
+
+    find(".icon-notification").click
+
+    expect(page).to have_css ".notification", count: 1
+    expect(page).to have_content "There are 3 new replies to your comment on"
     expect(page).to have_xpath "//a[@href='#{notification_path(Notification.last)}']"
   end
 
@@ -63,9 +123,8 @@ feature "Notifications" do
     within "#comments" do
       expect(page).to have_content "I commented on my own debate"
     end
-    expect(page).to have_xpath "//a[@class='without_notifications' and @href='#{notifications_path}' and text()='Notificaciones']"
 
-    click_link "Notificaciones"
+    find(".icon-no-notification").click
     expect(page).to have_css ".notification", count: 0
   end
 
@@ -83,7 +142,8 @@ feature "Notifications" do
     within "#comment_#{comment.id}" do
       expect(page).to have_content "I replied to my own comment"
     end
-    expect(page).to have_xpath "//a[@class='without_notifications' and @href='#{notifications_path}' and text()='Notificaciones']"
+
+    find(".icon-no-notification")
 
     visit notifications_path
     expect(page).to have_css ".notification", count: 0
@@ -126,7 +186,7 @@ feature "Notifications" do
     login_as user
     visit notifications_path
 
-    expect(page).to have_content "There are no new notifications"
+    expect(page).to have_content "You don't have new notifications"
   end
 
 end
