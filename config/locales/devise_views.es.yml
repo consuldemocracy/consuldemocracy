@@ -71,6 +71,8 @@ es:
           organization_signup_link: "Regístrate aquí"
           terms: "Al registrarte aceptas las %{terms}"
           terms_link: "condiciones de uso"
+          username_is_available: "El nombre de usuario elegido está disponible."
+          username_is_not_available: "El nombre de usuario elegido no está disponible."
         success:
           title: "Revisa tu correo"
           thank_you_html: "Gracias por registrarte en la web. Ahora debes <b>confirmar tu correo</b>."
