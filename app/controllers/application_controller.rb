@@ -108,4 +108,5 @@ class ApplicationController < ActionController::Base
         store_location_for(:user, request.path)
       end
     end
+
 end

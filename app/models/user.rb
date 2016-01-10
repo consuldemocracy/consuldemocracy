@@ -22,6 +22,7 @@ class User < ActiveRecord::Base
   has_many :proposals, -> { with_hidden }, foreign_key: :author_id
   has_many :comments, -> { with_hidden }
   has_many :failed_census_calls
+  has_many :notifications
 
   validates :username, presence: true, if: :username_required?
   validates :username, uniqueness: true, if: :username_required?
@@ -199,7 +200,7 @@ class User < ActiveRecord::Base
   def email_required?
     !erased?
   end
-  
+
   def has_official_email?
     domain = Setting.value_for 'email_domain_for_officials'
     !email.blank? && ( (email.end_with? "@#{domain}") || (email.end_with? ".#{domain}") )

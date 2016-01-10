@@ -396,7 +396,6 @@ header {
       &:hover {
         background: none;
         color: white;
-        text-decoration: underline;
         transition: text-decoration 275ms;
       }
 
@@ -420,6 +419,7 @@ header {
 
       &:hover, &:focus {
         background-color: #007095 !important;
+        text-decoration: underline;
       }
     }
 
@@ -944,6 +944,77 @@ img.avatar, img.admin-avatar, img.moderator-avatar, img.initialjs-avatar {
         color: $delete;
       }
     }
+  }
+}
+
+.notifications {
+  position: relative;
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  [class^="icon-"] {
+    font-size: $h4-font-size;
+    vertical-align: middle;
+  }
+
+  .icon-circle {
+    color: #ecf00b;
+    font-size: $tiny-font-size;
+    position: absolute;
+    right: 4px;
+    top: -6px;
+  }
+}
+
+.notifications-list:before {
+  background: $border;
+  content: '';
+  height: 100%;
+  left: 28px;
+  position: absolute;
+  top: 0;
+  width: 2px;
+}
+
+.notification {
+  display: block;
+  padding: $line-height/2 0 $line-height/2 $line-height*1.5;
+  position: relative;
+
+  &:hover {
+
+    a {
+      text-decoration: none;
+    }
+
+    p:not(.time) {
+      color: $link;
+    }
+
+    &:before {
+      content: "\43";
+    }
+  }
+
+  &:before {
+    background: white;
+    color: $brand;
+    content: "\4d";
+    font-family: "icons" !important;
+    left: 6px;
+    position: absolute;
+  }
+
+  p {
+    color: $text;
+    margin-bottom: 0;
+  }
+
+  .time {
+    font-size: $small-font-size;
+    color: $text-medium;
   }
 }
 
@@ -1574,7 +1645,6 @@ table {
       font-family: $font-sans;
       font-size: $small-font-size;
       line-height: $line-height;
-      margin: rem-calc(10) $line-height/2 $line-height/4 0;
 
       a {
         color: $text-light;
@@ -1595,15 +1665,12 @@ table {
     .comment-body {
       margin-left: rem-calc(42);
 
-      p {
-        font-size: $small-font-size;
-      }
-
       .reply {
         background: white;
         border: 1px solid $border;
-        font-family: $font-sans;
-        font-size: rem-calc(12);
+        border-left: 0;
+        border-right: 0;
+        font-size: $small-font-size;
         margin: rem-calc(6) 0;
         padding: rem-calc(6);
 

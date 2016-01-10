@@ -29,6 +29,10 @@ en:
       more_information: "More information"
       debates: "Debates"
       proposals: "Proposals"
+      new_notifications:
+        one: "You have a new notification"
+        other: "You have %{count} new notifications"
+      no_notifications: "You don't have new notifications"
     footer:
       description: "This portal uses the %{consul} which is %{open_source}. From Madrid out into the world."
       open_source: "open-source software"
@@ -241,6 +245,8 @@ en:
       form:
         submit_button: "Save changes"
   comments:
+    show:
+      return_to_commentable: "Go back to "
     select_order: "Sort by"
     orders:
       most_voted: "Most voted"
@@ -307,6 +313,16 @@ en:
       user_permission_votes: "Participate on final voting"
       user_permission_verify: "To perform all the actions verify your account."
       user_permission_verify_info: "* Only for users on Madrid City Census."
+  notifications:
+    index:
+      mark_all_as_read: "Mark all as read"
+      empty_notifications: "You don't have new notifications."
+      comments_on:
+        one: "Someone commented on"
+        other: "There are %{count} new comments on"
+      replies_to:
+        one: "Someone replied to your comment on"
+        other: "There are %{count} new replies to your comment on"
   simple_captcha:
     placeholder: "Enter the text from the image"
     label: "Enter the text from the image in the box below"

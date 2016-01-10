@@ -128,4 +128,5 @@ describe Comment do
       expect(Comment.not_as_admin_or_moderator.first).to eq(comment1)
     end
   end
+
 end
