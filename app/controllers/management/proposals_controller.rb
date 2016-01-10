@@ -9,6 +9,11 @@ class Management::ProposalsController < Management::BaseController
   has_orders %w{confidence_score hot_score created_at most_commented random}, only: [:index, :print]
   has_orders %w{most_voted newest}, only: :show
 
+  def show
+    super
+    redirect_to management_proposal_path(@proposal), status: :moved_permanently if request.path != management_proposal_path(@proposal)
+  end
+
   def vote
     @proposal.register_vote(current_user, 'yes')
     set_proposal_votes(@proposal)

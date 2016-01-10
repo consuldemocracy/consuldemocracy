@@ -13,6 +13,11 @@ class ProposalsController < ApplicationController
   load_and_authorize_resource
   respond_to :html, :js
 
+  def show
+    super
+    redirect_to proposal_path(@proposal), status: :moved_permanently if request.path != proposal_path(@proposal)
+  end
+
   def index_customization
     @featured_proposals = Proposal.all.sort_by_confidence_score.limit(3) if (@search_terms.blank? && @tag_filter.blank?)
     if @featured_proposals.present?
