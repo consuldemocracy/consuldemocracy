@@ -220,6 +220,16 @@ a {
   }
 }
 
+.sub-nav {
+  border-bottom: 1px solid $border;
+
+  dd.active {
+    border-bottom: 2px solid $brand;
+    color: $brand;
+    padding-bottom: $line-height/4;
+  }
+}
+
 // 02. Header
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -1802,17 +1812,6 @@ table {
 
 .activity {
   margin-bottom: $line-height*2;
-  margin-top: $line-height;
-
-  .sub-nav {
-    border-bottom: 1px solid $border;
-
-    dd.active {
-      border-bottom: 2px solid $brand;
-      color: $brand;
-      padding-bottom: $line-height/4;
-    }
-  }
 
   table {
     border: 0;
