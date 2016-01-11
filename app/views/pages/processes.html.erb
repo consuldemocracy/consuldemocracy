@@ -1,23 +1,18 @@
 <div class="row">
-  <div class="small-12 column">
-    <h1 class="margin"><%= t("pages.processes.title") %></h1>
-  </div>
 
-  <div class="small-12 medium-6 column">
-    <%= image_tag "processes_ordinance.jpg" %>
+  <div class="small-12 medium-8 column margin-top">
     <h2><%= t("pages.processes.index.process_1_title") %></h2>
     <p><%= t("pages.processes.index.process_1_description") %></p>
-    <div class="small-12 medium-8 large-6">
-      <%= link_to t("pages.processes.index.process_1_button"), "/processes_ordinance", class: "button radius expand" %>
-    </div>
+    <%= link_to t("pages.processes.index.process_1_button"), "/processes_ordinance", class: "button radius" %>
   </div>
 
-  <div class="small-12 medium-6 column">
-    <%= image_tag "processes_plaza_espana.jpg" %>
-    <h2><%= t("pages.processes.index.process_2_title") %></h2>
-    <p><%= t("pages.processes.index.process_2_description") %></p>
-    <div class="small-12 medium-8 large-6">
-      <%= link_to t("pages.processes.index.process_2_button"), "#", class: "button radius secondary expand" %>
-    </div>
+  <div class="small-12 medium-4 column">
+    <aside class="sidebar" role="complementary">
+      <div class="sidebar-divider"></div>
+      <h3><%= t("pages.processes.index.process_2_button") %></h3>
+      <%= image_tag "processes_plaza_espana.jpg" %>
+      <h2><%= t("pages.processes.index.process_2_title") %></h2>
+      <p><%= t("pages.processes.index.process_2_description") %></p>
+    </aside>
   </div>
 </div>
