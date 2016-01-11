@@ -98,9 +98,8 @@ es:
 
                 Si eres programador, puedes ver el código y ayudarnos a mejorarlo en [aplicación Consul](https://github.com/ayuntamientomadrid 'github consul' )."
     processes:
-      title: "Decide como quieres que sea tu ciudad."
       index:
-        process_1_title: "Ayúdanos a mejorar la Ordenanza de Transparencia de la Ciudad de Madrid"
+        process_1_title: "Ayúdanos a mejorar la Ordenanza de Transparencia de Madrid"
         process_1_description: "La Ciudad de Madrid quiere poner en marcha un sistema de transparencia pública a la altura de los más avanzados del mundo, y para conseguirlo necesitamos de tu ayuda."
         process_1_button: "Comentar Ordenanza"
         process_2_title: "Remodelación de Plaza España"
@@ -108,7 +107,8 @@ es:
         process_2_button: "Próximamente..."
       process_1:
         title: "Ayúdanos a mejorar la Ordenanza de Transparencia de la Ciudad de Madrid"
-        text:  "Desde hoy, 10 de diciembre, hasta el próximo 15 de enero podrás enviar tus comentarios al borrador de la Ordenanza de Transparencia de la Ciudad de Madrid enviando un email a transparencia@madrid.es.
+        comment: "dejar tus comentarios"
+        text:  "Hasta el próximo 31 de enero podrás %{comment} sobre el borrador de la Ordenanza de Transparencia de la Ciudad de Madrid, o bien enviarlos a través de un email a transparencia@madrid.es.
 
 
                 Ya puedes consultar la [última versión del borrador de la Ordenanza de Transparencia de la Ciudad de Madrid](/docs/ordenanza_de_transparencia_de_la_ciudad_de_madrid.doc 'Ordenanza de Transparencia de la ciudad de Madrid')."

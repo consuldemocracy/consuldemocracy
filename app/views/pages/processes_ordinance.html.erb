@@ -2,6 +2,7 @@
   <div class="row">
     <div class="small-12 medium-6 column">
       <h1><%= t("pages.processes.process_1.title") %></h1>
+      <%= link_to t("pages.processes.index.process_1_button"), ordenanza_transparencia_path, class: "button radius " %>
     </div>
     <div class="show-for-medium-up">
       <%= image_tag "processes_ordinance_page.png", class: "absolute" %>
@@ -11,7 +12,8 @@
 
 <div class="process row margin">
   <div class="small-12 medium-6 column">
-    <%= markdown t("pages.processes.process_1.text") %>
+    <%= markdown t("pages.processes.process_1.text",
+    comment: link_to(t("pages.processes.process_1.comment"), ordenanza_transparencia_path)).html_safe %>
   </div>
 </div>
 

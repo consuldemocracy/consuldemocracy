@@ -630,14 +630,13 @@ footer {
   }
 }
 
-.tag-cloud {
+.sidebar, .tag-cloud {
 
   h3 {
     border-top: 2px solid $brand;
     display: inline-block;
-    font-family: $font-family-sans-serif;
-    font-size: rem-calc(16);
-    margin: -1px 0 rem-calc(12);
+    font-size: $h5-font-size;
+    margin: -1px 0 $line-height/2;
     padding-top: $line-height/4;
     text-transform: uppercase;
   }

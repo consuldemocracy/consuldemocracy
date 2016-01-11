@@ -272,6 +272,8 @@ Rails.application.routes.draw do
     mount LetterOpenerWeb::Engine, at: "/letter_opener"
   end
 
+  get "ordenanza-de-transparencia", to: "legislations#show", id: 1, as: :ordenanza_transparencia
+
   get '/blog' => redirect("http://diario.madrid.es/participa/")
   resources :pages, path: '/', only: [:show]
 end
