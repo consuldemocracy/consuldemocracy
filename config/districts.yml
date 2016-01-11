@@ -1,30 +1,11 @@
-- 
-  - Ciutat Vella
-  - 1
-- 
-  - Eixample
-  - 2
-- 
-  - Sants Montjuïc
-  - 3
-- 
-  - Les Corts
-  - 4
-- 
-  - Sarrià - Sant Gervasi
-  - 5
-- 
-  - Gràcia
-  - 6
-- 
-  - Horta - Guinardó
-  - 7
-- 
-  - Nou Barris
-  - 8
-- 
-  - Sant Andreu
-  - 9
-- 
-  - Sant Martí
-  - 10
+districts:
+  1: "Ciutat Vella"
+  2: "Eixample"
+  3: "Sants Montjuïc"
+  4: "Les Corts"
+  5: "Sarrià - Sant Gervasi"
+  6: "Gràcia"
+  7: "Horta - Guinardó"
+  8: "Nou Barris"
+  9: "Sant Andreu"
+  10: "Sant Martí"
