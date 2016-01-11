@@ -24,9 +24,11 @@
   </div>
 </div>
 
-<div id="legislation_body" class="row">
+<div class="row">
   <div class="small-12 medium-9 small-centered column">
-    <section data-annotatable-type="legislation" data-annotatable-id="<%= @legislation.id %>" id="legislation_body">
+    <section data-annotatable-type="legislation"
+             data-annotatable-id="<%= @legislation.id %>"
+             id="legislation_body">
 
       <!-- Used temporarily for specs, until legislations can be created with a CMS instead of being hardcoded in the view. -->
         <span><%= @legislation.title %></span>
