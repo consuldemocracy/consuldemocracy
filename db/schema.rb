@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151215115319) do
+ActiveRecord::Schema.define(version: 20160108133501) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -204,6 +204,15 @@ ActiveRecord::Schema.define(version: 20151215115319) do
 
   add_index "moderators", ["user_id"], name: "index_moderators_on_user_id", using: :btree
 
+  create_table "notifications", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "notifiable_id"
+    t.string  "notifiable_type"
+    t.integer "counter",         default: 1
+  end
+
+  add_index "notifications", ["user_id"], name: "index_notifications_on_user_id", using: :btree
+
   create_table "organizations", force: :cascade do |t|
     t.integer  "user_id"
     t.string   "name",             limit: 60
@@ -329,6 +338,8 @@ ActiveRecord::Schema.define(version: 20151215115319) do
     t.string   "erase_reason"
     t.datetime "erased_at"
     t.boolean  "public_activity",                      default: true
+    t.boolean  "newsletter",                           default: false
+    t.integer  "notifications_count",                  default: 0
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree
@@ -403,5 +414,6 @@ ActiveRecord::Schema.define(version: 20151215115319) do
   add_foreign_key "identities", "users"
   add_foreign_key "locks", "users"
   add_foreign_key "moderators", "users"
+  add_foreign_key "notifications", "users"
   add_foreign_key "organizations", "users"
 end

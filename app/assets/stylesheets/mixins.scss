@@ -18,8 +18,9 @@
   font-weight: lighter;
 
   @media (min-width: $small-breakpoint) {
-    font-size: rem-calc(24);
-    line-height: rem-calc(48);
+    font-size: $h3-font-size;
+    line-height: $line-height*2;
+    margin-top: 0;
   }
 
   img {
@@ -28,7 +29,7 @@
 
     @media (min-width: $small-breakpoint) {
       height: 80px;
-      margin-right: rem-calc(12);
+      margin-right: $line-height/2;
       margin-top: 0;
       width: 80px;
     }

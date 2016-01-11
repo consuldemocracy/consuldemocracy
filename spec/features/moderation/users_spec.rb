@@ -39,6 +39,8 @@ feature 'Moderate users' do
 
     click_link("Sign out")
 
+    visit root_path
+
     click_link 'Sign in'
     fill_in 'user_email',    with: citizen.email
     fill_in 'user_password', with: citizen.password

@@ -824,7 +824,7 @@
 }
 
 .featured-debates-container, .featured-proposals-container {
-  margin: 0 !important;
+  margin: $line-height 0 !important;
 
   h2 {
     font-size: rem-calc(24);
