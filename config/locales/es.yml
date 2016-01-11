@@ -388,9 +388,9 @@ es:
     facebook:
       sign_in: "Entra con Facebook"
       sign_up: "Regístrate con Facebook"
-    google_oauth2:
-      sign_in: "Entra con Google"
-      sign_up: "Regístrate con Google"
+    #google_oauth2:
+    #  sign_in: "Entra con Google"
+    #  sign_up: "Regístrate con Google"
   legislation:
     help:
       title: "¿Cómo puedo comentar este documento?"

@@ -8,9 +8,9 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     sign_in_with :facebook
   end
 
-  def google_oauth2
-    sign_in_with :google_oauth2
-  end
+  #def google_oauth2
+  #  sign_in_with :google_oauth2
+  #end
 
   def after_sign_in_path_for(resource)
     if resource.email_provided?
