@@ -122,7 +122,7 @@ Rails.application.routes.draw do
       end
     end
 
-    resources :spending_proposals, only: :index do
+    resources :spending_proposals, only: [:index, :show] do
       member do
         put :accept
         put :reject

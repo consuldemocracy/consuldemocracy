@@ -103,6 +103,9 @@ en:
           unresolved: "Unresolved"
           accepted: "Accepted"
           rejected: "Rejected"
+      show:
+        geozone: "Scope"
+        by: "Sent by"
     users:
       index:
         title: "Hidden users"

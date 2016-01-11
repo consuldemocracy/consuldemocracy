@@ -103,6 +103,9 @@ es:
           unresolved: "Sin resolver"
           accepted: "Aceptadas"
           rejected: "Rechazadas"
+      show:
+        geozone: "Ámbito"
+        by: "Enviada por"
     users:
       index:
         title: "Usuarios bloqueados"

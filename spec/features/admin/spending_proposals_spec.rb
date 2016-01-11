@@ -14,7 +14,7 @@ feature 'Admin spending proposals' do
     expect(page).to have_content(spending_proposal.title)
   end
 
-  scenario 'Accept' do
+  scenario 'Accept from index' do
     spending_proposal = create(:spending_proposal)
     visit admin_spending_proposals_path
 
@@ -28,7 +28,7 @@ feature 'Admin spending proposals' do
     expect(spending_proposal.reload).to be_accepted
   end
 
-  scenario 'Reject' do
+  scenario 'Reject from index' do
     spending_proposal = create(:spending_proposal)
     visit admin_spending_proposals_path
 
@@ -95,6 +95,46 @@ feature 'Admin spending proposals' do
 
     expect(current_url).to include('filter=accepted')
     expect(current_url).to include('page=2')
+  end
+
+  scenario 'Show' do
+    spending_proposal = create(:spending_proposal, geozone: create(:geozone))
+    visit admin_spending_proposals_path
+
+    click_link spending_proposal.title
+
+    expect(page).to have_content(spending_proposal.title)
+    expect(page).to have_content(spending_proposal.description)
+    expect(page).to have_content(spending_proposal.author.name)
+    expect(page).to have_content(spending_proposal.geozone.name)
+  end
+
+  scenario 'Accept from show' do
+    spending_proposal = create(:spending_proposal)
+    visit admin_spending_proposal_path(spending_proposal)
+
+    click_link 'Accept'
+
+    expect(page).to_not have_content(spending_proposal.title)
+
+    click_link 'Accepted'
+    expect(page).to have_content(spending_proposal.title)
+
+    expect(spending_proposal.reload).to be_accepted
+  end
+
+  scenario 'Reject from show' do
+    spending_proposal = create(:spending_proposal)
+    visit admin_spending_proposal_path(spending_proposal)
+
+    click_link 'Reject'
+
+    expect(page).to_not have_content(spending_proposal.title)
+
+    click_link('Rejected')
+    expect(page).to have_content(spending_proposal.title)
+
+    expect(spending_proposal.reload).to be_rejected
   end
 
 end

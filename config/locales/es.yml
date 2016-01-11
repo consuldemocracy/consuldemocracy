@@ -263,7 +263,7 @@ es:
       title: "Título de la propuesta de gasto"
       description: "Descripción detallada"
       external_url: "Enlace a documentación adicional"
-      geozone: "Nivel de actuación"
+      geozone: "Ámbito de actuación"
       submit_buttons:
         new: Crear
         create: Crear
