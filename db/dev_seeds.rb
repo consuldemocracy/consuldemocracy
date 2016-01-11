@@ -183,6 +183,23 @@ end
   Flag.flag(flagger, proposal)
 end
 
+puts "Creating Spending Proposals"
+
+resolutions = ["accepted", "rejected", nil]
+
+(1..30).each do |i|
+  author = User.reorder("RANDOM()").first
+  description = "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>"
+  spending_proposal = SpendingProposal.create!(author: author,
+                              title: Faker::Lorem.sentence(3).truncate(60),
+                              external_url: Faker::Internet.url,
+                              description: description,
+                              created_at: rand((Time.now - 1.week) .. Time.now),
+                              resolution: resolutions.sample,
+                              terms_of_service: "1")
+  puts "    #{spending_proposal.title}"
+end
+
 puts "Creating Legislation"
 
 Legislation.create!(title: 'Participatory Democracy', body: 'In order to achieve...')
