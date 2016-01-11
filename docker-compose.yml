@@ -17,7 +17,7 @@ app:
     - "3000:3000"
 
 worker:
-  image: barcelonaparticipa_app
+  image: decidimbcn_app
   environment: 
     - DATABASE_HOST=db
     - DATABASE_USERNAME=postgres
