@@ -315,6 +315,7 @@ es:
       user_permission_verify_info: "* Sólo usuarios empadronados en el municipio de Madrid."
   notifications:
     index:
+      title: "Notificaciones"
       mark_all_as_read: "Marcar todas como leídas"
       empty_notifications: "No tienes notificaciones nuevas."
       comments_on:
