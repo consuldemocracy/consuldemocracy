@@ -7,71 +7,15 @@
 
 <section role="main">
   <div class="wrap row">
-    <div id="proposals" class="proposals-list small-12 medium-9 column">
-
-      <div class="filters">
-        <div class="small-12 medium-7 left">
-          <% if @search_terms %>
-            <h2 class="margin-top">
-              <%= page_entries_info @proposals %>
-              <%= t("proposals.index.search_results", count: @proposals.size, search_term: @search_terms) %>
-            </h2>
-          <% elsif @tag_filter %>
-            <h2 class="margin-top">
-              <%= page_entries_info @proposals %>
-              <%= t("proposals.index.filter_topic", count: @proposals.size, topic: @tag_filter) %>
-            </h2>
-          <% end %>
-        </div>
-
-        <% if @tag_filter || @search_terms %>
-          <div class="small-12 medium-5 margin-top margin-top inline-block proposals-order">
-            <h6 class="inline-block">
-              <%= t("proposals.index.select_order") %>
-            </h6>
-            <%= render 'shared/order_selector', i18n_namespace: "proposals.index" %>
-          </div>
-        <% else %>
-          <div class="small-12 inline-block">
-            <h2 class="inline-block">
-              <%= t("proposals.index.select_order_long") %>
-            </h2>
-            <%= render 'shared/order_selector', i18n_namespace: "proposals.index" %>
-          </div>
-        <% end %>
-
-        <div class="show-for-small-only">
-          <%= link_to t("proposals.index.start_proposal"), new_proposal_path, class: 'button radius expand' %>
-        </div>
-
-        <% if @featured_proposals.present? %>
-          <div id="featured-proposals" class="row featured-proposals-container">
-            <div class="small-12 medium-3 column">
-              <h2>
-                <%= t("proposals.index.featured_proposals_html") %>
-              </h2>
-              <span class="show-for-medium-up">
-                <%= image_tag("featured_proposals.jpg", size: "210x135") %>
-              </span>
-            </div>
-            <div class="small-12 medium-9 column proposals-list">
-              <% @featured_proposals.each do |featured_proposal| %>
-                <%= render "featured_proposal", proposal: featured_proposal %>
-              <% end %>
-            </div>
-          </div>
-        <% end %>
-
-        <%= render partial: 'proposals/proposal', collection: @proposals %>
-        <%= paginate @proposals %>
-      </div>
-    </div>
-
     <div class="small-12 medium-3 column">
       <aside class="sidebar" role="complementary">
         <%= link_to t("proposals.index.start_proposal"), new_proposal_path, class: 'button radius expand' %>
-        <%= render "shared/tag_cloud", taggable: 'proposal' %>
+        <%= proposal_filters filter: @filter %>
       </aside>
+    </div>
+
+    <div id="proposals" class="proposals-list small-12 medium-9 column">
+      <%= render "proposals" %>
     </div>
   </div>
 </section>

@@ -128,6 +128,8 @@ ignore_unused:
   - 'proposals.index.search_form.*'
   - 'helpers.page_entries_info.*' # kaminari
   - 'views.pagination.*' # kaminari
+  - 'components.proposal_filter_option.{city,district}'
+  - 'components.proposal_filter_option_group.{category_id,district,scope,subcategory_id}'
 # - '{devise,kaminari,will_paginate}.*'
 # - 'simple_form.{yes,no}'
 # - 'simple_form.{placeholders,hints,labels}.*'

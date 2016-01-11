@@ -5,3 +5,11 @@ es:
         label: Eje
       subcategory:
         label: Línea de actuación
+    proposal_filter_option_group:
+      scope: "Ámbito"
+      district: "Districto"
+      category_id: "Eje"
+      subcategory_id: "Línea de actuación"
+    proposal_filter_option:
+      district: "Un distrito"
+      city: "Toda la ciudad"

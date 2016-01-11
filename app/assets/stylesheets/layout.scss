@@ -582,7 +582,7 @@ footer {
     margin-bottom: $line-height/3;
     padding: 0 $line-height/3;
 
-    &:hover {
+    &:hover, &.active {
       color: $link;
       cursor: pointer;
       background: #E5F1F8;
@@ -615,7 +615,7 @@ footer {
       }
     }
 
-    &:hover {
+    &:hover, &.active {
 
       .label {
         background: $brand;

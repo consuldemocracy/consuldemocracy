@@ -22,7 +22,7 @@ class CategoryPicker extends React.Component {
       <li className={classNames.join(' ')}
           key={category.id}
           onClick={() => this.selectCategory(category)}>
-        <span class="category">{name}</span>
+        <span className="category">{name}</span>
       </li>
     );
   }
