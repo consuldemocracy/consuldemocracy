@@ -188,6 +188,7 @@ puts "Creating Spending Proposals"
 resolutions = ["accepted", "rejected", nil]
 
 (1..30).each do |i|
+  geozone = Geozone.reorder("RANDOM()").first
   author = User.reorder("RANDOM()").first
   description = "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>"
   spending_proposal = SpendingProposal.create!(author: author,
@@ -196,6 +197,7 @@ resolutions = ["accepted", "rejected", nil]
                               description: description,
                               created_at: rand((Time.now - 1.week) .. Time.now),
                               resolution: resolutions.sample,
+                              geozone: [geozone, nil].sample,
                               terms_of_service: "1")
   puts "    #{spending_proposal.title}"
 end

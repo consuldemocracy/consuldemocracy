@@ -8,7 +8,10 @@
   <% @spending_proposals.each do |spending_proposal| %>
     <tr id="<%= dom_id(spending_proposal) %>">
       <td>
-        <strong><%= spending_proposal.title %></strong>
+        <strong><%= link_to spending_proposal.title, admin_spending_proposal_path(spending_proposal) %></strong>
+      </td>
+      <td>
+        <%= geozone_name(spending_proposal) %>
       </td>
       <td>
         <% unless spending_proposal.accepted? %>
