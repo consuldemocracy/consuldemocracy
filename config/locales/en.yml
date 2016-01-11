@@ -342,6 +342,7 @@ en:
       user_permission_verify_info: "* Only for users on Madrid City Census."
   notifications:
     index:
+      title: "Notifications"
       mark_all_as_read: "Mark all as read"
       empty_notifications: "You don't have new notifications."
       comments_on:
