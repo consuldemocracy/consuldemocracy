@@ -17,10 +17,15 @@
   </div>
 </div>
 
-<div class="row">
+<div id="legislation_body" class="row">
   <div class="small-12 medium-9 small-centered column">
     <section data-annotatable-type="legislation"
              data-annotatable-id="<%= @legislation.id %>">
+
+      <!-- Used temporarily for specs, until legislations can be created with a CMS instead of being hardcoded in the view. -->
+        <span><%= @legislation.title %></span>
+        <span><%= @legislation.body %></span>
+      <!-- end -->
 
       <h1 class="text-center">ORDENANZA DE TRANSPARENCIA DE LA CIUDAD DE MADRID</h1>
 
