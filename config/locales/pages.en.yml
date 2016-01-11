@@ -101,7 +101,7 @@ en:
       index:
         process_1_title: "Help us improve transparency Ordinance of Madrid"
         process_1_description: "The City of Madrid wants launch a system of public transparency at the level of the most advanced in the world, and we need your help."
-        process_1_button: "Comment ordinance"
+        process_1_button: "More information about ordinance"
         process_2_title: "Remodeling of the Plaza España"
         process_2_description: "We count on you for filling out a short survey decide how you want it this new space in your city."
         process_2_button: "Coming soon..."
@@ -112,3 +112,4 @@ en:
 
 
                 You can now see the [final draft Transparency Ordinance of the City of Madrid](/docs/ordenanza_de_transparencia_de_la_ciudad_de_madrid.doc 'Transparency Ordinance of the City of Madrid')."
+        button: "Comment ordinance"
