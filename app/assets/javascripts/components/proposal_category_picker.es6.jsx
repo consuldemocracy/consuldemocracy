@@ -4,7 +4,8 @@ class ProposalCategoryPicker extends React.Component {
 
     this.state = {
       selectedCategoryId: props.selectedCategoryId,
-      selectedSubcategoryId: props.selectedSubcategoryId
+      selectedSubcategoryId: props.selectedSubcategoryId,
+      subcategories: props.subcategories.sort( () => Math.round(Math.random())-0.5 )
     }
   }
 
@@ -35,7 +36,7 @@ class ProposalCategoryPicker extends React.Component {
       return (
         <SubcategoryPicker
             categoryId={this.state.selectedCategoryId}
-            subcategories={this.props.subcategories}
+            subcategories={this.state.subcategories}
             selectedId={this.state.selectedSubcategoryId}
             onSelect={ (actionLine) => this.setState({selectedSubcategoryId: actionLine.id}) }
         />
