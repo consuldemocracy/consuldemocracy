@@ -122,6 +122,13 @@ Rails.application.routes.draw do
       end
     end
 
+    resources :spending_proposals, only: :index do
+      member do
+        put :accept
+        put :reject
+      end
+    end
+
     resources :comments, only: :index do
       member do
         put :restore
