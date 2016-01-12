@@ -14,7 +14,7 @@
               <span class="bullet">&nbsp;&bull;&nbsp;</span>
               <%= l debate.created_at.to_date %>
 
-              <% if debate.author.hidden? || debate.author.erased? %>
+              <% if !debate.author || debate.author.hidden? || debate.author.erased? %>
                 <span class="bullet">&nbsp;&bull;&nbsp;</span>
                 <span class="author">
                   <%= t("debates.show.author_deleted") %>
