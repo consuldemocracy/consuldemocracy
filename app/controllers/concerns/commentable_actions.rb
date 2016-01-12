@@ -4,32 +4,7 @@ module CommentableActions
 
   def index
     @resources = @search_terms.present? ? resource_model.search(@search_terms) : resource_model.all
-
-    #advanced search filters
-    if @params_author
-      author = User.where(username: @params_author)
-      @resources = author.count > 0 ? @resources.where(author_id: author.first.id) : resource_model.none
-    end
-    if @params_date
-      case @params_date
-      when '1'
-        min_date_time = DateTime.now - 24.hour
-      when '2'
-        min_date_time = DateTime.now - 7.day
-      when '3'
-        min_date_time = DateTime.now - 30.day
-      when '4'
-        min_date_time = DateTime.now - 365.day
-      when '5'
-        @resources = @resources.where('created_at <= ?', @params_date_max) if @params_date_max
-        min_date_time = @params_date_min
-      end
-      @resources = @resources.where('created_at >= ?', min_date_time) if min_date_time
-    end
-    if @params_author_type
-      authors = User.where(official_level: @params_author_type.to_i)
-      @resources = @resources.where('author_id IN (?)', authors.map(&:id))
-    end
+    @resources = @advanced_search_terms.present? ? @resources.filter(@advanced_search_terms) : @resources
 
     @resources = @resources.tagged_with(@tag_filter) if @tag_filter
     @resources = @resources.page(params[:page]).for_render.send("sort_by_#{@current_order}")
@@ -109,16 +84,8 @@ module CommentableActions
     end
 
     def parse_advanced_search_terms
-      search = params[:advanced_search]
-      if search
-        @params_author = search[:author] if search[:author].present?
-        @params_author_type = search[:author_type] if search[:author_type].present?
-        @params_date = search[:date] if search[:date].present?
-        @params_date_min = search[:date_min] if (@params_date == '5') && search[:date_min].present?
-        @params_date_max = search[:date_max] if (@params_date == '5') && search[:date_max].present?
-        @search_terms = search[:search] if search[:search].present?
-        @advanced_search_present = true if params[:commit] || @params_author || @params_author_type || @params_date
-      end
+      @advanced_search_present = @advanced_search_terms = params[:advanced_search] if params[:advanced_search].present?
+      @search_terms = params[:advanced_search][:search] if params[:advanced_search] && params[:advanced_search][:search].present?
     end
 
     def set_search_order
