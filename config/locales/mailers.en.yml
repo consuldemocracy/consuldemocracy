@@ -1,5 +1,7 @@
 en:
   mailers:
+    config:
+      manage_email_subscriptions: "To stop receiving these emails change your settings in"
     comment:
       subject: "Someone has commented on your %{commentable}"
       hi: "Hi"

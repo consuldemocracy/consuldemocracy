@@ -513,9 +513,8 @@ feature 'Proposals' do
       create(:proposal, title: 'Medium proposal').update_column(:confidence_score, 5)
 
       visit proposals_path
-      select 'highest rated', from: 'order-selector'
-
-      expect(page).to have_selector('.js-order-selector[data-order="confidence_score"]')
+      click_link 'highest rated'
+      expect(page).to have_selector('a.active', text: 'highest rated')
 
       within '#proposals' do
         expect('Best proposal').to appear_before('Medium proposal')
@@ -523,27 +522,6 @@ feature 'Proposals' do
       end
 
       expect(current_url).to include('order=confidence_score')
-      expect(current_url).to include('page=1')
-    end
-
-    scenario 'Proposals are ordered by most commented', :js do
-      create_featured_proposals
-
-      create(:proposal, title: 'Best proposal',   comments_count: 10)
-      create(:proposal, title: 'Medium proposal', comments_count: 5)
-      create(:proposal, title: 'Worst proposal',  comments_count: 2)
-
-      visit proposals_path
-      select 'most commented', from: 'order-selector'
-
-      expect(page).to have_selector('.js-order-selector[data-order="most_commented"]')
-
-      within '#proposals' do
-        expect('Best proposal').to appear_before('Medium proposal')
-        expect('Medium proposal').to appear_before('Worst proposal')
-      end
-
-      expect(current_url).to include('order=most_commented')
       expect(current_url).to include('page=1')
     end
 
@@ -555,9 +533,8 @@ feature 'Proposals' do
       create(:proposal, title: 'Worst proposal',  created_at: Time.now - 1.day)
 
       visit proposals_path
-      select 'newest', from: 'order-selector'
-
-      expect(page).to have_selector('.js-order-selector[data-order="created_at"]')
+      click_link 'newest'
+      expect(page).to have_selector('a.active', text: 'newest')
 
       within '#proposals' do
         expect('Best proposal').to appear_before('Medium proposal')
@@ -565,27 +542,6 @@ feature 'Proposals' do
       end
 
       expect(current_url).to include('order=created_at')
-      expect(current_url).to include('page=1')
-    end
-
-    scenario 'Proposals are ordered randomly', :js do
-      create_featured_proposals
-
-      create_list(:proposal, 12)
-      visit proposals_path
-
-      select 'random', from: 'order-selector'
-      expect(page).to have_selector('.js-order-selector[data-order="random"]')
-      proposals_first_time = find("#proposals").text
-
-      select 'most commented', from: 'order-selector'
-      expect(page).to have_selector('.js-order-selector[data-order="most_commented"]')
-
-      select 'random', from: 'order-selector'
-      expect(page).to have_selector('.js-order-selector[data-order="random"]')
-      proposals_second_time = find("#proposals").text
-
-      expect(proposals_first_time).to_not eq(proposals_second_time)
       expect(current_url).to include('page=1')
     end
   end
@@ -624,7 +580,7 @@ feature 'Proposals' do
     fill_in "search", with: "Show what you got"
     click_button "Search"
 
-    expect(page).to have_selector('.js-order-selector[data-order="relevance"]')
+    expect(page).to have_selector("a.active", text: "relevance")
 
     within("#proposals") do
       expect(all(".proposal")[0].text).to match "Show what you got"
@@ -642,9 +598,8 @@ feature 'Proposals' do
     visit proposals_path
     fill_in "search", with: "Show what you got"
     click_button "Search"
-
-    select 'newest', from: 'order-selector'
-    expect(page).to have_selector('.js-order-selector[data-order="created_at"]')
+    click_link 'newest'
+    expect(page).to have_selector("a.active", text: "newest")
 
     within("#proposals") do
       expect(all(".proposal")[0].text).to match "Show you got"

@@ -39,6 +39,13 @@ defaults: &defaults
 
   url: "https://decidimbcn.herokuapp.com"
 
+  # Users with this email domain will automatically be marked as level 1 officials
+  # Emails under the domain's subdomains will also be included
+  email_domain_for_officials: ''
+
+  # Code to be included at the top (header) of every page (useful for tracking)
+  per_page_code: ''
+
 development:
   <<: *defaults
 

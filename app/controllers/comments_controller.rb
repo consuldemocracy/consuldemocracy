@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, only: :create
   before_action :load_commentable, only: :create
   before_action :build_comment, only: :create
 
@@ -9,9 +9,15 @@ class CommentsController < ApplicationController
   def create
     if @comment.save
       CommentNotifier.new(comment: @comment).process
+      add_notification @comment
     else
       render :new
     end
+  end
+
+  def show
+    @comment = Comment.find(params[:id])
+    set_comment_flags(@comment.subtree)
   end
 
   def vote
@@ -61,5 +67,14 @@ class CommentsController < ApplicationController
     def moderator_comment?
       ["1", true].include?(comment_params[:as_moderator]) && can?(:comment_as_moderator, @commentable)
     end
+
+    def add_notification(comment)
+      if comment.reply?
+        notifiable = comment.parent
+      else
+        notifiable = comment.commentable
+      end
+      Notification.add(notifiable.author_id, notifiable) unless comment.author_id == notifiable.author_id
+   end
 
 end

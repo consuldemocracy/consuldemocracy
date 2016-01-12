@@ -310,4 +310,9 @@ FactoryGirl.define do
 
     association :category, factory: :category
   end
+
+  factory :notification do
+    user
+    association :notifiable, factory: :proposal
+  end
 end

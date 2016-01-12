@@ -4,7 +4,7 @@
 %>
 
 <dl class="sub-nav">
-  <dt><%= t("#{i18n_namespace}.filter") %>: </dt>
+  <dt class="sr-only"><%= t("#{i18n_namespace}.filter") %>: </dt>
 
   <% @valid_filters.each do |filter| %>
     <% if @current_filter == filter %>
