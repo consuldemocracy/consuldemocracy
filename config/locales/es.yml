@@ -83,7 +83,7 @@ es:
   debates:
     index:
       title: "Debates"
-      featured_debates_html: "Debates<br>destacados"
+      featured_debates: "Destacados"
       start_debate: "Empieza un debate"
       select_order: "Ordenar por"
       orders:
@@ -158,7 +158,7 @@ es:
   proposals:
     index:
       title: "Propuestas ciudadanas"
-      featured_proposals_html: "Propuestas<br>destacadas"
+      featured_proposals: "Destacadas"
       start_proposal: "Crea una propuesta"
       select_order_long: "Estas viendo las propuestas"
       select_order: "Ordenar por"
