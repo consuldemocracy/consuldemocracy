@@ -8,34 +8,33 @@ class ProposalFilters extends React.Component {
     };
   }
 
-  renderChildren() {
-    return React.Children.map(this.props.children, (child) => {
-      return React.cloneElement(child, {
-        onChangeFilter: (filterName, filterValue) => this.changeFilter(filterName, filterValue)
-      })
-    });
-  }
-
   render() {
     return (
       <form>
         <ProposalFilterOptionGroup 
           filterGroupName="scope" 
           filterGroupValue={this.state.filters.get('scope')}
+          isExclusive={true}
           onChangeFilterGroup={(filterGroupName, filterGroupValue) => this.changeFilterGroup(filterGroupName, filterGroupValue) }>
-          <ProposalFilterOption filterName="district" />
           <ProposalFilterOption filterName="city" />
+          <ProposalFilterOption filterName="district" />
         </ProposalFilterOptionGroup>
-        <ProposalFilterOptionGroup 
-          filterGroupName="district" 
-          filterGroupValue={this.state.filters.get('district')}
-          onChangeFilterGroup={(filterGroupName, filterGroupValue) => this.changeFilterGroup(filterGroupName, filterGroupValue) }>
-          {
-            this.props.districts.map(function (district) {
-              return <ProposalFilterOption key={district[1]} filterName={district[1]} filterLabel={district[0]} />
-            })
+        {(() => {
+          if(this.state.filters.get('scope') && this.state.filters.get('scope').indexOf("district") !== -1) {
+            return (
+              <ProposalFilterOptionGroup 
+                filterGroupName="district" 
+                filterGroupValue={this.state.filters.get('district')}
+                onChangeFilterGroup={(filterGroupName, filterGroupValue) => this.changeFilterGroup(filterGroupName, filterGroupValue) }>
+                {
+                  this.props.districts.map(function (district) {
+                    return <ProposalFilterOption key={district[1]} filterName={district[1]} filterLabel={district[0]} />
+                  })
+                }
+              </ProposalFilterOptionGroup>
+            )
           }
-        </ProposalFilterOptionGroup>
+        })()}
         <ProposalFilterOptionGroup 
           filterGroupName="category_id" 
           filterGroupValue={this.state.filters.get('category_id')}
@@ -83,6 +82,9 @@ class ProposalFilters extends React.Component {
     let filters = this.state.filters.set(filterGroupName, filterGroupValue);
     if (filterGroupName === 'category_id') {
       filters = this.checkFilterSubcategoryIds(filters);
+    }
+    if (filterGroupName === 'scope' && filterGroupValue !== 'district') {
+      filters = filters.delete('district');
     }
     this.applyFilters(filters.toObject(), this.state.tags.toArray());
     this.setState({ filters });
