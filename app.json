@@ -18,6 +18,16 @@
     "SEED": {
       "description": "Yes if wanting to seed test data",
       "value": "yes"
+    },
+    "WEB_CONCURRENCY": {
+      "description": "The amount of workers (forks) a web dyno will spawn.",
+      "required": false,
+      "value": "1"
+    },
+    "MAX_THREADS": {
+      "description": "The maximum amount of threads worker will spawn.",
+      "required": false,
+      "value": "3"
     }
   },
   "addons": [
