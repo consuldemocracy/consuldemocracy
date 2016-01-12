@@ -420,9 +420,9 @@ feature 'Debates' do
       create(:debate, title: 'Medium').update_column(:confidence_score, 5)
 
       visit debates_path
-      select 'highest rated', from: 'order-selector'
+      click_link 'highest rated'
 
-      expect(page).to have_selector('.js-order-selector[data-order="confidence_score"]')
+      expect(page).to have_selector('a.active', text: 'highest rated')
 
       within '#debates' do
         expect('Best').to appear_before('Medium')
@@ -433,34 +433,15 @@ feature 'Debates' do
       expect(current_url).to include('page=1')
     end
 
-    scenario 'Debates are ordered by most commented', :js do
-      create(:debate, title: 'Best',   comments_count: 10)
-      create(:debate, title: 'Medium', comments_count: 5)
-      create(:debate, title: 'Worst',  comments_count: 2)
-
-      visit debates_path
-      select 'most commented', from: 'order-selector'
-
-      expect(page).to have_selector('.js-order-selector[data-order="most_commented"]')
-
-      within '#debates' do
-        expect('Best').to appear_before('Medium')
-        expect('Medium').to appear_before('Worst')
-      end
-
-      expect(current_url).to include('order=most_commented')
-      expect(current_url).to include('page=1')
-    end
-
     scenario 'Debates are ordered by newest', :js do
       create(:debate, title: 'Best',   created_at: Time.now)
       create(:debate, title: 'Medium', created_at: Time.now - 1.hour)
       create(:debate, title: 'Worst',  created_at: Time.now - 1.day)
 
       visit debates_path
-      select 'newest', from: 'order-selector'
+      click_link 'newest'
 
-      expect(page).to have_selector('.js-order-selector[data-order="created_at"]')
+      expect(page).to have_selector('a.active', text: 'newest')
 
       within '#debates' do
         expect('Best').to appear_before('Medium')
@@ -468,25 +449,6 @@ feature 'Debates' do
       end
 
       expect(current_url).to include('order=created_at')
-      expect(current_url).to include('page=1')
-    end
-
-    scenario 'Debates are ordered randomly', :js do
-      create_list(:debate, 12)
-      visit debates_path
-
-      select 'random', from: 'order-selector'
-      expect(page).to have_selector('.js-order-selector[data-order="random"]')
-      debates_first_time = find("#debates").text
-
-      select 'most commented', from: 'order-selector'
-      expect(page).to have_selector('.js-order-selector[data-order="most_commented"]')
-
-      select 'random', from: 'order-selector'
-      expect(page).to have_selector('.js-order-selector[data-order="random"]')
-      debates_second_time = find("#debates").text
-
-      expect(debates_first_time).to_not eq(debates_second_time)
       expect(current_url).to include('page=1')
     end
   end
@@ -525,7 +487,7 @@ feature 'Debates' do
     fill_in "search", with: "Show what you got"
     click_button "Search"
 
-    expect(page).to have_selector('.js-order-selector[data-order="relevance"]')
+    expect(page).to have_selector('a.active', text: "relevance")
 
     within("#debates") do
       expect(all(".debate")[0].text).to match "Show what you got"
@@ -544,8 +506,8 @@ feature 'Debates' do
     fill_in "search", with: "Show what you got"
     click_button "Search"
 
-    select 'newest', from: 'order-selector'
-    expect(page).to have_selector('.js-order-selector[data-order="created_at"]')
+    click_link "newest"
+    expect(page).to have_selector('a.active', text: "Newest")
 
     within("#debates") do
       expect(all(".debate")[0].text).to match "Show you got"

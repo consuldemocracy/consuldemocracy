@@ -54,6 +54,13 @@
             <% end %>
           </div>
 
+          <div>
+            <%= f.label :email_newsletter_subscribed do %>
+              <%= f.check_box :newsletter, label: false %>
+              <span class="checkbox"><%= t("account.show.subscription_to_website_newsletter_label") %></span>
+            <% end %>
+          </div>
+
           <%= f.submit t("account.show.save_changes_submit"), class: "button radius" %>
         </div>
 

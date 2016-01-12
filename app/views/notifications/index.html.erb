@@ -1,0 +1,21 @@
+<div class="row">
+  <div class="small-12 column">
+
+    <h1 class="left margin-top"><%= t("notifications.index.title") %></h1>
+
+    <% if @notifications.empty? %>
+      <div class="alert-box radius info margin-top clear">
+        <%= t("notifications.index.empty_notifications") %>
+      </div>
+    <% else %>
+      <div class="right margin-top">
+        <%= link_to t("notifications.index.mark_all_as_read"),
+                    mark_all_as_read_notifications_path, method: :put %>
+      </div>
+
+      <ul class="no-bullet clear notifications-list">
+        <%= render @notifications %>
+      </ul>
+    <% end %>
+  </div>
+</div>
