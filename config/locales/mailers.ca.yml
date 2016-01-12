@@ -6,6 +6,8 @@ ca:
       new_comment_by_html: Hi ha un nou comentari de <b>%{commenter}</b> en
       subject: Algú ha comentat al teu %{commentable}
       title: Nou comentari
+    config:
+      manage_email_subscriptions: Pots deixar de rebre aquests correus electrònics canviant la configuració en
     email_verification:
       click_here_to_verify: en aquest enllaç
       instructions_2_html: Aquest email és per verificar el vostre compte amb <b>%{document_type} %{document_number}.</b> Si aquests no són teves dades, si us plau no premis l'enllaç anterior i ignora aquest email.

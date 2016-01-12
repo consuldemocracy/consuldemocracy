@@ -14,6 +14,7 @@ ca:
       phone_number_label: Telèfon
       public_activity_label: Mostrar públicament el meu llista d'activitats
       save_changes_submit: Desa els canvis
+      subscription_to_website_newsletter_label: Rebre emails amb informació interessant sobre el web
       title: El meu compte
       user_permission_debates: Participar en debats
       user_permission_info: Amb el teu compte ja pots ...
@@ -53,6 +54,8 @@ ca:
       newest: Més nous primer
       oldest: Més antics primer
     select_order: Ordenar per
+    show:
+      return_to_commentable: Tornar a
   comments_helper:
     comment_button: Afegeix un comentari
     comment_link: Comentar
@@ -169,6 +172,10 @@ ca:
       more_information: Més informació
       my_account_link: El meu compte
       my_activity_link: La meva activitat
+      new_notifications:
+        one: Tens una nova notificació
+        other: Tens %{count} notificacions noves
+      no_notifications: No tens notificacions noves
       open: obert
       open_city_slogan_html: Hi ciutats governades directament pels seus habitants, <b>que</b> debaten sobre temes que els preocupen, <b>proposen</b> idees per millorar les seves vides i <b>decideixen entre</b> totes i tots les que es duen a terme. Barcelona ja és una d'elles.
       open_city_title: La ciutat que vols serà la ciutat que vulguis.
@@ -184,6 +191,17 @@ ca:
       text_sign_up: registrar-
       title: Com puc comentar aquest document?
   locale: Català
+  notifications:
+    index:
+      comments_on:
+        one: Hi ha un nou comentari a
+        other: Hi ha %{count} comentaris nous en
+      empty_notifications: No tens notificacions noves.
+      mark_all_as_read: Marca totes com a llegides
+      replies_to:
+        one: Hi ha una resposta nova al teu comentari en
+        other: Hi ha %{count} noves respostes al teu comentari en
+      title: Notificacions
   omniauth:
     facebook:
       sign_in: Entra amb Facebook
@@ -212,12 +230,12 @@ ca:
       proposal_question_example_html: Ha de ser resumida en una pregunta la resposta sigui Sí o No. <em>Ex. 'Està vostè d'acord en vianants el carrer Major?'</em>
       proposal_responsible_name: Nom i cognoms de la persona que fa aquesta proposta
       proposal_responsible_name_note: "(individualment o com a representant d'un col·lectiu, no es mostrarà públicament)"
+      proposal_scope: "Àmbit"
+      proposal_scope_city: Tota la ciutat
+      proposal_scope_district: Un districte
+      proposal_scope_note: Es una mesura per a tota la ciutat o només per a un districte?
       proposal_summary: Resum de la proposta
       proposal_summary_note: "(màxim 350 caràcters)"
-      proposal_scope: "Àmbit"
-      proposal_scope_note: "Es una mesura per a tota la ciutat o només per a un districte?"
-      proposal_scope_city: "Tota la ciutat"
-      proposal_scope_district: "Un districte"
       proposal_title: Títol de la proposta
       proposal_video_url: Enllaç a vídeo extern
       proposal_video_url_note: Pots afegir un enllaç a YouTube o Vimeo
