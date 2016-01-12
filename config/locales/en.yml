@@ -5,7 +5,6 @@ en:
       user_not_found: "User not found"
   layouts:
     header:
-      external_link_blog: "Blog"
       open_gov: "Open government"
       open: "open"
       open_data: "Open data"
@@ -69,6 +68,7 @@ en:
         created_at: "newest"
         most_commented: "most commented"
         relevance: "relevance"
+        random: "random"
       filter_topic:
         one: " with topic '%{topic}'"
         other: " with topic '%{topic}'"
@@ -145,9 +145,7 @@ en:
         created_at: "newest"
         most_commented: "most commented"
         relevance: "relevance"
-      filter_topic:
-        one: " with topic '%{topic}'"
-        other: " with topic '%{topic}'"
+        random: "random"
       search_form:
         title: "Search"
         button: "Search"
@@ -291,6 +289,7 @@ en:
       user_permission_support_proposal: "Support proposals"
       user_permission_votes: "Participate on final voting"
       user_permission_verify: "To perform all the actions verify your account."
+      user_permission_verify_info: "* Only for users on the Barcelona City Census."
   notifications:
     index:
       title: "Notifications"

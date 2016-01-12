@@ -106,7 +106,6 @@ ca:
         one: " que conté '%{search_term}'"
         other: " que contenen '%{search_term}'"
       select_order: Ordenar per
-      select_order_long: Estàs veient els debats
       start_debate: Comença un debat
       title: Debats
     new:
@@ -166,7 +165,6 @@ ca:
     header:
       administration: Administrar
       debates: Debats
-      external_link_blog: Bloc
       locale: 'Idioma:'
       moderation: Moderar
       more_information: Més informació
@@ -244,9 +242,6 @@ ca:
       tags_placeholder: Escriu les etiquetes que vulguis separades per una coma (',')
     index:
       featured_proposals_html: Propostes <br> destacades
-      filter_topic:
-        one: " amb el tema '%{topic}'"
-        other: " amb el tema '%{topic}'"
       orders:
         confidence_score: més recolzades
         created_at: més noves

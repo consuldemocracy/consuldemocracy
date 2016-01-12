@@ -5,7 +5,6 @@ es:
       user_not_found: "No se encontró el usuario"
   layouts:
     header:
-      external_link_blog: "Blog"
       open_gov: "Gobierno %{open}"
       open: "abierto"
       open_data: "Datos abiertos"
@@ -68,6 +67,7 @@ es:
         created_at: "Nuevos"
         most_commented: "Más comentados"
         relevance: "Más relevantes"
+        random: "aleatorio"
       filter_topic:
         one: " con el tema '%{topic}'"
         other: " con el tema '%{topic}'"
@@ -144,9 +144,7 @@ es:
         created_at: "Nuevas"
         most_commented: "Más comentadas"
         relevance: "Más relevantes"
-      filter_topic:
-        one: " con el tema '%{topic}'"
-        other: " con el tema '%{topic}'"
+        random: "aleatorio"
       search_form:
         title: "Buscar"
         button: "Buscar"
