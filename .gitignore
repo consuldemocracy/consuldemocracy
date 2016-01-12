@@ -27,3 +27,6 @@
 # Mac finder artifacts
 .DS_Store
 .ruby-gemset
+
+# Ignore custom environment variables file
+.env

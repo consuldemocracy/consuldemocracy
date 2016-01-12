@@ -1,0 +1,302 @@
+---
+:places:
+- :lat: 41.40312589757035
+  :lng: 2.152813504477835
+  :address: Carrer de Santa Rosa, 4, 08012 Barcelona, Barcelona, Spain
+- :lat: 41.4022043013453
+  :lng: 2.1655750839990557
+  :address: Passeig de Sant Joan, 157, 08037 Barcelona, Barcelona, Spain
+- :lat: 41.403744937790606
+  :lng: 2.1453103929711026
+  :address: Carrer de la Gleva, 29, 08006 Barcelona, Barcelona, Spain
+- :lat: 41.39819900541797
+  :lng: 2.148964687464565
+  :address: Carrer de Dénia, 13, 08006 Barcelona, Barcelona, Spain
+- :lat: 41.397662089420535
+  :lng: 2.1395998689546145
+  :address: Via Augusta, 197, 08021 Barcelona, Barcelona, Spain
+- :lat: 41.399916070688114
+  :lng: 2.1830884899094087
+  :address: Carrer de Lepant, 186, 08013 Barcelona, Barcelona, Spain
+- :lat: 41.403996513941806
+  :lng: 2.169065511237875
+  :address: Carrer de Còrsega, 495, 08025 Barcelona, Barcelona, Spain
+- :lat: 41.39572365063892
+  :lng: 2.148248361240677
+  :address: Passatge de Josep Llovera, 3, 08021 Barcelona, Barcelona, Spain
+- :lat: 41.39870688321808
+  :lng: 2.1638670841865735
+  :address: Carrer del Bruc, 164, 08037 Barcelona, Barcelona, Spain
+- :lat: 41.404487502876734
+  :lng: 2.1429483289247084
+  :address: Carrer de Puig-reig, 14, 08006 Barcelona, Barcelona, Spain
+- :lat: 41.404620905726595
+  :lng: 2.1694856016960387
+  :address: Carrer de Sicília, 360-362, 08025 Barcelona, Barcelona, Spain
+- :lat: 41.40176425834281
+  :lng: 2.150487126961694
+  :address: Carrer dels Madrazo, 6, 08006 Barcelona, Barcelona, Spain
+- :lat: 41.395828709471175
+  :lng: 2.174142333706701
+  :address: Passeig de Sant Joan, 41, 08009 Barcelona, Barcelona, Spain
+- :lat: 41.390351420546565
+  :lng: 2.174298250730759
+  :address: Carrer d'Ausiàs Marc, 12, 08010 Barcelona, Barcelona, Spain
+- :lat: 41.39294505012854
+  :lng: 2.1746775640033533
+  :address: Carrer de Casp, 51, 08010 Barcelona, Barcelona, Spain
+- :lat: 41.40432230776262
+  :lng: 2.1656563987499777
+  :address: Carrer de Roger de Flor, 314, 08025 Barcelona, Barcelona, Spain
+- :lat: 41.38918865780014
+  :lng: 2.155999153032235
+  :address: Carrer de Muntaner, 105, 08036 Barcelona, Barcelona, Spain
+- :lat: 41.394174952233826
+  :lng: 2.1530011444067365
+  :address: Av. Diagonal, 427B, 08036 Barcelona, Barcelona, Spain
+- :lat: 41.3978370456396
+  :lng: 2.1504127494682646
+  :address: Carrer d'Alfons XII, 14, 08006 Barcelona, Barcelona, Spain
+- :lat: 41.404960184841265
+  :lng: 2.160341258766858
+  :address: Carrer de Joan Blanques, 25, 08012 Barcelona, Barcelona, Spain
+- :lat: 41.39303657488262
+  :lng: 2.1615576839931707
+  :address: Carrer de Mallorca, 242, 08008 Barcelona, Barcelona, Spain
+- :lat: 41.40027271061497
+  :lng: 2.1653465943449692
+  :address: Passatge dels Caputxins, 5, 08037 Barcelona, Barcelona, Spain
+- :lat: 41.40060507694501
+  :lng: 2.1601218663563673
+  :address: Carrer de Tordera, 11, 08012 Barcelona, Barcelona, Spain
+- :lat: 41.40064329062428
+  :lng: 2.173168912918912
+  :address: Passatge de Gaiolà, 6, 08013 Barcelona, Barcelona, Spain
+- :lat: 41.40036438879445
+  :lng: 2.1775968839663453
+  :address: Carrer de Sardenya, 262, 08013 Barcelona, Barcelona, Spain
+- :lat: 41.39967731853996
+  :lng: 2.1608975288055974
+  :address: Carrer del Progrés, 2, 08012 Barcelona, Barcelona, Spain
+- :lat: 41.40421080550632
+  :lng: 2.1695594492618095
+  :address: Carrer de Còrsega, 490-492, 08025 Barcelona, Barcelona, Spain
+- :lat: 41.404318206079026
+  :lng: 2.1806763828875395
+  :address: Carrer d'Aragó, 491, 08013 Barcelona, Barcelona, Spain
+- :lat: 41.4004250831753
+  :lng: 2.163296094096414
+  :address: Carrer de Milà i Fontanals, 7, 08012 Barcelona, Barcelona, Spain
+- :lat: 41.39827468436221
+  :lng: 2.18431438486537
+  :address: Carrer de Lepant, 143, 08013 Barcelona, Barcelona, Spain
+- :lat: 41.39229566496641
+  :lng: 2.174555322470262
+  :address: Carrer de Casp, 49-51, 08010 Barcelona, Barcelona, Spain
+- :lat: 41.390132375381924
+  :lng: 2.139928066560543
+  :address: Carrer del Taquígraf Garriga, 166, 08029 Barcelona, Barcelona, Spain
+- :lat: 41.390045189922276
+  :lng: 2.145949481477509
+  :address: Av. de Sarrià, 8-10, 08029 Barcelona, Barcelona, Spain
+- :lat: 41.389883316403576
+  :lng: 2.164591906695809
+  :address: Rambla de Catalunya, 41, 08007 Barcelona, Barcelona, Spain
+- :lat: 41.39334189795519
+  :lng: 2.1724241661017505
+  :address: Gran Via de Les Corts Catalanes, 655, 08009 Barcelona, Barcelona, Spain
+- :lat: 41.39882017261221
+  :lng: 2.1479658042420517
+  :address: Carrer d'Oliana, 21, 08006 Barcelona, Barcelona, Spain
+- :lat: 41.394618816020916
+  :lng: 2.1453122909175386
+  :address: Carrer d'Amigó, 21, 08021 Barcelona, Barcelona, Spain
+- :lat: 41.390068325788434
+  :lng: 2.149597812213534
+  :address: Carrer de Villarroel, 217, 08036 Barcelona, Barcelona, Spain
+- :lat: 41.39980612264589
+  :lng: 2.1507424822101093
+  :address: Carrer de Laforja, 9, 08006 Barcelona, Barcelona, Spain
+- :lat: 41.4016784869228
+  :lng: 2.1828188086892544
+  :address: Carrer de Padilla, 168, 08013 Barcelona, Barcelona, Spain
+- :lat: 41.404008288018545
+  :lng: 2.1647530739777876
+  :address: Carrer de Sant Antoni Maria Claret, 23, 08037 Barcelona, Barcelona, Spain
+- :lat: 41.394531842872176
+  :lng: 2.1450743767640095
+  :address: Carrer d'Amigó, 21, 08021 Barcelona, Barcelona, Spain
+- :lat: 41.40427029739937
+  :lng: 2.1663910196519045
+  :address: Carrer d'En Grassot, 63, 08025 Barcelona, Barcelona, Spain
+- :lat: 41.39266338524034
+  :lng: 2.152197795330124
+  :address: Carrer de París, 170, 08036 Barcelona, Barcelona, Spain
+- :lat: 41.403785997373525
+  :lng: 2.14972021450059
+  :address: Carrer de Camps i Fabrés, 6, 08006 Barcelona, Barcelona, Spain
+- :lat: 41.39062541042347
+  :lng: 2.166848484051047
+  :address: Passeig de Gràcia, 21-23, 08007 Barcelona, Barcelona, Spain
+- :lat: 41.40086639453954
+  :lng: 2.1736163539170033
+  :address: Carrer de València, 385, 08013 Barcelona, Barcelona, Spain
+- :lat: 41.39688666339739
+  :lng: 2.163318520004896
+  :address: Carrer de Roger de Llúria, 129, 08037 Barcelona, Barcelona, Spain
+- :lat: 41.39067826883268
+  :lng: 2.1652830079378567
+  :address: Carrer del Consell de Cent, 306, 08007 Barcelona, Barcelona, Spain
+- :lat: 41.39519407228949
+  :lng: 2.1652395800347164
+  :address: Carrer de Mallorca, 274, 08037 Barcelona, Barcelona, Spain
+- :lat: 41.39988117192058
+  :lng: 2.1463228874189513
+  :address: Carrer de Sant Eusebi, 56, 08006 Barcelona, Barcelona, Spain
+- :lat: 41.39718482550643
+  :lng: 2.169410284724354
+  :address: Carrer de València, 348, 08009 Barcelona, Barcelona, Spain
+- :lat: 41.397615082240186
+  :lng: 2.138234651982459
+  :address: Carrer Via Augusta, 209, 08021 Barcelona, Barcelona, Spain
+- :lat: 41.3916153328218
+  :lng: 2.1759095134083073
+  :address: Carrer d'Ausiàs Marc, 33-35, 08010 Barcelona, Barcelona, Spain
+- :lat: 41.397676797213514
+  :lng: 2.162894116517713
+  :address: Carrer de Roger de Llúria, 126, 08037 Barcelona, Barcelona, Spain
+- :lat: 41.399713371010556
+  :lng: 2.1810780376604773
+  :address: Gran Via de Les Corts Catalanes, 11, 08013 Barcelona, Barcelona, Spain
+- :lat: 41.3920883860295
+  :lng: 2.165217978462524
+  :address: Passeig de Gràcia, 1504, 08007 Barcelona, Barcelona, Spain
+- :lat: 41.39943974940909
+  :lng: 2.182760279695259
+  :address: Carrer de Lepant, 171, 08013 Barcelona, Barcelona, Spain
+- :lat: 41.40231775968371
+  :lng: 2.1543300703368535
+  :address: Travessia de Sant Antoni, 11, 08012 Barcelona, Barcelona, Spain
+- :lat: 41.399816144249925
+  :lng: 2.140330130672122
+  :address: Carrer de Santaló, 137, 08021 Barcelona, Barcelona, Spain
+- :lat: 41.3996848600007
+  :lng: 2.142862434904606
+  :address: Carrer De Descartes, 9, 08006 Barcelona, Barcelona, Spain
+- :lat: 41.40360288163012
+  :lng: 2.143256303309785
+  :address: Carrer de Pàdua, 117, 08006 Barcelona, Barcelona, Spain
+- :lat: 41.404060284616875
+  :lng: 2.147449763834981
+  :address: Carrer de Vallirana, 41, 08006 Barcelona, Barcelona, Spain
+- :lat: 41.39286222471476
+  :lng: 2.1446270908198493
+  :address: Plaça de Francesc Macià, 9999, 08021 Barcelona, Barcelona, Spain
+- :lat: 41.40242144230698
+  :lng: 2.1753380310979984
+  :address: Passatge de Font, 9, 08013 Barcelona, Barcelona, Spain
+- :lat: 41.39264903122974
+  :lng: 2.146243784488352
+  :address: Av. Diagonal, 473, 08036 Barcelona, Barcelona, Spain
+- :lat: 41.40418603358354
+  :lng: 2.1726814493480506
+  :address: Passatge de Simó, 1, 08025 Barcelona, Barcelona, Spain
+- :lat: 41.40509979360269
+  :lng: 2.184807281866276
+  :address: Carrer del Dos de Maig, 190, 08013 Barcelona, Barcelona, Spain
+- :lat: 41.40230059480719
+  :lng: 2.1470437575642927
+  :address: Carrer de Lincoln, 55, 08006 Barcelona, Barcelona, Spain
+- :lat: 41.40001643852961
+  :lng: 2.170290784324542
+  :address: Carrer de Mallorca, 341, 08037 Barcelona, Barcelona, Spain
+- :lat: 41.390419059653205
+  :lng: 2.141333519039436
+  :address: Plaça Dr. Ignasi Barraquer, 67-225, 08029 Barcelona, Barcelona, Spain
+- :lat: 41.40368144508554
+  :lng: 2.1471384503139586
+  :address: Carrer de Saragossa, 64-66, 08006 Barcelona, Barcelona, Spain
+- :lat: 41.39627638972644
+  :lng: 2.1619969773642587
+  :address: Carrer de Pau Claris, 181, 08037 Barcelona, Barcelona, Spain
+- :lat: 41.39676300352916
+  :lng: 2.14848523810205
+  :address: Carrer de l'Avenir, 21, 08006 Barcelona, Barcelona, Spain
+- :lat: 41.39483653338702
+  :lng: 2.1485273566869654
+  :address: Carrer de Muntaner, 237, 08021 Barcelona, Barcelona, Spain
+- :lat: 41.39852022308938
+  :lng: 2.1581834431962355
+  :address: Carrer de Sant Pere Màrtir, 1, 08012 Barcelona, Barcelona, Spain
+- :lat: 41.39223449763937
+  :lng: 2.174631459064355
+  :address: Carrer de Girona, 30, 08010 Barcelona, Barcelona, Spain
+- :lat: 41.402161789185925
+  :lng: 2.1511050214417673
+  :address: Carrer de Bretón de los Herreros, 28, 08012 Barcelona, Barcelona, Spain
+- :lat: 41.3918819642818
+  :lng: 2.1420628762264147
+  :address: Av. Diagonal, 501, 08029 Barcelona, Barcelona, Spain
+- :lat: 41.39643423370693
+  :lng: 2.13893986859221
+  :address: Carrer de Vallmajor, 4, 08021 Barcelona, Barcelona, Spain
+- :lat: 41.39991943172638
+  :lng: 2.1566519719127517
+  :address: Carrer de Sant Domènec, 18, 08012 Barcelona, Barcelona, Spain
+- :lat: 41.40271272536886
+  :lng: 2.1797780961331155
+  :address: Carrer dels Enamorats, 21, 08013 Barcelona, Barcelona, Spain
+- :lat: 41.39848947782679
+  :lng: 2.1826437615946404
+  :address: Carrer de Casp, 131, 08013 Barcelona, Barcelona, Spain
+- :lat: 41.397438401808834
+  :lng: 2.161176152709764
+  :address: Carrer de Pau Claris, 194, 08037 Barcelona, Barcelona, Spain
+- :lat: 41.3893586557745
+  :lng: 2.1765305013430125
+  :address: Passatge Sert, 48, 08003 Barcelona, Barcelona, Spain
+- :lat: 41.39128716684102
+  :lng: 2.153022638232709
+  :address: Carrer de Muntaner, 159, 08036 Barcelona, Barcelona, Spain
+- :lat: 41.39880305367675
+  :lng: 2.1535793030936192
+  :address: Plaça de Gal·la Placídia, 2, 08006 Barcelona, Barcelona, Spain
+- :lat: 41.40326921477715
+  :lng: 2.146447897460235
+  :address: Carrer de la Gleva, 12, 08006 Barcelona, Barcelona, Spain
+- :lat: 41.40068269214059
+  :lng: 2.180241530434883
+  :address: Carrer de la Diputació, 457, 08013 Barcelona, Barcelona, Spain
+- :lat: 41.39740661517566
+  :lng: 2.166560350341424
+  :address: Carrer de Mallorca, 309, 08037 Barcelona, Barcelona, Spain
+- :lat: 41.39633030463659
+  :lng: 2.177057595086391
+  :address: Gran Via de Les Corts Catalanes, 677, 08013 Barcelona, Barcelona, Spain
+- :lat: 41.396170497137184
+  :lng: 2.1581909576561302
+  :address: Av. Diagonal, 389, 08006 Barcelona, Barcelona, Spain
+- :lat: 41.40130635961317
+  :lng: 2.1836469458299637
+  :address: Gran Via de Les Corts Catalanes, 755, 08013 Barcelona, Barcelona, Spain
+- :lat: 41.39107655266329
+  :lng: 2.1828523068599317
+  :address: Carrer de Roger de Flor, 23, 08018 Barcelona, Barcelona, Spain
+- :lat: 41.39051352363043
+  :lng: 2.1729241323409436
+  :address: Carrer de Roger de Llúria, 14, 08010 Barcelona, Barcelona, Spain
+- :lat: 41.40006009074188
+  :lng: 2.1738133584479886
+  :address: Av. Diagonal, 299B, 08013 Barcelona, Barcelona, Spain
+- :lat: 41.396457300130876
+  :lng: 2.1436674821155988
+  :address: Carrer Galvany, 108, 08021 Barcelona, Barcelona, Spain
+- :lat: 41.4029056955968
+  :lng: 2.162268806253353
+  :address: Carrer de Bailèn, 229, 08037 Barcelona, Barcelona, Spain
+- :lat: 41.403233596981885
+  :lng: 2.161729056295353
+  :address: Carrer de Bailèn, 235I, 08037 Barcelona, Barcelona, Spain
+- :lat: 41.3948863396649
+  :lng: 2.158669894880429
+  :address: Rambla de Catalunya, 114, 08008 Barcelona, Barcelona, Spain

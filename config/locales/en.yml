@@ -54,6 +54,7 @@ en:
     proposal: "Proposal"
     verification::sms: "Telephone"
     verification::letter: "the verification"
+    meeting: "the meeting"
   application:
     close: "Close"
     menu: "Menu"
@@ -221,6 +222,23 @@ en:
     update:
       form:
         submit_button: "Save changes"
+  meetings:
+    index:
+      new: "Create meeting"
+    new:
+      form:
+        submit_button: "Create meeting"
+    edit:
+      form:
+        submit_button: "Update meeting"
+    form:
+      meeting_title: "Title"
+      meeting_description: "Description"
+      meeting_address: "Where is going to take place?"
+      meeting_address_details: "Additional address details"
+      meeting_held_at: "When it will take place?"
+      meeting_start_at: "What time does it start?"
+      meeting_end_at: "What time does it end?"
   comments:
     show:
       return_to_commentable: "Go back to "

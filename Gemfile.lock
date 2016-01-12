@@ -91,6 +91,9 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
+    capybara-screenshot (1.0.11)
+      capybara (>= 1.0, < 3)
+      launchy
     chronic (0.10.2)
     ckeditor (4.1.6)
       cocaine
@@ -459,6 +462,7 @@ DEPENDENCIES
   byebug
   cancancan
   capybara
+  capybara-screenshot
   ckeditor (~> 4.1.5)
   coffee-rails (~> 4.1.0)
   coveralls

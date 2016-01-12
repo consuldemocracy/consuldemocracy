@@ -155,6 +155,7 @@ ca:
     user: el compte
     verification::letter: la verificació
     verification::sms: el telèfon
+    meeting: la trobada presencial
   layouts:
     application:
       chrome: Google Chrome
@@ -305,6 +306,23 @@ ca:
     update:
       form:
         submit_button: Desa els canvis
+  meetings:
+    index:
+      new: "Crear trobada"
+    new:
+      form:
+        submit_button: "Crear trobada"
+    edit:
+      form:
+        submit_button: "Actualitzar trobada"
+    form:
+      meeting_title: "Títol"
+      meeting_description: "Descripció"
+      meeting_address: "On es realitzará?"
+      meeting_address_details: "Detalls adicionals del lloc"
+      meeting_held_at: "Quan es realitzará?"
+      meeting_start_at: "A quina hora comença?"
+      meeting_end_at: "A quina hora acaba?"
   shared:
     author_info:
       author_deleted: Usuari eliminat

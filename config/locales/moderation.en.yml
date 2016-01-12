@@ -5,6 +5,7 @@ en:
       flagged_debates: "Debates"
       flagged_comments: "Comments"
       users: "Block users"
+      meetings: "Meetings"
     dashboard:
       index:
         title: "Moderation"
@@ -73,3 +74,8 @@ en:
         search: "Search"
         hide: "Block"
         hidden: "Blocked"
+    meetings:
+      index:
+        title: Meetings
+        headers:
+          meeting: Meeting 

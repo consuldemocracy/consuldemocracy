@@ -49,7 +49,6 @@ if ENV["SEED"]
   org_user_ids = User.organizations.pluck(:id)
   not_org_users = User.where(['users.id NOT IN(?)', org_user_ids])
 
-
   puts "Creating Debates"
 
   tags = Faker::Lorem.words(25)
@@ -103,7 +102,27 @@ if ENV["SEED"]
     puts "    #{proposal.title}"
   end
 
+  puts "Creating Meetings"
 
+  places = YAML.load_file("#{Rails.root}/db/seeds/places.yml")[:places]
+
+  (1..50).each do |i|
+    place = places.sample
+    start_at = Faker::Time.forward(23, :morning)
+    meeting = Meeting.create!(
+      author: moderator,
+      title: Faker::Lorem.sentence(3).truncate(60),
+      description: Faker::Lorem.sentence(3),
+      address: place[:address],
+      address_latitude: place[:lat],
+      address_longitude: place[:lng],
+      held_at: Faker::Date.between(30.days.ago, 30.days.from_now),
+      start_at: start_at, 
+      end_at: start_at + ((1..5).to_a.sample).hours
+    )
+    puts "    #{meeting.title}"
+  end
+  
   puts "Commenting Debates"
 
   (1..100).each do |i|

@@ -185,6 +185,8 @@ Rails.application.routes.draw do
         put :moderate
       end
     end
+
+    resources :meetings, except: [:show, :destroy]
   end
 
   namespace :management do

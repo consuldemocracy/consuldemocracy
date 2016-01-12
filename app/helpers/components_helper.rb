@@ -22,4 +22,14 @@ module ComponentsHelper
   def localize_attribute(attribute)
     attribute[I18n.locale.to_s] if attribute
   end
+
+  def google_maps_autocomplete_input(options = {})
+    react_component(
+      'GoogleMapsAutocompleteInput',
+      defaultLocation: options[:default_location],
+      addressInputId: options[:address_input_id],
+      latitudeInputId: options[:latitude_input_id],
+      longitudeInputId: options[:longitude_input_id]
+    ) 
+  end
 end
