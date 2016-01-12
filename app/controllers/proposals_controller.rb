@@ -15,15 +15,15 @@ class ProposalsController < ApplicationController
     @filter = ProposalFilter.new(params)
     @proposals = @filter.collection
 
-    @proposals = @proposals.page(params[:page]).for_render.send("sort_by_#{@current_order}")
 
-    set_resource_votes(@proposals)
-
-    @featured_proposals = Proposal.all.sort_by_confidence_score.limit(3) if (@filter.search_filter.blank? && @filter.tag_filter.blank?)
+    @featured_proposals = @proposals.sort_by_confidence_score.limit(3) if (@filter.search_filter.blank? && @filter.tag_filter.blank?)
     if @featured_proposals.present?
       set_featured_proposal_votes(@featured_proposals)
       @proposals = @proposals.where('proposals.id NOT IN (?)', @featured_proposals.map(&:id))
     end
+
+    @proposals = @proposals.page(params[:page]).for_render.send("sort_by_#{@current_order}")
+    set_resource_votes(@proposals)
   end
 
   def vote
