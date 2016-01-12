@@ -220,6 +220,16 @@ a {
   }
 }
 
+.sub-nav {
+  border-bottom: 1px solid $border;
+
+  dd.active {
+    border-bottom: 2px solid $brand;
+    color: $brand;
+    padding-bottom: $line-height/4;
+  }
+}
+
 // 02. Header
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -232,14 +242,13 @@ header {
   }
 
   .selected {
-    border-bottom: 2px solid white;
-    padding-bottom: $line-height/12;
+    border-bottom: 1px solid white;
     position: relative;
   }
 
   .locale {
     float: none;
-    font-family: $font-sans;
+    height: $line-height*1.5;
 
     @media (min-width: $small-breakpoint) {
       float: left;
@@ -264,7 +273,20 @@ header {
     }
 
     .postfix {
+      background: $border;
+      border: 1px solid #ccc;
+      border-left: 0;
+      color: $text;
       height: rem-calc(37);
+
+      &:hover {
+        background: $brand;
+        color: white;
+      }
+    }
+
+    input {
+      border-right: 0;
     }
 
     input, .button {
@@ -384,7 +406,6 @@ header {
       &:hover {
         background: none;
         color: white;
-        text-decoration: underline;
         transition: text-decoration 275ms;
       }
 
@@ -408,6 +429,7 @@ header {
 
       &:hover, &:focus {
         background-color: #007095 !important;
+        text-decoration: underline;
       }
     }
 
@@ -499,8 +521,7 @@ header {
     color: $text;
     display: inline-block;
     font-weight: bold;
-    margin-right: $line-height;
-    margin-right: 12px\9;
+    margin-right: $line-height/2;
     position: relative;
     text-align: left;
 
@@ -582,18 +603,17 @@ footer {
 .tags, .tag-cloud {
 
   a {
-    background: $border;
+    background: #ececec;
     border-radius: rem-calc(6);
-    color: #4d4d4d;
+    color: $text;
     display: inline-block;
     font-size: $small-font-size;
     margin-bottom: $line-height/3;
-    padding: 0 $line-height/3;
+    padding: $line-height/4 $line-height/3;
+    text-decoration: none;
 
     &:hover {
-      color: $link;
-      cursor: pointer;
-      background: #E5F1F8;
+      background: #e0e0e0;
     }
   }
 }
@@ -608,27 +628,6 @@ footer {
     margin: -1px 0 rem-calc(12);
     padding-top: $line-height/4;
     text-transform: uppercase;
-  }
-
-  a {
-    background: white;
-    border: 2px solid $border;
-    padding: $line-height/4 $line-height/3;
-
-    .label {
-      color: white;
-
-      &.info {
-        background: rgba(0,0,0,.5);
-      }
-    }
-
-    &:hover {
-
-      .label {
-        background: $brand;
-      }
-    }
   }
 }
 
@@ -958,6 +957,77 @@ img.avatar, img.admin-avatar, img.moderator-avatar, img.initialjs-avatar {
   }
 }
 
+.notifications {
+  position: relative;
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  [class^="icon-"] {
+    font-size: $h4-font-size;
+    vertical-align: middle;
+  }
+
+  .icon-circle {
+    color: #ecf00b;
+    font-size: $tiny-font-size;
+    position: absolute;
+    right: 4px;
+    top: -6px;
+  }
+}
+
+.notifications-list:before {
+  background: $border;
+  content: '';
+  height: 100%;
+  left: 28px;
+  position: absolute;
+  top: 84px;
+  width: 2px;
+}
+
+.notification {
+  display: block;
+  padding: $line-height/2 0 $line-height/2 $line-height*1.5;
+  position: relative;
+
+  &:hover {
+
+    a {
+      text-decoration: none;
+    }
+
+    p:not(.time) {
+      color: $link;
+    }
+
+    &:before {
+      content: "\43";
+    }
+  }
+
+  &:before {
+    background: white;
+    color: $brand;
+    content: "\4d";
+    font-family: "icons" !important;
+    left: 6px;
+    position: absolute;
+  }
+
+  p {
+    color: $text;
+    margin-bottom: 0;
+  }
+
+  .time {
+    font-size: $small-font-size;
+    color: $text-medium;
+  }
+}
+
 // 09. Filters & search
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -1224,34 +1294,14 @@ table {
 }
 
 .social {
-  margin-top: $line-height;
-  padding-top: $line-height/4;
-  text-align: center;
-  vertical-align: middle;
-
-  @media (min-width: $small-breakpoint) {
-    margin-top: 0;
-    text-align: right;
-  }
 
   a {
-    font-size: rem-calc(24);
-    line-height: $line-height;
+    font-size: $h3-font-size;
     margin: 0 $line-height/2;
     text-decoration: none;
-    vertical-align: middle;
 
     &:hover {
-      opacity: .5;
-      text-decoration: none;
-    }
-
-    @media (min-width: $small-breakpoint) {
-      font-size: rem-calc(18);
-    }
-
-    &:last-child {
-      margin-right: 0;
+      color: $brand;
     }
   }
 }
@@ -1605,7 +1655,6 @@ table {
       font-family: $font-sans;
       font-size: $small-font-size;
       line-height: $line-height;
-      margin: rem-calc(10) $line-height/2 $line-height/4 0;
 
       a {
         color: $text-light;
@@ -1626,15 +1675,12 @@ table {
     .comment-body {
       margin-left: rem-calc(42);
 
-      p {
-        font-size: $small-font-size;
-      }
-
       .reply {
         background: white;
         border: 1px solid $border;
-        font-family: $font-sans;
-        font-size: rem-calc(12);
+        border-left: 0;
+        border-right: 0;
+        font-size: $small-font-size;
         margin: rem-calc(6) 0;
         padding: rem-calc(6);
 
@@ -1766,17 +1812,6 @@ table {
 
 .activity {
   margin-bottom: $line-height*2;
-  margin-top: $line-height;
-
-  .sub-nav {
-    border-bottom: 1px solid $border;
-
-    dd.active {
-      border-bottom: 2px solid $brand;
-      color: $brand;
-      padding-bottom: $line-height/4;
-    }
-  }
 
   table {
     border: 0;

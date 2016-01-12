@@ -13,8 +13,11 @@ module CommentsHelper
   end
 
   def child_comments_of(parent)
-    return [] unless @comment_tree
-    @comment_tree.children_of(parent)
+    if @comment_tree.present?
+      @comment_tree.ordered_children_of(parent)
+    else
+      parent.children
+    end
   end
 
   def user_level_class(comment)
