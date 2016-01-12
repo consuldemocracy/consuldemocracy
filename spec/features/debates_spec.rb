@@ -249,7 +249,7 @@ feature 'Debates' do
 
     visit edit_debate_path(debate)
     expect(current_path).not_to eq(edit_debate_path(debate))
-    expect(current_path).to eq(proposals_path)
+    expect(current_path).to eq(debates_path)
     expect(page).to have_content "You do not have permission to carry out the action 'edit' on debate."
   end
 
@@ -264,7 +264,7 @@ feature 'Debates' do
     visit edit_debate_path(debate)
 
     expect(current_path).not_to eq(edit_debate_path(debate))
-    expect(current_path).to eq(proposals_path)
+    expect(current_path).to eq(debates_path)
     expect(page).to have_content 'You do not have permission to'
   end
 
@@ -452,80 +452,197 @@ feature 'Debates' do
     end
   end
 
-  scenario 'Debate index search' do
-    debate1 = create(:debate, title: "Show me what you got")
-    debate2 = create(:debate, title: "Get Schwifty")
-    debate3 = create(:debate)
-    debate4 = create(:debate, description: "Schwifty in here")
-    debate5 = create(:debate, tag_list: 'schwifty')
-    debate6 = create(:debate, tag_list: ['awesome foreign schwifty', 'major'])
+  context "Search", :focus do
 
-    visit debates_path
-    fill_in "search", with: "Schwifty"
-    click_button "Search"
+    context "Basic search" do
 
-    within("#debates") do
-      expect(page).to have_css('.debate', count: 4)
+      scenario 'Search by text' do
+        debate1 = create(:debate, title: "Get Schwifty")
+        debate2 = create(:debate, title: "Schwifty Hello")
+        debate3 = create(:debate, title: "Do not show me")
 
-      expect(page).to have_content(debate2.title)
-      expect(page).to have_content(debate4.title)
-      expect(page).to have_content(debate5.title)
-      expect(page).to have_content(debate6.title)
+        visit debates_path
+        fill_in "search", with: "Schwifty"
+        click_button "Search"
 
-      expect(page).to_not have_content(debate1.title)
-      expect(page).to_not have_content(debate3.title)
+        within("#debates") do
+          expect(page).to have_css('.debate', count: 2)
+
+          expect(page).to have_content(debate1.title)
+          expect(page).to have_content(debate2.title)
+          expect(page).to_not have_content(debate3.title)
+        end
+      end
+
     end
-  end
 
-  pending "Order by relevance by default", :js do
-    debate1 = create(:debate, title: "Show you got",      cached_votes_up: 10)
-    debate2 = create(:debate, title: "Show what you got", cached_votes_up: 1)
-    debate3 = create(:debate, title: "Show you got",      cached_votes_up: 100)
+    context "Advanced search" do
 
-    visit debates_path
-    fill_in "search", with: "Show what you got"
-    click_button "Search"
+      scenario "Search by text", :js do
+        debate1 = create(:debate, title: "Get Schwifty")
+        debate2 = create(:debate, title: "Schwifty Hello")
+        debate3 = create(:debate, title: "Do not show me")
 
-    expect(page).to have_selector('a.active', text: "relevance")
+        visit debates_path
 
-    within("#debates") do
-      expect(all(".debate")[0].text).to match "Show what you got"
-      expect(all(".debate")[1].text).to match "Show you got"
-      expect(all(".debate")[2].text).to match "Show you got"
+        find("h4.advanced-search-title").click
+        fill_in "Write the text", with: "Schwifty"
+        click_button "Filter"
+
+        within("#debates") do
+          expect(page).to have_css('.debate', count: 2)
+
+          expect(page).to have_content(debate1.title)
+          expect(page).to have_content(debate2.title)
+          expect(page).to_not have_content(debate3.title)
+        end
+      end
+
+      scenario "Search by author", :js do
+        ana = create :user, username: "Ana06"
+        john = create :user, username: "John Smith"
+
+        debate1 = create(:debate, author: ana)
+        debate2 = create(:debate, author: ana)
+        debate3 = create(:debate, author: john)
+
+        visit debates_path
+
+        find("h4.advanced-search-title").click
+        fill_in "Write the author name", with: "Ana06"
+        click_button "Filter"
+
+        within("#debates") do
+          expect(page).to have_css('.debate', count: 2)
+
+          expect(page).to have_content(debate1.title)
+          expect(page).to have_content(debate2.title)
+          expect(page).to_not have_content(debate3.title)
+        end
+      end
+
+      #NOTE: Test the different offical levels with unit tests.
+      scenario "Search by author category", :js do
+        ana = create :user, official_level: 1
+        john = create :user, official_level: 2
+
+        debate1 = create(:debate, author: ana)
+        debate2 = create(:debate, author: ana)
+        debate3 = create(:debate, author: john)
+
+        visit debates_path
+
+        find("h4.advanced-search-title").click
+        select "Public employee", from: "advanced_search_author_type"
+        click_button "Filter"
+
+        within("#debates") do
+          expect(page).to have_css('.debate', count: 2)
+
+          expect(page).to have_content(debate1.title)
+          expect(page).to have_content(debate2.title)
+          expect(page).to_not have_content(debate3.title)
+        end
+      end
+
+      context "Search by date" do
+
+        #NOTE: Test the different date ranges with unit tests.
+        scenario "Search by predefined date range", :js do
+          debate1 = create(:debate, created_at: 1.minute.ago)
+          debate2 = create(:debate, created_at: 1.hour.ago)
+          debate3 = create(:debate, created_at: 2.days.ago)
+
+          visit debates_path
+
+          find("h4.advanced-search-title").click
+          select "Last 24 hours", from: "advanced_search_date"
+          click_button "Filter"
+
+          within("#debates") do
+            expect(page).to have_css('.debate', count: 2)
+
+            expect(page).to have_content(debate1.title)
+            expect(page).to have_content(debate2.title)
+            expect(page).to_not have_content(debate3.title)
+          end
+        end
+
+        scenario "Search by custom date range", :js do
+          debate1 = create(:debate, created_at: 2.days.ago)
+          debate2 = create(:debate, created_at: 3.days.ago)
+          debate3 = create(:debate, created_at: 9.days.ago)
+
+          visit debates_path
+
+          find("h4.advanced-search-title").click
+          select "Customized", from: "advanced_search_date"
+          fill_in "advanced_search_date_min", with: 7.days.ago
+          fill_in "advanced_search_date_max", with: 1.days.ago
+          click_button "Filter"
+
+          within("#debates") do
+            expect(page).to have_css('.debate', count: 2)
+
+            expect(page).to have_content(debate1.title)
+            expect(page).to have_content(debate2.title)
+            expect(page).to_not have_content(debate3.title)
+          end
+        end
+
+      end
     end
-  end
 
-  pending "Reorder results maintaing search", :js do
-    debate1 = create(:debate, title: "Show you got",      cached_votes_up: 10,  created_at: 1.week.ago)
-    debate2 = create(:debate, title: "Show what you got", cached_votes_up: 1,   created_at: 1.month.ago)
-    debate3 = create(:debate, title: "Show you got",      cached_votes_up: 100, created_at: Time.now)
-    debate4 = create(:debate, title: "Do not display",    cached_votes_up: 1,   created_at: 1.week.ago)
+    pending "Order by relevance by default", :js do
+      debate1 = create(:debate, title: "Show you got",      cached_votes_up: 10)
+      debate2 = create(:debate, title: "Show what you got", cached_votes_up: 1)
+      debate3 = create(:debate, title: "Show you got",      cached_votes_up: 100)
 
-    visit debates_path
-    fill_in "search", with: "Show what you got"
-    click_button "Search"
+      visit debates_path
+      fill_in "search", with: "Show what you got"
+      click_button "Search"
 
-    click_link "newest"
-    expect(page).to have_selector('a.active', text: "Newest")
+      expect(page).to have_selector("a.active", text: "relevance")
 
-    within("#debates") do
-      expect(all(".debate")[0].text).to match "Show you got"
-      expect(all(".debate")[1].text).to match "Show you got"
-      expect(all(".debate")[2].text).to match "Show what you got"
-      expect(page).to_not have_content "Do not display"
+      within("#debates") do
+        expect(all(".debate")[0].text).to match "Show what you got"
+        expect(all(".debate")[1].text).to match "Show you got"
+        expect(all(".debate")[2].text).to match "Show you got"
+      end
     end
-  end
 
-  scenario 'Index search does not show featured debates' do
-    featured_debates = create_featured_debates
-    debate = create(:debate, title: "Abcdefghi")
+    pending "Reorder results maintaing search", :js do
+      debate1 = create(:debate, title: "Show you got",      cached_votes_up: 10,  created_at: 1.week.ago)
+      debate2 = create(:debate, title: "Show what you got", cached_votes_up: 1,   created_at: 1.month.ago)
+      debate3 = create(:debate, title: "Show you got",      cached_votes_up: 100, created_at: Time.now)
+      debate4 = create(:debate, title: "Do not display",    cached_votes_up: 1,   created_at: 1.week.ago)
 
-    visit debates_path
-    fill_in "search", with: debate.title
-    click_button "Search"
+      visit debates_path
+      fill_in "search", with: "Show what you got"
+      click_button "Search"
+      click_link 'newest'
+      expect(page).to have_selector("a.active", text: "newest")
 
-    expect(page).to_not have_selector('#debates .debate-featured')
-    expect(page).to_not have_selector('#featured-debates')
+      within("#debates") do
+        expect(all(".debate")[0].text).to match "Show you got"
+        expect(all(".debate")[1].text).to match "Show you got"
+        expect(all(".debate")[2].text).to match "Show what you got"
+        expect(page).to_not have_content "Do not display"
+      end
+    end
+
+    scenario 'After a search do not show featured debates' do
+      featured_debates = create_featured_debates
+      debate = create(:debate, title: "Abcdefghi")
+
+      visit debates_path
+      fill_in "search", with: debate.title
+      click_button "Search"
+
+      expect(page).to_not have_selector('#debates .debate-featured')
+      expect(page).to_not have_selector('#featured-debates')
+    end
+
   end
 
   scenario 'Index tag does not show featured debates' do
