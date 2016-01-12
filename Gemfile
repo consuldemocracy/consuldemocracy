@@ -24,7 +24,7 @@ gem 'devise'
 gem 'omniauth'
 gem 'omniauth-twitter'
 gem 'omniauth-facebook', '~> 3.0.0'
-gem 'omniauth-google-oauth2', '~> 0.2.10'
+gem 'omniauth-google-oauth2', '~> 0.3.0'
 
 gem 'kaminari'
 gem 'ancestry'

@@ -316,6 +316,7 @@ en:
       user_permission_verify_info: "* Only for users on Madrid City Census."
   notifications:
     index:
+      title: "Notifications"
       mark_all_as_read: "Mark all as read"
       empty_notifications: "You don't have new notifications."
       comments_on:
@@ -405,9 +406,9 @@ en:
     facebook:
       sign_in: "Sign in with Facebook"
       sign_up: "Sign up with Facebook"
-    google_oauth2:
-      sign_in: "Sign in with Google"
-      sign_up: "Sign up with Google"
+    #google_oauth2:
+    #  sign_in: "Sign in with Google"
+    #  sign_up: "Sign up with Google"
   legislation:
     help:
       title: "How I can comment this document?"
