@@ -1,16 +1,22 @@
 module Filterable
   extend ActiveSupport::Concern
 
-  class_methods do
+  included do
+    scope :by_author,         -> (author)         { where(author: author) }
+    scope :by_official_level, -> (official_level) { where(users: { official_level: official_level }).joins(:author) }
+    scope :by_date_range,     -> (start, finish)  { where(created_at: start.beginning_of_day..finish.end_of_day) }
+  end
 
+  class_methods do
     def filter(params)
       resources = self.all
       filters = parse_filters(params)
 
       if filters[:params_author]
-        author = User.where(username: filters[:params_author])
-        resources = author.count > 0 ? self.where(author_id: author.first.id) : self.none
+        author = User.where(username: filters[:params_author]).first
+        resources = author.present? ? self.by_author(author) : self.none
       end
+
       if filters[:params_date]
         case filters[:params_date]
         when '1'
@@ -22,14 +28,17 @@ module Filterable
         when '4'
           min_date_time = DateTime.now - 365.day
         when '5'
-          resources = self.where('created_at <= ?', filters[:params_date_max]) if filters[:params_date_max]
-          min_date_time = filters[:params_date_min]
+          min_date_time = filters[:params_date_min].to_time
         end
-        resources = self.where('created_at >= ?', min_date_time) if min_date_time
+
+        max_date_time = filters[:params_date_max].present? ? filters[:params_date_max].to_time : DateTime.now
+        if min_date_time && max_date_time
+          resources = self.by_date_range(min_date_time, max_date_time)
+        end
       end
+
       if filters[:params_author_type]
-        authors = User.where(official_level: filters[:params_author_type].to_i)
-        resources = self.where('author_id IN (?)', authors.map(&:id))
+        resources = self.by_official_level(filters[:params_author_type].to_i)
       end
       resources
     end
@@ -49,7 +58,6 @@ module Filterable
       end
       filters
     end
-
   end
 
 end
