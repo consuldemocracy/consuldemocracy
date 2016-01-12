@@ -24,10 +24,6 @@
           <% end %>
         </div>
 
-        <% unless @tag_filter || @search_terms %>
-          <%= render "featured_debates_static" %>
-        <% end %>
-
         <%= render 'shared/order_links', i18n_namespace: "debates.index" %>
 
         <div class="show-for-small-only">

@@ -17,7 +17,7 @@
                      type: "image/png" %>
     <%= content_for :social_media_meta_tags %>
 
-    <%= Setting.value_for(:per_page_code).try(:html_safe) %>
+    <%= Setting["per_page_code"].try(:html_safe) %>
 
   </head>
   <body>
