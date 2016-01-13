@@ -52,17 +52,14 @@ class User < ActiveRecord::Base
 
   before_validation :clean_document_number
 
-  def self.find_for_oauth(auth, signed_in_resource = nil)
-    # Get the identity and user if they exist
-    identity = Identity.find_for_oauth(auth)
+  def self.find_for_oauth(auth, current_user)
     identity = Identity.first_or_create_from_oauth(auth)
 
-    # If a signed_in_resource is provided it always overrides the existing user
+    # If a current is provided it always overrides the existing user
     # to prevent the identity being locked with accidentally created accounts.
     # Note that this may leave zombie accounts (with no associated identity) which
     # can be cleaned up at a later date.
-    user = signed_in_resource ? signed_in_resource : identity.user
-    user ||= first_or_create_for_oauth(auth)
+    user = current_user || identity.user || first_or_create_for_oauth(auth)
 
     identity.update(user: user)
     user
