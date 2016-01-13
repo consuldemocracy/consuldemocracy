@@ -12,6 +12,9 @@ class Comment < ActiveRecord::Base
   validates :user, presence: true
   validates_inclusion_of :commentable_type, in: ["Debate", "Proposal"]
 
+  validates :alignment, inclusion: { in: -1..1 }, unless: :parent_id
+  validates :alignment, presence: false, if: :parent_id
+
   validate :validate_body_length
 
   belongs_to :commentable, -> { with_hidden }, polymorphic: true, counter_cache: true

@@ -59,6 +59,15 @@
             <% end %>
 
             &nbsp;&bull;&nbsp;<time><%= l comment.created_at.to_datetime, format: :datetime %></time>
+            <% if comment.alignment %>
+              <% if comment.alignment > 0 %>
+                <%= t('comments.form.alignment.positive') %>
+              <% elsif comment.alignment < 0 %>
+                <%= t('comments.form.alignment.negative') %>
+              <% else %>
+                <%= t('comments.form.alignment.neutral') %>
+              <% end %>
+            <% end %>
           </div>
 
           <div class="comment-user

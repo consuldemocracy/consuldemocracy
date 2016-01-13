@@ -8,6 +8,12 @@
       <%= f.hidden_field :commentable_id, value: commentable.id %>
       <%= f.hidden_field :parent_id, value: parent_id %>
 
+      <div class="alignment">
+        <%= f.radio_button "alignment", "-1", label: t('comments.form.alignment.negative') %>
+        <%= f.radio_button "alignment", "0", label: t('comments.form.alignment.neutral') %>
+        <%= f.radio_button "alignment", "1", label: t('comments.form.alignment.positive') %>
+      </div>
+
       <%= f.submit comment_button_text(parent_id), class: "button radius small inline-block" %>
 
       <% if can? :comment_as_moderator, commentable %>

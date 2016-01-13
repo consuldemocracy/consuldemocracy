@@ -112,6 +112,7 @@ if ENV["SEED"]
     Comment.create!(user: author,
                     created_at: rand(debate.created_at .. Time.now),
                     commentable: debate,
+                    alignment: [-1, 0, 1].sample,
                     body: Faker::Lorem.sentence)
   end
 
@@ -124,6 +125,7 @@ if ENV["SEED"]
     Comment.create!(user: author,
                     created_at: rand(proposal.created_at .. Time.now),
                     commentable: proposal,
+                    alignment: [-1, 0, 1].sample,
                     body: Faker::Lorem.sentence)
   end
 

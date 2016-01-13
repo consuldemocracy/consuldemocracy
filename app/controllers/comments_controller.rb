@@ -40,7 +40,7 @@ class CommentsController < ApplicationController
   private
 
     def comment_params
-      params.require(:comment).permit(:commentable_type, :commentable_id, :parent_id, :body, :as_moderator, :as_administrator)
+      params.require(:comment).permit(:commentable_type, :commentable_id, :parent_id, :body, :as_moderator, :as_administrator, :alignment)
     end
 
     def build_comment
