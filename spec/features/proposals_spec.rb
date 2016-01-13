@@ -515,7 +515,7 @@ feature 'Proposals' do
     end
   end
 
-  context "Search", :focus do
+  context "Search" do
 
     context "Basic search" do
 
@@ -540,11 +540,22 @@ feature 'Proposals' do
         end
       end
 
+      scenario "Maintain search criteria" do
+        visit proposals_path
+
+        within "#search_form" do
+          fill_in "search", with: "Schwifty"
+          click_button "Search"
+        end
+
+        expect(page).to have_selector("input[name='search'][value='Schwifty']")
+      end
+
     end
 
     context "Advanced search" do
 
-      scenario "Search by text", :js, :focus do
+      scenario "Search by text", :js do
         proposal1 = create(:proposal, title: "Get Schwifty")
         proposal2 = create(:proposal, title: "Schwifty Hello")
         proposal3 = create(:proposal, title: "Do not show me")
@@ -653,6 +664,43 @@ feature 'Proposals' do
             expect(page).to have_content(proposal1.title)
             expect(page).to have_content(proposal2.title)
             expect(page).to_not have_content(proposal3.title)
+          end
+        end
+
+        scenario "Maintain advanced search criteria", :js do
+          visit proposals_path
+          find("h4.advanced-search-title").click
+
+          ### Pending fix when searching for text and another criteria
+          #fill_in "Write the text", with: "Schwifty"
+          ###
+          fill_in "Write the author name", with: "Ana06"
+          select "Public employee", from: "advanced_search_official_level"
+          select "Last 24 hours", from: "advanced_search_date_min"
+
+          click_button "Filter"
+
+          within "#advanced-search" do
+            ###expect(page).to have_selector("input[name='search'][value='Schwifty']")
+            expect(page).to have_selector("input[name='advanced_search[author]'][value='Ana06']")
+            expect(page).to have_select('advanced_search[official_level]', selected: 'Public employee')
+            expect(page).to have_select('advanced_search[date_min]', selected: 'Last 24 hours')
+          end
+        end
+
+        scenario "Maintain custom date search criteria", :js do
+          visit proposals_path
+          find("h4.advanced-search-title").click
+
+          select "Customized", from: "advanced_search_date_min"
+          fill_in "advanced_search_date_min", with: 7.days.ago
+          fill_in "advanced_search_date_max", with: 1.days.ago
+          click_button "Filter"
+
+          within "#advanced-search" do
+            expect(page).to have_select('advanced_search[date_min]', selected: 'Customized')
+            expect(page).to have_selector("input[name='advanced_search[date_min]'][value*='#{7.days.ago.strftime('%Y-%m-%d')}']")
+            expect(page).to have_selector("input[name='advanced_search[date_max]'][value*='#{1.day.ago.strftime('%Y-%m-%d')}']")
           end
         end
 

@@ -5,8 +5,8 @@
     <div class="small-12 column">
       <div class="row collapse">
         <div class="small-10 column">
-          <label for="search-form-header" class="sr-only"><%= t("#{i18n_namespace}.title") %></label>
-          <input type="text" id="search-form-header" name="search" placeholder="<%= t("#{i18n_namespace}.placeholder") %>" class="search-form">
+          <label class="sr-only"><%= t("#{i18n_namespace}.title") %></label>
+          <input type="text" name="search" placeholder="<%= t("#{i18n_namespace}.placeholder") %>" class="search-form" value="<%= params[:search] %>">
         </div>
         <div class="small-2 column">
           <button type="submit" class="button postfix" title="<%= t("#{i18n_namespace}.button") %>">

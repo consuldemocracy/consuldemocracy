@@ -23,6 +23,7 @@ App.AdvancedSearch =
   initialize: ->
     if App.AdvancedSearch.advanced_search_terms()
       $('#advanced-search').show()
+      App.AdvancedSearch.toggle_date_options()
 
     $('.advanced-search-title').on
       click: ->

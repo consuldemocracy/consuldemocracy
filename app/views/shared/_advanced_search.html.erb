@@ -9,13 +9,13 @@
 
     <div class="small-12 medium-12 advanced-search columns">
       <h5 class='search-option inline-block'><%= t("shared.advanced_search.general") %></h5>
-      <%= text_field_tag "search", @search_terms,
+      <%= text_field_tag "search", params[:search],
                          placeholder: t("shared.advanced_search.general_placeholder") %>
     </div>
 
     <div class="small-12 medium-6 advanced-search columns">
       <h5 class='search-option inline-block'><%= t("shared.advanced_search.author") %></h5>
-      <%= text_field_tag "advanced_search[author]", @params_author,
+      <%= text_field_tag "advanced_search[author]", params[:advanced_search].try(:[], :author),
                          placeholder: t("shared.advanced_search.author_placeholder") %>
     </div>
 
@@ -34,12 +34,14 @@
         &nbsp;&nbsp;
         <%= t("shared.advanced_search.from") %>:
         <div class='inline-block'>
-          <%= date_field 'advanced_search', 'date_min', max: Date.today, value: @params_date_min %>
+          <%= date_field 'advanced_search', 'date_min', max: Date.today,
+                         value: params[:advanced_search].try(:[], :date_min) %>
         </div>
         &nbsp;&nbsp;
         <%= t("shared.advanced_search.to") %>:
         <div class='inline-block'>
-          <%= date_field 'advanced_search', 'date_max', max: Date.today, value: @params_date_max %>
+          <%= date_field 'advanced_search', 'date_max', max: Date.today,
+                         value: params[:advanced_search].try(:[], :date_max) %>
         </div>
       </div>
     </div>
