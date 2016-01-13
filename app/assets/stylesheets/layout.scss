@@ -1749,39 +1749,6 @@ table {
         margin-top: $line-height/4;
         padding: $line-height/4 0;
         overflow: hidden;
-
-        @each $n in ("1", "2", "3","4", "5") {
-          &.level-#{$n} {
-            @if $n == "5" {
-              background: $comment-level-5;
-              padding: $line-height/4 $line-height/2;
-            }
-            @elseif $n == "1" {
-              background: none;
-              padding: $line-height/4 $line-height/2;
-            }
-            @else {
-              background: $comment-official;
-              padding: $line-height/4 $line-height/2;
-            }
-          }
-        }
-
-        &.is-author {
-          background: $comment-author;
-          padding: $line-height/4 $line-height/2;
-        }
-
-        &.is-admin, &.is-moderator {
-          background: $comment-admin;
-          padding: $line-height/4 $line-height/2;
-        }
-
-        &.level-5 {
-          background: $comment-level-5;
-          padding: $line-height/4 $line-height/2;
-        }
-
       }
     }
 

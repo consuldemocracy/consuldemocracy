@@ -26,7 +26,7 @@ module CommentsHelper
     elsif comment.as_moderator?
       "is-moderator"
     elsif comment.user.official?
-      "level-#{comment.user.official_level}"
+      "user-level-#{comment.user.official_level}"
     else
       "" # Default no special user class
     end
