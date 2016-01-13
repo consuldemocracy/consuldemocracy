@@ -128,7 +128,7 @@ class ProposalFilters extends React.Component {
 
     $('#proposals').html('Loading...');
     this.replaceUrl(data);
-    $.ajax(this.props.filterUrl, { data });
+    $.ajax(this.props.filterUrl, { data, dataType: "script" });
   }
 
   replaceUrl(data) {
