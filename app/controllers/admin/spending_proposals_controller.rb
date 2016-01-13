@@ -1,7 +1,7 @@
 class Admin::SpendingProposalsController < Admin::BaseController
   has_filters %w{unresolved accepted rejected}, only: :index
 
-  before_action :load_spending_proposal, except: [:index, :show]
+  load_and_authorize_resource except: [:index, :show]
 
   def index
     @spending_proposals = SpendingProposal.includes([:geozone]).send(@current_filter).order(created_at: :desc).page(params[:page])
@@ -20,11 +20,5 @@ class Admin::SpendingProposalsController < Admin::BaseController
     @spending_proposal.reject
     redirect_to request.query_parameters.merge(action: :index)
   end
-
-  private
-
-    def load_spending_proposal
-      @spending_proposal = SpendingProposal.find(params[:id])
-    end
 
 end
