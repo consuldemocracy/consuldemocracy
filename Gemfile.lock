@@ -350,16 +350,6 @@ GEM
       sprockets (>= 2.8, < 4.0)
       sprockets-rails (>= 2.0, < 4.0)
       tilt (>= 1.1, < 3)
-    sassc (1.8.3)
-      bundler
-      ffi (~> 1.9.6)
-      sass (>= 3.3.0)
-    sassc-rails (1.1.0)
-      rails (>= 4.0.0)
-      sass
-      sassc (~> 1.6)
-      sprockets (> 2.11)
-      tilt
     savon (2.11.1)
       akami (~> 1.2)
       builder (>= 2.1.2)
