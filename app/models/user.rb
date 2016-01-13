@@ -52,39 +52,21 @@ class User < ActiveRecord::Base
 
   before_validation :clean_document_number
 
-  def self.find_for_oauth(auth, current_user)
-    identity = Identity.first_or_create_from_oauth(auth)
-
-    # If a current is provided it always overrides the existing user
-    # to prevent the identity being locked with accidentally created accounts.
-    # Note that this may leave zombie accounts (with no associated identity) which
-    # can be cleaned up at a later date.
-    user = current_user || identity.user || first_or_create_for_oauth(auth)
-
-    identity.update(user: user)
-    user
-  end
-
   # Get the existing user by email if the provider gives us a verified email.
-  # If no verified email was provided we assign a temporary email and ask the
-  # user to verify it on the next step via RegistrationsController.finish_signup
-  def self.first_or_create_for_oauth(auth)
-    email = auth.info.email if auth.info.verified || auth.info.verified_email
-    user  = User.where(email: email).first if email
 
-    # Create the user if it's a new registration
-    if user.nil?
-      user = User.new(
-        username: auth.info.nickname || auth.extra.raw_info.name.parameterize('-') || auth.uid,
-        email: email ? email : "#{OMNIAUTH_EMAIL_PREFIX}-#{auth.uid}-#{auth.provider}.com",
-        password: Devise.friendly_token[0,20],
-        terms_of_service: '1'
-      )
-      user.skip_confirmation!
-      user.save!
+  def self.first_or_initialize_for_oauth(auth)
+    email, user = nil, nil
+    if auth.info.verified || auth.info.verified_email
+      email = auth.info.email
+      user = User.where(email: email).first if email
     end
-
-    user
+    user || User.new(
+      username: auth.info.nickname || auth.extra.raw_info.name.parameterize('-') || auth.uid,
+      email: email || "#{OMNIAUTH_EMAIL_PREFIX}-#{auth.uid}-#{auth.provider}.com",
+      password: Devise.friendly_token[0,20],
+      terms_of_service: '1',
+      confirmed_at: Time.now
+    )
   end
 
   def name
