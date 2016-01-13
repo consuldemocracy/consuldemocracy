@@ -23,9 +23,13 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   private
 
     def sign_in_with(provider)
-      @user = User.find_for_oauth(env["omniauth.auth"], current_user)
+      auth = env["omniauth.auth"]
 
-      if @user.persisted?
+      identity = Identity.first_or_create_from_oauth(auth)
+      @user = current_user || identity.user || User.first_or_initialize_for_oauth(auth)
+
+      if @user.save
+        identity.update(user: @user)
         sign_in_and_redirect @user, event: :authentication
         set_flash_message(:notice, :success, kind: "#{provider}".capitalize) if is_navigational_format?
       else
