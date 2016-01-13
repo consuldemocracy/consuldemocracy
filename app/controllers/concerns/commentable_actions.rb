@@ -84,7 +84,7 @@ module CommentableActions
     end
 
     def parse_advanced_search_terms
-      @advanced_search_present = @advanced_search_terms = params[:advanced_search] if params[:advanced_search].present?
+      @advanced_search_terms = params[:advanced_search] if params[:advanced_search].present?
       parse_search_date
     end
 

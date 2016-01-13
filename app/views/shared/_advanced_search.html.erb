@@ -57,7 +57,7 @@
 
 //open advantage options menu
 
-var open = <%= raw @advanced_search_present.to_json.html_safe %>;
+var open = <%= raw @advanced_search_terms.to_json.html_safe %>;
 
 if(!open) $('#advanced-search').hide();
 
