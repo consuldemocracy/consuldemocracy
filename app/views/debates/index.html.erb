@@ -32,22 +32,6 @@
 
         <%= render 'shared/order_links', i18n_namespace: "debates.index" %>
 
-        <% if @tag_filter || @search_terms || @advanced_search_terms %>
-          <div class="small-12 medium-5 margin-top inline-block debates-order">
-            <h6 class="inline-block">
-              <%= t("debates.index.select_order") %>
-            </h6>
-            <%= render 'shared/order_selector', i18n_namespace: "debates.index" %>
-          </div>
-        <% else %>
-          <div class="small-12 inline-block">
-            <h2 class="inline-block">
-              <%= t("debates.index.select_order_long") %>
-            </h2>
-            <%= render 'shared/order_selector', i18n_namespace: "debates.index" %>
-          </div>
-        <% end %>
-
         <div class="small-12 medium-12 advanced-search row">
           <%= render "shared/advanced_search",
                      search_path: debates_path(page: 1) %>
