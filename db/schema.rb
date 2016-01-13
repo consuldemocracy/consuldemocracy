@@ -171,6 +171,14 @@ ActiveRecord::Schema.define(version: 20160108133501) do
   add_index "flags", ["user_id", "flaggable_type", "flaggable_id"], name: "access_inappropiate_flags", using: :btree
   add_index "flags", ["user_id"], name: "index_flags_on_user_id", using: :btree
 
+  create_table "geozones", force: :cascade do |t|
+    t.string   "name"
+    t.string   "html_map_coordinates"
+    t.string   "external_code"
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+  end
+
   create_table "identities", force: :cascade do |t|
     t.integer  "user_id"
     t.string   "provider"
@@ -191,7 +199,7 @@ ActiveRecord::Schema.define(version: 20160108133501) do
   create_table "locks", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "tries",        default: 0
-    t.datetime "locked_until", default: '2000-01-01 07:01:01', null: false
+    t.datetime "locked_until", default: '2000-01-01 00:01:01', null: false
     t.datetime "created_at",                                   null: false
     t.datetime "updated_at",                                   null: false
   end
@@ -273,6 +281,21 @@ ActiveRecord::Schema.define(version: 20160108133501) do
 
   add_index "simple_captcha_data", ["key"], name: "idx_key", using: :btree
 
+  create_table "spending_proposals", force: :cascade do |t|
+    t.string   "title"
+    t.text     "description"
+    t.integer  "author_id"
+    t.string   "external_url"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.integer  "geozone_id"
+    t.string   "resolution"
+  end
+
+  add_index "spending_proposals", ["author_id"], name: "index_spending_proposals_on_author_id", using: :btree
+  add_index "spending_proposals", ["geozone_id"], name: "index_spending_proposals_on_geozone_id", using: :btree
+  add_index "spending_proposals", ["resolution"], name: "index_spending_proposals_on_resolution", using: :btree
+
   create_table "taggings", force: :cascade do |t|
     t.integer  "tag_id"
     t.integer  "taggable_id"
@@ -287,16 +310,18 @@ ActiveRecord::Schema.define(version: 20160108133501) do
   add_index "taggings", ["taggable_id", "taggable_type", "context"], name: "index_taggings_on_taggable_id_and_taggable_type_and_context", using: :btree
 
   create_table "tags", force: :cascade do |t|
-    t.string  "name",            limit: 40
-    t.integer "taggings_count",             default: 0
-    t.boolean "featured",                   default: false
-    t.integer "debates_count",              default: 0
-    t.integer "proposals_count",            default: 0
+    t.string  "name",                     limit: 40
+    t.integer "taggings_count",                      default: 0
+    t.boolean "featured",                            default: false
+    t.integer "debates_count",                       default: 0
+    t.integer "proposals_count",                     default: 0
+    t.integer "spending_proposals_count",            default: 0
   end
 
   add_index "tags", ["debates_count"], name: "index_tags_on_debates_count", using: :btree
   add_index "tags", ["name"], name: "index_tags_on_name", unique: true, using: :btree
   add_index "tags", ["proposals_count"], name: "index_tags_on_proposals_count", using: :btree
+  add_index "tags", ["spending_proposals_count"], name: "index_tags_on_spending_proposals_count", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                                default: ""

@@ -37,6 +37,9 @@ es:
       proposal:
         one: "Propuesta ciudadana"
         other: "Propuestas ciudadanas"
+      spending_proposal:
+        one: "Propuesta de gasto"
+        other: "Propuestas de gasto"
     attributes:
       comment:
         body: "Comentario"

@@ -29,6 +29,7 @@ es:
       more_information: "Más información"
       debates: "Debates"
       proposals: "Propuestas"
+      spending_proposals: "Presupuestos ciudadanos"
       new_notifications:
         one: "Tienes una nueva notificación"
         other: "Tienes %{count} notificaciones nuevas"
@@ -75,6 +76,7 @@ es:
     user: "la cuenta"
     debate: "el debate"
     proposal: "la propuesta"
+    spending_proposal: "la propuesta de gasto"
     verification::sms: "el teléfono"
     verification::letter: "la verificación"
   application:
@@ -207,7 +209,7 @@ es:
       proposal_responsible_name: "Nombre y apellidos de la persona que hace esta propuesta"
       proposal_responsible_name_note: "(individualmente o como representante de un colectivo; no se mostrará públicamente)"
       tags_label: "Temas"
-      tags_instructions: "Etiqueta esta propuesta. Puedes elegir entre nuestras propuestas o introducir las que desees."
+      tags_instructions: "Etiqueta esta propuesta. Puedes elegir entre nuestras sugerencias o introducir las que desees."
       tags_placeholder: "Escribe las etiquetas que desees separadas por una coma (',')"
     show:
       back_link: "Volver"
@@ -244,6 +246,31 @@ es:
     update:
       form:
         submit_button: "Guardar cambios"
+  spending_proposals:
+    index:
+      title: "Presupuestos participativos"
+      text: "Desde esta sección podrás sugerir propuestas de gasto que irán asociadas a las partidas de presupuestos ciudadanos. El requisito principal es que sean propuestas presupuestables."
+      create_link: "Enviar propuesta de gasto"
+      verified_only: "Sólo los usuarios verificados pueden crear propuestas de gasto, %{verify_account}."
+      verify_account: "verifica tu cuenta"
+    new:
+      back_link: Volver
+      start_new: "Crear una propuesta de gasto"
+      more_info: "¿Cómo funcionan los presupuestos participativos?"
+      recommendations_title: "Recomendaciones para crear una propuesta de gasto"
+      recommendation_one: "Es fundamental que haga referencia a una actuación presupuestable."
+      recommendation_two: "Cualquier propuesta o comentario que implique acciones ilegales será eliminada."
+      recommendation_three: "Intenta detallar lo máximo posible la propuesta para que el equipo de gobierno encargado de estudiarla tenga las menor dudas posibles."
+    form:
+      title: "Título de la propuesta de gasto"
+      description: "Descripción detallada"
+      external_url: "Enlace a documentación adicional"
+      geozone: "Ámbito de actuación"
+      submit_buttons:
+        new: Crear
+        create: Crear
+  geozones:
+    none: "Toda la ciudad"
   comments:
     show:
       return_to_commentable: "Volver a "
@@ -332,6 +359,7 @@ es:
       user: "el código secreto no coincide con la imagen"
       debate: "el código secreto no coincide con la imagen"
       proposal: "el código secreto no coincide con la imagen"
+      spendingproposal: "el código secreto no coincide con la imagen"
   shared:
     author_info:
       author_deleted: Usuario eliminado
