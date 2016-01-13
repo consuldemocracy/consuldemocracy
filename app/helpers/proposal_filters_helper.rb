@@ -3,7 +3,7 @@ module ProposalFiltersHelper
     react_component(
       'ProposalFilters', 
       filter: options[:filter],
-      filterUrl: proposals_url(format: :js),
+      filterUrl: proposals_url,
       districts: Proposal::DISTRICTS,
       categories: serialized_categories,
       subcategories: serialized_subcategories
