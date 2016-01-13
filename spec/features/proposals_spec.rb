@@ -525,8 +525,11 @@ feature 'Proposals' do
         proposal3 = create(:proposal, title: "Do not show me")
 
         visit proposals_path
-        fill_in "search", with: "Schwifty"
-        click_button "Search"
+
+        within "#search_form" do
+          fill_in "search", with: "Schwifty"
+          click_button "Search"
+        end
 
         within("#proposals") do
           expect(page).to have_css('.proposal', count: 2)
@@ -541,7 +544,7 @@ feature 'Proposals' do
 
     context "Advanced search" do
 
-      scenario "Search by text", :js do
+      scenario "Search by text", :js, :focus do
         proposal1 = create(:proposal, title: "Get Schwifty")
         proposal2 = create(:proposal, title: "Schwifty Hello")
         proposal3 = create(:proposal, title: "Do not show me")
@@ -585,7 +588,7 @@ feature 'Proposals' do
       end
 
       #NOTE: Test the different offical levels with unit tests.
-      scenario "Search by author category", :js do
+      scenario "Search by author type", :js do
         ana = create :user, official_level: 1
         john = create :user, official_level: 2
 
@@ -596,7 +599,7 @@ feature 'Proposals' do
         visit proposals_path
 
         find("h4.advanced-search-title").click
-        select "Public employee", from: "advanced_search_author_type"
+        select "Public employee", from: "advanced_search_official_level"
         click_button "Filter"
 
         within("#proposals") do
@@ -619,7 +622,7 @@ feature 'Proposals' do
           visit proposals_path
 
           find("h4.advanced-search-title").click
-          select "Last 24 hours", from: "advanced_search_date"
+          select "Last 24 hours", from: "advanced_search_date_min"
           click_button "Filter"
 
           within("#proposals") do
@@ -639,7 +642,7 @@ feature 'Proposals' do
           visit proposals_path
 
           find("h4.advanced-search-title").click
-          select "Customized", from: "advanced_search_date"
+          select "Customized", from: "advanced_search_date_min"
           fill_in "advanced_search_date_min", with: 7.days.ago
           fill_in "advanced_search_date_max", with: 1.days.ago
           click_button "Filter"
@@ -699,8 +702,10 @@ feature 'Proposals' do
       proposal = create(:proposal, title: "Abcdefghi")
 
       visit proposals_path
-      fill_in "search", with: proposal.title
-      click_button "Search"
+      within "#search_form" do
+        fill_in "search", with: proposal.title
+        click_button "Search"
+      end
 
       expect(page).to_not have_selector('#proposals .proposal-featured')
       expect(page).to_not have_selector('#featured-proposals')

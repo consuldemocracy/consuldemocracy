@@ -1,8 +1,3 @@
-<% # Params:
-   #
-   #   search_path: for example proposals_path
-%>
-
 <div class="small-12 medium-12 columns">
   <h4 class='advanced-search-title'><%= t("shared.advanced_search.title") %></h4>
 </div>
@@ -12,30 +7,37 @@
 
     <div class="small-12 medium-12 advanced-search columns">
       <h5 class='search-option inline-block'><%= t("shared.advanced_search.general") %></h5>
-      <%= text_field_tag "advanced_search[search]", @search_terms, placeholder: t("shared.advanced_search.general_placeholder") %>
+      <%= text_field_tag "search", @search_terms,
+                         placeholder: t("shared.advanced_search.general_placeholder") %>
     </div>
 
     <div class="small-12 medium-6 advanced-search columns">
       <h5 class='search-option inline-block'><%= t("shared.advanced_search.author") %></h5>
-      <%= text_field_tag "advanced_search[author]", @params_author, placeholder: t("shared.advanced_search.author_placeholder") %>
+      <%= text_field_tag "advanced_search[author]", @params_author,
+                         placeholder: t("shared.advanced_search.author_placeholder") %>
     </div>
 
     <div class="small-12 medium-6 advanced-search columns">
       <h5 class='search-option'><%= t("shared.advanced_search.author_type") %></h5>
-      <%= select_tag('advanced_search[author_type]', options_for_select([[t("shared.advanced_search.author_type_1"), 1], [t("shared.advanced_search.author_type_2"), 2],[t("shared.advanced_search.author_type_3"), 3],[t("shared.advanced_search.author_type_4"), 4],[t("shared.advanced_search.author_type_5"), 5]], @params_author_type), include_blank: t("shared.advanced_search.author_type_blank")) %>
+      <%= select_tag('advanced_search[official_level]', official_level_options,
+                    include_blank: t("shared.advanced_search.author_type_blank")) %>
     </div>
 
     <div class="small-12 advanced-search columns">
       <h5 class='search-option'><%= t("shared.advanced_search.date") %></h5>
-      <%= select_tag('advanced_search[date]', options_for_select([[t("shared.advanced_search.date_1"), 1], [t("shared.advanced_search.date_2"), 2], [t("shared.advanced_search.date_3"), 3],[t("shared.advanced_search.date_4"), 4], [t("shared.advanced_search.date_5"), 5]], @params_date), include_blank: 'Elige una fecha') %>
+      <%= select_tag('advanced_search[date_min]', date_range_options,
+                    include_blank: 'Elige una fecha') %>
+
       <div class='customized-date inline-block'>
-        &nbsp;&nbsp;<%= t("shared.advanced_search.from") %>:
+        &nbsp;&nbsp;
+        <%= t("shared.advanced_search.from") %>:
         <div class='inline-block'>
-        <%= date_field 'advanced_search', 'date_min', max:Date.today, value: @params_date_min %>
+          <%= date_field 'advanced_search', 'date_min', max: Date.today, value: @params_date_min %>
         </div>
-        &nbsp;&nbsp;<%= t("shared.advanced_search.to") %>:
+        &nbsp;&nbsp;
+        <%= t("shared.advanced_search.to") %>:
         <div class='inline-block'>
-        <%= date_field 'advanced_search', 'date_max', max:Date.today, value: @params_date_max %>
+          <%= date_field 'advanced_search', 'date_max', max: Date.today, value: @params_date_max %>
         </div>
       </div>
     </div>
@@ -73,14 +75,16 @@ $('.advanced-search-title').on({
 
 //hide customized-date if it is not selected
 
-if($('#advanced_search_date').val() != 5){
+if($('#advanced_search_date_min').val() != 'custom'){
   $('.customized-date').hide();
+  $('.customized-date input').prop('disabled', true);
 }
 
-$('#advanced_search_date').on('change',function(e){
+$('#advanced_search_date_min').on('change',function(e){
   var next = $(e.target).next();
-  if($(this).val() == 5){
+  if($(this).val() == 'custom'){
     next.show();
+    $('.customized-date input').prop('disabled', false);
   }
   else{
     next.hide();

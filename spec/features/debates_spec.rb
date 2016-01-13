@@ -462,8 +462,11 @@ feature 'Debates' do
         debate3 = create(:debate, title: "Do not show me")
 
         visit debates_path
-        fill_in "search", with: "Schwifty"
-        click_button "Search"
+
+        within "#search_form" do
+          fill_in "search", with: "Schwifty"
+          click_button "Search"
+        end
 
         within("#debates") do
           expect(page).to have_css('.debate', count: 2)
@@ -478,7 +481,7 @@ feature 'Debates' do
 
     context "Advanced search" do
 
-      scenario "Search by text", :js do
+      scenario "Search by text", :js, :focus do
         debate1 = create(:debate, title: "Get Schwifty")
         debate2 = create(:debate, title: "Schwifty Hello")
         debate3 = create(:debate, title: "Do not show me")
@@ -522,7 +525,7 @@ feature 'Debates' do
       end
 
       #NOTE: Test the different offical levels with unit tests.
-      scenario "Search by author category", :js do
+      scenario "Search by author type", :js do
         ana = create :user, official_level: 1
         john = create :user, official_level: 2
 
@@ -533,7 +536,7 @@ feature 'Debates' do
         visit debates_path
 
         find("h4.advanced-search-title").click
-        select "Public employee", from: "advanced_search_author_type"
+        select "Public employee", from: "advanced_search_official_level"
         click_button "Filter"
 
         within("#debates") do
@@ -556,7 +559,7 @@ feature 'Debates' do
           visit debates_path
 
           find("h4.advanced-search-title").click
-          select "Last 24 hours", from: "advanced_search_date"
+          select "Last 24 hours", from: "advanced_search_date_min"
           click_button "Filter"
 
           within("#debates") do
@@ -576,7 +579,7 @@ feature 'Debates' do
           visit debates_path
 
           find("h4.advanced-search-title").click
-          select "Customized", from: "advanced_search_date"
+          select "Customized", from: "advanced_search_date_min"
           fill_in "advanced_search_date_min", with: 7.days.ago
           fill_in "advanced_search_date_max", with: 1.days.ago
           click_button "Filter"
@@ -636,8 +639,10 @@ feature 'Debates' do
       debate = create(:debate, title: "Abcdefghi")
 
       visit debates_path
-      fill_in "search", with: debate.title
-      click_button "Search"
+      within "#search_form" do
+        fill_in "search", with: debate.title
+        click_button "Search"
+      end
 
       expect(page).to_not have_selector('#debates .debate-featured')
       expect(page).to_not have_selector('#featured-debates')

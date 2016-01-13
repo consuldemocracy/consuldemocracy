@@ -85,7 +85,20 @@ module CommentableActions
 
     def parse_advanced_search_terms
       @advanced_search_present = @advanced_search_terms = params[:advanced_search] if params[:advanced_search].present?
-      @search_terms = params[:advanced_search][:search] if params[:advanced_search] && params[:advanced_search][:search].present?
+      parse_search_date
+    end
+
+    def parse_search_date
+      return unless search_by_date?
+
+      start  = params[:advanced_search][:date_min].to_time
+      finish = params[:advanced_search][:date_max].try(:to_time) || Time.now
+
+      params[:advanced_search][:date_range] = start.beginning_of_day..finish.end_of_day
+    end
+
+    def search_by_date?
+      params[:advanced_search] && params[:advanced_search][:date_min].present?
     end
 
     def set_search_order
