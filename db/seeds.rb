@@ -73,10 +73,18 @@ if ENV["SEED"]
 
   tags = Faker::Lorem.words(25)
 
-  (1..30).each do |i|
+  (1..150).each do |i|
     author = User.reorder("RANDOM()").first
     description = "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>"
     subcategory = Subcategory.offset(rand(Subcategory.count)).first
+
+    if [true, false].sample
+      scope = 'district'
+      district = Proposal::DISTRICTS.map(&:last).sample
+    else
+      scope = 'city'
+      district = nil
+    end
 
     proposal = Proposal.create!(author: author,
                                 title: Faker::Lorem.sentence(3).truncate(60),
@@ -89,7 +97,8 @@ if ENV["SEED"]
                                 tag_list: tags.sample(3).join(','),
                                 subcategory: subcategory,
                                 category: subcategory.category,
-                                scope: 'city',
+                                scope: scope,
+                                district: district,
                                 terms_of_service: "1")
     puts "    #{proposal.title}"
   end
