@@ -381,6 +381,7 @@ es:
       author_placeholder: 'Escribe el nombre del autor'
       author_type: 'Por categoría de autor'
       author_type_blank: 'Elige una categoría'
+      date_range_blank: 'Elige una fecha'
       author_type_1: 'Empleado público'
       author_type_2: 'Organización Municipal'
       author_type_3: 'Director general'

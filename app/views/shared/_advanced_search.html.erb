@@ -28,7 +28,7 @@
     <div class="small-12 advanced-search columns">
       <h5 class='search-option'><%= t("shared.advanced_search.date") %></h5>
       <%= select_tag('advanced_search[date_min]', date_range_options,
-                    include_blank: 'Elige una fecha') %>
+                    include_blank: t("shared.advanced_search.date_range_blank")) %>
 
       <div class='customized-date inline-block' style="display: none">
         &nbsp;&nbsp;

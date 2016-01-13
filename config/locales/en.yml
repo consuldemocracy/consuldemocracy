@@ -381,6 +381,7 @@ en:
       author_placeholder: 'Write the author name'
       author_type: 'By author category'
       author_type_blank: 'Select a category'
+      date_range_blank: 'Choose a date'
       author_type_1: 'Public employee'
       author_type_2: 'Municipal Organization'
       author_type_3: 'General director'
