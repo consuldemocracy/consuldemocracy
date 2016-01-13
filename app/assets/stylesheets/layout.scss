@@ -1677,6 +1677,12 @@ table {
     }
   }
 
+  .new_comment{
+    .alignment-input{
+      margin-right: 1em;
+    }
+  }
+
   .comment {
     margin: $line-height/4 0;
 
@@ -1703,6 +1709,22 @@ table {
       [class^="icon-"] {
         font-size: rem-calc(20);
         vertical-align: middle;
+      }
+    }
+
+    &.positive > .comment-body{
+      & > .comment-user{
+        @include label-style(lighten(#43AC6A, 35%))
+        padding-left: 0.5em;
+        padding-right: 0.5em;
+      }
+    }
+
+    &.negative > .comment-body{
+      & > .comment-user{
+        @include label-style(lighten(#f04124, 35%))
+        padding-left: 0.5em;
+        padding-right: 0.5em;
       }
     }
 
@@ -1759,6 +1781,7 @@ table {
           background: $comment-level-5;
           padding: $line-height/4 $line-height/2;
         }
+
       }
     }
 

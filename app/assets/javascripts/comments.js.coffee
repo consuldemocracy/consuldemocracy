@@ -2,16 +2,23 @@ App.Comments =
 
   add_comment: (parent_id, response_html) ->
     $(response_html).insertAfter($("#js-comment-form-#{parent_id}"))
-    this.update_comments_count()
 
   add_reply: (parent_id, response_html) ->
     $("##{parent_id} .comment-children:first").prepend($(response_html))
     this.update_comments_count()
 
-  update_comments_count: (parent_id) ->
-    $(".js-comments-count").each ->
-      new_val = $(this).text().trim().replace /\d+/, (match) -> parseInt(match, 10) + 1
-      $(this).text(new_val)
+  update_comments_count: (alignment) ->
+    comments_count = null;
+
+    if(alignment > 0)
+      comments_count = $(".js-comments-count.positive");
+    else if alignment < 0
+      comments_count = $(".js-comments-count.negative");
+    else
+      comments_count = $(".js-comments-count.neutral");
+
+    new_val = comments_count.text().trim().replace /\d+/, (match) -> parseInt(match, 10) + 1
+    comments_count.text(new_val)
 
   display_error: (field_with_errors, error_html) ->
     $(error_html).insertAfter($("#{field_with_errors}"))

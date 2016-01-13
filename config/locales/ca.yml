@@ -49,6 +49,10 @@ ca:
       comment_as_admin: Comentar com a administrador
       comment_as_moderator: Comentar com a moderador
       leave_comment: Deixa el teu comentari
+      alignment:
+        positive: "A favor"
+        negative: "En contra"
+        neutral: "Neutral"
     orders:
       most_voted: Més votats
       newest: Més nous primer

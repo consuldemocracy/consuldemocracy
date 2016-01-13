@@ -1,6 +1,6 @@
 <% cache [locale_and_user_status(comment), comment, commentable_cache_key(comment.commentable), comment.author, (@comment_flags[comment.id] if @comment_flags)] do %>
   <div class="row">
-  	<div id="<%= dom_id(comment) %>" class="comment small-12 column">
+  	<div id="<%= dom_id(comment) %>" class="comment small-12 column <%= comment_class_names comment %>">
 
       <% if comment.hidden? || comment.user.hidden? %>
         <% if comment.children.size > 0 %>
@@ -43,6 +43,24 @@
                   </span>
                 <% end %>
               <% end %>
+
+              <% if comment.alignment %>
+                &nbsp;&bull;&nbsp;
+                <% if comment.alignment > 0 %>
+                  <span class="success round label">
+                    <%= t('comments.form.alignment.positive') %>
+                  </span>
+                <% elsif comment.alignment < 0 %>
+                  <span class="alert round label">
+                    <%= t('comments.form.alignment.negative') %>
+                  </span>
+                <% else %>
+                  <span class="secondary round label">
+                    <%= t('comments.form.alignment.neutral') %>
+                  </span>
+                <% end %>
+              <% end %>
+
               <% if comment.user.verified_organization? %>
                 &nbsp;&bull;&nbsp;
                 <span class="label round is-association">
@@ -59,15 +77,6 @@
             <% end %>
 
             &nbsp;&bull;&nbsp;<time><%= l comment.created_at.to_datetime, format: :datetime %></time>
-            <% if comment.alignment %>
-              <% if comment.alignment > 0 %>
-                <%= t('comments.form.alignment.positive') %>
-              <% elsif comment.alignment < 0 %>
-                <%= t('comments.form.alignment.negative') %>
-              <% else %>
-                <%= t('comments.form.alignment.neutral') %>
-              <% end %>
-            <% end %>
           </div>
 
           <div class="comment-user

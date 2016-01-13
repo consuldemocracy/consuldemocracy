@@ -44,7 +44,7 @@ class CommentsController < ApplicationController
     end
 
     def build_comment
-      @comment = Comment.build(@commentable, current_user, comment_params[:body], comment_params[:parent_id].presence)
+      @comment = Comment.build(@commentable, current_user, comment_params)
       check_for_special_comments
     end
 
