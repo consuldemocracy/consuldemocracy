@@ -1,4 +1,7 @@
 class Proposal < ActiveRecord::Base
+
+  DISTRICTS = YAML::load_file("#{Rails.root}/config/districts.yml")["districts"].to_a.map(&:reverse).map {|a,b| [a.to_s, b.to_s]}.sort
+
   include Flaggable
   include Taggable
   include Conflictable
@@ -27,6 +30,7 @@ class Proposal < ActiveRecord::Base
   validates :title, length: { in: 4..Proposal.title_max_length }
   validates :description, length: { maximum: Proposal.description_max_length }
   validates :scope, inclusion: { in: %w(city district) }
+  validates :district, inclusion: { in: DISTRICTS.map(&:last).map(&:to_i), allow_nil: true }
   validates :question, length: { in: 10..Proposal.question_max_length }
   validates :responsible_name, length: { in: 6..Proposal.responsible_name_max_length }
 
@@ -134,8 +138,6 @@ class Proposal < ActiveRecord::Base
   def self.votes_needed_for_success
     Setting['votes_for_proposal_success'].to_i
   end
-
-  DISTRICTS = YAML::load_file("#{Rails.root}/config/districts.yml")["districts"].to_a.map(&:reverse).map {|a,b| [a.to_s, b.to_s]}.sort
 
   protected
 
