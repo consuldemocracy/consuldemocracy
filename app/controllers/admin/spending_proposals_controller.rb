@@ -1,14 +1,13 @@
 class Admin::SpendingProposalsController < Admin::BaseController
   has_filters %w{unresolved accepted rejected}, only: :index
 
-  load_and_authorize_resource except: [:index, :show]
+  load_and_authorize_resource
 
   def index
-    @spending_proposals = SpendingProposal.includes([:geozone]).send(@current_filter).order(created_at: :desc).page(params[:page])
+    @spending_proposals = @spending_proposals.includes([:geozone]).send(@current_filter).order(created_at: :desc).page(params[:page])
   end
 
   def show
-    @spending_proposal = SpendingProposal.includes([:author, :geozone]).find(params[:id])
   end
 
   def accept

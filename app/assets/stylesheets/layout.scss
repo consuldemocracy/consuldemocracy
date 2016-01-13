@@ -220,6 +220,16 @@ a {
   }
 }
 
+.sub-nav {
+  border-bottom: 1px solid $border;
+
+  dd.active {
+    border-bottom: 2px solid $brand;
+    color: $brand;
+    padding-bottom: $line-height/4;
+  }
+}
+
 // 02. Header
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -974,7 +984,7 @@ img.avatar, img.admin-avatar, img.moderator-avatar, img.initialjs-avatar {
   height: 100%;
   left: 28px;
   position: absolute;
-  top: 0;
+  top: 84px;
   width: 2px;
 }
 
@@ -1802,17 +1812,6 @@ table {
 
 .activity {
   margin-bottom: $line-height*2;
-  margin-top: $line-height;
-
-  .sub-nav {
-    border-bottom: 1px solid $border;
-
-    dd.active {
-      border-bottom: 2px solid $brand;
-      color: $brand;
-      padding-bottom: $line-height/4;
-    }
-  }
 
   table {
     border: 0;
