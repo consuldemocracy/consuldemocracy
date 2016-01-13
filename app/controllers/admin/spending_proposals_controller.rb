@@ -8,7 +8,6 @@ class Admin::SpendingProposalsController < Admin::BaseController
   end
 
   def show
-    @spending_proposal = @spending_proposal.includes([:author, :geozone])
   end
 
   def accept
