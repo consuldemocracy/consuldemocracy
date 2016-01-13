@@ -4,7 +4,7 @@ class Admin::TagsController < Admin::BaseController
   respond_to :html, :js
 
   def index
-    @tags = ActsAsTaggableOn::Tag.order(kind: :asc, featured: :desc).page(params[:page])
+    @tags = ActsAsTaggableOn::Tag.order(kind: :asc, id: :asc).page(params[:page])
     @tag  = ActsAsTaggableOn::Tag.new
   end
 
@@ -43,7 +43,9 @@ class Admin::TagsController < Admin::BaseController
       @tag = ActsAsTaggableOn::Tag.find(params[:id])
     end
     def search_tag
-      @tag = ActsAsTaggableOn::Tag.where("name = '#{@paramTag[:name]}' and
-                                                 kind = '#{@paramTag[:kind]}'")
+   #  @tag = ActsAsTaggableOn::Tag.where("name = '#{@paramTag[:name]}' and
+    #                                             kind = '#{@paramTag[:kind]}'")
+      
+      @tag = ActsAsTaggableOn::Tag.where("upper(name) = upper('#{@paramTag[:name]}')")   
     end
 end
