@@ -61,8 +61,7 @@ class User < ActiveRecord::Base
     user = signed_in_resource ? signed_in_resource : identity.user
     user ||= first_or_create_for_oauth(auth)
 
-    # Associate the identity with the user if needed
-    identity.update_user(user)
+    identity.update(user: user)
     user
   end
 
