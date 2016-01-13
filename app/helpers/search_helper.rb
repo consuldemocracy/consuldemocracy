@@ -1,6 +1,6 @@
 module SearchHelper
 
-  def official_level_options
+  def official_level_search_options
     options_for_select([
       [t("shared.advanced_search.author_type_1"), 1],
       [t("shared.advanced_search.author_type_2"), 2],
