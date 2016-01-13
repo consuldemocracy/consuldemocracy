@@ -22,7 +22,6 @@ module Abilities
       can :create, Comment
       can :create, Debate
       can :create, Proposal
-      can :create, SpendingProposal
 
       can [:flag, :unflag], Comment
       cannot [:flag, :unflag], Comment, user_id: user.id
@@ -41,6 +40,7 @@ module Abilities
       if user.level_two_or_three_verified?
         can :vote, Proposal
         can :vote_featured, Proposal
+        can :create, SpendingProposal
       end
 
       can :create, Annotation

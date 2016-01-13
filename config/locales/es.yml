@@ -251,6 +251,8 @@ es:
       title: "Presupuestos participativos"
       text: "Desde esta sección podrás sugerir propuestas de gasto que irán asociadas a las partidas de presupuestos ciudadanos. El requisito principal es que sean propuestas presupuestables."
       create_link: "Enviar propuesta de gasto"
+      verified_only: "Sólo los usuarios verificados pueden crear propuestas de gasto, %{verify_account}."
+      verify_account: "verifica tu cuenta"
     new:
       back_link: Volver
       start_new: "Crear una propuesta de gasto"

@@ -2,14 +2,23 @@ require 'rails_helper'
 
 feature 'Spending proposals' do
 
+  let(:author) { create(:user, :level_two) }
+
   scenario 'Index' do
     visit spending_proposals_path
 
+    expect(page).to_not have_link('Create spending proposal', href: new_spending_proposal_path)
+    expect(page).to have_link('verify your account')
+
+    login_as(author)
+
+    visit spending_proposals_path
+
     expect(page).to have_link('Create spending proposal', href: new_spending_proposal_path)
+    expect(page).to_not have_link('verify your account')
   end
 
   scenario 'Create' do
-    author = create(:user)
     login_as(author)
 
     visit new_spending_proposal_path
@@ -26,7 +35,7 @@ feature 'Spending proposals' do
   end
 
   scenario 'Captcha is required for proposal creation' do
-    login_as(create(:user))
+    login_as(author)
 
     visit new_spending_proposal_path
     fill_in 'spending_proposal_title', with: 'Build a skyscraper'
@@ -47,7 +56,6 @@ feature 'Spending proposals' do
   end
 
   scenario 'Errors on create' do
-    author = create(:user)
     login_as(author)
 
     visit new_spending_proposal_path

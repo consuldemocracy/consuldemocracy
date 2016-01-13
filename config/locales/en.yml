@@ -251,6 +251,8 @@ en:
       title: "Participatory budgeting"
       text: "Here you can send spending proposals to be considered in the frame of the annual participatory budgeting."
       create_link: "Create spending proposal"
+      verified_only: "Only verified users can create spending proposals, %{verify_account}."
+      verify_account: "verify your account"
     new:
       back_link: Back
       start_new: "Create spending proposal"
