@@ -8,7 +8,7 @@
 // 06. Forms
 // 07. Alerts
 // 08. User account
-// 09. Filters & search
+// 09. Search
 // 10. Official levels
 // 11. Pagination
 // 12. Tables
@@ -1028,59 +1028,8 @@ img.avatar, img.admin-avatar, img.moderator-avatar, img.initialjs-avatar {
   }
 }
 
-// 09. Filters & search
+// 09. Search
 // - - - - - - - - - - - - - - - - - - - - - - - - -
-
-.filters, .search-results {
-
-  h2 {
-    display: inline-block;
-    font-size: rem-calc(24);
-    margin: $line-height/2 0;
-
-    @media (min-width: $small-breakpoint) {
-      margin: $line-height 0;
-    }
-  }
-
-  select {
-    background-color: #DEE0E2;
-    height: auto;
-    margin-bottom: $line-height;
-    min-width: $line-height*7.5;
-    outline: 0;
-    padding: $line-height/2;
-    width: auto;
-
-    @media (min-width: $small-breakpoint) {
-      margin: 0 0 $line-height $line-height/2;
-    }
-
-    optgroup {
-      font-size: $small-font-size;
-    }
-
-    option {
-
-      &:after {
-        content: "a";
-        font-family: "icons";
-      }
-    }
-  }
-
-  .debates-order {
-    text-align: left;
-
-    @media (min-width: $small-breakpoint) {
-      text-align: right;
-    }
-
-    select {
-      margin-left: 0;
-    }
-  }
-}
 
 .search-form {
 
