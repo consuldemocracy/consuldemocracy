@@ -55,6 +55,7 @@ class User < ActiveRecord::Base
   def self.find_for_oauth(auth, signed_in_resource = nil)
     # Get the identity and user if they exist
     identity = Identity.find_for_oauth(auth)
+    identity = Identity.first_or_create_from_oauth(auth)
 
     # If a signed_in_resource is provided it always overrides the existing user
     # to prevent the identity being locked with accidentally created accounts.
@@ -63,8 +64,7 @@ class User < ActiveRecord::Base
     user = signed_in_resource ? signed_in_resource : identity.user
     user ||= first_or_create_for_oauth(auth)
 
-    # Associate the identity with the user if needed
-    identity.update_user(user)
+    identity.update(user: user)
     user
   end
 
