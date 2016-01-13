@@ -73,7 +73,7 @@ if ENV["SEED"]
 
   tags = Faker::Lorem.words(25)
 
-  (1..30).each do |i|
+  (1..150).each do |i|
     author = User.reorder("RANDOM()").first
     description = "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>"
     subcategory = Subcategory.offset(rand(Subcategory.count)).first
