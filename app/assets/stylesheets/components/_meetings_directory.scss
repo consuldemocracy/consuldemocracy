@@ -1,0 +1,18 @@
+.meetings-directory {
+  .map {
+    height: 400px;
+  }
+
+  .meeting {
+    cursor: pointer;
+    border: 1px solid #000;
+    height: 250px;
+    .title {
+      color: $brand;
+      font-weight: bold;
+    }
+    &:hover {
+      background: #ccc;
+    }
+  }
+}

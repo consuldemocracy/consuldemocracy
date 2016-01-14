@@ -6,7 +6,7 @@ class Moderation::MeetingsController < Moderation::BaseController
   load_and_authorize_resource
 
   def index
-    @resources = @resources.page(params[:page]).per(50)
+    @resources = @resources.page(params[:page]).per(5)
     set_resources_instance
   end
 

@@ -29,6 +29,7 @@
       <section class="subnavigation row">
 
         <div class="small-12 medium-9 column">
+          <%= link_to t("layouts.header.meetings"), meetings_path, class: ("active" if current_page?(controller: "/meetings")) %>
           <% if feature?(:debates) %>
             <%= link_to t("layouts.header.debates"), debates_path, class: ("active" if controller_name == "debates") %>
           <% end %>

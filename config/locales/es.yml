@@ -175,6 +175,7 @@ es:
       debates: Debates
       external_link_blog: Blog
       locale: 'Idioma:'
+      meetings: Encuentros presenciales
       moderation: Moderar
       more_information: Más información
       my_account_link: Mi cuenta
@@ -213,6 +214,7 @@ es:
       meeting_title: Título
     index:
       new: Crear encuentro
+      title: Encuentros presenciales
     new:
       form:
         submit_button: Crear encuentro

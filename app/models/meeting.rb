@@ -1,6 +1,8 @@
 class Meeting < ActiveRecord::Base
   belongs_to :author, -> { with_hidden }, class_name: 'User', foreign_key: 'author_id'
 
+  scope :upcoming, -> { where("held_at >= ?", Date.today) }
+
   validates :author, presence: true
   validates :title, presence: true
   validates :description, presence: true

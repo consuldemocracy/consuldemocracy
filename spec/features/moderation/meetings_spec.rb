@@ -52,7 +52,7 @@ feature 'Moderate meetings' do
       expect(page).to have_content "1 error"
     end
 
-    scenario 'List meetings which I have created' do
+    scenario 'List all meetings' do
       other_moderator = create(:moderator)
       create(:meeting, title: "My meeting", author: @moderator.user)
       create(:meeting, title: "Other meeting", author: other_moderator.user)
@@ -60,7 +60,7 @@ feature 'Moderate meetings' do
       visit moderation_meetings_path
 
       expect(page).to have_content "My meeting"
-      expect(page).to have_no_content "Other meeting"
+      expect(page).to have_content "Other meeting"
     end
 
     scenario 'Update a meeting', :js do

@@ -53,6 +53,8 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :meetings, only: [:index, :show]
+
   resources :comments, only: [:create, :show], shallow: true do
     member do
       post :vote
