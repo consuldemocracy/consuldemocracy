@@ -33,7 +33,7 @@ module CommentableActions
 
     if @resource.save_with_captcha
       track_event
-      redirect_path = url_for(controller: controller_name, action: :show, id: @resource.id)
+      redirect_path = after_create_path
       redirect_to redirect_path, notice: t('flash.actions.create.notice', resource_name: "#{resource_name.capitalize}")
     else
       load_featured_tags
@@ -93,5 +93,9 @@ module CommentableActions
 
     def index_customization
       nil
+    end
+
+    def after_create_path
+      url_for(controller: controller_name, action: :show, id: @resource.id)
     end
 end

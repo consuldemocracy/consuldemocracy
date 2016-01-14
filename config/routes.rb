@@ -44,6 +44,9 @@ Rails.application.routes.draw do
     end
   end
 
+  get  'debate_links/new' => 'debate_links#new'
+  post 'debate_links'     => 'debate_links#create'  
+
   resources :proposals do
     member do
       post :vote

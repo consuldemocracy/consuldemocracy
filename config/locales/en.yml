@@ -87,6 +87,7 @@ en:
       title: "Debates"
       featured_debates: "Featured"
       start_debate: "Start a debate"
+      share_debate: "Share a link"
       select_order: "Order by"
       orders:
         confidence_score: "highest rated"
@@ -157,6 +158,17 @@ en:
     update:
       form:
         submit_button: "Save changes"
+  debate_links:
+    form:
+      debate_link: "Link"
+    new:
+      start_new: "Share a link"
+      recommendations_title: "Recommendations for sharing a link"      
+      form:
+        submit_button: "Share link"
+    create:
+      form:
+        submit_button: "Share link"
   proposals:
     index:
       title: "Proposals"

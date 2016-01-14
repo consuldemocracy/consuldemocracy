@@ -57,6 +57,24 @@ describe Debate do
     end
   end
 
+  describe "#external_link" do
+
+    it "should not be valid without a url" do
+      debate.external_link = ""
+      expect(debate).to_not be_valid
+    end
+
+    it "should not be valid when very short" do
+      debate.external_link = "abc"
+      expect(debate).to_not be_valid
+    end
+
+    it "should not be valid when very long" do
+      debate.external_link = "a" * 101
+      expect(debate).to_not be_valid
+    end
+  end
+
   describe "#tag_list" do
     it "should sanitize the tag list" do
       debate.tag_list = "user_id=1"
