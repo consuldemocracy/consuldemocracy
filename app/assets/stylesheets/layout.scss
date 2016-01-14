@@ -639,11 +639,7 @@ footer {
   background-repeat: no-repeat;
   background-size: cover;
 
-  @media (min-width: $small-breakpoint) {
-    padding-top: $line-height*2;
-  }
-
-  h1 {
+  h1:not(.logo) {
     @include logo;
 
     a {
@@ -661,25 +657,18 @@ footer {
 }
 
 .auth {
-  min-height: $line-height*20;
 
   .back, .icon-angle-left {
     @include back;
   }
 
   p, a {
-    font-family: $font-sans;
     font-size: $small-font-size;
   }
 
   .panel {
     background: white;
     border: 0;
-
-    h1 {
-      font-size: rem-calc(30);
-      font-weight: bolder;
-    }
   }
 }
 
