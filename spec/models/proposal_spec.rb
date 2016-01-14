@@ -613,6 +613,18 @@ describe Proposal do
 
     end
 
+    describe "#last_week" do
+    it "should return proposal created this week" do
+       proposal = create(:proposal)
+       expect(Proposal.last_week.all).to include (proposal)
+     end 
+     it "should not show proposals created more than a week ago" do  
+       proposal = create(:proposal, created_at: 8.days.ago)
+       expect(Proposal.last_week.all).to_not include (proposal)
+     end
+       
+    end
+
   end
 
 end
