@@ -11,7 +11,7 @@ en:
         title: "Administration"
     menu:
       settings: "General settings"
-      debate_topics: "Debate topics"
+      debate_topics: "Debate or Proposal topics"
       hidden_proposals: "Hidden proposals"
       hidden_debates: "Hidden debates"
       hidden_comments: "Hidden comments"
@@ -58,11 +58,15 @@ en:
       confirm_hide: "Confirm"
     tags:
       index:
-        title: "Debate topics"
-        add_tag: "Add a new debate topic"
-      mark_as_featured: "Propose topic upon creating debate"
+        title: "Debate or Proposals topics"
+        add_tag: "Add a new debate or new proposal topic"
+      mark_as_featured: "Propose topic upon creating debate or proposal"
+      message: "The name of the topic is mandatory filling"
+      message_find: "name of the topic already exists"
       name:
         placeholder: "Type the name of the topic"
+      kind:
+        placeholder: "Type the group of the topic" 
       create: "Create Topic"
       update: "Update Topic"
       destroy: "Destroy Topic"

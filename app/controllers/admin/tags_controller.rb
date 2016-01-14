@@ -4,13 +4,23 @@ class Admin::TagsController < Admin::BaseController
   respond_to :html, :js
 
   def index
-    @tags = ActsAsTaggableOn::Tag.order(featured: :desc).page(params[:page])
+    @tags = ActsAsTaggableOn::Tag.order(kind: :asc, id: :asc).page(params[:page])
     @tag  = ActsAsTaggableOn::Tag.new
   end
 
   def create
-    ActsAsTaggableOn::Tag.create(tag_params)
-    redirect_to admin_tags_path
+    @paramTag = params[:tag]
+    if @paramTag[:name] == ""
+      redirect_to admin_tags_path, notice: t("admin.tags.message")     
+    else
+      search_tag
+      if @tag.present?
+        redirect_to admin_tags_path, notice: t("admin.tags.message_find")
+      else
+        ActsAsTaggableOn::Tag.create(tag_params)
+        redirect_to admin_tags_path
+      end
+    end
   end
 
   def update
@@ -26,11 +36,16 @@ class Admin::TagsController < Admin::BaseController
   private
 
     def tag_params
-      params.require(:tag).permit(:featured, :name)
+      params.require(:tag).permit(:featured, :name, :kind)
     end
 
     def find_tag
       @tag = ActsAsTaggableOn::Tag.find(params[:id])
     end
-
+    def search_tag
+   #  @tag = ActsAsTaggableOn::Tag.where("name = '#{@paramTag[:name]}' and
+    #                                             kind = '#{@paramTag[:kind]}'")
+      
+      @tag = ActsAsTaggableOn::Tag.where("upper(name) = upper('#{@paramTag[:name]}')")   
+    end
 end
