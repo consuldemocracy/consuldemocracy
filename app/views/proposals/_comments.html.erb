@@ -5,11 +5,7 @@
 
         <h2>
           <%= t("proposals.show.comments_title") %>
-          <span>
-          (<%= t('comments.form.alignment.positive') %>: <span class="js-comments-count positive"><%= @proposal.comments.positive.count %></span>,
-          <%= t('comments.form.alignment.negative') %>: <span class="js-comments-count negative"><%= @proposal.comments.negative.count %></span>,
-          <%= t('comments.form.alignment.neutral') %>: <span class="js-comments-count neutral"><%= @proposal.comments.neutral.count %></span>)
-          </span>
+          <%= render partial: 'comments/summary', locals: { commentable: @proposal } %>
         </h2>
 
         <%= render 'shared/wide_order_selector', i18n_namespace: "comments" %>
