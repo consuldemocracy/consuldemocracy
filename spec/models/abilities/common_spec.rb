@@ -28,6 +28,9 @@ describe "Abilities::Common" do
   it { should_not be_able_to(:vote, Proposal) }
   it { should_not be_able_to(:vote_featured, Proposal) }
 
+  it { should be_able_to(:index, SpendingProposal) }
+  it { should_not be_able_to(:create, SpendingProposal) }
+
   it { should_not be_able_to(:comment_as_administrator, debate) }
   it { should_not be_able_to(:comment_as_moderator, debate) }
   it { should_not be_able_to(:comment_as_administrator, proposal) }
@@ -84,6 +87,8 @@ describe "Abilities::Common" do
 
     it { should be_able_to(:vote, Proposal) }
     it { should be_able_to(:vote_featured, Proposal) }
+
+    it { should be_able_to(:create, SpendingProposal) }
   end
 
   describe "when level 3 verified" do
@@ -91,5 +96,7 @@ describe "Abilities::Common" do
 
     it { should be_able_to(:vote, Proposal) }
     it { should be_able_to(:vote_featured, Proposal) }
+
+    it { should be_able_to(:create, SpendingProposal) }
   end
 end

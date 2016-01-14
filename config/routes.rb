@@ -53,13 +53,15 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :comments, only: :create, shallow: true do
+  resources :comments, only: [:create, :show], shallow: true do
     member do
       post :vote
       put :flag
       put :unflag
     end
   end
+
+  resources :spending_proposals, only: [:index, :new, :create]
 
   resources :legislations, only: [:show]
 
@@ -74,6 +76,11 @@ Rails.application.routes.draw do
   resource :account, controller: "account", only: [:show, :update, :delete] do
     collection { get :erase }
   end
+
+  resources :notifications, only: [:index, :show] do
+    collection { put :mark_all_as_read }
+  end
+
   resource :verification, controller: "verification", only: [:show]
 
   scope module: :verification do
@@ -112,6 +119,13 @@ Rails.application.routes.draw do
       member do
         put :restore
         put :confirm_hide
+      end
+    end
+
+    resources :spending_proposals, only: [:index, :show] do
+      member do
+        put :accept
+        put :reject
       end
     end
 

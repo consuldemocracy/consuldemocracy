@@ -1,5 +1,4 @@
 class Activity < ActiveRecord::Base
-
   belongs_to :actionable,  -> { with_hidden }, polymorphic: true
   belongs_to :user, -> { with_hidden }
 
@@ -24,5 +23,4 @@ class Activity < ActiveRecord::Base
   def self.by(user)
     where(user: user)
   end
-
 end

@@ -16,6 +16,7 @@ es:
       hidden_debates: "Debates ocultos"
       hidden_comments: "Comentarios ocultos"
       hidden_users: "Usuarios bloqueados"
+      spending_proposals: "Propuestas de gasto"
       incomplete_verifications: "Verificaciones incompletas"
       organizations: "Organizaciones"
       officials: "Cargos públicos"
@@ -95,6 +96,20 @@ es:
           all: "Todas"
           with_confirmed_hide: "Confirmadas"
           without_confirmed_hide: "Pendientes"
+    spending_proposals:
+      actions:
+        accept: Aceptar
+        reject: Rechazar
+      index:
+        title: "Propuestas de gasto para presupuestos participativos"
+        filter: "Filtro"
+        filters:
+          unresolved: "Sin resolver"
+          accepted: "Aceptadas"
+          rejected: "Rechazadas"
+      show:
+        geozone: "Ámbito"
+        by: "Enviada por"
     users:
       index:
         title: "Usuarios bloqueados"

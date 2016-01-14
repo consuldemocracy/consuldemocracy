@@ -8,7 +8,7 @@
 // 06. Forms
 // 07. Alerts
 // 08. User account
-// 09. Filters & search
+// 09. Search
 // 10. Official levels
 // 11. Pagination
 // 12. Tables
@@ -220,6 +220,16 @@ a {
   }
 }
 
+.sub-nav {
+  border-bottom: 1px solid $border;
+
+  dd.active {
+    border-bottom: 2px solid $brand;
+    color: $brand;
+    padding-bottom: $line-height/4;
+  }
+}
+
 // 02. Header
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -396,7 +406,6 @@ header {
       &:hover {
         background: none;
         color: white;
-        text-decoration: underline;
         transition: text-decoration 275ms;
       }
 
@@ -420,6 +429,7 @@ header {
 
       &:hover, &:focus {
         background-color: #007095 !important;
+        text-decoration: underline;
       }
     }
 
@@ -629,11 +639,7 @@ footer {
   background-repeat: no-repeat;
   background-size: cover;
 
-  @media (min-width: $small-breakpoint) {
-    padding-top: $line-height*2;
-  }
-
-  h1 {
+  h1:not(.logo) {
     @include logo;
 
     a {
@@ -651,25 +657,18 @@ footer {
 }
 
 .auth {
-  min-height: $line-height*20;
 
   .back, .icon-angle-left {
     @include back;
   }
 
-  p, a {
-    font-family: $font-sans;
+  p, a, .checkbox {
     font-size: $small-font-size;
   }
 
   .panel {
     background: white;
     border: 0;
-
-    h1 {
-      font-size: rem-calc(30);
-      font-weight: bolder;
-    }
   }
 }
 
@@ -947,59 +946,79 @@ img.avatar, img.admin-avatar, img.moderator-avatar, img.initialjs-avatar {
   }
 }
 
-// 09. Filters & search
-// - - - - - - - - - - - - - - - - - - - - - - - - -
+.notifications {
+  position: relative;
 
-.filters, .search-results {
-
-  h2 {
-    display: inline-block;
-    font-size: rem-calc(24);
-    margin: $line-height/2 0;
-
-    @media (min-width: $small-breakpoint) {
-      margin: $line-height 0;
-    }
+  &:hover {
+    text-decoration: none;
   }
 
-  select {
-    background-color: #DEE0E2;
-    height: auto;
-    margin-bottom: $line-height;
-    min-width: $line-height*7.5;
-    outline: 0;
-    padding: $line-height/2;
-    width: auto;
-
-    @media (min-width: $small-breakpoint) {
-      margin: 0 0 $line-height $line-height/2;
-    }
-
-    optgroup {
-      font-size: $small-font-size;
-    }
-
-    option {
-
-      &:after {
-        content: "a";
-        font-family: "icons";
-      }
-    }
+  [class^="icon-"] {
+    font-size: $h4-font-size;
+    vertical-align: middle;
   }
 
-  .debates-order {
-    text-align: left;
-
-    @media (min-width: $small-breakpoint) {
-      text-align: right;
-    }
-
-    select {
-      margin-left: 0;
-    }
+  .icon-circle {
+    color: #ecf00b;
+    font-size: $tiny-font-size;
+    position: absolute;
+    right: 4px;
+    top: -6px;
   }
 }
+
+.notifications-list:before {
+  background: $border;
+  content: '';
+  height: 100%;
+  left: 28px;
+  position: absolute;
+  top: 84px;
+  width: 2px;
+}
+
+.notification {
+  display: block;
+  padding: $line-height/2 0 $line-height/2 $line-height*1.5;
+  position: relative;
+
+  &:hover {
+
+    a {
+      text-decoration: none;
+    }
+
+    p:not(.time) {
+      color: $link;
+    }
+
+    &:before {
+      content: "\43";
+    }
+  }
+
+  &:before {
+    background: white;
+    color: $brand;
+    content: "\4d";
+    font-family: "icons" !important;
+    left: 6px;
+    position: absolute;
+  }
+
+  p {
+    color: $text;
+    margin-bottom: 0;
+  }
+
+  .time {
+    font-size: $small-font-size;
+    color: $text-medium;
+  }
+}
+
+// 09. Search
+// - - - - - - - - - - - - - - - - - - - - - - - - -
 
 .search-form {
 
@@ -1574,7 +1593,6 @@ table {
       font-family: $font-sans;
       font-size: $small-font-size;
       line-height: $line-height;
-      margin: rem-calc(10) $line-height/2 $line-height/4 0;
 
       a {
         color: $text-light;
@@ -1595,15 +1613,12 @@ table {
     .comment-body {
       margin-left: rem-calc(42);
 
-      p {
-        font-size: $small-font-size;
-      }
-
       .reply {
         background: white;
         border: 1px solid $border;
-        font-family: $font-sans;
-        font-size: rem-calc(12);
+        border-left: 0;
+        border-right: 0;
+        font-size: $small-font-size;
         margin: rem-calc(6) 0;
         padding: rem-calc(6);
 
@@ -1735,17 +1750,6 @@ table {
 
 .activity {
   margin-bottom: $line-height*2;
-  margin-top: $line-height;
-
-  .sub-nav {
-    border-bottom: 1px solid $border;
-
-    dd.active {
-      border-bottom: 2px solid $brand;
-      color: $brand;
-      padding-bottom: $line-height/4;
-    }
-  }
 
   table {
     border: 0;

@@ -1,0 +1,9 @@
+<li id="<%= dom_id(notification) %>" class="notification">
+  <%= link_to notification do %>
+    <p>
+      <em><%= t("notifications.index.#{notification_action(notification)}", count: notification.counter) %></em>
+      <strong><%= notification.notifiable.is_a?(Comment) ? notification.notifiable.commentable.title : notification.notifiable.title %></strong>
+    </p>
+    <p class="time"><%= l notification.timestamp, format: :datetime %></p>
+  <% end %>
+</li>

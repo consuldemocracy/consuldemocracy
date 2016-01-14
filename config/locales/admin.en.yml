@@ -16,6 +16,7 @@ en:
       hidden_debates: "Hidden debates"
       hidden_comments: "Hidden comments"
       hidden_users: "Hidden users"
+      spending_proposals: "Spending proposals"
       incomplete_verifications: "Incomplete verifications"
       organizations: "Organisations"
       officials: "Officials"
@@ -95,6 +96,20 @@ en:
           all: "All"
           with_confirmed_hide: "Confirmed"
           without_confirmed_hide: "Pending"
+    spending_proposals:
+      actions:
+        accept: Accept
+        reject: Reject
+      index:
+        title: "Spending proposals for participatory budgeting"
+        filter: "Filter"
+        filters:
+          unresolved: "Unresolved"
+          accepted: "Accepted"
+          rejected: "Rejected"
+      show:
+        geozone: "Scope"
+        by: "Sent by"
     users:
       index:
         title: "Hidden users"

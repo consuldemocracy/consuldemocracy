@@ -180,6 +180,14 @@ FactoryGirl.define do
     end
   end
 
+  factory :spending_proposal do
+    sequence(:title)     { |n| "Spending Proposal #{n} title" }
+    description          'Spend money on this'
+    external_url         'http://external_documention.org'
+    terms_of_service     '1'
+    association :author, factory: :user
+  end
+
   factory :vote do
     association :votable, factory: :debate
     association :voter,   factory: :user
@@ -291,4 +299,12 @@ FactoryGirl.define do
     sequence(:track_id) { |n| "#{n}" }
   end
 
+  factory :notification do
+    user
+    association :notifiable, factory: :proposal
+  end
+
+  factory :geozone do
+    sequence(:name) { |n| "District #{n}" }
+  end
 end
