@@ -662,7 +662,7 @@ footer {
     @include back;
   }
 
-  p, a {
+  p, a, .checkbox {
     font-size: $small-font-size;
   }
 
