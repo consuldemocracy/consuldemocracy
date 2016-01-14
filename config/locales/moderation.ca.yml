@@ -47,6 +47,7 @@ ca:
       flagged_debates: Debats
       proposals: Propostes
       users: Bloquejar usuaris
+      meetings: Trobades presencials
     proposals:
       index:
         block_authors: Bloquejar autors
@@ -74,3 +75,8 @@ ca:
         search_placeholder: email o nom d'usuari
         title: Bloquejar usuaris
       notice_hide: Usuari bloquejat. S'han ocultat tots els seus debats i comentaris.
+    meetings:
+      index:
+        title: Trobades presencials
+        headers:
+          meeting: Trobada presencial 

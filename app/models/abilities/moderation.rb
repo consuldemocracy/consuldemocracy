@@ -43,6 +43,9 @@ module Abilities
 
       can :block, User
       cannot :block, User, id: user.id
+
+      can :manage, Meeting, author_id: user.id
+      can :create, Meeting
     end
   end
 end

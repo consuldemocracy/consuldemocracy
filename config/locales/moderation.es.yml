@@ -5,6 +5,7 @@ es:
       flagged_debates: "Debates"
       flagged_comments: "Comentarios"
       users: "Bloquear usuarios"
+      meetings: "Encuentros presenciales"
     dashboard:
       index:
         title: "Moderación"
@@ -73,3 +74,8 @@ es:
         search: "Buscar"
         hide: "Bloquear"
         hidden: "Bloqueado"
+    meetings:
+      index:
+        title: Encuentros presenciales
+        headers:
+          meeting: Encuentro presencial

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160113111235) do
+ActiveRecord::Schema.define(version: 20160113114210) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -204,6 +204,21 @@ ActiveRecord::Schema.define(version: 20160113111235) do
   end
 
   add_index "locks", ["user_id"], name: "index_locks_on_user_id", using: :btree
+
+  create_table "meetings", force: :cascade do |t|
+    t.string   "title"
+    t.text     "description"
+    t.string   "address"
+    t.date     "held_at"
+    t.time     "start_at"
+    t.time     "end_at"
+    t.integer  "author_id"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+    t.float    "address_latitude"
+    t.float    "address_longitude"
+    t.string   "address_details"
+  end
 
   create_table "moderators", force: :cascade do |t|
     t.integer "user_id"

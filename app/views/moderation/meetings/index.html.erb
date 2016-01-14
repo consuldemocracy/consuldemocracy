@@ -1,0 +1,36 @@
+<h2><%= t("moderation.meetings.index.title") %></h2>
+
+<div class="right">
+  <%= link_to t("meetings.index.new"), new_moderation_meeting_path, class: 'button radius expand' %>
+</div>
+
+<table class="clear">
+  <tr>
+    <th>
+      <%= t("moderation.meetings.index.headers.meeting") %>
+    </th>
+  </tr>
+  <% @meetings.each do |meeting| %>
+    <tr id="meeting<%= meeting.id %>">
+      <td>
+        <%= link_to meeting.title, edit_moderation_meeting_path(meeting) %>
+        <br>
+        <span class="date"><%= l meeting.held_at %></span>
+        <span class="bullet">&nbsp;&bull;&nbsp;</span>
+        <span class="date"><%= meeting.start_at.to_s(:time) %> - <%= meeting.end_at.to_s(:time) %></span>
+        <span class="bullet">&nbsp;&bull;&nbsp;</span>
+        <%= meeting.author.username %>
+        <br>
+        <div>
+          <%= meeting.description %>
+        </div>
+      </td>
+    </tr>
+  <% end %>
+</table>
+
+<div class="right">
+  <%= link_to t("meetings.index.new"), new_moderation_meeting_path, class: 'button radius expand' %>
+</div>
+
+<%= paginate @meetings %>

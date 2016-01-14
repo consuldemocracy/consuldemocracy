@@ -53,6 +53,7 @@ es:
     proposal: "la propuesta"
     verification::sms: "el teléfono"
     verification::letter: "la verificación"
+    meeting: "el encuentro presencial"
   application:
     close: "Cerrar"
     menu: "Menú"
@@ -220,6 +221,23 @@ es:
     update:
       form:
         submit_button: "Guardar cambios"
+  meetings:
+    index:
+      new: "Crear encuentro"
+    new:
+      form:
+        submit_button: "Crear encuentro"
+    edit:
+      form:
+        submit_button: "Actualizar encuentro"
+    form:
+      meeting_title: "Título"
+      meeting_description: "Descripción"
+      meeting_address: "¿Dónde se va a realizar?"
+      meeting_address_details: "Detalles adicionales del lugar"
+      meeting_held_at: "¿Cuándo se va a realizar?"
+      meeting_start_at: "¿A que hora empieza?"
+      meeting_end_at: "¿A que hora acaba?"
   comments:
     show:
       return_to_commentable: "Volver a "

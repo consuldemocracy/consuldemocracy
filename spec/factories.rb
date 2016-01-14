@@ -1,4 +1,4 @@
-FactoryGirl.define do
+FactoryGirl.define do  
   sequence(:document_number) { |n| "#{n.to_s.rjust(8, '0')}X" }
 
   factory :user do
@@ -314,5 +314,15 @@ FactoryGirl.define do
   factory :notification do
     user
     association :notifiable, factory: :proposal
+  end
+
+  factory :meeting do
+    sequence(:title)       { |n| "Meeting #{n} title" }
+    sequence(:description) { |n| "Meeting #{n} description" }
+    sequence(:address)     { |n| "Fake address #{n}" }
+    held_at Date.today
+    start_at Time.now
+    end_at Time.now + 1.hour
+    association :author, factory: :user
   end
 end

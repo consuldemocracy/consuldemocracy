@@ -34,6 +34,8 @@ module Abilities
       can [:search, :create, :index, :destroy], ::Moderator
 
       can :manage, Annotation
+
+      can :manage, Meeting
     end
   end
 end
