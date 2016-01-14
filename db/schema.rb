@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160111075710) do
+ActiveRecord::Schema.define(version: 20160113111235) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -81,20 +81,21 @@ ActiveRecord::Schema.define(version: 20160111075710) do
     t.string   "commentable_type"
     t.text     "body"
     t.string   "subject"
-    t.integer  "user_id",                        null: false
+    t.integer  "user_id",                                  null: false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.datetime "hidden_at"
-    t.integer  "flags_count",        default: 0
+    t.integer  "flags_count",                  default: 0
     t.datetime "ignored_flag_at"
     t.integer  "moderator_id"
     t.integer  "administrator_id"
-    t.integer  "cached_votes_total", default: 0
-    t.integer  "cached_votes_up",    default: 0
-    t.integer  "cached_votes_down",  default: 0
+    t.integer  "cached_votes_total",           default: 0
+    t.integer  "cached_votes_up",              default: 0
+    t.integer  "cached_votes_down",            default: 0
     t.datetime "confirmed_hide_at"
     t.string   "ancestry"
-    t.integer  "confidence_score",   default: 0, null: false
+    t.integer  "confidence_score",             default: 0, null: false
+    t.integer  "alignment",          limit: 2
   end
 
   add_index "comments", ["ancestry"], name: "index_comments_on_ancestry", using: :btree

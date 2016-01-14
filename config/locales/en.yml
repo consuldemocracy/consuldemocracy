@@ -233,6 +233,10 @@ en:
       leave_comment: "Leave your comment"
       comment_as_moderator: "Comment as moderator"
       comment_as_admin: "Comment as admin"
+      alignment:
+        positive: "In favor"
+        negative: "Against"
+        neutral: "Neutral"
     comment:
       author: "Author"
       moderator: "Moderator"

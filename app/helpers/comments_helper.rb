@@ -26,7 +26,7 @@ module CommentsHelper
     elsif comment.as_moderator?
       "is-moderator"
     elsif comment.user.official?
-      "level-#{comment.user.official_level}"
+      "user-level-#{comment.user.official_level}"
     else
       "" # Default no special user class
     end
@@ -38,5 +38,17 @@ module CommentsHelper
     else
       "" # Default not author class
     end
+  end
+
+  def comment_class_names(comment)
+    classes = ["comment", comment_alignment_class(comment.alignment)]
+    classes.compact.join(" ")
+  end
+
+  def comment_alignment_class(alignment)
+    return nil unless alignment
+    return "negative" if alignment < 0
+    return "neutral" if alignment == 0
+    return "positive" if alignment > 0
   end
 end
