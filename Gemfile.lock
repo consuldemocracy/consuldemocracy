@@ -6,6 +6,12 @@ GIT
       i18n (~> 0.6, >= 0.6.6)
 
 GIT
+  remote: git://github.com/josepjaume/i18n_yaml_csv.git
+  revision: d87a4f754981cedbb6a06181564dc76f28f64e90
+  specs:
+    i18n_yaml_csv (0.1.0)
+
+GIT
   remote: https://github.com/huacnlee/social-share-button.git
   revision: e46a6a3e82b86023bc43b72c9379d3c6afe36b6b
   ref: e46a6a3e82b86023bc
@@ -482,6 +488,7 @@ DEPENDENCIES
   groupdate
   i18n-js!
   i18n-tasks
+  i18n_yaml_csv!
   immutablejs-rails (>= 2.0.17)
   initialjs-rails (= 0.2.0.1)
   jquery-rails

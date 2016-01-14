@@ -30,3 +30,5 @@
 
 # Ignore custom environment variables file
 .env
+
+config/locales/*.csv
