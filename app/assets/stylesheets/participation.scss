@@ -272,7 +272,9 @@
 // 02. New participation
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
-.debate-new, .debate-edit, .proposal-new, .proposal-edit,  {
+.debate-new, .debate-edit,
+.proposal-new, .proposal-edit,
+.spending-proposal-new, .spending-proposal-edit  {
   padding-top: $line-height;
 
   .back {
@@ -288,6 +290,13 @@
 
   .icon-proposals {
     color: $proposals;
+    font-size: rem-calc(50);
+    line-height: $line-height;
+    opacity: .5;
+  }
+
+  .icon-budget {
+    color: $budget;
     font-size: rem-calc(50);
     line-height: $line-height;
     opacity: .5;
