@@ -45,7 +45,7 @@ feature 'Users' do
     end
   end
 
-  xcontext 'OAuth authentication' do
+  context 'OAuth authentication' do
     context 'Twitter' do
       background do
         #request.env["devise.mapping"] = Devise.mappings[:user]
@@ -72,15 +72,11 @@ feature 'Users' do
         visit '/'
         click_link 'Register'
 
-        expect do
-          expect do
-            expect do
-              click_link 'Sign up with Twitter'
-            end.not_to change { ActionMailer::Base.deliveries.size }
-          end.to change { Identity.count }.by(1)
-        end.to change { User.count }.by(1)
+        expect { click_link 'Sign up with Twitter' }
+          .to  change { Identity.count }.by(1)
+          .and change { User.count }.by(1)
+          .and change { ActionMailer::Base.deliveries.size }.by(0)
 
-        expect(current_path).to eq(root_path)
         expect_to_be_signed_in
 
         user = User.last
@@ -107,13 +103,10 @@ feature 'Users' do
         visit '/'
         click_link 'Register'
 
-        expect do
-          expect do
-            expect do
-              click_link 'Sign up with Twitter'
-            end.not_to change { ActionMailer::Base.deliveries.size }
-          end.to change { Identity.count }.by(1)
-        end.to change { User.count }.by(1)
+        expect { click_link 'Sign up with Twitter'}
+         .to  change { Identity.count }.by(1)
+         .and change { User.count }.by(1)
+         .and change { ActionMailer::Base.deliveries.size }.by(0)
 
         expect(current_path).to eq(finish_signup_path)
 
@@ -127,7 +120,7 @@ feature 'Users' do
         sent_token = /.*confirmation_token=(.*)".*/.match(ActionMailer::Base.deliveries.last.body.to_s)[1]
         visit user_confirmation_path(confirmation_token: sent_token)
 
-        expect(page).to have_content "Your email address has been successfully confirmed"
+        expect(page).to have_content "Your account has been confirmed"
 
         expect(user.reload.email).to eq('manueladelascarmenas@example.com')
       end
@@ -147,11 +140,9 @@ feature 'Users' do
         visit '/'
         click_link 'Sign in'
 
-        expect do
-          expect do
-            click_link 'Sign in with Twitter'
-          end.not_to change { Identity.count }
-        end.not_to change { User.count }
+        expect { click_link 'Sign in with Twitter' }
+          .to  change { Identity.count }.by(0)
+          .and change { User.count }.by(0)
 
         expect_to_be_signed_in
       end
