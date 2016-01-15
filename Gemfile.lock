@@ -7,7 +7,7 @@ GIT
 
 GIT
   remote: git://github.com/josepjaume/i18n_yaml_csv.git
-  revision: d87a4f754981cedbb6a06181564dc76f28f64e90
+  revision: 90d72dcc0df95bae59035ec040f9add392f59cce
   specs:
     i18n_yaml_csv (0.1.0)
 
