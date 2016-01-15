@@ -34,7 +34,8 @@
     "heroku-postgresql",
     "heroku-redis",
     "rollbar:free",
-    "sendgrid:starter"
+    "sendgrid:starter",
+    "memcachedcloud"
   ],
   "formation": [
     { "process": "web",    "quantity": 1},
