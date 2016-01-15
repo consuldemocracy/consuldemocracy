@@ -7,12 +7,14 @@ namespace :i18n_csv do
     end
 
     filenames.compact.uniq.each do |name| 
+      output_file = Rails.root.join("config", "locales", "#{name}.csv")
+      puts "Exporting #{output_file}"
+
       translations = I18n.available_locales.inject({}) do |result, locale|
         data = YAML.load_file(Rails.root.join('config', 'locales', "#{name}.#{locale}.yml"))
         result.merge(data)
       end
 
-      output_file = Rails.root.join("config", "locales", "#{name}.csv")
       File.write(output_file, I18nYamlCsv.generate_csv(translations))
     end
   end
