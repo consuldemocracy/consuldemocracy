@@ -667,13 +667,36 @@ feature 'Proposals' do
           end
         end
 
-        scenario "Maintain advanced search criteria", :js do
+        scenario "Search by multiple filters", :js do
+          ana  = create :user, username: "Ana06", official_level: 1
+          john = create :user, username: "John",  official_level: 1
+
+          proposal1 = create(:proposal, title: "Get Schwifty",   author: ana,  created_at: 1.minute.ago)
+          proposal2 = create(:proposal, title: "Hello Schwifty", author: john, created_at: 1.minute.ago)
+          proposal3 = create(:proposal, title: "Save the forest")
+
+          visit proposals_path
+
+          find("h4.advanced-search-title").click
+          fill_in "Write the text",        with: "Schwifty"
+          fill_in "Write the author name", with: "Ana06"
+          select "Public employee", from: "advanced_search_official_level"
+          select "Last 24 hours",   from: "advanced_search_date_min"
+
+          click_button "Filter"
+
+          within("#proposals") do
+            expect(page).to have_css('.proposal', count: 1)
+
+            expect(page).to have_content(proposal1.title)
+          end
+        end
+
+        scenario "Maintain advanced search criteria", :js, :focus do
           visit proposals_path
           find("h4.advanced-search-title").click
 
-          ### Pending fix when searching for text and another criteria
-          #fill_in "Write the text", with: "Schwifty"
-          ###
+          fill_in "Write the text", with: "Schwifty"
           fill_in "Write the author name", with: "Ana06"
           select "Public employee", from: "advanced_search_official_level"
           select "Last 24 hours", from: "advanced_search_date_min"
@@ -681,7 +704,7 @@ feature 'Proposals' do
           click_button "Filter"
 
           within "#advanced-search" do
-            ###expect(page).to have_selector("input[name='search'][value='Schwifty']")
+            expect(page).to have_selector("input[name='search'][value='Schwifty']")
             expect(page).to have_selector("input[name='advanced_search[author]'][value='Ana06']")
             expect(page).to have_select('advanced_search[official_level]', selected: 'Public employee')
             expect(page).to have_select('advanced_search[date_min]', selected: 'Last 24 hours')

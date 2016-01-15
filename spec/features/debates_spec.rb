@@ -249,7 +249,7 @@ feature 'Debates' do
 
     visit edit_debate_path(debate)
     expect(current_path).not_to eq(edit_debate_path(debate))
-    expect(current_path).to eq(proposals_path)
+    expect(current_path).to eq(debates_path)
     expect(page).to have_content "You do not have permission to carry out the action 'edit' on debate."
   end
 
@@ -264,7 +264,7 @@ feature 'Debates' do
     visit edit_debate_path(debate)
 
     expect(current_path).not_to eq(edit_debate_path(debate))
-    expect(current_path).to eq(proposals_path)
+    expect(current_path).to eq(debates_path)
     expect(page).to have_content 'You do not have permission to'
   end
 
@@ -604,13 +604,35 @@ feature 'Debates' do
           end
         end
 
+        scenario "Search by multiple filters", :js do
+          ana  = create :user, username: "Ana06", official_level: 1
+          john = create :user, username: "John",  official_level: 1
+
+          debate1 = create(:debate, title: "Get Schwifty",   author: ana,  created_at: 1.minute.ago)
+          debate2 = create(:debate, title: "Hello Schwifty", author: john, created_at: 1.minute.ago)
+          debate3 = create(:debate, title: "Save the forest")
+
+          visit debates_path
+
+          find("h4.advanced-search-title").click
+          fill_in "Write the text",        with: "Schwifty"
+          fill_in "Write the author name", with: "Ana06"
+          select "Public employee", from: "advanced_search_official_level"
+          select "Last 24 hours",   from: "advanced_search_date_min"
+
+          click_button "Filter"
+
+          within("#debates") do
+            expect(page).to have_css('.debate', count: 1)
+            expect(page).to have_content(debate1.title)
+          end
+        end
+
         scenario "Maintain advanced search criteria", :js do
           visit debates_path
           find("h4.advanced-search-title").click
 
-          ### Pending fix when searching for text and another criteria
-          #fill_in "Write the text", with: "Schwifty"
-          ###
+          fill_in "Write the text", with: "Schwifty"
           fill_in "Write the author name", with: "Ana06"
           select "Public employee", from: "advanced_search_official_level"
           select "Last 24 hours", from: "advanced_search_date_min"
@@ -618,7 +640,7 @@ feature 'Debates' do
           click_button "Filter"
 
           within "#advanced-search" do
-            ###expect(page).to have_selector("input[name='search'][value='Schwifty']")
+            expect(page).to have_selector("input[name='search'][value='Schwifty']")
             expect(page).to have_selector("input[name='advanced_search[author]'][value='Ana06']")
             expect(page).to have_select('advanced_search[official_level]', selected: 'Public employee')
             expect(page).to have_select('advanced_search[date_min]', selected: 'Last 24 hours')
