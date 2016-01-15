@@ -61,6 +61,8 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :spending_proposals, only: [:index, :new, :create]
+
   resources :legislations, only: [:show]
 
   resources :annotations do
@@ -117,6 +119,13 @@ Rails.application.routes.draw do
       member do
         put :restore
         put :confirm_hide
+      end
+    end
+
+    resources :spending_proposals, only: [:index, :show] do
+      member do
+        put :accept
+        put :reject
       end
     end
 
@@ -272,6 +281,8 @@ Rails.application.routes.draw do
   if Rails.env.development?
     mount LetterOpenerWeb::Engine, at: "/letter_opener"
   end
+
+  mount Tolk::Engine => '/translate', :as => 'tolk'
 
   # static pages
 

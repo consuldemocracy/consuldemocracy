@@ -1,0 +1,28 @@
+<h2><%= @spending_proposal.title %></h2>
+
+<%= safe_html_with_links @spending_proposal.description.html_safe %>
+
+<% if @spending_proposal.external_url.present? %>
+  <p><%= text_with_links @spending_proposal.external_url %></p>
+<% end %>
+
+<p><%= t("admin.spending_proposals.show.by") %>: <%= link_to @spending_proposal.author.name, admin_user_path(@spending_proposal.author) %></p>
+<p><%= t("admin.spending_proposals.show.geozone") %>: <%= geozone_name(@spending_proposal) %></p>
+<p><%= l @spending_proposal.created_at, format: :datetime %></p>
+
+<p>
+  <% unless @spending_proposal.accepted? %>
+    <%= link_to t("admin.spending_proposals.actions.accept"),
+        accept_admin_spending_proposal_path(@spending_proposal),
+        method: :put,
+        data: { confirm: t("admin.actions.confirm") },
+        class: "button radius tiny success no-margin" %>
+  <% end %>
+  <% unless @spending_proposal.rejected? %>
+    <%= link_to t("admin.spending_proposals.actions.reject"),
+          reject_admin_spending_proposal_path(@spending_proposal),
+          method: :put,
+          data: { confirm: t("admin.actions.confirm") },
+          class: "button radius tiny warning" %>
+  <% end %>
+</p>

@@ -272,7 +272,9 @@
 // 02. New participation
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
-.debate-new, .debate-edit, .proposal-new, .proposal-edit,  {
+.debate-new, .debate-edit,
+.proposal-new, .proposal-edit,
+.spending-proposal-new, .spending-proposal-edit  {
   padding-top: $line-height;
 
   .back {
@@ -288,6 +290,13 @@
 
   .icon-proposals {
     color: $proposals;
+    font-size: rem-calc(50);
+    line-height: $line-height;
+    opacity: .5;
+  }
+
+  .icon-budget {
+    color: $budget;
     font-size: rem-calc(50);
     line-height: $line-height;
     opacity: .5;
@@ -789,8 +798,12 @@
 // 05. Featured
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
-.featured-debates-container {
-  background: $votes-bg;
+.featured-debates, .featured-proposals {
+  padding: $line-height/2 0;
+
+  @media (min-width: $small-breakpoint) {
+    margin-top: $line-height !important;
+  }
 
   @media (min-width: $medium-breakpoint) {
     margin-left: 0 !important;
@@ -798,134 +811,40 @@
   }
 
   h2 {
-    color: white;
-  }
-
-  .debates-list {
-    margin-bottom: 0;
-  }
-}
-
-.featured-proposals-container {
-  background: #FED900;
-
-  @media (min-width: $medium-breakpoint) {
-    margin-left: 0 !important;
-    margin-right: rem-calc(-15) !important;
-  }
-
-  h2 {
-    color: $text;
-
-    @media (min-width: $medium-breakpoint) {
-      margin-bottom: rem-calc(27);
-    }
-  }
-}
-
-.featured-debates-container, .featured-proposals-container {
-  margin: $line-height 0 !important;
-
-  h2 {
-    font-size: rem-calc(24);
-    margin: rem-calc(12) 0 0;
-    position: relative;
+    font-size: $small-font-size;
+    line-height: $line-height;
     text-transform: uppercase;
+  }
 
-    .icon-proposals {
-      font-size: rem-calc(20);
-      position: absolute;
-      right: -26px;
-      top: -5px;
+  h3 {
+    margin-bottom: 0;
+
+    a {
+      color: $text;
+      font-size: $h3-font-size;
     }
   }
 
-  .debates-list {
-
-    @media (min-width: $medium-breakpoint) {
-      border-left: 1px solid $votes-border;
-    }
-
-    &:after {
-
-      @media (min-width: $medium-breakpoint) {
-        content: none;
-      }
-    }
+  a, .info {
+    color: lighten($text, 15%);
+    font-size: $small-font-size;
   }
 
-  .proposals-list {
-
-    @media (min-width: $medium-breakpoint) {
-      border-left: 1px solid #D2B400;
-    }
-
-    &:after {
-      border-color: #C9AF00 transparent transparent transparent;
-
-      @media (min-width: $medium-breakpoint) {
-        content: " ";
-      }
-    }
-  }
-
-  .debates-list, .proposals-list {
-    margin: rem-calc(6) 0;
-
-    &:after {
-      content: none;
-      position: absolute;
-      display: block;
-      border-style: solid;
-      bottom: rem-calc(-20);
-      border-left-width: 0;
-      border-right-color: transparent;
-      right: rem-calc(1);
-      border-width: rem-calc(14) rem-calc(14) 0 0;
-    }
-  }
 }
 
-.debate-featured, .proposal-featured {
-  margin-bottom: 0;
-  margin-top: 0;
-  padding-left: 0;
+.featured-debates {
+  background: $highlight;
+}
 
-  .panel {
-    background: none;
-    border: 0;
-    margin-bottom: 0;
-    padding: 0 rem-calc(12);
-
-    h3 {
-      font-weight: bold;
-      margin: rem-calc(8) 0 0 0;
-      min-height: auto;
-
-      a {
-        clear: both;
-        display: block;
-        font-size: rem-calc(14);
-        line-height: $line-height;
-      }
-    }
-  }
-
-  .progress {
-    display: none !important;
-  }
-
-  .content {
-    overflow: hidden;
-  }
+.featured-proposals {
+  background: $featured;
 
   .supports {
     @include supports;
     background: none;
     border: 0;
-    padding: 0;
-    padding-left: rem-calc(13);
-    margin-right: rem-calc(-26);
+    padding-bottom: 0;
+    padding-top: 0;
 
     &:after {
       content: none;
@@ -935,8 +854,12 @@
       display: none;
     }
 
+    .button-support {
+      margin-top: 0;
+    }
+
     .not-logged, .organizations-votes {
-      background: #FED900;
+      background: $featured;
       color: $warning-color;
       font-size: $small-font-size;
       line-height: rem-calc(24);
@@ -949,14 +872,12 @@
     }
 
     .anonymous-votes {
-      background: #FED900;
-      padding: 0;
-      padding-top: rem-calc(6);
+      background: $featured;
 
       p {
-        font-size: rem-calc(12);
-        line-height: rem-calc(20);
-        margin: 0;
+        color: $text;
+        font-size: $small-font-size;
+        line-height: $line-height;
       }
     }
 
@@ -965,10 +886,6 @@
       line-height: rem-calc(24);
       padding-top: rem-calc(6);
       text-align: center;
-    }
-
-    .button-support {
-      margin-top: rem-calc(4);
     }
 
     .supported {
@@ -981,53 +898,12 @@
       .social-share-button-facebook,
       .social-share-button-google_plus {
         height: rem-calc(33);
-      }
 
-      .social-share-button-twitter:before,
-      .social-share-button-facebook:before,
-      .social-share-button-google_plus:before {
-        font-size: rem-calc(18);
-        line-height: rem-calc(33);
+        &:before {
+          font-size: rem-calc(18);
+          line-height: rem-calc(33);
+        }
       }
     }
-  }
-}
-
-.debate-featured {
-  background: $votes-bg;
-  margin-bottom: rem-calc(12) !important;
-
-  .panel h3 a {
-    color: $text-inverse;
-    font-size: $h3-font-size;
-    margin: 0;
-  }
-
-  .info, .info a {
-    color: white !important;
-    font-family: $font-sans;
-    font-size: $small-font-size;
-  }
-
-  .content {
-    height: auto;
-  }
-}
-
-.proposal-featured {
-  background: #FED900;
-
-  .panel h3 a {
-    color: $text;
-    font-size: $base-font-size;
-  }
-
-  .info {
-    color: #806C00 !important;
-    font-size: $small-font-size;
-  }
-
-  .content {
-    height: rem-calc(60);
   }
 }
