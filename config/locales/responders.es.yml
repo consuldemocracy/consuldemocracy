@@ -2,9 +2,13 @@ es:
   flash:
     actions:
       create:
-        notice: "%{resource_name} creado correctamente."
+          mas: "%{resource_name} creado correctamente."
+          fem: "%{resource_name} creada correctamente."
+          femsinparametro: " creada correctamente."
       update:
-        notice: "%{resource_name} actualizado correctamente."
+          mas: "%{resource_name} actualizado correctamente."
+          fem: "%{resource_name} actualizada correctamente."
+          femsinparametro: " actualizada correctamente."
       # destroy:
         # notice: "%{resource_name} borrado correctamente."
         # alert: "%{resource_name} no ha podido ser borrado."

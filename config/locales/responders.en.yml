@@ -2,9 +2,13 @@ en:
   flash:
     actions:
       create:
-        notice: "%{resource_name} created successfully."
+        mas: "%{resource_name} created successfully."
+        fem: "%{resource_name} created successfully."
+        femsinparametro: " created successfully."
       update:
-        notice: "%{resource_name} updated successfully."
+        mas: "%{resource_name} updated successfully."
+        fem: "%{resource_name} updated successfully."
+        femsinparametro: " updated successfully."
       # destroy:
         # notice: "%{resource_name} destroyed successfully."
         # alert: "%{resource_name} could not be destroyed."

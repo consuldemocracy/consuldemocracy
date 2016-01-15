@@ -158,6 +158,7 @@ en:
       form:
         submit_button: "Save changes"
   proposals:
+    detail: "Citizen proposal"
     index:
       title: "Proposals"
       featured_proposals: "Featured"
@@ -241,6 +242,7 @@ en:
       form:
         submit_button: "Create proposal"
     create:
+      line: "Anne"
       form:
         submit_button: "Create proposal"
     update:
