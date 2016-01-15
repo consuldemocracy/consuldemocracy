@@ -6,6 +6,9 @@ if Administrator.count == 0 && !Rails.env.test?
 end
 
 if ENV["SEED"]
+  puts "Creating Geozones"
+  ('A'..'Z').each{ |i| Geozone.create(name: "District #{i}") }
+
   def create_user(email, username = Faker::Name.name)
     pwd = '12345678'
     puts "    #{username}"
