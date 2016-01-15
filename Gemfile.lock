@@ -284,6 +284,8 @@ GEM
     rack (1.6.4)
     rack-accept (0.4.5)
       rack (>= 0.4)
+    rack-cache (1.5.1)
+      rack (>= 0.4)
     rack-test (0.6.3)
       rack (>= 1.0)
     rails (4.2.5)
@@ -499,6 +501,7 @@ DEPENDENCIES
   poltergeist
   puma
   quiet_assets
+  rack-cache
   rails (= 4.2.5)
   rails-i18n
   rails_12factor

@@ -23,6 +23,7 @@ Rails.application.configure do
   # Disable serving static files from the `/public` folder by default since
   # Apache or NGINX already handles this.
   config.serve_static_files = ENV['RAILS_SERVE_STATIC_FILES'].present?
+  config.static_cache_control = "public, max-age=2592000"
 
   # Compress JavaScripts and CSS.
   config.assets.js_compressor = :uglifier
@@ -79,7 +80,12 @@ Rails.application.configure do
   end
 
   if ENV["MEMCACHEDCLOUD_SERVERS"]
-    config.cache_store = :dalli_store, ENV["MEMCACHEDCLOUD_SERVERS"].split(','), { :username => ENV["MEMCACHEDCLOUD_USERNAME"], :password => ENV["MEMCACHEDCLOUD_PASSWORD"] }
+    credentials = [ENV["MEMCACHEDCLOUD_SERVERS"].split(','), { :username => ENV["MEMCACHEDCLOUD_USERNAME"], :password => ENV["MEMCACHEDCLOUD_PASSWORD"] }]
+    config.cache_store = :dalli_store, *credentials
+
+    config.action_dispatch.rack_cache = {
+      :metastore    => Dalli::Client.new(*credentials),
+      :allow_reload => false }
   end
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to

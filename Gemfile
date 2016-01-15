@@ -105,4 +105,5 @@ group :production do
   gem 'puma'
   gem 'rails_12factor'
   gem 'rollbar', '~> 1.2.13'
+  gem 'rack-cache'
 end
