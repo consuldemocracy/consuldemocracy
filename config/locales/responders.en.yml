@@ -2,9 +2,17 @@ en:
   flash:
     actions:
       create:
-        notice: "%{resource_name} created successfully."
+       notice: "%{resource_model} created successfully."
+       debate: "Debate created successfully."
+       proposal: "Proposal created successfully." 
+        
       update:
-        notice: "%{resource_name} updated successfully."
+       notice: "%{resource_model} updated successfully."
+       debate: "Debate updated successfully."
+       proposal: "Proposal updated successfully." 
+        #mas: "%{resource_name} updated successfully."
+        #fem: "%{resource_name} updated successfully."
+        #femsinparametro: " updated successfully."
       # destroy:
         # notice: "%{resource_name} destroyed successfully."
         # alert: "%{resource_name} could not be destroyed."

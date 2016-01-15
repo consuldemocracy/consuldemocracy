@@ -2,9 +2,19 @@ es:
   flash:
     actions:
       create:
-        notice: "%{resource_name} creado correctamente."
+       notice: "%{resource_model} se creó correctamente."
+       debate: "Debate creado correctamente."
+       proposal: "Propuesta creada correctamente." 
+         # mas: "%{resource_name} creado correctamente."
+         # fem: "%{resource_name} creada correctamente."
+         # femsinparametro: " creada correctamente."
       update:
-        notice: "%{resource_name} actualizado correctamente."
+        notice: "%{resource_model} se actualizó correctamente."
+        debate: "Debate actualizado correctamente."
+        proposal: "Propuesta actualizada correctamente." 
+          #mas: "%{resource_name} actualizado correctamente."
+          #fem: "%{resource_name} actualizada correctamente."
+          #femsinparametro: " actualizada correctamente."
       # destroy:
         # notice: "%{resource_name} borrado correctamente."
         # alert: "%{resource_name} no ha podido ser borrado."

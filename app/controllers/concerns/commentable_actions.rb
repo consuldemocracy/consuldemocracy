@@ -27,14 +27,20 @@ module CommentableActions
     load_featured_tags
   end
 
-  def create
-    @resource = resource_model.new(strong_params)
-    @resource.author = current_user
+  def create 
+     @resource = resource_model.new(strong_params)
+     @resource.author = current_user
 
     if @resource.save_with_captcha
       track_event
+      
       redirect_path = url_for(controller: controller_name, action: :show, id: @resource.id)
-      redirect_to redirect_path, notice: t('flash.actions.create.notice', resource_name: "#{resource_name.capitalize}")
+      #redirect_to redirect_path, notice: t('flash.actions.create.notice', resource_name: "#{resource_name.capitalize}")
+      if resource_model.to_s== "Proposal"
+        redirect_to resource, notice: t('flash.actions.create.proposal')
+       else
+        redirect_to resource, notice: t('flash.actions.create.debate')
+      end
     else
       load_featured_tags
       set_resource_instance
@@ -49,7 +55,13 @@ module CommentableActions
   def update
     resource.assign_attributes(strong_params)
     if resource.save_with_captcha
-      redirect_to resource, notice: t('flash.actions.update.notice', resource_name: "#{resource_name.capitalize}")
+      #redirect_to resource, notice: t('flash.actions.update.notice', resource_model: "#{resource_model}")
+      if resource_model.to_s== "Proposal"
+
+        redirect_to resource, notice: t('flash.actions.update.proposal')
+       else
+        redirect_to resource, notice: t('flash.actions.update.debate')
+      end
     else
       load_featured_tags
       set_resource_instance
