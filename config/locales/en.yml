@@ -266,7 +266,6 @@ en:
         create: Create
   geozones:
     none: "All city"
->>>>>>> consul/master
   comments:
     show:
       return_to_commentable: "Go back to "
