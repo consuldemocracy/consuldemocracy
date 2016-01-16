@@ -14,12 +14,6 @@
     </div>
 
     <div class="small-12 medium-6 advanced-search columns">
-      <h5 class='search-option inline-block'><%= t("shared.advanced_search.author") %></h5>
-      <%= text_field_tag "advanced_search[author]", params[:advanced_search].try(:[], :author),
-                         placeholder: t("shared.advanced_search.author_placeholder") %>
-    </div>
-
-    <div class="small-12 medium-6 advanced-search columns">
       <h5 class='search-option'><%= t("shared.advanced_search.author_type") %></h5>
       <%= select_tag('advanced_search[official_level]', official_level_search_options,
                     include_blank: t("shared.advanced_search.author_type_blank")) %>

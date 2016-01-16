@@ -394,6 +394,13 @@ describe Proposal do
         expect(results).to eq([proposal])
       end
 
+      it "searches by author name" do
+        author = create(:user, username: 'Danny Trejo')
+        proposal = create(:proposal, author: author)
+        results = Proposal.search('Danny')
+        expect(results).to eq([proposal])
+      end
+
     end
 
     context "stemming" do

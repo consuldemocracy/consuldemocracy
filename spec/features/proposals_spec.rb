@@ -575,29 +575,6 @@ feature 'Proposals' do
         end
       end
 
-      scenario "Search by author", :js do
-        ana = create :user, username: "Ana06"
-        john = create :user, username: "John Smith"
-
-        proposal1 = create(:proposal, author: ana)
-        proposal2 = create(:proposal, author: ana)
-        proposal3 = create(:proposal, author: john)
-
-        visit proposals_path
-
-        click_link "Advanced search"
-        fill_in "Write the author name", with: "Ana06"
-        click_button "Filter"
-
-        within("#proposals") do
-          expect(page).to have_css('.proposal', count: 2)
-
-          expect(page).to have_content(proposal1.title)
-          expect(page).to have_content(proposal2.title)
-          expect(page).to_not have_content(proposal3.title)
-        end
-      end
-
       context "Search by author type" do
 
         scenario "Public employee", :js do
@@ -826,18 +803,17 @@ feature 'Proposals' do
         end
 
         scenario "Search by multiple filters", :js do
-          ana  = create :user, username: "Ana06", official_level: 1
-          john = create :user, username: "John",  official_level: 1
+          ana  = create :user, official_level: 1
+          john = create :user, official_level: 1
 
           proposal1 = create(:proposal, title: "Get Schwifty",   author: ana,  created_at: 1.minute.ago)
-          proposal2 = create(:proposal, title: "Hello Schwifty", author: john, created_at: 1.minute.ago)
+          proposal2 = create(:proposal, title: "Hello Schwifty", author: john, created_at: 2.days.ago)
           proposal3 = create(:proposal, title: "Save the forest")
 
           visit proposals_path
 
           click_link "Advanced search"
-          fill_in "Write the text",        with: "Schwifty"
-          fill_in "Write the author name", with: "Ana06"
+          fill_in "Write the text", with: "Schwifty"
           select "Public employee", from: "advanced_search_official_level"
           select "Last 24 hours",   from: "js-advanced-search-date-min"
 
@@ -845,7 +821,6 @@ feature 'Proposals' do
 
           within("#proposals") do
             expect(page).to have_css('.proposal', count: 1)
-
             expect(page).to have_content(proposal1.title)
           end
         end
@@ -855,7 +830,6 @@ feature 'Proposals' do
           click_link "Advanced search"
 
           fill_in "Write the text", with: "Schwifty"
-          fill_in "Write the author name", with: "Ana06"
           select "Public employee", from: "advanced_search_official_level"
           select "Last 24 hours", from: "js-advanced-search-date-min"
 
@@ -863,7 +837,6 @@ feature 'Proposals' do
 
           within "#js-advanced-search" do
             expect(page).to have_selector("input[name='search'][value='Schwifty']")
-            expect(page).to have_selector("input[name='advanced_search[author]'][value='Ana06']")
             expect(page).to have_select('advanced_search[official_level]', selected: 'Public employee')
             expect(page).to have_select('advanced_search[date_min]', selected: 'Last 24 hours')
           end

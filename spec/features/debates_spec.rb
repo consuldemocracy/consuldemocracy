@@ -512,29 +512,6 @@ feature 'Debates' do
         end
       end
 
-      scenario "Search by author", :js do
-        ana = create :user, username: "Ana06"
-        john = create :user, username: "John Smith"
-
-        debate1 = create(:debate, author: ana)
-        debate2 = create(:debate, author: ana)
-        debate3 = create(:debate, author: john)
-
-        visit debates_path
-
-        click_link "Advanced search"
-        fill_in "Write the author name", with: "Ana06"
-        click_button "Filter"
-
-        within("#debates") do
-          expect(page).to have_css('.debate', count: 2)
-
-          expect(page).to have_content(debate1.title)
-          expect(page).to have_content(debate2.title)
-          expect(page).to_not have_content(debate3.title)
-        end
-      end
-
       context "Search by author type" do
 
         scenario "Public employee", :js do
@@ -763,18 +740,17 @@ feature 'Debates' do
         end
 
         scenario "Search by multiple filters", :js do
-          ana  = create :user, username: "Ana06", official_level: 1
-          john = create :user, username: "John",  official_level: 1
+          ana  = create :user, official_level: 1
+          john = create :user, official_level: 1
 
           debate1 = create(:debate, title: "Get Schwifty",   author: ana,  created_at: 1.minute.ago)
-          debate2 = create(:debate, title: "Hello Schwifty", author: john, created_at: 1.minute.ago)
+          debate2 = create(:debate, title: "Hello Schwifty", author: john, created_at: 2.days.ago)
           debate3 = create(:debate, title: "Save the forest")
 
           visit debates_path
 
           click_link "Advanced search"
-          fill_in "Write the text",        with: "Schwifty"
-          fill_in "Write the author name", with: "Ana06"
+          fill_in "Write the text", with: "Schwifty"
           select "Public employee", from: "advanced_search_official_level"
           select "Last 24 hours",   from: "js-advanced-search-date-min"
 
@@ -791,7 +767,6 @@ feature 'Debates' do
           click_link "Advanced search"
 
           fill_in "Write the text", with: "Schwifty"
-          fill_in "Write the author name", with: "Ana06"
           select "Public employee", from: "advanced_search_official_level"
           select "Last 24 hours", from: "js-advanced-search-date-min"
 
@@ -799,7 +774,6 @@ feature 'Debates' do
 
           within "#js-advanced-search" do
             expect(page).to have_selector("input[name='search'][value='Schwifty']")
-            expect(page).to have_selector("input[name='advanced_search[author]'][value='Ana06']")
             expect(page).to have_select('advanced_search[official_level]', selected: 'Public employee')
             expect(page).to have_select('advanced_search[date_min]', selected: 'Last 24 hours')
           end

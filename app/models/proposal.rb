@@ -68,6 +68,7 @@ class Proposal < ActiveRecord::Base
       description => 'D'
     }
     tag_list.each{ |tag| values[tag] = 'D' }
+    values[author.username] = 'D'
     values
   end
 
