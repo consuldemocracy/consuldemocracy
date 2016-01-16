@@ -6,6 +6,9 @@ if Administrator.count == 0 && !Rails.env.test?
 end
 
 if ENV["SEED"]
+  puts "Creating Geozones"
+  ('A'..'Z').each{ |i| Geozone.create(name: "District #{i}") }
+
   def create_user(email, username = Faker::Name.name)
     pwd = '12345678'
     puts "    #{username}"
@@ -205,6 +208,26 @@ if ENV["SEED"]
     flagger = User.where(["users.id <> ?", proposal.author_id]).reorder("RANDOM()").first
     Flag.flag(flagger, proposal)
   end
+
+  puts "Creating Spending Proposals"
+
+  resolutions = ["accepted", "rejected", nil]
+
+  (1..30).each do |i|
+    geozone = Geozone.reorder("RANDOM()").first
+    author = User.reorder("RANDOM()").first
+    description = "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>"
+    spending_proposal = SpendingProposal.create!(author: author,
+                                                 title: Faker::Lorem.sentence(3).truncate(60),
+                                                 external_url: Faker::Internet.url,
+                                                 description: description,
+                                                 created_at: rand((Time.now - 1.week) .. Time.now),
+                                                 resolution: resolutions.sample,
+                                                 geozone: [geozone, nil].sample,
+                                                 terms_of_service: "1")
+    puts "    #{spending_proposal.title}"
+  end
+
 
   puts "Creating Legislation"
 

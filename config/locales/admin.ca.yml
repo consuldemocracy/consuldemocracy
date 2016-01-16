@@ -57,6 +57,7 @@ ca:
       officials: Càrrecs públics
       organizations: Organitzacions
       settings: Configuració global
+      spending_proposals: Propostes de despesa
       stats: Estadístiques
     moderators:
       index:
@@ -129,6 +130,20 @@ ca:
       user_search:
         button: Cercar
         placeholder: Cercar usuari per nom o e-mail
+    spending_proposals:
+      actions:
+        accept: Acceptar
+        reject: Rebutjar
+      index:
+        filter: Filtre
+        filters:
+          accepted: Acceptades
+          rejected: Rebutjades
+          unresolved: Sense resoldre
+        title: Propostes de despesa per a pressupostos participatius
+      show:
+        by: Enviada per
+        geozone: "Àmbit"
     stats:
       show:
         combined_title: Combinat

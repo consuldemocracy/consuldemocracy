@@ -46,13 +46,13 @@ ca:
         other: "%{count} vots"
         zero: Sense vots
     form:
+      alignment:
+        negative: En contra
+        neutral: Neutral
+        positive: A favor
       comment_as_admin: Comentar com a administrador
       comment_as_moderator: Comentar com a moderador
       leave_comment: Deixa el teu comentari
-      alignment:
-        positive: "A favor"
-        negative: "En contra"
-        neutral: "Neutral"
     orders:
       most_voted: Més votats
       newest: Més nous primer
@@ -149,13 +149,16 @@ ca:
     debate: el debat
     error: error
     errors: errors
+    meeting: la trobada presencial
     not_saved: 'impedir guardar %{resource}:'
     policy: Política de privacitat
     proposal: la proposta
+    spending_proposal: la proposta de despesa
     user: el compte
     verification::letter: la verificació
     verification::sms: el telèfon
-    meeting: la trobada presencial
+  geozones:
+    none: Tota la ciutat
   layouts:
     application:
       chrome: Google Chrome
@@ -186,6 +189,7 @@ ca:
       open_gov: Govern %{open}
       proposals: Propostes
       see_all: Veure propostes
+      spending_proposals: Pressupostos ciutadans
   legislation:
     help:
       alt: Selecciona el text que vols comentar i prem el botó amb el llapis.
@@ -194,6 +198,23 @@ ca:
       text_sign_up: registrar-
       title: Com puc comentar aquest document?
   locale: Català
+  meetings:
+    edit:
+      form:
+        submit_button: Actualitzar trobada
+    form:
+      meeting_address: On es realitzará?
+      meeting_address_details: Detalls adicionals del lloc
+      meeting_description: Descripció
+      meeting_end_at: A quina hora acaba?
+      meeting_held_at: Quan es realitzará?
+      meeting_start_at: A quina hora comença?
+      meeting_title: Títol
+    index:
+      new: Crear trobada
+    new:
+      form:
+        submit_button: Crear trobada
   notifications:
     index:
       comments_on:
@@ -246,7 +267,7 @@ ca:
       tags_label: Temes
       tags_placeholder: Escriu les etiquetes que vulguis separades per una coma (',')
     index:
-      featured_proposals_html: Propostes <br> destacades
+      featured_proposals: Destacades
       orders:
         confidence_score: més recolzades
         created_at: més noves
@@ -306,23 +327,6 @@ ca:
     update:
       form:
         submit_button: Desa els canvis
-  meetings:
-    index:
-      new: "Crear trobada"
-    new:
-      form:
-        submit_button: "Crear trobada"
-    edit:
-      form:
-        submit_button: "Actualitzar trobada"
-    form:
-      meeting_title: "Títol"
-      meeting_description: "Descripció"
-      meeting_address: "On es realitzará?"
-      meeting_address_details: "Detalls adicionals del lloc"
-      meeting_held_at: "Quan es realitzará?"
-      meeting_start_at: "A quina hora comença?"
-      meeting_end_at: "A quina hora acaba?"
   shared:
     author_info:
       author_deleted: Usuari eliminat
@@ -341,6 +345,7 @@ ca:
     message:
       debate: el codi secret no coincideix amb la imatge
       proposal: el codi secret no coincideix amb la imatge
+      spendingproposal: el codi secret no coincideix amb la imatge
       user: el codi secret no coincideix amb la imatge
     placeholder: Introdueix el text de la imatge
     refresh_button_text: Refrescar
@@ -349,6 +354,29 @@ ca:
     facebook: Facebook
     twitter: Twitter
     youtube: YouTube
+  spending_proposals:
+    form:
+      description: Descripció detallada
+      external_url: Enllaç a documentació addicional
+      geozone: "Àmbit d'actuació"
+      submit_buttons:
+        create: Crear
+        new: Crear
+      title: Títol de la proposta de despesa
+    index:
+      create_link: Enviar proposta de despesa
+      text_html: Des d'aquesta secció podràs suggerir propostes de despesa que aniran associades a les partides de pressupostos ciutadans. <br> El requisit principal és que siguin propostes presupuestables.
+      title: Pressupostos participatius
+      verified_only: Només els usuaris verificats poden crear propostes de despesa, %{verify_account}.
+      verify_account: verifica el teu compte
+    new:
+      back_link: Tornar
+      more_info: Com funcionen els pressupostos participatius?
+      recommendation_one: "És fonamental que faci referència a una actuació pressupostable."
+      recommendation_three: Intenta detallar el màxim possible la proposta perquè l'equip de govern encarregat d'estudiar-la tingui les menys dubtes possibles.
+      recommendation_two: Qualsevol proposta o comentari que impliqui accions il·legals serà eliminada.
+      recommendations_title: Com crear una proposta de despesa
+      start_new: Crear una proposta de despesa
   users:
     show:
       deleted: Eliminat

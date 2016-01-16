@@ -51,4 +51,6 @@ describe "Abilities::Administrator" do
   it { should_not be_able_to(:comment_as_moderator, proposal) }
 
   it { should be_able_to(:manage, Annotation) }
+
+  it { should be_able_to(:manage, SpendingProposal) }
 end

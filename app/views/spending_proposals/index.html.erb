@@ -1,0 +1,16 @@
+<% provide :title do %><%= t('spending_proposals.index.title') %><% end %>
+<div class="page row-full">
+  <div class="row">
+    <div class="more-information text small-12 medium-8 column">
+      <h1><%= t('spending_proposals.index.title') %></h1>
+
+      <p><%= t('spending_proposals.index.text_html') %></p>
+
+      <% if can? :create, SpendingProposal %>
+        <%= link_to t('spending_proposals.index.create_link'), new_spending_proposal_path, class: 'button radius' %>
+      <% else %>
+        <p><%= t('spending_proposals.index.verified_only', verify_account: link_to(t('spending_proposals.index.verify_account'), verification_path)).html_safe %></p>
+      <% end %>
+    </div>
+  </div>
+</div>
