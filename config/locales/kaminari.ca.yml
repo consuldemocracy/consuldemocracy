@@ -7,7 +7,7 @@ ca:
         other: entrades
         zero: entrades
       more_pages:
-        display_entries: Mostrant <b> %{first} & nbsp; - & nbsp; %{last} </ b> d'un total de <b> %{total} </ b> %{entry_name}
+        display_entries: Mostrant <b>%{first}&nbsp;-&nbsp;%{last}</b> d'un total de <b>%{total}</b> %{entry_name}
       one_page:
         display_entries:
           one: Hi ha <b> 1 </ b> %{entry_name}
@@ -15,8 +15,8 @@ ca:
           zero: No s'han trobat %{entry_name}
   views:
     pagination:
-      first: "& laquo; Primera"
-      last: Darrera & raquo;
-      next: Següent & rsaquo;
-      previous: "& lsaquo; Anterior"
-      truncate: "& hellip;"
+      first: "&laquo; Primera"
+      last: Darrera &raquo;
+      next: Següent &rsaquo;
+      previous: "&lsaquo; Anterior"
+      truncate: "&hellip;"
