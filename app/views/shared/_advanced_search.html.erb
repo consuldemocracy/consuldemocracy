@@ -1,5 +1,5 @@
 <div class="small-12 medium-12 columns">
-  <h4 class='advanced-search-title'><%= t("shared.advanced_search.title") %></h4>
+  <%= link_to t("shared.advanced_search.title"), "#", id: 'js-advanced-search-title' %>
 </div>
 
 <%= form_tag search_path, method: :get do %>

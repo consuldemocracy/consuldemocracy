@@ -499,7 +499,7 @@ feature 'Debates' do
 
         visit debates_path
 
-        find("h4.advanced-search-title").click
+        click_link "Advanced search"
         fill_in "Write the text", with: "Schwifty"
         click_button "Filter"
 
@@ -522,7 +522,7 @@ feature 'Debates' do
 
         visit debates_path
 
-        find("h4.advanced-search-title").click
+        click_link "Advanced search"
         fill_in "Write the author name", with: "Ana06"
         click_button "Filter"
 
@@ -546,7 +546,7 @@ feature 'Debates' do
 
         visit debates_path
 
-        find("h4.advanced-search-title").click
+        click_link "Advanced search"
         select "Public employee", from: "advanced_search_official_level"
         click_button "Filter"
 
@@ -569,7 +569,7 @@ feature 'Debates' do
 
           visit debates_path
 
-          find("h4.advanced-search-title").click
+          click_link "Advanced search"
           select "Last 24 hours", from: "js-advanced-search-date-min"
           click_button "Filter"
 
@@ -589,7 +589,7 @@ feature 'Debates' do
 
           visit debates_path
 
-          find("h4.advanced-search-title").click
+          click_link "Advanced search"
           select "Customized", from: "js-advanced-search-date-min"
           fill_in "advanced_search_date_min", with: 7.days.ago
           fill_in "advanced_search_date_max", with: 1.days.ago
@@ -614,7 +614,7 @@ feature 'Debates' do
 
           visit debates_path
 
-          find("h4.advanced-search-title").click
+          click_link "Advanced search"
           fill_in "Write the text",        with: "Schwifty"
           fill_in "Write the author name", with: "Ana06"
           select "Public employee", from: "advanced_search_official_level"
@@ -630,7 +630,7 @@ feature 'Debates' do
 
         scenario "Maintain advanced search criteria", :js do
           visit debates_path
-          find("h4.advanced-search-title").click
+          click_link "Advanced search"
 
           fill_in "Write the text", with: "Schwifty"
           fill_in "Write the author name", with: "Ana06"
@@ -649,7 +649,7 @@ feature 'Debates' do
 
         scenario "Maintain custom date search criteria", :js do
           visit debates_path
-          find("h4.advanced-search-title").click
+          click_link "Advanced search"
 
           select "Customized", from: "js-advanced-search-date-min"
           fill_in "advanced_search_date_min", with: 7.days.ago

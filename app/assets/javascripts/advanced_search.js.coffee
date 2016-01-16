@@ -3,13 +3,8 @@ App.AdvancedSearch =
   advanced_search_terms: ->
     $('#js-advanced-search').data('advanced-search-terms')
 
-  decorate_link: (id) ->
-    $('.advanced-search-title').addClass 'blue'
-
-  undecorate_link: (id) ->
-    $('.advanced-search-title').removeClass 'blue'
-
-  toggle_form: ->
+  toggle_form: (event) ->
+    event.preventDefault();
     $('#js-advanced-search').slideToggle()
 
   toggle_date_options: ->
@@ -25,13 +20,9 @@ App.AdvancedSearch =
       $('#js-advanced-search').show()
       App.AdvancedSearch.toggle_date_options()
 
-    $('.advanced-search-title').on
-      click: ->
-        App.AdvancedSearch.toggle_form()
-      mouseenter: ->
-        App.AdvancedSearch.decorate_link()
-      mouseleave: ->
-        App.AdvancedSearch.undecorate_link()
+    $('#js-advanced-search-title').on
+      click: (event) ->
+        App.AdvancedSearch.toggle_form(event)
 
     $('#js-advanced-search-date-min').on
       change: ->
