@@ -1,445 +1,442 @@
+---
 es:
-  locale: "Español"
-  errors:
-    messages:
-      user_not_found: "No se encontró el usuario"
-  layouts:
-    header:
-      logo: "Madrid"
-      external_link_transparency: "Transparencia"
-      external_link_transparency_url: "https://transparencia.madrid.es"
-      external_link_opendata: "Datos abiertos"
-      external_link_opendata_url: "http://datos.madrid.es"
-      external_link_blog: "Blog"
-      external_link_blog_url: "/blog"
-      open_gov: "Gobierno %{open}"
-      open: "abierto"
-      participation_html: "Madrid Decide"
-      open_data: "Datos abiertos"
-      open_city_title: "La ciudad que quieres será la ciudad que quieras."
-      open_city_slogan_html:
-        "Existen ciudades gobernadas directamente por sus habitantes, que <b>debaten</b> sobre temas que les preocupan, <b>proponen</b> ideas para mejorar
-        sus vidas y <b>deciden</b> entre todas y todos las que se llevan a cabo. Madrid ya es una de ellas."
-      see_all: "Ver propuestas"
-      my_activity_link: "Mi actividad"
-      my_account_link: "Mi cuenta"
-      locale: "Idioma:"
-      administration: "Administrar"
-      moderation: "Moderar"
-      more_information: "Más información"
-      debates: "Debates"
-      proposals: "Propuestas"
-      spending_proposals: "Presupuestos ciudadanos"
-      new_notifications:
-        one: "Tienes una nueva notificación"
-        other: "Tienes %{count} notificaciones nuevas"
-      no_notifications: "No tienes notificaciones nuevas"
-    footer:
-      description: "Este portal usa la %{consul} que es %{open_source}. De Madrid, para el mundo entero."
-      open_source: "software libre"
-      open_source_url: "http://www.gnu.org/licenses/agpl-3.0.html"
-      consul: "aplicación Consul"
-      consul_url: "https://github.com/consul/consul"
-      copyright: "Ayuntamiento de Madrid, %{year}"
-      participation_title: "Participación"
-      participation_text: "Decide cómo debe ser la ciudad de Madrid que quieres."
-      transparency_title: "Transparencia"
-      transparency_url: "https://transparencia.madrid.es"
-      transparency_text: "Obtén cualquier información sobre el Ayuntamiento de Madrid."
-      open_data_title: "Datos Abiertos"
-      open_data_text: "Todos los datos del Ayuntamiento son tuyos."
-      contact_us: "Para asistencia técnica entra en"
-      faq: "Asistencia técnica"
-      privacy: "Política de privacidad"
-      conditions: "Condiciones de uso"
-      more_info: "Más información"
-      accessibility: "Accesibilidad"
-    application:
-      ie_title: "Esta web no está optimizada para tu navegador"
-      ie:
-        "Hemos detectado que estás navegando desde Internet Explorer.
-        Para una mejor experiencia te recomendamos utilizar %{chrome} o %{firefox}."
-      chrome: "Google Chrome"
-      firefox: "Firefox"
-  social:
-    twitter: "Twitter"
-    facebook: "Facebook"
-    blog: "Blog"
-    youtube: "YouTube"
-  form:
-    error: "error"
-    errors: "errores"
-    not_saved: "impidieron guardar %{resource}:"
-    accept_terms: "Acepto la %{policy} y las %{conditions}"
-    policy: "Política de privacidad"
-    conditions: "Condiciones de uso"
-    user: "la cuenta"
-    debate: "el debate"
-    proposal: "la propuesta"
-    spending_proposal: "la propuesta de gasto"
-    verification::sms: "el teléfono"
-    verification::letter: "la verificación"
-  application:
-    close: "Cerrar"
-    menu: "Menú"
-  debates:
-    index:
-      title: "Debates"
-      featured_debates: "Destacados"
-      start_debate: "Empieza un debate"
-      select_order: "Ordenar por"
-      orders:
-        confidence_score: "Mejor valorados"
-        hot_score: "Más activos hoy"
-        created_at: "Nuevos"
-        most_commented: "Más comentados"
-        relevance: "Más relevantes"
-      filter_topic:
-        one: " con el tema '%{topic}'"
-        other: " con el tema '%{topic}'"
-      search_form:
-        title: "Buscar"
-        button: "Buscar"
-        placeholder: "Buscar debates..."
-      search_results:
-        one: " que contiene '%{search_term}'"
-        other: " que contienen '%{search_term}'"
-    debate:
-      debate: "Debate"
-      comments:
-        zero: "Sin comentarios"
-        one: "1 Comentario"
-        other: "%{count} Comentarios"
-      votes:
-        zero: "Sin votos"
-        one: "1 voto"
-        other: "%{count} votos"
-    form:
-      debate_title: "Título del debate"
-      debate_text: "Texto inicial del debate"
-      tags_label: "Temas"
-      tags_instructions: "Etiqueta este debate. Puedes elegir entre nuestras propuestas o introducir las que desees."
-      tags_placeholder: "Escribe las etiquetas que desees separadas por coma (',')"
-    show:
-      back_link: "Volver"
-      author_deleted: "Usuario eliminado"
-      comments_title: "Comentarios"
-      comments:
-        zero: "Sin comentarios"
-        one: "1 Comentario"
-        other: "%{count} Comentarios"
-      login_to_comment: "Necesitas %{signin} o %{signup} para comentar."
-      edit_debate_link: "Editar debate"
-      share: "Compartir"
-      flag: "Este debate ha sido marcado como inapropiado por varios usuarios."
-    edit:
-      editing: "Editar debate"
-      show_link: "Ver debate"
-      back_link: "Volver"
-      form:
-        submit_button: "Guardar cambios"
-    new:
-      start_new: "Empezar un debate"
-      info: "Si lo que quieres es hacer una propuesta, esta es la sección incorrecta, entra en %{info_link}."
-      info_link: "crear nueva propuesta"
-      more_info: "Más información"
-      back_link: "Volver"
-      recommendations_title: "Recomendaciones para crear un debate"
-      recommendation_one: "No escribas el título del debate o frases enteras en mayúsculas. En internet eso se considera gritar. Y a nadie le gusta que le griten."
-      recommendation_two: "Cualquier debate o comentario que implique una acción ilegal será eliminado, también los que tengan la intención de sabotear los espacios de debate, todo lo demás está permitido."
-      recommendation_three: "Las críticas despiadadas son muy bienvenidas. Este es un espacio de pensamiento. Pero te recomendamos conservar la elegancia y la inteligencia. El mundo es mejor con ellas presentes."
-      recommendation_four: "Disfruta de este espacio, de las voces que lo llenan, también es tuyo."
-      form:
-        submit_button: "Empieza un debate"
-    create:
-      form:
-        submit_button: "Empieza un debate"
-    update:
-      form:
-        submit_button: "Guardar cambios"
-  proposals:
-    index:
-      title: "Propuestas ciudadanas"
-      featured_proposals: "Destacadas"
-      start_proposal: "Crea una propuesta"
-      select_order_long: "Estas viendo las propuestas"
-      select_order: "Ordenar por"
-      orders:
-        confidence_score: "Más apoyadas"
-        hot_score: "Más activas hoy"
-        created_at: "Nuevas"
-        most_commented: "Más comentadas"
-        relevance: "Más relevantes"
-      filter_topic:
-        one: " con el tema '%{topic}'"
-        other: " con el tema '%{topic}'"
-      search_form:
-        title: "Buscar"
-        button: "Buscar"
-        placeholder: "Buscar propuestas..."
-      search_results:
-        one: " que contiene '%{search_term}'"
-        other: " que contienen '%{search_term}'"
-    proposal:
-      proposal: "Propuesta"
-      support: "Apoyar"
-      support_title: "Apoyar esta propuesta"
-      comments:
-        zero: "Sin comentarios"
-        one: "1 Comentario"
-        other: "%{count} Comentarios"
-      supports:
-        zero: "Sin apoyos"
-        one: "1 apoyo"
-        other: "%{count} apoyos"
-      supports_necessary: "%{number} apoyos necesarios"
-      reason_for_supports_necessary: "2% del Censo"
-      total_percent: "100%"
-      already_supported: "¡Ya has apoyado esta propuesta, compártela!"
-    form:
-      proposal_title: "Título de la propuesta"
-      proposal_question: "Pregunta de la propuesta"
-      proposal_question_example_html: "Debe ser resumida en una pregunta cuya respuesta sea Sí o No. <em>Ej. '¿Está usted de acuerdo en peatonalizar la calle Mayor?'</em>"
-      proposal_summary: "Resumen de la propuesta"
-      proposal_summary_note: "(máximo 200 caracteres)"
-      proposal_text: "Texto desarrollado de la propuesta"
-      proposal_external_url: "Enlace a documentación adicional"
-      proposal_video_url: "Enlace a vídeo externo"
-      proposal_video_url_note: "Puedes añadir un enlace a YouTube o Vimeo"
-      proposal_responsible_name: "Nombre y apellidos de la persona que hace esta propuesta"
-      proposal_responsible_name_note: "(individualmente o como representante de un colectivo; no se mostrará públicamente)"
-      tags_label: "Temas"
-      tags_instructions: "Etiqueta esta propuesta. Puedes elegir entre nuestras sugerencias o introducir las que desees."
-      tags_placeholder: "Escribe las etiquetas que desees separadas por una coma (',')"
-    show:
-      back_link: "Volver"
-      author_deleted: "Usuario eliminado"
-      code: "Código de la propuesta:"
-      comments_title: "Comentarios"
-      comments:
-        zero: "Sin comentarios"
-        one: "1 Comentario"
-        other: "%{count} Comentarios"
-      login_to_comment: "Necesitas %{signin} o %{signup} para comentar."
-      edit_proposal_link: "Editar propuesta"
-      share: "Compartir"
-      flag: "Esta propuesta ha sido marcada como inapropiada por varios usuarios."
-    edit:
-      editing: "Editar propuesta"
-      show_link: "Ver propuesta"
-      back_link: "Volver"
-      form:
-        submit_button: "Guardar cambios"
-    new:
-      start_new: "Crear una propuesta"
-      more_info: "¿Cómo funcionan las propuestas ciudadanas?"
-      back_link: "Volver"
-      recommendations_title: "Recomendaciones para crear una propuesta"
-      recommendation_one: "No escribas el título de la propuesta o frases enteras en mayúsculas. En internet eso se considera gritar. Y a nadie le gusta que le griten."
-      recommendation_two: "Cualquier propuesta o comentario que implique una acción ilegal será eliminada, también las que tengan la intención de sabotear los espacios de propuesta, todo lo demás está permitido."
-      recommendation_three: "Disfruta de este espacio, de las voces que lo llenan, también es tuyo."
-      form:
-        submit_button: "Crear propuesta"
-    create:
-      form:
-        submit_button: "Crear propuesta"
-    update:
-      form:
-        submit_button: "Guardar cambios"
-  spending_proposals:
-    index:
-      title: "Presupuestos participativos"
-      text_html: "Desde esta sección podrás sugerir propuestas de gasto que irán asociadas a las partidas de presupuestos ciudadanos.<br>El requisito principal es que sean propuestas presupuestables."
-      create_link: "Enviar propuesta de gasto"
-      verified_only: "Sólo los usuarios verificados pueden crear propuestas de gasto, %{verify_account}."
-      verify_account: "verifica tu cuenta"
-    new:
-      back_link: Volver
-      start_new: "Crear una propuesta de gasto"
-      more_info: "¿Cómo funcionan los presupuestos participativos?"
-      recommendations_title: "Cómo crear una propuesta de gasto"
-      recommendation_one: "Es fundamental que haga referencia a una actuación presupuestable."
-      recommendation_two: "Cualquier propuesta o comentario que implique acciones ilegales será eliminada."
-      recommendation_three: "Intenta detallar lo máximo posible la propuesta para que el equipo de gobierno encargado de estudiarla tenga las menor dudas posibles."
-    form:
-      title: "Título de la propuesta de gasto"
-      description: "Descripción detallada"
-      external_url: "Enlace a documentación adicional"
-      geozone: "Ámbito de actuación"
-      submit_buttons:
-        new: Crear
-        create: Crear
-  geozones:
-    none: "Toda la ciudad"
-  comments:
-    show:
-      return_to_commentable: "Volver a "
-    select_order: "Ordenar por"
-    orders:
-      most_voted: "Más votados"
-      newest: "Más nuevos primero"
-      oldest: "Más antiguos primero"
-    form:
-      leave_comment: "Deja tu comentario"
-      comment_as_moderator: "Comentar como moderador"
-      comment_as_admin: "Comentar como administrador"
-    comment:
-      author: "Autor"
-      moderator: "Moderador"
-      admin: "Administrador"
-      deleted: "Este comentario ha sido eliminado"
-      user_deleted: "Usuario eliminado"
-      responses:
-        zero: "Sin respuestas"
-        one: "1 Respuesta"
-        other: "%{count} Respuestas"
-      votes:
-        zero: "Sin votos"
-        one: "1 voto"
-        other: "%{count} votos"
-  comments_helper:
-    comment_link: "Comentar"
-    comment_button: "Publicar comentario"
-    reply_link: "Responder"
-    reply_button: "Publicar respuesta"
-  votes:
-    agree: "Estoy de acuerdo"
-    disagree: "No estoy de acuerdo"
-    supports: "Apoyos"
-    unauthenticated: "Necesitas %{signin} o %{signup} para continuar."
-    signin: "iniciar sesión"
-    signup: "registrarte"
-    anonymous: "Demasiados votos anónimos, para poder votar %{verify_account}."
-    verified_only: "Las propuestas sólo pueden ser votadas por usuarios verificados, %{verify_account}."
-    verify_account: "verifica tu cuenta"
-    organizations: "Las organizaciones no pueden votar"
   account:
     show:
-      title: "Mi cuenta"
-      save_changes_submit: "Guardar cambios"
-      change_credentials_link: "Cambiar mis datos de acceso"
-      public_activity_label: "Mostrar públicamente mi lista de actividades"
-      email_on_comment_label: "Recibir un email cuando alguien comenta en mis propuestas o debates"
-      email_on_comment_reply_label: "Recibir un email cuando alguien contesta a mis comentarios"
-      subscription_to_website_newsletter_label: "Recibir emails con información interesante sobre la web"
-      erase_account_link: "Darme de baja"
-      personal: "Datos personales"
-      username_label: "Nombre de usuario"
-      phone_number_label: "Teléfono"
-      organization_name_label: "Nombre de la organización"
-      organization_responsible_name_placeholder: "Representante de la asociación/colectivo"
-      notifications: "Notificaciones"
-      finish_verification: "Finalizar verificación"
-      verified_account: "Cuenta verificada"
-      verify_my_account: "Verificar mi cuenta"
-      user_permission_title: "Participación"
-      user_permission_info: "Con tu cuenta ya puedes..."
-      user_permission_debates: "Participar en debates"
-      user_permission_proposal: "Crear nuevas propuestas"
-      user_permission_support_proposal: "Apoyar propuestas*"
-      user_permission_votes: "Participar en las votaciones finales*"
-      user_permission_verify: "Para poder realizar todas las acciones verifica tu cuenta."
+      change_credentials_link: Cambiar mis datos de acceso
+      email_on_comment_label: Recibir un email cuando alguien comenta en mis propuestas o debates
+      email_on_comment_reply_label: Recibir un email cuando alguien contesta a mis comentarios
+      erase_account_link: Darme de baja
+      finish_verification: Finalizar verificación
+      notifications: Notificaciones
+      organization_name_label: Nombre de la organización
+      organization_responsible_name_placeholder: Representante de la asociación/colectivo
+      personal: Datos personales
+      phone_number_label: Teléfono
+      public_activity_label: Mostrar públicamente mi lista de actividades
+      save_changes_submit: Guardar cambios
+      subscription_to_website_newsletter_label: Recibir emails con información interesante sobre la web
+      title: Mi cuenta
+      user_permission_debates: Participar en debates
+      user_permission_info: Con tu cuenta ya puedes...
+      user_permission_proposal: Crear nuevas propuestas
+      user_permission_support_proposal: Apoyar propuestas*
+      user_permission_title: Participación
+      user_permission_verify: Para poder realizar todas las acciones verifica tu cuenta.
       user_permission_verify_info: "* Sólo usuarios empadronados en el municipio de Madrid."
+      user_permission_votes: Participar en las votaciones finales*
+      username_label: Nombre de usuario
+      verified_account: Cuenta verificada
+      verify_my_account: Verificar mi cuenta
+  application:
+    close: Cerrar
+    menu: Menú
+  comments:
+    comment:
+      admin: Administrador
+      author: Autor
+      deleted: Este comentario ha sido eliminado
+      moderator: Moderador
+      responses:
+        one: 1 Respuesta
+        other: "%{count} Respuestas"
+        zero: Sin respuestas
+      user_deleted: Usuario eliminado
+      votes:
+        one: 1 voto
+        other: "%{count} votos"
+        zero: Sin votos
+    form:
+      comment_as_admin: Comentar como administrador
+      comment_as_moderator: Comentar como moderador
+      leave_comment: Deja tu comentario
+    orders:
+      most_voted: Más votados
+      newest: Más nuevos primero
+      oldest: Más antiguos primero
+    select_order: Ordenar por
+    show:
+      return_to_commentable: 'Volver a '
+  comments_helper:
+    comment_button: Publicar comentario
+    comment_link: Comentar
+    reply_button: Publicar respuesta
+    reply_link: Responder
+  debates:
+    create:
+      form:
+        submit_button: Empieza un debate
+    debate:
+      comments:
+        one: 1 Comentario
+        other: "%{count} Comentarios"
+        zero: Sin comentarios
+      debate: Debate
+      votes:
+        one: 1 voto
+        other: "%{count} votos"
+        zero: Sin votos
+    edit:
+      back_link: Volver
+      editing: Editar debate
+      form:
+        submit_button: Guardar cambios
+      show_link: Ver debate
+    form:
+      debate_text: Texto inicial del debate
+      debate_title: Título del debate
+      tags_instructions: Etiqueta este debate. Puedes elegir entre nuestras propuestas o introducir las que desees.
+      tags_label: Temas
+      tags_placeholder: Escribe las etiquetas que desees separadas por coma (',')
+    index:
+      featured_debates: Destacados
+      filter_topic:
+        one: " con el tema '%{topic}'"
+        other: " con el tema '%{topic}'"
+      orders:
+        confidence_score: Mejor valorados
+        created_at: Nuevos
+        hot_score: Más activos hoy
+        most_commented: Más comentados
+        relevance: Más relevantes
+      search_form:
+        button: Buscar
+        placeholder: Buscar debates...
+        title: Buscar
+      search_results:
+        one: " que contiene '%{search_term}'"
+        other: " que contienen '%{search_term}'"
+      select_order: Ordenar por
+      start_debate: Empieza un debate
+      title: Debates
+    new:
+      back_link: Volver
+      form:
+        submit_button: Empieza un debate
+      info: Si lo que quieres es hacer una propuesta, esta es la sección incorrecta, entra en %{info_link}.
+      info_link: crear nueva propuesta
+      more_info: Más información
+      recommendation_four: Disfruta de este espacio, de las voces que lo llenan, también es tuyo.
+      recommendation_one: No escribas el título del debate o frases enteras en mayúsculas. En internet eso se considera gritar. Y a nadie le gusta que le griten.
+      recommendation_three: Las críticas despiadadas son muy bienvenidas. Este es un espacio de pensamiento. Pero te recomendamos conservar la elegancia y la inteligencia. El mundo es mejor con ellas presentes.
+      recommendation_two: Cualquier debate o comentario que implique una acción ilegal será eliminado, también los que tengan la intención de sabotear los espacios de debate, todo lo demás está permitido.
+      recommendations_title: Recomendaciones para crear un debate
+      start_new: Empezar un debate
+    show:
+      author_deleted: Usuario eliminado
+      back_link: Volver
+      comments:
+        one: 1 Comentario
+        other: "%{count} Comentarios"
+        zero: Sin comentarios
+      comments_title: Comentarios
+      edit_debate_link: Editar debate
+      flag: Este debate ha sido marcado como inapropiado por varios usuarios.
+      login_to_comment: Necesitas %{signin} o %{signup} para comentar.
+      share: Compartir
+    update:
+      form:
+        submit_button: Guardar cambios
+  errors:
+    messages:
+      user_not_found: No se encontró el usuario
+  form:
+    accept_terms: Acepto la %{policy} y las %{conditions}
+    conditions: Condiciones de uso
+    debate: el debate
+    error: error
+    errors: errores
+    not_saved: 'impidieron guardar %{resource}:'
+    policy: Política de privacidad
+    proposal: la propuesta
+    spending_proposal: la propuesta de gasto
+    user: la cuenta
+    verification::letter: la verificación
+    verification::sms: el teléfono
+  geozones:
+    none: Toda la ciudad
+  layouts:
+    application:
+      chrome: Google Chrome
+      firefox: Firefox
+      ie: Hemos detectado que estás navegando desde Internet Explorer. Para una mejor experiencia te recomendamos utilizar %{chrome} o %{firefox}.
+      ie_title: Esta web no está optimizada para tu navegador
+    footer:
+      accessibility: Accesibilidad
+      conditions: Condiciones de uso
+      consul: aplicación Consul
+      consul_url: https://github.com/consul/consul
+      contact_us: Para asistencia técnica entra en
+      copyright: Ayuntamiento de Madrid, %{year}
+      description: Este portal usa la %{consul} que es %{open_source}. De Madrid, para el mundo entero.
+      faq: Asistencia técnica
+      more_info: Más información
+      open_data_text: Todos los datos del Ayuntamiento son tuyos.
+      open_data_title: Datos Abiertos
+      open_source: software libre
+      open_source_url: http://www.gnu.org/licenses/agpl-3.0.html
+      participation_text: Decide cómo debe ser la ciudad de Madrid que quieres.
+      participation_title: Participación
+      privacy: Política de privacidad
+      transparency_text: Obtén cualquier información sobre el Ayuntamiento de Madrid.
+      transparency_title: Transparencia
+      transparency_url: https://transparencia.madrid.es
+    header:
+      administration: Administrar
+      debates: Debates
+      external_link_blog: Blog
+      external_link_blog_url: "/blog"
+      external_link_opendata: Datos abiertos
+      external_link_opendata_url: http://datos.madrid.es
+      external_link_transparency: Transparencia
+      external_link_transparency_url: https://transparencia.madrid.es
+      locale: 'Idioma:'
+      logo: Madrid
+      moderation: Moderar
+      more_information: Más información
+      my_account_link: Mi cuenta
+      my_activity_link: Mi actividad
+      new_notifications:
+        one: Tienes una nueva notificación
+        other: Tienes %{count} notificaciones nuevas
+      no_notifications: No tienes notificaciones nuevas
+      open: abierto
+      open_city_slogan_html: Existen ciudades gobernadas directamente por sus habitantes, que <b>debaten</b> sobre temas que les preocupan, <b>proponen</b> ideas para mejorar sus vidas y <b>deciden</b> entre todas y todos las que se llevan a cabo. Madrid ya es una de ellas.
+      open_city_title: La ciudad que quieres será la ciudad que quieras.
+      open_data: Datos abiertos
+      open_gov: Gobierno %{open}
+      participation_html: Madrid Decide
+      proposals: Propuestas
+      see_all: Ver propuestas
+      spending_proposals: Presupuestos ciudadanos
+  legislation:
+    help:
+      alt: Selecciona el texto que quieres comentar y pulsa en el botón con el lápiz.
+      text: Para comentar este documento debes %{sign_in} o %{sign_up}. Después selecciona el texto que quieres comentar y pulsa en el botón con el lápiz.
+      text_sign_in: iniciar sesión
+      text_sign_up: registrarte
+      title: "¿Cómo puedo comentar este documento?"
+  locale: Español
   notifications:
     index:
-      title: "Notificaciones"
-      mark_all_as_read: "Marcar todas como leídas"
-      empty_notifications: "No tienes notificaciones nuevas."
       comments_on:
-        one: "Hay un nuevo comentario en"
-        other: "Hay %{count} comentarios nuevos en"
+        one: Hay un nuevo comentario en
+        other: Hay %{count} comentarios nuevos en
+      empty_notifications: No tienes notificaciones nuevas.
+      mark_all_as_read: Marcar todas como leídas
       replies_to:
-        one: "Hay una respuesta nueva a tu comentario en"
-        other: "Hay %{count} nuevas respuestas a tu comentario en"
-  simple_captcha:
-    placeholder: "Introduce el texto de la imagen"
-    label: "Introduce el texto de la imagen en la siguiente caja"
-    refresh_button_text: "Refrescar"
-    message:
-      user: "el código secreto no coincide con la imagen"
-      debate: "el código secreto no coincide con la imagen"
-      proposal: "el código secreto no coincide con la imagen"
-      spendingproposal: "el código secreto no coincide con la imagen"
+        one: Hay una respuesta nueva a tu comentario en
+        other: Hay %{count} nuevas respuestas a tu comentario en
+      title: Notificaciones
+  omniauth:
+    facebook:
+      sign_in: Entra con Facebook
+      sign_up: Regístrate con Facebook
+    finish_signup:
+      title: Añade tu email
+    google_oauth2:
+      sign_in: Entra con Google
+      sign_up: Regístrate con Google
+    twitter:
+      sign_in: Entra con Twitter
+      sign_up: Regístrate con Twitter
+  proposals:
+    create:
+      form:
+        submit_button: Crear propuesta
+    edit:
+      back_link: Volver
+      editing: Editar propuesta
+      form:
+        submit_button: Guardar cambios
+      show_link: Ver propuesta
+    form:
+      proposal_external_url: Enlace a documentación adicional
+      proposal_question: Pregunta de la propuesta
+      proposal_question_example_html: Debe ser resumida en una pregunta cuya respuesta sea Sí o No. <em>Ej. '¿Está usted de acuerdo en peatonalizar la calle Mayor?'</em>
+      proposal_responsible_name: Nombre y apellidos de la persona que hace esta propuesta
+      proposal_responsible_name_note: "(individualmente o como representante de un colectivo; no se mostrará públicamente)"
+      proposal_summary: Resumen de la propuesta
+      proposal_summary_note: "(máximo 200 caracteres)"
+      proposal_text: Texto desarrollado de la propuesta
+      proposal_title: Título de la propuesta
+      proposal_video_url: Enlace a vídeo externo
+      proposal_video_url_note: Puedes añadir un enlace a YouTube o Vimeo
+      tags_instructions: Etiqueta esta propuesta. Puedes elegir entre nuestras sugerencias o introducir las que desees.
+      tags_label: Temas
+      tags_placeholder: Escribe las etiquetas que desees separadas por una coma (',')
+    index:
+      featured_proposals: Destacadas
+      filter_topic:
+        one: " con el tema '%{topic}'"
+        other: " con el tema '%{topic}'"
+      orders:
+        confidence_score: Más apoyadas
+        created_at: Nuevas
+        hot_score: Más activas hoy
+        most_commented: Más comentadas
+        relevance: Más relevantes
+      search_form:
+        button: Buscar
+        placeholder: Buscar propuestas...
+        title: Buscar
+      search_results:
+        one: " que contiene '%{search_term}'"
+        other: " que contienen '%{search_term}'"
+      select_order: Ordenar por
+      select_order_long: Estas viendo las propuestas
+      start_proposal: Crea una propuesta
+      title: Propuestas ciudadanas
+    new:
+      back_link: Volver
+      form:
+        submit_button: Crear propuesta
+      more_info: "¿Cómo funcionan las propuestas ciudadanas?"
+      recommendation_one: No escribas el título de la propuesta o frases enteras en mayúsculas. En internet eso se considera gritar. Y a nadie le gusta que le griten.
+      recommendation_three: Disfruta de este espacio, de las voces que lo llenan, también es tuyo.
+      recommendation_two: Cualquier propuesta o comentario que implique una acción ilegal será eliminada, también las que tengan la intención de sabotear los espacios de propuesta, todo lo demás está permitido.
+      recommendations_title: Recomendaciones para crear una propuesta
+      start_new: Crear una propuesta
+    proposal:
+      already_supported: "¡Ya has apoyado esta propuesta, compártela!"
+      comments:
+        one: 1 Comentario
+        other: "%{count} Comentarios"
+        zero: Sin comentarios
+      proposal: Propuesta
+      reason_for_supports_necessary: 2% del Censo
+      support: Apoyar
+      support_title: Apoyar esta propuesta
+      supports:
+        one: 1 apoyo
+        other: "%{count} apoyos"
+        zero: Sin apoyos
+      supports_necessary: "%{number} apoyos necesarios"
+      total_percent: 100%
+    show:
+      author_deleted: Usuario eliminado
+      back_link: Volver
+      code: 'Código de la propuesta:'
+      comments:
+        one: 1 Comentario
+        other: "%{count} Comentarios"
+        zero: Sin comentarios
+      comments_title: Comentarios
+      edit_proposal_link: Editar propuesta
+      flag: Esta propuesta ha sido marcada como inapropiada por varios usuarios.
+      login_to_comment: Necesitas %{signin} o %{signup} para comentar.
+      share: Compartir
+    update:
+      form:
+        submit_button: Guardar cambios
   shared:
     author_info:
       author_deleted: Usuario eliminado
-    tags_cloud:
-      tags: "Tendencias"
+    check: Seleccionar
+    check_all: Todos
+    check_none: Ninguno
+    collective: Colectivo
+    flag: Denunciar como inapropiado
     print:
-      print_button: "Imprimir esta información"
-    flag: "Denunciar como inapropiado"
-    unflag: "Deshacer denuncia"
-    collective: "Colectivo"
-    check: "Seleccionar"
-    check_all: "Todos"
-    check_none: "Ninguno"
+      print_button: Imprimir esta información
+    tags_cloud:
+      tags: Tendencias
+    unflag: Deshacer denuncia
+  simple_captcha:
+    label: Introduce el texto de la imagen en la siguiente caja
+    message:
+      debate: el código secreto no coincide con la imagen
+      proposal: el código secreto no coincide con la imagen
+      spendingproposal: el código secreto no coincide con la imagen
+      user: el código secreto no coincide con la imagen
+    placeholder: Introduce el texto de la imagen
+    refresh_button_text: Refrescar
+  social:
+    blog: Blog
+    facebook: Facebook
+    twitter: Twitter
+    youtube: YouTube
+  spending_proposals:
+    form:
+      description: Descripción detallada
+      external_url: Enlace a documentación adicional
+      geozone: "Ámbito de actuación"
+      submit_buttons:
+        create: Crear
+        new: Crear
+      title: Título de la propuesta de gasto
+    index:
+      create_link: Enviar propuesta de gasto
+      text_html: Desde esta sección podrás sugerir propuestas de gasto que irán asociadas a las partidas de presupuestos ciudadanos.<br>El requisito principal es que sean propuestas presupuestables.
+      title: Presupuestos participativos
+      verified_only: Sólo los usuarios verificados pueden crear propuestas de gasto, %{verify_account}.
+      verify_account: verifica tu cuenta
+    new:
+      back_link: Volver
+      more_info: "¿Cómo funcionan los presupuestos participativos?"
+      recommendation_one: Es fundamental que haga referencia a una actuación presupuestable.
+      recommendation_three: Intenta detallar lo máximo posible la propuesta para que el equipo de gobierno encargado de estudiarla tenga las menor dudas posibles.
+      recommendation_two: Cualquier propuesta o comentario que implique acciones ilegales será eliminada.
+      recommendations_title: Cómo crear una propuesta de gasto
+      start_new: Crear una propuesta de gasto
+  unauthorized:
+    default: No tienes permiso para acceder a esta página.
+    manage:
+      all: No tienes permiso para realizar la acción '%{action}' sobre %{subject}.
   users:
     show:
+      deleted: Eliminado
+      deleted_debate: Este debate ha sido eliminado
+      deleted_proposal: Este propuesta ha sido eliminada
       filters:
-        proposals:
-          one: "1 Propuesta"
-          other: "%{count} Propuestas"
-        debates:
-          one: "1 Debate"
-          other: "%{count} Debates"
         comments:
-          one: "1 Comentario"
+          one: 1 Comentario
           other: "%{count} Comentarios"
-      no_activity: "Usuario sin actividad pública"
-      private_activity: "Este usuario ha decidido mantener en privado su lista de actividades"
-      deleted: "Eliminado"
-      deleted_debate: "Este debate ha sido eliminado"
-      deleted_proposal: "Este propuesta ha sido eliminada"
-  unauthorized:
-    default: "No tienes permiso para acceder a esta página."
-    manage:
-      all: "No tienes permiso para realizar la acción '%{action}' sobre %{subject}."
+        debates:
+          one: 1 Debate
+          other: "%{count} Debates"
+        proposals:
+          one: 1 Propuesta
+          other: "%{count} Propuestas"
+      no_activity: Usuario sin actividad pública
+      private_activity: Este usuario ha decidido mantener en privado su lista de actividades
+  votes:
+    agree: Estoy de acuerdo
+    anonymous: Demasiados votos anónimos, para poder votar %{verify_account}.
+    disagree: No estoy de acuerdo
+    organizations: Las organizaciones no pueden votar
+    signin: iniciar sesión
+    signup: registrarte
+    supports: Apoyos
+    unauthenticated: Necesitas %{signin} o %{signup} para continuar.
+    verified_only: Las propuestas sólo pueden ser votadas por usuarios verificados, %{verify_account}.
+    verify_account: verifica tu cuenta
   welcome:
-    highlights: "Portada: "
-    signed_in_home_title: "Actividad reciente"
     debates:
-      title: "Debates"
-      description: "Encontrarnos, debatir y compartir lo que nos parece importante en nuestra ciudad."
-      alt: "Icono debates"
-    proposal:
-      title: "Propones"
-      description: "Espacio abierto para propuestas ciudadanas sobre el tipo de ciudad en el que queremos vivir."
-      alt: "Icono propones"
+      alt: Icono debates
+      description: Encontrarnos, debatir y compartir lo que nos parece importante en nuestra ciudad.
+      title: Debates
     decide:
-      title: "Decides"
-      description: "La ciudadanía decide si acepta o rechaza las propuestas más apoyadas."
-      alt: "Icono decides"
+      alt: Icono decides
+      description: La ciudadanía decide si acepta o rechaza las propuestas más apoyadas.
+      title: Decides
     do:
-      title: "Se hace"
-      description: "Si la propuesta es aceptada mayoritariamente, el Ayuntamiento la asume como propia y se hace."
-      alt: "Icono se hace"
+      alt: Icono se hace
+      description: Si la propuesta es aceptada mayoritariamente, el Ayuntamiento la asume como propia y se hace.
+      title: Se hace
+    highlights: 'Portada: '
+    proposal:
+      alt: Icono propones
+      description: Espacio abierto para propuestas ciudadanas sobre el tipo de ciudad en el que queremos vivir.
+      title: Propones
+    signed_in_home_title: Actividad reciente
     welcome:
-      title: "Empieza a participar"
-      go_to_index: "Ver propuestas"
-      user_permission_info: "Con tu cuenta ya puedes..."
-      user_permission_debates: "Participar en debates"
-      user_permission_proposal: "Crear nuevas propuestas"
-      user_permission_support_proposal: "Apoyar propuestas*"
-      user_permission_votes: "Participar en las votaciones finales*"
-      user_permission_verify: "Para poder realizar todas las acciones %{verify}."
-      user_permission_verify_url: "verifica tu cuenta"
+      go_to_index: Ver propuestas
+      title: Empieza a participar
+      user_permission_debates: Participar en debates
+      user_permission_info: Con tu cuenta ya puedes...
+      user_permission_proposal: Crear nuevas propuestas
+      user_permission_support_proposal: Apoyar propuestas*
+      user_permission_verify: Para poder realizar todas las acciones %{verify}.
       user_permission_verify_info: "* Sólo usuarios empadronados en el municipio de Madrid."
-  omniauth:
-    finish_signup:
-      title: "Añade tu email"
-    twitter:
-      sign_in: "Entra con Twitter"
-      sign_up: "Regístrate con Twitter"
-    facebook:
-      sign_in: "Entra con Facebook"
-      sign_up: "Regístrate con Facebook"
-    google_oauth2:
-      sign_in: "Entra con Google"
-      sign_up: "Regístrate con Google"
-  legislation:
-    help:
-      title: "¿Cómo puedo comentar este documento?"
-      text: "Para comentar este documento debes %{sign_in} o %{sign_up}. Después selecciona el texto que quieres comentar y pulsa en el botón con el lápiz."
-      text_sign_in: "iniciar sesión"
-      text_sign_up: "registrarte"
-      alt: "Selecciona el texto que quieres comentar y pulsa en el botón con el lápiz."
+      user_permission_verify_url: verifica tu cuenta
+      user_permission_votes: Participar en las votaciones finales*
