@@ -377,8 +377,6 @@ en:
       title: 'Advanced search'
       general: 'With the text'
       general_placeholder: 'Write the text'
-      author: 'By author name'
-      author_placeholder: 'Write the author name'
       author_type: 'By author category'
       author_type_blank: 'Select a category'
       date_range_blank: 'Choose a date'

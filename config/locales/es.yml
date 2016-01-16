@@ -377,8 +377,6 @@ es:
       title: 'Búsqueda avanzada'
       general: 'Con el texto'
       general_placeholder: 'Escribe el texto'
-      author: 'Por nombre de autor'
-      author_placeholder: 'Escribe el nombre del autor'
       author_type: 'Por categoría de autor'
       author_type_blank: 'Elige una categoría'
       date_range_blank: 'Elige una fecha'
