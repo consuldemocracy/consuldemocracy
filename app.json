@@ -28,7 +28,12 @@
       "description": "The maximum amount of threads worker will spawn.",
       "required": false,
       "value": "3"
-    }
+    },
+    "DEPLOY_TASKS": {
+      "description": "Tasks to perform after deployment.",
+      "required": false,
+      "value": "db:migrate"
+    },
   },
   "addons": [
     "heroku-postgresql",
@@ -40,5 +45,9 @@
   "formation": [
     { "process": "web",    "quantity": 1},
     { "process": "worker", "quantity": 1}
+  ],
+  "buildpacks": [
+    { "url": "https://github.com/heroku/heroku-buildpack-ruby" },
+    { "url": "https://github.com/gunpowderlabs/buildpack-ruby-rake-deploy-tasks" }
   ]
 }
