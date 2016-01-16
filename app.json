@@ -33,7 +33,7 @@
       "description": "Tasks to perform after deployment.",
       "required": false,
       "value": "db:migrate"
-    },
+    }
   },
   "addons": [
     "heroku-postgresql",
