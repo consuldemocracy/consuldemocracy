@@ -390,7 +390,7 @@ es:
       date: 'Por fecha'
       date_1: 'Últimas 24 horas'
       date_2: 'Última semana'
-      date_3: 'Últimos 30 días'
+      date_3: 'Último mes'
       date_4: 'Último año'
       date_5: 'Personalizada'
       from: 'Desde'

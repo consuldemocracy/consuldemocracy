@@ -90,15 +90,24 @@ module CommentableActions
 
     def parse_search_date
       return unless search_by_date?
-
-      start  = eval(params[:advanced_search][:date_min].inspect).to_time
-      finish = params[:advanced_search][:date_max].try(:to_time) || Date.today
-
-      params[:advanced_search][:date_range] = start.beginning_of_day..finish.end_of_day
+      params[:advanced_search][:date_range] = search_date_range
     end
 
     def search_by_date?
       params[:advanced_search] && params[:advanced_search][:date_min].present?
+    end
+
+    def search_start_date
+      date = Date.parse(params[:advanced_search][:date_min]) rescue nil
+      date || eval(params[:advanced_search][:date_min]).to_date
+    end
+
+    def search_finish_date
+      params[:advanced_search][:date_max].try(:to_date) || Date.today
+    end
+
+    def search_date_range
+      search_start_date.beginning_of_day..search_finish_date.end_of_day
     end
 
     def set_search_order

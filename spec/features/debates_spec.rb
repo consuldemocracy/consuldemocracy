@@ -535,42 +535,20 @@ feature 'Debates' do
         end
       end
 
-      #NOTE: Test the different offical levels with unit tests.
-      scenario "Search by author type", :js do
-        ana = create :user, official_level: 1
-        john = create :user, official_level: 2
+      context "Search by author type" do
 
-        debate1 = create(:debate, author: ana)
-        debate2 = create(:debate, author: ana)
-        debate3 = create(:debate, author: john)
+        scenario "Public employee", :js do
+          ana = create :user, official_level: 1
+          john = create :user, official_level: 2
 
-        visit debates_path
-
-        click_link "Advanced search"
-        select "Public employee", from: "advanced_search_official_level"
-        click_button "Filter"
-
-        within("#debates") do
-          expect(page).to have_css('.debate', count: 2)
-
-          expect(page).to have_content(debate1.title)
-          expect(page).to have_content(debate2.title)
-          expect(page).to_not have_content(debate3.title)
-        end
-      end
-
-      context "Search by date" do
-
-        #NOTE: Test the different date ranges with unit tests.
-        scenario "Search by predefined date range", :js do
-          debate1 = create(:debate, created_at: 1.minute.ago)
-          debate2 = create(:debate, created_at: 1.hour.ago)
-          debate3 = create(:debate, created_at: 2.days.ago)
+          debate1 = create(:debate, author: ana)
+          debate2 = create(:debate, author: ana)
+          debate3 = create(:debate, author: john)
 
           visit debates_path
 
           click_link "Advanced search"
-          select "Last 24 hours", from: "js-advanced-search-date-min"
+          select "Public employee", from: "advanced_search_official_level"
           click_button "Filter"
 
           within("#debates") do
@@ -580,6 +558,186 @@ feature 'Debates' do
             expect(page).to have_content(debate2.title)
             expect(page).to_not have_content(debate3.title)
           end
+        end
+
+        scenario "Municipal Organization", :js do
+          ana = create :user, official_level: 2
+          john = create :user, official_level: 3
+
+          debate1 = create(:debate, author: ana)
+          debate2 = create(:debate, author: ana)
+          debate3 = create(:debate, author: john)
+
+          visit debates_path
+
+          click_link "Advanced search"
+          select "Municipal Organization", from: "advanced_search_official_level"
+          click_button "Filter"
+
+          within("#debates") do
+            expect(page).to have_css('.debate', count: 2)
+
+            expect(page).to have_content(debate1.title)
+            expect(page).to have_content(debate2.title)
+            expect(page).to_not have_content(debate3.title)
+          end
+        end
+
+        scenario "General director", :js do
+          ana = create :user, official_level: 3
+          john = create :user, official_level: 4
+
+          debate1 = create(:debate, author: ana)
+          debate2 = create(:debate, author: ana)
+          debate3 = create(:debate, author: john)
+
+          visit debates_path
+
+          click_link "Advanced search"
+          select "General director", from: "advanced_search_official_level"
+          click_button "Filter"
+
+          within("#debates") do
+            expect(page).to have_css('.debate', count: 2)
+
+            expect(page).to have_content(debate1.title)
+            expect(page).to have_content(debate2.title)
+            expect(page).to_not have_content(debate3.title)
+          end
+        end
+
+        scenario "City councillor", :js do
+          ana = create :user, official_level: 4
+          john = create :user, official_level: 5
+
+          debate1 = create(:debate, author: ana)
+          debate2 = create(:debate, author: ana)
+          debate3 = create(:debate, author: john)
+
+          visit debates_path
+
+          click_link "Advanced search"
+          select "City councillor", from: "advanced_search_official_level"
+          click_button "Filter"
+
+          within("#debates") do
+            expect(page).to have_css('.debate', count: 2)
+
+            expect(page).to have_content(debate1.title)
+            expect(page).to have_content(debate2.title)
+            expect(page).to_not have_content(debate3.title)
+          end
+        end
+
+        scenario "Mayoress", :js do
+          ana = create :user, official_level: 5
+          john = create :user, official_level: 4
+
+          debate1 = create(:debate, author: ana)
+          debate2 = create(:debate, author: ana)
+          debate3 = create(:debate, author: john)
+
+          visit debates_path
+
+          click_link "Advanced search"
+          select "Mayoress", from: "advanced_search_official_level"
+          click_button "Filter"
+
+          within("#debates") do
+            expect(page).to have_css('.debate', count: 2)
+
+            expect(page).to have_content(debate1.title)
+            expect(page).to have_content(debate2.title)
+            expect(page).to_not have_content(debate3.title)
+          end
+        end
+
+      end
+
+      context "Search by date" do
+
+        context "Predefined date ranges" do
+
+          scenario "Last day", :js do
+            debate1 = create(:debate, created_at: 1.minute.ago)
+            debate2 = create(:debate, created_at: 1.hour.ago)
+            debate3 = create(:debate, created_at: 2.days.ago)
+
+            visit debates_path
+
+            click_link "Advanced search"
+            select "Last 24 hours", from: "js-advanced-search-date-min"
+            click_button "Filter"
+
+            within("#debates") do
+              expect(page).to have_css('.debate', count: 2)
+
+              expect(page).to have_content(debate1.title)
+              expect(page).to have_content(debate2.title)
+              expect(page).to_not have_content(debate3.title)
+            end
+          end
+
+          scenario "Last week", :js do
+            debate1 = create(:debate, created_at: 1.day.ago)
+            debate2 = create(:debate, created_at: 5.days.ago)
+            debate3 = create(:debate, created_at: 8.days.ago)
+
+            visit debates_path
+
+            click_link "Advanced search"
+            select "Last week", from: "js-advanced-search-date-min"
+            click_button "Filter"
+
+            within("#debates") do
+              expect(page).to have_css('.debate', count: 2)
+
+              expect(page).to have_content(debate1.title)
+              expect(page).to have_content(debate2.title)
+              expect(page).to_not have_content(debate3.title)
+            end
+          end
+
+          scenario "Last month", :js do
+            debate1 = create(:debate, created_at: 10.days.ago)
+            debate2 = create(:debate, created_at: 20.days.ago)
+            debate3 = create(:debate, created_at: 33.days.ago)
+
+            visit debates_path
+
+            click_link "Advanced search"
+            select "Last month", from: "js-advanced-search-date-min"
+            click_button "Filter"
+
+            within("#debates") do
+              expect(page).to have_css('.debate', count: 2)
+
+              expect(page).to have_content(debate1.title)
+              expect(page).to have_content(debate2.title)
+              expect(page).to_not have_content(debate3.title)
+            end
+          end
+
+          scenario "Last year", :js do
+            debate1 = create(:debate, created_at: 300.days.ago)
+            debate2 = create(:debate, created_at: 350.days.ago)
+            debate3 = create(:debate, created_at: 370.days.ago)
+
+            visit debates_path
+
+            click_link "Advanced search"
+            select "Last year", from: "js-advanced-search-date-min"
+            click_button "Filter"
+
+            within("#debates") do
+              expect(page).to have_css('.debate', count: 2)
+
+              expect(page).to have_content(debate1.title)
+              expect(page).to have_content(debate2.title)
+              expect(page).to_not have_content(debate3.title)
+            end
+          end
+
         end
 
         scenario "Search by custom date range", :js do

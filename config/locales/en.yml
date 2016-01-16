@@ -390,7 +390,7 @@ en:
       date: 'By date'
       date_1: 'Last 24 hours'
       date_2: 'Last week'
-      date_3: 'Last 30 days'
+      date_3: 'Last month'
       date_4: 'Last year'
       date_5: 'Customized'
       from: 'From'

@@ -14,7 +14,7 @@ module SearchHelper
     options_for_select([
       [t("shared.advanced_search.date_1"), "24.hours.ago"],
       [t("shared.advanced_search.date_2"), "1.week.ago"],
-      [t("shared.advanced_search.date_3"), "1.month.ago"],
+      [t("shared.advanced_search.date_3"), "30.days.ago"],
       [t("shared.advanced_search.date_4"), "1.year.ago"],
       [t("shared.advanced_search.date_5"), 'custom']],
       selected_date_range)

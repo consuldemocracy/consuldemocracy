@@ -598,42 +598,20 @@ feature 'Proposals' do
         end
       end
 
-      #NOTE: Test the different offical levels with unit tests.
-      scenario "Search by author type", :js do
-        ana = create :user, official_level: 1
-        john = create :user, official_level: 2
+      context "Search by author type" do
 
-        proposal1 = create(:proposal, author: ana)
-        proposal2 = create(:proposal, author: ana)
-        proposal3 = create(:proposal, author: john)
+        scenario "Public employee", :js do
+          ana = create :user, official_level: 1
+          john = create :user, official_level: 2
 
-        visit proposals_path
-
-        click_link "Advanced search"
-        select "Public employee", from: "advanced_search_official_level"
-        click_button "Filter"
-
-        within("#proposals") do
-          expect(page).to have_css('.proposal', count: 2)
-
-          expect(page).to have_content(proposal1.title)
-          expect(page).to have_content(proposal2.title)
-          expect(page).to_not have_content(proposal3.title)
-        end
-      end
-
-      context "Search by date" do
-
-        #NOTE: Test the different date ranges with unit tests.
-        scenario "Search by predefined date range", :js do
-          proposal1 = create(:proposal, created_at: 1.minute.ago)
-          proposal2 = create(:proposal, created_at: 1.hour.ago)
-          proposal3 = create(:proposal, created_at: 2.days.ago)
+          proposal1 = create(:proposal, author: ana)
+          proposal2 = create(:proposal, author: ana)
+          proposal3 = create(:proposal, author: john)
 
           visit proposals_path
 
           click_link "Advanced search"
-          select "Last 24 hours", from: "js-advanced-search-date-min"
+          select "Public employee", from: "advanced_search_official_level"
           click_button "Filter"
 
           within("#proposals") do
@@ -643,6 +621,186 @@ feature 'Proposals' do
             expect(page).to have_content(proposal2.title)
             expect(page).to_not have_content(proposal3.title)
           end
+        end
+
+        scenario "Municipal Organization", :js do
+          ana = create :user, official_level: 2
+          john = create :user, official_level: 3
+
+          proposal1 = create(:proposal, author: ana)
+          proposal2 = create(:proposal, author: ana)
+          proposal3 = create(:proposal, author: john)
+
+          visit proposals_path
+
+          click_link "Advanced search"
+          select "Municipal Organization", from: "advanced_search_official_level"
+          click_button "Filter"
+
+          within("#proposals") do
+            expect(page).to have_css('.proposal', count: 2)
+
+            expect(page).to have_content(proposal1.title)
+            expect(page).to have_content(proposal2.title)
+            expect(page).to_not have_content(proposal3.title)
+          end
+        end
+
+        scenario "General director", :js do
+          ana = create :user, official_level: 3
+          john = create :user, official_level: 4
+
+          proposal1 = create(:proposal, author: ana)
+          proposal2 = create(:proposal, author: ana)
+          proposal3 = create(:proposal, author: john)
+
+          visit proposals_path
+
+          click_link "Advanced search"
+          select "General director", from: "advanced_search_official_level"
+          click_button "Filter"
+
+          within("#proposals") do
+            expect(page).to have_css('.proposal', count: 2)
+
+            expect(page).to have_content(proposal1.title)
+            expect(page).to have_content(proposal2.title)
+            expect(page).to_not have_content(proposal3.title)
+          end
+        end
+
+        scenario "City councillor", :js do
+          ana = create :user, official_level: 4
+          john = create :user, official_level: 5
+
+          proposal1 = create(:proposal, author: ana)
+          proposal2 = create(:proposal, author: ana)
+          proposal3 = create(:proposal, author: john)
+
+          visit proposals_path
+
+          click_link "Advanced search"
+          select "City councillor", from: "advanced_search_official_level"
+          click_button "Filter"
+
+          within("#proposals") do
+            expect(page).to have_css('.proposal', count: 2)
+
+            expect(page).to have_content(proposal1.title)
+            expect(page).to have_content(proposal2.title)
+            expect(page).to_not have_content(proposal3.title)
+          end
+        end
+
+        scenario "Mayoress", :js do
+          ana = create :user, official_level: 5
+          john = create :user, official_level: 4
+
+          proposal1 = create(:proposal, author: ana)
+          proposal2 = create(:proposal, author: ana)
+          proposal3 = create(:proposal, author: john)
+
+          visit proposals_path
+
+          click_link "Advanced search"
+          select "Mayoress", from: "advanced_search_official_level"
+          click_button "Filter"
+
+          within("#proposals") do
+            expect(page).to have_css('.proposal', count: 2)
+
+            expect(page).to have_content(proposal1.title)
+            expect(page).to have_content(proposal2.title)
+            expect(page).to_not have_content(proposal3.title)
+          end
+        end
+
+      end
+
+      context "Search by date" do
+
+        context "Predefined date ranges" do
+
+          scenario "Last day", :js do
+            proposal1 = create(:proposal, created_at: 1.minute.ago)
+            proposal2 = create(:proposal, created_at: 1.hour.ago)
+            proposal3 = create(:proposal, created_at: 2.days.ago)
+
+            visit proposals_path
+
+            click_link "Advanced search"
+            select "Last 24 hours", from: "js-advanced-search-date-min"
+            click_button "Filter"
+
+            within("#proposals") do
+              expect(page).to have_css('.proposal', count: 2)
+
+              expect(page).to have_content(proposal1.title)
+              expect(page).to have_content(proposal2.title)
+              expect(page).to_not have_content(proposal3.title)
+            end
+          end
+
+          scenario "Last week", :js do
+            proposal1 = create(:proposal, created_at: 1.day.ago)
+            proposal2 = create(:proposal, created_at: 5.days.ago)
+            proposal3 = create(:proposal, created_at: 8.days.ago)
+
+            visit proposals_path
+
+            click_link "Advanced search"
+            select "Last week", from: "js-advanced-search-date-min"
+            click_button "Filter"
+
+            within("#proposals") do
+              expect(page).to have_css('.proposal', count: 2)
+
+              expect(page).to have_content(proposal1.title)
+              expect(page).to have_content(proposal2.title)
+              expect(page).to_not have_content(proposal3.title)
+            end
+          end
+
+          scenario "Last month", :js do
+            proposal1 = create(:proposal, created_at: 10.days.ago)
+            proposal2 = create(:proposal, created_at: 20.days.ago)
+            proposal3 = create(:proposal, created_at: 33.days.ago)
+
+            visit proposals_path
+
+            click_link "Advanced search"
+            select "Last month", from: "js-advanced-search-date-min"
+            click_button "Filter"
+
+            within("#proposals") do
+              expect(page).to have_css('.proposal', count: 2)
+
+              expect(page).to have_content(proposal1.title)
+              expect(page).to have_content(proposal2.title)
+              expect(page).to_not have_content(proposal3.title)
+            end
+          end
+
+          scenario "Last year", :js do
+            proposal1 = create(:proposal, created_at: 300.days.ago)
+            proposal2 = create(:proposal, created_at: 350.days.ago)
+            proposal3 = create(:proposal, created_at: 370.days.ago)
+
+            visit proposals_path
+
+            click_link "Advanced search"
+            select "Last year", from: "js-advanced-search-date-min"
+            click_button "Filter"
+
+            within("#proposals") do
+              expect(page).to have_css('.proposal', count: 2)
+
+              expect(page).to have_content(proposal1.title)
+              expect(page).to have_content(proposal2.title)
+              expect(page).to_not have_content(proposal3.title)
+            end
+          end
+
         end
 
         scenario "Search by custom date range", :js do
@@ -716,8 +874,8 @@ feature 'Proposals' do
           click_link "Advanced search"
 
           select "Customized", from: "js-advanced-search-date-min"
-          fill_in "advanced_search_date_min", with: 7.days.ago
-          fill_in "advanced_search_date_max", with: 1.days.ago
+          fill_in "advanced_search_date_min", with: 7.days.ago.to_date
+          fill_in "advanced_search_date_max", with: 1.days.ago.to_date
           click_button "Filter"
 
           within "#js-advanced-search" do
