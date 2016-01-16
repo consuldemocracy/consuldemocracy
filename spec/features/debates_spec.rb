@@ -570,7 +570,7 @@ feature 'Debates' do
           visit debates_path
 
           find("h4.advanced-search-title").click
-          select "Last 24 hours", from: "advanced_search_date_min"
+          select "Last 24 hours", from: "js-advanced-search-date-min"
           click_button "Filter"
 
           within("#debates") do
@@ -590,7 +590,7 @@ feature 'Debates' do
           visit debates_path
 
           find("h4.advanced-search-title").click
-          select "Customized", from: "advanced_search_date_min"
+          select "Customized", from: "js-advanced-search-date-min"
           fill_in "advanced_search_date_min", with: 7.days.ago
           fill_in "advanced_search_date_max", with: 1.days.ago
           click_button "Filter"
@@ -618,7 +618,7 @@ feature 'Debates' do
           fill_in "Write the text",        with: "Schwifty"
           fill_in "Write the author name", with: "Ana06"
           select "Public employee", from: "advanced_search_official_level"
-          select "Last 24 hours",   from: "advanced_search_date_min"
+          select "Last 24 hours",   from: "js-advanced-search-date-min"
 
           click_button "Filter"
 
@@ -635,11 +635,11 @@ feature 'Debates' do
           fill_in "Write the text", with: "Schwifty"
           fill_in "Write the author name", with: "Ana06"
           select "Public employee", from: "advanced_search_official_level"
-          select "Last 24 hours", from: "advanced_search_date_min"
+          select "Last 24 hours", from: "js-advanced-search-date-min"
 
           click_button "Filter"
 
-          within "#advanced-search" do
+          within "#js-advanced-search" do
             expect(page).to have_selector("input[name='search'][value='Schwifty']")
             expect(page).to have_selector("input[name='advanced_search[author]'][value='Ana06']")
             expect(page).to have_select('advanced_search[official_level]', selected: 'Public employee')
@@ -651,12 +651,12 @@ feature 'Debates' do
           visit debates_path
           find("h4.advanced-search-title").click
 
-          select "Customized", from: "advanced_search_date_min"
+          select "Customized", from: "js-advanced-search-date-min"
           fill_in "advanced_search_date_min", with: 7.days.ago
           fill_in "advanced_search_date_max", with: 1.days.ago
           click_button "Filter"
 
-          within "#advanced-search" do
+          within "#js-advanced-search" do
             expect(page).to have_select('advanced_search[date_min]', selected: 'Customized')
             expect(page).to have_selector("input[name='advanced_search[date_min]'][value*='#{7.days.ago.strftime('%Y-%m-%d')}']")
             expect(page).to have_selector("input[name='advanced_search[date_max]'][value*='#{1.day.ago.strftime('%Y-%m-%d')}']")

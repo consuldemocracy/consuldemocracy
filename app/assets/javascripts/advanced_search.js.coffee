@@ -1,7 +1,7 @@
 App.AdvancedSearch =
 
   advanced_search_terms: ->
-    $('#advanced-search').data('advanced-search-terms')
+    $('#js-advanced-search').data('advanced-search-terms')
 
   decorate_link: (id) ->
     $('.advanced-search-title').addClass 'blue'
@@ -10,19 +10,19 @@ App.AdvancedSearch =
     $('.advanced-search-title').removeClass 'blue'
 
   toggle_form: ->
-    $('#advanced-search').slideToggle()
+    $('#js-advanced-search').slideToggle()
 
   toggle_date_options: ->
-    if $('#advanced_search_date_min').val() == 'custom'
-      $('.customized-date').show()
-      $('.customized-date input').prop 'disabled', false
+    if $('#js-advanced-search-date-min').val() == 'custom'
+      $('#js-customized-date').show()
+      $('#js-customized-date input').prop 'disabled', false
     else
-      $('.customized-date').hide()
-      $('.customized-date input').prop 'disabled', true
+      $('#js-customized-date').hide()
+      $('#js-customized-date input').prop 'disabled', true
 
   initialize: ->
     if App.AdvancedSearch.advanced_search_terms()
-      $('#advanced-search').show()
+      $('#js-advanced-search').show()
       App.AdvancedSearch.toggle_date_options()
 
     $('.advanced-search-title').on
@@ -33,6 +33,6 @@ App.AdvancedSearch =
       mouseleave: ->
         App.AdvancedSearch.undecorate_link()
 
-    $('#advanced_search_date_min').on
+    $('#js-advanced-search-date-min').on
       change: ->
         App.AdvancedSearch.toggle_date_options()
