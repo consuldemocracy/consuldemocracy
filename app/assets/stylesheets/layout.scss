@@ -519,7 +519,7 @@ header {
   background: white;
   border-bottom: 1px solid $border;
   clear: both;
-  margin: $line-height 0 $line-height/2;
+  margin-bottom: $line-height/2;
 
   a {
     color: $text;
@@ -1037,6 +1037,13 @@ img.avatar, img.admin-avatar, img.moderator-avatar, img.initialjs-avatar {
   }
 }
 
+.search-results {
+
+  h2 {
+    margin-bottom: 0;
+  }
+}
+
 .advanced-search {
   float: left;
   margin: $line-height 0;
@@ -1052,6 +1059,7 @@ img.avatar, img.admin-avatar, img.moderator-avatar, img.initialjs-avatar {
 }
 
 .advanced-search-form {
+  margin-top: $line-height;
 
   select {
     height: $line-height*2;
