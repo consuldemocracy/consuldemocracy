@@ -13,7 +13,6 @@ feature 'Admin debates' do
   background do
     admin = create(:administrator)
     login_as(admin.user)
-    Setting['feature.debates'] = true
   end
 
   scenario 'Restore' do
