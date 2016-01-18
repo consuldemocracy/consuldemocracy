@@ -1,6 +1,4 @@
 class User < ActiveRecord::Base
-  OMNIAUTH_EMAIL_PREFIX = 'omniauth@participacion'
-  OMNIAUTH_EMAIL_REGEX  = /\A#{OMNIAUTH_EMAIL_PREFIX}/
 
   include Verification
 
@@ -31,7 +29,6 @@ class User < ActiveRecord::Base
   validate :validate_username_length
 
   validates :official_level, inclusion: {in: 0..5}
-  validates_format_of :email, without: OMNIAUTH_EMAIL_REGEX, on: :update
   validates :terms_of_service, acceptance: { allow_nil: false }, on: :create
 
   validates_associated :organization, message: false
@@ -39,6 +36,7 @@ class User < ActiveRecord::Base
   accepts_nested_attributes_for :organization, update_only: true
 
   attr_accessor :skip_password_validation
+  attr_accessor :registering_with_oauth
 
   scope :administrators, -> { joins(:administrators) }
   scope :moderators,     -> { joins(:moderator) }
@@ -55,14 +53,15 @@ class User < ActiveRecord::Base
     email, user = nil, nil
     if auth.info.verified || auth.info.verified_email
       email = auth.info.email
-      user = User.where(email: email).first if email
+      user = User.where(email: email).first
     end
     user || User.new(
+      registering_with_oauth: true,
       username: auth.info.nickname || auth.extra.raw_info.name.parameterize('-') || auth.uid,
-      email: email || "#{OMNIAUTH_EMAIL_PREFIX}-#{auth.uid}-#{auth.provider}.com",
+      email: email,
       password: Devise.friendly_token[0,20],
       terms_of_service: '1',
-      confirmed_at: Time.now
+      confirmed_at: DateTime.now
     )
   end
 
@@ -146,11 +145,6 @@ class User < ActiveRecord::Base
     erased_at.present?
   end
 
-  def email_provided?
-    !!(email && email !~ OMNIAUTH_EMAIL_REGEX) ||
-      !!(unconfirmed_email && unconfirmed_email !~ OMNIAUTH_EMAIL_REGEX)
-  end
-
   def locked?
     Lock.find_or_create_by(user: self).locked?
   end
@@ -173,16 +167,20 @@ class User < ActiveRecord::Base
   end
 
   def username_required?
-    !organization? && !erased?
+    !organization? && !erased? && !registering_with_oauth
   end
 
   def email_required?
-    !erased?
+    !erased? && !registering_with_oauth
   end
 
   def has_official_email?
     domain = Setting.value_for 'email_domain_for_officials'
     !email.blank? && ( (email.end_with? "@#{domain}") || (email.end_with? ".#{domain}") )
+  end
+
+  def pending_finish_signup?
+    email.blank? && unconfirmed_email.blank?
   end
 
   private
