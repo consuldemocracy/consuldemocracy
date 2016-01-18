@@ -173,6 +173,7 @@ en:
     header:
       administration: Administration
       debates: Debates
+      external_link_blog: Blog
       locale: 'Language:'
       moderation: Moderation
       more_information: More information

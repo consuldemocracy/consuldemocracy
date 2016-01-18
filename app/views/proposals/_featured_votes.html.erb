@@ -35,9 +35,9 @@
   <% end %>
 
   <% if voted_for?(@featured_proposals_votes, proposal) %>
-    <% if setting('twitter_handle') %>
+    <% if Setting['twitter_handle'] %>
       <div class="share-supported">
-        <%= social_share_button_tag(proposal.title, url: proposal_url(proposal), via: setting('twitter_handle')) %>
+        <%= social_share_button_tag(proposal.title, url: proposal_url(proposal), via: Setting['twitter_handle']) %>
       </div>
     <% end %>
   <% end %>

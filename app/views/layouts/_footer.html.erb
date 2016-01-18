@@ -11,26 +11,26 @@
       </div>
 
       <div class="small-12 medium-3 column social">
-        <% if setting('twitter_handle') %>
-          <%= link_to "https://twitter.com/#{setting 'twitter_handle'}", target: "_blank", title: t("social.twitter") do %>
+        <% if Setting['twitter_handle'] %>
+          <%= link_to "https://twitter.com/#{Setting['twitter_handle']}", target: "_blank", title: t("social.twitter") do %>
             <span class="sr-only"><%= t("social.twitter") %></span>
             <i class="icon-twitter"></i>
           <% end %>
         <% end %>
-        <% if setting('facebook_handle') %>
-          <%= link_to "https://www.facebook.com/#{setting('facebook_handle')}/", target: "_blank", title: t("social.facebook") do %>
+        <% if Setting['facebook_handle'] %>
+          <%= link_to "https://www.facebook.com/#{Setting['facebook_handle']}/", target: "_blank", title: t("social.facebook") do %>
             <span class="sr-only"><%= t("social.facebook") %></span>
             <i class="icon-facebook"></i>
           <% end %>
         <% end %>
-        <%  if setting('blog_url') %>
-          <%= link_to settings('blog_url'), target: "_blank", title: t("social.blog") do %>
+        <%  if Setting['blog_url'] %>
+          <%= link_to Setting['blog_url'], target: "_blank", title: t("social.blog") do %>
             <span class="sr-only"><%= t("social.blog") %></span>
             <i class="icon-blog"></i>
           <% end %>
         <% end %>
-        <% if setting('youtube_handle') %>
-          <%= link_to "https://www.youtube.com/#{setting 'youtube_handle'}", target: "_blank", title: t("social.youtube") do %>
+        <% if Setting['youtube_handle'] %>
+          <%= link_to "https://www.youtube.com/#{Setting['youtube_handle']}", target: "_blank", title: t("social.youtube") do %>
             <span class="sr-only"><%= t("social.youtube") %></span>
             <i class="icon-youtube"></i>
           <% end %>
