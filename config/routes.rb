@@ -280,6 +280,8 @@ Rails.application.routes.draw do
     mount LetterOpenerWeb::Engine, at: "/letter_opener"
   end
 
+  mount Tolk::Engine => '/translate', :as => 'tolk'
+
   # static pages
 
   get '/blog' => redirect("http://diario.madrid.es/participa/")

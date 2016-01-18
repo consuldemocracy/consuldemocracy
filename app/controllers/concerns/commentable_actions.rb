@@ -66,7 +66,7 @@ module CommentableActions
     end
 
     def tag_cloud
-      resource_model.tag_counts.order("#{resource_name.pluralize}_count": :desc, name: :asc).limit(20)
+      resource_model.last_week.tag_counts.order("#{resource_name.pluralize}_count": :desc, name: :asc).limit(5)
     end
 
     def load_featured_tags
