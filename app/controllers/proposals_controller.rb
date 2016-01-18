@@ -15,7 +15,6 @@ class ProposalsController < ApplicationController
     @filter = ProposalFilter.new(params)
     @proposals = @filter.collection
 
-
     @featured_proposals = @proposals.sort_by_confidence_score.limit(3) if (@filter.search_filter.blank? && @filter.tag_filter.blank?)
     if @featured_proposals.present?
       set_featured_proposal_votes(@featured_proposals)
@@ -49,4 +48,5 @@ class ProposalsController < ApplicationController
     def set_featured_proposal_votes(proposals)
       @featured_proposals_votes = current_user ? current_user.proposal_votes(proposals) : {}
     end
+
 end

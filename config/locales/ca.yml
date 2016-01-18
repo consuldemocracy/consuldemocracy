@@ -329,6 +329,27 @@ ca:
       form:
         submit_button: Desa els canvis
   shared:
+    advanced_search:
+      author_type: Per autor categoria
+      author_type_1: Empleat públic
+      author_type_2: Organització Municipal
+      author_type_3: Director general
+      author_type_4: Ciutat regidor
+      author_type_5: Alcaldessa
+      author_type_blank: Seleccioneu una categoria
+      date: Per data
+      date_1: "Últimes 24 hores"
+      date_2: La setmana passada
+      date_3: El mes passat
+      date_4: L'any passat
+      date_5: Personalitzat
+      date_range_blank: Seleccioneu una data
+      from: Des
+      general: Amb el text
+      general_placeholder: Escriu el text
+      search: Filtre
+      title: Recerca avançada
+      to: A
     author_info:
       author_deleted: Usuari eliminat
     check: Seleccionar

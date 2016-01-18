@@ -10,6 +10,7 @@ class Proposal < ActiveRecord::Base
   include PgSearch
   include SearchCache
   include Categorizable
+  include Filterable
 
   apply_simple_captcha
   acts_as_votable
@@ -76,7 +77,12 @@ class Proposal < ActiveRecord::Base
       description => 'D'
     }
     tag_list.each{ |tag| values[tag] = 'D' }
+    values[author.username] = 'D'
     values
+  end
+
+  def self.search(terms)
+    self.pg_search(terms)
   end
 
   def description
@@ -130,10 +136,6 @@ class Proposal < ActiveRecord::Base
 
   def after_restore
     self.tags.each{ |t| t.increment_custom_counter_for('Proposal') }
-  end
-
-  def self.search(terms)
-    self.pg_search(terms)
   end
 
   def self.votes_needed_for_success

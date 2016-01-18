@@ -445,6 +445,13 @@ describe Debate do
         expect(results).to eq([debate])
       end
 
+      xit "searches by author name" do
+        author = create(:user, username: 'Danny Trejo')
+        debate = create(:debate, author: author)
+        results = Debate.search('Danny')
+        expect(results).to eq([debate])
+      end
+
     end
 
     context "stemming" do

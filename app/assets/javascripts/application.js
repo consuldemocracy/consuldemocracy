@@ -40,6 +40,7 @@
 //= require annotatable
 //= require i18n
 //= require proposals
+//= require advanced_search
 
 //= require react
 //= require react_ujs
@@ -58,6 +59,7 @@ var initialize_modules = function() {
   App.IeAlert.initialize();
   App.Annotatable.initialize();
   App.Proposals.initialize();
+  App.AdvancedSearch.initialize();
 };
 
 $(function(){
