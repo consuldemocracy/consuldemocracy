@@ -3,6 +3,7 @@ require 'rails_helper'
 feature 'Admin spending proposals' do
 
   background do
+    Setting['feature.spending_proposals'] = true
     admin = create(:administrator)
     login_as(admin.user)
   end

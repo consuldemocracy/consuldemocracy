@@ -2,6 +2,10 @@ require 'rails_helper'
 
 feature 'Moderate debates' do
 
+  background do
+    Setting['feature.debates'] = true
+  end
+
   scenario 'Disabled with a feature flag' do
     Setting['feature.debates'] = nil
     moderator = create(:moderator)
