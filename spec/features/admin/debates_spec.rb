@@ -2,9 +2,18 @@ require 'rails_helper'
 
 feature 'Admin debates' do
 
+  scenario 'Disabled with a feature flag' do
+    Setting['feature.debates'] = nil
+    admin = create(:administrator)
+    login_as(admin.user)
+
+    expect{ visit admin_debates_path }.to raise_exception(FeatureFlags::FeatureDisabled)
+  end
+
   background do
     admin = create(:administrator)
     login_as(admin.user)
+    Setting['feature.debates'] = true
   end
 
   scenario 'Restore' do
