@@ -1,6 +1,6 @@
 defaults: &defaults
-  # Brand name of the website.
-  brand_name: "Decidim Barcelona"
+  # Org name of the website.
+  org_name: "Decidim Barcelona"
 
   # City or organization.
   place_name: "Barcelona"
