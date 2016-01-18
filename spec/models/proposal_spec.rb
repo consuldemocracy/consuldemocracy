@@ -66,11 +66,6 @@ describe Proposal do
   end
 
   describe "#question" do
-    it "should not be valid without a question" do
-      proposal.question = nil
-      expect(proposal).to_not be_valid
-    end
-
     it "should not be valid when very short" do
       proposal.question = "abc"
       expect(proposal).to_not be_valid
