@@ -52,3 +52,4 @@ Setting["place_name"] = "Consul-land"
 
 # Feature flags
 Setting['feature.debates'] = true
+Setting['feature.spending_proposals'] = true

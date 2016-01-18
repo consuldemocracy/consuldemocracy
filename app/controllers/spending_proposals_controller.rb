@@ -1,7 +1,11 @@
 class SpendingProposalsController < ApplicationController
+  include FeatureFlags
+
   before_action :authenticate_user!, except: [:index]
 
   load_and_authorize_resource
+
+  feature_flag :spending_proposals
 
   def index
   end
