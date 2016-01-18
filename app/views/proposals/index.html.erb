@@ -38,12 +38,9 @@
         </div>
       <% end %>
 
-      <%= render 'shared/order_links', i18n_namespace: "proposals.index" %>
+      <%= render "shared/advanced_search", search_path: proposals_path(page: 1)%>
 
-      <div class="small-12 medium-12 advanced-search row">
-        <%= render "shared/advanced_search",
-                   search_path: proposals_path(page: 1)%>
-      </div>
+      <%= render 'shared/order_links', i18n_namespace: "proposals.index" %>
 
       <div class="show-for-small-only">
         <%= link_to t("proposals.index.start_proposal"), new_proposal_path, class: 'button radius expand' %>

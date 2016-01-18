@@ -9,11 +9,11 @@ App.AdvancedSearch =
 
   toggle_date_options: ->
     if $('#js-advanced-search-date-min').val() == 'custom'
-      $('#js-customized-date').show()
-      $('#js-customized-date input').prop 'disabled', false
+      $('#js-custom-date').show()
+      $('#js-custom-date input').prop 'disabled', false
     else
-      $('#js-customized-date').hide()
-      $('#js-customized-date input').prop 'disabled', true
+      $('#js-custom-date').hide()
+      $('#js-custom-date input').prop 'disabled', true
 
   initialize: ->
     if App.AdvancedSearch.advanced_search_terms()

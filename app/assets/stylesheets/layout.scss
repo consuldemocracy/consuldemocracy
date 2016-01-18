@@ -230,6 +230,10 @@ a {
   }
 }
 
+.small {
+  font-size: $small-font-size;
+}
+
 // 02. Header
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -1030,6 +1034,34 @@ img.avatar, img.admin-avatar, img.moderator-avatar, img.initialjs-avatar {
     margin: -1px 0 $line-height/2;
     padding-top: $line-height/4;
     text-transform: uppercase;
+  }
+}
+
+.advanced-search {
+  float: left;
+  margin: $line-height 0;
+
+  @media (min-width: $small-breakpoint) {
+    float: right;
+    margin-bottom: 0;
+    margin-top: rem-calc(28);
+    position: absolute;
+    right: 15px;
+    z-index: 2;
+  }
+}
+
+.advanced-search-form {
+
+  select {
+    height: $line-height*2;
+  }
+
+  @media (max-width: $medium-breakpoint) {
+
+    .column {
+      padding: 0;
+    }
   }
 }
 
