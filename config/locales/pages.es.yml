@@ -1,13 +1,14 @@
+---
 es:
   pages:
     titles:
-      more_information: "Más información"
-      accessibility: "Accesibilidad"
+      accessibility: Accesibilidad
+      more_information: Más información
     verify:
-      title: "Verifica tu cuenta"
-      info: "Para verificar tu cuenta introduce los datos con los que te registraste:"
-      info_code: "Ahora introduce el código que has recibido en tu carta:"
-      email: "Email"
-      password: "Contraseña"
-      code: "Código que has recibido en tu carta"
-      submit: "Verificar mi cuenta"
+      code: Código que has recibido en tu carta
+      email: Email
+      info: 'Para verificar tu cuenta introduce los datos con los que te registraste:'
+      info_code: 'Ahora introduce el código que has recibido en tu carta:'
+      password: Contraseña
+      submit: Verificar mi cuenta
+      title: Verifica tu cuenta
