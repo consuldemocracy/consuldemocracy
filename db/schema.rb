@@ -307,14 +307,6 @@ ActiveRecord::Schema.define(version: 20160114110933) do
 
   add_index "simple_captcha_data", ["key"], name: "idx_key", using: :btree
 
-  create_table "subcategories", force: :cascade do |t|
-    t.text     "name"
-    t.text     "description"
-    t.integer  "category_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-  end
-
   create_table "spending_proposals", force: :cascade do |t|
     t.string   "title"
     t.text     "description"
@@ -329,6 +321,14 @@ ActiveRecord::Schema.define(version: 20160114110933) do
   add_index "spending_proposals", ["author_id"], name: "index_spending_proposals_on_author_id", using: :btree
   add_index "spending_proposals", ["geozone_id"], name: "index_spending_proposals_on_geozone_id", using: :btree
   add_index "spending_proposals", ["resolution"], name: "index_spending_proposals_on_resolution", using: :btree
+
+  create_table "subcategories", force: :cascade do |t|
+    t.text     "name"
+    t.text     "description"
+    t.integer  "category_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
 
   create_table "taggings", force: :cascade do |t|
     t.integer  "tag_id"
