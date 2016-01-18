@@ -35,7 +35,9 @@
       <section class="subnavigation row">
 
         <div class="small-12 medium-9 column">
-          <%= link_to t("layouts.header.debates"), debates_path, class: ("active" if controller_name == "debates") %>
+          <% if feature?(:debates) %>
+            <%= link_to t("layouts.header.debates"), debates_path, class: ("active" if controller_name == "debates") %>
+          <% end %>
           <%= link_to t("layouts.header.proposals"), proposals_path, class: ("active" if  controller_name == "proposals") %>
           <%= link_to t("layouts.header.spending_proposals"), spending_proposals_path, class: ("active" if controller_name == "spending_proposals") %>
           <%= link_to t("layouts.header.more_information"), page_path('more_information'), class: ("active" if current_page?("/more_information"))  %>

@@ -49,3 +49,6 @@ Setting["org_name"] = "Consul"
 
 # Consul installation place name (City, Country...)
 Setting["place_name"] = "Consul-land"
+
+# Feature flags
+Setting['feature.debates'] = true

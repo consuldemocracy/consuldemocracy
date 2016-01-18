@@ -11,12 +11,14 @@
       <% end %>
     </li>
 
-    <li <%= "class=active" if controller_name == "debates" %>>
-      <%= link_to moderation_debates_path do %>
-        <i class="icon-debates"></i>
-        <%= t('moderation.menu.flagged_debates') %>
-      <% end %>
-    </li>
+    <% if feature?(:debates) %>
+      <li <%= "class=active" if controller_name == "debates" %>>
+        <%= link_to moderation_debates_path do %>
+          <i class="icon-debates"></i>
+          <%= t('moderation.menu.flagged_debates') %>
+        <% end %>
+      </li>
+    <% end %>
 
     <li <%= "class=active" if controller_name == "comments" %>>
       <%= link_to moderation_comments_path do %>
