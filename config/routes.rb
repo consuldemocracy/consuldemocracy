@@ -282,6 +282,10 @@ Rails.application.routes.draw do
   #     resources :products
   #   end
 
+  namespace :api do
+    resources :proposals, only: [:index]
+  end
+
   if Rails.env.development?
     mount LetterOpenerWeb::Engine, at: "/letter_opener"
   end

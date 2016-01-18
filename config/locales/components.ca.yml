@@ -6,6 +6,14 @@ ca:
         label: Eix
       subcategory:
         label: Línia d'acció
+    meeting_proposals_autocomplete_input:
+      loading: Carregant...
+      no_results: No s'han trobat resultats.
+      search: Buscar
+    meeting_proposals_table:
+      actions: Accions
+      remove: Eliminar
+      title: Títol
     proposal_filter_option:
       city: Tota la ciutat
       district: Un districte

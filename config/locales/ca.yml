@@ -213,9 +213,11 @@ ca:
       meeting_description: Descripció
       meeting_end_at: A quina hora acaba?
       meeting_held_at: Quan es realitzará?
+      meeting_proposal_ids: Quines propostes es discutiran?
       meeting_start_at: A quina hora comença?
       meeting_title: Títol
     index:
+      edit: Editar
       new: Crear trobada
       title: Trobades presencials
     new:

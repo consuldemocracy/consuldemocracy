@@ -1,0 +1,28 @@
+.meeting_proposals_selector {
+  ul.dropdown {
+    margin: 0;
+    padding: 5px;
+    list-style: none;
+    height: 200px;
+    overflow: hidden;
+    overflow-y: scroll;
+    border: 1px solid $border;
+
+    li {
+      a {
+        color: $text;
+        display: block;
+      }
+
+      &:hover {
+        background: $background;
+
+        a {
+          font-weight: bold;
+          color: $font-bold;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}

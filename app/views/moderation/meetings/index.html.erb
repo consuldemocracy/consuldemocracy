@@ -27,6 +27,9 @@
         <span class="date"><%= meeting.start_at.to_s(:time) %> - <%= meeting.end_at.to_s(:time) %></span>
         <span class="bullet">&nbsp;&bull;&nbsp;</span>
         <%= meeting.author.username %>
+        <div class="right">
+          <%= link_to t("meetings.index.edit"), edit_moderation_meeting_path(meeting), class: 'button radius small' %>
+        </div>
         <br>
         <div>
           <%= meeting.description %>

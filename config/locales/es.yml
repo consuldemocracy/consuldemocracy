@@ -213,9 +213,11 @@ es:
       meeting_description: Descripción
       meeting_end_at: "¿A que hora acaba?"
       meeting_held_at: "¿Cuándo se va a realizar?"
+      meeting_proposal_ids: "¿Qué propuestas se van a discutir?"
       meeting_start_at: "¿A que hora empieza?"
       meeting_title: Título
     index:
+      edit: Editar
       new: Crear encuentro
       title: Encuentros presenciales
     new:
