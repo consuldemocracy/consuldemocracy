@@ -98,8 +98,22 @@ module CommentableActions
     end
 
     def search_start_date
-      date = Date.parse(params[:advanced_search][:date_min]) rescue nil
-      date || eval(params[:advanced_search][:date_min]).to_date
+      case params[:advanced_search][:date_min]
+      when '1'
+        24.hours.ago
+      when '2'
+        1.week.ago
+      when '3'
+        1.month.ago
+      when '4'
+        1.year.ago
+      else
+        Date.parse(params[:advanced_search][:date_min]) rescue nil
+      end
+    end
+
+    def method_name
+
     end
 
     def search_finish_date
