@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title><%= content_for?(:title) ? yield(:title) : setting('brand_name') %></title>
+    <title><%= content_for?(:title) ? yield(:title) : Setting['org_name'] %></title>
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "vendor/modernizr" %>
     <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
@@ -17,7 +17,7 @@
                      type: "image/png" %>
     <%= content_for :social_media_meta_tags %>
 
-    <%= Setting["per_page_code"].try(:html_safe) %>
+    <%= Setting['per_page_code'].try(:html_safe) %>
 
   </head>
   <body>
