@@ -6,6 +6,7 @@ class Debate < ActiveRecord::Base
   include Measurable
   include Sanitizable
   include PgSearch
+  include Filterable
 
   apply_simple_captcha
   acts_as_votable
@@ -34,7 +35,7 @@ class Debate < ActiveRecord::Base
   scope :sort_by_random,           -> { reorder("RANDOM()") }
   scope :sort_by_relevance,        -> { all }
   scope :sort_by_flags,            -> { order(flags_count: :desc, updated_at: :desc) }
-
+  scope :last_week,            -> { where("created_at >= ?", 7.days.ago)}
   # Ahoy setup
   visitable # Ahoy will automatically assign visit_id on create
 
@@ -75,7 +76,7 @@ class Debate < ActiveRecord::Base
   end
 
   def editable?
-    total_votes <= Setting.value_for('max_votes_for_debate_edit').to_i
+    total_votes <= Setting['max_votes_for_debate_edit'].to_i
   end
 
   def editable_by?(user)
@@ -93,8 +94,8 @@ class Debate < ActiveRecord::Base
     return false unless user
     total_votes <= 100 ||
       !user.unverified? ||
-      Setting.value_for('max_ratio_anon_votes_on_debates').to_i == 100 ||
-      anonymous_votes_ratio < Setting.value_for('max_ratio_anon_votes_on_debates').to_i ||
+      Setting['max_ratio_anon_votes_on_debates'].to_i == 100 ||
+      anonymous_votes_ratio < Setting['max_ratio_anon_votes_on_debates'].to_i ||
       user.voted_for?(self)
   end
 

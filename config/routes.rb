@@ -61,6 +61,8 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :spending_proposals, only: [:index, :new, :create]
+
   resources :legislations, only: [:show]
 
   resources :annotations do
@@ -118,6 +120,13 @@ Rails.application.routes.draw do
       member do
         put :restore
         put :confirm_hide
+      end
+    end
+
+    resources :spending_proposals, only: [:index, :show] do
+      member do
+        put :accept
+        put :reject
       end
     end
 
@@ -273,6 +282,8 @@ Rails.application.routes.draw do
   end
 
   get "ordenanza-de-transparencia", to: "legislations#show", id: 1, as: :ordenanza_transparencia
+
+  mount Tolk::Engine => '/translate', :as => 'tolk'
 
   get '/blog' => redirect("http://diario.madrid.es/participa/")
   resources :pages, path: '/', only: [:show]

@@ -11,7 +11,7 @@
         <li class="name">
           <%= link_to root_path do %>
             <%= image_tag('header_logo_madrid.png', class: 'left', size: '96x96', alt: t("layouts.header.logo")) %>
-            <%= t("layouts.header.participation_html") %> <span>|</span> <span class="logo-site"><%= t("admin.dashboard.index.title") %></span>
+            <%= Setting['org_name'] %> <span>|</span> <span class="logo-site"><%= t("admin.dashboard.index.title") %></span>
           <% end %>
         </li>
         <li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li>

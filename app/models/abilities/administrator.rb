@@ -34,6 +34,8 @@ module Abilities
       can [:search, :create, :index, :destroy], ::Moderator
 
       can :manage, Annotation
+
+      can :manage, SpendingProposal
     end
   end
 end

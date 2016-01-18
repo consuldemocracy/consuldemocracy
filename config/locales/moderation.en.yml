@@ -1,75 +1,76 @@
+---
 en:
   moderation:
-    menu:
-      proposals: "Proposals"
-      flagged_debates: "Debates"
-      flagged_comments: "Comments"
-      users: "Block users"
-    dashboard:
-      index:
-        title: "Moderation"
     comments:
       index:
-        hide_comments: "Hide comments"
-        block_authors: "Block authors"
-        ignore_flags: "Mark as viewed"
-        title: "Comments"
-        headers:
-          comment: "Comment"
-          moderate: "Moderate"
-        filter: "Filter"
+        block_authors: Block authors
+        confirm: Are you sure?
+        filter: Filter
         filters:
-          all: "All"
-          pending_flag_review: "Pending"
-          with_ignored_flag: "Marked as viewed"
-        order: "Order"
+          all: All
+          pending_flag_review: Pending
+          with_ignored_flag: Marked as viewed
+        headers:
+          comment: Comment
+          moderate: Moderate
+        hide_comments: Hide comments
+        ignore_flags: Mark as viewed
+        order: Order
         orders:
-          newest: "Newest"
-          flags: "Most flagged"
-        confirm: "Are you sure?"
+          flags: Most flagged
+          newest: Newest
+        title: Comments
+    dashboard:
+      index:
+        title: Moderation
     debates:
       index:
-        hide_debates: "Hide debates"
-        block_authors: "Block authors"
-        ignore_flags: "Mark as viewed"
-        title: "Debates"
-        headers:
-          debate: "Debate"
-          moderate: "Moderate"
-        filter: "Filter"
+        block_authors: Block authors
+        confirm: Are you sure?
+        filter: Filter
         filters:
-          all: "All"
-          pending_flag_review: "Pending"
-          with_ignored_flag: "Marked as viewed"
-        order: "Order"
+          all: All
+          pending_flag_review: Pending
+          with_ignored_flag: Marked as viewed
+        headers:
+          debate: Debate
+          moderate: Moderate
+        hide_debates: Hide debates
+        ignore_flags: Mark as viewed
+        order: Order
         orders:
-          created_at: "Newest"
-          flags: "Most flagged"
-        confirm: "Are you sure?"
+          created_at: Newest
+          flags: Most flagged
+        title: Debates
+    menu:
+      flagged_comments: Comments
+      flagged_debates: Debates
+      proposals: Proposals
+      users: Block users
     proposals:
       index:
-        hide_proposals: "Hide proposals"
-        block_authors: "Block authors"
-        ignore_flags: "Mark as viewed"
-        title: "Proposals"
-        headers:
-          proposal: "Proposal"
-          moderate: "Moderate"
-        filter: "Filter"
+        block_authors: Block authors
+        confirm: Are you sure?
+        filter: Filter
         filters:
-          all: "All"
-          pending_flag_review: "Pending review"
-          with_ignored_flag: "Mark as viewed"
-        order: "Order by"
+          all: All
+          pending_flag_review: Pending review
+          with_ignored_flag: Mark as viewed
+        headers:
+          moderate: Moderate
+          proposal: Proposal
+        hide_proposals: Hide proposals
+        ignore_flags: Mark as viewed
+        order: Order by
         orders:
-          created_at: "Most recent"
-          flags: "Most flagged"
-        confirm: "Are you sure?"
+          created_at: Most recent
+          flags: Most flagged
+        title: Proposals
     users:
-      notice_hide: "User blocked. All of this user's debates and comments have been hidden."
       index:
-        title: "Block users"
-        search_placeholder: "email or name of user"
-        search: "Search"
-        hide: "Block"
-        hidden: "Blocked"
+        hidden: Blocked
+        hide: Block
+        search: Search
+        search_placeholder: email or name of user
+        title: Block users
+      notice_hide: User blocked. All of this user's debates and comments have been hidden.
