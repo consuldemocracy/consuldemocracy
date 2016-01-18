@@ -75,7 +75,7 @@ class Debate < ActiveRecord::Base
   end
 
   def editable?
-    total_votes <= Setting.value_for('max_votes_for_debate_edit').to_i
+    total_votes <= Setting['max_votes_for_debate_edit'].to_i
   end
 
   def editable_by?(user)
@@ -93,8 +93,8 @@ class Debate < ActiveRecord::Base
     return false unless user
     total_votes <= 100 ||
       !user.unverified? ||
-      Setting.value_for('max_ratio_anon_votes_on_debates').to_i == 100 ||
-      anonymous_votes_ratio < Setting.value_for('max_ratio_anon_votes_on_debates').to_i ||
+      Setting['max_ratio_anon_votes_on_debates'].to_i == 100 ||
+      anonymous_votes_ratio < Setting['max_ratio_anon_votes_on_debates'].to_i ||
       user.voted_for?(self)
   end
 

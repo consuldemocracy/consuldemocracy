@@ -1,3 +1,4 @@
+# coding: utf-8
 require 'rails_helper'
 
 feature 'Debates' do
@@ -255,7 +256,7 @@ feature 'Debates' do
 
   scenario 'Update should not be posible if debate is not editable' do
     debate = create(:debate)
-    Setting.find_by(key: "max_votes_for_debate_edit").update(value: 2)
+    Setting["max_votes_for_debate_edit"] = 2
     3.times { create(:vote, votable: debate) }
 
     expect(debate).to_not be_editable
