@@ -18,8 +18,7 @@ feature 'Users' do
 
       expect(page).to have_content "You have been sent a message containing a verification link. Please click on this link to activate your account."
 
-      sent_token = /.*confirmation_token=(.*)".*/.match(ActionMailer::Base.deliveries.last.body.to_s)[1]
-      visit user_confirmation_path(confirmation_token: sent_token)
+      confirm_email
 
       expect(page).to have_content "Your account has been confirmed."
     end
@@ -124,8 +123,7 @@ feature 'Users' do
         fill_in 'user_email', with: 'manueladelascarmenas@example.com'
         click_button 'Register'
 
-        sent_token = /.*confirmation_token=(.*)".*/.match(ActionMailer::Base.deliveries.last.body.to_s)[1]
-        visit user_confirmation_path(confirmation_token: sent_token)
+        confirm_email
 
         expect(page).to have_content "Your email address has been successfully confirmed"
 
@@ -134,7 +132,7 @@ feature 'Users' do
 
       scenario 'Sign in, user was already signed up with OAuth' do
         user = create(:user, email: 'manuela@madrid.es', password: 'judgementday')
-        identity = create(:identity, uid: '12345', provider: 'twitter', user: user)
+        create(:identity, uid: '12345', provider: 'twitter', user: user)
         omniauth_twitter_hash = { 'provider' => 'twitter',
                                   'uid' => '12345',
                                   'info' => {
