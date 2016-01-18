@@ -3,6 +3,11 @@ require 'rails_helper'
 
 feature 'Debates' do
 
+  scenario 'Disabled with a feature flag' do
+    Setting['feature.debates'] = nil
+    expect{ visit debates_path }.to raise_exception(FeatureFlags::FeatureDisabled)
+  end
+
   scenario 'Index' do
     debates = [create(:debate), create(:debate), create(:debate)]
 
