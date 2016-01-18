@@ -546,79 +546,96 @@ feature 'Proposals' do
     end
   end
 
-  scenario 'Proposal index search' do
-    proposal1 = create(:proposal, title: "Show me what you got")
-    proposal2 = create(:proposal, title: "Get Schwifty")
-    proposal3 = create(:proposal)
-    proposal4 = create(:proposal, description: "Schwifty in here")
-    proposal5 = create(:proposal, question: "Schwifty in here")
+  context "Search" do
 
-    visit proposals_path
-    fill_in "search", with: "Schwifty"
-    click_button "Search"
+    context "Basic search" do
 
-    expect(current_path).to eq(proposals_path)
+      scenario 'Search by text' do
+        proposal1 = create(:proposal, title: "Get Schwifty")
+        proposal2 = create(:proposal, title: "Schwifty Hello")
+        proposal3 = create(:proposal, title: "Do not show me")
 
-    within("#proposals") do
-      expect(page).to have_css('.proposal', count: 3)
+        visit proposals_path
 
-      expect(page).to have_content(proposal2.title)
-      expect(page).to have_content(proposal4.title)
-      expect(page).to have_content(proposal5.title)
+        within "#search_form" do
+          fill_in "search", with: "Schwifty"
+          click_button "Search"
+        end
 
-      expect(page).to_not have_content(proposal1.title)
-      expect(page).to_not have_content(proposal3.title)
+        within("#proposals") do
+          expect(page).to have_css('.proposal', count: 2)
+
+          expect(page).to have_content(proposal1.title)
+          expect(page).to have_content(proposal2.title)
+          expect(page).to_not have_content(proposal3.title)
+        end
+      end
+
+      scenario "Maintain search criteria" do
+        visit proposals_path
+
+        within "#search_form" do
+          fill_in "search", with: "Schwifty"
+          click_button "Search"
+        end
+
+        expect(page).to have_selector("input[name='search'][value='Schwifty']")
+      end
+
     end
-  end
 
-  scenario "Order by relevance by default", :js do
-    proposal1 = create(:proposal, title: "Show you got",      cached_votes_up: 10)
-    proposal2 = create(:proposal, title: "Show what you got", cached_votes_up: 1)
-    proposal3 = create(:proposal, title: "Show you got",      cached_votes_up: 100)
+    scenario "Order by relevance by default", :js do
+      proposal1 = create(:proposal, title: "Show you got",      cached_votes_up: 10)
+      proposal2 = create(:proposal, title: "Show what you got", cached_votes_up: 1)
+      proposal3 = create(:proposal, title: "Show you got",      cached_votes_up: 100)
 
-    visit proposals_path
-    fill_in "search", with: "Show what you got"
-    click_button "Search"
+      visit proposals_path
+      fill_in "search", with: "Show what you got"
+      click_button "Search"
 
-    expect(page).to have_selector("a.active", text: "relevance")
+      expect(page).to have_selector("a.active", text: "relevance")
 
-    within("#proposals") do
-      expect(all(".proposal")[0].text).to match "Show what you got"
-      expect(all(".proposal")[1].text).to match "Show you got"
-      expect(all(".proposal")[2].text).to match "Show you got"
+      within("#proposals") do
+        expect(all(".proposal")[0].text).to match "Show what you got"
+        expect(all(".proposal")[1].text).to match "Show you got"
+        expect(all(".proposal")[2].text).to match "Show you got"
+      end
     end
-  end
 
-  scenario "Reorder results maintaing search", :js do
-    proposal1 = create(:proposal, title: "Show you got",      cached_votes_up: 10,  created_at: 1.week.ago)
-    proposal2 = create(:proposal, title: "Show what you got", cached_votes_up: 1,   created_at: 1.month.ago)
-    proposal3 = create(:proposal, title: "Show you got",      cached_votes_up: 100, created_at: Time.now)
-    proposal4 = create(:proposal, title: "Do not display",    cached_votes_up: 1,   created_at: 1.week.ago)
+    scenario "Reorder results maintaing search", :js do
+      proposal1 = create(:proposal, title: "Show you got",      cached_votes_up: 10,  created_at: 1.week.ago)
+      proposal2 = create(:proposal, title: "Show what you got", cached_votes_up: 1,   created_at: 1.month.ago)
+      proposal3 = create(:proposal, title: "Show you got",      cached_votes_up: 100, created_at: Time.now)
+      proposal4 = create(:proposal, title: "Do not display",    cached_votes_up: 1,   created_at: 1.week.ago)
 
-    visit proposals_path
-    fill_in "search", with: "Show what you got"
-    click_button "Search"
-    click_link 'newest'
-    expect(page).to have_selector("a.active", text: "newest")
+      visit proposals_path
+      fill_in "search", with: "Show what you got"
+      click_button "Search"
+      click_link 'newest'
+      expect(page).to have_selector("a.active", text: "newest")
 
-    within("#proposals") do
-      expect(all(".proposal")[0].text).to match "Show you got"
-      expect(all(".proposal")[1].text).to match "Show you got"
-      expect(all(".proposal")[2].text).to match "Show what you got"
-      expect(page).to_not have_content "Do not display"
+      within("#proposals") do
+        expect(all(".proposal")[0].text).to match "Show you got"
+        expect(all(".proposal")[1].text).to match "Show you got"
+        expect(all(".proposal")[2].text).to match "Show what you got"
+        expect(page).to_not have_content "Do not display"
+      end
     end
-  end
 
-  scenario 'Index search does not show featured proposals' do
-    featured_proposals = create_featured_proposals
-    proposal = create(:proposal, title: "Abcdefghi")
+    scenario 'After a search do not show featured proposals' do
+      featured_proposals = create_featured_proposals
+      proposal = create(:proposal, title: "Abcdefghi")
 
-    visit proposals_path
-    fill_in "search", with: proposal.title
-    click_button "Search"
+      visit proposals_path
+      within "#search_form" do
+        fill_in "search", with: proposal.title
+        click_button "Search"
+      end
 
-    expect(page).to_not have_selector('#proposals .proposal-featured')
-    expect(page).to_not have_selector('#featured-proposals')
+      expect(page).to_not have_selector('#proposals .proposal-featured')
+      expect(page).to_not have_selector('#featured-proposals')
+    end
+
   end
 
   scenario 'Index tag does not show featured proposals' do

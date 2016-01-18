@@ -6,6 +6,7 @@ class Debate < ActiveRecord::Base
   include Measurable
   include Sanitizable
   include PgSearch
+  include Filterable
 
   apply_simple_captcha
   acts_as_votable
