@@ -46,6 +46,9 @@ defaults: &defaults
   # Code to be included at the top (header) of every page (useful for tracking)
   per_page_code: ''
 
+  feature.debates: true
+  feature.spending_proposals: true
+
 development:
   <<: *defaults
 

@@ -24,6 +24,7 @@ class Setting < ActiveRecord::Base
     def []=(key, value)
       setting = where(key: key).first || new(key: key)
       setting.value = value
+      setting.value = nil if setting.value == false
       setting.save!
       value
     end
