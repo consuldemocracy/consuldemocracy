@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160114110933) do
+ActiveRecord::Schema.define(version: 20160119084845) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -228,6 +228,11 @@ ActiveRecord::Schema.define(version: 20160114110933) do
     t.string   "address_details"
   end
 
+  create_table "meetings_proposals", force: :cascade do |t|
+    t.integer "meeting_id"
+    t.integer "proposal_id"
+  end
+
   create_table "moderators", force: :cascade do |t|
     t.integer "user_id"
   end
@@ -278,6 +283,7 @@ ActiveRecord::Schema.define(version: 20160114110933) do
     t.integer  "subcategory_id"
     t.string   "scope",                        default: "district"
     t.integer  "district"
+    t.boolean  "oficial",                      default: false
   end
 
   add_index "proposals", ["author_id", "hidden_at"], name: "index_proposals_on_author_id_and_hidden_at", using: :btree

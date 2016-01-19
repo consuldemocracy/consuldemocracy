@@ -793,6 +793,13 @@
       }
     }
   }
+
+  &.oficial {
+    .panel {
+      border: 5px solid;
+      border-color: $brand;
+    }
+  }
 }
 
 // 05. Featured
