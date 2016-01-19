@@ -397,6 +397,7 @@ ActiveRecord::Schema.define(version: 20160122153329) do
     t.boolean  "newsletter",                           default: false
     t.integer  "notifications_count",                  default: 0
     t.string   "locale"
+    t.boolean  "registering_with_oauth",               default: false
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree
