@@ -1,0 +1,5 @@
+<h3 id="<%= dom_id(subcategory) %>">
+  <%= subcategory.name %>
+</h3>
+
+<%= link_to t('categories.filter'), subcategory.proposals_path, class: 'button round tiny' %>

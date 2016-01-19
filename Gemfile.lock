@@ -147,6 +147,11 @@ GEM
     docile (1.1.5)
     domain_name (0.5.25)
       unf (>= 0.0.5, < 1.0.0)
+    draper (2.1.0)
+      actionpack (>= 3.0)
+      activemodel (>= 3.0)
+      activesupport (>= 3.0)
+      request_store (~> 1.0)
     easy_translate (0.5.0)
       json
       thread
@@ -486,6 +491,7 @@ DEPENDENCIES
   delayed_job_active_record (~> 4.1.0)
   devise
   devise-async
+  draper
   email_spec
   factory_girl_rails
   faker

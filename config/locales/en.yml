@@ -30,6 +30,9 @@ en:
   application:
     close: Close
     menu: Menu
+  categories:
+    title: Axis
+    filter: "Show proposals"
   comments:
     comment:
       admin: Administrator

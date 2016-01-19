@@ -1,0 +1,6 @@
+<h2 id="<%= dom_id(category) %>">
+  <%= category.name %>
+</h2>
+<%= link_to t('categories.filter', name: category.name), category.proposals_path, class: 'button round tiny' %>
+
+<%= render partial: 'subcategory', collection: category.subcategories %>

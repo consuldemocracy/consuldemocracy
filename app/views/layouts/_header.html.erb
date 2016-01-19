@@ -37,6 +37,7 @@
             <%= link_to t("layouts.header.spending_proposals"), spending_proposals_path, class: ("active" if controller_name == "spending_proposals") %>
           <% end %>
           <%= link_to t("layouts.header.more_information"), page_path('more_information'), class: ("active" if current_page?("/more_information"))  %>
+          <%= link_to t("categories.title"), categories_path, class: ("active" if current_page?("/categories"))  %>
           <% if Setting['blog_url'] %>
             <%= link_to Setting['blog_url'], target: "_blank" do %>
               <%= t("layouts.header.external_link_blog") %>

@@ -30,6 +30,9 @@ es:
   application:
     close: Cerrar
     menu: Menú
+  categories:
+    title: Ejes
+    filter: "Ver propuestas"
   comments:
     comment:
       admin: Administrador

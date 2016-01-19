@@ -30,6 +30,9 @@ ca:
   application:
     close: Tancar
     menu: Menú
+  categories:
+    title: Eixos
+    filter: "Veure propostes"
   comments:
     comment:
       admin: Administrador
