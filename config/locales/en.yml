@@ -105,6 +105,8 @@ en:
       search_results:
         one: " containing the term '%{search_term}'"
         other: " containing the term '%{search_term}'"
+      map_district: "Districts of Madrid"
+      select_district: "Select your district"  
       select_order: Order by
       start_debate: Start a debate
       title: Debates
@@ -121,6 +123,7 @@ en:
       recommendation_two: Any debate or comment suggesting illegal action will be deleted, as well as those intending to sabotage the debate spaces. Anything else is allowed.
       recommendations_title: Recommendations for creating a debate
       start_new: Start a debate
+      start_new_district: "Start a debate for your district"
     show:
       author_deleted: User deleted
       back_link: Go back
@@ -294,6 +297,7 @@ en:
       recommendation_two: Any proposal or comment suggesting illegal action will be deleted, as well as those intending to sabotage the debate spaces. Anything else is allowed.
       recommendations_title: Recommendations for creating a proposal
       start_new: Create new proposal
+      start_new_district: "Start a proposal for your district"
     proposal:
       already_supported: You have already supported this proposal. Share it!
       comments:
@@ -360,6 +364,9 @@ en:
       print_button: Print this info
     tags_cloud:
       tags: Trending
+      districts: "Districs"   
+      categorys: "Categories"  
+      map: "View map of districts"
     unflag: Unflag
   simple_captcha:
     label: Enter the text from the image in the box below

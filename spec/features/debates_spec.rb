@@ -901,4 +901,28 @@ feature 'Debates' do
     visit debate_path(debate)
     expect(page).to have_content('User deleted')
   end
+
+
+   scenario "Filtered by district"  do
+      tag1= ActsAsTaggableOn::Tag.create!(name:  "Centro", featured: true, kind: "district")
+      tag2= ActsAsTaggableOn::Tag.create!(name:  "Puente de Vallecas", featured: true, kind: "district")
+      tag3= ActsAsTaggableOn::Tag.create!(name:  "Retiro", featured: true, kind: "district")
+      tag4= ActsAsTaggableOn::Tag.create!(name:  "Salamanca", featured: true, kind: "district")
+
+      debate1 = create(:debate, tag_list: tag1)
+      debate2 = create(:debate, tag_list: tag2)
+      debate3 = create(:debate, tag_list: tag3)
+      debate4 = create(:debate, tag_list: tag4)    
+      visit debates_path
+          
+      click_link "View map of districts"
+      within("#districtslist") do
+        click_link "Puente de Vallecas"
+      end    
+      within("#debates") do
+        expect(page).to have_css('.debate', count: 1)
+        expect(page).to have_content(debate2.title)
+      end
+   end
+
 end

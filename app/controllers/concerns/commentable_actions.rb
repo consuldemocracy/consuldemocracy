@@ -11,6 +11,8 @@ module CommentableActions
     index_customization if index_customization.present?
 
     @tag_cloud = tag_cloud
+    @district_cloud = load_district_tags
+    @category_cloud = load_category_tags
     set_resource_votes(@resources)
     set_resources_instance
   end
@@ -26,9 +28,6 @@ module CommentableActions
   def new
     @resource = resource_model.new
     set_resource_instance
-    load_featured_tags
-    load_category_tags
-    load_district_select
   end
 
   def create
@@ -36,7 +35,7 @@ module CommentableActions
     @resource.author = current_user
 
     if @resource.save_with_captcha
-      track_event      
+      track_event
       load_category_tags
       load_district_select
       redirect_path = url_for(controller: controller_name, action: :show, id: @resource.id)
@@ -51,7 +50,7 @@ module CommentableActions
   end
 
   def edit
-    load_featured_tags      
+    load_featured_tags
     load_category_tags
     load_district_select
   end
@@ -61,12 +60,19 @@ module CommentableActions
     if resource.save_with_captcha
       redirect_to resource, notice: t("flash.actions.update.#{resource_name.underscore}")
     else
-      load_featured_tags    
+      load_featured_tags
       load_category_tags
       load_district_select
       set_resource_instance
       render :edit
     end
+  end
+
+
+   def map_district
+    @tag_cloud = tag_cloud
+    @district_cloud = load_district_tags
+    @category_cloud = load_category_tags
   end
 
   private
@@ -79,22 +85,52 @@ module CommentableActions
       resource_model.last_week.tag_counts.order("#{resource_name.pluralize}_count": :desc, name: :asc).limit(5)
     end
 
+    def load_category_tags
+
+      if resource_model.to_s=="Proposal"
+        ActsAsTaggableOn::Tag.select("tags.*").
+                                              where("kind = 'category' and proposals_count>0").
+                                              order(proposals_count: :desc)
+      else
+        ActsAsTaggableOn::Tag.select("tags.*").
+                                              where("kind = 'category' and debates_count>0").
+                                              order(debates_count: :desc)
+      end
+    end
+    def load_district_tags
+
+      if resource_model.to_s =="Proposal"
+
+       ActsAsTaggableOn::Tag.select("tags.*").
+                                             where("kind = 'district' and proposals_count>0").
+                                              order(name: :asc)
+       else
+          ActsAsTaggableOn::Tag.select("tags.*").
+                                             where("kind = 'district' and debates_count>0").
+                                              order(name: :asc)
+      end
+    end
+
     def load_featured_tags
       @featured_tags = ActsAsTaggableOn::Tag.where(featured: true)
     end
     def load_category_tags
         @category_tags = ActsAsTaggableOn::Tag.select("tags.*").
                                                where("kind = 'category' and tags.featured = true").
-                                               order(kind: :asc, id: :asc) 
+                                               order(kind: :asc, id: :asc)
     end
     def load_district_select
       @district_select = Geozone.select("geozones.name, geozones.id").
                                  order(id: :asc)
-    end      
+    end
 
     def parse_tag_filter
       if params[:tag].present?
         @tag_filter = params[:tag] if ActsAsTaggableOn::Tag.named(params[:tag]).exists?
+      end
+
+      if params[:district].present?
+          @tag_filter = params[:district] if ActsAsTaggableOn::Disctrict.named(params[:district]).exists?
       end
     end
 

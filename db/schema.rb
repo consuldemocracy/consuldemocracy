@@ -317,6 +317,7 @@ ActiveRecord::Schema.define(version: 20160122153329) do
     t.integer "proposals_count",                     default: 0
     t.string  "kind",                     limit: 40
     t.integer "spending_proposals_count",            default: 0
+    t.string  "kind"
   end
 
   add_index "tags", ["debates_count"], name: "index_tags_on_debates_count", using: :btree
