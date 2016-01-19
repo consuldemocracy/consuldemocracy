@@ -1,6 +1,6 @@
 module ComponentsHelper
   def serialized_categories
-    Category.all.map do |category|
+    CategoryDecorator.decorate_collection(Category.all).map do |category|
       {
         id: category.id.to_s,
         name: localize_attribute(category.name)
@@ -9,7 +9,7 @@ module ComponentsHelper
   end
 
   def serialized_subcategories
-    Subcategory.all.map do |subcategory|
+    SubcategoryDecorator.decorate_collection(Subcategory.all).map do |subcategory|
       {
         id: subcategory.id.to_s,
         name: localize_attribute(subcategory.name),
