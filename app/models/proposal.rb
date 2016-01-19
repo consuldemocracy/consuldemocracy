@@ -21,7 +21,6 @@ class Proposal < ActiveRecord::Base
   has_many :comments, as: :commentable
 
   validates :title, presence: true
-  validates :question, presence: true
   validates :summary, presence: true, length: { maximum: 350 }
   validates :author, presence: true
   validates :responsible_name, presence: true
@@ -32,7 +31,7 @@ class Proposal < ActiveRecord::Base
   validates :description, length: { maximum: Proposal.description_max_length }
   validates :scope, inclusion: { in: %w(city district) }
   validates :district, inclusion: { in: DISTRICTS.map(&:last).map(&:to_i), allow_nil: true }
-  validates :question, length: { in: 10..Proposal.question_max_length }
+  validates :question, length: { in: 10..Proposal.question_max_length }, allow_blank: true
   validates :responsible_name, length: { in: 6..Proposal.responsible_name_max_length }
 
   validates :terms_of_service, acceptance: { allow_nil: false }, on: :create
