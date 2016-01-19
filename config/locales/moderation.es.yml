@@ -46,6 +46,9 @@ es:
       index:
         headers:
           meeting: Encuentro presencial
+        search_form:
+          button: Buscar
+          placeholder: Buscar
         title: Encuentros presenciales
     menu:
       flagged_comments: Comentarios

@@ -131,6 +131,7 @@ ignore_unused:
   - 'proposals.index.search_form.*'
   - 'proposals.form.proposal_question'
   - 'proposals.form.proposal_question_example_html'
+  - 'moderation.meetings.index.search_form.*'
   - 'notifications.index.comments_on*'
   - 'notifications.index.replies_to*'
   - 'helpers.page_entries_info.*' # kaminari
