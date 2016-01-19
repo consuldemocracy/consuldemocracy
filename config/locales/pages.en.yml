@@ -80,6 +80,7 @@ en:
       title: Verify your account
     while_unfinished_html: While we finish, we encourage you to visit the <a href="/blog" target="_blank">Citizen Participation Area, Transparency and Open Government blog</a> to know about our progress and news; or the <a href="/">Citizen Participation section</a> where you can decide which is the city you want.
     processes:
+      back: Back
       index:
         process_1_title: "Help us improve transparency Ordinance of Madrid"
         process_1_description: "The City of Madrid wants launch a system of public transparency at the level of the most advanced in the world, and we need your help."
@@ -95,3 +96,7 @@ en:
 
                 You can now see the [final draft Transparency Ordinance of the City of Madrid](/docs/ordenanza_de_transparencia_de_la_ciudad_de_madrid.doc 'Transparency Ordinance of the City of Madrid')."
         button: "Comment ordinance"
+      process_2:
+        title: "Remodeling of the Plaza de España"
+        text: "We count on you for filling out a short survey decide how you want it this new space in your city."
+        button: "Fill survey"

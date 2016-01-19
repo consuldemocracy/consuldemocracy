@@ -5,6 +5,7 @@
 // 03. Show participation
 // 04. List participation
 // 05. Featured
+// 06. Surveys
 //
 
 // 01. Votes and supports
@@ -907,3 +908,15 @@
     }
   }
 }
+
+// 06. Surveys
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+.survey {
+
+  form input[type]:not([type=submit]):not([type=file]):not([type=checkbox]) {
+    height: $line-height;
+    vertical-align: top;
+  }
+}
+
