@@ -509,6 +509,7 @@ feature 'Proposals' do
       create(:proposal, title: 'Worst proposal',  comments_count: 2)
 
       visit proposals_path
+      save_and_open_page
       select 'most commented', from: 'order-selector'
 
       expect(page).to have_selector('.js-order-selector[data-order="most_commented"]')
@@ -522,30 +523,6 @@ feature 'Proposals' do
       expect(current_url).to include('page=1')
     end
 
-    scenario "Filtered by district"  do
-      tag1= ActsAsTaggableOn::Tag.create!(name:  "Centro", featured: true, kind: "district")
-      tag2= ActsAsTaggableOn::Tag.create!(name:  "Puente de Vallecas", featured: true, kind: "district")
-      tag3= ActsAsTaggableOn::Tag.create!(name:  "Retiro", featured: true, kind: "district")
-      tag4= ActsAsTaggableOn::Tag.create!(name:  "Salamanca", featured: true, kind: "district")
-
-      proposal1 = create(:proposal, tag_list: tag1)
-      proposal2 = create(:proposal, tag_list: tag2)
-      proposal3 = create(:proposal, tag_list: tag3)
-      proposal4 = create(:proposal, tag_list: tag4)    
-      visit proposals_path
-          
-      click_link "View map of districts"
-      within("#districtslist") do
-        click_link "Puente de Vallecas"
-      end    
-      within("#proposals") do
-        expect(page).to have_css('.proposal', count: 1)
-        expect(page).to have_content(proposal2.title)
-      end
-    end
-
-
-    
     
     scenario 'Proposals are ordered by newest', :js do
       create_featured_proposals
@@ -567,6 +544,30 @@ feature 'Proposals' do
       expect(current_url).to include('page=1')
     end
   end
+
+
+  scenario "Filtered by district"  do
+      tag1= ActsAsTaggableOn::Tag.create!(name:  "Centro", featured: true, kind: "district")
+      tag2= ActsAsTaggableOn::Tag.create!(name:  "Puente de Vallecas", featured: true, kind: "district")
+      tag3= ActsAsTaggableOn::Tag.create!(name:  "Retiro", featured: true, kind: "district")
+      tag4= ActsAsTaggableOn::Tag.create!(name:  "Salamanca", featured: true, kind: "district")
+
+      proposal1 = create(:proposal, tag_list: tag1)
+      proposal2 = create(:proposal, tag_list: tag2)
+      proposal3 = create(:proposal, tag_list: tag3)
+      proposal4 = create(:proposal, tag_list: tag4)    
+      visit proposals_path
+          
+      click_link "View map of districts"
+      within("#districtslist") do
+        click_link "Puente de Vallecas"
+      end    
+      within("#proposals") do
+        expect(page).to have_css('.proposal', count: 1)
+        expect(page).to have_content(proposal2.title)
+      end
+  end
+
 
   scenario 'Proposal index search' do
     proposal1 = create(:proposal, title: "Show me what you got")
