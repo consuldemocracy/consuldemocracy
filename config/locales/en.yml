@@ -204,12 +204,14 @@ en:
       open_data: Open data
       open_gov: Open government
       proposals: Proposals
+      processes: Open processes
       see_all: See proposals
       spending_proposals: Spending proposals
   legislation:
     help:
       alt: Select the text you want to comment and press the button with the pencil.
       text: To comment this document you must %{sign_in} or %{sign_up}. Then select the text you want to comment and press the button with the pencil.
+      text_logged: "Select the text you want to comment and press the button with the pencil."
       text_sign_in: login
       text_sign_up: sign up
       title: How I can comment this document?
@@ -400,7 +402,7 @@ en:
   unauthorized:
     default: You do not have permission to access this page.
     manage:
-      all: You do not have permission to carry out the action '%{action}' on %{subject}.
+      all: "You do not have permission to carry out the action '%{action}' on %{subject}."
   users:
     show:
       deleted: Deleted
