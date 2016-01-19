@@ -36,7 +36,6 @@ class User < ActiveRecord::Base
   accepts_nested_attributes_for :organization, update_only: true
 
   attr_accessor :skip_password_validation
-  attr_accessor :registering_with_oauth
 
   scope :administrators, -> { joins(:administrators) }
   scope :moderators,     -> { joins(:moderator) }
@@ -179,8 +178,8 @@ class User < ActiveRecord::Base
     !email.blank? && ( (email.end_with? "@#{domain}") || (email.end_with? ".#{domain}") )
   end
 
-  def pending_finish_signup?
-    email.blank? && unconfirmed_email.blank?
+  def confirmation_required?
+    !registering_with_oauth
   end
 
   private

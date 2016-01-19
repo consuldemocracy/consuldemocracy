@@ -13,7 +13,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   #end
 
   def after_sign_in_path_for(resource)
-    if resource.pending_finish_signup?
+    if resource.registering_with_oauth
       finish_signup_path
     else
       super(resource)

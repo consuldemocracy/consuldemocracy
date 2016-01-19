@@ -77,7 +77,7 @@ class ApplicationController < ActionController::Base
 
     def ensure_signup_complete
       if user_signed_in? &&
-        current_user.pending_finish_signup? &&
+        current_user.registering_with_oauth &&
         %w(finish_signup do_finish_signup).exclude?(action_name)
         redirect_to finish_signup_path
       end
