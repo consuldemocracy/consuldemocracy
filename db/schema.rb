@@ -228,6 +228,14 @@ ActiveRecord::Schema.define(version: 20160119171941) do
     t.float    "address_latitude"
     t.float    "address_longitude"
     t.string   "address_details"
+    t.tsvector "tsv"
+  end
+
+  add_index "meetings", ["tsv"], name: "index_meetings_on_tsv", using: :gin
+
+  create_table "meetings_proposals", force: :cascade do |t|
+    t.integer "meeting_id"
+    t.integer "proposal_id"
   end
 
   create_table "moderators", force: :cascade do |t|
@@ -280,6 +288,7 @@ ActiveRecord::Schema.define(version: 20160119171941) do
     t.integer  "subcategory_id"
     t.string   "scope",                        default: "district"
     t.integer  "district"
+    t.boolean  "oficial",                      default: false
   end
 
   add_index "proposals", ["author_id", "hidden_at"], name: "index_proposals_on_author_id_and_hidden_at", using: :btree
