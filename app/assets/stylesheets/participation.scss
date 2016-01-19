@@ -920,3 +920,131 @@
   }
 }
 
+.survey-questions {
+
+  @media only screen and (min-width: $medium-breakpoint) {
+    padding-bottom: $line-height*12;
+  }
+
+  &::before {
+    content: 'mobile';
+    display: none;
+  }
+
+  article {
+    border-bottom: 1px solid $border;
+
+    @media only screen and (min-width: $medium-breakpoint) {
+      padding: $line-height*3 0 $line-height 0;
+    }
+
+    &:last-of-type {
+      border-bottom: none;
+    }
+  }
+
+  .selections {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: $medium-breakpoint) {
+
+  .survey-questions::before {
+    content: 'desktop';
+  }
+}
+
+.survey-timeline {
+  display: none;
+  width: 100%;
+  background-color: #f2f2f2;
+
+  ul {
+    margin-left: 0;
+
+    li {
+      counter-increment: articles;
+      display: inline-block;
+      line-height: $line-height*2;
+      list-style-type: none;
+      margin: 0 $line-height/4;
+      width: rem-calc(36);
+
+      &:last-of-type a::after {
+        display: none;
+      }
+    }
+  }
+}
+
+.survey-timeline a {
+  display: inline-block;
+  position: relative;
+
+  &::before {
+    border-radius: 50%;
+    bottom: auto;
+    content: counter(articles);
+    color: $text-medium;
+    position: absolute;
+    transform: translateY(-50%);
+    height: 36px;
+    line-height: rem-calc(34);
+    text-align: center;
+    top: 50%;
+    transition: background-color 0.3s, color 0.3s;
+    -webkit-transition: background-color 0.3s, color 0.3s;
+    -moz-transition: background-color 0.3s, color 0.3s;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    width: 36px;
+  }
+
+  &.read::before {
+    background-color: $brand;
+    color: white;
+  }
+
+  &.reading {
+
+    svg {
+      display: block;
+    }
+
+    &::before {
+      background-color: White;
+      color: $text;
+    }
+  }
+}
+
+.survey-timeline svg {
+  bottom: auto;
+  display: none;
+  position: absolute;
+  stroke: $brand;
+  top: 50%;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transition: all 0.5s ease
+}
+
+@media only screen and (min-width: $medium-breakpoint) {
+
+  .survey-timeline {
+    display: none;
+    padding: $line-height;
+    text-align: center;
+
+    &.fixed {
+      display: block;
+      padding: 0 $line-height;
+    }
+  }
+}
