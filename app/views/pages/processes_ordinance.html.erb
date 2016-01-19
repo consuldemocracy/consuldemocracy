@@ -1,0 +1,18 @@
+<div class="row-full jumbo">
+  <div class="row">
+    <div class="small-12 medium-8 column">
+      <h1><%= t("pages.processes.process_1.title") %></h1>
+    </div>
+    <div class="show-for-medium-up">
+      <%= image_tag "processes_ordinance_page.png", class: "absolute" %>
+    </div>
+  </div>
+</div>
+
+<div class="process row margin-bottom">
+  <div class="small-12 medium-6 column">
+    <%= markdown t("pages.processes.process_1.text",
+    comment: link_to(t("pages.processes.process_1.comment"), ordenanza_transparencia_path)).html_safe %>
+    <%= link_to t("pages.processes.process_1.button"), ordenanza_transparencia_path, class: "button radius" %>
+  </div>
+</div>

@@ -282,7 +282,7 @@ Rails.application.routes.draw do
 
   mount Tolk::Engine => '/translate', :as => 'tolk'
 
-  # static pages
+  get "ordenanza-de-transparencia", to: "legislations#show", id: 1, as: :ordenanza_transparencia
 
   get '/blog' => redirect("http://diario.madrid.es/participa/")
   resources :pages, path: '/', only: [:show]
