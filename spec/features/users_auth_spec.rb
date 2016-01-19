@@ -71,17 +71,15 @@ feature 'Users' do
         visit '/'
         click_link 'Register'
 
-        expect { click_link 'Sign up with Twitter' }
-          .to  change { Identity.count }.by(1)
-          .and change { User.count }.by(1)
-          .and change { ActionMailer::Base.deliveries.size }.by(0)
+        click_link 'Sign up with Twitter'
 
         expect_to_be_signed_in
 
-        user = User.last
-        expect(user.username).to eq('ManuelaRocks')
-        expect(user.email).to eq('manuelacarmena@example.com')
-        expect(user.confirmed?).to eq(true)
+        click_link 'My account'
+        expect(page).to have_field('account_username', with: 'ManuelaRocks')
+
+        visit edit_user_registration_path
+        expect(page).to have_field('user_email', with: 'manuelacarmena@example.com')
       end
 
       scenario 'Sign up, when neither email nor nickname were provided by OAuth provider' do
@@ -101,26 +99,27 @@ feature 'Users' do
 
         visit '/'
         click_link 'Register'
-
-        expect { click_link 'Sign up with Twitter'}
-         .to  change { Identity.count }.by(1)
-         .and change { User.count }.by(1)
-         .and change { ActionMailer::Base.deliveries.size }.by(0)
+        click_link 'Sign up with Twitter'
 
         expect(current_path).to eq(finish_signup_path)
-
-        user = User.last
-        expect(user.username).to eq('manuela-de-las-carmenas')
-        expect(user.email).to eq("omniauth@participacion-12345-twitter.com")
-
         fill_in 'user_email', with: 'manueladelascarmenas@example.com'
         click_button 'Register'
 
-        confirm_email
+        expect(page).to have_content "You must confirm your account to continue"
 
+        confirm_email
         expect(page).to have_content "Your account has been confirmed"
 
-        expect(user.reload.email).to eq('manueladelascarmenas@example.com')
+        visit '/'
+        click_link 'Sign in'
+        click_link 'Sign in with Twitter'
+        expect_to_be_signed_in
+
+        click_link 'My account'
+        expect(page).to have_field('account_username', with: 'manuela-de-las-carmenas')
+
+        visit edit_user_registration_path
+        expect(page).to have_field('user_email', with: 'manueladelascarmenas@example.com')
       end
 
       scenario 'Sign in, user was already signed up with OAuth' do
@@ -137,12 +136,16 @@ feature 'Users' do
 
         visit '/'
         click_link 'Sign in'
-
-        expect { click_link 'Sign in with Twitter' }
-          .to  change { Identity.count }.by(0)
-          .and change { User.count }.by(0)
+        click_link 'Sign in with Twitter'
 
         expect_to_be_signed_in
+
+        click_link 'My account'
+        expect(page).to have_field('account_username', with: user.username)
+
+        visit edit_user_registration_path
+        expect(page).to have_field('user_email', with: user.email)
+
       end
     end
   end
