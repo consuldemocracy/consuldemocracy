@@ -306,12 +306,26 @@ FactoryGirl.define do
         result
       end
     end
+
+    sequence(:description) do |n|
+      I18n.available_locales.inject({}) do |result, locale|
+        result[locale.to_s] = "Description #{n}"
+        result
+      end
+    end
   end
 
   factory :subcategory do
     sequence(:name) do |n|
       I18n.available_locales.inject({}) do |result, locale|
         result[locale.to_s] = "Action Line #{n}"
+        result
+      end
+    end
+
+    sequence(:description) do |n|
+      I18n.available_locales.inject({}) do |result, locale|
+        result[locale.to_s] = "Description #{n}"
         result
       end
     end
