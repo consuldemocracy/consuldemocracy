@@ -90,6 +90,7 @@ Rails.application.routes.draw do
     resource :email, controller: "email", only: [:new, :show, :create]
     resource :letter, controller: "letter", only: [:new, :create, :show, :edit, :update]
   end
+  get "/verifica", to: "verification/letter#edit"
 
   namespace :admin do
     root to: "dashboard#index"

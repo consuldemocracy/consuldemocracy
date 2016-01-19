@@ -18,6 +18,15 @@ en:
     letter:
       alert:
         unconfirmed_code: You have not yet entered the confirmation code
+        unconfirmed_residency: "You have not yet confirmed your residency"
+    sms:
+      new:
+        title: "Send confirmation code"
+        phone: "Enter your mobile phone number to receive the code"
+        phone_format_html: "<strong><em>(Example: 612345678)</em></strong>"
+        phone_note: "We only user your phone for send to you a code, we never contact to you."
+        phone_placeholder: "Example: 612345678"
+        submit_button: "Send"
       create:
         flash:
           offices: Citizen Support Offices
