@@ -3,16 +3,10 @@
     height: 400px;
   }
 
-  .meeting {
-    cursor: pointer;
-    border: 1px solid #000;
-    height: 250px;
-    .title {
-      color: $brand;
-      font-weight: bold;
-    }
-    &:hover {
-      background: #ccc;
-    }
+}
+
+.meetings-directory .meeting, .meeting-infowindow{
+  .meeting-title {
+    font-weight: bold;
   }
 }

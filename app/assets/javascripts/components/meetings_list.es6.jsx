@@ -36,22 +36,24 @@ class MeetingsList extends React.Component {
   render () {
     return (
       <div>
-        <div className="row">
-          <div className="list">
+        <ul className="small-block-grid-2 medium-block-grid-3 large-block-grid-4">
           {
             this.meetings.map((meeting) => {
               return (
-                <a href={meeting.url} className="meeting large-3 small-6 columns end" key={ `meeting_${meeting.id}` }>
-                  <p className="title">{ meeting.title }</p>
-                  <p>{ meeting.description }</p>
-                  <p>{ meeting.held_at }</p>
-                  <p>{ meeting.address }</p>
-                </a>
+                <li className="meeting" key={ `meeting_${meeting.id}` } >
+                  <a href={meeting.url} className="meeting-title" >
+                    { meeting.title }
+                  </a>
+                  <p className="tags">
+                    <span className="radius secondary label">{ meeting.held_at }</span>
+                  </p>
+                  <div>{ meeting.description }</div>
+                  <p><small>{ meeting.address }</small></p>
+                </li>
               )
             })
           }
-          </div>
-        </div>
+        </ul>
         <div className="row">
           <Pagination 
             currentPage={this.state.currentPage}

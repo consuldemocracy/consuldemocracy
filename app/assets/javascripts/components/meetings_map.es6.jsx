@@ -47,30 +47,35 @@ class MeetingsMap extends React.Component {
   }
 
   createMarkers() {
-    this.markers = this.props.meetings.map((meeting) => {
-      let marker = new google.maps.Marker({
+    let markers = this.props.meetings.map((meeting) => {
+      let map = this.map,
+          marker = new google.maps.Marker({
             position: {
               lat: meeting.address_latitude,
               lng: meeting.address_longitude,
             },
             animation: google.maps.Animation.DROP,
-            map: this.map
-          }),
-          infoWindow = new google.maps.InfoWindow({
-            content: `${meeting.title} (${meeting.held_at})`
+            map: map
           });
 
-      // Store reference of the meeting
       marker._meeting = meeting;
-      marker._infoWindow = infoWindow;
-
       marker.addListener('click', () => {
-        this.openMarkerWindow(marker);
+        let infoWindow = new google.maps.InfoWindow({
+            content: `<div class="meeting-infowindow">
+                        <a href="/meetings/${meeting.id}" class="meeting-title">${meeting.title}</a>
+                        <p class="tags"><span class="radius secondary label">${meeting.held_at}</span></p>
+                        <div>${ meeting.description }</div>
+                      </div>`
+          });
+        marker.infoWindow = infoWindow;
+        markers.map((marker) => { if(marker.infoWindow) marker.infoWindow.close(); } );
+        infoWindow.open(map, marker);
       });
 
       return marker;
     });
 
+    this.markers = markers;
     this.markerClusterer = new MarkerClusterer(this.map, this.markers, { ignoreHidden: true });
   }
 

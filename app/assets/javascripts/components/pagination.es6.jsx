@@ -1,13 +1,15 @@
 class Pagination extends React.Component {
   render () {
     return (
-      <nav>
-        <ul className="pagination">
-          { this.renderPrevLinks() }
-          { this.renderPaginationLinks() }
-          { this.renderNextLinks() }
-        </ul>
-      </nav>
+      <div className="pagination-centered">
+        <nav>
+          <ul className="pagination">
+            { this.renderPrevLinks() }
+            { this.renderPaginationLinks() }
+            { this.renderNextLinks() }
+          </ul>
+        </nav>
+      </div>
     )
   }
 

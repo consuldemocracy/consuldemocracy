@@ -2,12 +2,16 @@ class MeetingsFilter extends React.Component {
   render() {
     return (
       <form>
-        <div className="input-prepend">
-          <span className="add-on"><i className="icon-search"></i></span>
-          <input 
-            placeholder="Cercar" 
-            onChange={(event) => this.filterByText(event.target.value)} 
-            onKeyDown={(event) => this.onKeyDown(event)} />
+        <div className="row collapse prefix-radius">
+          <div className="small-2 large-1 columns">
+            <span className="prefix"><i className="icon-search"></i></span>
+          </div>
+          <div className="small-10 large-11 columns">
+            <input 
+              placeholder="Cercar" 
+              onChange={(event) => this.filterByText(event.target.value)} 
+              onKeyDown={(event) => this.onKeyDown(event)} />
+          </div>
         </div>
       </form>
     )
