@@ -324,14 +324,21 @@ FactoryGirl.define do
     association :notifiable, factory: :proposal
   end
 
+  places = YAML.load_file("#{Rails.root}/db/seeds/places.yml")[:places]
+
   factory :meeting do
     sequence(:title)       { |n| "Meeting #{n} title" }
     sequence(:description) { |n| "Meeting #{n} description" }
-    sequence(:address)     { |n| "Fake address #{n}" }
     held_at Date.today
     start_at Time.now
     end_at Time.now + 1.hour
     association :author, factory: :user
+    after :build do |meeting|
+      place = places.sample
+      meeting.address = place[:address]
+      meeting.address_latitude = place[:lat]
+      meeting.address_longitude = place[:lng]
+    end
   end
 
   factory :geozone do

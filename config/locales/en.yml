@@ -175,6 +175,7 @@ en:
       debates: Debates
       external_link_blog: Blog
       locale: 'Language:'
+      meetings: Meetings
       moderation: Moderation
       more_information: More information
       my_account_link: My account
@@ -213,6 +214,7 @@ en:
       meeting_title: Title
     index:
       new: Create meeting
+      title: Meetings
     new:
       form:
         submit_button: Create meeting

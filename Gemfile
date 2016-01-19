@@ -71,6 +71,7 @@ gem 'rails-i18n'
 gem 'react-rails'
 gem 'immutablejs-rails', '>= 2.0.17'
 gem 'i18n-js', github: 'fnando/i18n-js'
+gem 'markerclustererplus-rails'
 
 gem 'i18n_yaml_csv', github: 'josepjaume/i18n_yaml_csv'
 

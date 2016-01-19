@@ -10,10 +10,10 @@
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "vendor/modernizr" %>
     <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+    <%= javascript_include_google_maps_api_tag %>
     <%= content_for :head %>
     <%= csrf_meta_tags %>
     <%= favicon_link_tag "favicon.ico" %>
-    <script src="https://maps.googleapis.com/maps/api/js?key=<%= Rails.application.secrets.google_maps_api_key%>&signed_in=true&libraries=places&callback=gmapsLoaded" async defer></script>
   </head>
 
   <body class="admin">

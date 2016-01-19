@@ -1,0 +1,25 @@
+<% provide :title do %><%= @meeting.title %><% end %>
+<% provide :social_media_meta_tags do %>
+<%= render "shared/social_media_meta_tags",
+            social_url: meeting_url(@meeting),
+            social_title: @meeting.title,
+            social_description: text_with_links(@meeting.description) %>
+<% end %>
+<section class="meeting-show">
+  <div id="<%= dom_id(@meeting) %>" class="row">
+    <div class="small-12 medium-9 column">
+      <i class="icon-angle-left left"></i>&nbsp;
+
+      <h1><%= @meeting.title %></h1>
+
+      <div class="meeting-info">
+        <%= render '/shared/author_info', resource: @meeting %>
+
+        <span class="bullet">&nbsp;&bull;&nbsp;</span>
+        <%= l @meeting.created_at.to_date %>
+      </div>
+
+      <blockquote><%= text_with_links @meeting.description %></blockquote>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,7 @@
+<% provide :title do %><%= t('meetings.index.title') %><% end %>
+
+<section role="main">
+  <div class="wrap row">
+    <%= meetings_directory meetings: @meetings %>
+  </div>
+</section>

@@ -44,6 +44,7 @@
 
 //= require react
 //= require react_ujs
+//= require markerclusterer
 //= require immutable
 //= require components
 

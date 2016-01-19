@@ -175,6 +175,7 @@ ca:
       debates: Debats
       external_link_blog: Blog
       locale: 'Idioma:'
+      meetings: Trobades presencials
       moderation: Moderar
       more_information: Més informació
       my_account_link: El meu compte
@@ -213,6 +214,7 @@ ca:
       meeting_title: Títol
     index:
       new: Crear trobada
+      title: Trobades presencials
     new:
       form:
         submit_button: Crear trobada
