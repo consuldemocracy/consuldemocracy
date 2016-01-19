@@ -3,7 +3,8 @@ module ComponentsHelper
     CategoryDecorator.decorate_collection(Category.all).map do |category|
       {
         id: category.id.to_s,
-        name: localize_attribute(category.name)
+        name: category.name,
+        description: category.description
       }
     end
   end
@@ -12,15 +13,11 @@ module ComponentsHelper
     SubcategoryDecorator.decorate_collection(Subcategory.all).map do |subcategory|
       {
         id: subcategory.id.to_s,
-        name: localize_attribute(subcategory.name),
-        description: localize_attribute(subcategory.description),
+        name: subcategory.name,
+        description: subcategory.description,
         categoryId: subcategory.category_id.to_s
       }
     end
-  end
-
-  def localize_attribute(attribute)
-    attribute[I18n.locale.to_s] if attribute
   end
 
   def google_maps_autocomplete_input(options = {})
