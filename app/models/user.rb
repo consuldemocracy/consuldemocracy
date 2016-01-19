@@ -47,20 +47,16 @@ class User < ActiveRecord::Base
   before_validation :clean_document_number
 
   # Get the existing user by email if the provider gives us a verified email.
-
   def self.first_or_initialize_for_oauth(auth)
-    email, user = nil, nil
-    if auth.info.verified || auth.info.verified_email
-      email = auth.info.email
-      user = User.where(email: email).first
-    end
-    user || User.new(
-      registering_with_oauth: true,
-      username: auth.info.nickname || auth.extra.raw_info.name.parameterize('-') || auth.uid,
-      email: email,
+    auth_email      = auth.info.email if auth.info.verified || auth.info.verified_email
+    auth_email_user = User.find_by(email: auth_email) if auth_email.present?
+
+    auth_email_user || User.new(
+      username:  auth.info.nickname || auth.extra.raw_info.name.parameterize('-') || auth.uid,
+      email: auth_email,
       password: Devise.friendly_token[0,20],
       terms_of_service: '1',
-      confirmed_at: DateTime.now
+      confirmed_at: auth_email.present? ? DateTime.now : nil
     )
   end
 
