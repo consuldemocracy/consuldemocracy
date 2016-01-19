@@ -211,10 +211,10 @@ es:
       proposal_responsible_name: "Nombre y apellidos de la persona que hace esta propuesta"
       proposal_responsible_name_note: "(individualmente o como representante de un colectivo; no se mostrará públicamente)"
       tags_label: "Temas"
-      tags_instructions: "Etiqueta esta propuesta. Puedes elegir entre nuestras sugerencias o introducir las que desees."
-      tags_placeholder: "Escribe las etiquetas que desees separadas por una coma (',')"
       tag_category_label: "Categorías"
       tag_district_label: "Distritos"
+      tags_instructions: "Etiqueta esta propuesta. Puedes elegir entre Categorias y Distritos propuestos o introducir las que desees"
+      tags_placeholder: "Escribe las etiquetas que desees separadas por una coma (',')"
     show:
       back_link: "Volver"
       author_deleted: "Usuario eliminado"

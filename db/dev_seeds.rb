@@ -231,40 +231,33 @@ Proposal.only_hidden.flagged.reorder("RANDOM()").limit(5).each(&:confirm_hide)
 puts "Creating Tags Categories"
  
 ActsAsTaggableOn::Tag.create!(name:  "Asociaciones", featured: true, kind: "category")
+puts "    Asociaciones"
 ActsAsTaggableOn::Tag.create!(name:  "Cultura", featured: true, kind: "category")
+puts "    Cultura"
 ActsAsTaggableOn::Tag.create!(name:  "Deportes", featured: true, kind: "category")
-ActsAsTaggableOn::Tag.create!(name:  "Derechos Sociales", featured: true, kind: "category")
+puts "    Deportes"
+ActsAsTaggableOn::Tag.create!(name:  "Derechos SMedio Ambienteociales", featured: true, kind: "category")
+puts "    Derechos Sociales"
 ActsAsTaggableOn::Tag.create!(name:  "Economía", featured: true, kind: "category")
+puts "    Economía"
 ActsAsTaggableOn::Tag.create!(name:  "Empleo", featured: true, kind: "category")
+puts "    Empleo"
 ActsAsTaggableOn::Tag.create!(name:  "Equidad", featured: true, kind: "category")
+puts "    Equidad"
 ActsAsTaggableOn::Tag.create!(name:  "Sostenibilidad", featured: true, kind: "category")
+puts "    Sostenibilidad"
 ActsAsTaggableOn::Tag.create!(name:  "Participación", featured: true, kind: "category")
+puts "    Participación"
 ActsAsTaggableOn::Tag.create!(name:  "Movilidad", featured: true, kind: "category")
+puts "    Movilidad"
 ActsAsTaggableOn::Tag.create!(name:  "Medios", featured: true, kind: "category")
+puts "    Medios"
 ActsAsTaggableOn::Tag.create!(name:  "Salud", featured: true , kind: "category")
+puts "    Salud"
 ActsAsTaggableOn::Tag.create!(name:  "Transparencia", featured: true, kind: "category")
+puts "    Transparencia"
 ActsAsTaggableOn::Tag.create!(name:  "Seguridad y Emergencias", featured: true, kind: "category")
+puts "    Seguridad y Emergencias"
 ActsAsTaggableOn::Tag.create!(name:  "Medio Ambiente", featured: true, kind: "category")
+puts "    Medio Ambiente"
 
-puts "Creating Tags Districts"
-
-ActsAsTaggableOn::Tag.create!(name:  "Centro", featured: true, kind: "district")
-ActsAsTaggableOn::Tag.create!(name:  "Arganzuela", featured: true, kind: "district")
-ActsAsTaggableOn::Tag.create!(name:  "Retiro" , featured: true, kind: "district")
-ActsAsTaggableOn::Tag.create!(name:  "Salamanca" , featured: true, kind: "district")
-ActsAsTaggableOn::Tag.create!(name:  "Chamartín" , featured: true, kind: "district")
-ActsAsTaggableOn::Tag.create!(name:  "Tetuán" , featured: true, kind: "district")
-ActsAsTaggableOn::Tag.create!(name:  "Chamberí" , featured: true, kind: "district")
-ActsAsTaggableOn::Tag.create!(name:  "Moncloa-Aravaca", featured: true, kind: "district")
-ActsAsTaggableOn::Tag.create!(name:  "Latina", featured: true, kind: "district")
-ActsAsTaggableOn::Tag.create!(name:  "Carabanchel", featured: true, kind: "district")
-ActsAsTaggableOn::Tag.create!(name:  "Usera", featured: true, kind: "district")
-ActsAsTaggableOn::Tag.create!(name:  "Puente de Vallecas", featured: true, kind: "district")
-ActsAsTaggableOn::Tag.create!(name:  "Moratalaz", featured: true,  kind: "district")
-ActsAsTaggableOn::Tag.create!(name:  "Ciudad Lineal", featured: true, kind: "district")
-ActsAsTaggableOn::Tag.create!(name:  "Hortaleza", featured: true, kind: "district")
-ActsAsTaggableOn::Tag.create!(name:  "Villaverde", featured: true,  kind: "district")
-ActsAsTaggableOn::Tag.create!(name:  "Villa de Vallecas", featured: true,  kind: "district")
-ActsAsTaggableOn::Tag.create!(name:  "Vicalvaro", featured: true,  kind: "district")
-ActsAsTaggableOn::Tag.create!(name:  "San Blas-Canillejas", featured: true,  kind: "district")
-ActsAsTaggableOn::Tag.create!(name:  "Barajas", featured: true,   kind: "district")

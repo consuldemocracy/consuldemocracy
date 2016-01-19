@@ -47,15 +47,14 @@
         <% @category_tags.each do |tag| %>
           <a class="js-add-tag-link"><%= tag.name %></a>
         <% end %>
-        <hr widht="30%" align="left">
-        <%= f.label :district_tag_list, t("proposals.form.tag_district_label") %>
-        <% @district_tags.each do |tag| %>
-          <a class="js-add-tag-link"><%= tag.name %></a>
+        <%= f.label :district_tag_list, t("proposals.form.tag_district_label") %>  
+        <% @district_select.each do |g| %>
+          <a class="js-add-tag-link"><%= g.name %></a>
         <% end %>
       </span>
+      <br>
       <%= f.text_field :tag_list, value: @proposal.tag_list.to_s, label: false, placeholder: t("proposals.form.tags_placeholder"), class: 'js-tag-list' %>
     </div>
-
     <% if current_user.unverified? %>
       <div class="small-12 column">
         <%= f.label :responsible_name, t("proposals.form.proposal_responsible_name") %>
