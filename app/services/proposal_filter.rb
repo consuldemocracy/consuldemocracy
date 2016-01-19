@@ -1,13 +1,15 @@
 class ProposalFilter
+  IGNORE_FILTER_PARAMS = ["source"]
   attr_reader :collection, :tag_cloud, :search_filter, :tag_filter, :params
 
   def initialize(params={})
-    @search_filter = params[:search] if params[:search].present?
-    @tag_filter = params[:tag]
+    @collection = Proposal.all
     @params = params[:filter]
     @exclude_ids = params[:exclude_ids]
-    @collection = Proposal.all
+    @search_filter = params[:search] if params[:search].present?
+    @tag_filter = params[:tag]
     exclude
+    parse_filter_params
     filter_by_search
     filter_by_tag
     filter
@@ -19,6 +21,20 @@ class ProposalFilter
   def exclude
     if @exclude_ids.present?
       @collection = @collection.where("id not in (?)", @exclude_ids)
+    end
+  end
+
+  def parse_filter_params
+    if @params.present?
+      @params = @params.split(':').reduce({}) do |result, filterGroup|
+        filterGroupName, filterGroupValue = filterGroup.split('=')
+        result[filterGroupName] = filterGroupValue.split(',') if filterGroupValue
+        result
+      end
+
+      if @params["source"].present?
+        @params["oficial"] = @params["source"].include? "oficial"
+      end
     end
   end
 
@@ -40,14 +56,10 @@ class ProposalFilter
 
   def filter
     if @params.present?
-      @params = @params.split(':').reduce({}) do |result, filterGroup|
-        filterGroupName, filterGroupValue = filterGroup.split('=')
-        result[filterGroupName] = filterGroupValue.split(',') if filterGroupValue
-        result
-      end
-
       @params.each do |attr, value|
-        @collection = @collection.where(attr => value)
+        unless IGNORE_FILTER_PARAMS.include? attr
+          @collection = @collection.where(attr => value)
+        end
       end
     end
   end

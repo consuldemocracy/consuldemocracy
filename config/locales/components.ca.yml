@@ -17,7 +17,10 @@ ca:
     proposal_filter_option:
       city: Tota la ciutat
       district: Un districte
+      oficial: Programa (Ajuntament)
+      citizenship: Ciutadania
     proposal_filter_option_group:
+      source: Origen
       category_id: Eix
       district: Districte
       scope: "Àmbit"

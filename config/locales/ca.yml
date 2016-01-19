@@ -271,6 +271,7 @@ ca:
       proposal_title: Títol de la proposta
       proposal_video_url: Enllaç a vídeo extern
       proposal_video_url_note: Pots afegir un enllaç a YouTube o Vimeo
+      proposal_oficial: La proposta és oficial
       tags_instructions: Etiqueta aquesta proposta. Pots triar entre les nostres propostes o introduir les que vulguis.
       tags_label: Temes
       tags_placeholder: Escriu les etiquetes que vulguis separades per una coma (',')

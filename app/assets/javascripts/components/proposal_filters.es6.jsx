@@ -12,6 +12,14 @@ class ProposalFilters extends React.Component {
     return (
       <form>
         <ProposalFilterOptionGroup 
+          filterGroupName="source" 
+          filterGroupValue={this.state.filters.get('source')}
+          isExclusive={true}
+          onChangeFilterGroup={(filterGroupName, filterGroupValue) => this.changeFilterGroup(filterGroupName, filterGroupValue) }>
+          <ProposalFilterOption filterName="oficial" />
+          <ProposalFilterOption filterName="citizenship" />
+        </ProposalFilterOptionGroup>
+        <ProposalFilterOptionGroup 
           filterGroupName="scope" 
           filterGroupValue={this.state.filters.get('scope')}
           isExclusive={true}

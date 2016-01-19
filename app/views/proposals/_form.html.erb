@@ -63,6 +63,17 @@
       </div>
     <% end %>
 
+    <% if current_user.administrator? %>
+      <div class="small-12 column">
+        <%= f.label :oficial do %>
+          <%= f.check_box :oficial, label: false %>
+          <span class="checkbox">
+            <%= t("proposals.form.proposal_oficial") %>
+          </span>
+        <% end %>
+      </div>
+    <% end %>
+
     <div class="small-12 column">
       <% if @proposal.new_record? %>
         <%= f.label :terms_of_service do %>
