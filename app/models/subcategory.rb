@@ -4,4 +4,6 @@ class Subcategory < ActiveRecord::Base
   serialize :description, JSON
 
   validates :name, :category, presence: true
+
+  acts_as_list scope: :category
 end

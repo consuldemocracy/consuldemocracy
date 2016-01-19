@@ -60,6 +60,8 @@ GEM
       tzinfo (~> 1.1)
     acts-as-taggable-on (3.5.0)
       activerecord (>= 3.2, < 5)
+    acts_as_list (0.7.2)
+      activerecord (>= 3.0)
     acts_as_votable (0.10.0)
     addressable (2.4.0)
     ahoy_matey (1.2.1)
@@ -473,6 +475,7 @@ PLATFORMS
 
 DEPENDENCIES
   acts-as-taggable-on
+  acts_as_list
   acts_as_votable
   ahoy_matey (~> 1.2.1)
   ancestry
