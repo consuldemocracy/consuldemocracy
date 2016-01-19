@@ -33,5 +33,12 @@
         <%= t("moderation.menu.users") %>
       <% end %>
     </li>
+
+    <li <%= "class=active" if controller_name == "meetings" %>>
+      <%= link_to moderation_meetings_path do %>
+        <i class="icon-calendar"></i>
+        <%= t("moderation.menu.meetings") %>
+      <% end %>
+    </li>
   </ul>
 </nav>

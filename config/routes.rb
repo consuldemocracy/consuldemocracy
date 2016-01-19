@@ -194,6 +194,8 @@ Rails.application.routes.draw do
         put :moderate
       end
     end
+
+    resources :meetings, except: [:show, :destroy]
   end
 
   namespace :management do
@@ -284,6 +286,5 @@ Rails.application.routes.draw do
 
   # static pages
 
-  get '/blog' => redirect("http://diario.madrid.es/participa/")
   resources :pages, path: '/', only: [:show]
 end

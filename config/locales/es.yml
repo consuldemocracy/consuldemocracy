@@ -22,7 +22,7 @@ es:
       user_permission_support_proposal: Apoyar propuestas*
       user_permission_title: Participación
       user_permission_verify: Para poder realizar todas las acciones verifica tu cuenta.
-      user_permission_verify_info: "* Sólo usuarios empadronados en el municipio de Madrid."
+      user_permission_verify_info: "* Sólo usuarios empadronados en el municipio de Barcelona."
       user_permission_votes: Participar en las votaciones finales*
       username_label: Nombre de usuario
       verified_account: Cuenta verificada
@@ -46,6 +46,10 @@ es:
         other: "%{count} votos"
         zero: Sin votos
     form:
+      alignment:
+        negative: En contra
+        neutral: Neutral
+        positive: A favor
       comment_as_admin: Comentar como administrador
       comment_as_moderator: Comentar como moderador
       leave_comment: Deja tu comentario
@@ -88,7 +92,6 @@ es:
       tags_label: Temas
       tags_placeholder: Escribe las etiquetas que desees separadas por coma (',')
     index:
-      featured_debates: Destacados
       filter_topic:
         one: " con el tema '%{topic}'"
         other: " con el tema '%{topic}'"
@@ -97,6 +100,7 @@ es:
         created_at: Nuevos
         hot_score: Más activos hoy
         most_commented: Más comentados
+        random: aleatorio
         relevance: Más relevantes
       search_form:
         button: Buscar
@@ -145,6 +149,7 @@ es:
     debate: el debate
     error: error
     errors: errores
+    meeting: el encuentro presencial
     not_saved: 'impidieron guardar %{resource}:'
     policy: Política de privacidad
     proposal: la propuesta
@@ -163,33 +168,13 @@ es:
     footer:
       accessibility: Accesibilidad
       conditions: Condiciones de uso
-      consul: aplicación Consul
-      consul_url: https://github.com/consul/consul
-      contact_us: Para asistencia técnica entra en
-      copyright: Ayuntamiento de Madrid, %{year}
-      description: Este portal usa la %{consul} que es %{open_source}. De Madrid, para el mundo entero.
-      faq: Asistencia técnica
       more_info: Más información
-      open_data_text: Todos los datos del Ayuntamiento son tuyos.
-      open_data_title: Datos Abiertos
-      open_source: software libre
-      open_source_url: http://www.gnu.org/licenses/agpl-3.0.html
-      participation_text: Decide cómo debe ser la ciudad de Madrid que quieres.
-      participation_title: Participación
       privacy: Política de privacidad
-      transparency_text: Obtén cualquier información sobre el Ayuntamiento de Madrid.
-      transparency_title: Transparencia
-      transparency_url: https://transparencia.madrid.es
     header:
       administration: Administrar
       debates: Debates
       external_link_blog: Blog
-      external_link_opendata: Datos abiertos
-      external_link_opendata_url: http://datos.madrid.es
-      external_link_transparency: Transparencia
-      external_link_transparency_url: https://transparencia.madrid.es
       locale: 'Idioma:'
-      logo: Madrid
       moderation: Moderar
       more_information: Más información
       my_account_link: Mi cuenta
@@ -199,7 +184,7 @@ es:
         other: Tienes %{count} notificaciones nuevas
       no_notifications: No tienes notificaciones nuevas
       open: abierto
-      open_city_slogan_html: Existen ciudades gobernadas directamente por sus habitantes, que <b>debaten</b> sobre temas que les preocupan, <b>proponen</b> ideas para mejorar sus vidas y <b>deciden</b> entre todas y todos las que se llevan a cabo. Madrid ya es una de ellas.
+      open_city_slogan_html: Existen ciudades gobernadas directamente por sus habitantes, que <b>debaten</b> sobre temas que les preocupan, <b>proponen</b> ideas para mejorar sus vidas y <b>deciden</b> entre todas y todos las que se llevan a cabo. Barcelona ya es una de ellas.
       open_city_title: La ciudad que quieres será la ciudad que quieras.
       open_data: Datos abiertos
       open_gov: Gobierno %{open}
@@ -214,6 +199,23 @@ es:
       text_sign_up: registrarte
       title: "¿Cómo puedo comentar este documento?"
   locale: Español
+  meetings:
+    edit:
+      form:
+        submit_button: Actualizar encuentro
+    form:
+      meeting_address: "¿Dónde se va a realizar?"
+      meeting_address_details: Detalles adicionales del lugar
+      meeting_description: Descripción
+      meeting_end_at: "¿A que hora acaba?"
+      meeting_held_at: "¿Cuándo se va a realizar?"
+      meeting_start_at: "¿A que hora empieza?"
+      meeting_title: Título
+    index:
+      new: Crear encuentro
+    new:
+      form:
+        submit_button: Crear encuentro
   notifications:
     index:
       comments_on:
@@ -253,9 +255,12 @@ es:
       proposal_question_example_html: Debe ser resumida en una pregunta cuya respuesta sea Sí o No. <em>Ej. '¿Está usted de acuerdo en peatonalizar la calle Mayor?'</em>
       proposal_responsible_name: Nombre y apellidos de la persona que hace esta propuesta
       proposal_responsible_name_note: "(individualmente o como representante de un colectivo; no se mostrará públicamente)"
+      proposal_scope: "Ámbito"
+      proposal_scope_city: Toda la ciudad
+      proposal_scope_district: Un distrito
+      proposal_scope_note: "¿Es una medida para toda la ciudad o solo para un distrito?"
       proposal_summary: Resumen de la propuesta
-      proposal_summary_note: "(máximo 200 caracteres)"
-      proposal_text: Texto desarrollado de la propuesta
+      proposal_summary_note: "(máximo 300 caracteres)"
       proposal_title: Título de la propuesta
       proposal_video_url: Enlace a vídeo externo
       proposal_video_url_note: Puedes añadir un enlace a YouTube o Vimeo
@@ -264,14 +269,12 @@ es:
       tags_placeholder: Escribe las etiquetas que desees separadas por una coma (',')
     index:
       featured_proposals: Destacadas
-      filter_topic:
-        one: " con el tema '%{topic}'"
-        other: " con el tema '%{topic}'"
       orders:
         confidence_score: Más apoyadas
         created_at: Nuevas
         hot_score: Más activas hoy
         most_commented: Más comentadas
+        random: aleatorio
         relevance: Más relevantes
       search_form:
         button: Buscar
@@ -288,7 +291,6 @@ es:
       back_link: Volver
       form:
         submit_button: Crear propuesta
-      more_info: "¿Cómo funcionan las propuestas ciudadanas?"
       recommendation_one: No escribas el título de la propuesta o frases enteras en mayúsculas. En internet eso se considera gritar. Y a nadie le gusta que le griten.
       recommendation_three: Disfruta de este espacio, de las voces que lo llenan, también es tuyo.
       recommendation_two: Cualquier propuesta o comentario que implique una acción ilegal será eliminada, también las que tengan la intención de sabotear los espacios de propuesta, todo lo demás está permitido.
@@ -430,23 +432,7 @@ es:
     verified_only: Las propuestas sólo pueden ser votadas por usuarios verificados, %{verify_account}.
     verify_account: verifica tu cuenta
   welcome:
-    debates:
-      alt: Icono debates
-      description: Encontrarnos, debatir y compartir lo que nos parece importante en nuestra ciudad.
-      title: Debates
-    decide:
-      alt: Icono decides
-      description: La ciudadanía decide si acepta o rechaza las propuestas más apoyadas.
-      title: Decides
-    do:
-      alt: Icono se hace
-      description: Si la propuesta es aceptada mayoritariamente, el Ayuntamiento la asume como propia y se hace.
-      title: Se hace
     highlights: 'Portada: '
-    proposal:
-      alt: Icono propones
-      description: Espacio abierto para propuestas ciudadanas sobre el tipo de ciudad en el que queremos vivir.
-      title: Propones
     signed_in_home_title: Actividad reciente
     welcome:
       go_to_index: Ver propuestas
@@ -456,6 +442,6 @@ es:
       user_permission_proposal: Crear nuevas propuestas
       user_permission_support_proposal: Apoyar propuestas*
       user_permission_verify: Para poder realizar todas las acciones %{verify}.
-      user_permission_verify_info: "* Sólo usuarios empadronados en el municipio de Madrid."
+      user_permission_verify_info: "* Sólo usuarios empadronados en el municipio de Barcelona."
       user_permission_verify_url: verifica tu cuenta
       user_permission_votes: Participar en las votaciones finales*

@@ -1,0 +1,52 @@
+<%= form_for(@meeting, url: form_url) do |f| %>
+  <%= render 'shared/errors', resource: @meeting %>
+
+  <div class="row">
+    <div class="small-12 column">
+      <%= f.label :title, t("meetings.form.meeting_title") %>
+      <%= f.text_field :title, placeholder: t("meetings.form.meeting_title"), label: false %>
+    </div>
+
+    <div class="small-12 column">
+      <%= f.label :description, t("meetings.form.meeting_description") %>
+      <p class="note"><%= t("meetings.form.meeting_description") %></p>
+      <%= f.text_area :description, rows: 4, maxlength: 350, label: false,
+                      placeholder: t('meetings.form.meeting_description') %>
+    </div>
+
+    <div class="small-12 column">
+      <%= f.label :address, t("meetings.form.meeting_address") %>
+      <%= f.text_field :address, placeholder: t("meetings.form.meeting_address"), label: false %>
+      <%= f.hidden_field :address_latitude %>
+      <%= f.hidden_field :address_longitude %>
+    </div>
+
+    <div class="small-12 column">
+      <%= google_maps_autocomplete_input address_input_id: "meeting_address", latitude_input_id: "meeting_address_latitude", longitude_input_id: "meeting_address_longitude", default_location: { lat: @meeting.address_latitude, lng: @meeting.address_longitude } %>
+    </div>
+
+    <div class="small-12 column">
+      <%= f.label :address_details, t("meetings.form.meeting_address_details") %>
+      <%= f.text_field :address_details, placeholder: t("meetings.form.meeting_address_details"), label: false %>
+    </div>
+
+    <div class="small-12 column">
+      <%= f.label :held_at, t("meetings.form.meeting_held_at") %>
+      <%= f.date_field :held_at, label: false %>
+    </div>
+
+    <div class="small-12 column">
+      <%= f.label :start_at, t("meetings.form.meeting_start_at") %>
+      <%= f.time_field :start_at, label: false %>
+    </div>
+
+    <div class="small-12 column">
+      <%= f.label :end_at, t("meetings.form.meeting_end_at") %>
+      <%= f.time_field :end_at, label: false %>
+    </div>
+
+    <div class="actions small-12 column">
+      <%= f.submit(class: "button radius", value: t("meetings.#{action_name}.form.submit_button")) %>
+    </div>
+  </div>
+<% end %>

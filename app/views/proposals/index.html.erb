@@ -7,54 +7,15 @@
 
 <section role="main">
   <div class="wrap row">
-    <div id="proposals" class="proposals-list small-12 medium-9 column">
-
-      <div class="small-12 margin-top search-results">
-        <% if @search_terms || @advanced_search_terms %>
-          <h2>
-            <%= page_entries_info @proposals %>
-            <% if !@advanced_search_terms %>
-              <%= t("proposals.index.search_results", count: @proposals.size, search_term: @search_terms) %>
-            <% end %>
-          </h2>
-        <% elsif @tag_filter %>
-          <h2>
-            <%= page_entries_info @proposals %>
-            <%= t("proposals.index.filter_topic", count: @proposals.size, topic: @tag_filter) %>
-          </h2>
-        <% end %>
-      </div>
-
-      <% if @featured_proposals.present? %>
-        <div id="featured-proposals" class="row featured-proposals">
-          <div class="small-12 column">
-            <h2>
-              <%= t("proposals.index.featured_proposals") %>
-            </h2>
-          </div>
-          <% @featured_proposals.each do |featured_proposal| %>
-            <%= render "featured_proposal", proposal: featured_proposal %>
-          <% end %>
-        </div>
-      <% end %>
-
-      <%= render "shared/advanced_search", search_path: proposals_path(page: 1)%>
-
-      <%= render 'shared/order_links', i18n_namespace: "proposals.index" %>
-
-      <div class="show-for-small-only">
-        <%= link_to t("proposals.index.start_proposal"), new_proposal_path, class: 'button radius expand' %>
-      </div>
-
-      <%= render partial: 'proposals/proposal', collection: @proposals %>
-      <%= paginate @proposals %>
-    </div>
-
     <div class="small-12 medium-3 column">
       <aside class="sidebar" role="complementary">
         <%= link_to t("proposals.index.start_proposal"), new_proposal_path, class: 'button radius expand' %>
-        <%= render "shared/tag_cloud", taggable: 'proposal' %>
+        <%= proposal_filters filter: @filter %>
       </aside>
+    </div>
+
+    <div id="proposals" class="proposals-list small-12 medium-9 column">
+      <%= render "proposals" %>
     </div>
   </div>
 </section>

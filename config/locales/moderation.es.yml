@@ -42,9 +42,15 @@ es:
           created_at: Más nuevos
           flags: Más denunciados
         title: Debates
+    meetings:
+      index:
+        headers:
+          meeting: Encuentro presencial
+        title: Encuentros presenciales
     menu:
       flagged_comments: Comentarios
       flagged_debates: Debates
+      meetings: Encuentros presenciales
       proposals: Propuestas
       users: Bloquear usuarios
     proposals:

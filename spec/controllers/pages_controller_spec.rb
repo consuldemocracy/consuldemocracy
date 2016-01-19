@@ -13,42 +13,15 @@ describe PagesController do
       expect(response).to be_ok
     end
 
-    it 'should include a general terms page' do
-      get :show, id: :general_terms
-      expect(response).to be_ok
-    end
-
     it 'should include a terms page' do
       get :show, id: :census_terms
       expect(response).to be_ok
     end
   end
 
-  describe 'Provisional pages' do
-    it 'should include a opendata page' do
-      get :show, id: :opendata
-      expect(response).to be_ok
-    end
-  end
-
   describe 'Info pages' do
-    it 'should include a how_it_works page' do
-      get :show, id: :how_it_works
-      expect(response).to be_ok
-    end
-
-    it 'should include a how_to_use page' do
-      get :show, id: :how_to_use
-      expect(response).to be_ok
-    end
-
     it 'should include a more_information page' do
       get :show, id: :more_information
-      expect(response).to be_ok
-    end
-
-    it 'should include a participation page' do
-      get :show, id: :participation
       expect(response).to be_ok
     end
 

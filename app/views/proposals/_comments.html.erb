@@ -5,7 +5,7 @@
 
         <h2>
           <%= t("proposals.show.comments_title") %>
-          <span class="js-comments-count">(<%= @proposal.comments_count %>)</span>
+          <%= render partial: 'comments/summary', locals: { commentable: @proposal } %>
         </h2>
 
         <%= render 'shared/wide_order_selector', i18n_namespace: "comments" %>

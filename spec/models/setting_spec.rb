@@ -5,15 +5,26 @@ describe Setting do
     Setting["official_level_1_name"] = 'Stormtrooper'
   end
 
-  it "should return the overriden setting" do
-    expect(Setting['official_level_1_name']).to eq('Stormtrooper')
+  context "when overriden in the database" do
+    before do
+      Setting["official_level_1_name"] = 'Stormtrooper'
+    end
+
+    it "should return the overriden setting" do
+      expect(Setting['official_level_1_name']).to eq('Stormtrooper')
+    end
   end
 
-  it "should should return nil" do
-    expect(Setting['undefined_key']).to eq(nil)
+  context "when there's a fallback" do
+    it "should return the fallback setting" do
+      Setting::StaticSetting["crazy_setting"] = "Crazy setting"
+      expect(Setting["crazy_setting"]).to eq("Crazy setting")
+    end
   end
 
-  it "should persist a setting on the db" do
-    expect(Setting.where(key: 'official_level_1_name', value: 'Stormtrooper')).to exist
+  context "when there isn't a fallback" do
+    it "should should return nil" do
+      expect(Setting['undefined_key']).to eq(nil)
+    end
   end
 end

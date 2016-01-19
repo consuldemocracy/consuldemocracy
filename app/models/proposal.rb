@@ -1,4 +1,7 @@
 class Proposal < ActiveRecord::Base
+
+  DISTRICTS = YAML::load_file("#{Rails.root}/config/districts.yml")["districts"].to_a.map(&:reverse).map {|a,b| [a.to_s, b.to_s]}.sort
+
   include Flaggable
   include Taggable
   include Conflictable
@@ -6,6 +9,7 @@ class Proposal < ActiveRecord::Base
   include Sanitizable
   include PgSearch
   include SearchCache
+  include Categorizable
   include Filterable
 
   apply_simple_captcha
@@ -18,12 +22,16 @@ class Proposal < ActiveRecord::Base
 
   validates :title, presence: true
   validates :question, presence: true
-  validates :summary, presence: true
+  validates :summary, presence: true, length: { maximum: 350 }
   validates :author, presence: true
   validates :responsible_name, presence: true
 
+  validates :category, presence: true
+
   validates :title, length: { in: 4..Proposal.title_max_length }
   validates :description, length: { maximum: Proposal.description_max_length }
+  validates :scope, inclusion: { in: %w(city district) }
+  validates :district, inclusion: { in: DISTRICTS.map(&:last).map(&:to_i), allow_nil: true }
   validates :question, length: { in: 10..Proposal.question_max_length }
   validates :responsible_name, length: { in: 6..Proposal.responsible_name_max_length }
 

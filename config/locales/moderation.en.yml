@@ -42,9 +42,15 @@ en:
           created_at: Newest
           flags: Most flagged
         title: Debates
+    meetings:
+      index:
+        headers:
+          meeting: Meeting
+        title: Meetings
     menu:
       flagged_comments: Comments
       flagged_debates: Debates
+      meetings: Meetings
       proposals: Proposals
       users: Block users
     proposals:

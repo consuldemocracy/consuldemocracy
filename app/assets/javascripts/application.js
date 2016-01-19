@@ -14,6 +14,9 @@
 //= require jquery_ujs
 //= require foundation
 //= require turbolinks
+//= require react
+//= require react_ujs
+//= require components
 //= require ckeditor/init
 //= require_directory ./ckeditor
 //= require social-share-button
@@ -35,8 +38,14 @@
 //= require users
 //= require votes
 //= require annotatable
+//= require i18n
+//= require proposals
 //= require advanced_search
 
+//= require react
+//= require react_ujs
+//= require immutable
+//= require components
 
 var initialize_modules = function() {
   App.Comments.initialize();
@@ -49,6 +58,7 @@ var initialize_modules = function() {
   App.PreventDoubleSubmission.initialize();
   App.IeAlert.initialize();
   App.Annotatable.initialize();
+  App.Proposals.initialize();
   App.AdvancedSearch.initialize();
 };
 
@@ -59,3 +69,7 @@ $(function(){
   $(document).on('page:load', initialize_modules);
   $(document).on('ajax:complete', initialize_modules);
 });
+
+function gmapsLoaded () {
+  $(document).trigger('gmaps:loaded');
+}

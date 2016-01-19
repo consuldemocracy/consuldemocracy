@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+ruby '2.2.4'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5'
 # Use PostgreSQL
@@ -17,6 +19,8 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
+
+gem "font-awesome-rails"
 
 gem 'devise'
 # Use ActiveModel has_secure_password
@@ -43,7 +47,6 @@ gem 'paranoia'
 gem 'rinku', require: 'rails_rinku'
 gem 'savon'
 gem 'dalli'
-gem 'rollbar', '~> 2.7.0'
 gem 'delayed_job_active_record', '~> 4.1.0'
 gem 'daemons'
 gem 'devise-async'
@@ -55,9 +58,22 @@ gem 'ahoy_matey', '~> 1.2.1'
 gem 'groupdate'   # group temporary data
 gem 'tolk' # Web interface for translations
 
+gem "settingslogic"
+
 gem 'browser'
 gem 'turnout'
 gem 'redcarpet'
+gem "faker"
+
+gem 'rails-i18n'
+
+# React gems
+gem 'react-rails'
+gem 'immutablejs-rails', '>= 2.0.17'
+gem 'i18n-js', github: 'fnando/i18n-js'
+
+gem 'i18n_yaml_csv', github: 'josepjaume/i18n_yaml_csv'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
@@ -66,19 +82,14 @@ group :development, :test do
   gem 'spring-commands-rspec'
   gem 'rspec-rails', '~> 3.3'
   gem 'capybara'
+  gem 'capybara-screenshot'
   gem 'factory_girl_rails'
   gem 'fuubar'
   gem 'launchy'
   gem 'quiet_assets'
   gem 'letter_opener_web', '~> 1.3.0'
   gem 'i18n-tasks'
-  gem 'capistrano', '3.4.0',           require: false
-  gem "capistrano-bundler", '1.1.4',   require: false
-  gem "capistrano-rails", '1.1.5',     require: false
-  gem "capistrano-rvm",                require: false
-  gem 'capistrano3-delayed-job', '~> 1.0'
   gem "bullet"
-  gem "faker"
 end
 
 group :test do
@@ -91,4 +102,12 @@ end
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 3.0'
+end
+
+group :production do
+  gem 'puma'
+  gem 'heroku-deflater'
+  gem 'rails_12factor'
+  gem 'rollbar', '~> 1.2.13'
+  gem 'rack-cache'
 end

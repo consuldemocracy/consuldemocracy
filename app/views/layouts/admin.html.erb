@@ -5,6 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <%= render partial: 'layouts/i18n' %>
     <title><%= content_for?(:title) ? yield(:title) : "Admin" %></title>
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "vendor/modernizr" %>
@@ -12,6 +13,7 @@
     <%= content_for :head %>
     <%= csrf_meta_tags %>
     <%= favicon_link_tag "favicon.ico" %>
+    <script src="https://maps.googleapis.com/maps/api/js?key=<%= Rails.application.secrets.google_maps_api_key%>&signed_in=true&libraries=places&callback=gmapsLoaded" async defer></script>
   </head>
 
   <body class="admin">

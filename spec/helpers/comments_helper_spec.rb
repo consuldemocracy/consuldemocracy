@@ -34,7 +34,7 @@ RSpec.describe CommentsHelper, type: :helper do
     it 'returns level followed by official level if user is official' do
       comment = comment_double(official: true)
 
-      expect(helper.user_level_class(comment)).to eq('level-Y')
+      expect(helper.user_level_class(comment)).to eq('user-level-Y')
     end
 
     it 'returns an empty class otherwise' do

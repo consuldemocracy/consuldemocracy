@@ -4,7 +4,7 @@
       <div id="comments" class="small-12 column">
         <h2>
           <%= t("debates.show.comments_title") %>
-          <span class="js-comments-count">(<%= @debate.comments_count %>)</span>
+          <%= render partial: 'comments/summary', locals: { commentable: @debate } %>
         </h2>
 
         <%= render 'shared/wide_order_selector', i18n_namespace: "comments" %>

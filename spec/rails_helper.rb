@@ -9,6 +9,7 @@ require 'spec_helper'
 require 'capybara/rails'
 require 'capybara/rspec'
 require 'capybara/poltergeist'
+require 'capybara-screenshot/rspec'
 
 I18n.default_locale = :en
 
@@ -23,5 +24,9 @@ end
 
 Capybara.javascript_driver = :poltergeist
 Capybara.exact = true
+
+Capybara::Screenshot::RSpec.add_link_to_screenshot_for_failed_examples = false
+Capybara::Screenshot.webkit_options = { width: 1024, height: 768 }
+Capybara::Screenshot.prune_strategy = :keep_last_run
 
 OmniAuth.config.test_mode = true

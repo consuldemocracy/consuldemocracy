@@ -49,7 +49,7 @@ feature 'Residence' do
 
     click_button 'Verify residence'
 
-    expect(page).to have_content 'In order to be verified, you must be registered in the municipality of Madrid'
+    expect(page).to have_content 'In order to be verified, you must be registered in the municipality'
   end
 
   scenario 'Error on Madrid census' do
@@ -69,7 +69,7 @@ feature 'Residence' do
 
     click_button 'Verify residence'
 
-    expect(page).to have_content 'The Madrid Census was unable to verify your information'
+    expect(page).to have_content 'was unable to verify your information'
   end
 
   scenario '5 tries allowed' do
@@ -89,7 +89,7 @@ feature 'Residence' do
       check 'residence_terms_of_service'
 
       click_button 'Verify residence'
-      expect(page).to have_content 'The Madrid Census was unable to verify your information'
+      expect(page).to have_content 'was unable to verify your information'
     end
 
     click_button 'Verify residence'

@@ -1,0 +1,16 @@
+---
+en:
+  components:
+    category_picker:
+      category:
+        label: Axis
+      subcategory:
+        label: Action Line
+    proposal_filter_option:
+      city: Whole city
+      district: A district
+    proposal_filter_option_group:
+      category_id: Axis
+      district: District
+      scope: Scope
+      subcategory_id: Action Line

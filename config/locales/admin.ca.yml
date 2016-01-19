@@ -1,0 +1,194 @@
+---
+ca:
+  admin:
+    actions:
+      confirm: Estàs segur?
+      confirm_hide: Confirmar
+      hide: Amaga
+      hide_author: Bloquejar l'autor
+      restore: Tornar a mostrar
+    activity:
+      show:
+        action: Acció
+        actions:
+          block: Bloquejat
+          hide: Ocultat
+          restore: Restaurat
+        by: Moderat per
+        filter: Mostra
+        filters:
+          all: Tot
+          on_comments: Comentaris
+          on_debates: Debats
+          on_proposals: Propostes
+          on_users: Usuaris
+        title: Activitat dels Moderadors
+        type: Tipus
+    comments:
+      index:
+        filter: Filtre
+        filters:
+          all: Tots
+          with_confirmed_hide: Confirmats
+          without_confirmed_hide: Pendents
+        hidden_debate: Debat ocult
+        hidden_proposal: Proposta oculta
+        title: Comentaris ocults
+    dashboard:
+      index:
+        title: Administració
+    debates:
+      index:
+        filter: Filtre
+        filters:
+          all: Tots
+          with_confirmed_hide: Confirmats
+          without_confirmed_hide: Pendents
+        title: Debats ocults
+    menu:
+      activity: Activitat de moderadors
+      debate_topics: Temes de debat
+      hidden_comments: Comentaris ocults
+      hidden_debates: Debats ocults
+      hidden_proposals: Propostes ocultes
+      hidden_users: Usuaris bloquejats
+      incomplete_verifications: Verificacions incompletes
+      moderators: Moderadors
+      officials: Càrrecs públics
+      organizations: Organitzacions
+      settings: Configuració global
+      spending_proposals: Propostes de despesa
+      stats: Estadístiques
+    moderators:
+      index:
+        title: Moderadors
+      moderator:
+        add: Afegir
+        delete: Esborrar
+      search:
+        email_placeholder: Cercar usuari per email
+        search: Cercar
+        user_not_found: Usuari no trobat
+    officials:
+      edit:
+        back: Tornar
+        destroy: Eliminar condició de 'Càrrec Público'
+        title: 'Càrrecs Públics: Edita usuari'
+      flash:
+        official_destroyed: 'Dades guardats: l''usuari ja no és càrrec públic'
+        official_updated: Dades del càrrec públic guardats
+      index:
+        title: Càrrecs Públics
+      level_0: No és càrrec públic
+      level_1: Nivell 1
+      level_2: Nivell 2
+      level_3: Nivell 3
+      level_4: Nivell 4
+      level_5: Nivell 5
+      search:
+        edit_official: Edita càrrec públic
+        make_official: Convertir a càrrec públic
+        title: 'Càrrecs Públics: Cerca d''usuaris'
+    organizations:
+      index:
+        filter: Filtre
+        filters:
+          all: Totes
+          pending: Pendents
+          rejected: Rebutjades
+          verified: Verificades
+        hidden_count:
+          one: Hi ha a més una organització sense usuari o amb l'usuari bloquejat
+          other: Hi ha %{count} organitzacions sense usuari o amb l'usuari bloquejat
+        reject: Rebutjar
+        rejected: Rebutjada
+        search: Cercar
+        search_placeholder: Nom, email o telèfon
+        title: Organitzacions
+        verified: Verificada
+        verify: Verificar
+      search:
+        title: Cercar Organitzacions
+    proposals:
+      index:
+        filter: Filtre
+        filters:
+          all: Totes
+          with_confirmed_hide: Confirmades
+          without_confirmed_hide: Pendents
+        title: Propostes ocults
+    settings:
+      flash:
+        updated: Valor actualitzat
+      index:
+        title: Configuració global
+        update_setting: Actualitzar
+    shared:
+      proposal_search:
+        button: Cercar
+        placeholder: Cercar propostes per títol, descripció o pregunta
+      user_search:
+        button: Cercar
+        placeholder: Cercar usuari per nom o e-mail
+    spending_proposals:
+      actions:
+        accept: Acceptar
+        reject: Rebutjar
+      index:
+        filter: Filtre
+        filters:
+          accepted: Acceptades
+          rejected: Rebutjades
+          unresolved: Sense resoldre
+        title: Propostes de despesa per a pressupostos participatius
+      show:
+        by: Enviada per
+        geozone: "Àmbit"
+    stats:
+      show:
+        combined_title: Combinat
+        stats_title: Estadístiques
+        summary:
+          comment_votes: Vots en comentaris
+          comments: Comentaris
+          debate_votes: Vots en debats
+          debates: Debats
+          proposal_votes: Vots en propostes
+          proposals: Propostes
+          unverified_users: Usuaris sense verificar
+          user_level_three: Usuaris de nivell tres
+          user_level_two: Usuaris de nivell dos
+          users: Usuaris
+          verified_users: Usuaris verificats
+          visits: Visites
+          votes: Vots
+        visits_title: Visites
+    tags:
+      create: Crea un tema
+      destroy: Eliminar Tema
+      index:
+        add_tag: Afegeix un nou tema de debat
+        title: Temes de debat
+      mark_as_featured: Proposar tema en crear debat
+      name:
+        placeholder: Escriu el nom del tema
+      update: Actualitzar Tema
+    users:
+      index:
+        filter: Filtre
+        filters:
+          all: Tots
+          with_confirmed_hide: Confirmats
+          without_confirmed_hide: Pendents
+        title: Usuaris bloquejats
+      show:
+        back: Tornar
+        email: 'E-mail:'
+        hidden_at: 'Bloquejat:'
+        registered_at: 'Data d''alta:'
+        title: Activitat de l'usuari %{user}
+    verifications:
+      index:
+        phone_not_given: No ha donat el seu telèfon
+        sms_code_not_confirmed: No ha introduït el seu codi de seguretat
+        title: Verificacions incompletes

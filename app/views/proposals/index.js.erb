@@ -1,0 +1,3 @@
+$('#proposals').html('<%= j render("proposals") %>');
+App.LocationChanger.initialize();
+$(document).trigger('tags:reload', '<%= @filter.tag_cloud.to_json.html_safe %>');

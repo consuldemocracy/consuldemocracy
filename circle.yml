@@ -1,0 +1,18 @@
+machine:
+  services:
+    - docker
+
+dependencies:
+  override:
+    - sudo pip install --upgrade docker-compose==1.5.2
+
+database:
+  pre:
+    - docker-compose build
+    - docker-compose run app bundle install
+  override:
+    - docker-compose run app rake db:create
+
+test:
+  override:
+    - docker-compose run -e CI_PULL_REQUEST=$CI_PULL_REQUEST -e CI=true app bundle exec rspec

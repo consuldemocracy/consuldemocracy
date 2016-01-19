@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160114110933) do
+ActiveRecord::Schema.define(version: 20160119084845) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -70,25 +70,32 @@ ActiveRecord::Schema.define(version: 20160114110933) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "categories", force: :cascade do |t|
+    t.text     "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "comments", force: :cascade do |t|
     t.integer  "commentable_id"
     t.string   "commentable_type"
     t.text     "body"
     t.string   "subject"
-    t.integer  "user_id",                        null: false
+    t.integer  "user_id",                                  null: false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.datetime "hidden_at"
-    t.integer  "flags_count",        default: 0
+    t.integer  "flags_count",                  default: 0
     t.datetime "ignored_flag_at"
     t.integer  "moderator_id"
     t.integer  "administrator_id"
-    t.integer  "cached_votes_total", default: 0
-    t.integer  "cached_votes_up",    default: 0
-    t.integer  "cached_votes_down",  default: 0
+    t.integer  "cached_votes_total",           default: 0
+    t.integer  "cached_votes_up",              default: 0
+    t.integer  "cached_votes_down",            default: 0
     t.datetime "confirmed_hide_at"
     t.string   "ancestry"
-    t.integer  "confidence_score",   default: 0, null: false
+    t.integer  "confidence_score",             default: 0, null: false
+    t.integer  "alignment",          limit: 2
   end
 
   add_index "comments", ["ancestry"], name: "index_comments_on_ancestry", using: :btree
@@ -206,6 +213,26 @@ ActiveRecord::Schema.define(version: 20160114110933) do
 
   add_index "locks", ["user_id"], name: "index_locks_on_user_id", using: :btree
 
+  create_table "meetings", force: :cascade do |t|
+    t.string   "title"
+    t.text     "description"
+    t.string   "address"
+    t.date     "held_at"
+    t.time     "start_at"
+    t.time     "end_at"
+    t.integer  "author_id"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+    t.float    "address_latitude"
+    t.float    "address_longitude"
+    t.string   "address_details"
+  end
+
+  create_table "meetings_proposals", force: :cascade do |t|
+    t.integer "meeting_id"
+    t.integer "proposal_id"
+  end
+
   create_table "moderators", force: :cascade do |t|
     t.integer "user_id"
   end
@@ -245,13 +272,18 @@ ActiveRecord::Schema.define(version: 20160114110933) do
     t.datetime "confirmed_hide_at"
     t.integer  "hot_score",         limit: 8,  default: 0
     t.integer  "confidence_score",             default: 0
-    t.datetime "created_at",                               null: false
-    t.datetime "updated_at",                               null: false
+    t.datetime "created_at",                                        null: false
+    t.datetime "updated_at",                                        null: false
     t.string   "responsible_name",  limit: 60
     t.text     "summary"
     t.string   "video_url"
     t.integer  "physical_votes",               default: 0
     t.tsvector "tsv"
+    t.integer  "category_id"
+    t.integer  "subcategory_id"
+    t.string   "scope",                        default: "district"
+    t.integer  "district"
+    t.boolean  "oficial",                      default: false
   end
 
   add_index "proposals", ["author_id", "hidden_at"], name: "index_proposals_on_author_id_and_hidden_at", using: :btree
@@ -295,6 +327,14 @@ ActiveRecord::Schema.define(version: 20160114110933) do
   add_index "spending_proposals", ["author_id"], name: "index_spending_proposals_on_author_id", using: :btree
   add_index "spending_proposals", ["geozone_id"], name: "index_spending_proposals_on_geozone_id", using: :btree
   add_index "spending_proposals", ["resolution"], name: "index_spending_proposals_on_resolution", using: :btree
+
+  create_table "subcategories", force: :cascade do |t|
+    t.text     "name"
+    t.text     "description"
+    t.integer  "category_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
 
   create_table "taggings", force: :cascade do |t|
     t.integer  "tag_id"

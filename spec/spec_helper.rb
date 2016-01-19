@@ -16,6 +16,7 @@ RSpec.configure do |config|
   config.include(CommonActions)
   config.before(:suite) do
     DatabaseCleaner.clean_with :truncation
+    I18n.locale = :en
   end
 
   config.before(:each) do |example|
@@ -31,6 +32,9 @@ RSpec.configure do |config|
 
   config.before(:each, type: :feature) do
     Bullet.start_request
+
+    Setting['feature.debates'] = true
+    Setting['feature.spending_proposals'] = true
   end
 
   config.after(:each, type: :feature) do

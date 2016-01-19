@@ -1,0 +1,16 @@
+---
+ca:
+  components:
+    category_picker:
+      category:
+        label: Eix
+      subcategory:
+        label: Línia d'acció
+    proposal_filter_option:
+      city: Tota la ciutat
+      district: Un districte
+    proposal_filter_option_group:
+      category_id: Eix
+      district: Districte
+      scope: "Àmbit"
+      subcategory_id: Línia d'acció

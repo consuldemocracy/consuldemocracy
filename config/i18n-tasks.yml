@@ -31,6 +31,7 @@ data:
     - config/locales/devise_views.%{locale}.yml
     - config/locales/responders.%{locale}.yml
     - config/locales/kaminari.%{locale}.yml
+    - config/locales/components.%{locale}.yml
 
   # Locale files to write new keys to, based on a list of key pattern => file rules. Matched from top to bottom:
   # `i18n-tasks normalize -p` will force move the keys according to these rules
@@ -132,6 +133,8 @@ ignore_unused:
   - 'notifications.index.replies_to*'
   - 'helpers.page_entries_info.*' # kaminari
   - 'views.pagination.*' # kaminari
+  - 'components.proposal_filter_option.{city,district}'
+  - 'components.proposal_filter_option_group.{category_id,district,scope,subcategory_id}'
 # - '{devise,kaminari,will_paginate}.*'
 # - 'simple_form.{yes,no}'
 # - 'simple_form.{placeholders,hints,labels}.*'

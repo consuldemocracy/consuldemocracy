@@ -8,6 +8,7 @@
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "vendor/modernizr" %>
     <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+    <%= render partial: 'layouts/i18n' %>
     <%= csrf_meta_tags %>
     <%= favicon_link_tag "favicon.ico" %>
     <%= favicon_link_tag "apple-touch-icon-200.png",
@@ -63,7 +64,6 @@
       <% end %>
 
       <%= yield %>
-      <div class="push"></div>
     </div>
     <div class="footer">
       <%= render 'layouts/footer' %>

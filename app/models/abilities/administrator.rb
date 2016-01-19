@@ -35,6 +35,8 @@ module Abilities
 
       can :manage, Annotation
 
+      can :manage, Meeting
+
       can :manage, SpendingProposal
     end
   end

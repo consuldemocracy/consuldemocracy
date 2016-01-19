@@ -1,0 +1,21 @@
+<% if @featured_proposals.present? %>
+  <div id="featured-proposals" class="row featured-proposals">
+    <div class="small-12 column">
+      <h2>
+        <%= t("proposals.index.featured_proposals") %>
+      </h2>
+    </div>
+    <% @featured_proposals.each do |featured_proposal| %>
+      <%= render "featured_proposal", proposal: featured_proposal %>
+    <% end %>
+  </div>
+<% end %>
+
+<%= render 'shared/order_links', i18n_namespace: "proposals.index" %>
+
+<div class="show-for-small-only">
+  <%= link_to t("proposals.index.start_proposal"), new_proposal_path, class: 'button radius expand' %>
+</div>
+
+<%= render partial: 'proposals/proposal', collection: @proposals %>
+<%= paginate @proposals %>

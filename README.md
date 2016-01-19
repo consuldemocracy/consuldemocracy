@@ -5,10 +5,11 @@
 
 Citizen Participation and Open Government Application
 
-[![Build Status](https://travis-ci.org/consul/consul.svg?branch=master)](https://travis-ci.org/consul/consul)
-[![Code Climate](https://codeclimate.com/github/consul/consul/badges/gpa.svg)](https://codeclimate.com/github/consul/consul)
-[![Dependency Status](https://gemnasium.com/consul/consul.svg)](https://gemnasium.com/consul/consul)
-[![Coverage Status](https://coveralls.io/repos/consul/consul/badge.svg?branch=master&service=github)](https://coveralls.io/github/consul/consul?branch=master)
+[![Circle CI](https://circleci.com/gh/AjuntamentdeBarcelona/decidimbcn/tree/master.svg?style=svg)](https://circleci.com/gh/AjuntamentdeBarcelona/decidimbcn/tree/master)
+[![Code Climate](https://codeclimate.com/github/AjuntamentdeBarcelona/decidimbcn/badges/gpa.svg)](https://codeclimate.com/github/AjuntamentdeBarcelona/decidimbcn)
+[![Dependency Status](https://gemnasium.com/AjuntamentdeBarcelona/decidimbcn.svg)](https://gemnasium.com/AjuntamentdeBarcelona/decidimbcn)
+[![Coverage Status](https://coveralls.io/repos/AjuntamentdeBarcelona/decidimbcn/badge.svg?branch=master&service=github)](https://coveralls.io/github/AjuntamentdeBarcelona/decidimbcn?branch=master)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
 This is the opensource code repository of the eParticipation website originally developed for the Madrid City government eParticipation website
 
@@ -25,6 +26,15 @@ See [ROADMAP_ES.md](ROADMAP_ES.md)
 The application backend is written in the [Ruby language](https://www.ruby-lang.org/) using the [Ruby on Rails](http://rubyonrails.org/) framework.
 
 Frontend tools used include [SCSS](http://sass-lang.com/) over [Foundation](http://foundation.zurb.com/) for the styles.
+
+## Configuration for development environment using docker
+
+```
+docker-compose build
+docker-compose run --rm app db:create           
+docker-compose run --rm app db:setup SEED=true
+docker-compose up
+```
 
 ## Configuration for development and test environments
 

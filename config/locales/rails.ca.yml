@@ -1,0 +1,5 @@
+---
+ca:
+  time:
+    formats:
+      datetime: "%d/%m/%Y %H:%M:%S"

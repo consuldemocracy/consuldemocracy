@@ -11,7 +11,7 @@ en:
     email_verification:
       click_here_to_verify: this link
       instructions_2_html: This email will verify your account with <b>%{document_type} %{document_number}</b>. If these don't belong to you, please don't click on the previous link and ignore this email.
-      instructions_html: To complete the verification of your user account in the Open Government Portal of the Madrid City Council, you must click %{verification_link}.
+      instructions_html: To complete the verification of your user account, you must click %{verification_link}.
       subject: Confirm your email
       thanks: Thank you very much.
       title: Confirm your account using the following link
