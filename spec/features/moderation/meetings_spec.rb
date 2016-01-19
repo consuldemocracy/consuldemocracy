@@ -120,4 +120,23 @@ feature 'Moderate meetings' do
     expect(page).to have_content "A meeting about dogs"
     expect(page).to_not have_content "A meeting about cats"
   end
+
+  scenario 'Edit meetings proposals', :js do
+    admin = create(:administrator)
+    login_as(admin.user)
+
+    create(:proposal, title: "My proposal")
+    create(:meeting, title: "My meeting", author: create(:moderator).user)
+
+    visit moderation_meetings_path
+
+    click_link 'Edit'
+
+    fill_in 'proposal_search_input', with: "My proposal"
+    page.find('a', text: "My proposal").click
+
+    click_button "Update meeting"
+
+    expect(page).to have_content "Meeting updated successfully."
+  end
 end

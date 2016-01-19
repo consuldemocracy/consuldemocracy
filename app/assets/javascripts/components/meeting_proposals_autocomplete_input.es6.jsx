@@ -25,7 +25,10 @@ class MeetingProposalsAutocompleteInput extends React.Component {
   render() {
     return (
       <div>
-        <input ref="searchInput" placeholder={ I18n.t("components.meeting_proposals_autocomplete_input.search") } />
+        <input 
+          id="proposal_search_input" 
+          ref="searchInput" 
+          placeholder={ I18n.t("components.meeting_proposals_autocomplete_input.search") } />
         <p ref="loading">{ I18n.t("components.meeting_proposals_autocomplete_input.loading") }</p>
         <p ref="noResults">{ I18n.t("components.meeting_proposals_autocomplete_input.no_results") }</p>
         <ul className="dropdown" ref="dropdown">
