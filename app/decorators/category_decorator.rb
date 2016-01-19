@@ -2,7 +2,7 @@ class CategoryDecorator < ApplicationDecorator
   delegate_all
   decorates_association :subcategories
 
-  translate :name
+  translates :name, :description
 
   def proposals_path
     h.proposals_path(filter: "category_id=#{id}")

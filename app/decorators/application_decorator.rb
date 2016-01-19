@@ -1,8 +1,9 @@
 class ApplicationDecorator < Draper::Decorator
-  def self.translate(*attributes)
+  def self.translates(*attributes)
     attributes.each do |attribute| 
       define_method attribute do
-        object.send(attribute)[I18n.locale.to_s]
+        translation = object.send(attribute)
+        translation ? translation[I18n.locale.to_s] : nil
       end
     end
   end
