@@ -44,6 +44,9 @@ feature 'Proposals' do
     expect(page).to have_selector('#proposals .proposal', count: 2)
   end
 
+
+ 
+
   scenario 'Show' do
     proposal = create(:proposal)
 
@@ -63,6 +66,9 @@ feature 'Proposals' do
       expect(page.all('a').count).to be(3) # Twitter, Facebook, Google+
     end
   end
+
+  
+
 
   scenario 'Social Media Cards' do
     proposal = create(:proposal)
@@ -494,6 +500,53 @@ feature 'Proposals' do
       expect(current_url).to include('page=1')
     end
 
+
+    scenario 'Proposals are ordered by most commented', :js do
+      create_featured_proposals
+
+      create(:proposal, title: 'Best proposal',   comments_count: 10)
+      create(:proposal, title: 'Medium proposal', comments_count: 5)
+      create(:proposal, title: 'Worst proposal',  comments_count: 2)
+
+      visit proposals_path
+      select 'most commented', from: 'order-selector'
+
+      expect(page).to have_selector('.js-order-selector[data-order="most_commented"]')
+
+      within '#proposals' do
+        expect('Best proposal').to appear_before('Medium proposal')
+        expect('Medium proposal').to appear_before('Worst proposal')
+      end
+
+      expect(current_url).to include('order=most_commented')
+      expect(current_url).to include('page=1')
+    end
+
+    scenario "Filtered by district"  do
+      tag1= ActsAsTaggableOn::Tag.create!(name:  "Centro", featured: true, kind: "district")
+      tag2= ActsAsTaggableOn::Tag.create!(name:  "Puente de Vallecas", featured: true, kind: "district")
+      tag3= ActsAsTaggableOn::Tag.create!(name:  "Retiro", featured: true, kind: "district")
+      tag4= ActsAsTaggableOn::Tag.create!(name:  "Salamanca", featured: true, kind: "district")
+
+      proposal1 = create(:proposal, tag_list: tag1)
+      proposal2 = create(:proposal, tag_list: tag2)
+      proposal3 = create(:proposal, tag_list: tag3)
+      proposal4 = create(:proposal, tag_list: tag4)    
+      visit proposals_path
+          
+      click_link "View map of districts"
+      within("#districtslist") do
+        click_link "Puente de Vallecas"
+      end    
+      within("#proposals") do
+        expect(page).to have_css('.proposal', count: 1)
+        expect(page).to have_content(proposal2.title)
+      end
+    end
+
+
+    
+    
     scenario 'Proposals are ordered by newest', :js do
       create_featured_proposals
 

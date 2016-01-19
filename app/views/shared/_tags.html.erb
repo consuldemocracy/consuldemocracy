@@ -4,7 +4,7 @@
   <span class='tags'>
     <% taggable.tag_list_with_limit(limit).each do |tag| %>
       <%= link_to sanitize(tag.name), send("#{taggable.class.to_s.downcase.pluralize}_path", tag: tag.name) %>
-    <% end %>
+	<% end %>
 
     <% if taggable.tags_count_out_of_limit(limit) > 0 %>
       <%= link_to "#{taggable.tags_count_out_of_limit(limit)}+",

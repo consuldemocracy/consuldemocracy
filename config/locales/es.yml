@@ -139,6 +139,7 @@ es:
       form:
         submit_button: "Guardar cambios"
     new:
+      start_new_district: "Crea un debate para tu distrito"
       start_new: "Empezar un debate"
       info: "Si lo que quieres es hacer una propuesta, esta es la sección incorrecta, entra en %{info_link}."
       info_link: "crear nueva propuesta"
@@ -180,6 +181,9 @@ es:
       search_results:
         one: " que contiene '%{search_term}'"
         other: " que contienen '%{search_term}'"
+      map_district: "Distritos de Madrid"
+      select_district: "Selecciona tu distrito"
+          
     proposal:
       proposal: "Propuesta"
       support: "Apoyar"
@@ -231,6 +235,7 @@ es:
       form:
         submit_button: "Guardar cambios"
     new:
+      start_new_district: "Crea una propuesta para tu distrito"
       start_new: "Crear una propuesta"
       more_info: "¿Cómo funcionan las propuestas ciudadanas?"
       back_link: "Volver"
@@ -365,6 +370,9 @@ es:
       author_deleted: Usuario eliminado
     tags_cloud:
       tags: "Tendencias"
+      districts: "Distritos"   
+      categorys: "Categorias"  
+      map: "Ver mapa de distritos"
     print:
       print_button: "Imprimir esta información"
     flag: "Denunciar como inapropiado"

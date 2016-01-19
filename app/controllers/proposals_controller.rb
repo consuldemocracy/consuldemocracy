@@ -5,7 +5,7 @@ class ProposalsController < ApplicationController
   before_action :parse_search_terms, only: :index
   before_action :parse_tag_filter, only: :index
   before_action :set_search_order, only: :index
-  before_action :authenticate_user!, except: [:index, :show]
+  before_action :authenticate_user!, except: [:index, :show, :map_district]
 
   has_orders %w{hot_score confidence_score created_at relevance}, only: :index
   has_orders %w{most_voted newest oldest}, only: :show
@@ -19,12 +19,15 @@ class ProposalsController < ApplicationController
       set_featured_proposal_votes(@featured_proposals)
       @resources = @resources.where('proposals.id NOT IN (?)', @featured_proposals.map(&:id))
     end
+  
   end
 
   def vote
     @proposal.register_vote(current_user, 'yes')
     set_proposal_votes(@proposal)
   end
+
+   
 
   def vote_featured
     @proposal.register_vote(current_user, 'yes')

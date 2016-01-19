@@ -1,5 +1,6 @@
 <div id="tag-cloud" class="tag-cloud">
   <div class="sidebar-divider"></div>
+
   <h3><%= t("shared.tags_cloud.tags") %></h3>
   <br>
   <% tag_cloud @tag_cloud, %w[s m l] do |tag, css_class| %>
@@ -8,4 +9,25 @@
       (<%= tag.send(taggable_counter_field(taggable)) %>)
     <% end %>
   <% end %>
+
+
+  <div class="sidebar-divider"></div>
+  <h3><%= t("shared.tags_cloud.categorys") %></h3>
+  <br>
+  <% tag_cloud @category_cloud, %w[s m l] do |tag, css_class| %>
+    <%= link_to taggable_path(taggable, tag.name), class: css_class do %>
+      <%= tag.name %>
+      <span class='label round info'><%= tag.send(taggable_counter_field(taggable)) %></span>
+    <% end %>
+  <% end %>
+
+
+<div class="sidebar-divider"></div>
+  <h3><%= t("shared.tags_cloud.districts") %></h3>
+  <br>
+  
+ <%= image_tag("Distritos_Madrid.jpg") %>
+
+
+  
 </div>

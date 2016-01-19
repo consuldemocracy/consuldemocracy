@@ -35,6 +35,7 @@ Rails.application.routes.draw do
   get '/welcome', to: 'welcome#welcome'
   get '/highlights', to: 'welcome#highlights', as: :highlights
 
+ 
 
   resources :debates do
     member do
@@ -50,6 +51,7 @@ Rails.application.routes.draw do
       post :vote_featured
       put :flag
       put :unflag
+
     end
   end
 
@@ -283,7 +285,14 @@ Rails.application.routes.draw do
   mount Tolk::Engine => '/translate', :as => 'tolk'
 
   # static pages
-
   get '/blog' => redirect("http://diario.madrid.es/participa/")
+  get '/map', to: 'proposals#map_district'
+  get '/new_proposal_map/:district', to: 'proposals#new', as: 'new_proposal_map'
+  get '/mad', to: 'debates#map_district'
+  get '/new_debate_map/:district', to: 'debates#new', as: 'new_debate_map'
   resources :pages, path: '/', only: [:show]
+  
+
+
+
 end

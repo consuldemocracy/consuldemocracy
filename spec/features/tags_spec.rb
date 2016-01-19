@@ -45,6 +45,10 @@ feature 'Tags' do
     end
   end
 
+
+ 
+
+
   scenario 'Show' do
     debate = create(:debate, tag_list: 'Hacienda, Economía')
 
