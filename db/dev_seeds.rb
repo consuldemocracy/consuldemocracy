@@ -64,10 +64,68 @@ end
 org_user_ids = User.organizations.pluck(:id)
 not_org_users = User.where(['users.id NOT IN(?)', org_user_ids])
 
+puts "Creating Tags Categories"
+ActsAsTaggableOn::Tag.create!(name:  "Asociaciones", featured: true, kind: "category")
+ActsAsTaggableOn::Tag.create!(name:  "Cultura", featured: true, kind: "category")
+ ActsAsTaggableOn::Tag.create!(name:  "Deportes", featured: true, kind: "category")
+  ActsAsTaggableOn::Tag.create!(name:  "Derechos Sociales", featured: true, kind: "category")
+ ActsAsTaggableOn::Tag.create!(name:  "Economía", featured: true, kind: "category")
+  ActsAsTaggableOn::Tag.create!(name:  "Empleo", featured: true, kind: "category")
+  ActsAsTaggableOn::Tag.create!(name:  "Equidad", featured: true, kind: "category")
+  ActsAsTaggableOn::Tag.create!(name:  "Sostenibilidad", featured: true, kind: "category")
+  ActsAsTaggableOn::Tag.create!(name:  "Participación", featured: true, kind: "category")
+  ActsAsTaggableOn::Tag.create!(name:  "Movilidad", featured: true, kind: "category")
+  ActsAsTaggableOn::Tag.create!(name:  "Medios", featured: true, kind: "category")
+  ActsAsTaggableOn::Tag.create!(name:  "Salud", featured: true , kind: "category")
+  ActsAsTaggableOn::Tag.create!(name:  "Transparencia", featured: true, kind: "category")
+  ActsAsTaggableOn::Tag.create!(name:  "Seguridad y Emergencias", featured: true, kind: "category")
+  ActsAsTaggableOn::Tag.create!(name:  "Medio Ambiente", featured: true, kind: "category")
+
+
+  puts "Creating Tags Districts"
+
+  ActsAsTaggableOn::Tag.create!(name:  "Centro", featured: true, kind: "district")
+  ActsAsTaggableOn::Tag.create!(name:  "Arganzuela", featured: true, kind: "district")
+  ActsAsTaggableOn::Tag.create!(name:  "Retiro" , featured: true, kind: "district")
+  ActsAsTaggableOn::Tag.create!(name:  "Salamanca" , featured: true, kind: "district")
+  ActsAsTaggableOn::Tag.create!(name:  "Chamartín" , featured: true, kind: "district")
+  ActsAsTaggableOn::Tag.create!(name:  "Tetuán" , featured: true, kind: "district")
+  ActsAsTaggableOn::Tag.create!(name:  "Chamberí" , featured: true, kind: "district")
+  ActsAsTaggableOn::Tag.create!(name:  "Moncloa-Aravaca", featured: true, kind: "district")
+  ActsAsTaggableOn::Tag.create!(name:  "Latina", featured: true, kind: "district")
+  ActsAsTaggableOn::Tag.create!(name:  "Carabanchel", featured: true, kind: "district")
+  ActsAsTaggableOn::Tag.create!(name:  "Usera", featured: true, kind: "district")
+  ActsAsTaggableOn::Tag.create!(name:  "Puente de Vallecas", featured: true, kind: "district")
+  ActsAsTaggableOn::Tag.create!(name:  "Moratalaz", featured: true,  kind: "district")
+  ActsAsTaggableOn::Tag.create!(name:  "Ciudad Lineal", featured: true, kind: "district")
+  ActsAsTaggableOn::Tag.create!(name:  "Hortaleza", featured: true, kind: "district")
+  ActsAsTaggableOn::Tag.create!(name:  "Villaverde", featured: true,  kind: "district")
+  ActsAsTaggableOn::Tag.create!(name:  "Villa de Vallecas", featured: true,  kind: "district")
+  ActsAsTaggableOn::Tag.create!(name:  "Vicalvaro", featured: true,  kind: "district")
+  ActsAsTaggableOn::Tag.create!(name:  "San Blas-Canillejas", featured: true,  kind: "district")
+  ActsAsTaggableOn::Tag.create!(name:  "Barajas", featured: true,   kind: "district")
+  ActsAsTaggableOn::Tag.create!(name:  "Fuencarral-El Pardo", featured: true,   kind: "district")
+
+
 
 puts "Creating Debates"
 
 tags = Faker::Lorem.words(25)
+tags = ['Centro', 'Arganzuela', 'Retiro','Salamanca', 'Chamartín', 'Tetuán', 'Chamberí', 'Fuencarral-El Pardo', 'Moncloa-Aravaca', 'Latina', 'Carabanchel', 'Usera', 'Puente de Vallecas', 'Moratalaz', 'Ciudad Lineal', 'Hortaleza', 'Villaverde', 'Villa de Vallecas', 'Vicálvaro', 'San Blas', 'Barajas']
+(1..30).each do |i|
+  author = User.reorder("RANDOM()").first
+  description = "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>"
+  debate = Debate.create!(author: author,
+                          title: Faker::Lorem.sentence(3).truncate(60),
+                          created_at: rand((Time.now - 1.week) .. Time.now),
+                          description: description,
+                          tag_list: tags.sample(3).join(','),
+                          terms_of_service: "1")
+  puts "    #{debate.title}"
+end
+
+
+tags = ['Consumo y comercio', 'Cultura y ocio', 'Deportes', 'Economía', 'Educación', 'Emergencias y seguridad', 'Hacienda', 'Medio ambiente', 'Movilidad y transportes', 'Oposiciones y empleo', 'Salud', 'Servicios sociales', 'Urbanismo y vivienda']
 
 (1..30).each do |i|
   author = User.reorder("RANDOM()").first
@@ -81,10 +139,29 @@ tags = Faker::Lorem.words(25)
   puts "    #{debate.title}"
 end
 
+
 puts "Creating Proposals"
 
 tags = Faker::Lorem.words(25)
+tags = ['Centro', 'Arganzuela', 'Retiro','Salamanca', 'Chamartín', 'Tetuán', 'Chamberí', 'Fuencarral-El Pardo', 'Moncloa-Aravaca', 'Latina', 'Carabanchel', 'Usera', 'Puente de Vallecas', 'Moratalaz', 'Ciudad Lineal', 'Hortaleza', 'Villaverde', 'Villa de Vallecas', 'Vicálvaro', 'San Blas', 'Barajas']
+(1..30).each do |i|
+  author = User.reorder("RANDOM()").first
+  description = "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>"
+  proposal = Proposal.create!(author: author,
+                              title: Faker::Lorem.sentence(3).truncate(60),
+                              question: Faker::Lorem.sentence(3),
+                              summary: Faker::Lorem.sentence(3),
+                              responsible_name: Faker::Name.name,
+                              external_url: Faker::Internet.url,
+                              description: description,
+                              created_at: rand((Time.now - 1.week) .. Time.now),
+                              tag_list: tags.sample(3).join(','),
+                              terms_of_service: "1")
+  puts "    #{proposal.title}"
+end
 
+
+tags = ['Consumo y comercio', 'Cultura y ocio', 'Deportes', 'Economía', 'Educación', 'Emergencias y seguridad', 'Hacienda', 'Medio ambiente', 'Movilidad y transportes', 'Oposiciones y empleo', 'Salud', 'Servicios sociales', 'Urbanismo y vivienda']
 (1..30).each do |i|
   author = User.reorder("RANDOM()").first
   description = "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>"

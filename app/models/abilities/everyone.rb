@@ -10,6 +10,8 @@ module Abilities
       can :read, Legislation
       can :read, User
       can [:search, :read], Annotation
+      can :map_district, Proposal
+      can :map_district, Debate
     end
   end
 end

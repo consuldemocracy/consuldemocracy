@@ -1,0 +1,74 @@
+<%= javascript_include_tag "new_debate_map" %>
+
+<div id="proposals" class="proposals-list small-12 medium-9 column">  
+  
+  <h3><%= t("proposals.index.map_district") %></h3>
+</br>
+  <%= image_tag("Distritos_Madrid.jpg", :usemap => "#MadridMap") %>
+
+  <map name="MadridMap">
+    <area shape="poly" coords="3,86,27,60,134,54,220,88,295,3,348,85,312,108,230,94,270,198,248,239,200,259,57,235,34,164" href="/debates?tag=Fuencarral-El+Pardo" title="Fuencarral - El Pardo" alt="Fuencarral - El Pardo">
+    <area shape="poly" coords="54,234,200,261,185,329,115,355,125,290,105,288,90,261,50,246" href="/debates?tag=Moncloa-Aravaca" title="Moncloa - Aravaca" alt="Moncloa - Aravaca">
+    <area shape="poly" coords="199,258,228,253,224,292,199,290,196,292" href="/debates?tag=Tetu%C3%A1n" title="Tetuán" alt="Tetuán">
+    <area shape="poly" coords="190,292,222,294,224,324,193,317" href="/debates?tag=Chamber%C3%AD" title="Chamberí" alt="Chamberí">
+    <area shape="poly" coords="190,317,184,342,214,352,218,325" href="/debates?tag=Centro" title="Centro" alt="Centro">
+    <area shape="poly" coords="179,335,113,357,48,355,68,406,114,416,147,381,181,350" href="/debates?tag=Latina" title="Latina" alt="Latina">
+    <area shape="poly" coords="178,353,198,370,176,412,116,416,176,354" href="/debates?tag=Carabanchel" title="Carabanchel" alt="Carabanchel">
+    <area shape="poly" coords="184,342,218,351,238,373,214,390,183,348" href="/debates?tag=Arganzuela" title="Arganzuela" alt="Arganzuela">
+    <area shape="poly" coords="178,412,201,371,222,420" href="/debates?tag=Usera" title="Usera" alt="Usera">
+    <area shape="poly" coords="177,415,225,424,245,470,183,478,168,451" href="/debates?tag=Villaverde" title="Villaverde" alt="Villaverde">
+    <area shape="poly" coords="231,247,224,303,237,309,257,300,246,241" href="/debates?tag=Chamart%C3%ADn" title="Chamartin" alt="Chamartin">
+    <area shape="poly" coords="223,306,235,310,256,301,258,335,219,332" href="/debates?tag=Salamanca" title="Salamanca" alt="Salamanca">
+    <area shape="poly" coords="218,334,259,338,240,369,216,350" href="/debates?tag=Retiro" title="Retiro" alt="Retiro">
+    <area shape="poly" coords="214,390,250,356,265,362,271,372,295,384,291,397,256,406,243,420,223,422" href="/debates?tag=Puente+de+Vallecas" title="Puente de Vallecas" alt="Puente de Vallecas">
+    <area shape="poly" coords="227,423,258,407,292,397,295,387,322,398,323,413,374,440,334,494,317,502,261,468,246,471" href="/debates?tag=Villa+de+Vallecas" title="Villa de Vallecas" alt="Villa de Vallecas">
+    <area shape="poly" coords="271,197,297,205,320,203,338,229,305,255,301,272,326,295,277,296,258,265,262,245,249,238" href="/debates?tag=Hortaleza" title="Hortaleza" alt="Hortaleza">
+    <area shape="poly" coords="334,217,391,207,387,222,420,274,410,305,327,295,312,283,304,258,339,232" href="/debates?tag=Barajas" title="Barajas" alt="Barajas">
+    <area shape="poly" coords="246,240,258,243,258,267,285,307,301,347,258,338,255,271" href="/debates?tag=Ciudad+Lineal" title="Ciudad Lineal" alt="Ciudad Lineal">
+    <area shape="poly" coords="259,338,302,346,290,380,251,355" href="/debates?tag=Moratalaz" title="Moratalaz" alt="Moratalaz">
+    <area shape="poly" coords="282,295,404,306,372,320,351,340,335,359,303,346" href="/debates?tag=San+Blas-Canillejas" title="San Blas - Canillejas" alt="San Blas - Canillejas">
+    <area shape="poly" coords="291,381,304,347,335,362,351,342,358,355,392,358,404,342,423,360,417,392,393,387,375,438,325,413,323,393" href="/debates?tag=Vic%C3%A1lvaro" title="Vicálvaro" alt="Vicálvaro">
+  </map>
+
+ 
+<br>
+<div id="districtslist">
+  <% tag_cloud @district_cloud, %w[s m l] do |tag, css_class| %>
+    <%= link_to  tag.name, debates_path(tag: tag.name) %>
+    <br>
+  <% end %>
+</div>
+
+
+<h3><%= t("debates.new.start_new_district") %></h3>
+</br>
+
+
+
+<label for="district-selector-participation" ><%= t("proposals.index.select_district") %></label>
+
+<select   name="district-selector"
+          id="district-selector-participation">
+
+  <% @district_cloud.each do |distri| %>
+    <option  value='<%= distri.name %>'>
+         <%= distri.name%>
+       </option>
+  <% end %> 
+</select>
+
+</br>
+
+<div id="startdebatewithtag">
+  <%= link_to t("debates.index.start_debate"), "javascript:", :onclick => "call_function();" , class: 'button radius'  %>
+</div>
+  
+</div>
+
+
+<div class="small-12 medium-3 column">
+      <aside class="sidebar" role="complementary">
+        <%= link_to t("debates.index.start_debate"), new_debate_path, class: 'button radius expand' %>
+        <%= render "shared/tag_cloud", taggable: 'debate' %>
+      </aside>
+  </div> 
