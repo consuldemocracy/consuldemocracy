@@ -2,14 +2,14 @@ es:
   flash:
     actions:
       create:
-       notice: "%{resource_model} se creó correctamente."
+      # notice: "%{resource_model} se creó correctamente."
        debate: "Debate creado correctamente."
        proposal: "Propuesta creada correctamente." 
          # mas: "%{resource_name} creado correctamente."
          # fem: "%{resource_name} creada correctamente."
          # femsinparametro: " creada correctamente."
       update:
-        notice: "%{resource_model} se actualizó correctamente."
+       # notice: "%{resource_model} se actualizó correctamente."
         debate: "Debate actualizado correctamente."
         proposal: "Propuesta actualizada correctamente." 
           #mas: "%{resource_name} actualizado correctamente."

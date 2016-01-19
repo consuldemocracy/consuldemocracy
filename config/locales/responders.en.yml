@@ -2,12 +2,12 @@ en:
   flash:
     actions:
       create:
-       notice: "%{resource_model} created successfully."
+       # notice: "%{resource_model} created successfully."
        debate: "Debate created successfully."
        proposal: "Proposal created successfully." 
         
       update:
-       notice: "%{resource_model} updated successfully."
+       # notice: "%{resource_model} updated successfully."
        debate: "Debate updated successfully."
        proposal: "Proposal updated successfully." 
         #mas: "%{resource_name} updated successfully."
