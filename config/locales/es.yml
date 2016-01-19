@@ -105,8 +105,6 @@ es:
       search_results:
         one: " que contiene '%{search_term}'"
         other: " que contienen '%{search_term}'"
-      map_district: "Distritos de Madrid"
-      select_district: "Selecciona tu distrito"  
       select_order: Ordenar por
       start_debate: Empieza un debate
       title: Debates
@@ -287,6 +285,8 @@ es:
       select_order_long: Estas viendo las propuestas
       start_proposal: Crea una propuesta
       title: Propuestas ciudadanas
+      map_district: "Distritos de Madrid"
+      select_district: "Selecciona tu distrito" 
     new:
       back_link: Volver
       form:

@@ -105,8 +105,6 @@ en:
       search_results:
         one: " containing the term '%{search_term}'"
         other: " containing the term '%{search_term}'"
-      map_district: "Districts of Madrid"
-      select_district: "Select your district"  
       select_order: Order by
       start_debate: Start a debate
       title: Debates
@@ -287,6 +285,8 @@ en:
       select_order_long: 'You are viewing proposals according to:'
       start_proposal: Create a proposal
       title: Proposals
+      map_district: "Districts of Madrid"
+      select_district: "Select your district"  
     new:
       back_link: Go back
       form:
