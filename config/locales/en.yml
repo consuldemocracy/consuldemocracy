@@ -399,7 +399,7 @@ en:
       user_permission_verify_info: "* Only for users on Madrid Census."
   omniauth:
     finish_signup:
-      title: "Add your email address"
+      title: "Additional details"
     twitter:
       sign_in: "Sign in with Twitter"
       sign_up: "Sign up with Twitter"

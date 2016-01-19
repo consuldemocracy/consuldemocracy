@@ -399,7 +399,7 @@ es:
       user_permission_verify_info: "* Sólo usuarios empadronados en el municipio de Madrid."
   omniauth:
     finish_signup:
-      title: "Introduce tu email"
+      title: "Detalles adicionales de tu cuenta"
     twitter:
       sign_in: "Entra con Twitter"
       sign_up: "Regístrate con Twitter"
