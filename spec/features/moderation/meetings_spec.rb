@@ -105,4 +105,19 @@ feature 'Moderate meetings' do
     end
   end
 
+  scenario 'Using the search filter' do 
+    moderator = create(:moderator)
+    login_as(moderator.user)
+
+    create(:meeting, title: "A meeting about dogs")
+    create(:meeting, title: "A meeting about cats")
+
+    visit moderation_meetings_path
+
+    fill_in 'search', with: "dogs"
+    click_button 'Search'
+
+    expect(page).to have_content "A meeting about dogs"
+    expect(page).to_not have_content "A meeting about cats"
+  end
 end
