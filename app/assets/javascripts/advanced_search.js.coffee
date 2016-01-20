@@ -10,12 +10,23 @@ App.AdvancedSearch =
   toggle_date_options: ->
     if $('#js-advanced-search-date-min').val() == 'custom'
       $('#js-custom-date').show()
-      $('#js-custom-date input').prop 'disabled', false
+      $( ".js-calendar" ).datepicker( "option", "disabled", false )
     else
       $('#js-custom-date').hide()
-      $('#js-custom-date input').prop 'disabled', true
+      $( ".js-calendar" ).datepicker( "option", "disabled", true )
+
+  init_calendar: ->
+    locale = $('#js-locale').data('current-locale')
+    if locale == 'en'
+      locale = ''
+
+    $('.js-calendar').datepicker
+      regional: locale
+      maxDate:  "+0d"
 
   initialize: ->
+    App.AdvancedSearch.init_calendar()
+
     if App.AdvancedSearch.advanced_search_terms()
       $('#js-advanced-search').show()
       App.AdvancedSearch.toggle_date_options()

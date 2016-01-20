@@ -336,6 +336,7 @@ es:
       author_type_4: 'Concejal'
       author_type_5: 'Alcaldesa'
       date: 'Por fecha'
+      date_placeholder: 'DD/MM/AAAA'
       date_range_blank: 'Elige una fecha'
       date_1: 'Últimas 24 horas'
       date_2: 'Última semana'

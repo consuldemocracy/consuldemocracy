@@ -482,6 +482,7 @@ header {
 
   @media (min-width: $small-breakpoint) {
     background: white;
+    min-height: rem-calc(50);
   }
 
   a {
