@@ -1,0 +1,34 @@
+<% provide :title do %><%= @spending_proposal.title %><% end %>
+
+<section class="proposal-show">
+  <div id="<%= dom_id(@spending_proposal) %>" class="row">
+    <div class="small-12 medium-9 column">
+
+      <h1><%= @spending_proposal.title %></h1>
+
+      <div class="spending-proposal-info">
+        <%= render '/shared/author_info', resource: @spending_proposal %>
+
+        <span class="bullet">&nbsp;&bull;&nbsp;</span>
+        <%= l @spending_proposal.created_at.to_date %>
+        <span class="bullet">&nbsp;&bull;&nbsp;</span>
+        <%= geozone_name(@spending_proposal) %>
+      </div>
+
+      <%= safe_html_with_links @spending_proposal.description.html_safe %>
+
+      <% if @spending_proposal.external_url.present? %>
+        <div class="document-link">
+          <%= text_with_links @spending_proposal.external_url %>
+        </div>
+      <% end %>
+
+      <% if @spending_proposal.resolution.present? %>
+        <div class="spending-proposal-resolution">
+          <%= @spending_proposal.resolution %>
+        </div>
+      <% end %>
+    </div>
+
+  </div>
+</section>

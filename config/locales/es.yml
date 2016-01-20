@@ -86,7 +86,7 @@ es:
       debate_title: Título del debate
       tags_instructions: Etiqueta este debate. Puedes elegir entre nuestras propuestas o introducir las que desees.
       tags_label: Temas
-      tags_placeholder: Escribe las etiquetas que desees separadas por coma (',')
+      tags_placeholder: "Escribe las etiquetas que desees separadas por coma (',')"
     index:
       featured_debates: Destacados
       filter_topic:
@@ -261,7 +261,7 @@ es:
       proposal_video_url_note: Puedes añadir un enlace a YouTube o Vimeo
       tags_instructions: Etiqueta esta propuesta. Puedes elegir entre nuestras sugerencias o introducir las que desees.
       tags_label: Temas
-      tags_placeholder: Escribe las etiquetas que desees separadas por una coma (',')
+      tags_placeholder: "Escribe las etiquetas que desees separadas por una coma (',')"
     index:
       featured_proposals: Destacadas
       filter_topic:
@@ -400,7 +400,7 @@ es:
   unauthorized:
     default: No tienes permiso para acceder a esta página.
     manage:
-      all: No tienes permiso para realizar la acción '%{action}' sobre %{subject}.
+      all: "No tienes permiso para realizar la acción '%{action}' sobre %{subject}."
   users:
     show:
       deleted: Eliminado
