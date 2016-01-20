@@ -4,6 +4,4 @@ class Category < ActiveRecord::Base
   serialize :description, JSON
 
   validates :name, presence: true
-
-  acts_as_list
 end

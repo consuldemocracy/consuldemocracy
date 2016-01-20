@@ -4,11 +4,13 @@ class ProposalXLSImporter
   end
 
   def import
-    @xlsx.each_row_streaming(offset: 1) do |row|
-      data = get_row_data(row)
-      proposal_data = ProposalData.new(data)
-      proposal_data.parse!
-      create_proposal(proposal_data.to_attributes)
+    ActiveRecord::Base.transaction do
+      @xlsx.each_row_streaming(offset: 1) do |row|
+        data = get_row_data(row)
+        proposal_data = ProposalData.new(data)
+        proposal_data.parse!
+        create_proposal(proposal_data.to_attributes)
+      end
     end
   end
 
@@ -32,6 +34,7 @@ class ProposalXLSImporter
     proposal = Proposal.create(attrs.merge!({ 
       author_id: admin.id,
       responsible_name: responsible_name,
+      oficial: true,
       terms_of_service: '1'
     }))
   end
