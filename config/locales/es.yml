@@ -261,7 +261,7 @@ es:
       proposal_video_url_note: Puedes añadir un enlace a YouTube o Vimeo
       tags_instructions: Etiqueta esta propuesta. Puedes elegir entre nuestras sugerencias o introducir las que desees.
       tags_label: Temas
-      tags_placeholder: Escribe las etiquetas que desees separadas por una coma (',')
+      tags_placeholder: "Escribe las etiquetas que desees separadas por una coma (',')"
     index:
       featured_proposals: Destacadas
       filter_topic:
@@ -336,6 +336,7 @@ es:
       author_type_4: 'Concejal'
       author_type_5: 'Alcaldesa'
       date: 'Por fecha'
+      date_placeholder: 'DD/MM/AAAA'
       date_range_blank: 'Elige una fecha'
       date_1: 'Últimas 24 horas'
       date_2: 'Última semana'
