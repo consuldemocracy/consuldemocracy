@@ -56,7 +56,7 @@ class User < ActiveRecord::Base
     auth_email_user = User.find_by(email: auth_email) if auth_email.present?
 
     auth_email_user || User.new(
-      username:  auth.info.nickname || auth.extra.raw_info.name.parameterize('-') || auth.uid,
+      username:  auth.info.name || auth.uid,
       email: auth_email,
       password: Devise.friendly_token[0,20],
       terms_of_service: '1',
