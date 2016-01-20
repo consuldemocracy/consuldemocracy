@@ -31,8 +31,8 @@ es:
     close: Cerrar
     menu: Menú
   categories:
+    filter: Ver propuestas
     title: Ejes
-    filter: "Ver propuestas"
   comments:
     comment:
       admin: Administrador
@@ -204,6 +204,16 @@ es:
       title: "¿Cómo puedo comentar este documento?"
   locale: Español
   meetings:
+    close:
+      form:
+        close_report: Acta
+        proposals:
+          groups: Colectivos
+          title: Título
+          votes: Apoyos
+      new:
+        form:
+          submit_button: Cerrar encuentro
     edit:
       form:
         submit_button: Actualizar encuentro
@@ -217,6 +227,7 @@ es:
       meeting_start_at: "¿A que hora empieza?"
       meeting_title: Título
     index:
+      close: Cerrar
       edit: Editar
       new: Crear encuentro
       title: Encuentros presenciales

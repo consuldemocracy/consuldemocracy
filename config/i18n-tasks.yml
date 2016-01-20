@@ -122,6 +122,7 @@ ignore_unused:
   - 'moderation.proposals.index.order*'
   - 'moderation.debates.index.filter*'
   - 'moderation.debates.index.order*'
+  - 'moderation.meetings.index.filter*'
   - 'users.show.filters.*'
   - 'debates.index.select_order'
   - 'debates.index.orders.*'

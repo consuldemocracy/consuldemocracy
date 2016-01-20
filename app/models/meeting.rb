@@ -3,8 +3,13 @@ class Meeting < ActiveRecord::Base
   include SearchCache
 
   belongs_to :author, -> { with_hidden }, class_name: 'User', foreign_key: 'author_id'
-  has_and_belongs_to_many :proposals
 
+  has_many :meeting_proposals
+  accepts_nested_attributes_for :meeting_proposals
+  has_many :proposals, through: :meeting_proposals
+
+  scope :pending, -> { where(closed_at: nil) } 
+  scope :closed, -> { where('closed_at is not ?', nil) } 
   scope :upcoming, -> { where("held_at >= ?", Date.today) }
 
   validates :author, presence: true

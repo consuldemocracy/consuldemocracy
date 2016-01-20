@@ -1,11 +1,14 @@
 class Moderation::MeetingsController < Moderation::BaseController
   include ModerateActions
 
+  has_filters %w{pending closed all}, only: :index
+
   before_action :load_resources, only: [:index]
 
   load_and_authorize_resource
 
   def index
+    @resources = @resources.send(@current_filter)
     @resources = @resources.search(params[:search]) if params[:search].present?
     @resources = @resources.page(params[:page]).per(50)
     set_resources_instance

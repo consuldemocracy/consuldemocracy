@@ -199,7 +199,9 @@ Rails.application.routes.draw do
       end
     end
 
-    resources :meetings, except: [:show, :destroy]
+    resources :meetings, except: [:show, :destroy] do
+      resource :close, controller: 'meetings/close', only: [:new, :create]
+    end
   end
 
   namespace :management do

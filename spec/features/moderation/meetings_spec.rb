@@ -139,4 +139,28 @@ feature 'Moderate meetings' do
 
     expect(page).to have_content "Meeting updated successfully."
   end
+
+  scenario 'Close a meeting', :js do 
+    moderator = create(:moderator)
+    login_as(moderator.user)
+
+    proposal_1 = create(:proposal, title: "A proposal to discuss #1")
+    proposal_2 = create(:proposal, title: "A proposal to discuss #2")
+    create(:meeting, title: "A finished meeting", proposals: [proposal_1, proposal_2])
+
+    visit moderation_meetings_path
+    click_link 'Close'
+
+    fill_in_ckeditor 'meeting_close_report', with: 'We discussed a few proposals and decided some things'
+
+    fill_in 'meeting_meeting_proposals_attributes_0_votes', with: 100
+    fill_in 'meeting_meeting_proposals_attributes_0_groups', with: 'A,B,C'
+    fill_in 'meeting_meeting_proposals_attributes_1_votes', with: 300
+    fill_in 'meeting_meeting_proposals_attributes_1_groups', with: 'D'
+
+    click_button "Close meeting"
+
+    expect(page).to have_content "Meeting updated successfully."
+    expect(page).to_not have_content "A finished meeting"
+  end
 end

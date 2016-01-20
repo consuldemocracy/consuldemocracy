@@ -31,8 +31,8 @@ ca:
     close: Tancar
     menu: Menú
   categories:
+    filter: Veure propostes
     title: Eixos
-    filter: "Veure propostes"
   comments:
     comment:
       admin: Administrador
@@ -204,6 +204,16 @@ ca:
       title: Com puc comentar aquest document?
   locale: Català
   meetings:
+    close:
+      form:
+        close_report: Acta
+        proposals:
+          groups: Col·lectius
+          title: Títol
+          votes: Suports
+      new:
+        form:
+          submit_button: Tancar trobada
     edit:
       form:
         submit_button: Actualitzar trobada
@@ -217,6 +227,7 @@ ca:
       meeting_start_at: A quina hora comença?
       meeting_title: Títol
     index:
+      close: Tancar
       edit: Editar
       new: Crear trobada
       title: Trobades presencials
