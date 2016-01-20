@@ -74,7 +74,7 @@ class ProposalXLSImporter
       name =  match_data[2]
       category = Category.where('name like ?', "%#{name}%").first
       if category.nil?
-        category = Category.create(name: { ca: name, es: "", en: "" }, position: position)
+        category = Category.create(name: { ca: name, es: name, en: name }, description: { ca: "", es: "", en: "" }, position: position)
       end
       @data[:category_id] = category.id
     end
@@ -87,7 +87,7 @@ class ProposalXLSImporter
       subcategory = Subcategory.where('name like ?', "%#{name}%").first
       if subcategory.nil?
         category = Category.where(position: category_position).first
-        subcategory = Subcategory.create(name: { ca: name, es: "", en: "" }, position: position, category_id: category.id)
+        subcategory = Subcategory.create(name: { ca: name, es: name, en: name }, description: { ca: "", es: "", en: "" }, position: position, category_id: category.id)
       end
       @data[:subcategory_id] = subcategory.id
     end
