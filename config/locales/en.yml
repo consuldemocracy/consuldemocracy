@@ -29,6 +29,7 @@ en:
       more_information: "More information"
       debates: "Debates"
       proposals: "Proposals"
+      processes: "Open processes"
       new_notifications:
         one: "You have a new notification"
         other: "You have %{count} new notifications"
@@ -398,7 +399,7 @@ en:
       user_permission_verify_info: "* Only for users on Madrid Census."
   omniauth:
     finish_signup:
-      title: "Add your email address"
+      title: "Additional details"
     twitter:
       sign_in: "Sign in with Twitter"
       sign_up: "Sign up with Twitter"
@@ -411,6 +412,7 @@ en:
   legislation:
     help:
       title: "How I can comment this document?"
+      text_logged: "Select the text you want to comment and press the button with the pencil."
       text: "To comment this document you must %{sign_in} or %{sign_up}. Then select the text you want to comment and press the button with the pencil."
       text_sign_in: "login"
       text_sign_up: "sign up"

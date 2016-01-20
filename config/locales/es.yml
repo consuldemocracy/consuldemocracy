@@ -29,6 +29,7 @@ es:
       more_information: "Más información"
       debates: "Debates"
       proposals: "Propuestas"
+      processes: "Procesos abiertos"
       new_notifications:
         one: "Tienes una nueva notificación"
         other: "Tienes %{count} notificaciones nuevas"
@@ -398,7 +399,7 @@ es:
       user_permission_verify_info: "* Sólo usuarios empadronados en el municipio de Madrid."
   omniauth:
     finish_signup:
-      title: "Introduce tu email"
+      title: "Detalles adicionales de tu cuenta"
     twitter:
       sign_in: "Entra con Twitter"
       sign_up: "Regístrate con Twitter"
@@ -411,6 +412,7 @@ es:
   legislation:
     help:
       title: "¿Cómo puedo comentar este documento?"
+      text_logged: "Selecciona el texto que quieres comentar y pulsa en el botón con el lápiz."
       text: "Para comentar este documento debes %{sign_in} o %{sign_up}. Después selecciona el texto que quieres comentar y pulsa en el botón con el lápiz."
       text_sign_in: "iniciar sesión"
       text_sign_up: "registrarte"

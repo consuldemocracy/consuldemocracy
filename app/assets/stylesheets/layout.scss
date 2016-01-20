@@ -167,6 +167,10 @@ a {
   margin-bottom: $line-height;
 }
 
+.absolute {
+  position: absolute;
+}
+
 .back, .icon-angle-left {
   @include back;
 
@@ -213,8 +217,14 @@ a {
   border: 0;
 }
 
-#drop-help.f-dropdown.content {
+.process {
+  min-height: $line-height*12;
+  p {
+    margin: $line-height 0;
+  }
+}
 
+#drop-help.f-dropdown.content {
   @media (min-width: $small-breakpoint) {
     max-width: $line-height*15;
   }
@@ -451,6 +461,18 @@ header {
   }
 }
 
+.jumbo {
+  background: $highlight;
+
+  @media (min-width: $small-breakpoint) {
+    padding: rem-calc(24) 0;
+  }
+
+  h1, p {
+    color: $highlight-color;
+  }
+}
+
 .top-links {
   background: $dark;
   color: white;
@@ -618,14 +640,13 @@ footer {
   }
 }
 
-.tag-cloud {
+.sidebar, .tag-cloud {
 
   h3 {
     border-top: 2px solid $brand;
     display: inline-block;
-    font-family: $font-family-sans-serif;
-    font-size: rem-calc(16);
-    margin: -1px 0 rem-calc(12);
+    font-size: $h5-font-size;
+    margin: -1px 0 $line-height/2;
     padding-top: $line-height/4;
     text-transform: uppercase;
   }
