@@ -271,6 +271,7 @@ es:
       proposal_title: Título de la propuesta
       proposal_video_url: Enlace a vídeo externo
       proposal_video_url_note: Puedes añadir un enlace a YouTube o Vimeo
+      proposal_oficial: La propuesta es oficial
       tags_instructions: Etiqueta esta propuesta. Puedes elegir entre nuestras sugerencias o introducir las que desees.
       tags_label: Temas
       tags_placeholder: Escribe las etiquetas que desees separadas por una coma (',')

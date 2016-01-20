@@ -17,7 +17,10 @@ es:
     proposal_filter_option:
       city: Toda la ciudad
       district: Un distrito
+      oficial: Programa (Ayuntamiento)
+      citizenship: Ciudadania
     proposal_filter_option_group:
+      source: Orígen
       category_id: Eje
       district: Districto
       scope: "Ámbito"

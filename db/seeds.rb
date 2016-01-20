@@ -88,6 +88,9 @@ if ENV["SEED"]
       district = nil
     end
 
+    # 25% of the proposals are oficial
+    oficial = [true, false, false, false].sample
+
     proposal = Proposal.create!(author: author,
                                 title: Faker::Lorem.sentence(3).truncate(60),
                                 question: Faker::Lorem.sentence(3),
@@ -101,6 +104,7 @@ if ENV["SEED"]
                                 category: subcategory.category,
                                 scope: scope,
                                 district: district,
+                                oficial: oficial,
                                 terms_of_service: "1")
     puts "    #{proposal.title}"
   end
