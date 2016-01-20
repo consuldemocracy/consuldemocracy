@@ -7,8 +7,11 @@ namespace :proposals do
   end
 
   desc "Import proposals from a xls file given an url"
-  task import: :environment do
-    file_url = "#{Rails.root}/tmp/proposals.xlsx"
-    ProposalXLSImporter.new(file_url).import
+  task :import, [:url] => :environment do |task, args|
+    if args.url.blank?
+      puts "Usage: rake proposals:import[url]"
+    else
+      ProposalXLSImporter.new(args.url).import
+    end
   end
 end
