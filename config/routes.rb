@@ -226,6 +226,8 @@ Rails.application.routes.draw do
         get :print
       end
     end
+
+    resources :spending_proposals, only: [:new, :create, :show]
   end
 
   # Example of regular route:
