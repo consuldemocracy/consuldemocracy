@@ -42,7 +42,9 @@ class ProposalFilters extends React.Component {
           onChangeFilterGroup={(filterGroupName, filterGroupValue) => this.changeFilterGroup(filterGroupName, filterGroupValue) }>
           {
             this.props.categories.map(function (category) {
-              return <ProposalFilterOption key={category.id} filterName={category.id} filterLabel={category.name} />
+              return <ProposalFilterOption key={category.id} filterName={category.id} filterLabel={category.name}>
+                <a href={`/categories#category_${category.id}`} target="_blank"><i className="fa fa-info-circle"></i></a>
+              </ProposalFilterOption>
             })
           }
         </ProposalFilterOptionGroup>
@@ -55,7 +57,9 @@ class ProposalFilters extends React.Component {
                 onChangeFilterGroup={(filterGroupName, filterGroupValue) => this.changeFilterGroup(filterGroupName, filterGroupValue) }>
                 {
                   this.filteredSubCategories(this.state.filters).map(function (subcategory) {
-                    return <ProposalFilterOption key={subcategory.id} filterName={subcategory.id} filterLabel={subcategory.name} />
+                    return <ProposalFilterOption key={subcategory.id} filterName={subcategory.id} filterLabel={subcategory.name}>
+                      <a href={`/categories#subcategory_${subcategory.id}`} target="_blank"><i className="fa fa-info-circle"></i></a>
+                    </ProposalFilterOption>
                   })
                 }
               </ProposalFilterOptionGroup>

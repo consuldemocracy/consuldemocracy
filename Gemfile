@@ -53,6 +53,7 @@ gem 'devise-async'
 gem 'newrelic_rpm', '~> 3.14'
 gem 'whenever', require: false
 gem 'pg_search'
+gem 'acts_as_list'
 
 gem 'ahoy_matey', '~> 1.2.1'
 gem 'groupdate'   # group temporary data
@@ -74,6 +75,8 @@ gem 'i18n-js', github: 'fnando/i18n-js'
 gem 'markerclustererplus-rails'
 
 gem 'i18n_yaml_csv', github: 'josepjaume/i18n_yaml_csv'
+
+gem 'draper'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

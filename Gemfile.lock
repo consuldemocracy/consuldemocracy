@@ -60,6 +60,8 @@ GEM
       tzinfo (~> 1.1)
     acts-as-taggable-on (3.5.0)
       activerecord (>= 3.2, < 5)
+    acts_as_list (0.7.2)
+      activerecord (>= 3.0)
     acts_as_votable (0.10.0)
     addressable (2.4.0)
     ahoy_matey (1.2.1)
@@ -147,6 +149,11 @@ GEM
     docile (1.1.5)
     domain_name (0.5.25)
       unf (>= 0.0.5, < 1.0.0)
+    draper (2.1.0)
+      actionpack (>= 3.0)
+      activemodel (>= 3.0)
+      activesupport (>= 3.0)
+      request_store (~> 1.0)
     easy_translate (0.5.0)
       json
       thread
@@ -469,6 +476,7 @@ PLATFORMS
 
 DEPENDENCIES
   acts-as-taggable-on
+  acts_as_list
   acts_as_votable
   ahoy_matey (~> 1.2.1)
   ancestry
@@ -487,6 +495,7 @@ DEPENDENCIES
   delayed_job_active_record (~> 4.1.0)
   devise
   devise-async
+  draper
   email_spec
   factory_girl_rails
   faker

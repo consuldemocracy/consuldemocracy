@@ -1,0 +1,12 @@
+<div class="page row-full">
+  <div class="row">
+    <div class="menu small-12 medium-3 column">
+      <%= render partial: 'menu', locals: { categories: @categories } %>
+    </div>
+
+    <div class="text small-12 medium-9 column">
+      <h1 class="clear"><%= t('categories.title') %></h1>
+      <%= render partial: 'category', collection: @categories %>
+    </div>
+  </div>
+</div>
