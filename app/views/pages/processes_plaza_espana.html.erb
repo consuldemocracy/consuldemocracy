@@ -9,7 +9,9 @@
       <h1><%= t("pages.processes.process_2.title") %></h1>
     </div>
     <div class="show-for-medium-up medium-5 column">
-      <%= image_tag "processes_plaza_espana.jpg", class: "absolute" %>
+      <div class="panel absolute">
+        <%= image_tag "processes_plaza_espana.jpg" %>
+      </div>
     </div>
   </div>
 </div>
@@ -17,6 +19,6 @@
 <div class="process row margin-bottom">
   <div class="small-12 medium-6 column">
     <%= markdown t("pages.processes.process_2.text") %>
-    <%= link_to t("pages.processes.process_2.button"), "/processes_spain_survey", class: "button radius" %>
+    <%= link_to t("pages.processes.process_2.button"), "/processes_plaza_espana_survey", class: "button radius" %>
   </div>
 </div>
