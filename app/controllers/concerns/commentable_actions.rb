@@ -11,6 +11,8 @@ module CommentableActions
     index_customization if index_customization.present?
 
     @tag_cloud = tag_cloud
+    @district_cloud = load_district_tags
+    @category_cloud = load_category_tags
     set_resource_votes(@resources)
     set_resources_instance
   end
@@ -27,6 +29,10 @@ module CommentableActions
     @resource = resource_model.new
     set_resource_instance
     load_featured_tags
+    if params[:district].present?
+
+          @resource.tag_list = params[:district]
+    end 
   end
 
   def create
@@ -59,6 +65,13 @@ module CommentableActions
     end
   end
 
+
+   def map_district
+    @tag_cloud = tag_cloud
+    @district_cloud = load_district_tags
+    @category_cloud = load_category_tags
+  end
+
   private
 
     def track_event
@@ -69,6 +82,32 @@ module CommentableActions
       resource_model.last_week.tag_counts.order("#{resource_name.pluralize}_count": :desc, name: :asc).limit(5)
     end
 
+    def load_category_tags
+
+      if resource_model.to_s=="Proposal"
+        ActsAsTaggableOn::Tag.select("tags.*").
+                                              where("kind = 'category' and proposals_count>0").
+                                              order(proposals_count: :desc) 
+      else                                              
+        ActsAsTaggableOn::Tag.select("tags.*").
+                                              where("kind = 'category' and debates_count>0").
+                                              order(debates_count: :desc) 
+      end                                              
+    end
+    def load_district_tags
+
+      if resource_model.to_s =="Proposal"
+      
+       ActsAsTaggableOn::Tag.select("tags.*").
+                                             where("kind = 'district' and proposals_count>0").
+                                              order(name: :asc)  
+       else
+          ActsAsTaggableOn::Tag.select("tags.*").
+                                             where("kind = 'district' and debates_count>0").
+                                              order(name: :asc)                                             
+      end                                              
+    end  
+
     def load_featured_tags
       @featured_tags = ActsAsTaggableOn::Tag.where(featured: true)
     end
@@ -76,6 +115,10 @@ module CommentableActions
     def parse_tag_filter
       if params[:tag].present?
         @tag_filter = params[:tag] if ActsAsTaggableOn::Tag.named(params[:tag]).exists?
+      end
+
+      if params[:district].present?
+          @tag_filter = params[:district] if ActsAsTaggableOn::Disctrict.named(params[:district]).exists?
       end
     end
 

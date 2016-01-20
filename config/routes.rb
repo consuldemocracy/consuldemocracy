@@ -286,6 +286,11 @@ Rails.application.routes.draw do
 
   # static pages
 
+  get '/map', to: 'proposals#map_district'
+  get '/new_proposal_map/:district', to: 'proposals#new', as: 'new_proposal_map'
+  get '/mad', to: 'debates#map_district'
+  get '/new_debate_map/:district', to: 'debates#new', as: 'new_debate_map'
   get '/blog' => redirect("http://diario.madrid.es/participa/")
   resources :pages, path: '/', only: [:show]
+  
 end

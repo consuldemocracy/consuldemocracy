@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160114110933) do
+ActiveRecord::Schema.define(version: 20160119132601) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -316,6 +316,7 @@ ActiveRecord::Schema.define(version: 20160114110933) do
     t.integer "debates_count",                       default: 0
     t.integer "proposals_count",                     default: 0
     t.integer "spending_proposals_count",            default: 0
+    t.string  "kind"
   end
 
   add_index "tags", ["debates_count"], name: "index_tags_on_debates_count", using: :btree

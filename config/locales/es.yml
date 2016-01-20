@@ -121,6 +121,7 @@ es:
       recommendation_two: Cualquier debate o comentario que implique una acción ilegal será eliminado, también los que tengan la intención de sabotear los espacios de debate, todo lo demás está permitido.
       recommendations_title: Recomendaciones para crear un debate
       start_new: Empezar un debate
+      start_new_district: "Empieza un debate para tu distrito"
     show:
       author_deleted: Usuario eliminado
       back_link: Volver
@@ -284,6 +285,8 @@ es:
       select_order_long: Estas viendo las propuestas
       start_proposal: Crea una propuesta
       title: Propuestas ciudadanas
+      map_district: "Distritos de Madrid"
+      select_district: "Selecciona tu distrito" 
     new:
       back_link: Volver
       form:
@@ -294,6 +297,7 @@ es:
       recommendation_two: Cualquier propuesta o comentario que implique una acción ilegal será eliminada, también las que tengan la intención de sabotear los espacios de propuesta, todo lo demás está permitido.
       recommendations_title: Recomendaciones para crear una propuesta
       start_new: Crear una propuesta
+      start_new_district: "Crea una propuesta para tu distrito"
     proposal:
       already_supported: "¡Ya has apoyado esta propuesta, compártela!"
       comments:
@@ -359,6 +363,9 @@ es:
       print_button: Imprimir esta información
     tags_cloud:
       tags: Tendencias
+      districts: "Distritos"   
+      categorys: "Categorias"  
+      map: "Ver mapa de distritos"
     unflag: Deshacer denuncia
   simple_captcha:
     label: Introduce el texto de la imagen en la siguiente caja
