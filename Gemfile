@@ -78,6 +78,7 @@ gem 'markerclustererplus-rails'
 gem 'i18n_yaml_csv', github: 'josepjaume/i18n_yaml_csv'
 
 gem 'draper'
+gem 'roo' # implements read access for all common spreadsheet types
 
 gem 'bourbon'
 

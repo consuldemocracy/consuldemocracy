@@ -6,4 +6,9 @@ namespace :proposals do
     end
   end
 
+  desc "Import proposals from a xls file given an url"
+  task import: :environment do
+    file_url = "#{Rails.root}/tmp/proposals.xlsx"
+    ProposalXLSImporter.new(file_url).import
+  end
 end
