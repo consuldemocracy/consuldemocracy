@@ -46,6 +46,9 @@ ca:
       index:
         headers:
           meeting: Trobada presencial
+        search_form:
+          button: Cercar
+          placeholder: Cercar
         title: Trobades presencials
     menu:
       flagged_comments: Comentaris

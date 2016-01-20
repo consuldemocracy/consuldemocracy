@@ -46,6 +46,9 @@ en:
       index:
         headers:
           meeting: Meeting
+        search_form:
+          button: Search
+          placeholder: Search
         title: Meetings
     menu:
       flagged_comments: Comments

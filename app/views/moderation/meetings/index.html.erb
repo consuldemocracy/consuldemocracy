@@ -1,7 +1,14 @@
 <h2><%= t("moderation.meetings.index.title") %></h2>
 
-<div class="right">
-  <%= link_to t("meetings.index.new"), new_moderation_meeting_path, class: 'button radius expand' %>
+<div class="row">
+  <div class="small-8 column">
+    <%= render "shared/search_form",
+               search_path: moderation_meetings_path(page: 1),
+               i18n_namespace: "moderation.meetings.index.search_form" %>
+  </div>
+  <div class="small-4 column">
+    <%= link_to t("meetings.index.new"), new_moderation_meeting_path, class: 'button radius expand' %>
+  </div>
 </div>
 
 <table class="clear">
