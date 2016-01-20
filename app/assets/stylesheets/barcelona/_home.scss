@@ -1,0 +1,46 @@
+.home-banner{
+  background-image: image-url('home/banner-background.jpg');
+  background-size: cover;
+  min-height: 360px;
+
+  h2{
+    color: $text-inverse;
+    font-size: rem-calc(50);
+    font-family: 'Vollkorn', serif;
+    font-weight: normal;
+    padding-top: rem-calc(100);
+    margin-bottom: rem-calc(15);
+  }
+
+  .see-proposals{
+    text-transform: uppercase;
+    font-size: rem-calc(15);
+  }
+
+  .home-video{
+    .video-js{
+      display: inline-block;
+    }
+
+    padding-top: rem-calc(54px);
+    text-align: right;
+
+    .vjs-big-play-button{
+      border: none !important;
+      background: none !important;
+
+      &:hover{
+        background: none;
+      }
+
+      width: rem-calc(50);
+      height: rem-calc(50);
+      font-size: rem-calc(60);
+
+      top: auto;
+      right: auto;
+      left: 0 !important;
+      bottom: rem-calc(10) !important;
+    }
+  }
+}

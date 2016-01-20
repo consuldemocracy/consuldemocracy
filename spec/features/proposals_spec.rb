@@ -357,7 +357,6 @@ feature 'Proposals' do
 
     visit edit_proposal_path(proposal)
     expect(current_path).not_to eq(edit_proposal_path(proposal))
-    expect(current_path).to eq(proposals_path)
     expect(page).to have_content 'You do not have permission'
   end
 
@@ -372,7 +371,6 @@ feature 'Proposals' do
     visit edit_proposal_path(proposal)
 
     expect(current_path).not_to eq(edit_proposal_path(proposal))
-    expect(current_path).to eq(proposals_path)
     expect(page).to have_content 'You do not have permission'
   end
 

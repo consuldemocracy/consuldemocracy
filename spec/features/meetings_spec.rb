@@ -3,7 +3,7 @@ require 'rails_helper'
 feature 'Meetings' do
   scenario "Index page don't show past events by default", :js do
     create(:meeting, title: "Meeting 1")
-    create(:meeting, title: "Meeting 2", held_at: Date.yesterday)
+    create(:meeting, title: "Meeting 2", held_at: 1.week.ago)
     create(:meeting, title: "Meeting 3")
 
     user = create(:user)

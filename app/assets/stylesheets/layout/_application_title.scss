@@ -1,13 +1,15 @@
 #application-title{
-  display: block;
-  padding-left: 4rem;
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
-  line-height: 4rem;
-  background: image-url("logo-barcelona-white.svg") left center no-repeat;
+  line-height: rem-calc(100px);
+  margin: 0;
+  padding: 0;
 
-  @media (max-width: $small-breakpoint) {
-    line-height: 2rem;
-    padding-left: 2rem;
+  a{
+    color: $text;
+    text-decoration: none;
+    strong{
+      color: $brand;
+      font-weight: bold;
+    }
+    font-weight: 200;
   }
 }

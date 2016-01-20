@@ -1,59 +1,34 @@
-<header>
-  <section class="top-links show-for-medium-up">
+<header id="header">
+  <div class="top-menu">
     <div class="row">
-      <%= render "shared/locale_switcher" %>
+      <div class="small-12 medium-3 columns show-for-medium-up barcelona-link">
+        <%= link_to 'www.barcelona.cat', "https://www.barcelona.cat" %>
+      </div>
+
+      <div class="small-12 medium-6 columns locale-switcher">
+        <%= render "shared/locale_switcher" %>
+      </div>
+
+      <div class="medium-3 columns show-for-medium-up barcelona-link barcelona-switcher">
+        <%= link_to 'ajuntament.barcelona.cat', "https://ajuntament.barcelona.cat" %>
+      </div>
     </div>
-  </section>
-
-  <div class="contain-to-grid clear">
-    <nav class="top-bar" data-topbar>
-      <ul class="title-area">
-        <li class="toggle-topbar menu-icon"><a href="#"><span><%= t("application.menu")%></span></a></li>
-        <li class="name">
-          <%= link_to root_path, id: 'application-title' do %>
-            <% if opendata_page? %>
-              <%= t("layouts.header.open_gov", open: "#{t('layouts.header.open')}") %> <span>|</span>
-              <span class="logo-site"><%= t("layouts.header.open_data") %></span>
-            <% else %>
-               <%= Setting['org_name'] %>
-            <% end %>
-          <% end %>
-        </li>
-      </ul>
-
-      <section class="top-bar-section">
-        <%= render "devise/menu/login_items" %>
-        <%= render "shared/admin_login_items" %>
-      </section>
-
-      <section class="subnavigation row">
-
-        <div class="small-12 medium-9 column">
-          <%= link_to t("layouts.header.meetings"), meetings_path, class: ("active" if current_page?(controller: "/meetings")) %>
-          <% if feature?(:debates) %>
-            <%= link_to t("layouts.header.debates"), debates_path, class: ("active" if controller_name == "debates") %>
-          <% end %>
-          <%= link_to t("layouts.header.proposals"), proposals_path, class: ("active" if  controller_name == "proposals") %>
-          <% if feature?(:spending_proposals) %>
-            <%= link_to t("layouts.header.spending_proposals"), spending_proposals_path, class: ("active" if controller_name == "spending_proposals") %>
-          <% end %>
-          <%= link_to t("layouts.header.more_information"), page_path('more_information'), class: ("active" if current_page?("/more_information"))  %>
-          <%= link_to t("categories.title"), categories_path, class: ("active" if current_page?("/categories"))  %>
-          <% if Setting['blog_url'] %>
-            <%= link_to Setting['blog_url'], target: "_blank" do %>
-              <%= t("layouts.header.external_link_blog") %>
-              <i class="icon-external"></i>
-            <% end %>
-          <% end %>
-        </div>
-        <div class="small-12 medium-3 column">
-          <%= yield :header_addon %>
-        </div>
-      </section>
-    </nav>
   </div>
 
-  <div class="row-full subnavigation-background"></div>
+  <div class="header row">
+    <div class="small-12 large-4 columns">
+      <%= render 'layouts/title' %>
+    </div>
 
-  <%= yield :header %>
+    <div class="small-12 large-8 columns">
+      <section class="session-menu">
+        <ul>
+          <%= render "shared/admin_login_items" %>
+          <%= render "devise/menu/login_items" %>
+        </ul>
+      </section>
+    </div>
+  </div>
+
+  <%= render partial: 'layouts/menu' %>
 </header>

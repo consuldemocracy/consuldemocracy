@@ -11,17 +11,14 @@
     <%= render partial: 'layouts/i18n' %>
     <%= csrf_meta_tags %>
     <%= favicon_link_tag "favicon.ico" %>
+    <%= render partial: 'layouts/fonts' %>
   </head>
 
   <body class="auth-page">
     <div class="wrapper margin-top">
       <div class="row">
         <div class="small-12 medium-8 large-5 column small-centered margin-top">
-          <h1>
-            <%= link_to root_path, id: 'application-title' do %>
-              <%= t("layouts.header.open_gov", open: "#{t('layouts.header.open')}").html_safe %>
-            <% end %>
-          </h1>
+          <%= render 'layouts/title' %>
         </div>
       </div>
 

@@ -79,6 +79,8 @@ gem 'i18n_yaml_csv', github: 'josepjaume/i18n_yaml_csv'
 
 gem 'draper'
 
+gem 'bourbon'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'

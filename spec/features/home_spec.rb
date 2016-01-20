@@ -1,24 +1,6 @@
 require 'rails_helper'
 
 feature "Home" do
-
-  feature "For not logged users" do
-    scenario 'Welcome message' do
-      visit root_path
-
-      expect(page).to have_content "Love the city, and it will become a city you love"
-    end
-  end
-
-  feature "For signed in users" do
-    scenario 'Redirect to proposals' do
-      login_as(create(:user))
-      visit root_path
-
-      expect(current_path).to eq proposals_path
-    end
-  end
-
   feature 'IE alert' do
     scenario 'IE visitors are presented with an alert until they close it', :js do
       page.driver.headers = { "User-Agent" => "Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.0)" }

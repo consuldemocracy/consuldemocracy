@@ -1,7 +1,6 @@
 module ApplicationHelper
 
   def home_page?
-    return false if user_signed_in?
     # Using path because fullpath yields false negatives since it contains
     # parameters too
     request.path == '/'
