@@ -1,3 +1,4 @@
+
 es:
   locale: "Español"
   errors:
@@ -155,7 +156,6 @@ es:
       form:
         submit_button: "Guardar cambios"
   proposals:
-    detail: "Propuesta ciudadana" 
     index:
       title: "Propuestas ciudadanas"
       featured_proposals_html: "Propuestas<br>destacadas"
@@ -391,3 +391,9 @@ es:
     google_oauth2:
       sign_in: "Entra con Google"
       sign_up: "Regístrate con Google"
+
+#    Status API Training Shop Blog About Pricing 
+#
+#    © 2016 GitHub, Inc. Terms Privacy Security Contact Help 
+
+

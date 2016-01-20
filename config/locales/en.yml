@@ -240,7 +240,6 @@ en:
       form:
         submit_button: "Create proposal"
     create:
-      line: "Anne"
       form:
         submit_button: "Create proposal"
     update:
