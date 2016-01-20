@@ -400,7 +400,7 @@ en:
   unauthorized:
     default: You do not have permission to access this page.
     manage:
-      all: You do not have permission to carry out the action '%{action}' on %{subject}.
+      all: "You do not have permission to carry out the action '%{action}' on %{subject}."
   users:
     show:
       deleted: Deleted

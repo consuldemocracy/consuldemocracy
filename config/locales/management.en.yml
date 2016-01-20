@@ -40,6 +40,7 @@ en:
       create_proposal: Create proposal
       print_proposals: Print proposals
       support_proposals: Support proposals
+      create_spending_proposal: Create spending proposal
       title: Management
       users: Users
     permissions:
@@ -58,6 +59,10 @@ en:
       create_proposal: Create proposal
       print:
         print_button: Print
+    spending_proposals:
+      alert:
+        unverified_user: User is not verified
+      create: Create spending proposal
     sessions:
       signed_out: Signed out successfully.
       signed_out_managed_user: User session signed out successfully.
