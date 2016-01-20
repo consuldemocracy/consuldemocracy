@@ -29,10 +29,9 @@ ca:
       verify_my_account: Verificar el meu compte
   application:
     close: Tancar
-    menu: Menú
   categories:
+    filter: Veure propostes
     title: Eixos
-    filter: "Veure propostes"
   comments:
     comment:
       admin: Administrador
@@ -187,10 +186,7 @@ ca:
         one: Tens una nova notificació
         other: Tens %{count} notificacions noves
       no_notifications: No tens notificacions noves
-      open: obert
       open_city_title: Construïm juntes la ciutat que volem
-      open_data: Dades obertes
-      open_gov: Govern %{open}
       proposals: Propostes
       see_all: Veure les propostes del PAM
       spending_proposals: Pressupostos ciutadans
@@ -257,6 +253,7 @@ ca:
       show_link: Veure proposta
     form:
       proposal_external_url: Enllaç a documentació addicional
+      proposal_oficial: La proposta és oficial
       proposal_question: Pregunta de la proposta
       proposal_question_example_html: Ha de ser resumida en una pregunta la resposta sigui Sí o No. <em>Ex. 'Està vostè d'acord en vianants el carrer Major?'</em>
       proposal_responsible_name: Nom i cognoms de la persona que fa aquesta proposta
@@ -270,7 +267,6 @@ ca:
       proposal_title: Títol de la proposta
       proposal_video_url: Enllaç a vídeo extern
       proposal_video_url_note: Pots afegir un enllaç a YouTube o Vimeo
-      proposal_oficial: La proposta és oficial
       tags_instructions: Etiqueta aquesta proposta. Pots triar entre les nostres propostes o introduir les que vulguis.
       tags_label: Temes
       tags_placeholder: Escriu les etiquetes que vulguis separades per una coma (',')

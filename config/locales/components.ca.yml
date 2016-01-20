@@ -15,13 +15,13 @@ ca:
       remove: Eliminar
       title: Títol
     proposal_filter_option:
+      citizenship: Ciutadania
       city: Tota la ciutat
       district: Un districte
       oficial: Programa (Ajuntament)
-      citizenship: Ciutadania
     proposal_filter_option_group:
-      source: Origen
       category_id: Eix
       district: Districte
       scope: "Àmbit"
+      source: Origen
       subcategory_id: Línia d'acció

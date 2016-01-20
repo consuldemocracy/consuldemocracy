@@ -29,10 +29,9 @@ en:
       verify_my_account: Verify my account
   application:
     close: Close
-    menu: Menu
   categories:
+    filter: Show proposals
     title: Axis
-    filter: "Show proposals"
   comments:
     comment:
       admin: Administrator
@@ -187,10 +186,7 @@ en:
         one: You have a new notification
         other: You have %{count} new notifications
       no_notifications: You don't have new notifications
-      open: open
       open_city_title: Let's build the city we love together
-      open_data: Open data
-      open_gov: Open government
       proposals: Proposals
       see_all: See the PAM's proposals
       spending_proposals: Spending proposals
@@ -257,6 +253,7 @@ en:
       show_link: View proposal
     form:
       proposal_external_url: Link to additional documentation
+      proposal_oficial: This proposal is oficial
       proposal_question: Proposal question
       proposal_question_example_html: Must be summarised in one question with a Yes or No answer. <em>E.g. 'Do you agree with the pedestrianisation of Calle Mayor?'</em>
       proposal_responsible_name: Full name of the person submitting the proposal
@@ -270,7 +267,6 @@ en:
       proposal_title: Proposal title
       proposal_video_url: Link to external video
       proposal_video_url_note: You may add a link to YouTube or Vimeo
-      proposal_oficial: This proposal is oficial
       tags_instructions: Tag this proposal. You can choose from our tags or add your own.
       tags_label: Tags
       tags_placeholder: Enter the tags you would like to use, separated by commas (',')
