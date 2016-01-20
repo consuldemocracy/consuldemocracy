@@ -3,6 +3,7 @@ class Meeting < ActiveRecord::Base
   include SearchCache
 
   belongs_to :author, -> { with_hidden }, class_name: 'User', foreign_key: 'author_id'
+  has_and_belongs_to_many :proposals
 
   scope :upcoming, -> { where("held_at >= ?", Date.today) }
 

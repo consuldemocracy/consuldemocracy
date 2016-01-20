@@ -5,7 +5,9 @@ class ProposalFilter
     @search_filter = params[:search] if params[:search].present?
     @tag_filter = params[:tag]
     @params = params[:filter]
+    @exclude_ids = params[:exclude_ids]
     @collection = Proposal.all
+    exclude
     filter_by_search
     filter_by_tag
     filter
@@ -13,6 +15,12 @@ class ProposalFilter
   end
 
   private
+
+  def exclude
+    if @exclude_ids.present?
+      @collection = @collection.where("id not in (?)", @exclude_ids)
+    end
+  end
 
   def filter_by_search
     if @search_filter.present?

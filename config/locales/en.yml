@@ -213,9 +213,11 @@ en:
       meeting_description: Description
       meeting_end_at: What time does it end?
       meeting_held_at: When it will take place?
+      meeting_proposal_ids: Which proposals are being discussed?
       meeting_start_at: What time does it start?
       meeting_title: Title
     index:
+      edit: Edit
       new: Create meeting
       title: Meetings
     new:

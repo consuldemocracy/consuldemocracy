@@ -45,6 +45,11 @@
       <%= f.time_field :end_at, label: false %>
     </div>
 
+    <div class="small-12 column">
+      <label><%= t("meetings.form.meeting_proposal_ids")%></label>
+      <%= meeting_proposals_selector proposals: @meeting.proposals %>
+    </div>
+
     <div class="actions small-12 column">
       <%= f.submit(class: "button radius", value: t("meetings.#{action_name}.form.submit_button")) %>
     </div>

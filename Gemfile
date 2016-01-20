@@ -67,6 +67,7 @@ gem 'redcarpet'
 gem "faker"
 
 gem 'rails-i18n'
+gem 'active_model_serializers'
 
 # React gems
 gem 'react-rails'

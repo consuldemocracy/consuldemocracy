@@ -6,6 +6,14 @@ en:
         label: Axis
       subcategory:
         label: Action Line
+    meeting_proposals_autocomplete_input:
+      loading: Loading...
+      no_results: No results.
+      search: Search
+    meeting_proposals_table:
+      actions: Actions
+      remove: Delete
+      title: Title
     proposal_filter_option:
       city: Whole city
       district: A district
