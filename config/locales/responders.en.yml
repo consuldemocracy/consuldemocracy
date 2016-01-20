@@ -2,14 +2,14 @@ en:
   flash:
     actions:
       create:
-       notice: "%{resource_name} created successfully."
-       debate: "Debate created successfully."
-       proposal: "Proposal created successfully." 
+        notice: "%{resource_name} created successfully."
+        debate: "Debate created successfully."
+        proposal: "Citizen proposal created successfully." 
         
       update:
-       notice: "%{resource_name} updated successfully."
-       debate: "Debate updated successfully."
-       proposal: "Proposal updated successfully." 
+        notice: "%{resource_name} updated successfully."
+        debate: "Debate updated successfully."
+        proposal: "Citizen proposal updated successfully." 
        
       # destroy:
         # notice: "%{resource_name} destroyed successfully."

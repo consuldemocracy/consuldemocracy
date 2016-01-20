@@ -28,8 +28,8 @@ module CommentableActions
   end
 
   def create 
-     @resource = resource_model.new(strong_params)
-     @resource.author = current_user
+    @resource = resource_model.new(strong_params)
+    @resource.author = current_user
 
     if @resource.save_with_captcha
       track_event
@@ -49,7 +49,8 @@ module CommentableActions
   def update
     resource.assign_attributes(strong_params)
     if resource.save_with_captcha
-       redirect_to resource, notice: t("flash.actions.update.#{resource_name}")
+      
+      redirect_to resource, notice: t("flash.actions.update.#{resource_name}")
     else
       load_featured_tags
       set_resource_instance
