@@ -14,6 +14,16 @@ Setting.create(key: 'max_votes_for_proposal_edit', value: '1000')
 Setting.create(key: 'proposal_code_prefix', value: 'MAD')
 Setting.create(key: 'votes_for_proposal_success', value: '100')
 
+Setting.create(key: 'blog_url', value: '/blog')
+Setting.create(key: 'url', value: 'http://localhost:3000')
+Setting.create(key: 'org_name', value: 'Consul')
+Setting.create(key: 'place_name', value: 'City')
+Setting.create(key: 'feature.debates', value: "true")
+Setting.create(key: 'feature.spending_proposals', value: "true")
+
+puts "Creating Geozones"
+('A'..'Z').each{ |i| Geozone.create(name: "District #{i}") }
+
 puts "Creating Users"
 
 def create_user(email, username = Faker::Name.name)
@@ -178,6 +188,25 @@ end
   proposal = Proposal.reorder("RANDOM()").first
   flagger = User.where(["users.id <> ?", proposal.author_id]).reorder("RANDOM()").first
   Flag.flag(flagger, proposal)
+end
+
+puts "Creating Spending Proposals"
+
+resolutions = ["accepted", "rejected", nil]
+
+(1..30).each do |i|
+  geozone = Geozone.reorder("RANDOM()").first
+  author = User.reorder("RANDOM()").first
+  description = "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>"
+  spending_proposal = SpendingProposal.create!(author: author,
+                              title: Faker::Lorem.sentence(3).truncate(60),
+                              external_url: Faker::Internet.url,
+                              description: description,
+                              created_at: rand((Time.now - 1.week) .. Time.now),
+                              resolution: resolutions.sample,
+                              geozone: [geozone, nil].sample,
+                              terms_of_service: "1")
+  puts "    #{spending_proposal.title}"
 end
 
 puts "Creating Legislation"

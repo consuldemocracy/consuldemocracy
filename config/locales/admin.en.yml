@@ -1,178 +1,194 @@
+---
 en:
   admin:
-    settings:
-      index:
-        title: "General settings"
-        update_setting: "Update"
-      flash:
-        updated: "Value updated"
-    dashboard:
-      index:
-        title: "Administration"
-    menu:
-      settings: "General settings"
-      debate_topics: "Debate topics"
-      hidden_proposals: "Hidden proposals"
-      hidden_debates: "Hidden debates"
-      hidden_comments: "Hidden comments"
-      hidden_users: "Hidden users"
-      incomplete_verifications: "Incomplete verifications"
-      organizations: "Organisations"
-      officials: "Officials"
-      moderators: "Moderators"
-      stats: "Statistics"
-      activity: "Moderator activity"
-    shared:
-      user_search:
-        placeholder: "Search user by name or email'"
-        button: "Search"
-      proposal_search:
-        placeholder: "Search proposals by title, description or question"
-        button: "Search"
-    organizations:
-      index:
-        title: "Organisations"
-        search_placeholder: "Name, email or phone number"
-        search: "Search"
-        verify: "Verify"
-        reject: "Reject"
-        verified: "Verified"
-        rejected: "Rejected"
-        filter: "Filter"
-        filters:
-          all: "All"
-          pending: "Pending"
-          verified: "Verified"
-          rejected: "Rejected"
-        hidden_count:
-          one: "There is also one organisation with no users or with a hidden user"
-          other: "There are %{count} organisations with no users or with a hidden user"
-      search:
-        title: "Search Organisations"
     actions:
-      hide: "Hide"
-      hide_author: "Hide author"
-      restore: "Restore"
-      confirm: "Are you sure?"
-      confirm_hide: "Confirm"
-    tags:
-      index:
-        title: "Debate topics"
-        add_tag: "Add a new debate topic"
-      mark_as_featured: "Propose topic upon creating debate"
-      name:
-        placeholder: "Type the name of the topic"
-      create: "Create Topic"
-      update: "Update Topic"
-      destroy: "Destroy Topic"
-    comments:
-      index:
-        title: "Hidden comments"
-        hidden_proposal: "Hidden proposal"
-        hidden_debate: "Hidden debate"
-        filter: "Filter"
-        filters:
-          all: "All"
-          with_confirmed_hide: "Confirmed"
-          without_confirmed_hide: "Pending"
-    debates:
-      index:
-        title: "Hidden debates"
-        filter: "Filter"
-        filters:
-          all: "All"
-          with_confirmed_hide: "Confirmed"
-          without_confirmed_hide: "Pending"
-    proposals:
-      index:
-        title: "Hidden proposals"
-        filter: "Filter"
-        filters:
-          all: "All"
-          with_confirmed_hide: "Confirmed"
-          without_confirmed_hide: "Pending"
-    users:
-      index:
-        title: "Hidden users"
-        filter: "Filter"
-        filters:
-          all: "All"
-          with_confirmed_hide: "Confirmed"
-          without_confirmed_hide: "Pending"
-      show:
-        title: "Activity of user %{user}"
-        back: "Back"
-        email: "Email:"
-        registered_at: "Registered at:"
-        hidden_at: "Hidden at:"
-    verifications:
-      index:
-        title: "Incomplete verifications"
-        phone_not_given: "Phone not given"
-        sms_code_not_confirmed: "Has not confirmed the sms code"
-    officials:
-      level_0: "Not official"
-      level_1: "Level 1"
-      level_2: "Level 2"
-      level_3: "Level 3"
-      level_4: "Level 4"
-      level_5: "Level 5"
-      index:
-        title: "Officials"
-      search:
-        title: "Official positions: User search"
-        edit_official: "Edit official"
-        make_official: "Make official"
-      edit:
-        title: "Officials: Edit user"
-        destroy: "Remove 'Official' status"
-        back: "Back"
-      flash:
-        official_updated: "Details of official saved"
-        official_destroyed: "Details saved: the user is no longer an official"
-    moderators:
-      index:
-        title: "Moderators"
-      search:
-        email_placeholder: "Search user by email"
-        search: "Search"
-        user_not_found: "User not found"
-      moderator:
-        delete: "Delete"
-        add: "Add"
+      confirm: Are you sure?
+      confirm_hide: Confirm
+      hide: Hide
+      hide_author: Hide author
+      restore: Restore
     activity:
       show:
-        title: "Moderator activity"
-        action: "Action"
-        by: "Moderated by"
-        type: "Type"
-        filter: "Show"
-        filters:
-          all: "All"
-          on_proposals: "Proposals"
-          on_debates: "Debates"
-          on_comments: "Comments"
-          on_users: "Users"
+        action: Action
         actions:
-          hide: "Hidden"
-          restore: "Restored"
-          block: "Blocked"
+          block: Blocked
+          hide: Hidden
+          restore: Restored
+        by: Moderated by
+        filter: Show
+        filters:
+          all: All
+          on_comments: Comments
+          on_debates: Debates
+          on_proposals: Proposals
+          on_users: Users
+        title: Moderator activity
+        type: Type
+    comments:
+      index:
+        filter: Filter
+        filters:
+          all: All
+          with_confirmed_hide: Confirmed
+          without_confirmed_hide: Pending
+        hidden_debate: Hidden debate
+        hidden_proposal: Hidden proposal
+        title: Hidden comments
+    dashboard:
+      index:
+        title: Administration
+    debates:
+      index:
+        filter: Filter
+        filters:
+          all: All
+          with_confirmed_hide: Confirmed
+          without_confirmed_hide: Pending
+        title: Hidden debates
+    menu:
+      activity: Moderator activity
+      debate_topics: Debate topics
+      hidden_comments: Hidden comments
+      hidden_debates: Hidden debates
+      hidden_proposals: Hidden proposals
+      hidden_users: Hidden users
+      incomplete_verifications: Incomplete verifications
+      moderators: Moderators
+      officials: Officials
+      organizations: Organisations
+      settings: General settings
+      spending_proposals: Spending proposals
+      stats: Statistics
+    moderators:
+      index:
+        title: Moderators
+      moderator:
+        add: Add
+        delete: Delete
+      search:
+        email_placeholder: Search user by email
+        search: Search
+        user_not_found: User not found
+    officials:
+      edit:
+        back: Back
+        destroy: Remove 'Official' status
+        title: 'Officials: Edit user'
+      flash:
+        official_destroyed: 'Details saved: the user is no longer an official'
+        official_updated: Details of official saved
+      index:
+        title: Officials
+      level_0: Not official
+      level_1: Level 1
+      level_2: Level 2
+      level_3: Level 3
+      level_4: Level 4
+      level_5: Level 5
+      search:
+        edit_official: Edit official
+        make_official: Make official
+        title: 'Official positions: User search'
+    organizations:
+      index:
+        filter: Filter
+        filters:
+          all: All
+          pending: Pending
+          rejected: Rejected
+          verified: Verified
+        hidden_count:
+          one: There is also one organisation with no users or with a hidden user
+          other: There are %{count} organisations with no users or with a hidden user
+        reject: Reject
+        rejected: Rejected
+        search: Search
+        search_placeholder: Name, email or phone number
+        title: Organisations
+        verified: Verified
+        verify: Verify
+      search:
+        title: Search Organisations
+    proposals:
+      index:
+        filter: Filter
+        filters:
+          all: All
+          with_confirmed_hide: Confirmed
+          without_confirmed_hide: Pending
+        title: Hidden proposals
+    settings:
+      flash:
+        updated: Value updated
+      index:
+        title: General settings
+        update_setting: Update
+    shared:
+      proposal_search:
+        button: Search
+        placeholder: Search proposals by title, description or question
+      user_search:
+        button: Search
+        placeholder: Search user by name or email'
+    spending_proposals:
+      actions:
+        accept: Accept
+        reject: Reject
+      index:
+        filter: Filter
+        filters:
+          accepted: Accepted
+          rejected: Rejected
+          unresolved: Unresolved
+        title: Spending proposals for participatory budgeting
+      show:
+        by: Sent by
+        geozone: Scope
     stats:
       show:
-        stats_title: "Stats"
-        visits_title: "Visits"
-        combined_title: "Combined"
+        combined_title: Combined
+        stats_title: Stats
         summary:
-          visits: "Visits"
-          debates: "Debates"
-          proposals: "Proposals"
-          comments: "Comments"
-          debate_votes: "Debate votes"
-          proposal_votes: "Proposal votes"
-          comment_votes: "Comment votes"
-          votes: "Total votes"
-          user_level_three: "Level three users"
-          user_level_two: "Level two users"
-          unverified_users: "Unverified users"
-          verified_users: "Verified users"
-          users: "Total users"
+          comment_votes: Comment votes
+          comments: Comments
+          debate_votes: Debate votes
+          debates: Debates
+          proposal_votes: Proposal votes
+          proposals: Proposals
+          unverified_users: Unverified users
+          user_level_three: Level three users
+          user_level_two: Level two users
+          users: Total users
+          verified_users: Verified users
+          visits: Visits
+          votes: Total votes
+        visits_title: Visits
+    tags:
+      create: Create Topic
+      destroy: Destroy Topic
+      index:
+        add_tag: Add a new debate topic
+        title: Debate topics
+      mark_as_featured: Propose topic upon creating debate
+      name:
+        placeholder: Type the name of the topic
+      update: Update Topic
+    users:
+      index:
+        filter: Filter
+        filters:
+          all: All
+          with_confirmed_hide: Confirmed
+          without_confirmed_hide: Pending
+        title: Hidden users
+      show:
+        back: Back
+        email: 'Email:'
+        hidden_at: 'Hidden at:'
+        registered_at: 'Registered at:'
+        title: Activity of user %{user}
+    verifications:
+      index:
+        phone_not_given: Phone not given
+        sms_code_not_confirmed: Has not confirmed the sms code
+        title: Incomplete verifications

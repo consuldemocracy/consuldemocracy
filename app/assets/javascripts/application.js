@@ -12,6 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery-ui/datepicker
+//= require jquery-ui/datepicker-es
 //= require foundation
 //= require turbolinks
 //= require ckeditor/init
@@ -35,6 +37,7 @@
 //= require users
 //= require votes
 //= require annotatable
+//= require advanced_search
 
 
 var initialize_modules = function() {
@@ -48,6 +51,7 @@ var initialize_modules = function() {
   App.PreventDoubleSubmission.initialize();
   App.IeAlert.initialize();
   App.Annotatable.initialize();
+  App.AdvancedSearch.initialize();
 };
 
 $(function(){

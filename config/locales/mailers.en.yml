@@ -1,21 +1,22 @@
+---
 en:
   mailers:
-    config:
-      manage_email_subscriptions: "To stop receiving these emails change your settings in"
     comment:
-      subject: "Someone has commented on your %{commentable}"
-      hi: "Hi"
-      title: "New comment"
-      new_comment_by_html: "There is a new comment from <b>%{commenter}</b>"
-    reply:
-      subject: "Someone has responded to your comment"
-      hi: "Hi"
-      title: "New response to your comment"
-      new_reply_by_html: "There is a new response from <b>%{commenter}</b> to your comment on"
+      hi: Hi
+      new_comment_by_html: There is a new comment from <b>%{commenter}</b>
+      subject: Someone has commented on your %{commentable}
+      title: New comment
+    config:
+      manage_email_subscriptions: To stop receiving these emails change your settings in
     email_verification:
-      subject: "Confirm your email"
-      title:  "Confirm your account using the following link"
-      instructions_html: "To complete the verification of your user account in the Open Government Portal of the Madrid City Council, you must click %{verification_link}."
-      click_here_to_verify: "this link"
-      instructions_2_html: "This email will verify your account with <b>%{document_type} %{document_number}</b>. If these don't belong to you, please don't click on the previous link and ignore this email."
-      thanks: "Thank you very much."
+      click_here_to_verify: this link
+      instructions_2_html: This email will verify your account with <b>%{document_type} %{document_number}</b>. If these don't belong to you, please don't click on the previous link and ignore this email.
+      instructions_html: To complete the verification of your user account in the Open Government Portal of the Madrid City Council, you must click %{verification_link}.
+      subject: Confirm your email
+      thanks: Thank you very much.
+      title: Confirm your account using the following link
+    reply:
+      hi: Hi
+      new_reply_by_html: There is a new response from <b>%{commenter}</b> to your comment on
+      subject: Someone has responded to your comment
+      title: New response to your comment

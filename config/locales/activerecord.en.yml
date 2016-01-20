@@ -37,6 +37,9 @@ en:
       proposal:
         one: "Citizen proposal"
         other: "Citizen proposals"
+      spending_proposal:
+        one: "Spending proposal"
+        other: "Spending proposals"
     attributes:
       comment:
         body: "Comment"

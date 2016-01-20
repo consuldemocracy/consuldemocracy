@@ -1,12 +1,10 @@
+---
 es:
   flash:
     actions:
       create:
         notice: "%{resource_name} creado correctamente."
+      save_changes:
+        notice: Cambios guardados
       update:
         notice: "%{resource_name} actualizado correctamente."
-      # destroy:
-        # notice: "%{resource_name} borrado correctamente."
-        # alert: "%{resource_name} no ha podido ser borrado."
-      save_changes:
-        notice: "Cambios guardados"

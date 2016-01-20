@@ -17,6 +17,8 @@ module Abilities
         proposal.editable_by?(user)
       end
 
+      can :read, SpendingProposal
+
       can :create, Comment
       can :create, Debate
       can :create, Proposal
@@ -38,6 +40,7 @@ module Abilities
       if user.level_two_or_three_verified?
         can :vote, Proposal
         can :vote_featured, Proposal
+        can :create, SpendingProposal
       end
 
       can :create, Annotation

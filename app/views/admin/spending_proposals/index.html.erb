@@ -1,0 +1,36 @@
+<h2><%= t("admin.spending_proposals.index.title") %></h2>
+
+<%= render 'shared/filter_subnav', i18n_namespace: "admin.spending_proposals.index" %>
+
+<h3><%= page_entries_info @spending_proposals %></h3>
+
+<table>
+  <% @spending_proposals.each do |spending_proposal| %>
+    <tr id="<%= dom_id(spending_proposal) %>">
+      <td>
+        <strong><%= link_to spending_proposal.title, admin_spending_proposal_path(spending_proposal) %></strong>
+      </td>
+      <td>
+        <%= geozone_name(spending_proposal) %>
+      </td>
+      <td>
+        <% unless spending_proposal.accepted? %>
+          <%= link_to t("admin.spending_proposals.actions.accept"),
+              accept_admin_spending_proposal_path(spending_proposal, request.query_parameters),
+              method: :put,
+              data: { confirm: t("admin.actions.confirm") },
+              class: "button radius tiny success no-margin" %>
+        <% end %>
+        <% unless spending_proposal.rejected? %>
+          <%= link_to t("admin.spending_proposals.actions.reject"),
+                reject_admin_spending_proposal_path(spending_proposal, request.query_parameters),
+                method: :put,
+                data: { confirm: t("admin.actions.confirm") },
+                class: "button radius tiny warning right" %>
+        <% end %>
+      </td>
+    </tr>
+  <% end %>
+</table>
+
+<%= paginate @spending_proposals %>

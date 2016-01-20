@@ -1,0 +1,94 @@
+// Overrides styles of jquery-ui/datepicker
+//
+
+.ui-datepicker-header {
+  background: $brand;
+  color: white;
+  font-weight: bold;
+}
+
+.ui-datepicker-calendar {
+
+  .ui-state-default {
+    background: $highlight;
+    color: $text;
+  }
+
+  .ui-state-hover, .ui-state-active {
+    background: $brand;
+    color: white;
+  }
+}
+
+.ui-datepicker {
+  padding: 0;
+  z-index: 4 !important;
+
+  .ui-datepicker-prev {
+    left: 12px;
+  }
+
+  .ui-datepicker-next {
+    right: 12px;
+  }
+
+  .ui-datepicker-prev, .ui-datepicker-next {
+    color: white;
+    cursor: pointer;
+    font-weight: normal;
+    font-size: $small-font-size;
+    line-height: $line-height;
+    top: 0;
+  }
+
+  table {
+    border: 1px solid $border;
+    border-top: 0;
+
+    thead {
+      background: $dark;
+      border-left: 1px solid $dark;
+      border-right: 1px solid $dark;
+
+      tr th {
+        color: white;
+      }
+    }
+
+    tr {
+      border-bottom: 1px solid $border;
+
+      &:last-child {
+        border-bottom: 0px;
+      }
+
+      &:nth-child(odd) {
+        background: none;
+      }
+    }
+
+    td {
+      padding: 0;
+      border-right: 1px solid $border;
+
+      &:last-child {
+        border-right: 0px;
+      }
+
+      span, a {
+        text-align: center;
+        line-height: $line-height;
+        color: $text;
+      }
+
+      &.ui-datepicker-unselectable.ui-state-disabled {
+        background: white;
+
+        .ui-state-default {
+          background: $input-bg;
+          color: $text-medium;
+        }
+      }
+    }
+  }
+}
