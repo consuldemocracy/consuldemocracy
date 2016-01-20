@@ -46,27 +46,16 @@ feature 'Users' do
 
   xcontext 'OAuth authentication' do
     context 'Twitter' do
-      background do
-        #request.env["devise.mapping"] = Devise.mappings[:user]
-      end
+
+      let(:twitter_hash){ {'provider' => 'twitter', 'uid' => '12345', 'info' => { 'name' => 'manuela' }} }
+      let(:twitter_hash_with_email) { { 'provider' => 'twitter',
+                                        'uid' => '12345',
+                                        'info' => { 'name' => 'manuela' , 'email' => 'manuelacarmena@example.com', 'verified' => '1' } }
+      }
+
 
       scenario 'Sign up, when email was provided by OAuth provider' do
-        omniauth_twitter_hash = { 'provider' => 'twitter',
-                                  'uid' => '12345',
-                                  'info' => {
-                                    'name' => 'manuela',
-                                    'email' => 'manuelacarmena@example.com',
-                                    'nickname' => 'ManuelaRocks',
-                                    'verified' => '1'
-                                  },
-                                  'extra' => { 'raw_info' =>
-                                    { 'location' => 'Madrid',
-                                      'name' => 'Manuela de las Carmenas'
-                                    }
-                                  }
-                                }
-
-        OmniAuth.config.add_mock(:twitter, omniauth_twitter_hash)
+        OmniAuth.config.add_mock(:twitter, twitter_hash_with_email)
 
         visit '/'
         click_link 'Register'
@@ -82,26 +71,15 @@ feature 'Users' do
         expect(current_path).to eq(root_path)
         expect_to_be_signed_in
 
-        user = User.last
-        expect(user.username).to eq('ManuelaRocks')
-        expect(user.email).to eq('manuelacarmena@example.com')
-        expect(user.confirmed?).to eq(true)
+        click_link 'My account'
+        expect(page).to have_field('account_username', with: 'manuela')
+
+        visit edit_user_registration_path
+        expect(page).to have_field('user_email', with: 'manuelacarmena@example.com')
       end
 
-      scenario 'Sign up, when neither email nor nickname were provided by OAuth provider' do
-        omniauth_twitter_hash = { 'provider' => 'twitter',
-                                  'uid' => '12345',
-                                  'info' => {
-                                    'name' => 'manuela'
-                                  },
-                                  'extra' => { 'raw_info' =>
-                                    { 'location' => 'Madrid',
-                                      'name' => 'Manuela de las Carmenas'
-                                    }
-                                  }
-                                }
-
-        OmniAuth.config.add_mock(:twitter, omniauth_twitter_hash)
+      scenario 'Sign up, when no email was provided by OAuth provider' do
+        OmniAuth.config.add_mock(:twitter, twitter_hash)
 
         visit '/'
         click_link 'Register'
@@ -127,20 +105,21 @@ feature 'Users' do
 
         expect(page).to have_content "Your email address has been successfully confirmed"
 
+        visit '/'
+        click_link 'Sign in'
+        click_link 'Sign in with Twitter'
+        expect_to_be_signed_in
+
+        click_link 'My account'
+        expect(page).to have_field('account_username', with: 'manuela')
+
         expect(user.reload.email).to eq('manueladelascarmenas@example.com')
       end
 
       scenario 'Sign in, user was already signed up with OAuth' do
         user = create(:user, email: 'manuela@madrid.es', password: 'judgementday')
         create(:identity, uid: '12345', provider: 'twitter', user: user)
-        omniauth_twitter_hash = { 'provider' => 'twitter',
-                                  'uid' => '12345',
-                                  'info' => {
-                                    'name' => 'manuela'
-                                  }
-                                }
-
-        OmniAuth.config.add_mock(:twitter, omniauth_twitter_hash)
+        OmniAuth.config.add_mock(:twitter, twitter_hash)
 
         visit '/'
         click_link 'Sign in'
