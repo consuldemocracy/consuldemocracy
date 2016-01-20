@@ -1,84 +1,5 @@
 ---
 en:
-  locale: "English"
-  errors:
-    messages:
-      user_not_found: "User not found"
-  layouts:
-    header:
-      logo: "Madrid"
-      external_link_transparency: "Transparency"
-      external_link_transparency_url: "https://transparencia.madrid.es"
-      external_link_opendata: "Open data"
-      external_link_opendata_url: "http://datos.madrid.es"
-      external_link_blog: "Blog"
-      external_link_blog_url: "/blog"
-      open_gov: "Open government"
-      open: "open"
-      participation_html: "Madrid Decide"
-      open_data: "Open data"
-      open_city_title: "Love the city, and it will become a city you love."
-      open_city_slogan_html:
-        "There are cities that are governed directly by their inhabitants, who <b>discuss</b> the topics they are concerned about, <b>propose</b> ideas to improve
-        their lives and <b>decide</b> among themselves which ones will be carried out. Madrid is already one of these cities."
-      see_all: "See proposals"
-      my_activity_link: "My activity"
-      my_account_link: "My account"
-      locale: "Language:"
-      administration: "Administration"
-      moderation: "Moderation"
-      more_information: "More information"
-      debates: "Debates"
-      proposals: "Proposals"
-      processes: "Open processes"
-      new_notifications:
-        one: "You have a new notification"
-        other: "You have %{count} new notifications"
-      no_notifications: "You don't have new notifications"
-    footer:
-      description: "This portal uses the %{consul} which is %{open_source}. From Madrid out into the world."
-      open_source: "open-source software"
-      open_source_url: "http://www.gnu.org/licenses/agpl-3.0.html"
-      consul: "Consul application"
-      consul_url: "https://github.com/consul/consul"
-      copyright: "Ayuntamiento de Madrid, %{year}"
-      participation_title: "Participation"
-      participation_text: "Decide how to shape the Madrid you want to live in."
-      transparency_title: "Transparency"
-      transparency_url: "https://transparencia.madrid.es"
-      transparency_text: "Find out anything about the Madrid City Council."
-      open_data_title: "Open data"
-      open_data_text: "Every detail about the City Council is yours to access."
-      contact_us: "For technical assistance enters"
-      faq: "technical assistance"
-      privacy: "Privacy Policy"
-      conditions: "Terms and conditions of use"
-      more_info: "More information"
-      accessibility: "Accessibility"
-    application:
-      ie_title: "This website is not optimised for your browser"
-      ie:
-        "We have detected that you are browsing with Internet Explorer.
-        For an enhanced experience, we recommend using %{chrome} or %{firefox}."
-      chrome: "Google Chrome"
-      firefox: "Firefox"
-  social:
-    twitter: "Twitter"
-    facebook: "Facebook"
-    blog: "Blog"
-    youtube: "YouTube"
-  form:
-    error: "error"
-    errors: "errors"
-    not_saved: "prevented this %{resource} from being saved:"
-    accept_terms: "I agree to the %{policy} and the %{conditions}"
-    policy: "Privacy Policy"
-    conditions: "Terms and conditions of use"
-    user: "Account"
-    debate: "Debate"
-    proposal: "Proposal"
-    verification::sms: "Telephone"
-    verification::letter: "the verification"
   account:
     show:
       change_credentials_link: Change my credentials
@@ -283,12 +204,14 @@ en:
       open_data: Open data
       open_gov: Open government
       proposals: Proposals
+      processes: Open processes
       see_all: See proposals
       spending_proposals: Spending proposals
   legislation:
     help:
       alt: Select the text you want to comment and press the button with the pencil.
       text: To comment this document you must %{sign_in} or %{sign_up}. Then select the text you want to comment and press the button with the pencil.
+      text_logged: "Select the text you want to comment and press the button with the pencil."
       text_sign_in: login
       text_sign_up: sign up
       title: How I can comment this document?
@@ -479,7 +402,7 @@ en:
   unauthorized:
     default: You do not have permission to access this page.
     manage:
-      all: You do not have permission to carry out the action '%{action}' on %{subject}.
+      all: "You do not have permission to carry out the action '%{action}' on %{subject}."
   users:
     show:
       deleted: Deleted
@@ -536,25 +459,5 @@ en:
       user_permission_support_proposal: Support proposals*
       user_permission_verify: To perform all the actions %{verify}.
       user_permission_verify_info: "* Only for users on Madrid Census."
-  omniauth:
-    finish_signup:
-      title: "Add your email address"
-    twitter:
-      sign_in: "Sign in with Twitter"
-      sign_up: "Sign up with Twitter"
-    facebook:
-      sign_in: "Sign in with Facebook"
-      sign_up: "Sign up with Facebook"
-    google_oauth2:
-      sign_in: "Sign in with Google"
-      sign_up: "Sign up with Google"
-  legislation:
-    help:
-      title: "How I can comment this document?"
-      text_logged: "Select the text you want to comment and press the button with the pencil."
-      text: "To comment this document you must %{sign_in} or %{sign_up}. Then select the text you want to comment and press the button with the pencil."
-      text_sign_in: "login"
-      text_sign_up: "sign up"
-      alt: "Select the text you want to comment and press the button with the pencil."
       user_permission_verify_url: verify your account
       user_permission_votes: Participate on final voting

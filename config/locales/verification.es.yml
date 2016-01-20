@@ -17,15 +17,6 @@ es:
           success: Eres un usuario verificado
     letter:
       alert:
-        unconfirmed_residency: "Aún no has verificado tu residencia"
-    sms:
-      new:
-        title: "SMS de confirmación"
-        phone: "Introduce tu teléfono móvil para recibir el código"
-        phone_format_html: "<strong><em>(Ejemplo: 612345678)</em></strong>"
-        phone_note: "Sólo usaremos tu teléfono para enviarte un código, nunca te contactaremos."
-        phone_placeholder: "Ejemplo: 612345678"
-        submit_button: "Enviar"
         unconfirmed_code: Todavía no has introducido el código de confirmación
       create:
         flash:
@@ -49,6 +40,30 @@ es:
       update:
         flash:
           success: Tu cuenta ya está verificada
+    sms:
+      new:
+        title: "SMS de confirmación"
+        phone: "Introduce tu teléfono móvil para recibir el código"
+        phone_format_html: "<strong><em>(Ejemplo: 612345678)</em></strong>"
+        phone_note: "Sólo usaremos tu teléfono para enviarte un código, nunca te contactaremos."
+        phone_placeholder: "Ejemplo: 612345678"
+        submit_button: "Enviar"
+      create:
+        flash:
+          success: Introduce el código de confirmación que te hemos enviado por mensaje de texto
+      edit:
+        confirmation_code: Introduce el código que has recibido en tu móvil
+        resend_sms_link: Solicitar un nuevo código
+        resend_sms_text: "¿No has recibido un mensaje de texto con tu código de confirmación?"
+        submit_button: Enviar
+        title: SMS de confirmación
+      update:
+        error: Código de confirmación incorrecto
+        flash:
+          level_three:
+            success: Código correcto. Tu cuenta ya está verificada
+          level_two:
+            success: Código correcto
     redirect_notices:
       already_verified: Tu cuenta ya está verificada
       email_already_sent: Ya te enviamos un email con un enlace de confirmación, si no lo encuentras puedes solicitar aquí que te lo reenviemos
@@ -77,28 +92,6 @@ es:
         terms: los términos de acceso
         title: Verificar residencia
         verify_residence: Verificar residencia
-    sms:
-      create:
-        flash:
-          success: Introduce el código de confirmación que te hemos enviado por mensaje de texto
-      edit:
-        confirmation_code: Introduce el código que has recibido en tu móvil
-        resend_sms_link: Solicitar un nuevo código
-        resend_sms_text: "¿No has recibido un mensaje de texto con tu código de confirmación?"
-        submit_button: Enviar
-        title: SMS de confirmación
-      new:
-        phone: Introduce tu teléfono móvil para recibir el código
-        phone_note: Sólo usaremos tu teléfono para enviarte un código, nunca te contactaremos.
-        submit_button: Enviar
-        title: SMS de confirmación
-      update:
-        error: Código de confirmación incorrecto
-        flash:
-          level_three:
-            success: Código correcto. Tu cuenta ya está verificada
-          level_two:
-            success: Código correcto
     step_1: Residencia
     step_2: SMS de confirmación
     step_3: Verificación final

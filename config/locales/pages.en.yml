@@ -64,6 +64,27 @@ en:
       slogan_html: 'We are working on the new Madrid City Council Open Data Portal, meanwhile you can visit the actual Open Data Portal:'
       title: Open Data
     privacy: Privacy Policy
+    processes:
+      back: Back
+      index:
+        process_1_title: Help us improve transparency Ordinance of Madrid
+        process_1_description: The City of Madrid wants launch a system of public transparency at the level of the most advanced in the world, and we need your help.
+        process_1_button: More information
+        process_2_title: Remodeling of the Plaza España
+        process_2_description: We count on you for filling out a short survey decide how you want it this new space in your city.
+        process_2_button: More information
+      process_1:
+        title: Help us improve transparency Ordinance of the City of Madrid
+        comment: leave your comments
+        text:  "Until next January 31 you can %{comment} to the draft Transparency Ordinance of the City of Madrid or sending an email to transparencia@madrid.es.
+
+
+                You can now see the [final draft Transparency Ordinance of the City of Madrid](/docs/ordenanza_de_transparencia_de_la_ciudad_de_madrid.doc 'Transparency Ordinance of the City of Madrid')."
+        button: Comment ordinance
+      process_2:
+        title: Remodeling of the Plaza de España
+        text: We count on you for filling out a short survey decide how you want it this new space in your city.
+        button: Fill survey
     titles:
       accessibility: Accessibility
       conditions: Terms of use
@@ -79,24 +100,3 @@ en:
       submit: Verify my account
       title: Verify your account
     while_unfinished_html: While we finish, we encourage you to visit the <a href="/blog" target="_blank">Citizen Participation Area, Transparency and Open Government blog</a> to know about our progress and news; or the <a href="/">Citizen Participation section</a> where you can decide which is the city you want.
-    processes:
-      back: Back
-      index:
-        process_1_title: "Help us improve transparency Ordinance of Madrid"
-        process_1_description: "The City of Madrid wants launch a system of public transparency at the level of the most advanced in the world, and we need your help."
-        process_1_button: "More information"
-        process_2_title: "Remodeling of the Plaza España"
-        process_2_description: "We count on you for filling out a short survey decide how you want it this new space in your city."
-        process_2_button: "More information"
-      process_1:
-        title: "Help us improve transparency Ordinance of the City of Madrid"
-        comment: "leave your comments"
-        text:  "Until next January 31 you can %{comment} to the draft Transparency Ordinance of the City of Madrid or sending an email to transparencia@madrid.es.
-
-
-                You can now see the [final draft Transparency Ordinance of the City of Madrid](/docs/ordenanza_de_transparencia_de_la_ciudad_de_madrid.doc 'Transparency Ordinance of the City of Madrid')."
-        button: "Comment ordinance"
-      process_2:
-        title: "Remodeling of the Plaza de España"
-        text: "We count on you for filling out a short survey decide how you want it this new space in your city."
-        button: "Fill survey"
