@@ -36,7 +36,7 @@ class ApplicationController < ActionController::Base
     end
 
     def http_basic_auth_site?
-      Rails.application.secrets.http_basic_auth
+      !Rails.application.secrets.http_basic_username.blank?
     end
 
     def verify_lock
