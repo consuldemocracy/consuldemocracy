@@ -35,7 +35,7 @@ defaults: &defaults
   twitter_handle: "decidimbcn"
   facebook_handle: ~
   youtube_handle: "decidimbcn"
-  blog_url: ~
+  blog_url: "http://eldigital.barcelona.cat/"
 
   url: "https://decidimbcn.herokuapp.com"
 

@@ -175,7 +175,7 @@ ca:
     header:
       administration: Administrar
       debates: Debats
-      external_link_blog: Blog
+      external_link_blog: Notícies
       locale: 'Idioma:'
       meetings: Cites
       moderation: Moderar
