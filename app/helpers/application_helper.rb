@@ -36,6 +36,6 @@ module ApplicationHelper
   end
 
   def javascript_include_google_maps_api_tag
-    javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=#{Rails.application.secrets.google_maps_api_key}&signed_in=true&libraries=places&callback=gmapsLoaded", async: 'async', defer: 'async'
+    javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=#{Rails.application.secrets.google_maps_api_key}&libraries=places&callback=gmapsLoaded", async: 'async', defer: 'async'
   end
 end

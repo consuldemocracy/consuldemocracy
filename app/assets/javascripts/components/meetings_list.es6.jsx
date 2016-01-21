@@ -44,11 +44,11 @@ class MeetingsList extends React.Component {
                   <a href={meeting.url} className="meeting-title" >
                     { meeting.title }
                   </a>
-                  <p className="tags">
+                  <div className="tags">
                     <span className="radius secondary label">{ meeting.held_at }</span>
-                  </p>
-                  <div>{ meeting.description }</div>
-                  <p><small>{ meeting.address }</small></p>
+                  </div>
+                  <p>{ meeting.description }</p>
+                  <p><i className="fa fa-map-o"></i> { meeting.address }</p>
                 </li>
               )
             })
