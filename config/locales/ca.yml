@@ -33,6 +33,7 @@ ca:
     edit:
       form:
         submit_button: Actualitzar eix
+    filter: Veure propostes
     form:
       category_description: Descripció
       category_name: Nom
@@ -40,6 +41,7 @@ ca:
     new:
       form:
         submit_button: Crear eix
+    title: Documents
   comments:
     comment:
       admin: Administrador

@@ -33,6 +33,7 @@ es:
     edit:
       form:
         submit_button: Actualizar eje
+    filter: Ver propuestas
     form:
       category_description: Descripción
       category_name: Nombre
@@ -40,6 +41,7 @@ es:
     new:
       form:
         submit_button: Crear eje
+    title: Documentos
   comments:
     comment:
       admin: Administrador

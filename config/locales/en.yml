@@ -33,6 +33,7 @@ en:
     edit:
       form:
         submit_button: Update axis
+    filter: Show proposals
     form:
       category_description: Description
       category_name: Name
@@ -40,6 +41,7 @@ en:
     new:
       form:
         submit_button: Create axis
+    title: Documents
   comments:
     comment:
       admin: Administrator
