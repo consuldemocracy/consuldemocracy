@@ -27,6 +27,7 @@ en:
     categories:
       index:
         edit: Edit
+        new: Create axis
         title: Axis
     comments:
       index:

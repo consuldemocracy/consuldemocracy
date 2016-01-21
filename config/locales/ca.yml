@@ -30,9 +30,12 @@ ca:
   application:
     close: Tancar
   categories:
+    new:
+      form:
+        submit_button: Crear eix
     edit:
       form:
-        submit_button: Actualitzar categoria
+        submit_button: Actualitzar eix
     filter: Veure propostes
     form:
       category_description: Descripció

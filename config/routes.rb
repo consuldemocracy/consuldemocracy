@@ -161,7 +161,7 @@ Rails.application.routes.draw do
       resource :stats, only: :show
     end
 
-    resources :categories, only: [:index, :edit, :update]
+    resources :categories
   end
 
   namespace :moderation do

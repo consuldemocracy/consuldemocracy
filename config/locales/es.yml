@@ -30,9 +30,12 @@ es:
   application:
     close: Cerrar
   categories:
+    new:
+      form:
+        submit_button: Crear eje
     edit:
       form:
-        submit_button: Actualizar categoría
+        submit_button: Actualizar eje
     filter: Ver propuestas
     form:
       category_description: Descripción

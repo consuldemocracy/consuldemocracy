@@ -1,0 +1,29 @@
+<%= form_for(@category, url: form_url) do |f| %>
+  <%= render 'shared/errors', resource: @category %>
+
+  <div class="row">
+    <div class="small-12 column">
+      <%= f.label :position, t("categories.form.category_position") %>
+      <%= f.number_field :position, placeholder: t("categories.form.category_position"), label: false %>
+    </div>
+
+    <% I18n.available_locales.map(&:to_s).each do |locale| %>
+      <fieldset>
+        <legend><%= I18n.t "locale", locale: locale %></legend>
+        <div class="small-12 column">
+          <%= label_tag "name_#{locale}", t("categories.form.category_name") %>
+          <%= text_field_tag "category[name][#{locale}]", @category.name[locale], id: "name_#{locale}", placeholder: t("categories.form.category_name"), label: false %>
+        </div>
+
+        <div class="small-12 column">
+          <%= label_tag "description_#{locale}", t("categories.form.category_description") %>
+          <%= cktext_area_tag "category[description][#{locale}]", @category.description[locale], ckeditor: { language: I18n.locale }, id: "description_#{locale}", label: false %>
+        </div>
+      </fieldset>
+    <% end %>
+
+    <div class="actions small-12 column">
+      <%= f.submit(class: "button radius", value: t("categories.#{action_name}.form.submit_button")) %>
+      </div>
+  </div>
+<% end %>

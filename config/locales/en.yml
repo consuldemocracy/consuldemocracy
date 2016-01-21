@@ -30,9 +30,12 @@ en:
   application:
     close: Close
   categories:
+    new:
+      form:
+        submit_button: Create axis
     edit:
       form:
-        submit_button: Update category
+        submit_button: Update axis
     filter: Show proposals
     form:
       category_description: Description

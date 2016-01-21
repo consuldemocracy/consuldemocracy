@@ -27,6 +27,7 @@ ca:
     categories:
       index:
         edit: Editar
+        new: Crear eix
         title: Eixos
     comments:
       index:

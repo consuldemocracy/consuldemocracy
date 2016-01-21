@@ -1,0 +1,16 @@
+<h2><%= t("admin.categories.index.title") %></h2>
+<h3><%= page_entries_info @categories %></h3>
+<ul id="categories" class="admin-list">
+  <% CategoryDecorator.decorate_collection(@categories).each do |category| %>
+    <li>
+      <span><%= category.name_with_code %></span>
+      <%= link_to t('admin.categories.index.edit'), edit_admin_category_path(category), class: "button tiny radius alert right" %>
+    </li>
+  <% end %>
+</ul>
+
+<%= paginate @categories %>
+
+<div class="right">
+  <%= link_to t('admin.categories.index.new'), new_admin_category_path, class: "button radius alert right" %>
+</div>
