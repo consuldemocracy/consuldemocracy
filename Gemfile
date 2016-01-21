@@ -49,7 +49,6 @@ gem 'dalli'
 gem 'delayed_job_active_record', '~> 4.1.0'
 gem 'daemons'
 gem 'devise-async'
-gem 'newrelic_rpm', '~> 3.14'
 gem 'whenever', require: false
 gem 'pg_search'
 gem 'acts_as_list'
@@ -111,6 +110,7 @@ group :development do
 end
 
 group :production do
+  gem 'newrelic_rpm'
   gem 'passenger'
   gem 'heroku-deflater'
   gem 'rails_12factor'
