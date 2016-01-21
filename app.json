@@ -33,6 +33,11 @@
       "description": "Tasks to perform after deployment.",
       "required": false,
       "value": "db:migrate"
+    },
+    "FORCE_SSL": {
+      "description": "Force SSL?",
+      "required": false,
+      "value": "true"
     }
   },
   "addons": [
