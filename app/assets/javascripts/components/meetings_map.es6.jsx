@@ -55,6 +55,15 @@ class MeetingsMap extends React.Component {
               lng: meeting.address_longitude,
             },
             animation: google.maps.Animation.DROP,
+            icon: {
+              path: "M25 0c-8.284 0-15 6.656-15 14.866 0 8.211 15 35.135 15 35.135s15-26.924 15-35.135c0-8.21-6.716-14.866-15-14.866zm-.049 19.312c-2.557 0-4.629-2.055-4.629-4.588 0-2.535 2.072-4.589 4.629-4.589 2.559 0 4.631 2.054 4.631 4.589 0 2.533-2.072 4.588-4.631 4.588z",
+              fillOpacity: 1,
+		          strokeColor: '#fff',
+              strokeWeight: 2,
+              size: {width: 25, height: 25},
+              scale: 0.6,
+              fillColor: '#970092',
+            },
             map: map
           });
 
@@ -67,8 +76,8 @@ class MeetingsMap extends React.Component {
                         <div>${ meeting.description }</div>
                       </div>`
           });
-        marker.infoWindow = infoWindow;
         markers.map((marker) => { if(marker.infoWindow) marker.infoWindow.close(); } );
+        marker.infoWindow = infoWindow;
         infoWindow.open(map, marker);
       });
 
@@ -76,7 +85,10 @@ class MeetingsMap extends React.Component {
     });
 
     this.markers = markers;
-    this.markerClusterer = new MarkerClusterer(this.map, this.markers, { ignoreHidden: true });
+    this.markerClusterer = new MarkerClusterer(this.map, this.markers, {
+      gridSize: 30,
+      ignoreHidden: true
+    });
   }
 
   checkMarkersVisibility () {

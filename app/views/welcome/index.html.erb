@@ -1,19 +1,12 @@
-<% content_for :header do %>
-  <div class="row home-page">
-    <div class="small-12 medium-7 column">
-      <h1><%= t("layouts.header.open_city_title") %></h1>
-      <p>
-        <%= t("layouts.header.open_city_slogan_html") %>&nbsp;
-        <%= link_to t("layouts.header.more_information"), page_path('more_information') %>
-      </p>
-      <div class="small-12 medium-6">
-        <%= link_to t("layouts.header.see_all"), proposals_path, class: "button radius see-more warning expand" %>
-      </div>
+<div class="home-banner">
+  <div class="row">
+    <div class="small-12 medium-6 column">
+      <h2><%= t("layouts.header.open_city_title") %></h2>
+      <%= link_to t('layouts.header.see_all'), proposals_path, class: 'button small see-proposals' %>
     </div>
 
-    <div class="show-for-medium-up small-12 medium-5 column text-center">
-      <i class="icon-debates icon-home-big"></i>
-      <i class="icon-debates icon-home-small"></i>
+    <div class="small-12 medium-6 column">
+      <%= render partial: 'video' %>
     </div>
-  </div>
-<% end %>
+  </h2>
+</div>

@@ -1,0 +1,73 @@
+#header{
+  .top-menu{
+    border-bottom: 1px solid #f2f3f3;
+    line-height: rem-calc(45px);
+  }
+
+  .barcelona-link a, .barcelona-switcher a{
+    color: $text;
+    font-size: rem-calc(20px);
+    font-weight: bold;
+    text-decoration: none;
+  }
+
+  .barcelona-switcher{
+    text-align: right;
+  }
+
+  .locale-switcher{
+    text-align: center;
+    color: $text-medium;
+
+    .locale-switcher-label{
+      font-weight: bold;
+    }
+  }
+
+  .session-menu{
+    text-align: right;
+
+    ul{
+      margin: 0;
+      padding: 0;
+      line-height: rem-calc(100px);
+
+      li{
+        margin: 0;
+        margin-left: 1rem;
+        padding: 0;
+        display: inline-block;
+      }
+    }
+  }
+
+  .main-menu{
+    @include display(flex);
+    margin-bottom: rem-calc(20);
+
+    a{
+      @include flex(1);
+      display: block;
+      background-color: $highlight;
+      line-height: rem-calc(40);
+      text-align: center;
+      text-transform: uppercase;
+      color: $text;
+      text-decoration: none;
+      margin: 0 rem-calc(1px);
+
+      &.active, &:hover.active{
+        background-color: $brand;
+        color: $text-inverse;
+      }
+
+      &:hover{
+        background-color: darken($highlight, 5%);
+      }
+
+      &.home{
+        @include flex(0 0 rem-calc(50));
+      }
+    }
+  }
+}

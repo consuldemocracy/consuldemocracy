@@ -29,7 +29,6 @@ ca:
       verify_my_account: Verificar el meu compte
   application:
     close: Tancar
-    menu: Menú
   categories:
     filter: Veure propostes
     title: Eixos
@@ -187,13 +186,9 @@ ca:
         one: Tens una nova notificació
         other: Tens %{count} notificacions noves
       no_notifications: No tens notificacions noves
-      open: obert
-      open_city_slogan_html: Hi ciutats governades directament pels seus habitants, <b>que</b> debaten sobre temes que els preocupen, <b>proposen</b> idees per millorar les seves vides i <b>decideixen entre</b> totes i tots les que es duen a terme. Barcelona ja és una d'elles.
-      open_city_title: La ciutat que vols serà la ciutat que vulguis.
-      open_data: Dades obertes
-      open_gov: Govern %{open}
+      open_city_title: Construïm juntes la ciutat que volem
       proposals: Propostes
-      see_all: Veure propostes
+      see_all: Veure les propostes del PAM
       spending_proposals: Pressupostos ciutadans
   legislation:
     help:
@@ -269,6 +264,7 @@ ca:
       show_link: Veure proposta
     form:
       proposal_external_url: Enllaç a documentació addicional
+      proposal_oficial: La proposta és oficial
       proposal_question: Pregunta de la proposta
       proposal_question_example_html: Ha de ser resumida en una pregunta la resposta sigui Sí o No. <em>Ex. 'Està vostè d'acord en vianants el carrer Major?'</em>
       proposal_responsible_name: Nom i cognoms de la persona que fa aquesta proposta
@@ -282,7 +278,6 @@ ca:
       proposal_title: Títol de la proposta
       proposal_video_url: Enllaç a vídeo extern
       proposal_video_url_note: Pots afegir un enllaç a YouTube o Vimeo
-      proposal_oficial: La proposta és oficial
       tags_instructions: Etiqueta aquesta proposta. Pots triar entre les nostres propostes o introduir les que vulguis.
       tags_label: Temes
       tags_placeholder: Escriu les etiquetes que vulguis separades per una coma (',')

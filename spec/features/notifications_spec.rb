@@ -18,6 +18,8 @@ feature "Notifications" do
 
     logout
     login_as author
+    author.reload
+
     visit root_path
 
     find(".icon-notification").click
@@ -49,10 +51,12 @@ feature "Notifications" do
     end
 
     logout
+    author.reload
+
     login_as author
     visit root_path
 
-    find(".icon-notification").click
+    find(".session-menu .icon-notification").click
 
     expect(page).to have_css ".notification", count: 1
 
@@ -77,6 +81,8 @@ feature "Notifications" do
 
     logout
     login_as author
+    author.reload
+
     visit root_path
 
     find(".icon-notification").click
@@ -105,6 +111,8 @@ feature "Notifications" do
     end
 
     login_as author
+    author.reload
+
     visit root_path
 
     find(".icon-notification").click

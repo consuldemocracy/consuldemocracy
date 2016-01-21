@@ -29,7 +29,6 @@ en:
       verify_my_account: Verify my account
   application:
     close: Close
-    menu: Menu
   categories:
     filter: Show proposals
     title: Axis
@@ -187,13 +186,9 @@ en:
         one: You have a new notification
         other: You have %{count} new notifications
       no_notifications: You don't have new notifications
-      open: open
-      open_city_slogan_html: There are cities that are governed directly by their inhabitants, who <b>discuss</b> the topics they are concerned about, <b>propose</b> ideas to improve their lives and <b>decide</b> among themselves which ones will be carried out. Barcelona is already one of these cities.
-      open_city_title: Love the city, and it will become a city you love.
-      open_data: Open data
-      open_gov: Open government
+      open_city_title: Let's build the city we love together
       proposals: Proposals
-      see_all: See proposals
+      see_all: See the PAM's proposals
       spending_proposals: Spending proposals
   legislation:
     help:
@@ -269,6 +264,7 @@ en:
       show_link: View proposal
     form:
       proposal_external_url: Link to additional documentation
+      proposal_oficial: This proposal is oficial
       proposal_question: Proposal question
       proposal_question_example_html: Must be summarised in one question with a Yes or No answer. <em>E.g. 'Do you agree with the pedestrianisation of Calle Mayor?'</em>
       proposal_responsible_name: Full name of the person submitting the proposal
@@ -282,7 +278,6 @@ en:
       proposal_title: Proposal title
       proposal_video_url: Link to external video
       proposal_video_url_note: You may add a link to YouTube or Vimeo
-      proposal_oficial: This proposal is oficial
       tags_instructions: Tag this proposal. You can choose from our tags or add your own.
       tags_label: Tags
       tags_placeholder: Enter the tags you would like to use, separated by commas (',')

@@ -15,13 +15,13 @@ es:
       remove: Delete
       title: Título
     proposal_filter_option:
+      citizenship: Ciudadania
       city: Toda la ciudad
       district: Un distrito
       oficial: Programa (Ayuntamiento)
-      citizenship: Ciudadania
     proposal_filter_option_group:
-      source: Orígen
       category_id: Eje
-      district: Districto
+      district: Distrito
       scope: "Ámbito"
+      source: Origen
       subcategory_id: Línea de actuación

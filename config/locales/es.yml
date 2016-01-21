@@ -29,7 +29,6 @@ es:
       verify_my_account: Verificar mi cuenta
   application:
     close: Cerrar
-    menu: Menú
   categories:
     filter: Ver propuestas
     title: Ejes
@@ -187,13 +186,9 @@ es:
         one: Tienes una nueva notificación
         other: Tienes %{count} notificaciones nuevas
       no_notifications: No tienes notificaciones nuevas
-      open: abierto
-      open_city_slogan_html: Existen ciudades gobernadas directamente por sus habitantes, que <b>debaten</b> sobre temas que les preocupan, <b>proponen</b> ideas para mejorar sus vidas y <b>deciden</b> entre todas y todos las que se llevan a cabo. Barcelona ya es una de ellas.
-      open_city_title: La ciudad que quieres será la ciudad que quieras.
-      open_data: Datos abiertos
-      open_gov: Gobierno %{open}
+      open_city_title: Construyamos juntas la ciudad que queremos
       proposals: Propuestas
-      see_all: Ver propuestas
+      see_all: Ver las propuestas del PAM
       spending_proposals: Presupuestos ciudadanos
   legislation:
     help:
@@ -269,6 +264,7 @@ es:
       show_link: Ver propuesta
     form:
       proposal_external_url: Enlace a documentación adicional
+      proposal_oficial: La propuesta es oficial
       proposal_question: Pregunta de la propuesta
       proposal_question_example_html: Debe ser resumida en una pregunta cuya respuesta sea Sí o No. <em>Ej. '¿Está usted de acuerdo en peatonalizar la calle Mayor?'</em>
       proposal_responsible_name: Nombre y apellidos de la persona que hace esta propuesta
@@ -282,7 +278,6 @@ es:
       proposal_title: Título de la propuesta
       proposal_video_url: Enlace a vídeo externo
       proposal_video_url_note: Puedes añadir un enlace a YouTube o Vimeo
-      proposal_oficial: La propuesta es oficial
       tags_instructions: Etiqueta esta propuesta. Puedes elegir entre nuestras sugerencias o introducir las que desees.
       tags_label: Temas
       tags_placeholder: Escribe las etiquetas que desees separadas por una coma (',')

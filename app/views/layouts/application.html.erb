@@ -17,6 +17,7 @@
                      sizes: "200x200",
                      type: "image/png" %>
     <%= content_for :social_media_meta_tags %>
+    <%= render partial: 'layouts/fonts' %>
 
     <%= Setting['per_page_code'].try(:html_safe) %>
 

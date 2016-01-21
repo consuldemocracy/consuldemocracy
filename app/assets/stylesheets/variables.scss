@@ -11,26 +11,27 @@
 // 01. Typography
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
-$font-logo:           'Lato' !important;
-$font-sans:           'Source Sans Pro', 'Helvetica', 'Arial', sans-serif !important;
+$font-sans:           'Source Sans Pro', 'Helvetica', 'Arial', sans-serif;
+$font-logo:           $font-sans;
 
+$font-light:          200;
 $font-normal:         400;
-$font-bold:           700;
+$font-bold:           600;
 
-$base-font-size:      rem-calc(17);
-$base-line-height:    rem-calc(26);
+$base-font-size:      rem-calc(14);
+$base-line-height:    $base-font-size * 1.5;
 
-$h1-font-size:        rem-calc(44);
-$h1-line-height:      rem-calc(57);
+$h1-font-size:        rem-calc(40);
+$h1-line-height:      $h1-font-size * 1.5;
 
 $h2-font-size:        rem-calc(34);
 $h2-line-height:      rem-calc(44);
 
-$h3-font-size:        rem-calc(24);
-$h3-line-height:      rem-calc(31);
+$h3-font-size:        rem-calc(20);
+$h3-line-height:      rem-calc(30);
 
-$h4-font-size:        rem-calc(19);
-$h4-line-height:      rem-calc(25);
+$h4-font-size:        rem-calc(18);
+$h4-line-height:      rem-calc(27);
 
 $h5-font-size:        rem-calc(16);
 $h5-line-height:      rem-calc(21);
@@ -45,15 +46,14 @@ $line-height:         rem-calc(24);
 // 02. Colors
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
-$brand:             #004A83;
 $body:              #E9E9E9;
-$background:        #ededed;
-$dark:              #0B0C0C;
+$background:        #fff;
+$dark:              #000;
 $border:            darken($background, 10%);
-$brand:             #E9283D;
+$brand:             #970092;
 
-$text:              #222222;
-$text-medium:       #999999;
+$text:              #000;
+$text-medium:       #666;
 $text-light:        #CCCCCC;
 $text-inverse:      #fff;
 
@@ -77,7 +77,7 @@ $proposals-border:  #CC8425;
 
 $budget:            #454372;
 
-$highlight:         $background;
+$highlight:         #f2f2f2;
 $featured:          #FED900;
 
 $footer-bg:         #DEE0E2;
