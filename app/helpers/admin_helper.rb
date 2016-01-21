@@ -1,7 +1,7 @@
 module AdminHelper
 
   def side_menu
-    render "/#{namespace}/menu"
+    render "/#{top_level_namespace}/menu"
   end
 
   def official_level_options
@@ -13,6 +13,10 @@ module AdminHelper
   end
 
   private
+
+    def top_level_namespace
+      namespace.split(':').first
+    end
 
     def namespace
       controller.class.parent.name.downcase

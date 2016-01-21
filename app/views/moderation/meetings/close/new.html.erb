@@ -1,0 +1,39 @@
+<div class="meeting-new row">
+  <div class="small-12 medium-9 column">
+    <%= form_for(@meeting, url: moderation_meeting_close_url(@meeting), method: :post) do |f| %>
+      <%= render 'shared/errors', resource: @meeting %>
+
+      <div class="row">
+        <div class="ckeditor small-12 column">
+          <%= f.label :close_report, t("meetings.close.form.close_report") %>
+          <%= f.cktext_area :close_report, ckeditor: { language: I18n.locale }, label: false %>
+        </div>
+
+        <div class="small-12 column">
+          <table>
+            <thead>
+              <tr>
+                <th><%= t("meetings.close.form.proposals.title") %></th>
+                <th><%= t("meetings.close.form.proposals.votes") %></th>
+                <th><%= t("meetings.close.form.proposals.groups") %></th>
+              </tr>
+            </thead>
+            <tbody>
+              <%= f.fields_for :meeting_proposals do |ff| %>
+                <tr>
+                  <td><%= ff.object.title %></td>
+                  <td><%= ff.number_field :votes, label: false %></td>
+                  <td><%= ff.text_field :groups, label: false %></td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="actions small-12 column">
+          <%= f.submit(class: "button radius", value: t("meetings.close.#{action_name}.form.submit_button")) %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

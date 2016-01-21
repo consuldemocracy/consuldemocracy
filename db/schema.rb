@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160119171941) do
+ActiveRecord::Schema.define(version: 20160120103706) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -229,6 +229,8 @@ ActiveRecord::Schema.define(version: 20160119171941) do
     t.float    "address_longitude"
     t.string   "address_details"
     t.tsvector "tsv"
+    t.text     "close_report"
+    t.datetime "closed_at"
   end
 
   add_index "meetings", ["tsv"], name: "index_meetings_on_tsv", using: :gin
@@ -236,6 +238,8 @@ ActiveRecord::Schema.define(version: 20160119171941) do
   create_table "meetings_proposals", force: :cascade do |t|
     t.integer "meeting_id"
     t.integer "proposal_id"
+    t.integer "votes"
+    t.string  "groups"
   end
 
   create_table "moderators", force: :cascade do |t|

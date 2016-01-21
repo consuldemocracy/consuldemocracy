@@ -44,6 +44,10 @@ es:
         title: Debates
     meetings:
       index:
+        filters:
+          all: Todos
+          closed: Cerrados
+          pending: Pendientes
         headers:
           meeting: Encuentro presencial
         search_form:

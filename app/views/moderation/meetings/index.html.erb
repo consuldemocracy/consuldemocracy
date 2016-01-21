@@ -1,5 +1,7 @@
 <h2><%= t("moderation.meetings.index.title") %></h2>
 
+<%= render 'shared/filter_subnav', i18n_namespace: "moderation.meetings.index" %>
+
 <div class="row">
   <div class="small-8 column">
     <%= render "shared/search_form",
@@ -29,6 +31,7 @@
         <%= meeting.author.username %>
         <div class="right">
           <%= link_to t("meetings.index.edit"), edit_moderation_meeting_path(meeting), class: 'button radius small' %>
+          <%= link_to t("meetings.index.close"), new_moderation_meeting_close_path(meeting), class: 'button radius small' %>
         </div>
         <br>
         <div>

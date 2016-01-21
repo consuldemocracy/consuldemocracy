@@ -31,8 +31,8 @@ en:
     close: Close
     menu: Menu
   categories:
+    filter: Show proposals
     title: Axis
-    filter: "Show proposals"
   comments:
     comment:
       admin: Administrator
@@ -204,6 +204,16 @@ en:
       title: How I can comment this document?
   locale: English
   meetings:
+    close:
+      form:
+        close_report: Report
+        proposals:
+          groups: Groups
+          title: Title
+          votes: Votes
+      new:
+        form:
+          submit_button: Close meeting
     edit:
       form:
         submit_button: Update meeting
@@ -217,6 +227,7 @@ en:
       meeting_start_at: What time does it start?
       meeting_title: Title
     index:
+      close: Close
       edit: Edit
       new: Create meeting
       title: Meetings

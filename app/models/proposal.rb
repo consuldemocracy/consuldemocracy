@@ -19,7 +19,8 @@ class Proposal < ActiveRecord::Base
 
   belongs_to :author, -> { with_hidden }, class_name: 'User', foreign_key: 'author_id'
   has_many :comments, as: :commentable
-  has_and_belongs_to_many :meetings
+  has_many :meeting_proposals
+  has_many :meetings, through: :meeting_proposals
 
   validates :title, presence: true
   validates :summary, presence: true, length: { maximum: 350 }
