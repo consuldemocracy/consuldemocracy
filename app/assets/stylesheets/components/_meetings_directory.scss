@@ -2,11 +2,14 @@
   .map {
     height: 400px;
   }
-
 }
 
 .meetings-directory .meeting, .meeting-infowindow{
   .meeting-title {
     font-weight: bold;
+  }
+
+  .tags{
+    margin-bottom: 0.5em;
   }
 }
