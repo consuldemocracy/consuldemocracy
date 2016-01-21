@@ -229,6 +229,8 @@ ActiveRecord::Schema.define(version: 20160121145110) do
     t.float    "address_longitude"
     t.string   "address_details"
     t.tsvector "tsv"
+    t.text     "close_report"
+    t.datetime "closed_at"
   end
 
   add_index "meetings", ["tsv"], name: "index_meetings_on_tsv", using: :gin
@@ -236,6 +238,8 @@ ActiveRecord::Schema.define(version: 20160121145110) do
   create_table "meetings_proposals", force: :cascade do |t|
     t.integer "meeting_id"
     t.integer "proposal_id"
+    t.integer "votes"
+    t.string  "groups"
   end
 
   create_table "moderators", force: :cascade do |t|
