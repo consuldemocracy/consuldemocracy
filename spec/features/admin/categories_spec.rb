@@ -22,7 +22,23 @@ feature 'Admin categories' do
 
     click_button "Create axis"
 
+    expect(page).to have_content "Category created successfully."
     expect(page).to have_content("1. Axis 1")
+  end
+
+  scenario "Edit an existing category", :js do
+    create(:category, name: { en: "My axis" })
+
+    visit admin_categories_path
+
+    click_link "Edit"
+
+    fill_in "name_en", with: "My edited axis"
+
+    click_button "Update axis"
+
+    expect(page).to have_content "Category updated successfully."
+    expect(page).to have_content("My edited axis")
   end
 
 end
