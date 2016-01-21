@@ -31,7 +31,7 @@ es:
     close: Cerrar
   categories:
     filter: Ver propuestas
-    title: Ejes
+    title: Documentos
   comments:
     comment:
       admin: Administrador
@@ -177,7 +177,7 @@ es:
       debates: Debates
       external_link_blog: Blog
       locale: 'Idioma:'
-      meetings: Encuentros presenciales
+      meetings: Citas
       moderation: Moderar
       more_information: Más información
       my_account_link: Mi cuenta
@@ -186,9 +186,9 @@ es:
         one: Tienes una nueva notificación
         other: Tienes %{count} notificaciones nuevas
       no_notifications: No tienes notificaciones nuevas
-      open_city_title: Construyamos juntas la ciudad que queremos
+      open_city_title: Construyamos la ciudad que queremos
       proposals: Propuestas
-      see_all: Ver las propuestas del PAM
+      see_all: Entra y participa
       spending_proposals: Presupuestos ciudadanos
   legislation:
     help:
