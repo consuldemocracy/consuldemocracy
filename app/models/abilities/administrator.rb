@@ -38,6 +38,8 @@ module Abilities
       can :manage, Meeting
 
       can :manage, SpendingProposal
+
+      can :manage, Category
     end
   end
 end

@@ -24,6 +24,10 @@ ca:
           on_users: Usuaris
         title: Activitat dels Moderadors
         type: Tipus
+    categories:
+      index:
+        edit: Editar
+        title: Eixos
     comments:
       index:
         filter: Filtre

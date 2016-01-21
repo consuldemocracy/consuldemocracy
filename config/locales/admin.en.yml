@@ -24,6 +24,10 @@ en:
           on_users: Users
         title: Moderator activity
         type: Type
+    categories:
+      index:
+        edit: Edit
+        title: Axis
     comments:
       index:
         filter: Filter

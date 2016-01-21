@@ -24,6 +24,10 @@ es:
           on_users: Usuarios
         title: Actividad de los Moderadores
         type: Tipo
+    categories:
+      index:
+        edit: Editar
+        title: Ejes
     comments:
       index:
         filter: Filtro

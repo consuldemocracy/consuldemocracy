@@ -30,7 +30,14 @@ es:
   application:
     close: Cerrar
   categories:
+    edit:
+      form:
+        submit_button: Actualizar categoría
     filter: Ver propuestas
+    form:
+      category_description: Descripción
+      category_name: Nombre
+      category_position: Posición
     title: Documentos
   comments:
     comment:
