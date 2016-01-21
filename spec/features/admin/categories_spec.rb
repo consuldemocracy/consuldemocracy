@@ -41,6 +41,17 @@ feature 'Admin categories' do
     expect(page).to have_content("My edited axis")
   end
 
+  scenario "Delete an existing category" do
+    create(:category, name: { en: "My axis" })
+
+    visit admin_categories_path
+
+    click_link "Delete"
+
+    expect(page).to have_content "Category deleted successfully."
+    expect(page).to_not have_content("My axis")
+  end
+
   scenario "Create a subcategory for an existing category", :js do
     create(:category, name: { en: "My axis" })
 
@@ -70,7 +81,7 @@ feature 'Admin categories' do
 
     visit admin_categories_path
 
-    click_link "View action lines", match: :first
+    click_link "View action lines"
     click_link "Edit"
 
     fill_in "name_en", with: "My edited action line"
@@ -80,4 +91,18 @@ feature 'Admin categories' do
     expect(page).to have_content "Subcategory updated successfully."
     expect(page).to have_content("My edited action line")
   end
+
+  scenario "Delete an existing subcategory" do
+    category = create(:category, name: { en: "My axis" })
+    create(:subcategory, name: { en: "My action line" }, category_id: category.id)
+
+    visit admin_categories_path
+
+    click_link "View action lines"
+    click_link "Delete"
+
+    expect(page).to have_content "Subcategory deleted successfully."
+    expect(page).to_not have_content("My action line")
+  end
+
 end

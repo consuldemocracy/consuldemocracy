@@ -34,6 +34,11 @@ class Admin::CategoriesController < Admin::BaseController
     end
   end
 
+  def destroy
+    @category.destroy
+    redirect_to admin_categories_url, notice: t('flash.actions.destroy.notice', resource_name: "Category")
+  end
+
   private
 
   def strong_params

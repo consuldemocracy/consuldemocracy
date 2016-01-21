@@ -40,13 +40,6 @@ ca:
     new:
       form:
         submit_button: Crear eix
-  subcategories:
-    edit:
-      form:
-        submit_button: Actualitzar línia d'acció
-    new:
-      form:
-        submit_button: Crear línia d'acció
   comments:
     comment:
       admin: Administrador
@@ -429,6 +422,13 @@ ca:
       recommendation_two: Qualsevol proposta o comentari que impliqui accions il·legals serà eliminada.
       recommendations_title: Com crear una proposta de despesa
       start_new: Crear una proposta de despesa
+  subcategories:
+    edit:
+      form:
+        submit_button: Actualitzar línia d'acció
+    new:
+      form:
+        submit_button: Crear línia d'acció
   users:
     show:
       deleted: Eliminat

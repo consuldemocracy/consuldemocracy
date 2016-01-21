@@ -36,6 +36,11 @@ class Admin::SubcategoriesController < Admin::BaseController
     end
   end
 
+  def destroy
+    @subcategory.destroy
+    redirect_to admin_category_subcategories_url(@category), notice: t('flash.actions.destroy.notice', resource_name: "Subcategory")
+  end
+
   private
 
   def load_category

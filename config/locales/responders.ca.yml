@@ -7,6 +7,8 @@ ca:
         notice: "%{resource_name} creat correctament."
         proposal: Proposta creada correctament.
         spending_proposal: Proposta de despesa creat correctament.
+      destroy:
+        notice: "%{resource_name} s'ha esborrat correctament."
       save_changes:
         notice: Canvis guardats
       update:

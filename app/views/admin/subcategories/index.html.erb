@@ -4,7 +4,10 @@
   <% SubcategoryDecorator.decorate_collection(@subcategories).each do |subcategory| %>
     <li>
       <span><%= subcategory.name_with_code %></span>
-      <%= link_to t('admin.subcategories.index.edit'), edit_admin_category_subcategory_path(@category, subcategory), class: "button tiny radius alert right" %>
+      <div class="right">
+        <%= link_to t('admin.subcategories.index.edit'), edit_admin_category_subcategory_path(@category, subcategory), class: "button tiny radius" %>
+        <%= link_to t('admin.subcategories.index.delete'), admin_category_subcategory_path(@category, subcategory), method: :delete,  class: "button tiny radius alert", data: { confirm: t('admin.actions.confirm') } %>
+      </div>
     </li>
   <% end %>
 </ul>

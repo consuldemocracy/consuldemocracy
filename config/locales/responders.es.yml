@@ -3,13 +3,15 @@ es:
   flash:
     actions:
       create:
+        debate: Debate creado correctamente.
         notice: "%{resource_name} creado correctamente."
-        debate: "Debate creado correctamente."
-        proposal: "Propuesta creada correctamente."
-        spending_proposal: "Propuesta de gasto creada correctamente."
+        proposal: Propuesta creada correctamente.
+        spending_proposal: Propuesta de gasto creada correctamente.
+      destroy:
+        notice: "%{resource_name} borrado correctamente."
       save_changes:
         notice: Cambios guardados
       update:
+        debate: Debate actualizado correctamente.
         notice: "%{resource_name} actualizado correctamente."
-        debate: "Debate actualizado correctamente."
-        proposal: "Propuesta actualizada correctamente."
+        proposal: Propuesta actualizada correctamente.
