@@ -4,7 +4,12 @@ en:
     actions:
       create:
         notice: "%{resource_name} created successfully."
+        debate: "Debate created successfully."
+        proposal: "Proposal created successfully."
+        spending_proposal: "Spending proposal created successfully."
       save_changes:
         notice: Changes saved
       update:
         notice: "%{resource_name} updated successfully."
+        debate: "Debate updated successfully."
+        proposal: "Proposal updated successfully."
