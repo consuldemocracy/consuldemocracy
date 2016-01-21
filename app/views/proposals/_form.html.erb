@@ -65,10 +65,10 @@
 
     <% if current_user.administrator? %>
       <div class="small-12 column">
-        <%= f.label :oficial do %>
-          <%= f.check_box :oficial, label: false %>
+        <%= f.label :official do %>
+          <%= f.check_box :official, label: false %>
           <span class="checkbox">
-            <%= t("proposals.form.proposal_oficial") %>
+            <%= t("proposals.form.proposal_official") %>
           </span>
         <% end %>
       </div>

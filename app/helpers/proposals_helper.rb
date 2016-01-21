@@ -29,6 +29,6 @@ module ProposalsHelper
   end
 
   def proposal_class_names(proposal)
-    proposal.oficial? ? 'oficial' : ''
+    proposal.official? ? 'official' : ''
   end
 end

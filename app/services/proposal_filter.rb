@@ -33,7 +33,7 @@ class ProposalFilter
       end
 
       if @params["source"].present?
-        @params["oficial"] = @params["source"].include? "oficial"
+        @params["official"] = @params["source"].include? "official"
       end
     end
   end

@@ -41,7 +41,7 @@ class ProposalsController < ApplicationController
       permitted_params = [:title, :question, :summary, :description, :external_url, :video_url, :responsible_name, :tag_list, :terms_of_service, :captcha, :captcha_key, :category_id, :subcategory_id, :scope, :district]
 
       if current_user.administrator?
-        permitted_params << :oficial
+        permitted_params << :official
       end
 
       params.require(:proposal).permit(permitted_params)

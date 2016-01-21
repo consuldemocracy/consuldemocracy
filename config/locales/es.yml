@@ -264,7 +264,7 @@ es:
       show_link: Ver propuesta
     form:
       proposal_external_url: Enlace a documentación adicional
-      proposal_oficial: La propuesta es oficial
+      proposal_official: La propuesta es oficial
       proposal_question: Pregunta de la propuesta
       proposal_question_example_html: Debe ser resumida en una pregunta cuya respuesta sea Sí o No. <em>Ej. '¿Está usted de acuerdo en peatonalizar la calle Mayor?'</em>
       proposal_responsible_name: Nombre y apellidos de la persona que hace esta propuesta
