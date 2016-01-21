@@ -83,6 +83,13 @@
       <% end %>
     </li>
 
+    <li <%= "class=active" if (controller_name == "categories" || controller_name == "subcategories") %>>
+      <%= link_to admin_categories_path do %>
+        <i class="icon-check"></i>
+        <%= t("admin.menu.categories") %>
+      <% end %>
+    </li>
+
     <li <%= 'class=active' if controller_name == 'settings' %>>
       <%= link_to admin_settings_path do %>
         <i class="icon-settings"></i>

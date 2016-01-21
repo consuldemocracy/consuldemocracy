@@ -66,6 +66,7 @@ en:
       settings: General settings
       spending_proposals: Spending proposals
       stats: Statistics
+      categories: Axis management
     moderators:
       index:
         title: Moderators

@@ -66,6 +66,7 @@ es:
       settings: Configuración global
       spending_proposals: Propuestas de gasto
       stats: Estadísticas
+      categories: Gestión de ejes
     moderators:
       index:
         title: Moderadores

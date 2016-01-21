@@ -66,6 +66,7 @@ ca:
       settings: Configuració global
       spending_proposals: Propostes de despesa
       stats: Estadístiques
+      categories: Gestió d'eixos
     moderators:
       index:
         title: Moderadors
