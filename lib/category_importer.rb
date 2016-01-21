@@ -14,10 +14,23 @@ module CategoryImporter
 
   def self.import_category(data)
     subcategories = data.delete("subcategories")
-    category = Category.create(data)
+
+    if data["id"].present?
+      id = data.delete "id"
+      category = Category.find(id)
+      category.update_attributes(data)
+    else
+      category = Category.create(data)
+    end
 
     subcategories.each do |subcategory_data|
-      Subcategory.create(subcategory_data.merge("category" => category))
+      if subcategory_data["id"].present?
+        id = subcategory_data.delete "id"
+        subcategory = Subcategory.find(id)
+        subcategory.update_attributes(subcategory_data)
+      else
+        Subcategory.create(subcategory_data.merge("category" => category))
+      end
     end
 
     category
