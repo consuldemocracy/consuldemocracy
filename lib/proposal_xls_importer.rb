@@ -34,7 +34,7 @@ class ProposalXLSImporter
     proposal = Proposal.create(attrs.merge!({ 
       author_id: admin.id,
       responsible_name: responsible_name,
-      oficial: true,
+      official: true,
       terms_of_service: '1'
     }))
   end

@@ -16,7 +16,7 @@ class ProposalFilters extends React.Component {
           filterGroupValue={this.state.filters.get('source')}
           isExclusive={true}
           onChangeFilterGroup={(filterGroupName, filterGroupValue) => this.changeFilterGroup(filterGroupName, filterGroupValue) }>
-          <ProposalFilterOption filterName="oficial" />
+          <ProposalFilterOption filterName="official" />
           <ProposalFilterOption filterName="citizenship" />
         </ProposalFilterOptionGroup>
         <ProposalFilterOptionGroup 
