@@ -6,6 +6,8 @@ ruby '2.2.4'
 gem 'rails', '4.2.5'
 # Use PostgreSQL
 gem 'pg'
+gem 'redis'
+gem 'redis-activesupport'
 # Use SCSS for stylesheets
 gem 'sassc-rails'
 # Use Uglifier as compressor for JavaScript assets
@@ -110,6 +112,7 @@ group :development do
 end
 
 group :production do
+  gem 'rack-attack'
   gem 'newrelic_rpm'
   gem 'passenger'
   gem 'heroku-deflater'
