@@ -10,7 +10,7 @@ describe Users::RegistrationsController do
 
     context "when username is available" do
       it "should return true with no error message" do
-        post :check_username, username: "available username"
+        get :check_username, username: "available username"
 
         data = JSON.parse response.body, symbolize_names: true
         expect(data[:available]).to be true
@@ -19,9 +19,9 @@ describe Users::RegistrationsController do
     end
 
     context "when username is not available" do
-      it "should return true with no error message" do
+      it "should return false with an error message" do
         user = create(:user)
-        post :check_username, username: user.username
+        get :check_username, username: user.username
 
         data = JSON.parse response.body, symbolize_names: true
         expect(data[:available]).to be false
