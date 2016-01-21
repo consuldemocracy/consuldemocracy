@@ -26,9 +26,11 @@ ca:
         type: Tipus
     categories:
       index:
+        delete: Esborrar
         edit: Editar
         new: Crear eix
         title: Eixos
+        view_subcategories: Veure línies d'acció
     comments:
       index:
         filter: Filtre
@@ -168,6 +170,12 @@ ca:
           visits: Visites
           votes: Vots
         visits_title: Visites
+    subcategories:
+      index:
+        delete: Esborrar
+        edit: Editar
+        new: Crear línea d'acció
+        title: Línies d'acció
     tags:
       create: Crea un tema
       destroy: Eliminar Tema

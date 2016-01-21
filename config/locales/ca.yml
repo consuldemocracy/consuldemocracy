@@ -30,18 +30,23 @@ ca:
   application:
     close: Tancar
   categories:
-    new:
-      form:
-        submit_button: Crear eix
     edit:
       form:
         submit_button: Actualitzar eix
-    filter: Veure propostes
     form:
       category_description: Descripció
       category_name: Nom
       category_position: Posició
-    title: Documents
+    new:
+      form:
+        submit_button: Crear eix
+  subcategories:
+    edit:
+      form:
+        submit_button: Actualitzar línia d'acció
+    new:
+      form:
+        submit_button: Crear línia d'acció
   comments:
     comment:
       admin: Administrador

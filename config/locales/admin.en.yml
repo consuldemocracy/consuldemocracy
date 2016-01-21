@@ -26,9 +26,11 @@ en:
         type: Type
     categories:
       index:
+        delete: Delete
         edit: Edit
         new: Create axis
         title: Axis
+        view_subcategories: View action lines
     comments:
       index:
         filter: Filter
@@ -168,6 +170,12 @@ en:
           visits: Visits
           votes: Total votes
         visits_title: Visits
+    subcategories:
+      index:
+        delete: Delete
+        edit: Edit
+        new: Create action line
+        title: Action lines
     tags:
       create: Create Topic
       destroy: Destroy Topic

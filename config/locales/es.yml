@@ -30,18 +30,23 @@ es:
   application:
     close: Cerrar
   categories:
-    new:
-      form:
-        submit_button: Crear eje
     edit:
       form:
         submit_button: Actualizar eje
-    filter: Ver propuestas
     form:
       category_description: Descripción
       category_name: Nombre
       category_position: Posición
-    title: Documentos
+    new:
+      form:
+        submit_button: Crear eje
+  subcategories:
+    edit:
+      form:
+        submit_button: Actualitzar línea de acción
+    new:
+      form:
+        submit_button: Crear línea de acción
   comments:
     comment:
       admin: Administrador

@@ -26,9 +26,11 @@ es:
         type: Tipo
     categories:
       index:
+        delete: Borrar
         edit: Editar
         new: Crear eje
         title: Ejes
+        view_subcategories: Ver líneas de acción
     comments:
       index:
         filter: Filtro
@@ -168,6 +170,12 @@ es:
           visits: Visitas
           votes: Votos
         visits_title: Visitas
+    subcategories:
+      index:
+        delete: Borrar
+        edit: Editar
+        new: Crear línea de acción
+        title: Líneas de acción
     tags:
       create: Crear Tema
       destroy: Eliminar Tema

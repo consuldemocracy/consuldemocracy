@@ -30,18 +30,23 @@ en:
   application:
     close: Close
   categories:
-    new:
-      form:
-        submit_button: Create axis
     edit:
       form:
         submit_button: Update axis
-    filter: Show proposals
     form:
       category_description: Description
       category_name: Name
       category_position: Position
-    title: Documents
+    new:
+      form:
+        submit_button: Create axis
+  subcategories:
+    edit:
+      form:
+        submit_button: Update action line
+    new:
+      form:
+        submit_button: Create action line
   comments:
     comment:
       admin: Administrator

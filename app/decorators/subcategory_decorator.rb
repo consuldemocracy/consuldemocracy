@@ -9,7 +9,7 @@ class SubcategoryDecorator < ApplicationDecorator
   end
 
   def code
-    "#{category.position}. #{position}."
+    "#{category.position}.#{position}."
   end
 
   def name_with_code

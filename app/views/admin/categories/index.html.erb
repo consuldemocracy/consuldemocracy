@@ -4,7 +4,10 @@
   <% CategoryDecorator.decorate_collection(@categories).each do |category| %>
     <li>
       <span><%= category.name_with_code %></span>
-      <%= link_to t('admin.categories.index.edit'), edit_admin_category_path(category), class: "button tiny radius alert right" %>
+      <div class="right">
+        <%= link_to t('admin.categories.index.edit'), edit_admin_category_path(category), class: "button tiny radius" %>
+        <%= link_to t('admin.categories.index.view_subcategories'), admin_category_subcategories_path(category), class: "button tiny radius" %>
+      </div>
     </li>
   <% end %>
 </ul>

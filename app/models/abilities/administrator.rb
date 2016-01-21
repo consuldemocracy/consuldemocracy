@@ -40,6 +40,7 @@ module Abilities
       can :manage, SpendingProposal
 
       can :manage, Category
+      can :manage, Subcategory
     end
   end
 end
