@@ -29,11 +29,6 @@
       "required": false,
       "value": "3"
     },
-    "DEPLOY_TASKS": {
-      "description": "Tasks to perform after deployment.",
-      "required": false,
-      "value": "db:migrate"
-    },
     "FORCE_SSL": {
       "description": "Force SSL?",
       "required": false,
@@ -52,7 +47,6 @@
     { "process": "worker", "quantity": 1}
   ],
   "buildpacks": [
-    { "url": "https://github.com/heroku/heroku-buildpack-ruby" },
-    { "url": "https://github.com/gunpowderlabs/buildpack-ruby-rake-deploy-tasks" }
+    { "url": "https://github.com/heroku/heroku-buildpack-ruby" }
   ]
 }
