@@ -11,7 +11,7 @@ namespace :proposals do
     if args.url.blank?
       puts "Usage: rake proposals:import[url]"
     else
-      ProposalXLSImporter.new(args.url).import
+      ProposalXLSImporter.new(open(args.url)).import
     end
   end
 end
