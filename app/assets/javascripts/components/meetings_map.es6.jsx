@@ -62,7 +62,7 @@ class MeetingsMap extends React.Component {
               strokeWeight: 2,
               size: {width: 25, height: 25},
               scale: 0.6,
-              fillColor: '#970092',
+              fillColor: '#fa494a',
             },
             map: map
           });
