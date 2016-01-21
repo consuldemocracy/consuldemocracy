@@ -293,7 +293,7 @@ describe Proposal do
       expect(proposal.confidence_score).to eq(10000)
 
       proposal = create(:proposal, :with_confidence_score, cached_votes_up: 0)
-      expect(proposal.confidence_score).to eq(0)
+      expect(proposal.confidence_score).to eq(1)
 
       proposal = create(:proposal, :with_confidence_score, cached_votes_up: 75)
       expect(proposal.confidence_score).to eq(7500)
