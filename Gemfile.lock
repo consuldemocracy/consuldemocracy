@@ -62,8 +62,6 @@ GEM
       tzinfo (~> 1.1)
     acts-as-taggable-on (3.5.0)
       activerecord (>= 3.2, < 5)
-    acts_as_list (0.7.2)
-      activerecord (>= 3.0)
     acts_as_votable (0.10.0)
     addressable (2.4.0)
     ahoy_matey (1.2.1)
@@ -362,6 +360,9 @@ GEM
     rinku (1.7.3)
     rollbar (1.2.13)
       multi_json (~> 1.3)
+    roo (2.3.1)
+      nokogiri (~> 1)
+      rubyzip (~> 1.1, < 2.0.0)
     rspec (3.4.0)
       rspec-core (~> 3.4.0)
       rspec-expectations (~> 3.4.0)
@@ -384,6 +385,7 @@ GEM
       rspec-support (~> 3.4.0)
     rspec-support (3.4.1)
     ruby-progressbar (1.7.5)
+    rubyzip (1.1.7)
     safe_yaml (1.0.4)
     sass (3.4.21)
     sass-rails (5.0.4)
@@ -478,7 +480,6 @@ PLATFORMS
 DEPENDENCIES
   active_model_serializers
   acts-as-taggable-on
-  acts_as_list
   acts_as_votable
   ahoy_matey (~> 1.2.1)
   ancestry
@@ -538,6 +539,7 @@ DEPENDENCIES
   responders
   rinku
   rollbar (~> 1.2.13)
+  roo
   rspec-rails (~> 3.3)
   sassc-rails
   savon

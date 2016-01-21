@@ -51,7 +51,6 @@ gem 'daemons'
 gem 'devise-async'
 gem 'whenever', require: false
 gem 'pg_search'
-gem 'acts_as_list'
 
 gem 'ahoy_matey', '~> 1.2.1'
 gem 'groupdate'   # group temporary data
@@ -76,6 +75,7 @@ gem 'markerclustererplus-rails'
 gem 'i18n_yaml_csv', github: 'josepjaume/i18n_yaml_csv'
 
 gem 'draper'
+gem 'roo' # implements read access for all common spreadsheet types
 
 gem 'bourbon'
 

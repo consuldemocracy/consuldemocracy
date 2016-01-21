@@ -6,4 +6,12 @@ namespace :proposals do
     end
   end
 
+  desc "Import proposals from a xls file given an url"
+  task :import, [:url] => :environment do |task, args|
+    if args.url.blank?
+      puts "Usage: rake proposals:import[url]"
+    else
+      ProposalXLSImporter.new(open(args.url)).import
+    end
+  end
 end

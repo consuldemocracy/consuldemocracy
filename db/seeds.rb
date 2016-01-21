@@ -69,7 +69,14 @@ if ENV["SEED"]
   end
 
   puts "Creating Axis, Action Lines and Goals"
-  CategoryImporter.import(Rails.root.join('db', 'seeds', 'categories.json'))
+  (1..5).each do |n|
+    name = "Axis #{n}"
+    category = Category.create(name: { ca: name, es: name, en: name }, position: n)
+    (1..5).each do |m|
+      name = "Action line #{n}#{m}"
+      Subcategory.create(name: { ca: name, es: name, en: name }, category_id: category.id, position: m)
+    end
+  end
 
   puts "Creating Proposals"
 
