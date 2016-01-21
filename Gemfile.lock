@@ -304,6 +304,8 @@ GEM
     rack (1.6.4)
     rack-accept (0.4.5)
       rack (>= 0.4)
+    rack-attack (4.3.1)
+      rack
     rack-cache (1.5.1)
       rack (>= 0.4)
     rack-test (0.6.3)
@@ -349,6 +351,12 @@ GEM
       rails (>= 3.2)
       tilt
     redcarpet (3.3.4)
+    redis (3.2.2)
+    redis-activesupport (4.1.5)
+      activesupport (>= 3, < 5)
+      redis-store (~> 1.1.0)
+    redis-store (1.1.7)
+      redis (>= 2.2)
     referer-parser (0.3.0)
     request_store (1.3.0)
     responders (2.1.1)
@@ -530,12 +538,15 @@ DEPENDENCIES
   pg_search
   poltergeist
   quiet_assets
+  rack-attack
   rack-cache
   rails (= 4.2.5)
   rails-i18n
   rails_12factor
   react-rails
   redcarpet
+  redis
+  redis-activesupport
   responders
   rinku
   rollbar (~> 1.2.13)

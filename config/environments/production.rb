@@ -25,6 +25,8 @@ Rails.application.configure do
   config.serve_static_files = ENV['RAILS_SERVE_STATIC_FILES'].present?
   config.static_cache_control = "public, max-age=2592000"
 
+  config.middleware.use Rack::Attack
+
   # Compress JavaScripts and CSS.
   config.assets.js_compressor = :uglifier
   # config.assets.css_compressor = :sass
