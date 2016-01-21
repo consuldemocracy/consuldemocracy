@@ -13,7 +13,7 @@ App.RegistrationForm =
       usernameInput.after $("<small class=\"#{klass}\" style=\"margin-top: -16px;\">#{response.message}</small>")
 
     validateUsername = (username) ->
-      request = $.post "/user/registrations/check_username?username=#{username}"
+      request = $.get "/user/registrations/check_username?username=#{username}"
       request.done (response) ->
         showUsernameMessage(response)
 

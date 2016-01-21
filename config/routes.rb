@@ -19,7 +19,7 @@ Rails.application.routes.draw do
 
   devise_scope :user do
     patch '/user/confirmation', to: 'users/confirmations#update', as: :update_user_confirmation
-    post '/user/registrations/check_username', to: 'users/registrations#check_username'
+    get '/user/registrations/check_username', to: 'users/registrations#check_username'
     get 'users/sign_up/success', to: 'users/registrations#success'
     get 'users/registrations/delete_form', to: 'users/registrations#delete_form'
     delete 'users/registrations', to: 'users/registrations#delete'
