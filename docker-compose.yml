@@ -19,9 +19,10 @@ app:
   ports:
     - "3000:3000"
 
-worker:
+sidekiq:
   image: decidimbcn_app
-  environment: 
+  command: bundle exec sidekiq
+  environment:
     - DATABASE_HOST=db
     - DATABASE_USERNAME=postgres
     - DATABASE_PASSWORD=
@@ -35,7 +36,6 @@ worker:
   links:
     - db
     - redis
-  command: rake jobs:work
 
 bundle:
   image: ubuntu:15.04
