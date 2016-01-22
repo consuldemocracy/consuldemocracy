@@ -584,6 +584,11 @@ span.error, small.error {
   color: $alert-color;
 }
 
+span.error, small.no-error {
+  background: $success-bg;
+  color: $success-color;
+}
+
 .error small.error {
   background: $alert-bg;
   color: $alert-color;

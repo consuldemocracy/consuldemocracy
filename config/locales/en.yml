@@ -344,26 +344,27 @@ en:
         submit_button: Save changes
   shared:
     advanced_search:
-      author_type: By author category
-      author_type_1: Public employee
-      author_type_2: Municipal Organization
-      author_type_3: General director
-      author_type_4: City councillor
-      author_type_5: Mayoress
-      author_type_blank: Select a category
-      date: By date
-      date_1: Last 24 hours
-      date_2: Last week
-      date_3: Last month
-      date_4: Last year
-      date_5: Customized
-      date_range_blank: Choose a date
-      from: From
-      general: With the text
-      general_placeholder: Write the text
-      search: Filter
-      title: Advanced search
-      to: To
+      author_type: 'By author category'
+      author_type_blank: 'Select a category'
+      author_type_1: 'Public employee'
+      author_type_2: 'Municipal Organization'
+      author_type_3: 'General director'
+      author_type_4: 'City councillor'
+      author_type_5: 'Mayoress'
+      date: 'By date'
+      date_placeholder: 'DD/MM/YYYY'
+      date_range_blank: 'Choose a date'
+      date_1: 'Last 24 hours'
+      date_2: 'Last week'
+      date_3: 'Last month'
+      date_4: 'Last year'
+      date_5: 'Customized'
+      from: 'From'
+      general: 'With the text'
+      general_placeholder: 'Write the text'
+      search: 'Filter'
+      title: 'Advanced search'
+      to: 'To'
     author_info:
       author_deleted: User deleted
     check: Select
@@ -416,7 +417,7 @@ en:
   unauthorized:
     default: You do not have permission to access this page.
     manage:
-      all: You do not have permission to carry out the action '%{action}' on %{subject}.
+      all: "You do not have permission to carry out the action '%{action}' on %{subject}."
   users:
     show:
       deleted: Deleted

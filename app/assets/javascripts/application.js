@@ -12,6 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery-ui/datepicker
+//= require jquery-ui/datepicker-es
 //= require foundation
 //= require turbolinks
 //= require react
@@ -41,12 +43,12 @@
 //= require i18n
 //= require proposals
 //= require advanced_search
-
 //= require react
 //= require react_ujs
 //= require markerclusterer
 //= require immutable
 //= require components
+//= require registration_form
 
 var initialize_modules = function() {
   App.Comments.initialize();
@@ -61,6 +63,7 @@ var initialize_modules = function() {
   App.Annotatable.initialize();
   App.Proposals.initialize();
   App.AdvancedSearch.initialize();
+  App.RegistrationForm.initialize();
 };
 
 $(function(){

@@ -12,7 +12,6 @@ class SpendingProposalsController < ApplicationController
 
   def new
     @spending_proposal = SpendingProposal.new
-    @featured_tags = ActsAsTaggableOn::Tag.where(featured: true)
   end
 
   def create
@@ -20,9 +19,8 @@ class SpendingProposalsController < ApplicationController
     @spending_proposal.author = current_user
 
     if @spending_proposal.save_with_captcha
-      redirect_to spending_proposals_path, notice: t('flash.actions.create.notice', resource_name: t("activerecord.models.spending_proposal", count: 1))
+      redirect_to spending_proposals_path, notice: t("flash.actions.create.spending_proposal")
     else
-      @featured_tags = ActsAsTaggableOn::Tag.where(featured: true)
       render :new
     end
   end

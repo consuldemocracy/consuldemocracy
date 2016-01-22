@@ -39,6 +39,7 @@ es:
       create_proposal: Crear propuesta
       print_proposals: Imprimir propuestas
       support_proposals: Apoyar propuestas
+      create_spending_proposal: Crear propuesta de gasto
       title: Gestión
       users: Usuarios
     permissions:
@@ -57,6 +58,10 @@ es:
       create_proposal: Crear propuesta
       print:
         print_button: Imprimir
+    spending_proposals:
+      alert:
+        unverified_user: Este usuario no está verificado
+      create: Crear propuesta de gasto
     sessions:
       signed_out: Has cerrado la sesión correctamente.
       signed_out_managed_user: Se ha cerrado correctamente la sesión del usuario.

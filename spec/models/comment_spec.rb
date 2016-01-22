@@ -56,6 +56,9 @@ describe Comment do
 
       comment = create(:comment, :with_confidence_score, cached_votes_up: 10, cached_votes_total: 100)
       expect(comment.confidence_score).to eq(-800)
+
+      comment = create(:comment, :with_confidence_score, cached_votes_up: 0, cached_votes_total: 0)
+      expect(comment.confidence_score).to eq(1)
     end
 
     describe 'actions which affect it' do
