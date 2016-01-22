@@ -191,7 +191,7 @@ es:
       locale: 'Idioma:'
       logo: Madrid
       moderation: Moderar
-      more_information: Más información
+      more_information: Más información sobre esta página
       my_account_link: Mi cuenta
       my_activity_link: Mi actividad
       new_notifications:
@@ -205,7 +205,6 @@ es:
       open_gov: Gobierno %{open}
       proposals: Propuestas
       processes: Procesos abiertos
-      see_all: Ver propuestas
       spending_proposals: Presupuestos ciudadanos
   legislation:
     help:
@@ -444,6 +443,15 @@ es:
       alt: Icono se hace
       description: Si la propuesta es aceptada mayoritariamente, el Ayuntamiento la asume como propia y se hace.
       title: Se hace
+    featured:
+      process:
+        link: Más información
+        text: Decide como quieres que sea este nuevo espacio en tu ciudad.
+        title: Remodelación Plaza de España
+      proposals:
+        link: Ver propuestas
+        text: Crear tus propias propuestas y apoya las de otros ciudadanos.
+        title: Propuestas ciudadanas
     highlights: 'Portada: '
     proposal:
       alt: Icono propones

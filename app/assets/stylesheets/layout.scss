@@ -217,37 +217,6 @@ a {
   border: 0;
 }
 
-.featured-process {
-  background: #5fbc8c image-url('featured_process.jpg') no-repeat;
-  background-size: cover;
-  background-position: 50% 50%;
-  padding: $line-height/2;
-
-  @media (min-width: $small-breakpoint) {
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-    margin-top: $line-height !important;
-  }
-
-  h2, h3, a {
-    color: white;
-    margin: 0;
-  }
-
-  a:hover h2, a:hover h3 {
-    color: white !important;
-    text-decoration: none;
-  }
-}
-
-.process {
-  min-height: $line-height*12;
-
-  p {
-    margin: $line-height 0;
-  }
-}
-
 #drop-help.f-dropdown.content {
 
   @media (min-width: $small-breakpoint) {

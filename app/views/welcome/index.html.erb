@@ -1,3 +1,19 @@
+<%= render "featured_welcome" %>
+
+<div class="row-full home-page">
+  <div class="row">
+    <div class="small-12 medium-6 column">
+      <h1><%= t("layouts.header.open_city_title") %></h1>
+      <p><%= t("layouts.header.open_city_slogan_html") %></p>
+      <%= link_to t("layouts.header.more_information"), page_path('more_information') %>
+    </div>
+
+    <div class="show-for-medium-up small-12 medium-6 column text-center">
+      <%= image_tag("icon_home.png", size: "330x240", alt:"", role:"presentation") %>
+    </div>
+  </div>
+</div>
+
 <% cache [locale_and_user_status, @featured_debates, @featured_proposals, 'featured'] do %>
   <section role="main">
     <div class="row text-center margin">
