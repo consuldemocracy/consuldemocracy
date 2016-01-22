@@ -53,7 +53,7 @@ feature 'Admin categories' do
   end
 
   scenario "Create a subcategory for an existing category", :js do
-    create(:category, name: { en: "My axis" })
+    create(:category, name: { en: "My axis" }, position: 1)
 
     visit admin_categories_path
 
