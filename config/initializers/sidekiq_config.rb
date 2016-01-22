@@ -1,8 +1,3 @@
-if Rails.env.test?
-  require 'sidekiq/testing'
-  Sidekiq::Testing.inline!
-end
-
 redis_config = {
   url: ENV["REDIS_URL"], namespace: "decidimbcn_jobs_#{Rails.env}"
 }
