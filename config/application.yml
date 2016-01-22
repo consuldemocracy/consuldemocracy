@@ -23,7 +23,7 @@ defaults: &defaults
   max_votes_for_proposal_edit: 1000
 
   # Prefix for the Proposal codes
-  proposal_code_prefix: 'MAD'
+  proposal_code_prefix: 'BCN'
 
   # Number of votes needed for proposal success
   votes_for_proposal_success: 53726
