@@ -52,7 +52,14 @@ class ApplicationController < ActionController::Base
 
       session[:locale] ||= I18n.default_locale
 
-      I18n.locale = session[:locale]
+      locale = session[:locale]
+
+      if current_user
+        current_user.locale = locale
+        current_user.save
+      end
+
+      I18n.locale = locale
     end
 
     def set_layout
