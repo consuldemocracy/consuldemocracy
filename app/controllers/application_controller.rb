@@ -54,9 +54,8 @@ class ApplicationController < ActionController::Base
 
       locale = session[:locale]
 
-      if current_user
-        current_user.locale = locale
-        current_user.save
+      if current_user && current_user.locale != locale.to_s
+        current_user.update(locale: locale)
       end
 
       I18n.locale = locale
