@@ -191,7 +191,7 @@ es:
       locale: 'Idioma:'
       logo: Madrid
       moderation: Moderar
-      more_information: Más información sobre esta página
+      more_information: Más información
       my_account_link: Mi cuenta
       my_activity_link: Mi actividad
       new_notifications:
@@ -452,6 +452,7 @@ es:
         link: Ver propuestas
         text: Crear tus propias propuestas y apoya las de otros ciudadanos.
         title: Propuestas ciudadanas
+    more_information: Más información sobre esta página
     highlights: 'Portada: '
     proposal:
       alt: Icono propones

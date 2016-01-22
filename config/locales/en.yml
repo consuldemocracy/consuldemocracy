@@ -191,7 +191,7 @@ en:
       locale: 'Language:'
       logo: Madrid
       moderation: Moderation
-      more_information: More information about this page
+      more_information: More information
       my_account_link: My account
       my_activity_link: My activity
       new_notifications:
@@ -452,6 +452,7 @@ en:
         link: See proposals
         text: Create your own proposals and supports those of other citizens.
         title: Citizen proposals
+    more_information: More information about this page
     highlights: 'Highlights: '
     proposal:
       alt: Icon propose
