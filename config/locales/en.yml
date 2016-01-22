@@ -260,7 +260,9 @@ en:
       proposal_title: Proposal title
       proposal_video_url: Link to external video
       proposal_video_url_note: You may add a link to YouTube or Vimeo
-      tags_instructions: Tag this proposal. You can choose from our tags or add your own.
+      tag_category_label: "Categories"
+      tag_district_label: "Districts"
+      tags_instructions: "Tag this proposal. You can choose from proposed categories and districts or add your own"
       tags_label: Tags
       tags_placeholder: Enter the tags you would like to use, separated by commas (',')
     index:
