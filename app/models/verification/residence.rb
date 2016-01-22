@@ -14,8 +14,8 @@ class Verification::Residence
 
   validate :allowed_age
   validate :document_number_uniqueness
-  validate :postal_code_in_madrid
-  validate :residence_in_madrid
+  validate :validate_postal_code
+  validate :residency
 
   def initialize(attrs={})
     self.date_of_birth = parse_date('date_of_birth', attrs)
@@ -40,15 +40,15 @@ class Verification::Residence
     errors.add(:document_number, I18n.t('errors.messages.taken')) if User.where(document_number: document_number).any?
   end
 
-  def postal_code_in_madrid
+  def validate_postal_code
     errors.add(:postal_code, I18n.t('verification.residence.new.error_not_allowed_postal_code')) unless valid_postal_code?
   end
 
-  def residence_in_madrid
+  def residency
     return if errors.any?
 
     unless residency_valid?
-      errors.add(:residence_in_madrid, false)
+      errors.add(:residency, false)
       store_failed_attempt
       Lock.increase_tries(user)
     end
@@ -67,11 +67,12 @@ class Verification::Residence
   private
 
     def residency_valid?
-      response = CensusApi.new.call(document_type, document_number)
-
-      response.valid? &&
-        response.postal_code == postal_code &&
-        response.date_of_birth == date_to_string(date_of_birth)
+      Census.new(
+        document_type: document_type,
+        document_number: document_number,
+        postal_code: postal_code,
+        date_of_birth: date_of_birth
+      ).valid?
     end
 
     def clean_document_number
@@ -79,7 +80,7 @@ class Verification::Residence
     end
 
     def valid_postal_code?
-      postal_code =~ /^280/
+      postal_code =~ /^080/
     end
 
 end
