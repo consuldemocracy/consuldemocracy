@@ -26,7 +26,8 @@ es:
       user_permission_votes: Participar en las votaciones finales*
       username_label: Nombre de usuario
       verified_account: Cuenta verificada
-      verify_my_account: Verificar mi cuenta
+      verify_my_account: Verificar mi cuentaquer
+
   application:
     close: Cerrar
     menu: Menú
@@ -86,7 +87,7 @@ es:
       debate_title: Título del debate
       tags_instructions: Etiqueta este debate. Puedes elegir entre nuestras propuestas o introducir las que desees.
       tags_label: Temas
-      tags_placeholder: Escribe las etiquetas que desees separadas por coma (',')
+      tags_placeholder: "Escribe las etiquetas que desees separadas por coma (',')"
     index:
       featured_debates: Destacados
       filter_topic:
@@ -121,6 +122,12 @@ es:
       recommendation_two: Cualquier debate o comentario que implique una acción ilegal será eliminado, también los que tengan la intención de sabotear los espacios de debate, todo lo demás está permitido.
       recommendations_title: Recomendaciones para crear un debate
       start_new: Empezar un debate
+      suggestions:
+        found: 
+          one: "Existe un debate con el término '%{query}', puedes participar en él en vez de abrir uno nuevo."
+          other: "Existen debates con el término '%{query}', puedes participar en ellos en vez de abrir uno nuevo."
+        message: "Estás viendo %{limit} de %{count} debates que contienen el término %{query}" 
+        see_all: "Ver todos"    
     show:
       author_deleted: Usuario eliminado
       back_link: Volver
@@ -184,7 +191,6 @@ es:
       administration: Administrar
       debates: Debates
       external_link_blog: Blog
-      external_link_blog_url: "/blog"
       external_link_opendata: Datos abiertos
       external_link_opendata_url: http://datos.madrid.es
       external_link_transparency: Transparencia
@@ -204,7 +210,6 @@ es:
       open_city_title: La ciudad que quieres será la ciudad que quieras.
       open_data: Datos abiertos
       open_gov: Gobierno %{open}
-      participation_html: Madrid Decide
       proposals: Propuestas
       see_all: Ver propuestas
       spending_proposals: Presupuestos ciudadanos
@@ -263,7 +268,7 @@ es:
       proposal_video_url_note: Puedes añadir un enlace a YouTube o Vimeo
       tags_instructions: Etiqueta esta propuesta. Puedes elegir entre nuestras sugerencias o introducir las que desees.
       tags_label: Temas
-      tags_placeholder: Escribe las etiquetas que desees separadas por una coma (',')
+      tags_placeholder: "Escribe las etiquetas que desees separadas por una coma (',')"
     index:
       featured_proposals: Destacadas
       filter_topic:
@@ -296,6 +301,12 @@ es:
       recommendation_two: Cualquier propuesta o comentario que implique una acción ilegal será eliminada, también las que tengan la intención de sabotear los espacios de propuesta, todo lo demás está permitido.
       recommendations_title: Recomendaciones para crear una propuesta
       start_new: Crear una propuesta
+      suggestions:
+        found: 
+          one: "Existe un debate con el término '%{query}', puedes participar en él en vez de abrir uno nuevo."
+          other: "Existen debates con el término '%{query}', puedes participar en ellos en vez de abrir uno nuevo."
+        message: "Estás viendo %{limit} de %{count} debates que contienen el término %{query}" 
+        see_all: "Ver todos"
     proposal:
       already_supported: "¡Ya has apoyado esta propuesta, compártela!"
       comments:
@@ -329,6 +340,28 @@ es:
       form:
         submit_button: Guardar cambios
   shared:
+    advanced_search:
+      author_type: 'Por categoría de autor'
+      author_type_blank: 'Elige una categoría'
+      author_type_1: 'Empleado público'
+      author_type_2: 'Organización Municipal'
+      author_type_3: 'Director general'
+      author_type_4: 'Concejal'
+      author_type_5: 'Alcaldesa'
+      date: 'Por fecha'
+      date_placeholder: 'DD/MM/AAAA'
+      date_range_blank: 'Elige una fecha'
+      date_1: 'Últimas 24 horas'
+      date_2: 'Última semana'
+      date_3: 'Último mes'
+      date_4: 'Último año'
+      date_5: 'Personalizada'
+      from: 'Desde'
+      general: 'Con el texto'
+      general_placeholder: 'Escribe el texto'
+      search: 'Filtrar'
+      title: 'Búsqueda avanzada'
+      to: 'Hasta'
     author_info:
       author_deleted: Usuario eliminado
     check: Seleccionar
@@ -381,7 +414,7 @@ es:
   unauthorized:
     default: No tienes permiso para acceder a esta página.
     manage:
-      all: No tienes permiso para realizar la acción '%{action}' sobre %{subject}.
+      all: "No tienes permiso para realizar la acción '%{action}' sobre %{subject}."
   users:
     show:
       deleted: Eliminado

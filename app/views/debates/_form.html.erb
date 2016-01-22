@@ -1,12 +1,11 @@
 <%= form_for(@debate) do |f| %>
   <%= render 'shared/errors', resource: @debate %>
-
   <div class="row">
     <div class="small-12 column">
       <%= f.label :title, t("debates.form.debate_title") %>
-      <%= f.text_field :title, maxlength: Debate.title_max_length, placeholder: t("debates.form.debate_title"), label: false %>
+      <%= f.text_field :title, maxlength: Debate.title_max_length, placeholder: t("debates.form.debate_title"), label: false, data: {ajax_target: "ajax_suggest", ajax_show: "#ajax_suggest_show", ajax_url: suggest_debates_path}%>     
     </div>
-
+    <div id="ajax_suggest_show"></div>
     <div class="ckeditor small-12 column">
       <%= f.label :description, t("debates.form.debate_text") %>
       <%= f.cktext_area :description, maxlength: Debate.description_max_length, ckeditor: { language: I18n.locale }, label: false %>

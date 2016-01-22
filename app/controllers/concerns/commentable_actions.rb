@@ -27,6 +27,12 @@ module CommentableActions
     load_featured_tags
   end
 
+  def suggest
+    @resources = @search_terms.present? ? resource_model.search(@search_terms).sort_by_confidence_score: nil
+    set_resources_instance
+    render :layout => false
+  end 
+  
   def create
     @resource = resource_model.new(strong_params)
     @resource.author = current_user

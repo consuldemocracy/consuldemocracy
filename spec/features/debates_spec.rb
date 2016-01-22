@@ -560,4 +560,44 @@ feature 'Debates' do
     visit debate_path(debate)
     expect(page).to have_content('User deleted')
   end
+
+  context 'Suggesting debates' do
+
+    scenario 'Shows up to 5 suggestions per debate', :js do
+      author = create(:user)
+      login_as(author)
+
+      debate1 = create(:debate, title: "1 - El Quijote: En un lugar de la Mancha", cached_votes_up: 1)
+      debate2 = create(:debate, title: "2 - El Quijote: de cuyo nombre no quiero acordarme",  cached_votes_up: 2)
+      debate3 = create(:debate, title: "3 - El Quijote: no ha mucho tiempo que vivía ",  cached_votes_up: 3)
+      debate4 = create(:debate, title: "4 - un hidalgo de los de lanza en astillero", description: "El Quijote un hidalgo de los de lanza en astillero",  cached_votes_up: 4)
+      debate5 = create(:debate, title: "5 - El Quijote: adarga antigua, rocín flaco y galgo corredor",  cached_votes_up: 5)
+      debate6 = create(:debate, title: "6 - Una olla de algo más vaca que carnero", description: 'El Quijote',  cached_votes_up: 6)
+      debate7 = create(:debate, title: "7 - No se sugiere",  cached_votes_up: 7)
+   
+      visit new_debate_path
+      fill_in 'debate_title', with: 'Quijote' 
+      page.find("body").click
+
+      within('div#ajax_suggest_show') do 
+        expect(page.html).to have_content ("You are seeing 5 of 6 debates containing the term Quijote")
+      end
+    end
+
+    scenario 'No found suggestions for debate', :js do
+      author = create(:user)
+      login_as(author)
+
+      debate1 = create(:debate, title: "El Quijote: En un lugar de la Mancha", cached_votes_up: 10)
+      debate2 = create(:debate, title: "El Quijote: de cuyo nombre no quiero acordarme")
+      
+      visit new_debate_path
+      fill_in 'debate_title', with: 'La Celestina'
+      page.find("body").click
+
+      within('div#ajax_suggest_show') do
+        expect(page.html).to_not have_content ('You are seeing')
+      end
+    end 
+  end
 end

@@ -42,6 +42,9 @@ Rails.application.routes.draw do
       put :flag
       put :unflag
     end
+      collection do 
+      get :suggest
+    end  
   end
 
   resources :proposals do
@@ -51,6 +54,9 @@ Rails.application.routes.draw do
       put :flag
       put :unflag
     end
+      collection do 
+      get :suggest
+    end  
   end
 
   resources :comments, only: [:create, :show], shallow: true do
