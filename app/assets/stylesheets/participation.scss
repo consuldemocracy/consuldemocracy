@@ -803,10 +803,6 @@
   padding: $line-height/2 0;
 
   @media (min-width: $small-breakpoint) {
-    margin-top: $line-height !important;
-  }
-
-  @media (min-width: $medium-breakpoint) {
     margin-left: 0 !important;
     margin-right: 0 !important;
   }
