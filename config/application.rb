@@ -33,6 +33,6 @@ module Consul
     # Add lib to the autoload path
     config.autoload_paths << Rails.root.join('lib')
     config.time_zone = 'Madrid'
-    config.active_job.queue_adapter = :delayed_job
+    config.active_job.queue_adapter = :sidekiq
   end
 end

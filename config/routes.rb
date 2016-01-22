@@ -296,6 +296,11 @@ Rails.application.routes.draw do
 
   mount Tolk::Engine => '/translate', :as => 'tolk'
 
+  require 'sidekiq/web'
+  authenticate :user, lambda { |u| u.administrator? || Rails.env.development? } do
+    mount Sidekiq::Web => '/sidekiq'
+  end
+
   # static pages
 
   resources :pages, path: '/', only: [:show]

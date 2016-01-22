@@ -7,6 +7,7 @@ gem 'rails', '4.2.5'
 # Use PostgreSQL
 gem 'pg'
 gem 'redis'
+gem 'redis-namespace'
 gem 'redis-activesupport'
 # Use SCSS for stylesheets
 gem 'sassc-rails'
@@ -49,11 +50,13 @@ gem 'paranoia'
 gem 'rinku', require: 'rails_rinku'
 gem 'savon'
 gem 'dalli'
-gem 'delayed_job_active_record', '~> 4.1.0'
+gem 'sidekiq'
+gem 'sinatra'
 gem 'daemons'
 gem 'devise-async'
 gem 'whenever', require: false
 gem 'pg_search'
+gem 'foreman'
 
 gem 'ahoy_matey', '~> 1.2.1'
 gem 'groupdate'   # group temporary data
