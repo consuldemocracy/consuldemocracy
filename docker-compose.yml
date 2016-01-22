@@ -6,6 +6,7 @@ app:
     - DATABASE_USERNAME=postgres
     - DATABASE_PASSWORD=
     - DATABASE_NAME=postgres
+    - REDIS_URL=redis://redis:6379
     - GEM_HOME=/bundle
     - GOOGLE_MAPS_API_KEY=${GOOGLE_MAPS_API_KEY}
   volumes:
@@ -14,6 +15,7 @@ app:
     - bundle
   links:
     - db
+    - redis
   ports:
     - "3000:3000"
 
@@ -24,6 +26,7 @@ worker:
     - DATABASE_USERNAME=postgres
     - DATABASE_PASSWORD=
     - DATABASE_NAME=postgres
+    - REDIS_URL=redis://redis:6379
     - GEM_HOME=/bundle
   volumes:
     - .:/decidimbcn
@@ -31,6 +34,7 @@ worker:
     - bundle
   links:
     - db
+    - redis
   command: rake jobs:work
 
 bundle:
@@ -49,3 +53,8 @@ db_data:
   command: echo 'Nothing to do here'
   volumes:
     - /var/lib/postgresql/data
+
+redis:
+  image: "redis"
+  volumes:
+    - /var/lib/redis:/data
