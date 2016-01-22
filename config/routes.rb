@@ -43,7 +43,6 @@ Rails.application.routes.draw do
       put :unflag
     end
   end
-  
   get  'debate_links/new' => 'debate_links#new'
   post 'debate_links'     => 'debate_links#create'  
   

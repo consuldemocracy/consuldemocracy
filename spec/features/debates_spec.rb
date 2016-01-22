@@ -117,7 +117,7 @@ feature 'Debates' do
 
     expect(page).to have_content "Debate created successfully."
   end
-  
+
   scenario 'Failed creation goes back to new showing featured tags' do
     featured_tag = create(:tag, :featured)
     tag = create(:tag)

@@ -14,11 +14,12 @@ class Debate < ActiveRecord::Base
 
   belongs_to :author, -> { with_hidden }, class_name: 'User', foreign_key: 'author_id'
   has_many :comments, as: :commentable
-  
+
   validates :title, presence: true
   validates :author, presence: true
   validates :description,   :presence => true, :if => :description_required?
-  validates :external_link, :presence => true, length: { in: 10..Debate.external_link_max_length }, 
+  validates :external_link, :presence => true, 
+            length: { in: 10..Debate.external_link_max_length }, 
             format: { with: /https?:\/\/*/},   
             :if => :link_required?
   validates :title, length: { in: 4..Debate.title_max_length }
@@ -139,7 +140,7 @@ class Debate < ActiveRecord::Base
   
   def description_required?
     if self.external_link == nil
-       return true
+      return true
     else
       return false
     end
@@ -147,7 +148,7 @@ class Debate < ActiveRecord::Base
   
   def link_required?
     if self.external_link == nil
-       return false
+      return false
     else
       return true
     end  
