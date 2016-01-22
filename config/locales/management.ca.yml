@@ -37,6 +37,7 @@ ca:
       send_email: Enviar email de verificació
     menu:
       create_proposal: Crear proposta
+      create_spending_proposal: Crear proposta de despesa
       print_proposals: Imprimir propostes
       support_proposals: Donar suport propostes
       title: Gestió
@@ -60,6 +61,10 @@ ca:
     sessions:
       signed_out: Has tancat la sessió correctament.
       signed_out_managed_user: S'ha tancat correctament la sessió de l'usuari.
+    spending_proposals:
+      alert:
+        unverified_user: Aquest usuari no està verificat
+      create: Crear proposta de despesa
     username_label: Nom d'usuari
     users:
       create_user: Crea un compte d'usuari

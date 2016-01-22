@@ -290,6 +290,9 @@ describe Debate do
       debate = create(:debate, :with_confidence_score, cached_votes_up: 0, cached_votes_total: 100)
       expect(debate.confidence_score).to eq(0)
 
+      debate = create(:debate, :with_confidence_score, cached_votes_up: 0, cached_votes_total: 0)
+      expect(debate.confidence_score).to eq(1)
+
       debate = create(:debate, :with_confidence_score, cached_votes_up: 75, cached_votes_total: 100)
       expect(debate.confidence_score).to eq(3750)
 

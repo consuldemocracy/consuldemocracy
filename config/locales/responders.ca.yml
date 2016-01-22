@@ -3,8 +3,13 @@ ca:
   flash:
     actions:
       create:
+        debate: Debat creat correctament.
         notice: "%{resource_name} creat correctament."
+        proposal: Proposta creada correctament.
+        spending_proposal: Proposta de despesa creat correctament.
       save_changes:
         notice: Canvis guardats
       update:
+        debate: Debat actualitzat correctament.
         notice: "%{resource_name} actualitzat correctament."
+        proposal: Proposta actualitzada correctament.

@@ -1,6 +1,6 @@
 <% if I18n.available_locales.size > 1 %>
-  <div class="locale">
-    <span class="locale-switcher-label">
+  <div class="locale-switcher-label" id="js-locale" data-current-local="<%= I18n.locale %>">
+    <span class="inline-block">
       <%= t("layouts.header.locale") %>
     </span>
     <form class="locale-form">

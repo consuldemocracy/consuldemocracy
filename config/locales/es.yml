@@ -92,7 +92,7 @@ es:
       debate_title: Título del debate
       tags_instructions: Etiqueta este debate. Puedes elegir entre nuestras propuestas o introducir las que desees.
       tags_label: Temas
-      tags_placeholder: Escribe las etiquetas que desees separadas por coma (',')
+      tags_placeholder: "Escribe las etiquetas que desees separadas por coma (',')"
     index:
       filter_topic:
         one: " con el tema '%{topic}'"
@@ -280,7 +280,7 @@ es:
       proposal_video_url_note: Puedes añadir un enlace a YouTube o Vimeo
       tags_instructions: Etiqueta esta propuesta. Puedes elegir entre nuestras sugerencias o introducir las que desees.
       tags_label: Temas
-      tags_placeholder: Escribe las etiquetas que desees separadas por una coma (',')
+      tags_placeholder: "Escribe las etiquetas que desees separadas por una coma (',')"
     index:
       featured_proposals: Destacadas
       orders:
@@ -344,26 +344,27 @@ es:
         submit_button: Guardar cambios
   shared:
     advanced_search:
-      author_type: Por categoría de autor
-      author_type_1: Empleado público
-      author_type_2: Organización Municipal
-      author_type_3: Director general
-      author_type_4: Concejal
-      author_type_5: Alcaldesa
-      author_type_blank: Elige una categoría
-      date: Por fecha
-      date_1: "Últimas 24 horas"
-      date_2: "Última semana"
-      date_3: "Último mes"
-      date_4: "Último año"
-      date_5: Personalizada
-      date_range_blank: Elige una fecha
-      from: Desde
-      general: Con el texto
-      general_placeholder: Escribe el texto
-      search: Filtrar
-      title: Búsqueda avanzada
-      to: Hasta
+      author_type: 'Por categoría de autor'
+      author_type_blank: 'Elige una categoría'
+      author_type_1: 'Empleado público'
+      author_type_2: 'Organización Municipal'
+      author_type_3: 'Director general'
+      author_type_4: 'Concejal'
+      author_type_5: 'Alcaldesa'
+      date: 'Por fecha'
+      date_placeholder: 'DD/MM/AAAA'
+      date_range_blank: 'Elige una fecha'
+      date_1: 'Últimas 24 horas'
+      date_2: 'Última semana'
+      date_3: 'Último mes'
+      date_4: 'Último año'
+      date_5: 'Personalizada'
+      from: 'Desde'
+      general: 'Con el texto'
+      general_placeholder: 'Escribe el texto'
+      search: 'Filtrar'
+      title: 'Búsqueda avanzada'
+      to: 'Hasta'
     author_info:
       author_deleted: Usuario eliminado
     check: Seleccionar
@@ -416,7 +417,7 @@ es:
   unauthorized:
     default: No tienes permiso para acceder a esta página.
     manage:
-      all: No tienes permiso para realizar la acción '%{action}' sobre %{subject}.
+      all: "No tienes permiso para realizar la acción '%{action}' sobre %{subject}."
   users:
     show:
       deleted: Eliminado

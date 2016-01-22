@@ -357,6 +357,7 @@ ca:
       date_3: El mes passat
       date_4: L'any passat
       date_5: Personalitzat
+      date_placeholder: DD / MM / AAAA
       date_range_blank: Seleccioneu una data
       from: Des
       general: Amb el text
