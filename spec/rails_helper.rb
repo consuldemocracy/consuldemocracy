@@ -10,6 +10,8 @@ require 'capybara/rails'
 require 'capybara/rspec'
 require 'capybara/poltergeist'
 require 'capybara-screenshot/rspec'
+require 'sidekiq/testing'
+Sidekiq::Testing.inline!
 
 I18n.default_locale = :en
 

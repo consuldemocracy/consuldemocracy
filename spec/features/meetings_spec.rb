@@ -12,7 +12,7 @@ feature 'Meetings' do
     visit meetings_path
 
     expect(page).to have_content("Meeting 1")
-    expect(page).to_not have_content("Meeting 2")
+    expect(page).to have_no_content("Meeting 2")
     expect(page).to have_content("Meeting 3")
   end
 end
