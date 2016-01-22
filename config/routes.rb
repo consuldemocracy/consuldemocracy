@@ -160,6 +160,10 @@ Rails.application.routes.draw do
     namespace :api do
       resource :stats, only: :show
     end
+
+    resources :categories do
+      resources :subcategories
+    end
   end
 
   namespace :moderation do

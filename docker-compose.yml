@@ -6,6 +6,7 @@ app:
     - DATABASE_USERNAME=postgres
     - DATABASE_PASSWORD=
     - DATABASE_NAME=postgres
+    - REDIS_URL=redis://redis:6379
     - GEM_HOME=/bundle
     - GOOGLE_MAPS_API_KEY=${GOOGLE_MAPS_API_KEY}
   volumes:
@@ -14,16 +15,19 @@ app:
     - bundle
   links:
     - db
+    - redis
   ports:
     - "3000:3000"
 
-worker:
+sidekiq:
   image: decidimbcn_app
-  environment: 
+  command: bundle exec sidekiq
+  environment:
     - DATABASE_HOST=db
     - DATABASE_USERNAME=postgres
     - DATABASE_PASSWORD=
     - DATABASE_NAME=postgres
+    - REDIS_URL=redis://redis:6379
     - GEM_HOME=/bundle
   volumes:
     - .:/decidimbcn
@@ -31,7 +35,7 @@ worker:
     - bundle
   links:
     - db
-  command: rake jobs:work
+    - redis
 
 bundle:
   image: ubuntu:15.04
@@ -49,3 +53,8 @@ db_data:
   command: echo 'Nothing to do here'
   volumes:
     - /var/lib/postgresql/data
+
+redis:
+  image: "redis"
+  volumes:
+    - /var/lib/redis:/data

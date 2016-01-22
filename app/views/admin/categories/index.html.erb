@@ -1,0 +1,20 @@
+<h2><%= t("admin.categories.index.title") %></h2>
+<h3><%= page_entries_info @categories %></h3>
+<ul id="categories" class="admin-list">
+  <% CategoryDecorator.decorate_collection(@categories).each do |category| %>
+    <li>
+      <span><%= category.name_with_code %></span>
+      <div class="right">
+        <%= link_to t('admin.categories.index.edit'), edit_admin_category_path(category), class: "button tiny radius" %>
+        <%= link_to t('admin.categories.index.view_subcategories'), admin_category_subcategories_path(category), class: "button tiny radius" %>
+        <%= link_to t('admin.categories.index.delete'), admin_category_path(category), method: :delete,  class: "button tiny radius alert", data: { confirm: t('admin.actions.confirm') } %>
+      </div>
+    </li>
+  <% end %>
+</ul>
+
+<%= paginate @categories %>
+
+<div class="right">
+  <%= link_to t('admin.categories.index.new'), new_admin_category_path, class: "button radius alert right" %>
+</div>

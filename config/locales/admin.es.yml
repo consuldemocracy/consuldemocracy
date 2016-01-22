@@ -24,6 +24,13 @@ es:
           on_users: Usuarios
         title: Actividad de los Moderadores
         type: Tipo
+    categories:
+      index:
+        delete: Borrar
+        edit: Editar
+        new: Crear eje
+        title: Ejes
+        view_subcategories: Ver líneas de acción
     comments:
       index:
         filter: Filtro
@@ -59,6 +66,7 @@ es:
       settings: Configuración global
       spending_proposals: Propuestas de gasto
       stats: Estadísticas
+      categories: Gestión de ejes
     moderators:
       index:
         title: Moderadores
@@ -163,6 +171,12 @@ es:
           visits: Visitas
           votes: Votos
         visits_title: Visitas
+    subcategories:
+      index:
+        delete: Borrar
+        edit: Editar
+        new: Crear línea de acción
+        title: Líneas de acción
     tags:
       create: Crear Tema
       destroy: Eliminar Tema

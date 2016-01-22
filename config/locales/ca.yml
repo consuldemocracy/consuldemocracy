@@ -30,7 +30,17 @@ ca:
   application:
     close: Tancar
   categories:
+    edit:
+      form:
+        submit_button: Actualitzar eix
     filter: Veure propostes
+    form:
+      category_description: Descripció
+      category_name: Nom
+      category_position: Posició
+    new:
+      form:
+        submit_button: Crear eix
     title: Documents
   comments:
     comment:
@@ -414,6 +424,13 @@ ca:
       recommendation_two: Qualsevol proposta o comentari que impliqui accions il·legals serà eliminada.
       recommendations_title: Com crear una proposta de despesa
       start_new: Crear una proposta de despesa
+  subcategories:
+    edit:
+      form:
+        submit_button: Actualitzar línia d'acció
+    new:
+      form:
+        submit_button: Crear línia d'acció
   users:
     show:
       deleted: Eliminat

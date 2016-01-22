@@ -3,13 +3,15 @@ en:
   flash:
     actions:
       create:
+        debate: Debate created successfully.
         notice: "%{resource_name} created successfully."
-        debate: "Debate created successfully."
-        proposal: "Proposal created successfully."
-        spending_proposal: "Spending proposal created successfully."
+        proposal: Proposal created successfully.
+        spending_proposal: Spending proposal created successfully.
+      destroy:
+        notice: "%{resource_name} deleted successfully."
       save_changes:
         notice: Changes saved
       update:
+        debate: Debate updated successfully.
         notice: "%{resource_name} updated successfully."
-        debate: "Debate updated successfully."
-        proposal: "Proposal updated successfully."
+        proposal: Proposal updated successfully.

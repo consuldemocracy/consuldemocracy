@@ -24,6 +24,13 @@ ca:
           on_users: Usuaris
         title: Activitat dels Moderadors
         type: Tipus
+    categories:
+      index:
+        delete: Esborrar
+        edit: Editar
+        new: Crear eix
+        title: Eixos
+        view_subcategories: Veure línies d'acció
     comments:
       index:
         filter: Filtre
@@ -59,6 +66,7 @@ ca:
       settings: Configuració global
       spending_proposals: Propostes de despesa
       stats: Estadístiques
+      categories: Gestió d'eixos
     moderators:
       index:
         title: Moderadors
@@ -163,6 +171,12 @@ ca:
           visits: Visites
           votes: Vots
         visits_title: Visites
+    subcategories:
+      index:
+        delete: Esborrar
+        edit: Editar
+        new: Crear línea d'acció
+        title: Línies d'acció
     tags:
       create: Crea un tema
       destroy: Eliminar Tema
