@@ -16,11 +16,15 @@ class Debate < ActiveRecord::Base
   has_many :comments, as: :commentable
 
   validates :title, presence: true
-  validates :description, presence: true, :if => :description_required?
   validates :author, presence: true
-
+  validates :description,   :presence => true, :if => :description_required?
+  validates :external_link, :presence => true, 
+            length: { in: 10..Debate.external_link_max_length }, 
+            format: { with: /https?:\/\/*/},   
+            :if => :link_required?
   validates :title, length: { in: 4..Debate.title_max_length }
-    validates :description, length: { in: 10..Debate.description_max_length }, 
+
+  validates :description, length: { in: 10..Debate.description_max_length }, 
               :if => :description_required?
 
   validates :external_link, :presence => true, 

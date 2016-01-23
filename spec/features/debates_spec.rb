@@ -97,7 +97,7 @@ feature 'Debates' do
     expect(page).to have_content author.name
     expect(page).to have_content I18n.l(Debate.last.created_at.to_date)
   end
-  
+
   scenario 'Captcha is required for debate creation' do
     login_as(create(:user))
 

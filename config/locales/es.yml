@@ -87,6 +87,7 @@ es:
       title: "Debates"
       featured_debates: "Destacados"
       start_debate: "Empieza un debate"
+      share_debate: "Comparte un debate"
       select_order: "Ordenar por"
       orders:
         confidence_score: "Mejor valorados"

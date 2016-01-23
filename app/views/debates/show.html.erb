@@ -41,7 +41,7 @@
         <% if @debate.description.present? %>
           <%= safe_html_with_links @debate.description %>
         <% end %>
-
+        
         <%= render 'shared/tags', taggable: @debate %>
 
         <div class="js-moderator-debate-actions margin">
