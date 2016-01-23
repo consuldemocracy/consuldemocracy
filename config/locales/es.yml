@@ -108,7 +108,7 @@ es:
       select_order: Ordenar por
       start_debate: Empieza un debate
       title: Debates
-      share_debate: "Comparte un debate"
+      share_debate: "Comparte un enlace"
     new:
       back_link: Volver
       form:
