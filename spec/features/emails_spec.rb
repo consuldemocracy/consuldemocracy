@@ -112,4 +112,13 @@ feature 'Emails' do
     end
   end
 
+  scenario "Email depending on user's locale" do
+    sign_up
+
+    email = open_last_email
+    expect(email).to have_subject('Confirmation instructions')
+    expect(email).to deliver_to('manuela@madrid.es')
+    expect(email).to have_body_text(user_confirmation_path)
+  end
+
 end

@@ -1,3 +1,4 @@
+# coding: utf-8
 require 'rails_helper'
 
 describe Proposal do
@@ -134,14 +135,14 @@ describe Proposal do
   end
 
   it "should have a code" do
-    Setting.find_by(key: "proposal_code_prefix").update(value: "TEST")
+    Setting["proposal_code_prefix"] = "TEST"
     proposal = create(:proposal)
     expect(proposal.code).to eq "TEST-#{proposal.created_at.strftime('%Y-%m')}-#{proposal.id}"
   end
 
   describe "#editable?" do
     let(:proposal) { create(:proposal) }
-    before(:each) {Setting.find_by(key: "max_votes_for_proposal_edit").update(value: 5)}
+    before(:each) {Setting["max_votes_for_proposal_edit"] = 5}
 
     it "should be true if proposal has no votes yet" do
       expect(proposal.total_votes).to eq(0)
@@ -292,7 +293,7 @@ describe Proposal do
       expect(proposal.confidence_score).to eq(10000)
 
       proposal = create(:proposal, :with_confidence_score, cached_votes_up: 0)
-      expect(proposal.confidence_score).to eq(0)
+      expect(proposal.confidence_score).to eq(1)
 
       proposal = create(:proposal, :with_confidence_score, cached_votes_up: 75)
       expect(proposal.confidence_score).to eq(7500)
@@ -391,6 +392,13 @@ describe Proposal do
       it "searches by question" do
         proposal = create(:proposal, question: 'to be or not to be')
         results = Proposal.search('to be or not to be')
+        expect(results).to eq([proposal])
+      end
+
+      it "searches by author name" do
+        author = create(:user, username: 'Danny Trejo')
+        proposal = create(:proposal, author: author)
+        results = Proposal.search('Danny')
         expect(results).to eq([proposal])
       end
 
@@ -612,7 +620,18 @@ describe Proposal do
       end
 
     end
+  end
 
+  describe "#last_week" do
+    it "should return proposals created this week" do
+      proposal = create(:proposal)
+      expect(Proposal.last_week.all).to include (proposal)
+    end
+
+    it "should not show proposals created more than a week ago" do
+      proposal = create(:proposal, created_at: 8.days.ago)
+      expect(Proposal.last_week.all).to_not include (proposal)
+    end
   end
 
 end

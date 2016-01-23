@@ -3,6 +3,7 @@ class ProposalsController < ApplicationController
   include FlagActions
 
   before_action :parse_search_terms, only: :index
+  before_action :parse_advanced_search_terms, only: :index
   before_action :parse_tag_filter, only: :index
   before_action :set_search_order, only: :index
   before_action :authenticate_user!, except: [:index, :show]
@@ -14,7 +15,7 @@ class ProposalsController < ApplicationController
   respond_to :html, :js
 
   def index_customization
-    @featured_proposals = Proposal.all.sort_by_confidence_score.limit(3) if (@search_terms.blank? && @tag_filter.blank?)
+    @featured_proposals = Proposal.all.sort_by_confidence_score.limit(3) if (!@advanced_search_terms && @search_terms.blank? && @tag_filter.blank?)
     if @featured_proposals.present?
       set_featured_proposal_votes(@featured_proposals)
       @resources = @resources.where('proposals.id NOT IN (?)', @featured_proposals.map(&:id))
@@ -44,4 +45,5 @@ class ProposalsController < ApplicationController
     def set_featured_proposal_votes(proposals)
       @featured_proposals_votes = current_user ? current_user.proposal_votes(proposals) : {}
     end
+
 end

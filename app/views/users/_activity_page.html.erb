@@ -1,3 +1,3 @@
 <%= render "proposals" if @proposals.present? %>
-<%= render "debates" if @debates.present? %>
+<%= render "debates" if @debates.present? && feature?(:debates) %>
 <%= render "comments" if @comments.present? %>
