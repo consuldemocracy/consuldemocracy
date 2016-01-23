@@ -1,5 +1,5 @@
 <% if I18n.available_locales.size > 1 %>
-  <div class="locale">
+  <div class="locale" id="js-locale" data-current-local="<%= I18n.locale %>">
     <span class="inline-block">
       <%= t("layouts.header.locale") %>
     </span>

@@ -6,7 +6,9 @@ class Mailer < ApplicationMailer
   def comment(comment)
     @comment = comment
     @commentable = comment.commentable
-    mail(to: @commentable.author.email, subject: t('mailers.comment.subject', commentable: t("activerecord.models.#{@commentable.class.name.downcase}", count: 1).downcase)) if @commentable.present? && @commentable.author.present?
+    with_user(@commentable.author) do
+      mail(to: @commentable.author.email, subject: t('mailers.comment.subject', commentable: t("activerecord.models.#{@commentable.class.name.downcase}", count: 1).downcase)) if @commentable.present? && @commentable.author.present?
+    end
   end
 
   def reply(reply)
@@ -14,7 +16,9 @@ class Mailer < ApplicationMailer
     @commentable = @reply.commentable
     parent = Comment.find(@reply.parent_id)
     @recipient = parent.author
-    mail(to: @recipient.email, subject: t('mailers.reply.subject')) if @commentable.present? && @recipient.present?
+    with_user(@recipient) do
+      mail(to: @recipient.email, subject: t('mailers.reply.subject')) if @commentable.present? && @recipient.present?
+    end
   end
 
   def email_verification(user, recipient, token, document_type, document_number)
@@ -23,7 +27,17 @@ class Mailer < ApplicationMailer
     @token = token
     @document_type = document_type
     @document_number = document_number
-    mail(to: @recipient, subject: t('mailers.email_verification.subject'))
+
+    with_user(user) do
+      mail(to: @recipient, subject: t('mailers.email_verification.subject'))
+    end
   end
 
+  private
+
+  def with_user(user, &block)
+    I18n.with_locale(user.locale) do
+      block.call
+    end
+  end
 end

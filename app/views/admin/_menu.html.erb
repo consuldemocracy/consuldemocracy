@@ -18,12 +18,14 @@
       <% end %>
     </li>
 
-    <li <%= "class=active" if controller_name == "debates" %>>
-      <%= link_to admin_debates_path do %>
-        <i class="icon-debates"></i>
-        <%= t("admin.menu.hidden_debates") %>
-      <% end %>
-    </li>
+    <% if feature?(:debates) %>
+      <li <%= "class=active" if controller_name == "debates" %>>
+        <%= link_to admin_debates_path do %>
+          <i class="icon-debates"></i>
+          <%= t("admin.menu.hidden_debates") %>
+        <% end %>
+      </li>
+    <% end %>
 
     <li <%= "class=active" if controller_name == "comments" %>>
       <%= link_to admin_comments_path do %>
@@ -34,7 +36,7 @@
 
     <li <%= "class=active" if controller_name == "spending_proposals" %>>
       <%= link_to admin_spending_proposals_path do %>
-        <i class="icon-proposals"></i>
+        <i class="icon-budget"></i>
         <%= t("admin.menu.spending_proposals") %>
       <% end %>
     </li>

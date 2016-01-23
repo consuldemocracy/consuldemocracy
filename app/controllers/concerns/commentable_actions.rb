@@ -3,11 +3,13 @@ module CommentableActions
   include Polymorphic
   def index
     @resources = @search_terms.present? ? resource_model.search(@search_terms) : resource_model.all
+    @resources = @advanced_search_terms.present? ? @resources.filter(@advanced_search_terms) : @resources
+
     @resources = @resources.tagged_with(@tag_filter) if @tag_filter
     @resources = @resources.page(params[:page]).for_render.send("sort_by_#{@current_order}")
     index_customization if index_customization.present?
-    @tag_cloud = tag_cloud
 
+    @tag_cloud = tag_cloud
     set_resource_votes(@resources)
     set_resources_instance
   end
@@ -47,7 +49,7 @@ module CommentableActions
   def update
     resource.assign_attributes(strong_params)
     if resource.save_with_captcha
-      redirect_to resource, notice: t('flash.actions.update.notice', resource_name: "#{resource_name.capitalize}")
+      redirect_to resource, notice: t("flash.actions.update.#{resource_name.underscore}")
     else
       load_featured_tags
       set_resource_instance
@@ -62,7 +64,7 @@ module CommentableActions
     end
 
     def tag_cloud
-      resource_model.tag_counts.order("#{resource_name.pluralize}_count": :desc, name: :asc).limit(20)
+      resource_model.last_week.tag_counts.order("#{resource_name.pluralize}_count": :desc, name: :asc).limit(5)
     end
 
     def load_featured_tags
@@ -79,6 +81,47 @@ module CommentableActions
       @search_terms = params[:search] if params[:search].present?
     end
 
+    def parse_advanced_search_terms
+      @advanced_search_terms = params[:advanced_search] if params[:advanced_search].present?
+      parse_search_date
+    end
+
+    def parse_search_date
+      return unless search_by_date?
+      params[:advanced_search][:date_range] = search_date_range
+    end
+
+    def search_by_date?
+      params[:advanced_search] && params[:advanced_search][:date_min].present?
+    end
+
+    def search_start_date
+      case params[:advanced_search][:date_min]
+      when '1'
+        24.hours.ago
+      when '2'
+        1.week.ago
+      when '3'
+        1.month.ago
+      when '4'
+        1.year.ago
+      else
+        Date.parse(params[:advanced_search][:date_min]) rescue nil
+      end
+    end
+
+    def method_name
+
+    end
+
+    def search_finish_date
+      params[:advanced_search][:date_max].try(:to_date) || Date.today
+    end
+
+    def search_date_range
+      search_start_date.beginning_of_day..search_finish_date.end_of_day
+    end
+
     def set_search_order
       if params[:search].present? && params[:order].blank?
         params[:order] = 'relevance'
@@ -92,10 +135,6 @@ module CommentableActions
     def index_customization
       nil
     end  
-
-    def after_create_path
-      url_for(controller: controller_name, action: :show, id: @resource.id)
-    end
 
     def after_create_path
       url_for(controller: controller_name, action: :show, id: @resource.id)

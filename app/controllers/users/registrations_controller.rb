@@ -36,10 +36,20 @@ class Users::RegistrationsController < Devise::RegistrationsController
     end
   end
 
+  def check_username
+    if User.find_by_username params[:username]
+      render json: {available: false, message: t("devise_views.users.registrations.new.username_is_not_available")}
+    else
+      render json: {available: true, message: t("devise_views.users.registrations.new.username_is_available")}
+    end
+  end
+
   private
 
     def sign_up_params
-      params.require(:user).permit(:username, :email, :password, :password_confirmation, :captcha, :captcha_key, :terms_of_service)
+      params.require(:user).permit(:username, :email, :password,
+                                   :password_confirmation, :captcha,
+                                   :captcha_key, :terms_of_service, :locale)
     end
 
     def erase_params

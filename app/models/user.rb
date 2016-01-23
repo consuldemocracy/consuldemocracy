@@ -34,6 +34,9 @@ class User < ActiveRecord::Base
   validates_format_of :email, without: OMNIAUTH_EMAIL_REGEX, on: :update
   validates :terms_of_service, acceptance: { allow_nil: false }, on: :create
 
+  validates :locale, inclusion: {in: I18n.available_locales.map(&:to_s),
+                                 allow_nil: true}
+
   validates_associated :organization, message: false
 
   accepts_nested_attributes_for :organization, update_only: true
@@ -202,8 +205,12 @@ class User < ActiveRecord::Base
   end
 
   def has_official_email?
-    domain = Setting.value_for 'email_domain_for_officials'
+    domain = Setting['email_domain_for_officials']
     !email.blank? && ( (email.end_with? "@#{domain}") || (email.end_with? ".#{domain}") )
+  end
+
+  def locale
+    self[:locale] ||= I18n.default_locale.to_s
   end
 
   private

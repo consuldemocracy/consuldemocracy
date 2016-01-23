@@ -1,3 +1,4 @@
+# coding: utf-8
 require 'rails_helper'
 
 describe Debate do
@@ -118,7 +119,7 @@ describe Debate do
 
   describe "#editable?" do
     let(:debate) { create(:debate) }
-    before(:each) { Setting.find_by(key: "max_votes_for_debate_edit").update(value: 3) }
+    before(:each) { Setting["max_votes_for_debate_edit"] = 3 }
 
     it "should be true if debate has no votes yet" do
       expect(debate.total_votes).to eq(0)
@@ -140,7 +141,7 @@ describe Debate do
 
   describe "#editable_by?" do
     let(:debate) { create(:debate) }
-    before(:each) { Setting.find_by(key: "max_votes_for_debate_edit").update(value: 1) }
+    before(:each) { Setting["max_votes_for_debate_edit"] = 1 }
 
     it "should be true if user is the author and debate is editable" do
       expect(debate.editable_by?(debate.author)).to be true
@@ -160,7 +161,7 @@ describe Debate do
     let(:debate) { create(:debate) }
 
     before(:each) do
-      Setting.find_by(key: "max_ratio_anon_votes_on_debates").update(value: 50)
+      Setting["max_ratio_anon_votes_on_debates"] = 50
     end
 
     it "should be true for level two verified users" do
@@ -196,7 +197,7 @@ describe Debate do
     let(:debate) { create(:debate) }
 
     before(:each) do
-      Setting.find_by(key: "max_ratio_anon_votes_on_debates").update(value: 50)
+      Setting["max_ratio_anon_votes_on_debates"] = 50
     end
 
     describe "from level two verified users" do
@@ -324,6 +325,9 @@ describe Debate do
 
       debate = create(:debate, :with_confidence_score, cached_votes_up: 0, cached_votes_total: 100)
       expect(debate.confidence_score).to eq(0)
+
+      debate = create(:debate, :with_confidence_score, cached_votes_up: 0, cached_votes_total: 0)
+      expect(debate.confidence_score).to eq(1)
 
       debate = create(:debate, :with_confidence_score, cached_votes_up: 75, cached_votes_total: 100)
       expect(debate.confidence_score).to eq(3750)
@@ -477,6 +481,13 @@ describe Debate do
       xit "searches by description" do
         debate = create(:debate, description: 'in order to save the world one must think about...')
         results = Debate.search('one must think')
+        expect(results).to eq([debate])
+      end
+
+      xit "searches by author name" do
+        author = create(:user, username: 'Danny Trejo')
+        debate = create(:debate, author: author)
+        results = Debate.search('Danny')
         expect(results).to eq([debate])
       end
 
@@ -710,7 +721,18 @@ describe Debate do
       end
 
     end
+  end
 
+  describe "#last_week" do
+    it "should return debates created this week" do
+      debate = create(:debate)
+      expect(Debate.last_week.all).to include (debate)
+    end
+
+    it "should not show debates created more than a week ago" do
+      debate = create(:debate, created_at: 8.days.ago)
+      expect(Debate.last_week.all).to_not include (debate)
+    end
   end
 
 end

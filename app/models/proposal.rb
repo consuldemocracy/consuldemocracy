@@ -6,6 +6,7 @@ class Proposal < ActiveRecord::Base
   include Sanitizable
   include PgSearch
   include SearchCache
+  include Filterable
 
   apply_simple_captcha
   acts_as_votable
@@ -40,7 +41,8 @@ class Proposal < ActiveRecord::Base
   scope :sort_by_random,           -> { reorder("RANDOM()") }
   scope :sort_by_relevance ,       -> { all }
   scope :sort_by_flags,            -> { order(flags_count: :desc, updated_at: :desc) }
-
+  scope :last_week,            -> { where("created_at >= ?", 7.days.ago)}
+  
   pg_search_scope :pg_search, {
     against: {
       title:       'A',
@@ -67,7 +69,12 @@ class Proposal < ActiveRecord::Base
       description => 'D'
     }
     tag_list.each{ |tag| values[tag] = 'D' }
+    values[author.username] = 'D'
     values
+  end
+
+  def self.search(terms)
+    self.pg_search(terms)
   end
 
   def description
@@ -79,7 +86,7 @@ class Proposal < ActiveRecord::Base
   end
 
   def editable?
-    total_votes <= Setting.value_for("max_votes_for_proposal_edit").to_i
+    total_votes <= Setting["max_votes_for_proposal_edit"].to_i
   end
 
   def editable_by?(user)
@@ -97,7 +104,7 @@ class Proposal < ActiveRecord::Base
   end
 
   def code
-    "#{Setting.value_for("proposal_code_prefix")}-#{created_at.strftime('%Y-%m')}-#{id}"
+    "#{Setting["proposal_code_prefix"]}-#{created_at.strftime('%Y-%m')}-#{id}"
   end
 
   def after_commented
@@ -123,12 +130,8 @@ class Proposal < ActiveRecord::Base
     self.tags.each{ |t| t.increment_custom_counter_for('Proposal') }
   end
 
-  def self.search(terms)
-    self.pg_search(terms)
-  end
-
   def self.votes_needed_for_success
-    Setting.value_for('votes_for_proposal_success').to_i
+    Setting['votes_for_proposal_success'].to_i
   end
 
   protected
