@@ -27,6 +27,8 @@
                            label: t("devise_views.users.registrations.new.password_confirmation_label"),
                            placeholder: t("devise_views.users.registrations.new.password_confirmation_label") %>
 
+      <%= f.hidden_field :locale, value: I18n.locale %>
+
       <%= f.simple_captcha input_html: {required: false} %>
 
 

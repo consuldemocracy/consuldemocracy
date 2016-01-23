@@ -47,7 +47,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
   private
 
     def sign_up_params
-      params.require(:user).permit(:username, :email, :password, :password_confirmation, :captcha, :captcha_key, :terms_of_service)
+      params.require(:user).permit(:username, :email, :password,
+                                   :password_confirmation, :captcha,
+                                   :captcha_key, :terms_of_service, :locale)
     end
 
     def erase_params
