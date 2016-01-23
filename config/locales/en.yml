@@ -88,18 +88,6 @@ en:
       tags_label: Topics
       tags_placeholder: Enter the tags you would like to use, separated by commas (',')
     index:
-<<<<<<< HEAD
-      title: "Debates"
-      featured_debates: "Featured"
-      start_debate: "Start a debate"
-
-      select_order: "Order by"
-      orders:
-        confidence_score: "highest rated"
-        hot_score: "most active"
-        created_at: "newest"
-        most_commented: "most commented"
-        relevance: "relevance"
       featured_debates: Featured
       filter_topic:
         one: " with topic '%{topic}'"
