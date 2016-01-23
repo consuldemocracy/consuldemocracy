@@ -137,6 +137,17 @@ en:
     update:
       form:
         submit_button: Save changes
+  debate_links:
+    form:
+      debate_link: "Link"
+    new:
+      start_new: "Share a link"
+      recommendations_title: "Recommendations for sharing a link"      
+      form:
+        submit_button: "Share link"
+    create:
+      form:
+        submit_button: "Share link"
   errors:
     messages:
       user_not_found: User not found
@@ -246,21 +257,6 @@ en:
       back_link: Go back
       editing: Edit proposal
       form:
-<<<<<<< HEAD
-        submit_button: "Save changes"
-  debate_links:
-    form:
-      debate_link: "Link"
-    new:
-      start_new: "Share a link"
-      recommendations_title: "Recommendations for sharing a link"      
-      form:
-        submit_button: "Share link"
-    create:
-      form:
-        submit_button: "Share link"
-  proposals:
-=======
         submit_button: Save changes
       show_link: View proposal
     form:
@@ -278,7 +274,6 @@ en:
       tags_instructions: Tag this proposal. You can choose from our tags or add your own.
       tags_label: Tags
       tags_placeholder: Enter the tags you would like to use, separated by commas (',')
->>>>>>> master
     index:
       featured_proposals: Featured
       filter_topic:
