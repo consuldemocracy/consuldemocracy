@@ -81,7 +81,7 @@ GEM
     capistrano-bundler (1.1.4)
       capistrano (~> 3.1)
       sshkit (~> 1.2)
-    capistrano-rails (1.1.5)
+    capistrano-rails (1.1.6)
       capistrano (~> 3.1)
       capistrano-bundler (~> 1.1)
     capistrano-rvm (0.1.2)
@@ -129,7 +129,7 @@ GEM
     delayed_job_active_record (4.1.0)
       activerecord (>= 3.0, < 5)
       delayed_job (>= 3.0, < 5)
-    devise (3.5.4)
+    devise (3.5.5)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
       railties (>= 3.2.6, < 5)
@@ -228,7 +228,7 @@ GEM
       mime-types (>= 1.16, < 3)
     mime-types (2.99)
     mini_portile2 (2.0.0)
-    minitest (5.8.3)
+    minitest (5.8.4)
     multi_json (1.11.2)
     multi_xml (0.5.5)
     multipart-post (2.0.0)
@@ -457,7 +457,7 @@ DEPENDENCIES
   cancancan
   capistrano (= 3.4.0)
   capistrano-bundler (= 1.1.4)
-  capistrano-rails (= 1.1.5)
+  capistrano-rails (= 1.1.6)
   capistrano-rvm
   capistrano3-delayed-job (~> 1.0)
   capybara
