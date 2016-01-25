@@ -1,9 +1,15 @@
 class MeetingsController < ApplicationController
   load_and_authorize_resource
-  respond_to :html
+  respond_to :html, :js
 
   def index
-    @meetings = Meeting.upcoming
+    @filter = ResourceFilter.new(Meeting, params)
+    @meetings = @filter.collection.upcoming
+
+    respond_to do |format|
+      format.html
+      format.js { render json: @meetings.to_json }
+    end
   end
 
   def show

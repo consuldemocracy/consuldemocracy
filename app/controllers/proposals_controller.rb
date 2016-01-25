@@ -12,7 +12,7 @@ class ProposalsController < ApplicationController
   respond_to :html, :js
 
   def index
-    @filter = ProposalFilter.new(params)
+    @filter = ResourceFilter.new(Proposal, params)
     @proposals = @filter.collection
 
     @featured_proposals = @proposals.sort_by_confidence_score.limit(3) if (@filter.search_filter.blank? && @filter.tag_filter.blank?)

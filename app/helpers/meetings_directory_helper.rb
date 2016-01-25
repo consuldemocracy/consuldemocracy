@@ -3,6 +3,7 @@ module MeetingsDirectoryHelper
     react_component(
       'MeetingsDirectory', 
       filter: options[:filter],
+      filterUrl: meetings_url,
       meetings: serialized_meetings(options[:meetings]),
       districts: Proposal::DISTRICTS,
       categories: serialized_categories,

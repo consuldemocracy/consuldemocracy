@@ -2,43 +2,21 @@ class MeetingsList extends React.Component {
   constructor(props) {
     super(props);
 
-    this.meetings = [];
-
     this.state = {
-      meetings: [],
-      currentPage: 1,
-      totalPages: 1,
-      perPage: this.props.page,
+      currentPage: 1
     };
   }
 
-  componentDidMount() {
-    $(document).on('meetings:visible', (event, { visibleMeetings }) => {
-      this.setState({ 
-        meetings: visibleMeetings,
-        currentPage: 1,
-        totalPages: Math.ceil(visibleMeetings.length / this.props.perPage)
-      });
-    });
-  }
-
-  componentWillUnmount() {
-    $(document).off('meetings:visible');
-  }
-
-  componentWillUpdate(nextProps, nextState) {
-    let begin = (nextState.currentPage - 1) * this.props.perPage,
-        end = begin + this.props.perPage;
-    
-    this.meetings = nextState.meetings.slice(begin, end);
-  }
-
   render () {
+    let begin = (this.state.currentPage - 1) * this.props.perPage,
+        end = begin + this.props.perPage,
+        meetings = this.props.meetings.slice(begin, end);
+
     return (
       <div>
         <ul className="small-block-grid-2 medium-block-grid-3 large-block-grid-4">
           {
-            this.meetings.map((meeting) => {
+            meetings.map((meeting) => {
               return (
                 <li className="meeting" key={ `meeting_${meeting.id}` } >
                   <a href={meeting.url} className="meeting-title" >
@@ -57,7 +35,7 @@ class MeetingsList extends React.Component {
         <div className="row">
           <Pagination 
             currentPage={this.state.currentPage}
-            totalPages={this.state.totalPages}
+            totalPages={Math.ceil(this.props.meetings.length / this.props.perPage)}
             onSetCurrentPage={(page) => this.setCurrentPage(page)} />
         </div>
       </div>

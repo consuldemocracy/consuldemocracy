@@ -2,12 +2,9 @@ class MeetingsFilter extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      /*search: this.props.filter.search_filter,*/
-      //tags: Immutable.Set(this.props.filter.tag_filter || []),
-      /*filters : Immutable.Map(this.props.filter.params || {})*/
-      search: '',
-      tags: Immutable.Set([]),
-      filters : Immutable.Map({})
+      search: this.props.filter.search_filter,
+      tags: Immutable.Set(this.props.filter.tag_filter || []),
+      filters : Immutable.Map(this.props.filter.params || {})
     };
   }
 
@@ -46,15 +43,6 @@ class MeetingsFilter extends React.Component {
     )
   }
 
-  filterByText(text) {
-     let rex = new RegExp(text, "igm");
-         filteredMeetings = this.props.meetings.filter((meeting) => {
-           return meeting.title.match(rex) || meeting.description.match(rex);
-         });
-
-    $(document).trigger('meetings:filtered', { meetings: filteredMeetings });
-  }
-
   onKeyDown(event) {
     let key = event.keyCode;
 
@@ -63,16 +51,72 @@ class MeetingsFilter extends React.Component {
     }
   }
 
+  filterByText(text) {
+    /* let rex = new RegExp(text, "igm");*/
+         //filteredMeetings = this.props.meetings.filter((meeting) => {
+           //return meeting.title.match(rex) || meeting.description.match(rex);
+         //});
+
+    /*$(document).trigger('meetings:filtered', { meetings: filteredMeetings });*/
+  }
+
   changeFilterGroup(filterGroupName, filterGroupValue) {
     let filters = this.state.filters.set(filterGroupName, filterGroupValue);
-    /*if (filterGroupName === 'category_id') {*/
-      //filters = this.checkFilterSubcategoryIds(filters);
-    /*}*/
+    if (filterGroupName === 'category_id') {
+      filters = filters.delete('subcategory_id')
+    }
     if (filterGroupName === 'scope' && filterGroupValue !== 'district') {
       filters = filters.delete('district');
     }
-    //this.applyFilters(filters.toObject(), this.state.tags.toArray());
+    this.applyFilters(filters.toObject(), this.state.tags.toArray());
     this.setState({ filters });
+  }
+
+  applyFilters(filters, tags) {
+    let filterString = [], 
+        data;
+
+    for (let filterGroupName in filters) {
+      if(filters[filterGroupName].length > 0) {
+        filterString.push(`${filterGroupName}=${filters[filterGroupName].join(',')}`);
+      }
+    }
+
+    filterString = filterString.join(':');
+
+    data = {
+      search: this.state.search,
+      tag: tags,
+      filter: filterString 
+    }
+
+    this.replaceUrl(data);
+    $.ajax(this.props.filterUrl, { data, dataType: "script" }).then((result) => {
+      this.props.onFilterResult(JSON.parse(result));
+    });
+  }
+
+  replaceUrl(data) {
+    if (Modernizr.history) {
+      let queryParams = [],
+          url;
+
+      if (this.state.search) {
+        queryParams.push(`search=${this.state.search}`);
+      }
+
+      if (data.tag) {
+        queryParams.push(`tag=${data.tag}`);
+      }
+
+      if (data.filter) {
+        queryParams.push(`filter=${data.filter}`);
+      }
+
+      url = `${location.href.replace(/\?.*/, "")}?${queryParams.join('&')}`;
+
+      history.replaceState(data, '', url);
+    }
   }
 
 }
