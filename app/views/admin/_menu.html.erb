@@ -34,12 +34,14 @@
       <% end %>
     </li>
 
-    <li <%= "class=active" if controller_name == "spending_proposals" %>>
-      <%= link_to admin_spending_proposals_path do %>
-        <i class="icon-budget"></i>
-        <%= t("admin.menu.spending_proposals") %>
-      <% end %>
-    </li>
+    <% if feature?(:spending_proposals) %>
+      <li <%= "class=active" if controller_name == "spending_proposals" %>>
+        <%= link_to admin_spending_proposals_path do %>
+          <i class="icon-budget"></i>
+          <%= t("admin.menu.spending_proposals") %>
+        <% end %>
+      </li>
+    <% end %>
 
     <li <%= "class=active" if controller_name == "users" %>>
       <%= link_to admin_users_path do %>

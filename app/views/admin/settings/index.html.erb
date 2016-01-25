@@ -12,3 +12,23 @@
     </li>
   <% end %>
 </ul>
+
+<h2><%= t("admin.settings.index.feature_flags") %></h2>
+
+<ul class="admin-list">
+  <% @feature_flags.each do |feature_flag| %>
+    <li>
+      <strong><%= t("settings.#{feature_flag.key}") %></strong>
+
+      <div>
+        <%= feature_flag.enabled? ? t("admin.settings.index.features.enabled") : t("admin.settings.index.features.disabled") %>
+      <div>
+
+      <%= form_for(feature_flag, url: admin_setting_path(feature_flag), html: { id: "edit_#{dom_id(feature_flag)}"}) do |f| %>
+
+        <%= f.hidden_field :value, id: dom_id(feature_flag), value: (feature_flag.enabled? ? "" : "active") %>
+        <%= f.submit(t("admin.settings.index.features.#{feature_flag.enabled? ? 'disable' : 'enable'}"), class: "button radius tiny #{feature_flag.enabled? ? 'warning' : 'success'}", data: {confirm: t("admin.actions.confirm")}) %>
+      <% end %>
+    </li>
+  <% end %>
+</ul>

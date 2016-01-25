@@ -114,6 +114,7 @@ ignore_unused:
   - 'admin.users.index.filter*'
   - 'admin.activity.show.filter*'
   - 'admin.comments.index.hidden_*'
+  - 'admin.settings.index.features.*'
   - 'moderation.comments.index.filter*'
   - 'moderation.comments.index.order*'
   - 'moderation.debates.index.filter*'

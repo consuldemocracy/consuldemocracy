@@ -12,3 +12,6 @@ es:
     votes_for_proposal_success: "Número de votos necesarios para aprobar una Propuesta"
     email_domain_for_officials: "Dominio de email para cargos públicos"
     per_page_code: "Código a incluir en cada página"
+    feature:
+      debates: Debates
+      spending_proposals: Propuestas de gasto

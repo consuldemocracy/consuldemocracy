@@ -31,6 +31,9 @@ class User < ActiveRecord::Base
   validates :official_level, inclusion: {in: 0..5}
   validates :terms_of_service, acceptance: { allow_nil: false }, on: :create
 
+  validates :locale, inclusion: {in: I18n.available_locales.map(&:to_s),
+                                 allow_nil: true}
+
   validates_associated :organization, message: false
 
   accepts_nested_attributes_for :organization, update_only: true
@@ -176,6 +179,10 @@ class User < ActiveRecord::Base
 
   def confirmation_required?
     !registering_with_oauth
+  end
+
+  def locale
+    self[:locale] ||= I18n.default_locale.to_s
   end
 
   private

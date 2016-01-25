@@ -38,7 +38,7 @@
 //= require votes
 //= require annotatable
 //= require advanced_search
-
+//= require registration_form
 
 var initialize_modules = function() {
   App.Comments.initialize();
@@ -52,6 +52,7 @@ var initialize_modules = function() {
   App.IeAlert.initialize();
   App.Annotatable.initialize();
   App.AdvancedSearch.initialize();
+  App.RegistrationForm.initialize();
 };
 
 $(function(){
