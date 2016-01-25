@@ -18,7 +18,7 @@ class SubcategoryPicker extends React.Component {
             className={selected ? 'selected' : ''}
         >
           {subcategory.name}
-          <p>{subcategory.description}</p>
+          <div dangerouslySetInnerHTML={{__html: subcategory.description }}></div>
         </li>
       );
     });

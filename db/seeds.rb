@@ -71,10 +71,12 @@ if ENV["SEED"]
   puts "Creating Axis, Action Lines and Goals"
   (1..5).each do |n|
     name = "Axis #{n}"
-    category = Category.create(name: { ca: name, es: name, en: name }, position: n)
+    description = "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>"
+    category = Category.create(name: { ca: name, es: name, en: name }, description: { ca: description, es: description, en: description }, position: n)
     (1..5).each do |m|
       name = "Action line #{n}#{m}"
-      Subcategory.create(name: { ca: name, es: name, en: name }, category_id: category.id, position: m)
+      description = "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>"
+      Subcategory.create(name: { ca: name, es: name, en: name }, description: { ca: description, es: description, en: description }, category_id: category.id, position: m)
     end
   end
 
