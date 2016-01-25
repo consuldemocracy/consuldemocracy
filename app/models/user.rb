@@ -174,6 +174,11 @@ class User < ActiveRecord::Base
     !erased? && !registering_with_oauth
   end
 
+  # Deactivates the email uniqueness validation when registering with oauth
+  def email_changed?
+    !registering_with_oauth && super
+  end
+
   def has_official_email?
     domain = Setting['email_domain_for_officials']
     !email.blank? && ( (email.end_with? "@#{domain}") || (email.end_with? ".#{domain}") )
