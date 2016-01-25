@@ -1,6 +1,14 @@
 module MeetingsDirectoryHelper
   def meetings_directory(options = {})
-    meetings = options[:meetings].map do |meeting|
+    react_component(
+      'MeetingsDirectory', 
+      meetings: serialized_meetings(options[:meetings]),
+      districts: Proposal::DISTRICTS
+    )
+  end
+
+  def serialized_meetings(meetings)
+    meetings.map do |meeting|
       {
         id: meeting.id,
         title: meeting.title,
@@ -14,6 +22,5 @@ module MeetingsDirectoryHelper
         url: meeting_url(meeting)
       }
     end
-    react_component 'MeetingsDirectory', meetings: meetings
   end
 end

@@ -1,4 +1,16 @@
 class MeetingsFilter extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      /*search: this.props.filter.search_filter,*/
+      //tags: Immutable.Set(this.props.filter.tag_filter || []),
+      /*filters : Immutable.Map(this.props.filter.params || {})*/
+      search: '',
+      tags: Immutable.Set([]),
+      filters : Immutable.Map({})
+    };
+  }
+
   render() {
     return (
       <form>
@@ -13,9 +25,24 @@ class MeetingsFilter extends React.Component {
               onKeyDown={(event) => this.onKeyDown(event)} />
           </div>
         </div>
+        <ScopeFilterOptionGroup 
+          filterGroupValue={this.state.filters.get('scope')} 
+          onChangeFilterGroup={(filterGroupName, filterGroupValue) => this.changeFilterGroup(filterGroupName, filterGroupValue) } />
+        {(() => {
+          if(this.state.filters.get('scope') && this.state.filters.get('scope').indexOf("district") !== -1) {
+            return (
+              <DistrictFilterOptionGroup 
+                districts={this.props.districts} 
+                filterGroupValue={this.state.filters.get('district')}
+                onChangeFilterGroup={(filterGroupName, filterGroupValue) => this.changeFilterGroup(filterGroupName, filterGroupValue) } />
+            )
+          }
+        })()}
       </form>
     )
   }
+
+  //if(this.state.filters.get('scope') && this.state.filters.get('scope').indexOf("district") !== -1) {
 
   filterByText(text) {
      let rex = new RegExp(text, "igm");
@@ -33,4 +60,17 @@ class MeetingsFilter extends React.Component {
       event.preventDefault();
     }
   }
+
+  changeFilterGroup(filterGroupName, filterGroupValue) {
+    let filters = this.state.filters.set(filterGroupName, filterGroupValue);
+    /*if (filterGroupName === 'category_id') {*/
+      //filters = this.checkFilterSubcategoryIds(filters);
+    /*}*/
+    if (filterGroupName === 'scope' && filterGroupValue !== 'district') {
+      filters = filters.delete('district');
+    }
+    //this.applyFilters(filters.toObject(), this.state.tags.toArray());
+    this.setState({ filters });
+  }
+
 }

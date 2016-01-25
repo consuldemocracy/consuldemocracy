@@ -19,27 +19,16 @@ class ProposalFilters extends React.Component {
           <ProposalFilterOption filterName="official" />
           <ProposalFilterOption filterName="citizenship" />
         </ProposalFilterOptionGroup>
-        <ProposalFilterOptionGroup 
-          filterGroupName="scope" 
-          filterGroupValue={this.state.filters.get('scope')}
-          isExclusive={true}
-          onChangeFilterGroup={(filterGroupName, filterGroupValue) => this.changeFilterGroup(filterGroupName, filterGroupValue) }>
-          <ProposalFilterOption filterName="city" />
-          <ProposalFilterOption filterName="district" />
-        </ProposalFilterOptionGroup>
+        <ScopeFilterOptionGroup 
+          filterGroupValue={this.state.filters.get('scope')} 
+          onChangeFilterGroup={(filterGroupName, filterGroupValue) => this.changeFilterGroup(filterGroupName, filterGroupValue) } />
         {(() => {
           if(this.state.filters.get('scope') && this.state.filters.get('scope').indexOf("district") !== -1) {
             return (
-              <ProposalFilterOptionGroup 
-                filterGroupName="district" 
+              <DistrictFilterOptionGroup 
+                districts={this.props.districts} 
                 filterGroupValue={this.state.filters.get('district')}
-                onChangeFilterGroup={(filterGroupName, filterGroupValue) => this.changeFilterGroup(filterGroupName, filterGroupValue) }>
-                {
-                  this.props.districts.map(function (district) {
-                    return <ProposalFilterOption key={district[1]} filterName={district[1]} filterLabel={district[0]} />
-                  })
-                }
-              </ProposalFilterOptionGroup>
+                onChangeFilterGroup={(filterGroupName, filterGroupValue) => this.changeFilterGroup(filterGroupName, filterGroupValue) } />
             )
           }
         })()}
