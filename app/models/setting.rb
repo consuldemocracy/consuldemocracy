@@ -3,6 +3,10 @@ class Setting < ActiveRecord::Base
 
   default_scope { order(id: :asc) }
 
+  def feature_flag?
+    key.start_with?('feature.')
+  end
+
   class << self
     def [](key)
       where(key: key).pluck(:value).first.presence

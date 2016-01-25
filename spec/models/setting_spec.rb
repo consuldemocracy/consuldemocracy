@@ -16,4 +16,16 @@ describe Setting do
   it "should persist a setting on the db" do
     expect(Setting.where(key: 'official_level_1_name', value: 'Stormtrooper')).to exist
   end
+
+  describe "#feature_flag?" do
+    it "should be true if key starts with 'feature.'" do
+      setting = Setting.create(key: 'feature.whatever')
+      expect(setting.feature_flag?).to eq true
+    end
+
+    it "should be false if key does not start with 'feature.'" do
+      setting = Setting.create(key: 'whatever')
+      expect(setting.feature_flag?).to eq false
+    end
+  end
 end
