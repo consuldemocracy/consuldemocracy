@@ -229,8 +229,15 @@ en:
       meeting_end_at: What time does it end?
       meeting_held_at: When it will take place?
       meeting_proposal_ids: Which proposals are being discussed?
+      meeting_scope: Scope
+      meeting_scope_city: Whole city
+      meeting_scope_district: A district
+      meeting_scope_note: Is it a measure for the whole city or just for one district?
       meeting_start_at: What time does it start?
       meeting_title: Title
+      tags_instructions: Tag this proposal. You can choose from our tags or add your own.
+      tags_label: Tags
+      tags_placeholder: Enter the tags you would like to use, separated by commas (',')
     index:
       close: Close
       edit: Edit

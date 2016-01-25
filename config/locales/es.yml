@@ -229,8 +229,15 @@ es:
       meeting_end_at: "¿A que hora acaba?"
       meeting_held_at: "¿Cuándo se va a realizar?"
       meeting_proposal_ids: "¿Qué propuestas se van a discutir?"
+      meeting_scope: "Ámbito"
+      meeting_scope_city: Toda la ciudad
+      meeting_scope_district: Un distrito
+      meeting_scope_note: "¿Es una medida para toda la ciudad o solo para un distrito?"
       meeting_start_at: "¿A que hora empieza?"
       meeting_title: Título
+      tags_instructions: Etiqueta este debate. Puedes elegir entre nuestras propuestas o introducir las que desees.
+      tags_label: Temas
+      tags_placeholder: Escribe las etiquetas que desees separadas por coma (',')
     index:
       close: Cerrar
       edit: Editar

@@ -11,14 +11,15 @@ class SubcategoryPicker extends React.Component {
     return subcategories.map( function(subcategory){
       var selected = subcategory.id === selectedId;
 
+      var classNames = ['subcategory-' + subcategory.id];
+      if(selected){ classNames.push('selected'); }
+
       return (
-        <li
+        <li className={classNames.join(' ')}
             key={subcategory.id}
-            onClick={() => component.select(subcategory)}
-            className={selected ? 'selected' : ''}
-        >
+            onClick={() => component.select(subcategory)}>
           {subcategory.name}
-          <p>{subcategory.description}</p>
+          <div dangerouslySetInnerHTML={{__html: subcategory.description }}></div>
         </li>
       );
     });

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160122153329) do
+ActiveRecord::Schema.define(version: 20160125092947) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -207,14 +207,18 @@ ActiveRecord::Schema.define(version: 20160122153329) do
     t.time     "start_at"
     t.time     "end_at"
     t.integer  "author_id"
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
+    t.datetime "created_at",                             null: false
+    t.datetime "updated_at",                             null: false
     t.float    "address_latitude"
     t.float    "address_longitude"
     t.string   "address_details"
     t.tsvector "tsv"
     t.text     "close_report"
     t.datetime "closed_at"
+    t.integer  "category_id"
+    t.integer  "subcategory_id"
+    t.string   "scope",             default: "district"
+    t.integer  "district"
   end
 
   add_index "meetings", ["tsv"], name: "index_meetings_on_tsv", using: :gin
@@ -350,9 +354,11 @@ ActiveRecord::Schema.define(version: 20160122153329) do
     t.integer "debates_count",                       default: 0
     t.integer "proposals_count",                     default: 0
     t.integer "spending_proposals_count",            default: 0
+    t.integer "meetings_count",                      default: 0
   end
 
   add_index "tags", ["debates_count"], name: "index_tags_on_debates_count", using: :btree
+  add_index "tags", ["meetings_count"], name: "index_tags_on_meetings_count", using: :btree
   add_index "tags", ["name"], name: "index_tags_on_name", unique: true, using: :btree
   add_index "tags", ["proposals_count"], name: "index_tags_on_proposals_count", using: :btree
   add_index "tags", ["spending_proposals_count"], name: "index_tags_on_spending_proposals_count", using: :btree

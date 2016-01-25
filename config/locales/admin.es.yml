@@ -54,6 +54,7 @@ es:
         title: Debates ocultos
     menu:
       activity: Actividad de moderadores
+      categories: Gestión de ejes
       debate_topics: Temas de debate
       hidden_comments: Comentarios ocultos
       hidden_debates: Debates ocultos
@@ -66,7 +67,6 @@ es:
       settings: Configuración global
       spending_proposals: Propuestas de gasto
       stats: Estadísticas
-      categories: Gestión de ejes
     moderators:
       index:
         title: Moderadores

@@ -71,10 +71,12 @@ if ENV["SEED"]
   puts "Creating Axis, Action Lines and Goals"
   (1..5).each do |n|
     name = "Axis #{n}"
-    category = Category.create(name: { ca: name, es: name, en: name }, position: n)
+    description = "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>"
+    category = Category.create(name: { ca: name, es: name, en: name }, description: { ca: description, es: description, en: description }, position: n)
     (1..5).each do |m|
       name = "Action line #{n}#{m}"
-      Subcategory.create(name: { ca: name, es: name, en: name }, category_id: category.id, position: m)
+      description = "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>"
+      Subcategory.create(name: { ca: name, es: name, en: name }, description: { ca: description, es: description, en: description }, category_id: category.id, position: m)
     end
   end
 
@@ -120,9 +122,20 @@ if ENV["SEED"]
 
   places = YAML.load_file("#{Rails.root}/db/seeds/places.yml")[:places]
 
-  (1..50).each do |i|
+  (1..1000).each do |i|
     place = places.sample
     start_at = Faker::Time.forward(23, :morning)
+
+    subcategory = Subcategory.offset(rand(Subcategory.count)).first
+
+    if [true, false].sample
+      scope = 'district'
+      district = Proposal::DISTRICTS.map(&:last).sample
+    else
+      scope = 'city'
+      district = nil
+    end
+
     meeting = Meeting.create!(
       author: moderator,
       title: Faker::Lorem.sentence(3).truncate(60),
@@ -132,7 +145,12 @@ if ENV["SEED"]
       address_longitude: place[:lng],
       held_at: Faker::Date.between(30.days.ago, 30.days.from_now),
       start_at: start_at, 
-      end_at: start_at + ((1..5).to_a.sample).hours
+      end_at: start_at + ((1..5).to_a.sample).hours,
+      tag_list: tags.sample(3).join(','),
+      subcategory: subcategory,
+      category: subcategory.category,
+      scope: scope,
+      district: district
     )
     puts "    #{meeting.title}"
   end

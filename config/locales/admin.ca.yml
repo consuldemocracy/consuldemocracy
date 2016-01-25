@@ -54,6 +54,7 @@ ca:
         title: Debats ocults
     menu:
       activity: Activitat de moderadors
+      categories: Gestió d'eixos
       debate_topics: Temes de debat
       hidden_comments: Comentaris ocults
       hidden_debates: Debats ocults
@@ -66,7 +67,6 @@ ca:
       settings: Configuració global
       spending_proposals: Propostes de despesa
       stats: Estadístiques
-      categories: Gestió d'eixos
     moderators:
       index:
         title: Moderadors
