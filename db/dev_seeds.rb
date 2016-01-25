@@ -22,7 +22,32 @@ Setting.create(key: 'feature.debates', value: "true")
 Setting.create(key: 'feature.spending_proposals', value: "true")
 
 puts "Creating Geozones"
-('A'..'Z').each{ |i| Geozone.create(name: "District #{i}") }
+geozones = [
+  ["Fuencarral - El Pardo", "3,86,27,60,134,54,220,88,295,3,348,85,312,108,230,94,270,198,248,239,200,259,57,235,34,164"],
+  ["Moncloa - Aravaca", "54,234,200,261,185,329,115,355,125,290,105,288,90,261,50,246"],
+  ["Tetuán", "199,258,228,253,224,292,199,290,196,292"],
+  ["Chamberí", "190,292,222,294,224,324,193,317"],
+  ["Centro", "190,317,184,342,214,352,218,325"],
+  ["Latina", "179,335,113,357,48,355,68,406,114,416,147,381,181,350"],
+  ["Carabanchel", "178,353,198,370,176,412,116,416,176,354"],
+  ["Arganzuela", "184,342,218,351,238,373,214,390,183,348"],
+  ["Usera", "178,412,201,371,222,420"],
+  ["Villaverde", "177,415,225,424,245,470,183,478,168,451"],
+  ["Chamartin", "231,247,224,303,237,309,257,300,246,241"],
+  ["Salamanca", "223,306,235,310,256,301,258,335,219,332"],
+  ["Retiro", "218,334,259,338,240,369,216,350"],
+  ["Puente de Vallecas", "214,390,250,356,265,362,271,372,295,384,291,397,256,406,243,420,223,422"],
+  ["Villa de Vallecas", "227,423,258,407,292,397,295,387,322,398,323,413,374,440,334,494,317,502,261,468,246,471"],
+  ["Hortaleza", "271,197,297,205,320,203,338,229,305,255,301,272,326,295,277,296,258,265,262,245,249,238"],
+  ["Barajas", "334,217,391,207,387,222,420,274,410,305,327,295,312,283,304,258,339,232"],
+  ["Ciudad Lineal", "246,240,258,243,258,267,285,307,301,347,258,338,255,271"],
+  ["Moratalaz", "259,338,302,346,290,380,251,355"],
+  ["San Blas - Canillejas", "282,295,404,306,372,320,351,340,335,359,303,346"],
+  ["Vicálvaro", "291,381,304,347,335,362,351,342,358,355,392,358,404,342,423,360,417,392,393,387,375,438,325,413,323,393"]
+]
+geozones.each do |name, coordinates|
+  Geozone.create(name: name, html_map_coordinates: coordinates)
+end
 
 puts "Creating Users"
 
@@ -72,53 +97,26 @@ org_user_ids = User.organizations.pluck(:id)
 not_org_users = User.where(['users.id NOT IN(?)', org_user_ids])
 
 puts "Creating Tags Categories"
+
 ActsAsTaggableOn::Tag.create!(name:  "Asociaciones", featured: true, kind: "category")
 ActsAsTaggableOn::Tag.create!(name:  "Cultura", featured: true, kind: "category")
- ActsAsTaggableOn::Tag.create!(name:  "Deportes", featured: true, kind: "category")
-  ActsAsTaggableOn::Tag.create!(name:  "Derechos Sociales", featured: true, kind: "category")
- ActsAsTaggableOn::Tag.create!(name:  "Economía", featured: true, kind: "category")
-  ActsAsTaggableOn::Tag.create!(name:  "Empleo", featured: true, kind: "category")
-  ActsAsTaggableOn::Tag.create!(name:  "Equidad", featured: true, kind: "category")
-  ActsAsTaggableOn::Tag.create!(name:  "Sostenibilidad", featured: true, kind: "category")
-  ActsAsTaggableOn::Tag.create!(name:  "Participación", featured: true, kind: "category")
-  ActsAsTaggableOn::Tag.create!(name:  "Movilidad", featured: true, kind: "category")
-  ActsAsTaggableOn::Tag.create!(name:  "Medios", featured: true, kind: "category")
-  ActsAsTaggableOn::Tag.create!(name:  "Salud", featured: true , kind: "category")
-  ActsAsTaggableOn::Tag.create!(name:  "Transparencia", featured: true, kind: "category")
-  ActsAsTaggableOn::Tag.create!(name:  "Seguridad y Emergencias", featured: true, kind: "category")
-  ActsAsTaggableOn::Tag.create!(name:  "Medio Ambiente", featured: true, kind: "category")
-
-
-  puts "Creating Tags Districts"
-
-  ActsAsTaggableOn::Tag.create!(name:  "Centro", featured: true, kind: "district")
-  ActsAsTaggableOn::Tag.create!(name:  "Arganzuela", featured: true, kind: "district")
-  ActsAsTaggableOn::Tag.create!(name:  "Retiro" , featured: true, kind: "district")
-  ActsAsTaggableOn::Tag.create!(name:  "Salamanca" , featured: true, kind: "district")
-  ActsAsTaggableOn::Tag.create!(name:  "Chamartín" , featured: true, kind: "district")
-  ActsAsTaggableOn::Tag.create!(name:  "Tetuán" , featured: true, kind: "district")
-  ActsAsTaggableOn::Tag.create!(name:  "Chamberí" , featured: true, kind: "district")
-  ActsAsTaggableOn::Tag.create!(name:  "Moncloa-Aravaca", featured: true, kind: "district")
-  ActsAsTaggableOn::Tag.create!(name:  "Latina", featured: true, kind: "district")
-  ActsAsTaggableOn::Tag.create!(name:  "Carabanchel", featured: true, kind: "district")
-  ActsAsTaggableOn::Tag.create!(name:  "Usera", featured: true, kind: "district")
-  ActsAsTaggableOn::Tag.create!(name:  "Puente de Vallecas", featured: true, kind: "district")
-  ActsAsTaggableOn::Tag.create!(name:  "Moratalaz", featured: true,  kind: "district")
-  ActsAsTaggableOn::Tag.create!(name:  "Ciudad Lineal", featured: true, kind: "district")
-  ActsAsTaggableOn::Tag.create!(name:  "Hortaleza", featured: true, kind: "district")
-  ActsAsTaggableOn::Tag.create!(name:  "Villaverde", featured: true,  kind: "district")
-  ActsAsTaggableOn::Tag.create!(name:  "Villa de Vallecas", featured: true,  kind: "district")
-  ActsAsTaggableOn::Tag.create!(name:  "Vicalvaro", featured: true,  kind: "district")
-  ActsAsTaggableOn::Tag.create!(name:  "San Blas-Canillejas", featured: true,  kind: "district")
-  ActsAsTaggableOn::Tag.create!(name:  "Barajas", featured: true,   kind: "district")
-  ActsAsTaggableOn::Tag.create!(name:  "Fuencarral-El Pardo", featured: true,   kind: "district")
-
-
+ActsAsTaggableOn::Tag.create!(name:  "Deportes", featured: true, kind: "category")
+ActsAsTaggableOn::Tag.create!(name:  "Derechos Sociales", featured: true, kind: "category")
+ActsAsTaggableOn::Tag.create!(name:  "Economía", featured: true, kind: "category")
+ActsAsTaggableOn::Tag.create!(name:  "Empleo", featured: true, kind: "category")
+ActsAsTaggableOn::Tag.create!(name:  "Equidad", featured: true, kind: "category")
+ActsAsTaggableOn::Tag.create!(name:  "Sostenibilidad", featured: true, kind: "category")
+ActsAsTaggableOn::Tag.create!(name:  "Participación", featured: true, kind: "category")
+ActsAsTaggableOn::Tag.create!(name:  "Movilidad", featured: true, kind: "category")
+ActsAsTaggableOn::Tag.create!(name:  "Medios", featured: true, kind: "category")
+ActsAsTaggableOn::Tag.create!(name:  "Salud", featured: true , kind: "category")
+ActsAsTaggableOn::Tag.create!(name:  "Transparencia", featured: true, kind: "category")
+ActsAsTaggableOn::Tag.create!(name:  "Seguridad y Emergencias", featured: true, kind: "category")
+ActsAsTaggableOn::Tag.create!(name:  "Medio Ambiente", featured: true, kind: "category")
 
 puts "Creating Debates"
 
 tags = Faker::Lorem.words(25)
-tags = ['Centro', 'Arganzuela', 'Retiro','Salamanca', 'Chamartín', 'Tetuán', 'Chamberí', 'Fuencarral-El Pardo', 'Moncloa-Aravaca', 'Latina', 'Carabanchel', 'Usera', 'Puente de Vallecas', 'Moratalaz', 'Ciudad Lineal', 'Hortaleza', 'Villaverde', 'Villa de Vallecas', 'Vicálvaro', 'San Blas', 'Barajas']
 (1..30).each do |i|
   author = User.reorder("RANDOM()").first
   description = "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>"
@@ -127,13 +125,13 @@ tags = ['Centro', 'Arganzuela', 'Retiro','Salamanca', 'Chamartín', 'Tetuán', '
                           created_at: rand((Time.now - 1.week) .. Time.now),
                           description: description,
                           tag_list: tags.sample(3).join(','),
+                          geozone: Geozone.reorder("RANDOM()").first,
                           terms_of_service: "1")
   puts "    #{debate.title}"
 end
 
 
-tags = ['Consumo y comercio', 'Cultura y ocio', 'Deportes', 'Economía', 'Educación', 'Emergencias y seguridad', 'Hacienda', 'Medio ambiente', 'Movilidad y transportes', 'Oposiciones y empleo', 'Salud', 'Servicios sociales', 'Urbanismo y vivienda']
-
+tags = ActsAsTaggableOn::Tag.where(kind: 'category')
 (1..30).each do |i|
   author = User.reorder("RANDOM()").first
   description = "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>"
@@ -142,6 +140,7 @@ tags = ['Consumo y comercio', 'Cultura y ocio', 'Deportes', 'Economía', 'Educac
                           created_at: rand((Time.now - 1.week) .. Time.now),
                           description: description,
                           tag_list: tags.sample(3).join(','),
+                          geozone: Geozone.reorder("RANDOM()").first,
                           terms_of_service: "1")
   puts "    #{debate.title}"
 end
@@ -150,7 +149,6 @@ end
 puts "Creating Proposals"
 
 tags = Faker::Lorem.words(25)
-tags = ['Centro', 'Arganzuela', 'Retiro','Salamanca', 'Chamartín', 'Tetuán', 'Chamberí', 'Fuencarral-El Pardo', 'Moncloa-Aravaca', 'Latina', 'Carabanchel', 'Usera', 'Puente de Vallecas', 'Moratalaz', 'Ciudad Lineal', 'Hortaleza', 'Villaverde', 'Villa de Vallecas', 'Vicálvaro', 'San Blas', 'Barajas']
 (1..30).each do |i|
   author = User.reorder("RANDOM()").first
   description = "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>"
@@ -163,12 +161,13 @@ tags = ['Centro', 'Arganzuela', 'Retiro','Salamanca', 'Chamartín', 'Tetuán', '
                               description: description,
                               created_at: rand((Time.now - 1.week) .. Time.now),
                               tag_list: tags.sample(3).join(','),
+                              geozone: Geozone.reorder("RANDOM()").first,
                               terms_of_service: "1")
   puts "    #{proposal.title}"
 end
 
 
-tags = ['Consumo y comercio', 'Cultura y ocio', 'Deportes', 'Economía', 'Educación', 'Emergencias y seguridad', 'Hacienda', 'Medio ambiente', 'Movilidad y transportes', 'Oposiciones y empleo', 'Salud', 'Servicios sociales', 'Urbanismo y vivienda']
+tags = ActsAsTaggableOn::Tag.where(kind: 'category')
 (1..30).each do |i|
   author = User.reorder("RANDOM()").first
   description = "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>"
@@ -181,6 +180,7 @@ tags = ['Consumo y comercio', 'Cultura y ocio', 'Deportes', 'Economía', 'Educac
                               description: description,
                               created_at: rand((Time.now - 1.week) .. Time.now),
                               tag_list: tags.sample(3).join(','),
+                              geozone: Geozone.reorder("RANDOM()").first,
                               terms_of_service: "1")
   puts "    #{proposal.title}"
 end
@@ -310,38 +310,3 @@ puts "Confirming hiding in debates, comments & proposals"
 Comment.only_hidden.flagged.reorder("RANDOM()").limit(10).each(&:confirm_hide)
 Debate.only_hidden.flagged.reorder("RANDOM()").limit(5).each(&:confirm_hide)
 Proposal.only_hidden.flagged.reorder("RANDOM()").limit(5).each(&:confirm_hide)
-
-
-puts "Creating Tags Categories"
- 
-ActsAsTaggableOn::Tag.create!(name:  "Asociaciones", featured: true, kind: "category")
-puts "    Asociaciones"
-ActsAsTaggableOn::Tag.create!(name:  "Cultura", featured: true, kind: "category")
-puts "    Cultura"
-ActsAsTaggableOn::Tag.create!(name:  "Deportes", featured: true, kind: "category")
-puts "    Deportes"
-ActsAsTaggableOn::Tag.create!(name:  "Derechos SMedio Ambienteociales", featured: true, kind: "category")
-puts "    Derechos Sociales"
-ActsAsTaggableOn::Tag.create!(name:  "Economía", featured: true, kind: "category")
-puts "    Economía"
-ActsAsTaggableOn::Tag.create!(name:  "Empleo", featured: true, kind: "category")
-puts "    Empleo"
-ActsAsTaggableOn::Tag.create!(name:  "Equidad", featured: true, kind: "category")
-puts "    Equidad"
-ActsAsTaggableOn::Tag.create!(name:  "Sostenibilidad", featured: true, kind: "category")
-puts "    Sostenibilidad"
-ActsAsTaggableOn::Tag.create!(name:  "Participación", featured: true, kind: "category")
-puts "    Participación"
-ActsAsTaggableOn::Tag.create!(name:  "Movilidad", featured: true, kind: "category")
-puts "    Movilidad"
-ActsAsTaggableOn::Tag.create!(name:  "Medios", featured: true, kind: "category")
-puts "    Medios"
-ActsAsTaggableOn::Tag.create!(name:  "Salud", featured: true , kind: "category")
-puts "    Salud"
-ActsAsTaggableOn::Tag.create!(name:  "Transparencia", featured: true, kind: "category")
-puts "    Transparencia"
-ActsAsTaggableOn::Tag.create!(name:  "Seguridad y Emergencias", featured: true, kind: "category")
-puts "    Seguridad y Emergencias"
-ActsAsTaggableOn::Tag.create!(name:  "Medio Ambiente", featured: true, kind: "category")
-puts "    Medio Ambiente"
-
