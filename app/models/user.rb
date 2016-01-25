@@ -51,15 +51,17 @@ class User < ActiveRecord::Base
 
   # Get the existing user by email if the provider gives us a verified email.
   def self.first_or_initialize_for_oauth(auth)
-    auth_email      = auth.info.email if auth.info.verified || auth.info.verified_email
-    auth_email_user = User.find_by(email: auth_email) if auth_email.present?
+    oauth_email           = auth.info.email
+    confirmed_oauth_email = oauth_email if auth.info.verified || auth.info.verified_email
+    oauth_user            = User.find_by(email: confirmed_oauth_email) if confirmed_oauth_email.present?
 
-    auth_email_user || User.new(
+    oauth_user || User.new(
       username:  auth.info.name || auth.uid,
-      email: auth_email,
+      email: oauth_email,
+      confirmed_oauth_email: confirmed_oauth_email,
       password: Devise.friendly_token[0,20],
       terms_of_service: '1',
-      confirmed_at: auth_email.present? ? DateTime.now : nil
+      confirmed_at: confirmed_oauth_email.present? ? DateTime.now : nil
     )
   end
 
