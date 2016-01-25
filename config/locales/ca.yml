@@ -229,6 +229,10 @@ ca:
       meeting_end_at: A quina hora acaba?
       meeting_held_at: Quan es realitzará?
       meeting_proposal_ids: Quines propostes es discutiran?
+      meeting_scope: "Àmbit"
+      meeting_scope_city: Tota la ciutat
+      meeting_scope_district: Un districte
+      meeting_scope_note: Es una mesura per a tota la ciutat o només per a un districte?
       meeting_start_at: A quina hora comença?
       meeting_title: Títol
       tags_instructions: Etiqueta aquesta proposta. Pots triar entre les nostres propostes o introduir les que vulguis.

@@ -1,0 +1,15 @@
+<div class="scope-radio small-12 column">
+  <%= f.label :scope, t("#{i18n_namespace}_scope") %>
+  <p class="note"><%= t("#{i18n_namespace}_scope_note") %></p>
+  <div class="small-3 column">
+    <%= f.radio_button :scope, :district, label: t("#{i18n_namespace}_scope_district") %>
+  </div>
+  <div class="small-3 end column">
+    <%= f.radio_button :scope, :city, label: t("#{i18n_namespace}_scope_city") %>
+  </div>
+</div>
+
+<div class="small-12 column">
+  <%= f.select :district, Proposal::DISTRICTS %>
+</div>
+

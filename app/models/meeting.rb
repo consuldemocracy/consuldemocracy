@@ -21,6 +21,8 @@ class Meeting < ActiveRecord::Base
   validates :held_at, presence: true
   validates :start_at, presence: true
   validates :end_at, presence: true
+  validates :scope, inclusion: { in: %w(city district) }
+  validates :district, inclusion: { in: Proposal::DISTRICTS.map(&:last).map(&:to_i), allow_nil: true }
 
   pg_search_scope :pg_search, {
     against: {

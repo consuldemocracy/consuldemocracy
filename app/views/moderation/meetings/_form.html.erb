@@ -50,6 +50,8 @@
       <%= meeting_proposals_selector proposals: @meeting.proposals %>
     </div>
 
+    <%= render 'shared/forms/district_fields', f: f, i18n_namespace: 'meetings.form.meeting' %>
+
     <div class="small-12 column">
       <%= category_picker(@meeting) %>
     </div>

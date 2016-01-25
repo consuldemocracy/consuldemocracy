@@ -41,7 +41,7 @@
 //= require votes
 //= require annotatable
 //= require i18n
-//= require proposals
+//= require districts
 //= require advanced_search
 //= require react
 //= require react_ujs
@@ -61,7 +61,7 @@ var initialize_modules = function() {
   App.PreventDoubleSubmission.initialize();
   App.IeAlert.initialize();
   App.Annotatable.initialize();
-  App.Proposals.initialize();
+  App.Districts.initialize();
   App.AdvancedSearch.initialize();
   App.RegistrationForm.initialize();
 };
