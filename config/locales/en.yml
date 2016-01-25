@@ -84,7 +84,7 @@ en:
     form:
       debate_text: Initial debate text
       debate_title: Debate title
-      tags_instructions: Tag this debate. You can choose from our suggestions or enter your own.
+      tags_instructions: Tag this debate.
       tags_label: Topics
       tags_placeholder: Enter the tags you would like to use, separated by commas (',')
     index:
@@ -121,7 +121,6 @@ en:
       recommendation_two: Any debate or comment suggesting illegal action will be deleted, as well as those intending to sabotage the debate spaces. Anything else is allowed.
       recommendations_title: Recommendations for creating a debate
       start_new: Start a debate
-      start_new_district: "Start a debate for your district"
     show:
       author_deleted: User deleted
       back_link: Go back
@@ -226,6 +225,11 @@ en:
         one: Someone replied to your comment on
         other: There are %{count} new replies to your comment on
       title: Notifications
+  map:
+    title: "Districts"
+    proposal_for_district: "Start a proposal for your district"
+    select_district: Scope of operation
+    start_proposal: Create a proposal
   omniauth:
     facebook:
       sign_in: Sign in with Facebook
@@ -261,8 +265,7 @@ en:
       proposal_video_url: Link to external video
       proposal_video_url_note: You may add a link to YouTube or Vimeo
       tag_category_label: "Categories"
-      tag_district_label: "Districts"
-      tags_instructions: "Tag this proposal. You can choose from proposed categories and districts or add your own"
+      tags_instructions: "Tag this proposal. You can choose from proposed categories or add your own"
       tags_label: Tags
       tags_placeholder: Enter the tags you would like to use, separated by commas (',')
     index:
@@ -287,8 +290,6 @@ en:
       select_order_long: 'You are viewing proposals according to:'
       start_proposal: Create a proposal
       title: Proposals
-      map_district: "Districts of Madrid"
-      select_district: "Select your district"  
     new:
       back_link: Go back
       form:
@@ -299,7 +300,6 @@ en:
       recommendation_two: Any proposal or comment suggesting illegal action will be deleted, as well as those intending to sabotage the debate spaces. Anything else is allowed.
       recommendations_title: Recommendations for creating a proposal
       start_new: Create new proposal
-      start_new_district: "Start a proposal for your district"
     proposal:
       already_supported: You have already supported this proposal. Share it!
       comments:
@@ -366,9 +366,8 @@ en:
       print_button: Print this info
     tags_cloud:
       tags: Trending
-      districts: "Districs"   
-      categorys: "Categories"  
-      map: "View map of districts"
+      districts: "Districts"
+      categories: "Categories"
     unflag: Unflag
   simple_captcha:
     label: Enter the text from the image in the box below

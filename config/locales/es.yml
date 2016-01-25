@@ -84,9 +84,7 @@ es:
     form:
       debate_text: Texto inicial del debate
       debate_title: Título del debate
-      tag_category_label: "Categorías"
-      tag_district_label: "Distritos"
-      tags_instructions: Etiqueta este debate. Puedes elegir entre nuestras propuestas o introducir las que desees.
+      tags_instructions: Etiqueta este debate.
       tags_label: Temas
       tags_placeholder: "Escribe las etiquetas que desees separadas por coma (',')"
     index:
@@ -123,7 +121,6 @@ es:
       recommendation_two: Cualquier debate o comentario que implique una acción ilegal será eliminado, también los que tengan la intención de sabotear los espacios de debate, todo lo demás está permitido.
       recommendations_title: Recomendaciones para crear un debate
       start_new: Empezar un debate
-      start_new_district: "Empieza un debate para tu distrito"
     show:
       author_deleted: Usuario eliminado
       back_link: Volver
@@ -228,6 +225,11 @@ es:
         one: Hay una respuesta nueva a tu comentario en
         other: Hay %{count} nuevas respuestas a tu comentario en
       title: Notificaciones
+  map:
+    title: "Distritos"
+    proposal_for_district: "Crea una propuesta para tu distrito"
+    select_district: "Ámbito de actuación"
+    start_proposal: Crea una propuesta
   omniauth:
     facebook:
       sign_in: Entra con Facebook
@@ -262,10 +264,9 @@ es:
       proposal_title: Título de la propuesta
       proposal_video_url: Enlace a vídeo externo
       proposal_video_url_note: Puedes añadir un enlace a YouTube o Vimeo
-      tags_instructions: "Etiqueta esta propuesta. Puedes elegir entre Categorias y Distritos propuestos o introducir las que desees"
+      tags_instructions: "Etiqueta esta propuesta. Puedes elegir entre categorias propuestas o introducir las que desees"
       tags_label: Temas
       tag_category_label: "Categorías"
-      tag_district_label: "Distritos"
       tags_placeholder: "Escribe las etiquetas que desees separadas por una coma (',')"
     index:
       featured_proposals: Destacadas
@@ -289,8 +290,6 @@ es:
       select_order_long: Estas viendo las propuestas
       start_proposal: Crea una propuesta
       title: Propuestas ciudadanas
-      map_district: "Distritos de Madrid"
-      select_district: "Selecciona tu distrito" 
     new:
       back_link: Volver
       form:
@@ -301,7 +300,6 @@ es:
       recommendation_two: Cualquier propuesta o comentario que implique una acción ilegal será eliminada, también las que tengan la intención de sabotear los espacios de propuesta, todo lo demás está permitido.
       recommendations_title: Recomendaciones para crear una propuesta
       start_new: Crear una propuesta
-      start_new_district: "Crea una propuesta para tu distrito"
     proposal:
       already_supported: "¡Ya has apoyado esta propuesta, compártela!"
       comments:
@@ -368,9 +366,8 @@ es:
       print_button: Imprimir esta información
     tags_cloud:
       tags: Tendencias
-      districts: "Distritos"   
-      categorys: "Categorias"  
-      map: "Ver mapa de distritos"
+      districts: "Distritos"
+      categories: "Categorías"
     unflag: Deshacer denuncia
   simple_captcha:
     label: Introduce el texto de la imagen en la siguiente caja
