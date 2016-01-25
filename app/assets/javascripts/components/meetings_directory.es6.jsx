@@ -4,7 +4,11 @@ class MeetingsDirectory extends React.Component {
       <div className="meetings-directory">
         <div className="small-12 medium-3 column">
           <aside className="sidebar" role="complementary">
-            <MeetingsFilter districts={this.props.districts} meetings={this.props.meetings} />
+            <MeetingsFilter 
+              districts={this.props.districts} 
+              meetings={this.props.meetings} 
+              categories={this.props.categories}
+              subcategories={this.props.subcategories} />
           </aside>
         </div>
 

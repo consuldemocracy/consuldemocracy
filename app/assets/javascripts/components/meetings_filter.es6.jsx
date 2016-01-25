@@ -29,9 +29,18 @@ class MeetingsFilter extends React.Component {
           filterGroupValue={this.state.filters.get('scope')} 
           onChangeFilterGroup={(filterGroupName, filterGroupValue) => this.changeFilterGroup(filterGroupName, filterGroupValue) } />
         <DistrictFilterOptionGroup 
-          condition={this.state.filters.get('scope') && this.state.filters.get('scope').indexOf("district") !== -1}
+          scopeSelected={this.state.filters.get('scope')}
           districts={this.props.districts} 
           filterGroupValue={this.state.filters.get('district')}
+          onChangeFilterGroup={(filterGroupName, filterGroupValue) => this.changeFilterGroup(filterGroupName, filterGroupValue) } />
+        <CategoryFilterOptionGroup
+          categories={this.props.categories}
+          filterGroupValue={this.state.filters.get('category_id')} 
+          onChangeFilterGroup={(filterGroupName, filterGroupValue) => this.changeFilterGroup(filterGroupName, filterGroupValue) } />
+        <SubcategoryFilterOptionGroup
+          selectedCategory={this.state.filters.get('category_id')}
+          subcategories={this.props.subcategories}
+          filterGroupValue={this.state.filters.get('subcategory_id')}
           onChangeFilterGroup={(filterGroupName, filterGroupValue) => this.changeFilterGroup(filterGroupName, filterGroupValue) } />
       </form>
     )

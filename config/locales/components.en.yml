@@ -14,12 +14,12 @@ en:
       actions: Actions
       remove: Delete
       title: Title
-    proposal_filter_option:
+    filter_option:
       citizenship: Citizenship
       city: Whole city
       district: A district
       official: Program (Town Hall)
-    proposal_filter_option_group:
+    filter_option_group:
       category_id: Axis
       district: District
       scope: Scope

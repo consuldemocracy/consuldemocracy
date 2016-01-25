@@ -14,12 +14,12 @@ es:
       actions: Acciones
       remove: Delete
       title: Título
-    proposal_filter_option:
+    filter_option:
       citizenship: Ciudadania
       city: Toda la ciudad
       district: Un distrito
       official: Programa (Ayuntamiento)
-    proposal_filter_option_group:
+    filter_option_group:
       category_id: Eje
       district: Distrito
       scope: "Ámbito"

@@ -1,14 +1,14 @@
 class ScopeFilterOptionGroup extends React.Component {
   render() {
     return (
-        <ProposalFilterOptionGroup 
+        <FilterOptionGroup 
           filterGroupName="scope" 
           filterGroupValue={this.props.filterGroupValue}
           isExclusive={true}
           onChangeFilterGroup={(filterGroupName, filterGroupValue) => this.props.onChangeFilterGroup(filterGroupName, filterGroupValue) }>
-          <ProposalFilterOption filterName="city" />
-          <ProposalFilterOption filterName="district" />
-        </ProposalFilterOptionGroup>
+          <FilterOption filterName="city" />
+          <FilterOption filterName="district" />
+        </FilterOptionGroup>
     )
   }
 }

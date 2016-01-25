@@ -14,12 +14,12 @@ ca:
       actions: Accions
       remove: Eliminar
       title: Títol
-    proposal_filter_option:
+    filter_option:
       citizenship: Ciutadania
       city: Tota la ciutat
       district: Un districte
       official: Programa (Ajuntament)
-    proposal_filter_option_group:
+    filter_option_group:
       category_id: Eix
       district: Districte
       scope: "Àmbit"
