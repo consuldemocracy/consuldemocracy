@@ -7,6 +7,10 @@ class Setting < ActiveRecord::Base
     key.start_with?('feature.')
   end
 
+  def enabled?
+    feature_flag? && value.present?
+  end
+
   class << self
     def [](key)
       where(key: key).pluck(:value).first.presence
