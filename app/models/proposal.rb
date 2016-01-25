@@ -27,8 +27,6 @@ class Proposal < ActiveRecord::Base
   validates :author, presence: true
   validates :responsible_name, presence: true
 
-  validates :category, presence: true
-
   validates :title, length: { in: 4..Proposal.title_max_length }
   validates :description, length: { maximum: Proposal.description_max_length }
   validates :scope, inclusion: { in: %w(city district) }

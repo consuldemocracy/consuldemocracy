@@ -1,6 +1,7 @@
 class Meeting < ActiveRecord::Base
   include PgSearch
   include SearchCache
+  include Categorizable
 
   belongs_to :author, -> { with_hidden }, class_name: 'User', foreign_key: 'author_id'
 
