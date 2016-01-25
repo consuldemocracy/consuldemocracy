@@ -28,21 +28,14 @@ class MeetingsFilter extends React.Component {
         <ScopeFilterOptionGroup 
           filterGroupValue={this.state.filters.get('scope')} 
           onChangeFilterGroup={(filterGroupName, filterGroupValue) => this.changeFilterGroup(filterGroupName, filterGroupValue) } />
-        {(() => {
-          if(this.state.filters.get('scope') && this.state.filters.get('scope').indexOf("district") !== -1) {
-            return (
-              <DistrictFilterOptionGroup 
-                districts={this.props.districts} 
-                filterGroupValue={this.state.filters.get('district')}
-                onChangeFilterGroup={(filterGroupName, filterGroupValue) => this.changeFilterGroup(filterGroupName, filterGroupValue) } />
-            )
-          }
-        })()}
+        <DistrictFilterOptionGroup 
+          condition={this.state.filters.get('scope') && this.state.filters.get('scope').indexOf("district") !== -1}
+          districts={this.props.districts} 
+          filterGroupValue={this.state.filters.get('district')}
+          onChangeFilterGroup={(filterGroupName, filterGroupValue) => this.changeFilterGroup(filterGroupName, filterGroupValue) } />
       </form>
     )
   }
-
-  //if(this.state.filters.get('scope') && this.state.filters.get('scope').indexOf("district") !== -1) {
 
   filterByText(text) {
      let rex = new RegExp(text, "igm");

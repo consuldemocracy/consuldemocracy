@@ -22,16 +22,11 @@ class ProposalFilters extends React.Component {
         <ScopeFilterOptionGroup 
           filterGroupValue={this.state.filters.get('scope')} 
           onChangeFilterGroup={(filterGroupName, filterGroupValue) => this.changeFilterGroup(filterGroupName, filterGroupValue) } />
-        {(() => {
-          if(this.state.filters.get('scope') && this.state.filters.get('scope').indexOf("district") !== -1) {
-            return (
-              <DistrictFilterOptionGroup 
-                districts={this.props.districts} 
-                filterGroupValue={this.state.filters.get('district')}
-                onChangeFilterGroup={(filterGroupName, filterGroupValue) => this.changeFilterGroup(filterGroupName, filterGroupValue) } />
-            )
-          }
-        })()}
+        <DistrictFilterOptionGroup 
+          condition={this.state.filters.get('scope') && this.state.filters.get('scope').indexOf("district") !== -1}
+          districts={this.props.districts} 
+          filterGroupValue={this.state.filters.get('district')}
+          onChangeFilterGroup={(filterGroupName, filterGroupValue) => this.changeFilterGroup(filterGroupName, filterGroupValue) } />
         <ProposalFilterOptionGroup 
           filterGroupName="category_id" 
           filterGroupValue={this.state.filters.get('category_id')}
@@ -45,24 +40,19 @@ class ProposalFilters extends React.Component {
             })
           }
         </ProposalFilterOptionGroup>
-        {(() => {
-          if(this.state.filters.get('category_id') && this.state.filters.get('category_id').length > 0) {
-            return (
-              <ProposalFilterOptionGroup 
-                filterGroupName="subcategory_id" 
-                filterGroupValue={this.state.filters.get('subcategory_id')}
-                onChangeFilterGroup={(filterGroupName, filterGroupValue) => this.changeFilterGroup(filterGroupName, filterGroupValue) }>
-                {
-                  this.filteredSubCategories(this.state.filters).map(function (subcategory) {
-                    return <ProposalFilterOption key={subcategory.id} filterName={subcategory.id} filterLabel={subcategory.name}>
-                      <a href={`/categories#subcategory_${subcategory.id}`} target="_blank"><i className="fa fa-info-circle"></i></a>
-                    </ProposalFilterOption>
-                  })
-                }
-              </ProposalFilterOptionGroup>
-            )
+        <ProposalFilterOptionGroup 
+          condition={this.state.filters.get('category_id') && this.state.filters.get('category_id').length > 0}
+          filterGroupName="subcategory_id" 
+          filterGroupValue={this.state.filters.get('subcategory_id')}
+          onChangeFilterGroup={(filterGroupName, filterGroupValue) => this.changeFilterGroup(filterGroupName, filterGroupValue) }>
+          {
+            this.filteredSubCategories(this.state.filters).map(function (subcategory) {
+              return <ProposalFilterOption key={subcategory.id} filterName={subcategory.id} filterLabel={subcategory.name}>
+                <a href={`/categories#subcategory_${subcategory.id}`} target="_blank"><i className="fa fa-info-circle"></i></a>
+              </ProposalFilterOption>
+            })
           }
-        }())}
+        </ProposalFilterOptionGroup>
         <ProposalFilterTagCloud 
           currentTags={this.state.tags} 
           tagCloud={this.props.filter.tag_cloud} 
