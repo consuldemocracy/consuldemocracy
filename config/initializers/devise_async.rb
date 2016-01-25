@@ -4,5 +4,5 @@ Devise::Async.setup do |config|
   else
     config.enabled = true
   end
-  config.backend = :delayed_job
+  config.backend = :sidekiq
 end
