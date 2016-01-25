@@ -20,13 +20,13 @@ FactoryGirl.define do
       unconfirmed_phone "611111111"
       confirmed_phone "611111111"
       sms_confirmation_code "1234"
-      document_type "1"
+      document_type "dni"
       document_number
     end
 
     trait :level_three do
       verified_at Time.now
-      document_type "1"
+      document_type "dni"
       document_number
     end
 
@@ -67,7 +67,7 @@ FactoryGirl.define do
   factory :failed_census_call do
     user
     document_number
-    document_type 1
+    document_type "dni"
     date_of_birth Date.new(1900, 1, 1)
     postal_code '28000'
   end
