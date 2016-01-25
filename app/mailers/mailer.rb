@@ -32,12 +32,4 @@ class Mailer < ApplicationMailer
       mail(to: @recipient, subject: t('mailers.email_verification.subject'))
     end
   end
-
-  private
-
-  def with_user(user, &block)
-    I18n.with_locale(user.locale) do
-      block.call
-    end
-  end
 end

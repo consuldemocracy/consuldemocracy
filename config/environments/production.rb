@@ -81,6 +81,16 @@ Rails.application.configure do
     }
   end
 
+  config.action_mailer.default_options = {
+    "X-SMTPAPI" => {
+      filters:  {
+        clicktrack: { settings: { enable: 0 } },
+        opentrack:  { settings: { enable: 0 } }
+      }
+    }.to_json
+  }
+
+
   if ENV["MEMCACHEDCLOUD_SERVERS"]
     credentials = [ENV["MEMCACHEDCLOUD_SERVERS"].split(','), { :username => ENV["MEMCACHEDCLOUD_USERNAME"], :password => ENV["MEMCACHEDCLOUD_PASSWORD"] }]
     config.cache_store = :dalli_store, *credentials
