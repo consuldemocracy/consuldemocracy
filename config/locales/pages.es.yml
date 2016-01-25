@@ -65,13 +65,14 @@ es:
       title: Datos abiertos
     privacy: Política de Privacidad
     processes:
+      back: Volver
       index:
-        process_1_title: "Ayúdanos a mejorar la Ordenanza de Transparencia de Madrid"
-        process_1_description: "La Ciudad de Madrid quiere poner en marcha un sistema de transparencia pública a la altura de los más avanzados del mundo, y para conseguirlo necesitamos de tu ayuda."
-        process_1_button: "Más información sobre la ordenanza"
-        process_2_title: "Remodelación de Plaza España"
-        process_2_description: "Contamos contigo para que decidas rellenando una pequeña encuesta como quieres que sea este nuevo espacio en tu ciudad."
-        process_2_button: "Próximamente..."
+        process_1_title: Ayúdanos a mejorar la Ordenanza de Transparencia de Madrid
+        process_1_description: La Ciudad de Madrid quiere poner en marcha un sistema de transparencia pública a la altura de los más avanzados del mundo, y para conseguirlo necesitamos de tu ayuda.
+        process_1_button: Más información
+        process_2_title: Remodelación de Plaza España
+        process_2_description: Contamos contigo para que decidas rellenando una pequeña encuesta como quieres que sea este nuevo espacio en tu ciudad.
+        process_2_button: Más información
       process_1:
         title: "Ayúdanos a mejorar la Ordenanza de Transparencia de la Ciudad de Madrid"
         comment: "dejar tus comentarios"
@@ -80,6 +81,10 @@ es:
 
                 Ya puedes consultar la [última versión del borrador de la Ordenanza de Transparencia de la Ciudad de Madrid](/docs/ordenanza_de_transparencia_de_la_ciudad_de_madrid.doc 'Ordenanza de Transparencia de la ciudad de Madrid')."
         button: "Comentar ordenanza"
+      process_2:
+        title: Remodelación de Plaza España
+        # text: Contamos contigo para que decidas rellenando una pequeña encuesta como quieres que sea este nuevo espacio en tu ciudad.
+        # button: Rellenar encuesta
     titles:
       accessibility: Accesibilidad
       conditions: Condiciones de uso
