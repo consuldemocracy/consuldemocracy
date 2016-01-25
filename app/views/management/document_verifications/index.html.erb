@@ -8,9 +8,9 @@
 
       <div class="small-12 medium-4">
         <%= f.select(:document_type,
-                     [[humanize_document_type("1"), 1],
-                      [humanize_document_type("2"), 2],
-                      [humanize_document_type("3"), 3]],
+                     [[humanize_document_type("1"), "dni"],
+                      [humanize_document_type("2"), "passport"],
+                      [humanize_document_type("3"), "nie"]],
                      label: t("management.document_type_label")) %>
       </div>
       <div class="small-12 medium-5">
