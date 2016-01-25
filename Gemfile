@@ -62,6 +62,8 @@ gem 'foreman'
 gem 'ahoy_matey', '~> 1.2.1'
 gem 'groupdate'   # group temporary data
 gem 'tolk' # Web interface for translations
+gem 'roadie-rails'
+gem 'normalize-rails'
 
 gem "settingslogic"
 

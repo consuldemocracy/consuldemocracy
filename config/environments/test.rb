@@ -33,7 +33,7 @@ Rails.application.configure do
   config.action_mailer.default_url_options = {
     host: 'test'
   }
-  config.action_mailer.asset_host = 'test'
+  # config.action_mailer.asset_host = 'test'
 
   # Randomize the order test cases are executed.
   config.active_support.test_order = :random

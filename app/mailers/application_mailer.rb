@@ -1,4 +1,6 @@
 class ApplicationMailer < ActionMailer::Base
+  include Roadie::Rails::Automatic
+
   default from: "Decidim Barcelona <#{Rails.application.secrets.email}>"
   layout 'mailer'
 

@@ -1,0 +1,50 @@
+/*
+ *= require normalize-rails
+ */
+
+@import "bourbon";
+@import 'foundation/functions';
+@import "variables";
+
+#email-layout{
+  font-size: $base-font-size;
+
+  table{
+    border: 0;
+  }
+
+  table.main{
+    max-width: 600px;
+    background-color: $background;
+
+    td{
+      padding: 0 1rem;
+
+      &.content{
+        padding: 1rem;
+      }
+
+      h2{
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+    }
+
+    margin: 0 auto;
+
+    .header{
+      border-bottom: 1px solid $highlight;
+      background-color: $background;
+    }
+
+    .footer{
+      text-align: center;
+      color: $text-medium;
+      border-top: 1px solid $highlight;
+    }
+  }
+
+  a{
+    color: $brand;
+  }
+}
