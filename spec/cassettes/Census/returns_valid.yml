@@ -1,0 +1,55 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://fake.url/
+    body:
+      encoding: UTF-8
+      string: |
+        <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sch="http://es.bcn.mci.ws/cr/schemas">
+           <soapenv:Header/>
+           <soapenv:Body>
+              <sch:GetPersonaLocalitzaAdrecaRequest>
+                 <sch:usuari>PAM</sch:usuari>
+                 <sch:Dades>
+                   <sch:tipDocument>03</sch:tipDocument>
+                   <sch:docId>123VALID</sch:docId>
+                 </sch:Dades>
+              </sch:GetPersonaLocalitzaAdrecaRequest>
+           </soapenv:Body>
+        </soapenv:Envelope>
+    headers:
+      User-Agent:
+      - Faraday v0.9.2
+      Content-Type:
+      - text/xml
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 23 Jan 2016 09:43:00 GMT
+      X-Powered-By:
+      - Servlet/3.0
+      Soapaction:
+      - '""'
+      Transfer-Encoding:
+      - chunked
+      Content-Type:
+      - text/xml
+      Content-Language:
+      - ca-ES
+    body:
+      encoding: UTF-8
+      string: <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+        xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><soapenv:Header/><soapenv:Body><GetPersonaLocalitzaAdrecaResponse
+        xmlns="http://es.bcn.mci.ws/cr/schemas"><codiRetorn>01</codiRetorn><numRegistres>001</numRegistres><Persones><Persona><origen>01</origen></Persona></Persones></GetPersonaLocalitzaAdrecaResponse></soapenv:Body></soapenv:Envelope>
+    http_version: 
+  recorded_at: Sat, 23 Jan 2016 09:43:02 GMT
+recorded_with: VCR 3.0.1

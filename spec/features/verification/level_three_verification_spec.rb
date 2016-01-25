@@ -1,12 +1,20 @@
 require 'rails_helper'
 
 feature 'Level three verification' do
+  before do
+    expect(Census).to receive(:new)
+                       .with(a_hash_including(document_type: "dni",
+                                              document_number: "12345678Z"))
+                       .and_return double(:valid? => true)
+
+  end
+
   scenario 'Verification with residency and verified sms' do
     user = create(:user)
 
     verified_user = create(:verified_user,
                            document_number: '12345678Z',
-                           document_type:   '1',
+                           document_type:   'dni',
                            phone:           '611111111')
 
     login_as(user)

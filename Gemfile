@@ -49,6 +49,7 @@ gem 'initialjs-rails', '0.2.0.1'
 gem 'paranoia'
 gem 'rinku', require: 'rails_rinku'
 gem 'savon'
+gem 'faraday'
 gem 'dalli'
 gem 'sidekiq'
 gem 'sinatra'
@@ -85,6 +86,8 @@ gem 'roo' # implements read access for all common spreadsheet types
 
 gem 'bourbon'
 
+gem 'nokogiri'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
@@ -101,6 +104,8 @@ group :development, :test do
   gem 'letter_opener_web', '~> 1.3.0'
   gem 'i18n-tasks'
   gem "bullet"
+  gem "vcr"
+  gem "webmock"
 end
 
 group :test do

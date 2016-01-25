@@ -54,13 +54,13 @@ FactoryGirl.define do
   factory :verification_residence, class: Verification::Residence do
     user
     document_number
-    document_type    "1"
+    document_type    "dni"
     date_of_birth    Date.new(1980, 12, 31)
-    postal_code      "28013"
+    postal_code      "08011"
     terms_of_service '1'
 
     trait :invalid do
-      postal_code "28001"
+      postal_code "08011"
     end
   end
 

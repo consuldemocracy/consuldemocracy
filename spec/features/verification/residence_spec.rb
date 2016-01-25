@@ -2,7 +2,13 @@ require 'rails_helper'
 
 feature 'Residence' do
 
-  scenario 'Verify resident in Madrid' do
+  scenario 'Verify resident in Barcelona' do
+    expect(Census).to receive(:new)
+                       .with(a_hash_including(document_type: "dni",
+                                              document_number: "12345678Z",
+                                              postal_code: "08011"))
+                       .and_return double(:valid? => true)
+
     user = create(:user)
     login_as(user)
 
@@ -12,7 +18,7 @@ feature 'Residence' do
     fill_in 'residence_document_number', with: "12345678Z"
     select 'DNI', from: 'residence_document_type'
     select_date '31-December-1980', from: 'residence_date_of_birth'
-    fill_in 'residence_postal_code', with: '28013'
+    fill_in 'residence_postal_code', with: '08011'
     check 'residence_terms_of_service'
 
     click_button 'Verify residence'
@@ -32,7 +38,7 @@ feature 'Residence' do
     expect(page).to have_content /\d errors? prevented the verification of your residence/
   end
 
-  scenario 'Error on postal code not in Madrid census' do
+  scenario 'Error on postal code not in Barcelona census' do
     user = create(:user)
     login_as(user)
 
@@ -52,7 +58,13 @@ feature 'Residence' do
     expect(page).to have_content 'In order to be verified, you must be registered in the municipality'
   end
 
-  scenario 'Error on Madrid census' do
+  scenario 'Error on census' do
+    expect(Census).to receive(:new)
+                       .with(a_hash_including(document_type: "dni",
+                                              document_number: "12345678Z",
+                                              postal_code: "08011"))
+                       .and_return double(:valid? => false)
+
     user = create(:user)
     login_as(user)
 
@@ -64,7 +76,7 @@ feature 'Residence' do
     select '1997', from: 'residence_date_of_birth_1i'
     select 'January', from: 'residence_date_of_birth_2i'
     select '1', from: 'residence_date_of_birth_3i'
-    fill_in 'residence_postal_code', with: '28013'
+    fill_in 'residence_postal_code', with: '08011'
     check 'residence_terms_of_service'
 
     click_button 'Verify residence'
@@ -76,6 +88,13 @@ feature 'Residence' do
     user = create(:user)
     login_as(user)
 
+    expect(Census).to receive(:new)
+                       .with(a_hash_including(document_type: "dni",
+                                              document_number: "12345678Z",
+                                              postal_code: "08011"))
+                       .exactly(5).times
+                       .and_return double(:valid? => false)
+
     visit account_path
     click_link 'Verify my account'
 
@@ -85,7 +104,7 @@ feature 'Residence' do
       select '1997', from: 'residence_date_of_birth_1i'
       select 'January', from: 'residence_date_of_birth_2i'
       select '1', from: 'residence_date_of_birth_3i'
-      fill_in 'residence_postal_code', with: '28013'
+      fill_in 'residence_postal_code', with: '08011'
       check 'residence_terms_of_service'
 
       click_button 'Verify residence'

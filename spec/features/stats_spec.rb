@@ -59,6 +59,11 @@ feature 'Stats' do
   end
 
   scenario 'Level 2 user' do
+    expect(Census).to receive(:new)
+                       .with(a_hash_including(document_type: "dni",
+                                              document_number: "12345678Z"))
+                       .and_return double(:valid? => true)
+
     visit account_path
     click_link 'Verify my account'
     verify_residence
