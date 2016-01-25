@@ -21,8 +21,9 @@ feature 'Admin feature flags' do
     visit admin_settings_path
 
     within("#edit_setting_#{setting_id}") do
-      fill_in "setting_#{setting_id}", with: ''
-      click_button 'Update'
+      expect(page).to have_button "Disable"
+      expect(page).to_not have_button "Enable"
+      click_button 'Disable'
     end
 
     visit admin_root_path
@@ -48,8 +49,9 @@ feature 'Admin feature flags' do
     visit admin_settings_path
 
     within("#edit_setting_#{setting_id}") do
-      fill_in "setting_#{setting_id}", with: 'true'
-      click_button 'Update'
+      expect(page).to have_button "Enable"
+      expect(page).to_not have_button "Disable"
+      click_button 'Enable'
     end
 
     visit admin_root_path

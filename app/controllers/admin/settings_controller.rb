@@ -1,7 +1,9 @@
 class Admin::SettingsController < Admin::BaseController
 
   def index
-    @settings = Setting.all
+    all_settings = (Setting.all).group_by { |s| s.feature_flag? }
+    @settings = all_settings[false]
+    @feature_flags = all_settings[true]
   end
 
   def update

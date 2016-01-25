@@ -123,6 +123,12 @@ en:
       index:
         title: Configuration settings
         update_setting: Update
+        feature_flags: Features
+        features:
+          enabled: "Feature enabled"
+          disabled: "Feature disabled"
+          enable: "Enable"
+          disable: "Disable"
     shared:
       proposal_search:
         button: Search
