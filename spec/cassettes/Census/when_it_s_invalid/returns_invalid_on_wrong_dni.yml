@@ -12,9 +12,9 @@ http_interactions:
               <sch:GetPersonaLocalitzaAdrecaRequest>
                  <sch:usuari>PAM</sch:usuari>
                  <sch:Dades>
-                   <sch:tipDocument>03</sch:tipDocument>
-                   <sch:docId>12345678A</sch:docId>
-                   <sch:codiPostal>08001</sch:codiPostal>
+                   <sch:tipDocument>01</sch:tipDocument>
+                   <sch:docId>12345678B</sch:docId>
+                   <sch:codiPostal>0800</sch:codiPostal>
                    <sch:dataNaixConst>19870917</sch:dataNaixConst>
                  </sch:Dades>
               </sch:GetPersonaLocalitzaAdrecaRequest>
@@ -35,7 +35,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Mon, 25 Jan 2016 09:49:13 GMT
+      - Mon, 25 Jan 2016 09:49:14 GMT
       X-Powered-By:
       - Servlet/3.0
       Soapaction:
@@ -51,7 +51,7 @@ http_interactions:
       string: <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
         xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><soapenv:Header/><soapenv:Body><GetPersonaLocalitzaAdrecaResponse
-        xmlns="http://es.bcn.mci.ws/cr/schemas"><codiRetorn>01</codiRetorn><numRegistres>001</numRegistres></GetPersonaLocalitzaAdrecaResponse></soapenv:Body></soapenv:Envelope>
+        xmlns="http://es.bcn.mci.ws/cr/schemas"><codiRetorn>00</codiRetorn><numRegistres>000</numRegistres></GetPersonaLocalitzaAdrecaResponse></soapenv:Body></soapenv:Envelope>
     http_version: 
-  recorded_at: Mon, 25 Jan 2016 09:49:13 GMT
+  recorded_at: Mon, 25 Jan 2016 09:49:14 GMT
 recorded_with: VCR 3.0.1

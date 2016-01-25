@@ -13,7 +13,9 @@ http_interactions:
                  <sch:usuari>PAM</sch:usuari>
                  <sch:Dades>
                    <sch:tipDocument>01</sch:tipDocument>
-                   <sch:docId>12345678X</sch:docId>
+                   <sch:docId>12345678A</sch:docId>
+                   <sch:codiPostal>08001</sch:codiPostal>
+                   <sch:dataNaixConst>19870918</sch:dataNaixConst>
                  </sch:Dades>
               </sch:GetPersonaLocalitzaAdrecaRequest>
            </soapenv:Body>
@@ -33,7 +35,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sat, 23 Jan 2016 09:43:10 GMT
+      - Mon, 25 Jan 2016 09:49:13 GMT
       X-Powered-By:
       - Servlet/3.0
       Soapaction:
@@ -51,5 +53,5 @@ http_interactions:
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><soapenv:Header/><soapenv:Body><GetPersonaLocalitzaAdrecaResponse
         xmlns="http://es.bcn.mci.ws/cr/schemas"><codiRetorn>00</codiRetorn><numRegistres>000</numRegistres></GetPersonaLocalitzaAdrecaResponse></soapenv:Body></soapenv:Envelope>
     http_version: 
-  recorded_at: Sat, 23 Jan 2016 09:43:11 GMT
+  recorded_at: Mon, 25 Jan 2016 09:49:14 GMT
 recorded_with: VCR 3.0.1

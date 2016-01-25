@@ -44,7 +44,7 @@ class Census
   end
 
   def date_of_birth
-    @data.fetch(:date_of_birth)
+    @date_of_birth ||= @data.fetch(:date_of_birth).strftime("%Y%m%d")
   end
 
   def request_body
@@ -57,6 +57,8 @@ class Census
          <sch:Dades>
            <sch:tipDocument>#{sanitize document_type}</sch:tipDocument>
            <sch:docId>#{sanitize document_number}</sch:docId>
+           <sch:codiPostal>#{sanitize postal_code}</sch:codiPostal>
+           <sch:dataNaixConst>#{sanitize date_of_birth}</sch:dataNaixConst>
          </sch:Dades>
       </sch:GetPersonaLocalitzaAdrecaRequest>
    </soapenv:Body>
