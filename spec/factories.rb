@@ -147,6 +147,10 @@ FactoryGirl.define do
     association :author, factory: :user
     association :category, factory: :category
 
+    after(:build) do |proposal|
+      proposal.subcategory = build(:subcategory, category_id: proposal.category_id)
+    end
+
     trait :hidden do
       hidden_at Time.now
     end
@@ -347,11 +351,14 @@ FactoryGirl.define do
     start_at Time.now
     end_at Time.now + 1.hour
     association :author, factory: :user
+    association :category, factory: :category
+
     after :build do |meeting|
       place = places.sample
       meeting.address = place[:address]
       meeting.address_latitude = place[:lat]
       meeting.address_longitude = place[:lng]
+      meeting.subcategory = build(:subcategory, category_id: meeting.category_id)
     end
   end
 

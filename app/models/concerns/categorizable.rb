@@ -5,8 +5,8 @@ module Categorizable
     belongs_to :category
     belongs_to :subcategory
 
-    validates :category_id, presence: true
-    validates :subcategory_id, presence: true
+    validates :category, presence: true
+    validates :subcategory, presence: true
 
     validate :categorization
   end
