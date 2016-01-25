@@ -199,7 +199,7 @@ ActiveRecord::Schema.define(version: 20160122153329) do
   create_table "locks", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "tries",        default: 0
-    t.datetime "locked_until", default: '2000-01-01 00:01:01', null: false
+    t.datetime "locked_until", default: '2000-01-01 07:01:01', null: false
     t.datetime "created_at",                                   null: false
     t.datetime "updated_at",                                   null: false
   end
@@ -315,6 +315,7 @@ ActiveRecord::Schema.define(version: 20160122153329) do
     t.boolean "featured",                            default: false
     t.integer "debates_count",                       default: 0
     t.integer "proposals_count",                     default: 0
+    t.string  "kind",                     limit: 40
     t.integer "spending_proposals_count",            default: 0
   end
 

@@ -204,9 +204,13 @@ feature 'Debates' do
       login_as(author)
     end
 
-    scenario 'using featured tags', :js do
+    scenario 'using featured tags and geozone district', :js do
       ['Medio Ambiente', 'Ciencia'].each do |tag_name|
-        create(:tag, :featured, name: tag_name)
+        create(:tag, :featured, name: tag_name, kind: "category")
+      end
+
+      ['Distrito A', 'Distrito B'].each do |geozone_name|
+        create(:geozone, name: geozone_name)
       end
 
       visit new_debate_path
@@ -220,10 +224,17 @@ feature 'Debates' do
         find('.js-add-tag-link', text: tag_name).click
       end
 
+      ['Distrito A', 'Distrito B'].each do |geozone_name|
+        find('.js-add-tag-link', text: geozone_name).click
+      end
+
       click_button 'Start a debate'
 
       expect(page).to have_content 'Debate created successfully.'
       ['Medio Ambiente', 'Ciencia'].each do |tag_name|
+        expect(page).to have_content tag_name
+      end
+      ['Distrito A', 'Distrito B'].each do |tag_name|
         expect(page).to have_content tag_name
       end
     end

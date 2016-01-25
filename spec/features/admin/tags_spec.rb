@@ -17,7 +17,6 @@ feature 'Admin tags' do
 
   scenario 'Create' do
     visit admin_tags_path
-
     expect(page).to_not have_content 'important issues'
 
     within("form.new_tag") do
@@ -26,7 +25,6 @@ feature 'Admin tags' do
     end
 
     visit admin_tags_path
-
     expect(page).to have_content 'important issues'
   end
 
@@ -81,4 +79,48 @@ feature 'Admin tags' do
     expect(page).to_not have_content tag2.name
   end
 
+  scenario 'validate add new tags' do
+    visit admin_tags_path
+    expect(page).to_not have_content 'important issues'
+
+    within("form.new_tag") do
+      fill_in "tag_name", with: 'important issues'
+      click_button 'Create Topic'
+    end
+
+    visit admin_tags_path
+
+    within("form.new_tag") do
+      fill_in "tag_name", with: 'important issues'
+      click_button 'Create Topic'
+    end
+    expect(page).to have_content 'name of the topic already exists'
+  end
+
+  scenario 'validate uppercase name add new tags' do
+    visit admin_tags_path
+    expect(page).to_not have_content 'important issues'
+
+    within("form.new_tag") do
+      fill_in "tag_name", with: 'important issues'
+      click_button 'Create Topic'
+    end
+
+    visit admin_tags_path
+
+    within("form.new_tag") do
+      fill_in "tag_name", with: 'IMPORTANT ISSUES'
+      click_button 'Create Topic'
+    end
+    expect(page).to have_content 'name of the topic already exists'
+  end
+
+scenario 'validate name new tags' do
+    visit admin_tags_path
+
+    within("form.new_tag") do
+      click_button 'Create Topic'
+    end
+    expect(page).to have_content 'The name of the topic is mandatory filling'
+  end
 end

@@ -27,6 +27,8 @@ module CommentableActions
     @resource = resource_model.new
     set_resource_instance
     load_featured_tags
+    load_category_tags
+    load_district_select
   end
 
   def create
@@ -34,18 +36,24 @@ module CommentableActions
     @resource.author = current_user
 
     if @resource.save_with_captcha
-      track_event
+      track_event      
+      load_category_tags
+      load_district_select
       redirect_path = url_for(controller: controller_name, action: :show, id: @resource.id)
       redirect_to redirect_path, notice: t("flash.actions.create.#{resource_name.underscore}")
     else
       load_featured_tags
+      load_category_tags
+      load_district_select
       set_resource_instance
       render :new
     end
   end
 
   def edit
-    load_featured_tags
+    load_featured_tags      
+    load_category_tags
+    load_district_select
   end
 
   def update
@@ -53,7 +61,9 @@ module CommentableActions
     if resource.save_with_captcha
       redirect_to resource, notice: t("flash.actions.update.#{resource_name.underscore}")
     else
-      load_featured_tags
+      load_featured_tags    
+      load_category_tags
+      load_district_select
       set_resource_instance
       render :edit
     end
@@ -72,6 +82,15 @@ module CommentableActions
     def load_featured_tags
       @featured_tags = ActsAsTaggableOn::Tag.where(featured: true)
     end
+    def load_category_tags
+        @category_tags = ActsAsTaggableOn::Tag.select("tags.*").
+                                               where("kind = 'category' and tags.featured = true").
+                                               order(kind: :asc, id: :asc) 
+    end
+    def load_district_select
+      @district_select = Geozone.select("geozones.name, geozones.id").
+                                 order(id: :asc)
+    end      
 
     def parse_tag_filter
       if params[:tag].present?
