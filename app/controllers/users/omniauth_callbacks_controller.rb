@@ -1,15 +1,15 @@
 class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
   def twitter
-    sign_in_with :twitter
+    sign_in_with :twitter_login, :twitter
   end
 
   def facebook
-    sign_in_with :facebook
+    sign_in_with :facebook_login, :facebook
   end
 
   def google_oauth2
-    sign_in_with :google_oauth2
+    sign_in_with :google_login, :google_oauth2
   end
 
   def after_sign_in_path_for(resource)
@@ -22,7 +22,9 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
   private
 
-    def sign_in_with(provider)
+    def sign_in_with(feature, provider)
+      raise ActionController::RoutingError.new('Not Found') unless Setting["feature.#{feature}"]
+
       auth = env["omniauth.auth"]
 
       identity = Identity.first_or_create_from_oauth(auth)
