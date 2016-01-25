@@ -56,7 +56,7 @@ en:
       moderators: Moderators
       officials: Officials
       organizations: Organisations
-      settings: General settings
+      settings: Configuration settings
       spending_proposals: Spending proposals
       stats: Statistics
     moderators:
@@ -121,7 +121,7 @@ en:
       flash:
         updated: Value updated
       index:
-        title: General settings
+        title: Configuration settings
         update_setting: Update
     shared:
       proposal_search:
