@@ -54,6 +54,17 @@
       <%= category_picker(@meeting) %>
     </div>
 
+    <div class="small-12 column">
+      <%= f.label :tag_list, t("meetings.form.tags_label") %>
+      <p class="note"><%= t("meetings.form.tags_instructions") %></p>
+      <span class="tags">
+        <% @featured_tags.each do |tag| %>
+          <a class="js-add-tag-link"><%= tag.name %></a>
+        <% end %>
+      </span>
+      <%= f.text_field :tag_list, value: @meeting.tag_list.to_s, label: false, placeholder: t("meetings.form.tags_placeholder"), class: 'js-tag-list' %>
+    </div>
+
     <div class="actions small-12 column">
       <%= f.submit(class: "button radius", value: t("meetings.#{action_name}.form.submit_button")) %>
     </div>

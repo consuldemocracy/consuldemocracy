@@ -4,6 +4,7 @@ class Moderation::MeetingsController < Moderation::BaseController
   has_filters %w{pending closed all}, only: :index
 
   before_action :load_resources, only: [:index]
+  before_action :load_featured_tags, only: [:new, :edit]
 
   load_and_authorize_resource
 
@@ -48,7 +49,7 @@ class Moderation::MeetingsController < Moderation::BaseController
   private
 
   def meeting_params
-    params.require(:meeting).permit(:title, :description, :address, :address_longitude, :address_latitude, :address_details, :held_at, :start_at, :end_at, :category_id, :subcategory_id, :proposal_ids => [])
+    params.require(:meeting).permit(:title, :description, :address, :address_longitude, :address_latitude, :address_details, :held_at, :start_at, :end_at, :category_id, :subcategory_id, :tag_list, :proposal_ids => [])
   end
 
   def resource_model
@@ -57,5 +58,9 @@ class Moderation::MeetingsController < Moderation::BaseController
 
   def load_resources
     @resources = resource_model.accessible_by(current_ability, :read)
+  end
+
+  def load_featured_tags
+    @featured_tags = ActsAsTaggableOn::Tag.where(featured: true)
   end
 end

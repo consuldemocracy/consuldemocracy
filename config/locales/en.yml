@@ -231,6 +231,9 @@ en:
       meeting_proposal_ids: Which proposals are being discussed?
       meeting_start_at: What time does it start?
       meeting_title: Title
+      tags_instructions: Tag this proposal. You can choose from our tags or add your own.
+      tags_label: Tags
+      tags_placeholder: Enter the tags you would like to use, separated by commas (',')
     index:
       close: Close
       edit: Edit

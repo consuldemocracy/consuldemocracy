@@ -2,6 +2,7 @@ class Meeting < ActiveRecord::Base
   include PgSearch
   include SearchCache
   include Categorizable
+  include Taggable
 
   belongs_to :author, -> { with_hidden }, class_name: 'User', foreign_key: 'author_id'
 
@@ -26,6 +27,9 @@ class Meeting < ActiveRecord::Base
       title:       'A',
       description: 'B'
     },
+    associated_against: {
+      tags: :name
+    },
     using: {
       tsearch: { dictionary: "spanish", tsvector_column: 'tsv' }
     },
@@ -38,6 +42,7 @@ class Meeting < ActiveRecord::Base
       title       => 'A',
       description => 'B'
     }
+    tag_list.each{ |tag| values[tag] = 'C' }
     values[author.username] = 'C'
     values
   end

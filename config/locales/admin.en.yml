@@ -54,6 +54,7 @@ en:
         title: Hidden debates
     menu:
       activity: Moderator activity
+      categories: Axis management
       debate_topics: Debate topics
       hidden_comments: Hidden comments
       hidden_debates: Hidden debates
@@ -66,7 +67,6 @@ en:
       settings: General settings
       spending_proposals: Spending proposals
       stats: Statistics
-      categories: Axis management
     moderators:
       index:
         title: Moderators

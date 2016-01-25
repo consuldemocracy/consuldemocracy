@@ -231,6 +231,9 @@ es:
       meeting_proposal_ids: "¿Qué propuestas se van a discutir?"
       meeting_start_at: "¿A que hora empieza?"
       meeting_title: Título
+      tags_instructions: Etiqueta este debate. Puedes elegir entre nuestras propuestas o introducir las que desees.
+      tags_label: Temas
+      tags_placeholder: Escribe las etiquetas que desees separadas por coma (',')
     index:
       close: Cerrar
       edit: Editar
