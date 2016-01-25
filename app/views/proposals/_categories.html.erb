@@ -1,0 +1,9 @@
+<div class="sidebar-divider"></div>
+<h3><%= t("shared.tags_cloud.categories") %></h3>
+<br>
+
+<ul id="categories" style="list-style-type: none;">
+  <% @categories.each do |category| %>
+    <li><%= link_to category.name, proposals_path(search: category.name) %></li>
+  <% end %>
+</ul>

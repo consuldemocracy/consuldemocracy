@@ -11,8 +11,6 @@ module CommentableActions
     index_customization if index_customization.present?
 
     @tag_cloud = tag_cloud
-    @district_cloud = load_district_tags
-    @category_cloud = load_category_tags
     set_resource_votes(@resources)
     set_resources_instance
   end
@@ -27,6 +25,7 @@ module CommentableActions
 
   def new
     @resource = resource_model.new
+    set_geozone
     set_resource_instance
   end
 
@@ -36,23 +35,17 @@ module CommentableActions
 
     if @resource.save_with_captcha
       track_event
-      load_category_tags
-      load_district_select
       redirect_path = url_for(controller: controller_name, action: :show, id: @resource.id)
       redirect_to redirect_path, notice: t("flash.actions.create.#{resource_name.underscore}")
     else
-      load_featured_tags
-      load_category_tags
-      load_district_select
+      load_categories
+      load_geozones
       set_resource_instance
       render :new
     end
   end
 
   def edit
-    load_featured_tags
-    load_category_tags
-    load_district_select
   end
 
   def update
@@ -60,19 +53,17 @@ module CommentableActions
     if resource.save_with_captcha
       redirect_to resource, notice: t("flash.actions.update.#{resource_name.underscore}")
     else
-      load_featured_tags
-      load_category_tags
-      load_district_select
+      load_categories
+      load_geozones
       set_resource_instance
       render :edit
     end
   end
 
 
-   def map_district
+   def map
+    @resource = resource_model.new
     @tag_cloud = tag_cloud
-    @district_cloud = load_district_tags
-    @category_cloud = load_category_tags
   end
 
   private
@@ -85,52 +76,21 @@ module CommentableActions
       resource_model.last_week.tag_counts.order("#{resource_name.pluralize}_count": :desc, name: :asc).limit(5)
     end
 
-    def load_category_tags
-
-      if resource_model.to_s=="Proposal"
-        ActsAsTaggableOn::Tag.select("tags.*").
-                                              where("kind = 'category' and proposals_count>0").
-                                              order(proposals_count: :desc)
-      else
-        ActsAsTaggableOn::Tag.select("tags.*").
-                                              where("kind = 'category' and debates_count>0").
-                                              order(debates_count: :desc)
-      end
-    end
-    def load_district_tags
-
-      if resource_model.to_s =="Proposal"
-
-       ActsAsTaggableOn::Tag.select("tags.*").
-                                             where("kind = 'district' and proposals_count>0").
-                                              order(name: :asc)
-       else
-          ActsAsTaggableOn::Tag.select("tags.*").
-                                             where("kind = 'district' and debates_count>0").
-                                              order(name: :asc)
-      end
+    def load_geozones
+      @geozones = Geozone.all.order(name: :asc)
     end
 
-    def load_featured_tags
-      @featured_tags = ActsAsTaggableOn::Tag.where(featured: true)
+    def set_geozone
+      @resource.geozone = Geozone.find(params[resource_name.to_sym].try(:[], :geozone_id)) if params[resource_name.to_sym].try(:[], :geozone_id).present?
     end
-    def load_category_tags
-        @category_tags = ActsAsTaggableOn::Tag.select("tags.*").
-                                               where("kind = 'category' and tags.featured = true").
-                                               order(kind: :asc, id: :asc)
-    end
-    def load_district_select
-      @district_select = Geozone.select("geozones.name, geozones.id").
-                                 order(id: :asc)
+
+    def load_categories
+      @categories = ActsAsTaggableOn::Tag.where("kind = 'category'").order(:name)
     end
 
     def parse_tag_filter
       if params[:tag].present?
         @tag_filter = params[:tag] if ActsAsTaggableOn::Tag.named(params[:tag]).exists?
-      end
-
-      if params[:district].present?
-          @tag_filter = params[:district] if ActsAsTaggableOn::Disctrict.named(params[:district]).exists?
       end
     end
 
@@ -165,10 +125,6 @@ module CommentableActions
       else
         Date.parse(params[:advanced_search][:date_min]) rescue nil
       end
-    end
-
-    def method_name
-
     end
 
     def search_finish_date

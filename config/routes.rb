@@ -42,6 +42,10 @@ Rails.application.routes.draw do
       put :flag
       put :unflag
     end
+
+    collection do
+      get :map
+    end
   end
 
   resources :proposals do
@@ -50,6 +54,10 @@ Rails.application.routes.draw do
       post :vote_featured
       put :flag
       put :unflag
+    end
+
+    collection do
+      get :map
     end
   end
 

@@ -118,6 +118,7 @@ ActiveRecord::Schema.define(version: 20160122153329) do
     t.integer  "cached_votes_score",                      default: 0
     t.integer  "hot_score",                    limit: 8,  default: 0
     t.integer  "confidence_score",                        default: 0
+    t.integer  "geozone_id"
   end
 
   add_index "debates", ["author_id", "hidden_at"], name: "index_debates_on_author_id_and_hidden_at", using: :btree
@@ -127,6 +128,7 @@ ActiveRecord::Schema.define(version: 20160122153329) do
   add_index "debates", ["cached_votes_total"], name: "index_debates_on_cached_votes_total", using: :btree
   add_index "debates", ["cached_votes_up"], name: "index_debates_on_cached_votes_up", using: :btree
   add_index "debates", ["confidence_score"], name: "index_debates_on_confidence_score", using: :btree
+  add_index "debates", ["geozone_id"], name: "index_debates_on_geozone_id", using: :btree
   add_index "debates", ["hidden_at"], name: "index_debates_on_hidden_at", using: :btree
   add_index "debates", ["hot_score"], name: "index_debates_on_hot_score", using: :btree
   add_index "debates", ["title"], name: "index_debates_on_title", using: :btree
@@ -252,12 +254,14 @@ ActiveRecord::Schema.define(version: 20160122153329) do
     t.string   "video_url"
     t.integer  "physical_votes",               default: 0
     t.tsvector "tsv"
+    t.integer  "geozone_id"
   end
 
   add_index "proposals", ["author_id", "hidden_at"], name: "index_proposals_on_author_id_and_hidden_at", using: :btree
   add_index "proposals", ["author_id"], name: "index_proposals_on_author_id", using: :btree
   add_index "proposals", ["cached_votes_up"], name: "index_proposals_on_cached_votes_up", using: :btree
   add_index "proposals", ["confidence_score"], name: "index_proposals_on_confidence_score", using: :btree
+  add_index "proposals", ["geozone_id"], name: "index_proposals_on_geozone_id", using: :btree
   add_index "proposals", ["hidden_at"], name: "index_proposals_on_hidden_at", using: :btree
   add_index "proposals", ["hot_score"], name: "index_proposals_on_hot_score", using: :btree
   add_index "proposals", ["question"], name: "index_proposals_on_question", using: :btree
@@ -315,9 +319,8 @@ ActiveRecord::Schema.define(version: 20160122153329) do
     t.boolean "featured",                            default: false
     t.integer "debates_count",                       default: 0
     t.integer "proposals_count",                     default: 0
-    t.string  "kind",                     limit: 40
-    t.integer "spending_proposals_count",            default: 0
     t.string  "kind"
+    t.integer "spending_proposals_count",            default: 0
   end
 
   add_index "tags", ["debates_count"], name: "index_tags_on_debates_count", using: :btree

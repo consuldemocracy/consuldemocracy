@@ -14,6 +14,7 @@ class Debate < ActiveRecord::Base
   include ActsAsParanoidAliases
 
   belongs_to :author, -> { with_hidden }, class_name: 'User', foreign_key: 'author_id'
+  belongs_to :geozone
   has_many :comments, as: :commentable
 
   validates :title, presence: true
