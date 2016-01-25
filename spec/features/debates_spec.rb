@@ -106,27 +106,6 @@ feature 'Debates' do
     expect(page).to have_content "Debate created successfully."
   end
 
-  scenario 'Failed creation goes back to new showing featured tags' do
-    featured_tag = create(:tag, :featured)
-    tag = create(:tag)
-    login_as(create(:user))
-
-    visit new_debate_path
-    fill_in 'debate_title', with: ""
-    fill_in 'debate_description', with: 'Very important issue...'
-    fill_in 'debate_captcha', with: correct_captcha_text
-    check 'debate_terms_of_service'
-
-    click_button "Start a debate"
-
-    expect(page).to_not have_content "Debate created successfully."
-    expect(page).to have_content "error"
-    within(".tags") do
-      expect(page).to have_content featured_tag.name
-      expect(page).to_not have_content tag.name
-    end
-  end
-
   scenario 'Errors on create' do
     author = create(:user)
     login_as(author)
@@ -204,38 +183,21 @@ feature 'Debates' do
       login_as(author)
     end
 
-    scenario 'using featured tags and geozone district', :js do
-      ['Medio Ambiente', 'Ciencia'].each do |tag_name|
-        create(:tag, :featured, name: tag_name, kind: "category")
-      end
-
-      ['Distrito A', 'Distrito B'].each do |geozone_name|
-        create(:geozone, name: geozone_name)
-      end
-
+    scenario 'Custom tags' do
       visit new_debate_path
 
-      fill_in 'debate_title', with: 'A test'
-      fill_in_ckeditor 'debate_description', with: 'A test'
+      fill_in 'debate_title', with: "Great title"
+      fill_in 'debate_description', with: 'Very important issue...'
       fill_in 'debate_captcha', with: correct_captcha_text
       check 'debate_terms_of_service'
 
-      ['Medio Ambiente', 'Ciencia'].each do |tag_name|
-        find('.js-add-tag-link', text: tag_name).click
-      end
-
-      ['Distrito A', 'Distrito B'].each do |geozone_name|
-        find('.js-add-tag-link', text: geozone_name).click
-      end
-
+      fill_in 'debate_tag_list', with: 'Refugees, Solidarity'
       click_button 'Start a debate'
 
       expect(page).to have_content 'Debate created successfully.'
-      ['Medio Ambiente', 'Ciencia'].each do |tag_name|
-        expect(page).to have_content tag_name
-      end
-      ['Distrito A', 'Distrito B'].each do |tag_name|
-        expect(page).to have_content tag_name
+      within "#tags" do
+        expect(page).to have_content 'Refugees'
+        expect(page).to have_content 'Solidarity'
       end
     end
 
@@ -332,27 +294,6 @@ feature 'Debates' do
     click_button "Save changes"
 
     expect(page).to have_content "Debate updated successfully."
-  end
-
-  scenario 'Failed update goes back to edit showing featured tags' do
-    debate       = create(:debate)
-    featured_tag = create(:tag, :featured)
-    tag = create(:tag)
-    login_as(debate.author)
-
-    visit edit_debate_path(debate)
-    expect(current_path).to eq(edit_debate_path(debate))
-
-    fill_in 'debate_title', with: ""
-    fill_in 'debate_captcha', with: correct_captcha_text
-    click_button "Save changes"
-
-    expect(page).to_not have_content "Debate updated successfully."
-    expect(page).to have_content "error"
-    within(".tags") do
-      expect(page).to have_content featured_tag.name
-      expect(page).to_not have_content tag.name
-    end
   end
 
   describe 'Limiting tags shown' do
@@ -901,28 +842,5 @@ feature 'Debates' do
     visit debate_path(debate)
     expect(page).to have_content('User deleted')
   end
-
-
-   scenario "Filtered by district"  do
-      tag1= ActsAsTaggableOn::Tag.create!(name:  "Centro", featured: true, kind: "district")
-      tag2= ActsAsTaggableOn::Tag.create!(name:  "Puente de Vallecas", featured: true, kind: "district")
-      tag3= ActsAsTaggableOn::Tag.create!(name:  "Retiro", featured: true, kind: "district")
-      tag4= ActsAsTaggableOn::Tag.create!(name:  "Salamanca", featured: true, kind: "district")
-
-      debate1 = create(:debate, tag_list: tag1)
-      debate2 = create(:debate, tag_list: tag2)
-      debate3 = create(:debate, tag_list: tag3)
-      debate4 = create(:debate, tag_list: tag4)    
-      visit debates_path
-          
-      click_link "View map of districts"
-      within("#districtslist") do
-        click_link "Puente de Vallecas"
-      end    
-      within("#debates") do
-        expect(page).to have_css('.debate', count: 1)
-        expect(page).to have_content(debate2.title)
-      end
-   end
 
 end

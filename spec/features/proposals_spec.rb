@@ -166,31 +166,6 @@ feature 'Proposals' do
     expect(page).to have_content "Proposal created successfully."
   end
 
-  scenario 'Failed creation goes back to new showing featured tags' do
-    featured_tag = create(:tag, :featured)
-    tag = create(:tag)
-    login_as(create(:user))
-
-    visit new_proposal_path
-    fill_in 'proposal_title', with: ""
-    fill_in 'proposal_question', with: '¿Would you like to give assistance to war refugees?'
-    fill_in 'proposal_summary', with: 'In summary, what we want is...'
-    fill_in 'proposal_description', with: 'Very important issue...'
-    fill_in 'proposal_external_url', with: 'http://rescue.org/refugees'
-    fill_in 'proposal_responsible_name', with: 'Isabel Garcia'
-    fill_in 'proposal_captcha', with: correct_captcha_text
-    check 'proposal_terms_of_service'
-
-    click_button "Create proposal"
-
-    expect(page).to_not have_content "Proposal created successfully."
-    expect(page).to have_content "error"
-    within(".tags") do
-      expect(page).to have_content featured_tag.name
-      expect(page).to_not have_content tag.name
-    end
-  end
-
   scenario 'Errors on create' do
     author = create(:user)
     login_as(author)
@@ -271,54 +246,67 @@ feature 'Proposals' do
     expect(page.html).to_not include "<script>alert('hey')</script>"
   end
 
-  context 'Tagging proposals ' do
+  context 'Tagging' do
     let(:author) { create(:user) }
 
     background do
       login_as(author)
     end
 
-    scenario 'using featured tags and geozone district', :js do
-      ['Medio Ambiente', 'Ciencia'].each do |tag_name|
-        create(:tag, :featured, name: tag_name)
-      end
+    scenario 'Category tags', :js do
+      education = create(:tag, name: 'Education', kind: 'category')
+      health    = create(:tag, name: 'Health',    kind: 'category')
 
-      ['Distrito A', 'Distrito B'].each do |geozone_name|
-        create(:geozone, name: geozone_name)
-      end
-      
       visit new_proposal_path
 
-      fill_in 'proposal_title', with: 'A test with enough characters'
+      fill_in 'proposal_title', with: 'Help refugees'
       fill_in 'proposal_question', with: '¿Would you like to give assistance to war refugees?'
       fill_in 'proposal_summary', with: 'In summary, what we want is...'
       fill_in_ckeditor 'proposal_description', with: 'A description with enough characters'
       fill_in 'proposal_external_url', with: 'http://rescue.org/refugees'
+      fill_in 'proposal_video_url', with: 'http://youtube.com'
       fill_in 'proposal_responsible_name', with: 'Isabel Garcia'
       fill_in 'proposal_captcha', with: correct_captcha_text
       check 'proposal_terms_of_service'
 
-      ['Medio Ambiente', 'Ciencia'].each do |tag_name|
-        find('.js-add-tag-link', text: tag_name).click
-      end
-
-      ['Distrito A', 'Distrito B'].each do |geozone_name|
-        find('.js-add-tag-link', text: geozone_name).click
-      end
-
+      find('.js-add-tag-link', text: 'Education').click
       click_button 'Create proposal'
 
       expect(page).to have_content 'Proposal created successfully.'
-      ['Medio Ambiente', 'Ciencia'].each do |tag_name|
-        expect(page).to have_content tag_name
+
+      within "#tags" do
+        expect(page).to have_content 'Education'
+        expect(page).to_not have_content 'Health'
       end
-      
-      ['Distrito A', 'Distrito B'].each do |tag_name|
-        expect(page).to have_content tag_name
+    end
+
+    scenario 'Custom tags' do
+      visit new_proposal_path
+
+      fill_in 'proposal_title', with: 'Help refugees'
+      fill_in 'proposal_question', with: '¿Would you like to give assistance to war refugees?'
+      fill_in 'proposal_summary', with: 'In summary, what we want is...'
+      fill_in 'proposal_description', with: 'This is very important because...'
+      fill_in 'proposal_external_url', with: 'http://rescue.org/refugees'
+      fill_in 'proposal_video_url', with: 'http://youtube.com'
+      fill_in 'proposal_responsible_name', with: 'Isabel Garcia'
+      fill_in 'proposal_captcha', with: correct_captcha_text
+      check 'proposal_terms_of_service'
+
+      fill_in 'proposal_tag_list', with: 'Refugees, Solidarity'
+      click_button 'Create proposal'
+
+      expect(page).to have_content 'Proposal created successfully.'
+      within "#tags" do
+        expect(page).to have_content 'Refugees'
+        expect(page).to have_content 'Solidarity'
       end
     end
 
     scenario 'using dangerous strings' do
+      author = create(:user)
+      login_as(author)
+
       visit new_proposal_path
 
       fill_in 'proposal_title', with: 'A test of dangerous strings'
@@ -340,6 +328,61 @@ feature 'Proposals' do
       expect(page).to have_content 'scriptalert("hey");script'
       expect(page.html).to_not include 'user_id=1, &a=3, <script>alert("hey");</script>'
     end
+  end
+
+  context "Geozones" do
+
+    scenario "Default whole city" do
+      author = create(:user)
+      login_as(author)
+
+      visit new_proposal_path
+
+      fill_in 'proposal_title', with: 'Help refugees'
+      fill_in 'proposal_question', with: '¿Would you like to give assistance to war refugees?'
+      fill_in 'proposal_summary', with: 'In summary, what we want is...'
+      fill_in 'proposal_description', with: 'This is very important because...'
+      fill_in 'proposal_external_url', with: 'http://rescue.org/refugees'
+      fill_in 'proposal_video_url', with: 'http://youtube.com'
+      fill_in 'proposal_responsible_name', with: 'Isabel Garcia'
+      fill_in 'proposal_captcha', with: correct_captcha_text
+      check 'proposal_terms_of_service'
+
+      click_button 'Create proposal'
+
+      expect(page).to have_content 'Proposal created successfully.'
+      within "#geozone" do
+        expect(page).to have_content 'All city'
+      end
+    end
+
+    scenario "Specific geozone" do
+      geozone = create(:geozone, name: 'California')
+      geozone = create(:geozone, name: 'New York')
+      author = create(:user)
+      login_as(author)
+
+      visit new_proposal_path
+
+      fill_in 'proposal_title', with: 'Help refugees'
+      fill_in 'proposal_question', with: '¿Would you like to give assistance to war refugees?'
+      fill_in 'proposal_summary', with: 'In summary, what we want is...'
+      fill_in 'proposal_description', with: 'This is very important because...'
+      fill_in 'proposal_external_url', with: 'http://rescue.org/refugees'
+      fill_in 'proposal_video_url', with: 'http://youtube.com'
+      fill_in 'proposal_responsible_name', with: 'Isabel Garcia'
+      fill_in 'proposal_captcha', with: correct_captcha_text
+      check 'proposal_terms_of_service'
+
+      select('California', from: 'proposal_geozone_id')
+      click_button 'Create proposal'
+
+      expect(page).to have_content 'Proposal created successfully.'
+      within "#geozone" do
+        expect(page).to have_content 'California'
+      end
+    end
+
   end
 
   scenario 'Update should not be posible if logged user is not the author' do
@@ -420,27 +463,6 @@ feature 'Proposals' do
     click_button "Save changes"
 
     expect(page).to have_content "Proposal updated successfully."
-  end
-
-  scenario 'Failed update goes back to edit showing featured tags' do
-    proposal       = create(:proposal)
-    featured_tag = create(:tag, :featured)
-    tag = create(:tag)
-    login_as(proposal.author)
-
-    visit edit_proposal_path(proposal)
-    expect(current_path).to eq(edit_proposal_path(proposal))
-
-    fill_in 'proposal_title', with: ""
-    fill_in 'proposal_captcha', with: correct_captcha_text
-    click_button "Save changes"
-
-    expect(page).to_not have_content "Proposal updated successfully."
-    expect(page).to have_content "error"
-    within(".tags") do
-      expect(page).to have_content featured_tag.name
-      expect(page).to_not have_content tag.name
-    end
   end
 
   describe 'Limiting tags shown' do
@@ -1001,26 +1023,66 @@ feature 'Proposals' do
     expect(page).to have_content('User deleted')
   end
 
+  context "Filter" do
 
-   scenario "Filtered by district"  do
-      tag1= ActsAsTaggableOn::Tag.create!(name:  "Centro", featured: true, kind: "district")
-      tag2= ActsAsTaggableOn::Tag.create!(name:  "Puente de Vallecas", featured: true, kind: "district")
-      tag3= ActsAsTaggableOn::Tag.create!(name:  "Retiro", featured: true, kind: "district")
-      tag4= ActsAsTaggableOn::Tag.create!(name:  "Salamanca", featured: true, kind: "district")
+    scenario "By category" do
+      education = create(:tag, name: 'Education', kind: 'category')
+      health    = create(:tag, name: 'Health',    kind: 'category')
 
-      proposal1 = create(:proposal, tag_list: tag1)
-      proposal2 = create(:proposal, tag_list: tag2)
-      proposal3 = create(:proposal, tag_list: tag3)
-      proposal4 = create(:proposal, tag_list: tag4)    
+      proposal1 = create(:proposal, tag_list: education.name)
+      proposal2 = create(:proposal, tag_list: health.name)
+
       visit proposals_path
-          
-      click_link "View map of districts"
-      within("#districtslist") do
-        click_link "Puente de Vallecas"
-      end    
+
+      within "#categories" do
+        click_link "Education"
+      end
+
       within("#proposals") do
         expect(page).to have_css('.proposal', count: 1)
-        expect(page).to have_content(proposal2.title)
+        expect(page).to have_content(proposal1.title)
       end
+    end
+
+    context "By geozone" do
+
+      background do
+        geozone1 = Geozone.create(name: "California")
+        geozone2 = Geozone.create(name: "New York")
+
+        @proposal1 = create(:proposal, geozone: geozone1)
+        @proposal2 = create(:proposal, geozone: geozone2)
+      end
+
+      scenario "From map" do
+        visit proposals_path
+
+        click_link "map"
+        within("#html_map") do
+          url = find("area[title='California']")[:href]
+          visit url
+        end
+
+        within("#proposals") do
+          expect(page).to have_css('.proposal', count: 1)
+          expect(page).to have_content(@proposal1.title)
+        end
+      end
+
+      scenario "From geozone list" do
+        visit proposals_path
+
+        click_link "map"
+        within("#geozones") do
+          click_link "California"
+        end
+
+        within("#proposals") do
+          expect(page).to have_css('.proposal', count: 1)
+          expect(page).to have_content(@proposal1.title)
+        end
+      end
+    end
   end
+
 end
