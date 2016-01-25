@@ -4,7 +4,7 @@ class Moderation::MeetingsController < Moderation::BaseController
   has_filters %w{pending closed all}, only: :index
 
   before_action :load_resources, only: [:index]
-  before_action :load_featured_tags, only: [:new, :edit]
+  before_action :load_featured_tags, only: [:new, :create, :edit, :update]
 
   load_and_authorize_resource
 

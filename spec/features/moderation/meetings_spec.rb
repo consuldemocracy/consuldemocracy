@@ -1,6 +1,11 @@
 require 'rails_helper'
 
 feature 'Moderate meetings' do
+  before :each do
+    @category = create(:category)
+    @subcategory = create(:subcategory, category_id: @category.id)
+  end
+
   context 'As a moderator' do
     before :each do 
       @moderator = create(:moderator)
@@ -23,8 +28,8 @@ feature 'Moderate meetings' do
       fill_in 'meeting_held_at', with: @meeting_data[:held_at]
       fill_in 'meeting_start_at', with: @meeting_data[:start_at]
       fill_in 'meeting_end_at', with: @meeting_data[:end_at]
-      page.find('.category-1').click
-      page.find('.subcategory-picker', match: :first).click
+      page.find(".category-#{@category.id}").click
+      page.find(".subcategory-#{@subcategory.id}").click
     end
 
     scenario 'Create a meeting with valid values', :js do

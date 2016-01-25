@@ -132,6 +132,8 @@ ignore_unused:
   - 'proposals.index.search_form.*'
   - 'proposals.form.proposal_question'
   - 'proposals.form.proposal_question_example_html'
+  - 'proposals.form.proposal_scope*'
+  - 'meetings.form.meeting_scope*'
   - 'moderation.meetings.index.search_form.*'
   - 'notifications.index.comments_on*'
   - 'notifications.index.replies_to*'
