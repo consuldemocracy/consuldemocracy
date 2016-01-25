@@ -7,34 +7,25 @@
       <%= f.label :name, t("admin.tags.name.placeholder") %>
       <%= f.text_field :name, placeholder: t("admin.tags.name.placeholder"), label: false  %>
     </div>
-    <div class="small-12 medium-6 column">
-      <%= f.label :kind, t("admin.tags.kind.placeholder") %>
-      <%= f.text_field :kind, placeholder: t("admin.tags.kind.placeholder"), label: false  %>
-    </div>
+
     <div class="is-featured small-12 medium-6 column">
       <%= f.label :featured do %>
         <%= f.check_box :featured, label: false %>
         <span class="checkbox"><%= t("admin.tags.mark_as_featured") %></span>
       <% end %>
     </div>
-    <div class="small-12 medium-6 column">
-      <%= f.submit(t("admin.tags.create"), class: "button radius success") %>
-    </div>
   </div>
+
+  <%= f.submit(t("admin.tags.create"), class: "button radius success") %>
+
 <% end %>
-<br>
-<hr widht="30%" align="left">
+
 <h3><%= t("admin.tags.index.title") %>: <%= page_entries_info @tags %></h3>
 
 <ul class="admin-list">
   <% @tags.each do |tag| %>
     <li>
-      <div class="is-featured small-12 medium-6 column">
-        <span class="tag"><%= tag.name %></span>
-      </div>
-      <div class="is-featured small-12 medium-6 column">
-        <span class="tag"><%= tag.kind %></span>
-      </div>
+      <span class="tag"><%= tag.name %></span>
 
       <%= form_for(tag,
           url: admin_tag_path(tag),
