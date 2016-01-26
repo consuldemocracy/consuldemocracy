@@ -84,7 +84,7 @@ en:
     form:
       debate_text: Initial debate text
       debate_title: Debate title
-      tags_instructions: Tag this debate. You can choose from our suggestions or enter your own.
+      tags_instructions: Tag this debate.
       tags_label: Topics
       tags_placeholder: Enter the tags you would like to use, separated by commas (',')
     index:
@@ -226,6 +226,11 @@ en:
         one: Someone replied to your comment on
         other: There are %{count} new replies to your comment on
       title: Notifications
+  map:
+    title: "Districts"
+    proposal_for_district: "Start a proposal for your district"
+    select_district: Scope of operation
+    start_proposal: Create a proposal
   omniauth:
     facebook:
       sign_in: Sign in with Facebook
@@ -260,7 +265,8 @@ en:
       proposal_title: Proposal title
       proposal_video_url: Link to external video
       proposal_video_url_note: You may add a link to YouTube or Vimeo
-      tags_instructions: Tag this proposal. You can choose from our tags or add your own.
+      tag_category_label: "Categories"
+      tags_instructions: "Tag this proposal. You can choose from proposed categories or add your own"
       tags_label: Tags
       tags_placeholder: "Enter the tags you would like to use, separated by commas (',')"
     index:
@@ -361,6 +367,8 @@ en:
       print_button: Print this info
     tags_cloud:
       tags: Trending
+      districts: "Districts"
+      categories: "Categories"
     unflag: Unflag
   simple_captcha:
     label: Enter the text from the image in the box below

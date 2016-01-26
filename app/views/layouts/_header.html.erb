@@ -6,6 +6,12 @@
         <%= link_to Setting['org_name'], root_path, class: ("selected" unless current_page?("/opendata")) %>&nbsp;|
         <%= link_to t("layouts.header.external_link_transparency"), t("layouts.header.external_link_transparency_url") %>&nbsp;|
         <%= link_to t("layouts.header.external_link_opendata"), "/opendata", class: ("selected" if current_page?("/opendata")) %>
+        <% if Setting['blog_url'] %>
+          &nbsp;|
+          <%= link_to Setting['blog_url'], target: "_blank" do %>
+            <%= t("layouts.header.external_link_blog") %>
+          <% end %>
+        <% end %>
       </div>
     </div>
   </section>
@@ -44,12 +50,6 @@
             <%= link_to t("layouts.header.spending_proposals"), spending_proposals_path, class: ("active" if controller_name == "spending_proposals") %>
           <% end %>
           <%= link_to t("layouts.header.more_information"), page_path('more_information'), class: ("active" if current_page?("/more_information"))  %>
-          <% if Setting['blog_url'] %>
-            <%= link_to Setting['blog_url'], target: "_blank" do %>
-              <%= t("layouts.header.external_link_blog") %>
-              <small><i class="icon-external"></i></small>
-            <% end %>
-          <% end %>
         </div>
         <div class="small-12 medium-3 column">
           <%= yield :header_addon %>

@@ -14,6 +14,7 @@ class Proposal < ActiveRecord::Base
   include ActsAsParanoidAliases
 
   belongs_to :author, -> { with_hidden }, class_name: 'User', foreign_key: 'author_id'
+  belongs_to :geozone
   has_many :comments, as: :commentable
 
   validates :title, presence: true
@@ -42,7 +43,7 @@ class Proposal < ActiveRecord::Base
   scope :sort_by_relevance ,       -> { all }
   scope :sort_by_flags,            -> { order(flags_count: :desc, updated_at: :desc) }
   scope :last_week,            -> { where("created_at >= ?", 7.days.ago)}
-  
+
   pg_search_scope :pg_search, {
     against: {
       title:       'A',
@@ -70,6 +71,7 @@ class Proposal < ActiveRecord::Base
     }
     tag_list.each{ |tag| values[tag] = 'D' }
     values[author.username] = 'D'
+    values[geozone.name] = 'D' if geozone.present?
     values
   end
 

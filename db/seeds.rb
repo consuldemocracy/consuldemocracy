@@ -45,7 +45,7 @@ Setting["blog_url"] = "/blog"
 Setting["url"] = "https://decide.madrid.es"
 
 # Consul installation's organization name
-Setting["org_name"] = "Madrid Decide"
+Setting["org_name"] = "Decide Madrid"
 
 # Consul installation place name (City, Country...)
 Setting["place_name"] = "Madrid"
