@@ -16,6 +16,8 @@
 //= require jquery-ui/datepicker-es
 //= require foundation
 //= require turbolinks
+//= require jquery.turbolinks
+//= require parallax
 //= require react
 //= require react_ujs
 //= require components
@@ -70,8 +72,11 @@ $(function(){
   Turbolinks.enableProgressBar()
 
   $(document).ready(initialize_modules);
-  $(document).on('page:load', initialize_modules);
+  $(document).on('page:load page:restore', initialize_modules);
   $(document).on('ajax:complete', initialize_modules);
+  $(document).on('page:load page:restore', function(){
+    $('[data-parallax="scroll"]').parallax();
+  })
 });
 
 function gmapsLoaded () {

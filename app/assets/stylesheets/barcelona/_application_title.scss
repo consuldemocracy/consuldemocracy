@@ -1,0 +1,26 @@
+.application-title-wrapper{
+  text-align: center;
+}
+
+#application-title{
+  font-size: 0;
+  line-height: 0.8;
+  margin: 0;
+  display: inline-block;
+  margin-top: rem-calc(20);
+  margin-bottom: rem-calc(30);
+
+  span{
+    font-weight: bold;
+    font-size: rem-calc(18);
+    display: inline-block;
+    white-space: nowrap;
+  }
+
+  a{
+    @include arrow-box($text, left, 0.8);
+    text-decoration: none;
+    font-weight: 200;
+    display: inline-block;
+  }
+}

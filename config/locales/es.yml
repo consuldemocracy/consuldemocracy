@@ -196,9 +196,7 @@ es:
         one: Tienes una nueva notificación
         other: Tienes %{count} notificaciones nuevas
       no_notifications: No tienes notificaciones nuevas
-      open_city_title: Construyamos la ciudad que queremos
       proposals: Propuestas
-      see_all: Entra y participa
       spending_proposals: Presupuestos ciudadanos
   legislation:
     help:
