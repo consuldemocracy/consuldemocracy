@@ -5,6 +5,8 @@ class Management::ProposalsController < Management::BaseController
   before_action :check_verified_user, except: :print
   before_action :set_proposal, only: [:vote, :show]
   before_action :parse_search_terms, only: :index
+  before_action :load_categories, only: [:new, :edit]
+  before_action :load_geozones, only: [:edit]
 
   has_orders %w{confidence_score hot_score created_at most_commented random}, only: [:index, :print]
   has_orders %w{most_voted newest}, only: :show
@@ -43,7 +45,7 @@ class Management::ProposalsController < Management::BaseController
       managed_user
     end
 
-    ### Duplicated in application_controller. Move to a concenrn.
+    ### Duplicated in application_controller. Move to a concern.
     def set_proposal_votes(proposals)
       @proposal_votes = current_user ? current_user.proposal_votes(proposals) : {}
     end

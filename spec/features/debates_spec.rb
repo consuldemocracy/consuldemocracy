@@ -106,27 +106,6 @@ feature 'Debates' do
     expect(page).to have_content "Debate created successfully."
   end
 
-  scenario 'Failed creation goes back to new showing featured tags' do
-    featured_tag = create(:tag, :featured)
-    tag = create(:tag)
-    login_as(create(:user))
-
-    visit new_debate_path
-    fill_in 'debate_title', with: ""
-    fill_in 'debate_description', with: 'Very important issue...'
-    fill_in 'debate_captcha', with: correct_captcha_text
-    check 'debate_terms_of_service'
-
-    click_button "Start a debate"
-
-    expect(page).to_not have_content "Debate created successfully."
-    expect(page).to have_content "error"
-    within(".tags") do
-      expect(page).to have_content featured_tag.name
-      expect(page).to_not have_content tag.name
-    end
-  end
-
   scenario 'Errors on create' do
     author = create(:user)
     login_as(author)
@@ -204,27 +183,43 @@ feature 'Debates' do
       login_as(author)
     end
 
-    scenario 'using featured tags', :js do
-      ['Medio Ambiente', 'Ciencia'].each do |tag_name|
-        create(:tag, :featured, name: tag_name)
-      end
+    pending 'Category tags', :js do
+      education = create(:tag, name: 'Education', kind: 'category')
+      health    = create(:tag, name: 'Health',    kind: 'category')
 
       visit new_debate_path
 
-      fill_in 'debate_title', with: 'A test'
-      fill_in_ckeditor 'debate_description', with: 'A test'
+      fill_in 'debate_title', with: 'Testing auto link'
+      fill_in 'debate_description', with: "<script>alert('hey')</script> <a href=\"javascript:alert('surprise!')\">click me<a/> http://example.org"
       fill_in 'debate_captcha', with: correct_captcha_text
       check 'debate_terms_of_service'
 
-      ['Medio Ambiente', 'Ciencia'].each do |tag_name|
-        find('.js-add-tag-link', text: tag_name).click
-      end
-
+      find('.js-add-tag-link', text: 'Education').click
       click_button 'Start a debate'
 
       expect(page).to have_content 'Debate created successfully.'
-      ['Medio Ambiente', 'Ciencia'].each do |tag_name|
-        expect(page).to have_content tag_name
+
+      within "#tags" do
+        expect(page).to have_content 'Education'
+        expect(page).to_not have_content 'Health'
+      end
+    end
+
+    scenario 'Custom tags' do
+      visit new_debate_path
+
+      fill_in 'debate_title', with: "Great title"
+      fill_in 'debate_description', with: 'Very important issue...'
+      fill_in 'debate_captcha', with: correct_captcha_text
+      check 'debate_terms_of_service'
+
+      fill_in 'debate_tag_list', with: 'Refugees, Solidarity'
+      click_button 'Start a debate'
+
+      expect(page).to have_content 'Debate created successfully.'
+      within "#tags" do
+        expect(page).to have_content 'Refugees'
+        expect(page).to have_content 'Solidarity'
       end
     end
 
@@ -321,27 +316,6 @@ feature 'Debates' do
     click_button "Save changes"
 
     expect(page).to have_content "Debate updated successfully."
-  end
-
-  scenario 'Failed update goes back to edit showing featured tags' do
-    debate       = create(:debate)
-    featured_tag = create(:tag, :featured)
-    tag = create(:tag)
-    login_as(debate.author)
-
-    visit edit_debate_path(debate)
-    expect(current_path).to eq(edit_debate_path(debate))
-
-    fill_in 'debate_title', with: ""
-    fill_in 'debate_captcha', with: correct_captcha_text
-    click_button "Save changes"
-
-    expect(page).to_not have_content "Debate updated successfully."
-    expect(page).to have_content "error"
-    within(".tags") do
-      expect(page).to have_content featured_tag.name
-      expect(page).to_not have_content tag.name
-    end
   end
 
   describe 'Limiting tags shown' do
@@ -890,4 +864,67 @@ feature 'Debates' do
     visit debate_path(debate)
     expect(page).to have_content('User deleted')
   end
+
+  context "Filter" do
+
+    pending "By category" do
+      education = create(:tag, name: 'Education', kind: 'category')
+      health    = create(:tag, name: 'Health',    kind: 'category')
+
+      debate1 = create(:debate, tag_list: education.name)
+      debate2 = create(:debate, tag_list: health.name)
+
+      visit debates_path
+
+      within "#categories" do
+        click_link "Education"
+      end
+
+      within("#debates") do
+        expect(page).to have_css('.debate', count: 1)
+        expect(page).to have_content(debate1.title)
+      end
+    end
+
+    context "By geozone" do
+
+      background do
+        geozone1 = Geozone.create(name: "California")
+        geozone2 = Geozone.create(name: "New York")
+
+        @debate1 = create(:debate, geozone: geozone1)
+        @debate2 = create(:debate, geozone: geozone2)
+      end
+
+      pending "From map" do
+        visit debates_path
+
+        click_link "map"
+        within("#html_map") do
+          url = find("area[title='California']")[:href]
+          visit url
+        end
+
+        within("#debates") do
+          expect(page).to have_css('.debate', count: 1)
+          expect(page).to have_content(@debate1.title)
+        end
+      end
+
+      pending "From geozone list" do
+        visit debates_path
+
+        click_link "map"
+        within("#geozones") do
+          click_link "California"
+        end
+
+        within("#debates") do
+          expect(page).to have_css('.debate', count: 1)
+          expect(page).to have_content(@debate1.title)
+        end
+      end
+    end
+  end
+
 end

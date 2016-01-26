@@ -84,7 +84,7 @@ es:
     form:
       debate_text: Texto inicial del debate
       debate_title: Título del debate
-      tags_instructions: Etiqueta este debate. Puedes elegir entre nuestras propuestas o introducir las que desees.
+      tags_instructions: Etiqueta este debate.
       tags_label: Temas
       tags_placeholder: "Escribe las etiquetas que desees separadas por coma (',')"
     index:
@@ -225,6 +225,11 @@ es:
         one: Hay una respuesta nueva a tu comentario en
         other: Hay %{count} nuevas respuestas a tu comentario en
       title: Notificaciones
+  map:
+    title: "Distritos"
+    proposal_for_district: "Crea una propuesta para tu distrito"
+    select_district: "Ámbito de actuación"
+    start_proposal: Crea una propuesta
   omniauth:
     facebook:
       sign_in: Entra con Facebook
@@ -259,8 +264,9 @@ es:
       proposal_title: Título de la propuesta
       proposal_video_url: Enlace a vídeo externo
       proposal_video_url_note: Puedes añadir un enlace a YouTube o Vimeo
-      tags_instructions: Etiqueta esta propuesta. Puedes elegir entre nuestras sugerencias o introducir las que desees.
+      tags_instructions: "Etiqueta esta propuesta. Puedes elegir entre las categorías propuestas o introducir las que desees"
       tags_label: Temas
+      tag_category_label: "Categorías"
       tags_placeholder: "Escribe las etiquetas que desees separadas por una coma (',')"
     index:
       featured_proposals: Destacadas
@@ -360,6 +366,8 @@ es:
       print_button: Imprimir esta información
     tags_cloud:
       tags: Tendencias
+      districts: "Distritos"
+      categories: "Categorías"
     unflag: Deshacer denuncia
   simple_captcha:
     label: Introduce el texto de la imagen en la siguiente caja

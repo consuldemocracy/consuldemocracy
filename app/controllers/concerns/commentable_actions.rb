@@ -25,8 +25,8 @@ module CommentableActions
 
   def new
     @resource = resource_model.new
+    set_geozone
     set_resource_instance
-    load_featured_tags
   end
 
   def create
@@ -38,14 +38,14 @@ module CommentableActions
       redirect_path = url_for(controller: controller_name, action: :show, id: @resource.id)
       redirect_to redirect_path, notice: t("flash.actions.create.#{resource_name.underscore}")
     else
-      load_featured_tags
+      load_categories
+      load_geozones
       set_resource_instance
       render :new
     end
   end
 
   def edit
-    load_featured_tags
   end
 
   def update
@@ -53,10 +53,17 @@ module CommentableActions
     if resource.save_with_captcha
       redirect_to resource, notice: t("flash.actions.update.#{resource_name.underscore}")
     else
-      load_featured_tags
+      load_categories
+      load_geozones
       set_resource_instance
       render :edit
     end
+  end
+
+
+   def map
+    @resource = resource_model.new
+    @tag_cloud = tag_cloud
   end
 
   private
@@ -69,8 +76,16 @@ module CommentableActions
       resource_model.last_week.tag_counts.order("#{resource_name.pluralize}_count": :desc, name: :asc).limit(5)
     end
 
-    def load_featured_tags
-      @featured_tags = ActsAsTaggableOn::Tag.where(featured: true)
+    def load_geozones
+      @geozones = Geozone.all.order(name: :asc)
+    end
+
+    def set_geozone
+      @resource.geozone = Geozone.find(params[resource_name.to_sym].try(:[], :geozone_id)) if params[resource_name.to_sym].try(:[], :geozone_id).present?
+    end
+
+    def load_categories
+      @categories = ActsAsTaggableOn::Tag.where("kind = 'category'").order(:name)
     end
 
     def parse_tag_filter
@@ -110,10 +125,6 @@ module CommentableActions
       else
         Date.parse(params[:advanced_search][:date_min]) rescue nil
       end
-    end
-
-    def method_name
-
     end
 
     def search_finish_date
