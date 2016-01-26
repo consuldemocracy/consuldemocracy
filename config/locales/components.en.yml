@@ -6,14 +6,6 @@ en:
         label: Axis
       subcategory:
         label: Action Line
-    meeting_proposals_autocomplete_input:
-      loading: Loading...
-      no_results: No results.
-      search: Search
-    meeting_proposals_table:
-      actions: Actions
-      remove: Delete
-      title: Title
     filter_option:
       citizenship: Citizenship
       city: Whole city
@@ -25,3 +17,11 @@ en:
       scope: Scope
       source: Source
       subcategory_id: Action Line
+    meeting_proposals_autocomplete_input:
+      loading: Loading...
+      no_results: No results.
+      search: Search
+    meeting_proposals_table:
+      actions: Actions
+      remove: Delete
+      title: Title

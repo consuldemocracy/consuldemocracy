@@ -6,14 +6,6 @@ es:
         label: Eje
       subcategory:
         label: Línea de actuación
-    meeting_proposals_autocomplete_input:
-      loading: Cargando...
-      no_results: No se han encontrado resultados.
-      search: Buscar
-    meeting_proposals_table:
-      actions: Acciones
-      remove: Delete
-      title: Título
     filter_option:
       citizenship: Ciudadania
       city: Toda la ciudad
@@ -25,3 +17,11 @@ es:
       scope: "Ámbito"
       source: Origen
       subcategory_id: Línea de actuación
+    meeting_proposals_autocomplete_input:
+      loading: Cargando...
+      no_results: No se han encontrado resultados.
+      search: Buscar
+    meeting_proposals_table:
+      actions: Acciones
+      remove: Delete
+      title: Título

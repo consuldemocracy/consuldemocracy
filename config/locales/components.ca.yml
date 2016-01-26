@@ -6,14 +6,6 @@ ca:
         label: Eix
       subcategory:
         label: Línia d'acció
-    meeting_proposals_autocomplete_input:
-      loading: Carregant...
-      no_results: No s'han trobat resultats.
-      search: Buscar
-    meeting_proposals_table:
-      actions: Accions
-      remove: Eliminar
-      title: Títol
     filter_option:
       citizenship: Ciutadania
       city: Tota la ciutat
@@ -25,3 +17,11 @@ ca:
       scope: "Àmbit"
       source: Origen
       subcategory_id: Línia d'acció
+    meeting_proposals_autocomplete_input:
+      loading: Carregant...
+      no_results: No s'han trobat resultats.
+      search: Buscar
+    meeting_proposals_table:
+      actions: Accions
+      remove: Eliminar
+      title: Títol
