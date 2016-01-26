@@ -183,6 +183,28 @@ feature 'Debates' do
       login_as(author)
     end
 
+    pending 'Category tags', :js do
+      education = create(:tag, name: 'Education', kind: 'category')
+      health    = create(:tag, name: 'Health',    kind: 'category')
+
+      visit new_debate_path
+
+      fill_in 'debate_title', with: 'Testing auto link'
+      fill_in 'debate_description', with: "<script>alert('hey')</script> <a href=\"javascript:alert('surprise!')\">click me<a/> http://example.org"
+      fill_in 'debate_captcha', with: correct_captcha_text
+      check 'debate_terms_of_service'
+
+      find('.js-add-tag-link', text: 'Education').click
+      click_button 'Start a debate'
+
+      expect(page).to have_content 'Debate created successfully.'
+
+      within "#tags" do
+        expect(page).to have_content 'Education'
+        expect(page).to_not have_content 'Health'
+      end
+    end
+
     scenario 'Custom tags' do
       visit new_debate_path
 
@@ -841,6 +863,68 @@ feature 'Debates' do
 
     visit debate_path(debate)
     expect(page).to have_content('User deleted')
+  end
+
+  context "Filter" do
+
+    pending "By category" do
+      education = create(:tag, name: 'Education', kind: 'category')
+      health    = create(:tag, name: 'Health',    kind: 'category')
+
+      debate1 = create(:debate, tag_list: education.name)
+      debate2 = create(:debate, tag_list: health.name)
+
+      visit debates_path
+
+      within "#categories" do
+        click_link "Education"
+      end
+
+      within("#debates") do
+        expect(page).to have_css('.debate', count: 1)
+        expect(page).to have_content(debate1.title)
+      end
+    end
+
+    context "By geozone" do
+
+      background do
+        geozone1 = Geozone.create(name: "California")
+        geozone2 = Geozone.create(name: "New York")
+
+        @debate1 = create(:debate, geozone: geozone1)
+        @debate2 = create(:debate, geozone: geozone2)
+      end
+
+      pending "From map" do
+        visit debates_path
+
+        click_link "map"
+        within("#html_map") do
+          url = find("area[title='California']")[:href]
+          visit url
+        end
+
+        within("#debates") do
+          expect(page).to have_css('.debate', count: 1)
+          expect(page).to have_content(@debate1.title)
+        end
+      end
+
+      pending "From geozone list" do
+        visit debates_path
+
+        click_link "map"
+        within("#geozones") do
+          click_link "California"
+        end
+
+        within("#debates") do
+          expect(page).to have_css('.debate', count: 1)
+          expect(page).to have_content(@debate1.title)
+        end
+      end
+    end
   end
 
 end
