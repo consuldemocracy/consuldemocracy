@@ -187,6 +187,22 @@ class User < ActiveRecord::Base
     super && !registering_with_oauth
   end
 
+  def send_oauth_confirmation_instructions
+    if oauth_email != email
+      self.update(confirmed_at: nil)
+      self.send_confirmation_instructions
+    end
+    self.update(oauth_email: nil) if oauth_email.present?
+  end
+
+  def save_requiring_finish_signup
+    self.update(registering_with_oauth: true)
+  end
+
+  def save_requiring_finish_signup_without_email
+    self.update(registering_with_oauth: true, email: nil)
+  end
+
   private
     def clean_document_number
       self.document_number = self.document_number.gsub(/[^a-z0-9]+/i, "").upcase unless self.document_number.blank?

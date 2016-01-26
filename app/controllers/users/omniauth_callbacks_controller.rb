@@ -42,19 +42,9 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     end
 
     def save_user(user)
-      # If there are no problems with the email/username, then they were provided by oauth or they
-      # correspond to an existing user. Associate the identity and sign in
-      return true if @user.save
-
-      # If either the username or email have provoked a failure, we save the user anyway (but marked for revision)
-      # This mark will be detected by applicationcontroller and the user will be redirected to finish_signup
-      @user.registering_with_oauth = true
-      return true if @user.save
-
-      # If we still can't save the user, the email might be invalidating devise's validatable "unique"
-      # constraint. Set email to nil and try again (we'll reset later using oauth_email)
-      @user.email = nil
-      @user.save
+      @user.save ||
+      @user.save_requiring_finish_signup ||
+      @user.save_requiring_finish_signup_without_email
     end
 
 end
