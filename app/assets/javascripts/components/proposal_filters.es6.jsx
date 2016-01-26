@@ -36,7 +36,7 @@ class ProposalFilters extends React.Component {
           subcategories={this.props.subcategories}
           filterGroupValue={this.state.filters.get('subcategory_id')}
           onChangeFilterGroup={(filterGroupName, filterGroupValue) => this.changeFilterGroup(filterGroupName, filterGroupValue) } />
-        <ProposalFilterTagCloud 
+        <TagCloudFilter 
           currentTags={this.state.tags} 
           tagCloud={this.props.filter.tag_cloud} 
           onSetFilterTags={(tags) => this.setFilterTags(tags)} />

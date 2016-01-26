@@ -39,6 +39,10 @@ class MeetingsFilter extends React.Component {
           subcategories={this.props.subcategories}
           filterGroupValue={this.state.filters.get('subcategory_id')}
           onChangeFilterGroup={(filterGroupName, filterGroupValue) => this.changeFilterGroup(filterGroupName, filterGroupValue) } />
+        <TagCloudFilter 
+          currentTags={this.state.tags} 
+          tagCloud={this.props.filter.tag_cloud} 
+          onSetFilterTags={(tags) => this.setFilterTags(tags)} />
       </form>
     )
   }
@@ -72,6 +76,11 @@ class MeetingsFilter extends React.Component {
     this.setState({ filters });
   }
 
+  setFilterTags(tags) {
+    this.applyFilters(this.state.filters.toObject(), tags.toArray());
+    this.setState({ tags });
+  }
+
   applyFilters(filters, tags) {
     let filterString = [], 
         data;
@@ -91,8 +100,8 @@ class MeetingsFilter extends React.Component {
     }
 
     this.replaceUrl(data);
-    $.ajax(this.props.filterUrl, { data, dataType: "script" }).then((result) => {
-      this.props.onFilterResult(JSON.parse(result));
+    $.ajax(this.props.filterUrl, { data, dataType: "json" }).then((result) => {
+      this.props.onFilterResult(result);
     });
   }
 

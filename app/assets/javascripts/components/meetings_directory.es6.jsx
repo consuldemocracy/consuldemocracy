@@ -2,7 +2,8 @@ class MeetingsDirectory extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      meetings: this.props.meetings
+      meetings: this.props.meetings,
+      filter: this.props.filter
     };
   }
 
@@ -12,12 +13,13 @@ class MeetingsDirectory extends React.Component {
         <div className="small-12 medium-3 column">
           <aside className="sidebar" role="complementary">
             <MeetingsFilter 
-              filter={this.props.filter}
+              filterUrl={this.props.filterUrl}
+              filter={this.state.filter}
               districts={this.props.districts} 
               meetings={this.state.meetings} 
               categories={this.props.categories}
               subcategories={this.props.subcategories} 
-              onFilterResult={(meetings) => this.setState({ meetings })} />
+              onFilterResult={({ meetings, filter }) => this.setState({ meetings, filter })} />
           </aside>
         </div>
 
