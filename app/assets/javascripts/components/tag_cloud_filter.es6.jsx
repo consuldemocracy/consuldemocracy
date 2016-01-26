@@ -30,8 +30,7 @@ class TagCloudFilter extends React.Component {
           if(this.state.tagCloud.length > 0) {
             return (
               <div>
-                <div className="sidebar-divider"></div>
-                <h3>{I18n.t("shared.tags_cloud.tags")}</h3>
+                <h2 className="title">{I18n.t("shared.tags_cloud.tags")}</h2>
                 <br></br>
               </div>
             )
@@ -44,7 +43,7 @@ class TagCloudFilter extends React.Component {
               key={tag.id} 
               onClick={(event) => this.toggleTag(tag.name)}>
               {tag.name}&nbsp;
-              <span className="label round info">{tag.count}</span>
+              <span className="info">{tag.count}</span>
             </a>
           })
         }

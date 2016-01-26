@@ -304,21 +304,32 @@ footer {
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
 .tags, .tag-cloud {
-
   a {
-    background: #ececec;
     border-radius: rem-calc(6);
-    color: $text;
+
+    border: 1px solid lighten($text, 50%);
+    color: lighten($text, 20%);
+
     display: inline-block;
     font-size: $small-font-size;
     margin-bottom: $line-height/3;
     padding: $line-height/4 $line-height/3;
     text-decoration: none;
+    margin-right: rem-calc(5);
 
-    &:hover, &.active {
+    &:hover{
       color: $link;
-      cursor: pointer;
-      background: #E5F1F8;
+      background-color: none;
+    }
+
+    &:hover, &.active, &.active:hover {
+      color: $text-inverse;
+      background: $brand;
+      border-color: $brand;
+    }
+
+    .info{
+      font-weight: bold;
     }
   }
 }

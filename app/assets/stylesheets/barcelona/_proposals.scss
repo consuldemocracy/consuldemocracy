@@ -1,5 +1,6 @@
 a.button.new-proposal{
   @include arrow-box();
+  text-align: left;
 }
 
 .proposals-list{
@@ -60,5 +61,29 @@ a.button.new-proposal{
 
   .featured-proposal-content{
     min-height: rem-calc(120px);
+  }
+}
+
+.sidebar{
+  .sidebar-section .title{
+    @include arrow-box($highlight, left);
+    font-size: rem-calc(18);
+    font-weight: normal;
+    line-height: rem-calc(18) * 1.5;
+  }
+
+  .sidebar-section-content{
+    padding-left: rem-calc(22px);
+  }
+
+  h3{
+    font-size: rem-calc(16);
+    text-transform: uppercase;
+  }
+
+  .filter-group{
+    padding-bottom: rem-calc(20px);
+    border-bottom: 1px dashed $text-light;
+    margin-bottom: rem-calc(20px);
   }
 }

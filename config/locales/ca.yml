@@ -298,6 +298,8 @@ ca:
       tags_placeholder: Escriu les etiquetes que vulguis separades per una coma (',')
     index:
       featured_proposals: Destacades
+      filter:
+        title: Filtrar per
       orders:
         confidence_score: més recolzades
         created_at: més noves
@@ -340,7 +342,6 @@ ca:
         other: "%{count} suports"
         zero: Sense suports
       supports_necessary: "%{number} suports necessaris"
-      total_percent: 100%
     show:
       author_deleted: Usuari eliminat
       back_link: Tornar

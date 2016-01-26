@@ -298,6 +298,8 @@ en:
       tags_placeholder: Enter the tags you would like to use, separated by commas (',')
     index:
       featured_proposals: Featured
+      filter:
+        title: Filter by
       orders:
         confidence_score: highest rated
         created_at: newest
@@ -340,7 +342,6 @@ en:
         other: "%{count} supports"
         zero: No supports
       supports_necessary: "%{number} supports needed"
-      total_percent: 100%
     show:
       author_deleted: User deleted
       back_link: Go back

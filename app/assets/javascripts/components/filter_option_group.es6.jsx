@@ -18,7 +18,7 @@ class FilterOptionGroup extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="filter-group">
         <h3>{I18n.t(`components.filter_option_group.${this.props.filterGroupName}`)}</h3>
         {this.renderChildren()}
       </div>

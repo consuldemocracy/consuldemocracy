@@ -298,6 +298,8 @@ es:
       tags_placeholder: Escribe las etiquetas que desees separadas por una coma (',')
     index:
       featured_proposals: Destacadas
+      filter:
+        title: Filtrado por
       orders:
         confidence_score: Más apoyadas
         created_at: Nuevas
@@ -340,7 +342,6 @@ es:
         other: "%{count} apoyos"
         zero: Sin apoyos
       supports_necessary: "%{number} apoyos necesarios"
-      total_percent: 100%
     show:
       author_deleted: Usuario eliminado
       back_link: Volver
