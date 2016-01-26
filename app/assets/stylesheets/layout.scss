@@ -627,7 +627,7 @@ footer {
 // 04. Tags
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
-.tags a , .tag-cloud a, .categories a, .geozone {
+.tags a , .tag-cloud a, .categories a, .geozone a {
   background: #ececec;
   border-radius: rem-calc(6);
   color: $text;
@@ -642,12 +642,13 @@ footer {
   }
 }
 
-.categories a, .geozone {
+.categories a, .geozone a {
   background: $highlight;
   color: $link;
 
   &:hover {
-    background: #e0e0e0;
+    background: $highlight;
+    color: $link-hover;
   }
 }
 

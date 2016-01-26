@@ -1047,11 +1047,12 @@ feature 'Proposals' do
     context "By geozone" do
 
       background do
-        geozone1 = Geozone.create(name: "California")
-        geozone2 = Geozone.create(name: "New York")
+        @california = Geozone.create(name: "California")
+        @new_york   = Geozone.create(name: "New York")
 
-        @proposal1 = create(:proposal, geozone: geozone1)
-        @proposal2 = create(:proposal, geozone: geozone2)
+        @proposal1 = create(:proposal, geozone: @california)
+        @proposal2 = create(:proposal, geozone: @california)
+        @proposal3 = create(:proposal, geozone: @new_york)
       end
 
       scenario "From map" do
@@ -1064,8 +1065,10 @@ feature 'Proposals' do
         end
 
         within("#proposals") do
-          expect(page).to have_css('.proposal', count: 1)
+          expect(page).to have_css('.proposal', count: 2)
           expect(page).to have_content(@proposal1.title)
+          expect(page).to have_content(@proposal2.title)
+          expect(page).to_not have_content(@proposal3.title)
         end
       end
 
@@ -1076,12 +1079,29 @@ feature 'Proposals' do
         within("#geozones") do
           click_link "California"
         end
-
         within("#proposals") do
-          expect(page).to have_css('.proposal', count: 1)
+          expect(page).to have_css('.proposal', count: 2)
           expect(page).to have_content(@proposal1.title)
+          expect(page).to have_content(@proposal2.title)
+          expect(page).to_not have_content(@proposal3.title)
         end
       end
+
+      scenario "From proposal" do
+        visit proposal_path(@proposal1)
+
+        within("#geozone") do
+          click_link "California"
+        end
+
+        within("#proposals") do
+          expect(page).to have_css('.proposal', count: 2)
+          expect(page).to have_content(@proposal1.title)
+          expect(page).to have_content(@proposal2.title)
+          expect(page).to_not have_content(@proposal3.title)
+        end
+      end
+
     end
   end
 
