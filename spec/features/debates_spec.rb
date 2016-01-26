@@ -804,7 +804,7 @@ feature 'Debates' do
       end
     end
 
-    pending "Order by relevance by default", :js do
+    xscenario "Order by relevance by default", :js do
       debate1 = create(:debate, title: "Show you got",      cached_votes_up: 10)
       debate2 = create(:debate, title: "Show what you got", cached_votes_up: 1)
       debate3 = create(:debate, title: "Show you got",      cached_votes_up: 100)
@@ -822,7 +822,7 @@ feature 'Debates' do
       end
     end
 
-    pending "Reorder results maintaing search", :js do
+    xscenario "Reorder results maintaing search", :js do
       debate1 = create(:debate, title: "Show you got",      cached_votes_up: 10,  created_at: 1.week.ago)
       debate2 = create(:debate, title: "Show what you got", cached_votes_up: 1,   created_at: 1.month.ago)
       debate3 = create(:debate, title: "Show you got",      cached_votes_up: 100, created_at: Time.now)
