@@ -22,7 +22,7 @@ feature 'EmailVerifications' do
 
     login_as(user)
 
-    sent_token = /.*email_verification_token=(.*)".*/.match(ActionMailer::Base.deliveries.last.body.to_s)[1]
+    sent_token = /.*email_verification_token=([0-9A-z]+)".*/.match(ActionMailer::Base.deliveries.last.body.to_s)[1]
     visit email_path(email_verification_token: sent_token)
 
     expect(page).to have_content "You are a verified user"

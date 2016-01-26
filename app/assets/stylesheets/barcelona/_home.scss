@@ -1,46 +1,64 @@
-.home-banner{
-  background-image: image-url('home/banner-background.jpg');
-  background-size: cover;
-  min-height: 360px;
+.header.wide{
+  min-height: rem-calc(435);
 
-  h2{
-    color: $text-inverse;
-    font-size: rem-calc(50);
-    font-family: 'Vollkorn', serif;
-    font-weight: normal;
-    padding-top: rem-calc(100);
-    margin-bottom: rem-calc(15);
-  }
+  .title-expanded{
+    font-size: $base-font-size;
 
-  .see-proposals{
-    text-transform: uppercase;
-    font-size: rem-calc(15);
-  }
-
-  .home-video{
-    .video-js{
+    margin-top: rem-calc(25);
+    a{
       display: inline-block;
     }
 
-    padding-top: rem-calc(54px);
-    text-align: right;
+    .pam, .pla-barcelona, .decidim-barcelona{
+      display: block;
+      float: left;
+      clear: both;
+      text-decoration: none;
+      @include arrow-box();
+      font-size: rem-calc(28);
+      margin-bottom: rem-calc(8);
+      line-height: 1em;
+      padding-right: rem-calc(30);
 
-    .vjs-big-play-button{
-      border: none !important;
-      background: none !important;
+      padding-top: rem-calc(10);
+      padding-bottom: rem-calc(10);
+    }
 
-      &:hover{
-        background: none;
+    .decidim-barcelona{
+      @include arrow-box($text, left, 0.8);
+      font-size: 0;
+      span{
+        font-size: rem-calc(15);
+        line-height: 1em;
       }
 
-      width: rem-calc(50);
-      height: rem-calc(50);
-      font-size: rem-calc(60);
-
-      top: auto;
-      right: auto;
-      left: 0 !important;
-      bottom: rem-calc(10) !important;
+      padding-top: rem-calc(8);
+      padding-bottom: rem-calc(8);
     }
   }
+
+  .header-motto{
+    position: absolute;
+    right: rem-calc(50);
+    top: rem-calc(145);
+
+    .header-text{
+      margin-bottom: rem-calc(15);
+    }
+
+    .header-text, .header-link{
+      float: right;
+      clear: both;
+      display: block;
+      @include arrow-box($background, right);
+      max-width: rem-calc(450);
+
+      font-size: rem-calc(22);
+      line-height: 1.1em;
+    }
+  }
+}
+
+.home-content{
+  min-height: 100vh;
 }

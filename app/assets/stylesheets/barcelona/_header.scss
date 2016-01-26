@@ -1,4 +1,8 @@
 #header{
+  .header{
+    padding-top: rem-calc(30px);
+  }
+
   .top-menu{
     border-bottom: 1px solid #f2f3f3;
     line-height: rem-calc(45px);
@@ -24,37 +28,63 @@
     }
   }
 
+  .header-wrapper{
+    position: relative;
+  }
+
   .session-menu{
     text-align: right;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: transparentize($background, 0.2);
+    z-index: 100;
 
     ul{
       margin: 0;
       padding: 0;
-      line-height: rem-calc(100px);
+      font-size: 0;
 
       li{
+        line-height: 30px;
+
+        font-size: $base-font-size;
         margin: 0;
-        margin-left: 1rem;
         padding: 0;
         display: inline-block;
+
+        a{
+          display: inline-block;
+          padding: 0 rem-calc(10);
+        }
+
+        a.signup{
+          background-color: $brand;
+          color: $text-inverse;
+        }
       }
     }
   }
 
+  .main-menu-wrapper{
+    background-color: $highlight;
+    margin-bottom: rem-calc(20);
+  }
+
   .main-menu{
     @include display(flex);
-    margin-bottom: rem-calc(20);
 
     a{
       @include flex(1);
       display: block;
-      background-color: $highlight;
       line-height: rem-calc(40);
       text-align: center;
       text-transform: uppercase;
       color: $text;
       text-decoration: none;
       margin: 0 rem-calc(1px);
+      border-right: 1px solid #fff;
 
       &.active, &:hover.active{
         background-color: $brand;

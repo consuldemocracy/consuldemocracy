@@ -70,7 +70,7 @@ class MeetingsMap extends React.Component {
               size: {width: 27, height: 35},
               anchor: new google.maps.Point(20, 40),
               scale: 0.6,
-              fillColor: '#fa494a',
+              fillColor: '#c60c30',
             },
             map: map
           });

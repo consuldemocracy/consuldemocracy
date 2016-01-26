@@ -196,9 +196,7 @@ en:
         one: You have a new notification
         other: You have %{count} new notifications
       no_notifications: You don't have new notifications
-      open_city_title: Let's build the city we love
       proposals: Proposals
-      see_all: Come on in and take action
       spending_proposals: Spending proposals
   legislation:
     help:

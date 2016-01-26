@@ -23,11 +23,3 @@
 
   </nav>
 </div>
-
-<% if content_for?(:header_addon) %>
-  <div class="row">
-    <section class="small-12 medium-4 medium-offset-8 large-3 large-offset-9 columns">
-      <%= yield :header_addon %>
-    </section>
-  </div>
-<% end %>

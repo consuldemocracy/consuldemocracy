@@ -15,20 +15,38 @@
     </div>
   </div>
 
-  <div class="header row">
-    <div class="small-12 large-4 columns">
-      <%= render 'layouts/title' %>
+  <div class="header-wrapper">
+    <div class="session-menu">
+      <div class="row">
+        <div class="small-12 large-12 columns">
+          <ul>
+            <%= render "shared/admin_login_items" %>
+            <%= render "devise/menu/login_items" %>
+          </ul>
+        </div>
+      </div>
     </div>
 
-    <div class="small-12 large-8 columns">
-      <section class="session-menu">
-        <ul>
-          <%= render "shared/admin_login_items" %>
-          <%= render "devise/menu/login_items" %>
-        </ul>
-      </section>
-    </div>
+    <% if content_for?(:header) %>
+      <%= yield(:header) %>
+    <% else %>
+      <div class="header row">
+        <div class="small-12 large-12 columns">
+          <%= render 'layouts/title' %>
+        </div>
+      </div>
+    <% end %>
   </div>
 
-  <%= render partial: 'layouts/menu' %>
+  <div class="main-menu-wrapper">
+    <%= render partial: 'layouts/menu' %>
+  </div>
+
+  <% if content_for?(:header_addon) %>
+    <div class="row">
+      <section class="small-12 medium-4 medium-offset-8 large-3 large-offset-9 columns">
+        <%= yield :header_addon %>
+      </section>
+    </div>
+  <% end %>
 </header>

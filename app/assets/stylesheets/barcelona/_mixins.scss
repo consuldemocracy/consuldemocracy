@@ -1,0 +1,60 @@
+@mixin arrow-box($color: $brand, $position: left, $scale: 1){
+  position: relative;
+  background: $color;
+  border-radius: rem-calc(5) * $scale;
+  padding: rem-calc(15) * $scale rem-calc(15) * $scale;
+  border: none;
+
+  @if (lightness($color) > 50) {
+    color: $text;
+  } @else {
+    color: $text-inverse;
+  }
+
+  &:after {
+	  border: solid transparent;
+	  content: " ";
+	  height: 0;
+	  width: 0;
+	  position: absolute;
+	  pointer-events: none;
+	  border-color: transparent;
+	  border-width: rem-calc(10) * $scale;
+  }
+
+  @if $position == left{
+    &:after {
+	    right: 100%;
+	    top: 50%;
+	    margin-top: rem-calc(-10) * $scale;
+	    border-right-color: $color;
+    }
+  }
+
+  @if $position == right{
+    &:after {
+	    left: 100%;
+	    top: 50%;
+	    margin-top: rem-calc(-10) * $scale;
+	    border-left-color: $color;
+    }
+  }
+
+  @if $position == top{
+    &:after {
+	    bottom: 100%;
+	    left: 50%;
+	    margin-left: rem-calc(-10) * $scale;
+	    border-bottom-color: $color;
+    }
+  }
+
+  @if $position == bottom{
+    &:after {
+	    top: 100%;
+	    left: 50%;
+	    margin-left: rem-calc(-10) * $scale;
+	    border-top-color: $color;
+    }
+  }
+}

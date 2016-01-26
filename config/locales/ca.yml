@@ -196,9 +196,7 @@ ca:
         one: Tens una nova notificació
         other: Tens %{count} notificacions noves
       no_notifications: No tens notificacions noves
-      open_city_title: Construïm la ciutat que volem
       proposals: Propostes
-      see_all: Entra i participa
       spending_proposals: Pressupostos ciutadans
   legislation:
     help:

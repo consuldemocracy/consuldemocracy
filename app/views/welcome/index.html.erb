@@ -1,12 +1,32 @@
-<div class="home-banner">
-  <div class="row">
-    <div class="small-12 medium-6 column">
-      <h2><%= t("layouts.header.open_city_title") %></h2>
-      <%= link_to t('layouts.header.see_all'), proposals_path, class: 'button small see-proposals' %>
-    </div>
+<% content_for(:header) do %>
+  <div class="header wide parallax-window" data-parallax="scroll" data-image-src="<%= asset_url('home/banner-background.jpg') %>" data-speed="0.4" data-natural-height="435" data-natural-width="1900">
+    <div class="row">
+      <div class="small-12 large-12 columns">
+        <h1 class="title-expanded">
+          <%= link_to root_path do %>
+            <span class="pam">PAM</span>
+            <span class="pla-barcelona">PlaBarcelona</span>
+            <span class="decidim-barcelona">
+              <span>Decidim</span>
+              <span>Barcelona</span>
+            </span>
+          <% end %>
+        </h1>
+        <div class="header-motto">
+          <span class="header-text">
+            <%= t('welcome.header-motto.text').html_safe %>
+          </span>
 
-    <div class="small-12 medium-6 column">
-      <%= render partial: 'video' %>
+          <%= link_to proposals_path, class: 'header-link' do %>
+            <%= t 'welcome.header-motto.link' %>
+          <% end %>
+        </div>
+      </div>
     </div>
-  </h2>
+  </div>
+<% end %>
+
+<div class="row">
+  <div class="small-12 columns home-content">
+  </div>
 </div>
