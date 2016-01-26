@@ -39,7 +39,7 @@
       <%= f.text_field :external_url, placeholder: t("proposals.form.proposal_external_url"), label: false %>
     </div>
 
-    <div class="small-12 column">
+    <div class="small-12 medium-6 column">
       <%= f.label :geozone_id,  t("spending_proposals.form.geozone") %>
       <%= f.select :geozone_id, geozone_select_options, {include_blank: t("geozones.none"), label: false} %>
     </div>
