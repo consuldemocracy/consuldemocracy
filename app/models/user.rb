@@ -52,16 +52,16 @@ class User < ActiveRecord::Base
   # Get the existing user by email if the provider gives us a verified email.
   def self.first_or_initialize_for_oauth(auth)
     oauth_email           = auth.info.email
-    confirmed_oauth_email = oauth_email if auth.info.verified || auth.info.verified_email
-    oauth_user            = User.find_by(email: confirmed_oauth_email) if confirmed_oauth_email.present?
+    oauth_email_confirmed = auth.info.verified || auth.info.verified_email
+    oauth_user            = User.find_by(email: oauth_email) if oauth_email_confirmed
 
     oauth_user || User.new(
       username:  auth.info.name || auth.uid,
       email: oauth_email,
-      confirmed_oauth_email: confirmed_oauth_email,
+      oauth_email: oauth_email,
       password: Devise.friendly_token[0,20],
       terms_of_service: '1',
-      confirmed_at: confirmed_oauth_email.present? ? DateTime.now : nil
+      confirmed_at: oauth_email_confirmed ? DateTime.now : nil
     )
   end
 
@@ -172,11 +172,6 @@ class User < ActiveRecord::Base
 
   def email_required?
     !erased? && !registering_with_oauth
-  end
-
-  # Deactivates the email uniqueness validation when registering with oauth
-  def email_changed?
-    !registering_with_oauth && super
   end
 
   def has_official_email?
