@@ -7,18 +7,52 @@
       <% end %>
 
       <h1><%= t("pages.processes.process_2.title") %></h1>
+      <h2>¡El próximo jueves 28 de enero abrimos el proceso!</h2>
+      <%#= markdown t("pages.processes.process_2.text") %>
+      <%#= link_to t("pages.processes.process_2.button"), "#", class: "button radius" %>
     </div>
     <div class="show-for-medium-up medium-5 column">
-      <div class="panel absolute">
-        <%= image_tag "processes_plaza_espana.jpg" %>
-      </div>
+      <%= image_tag "processes_plaza_espana.jpg" %>
     </div>
   </div>
 </div>
 
-<div class="process row margin-bottom">
-  <div class="small-12 medium-6 column">
-    <%= markdown t("pages.processes.process_2.text") %>
-    <%= link_to t("pages.processes.process_2.button"), "/processes_plaza_espana_survey", class: "button radius" %>
+<div class="process row margin">
+  <div class="small-12 column">
+
+    <ul>
+      <li>
+        <%= link_to "Dudas en el proceso participativo sobre la posible intervención en Plaza de España", "/processes_plaza_espana_faq" %>
+      </li>
+      <li>
+        <%= link_to "Acta reunión grupo de trabajo Plaza España 11 de enero de 2016 (documento PDF, 113Kb)", "/docs/acta_reunion_pza_espana_11_enero_2016.pdf",
+                    title: "Acta reunión grupo de trabajo Plaza España 11 de enero de 2016 (documento PDF, 113Kb)", target: "_blank" %>
+      </li>
+      <li>
+        <%= link_to "Acta reunión grupo de trabajo Plaza España 14 de diciembre de 2015 (documento PDF, 73Kb)", "/docs/acta_reunion_pza_espana_14_diciembre_2015.pdf",
+                    title: "Acta reunión grupo de trabajo Plaza España 14 de diciembre de 2015 (documento PDF, 73Kb)", target: "_blank" %>
+      </li>
+      <li>
+        <%= link_to "Acta reunión grupo de trabajo Plaza España 3 de diciembre de 2015 (documento PDF, 71Kb)", "/docs/acta_reunion_pza_espana_3_diciembre_2015.pdf",
+                    title: "Acta reunión grupo de trabajo Plaza España 3 de diciembre de 2015 (documento PDF, 71Kb)", target: "_blank" %>
+      </li>
+      <li>
+        <%= link_to "Estudio sociodemográfico y dotacional (documento PDF, 12Mb)", "/docs/estudio_sociodemografico_y_dotacional.pdf",
+                    title: "Estudio sociodemográfico y dotacional (documento PDF, 12Mb)", target: "_blank" %>
+      </li>
+      <li>
+        <%= link_to "Estudio de la evolución histórica. Sin anexos (documento PDF, 5,7Mb)", "/docs/estudio_de_la_evolucion_historica.pdf",
+                    title: "Estudio de la evolución histórica. Sin anexos (documento PDF, 5,7Mb)", target: "_blank" %>
+      </li>
+      <li>
+        <%= link_to "Estudio de las autorizaciones de uso(documento PDF, 331kb)", "/docs/estudio_de_las_autorizaciones_de_uso.pdf",
+                    title: "Estudio de las autorizaciones de uso(documento PDF, 331kb)", target: "_blank" %>
+      </li>
+      <li>
+        <%= link_to "Estudio de otras miradas (documento PDF, 1,2Mb)", "/docs/estudio_de_otras_miradas.pdf",
+                    title: "Estudio de otras miradas (documento PDF, 1,2Mb)", target: "_blank" %>
+      </li>
+    </ul>
+
   </div>
 </div>

@@ -337,6 +337,7 @@ en:
       author_type_4: 'City councillor'
       author_type_5: 'Mayoress'
       date: 'By date'
+      date_placeholder: 'DD/MM/YYYY'
       date_range_blank: 'Choose a date'
       date_1: 'Last 24 hours'
       date_2: 'Last week'
@@ -470,3 +471,24 @@ en:
       user_permission_verify_info: "* Only for users on Madrid Census."
       user_permission_verify_url: verify your account
       user_permission_votes: Participate on final voting
+  omniauth:
+    finish_signup:
+      title: "Additional details"
+    twitter:
+      sign_in: "Sign in with Twitter"
+      sign_up: "Sign up with Twitter"
+    facebook:
+      sign_in: "Sign in with Facebook"
+      sign_up: "Sign up with Facebook"
+    #google_oauth2:
+    #  sign_in: "Sign in with Google"
+    #  sign_up: "Sign up with Google"
+  legislation:
+    help:
+      title: "How I can comment this document?"
+      text_logged: "Select the text you want to comment and press the button with the pencil."
+      text: "To comment this document you must %{sign_in} or %{sign_up}. Then select the text you want to comment and press the button with the pencil."
+      text_sign_in: "login"
+      text_sign_up: "sign up"
+      alt: "Select the text you want to comment and press the button with the pencil."
+

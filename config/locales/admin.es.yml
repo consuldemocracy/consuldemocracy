@@ -123,6 +123,12 @@ es:
       index:
         title: Configuración global
         update_setting: Actualizar
+        feature_flags: Funcionalidades
+        features:
+          enabled: "Funcionalidad activada"
+          disabled: "Funcionalidad desactivada"
+          enable: "Activar"
+          disable: "Desactivar"
     shared:
       proposal_search:
         button: Buscar

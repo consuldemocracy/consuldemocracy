@@ -36,12 +36,13 @@ module CommonActions
   end
 
   def confirm_email
-    expect(page).to have_content "A message with a confirmation link has been sent to your email address."
+    body = ActionMailer::Base.deliveries.last.try(:body)
+    expect(body).to be_present
 
-    sent_token = /.*confirmation_token=(.*)".*/.match(ActionMailer::Base.deliveries.last.body.to_s)[1]
+    sent_token = /.*confirmation_token=(.*)".*/.match(body.to_s)[1]
     visit user_confirmation_path(confirmation_token: sent_token)
 
-    expect(page).to have_content "Your email address has been successfully confirmed"
+    expect(page).to have_content "Your account has been confirmed"
   end
 
   def reset_password

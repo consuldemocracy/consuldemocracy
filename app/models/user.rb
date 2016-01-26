@@ -1,6 +1,4 @@
 class User < ActiveRecord::Base
-  OMNIAUTH_EMAIL_PREFIX = 'omniauth@participacion'
-  OMNIAUTH_EMAIL_REGEX  = /\A#{OMNIAUTH_EMAIL_PREFIX}/
 
   include Verification
 
@@ -31,8 +29,10 @@ class User < ActiveRecord::Base
   validate :validate_username_length
 
   validates :official_level, inclusion: {in: 0..5}
-  validates_format_of :email, without: OMNIAUTH_EMAIL_REGEX, on: :update
   validates :terms_of_service, acceptance: { allow_nil: false }, on: :create
+
+  validates :locale, inclusion: {in: I18n.available_locales.map(&:to_s),
+                                 allow_nil: true}
 
   validates_associated :organization, message: false
 
@@ -49,42 +49,18 @@ class User < ActiveRecord::Base
 
   before_validation :clean_document_number
 
-  def self.find_for_oauth(auth, signed_in_resource = nil)
-    # Get the identity and user if they exist
-    identity = Identity.find_for_oauth(auth)
-
-    # If a signed_in_resource is provided it always overrides the existing user
-    # to prevent the identity being locked with accidentally created accounts.
-    # Note that this may leave zombie accounts (with no associated identity) which
-    # can be cleaned up at a later date.
-    user = signed_in_resource ? signed_in_resource : identity.user
-    user ||= first_or_create_for_oauth(auth)
-
-    # Associate the identity with the user if needed
-    identity.update_user(user)
-    user
-  end
-
   # Get the existing user by email if the provider gives us a verified email.
-  # If no verified email was provided we assign a temporary email and ask the
-  # user to verify it on the next step via RegistrationsController.finish_signup
-  def self.first_or_create_for_oauth(auth)
-    email = auth.info.email if auth.info.verified || auth.info.verified_email
-    user  = User.where(email: email).first if email
+  def self.first_or_initialize_for_oauth(auth)
+    auth_email      = auth.info.email if auth.info.verified || auth.info.verified_email
+    auth_email_user = User.find_by(email: auth_email) if auth_email.present?
 
-    # Create the user if it's a new registration
-    if user.nil?
-      user = User.new(
-        username: auth.info.nickname || auth.extra.raw_info.name.parameterize('-') || auth.uid,
-        email: email ? email : "#{OMNIAUTH_EMAIL_PREFIX}-#{auth.uid}-#{auth.provider}.com",
-        password: Devise.friendly_token[0,20],
-        terms_of_service: '1'
-      )
-      user.skip_confirmation!
-      user.save!
-    end
-
-    user
+    auth_email_user || User.new(
+      username:  auth.info.name || auth.uid,
+      email: auth_email,
+      password: Devise.friendly_token[0,20],
+      terms_of_service: '1',
+      confirmed_at: auth_email.present? ? DateTime.now : nil
+    )
   end
 
   def name
@@ -167,11 +143,6 @@ class User < ActiveRecord::Base
     erased_at.present?
   end
 
-  def email_provided?
-    !!(email && email !~ OMNIAUTH_EMAIL_REGEX) ||
-      !!(unconfirmed_email && unconfirmed_email !~ OMNIAUTH_EMAIL_REGEX)
-  end
-
   def locked?
     Lock.find_or_create_by(user: self).locked?
   end
@@ -194,16 +165,20 @@ class User < ActiveRecord::Base
   end
 
   def username_required?
-    !organization? && !erased?
+    !organization? && !erased? && !registering_with_oauth
   end
 
   def email_required?
-    !erased?
+    !erased? && !registering_with_oauth
   end
 
   def has_official_email?
     domain = Setting['email_domain_for_officials']
     !email.blank? && ( (email.end_with? "@#{domain}") || (email.end_with? ".#{domain}") )
+  end
+
+  def locale
+    self[:locale] ||= I18n.default_locale.to_s
   end
 
   private

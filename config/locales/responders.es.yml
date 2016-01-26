@@ -4,7 +4,12 @@ es:
     actions:
       create:
         notice: "%{resource_name} creado correctamente."
+        debate: "Debate creado correctamente."
+        proposal: "Propuesta creada correctamente."
+        spending_proposal: "Propuesta de gasto creada correctamente."
       save_changes:
         notice: Cambios guardados
       update:
         notice: "%{resource_name} actualizado correctamente."
+        debate: "Debate actualizado correctamente."
+        proposal: "Propuesta actualizada correctamente."
