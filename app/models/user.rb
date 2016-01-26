@@ -183,8 +183,8 @@ class User < ActiveRecord::Base
     self[:locale] ||= I18n.default_locale.to_s
   end
 
-  def pending_finish_signup?
-    email.blank? && unconfirmed_email.blank?
+  def confirmation_required?
+    super && !registering_with_oauth
   end
 
   private
