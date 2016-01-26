@@ -35,7 +35,6 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
         sign_in_and_redirect @user, event: :authentication
         set_flash_message(:notice, :success, kind: "#{provider}".capitalize) if is_navigational_format?
       else
-        # If saving the user was not possible (weird errors, etc) just present the "new user" form
         session["devise.#{provider}_data"] = auth
         redirect_to new_user_registration_url
       end
