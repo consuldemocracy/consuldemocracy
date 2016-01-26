@@ -1,18 +1,20 @@
-<div id="<%= dom_id(proposal) %>" class="proposal-featured clear">
-  <div class="small-12 medium-9 column">
-    <h3><%= link_to proposal.title, proposal %></h3>
-    <div class="info">
-      <% if proposal.author.hidden? || proposal.author.erased? %>
-        <%= t("proposals.show.author_deleted") %>
-      <% else %>
-        <%= proposal.author.name %>
-      <% end %>
-      &nbsp;&bull;&nbsp;
-      <strong><%= t("proposals.proposal.supports", count: proposal.total_votes) %></strong>
+<li class="featured-proposal" id="<%= dom_id(proposal) %>">
+  <div class="featured-proposal-inner">
+    <div class="featured-proposal-content">
+      <h3><%= link_to proposal.title, proposal %></h3>
+      <div class="info">
+        <% if proposal.author.hidden? || proposal.author.erased? %>
+          <%= t("proposals.show.author_deleted") %>
+        <% else %>
+          <%= proposal.author.name %>
+        <% end %>
+        &nbsp;&bull;&nbsp;
+        <strong><%= t("proposals.proposal.supports", count: proposal.total_votes) %></strong>
+      </div>
+    </div>
+
+    <div id="<%= dom_id(proposal) %>_votes">
+      <%= render 'featured_votes', proposal: proposal %>
     </div>
   </div>
-
-  <div id="<%= dom_id(proposal) %>_votes" class="small-12 medium-3 column">
-    <%= render 'featured_votes', proposal: proposal %>
-  </div>
-</div>
+</li>

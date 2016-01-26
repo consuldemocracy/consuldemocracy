@@ -1,3 +1,64 @@
 a.button.new-proposal{
   @include arrow-box();
 }
+
+.proposals-list{
+  .proposal{
+    background-color: $highlight;
+    .proposal-content, .supports{
+      padding: rem-calc(12) rem-calc(20);
+      min-height: rem-calc(250);
+    }
+
+    position: relative;
+    margin-bottom: rem-calc(20);
+
+    .supports{
+      text-align: left;
+
+      .progress{
+        position: relative;
+        background-color: $highlight;
+        .meter{
+          background-color: $brand;
+        }
+      }
+
+      .supports-count{
+        font-size: rem-calc(20);
+      }
+
+      .support-progress{
+        padding-bottom: rem-calc(15);
+        border-bottom: 1px dotted $highlight;
+        margin-bottom: rem-calc(15);
+      }
+
+      border: 5px solid $highlight;
+      background-color: $background;
+
+      .percentage{
+        font-size: rem-calc(30);
+        color: $brand;
+      }
+
+      .total-supports{
+        text-align: left;
+      }
+    }
+  }
+}
+
+.featured-proposals{
+  .featured-proposal{
+    text-align: center;
+  }
+
+  .featured-proposal-inner{
+    @include arrow-box(darken($highlight, 5%), bottom);
+  }
+
+  .featured-proposal-content{
+    min-height: rem-calc(120px);
+  }
+}

@@ -155,10 +155,7 @@
 }
 
 @mixin supports {
-  background: $proposals;
-  border-top: 1px solid $proposals-border;
   font-family: $font-sans;
-  margin: 0 rem-calc(-12);
   padding: rem-calc(14) rem-calc(12);
   position: relative;
 
@@ -171,26 +168,13 @@
     }
   }
 
-  .percentage {
-    font-size: rem-calc(10);
-    color: $brand;
-    vertical-align: top;
-    position: absolute;
-    top: 13px;
-    right: 20px;
-  }
-
   abbr {
-    color: white;
-
     &[title] {
       border-bottom: 1px dotted white;
     }
   }
 
   .button-support {
-    background: white;
-    color: $proposals;
     display: inline-block;
     font-size: $small-font-size;
     margin-top: rem-calc(12);
@@ -207,7 +191,6 @@
   }
 
   .total-supports {
-    color: white;
     text-align: center;
     font-size: $small-font-size;
 
@@ -221,7 +204,7 @@
   }
 
   .not-logged {
-    background: rgba(255,164,45,.9);
+    background: transparentize($brand, 0.1);
     color: white;
     font-size: $small-font-size;
     height: 100%;
@@ -753,30 +736,10 @@
 
   .supports {
     @include supports;
-    border: 1px solid $proposals-border;
-    margin: 0 rem-calc(-12);
 
     @media (min-width: $small-breakpoint) {
       border-top-left-radius: 3px;
       border-bottom-left-radius: 3px;
-      margin: 0 rem-calc(-25) 0 rem-calc(12);
-    }
-
-    &:after {
-      content: none;
-      position: absolute;
-      display: block;
-      border-style: solid;
-      border-color: #664212 transparent transparent transparent;
-      bottom: -14px;
-      border-left-width: 0;
-      border-right-color: transparent;
-      right: -1px;
-      border-width: 13px 13px 0 0;
-
-      @media (min-width: $small-breakpoint) {
-        content: "";
-      }
     }
 
     .total-supports {
@@ -833,7 +796,6 @@
   }
 
   a, .info {
-    color: lighten($text, 15%);
     font-size: $small-font-size;
   }
 
@@ -844,7 +806,9 @@
 }
 
 .featured-proposals {
-  background: $featured;
+  .featured-proposal-inner{
+    position: relative;
+  }
 
   .supports {
     @include supports;
@@ -852,6 +816,7 @@
     border: 0;
     padding-bottom: 0;
     padding-top: 0;
+    position: static;
 
     &:after {
       content: none;
@@ -866,14 +831,12 @@
     }
 
     .not-logged, .organizations-votes {
-      background: $featured;
-      color: $warning-color;
       font-size: $small-font-size;
       line-height: rem-calc(24);
       padding-top: rem-calc(6);
 
       a {
-        color: $warning-color;
+        color: $text-inverse;
         font-weight: bold;
       }
     }

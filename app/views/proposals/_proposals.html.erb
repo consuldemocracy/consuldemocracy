@@ -5,9 +5,11 @@
         <%= t("proposals.index.featured_proposals") %>
       </h2>
     </div>
-    <% @featured_proposals.each do |featured_proposal| %>
-      <%= render "featured_proposal", proposal: featured_proposal %>
-    <% end %>
+    <ul class="small-block-grid-3">
+      <% @featured_proposals.each do |featured_proposal| %>
+        <%= render "featured_proposal", proposal: featured_proposal %>
+      <% end %>
+    </ul>
   </div>
 <% end %>
 

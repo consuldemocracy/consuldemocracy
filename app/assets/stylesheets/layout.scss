@@ -236,36 +236,6 @@ a {
   font-size: $small-font-size;
 }
 
-.submenu {
-  background: white;
-  border-bottom: 1px solid $border;
-  clear: both;
-  margin-top: $line-height !important;
-  margin-bottom: $line-height/2;
-
-  a {
-    color: $text;
-    display: inline-block;
-    font-weight: bold;
-    margin-right: $line-height/2;
-    position: relative;
-    text-align: left;
-
-    @media (min-width: $small-breakpoint) {
-      margin-right: $line-height*1.5;
-    }
-
-    &:hover {
-      color: $link;
-    }
-
-    &.active {
-      border-bottom: 2px solid $brand;
-      color: $brand;
-    }
-  }
-}
-
 // 03. Footer
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 

@@ -1,0 +1,86 @@
+.session-menu{
+  text-align: right;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: transparentize($background, 0.2);
+  z-index: 100;
+
+  ul{
+    margin: 0;
+    padding: 0;
+    font-size: 0;
+
+    li{
+      line-height: 30px;
+
+      font-size: $base-font-size;
+      margin: 0;
+      padding: 0;
+      display: inline-block;
+
+      a{
+        display: inline-block;
+        padding: 0 rem-calc(10);
+      }
+
+      a.signup{
+        background-color: $brand;
+        color: $text-inverse;
+      }
+    }
+  }
+}
+
+.main-menu-wrapper{
+  background-color: $highlight;
+  margin-bottom: rem-calc(20);
+}
+
+.main-menu{
+  @include display(flex);
+
+  a{
+    @include flex(1);
+    display: block;
+    line-height: rem-calc(40);
+    text-align: center;
+    text-transform: uppercase;
+    color: $text;
+    text-decoration: none;
+    margin: 0 rem-calc(1px);
+    border-right: 1px solid #fff;
+
+    &.active, &:hover.active{
+      background-color: $brand;
+      color: $text-inverse;
+    }
+
+    &:hover{
+      background-color: darken($highlight, 5%);
+    }
+
+    &.home{
+      @include flex(0 0 rem-calc(50));
+    }
+  }
+}
+
+.submenu{
+  text-align: center;
+  padding: rem(15);
+  background-color: $highlight;
+  margin-bottom: rem-calc(10);
+
+  a{
+    color: $text;
+    display: inline-block;
+    padding: 0 rem-calc(40);
+    text-transform: uppercase;
+
+    &.active{
+      color: $brand;
+    }
+  }
+}
