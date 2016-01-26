@@ -2,7 +2,7 @@ class MeetingsFilter extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      search: this.props.filter.search_filter,
+      searchText: this.props.filter.search_filter,
       tags: Immutable.Set(this.props.filter.tag_filter || []),
       filters : Immutable.Map(this.props.filter.params || {})
     };
@@ -55,13 +55,19 @@ class MeetingsFilter extends React.Component {
     }
   }
 
-  filterByText(text) {
-    /* let rex = new RegExp(text, "igm");*/
-         //filteredMeetings = this.props.meetings.filter((meeting) => {
-           //return meeting.title.match(rex) || meeting.description.match(rex);
-         //});
+  filterByText(searchText) {
+    if (this.searchTimeoutId) {
+      clearTimeout(this.searchTimeoutId);
+    }
 
-    /*$(document).trigger('meetings:filtered', { meetings: filteredMeetings });*/
+    this.searchTimeoutId = setTimeout(() => {
+      this.applyFilters(
+        this.state.filters.toObject(), 
+        this.state.tags.toArray(),
+        searchText
+      );
+      this.setState({ searchText });
+    }, 300);
   }
 
   changeFilterGroup(filterGroupName, filterGroupValue) {
@@ -72,16 +78,24 @@ class MeetingsFilter extends React.Component {
     if (filterGroupName === 'scope' && filterGroupValue !== 'district') {
       filters = filters.delete('district');
     }
-    this.applyFilters(filters.toObject(), this.state.tags.toArray());
+    this.applyFilters(
+      filters.toObject(), 
+      this.state.tags.toArray(),
+      this.state.searchText
+    );
     this.setState({ filters });
   }
 
   setFilterTags(tags) {
-    this.applyFilters(this.state.filters.toObject(), tags.toArray());
+    this.applyFilters(
+      this.state.filters.toObject(), 
+      tags.toArray(), 
+      this.state.searchText
+    );
     this.setState({ tags });
   }
 
-  applyFilters(filters, tags) {
+  applyFilters(filters, tags, searchText) {
     let filterString = [], 
         data;
 
@@ -94,12 +108,13 @@ class MeetingsFilter extends React.Component {
     filterString = filterString.join(':');
 
     data = {
-      search: this.state.search,
+      search: searchText,
       tag: tags,
       filter: filterString 
     }
 
     this.replaceUrl(data);
+
     $.ajax(this.props.filterUrl, { data, dataType: "json" }).then((result) => {
       this.props.onFilterResult(result);
     });
@@ -110,8 +125,8 @@ class MeetingsFilter extends React.Component {
       let queryParams = [],
           url;
 
-      if (this.state.search) {
-        queryParams.push(`search=${this.state.search}`);
+      if (data.searchText) {
+        queryParams.push(`search=${data.searchText}`);
       }
 
       if (data.tag) {
