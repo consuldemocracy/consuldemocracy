@@ -177,10 +177,6 @@ class User < ActiveRecord::Base
     !email.blank? && ( (email.end_with? "@#{domain}") || (email.end_with? ".#{domain}") )
   end
 
-  def confirmation_required?
-    !registering_with_oauth
-  end
-
   def locale
     self[:locale] ||= I18n.default_locale.to_s
   end
