@@ -68,15 +68,17 @@ var initialize_modules = function() {
   App.RegistrationForm.initialize();
 };
 
+Turbolinks.pagesCached(0);
+
 $(function(){
-  Turbolinks.enableProgressBar()
+  Turbolinks.enableProgressBar();
 
   $(document).ready(initialize_modules);
   $(document).on('page:load page:restore', initialize_modules);
   $(document).on('ajax:complete', initialize_modules);
   $(document).on('page:load page:restore', function(){
     $('[data-parallax="scroll"]').parallax();
-  })
+  });
 });
 
 function gmapsLoaded () {
