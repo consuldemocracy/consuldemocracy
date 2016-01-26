@@ -103,6 +103,7 @@ ActsAsTaggableOn::Tag.create!(name:  "Asociaciones", featured: true, kind: "cate
 ActsAsTaggableOn::Tag.create!(name:  "Cultura", featured: true, kind: "category")
 ActsAsTaggableOn::Tag.create!(name:  "Deportes", featured: true, kind: "category")
 ActsAsTaggableOn::Tag.create!(name:  "Derechos Sociales", featured: true, kind: "category")
+ActsAsTaggableOn::Tag.create!(name:  "Distritos", featured: true, kind: "category")
 ActsAsTaggableOn::Tag.create!(name:  "Economía", featured: true, kind: "category")
 ActsAsTaggableOn::Tag.create!(name:  "Empleo", featured: true, kind: "category")
 ActsAsTaggableOn::Tag.create!(name:  "Equidad", featured: true, kind: "category")
@@ -114,6 +115,7 @@ ActsAsTaggableOn::Tag.create!(name:  "Salud", featured: true , kind: "category")
 ActsAsTaggableOn::Tag.create!(name:  "Transparencia", featured: true, kind: "category")
 ActsAsTaggableOn::Tag.create!(name:  "Seguridad y Emergencias", featured: true, kind: "category")
 ActsAsTaggableOn::Tag.create!(name:  "Medio Ambiente", featured: true, kind: "category")
+ActsAsTaggableOn::Tag.create!(name:  "Urbanismo", featured: true, kind: "category")
 
 puts "Creating Debates"
 
