@@ -1,4 +1,4 @@
-class ProposalFilterTagCloud extends React.Component {
+class TagCloudFilter extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -13,6 +13,10 @@ class ProposalFilterTagCloud extends React.Component {
 
   componentWillUnmount() {
     $(document).off('tags:reload');
+  }
+
+  componentWillReceiveProps(nextProps) {
+    this.setState({ tagCloud: nextProps.tagCloud });
   }
 
   reloadTagCloud(event, tagCloud) {

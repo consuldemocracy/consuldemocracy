@@ -6,6 +6,17 @@ ca:
         label: Eix
       subcategory:
         label: Línia d'acció
+    filter_option:
+      citizenship: Ciutadania
+      city: Tota la ciutat
+      district: Un districte
+      official: Programa (Ajuntament)
+    filter_option_group:
+      category_id: Eix
+      district: Districte
+      scope: "Àmbit"
+      source: Origen
+      subcategory_id: Línia d'acció
     meeting_proposals_autocomplete_input:
       loading: Carregant...
       no_results: No s'han trobat resultats.
@@ -14,14 +25,3 @@ ca:
       actions: Accions
       remove: Eliminar
       title: Títol
-    proposal_filter_option:
-      citizenship: Ciutadania
-      city: Tota la ciutat
-      district: Un districte
-      official: Programa (Ajuntament)
-    proposal_filter_option_group:
-      category_id: Eix
-      district: Districte
-      scope: "Àmbit"
-      source: Origen
-      subcategory_id: Línia d'acció

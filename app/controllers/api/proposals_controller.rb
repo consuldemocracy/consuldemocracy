@@ -2,7 +2,7 @@ class Api::ProposalsController < ApplicationController
   skip_authorization_check
 
   def index
-    filter = ProposalFilter.new(params)
+    filter = ResourceFilter.new(Proposal.all, params)
     @proposals = filter.collection
 
     respond_to do |format|

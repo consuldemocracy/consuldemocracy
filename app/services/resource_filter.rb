@@ -1,9 +1,9 @@
-class ProposalFilter
+class ResourceFilter
   IGNORE_FILTER_PARAMS = ["source"]
   attr_reader :collection, :tag_cloud, :search_filter, :tag_filter, :params
 
-  def initialize(params={})
-    @collection = Proposal.all
+  def initialize(resources, params={})
+    @collection = resources
     @params = params[:filter]
     @exclude_ids = params[:exclude_ids]
     @search_filter = params[:search] if params[:search].present?
@@ -13,7 +13,7 @@ class ProposalFilter
     filter_by_search
     filter_by_tag
     filter
-    @tag_cloud = @collection.tag_counts.order("proposals_count": :desc, name: :asc).limit(20)
+    @tag_cloud = @collection.tag_counts.order("#{resources.table_name}_count": :desc, name: :asc).limit(20)
   end
 
   private

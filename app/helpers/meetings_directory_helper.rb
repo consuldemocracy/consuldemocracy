@@ -1,6 +1,18 @@
 module MeetingsDirectoryHelper
   def meetings_directory(options = {})
-    meetings = options[:meetings].map do |meeting|
+    react_component(
+      'MeetingsDirectory', 
+      filter: options[:filter],
+      filterUrl: meetings_url,
+      meetings: serialized_meetings(options[:meetings]),
+      districts: Proposal::DISTRICTS,
+      categories: serialized_categories,
+      subcategories: serialized_subcategories
+    )
+  end
+
+  def serialized_meetings(meetings)
+    meetings.map do |meeting|
       {
         id: meeting.id,
         title: meeting.title,
@@ -10,10 +22,8 @@ module MeetingsDirectoryHelper
         address_longitude: meeting.address_longitude,
         held_at: l(meeting.held_at),
         start_at: l(meeting.start_at),
-        end_at: l(meeting.end_at),
-        url: meeting_url(meeting)
+        end_at: l(meeting.end_at)
       }
     end
-    react_component 'MeetingsDirectory', meetings: meetings
   end
 end

@@ -1,4 +1,4 @@
-class ProposalFilterOptionGroup extends React.Component {
+class FilterOptionGroup extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -19,10 +19,10 @@ class ProposalFilterOptionGroup extends React.Component {
   render() {
     return (
       <div>
-        <h3>{I18n.t(`components.proposal_filter_option_group.${this.props.filterGroupName}`)}</h3>
+        <h3>{I18n.t(`components.filter_option_group.${this.props.filterGroupName}`)}</h3>
         {this.renderChildren()}
       </div>
-    );
+    )
   }
 
   changeFilter(filterName, isChecked) {
