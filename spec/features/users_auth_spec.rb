@@ -44,7 +44,7 @@ feature 'Users' do
     end
   end
 
-  xcontext 'OAuth authentication' do
+  context 'OAuth authentication' do
     context 'Twitter' do
 
       let(:twitter_hash){ {'provider' => 'twitter', 'uid' => '12345', 'info' => { 'name' => 'manuela' }} }
