@@ -47,12 +47,11 @@ feature 'Users' do
   context 'OAuth authentication' do
     context 'Twitter' do
 
-      let(:twitter_hash){ {'provider' => 'twitter', 'uid' => '12345', 'info' => { 'name' => 'manuela' }} }
-      let(:twitter_hash_with_email){ { 'provider' => 'twitter', 'uid' => '12345', 'info' => {'name' => 'manuela', 'email' => 'manuelacarmena@example.com' } } }
-      let(:twitter_hash_with_verified_email) { { 'provider' => 'twitter',
-                                        'uid' => '12345',
-                                        'info' => { 'name' => 'manuela' , 'email' => 'manuelacarmena@example.com', 'verified' => '1' } }
-      }
+      let(:twitter_hash){ {provider: 'twitter', uid: '12345', info: {name: 'manuela'}} }
+      let(:twitter_hash_with_email){ {provider: 'twitter', uid: '12345', info: {name: 'manuela', email: 'manuelacarmena@example.com'}} }
+      let(:twitter_hash_with_verified_email){ {provider: 'twitter',
+                                               uid: '12345',
+                                               info: {name: 'manuela', email: 'manuelacarmena@example.com', verified: '1'}} }
 
 
       scenario 'Sign up when Oauth provider has a verified email' do
