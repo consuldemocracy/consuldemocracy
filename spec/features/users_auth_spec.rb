@@ -48,13 +48,31 @@ feature 'Users' do
     context 'Twitter' do
 
       let(:twitter_hash){ {'provider' => 'twitter', 'uid' => '12345', 'info' => { 'name' => 'manuela' }} }
-      let(:twitter_hash_with_email) { { 'provider' => 'twitter',
+      let(:twitter_hash_with_email){ { 'provider' => 'twitter', 'uid' => '12345', 'info' => {'name' => 'manuela', 'email' => 'manuelacarmena@example.com' } } }
+      let(:twitter_hash_with_verified_email) { { 'provider' => 'twitter',
                                         'uid' => '12345',
                                         'info' => { 'name' => 'manuela' , 'email' => 'manuelacarmena@example.com', 'verified' => '1' } }
       }
 
 
-      scenario 'Sign up, when email was provided by OAuth provider' do
+      scenario 'Sign up when Oauth provider has a verified email' do
+        OmniAuth.config.add_mock(:twitter, twitter_hash_with_verified_email)
+
+        visit '/'
+        click_link 'Register'
+
+        click_link 'Sign up with Twitter'
+
+        expect_to_be_signed_in
+
+        click_link 'My account'
+        expect(page).to have_field('account_username', with: 'manuela')
+
+        visit edit_user_registration_path
+        expect(page).to have_field('user_email', with: 'manuelacarmena@example.com')
+      end
+
+      scenario 'Sign up when Oauth provider has an unverified email' do
         OmniAuth.config.add_mock(:twitter, twitter_hash_with_email)
 
         visit '/'
@@ -68,7 +86,15 @@ feature 'Users' do
           end.to change { Identity.count }.by(1)
         end.to change { User.count }.by(1)
 
-        expect(current_path).to eq(root_path)
+        expect(current_path).to eq(new_user_session_path)
+        expect(page).to have_content "To continue, please click on the confirmation link that we have sent you via email"
+
+        confirm_email
+        expect(page).to have_content "Your account has been confirmed"
+
+        visit '/'
+        click_link 'Sign in'
+        click_link 'Sign in with Twitter'
         expect_to_be_signed_in
 
         click_link 'My account'
@@ -137,7 +163,7 @@ feature 'Users' do
 
       scenario 'Try to register with the username of an already existing user' do
         create(:user, username: 'manuela', email: 'manuela@madrid.es', password: 'judgementday')
-        OmniAuth.config.add_mock(:twitter, twitter_hash_with_email)
+        OmniAuth.config.add_mock(:twitter, twitter_hash_with_verified_email)
 
         visit '/'
         click_link 'Register'
@@ -157,7 +183,7 @@ feature 'Users' do
         expect(page).to have_field('user_email', with: 'manuelacarmena@example.com')
       end
 
-      scenario 'Try to register with the email of an already existing user' do
+      scenario 'Try to register with the email of an already existing user, when no email was provided by oauth' do
         create(:user, username: 'peter', email: 'manuela@example.com')
         OmniAuth.config.add_mock(:twitter, twitter_hash)
 
@@ -172,6 +198,37 @@ feature 'Users' do
 
         expect(current_path).to eq(do_finish_signup_path)
 
+        fill_in 'user_email', with: 'somethingelse@example.com'
+        click_button 'Register'
+
+        expect(page).to have_content "To continue, please click on the confirmation link that we have sent you via email"
+
+        confirm_email
+        expect(page).to have_content "Your account has been confirmed"
+
+        visit '/'
+        click_link 'Sign in'
+        click_link 'Sign in with Twitter'
+        expect_to_be_signed_in
+
+        click_link 'My account'
+        expect(page).to have_field('account_username', with: 'manuela')
+
+        visit edit_user_registration_path
+        expect(page).to have_field('user_email', with: 'somethingelse@example.com')
+      end
+
+      scenario 'Try to register with the email of an already existing user, when an unconfirmed email was provided by oauth' do
+        create(:user, username: 'peter', email: 'manuelacarmena@example.com')
+        OmniAuth.config.add_mock(:twitter, twitter_hash_with_email)
+
+        visit '/'
+        click_link 'Register'
+        click_link 'Sign up with Twitter'
+
+        expect(current_path).to eq(finish_signup_path)
+
+        expect(page).to have_field('user_email', with: 'manuelacarmena@example.com')
         fill_in 'user_email', with: 'somethingelse@example.com'
         click_button 'Register'
 
