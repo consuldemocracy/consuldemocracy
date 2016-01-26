@@ -626,38 +626,31 @@ footer {
 
 // 04. Tags
 // - - - - - - - - - - - - - - - - - - - - - - - - -
-​
-.tags, .tag-cloud {
-​
-  a {
-    background: #ececec;
-    border-radius: rem-calc(6);
-    color: $text;
-    display: inline-block;
-    font-size: $small-font-size;
-    margin-bottom: $line-height/3;
-    padding: $line-height/4 $line-height/3;
-    text-decoration: none;
-​
-    &:hover {
-      background: #e0e0e0;
-    }
+
+.tags a , .tag-cloud a, .categories a, .geozone {
+  background: #ececec;
+  border-radius: rem-calc(6);
+  color: $text;
+  display: inline-block;
+  font-size: $small-font-size;
+  margin-bottom: $line-height/3;
+  padding: $line-height/4 $line-height/3;
+  text-decoration: none;
+
+  &:hover {
+    background: #e0e0e0;
   }
 }
-​
-.categories {
-​
-  a {
-    background: $highlight;
-    border-radius: rem-calc(6);
-    display: inline-block;
-    font-size: $small-font-size;
-    margin-bottom: $line-height/3;
-    padding: $line-height/4 $line-height/3;
-    text-decoration: none;
+
+.categories a, .geozone {
+  background: $highlight;
+  color: $link;
+
+  &:hover {
+    background: #e0e0e0;
   }
 }
-​
+
 h3.sidebar-title {
   border-top: 2px solid $brand;
   display: inline-block;
