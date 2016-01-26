@@ -605,34 +605,28 @@ footer {
 // 04. Tags
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
-.tags, .tag-cloud {
+.tags a , .tag-cloud a, .categories a, .geozone a {
+  background: #ececec;
+  border-radius: rem-calc(6);
+  color: $text;
+  display: inline-block;
+  font-size: $small-font-size;
+  margin-bottom: $line-height/3;
+  padding: $line-height/4 $line-height/3;
+  text-decoration: none;
 
-  a {
-    background: #ececec;
-    border-radius: rem-calc(6);
-    color: $text;
-    display: inline-block;
-    font-size: $small-font-size;
-    margin-bottom: $line-height/3;
-    padding: $line-height/4 $line-height/3;
-    text-decoration: none;
-
-    &:hover {
-      background: #e0e0e0;
-    }
+  &:hover {
+    background: #e0e0e0;
   }
 }
 
-.categories {
+.categories a, .geozone a {
+  background: $highlight;
+  color: $link;
 
-  a {
+  &:hover {
     background: $highlight;
-    border-radius: rem-calc(6);
-    display: inline-block;
-    font-size: $small-font-size;
-    margin-bottom: $line-height/3;
-    padding: $line-height/4 $line-height/3;
-    text-decoration: none;
+    color: $link-hover;
   }
 }
 

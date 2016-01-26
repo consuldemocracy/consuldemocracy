@@ -889,11 +889,12 @@ feature 'Debates' do
     context "By geozone" do
 
       background do
-        geozone1 = Geozone.create(name: "California")
-        geozone2 = Geozone.create(name: "New York")
+        @california = Geozone.create(name: "California")
+        @new_york   = Geozone.create(name: "New York")
 
-        @debate1 = create(:debate, geozone: geozone1)
-        @debate2 = create(:debate, geozone: geozone2)
+        @debate1 = create(:debate, geozone: @california)
+        @debate2 = create(:debate, geozone: @california)
+        @debate3 = create(:debate, geozone: @new_york)
       end
 
       pending "From map" do
@@ -906,8 +907,10 @@ feature 'Debates' do
         end
 
         within("#debates") do
-          expect(page).to have_css('.debate', count: 1)
+          expect(page).to have_css('.debate', count: 2)
           expect(page).to have_content(@debate1.title)
+          expect(page).to have_content(@debate2.title)
+          expect(page).to_not have_content(@debate3.title)
         end
       end
 
@@ -918,12 +921,29 @@ feature 'Debates' do
         within("#geozones") do
           click_link "California"
         end
-
         within("#debates") do
-          expect(page).to have_css('.debate', count: 1)
+          expect(page).to have_css('.debate', count: 2)
           expect(page).to have_content(@debate1.title)
+          expect(page).to have_content(@debate2.title)
+          expect(page).to_not have_content(@debate3.title)
         end
       end
+
+      pending "From debate" do
+        visit debate_path(@debate1)
+
+        within("#geozone") do
+          click_link "California"
+        end
+
+        within("#debates") do
+          expect(page).to have_css('.debate', count: 2)
+          expect(page).to have_content(@debate1.title)
+          expect(page).to have_content(@debate2.title)
+          expect(page).to_not have_content(@debate3.title)
+        end
+      end
+
     end
   end
 
