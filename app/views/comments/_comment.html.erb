@@ -64,7 +64,7 @@
           <div class="comment-user
                     <%= user_level_class comment %>
                     <%= comment_author_class comment, comment.commentable.author_id %>">
-            <%= simple_format text_with_links comment.body %>
+            <%= simple_format text_with_links(comment.body), {}, sanitize: false %>
           </div>
 
           <div id="<%= dom_id(comment) %>_reply" class="reply">

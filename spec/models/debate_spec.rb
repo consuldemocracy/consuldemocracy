@@ -455,6 +455,13 @@ describe Debate do
         expect(results).to eq([debate])
       end
 
+      xit "searches by geozone" do
+        geozone = create(:geozone, name: 'California')
+        debate = create(:debate, geozone: geozone)
+        results = Debate.search('California')
+        expect(results).to eq([debate])
+      end
+
     end
 
     context "stemming" do

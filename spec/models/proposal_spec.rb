@@ -402,6 +402,13 @@ describe Proposal do
         expect(results).to eq([proposal])
       end
 
+      it "searches by geozone" do
+        geozone = create(:geozone, name: 'California')
+        proposal = create(:proposal, geozone: geozone)
+        results = Proposal.search('California')
+        expect(results).to eq([proposal])
+      end
+
     end
 
     context "stemming" do

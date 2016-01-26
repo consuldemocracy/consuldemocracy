@@ -67,6 +67,8 @@
 
         <%= render 'shared/tags', taggable: @proposal %>
 
+        <%= render 'shared/geozone', geozonable: @proposal %>
+
         <div class="js-moderator-proposal-actions margin">
           <%= render 'proposals/actions', proposal: @proposal %>
         </div>

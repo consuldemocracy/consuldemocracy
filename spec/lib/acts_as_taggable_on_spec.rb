@@ -66,7 +66,4 @@ describe 'ActsAsTaggableOn' do
     end
   end
 
-
-
-
 end
