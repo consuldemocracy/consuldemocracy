@@ -77,13 +77,7 @@ feature 'Users' do
         visit '/'
         click_link 'Register'
 
-        expect do
-          expect do
-            expect do
-              click_link 'Sign up with Twitter'
-            end.not_to change { ActionMailer::Base.deliveries.size }
-          end.to change { Identity.count }.by(1)
-        end.to change { User.count }.by(1)
+        click_link 'Sign up with Twitter'
 
         expect(current_path).to eq(new_user_session_path)
         expect(page).to have_content "To continue, please click on the confirmation link that we have sent you via email"
@@ -108,29 +102,16 @@ feature 'Users' do
 
         visit '/'
         click_link 'Register'
-
-        expect do
-          expect do
-            expect do
-              click_link 'Sign up with Twitter'
-            end.not_to change { ActionMailer::Base.deliveries.size }
-          end.to change { Identity.count }.by(1)
-        end.to change { User.count }.by(1)
+        click_link 'Sign up with Twitter'
 
         expect(current_path).to eq(finish_signup_path)
-
-        user = User.last
-        expect(user.username).to eq('manuela-de-las-carmenas')
-        expect(user.email).to eq("omniauth@participacion-12345-twitter.com")
-
         fill_in 'user_email', with: 'manueladelascarmenas@example.com'
         click_button 'Register'
 
         expect(page).to have_content "To continue, please click on the confirmation link that we have sent you via email"
 
         confirm_email
-
-        expect(page).to have_content "Your email address has been successfully confirmed"
+        expect(page).to have_content "Your account has been confirmed"
 
         visit '/'
         click_link 'Sign in'
@@ -140,7 +121,8 @@ feature 'Users' do
         click_link 'My account'
         expect(page).to have_field('account_username', with: 'manuela')
 
-        expect(user.reload.email).to eq('manueladelascarmenas@example.com')
+        visit edit_user_registration_path
+        expect(page).to have_field('user_email', with: 'manueladelascarmenas@example.com')
       end
 
       scenario 'Sign in, user was already signed up with OAuth' do
@@ -150,14 +132,16 @@ feature 'Users' do
 
         visit '/'
         click_link 'Sign in'
-
-        expect do
-          expect do
-            click_link 'Sign in with Twitter'
-          end.not_to change { Identity.count }
-        end.not_to change { User.count }
+        click_link 'Sign in with Twitter'
 
         expect_to_be_signed_in
+
+        click_link 'My account'
+        expect(page).to have_field('account_username', with: user.username)
+
+        visit edit_user_registration_path
+        expect(page).to have_field('user_email', with: user.email)
+
       end
 
       scenario 'Try to register with the username of an already existing user' do
