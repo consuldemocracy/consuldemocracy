@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160127200811) do
+ActiveRecord::Schema.define(version: 20160127205714) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -233,6 +233,7 @@ ActiveRecord::Schema.define(version: 20160127200811) do
     t.integer  "cached_votes_total", default: 0
     t.integer  "cached_votes_up",    default: 0
     t.integer  "cached_votes_down",  default: 0
+    t.integer  "confidence_score",   default: 0
   end
 
   add_index "open_answers", ["user_id"], name: "index_open_answers_on_user_id", using: :btree
