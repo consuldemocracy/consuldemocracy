@@ -8,12 +8,7 @@
 
       <h1><%= t("pages.processes.process_2.title") %></h1>
       <%= markdown t("pages.processes.process_2.text") %>
-
-      <% if can? :create, SurveyAnswer %>
-        <%= link_to t("pages.processes.process_2.button"), encuesta_plaza_espana_path, class: "button radius" %>
-      <% else %>
-        <p>Sólo los usuarios verificados pueden responder a la encuesta, <%= link_to "verifica tu cuenta", verification_path %>.</p>
-      <% end %>
+      <%= link_to t("pages.processes.process_2.button"), encuesta_plaza_espana_path, class: "button radius" %>
     </div>
     <div class="show-for-medium-up medium-5 column">
       <%= image_tag "processes_plaza_espana.png" %>
