@@ -1023,6 +1023,7 @@ feature 'Proposals' do
     expect(page).to have_content('User deleted')
   end
 
+<<<<<<< HEAD
   context "Filter" do
 
     scenario "By category" do
@@ -1105,4 +1106,42 @@ feature 'Proposals' do
     end
   end
 
+  context 'Suggesting proposals' do
+
+    scenario 'Shows up to 5 suggestions per proposal', :js do
+      author = create(:user)
+      login_as(author)
+
+      create(:proposal, title: 'First proposal').update_column(:confidence_score, 10)
+      create(:proposal, title: 'Second proposal').update_column(:confidence_score, 8)
+      create(:proposal, title: 'Third proposal').update_column(:confidence_score, 6)
+      create(:proposal, title: 'Fourth proposal').update_column(:confidence_score, 4)
+      create(:proposal, title: 'Fifth proposal').update_column(:confidence_score, 3)
+      create(:proposal, title: 'Sixth proposal').update_column(:confidence_score, 1)
+
+      visit new_proposal_path
+      fill_in 'proposal_title', with: 'proposal' 
+      page.find("body").click
+    
+      within('div#ajax_suggest_show') do 
+        expect(page.html).to have_content ("You are seeing 5 of 6 proposals containing the term proposal")
+      end
+    end
+
+    scenario 'No found suggestions for debate', :js do
+      author = create(:user)
+      login_as(author)
+
+      create(:proposal, title: 'First proposal').update_column(:confidence_score, 10)
+      create(:proposal, title: 'Second proposal').update_column(:confidence_score, 8)
+      
+      visit new_proposal_path
+      fill_in 'proposal_title', with: 'debate'
+      page.find("body").click
+
+      within('div#ajax_suggest_show') do
+        expect(page.html).to_not have_content ('You are seeing')
+      end
+    end 
+  end
 end

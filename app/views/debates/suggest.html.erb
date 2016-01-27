@@ -1,0 +1,25 @@
+<div class="small-12 column" >
+  <% if @search_terms && @debates.count >0 %> 
+    <% debates_count =  @debates.count %>
+    <% query = @search_terms %>
+    <% limit = 5 %>
+    <div class="alert-box radius warning">
+      <p class="note-marked">
+        <%= t("debates.new.suggestions.found", count: debates_count, query: query)%> 
+      </p>
+      <ul>
+        <% @debates.take(limit).each do |debate| %>
+          <li> <%= link_to debate.title, debate %> </li>
+        <% end %>   
+      </ul>
+      <% if debates_count > limit %>   
+      <p class="note-marked">
+        <%= t("debates.new.suggestions.message", count: debates_count, 
+                                      query: query,
+                                      limit: limit)%>
+        <%= link_to t("debates.new.suggestions.see_all"), debates_path(:search => query)%>
+      </p>
+      <% end %>
+    </div>
+  <% end %>
+</div>
