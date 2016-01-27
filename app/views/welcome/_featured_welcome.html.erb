@@ -1,17 +1,19 @@
 <div class="row home-page-featured margin-top">
-  <div class="small-12 medium-6 column">
+<!--   <div class="small-12 medium-6 column">
     <div class="panel featured-one">
-      <h2><%= t('welcome.featured.proposals.title') %></h2>
-      <p><%= t('welcome.featured.proposals.text') %></p>
-      <%= link_to t('welcome.featured.proposals.link'), proposals_path, class: "button radius" %>
+      <h2><%#= t('welcome.featured.proposals.title') %></h2>
+      <p><%#= t('welcome.featured.proposals.text') %></p>
+      <%#= link_to t('welcome.featured.proposals.link'), proposals_path, class: "button radius" %>
     </div>
-  </div>
+  </div> -->
 
-  <div class="small-12 medium-6 column">
-    <div class="panel featured-two">
-      <h2><%= t('welcome.featured.process.title') %></h2>
-      <p><%= t('welcome.featured.process.text') %></p>
-      <%= link_to t('welcome.featured.process.link'), "/processes_plaza_espana" ,class: "button radius" %>
+  <%= link_to "/processes_plaza_espana" do %>
+    <div class="small-12 meidum-6 column">
+      <div class="panel featured-two">
+        <h2><%= t('welcome.featured.process.title') %></h2>
+        <p><%= t('welcome.featured.process.text') %></p>
+        <span class="button radius"><%= t('welcome.featured.process.link') %></span>
+      </div>
     </div>
-  </div>
+  <% end %>
 </div>

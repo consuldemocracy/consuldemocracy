@@ -8,9 +8,14 @@
 
       <h1><%= t("pages.processes.process_2.title") %></h1>
       <%= markdown t("pages.processes.process_2.text") %>
+
+      <p><strong>Lo que se decida mayoritariamente a continuación será asumido como vinculante para construir una nueva plaza, en caso de que así se decida.</strong></p>
+
       <%= link_to t("pages.processes.process_2.button"), encuesta_plaza_espana_path, class: "button radius" %>
+
     </div>
     <div class="show-for-medium-up medium-5 column">
+      <br>
       <%= image_tag "processes_plaza_espana.png" %>
     </div>
   </div>
@@ -18,14 +23,15 @@
 
 <div class="process row margin">
   <div class="small-12 column">
-    <h3>Preguntas frecuentes</h3>
+    <h3>A continuación tienes información detallada para tomar la mejor decisión<h3>
+    <h4>Preguntas frecuentes</h4>
     <ul>
       <li>
         <%= link_to "Dudas en el proceso participativo sobre la posible intervención en Plaza de España", "/processes_plaza_espana_faq" %>
       </li>
     </ul>
 
-    <h3>Estudios</h3>
+    <h4>Estudios</h4>
     <ul>
       <li>
         <%= link_to "Memoria síntesis <small>(PDF | 3,6Mb)</small>".html_safe,

@@ -927,8 +927,12 @@
     }
 
     &.featured-two {
-      background: #5fbc8c image-url('welcome_featured_2.jpg') no-repeat;
+      background: #33DADF image-url('processes_plaza_espana.png') no-repeat;
+      background-position: top right;
 
+      a:hover {
+        text-decoration: none;
+      }
 
       h2, p {
         color: white;
@@ -938,9 +942,8 @@
 }
 
 .featured-process {
-  background: #5fbc8c image-url('featured_process.jpg') no-repeat;
-  background-size: cover;
-  background-position: 50% 50%;
+  background: #33DADF image-url('processes_plaza_espana_small.png') no-repeat;
+  background-position: right;
   padding: $line-height/2;
 
   @media (min-width: $small-breakpoint) {
