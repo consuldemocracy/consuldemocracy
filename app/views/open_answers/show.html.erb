@@ -1,0 +1,33 @@
+<div class="row margin">
+  <div class="survey-comments small-12 medium-9 column">
+    <h3><%= @question %></h3>
+
+    <section class="comments">
+      <div class="row">
+        <div id="comments" class="small-12 column">
+
+          <% @open_answers.each do |open_answer| %>
+            <div class="row">
+              <div id="comment_23578" class="comment small-12 column">
+                <div class="comment-body">
+                  <div class="comment-user">
+                    <p><%= open_answer.text %></p>
+                  </div>
+
+                  <div id="<%= dom_id(open_answer) %>_reply" class="reply">
+                    <span id="<%= dom_id(open_answer) %>_votes" class="comment-votes right">
+                      <%= render 'votes', open_answer: open_answer %>
+                    </span>
+                    <p>&nbsp;</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          <% end %>
+
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+

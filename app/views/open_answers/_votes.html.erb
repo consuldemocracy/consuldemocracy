@@ -1,0 +1,27 @@
+<span>
+  <%= t('comments.comment.votes', count: open_answer.total_votes) %>
+</span>
+&nbsp;|&nbsp;
+<span class="in_favor">
+  <% if can?(:vote, open_answer) %>
+    <%= link_to vote_open_answer_path(open_answer, value: 'yes'),
+        method: "post", remote: true do %>
+        <i class="icon-angle-up"></i>
+    <% end %>
+  <% else %>
+    <i class="icon-angle-up"></i>
+  <% end %>
+  <%= open_answer.total_likes %>
+</span>
+
+<span class="against">
+  <% if can?(:vote, open_answer) %>
+    <%= link_to vote_open_answer_path(open_answer, value: 'no'),
+        method: "post", remote: true do %>
+        <i class="icon-angle-down"></i>
+    <% end %>
+  <% else %>
+    <i class="icon-angle-down"></i>
+  <% end %>
+  <%= open_answer.total_dislikes %>
+</span>
