@@ -976,7 +976,7 @@
 
 .survey {
 
-  form input[type]:not([type=submit]):not([type=file]):not([type=checkbox]) {
+  form input[type]:not([type=submit]):not([type=file]):not([type=checkbox]):not([type=text]) {
     height: $line-height;
     vertical-align: top;
   }
