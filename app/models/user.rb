@@ -51,15 +51,17 @@ class User < ActiveRecord::Base
 
   # Get the existing user by email if the provider gives us a verified email.
   def self.first_or_initialize_for_oauth(auth)
-    auth_email      = auth.info.email if auth.info.verified || auth.info.verified_email
-    auth_email_user = User.find_by(email: auth_email) if auth_email.present?
+    oauth_email           = auth.info.email
+    oauth_email_confirmed = oauth_email.present? && (auth.info.verified || auth.info.verified_email)
+    oauth_user            = User.find_by(email: oauth_email) if oauth_email_confirmed
 
-    auth_email_user || User.new(
+    oauth_user || User.new(
       username:  auth.info.name || auth.uid,
-      email: auth_email,
+      email: oauth_email,
+      oauth_email: oauth_email,
       password: Devise.friendly_token[0,20],
       terms_of_service: '1',
-      confirmed_at: auth_email.present? ? DateTime.now : nil
+      confirmed_at: oauth_email_confirmed ? DateTime.now : nil
     )
   end
 
@@ -179,6 +181,26 @@ class User < ActiveRecord::Base
 
   def locale
     self[:locale] ||= I18n.default_locale.to_s
+  end
+
+  def confirmation_required?
+    super && !registering_with_oauth
+  end
+
+  def send_oauth_confirmation_instructions
+    if oauth_email != email
+      self.update(confirmed_at: nil)
+      self.send_confirmation_instructions
+    end
+    self.update(oauth_email: nil) if oauth_email.present?
+  end
+
+  def save_requiring_finish_signup
+    self.update(registering_with_oauth: true)
+  end
+
+  def save_requiring_finish_signup_without_email
+    self.update(registering_with_oauth: true, email: nil)
   end
 
   private
