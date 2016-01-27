@@ -12,7 +12,7 @@ class TagCloud
     last_week.tag_counts.
     where("lower(name) NOT IN (?)", category_names + geozone_names + default_blacklist).
     order("#{table_name}_count": :desc, name: :asc).
-    limit(5)
+    limit(10)
   end
 
   def category_names

@@ -100,6 +100,14 @@ describe TagCloud do
       expect(tag_names(tag_cloud).second).to eq 'participation'
       expect(tag_names(tag_cloud).third).to  eq 'corruption'
     end
+
+    it "returns a maximum of 10 tags" do
+      12.times { |i| create(:proposal, tag_list: "Tag #{i}") }
+
+      tag_cloud = TagCloud.new(Proposal)
+
+      expect(tag_names(tag_cloud).count).to eq(10)
+    end
   end
 
 end
