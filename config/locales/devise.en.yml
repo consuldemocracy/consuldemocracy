@@ -15,7 +15,7 @@ en:
       not_found_in_database: "Invalid %{authentication_keys} or password."
       timeout: "Your session has expired. Please sign in again to continue."
       unauthenticated: "You must sign in or register to continue."
-      unconfirmed: "You must confirm your account to continue."
+      unconfirmed: "To continue, please click on the confirmation link that we have sent you via email"
     mailer:
       confirmation_instructions:
         subject: "Confirmation instructions"
