@@ -238,12 +238,9 @@ Rails.application.routes.draw do
     member do
       post :vote
     end
-
-    collection do
-      get :answers
-    end
   end
   get "encuesta-plaza-espana", to: "survey_answers#new", as: :encuesta_plaza_espana
+  post "encuesta-plaza-espana/gracias", to: "survey_answers#create", as: :encuesta_plaza_espana_gracias
 
   if Rails.env.development?
     mount LetterOpenerWeb::Engine, at: "/letter_opener"

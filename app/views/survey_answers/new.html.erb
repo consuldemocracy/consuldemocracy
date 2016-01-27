@@ -14,7 +14,7 @@
 
 <div class="survey row margin">
   <div class="survey-questions small-12 medium-9 column">
-    <form>
+    <%= form_tag encuesta_plaza_espana_gracias_path %>
       <article>
         <h3>1. ¿Crees necesario reformar la Plaza de España?</h3>
         <label>
@@ -522,6 +522,7 @@
           <%= check_box_tag "questions[13]", "j" %>
           <span class="checkbox">j) Otros, especificar</span>
         </label>
+        <%= text_field_tag "questions[13j]" %>
       </article>
 
       <article>
