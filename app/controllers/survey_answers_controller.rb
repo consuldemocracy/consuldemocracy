@@ -8,7 +8,9 @@ class SurveyAnswersController < ApplicationController
   end
 
   def create
-    SurveyAnswer.create(user: current_user, answers: questions_params)
+    SurveyAnswer.user_input(current_user, survey_code, questions_params)
+    @answers_16_sample = OpenAnswer.where(question_code: 16).where(survey_code: survey_code).order("RANDOM()").limit(5)
+    @answers_17_sample = OpenAnswer.where(question_code: 17).where(survey_code: survey_code).order("RANDOM()").limit(5)
   end
 
   private
@@ -19,6 +21,10 @@ class SurveyAnswersController < ApplicationController
 
     def question_numbers
       %W(1a 1b 2 2g 3 3g 4 4l 5a 5b 5c 5d 5e 6 7 7d 8a 8b 9 9e 10 10h 11 11e 12a 12b 12c 13 14 14j 15a 15bCaminando 15bEnBicicleta 15bEnCoche 15bEnTransportePublico 15bOtros 15bOtrosEspecificar 16 17 18)
+    end
+
+    def survey_code
+      1
     end
 
 end

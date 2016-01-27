@@ -226,12 +226,13 @@ ActiveRecord::Schema.define(version: 20160127092230) do
   create_table "open_answers", force: :cascade do |t|
     t.text     "text"
     t.integer  "question_code"
-    t.integer  "survey_answer_id"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.integer  "user_id"
+    t.integer  "survey_code"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
 
-  add_index "open_answers", ["survey_answer_id"], name: "index_open_answers_on_survey_answer_id", using: :btree
+  add_index "open_answers", ["user_id"], name: "index_open_answers_on_user_id", using: :btree
 
   create_table "organizations", force: :cascade do |t|
     t.integer  "user_id"
@@ -493,7 +494,6 @@ ActiveRecord::Schema.define(version: 20160127092230) do
   add_foreign_key "locks", "users"
   add_foreign_key "moderators", "users"
   add_foreign_key "notifications", "users"
-  add_foreign_key "open_answers", "survey_answers"
   add_foreign_key "organizations", "users"
   add_foreign_key "survey_answers", "users"
 end
