@@ -7,7 +7,7 @@
       <% end %>
 
       <h1><%= t("pages.processes.process_2.title") %></h1>
-      <h2>Contesta todas las preguntas que desees y pulsa en "Enviar encuesta"</h2>
+      <h2>Contesta todas las preguntas que desees y pulsa en "Enviar respuesta"</h2>
     </div>
   </div>
 </div>
@@ -32,24 +32,25 @@
 
         <div>
           <h3>1b. ¿Crees necesario que la intervención en la Plaza de España afecte también a otras zonas colindantes y las calles a través de las cuales se conecta?</h3>
+          <p><em>Puedes marcar más de una opción</em></p>
           <label>
-            <%= radio_button_tag "questions[1b]", "a" %>
+            <%= check_box_tag "questions[1b]", "a" %>
             a) Plaza de los Cubos
           </label>
           <label>
-            <%= radio_button_tag "questions[1b]", "b" %>
+            <%= check_box_tag "questions[1b]", "b" %>
             b) Enlace de las calles Reyes y Maestro Guerrero, con la Plaza de Conde de Toreno
           </label>
           <label>
-            <%= radio_button_tag "questions[1b]", "c" %>
+            <%= check_box_tag "questions[1b]", "c" %>
             c) Plaza de Emilio Jimenez Millás
           </label>
           <label>
-            <%= radio_button_tag "questions[1b]", "d" %>
+            <%= check_box_tag "questions[1b]", "d" %>
             d) Acceso a Conde Duque a través de la Plaza de Cristino Marcos
           </label>
           <label>
-            <%= radio_button_tag "questions[1b]", "e" %>
+            <%= check_box_tag "questions[1b]", "e" %>
             e) Ninguna
           </label>
         </div>
@@ -185,7 +186,7 @@
       </article>
 
       <article>
-        <h3>5. En términos generales, cómo le gustaría que fuese la Plaza de España</h3>
+        <h3>5. En términos generales, ¿cómo te gustaría que fuese la Plaza de España?</h3>
         <p><em>Elige una opción para cada bloque</em></p>
 
         <h4>a)</h4>
@@ -301,7 +302,7 @@
         <%= text_field_tag "questions[7d]" %>
         <label>
           <%= check_box_tag "questions[7]", "e" %>
-          <span class="checkbox">e) No sabe/No contesta</span>
+          <span class="checkbox">e) No sabe</span>
         </label>
       </article>
 
@@ -563,31 +564,31 @@
       <article>
         <h3>15a. ¿Qué usos haces de la zona?</h3>
         <label>
-          <%= check_box_tag "questions[15a]", "a" %>
+          <%= radio_button_tag "questions[15a]", "a" %>
           a) Soy vecino de la Plaza
         </label>
         <label>
-          <%= check_box_tag "questions[15a]", "b" %>
+          <%= radio_button_tag "questions[15a]", "b" %>
           b) Visito la Plaza a menudo (3 o más veces por semana)
         </label>
         <label>
-          <%= check_box_tag "questions[15a]", "c" %>
+          <%= radio_button_tag "questions[15a]", "c" %>
           c) Visito la Plaza 1-2 veces por semana
         </label>
         <label>
-          <%= check_box_tag "questions[15a]", "d" %>
+          <%= radio_button_tag "questions[15a]", "d" %>
           d) Visito la Plaza 1-2 veces por mes
         </label>
         <label>
-          <%= check_box_tag "questions[15a]", "e" %>
+          <%= radio_button_tag "questions[15a]", "e" %>
           e) En ocasiones (más de 3 veces por año)
         </label>
         <label>
-          <%= check_box_tag "questions[15a]", "f" %>
+          <%= radio_button_tag "questions[15a]", "f" %>
           f) Rara vez (1 o 2 veces por año o menos)
         </label>
         <label>
-          <%= check_box_tag "questions[15a]", "g" %>
+          <%= radio_button_tag "questions[15a]", "g" %>
           g) Otros
         </label>
 
@@ -699,7 +700,7 @@
           d) No sabe
         </label>
       </article>
-      <input type="submit" value="Enviar encuesta" class="button radius margin-top">
+      <input type="submit" value="Enviar respuesta" class="button radius margin-top">
     </form>
   </div>
 
