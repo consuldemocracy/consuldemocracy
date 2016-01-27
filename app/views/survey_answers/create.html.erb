@@ -21,22 +21,21 @@
       <div class="row">
         <div id="comments" class="small-12 column">
 
-          <% @answers_16_sample.each do |answer| %>
+          <% @answers_16_sample.each do |open_answer| %>
             <div class="row">
               <div id="comment_23578" class="comment small-12 column">
                 <div class="comment-body">
                   <div class="comment-user">
-                    <p><%= answer.text %></p>
+                    <p><%= open_answer.text %></p>
                   </div>
 
-                  <div id="comment_23578_reply" class="reply">
-                    <span id="comment_23578_votes" class="comment-votes right">
-                      <span>48 votos</span>&nbsp;|&nbsp;
-                      <span class="in_favor"><i class="icon-angle-up"></i>37</span>
-                      <span class="against"><i class="icon-angle-down"></i>11</span>
+                  <div id="<%= dom_id(open_answer) %>_reply" class="reply">
+                    <span id="<%= dom_id(open_answer) %>_votes" class="comment-votes right">
+                      <%= render 'open_answers/votes', open_answer: open_answer %>
                     </span>
                     <p>&nbsp;</p>
                   </div>
+
                 </div>
               </div>
             </div>
@@ -53,22 +52,21 @@
     <section class="comments">
       <div class="row">
         <div id="comments" class="small-12 column">
-        <% @answers_17_sample.each do |answer| %>
+        <% @answers_17_sample.each do |open_answer| %>
             <div class="row">
               <div id="comment_23578" class="comment small-12 column">
                 <div class="comment-body">
                   <div class="comment-user">
-                    <p><%= answer.text %></p>
+                    <p><%= open_answer.text %></p>
                   </div>
 
-                  <div id="comment_23578_reply" class="reply">
-                    <span id="comment_23578_votes" class="comment-votes right">
-                      <span>48 votos</span>&nbsp;|&nbsp;
-                      <span class="in_favor"><i class="icon-angle-up"></i>37</span>
-                      <span class="against"><i class="icon-angle-down"></i>11</span>
+                  <div id="<%= dom_id(open_answer) %>_reply" class="reply">
+                    <span id="<%= dom_id(open_answer) %>_votes" class="comment-votes right">
+                      <%= render 'open_answers/votes', open_answer: open_answer %>
                     </span>
                     <p>&nbsp;</p>
                   </div>
+
                 </div>
               </div>
             </div>
