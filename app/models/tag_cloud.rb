@@ -1,14 +1,16 @@
 class TagCloud
 
-  attr_accessor :resource_model
+  attr_accessor :resource_model, :scope
 
-  def initialize(resource_model)
+  def initialize(resource_model, scope=nil)
     @resource_model = resource_model
+    @scope = scope
   end
 
   def tags
-    resource_model.last_week.tag_counts.
-    where("lower(name) NOT IN (?)", category_names + geozone_names + default_blacklist)
+    resource_model_scoped.
+    last_week.tag_counts.
+    where("lower(name) NOT IN (?)", category_names + geozone_names + default_blacklist).
     order("#{table_name}_count": :desc, name: :asc).
     limit(5)
   end
@@ -19,6 +21,10 @@ class TagCloud
 
   def geozone_names
     Geozone.all.map {|geozone| geozone.name.downcase }
+  end
+
+  def resource_model_scoped
+    scope ? resource_model.search(scope) : resource_model
   end
 
   def default_blacklist

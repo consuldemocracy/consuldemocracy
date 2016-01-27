@@ -5,7 +5,7 @@
 
   <% tag_cloud @tag_cloud, %w[s m l] do |tag, css_class| %>
     <%= link_to taggable_path(taggable, tag.name), class: css_class do %>
-      <%= tag.name %>
+      <span class="tag"><%= tag.name %></span>
       (<%= tag.send(taggable_counter_field(taggable)) %>)
     <% end %>
   <% end %>

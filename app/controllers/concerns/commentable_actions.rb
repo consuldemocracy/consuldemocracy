@@ -73,7 +73,7 @@ module CommentableActions
     end
 
     def tag_cloud
-      TagCloud.new(resource_model).tags
+      TagCloud.new(resource_model, params[:search]).tags
     end
 
     def load_geozones
