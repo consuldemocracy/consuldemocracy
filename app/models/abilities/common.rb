@@ -41,6 +41,10 @@ module Abilities
         can :vote, Proposal
         can :vote_featured, Proposal
         can :create, SpendingProposal
+
+        can :read, SurveyAnswer
+        can :create, SurveyAnswer
+        can :vote, SurveyAnswer
       end
 
       can :create, Annotation
