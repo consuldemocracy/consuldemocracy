@@ -13,11 +13,13 @@
   </div>
 </div>
 
-<div id="login_required" style="display:none">
-  Sólo los usuarios verificados pueden responder a la encuesta, <%= link_to "verifica tu cuenta", verification_path %>
-</div>
-
 <div class="survey row margin">
+
+  <div id="login_required" class="alert-box radius info" style="display:none">
+    Sólo los usuarios verificados pueden responder a la encuesta,
+    <%= link_to "verifica tu cuenta", verification_path %>.
+  </div>
+
   <div class="survey-questions small-12 medium-9 column">
     <%= form_tag encuesta_plaza_espana_gracias_path %>
       <article>
