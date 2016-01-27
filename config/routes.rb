@@ -234,6 +234,17 @@ Rails.application.routes.draw do
     resources :spending_proposals, only: [:new, :create, :show]
   end
 
+  resources :survey_answers, only: [:new, :create] do
+    member do
+      post :vote
+    end
+
+    collection do
+      get :answers
+    end
+  end
+  get "encuesta-plaza-espana", to: "survey_answers#new", as: :encuesta_plaza_espana
+
   if Rails.env.development?
     mount LetterOpenerWeb::Engine, at: "/letter_opener"
   end
