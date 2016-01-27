@@ -16,7 +16,7 @@
   <div class="survey-questions small-12 medium-9 column">
     <%= form_tag encuesta_plaza_espana_gracias_path %>
       <article>
-        <h3>1. ¿Crees necesario reformar la Plaza de España?</h3>
+        <h3>1a. ¿Crees necesario reformar la Plaza de España?</h3>
         <label>
           <%= radio_button_tag "questions[1a]", "a" %>
           a) Sí
@@ -31,7 +31,7 @@
         </label>
 
         <div>
-          <h3>En caso afirmativo, ¿crees necesario que la intervención en la Plaza de España afecte también a otras zonas colindantes y las calles a través de las cuales se conecta?</h3>
+          <h3>1b. ¿Crees necesario que la intervención en la Plaza de España afecte también a otras zonas colindantes y las calles a través de las cuales se conecta?</h3>
           <label>
             <%= radio_button_tag "questions[1b]", "a" %>
             a) Plaza de los Cubos
@@ -48,61 +48,72 @@
             <%= radio_button_tag "questions[1b]", "d" %>
             d) Acceso a Conde Duque a través de la Plaza de Cristino Marcos
           </label>
+          <label>
+            <%= radio_button_tag "questions[1b]", "e" %>
+            e) Ninguna
+          </label>
         </div>
       </article>
 
       <article>
-        <h3>2. ¿Crees que es necesario limitar alguno de los siguientes usos?</h3>
+        <h3>2. ¿Crees que se deberían mejorar las conexiones peatonales de la Plaza de España con alguno de los siguientes espacios?</h3>
         <p><em>Puedes marcar más de una opción</em></p>
         <label>
           <%= check_box_tag "questions[2]", "a" %>
-          <span class="checkbox">a) Comercial</span>
+          <span class="checkbox">a) Plaza de Oriente</span>
         </label>
         <label>
           <%= check_box_tag "questions[2]", "b" %>
-          <span class="checkbox">b) Hoteles</span>
+          <span class="checkbox">b) Barrio de Conde Duque</span>
         </label>
         <label>
           <%= check_box_tag "questions[2]", "c" %>
-          <span class="checkbox">c) Restaurantes</span>
+          <span class="checkbox">c) Templo de Debod</span>
         </label>
         <label>
           <%= check_box_tag "questions[2]", "d" %>
-          <span class="checkbox">d) Terrazas</span>
+          <span class="checkbox">d) Parque del Oeste</span>
         </label>
         <label>
           <%= check_box_tag "questions[2]", "e" %>
-          <span class="checkbox">e) Mercadillos</span>
+          <span class="checkbox">e) Cuesta de San Vicente</span>
         </label>
         <label>
           <%= check_box_tag "questions[2]", "f" %>
-          <span class="checkbox">f) Todos los anteriores</span>
+          <span class="checkbox">f) Madrid Río</span>
         </label>
         <label>
           <%= check_box_tag "questions[2]", "g" %>
-          <span class="checkbox">g) Otros: especificar</span>
+          <span class="checkbox">g) Casa de Campo</span>
         </label>
-        <%= text_field_tag "questions[2g]" %>
+        <label>
+          <%= check_box_tag "questions[2]", "h" %>
+          <span class="checkbox">h) Gran Vía</span>
+        </label>
+        <label>
+          <%= check_box_tag "questions[2]", "i" %>
+          <span class="checkbox">i) Ninguna</span>
+        </label>
       </article>
 
       <article>
-        <h3>3. ¿Qué usos o funciones te gustaría que se realizaran en la Plaza de España?</h3>
+        <h3>3. ¿Crees que es necesario limitar alguno de los siguientes usos?</h3>
         <p><em>Puedes marcar más de una opción</em></p>
         <label>
           <%= check_box_tag "questions[3]", "a" %>
-          <span class="checkbox">a) Transporte Público</span>
+          <span class="checkbox">a) Comercial</span>
         </label>
         <label>
           <%= check_box_tag "questions[3]", "b" %>
-          <span class="checkbox">b) Autobuses turísticos</span>
+          <span class="checkbox">b) Hoteles</span>
         </label>
         <label>
           <%= check_box_tag "questions[3]", "c" %>
-          <span class="checkbox">c) Aparcamientos</span>
+          <span class="checkbox">c) Restaurantes</span>
         </label>
         <label>
           <%= check_box_tag "questions[3]", "d" %>
-          <span class="checkbox">d) Comercial</span>
+          <span class="checkbox">d) Terrazas</span>
         </label>
         <label>
           <%= check_box_tag "questions[3]", "e" %>
@@ -110,194 +121,194 @@
         </label>
         <label>
           <%= check_box_tag "questions[3]", "f" %>
-          <span class="checkbox">f) Verde</span>
+          <span class="checkbox">f) Todos los anteriores</span>
         </label>
         <label>
           <%= check_box_tag "questions[3]", "g" %>
-          <span class="checkbox">g) Permanencia y ocio</span>
+          <span class="checkbox">g) Otros: especificar</span>
         </label>
-        <label>
-          <%= check_box_tag "questions[3]", "h" %>
-          <span class="checkbox">h) Cultural</span>
-        </label>
-        <label>
-          <%= check_box_tag "questions[3]", "i" %>
-          <span class="checkbox">i) Terrazas</span>
-        </label>
-        <label>
-          <%= check_box_tag "questions[3]", "j" %>
-          <span class="checkbox">j) Infantil</span>
-        </label>
-        <label>
-          <%= check_box_tag "questions[3]", "k" %>
-          <span class="checkbox">k) Libre</span>
-        </label>
-        <label>
-          <%= check_box_tag "questions[3]", "l" %>
-          <span class="checkbox">l) Otros, especificar</span>
-        </label>
-        <%= text_field_tag "questions[3l]" %>
+        <%= text_field_tag "questions[3g]" %>
       </article>
 
       <article>
-        <h3>4. En términos generales, cómo le gustaría que fuese la Plaza de España</h3>
+        <h3>4. ¿Qué usos o funciones te gustaría que se realizaran en la Plaza de España?</h3>
+        <p><em>Puedes marcar más de una opción</em></p>
+        <label>
+          <%= check_box_tag "questions[4]", "a" %>
+          <span class="checkbox">a) Transporte Público</span>
+        </label>
+        <label>
+          <%= check_box_tag "questions[4]", "b" %>
+          <span class="checkbox">b) Autobuses turísticos</span>
+        </label>
+        <label>
+          <%= check_box_tag "questions[4]", "c" %>
+          <span class="checkbox">c) Aparcamientos</span>
+        </label>
+        <label>
+          <%= check_box_tag "questions[4]", "d" %>
+          <span class="checkbox">d) Comercial</span>
+        </label>
+        <label>
+          <%= check_box_tag "questions[4]", "e" %>
+          <span class="checkbox">e) Mercadillos</span>
+        </label>
+        <label>
+          <%= check_box_tag "questions[4]", "f" %>
+          <span class="checkbox">f) Verde</span>
+        </label>
+        <label>
+          <%= check_box_tag "questions[4]", "g" %>
+          <span class="checkbox">g) Permanencia y ocio</span>
+        </label>
+        <label>
+          <%= check_box_tag "questions[4]", "h" %>
+          <span class="checkbox">h) Cultural</span>
+        </label>
+        <label>
+          <%= check_box_tag "questions[4]", "i" %>
+          <span class="checkbox">i) Terrazas</span>
+        </label>
+        <label>
+          <%= check_box_tag "questions[4]", "j" %>
+          <span class="checkbox">j) Infantil</span>
+        </label>
+        <label>
+          <%= check_box_tag "questions[4]", "k" %>
+          <span class="checkbox">k) Libre</span>
+        </label>
+        <label>
+          <%= check_box_tag "questions[4]", "l" %>
+          <span class="checkbox">l) Otros, especificar</span>
+        </label>
+        <%= text_field_tag "questions[4l]" %>
+      </article>
+
+      <article>
+        <h3>5. En términos generales, cómo le gustaría que fuese la Plaza de España</h3>
         <p><em>Elige una opción para cada bloque</em></p>
 
         <h4>a)</h4>
         <label>
-          <%= radio_button_tag "questions[4a]", "1" %>
+          <%= radio_button_tag "questions[5a]", "1" %>
           Puntos de acceso limitado
         </label>
         <label>
-          <%= radio_button_tag "questions[4a]", "2" %>
+          <%= radio_button_tag "questions[5a]", "2" %>
           Acceso abierto
         </label>
         <label>
-          <%= radio_button_tag "questions[4a]", "3" %>
+          <%= radio_button_tag "questions[5a]", "3" %>
           No sabe
         </label>
 
         <h4>b)</h4>
         <label>
-          <%= radio_button_tag "questions[4b]", "1" %>
+          <%= radio_button_tag "questions[5b]", "1" %>
           Principalmente pavimentada
         </label>
         <label>
-          <%= radio_button_tag "questions[4b]", "2" %>
+          <%= radio_button_tag "questions[5b]", "2" %>
           Principalmente verde
         </label>
         <label>
-          <%= radio_button_tag "questions[4b]", "3" %>
+          <%= radio_button_tag "questions[5b]", "3" %>
           No sabe
         </label>
 
         <h4>c)</h4>
         <label>
-          <%= radio_button_tag "questions[4c]", "1" %>
+          <%= radio_button_tag "questions[5c]", "1" %>
           De paso
         </label>
         <label>
-          <%= radio_button_tag "questions[4c]", "2" %>
+          <%= radio_button_tag "questions[5c]", "2" %>
           De permanencia y ocio
         </label>
         <label>
-          <%= radio_button_tag "questions[4c]", "3" %>
+          <%= radio_button_tag "questions[5c]", "3" %>
           No sabe
         </label>
 
         <h4>d)</h4>
         <label>
-          <%= radio_button_tag "questions[4d]", "1" %>
+          <%= radio_button_tag "questions[5d]", "1" %>
           Diáfana
         </label>
         <label>
-          <%= radio_button_tag "questions[4d]", "2" %>
-          Zonificada
+          <%= radio_button_tag "questions[5d]", "2" %>
+          Con zonas diferenciadas
         </label>
         <label>
-          <%= radio_button_tag "questions[4d]", "3" %>
+          <%= radio_button_tag "questions[5d]", "3" %>
           No sabe
         </label>
 
         <h4>e)</h4>
         <label>
-          <%= radio_button_tag "questions[4e]", "1" %>
+          <%= radio_button_tag "questions[5e]", "1" %>
           Principalmente soleada
         </label>
         <label>
-          <%= radio_button_tag "questions[4e]", "2" %>
+          <%= radio_button_tag "questions[5e]", "2" %>
           Principalmente con sombra
         </label>
         <label>
-          <%= radio_button_tag "questions[4e]", "3" %>
+          <%= radio_button_tag "questions[5e]", "3" %>
           No sabe
         </label>
       </article>
 
       <article>
-        <h3>5. La Plaza cuenta, entre sus elementos monumentales, con el Monumento a Cervantes, ¿Cuál crees que sería la mejor opción?</h3>
+        <h3>6. La Plaza cuenta, entre sus elementos monumentales, con el Monumento a Cervantes, ¿Cuál crees que sería la mejor opción?</h3>
         <label>
-          <%= radio_button_tag "questions[5]", "a" %>
+          <%= radio_button_tag "questions[6]", "a" %>
           a) Mantener el conjunto
         </label>
         <label>
-          <%= radio_button_tag "questions[5]", "b" %>
+          <%= radio_button_tag "questions[6]", "b" %>
           b) Cambiarlo de ubicación dentro de la Plaza
         </label>
         <label>
-          <%= radio_button_tag "questions[5]", "c" %>
+          <%= radio_button_tag "questions[6]", "c" %>
           c) Trasladarlo a otro lugar fuera de la Plaza
+        </label>
+        <label>
+          <%= radio_button_tag "questions[6]", "d" %>
+          d) No sabe
         </label>
       </article>
 
       <article>
-        <h3>6. Actualmente en el subsuelo existen locales comerciales ¿Qué uso priorizarías para esta zona?</h3>
+        <h3>7. Actualmente en el subsuelo existen locales comerciales ¿Qué uso priorizarías para esta zona?</h3>
         <p><em>Puedes marcar más de una opción</em></p>
         <label>
-          <%= check_box_tag "questions[6]", "a" %>
+          <%= check_box_tag "questions[7]", "a" %>
           <span class="checkbox">a) Usos actuales</span>
         </label>
         <label>
-          <%= check_box_tag "questions[6]", "b" %>
+          <%= check_box_tag "questions[7]", "b" %>
           <span class="checkbox">b) Usos recreativos</span>
         </label>
         <label>
-          <%= check_box_tag "questions[6]", "c" %>
+          <%= check_box_tag "questions[7]", "c" %>
           <span class="checkbox">c) Usos culturales</span>
         </label>
         <label>
-          <%= check_box_tag "questions[6]", "d" %>
-          <span class="checkbox">d) Otros</span>
+          <%= check_box_tag "questions[7]", "d" %>
+          <span class="checkbox">d) Otros, especificar: </span>
         </label>
+        <%= text_field_tag "questions[7d]" %>
         <label>
-          <%= check_box_tag "questions[6]", "e" %>
+          <%= check_box_tag "questions[7]", "e" %>
           <span class="checkbox">e) No sabe/No contesta</span>
         </label>
       </article>
 
-      <article>
-        <h3>7. ¿Crees que se deberían mejorar las conexiones peatonales de la Plaza de España?</h3>
-        <p><em>Puedes marcar más de una opción</em></p>
-        <label>
-          <%= check_box_tag "questions[7]", "a" %>
-          <span class="checkbox">a) Plaza de Oriente</span>
-        </label>
-        <label>
-          <%= check_box_tag "questions[7]", "b" %>
-          <span class="checkbox">b) Barrio de Conde Duque</span>
-        </label>
-        <label>
-          <%= check_box_tag "questions[7]", "c" %>
-          <span class="checkbox">c) Templo de Debod</span>
-        </label>
-        <label>
-          <%= check_box_tag "questions[7]", "d" %>
-          <span class="checkbox">d) Parque del Oeste</span>
-        </label>
-        <label>
-          <%= check_box_tag "questions[7]", "e" %>
-          <span class="checkbox">e) Cuesta de San Vicente</span>
-        </label>
-        <label>
-          <%= check_box_tag "questions[7]", "f" %>
-          <span class="checkbox">f) Madrid Río</span>
-        </label>
-        <label>
-          <%= check_box_tag "questions[7]", "g" %>
-          <span class="checkbox">g) Casa de Campo</span>
-        </label>
-        <label>
-          <%= check_box_tag "questions[7]", "h" %>
-          <span class="checkbox">h) Gran Vía</span>
-        </label>
-        <label>
-          <%= check_box_tag "questions[7]", "i" %>
-          <span class="checkbox">i) Ninguna</span>
-        </label>
-      </article>
+
 
       <article>
-        <h3>8. ¿Crees que la plaza debería ser parte de una red verde que llegara desde la Casa de Campo y el Parque del Oeste al centro de la ciudad?</h3>
+        <h3>8a. ¿Crees que la plaza debería ser parte de una red verde que llegara desde la Casa de Campo y el Parque del Oeste al centro de la ciudad?</h3>
         <label>
           <%= radio_button_tag "questions[8a]", "a" %>
           a) Si
@@ -311,14 +322,14 @@
           c) No sabe
         </label>
 
-        <h3>¿Crees que hay que mantener los árboles que hay actualmente en la plaza?</h3>
+        <h3>8b. ¿Qué crees que hay que hacer con los árboles que hay actualmente en la plaza? </h3>
         <label>
           <%= radio_button_tag "questions[8b]", "a" %>
-          a) Si
+          a) Mantenerlos
         </label>
         <label>
           <%= radio_button_tag "questions[8b]", "b" %>
-          b) No
+          b) Trasladarlos a otras zonas
         </label>
         <label>
           <%= radio_button_tag "questions[8b]", "c" %>
@@ -352,6 +363,7 @@
           <%= radio_button_tag "questions[9]", "e" %>
           e) Otros: especificar
         </label>
+        <%= text_field_tag "questions[9e]" %>
         <label>
           <%= radio_button_tag "questions[9]", "f" %>
           f) No sabe
@@ -391,7 +403,12 @@
         </label>
         <label>
           <%= check_box_tag "questions[10]", "h" %>
-          <span class="checkbox">h) Otros</span>
+          <span class="checkbox">h) Otros, especificar:</span>
+        </label>
+        <%= text_field_tag "questions[10h]" %>
+        <label>
+          <%= check_box_tag "questions[10]", "i" %>
+          <span class="checkbox">i) No sabe</span>
         </label>
       </article>
 
@@ -415,8 +432,9 @@
         </label>
         <label>
           <%= radio_button_tag "questions[11]", "e" %>
-          e) Otras: especificar
+          e) Otras: especificar:
         </label>
+        <%= text_field_tag "questions[11e]" %>
         <label>
           <%= radio_button_tag "questions[11]", "f" %>
           f) No sabe
@@ -427,25 +445,25 @@
         <h3>12. Respecto a las plazas de aparcamiento...</h3>
         <p><em>Elige una opción para cada bloque</em></p>
 
-        <h4>PLAZAS PARKING</h4>
+        <h4>PLAZAS DE PARKING SUBTERRANEO</h4>
         <label>
           <%= radio_button_tag "questions[12a]", "a" %>
-          a) Mantener el número de plazas actuales en el aparcamiento subterráneo
+          a) Mantener su número
         </label>
         <label>
           <%= radio_button_tag "questions[12a]", "b" %>
-          b) Reducir el número de plazas actuales en el aparcamiento subterráneo
+          b) Reducir su número
         </label>
         <label>
           <%= radio_button_tag "questions[12a]", "c" %>
-          c) Ampliar el número de plazas actuales en el aparcamiento subterráneo
+          c) Ampliar su número
         </label>
         <label>
           <%= radio_button_tag "questions[12a]", "d" %>
           d) No sabe
         </label>
 
-        <h4>USO PARKING</h4>
+        <h4>USO DEL PARKING SUBTERRANEO</h4>
         <label>
           <%= radio_button_tag "questions[12b]", "a" %>
           a) Uso exclusivo de residentes del aparcamiento subterráneo
@@ -463,15 +481,14 @@
           d) No sabe
         </label>
 
-        <h4>APARCAMIENTO SUPERFICIE<br>
-        Reducir el aparcamiento en superficie y sustituirlo por zonas peatonales y áreas verdes</h4>
+        <h4>APARCAMIENTO EN SUPERFICIE</h4>
         <label>
           <%= radio_button_tag "questions[12c]", "a" %>
-          a) Sí
+          a) Mantener el aparcamiento actual en superficie
         </label>
         <label>
           <%= radio_button_tag "questions[12c]", "b" %>
-          b) No
+          b) Reducir el aparcamiento en superficie y sustituirlo por zonas peatonales y áreas verdes
         </label>
         <label>
           <%= radio_button_tag "questions[12c]", "c" %>
@@ -480,69 +497,71 @@
       </article>
 
       <article>
-        <h3>13. ¿Qué medidas de sostenibilidad ambiental te gustaría que se tuvieran en cuenta en el diseño de la Plaza de España.</h3>
-        <p><em>Puedes marcar más de una opción</em></p>
+        <h3>13. ¿Consideras que las obras de la Plaza de España deberían realizarse reduciendo al máximo el impacto ambiental, aunque ello suponga un incremento de los costes?</h3>
         <label>
-          <%= check_box_tag "questions[13]", "a" %>
-          <span class="checkbox">a) Reciclado de mobiliario urbano (bancos, papeleras, farolas...)</span>
-        </label>
-        <label>
-          <%= check_box_tag "questions[13]", "b" %>
-          <span class="checkbox">b) Reutilización de los materiales existentes</span>
-        </label>
-        <label>
-          <%= check_box_tag "questions[13]", "c" %>
-          <span class="checkbox">c) Medidas de amortiguación del ruido</span>
-        </label>
-        <label>
-          <%= check_box_tag "questions[13]", "d" %>
-          <span class="checkbox">d) Empleo de materiales reciclados</span>
-        </label>
-        <label>
-          <%= check_box_tag "questions[13]", "e" %>
-          <span class="checkbox">e) Empleo de materiales de “circuito corto” que procedan del entorno cercano</span>
-        </label>
-        <label>
-          <%= check_box_tag "questions[13]", "f" %>
-          <span class="checkbox">f) Recuperación del agua</span>
-        </label>
-        <label>
-          <%= check_box_tag "questions[13]", "g" %>
-          <span class="checkbox">g) Control y reciclaje de los residuos de la plaza</span>
-        </label>
-        <label>
-          <%= check_box_tag "questions[13]", "h" %>
-          <span class="checkbox">h) Consumo energético de fuentes renovables</span>
-        </label>
-        <label>
-          <%= check_box_tag "questions[13]", "i" %>
-          <span class="checkbox">i) Todas las posibles</span>
-        </label>
-        <label>
-          <%= check_box_tag "questions[13]", "j" %>
-          <span class="checkbox">j) Otros, especificar</span>
-        </label>
-        <%= text_field_tag "questions[13j]" %>
-      </article>
-
-      <article>
-        <h3>14. ¿Consideras que las obras de la Plaza de España deberían realizarse reduciendo al máximo el impacto ambiental, aunque ello suponga un incremento de los costes?</h3>
-        <label>
-          <%= radio_button_tag "questions[14]", "a" %>
+          <%= radio_button_tag "questions[13]", "a" %>
           a) Sí
         </label>
         <label>
-          <%= radio_button_tag "questions[14]", "b" %>
+          <%= radio_button_tag "questions[13]", "b" %>
           b) No
         </label>
         <label>
-          <%= radio_button_tag "questions[14]", "c" %>
+          <%= radio_button_tag "questions[13]", "c" %>
           c) No sabe
         </label>
       </article>
 
       <article>
-        <h3>15. ¿Qué usos haces de la zona?</h3>
+        <h3>14. ¿Qué medidas de sostenibilidad ambiental te gustaría que se tuvieran en cuenta en el diseño de la Plaza de España.</h3>
+        <p><em>Puedes marcar más de una opción</em></p>
+        <label>
+          <%= check_box_tag "questions[14]", "a" %>
+          <span class="checkbox">a) Reciclado de mobiliario urbano (bancos, papeleras, farolas...)</span>
+        </label>
+        <label>
+          <%= check_box_tag "questions[14]", "b" %>
+          <span class="checkbox">b) Reutilización de los materiales existentes</span>
+        </label>
+        <label>
+          <%= check_box_tag "questions[14]", "c" %>
+          <span class="checkbox">c) Medidas de amortiguación del ruido</span>
+        </label>
+        <label>
+          <%= check_box_tag "questions[14]", "d" %>
+          <span class="checkbox">d) Empleo de materiales reciclados</span>
+        </label>
+        <label>
+          <%= check_box_tag "questions[14]", "e" %>
+          <span class="checkbox">e) Empleo de materiales de “circuito corto” que procedan del entorno cercano</span>
+        </label>
+        <label>
+          <%= check_box_tag "questions[14]", "f" %>
+          <span class="checkbox">f) Recuperación del agua</span>
+        </label>
+        <label>
+          <%= check_box_tag "questions[14]", "g" %>
+          <span class="checkbox">g) Control y reciclaje de los residuos de la plaza</span>
+        </label>
+        <label>
+          <%= check_box_tag "questions[14]", "h" %>
+          <span class="checkbox">h) Consumo energético de fuentes renovables</span>
+        </label>
+        <label>
+          <%= check_box_tag "questions[14]", "i" %>
+          <span class="checkbox">i) Todas las posibles</span>
+        </label>
+        <label>
+          <%= check_box_tag "questions[14]", "j" %>
+          <span class="checkbox">j) Otros, especificar</span>
+        </label>
+        <%= text_field_tag "questions[14j]" %>
+      </article>
+
+
+
+      <article>
+        <h3>15a. ¿Qué usos haces de la zona?</h3>
         <label>
           <%= check_box_tag "questions[15a]", "a" %>
           a) Soy vecino de la Plaza
@@ -572,13 +591,13 @@
           g) Otros
         </label>
 
-        <h3>¿Cómo te mueves por la Plaza de España?</h3>
+        <h3>15b. ¿Cómo te mueves por la Plaza de España?</h3>
 
         <table>
           <thead>
             <tr>
               <th>&nbsp;</th>
-              <th class="text-center">Normalmente</th>
+              <th class="text-center">Habitualmente</th>
               <th class="text-center">Ocasionalmente</th>
               <th class="text-center">Nunca</th>
             </tr>
@@ -661,7 +680,8 @@
       </article>
 
       <article>
-        <h3>18. Qué tipo de reforma consideras que se debería hacer en la Plaza de España.</h3>
+        <h3>18. Finalmente, si se realizara la reforma de la Plaza de España, ¿De qué tipo consideras que debería ser?</h3>
+        <p><em>Elige una sola respuesta</em></p>
         <label>
           <%= radio_button_tag "questions[18]", "a" %>
           a) Una rehabilitación de los elementos existentes
@@ -673,6 +693,10 @@
         <label>
           <%= radio_button_tag "questions[18]", "c" %>
           c) Una reforma profunda que permita reordenar completamente los usos de la plaza y de su entorno (tráfico, accesos, equipamientos)
+        </label>
+        <label>
+          <%= radio_button_tag "questions[18]", "d" %>
+          d) No sabe
         </label>
       </article>
       <input type="submit" value="Enviar encuesta" class="button radius margin-top">
