@@ -9,8 +9,7 @@ class SurveyAnswersController < ApplicationController
 
   def create
     SurveyAnswer.user_input(current_user, survey_code, questions_params)
-    @answers_16_sample = OpenAnswer.where(question_code: 16).where(survey_code: survey_code).order("RANDOM()").limit(5)
-    @answers_17_sample = OpenAnswer.where(question_code: 17).where(survey_code: survey_code).order("RANDOM()").limit(5)
+    redirect_to encuesta_plaza_espana_respuestas_path
   end
 
   private
