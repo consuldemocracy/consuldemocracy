@@ -4,7 +4,7 @@ class OpenAnswersController < ApplicationController
   skip_authorization_check
 
   def show
-    @open_answers = OpenAnswer.where(question_code: params[:id]).sort_by_confidence_score
+    @open_answers = OpenAnswer.where(question_code: params[:id]).page(params[:page]).sort_by_confidence_score
     if params[:id] == "16"
       @question = "¿Qué nuevos usos o enfoques de la Plaza te expulsarían de la zona?"
     elsif params[:id] == "17"
