@@ -24,7 +24,7 @@ class TagCloud
   end
 
   def resource_model_scoped
-    scope ? resource_model.search(scope) : resource_model
+    scope && resource_model == Proposal ? resource_model.search(scope) : resource_model
   end
 
   def default_blacklist
