@@ -6,6 +6,13 @@
         <br>
         <%= comment.body %>
       </td>
+      <td>
+        <div id="<%= dom_id(comment) %>_reply" class="reply">
+            <span id="<%= dom_id(comment) %>_votes" class="comment-votes right">
+              <%= render 'comments/votes', comment: comment %>
+            </span>
+        </div>
+      </td>
     </tr>
   <% end %>
 </table>
