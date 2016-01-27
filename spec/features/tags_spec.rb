@@ -54,22 +54,6 @@ feature 'Tags' do
     expect(page).to have_content "Hacienda"
   end
 
-  scenario 'Tag Cloud' do
-    1.times  { create(:debate, tag_list: 'Medio Ambiente') }
-    5.times  { create(:debate, tag_list: 'Corrupción') }
-    5.times  { create(:debate, tag_list: 'Educación') }
-    10.times { create(:debate, tag_list: 'Economía') }
-
-    visit debates_path
-
-    within(:css, "#tag-cloud") do
-      expect(page.find("a:eq(1)")).to have_content("Economía (10)")
-      expect(page.find("a:eq(2)")).to have_content("Corrupción (5)")
-      expect(page.find("a:eq(3)")).to have_content("Educación (5)")
-      expect(page.find("a:eq(4)")).to have_content("Medio Ambiente (1)")
-    end
-  end
-
   scenario 'Create' do
     user = create(:user)
     login_as(user)
@@ -139,6 +123,83 @@ feature 'Tags' do
 
     expect(page).to have_content 'Debate updated successfully.'
     expect(page).to_not have_content 'Economía'
+  end
+
+  context 'Tag cloud' do
+
+    scenario 'Proposals' do
+      earth = create(:proposal, tag_list: 'Medio Ambiente')
+      money = create(:proposal, tag_list: 'Economía')
+
+      visit proposals_path
+
+      within "#tag-cloud" do
+        expect(page).to have_content "Medio Ambiente"
+        expect(page).to have_content "Economía"
+      end
+    end
+
+    scenario 'Debates' do
+      earth = create(:debate, tag_list: 'Medio Ambiente')
+      money = create(:debate, tag_list: 'Economía')
+
+      visit debates_path
+
+      within "#tag-cloud" do
+        expect(page).to have_content "Medio Ambiente"
+        expect(page).to have_content "Economía"
+      end
+    end
+
+    scenario "scoped by category" do
+      create(:tag, kind: 'category', name: 'Medio Ambiente')
+      create(:tag, kind: 'category', name: 'Economía')
+
+      earth = create(:proposal, tag_list: 'Medio Ambiente, Agua')
+      money = create(:proposal, tag_list: 'Economía, Corrupción')
+
+      visit proposals_path(search: 'Economía')
+
+      within "#tag-cloud" do
+        expect(page).to have_css(".tag", count: 1)
+        expect(page).to have_content "Corrupción"
+        expect(page).to_not have_content "Economía"
+      end
+    end
+
+    scenario "scoped by district" do
+      create(:geozone, name: 'Madrid')
+      create(:geozone, name: 'Barcelona')
+
+      earth = create(:proposal, tag_list: 'Madrid, Agua')
+      money = create(:proposal, tag_list: 'Barcelona, Playa')
+
+      visit proposals_path(search: 'Barcelona')
+
+      within "#tag-cloud" do
+        expect(page).to have_css(".tag", count: 1)
+        expect(page).to have_content "Playa"
+        expect(page).to_not have_content "Agua"
+      end
+    end
+
+    scenario "tag links" do
+      proposal1 = create(:proposal, tag_list: 'Medio Ambiente')
+      proposal2 = create(:proposal, tag_list: 'Medio Ambiente')
+      proposal3 = create(:proposal, tag_list: 'Economía')
+
+      visit proposals_path
+
+      within "#tag-cloud" do
+        click_link "Medio Ambiente"
+      end
+
+      expect(page).to have_css ".proposal", count: 2
+      expect(page).to have_content proposal1.title
+      expect(page).to have_content proposal2.title
+      expect(page).to_not have_content proposal3.title
+    end
+
   end
 
 end
