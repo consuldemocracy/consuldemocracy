@@ -865,7 +865,6 @@ feature 'Debates' do
     expect(page).to have_content('User deleted')
   end
 
-<<<<<<< HEAD
   context "Filter" do
 
     pending "By category" do
@@ -948,42 +947,42 @@ feature 'Debates' do
     end
   end
 
-  context 'Suggesting debates' do
 
-    scenario 'Shows up to 5 suggestions per debate', :js do
+  context 'Suggesting debates' do
+    scenario 'Shows up to 5 suggestions', :js do
       author = create(:user)
       login_as(author)
 
-      debate1 = create(:debate, title: "1 - El Quijote: En un lugar de la Mancha", cached_votes_up: 1)
-      debate2 = create(:debate, title: "2 - El Quijote: de cuyo nombre no quiero acordarme",  cached_votes_up: 2)
-      debate3 = create(:debate, title: "3 - El Quijote: no ha mucho tiempo que vivía ",  cached_votes_up: 3)
-      debate4 = create(:debate, title: "4 - un hidalgo de los de lanza en astillero", description: "El Quijote un hidalgo de los de lanza en astillero",  cached_votes_up: 4)
-      debate5 = create(:debate, title: "5 - El Quijote: adarga antigua, rocín flaco y galgo corredor",  cached_votes_up: 5)
-      debate6 = create(:debate, title: "6 - Una olla de algo más vaca que carnero", description: 'El Quijote',  cached_votes_up: 6)
-      debate7 = create(:debate, title: "7 - No se sugiere",  cached_votes_up: 7)
+      debate1 = create(:debate, title: "First debate has 1 vote", cached_votes_up: 1)
+      debate2 = create(:debate, title: "Second debate has 2 votes",  cached_votes_up: 2)
+      debate3 = create(:debate, title: "Third debate has 3 votes",  cached_votes_up: 3)
+      debate4 = create(:debate, title: "This one has 4 votes", description: "This is the fourth debate",  cached_votes_up: 4)
+      debate5 = create(:debate, title: "Fifth debate has 5 votes",  cached_votes_up: 5)
+      debate6 = create(:debate, title: "Sixth debate has 6 votes", description: 'This is the sixth debate',  cached_votes_up: 6)
+      debate7 = create(:debate, title: "This has seven votes, and is not suggest", description: 'This is the seven', cached_votes_up: 7)
    
       visit new_debate_path
-      fill_in 'debate_title', with: 'Quijote' 
-      page.find("body").click
+      fill_in 'debate_title', with: 'debate' 
+      check "debate_terms_of_service"
 
-      within('div#ajax_suggest_show') do 
-        expect(page.html).to have_content ("You are seeing 5 of 6 debates containing the term Quijote")
+      within('div#js-suggest') do 
+        expect(page).to have_content ("You are seeing 5 of 6 debates containing the term 'debate'")
       end
     end
 
-    scenario 'No found suggestions for debate', :js do
+    scenario 'No found suggestions', :js do
       author = create(:user)
       login_as(author)
 
-      debate1 = create(:debate, title: "El Quijote: En un lugar de la Mancha", cached_votes_up: 10)
-      debate2 = create(:debate, title: "El Quijote: de cuyo nombre no quiero acordarme")
+      debate1 = create(:debate, title: "First debate has 10 vote", cached_votes_up: 10)
+      debate2 = create(:debate, title: "Second debate has 2 votes", cached_votes_up: 2)
       
       visit new_debate_path
-      fill_in 'debate_title', with: 'La Celestina'
-      page.find("body").click
+      fill_in 'debate_title', with: 'proposal'
+      check "debate_terms_of_service" 
 
-      within('div#ajax_suggest_show') do
-        expect(page.html).to_not have_content ('You are seeing')
+      within('div#js-suggest') do
+        expect(page).to_not have_content ('You are seeing')
       end
     end 
   end

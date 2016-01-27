@@ -29,11 +29,15 @@ module CommentableActions
     set_resource_instance
   end
 
-  def suggest
+  def suggest 
     @resources = @search_terms.present? ? resource_model.search(@search_terms).sort_by_confidence_score: nil
     set_resources_instance
-    render :layout => false
-  end 
+    if @resources then 
+      @resources_count =  @resources.count
+      @reg_show      = 5
+      render layout: false
+    end   
+  end  
   
   def create
     @resource = resource_model.new(strong_params)

@@ -126,7 +126,7 @@ es:
         found: 
           one: "Existe un debate con el término '%{query}', puedes participar en él en vez de abrir uno nuevo."
           other: "Existen debates con el término '%{query}', puedes participar en ellos en vez de abrir uno nuevo."
-        message: "Estás viendo %{limit} de %{count} debates que contienen el término %{query}" 
+        message: "Estás viendo %{limit} de %{count} debates que contienen el término '%{query}'" 
         see_all: "Ver todos"    
     show:
       author_deleted: Usuario eliminado
@@ -308,11 +308,11 @@ es:
       recommendations_title: Recomendaciones para crear una propuesta
       start_new: Crear una propuesta
       suggestions:
-        found: 
-          one: "Existe un debate con el término '%{query}', puedes participar en él en vez de abrir uno nuevo."
-          other: "Existen debates con el término '%{query}', puedes participar en ellos en vez de abrir uno nuevo."
-        message: "Estás viendo %{limit} de %{count} debates que contienen el término %{query}" 
-        see_all: "Ver todos"
+        found:
+          one: "Existe una propuesta con el término '%{query}', puedes contribuir en ella en vez de crear una nueva."
+          other: "Existen propuestas con el término '%{query}', puedes contribuir en ellas en vez de crear una nueva."
+        message: "Estás viendo %{limit} de %{count} propuestas que contienen el término '%{query}'" 
+        see_all: "Ver todas"
     proposal:
       already_supported: "¡Ya has apoyado esta propuesta, compártela!"
       comments:
