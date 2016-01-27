@@ -627,34 +627,38 @@ footer {
 // 04. Tags
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
-.tags, .tag-cloud {
+.tags a , .tag-cloud a, .categories a, .geozone a {
+  background: #ececec;
+  border-radius: rem-calc(6);
+  color: $text;
+  display: inline-block;
+  font-size: $small-font-size;
+  margin-bottom: $line-height/3;
+  padding: $line-height/4 $line-height/3;
+  text-decoration: none;
 
-  a {
-    background: #ececec;
-    border-radius: rem-calc(6);
-    color: $text;
-    display: inline-block;
-    font-size: $small-font-size;
-    margin-bottom: $line-height/3;
-    padding: $line-height/4 $line-height/3;
-    text-decoration: none;
-
-    &:hover {
-      background: #e0e0e0;
-    }
+  &:hover {
+    background: #e0e0e0;
   }
 }
 
-.sidebar, .tag-cloud {
+.categories a, .geozone a {
+  background: $highlight;
+  color: $link;
 
-  h3 {
-    border-top: 2px solid $brand;
-    display: inline-block;
-    font-size: $h5-font-size;
-    margin: -1px 0 $line-height/2;
-    padding-top: $line-height/4;
-    text-transform: uppercase;
+  &:hover {
+    background: $highlight;
+    color: $link-hover;
   }
+}
+
+h3.sidebar-title {
+  border-top: 2px solid $brand;
+  display: inline-block;
+  font-size: rem-calc(16);
+  margin: -1px 0 rem-calc(12);
+  padding-top: $line-height/4;
+  text-transform: uppercase;
 }
 
 // 05. Auth pages

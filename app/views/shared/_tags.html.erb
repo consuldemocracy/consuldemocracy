@@ -1,7 +1,7 @@
 <%- limit ||= nil %>
 
 <% if taggable.tags.any? %>
-  <span class='tags'>
+  <span id="tags" class='tags'>
     <% taggable.tag_list_with_limit(limit).each do |tag| %>
       <%= link_to sanitize(tag.name), send("#{taggable.class.to_s.downcase.pluralize}_path", tag: tag.name) %>
     <% end %>
