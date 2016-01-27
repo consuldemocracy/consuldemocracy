@@ -73,7 +73,7 @@ module CommentableActions
     end
 
     def tag_cloud
-      resource_model.last_week.tag_counts.order("#{resource_name.pluralize}_count": :desc, name: :asc).limit(5)
+      TagCloud.new(resource_model).tags
     end
 
     def load_geozones
