@@ -468,3 +468,22 @@ es:
       user_permission_verify_info: "* Sólo usuarios empadronados en el municipio de Madrid."
       user_permission_verify_url: verifica tu cuenta
       user_permission_votes: Participar en las votaciones finales*
+  omniauth:
+    finish_signup:
+      title: "Detalles adicionales de tu cuenta"
+    twitter:
+      sign_in: "Entra con Twitter"
+      sign_up: "Regístrate con Twitter"
+    facebook:
+      sign_in: "Entra con Facebook"
+      sign_up: "Regístrate con Facebook"
+    google_oauth2:
+      sign_in: "Entra con Google"
+      sign_up: "Regístrate con Google"
+  legislation:
+    help:
+      title: "¿Cómo puedo comentar este documento?"
+      text: "Para comentar este documento debes %{sign_in} o %{sign_up}. Después selecciona el texto que quieres comentar y pulsa en el botón con el lápiz."
+      text_sign_in: "iniciar sesión"
+      text_sign_up: "registrarte"
+      alt: "Selecciona el texto que quieres comentar y pulsa en el botón con el lápiz."

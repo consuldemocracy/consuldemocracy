@@ -20,6 +20,9 @@ Setting.create(key: 'org_name', value: 'Consul')
 Setting.create(key: 'place_name', value: 'City')
 Setting.create(key: 'feature.debates', value: "true")
 Setting.create(key: 'feature.spending_proposals', value: "true")
+Setting.create(key: 'feature.twitter_login', value: "true")
+Setting.create(key: 'feature.facebook_login', value: "true")
+Setting.create(key: 'feature.google_login', value: "true")
 
 puts "Creating Geozones"
 ('A'..'Z').each{ |i| Geozone.create(name: "District #{i}") }

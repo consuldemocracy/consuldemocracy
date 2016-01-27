@@ -468,3 +468,22 @@ en:
       user_permission_verify_info: "* Only for users on Madrid Census."
       user_permission_verify_url: verify your account
       user_permission_votes: Participate on final voting
+  omniauth:
+    finish_signup:
+      title: "Additional details"
+    twitter:
+      sign_in: "Sign in with Twitter"
+      sign_up: "Sign up with Twitter"
+    facebook:
+      sign_in: "Sign in with Facebook"
+      sign_up: "Sign up with Facebook"
+    google_oauth2:
+      sign_in: "Sign in with Google"
+      sign_up: "Sign up with Google"
+  legislation:
+    help:
+      title: "How I can comment this document?"
+      text: "To comment this document you must %{sign_in} or %{sign_up}. Then select the text you want to comment and press the button with the pencil."
+      text_sign_in: "login"
+      text_sign_up: "sign up"
+      alt: "Select the text you want to comment and press the button with the pencil."

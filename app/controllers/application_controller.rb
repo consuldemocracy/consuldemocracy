@@ -82,10 +82,9 @@ class ApplicationController < ActionController::Base
     end
 
     def ensure_signup_complete
-      # Ensure we don't go into an infinite loop
-      return if action_name.in? %w(finish_signup do_finish_signup)
-
-      if user_signed_in? && !current_user.email_provided?
+      if user_signed_in? &&
+        current_user.registering_with_oauth &&
+        %w(finish_signup do_finish_signup).exclude?(action_name)
         redirect_to finish_signup_path
       end
     end

@@ -85,26 +85,6 @@ describe User do
     end
   end
 
-  describe 'OmniAuth' do
-    describe '#email_provided?' do
-      it "is false if the email matchs was temporarely assigned by the OmniAuth process" do
-        subject.email = 'omniauth@participacion-ABCD-twitter.com'
-        expect(subject.email_provided?).to eq(false)
-      end
-
-      it "is true if the email is not omniauth-like" do
-        subject.email = 'manuelacarmena@example.com'
-        expect(subject.email_provided?).to eq(true)
-      end
-
-      it "is true if the user's real email is pending to be confirmed" do
-        subject.email = 'omniauth@participacion-ABCD-twitter.com'
-        subject.unconfirmed_email = 'manuelacarmena@example.com'
-        expect(subject.email_provided?).to eq(true)
-      end
-    end
-  end
-
   describe "administrator?" do
     it "is false when the user is not an admin" do
       expect(subject.administrator?).to be false
@@ -245,23 +225,23 @@ describe User do
       end
     end
   end
-  
+
   describe "has_official_email" do
     it "checks if the mail address has the officials domain" do
       # We will use empleados.madrid.es as the officials' domain
       # Subdomains are also accepted
+
       Setting['email_domain_for_officials'] = 'officials.madrid.es'
-      
       user1 = create(:user, email: "john@officials.madrid.es", confirmed_at: Time.now)
       user2 = create(:user, email: "john@yes.officials.madrid.es", confirmed_at: Time.now)
       user3 = create(:user, email: "john@unofficials.madrid.es", confirmed_at: Time.now)
       user4 = create(:user, email: "john@example.org", confirmed_at: Time.now)
-      
+
       expect(user1.has_official_email?).to eq(true)
       expect(user2.has_official_email?).to eq(true)
       expect(user3.has_official_email?).to eq(false)
       expect(user4.has_official_email?).to eq(false)
-      
+
       # We reset the officials' domain setting
       Setting.find_by(key: 'email_domain_for_officials').update(value: '')
     end
