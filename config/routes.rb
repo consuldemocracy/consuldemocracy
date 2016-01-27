@@ -234,11 +234,7 @@ Rails.application.routes.draw do
     resources :spending_proposals, only: [:new, :create, :show]
   end
 
-  resources :survey_answers, only: [:new, :create] do
-    member do
-      post :vote
-    end
-  end
+  resources :survey_answers, only: [:new, :create]
 
   resources :open_answers, only: :show do
     member do
