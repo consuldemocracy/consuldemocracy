@@ -3,8 +3,8 @@
   <h3 class="sidebar-title"><%= t("shared.tags_cloud.tags") %></h3>
   <br>
 
-  <% tag_cloud @tag_cloud, %w[s m l] do |tag, css_class| %>
-    <%= link_to taggable_path(taggable, tag.name), class: css_class do %>
+  <% @tag_cloud.tags.each do |tag| %>
+    <%= link_to taggable_path(taggable, tag.name) do %>
       <span class="tag"><%= tag.name %></span>
     <% end %>
   <% end %>
