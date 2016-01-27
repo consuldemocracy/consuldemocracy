@@ -1,8 +1,8 @@
 App.SurveyAnswers =
 
   initialize: ->
-    current_user_id = $('html').data('current-user-id')
-    if current_user_id == ""
+    verified_user_id = $('#survey').data('verified-id')
+    if verified_user_id == ""
       $(".survey-questions").on
         click: (event) ->
           event.preventDefault();
