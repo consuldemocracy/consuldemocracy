@@ -16,7 +16,7 @@
 <div class="row margin">
   <div class="survey-comments small-12 medium-9 column">
     <h3>¿Qué nuevos usos o enfoques de la Plaza te expulsarían de la zona?</h3>
-    <%= link_to "Ver todas las respuestas", encuesta_plaza_espana_respuesta_path(id: 16) %>
+    <p><%= link_to "Ver todas las respuestas", encuesta_plaza_espana_respuesta_path(id: 16) %></p>
 
     <section class="comments">
       <div class="row">
@@ -31,7 +31,7 @@
                   </div>
 
                   <div id="<%= dom_id(open_answer) %>_reply" class="reply">
-                    <span id="<%= dom_id(open_answer) %>_votes" class="comment-votes right">
+                    <span id="<%= dom_id(open_answer) %>_votes" class="comment-votes left">
                       <%= render 'open_answers/votes', open_answer: open_answer %>
                     </span>
                     <p>&nbsp;</p>
@@ -46,9 +46,8 @@
       </div>
     </section>
 
-
-    <h3>¿Qué servicios, actividades o usos crees que faltan o piensas que sobran?</h3>
-    <%= link_to "Ver todas las respuestas", encuesta_plaza_espana_respuesta_path(id: 17) %>
+    <h3 class="margin-top">¿Qué servicios, actividades o usos crees que faltan o piensas que sobran?</h3>
+    <p><%= link_to "Ver todas las respuestas", encuesta_plaza_espana_respuesta_path(id: 17) %></p>
 
     <section class="comments">
       <div class="row">
@@ -62,7 +61,7 @@
                   </div>
 
                   <div id="<%= dom_id(open_answer) %>_reply" class="reply">
-                    <span id="<%= dom_id(open_answer) %>_votes" class="comment-votes right">
+                    <span id="<%= dom_id(open_answer) %>_votes" class="comment-votes left">
                       <%= render 'open_answers/votes', open_answer: open_answer %>
                     </span>
                     <p>&nbsp;</p>

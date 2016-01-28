@@ -1105,10 +1105,20 @@
 .survey-comments {
 
   .comments {
+    border: 1px solid $border;
     padding-bottom: 0 !important;
+    padding-top: 0 !important;
   }
 
   .comment-body {
-    margin-left: 0 !important;
+    margin-left: $line-height/2 !important;
+    padding-left: $line-height/2 !important;
+    padding-right: $line-height/2 !important;
+  }
+
+  .reply {
+    border-bottom: 0 !important;
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
   }
 }
