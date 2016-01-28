@@ -984,10 +984,6 @@
 
 .survey-questions {
 
-  @media only screen and (min-width: $medium-breakpoint) {
-    padding-bottom: $line-height*12;
-  }
-
   &::before {
     display: none;
   }
@@ -996,7 +992,7 @@
     border-bottom: 1px solid $border;
 
     @media only screen and (min-width: $medium-breakpoint) {
-      padding: $line-height*3 0 $line-height 0;
+      padding: $line-height 0;
     }
 
     &:last-of-type {
