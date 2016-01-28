@@ -175,6 +175,8 @@ en:
       update: Update Topic
     users:
       index:
+        search_placeholder: Search for Name
+        search: Search
         filter: Filter
         filters:
           all: All
