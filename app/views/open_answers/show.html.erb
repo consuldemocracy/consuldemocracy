@@ -1,5 +1,11 @@
 <div class="row margin">
   <div class="survey-comments small-12 medium-9 column">
+
+    <%= link_to encuesta_plaza_espana_respuestas_path, class: "left back" do %>
+        <i class="icon-angle-left left"></i>
+        <%= t("pages.processes.back") %>
+      <% end %>
+
     <h3><%= @question %></h3>
 
     <section class="comments">
