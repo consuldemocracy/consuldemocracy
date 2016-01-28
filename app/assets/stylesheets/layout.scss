@@ -169,6 +169,12 @@ a {
 
 .absolute {
   position: absolute;
+}
+
+.absolute-survey {
+  bottom: 0;
+  position: absolute;
+  width: 100%;
   z-index: 9;
 }
 
