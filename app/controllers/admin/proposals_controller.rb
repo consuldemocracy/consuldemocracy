@@ -18,6 +18,21 @@ class Admin::ProposalsController < Admin::BaseController
     Activity.log(current_user, :restore, @proposal)
     redirect_to request.query_parameters.merge(action: :index)
   end
+ 
+  def search
+    if (params[:term]).strip == ""
+
+      redirect_to request.query_parameters.merge(action: :index)
+    else
+      @proposals = Proposal.only_hidden.where("title ILIKE ? OR 
+                                               summary ILIKE ? OR 
+                                               description ILIKE ?", 
+                                               "%#{params[:term]}%" , 
+                                               "%#{params[:term]}%" , 
+                                               "%#{params[:term]}%")
+                           .page(params[:page])
+    end
+  end
 
   private
 

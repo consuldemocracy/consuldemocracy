@@ -26,14 +26,18 @@ es:
         type: Tipo
     comments:
       index:
+        search_placeholder: Buscar por comentarios
+        search: Buscar
         filter: Filtro
         filters:
           all: Todos
           with_confirmed_hide: Confirmados
           without_confirmed_hide: Pendientes
-        hidden_debate: Debate oculto
-        hidden_proposal: Propuesta oculta
+        hidden_debate: Debates ocultos
+        hidden_proposal: Propuestas ocultas
         title: Comentarios ocultos
+      search:
+        title: Buscar comentarios ocultos
     dashboard:
       index:
         title: Administración
@@ -116,7 +120,11 @@ es:
           all: Todas
           with_confirmed_hide: Confirmadas
           without_confirmed_hide: Pendientes
-        title: Propuestas ocultos
+        search: Buscar
+        search_placeholder: Buscar propuestas
+        title: Propuestas ocultas
+      search:
+        title: Buscar propuestas ocultas
     settings:
       flash:
         updated: Valor actualizado
@@ -175,7 +183,9 @@ es:
       update: Actualizar Tema
     users:
       index:
-        filter: Filtro
+        search_placeholder: Buscar por Nombre
+        search: Buscar
+        filter: Filtro   
         filters:
           all: Todos
           with_confirmed_hide: Confirmados
@@ -186,7 +196,9 @@ es:
         email: 'Email:'
         hidden_at: 'Bloqueado:'
         registered_at: 'Fecha de alta:'
-        title: Actividad del usuario %{user}
+        title: Actividad del usuario %{user}      
+      search:
+        title: Buscar Usuarios bloqueados
     verifications:
       index:
         phone_not_given: No ha dado su teléfono

@@ -98,4 +98,42 @@ feature 'Admin comments' do
     expect(current_url).to include('page=2')
   end
 
+  context "Search" do
+    background do
+
+      comment = create(:comment, 
+                       :hidden, 
+                       body: "SPAM from SPAMMER", 
+                       hidden_at: '016-01-25 13:04:01.021165')
+      proposal = create(:proposal, 
+                         author: comment.author)
+    end
+
+    scenario "The search is not running if search term is empty" do
+      visit admin_comments_path
+      fill_in "term", with: "      "
+      click_button "Search"
+      expect(current_path).to eq(admin_comments_path)
+      expect(page).to have_content("SPAM from SPAMMER")
+    end
+
+    scenario "returns no results if search term does not exist" do
+      visit admin_comments_path
+
+      fill_in "term", with: "Prueba"
+      click_button "Search"
+      expect(current_path).to eq(search_admin_comments_path)
+      expect(page).to_not have_content("Prueba")
+      expect(page).to have_content("comments cannot be found")
+    end
+    
+    scenario "finds by comment" do
+      visit admin_comments_path
+
+      fill_in "term", with: "SPAM from SPAMMER"
+      click_button "Search"
+      expect(current_path).to eq(search_admin_comments_path)
+      expect(page).to have_content("SPAM from SPAMMER")
+    end
+  end
 end

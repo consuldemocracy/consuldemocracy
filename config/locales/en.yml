@@ -84,7 +84,7 @@ en:
     form:
       debate_text: Initial debate text
       debate_title: Debate title
-      tags_instructions: Tag this debate. You can choose from our suggestions or enter your own.
+      tags_instructions: Tag this debate.
       tags_label: Topics
       tags_placeholder: Enter the tags you would like to use, separated by commas (',')
     index:
@@ -225,6 +225,11 @@ en:
         one: Someone replied to your comment on
         other: There are %{count} new replies to your comment on
       title: Notifications
+  map:
+    title: "Districts"
+    proposal_for_district: "Start a proposal for your district"
+    select_district: Scope of operation
+    start_proposal: Create a proposal
   omniauth:
     facebook:
       sign_in: Sign in with Facebook
@@ -259,7 +264,8 @@ en:
       proposal_title: Proposal title
       proposal_video_url: Link to external video
       proposal_video_url_note: You may add a link to YouTube or Vimeo
-      tags_instructions: Tag this proposal. You can choose from our tags or add your own.
+      tag_category_label: "Categories"
+      tags_instructions: "Tag this proposal. You can choose from proposed categories or add your own"
       tags_label: Tags
       tags_placeholder: Enter the tags you would like to use, separated by commas (',')
     index:
@@ -358,8 +364,23 @@ en:
     flag: Flag as inappropriate
     print:
       print_button: Print this info
+    suggest:
+      debate:
+        found:
+          one: "There is a debate with the term '%{query}', you can participate in it instead of opening a new one."
+          other: "There are debates with the term '%{query}', you can participate in them instead of opening a new one."
+        message: "You are seeing %{limit} of %{count} debates containing the term '%{query}'"
+        see_all: "Ver todos"
+      proposal:
+        found:
+          one: "There is a proposal with the term '%{query}', you can contribute to it instead of creating a new"
+          other: "There are proposals with the term '%{query}', you can contribute to them instead of creating a new"
+        message: "You are seeing %{limit} of %{count} proposals containing the term '%{query}'"
+        see_all: "See all"
     tags_cloud:
       tags: Trending
+      districts: "Districts"
+      categories: "Categories"
     unflag: Unflag
   simple_captcha:
     label: Enter the text from the image in the box below
@@ -460,3 +481,22 @@ en:
       user_permission_verify_info: "* Only for users on Madrid Census."
       user_permission_verify_url: verify your account
       user_permission_votes: Participate on final voting
+  omniauth:
+    finish_signup:
+      title: "Additional details"
+    twitter:
+      sign_in: "Sign in with Twitter"
+      sign_up: "Sign up with Twitter"
+    facebook:
+      sign_in: "Sign in with Facebook"
+      sign_up: "Sign up with Facebook"
+    google_oauth2:
+      sign_in: "Sign in with Google"
+      sign_up: "Sign up with Google"
+  legislation:
+    help:
+      title: "How I can comment this document?"
+      text: "To comment this document you must %{sign_in} or %{sign_up}. Then select the text you want to comment and press the button with the pencil."
+      text_sign_in: "login"
+      text_sign_up: "sign up"
+      alt: "Select the text you want to comment and press the button with the pencil."

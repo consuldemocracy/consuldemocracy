@@ -78,6 +78,10 @@ class Comment < ActiveRecord::Base
     moderator_id.present?
   end
 
+  def self.search(term)
+    term.present? ? where("body ILIKE ?", "%#{term}%") : none
+  end
+
   def after_hide
     commentable_type.constantize.with_hidden.reset_counters(commentable_id, :comments)
   end

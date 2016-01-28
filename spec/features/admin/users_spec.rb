@@ -94,4 +94,42 @@ feature 'Admin users' do
     expect(current_url).to include('page=2')
   end
 
+context "Search" do
+
+    background do
+      @usu1 = create(:user, email: 'enrique@madrid.es', 
+                    password: '915885635', 
+                    username: 'Enrique Ruiz Roldán', 
+                    hidden_at: '016-01-25 13:04:01.021165',
+                    phone_number: '915885635')
+    end
+
+    scenario "The search is not running if search term is empty" do
+      visit admin_users_path
+      fill_in "term", with: "      "
+      click_button "Search"
+      expect(current_path).to eq(admin_users_path)
+      expect(page).to have_content("Enrique Ruiz Roldán")
+    end
+
+    scenario "returns no results if search term does not exist" do
+      visit admin_users_path
+
+      fill_in "term", with: "Raul"
+      click_button "Search"
+      expect(current_path).to eq(search_admin_users_path)
+      expect(page).to_not have_content("Raul")
+      expect(page).to have_content("users cannot be found")
+    end
+    
+    scenario "finds by name" do
+      visit admin_users_path
+
+      fill_in "term", with: "Enrique"
+      click_button "Search"
+
+      expect(current_path).to eq(search_admin_users_path)
+      expect(page).to have_content("Enrique Ruiz Roldán")
+    end
+  end
 end

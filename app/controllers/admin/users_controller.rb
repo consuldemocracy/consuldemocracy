@@ -24,6 +24,13 @@ class Admin::UsersController < Admin::BaseController
     redirect_to request.query_parameters.merge(action: :index)
   end
 
+  def search
+    if (params[:term]).strip == ""
+      redirect_to request.query_parameters.merge(action: :index)
+    else
+      @users = User.only_hidden.where("username ILIKE?", "%#{params[:term]}%").page(params[:page])
+    end
+  end
   private
 
     def load_user
