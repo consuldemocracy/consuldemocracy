@@ -34,13 +34,45 @@
       <%= markdown t("pages.processes.process_2.text") %>
 
       <p><strong>Lo que se decida mayoritariamente será incorporado al pliego del concurso internacional de ideas.</strong></p>
-
-      <%= link_to t("pages.processes.process_2.button"), encuesta_plaza_espana_path, class: "button radius" %>
-
+      <div class="medium-6">
+        <%= link_to t("pages.processes.process_2.button"), encuesta_plaza_espana_path, class: "button radius expand" %>
+      </div>
     </div>
     <div class="show-for-medium-up medium-5 column">
       <br>
       <%= image_tag "processes_plaza_espana.png" %>
+    </div>
+  </div>
+</div>
+
+<div class="row-full jumbo-featured survey-timeline-line">
+  <div class="row">
+    <div class="small-12 medium-2 column">
+      <p>
+        28 de enero <small><i class="icon-angle-right"></i></small><br>
+        <strong>Consulta ciudadana</strong>
+      </p>
+    </div>
+
+    <div class="small-12 medium-3 column">
+      <p>
+        8 de marzo <small><i class="icon-angle-right"></i></small><br>
+        <strong>Concurso de proyectos</strong>
+      </p>
+    </div>
+
+    <div class="small-12 medium-3 column">
+      <p>
+        1 de junio <small><i class="icon-angle-right"></i></small><br>
+        <strong>Valoración de proyectos</strong>
+      </p>
+    </div>
+
+    <div class="small-12 medium-4 column">
+      <p>
+        1 de agosto - 15 de septiembre <small><i class="icon-angle-right"></i></small><br>
+        <strong>Votación final ciudadana del proyecto ganador</strong>
+      </p>
     </div>
   </div>
 </div>
@@ -53,6 +85,9 @@
     <p>Una vez abierto el concurso, todos los proyectos que se presenten al concurso serán publicados en la web para que puedan ser debatidos y valorados. Un jurado eligirá cinco de ellos, que serán desarrollados, y posteriormente dos finalistas. Finalmente será la gente de Madrid la que vote entre esos dos decidiendo el proyecto final a ejecutar.</p>
 
     <p>A continuación te ofrecemos diferentes documentos elaborados por el Área de Desarrollo Urbano Sostenible, para que todos tengan la máxima información a la hora de responder las preguntas sobre la reforma. Además encontrarás preguntas frecuentes, así como las actas y archivos relacionadas con el grupo de trabajo.</p>
+
+    <p>Si quieres opinar sobre el proceso hay <%= link_to "un debate abierto",
+    "https://decide.madrid.es/debates/4416" %>.</p>
   </div>
   <div class="small-12 medium-5 column">
     <h4>Preguntas frecuentes</h4>
