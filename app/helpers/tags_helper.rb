@@ -11,18 +11,4 @@ module TagsHelper
     end
   end
 
-  def taggable_counter_field(taggable_type)
-    "#{taggable_type.underscore.pluralize}_count"
-  end
-
-  def tag_cloud(tags, classes, counter_field = :taggings_count)
-    return [] if tags.empty?
-
-    max_count = tags.sort_by(&counter_field).last.send(counter_field).to_f
-
-    tags.each do |tag|
-      index = ((tag.send(counter_field) / max_count) * (classes.size - 1))
-      yield tag, classes[index.nan? ? 0 : index.round]
-    end
-  end
 end
