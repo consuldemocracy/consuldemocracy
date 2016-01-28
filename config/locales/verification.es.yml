@@ -92,9 +92,6 @@ es:
         terms: los términos de acceso
         title: Verificar residencia
         verify_residence: Verificar residencia
-
-
-
     step_1: Residencia
     step_2: SMS de confirmación
     step_3: Verificación final

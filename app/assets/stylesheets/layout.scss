@@ -171,6 +171,14 @@ a {
   position: absolute;
 }
 
+.absolute-survey {
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  width: 100%;
+  z-index: 9;
+}
+
 .back, .icon-angle-left {
   @include back;
 
@@ -217,14 +225,8 @@ a {
   border: 0;
 }
 
-.process {
-  min-height: $line-height*12;
-  p {
-    margin: $line-height 0;
-  }
-}
-
 #drop-help.f-dropdown.content {
+
   @media (min-width: $small-breakpoint) {
     max-width: $line-height*15;
   }
@@ -244,15 +246,18 @@ a {
   font-size: $small-font-size;
 }
 
+.panel {
+  background: white;
+}
+
 // 02. Header
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
 header {
   background: $highlight;
-  border-bottom: 1px solid $border;
 
-  .home-page {
-    padding: $line-height 0;
+  @media (min-width: $small-breakpoint) {
+    border-bottom: 1px solid $border;
   }
 
   .selected {
@@ -320,6 +325,11 @@ header {
       }
     }
   }
+}
+
+.home-page {
+  background: $highlight;
+  padding: $line-height 0;
 }
 
 .contain-to-grid {
@@ -475,6 +485,37 @@ header {
   h1, p {
     color: $highlight-color;
   }
+}
+
+.jumbo-survey, .jumbo-featured {
+
+  @media (min-width: $small-breakpoint) {
+    padding-top: $line-height;
+  }
+
+  h1, h2, .back, .icon-angle-left, .p, a {
+    color: black;
+  }
+
+  a {
+    text-decoration: underline;
+  }
+
+  a.button {
+    background: white;
+    color: $brand;
+    text-decoration: none;
+  }
+}
+
+.jumbo-survey {
+  background: #33DADF;
+  border-bottom: 1px solid #33DADF;
+}
+
+.jumbo-featured {
+  background: $featured;
+  border-bottom: 1px solid $featured;
 }
 
 .top-links {

@@ -1,0 +1,86 @@
+<div class="row-full jumbo-survey">
+  <div class="row">
+    <div class="small-12 column">
+      <%= link_to "/processes_plaza_espana", class: "left back" do %>
+        <i class="icon-angle-left left"></i>
+        <%= t("pages.processes.back") %>
+      <% end %>
+
+      <h1>¡Gracias por completar la encuesta!</h1>
+      <h2>Ahora puedes leer y valorar las respuestas de otros ciudadanos.</h2>
+      <br>
+    </div>
+  </div>
+</div>
+
+<div class="row margin">
+  <div class="survey-comments small-12 medium-9 column">
+    <h3>¿Qué nuevos usos o enfoques de la Plaza te expulsarían de la zona?</h3>
+    <p><%= link_to "Ver todas las respuestas", encuesta_plaza_espana_respuesta_path(id: 16) %></p>
+
+    <section class="comments">
+      <div class="row">
+        <div id="comments" class="small-12 column">
+
+          <% @answers_16_sample.each do |open_answer| %>
+            <div class="row">
+              <div id="comment_23578" class="comment small-12 column">
+                <div class="comment-body">
+                  <div class="comment-user">
+                    <p><%= open_answer.text %></p>
+                  </div>
+
+                  <div id="<%= dom_id(open_answer) %>_reply" class="reply">
+                    <span id="<%= dom_id(open_answer) %>_votes" class="comment-votes left">
+                      <%= render 'open_answers/votes', open_answer: open_answer %>
+                    </span>
+                    <p>&nbsp;</p>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          <% end %>
+
+        </div>
+      </div>
+    </section>
+
+    <h3 class="margin-top">¿Qué servicios, actividades o usos crees que faltan o piensas que sobran?</h3>
+    <p><%= link_to "Ver todas las respuestas", encuesta_plaza_espana_respuesta_path(id: 17) %></p>
+
+    <section class="comments">
+      <div class="row">
+        <div id="comments" class="small-12 column">
+        <% @answers_17_sample.each do |open_answer| %>
+            <div class="row">
+              <div id="comment_23578" class="comment small-12 column">
+                <div class="comment-body">
+                  <div class="comment-user">
+                    <p><%= open_answer.text %></p>
+                  </div>
+
+                  <div id="<%= dom_id(open_answer) %>_reply" class="reply">
+                    <span id="<%= dom_id(open_answer) %>_votes" class="comment-votes left">
+                      <%= render 'open_answers/votes', open_answer: open_answer %>
+                    </span>
+                    <p>&nbsp;</p>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </section>
+
+  <div class="margin-top">
+    <%= link_to "/processes", class: "left back" do %>
+      <i class="icon-angle-left left"></i>
+      Volver a Procesos abiertos
+    <% end %>
+  </div>
+
+  </div>
+</div>

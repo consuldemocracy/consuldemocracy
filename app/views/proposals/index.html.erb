@@ -9,32 +9,36 @@
   <div class="wrap row">
     <div id="proposals" class="proposals-list small-12 medium-9 column">
 
-      <div class="small-12 margin-top search-results">
+      <div class="small-12 search-results">
         <% if @search_terms || @advanced_search_terms %>
-          <h2>
+          <h2 class="margin-top">
             <%= page_entries_info @proposals %>
             <% if !@advanced_search_terms %>
               <%= t("proposals.index.search_results", count: @proposals.size, search_term: @search_terms) %>
             <% end %>
           </h2>
         <% elsif @tag_filter %>
-          <h2>
+          <h2 class="margin-top">
             <%= page_entries_info @proposals %>
             <%= t("proposals.index.filter_topic", count: @proposals.size, topic: @tag_filter) %>
           </h2>
         <% end %>
       </div>
 
+      <%= render "shared/featured_process_banner" %>
+
       <% if @featured_proposals.present? %>
-        <div id="featured-proposals" class="row featured-proposals">
-          <div class="small-12 column">
-            <h2>
-              <%= t("proposals.index.featured_proposals") %>
-            </h2>
+        <div class="margin-top">
+          <div id="featured-proposals" class="row featured-proposals">
+            <div class="small-12 column">
+              <h2>
+                <%= t("proposals.index.featured_proposals") %>
+              </h2>
+            </div>
+            <% @featured_proposals.each do |featured_proposal| %>
+              <%= render "featured_proposal", proposal: featured_proposal %>
+            <% end %>
           </div>
-          <% @featured_proposals.each do |featured_proposal| %>
-            <%= render "featured_proposal", proposal: featured_proposal %>
-          <% end %>
         </div>
       <% end %>
 

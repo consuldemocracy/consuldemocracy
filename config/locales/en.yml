@@ -205,7 +205,6 @@ en:
       open_gov: Open government
       proposals: Proposals
       processes: Open processes
-      see_all: See proposals
       spending_proposals: Spending proposals
   legislation:
     help:
@@ -269,7 +268,7 @@ en:
       tag_category_label: "Categories"
       tags_instructions: "Tag this proposal. You can choose from proposed categories or add your own"
       tags_label: Tags
-      tags_placeholder: Enter the tags you would like to use, separated by commas (',')
+      tags_placeholder: "Enter the tags you would like to use, separated by commas (',')"
     index:
       featured_proposals: Featured
       filter_topic:
@@ -453,6 +452,16 @@ en:
       alt: Icon it gets done
       description: If the proposal is accepted by the majority, the City Council accepts it as its own and it gets done.
       title: It gets done
+    featured:
+      process:
+        link: More information
+        text: Decide how do you wants this new place on your city.
+        title: Reshuffle Plaza de España
+      proposals:
+        link: See proposals
+        text: Create your own proposals and supports those of other citizens.
+        title: Citizen proposals
+    more_information: More information about this page
     highlights: 'Highlights: '
     proposal:
       alt: Icon propose

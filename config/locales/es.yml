@@ -205,7 +205,6 @@ es:
       open_gov: Gobierno %{open}
       proposals: Propuestas
       processes: Procesos abiertos
-      see_all: Ver propuestas
       spending_proposals: Presupuestos ciudadanos
   legislation:
     help:
@@ -453,6 +452,16 @@ es:
       alt: Icono se hace
       description: Si la propuesta es aceptada mayoritariamente, el Ayuntamiento la asume como propia y se hace.
       title: Se hace
+    featured:
+      process:
+        link: Participa
+        text: Decide como quieres que sea este nuevo espacio en tu ciudad.
+        title: Remodelación de Plaza de España
+      proposals:
+        link: Ver propuestas
+        text: Crear tus propias propuestas y apoya las de otros ciudadanos.
+        title: Propuestas ciudadanas
+    more_information: Más información sobre esta página
     highlights: 'Portada: '
     proposal:
       alt: Icono propones

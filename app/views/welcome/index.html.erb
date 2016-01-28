@@ -1,3 +1,20 @@
+<%= render "featured_welcome" %>
+
+<div class="row-full home-page">
+  <div class="row">
+    <div class="small-12 medium-6 column">
+      <h1><%= t("layouts.header.open_city_title") %></h1>
+      <p><%= t("layouts.header.open_city_slogan_html") %>
+      <%= link_to t("welcome.more_information"), page_path('more_information') %></p>
+      <%= link_to t('welcome.featured.proposals.link'), proposals_path, class: "button radius warning" %>
+    </div>
+
+    <div class="show-for-medium-up small-12 medium-6 column text-center">
+      <%= image_tag("icon_home.png", size: "330x240", alt:"", role:"presentation") %>
+    </div>
+  </div>
+</div>
+
 <% cache [locale_and_user_status, @featured_debates, @featured_proposals, 'featured'] do %>
   <section role="main">
     <div class="row text-center margin">
