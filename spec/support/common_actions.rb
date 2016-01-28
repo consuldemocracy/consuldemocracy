@@ -175,4 +175,8 @@ module CommonActions
      create(:debate, :with_confidence_score, cached_votes_up: 80)]
   end
 
+  def tag_names(tag_cloud)
+    tag_cloud.tags.map(&:name)
+  end
+
 end
