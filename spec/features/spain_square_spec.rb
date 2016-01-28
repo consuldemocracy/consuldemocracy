@@ -2,25 +2,67 @@ require 'rails_helper'
 
 feature 'Spain square' do
 
-  scenario 'Fill out survey' do
-    user = create(:user, :level_two)
-    login_as(user)
+  context "Fill out survey" do
 
-    visit root_path
-    click_link "Open processes"
+    scenario "by a verified user" do
+      user = create(:user, :level_two)
+      login_as(user)
 
-    within "#spain-square" do
-      click_link "More information"
+      visit root_path
+      click_link "Open processes"
+
+      within "#spain-square" do
+        click_link "More information"
+      end
+
+      click_link "Decides!"
+
+      expect(page).to have_content "1a. ¿Crees necesario reformar la Plaza de España?"
+
+      fill_in_survey
+      click_button "Enviar respuesta"
+
+      expect(page).to have_content "¡Gracias por completar la encuesta!"
     end
 
-    click_link "Decides!"
+    scenario "by a level 1 user", :js do
+      user = create(:user)
+      login_as(user)
 
-    expect(page).to have_content "Remodeling of the Plaza de España"
+      visit "processes_plaza_espana"
+      click_link "Decides!"
+      expect(page).to have_content "1a. ¿Crees necesario reformar la Plaza de España?"
+      choose('questions_1a_a')
 
-    fill_in_survey
-    click_button "Enviar respuesta"
+      expect(page).to have_content "Solo los usuarios verificados pueden responder a la encuesta, verifica tu cuenta"
 
-    expect(page).to have_content "¡Gracias por completar la encuesta!"
+      click_link "verifica tu cuenta"
+      expect(page).to have_content "Verify residence"
+    end
+
+    scenario "by a user not logged", :js do
+      user = create(:user, sign_in_count: 2)
+
+      visit "processes_plaza_espana"
+      click_link "Decides!"
+
+      expect(page).to have_content "1a. ¿Crees necesario reformar la Plaza de España?"
+
+      choose('questions_1a_a')
+
+      expect(page).to have_content "Solo los usuarios verificados pueden responder a la encuesta, necesitas iniciar sesión o registrarte para continuar."
+
+      click_link "iniciar sesión"
+
+      expect(page).to have_content "Sign in"
+
+      fill_in 'user_email', with: user.email
+      fill_in 'user_password', with: user.password
+      click_button 'Enter'
+
+      expect(page).to have_content "1a. ¿Crees necesario reformar la Plaza de España?"
+    end
+
   end
 
   context "Open Answers" do
