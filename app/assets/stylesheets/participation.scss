@@ -927,8 +927,12 @@
     }
 
     &.featured-two {
-      background: #33DADF image-url('processes_plaza_espana.png') no-repeat;
-      background-position: top right;
+      background: #33DADF;
+
+      @media (min-width: $small-breakpoint) {
+        background: #33DADF image-url('processes_plaza_espana.png') no-repeat;
+        background-position: top right;
+      }
 
       a:hover {
         text-decoration: none;
@@ -942,9 +946,13 @@
 }
 
 .featured-process {
-  background: #33DADF image-url('processes_plaza_espana_small.png') no-repeat;
-  background-position: right;
+  background: #33DADF;
   padding: $line-height/2;
+
+  @media (min-width: $small-breakpoint) {
+    background: #33DADF image-url('processes_plaza_espana_small.png') no-repeat;
+    background-position: right;
+  }
 
   @media (min-width: $small-breakpoint) {
     margin-left: 0 !important;
