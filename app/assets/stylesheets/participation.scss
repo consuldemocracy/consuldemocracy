@@ -976,6 +976,10 @@
 
 .survey {
 
+  .alert-box {
+    margin-bottom: 0;
+  }
+
   form input[type=radio] {
     height: $line-height !important;
     vertical-align: top;
@@ -1127,4 +1131,5 @@
 .survey-timeline-line {
   border-top: 4px solid black;
   color: black;
+  padding-top: $line-height;
 }
