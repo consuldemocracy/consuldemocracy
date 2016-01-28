@@ -27,7 +27,7 @@
   </div>
 
   <div id="survey" data-verified-id="<%= current_user.id if can?(:create, SurveyAnswer) %>" class="survey-questions small-12 medium-9 column">
-    <%= form_tag encuesta_plaza_espana_gracias_path %>
+    <%= form_tag encuesta_plaza_espana_gracias_path, class: "js-enter-disabled" %>
       <article>
         <h3>1a. ¿Crees necesario reformar la Plaza de España?</h3>
         <label>

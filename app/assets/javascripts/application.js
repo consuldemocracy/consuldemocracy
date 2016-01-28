@@ -39,6 +39,7 @@
 //= require annotatable
 //= require advanced_search
 //= require registration_form
+//= require forms
 //= require survey_answers
 
 var initialize_modules = function() {
@@ -54,6 +55,7 @@ var initialize_modules = function() {
   App.Annotatable.initialize();
   App.AdvancedSearch.initialize();
   App.RegistrationForm.initialize();
+  App.Forms.initialize();
   App.SurveyAnswers.initialize();
 };
 
