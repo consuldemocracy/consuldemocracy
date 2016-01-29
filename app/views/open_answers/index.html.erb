@@ -5,15 +5,19 @@
 
 <div class="row-full jumbo-survey">
   <div class="row">
-    <div class="small-12 column">
+    <div class="small-12 medium-8 column">
       <%= link_to "/processes_plaza_espana", class: "left back" do %>
         <i class="icon-angle-left left"></i>
         <%= t("pages.processes.back") %>
       <% end %>
 
-      <h1>¡Gracias por completar la encuesta!</h1>
+      <h1>¡Gracias por completar las preguntas!</h1>
       <h2>Ahora puedes leer y valorar las respuestas de otros ciudadanos.</h2>
       <br>
+    </div>
+    <div class="small-12 medium-4 column text-center margin-top">
+      <h3>Compartir encuesta</h3>
+      <%= social_share_button_tag("Remodelación Plaza de España", :url => "https://decide.madrid.es/encuesta-plaza-espana") %>
     </div>
   </div>
 </div>

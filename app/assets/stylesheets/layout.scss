@@ -506,6 +506,22 @@ header {
     color: $brand;
     text-decoration: none;
   }
+
+  .social-share-button a {
+    color: white;
+
+    &.social-share-button-twitter:hover {
+      color: #40A2D1;
+    }
+
+    &.social-share-button-facebook:hover {
+      color: #354F88;
+    }
+
+    &.social-share-button-google_plus:hover {
+      color: #CE3E26;
+    }
+  }
 }
 
 .jumbo-survey {
