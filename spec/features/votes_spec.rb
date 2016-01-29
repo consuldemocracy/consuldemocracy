@@ -60,12 +60,9 @@ feature 'Votes' do
     end
 
     feature 'Single debate' do
-      background do
-        @debate = create(:debate)
-      end
 
       scenario 'Show no votes' do
-        visit debate_path(@debate)
+        visit debate_path(create(:debate))
 
         expect(page).to have_content "No votes"
 
@@ -83,7 +80,7 @@ feature 'Votes' do
       end
 
       scenario 'Update', :js do
-        visit debate_path(@debate)
+        visit debate_path(create(:debate))
 
         find('.in-favor a').click
         find('.against a').click
@@ -102,7 +99,7 @@ feature 'Votes' do
       end
 
       scenario 'Trying to vote multiple times', :js do
-        visit debate_path(@debate)
+        visit debate_path(create(:debate))
 
         find('.in-favor a').click
         expect(page).to have_content "1 vote"
@@ -119,10 +116,11 @@ feature 'Votes' do
       end
 
       scenario 'Show' do
-        create(:vote, voter: @manuela, votable: @debate, vote_flag: true)
-        create(:vote, voter: @pablo, votable: @debate, vote_flag: false)
+        debate = create(:debate)
+        create(:vote, voter: @manuela, votable: debate, vote_flag: true)
+        create(:vote, voter: @pablo, votable: debate, vote_flag: false)
 
-        visit debate_path(@debate)
+        visit debate_path(debate)
 
         expect(page).to have_content "2 votes"
 
@@ -138,7 +136,7 @@ feature 'Votes' do
       end
 
       scenario 'Create from debate show', :js do
-        visit debate_path(@debate)
+        visit debate_path(create(:debate))
 
         find('.in-favor a').click
 
@@ -156,6 +154,7 @@ feature 'Votes' do
       end
 
       scenario 'Create in index', :js do
+        create(:debate)
         visit debates_path
 
         within("#debates") do
