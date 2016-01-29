@@ -13,6 +13,11 @@
             <span class="number"><%= @visits %></span>
           </p>
 
+          <p class="featured">
+            <%= t "admin.stats.show.summary.surveys" %><br>
+            <span class="number"><%= @surveys %></span>
+          </p>
+
           <p>
             <%= t "admin.stats.show.summary.debates" %><br>
             <span class="number"><%= @debates %></span>
@@ -25,17 +30,17 @@
             <%= t "admin.stats.show.summary.comments" %><br>
             <span class="number"><%= @comments %></span>
           </p>
-
-          <p class="featured">
-            <%= t "admin.stats.show.summary.surveys" %><br>
-            <span class="number"><%= @surveys %></span>
-          </p>
         </div>
 
         <div class="small-12 medium-3 column">
           <p class="featured">
             <%= t "admin.stats.show.summary.proposal_votes" %><br>
             <span class="number"><%= @proposal_votes %><br></span>
+          </p>
+
+          <p class="featured">
+            <%= t "admin.stats.show.summary.open_answer_votes" %><br>
+            <span class="number"><%= @open_answer_votes %><br></span>
           </p>
 
           <p>
