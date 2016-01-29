@@ -22,7 +22,7 @@ feature 'Spain square' do
       fill_in_survey
       click_button "Enviar respuesta"
 
-      expect(page).to have_content "¡Gracias por completar la encuesta!"
+      expect(page).to have_content "¡Gracias por completar las preguntas!"
     end
 
     scenario "by a level 1 user", :js do
@@ -79,7 +79,7 @@ feature 'Spain square' do
 
         fill_in_survey
         click_button "Enviar respuesta"
-        expect(page).to have_content "¡Gracias por completar la encuesta!"
+        expect(page).to have_content "¡Gracias por completar las preguntas!"
       end
 
       scenario 'Show' do
