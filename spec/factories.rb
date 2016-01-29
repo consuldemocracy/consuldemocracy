@@ -265,6 +265,10 @@ FactoryGirl.define do
     end
   end
 
+  factory :survey_answer do
+    user
+  end
+
   factory :tag, class: 'ActsAsTaggableOn::Tag' do
     sequence(:name) { |n| "Tag #{n} name" }
 
