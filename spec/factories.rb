@@ -265,6 +265,9 @@ FactoryGirl.define do
     end
   end
 
+  factory :open_answer do
+  end
+
   factory :survey_answer do
     user
   end

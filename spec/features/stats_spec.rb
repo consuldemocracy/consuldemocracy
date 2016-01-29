@@ -36,12 +36,16 @@ feature 'Stats' do
       comment = create(:comment)
       3.times { create(:vote, votable: comment) }
 
+      open_answer = create(:open_answer)
+      4.times { create(:vote, votable: open_answer) }
+
       visit admin_stats_path
 
       expect(page).to have_content "Debate votes 1"
       expect(page).to have_content "Proposal votes 2"
       expect(page).to have_content "Comment votes 3"
-      expect(page).to have_content "Total votes 6"
+      expect(page).to have_content "Open answer votes 4"
+      expect(page).to have_content "Total votes 10"
     end
 
     scenario 'Users' do
