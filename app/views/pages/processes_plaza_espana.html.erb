@@ -1,26 +1,7 @@
+<% provide :title, "Remodelación de Plaza España" %>
 <% provide :social_media_meta_tags do %>
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:site" content="@abriendomadrid" />
-  <meta name="twitter:title" content="Remodelación de Plaza España" />
-  <meta name="twitter:description" content="Contamos contigo para que decidas como debe ser este nuevo espacio en tu ciudad. Lo que se decida mayoritariamente será incorporado al pliego del concurso internacional de ideas." />
-  <meta name="twitter:image" content="<%= image_url '/social-media-plazaesp.png' %>" />
-  <!-- Facebook OG -->
-  <meta id="ogtitle" property="og:title" content="Remodelación de Plaza España"/>
-  <% if Setting['url'] %>
-    <meta property="article:publisher" content=<%= Setting['url'] %>/>
-  <% end %>
-  <% if Setting['facebook_handle'] %>
-    <meta property="article:author" content="https://www.facebook.com/<%= Setting['facebook_handle'] %>"/>
-  <% end %>
-  <meta property="og:type" content="article"/>
-  <meta id="ogurl" property="og:url" content="https://decide.madrid.es/processes_plaza_espana"/>
-  <meta id="ogimage" property="og:image" content="<%= image_url '/social-media-plazaesp.png' %>"/>
-  <meta property="og:site_name" content="Decide Madrid"/>
-  <meta id="ogdescription" property="og:description" content="Contamos contigo para que decidas como debe ser este nuevo espacio en tu ciudad. Lo que se decida mayoritariamente será incorporado al pliego del concurso internacional de ideas."/>
-  <meta property="fb:app_id" content="1662598980652932"/>
+  <%= render "shared/social_media_meta_tags_plaza_espana" %>
 <% end %>
-
 
 <div class="row-full jumbo-survey">
   <div class="row">
