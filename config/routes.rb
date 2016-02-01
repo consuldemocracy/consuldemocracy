@@ -38,9 +38,9 @@ Rails.application.routes.draw do
       put :flag
       put :unflag
     end
-
     collection do
       get :map
+      get :suggest
     end
   end
 
@@ -51,9 +51,9 @@ Rails.application.routes.draw do
       put :flag
       put :unflag
     end
-
     collection do
       get :map
+      get :suggest
     end
   end
 

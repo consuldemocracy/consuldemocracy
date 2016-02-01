@@ -41,6 +41,7 @@
 //= require registration_form
 //= require forms
 //= require survey_answers
+//= require suggest
 
 var initialize_modules = function() {
   App.Comments.initialize();
@@ -57,6 +58,7 @@ var initialize_modules = function() {
   App.RegistrationForm.initialize();
   App.Forms.initialize();
   App.SurveyAnswers.initialize();
+  App.Suggest.initialize();
 };
 
 $(function(){

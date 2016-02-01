@@ -23,6 +23,9 @@ module Abilities
       can :create, Debate
       can :create, Proposal
 
+      can :suggest, Debate
+      can :suggest, Proposal
+      
       can [:flag, :unflag], Comment
       cannot [:flag, :unflag], Comment, user_id: user.id
 
