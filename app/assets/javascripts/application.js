@@ -39,6 +39,7 @@
 //= require annotatable
 //= require advanced_search
 //= require registration_form
+//= require suggest
 
 var initialize_modules = function() {
   App.Comments.initialize();
@@ -53,6 +54,7 @@ var initialize_modules = function() {
   App.Annotatable.initialize();
   App.AdvancedSearch.initialize();
   App.RegistrationForm.initialize();
+  App.Suggest.initialize();
 };
 
 $(function(){

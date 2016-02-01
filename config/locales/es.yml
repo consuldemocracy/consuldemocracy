@@ -26,7 +26,8 @@ es:
       user_permission_votes: Participar en las votaciones finales*
       username_label: Nombre de usuario
       verified_account: Cuenta verificada
-      verify_my_account: Verificar mi cuenta
+      verify_my_account: Verificar mi cuentaquer
+
   application:
     close: Cerrar
     menu: Menú
@@ -121,6 +122,12 @@ es:
       recommendation_two: Cualquier debate o comentario que implique una acción ilegal será eliminado, también los que tengan la intención de sabotear los espacios de debate, todo lo demás está permitido.
       recommendations_title: Recomendaciones para crear un debate
       start_new: Empezar un debate
+      suggestions:
+        found: 
+          one: "Existe un debate con el término '%{query}', puedes participar en él en vez de abrir uno nuevo."
+          other: "Existen debates con el término '%{query}', puedes participar en ellos en vez de abrir uno nuevo."
+        message: "Estás viendo %{limit} de %{count} debates que contienen el término '%{query}'" 
+        see_all: "Ver todos"    
     show:
       author_deleted: Usuario eliminado
       back_link: Volver
@@ -300,6 +307,12 @@ es:
       recommendation_two: Cualquier propuesta o comentario que implique una acción ilegal será eliminada, también las que tengan la intención de sabotear los espacios de propuesta, todo lo demás está permitido.
       recommendations_title: Recomendaciones para crear una propuesta
       start_new: Crear una propuesta
+      suggestions:
+        found:
+          one: "Existe una propuesta con el término '%{query}', puedes contribuir en ella en vez de crear una nueva."
+          other: "Existen propuestas con el término '%{query}', puedes contribuir en ellas en vez de crear una nueva."
+        message: "Estás viendo %{limit} de %{count} propuestas que contienen el término '%{query}'" 
+        see_all: "Ver todas"
     proposal:
       already_supported: "¡Ya has apoyado esta propuesta, compártela!"
       comments:

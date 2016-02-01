@@ -1,0 +1,22 @@
+<div class="small-12 column" >
+  <% if @search_terms && @resources_count > 0 %> 
+    <div class="alert-box radius warning">
+      <p class="note-marked">
+        <%= t("proposals.new.suggestions.found", count: @resources_count, query: @search_terms)%> 
+      </p>
+      <ul>
+        <% @proposals.take(@reg_show).each do |proposal| %>
+          <li> <%= link_to proposal.title, proposal %> </li>
+        <% end %>   
+      </ul>
+      <% if @resources_count > @reg_show %>   
+      <p class="note-marked">
+        <%= t("proposals.new.suggestions.message", count: @resources_count, 
+                                      query: @search_terms,
+                                      limit: @reg_show) %>
+        <%= link_to t("proposals.new.suggestions.see_all"), proposals_path(search: @search_terms)%>
+      </p>
+      <% end %>
+    </div>
+  <% end %>
+</div>
