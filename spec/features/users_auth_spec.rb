@@ -125,6 +125,21 @@ feature 'Users' do
         expect(page).to have_field('user_email', with: 'manueladelascarmenas@example.com')
       end
 
+      scenario 'Cancelling signup' do
+        OmniAuth.config.add_mock(:twitter, twitter_hash)
+
+        visit '/'
+        click_link 'Register'
+        click_link 'Sign up with Twitter'
+
+        expect(current_path).to eq(finish_signup_path)
+        click_link 'Cancel login'
+
+
+        visit '/'
+        expect_to_not_be_signed_in
+      end
+
       scenario 'Sign in, user was already signed up with OAuth' do
         user = create(:user, email: 'manuela@madrid.es', password: 'judgementday')
         create(:identity, uid: '12345', provider: 'twitter', user: user)
