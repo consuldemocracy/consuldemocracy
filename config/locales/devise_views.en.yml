@@ -107,6 +107,7 @@ en:
           update_submit: Update
           waiting_for: 'Awaiting confirmation of:'
         new:
+          cancel: Cancel login
           email_label: Email
           organization_signup: Do you represent an organisation or collective? %{signup_link}
           organization_signup_link: Sign up here

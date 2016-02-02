@@ -16,4 +16,7 @@
   <% end %>
 
   <%= f.submit t("devise_views.users.registrations.new.submit"), class: 'button radius expand' %>
+  <div class="text-center">
+    <%= link_to t("devise_views.users.registrations.new.cancel"), destroy_user_session_path, class: 'delete', method: :delete %>
+  </div>
 <% end %>
