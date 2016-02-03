@@ -15,6 +15,7 @@ class DebatesController < ApplicationController
   has_orders %w{most_voted newest oldest}, only: :show
 
   load_and_authorize_resource
+  helper_method :resource_model, :resource_name
   respond_to :html, :js
 
   def vote
