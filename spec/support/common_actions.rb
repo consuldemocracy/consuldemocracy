@@ -116,6 +116,10 @@ module CommonActions
     expect(find('.top-bar')).to have_content 'My account'
   end
 
+  def expect_to_not_be_signed_in
+    expect(find('.top-bar')).to_not have_content 'My account'
+  end
+
   def select_date(values, selector)
     selector = selector[:from]
     day, month, year = values.split("-")
