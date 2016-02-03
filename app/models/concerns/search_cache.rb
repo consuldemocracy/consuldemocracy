@@ -20,11 +20,16 @@ module SearchCache
   end
 
   def set_tsvector(value, weight)
-    "setweight(to_tsvector('spanish', unaccent(coalesce(#{quote(value)}, ''))), #{quote(weight)})"
+    "setweight(to_tsvector('spanish', unaccent(coalesce(#{quote(strip_html(value))}, ''))), #{quote(weight)})"
   end
 
   def quote(value)
     ActiveRecord::Base.connection.quote(value)
   end
+
+  def strip_html(value)
+    ActionController::Base.helpers.sanitize(value, tags: [])
+  end
+
 
 end

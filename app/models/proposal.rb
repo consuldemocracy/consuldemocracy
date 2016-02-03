@@ -61,16 +61,12 @@ class Proposal < ActiveRecord::Base
       tag_list.join(' ') => 'B',
       geozone.try(:name) => 'B',
       summary            => 'C',
-      description_text   => 'D'
+      description        => 'D'
     }
   end
 
   def self.search(terms)
     self.pg_search(terms)
-  end
-
-  def description_text
-    ActionController::Base.helpers.sanitize(description, tags: [])
   end
 
   def description
