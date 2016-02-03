@@ -414,22 +414,21 @@ describe Proposal do
     context "stemming" do
 
       it "searches word stems" do
-        proposal = create(:proposal, summary: 'biblioteca')
+        proposal = create(:proposal, summary: 'Economía')
 
-        results = Proposal.search('bibliotecas')
+        results = Proposal.search('economía')
         expect(results).to eq([proposal])
 
-        results = Proposal.search('bibliotec')
+        results = Proposal.search('econo')
         expect(results).to eq([proposal])
 
-        results = Proposal.search('biblioteco')
+        results = Proposal.search('eco')
         expect(results).to eq([proposal])
       end
 
     end
 
     context "accents" do
-
       it "searches with accents" do
         proposal = create(:proposal, summary: 'difusión')
 
@@ -439,12 +438,14 @@ describe Proposal do
         proposal2 = create(:proposal, summary: 'estadisticas')
         results = Proposal.search('estadísticas')
         expect(results).to eq([proposal2])
-      end
 
+        proposal3 = create(:proposal, summary: 'público')
+        results = Proposal.search('publico')
+        expect(results).to eq([proposal3])
+      end
     end
 
     context "case" do
-
       it "searches case insensite" do
         proposal = create(:proposal, title: 'SHOUT')
 
@@ -455,24 +456,24 @@ describe Proposal do
         results = Proposal.search("SCREAM")
         expect(results).to eq([proposal2])
       end
-
     end
 
     context "tags" do
-
       it "searches by tags" do
         proposal = create(:proposal, tag_list: 'Latina')
 
         results = Proposal.search('Latina')
         expect(results.first).to eq(proposal)
-      end
 
+        results = Proposal.search('Latin')
+        expect(results.first).to eq(proposal)
+      end
     end
 
     context "order" do
 
       it "orders by weight" do
-        proposal_question    = create(:proposal, question:    'stop corruption')
+        proposal_question    = create(:proposal,  question:    'stop corruption')
         proposal_title       = create(:proposal,  title:       'stop corruption')
         proposal_description = create(:proposal,  description: 'stop corruption')
         proposal_summary     = create(:proposal,  summary:     'stop corruption')

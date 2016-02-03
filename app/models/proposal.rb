@@ -45,17 +45,9 @@ class Proposal < ActiveRecord::Base
   scope :last_week,            -> { where("created_at >= ?", 7.days.ago)}
 
   pg_search_scope :pg_search, {
-    against: {
-      title:       'A',
-      question:    'B',
-      summary:     'C',
-      description: 'D'
-    },
-    associated_against: {
-      tags: :name
-    },
+    against: :ignored, # not used since the using: option has a tsvector_column
     using: {
-      tsearch: { dictionary: "spanish", tsvector_column: 'tsv' }
+      tsearch: { dictionary: "spanish", tsvector_column: 'tsv', prefix: true }
     },
     ignoring: :accents,
     ranked_by: '(:tsearch)',
@@ -63,16 +55,14 @@ class Proposal < ActiveRecord::Base
   }
 
   def searchable_values
-    values = {
-      title       => 'A',
-      question    => 'B',
-      summary     => 'C',
-      description => 'D'
+    { title              => 'A',
+      question           => 'B',
+      author.username    => 'B',
+      tag_list.join(' ') => 'B',
+      geozone.try(:name) => 'B',
+      summary            => 'C',
+      description        => 'D'
     }
-    tag_list.each{ |tag| values[tag] = 'D' }
-    values[author.username] = 'D'
-    values[geozone.name] = 'D' if geozone.present?
-    values
   end
 
   def self.search(terms)

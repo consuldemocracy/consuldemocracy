@@ -29,16 +29,16 @@ module CommentableActions
     set_resource_instance
   end
 
-  def suggest 
-    @resources = @search_terms.present? ? resource_model.search(@search_terms).sort_by_confidence_score: nil
+  def suggest
+    @resources = @search_terms.present? ? resource_model.search(@search_terms) : nil
     set_resources_instance
-    if @resources then 
+    if @resources
       @resources_count =  @resources.count
       @reg_show      = 5
       render layout: false
-    end   
-  end  
-  
+    end
+  end
+
   def create
     @resource = resource_model.new(strong_params)
     @resource.author = current_user
