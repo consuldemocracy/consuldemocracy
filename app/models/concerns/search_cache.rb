@@ -13,11 +13,14 @@ module SearchCache
   private
 
   def searchable_values_sql
-    searchable_values.collect { |value, weight| set_tsvector(value, weight) }.join(" || ")
+    searchable_values
+      .select{ |k,_| k.present? }
+      .collect{ |value, weight| set_tsvector(value, weight) }
+      .join(" || ")
   end
 
   def set_tsvector(value, weight)
-    "setweight(to_tsvector('spanish', coalesce(#{quote(value)}, '')), #{quote(weight)})"
+    "setweight(to_tsvector('spanish', unaccent(coalesce(#{quote(value)}, ''))), #{quote(weight)})"
   end
 
   def quote(value)
