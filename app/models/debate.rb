@@ -6,6 +6,7 @@ class Debate < ActiveRecord::Base
   include Measurable
   include Sanitizable
   include PgSearch
+  include SearchCache
   include Filterable
 
   apply_simple_captcha
@@ -41,20 +42,22 @@ class Debate < ActiveRecord::Base
   visitable # Ahoy will automatically assign visit_id on create
 
   pg_search_scope :pg_search, {
-    against: {
-      title:       'A',
-      description: 'B'
-    },
-    associated_against: {
-      tags: :name
-    },
+    against: :ignored, # not used since the using: option has a tsvector_column
     using: {
-      tsearch: { dictionary: "spanish" },
+      tsearch: { dictionary: "spanish", tsvector_column: 'tsv', prefix: true }
     },
     ignoring: :accents,
     ranked_by: '(:tsearch)',
     order_within_rank: "debates.cached_votes_up DESC"
   }
+
+  def searchable_values
+    { title              => 'A',
+      author.username    => 'B',
+      tag_list.join(' ') => 'B',
+      description        => 'D'
+    }
+  end
 
   def description
     super.try :html_safe

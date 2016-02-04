@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160126090634) do
+ActiveRecord::Schema.define(version: 20160204134022) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -120,6 +120,7 @@ ActiveRecord::Schema.define(version: 20160126090634) do
     t.integer  "confidence_score",                         default: 0
     t.string   "external_link",                limit: 100
     t.integer  "geozone_id"
+    t.tsvector "tsv"
   end
 
   add_index "debates", ["author_id", "hidden_at"], name: "index_debates_on_author_id_and_hidden_at", using: :btree
@@ -134,6 +135,7 @@ ActiveRecord::Schema.define(version: 20160126090634) do
   add_index "debates", ["hidden_at"], name: "index_debates_on_hidden_at", using: :btree
   add_index "debates", ["hot_score"], name: "index_debates_on_hot_score", using: :btree
   add_index "debates", ["title"], name: "index_debates_on_title", using: :btree
+  add_index "debates", ["tsv"], name: "index_debates_on_tsv", using: :gin
 
   create_table "delayed_jobs", force: :cascade do |t|
     t.integer  "priority",   default: 0, null: false
