@@ -55,8 +55,13 @@ class Debate < ActiveRecord::Base
     { title              => 'A',
       author.username    => 'B',
       tag_list.join(' ') => 'B',
+      geozone.try(:name) => 'B',
       description        => 'D'
     }
+  end
+
+  def self.search(terms)
+    self.pg_search(terms)
   end
 
   def description
@@ -122,15 +127,6 @@ class Debate < ActiveRecord::Base
   def calculate_confidence_score
     self.confidence_score = ScoreCalculator.confidence_score(cached_votes_total,
                                                              cached_votes_up)
-  end
-
-  def self.search(terms)
-    return none unless terms.present?
-
-    debate_ids = where("debates.title ILIKE ? OR debates.description ILIKE ?",
-                       "%#{terms}%", "%#{terms}%").pluck(:id)
-    tag_ids = tagged_with(terms, wild: true, any: true).pluck(:id)
-    where(id: [debate_ids, tag_ids].flatten.compact)
   end
 
   def after_hide
