@@ -3,7 +3,7 @@
     <div class="row">
       <%= render "shared/locale_switcher" %>
       <div class="external-links">
-        <%= link_to Setting['org_name'], root_path, class: ("selected" unless current_page?("/opendata")) %>&nbsp;|
+        <%= link_to setting['org_name'], root_path, class: ("selected" unless current_page?("/opendata")) %>&nbsp;|
         <%= link_to t("layouts.header.external_link_transparency"), t("layouts.header.external_link_transparency_url") %>&nbsp;|
         <%= link_to t("layouts.header.external_link_opendata"), "/opendata", class: ("selected" if current_page?("/opendata")) %>
       </div>
@@ -21,7 +21,7 @@
               <%= t("layouts.header.open_gov", open: "#{t('layouts.header.open')}") %> <span>|</span>
               <span class="logo-site"><%= t("layouts.header.open_data") %></span>
             <% else %>
-               <%= Setting['org_name'] %>
+               <%= setting['org_name'] %>
             <% end %>
           <% end %>
         </li>
@@ -43,8 +43,8 @@
             <%= link_to t("layouts.header.spending_proposals"), spending_proposals_path, class: ("active" if controller_name == "spending_proposals") %>
           <% end %>
           <%= link_to t("layouts.header.more_information"), page_path('more_information'), class: ("active" if current_page?("/more_information"))  %>
-          <% if Setting['blog_url'] %>
-            <%= link_to Setting['blog_url'], target: "_blank" do %>
+          <% if setting['blog_url'] %>
+            <%= link_to setting['blog_url'], target: "_blank" do %>
               <%= t("layouts.header.external_link_blog") %>
               <i class="icon-external"></i>
             <% end %>

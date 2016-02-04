@@ -5,7 +5,6 @@ describe GeozonesHelper do
   describe "#geozones_name" do
     let(:geozone) { create :geozone }
 
-
     it "returns geozone name if present" do
       spending_proposal = create(:spending_proposal, geozone: geozone)
       expect(geozone_name(spending_proposal)).to eq geozone.name
