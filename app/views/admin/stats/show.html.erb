@@ -12,12 +12,10 @@
             <%= t "admin.stats.show.summary.visits" %><br>
             <span class="number"><%= number_with_delimiter(@visits) %></span>
           </p>
-
           <p class="featured">
             <%= t "admin.stats.show.summary.surveys" %><br>
             <span class="number"><%= number_with_delimiter(@surveys) %></span>
           </p>
-
           <p>
             <%= t "admin.stats.show.summary.debates" %><br>
             <span class="number"><%= number_with_delimiter(@debates) %></span>
@@ -87,11 +85,6 @@
             <span class="number"><%= number_with_delimiter(@user_level_three) %></span>
           </p>
         </div>
-      </div>
-
-      <div class="small-12">
-        <h2><%= t "admin.stats.show.combined_title" %></h2>
-        <%= events_chart_tag @event_types.keys, id: 'combined' %>
       </div>
 
       <div class="small-12">

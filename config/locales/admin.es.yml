@@ -152,7 +152,6 @@ es:
         geozone: "Ámbito"
     stats:
       show:
-        combined_title: Combinado
         stats_title: Estadísticas
         summary:
           comment_votes: Votos en comentarios

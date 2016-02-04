@@ -6,15 +6,15 @@
 <meta name="twitter:image" content="<%= image_url '/social-media-icon.png' %>" />
 <!-- Facebook OG -->
 <meta id="ogtitle" property="og:title" content="<%= social_title %>"/>
-<% if Setting['url'] %>
-  <meta property="article:publisher" content=<%= Setting['url'] %>/>
+<% if setting['url'] %>
+  <meta property="article:publisher" content=<%= setting['url'] %>/>
 <% end %>
-<% if Setting['facebook_handle'] %>
-  <meta property="article:author" content="https://www.facebook.com/<%= Setting['facebook_handle'] %>"/>
+<% if setting['facebook_handle'] %>
+  <meta property="article:author" content="https://www.facebook.com/<%= setting['facebook_handle'] %>"/>
 <% end %>
 <meta property="og:type" content="article"/>
 <meta id="ogurl" property="og:url" content="<%= social_url %>"/>
 <meta id="ogimage" property="og:image" content="<%= image_url '/social-media-icon.png' %>"/>
-<meta property="og:site_name" content="<%= Setting['org_name'] %>"/>
+<meta property="og:site_name" content="<%= setting['org_name'] %>"/>
 <meta id="ogdescription" property="og:description" content="<%= social_description %>"/>
 <meta property="fb:app_id" content="<%= Rails.application.secrets.facebook_key %>"/>

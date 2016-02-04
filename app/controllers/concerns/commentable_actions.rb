@@ -30,13 +30,8 @@ module CommentableActions
   end
 
   def suggest
+    @limit = 5
     @resources = @search_terms.present? ? resource_model.search(@search_terms) : nil
-    set_resources_instance
-    if @resources
-      @resources_count =  @resources.count
-      @reg_show      = 5
-      render layout: false
-    end
   end
 
   def create

@@ -121,12 +121,6 @@ en:
       recommendation_two: Any debate or comment suggesting illegal action will be deleted, as well as those intending to sabotage the debate spaces. Anything else is allowed.
       recommendations_title: Recommendations for creating a debate
       start_new: Start a debate
-      suggestions:
-        found: 
-          one: "There is a debate with the term '%{query}', you can participate in it instead of opening a new one."
-          other: "There are debates with the term '%{query}', you can participate in them instead of opening a new one."
-        message: "You are seeing %{limit} of %{count} debates containing the term '%{query}'" 
-        see_all: "See all"
     show:
       author_deleted: User deleted
       back_link: Go back
@@ -307,12 +301,6 @@ en:
       recommendation_two: Any proposal or comment suggesting illegal action will be deleted, as well as those intending to sabotage the debate spaces. Anything else is allowed.
       recommendations_title: Recommendations for creating a proposal
       start_new: Create new proposal
-      suggestions:
-        found: 
-          one: "There is a proposal with the term '%{query}', you can contribute to it instead of creating a new"
-          other: "There are proposals with the term '%{query}', you can contribute to them instead of creating a new"
-        message: "You are seeing %{limit} of %{count} proposals containing the term '%{query}'" 
-        see_all: "See all"
     proposal:
       already_supported: You have already supported this proposal. Share it!
       comments:
@@ -377,6 +365,19 @@ en:
     flag: Flag as inappropriate
     print:
       print_button: Print this info
+    suggest:
+      debate:
+        found:
+          one: "There is a debate with the term '%{query}', you can participate in it instead of opening a new one."
+          other: "There are debates with the term '%{query}', you can participate in them instead of opening a new one."
+        message: "You are seeing %{limit} of %{count} debates containing the term '%{query}'"
+        see_all: "Ver todos"
+      proposal:
+        found:
+          one: "There is a proposal with the term '%{query}', you can contribute to it instead of creating a new"
+          other: "There are proposals with the term '%{query}', you can contribute to them instead of creating a new"
+        message: "You are seeing %{limit} of %{count} proposals containing the term '%{query}'"
+        see_all: "See all"
     tags_cloud:
       tags: Trending
       districts: "Districts"
