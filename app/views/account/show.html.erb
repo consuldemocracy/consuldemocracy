@@ -73,7 +73,7 @@
             <li><i class="icon-check"></i>&nbsp;<%= t("account.show.user_permission_debates") %></li>
             <li><i class="icon-check"></i>&nbsp;<%= t("account.show.user_permission_proposal") %></li>
             <li>
-              <% if current_user.level_two_verified? || current_user.level_three_verified? %>
+              <% if current_user.level_two_or_three_verified? %>
                 <i class="icon-check"></i>
               <% else %>
                 <i class="icon-x"></i>
