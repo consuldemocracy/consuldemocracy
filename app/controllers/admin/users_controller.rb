@@ -5,6 +5,7 @@ class Admin::UsersController < Admin::BaseController
 
   def index
     @users = User.only_hidden.send(@current_filter).page(params[:page])
+    search
   end
 
   def show
@@ -24,6 +25,11 @@ class Admin::UsersController < Admin::BaseController
     redirect_to request.query_parameters.merge(action: :index)
   end
 
+  def search
+    if params[:search_name].present?
+      @users = @users.where("username ILIKE?", "%#{params[:search_name]}%").page(params[:page])
+    end
+  end
   private
 
     def load_user
@@ -31,3 +37,4 @@ class Admin::UsersController < Admin::BaseController
     end
 
 end
+

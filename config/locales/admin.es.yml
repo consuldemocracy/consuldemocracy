@@ -180,7 +180,9 @@ es:
       update: Actualizar Tema
     users:
       index:
-        filter: Filtro
+        search_placeholder: Buscar por Nombre
+        search: Buscar
+        filter: Filtro        
         filters:
           all: Todos
           with_confirmed_hide: Confirmados

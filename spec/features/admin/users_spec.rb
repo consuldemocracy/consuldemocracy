@@ -94,4 +94,7 @@ feature 'Admin users' do
     expect(current_url).to include('page=2')
   end
 
+
+  
+
 end
