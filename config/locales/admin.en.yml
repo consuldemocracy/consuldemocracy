@@ -152,7 +152,6 @@ en:
         geozone: Scope
     stats:
       show:
-        combined_title: Combined
         stats_title: Stats
         summary:
           comment_votes: Comment votes
