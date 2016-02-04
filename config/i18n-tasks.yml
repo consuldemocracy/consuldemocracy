@@ -133,6 +133,7 @@ ignore_unused:
   - 'notifications.index.replies_to*'
   - 'helpers.page_entries_info.*' # kaminari
   - 'views.pagination.*' # kaminari
+  - 'shared.suggest.*'
 # - '{devise,kaminari,will_paginate}.*'
 # - 'simple_form.{yes,no}'
 # - 'simple_form.{placeholders,hints,labels}.*'
