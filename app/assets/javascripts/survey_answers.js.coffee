@@ -6,4 +6,8 @@ App.SurveyAnswers =
       $(".survey-questions").on
         click: (event) ->
           event.preventDefault();
-          $("#login_required").show()
+          $alert = $("#login_required")
+          if $alert.is(":visible")
+            $("#login_required_text").effect("shake")
+          else
+            $alert.show()
