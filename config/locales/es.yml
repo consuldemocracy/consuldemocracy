@@ -151,7 +151,6 @@ es:
     proposal: la propuesta
     spending_proposal: la propuesta de gasto
     user: la cuenta
-    verification/letter: la verificación
     verification/sms: el teléfono
   geozones:
     none: Toda la ciudad
