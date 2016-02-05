@@ -1,10 +1,10 @@
-<h2><%= t("admin.debates.index.title") %></h2>
+<h2><%= t("admin.debates.search.title") %></h2>
 
 <!-- Search debates -->
 <%= form_for(Debate.new, url: search_admin_debates_path, method: :get) do |f| %>
   <div class="row">
     <div class="small-12 medium-6 column">
-      <%= text_field_tag :term, params[:term], placeholder: t("admin.debates.index.search_placeholder") %>
+      <%= text_field_tag :term,  params[:term], placeholder: t("admin.debates.index.search_placeholder") %>
     </div>
     <div class="form-inline small-12 medium-6 column">
       <%= f.submit t("admin.debates.index.search"), class: "button radius success" %>
@@ -12,9 +12,6 @@
   </div>
 <% end %>
 <!-- /. Search debates -->
-
-
-<%= render 'shared/filter_subnav', i18n_namespace: "admin.debates.index" %>
 
 <h3><%= page_entries_info @debates %></h3>
 

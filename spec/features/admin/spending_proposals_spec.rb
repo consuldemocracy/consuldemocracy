@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 feature 'Admin spending proposals' do
-
   background do
     admin = create(:administrator)
     login_as(admin.user)
@@ -142,4 +141,43 @@ feature 'Admin spending proposals' do
     expect(spending_proposal.reload).to be_rejected
   end
 
+  context "Search" do
+
+    background do
+      spending_proposal = create(:spending_proposal, geozone: create(:geozone))
+      spending_proposal = create(:spending_proposal, 
+                title: 'Testing spending proposal', 
+                description: 'Testing spending proposal', 
+                geozone: create(:geozone) ,              
+                external_url: 'http://http://skyscraperpage.com/')
+    end
+
+    scenario "The search is not running if search term is empty" do
+      visit admin_spending_proposals_path
+      fill_in "term", with: "      "
+      click_button "Search"
+      expect(current_path).to eq(admin_spending_proposals_path)
+      expect(page).to have_content("Testing spending proposal")
+    end
+
+    scenario "returns no results if search term does not exist" do
+      visit admin_spending_proposals_path
+
+      fill_in "term", with: "Prueba"
+      click_button "Search"
+      expect(current_path).to eq(search_admin_spending_proposals_path)
+      expect(page).to_not have_content("Prueba")
+      expect(page).to have_content("spending proposals cannot be found")
+    end
+    
+    scenario "finds by title" do
+      visit admin_spending_proposals_path
+
+      fill_in "term", with: "Testing"
+      click_button "Search"
+
+      expect(current_path).to eq(search_admin_spending_proposals_path)
+      expect(page).to have_content("Testing spending proposal")
+    end
+  end
 end
