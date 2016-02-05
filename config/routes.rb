@@ -94,6 +94,7 @@ Rails.application.routes.draw do
     resource :email, controller: "email", only: [:new, :show, :create]
     resource :letter, controller: "letter", only: [:new, :create, :show, :edit, :update]
   end
+  get "/verifica", to: "verification/letter#edit"
 
   namespace :admin do
     root to: "dashboard#index"
@@ -233,13 +234,26 @@ Rails.application.routes.draw do
     resources :spending_proposals, only: [:new, :create, :show]
   end
 
+  resources :survey_answers, only: [:new, :create]
+
+  resources :open_answers, only: [:show, :index] do
+    member do
+      post :vote
+    end
+  end
+
+  get "encuesta-plaza-espana", to: "survey_answers#new", as: :encuesta_plaza_espana
+  post "encuesta-plaza-espana/gracias", to: "survey_answers#create", as: :encuesta_plaza_espana_gracias
+  get "encuesta-plaza-espana/respuestas", to: "open_answers#index", as: :encuesta_plaza_espana_respuestas
+  get "encuesta-plaza-espana/respuesta/:id", to: "open_answers#show", as: :encuesta_plaza_espana_respuesta
+
   if Rails.env.development?
     mount LetterOpenerWeb::Engine, at: "/letter_opener"
   end
 
   mount Tolk::Engine => '/translate', :as => 'tolk'
 
-  # static pages
+  get "ordenanza-de-transparencia", to: "legislations#show", id: 1, as: :ordenanza_transparencia
   get '/blog' => redirect("http://diario.madrid.es/participa/")
   resources :pages, path: '/', only: [:show]
 end

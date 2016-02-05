@@ -6,6 +6,12 @@
         <%= link_to setting['org_name'], root_path, class: ("selected" unless current_page?("/opendata")) %>&nbsp;|
         <%= link_to t("layouts.header.external_link_transparency"), t("layouts.header.external_link_transparency_url") %>&nbsp;|
         <%= link_to t("layouts.header.external_link_opendata"), "/opendata", class: ("selected" if current_page?("/opendata")) %>
+        <% if Setting['blog_url'] %>
+          &nbsp;|
+          <%= link_to Setting['blog_url'], target: "_blank" do %>
+            <%= t("layouts.header.external_link_blog") %>
+          <% end %>
+        <% end %>
       </div>
     </div>
   </section>
@@ -39,16 +45,11 @@
             <%= link_to t("layouts.header.debates"), debates_path, class: ("active" if controller_name == "debates") %>
           <% end %>
           <%= link_to t("layouts.header.proposals"), proposals_path, class: ("active" if  controller_name == "proposals") %>
+          <%= link_to t("layouts.header.processes"), "/processes", class: ("active" if current_page?("/processes") || current_page?("/processes_ordinance")) %>
           <% if feature?(:spending_proposals) %>
             <%= link_to t("layouts.header.spending_proposals"), spending_proposals_path, class: ("active" if controller_name == "spending_proposals") %>
           <% end %>
           <%= link_to t("layouts.header.more_information"), page_path('more_information'), class: ("active" if current_page?("/more_information"))  %>
-          <% if setting['blog_url'] %>
-            <%= link_to setting['blog_url'], target: "_blank" do %>
-              <%= t("layouts.header.external_link_blog") %>
-              <i class="icon-external"></i>
-            <% end %>
-          <% end %>
         </div>
         <div class="small-12 medium-3 column">
           <%= yield :header_addon %>
@@ -58,25 +59,6 @@
   </div>
 
   <div class="row-full subnavigation-background"></div>
-
-  <% if home_page? %>
-    <div class="row home-page">
-      <div class="small-12 medium-7 column">
-        <h1><%= t("layouts.header.open_city_title") %></h1>
-        <p>
-          <%= t("layouts.header.open_city_slogan_html") %>&nbsp;
-          <%= link_to t("layouts.header.more_information"), page_path('more_information') %>
-        </p>
-        <div class="small-12 medium-6">
-          <%= link_to t("layouts.header.see_all"), proposals_path, class: "button radius see-more warning expand" %>
-        </div>
-      </div>
-
-      <div class="show-for-medium-up small-12 medium-5 column text-center">
-        <%= image_tag("icon_home.png", size: "330x240", alt:"", role:"presentation") %>
-      </div>
-    </div>
-  <% end %>
 
   <% if opendata_page? %>
     <div class="row home-page">

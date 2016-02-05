@@ -167,6 +167,18 @@ a {
   margin-bottom: $line-height;
 }
 
+.absolute {
+  position: absolute;
+}
+
+.absolute-survey {
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  width: 100%;
+  z-index: 9;
+}
+
 .back, .icon-angle-left {
   @include back;
 
@@ -234,15 +246,18 @@ a {
   font-size: $small-font-size;
 }
 
+.panel {
+  background: white;
+}
+
 // 02. Header
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
 header {
   background: $highlight;
-  border-bottom: 1px solid $border;
 
-  .home-page {
-    padding: $line-height 0;
+  @media (min-width: $small-breakpoint) {
+    border-bottom: 1px solid $border;
   }
 
   .selected {
@@ -310,6 +325,11 @@ header {
       }
     }
   }
+}
+
+.home-page {
+  background: $highlight;
+  padding: $line-height 0;
 }
 
 .contain-to-grid {
@@ -453,6 +473,65 @@ header {
       }
     }
   }
+}
+
+.jumbo {
+  background: $highlight;
+
+  @media (min-width: $small-breakpoint) {
+    padding: rem-calc(24) 0;
+  }
+
+  h1, p {
+    color: $highlight-color;
+  }
+}
+
+.jumbo-survey, .jumbo-featured {
+
+  @media (min-width: $small-breakpoint) {
+    padding-top: $line-height;
+  }
+
+  h1, h2, .back, .icon-angle-left, .p, a {
+    color: black;
+  }
+
+  a {
+    text-decoration: underline;
+  }
+
+  a.button {
+    background: white;
+    color: $brand;
+    text-decoration: none;
+  }
+
+  .social-share-button a {
+    color: white;
+
+    &.social-share-button-twitter:hover {
+      color: #40A2D1;
+    }
+
+    &.social-share-button-facebook:hover {
+      color: #354F88;
+    }
+
+    &.social-share-button-google_plus:hover {
+      color: #CE3E26;
+    }
+  }
+}
+
+.jumbo-survey {
+  background: #33DADF;
+  border-bottom: 1px solid #33DADF;
+}
+
+.jumbo-featured {
+  background: $featured;
+  border-bottom: 1px solid $featured;
 }
 
 .top-links {
@@ -1161,7 +1240,7 @@ table {
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
 .button.button-twitter {
-  background: #45B0E3;
+  background: #40A2D1;
 
   &:before {
     background: #40A2D1;
@@ -1201,7 +1280,7 @@ table {
 }
 
 .button.button-facebook {
-  background: #3B5998;
+  background: #354F88;
 
   &:before {
     background: #354F88;
@@ -1241,7 +1320,7 @@ table {
 }
 
 .button.button-google {
-  background: #DE4C34;
+  background: #CE3E26;
 
   &:before {
     background: #CE3E26;

@@ -5,6 +5,7 @@
 // 03. Show participation
 // 04. List participation
 // 05. Featured
+// 06. Surveys
 //
 
 // 01. Votes and supports
@@ -801,10 +802,6 @@
   padding: $line-height/2 0;
 
   @media (min-width: $small-breakpoint) {
-    margin-top: $line-height !important;
-  }
-
-  @media (min-width: $medium-breakpoint) {
     margin-left: 0 !important;
     margin-right: 0 !important;
   }
@@ -905,4 +902,243 @@
       }
     }
   }
+}
+
+.home-page-featured {
+
+  .panel {
+
+    &.featured-one, &.featured-two {
+      background-size: cover;
+      background-position: 50% 50%;
+      border: 0;
+      min-height: $line-height*10;
+
+      .button {
+        background: white;
+        bottom: 48px;
+        color: $text;
+        position: absolute;
+      }
+    }
+
+    &.featured-one {
+      background: $featured image-url('welcome_featured_1.jpg') no-repeat;
+    }
+
+    &.featured-two {
+      background: #33DADF;
+
+      @media (min-width: $small-breakpoint) {
+        background: #33DADF image-url('processes_plaza_espana.png') no-repeat;
+        background-position: top right;
+      }
+
+      a:hover {
+        text-decoration: none;
+      }
+
+      h2, p {
+        color: white;
+      }
+    }
+  }
+}
+
+.featured-process {
+  background: #33DADF;
+  padding: $line-height/2;
+
+  @media (min-width: $small-breakpoint) {
+    background: #33DADF image-url('processes_plaza_espana_small.png') no-repeat;
+    background-position: right;
+  }
+
+  @media (min-width: $small-breakpoint) {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    margin-top: $line-height !important;
+  }
+
+  h2, h3, a {
+    color: white;
+    margin: 0;
+  }
+
+  a:hover h2, a:hover h3 {
+    color: white !important;
+    text-decoration: none;
+  }
+}
+
+.process {
+  min-height: $line-height*12;
+
+  p {
+    margin: $line-height 0;
+  }
+}
+
+// 06. Surveys
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+.survey {
+
+  .alert-box {
+    margin-bottom: 0;
+  }
+
+  form input[type=radio] {
+    height: $line-height !important;
+    vertical-align: top;
+    width: 18px\9;
+  }
+}
+
+.survey-questions {
+
+  &::before {
+    display: none;
+  }
+
+  article {
+    border-bottom: 1px solid $border;
+
+    @media only screen and (min-width: $medium-breakpoint) {
+      padding: $line-height 0;
+    }
+
+    &:last-of-type {
+      border-bottom: none;
+    }
+  }
+
+  .selections {
+    display: none;
+  }
+}
+
+.survey-timeline {
+  display: none;
+  width: 100%;
+  background-color: #f2f2f2;
+
+  ul {
+    height: $line-height*2;
+    margin: $line-height/4 0;
+
+    li {
+      counter-increment: articles;
+      display: inline-block;
+      height: $line-height*2;
+      list-style-type: none;
+      margin: 0 $line-height/4;
+      width: rem-calc(36);
+
+      &:last-of-type a::after {
+        display: none;
+      }
+    }
+  }
+}
+
+.survey-timeline a {
+  display: inline-block;
+  position: relative;
+
+  &::before {
+    border-radius: 50%;
+    bottom: auto;
+    content: counter(articles);
+    color: $text-medium;
+    position: absolute;
+    transform: translateY(-50%);
+    height: rem-calc(36);
+    line-height: rem-calc(36);
+    margin-top: $line-height/4;
+    text-align: center;
+    top: 50%;
+    transition: background-color 0.3s, color 0.3s;
+    -webkit-transition: background-color 0.3s, color 0.3s;
+    -moz-transition: background-color 0.3s, color 0.3s;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    width: rem-calc(36);
+  }
+
+  &.read::before {
+    background-color: $brand;
+    color: white;
+  }
+
+  &.reading {
+
+    svg {
+      display: block;
+    }
+
+    &::before {
+      background-color: White;
+      color: $text;
+    }
+  }
+}
+
+.survey-timeline svg {
+  bottom: auto;
+  display: none;
+  margin-top: $line-height/4;
+  position: absolute;
+  stroke: $brand;
+  top: 50%;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transition: all 0.5s ease
+}
+
+@media only screen and (min-width: $medium-breakpoint) {
+
+  .survey-timeline {
+    display: none;
+    padding: $line-height;
+    text-align: center;
+
+    &.fixed {
+      display: block;
+      padding: 0 $line-height;
+    }
+  }
+}
+
+.survey-comments {
+
+  .comments {
+    border: 1px solid $border;
+    padding-bottom: 0 !important;
+    padding-top: 0 !important;
+  }
+
+  .comment-body {
+    margin-left: $line-height/2 !important;
+    padding-left: $line-height/2 !important;
+    padding-right: $line-height/2 !important;
+  }
+
+  .reply {
+    border-bottom: 0 !important;
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+  }
+}
+
+.survey-timeline-line {
+  border-bottom: 1px solid $border;
+  border-top: 4px solid black;
+  color: black;
+  padding-top: $line-height;
 }

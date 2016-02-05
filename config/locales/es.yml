@@ -205,12 +205,13 @@ es:
       open_data: Datos abiertos
       open_gov: Gobierno %{open}
       proposals: Propuestas
-      see_all: Ver propuestas
+      processes: Procesos abiertos
       spending_proposals: Presupuestos ciudadanos
   legislation:
     help:
       alt: Selecciona el texto que quieres comentar y pulsa en el botón con el lápiz.
       text: Para comentar este documento debes %{sign_in} o %{sign_up}. Después selecciona el texto que quieres comentar y pulsa en el botón con el lápiz.
+      text_logged: "Selecciona el texto que quieres comentar y pulsa en el botón con el lápiz."
       text_sign_in: iniciar sesión
       text_sign_up: registrarte
       title: "¿Cómo puedo comentar este documento?"
@@ -465,6 +466,16 @@ es:
       alt: Icono se hace
       description: Si la propuesta es aceptada mayoritariamente, el Ayuntamiento la asume como propia y se hace.
       title: Se hace
+    featured:
+      process:
+        link: Participa
+        text: Decide como quieres que sea este nuevo espacio en tu ciudad.
+        title: Remodelación de Plaza de España
+      proposals:
+        link: Ver propuestas
+        text: Crear tus propias propuestas y apoya las de otros ciudadanos.
+        title: Propuestas ciudadanas
+    more_information: Más información sobre esta página
     highlights: 'Portada: '
     proposal:
       alt: Icono propones
@@ -497,6 +508,7 @@ es:
   legislation:
     help:
       title: "¿Cómo puedo comentar este documento?"
+      text_logged: "Selecciona el texto que quieres comentar y pulsa en el botón con el lápiz."
       text: "Para comentar este documento debes %{sign_in} o %{sign_up}. Después selecciona el texto que quieres comentar y pulsa en el botón con el lápiz."
       text_sign_in: "iniciar sesión"
       text_sign_up: "registrarte"
