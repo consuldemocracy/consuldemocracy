@@ -150,8 +150,8 @@ en:
     proposal: Proposal
     spending_proposal: Spending proposal
     user: Account
-    verification::letter: the verification
-    verification::sms: Telephone
+    verification/letter: the verification
+    verification/sms: Telephone
   geozones:
     none: All city
   layouts:
