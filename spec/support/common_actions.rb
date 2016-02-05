@@ -108,8 +108,9 @@ module CommonActions
     SCRIPT
   end
 
-  def error_message
-    /\d errors? prevented this (.*) from being saved:/
+  def error_message(resource_model=nil)
+    resource_model ||= "(.*)"
+    /\d errors? prevented this #{resource_model} from being saved:/
   end
 
   def expect_to_be_signed_in
