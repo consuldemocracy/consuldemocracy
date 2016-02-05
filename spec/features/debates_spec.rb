@@ -778,32 +778,32 @@ feature 'Debates' do
       end
     end
 
-    xscenario "Order by relevance by default", :js do
+    scenario "Order by relevance by default", :js do
       debate1 = create(:debate, title: "Show you got",      cached_votes_up: 10)
       debate2 = create(:debate, title: "Show what you got", cached_votes_up: 1)
       debate3 = create(:debate, title: "Show you got",      cached_votes_up: 100)
 
       visit debates_path
-      fill_in "search", with: "Show what you got"
+      fill_in "search", with: "Show you got"
       click_button "Search"
 
       expect(page).to have_selector("a.active", text: "relevance")
 
       within("#debates") do
-        expect(all(".debate")[0].text).to match "Show what you got"
+        expect(all(".debate")[0].text).to match "Show you got"
         expect(all(".debate")[1].text).to match "Show you got"
-        expect(all(".debate")[2].text).to match "Show you got"
+        expect(all(".debate")[2].text).to match "Show what you got"
       end
     end
 
-    xscenario "Reorder results maintaing search", :js do
+    scenario "Reorder results maintaing search", :js do
       debate1 = create(:debate, title: "Show you got",      cached_votes_up: 10,  created_at: 1.week.ago)
       debate2 = create(:debate, title: "Show what you got", cached_votes_up: 1,   created_at: 1.month.ago)
       debate3 = create(:debate, title: "Show you got",      cached_votes_up: 100, created_at: Time.now)
       debate4 = create(:debate, title: "Do not display",    cached_votes_up: 1,   created_at: 1.week.ago)
 
       visit debates_path
-      fill_in "search", with: "Show what you got"
+      fill_in "search", with: "Show you got"
       click_button "Search"
       click_link 'newest'
       expect(page).to have_selector("a.active", text: "newest")
@@ -960,12 +960,12 @@ feature 'Debates' do
       debate5 = create(:debate, title: "Fifth debate has 5 votes",  cached_votes_up: 5)
       debate6 = create(:debate, title: "Sixth debate has 6 votes", description: 'This is the sixth debate',  cached_votes_up: 6)
       debate7 = create(:debate, title: "This has seven votes, and is not suggest", description: 'This is the seven', cached_votes_up: 7)
-   
+
       visit new_debate_path
-      fill_in 'debate_title', with: 'debate' 
+      fill_in 'debate_title', with: 'debate'
       check "debate_terms_of_service"
 
-      within('div#js-suggest') do 
+      within('div#js-suggest') do
         expect(page).to have_content ("You are seeing 5 of 6 debates containing the term 'debate'")
       end
     end
@@ -976,14 +976,14 @@ feature 'Debates' do
 
       debate1 = create(:debate, title: "First debate has 10 vote", cached_votes_up: 10)
       debate2 = create(:debate, title: "Second debate has 2 votes", cached_votes_up: 2)
-      
+
       visit new_debate_path
       fill_in 'debate_title', with: 'proposal'
-      check "debate_terms_of_service" 
+      check "debate_terms_of_service"
 
       within('div#js-suggest') do
         expect(page).to_not have_content ('You are seeing')
       end
-    end 
+    end
   end
 end
