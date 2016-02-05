@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require jquery-ui/datepicker
 //= require jquery-ui/datepicker-es
+//= require jquery-ui/effect-shake
 //= require foundation
 //= require turbolinks
 //= require ckeditor/init

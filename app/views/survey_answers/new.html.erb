@@ -25,14 +25,16 @@
 <div class="survey row margin">
 
   <div id="login_required" class="alert-box radius info absolute-survey" style="display:none">
-    Solo los usuarios verificados pueden responder a la encuesta,
-  <% if user_signed_in? %>
-    <%= link_to "verifica tu cuenta", verification_path %>
-  <% else %>
-    necesitas <%= link_to "iniciar sesión", new_user_session_path %>
-    o <%= link_to "registrarte", new_user_registration_path %>
-    para continuar.
-  <% end %>
+    <div id="login_required_text">
+      Solo los usuarios verificados pueden responder a la encuesta,
+      <% if user_signed_in? %>
+        <%= link_to "verifica tu cuenta", verification_path %>
+      <% else %>
+        necesitas <%= link_to "iniciar sesión", new_user_session_path %>
+        o <%= link_to "registrarte", new_user_registration_path %>
+        para continuar.
+      <% end %>
+    </div>
   </div>
 
   <div id="survey" data-verified-id="<%= current_user.id if can?(:create, SurveyAnswer) %>" class="survey-questions small-12 medium-9 column">
