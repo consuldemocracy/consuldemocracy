@@ -6,6 +6,7 @@ class Debate < ActiveRecord::Base
   include Measurable
   include Sanitizable
   include PgSearch
+  include SearchCache
   include Filterable
 
   apply_simple_captcha
@@ -41,20 +42,27 @@ class Debate < ActiveRecord::Base
   visitable # Ahoy will automatically assign visit_id on create
 
   pg_search_scope :pg_search, {
-    against: {
-      title:       'A',
-      description: 'B'
-    },
-    associated_against: {
-      tags: :name
-    },
+    against: :ignored, # not used since the using: option has a tsvector_column
     using: {
-      tsearch: { dictionary: "spanish" },
+      tsearch: { dictionary: "spanish", tsvector_column: 'tsv', prefix: true }
     },
     ignoring: :accents,
     ranked_by: '(:tsearch)',
     order_within_rank: "debates.cached_votes_up DESC"
   }
+
+  def searchable_values
+    { title              => 'A',
+      author.username    => 'B',
+      tag_list.join(' ') => 'B',
+      geozone.try(:name) => 'B',
+      description        => 'D'
+    }
+  end
+
+  def self.search(terms)
+    self.pg_search(terms)
+  end
 
   def description
     super.try :html_safe
@@ -119,15 +127,6 @@ class Debate < ActiveRecord::Base
   def calculate_confidence_score
     self.confidence_score = ScoreCalculator.confidence_score(cached_votes_total,
                                                              cached_votes_up)
-  end
-
-  def self.search(terms)
-    return none unless terms.present?
-
-    debate_ids = where("debates.title ILIKE ? OR debates.description ILIKE ?",
-                       "%#{terms}%", "%#{terms}%").pluck(:id)
-    tag_ids = tagged_with(terms, wild: true, any: true).pluck(:id)
-    where(id: [debate_ids, tag_ids].flatten.compact)
   end
 
   def after_hide
