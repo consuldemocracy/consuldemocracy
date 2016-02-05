@@ -28,7 +28,7 @@ feature 'SMS Verification' do
 
     click_button 'Send'
 
-    expect(page).to have_content error_message
+    expect(page).to have_content error_message("phone")
   end
 
   scenario 'Errors on verification code' do
