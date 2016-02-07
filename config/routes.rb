@@ -43,6 +43,9 @@ Rails.application.routes.draw do
       get :suggest
     end
   end
+  
+  get  'debate_links/new' => 'debate_links#new'
+  post 'debate_links'     => 'debate_links#create'  
 
   resources :proposals do
     member do

@@ -18,11 +18,16 @@ class Debate < ActiveRecord::Base
   has_many :comments, as: :commentable
 
   validates :title, presence: true
-  validates :description, presence: true
+  validates :description, presence: true, :if => :description_required?
   validates :author, presence: true
 
   validates :title, length: { in: 4..Debate.title_max_length }
-  validates :description, length: { in: 10..Debate.description_max_length }
+  validates :description, length: { in: 10..Debate.description_max_length }, :if => :description_required?
+
+  validates :external_link, :presence => true, 
+            length: { in: 10..Debate.external_link_max_length }, 
+            format: { with: /https?:\/\/*/},   
+            :if => :link_required?
 
   validates :terms_of_service, acceptance: { allow_nil: false }, on: :create
 
@@ -124,6 +129,22 @@ class Debate < ActiveRecord::Base
 
   def after_restore
     self.tags.each{ |t| t.increment_custom_counter_for('Debate') }
+  end
+
+  def description_required?
+    if self.external_link == nil
+      return true
+    else
+      return false
+    end
+  end
+  
+  def link_required?
+    if self.external_link == nil
+      return false
+    else
+      return true
+    end  
   end
 
 end

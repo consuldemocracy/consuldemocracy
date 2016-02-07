@@ -6,6 +6,10 @@ module Measurable
     def title_max_length
       @@title_max_length ||= self.columns.find { |c| c.name == 'title' }.limit || 80
     end
+ 
+    def external_link_max_length
+      @@external_link_max_length ||= self.columns.find { |c| c.name == 'external_link' }.limit || 100
+    end
 
     def responsible_name_max_length
       @@responsible_name_max_length ||= self.columns.find { |c| c.name == 'responsible_name' }.limit || 60

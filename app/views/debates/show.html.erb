@@ -34,7 +34,13 @@
           </span>
         </div>
 
-        <%= safe_html_with_links @debate.description %>
+        <% if @debate.external_link.present? %>
+          <%= safe_html_with_links link_to @debate.external_link, @debate.external_link, target: '_blank'%>
+        <% end %>
+ 
+        <% if @debate.description.present? %>
+          <%= safe_html_with_links @debate.description %>
+        <% end %>
 
         <%= render 'shared/tags', taggable: @debate %>
 
