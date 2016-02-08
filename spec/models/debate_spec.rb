@@ -31,6 +31,7 @@ describe Debate do
   end
 
   describe "#external_link" do
+    before { debate.link_required = true }
 
     it "should not be valid without a url" do
       debate.external_link = ""

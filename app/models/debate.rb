@@ -24,9 +24,9 @@ class Debate < ActiveRecord::Base
   validates :title, length: { in: 4..Debate.title_max_length }
   validates :description, length: { in: 10..Debate.description_max_length }, :if => :description_required?
 
-  validates :external_link, :presence => true, 
-            length: { in: 10..Debate.external_link_max_length }, 
-            format: { with: /https?:\/\/*/},   
+  validates :external_link, :presence => true,
+            length: { in: 10..Debate.external_link_max_length },
+            format: { with: /https?:\/\/*/},
             :if => :link_required?
 
   validates :terms_of_service, acceptance: { allow_nil: false }, on: :create
@@ -44,6 +44,8 @@ class Debate < ActiveRecord::Base
   scope :last_week,            -> { where("created_at >= ?", 7.days.ago)}
   # Ahoy setup
   visitable # Ahoy will automatically assign visit_id on create
+
+  attr_accessor :link_required
 
   def searchable_values
     { title              => 'A',
@@ -132,19 +134,11 @@ class Debate < ActiveRecord::Base
   end
 
   def description_required?
-    if self.external_link == nil
-      return true
-    else
-      return false
-    end
+    !link_required?
   end
-  
+
   def link_required?
-    if self.external_link == nil
-      return false
-    else
-      return true
-    end  
+    link_required
   end
 
 end

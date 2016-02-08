@@ -8,11 +8,11 @@ class DebateLinksController < ApplicationController
   private
 
     def create_params
-      params.require(:debate).permit(:title, :external_link, :tag_list, :terms_of_service, :captcha, :captcha_key)
+      params.require(:debate).permit(:title, :external_link, :tag_list, :terms_of_service, :captcha, :captcha_key).merge(link_required: true)
     end
 
     def debate_params
-      params.require(:debate).permit(:title, :external_link, :tag_list, :terms_of_service, :captcha, :captcha_key)
+      params.require(:debate).permit(:title, :external_link, :tag_list, :terms_of_service, :captcha, :captcha_key).merge(link_required: true)
     end
 
     def after_create_path
@@ -21,6 +21,6 @@ class DebateLinksController < ApplicationController
 
     def resource_model
       Debate
-    end 
-    
+    end
+
 end
