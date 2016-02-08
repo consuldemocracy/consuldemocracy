@@ -1,7 +1,12 @@
 class DebateLinksController < ApplicationController
+  include FeatureFlags
   include CommentableActions
 
+  before_action :authenticate_user!, except: [:show]
+
   load_and_authorize_resource class: "Debate"
+
+  feature_flag :debates
 
   respond_to :html, :js
 
