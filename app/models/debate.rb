@@ -138,7 +138,7 @@ class Debate < ActiveRecord::Base
   end
 
   def link_required?
-    link_required
+    link_required || external_link.present? # needed for edit/update
   end
 
 end
