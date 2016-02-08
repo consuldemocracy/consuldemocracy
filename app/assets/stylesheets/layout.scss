@@ -179,6 +179,11 @@ a {
   z-index: 9;
 }
 
+.highlight {
+  background: $highlight;
+  padding: $line-height/2;
+}
+
 .back, .icon-angle-left {
   @include back;
 
