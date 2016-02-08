@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160204134022) do
+ActiveRecord::Schema.define(version: 20160207205252) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -118,9 +118,9 @@ ActiveRecord::Schema.define(version: 20160204134022) do
     t.integer  "cached_votes_score",                       default: 0
     t.integer  "hot_score",                    limit: 8,   default: 0
     t.integer  "confidence_score",                         default: 0
-    t.string   "external_link",                limit: 100
     t.integer  "geozone_id"
     t.tsvector "tsv"
+    t.string   "external_link",                limit: 100
   end
 
   add_index "debates", ["author_id", "hidden_at"], name: "index_debates_on_author_id_and_hidden_at", using: :btree
