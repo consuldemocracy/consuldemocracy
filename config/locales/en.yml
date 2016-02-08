@@ -427,7 +427,7 @@ en:
       proposal_votes: Votes on proposals
       debate_votes: Votes on debates
       comment_votes: Votes on comments
-      votes: Total otes
+      votes: Total votes
       verified_users: Verified users
       unverified_users: Unverified users
   unauthorized:
