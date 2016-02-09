@@ -10,7 +10,7 @@ class ProposalsController < ApplicationController
   before_action :load_geozones, only: [:edit, :map]
   before_action :authenticate_user!, except: [:index, :show, :map]
 
-  has_orders %w{hot_score confidence_score created_at relevance}, only: :index
+  has_orders %w{confidence_score hot_score created_at relevance}, only: :index
   has_orders %w{most_voted newest oldest}, only: :show
 
   load_and_authorize_resource

@@ -496,20 +496,7 @@ feature 'Proposals' do
 
   feature 'Proposal index order filters' do
 
-    scenario 'Default order is hot_score', :js do
-      create_featured_proposals
-
-      create(:proposal, title: 'Best proposal').update_column(:hot_score, 10)
-      create(:proposal, title: 'Worst proposal').update_column(:hot_score, 2)
-      create(:proposal, title: 'Medium proposal').update_column(:hot_score, 5)
-
-      visit proposals_path
-
-      expect('Best proposal').to appear_before('Medium proposal')
-      expect('Medium proposal').to appear_before('Worst proposal')
-    end
-
-    scenario 'Proposals are ordered by confidence_score', :js do
+    scenario 'Default order is confidence_score', :js do
       create_featured_proposals
 
       create(:proposal, title: 'Best proposal').update_column(:confidence_score, 10)
@@ -517,15 +504,28 @@ feature 'Proposals' do
       create(:proposal, title: 'Medium proposal').update_column(:confidence_score, 5)
 
       visit proposals_path
-      click_link 'highest rated'
-      expect(page).to have_selector('a.active', text: 'highest rated')
+
+      expect('Best proposal').to appear_before('Medium proposal')
+      expect('Medium proposal').to appear_before('Worst proposal')
+    end
+
+    scenario 'Proposals are ordered by hot_score', :js do
+      create_featured_proposals
+
+      create(:proposal, title: 'Best proposal').update_column(:hot_score, 10)
+      create(:proposal, title: 'Worst proposal').update_column(:hot_score, 2)
+      create(:proposal, title: 'Medium proposal').update_column(:hot_score, 5)
+
+      visit proposals_path
+      click_link 'most active'
+      expect(page).to have_selector('a.active', text: 'most active')
 
       within '#proposals' do
         expect('Best proposal').to appear_before('Medium proposal')
         expect('Medium proposal').to appear_before('Worst proposal')
       end
 
-      expect(current_url).to include('order=confidence_score')
+      expect(current_url).to include('order=hot_score')
       expect(current_url).to include('page=1')
     end
 
