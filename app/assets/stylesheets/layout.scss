@@ -773,6 +773,7 @@ form.locale-form {
 
   select {
     background-image: image-url("language_select.png");
+    background-position: rem-calc(50);
 
     option {
       background: white;

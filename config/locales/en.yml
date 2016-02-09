@@ -108,7 +108,7 @@ en:
       select_order: Order by
       start_debate: Start a debate
       title: Debates
-      share_debate: "Share a link"      
+      share_debate: "Share a link"
     new:
       back_link: Go back
       form:
@@ -142,7 +142,7 @@ en:
       debate_link: "Link"
     new:
       start_new: "Share a link"
-      recommendations_title: "Recommendations for sharing a link"      
+      recommendations_title: "Recommendations for sharing a link"
       form:
         submit_button: "Share link"
     create:
@@ -199,6 +199,7 @@ en:
       external_link_opendata_url: http://datos.madrid.es
       external_link_transparency: Transparency
       external_link_transparency_url: https://transparencia.madrid.es
+      help_translate: Help us translate
       locale: 'Language:'
       logo: Madrid
       moderation: Moderation
