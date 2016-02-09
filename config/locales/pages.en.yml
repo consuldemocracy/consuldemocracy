@@ -4,6 +4,13 @@ en:
     census_terms: To confirm the account, you must be 16 or older and be registered as resident in Madrid, having provided the information requested previously, which the Directorate-General of Civil Participation will verify against the files 'Municipal Census of Inhabitants', for which the Directorate-General for Statistics is responsible, and the 'Citizen Support Services', for which the Directorate-General for Quality and Citizen Services is responsible. By accepting the verification process, you also consent to the verification of this information, as well as the contact methods featuring in said files. The data provided will be acquired and processed by the Directorate-General for Civil Participation in the file 'Management of Participatory Activities' mentioned previously in the terms and conditions of use for the Portal.
     conditions: Terms and conditions of use
     general_terms: Terms and Conditions
+    help_translate:
+      title: Help us translate!
+      text: |-
+        If you speak other languages please help us to translate this website and the software under it.
+
+        Contact us in <a href="mailto:ag.gobiernoabierto@madrid.es">ag.gobiernoabierto@madrid.es</a> to give you access to the collaborative translation system.
+        Together we will make this tool available for any country. A million thanks!
     more_information:
       description:
         faq: Frecuently asked question about tecnical problems

@@ -143,7 +143,7 @@ es:
       debate_link: "Enlace"
     new:
       start_new: "Compartir un enlace"
-      recommendations_title: "Recomendaciones para compartir un enlace"    
+      recommendations_title: "Recomendaciones para compartir un enlace"
       form:
         submit_button: "Comparte un enlace"
     create:
@@ -200,6 +200,7 @@ es:
       external_link_opendata_url: http://datos.madrid.es
       external_link_transparency: Transparencia
       external_link_transparency_url: https://transparencia.madrid.es
+      help_translate: Ayúdanos a traducir
       locale: 'Idioma:'
       logo: Madrid
       moderation: Moderar
