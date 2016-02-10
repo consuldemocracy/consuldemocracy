@@ -35,6 +35,32 @@ feature 'Commenting debates' do
     expect(page).to have_link "Go back to #{debate.title}", debate_path(debate)
   end
 
+  scenario 'Collapsable comments', :js do
+    parent_comment = create(:comment, body: "Main comment", commentable: debate)
+    child_comment  = create(:comment, body: "First subcomment", commentable: debate, parent: parent_comment)
+    grandchild_comment = create(:comment, body: "Last subcomment", commentable: debate, parent: child_comment)
+
+    visit debate_path(debate)
+
+    expect(page).to have_css('.comment', count: 3)
+
+    find("#comment_#{child_comment.id}_children_arrow").trigger('click')
+
+    expect(page).to have_css('.comment', count: 2)
+    expect(page).to_not have_content grandchild_comment.body
+
+    find("#comment_#{child_comment.id}_children_arrow").trigger('click')
+
+    expect(page).to have_css('.comment', count: 3)
+    expect(page).to have_content grandchild_comment.body
+
+    find("#comment_#{parent_comment.id}_children_arrow").trigger('click')
+
+    expect(page).to have_css('.comment', count: 1)
+    expect(page).to_not have_content child_comment.body
+    expect(page).to_not have_content grandchild_comment.body
+  end
+
   scenario 'Comment order' do
     c1 = create(:comment, :with_confidence_score, commentable: debate, cached_votes_up: 100, cached_votes_total: 120, created_at: Time.now - 2)
     c2 = create(:comment, :with_confidence_score, commentable: debate, cached_votes_up: 10, cached_votes_total: 12, created_at: Time.now - 1)

@@ -29,6 +29,13 @@ App.Comments =
   toggle_form: (id) ->
     $("#js-comment-form-#{id}").toggle()
 
+  toggle_arrow: (id) ->
+    arrow = "i##{id}_arrow"
+    if $(arrow).hasClass("icon-angle-right")
+      $(arrow).removeClass("icon-angle-right").addClass("icon-angle-down")
+    else
+      $(arrow).removeClass("icon-angle-down").addClass("icon-angle-right")
+
   initialize: ->
     $('body .js-add-comment-link').each ->
       $this = $(this)
@@ -39,3 +46,11 @@ App.Comments =
           App.Comments.toggle_form(id)
           false
         ).data 'initialized', 'yes'
+
+    $('body .js-toggle-children').each ->
+      $(this).on('click', ->
+        children_container_id = "#{$(this).data().id}_children"
+        $("##{children_container_id}").toggle('slow')
+        App.Comments.toggle_arrow(children_container_id)
+        false
+      )
