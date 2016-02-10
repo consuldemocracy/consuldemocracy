@@ -72,7 +72,13 @@
               <%= render 'comments/votes', comment: comment %>
             </span>
 
-            <%= t("comments.comment.responses", count: comment.children.size) %>
+            <% if comment.children.size > 0 %>
+              <%= link_to "", class: "js-toggle-children", data:  {'id': "#{dom_id(comment)}"} do %>
+                <i id="<%= dom_id(comment) %>_children_arrow" class="icon-angle-down"></i> <%= t("comments.comment.responses", count: comment.children.size) %>
+              <% end %>
+            <% else %>
+              <%= t("comments.comment.responses", count: 0) %>
+            <% end %>
 
             <% if user_signed_in? %>
               <span class="divider">&nbsp;|&nbsp;</span>
@@ -87,7 +93,7 @@
         </div>
       <% end %>
 
-      <div class="comment-children">
+      <div id="<%= dom_id(comment) %>_children" class="comment-children">
         <% child_comments_of(comment).each do |child| %>
           <%= render 'comments/comment', comment: child %>
         <% end %>
