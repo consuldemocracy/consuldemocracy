@@ -454,6 +454,7 @@ en:
   votes:
     agree: I agree
     anonymous: Too many anonymous votes to admit vote %{verify_account}.
+    comment_unauthenticated: You must %{signin} or %{signup} to vote.
     disagree: I disagree
     organizations: Organisations are not permitted to vote
     signin: Sign in
