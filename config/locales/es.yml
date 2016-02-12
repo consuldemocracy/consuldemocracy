@@ -457,6 +457,7 @@ es:
   votes:
     agree: Estoy de acuerdo
     anonymous: Demasiados votos anónimos, para poder votar %{verify_account}.
+    comment_unauthenticated: Necesitas %{signin} o %{signup} para poder votar.
     disagree: No estoy de acuerdo
     organizations: Las organizaciones no pueden votar
     signin: iniciar sesión
