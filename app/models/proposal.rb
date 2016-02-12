@@ -55,7 +55,16 @@ class Proposal < ActiveRecord::Base
   end
 
   def self.search(terms)
-    self.pg_search(terms)
+    by_code = self.search_by_code(terms.strip)
+    by_code.present? ? by_code : self.pg_search(terms)
+  end
+
+  def self.search_by_code(terms)
+    if code_match = /\A#{Setting["proposal_code_prefix"]}-\d\d\d\d-\d\d-(\d*)\z/.match(terms)
+      results = where(id: code_match[1])
+    end
+
+    return results if (results.present? && results.first.code == terms)
   end
 
   def description
