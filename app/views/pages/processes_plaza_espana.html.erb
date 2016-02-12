@@ -20,21 +20,9 @@
       </div>
     </div>
     <div class="small-12 medium-5 column">
-      <%
-        up_time = Time.strptime('11-FEB-16 18.20.00', '%d-%b-%y %H.%M.%S')
-        if (up_time..(up_time + 4.hours)).include? Time.now.in_time_zone
-      %>
-        <div class="text-right">
-          <span class="label round alert">EN DIRECTO</span>
-        </div>
-        <div class="flex-video">
-          <iframe frameborder="0" width="480" height="270" src="//www.dailymotion.com/embed/video/x2pejmf" allowfullscreen></iframe>
-        </div>
-      <% else %>
-        <div class="flex-video">
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/2PisFJRfDj4?rel=0" frameborder="0" allowfullscreen title="Proceso Participativo #DecidePlazaEspaña"></iframe>
-        </div>
-      <% end %>
+      <div class="flex-video">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/2PisFJRfDj4?rel=0" frameborder="0" allowfullscreen title="Proceso Participativo #decideplazaespaña"></iframe>
+      </div>
     </div>
   </div>
 </div>
@@ -77,8 +65,8 @@
     <%= link_to "/processes_plaza_espana_debates" do %>
       <div class="highlight margin-bottom">
         <h3>Próximo debate</h3>
-        <h4>"Pasado, presente y futuro de la plaza de España. ¿Por qué remodelarla?"</h4>
-        <span>Jueves 11 de febrero. COAM (C/ Hortaleza, 63), salón de actos, 18:30 h.</span>
+        <h4>"La plaza para el barrio o para la ciudad. Sus usos, movilidad y medio ambiente"</h4>
+        <em>Jueves 25 de febrero</em>
       </div>
     <% end %>
 
