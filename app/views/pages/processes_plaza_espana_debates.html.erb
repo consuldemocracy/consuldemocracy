@@ -11,41 +11,30 @@
         <%= t("pages.processes.back") %>
       <% end %>
 
-      <h1>Pasado, presente y futuro de la plaza de España. ¿Por qué remodelarla?</h1>
-      <h3>Jueves 11 de febrero. COAM (C/ Hortaleza, 63)<br>Salón de actos, 18:30 h.</h3>
+      <h1>La plaza para el barrio o para la ciudad. Sus usos, movilidad y medio ambiente</h1>
+      <h3>Jueves 25 de febrero</h3>
     </div>
     <div class="small-12 medium-6 column">
-      <%
-        up_time = Time.strptime('11-FEB-16 18.20.00', '%d-%b-%y %H.%M.%S')
-        if (up_time..(up_time + 4.hours)).include? Time.now.in_time_zone
-      %>
-        <div class="text-right">
-          <span class="label round alert">EN DIRECTO</span>
-        </div>
-        <div class="flex-video">
-          <iframe frameborder="0" width="480" height="270" src="//www.dailymotion.com/embed/video/x2pejmf" allowfullscreen></iframe>
-        </div>
-      <% else %>
       <%= image_tag "processes_plaza_espana_debates.png", size: "580x270", alt: "#decideplazaespaña"%>
-      <% end %>
     </div>
   </div>
 </div>
 
 <div class="process row margin">
   <div class="small-12 column">
-    <p>Los expertos convocados son: Alberto Telleira, Jose Mª Ezquiaga,  Antonio Prieto, Fernando Roch (ETSAM), Rafael Narbona, Carlos Sambricio*,Miguel Angel Troitiño*, y algún vecino de la zona*. Asistirán también técnicos municipales, y los Concejales de Desarrollo Urbano Sostenible y de Participación Ciudadana, Transparencia y Gobierno Abierto.</p>
-    <p><em>* Pendiente de confirmar</em></p>
 
     <h3>Próximos debates...</h3>
     <ul>
       <li>
-        <strong>La plaza para el barrio o para la ciudad. Sus usos, movilidad y medio ambiente</strong>
-        <em>(Jueves 25 de febrero)</em>
-      </li>
-      <li>
        <strong>Debate pendiente de título</strong>
        <em>(Jueves 3 de marzo)</em>
+      </li>
+    </ul>
+    <h3>Debates anteriores</h3>
+    <ul>
+      <li>
+        <strong>Pasado, presente y futuro de la plaza de España. ¿Por qué remodelarla?</strong>
+        <em>Jueves 11 de febrero</em>
       </li>
     </ul>
   </div>
