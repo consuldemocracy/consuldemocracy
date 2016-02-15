@@ -70,6 +70,8 @@ Rails.application.routes.draw do
 
   resources :spending_proposals, only: [:index, :new, :create]
 
+  resources :stats, only: [:index]
+
   resources :legislations, only: [:show]
 
   resources :annotations do
