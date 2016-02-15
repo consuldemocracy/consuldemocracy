@@ -9,7 +9,6 @@ feature 'Stats' do
       2.times { create(:proposal) }
       3.times { create(:comment, commentable: Debate.first) }
       4.times { create(:visit) }
-      5.times { create(:survey_answer) }
 
       visit stats_path
 
@@ -17,7 +16,6 @@ feature 'Stats' do
       expect(page).to have_content "Proposals 2"
       expect(page).to have_content "Comments 3"
       expect(page).to have_content "Visits 4"
-      expect(page).to have_content "Surveys completed 5"
     end
 
     scenario 'Votes' do
