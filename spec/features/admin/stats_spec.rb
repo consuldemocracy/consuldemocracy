@@ -17,7 +17,6 @@ feature 'Stats' do
       4.times { create(:visit) }
       5.times { create(:survey_answer) }
 
-
       visit admin_stats_path
 
       expect(page).to have_content "Debates 1"
