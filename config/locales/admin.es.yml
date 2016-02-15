@@ -132,7 +132,7 @@ es:
     shared:
       proposal_search:
         button: Buscar
-        placeholder: Buscar propuestas por título, descripción o pregunta
+        placeholder: Buscar propuestas por título, código, descripción o pregunta
       user_search:
         button: Buscar
         placeholder: Buscar usuario por nombre o email
