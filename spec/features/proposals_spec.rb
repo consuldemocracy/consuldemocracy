@@ -575,6 +575,25 @@ feature 'Proposals' do
         end
       end
 
+      scenario 'Search by proposal code' do
+        proposal1 = create(:proposal, title: "Get Schwifty")
+        proposal2 = create(:proposal, title: "Schwifty Hello")
+
+        visit proposals_path
+
+        within "#search_form" do
+          fill_in "search", with: proposal1.code
+          click_button "Search"
+        end
+
+        within("#proposals") do
+          expect(page).to have_css('.proposal', count: 1)
+
+          expect(page).to have_content(proposal1.title)
+          expect(page).to_not have_content(proposal2.title)
+        end
+      end
+
       scenario "Maintain search criteria" do
         visit proposals_path
 
@@ -1119,10 +1138,10 @@ feature 'Proposals' do
       create(:proposal, title: 'Seventh proposal, has search term')
 
       visit new_proposal_path
-      fill_in 'proposal_title', with: 'search' 
+      fill_in 'proposal_title', with: 'search'
       check "proposal_terms_of_service"
-      
-      within('div#js-suggest') do  
+
+      within('div#js-suggest') do
         expect(page).to have_content ("You are seeing 5 of 6 proposals containing the term 'search'")
       end
     end
@@ -1133,14 +1152,14 @@ feature 'Proposals' do
 
       create(:proposal, title: 'First proposal').update_column(:confidence_score, 10)
       create(:proposal, title: 'Second proposal').update_column(:confidence_score, 8)
-      
+
       visit new_proposal_path
       fill_in 'proposal_title', with: 'debate'
       check "proposal_terms_of_service"
 
-      within('div#js-suggest') do 
+      within('div#js-suggest') do
         expect(page).to_not have_content ('You are seeing')
       end
-    end 
+    end
   end
 end

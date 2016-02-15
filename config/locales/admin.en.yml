@@ -132,7 +132,7 @@ en:
     shared:
       proposal_search:
         button: Search
-        placeholder: Search proposals by title, description or question
+        placeholder: Search proposals by title, code, description or question
       user_search:
         button: Search
         placeholder: Search user by name or email'

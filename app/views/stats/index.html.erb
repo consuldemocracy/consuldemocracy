@@ -1,0 +1,64 @@
+<div class="stats row-full">
+  <div class="row">
+    <div class="small-12 column">
+      <h1><%= t "admin.stats.show.stats_title" %></h1>
+
+      <div class="row stats-numbers">
+        <div class="small-12 medium-4 column">
+          <p class="featured">
+            <%= t "stats.index.visits" %><br>
+            <span class="number"><%= number_with_delimiter(@visits) %></span>
+          </p>
+
+          <p>
+            <%= t "stats.index.debates" %><br>
+            <span class="number"><%= number_with_delimiter(@debates) %></span>
+          </p>
+          <p>
+            <%= t "stats.index.proposals" %><br>
+            <span class="number"><%= number_with_delimiter(@proposals) %></span>
+          </p>
+          <p>
+            <%= t "stats.index.comments" %><br>
+            <span class="number"><%= number_with_delimiter(@comments) %></span>
+          </p>
+        </div>
+
+        <div class="small-12 medium-4 column">
+          <p class="featured">
+            <%= t "stats.index.proposal_votes" %><br>
+            <span class="number"><%= number_with_delimiter(@proposal_votes) %><br></span>
+          </p>
+
+          <p>
+            <%= t "stats.index.debate_votes" %><br>
+            <span class="number"><%= number_with_delimiter(@debate_votes) %></span>
+          </p>
+
+          <p>
+            <%= t "stats.index.comment_votes" %><br>
+            <span class="number"><%= number_with_delimiter(@comment_votes) %></span>
+          </p>
+
+          <p>
+            <%= t "stats.index.votes" %><br>
+            <span class="number"><%= number_with_delimiter(@votes) %></span>
+          </p>
+        </div>
+
+        <div class="small-12 medium-4 column">
+          <p class="featured">
+            <%= t "stats.index.verified_users" %><br>
+            <span class="number"><%= number_with_delimiter(@verified_users) %></span>
+          </p>
+
+          <p>
+            <%= t "stats.index.unverified_users" %><br>
+            <span class="number"><%= number_with_delimiter(@unverified_users) %></span>
+          </p>
+        </div>
+
+
+    </div>
+  </div>
+</div>
