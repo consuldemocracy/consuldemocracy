@@ -1,12 +1,12 @@
 <div class="proposal-edit row">
 
   <div class="small-12 column">
-    <%= link_to proposals_path, class: "left back clear" do %>
-      <i class="icon-angle-left left"></i>
+    <%= link_to proposals_path, class: "back" do %>
+      <i class="icon-angle-left"></i>
       <%= t("proposals.edit.back_link") %>
     <% end %>
 
-    <div class="right">
+    <div class="float-right">
       <%= link_to t("proposals.edit.show_link"), @proposal %>
     </div>
 

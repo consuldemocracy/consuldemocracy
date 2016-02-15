@@ -43,7 +43,7 @@ feature "Home" do
     end
 
     def ie_alert_box_xpath
-      "/html/body/div[@class='wrapper']/comment()[contains(.,'ie-alert-box')]"
+      "/html/body/div[@class='wrapper']/comment()[contains(.,'ie-callout')]"
     end
   end
 end

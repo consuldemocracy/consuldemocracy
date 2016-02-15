@@ -1,16 +1,18 @@
-<div id="<%= dom_id(proposal) %>" class="proposal clear">
+<div id="<%= dom_id(proposal) %>" class="proposal clear" data-type="proposal">
   <div class="panel">
     <div class="row">
 
       <div class="small-12 medium-9 column">
         <div class="proposal-content">
+
           <% cache [locale_and_user_status(proposal), 'index', proposal, proposal.author] do %>
-            <span class="label-proposal left"><%= t("proposals.proposal.proposal") %></span>
+            <span class="label-proposal float-left"><%= t("proposals.proposal.proposal") %></span>
             <i class="icon-proposals"></i>
             <h3><%= link_to proposal.title, namespaced_proposal_path(proposal) %></h3>
             <p class="proposal-info">
               <i class="icon-comments"></i>&nbsp;
               <%= link_to t("proposals.proposal.comments", count: proposal.comments_count), namespaced_proposal_path(proposal, anchor: "comments") %>
+
               <span class="bullet">&nbsp;&bull;&nbsp;</span>
               <%= l proposal.created_at.to_date %>
 

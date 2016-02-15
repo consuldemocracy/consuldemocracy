@@ -1,6 +1,6 @@
 <h2><%= t("admin.spending_proposals.index.title") %></h2>
 
-<div class="small-12 medium-4 column right">
+<div class="small-12 medium-4 column float-right">
   <%= form_tag admin_spending_proposals_path, method: :get, enforce_utf8: false do %>
     <%= select_tag :geozone_id, options_for_select(geozone_select_options.unshift([t("geozones.none"), "all"]), params[:geozone_id]),
                   { prompt: t("admin.spending_proposals.index.geozone_filter_all"),

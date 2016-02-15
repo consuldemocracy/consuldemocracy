@@ -13,12 +13,12 @@
       </div>
     </div>
 
-    <div class="progress small-12 success radius">
+    <div class="progress small-12 success">
       <span class="meter" style="width: 66%"></span>
     </div>
 
-    <%= link_to account_path, class: "left back clear" do %>
-      <i class="icon-angle-left left"></i>
+    <%= link_to account_path, class: "back" do %>
+      <i class="icon-angle-left"></i>
       <%= t("verification.back") %>
     <% end %>
 
@@ -26,8 +26,10 @@
 
     <%= form_for @sms, as: "sms", url: sms_path, method: :put do |f| %>
       <% if @error %>
-        <div data-alert class="alert-box alert radius">
-          <a href="#" class="close" title="<%= t("application.close") %>">&times;</a>
+        <div data-alert class="callout alert" data-closable>
+          <button class="close-button" aria-label="<%= t("application.close") %>" type="button" data-close>
+            <span aria-hidden="true">&times;</span>
+          </button>
           <%= @error %>
         </div>
       <% end %>
@@ -37,10 +39,12 @@
         <%= f.text_field :confirmation_code, label: false %>
       </div>
 
-      <%= f.submit t("verification.sms.edit.submit_button") %>
+      <%= f.submit t("verification.sms.edit.submit_button"), class: "button success" %>
     <% end %>
 
-    <%= t("verification.sms.edit.resend_sms_text") %>
-    <%= link_to t("verification.sms.edit.resend_sms_link"), verified_user_path %>
+    <p>
+      <strong><%= t("verification.sms.edit.resend_sms_text") %></strong><br>
+      <%= link_to t("verification.sms.edit.resend_sms_link"), verified_user_path %>
+    </p>
   </div>
 </div>

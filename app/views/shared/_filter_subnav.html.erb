@@ -3,15 +3,15 @@
    #   i18n_namespace: for example "moderation.debates.index"
 %>
 
-<dl class="sub-nav clear">
-  <dt class="sr-only"><%= t("#{i18n_namespace}.filter") %>: </dt>
+<ul class="menu simple clear">
+  <li class="sr-only"><%= t("#{i18n_namespace}.filter") %>: </li>
 
   <% @valid_filters.each do |filter| %>
     <% if @current_filter == filter %>
-      <dd class="active"><%= t("#{i18n_namespace}.filters.#{filter}") %></dd>
+      <li class="active"><%= t("#{i18n_namespace}.filters.#{filter}") %></li>
     <% else %>
-      <dd><%= link_to t("#{i18n_namespace}.filters.#{filter}"),
-        current_path_with_query_params(filter: filter, page: 1) %></dd>
+      <li><%= link_to t("#{i18n_namespace}.filters.#{filter}"),
+        current_path_with_query_params(filter: filter, page: 1) %></li>
     <% end %>
   <% end %>
-</dl>
+</ul>
