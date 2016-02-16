@@ -6,8 +6,8 @@ class ProposalsController < ApplicationController
   before_action :parse_advanced_search_terms, only: :index
   before_action :parse_tag_filter, only: :index
   before_action :set_search_order, only: :index
-  before_action :load_categories, only: [:index, :new, :edit, :map]
-  before_action :load_geozones, only: [:edit, :map]
+  before_action :load_categories, only: [:index, :new, :edit, :map, :summary]
+  before_action :load_geozones, only: [:edit, :map, :summary]
   before_action :authenticate_user!, except: [:index, :show, :map, :summary]
 
   has_orders %w{hot_score confidence_score created_at relevance}, only: :index
@@ -37,6 +37,7 @@ class ProposalsController < ApplicationController
 
   def summary
     @proposals = Proposal.last_week.sort_by_confidence_score.grouped_by_categories
+    @tag_cloud = tag_cloud
   end
 
   private
