@@ -36,7 +36,7 @@ class ProposalsController < ApplicationController
   end
 
   def summary
-    @proposals = Proposal.grouped_by_categories(Proposal.category_names)
+    @proposals = Proposal.last_week.sort_by_confidence_score.grouped_by_categories(Proposal.category_names)
   end
 
   private
