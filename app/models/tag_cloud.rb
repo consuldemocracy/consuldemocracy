@@ -16,7 +16,7 @@ class TagCloud
   end
 
   def category_names
-    ActsAsTaggableOn::Tag.where("kind = 'category'").map {|tag| tag.name.downcase }
+    ActsAsTaggableOn::Tag.category_names
   end
 
   def geozone_names

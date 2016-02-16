@@ -34,6 +34,10 @@ module ActsAsTaggableOn
       update(custom_counter_field_name_for(taggable_type) => visible_taggables.count)
     end
 
+    def self.category_names
+      Tag.where("kind = 'category'").map {|tag| tag.name.downcase }
+    end
+
     private
       def custom_counter_field_name_for(taggable_type)
         "#{taggable_type.underscore.pluralize}_count"

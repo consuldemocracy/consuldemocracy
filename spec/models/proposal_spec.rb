@@ -633,12 +633,64 @@ describe Proposal do
   describe "#last_week" do
     it "should return proposals created this week" do
       proposal = create(:proposal)
-      expect(Proposal.last_week.all).to include (proposal)
+      expect(Proposal.last_week).to include(proposal)
     end
 
-    it "should not show proposals created more than a week ago" do
+    it "should not return proposals created more than a week ago" do
       proposal = create(:proposal, created_at: 8.days.ago)
-      expect(Proposal.last_week.all).to_not include (proposal)
+      expect(Proposal.last_week).to_not include(proposal)
+    end
+  end
+
+  describe "for_summary" do
+    it "should return proposals tagged with a category" do
+      create(:tag, kind: 'category', name: 'Culture')
+      proposal = create(:proposal, tag_list: 'Culture')
+
+      expect(Proposal.for_summary.values.flatten).to include(proposal)
+    end
+
+    it "should not return proposals tagged without a category" do
+      create(:tag, kind: 'category', name: 'Culture')
+      proposal = create(:proposal, tag_list: 'Parks')
+
+      expect(Proposal.for_summary.values.flatten).to_not include(proposal)
+    end
+
+    it "should return proposals created this week" do
+      create(:tag, kind: 'category', name: 'Culture')
+      proposal = create(:proposal, tag_list: 'Culture')
+      expect(Proposal.for_summary.values.flatten).to include(proposal)
+    end
+
+    it "should not return proposals created more than a week ago" do
+      create(:tag, kind: 'category', name: 'Culture')
+      proposal = create(:proposal, tag_list: 'Culture', created_at: 8.days.ago)
+      expect(Proposal.for_summary.values.flatten).to_not include(proposal)
+    end
+
+    it "should order by votes" do
+      create(:tag, kind: 'category', name: 'Culture')
+      create(:proposal,  tag_list: 'Culture').update_column(:confidence_score, 2)
+      create(:proposal, tag_list: 'Culture').update_column(:confidence_score, 10)
+      create(:proposal, tag_list: 'Culture').update_column(:confidence_score, 5)
+
+      results = Proposal.for_summary.values.flatten
+
+      expect(results.first.confidence_score).to  be(10)
+      expect(results.second.confidence_score).to be(5)
+      expect(results.third.confidence_score).to  be(2)
+    end
+
+    it "should return proposals grouped by tag" do
+      create(:tag, kind: 'category', name: 'Culture')
+      create(:tag, kind: 'category', name: 'Health')
+
+      proposal1 = create(:proposal, tag_list: 'Culture')
+      proposal2 = create(:proposal, tag_list: 'Culture')
+      proposal3 = create(:proposal, tag_list: 'Health')
+
+      expect(Proposal.for_summary).to include('Culture' => [proposal2, proposal1], 'Health' => [proposal3])
     end
   end
 
