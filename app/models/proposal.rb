@@ -41,7 +41,11 @@ class Proposal < ActiveRecord::Base
   scope :sort_by_random,           -> { reorder("RANDOM()") }
   scope :sort_by_relevance ,       -> { all }
   scope :sort_by_flags,            -> { order(flags_count: :desc, updated_at: :desc) }
-  scope :last_week,            -> { where("created_at >= ?", 7.days.ago)}
+  scope :last_week,                -> { where("created_at >= ?", 7.days.ago)}
+
+  scope :grouped_by_categories,    -> (categories) { where("lower(tags.name) IN (?)", categories).
+                                                     joins(:tags).select('proposals.*, tags.name').
+                                                     group_by(&:name) }
 
   def searchable_values
     { title              => 'A',
@@ -60,11 +64,19 @@ class Proposal < ActiveRecord::Base
   end
 
   def self.search_by_code(terms)
-    if code_match = /\A#{Setting["proposal_code_prefix"]}-\d\d\d\d-\d\d-(\d*)\z/.match(terms)
-      results = where(id: code_match[1])
+    if code = self.match_code(terms)
+      results = where(id: code[1])
     end
 
     return results if (results.present? && results.first.code == terms)
+  end
+
+  def self.match_code(terms)
+    /\A#{Setting["proposal_code_prefix"]}-\d\d\d\d-\d\d-(\d*)\z/.match(terms)
+  end
+
+  def self.category_names
+    ActsAsTaggableOn::Tag.where("kind = 'category'").map {|tag| tag.name.downcase }
   end
 
   def description
