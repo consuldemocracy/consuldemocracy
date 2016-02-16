@@ -302,7 +302,8 @@ en:
       start_proposal: Create a proposal
       title: Proposals
       top: Weekly selection
-      top_link: See the best proposals
+      top_link_debates: '#TúPreguntas'
+      top_link_proposals: The most supported proposals
     new:
       back_link: Go back
       form:

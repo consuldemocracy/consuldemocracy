@@ -303,7 +303,8 @@ es:
       start_proposal: Crea una propuesta
       title: Propuestas ciudadanas
       top: Selección semanal
-      top_link: Ver las mejores propuestas
+      top_link_debates: '#TúPreguntas'
+      top_link_proposals: Propuestas más apoyadas
     new:
       back_link: Volver
       form:

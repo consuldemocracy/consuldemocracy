@@ -1,4 +1,7 @@
 <div class="sidebar-divider"></div>
 <h3 class="sidebar-title"><%= t("proposals.index.top") %></h3>
-<br>
-<%= link_to t("proposals.index.top_link"), "/proposals/summary", class: "small" %>
+
+<p>
+  <%= link_to t("proposals.index.top_link_proposals"), "/proposals/summary", class: "small" %><br>
+  <%= link_to t("proposals.index.top_link_debates"), "https://decide.madrid.es/debates?utf8=%E2%9C%93&search=%23T%C3%BAPreguntas&advanced_search%5Bdate_min%5D=2", class: "small" %></p>
+</p>
