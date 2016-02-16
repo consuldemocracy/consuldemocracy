@@ -219,7 +219,7 @@ en:
       open_gov: Open government
       proposals: Proposals
       processes: Open processes
-      spending_proposals: Spending proposals
+      spending_proposals: Participatory budgeting
   legislation:
     help:
       alt: Select the text you want to comment and press the button with the pencil.
@@ -424,7 +424,15 @@ en:
       title: Spending proposal title
     index:
       create_link: Create spending proposal
-      text_html: Here you can send spending proposals to be considered in the frame of the annual participatory budgeting.
+      date_1: February 22 to March 31
+      date_1_info: Submission of proposals
+      date_2: April 1 to April 15
+      date_2_info: Preselection
+      date_3: May 15 to June 30
+      date_3_info: Final vote
+      signin_only: For create spending proposals you must %{signin}.
+      signin: sign in
+      text: Here you can send spending proposals to be considered in the frame of the annual participatory budgeting.
       title: Participatory budgeting
       verified_only: Only verified users can create spending proposals, %{verify_account}.
       verify_account: verify your account

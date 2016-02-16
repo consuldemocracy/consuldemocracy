@@ -6,6 +6,7 @@
 // 04. List participation
 // 05. Featured
 // 06. Surveys
+// 07. Spending proposals
 //
 
 // 01. Votes and supports
@@ -1148,4 +1149,65 @@
   border-top: 4px solid black;
   color: black;
   padding-top: $line-height;
+}
+
+// 07. Spending proposals
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+.spending-proposals {
+  background: $budget image-url('spending_proposals_bg.jpg');
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0 auto;
+
+  h1 {
+    color: white;
+    margin-bottom: $line-height;
+
+    @media (min-width: $small-breakpoint) {
+      line-height: $line-height*5;
+      margin-bottom: 0;
+    }
+  }
+}
+
+.spending-proposal-timeline {
+
+  ul {
+    display: inline-block;
+
+    @media (min-width: $small-breakpoint) {
+      border-top: 2px solid $border;
+    }
+
+
+    li {
+      margin-right: $line-height*2.5;
+      padding-top: $line-height*1.5;
+      position: relative;
+
+      @media (min-width: $small-breakpoint) {
+        display: inline-block;
+      }
+
+      .icon-calendar {
+        background: white;
+        border: 1px solid $border;
+        border-radius: rem-calc(30);
+        color: $budget;
+        height: rem-calc(40);
+        left: 50%;
+        margin-left: rem-calc(-20);
+        padding: rem-calc(10);
+        position: absolute;
+        top: -20px;
+        width: rem-calc(40);
+      }
+    }
+
+    h3, p {
+      color: white;
+    }
+  }
 }
