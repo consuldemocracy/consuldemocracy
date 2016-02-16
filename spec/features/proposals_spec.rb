@@ -1174,7 +1174,8 @@ feature 'Proposals' do
 
       create(:proposal, tag_list: 'Random')
 
-      visit summary_proposals_path
+      visit proposals_path
+      click_link "See the best proposals"
 
       within("#culture") do
         expect(page).to have_content("Culture")
