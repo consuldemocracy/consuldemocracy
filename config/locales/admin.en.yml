@@ -150,6 +150,15 @@ en:
       show:
         by: Sent by
         geozone: Scope
+        dossier: Dossier
+        price: Price
+        legality: Legality
+        legal: Legal
+        no_legal: No legal
+        feasibility: Feasibility
+        feasible: Feasible
+        no_feasible: No feasible
+        undefined: Undefined
     stats:
       show:
         stats_title: Stats
