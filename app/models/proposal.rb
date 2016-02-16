@@ -43,9 +43,9 @@ class Proposal < ActiveRecord::Base
   scope :sort_by_flags,            -> { order(flags_count: :desc, updated_at: :desc) }
   scope :last_week,                -> { where("proposals.created_at >= ?", 7.days.ago)}
 
-  scope :grouped_by_categories,    -> (categories) { where("lower(tags.name) IN (?)", categories).
-                                                     joins(:tags).select('proposals.*, tags.name').
-                                                     group_by(&:name) }
+  scope :grouped_by_categories,    -> { where("lower(tags.name) IN (?)", Proposal.category_names).
+                                               joins(:tags).select('proposals.*, tags.name').
+                                               group_by(&:name) }
 
   def searchable_values
     { title              => 'A',
