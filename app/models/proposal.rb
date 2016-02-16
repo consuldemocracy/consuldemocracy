@@ -42,7 +42,7 @@ class Proposal < ActiveRecord::Base
   scope :sort_by_relevance ,       -> { all }
   scope :sort_by_flags,            -> { order(flags_count: :desc, updated_at: :desc) }
   scope :last_week,                -> { where("proposals.created_at >= ?", 7.days.ago)}
-  scope :in_categories,            -> { where("lower(tags.name) IN (?)", Proposal.category_names) }
+  scope :in_categories,            -> { where("lower(tags.name) IN (?)", ActsAsTaggableOn::Tag.category_names) }
 
   def searchable_values
     { title              => 'A',
@@ -77,10 +77,6 @@ class Proposal < ActiveRecord::Base
     joins(:tags).
     select('proposals.*, tags.name as tag_name').
     group_by(&:tag_name)
-  end
-
-  def self.category_names
-    ActsAsTaggableOn::Tag.where("kind = 'category'").map {|tag| tag.name.downcase }
   end
 
   def description
