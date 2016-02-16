@@ -5,11 +5,16 @@ class Admin::OrganizationsController < Admin::BaseController
 
   def index
     @organizations = @organizations.send(@current_filter)
-    @organizations = @organizations.includes(:user).order(:name, 'users.email').page(params[:page])
+    @organizations = @organizations.includes(:user)
+                                   .order('users.created_at', :name, 'users.email')
+                                   .page(params[:page])
   end
 
   def search
-    @organizations = Organization.includes(:user).search(params[:term]).page(params[:page])
+    @organizations = Organization.includes(:user)
+                                 .search(params[:term])
+                                 .order('users.created_at', :name, 'users.email')
+                                 .page(params[:page])
   end
 
   def verify
