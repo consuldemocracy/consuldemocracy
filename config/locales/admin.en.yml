@@ -154,10 +154,10 @@ en:
         price: Price
         legality: Legality
         legal: Legal
-        no_legal: No legal
+        not_legal: Not legal
         feasibility: Feasibility
         feasible: Feasible
-        no_feasible: No feasible
+        not_feasible: Not feasible
         undefined: Undefined
     stats:
       show:

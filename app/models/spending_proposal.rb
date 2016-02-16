@@ -47,7 +47,7 @@ class SpendingProposal < ActiveRecord::Base
     when true
       "legal"
     when false
-      "no_legal"
+      "not_legal"
     else
       "undefined"
     end
@@ -58,7 +58,7 @@ class SpendingProposal < ActiveRecord::Base
     when true
       "feasible"
     when false
-      "no_feasible"
+      "not_feasible"
     else
       "undefined"
     end

@@ -119,7 +119,7 @@ feature 'Admin spending proposals' do
     expect(page).to have_content(spending_proposal.geozone.name)
     expect(page).to have_content("1234.56")
     expect(page).to have_content("Legal")
-    expect(page).to have_content("No feasible")
+    expect(page).to have_content("Not feasible")
     expect(page).to have_content("It's impossible")
   end
 

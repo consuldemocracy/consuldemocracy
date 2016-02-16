@@ -49,9 +49,9 @@ describe SpendingProposal do
         expect(spending_proposal.legality).to eq "legal"
       end
 
-      it "can be no-legal" do
+      it "can be not-legal" do
         spending_proposal.legal = false
-        expect(spending_proposal.legality).to eq "no_legal"
+        expect(spending_proposal.legality).to eq "not_legal"
       end
 
       it "can be undefined" do
@@ -66,9 +66,9 @@ describe SpendingProposal do
         expect(spending_proposal.feasibility).to eq "feasible"
       end
 
-      it "can be no-feasible" do
+      it "can be not-feasible" do
         spending_proposal.feasible = false
-        expect(spending_proposal.feasibility).to eq "no_feasible"
+        expect(spending_proposal.feasibility).to eq "not_feasible"
       end
 
       it "can be undefined" do
