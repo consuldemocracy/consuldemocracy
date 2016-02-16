@@ -42,6 +42,42 @@ describe SpendingProposal do
     end
   end
 
+  describe "dossier info" do
+    describe "#legality" do
+      it "can be legal" do
+        spending_proposal.legal = true
+        expect(spending_proposal.legality).to eq "legal"
+      end
+
+      it "can be no-legal" do
+        spending_proposal.legal = false
+        expect(spending_proposal.legality).to eq "no_legal"
+      end
+
+      it "can be undefined" do
+        spending_proposal.legal = nil
+        expect(spending_proposal.legality).to eq "undefined"
+      end
+    end
+
+    describe "#feasibility" do
+      it "can be feasible" do
+        spending_proposal.feasible = true
+        expect(spending_proposal.feasibility).to eq "feasible"
+      end
+
+      it "can be no-feasible" do
+        spending_proposal.feasible = false
+        expect(spending_proposal.feasibility).to eq "no_feasible"
+      end
+
+      it "can be undefined" do
+        spending_proposal.feasible = nil
+        expect(spending_proposal.feasibility).to eq "undefined"
+      end
+    end
+  end
+
   describe "resolution status" do
     it "should be valid" do
       spending_proposal.resolution = "accepted"

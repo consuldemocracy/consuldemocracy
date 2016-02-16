@@ -41,4 +41,26 @@ class SpendingProposal < ActiveRecord::Base
   def unresolved?
     resolution.blank?
   end
+
+  def legality
+    case legal
+    when true
+      "legal"
+    when false
+      "no_legal"
+    else
+      "undefined"
+    end
+  end
+
+  def feasibility
+    case feasible
+    when true
+      "feasible"
+    when false
+      "no_feasible"
+    else
+      "undefined"
+    end
+  end
 end
