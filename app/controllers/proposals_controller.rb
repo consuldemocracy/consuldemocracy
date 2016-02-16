@@ -36,7 +36,7 @@ class ProposalsController < ApplicationController
   end
 
   def summary
-    @proposals = Proposal.last_week.sort_by_confidence_score.grouped_by_categories
+    @proposals = Proposal.for_summary
     @tag_cloud = tag_cloud
   end
 

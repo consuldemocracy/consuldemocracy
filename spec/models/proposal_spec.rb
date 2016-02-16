@@ -642,19 +642,19 @@ describe Proposal do
     end
   end
 
-  describe "grouped_by_categories" do
+  describe "for_summary" do
     it "should return proposals tagged with a category" do
       create(:tag, kind: 'category', name: 'Culture')
       proposal = create(:proposal, tag_list: 'Culture')
 
-      expect(Proposal.grouped_by_categories.values.flatten).to include(proposal)
+      expect(Proposal.for_summary.values.flatten).to include(proposal)
     end
 
     it "should not return proposals tagged without a category" do
       create(:tag, kind: 'category', name: 'Culture')
       proposal = create(:proposal, tag_list: 'Parks')
 
-      expect(Proposal.grouped_by_categories.values.flatten).to_not include(proposal)
+      expect(Proposal.for_summary.values.flatten).to_not include(proposal)
     end
 
     it "should return proposals grouped by tag" do
@@ -665,7 +665,7 @@ describe Proposal do
       proposal2 = create(:proposal, tag_list: 'Culture')
       proposal3 = create(:proposal, tag_list: 'Health')
 
-      expect(Proposal.grouped_by_categories).to include('Culture' => [proposal2, proposal1], 'Health' => [proposal3])
+      expect(Proposal.for_summary).to include('Culture' => [proposal2, proposal1], 'Health' => [proposal3])
     end
   end
 
