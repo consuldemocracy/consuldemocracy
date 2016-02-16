@@ -108,7 +108,7 @@ en:
       select_order: Order by
       start_debate: Start a debate
       title: Debates
-      share_debate: "Share a link"      
+      share_debate: "Share a link"
     new:
       back_link: Go back
       form:
@@ -142,7 +142,7 @@ en:
       debate_link: "Link"
     new:
       start_new: "Share a link"
-      recommendations_title: "Recommendations for sharing a link"      
+      recommendations_title: "Recommendations for sharing a link"
       form:
         submit_button: "Share link"
     create:
@@ -301,6 +301,8 @@ en:
       select_order_long: 'You are viewing proposals according to:'
       start_proposal: Create a proposal
       title: Proposals
+      top: Weekly selection
+      top_link: See the best proposals
     new:
       back_link: Go back
       form:
