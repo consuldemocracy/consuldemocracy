@@ -48,6 +48,7 @@
         <%= link_to t("debates.index.start_debate"), new_debate_path, class: 'button radius expand' %>
         <%= link_to t("debates.index.share_debate"), debate_links_new_path, class: 'button radius expand' %>
         <%= render "shared/tag_cloud", taggable: 'debate' %>
+        <%= render 'popular' %>
       </aside>
     </div>
 
