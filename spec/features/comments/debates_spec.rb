@@ -290,6 +290,7 @@ feature 'Commenting debates' do
   end
 
   scenario 'Submit button is disabled after clicking', :js do
+    debate = create(:debate)
     login_as(user)
     visit debate_path(debate)
 
