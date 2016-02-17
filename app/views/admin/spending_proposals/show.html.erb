@@ -26,3 +26,12 @@
           class: "button radius tiny warning" %>
   <% end %>
 </p>
+
+
+<h2><%= t("admin.spending_proposals.show.dossier") %>:</h2>
+
+<p><strong><%= t("admin.spending_proposals.show.price") %>:</strong> <%= @spending_proposal.price %></p>
+<p><strong><%= t("admin.spending_proposals.show.legality") %>:</strong> <%= t("admin.spending_proposals.show.#{@spending_proposal.legality}") %></p>
+<p><strong><%= t("admin.spending_proposals.show.feasibility") %>:</strong> <%= t("admin.spending_proposals.show.#{@spending_proposal.feasibility}") %></p>
+
+<%= safe_html_with_links(@spending_proposal.explanation.html_safe) if @spending_proposal.explanation %>

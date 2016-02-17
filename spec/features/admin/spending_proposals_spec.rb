@@ -103,7 +103,12 @@ feature 'Admin spending proposals' do
   end
 
   scenario 'Show' do
-    spending_proposal = create(:spending_proposal, geozone: create(:geozone))
+    spending_proposal = create(:spending_proposal,
+                                geozone: create(:geozone),
+                                price: 1234.56,
+                                legal: true,
+                                feasible: false,
+                                explanation: "It's impossible")
     visit admin_spending_proposals_path
 
     click_link spending_proposal.title
@@ -112,6 +117,10 @@ feature 'Admin spending proposals' do
     expect(page).to have_content(spending_proposal.description)
     expect(page).to have_content(spending_proposal.author.name)
     expect(page).to have_content(spending_proposal.geozone.name)
+    expect(page).to have_content("1234.56")
+    expect(page).to have_content("Legal")
+    expect(page).to have_content("Not feasible")
+    expect(page).to have_content("It's impossible")
   end
 
   scenario 'Accept from show' do

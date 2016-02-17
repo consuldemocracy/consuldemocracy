@@ -4,7 +4,7 @@ module Abilities
 
     def initialize(user)
       can [:read, :map], Debate
-      can [:read, :map], Proposal
+      can [:read, :map, :summary], Proposal
       can :read, Comment
       can :read, SpendingProposal
       can :read, Legislation

@@ -1162,4 +1162,70 @@ feature 'Proposals' do
       end
     end
   end
+
+  context "Summary" do
+
+    scenario "Displays proposals grouped by category" do
+      create(:tag, kind: 'category', name: 'Culture')
+      create(:tag, kind: 'category', name: 'Social Services')
+
+      3.times { create(:proposal, tag_list: 'Culture') }
+      3.times { create(:proposal, tag_list: 'Social Services') }
+
+      create(:proposal, tag_list: 'Random')
+
+      visit proposals_path
+      click_link "See the best proposals"
+
+      within("#culture") do
+        expect(page).to have_content("Culture")
+        expect(page).to have_css(".proposal", count: 3)
+      end
+
+      within("#social-services") do
+        expect(page).to have_content("Social Services")
+        expect(page).to have_css(".proposal", count: 3)
+      end
+    end
+
+    scenario "Displays a maximum of 3 proposals per category" do
+      create(:tag, kind: 'category', name: 'Culture')
+      4.times { create(:proposal, tag_list: 'Culture') }
+
+      visit summary_proposals_path
+
+      expect(page).to have_css(".proposal", count: 3)
+    end
+
+    scenario "Orders proposals by votes" do
+      create(:tag, kind: 'category', name: 'Culture')
+      create(:proposal, title: 'Best',   tag_list: 'Culture').update_column(:confidence_score, 10)
+      create(:proposal, title: 'Worst',  tag_list: 'Culture').update_column(:confidence_score, 2)
+      create(:proposal, title: 'Medium', tag_list: 'Culture').update_column(:confidence_score, 5)
+
+      visit summary_proposals_path
+
+      expect('Best').to appear_before('Medium')
+      expect('Medium').to appear_before('Worst')
+    end
+
+    scenario "Displays proposals from last week" do
+      create(:tag, kind: 'category', name: 'Culture')
+      proposal1 = create(:proposal, tag_list: 'Culture', created_at: 1.day.ago)
+      proposal2 = create(:proposal, tag_list: 'Culture', created_at: 5.days.ago)
+      proposal3 = create(:proposal, tag_list: 'Culture', created_at: 8.days.ago)
+
+      visit summary_proposals_path
+
+      within("#proposals") do
+        expect(page).to have_css('.proposal', count: 2)
+
+        expect(page).to have_content(proposal1.title)
+        expect(page).to have_content(proposal2.title)
+        expect(page).to_not have_content(proposal3.title)
+      end
+    end
+
+  end
+
 end

@@ -304,6 +304,8 @@ es:
       select_order_long: Estas viendo las propuestas
       start_proposal: Crea una propuesta
       title: Propuestas ciudadanas
+      top: Selección semanal
+      top_link: Ver las mejores propuestas
     new:
       back_link: Volver
       form:

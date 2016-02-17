@@ -149,7 +149,16 @@ es:
         title: Propuestas de gasto para presupuestos participativos
       show:
         by: Enviada por
-        geozone: "Ámbito"
+        geozone: Ámbito
+        dossier: Informe
+        price: Coste
+        legality: Legalidad
+        legal: Legal
+        not_legal: No legal
+        feasibility: Viabilidad
+        feasible: Viable
+        not_feasible: No viable
+        undefined: Sin definir
     stats:
       show:
         stats_title: Estadísticas
