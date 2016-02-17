@@ -323,7 +323,7 @@ GEM
       mime-types (>= 1.16, < 3.0)
       netrc (~> 0.7)
     rinku (1.7.3)
-    rollbar (2.7.1)
+    rollbar (2.8.0)
       multi_json
     rspec (3.4.0)
       rspec-core (~> 3.4.0)
@@ -486,7 +486,7 @@ DEPENDENCIES
   redcarpet
   responders
   rinku
-  rollbar (~> 2.7.0)
+  rollbar (~> 2.8.0)
   rspec-rails (~> 3.3)
   sass-rails
   savon
