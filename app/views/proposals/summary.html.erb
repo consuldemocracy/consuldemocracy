@@ -9,7 +9,7 @@
 
       <% @proposals.each do |group_name, proposals| %>
         <div id="<%= group_name.parameterize %>">
-          <h2 class="margin-top"><%= group_name %></h2>
+          <h2 class="margin-top"><%= group_name.capitalize %></h2>
 
           <% proposals[0..2].each do |proposal| %>
             <div class="proposal clear">
