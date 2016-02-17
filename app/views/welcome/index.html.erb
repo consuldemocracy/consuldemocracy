@@ -1,17 +1,21 @@
-<%= render "featured_welcome" %>
-
 <div class="row-full home-page">
   <div class="row">
-    <div class="small-12 medium-6 column">
+    <div class="small-12 medium-7 column text-center small-centered">
       <h1><%= t("layouts.header.open_city_title") %></h1>
-      <p><%= t("layouts.header.open_city_slogan_html") %>
-      <%= link_to t("welcome.more_information"), page_path('more_information') %></p>
-      <%= link_to t('welcome.featured.proposals.link'), proposals_path, class: "button radius warning" %>
+      <p><%= t("layouts.header.open_city_slogan_short") %></p>
+      <%#= link_to t('welcome.featured.proposals.link'), proposals_path, class: "button radius large" %>
     </div>
+  </div>
+</div>
 
-    <div class="show-for-medium-up small-12 medium-6 column text-center">
-      <%= image_tag("icon_home.png", size: "330x240", alt:"", role:"presentation") %>
-    </div>
+<%= render "featured_welcome" %>
+
+<div class="row margin-top">
+  <div class="small-12 column">
+    <blockquote>
+      <h3><%= t("layouts.header.open_city_slogan_html") %></h3>
+      <%= link_to t("welcome.more_information"), page_path('more_information') %>
+    </blockquote>
   </div>
 </div>
 

@@ -914,40 +914,72 @@
 
 .home-page-featured {
 
+  a:hover, a:hover h2, a:hover p {
+    text-decoration: none;
+  }
+
   .panel {
 
-    &.featured-one, &.featured-two {
+    &.featured-one, &.featured-two, &.featured-three {
       background-size: cover;
       background-position: 50% 50%;
       border: 0;
       min-height: $line-height*10;
+      position: relative;
+
+      h2, p {
+        color: $text;
+      }
 
       .button {
         background: white;
-        bottom: 48px;
         color: $text;
-        position: absolute;
+        margin-top: $line-height;
       }
     }
 
     &.featured-one {
-      background: $featured image-url('welcome_featured_1.jpg') no-repeat;
+      background: $featured;
+      margin-top: $line-height;
+
+      @media (min-width: $small-breakpoint) {
+        margin-top: 0;
+      }
+
+      .icon-proposals {
+        color: #e5c300;
+        font-size: rem-calc(240);
+        line-height: rem-calc(170);
+        position: absolute;
+        right: 15%;
+        top: 260px;
+      }
     }
 
     &.featured-two {
       background: #33DADF;
+      margin-bottom: 0;
 
-      @media (min-width: $small-breakpoint) {
-        background: #33DADF image-url('processes_plaza_espana.png') no-repeat;
-        background-position: top right;
+      @media (min-width: $medium-breakpoint) {
+        background: #00DADE image-url('processes_plaza_espana_medium.png') no-repeat;
+        background-position: bottom right;
       }
+    }
 
-      a:hover {
-        text-decoration: none;
+    &.featured-three {
+      background: $budget;
+
+      .icon-budget {
+        bottom: 0;
+        color: #54538c;
+        font-size: rem-calc(140);
+        line-height: rem-calc(110);
+        position: absolute;
+        right: 10px;
       }
 
       h2, p {
-        color: white;
+        color: #eaeaf2;
       }
     }
   }

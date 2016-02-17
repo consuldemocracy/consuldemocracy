@@ -213,7 +213,8 @@ en:
         other: You have %{count} new notifications
       no_notifications: You don't have new notifications
       open: open
-      open_city_slogan_html: There are cities that are governed directly by their inhabitants, who <b>discuss</b> the topics they are concerned about, <b>propose</b> ideas to improve their lives and <b>decide</b> among themselves which ones will be carried out. Madrid is already one of these cities.
+      open_city_slogan_html: In Madrid their inhabitants, <b>discuss</b> the topics they are concerned about, <b>propose</b> ideas to improve their lives and <b>decide</b> among themselves which ones will be carried out.
+      open_city_slogan_short: There are cities that are governed directly by their inhabitants, Madrid is already one of these cities.
       open_city_title: Love the city, and it will become a city you love.
       open_data: Open data
       open_gov: Open government
@@ -503,6 +504,7 @@ en:
       description: If the proposal is accepted by the majority, the City Council accepts it as its own and it gets done.
       title: It gets done
     featured:
+      page_title: Featured
       process:
         link: More information
         text: Decide how do you wants this new place on your city.
@@ -511,6 +513,10 @@ en:
         link: See proposals
         text: Create your own proposals and supports those of other citizens.
         title: Citizen proposals
+      spending_proposals:
+        link: Send your proposal
+        text: The highest rated proposals will be included on participatory budgeting.
+        title: Participatory budgeting
     more_information: More information about this page
     highlights: 'Highlights: '
     proposal:

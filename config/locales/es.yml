@@ -214,7 +214,8 @@ es:
         other: Tienes %{count} notificaciones nuevas
       no_notifications: No tienes notificaciones nuevas
       open: abierto
-      open_city_slogan_html: Existen ciudades gobernadas directamente por sus habitantes, que <b>debaten</b> sobre temas que les preocupan, <b>proponen</b> ideas para mejorar sus vidas y <b>deciden</b> entre todas y todos las que se llevan a cabo. Madrid ya es una de ellas.
+      open_city_slogan_html: En Madrid sus habitantes, <b>debaten</b> sobre temas que les preocupan, <b>proponen</b> ideas para mejorar sus vidas y <b>deciden</b> entre todas y todos las que se llevan a cabo.
+      open_city_slogan_short: Existen ciudades gobernadas directamente por sus habitantes, Madrid ya es una de ellas.
       open_city_title: La ciudad que quieres será la ciudad que quieras.
       open_data: Datos abiertos
       open_gov: Gobierno %{open}
@@ -504,6 +505,7 @@ es:
       description: Si la propuesta es aceptada mayoritariamente, el Ayuntamiento la asume como propia y se hace.
       title: Se hace
     featured:
+      page_title: Destacados
       process:
         link: Participa
         text: Decide como quieres que sea este nuevo espacio en tu ciudad.
@@ -512,6 +514,10 @@ es:
         link: Ver propuestas
         text: Crear tus propias propuestas y apoya las de otros ciudadanos.
         title: Propuestas ciudadanas
+      spending_proposals:
+        link: Envia tu propuesta
+        text: Las propuestas más votadas serán incluidas en la partida de presupuestos participativos.
+        title: Presupuestos participativos
     more_information: Más información sobre esta página
     highlights: 'Portada: '
     proposal:
