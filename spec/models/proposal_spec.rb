@@ -688,6 +688,7 @@ describe Proposal do
 
       proposal1 = create(:proposal, tag_list: 'Culture')
       proposal2 = create(:proposal, tag_list: 'Culture')
+      proposal2.update_column(:confidence_score, 100)
       proposal3 = create(:proposal, tag_list: 'Health')
 
       expect(Proposal.for_summary).to include('Culture' => [proposal2, proposal1], 'Health' => [proposal3])
