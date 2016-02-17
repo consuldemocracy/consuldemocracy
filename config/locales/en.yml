@@ -301,9 +301,8 @@ en:
       select_order_long: 'You are viewing proposals according to:'
       start_proposal: Create a proposal
       title: Proposals
-      top: Weekly selection
-      top_link_debates: '#TúPreguntas'
-      top_link_proposals: The most supported proposals
+      top: Top weekly
+      top_link_proposals: The most supported proposals by category
     new:
       back_link: Go back
       form:
