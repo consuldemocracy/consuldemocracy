@@ -1166,11 +1166,11 @@ feature 'Proposals' do
   context "Summary" do
 
     scenario "Displays proposals grouped by category" do
-      create(:tag, kind: 'category', name: 'Culture')
-      create(:tag, kind: 'category', name: 'Social Services')
+      create(:tag, kind: 'category', name: 'culture')
+      create(:tag, kind: 'category', name: 'social services')
 
-      3.times { create(:proposal, tag_list: 'Culture') }
-      3.times { create(:proposal, tag_list: 'Social Services') }
+      3.times { create(:proposal, tag_list: 'culture') }
+      3.times { create(:proposal, tag_list: 'social services') }
 
       create(:proposal, tag_list: 'Random')
 
@@ -1183,14 +1183,14 @@ feature 'Proposals' do
       end
 
       within("#social-services") do
-        expect(page).to have_content("Social Services")
+        expect(page).to have_content("Social services")
         expect(page).to have_css(".proposal", count: 3)
       end
     end
 
     scenario "Displays a maximum of 3 proposals per category" do
-      create(:tag, kind: 'category', name: 'Culture')
-      4.times { create(:proposal, tag_list: 'Culture') }
+      create(:tag, kind: 'category', name: 'culture')
+      4.times { create(:proposal, tag_list: 'culture') }
 
       visit summary_proposals_path
 
@@ -1198,10 +1198,10 @@ feature 'Proposals' do
     end
 
     scenario "Orders proposals by votes" do
-      create(:tag, kind: 'category', name: 'Culture')
-      create(:proposal, title: 'Best',   tag_list: 'Culture').update_column(:confidence_score, 10)
-      create(:proposal, title: 'Worst',  tag_list: 'Culture').update_column(:confidence_score, 2)
-      create(:proposal, title: 'Medium', tag_list: 'Culture').update_column(:confidence_score, 5)
+      create(:tag, kind: 'category', name: 'culture')
+      create(:proposal, title: 'Best',   tag_list: 'culture').update_column(:confidence_score, 10)
+      create(:proposal, title: 'Worst',  tag_list: 'culture').update_column(:confidence_score, 2)
+      create(:proposal, title: 'Medium', tag_list: 'culture').update_column(:confidence_score, 5)
 
       visit summary_proposals_path
 
@@ -1210,10 +1210,10 @@ feature 'Proposals' do
     end
 
     scenario "Displays proposals from last week" do
-      create(:tag, kind: 'category', name: 'Culture')
-      proposal1 = create(:proposal, tag_list: 'Culture', created_at: 1.day.ago)
-      proposal2 = create(:proposal, tag_list: 'Culture', created_at: 5.days.ago)
-      proposal3 = create(:proposal, tag_list: 'Culture', created_at: 8.days.ago)
+      create(:tag, kind: 'category', name: 'culture')
+      proposal1 = create(:proposal, tag_list: 'culture', created_at: 1.day.ago)
+      proposal2 = create(:proposal, tag_list: 'culture', created_at: 5.days.ago)
+      proposal3 = create(:proposal, tag_list: 'culture', created_at: 8.days.ago)
 
       visit summary_proposals_path
 
