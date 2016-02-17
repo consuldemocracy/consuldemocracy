@@ -690,7 +690,7 @@ describe Proposal do
       proposal2 = create(:proposal, tag_list: 'Culture')
       proposal3 = create(:proposal, tag_list: 'Health')
 
-      expect(Proposal.for_summary).to include('Culture' => [proposal2, proposal1], 'Health' => [proposal3])
+      expect(Proposal.for_summary).to include('Culture' => [proposal1, proposal2], 'Health' => [proposal3])
     end
   end
 
