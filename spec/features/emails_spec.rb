@@ -92,7 +92,8 @@ feature 'Emails' do
       email = open_last_email
       expect(email).to have_subject('Someone has responded to your comment')
       expect(email).to deliver_to(user)
-      expect(email).to have_body_text(debate_path(Comment.first.commentable))
+      expect(email).to_not have_body_text(debate_path(Comment.first.commentable))
+      expect(email).to have_body_text(comment_path(Comment.last))
       expect(email).to have_body_text(I18n.t("mailers.config.manage_email_subscriptions"))
       expect(email).to have_body_text(account_path)
     end

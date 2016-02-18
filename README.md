@@ -45,6 +45,7 @@ RAILS_ENV=test bin/rake db:setup
 Run the app locally:
 ```
 bin/rails s
+
 ```
 
 Prerequisites for testing: install PhantomJS >= 2.0
