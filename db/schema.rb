@@ -415,12 +415,6 @@ ActiveRecord::Schema.define(version: 20160217101004) do
   add_index "users", ["hidden_at"], name: "index_users_on_hidden_at", using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
-  create_table "validators", force: :cascade do |t|
-    t.integer "user_id"
-  end
-
-  add_index "validators", ["user_id"], name: "index_validators_on_user_id", using: :btree
-
   create_table "valuators", force: :cascade do |t|
     t.integer "user_id"
   end
@@ -496,6 +490,5 @@ ActiveRecord::Schema.define(version: 20160217101004) do
   add_foreign_key "moderators", "users"
   add_foreign_key "notifications", "users"
   add_foreign_key "organizations", "users"
-  add_foreign_key "validators", "users"
   add_foreign_key "valuators", "users"
 end
