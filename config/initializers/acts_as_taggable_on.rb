@@ -38,10 +38,6 @@ module ActsAsTaggableOn
       Tag.where("kind = 'category'").map {|tag| tag.name.downcase }
     end
 
-    def self.category_ids
-      Tag.where("kind = 'category'").map {|tag| tag.id }
-    end
-
     private
       def custom_counter_field_name_for(taggable_type)
         "#{taggable_type.underscore.pluralize}_count"
