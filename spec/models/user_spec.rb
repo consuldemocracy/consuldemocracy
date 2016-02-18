@@ -109,6 +109,18 @@ describe User do
     end
   end
 
+  describe "valuator?" do
+    it "is false when the user is not a valuator" do
+      expect(subject.valuator?).to be false
+    end
+
+    it "is true when the user is a valuator" do
+      subject.save
+      create(:valuator, user: subject)
+      expect(subject.valuator?).to be true
+    end
+  end
+
   describe "organization?" do
     it "is false when the user is not an organization" do
       expect(subject.organization?).to be false
@@ -291,7 +303,6 @@ describe User do
       expect { user.organization.verify }
       .to change { user.reload.updated_at}
     end
-
   end
 
   describe "document_number" do

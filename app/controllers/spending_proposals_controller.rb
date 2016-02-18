@@ -2,6 +2,7 @@ class SpendingProposalsController < ApplicationController
   include FeatureFlags
 
   before_action :authenticate_user!, except: [:index]
+  before_action :verify_valuator, only: [:show]
 
   load_and_authorize_resource
 
@@ -29,6 +30,10 @@ class SpendingProposalsController < ApplicationController
 
     def spending_proposal_params
       params.require(:spending_proposal).permit(:title, :description, :external_url, :geozone_id, :terms_of_service, :captcha, :captcha_key)
+    end
+
+    def verify_valuator
+      raise CanCan::AccessDenied unless current_user.try(:valuator?) || current_user.try(:administrator?)
     end
 
 end
