@@ -6,17 +6,11 @@
       <%= f.text_field :title, maxlength: Debate.title_max_length, placeholder: t("debates.form.debate_title"), label: false, data: {js_suggest_result: "js_suggest_result", js_suggest: "#js-suggest", js_url: suggest_debates_path}%>        
     </div>
     <div id="js-suggest"></div>
-    <% if @debate.external_link != nil %>
-      <div class="small-12 column">
-        <%= f.label :external_link, t("debate_links.form.debate_link") %>
-        <%= f.text_field :external_link, maxlength: Debate.external_link_max_length, placeholder: t("debates.form.debate_title"), label: false %>
-      </div>
-    <% else %>
-      <div class="ckeditor small-12 column">
-        <%= f.label :description, t("debates.form.debate_text") %>
-        <%= f.cktext_area :description, maxlength: Debate.description_max_length, ckeditor: { language: I18n.locale }, label: false %>
-      </div>
-    <% end %>
+    <div class="ckeditor small-12 column">
+      <%= f.label :description, t("debates.form.debate_text") %>
+      <%= f.cktext_area :description, maxlength: Debate.description_max_length, ckeditor: { language: I18n.locale }, label: false %>
+    </div>
+
     <div class="small-12 column">
       <%= f.label :tag_list, t("debates.form.tags_label") %>
       <p class="note"><%= t("debates.form.tags_instructions") %></p>

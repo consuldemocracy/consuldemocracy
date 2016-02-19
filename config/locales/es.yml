@@ -140,17 +140,6 @@ es:
     update:
       form:
         submit_button: Guardar cambios
-  debate_links:
-    form:
-      debate_link: "Enlace"
-    new:
-      start_new: "Compartir un enlace"
-      recommendations_title: "Recomendaciones para compartir un enlace"
-      form:
-        submit_button: "Comparte un enlace"
-    create:
-      form:
-        submit_button: "Comparte un enlace"
   errors:
     messages:
       user_not_found: No se encontró el usuario

@@ -139,17 +139,6 @@ en:
     update:
       form:
         submit_button: Save changes
-  debate_links:
-    form:
-      debate_link: "Link"
-    new:
-      start_new: "Share a link"
-      recommendations_title: "Recommendations for sharing a link"
-      form:
-        submit_button: "Share link"
-    create:
-      form:
-        submit_button: "Share link"
   errors:
     messages:
       user_not_found: User not found
