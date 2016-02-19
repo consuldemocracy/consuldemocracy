@@ -45,6 +45,10 @@ class CensusApi
       data[:datos_vivienda][:item][:codigo_postal]
     end
 
+    def district_code
+      data[:datos_vivienda][:item][:codigo_distrito]
+    end
+
     private
 
       def data
@@ -82,7 +86,7 @@ class CensusApi
     end
 
     def stubbed_response_body
-      {:get_habita_datos_response=>{:get_habita_datos_return=>{:hay_errores=>false, :datos_habitante=>{:item=>{:fecha_nacimiento_string=>"31-12-1980", :identificador_documento=>"12345678Z", }}, :datos_vivienda=>{:item=>{:codigo_postal=>"28013"}}}}}
+      {:get_habita_datos_response=>{:get_habita_datos_return=>{:hay_errores=>false, :datos_habitante=>{:item=>{:fecha_nacimiento_string=>"31-12-1980", :identificador_documento=>"12345678Z", }}, :datos_vivienda=>{:item=>{:codigo_postal=>"28013", :codigo_distrito=>"01"}}}}}
     end
 
     def is_dni?(document_type)
