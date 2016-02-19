@@ -41,12 +41,7 @@
 
             </p>
             <div class="debate-description">
-              <% if debate.description.present? %>
-                <%= link_to debate.description, debate %> 
-              <% end %>
-              <% if debate.external_link.present? %>
-                 <%= link_to debate.external_link, debate.external_link, target: '_blank' %> 
-              <% end %>
+              <%= link_to debate.description, debate %>
               <div class="truncate"></div>
             </div>
             <%= render "shared/tags", taggable: debate, limit: 5 %>

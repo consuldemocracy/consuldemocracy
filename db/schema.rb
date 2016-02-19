@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160219111057) do
+ActiveRecord::Schema.define(version: 20160219172824) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -103,24 +103,23 @@ ActiveRecord::Schema.define(version: 20160219111057) do
     t.string   "title",                        limit: 80
     t.text     "description"
     t.integer  "author_id"
-    t.datetime "created_at",                                           null: false
-    t.datetime "updated_at",                                           null: false
+    t.datetime "created_at",                                          null: false
+    t.datetime "updated_at",                                          null: false
     t.string   "visit_id"
     t.datetime "hidden_at"
-    t.integer  "flags_count",                              default: 0
-    t.integer  "cached_votes_total",                       default: 0
-    t.integer  "cached_votes_up",                          default: 0
-    t.integer  "cached_votes_down",                        default: 0
+    t.integer  "flags_count",                             default: 0
     t.datetime "ignored_flag_at"
-    t.integer  "comments_count",                           default: 0
+    t.integer  "cached_votes_total",                      default: 0
+    t.integer  "cached_votes_up",                         default: 0
+    t.integer  "cached_votes_down",                       default: 0
+    t.integer  "comments_count",                          default: 0
     t.datetime "confirmed_hide_at"
-    t.integer  "cached_anonymous_votes_total",             default: 0
-    t.integer  "cached_votes_score",                       default: 0
-    t.integer  "hot_score",                    limit: 8,   default: 0
-    t.integer  "confidence_score",                         default: 0
+    t.integer  "cached_anonymous_votes_total",            default: 0
+    t.integer  "cached_votes_score",                      default: 0
+    t.integer  "hot_score",                    limit: 8,  default: 0
+    t.integer  "confidence_score",                        default: 0
     t.integer  "geozone_id"
     t.tsvector "tsv"
-    t.string   "external_link",                limit: 100
   end
 
   add_index "debates", ["author_id", "hidden_at"], name: "index_debates_on_author_id_and_hidden_at", using: :btree
@@ -130,7 +129,6 @@ ActiveRecord::Schema.define(version: 20160219111057) do
   add_index "debates", ["cached_votes_total"], name: "index_debates_on_cached_votes_total", using: :btree
   add_index "debates", ["cached_votes_up"], name: "index_debates_on_cached_votes_up", using: :btree
   add_index "debates", ["confidence_score"], name: "index_debates_on_confidence_score", using: :btree
-  add_index "debates", ["description"], name: "index_debates_on_description", using: :btree
   add_index "debates", ["geozone_id"], name: "index_debates_on_geozone_id", using: :btree
   add_index "debates", ["hidden_at"], name: "index_debates_on_hidden_at", using: :btree
   add_index "debates", ["hot_score"], name: "index_debates_on_hot_score", using: :btree
@@ -207,7 +205,7 @@ ActiveRecord::Schema.define(version: 20160219111057) do
   create_table "locks", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "tries",        default: 0
-    t.datetime "locked_until", default: '2000-01-01 00:01:01', null: false
+    t.datetime "locked_until", default: '2000-01-01 07:01:01', null: false
     t.datetime "created_at",                                   null: false
     t.datetime "updated_at",                                   null: false
   end
@@ -267,7 +265,6 @@ ActiveRecord::Schema.define(version: 20160219111057) do
   add_index "proposals", ["author_id"], name: "index_proposals_on_author_id", using: :btree
   add_index "proposals", ["cached_votes_up"], name: "index_proposals_on_cached_votes_up", using: :btree
   add_index "proposals", ["confidence_score"], name: "index_proposals_on_confidence_score", using: :btree
-  add_index "proposals", ["description"], name: "index_proposals_on_description", using: :btree
   add_index "proposals", ["geozone_id"], name: "index_proposals_on_geozone_id", using: :btree
   add_index "proposals", ["hidden_at"], name: "index_proposals_on_hidden_at", using: :btree
   add_index "proposals", ["hot_score"], name: "index_proposals_on_hot_score", using: :btree
@@ -330,8 +327,8 @@ ActiveRecord::Schema.define(version: 20160219111057) do
     t.boolean "featured",                            default: false
     t.integer "debates_count",                       default: 0
     t.integer "proposals_count",                     default: 0
-    t.integer "spending_proposals_count",            default: 0
     t.string  "kind"
+    t.integer "spending_proposals_count",            default: 0
   end
 
   add_index "tags", ["debates_count"], name: "index_tags_on_debates_count", using: :btree
@@ -407,8 +404,8 @@ ActiveRecord::Schema.define(version: 20160219111057) do
     t.boolean  "public_activity",                      default: true
     t.boolean  "newsletter",                           default: false
     t.integer  "notifications_count",                  default: 0
-    t.boolean  "registering_with_oauth",               default: false
     t.string   "locale"
+    t.boolean  "registering_with_oauth",               default: false
     t.string   "oauth_email"
     t.integer  "geozone_id"
   end
@@ -494,6 +491,7 @@ ActiveRecord::Schema.define(version: 20160219111057) do
   add_foreign_key "moderators", "users"
   add_foreign_key "notifications", "users"
   add_foreign_key "organizations", "users"
+  add_foreign_key "users", "geozones"
   add_foreign_key "valuators", "users"
   add_foreign_key "users", "geozones"
 end
