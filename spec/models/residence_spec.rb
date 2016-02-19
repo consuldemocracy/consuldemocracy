@@ -2,6 +2,7 @@ require 'rails_helper'
 
 describe Verification::Residence do
 
+  let(:geozone) { create(:geozone, census_code: "01") }
   let(:residence) { build(:verification_residence, document_number: "12345678Z") }
 
   describe "validations" do
@@ -84,7 +85,7 @@ describe Verification::Residence do
 
   describe "save" do
 
-    it "should store document number and type" do
+    it "should store document number, document type, and geozone" do
       user = create(:user)
       residence.user = user
       residence.save
@@ -92,6 +93,7 @@ describe Verification::Residence do
       user.reload
       expect(user.document_number).to eq('12345678Z')
       expect(user.document_type).to eq("1")
+      expect(user.geozone).to eq(geozone)
     end
 
   end
@@ -121,7 +123,8 @@ describe Verification::Residence do
         document_number: "12345678Z",
         document_type:   "1",
         date_of_birth:   Date.new(1980, 12, 31),
-        postal_code:     "28001"
+        postal_code:     "28001",
+        district_code:   "01"
       })
     end
   end
