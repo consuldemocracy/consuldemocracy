@@ -493,5 +493,4 @@ ActiveRecord::Schema.define(version: 20160219172824) do
   add_foreign_key "organizations", "users"
   add_foreign_key "users", "geozones"
   add_foreign_key "valuators", "users"
-  add_foreign_key "users", "geozones"
 end
