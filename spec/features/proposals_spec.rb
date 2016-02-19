@@ -1166,11 +1166,11 @@ feature 'Proposals' do
   context "Summary" do
 
     scenario "Displays proposals grouped by category" do
-      create(:tag, kind: 'category', name: 'culture')
-      create(:tag, kind: 'category', name: 'social services')
+      create(:tag, kind: 'category', name: 'Culture')
+      create(:tag, kind: 'category', name: 'Social Services')
 
-      3.times { create(:proposal, tag_list: 'culture') }
-      3.times { create(:proposal, tag_list: 'social services') }
+      3.times { create(:proposal, tag_list: 'Culture') }
+      3.times { create(:proposal, tag_list: 'Social Services') }
 
       create(:proposal, tag_list: 'Random')
 
@@ -1183,7 +1183,28 @@ feature 'Proposals' do
       end
 
       within("#social-services") do
-        expect(page).to have_content("Social services")
+        expect(page).to have_content("Social Services")
+        expect(page).to have_css(".proposal", count: 3)
+      end
+    end
+
+    scenario "Displays proposals grouped by district" do
+      california = create(:geozone, name: 'California')
+      new_york   = create(:geozone, name: 'New York')
+
+      3.times { create(:proposal, geozone: california) }
+      3.times { create(:proposal, geozone: new_york) }
+
+      visit proposals_path
+      click_link "The most supported proposals by category"
+
+      within("#california") do
+        expect(page).to have_content("California")
+        expect(page).to have_css(".proposal", count: 3)
+      end
+
+      within("#new-york") do
+        expect(page).to have_content("New York")
         expect(page).to have_css(".proposal", count: 3)
       end
     end
