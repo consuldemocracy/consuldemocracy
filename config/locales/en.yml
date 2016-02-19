@@ -426,15 +426,18 @@ en:
     index:
       create_link: Create spending proposal
       date_1: February 22 to March 31
-      date_1_info: Submission of proposals
+      date_1_info: Collecting proposals
       date_2: April 1 to April 15
-      date_2_info: Preselection
-      date_3: May 15 to June 30
-      date_3_info: Final vote
+      date_2_info: Support
+      date_3: April 16 to May 14
+      date_3_info: Evaluation
+      date_4: May 15 to June 30
+      date_4_info: Final vote
       signin_only: For create spending proposals you must %{signin}.
       signin: sign in
       text: Here you can send spending proposals to be considered in the frame of the annual participatory budgeting.
-      title: Participatory budgeting
+      title_html: You decide how to spend 60 million euros<br> to your city
+      title_page: Participatory budgeting
       verified_only: Only verified users can create spending proposals, %{verify_account}.
       verify_account: verify your account
     new:

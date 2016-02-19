@@ -427,15 +427,18 @@ es:
     index:
       create_link: Enviar propuesta de gasto
       date_1: 22 febrero - 31 marzo
-      date_1_info: Presentación de propuestas
+      date_1_info: Recogida de propuestas
       date_2: 1 abril - 15 abril
-      date_2_info: Preselección
-      date_3: 15 mayo - 30 junio
-      date_3_info: Votación final
+      date_2_info: Apoyos
+      date_3: 16 abril - 14 mayo
+      date_3_info: Evaluación
+      date_4: 15 mayo - 30 junio
+      date_4_info: Votación final
       signin_only: Para crear propuestas de gasto debes %{signin}.
       signin: iniciar sesión
       text: En esta sección puedes sugerir propuestas de gasto. Éstas han de ser presupuestables y cumplir con la legalidad. En una fase posterior, las propuestas más votadas serán incluidas en la partida de presupuestos participativos del Ayuntamiento.
-      title: Presupuestos participativos
+      title_html: Tú decides cómo gastar 60 millones de euros<br> para tu ciudad
+      title_page: Presupuestos participativos
       verified_only: Sólo los usuarios verificados pueden crear propuestas de gasto, %{verify_account}.
       verify_account: verifica tu cuenta
     new:

@@ -1195,12 +1195,7 @@
 
   h1 {
     color: white;
-    margin-bottom: $line-height;
-
-    @media (min-width: $small-breakpoint) {
-      line-height: $line-height*5;
-      margin-bottom: 0;
-    }
+    margin: $line-height*2 0;
   }
 }
 
@@ -1215,12 +1210,12 @@
 
 
     li {
-      margin-right: $line-height*2.5;
       padding-top: $line-height*1.5;
       position: relative;
 
       @media (min-width: $small-breakpoint) {
         display: inline-block;
+        margin-right: $line-height*2.5;
       }
 
       .icon-calendar {
@@ -1240,6 +1235,32 @@
 
     h3, p {
       color: white;
+    }
+  }
+}
+
+.spending-proposals-text {
+
+  table {
+
+    thead tr th {
+      background: $highlight;
+      text-transform: uppercase;
+    }
+
+    tr td {
+      font-size: $base-font-size;
+    }
+  }
+
+  .margin {
+    margin-bottom: $line-height*2;
+    margin-top: $line-height*2;
+  }
+
+  @media (max-width: $small-breakpoint) {
+    .text-right {
+      text-align: left !important;
     }
   }
 }
