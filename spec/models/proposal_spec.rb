@@ -669,7 +669,7 @@ describe Proposal do
       expect(Proposal.for_summary.values.flatten).to_not include(proposal)
     end
 
-    it "should order by votes" do
+    it "should order proposals by votes" do
       create(:tag, kind: 'category', name: 'culture')
       create(:proposal,  tag_list: 'culture').update_column(:confidence_score, 2)
       create(:proposal, tag_list: 'culture').update_column(:confidence_score, 10)
@@ -680,6 +680,22 @@ describe Proposal do
       expect(results.first.confidence_score).to  be(10)
       expect(results.second.confidence_score).to be(5)
       expect(results.third.confidence_score).to  be(2)
+    end
+
+    it "should order groups alphabetically" do
+      create(:tag, kind: 'category', name: 'health')
+      create(:tag, kind: 'category', name: 'culture')
+      create(:tag, kind: 'category', name: 'social services')
+
+      health_proposal  = create(:proposal,  tag_list: 'health')
+      culture_proposal = create(:proposal,  tag_list: 'culture')
+      social_proposal  = create(:proposal,  tag_list: 'social services')
+
+      results = Proposal.for_summary.values.flatten
+
+      expect(results.first).to  eq(culture_proposal)
+      expect(results.second).to eq(health_proposal)
+      expect(results.third).to  eq(social_proposal)
     end
 
     it "should return proposals grouped by tag" do
