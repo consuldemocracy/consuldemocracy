@@ -2,6 +2,7 @@ module Verification
   extend ActiveSupport::Concern
 
   included do
+    scope :residence_verified, -> { where.not(residence_verified_at: nil) }
     scope :level_three_verified, -> { where.not(verified_at: nil) }
     scope :level_two_verified, -> { where("users.level_two_verified_at IS NOT NULL OR (users.confirmed_phone IS NOT NULL AND users.residence_verified_at IS NOT NULL) AND verified_at IS NULL") }
     scope :level_two_or_three_verified, -> { where("users.verified_at IS NOT NULL OR users.level_two_verified_at IS NOT NULL OR (users.confirmed_phone IS NOT NULL AND users.residence_verified_at IS NOT NULL)") }

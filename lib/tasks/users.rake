@@ -4,7 +4,7 @@ namespace :users do
   task count_failed_census_calls: :environment do
     User.find_each{ |user| User.reset_counters(user.id, :failed_census_calls)}
   end
-  
+
   desc "Assigns official level to users with the officials' email domain"
   task check_for_official_emails: :environment do
     domain = Setting['email_domain_for_officials']
@@ -21,5 +21,17 @@ namespace :users do
       end
     end
   end
+
+  desc "Associates a geozone to each user who doesn't have it already but has validated his residence using the census API"
+  task assign_geozones: :environment do
+    User.residence_verified.where(geozone_id: nil).find_each do |u|
+      response = CensusApi.new.call(u.document_type, u.document_number)
+      if response.valid?
+        u.geozone = Geozone.where(census_code: response.district_code).first
+        u.save
+      end
+    end
+  end
+
 
 end
