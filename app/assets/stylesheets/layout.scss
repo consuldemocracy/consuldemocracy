@@ -182,6 +182,10 @@ a {
 .highlight {
   background: $highlight;
   padding: $line-height/2;
+
+  .alert-box.info {
+    border: 1px solid $info-color;
+  }
 }
 
 .back, .icon-angle-left {
