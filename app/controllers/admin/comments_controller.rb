@@ -18,8 +18,19 @@ class Admin::CommentsController < Admin::BaseController
     Activity.log(current_user, :restore, @comment)
     redirect_to request.query_parameters.merge(action: :index)
   end
+  
+  def search
+    if (params[:term]).strip == ""
+      redirect_to request.query_parameters.merge(action: :index)
+    else
+      @comments = Comment.only_hidden.where("body ILIKE?" ,  
+                                             "%#{params[:term]}%")
+                                     .page(params[:page])
+    end
+  end
 
-  private
+
+  private 
     def load_comment
       @comment = Comment.with_hidden.find(params[:id])
     end

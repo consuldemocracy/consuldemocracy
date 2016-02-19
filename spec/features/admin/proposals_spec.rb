@@ -95,4 +95,39 @@ feature 'Admin proposals' do
     expect(current_url).to include('page=2')
   end
 
+  context "Search" do
+    background do
+      proposal = create(:proposal, 
+                        :hidden,
+                         title: "Testing proposal",
+                         hidden_at: '016-01-25 13:04:01.021165')
+    end
+
+    scenario "The search is not running if search term is empty" do
+      visit admin_proposals_path
+      fill_in "term", with: "      "
+      click_button "Search"
+      expect(current_path).to eq(admin_proposals_path)
+      expect(page).to have_content("Testing proposal")
+    end
+
+    scenario "returns no results if search term does not exist" do
+      visit admin_proposals_path
+
+      fill_in "term", with: "Prueba"
+      click_button "Search"
+      expect(current_path).to eq(search_admin_proposals_path)
+      expect(page).to_not have_content("Prueba")
+      expect(page).to have_content("proposals cannot be found")
+    end
+    
+    scenario "finds by title" do
+      visit admin_proposals_path
+
+      fill_in "term", with: "Testing proposal"
+      click_button "Search"
+      expect(current_path).to eq(search_admin_proposals_path)
+      expect(page).to have_content("Testing proposal")
+    end
+  end
 end

@@ -112,6 +112,7 @@ Rails.application.routes.draw do
     end
 
     resources :users, only: [:index, :show] do
+      collection { get :search }
       member do
         put :restore
         put :confirm_hide
@@ -119,6 +120,7 @@ Rails.application.routes.draw do
     end
 
     resources :debates, only: :index do
+      collection { get :search }
       member do
         put :restore
         put :confirm_hide
@@ -126,6 +128,7 @@ Rails.application.routes.draw do
     end
 
     resources :proposals, only: :index do
+      collection { get :search }
       member do
         put :restore
         put :confirm_hide
@@ -133,6 +136,7 @@ Rails.application.routes.draw do
     end
 
     resources :spending_proposals, only: [:index, :show] do
+      collection { get :search }
       member do
         put :accept
         put :reject
@@ -140,6 +144,7 @@ Rails.application.routes.draw do
     end
 
     resources :comments, only: :index do
+      collection { get :search }
       member do
         put :restore
         put :confirm_hide

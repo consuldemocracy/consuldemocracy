@@ -8,7 +8,10 @@ class Admin::SpendingProposalsController < Admin::BaseController
   feature_flag :spending_proposals
 
   def index
-    @spending_proposals = @spending_proposals.includes([:geozone]).send(@current_filter).order(created_at: :desc).page(params[:page])
+    @spending_proposals = @spending_proposals.includes([:geozone])
+                                             .send(@current_filter)
+                                             .order(created_at: :desc)
+                                             .page(params[:page])
   end
 
   def show
@@ -23,5 +26,14 @@ class Admin::SpendingProposalsController < Admin::BaseController
     @spending_proposal.reject
     redirect_to request.query_parameters.merge(action: :index)
   end
+  def search
+    if (params[:term]).strip == ""
+      redirect_to request.query_parameters.merge(action: :index)
+    else
+      @spending_proposal_search = @spending_proposals.where("title ILIKE ? ", 
+                                                            "%#{params[:term]}%")
+                                                     .page(params[:page])
 
+    end
+  end
 end

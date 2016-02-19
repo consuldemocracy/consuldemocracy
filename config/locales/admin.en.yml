@@ -26,14 +26,18 @@ en:
         type: Type
     comments:
       index:
+        search_placeholder: Search comments
+        search: Search
         filter: Filter
         filters:
           all: All
           with_confirmed_hide: Confirmed
           without_confirmed_hide: Pending
-        hidden_debate: Hidden debate
+        hidden_debate: Hidden debates
         hidden_proposal: Hidden proposal
         title: Hidden comments
+      search:
+        title: Search hidden comments
     dashboard:
       index:
         title: Administration
@@ -44,7 +48,11 @@ en:
           all: All
           with_confirmed_hide: Confirmed
           without_confirmed_hide: Pending
+        search: Search
+        search_placeholder: Search debates
         title: Hidden debates
+      search:
+        title: Search Hidden debates
     menu:
       activity: Moderator activity
       debate_topics: Debate topics
@@ -55,8 +63,8 @@ en:
       incomplete_verifications: Incomplete verifications
       moderators: Moderators
       officials: Officials
-      organizations: Organisations
-      settings: Configuration settings
+      organizations: Organizations
+      settings: General settings
       spending_proposals: Spending proposals
       stats: Statistics
     moderators:
@@ -98,17 +106,17 @@ en:
           rejected: Rejected
           verified: Verified
         hidden_count:
-          one: There is also one organisation with no users or with a hidden user
-          other: There are %{count} organisations with no users or with a hidden user
+          one: There is also one organizations with no users or with a hidden user
+          other: There are %{count} organizations with no users or with a hidden user
         reject: Reject
         rejected: Rejected
         search: Search
         search_placeholder: Name, email or phone number
-        title: Organisations
+        title: Organizations
         verified: Verified
         verify: Verify
       search:
-        title: Search Organisations
+        title: Search Organizations
     proposals:
       index:
         filter: Filter
@@ -117,6 +125,10 @@ en:
           with_confirmed_hide: Confirmed
           without_confirmed_hide: Pending
         title: Hidden proposals
+        search: Search
+        search_placeholder: Search proposals
+      search:
+        title: Search Hidden proposals
     settings:
       flash:
         updated: Value updated
@@ -146,7 +158,11 @@ en:
           accepted: Accepted
           rejected: Rejected
           unresolved: Unresolved
+        search: Search
+        search_placeholder: Search Spending proposals
         title: Spending proposals for participatory budgeting
+      search:
+        title: Buscar Propuestas de gasto
       show:
         by: Sent by
         geozone: Scope
@@ -189,6 +205,8 @@ en:
       update: Update Topic
     users:
       index:
+        search_placeholder: Search for Name
+        search: Search
         filter: Filter
         filters:
           all: All
@@ -201,6 +219,8 @@ en:
         hidden_at: 'Hidden at:'
         registered_at: 'Registered at:'
         title: Activity of user %{user}
+      search:
+        title: Search hidden users
     verifications:
       index:
         phone_not_given: Phone not given

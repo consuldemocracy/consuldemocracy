@@ -1,4 +1,4 @@
-<h2><%= t("admin.spending_proposals.index.title") %></h2>
+<h2><%= t("admin.spending_proposals.search.title") %></h2>
 
 <!-- Search spending_proposals -->
 <%= form_tag(search_admin_spending_proposals_path, method: :get) do %>
@@ -13,15 +13,14 @@
 <% end %>
 <!-- /. Search spending_proposals -->
 
-<%= render 'shared/filter_subnav', i18n_namespace: "admin.spending_proposals.index" %>
-
-<h3><%= page_entries_info @spending_proposals %></h3>
+<h3><%= page_entries_info @spending_proposal_search %></h3>
 
 <table>
-  <% @spending_proposals.each do |spending_proposal| %>
+  <% @spending_proposal_search.each do |spending_proposal| %>
     <tr id="<%= dom_id(spending_proposal) %>">
       <td>
-        <strong><%= link_to spending_proposal.title, admin_spending_proposal_path(spending_proposal) %></strong>
+        <strong><%= link_to spending_proposal.title, search_admin_spending_proposals_path(spending_proposal) %>
+        </strong>
       </td>
       <td>
         <%= geozone_name(spending_proposal) %>
@@ -46,4 +45,4 @@
   <% end %>
 </table>
 
-<%= paginate @spending_proposals %>
+<%= paginate @spending_proposal_search %>

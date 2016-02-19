@@ -22,6 +22,18 @@ class Admin::DebatesController < Admin::BaseController
     Activity.log(current_user, :restore, @debate)
     redirect_to request.query_parameters.merge(action: :index)
   end
+  
+  def search
+    if (params[:term]).strip == ""
+      redirect_to request.query_parameters.merge(action: :index)
+    else
+      @debates = Debate.only_hidden.where("title ILIKE ? OR  
+                                               description ILIKE ?", 
+                                               "%#{params[:term]}%" , 
+                                               "%#{params[:term]}%")
+                           .page(params[:page])
+    end
+  end
 
   private
 

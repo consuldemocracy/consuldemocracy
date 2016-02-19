@@ -26,14 +26,18 @@ es:
         type: Tipo
     comments:
       index:
+        search_placeholder: Buscar por comentarios
+        search: Buscar
         filter: Filtro
         filters:
           all: Todos
           with_confirmed_hide: Confirmados
           without_confirmed_hide: Pendientes
-        hidden_debate: Debate oculto
-        hidden_proposal: Propuesta oculta
+        hidden_debate: Debates ocultos
+        hidden_proposal: Propuestas ocultas
         title: Comentarios ocultos
+      search:
+        title: Buscar comentarios ocultos
     dashboard:
       index:
         title: Administración
@@ -44,7 +48,11 @@ es:
           all: Todos
           with_confirmed_hide: Confirmados
           without_confirmed_hide: Pendientes
+        search: Buscar
+        search_placeholder: Buscar debates
         title: Debates ocultos
+      search:
+        title: Buscar debates ocultos
     menu:
       activity: Actividad de moderadores
       debate_topics: Temas de debate
@@ -116,7 +124,11 @@ es:
           all: Todas
           with_confirmed_hide: Confirmadas
           without_confirmed_hide: Pendientes
-        title: Propuestas ocultos
+        search: Buscar
+        search_placeholder: Buscar propuestas
+        title: Propuestas ocultas
+      search:
+        title: Buscar propuestas ocultas
     settings:
       flash:
         updated: Valor actualizado
@@ -145,8 +157,12 @@ es:
         filters:
           accepted: Aceptadas
           rejected: Rechazadas
-          unresolved: Sin resolver
+          unresolved: Sin resolver 
+        search: Buscar
+        search_placeholder: Buscar Propuestas de gasto
         title: Propuestas de gasto para presupuestos participativos
+      search:
+        title: Buscar Propuestas de gasto
       show:
         by: Enviada por
         geozone: Ámbito
@@ -189,7 +205,9 @@ es:
       update: Actualizar Tema
     users:
       index:
-        filter: Filtro
+        search_placeholder: Buscar por Nombre
+        search: Buscar
+        filter: Filtro   
         filters:
           all: Todos
           with_confirmed_hide: Confirmados
@@ -200,7 +218,9 @@ es:
         email: 'Email:'
         hidden_at: 'Bloqueado:'
         registered_at: 'Fecha de alta:'
-        title: Actividad del usuario %{user}
+        title: Actividad del usuario %{user}      
+      search:
+        title: Buscar Usuarios bloqueados
     verifications:
       index:
         phone_not_given: No ha dado su teléfono

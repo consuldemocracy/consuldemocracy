@@ -1,4 +1,17 @@
+
 <h2><%= t("admin.users.index.title") %></h2>
+<!-- Search users -->
+<%= form_for(User.new, url: search_admin_users_path, method: :get) do |f| %>
+  <div class="row">
+    <div class="small-12 medium-6 column">
+      <%= text_field_tag :term, params[:term], placeholder: t("admin.users.index.search_placeholder") %>
+    </div>
+    <div class="form-inline small-12 medium-6 column">
+      <%= f.submit t("admin.users.index.search"), class: "button radius success" %>
+    </div>
+  </div>
+<% end %>
+<!-- /. Search users -->
 
 <%= render 'shared/filter_subnav', i18n_namespace: "admin.users.index" %>
 
