@@ -308,5 +308,6 @@ FactoryGirl.define do
 
   factory :geozone do
     sequence(:name) { |n| "District #{n}" }
+    census_code { '01' }
   end
 end
