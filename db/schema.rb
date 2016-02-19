@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160216121051) do
+ActiveRecord::Schema.define(version: 20160219111057) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -161,6 +161,7 @@ ActiveRecord::Schema.define(version: 20160216121051) do
     t.string   "postal_code"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.string   "district_code"
   end
 
   add_index "failed_census_calls", ["user_id"], name: "index_failed_census_calls_on_user_id", using: :btree
@@ -183,6 +184,7 @@ ActiveRecord::Schema.define(version: 20160216121051) do
     t.string   "external_code"
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
+    t.string   "census_code"
   end
 
   create_table "identities", force: :cascade do |t|
@@ -443,12 +445,20 @@ ActiveRecord::Schema.define(version: 20160216121051) do
     t.boolean  "registering_with_oauth",               default: false
     t.string   "locale"
     t.string   "oauth_email"
+    t.integer  "geozone_id"
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["geozone_id"], name: "index_users_on_geozone_id", using: :btree
   add_index "users", ["hidden_at"], name: "index_users_on_hidden_at", using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+
+  create_table "valuators", force: :cascade do |t|
+    t.integer "user_id"
+  end
+
+  add_index "valuators", ["user_id"], name: "index_valuators_on_user_id", using: :btree
 
   create_table "verified_users", force: :cascade do |t|
     t.string   "document_number"
@@ -520,4 +530,6 @@ ActiveRecord::Schema.define(version: 20160216121051) do
   add_foreign_key "notifications", "users"
   add_foreign_key "organizations", "users"
   add_foreign_key "survey_answers", "users"
+  add_foreign_key "valuators", "users"
+  add_foreign_key "users", "geozones"
 end

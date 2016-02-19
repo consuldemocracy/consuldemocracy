@@ -12,6 +12,7 @@ class User < ActiveRecord::Base
 
   has_one :administrator
   has_one :moderator
+  has_one :valuator
   has_one :organization
   has_one :lock
   has_many :flags
@@ -21,6 +22,7 @@ class User < ActiveRecord::Base
   has_many :comments, -> { with_hidden }
   has_many :failed_census_calls
   has_many :notifications
+  belongs_to :geozone
 
   validates :username, presence: true, if: :username_required?
   validates :username, uniqueness: true, if: :username_required?
@@ -90,6 +92,10 @@ class User < ActiveRecord::Base
 
   def moderator?
     moderator.present?
+  end
+
+  def valuator?
+    valuator.present?
   end
 
   def organization?

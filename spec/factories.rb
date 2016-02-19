@@ -1,5 +1,4 @@
 FactoryGirl.define do
-
   sequence(:document_number) { |n| "#{n.to_s.rjust(8, '0')}X" }
 
   factory :user do
@@ -251,6 +250,10 @@ FactoryGirl.define do
     user
   end
 
+  factory :valuator do
+    user
+  end
+
   factory :organization do
     user
     responsible_name "Johnny Utah"
@@ -312,5 +315,6 @@ FactoryGirl.define do
 
   factory :geozone do
     sequence(:name) { |n| "District #{n}" }
+    census_code { '01' }
   end
 end

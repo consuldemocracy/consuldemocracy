@@ -1,15 +1,17 @@
 class Verification::Residence
   include ActiveModel::Model
   include ActiveModel::Dates
+  include ActiveModel::Validations::Callbacks
 
   attr_accessor :user, :document_number, :document_type, :date_of_birth, :postal_code, :terms_of_service
+
+  before_validation :call_census_api
 
   validates_presence_of :document_number
   validates_presence_of :document_type
   validates_presence_of :date_of_birth
   validates_presence_of :postal_code
   validates :terms_of_service, acceptance: { allow_nil: false }
-
   validates :postal_code, length: { is: 5 }
 
   validate :allowed_age
@@ -28,6 +30,7 @@ class Verification::Residence
     return false unless valid?
     user.update(document_number:       document_number,
                 document_type:         document_type,
+                geozone:               self.geozone,
                 residence_verified_at: Time.now)
   end
 
@@ -60,18 +63,29 @@ class Verification::Residence
       document_number: document_number,
       document_type:   document_type,
       date_of_birth:   date_of_birth,
-      postal_code:     postal_code
+      postal_code:     postal_code,
+      district_code:   district_code
     })
+  end
+
+  def geozone
+    Geozone.where(census_code: district_code).first
+  end
+
+  def district_code
+    @census_api_response.district_code
   end
 
   private
 
-    def residency_valid?
-      response = CensusApi.new.call(document_type, document_number)
+    def call_census_api
+      @census_api_response = CensusApi.new.call(document_type, document_number)
+    end
 
-      response.valid? &&
-        response.postal_code == postal_code &&
-        response.date_of_birth == date_to_string(date_of_birth)
+    def residency_valid?
+      @census_api_response.valid? &&
+        @census_api_response.postal_code == postal_code &&
+        @census_api_response.date_of_birth == date_to_string(date_of_birth)
     end
 
     def clean_document_number

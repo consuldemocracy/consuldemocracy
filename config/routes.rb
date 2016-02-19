@@ -69,7 +69,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :spending_proposals, only: [:index, :new, :create]
+  resources :spending_proposals, only: [:index, :new, :create, :show]
 
   resources :stats, only: [:index]
 

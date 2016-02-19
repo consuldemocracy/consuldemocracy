@@ -35,7 +35,7 @@ module ActsAsTaggableOn
     end
 
     def self.category_names
-      Tag.where("kind = 'category'").map {|tag| tag.name.downcase }
+      Tag.where("kind = 'category'").pluck(:name)
     end
 
     private
