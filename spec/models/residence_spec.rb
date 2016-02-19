@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe Verification::Residence do
 
-  let(:geozone) { create(:geozone, census_code: "01") }
+  let!(:geozone) { create(:geozone, census_code: "01") }
   let(:residence) { build(:verification_residence, document_number: "12345678Z") }
 
   describe "validations" do

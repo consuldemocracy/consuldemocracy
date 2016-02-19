@@ -1,8 +1,11 @@
 class Verification::Residence
   include ActiveModel::Model
   include ActiveModel::Dates
+  include ActiveModel::Validations::Callbacks
 
   attr_accessor :user, :document_number, :document_type, :date_of_birth, :postal_code, :terms_of_service
+
+  before_validation :call_census_api
 
   validates_presence_of :document_number
   validates_presence_of :document_type
@@ -24,11 +27,10 @@ class Verification::Residence
   end
 
   def save
-    @census_api_response = CensusApi.new.call(document_type, document_number)
     return false unless valid?
     user.update(document_number:       document_number,
                 document_type:         document_type,
-                geozone:               geozone,
+                geozone:               self.geozone,
                 residence_verified_at: Time.now)
   end
 
@@ -66,14 +68,18 @@ class Verification::Residence
     })
   end
 
+  def geozone
+    Geozone.where(census_code: district_code).first!
+  end
+
   def district_code
     @census_api_response.district_code
   end
 
   private
 
-    def geozone
-      Geozone.find_by!(census_code: district_code)
+    def call_census_api
+      @census_api_response = CensusApi.new.call(document_type, document_number)
     end
 
     def residency_valid?
