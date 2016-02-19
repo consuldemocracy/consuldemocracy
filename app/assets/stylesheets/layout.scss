@@ -182,6 +182,10 @@ a {
 .highlight {
   background: $highlight;
   padding: $line-height/2;
+
+  .alert-box.info {
+    border: 1px solid $info-color;
+  }
 }
 
 .back, .icon-angle-left {
@@ -254,6 +258,17 @@ a {
 .panel {
   background: white;
 }
+
+blockquote.featured {
+  border-left: 0;
+  border-top: 2px solid $brand;
+  color: $text;
+  display: inline-block;
+  padding-left: 0;
+  padding-right: 0;
+  text-transform: uppercase;
+}
+
 
 // 02. Header
 // - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -333,8 +348,19 @@ header {
 }
 
 .home-page {
-  background: $highlight;
-  padding: $line-height 0;
+  background: $highlight image-url('home_page_bg.jpg');
+  background-position: 50%;
+  background-size: cover;
+  padding: $line-height;
+
+  h1, p, a {
+    color: white;
+  }
+
+  a:not(.button) {
+    text-decoration: underline;
+  }
+
 }
 
 .contain-to-grid {

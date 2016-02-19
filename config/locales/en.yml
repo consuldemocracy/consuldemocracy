@@ -202,13 +202,14 @@ en:
         other: You have %{count} new notifications
       no_notifications: You don't have new notifications
       open: open
-      open_city_slogan_html: There are cities that are governed directly by their inhabitants, who <b>discuss</b> the topics they are concerned about, <b>propose</b> ideas to improve their lives and <b>decide</b> among themselves which ones will be carried out. Madrid is already one of these cities.
+      open_city_slogan_html: In Madrid their inhabitants, <b>discuss</b> the topics they are concerned about, <b>propose</b> ideas to improve their lives and <b>decide</b> among themselves which ones will be carried out.
+      open_city_slogan_short: There are cities that are governed directly by their inhabitants, Madrid is already one of these cities.
       open_city_title: Love the city, and it will become a city you love.
       open_data: Open data
       open_gov: Open government
       proposals: Proposals
       processes: Open processes
-      spending_proposals: Spending proposals
+      spending_proposals: Participatory budgeting
   legislation:
     help:
       alt: Select the text you want to comment and press the button with the pencil.
@@ -413,13 +414,23 @@ en:
       title: Spending proposal title
     index:
       create_link: Create spending proposal
-      text_html: Here you can send spending proposals to be considered in the frame of the annual participatory budgeting.
-      title: Participatory budgeting
+      date_1: February 22 to March 31
+      date_1_info: Collecting proposals
+      date_2: April 1 to April 15
+      date_2_info: Support
+      date_3: April 16 to May 14
+      date_3_info: Evaluation
+      date_4: May 15 to June 30
+      date_4_info: Final vote
+      signin_only: For create spending proposals you must %{signin}.
+      signin: sign in
+      title_html: You decide how to spend 60 million euros<br> to your city
+      title_page: Participatory budgeting
       verified_only: Only verified users can create spending proposals, %{verify_account}.
       verify_account: verify your account
     new:
       back_link: Back
-      more_info: How do participatory budgeting works?
+      more_info: What is participatory budgeting?
       recommendation_one: It's mandatory that the proposal makes reference to a budgetable action.
       recommendation_three: Try to go into details when describing your spending proposal so the reviewing team undertands your points.
       recommendation_two: Any proposal or comment suggesting illegal action will be deleted.
@@ -484,6 +495,7 @@ en:
       description: If the proposal is accepted by the majority, the City Council accepts it as its own and it gets done.
       title: It gets done
     featured:
+      page_title: Featured
       process:
         link: More information
         text: Decide how do you wants this new place on your city.
@@ -492,6 +504,10 @@ en:
         link: See proposals
         text: Create your own proposals and supports those of other citizens.
         title: Citizen proposals
+      spending_proposals:
+        link: Send your proposal
+        text: The highest rated proposals will be included on participatory budgeting.
+        title: Participatory budgeting
     more_information: More information about this page
     highlights: 'Highlights: '
     proposal:

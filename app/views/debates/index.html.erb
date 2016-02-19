@@ -25,7 +25,7 @@
         <% end %>
       </div>
 
-      <%= render "shared/featured_process_banner" %>
+      <%= render "shared/#{["featured_process_banner", "featured_spending_proposals"].sample}" %>
 
       <% unless @tag_filter || @search_terms %>
         <%= render "featured_debates_static" %>
