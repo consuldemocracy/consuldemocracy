@@ -72,8 +72,11 @@ class Proposal < ActiveRecord::Base
   def self.for_summary
     summary = {}
     categories = ActsAsTaggableOn::Tag.category_names.sort
-    categories.each do |category|
-      summary[category] = search(category).last_week.sort_by_confidence_score.limit(3)
+    geozones   = Geozone.names.sort
+
+    groups = categories + geozones
+    groups.each do |group|
+      summary[group] = search(group).last_week.sort_by_confidence_score.limit(3)
     end
     summary
   end

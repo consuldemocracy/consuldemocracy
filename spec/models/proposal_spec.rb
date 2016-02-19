@@ -643,18 +643,39 @@ describe Proposal do
   end
 
   describe "for_summary" do
-    it "should return proposals tagged with a category" do
-      create(:tag, kind: 'category', name: 'culture')
-      proposal = create(:proposal, tag_list: 'culture')
 
-      expect(Proposal.for_summary.values.flatten).to include(proposal)
+    context "categories" do
+
+      it "should return proposals tagged with a category" do
+        create(:tag, kind: 'category', name: 'culture')
+        proposal = create(:proposal, tag_list: 'culture')
+
+        expect(Proposal.for_summary.values.flatten).to include(proposal)
+      end
+
+      it "should not return proposals tagged without a category" do
+        create(:tag, kind: 'category', name: 'culture')
+        proposal = create(:proposal, tag_list: 'parks')
+
+        expect(Proposal.for_summary.values.flatten).to_not include(proposal)
+      end
     end
 
-    it "should not return proposals tagged without a category" do
-      create(:tag, kind: 'category', name: 'culture')
-      proposal = create(:proposal, tag_list: 'parks')
+    context "districts" do
 
-      expect(Proposal.for_summary.values.flatten).to_not include(proposal)
+      it "should return proposals with a geozone" do
+        california = create(:geozone, name: 'california')
+        proposal   = create(:proposal, geozone: california)
+
+        expect(Proposal.for_summary.values.flatten).to include(proposal)
+      end
+
+      it "should not return proposals without a geozone" do
+        create(:geozone, name: 'california')
+        proposal = create(:proposal)
+
+        expect(Proposal.for_summary.values.flatten).to_not include(proposal)
+      end
     end
 
     it "should return proposals created this week" do

@@ -1188,6 +1188,27 @@ feature 'Proposals' do
       end
     end
 
+    scenario "Displays proposals grouped by district" do
+      california = create(:geozone, name: 'California')
+      new_york   = create(:geozone, name: 'New York')
+
+      3.times { create(:proposal, geozone: california) }
+      3.times { create(:proposal, geozone: new_york) }
+
+      visit proposals_path
+      click_link "The most supported proposals by category"
+
+      within("#california") do
+        expect(page).to have_content("California")
+        expect(page).to have_css(".proposal", count: 3)
+      end
+
+      within("#new-york") do
+        expect(page).to have_content("New York")
+        expect(page).to have_css(".proposal", count: 3)
+      end
+    end
+
     scenario "Displays a maximum of 3 proposals per category" do
       create(:tag, kind: 'category', name: 'culture')
       4.times { create(:proposal, tag_list: 'culture') }
