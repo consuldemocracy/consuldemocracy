@@ -29,6 +29,9 @@ namespace :users do
       if response.valid?
         u.geozone = Geozone.where(census_code: response.district_code).first
         u.save
+        print "."
+      else
+        print "X"
       end
     end
   end
