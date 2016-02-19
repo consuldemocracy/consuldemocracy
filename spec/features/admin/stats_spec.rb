@@ -59,6 +59,7 @@ feature 'Stats' do
   end
 
   scenario 'Level 2 user' do
+    create(:geozone)
     visit account_path
     click_link 'Verify my account'
     verify_residence

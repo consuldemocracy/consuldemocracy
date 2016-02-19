@@ -2,6 +2,8 @@ require 'rails_helper'
 
 feature 'Residence' do
 
+  background { create(:geozone) }
+
   scenario 'Verify resident in Madrid' do
     user = create(:user)
     login_as(user)
