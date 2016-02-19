@@ -27,7 +27,6 @@ es:
       username_label: Nombre de usuario
       verified_account: Cuenta verificada
       verify_my_account: Verificar mi cuenta
-
   application:
     close: Cerrar
     menu: Menú
@@ -443,7 +442,7 @@ es:
       verify_account: verifica tu cuenta
     new:
       back_link: Volver
-      more_info: "¿Cómo funcionan los presupuestos participativos?"
+      more_info: "¿Qué son los presupuestos participativos?"
       recommendation_one: Es fundamental que haga referencia a una actuación presupuestable.
       recommendation_three: Intenta detallar lo máximo posible la propuesta para que el equipo de gobierno encargado de estudiarla tenga las menor dudas posibles.
       recommendation_two: Cualquier propuesta o comentario que implique acciones ilegales será eliminada.
