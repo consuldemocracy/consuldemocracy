@@ -435,7 +435,6 @@ es:
       date_4_info: Votación final
       signin_only: Para crear propuestas de gasto debes %{signin}.
       signin: iniciar sesión
-      text: En esta sección puedes sugerir propuestas de gasto. Éstas han de ser presupuestables y cumplir con la legalidad. En una fase posterior, las propuestas más votadas serán incluidas en la partida de presupuestos participativos del Ayuntamiento.
       title_html: Tú decides cómo gastar 60 millones de euros<br> para tu ciudad
       title_page: Presupuestos participativos
       verified_only: Sólo los usuarios verificados pueden crear propuestas de gasto, %{verify_account}.
