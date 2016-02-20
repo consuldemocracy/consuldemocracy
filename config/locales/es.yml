@@ -400,6 +400,7 @@ es:
     youtube: YouTube
   spending_proposals:
     form:
+      association_name: 'Asociación'
       description: Descripción detallada
       external_url: Enlace a documentación adicional
       geozone: "Ámbito de actuación"

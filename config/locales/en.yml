@@ -399,6 +399,7 @@ en:
     youtube: YouTube
   spending_proposals:
     form:
+      association_name: 'Association'
       description: Description
       external_url: Link to additional documentation
       geozone: Scope of operation
