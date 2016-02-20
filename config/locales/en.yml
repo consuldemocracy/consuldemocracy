@@ -106,7 +106,6 @@ en:
         one: " containing the term '%{search_term}'"
         other: " containing the term '%{search_term}'"
       select_order: Order by
-      share_debate: "Share a link"
       start_debate: Start a debate
       title: Debates
       top: Featured

@@ -106,7 +106,6 @@ es:
         one: " que contiene '%{search_term}'"
         other: " que contienen '%{search_term}'"
       select_order: Ordenar por
-      share_debate: "Comparte un enlace"
       start_debate: Empieza un debate
       title: Debates
       top: Destacados
