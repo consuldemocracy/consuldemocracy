@@ -106,7 +106,6 @@ es:
         one: " que contiene '%{search_term}'"
         other: " que contienen '%{search_term}'"
       select_order: Ordenar por
-      share_debate: "Comparte un enlace"
       start_debate: Empieza un debate
       title: Debates
       top: Destacados
@@ -411,9 +410,9 @@ es:
       submit_buttons:
         create: Crear
         new: Crear
-      title: Título de la propuesta de gasto
+      title: Título de la propuesta de inversión
     index:
-      create_link: Enviar propuesta de gasto
+      create_link: Enviar propuesta de inversión
       date_1: 22 febrero - 31 marzo
       date_1_info: Recogida de propuestas
       date_2: 1 abril - 15 abril
@@ -431,11 +430,12 @@ es:
     new:
       back_link: Volver
       more_info: "¿Qué son los presupuestos participativos?"
-      recommendation_one: Es fundamental que haga referencia a una actuación presupuestable.
-      recommendation_three: Intenta detallar lo máximo posible la propuesta para que el equipo de gobierno encargado de estudiarla tenga las menor dudas posibles.
+      recommendation_one: Consulta los %{requirements}.
+      recommendation_one_link: requisitos que debe cumplir una propuesta
+      recommendation_three: Intenta detallar lo máximo posible la propuesta para que el equipo de gobierno encargado de estudiarla tenga las menores dudas posibles.
       recommendation_two: Cualquier propuesta o comentario que implique acciones ilegales será eliminada.
-      recommendations_title: Cómo crear una propuesta de gasto
-      start_new: Crear una propuesta de gasto
+      recommendations_title: Cómo crear una propuesta de inversión
+      start_new: Crear una propuesta de inversión
   stats:
     index:
       visits: Visitas
@@ -506,7 +506,7 @@ es:
         title: Propuestas ciudadanas
       spending_proposals:
         link: Envia tu propuesta
-        text: Las propuestas más votadas serán incluidas en la partida de presupuestos participativos.
+        text: Tú decides cómo gastar 60 millones de euros para tu ciudad.
         title: Presupuestos participativos
     more_information: Más información sobre esta página
     highlights: 'Portada: '
