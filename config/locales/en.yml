@@ -204,7 +204,7 @@ en:
       open: open
       open_city_slogan_html: In Madrid their inhabitants, <b>discuss</b> the topics they are concerned about, <b>propose</b> ideas to improve their lives and <b>decide</b> among themselves which ones will be carried out.
       open_city_slogan_short: There are cities that are governed directly by their inhabitants, Madrid is already one of these cities.
-      open_city_title: Love the city, and it will become a city you love.
+      open_city_title: The city you love will become the city you want.
       open_data: Open data
       open_gov: Open government
       proposals: Proposals
@@ -432,6 +432,8 @@ en:
       back_link: Back
       more_info: What is participatory budgeting?
       recommendation_one: It's mandatory that the proposal makes reference to a budgetable action.
+      recommendation_one: See the %{requirements}.
+      recommendation_one_link: requirements to be met by a proposal
       recommendation_three: Try to go into details when describing your spending proposal so the reviewing team undertands your points.
       recommendation_two: Any proposal or comment suggesting illegal action will be deleted.
       recommendations_title: How to create a spending proposal
@@ -506,7 +508,7 @@ en:
         title: Citizen proposals
       spending_proposals:
         link: Send your proposal
-        text: The highest rated proposals will be included on participatory budgeting.
+        text: You decide how to spend 60 million euros to your city.
         title: Participatory budgeting
     more_information: More information about this page
     highlights: 'Highlights: '
