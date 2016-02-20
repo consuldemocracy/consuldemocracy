@@ -399,6 +399,8 @@ en:
     youtube: YouTube
   spending_proposals:
     form:
+      association_name_label: 'If you propose in name of an assocation or collective add the name here'
+      association_name: 'Association name'
       description: Description
       external_url: Link to additional documentation
       geozone: Scope of operation

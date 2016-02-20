@@ -400,6 +400,8 @@ es:
     youtube: YouTube
   spending_proposals:
     form:
+      association_name_label: 'Si propones en nombre de una asociación o colectivo añade el nombre aquí'
+      association_name: 'Nombre de la asociación'
       description: Descripción detallada
       external_url: Enlace a documentación adicional
       geozone: "Ámbito de actuación"

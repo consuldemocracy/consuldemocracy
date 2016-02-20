@@ -23,6 +23,11 @@
     </div>
 
     <div class="small-12 column">
+      <%= f.label :association_name, t("spending_proposals.form.association_name_label") %>
+      <%= f.text_field :association_name, placeholder: t("spending_proposals.form.association_name"), label: false %>
+    </div>
+
+    <div class="small-12 column">
       <% if @spending_proposal.new_record? %>
         <%= f.label :terms_of_service do %>
           <%= f.check_box :terms_of_service, label: false %>
