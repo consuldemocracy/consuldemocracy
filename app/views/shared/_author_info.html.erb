@@ -8,6 +8,13 @@
   <span class="author">
       <%= link_to resource.author.name, user_path(resource.author) %>
   </span>
+
+  <% if resource.respond_to?(:association_name) && resource.association_name.present? %>
+    <span>
+      <%= "(#{resource.association_name})" %>
+    </span>
+  <% end %>
+
   <% if resource.author.official? %>
     &nbsp;&bull;&nbsp;
     <span class="label round level-<%= resource.author.official_level %>">

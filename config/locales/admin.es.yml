@@ -148,6 +148,7 @@ es:
           unresolved: Sin resolver
         title: Propuestas de gasto para presupuestos participativos
       show:
+        association_name: Asociación
         by: Enviada por
         geozone: Ámbito
         dossier: Informe

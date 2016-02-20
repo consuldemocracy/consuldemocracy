@@ -105,6 +105,7 @@ feature 'Admin spending proposals' do
   scenario 'Show' do
     spending_proposal = create(:spending_proposal,
                                 geozone: create(:geozone),
+                                association_name: 'People of the neighbourhood',
                                 price: 1234.56,
                                 legal: true,
                                 feasible: false,
@@ -116,6 +117,7 @@ feature 'Admin spending proposals' do
     expect(page).to have_content(spending_proposal.title)
     expect(page).to have_content(spending_proposal.description)
     expect(page).to have_content(spending_proposal.author.name)
+    expect(page).to have_content(spending_proposal.association_name)
     expect(page).to have_content(spending_proposal.geozone.name)
     expect(page).to have_content("1234.56")
     expect(page).to have_content("Legal")
