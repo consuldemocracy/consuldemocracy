@@ -111,7 +111,7 @@ feature 'Spending proposals' do
     visit spending_proposal_path(spending_proposal)
 
     expect(page).to_not have_content(spending_proposal.title)
-    expect(page).to_not have_content("You do not have permission to access this page")
+    expect(page).to have_content("You do not have permission to access this page")
   end
 
 end
