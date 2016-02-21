@@ -470,6 +470,9 @@ es:
         proposals:
           one: 1 Propuesta
           other: "%{count} Propuestas"
+        spending_proposals:
+          one: 1 Propuesta de inversión
+          other: "%{count} Propuestas de inversión"
       no_activity: Usuario sin actividad pública
       private_activity: Este usuario ha decidido mantener en privado su lista de actividades
   votes:
