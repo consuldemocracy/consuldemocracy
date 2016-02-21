@@ -7,7 +7,7 @@
     <% end %>
     <h1><%= t("spending_proposals.new.start_new") %></h1>
     <div class="alert-box featured radius">
-      <%= link_to page_path('spending_proposals_info', anchor: "20"), target: "_blank" do %>
+      <%= link_to page_path('participatory_budget_info', anchor: "20"), target: "_blank" do %>
         <%= t("spending_proposals.new.more_info")%>
       <% end %>
     </div>
@@ -20,7 +20,7 @@
     <ul class="recommendations">
       <li>
         <%= t("spending_proposals.new.recommendation_one",
-        requirements: link_to(t("spending_proposals.new.recommendation_one_link"), page_path('spending_proposals_info', anchor: "20"))).html_safe %>
+        requirements: link_to(t("spending_proposals.new.recommendation_one_link"), page_path('participatory_budget_info', anchor: "20"))).html_safe %>
       </li>
       <li><%= t("spending_proposals.new.recommendation_two") %></li>
       <li><%= t("spending_proposals.new.recommendation_three") %></li>
