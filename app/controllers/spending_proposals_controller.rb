@@ -5,6 +5,7 @@ class SpendingProposalsController < ApplicationController
 
   before_action :authenticate_user!, except: [:index]
   before_action :verify_access, only: [:show]
+  before_filter -> { flash.now[:notice] = flash[:notice].html_safe if flash[:html_safe] && flash[:notice] }
 
   feature_flag :spending_proposals
 
@@ -20,7 +21,8 @@ class SpendingProposalsController < ApplicationController
     @spending_proposal.author = current_user
 
     if @spending_proposal.save_with_captcha
-      redirect_to @spending_proposal, notice: t("flash.actions.create.spending_proposal")
+      notice = t('flash.actions.create.spending_proposal', activity: "<a href='#{user_path(current_user, filter: :spending_proposals)}'>#{t('layouts.header.my_activity_link')}</a>"), flash: { html_safe: true }
+      redirect_to @spending_proposal, notice: notice
     else
       render :new
     end
