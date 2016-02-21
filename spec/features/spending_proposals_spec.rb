@@ -7,14 +7,14 @@ feature 'Spending proposals' do
   scenario 'Index' do
     visit spending_proposals_path
 
-    expect(page).to_not have_link('Create spending proposal', href: new_spending_proposal_path)
+    expect(page).to_not have_link('Create investment proposal', href: new_spending_proposal_path)
     expect(page).to have_link('verify your account')
 
     login_as(author)
 
     visit spending_proposals_path
 
-    expect(page).to have_link('Create spending proposal', href: new_spending_proposal_path)
+    expect(page).to have_link('Create investment proposal', href: new_spending_proposal_path)
     expect(page).to_not have_link('verify your account')
   end
 
@@ -32,7 +32,7 @@ feature 'Spending proposals' do
 
     click_button 'Create'
 
-    expect(page).to have_content 'Spending proposal created successfully'
+    expect(page).to have_content 'Investment proposal created successfully'
   end
 
   scenario 'Captcha is required for proposal creation' do
@@ -47,13 +47,13 @@ feature 'Spending proposals' do
 
     click_button 'Create'
 
-    expect(page).to_not have_content 'Spending proposal created successfully'
+    expect(page).to_not have_content 'Investment proposal created successfully'
     expect(page).to have_content '1 error'
 
     fill_in 'spending_proposal_captcha', with: correct_captcha_text
     click_button 'Create'
 
-    expect(page).to have_content 'Spending proposal created successfully'
+    expect(page).to have_content 'Investment proposal created successfully'
   end
 
   scenario 'Errors on create' do

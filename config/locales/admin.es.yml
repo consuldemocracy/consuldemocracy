@@ -57,7 +57,7 @@ es:
       officials: Cargos públicos
       organizations: Organizaciones
       settings: Configuración global
-      spending_proposals: Propuestas de gasto
+      investment_proposals: Propuestas de inversión
       stats: Estadísticas
     moderators:
       index:
@@ -136,16 +136,11 @@ es:
       user_search:
         button: Buscar
         placeholder: Buscar usuario por nombre o email
-    spending_proposals:
+    investment_proposals:
       actions:
         accept: Aceptar
         reject: Rechazar
       index:
-        filter: Filtro
-        filters:
-          accepted: Aceptadas
-          rejected: Rechazadas
-          unresolved: Sin resolver
         title: Propuestas de gasto para presupuestos participativos
       show:
         association_name: Asociación

@@ -148,7 +148,7 @@ en:
     not_saved: 'prevented this %{resource} from being saved:'
     policy: Privacy Policy
     proposal: Proposal
-    spending_proposal: Spending proposal
+    investment_proposal: Investment proposal
     user: Account
     verification/sms: phone
   geozones:
@@ -204,7 +204,7 @@ en:
       open_gov: Open government
       proposals: Proposals
       see_all: See proposals
-      spending_proposals: Spending proposals
+      investment_proposals: Investment proposals
   legislation:
     help:
       alt: Select the text you want to comment and press the button with the pencil.
@@ -397,7 +397,7 @@ en:
     facebook: Facebook
     twitter: Twitter
     youtube: YouTube
-  spending_proposals:
+  investment_proposals:
     form:
       association_name_label: 'If you propose in name of an assocation or collective add the name here'
       association_name: 'Association name'

@@ -12,7 +12,7 @@ feature 'Spending Proposals' do
       user = create(:user, :level_two)
       login_managed_user(user)
 
-      click_link "Create spending proposal"
+      click_link "Create investment proposal"
 
       within(".account-info") do
         expect(page).to have_content "Identified as"
@@ -29,7 +29,7 @@ feature 'Spending Proposals' do
 
       click_button 'Create'
 
-      expect(page).to have_content 'Spending proposal created successfully.'
+      expect(page).to have_content 'Investment proposal created successfully.'
 
       expect(page).to have_content 'Build a park in my neighborhood'
       expect(page).to have_content 'There is no parks here...'
@@ -45,7 +45,7 @@ feature 'Spending Proposals' do
       user = create(:user)
       login_managed_user(user)
 
-      click_link "Create spending proposal"
+      click_link "Create investment proposal"
 
       expect(page).to have_content "User is not verified"
     end

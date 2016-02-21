@@ -57,7 +57,7 @@ en:
       officials: Officials
       organizations: Organisations
       settings: Configuration settings
-      spending_proposals: Spending proposals
+      investment_proposals: Investment proposals
       stats: Statistics
     moderators:
       index:
@@ -136,16 +136,11 @@ en:
       user_search:
         button: Search
         placeholder: Search user by name or email'
-    spending_proposals:
+    investment_proposals:
       actions:
         accept: Accept
         reject: Reject
       index:
-        filter: Filter
-        filters:
-          accepted: Accepted
-          rejected: Rejected
-          unresolved: Unresolved
         title: Spending proposals for participatory budgeting
       show:
         association_name: Asociación
