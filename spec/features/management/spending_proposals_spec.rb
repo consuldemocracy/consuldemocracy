@@ -29,7 +29,7 @@ feature 'Spending Proposals' do
 
       click_button 'Create'
 
-      expect(page).to have_content 'Investment proposal created successfully.'
+      expect(page).to have_content 'Investment project created successfully.'
 
       expect(page).to have_content 'Build a park in my neighborhood'
       expect(page).to have_content 'There is no parks here...'

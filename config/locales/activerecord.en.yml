@@ -38,8 +38,8 @@ en:
         one: "Citizen proposal"
         other: "Citizen proposals"
       spending_proposal:
-        one: "Investment proposal"
-        other: "Investment proposals"
+        one: "Investment project"
+        other: "Investment projects"
     attributes:
       comment:
         body: "Comment"
