@@ -14,11 +14,17 @@
         <dl class="sub-nav margin-top">
           <% @valid_filters.each do |filter| %>
             <% if @activity_counts[filter] > 0 %>
-              <% if @current_filter == filter %>
-                <dd class="active"> <%= t("users.show.filters.#{filter}", count: @activity_counts[filter]) %></dd>
-              <% else %>
-                <dd><%= link_to t("users.show.filters.#{filter}", count: @activity_counts[filter]),
-                  current_path_with_query_params(filter: filter, page: 1) %></dd>
+              <% if authorized_for_filter?(filter) %>
+                <% if @current_filter == filter %>
+                  <dd class="active">
+                    <%= t("users.show.filters.#{filter}", count: @activity_counts[filter]) %>
+                  </dd>
+                <% else %>
+                  <dd>
+                    <%= link_to t("users.show.filters.#{filter}", count: @activity_counts[filter]),
+                                current_path_with_query_params(filter: filter, page: 1) %>
+                  </dd>
+                <% end %>
               <% end %>
             <% end %>
           <% end %>
