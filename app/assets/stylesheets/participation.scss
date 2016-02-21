@@ -1224,6 +1224,10 @@
       border-top: 2px solid $border;
     }
 
+    h3, p {
+      color: white;
+    }
+
 
     li {
       padding-top: $line-height*1.5;
@@ -1247,10 +1251,24 @@
         top: -20px;
         width: rem-calc(40);
       }
-    }
 
-    h3, p {
-      color: white;
+      &.active {
+        @media (min-width: $small-breakpoint) {
+          border-top: 1px solid $featured;
+          margin-top: rem-calc(-1);
+        }
+
+        .icon-calendar, h3, p {
+          color: $featured;
+        }
+
+        .icon-calendar {
+          background: $featured;
+          border: none;
+          box-shadow: 0 0 rem-calc(10) white;
+          color: black;
+        }
+      }
     }
   }
 }

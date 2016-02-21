@@ -406,7 +406,7 @@ es:
     form:
       description: Descripción detallada
       external_url: Enlace a documentación adicional
-      geozone: "Ámbito de actuación"
+      geozone: "Elige si es una propuesta para toda la ciudad o para un distrito"
       submit_buttons:
         create: Crear
         new: Crear
@@ -421,15 +421,16 @@ es:
       date_3_info: Evaluación
       date_4: 15 mayo - 30 junio
       date_4_info: Votación final
-      signin_only: Para crear propuestas de gasto debes %{signin}.
+      signin_only: Para crear propuestas de inversión debes %{signin} o %{signup}.
       signin: iniciar sesión
-      title_html: Tú decides cómo gastar 60 millones de euros<br> para tu ciudad
+      signup: registrarte
+      title_html: Tú decides cómo invertir 60 millones de euros<br> para tu ciudad
       title_page: Presupuestos participativos
-      verified_only: Sólo los usuarios verificados pueden crear propuestas de gasto, %{verify_account}.
+      verified_only: Sólo los usuarios verificados pueden crear propuestas de inversión, %{verify_account}.
       verify_account: verifica tu cuenta
     new:
       back_link: Volver
-      more_info: "¿Qué son los presupuestos participativos?"
+      more_info: "¿Qué puedo proponer? ¿Cómo lo hago?"
       recommendation_one: Consulta los %{requirements}.
       recommendation_one_link: requisitos que debe cumplir una propuesta
       recommendation_three: Intenta detallar lo máximo posible la propuesta para que el equipo de gobierno encargado de estudiarla tenga las menores dudas posibles.
@@ -506,7 +507,7 @@ es:
         title: Propuestas ciudadanas
       spending_proposals:
         link: Envia tu propuesta
-        text: Tú decides cómo gastar 60 millones de euros para tu ciudad.
+        text: Tú decides cómo invertir 60 millones de euros para tu ciudad.
         title: Presupuestos participativos
     more_information: Más información sobre esta página
     highlights: 'Portada: '

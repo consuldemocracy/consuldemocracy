@@ -7,7 +7,7 @@
     <% end %>
     <h1><%= t("spending_proposals.new.start_new") %></h1>
     <div class="alert-box info radius">
-      <%= link_to "/spending_proposals_info", target: "_blank" do %>
+      <%= link_to page_path('spending_proposals_info', anchor: "20"), target: "_blank" do %>
         <%= t("spending_proposals.new.more_info")%>
       <% end %>
     </div>
