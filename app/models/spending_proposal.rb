@@ -63,4 +63,5 @@ class SpendingProposal < ActiveRecord::Base
       "undefined"
     end
   end
+
 end

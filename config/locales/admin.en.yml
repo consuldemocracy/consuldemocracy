@@ -148,6 +148,7 @@ en:
           unresolved: Unresolved
         title: Spending proposals for participatory budgeting
       show:
+        association_name: Asociación
         by: Sent by
         geozone: Scope
         dossier: Dossier
