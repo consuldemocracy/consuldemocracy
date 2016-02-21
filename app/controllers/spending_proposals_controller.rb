@@ -21,8 +21,8 @@ class SpendingProposalsController < ApplicationController
     @spending_proposal.author = current_user
 
     if @spending_proposal.save_with_captcha
-      notice = t('flash.actions.create.spending_proposal', activity: "<a href='#{user_path(current_user, filter: :spending_proposals)}'>#{t('layouts.header.my_activity_link')}</a>"), flash: { html_safe: true }
-      redirect_to @spending_proposal, notice: notice
+      notice = t('flash.actions.create.spending_proposal', activity: "<a href='#{user_path(current_user, filter: :spending_proposals)}'>#{t('layouts.header.my_activity_link')}</a>")
+      redirect_to @spending_proposal, notice: notice, flash: { html_safe: true }
     else
       render :new
     end
