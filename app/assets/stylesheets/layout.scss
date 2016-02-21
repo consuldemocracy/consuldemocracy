@@ -951,6 +951,18 @@ form {
     color: $alert-color;
   }
 
+  &.featured {
+    background-color: $featured;
+    border-color: $warning-border;
+    color: black;
+
+    a {
+      color: black;
+      font-weight: bold;
+      text-decoration: underline;
+    }
+  }
+
   .close {
     text-decoration: none !important;
   }

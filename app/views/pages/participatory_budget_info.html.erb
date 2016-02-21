@@ -8,6 +8,7 @@
       <% end %>
 
       <ul class="clear">
+        <li><a href="#20"><strong>¿Qué puedo proponer? ¿Cómo lo hago?</strong></a></li>
         <li><p><a href="#1"><strong>Preguntas Frecuentes</strong></a></p>
           <ul class="clear">
             <li><a href="#1">¿Qué son los Presupuestos Participativos?</a></li>
@@ -31,11 +32,22 @@
           </ul>
         </li>
         <li><a href="#19"><strong>Explicación detallada del proceso</strong></a></li>
-        <li><a href="#20"><strong>¿Qué puedo proponer? ¿Cómo lo hago?</strong></a></li>
       </ul>
     </div>
 
     <div class="text small-12 medium-9 column">
+      <h1 id="20">¿Qué puedo proponer? ¿Cómo lo hago?</h1>
+      <p>Para hacer una propuesta el único requisito es que estés <strong>empadronado en el municipio de Madrid</strong>. Puedes hacer la propuesta acudiendo a los espacios presenciales de participación que se pondrán en marcha en todos los distritos; o directamente en esta web, en la sección de <%= link_to "Presupuestos Participativos", spending_proposals_path %>; o acercarte a cualquiera de las <a href="http://www.madrid.es/portales/munimadrid/es/Inicio/El-Ayuntamiento/Atencion-al-ciudadano/Oficinas-de-Atencion-al-Ciudadano?vgnextfmt=default&vgnextchannel=5b99cde2e09a4310VgnVCM1000000b205a0aRCRD" target="_blank">26 Oficinas de Atención a la Ciudadanía</a> que tienes por todo Madrid.</p>
+      <p>Puedes hacer cualquier propuesta de inversión que quieras que el Ayuntamiento lleve a cabo; y puedes hacerlo describiéndolo con tus propias palabras, no hace falta que sea una descripción técnica compleja. Aunque cuanto mejor lo expliques, más fácil será para el Ayuntamiento evaluarla y para la gente el decidir apoyarla.</p>
+
+      <p>Esto es lo que evaluarán los técnicos del Ayuntamiento para marcar la propuesta como válida:</p>
+      <ul>
+        <li><strong>¿Cuánto vale?</strong> Se intentará estimar el coste de la propuesta y serán excluidas todas las propuestas con un coste superior a la bolsa de dinero correspondiente (te recordamos que según sea una propuesta para toda la ciudad o para un distrito u otro, habrá un tope máximo de coste diferente). Puedes ver la <%= link_to "distribución entre los distritos", spending_proposals_path(anchor: "spending-proposals-budget") %>.</li>
+        <li><strong>¿Es legal?</strong> La propuesta debe ser competencia del Ayuntamiento. Este puede hacer una serie de gastos, pero otros dependen de la Comunidad de Madrid o del Estado. También se estudiará si hay alguna normativa que sea contraria a llevar a cabo la propuesta, o si atenta contra el bien común.</li>
+        <li><strong>¿Es una propuesta de inversión?</strong> El presupuesto del Ayuntamiento se divide en diferentes capítulos, siendo uno de ellos el de inversión. En este caso los presupuestos participativos estarán limitados a esta partida, por lo que la propuesta tiene que encajar como gasto de inversión.</li>
+        <li><strong>¿Es viable?</strong> Se estudiará si la propuesta es viable técnicamente y no se prevé algún impedimento para llevarla a cabo.</li>
+      </ul>
+      <p>Si tienes alguna duda puedes consultar las <a href="#1">Preguntas Frecuentes</a>.</p>
       <h1 id="1">¿Qué son los Presupuestos Participativos?</h1>
 
       <p>Los Presupuestos Participativos son unos procesos democráticos mediante los que los vecinos y vecinas pueden decidir de manera directa en qué emplear una parte del presupuesto municipal. Este año se votarán propuestas de inversión para llevar a cabo en 2017.</p>
@@ -115,7 +127,7 @@
       <p>El procedimiento se iniciará el <strong>22 de febrero, y estará divido en tres etapas</strong>:</p>
       <ul>
         <li>
-          <p><strong>Recogida de propuestas (22 febrero – 31 marzo)</strong>. En este primer periodo cualquier persona empadronada en Madrid podrá presentar propuestas de inversión, tanto para toda la ciudad como para algún distrito. Las propuestas podrán ser hechas <%= link_to "a través de Decide Madrid", new_spending_proposal_path %>, a través de los canales que pongan a disposición desde las Juntas de Distrito o en las <a href="http://www.madrid.es/portales/munimadrid/es/Inicio/El-Ayuntamiento/Atencion-al-ciudadano/Oficinas-de-Atencion-al-Ciudadano?vgnextfmt=default&vgnextchannel=5b99cde2e09a4310VgnVCM1000000b205a0aRCRD" target="_blank">Oficinas de Atención a la Ciudadanía</a>.</p>
+          <p><strong>Recogida de propuestas (22 febrero – 31 marzo)</strong>. En este primer periodo cualquier persona empadronada en Madrid podrá presentar <a href="#20">propuestas de inversión</a>, tanto para toda la ciudad como para algún distrito. Las propuestas podrán ser hechas <%= link_to "a través de Decide Madrid", new_spending_proposal_path %>, a través de los canales que pongan a disposición desde las Juntas de Distrito o en las <a href="http://www.madrid.es/portales/munimadrid/es/Inicio/El-Ayuntamiento/Atencion-al-ciudadano/Oficinas-de-Atencion-al-Ciudadano?vgnextfmt=default&vgnextchannel=5b99cde2e09a4310VgnVCM1000000b205a0aRCRD" target="_blank">Oficinas de Atención a la Ciudadanía</a>.</p>
 
           <p>Las Juntas de Distrito pondrán en marcha espacios presenciales de participación, para debatir y hacer propuestas, que tendrán autonomía en cada distrito y podrán autorreglamentarse de forma transparente, para que todas las personas que quieran participar presencialmente puedan hacerlo con facilidad. En estos espacios se promoverá el diagnóstico, debate y diseño colectivo de propuestas durante esta fase.</p>
         </li>
@@ -132,19 +144,6 @@
           <p>La selección final se integrará en el proyecto inicial del Presupuesto General del Ayuntamiento de Madrid que apruebe la Junta de Gobierno. Aprobados los presupuestos por el Pleno, se publicará cada uno de los proyectos seleccionados con descripción de las actuaciones y de las fases en que se encuentren, de forma que se permita entender de manera sencilla la evolución de cada proyecto. Los espacios presenciales de participación en los distritos podrán realizar el seguimiento y evaluación de la ejecución.</p>
           <p>El Área de Gobierno de Participación Ciudadana, Transparencia y Gobierno Abierto coordinará todo el proceso, siendo la garante de su neutralidad y efectividad. Finalizado el mismo, a partir de las evaluaciones de sus resultados se promoverán las modificaciones en el proceso del año siguiente necesarias, y se aumentará la cantidad presupuestaria sometida a este proceso en función del éxito del mismo.</p>
         </li>
-      </ul>
-      <p>Si tienes alguna duda puedes consultar las <a href="#1">Preguntas Frecuentes</a>.</p>
-
-      <h1 id="20">¿Qué puedo proponer? ¿Cómo lo hago?</h1>
-      <p>Para hacer una propuesta el único requisito es que estés <strong>empadronado en el municipio de Madrid</strong>. Puedes hacer la propuesta acudiendo a los espacios presenciales de participación que se pondrán en marcha en todos los distritos; o directamente en esta web, en la sección de <%= link_to "Presupuestos Participativos", spending_proposals_path %>; o acercarte a cualquiera de las <a href="http://www.madrid.es/portales/munimadrid/es/Inicio/El-Ayuntamiento/Atencion-al-ciudadano/Oficinas-de-Atencion-al-Ciudadano?vgnextfmt=default&vgnextchannel=5b99cde2e09a4310VgnVCM1000000b205a0aRCRD" target="_blank">26 Oficinas de Atención a la Ciudadanía</a> que tienes por todo Madrid.</p>
-      <p>Puedes hacer cualquier propuesta de inversión que quieras que el Ayuntamiento lleve a cabo; y puedes hacerlo describiéndolo con tus propias palabras, no hace falta que sea una descripción técnica compleja. Aunque cuanto mejor lo expliques, más fácil será para el Ayuntamiento evaluarla y para la gente el decidir apoyarla.</p>
-
-      <p>Esto es lo que evaluarán los técnicos del Ayuntamiento para marcar la propuesta como válida:</p>
-      <ul>
-        <li><strong>¿Cuánto vale?</strong> Se intentará estimar el coste de la propuesta y serán excluidas todas las propuestas con un coste superior a la bolsa de dinero correspondiente (te recordamos que según sea una propuesta para toda la ciudad o para un distrito u otro, habrá un tope máximo de coste diferente). Puedes ver la <%= link_to "distribución entre los distritos", spending_proposals_path(anchor: "spending-proposals-budget") %>.</li>
-        <li><strong>¿Es legal?</strong> La propuesta debe ser competencia del Ayuntamiento. Este puede hacer una serie de gastos, pero otros dependen de la Comunidad de Madrid o del Estado. También se estudiará si hay alguna normativa que sea contraria a llevar a cabo la propuesta, o si atenta contra el bien común.</li>
-        <li><strong>¿Es una propuesta de inversión?</strong> El presupuesto del Ayuntamiento se divide en diferentes capítulos, siendo uno de ellos el de inversión. En este caso los presupuestos participativos estarán limitados a esta partida, por lo que la propuesta tiene que encajar como gasto de inversión.</li>
-        <li><strong>¿Es viable?</strong> Se estudiará si la propuesta es viable técnicamente y no se prevé algún impedimento para llevarla a cabo.</li>
       </ul>
       <p>Si tienes alguna duda puedes consultar las <a href="#1">Preguntas Frecuentes</a>.</p>
     </div>
