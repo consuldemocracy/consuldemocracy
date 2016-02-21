@@ -409,7 +409,7 @@ en:
         new: Create
       title: Spending proposal title
     index:
-      create_link: Create spending proposal
+      create_link: Create investment proposal
       text_html: Here you can send spending proposals to be considered in the frame of the annual participatory budgeting.
       title: Participatory budgeting
       verified_only: Only verified users can create spending proposals, %{verify_account}.
