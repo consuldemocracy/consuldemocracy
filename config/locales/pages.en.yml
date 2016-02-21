@@ -14,7 +14,7 @@ en:
         participation_world: Systems of citizen participation that exist in the world
         proposals_info: Create your own proposals
         signature_sheet: Sheet collecting signatures for support
-        spending_proposals_info: Create your own spending proposals
+        investment_proposals_info: Create your own investment proposals
       how_it_works:
         i: Participation
         i1: Debates area
@@ -58,7 +58,7 @@ en:
         participation_world: Direct citizen participation in the world
         proposals_info: How does citizen proposals work?
         signature_sheet: Signature sheet
-        spending_proposals_info: How does participatory budgeting work?
+        investment_proposals_info: How does participatory budgeting work?
     opendata:
       go_old: Go to Open Data Portal
       slogan_html: 'We are working on the new Madrid City Council Open Data Portal, meanwhile you can visit the actual Open Data Portal:'

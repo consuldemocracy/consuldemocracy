@@ -14,7 +14,7 @@ es:
         participation_world: Sistemas de participación ciudadana que ya existen en el mundo
         proposals_info: Crea tus propias propuestas
         signature_sheet: Hojas de firmas para recoger apoyos
-        spending_proposals_info: Envía tus propuestas de gasto
+        investment_proposals_info: Envía tus propuestas de inversión
       how_it_works:
         i: Participación
         i1: Espacio de debate
@@ -58,7 +58,7 @@ es:
         participation_world: Participación ciudadana directa en el mundo
         proposals_info: "¿Cómo funcionan las propuestas ciudadanas?"
         signature_sheet: Hojas de firmas
-        spending_proposals_info: "¿Cómo funcionan los presupuestos participativos?"
+        investment_proposals_info: "¿Cómo funcionan los presupuestos participativos?"
     opendata:
       go_old: Ir al Portal de Datos Abiertos
       slogan_html: 'Estamos trabajando en el nuevo Portal de Datos Abiertos del Ayuntamiento de Madrid, por ahora puedes visitar el portal que existía hasta ahora:'

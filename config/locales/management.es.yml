@@ -40,7 +40,7 @@ es:
       create_proposal: Crear propuesta
       print_proposals: Imprimir propuestas
       support_proposals: Apoyar propuestas
-      create_spending_proposal: Crear propuesta de gasto
+      create_investment_proposal: Crear propuesta de inversión
       title: Gestión
       users: Usuarios
     permissions:
@@ -59,7 +59,7 @@ es:
       create_proposal: Crear propuesta
       print:
         print_button: Imprimir
-    spending_proposals:
+    investment_proposals:
       alert:
         unverified_user: Este usuario no está verificado
       create: Crear propuesta de gasto

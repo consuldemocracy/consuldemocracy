@@ -20,7 +20,7 @@ class SpendingProposalsController < ApplicationController
     @spending_proposal.author = current_user
 
     if @spending_proposal.save_with_captcha
-      redirect_to spending_proposals_path, notice: t("flash.actions.create.spending_proposal")
+      redirect_to spending_proposals_path, notice: t("flash.actions.create.investment_proposal")
     else
       render :new
     end

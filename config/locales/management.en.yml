@@ -40,7 +40,7 @@ en:
       create_proposal: Create proposal
       print_proposals: Print proposals
       support_proposals: Support proposals
-      create_spending_proposal: Create spending proposal
+      create_investment_proposal: Create investment proposal
       title: Management
       users: Users
     permissions:
@@ -59,7 +59,7 @@ en:
       create_proposal: Create proposal
       print:
         print_button: Print
-    spending_proposals:
+    investment_proposals:
       alert:
         unverified_user: User is not verified
       create: Create spending proposal

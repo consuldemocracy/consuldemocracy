@@ -6,27 +6,27 @@
   <p><%= text_with_links @spending_proposal.external_url %></p>
 <% end %>
 
-<p><%= t("admin.spending_proposals.show.by") %>:
+<p><%= t("admin.investment_proposals.show.by") %>:
   <%= link_to @spending_proposal.author.name, admin_user_path(@spending_proposal.author) %>
 </p>
-<p><%= t("admin.spending_proposals.show.association_name") %>:
+<p><%= t("admin.investment_proposals.show.association_name") %>:
   <%= @spending_proposal.association_name %>
 </p>
-<p><%= t("admin.spending_proposals.show.geozone") %>:
+<p><%= t("admin.investment_proposals.show.geozone") %>:
   <%= geozone_name(@spending_proposal) %>
 </p>
 <p><%= l @spending_proposal.created_at, format: :datetime %></p>
 
 <p>
   <% unless @spending_proposal.accepted? %>
-    <%= link_to t("admin.spending_proposals.actions.accept"),
+    <%= link_to t("admin.investment_proposals.actions.accept"),
         accept_admin_spending_proposal_path(@spending_proposal),
         method: :put,
         data: { confirm: t("admin.actions.confirm") },
         class: "button radius tiny success no-margin" %>
   <% end %>
   <% unless @spending_proposal.rejected? %>
-    <%= link_to t("admin.spending_proposals.actions.reject"),
+    <%= link_to t("admin.investment_proposals.actions.reject"),
           reject_admin_spending_proposal_path(@spending_proposal),
           method: :put,
           data: { confirm: t("admin.actions.confirm") },
@@ -35,10 +35,10 @@
 </p>
 
 
-<h2><%= t("admin.spending_proposals.show.dossier") %>:</h2>
+<h2><%= t("admin.investment_proposals.show.dossier") %>:</h2>
 
-<p><strong><%= t("admin.spending_proposals.show.price") %>:</strong> <%= @spending_proposal.price %></p>
-<p><strong><%= t("admin.spending_proposals.show.legality") %>:</strong> <%= t("admin.spending_proposals.show.#{@spending_proposal.legality}") %></p>
-<p><strong><%= t("admin.spending_proposals.show.feasibility") %>:</strong> <%= t("admin.spending_proposals.show.#{@spending_proposal.feasibility}") %></p>
+<p><strong><%= t("admin.investment_proposals.show.price") %>:</strong> <%= @spending_proposal.price %></p>
+<p><strong><%= t("admin.investment_proposals.show.legality") %>:</strong> <%= t("admin.investment_proposals.show.#{@spending_proposal.legality}") %></p>
+<p><strong><%= t("admin.investment_proposals.show.feasibility") %>:</strong> <%= t("admin.investment_proposals.show.#{@spending_proposal.feasibility}") %></p>
 
 <%= safe_html_with_links(@spending_proposal.explanation.html_safe) if @spending_proposal.explanation %>

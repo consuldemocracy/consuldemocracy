@@ -11,7 +11,7 @@ class Management::SpendingProposalsController < Management::BaseController
     @spending_proposal.author = managed_user
 
     if @spending_proposal.save_with_captcha
-      redirect_to management_spending_proposal_path(@spending_proposal), notice: t('flash.actions.create.notice', resource_name: t("activerecord.models.spending_proposal", count: 1))
+      redirect_to management_spending_proposal_path(@spending_proposal), notice: t('flash.actions.create.notice', resource_name: t("activerecord.models.investment_proposal", count: 1))
     else
       render :new
     end
@@ -29,7 +29,7 @@ class Management::SpendingProposalsController < Management::BaseController
 
     def check_verified_user
       unless current_user.level_two_or_three_verified?
-        redirect_to management_document_verifications_path, alert: t("management.spending_proposals.alert.unverified_user")
+        redirect_to management_document_verifications_path, alert: t("management.investment_proposals.alert.unverified_user")
       end
     end
 

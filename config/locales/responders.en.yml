@@ -6,7 +6,7 @@ en:
         notice: "%{resource_name} created successfully."
         debate: "Debate created successfully."
         proposal: "Proposal created successfully."
-        spending_proposal: "Spending proposal created successfully."
+        investment_proposal: "Investment proposal created successfully."
       save_changes:
         notice: Changes saved
       update:

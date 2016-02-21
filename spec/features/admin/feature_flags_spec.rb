@@ -10,7 +10,7 @@ feature 'Admin feature flags' do
     visit admin_root_path
 
     within('#admin_menu') do
-      expect(page).to have_link "Spending proposals"
+      expect(page).to have_link "Investment proposals"
       expect(page).to have_link "Hidden debates"
     end
   end
@@ -29,7 +29,7 @@ feature 'Admin feature flags' do
     visit admin_root_path
 
     within('#admin_menu') do
-      expect(page).not_to have_link "Spending proposals"
+      expect(page).not_to have_link "Investment proposals"
     end
 
     expect{ visit spending_proposals_path }.to raise_exception(FeatureFlags::FeatureDisabled)
@@ -43,7 +43,7 @@ feature 'Admin feature flags' do
     visit admin_root_path
 
     within('#admin_menu') do
-      expect(page).not_to have_link "Spending proposals"
+      expect(page).not_to have_link "Investment proposals"
     end
 
     visit admin_settings_path
@@ -57,7 +57,7 @@ feature 'Admin feature flags' do
     visit admin_root_path
 
     within('#admin_menu') do
-      expect(page).to have_link "Spending proposals"
+      expect(page).to have_link "Investment proposals"
     end
   end
 end
