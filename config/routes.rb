@@ -66,7 +66,9 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :spending_proposals, only: [:index, :new, :create, :show]
+  scope '/participatory_budget' do
+    resources :spending_proposals, only: [:index, :new, :create, :show]
+  end
 
   resources :stats, only: [:index]
 
