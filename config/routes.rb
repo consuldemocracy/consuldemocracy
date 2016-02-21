@@ -66,7 +66,9 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :spending_proposals, only: [:index, :new, :create, :show]
+  scope '/participatory_budget' do
+    resources :spending_proposals, only: [:index, :new, :create, :show], path: 'investment_projects'
+  end
 
   resources :stats, only: [:index]
 
@@ -129,7 +131,7 @@ Rails.application.routes.draw do
       end
     end
 
-    resources :spending_proposals, only: [:index, :show] do
+    resources :spending_proposals, only: [:index, :show], path: 'investment_projects' do
       member do
         put :accept
         put :reject
