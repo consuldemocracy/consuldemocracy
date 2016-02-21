@@ -207,7 +207,12 @@ feature 'Users' do
       end
 
       scenario 'is not shown if no user logged in' do
-        visit user_path(@user)
+        visit user_path(@author)
+        expect(page).to_not have_content('Build a school')
+      end
+
+      scenario 'is not shown if no user logged in (filtered url)' do
+        visit user_path(@author, filter: 'spending_proposals')
         expect(page).to_not have_content('Build a school')
       end
 
@@ -234,6 +239,7 @@ feature 'Users' do
         visit user_path(@author)
         expect(page).to have_content('Build a school')
       end
+
     end
   end
 

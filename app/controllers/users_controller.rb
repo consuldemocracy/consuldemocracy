@@ -23,7 +23,7 @@ class UsersController < ApplicationController
       when "proposals" then load_proposals
       when "debates"   then load_debates
       when "comments"  then load_comments
-      when "spending_proposals"  then load_spending_proposals
+      when "spending_proposals"  then load_spending_proposals if author_or_admin?
       else load_available_activity
       end
     end
