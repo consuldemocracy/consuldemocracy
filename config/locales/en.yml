@@ -453,6 +453,9 @@ en:
         proposals:
           one: 1 Proposal
           other: "%{count} Proposals"
+        spending_proposals:
+          one: 1 Spending proposal
+          other: "%{count} Spending proposals"
       no_activity: User has no public activity
       private_activity: This user decided to keep the activity list private
   votes:
