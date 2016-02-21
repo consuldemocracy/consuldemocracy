@@ -64,4 +64,8 @@ class SpendingProposal < ActiveRecord::Base
     end
   end
 
+  def description
+    super.try :html_safe
+  end
+
 end

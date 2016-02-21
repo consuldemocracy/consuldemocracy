@@ -198,6 +198,43 @@ feature 'Users' do
       end
 
     end
+
+    feature 'Spending proposals' do
+
+      background do
+        @author = create(:user)
+        create(:spending_proposal, author: @author, title: 'Build a school')
+      end
+
+      scenario 'is not shown if no user logged in' do
+        visit user_path(@user)
+        expect(page).to_not have_content('Build a school')
+      end
+
+      scenario 'is not shown if logged in user is a regular user' do
+        login_as(create(:user))
+        visit user_path(@author)
+        expect(page).to_not have_content('Build a school')
+      end
+
+      scenario 'is not shown if logged in user is moderator' do
+        login_as(create(:moderator).user)
+        visit user_path(@author)
+        expect(page).to_not have_content('Build a school')
+      end
+
+      scenario 'is shown if logged in user is admin' do
+        login_as(create(:administrator).user)
+        visit user_path(@author)
+        expect(page).to have_content('Build a school')
+      end
+
+      scenario 'is shown if logged in user is author' do
+        login_as(@author)
+        visit user_path(@author)
+        expect(page).to have_content('Build a school')
+      end
+    end
   end
 
   feature 'Special comments' do
