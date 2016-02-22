@@ -65,7 +65,7 @@ en:
           level_two:
             success: Code correct
     redirect_notices:
-      already_verified: Your account is already verified
+      already_verified: Your account is verified
       email_already_sent: We have already sent an email with a confirmation link. If you cannot locate the email, you can request a reissue here
     residence:
       alert:
@@ -82,6 +82,7 @@ en:
           residence_card: Residence card
           spanish_id: DNI
         document_type_label: Document type
+        error_can_not_redeem_code: Could not redeem code. Please make sure it is correct, or leave it blank.
         error_not_allowed_age: You must be at least 16 years old
         error_not_allowed_postal_code: In order to be verified, you must be registered in the municipality of Madrid.
         error_verifying_census: The Madrid Census was unable to verify your information. Please confirm that your census details are correct by calling 010 (or 915298210) or visit any of %{offices}.
@@ -89,6 +90,8 @@ en:
         form_errors: prevented the verification of your residence
         postal_code: Postcode
         postal_code_note: To verify your account you must be on Madrid city Census
+        redeemable_code: Mail verification code (optional)
+        redeemable_code_note: If you have received a verification code via postal mail, please enter it here. If you have not received, or if it doesn't work, leave this field blank (you can fill this field later).
         terms: the terms and conditions of access
         title: Verify residence
         verify_residence: Verify residence

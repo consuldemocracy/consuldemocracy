@@ -322,4 +322,5 @@ FactoryGirl.define do
     sequence(:name) { |n| "District #{n}" }
     census_code { '01' }
   end
+
 end
