@@ -7,4 +7,20 @@ class RedeemableCode < ActiveRecord::Base
     (1..10).inject([]){|chars, _| chars << VALID_CHARS.sample} * ''
   end
 
+  def self.redeemable?(token, geozone)
+    self.where(token: token, geozone_id: geozone.id).exists?
+  end
+
+  def self.redeem(token, geozone, user)
+    instance = self.where(token: token, geozone_id: geozone.id).first
+
+    if instance.present?
+      instance.delete
+      user.update(redeemable_code: token, verified_at: DateTime.now)
+      true
+    else
+      false
+    end
+  end
+
 end

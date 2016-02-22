@@ -3,7 +3,7 @@ class Verification::Residence
   include ActiveModel::Dates
   include ActiveModel::Validations::Callbacks
 
-  attr_accessor :user, :document_number, :document_type, :date_of_birth, :postal_code, :terms_of_service
+  attr_accessor :user, :document_number, :document_type, :date_of_birth, :postal_code, :terms_of_service, :redeemable_code
 
   before_validation :call_census_api
 
