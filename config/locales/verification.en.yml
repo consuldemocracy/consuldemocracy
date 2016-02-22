@@ -65,7 +65,7 @@ en:
           level_two:
             success: Code correct
     redirect_notices:
-      already_verified: Your account is already verified
+      already_verified: Your account is verified
       email_already_sent: We have already sent an email with a confirmation link. If you cannot locate the email, you can request a reissue here
     residence:
       alert:

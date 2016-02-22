@@ -2,7 +2,7 @@ require 'rails_helper'
 
 feature 'Residence' do
 
-  background { create(:geozone) }
+  let!(:geozone) { create(:geozone) }
 
   scenario 'Verify resident in Madrid' do
     user = create(:user)
@@ -20,6 +20,27 @@ feature 'Residence' do
     click_button 'Verify residence'
 
     expect(page).to have_content 'Residence verified'
+  end
+
+  scenario 'Verify a resident in Madrid with a redeemable code' do
+    code = create(:redeemable_code, geozone: geozone)
+    user = create(:user)
+    login_as(user)
+
+    visit account_path
+    click_link 'Verify my account'
+
+    fill_in 'residence_document_number', with: "12345678Z"
+    select 'DNI', from: 'residence_document_type'
+    select_date '31-December-1980', from: 'residence_date_of_birth'
+    fill_in 'residence_postal_code', with: '28013'
+    fill_in 'residence_redeemable_code', with: code.token
+
+    check 'residence_terms_of_service'
+
+    click_button 'Verify residence'
+
+    expect(page).to have_content 'Your account is verified'
   end
 
   scenario 'Error on verify' do

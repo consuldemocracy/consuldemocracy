@@ -33,9 +33,11 @@ class Verification::Residence
                 document_type:         document_type,
                 geozone:               self.geozone,
                 residence_verified_at: Time.now)
+
     if redeemable_code.present?
       RedeemableCode.redeem(redeemable_code, self.geozone, user)
     end
+    true
   end
 
   def allowed_age

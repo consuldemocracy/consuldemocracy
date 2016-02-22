@@ -65,7 +65,7 @@ es:
           level_two:
             success: Código correcto
     redirect_notices:
-      already_verified: Tu cuenta ya está verificada
+      already_verified: Tu cuenta está verificada
       email_already_sent: Ya te enviamos un email con un enlace de confirmación, si no lo encuentras puedes solicitar aquí que te lo reenviemos
     residence:
       alert:
