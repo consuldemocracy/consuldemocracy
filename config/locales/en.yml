@@ -529,9 +529,9 @@ en:
       user_permission_info: With your account you can...
       user_permission_proposal: Create new proposals
       user_permission_support_proposal: Support proposals*
-      user_permission_verify: To perform all the actions %{verify}.
+      user_permission_verify: To perform all the actions verify your account.
       user_permission_verify_info: "* Only for users on Madrid Census."
-      user_permission_verify_url: verify your account
+      user_permission_verify_my_account: Verify my account
       user_permission_votes: Participate on final voting
   omniauth:
     finish_signup:
