@@ -1,6 +1,12 @@
 class Users::RegistrationsController < Devise::RegistrationsController
   prepend_before_action :authenticate_scope!, only: [:edit, :update, :destroy, :finish_signup, :do_finish_signup]
 
+  def new
+    super do |user|
+      user.use_redeemable_code = true if params[:use_redeemable_code].present?
+    end
+  end
+
   def create
     build_resource(sign_up_params)
     if resource.valid_with_captcha?
@@ -52,7 +58,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
     def sign_up_params
       params.require(:user).permit(:username, :email, :password,
                                    :password_confirmation, :captcha,
-                                   :captcha_key, :terms_of_service, :locale)
+                                   :captcha_key, :terms_of_service, :locale,
+                                   :redeemable_code)
     end
 
     def erase_params
