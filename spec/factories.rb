@@ -179,6 +179,11 @@ FactoryGirl.define do
     end
   end
 
+  factory :redeemable_code do
+    sequence(:token) { |n| "token#{n}" }
+    geozone
+  end
+
   factory :spending_proposal do
     sequence(:title)     { |n| "Spending Proposal #{n} title" }
     description          'Spend money on this'
@@ -237,7 +242,7 @@ FactoryGirl.define do
   factory :annotation do
     quote "ipsum"
     text "Loremp ipsum dolor"
-    ranges [{"start"=>"/div[1]", "startOffset"=>5, "end"=>"/div[1]", "endOffset"=>10}]
+    ranges [{"start"=>"/span[1]", "startOffset"=>1, "end"=>"/span[1]", "endOffset"=>5}]
     legislation
     user
   end
@@ -266,6 +271,13 @@ FactoryGirl.define do
     trait :rejected do
       rejected_at Time.now
     end
+  end
+
+  factory :open_answer do
+  end
+
+  factory :survey_answer do
+    user
   end
 
   factory :tag, class: 'ActsAsTaggableOn::Tag' do
@@ -306,8 +318,15 @@ FactoryGirl.define do
     association :notifiable, factory: :proposal
   end
 
+  factory :redeemable_code do
+    token { RedeemableCode.generate_token }
+    geozone
+  end
+
+
   factory :geozone do
     sequence(:name) { |n| "District #{n}" }
     census_code { '01' }
   end
+
 end

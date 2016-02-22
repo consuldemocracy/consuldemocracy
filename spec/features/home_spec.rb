@@ -6,7 +6,7 @@ feature "Home" do
     scenario 'Welcome message' do
       visit root_path
 
-      expect(page).to have_content "Love the city, and it will become a city you love"
+      expect(page).to have_content "The city you love will become the city you want"
     end
   end
 

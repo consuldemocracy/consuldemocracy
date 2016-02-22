@@ -27,7 +27,6 @@ es:
       username_label: Nombre de usuario
       verified_account: Cuenta verificada
       verify_my_account: Verificar mi cuenta
-
   application:
     close: Cerrar
     menu: Menú
@@ -109,6 +108,8 @@ es:
       select_order: Ordenar por
       start_debate: Empieza un debate
       title: Debates
+      top: Destacados
+      top_link_debates: '#TúPreguntas'
     new:
       back_link: Volver
       form:
@@ -188,6 +189,7 @@ es:
       external_link_opendata_url: http://datos.madrid.es
       external_link_transparency: Transparencia
       external_link_transparency_url: https://transparencia.madrid.es
+      help_translate: Ayúdanos a traducir
       locale: 'Idioma:'
       logo: Madrid
       moderation: Moderar
@@ -199,17 +201,19 @@ es:
         other: Tienes %{count} notificaciones nuevas
       no_notifications: No tienes notificaciones nuevas
       open: abierto
-      open_city_slogan_html: Existen ciudades gobernadas directamente por sus habitantes, que <b>debaten</b> sobre temas que les preocupan, <b>proponen</b> ideas para mejorar sus vidas y <b>deciden</b> entre todas y todos las que se llevan a cabo. Madrid ya es una de ellas.
+      open_city_slogan_html: En Madrid sus habitantes, <b>debaten</b> sobre temas que les preocupan, <b>proponen</b> ideas para mejorar sus vidas y <b>deciden</b> entre todas y todos las que se llevan a cabo.
+      open_city_slogan_short: Existen ciudades gobernadas directamente por sus habitantes, Madrid ya es una de ellas.
       open_city_title: La ciudad que quieres será la ciudad que quieras.
       open_data: Datos abiertos
       open_gov: Gobierno %{open}
       proposals: Propuestas
-      see_all: Ver propuestas
-      spending_proposals: Presupuestos ciudadanos
+      processes: Procesos abiertos
+      spending_proposals: Presupuestos participativos
   legislation:
     help:
       alt: Selecciona el texto que quieres comentar y pulsa en el botón con el lápiz.
       text: Para comentar este documento debes %{sign_in} o %{sign_up}. Después selecciona el texto que quieres comentar y pulsa en el botón con el lápiz.
+      text_logged: "Selecciona el texto que quieres comentar y pulsa en el botón con el lápiz."
       text_sign_in: iniciar sesión
       text_sign_up: registrarte
       title: "¿Cómo puedo comentar este documento?"
@@ -297,6 +301,7 @@ es:
       form:
         submit_button: Crear propuesta
       more_info: "¿Cómo funcionan las propuestas ciudadanas?"
+      participatory_budget: Si quieres hacer una propuesta de inversión, entra en Presupuestos participativos.
       recommendation_one: No escribas el título de la propuesta o frases enteras en mayúsculas. En internet eso se considera gritar. Y a nadie le gusta que le griten.
       recommendation_three: Disfruta de este espacio, de las voces que lo llenan, también es tuyo.
       recommendation_two: Cualquier propuesta o comentario que implique una acción ilegal será eliminada, también las que tengan la intención de sabotear los espacios de propuesta, todo lo demás está permitido.
@@ -404,25 +409,37 @@ es:
       association_name: 'Nombre de la asociación'
       description: Descripción detallada
       external_url: Enlace a documentación adicional
-      geozone: "Ámbito de actuación"
+      geozone: "Elige si es una propuesta para toda la ciudad o para un distrito"
       submit_buttons:
         create: Crear
         new: Crear
-      title: Título de la propuesta de gasto
+      title: Título de la propuesta de inversión
     index:
-      create_link: Enviar propuesta de gasto
-      text_html: Desde esta sección podrás sugerir propuestas de gasto que irán asociadas a las partidas de presupuestos ciudadanos.<br>El requisito principal es que sean propuestas presupuestables.
-      title: Presupuestos participativos
-      verified_only: Sólo los usuarios verificados pueden crear propuestas de gasto, %{verify_account}.
+      create_link: Enviar propuesta de inversión
+      date_1: 22 febrero - 31 marzo
+      date_1_info: Recogida de propuestas
+      date_2: 1 abril - 15 abril
+      date_2_info: Apoyos
+      date_3: 16 abril - 14 mayo
+      date_3_info: Evaluación
+      date_4: 15 mayo - 30 junio
+      date_4_info: Votación final
+      signin_only: Para crear propuestas de inversión debes %{signin} o %{signup}.
+      signin: iniciar sesión
+      signup: registrarte
+      title_html: Tú decides cómo invertir 60 millones de euros<br> para tu ciudad
+      title_page: Presupuestos participativos
+      verified_only: Sólo los usuarios verificados pueden crear propuestas de inversión, %{verify_account}.
       verify_account: verifica tu cuenta
     new:
       back_link: Volver
-      more_info: "¿Cómo funcionan los presupuestos participativos?"
-      recommendation_one: Es fundamental que haga referencia a una actuación presupuestable.
-      recommendation_three: Intenta detallar lo máximo posible la propuesta para que el equipo de gobierno encargado de estudiarla tenga las menor dudas posibles.
-      recommendation_two: Cualquier propuesta o comentario que implique acciones ilegales será eliminada.
-      recommendations_title: Cómo crear una propuesta de gasto
-      start_new: Crear una propuesta de gasto
+      more_info: "¿Qué puedo proponer?"
+      recommendation_one: Consulta los %{requirements}.
+      recommendation_one_link: requisitos que debe cumplir una propuesta
+      recommendation_three: Intenta detallar lo máximo posible la propuesta para que el equipo de gobierno encargado de estudiarla tenga las menores dudas posibles.
+      recommendation_two: Cada propuesta debe presentarse por separado. Puedes hacer cuantas quieras.
+      recommendations_title: Cómo crear una propuesta de inversión
+      start_new: Crear una propuesta de inversión
   stats:
     index:
       visits: Visitas
@@ -484,6 +501,21 @@ es:
       alt: Icono se hace
       description: Si la propuesta es aceptada mayoritariamente, el Ayuntamiento la asume como propia y se hace.
       title: Se hace
+    featured:
+      page_title: Destacados
+      process:
+        link: Participa
+        text: Decide como quieres que sea este nuevo espacio en tu ciudad.
+        title: Remodelación de Plaza de España
+      proposals:
+        link: Ver propuestas
+        text: Crear tus propias propuestas y apoya las de otros ciudadanos.
+        title: Propuestas ciudadanas
+      spending_proposals:
+        link: Envia tu propuesta
+        text: Tú decides cómo invertir 60 millones de euros para tu ciudad.
+        title: Presupuestos participativos
+    more_information: Más información sobre esta página
     highlights: 'Portada: '
     proposal:
       alt: Icono propones
@@ -521,6 +553,7 @@ es:
   legislation:
     help:
       title: "¿Cómo puedo comentar este documento?"
+      text_logged: "Selecciona el texto que quieres comentar y pulsa en el botón con el lápiz."
       text: "Para comentar este documento debes %{sign_in} o %{sign_up}. Después selecciona el texto que quieres comentar y pulsa en el botón con el lápiz."
       text_sign_in: "iniciar sesión"
       text_sign_up: "registrarte"
