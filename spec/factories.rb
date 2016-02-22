@@ -179,6 +179,11 @@ FactoryGirl.define do
     end
   end
 
+  factory :redeemable_code do
+    sequence(:token) { |n| "token#{n}" }
+    geozone
+  end
+
   factory :spending_proposal do
     sequence(:title)     { |n| "Spending Proposal #{n} title" }
     description          'Spend money on this'

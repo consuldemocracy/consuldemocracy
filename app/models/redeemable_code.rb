@@ -1,6 +1,8 @@
 class RedeemableCode < ActiveRecord::Base
   VALID_CHARS = %W(A B C D E F H J K L M N P Q R S T U V W X Y Z 2 3 4 5 7 8 9)
 
+  belongs_to :geozone
+
   validates :token, uniqueness: { scope: :geozone_id }
 
   def self.generate_token
@@ -8,10 +10,12 @@ class RedeemableCode < ActiveRecord::Base
   end
 
   def self.redeemable?(token, geozone)
+    return false unless geozone.present?
     self.where(token: token, geozone_id: geozone.id).exists?
   end
 
   def self.redeem(token, geozone, user)
+    return false unless geozone.present?
     instance = self.where(token: token, geozone_id: geozone.id).first
 
     if instance.present?
