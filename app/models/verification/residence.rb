@@ -24,6 +24,7 @@ class Verification::Residence
     self.date_of_birth = parse_date('date_of_birth', attrs)
     attrs = remove_date('date_of_birth', attrs)
     super
+    self.redeemable_code ||= self.user.try(:redeemable_code)
     clean_document_number
   end
 

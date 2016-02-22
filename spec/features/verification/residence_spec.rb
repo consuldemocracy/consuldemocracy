@@ -22,6 +22,16 @@ feature 'Residence' do
     expect(page).to have_content 'Residence verified'
   end
 
+  scenario 'Initialize the redeemable code with the user redeemable code' do
+    user = create(:user, redeemable_code: 'abcde')
+    login_as(user)
+
+    visit account_path
+    click_link 'Verify my account'
+
+    expect(page).to have_field 'residence_redeemable_code', with: 'abcde'
+  end
+
   scenario 'Verify a resident in Madrid with a redeemable code' do
     code = create(:redeemable_code, geozone: geozone)
     user = create(:user)
