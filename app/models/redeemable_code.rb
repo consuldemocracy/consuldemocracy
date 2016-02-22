@@ -8,11 +8,12 @@ class RedeemableCode < ActiveRecord::Base
   end
 
   def self.redeemable?(token, geozone)
+    return false unless geozone.present?
     self.where(token: token, geozone_id: geozone.id).exists?
   end
 
   def self.redeem(token, geozone, user)
-    return false unless geozone
+    return false unless geozone.present?
     instance = self.where(token: token, geozone_id: geozone.id).first
 
     if instance.present?

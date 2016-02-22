@@ -41,6 +41,10 @@ class Verification::Letter
   end
 
   def correct_reedemable_code?
+    RedeemableCode.redeemable?(verification_code, user.geozone)
+  end
+
+  def redeem_code
     RedeemableCode.redeem(verification_code, user.geozone, user)
   end
 
