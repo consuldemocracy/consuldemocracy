@@ -29,6 +29,7 @@ es:
       errors:
         incorrect_code: Código de verificación incorrecto
       new:
+        already_received: "Ya he recibido una carta con mi código de verificación"
         explanation: 'Para participar en las votaciones finales puedes:'
         go_to_index: Ver propuestas
         office: Verificarte presencialmente en cualquier %{office}

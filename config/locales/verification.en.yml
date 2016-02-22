@@ -29,6 +29,7 @@ en:
       errors:
         incorrect_code: Verification code incorrect
       new:
+        already_received: "I already have a letter with my verification code"
         explanation: 'For participate on final voting you can:'
         go_to_index: See proposals
         office: Verify in any %{office}

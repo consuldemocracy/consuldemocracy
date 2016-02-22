@@ -56,6 +56,8 @@
           <%= link_to t("verification.letter.new.send_letter"), letter_path, method: :post %>
         </li>
       </ul>
+
+      <p><%= link_to t("verification.letter.new.already_received", verifica_path, class: "button radius success" %></p>
     </div>
   </div>
 </div>
