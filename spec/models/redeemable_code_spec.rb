@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe RedeemableCode, type: :model do
+describe RedeemableCode do
 
   it "generate_token should create a 10 char token" do
     expect(RedeemableCode.generate_token.size).to eq 10
