@@ -5,6 +5,10 @@
     <div class="small-12 column">
       <%= f.label :title, t("spending_proposals.form.title") %>
       <%= f.text_field :title, maxlength: SpendingProposal.title_max_length, placeholder: t("spending_proposals.form.title"), label: false %>
+
+      <p class="note">Sólo son válidas las propuestas de inversión (básicamente todo aquello que el Ayuntamiento puede construir o adquirir y que su duración prevista es superior a un año). <%= link_to "Qué NO es una propuesta de inversión aunque lo parezca", page_path('participatory_budget_info', anchor: "22") %>.</p>
+
+      <p class="note">Si quieres que tu propuesta sea elegida detállala todo lo posible para que no sea eliminada por falta de concrección.</p>
     </div>
 
     <div class="ckeditor small-12 column">
