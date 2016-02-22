@@ -318,8 +318,15 @@ FactoryGirl.define do
     association :notifiable, factory: :proposal
   end
 
+  factory :redeemable_code do
+    token { RedeemableCode.generate_token }
+    geozone
+  end
+
+
   factory :geozone do
     sequence(:name) { |n| "District #{n}" }
     census_code { '01' }
   end
+
 end

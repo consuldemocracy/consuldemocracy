@@ -63,6 +63,12 @@
         <%= f.text_field :postal_code, label: false %>
       </div>
 
+      <div class="small-12 medium-5 clear">
+        <%= f.label t("verification.residence.new.redeemable_code") %>
+        <p class="note"><%= t("verification.residence.new.redeemable_code_note") %></p>
+        <%= f.text_field :redeemable_code, label: false %>
+      </div>
+
       <div class="small-12">
         <%= f.label :terms_of_service do %>
           <%= f.check_box :terms_of_service, label: false %>
