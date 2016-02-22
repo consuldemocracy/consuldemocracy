@@ -1,7 +1,7 @@
 class WelcomeController < ApplicationController
   skip_authorization_check
 
-  layout "devise", only: :welcome
+  layout "devise", only: [:welcome, :verification]
 
   def index
     if current_user
@@ -23,6 +23,10 @@ class WelcomeController < ApplicationController
     @paginator = debates.total_pages > proposals.total_pages ? debates : proposals
 
     render 'highlights'
+  end
+
+  def verification
+    redirect_to verification_path if signed_in?
   end
 
 
