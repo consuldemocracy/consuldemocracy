@@ -1265,7 +1265,7 @@
         .icon-calendar {
           background: $featured;
           border: none;
-          box-shadow: 0 0 rem-calc(10) white;
+          box-shadow: 0 0 rem-calc(10) $featured;
           color: black;
         }
       }
