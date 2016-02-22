@@ -58,10 +58,12 @@ es:
       user:
         email: "Correo electrónico"
         username: "Nombre de usuario"
+        password_confirmation: "Confirmación de contraseña"
         password: "Contraseña"
         phone_number: "Teléfono"
         official_position: "Cargo público"
         official_level: "Nivel del cargo"
+        redeemable_code: "Código de verificación por carta (opcional)"
       organization:
         name: "Nombre de organización"
         responsible_name: "Persona responsable del colectivo"

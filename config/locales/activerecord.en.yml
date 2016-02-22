@@ -58,10 +58,12 @@ en:
       user:
         email: "Email"
         username: "Username"
+        password_confirmation: "Password confirmation"
         password: "Password"
         phone_number: "Phone number"
         official_position: "Official position"
         official_level: "Official level"
+        redeemable_code: "Verification code received via email"
       organization:
         name: "Name of organisation"
         responsible_name: "Person responsible for the group"

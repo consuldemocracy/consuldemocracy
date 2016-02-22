@@ -41,6 +41,7 @@ class User < ActiveRecord::Base
   accepts_nested_attributes_for :organization, update_only: true
 
   attr_accessor :skip_password_validation
+  attr_accessor :use_redeemable_code
 
   scope :administrators, -> { joins(:administrators) }
   scope :moderators,     -> { joins(:moderator) }
