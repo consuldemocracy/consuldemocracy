@@ -144,7 +144,7 @@ feature 'Verify Letter' do
       scenario 'Valid reedeamble code' do
         geozone = create(:geozone)
         token = RedeemableCode.generate_token
-        redeemable_code = RedeemableCode.create!(geozone_id: geozone.id, token: token)
+        redeemable_code = create(:redeemable_code, geozone: geozone, token: token)
 
         user = create(:user, residence_verified_at: Time.now,
                              confirmed_phone:       "611111111",
@@ -166,7 +166,7 @@ feature 'Verify Letter' do
         california = create(:geozone)
         new_york   = create(:geozone)
         token = RedeemableCode.generate_token
-        redeemable_code = RedeemableCode.create!(geozone_id: california.id, token: token)
+        redeemable_code = create(:redeemable_code, geozone: california, token: token)
 
         user = create(:user, residence_verified_at: Time.now,
                              confirmed_phone:       "611111111",
@@ -187,7 +187,7 @@ feature 'Verify Letter' do
         california = create(:geozone)
         new_york   = create(:geozone)
         token = RedeemableCode.generate_token
-        redeemable_code = RedeemableCode.create!(geozone: california, token: token)
+        redeemable_code = create(:redeemable_code, geozone: california, token: token)
 
         user = create(:user, residence_verified_at: Time.now,
                              confirmed_phone:       "611111111",
