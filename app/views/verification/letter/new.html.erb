@@ -38,7 +38,9 @@
         </ul>
       </div>
 
-      <%= link_to t("verification.letter.new.go_to_index"), root_path, class: "button radius warning" %>
+      <p>
+        <%= link_to t("verification.letter.new.go_to_index"), root_path %>
+      </p>
     </div>
     <div class="small-12 medium-8 column final-votes-info">
 
@@ -57,7 +59,7 @@
         </li>
       </ul>
 
-      <p><%= link_to t("verification.letter.new.already_received", verifica_path, class: "button radius success" %></p>
+      <p><%= link_to t("verification.letter.new.already_received"), verifica_path, class: "button radius success" %></p>
     </div>
   </div>
 </div>
