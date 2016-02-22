@@ -113,6 +113,7 @@ en:
           organization_signup_link: Sign up here
           password_confirmation_label: Confirm password
           password_label: Password
+          redeemable_code: Verification code received via email (optional)
           submit: Register
           terms: By registering you accept the %{terms}
           terms_link: terms and conditions of use

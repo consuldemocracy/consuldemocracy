@@ -14,11 +14,15 @@
   <div class="row">
     <div class="small-12 column">
 
+      <%= f.hidden_field :use_redeemable_code %>
+      <%= f.hidden_field :locale, value: I18n.locale %>
+
       <%= f.label :username %>
       <p class="note"><%= t("devise_views.users.registrations.new.username_note") %></p>
       <%= f.text_field  :username, maxlength: User.username_max_length, placeholder: t("devise_views.users.registrations.new.username_label"), label: false %>
 
       <%= f.email_field :email,     placeholder: t("devise_views.users.registrations.new.email_label") %>
+
 
       <%= f.password_field :password, autocomplete: "off",
                            placeholder: t("devise_views.users.registrations.new.password_label") %>
@@ -27,10 +31,11 @@
                            label: t("devise_views.users.registrations.new.password_confirmation_label"),
                            placeholder: t("devise_views.users.registrations.new.password_confirmation_label") %>
 
-      <%= f.hidden_field :locale, value: I18n.locale %>
+      <% if resource.use_redeemable_code %>
+        <%= f.text_field :redeemable_code, placeholder: t("devise_views.users.registrations.new.redeemable_code") %>
+      <% end %>
 
       <%= f.simple_captcha input_html: {required: false} %>
-
 
       <%= f.label :terms_of_service do %>
         <%= f.check_box :terms_of_service, label: false %>
