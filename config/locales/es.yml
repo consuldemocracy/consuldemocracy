@@ -490,6 +490,11 @@ es:
       description: Espacio abierto para propuestas ciudadanas sobre el tipo de ciudad en el que queremos vivir.
       title: Propones
     signed_in_home_title: Actividad reciente
+    verification:
+      i_dont_have_an_account: No tengo cuenta, quiero crear una y verificarla
+      i_have_an_account: Ya tengo una cuenta que quiero verificar
+      question: ¿Tienes ya una cuenta en %{org_name}?
+      title: Verificación de cuenta
     welcome:
       go_to_index: Ahora no, ver propuestas
       title: Empieza a participar

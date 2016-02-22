@@ -489,6 +489,11 @@ en:
       description: Open space for citizen proposals about the kind of city we want to live in.
       title: You propose
     signed_in_home_title: Recent activity
+    verification:
+      i_dont_have_an_account: I don't have an account
+      i_have_an_account: I already have an account
+      question: Do you already have an account in %{org_name}?
+      title: Account verification
     welcome:
       go_to_index: See proposals and debates
       title: Participate
