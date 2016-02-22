@@ -16,11 +16,14 @@
   </p>
 
   <p>
-    <%= t("welcome.welcome.user_permission_verify",
-    verify: link_to(t("welcome.welcome.user_permission_verify_url"), verification_path)).html_safe %>
+    <%= t("welcome.welcome.user_permission_verify") %>
   </p>
 
   <p class="text-center">
-    <%= link_to t("welcome.welcome.go_to_index"), proposals_path , class: "button success radius" %>
+    <%= link_to(t("welcome.welcome.user_permission_verify_my_account"), verification_path, class: "button success radius") %>
+  </p>
+
+  <p class="text-center">
+    <%= link_to t("welcome.welcome.go_to_index"), proposals_path %>
   </p>
 </div>
