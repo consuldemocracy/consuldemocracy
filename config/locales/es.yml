@@ -491,15 +491,15 @@ es:
       title: Propones
     signed_in_home_title: Actividad reciente
     welcome:
-      go_to_index: Ver propuestas
+      go_to_index: Ahora no, ver propuestas
       title: Empieza a participar
       user_permission_debates: Participar en debates
       user_permission_info: Con tu cuenta ya puedes...
       user_permission_proposal: Crear nuevas propuestas
       user_permission_support_proposal: Apoyar propuestas*
-      user_permission_verify: Para poder realizar todas las acciones %{verify}.
+      user_permission_verify: Para poder realizar todas las acciones, verifica tu cuenta.
       user_permission_verify_info: "* Sólo usuarios empadronados en el municipio de Madrid."
-      user_permission_verify_url: verifica tu cuenta
+      user_permission_verify_my_account: Verificar mi cuenta
       user_permission_votes: Participar en las votaciones finales*
   omniauth:
     finish_signup:
