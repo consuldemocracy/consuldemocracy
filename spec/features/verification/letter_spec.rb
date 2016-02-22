@@ -139,5 +139,72 @@ feature 'Verify Letter' do
       expect(current_path).to eq(account_path)
     end
 
+    context "Redeeamble Code" do
+
+      scenario 'Valid reedeamble code' do
+        geozone = create(:geozone)
+        token = RedeemableCode.generate_token
+        redeemable_code = RedeemableCode.create!(geozone_id: geozone.id, token: token)
+
+        user = create(:user, residence_verified_at: Time.now,
+                             confirmed_phone:       "611111111",
+                             geozone:               geozone)
+
+        login_as(user)
+        visit edit_letter_path
+
+        fill_in "verification_letter_email", with: user.email
+        fill_in "verification_letter_password", with: user.password
+        fill_in "verification_letter_verification_code", with: redeemable_code.token
+        click_button "Verify my account"
+
+        expect(page).to have_content "Code correct. Your account is now verified"
+        expect(current_path).to eq(account_path)
+      end
+
+      scenario 'Error message on incorrect reedeamble code' do
+        california = create(:geozone)
+        new_york   = create(:geozone)
+        token = RedeemableCode.generate_token
+        redeemable_code = RedeemableCode.create!(geozone_id: california.id, token: token)
+
+        user = create(:user, residence_verified_at: Time.now,
+                             confirmed_phone:       "611111111",
+                             geozone:               new_york)
+
+        login_as(user)
+
+        visit edit_letter_path
+        fill_in "verification_letter_email", with: user.email
+        fill_in "verification_letter_password", with: user.password
+        fill_in "verification_letter_verification_code", with: "1234"
+        click_button "Verify my account"
+
+        expect(page).to have_content "Verification code incorrect"
+      end
+
+      scenario 'Error message on incorrect geozone' do
+        california = create(:geozone)
+        new_york   = create(:geozone)
+        token = RedeemableCode.generate_token
+        redeemable_code = RedeemableCode.create!(geozone: california, token: token)
+
+        user = create(:user, residence_verified_at: Time.now,
+                             confirmed_phone:       "611111111",
+                             geozone:               new_york)
+
+        login_as(user)
+
+        visit edit_letter_path
+        fill_in "verification_letter_email", with: user.email
+        fill_in "verification_letter_password", with: user.password
+        fill_in "verification_letter_verification_code", with: redeemable_code.token
+        click_button "Verify my account"
+
+        expect(page).to have_content "Verification code incorrect"
+      end
+
+    end
+
   end
 end
