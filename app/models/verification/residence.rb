@@ -83,7 +83,7 @@ class Verification::Residence
   end
 
   def geozone
-    Geozone.where(census_code: district_code).first if distric_code.present?
+    Geozone.where(census_code: district_code).first if district_code.present?
   end
 
   def district_code
