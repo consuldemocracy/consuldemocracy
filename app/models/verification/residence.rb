@@ -77,14 +77,13 @@ class Verification::Residence
       document_number: document_number,
       document_type:   document_type,
       date_of_birth:   date_of_birth,
-      postal_code:     postal_code
-      #hot fix. Check out the Census API to catch the exception earlier.
-      #district_code:   district_code
+      postal_code:     postal_code,
+      district_code:   district_code
     })
   end
 
   def geozone
-    Geozone.where(census_code: district_code).first
+    Geozone.where(census_code: district_code).first if district_code.present?
   end
 
   def district_code
