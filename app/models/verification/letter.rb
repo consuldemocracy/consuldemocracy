@@ -36,7 +36,7 @@ class Verification::Letter
   end
 
   def correct_letter_code?
-    return false unless user.letter_verification_code.present?
+    return false unless user.try(:letter_verification_code).present?
     user.try(:letter_verification_code).to_i == verification_code.to_i
   end
 
