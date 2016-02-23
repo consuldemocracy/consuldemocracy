@@ -35,6 +35,12 @@
         <% end %>
         </li>
         <li>
+        <%= link_to page_path('meetings') do %>
+            <%= t('pages.more_information.titles.meetings') %>
+            <span><%= t('pages.more_information.description.meetings') %></span>
+        <% end %>
+        </li>
+        <li>
         <%= link_to page_path('participation_world') do %>
             <%= t('pages.more_information.titles.participation_world') %>
             <span><%= t('pages.more_information.description.participation_world') %></span>
