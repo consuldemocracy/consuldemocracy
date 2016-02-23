@@ -34,25 +34,25 @@ class CensusApi
     end
 
     def valid?
-      data[:datos_habitante][:item].present?
+      data.dig(:datos_habitante, :item).present?
     end
 
     def date_of_birth
-      data[:datos_habitante][:item][:fecha_nacimiento_string]
+      data.dig(:datos_habitante, :item, :fecha_nacimiento_string)
     end
 
     def postal_code
-      data[:datos_vivienda][:item][:codigo_postal]
+      data.dig(:datos_vivienda, :item, :codigo_postal)
     end
 
     def district_code
-      data[:datos_vivienda][:item][:codigo_distrito]
+      data.dig(:datos_vivienda, :item, :codigo_distrito)
     end
 
     private
 
       def data
-        @body[:get_habita_datos_response][:get_habita_datos_return]
+        @body.dig(:get_habita_datos_response, :get_habita_datos_return) || {}
       end
   end
 
