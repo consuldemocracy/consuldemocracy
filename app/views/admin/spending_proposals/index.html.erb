@@ -8,7 +8,8 @@
   <% @spending_proposals.each do |spending_proposal| %>
     <tr id="<%= dom_id(spending_proposal) %>">
       <td>
-        <strong><%= link_to spending_proposal.title, admin_spending_proposal_path(spending_proposal) %></strong>
+        <strong><%= spending_proposal.id %> -
+                <%= link_to spending_proposal.title, admin_spending_proposal_path(spending_proposal) %></strong>
       </td>
       <td>
         <%= geozone_name(spending_proposal) %>
