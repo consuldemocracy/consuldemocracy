@@ -959,6 +959,19 @@ form {
     a {
       color: black;
       font-weight: bold;
+
+      &:hover {
+        color: black;
+        text-decoration: none;
+
+        h3 {
+          color: black;
+        }
+      }
+    }
+
+    p {
+      margin-bottom: 0;
     }
   }
 
