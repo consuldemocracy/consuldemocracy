@@ -300,6 +300,8 @@ feature 'Commenting debates' do
     # The button's text should now be "..."
     # This should be checked before the Ajax request is finished
     expect(page).to_not have_button 'Publish comment'
+
+    expect(page).to have_content('Testing submit button!')
   end
 
   feature "Moderators" do
