@@ -339,7 +339,9 @@ describe User do
                      encrypted_password: "foobar",
                      confirmation_token: "token1",
                      reset_password_token: "token2",
-                     email_verification_token: "token3")
+                     email_verification_token: "token3",
+                     confirmed_phone:"5678",
+                     unconfirmed_phone:"5678")
       user.erase('a test')
       user.reload
 
@@ -352,6 +354,8 @@ describe User do
       expect(user.unconfirmed_email).to be_nil
       expect(user.document_number).to be_nil
       expect(user.phone_number).to be_nil
+      expect(user.confirmed_phone).to be_nil
+      expect(user.unconfirmed_phone).to be_nil
 
       expect(user.encrypted_password).to be_empty
 
