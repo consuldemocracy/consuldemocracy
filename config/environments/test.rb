@@ -10,7 +10,12 @@ Rails.application.configure do
   # Do not eager load code on boot. This avoids loading your whole application
   # just for the purpose of running a single test. If you are using a tool that
   # preloads Rails for running tests, you may have to set it to true.
-  config.eager_load = false
+  config.eager_load = true
+
+  # Setting allow_corrency to false tells rails to force every request to
+  # "wait in line", serving one after the other
+  # Setting eager_load to true also sets allow_concurrency to true.
+  config.allow_concurrency = false
 
   # Configure static file server for tests with Cache-Control for performance.
   config.serve_static_files   = true
