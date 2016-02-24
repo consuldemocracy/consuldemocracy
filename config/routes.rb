@@ -131,10 +131,10 @@ Rails.application.routes.draw do
       end
     end
 
-    resources :spending_proposals, only: [:index, :show], path: 'investment_projects' do
+    resources :spending_proposals, only: [:index, :show] do
       member do
-        put :accept
-        put :reject
+        patch :assign_admin
+        patch :assign_valuators
       end
     end
 

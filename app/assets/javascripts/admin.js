@@ -5,7 +5,7 @@
 //= require admin_valuators_forms
 
 var initialize_admin_modules = function() {
-
+  App.AdminValuatorsForms.initialize();
 };
 
 $(function(){
