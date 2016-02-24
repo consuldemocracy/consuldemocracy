@@ -20,9 +20,21 @@
       </div>
     </div>
     <div class="small-12 medium-5 column">
+      <%
+        up_time = Time.strptime('25-FEB-16 18.20.00', '%d-%b-%y %H.%M.%S')
+        if (up_time..(up_time + 4.hours)).include? Time.now.in_time_zone
+       %>
+         <div class="text-right">
+           <span class="label round alert">EN DIRECTO</span>
+         </div>
+         <div class="flex-video">
+           <iframe width="560" height="315" src="https://www.youtube.com/embed/z2HP9cm-Jvg?rel=0" frameborder="0" allowfullscreen></iframe>
+         </div>
+      <% else %>
       <div class="flex-video">
         <iframe width="560" height="315" src="https://www.youtube.com/embed/2PisFJRfDj4?rel=0" frameborder="0" allowfullscreen title="Proceso Participativo #decideplazaespaña"></iframe>
       </div>
+      <% end %>
     </div>
   </div>
 </div>
