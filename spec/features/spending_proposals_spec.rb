@@ -8,14 +8,14 @@ feature 'Spending proposals' do
     visit spending_proposals_path
 
     expect(page).to_not have_link('Create spending proposal', href: new_spending_proposal_path)
-    expect(page).to have_link('verify your account')
+    expect(page).to have_content 'For create spending proposals you must sign in'
 
     login_as(author)
 
     visit spending_proposals_path
 
     expect(page).to have_link('Create spending proposal', href: new_spending_proposal_path)
-    expect(page).to_not have_link('verify your account')
+    expect(page).to_not have_content 'Only verified users can create spending proposals, verify your account'
   end
 
   scenario 'Create' do
@@ -32,7 +32,7 @@ feature 'Spending proposals' do
 
     click_button 'Create'
 
-    expect(page).to have_content 'Spending proposal created successfully'
+    expect(page).to have_content 'Investment project created successfully'
     expect(page).to have_content('Build a skyscraper')
     expect(page).to have_content('I want to live in a high tower over the clouds')
     expect(page).to have_content('Isabel')
@@ -54,7 +54,7 @@ feature 'Spending proposals' do
 
     click_button 'Create'
 
-    expect(page).to have_content 'Spending proposal created successfully'
+    expect(page).to have_content 'Investment project created successfully'
     expect(page).to have_content 'You can access it from My activity'
 
     within "#notice" do
@@ -78,13 +78,13 @@ feature 'Spending proposals' do
 
     click_button 'Create'
 
-    expect(page).to_not have_content 'Spending proposal created successfully'
+    expect(page).to_not have_content 'Investment project created successfully'
     expect(page).to have_content '1 error'
 
     fill_in 'spending_proposal_captcha', with: correct_captcha_text
     click_button 'Create'
 
-    expect(page).to have_content 'Spending proposal created successfully'
+    expect(page).to have_content 'Investment project created successfully'
   end
 
   scenario 'Errors on create' do

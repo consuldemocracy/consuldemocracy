@@ -167,6 +167,27 @@ a {
   margin-bottom: $line-height;
 }
 
+.absolute {
+  position: absolute;
+}
+
+.absolute-survey {
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  width: 100%;
+  z-index: 9;
+}
+
+.highlight {
+  background: $highlight;
+  padding: $line-height/2;
+
+  .alert-box.info {
+    border: 1px solid $info-color;
+  }
+}
+
 .back, .icon-angle-left {
   @include back;
 
@@ -234,15 +255,29 @@ a {
   font-size: $small-font-size;
 }
 
+.panel {
+  background: white;
+}
+
+blockquote.featured {
+  border-left: 0;
+  border-top: 2px solid $brand;
+  color: $text;
+  display: inline-block;
+  padding-left: 0;
+  padding-right: 0;
+  text-transform: uppercase;
+}
+
+
 // 02. Header
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
 header {
   background: $highlight;
-  border-bottom: 1px solid $border;
 
-  .home-page {
-    padding: $line-height 0;
+  @media (min-width: $small-breakpoint) {
+    border-bottom: 1px solid $border;
   }
 
   .selected {
@@ -310,6 +345,22 @@ header {
       }
     }
   }
+}
+
+.home-page {
+  background: $highlight image-url('home_page_bg.jpg');
+  background-position: 50%;
+  background-size: cover;
+  padding: $line-height;
+
+  h1, p, a {
+    color: white;
+  }
+
+  a:not(.button) {
+    text-decoration: underline;
+  }
+
 }
 
 .contain-to-grid {
@@ -453,6 +504,65 @@ header {
       }
     }
   }
+}
+
+.jumbo {
+  background: $highlight;
+
+  @media (min-width: $small-breakpoint) {
+    padding: rem-calc(24) 0;
+  }
+
+  h1, p {
+    color: $highlight-color;
+  }
+}
+
+.jumbo-survey, .jumbo-featured {
+
+  @media (min-width: $small-breakpoint) {
+    padding-top: $line-height;
+  }
+
+  h1, h2, .back, .icon-angle-left, .p, a {
+    color: black;
+  }
+
+  a {
+    text-decoration: underline;
+  }
+
+  a.button {
+    background: white;
+    color: $brand;
+    text-decoration: none;
+  }
+
+  .social-share-button a {
+    color: white;
+
+    &.social-share-button-twitter:hover {
+      color: #40A2D1;
+    }
+
+    &.social-share-button-facebook:hover {
+      color: #354F88;
+    }
+
+    &.social-share-button-google_plus:hover {
+      color: #CE3E26;
+    }
+  }
+}
+
+.jumbo-survey {
+  background: #33DADF;
+  border-bottom: 1px solid #33DADF;
+}
+
+.jumbo-featured {
+  background: $featured;
+  border-bottom: 1px solid $featured;
 }
 
 .top-links {
@@ -689,6 +799,7 @@ form.locale-form {
 
   select {
     background-image: image-url("language_select.png");
+    background-position: rem-calc(50);
 
     option {
       background: white;
@@ -838,6 +949,30 @@ form {
     background-color: $alert-bg;
     border-color: $alert-border;
     color: $alert-color;
+  }
+
+  &.featured {
+    background-color: $featured;
+    border-color: $warning-border;
+    color: black;
+
+    a {
+      color: black;
+      font-weight: bold;
+
+      &:hover {
+        color: black;
+        text-decoration: none;
+
+        h3 {
+          color: black;
+        }
+      }
+    }
+
+    p {
+      margin-bottom: 0;
+    }
   }
 
   .close {
@@ -1161,7 +1296,7 @@ table {
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
 .button.button-twitter {
-  background: #45B0E3;
+  background: #40A2D1;
 
   &:before {
     background: #40A2D1;
@@ -1201,7 +1336,7 @@ table {
 }
 
 .button.button-facebook {
-  background: #3B5998;
+  background: #354F88;
 
   &:before {
     background: #354F88;
@@ -1241,7 +1376,7 @@ table {
 }
 
 .button.button-google {
-  background: #DE4C34;
+  background: #CE3E26;
 
   &:before {
     background: #CE3E26;

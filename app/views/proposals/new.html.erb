@@ -6,9 +6,15 @@
       <%= t("proposals.new.back_link") %>
     <% end %>
     <h1><%= t("proposals.new.start_new") %></h1>
+    <div class="alert-box featured radius">
+      <%= link_to participatory_budget_path do %>
+        <h3><%= t("proposals.new.participatory_budget") %></h3>
+        <p><%= t("proposals.new.participatory_budget_info_html") %></p>
+      <% end %>
+    </div>
     <div class="alert-box info radius">
       <%= link_to "/proposals_info", target: "_blank" do %>
-        <%= t("proposals.new.more_info")%>
+        <%= t("proposals.new.more_info") %>
       <% end %>
     </div>
     <%= render "proposals/form", form_url: proposals_url %>

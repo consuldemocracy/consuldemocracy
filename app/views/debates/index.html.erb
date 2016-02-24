@@ -9,21 +9,23 @@
   <div class="wrap row">
     <div id="debates" class="debates-list small-12 medium-9 column">
 
-      <div class="small-12 margin-top search-results">
+      <div class="small-12 search-results">
         <% if @search_terms || @advanced_search_terms %>
-          <h2>
+          <h2 class="margin-top">
             <%= page_entries_info @debates %>
             <% if !@advanced_search_terms %>
               <%= t("debates.index.search_results", count: @debates.size, search_term: @search_terms) %>
             <% end %>
           </h2>
         <% elsif @tag_filter %>
-          <h2>
+          <h2 class="margin-top">
             <%= page_entries_info @debates %>
             <%= t("debates.index.filter_topic", count: @debates.size, topic: @tag_filter) %>
           </h2>
         <% end %>
       </div>
+
+      <%= render "shared/#{["featured_process_banner", "featured_spending_proposals"].sample}" %>
 
       <% unless @tag_filter || @search_terms %>
         <%= render "featured_debates_static" %>
@@ -45,6 +47,7 @@
       <aside class="sidebar" role="complementary">
         <%= link_to t("debates.index.start_debate"), new_debate_path, class: 'button radius expand' %>
         <%= render "shared/tag_cloud", taggable: 'debate' %>
+        <%= render 'popular' %>
       </aside>
     </div>
 
