@@ -137,9 +137,6 @@ es:
         button: Buscar
         placeholder: Buscar usuario por nombre o email
     spending_proposals:
-      actions:
-        accept: Aceptar
-        reject: Rechazar
       index:
         filter: Filtro
         filters:
@@ -153,9 +150,6 @@ es:
         geozone: Ámbito
         dossier: Informe
         price: Coste
-        legality: Legalidad
-        legal: Legal
-        not_legal: No legal
         feasibility: Viabilidad
         feasible: Viable
         not_feasible: No viable

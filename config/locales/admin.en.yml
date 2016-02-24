@@ -137,9 +137,6 @@ en:
         button: Search
         placeholder: Search user by name or email'
     spending_proposals:
-      actions:
-        accept: Accept
-        reject: Reject
       index:
         filter: Filter
         filters:
@@ -153,9 +150,6 @@ en:
         geozone: Scope
         dossier: Dossier
         price: Price
-        legality: Legality
-        legal: Legal
-        not_legal: Not legal
         feasibility: Feasibility
         feasible: Feasible
         not_feasible: Not feasible
