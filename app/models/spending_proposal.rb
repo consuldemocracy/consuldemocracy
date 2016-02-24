@@ -6,6 +6,9 @@ class SpendingProposal < ActiveRecord::Base
 
   belongs_to :author, -> { with_hidden }, class_name: 'User', foreign_key: 'author_id'
   belongs_to :geozone
+  belongs_to :administrator
+  has_many :valuation_assignments, dependent: :destroy
+  has_many :valuators, through: :valuation_assignments
 
   validates :title, presence: true
   validates :author, presence: true

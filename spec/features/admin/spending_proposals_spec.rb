@@ -25,6 +25,7 @@ feature 'Admin spending proposals' do
                                 association_name: 'People of the neighbourhood',
                                 price: 1234.56,
                                 feasible: false,
+                                feasible_explanation: "It's impossible")
     visit admin_spending_proposals_path
 
     click_link spending_proposal.title

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160222145100) do
+ActiveRecord::Schema.define(version: 20160224123110) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -108,10 +108,10 @@ ActiveRecord::Schema.define(version: 20160222145100) do
     t.string   "visit_id"
     t.datetime "hidden_at"
     t.integer  "flags_count",                             default: 0
-    t.datetime "ignored_flag_at"
     t.integer  "cached_votes_total",                      default: 0
     t.integer  "cached_votes_up",                         default: 0
     t.integer  "cached_votes_down",                       default: 0
+    t.datetime "ignored_flag_at"
     t.integer  "comments_count",                          default: 0
     t.datetime "confirmed_hide_at"
     t.integer  "cached_anonymous_votes_total",            default: 0
@@ -129,6 +129,7 @@ ActiveRecord::Schema.define(version: 20160222145100) do
   add_index "debates", ["cached_votes_total"], name: "index_debates_on_cached_votes_total", using: :btree
   add_index "debates", ["cached_votes_up"], name: "index_debates_on_cached_votes_up", using: :btree
   add_index "debates", ["confidence_score"], name: "index_debates_on_confidence_score", using: :btree
+  add_index "debates", ["description"], name: "index_debates_on_description", using: :btree
   add_index "debates", ["geozone_id"], name: "index_debates_on_geozone_id", using: :btree
   add_index "debates", ["hidden_at"], name: "index_debates_on_hidden_at", using: :btree
   add_index "debates", ["hot_score"], name: "index_debates_on_hot_score", using: :btree
@@ -205,7 +206,7 @@ ActiveRecord::Schema.define(version: 20160222145100) do
   create_table "locks", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "tries",        default: 0
-    t.datetime "locked_until", default: '2000-01-01 07:01:01', null: false
+    t.datetime "locked_until", default: '2000-01-01 00:01:01', null: false
     t.datetime "created_at",                                   null: false
     t.datetime "updated_at",                                   null: false
   end
@@ -265,6 +266,7 @@ ActiveRecord::Schema.define(version: 20160222145100) do
   add_index "proposals", ["author_id"], name: "index_proposals_on_author_id", using: :btree
   add_index "proposals", ["cached_votes_up"], name: "index_proposals_on_cached_votes_up", using: :btree
   add_index "proposals", ["confidence_score"], name: "index_proposals_on_confidence_score", using: :btree
+  add_index "proposals", ["description"], name: "index_proposals_on_description", using: :btree
   add_index "proposals", ["geozone_id"], name: "index_proposals_on_geozone_id", using: :btree
   add_index "proposals", ["hidden_at"], name: "index_proposals_on_hidden_at", using: :btree
   add_index "proposals", ["hot_score"], name: "index_proposals_on_hot_score", using: :btree
@@ -294,20 +296,22 @@ ActiveRecord::Schema.define(version: 20160222145100) do
     t.text     "description"
     t.integer  "author_id"
     t.string   "external_url"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.datetime "created_at",                           null: false
+    t.datetime "updated_at",                           null: false
     t.integer  "geozone_id"
-    t.string   "resolution"
     t.float    "price"
-    t.boolean  "legal"
     t.boolean  "feasible"
-    t.text     "explanation"
     t.string   "association_name"
+    t.text     "price_explanation"
+    t.text     "feasible_explanation"
+    t.text     "internal_comments"
+    t.boolean  "valuation_finished",   default: false
+    t.text     "explanations_log"
+    t.integer  "administrator_id"
   end
 
   add_index "spending_proposals", ["author_id"], name: "index_spending_proposals_on_author_id", using: :btree
   add_index "spending_proposals", ["geozone_id"], name: "index_spending_proposals_on_geozone_id", using: :btree
-  add_index "spending_proposals", ["resolution"], name: "index_spending_proposals_on_resolution", using: :btree
 
   create_table "taggings", force: :cascade do |t|
     t.integer  "tag_id"
@@ -328,8 +332,8 @@ ActiveRecord::Schema.define(version: 20160222145100) do
     t.boolean "featured",                            default: false
     t.integer "debates_count",                       default: 0
     t.integer "proposals_count",                     default: 0
-    t.string  "kind"
     t.integer "spending_proposals_count",            default: 0
+    t.string  "kind"
   end
 
   add_index "tags", ["debates_count"], name: "index_tags_on_debates_count", using: :btree
@@ -405,8 +409,8 @@ ActiveRecord::Schema.define(version: 20160222145100) do
     t.boolean  "public_activity",                      default: true
     t.boolean  "newsletter",                           default: false
     t.integer  "notifications_count",                  default: 0
-    t.string   "locale"
     t.boolean  "registering_with_oauth",               default: false
+    t.string   "locale"
     t.string   "oauth_email"
     t.integer  "geozone_id"
     t.string   "redeemable_code"
@@ -417,6 +421,13 @@ ActiveRecord::Schema.define(version: 20160222145100) do
   add_index "users", ["geozone_id"], name: "index_users_on_geozone_id", using: :btree
   add_index "users", ["hidden_at"], name: "index_users_on_hidden_at", using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+
+  create_table "valuation_assignments", force: :cascade do |t|
+    t.integer  "valuator_id"
+    t.integer  "spending_proposal_id"
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+  end
 
   create_table "valuators", force: :cascade do |t|
     t.integer "user_id"
