@@ -18,7 +18,7 @@
     <div class="small-12 medium-6 column">
       <%
         up_time = Time.strptime('25-FEB-16 18.20.00', '%d-%b-%y %H.%M.%S')
-        if (up_time..(up_time + 4.hours)).include? Time.now.in_time_zone
+        if (up_time..(up_time + 4.hours)).cover? Time.now.in_time_zone
        %>
          <div class="text-right">
            <span class="label round alert">EN DIRECTO</span>
