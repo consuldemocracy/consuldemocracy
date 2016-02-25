@@ -25,7 +25,7 @@
             <%= spending_proposal.valuators.first.name %>
           </span>
         <% else %>
-          <span title="<%= spending_proposal.valuators.map(&:name) * ', ' %>">
+          <span title="<%= spending_proposal.valuators.map(&:name).join(', ') %>">
             <%= t('admin.spending_proposals.index.valuators_assigned', count: spending_proposal.valuators.size) %>
           </span>
         <% end %>
