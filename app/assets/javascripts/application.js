@@ -58,7 +58,6 @@ var initialize_modules = function() {
   App.Annotatable.initialize();
   App.AdvancedSearch.initialize();
   App.RegistrationForm.initialize();
-  App.Forms.initialize();
   App.SurveyAnswers.initialize();
   App.Suggest.initialize();
   App.Forms.initialize();

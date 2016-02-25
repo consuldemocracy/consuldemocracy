@@ -19,9 +19,9 @@ App.Forms =
     )
 
   initialize: ->
-    App.Forms.disableEnter
-    App.Forms.submitOnChange
-    App.Forms.toggleLink
+    App.Forms.disableEnter()
+    App.Forms.submitOnChange()
+    App.Forms.toggleLink()
     false
 
 
