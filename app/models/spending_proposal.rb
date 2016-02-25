@@ -19,6 +19,7 @@ class SpendingProposal < ActiveRecord::Base
   validates :terms_of_service, acceptance: { allow_nil: false }, on: :create
 
   scope :without_admin, -> { where(administrator_id: nil) }
+  scope :without_valuators, -> { where(valuation_assignments_count: 0) }
 
   def description
     super.try :html_safe

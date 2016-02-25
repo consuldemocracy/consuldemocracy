@@ -142,6 +142,7 @@ es:
         filters:
           all: Todas
           without_admin: Sin administrador asignado
+          without_valuators: Sin evaluador
         title: Propuestas de inversión para presupuestos participativos
         admin_assigned: Administrador asignado
         no_admin_assigned: Sin admin asignado

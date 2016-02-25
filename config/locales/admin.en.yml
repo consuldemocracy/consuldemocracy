@@ -142,6 +142,7 @@ en:
         filters:
           all: All
           without_admin: Without assigned admin
+          without_valuators: Without valuator
         title: Investment projects for participatory budgeting
         admin_assigned: Assigned administrator
         no_admin_assigned: No admin assigned

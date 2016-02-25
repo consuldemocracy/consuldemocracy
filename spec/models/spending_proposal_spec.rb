@@ -74,6 +74,19 @@ describe SpendingProposal do
         expect(without_admin.first).to eq(spending_proposal1)
       end
     end
+
+    describe "without_valuators" do
+      it "should return all spending proposals without assigned valuators" do
+        spending_proposal1 = create(:spending_proposal)
+        spending_proposal2 = create(:spending_proposal)
+        spending_proposal1.valuators << create(:valuator)
+
+        without_admin = SpendingProposal.without_valuators
+
+        expect(without_admin.size).to eq(1)
+        expect(without_admin.first).to eq(spending_proposal2)
+      end
+    end
   end
 
 end

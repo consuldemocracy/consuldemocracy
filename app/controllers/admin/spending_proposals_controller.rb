@@ -2,7 +2,7 @@ class Admin::SpendingProposalsController < Admin::BaseController
   include FeatureFlags
   feature_flag :spending_proposals
 
-  has_filters %w{all without_admin}, only: :index
+  has_filters %w{all without_admin without_valuators}, only: :index
 
   load_and_authorize_resource
 

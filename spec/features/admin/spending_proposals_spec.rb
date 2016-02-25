@@ -55,29 +55,43 @@ feature 'Admin spending proposals' do
 
     expect(page).to_not have_link('All')
     expect(page).to have_link('Without assigned admin')
+    expect(page).to have_link('Without valuator')
 
     visit admin_spending_proposals_path(filter: 'without_admin')
     expect(page).to_not have_link('Without assigned admin')
+    expect(page).to have_link('All')
+    expect(page).to have_link('Without valuator')
+
+    visit admin_spending_proposals_path(filter: 'without_valuators')
+    expect(page).to_not have_link('Without valuator')
+    expect(page).to have_link('Without assigned admin')
     expect(page).to have_link('All')
 
     visit admin_spending_proposals_path(filter: 'all')
     expect(page).to_not have_link('All')
     expect(page).to have_link('Without assigned admin')
+    expect(page).to have_link('Without valuator')
   end
 
   scenario "Filtering proposals" do
-    create(:spending_proposal, title: "New idea")
     assigned = create(:spending_proposal, title: "Assigned idea", administrator: create(:administrator))
+    valuating = create(:spending_proposal, title: "Evaluating...")
+    valuating.valuators << create(:valuator)
 
     visit admin_spending_proposals_path(filter: 'all')
 
-    expect(page).to have_content("New idea")
     expect(page).to have_content("Assigned idea")
+    expect(page).to have_content("Evaluating...")
 
     visit admin_spending_proposals_path(filter: 'without_admin')
 
-    expect(page).to have_content("New idea")
+    expect(page).to have_content("Evaluating...")
     expect(page).to_not have_content("Assigned idea")
+
+    visit admin_spending_proposals_path(filter: 'without_valuators')
+
+    expect(page).to have_content("Assigned idea")
+    expect(page).to_not have_content("Evaluating...")
   end
 
   scenario 'Show' do
