@@ -5,7 +5,7 @@ class Admin::SpendingProposalsController < Admin::BaseController
   load_and_authorize_resource
 
   def index
-    @spending_proposals = @spending_proposals.includes([:geozone], [administrator: :user]).order(created_at: :desc).page(params[:page])
+    @spending_proposals = @spending_proposals.includes(:geozone, administrator: :user, valuators: :user).order(created_at: :desc).page(params[:page])
   end
 
   def show

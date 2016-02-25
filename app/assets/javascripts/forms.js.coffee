@@ -23,6 +23,3 @@ App.Forms =
     App.Forms.submitOnChange()
     App.Forms.toggleLink()
     false
-
-
-
