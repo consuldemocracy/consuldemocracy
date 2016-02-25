@@ -143,7 +143,13 @@ en:
           accepted: Accepted
           rejected: Rejected
           unresolved: Unresolved
-        title: Spending proposals for participatory budgeting
+        title: Investment projects for participatory budgeting
+        admin_assigned: Assigned administrator
+        no_admin_assigned: No admin assigned
+        valuators_assigned:
+          one: Assigned valuator
+          other: "%{count} valuators assigned"
+        no_valuators_assigned: No valuators assigned
       show:
         heading: Investment project
         info: Author info
@@ -164,6 +170,7 @@ en:
         assigned_admin: Assigned admin
         assigned_valuators: Assigned valuators
         assign_valuators: Assign valuators
+        no_valuators: There is not any valuator user
         assign: Assign
     stats:
       show:

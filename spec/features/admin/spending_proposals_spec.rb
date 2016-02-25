@@ -19,6 +19,37 @@ feature 'Admin spending proposals' do
     expect(page).to have_content(spending_proposal.title)
   end
 
+  scenario 'Index shows assignments info' do
+    spending_proposal1 = create(:spending_proposal)
+    spending_proposal2 = create(:spending_proposal)
+    spending_proposal3 = create(:spending_proposal)
+
+    valuator1 = create(:valuator, user: create(:user, username: 'Olga'))
+    valuator2 = create(:valuator, user: create(:user, username: 'Miriam'))
+    admin = create(:administrator, user: create(:user, username: 'Gema'))
+
+    spending_proposal1.valuators << valuator1
+    spending_proposal2.valuator_ids = [valuator1.id, valuator2.id]
+    spending_proposal3.update({administrator_id: admin.id})
+
+    visit admin_spending_proposals_path
+
+    within("#spending_proposal_#{spending_proposal1.id}") do
+      expect(page).to have_content("No admin assigned")
+      expect(page).to have_content("Olga")
+    end
+
+    within("#spending_proposal_#{spending_proposal2.id}") do
+      expect(page).to have_content("No admin assigned")
+      expect(page).to have_content("2 valuators assigned")
+    end
+
+    within("#spending_proposal_#{spending_proposal3.id}") do
+      expect(page).to have_content("Gema")
+      expect(page).to have_content("No valuators assigned")
+    end
+  end
+
   scenario 'Show' do
     administrator = create(:administrator, user: create(:user, username: 'Ana', email: 'ana@admins.org'))
     valuator = create(:valuator, user: create(:user, username: 'Rachel', email: 'rachel@valuators.org'))
@@ -59,6 +90,7 @@ feature 'Admin spending proposals' do
 
     expect(page).to have_select('spending_proposal[administrator_id]', selected: 'Undefined')
     select 'Ana (ana@admins.org)', from: 'spending_proposal[administrator_id]'
+    expect(page).to have_select('spending_proposal[administrator_id]', selected: 'Ana (ana@admins.org)')
 
     visit admin_spending_proposal_path(spending_proposal)
 

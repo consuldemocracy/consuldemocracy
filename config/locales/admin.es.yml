@@ -143,7 +143,13 @@ es:
           accepted: Aceptadas
           rejected: Rechazadas
           unresolved: Sin resolver
-        title: Propuestas de gasto para presupuestos participativos
+        title: Propuestas de inversión para presupuestos participativos
+        admin_assigned: Administrador asignado
+        no_admin_assigned: Sin admin asignado
+        valuators_assigned:
+          one: Evaluador asignado
+          other: "%{count} evaluadores asignados"
+        no_valuators_assigned: Sin evaluador
       show:
         heading: Propuesta de inversión
         info: Datos de envío
@@ -164,6 +170,7 @@ es:
         assigned_admin: Administrador asignado
         assigned_valuators: Evaluadores asignados
         assign_valuators: Asignar evaluadores
+        no_valuators: No hay ningún usuario evaluador
         assign: Asignar
     stats:
       show:
