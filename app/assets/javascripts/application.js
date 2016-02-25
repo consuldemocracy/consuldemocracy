@@ -40,6 +40,7 @@
 //= require advanced_search
 //= require registration_form
 //= require suggest
+//= require forms
 
 var initialize_modules = function() {
   App.Comments.initialize();
@@ -55,6 +56,7 @@ var initialize_modules = function() {
   App.AdvancedSearch.initialize();
   App.RegistrationForm.initialize();
   App.Suggest.initialize();
+  App.Forms.initialize();
 };
 
 $(function(){
