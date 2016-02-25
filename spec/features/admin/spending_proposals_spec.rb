@@ -50,6 +50,30 @@ feature 'Admin spending proposals' do
     end
   end
 
+  scenario "Index filtering by geozone", :js do
+    geozone = create(:geozone, name: "District 9")
+    create(:spending_proposal, title: "Realocate visitors", geozone: geozone)
+    create(:spending_proposal, title: "Destroy the city")
+
+    visit admin_spending_proposals_path
+    expect(page).to have_link("Realocate visitors")
+    expect(page).to have_link("Destroy the city")
+
+    select "District 9", from: "geozone_id"
+
+    expect(page).to have_link("Realocate visitors")
+    expect(page).to_not have_link("Destroy the city")
+
+    select "All city", from: "geozone_id"
+
+    expect(page).to have_link("Destroy the city")
+    expect(page).to_not have_link("Realocate visitors")
+
+    select "All zones", from: "geozone_id"
+    expect(page).to have_link("Realocate visitors")
+    expect(page).to have_link("Destroy the city")
+  end
+
   scenario "Current filter is properly highlighted" do
     visit admin_spending_proposals_path
 
