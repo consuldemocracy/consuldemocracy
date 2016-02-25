@@ -164,6 +164,7 @@ en:
         assigned_admin: Assigned admin
         assigned_valuators: Assigned valuators
         assign_valuators: Assign valuators
+        no_valuators: There is not any valuator user
         assign: Assign
     stats:
       show:

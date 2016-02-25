@@ -44,7 +44,7 @@
 
 <div style="display:none" id="valuators-assign-list">
   <%= form_for(@spending_proposal, url: assign_valuators_admin_spending_proposal_path(@spending_proposal), remote: true, html: {id: 'valuators_assignment_form'}) do |f| %>
-    <% @valuators.each do |valuator| -%>
+    <% @valuators.each do |valuator| %>
       <div>
         <%= check_box_tag "valuator_ids_#{valuator.id}", valuator.id, @spending_proposal.valuators.include?(valuator),
                           name: 'spending_proposal[valuator_ids][]',
@@ -53,6 +53,7 @@
       </div>
     <% end -%>
   <% end -%>
+  <% if @valuators.blank? %><p><%= t("admin.spending_proposals.show.no_valuators") %></p><% end %>
 </div>
 
 
