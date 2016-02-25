@@ -67,6 +67,9 @@ admin.create_administrator
 moderator = create_user('mod@madrid.es', 'mod')
 moderator.create_moderator
 
+valuator = create_user('valuator@madrid.es', 'valuator')
+valuator.create_valuator
+
 (1..10).each do |i|
   org_name = Faker::Company.name
   org_user = create_user("org#{i}@madrid.es", org_name)
@@ -275,8 +278,6 @@ end
 
 puts "Creating Spending Proposals"
 
-resolutions = ["accepted", "rejected", nil]
-
 (1..30).each do |i|
   geozone = Geozone.reorder("RANDOM()").first
   author = User.reorder("RANDOM()").first
@@ -286,10 +287,15 @@ resolutions = ["accepted", "rejected", nil]
                               external_url: Faker::Internet.url,
                               description: description,
                               created_at: rand((Time.now - 1.week) .. Time.now),
-                              resolution: resolutions.sample,
                               geozone: [geozone, nil].sample,
                               terms_of_service: "1")
   puts "    #{spending_proposal.title}"
+end
+
+puts "Creating Valuation Assignments"
+
+(1..17).to_a.sample.times do
+  SpendingProposal.reorder("RANDOM()").first.valuators << valuator.valuator
 end
 
 puts "Creating Legislation"

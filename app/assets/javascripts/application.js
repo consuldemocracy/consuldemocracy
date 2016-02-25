@@ -43,6 +43,7 @@
 //= require forms
 //= require survey_answers
 //= require suggest
+//= require forms
 
 var initialize_modules = function() {
   App.Comments.initialize();
@@ -60,6 +61,7 @@ var initialize_modules = function() {
   App.Forms.initialize();
   App.SurveyAnswers.initialize();
   App.Suggest.initialize();
+  App.Forms.initialize();
 };
 
 $(function(){

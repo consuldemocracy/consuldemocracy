@@ -620,8 +620,9 @@ feature 'Proposals' do
         fill_in "Write the text", with: "Schwifty"
         click_button "Filter"
 
+        expect(page).to have_content("There are 2 citizen proposals")
+
         within("#proposals") do
-          expect(page).to have_css('.proposal', count: 2)
 
           expect(page).to have_content(proposal1.title)
           expect(page).to have_content(proposal2.title)
@@ -645,9 +646,9 @@ feature 'Proposals' do
           select "Public employee", from: "advanced_search_official_level"
           click_button "Filter"
 
-          within("#proposals") do
-            expect(page).to have_css('.proposal', count: 2)
+          expect(page).to have_content("There are 2 citizen proposals")
 
+          within("#proposals") do
             expect(page).to have_content(proposal1.title)
             expect(page).to have_content(proposal2.title)
             expect(page).to_not have_content(proposal3.title)
@@ -668,9 +669,9 @@ feature 'Proposals' do
           select "Municipal Organization", from: "advanced_search_official_level"
           click_button "Filter"
 
-          within("#proposals") do
-            expect(page).to have_css('.proposal', count: 2)
+          expect(page).to have_content("There are 2 citizen proposals")
 
+          within("#proposals") do
             expect(page).to have_content(proposal1.title)
             expect(page).to have_content(proposal2.title)
             expect(page).to_not have_content(proposal3.title)
@@ -691,9 +692,9 @@ feature 'Proposals' do
           select "General director", from: "advanced_search_official_level"
           click_button "Filter"
 
-          within("#proposals") do
-            expect(page).to have_css('.proposal', count: 2)
+          expect(page).to have_content("There are 2 citizen proposals")
 
+          within("#proposals") do
             expect(page).to have_content(proposal1.title)
             expect(page).to have_content(proposal2.title)
             expect(page).to_not have_content(proposal3.title)
@@ -714,9 +715,9 @@ feature 'Proposals' do
           select "City councillor", from: "advanced_search_official_level"
           click_button "Filter"
 
-          within("#proposals") do
-            expect(page).to have_css('.proposal', count: 2)
+          expect(page).to have_content("There are 2 citizen proposals")
 
+          within("#proposals") do
             expect(page).to have_content(proposal1.title)
             expect(page).to have_content(proposal2.title)
             expect(page).to_not have_content(proposal3.title)
@@ -737,9 +738,9 @@ feature 'Proposals' do
           select "Mayoress", from: "advanced_search_official_level"
           click_button "Filter"
 
-          within("#proposals") do
-            expect(page).to have_css('.proposal', count: 2)
+          expect(page).to have_content("There are 2 citizen proposals")
 
+          within("#proposals") do
             expect(page).to have_content(proposal1.title)
             expect(page).to have_content(proposal2.title)
             expect(page).to_not have_content(proposal3.title)
@@ -763,9 +764,9 @@ feature 'Proposals' do
             select "Last 24 hours", from: "js-advanced-search-date-min"
             click_button "Filter"
 
-            within("#proposals") do
-              expect(page).to have_css('.proposal', count: 2)
+            expect(page).to have_content("There are 2 citizen proposals")
 
+            within("#proposals") do
               expect(page).to have_content(proposal1.title)
               expect(page).to have_content(proposal2.title)
               expect(page).to_not have_content(proposal3.title)
@@ -783,9 +784,9 @@ feature 'Proposals' do
             select "Last week", from: "js-advanced-search-date-min"
             click_button "Filter"
 
-            within("#proposals") do
-              expect(page).to have_css('.proposal', count: 2)
+            expect(page).to have_content("There are 2 citizen proposals")
 
+            within("#proposals") do
               expect(page).to have_content(proposal1.title)
               expect(page).to have_content(proposal2.title)
               expect(page).to_not have_content(proposal3.title)
@@ -803,9 +804,9 @@ feature 'Proposals' do
             select "Last month", from: "js-advanced-search-date-min"
             click_button "Filter"
 
-            within("#proposals") do
-              expect(page).to have_css('.proposal', count: 2)
+            expect(page).to have_content("There are 2 citizen proposals")
 
+            within("#proposals") do
               expect(page).to have_content(proposal1.title)
               expect(page).to have_content(proposal2.title)
               expect(page).to_not have_content(proposal3.title)
@@ -823,9 +824,9 @@ feature 'Proposals' do
             select "Last year", from: "js-advanced-search-date-min"
             click_button "Filter"
 
-            within("#proposals") do
-              expect(page).to have_css('.proposal', count: 2)
+            expect(page).to have_content("There are 2 citizen proposals")
 
+            within("#proposals") do
               expect(page).to have_content(proposal1.title)
               expect(page).to have_content(proposal2.title)
               expect(page).to_not have_content(proposal3.title)
@@ -847,9 +848,9 @@ feature 'Proposals' do
           fill_in "advanced_search_date_max", with: 1.days.ago
           click_button "Filter"
 
-          within("#proposals") do
-            expect(page).to have_css('.proposal', count: 2)
+          expect(page).to have_content("There are 2 citizen proposals")
 
+          within("#proposals") do
             expect(page).to have_content(proposal1.title)
             expect(page).to have_content(proposal2.title)
             expect(page).to_not have_content(proposal3.title)
@@ -873,8 +874,9 @@ feature 'Proposals' do
 
           click_button "Filter"
 
+          expect(page).to have_content("There is 1 citizen proposal")
+
           within("#proposals") do
-            expect(page).to have_css('.proposal', count: 1)
             expect(page).to have_content(proposal1.title)
           end
         end
@@ -888,6 +890,8 @@ feature 'Proposals' do
           select "Last 24 hours", from: "js-advanced-search-date-min"
 
           click_button "Filter"
+
+          expect(page).to have_content("citizen proposals cannot be found")
 
           within "#js-advanced-search" do
             expect(page).to have_selector("input[name='search'][value='Schwifty']")
@@ -904,6 +908,8 @@ feature 'Proposals' do
           fill_in "advanced_search_date_min", with: 7.days.ago.to_date
           fill_in "advanced_search_date_max", with: 1.days.ago.to_date
           click_button "Filter"
+
+          expect(page).to have_content("citizen proposals cannot be found")
 
           within "#js-advanced-search" do
             expect(page).to have_select('advanced_search[date_min]', selected: 'Customized')

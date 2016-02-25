@@ -4,10 +4,11 @@ class SpendingProposal < ActiveRecord::Base
 
   apply_simple_captcha
 
-  RESOLUTIONS = ["accepted", "rejected"]
-
   belongs_to :author, -> { with_hidden }, class_name: 'User', foreign_key: 'author_id'
   belongs_to :geozone
+  belongs_to :administrator
+  has_many :valuation_assignments, dependent: :destroy
+  has_many :valuators, through: :valuation_assignments
 
   validates :title, presence: true
   validates :author, presence: true
@@ -15,42 +16,10 @@ class SpendingProposal < ActiveRecord::Base
 
   validates :title, length: { in: 4..SpendingProposal.title_max_length }
   validates :description, length: { maximum: SpendingProposal.description_max_length }
-  validates :resolution,  inclusion: { in: RESOLUTIONS, allow_nil: true }
   validates :terms_of_service, acceptance: { allow_nil: false }, on: :create
 
-  scope :accepted, -> { where(resolution: "accepted") }
-  scope :rejected, -> { where(resolution: "rejected") }
-  scope :unresolved, -> { where(resolution: nil) }
-
-  def accept
-    update_attribute(:resolution, "accepted")
-  end
-
-  def reject
-    update_attribute(:resolution, "rejected")
-  end
-
-  def accepted?
-    resolution == "accepted"
-  end
-
-  def rejected?
-    resolution == "rejected"
-  end
-
-  def unresolved?
-    resolution.blank?
-  end
-
-  def legality
-    case legal
-    when true
-      "legal"
-    when false
-      "not_legal"
-    else
-      "undefined"
-    end
+  def description
+    super.try :html_safe
   end
 
   def feasibility
@@ -62,10 +31,6 @@ class SpendingProposal < ActiveRecord::Base
     else
       "undefined"
     end
-  end
-
-  def description
-    super.try :html_safe
   end
 
 end

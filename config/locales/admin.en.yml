@@ -137,9 +137,6 @@ en:
         button: Search
         placeholder: Search user by name or email'
     spending_proposals:
-      actions:
-        accept: Accept
-        reject: Reject
       index:
         filter: Filter
         filters:
@@ -148,18 +145,26 @@ en:
           unresolved: Unresolved
         title: Spending proposals for participatory budgeting
       show:
+        heading: Investment project
+        info: Author info
         association_name: Asociación
         by: Sent by
+        sent: Sent at
         geozone: Scope
         dossier: Dossier
         price: Price
-        legality: Legality
-        legal: Legal
-        not_legal: Not legal
+        currency: "€"
         feasibility: Feasibility
         feasible: Feasible
         not_feasible: Not feasible
         undefined: Undefined
+        valuation_finished: Valuation finished
+        internal_comments: Internal comments
+        responsibles: Responsibles
+        assigned_admin: Assigned admin
+        assigned_valuators: Assigned valuators
+        assign_valuators: Assign valuators
+        assign: Assign
     stats:
       show:
         stats_title: Stats
