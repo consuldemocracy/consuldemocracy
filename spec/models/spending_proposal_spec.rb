@@ -61,4 +61,19 @@ describe SpendingProposal do
     end
   end
 
+
+  describe "scopes" do
+    describe "without_admin" do
+      it "should return all spending proposals without assigned admin" do
+        spending_proposal1 = create(:spending_proposal)
+        spending_proposal2 = create(:spending_proposal, administrator: create(:administrator))
+
+        without_admin = SpendingProposal.without_admin
+
+        expect(without_admin.size).to eq(1)
+        expect(without_admin.first).to eq(spending_proposal1)
+      end
+    end
+  end
+
 end

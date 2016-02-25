@@ -138,11 +138,10 @@ en:
         placeholder: Search user by name or email'
     spending_proposals:
       index:
-        filter: Filter
+        geozone_filter_all: All zones
         filters:
-          accepted: Accepted
-          rejected: Rejected
-          unresolved: Unresolved
+          all: All
+          without_admin: Without assigned admin
         title: Investment projects for participatory budgeting
         admin_assigned: Assigned administrator
         no_admin_assigned: No admin assigned

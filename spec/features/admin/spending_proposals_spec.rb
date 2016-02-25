@@ -50,6 +50,36 @@ feature 'Admin spending proposals' do
     end
   end
 
+  scenario "Current filter is properly highlighted" do
+    visit admin_spending_proposals_path
+
+    expect(page).to_not have_link('All')
+    expect(page).to have_link('Without assigned admin')
+
+    visit admin_spending_proposals_path(filter: 'without_admin')
+    expect(page).to_not have_link('Without assigned admin')
+    expect(page).to have_link('All')
+
+    visit admin_spending_proposals_path(filter: 'all')
+    expect(page).to_not have_link('All')
+    expect(page).to have_link('Without assigned admin')
+  end
+
+  scenario "Filtering proposals" do
+    create(:spending_proposal, title: "New idea")
+    assigned = create(:spending_proposal, title: "Assigned idea", administrator: create(:administrator))
+
+    visit admin_spending_proposals_path(filter: 'all')
+
+    expect(page).to have_content("New idea")
+    expect(page).to have_content("Assigned idea")
+
+    visit admin_spending_proposals_path(filter: 'without_admin')
+
+    expect(page).to have_content("New idea")
+    expect(page).to_not have_content("Assigned idea")
+  end
+
   scenario 'Show' do
     administrator = create(:administrator, user: create(:user, username: 'Ana', email: 'ana@admins.org'))
     valuator = create(:valuator, user: create(:user, username: 'Rachel', email: 'rachel@valuators.org'))

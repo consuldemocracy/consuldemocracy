@@ -18,6 +18,8 @@ class SpendingProposal < ActiveRecord::Base
   validates :description, length: { maximum: SpendingProposal.description_max_length }
   validates :terms_of_service, acceptance: { allow_nil: false }, on: :create
 
+  scope :without_admin, -> { where(administrator_id: nil) }
+
   def description
     super.try :html_safe
   end

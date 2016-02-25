@@ -2,10 +2,12 @@ class Admin::SpendingProposalsController < Admin::BaseController
   include FeatureFlags
   feature_flag :spending_proposals
 
+  has_filters %w{all without_admin}, only: :index
+
   load_and_authorize_resource
 
   def index
-    @spending_proposals = @spending_proposals.includes(:geozone, administrator: :user, valuators: :user).order(created_at: :desc).page(params[:page])
+    @spending_proposals = geozone_filter(params[:geozone_id].presence).includes(:geozone, administrator: :user, valuators: :user).send(@current_filter).order(created_at: :desc).page(params[:page])
   end
 
   def show
@@ -23,5 +25,18 @@ class Admin::SpendingProposalsController < Admin::BaseController
     params[:spending_proposal][:valuator_ids] ||= []
     @spending_proposal.update(params.require(:spending_proposal).permit(valuator_ids: []))
   end
+
+  private
+
+    def geozone_filter(geozone)
+        case geozone
+        when nil
+          @spending_proposals
+        when 'all'
+          @spending_proposals.where(geozone_id: nil)
+        else
+          @spending_proposals.where(geozone_id: params[:geozone_id].presence)
+        end
+    end
 
 end
