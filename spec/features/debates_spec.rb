@@ -483,9 +483,9 @@ feature 'Debates' do
         fill_in "Write the text", with: "Schwifty"
         click_button "Filter"
 
-        within("#debates") do
-          expect(page).to have_css('.debate', count: 2)
+        expect(page).to have_content("There are 2 debates")
 
+        within("#debates") do
           expect(page).to have_content(debate1.title)
           expect(page).to have_content(debate2.title)
           expect(page).to_not have_content(debate3.title)
@@ -508,9 +508,9 @@ feature 'Debates' do
           select "Public employee", from: "advanced_search_official_level"
           click_button "Filter"
 
-          within("#debates") do
-            expect(page).to have_css('.debate', count: 2)
+          expect(page).to have_content("There are 2 debates")
 
+          within("#debates") do
             expect(page).to have_content(debate1.title)
             expect(page).to have_content(debate2.title)
             expect(page).to_not have_content(debate3.title)
@@ -531,9 +531,9 @@ feature 'Debates' do
           select "Municipal Organization", from: "advanced_search_official_level"
           click_button "Filter"
 
-          within("#debates") do
-            expect(page).to have_css('.debate', count: 2)
+          expect(page).to have_content("There are 2 debates")
 
+          within("#debates") do
             expect(page).to have_content(debate1.title)
             expect(page).to have_content(debate2.title)
             expect(page).to_not have_content(debate3.title)
@@ -554,9 +554,9 @@ feature 'Debates' do
           select "General director", from: "advanced_search_official_level"
           click_button "Filter"
 
-          within("#debates") do
-            expect(page).to have_css('.debate', count: 2)
+          expect(page).to have_content("There are 2 debates")
 
+          within("#debates") do
             expect(page).to have_content(debate1.title)
             expect(page).to have_content(debate2.title)
             expect(page).to_not have_content(debate3.title)
@@ -577,9 +577,9 @@ feature 'Debates' do
           select "City councillor", from: "advanced_search_official_level"
           click_button "Filter"
 
-          within("#debates") do
-            expect(page).to have_css('.debate', count: 2)
+          expect(page).to have_content("There are 2 debates")
 
+          within("#debates") do
             expect(page).to have_content(debate1.title)
             expect(page).to have_content(debate2.title)
             expect(page).to_not have_content(debate3.title)
@@ -600,9 +600,9 @@ feature 'Debates' do
           select "Mayoress", from: "advanced_search_official_level"
           click_button "Filter"
 
-          within("#debates") do
-            expect(page).to have_css('.debate', count: 2)
+          expect(page).to have_content("There are 2 debates")
 
+          within("#debates") do
             expect(page).to have_content(debate1.title)
             expect(page).to have_content(debate2.title)
             expect(page).to_not have_content(debate3.title)
