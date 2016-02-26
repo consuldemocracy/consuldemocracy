@@ -158,9 +158,9 @@ feature 'Admin spending proposals' do
 
     expect(page).to have_select('spending_proposal[administrator_id]', selected: 'Undefined')
     select 'Ana (ana@admins.org)', from: 'spending_proposal[administrator_id]'
-    expect(page).to have_select('spending_proposal[administrator_id]', selected: 'Ana (ana@admins.org)')
 
-    visit admin_spending_proposal_path(spending_proposal)
+    visit admin_spending_proposals_path
+    click_link spending_proposal.title
 
     expect(page).to have_select('spending_proposal[administrator_id]', selected: 'Ana (ana@admins.org)')
   end

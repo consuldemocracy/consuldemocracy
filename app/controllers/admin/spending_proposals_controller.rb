@@ -29,14 +29,14 @@ class Admin::SpendingProposalsController < Admin::BaseController
   private
 
     def geozone_filter(geozone)
-        case geozone
-        when nil
-          @spending_proposals
-        when 'all'
-          @spending_proposals.where(geozone_id: nil)
-        else
-          @spending_proposals.where(geozone_id: params[:geozone_id].presence)
-        end
+      case geozone
+      when nil
+        @spending_proposals
+      when 'all'
+        @spending_proposals.where(geozone_id: nil)
+      else
+        @spending_proposals.where(geozone_id: params[:geozone_id].presence)
+      end
     end
 
 end
