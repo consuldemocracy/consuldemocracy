@@ -87,6 +87,38 @@ describe SpendingProposal do
         expect(without_admin.first).to eq(spending_proposal2)
       end
     end
+
+    describe "valuating" do
+      it "should return all spending proposals with assigned valuator but valuation not finished" do
+        spending_proposal1 = create(:spending_proposal)
+        spending_proposal2 = create(:spending_proposal)
+        spending_proposal3 = create(:spending_proposal, valuation_finished: true)
+
+        spending_proposal2.valuators << create(:valuator)
+        spending_proposal3.valuators << create(:valuator)
+
+        without_admin = SpendingProposal.valuating
+
+        expect(without_admin.size).to eq(1)
+        expect(without_admin.first).to eq(spending_proposal2)
+      end
+    end
+
+    describe "valuation_finished" do
+      it "should return all spending proposals with valuation finished" do
+        spending_proposal1 = create(:spending_proposal)
+        spending_proposal2 = create(:spending_proposal)
+        spending_proposal3 = create(:spending_proposal, valuation_finished: true)
+
+        spending_proposal2.valuators << create(:valuator)
+        spending_proposal3.valuators << create(:valuator)
+
+        without_admin = SpendingProposal.valuation_finished
+
+        expect(without_admin.size).to eq(1)
+        expect(without_admin.first).to eq(spending_proposal3)
+      end
+    end
   end
 
 end
