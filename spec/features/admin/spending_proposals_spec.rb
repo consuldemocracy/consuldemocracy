@@ -80,24 +80,46 @@ feature 'Admin spending proposals' do
     expect(page).to_not have_link('All')
     expect(page).to have_link('Without assigned admin')
     expect(page).to have_link('Without valuator')
+    expect(page).to have_link('Under valuation')
+    expect(page).to have_link('Valuation finished')
 
     visit admin_spending_proposals_path(filter: 'without_admin')
     expect(page).to_not have_link('Without assigned admin')
     expect(page).to have_link('All')
     expect(page).to have_link('Without valuator')
+    expect(page).to have_link('Under valuation')
+    expect(page).to have_link('Valuation finished')
 
     visit admin_spending_proposals_path(filter: 'without_valuators')
     expect(page).to_not have_link('Without valuator')
     expect(page).to have_link('Without assigned admin')
     expect(page).to have_link('All')
+    expect(page).to have_link('Under valuation')
+    expect(page).to have_link('Valuation finished')
+
+    visit admin_spending_proposals_path(filter: 'valuating')
+    expect(page).to_not have_link('Under valuation')
+    expect(page).to have_link('All')
+    expect(page).to have_link('Without assigned admin')
+    expect(page).to have_link('Without valuator')
+    expect(page).to have_link('Valuation finished')
+
+    visit admin_spending_proposals_path(filter: 'valuation_finished')
+    expect(page).to_not have_link('Valuation finished')
+    expect(page).to have_link('All')
+    expect(page).to have_link('Without assigned admin')
+    expect(page).to have_link('Without valuator')
+    expect(page).to have_link('Under valuation')
 
     visit admin_spending_proposals_path(filter: 'all')
     expect(page).to_not have_link('All')
     expect(page).to have_link('Without assigned admin')
     expect(page).to have_link('Without valuator')
+    expect(page).to have_link('Under valuation')
+    expect(page).to have_link('Valuation finished')
   end
 
-  scenario "Filtering proposals" do
+  scenario "Index filtering by assignment status" do
     assigned = create(:spending_proposal, title: "Assigned idea", administrator: create(:administrator))
     valuating = create(:spending_proposal, title: "Evaluating...")
     valuating.valuators << create(:valuator)
@@ -116,6 +138,28 @@ feature 'Admin spending proposals' do
 
     expect(page).to have_content("Assigned idea")
     expect(page).to_not have_content("Evaluating...")
+  end
+
+  scenario "Index filtering by valuation status" do
+    valuating = create(:spending_proposal, title: "Ongoing valuation")
+    valuated = create(:spending_proposal, title: "Old idea", valuation_finished: true)
+    valuating.valuators << create(:valuator)
+    valuated.valuators << create(:valuator)
+
+    visit admin_spending_proposals_path(filter: 'all')
+
+    expect(page).to have_content("Ongoing valuation")
+    expect(page).to have_content("Old idea")
+
+    visit admin_spending_proposals_path(filter: 'valuating')
+
+    expect(page).to have_content("Ongoing valuation")
+    expect(page).to_not have_content("Old idea")
+
+    visit admin_spending_proposals_path(filter: 'valuation_finished')
+
+    expect(page).to_not have_content("Ongoing valuation")
+    expect(page).to have_content("Old idea")
   end
 
   scenario 'Show' do
