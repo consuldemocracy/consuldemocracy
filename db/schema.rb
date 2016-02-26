@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160224123110) do
+ActiveRecord::Schema.define(version: 20160225171916) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -296,8 +296,8 @@ ActiveRecord::Schema.define(version: 20160224123110) do
     t.text     "description"
     t.integer  "author_id"
     t.string   "external_url"
-    t.datetime "created_at",                           null: false
-    t.datetime "updated_at",                           null: false
+    t.datetime "created_at",                                  null: false
+    t.datetime "updated_at",                                  null: false
     t.integer  "geozone_id"
     t.float    "price"
     t.boolean  "feasible"
@@ -305,9 +305,10 @@ ActiveRecord::Schema.define(version: 20160224123110) do
     t.text     "price_explanation"
     t.text     "feasible_explanation"
     t.text     "internal_comments"
-    t.boolean  "valuation_finished",   default: false
+    t.boolean  "valuation_finished",          default: false
     t.text     "explanations_log"
     t.integer  "administrator_id"
+    t.integer  "valuation_assignments_count", default: 0
   end
 
   add_index "spending_proposals", ["author_id"], name: "index_spending_proposals_on_author_id", using: :btree

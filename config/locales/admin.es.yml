@@ -138,11 +138,11 @@ es:
         placeholder: Buscar usuario por nombre o email
     spending_proposals:
       index:
-        filter: Filtro
+        geozone_filter_all: Todos los ámbitos de actuación
         filters:
-          accepted: Aceptadas
-          rejected: Rechazadas
-          unresolved: Sin resolver
+          all: Todas
+          without_admin: Sin administrador asignado
+          without_valuators: Sin evaluador
         title: Propuestas de inversión para presupuestos participativos
         admin_assigned: Administrador asignado
         no_admin_assigned: Sin admin asignado
