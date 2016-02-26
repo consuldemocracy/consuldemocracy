@@ -50,6 +50,74 @@ feature 'Admin spending proposals' do
     end
   end
 
+  scenario "Index filtering by geozone", :js do
+    geozone = create(:geozone, name: "District 9")
+    create(:spending_proposal, title: "Realocate visitors", geozone: geozone)
+    create(:spending_proposal, title: "Destroy the city")
+
+    visit admin_spending_proposals_path
+    expect(page).to have_link("Realocate visitors")
+    expect(page).to have_link("Destroy the city")
+
+    select "District 9", from: "geozone_id"
+
+    expect(page).to have_link("Realocate visitors")
+    expect(page).to_not have_link("Destroy the city")
+
+    select "All city", from: "geozone_id"
+
+    expect(page).to have_link("Destroy the city")
+    expect(page).to_not have_link("Realocate visitors")
+
+    select "All zones", from: "geozone_id"
+    expect(page).to have_link("Realocate visitors")
+    expect(page).to have_link("Destroy the city")
+  end
+
+  scenario "Current filter is properly highlighted" do
+    visit admin_spending_proposals_path
+
+    expect(page).to_not have_link('All')
+    expect(page).to have_link('Without assigned admin')
+    expect(page).to have_link('Without valuator')
+
+    visit admin_spending_proposals_path(filter: 'without_admin')
+    expect(page).to_not have_link('Without assigned admin')
+    expect(page).to have_link('All')
+    expect(page).to have_link('Without valuator')
+
+    visit admin_spending_proposals_path(filter: 'without_valuators')
+    expect(page).to_not have_link('Without valuator')
+    expect(page).to have_link('Without assigned admin')
+    expect(page).to have_link('All')
+
+    visit admin_spending_proposals_path(filter: 'all')
+    expect(page).to_not have_link('All')
+    expect(page).to have_link('Without assigned admin')
+    expect(page).to have_link('Without valuator')
+  end
+
+  scenario "Filtering proposals" do
+    assigned = create(:spending_proposal, title: "Assigned idea", administrator: create(:administrator))
+    valuating = create(:spending_proposal, title: "Evaluating...")
+    valuating.valuators << create(:valuator)
+
+    visit admin_spending_proposals_path(filter: 'all')
+
+    expect(page).to have_content("Assigned idea")
+    expect(page).to have_content("Evaluating...")
+
+    visit admin_spending_proposals_path(filter: 'without_admin')
+
+    expect(page).to have_content("Evaluating...")
+    expect(page).to_not have_content("Assigned idea")
+
+    visit admin_spending_proposals_path(filter: 'without_valuators')
+
+    expect(page).to have_content("Assigned idea")
+    expect(page).to_not have_content("Evaluating...")
+  end
+
   scenario 'Show' do
     administrator = create(:administrator, user: create(:user, username: 'Ana', email: 'ana@admins.org'))
     valuator = create(:valuator, user: create(:user, username: 'Rachel', email: 'rachel@valuators.org'))
@@ -90,9 +158,9 @@ feature 'Admin spending proposals' do
 
     expect(page).to have_select('spending_proposal[administrator_id]', selected: 'Undefined')
     select 'Ana (ana@admins.org)', from: 'spending_proposal[administrator_id]'
-    expect(page).to have_select('spending_proposal[administrator_id]', selected: 'Ana (ana@admins.org)')
 
-    visit admin_spending_proposal_path(spending_proposal)
+    visit admin_spending_proposals_path
+    click_link spending_proposal.title
 
     expect(page).to have_select('spending_proposal[administrator_id]', selected: 'Ana (ana@admins.org)')
   end
