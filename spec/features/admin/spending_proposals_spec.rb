@@ -75,48 +75,26 @@ feature 'Admin spending proposals' do
   end
 
   scenario "Current filter is properly highlighted" do
+    filters_links = {'all' => 'All',
+                     'without_admin' => 'Without assigned admin',
+                     'without_valuators' => 'Without valuator',
+                     'valuating' => 'Under valuation',
+                     'valuation_finished' => 'Valuation finished'}
+
     visit admin_spending_proposals_path
 
-    expect(page).to_not have_link('All')
-    expect(page).to have_link('Without assigned admin')
-    expect(page).to have_link('Without valuator')
-    expect(page).to have_link('Under valuation')
-    expect(page).to have_link('Valuation finished')
+    expect(page).to_not have_link(filters_links.values.first)
+    filters_links.keys.drop(1).each { |filter| expect(page).to have_link(filters_links[filter]) }
 
-    visit admin_spending_proposals_path(filter: 'without_admin')
-    expect(page).to_not have_link('Without assigned admin')
-    expect(page).to have_link('All')
-    expect(page).to have_link('Without valuator')
-    expect(page).to have_link('Under valuation')
-    expect(page).to have_link('Valuation finished')
+    filters_links.each_pair do |current_filter, link|
+      visit admin_spending_proposals_path(filter: current_filter)
 
-    visit admin_spending_proposals_path(filter: 'without_valuators')
-    expect(page).to_not have_link('Without valuator')
-    expect(page).to have_link('Without assigned admin')
-    expect(page).to have_link('All')
-    expect(page).to have_link('Under valuation')
-    expect(page).to have_link('Valuation finished')
+      expect(page).to_not have_link(link)
 
-    visit admin_spending_proposals_path(filter: 'valuating')
-    expect(page).to_not have_link('Under valuation')
-    expect(page).to have_link('All')
-    expect(page).to have_link('Without assigned admin')
-    expect(page).to have_link('Without valuator')
-    expect(page).to have_link('Valuation finished')
-
-    visit admin_spending_proposals_path(filter: 'valuation_finished')
-    expect(page).to_not have_link('Valuation finished')
-    expect(page).to have_link('All')
-    expect(page).to have_link('Without assigned admin')
-    expect(page).to have_link('Without valuator')
-    expect(page).to have_link('Under valuation')
-
-    visit admin_spending_proposals_path(filter: 'all')
-    expect(page).to_not have_link('All')
-    expect(page).to have_link('Without assigned admin')
-    expect(page).to have_link('Without valuator')
-    expect(page).to have_link('Under valuation')
-    expect(page).to have_link('Valuation finished')
+      (filters_links.keys - [current_filter]).each do |filter|
+        expect(page).to have_link(filters_links[filter])
+      end
+    end
   end
 
   scenario "Index filtering by assignment status" do
