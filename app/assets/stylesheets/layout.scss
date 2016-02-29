@@ -368,7 +368,6 @@ header {
 }
 
 .subnavigation {
-  padding-bottom: $line-height;
 
   @media (min-width: $small-breakpoint) {
     background: white;
@@ -1056,11 +1055,19 @@ table {
 // 13. Social
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
+.button.button-twitter,
+.button.button-facebook,
+.button.button-google {
+  height: $line-height*2;
+  line-height: $line-height*2;
+  padding: 0;
+  position: relative;
+}
+
 .button.button-twitter {
   background: #45B0E3;
 
   &:before {
-    background: #40A2D1;
     content: "f";
     font-family: "icons" !important;
     font-size: rem-calc(24);
@@ -1100,7 +1107,6 @@ table {
   background: #3B5998;
 
   &:before {
-    background: #354F88;
     content: "A";
     font-family: "icons" !important;
     font-size: rem-calc(24);
@@ -1140,7 +1146,6 @@ table {
   background: #DE4C34;
 
   &:before {
-    background: #CE3E26;
     content: "B";
     font-family: "icons" !important;
     font-size: rem-calc(24);
