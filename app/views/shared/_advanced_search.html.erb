@@ -1,4 +1,6 @@
-<%= link_to t("shared.advanced_search.title"), "#", id: 'js-advanced-search-title', class: "advanced-search small" %>
+<div class="relative">
+  <%= link_to t("shared.advanced_search.title"), "#", id: 'js-advanced-search-title', class: "advanced-search small" %>
+</div>
 
 <div class="advanced-search-form clear">
   <%= form_tag search_path, method: :get do %>
@@ -10,40 +12,44 @@
                            placeholder: t("shared.advanced_search.general_placeholder") %>
       </div>
 
-      <div class="small-12 large-3 left">
-        <label><%= t("shared.advanced_search.author_type") %></label>
-        <%= select_tag('advanced_search[official_level]', official_level_search_options,
-                      include_blank: t("shared.advanced_search.author_type_blank")) %>
-      </div>
-
-      <div class="small-12 large-9 column">
-        <div class="small-12 large-4 left">
-          <label><%= t("shared.advanced_search.date") %></label>
-          <%= select_tag('advanced_search[date_min]', date_range_options,
-                        include_blank: t("shared.advanced_search.date_range_blank"),
-                        id: 'js-advanced-search-date-min') %>
+      <div class="row">
+        <div class="small-12 large-3 column">
+          <label><%= t("shared.advanced_search.author_type") %></label>
+          <%= select_tag('advanced_search[official_level]', official_level_search_options,
+                        include_blank: t("shared.advanced_search.author_type_blank")) %>
         </div>
 
-        <div id='js-custom-date' class='small-12 large-8 column' style="display: none">
-          <div class='small-12 large-6 column'>
-            <label><%= t("shared.advanced_search.from") %></label>
-            <%= text_field_tag 'advanced_search[date_min]',
-                                params[:advanced_search].try(:[], :date_min),
-                                placeholder: t("shared.advanced_search.date_placeholder"),
-                                class: 'js-calendar' %>
+        <div class="small-12 large-9 column">
+          <div class="small-12 large-4 column">
+            <label><%= t("shared.advanced_search.date") %></label>
+            <%= select_tag('advanced_search[date_min]', date_range_options,
+                          include_blank: t("shared.advanced_search.date_range_blank"),
+                          id: 'js-advanced-search-date-min') %>
           </div>
-          <div class='small-12 large-6 column'>
-            <label><%= t("shared.advanced_search.to") %></label>
-            <%= text_field_tag 'advanced_search[date_max]',
-                                params[:advanced_search].try(:[], :date_max),
-                                placeholder: t("shared.advanced_search.date_placeholder"),
-                                class: 'js-calendar' %>
+
+          <div id='js-custom-date' class='small-12 large-8 column' style="display: none">
+            <div class='small-12 large-6 column'>
+              <label><%= t("shared.advanced_search.from") %></label>
+              <%= text_field_tag 'advanced_search[date_min]',
+                                  params[:advanced_search].try(:[], :date_min),
+                                  placeholder: t("shared.advanced_search.date_placeholder"),
+                                  class: 'js-calendar' %>
+            </div>
+            <div class='small-12 large-6 column'>
+              <label><%= t("shared.advanced_search.to") %></label>
+              <%= text_field_tag 'advanced_search[date_max]',
+                                  params[:advanced_search].try(:[], :date_max),
+                                  placeholder: t("shared.advanced_search.date_placeholder"),
+                                  class: 'js-calendar' %>
+            </div>
           </div>
         </div>
       </div>
 
-      <div class="small-12 medium-3">
-        <%= submit_tag t("shared.advanced_search.search"), class: 'button radius expand' %>
+      <div class="row medium-uncollapse">
+        <div class="small-12 medium-3 column end">
+          <%= submit_tag t("shared.advanced_search.search"), class: 'button expanded' %>
+        </div>
       </div>
 
     </div>

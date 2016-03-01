@@ -36,7 +36,7 @@
       <%= render 'shared/order_links', i18n_namespace: "debates.index" %>
 
       <div class="show-for-small-only">
-        <%= link_to t("debates.index.start_debate"), new_debate_path, class: 'button radius expand' %>
+        <%= link_to t("debates.index.start_debate"), new_debate_path, class: 'button expanded' %>
       </div>
 
       <%= render @debates %>
@@ -44,8 +44,9 @@
     </div>
 
     <div class="small-12 medium-3 column">
-      <aside class="sidebar" role="complementary">
-        <%= link_to t("debates.index.start_debate"), new_debate_path, class: 'button radius expand' %>
+
+      <aside class="margin-bottom" role="complementary">
+        <%= link_to t("debates.index.start_debate"), new_debate_path, class: 'button expanded' %>
         <%= render "shared/tag_cloud", taggable: 'debate' %>
         <%= render 'popular' %>
       </aside>

@@ -1,8 +1,8 @@
 <div class="verification account row">
   <div class="small-12 column">
 
-    <%= link_to account_path, class: "left back clear" do %>
-      <i class="icon-angle-left left"></i>
+    <%= link_to account_path, class: "back" do %>
+      <i class="icon-angle-left"></i>
       <%= t("verification.back") %>
     <% end %>
 
@@ -29,7 +29,7 @@
       <ul class="verification-list">
         <% @verified_users.each do |verified_user| %>
           <% if verified_user.phone.present? %>
-            <li id="<%= dom_id(verified_user) %>_phone" style="float:left">
+            <li id="<%= dom_id(verified_user) %>_phone" class="float-left">
               <span><%= mask_phone(verified_user.phone) %></span>
               <span><%= render "form", url: sms_path, verified_user: verified_user %></span>
             </li>

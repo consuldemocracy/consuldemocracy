@@ -10,16 +10,16 @@
         <% end %>
       <% else %>
         <% if comment.as_administrator? %>
-          <%= image_tag("admin_avatar.png", size: 32, class: "admin-avatar left") %>
+          <%= image_tag("admin_avatar.png", size: 32, class: "admin-avatar float-left") %>
         <% elsif comment.as_moderator? %>
-          <%= image_tag("moderator_avatar.png", size: 32, class: "moderator-avatar left") %>
+          <%= image_tag("moderator_avatar.png", size: 32, class: "moderator-avatar float-left") %>
         <% else %>
         <% if comment.user.hidden? || comment.user.erased? %>
             <i class="icon-deleted user-deleted"></i>
           <% elsif comment.user.organization? %>
-            <%= image_tag("collective_avatar.png", size: 32, class: "avatar left") %>
+            <%= image_tag("collective_avatar.png", size: 32, class: "avatar float-left") %>
           <% else %>
-            <%= avatar_image(comment.user, seed: comment.user_id, size: 32, class: "left") %>
+            <%= avatar_image(comment.user, seed: comment.user_id, size: 32, class: "float-left") %>
           <% end %>
         <% end %>
 
@@ -68,7 +68,7 @@
           </div>
 
           <div id="<%= dom_id(comment) %>_reply" class="reply">
-            <span id="<%= dom_id(comment) %>_votes" class="comment-votes right">
+            <span id="<%= dom_id(comment) %>_votes" class="comment-votes float-right">
               <%= render 'comments/votes', comment: comment %>
             </span>
 

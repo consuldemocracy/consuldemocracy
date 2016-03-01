@@ -1,12 +1,13 @@
 <div class="spending-proposal-new row">
 
   <div class="small-12 medium-9 column">
-    <%= link_to spending_proposals_path, class: "left back" do %>
-      <i class="icon-angle-left left"></i>
+    <%= link_to spending_proposals_path, class: "back" do %>
+      <i class="icon-angle-left"></i>
       <%= t("spending_proposals.new.back_link") %>
     <% end %>
     <h1><%= t("spending_proposals.new.start_new") %></h1>
-    <div class="alert-box featured radius">
+
+    <div class="callout featured radius">
       <%= link_to page_path('participatory_budget_info', anchor: "20"), target: "_blank" do %>
         <h3><%= t("spending_proposals.new.more_info")%></h3>
         <p class="small"><i class="icon-check"></i>&nbsp;<strong>Algunos ejemplos de inversiones son</strong>: mobiliario urbano, alumbrado, parques, fuentes y estanques, centros de día, de mayores, centros de atención personas sin hogar, centros de servicios sociales, bibliotecas, centros culturales, instalaciones deportivas, centros de enseñanza, escuelas de música, centros municipales de salud, vivienda de protección pública, compra de autobuses, vehículos para bomberos o policía, aplicaciones informáticas, propiedad intelectual, portales web, etc.</p>
@@ -18,7 +19,7 @@
   </div>
 
   <div class="small-12 medium-3 column">
-    <i class="icon-budget right"></i>
+    <i class="icon-budget float-right"></i>
     <h2><%= t("spending_proposals.new.recommendations_title") %></h2>
     <ul class="recommendations">
       <li>

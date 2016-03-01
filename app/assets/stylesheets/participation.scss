@@ -277,7 +277,6 @@
 .debate-new, .debate-edit,
 .proposal-new, .proposal-edit,
 .spending-proposal-new, .spending-proposal-edit  {
-  padding-top: $line-height;
 
   .back {
     @include back;
@@ -339,15 +338,6 @@
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
 .debate-show, .proposal-show {
-  padding-top: rem-calc(12);
-
-  .back, .icon-angle-left {
-    @include back;
-  }
-
-  h4 {
-    margin: rem-calc(12) 0;
-  }
 
   .edit-debate, .edit-proposal {
     margin-bottom: 0;
@@ -357,7 +347,7 @@
     clear: both;
     color: $text-medium;
     font-size: $small-font-size;
-    line-height: $line-height*2;
+    min-height: $line-height*2;
     position: relative;
 
     a {
@@ -435,8 +425,8 @@
   .document-link, .video-link {
     border: 1px solid $border;
     display: block;
-    margin-top: rem-calc(12);
-    padding: rem-calc(12);
+    margin: $line-height/2 0;
+    padding: $line-height/2;
     position: relative;
 
     a {
@@ -480,7 +470,7 @@
       padding: rem-calc(24);
     }
 
-    @media (min-width: $small-breakpoint  + em-calc(1)) and (max-width:$medium-breakpoint) {
+    @media (min-width: $small-breakpoint  + rem-calc(1)) and (max-width:$medium-breakpoint) {
       .in-favor, .against {
         text-align: left;
         width: rem-calc(100);
@@ -597,6 +587,7 @@
     .debate-content, .proposal-content {
       margin: 0;
       min-height: rem-calc(180);
+      position: relative;
 
       .tags {
         display: block;
@@ -612,12 +603,12 @@
 
     .icon-debates {
       color: $debates;
-      left: rem-calc(60);
+      left: rem-calc(48);
     }
 
     .icon-proposals {
       color: $proposals;
-      left: rem-calc(88);
+      left: rem-calc(72);
     }
 
     .debate-info, .proposal-info {
@@ -809,7 +800,8 @@
 .featured-debates, .featured-proposals {
   padding: $line-height/2 0;
 
-  @media (min-width: $small-breakpoint) {
+  // @media (min-width: $small-breakpoint) {
+  @media (min-width: $medium-breakpoint) {
     margin-left: 0 !important;
     margin-right: 0 !important;
   }
@@ -867,7 +859,6 @@
       color: $warning-color;
       font-size: $small-font-size;
       line-height: rem-calc(24);
-      padding-top: rem-calc(6);
 
       a {
         color: $warning-color;

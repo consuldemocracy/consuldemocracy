@@ -13,12 +13,12 @@
       </div>
     </div>
 
-    <div class="progress small-12 success radius">
+    <div class="progress small-12 success">
       <span class="meter" style="width: 66%"></span>
     </div>
 
-    <%= link_to account_path, class: "left back clear" do %>
-      <i class="icon-angle-left left"></i>
+    <%= link_to account_path, class: "back" do %>
+      <i class="icon-angle-left"></i>
       <%= t("verification.back") %>
     <% end %>
 
@@ -34,7 +34,7 @@
         <%= f.text_field :phone, label: false, placeholder: t("verification.sms.new.phone_placeholder") %>
       </div>
 
-      <%= f.submit t("verification.sms.new.submit_button") %>
+      <%= f.submit t("verification.sms.new.submit_button"), class: "button success" %>
     <% end %>
   </div>
 </div>

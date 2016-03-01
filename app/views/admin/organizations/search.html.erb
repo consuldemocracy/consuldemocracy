@@ -7,7 +7,7 @@
       <%= text_field_tag :term, "", placeholder: t("admin.organizations.index.search_placeholder") %>
     </div>
     <div class="form-inline small-12 medium-6 column">
-      <%= f.submit t("admin.organizations.index.search"), class: "button radius success" %>
+      <%= f.submit t("admin.organizations.index.search"), class: "button success" %>
     </div>
   </div>
 <% end %>
@@ -32,7 +32,7 @@
       <td>
         <%= link_to t("admin.organizations.index.verify"),
                 verify_admin_organization_path(organization, request.query_parameters),
-                method: :put, class: "button radius tiny success"
+                method: :put, class: "button small success"
         %>
       </td>
     <% end %>
@@ -45,7 +45,7 @@
     <% if can? :reject, organization %>
       <td><%= link_to t("admin.organizations.index.reject"),
                 reject_admin_organization_path(organization, request.query_parameters),
-                method: :put, class: "button radius tiny alert"
+                method: :put, class: "button small alert"
           %>
       </td>
     <% end %>
