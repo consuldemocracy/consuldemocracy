@@ -74,6 +74,28 @@ feature 'Admin spending proposals' do
     expect(page).to have_link("Destroy the city")
   end
 
+  scenario "Index filtering by admin", :js do
+    user = create(:user, username: 'Admin 1')
+    administrator = create(:administrator, user: user)
+
+    create(:spending_proposal, title: "Realocate visitors", administrator: administrator)
+    create(:spending_proposal, title: "Destroy the city")
+
+    visit admin_spending_proposals_path
+    expect(page).to have_link("Realocate visitors")
+    expect(page).to have_link("Destroy the city")
+
+    select "Admin 1", from: "administrator_id"
+
+    expect(page).to have_link("Realocate visitors")
+    expect(page).to_not have_link("Destroy the city")
+
+    select "All administrators", from: "administrator_id"
+
+    expect(page).to have_link("Destroy the city")
+    expect(page).to have_link("Realocate visitors")
+  end
+
   scenario "Current filter is properly highlighted" do
     filters_links = {'all' => 'All',
                      'without_admin' => 'Without assigned admin',
