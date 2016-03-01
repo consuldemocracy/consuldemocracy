@@ -45,7 +45,7 @@
 <div style="display:none" id="valuators-assign-list" class="row">
   <%= form_for(@spending_proposal, url: assign_valuators_admin_spending_proposal_path(@spending_proposal), remote: true, html: {id: 'valuators_assignment_form'}) do |f| %>
     <% @valuators.each do |valuator| %>
-      <div class="small-12 medium-6 column">
+      <div class="small-12 medium-4 column">
         <%= check_box_tag "valuator_ids_#{valuator.id}", valuator.id, @spending_proposal.valuators.include?(valuator),
                           name: 'spending_proposal[valuator_ids][]',
                           class: "js-submit-on-change" %>
