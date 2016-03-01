@@ -5,9 +5,9 @@
   <%= link_to t('admin.moderators.moderator.delete'),
     admin_moderator_path(moderator),
     method: :delete,
-    class: "button tiny radius alert right"
+    class: "button small alert float-right"
   %>
 <% else %>
   <%= link_to t('admin.moderators.moderator.add'),{ controller: "admin/moderators", action: :create, user_id: moderator.user_id },
-    method: :post, class: "button tiny radius success right" %>
+    method: :post, class: "button small success float-right" %>
 <% end %>

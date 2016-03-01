@@ -1,4 +1,4 @@
-<div class="alert-box success radius">
+<div data-alert class="callout success">
   <%= t("management.document_verifications.please_check_account_data") %>
 </div>
 
@@ -11,5 +11,5 @@
     url: management_document_verifications_path do |f| %>
   <%= f.hidden_field :document_type %>
   <%= f.hidden_field :document_number %>
-  <%= f.submit t("management.document_verifications.verify"), class: "button success radius" %>
+  <%= f.submit t("management.document_verifications.verify"), class: "button success" %>
 <% end %>

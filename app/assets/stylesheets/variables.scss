@@ -128,8 +128,8 @@ $comment-official:  rgba(70,219,145,.3);
 // 06. Responsive
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
-$small:             em-calc(480);
-$small-breakpoint:  em-calc(640);
-$medium-breakpoint: em-calc(1024);
-$large-breakpoint:  em-calc(1440);
-$xlarge-breakpoint: em-calc(1920);
+$small:             rem-calc(480);
+$small-breakpoint:  rem-calc(640);
+$medium-breakpoint: rem-calc(1024);
+$large-breakpoint:  rem-calc(1440);
+$xlarge-breakpoint: rem-calc(1920);

@@ -11,25 +11,25 @@
       </h2>
 
       <% if @user.public_activity || @authorized_current_user %>
-        <dl class="sub-nav margin-top">
+        <ul class="menu simple margin-top">
           <% @valid_filters.each do |filter| %>
             <% if @activity_counts[filter] > 0 %>
               <% if authorized_for_filter?(filter) %>
                 <% if @current_filter == filter %>
-                  <dd class="active">
+                  <li class="active">
                     <%= t("users.show.filters.#{filter}", count: @activity_counts[filter]) %>
-                  </dd>
+                  </li>
                 <% else %>
-                  <dd>
+                  <li>
                     <%= link_to t("users.show.filters.#{filter}", count: @activity_counts[filter]),
                                 current_path_with_query_params(filter: filter, page: 1) %>
-                  </dd>
+                  </li>
                 <% end %>
               <% end %>
             <% end %>
           <% end %>
           <%= t("users.show.no_activity") if @activity_counts.values.inject(&:+) == 0 %>
-        </dl>
+        </ul>
 
         <%= render "activity_page" %>
       <% else %>

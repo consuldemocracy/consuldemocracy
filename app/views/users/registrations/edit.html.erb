@@ -1,6 +1,9 @@
-<i class="icon-angle-left left"></i>&nbsp;<%= link_to t("devise_views.users.registrations.edit.back_link"), :back, class: "left back" %>
+<%= link_to :back, class: "back" do %>
+  <i class="icon-angle-left float-left"></i>
+  <%= t("devise_views.users.registrations.edit.back_link") %>
+<% end %>
 
-<h1><%= t("devise_views.users.registrations.edit.edit") %></h1>
+<h2><%= t("devise_views.users.registrations.edit.edit") %></h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= devise_error_messages! %>
@@ -34,7 +37,7 @@
     </div>
 
     <div class="small-12 column">
-      <%= f.submit t("devise_views.users.registrations.edit.update_submit"), class: "button radius" %>
+      <%= f.submit t("devise_views.users.registrations.edit.update_submit"), class: "button" %>
     </div>
   </div>
 <% end %>

@@ -10,11 +10,12 @@
   <section class="proposal-show">
     <div id="<%= dom_id(@proposal) %>" class="row">
       <div class="small-12 medium-9 column">
-        <i class="icon-angle-left left"></i>&nbsp;
-        <%= link_to t("proposals.show.back_link"), :back, class: 'left back' %>
-
+        <%= link_to :back, class: "back" do %>
+          <i class="icon-angle-left"></i>
+          <%= t("proposals.show.back_link") %>
+        <% end %>
         <% if current_user && @proposal.editable_by?(current_user) %>
-          <%= link_to edit_proposal_path(@proposal), class: 'edit-proposal button success tiny radius right' do %>
+          <%= link_to edit_proposal_path(@proposal), class: 'edit-proposal button success small float-right' do %>
             <i class="icon-edit"></i>
             <%= t("proposals.show.edit_proposal_link") %>
           <% end %>
@@ -22,7 +23,7 @@
 
         <h1><%= @proposal.title %></h1>
         <% if @proposal.conflictive? %>
-          <div class="alert-box alert radius margin-top">
+          <div data-alert class="callout alert margin-top">
             <strong><%= t("proposals.show.flag") %></strong>
           </div>
         <% end %>
@@ -39,10 +40,13 @@
           <span class="js-flag-actions">
             <%= render 'proposals/flag_actions', proposal: @proposal %>
           </span>
-          <br>
-            <%= t("proposals.show.code") %>
-            <%= @proposal.code %>
         </div>
+
+        <br>
+        <p>
+          <%= t("proposals.show.code") %>
+          <strong><%= @proposal.code %></strong>
+        </p>
 
         <blockquote><%= @proposal.summary %></blockquote>
 

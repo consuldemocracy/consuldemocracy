@@ -30,10 +30,10 @@
 <h2><%= t("admin.spending_proposals.show.responsibles") %></h2>
 
 <p><strong><%= t("admin.spending_proposals.show.assigned_admin") %>:</strong>
-   <%= form_for(@spending_proposal, url: assign_admin_admin_spending_proposal_path(@spending_proposal), remote: true, html: {id: 'administrator_assignment_form'}) do |f| %>
-     <%= f.select :administrator_id, @admins.collect { |a| [ "#{a.name} (#{a.email})", a.id ] }, {include_blank: t("admin.spending_proposals.show.undefined"), label: false}, class: "js-submit-on-change" %>
-   <% end %>
- </p>
+  <%= form_for(@spending_proposal, url: assign_admin_admin_spending_proposal_path(@spending_proposal), remote: true, html: {id: 'administrator_assignment_form'}) do |f| %>
+   <%= f.select :administrator_id, @admins.collect { |a| [ "#{a.name} (#{a.email})", a.id ] }, {include_blank: t("admin.spending_proposals.show.undefined"), label: false}, class: "js-submit-on-change" %>
+  <% end %>
+</p>
 
 <p><strong><%= t("admin.spending_proposals.show.assigned_valuators") %>:</strong></p>
 <div id="assigned_valuators">
@@ -55,7 +55,6 @@
   <% end -%>
   <% if @valuators.blank? %><p><%= t("admin.spending_proposals.show.no_valuators") %></p><% end %>
 </div>
-
 
 <h2><%= t("admin.spending_proposals.show.dossier") %></h2>
 
