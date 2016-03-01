@@ -155,6 +155,10 @@ Rails.application.routes.draw do
       collection { get :search }
     end
 
+    resources :valuators, only: [:index, :create] do
+      collection { get :search }
+    end
+
     resources :verifications, controller: :verifications, only: :index do
       collection { get :search}
     end

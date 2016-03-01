@@ -78,6 +78,13 @@
       <% end %>
     </li>
 
+    <li <%= 'class=active' if controller_name == 'valuators' %>>
+      <%= link_to admin_valuators_path do %>
+        <i class="icon-user"></i>
+        <%= t('admin.menu.valuators') %>
+      <% end %>
+    </li>
+
     <li <%= 'class=active' if controller_name == 'activity' %>>
       <%= link_to admin_activity_path do %>
         <i class="icon-eye"></i>
