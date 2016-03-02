@@ -23,6 +23,7 @@ Setting.create(key: 'feature.spending_proposals', value: "true")
 Setting.create(key: 'feature.twitter_login', value: "true")
 Setting.create(key: 'feature.facebook_login', value: "true")
 Setting.create(key: 'feature.google_login', value: "true")
+Setting.create(key: 'comments_body_max_length', value: '500')
 
 puts "Creating Geozones"
 ('A'..'Z').each{ |i| Geozone.create(name: "District #{i}") }
