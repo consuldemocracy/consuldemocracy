@@ -25,6 +25,25 @@ body.admin {
     }
   }
 
+  table {
+
+    tr {
+      background: #f4f4f4;
+
+      &:nth-child(odd) {
+        background: white;
+      }
+
+      &:nth-child(even) {
+        background: #f0f0f0;
+      }
+    }
+
+    td.small {
+      font-size: $small-font-size;
+    }
+  }
+
   #proposals {
     width: 100% !important;
   }
@@ -180,6 +199,10 @@ body.admin {
 }
 
 .delete {
+  color: $delete;
+}
+
+a.delete {
   border-bottom: 1px dotted #CF2A0E;
   color: $delete;
   font-size: $small-font-size;
