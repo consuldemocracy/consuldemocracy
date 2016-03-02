@@ -253,6 +253,7 @@ a {
 
     a {
       color: $text-medium;
+      line-height: $line-height;
     }
 
     &.active {
@@ -296,12 +297,6 @@ blockquote.featured {
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
 header {
-  // background: $highlight;
-
-  // @media (min-width: $small-breakpoint) {
-  //   border-bottom: 1px solid $border;
-  // }
-
   background: $brand;
   border-bottom: 1px solid $border;
   margin-bottom: $line-height;
@@ -329,69 +324,21 @@ header {
       float: right;
     }
   }
+}
 
+.home-page {
+  background: $highlight image-url('home_page_bg.jpg');
+  background-position: 50%;
+  background-size: cover;
+  padding: $line-height;
 
-//   .search-form {
+  h1, p, a {
+    color: white;
+  }
 
-//     @media (min-width: $small-breakpoint) {
-//       margin-bottom: 0 !important;
-//     }
-
-//     .postfix {
-//       background: $border;
-//       border: 1px solid #ccc;
-//       border-left: 0;
-//       color: $text;
-//       height: rem-calc(37);
-
-//       &:hover {
-//         background: $brand;
-//         color: white;
-//       }
-//     }
-
-//     input {
-//       border-right: 0;
-//     }
-
-//     input, .button {
-//      top: $line-height/4;
-//     }
-
-//     @media (max-width: $small-breakpoint) {
-
-//       .postfix {
-//         font-size: $h3-font-size;
-//         padding-top: $line-height/6;
-//         top: 0;
-//       }
-
-//       .column {
-//         padding: 0;
-//       }
-//     }
-//   }
-// }
-
-// .home-page {
-//   background: $highlight image-url('home_page_bg.jpg');
-//   background-position: 50%;
-//   background-size: cover;
-//   padding: $line-height;
-
-//   h1, p, a {
-//     color: white;
-//   }
-
-//   a:not(.button) {
-//     text-decoration: underline;
-//   }
-
-// }
-
-// .contain-to-grid {
-//   background: $brand;
-// }
+  a:not(.button) {
+    text-decoration: underline;
+  }
 }
 
 .top-bar {
@@ -771,9 +718,8 @@ form.locale-form {
 
   select {
     background-image: image-url("language_select.png");
-    // background-position: rem-calc(50);
     background-origin: border-box;
-    background-position: right;
+    background-position: rem-calc(48);
     background-size: 24px 24px;
 
     option {
@@ -1223,9 +1169,14 @@ img.avatar, img.admin-avatar, img.moderator-avatar, img.initialjs-avatar {
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
 table {
+  border: $border;
   border-collapse: collapse;
   border-spacing: 0;
   width: 100%;
+
+  th {
+    background: #f8f9fb;
+  }
 
   tr {
 
@@ -1235,7 +1186,11 @@ table {
     }
 
     &:nth-child(odd) {
-      background: #F0F2F6;
+      background: white;
+    }
+
+    &:nth-child(even) {
+      background: #fafcfb;
     }
   }
 
