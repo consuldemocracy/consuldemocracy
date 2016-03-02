@@ -6,7 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title><%= content_for?(:title) ? yield(:title) : setting['org_name'] %></title>
     <%= stylesheet_link_tag    "application" %>
-    <%= javascript_include_tag "vendor/modernizr" %>
     <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
     <%= favicon_link_tag "favicon.ico" %>
@@ -18,6 +17,10 @@
 
     <%= setting['per_page_code'].try(:html_safe) %>
 
+    <% if Rails.env.test? %>
+      <%= javascript_tag "$.fx.off = true;" %>
+    <% end %>
+
   </head>
   <body>
     <div class="wrapper">
@@ -25,8 +28,11 @@
 
       <!--[if lt IE 9]>
       <% if browser.ie? && cookies['ie_alert_closed'] != 'true' %>
-        <div data-alert class="alert-box info ie-alert-box">
-          <a href="#" class="close ie-alert-box-close-js">&times;</a>
+        <div data-alert class="callout primary ie-callout" data-closable>
+          <button class="close-button ie-callout-close-js"
+                  aria-label="<%= t("application.close") %>" type="button" data-close>
+            <span aria-hidden="true">&times;</span>
+          </button>
           <h2><%= t("layouts.application.ie_title") %></h2>
           <p>
             <%= t("layouts.application.ie",
@@ -41,23 +47,23 @@
       <![endif]-->
 
       <% if notice %>
-      <div id="notice" class="alert-messages">
-        <div class="row">
-          <div data-alert class="alert-box success radius">
-            <a href="#" class="close" title="<%= t("application.close") %>">&times;</a>
-            <%= notice %>
-          </div>
+      <div id="notice" data-alert class="row" data-closable>
+        <div class="callout success">
+          <button class="close-button" aria-label="<%= t("application.close") %>" type="button" data-close>
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <%= notice %>
         </div>
       </div>
       <% end %>
 
       <% if alert %>
-      <div id="alert" class="alert-messages">
-        <div class="row">
-          <div data-alert class="alert-box alert radius">
-            <a href="#" class="close" title="<%= t("application.close") %>">&times;</a>
-            <%= alert %>
-          </div>
+      <div id="alert" data-alert class="row" data-closable>
+        <div class="callout alert">
+          <button class="close-button" aria-label="<%= t("application.close") %>" type="button" data-close>
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <%= alert %>
         </div>
       </div>
       <% end %>

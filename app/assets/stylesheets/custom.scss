@@ -1,0 +1,210 @@
+// Table of Contents
+// Overrides and adds customized styles
+//
+// 01. Global styles
+// 02. Header
+// 03. Footer
+// 04. Tags
+// 05. Auth pages
+// 06. Forms
+// 07. Alerts
+// 08. User account
+// 09. Search
+// 10. Official levels
+// 12. Tables
+// 13. Social
+// 14. Pages
+// 15. Verification
+// 16. Comments
+// 17. Flags
+// 18. Activity
+//
+
+// 01. Global styles
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+.absolute {
+  position: absolute;
+}
+
+.absolute-survey {
+  bottom: 0;
+  left: 0;
+  margin: 0;
+  position: fixed;
+  width: 100%;
+  z-index: 9;
+}
+
+.highlight {
+  background: $highlight;
+  padding: $line-height/2;
+
+  .callout.info {
+    border: 1px solid $info-color;
+  }
+}
+
+.no-margin-top {
+  margin-top: rem-calc(-24);
+}
+
+.panel {
+  background: white;
+  border: 1px solid $border;
+  padding: $line-height;
+}
+
+blockquote.featured {
+  border-left: 0;
+  border-top: 2px solid $brand;
+  color: $text;
+  display: inline-block;
+  padding-left: 0;
+  padding-right: 0;
+  text-transform: uppercase;
+}
+
+// 02. Header
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+.home-page {
+  background: $highlight image-url('home_page_bg.jpg');
+  background-position: 50%;
+  background-size: cover;
+  padding: $line-height;
+
+  h1, p, a {
+    color: white;
+  }
+
+  a:not(.button) {
+    text-decoration: underline;
+  }
+}
+
+.jumbo {
+  background: $highlight;
+
+  @media (min-width: $small-breakpoint) {
+    padding: rem-calc(24) 0;
+  }
+
+  h1, p {
+    color: $highlight-color;
+  }
+}
+
+.jumbo-survey, .jumbo-featured {
+
+  h1, h2, .back, .icon-angle-left, .p, a {
+    color: black;
+  }
+
+  a {
+    text-decoration: underline;
+  }
+
+  a.button {
+    background: white;
+    color: $brand;
+    text-decoration: none;
+  }
+
+  .social-share-button a {
+    color: white;
+
+    &.social-share-button-twitter:hover {
+      color: #40A2D1;
+    }
+
+    &.social-share-button-facebook:hover {
+      color: #354F88;
+    }
+
+    &.social-share-button-google_plus:hover {
+      color: #CE3E26;
+    }
+  }
+}
+
+.jumbo-survey {
+  background: #33DADF;
+  border-bottom: 1px solid #33DADF;
+}
+
+.jumbo-featured {
+  background: $featured;
+  border-bottom: 1px solid $featured;
+}
+
+// 06. Forms
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+form.locale-form select {
+  background-position: rem-calc(48);
+}
+
+// 07. Alerts
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+.callout.featured {
+  background-color: $featured;
+  border-color: $warning-border;
+  color: black;
+
+  a {
+    color: black;
+    font-weight: bold;
+
+    &:hover {
+      color: black;
+      text-decoration: none;
+
+      h3 {
+        color: black;
+      }
+    }
+  }
+
+  p {
+    margin-bottom: 0;
+  }
+}
+
+// 12. Tables
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+table {
+  border: $border;
+
+  th {
+    background: #f8f9fb;
+  }
+
+  tr {
+
+    &:nth-child(odd) {
+      background: white;
+    }
+
+    &:nth-child(even) {
+      background: #fafcfb;
+    }
+  }
+}
+
+// 13. Social
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+.button.button-twitter {
+  background: #40A2D1;
+}
+
+.button.button-facebook {
+  background: #354F88;
+}
+
+.button.button-google {
+  background: #CE3E26;
+}

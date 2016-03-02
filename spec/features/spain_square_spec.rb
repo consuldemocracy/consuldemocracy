@@ -9,7 +9,7 @@ feature 'Spain square' do
       login_as(user)
 
       visit root_path
-      click_link "Open processes"
+      first(:link, "Open processes").click
 
       within "#spain-square" do
         click_link "More information"

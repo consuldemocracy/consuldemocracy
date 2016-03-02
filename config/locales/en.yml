@@ -518,12 +518,10 @@ en:
         text: You decide how to invest 60 million euros to your city.
         title: Participatory budgeting
     more_information: More information about this page
-    highlights: 'Highlights: '
     proposal:
       alt: Icon propose
       description: Open space for citizen proposals about the kind of city we want to live in.
       title: You propose
-    signed_in_home_title: Recent activity
     verification:
       i_dont_have_an_account: I don't have an account
       i_have_an_account: I already have an account

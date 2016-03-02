@@ -1,7 +1,7 @@
 <% content_for :head do %>
   <%= javascript_include_tag "stat_graphs", 'data-turbolinks-track' => true %>
 <% end %>
-<div class="stats row-full">
+<div class="stats expanded">
   <div class="row">
     <div class="small-12 column">
       <h1><%= t "admin.stats.show.stats_title" %></h1>
@@ -87,12 +87,12 @@
         </div>
       </div>
 
-      <div class="small-12">
+      <div class="small-12 column">
         <h2><%= t "admin.stats.show.visits_title" %></h2>
         <%= visits_chart_tag id: "visits" %>
       </div>
 
-      <div class="small-12">
+      <div class="small-12 column">
         <% @event_types.each do |event, count| %>
           <h2><%= event.titleize %> (<%= count %>)</h2>
           <%= events_chart_tag event %>

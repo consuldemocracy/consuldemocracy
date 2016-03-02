@@ -15,7 +15,7 @@
     <%= f.hidden_field :email %>
   <% end %>
 
-  <%= f.submit t("devise_views.users.registrations.new.submit"), class: 'button radius expand' %>
+  <%= f.submit t("devise_views.users.registrations.new.submit"), class: 'button expanded' %>
   <div class="text-center">
     <%= link_to t("devise_views.users.registrations.new.cancel"), destroy_user_session_path, class: 'delete', method: :delete %>
   </div>

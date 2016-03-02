@@ -1,15 +1,13 @@
-<ul class="right">
-  <% if current_user %>
-    <% if current_user.administrator? %>
-      <li>
-        <%= link_to t("layouts.header.administration"), admin_root_path %>
-      </li>
-    <% end %>
-
-    <% if current_user.moderator? || current_user.administrator? %>
-      <li>
-        <%= link_to t("layouts.header.moderation"), moderation_root_path %>
-      </li>
-    <% end %>
+<% if current_user %>
+  <% if current_user.administrator? %>
+    <li>
+      <%= link_to t("layouts.header.administration"), admin_root_path %>
+    </li>
   <% end %>
-</ul>
+
+  <% if current_user.moderator? || current_user.administrator? %>
+    <li>
+      <%= link_to t("layouts.header.moderation"), moderation_root_path %>
+    </li>
+  <% end %>
+<% end %>

@@ -12,15 +12,15 @@
         <span class="number">3</span> <%= t("verification.step_3") %>
       </div>
 
-      <div class="progress small-12 success radius">
+      <div class="progress small-12 success">
         <span class="meter" style="width: 100%"></span>
       </div>
     </div>
 
     <div class="small-12 medium-4 column">
 
-      <%= link_to account_path, class: "left back clear" do %>
-        <i class="icon-angle-left left"></i>
+      <%= link_to account_path, class: "back" do %>
+        <i class="icon-angle-left float-left"></i>
         <%= t("verification.back") %>
       <% end %>
 
@@ -59,7 +59,7 @@
         </li>
       </ul>
 
-      <p><%= link_to t("verification.letter.new.already_received"), verifica_path, class: "button radius success" %></p>
+      <p><%= link_to t("verification.letter.new.already_received"), verifica_path, class: "button success" %></p>
     </div>
   </div>
 </div>

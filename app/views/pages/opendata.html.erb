@@ -1,8 +1,16 @@
 <% provide :title do %><%= t('pages.titles.opendata') %><% end %>
-<div class="page row-full">
-  <div class="row">
-    <div class="small-12 column">
-      <p class="margin-top"><%= t('pages.while_unfinished_html') %></p>
+<div class="row expanded highlight no-margin-top">
+  <div class="row margin">
+    <div class="small-12 medium-8 column">
+      <h1><%= t("pages.opendata.title") %></h1>
+      <h2><strong><%= t("pages.opendata.slogan_html") %></strong></h2>
+      <%= link_to t("pages.opendata.go_old"), t("layouts.header.external_link_opendata_url"), target: "_blank", class: "button" %>
     </div>
+  </div>
+</div>
+
+<div class="row margin-top">
+  <div class=" small-12 column">
+    <p><%= t('pages.while_unfinished_html') %></p>
   </div>
 </div>

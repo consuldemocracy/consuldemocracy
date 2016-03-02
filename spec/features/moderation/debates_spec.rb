@@ -56,7 +56,7 @@ feature 'Moderate debates' do
         background do
           @debate = create(:debate)
           visit moderation_debates_path
-          within('.sub-nav') do
+          within('.menu.simple') do
             click_link "All"
           end
 
@@ -130,21 +130,21 @@ feature 'Moderate debates' do
       expect(page).to have_link('Marked as viewed')
 
       visit moderation_debates_path(filter: 'all')
-      within('.sub-nav') do
+      within('.menu.simple') do
         expect(page).to_not have_link('All')
         expect(page).to have_link('Pending')
         expect(page).to have_link('Marked as viewed')
       end
 
       visit moderation_debates_path(filter: 'pending_flag_review')
-      within('.sub-nav') do
+      within('.menu.simple') do
         expect(page).to have_link('All')
         expect(page).to_not have_link('Pending')
         expect(page).to have_link('Marked as viewed')
       end
 
       visit moderation_debates_path(filter: 'with_ignored_flag')
-      within('.sub-nav') do
+      within('.menu.simple') do
         expect(page).to have_link('All')
         expect(page).to have_link('Pending')
         expect(page).to_not have_link('Marked as viewed')

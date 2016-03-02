@@ -7,18 +7,18 @@
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
 @mixin back {
+  clear: both;
   color: $text-medium;
-  font-family: $font-sans;
-  font-size: $small-font-size;
+  float: left;
 }
 
 @mixin logo {
   color: white;
   font-family: $font-logo;
+  font-size: $h3-font-size;
   font-weight: lighter;
 
   @media (min-width: $small-breakpoint) {
-    font-size: $h3-font-size;
     line-height: $line-height*2;
     margin-top: 0;
   }
