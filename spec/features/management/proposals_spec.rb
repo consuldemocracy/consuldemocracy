@@ -56,6 +56,34 @@ feature 'Proposals' do
     end
   end
 
+  context "Show" do
+    scenario 'When path matches the friendly url' do
+      proposal = create(:proposal)
+
+      user = create(:user, :level_two)
+      login_managed_user(user)
+
+      right_path = management_proposal_path(proposal)
+      visit right_path
+
+      expect(current_path).to eq(right_path)
+    end
+
+    scenario 'When path does not match the friendly url' do
+      proposal = create(:proposal)
+
+      user = create(:user, :level_two)
+      login_managed_user(user)
+
+      right_path = management_proposal_path(proposal)
+      old_path = "#{management_proposals_path}/#{proposal.id}-something-else"
+      visit old_path
+
+      expect(current_path).to_not eq(old_path)
+      expect(current_path).to eq(right_path)
+    end
+  end
+
   scenario "Searching" do
     proposal1 = create(:proposal, title: "Show me what you got")
     proposal2 = create(:proposal, title: "Get Schwifty")

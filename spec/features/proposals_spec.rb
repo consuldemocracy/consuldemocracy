@@ -65,6 +65,28 @@ feature 'Proposals' do
     end
   end
 
+  context "Show" do
+    scenario 'When path matches the friendly url' do
+      proposal = create(:proposal)
+
+      right_path = proposal_path(proposal)
+      visit right_path
+
+      expect(current_path).to eq(right_path)
+    end
+
+    scenario 'When path does not match the friendly url' do
+      proposal = create(:proposal)
+
+      right_path = proposal_path(proposal)
+      old_path = "#{proposals_path}/#{proposal.id}-something-else"
+      visit old_path
+
+      expect(current_path).to_not eq(old_path)
+      expect(current_path).to eq(right_path)
+    end
+  end
+
   scenario 'Social Media Cards' do
     proposal = create(:proposal)
 
