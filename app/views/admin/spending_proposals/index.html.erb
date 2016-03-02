@@ -27,17 +27,19 @@
   <% @spending_proposals.each do |spending_proposal| %>
     <tr id="<%= dom_id(spending_proposal) %>">
       <td>
-        <strong><%= spending_proposal.id %> -
-                <%= link_to spending_proposal.title, admin_spending_proposal_path(spending_proposal) %></strong>
+        <strong><%= spending_proposal.id %></strong>
       </td>
       <td>
+        <%= link_to spending_proposal.title, admin_spending_proposal_path(spending_proposal) %>
+      </td>
+      <td class="small">
         <% if spending_proposal.administrator.present? %>
           <span title="<%= t('admin.spending_proposals.index.admin_assigned') %>"><%= spending_proposal.administrator.name %></span>
         <% else %>
           <%= t("admin.spending_proposals.index.no_admin_assigned") %>
         <% end %>
       </td>
-      <td>
+      <td class="small">
         <% case spending_proposal.valuators.size %>
         <% when 0 %>
           <%= t("admin.spending_proposals.index.no_valuators_assigned") %>
@@ -51,7 +53,7 @@
           </span>
         <% end %>
       </td>
-      <td>
+      <td class="small">
         <%= geozone_name(spending_proposal) %>
       </td>
     </tr>
