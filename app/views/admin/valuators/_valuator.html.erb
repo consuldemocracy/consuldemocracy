@@ -3,5 +3,5 @@
 <span><%= valuator.email %></span>
 <% unless valuator.persisted? %>
   <%= link_to t('admin.valuators.valuator.add'),{ controller: "admin/valuators", action: :create, user_id: valuator.user_id },
-    method: :post, class: "button tiny radius success right" %>
+    method: :post, class: "button small success float-right" %>
 <% end %>

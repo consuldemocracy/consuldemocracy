@@ -34,15 +34,11 @@ class SpendingProposal < ActiveRecord::Base
     results = results.by_geozone(params[:geozone_id])             if params[:geozone_id].present?
     results = results.by_administrator(params[:administrator_id]) if params[:administrator_id].present?
     results = results.send(current_filter)                        if current_filter.present?
-    results = results.for_render
-    results
+    results.for_render
   end
 
   def self.by_geozone(geozone)
-    case geozone
-    when nil
-      self
-    when 'all'
+    if geozone == 'all'
       where(geozone_id: nil)
     else
       where(geozone_id: geozone.presence)

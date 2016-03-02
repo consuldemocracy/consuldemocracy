@@ -73,10 +73,8 @@ es:
     valuators:
       index:
         title: Evaluadores
-      moderator:
+      valuator:
         add: Añadir
-        delete: Borrar
-        show: Mostrar
       search:
         email_placeholder: Buscar usuario por email
         search: Buscar

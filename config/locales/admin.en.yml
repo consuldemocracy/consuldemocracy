@@ -73,10 +73,8 @@ en:
     valuators:
       index:
         title: Valuators
-      moderator:
+      valuator:
         add: Add
-        delete: Delete
-        show: Show
       search:
         email_placeholder: Search user by email
         search: Search
