@@ -11,26 +11,6 @@ describe DebatesController do
     SimpleCaptcha.always_pass = @original_captcha_pass_value
   end
 
-  describe "GET show" do
-
-    let(:debate) { create :debate }
-
-    context "when path matches" do
-      it "should not redirect to real path" do
-        get :show, id: debate.id
-        expect(response).to_not redirect_to debates_path(debate)
-      end
-    end
-
-    context "when path does not match" do
-      it "should redirect to real path" do
-        expect(request).to receive(:path).exactly(3).times.and_return "/#{debate.id}-something-else"
-        get :show, id: debate.id
-        expect(response).to redirect_to debate_path(debate)
-      end
-    end
-  end
-
   describe 'POST create' do
     it 'should create an ahoy event' do
 
