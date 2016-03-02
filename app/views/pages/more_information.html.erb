@@ -1,7 +1,7 @@
 <% provide :title do %><%= t('pages.titles.more_information') %><% end %>
 <div class="page row-full">
   <div class="row">
-    <div class="more-information margin-top small-12 medium-7 column">
+    <div class="more-information small-12 medium-7 column">
       <h1><%= t('pages.titles.more_information') %></h1>
       <ul class="no-bullet">
         <li>
@@ -42,6 +42,7 @@
         <li>
         <%= link_to page_path('participatory_budget_meetings') do %>
             <%= t('pages.more_information.titles.meetings') %>
+            <br>
             <span><%= t('pages.more_information.description.meetings') %></span>
         <% end %>
         </li>
