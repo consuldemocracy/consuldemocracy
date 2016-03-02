@@ -54,6 +54,7 @@ es:
       hidden_users: Usuarios bloqueados
       incomplete_verifications: Verificaciones incompletas
       moderators: Moderadores
+      valuators: Evaluadores
       officials: Cargos públicos
       organizations: Organizaciones
       settings: Configuración global
@@ -65,6 +66,15 @@ es:
       moderator:
         add: Añadir
         delete: Borrar
+      search:
+        email_placeholder: Buscar usuario por email
+        search: Buscar
+        user_not_found: Usuario no encontrado
+    valuators:
+      index:
+        title: Evaluadores
+      valuator:
+        add: Añadir
       search:
         email_placeholder: Buscar usuario por email
         search: Buscar
@@ -139,6 +149,7 @@ es:
     spending_proposals:
       index:
         geozone_filter_all: Todos los ámbitos de actuación
+        administrator_filter_all: Todos los administradores
         filters:
           all: Todas
           without_admin: Sin administrador asignado
