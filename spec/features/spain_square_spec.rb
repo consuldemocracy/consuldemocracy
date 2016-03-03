@@ -23,6 +23,8 @@ feature 'Spain square' do
       click_button "Enviar respuesta"
 
       expect(page).to have_content "¡Gracias por completar las preguntas!"
+
+      verify_answers(SurveyAnswer.last.answers)
     end
 
     scenario "by a level 1 user", :js do
@@ -154,27 +156,51 @@ end
 
 def fill_in_survey
   choose('questions_1a_a')
-  first('#questions_1b').set(true)
-  first('#questions_2').set(true)
-  first('#questions_3').set(true)
-  first('#questions_4').set(true)
+  within("#q1b_container") do
+    check "a) Plaza de los Cubos"
+    check "c) Plaza de Emilio Jimenez Millás"
+  end
+  within("#q2_container") do
+    check "a) Plaza de Oriente"
+    check "b) Barrio de Conde Duque"
+  end
+  within("#q3_container") do
+    check "a) Comercial"
+    check "b) Hoteles"
+    check "d) Terrazas"
+    check "e) Mercadillos"
+  end
+  within("#q4_container") do
+    check "c) Aparcamientos"
+    check "d) Comercial"
+  end
   choose('questions_5a_1')
   choose('questions_5b_1')
   choose('questions_5c_1')
   choose('questions_5d_1')
   choose('questions_5e_1')
   choose('questions_6_a')
-  first('#questions_7').set(true)
+  within("#q7_container") do
+    check "b) Usos recreativos"
+    check "e) No sabe"
+  end
   choose('questions_8a_a')
   choose('questions_8b_a')
   choose('questions_9_a')
-  first('#questions_10').set(true)
+  within("#q10_container") do
+    check "e) Crear un carril bici"
+    check "g) Ninguna actuación respecto al tráfico"
+  end
   choose('questions_11_a')
   choose('questions_12a_a')
   choose('questions_12b_a')
   choose('questions_12c_a')
   choose('questions_13_a')
-  first('#questions_14').set(true)
+  within("#q14_container") do
+    check "d) Empleo de materiales reciclados"
+    check "i) Todas las posibles"
+  end
+  fill_in("questions_14j", with: "Solar power")
   choose('questions_15a_a')
   choose('questions_15bCaminando_1')
   choose('questions_15bEnBicicleta_2')
@@ -184,3 +210,46 @@ def fill_in_survey
   fill_in("questions_17", with: "In my opinion...")
   choose('questions_18_a')
 end
+
+def verify_answers(answers)
+  expect(answers["1a"]).to eq("a")
+  expect(answers["1b"]).to eq(["a", "c"])
+  expect(answers["2"]).to eq(["a", "b"])
+  expect(answers["3"]).to eq(["a", "b", "d", "e"])
+  expect(answers["3g"]).to eq("")
+  expect(answers["4"]).to eq(["c", "d"])
+  expect(answers["4l"]).to eq("")
+  expect(answers["5a"]).to eq("1")
+  expect(answers["5b"]).to eq("1")
+  expect(answers["5c"]).to eq("1")
+  expect(answers["5d"]).to eq("1")
+  expect(answers["5e"]).to eq("1")
+  expect(answers["6"]).to eq("a")
+  expect(answers["7"]).to eq(["b", "e"])
+  expect(answers["7d"]).to eq("")
+  expect(answers["8a"]).to eq("a")
+  expect(answers["8b"]).to eq("a")
+  expect(answers["9"]).to eq("a")
+  expect(answers["9e"]).to eq("")
+  expect(answers["10"]).to eq(["e", "g"])
+  expect(answers["10h"]).to eq("")
+  expect(answers["11"]).to eq("a")
+  expect(answers["11e"]).to eq("")
+  expect(answers["12a"]).to eq("a")
+  expect(answers["12b"]).to eq("a")
+  expect(answers["12c"]).to eq("a")
+  expect(answers["13"]).to eq("a")
+  expect(answers["14"]).to eq(["d", "i"])
+  expect(answers["14j"]).to eq("Solar power")
+  expect(answers["15a"]).to eq("a")
+  expect(answers["15bCaminando"]).to eq("1")
+  expect(answers["15bEnBicicleta"]).to eq("2")
+  expect(answers["15bEnCoche"]).to eq("3")
+  expect(answers["15bEnTransportePublico"]).to eq("1")
+  expect(answers["15bOtrosEspecificar"]).to eq("")
+  expect(answers["16"]).to eq("I believe...")
+  expect(answers["17"]).to eq("In my opinion...")
+  expect(answers["18"]).to eq("a")
+end
+
+
