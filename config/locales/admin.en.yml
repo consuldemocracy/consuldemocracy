@@ -151,9 +151,9 @@ en:
         geozone_filter_all: All zones
         administrator_filter_all: All administrators
         filters:
-          all: All
+          valuation_open: Open
           without_admin: Without assigned admin
-          without_valuators: Without valuator
+          managed: Managed
           valuating: Under valuation
           valuation_finished: Valuation finished
         title: Investment projects for participatory budgeting
