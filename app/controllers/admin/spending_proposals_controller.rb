@@ -4,10 +4,20 @@ class Admin::SpendingProposalsController < Admin::BaseController
 
   has_filters %w{all without_admin without_valuators valuating valuation_finished}, only: :index
 
+  before_action :parse_search_terms, only: [:index]
+  
   load_and_authorize_resource
 
   def index
-    @spending_proposals = geozone_filter(params[:geozone_id].presence).includes(:geozone, administrator: :user, valuators: :user).send(@current_filter).order(created_at: :desc).page(params[:page])
+    @spending_proposals = geozone_filter(params[:geozone_id].presence)
+                                                            .includes(:geozone, 
+                                                                       administrator: :user, 
+                                                                       valuators: :user)
+                                                            .send(@current_filter)
+                                                            .order(created_at: :desc)
+                                                            .page(params[:page])
+    @spending_proposals = @search_terms.present? ? @spending_proposals.search(@search_terms) : @spending_proposals.all
+
   end
 
   def show
@@ -25,6 +35,10 @@ class Admin::SpendingProposalsController < Admin::BaseController
     params[:spending_proposal][:valuator_ids] ||= []
     @spending_proposal.update(params.require(:spending_proposal).permit(valuator_ids: []))
   end
+
+  def parse_search_terms 
+    @search_terms = params[:search] if params[:search].present? 
+  end 
 
   private
 

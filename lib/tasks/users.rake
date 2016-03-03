@@ -40,5 +40,11 @@ namespace :users do
     end
   end
 
+  desc "Updates all users"
+  task touch: :environment do
+    User.find_in_batches do |user|
+      user.each(&:save)
+    end
+  end
 
 end

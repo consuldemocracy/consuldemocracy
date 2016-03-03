@@ -1,5 +1,19 @@
 <h2><%= t("admin.debates.index.title") %></h2>
 
+<!-- Search debate --> 
+  <%= form_tag admin_debates_path, method: :get do %> 
+      <div class="row"> 
+        <div class="small-12 medium-6 column">  
+          <%= text_field_tag "search", params[:search], 
+                           placeholder: t("admin.debates.index.search_placeholder") %> 
+        </div> 
+        <div class="form-inline small-12 medium-6 column"> 
+          <%= submit_tag t("admin.debates.index.search"), class: 'button radius success' %> 
+        </div> 
+      </div> 
+  <% end %> 
+<!-- /. Search debate -->
+
 <%= render 'shared/filter_subnav', i18n_namespace: "admin.debates.index" %>
 
 <h3><%= page_entries_info @debates %></h3>

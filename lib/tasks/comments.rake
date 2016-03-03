@@ -1,5 +1,12 @@
 namespace :comments do
 
+  desc "Updates all comments"
+  task touch: :environment do
+    Comment.find_in_batches do |comment|
+      comment.each(&:save)
+    end
+  end
+
   desc "Recalculates all the comment counters for debates and proposals"
   task count: :environment do
     Debate.all.pluck(:id).each{ |id| Debate.reset_counters(id, :comments) }
@@ -12,5 +19,4 @@ namespace :comments do
       comments.each(&:save)
     end
   end
-
 end

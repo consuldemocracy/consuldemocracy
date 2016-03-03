@@ -6,8 +6,10 @@ module SearchCache
   end
 
   def calculate_tsvector
-    ActiveRecord::Base.connection.execute("
-      UPDATE #{self.class.table_name} SET tsv = (#{searchable_values_sql}) WHERE id = #{self.id}")
+    if searchable_values_sql.present?
+      ActiveRecord::Base.connection.execute("
+        UPDATE #{self.class.table_name} SET tsv = (#{searchable_values_sql}) WHERE id = #{self.id}")
+    end
   end
 
   private

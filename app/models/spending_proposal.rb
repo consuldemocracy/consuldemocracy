@@ -1,6 +1,7 @@
 class SpendingProposal < ActiveRecord::Base
   include Measurable
   include Sanitizable
+  include Searchable
 
   apply_simple_captcha
 
@@ -22,6 +23,17 @@ class SpendingProposal < ActiveRecord::Base
   scope :without_valuators, -> { where(valuation_assignments_count: 0) }
   scope :valuating, -> { where("valuation_assignments_count > 0 AND valuation_finished = ?", false) }
   scope :valuation_finished, -> { where(valuation_finished: true) }
+
+  def searchable_values
+    { title             => 'A',
+      description       => 'B',
+      author.username   => 'D'
+    }
+  end
+
+  def self.search(terms)
+    self.pg_search(terms)
+  end
 
   def description
     super.try :html_safe

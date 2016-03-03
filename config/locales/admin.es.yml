@@ -34,6 +34,8 @@ es:
         hidden_debate: Debate oculto
         hidden_proposal: Propuesta oculta
         title: Comentarios ocultos
+        search: Buscar
+        search_placeholder: Buscar Comentarios
     dashboard:
       index:
         title: Administración
@@ -45,6 +47,8 @@ es:
           with_confirmed_hide: Confirmados
           without_confirmed_hide: Pendientes
         title: Debates ocultos
+        search: Buscar
+        search_placeholder: Buscar debates
     menu:
       activity: Actividad de moderadores
       debate_topics: Temas de debate
@@ -116,7 +120,9 @@ es:
           all: Todas
           with_confirmed_hide: Confirmadas
           without_confirmed_hide: Pendientes
-        title: Propuestas ocultos
+        title: Propuestas ocultas
+        search: Buscar
+        search_placeholder: Buscar propuestas
     settings:
       flash:
         updated: Valor actualizado
@@ -139,6 +145,7 @@ es:
     spending_proposals:
       index:
         geozone_filter_all: Todos los ámbitos de actuación
+        geozone_label: Ámbitos de actuación
         filters:
           all: Todas
           without_admin: Sin administrador asignado
@@ -152,6 +159,8 @@ es:
           one: Evaluador asignado
           other: "%{count} evaluadores asignados"
         no_valuators_assigned: Sin evaluador
+        search: Buscar
+        search_placeholder: Buscar propuestas de inversión
       show:
         heading: Propuesta de inversión
         info: Datos de envío
@@ -210,6 +219,8 @@ es:
           with_confirmed_hide: Confirmados
           without_confirmed_hide: Pendientes
         title: Usuarios bloqueados
+        search: Buscar
+        search_placeholder: Buscar Usuarios
       show:
         back: Volver
         email: 'Email:'

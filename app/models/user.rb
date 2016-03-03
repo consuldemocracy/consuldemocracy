@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
-
   include Verification
+  include Searchable
 
   apply_simple_captcha
   devise :database_authenticatable, :registerable, :confirmable,
@@ -66,6 +66,17 @@ class User < ActiveRecord::Base
       terms_of_service: '1',
       confirmed_at: oauth_email_confirmed ? DateTime.now : nil
     )
+  end
+
+  def searchable_values
+    { username          => 'A',
+      email             => 'B',
+      document_number   => 'C'
+    }
+  end
+
+  def self.search(terms)
+    self.pg_search(terms)
   end
 
   def name
@@ -144,7 +155,8 @@ class User < ActiveRecord::Base
       encrypted_password: "",
       confirmation_token: nil,
       reset_password_token: nil,
-      email_verification_token: nil
+      email_verification_token: nil,
+      tsv: nil
     )
   end
 

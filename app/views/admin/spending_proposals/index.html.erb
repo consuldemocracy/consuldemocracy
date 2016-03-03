@@ -1,13 +1,26 @@
 <h2><%= t("admin.spending_proposals.index.title") %></h2>
 
-<div class="small-12 medium-4 column right">
+
   <%= form_tag admin_spending_proposals_path, method: :get, enforce_utf8: false do %>
-    <%= select_tag :geozone_id, options_for_select(geozone_select_options.unshift([t("geozones.none"), "all"]), params[:geozone_id]),
+    <div class="row"> 
+      <div class="small-12 medium-6 column">  
+        <%= label_tag :name, t("admin.spending_proposals.index.geozone_label") %>
+        <%= select_tag :geozone_id, options_for_select(geozone_select_options.unshift([t("geozones.none"), "all"]), params[:geozone_id]),
                   { prompt: t("admin.spending_proposals.index.geozone_filter_all"),
                     label: false,
                     class: "js-submit-on-change"} %>
+      </div>
+    </div>  
+    <div class="row"> 
+      <div class="small-12 medium-6 column">  
+        <%= text_field_tag "search", params[:search], 
+                         placeholder: t("admin.spending_proposals.index.search_placeholder") %> 
+      </div> 
+      <div class="form-inline small-12 medium-6 column"> 
+        <%= submit_tag t("admin.spending_proposals.index.search"), class: 'button radius success' %> 
+      </div>
+    </div>
   <% end %>
-</div>
 
 <%= render 'shared/filter_subnav', i18n_namespace: "admin.spending_proposals.index" %>
 

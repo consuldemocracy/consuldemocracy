@@ -34,6 +34,8 @@ en:
         hidden_debate: Hidden debate
         hidden_proposal: Hidden proposal
         title: Hidden comments
+        search: Search
+        search_placeholder: Search comments
     dashboard:
       index:
         title: Administration
@@ -45,6 +47,8 @@ en:
           with_confirmed_hide: Confirmed
           without_confirmed_hide: Pending
         title: Hidden debates
+        search: Search
+        search_placeholder: Search debates
     menu:
       activity: Moderator activity
       debate_topics: Debate topics
@@ -117,6 +121,8 @@ en:
           with_confirmed_hide: Confirmed
           without_confirmed_hide: Pending
         title: Hidden proposals
+        search: Search
+        search_placeholder: Search proposals
     settings:
       flash:
         updated: Value updated
@@ -139,6 +145,7 @@ en:
     spending_proposals:
       index:
         geozone_filter_all: All zones
+        geozone_label: Zone
         filters:
           all: All
           without_admin: Without assigned admin
@@ -152,6 +159,8 @@ en:
           one: Assigned valuator
           other: "%{count} valuators assigned"
         no_valuators_assigned: No valuators assigned
+        search: Search
+        search_placeholder: Search Spending proposals
       show:
         heading: Investment project
         info: Author info
@@ -210,6 +219,8 @@ en:
           with_confirmed_hide: Confirmed
           without_confirmed_hide: Pending
         title: Hidden users
+        search: Search
+        search_placeholder: Search users
       show:
         back: Back
         email: 'Email:'

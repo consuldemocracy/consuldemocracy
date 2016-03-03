@@ -228,5 +228,50 @@ feature 'Admin spending proposals' do
       expect(page).to_not have_content('Valerian (v2@valuators.org)')
     end
   end
+  
+  context "Search" do
+
+    background do
+       spending_proposal = create(:spending_proposal, geozone: create(:geozone))
+       spending_proposal = create(:spending_proposal, 
+                 title: 'Testing spending proposal', 
+                 description: 'Testing spending proposal', 
+                 geozone: create(:geozone) ,              
+                 external_url: 'http://http://skyscraperpage.com/')
+    end
+
+   scenario "The search is not running if search is empty" do
+     visit admin_spending_proposals_path
+     fill_in "search", with: "      "
+     click_button "Search"
+     expect(current_path).to eq(admin_spending_proposals_path)
+     expect(page).to have_content("Testing spending proposal")
+   end
+
+   scenario "returns no results if search does not exist" do
+     visit admin_spending_proposals_path
+
+     fill_in "search", with: "Prueba"
+     click_button "Search"
+     expect(current_path).to eq(admin_spending_proposals_path)
+     expect(page).to_not have_content("Prueba")
+     expect(page).to have_content("spending proposals cannot be found")
+    end
+  
+    scenario "finds by title" do
+     visit admin_spending_proposals_path
+
+     fill_in "search", with: "Testing"
+     click_button "Search"
+
+     expect(current_path).to eq(admin_spending_proposals_path)
+     expect(page).to have_content("Testing spending proposal")
+    end
+  end
+
+
+
+
+
 
 end

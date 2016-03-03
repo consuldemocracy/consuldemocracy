@@ -2,9 +2,11 @@ class Admin::UsersController < Admin::BaseController
   has_filters %w{without_confirmed_hide all with_confirmed_hide}, only: :index
 
   before_action :load_user, only: [:confirm_hide, :restore]
+  before_action :parse_search_terms, only: [:index]
 
   def index
     @users = User.only_hidden.send(@current_filter).page(params[:page])
+    @users = @search_terms.present? ? @users.search(@search_terms) : @users.all
   end
 
   def show
@@ -23,7 +25,11 @@ class Admin::UsersController < Admin::BaseController
     Activity.log(current_user, :restore, @user)
     redirect_to request.query_parameters.merge(action: :index)
   end
-
+  
+  def parse_search_terms 
+    @search_terms = params[:search] if params[:search].present? 
+  end 
+  
   private
 
     def load_user
