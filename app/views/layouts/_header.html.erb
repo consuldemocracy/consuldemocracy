@@ -34,6 +34,9 @@
           <div class="show-for-small-only">
             <div class="subnavigation row">
               <%= render "shared/subnavigation" %>
+              <div class="small-12 medium-3 column">
+                <%= yield :header_addon %>
+              </div>
             </div>
           </div>
         </div>
@@ -45,9 +48,9 @@
     <div class="row">
       <div class="hide-for-small-only">
         <%= render "shared/subnavigation" %>
-      </div>
-      <div class="small-12 medium-3 column">
-        <%= yield :header_addon %>
+        <div class="small-12 medium-3 column">
+          <%= yield :header_addon %>
+        </div>
       </div>
     </div>
   </div>

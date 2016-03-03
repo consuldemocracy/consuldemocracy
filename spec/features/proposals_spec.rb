@@ -561,7 +561,7 @@ feature 'Proposals' do
 
         visit proposals_path
 
-        within "#search_form" do
+        within(".expanded #search_form") do
           fill_in "search", with: "Schwifty"
           click_button "Search"
         end
@@ -581,7 +581,7 @@ feature 'Proposals' do
 
         visit proposals_path
 
-        within "#search_form" do
+        within(".expanded #search_form") do
           fill_in "search", with: proposal1.code
           click_button "Search"
         end
@@ -597,7 +597,8 @@ feature 'Proposals' do
       scenario "Maintain search criteria" do
         visit proposals_path
 
-        within "#search_form" do
+
+        within(".expanded #search_form") do
           fill_in "search", with: "Schwifty"
           click_button "Search"
         end
@@ -964,7 +965,7 @@ feature 'Proposals' do
       proposal = create(:proposal, title: "Abcdefghi")
 
       visit proposals_path
-      within "#search_form" do
+      within(".expanded #search_form") do
         fill_in "search", with: proposal.title
         click_button "Search"
       end

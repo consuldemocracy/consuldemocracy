@@ -409,8 +409,11 @@ header {
   }
 
   .input-group {
-    margin-bottom: 0;
     padding-top: $line-height/4;
+
+    @media (min-width: $small-breakpoint) {
+      margin-bottom: 0;
+    }
   }
 
   .input-group-field {
