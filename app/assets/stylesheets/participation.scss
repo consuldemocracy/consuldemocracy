@@ -867,6 +867,8 @@
 
     .anonymous-votes {
       background: $featured;
+      height: $line-height*4;
+      top: -30px;
 
       p {
         color: $text;
