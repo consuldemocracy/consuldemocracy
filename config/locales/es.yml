@@ -434,7 +434,7 @@ es:
       verify_account: verifica tu cuenta
     new:
       back_link: Volver
-      more_info: "¿Qué puedo proponer?"
+      more_info: "Importante, para no ser descartada tu propuesta debe cumplir:"
       recommendation_one: Consulta los %{requirements}.
       recommendation_one_link: requisitos que debe cumplir una propuesta
       recommendation_three: Intenta detallar lo máximo posible la propuesta para que el equipo de gobierno encargado de estudiarla tenga las menores dudas posibles.
