@@ -49,7 +49,7 @@
         <%= check_box_tag "valuator_ids_#{valuator.id}", valuator.id, @spending_proposal.valuators.include?(valuator),
                           name: 'spending_proposal[valuator_ids][]',
                           class: "js-submit-on-change" %>
-        <%= label_tag "valuator_ids_#{valuator.id}", truncate(valuator.name), class: "inline" %>
+        <%= label_tag "valuator_ids_#{valuator.id}", truncate(valuator.email), class: "inline" %>
       </div>
     <% end -%>
   <% end -%>

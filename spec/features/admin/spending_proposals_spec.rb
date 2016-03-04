@@ -209,7 +209,7 @@ feature 'Admin spending proposals' do
     expect(page).to have_select('spending_proposal[administrator_id]', selected: 'Ana (ana@admins.org)')
   end
 
-  scenario 'Valuators assigments', :js do
+  scenario 'Valuators assignments', :js do
     spending_proposal = create(:spending_proposal)
 
     valuator1 = create(:valuator, user: create(:user, username: 'Valentina', email: 'v1@valuators.org'))
