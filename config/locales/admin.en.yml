@@ -164,6 +164,7 @@ en:
           other: "%{count} valuators assigned"
         no_valuators_assigned: No valuators assigned
       show:
+        back: Back
         heading: Investment project
         info: Author info
         association_name: Asociación

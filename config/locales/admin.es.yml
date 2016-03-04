@@ -164,6 +164,7 @@ es:
           other: "%{count} evaluadores asignados"
         no_valuators_assigned: Sin evaluador
       show:
+        back: Volver
         heading: Propuesta de inversión
         info: Datos de envío
         association_name: Asociación
