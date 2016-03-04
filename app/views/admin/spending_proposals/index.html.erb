@@ -1,21 +1,23 @@
 <h2><%= t("admin.spending_proposals.index.title") %></h2>
 
-<%= form_tag admin_spending_proposals_path, method: :get, enforce_utf8: false do %>
-  <div class="small-12 medium-4 column float-right">
-    <%= select_tag :geozone_id,
-                   options_for_select(geozone_select_options.unshift([t("geozones.none"), "all"]), params[:geozone_id]),
-                   { prompt: t("admin.spending_proposals.index.geozone_filter_all"),
-                     label: false,
-                     class: "js-submit-on-change" } %>
-  </div>
-  <div class="small-12 medium-4 column float-right">
-    <%= select_tag :administrator_id,
-                    options_for_select(admin_select_options, params[:administrator_id]),
-                    { prompt: t("admin.spending_proposals.index.administrator_filter_all"),
-                      label: false,
-                      class: "js-submit-on-change" } %>
-  </div>
-<% end %>
+<div class="row margin-top">
+  <%= form_tag admin_spending_proposals_path, method: :get, enforce_utf8: false do %>
+    <div class="small-12 medium-4 column float-right">
+      <%= select_tag :geozone_id,
+                     options_for_select(geozone_select_options.unshift([t("geozones.none"), "all"]), params[:geozone_id]),
+                     { prompt: t("admin.spending_proposals.index.geozone_filter_all"),
+                       label: false,
+                       class: "js-submit-on-change" } %>
+    </div>
+    <div class="small-12 medium-4 column float-right">
+      <%= select_tag :administrator_id,
+                      options_for_select(admin_select_options, params[:administrator_id]),
+                      { prompt: t("admin.spending_proposals.index.administrator_filter_all"),
+                        label: false,
+                        class: "js-submit-on-change" } %>
+    </div>
+  <% end %>
+</div>
 
 <%= render 'shared/filter_subnav', i18n_namespace: "admin.spending_proposals.index" %>
 
