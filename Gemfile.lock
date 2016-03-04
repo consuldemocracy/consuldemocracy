@@ -443,7 +443,7 @@ DEPENDENCIES
   dalli
   database_cleaner
   delayed_job_active_record (~> 4.1.0)
-  devise
+  devise (~> 3.5.6)
   devise-async
   email_spec
   factory_girl_rails
