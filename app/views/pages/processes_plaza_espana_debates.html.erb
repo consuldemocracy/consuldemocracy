@@ -17,14 +17,14 @@
     </div>
     <div class="small-12 medium-6 column">
       <%
-        up_time = Time.strptime('25-FEB-16 18.20.00', '%d-%b-%y %H.%M.%S')
+        up_time = Time.strptime('04-MAR-16 18.20.00', '%d-%b-%y %H.%M.%S')
         if (up_time..(up_time + 4.hours)).cover? Time.now.in_time_zone
        %>
          <div class="text-right">
            <span class="label round alert">EN DIRECTO</span>
          </div>
          <div class="flex-video">
-           <iframe width="560" height="315" src="https://www.youtube.com/embed/z2HP9cm-Jvg?rel=0" frameborder="0" allowfullscreen></iframe>
+           <iframe frameborder="0" width="760" height="428" src="//www.dailymotion.com/embed/video/x2pejmf" allowfullscreen=""></iframe>
          </div>
       <% else %>
         <%= image_tag "processes_plaza_espana_debates.png", size: "580x270", alt: "#decideplazaespaña"%>
