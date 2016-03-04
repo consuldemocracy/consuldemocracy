@@ -151,9 +151,9 @@ es:
         geozone_filter_all: Todos los ámbitos de actuación
         administrator_filter_all: Todos los administradores
         filters:
-          all: Todas
+          valuation_open: Abiertas
           without_admin: Sin administrador asignado
-          without_valuators: Sin evaluador
+          managed: Gestionando
           valuating: En evaluación
           valuation_finished: Evaluación finalizada
         title: Propuestas de inversión para presupuestos participativos

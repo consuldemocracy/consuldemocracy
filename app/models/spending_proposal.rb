@@ -18,9 +18,10 @@ class SpendingProposal < ActiveRecord::Base
   validates :description, length: { maximum: SpendingProposal.description_max_length }
   validates :terms_of_service, acceptance: { allow_nil: false }, on: :create
 
-  scope :without_admin, -> { where(administrator_id: nil) }
-  scope :without_valuators, -> { where(valuation_assignments_count: 0) }
-  scope :valuating, -> { where("valuation_assignments_count > 0 AND valuation_finished = ?", false) }
+  scope :valuation_open, -> { where(valuation_finished: false) }
+  scope :without_admin, -> { valuation_open.where(administrator_id: nil) }
+  scope :managed, -> { valuation_open.where(valuation_assignments_count: 0).where("administrator_id IS NOT ?", nil) }
+  scope :valuating, -> { valuation_open.where("valuation_assignments_count > 0 AND valuation_finished = ?", false) }
   scope :valuation_finished, -> { where(valuation_finished: true) }
 
   scope :for_render, -> { includes(:geozone, administrator: :user, valuators: :user) }

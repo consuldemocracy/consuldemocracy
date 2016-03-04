@@ -97,9 +97,9 @@ feature 'Admin spending proposals' do
   end
 
   scenario "Current filter is properly highlighted" do
-    filters_links = {'all' => 'All',
+    filters_links = {'valuation_open' => 'Open',
                      'without_admin' => 'Without assigned admin',
-                     'without_valuators' => 'Without valuator',
+                     'managed' => 'Managed',
                      'valuating' => 'Under valuation',
                      'valuation_finished' => 'Valuation finished'}
 
@@ -124,7 +124,7 @@ feature 'Admin spending proposals' do
     valuating = create(:spending_proposal, title: "Evaluating...")
     valuating.valuators << create(:valuator)
 
-    visit admin_spending_proposals_path(filter: 'all')
+    visit admin_spending_proposals_path(filter: 'valuation_open')
 
     expect(page).to have_content("Assigned idea")
     expect(page).to have_content("Evaluating...")
@@ -134,7 +134,7 @@ feature 'Admin spending proposals' do
     expect(page).to have_content("Evaluating...")
     expect(page).to_not have_content("Assigned idea")
 
-    visit admin_spending_proposals_path(filter: 'without_valuators')
+    visit admin_spending_proposals_path(filter: 'managed')
 
     expect(page).to have_content("Assigned idea")
     expect(page).to_not have_content("Evaluating...")
@@ -146,10 +146,10 @@ feature 'Admin spending proposals' do
     valuating.valuators << create(:valuator)
     valuated.valuators << create(:valuator)
 
-    visit admin_spending_proposals_path(filter: 'all')
+    visit admin_spending_proposals_path(filter: 'valuation_open')
 
     expect(page).to have_content("Ongoing valuation")
-    expect(page).to have_content("Old idea")
+    expect(page).to_not have_content("Old idea")
 
     visit admin_spending_proposals_path(filter: 'valuating')
 
