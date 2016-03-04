@@ -61,6 +61,38 @@ describe SpendingProposal do
     end
   end
 
+  describe "by_administrator" do
+    it "should return spending proposals assigned to specific administrator" do
+      spending_proposal1 = create(:spending_proposal, administrator_id: 33)
+      spending_proposal2 = create(:spending_proposal)
+
+      by_administrator = SpendingProposal.by_administrator(33)
+
+      expect(by_administrator.size).to eq(1)
+      expect(by_administrator.first).to eq(spending_proposal1)
+    end
+  end
+
+  describe "by_valuator" do
+    it "should return spending proposals assigned to specific valuator" do
+      spending_proposal1 = create(:spending_proposal)
+      spending_proposal2 = create(:spending_proposal)
+      spending_proposal3 = create(:spending_proposal)
+
+      valuator1 = create(:valuator)
+      valuator2 = create(:valuator)
+
+      spending_proposal1.valuators << valuator1
+      spending_proposal2.valuators << valuator2
+      spending_proposal3.valuators << [valuator1, valuator2]
+
+      by_valuator = SpendingProposal.by_valuator(valuator1.id)
+
+      expect(by_valuator.size).to eq(2)
+      expect(by_valuator.sort).to eq([spending_proposal1,spending_proposal3].sort)
+    end
+  end
+
   describe "scopes" do
     describe "valuation_open" do
       it "should return all spending proposals with false valuation_finished" do
