@@ -144,7 +144,9 @@ class User < ActiveRecord::Base
       encrypted_password: "",
       confirmation_token: nil,
       reset_password_token: nil,
-      email_verification_token: nil
+      email_verification_token: nil,
+      confirmed_phone: nil,
+      unconfirmed_phone: nil
     )
   end
 

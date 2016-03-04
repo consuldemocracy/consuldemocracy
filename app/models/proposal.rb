@@ -43,6 +43,10 @@ class Proposal < ActiveRecord::Base
   scope :sort_by_flags,            -> { order(flags_count: :desc, updated_at: :desc) }
   scope :last_week,                -> { where("proposals.created_at >= ?", 7.days.ago)}
 
+  def to_param
+    "#{id}-#{title}".parameterize
+  end
+
   def searchable_values
     { title              => 'A',
       question           => 'B',

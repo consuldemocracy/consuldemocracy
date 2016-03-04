@@ -12,6 +12,10 @@ module AdminHelper
     options
   end
 
+  def admin_select_options
+    Administrator.all.order('users.username asc').includes(:user).collect { |v| [ v.name, v.id ] }
+  end
+
   private
 
     def namespace

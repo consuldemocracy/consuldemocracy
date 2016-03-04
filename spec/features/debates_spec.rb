@@ -67,6 +67,28 @@ feature 'Debates' do
     expect(link_text).to include(debates_path order: :hot_score, page: 1)
   end
 
+  context "Show" do
+    scenario 'When path matches the friendly url' do
+      debate = create(:debate)
+
+      right_path = debate_path(debate)
+      visit right_path
+
+      expect(current_path).to eq(right_path)
+    end
+
+    scenario 'When path does not match the friendly url' do
+      debate = create(:debate)
+
+      right_path = debate_path(debate)
+      old_path = "#{debates_path}/#{debate.id}-something-else"
+      visit old_path
+
+      expect(current_path).to_not eq(old_path)
+      expect(current_path).to eq(right_path)
+    end
+  end
+
   scenario 'Create' do
     author = create(:user)
     login_as(author)
