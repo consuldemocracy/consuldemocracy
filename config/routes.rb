@@ -29,7 +29,6 @@ Rails.application.routes.draw do
 
   root 'welcome#index'
   get '/welcome', to: 'welcome#welcome'
-  get '/highlights', to: 'welcome#highlights', as: :highlights
   get '/cuentasegura', to: 'welcome#verification', as: :cuentasegura
 
   resources :debates do
