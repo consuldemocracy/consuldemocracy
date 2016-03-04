@@ -16,11 +16,6 @@
     <%= content_for :social_media_meta_tags %>
 
     <%= setting['per_page_code'].try(:html_safe) %>
-
-    <% if Rails.env.test? %>
-      <%= javascript_tag "$.fx.off = true;" %>
-    <% end %>
-
   </head>
   <body>
     <div class="wrapper">
