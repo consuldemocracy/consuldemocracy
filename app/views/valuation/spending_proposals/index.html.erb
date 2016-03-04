@@ -30,7 +30,7 @@
         <strong><%= spending_proposal.id %></strong>
       </td>
       <td>
-        <%= link_to spending_proposal.title, spending_proposal_path(spending_proposal) %>
+        <%= link_to spending_proposal.title, valuation_spending_proposal_path(spending_proposal) %>
       </td>
       <td class="small">
         <% if spending_proposal.administrator.present? %>

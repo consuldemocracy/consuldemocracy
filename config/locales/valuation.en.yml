@@ -19,3 +19,23 @@ en:
           one: Assigned valuator
           other: "%{count} valuators assigned"
         no_valuators_assigned: No valuators assigned
+      show:
+        back: Back
+        heading: Investment project
+        info: Author info
+        association_name: Asociación
+        by: Sent by
+        sent: Sent at
+        geozone: Scope
+        dossier: Dossier
+        price: Price
+        currency: "€"
+        feasibility: Feasibility
+        feasible: Feasible
+        not_feasible: Not feasible
+        undefined: Undefined
+        valuation_finished: Valuation finished
+        internal_comments: Internal comments
+        responsibles: Responsibles
+        assigned_admin: Assigned admin
+        assigned_valuators: Assigned valuators

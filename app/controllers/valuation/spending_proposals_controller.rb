@@ -4,7 +4,7 @@ class Valuation::SpendingProposalsController < Valuation::BaseController
 
   has_filters %w{valuation_open valuating valuation_finished}, only: :index
 
-  load_resource
+  load_and_authorize_resource
 
   def index
     @spending_proposals = SpendingProposal.search(params, @current_filter).order(created_at: :desc).page(params[:page])

@@ -140,4 +140,35 @@ feature 'Valuation spending proposals' do
     expect(page).to have_content("Old idea")
   end
 
+  scenario 'Show' do
+    administrator = create(:administrator, user: create(:user, username: 'Ana', email: 'ana@admins.org'))
+    valuator = create(:valuator, user: create(:user, username: 'Rachel', email: 'rachel@valuators.org'))
+    spending_proposal = create(:spending_proposal,
+                                geozone: create(:geozone),
+                                association_name: 'People of the neighbourhood',
+                                price: 1234.56,
+                                feasible: false,
+                                feasible_explanation: 'It is impossible',
+                                administrator: administrator)
+    spending_proposal.valuators << valuator
+
+    visit valuation_spending_proposals_path
+
+    click_link spending_proposal.title
+
+    expect(page).to have_content(spending_proposal.title)
+    expect(page).to have_content(spending_proposal.description)
+    expect(page).to have_content(spending_proposal.author.name)
+    expect(page).to have_content(spending_proposal.association_name)
+    expect(page).to have_content(spending_proposal.geozone.name)
+    expect(page).to have_content('1234.56')
+    expect(page).to have_content('Not feasible')
+    expect(page).to have_content('It is impossible')
+    expect(page).to have_content('Ana (ana@admins.org)')
+
+    within('#assigned_valuators') do
+      expect(page).to have_content('Rachel (rachel@valuators.org)')
+    end
+  end
+
 end
