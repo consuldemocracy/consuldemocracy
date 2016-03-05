@@ -173,6 +173,7 @@ es:
         geozone: Ámbito
         dossier: Informe
         price: Coste
+        price_first_year: Coste en el primer año
         currency: "€"
         feasibility: Viabilidad
         feasible: Viable

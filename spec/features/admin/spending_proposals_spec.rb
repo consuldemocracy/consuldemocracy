@@ -169,6 +169,7 @@ feature 'Admin spending proposals' do
                                 geozone: create(:geozone),
                                 association_name: 'People of the neighbourhood',
                                 price: 1234.56,
+                                price_first_year: 1000,
                                 feasible: false,
                                 feasible_explanation: 'It is impossible',
                                 administrator: administrator)
@@ -184,6 +185,7 @@ feature 'Admin spending proposals' do
     expect(page).to have_content(spending_proposal.association_name)
     expect(page).to have_content(spending_proposal.geozone.name)
     expect(page).to have_content('1234.56')
+    expect(page).to have_content('1000')
     expect(page).to have_content('Not feasible')
     expect(page).to have_content('It is impossible')
     expect(page).to have_select('spending_proposal[administrator_id]', selected: 'Ana (ana@admins.org)')

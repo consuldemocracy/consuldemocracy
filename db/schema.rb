@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160225171916) do
+ActiveRecord::Schema.define(version: 20160305113707) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -309,6 +309,7 @@ ActiveRecord::Schema.define(version: 20160225171916) do
     t.text     "explanations_log"
     t.integer  "administrator_id"
     t.integer  "valuation_assignments_count", default: 0
+    t.float    "price_first_year"
   end
 
   add_index "spending_proposals", ["author_id"], name: "index_spending_proposals_on_author_id", using: :btree

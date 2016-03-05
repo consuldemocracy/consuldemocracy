@@ -173,6 +173,7 @@ en:
         geozone: Scope
         dossier: Dossier
         price: Price
+        price_first_year: Cost during the first year
         currency: "€"
         feasibility: Feasibility
         feasible: Feasible

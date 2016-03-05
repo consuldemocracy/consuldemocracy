@@ -62,6 +62,10 @@
 <p><strong><%= t("admin.spending_proposals.show.price") %> (<%= t("admin.spending_proposals.show.currency") %>):</strong>
   <%= @spending_proposal.price.present? ? @spending_proposal.price : t("admin.spending_proposals.show.undefined") %>
 </p>
+<p><strong><%= t("admin.spending_proposals.show.price_first_year") %> (<%= t("admin.spending_proposals.show.currency") %>):</strong>
+  <%= @spending_proposal.price_first_year.present? ? @spending_proposal.price_first_year : t("admin.spending_proposals.show.undefined") %>
+</p>
+
 <%= simple_format(safe_html_with_links(@spending_proposal.price_explanation.html_safe), {}, sanitize: false) if @spending_proposal.price_explanation.present? %>
 
 <p><strong><%= t("admin.spending_proposals.show.feasibility") %>:</strong>
