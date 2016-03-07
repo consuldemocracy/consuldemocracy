@@ -251,6 +251,19 @@ feature 'Admin spending proposals' do
     end
   end
 
+  scenario "Add administrator" do
+    spending_proposal = create(:spending_proposal)
+    administrator = create(:administrator, user: create(:user, username: 'Marta', email: 'marta@admins.org'))
+
+    visit edit_admin_spending_proposal_path(spending_proposal)
+
+    select 'Marta (marta@admins.org)', from: 'spending_proposal[administrator_id]'
+    click_button 'Update'
+
+    expect(page).to have_content 'Investment project updated succesfully.'
+    expect(page).to have_content 'Assigned admin: Marta'
+  end
+
   scenario "Adds existing tags", :js do
     create(:spending_proposal, tag_list: 'Education, Health')
 

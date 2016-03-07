@@ -17,6 +17,7 @@ class Admin::SpendingProposalsController < Admin::BaseController
 
   def edit
     @spending_proposal = SpendingProposal.find(params[:id])
+    @admins = Administrator.includes(:user).all
     @tags = ActsAsTaggableOn::Tag.where('taggings.taggable_type' => 'SpendingProposal').includes(:taggings)
   end
 
@@ -43,7 +44,7 @@ class Admin::SpendingProposalsController < Admin::BaseController
   private
 
     def spending_proposal_params
-      params.require(:spending_proposal).permit(:tag_list)
+      params.require(:spending_proposal).permit(:administrator_id, :tag_list)
     end
 
 end
