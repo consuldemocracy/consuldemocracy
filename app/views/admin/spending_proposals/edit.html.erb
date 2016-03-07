@@ -1,0 +1,24 @@
+<%= form_for @spending_proposal, url: admin_spending_proposal_path(@spending_proposal) do |f| %>
+  <div class="small-12 column">
+    <%= f.label :tag_list, t("proposals.form.tags_label") %>
+    <p class="note"><%= t("proposals.form.tags_instructions") %></p>
+
+    <div id="category_tags" class="tags">
+      <%= f.label :category_tag_list, t("proposals.form.tag_category_label") %>
+      <% @tags.each do |tag| %>
+        <a class="js-add-tag-link"><%= tag.name %></a>
+      <% end %>
+    </div>
+
+    <br>
+    <%= f.text_field :tag_list, value: @spending_proposal.tag_list.to_s,
+                      label: false,
+                      placeholder: t("proposals.form.tags_placeholder"),
+                      class: 'js-tag-list' %>
+  </div>
+
+  <div class="actions small-12 column">
+    <%= f.submit(class: "button", value: t("admin.spending_proposals.edit.submit_button")) %>
+  </div>
+
+<% end %>

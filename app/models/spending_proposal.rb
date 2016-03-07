@@ -1,6 +1,7 @@
 class SpendingProposal < ActiveRecord::Base
   include Measurable
   include Sanitizable
+  include Taggable
 
   apply_simple_captcha
 

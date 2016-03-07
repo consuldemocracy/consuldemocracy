@@ -186,6 +186,8 @@ es:
         assign_valuators: Asignar evaluadores
         no_valuators: No hay ningún usuario evaluador
         assign: Asignar
+      edit:
+        submit_button: Actualizar
     stats:
       show:
         stats_title: Estadísticas

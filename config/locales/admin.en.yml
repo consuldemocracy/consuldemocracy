@@ -186,6 +186,8 @@ en:
         assign_valuators: Assign valuators
         no_valuators: There is not any valuator user
         assign: Assign
+      edit:
+        submit_button: Update
     stats:
       show:
         stats_title: Stats

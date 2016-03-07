@@ -36,6 +36,9 @@
   <% end %>
 </p>
 
+<%= render 'shared/tags', taggable: @spending_proposal %>
+
+
 <p><strong><%= t("admin.spending_proposals.show.assigned_valuators") %>:</strong></p>
 <div id="assigned_valuators">
   <%= render "assigned_valuators" %>

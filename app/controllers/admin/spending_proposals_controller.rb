@@ -15,6 +15,20 @@ class Admin::SpendingProposalsController < Admin::BaseController
     @valuators = Valuator.includes(:user).all.order("users.username ASC")
   end
 
+  def edit
+    @spending_proposal = SpendingProposal.find(params[:id])
+    @tags = ActsAsTaggableOn::Tag.where('taggings.taggable_type' => 'SpendingProposal').includes(:taggings)
+  end
+
+  def update
+    @spending_proposal = SpendingProposal.find(params[:id])
+    if @spending_proposal.update(spending_proposal_params)
+      redirect_to admin_spending_proposal_path(@spending_proposal), notice: t("flash.actions.update.spending_proposal")
+    else
+      render :edit
+    end
+  end
+
   def assign_admin
     @spending_proposal.update(params.require(:spending_proposal).permit(:administrator_id))
     render nothing: true
@@ -25,5 +39,11 @@ class Admin::SpendingProposalsController < Admin::BaseController
     params[:spending_proposal][:valuator_ids] ||= []
     @spending_proposal.update(params.require(:spending_proposal).permit(valuator_ids: []))
   end
+
+  private
+
+    def spending_proposal_params
+      params.require(:spending_proposal).permit(:tag_list)
+    end
 
 end

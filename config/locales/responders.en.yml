@@ -13,3 +13,4 @@ en:
         notice: "%{resource_name} updated successfully."
         debate: "Debate updated successfully."
         proposal: "Proposal updated successfully."
+        spending_proposal: "Investment project updated succesfully."
