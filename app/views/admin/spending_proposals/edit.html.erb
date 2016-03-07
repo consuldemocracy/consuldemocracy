@@ -6,20 +6,10 @@
                  label: false },
                class: "js-submit-on-change" %>
 
-  <div id="valuators-assign-list" class="row">
-    <% @valuators.each do |valuator| %>
-      <div class="small-12 medium-4 column end">
-        <%= check_box_tag "valuator_ids_#{valuator.id}",
-                          valuator.id, @spending_proposal.valuators.include?(valuator),
-                          name: 'spending_proposal[valuator_ids][]',
-                          class: "js-submit-on-change" %>
-        <%= label_tag "valuator_ids_#{valuator.id}", truncate(valuator.name), class: "inline" %>
-      </div>
-    <% end %>
-
-    <% if @valuators.blank? %>
-      <p><%= t("admin.spending_proposals.show.no_valuators") %></p>
-    <% end %>
+  <div class="row">
+    <div class="small-12 medium-4 column end">
+      <%= f.collection_check_boxes :valuator_ids, @valuators, :id, :name %>
+    </div>
   </div>
 
   <div class="small-12 column">

@@ -273,10 +273,8 @@ feature 'Admin spending proposals' do
 
     visit edit_admin_spending_proposal_path(spending_proposal)
 
-    within('#valuators-assign-list') do
-      check "valuator_ids_#{valuator1.id}"
-      check "valuator_ids_#{valuator3.id}"
-    end
+    check "spending_proposal_valuator_ids_#{valuator1.id}"
+    check "spending_proposal_valuator_ids_#{valuator3.id}"
 
     click_button 'Update'
 
