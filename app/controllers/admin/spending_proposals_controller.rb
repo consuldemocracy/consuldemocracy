@@ -11,18 +11,15 @@ class Admin::SpendingProposalsController < Admin::BaseController
   end
 
   def show
-    @admins = Administrator.includes(:user).all
-    @valuators = Valuator.includes(:user).all.order("users.username ASC")
   end
 
   def edit
-    @spending_proposal = SpendingProposal.find(params[:id])
     @admins = Administrator.includes(:user).all
+    @valuators = Valuator.includes(:user).all.order("users.username ASC")
     @tags = ActsAsTaggableOn::Tag.where('taggings.taggable_type' => 'SpendingProposal').includes(:taggings)
   end
 
   def update
-    @spending_proposal = SpendingProposal.find(params[:id])
     if @spending_proposal.update(spending_proposal_params)
       redirect_to admin_spending_proposal_path(@spending_proposal), notice: t("flash.actions.update.spending_proposal")
     else
@@ -44,7 +41,7 @@ class Admin::SpendingProposalsController < Admin::BaseController
   private
 
     def spending_proposal_params
-      params.require(:spending_proposal).permit(:administrator_id, :tag_list)
+      params.require(:spending_proposal).permit(:administrator_id, :tag_list, valuator_ids: [])
     end
 
 end

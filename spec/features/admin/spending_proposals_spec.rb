@@ -264,6 +264,32 @@ feature 'Admin spending proposals' do
     expect(page).to have_content 'Assigned admin: Marta'
   end
 
+  scenario "Add valuators" do
+    spending_proposal = create(:spending_proposal)
+
+    valuator1 = create(:valuator, user: create(:user, username: 'Valentina', email: 'v1@valuators.org'))
+    valuator2 = create(:valuator, user: create(:user, username: 'Valerian',  email: 'v2@valuators.org'))
+    valuator3 = create(:valuator, user: create(:user, username: 'Val',       email: 'v3@valuators.org'))
+
+    visit edit_admin_spending_proposal_path(spending_proposal)
+
+    within('#valuators-assign-list') do
+      check "valuator_ids_#{valuator1.id}"
+      check "valuator_ids_#{valuator3.id}"
+    end
+
+    click_button 'Update'
+
+    expect(page).to have_content 'Investment project updated succesfully.'
+
+    within('#assigned_valuators') do
+      expect(page).to have_content('Valentina (v1@valuators.org)')
+      expect(page).to have_content('Val (v3@valuators.org)')
+      expect(page).to_not have_content('Undefined')
+      expect(page).to_not have_content('Valerian (v2@valuators.org)')
+    end
+  end
+
   scenario "Adds existing tags", :js do
     create(:spending_proposal, tag_list: 'Education, Health')
 
