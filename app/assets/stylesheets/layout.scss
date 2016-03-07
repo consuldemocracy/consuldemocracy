@@ -383,8 +383,10 @@ header {
     margin: 0;
 
     li {
-      display: inline-block;
-      margin-right: rem-calc(36);
+      @media (min-width: $small-breakpoint) {
+        display: inline-block;
+        margin-right: rem-calc(36);
+      }
 
       a {
         color: white;
