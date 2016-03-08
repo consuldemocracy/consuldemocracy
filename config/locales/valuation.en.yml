@@ -42,17 +42,17 @@ en:
         assigned_valuators: Assigned valuators
       edit:
         dossier: Dossier
-        price: "Price (%{currency})"
-        price_first_year: "Cost during the first year (%{currency})"
+        price_html: "Price (%{currency})"
+        price_first_year_html: "Cost during the first year (%{currency})"
         currency: "€"
-        price_explanation: Price explanation
+        price_explanation_html: Price explanation
         feasibility: Feasibility
         feasible: Feasible
         not_feasible: Not feasible
-        feasible_explanation: Feasibility explanation
+        feasible_explanation_html: Feasibility explanation
         valuation_finished: Valuation finished
-        time_scope: Time scope
-        internal_comments: Internal comments
+        time_scope_html: Time scope
+        internal_comments_html: Internal comments
         save: Save changes
       notice:
         valuate: "Dossier updated"
