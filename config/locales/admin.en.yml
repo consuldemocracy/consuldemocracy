@@ -158,14 +158,14 @@ en:
           valuating: Under valuation
           valuation_finished: Valuation finished
         title: Investment projects for participatory budgeting
-        admin_assigned: Assigned administrator
+        assigned_admin: Assigned administrator
         no_admin_assigned: No admin assigned
-        valuators_assigned:
-          one: Assigned valuator
-          other: "%{count} valuators assigned"
         no_valuators_assigned: No valuators assigned
       show:
+        assigned_admin: Assigned administrator
+        assigned_valuators: Assigned valuators
         back: Back
+        classification: Clasification
         heading: "Investment project %{id}"
         edit_button: Edit
         association_name: Association
@@ -173,6 +173,8 @@ en:
         sent: Sent
         geozone: Scope
         dossier: Dossier
+        tags: Tags
+        undefined: Undefined
       edit:
         classification: Clasification
         assigned_valuators: Valuators
