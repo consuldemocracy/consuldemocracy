@@ -7,179 +7,187 @@ feature 'Admin spending proposals' do
     login_as(admin.user)
   end
 
-  scenario 'Disabled with a feature flag' do
-    Setting['feature.spending_proposals'] = nil
-    expect{ visit admin_spending_proposals_path }.to raise_exception(FeatureFlags::FeatureDisabled)
-  end
+  context "Feature flag" do
 
-  scenario 'Index shows spending proposals' do
-    spending_proposal = create(:spending_proposal)
-    visit admin_spending_proposals_path
-
-    expect(page).to have_content(spending_proposal.title)
-  end
-
-  scenario 'Index shows assignments info' do
-    spending_proposal1 = create(:spending_proposal)
-    spending_proposal2 = create(:spending_proposal)
-    spending_proposal3 = create(:spending_proposal)
-
-    valuator1 = create(:valuator, user: create(:user, username: 'Olga'))
-    valuator2 = create(:valuator, user: create(:user, username: 'Miriam'))
-    admin = create(:administrator, user: create(:user, username: 'Gema'))
-
-    spending_proposal1.valuators << valuator1
-    spending_proposal2.valuator_ids = [valuator1.id, valuator2.id]
-    spending_proposal3.update({administrator_id: admin.id})
-
-    visit admin_spending_proposals_path
-
-    within("#spending_proposal_#{spending_proposal1.id}") do
-      expect(page).to have_content("No admin assigned")
-      expect(page).to have_content("Olga")
+    scenario 'Disabled with a feature flag' do
+      Setting['feature.spending_proposals'] = nil
+      expect{ visit admin_spending_proposals_path }.to raise_exception(FeatureFlags::FeatureDisabled)
     end
 
-    within("#spending_proposal_#{spending_proposal2.id}") do
-      expect(page).to have_content("No admin assigned")
-      expect(page).to have_content("2 valuators assigned")
+  end
+
+  context "Index" do
+
+    scenario 'Displaying spending proposals' do
+      spending_proposal = create(:spending_proposal)
+      visit admin_spending_proposals_path
+
+      expect(page).to have_content(spending_proposal.title)
     end
 
-    within("#spending_proposal_#{spending_proposal3.id}") do
-      expect(page).to have_content("Gema")
-      expect(page).to have_content("No valuators assigned")
-    end
-  end
+    scenario 'Displaying assignments info' do
+      spending_proposal1 = create(:spending_proposal)
+      spending_proposal2 = create(:spending_proposal)
+      spending_proposal3 = create(:spending_proposal)
 
-  scenario "Index filtering by geozone", :js do
-    geozone = create(:geozone, name: "District 9")
-    create(:spending_proposal, title: "Realocate visitors", geozone: geozone)
-    create(:spending_proposal, title: "Destroy the city")
+      valuator1 = create(:valuator, user: create(:user, username: 'Olga'))
+      valuator2 = create(:valuator, user: create(:user, username: 'Miriam'))
+      admin = create(:administrator, user: create(:user, username: 'Gema'))
 
-    visit admin_spending_proposals_path
-    expect(page).to have_link("Realocate visitors")
-    expect(page).to have_link("Destroy the city")
+      spending_proposal1.valuators << valuator1
+      spending_proposal2.valuator_ids = [valuator1.id, valuator2.id]
+      spending_proposal3.update({administrator_id: admin.id})
 
-    select "District 9", from: "geozone_id"
+      visit admin_spending_proposals_path
 
-    expect(page).to have_link("Realocate visitors")
-    expect(page).to_not have_link("Destroy the city")
+      within("#spending_proposal_#{spending_proposal1.id}") do
+        expect(page).to have_content("No admin assigned")
+        expect(page).to have_content("Olga")
+      end
 
-    select "All city", from: "geozone_id"
+      within("#spending_proposal_#{spending_proposal2.id}") do
+        expect(page).to have_content("No admin assigned")
+        expect(page).to have_content("2 valuators assigned")
+      end
 
-    expect(page).to have_link("Destroy the city")
-    expect(page).to_not have_link("Realocate visitors")
-
-    select "All zones", from: "geozone_id"
-    expect(page).to have_link("Realocate visitors")
-    expect(page).to have_link("Destroy the city")
-  end
-
-  scenario "Index filtering by admin", :js do
-    user = create(:user, username: 'Admin 1')
-    administrator = create(:administrator, user: user)
-
-    create(:spending_proposal, title: "Realocate visitors", administrator: administrator)
-    create(:spending_proposal, title: "Destroy the city")
-
-    visit admin_spending_proposals_path
-    expect(page).to have_link("Realocate visitors")
-    expect(page).to have_link("Destroy the city")
-
-    select "Admin 1", from: "administrator_id"
-
-    expect(page).to have_link("Realocate visitors")
-    expect(page).to_not have_link("Destroy the city")
-
-    select "All administrators", from: "administrator_id"
-
-    expect(page).to have_link("Destroy the city")
-    expect(page).to have_link("Realocate visitors")
-  end
-
-  scenario "Current filter is properly highlighted" do
-    filters_links = {'valuation_open' => 'Open',
-                     'without_admin' => 'Without assigned admin',
-                     'managed' => 'Managed',
-                     'valuating' => 'Under valuation',
-                     'valuation_finished' => 'Valuation finished'}
-
-    visit admin_spending_proposals_path
-
-    expect(page).to_not have_link(filters_links.values.first)
-    filters_links.keys.drop(1).each { |filter| expect(page).to have_link(filters_links[filter]) }
-
-    filters_links.each_pair do |current_filter, link|
-      visit admin_spending_proposals_path(filter: current_filter)
-
-      expect(page).to_not have_link(link)
-
-      (filters_links.keys - [current_filter]).each do |filter|
-        expect(page).to have_link(filters_links[filter])
+      within("#spending_proposal_#{spending_proposal3.id}") do
+        expect(page).to have_content("Gema")
+        expect(page).to have_content("No valuators assigned")
       end
     end
-  end
 
-  scenario "Index filtering by assignment status" do
-    assigned = create(:spending_proposal, title: "Assigned idea", administrator: create(:administrator))
-    valuating = create(:spending_proposal, title: "Evaluating...")
-    valuating.valuators << create(:valuator)
+    scenario "Filtering by geozone", :js do
+      geozone = create(:geozone, name: "District 9")
+      create(:spending_proposal, title: "Realocate visitors", geozone: geozone)
+      create(:spending_proposal, title: "Destroy the city")
 
-    visit admin_spending_proposals_path(filter: 'valuation_open')
+      visit admin_spending_proposals_path
+      expect(page).to have_link("Realocate visitors")
+      expect(page).to have_link("Destroy the city")
 
-    expect(page).to have_content("Assigned idea")
-    expect(page).to have_content("Evaluating...")
+      select "District 9", from: "geozone_id"
 
-    visit admin_spending_proposals_path(filter: 'without_admin')
+      expect(page).to have_link("Realocate visitors")
+      expect(page).to_not have_link("Destroy the city")
 
-    expect(page).to have_content("Evaluating...")
-    expect(page).to_not have_content("Assigned idea")
+      select "All city", from: "geozone_id"
 
-    visit admin_spending_proposals_path(filter: 'managed')
+      expect(page).to have_link("Destroy the city")
+      expect(page).to_not have_link("Realocate visitors")
 
-    expect(page).to have_content("Assigned idea")
-    expect(page).to_not have_content("Evaluating...")
-  end
+      select "All zones", from: "geozone_id"
+      expect(page).to have_link("Realocate visitors")
+      expect(page).to have_link("Destroy the city")
+    end
 
-  scenario "Index filtering by valuation status" do
-    valuating = create(:spending_proposal, title: "Ongoing valuation")
-    valuated = create(:spending_proposal, title: "Old idea", valuation_finished: true)
-    valuating.valuators << create(:valuator)
-    valuated.valuators << create(:valuator)
+    scenario "Filtering by admin", :js do
+      user = create(:user, username: 'Admin 1')
+      administrator = create(:administrator, user: user)
 
-    visit admin_spending_proposals_path(filter: 'valuation_open')
+      create(:spending_proposal, title: "Realocate visitors", administrator: administrator)
+      create(:spending_proposal, title: "Destroy the city")
 
-    expect(page).to have_content("Ongoing valuation")
-    expect(page).to_not have_content("Old idea")
+      visit admin_spending_proposals_path
+      expect(page).to have_link("Realocate visitors")
+      expect(page).to have_link("Destroy the city")
 
-    visit admin_spending_proposals_path(filter: 'valuating')
+      select "Admin 1", from: "administrator_id"
 
-    expect(page).to have_content("Ongoing valuation")
-    expect(page).to_not have_content("Old idea")
+      expect(page).to have_link("Realocate visitors")
+      expect(page).to_not have_link("Destroy the city")
 
-    visit admin_spending_proposals_path(filter: 'valuation_finished')
+      select "All administrators", from: "administrator_id"
 
-    expect(page).to_not have_content("Ongoing valuation")
-    expect(page).to have_content("Old idea")
-  end
+      expect(page).to have_link("Destroy the city")
+      expect(page).to have_link("Realocate visitors")
+    end
 
-  scenario "Index filtering by tag" do
-    create(:spending_proposal, title: 'Educate the children', tag_list: 'Education')
-    create(:spending_proposal, title: 'More schools',         tag_list: 'Education')
-    create(:spending_proposal, title: 'More hospitals',       tag_list: 'Health')
+    scenario "Current filter is properly highlighted" do
+      filters_links = {'valuation_open' => 'Open',
+                       'without_admin' => 'Without assigned admin',
+                       'managed' => 'Managed',
+                       'valuating' => 'Under valuation',
+                       'valuation_finished' => 'Valuation finished'}
 
-    visit admin_spending_proposals_path
+      visit admin_spending_proposals_path
 
-    expect(page).to have_css(".spending_proposal", count: 3)
-    expect(page).to have_content("Educate the children")
-    expect(page).to have_content("More schools")
-    expect(page).to have_content("More hospitals")
+      expect(page).to_not have_link(filters_links.values.first)
+      filters_links.keys.drop(1).each { |filter| expect(page).to have_link(filters_links[filter]) }
 
-    visit admin_spending_proposals_path(tag_name: 'Education')
+      filters_links.each_pair do |current_filter, link|
+        visit admin_spending_proposals_path(filter: current_filter)
 
-    expect(page).to have_css(".spending_proposal", count: 2)
-    expect(page).to have_content("Educate the children")
-    expect(page).to have_content("More schools")
-    expect(page).to_not have_content("More hospitals")
+        expect(page).to_not have_link(link)
+
+        (filters_links.keys - [current_filter]).each do |filter|
+          expect(page).to have_link(filters_links[filter])
+        end
+      end
+    end
+
+    scenario "Filtering by assignment status" do
+      assigned = create(:spending_proposal, title: "Assigned idea", administrator: create(:administrator))
+      valuating = create(:spending_proposal, title: "Evaluating...")
+      valuating.valuators << create(:valuator)
+
+      visit admin_spending_proposals_path(filter: 'valuation_open')
+
+      expect(page).to have_content("Assigned idea")
+      expect(page).to have_content("Evaluating...")
+
+      visit admin_spending_proposals_path(filter: 'without_admin')
+
+      expect(page).to have_content("Evaluating...")
+      expect(page).to_not have_content("Assigned idea")
+
+      visit admin_spending_proposals_path(filter: 'managed')
+
+      expect(page).to have_content("Assigned idea")
+      expect(page).to_not have_content("Evaluating...")
+    end
+
+    scenario "Filtering by valuation status" do
+      valuating = create(:spending_proposal, title: "Ongoing valuation")
+      valuated = create(:spending_proposal, title: "Old idea", valuation_finished: true)
+      valuating.valuators << create(:valuator)
+      valuated.valuators << create(:valuator)
+
+      visit admin_spending_proposals_path(filter: 'valuation_open')
+
+      expect(page).to have_content("Ongoing valuation")
+      expect(page).to_not have_content("Old idea")
+
+      visit admin_spending_proposals_path(filter: 'valuating')
+
+      expect(page).to have_content("Ongoing valuation")
+      expect(page).to_not have_content("Old idea")
+
+      visit admin_spending_proposals_path(filter: 'valuation_finished')
+
+      expect(page).to_not have_content("Ongoing valuation")
+      expect(page).to have_content("Old idea")
+    end
+
+    scenario "Filtering by tag" do
+      create(:spending_proposal, title: 'Educate the children', tag_list: 'Education')
+      create(:spending_proposal, title: 'More schools',         tag_list: 'Education')
+      create(:spending_proposal, title: 'More hospitals',       tag_list: 'Health')
+
+      visit admin_spending_proposals_path
+
+      expect(page).to have_css(".spending_proposal", count: 3)
+      expect(page).to have_content("Educate the children")
+      expect(page).to have_content("More schools")
+      expect(page).to have_content("More hospitals")
+
+      visit admin_spending_proposals_path(tag_name: 'Education')
+
+      expect(page).to have_css(".spending_proposal", count: 2)
+      expect(page).to have_content("Educate the children")
+      expect(page).to have_content("More schools")
+      expect(page).to_not have_content("More hospitals")
+    end
+
   end
 
   scenario 'Show' do
@@ -215,79 +223,83 @@ feature 'Admin spending proposals' do
     end
   end
 
-  scenario "Add administrator" do
-    spending_proposal = create(:spending_proposal)
-    administrator = create(:administrator, user: create(:user, username: 'Marta', email: 'marta@admins.org'))
+  context "Edit" do
 
-    visit admin_spending_proposal_path(spending_proposal)
-    click_link 'Edit'
+    scenario "Add administrator" do
+      spending_proposal = create(:spending_proposal)
+      administrator = create(:administrator, user: create(:user, username: 'Marta', email: 'marta@admins.org'))
 
-    select 'Marta (marta@admins.org)', from: 'spending_proposal[administrator_id]'
-    click_button 'Update'
+      visit admin_spending_proposal_path(spending_proposal)
+      click_link 'Edit'
 
-    expect(page).to have_content 'Investment project updated succesfully.'
-    expect(page).to have_content 'Assigned admin: Marta'
-  end
+      select 'Marta (marta@admins.org)', from: 'spending_proposal[administrator_id]'
+      click_button 'Update'
 
-  scenario "Add valuators" do
-    spending_proposal = create(:spending_proposal)
-
-    valuator1 = create(:valuator, user: create(:user, username: 'Valentina', email: 'v1@valuators.org'))
-    valuator2 = create(:valuator, user: create(:user, username: 'Valerian',  email: 'v2@valuators.org'))
-    valuator3 = create(:valuator, user: create(:user, username: 'Val',       email: 'v3@valuators.org'))
-
-    visit admin_spending_proposal_path(spending_proposal)
-    click_link 'Edit'
-
-    check "spending_proposal_valuator_ids_#{valuator1.id}"
-    check "spending_proposal_valuator_ids_#{valuator3.id}"
-
-    click_button 'Update'
-
-    expect(page).to have_content 'Investment project updated succesfully.'
-
-    within('#assigned_valuators') do
-      expect(page).to have_content('Valentina (v1@valuators.org)')
-      expect(page).to have_content('Val (v3@valuators.org)')
-      expect(page).to_not have_content('Undefined')
-      expect(page).to_not have_content('Valerian (v2@valuators.org)')
+      expect(page).to have_content 'Investment project updated succesfully.'
+      expect(page).to have_content 'Assigned admin: Marta'
     end
-  end
 
-  scenario "Adds existing tags", :js do
-    create(:spending_proposal, tag_list: 'Education, Health')
+    scenario "Add valuators" do
+      spending_proposal = create(:spending_proposal)
 
-    spending_proposal = create(:spending_proposal)
+      valuator1 = create(:valuator, user: create(:user, username: 'Valentina', email: 'v1@valuators.org'))
+      valuator2 = create(:valuator, user: create(:user, username: 'Valerian',  email: 'v2@valuators.org'))
+      valuator3 = create(:valuator, user: create(:user, username: 'Val',       email: 'v3@valuators.org'))
 
-    visit admin_spending_proposal_path(spending_proposal)
-    click_link 'Edit'
+      visit admin_spending_proposal_path(spending_proposal)
+      click_link 'Edit'
 
-    find('.js-add-tag-link', text: 'Education').click
-    click_button 'Update'
+      check "spending_proposal_valuator_ids_#{valuator1.id}"
+      check "spending_proposal_valuator_ids_#{valuator3.id}"
 
-    expect(page).to have_content 'Investment project updated succesfully.'
+      click_button 'Update'
 
-    within "#tags" do
-      expect(page).to have_content 'Education'
-      expect(page).to_not have_content 'Health'
+      expect(page).to have_content 'Investment project updated succesfully.'
+
+      within('#assigned_valuators') do
+        expect(page).to have_content('Valentina (v1@valuators.org)')
+        expect(page).to have_content('Val (v3@valuators.org)')
+        expect(page).to_not have_content('Undefined')
+        expect(page).to_not have_content('Valerian (v2@valuators.org)')
+      end
     end
-  end
 
-  scenario "Adds non existent tags" do
-    spending_proposal = create(:spending_proposal)
+    scenario "Adds existing tags", :js do
+      create(:spending_proposal, tag_list: 'Education, Health')
 
-    visit admin_spending_proposal_path(spending_proposal)
-    click_link 'Edit'
+      spending_proposal = create(:spending_proposal)
 
-    fill_in 'spending_proposal_tag_list', with: 'Refugees, Solidarity'
-    click_button 'Update'
+      visit admin_spending_proposal_path(spending_proposal)
+      click_link 'Edit'
 
-    expect(page).to have_content 'Investment project updated succesfully.'
+      find('.js-add-tag-link', text: 'Education').click
+      click_button 'Update'
 
-    within "#tags" do
-      expect(page).to have_content 'Refugees'
-      expect(page).to have_content 'Solidarity'
+      expect(page).to have_content 'Investment project updated succesfully.'
+
+      within "#tags" do
+        expect(page).to have_content 'Education'
+        expect(page).to_not have_content 'Health'
+      end
     end
+
+    scenario "Adds non existent tags" do
+      spending_proposal = create(:spending_proposal)
+
+      visit admin_spending_proposal_path(spending_proposal)
+      click_link 'Edit'
+
+      fill_in 'spending_proposal_tag_list', with: 'Refugees, Solidarity'
+      click_button 'Update'
+
+      expect(page).to have_content 'Investment project updated succesfully.'
+
+      within "#tags" do
+        expect(page).to have_content 'Refugees'
+        expect(page).to have_content 'Solidarity'
+      end
+    end
+
   end
 
 end
