@@ -14,20 +14,27 @@ class Admin::SpendingProposalsController < Admin::BaseController
   end
 
   def show
+  end
+
+  def edit
     @admins = Administrator.includes(:user).all
     @valuators = Valuator.includes(:user).all.order("users.username ASC")
+    @tags = ActsAsTaggableOn::Tag.spending_proposal_tags
   end
 
-  def assign_admin
-    @spending_proposal.update(params.require(:spending_proposal).permit(:administrator_id))
-    render nothing: true
+  def update
+    if @spending_proposal.update(spending_proposal_params)
+      redirect_to admin_spending_proposal_path(@spending_proposal, anchor: 'classification'), notice: t("flash.actions.update.spending_proposal")
+    else
+      render :edit
+    end
   end
 
-  def assign_valuators
-    params[:spending_proposal] ||= {}
-    params[:spending_proposal][:valuator_ids] ||= []
-    @spending_proposal.update(params.require(:spending_proposal).permit(valuator_ids: []))
-  end
+  private
+
+    def spending_proposal_params
+      params.require(:spending_proposal).permit(:administrator_id, :tag_list, valuator_ids: [])
+    end
 
   def parse_search_terms 
     @search_terms = params[:search] if params[:search].present? 

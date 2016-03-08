@@ -1,0 +1,41 @@
+<h2><%= t("valuation.spending_proposals.index.title") %></h2>
+
+<div>
+  <%= form_tag valuation_spending_proposals_path, method: :get, enforce_utf8: false do %>
+    <div class="small-12 medium-4 column float-right">
+      <%= select_tag :geozone_id,
+                     options_for_select(geozone_select_options.unshift([t("geozones.none"), "all"]), params[:geozone_id]),
+                     { prompt: t("valuation.spending_proposals.index.geozone_filter_all"),
+                       label: false,
+                       class: "js-submit-on-change" } %>
+    </div>
+  <% end %>
+</div>
+
+<%= render 'shared/filter_subnav', i18n_namespace: "valuation.spending_proposals.index" %>
+
+<h3><%= page_entries_info @spending_proposals %></h3>
+
+<table>
+  <% @spending_proposals.each do |spending_proposal| %>
+    <tr id="<%= dom_id(spending_proposal) %>">
+      <td>
+        <strong><%= spending_proposal.id %></strong>
+      </td>
+      <td>
+        <%= link_to spending_proposal.title, valuation_spending_proposal_path(spending_proposal) %>
+      </td>
+      <td class="small">
+        <%= link_to t("valuation.spending_proposals.index.edit"), edit_valuation_spending_proposal_path(spending_proposal) %>
+      </td>
+      <td class="small">
+        <%= assigned_valuators_info(spending_proposal.valuators) %>
+      </td>
+      <td class="small">
+        <%= geozone_name(spending_proposal) %>
+      </td>
+    </tr>
+  <% end %>
+</table>
+
+<%= paginate @spending_proposals %>

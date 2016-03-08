@@ -38,6 +38,10 @@ module ActsAsTaggableOn
       Tag.where("kind = 'category'").pluck(:name)
     end
 
+    def self.spending_proposal_tags
+      ActsAsTaggableOn::Tag.where('taggings.taggable_type' => 'SpendingProposal').includes(:taggings).order(:name).uniq
+    end
+
     private
       def custom_counter_field_name_for(taggable_type)
         "#{taggable_type.underscore.pluralize}_count"

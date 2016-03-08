@@ -3,12 +3,12 @@
 <% if taggable.tags.any? %>
   <span id="tags" class='tags'>
     <% taggable.tag_list_with_limit(limit).each do |tag| %>
-      <%= link_to sanitize(tag.name), send("#{taggable.class.to_s.downcase.pluralize}_path", tag: tag.name) %>
+      <%= link_to sanitize(tag.name), send("#{taggable.class.name.underscore.pluralize}_path", tag: tag.name) %>
     <% end %>
 
     <% if taggable.tags_count_out_of_limit(limit) > 0 %>
       <%= link_to "#{taggable.tags_count_out_of_limit(limit)}+",
-                  send("#{taggable.class.to_s.downcase}_path", taggable) %>
+                  send("#{taggable.class.name.underscore}_path", taggable) %>
     <% end %>
   </span>
 <% end %>

@@ -133,7 +133,8 @@ Rails.application.routes.draw do
       end
     end
 
-    resources :spending_proposals, only: [:index, :show] do
+
+    resources :spending_proposals, only: [:index, :show, :edit, :update] do
       collection { get :search }
       member do
         patch :assign_admin
@@ -209,6 +210,16 @@ Rails.application.routes.draw do
       end
       collection do
         put :moderate
+      end
+    end
+  end
+
+  namespace :valuation do
+    root to: "spending_proposals#index"
+
+    resources :spending_proposals, only: [:index, :show, :edit] do
+      member do
+        patch :valuate
       end
     end
   end
