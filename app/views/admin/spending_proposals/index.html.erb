@@ -1,20 +1,27 @@
 <h2><%= t("admin.spending_proposals.index.title") %></h2>
 
-<div>
+<div class="row margin">
   <%= form_tag admin_spending_proposals_path, method: :get, enforce_utf8: false do %>
-    <div class="small-12 medium-4 column float-right">
+    <div class="small-12 medium-4 column">
+      <%= select_tag :administrator_id,
+                      options_for_select(admin_select_options, params[:administrator_id]),
+                      { prompt: t("admin.spending_proposals.index.administrator_filter_all"),
+                        label: false,
+                        class: "js-submit-on-change" } %>
+    </div>
+    <div class="small-12 medium-4 column">
       <%= select_tag :geozone_id,
                      options_for_select(geozone_select_options.unshift([t("geozones.none"), "all"]), params[:geozone_id]),
                      { prompt: t("admin.spending_proposals.index.geozone_filter_all"),
                        label: false,
                        class: "js-submit-on-change" } %>
     </div>
-    <div class="small-12 medium-4 column float-right">
-      <%= select_tag :administrator_id,
-                      options_for_select(admin_select_options, params[:administrator_id]),
-                      { prompt: t("admin.spending_proposals.index.administrator_filter_all"),
-                        label: false,
-                        class: "js-submit-on-change" } %>
+    <div class="small-12 medium-4 column">
+      <%= select_tag :tag_name,
+                     options_for_select(spending_proposal_tags_select_options, params[:tag_name]),
+                     { prompt: t("admin.spending_proposals.index.tags_filter_all"),
+                       label: false,
+                       class: "js-submit-on-change" } %>
     </div>
   <% end %>
 </div>
@@ -25,7 +32,7 @@
 
 <table>
   <% @spending_proposals.each do |spending_proposal| %>
-    <tr id="<%= dom_id(spending_proposal) %>">
+    <tr id="<%= dom_id(spending_proposal) %>" class="spending_proposal">
       <td>
         <strong><%= spending_proposal.id %></strong>
       </td>
@@ -34,23 +41,16 @@
       </td>
       <td class="small">
         <% if spending_proposal.administrator.present? %>
-          <span title="<%= t('admin.spending_proposals.index.admin_assigned') %>"><%= spending_proposal.administrator.name %></span>
+          <span title="<%= t('admin.spending_proposals.index.assigned_admin') %>"><%= spending_proposal.administrator.name %></span>
         <% else %>
           <%= t("admin.spending_proposals.index.no_admin_assigned") %>
         <% end %>
       </td>
       <td class="small">
-        <% case spending_proposal.valuators.size %>
-        <% when 0 %>
+        <% if spending_proposal.valuators.size == 0 %>
           <%= t("admin.spending_proposals.index.no_valuators_assigned") %>
-        <% when 1 %>
-          <span title="<%= t('admin.spending_proposals.index.valuators_assigned', count: 1) %>">
-            <%= spending_proposal.valuators.first.name %>
-          </span>
         <% else %>
-          <span title="<%= spending_proposal.valuators.map(&:name).join(', ') %>">
-            <%= t('admin.spending_proposals.index.valuators_assigned', count: spending_proposal.valuators.size) %>
-          </span>
+          <%= spending_proposal.valuators.collect(&:name).join(', ') %>
         <% end %>
       </td>
       <td class="small">

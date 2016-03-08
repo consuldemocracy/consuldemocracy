@@ -1,6 +1,7 @@
 class SpendingProposal < ActiveRecord::Base
   include Measurable
   include Sanitizable
+  include Taggable
 
   apply_simple_captcha
 
@@ -18,13 +19,17 @@ class SpendingProposal < ActiveRecord::Base
   validates :description, length: { maximum: SpendingProposal.description_max_length }
   validates :terms_of_service, acceptance: { allow_nil: false }, on: :create
 
-  scope :valuation_open, -> { where(valuation_finished: false) }
-  scope :without_admin, -> { valuation_open.where(administrator_id: nil) }
-  scope :managed, -> { valuation_open.where(valuation_assignments_count: 0).where("administrator_id IS NOT ?", nil) }
-  scope :valuating, -> { valuation_open.where("valuation_assignments_count > 0 AND valuation_finished = ?", false) }
-  scope :valuation_finished, -> { where(valuation_finished: true) }
+  scope :valuation_open,         -> { where(valuation_finished: false) }
+  scope :without_admin,          -> { valuation_open.where(administrator_id: nil) }
+  scope :managed,                -> { valuation_open.where(valuation_assignments_count: 0).where("administrator_id IS NOT ?", nil) }
+  scope :valuating,              -> { valuation_open.where("valuation_assignments_count > 0 AND valuation_finished = ?", false) }
+  scope :valuation_finished,     -> { where(valuation_finished: true) }
 
-  scope :for_render, -> { includes(:geozone, administrator: :user, valuators: :user) }
+  scope :by_admin,    -> (admin)    { where(administrator_id: admin.presence) }
+  scope :by_tag,      -> (tag_name) { tagged_with(tag_name) }
+  scope :by_valuator, -> (valuator) { where("valuation_assignments.valuator_id = ?", valuator.presence).joins(:valuation_assignments) }
+
+  scope :for_render,             -> { includes(:geozone, administrator: :user, valuators: :user) }
 
   def description
     super.try :html_safe
@@ -33,7 +38,8 @@ class SpendingProposal < ActiveRecord::Base
   def self.search(params, current_filter)
     results = self
     results = results.by_geozone(params[:geozone_id])             if params[:geozone_id].present?
-    results = results.by_administrator(params[:administrator_id]) if params[:administrator_id].present?
+    results = results.by_admin(params[:administrator_id])         if params[:administrator_id].present?
+    results = results.by_tag(params[:tag_name])                   if params[:tag_name].present?
     results = results.by_valuator(params[:valuator_id])           if params[:valuator_id].present?
     results = results.send(current_filter)                        if current_filter.present?
     results.for_render
@@ -45,14 +51,6 @@ class SpendingProposal < ActiveRecord::Base
     else
       where(geozone_id: geozone.presence)
     end
-  end
-
-  def self.by_administrator(administrator)
-    where(administrator_id: administrator.presence)
-  end
-
-  def self.by_valuator(valuator)
-    joins(:valuation_assignments).includes(:valuators).where("valuation_assignments.valuator_id = ?", valuator.presence)
   end
 
   def feasibility

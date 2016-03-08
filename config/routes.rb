@@ -130,7 +130,7 @@ Rails.application.routes.draw do
       end
     end
 
-    resources :spending_proposals, only: [:index, :show] do
+    resources :spending_proposals, only: [:index, :show, :edit, :update] do
       member do
         patch :assign_admin
         patch :assign_valuators
