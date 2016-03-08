@@ -641,6 +641,10 @@ form {
     line-height: $line-height;
   }
 
+  fieldset legend {
+    font-weight: bold;
+  }
+
   input, textarea {
     height: 48px\9;
     line-height: 48px\9;
@@ -648,13 +652,28 @@ form {
     width: 100%\9;
   }
 
-  input[type="checkbox"] {
+  input[type="checkbox"],
+  input[type="radio"] {
     height: auto\9;
     line-height: inherit\9;
     width: auto\9;
   }
 
-  input[type]:not([type=submit]):not([type=file]):not([type=checkbox]) {
+  input[type="radio"] {
+    height: $line-height !important;
+    vertical-align: top;
+    width: 18px\9;
+
+    + label {
+      font-weight: normal;
+    }
+
+    &:checked + label {
+      font-weight: bold;
+    }
+  }
+
+  input[type]:not([type=submit]):not([type=file]):not([type=checkbox]):not([type=radio]) {
     background: $input-bg;
     height: $line-height*2;
     margin-bottom: rem-calc(16);
