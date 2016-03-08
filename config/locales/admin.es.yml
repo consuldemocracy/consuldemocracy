@@ -165,11 +165,11 @@ es:
         no_valuators_assigned: Sin evaluador
       show:
         back: Volver
-        heading: Propuesta de inversión
-        info: Datos de envío
+        heading: Propuesta de inversión %{id}
+        edit_button: Editar
         association_name: Asociación
-        by: Enviada por
-        sent: Fecha de creación
+        by: Autor
+        sent: Fecha
         geozone: Ámbito
         dossier: Informe
         price: Coste
@@ -180,12 +180,13 @@ es:
         undefined: Sin definir
         valuation_finished: Informe finalizado
         internal_comments: Commentarios internos
-        responsibles: Responsables
+        classification: Clasificación
         assigned_admin: Administrador asignado
         assigned_valuators: Evaluadores asignados
         assign_valuators: Asignar evaluadores
         no_valuators: No hay ningún usuario evaluador
         assign: Asignar
+        tags: Etiquetas
       edit:
         submit_button: Actualizar
     stats:

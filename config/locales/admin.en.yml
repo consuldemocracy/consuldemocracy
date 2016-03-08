@@ -165,11 +165,11 @@ en:
         no_valuators_assigned: No valuators assigned
       show:
         back: Back
-        heading: Investment project
-        info: Author info
-        association_name: Asociación
-        by: Sent by
-        sent: Sent at
+        heading: "Investment project %{id}"
+        edit_button: Update
+        association_name: Association
+        by: By
+        sent: Sent
         geozone: Scope
         dossier: Dossier
         price: Price
@@ -180,12 +180,13 @@ en:
         undefined: Undefined
         valuation_finished: Valuation finished
         internal_comments: Internal comments
-        responsibles: Responsibles
+        classification: Clasificación
         assigned_admin: Assigned admin
         assigned_valuators: Assigned valuators
         assign_valuators: Assign valuators
         no_valuators: There is not any valuator user
         assign: Assign
+        tags: Tags
       edit:
         submit_button: Update
     stats:
