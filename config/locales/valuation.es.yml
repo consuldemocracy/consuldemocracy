@@ -13,8 +13,7 @@ es:
           valuating: En evaluación
           valuation_finished: Evaluación finalizada
         title: Propuestas de inversión para presupuestos participativos
-        admin_assigned: Administrador asignado
-        no_admin_assigned: Sin admin asignado
+        edit: Editar
         valuators_assigned:
           one: Evaluador asignado
           other: "%{count} evaluadores asignados"
@@ -28,6 +27,7 @@ es:
         sent: Fecha de creación
         geozone: Ámbito
         dossier: Informe
+        edit_dossier: Editar informe
         price: Coste
         price_first_year: Coste en el primer año
         currency: "€"
@@ -36,7 +36,24 @@ es:
         not_feasible: No viable
         undefined: Sin definir
         valuation_finished: Informe finalizado
-        internal_comments: Commentarios internos
+        time_scope: Plazo de ejecución
+        internal_comments: Comentarios internos
         responsibles: Responsables
         assigned_admin: Administrador asignado
         assigned_valuators: Evaluadores asignados
+      edit:
+        dossier: Informe
+        price: Coste
+        price_first_year: Coste en el primer año
+        currency: "€"
+        price_explanation: Justificación del precio
+        feasibility: Viabilidad
+        feasible: Viable
+        not_feasible: No viable
+        feasible_explanation: Justificación de la viabilidad
+        valuation_finished: Informe finalizado
+        time_scope: Plazo de ejecución
+        internal_comments: Comentarios internos
+        save: Guardar cambios
+      notice:
+        valuate: "Informe actualizado"

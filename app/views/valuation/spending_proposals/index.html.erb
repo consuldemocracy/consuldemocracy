@@ -33,11 +33,7 @@
         <%= link_to spending_proposal.title, valuation_spending_proposal_path(spending_proposal) %>
       </td>
       <td class="small">
-        <% if spending_proposal.administrator.present? %>
-          <span title="<%= t('valuation.spending_proposals.index.admin_assigned') %>"><%= spending_proposal.administrator.name %></span>
-        <% else %>
-          <%= t("valuation.spending_proposals.index.no_admin_assigned") %>
-        <% end %>
+        <%= link_to t("valuation.spending_proposals.index.edit"), edit_valuation_spending_proposal_path(spending_proposal) %>
       </td>
       <td class="small">
         <% case spending_proposal.valuators.size %>

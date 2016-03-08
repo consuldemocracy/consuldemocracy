@@ -13,8 +13,7 @@ en:
           valuating: Under valuation
           valuation_finished: Valuation finished
         title: Investment projects for participatory budgeting
-        admin_assigned: Assigned administrator
-        no_admin_assigned: No admin assigned
+        edit: Edit
         valuators_assigned:
           one: Assigned valuator
           other: "%{count} valuators assigned"
@@ -28,6 +27,7 @@ en:
         sent: Sent at
         geozone: Scope
         dossier: Dossier
+        edit_dossier: Edit dossier
         price: Price
         price_first_year: Cost during the first year
         currency: "€"
@@ -36,7 +36,26 @@ en:
         not_feasible: Not feasible
         undefined: Undefined
         valuation_finished: Valuation finished
+        time_scope: Time scope
         internal_comments: Internal comments
         responsibles: Responsibles
         assigned_admin: Assigned admin
         assigned_valuators: Assigned valuators
+      edit:
+        dossier: Dossier
+        price: Price
+        price_first_year: Cost during the first year
+        currency: "€"
+        price_explanation: Price explanation
+        feasibility: Feasibility
+        feasible: Feasible
+        not_feasible: Not feasible
+        feasible_explanation: Feasibility explanation
+        valuation_finished: Valuation finished
+        time_scope: Time scope
+        internal_comments: Internal comments
+        save: Save changes
+      notice:
+        valuate: "Dossier updated"
+
+

@@ -3,8 +3,8 @@ require 'rails_helper'
 feature 'Valuation spending proposals' do
 
   background do
-    valuator = create(:valuator)
-    login_as(valuator.user)
+    @valuator = create(:valuator, user: create(:user, username: 'Rachel', email: 'rachel@valuators.org'))
+    login_as(@valuator.user)
   end
 
   scenario 'Disabled with a feature flag' do
@@ -35,17 +35,14 @@ feature 'Valuation spending proposals' do
     visit valuation_spending_proposals_path
 
     within("#spending_proposal_#{spending_proposal1.id}") do
-      expect(page).to have_content("No admin assigned")
       expect(page).to have_content("Olga")
     end
 
     within("#spending_proposal_#{spending_proposal2.id}") do
-      expect(page).to have_content("No admin assigned")
       expect(page).to have_content("2 valuators assigned")
     end
 
     within("#spending_proposal_#{spending_proposal3.id}") do
-      expect(page).to have_content("Gema")
       expect(page).to have_content("No valuators assigned")
     end
   end
@@ -76,10 +73,10 @@ feature 'Valuation spending proposals' do
 
   scenario "Index filtering by valuator", :js do
     user = create(:user, username: 'Karnak')
-    valuator = create(:valuator, user: user)
+    valuator1 = create(:valuator, user: user)
 
     spending = create(:spending_proposal, title: "Realocate visitors")
-    spending.valuators << valuator
+    spending.valuators << valuator1
     create(:spending_proposal, title: "Destroy the city")
 
     visit valuation_spending_proposals_path
@@ -142,7 +139,7 @@ feature 'Valuation spending proposals' do
 
   scenario 'Show' do
     administrator = create(:administrator, user: create(:user, username: 'Ana', email: 'ana@admins.org'))
-    valuator = create(:valuator, user: create(:user, username: 'Rachel', email: 'rachel@valuators.org'))
+    valuator2 = create(:valuator, user: create(:user, username: 'Rick', email: 'rick@valuators.org'))
     spending_proposal = create(:spending_proposal,
                                 geozone: create(:geozone),
                                 association_name: 'People of the neighbourhood',
@@ -150,7 +147,7 @@ feature 'Valuation spending proposals' do
                                 feasible: false,
                                 feasible_explanation: 'It is impossible',
                                 administrator: administrator)
-    spending_proposal.valuators << valuator
+    spending_proposal.valuators << [@valuator, valuator2]
 
     visit valuation_spending_proposals_path
 
@@ -168,6 +165,74 @@ feature 'Valuation spending proposals' do
 
     within('#assigned_valuators') do
       expect(page).to have_content('Rachel (rachel@valuators.org)')
+      expect(page).to have_content('Rick (rick@valuators.org)')
+    end
+  end
+
+  feature 'Valuate' do
+    background do
+      @spending_proposal = create(:spending_proposal,
+                                geozone: create(:geozone),
+                                administrator: create(:administrator))
+      @spending_proposal.valuators << @valuator
+    end
+
+    scenario 'Dossier empty by default' do
+      visit valuation_spending_proposals_path
+      click_link @spending_proposal.title
+
+      within('#price') { expect(page).to have_content('Undefined') }
+      within('#price_first_year') { expect(page).to have_content('Undefined') }
+      within('#time_scope') { expect(page).to have_content('Undefined') }
+      within('#feasibility') { expect(page).to have_content('Undefined') }
+      expect(page).to_not have_content('Valuation finished')
+      expect(page).to_not have_content('Internal comments')
+    end
+
+    scenario 'Edit dossier' do
+      visit valuation_spending_proposals_path
+      within("#spending_proposal_#{@spending_proposal.id}") do
+        click_link "Edit"
+      end
+
+      fill_in 'spending_proposal_price', with: '12345.67'
+      fill_in 'spending_proposal_price_first_year', with: '8910.11'
+      fill_in 'spending_proposal_price_explanation', with: 'Very cheap idea'
+      choose  'spending_proposal_feasible_true'
+      fill_in 'spending_proposal_feasible_explanation', with: 'Everything is legal and easy to do'
+      fill_in 'spending_proposal_time_scope', with: '19 months'
+      fill_in 'spending_proposal_internal_comments', with: 'Should be double checked by the urbanism area'
+      click_button 'Save changes'
+
+      expect(page).to have_content "Dossier updated"
+
+      visit valuation_spending_proposals_path
+      click_link @spending_proposal.title
+
+      within('#price') { expect(page).to have_content('12345.67') }
+      within('#price_first_year') { expect(page).to have_content('8910.11') }
+      expect(page).to have_content('Very cheap idea')
+      within('#time_scope') { expect(page).to have_content('19 months') }
+      within('#feasibility') { expect(page).to have_content('Feasible') }
+      expect(page).to_not have_content('Valuation finished')
+      expect(page).to have_content('Internal comments')
+      expect(page).to have_content('Should be double checked by the urbanism area')
+    end
+
+    scenario 'Finish valuation' do
+      visit valuation_spending_proposal_path(@spending_proposal)
+      click_link 'Edit dossier'
+
+      check 'spending_proposal_valuation_finished'
+      click_button 'Save changes'
+
+      visit valuation_spending_proposals_path
+      expect(page).to_not have_content @spending_proposal.title
+      click_link 'Valuation finished'
+
+      expect(page).to have_content @spending_proposal.title
+      click_link @spending_proposal.title
+      expect(page).to have_content('Valuation finished')
     end
   end
 
