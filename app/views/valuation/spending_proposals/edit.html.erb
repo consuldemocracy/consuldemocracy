@@ -4,25 +4,6 @@
 <%= form_for(@spending_proposal, url: valuate_valuation_spending_proposal_path(@spending_proposal)) do |f| %>
   <%= render 'shared/errors', resource: @spending_proposal %>
   <div class="row">
-    <div class="small-12 medium-4 column">
-      <%= f.label :price, "#{t('valuation.spending_proposals.edit.price')} (#{t('valuation.spending_proposals.edit.currency')})" %>
-      <%= f.number_field :price, label: false, max: 1000000000000000  %>
-    </div>
-
-    <div class="small-12 medium-4 column end">
-      <%= f.label :price_first_year, "#{t('valuation.spending_proposals.edit.price_first_year')} ( #{t('valuation.spending_proposals.edit.currency')})" %>
-      <%= f.number_field :price_first_year, label: false, max: 1000000000000000 %>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="small-12 medium-8 column">
-      <%= f.label :price_explanation, t("valuation.spending_proposals.edit.price_explanation") %>
-      <%= f.text_area :price_explanation, label: false, rows: 3 %>
-    </div>
-  </div>
-
-  <div class="row">
     <div class="small-12 medium-8 column">
       <fieldset class="fieldset">
         <legend><%= t('valuation.spending_proposals.edit.feasibility') %></legend>
@@ -47,6 +28,25 @@
     <div class="small-12 medium-8 column">
       <%= f.label :feasible_explanation, t("valuation.spending_proposals.edit.feasible_explanation") %>
       <%= f.text_area :feasible_explanation, label: false, rows: 3 %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="small-12 medium-4 column">
+      <%= f.label :price, "#{t('valuation.spending_proposals.edit.price')} (#{t('valuation.spending_proposals.edit.currency')})" %>
+      <%= f.number_field :price, label: false, max: 1000000000000000  %>
+    </div>
+
+    <div class="small-12 medium-4 column end">
+      <%= f.label :price_first_year, "#{t('valuation.spending_proposals.edit.price_first_year', currency: t('valuation.spending_proposals.edit.currency'))}" %>
+      <%= f.number_field :price_first_year, label: false, max: 1000000000000000 %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="small-12 medium-8 column">
+      <%= f.label :price_explanation, t("valuation.spending_proposals.edit.price_explanation") %>
+      <%= f.text_area :price_explanation, label: false, rows: 3 %>
     </div>
   </div>
 
