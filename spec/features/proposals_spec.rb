@@ -619,7 +619,6 @@ feature 'Proposals' do
       scenario "Maintain search criteria" do
         visit proposals_path
 
-
         within(".expanded #search_form") do
           fill_in "search", with: "Schwifty"
           click_button "Search"
