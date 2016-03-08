@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-feature 'Spain square' do
+xfeature 'Spain square' do
 
   context "Fill out survey" do
 
