@@ -13,3 +13,4 @@ es:
         notice: "%{resource_name} actualizado correctamente."
         debate: "Debate actualizado correctamente."
         proposal: "Propuesta actualizada correctamente."
+        spending_proposal: "Propuesta de inversión actualizada correctamente."

@@ -150,43 +150,39 @@ es:
       index:
         geozone_filter_all: Todos los ámbitos de actuación
         administrator_filter_all: Todos los administradores
+        tags_filter_all: Todas las etiquetas
         filters:
           valuation_open: Abiertas
-          without_admin: Sin administrador asignado
+          without_admin: Sin administrador
           managed: Gestionando
           valuating: En evaluación
           valuation_finished: Evaluación finalizada
         title: Propuestas de inversión para presupuestos participativos
-        admin_assigned: Administrador asignado
+        assigned_admin: Administrador asignado
         no_admin_assigned: Sin admin asignado
-        valuators_assigned:
-          one: Evaluador asignado
-          other: "%{count} evaluadores asignados"
         no_valuators_assigned: Sin evaluador
       show:
-        back: Volver
-        heading: Propuesta de inversión
-        info: Datos de envío
-        association_name: Asociación
-        by: Enviada por
-        sent: Fecha de creación
-        geozone: Ámbito
-        dossier: Informe
-        price: Coste
-        price_first_year: Coste en el primer año
-        currency: "€"
-        feasibility: Viabilidad
-        feasible: Viable
-        not_feasible: No viable
-        undefined: Sin definir
-        valuation_finished: Informe finalizado
-        internal_comments: Commentarios internos
-        responsibles: Responsables
         assigned_admin: Administrador asignado
         assigned_valuators: Evaluadores asignados
-        assign_valuators: Asignar evaluadores
-        no_valuators: No hay ningún usuario evaluador
-        assign: Asignar
+        back: Volver
+        classification: Clasificación
+        heading: Propuesta de inversión %{id}
+        edit_button: Editar
+        association_name: Asociación
+        by: Autor
+        sent: Fecha
+        geozone: Ámbito
+        dossier: Informe
+        edit_dossier: Editar informe
+        tags: Etiquetas
+        undefined: Sin definir
+      edit:
+        classification: Clasificación
+        assigned_valuators: Evaluadores
+        submit_button: Actualizar
+        tags: Etiquetas
+        tags_placeholder: "Escribe las etiquetas que desees separadas por comas (,)"
+        undefined: Sin definir
     stats:
       show:
         stats_title: Estadísticas

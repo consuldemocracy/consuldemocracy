@@ -1,4 +1,7 @@
-<%= link_to t("valuation.spending_proposals.show.back"), :back, class: 'back' %>
+<%= link_to :back, class: 'back' do %>
+  <i class="icon-angle-left"></i> <%= t("valuation.spending_proposals.show.back") %>
+<% end %>
+
 <h2><%= t("valuation.spending_proposals.show.heading") %> <%= @spending_proposal.id %> </h2>
 <h1><%= @spending_proposal.title %></h1>
 
@@ -32,7 +35,7 @@
 
 <p><strong><%= t("valuation.spending_proposals.show.assigned_admin") %>:</strong>
   <% if @spending_proposal.administrator.present? %>
-    <%= @spending_proposal.administrator.name %> (<%= @spending_proposal.administrator.email %>)
+    <%= @spending_proposal.administrator.name_and_email %>
   <% else %>
     <%= t("valuation.spending_proposals.show.undefined") %></li>
   <% end %>
@@ -42,7 +45,7 @@
 <div id="assigned_valuators">
   <ul>
     <% @spending_proposal.valuators.each do |valuator| %>
-      <li><%= valuator.name %> (<%= valuator.email %>)</li>
+      <li><%= valuator.name_and_email %></li>
     <% end %>
 
     <% if @spending_proposal.valuators.empty? %>
@@ -57,36 +60,4 @@
   <%= link_to t("valuation.spending_proposals.show.edit_dossier"), edit_valuation_spending_proposal_path(@spending_proposal) %>
 </p>
 
-<p id="price">
-  <strong><%= t("valuation.spending_proposals.show.price") %> (<%= t("valuation.spending_proposals.show.currency") %>):</strong>
-  <%= @spending_proposal.price.presence or t("valuation.spending_proposals.show.undefined") %>
-</p>
-<p id="price_first_year">
-  <strong><%= t("valuation.spending_proposals.show.price_first_year") %> (<%= t("valuation.spending_proposals.show.currency") %>):</strong>
-  <%= @spending_proposal.price_first_year.presence or t("valuation.spending_proposals.show.undefined") %>
-</p>
-
-<%= explanation_field @spending_proposal.price_explanation %>
-
-<p id="time_scope">
-  <strong><%= t("valuation.spending_proposals.show.time_scope") %>:</strong>
-  <%= @spending_proposal.time_scope.presence or  t("valuation.spending_proposals.show.undefined") %>
-</p>
-
-<p id="feasibility">
-  <strong><%= t("valuation.spending_proposals.show.feasibility") %>:</strong>
-  <%= t("valuation.spending_proposals.show.#{@spending_proposal.feasibility}") %>
-</p>
-
-<%= explanation_field @spending_proposal.feasible_explanation %>
-
-<% if @spending_proposal.valuation_finished %>
-  <p>
-    <strong><%= t("valuation.spending_proposals.show.valuation_finished") %></strong>
-  </p>
-<% end %>
-
-<% if @spending_proposal.internal_comments.present? %>
-  <h2><%= t("valuation.spending_proposals.show.internal_comments") %></h2>
-  <%= simple_format_no_tags_no_sanitize(safe_html_with_links(@spending_proposal.internal_comments.html_safe)) %>
-<% end %>
+<%= render 'written_by_valuators' %>

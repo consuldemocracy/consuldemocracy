@@ -150,6 +150,7 @@ en:
       index:
         geozone_filter_all: All zones
         administrator_filter_all: All administrators
+        tags_filter_all: All tags
         filters:
           valuation_open: Open
           without_admin: Without assigned admin
@@ -157,36 +158,31 @@ en:
           valuating: Under valuation
           valuation_finished: Valuation finished
         title: Investment projects for participatory budgeting
-        admin_assigned: Assigned administrator
+        assigned_admin: Assigned administrator
         no_admin_assigned: No admin assigned
-        valuators_assigned:
-          one: Assigned valuator
-          other: "%{count} valuators assigned"
         no_valuators_assigned: No valuators assigned
       show:
+        assigned_admin: Assigned administrator
+        assigned_valuators: Assigned valuators
         back: Back
-        heading: Investment project
-        info: Author info
-        association_name: Asociación
-        by: Sent by
-        sent: Sent at
+        classification: Clasification
+        heading: "Investment project %{id}"
+        edit_button: Edit
+        association_name: Association
+        by: By
+        sent: Sent
         geozone: Scope
         dossier: Dossier
-        price: Price
-        price_first_year: Cost during the first year
-        currency: "€"
-        feasibility: Feasibility
-        feasible: Feasible
-        not_feasible: Not feasible
+        edit_dossier: Edit dossier
+        tags: Tags
         undefined: Undefined
-        valuation_finished: Valuation finished
-        internal_comments: Internal comments
-        responsibles: Responsibles
-        assigned_admin: Assigned admin
-        assigned_valuators: Assigned valuators
-        assign_valuators: Assign valuators
-        no_valuators: There is not any valuator user
-        assign: Assign
+      edit:
+        classification: Clasification
+        assigned_valuators: Valuators
+        submit_button: Update
+        tags: Tags
+        tags_placeholder: "Write the tags you want separated by commas (,)"
+        undefined: Undefined
     stats:
       show:
         stats_title: Stats

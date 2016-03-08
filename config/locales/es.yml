@@ -442,6 +442,7 @@ es:
       recommendation_two: Cada propuesta debe presentarse por separado. Puedes hacer cuantas quieras.
       recommendations_title: Cómo crear una propuesta de inversión
       start_new: Crear una propuesta de inversión
+    wrong_price_format: Solo puede incluir caracteres numéricos
   stats:
     index:
       visits: Visitas

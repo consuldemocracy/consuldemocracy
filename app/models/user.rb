@@ -204,6 +204,10 @@ class User < ActiveRecord::Base
     self.update(oauth_email: nil) if oauth_email.present?
   end
 
+  def name_and_email
+    "#{name} (#{email})"
+  end
+
   def save_requiring_finish_signup
     self.update(registering_with_oauth: true)
   end

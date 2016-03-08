@@ -336,7 +336,7 @@ a.delete {
   }
 }
 
-.account-info, .login-as {
+.account-info, .login-as, .info {
   background-color: #e7e7e7;
   border-radius: rem-calc(3);
   font-size: rem-calc(16);
@@ -348,3 +348,8 @@ a.delete {
     font-size: rem-calc(18);
   }
 }
+
+.info p {
+  margin-bottom: 0;
+}
+

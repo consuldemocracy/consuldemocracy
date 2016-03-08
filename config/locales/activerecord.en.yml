@@ -77,3 +77,5 @@ en:
           attributes:
             tag_list:
               less_than_or_equal_to: "tags must be less than or equal to %{count}"
+        spending_proposal:
+          administrator_id: "Administrator"
