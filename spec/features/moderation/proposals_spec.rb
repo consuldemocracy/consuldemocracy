@@ -48,7 +48,7 @@ feature 'Moderate proposals' do
         background do
           @proposal = create(:proposal)
           visit moderation_proposals_path
-          within('.sub-nav') do
+          within('.menu.simple') do
             click_link "All"
           end
 
@@ -122,21 +122,21 @@ feature 'Moderate proposals' do
       expect(page).to have_link('Mark as viewed')
 
       visit moderation_proposals_path(filter: 'all')
-      within('.sub-nav') do
+      within('.menu.simple') do
         expect(page).to_not have_link('All')
         expect(page).to have_link('Pending review')
         expect(page).to have_link('Mark as viewed')
       end
 
       visit moderation_proposals_path(filter: 'pending_flag_review')
-      within('.sub-nav') do
+      within('.menu.simple') do
         expect(page).to have_link('All')
         expect(page).to_not have_link('Pending')
         expect(page).to have_link('Mark as viewed')
       end
 
       visit moderation_proposals_path(filter: 'with_ignored_flag')
-      within('.sub-nav') do
+      within('.menu.simple') do
         expect(page).to have_link('All')
         expect(page).to have_link('Pending review')
         expect(page).to_not have_link('Marked as viewed')

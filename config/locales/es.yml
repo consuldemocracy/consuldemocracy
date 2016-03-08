@@ -27,7 +27,6 @@ es:
       username_label: Nombre de usuario
       verified_account: Cuenta verificada
       verify_my_account: Verificar mi cuenta
-
   application:
     close: Cerrar
     menu: Menú
@@ -484,12 +483,10 @@ es:
       alt: Icono se hace
       description: Si la propuesta es aceptada mayoritariamente, el Ayuntamiento la asume como propia y se hace.
       title: Se hace
-    highlights: 'Portada: '
     proposal:
       alt: Icono propones
       description: Espacio abierto para propuestas ciudadanas sobre el tipo de ciudad en el que queremos vivir.
       title: Propones
-    signed_in_home_title: Actividad reciente
     verification:
       i_dont_have_an_account: No tengo cuenta, quiero crear una y verificarla
       i_have_an_account: Ya tengo una cuenta que quiero verificar

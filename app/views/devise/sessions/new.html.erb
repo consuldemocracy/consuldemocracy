@@ -15,7 +15,7 @@
     </div>
 
     <div class="small-12 columns">
-      <%= link_to t("devise_views.shared.links.new_password"), new_password_path(resource_name), class: "right", tabindex: "3" %>
+      <%= link_to t("devise_views.shared.links.new_password"), new_password_path(resource_name), class: "float-right", tabindex: "3" %>
       <%= f.password_field :password, autocomplete: "off", placeholder: t("devise_views.sessions.new.password_label"), tabindex: "2" %>
     </div>
 
@@ -29,7 +29,7 @@
     <% end -%>
 
     <div class="small-12 columns">
-      <%= f.submit(t("devise_views.sessions.new.submit"), class: "button radius expand") %>
+      <%= f.submit(t("devise_views.sessions.new.submit"), class: "button expanded") %>
     </div>
   </div>
 <% end %>

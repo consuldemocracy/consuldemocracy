@@ -58,6 +58,7 @@ en:
       hidden_users: Hidden users
       incomplete_verifications: Incomplete verifications
       moderators: Moderators
+      valuators: Valuators
       officials: Officials
       organizations: Organisations
       settings: Configuration settings
@@ -69,6 +70,15 @@ en:
       moderator:
         add: Add
         delete: Delete
+      search:
+        email_placeholder: Search user by email
+        search: Search
+        user_not_found: User not found
+    valuators:
+      index:
+        title: Valuators
+      valuator:
+        add: Add
       search:
         email_placeholder: Search user by email
         search: Search
@@ -145,11 +155,11 @@ en:
     spending_proposals:
       index:
         geozone_filter_all: All zones
-        geozone_label: Zone
+        administrator_filter_all: All administrators
         filters:
-          all: All
+          valuation_open: Open
           without_admin: Without assigned admin
-          without_valuators: Without valuator
+          managed: Managed
           valuating: Under valuation
           valuation_finished: Valuation finished
         title: Investment projects for participatory budgeting
@@ -160,8 +170,9 @@ en:
           other: "%{count} valuators assigned"
         no_valuators_assigned: No valuators assigned
         search: Search
-        search_placeholder: Search Spending proposals
+        search_placeholder: Search for title or description
       show:
+        back: Back
         heading: Investment project
         info: Author info
         association_name: Asociación

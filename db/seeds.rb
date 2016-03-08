@@ -57,3 +57,6 @@ Setting['feature.twitter_login'] = true
 Setting['feature.facebook_login'] = true
 Setting['feature.google_login'] = true
 Setting['feature.public_stats'] = true
+
+# Max length for comments
+Setting['comments_body_max_length'] = 1000

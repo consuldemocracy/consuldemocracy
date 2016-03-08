@@ -4,8 +4,7 @@ module Searchable
   included do
     include PgSearch
     include SearchCache
-
-    
+   
     if self.table_name == "debates" or 
        self.table_name == "proposals" or 
        self.table_name == "comments"

@@ -13,12 +13,12 @@
       </div>
     </div>
 
-    <div class="progress small-12 success radius">
+    <div class="progress small-12 success">
       <span class="meter" style="width: 33%"></span>
     </div>
 
-    <%= link_to account_path, class: "left back clear" do %>
-      <i class="icon-angle-left left"></i>
+    <%= link_to account_path, class: "back" do %>
+      <i class="icon-angle-left"></i>
       <%= t("verification.back") %>
     <% end %>
 
@@ -38,14 +38,16 @@
     <%= form_for @residence, as: "residence", url: residence_path do |f| %>
       <%= render "errors" %>
 
-      <div class="small-12 medium-8">
-        <div class="small-12 medium-4 left">
-        <%= f.label t("verification.residence.new.document_type_label") %>
-        <%= f.select :document_type, document_types, prompt: "", label: false %>
-        </div>
-        <div class="small-12 medium-5 left">
-        <%= f.label t("verification.residence.new.document_number") %>
-        <%= f.text_field :document_number, label: false %>
+      <div class="row">
+        <div class="small-12 medium-8">
+          <div class="small-12 medium-4 column">
+          <%= f.label t("verification.residence.new.document_type_label") %>
+          <%= f.select :document_type, document_types, prompt: "", label: false %>
+          </div>
+          <div class="small-12 medium-5 column end">
+          <%= f.label t("verification.residence.new.document_number") %>
+          <%= f.text_field :document_number, label: false %>
+          </div>
         </div>
       </div>
 
@@ -76,7 +78,7 @@
       </div>
 
       <div class="small-12 clear">
-        <%= f.submit t("verification.residence.new.verify_residence") %>
+        <%= f.submit t("verification.residence.new.verify_residence"), class: "button success" %>
       </div>
     <% end %>
   </div>

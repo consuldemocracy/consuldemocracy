@@ -18,6 +18,11 @@ class DebatesController < ApplicationController
   helper_method :resource_model, :resource_name
   respond_to :html, :js
 
+  def show
+    super
+    redirect_to debate_path(@debate), status: :moved_permanently if request.path != debate_path(@debate)
+  end
+
   def vote
     @debate.register_vote(current_user, params[:value])
     set_debate_votes(@debate)

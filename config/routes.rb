@@ -29,7 +29,6 @@ Rails.application.routes.draw do
 
   root 'welcome#index'
   get '/welcome', to: 'welcome#welcome'
-  get '/highlights', to: 'welcome#highlights', as: :highlights
   get '/cuentasegura', to: 'welcome#verification', as: :cuentasegura
 
   resources :debates do
@@ -157,6 +156,10 @@ Rails.application.routes.draw do
 
     resources :settings, only: [:index, :update]
     resources :moderators, only: [:index, :create, :destroy] do
+      collection { get :search }
+    end
+
+    resources :valuators, only: [:index, :create] do
       collection { get :search }
     end
 

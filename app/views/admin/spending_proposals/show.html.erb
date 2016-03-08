@@ -1,3 +1,4 @@
+<%= link_to t("admin.spending_proposals.show.back"), :back, class: 'back' %>
 <h2><%= t("admin.spending_proposals.show.heading") %> <%= @spending_proposal.id %></h2>
 <h1><%= @spending_proposal.title %></h1>
 
@@ -30,32 +31,31 @@
 <h2><%= t("admin.spending_proposals.show.responsibles") %></h2>
 
 <p><strong><%= t("admin.spending_proposals.show.assigned_admin") %>:</strong>
-   <%= form_for(@spending_proposal, url: assign_admin_admin_spending_proposal_path(@spending_proposal), remote: true, html: {id: 'administrator_assignment_form'}) do |f| %>
-     <%= f.select :administrator_id, @admins.collect { |a| [ "#{a.name} (#{a.email})", a.id ] }, {include_blank: t("admin.spending_proposals.show.undefined"), label: false}, class: "js-submit-on-change" %>
-   <% end %>
- </p>
+  <%= form_for(@spending_proposal, url: assign_admin_admin_spending_proposal_path(@spending_proposal), remote: true, html: {id: 'administrator_assignment_form'}) do |f| %>
+   <%= f.select :administrator_id, @admins.collect { |a| [ "#{a.name} (#{a.email})", a.id ] }, {include_blank: t("admin.spending_proposals.show.undefined"), label: false}, class: "js-submit-on-change" %>
+  <% end %>
+</p>
 
 <p><strong><%= t("admin.spending_proposals.show.assigned_valuators") %>:</strong></p>
 <div id="assigned_valuators">
   <%= render "assigned_valuators" %>
 </div>
 
-<h3><%= link_to t("admin.spending_proposals.show.assign_valuators"), "", class: "js-toggle-link", data: {"toggle-selector" => "#valuators-assign-list"} %></h3>
+<%= link_to t("admin.spending_proposals.show.assign_valuators"), "", class: "js-toggle-link", data: {"toggle-selector" => "#valuators-assign-list"} %>
 
-<div style="display:none" id="valuators-assign-list">
+<div style="display:none" id="valuators-assign-list" class="row">
   <%= form_for(@spending_proposal, url: assign_valuators_admin_spending_proposal_path(@spending_proposal), remote: true, html: {id: 'valuators_assignment_form'}) do |f| %>
     <% @valuators.each do |valuator| %>
-      <div>
+      <div class="small-12 medium-4 column end">
         <%= check_box_tag "valuator_ids_#{valuator.id}", valuator.id, @spending_proposal.valuators.include?(valuator),
                           name: 'spending_proposal[valuator_ids][]',
                           class: "js-submit-on-change" %>
-        <%= label_tag "valuator_ids_#{valuator.id}", valuator.name %>
+        <%= label_tag "valuator_ids_#{valuator.id}", truncate(valuator.email), class: "inline" %>
       </div>
     <% end -%>
   <% end -%>
   <% if @valuators.blank? %><p><%= t("admin.spending_proposals.show.no_valuators") %></p><% end %>
 </div>
-
 
 <h2><%= t("admin.spending_proposals.show.dossier") %></h2>
 

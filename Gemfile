@@ -5,7 +5,7 @@ gem 'rails', '4.2.5.2'
 # Use PostgreSQL
 gem 'pg'
 # Use SCSS for stylesheets
-gem 'sassc-rails'
+gem 'sass-rails', '~> 5.0', '>= 5.0.4'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
@@ -19,7 +19,7 @@ gem 'jquery-ui-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 
-gem 'devise'
+gem 'devise', '~> 3.5.6'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 gem 'omniauth'

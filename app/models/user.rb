@@ -156,7 +156,9 @@ class User < ActiveRecord::Base
       confirmation_token: nil,
       reset_password_token: nil,
       email_verification_token: nil,
-      tsv: nil
+      tsv: nil,
+      confirmed_phone: nil,
+      unconfirmed_phone: nil
     )
   end
 
@@ -168,9 +170,9 @@ class User < ActiveRecord::Base
     Lock.find_or_create_by(user: self).locked?
   end
 
-  def self.search(term)
-    term.present? ? where("email = ? OR username ILIKE ?", term, "%#{term}%") : none
-  end
+  #def self.search(term)
+  #  term.present? ? where("email = ? OR username ILIKE ?", term, "%#{term}%") : none
+  #end
 
   def self.username_max_length
     @@username_max_length ||= self.columns.find { |c| c.name == 'username' }.limit || 60

@@ -1,12 +1,12 @@
 <h2>
   <%= t("admin.officials.edit.title") %>
-  <span class="official right"><strong><%= @user.name %></strong> (<%= @user.email %>)</span>
+  <span class="official float-right"><strong><%= @user.name %></strong> (<%= @user.email %>)</span>
 </h2>
 
 <%= form_for @user, url: admin_official_path(@user)  do |f| %>
   <%= f.text_field :official_position %>
   <%= f.select :official_level, official_level_options %>
-  <%= link_to t("admin.officials.edit.back"), admin_officials_path, class: "button radius small secondary" %>
+  <%= link_to t("admin.officials.edit.back"), admin_officials_path, class: "button small secondary" %>
   <%= f.submit %>
 
   <% if @user.official? %>

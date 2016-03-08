@@ -74,10 +74,32 @@ feature 'Admin spending proposals' do
     expect(page).to have_link("Destroy the city")
   end
 
+  scenario "Index filtering by admin", :js do
+    user = create(:user, username: 'Admin 1')
+    administrator = create(:administrator, user: user)
+
+    create(:spending_proposal, title: "Realocate visitors", administrator: administrator)
+    create(:spending_proposal, title: "Destroy the city")
+
+    visit admin_spending_proposals_path
+    expect(page).to have_link("Realocate visitors")
+    expect(page).to have_link("Destroy the city")
+
+    select "Admin 1", from: "administrator_id"
+
+    expect(page).to have_link("Realocate visitors")
+    expect(page).to_not have_link("Destroy the city")
+
+    select "All administrators", from: "administrator_id"
+
+    expect(page).to have_link("Destroy the city")
+    expect(page).to have_link("Realocate visitors")
+  end
+
   scenario "Current filter is properly highlighted" do
-    filters_links = {'all' => 'All',
+    filters_links = {'valuation_open' => 'Open',
                      'without_admin' => 'Without assigned admin',
-                     'without_valuators' => 'Without valuator',
+                     'managed' => 'Managed',
                      'valuating' => 'Under valuation',
                      'valuation_finished' => 'Valuation finished'}
 
@@ -102,7 +124,7 @@ feature 'Admin spending proposals' do
     valuating = create(:spending_proposal, title: "Evaluating...")
     valuating.valuators << create(:valuator)
 
-    visit admin_spending_proposals_path(filter: 'all')
+    visit admin_spending_proposals_path(filter: 'valuation_open')
 
     expect(page).to have_content("Assigned idea")
     expect(page).to have_content("Evaluating...")
@@ -112,7 +134,7 @@ feature 'Admin spending proposals' do
     expect(page).to have_content("Evaluating...")
     expect(page).to_not have_content("Assigned idea")
 
-    visit admin_spending_proposals_path(filter: 'without_valuators')
+    visit admin_spending_proposals_path(filter: 'managed')
 
     expect(page).to have_content("Assigned idea")
     expect(page).to_not have_content("Evaluating...")
@@ -124,10 +146,10 @@ feature 'Admin spending proposals' do
     valuating.valuators << create(:valuator)
     valuated.valuators << create(:valuator)
 
-    visit admin_spending_proposals_path(filter: 'all')
+    visit admin_spending_proposals_path(filter: 'valuation_open')
 
     expect(page).to have_content("Ongoing valuation")
-    expect(page).to have_content("Old idea")
+    expect(page).to_not have_content("Old idea")
 
     visit admin_spending_proposals_path(filter: 'valuating')
 
@@ -187,7 +209,7 @@ feature 'Admin spending proposals' do
     expect(page).to have_select('spending_proposal[administrator_id]', selected: 'Ana (ana@admins.org)')
   end
 
-  scenario 'Valuators assigments', :js do
+  scenario 'Valuators assignments', :js do
     spending_proposal = create(:spending_proposal)
 
     valuator1 = create(:valuator, user: create(:user, username: 'Valentina', email: 'v1@valuators.org'))

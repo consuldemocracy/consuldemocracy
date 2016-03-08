@@ -61,30 +61,43 @@ describe SpendingProposal do
     end
   end
 
-
   describe "scopes" do
+    describe "valuation_open" do
+      it "should return all spending proposals with false valuation_finished" do
+        spending_proposal1 = create(:spending_proposal, valuation_finished: true)
+        spending_proposal2 = create(:spending_proposal)
+
+        valuation_open = SpendingProposal.valuation_open
+
+        expect(valuation_open.size).to eq(1)
+        expect(valuation_open.first).to eq(spending_proposal2)
+      end
+    end
+
     describe "without_admin" do
-      it "should return all spending proposals without assigned admin" do
-        spending_proposal1 = create(:spending_proposal)
+      it "should return all open spending proposals without assigned admin" do
+        spending_proposal1 = create(:spending_proposal, valuation_finished: true)
         spending_proposal2 = create(:spending_proposal, administrator: create(:administrator))
+        spending_proposal3 = create(:spending_proposal)
 
         without_admin = SpendingProposal.without_admin
 
         expect(without_admin.size).to eq(1)
-        expect(without_admin.first).to eq(spending_proposal1)
+        expect(without_admin.first).to eq(spending_proposal3)
       end
     end
 
-    describe "without_valuators" do
-      it "should return all spending proposals without assigned valuators" do
-        spending_proposal1 = create(:spending_proposal)
-        spending_proposal2 = create(:spending_proposal)
+    describe "managed" do
+      it "should return all open spending proposals with assigned admin but without assigned valuators" do
+        spending_proposal1 = create(:spending_proposal, administrator: create(:administrator))
+        spending_proposal2 = create(:spending_proposal, administrator: create(:administrator), valuation_finished: true)
+        spending_proposal3 = create(:spending_proposal, administrator: create(:administrator))
         spending_proposal1.valuators << create(:valuator)
 
-        without_admin = SpendingProposal.without_valuators
+        managed = SpendingProposal.managed
 
-        expect(without_admin.size).to eq(1)
-        expect(without_admin.first).to eq(spending_proposal2)
+        expect(managed.size).to eq(1)
+        expect(managed.first).to eq(spending_proposal3)
       end
     end
 
@@ -97,10 +110,10 @@ describe SpendingProposal do
         spending_proposal2.valuators << create(:valuator)
         spending_proposal3.valuators << create(:valuator)
 
-        without_admin = SpendingProposal.valuating
+        valuating = SpendingProposal.valuating
 
-        expect(without_admin.size).to eq(1)
-        expect(without_admin.first).to eq(spending_proposal2)
+        expect(valuating.size).to eq(1)
+        expect(valuating.first).to eq(spending_proposal2)
       end
     end
 
@@ -113,10 +126,10 @@ describe SpendingProposal do
         spending_proposal2.valuators << create(:valuator)
         spending_proposal3.valuators << create(:valuator)
 
-        without_admin = SpendingProposal.valuation_finished
+        valuation_finished = SpendingProposal.valuation_finished
 
-        expect(without_admin.size).to eq(1)
-        expect(without_admin.first).to eq(spending_proposal3)
+        expect(valuation_finished.size).to eq(1)
+        expect(valuation_finished.first).to eq(spending_proposal3)
       end
     end
   end

@@ -55,6 +55,10 @@ class Debate < ActiveRecord::Base
     self.pg_search(terms)
   end
 
+  def to_param
+    "#{id}-#{title}".parameterize
+  end
+
   def description
     super.try :html_safe
   end

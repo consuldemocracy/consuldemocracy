@@ -2,22 +2,15 @@ class Admin::SpendingProposalsController < Admin::BaseController
   include FeatureFlags
   feature_flag :spending_proposals
 
-  has_filters %w{all without_admin without_valuators valuating valuation_finished}, only: :index
+  has_filters %w{valuation_open without_admin managed valuating valuation_finished}, only: :index
 
   before_action :parse_search_terms, only: [:index]
   
   load_and_authorize_resource
 
   def index
-    @spending_proposals = geozone_filter(params[:geozone_id].presence)
-                                                            .includes(:geozone, 
-                                                                       administrator: :user, 
-                                                                       valuators: :user)
-                                                            .send(@current_filter)
-                                                            .order(created_at: :desc)
-                                                            .page(params[:page])
-    @spending_proposals = @search_terms.present? ? @spending_proposals.search(@search_terms) : @spending_proposals.all
-
+    @spending_proposals = SpendingProposal.search(params, @current_filter).order(created_at: :desc).page(params[:page])
+    @spending_proposals = @search_terms.present? ? @spending_proposals.search_title(@search_terms) : @spending_proposals.all
   end
 
   def show
@@ -39,18 +32,5 @@ class Admin::SpendingProposalsController < Admin::BaseController
   def parse_search_terms 
     @search_terms = params[:search] if params[:search].present? 
   end 
-
-  private
-
-    def geozone_filter(geozone)
-      case geozone
-      when nil
-        @spending_proposals
-      when 'all'
-        @spending_proposals.where(geozone_id: nil)
-      else
-        @spending_proposals.where(geozone_id: params[:geozone_id].presence)
-      end
-    end
 
 end

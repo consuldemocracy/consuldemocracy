@@ -15,7 +15,7 @@
       <%= official.official_position %>
     </span>
 
-    <%= link_to official.official? ? t("admin.officials.search.edit_official") : t("admin.officials.search.make_official"), edit_admin_official_path(official), class: "button radius tiny right" %>
+    <%= link_to official.official? ? t("admin.officials.search.edit_official") : t("admin.officials.search.make_official"), edit_admin_official_path(official), class: "button small float-right" %>
   </li>
 <% end %>
 </ul>
