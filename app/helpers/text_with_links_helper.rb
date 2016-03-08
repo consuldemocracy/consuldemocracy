@@ -11,4 +11,8 @@ module TextWithLinksHelper
     Rinku.auto_link(html, :all, 'target="_blank" rel="nofollow"').html_safe
   end
 
+  def simple_format_no_tags_no_sanitize(html)
+    simple_format(html, {}, sanitize: false)
+  end
+
 end

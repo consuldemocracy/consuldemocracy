@@ -34,6 +34,7 @@ class SpendingProposal < ActiveRecord::Base
     results = self
     results = results.by_geozone(params[:geozone_id])             if params[:geozone_id].present?
     results = results.by_administrator(params[:administrator_id]) if params[:administrator_id].present?
+    results = results.by_valuator(params[:valuator_id])           if params[:valuator_id].present?
     results = results.send(current_filter)                        if current_filter.present?
     results.for_render
   end
@@ -48,6 +49,10 @@ class SpendingProposal < ActiveRecord::Base
 
   def self.by_administrator(administrator)
     where(administrator_id: administrator.presence)
+  end
+
+  def self.by_valuator(valuator)
+    joins(:valuation_assignments).includes(:valuators).where("valuation_assignments.valuator_id = ?", valuator.presence)
   end
 
   def feasibility

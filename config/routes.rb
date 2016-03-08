@@ -208,6 +208,16 @@ Rails.application.routes.draw do
     end
   end
 
+  namespace :valuation do
+    root to: "spending_proposals#index"
+
+    resources :spending_proposals, only: [:index, :show, :edit] do
+      member do
+        patch :valuate
+      end
+    end
+  end
+
   namespace :management do
     root to: "dashboard#index"
 

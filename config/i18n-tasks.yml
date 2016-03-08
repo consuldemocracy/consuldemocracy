@@ -24,6 +24,7 @@ data:
     - config/locales/%{locale}.yml
     - config/locales/admin.%{locale}.yml
     - config/locales/moderation.%{locale}.yml
+    - config/locales/valuation.%{locale}.yml
     - config/locales/management.%{locale}.yml
     - config/locales/verification.%{locale}.yml
     - config/locales/mailers.%{locale}.yml
@@ -122,6 +123,7 @@ ignore_unused:
   - 'moderation.proposals.index.order*'
   - 'moderation.debates.index.filter*'
   - 'moderation.debates.index.order*'
+  - 'valuation.spending_proposals.index.filter*'
   - 'users.show.filters.*'
   - 'debates.index.select_order'
   - 'debates.index.orders.*'
