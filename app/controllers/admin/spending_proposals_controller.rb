@@ -16,7 +16,7 @@ class Admin::SpendingProposalsController < Admin::BaseController
   def edit
     @admins = Administrator.includes(:user).all
     @valuators = Valuator.includes(:user).all.order("users.username ASC")
-    @tags = ActsAsTaggableOn::Tag.where('taggings.taggable_type' => 'SpendingProposal').includes(:taggings)
+    @tags = ActsAsTaggableOn::Tag.spending_proposal_tags
   end
 
   def update

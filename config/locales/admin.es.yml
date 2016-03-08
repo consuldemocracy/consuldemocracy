@@ -150,6 +150,7 @@ es:
       index:
         geozone_filter_all: Todos los ámbitos de actuación
         administrator_filter_all: Todos los administradores
+        tags_filter_all: Todas las etiquetas
         filters:
           valuation_open: Abiertas
           without_admin: Sin administrador asignado

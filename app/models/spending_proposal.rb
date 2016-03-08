@@ -35,6 +35,7 @@ class SpendingProposal < ActiveRecord::Base
     results = self
     results = results.by_geozone(params[:geozone_id])             if params[:geozone_id].present?
     results = results.by_administrator(params[:administrator_id]) if params[:administrator_id].present?
+    results = results.by_tag(params[:tag_name])                   if params[:tag_name].present?
     results = results.send(current_filter)                        if current_filter.present?
     results.for_render
   end
@@ -49,6 +50,10 @@ class SpendingProposal < ActiveRecord::Base
 
   def self.by_administrator(administrator)
     where(administrator_id: administrator.presence)
+  end
+
+  def self.by_tag(tag_name)
+    tagged_with(tag_name)
   end
 
   def feasibility

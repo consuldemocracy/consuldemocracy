@@ -3,6 +3,13 @@
 <div>
   <%= form_tag admin_spending_proposals_path, method: :get, enforce_utf8: false do %>
     <div class="small-12 medium-4 column float-right">
+      <%= select_tag :tag_name,
+                     options_for_select(spending_proposal_tags_select_options, params[:tag_name]),
+                     { prompt: t("admin.spending_proposals.index.tags_filter_all"),
+                       label: false,
+                       class: "js-submit-on-change" } %>
+    </div>
+    <div class="small-12 medium-4 column float-right">
       <%= select_tag :geozone_id,
                      options_for_select(geozone_select_options.unshift([t("geozones.none"), "all"]), params[:geozone_id]),
                      { prompt: t("admin.spending_proposals.index.geozone_filter_all"),
@@ -25,7 +32,7 @@
 
 <table>
   <% @spending_proposals.each do |spending_proposal| %>
-    <tr id="<%= dom_id(spending_proposal) %>">
+    <tr id="<%= dom_id(spending_proposal) %>" class="spending_proposal">
       <td>
         <strong><%= spending_proposal.id %></strong>
       </td>

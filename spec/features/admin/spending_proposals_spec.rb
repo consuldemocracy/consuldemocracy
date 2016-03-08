@@ -162,6 +162,26 @@ feature 'Admin spending proposals' do
     expect(page).to have_content("Old idea")
   end
 
+  scenario "Index filtering by tag" do
+    create(:spending_proposal, title: 'Educate the children', tag_list: 'Education')
+    create(:spending_proposal, title: 'More schools',         tag_list: 'Education')
+    create(:spending_proposal, title: 'More hospitals',       tag_list: 'Health')
+
+    visit admin_spending_proposals_path
+
+    expect(page).to have_css(".spending_proposal", count: 3)
+    expect(page).to have_content("Educate the children")
+    expect(page).to have_content("More schools")
+    expect(page).to have_content("More hospitals")
+
+    visit admin_spending_proposals_path(tag_name: 'Education')
+
+    expect(page).to have_css(".spending_proposal", count: 2)
+    expect(page).to have_content("Educate the children")
+    expect(page).to have_content("More schools")
+    expect(page).to_not have_content("More hospitals")
+  end
+
   scenario 'Show' do
     administrator = create(:administrator, user: create(:user, username: 'Ana', email: 'ana@admins.org'))
     valuator = create(:valuator, user: create(:user, username: 'Rachel', email: 'rachel@valuators.org'))
