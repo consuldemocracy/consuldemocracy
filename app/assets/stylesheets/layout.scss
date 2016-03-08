@@ -378,39 +378,59 @@ header {
     padding-bottom: 0;
   }
 
-  a {
-    color: white;
-    display: inline-block;
-    line-height: rem-calc(46);
-    position: relative;
-    text-align: left;
-    width: 100%;
+  ul {
+    list-style-type: none;
+    margin: 0;
 
-    @media (min-width: $small-breakpoint) {
-      color: $text;
-      font-weight: bold;
-      margin-right: $line-height*1.5;
-      margin-right: 12px\9;
-      width: auto;
-
-      &:hover {
-        color: $link;
-      }
-    }
-
-    &.active {
-      color: white;
-
+    li {
       @media (min-width: $small-breakpoint) {
-        border-bottom: 2px solid $brand;
-        color: $brand;
+        display: inline-block;
+        margin-right: rem-calc(36);
+      }
+
+      a {
+        color: white;
+        display: inline-block;
+        line-height: $line-height*2;
+        position: relative;
+        text-align: left;
+        width: 100%;
+
+        @media (min-width: $small-breakpoint) {
+          color: $text;
+          display: block;
+          font-weight: bold;
+          margin-left: 18px\9;
+          margin-right: 18px\9;
+          width: auto;
+
+          &:hover {
+            color: $link;
+          }
+        }
+
+        &.active {
+          color: white;
+
+          @media (min-width: $small-breakpoint) {
+            border-bottom: 2px solid $brand;
+            color: $brand;
+          }
+        }
       }
     }
   }
 
+  span {
+    color: $border;
+  }
+
   .input-group {
-    margin-bottom: 0;
     padding-top: $line-height/4;
+
+    @media (min-width: $small-breakpoint) {
+      margin-bottom: 0;
+    }
   }
 
   .input-group-field {
@@ -606,6 +626,12 @@ form.locale-form {
   display: inline-block;
   position: relative;
 
+  label {
+    color: white;
+    font-size: $small-font-size;
+    font-weight: normal;
+  }
+
   select {
     background-image: image-url("language_select.png");
     background-origin: border-box;
@@ -628,6 +654,7 @@ form.locale-form {
       outline: none;
       padding-left: rem-calc(3);
       padding-right: $line-height;
+      width: auto;
     }
   }
 }
@@ -1054,9 +1081,14 @@ img.avatar, img.admin-avatar, img.moderator-avatar, img.initialjs-avatar {
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
 table {
+  border: $border;
   border-collapse: collapse;
   border-spacing: 0;
   width: 100%;
+
+  th {
+    background: #f8f9fb;
+  }
 
   tr {
 
@@ -1066,7 +1098,11 @@ table {
     }
 
     &:nth-child(odd) {
-      background: #F0F2F6;
+      background: white;
+    }
+
+    &:nth-child(even) {
+      background: #fafcfb;
     }
   }
 
