@@ -1,7 +1,6 @@
 class SurveyAnswersController < ApplicationController
 
   before_action :authenticate_user!, only: :create
-  before_action :check_participation
 
   load_and_authorize_resource
 
@@ -25,12 +24,6 @@ class SurveyAnswersController < ApplicationController
 
     def survey_code
       1
-    end
-
-    def check_participation
-      if current_user && SurveyAnswer.exists?(user_id: current_user.id, survey_code: survey_code)
-        redirect_to encuesta_plaza_espana_respuestas_path
-      end
     end
 
 end
