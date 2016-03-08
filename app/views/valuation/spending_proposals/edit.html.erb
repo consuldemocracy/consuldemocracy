@@ -6,12 +6,12 @@
   <div class="row">
     <div class="small-12 medium-4 column">
       <%= f.label :price, "#{t('valuation.spending_proposals.edit.price')} (#{t('valuation.spending_proposals.edit.currency')})" %>
-      <%= f.number_field :price, label: false %>
+      <%= f.number_field :price, label: false, max: 1000000000000000  %>
     </div>
 
     <div class="small-12 medium-4 column end">
       <%= f.label :price_first_year, "#{t('valuation.spending_proposals.edit.price_first_year')} ( #{t('valuation.spending_proposals.edit.currency')})" %>
-      <%= f.number_field :price_first_year, label: false %>
+      <%= f.number_field :price_first_year, label: false, max: 1000000000000000 %>
     </div>
   </div>
 
