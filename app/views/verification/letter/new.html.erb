@@ -38,7 +38,9 @@
         </ul>
       </div>
 
-      <%= link_to t("verification.letter.new.go_to_index"), root_path, class: "button warning" %>
+      <p>
+        <%= link_to t("verification.letter.new.go_to_index"), root_path %>
+      </p>
     </div>
     <div class="small-12 medium-8 column final-votes-info">
 
@@ -56,6 +58,8 @@
           <%= link_to t("verification.letter.new.send_letter"), letter_path, method: :post %>
         </li>
       </ul>
+
+      <p><%= link_to t("verification.letter.new.already_received"), verifica_path, class: "button success" %></p>
     </div>
   </div>
 </div>

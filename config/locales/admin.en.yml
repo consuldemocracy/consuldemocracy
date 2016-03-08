@@ -191,8 +191,10 @@ en:
           comments: Comments
           debate_votes: Debate votes
           debates: Debates
+          open_answer_votes: Open answer votes
           proposal_votes: Proposal votes
           proposals: Proposals
+          surveys: Surveys completed
           unverified_users: Unverified users
           user_level_three: Level three users
           user_level_two: Level two users

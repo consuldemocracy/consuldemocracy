@@ -4,11 +4,19 @@ en:
     census_terms: To confirm the account, you must be 16 or older and be registered as resident in Madrid, having provided the information requested previously, which the Directorate-General of Civil Participation will verify against the files 'Municipal Census of Inhabitants', for which the Directorate-General for Statistics is responsible, and the 'Citizen Support Services', for which the Directorate-General for Quality and Citizen Services is responsible. By accepting the verification process, you also consent to the verification of this information, as well as the contact methods featuring in said files. The data provided will be acquired and processed by the Directorate-General for Civil Participation in the file 'Management of Participatory Activities' mentioned previously in the terms and conditions of use for the Portal.
     conditions: Terms and conditions of use
     general_terms: Terms and Conditions
+    help_translate:
+      title: Help us translate!
+      text: |-
+        If you speak other languages please help us to translate this website and the software under it.
+
+        Contact us in <a href="mailto:ag.gobiernoabierto@madrid.es">ag.gobiernoabierto@madrid.es</a> to give you access to the collaborative translation system.
+        Together we will make this tool available for any country. A million thanks!
     more_information:
       description:
         faq: Frecuently asked question about tecnical problems
         how_it_works: Find out all you can do with this web site
         how_to_use: Use it freely or help us to improve it, it is free software
+        meetings: Discuss and collectively develop
         participation: Citizen participation, transparency and open government
         participation_facts: To lose your fear
         participation_world: Systems of citizen participation that exist in the world
@@ -50,20 +58,42 @@ en:
 
           If you are a programmer, you can see the code and help us to improve it at [Consul app](https://github.com/ayuntamientomadrid 'consul github ' ).
       titles:
-        faq: Solution to tecnical problemas (FAQ)
-        how_it_works: How does this Open Government Portal work?
-        how_to_use: Use it in your local government
-        participation: Madrid Participation and Transparency y Transparencia - coming news
-        participation_facts: Facts about citizen participation and direct democracy
-        participation_world: Direct citizen participation in the world
-        proposals_info: How does citizen proposals work?
-        signature_sheet: Signature sheet
-        spending_proposals_info: How does participatory budgeting work?
+          faq: Solution to tecnical problemas (FAQ)
+          how_it_works: How does this Open Government Portal work?
+          how_to_use: Use it in your local government
+          meetings: Debate's and proposal's meetings
+          participation: Madrid Participation and Transparency y Transparencia - coming news
+          participation_facts: Facts about citizen participation and direct democracy
+          participation_world: Direct citizen participation in the world
+          proposals_info: How does citizen proposals work?
+          signature_sheet: Signature sheet
+          spending_proposals_info: What is participatory budgeting?
     opendata:
       go_old: Go to Open Data Portal
       slogan_html: 'We are working on the new Madrid City Council Open Data Portal, meanwhile you can visit the actual Open Data Portal:'
       title: Open Data
     privacy: Privacy Policy
+    processes:
+      back: Back
+      index:
+        process_1_title: Transparency Ordinance
+        process_1_description: Madrid wants launch a system of public transparency at the level of the most advanced in the world, and we need your help.
+        process_1_button: More information
+        process_2_title: Remodeling of the Plaza España
+        process_2_description: We count on you for decide how you want it this new space in your city.
+        process_2_button: More information
+      process_1:
+        title: Help us improve transparency Ordinance of the City of Madrid
+        comment: leave your comments
+        text:  "Until next January 31 you can %{comment} to the draft Transparency Ordinance of the City of Madrid or sending an email to transparencia@madrid.es.
+
+
+                You can now see the [final draft Transparency Ordinance of the City of Madrid](/docs/ordenanza_de_transparencia_de_la_ciudad_de_madrid.doc 'Transparency Ordinance of the City of Madrid')."
+        button: Comment ordinance
+      process_2:
+        title: Remodeling of the Plaza de España
+        text: We count on you for filling out a short survey decide how you want it this new space in your city.
+        button: View survey
     titles:
       accessibility: Accessibility
       conditions: Terms of use

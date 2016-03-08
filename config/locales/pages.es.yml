@@ -1,20 +1,28 @@
 ---
 es:
   pages:
-    census_terms: Para verificar la cuenta hay que tener 16 años o más y estar empadronado en Madrid aportando los datos indicados anteriormente, los cuales serán contrastados por la Dirección General de Participación Ciudadana con los ficheros 'Padrón Municipal de Habitantes' cuyo responsable es la Dirección General de Estadística y 'Servicios Atención al Ciudadano' cuyo responsable es la Dirección General de Calidad y Atención al Ciudadano. Aceptando el proceso de verificación acepta dar su consentimiento para contrastar dicha información, así como medios de contacto que figuren en dichos ficheros. Los datos aportados serán incorporados y tratados por la Dirección General de Participación Ciudadana en el fichero 'Gestión de Procesos Participativos' indicado anteriormente en las condiciones de uso del portal.
+    census_terms: Para verificar la cuenta hay que tener 16 años o más y estar empadronado en Madrid aportando los datos indicados anteriormente, los cuales serán contrastados por la Dirección General de Participación Ciudadana con los ficheros 'Padrón Municipal de Habitantes' cuyo responsable es la Dirección General de Economía y Sector Público y 'Servicios Atención al Ciudadano' cuyo responsable es la Dirección General de Transparencia y Atención a la Ciudadanía. Aceptando el proceso de verificación acepta dar su consentimiento para contrastar dicha información, así como medios de contacto que figuren en dichos ficheros. Los datos aportados serán incorporados y tratados por la Dirección General de Participación Ciudadana en el fichero 'Gestión de Procesos Participativos' indicado anteriormente en las condiciones de uso del portal.
     conditions: Condiciones de uso
     general_terms: Términos y Condiciones
+    help_translate:
+      title: ¡Ayúdanos a traducir!
+      text: |-
+        Si hablas otros idiomas por favor ayúdanos a que esta web y el software que utiliza esté disponible en otros idiomas.
+
+        Escríbenos a <a href="mailto:ag.gobiernoabierto@madrid.es">ag.gobiernoabierto@madrid.es</a> para que te demos acceso al sistema de traducción colaborativo.
+        Todos juntos conseguiremos que cualquier país pueda disfrutar de esta herramienta. ¡Un millón de gracias!
     more_information:
       description:
         faq: Preguntas frecuentes sobre problemas técnicos
         how_it_works: Descubre todo lo que puedes hacer en esta web
         how_to_use: Utilízalo libremente o ayúdanos a mejorarlo, es software libre
+        meetings: Debatir y construir colectivamente
         participation: Participación Ciudadana, Transparencia y Gobierno Abierto
         participation_facts: Para perderle el miedo
         participation_world: Sistemas de participación ciudadana que ya existen en el mundo
         proposals_info: Crea tus propias propuestas
         signature_sheet: Hojas de firmas para recoger apoyos
-        spending_proposals_info: Envía tus propuestas de gasto
+        spending_proposals_info: Envía tus propuestas de presupuesto
       how_it_works:
         i: Participación
         i1: Espacio de debate
@@ -53,17 +61,39 @@ es:
         faq: Soluciones a problemas técnicos (FAQ)
         how_it_works: "¿Cómo funciona este Portal de Gobierno Abierto?"
         how_to_use: Utilízalo en tu municipio
+        meetings: Espacios presenciales de debate y propuesta
         participation: Participación y Transparencia en Madrid - Próximas novedades
         participation_facts: Hechos sobre participación ciudadana y democracia directa
         participation_world: Participación ciudadana directa en el mundo
         proposals_info: "¿Cómo funcionan las propuestas ciudadanas?"
         signature_sheet: Hojas de firmas
-        spending_proposals_info: "¿Cómo funcionan los presupuestos participativos?"
+        spending_proposals_info: "¿Qué son los presupuestos participativos?"
     opendata:
       go_old: Ir al Portal de Datos Abiertos
       slogan_html: 'Estamos trabajando en el nuevo Portal de Datos Abiertos del Ayuntamiento de Madrid, por ahora puedes visitar el portal que existía hasta ahora:'
       title: Datos abiertos
     privacy: Política de Privacidad
+    processes:
+      back: Volver
+      index:
+        process_1_title: Ordenanza de Transparencia
+        process_1_description: Madrid quiere poner en marcha un sistema de transparencia pública a la altura de los más avanzados del mundo, para ello necesitamos tu ayuda.
+        process_1_button: Más información
+        process_2_title: Remodelación de Plaza España
+        process_2_description: Contamos contigo para que decidas rellenando una pequeña encuesta como quieres que sea este nuevo espacio en tu ciudad.
+        process_2_button: Más información
+      process_1:
+        title: Ayúdanos a mejorar la Ordenanza de Transparencia de la Ciudad de Madrid
+        comment: dejar tus comentarios
+        text:  "Hasta el próximo 31 de enero podrás %{comment} sobre el borrador de la Ordenanza de Transparencia de la Ciudad de Madrid, o bien enviarlos a través de un email a transparencia@madrid.es.
+
+
+                Ya puedes consultar la [última versión del borrador de la Ordenanza de Transparencia de la Ciudad de Madrid](/docs/ordenanza_de_transparencia_de_la_ciudad_de_madrid.doc 'Ordenanza de Transparencia de la ciudad de Madrid')."
+        button: Comentar ordenanza
+      process_2:
+        title: Remodelación de Plaza España
+        text: Contamos contigo para que decidas cómo debe ser este nuevo espacio en tu ciudad.
+        button: Ver las preguntas de la encuesta
     titles:
       accessibility: Accesibilidad
       conditions: Condiciones de uso

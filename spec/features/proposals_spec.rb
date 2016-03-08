@@ -9,7 +9,7 @@ feature 'Proposals' do
 
     visit proposals_path
 
-    expect(page).to have_selector('#proposals .proposal-featured', count: 3)
+    expect(page).to have_selector('#proposals .proposal-featured', count: 2)
     featured_proposals.each do |featured_proposal|
       within('#featured-proposals') do
         expect(page).to have_content featured_proposal.title
@@ -42,7 +42,7 @@ feature 'Proposals' do
       click_link "Next", exact: false
     end
 
-    expect(page).to have_selector('#proposals .proposal', count: 2)
+    expect(page).to have_selector('#proposals .proposal', count: 3)
   end
 
   scenario 'Show' do

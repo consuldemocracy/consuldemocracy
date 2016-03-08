@@ -1,16 +1,253 @@
-<% provide :title do %><%= t('spending_proposals.index.title') %><% end %>
-<div class="page row-full">
+<% provide :title do %><%= t('spending_proposals.index.title_page') %><% end %>
+<% provide :social_media_meta_tags do %>
+  <%= render "shared/social_media_meta_tags_participatory_budget" %>
+<% end %>
+<div class="expanded spending-proposals">
+  <div class="row no-margin-top">
+    <div class="small-12 column text-center">
+      <h1><%= t('spending_proposals.index.title_html') %></h1>
+    </div>
+
+    <div class="small-12 column spending-proposal-timeline text-center">
+      <ul class="no-bullet">
+        <li class="active">
+          <i class="icon-calendar"></i>
+          <h3><%= t('spending_proposals.index.date_1_info') %></h3>
+          <p><%= t('spending_proposals.index.date_1') %></p>
+        </li>
+
+        <li>
+          <i class="icon-calendar"></i>
+          <h3><%= t('spending_proposals.index.date_2_info') %></h3>
+          <p><%= t('spending_proposals.index.date_2') %></p>
+        </li>
+
+        <li>
+          <i class="icon-calendar"></i>
+          <h3><%= t('spending_proposals.index.date_3_info') %></h3>
+          <p><%= t('spending_proposals.index.date_3') %></p>
+        </li>
+
+        <li>
+          <i class="icon-calendar"></i>
+          <h3><%= t('spending_proposals.index.date_4_info') %></h3>
+          <p><%= t('spending_proposals.index.date_4') %></p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="expanded highlight">
   <div class="row">
-    <div class="more-information text small-12 medium-8 column">
-      <h1><%= t('spending_proposals.index.title') %></h1>
+    <div class="small-12 medium-8 column">
+      <blockquote>
+        <h2>¡Ya puedes enviar tu propuesta!</h2>
+        <p>Hemos reservado <a href="#spending-proposals-budget">60 millones de euros</a> de inversiones del próximo presupuesto de Madrid para que sea la gente la que decida qué proyectos llevar a cabo. Hasta el <strong>31 de marzo</strong> cualquiera puede hacer propuestas y del <strong>15 de mayo al 30 de junio</strong> votamos las mejores. El Gobierno asumirá la decisión como vinculante y la incluirá en los presupuestos municipales, que se ejecutarán a partir del 1 de enero de 2017. Propones, decides, se hace.</p>
+      </blockquote>
+    </div>
 
-      <p><%= t('spending_proposals.index.text_html') %></p>
-
-      <% if can? :create, SpendingProposal %>
-        <%= link_to t('spending_proposals.index.create_link'), new_spending_proposal_path, class: 'button' %>
+    <div class="small-12 medium-4 column text-center margin-top">
+      <% if user_signed_in? %>
+        <% if can? :create, SpendingProposal %>
+          <%= link_to t('spending_proposals.index.create_link'), new_spending_proposal_path, class: 'button' %>
+        <% else %>
+          <div class="callout primary">
+            <%= t('spending_proposals.index.verified_only', verify_account: link_to(t('spending_proposals.index.verify_account'), verification_path)).html_safe %>
+          </div>
+        <% end %>
       <% else %>
-        <p><%= t('spending_proposals.index.verified_only', verify_account: link_to(t('spending_proposals.index.verify_account'), verification_path)).html_safe %></p>
+        <div class="callout primary">
+            <%= t('spending_proposals.index.signin_only',
+            signin: link_to(t('spending_proposals.index.signin'), new_user_session_path),
+            signup: link_to(t('spending_proposals.index.signup'), new_user_registration_path)).html_safe %>
+          </div>
       <% end %>
+    </div>
+  </div>
+</div>
+
+<div class="row margin-top">
+  <div class="small-12 column text-center">
+    <h2>Presupuestos Participativos en 2 minutos</h2>
+    <%= link_to "¿Qué puedo proponer?", page_path('participatory_budget_info', anchor: "20") %>&nbsp;|&nbsp;
+    <%= link_to "Explicación detallada del proceso", page_path('participatory_budget_info', anchor: "19") %>
+  </div>
+</div>
+
+<div class="spending-proposals-text">
+  <div class="row margin">
+    <div class="small-12 medium-6 column show-for-medium text-center">
+      <%= image_tag("spending_proposals_1.png", size: "500x290") %>
+    </div>
+    <div class="small-12 medium-6 column">
+      <h3>Recogida de Propuestas</h3>
+      <p><strong>Del 22 de febrero al 31 de marzo</strong>, cualquier persona empadronada en Madrid puede proponer alguna inversión para toda la ciudad o para un distrito concreto. Los <strong>60 millones</strong> se repartirán en una bolsa para <a href="#spending-proposals-budget">propuestas para toda la ciudad, y una para cada distrito</a>.</p>
+
+      <p>En cada distrito habrá espacios donde ir a debatir, pensar y trabajar juntos sobre las propuestas. Las propuestas se pueden hacer <%= link_to "en esta web", new_spending_proposal_path %> o en cualquiera de las <a href="http://www.madrid.es/portales/munimadrid/es/Inicio/El-Ayuntamiento/Atencion-al-ciudadano/Oficinas-de-Atencion-al-Ciudadano?vgnextfmt=default&vgnextchannel=5b99cde2e09a4310VgnVCM1000000b205a0aRCRD" target="_blank">26 Oficinas de Atención a la Ciudadanía</a> que tienes por todo Madrid.</p>
+    </div>
+  </div>
+
+  <div class="row margin">
+    <div class="small-12 medium-6 column text-right">
+      <h3>Apoyos y Evaluación</h3>
+      <p><strong>Del 1 al 15 de abril</strong> se podrán apoyar las propuestas, tanto de la lista de propuestas para toda la ciudad como de un distrito que elijas. Las más apoyadas pasarán a la votación final.</p>
+      <p>El Ayuntamiento estudiará durante el mes restante que cada una de esas propuestas cumple los requisitos necesarios: que sean propuestas de inversión, viables y legales desde el Ayuntamiento te diremos si todo esto se cumple, y tasará cuánto cuesta llevarlas a cabo.</p>
+    </div>
+
+    <div class="small-12 medium-6 column show-for-medium text-center">
+      <%= image_tag("spending_proposals_2.png", size: "500x290") %>
+    </div>
+  </div>
+
+  <div class="row margin">
+    <div class="small-12 medium-6 column show-for-medium text-center">
+      <%= image_tag("spending_proposals_3.png", size: "500x290") %>
+    </div>
+    <div class="small-12 medium-6 column">
+      <h3>Votación final</h3>
+      <p><strong>Del 15 de mayo al 30 de junio</strong> puedes decidir cómo gastar la bolsa de dinero para toda la ciudad, y la bolsa de tu distrito. Conviértete en alcalde o alcaldesa y elige todas las propuestas que quieras hasta gastar el presupuesto.</p>
+      <p>Las propuestas más votadas hasta rellenar el presupuesto total serán las seleccionadas y se incluirán en el Proyecto Inicial del Presupuesto General del Ayuntamiento de Madrid.</p>
+      <%= link_to "Más información sobre presupuestos participativos", page_path('participatory_budget_info') %>
+    </div>
+  </div>
+
+  <div class="row margin">
+    <div class="small-12 column text-center">
+      <h3>
+      <%= link_to "Espacios presenciales de debate y propuesta", page_path('participatory_budget_meetings') %>
+      </h3>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="row">
+    <div class="small-12 column text-center">
+      <h2 id="spending-proposals-budget">Distribución del presupuesto participativo y propuestas de inversión</h2>
+      <p>Una inversión es básicamente todo aquello que el Ayuntamiento puede construir o adquirir y que su duración prevista es superior a un año.<br> <%= link_to "Sigue leyendo para entender la definición en detalle", page_path('participatory_budget_info', anchor: "21") %></p>
+
+      <div class="row">
+        <div class="small-12 medium-6 column margin">
+
+          <table>
+            <thead>
+              <tr>
+                <th>Propuestas para toda la ciudad</th>
+                <th>Propuestas para distritos</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="text-center">24.000.000&euro;</td>
+                <td class="text-center">36.000.000&euro;</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p><em>El reparto por distritos es proporcional a la población e inversamente proporcional a la renta per capita.</em></p>
+          <p><%= link_to "Más información sobre presupuestos participativos", page_path('participatory_budget_info') %></p>
+
+          <table>
+            <thead>
+              <tr>
+                <th>Distrito</th>
+                <th>Cantidad asignada</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Arganzuela</td>
+                <td>1.556.169&euro;</td>
+              </tr>
+              <tr>
+                <td>Barajas</td>
+                <td>433.589&euro;</td>
+              </tr>
+              <tr>
+                <td>Carabanchel</td>
+                <td>3.247.830&euro;</td>
+              </tr>
+              <tr>
+                <td>Centro</td>
+                <td>1.353.966&euro;</td>
+              </tr>
+              <tr>
+                <td>Chamartín</td>
+                <td>1.313.747&euro;</td>
+              </tr>
+              <tr>
+                <td>Chamberí</td>
+                <td>1.259.587&euro;</td>
+              </tr>
+              <tr>
+                <td>Ciudad Lineal</td>
+                <td>2.287.757&euro;</td>
+              </tr>
+              <tr>
+                <td>Fuencarral-El Pardo</td>
+                <td>2.441.608&euro;</td>
+              </tr>
+              <tr>
+                <td>Hortaleza</td>
+                <td>1.827.228&euro;</td>
+              </tr>
+              <tr>
+                <td>Latina</td>
+                <td>2.927.200&euro;</td>
+              </tr>
+              <tr>
+                <td>Moncloa-Aravaca</td>
+                <td>1.129.851&euro;</td>
+              </tr>
+              <tr>
+                <td>Moratalaz</td>
+                <td>1.067.341&euro;</td>
+              </tr>
+              <tr>
+                <td>Puente de Vallecas</td>
+                <td>3.349.186&euro;</td>
+              </tr>
+              <tr>
+                <td>Retiro</td>
+                <td>1.075.155&euro;</td>
+              </tr>
+              <tr>
+                <td>Salamanca</td>
+                <td>1.286.657&euro;</td>
+              </tr>
+              <tr>
+                <td>San Blas-Canillejas</td>
+                <td>1.712.043&euro;</td>
+              </tr>
+              <tr>
+                <td>Tetuán</td>
+                <td>1.677.256&euro;</td>
+              </tr>
+              <tr>
+                <td>Usera</td>
+                <td>1.923.216&euro;</td>
+              </tr>
+              <tr>
+                <td>Vicálvaro</td>
+                <td>879.529&euro;</td>
+              </tr>
+              <tr>
+                <td>Villa de Vallecas</td>
+                <td>1.220.810&euro;</td>
+              </tr>
+              <tr>
+                <td>Villaverde</td>
+                <td>2.030.275&euro;</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="medium-6 column margin show-for-medium">
+          <%= image_tag("map.jpg") %>
+        </div>
+      </div>
     </div>
   </div>
 </div>

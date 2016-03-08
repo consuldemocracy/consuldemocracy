@@ -96,6 +96,18 @@ describe Verification::Residence do
       expect(user.geozone).to eq(geozone)
     end
 
+    it "ups the user to level 3 if a redeemable code exists" do
+      user = create(:user)
+      create(:redeemable_code, token: "1234", geozone: geozone)
+
+      residence.redeemable_code = "1234"
+      residence.user = user
+      residence.save
+
+      user.reload
+      expect(user).to be_level_three_verified
+    end
+
   end
 
   describe "tries" do
