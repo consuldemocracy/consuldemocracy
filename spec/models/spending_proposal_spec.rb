@@ -61,15 +61,15 @@ describe SpendingProposal do
     end
   end
 
-  describe "by_administrator" do
+  describe "by_admin" do
     it "should return spending proposals assigned to specific administrator" do
       spending_proposal1 = create(:spending_proposal, administrator_id: 33)
       spending_proposal2 = create(:spending_proposal)
 
-      by_administrator = SpendingProposal.by_administrator(33)
+      by_admin = SpendingProposal.by_admin(33)
 
-      expect(by_administrator.size).to eq(1)
-      expect(by_administrator.first).to eq(spending_proposal1)
+      expect(by_admin.size).to eq(1)
+      expect(by_admin.first).to eq(spending_proposal1)
     end
   end
 
