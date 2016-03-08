@@ -21,7 +21,7 @@ class Admin::SpendingProposalsController < Admin::BaseController
 
   def update
     if @spending_proposal.update(spending_proposal_params)
-      redirect_to admin_spending_proposal_path(@spending_proposal), notice: t("flash.actions.update.spending_proposal")
+      redirect_to admin_spending_proposal_path(@spending_proposal, anchor: 'classification'), notice: t("flash.actions.update.spending_proposal")
     else
       render :edit
     end

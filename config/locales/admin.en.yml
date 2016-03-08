@@ -190,7 +190,12 @@ en:
         assign: Assign
         tags: Tags
       edit:
+        classification: Clasification
+        assigned_valuators: Valuators
         submit_button: Update
+        tags: Tags
+        tags_placeholder: "Write the tags you want separated by commas (,)"
+        undefined: Undefined
     stats:
       show:
         stats_title: Stats

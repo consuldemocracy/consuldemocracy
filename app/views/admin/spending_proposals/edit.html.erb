@@ -1,37 +1,41 @@
+<%= link_to admin_spending_proposals_path(@spending_proposal), class: 'back' do %>
+  <i class="icon-angle-left"></i> <%= t("admin.spending_proposals.show.back") %>
+<% end %>
+
+<%= render 'admin/spending_proposals/spending_proposal_data_written_by_author' %>
+
+<h2 id="form"><%= t("admin.spending_proposals.edit.classification") %></h2>
+
 <%= form_for @spending_proposal, url: admin_spending_proposal_path(@spending_proposal) do |f| %>
 
-  <%= f.select :administrator_id,
-               @admins.collect { |a| [ "#{a.name} (#{a.email})", a.id ] },
-               { include_blank: t("admin.spending_proposals.show.undefined"),
-                 label: false },
-               class: "js-submit-on-change" %>
+  <%= f.select(:administrator_id,
+               @admins.collect{ |a| [a.name_and_email, a.id ] },
+               { include_blank: t("admin.spending_proposals.edit.undefined") },
+               class: "small-12 medium-6") %>
 
-  <div class="row">
-    <div class="small-12 medium-4 column end">
-      <%= f.collection_check_boxes :valuator_ids, @valuators, :id, :name %>
-    </div>
+  <%= f.label :valuator_ids, t("admin.spending_proposals.edit.assigned_valuators") %>
+  <%= f.collection_check_boxes :valuator_ids, @valuators, :id, :name_and_email %>
+
+
+  <%= f.label :tag_list, t("admin.spending_proposals.edit.tags") %>
+  <div class="tags">
+    <% @tags.each do |tag| %>
+      <a class="js-add-tag-link"><%= tag.name %></a>
+    <% end %>
   </div>
 
-  <div class="small-12 column">
-    <%= f.label :tag_list, t("proposals.form.tags_label") %>
-    <p class="note"><%= t("proposals.form.tags_instructions") %></p>
+  <%= f.text_field :tag_list, value: @spending_proposal.tag_list.to_s,
+                    label: false,
+                    placeholder: t("admin.spending_proposals.edit.tags_placeholder"),
+                    class: 'js-tag-list' %>
 
-    <div id="category_tags" class="tags">
-      <%= f.label :category_tag_list, t("proposals.form.tag_category_label") %>
-      <% @tags.each do |tag| %>
-        <a class="js-add-tag-link"><%= tag.name %></a>
-      <% end %>
-    </div>
-
-    <br>
-    <%= f.text_field :tag_list, value: @spending_proposal.tag_list.to_s,
-                      label: false,
-                      placeholder: t("proposals.form.tags_placeholder"),
-                      class: 'js-tag-list' %>
-  </div>
-
-  <div class="actions small-12 column">
+  <p>
     <%= f.submit(class: "button", value: t("admin.spending_proposals.edit.submit_button")) %>
-  </div>
+  </p>
 
 <% end %>
+
+<hr>
+
+<%= render 'admin/spending_proposals/spending_proposal_data_written_by_valuators' %>
+

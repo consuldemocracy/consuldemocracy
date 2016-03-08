@@ -190,7 +190,12 @@ es:
         assign: Asignar
         tags: Etiquetas
       edit:
+        classification: Clasificación
+        assigned_valuators: Evaluadores
         submit_button: Actualizar
+        tags: Etiquetas
+        tags_placeholder: "Escribe las etiquetas que desees separadas por comas (,)"
+        undefined: Sin definir
     stats:
       show:
         stats_title: Estadísticas
