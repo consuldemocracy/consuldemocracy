@@ -29,18 +29,7 @@
         <%= link_to t("valuation.spending_proposals.index.edit"), edit_valuation_spending_proposal_path(spending_proposal) %>
       </td>
       <td class="small">
-        <% case spending_proposal.valuators.size %>
-        <% when 0 %>
-          <%= t("valuation.spending_proposals.index.no_valuators_assigned") %>
-        <% when 1 %>
-          <span title="<%= t('valuation.spending_proposals.index.valuators_assigned', count: 1) %>">
-            <%= spending_proposal.valuators.first.name %>
-          </span>
-        <% else %>
-          <span title="<%= spending_proposal.valuators.map(&:name).join(', ') %>">
-            <%= t('valuation.spending_proposals.index.valuators_assigned', count: spending_proposal.valuators.size) %>
-          </span>
-        <% end %>
+        <%= assigned_valuators_info(spending_proposal.valuators) %>
       </td>
       <td class="small">
         <%= geozone_name(spending_proposal) %>
