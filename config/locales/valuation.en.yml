@@ -42,7 +42,7 @@ en:
         assigned_valuators: Assigned valuators
       edit:
         dossier: Dossier
-        price: Price
+        price: "Price (%{currency})"
         price_first_year: "Cost during the first year (%{currency})"
         currency: "€"
         price_explanation: Price explanation

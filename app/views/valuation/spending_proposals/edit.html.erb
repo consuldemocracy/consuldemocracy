@@ -33,7 +33,7 @@
 
   <div class="row">
     <div class="small-12 medium-4 column">
-      <%= f.label :price, "#{t('valuation.spending_proposals.edit.price')} (#{t('valuation.spending_proposals.edit.currency')})" %>
+      <%= f.label :price, "#{t('valuation.spending_proposals.edit.price', currency: t('valuation.spending_proposals.edit.currency'))}" %>
       <%= f.number_field :price, label: false, max: 1000000000000000  %>
     </div>
 

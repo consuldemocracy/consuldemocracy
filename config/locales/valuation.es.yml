@@ -42,17 +42,17 @@ es:
         assigned_valuators: Evaluadores asignados
       edit:
         dossier: Informe
-        price: Coste
-        price_first_year: "Coste en el primer año (%{currency}) (opcional)"
+        price: "Coste (%{currency}) <small>(dato público)</small>"
+        price_first_year: "Coste en el primer año (%{currency}) <small>(opcional, no público)</small>"
         currency: "€"
-        price_explanation: Informe de coste (opcional)
+        price_explanation: "Informe de coste <small>(opcional, dato público)</small>"
         feasibility: Viabilidad
         feasible: Viable
         not_feasible: No viable
-        feasible_explanation: Informe de inviabilidad (en caso de que lo sea)
+        feasible_explanation: "Informe de inviabilidad <small>(en caso de que lo sea, dato público)</small>"
         valuation_finished: Informe finalizado
-        time_scope: Plazo de ejecución (opcional)
-        internal_comments: Comentarios y observaciones (para responsables internos, no se publicará)
+        time_scope: "Plazo de ejecución <small>(opcional, dato no público)</small>"
+        internal_comments: "Comentarios y observaciones <small>(para responsables internos, dato no público)</small>"
         save: Guardar cambios
       notice:
         valuate: "Informe actualizado"
