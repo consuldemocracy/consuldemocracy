@@ -167,7 +167,7 @@ en:
       show:
         back: Back
         heading: "Investment project %{id}"
-        edit_button: Update
+        edit_button: Edit
         association_name: Association
         by: By
         sent: Sent
