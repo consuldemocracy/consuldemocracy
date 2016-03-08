@@ -46,11 +46,8 @@ module Abilities
         can :create, SpendingProposal
 
         can :read, SurveyAnswer
-        # can :create, SurveyAnswer
-        # can :vote, SurveyAnswer
 
         can :read, OpenAnswer
-        # can :vote, OpenAnswer
       end
 
       can :create, Annotation
