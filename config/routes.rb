@@ -256,12 +256,12 @@ Rails.application.routes.draw do
 
   resources :open_answers, only: [:show, :index] do
     member do
-      post :vote
+      # post :vote
     end
   end
 
   get "encuesta-plaza-espana", to: "survey_answers#new", as: :encuesta_plaza_espana
-  post "encuesta-plaza-espana/gracias", to: "survey_answers#create", as: :encuesta_plaza_espana_gracias
+  # post "encuesta-plaza-espana/gracias", to: "survey_answers#create", as: :encuesta_plaza_espana_gracias
   get "encuesta-plaza-espana/respuestas", to: "open_answers#index", as: :encuesta_plaza_espana_respuestas
   get "encuesta-plaza-espana/respuesta/:id", to: "open_answers#show", as: :encuesta_plaza_espana_respuesta
 
