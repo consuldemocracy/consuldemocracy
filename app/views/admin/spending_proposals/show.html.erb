@@ -32,4 +32,9 @@
 <hr>
 
 <h2><%= t("admin.spending_proposals.show.dossier") %></h2>
+
+<p>
+  <%= link_to t("admin.spending_proposals.show.edit_dossier"), edit_valuation_spending_proposal_path(@spending_proposal) %>
+</p>
+
 <%= render 'valuation/spending_proposals/written_by_valuators' %>
