@@ -2,8 +2,6 @@
   <i class="icon-angle-left"></i> <%= t("admin.spending_proposals.show.back") %>
 <% end %>
 
-
-
 <h2><%= t "admin.spending_proposals.show.heading", id: @spending_proposal.id %>
 
 </h2>
@@ -58,11 +56,13 @@
 
 <p>
   <strong><%= t("admin.spending_proposals.show.assigned_valuators") %>:</strong>
-  <% if @spending_proposal.valuators.any? %>
-    <% @spending_proposal.valuators.collect(&:name_and_email).join(', ') %>
-  <% else %>
-    <%= t("admin.spending_proposals.show.undefined") %>
-  <% end %>
+  <div id="assigned_valuators">
+    <% if @spending_proposal.valuators.any? %>
+      <%= @spending_proposal.valuators.collect(&:name_and_email).join(', ') %>
+    <% else %>
+      <%= t("admin.spending_proposals.show.undefined") %>
+    <% end %>
+  </div>
 </p>
 
 <%= link_to t("admin.spending_proposals.show.edit_button"),
