@@ -12,7 +12,8 @@
 
 <p>
   <strong><%= t("admin.spending_proposals.show.tags") %>:</strong>
-  <%= render 'shared/tags', taggable: @spending_proposal %>
+
+  <%= @spending_proposal.tags.pluck(:name).join(', ') %>
 </p>
 
 <p id="assigned_valuators">
