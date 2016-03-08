@@ -1,4 +1,4 @@
-<%= link_to admin_spending_proposals_path, class: 'back' do %>
+<%= link_to :back, class: 'back' do %>
   <i class="icon-angle-left"></i> <%= t("admin.spending_proposals.show.back") %>
 <% end %>
 
@@ -32,4 +32,9 @@
 <hr>
 
 <h2><%= t("admin.spending_proposals.show.dossier") %></h2>
+
+<p>
+  <%= link_to t("admin.spending_proposals.show.edit_dossier"), edit_valuation_spending_proposal_path(@spending_proposal) %>
+</p>
+
 <%= render 'valuation/spending_proposals/written_by_valuators' %>

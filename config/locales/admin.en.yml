@@ -173,6 +173,7 @@ en:
         sent: Sent
         geozone: Scope
         dossier: Dossier
+        edit_dossier: Edit dossier
         tags: Tags
         undefined: Undefined
       edit:
