@@ -6,4 +6,8 @@ class Valuator < ActiveRecord::Base
   has_many :spending_proposals, through: :valuation_assignments
 
   validates :user_id, presence: true, uniqueness: true
+
+  def name_and_email
+    "#{name} (#{email})"
+  end
 end
