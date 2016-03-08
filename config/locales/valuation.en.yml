@@ -1,0 +1,60 @@
+---
+en:
+  valuation:
+    menu:
+      title: Valuation
+      spending_proposals: Spending proposals
+    spending_proposals:
+      index:
+        geozone_filter_all: All zones
+        filters:
+          valuation_open: Open
+          valuating: Under valuation
+          valuation_finished: Valuation finished
+        title: Investment projects for participatory budgeting
+        edit: Edit
+        valuators_assigned:
+          one: Assigned valuator
+          other: "%{count} valuators assigned"
+        no_valuators_assigned: No valuators assigned
+      show:
+        back: Back
+        heading: Investment project
+        info: Author info
+        association_name: Asociación
+        by: Sent by
+        sent: Sent at
+        geozone: Scope
+        dossier: Dossier
+        edit_dossier: Edit dossier
+        price: Price
+        price_first_year: Cost during the first year
+        currency: "€"
+        feasibility: Feasibility
+        feasible: Feasible
+        not_feasible: Not feasible
+        undefined: Undefined
+        valuation_finished: Valuation finished
+        time_scope: Time scope
+        internal_comments: Internal comments
+        responsibles: Responsibles
+        assigned_admin: Assigned admin
+        assigned_valuators: Assigned valuators
+      edit:
+        dossier: Dossier
+        price: Price
+        price_first_year: Cost during the first year
+        currency: "€"
+        price_explanation: Price explanation
+        feasibility: Feasibility
+        feasible: Feasible
+        not_feasible: Not feasible
+        feasible_explanation: Feasibility explanation
+        valuation_finished: Valuation finished
+        time_scope: Time scope
+        internal_comments: Internal comments
+        save: Save changes
+      notice:
+        valuate: "Dossier updated"
+
+

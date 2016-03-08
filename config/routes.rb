@@ -29,7 +29,6 @@ Rails.application.routes.draw do
 
   root 'welcome#index'
   get '/welcome', to: 'welcome#welcome'
-  get '/highlights', to: 'welcome#highlights', as: :highlights
   get '/cuentasegura', to: 'welcome#verification', as: :cuentasegura
 
   resources :debates do
@@ -206,6 +205,16 @@ Rails.application.routes.draw do
       end
       collection do
         put :moderate
+      end
+    end
+  end
+
+  namespace :valuation do
+    root to: "spending_proposals#index"
+
+    resources :spending_proposals, only: [:index, :show, :edit] do
+      member do
+        patch :valuate
       end
     end
   end

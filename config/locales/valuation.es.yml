@@ -1,0 +1,58 @@
+---
+es:
+  valuation:
+    menu:
+      title: Evaluación
+      spending_proposals: Propuestas de inversión
+    spending_proposals:
+      index:
+        geozone_filter_all: Todos los ámbitos de actuación
+        filters:
+          valuation_open: Abiertas
+          valuating: En evaluación
+          valuation_finished: Evaluación finalizada
+        title: Propuestas de inversión para presupuestos participativos
+        edit: Editar
+        valuators_assigned:
+          one: Evaluador asignado
+          other: "%{count} evaluadores asignados"
+        no_valuators_assigned: Sin evaluador
+      show:
+        back: Volver
+        heading: Propuesta de inversión
+        info: Datos de envío
+        association_name: Asociación
+        by: Enviada por
+        sent: Fecha de creación
+        geozone: Ámbito
+        dossier: Informe
+        edit_dossier: Editar informe
+        price: Coste
+        price_first_year: Coste en el primer año
+        currency: "€"
+        feasibility: Viabilidad
+        feasible: Viable
+        not_feasible: No viable
+        undefined: Sin definir
+        valuation_finished: Informe finalizado
+        time_scope: Plazo de ejecución
+        internal_comments: Comentarios internos
+        responsibles: Responsables
+        assigned_admin: Administrador asignado
+        assigned_valuators: Evaluadores asignados
+      edit:
+        dossier: Informe
+        price: Coste
+        price_first_year: Coste en el primer año
+        currency: "€"
+        price_explanation: Justificación del precio
+        feasibility: Viabilidad
+        feasible: Viable
+        not_feasible: No viable
+        feasible_explanation: Justificación de la viabilidad
+        valuation_finished: Informe finalizado
+        time_scope: Plazo de ejecución
+        internal_comments: Comentarios internos
+        save: Guardar cambios
+      notice:
+        valuate: "Informe actualizado"

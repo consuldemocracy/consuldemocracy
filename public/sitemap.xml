@@ -5,10 +5,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://decide.madrid.es/highlights</loc>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://decide.madrid.es/proposals</loc>
     <priority>0.9</priority>
     <changefreq>always</changefreq>
