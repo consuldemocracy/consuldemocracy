@@ -43,16 +43,16 @@ es:
       edit:
         dossier: Informe
         price: Coste
-        price_first_year: Coste en el primer año
+        price_first_year: "Coste en el primer año (%{currency}) (opcional)"
         currency: "€"
-        price_explanation: Justificación del precio
+        price_explanation: Informe de coste (opcional)
         feasibility: Viabilidad
         feasible: Viable
         not_feasible: No viable
-        feasible_explanation: Justificación de la viabilidad
+        feasible_explanation: Informe de inviabilidad (en caso de que lo sea)
         valuation_finished: Informe finalizado
-        time_scope: Plazo de ejecución
-        internal_comments: Comentarios internos
+        time_scope: Plazo de ejecución (opcional)
+        internal_comments: Comentarios y observaciones (para responsables internos, no se publicará)
         save: Guardar cambios
       notice:
         valuate: "Informe actualizado"
