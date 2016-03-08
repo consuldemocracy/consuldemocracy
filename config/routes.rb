@@ -257,8 +257,6 @@ Rails.application.routes.draw do
   resources :open_answers, only: [:show, :index]
 
   get "encuesta-plaza-espana", to: "survey_answers#new", as: :encuesta_plaza_espana
-  get "encuesta-plaza-espana/respuestas", to: "open_answers#index", as: :encuesta_plaza_espana_respuestas
-  get "encuesta-plaza-espana/respuesta/:id", to: "open_answers#show", as: :encuesta_plaza_espana_respuesta
 
   if Rails.env.development?
     mount LetterOpenerWeb::Engine, at: "/letter_opener"
