@@ -17,8 +17,11 @@ class Valuation::SpendingProposalsController < Valuation::BaseController
   end
 
   def valuate
-    @spending_proposal.update_attributes(valuation_params)
-    redirect_to valuation_spending_proposal_path(@spending_proposal), notice: t('valuation.spending_proposals.notice.valuate')
+    if valid_price_params? && @spending_proposal.update(valuation_params)
+      redirect_to valuation_spending_proposal_path(@spending_proposal), notice: t('valuation.spending_proposals.notice.valuate')
+    else
+      render action: :edit
+    end
   end
 
   private
@@ -33,6 +36,18 @@ class Valuation::SpendingProposalsController < Valuation::BaseController
 
     def restrict_access_to_assigned_items
       raise ActionController::RoutingError.new('Not Found') unless current_user.administrator? || ValuationAssignment.exists?(spending_proposal_id: params[:id], valuator_id: current_user.valuator.id)
+    end
+
+    def valid_price_params?
+      if /\D/.match params[:spending_proposal][:price]
+        @spending_proposal.errors.add(:price, I18n.t('spending_proposals.wrong_price_format'))
+      end
+
+      if /\D/.match params[:spending_proposal][:price_first_year]
+        @spending_proposal.errors.add(:price_first_year, I18n.t('spending_proposals.wrong_price_format'))
+      end
+
+      @spending_proposal.errors.empty?
     end
 
 end
