@@ -12,11 +12,29 @@ feature 'Valuation spending proposals' do
     expect{ visit valuation_spending_proposals_path }.to raise_exception(FeatureFlags::FeatureDisabled)
   end
 
-  scenario 'Index shows spending proposals' do
-    spending_proposal = create(:spending_proposal)
+  scenario 'Index shows spending proposals assigned to current valuator' do
+    spending_proposal1 = create(:spending_proposal)
+    spending_proposal2 = create(:spending_proposal)
+
+    spending_proposal1.valuators << @valuator
+
     visit valuation_spending_proposals_path
 
-    expect(page).to have_content(spending_proposal.title)
+    expect(page).to have_content(spending_proposal1.title)
+    expect(page).to_not have_content(spending_proposal2.title)
+  end
+
+  scenario 'Index shows no spending proposals to admins no valuators' do
+    spending_proposal1 = create(:spending_proposal)
+    spending_proposal2 = create(:spending_proposal)
+    spending_proposal1.valuators << @valuator
+
+    logout
+    login_as create(:administrator).user
+    visit valuation_spending_proposals_path
+
+    expect(page).to_not have_content(spending_proposal1.title)
+    expect(page).to_not have_content(spending_proposal2.title)
   end
 
   scenario 'Index shows assignments info' do
@@ -24,33 +42,35 @@ feature 'Valuation spending proposals' do
     spending_proposal2 = create(:spending_proposal)
     spending_proposal3 = create(:spending_proposal)
 
-    valuator1 = create(:valuator, user: create(:user, username: 'Olga'))
-    valuator2 = create(:valuator, user: create(:user, username: 'Miriam'))
-    admin = create(:administrator, user: create(:user, username: 'Gema'))
+    valuator1 = create(:valuator, user: create(:user))
+    valuator2 = create(:valuator, user: create(:user))
+    valuator3 = create(:valuator, user: create(:user))
 
-    spending_proposal1.valuators << valuator1
-    spending_proposal2.valuator_ids = [valuator1.id, valuator2.id]
-    spending_proposal3.update({administrator_id: admin.id})
+    spending_proposal1.valuator_ids = [@valuator.id]
+    spending_proposal2.valuator_ids = [@valuator.id, valuator1.id, valuator2.id]
+    spending_proposal3.valuator_ids = [@valuator.id, valuator3.id]
 
     visit valuation_spending_proposals_path
 
     within("#spending_proposal_#{spending_proposal1.id}") do
-      expect(page).to have_content("Olga")
+      expect(page).to have_content("Rachel")
     end
 
     within("#spending_proposal_#{spending_proposal2.id}") do
-      expect(page).to have_content("2 valuators assigned")
+      expect(page).to have_content("3 valuators assigned")
     end
 
     within("#spending_proposal_#{spending_proposal3.id}") do
-      expect(page).to have_content("No valuators assigned")
+      expect(page).to have_content("2 valuators assigned")
     end
   end
 
   scenario "Index filtering by geozone", :js do
     geozone = create(:geozone, name: "District 9")
-    create(:spending_proposal, title: "Realocate visitors", geozone: geozone)
-    create(:spending_proposal, title: "Destroy the city")
+    spending_proposal1 = create(:spending_proposal, title: "Realocate visitors", geozone: geozone)
+    spending_proposal2 = create(:spending_proposal, title: "Destroy the city")
+    spending_proposal1.valuators << @valuator
+    spending_proposal2.valuators << @valuator
 
     visit valuation_spending_proposals_path
     expect(page).to have_link("Realocate visitors")
@@ -71,32 +91,8 @@ feature 'Valuation spending proposals' do
     expect(page).to have_link("Destroy the city")
   end
 
-  scenario "Index filtering by valuator", :js do
-    user = create(:user, username: 'Karnak')
-    valuator1 = create(:valuator, user: user)
-
-    spending = create(:spending_proposal, title: "Realocate visitors")
-    spending.valuators << valuator1
-    create(:spending_proposal, title: "Destroy the city")
-
-    visit valuation_spending_proposals_path
-    expect(page).to have_link("Realocate visitors")
-    expect(page).to have_link("Destroy the city")
-
-    select "Karnak", from: "valuator_id"
-
-    expect(page).to have_link("Realocate visitors")
-    expect(page).to_not have_link("Destroy the city")
-
-    select "All valuators", from: "valuator_id"
-
-    expect(page).to have_link("Destroy the city")
-    expect(page).to have_link("Realocate visitors")
-  end
-
   scenario "Current filter is properly highlighted" do
-    filters_links = {'valuation_open' => 'Open',
-                     'valuating' => 'Under valuation',
+    filters_links = {'valuating' => 'Under valuation',
                      'valuation_finished' => 'Valuation finished'}
 
     visit valuation_spending_proposals_path
@@ -118,8 +114,8 @@ feature 'Valuation spending proposals' do
   scenario "Index filtering by valuation status" do
     valuating = create(:spending_proposal, title: "Ongoing valuation")
     valuated = create(:spending_proposal, title: "Old idea", valuation_finished: true)
-    valuating.valuators << create(:valuator)
-    valuated.valuators << create(:valuator)
+    valuating.valuators << @valuator
+    valuated.valuators << @valuator
 
     visit valuation_spending_proposals_path(filter: 'valuation_open')
 
@@ -137,36 +133,90 @@ feature 'Valuation spending proposals' do
     expect(page).to have_content("Old idea")
   end
 
-  scenario 'Show' do
-    administrator = create(:administrator, user: create(:user, username: 'Ana', email: 'ana@admins.org'))
-    valuator2 = create(:valuator, user: create(:user, username: 'Rick', email: 'rick@valuators.org'))
-    spending_proposal = create(:spending_proposal,
-                                geozone: create(:geozone),
-                                association_name: 'People of the neighbourhood',
-                                price: 1234,
-                                feasible: false,
-                                feasible_explanation: 'It is impossible',
-                                administrator: administrator)
-    spending_proposal.valuators << [@valuator, valuator2]
+  feature 'Show' do
+    scenario 'visible for assigned valuators' do
+      administrator = create(:administrator, user: create(:user, username: 'Ana', email: 'ana@admins.org'))
+      valuator2 = create(:valuator, user: create(:user, username: 'Rick', email: 'rick@valuators.org'))
+      spending_proposal = create(:spending_proposal,
+                                  geozone: create(:geozone),
+                                  association_name: 'People of the neighbourhood',
+                                  price: 1234,
+                                  feasible: false,
+                                  feasible_explanation: 'It is impossible',
+                                  administrator: administrator)
+      spending_proposal.valuators << [@valuator, valuator2]
 
-    visit valuation_spending_proposals_path
+      visit valuation_spending_proposals_path
 
-    click_link spending_proposal.title
+      click_link spending_proposal.title
 
-    expect(page).to have_content(spending_proposal.title)
-    expect(page).to have_content(spending_proposal.description)
-    expect(page).to have_content(spending_proposal.author.name)
-    expect(page).to have_content(spending_proposal.association_name)
-    expect(page).to have_content(spending_proposal.geozone.name)
-    expect(page).to have_content('1234')
-    expect(page).to have_content('Not feasible')
-    expect(page).to have_content('It is impossible')
-    expect(page).to have_content('Ana (ana@admins.org)')
+      expect(page).to have_content(spending_proposal.title)
+      expect(page).to have_content(spending_proposal.description)
+      expect(page).to have_content(spending_proposal.author.name)
+      expect(page).to have_content(spending_proposal.association_name)
+      expect(page).to have_content(spending_proposal.geozone.name)
+      expect(page).to have_content('1234')
+      expect(page).to have_content('Not feasible')
+      expect(page).to have_content('It is impossible')
+      expect(page).to have_content('Ana (ana@admins.org)')
 
-    within('#assigned_valuators') do
-      expect(page).to have_content('Rachel (rachel@valuators.org)')
-      expect(page).to have_content('Rick (rick@valuators.org)')
+      within('#assigned_valuators') do
+        expect(page).to have_content('Rachel (rachel@valuators.org)')
+        expect(page).to have_content('Rick (rick@valuators.org)')
+      end
     end
+
+    scenario 'visible for admins' do
+      logout
+      login_as create(:administrator).user
+
+      administrator = create(:administrator, user: create(:user, username: 'Ana', email: 'ana@admins.org'))
+      valuator2 = create(:valuator, user: create(:user, username: 'Rick', email: 'rick@valuators.org'))
+      spending_proposal = create(:spending_proposal,
+                                  geozone: create(:geozone),
+                                  association_name: 'People of the neighbourhood',
+                                  price: 1234,
+                                  feasible: false,
+                                  feasible_explanation: 'It is impossible',
+                                  administrator: administrator)
+      spending_proposal.valuators << [@valuator, valuator2]
+
+      visit valuation_spending_proposal_path(spending_proposal)
+
+      expect(page).to have_content(spending_proposal.title)
+      expect(page).to have_content(spending_proposal.description)
+      expect(page).to have_content(spending_proposal.author.name)
+      expect(page).to have_content(spending_proposal.association_name)
+      expect(page).to have_content(spending_proposal.geozone.name)
+      expect(page).to have_content('1234')
+      expect(page).to have_content('Not feasible')
+      expect(page).to have_content('It is impossible')
+      expect(page).to have_content('Ana (ana@admins.org)')
+
+      within('#assigned_valuators') do
+        expect(page).to have_content('Rachel (rachel@valuators.org)')
+        expect(page).to have_content('Rick (rick@valuators.org)')
+      end
+    end
+
+    scenario 'not visible for not assigned valuators' do
+      logout
+      login_as create(:valuator).user
+
+      administrator = create(:administrator, user: create(:user, username: 'Ana', email: 'ana@admins.org'))
+      valuator2 = create(:valuator, user: create(:user, username: 'Rick', email: 'rick@valuators.org'))
+      spending_proposal = create(:spending_proposal,
+                                  geozone: create(:geozone),
+                                  association_name: 'People of the neighbourhood',
+                                  price: 1234,
+                                  feasible: false,
+                                  feasible_explanation: 'It is impossible',
+                                  administrator: administrator)
+      spending_proposal.valuators << [@valuator, valuator2]
+
+      expect { visit valuation_spending_proposal_path(spending_proposal) }.to raise_error "Not Found"
+    end
+
   end
 
   feature 'Valuate' do

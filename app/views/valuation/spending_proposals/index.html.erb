@@ -9,13 +9,6 @@
                        label: false,
                        class: "js-submit-on-change" } %>
     </div>
-    <div class="small-12 medium-4 column float-right">
-      <%= select_tag :valuator_id,
-                      options_for_select(valuator_select_options(current_user.valuator), params[:valuator_id]),
-                      { prompt: t("valuation.spending_proposals.index.valuator_filter_all"),
-                        label: false,
-                        class: "js-submit-on-change" } %>
-    </div>
   <% end %>
 </div>
 
