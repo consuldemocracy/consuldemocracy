@@ -173,22 +173,6 @@ en:
         sent: Sent
         geozone: Scope
         dossier: Dossier
-        price: Price
-        price_first_year: Cost during the first year
-        currency: "€"
-        feasibility: Feasibility
-        feasible: Feasible
-        not_feasible: Not feasible
-        undefined: Undefined
-        valuation_finished: Valuation finished
-        internal_comments: Internal comments
-        classification: Clasificación
-        assigned_admin: Assigned admin
-        assigned_valuators: Assigned valuators
-        assign_valuators: Assign valuators
-        no_valuators: There is not any valuator user
-        assign: Assign
-        tags: Tags
       edit:
         classification: Clasification
         assigned_valuators: Valuators

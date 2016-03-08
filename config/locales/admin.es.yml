@@ -173,22 +173,6 @@ es:
         sent: Fecha
         geozone: Ámbito
         dossier: Informe
-        price: Coste
-        price_first_year: Coste en el primer año
-        currency: "€"
-        feasibility: Viabilidad
-        feasible: Viable
-        not_feasible: No viable
-        undefined: Sin definir
-        valuation_finished: Informe finalizado
-        internal_comments: Commentarios internos
-        classification: Clasificación
-        assigned_admin: Administrador asignado
-        assigned_valuators: Evaluadores asignados
-        assign_valuators: Asignar evaluadores
-        no_valuators: No hay ningún usuario evaluador
-        assign: Asignar
-        tags: Etiquetas
       edit:
         classification: Clasificación
         assigned_valuators: Evaluadores
