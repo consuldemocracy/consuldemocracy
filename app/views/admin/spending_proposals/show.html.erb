@@ -2,7 +2,7 @@
   <i class="icon-angle-left"></i> <%= t("admin.spending_proposals.show.back") %>
 <% end %>
 
-<%= render 'admin/spending_proposals/spending_proposal_data_written_by_author' %>
+<%= render 'written_by_author' %>
 
 <h2 id="classification"><%= t("admin.spending_proposals.show.classification") %></h2>
 
@@ -30,6 +30,4 @@
 
 <hr>
 
-<%= render 'admin/spending_proposals/spending_proposal_data_written_by_valuators' %>
-
-
+<%= render 'written_by_valuators' %>
