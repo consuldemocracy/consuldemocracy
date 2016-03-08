@@ -332,7 +332,7 @@ body.admin {
   }
 }
 
-.account-info, .login-as, .info {
+.account-info, .login-as, .spending-proposal-info {
   background-color: #e7e7e7;
   border-radius: rem-calc(3);
   font-size: rem-calc(16);
@@ -345,7 +345,7 @@ body.admin {
   }
 }
 
-.info p {
+.spending-proposal-info p {
   margin-bottom: 0;
 }
 
