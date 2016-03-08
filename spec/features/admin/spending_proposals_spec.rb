@@ -217,7 +217,8 @@ feature 'Admin spending proposals' do
     spending_proposal = create(:spending_proposal)
     administrator = create(:administrator, user: create(:user, username: 'Marta', email: 'marta@admins.org'))
 
-    visit edit_admin_spending_proposal_path(spending_proposal)
+    visit admin_spending_proposal_path(spending_proposal)
+    click_link 'Edit'
 
     select 'Marta (marta@admins.org)', from: 'spending_proposal[administrator_id]'
     click_button 'Update'
@@ -233,7 +234,8 @@ feature 'Admin spending proposals' do
     valuator2 = create(:valuator, user: create(:user, username: 'Valerian',  email: 'v2@valuators.org'))
     valuator3 = create(:valuator, user: create(:user, username: 'Val',       email: 'v3@valuators.org'))
 
-    visit edit_admin_spending_proposal_path(spending_proposal)
+    visit admin_spending_proposal_path(spending_proposal)
+    click_link 'Edit'
 
     check "spending_proposal_valuator_ids_#{valuator1.id}"
     check "spending_proposal_valuator_ids_#{valuator3.id}"
@@ -255,7 +257,8 @@ feature 'Admin spending proposals' do
 
     spending_proposal = create(:spending_proposal)
 
-    visit edit_admin_spending_proposal_path(spending_proposal)
+    visit admin_spending_proposal_path(spending_proposal)
+    click_link 'Edit'
 
     find('.js-add-tag-link', text: 'Education').click
     click_button 'Update'
@@ -271,7 +274,8 @@ feature 'Admin spending proposals' do
   scenario "Adds non existent tags" do
     spending_proposal = create(:spending_proposal)
 
-    visit edit_admin_spending_proposal_path(spending_proposal)
+    visit admin_spending_proposal_path(spending_proposal)
+    click_link 'Edit'
 
     fill_in 'spending_proposal_tag_list', with: 'Refugees, Solidarity'
     click_button 'Update'
