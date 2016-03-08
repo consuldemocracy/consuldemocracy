@@ -284,6 +284,20 @@ feature 'Valuation spending proposals' do
       click_link @spending_proposal.title
       expect(page).to have_content('Valuation finished')
     end
+
+    scenario 'Validates price formats' do
+      visit valuation_spending_proposals_path
+      within("#spending_proposal_#{@spending_proposal.id}") do
+        click_link "Edit"
+      end
+
+      fill_in 'spending_proposal_price', with: '12345,98'
+      fill_in 'spending_proposal_price_first_year', with: '9876.6'
+      click_button 'Save changes'
+
+      expect(page).to have_content('2 errors')
+      expect(page).to have_content('Only integer numbers', count: 2)
+    end
   end
 
 end

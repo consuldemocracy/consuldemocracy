@@ -423,6 +423,7 @@ en:
       recommendation_two: Any proposal or comment suggesting illegal action will be deleted.
       recommendations_title: How to create a spending proposal
       start_new: Create spending proposal
+    wrong_price_format: Only integer numbers
   stats:
     index:
       visits: Visits
