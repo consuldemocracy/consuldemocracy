@@ -3,4 +3,8 @@ class Administrator < ActiveRecord::Base
   delegate :name, :email, to: :user
 
   validates :user_id, presence: true, uniqueness: true
+
+  def name_and_email
+    "#{name} (#{email})"
+  end
 end
