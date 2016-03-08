@@ -1,1 +1,0 @@
-$('#assigned_valuators').html("<%= j(render 'assigned_valuators') %>")

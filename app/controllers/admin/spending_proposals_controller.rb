@@ -27,17 +27,6 @@ class Admin::SpendingProposalsController < Admin::BaseController
     end
   end
 
-  def assign_admin
-    @spending_proposal.update(params.require(:spending_proposal).permit(:administrator_id))
-    render nothing: true
-  end
-
-  def assign_valuators
-    params[:spending_proposal] ||= {}
-    params[:spending_proposal][:valuator_ids] ||= []
-    @spending_proposal.update(params.require(:spending_proposal).permit(valuator_ids: []))
-  end
-
   private
 
     def spending_proposal_params
