@@ -12,8 +12,8 @@
       <% end %>
 
       <h1><%= t("pages.processes.process_2.title") %></h1>
-      <h3>Contesta las preguntas que quieras (no tienen por qué ser todas) y pulsa "Enviar respuesta"</h3>
-      <p>Puedes <a href="/processes_plaza_espana">ver toda la información relacionada con el proceso</a>, y mucha información útil para responder lo mejor posible a las siguientes preguntas.</p>
+      <h3>La encuesta ha finalizado. Próximamente publicaremos los resultados. Entretanto, más abajo puedes leer las preguntas que se realizaron en la encuesta.</h3>
+      <p>Puedes <a href="/processes_plaza_espana">ver toda la información relacionada con el proceso</a>, y mucha información útil sobre las preguntas del cuestionario.</p>
     </div>
     <div class="small-12 medium-4 column text-center margin-top">
       <h3>¡Comparte esta encuesta!</h3>
@@ -26,19 +26,12 @@
 
   <div id="login_required" class="callout primary absolute-survey" style="display:none">
     <div id="login_required_text">
-      Solo los usuarios verificados pueden responder a la encuesta,
-      <% if user_signed_in? %>
-        <%= link_to "verifica tu cuenta", verification_path %>
-      <% else %>
-        necesitas <%= link_to "iniciar sesión", new_user_session_path %>
-        o <%= link_to "registrarte", new_user_registration_path %>
-        para continuar.
-      <% end %>
+      Esta encuesta ha finalizado.
     </div>
   </div>
 
   <div id="survey" data-verified-id="<%= current_user.id if can?(:create, SurveyAnswer) %>" class="survey-questions small-12 medium-9 column end">
-    <%= form_tag encuesta_plaza_espana_gracias_path, class: "js-enter-disabled" %>
+    <%= form_tag class: "js-enter-disabled" %>
       <article>
         <h3>1a. ¿Crees necesario reformar la Plaza de España?</h3>
         <label>
@@ -968,7 +961,7 @@
           </span>
         </label>
       </article>
-      <input type="submit" value="Enviar respuesta" class="button large margin-top">
+      <input type="submit" disabled="true" value="Encuesta finalizada" class="button large margin-top">
     </form>
   </div>
 </div>
