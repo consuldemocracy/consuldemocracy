@@ -143,7 +143,7 @@ feature 'Valuation spending proposals' do
     spending_proposal = create(:spending_proposal,
                                 geozone: create(:geozone),
                                 association_name: 'People of the neighbourhood',
-                                price: 1234.56,
+                                price: 1234,
                                 feasible: false,
                                 feasible_explanation: 'It is impossible',
                                 administrator: administrator)
@@ -158,7 +158,7 @@ feature 'Valuation spending proposals' do
     expect(page).to have_content(spending_proposal.author.name)
     expect(page).to have_content(spending_proposal.association_name)
     expect(page).to have_content(spending_proposal.geozone.name)
-    expect(page).to have_content('1234.56')
+    expect(page).to have_content('1234')
     expect(page).to have_content('Not feasible')
     expect(page).to have_content('It is impossible')
     expect(page).to have_content('Ana (ana@admins.org)')
@@ -195,8 +195,8 @@ feature 'Valuation spending proposals' do
         click_link "Edit"
       end
 
-      fill_in 'spending_proposal_price', with: '12345.67'
-      fill_in 'spending_proposal_price_first_year', with: '8910.11'
+      fill_in 'spending_proposal_price', with: '12345'
+      fill_in 'spending_proposal_price_first_year', with: '9876'
       fill_in 'spending_proposal_price_explanation', with: 'Very cheap idea'
       choose  'spending_proposal_feasible_true'
       fill_in 'spending_proposal_feasible_explanation', with: 'Everything is legal and easy to do'
@@ -209,8 +209,8 @@ feature 'Valuation spending proposals' do
       visit valuation_spending_proposals_path
       click_link @spending_proposal.title
 
-      within('#price') { expect(page).to have_content('12345.67') }
-      within('#price_first_year') { expect(page).to have_content('8910.11') }
+      within('#price') { expect(page).to have_content('12345') }
+      within('#price_first_year') { expect(page).to have_content('9876') }
       expect(page).to have_content('Very cheap idea')
       within('#time_scope') { expect(page).to have_content('19 months') }
       within('#feasibility') { expect(page).to have_content('Feasible') }
