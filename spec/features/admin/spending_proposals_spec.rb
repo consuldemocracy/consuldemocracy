@@ -47,7 +47,8 @@ feature 'Admin spending proposals' do
 
       within("#spending_proposal_#{spending_proposal2.id}") do
         expect(page).to have_content("No admin assigned")
-        expect(page).to have_content("2 valuators assigned")
+        expect(page).to have_content("Olga")
+        expect(page).to have_content("Miriam")
       end
 
       within("#spending_proposal_#{spending_proposal3.id}") do
@@ -236,7 +237,7 @@ feature 'Admin spending proposals' do
       click_button 'Update'
 
       expect(page).to have_content 'Investment project updated succesfully.'
-      expect(page).to have_content 'Assigned admin: Marta'
+      expect(page).to have_content 'Assigned administrator: Marta'
     end
 
     scenario "Add valuators" do

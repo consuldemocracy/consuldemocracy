@@ -10,7 +10,7 @@
   <%= @spending_proposal.administrator.try(:name_and_email) || t("admin.spending_proposals.show.undefined") %>
 </p>
 
-<p>
+<p id="tags">
   <strong><%= t("admin.spending_proposals.show.tags") %>:</strong>
 
   <%= @spending_proposal.tags.pluck(:name).join(', ') %>
