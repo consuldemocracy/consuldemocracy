@@ -14,8 +14,9 @@
                class: "small-12 medium-6") %>
 
   <%= f.label :valuator_ids, t("admin.spending_proposals.edit.assigned_valuators") %>
-  <%= f.collection_check_boxes :valuator_ids, @valuators, :id, :name_and_email %>
-
+  <%= f.collection_check_boxes :valuator_ids, @valuators, :id, :name_and_email  do |b| %>
+     <%= b.label { b.check_box + b.text } %>
+  <% end %>
 
   <%= f.label :tag_list, t("admin.spending_proposals.edit.tags") %>
   <div class="tags">
