@@ -65,7 +65,8 @@
   <strong><%= t("valuation.spending_proposals.show.price_first_year") %> (<%= t("valuation.spending_proposals.show.currency") %>):</strong>
   <%= @spending_proposal.price_first_year.presence or t("valuation.spending_proposals.show.undefined") %>
 </p>
-<%= simple_format(safe_html_with_links(@spending_proposal.price_explanation.html_safe), {}, sanitize: false) if @spending_proposal.price_explanation.present? %>
+
+<%= explanation_field @spending_proposal.price_explanation %>
 
 <p id="time_scope">
   <strong><%= t("valuation.spending_proposals.show.time_scope") %>:</strong>
@@ -77,7 +78,7 @@
   <%= t("valuation.spending_proposals.show.#{@spending_proposal.feasibility}") %>
 </p>
 
-<%= simple_format_no_tags_no_sanitize(safe_html_with_links(@spending_proposal.feasible_explanation.html_safe)) if @spending_proposal.feasible_explanation.present? %>
+<%= explanation_field @spending_proposal.feasible_explanation %>
 
 <% if @spending_proposal.valuation_finished %>
   <p>

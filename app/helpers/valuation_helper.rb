@@ -23,4 +23,8 @@ module ValuationHelper
     end
   end
 
+  def explanation_field(field)
+    simple_format_no_tags_no_sanitize(safe_html_with_links(field.html_safe)) if field.present?
+  end
+
 end
