@@ -113,6 +113,9 @@ en:
       participatory_budget_text: 'The cost of your project will be evaluated and will include a feasibility report.'
       participatory_budget_title: Investment project
       proposal_button: Create proposal
+      proposal_signin: sign in
+      proposal_signin_only: For create proposals you must %{signin} or %{signup}.
+      proposal_signup: sign up
       proposal_text: 'Get 2% of support of citizenship and your proposal will be brought to the plenary.'
       proposal_title: Citizen proposal
       text: 'Choose the option depending on the type of proposal you want to create. You can read more information here:'

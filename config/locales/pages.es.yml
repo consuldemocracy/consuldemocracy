@@ -113,6 +113,9 @@ es:
       participatory_budget_text: 'El coste de tu proyecto será tasado e incluirá un informe de viabilidad.'
       participatory_budget_title: Propuesta de inversión
       proposal_button: Crear propuesta
+      proposal_signin: iniciar sesión
+      proposal_signin_only: Para crear propuestas debes %{signin} o %{signup}.
+      proposal_signup: registrarte
       proposal_text: 'Consigue el 2% de apoyos de la ciudadanía y tu propuesta será llevada al Pleno.'
       proposal_title: Propuesta ciudadana
       text: 'Elige la opción según el tipo de propuesta que quieres crear. Si todavía no lo tienes claro puedes leer más información:'
