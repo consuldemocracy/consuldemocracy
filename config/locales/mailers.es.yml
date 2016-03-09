@@ -20,3 +20,7 @@ es:
       new_reply_by_html: Hay una nueva respuesta de <b>%{commenter}</b> a tu comentario en
       subject: Alguien ha respondido a tu comentario
       title: Nueva respuesta a tu comentario
+    unfeasible_spending_proposal:
+      hi: Hola
+      subject: Tu propuesta de inversión ha sido marcada como inviable
+      responsible: El responsable de la evaluación de tu respuesta es el administrator

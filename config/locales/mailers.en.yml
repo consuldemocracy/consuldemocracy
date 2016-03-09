@@ -20,3 +20,7 @@ en:
       new_reply_by_html: There is a new response from <b>%{commenter}</b> to your comment on
       subject: Someone has responded to your comment
       title: New response to your comment
+    unfeasible_spending_proposal:
+      hi: Hi
+      subject: Your spending proposal has been marked as not feasible
+      responsible: The responsible for the evaluation of your spending proposal is admin

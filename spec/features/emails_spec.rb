@@ -122,4 +122,30 @@ feature 'Emails' do
     expect(email).to have_body_text(user_confirmation_path)
   end
 
+  scenario "Email on unfeasible spending proposal", :focus do
+    spending_proposal = create(:spending_proposal)
+    administrator = create(:administrator)
+    valuator = create(:valuator)
+    spending_proposal.update(administrator: administrator)
+    spending_proposal.valuators << valuator
+
+    login_as(valuator.user)
+    visit edit_valuation_spending_proposal_path(spending_proposal)
+
+    choose  'spending_proposal_feasible_false'
+    fill_in 'spending_proposal_feasible_explanation', with: 'This is not legal as stated in Article 34.9'
+    click_button 'Save changes'
+
+    expect(page).to have_content "Dossier updated"
+    spending_proposal.reload
+
+    email = open_last_email
+    expect(email).to have_subject('Your spending proposal has been marked as not feasible')
+    expect(email).to deliver_to(spending_proposal.author.email)
+    expect(email).to have_body_text(spending_proposal.author.name)
+    expect(email).to have_body_text(spending_proposal.title)
+    expect(email).to have_body_text(spending_proposal.feasible_explanation)
+    expect(email).to have_body_text("admin #{spending_proposal.administrator.id}")
+  end
+
 end

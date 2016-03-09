@@ -1,0 +1,16 @@
+<p>
+  <%= @author.name %>
+</p>
+
+<p>
+  <%= @spending_proposal.title %>
+</p>
+
+<p>
+  <%= @spending_proposal.feasible_explanation %>
+</p>
+
+<p>
+  <%= t("mailers.unfeasible_spending_proposal.responsible") %>
+  <%= @spending_proposal.administrator.id %>
+</p>

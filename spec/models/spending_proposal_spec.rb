@@ -59,6 +59,37 @@ describe SpendingProposal do
         expect(spending_proposal.feasibility).to eq "undefined"
       end
     end
+
+    describe "#unfeasible?" do
+      it "returns true when not feasible" do
+        spending_proposal.feasible = false
+        expect(spending_proposal.unfeasible?).to eq true
+      end
+
+      it "returns false when feasible" do
+        spending_proposal.feasible = true
+        expect(spending_proposal.unfeasible?).to eq false
+      end
+    end
+
+    describe "#marked_as_unfeasible?" do
+      let(:spending_proposal) { create(:spending_proposal) }
+
+      it "returns true when feasibility has changed and it is false" do
+        spending_proposal.update(feasible: false)
+        expect(spending_proposal.marked_as_unfeasible?).to eq true
+      end
+
+      it "returns false when feasibility has not changed" do
+        spending_proposal.update(price: 1000000)
+        expect(spending_proposal.marked_as_unfeasible?).to eq false
+      end
+
+      it "returns false when it is feasible" do
+        spending_proposal.update(feasible: true)
+        expect(spending_proposal.marked_as_unfeasible?).to eq false
+      end
+    end
   end
 
   describe "by_admin" do

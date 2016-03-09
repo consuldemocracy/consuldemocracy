@@ -18,6 +18,11 @@ class Valuation::SpendingProposalsController < Valuation::BaseController
 
   def valuate
     if valid_price_params? && @spending_proposal.update(valuation_params)
+
+      if @spending_proposal.marked_as_unfeasible?
+        Mailer.unfeasible_spending_proposal(@spending_proposal).deliver_later
+      end
+
       redirect_to valuation_spending_proposal_path(@spending_proposal), notice: t('valuation.spending_proposals.notice.valuate')
     else
       render action: :edit

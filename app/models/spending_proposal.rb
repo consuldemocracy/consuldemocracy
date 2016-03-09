@@ -68,4 +68,12 @@ class SpendingProposal < ActiveRecord::Base
     end
   end
 
+  def marked_as_unfeasible?
+    previous_changes.has_key?("feasible") && unfeasible?
+  end
+
+  def unfeasible?
+    not feasible?
+  end
+
 end
