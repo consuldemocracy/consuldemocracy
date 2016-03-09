@@ -37,7 +37,7 @@
     <h2><%= t("pages.proposal_type.participatory_budget_title") %></h2>
     <p><%= t("pages.proposal_type.participatory_budget_text") %></p>
       <% if can? :create, SpendingProposal %>
-        <%= link_to t('pages.proposal_type.participatory_budget_button'), new_spending_proposal_path, class: 'button' %>
+        <%= link_to t('pages.proposal_type.participatory_budget_button'), new_spending_proposal_path, class: 'button expanded' %>
       <% else %>
         <div class="callout primary">
           <%= t('spending_proposals.index.verified_only', verify_account: link_to(t('spending_proposals.index.verify_account'), verification_path)).html_safe %>
