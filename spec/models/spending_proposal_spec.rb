@@ -89,6 +89,10 @@ describe SpendingProposal do
         spending_proposal.update(feasible: true)
         expect(spending_proposal.marked_as_unfeasible?).to eq false
       end
+
+      xit "when marked as unfeasible but there is no admin associated...
+           an exception occurs when sending the unfeasible email,
+           because spending_proposal.administrator.id is nil.."
     end
   end
 
