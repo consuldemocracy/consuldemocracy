@@ -832,6 +832,10 @@
 .featured-proposals {
   background: $featured;
 
+  .proposal-featured {
+    min-height: $line-height*3.5;
+  }
+
   .supports {
     @include supports;
     background: none;
@@ -851,33 +855,25 @@
       margin-top: 0;
     }
 
-    .not-logged, .organizations-votes {
+    .not-logged,
+    .organizations-votes,
+    .anonymous-votes {
       background: $featured;
       color: $warning-color;
       font-size: $small-font-size;
-      line-height: rem-calc(24);
+      line-height: $line-height;
+      padding-top: 0;
 
       a {
         color: $warning-color;
         font-weight: bold;
       }
-    }
-
-    .anonymous-votes {
-      background: $featured;
 
       p {
-        color: $text;
+        color: $warning-color;
         font-size: $small-font-size;
         line-height: $line-height;
       }
-    }
-
-    .organizations-votes p {
-      color: $text;
-      line-height: rem-calc(24);
-      padding-top: rem-calc(6);
-      text-align: center;
     }
 
     .supported {
