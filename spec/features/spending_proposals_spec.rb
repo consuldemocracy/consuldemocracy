@@ -7,14 +7,14 @@ feature 'Spending proposals' do
   scenario 'Index' do
     visit spending_proposals_path
 
-    expect(page).to_not have_link('Create spending proposal', href: new_spending_proposal_path)
+    expect(page).to_not have_link('Create spending proposal', href: page_path('proposal_type'))
     expect(page).to have_content 'For create spending proposals you must sign in'
 
     login_as(author)
 
     visit spending_proposals_path
 
-    expect(page).to have_link('Create spending proposal', href: new_spending_proposal_path)
+    expect(page).to have_link('Create spending proposal', href: page_path('proposal_type'))
     expect(page).to_not have_content 'Only verified users can create spending proposals, verify your account'
   end
 
