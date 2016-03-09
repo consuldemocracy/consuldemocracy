@@ -108,3 +108,12 @@ en:
       submit: Verify my account
       title: Verify your account
     while_unfinished_html: While we finish, we encourage you to visit the <a href="/blog" target="_blank">Citizen Participation Area, Transparency and Open Government blog</a> to know about our progress and news; or the <a href="/">Citizen Participation section</a> where you can decide which is the city you want.
+    proposal_type:
+      participatory_budget_button: Create proposal
+      participatory_budget_text: 'The cost of your project will be evaluated and will include a feasibility report.'
+      participatory_budget_title: Investment project
+      proposal_button: Create proposal
+      proposal_text: 'Get 2% of support of citizenship and your proposal will be brought to the plenary.'
+      proposal_title: Citizen proposal
+      text: 'Choose the option depending on the type of proposal you want to create. You can read more information here:'
+      title: 'What kind of proposal would create?'

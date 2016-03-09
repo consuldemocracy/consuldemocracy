@@ -108,3 +108,12 @@ es:
       submit: Verificar mi cuenta
       title: Verifica tu cuenta
     while_unfinished_html: Mientras acabamos el nuevo portal, te invitamos a visitar el <a href="/blog" target="_blank">blog del Área de Participación Ciudadana, Transparencia y Gobierno Abierto</a> para conocer nuestros avances y novedades; o la <a href="/">sección de Participación Ciudadana</a> donde poder decidir qué ciudad es la que quieres.
+    proposal_type:
+      participatory_budget_button: Crear propuesta
+      participatory_budget_text: 'El coste de tu proyecto será tasado e incluirá un informe de viabilidad.'
+      participatory_budget_title: Propuesta de inversión
+      proposal_button: Crear propuesta
+      proposal_text: 'Consigue el 2% de apoyos de la ciudadanía y tu propuesta será llevada al Pleno.'
+      proposal_title: Propuesta ciudadana
+      text: 'Elige la opción según el tipo de propuesta que quieres crear. Si todavía no lo tienes claro puedes leer más información:'
+      title: '¿Qué tipo de propuesta quieres crear?'
