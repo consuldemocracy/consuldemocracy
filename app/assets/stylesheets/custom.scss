@@ -237,13 +237,9 @@ table {
       font-size: rem-calc(60);
     }
 
-    a {
+    p a {
       color: white;
       text-decoration: underline;
-
-      &.button {
-        text-decoration: none;
-      }
     }
 
     .button {
