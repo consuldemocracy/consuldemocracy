@@ -27,6 +27,8 @@ class Valuation::SpendingProposalsController < Valuation::BaseController
   private
 
     def valuation_params
+      params[:spending_proposal][:feasible] = nil if params[:spending_proposal][:feasible] == 'nil'
+
       params.require(:spending_proposal).permit(:price, :price_first_year, :price_explanation, :feasible, :feasible_explanation, :time_scope, :valuation_finished, :internal_comments)
     end
 

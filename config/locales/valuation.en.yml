@@ -49,6 +49,7 @@ en:
         feasibility: Feasibility
         feasible: Feasible
         not_feasible: Not feasible
+        undefined_feasible: Pending
         feasible_explanation_html: Feasibility explanation
         valuation_finished: Valuation finished
         time_scope_html: Time scope
