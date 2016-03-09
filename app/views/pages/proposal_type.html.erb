@@ -40,9 +40,10 @@
 
   <div class="small-12 medium-3 column">
     <div class="panel participatory-budget" data-equalizer-watch>
-    <p class="text-center"><i class="icon-budget"></i></p>
-    <h2><%= t("pages.proposal_type.participatory_budget_title") %></h2>
-    <p><%= t("pages.proposal_type.participatory_budget_text") %></p>
+      <p class="text-center"><i class="icon-budget"></i></p>
+      <h2><%= t("pages.proposal_type.participatory_budget_title") %></h2>
+      <p><%= t("pages.proposal_type.participatory_budget_text_html",
+             info: link_to(t('pages.proposal_type.participatory_budget_text_link'), page_path('participatory_budget_info'))).html_safe %></p>
       <% if user_signed_in? %>
         <% if can? :create, SpendingProposal %>
           <%= link_to t('pages.proposal_type.participatory_budget_button'), new_spending_proposal_path, class: 'button expanded' %>

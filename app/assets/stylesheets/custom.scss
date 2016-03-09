@@ -237,6 +237,15 @@ table {
       font-size: rem-calc(60);
     }
 
+    a {
+      color: white;
+      text-decoration: underline;
+
+      &.button {
+        text-decoration: none;
+      }
+    }
+
     .button {
       background: white;
       color: $text;
