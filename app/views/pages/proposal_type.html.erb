@@ -1,0 +1,64 @@
+<div class="row choose-proposal-type" data-equalizer>
+  <div class="small-12 large-6 column">
+
+    <%= link_to :back, class: "back" do %>
+      <i class="icon-angle-left"></i>
+      <%= t("proposals.show.back_link") %>
+    <% end %>
+
+    <h1><%= t("pages.proposal_type.title") %></h1>
+    <p><%= t("pages.proposal_type.text") %></p>
+
+    <ul>
+      <li>
+        <%= link_to t('pages.more_information.titles.proposals_info'),
+                    page_path('proposals_info') %>
+      </li>
+      <li>
+        <%= link_to t('pages.more_information.titles.spending_proposals_info'),
+                    page_path('participatory_budget_info') %>
+      </li>
+    </ul>
+  </div>
+
+  <div id="new_proposal_container" class="small-12 medium-6 large-3 column">
+    <div class="panel proposal" data-equalizer-watch>
+      <p class="text-center"><i class="icon-proposals"></i></p>
+      <h2><%= t("pages.proposal_type.proposal_title") %></h2>
+      <p><%= t("pages.proposal_type.proposal_text") %></p>
+      <% if user_signed_in? %>
+        <%= link_to t("pages.proposal_type.proposal_button"), new_proposal_path, class: 'button expanded' %>
+      <% else %>
+        <div class="callout primary">
+          <%= t('pages.proposal_type.proposal_signin_only',
+              signin: link_to(t('pages.proposal_type.proposal_signin'), new_user_session_path),
+              signup: link_to(t('pages.proposal_type.proposal_signup'), new_user_registration_path)).html_safe %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+  <div id="new_spending_proposal_container" class="small-12 medium-6 large-3 column">
+    <div class="panel participatory-budget" data-equalizer-watch>
+      <p class="text-center"><i class="icon-budget"></i></p>
+      <h2><%= t("pages.proposal_type.participatory_budget_title") %></h2>
+      <p><%= t("pages.proposal_type.participatory_budget_text_html",
+             info: link_to(t('pages.proposal_type.participatory_budget_text_link'), page_path('participatory_budget_info'))).html_safe %></p>
+      <% if user_signed_in? %>
+        <% if can? :create, SpendingProposal %>
+          <%= link_to t('pages.proposal_type.participatory_budget_button'), new_spending_proposal_path, class: 'button expanded' %>
+        <% else %>
+          <div class="callout primary">
+            <%= t('spending_proposals.index.verified_only', verify_account: link_to(t('spending_proposals.index.verify_account'), verification_path)).html_safe %>
+          </div>
+        <% end %>
+      <% else %>
+        <div class="callout primary">
+          <%= t('spending_proposals.index.signin_only',
+              signin: link_to(t('spending_proposals.index.signin'), new_user_session_path),
+              signup: link_to(t('spending_proposals.index.signup'), new_user_registration_path)).html_safe %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

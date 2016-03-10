@@ -18,7 +18,7 @@
 // 16. Comments
 // 17. Flags
 // 18. Activity
-//
+// 19. Choose proposal type
 
 // 01. Global styles
 // - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -207,4 +207,44 @@ table {
 
 .button.button-google {
   background: #CE3E26;
+}
+
+
+// 19. Choose proposal type
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+.choose-proposal-type {
+  min-height: $line-height*25;
+
+  .panel {
+
+    &.proposal, &.participatory-budget {
+      border: 0;
+      color: white;
+      position: relative;
+    }
+
+    &.proposal {
+      background: $proposals;
+    }
+
+    &.participatory-budget {
+      background: $budget;
+    }
+
+    .icon-proposals,
+    .icon-budget {
+      font-size: rem-calc(60);
+    }
+
+    p a {
+      color: white;
+      text-decoration: underline;
+    }
+
+    .button {
+      background: white;
+      color: $text;
+    }
+  }
 }

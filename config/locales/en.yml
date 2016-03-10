@@ -234,7 +234,7 @@ en:
     title: "Districts"
     proposal_for_district: "Start a proposal for your district"
     select_district: Scope of operation
-    start_proposal: Create a proposal
+    start_proposal: Create proposal
   omniauth:
     facebook:
       sign_in: Sign in with Facebook
@@ -293,7 +293,7 @@ en:
         other: " containing the term '%{search_term}'"
       select_order: Order by
       select_order_long: 'You are viewing proposals according to:'
-      start_proposal: Create a proposal
+      start_proposal: Create proposal
       title: Proposals
       top: Top weekly
       top_link_proposals: The most supported proposals by category
@@ -428,7 +428,7 @@ en:
       date_4_info: Final vote
       signin_only: For create spending proposals you must %{signin} or %{signup}.
       signin: sign in
-      signup: registrarte
+      signup: sign up
       title_html: You decide how to invest 60 million euros<br> to your city
       title_page: Participatory budgeting
       verified_only: Only verified users can create spending proposals, %{verify_account}.
