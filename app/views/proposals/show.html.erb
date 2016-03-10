@@ -86,13 +86,14 @@
         </div>
         <div class="sidebar-divider"></div>
         <h3><%= t("proposals.show.share") %></h3>
-        <br>
-        <%= social_share_button_tag(@proposal.title) %>
-        <% if browser.mobile? %>
-          <a href="whatsapp://send?text=<%= @proposal.title %> https://decide.madrid.es/proposals/<%= @proposal.to_param %>" data-action="share/whatsapp/share">
-            <%= icon('whatsapp', class: 'fa-2x whatsapp') %>
-          </a>
-        <% end %>
+        <div class="social_share_full">
+          <%= social_share_button_tag(@proposal.title) %>
+          <% if browser.mobile? %>
+            <a href="whatsapp://send?text=<%= @proposal.title %> https://decide.madrid.es/proposals/<%= @proposal.to_param %>" data-action="share/whatsapp/share">
+              <%= icon('whatsapp', class: 'fa-2x whatsapp') %>
+            </a>
+          <% end %>
+        </div>
       </aside>
     </div>
   </section>
