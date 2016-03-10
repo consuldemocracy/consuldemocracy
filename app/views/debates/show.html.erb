@@ -54,8 +54,13 @@
         </div>
         <div class="sidebar-divider"></div>
         <h3><%= t("debates.show.share") %></h3>
+        <br>
         <%= social_share_button_tag(@debate.title) %>
-      </aside>
+        <% if browser.mobile? %>
+        <a href="whatsapp://send?text=<%= @debate.title %> https://decide.madrid.es/debates/<%= @debate.to_param %>" data-action="share/whatsapp/share">
+          <%= icon('whatsapp', class: 'fa-2x whatsapp') %>
+        </a>
+        <% end %>
     </div>
   </section>
 <% end %>
