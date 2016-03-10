@@ -21,7 +21,16 @@ feature 'Spending proposals' do
   scenario 'Create' do
     login_as(author)
 
-    visit new_spending_proposal_path
+    visit spending_proposals_path
+    click_link 'Create spending proposal'
+
+    expect(current_path).to eq(page_path('proposal_type'))
+    within('#new_spending_proposal_container') do
+      click_link 'Create proposal'
+    end
+
+    expect(current_path).to eq(new_spending_proposal_path)
+
     fill_in 'spending_proposal_title', with: 'Build a skyscraper'
     fill_in 'spending_proposal_description', with: 'I want to live in a high tower over the clouds'
     fill_in 'spending_proposal_external_url', with: 'http://http://skyscraperpage.com/'
