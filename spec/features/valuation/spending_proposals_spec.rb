@@ -269,6 +269,25 @@ feature 'Valuation spending proposals' do
       expect(page).to have_content('Should be double checked by the urbanism area')
     end
 
+    scenario 'Feasibility can be marked as pending' do
+      visit valuation_spending_proposal_path(@spending_proposal)
+      click_link 'Edit dossier'
+
+      expect(find "#spending_proposal_feasible_nil").to be_checked
+      choose 'spending_proposal_feasible_true'
+      click_button 'Save changes'
+
+      visit edit_valuation_spending_proposal_path(@spending_proposal)
+      expect(find "#spending_proposal_feasible_nil").to_not be_checked
+      expect(find "#spending_proposal_feasible_true").to be_checked
+
+      choose 'spending_proposal_feasible_nil'
+      click_button 'Save changes'
+
+      visit edit_valuation_spending_proposal_path(@spending_proposal)
+      expect(find "#spending_proposal_feasible_nil").to be_checked
+    end
+
     scenario 'Finish valuation' do
       visit valuation_spending_proposal_path(@spending_proposal)
       click_link 'Edit dossier'

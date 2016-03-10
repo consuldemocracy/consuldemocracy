@@ -48,7 +48,8 @@ es:
         price_explanation_html: "Informe de coste <small>(opcional, dato público)</small>"
         feasibility: Viabilidad
         feasible: Viable
-        not_feasible: No viable
+        not_feasible: Inviable
+        undefined_feasible: Sin decidir
         feasible_explanation_html: "Informe de inviabilidad <small>(en caso de que lo sea, dato público)</small>"
         valuation_finished: Informe finalizado
         time_scope_html: "Plazo de ejecución <small>(opcional, dato no público)</small>"
