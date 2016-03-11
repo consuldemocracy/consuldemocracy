@@ -1,34 +1,8 @@
-<div class="row margin-top">
-  <div class="small-12 column">
-    <div class="float-right">
-      <a class="button warning" type="button" data-toggle="help-legislation">
-        <sub><i class="icon-help"></i></sub>&nbsp;
-        <%= t("legislation.help.title") %>
-      </a>
-
-      <div class="dropdown-pane" id="help-legislation" data-dropdown data-auto-focus="true">
-        <% if user_signed_in? %>
-          <p>
-            <%= t("legislation.help.text_logged") %>
-            <%= image_tag ("annotator_help.gif"), alt: t("legislation.help.alt") %>
-          </p>
-        <% else %>
-          <p>
-            <%= t("legislation.help.text",
-                sign_in: link_to(t("legislation.help.text_sign_in"), new_user_session_path),
-                sign_up: link_to(t("legislation.help.text_sign_up"), new_user_registration_path)).html_safe %>
-            <%= image_tag ("annotator_help.gif"), alt: t("legislation.help.alt") %>
-          </p>
-        <% end %>
-      </div>
-    </div>
-  </div>
-</div>
-
 <div class="row">
   <div class="small-12 medium-9 small-centered column">
     <section data-annotatable-type="legislation"
              data-annotatable-id="<%= @legislation.id %>"
+             data-annotatable-readonly="true"
              id="legislation_body">
 
       <!-- Used temporarily for specs, until legislations can be created with a CMS instead of being hardcoded in the view. -->
