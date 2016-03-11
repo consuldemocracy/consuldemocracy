@@ -85,11 +85,16 @@ es:
       process_1:
         title: Ayúdanos a mejorar la Ordenanza de Transparencia de la Ciudad de Madrid
         comment: dejar tus comentarios
-        text:  "Hasta el próximo 31 de enero podrás %{comment} sobre el borrador de la Ordenanza de Transparencia de la Ciudad de Madrid, o bien enviarlos a través de un email a transparencia@madrid.es.
+        text: |
+          Este es el texto sometido a consulta pública. En breve publicaremos el texto del proyecto inicial de Ordenanza que apruebe la Junta de Gobierno de la Ciudad de Madrid con las aportaciones ciudadanas que se hayan incluido.
 
+          La Ordenanza regulará la publicidad activa, el derecho de acceso y la reutilización de la información pública, así como el registro de lobbies, desde un principio básico de máxima transparencia y divulgación de la información que genera el Ayuntamiento de Madrid y el resto de los sujetos obligados por la norma.
 
-                Ya puedes consultar la [última versión del borrador de la Ordenanza de Transparencia de la Ciudad de Madrid](/docs/ordenanza_de_transparencia_de_la_ciudad_de_madrid.doc 'Ordenanza de Transparencia de la ciudad de Madrid')."
-        button: Comentar ordenanza
+          Este texto, en cuya elaboración ha participado un nutrido grupo de representantes de diferentes áreas de gobierno y órganos directivos municipales, surge con la vocación de convertir la transparencia en uno de los ejes inspiradores de la actuación municipal y para lograr devolver la información que genera la Administración a sus verdaderos propietarios, los ciudadanos.
+
+          El proceso de consulta pública finalizó el 31 de Enero de 2016.
+
+        button: Ver borrador con comentarios ciudadanos
       process_2:
         title: Remodelación de Plaza España
         text: Contamos contigo para que decidas cómo debe ser este nuevo espacio en tu ciudad.
