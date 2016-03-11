@@ -16,7 +16,7 @@ feature 'Legislation' do
     let(:user) { create(:user) }
     background { login_as user }
 
-    scenario 'Create' do
+    xscenario 'Create' do
       legislation = create(:legislation)
 
       visit legislation_path(legislation)
@@ -37,7 +37,7 @@ feature 'Legislation' do
       expect(page).to have_content "this is my annotation"
     end
 
-    scenario 'Update' do
+    xscenario 'Update' do
       legislation = create(:legislation)
       annotation = create(:annotation, legislation: legislation, user: user, text: "my annotation")
 
@@ -61,7 +61,7 @@ feature 'Legislation' do
       expect(page).to have_content "edited annotation"
     end
 
-    scenario 'Destroy' do
+    xscenario 'Destroy' do
       legislation = create(:legislation)
       annotation = create(:annotation, legislation: legislation, user: user)
 

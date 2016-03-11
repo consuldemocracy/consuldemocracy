@@ -210,14 +210,6 @@ es:
       proposals: Propuestas
       processes: Procesos abiertos
       spending_proposals: Presupuestos participativos
-  legislation:
-    help:
-      alt: Selecciona el texto que quieres comentar y pulsa en el botón con el lápiz.
-      text: Para comentar este documento debes %{sign_in} o %{sign_up}. Después selecciona el texto que quieres comentar y pulsa en el botón con el lápiz.
-      text_logged: "Selecciona el texto que quieres comentar y pulsa en el botón con el lápiz."
-      text_sign_in: iniciar sesión
-      text_sign_up: registrarte
-      title: "¿Cómo puedo comentar este documento?"
   locale: Español
   notifications:
     index:
@@ -551,11 +543,3 @@ es:
     google_oauth2:
       sign_in: "Entra con Google"
       sign_up: "Regístrate con Google"
-  legislation:
-    help:
-      title: "¿Cómo puedo comentar este documento?"
-      text_logged: "Selecciona el texto que quieres comentar y pulsa en el botón con el lápiz."
-      text: "Para comentar este documento debes %{sign_in} o %{sign_up}. Después selecciona el texto que quieres comentar y pulsa en el botón con el lápiz."
-      text_sign_in: "iniciar sesión"
-      text_sign_up: "registrarte"
-      alt: "Selecciona el texto que quieres comentar y pulsa en el botón con el lápiz."
