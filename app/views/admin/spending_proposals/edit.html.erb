@@ -24,12 +24,17 @@
                     placeholder: t("admin.spending_proposals.edit.tags_placeholder"),
                     class: 'js-tag-list' %>
 
-  <%= f.label :valuator_ids, t("admin.spending_proposals.edit.assigned_valuators") %>
-  <%= f.collection_check_boxes :valuator_ids, @valuators, :id, :name_and_email  do |b| %>
-     <%= b.label { b.check_box + b.text } %>
-  <% end %>
+  <div class="row collapse">
+    <%= f.label :valuator_ids, t("admin.spending_proposals.edit.assigned_valuators") %>
 
-  <p>
+    <div class="small-12 medium-4 column end">
+      <%= f.collection_check_boxes :valuator_ids, @valuators, :id, :name_and_email  do |b| %>
+         <%= b.label { b.check_box + b.text } %>
+      <% end %>
+    </div>
+  </div>
+
+  <p class="clear">
     <%= f.submit(class: "button", value: t("admin.spending_proposals.edit.submit_button")) %>
   </p>
 
