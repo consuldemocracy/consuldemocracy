@@ -28,8 +28,8 @@
     <%= f.label :valuator_ids, t("admin.spending_proposals.edit.assigned_valuators") %>
 
     <div class="small-12 medium-4 column end">
-      <%= f.collection_check_boxes :valuator_ids, @valuators, :id, :name_and_email  do |b| %>
-         <%= b.label { b.check_box + b.text } %>
+      <%= f.collection_check_boxes :valuator_ids, @valuators, :id, :email do |b| %>
+         <%= b.label(title: @valuators.name) { b.check_box + b.text } %>
       <% end %>
     </div>
   </div>
