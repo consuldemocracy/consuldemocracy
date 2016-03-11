@@ -6,6 +6,11 @@
 
 <h2 id="classification"><%= t("admin.spending_proposals.show.classification") %></h2>
 
+<p>
+  <%= link_to t("admin.spending_proposals.show.edit_classification"),
+            edit_admin_spending_proposal_path(@spending_proposal, anchor: "form") %>
+</p>
+
 <p><strong><%= t("admin.spending_proposals.show.assigned_admin") %>:</strong>
   <%= @spending_proposal.administrator.try(:name_and_email) || t("admin.spending_proposals.show.undefined") %>
 </p>
@@ -24,10 +29,6 @@
     <%= t("admin.spending_proposals.show.undefined") %>
   <% end %>
 </p>
-
-<%= link_to t("admin.spending_proposals.show.edit_button"),
-            edit_admin_spending_proposal_path(@spending_proposal, anchor: "form"),
-            class: "button" %>
 
 <hr>
 

@@ -231,7 +231,7 @@ feature 'Admin spending proposals' do
       administrator = create(:administrator, user: create(:user, username: 'Marta', email: 'marta@admins.org'))
 
       visit admin_spending_proposal_path(spending_proposal)
-      click_link 'Edit'
+      click_link 'Edit classification'
 
       select 'Marta (marta@admins.org)', from: 'spending_proposal[administrator_id]'
       click_button 'Update'
@@ -248,7 +248,7 @@ feature 'Admin spending proposals' do
       valuator3 = create(:valuator, user: create(:user, username: 'Val',       email: 'v3@valuators.org'))
 
       visit admin_spending_proposal_path(spending_proposal)
-      click_link 'Edit'
+      click_link 'Edit classification'
 
       check "spending_proposal_valuator_ids_#{valuator1.id}"
       check "spending_proposal_valuator_ids_#{valuator3.id}"
@@ -271,7 +271,7 @@ feature 'Admin spending proposals' do
       spending_proposal = create(:spending_proposal)
 
       visit admin_spending_proposal_path(spending_proposal)
-      click_link 'Edit'
+      click_link 'Edit classification'
 
       find('.js-add-tag-link', text: 'Education').click
       click_button 'Update'
@@ -288,7 +288,7 @@ feature 'Admin spending proposals' do
       spending_proposal = create(:spending_proposal)
 
       visit admin_spending_proposal_path(spending_proposal)
-      click_link 'Edit'
+      click_link 'Edit classification'
 
       fill_in 'spending_proposal_tag_list', with: 'Refugees, Solidarity'
       click_button 'Update'

@@ -13,22 +13,21 @@
                { include_blank: t("admin.spending_proposals.edit.undefined") },
                class: "small-12 medium-6") %>
 
-  <%= f.label :valuator_ids, t("admin.spending_proposals.edit.assigned_valuators") %>
-  <%= f.collection_check_boxes :valuator_ids, @valuators, :id, :name_and_email  do |b| %>
-     <%= b.label { b.check_box + b.text } %>
-  <% end %>
-
   <%= f.label :tag_list, t("admin.spending_proposals.edit.tags") %>
   <div class="tags">
     <% @tags.each do |tag| %>
       <a class="js-add-tag-link"><%= tag.name %></a>
     <% end %>
   </div>
-
   <%= f.text_field :tag_list, value: @spending_proposal.tag_list.to_s,
                     label: false,
                     placeholder: t("admin.spending_proposals.edit.tags_placeholder"),
                     class: 'js-tag-list' %>
+
+  <%= f.label :valuator_ids, t("admin.spending_proposals.edit.assigned_valuators") %>
+  <%= f.collection_check_boxes :valuator_ids, @valuators, :id, :name_and_email  do |b| %>
+     <%= b.label { b.check_box + b.text } %>
+  <% end %>
 
   <p>
     <%= f.submit(class: "button", value: t("admin.spending_proposals.edit.submit_button")) %>
