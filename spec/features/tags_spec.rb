@@ -34,7 +34,7 @@ feature 'Tags' do
       expect(page).to_not have_content(debate4.title)
     end
 
-    visit debates_path(tag: 'salud')
+    visit debates_path(search: 'salud')
 
     within("#debates") do
       expect(page).to have_css('.debate', count: 2)
