@@ -53,7 +53,18 @@ module Verification
   def no_phone_available?
     !verification_sms_sent?
   end
-
+  
+  def user_type
+    case
+    when level_three_verified?
+      :level_3_user
+    when level_two_verified?
+      :level_2_user
+    else
+      :level_1_user
+    end  
+  end
+  
   def sms_code_not_confirmed?
     !sms_verified?
   end

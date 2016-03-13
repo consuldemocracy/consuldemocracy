@@ -18,6 +18,10 @@ class Admin::StatsController < Admin::BaseController
     @verified_users = User.with_hidden.level_two_or_three_verified.count
     @unverified_users = User.with_hidden.unverified.count
     @users = User.with_hidden.count
+
+    @user_ids_who_voted_proposals = 
+     ActsAsVotable::Vote.where(votable_type: 'Proposal').pluck(:voter_id).uniq.count 
+    @user_ids_who_didnt_vote_proposals = @verified_users - @user_ids_who_voted_proposals
   end
 
 end

@@ -23,7 +23,7 @@ Setting.create(key: 'feature.spending_proposals', value: "true")
 Setting.create(key: 'feature.twitter_login', value: "true")
 Setting.create(key: 'feature.facebook_login', value: "true")
 Setting.create(key: 'feature.google_login', value: "true")
-
+Setting.create(key: 'per_page_code', value: "")
 Setting.create(key: 'comments_body_max_length', value: '1000')
 
 puts "Creating Geozones"

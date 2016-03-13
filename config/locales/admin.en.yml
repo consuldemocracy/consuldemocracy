@@ -198,6 +198,7 @@ en:
           user_level_two: Level two users
           users: Total users
           verified_users: Verified users
+          verified_users_who_didnt_vote_proposals: Verified users who didn't votes proposals
           visits: Visits
           votes: Total votes
         visits_title: Visits
