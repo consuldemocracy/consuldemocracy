@@ -1,4 +1,4 @@
-<%= link_to admin_spending_proposals_path(@spending_proposal), class: 'back' do %>
+<%= link_to admin_spending_proposal_path(@spending_proposal, SpendingProposal.filter_params(params)), class: 'back' do %>
   <i class="icon-angle-left"></i> <%= t("admin.spending_proposals.show.back") %>
 <% end %>
 
@@ -6,7 +6,12 @@
 
 <h2 id="form"><%= t("admin.spending_proposals.edit.classification") %></h2>
 
-<%= form_for @spending_proposal, url: admin_spending_proposal_path(@spending_proposal) do |f| %>
+<%= form_for @spending_proposal,
+             url: admin_spending_proposal_path(@spending_proposal) do |f| %>
+
+  <% SpendingProposal.filter_params(params).each do |filter_name, filter_value| %>
+    <%= hidden_field_tag filter_name, filter_value %>
+  <% end %>
 
   <%= f.select(:administrator_id,
                @admins.collect{ |a| [a.name_and_email, a.id ] },
@@ -24,15 +29,11 @@
                     placeholder: t("admin.spending_proposals.edit.tags_placeholder"),
                     class: 'js-tag-list' %>
 
-  <div class="row collapse">
-    <%= f.label :valuator_ids, t("admin.spending_proposals.edit.assigned_valuators") %>
+  <%= f.label :valuator_ids, t("admin.spending_proposals.edit.assigned_valuators") %>
 
-    <%= f.collection_check_boxes :valuator_ids, @valuators, :id, :email do |b| %>
-      <div class="small-12 medium-4 column end">
-        <%= b.label(title: b.object.name) { b.check_box + b.text } %>
-      </div>
-    <% end %>
-  </div>
+  <%= f.collection_check_boxes :valuator_ids, @valuators, :id, :email do |b| %>
+      <%= b.label(title: b.object.name) { b.check_box + b.text } %>
+  <% end %>
 
   <p class="clear">
     <%= f.submit(class: "button", value: t("admin.spending_proposals.edit.submit_button")) %>
