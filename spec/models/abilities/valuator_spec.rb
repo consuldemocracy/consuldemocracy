@@ -6,5 +6,7 @@ describe "Abilities::Valuator" do
   let(:user) { valuator.user }
   let(:valuator) { create(:valuator) }
 
-  it { should be_able_to(:manage, SpendingProposal) }
+  it { should be_able_to(:read, SpendingProposal) }
+  it { should be_able_to(:update, SpendingProposal) }
+  it { should be_able_to(:valuate, SpendingProposal) }
 end
