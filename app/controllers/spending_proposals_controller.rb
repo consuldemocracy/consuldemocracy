@@ -28,6 +28,12 @@ class SpendingProposalsController < ApplicationController
     end
   end
 
+  def destroy
+    spending_proposal = current_user.spending_proposals.find(params[:id])
+    spending_proposal.destroy
+    redirect_to user_path(current_user, filter: 'spending_proposals'), notice: t('flash.actions.destroy.spending_proposal')
+  end
+
   private
 
     def spending_proposal_params
