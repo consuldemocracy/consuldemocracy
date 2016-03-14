@@ -70,21 +70,21 @@
           <p><%= t("account.show.user_permission_info") %></p>
 
           <ul>
-            <li><i class="icon-check"></i>&nbsp;<%= t("account.show.user_permission_debates") %></li>
-            <li><i class="icon-check"></i>&nbsp;<%= t("account.show.user_permission_proposal") %></li>
+            <li><span class="icon-check"></span>&nbsp;<%= t("account.show.user_permission_debates") %></li>
+            <li><span class="icon-check"></span>&nbsp;<%= t("account.show.user_permission_proposal") %></li>
             <li>
               <% if current_user.level_two_or_three_verified? %>
-                <i class="icon-check"></i>
+                <span class="icon-check"></span>
               <% else %>
-                <i class="icon-x"></i>
+                <span class="icon-x"></span>
               <% end %>
               <%= t("account.show.user_permission_support_proposal") %>
             </li>
             <li>
               <% if current_user.level_three_verified? %>
-                <i class="icon-check"></i>
+                <span class="icon-check"></span>
               <% else %>
-                <i class="icon-x"></i>
+                <span class="icon-x"></span>
               <% end %>
               <%= t("account.show.user_permission_votes") %>
             </li>
@@ -101,7 +101,7 @@
               <span class="verify-account">
                 <% if current_user.level_three_verified? %>
                   <p class="already-verified">
-                    <i class="icon-check"></i>
+                    <span class="icon-check"></span>
                     <%= t("account.show.verified_account") %>
                   </p>
                 <% elsif current_user.level_two_verified? %>
