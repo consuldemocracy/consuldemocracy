@@ -33,7 +33,7 @@
 
           <div>
             <%= f.label :public_activity do %>
-              <%= f.check_box :public_activity, label: false %>
+              <%= f.check_box :public_activity, title: t('account.show.public_activity_label'), label: false %>
               <span class="checkbox"><%= t("account.show.public_activity_label") %></span>
             <% end %>
           </div>
@@ -42,21 +42,21 @@
 
           <div>
             <%= f.label :email_on_comment do %>
-              <%= f.check_box :email_on_comment, label: false %>
+              <%= f.check_box :email_on_comment, title: t('account.show.email_on_comment_label'), label: false %>
               <span class="checkbox"><%= t("account.show.email_on_comment_label") %></span>
             <% end %>
           </div>
 
           <div>
             <%= f.label :email_on_comment_reply do %>
-              <%= f.check_box :email_on_comment_reply, label: false %>
+              <%= f.check_box :email_on_comment_reply, title: t('account.show.email_on_comment_reply_label'), label: false %>
               <span class="checkbox"><%= t("account.show.email_on_comment_reply_label") %></span>
             <% end %>
           </div>
 
           <div>
             <%= f.label :email_newsletter_subscribed do %>
-              <%= f.check_box :newsletter, label: false %>
+              <%= f.check_box :newsletter, title: t('account.show.subscription_to_website_newsletter_label'), label: false %>
               <span class="checkbox"><%= t("account.show.subscription_to_website_newsletter_label") %></span>
             <% end %>
           </div>

@@ -739,7 +739,7 @@ form {
     min-height: $line-height*13;
   }
 
-  .checkbox {
+  .checkbox, .radio {
     display: inline-block;
     font-weight: normal;
     line-height: $line-height;
