@@ -203,7 +203,7 @@ feature 'Users' do
 
       background do
         @author = create(:user)
-        create(:spending_proposal, author: @author, title: 'Build a school')
+        @spending_proposal = create(:spending_proposal, author: @author, title: 'Build a school')
       end
 
       scenario 'is not shown if no user logged in' do
@@ -238,6 +238,22 @@ feature 'Users' do
         login_as(@author)
         visit user_path(@author)
         expect(page).to have_content('Build a school')
+      end
+
+      scenario 'delete button is shown if logged in user is author' do
+        login_as(@author)
+        visit user_path(@author)
+        within("#spending_proposal_#{@spending_proposal.id}") do
+          expect(page).to have_content('Delete')
+        end
+      end
+
+      scenario 'delete button is not shown if logged in user is admin' do
+        login_as(create(:administrator).user)
+        visit user_path(@author)
+        within("#spending_proposal_#{@spending_proposal.id}") do
+          expect(page).to_not have_content('Delete')
+        end
       end
 
     end
