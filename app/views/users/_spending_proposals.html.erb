@@ -4,7 +4,7 @@
       <td>
         <%= link_to spending_proposal.title, spending_proposal %>
 
-        <% if current_user && current_user.id == spending_proposal.author_id %>
+        <% if can?(:destroy, spending_proposal) %>
           <%= link_to t("users.show.delete_spending_proposal"),
                       spending_proposal,
                       method: :delete,

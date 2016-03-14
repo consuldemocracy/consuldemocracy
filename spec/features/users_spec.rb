@@ -202,7 +202,7 @@ feature 'Users' do
     feature 'Spending proposals' do
 
       background do
-        @author = create(:user)
+        @author = create(:user, :level_two)
         @spending_proposal = create(:spending_proposal, author: @author, title: 'Build a school')
       end
 
