@@ -457,6 +457,8 @@ en:
       deleted: Deleted
       deleted_debate: This debate has been deleted
       deleted_proposal: This proposal has been deleted
+      delete_spending_proposal: Delete
+      confirm_deletion_spending_proposal: Are you sure? This action can not be undone
       filters:
         comments:
           one: 1 Comment
