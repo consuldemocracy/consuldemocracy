@@ -31,9 +31,9 @@ describe UsersHelper do
   end
 
   describe '#comment_commentable_title' do
-    it "should return a link to the commentable" do
+    it "should return a link to the comment" do
       comment = create(:comment)
-      expect(comment_commentable_title(comment)).to eq link_to comment.commentable.title, comment.commentable
+      expect(comment_commentable_title(comment)).to eq link_to comment.commentable.title, comment
     end
 
     it "should return a hint if the commentable has been deleted" do
