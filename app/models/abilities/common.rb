@@ -25,7 +25,7 @@ module Abilities
 
       can :suggest, Debate
       can :suggest, Proposal
-      
+
       can [:flag, :unflag], Comment
       cannot [:flag, :unflag], Comment, user_id: user.id
 
@@ -44,6 +44,7 @@ module Abilities
         can :vote, Proposal
         can :vote_featured, Proposal
         can :create, SpendingProposal
+        can :destroy, SpendingProposal, author_id: user.id
       end
 
       can :create, Annotation
