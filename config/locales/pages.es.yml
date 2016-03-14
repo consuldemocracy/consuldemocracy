@@ -78,4 +78,4 @@ es:
       password: Contraseña
       submit: Verificar mi cuenta
       title: Verifica tu cuenta
-    while_unfinished_html: Mientras acabamos el nuevo portal, te invitamos a visitar el <a href="/blog" target="_blank">blog del Área de Participación Ciudadana, Transparencia y Gobierno Abierto</a> para conocer nuestros avances y novedades; o la <a href="/">sección de Participación Ciudadana</a> donde poder decidir qué ciudad es la que quieres.
+    while_unfinished_html: Mientras acabamos el nuevo portal, te invitamos a visitar el <a href="/blog" target="_blank" title="(se abre en ventana nueva)">blog del Área de Participación Ciudadana, Transparencia y Gobierno Abierto</a> para conocer nuestros avances y novedades; o la <a href="/">sección de Participación Ciudadana</a> donde poder decidir qué ciudad es la que quieres.

@@ -141,6 +141,7 @@ es:
       user_not_found: No se encontró el usuario
   form:
     accept_terms: Acepto la %{policy} y las %{conditions}
+    accept_terms_title: Acepto la Política de privacidad y las Condiciones de uso
     conditions: Condiciones de uso
     debate: el debate
     error: error
@@ -383,6 +384,7 @@ es:
       tags: Tendencias
       districts: "Distritos"
       categories: "Categorías"
+    target_blank_html: " (se abre en ventana nueva)"
     unflag: Deshacer denuncia
   simple_captcha:
     label: Introduce el texto de la imagen en la siguiente caja

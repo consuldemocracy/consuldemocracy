@@ -33,7 +33,7 @@
 
           <div>
             <%= f.label :public_activity do %>
-              <%= f.check_box :public_activity, label: false %>
+              <%= f.check_box :public_activity, title: t('account.show.public_activity_label'), label: false %>
               <span class="checkbox"><%= t("account.show.public_activity_label") %></span>
             <% end %>
           </div>
@@ -42,21 +42,21 @@
 
           <div>
             <%= f.label :email_on_comment do %>
-              <%= f.check_box :email_on_comment, label: false %>
+              <%= f.check_box :email_on_comment, title: t('account.show.email_on_comment_label'), label: false %>
               <span class="checkbox"><%= t("account.show.email_on_comment_label") %></span>
             <% end %>
           </div>
 
           <div>
             <%= f.label :email_on_comment_reply do %>
-              <%= f.check_box :email_on_comment_reply, label: false %>
+              <%= f.check_box :email_on_comment_reply, title: t('account.show.email_on_comment_reply_label'), label: false %>
               <span class="checkbox"><%= t("account.show.email_on_comment_reply_label") %></span>
             <% end %>
           </div>
 
           <div>
             <%= f.label :email_newsletter_subscribed do %>
-              <%= f.check_box :newsletter, label: false %>
+              <%= f.check_box :newsletter, title: t('account.show.subscription_to_website_newsletter_label'), label: false %>
               <span class="checkbox"><%= t("account.show.subscription_to_website_newsletter_label") %></span>
             <% end %>
           </div>
@@ -70,21 +70,21 @@
           <p><%= t("account.show.user_permission_info") %></p>
 
           <ul>
-            <li><i class="icon-check"></i>&nbsp;<%= t("account.show.user_permission_debates") %></li>
-            <li><i class="icon-check"></i>&nbsp;<%= t("account.show.user_permission_proposal") %></li>
+            <li><span class="icon-check"></span>&nbsp;<%= t("account.show.user_permission_debates") %></li>
+            <li><span class="icon-check"></span>&nbsp;<%= t("account.show.user_permission_proposal") %></li>
             <li>
               <% if current_user.level_two_or_three_verified? %>
-                <i class="icon-check"></i>
+                <span class="icon-check"></span>
               <% else %>
-                <i class="icon-x"></i>
+                <span class="icon-x"></span>
               <% end %>
               <%= t("account.show.user_permission_support_proposal") %>
             </li>
             <li>
               <% if current_user.level_three_verified? %>
-                <i class="icon-check"></i>
+                <span class="icon-check"></span>
               <% else %>
-                <i class="icon-x"></i>
+                <span class="icon-x"></span>
               <% end %>
               <%= t("account.show.user_permission_votes") %>
             </li>
@@ -101,7 +101,7 @@
               <span class="verify-account">
                 <% if current_user.level_three_verified? %>
                   <p class="already-verified">
-                    <i class="icon-check"></i>
+                    <span class="icon-check"></span>
                     <%= t("account.show.verified_account") %>
                   </p>
                 <% elsif current_user.level_two_verified? %>

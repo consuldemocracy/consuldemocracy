@@ -2,12 +2,12 @@
 
   <div class="small-12 medium-9 column">
     <%= link_to spending_proposals_path, class: "back" do %>
-      <i class="icon-angle-left"></i>
+      <span class="icon-angle-left"></span>
       <%= t("spending_proposals.new.back_link") %>
     <% end %>
     <h1><%= t("spending_proposals.new.start_new") %></h1>
     <div data-alert class="callout primary">
-      <%= link_to "/spending_proposals_info", target: "_blank" do %>
+      <%= link_to "/spending_proposals_info", title: t('shared.target_blank_html'), target: "_blank" do %>
         <%= t("spending_proposals.new.more_info")%>
       <% end %>
     </div>
@@ -15,7 +15,7 @@
   </div>
 
   <div class="small-12 medium-3 column">
-    <i class="icon-budget float-right"></i>
+    <span class="icon-budget float-right"></span>
     <h2><%= t("spending_proposals.new.recommendations_title") %></h2>
     <ul class="recommendations">
       <li><%= t("spending_proposals.new.recommendation_one") %></li>

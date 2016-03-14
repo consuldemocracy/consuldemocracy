@@ -5,11 +5,13 @@
     <div class="small-12 medium-7 column">
       <h1><%= t("pages.opendata.title") %></h1>
       <p><strong><%= t("pages.opendata.slogan_html") %></strong></p>
-      <%= link_to t("pages.opendata.go_old"), t("layouts.header.external_link_opendata_url"), target: "_blank", class: "button" %>
+      <%= link_to t("pages.opendata.go_old"), t("layouts.header.external_link_opendata_url"),
+          title: t('shared.target_blank_html'),
+          target: "_blank", class: "button" %>
     </div>
 
     <div class="show-for-medium small-12 medium-5 column text-center">
-      <%= image_tag("icon_home.png", size: "330x240", alt:"", role:"presentation") %>
+      <%= image_tag("icon_home.png", size: "330x240", alt:"") %>
     </div>
   </div>
 </div>

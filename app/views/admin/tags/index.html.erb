@@ -10,7 +10,7 @@
 
     <div class="is-featured small-12 medium-6 column">
       <%= f.label :featured do %>
-        <%= f.check_box :featured, label: false %>
+        <%= f.check_box :featured, title: t('admin.tags.mark_as_featured'), label: false %>
         <span class="checkbox"><%= t("admin.tags.mark_as_featured") %></span>
       <% end %>
     </div>
@@ -34,7 +34,7 @@
 
           <span class="float-left">
             <%= f.label "featured_#{tag.id}" do %>
-              <%= f.check_box :featured, label: false, id: "tag_featured_#{tag.id}", class: "inline-block" %>
+              <%= f.check_box :featured, title: t('admin.tags.mark_as_featured'), label: false, id: "tag_featured_#{tag.id}", class: "inline-block" %>
               <span class="checkbox inline-block"><%= t("admin.tags.mark_as_featured") %></span>
             <% end %>
           </span>

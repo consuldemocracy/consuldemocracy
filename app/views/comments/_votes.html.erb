@@ -7,10 +7,10 @@
       <% if can?(:vote, comment) %>
         <%= link_to vote_comment_path(comment, value: 'yes'),
             method: "post", remote: true do %>
-            <i class="icon-angle-up"></i>
+            <span class="icon-angle-up"></span>
         <% end %>
       <% else %>
-        <i class="icon-angle-up"></i>
+        <span class="icon-angle-up"></span>
       <% end %>
       <%= comment.total_likes %>
     </span>
@@ -19,16 +19,16 @@
       <% if can?(:vote, comment) %>
         <%= link_to vote_comment_path(comment, value: 'no'),
             method: "post", remote: true do %>
-            <i class="icon-angle-down"></i>
+            <span class="icon-angle-down"></span>
         <% end %>
       <% else %>
-        <i class="icon-angle-down"></i>
+        <span class="icon-angle-down"></span>
       <% end %>
       <%= comment.total_dislikes %>
     </span>
 
   <% elsif !user_signed_in? %>
-    
+
     <div class="logged" >
       <%= t('comments.comment.votes', count: comment.total_votes) %>
       &nbsp;|&nbsp;
@@ -37,10 +37,10 @@
         <% if can?(:vote, comment) %>
           <%= link_to vote_comment_path(comment, value: 'yes'),
               method: "post", remote: true do %>
-              <i class="icon-angle-up"></i>
+              <span class="icon-angle-up"></span>
           <% end %>
         <% else %>
-          <i class="icon-angle-up"></i>
+          <span class="icon-angle-up"></span>
         <% end %>
         <%= comment.total_likes %>
       </span>
@@ -48,14 +48,14 @@
         <% if can?(:vote, comment) %>
           <%= link_to vote_comment_path(comment, value: 'no'),
               method: "post", remote: true do %>
-              <i class="icon-angle-down"></i>
+              <span class="icon-angle-down"></span>
           <% end %>
         <% else %>
-          <i class="icon-angle-down"></i>
+          <span class="icon-angle-down"></span>
         <% end %>
         <%= comment.total_dislikes %>
       </span>
-     </div> 
+     </div>
     <div class="not-logged" style='display:none'>
       <%= t("votes.comment_unauthenticated",
         signin: link_to(t("votes.signin"), new_user_session_path),

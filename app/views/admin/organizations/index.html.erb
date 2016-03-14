@@ -28,7 +28,7 @@
     <td><%= organization.responsible_name %></td>
     <% if organization.verified? %>
       <td class="verified">
-        <i class="icon-check"></i>
+        <span class="icon-check"></span>
         <%= t("admin.organizations.index.verified") %>
       </td>
     <% end %>
@@ -42,7 +42,7 @@
     <% end %>
     <% if organization.rejected? %>
       <td class="rejected">
-        <i class="icon-x"></i>
+        <span class="icon-x"></span>
         <%= t("admin.organizations.index.rejected") %>
       </td>
     <% end %>

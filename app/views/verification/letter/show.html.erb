@@ -2,7 +2,7 @@
   <div class="small-12 column">
 
     <%= link_to account_path, class: "back" do %>
-      <i class="icon-angle-left"></i>
+      <span class="icon-angle-left"></span>
       <%= t("verification.back") %>
     <% end %>
 
@@ -12,6 +12,7 @@
       <%= t("verification.letter.create.flash.success_html",
           offices: link_to(t("verification.letter.create.flash.offices"),
                            t("verification.letter.create.flash.offices_url"),
+                           title: t('shared.target_blank_html'),
                            target: "_blank")).html_safe
       %>
     </div>
