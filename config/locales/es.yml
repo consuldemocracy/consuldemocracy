@@ -384,6 +384,7 @@ es:
       tags: Tendencias
       districts: "Distritos"
       categories: "Categorías"
+    target_blank_html: " (se abre en ventana nueva)"
     unflag: Deshacer denuncia
   simple_captcha:
     label: Introduce el texto de la imagen en la siguiente caja

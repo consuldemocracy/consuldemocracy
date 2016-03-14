@@ -384,6 +384,7 @@ en:
       tags: Trending
       districts: "Districts"
       categories: "Categories"
+    target_blank_html: " (link opens in new window)"
     unflag: Unflag
   simple_captcha:
     label: Enter the text from the image in the box below
