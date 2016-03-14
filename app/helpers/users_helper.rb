@@ -20,7 +20,7 @@ module UsersHelper
       commentable.title +
       "</abbr>".html_safe
     else
-      link_to(commentable.title, commentable)
+      link_to(commentable.title, comment)
     end
   end
 
