@@ -16,7 +16,13 @@
 <ul id="valuators" class="admin-list">
   <% @valuators.each do |valuator| %>
     <li>
-      <%= render 'valuator', valuator: valuator %>
+      <span><%= valuator.name %></span>
+      <span class="bullet">&nbsp;&bull;&nbsp;</span>
+      <span><%= valuator.email %></span>
+      <% if valuator.description.present? %>
+        <span class="bullet">&nbsp;&bull;&nbsp;</span>
+        <span><%= valuator.description %></span>
+      <% end %>
     </li>
   <% end %>
 </ul>

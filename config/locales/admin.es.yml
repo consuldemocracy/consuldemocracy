@@ -74,7 +74,8 @@ es:
       index:
         title: Evaluadores
       valuator:
-        add: Añadir
+        user_found: Usuario encontrado
+        add: Añadir como evaluador
       search:
         email_placeholder: Buscar usuario por email
         search: Buscar

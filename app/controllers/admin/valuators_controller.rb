@@ -19,9 +19,14 @@ class Admin::ValuatorsController < Admin::BaseController
   end
 
   def create
-    @valuator.user_id = params[:user_id]
+    @valuator = Valuator.new(create_params)
     @valuator.save
 
     redirect_to admin_valuators_path
   end
+
+  private
+    def create_params
+      params.require(:valuator).permit(:user_id, :description)
+    end
 end

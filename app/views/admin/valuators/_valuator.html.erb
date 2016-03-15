@@ -1,7 +1,24 @@
-<span><%= valuator.name %></span>
-<span class="bullet">&nbsp;&bull;&nbsp;</span>
-<span><%= valuator.email %></span>
-<% unless valuator.persisted? %>
-  <%= link_to t('admin.valuators.valuator.add'),{ controller: "admin/valuators", action: :create, user_id: valuator.user_id },
-    method: :post, class: "button small success float-right" %>
-<% end %>
+<h3><%= t('admin.valuators.valuator.user_found') %>:</h3>
+<div class="row">
+  <div class="small-12 medium-12 column">
+    <h4>
+      <%= valuator.name %>
+      <span class="bullet">&nbsp;&bull;&nbsp;</span>
+      <%= valuator.email %>
+    </h4>
+  </div>
+
+  <% unless @valuator.persisted? %>
+    <%= form_for @valuator, url: admin_valuators_path do |f| %>
+      <div class="row">
+        <div class="small-12 medium-4 column ">
+          <%= f.text_field :description, label: false, placeholder: "descripción (opcional)" %>
+          <%= f.hidden_field :user_id %>
+        </div>
+        <div class="small-12 medium-2 column end" style="border:ddotted 10px red;">
+          <%= f.submit t('admin.valuators.valuator.add'), class: "button success float-left" %>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+</div>
