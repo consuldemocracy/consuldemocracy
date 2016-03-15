@@ -8,21 +8,21 @@
       <fieldset class="fieldset">
         <legend><%= t('valuation.spending_proposals.edit.feasibility') %></legend>
         <div class="small-4 column">
-            <span class="checkbox">
+            <span class="radio">
               <%= f.radio_button :feasible, :nil, label: false, checked: @spending_proposal.feasible.nil? %>
               <%= f.label :feasible_nil, t('valuation.spending_proposals.edit.undefined_feasible') %>
             </span>
         </div>
 
         <div class="small-4 column">
-            <span class="checkbox">
+            <span class="radio">
               <%= f.radio_button :feasible, true, value: true, label: false %>
               <%= f.label :feasible_true, t('valuation.spending_proposals.edit.feasible') %>
             </span>
         </div>
 
         <div class="small-4 column">
-            <span class="checkbox">
+            <span class="radio">
               <%= f.radio_button :feasible, false, value: false, label: false %>
               <%= f.label :feasible_false, t('valuation.spending_proposals.edit.not_feasible') %>
             </span>
@@ -67,7 +67,7 @@
   <div class="row">
     <div class="small-12 medium-8 column">
       <%= f.label :valuation_finished do %>
-        <%= f.check_box :valuation_finished, label: false %>
+        <%= f.check_box :valuation_finished, title: t('valuation.spending_proposals.edit.valuation_finished'), label: false %>
         <span class="checkbox"><%= t("valuation.spending_proposals.edit.valuation_finished") %></span>
       <% end %>
     </div>

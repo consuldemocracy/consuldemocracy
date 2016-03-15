@@ -2,13 +2,12 @@
 
   <div class="small-12 medium-9 column">
     <%= link_to spending_proposals_path, class: "back" do %>
-      <i class="icon-angle-left"></i>
+      <span class="icon-angle-left"></span>
       <%= t("spending_proposals.new.back_link") %>
     <% end %>
     <h1><%= t("spending_proposals.new.start_new") %></h1>
-
-    <div class="callout featured">
-      <%= link_to page_path('participatory_budget_info', anchor: "21"), target: "_blank" do %>
+    <div class="callout primary">
+      <%= link_to page_path('participatory_budget_info', anchor: "21"), title: t('shared.target_blank_html'), target: "_blank" do %>
         <h3><%= t("spending_proposals.new.more_info")%></h3>
 
         <p class="small"><i class="icon-check"></i>&nbsp;<strong>1. Es una inversión:</strong></p>
@@ -28,7 +27,7 @@
   </div>
 
   <div class="small-12 medium-3 column">
-    <i class="icon-budget float-right"></i>
+    <span class="icon-budget float-right"></span>
     <h2><%= t("spending_proposals.new.recommendations_title") %></h2>
     <ul class="recommendations">
       <li>

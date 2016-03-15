@@ -76,6 +76,7 @@ en:
           success: Residence verified
       new:
         accept_terms_text: I accept %{terms_url} of the Census
+        accept_terms_text_title: I accept the terms and conditions of access of the Census
         date_of_birth: Date of birth
         document_number: Document number
         document_type:

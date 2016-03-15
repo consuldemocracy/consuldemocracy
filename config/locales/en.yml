@@ -143,6 +143,7 @@ en:
       user_not_found: User not found
   form:
     accept_terms: I agree to the %{policy} and the %{conditions}
+    accept_terms_title: I agree to the Privacy Policy and the Terms and conditions of use
     conditions: Terms and conditions of use
     debate: Debate
     error: error
@@ -382,6 +383,7 @@ en:
       tags: Trending
       districts: "Districts"
       categories: "Categories"
+    target_blank_html: " (link opens in new window)"
     unflag: Unflag
   simple_captcha:
     label: Enter the text from the image in the box below
