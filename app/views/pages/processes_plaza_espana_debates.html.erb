@@ -5,30 +5,14 @@
 
 <div class="expanded jumbo-survey">
   <div class="row padding no-margin-top">
-    <div class="small-12 medium-6 column">
+    <div class="small-12 column">
       <%= link_to "/processes_plaza_espana", class: "left back" do %>
         <i class="icon-angle-left left"></i>
         <%= t("pages.processes.back") %>
       <% end %>
-
-      <h1>La plaza como ágora. Usos. Vivir la plaza como parte del barrio y de la ciudad</h1>
-      <h3>Viernes 4 de marzo, 18:30h</h3>
-      <p>Colegio de Arquitectos de Madrid (COAM) <br>(C/ Hortaleza,63. Madrid)</p>
-    </div>
-    <div class="small-12 medium-6 column">
-      <%
-        up_time = Time.strptime('04-MAR-16 18.20.00', '%d-%b-%y %H.%M.%S')
-        if (up_time..(up_time + 4.hours)).cover? Time.now.in_time_zone
-       %>
-         <div class="text-right">
-           <span class="label round alert">EN DIRECTO</span>
-         </div>
-         <div class="flex-video">
-           <iframe frameborder="0" width="760" height="428" src="//www.dailymotion.com/embed/video/x2pejmf" allowfullscreen=""></iframe>
-         </div>
-      <% else %>
+      <div class="text-center">
         <%= image_tag "processes_plaza_espana_debates.png", size: "580x270", alt: "#decideplazaespaña"%>
-      <% end %>
+      </div>
     </div>
   </div>
 </div>
@@ -36,17 +20,22 @@
 <div class="process row margin">
   <div class="small-12 column">
 
-    <h3>Debates anteriores</h3>
+    <h1>Debates anteriores</h1>
     <ul>
       <li>
-        <strong>Pasado, presente y futuro de la plaza de España. ¿Por qué remodelarla?</strong><br>
-        <em>Jueves 11 de febrero</em>&nbsp;|&nbsp;
-        <a href="https://www.youtube.com/watch?v=RWQeKbheobY" target="_blank">Ver vídeo del debate</a>
+        <strong>La plaza como ágora. Usos. Vivir la plaza como parte del barrio y de la ciudad</strong><br>
+        <em>Viernes 4 de marzo</em>&nbsp;|&nbsp;
+        <a href="https://www.youtube.com/watch?v=-wLAzQ7Bo0g" target="_blank" title="(se abre en ventana nueva)">Ver vídeo del debate</a>
       </li>
       <li>
         <strong>Plaza España. Movilidad, Medio Ambiente y Energía</strong><br>
         <em>Jueves 25 de febrero</em>&nbsp;|&nbsp;
-        <a href="https://www.youtube.com/watch?v=C_71mfvRtSE" target="_blank">Ver vídeo del debate</a>
+        <a href="https://www.youtube.com/watch?v=C_71mfvRtSE" target="_blank" title="(se abre en ventana nueva)">Ver vídeo del debate</a>
+      </li>
+      <li>
+        <strong>Pasado, presente y futuro de la plaza de España. ¿Por qué remodelarla?</strong><br>
+        <em>Jueves 11 de febrero</em>&nbsp;|&nbsp;
+        <a href="https://www.youtube.com/watch?v=RWQeKbheobY" target="_blank" title="(se abre en ventana nueva)">Ver vídeo del debate</a>
       </li>
     </ul>
   </div>
