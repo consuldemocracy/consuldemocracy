@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
-
   include Verification
+  include Searchable
 
   apply_simple_captcha
   devise :database_authenticatable, :registerable, :confirmable,
@@ -67,6 +67,17 @@ class User < ActiveRecord::Base
       terms_of_service: '1',
       confirmed_at: oauth_email_confirmed ? DateTime.now : nil
     )
+  end
+
+  def searchable_values
+    { username          => 'A',
+      email             => 'B',
+      document_number   => 'C'
+    }
+  end
+
+  def self.search(terms)
+    self.pg_search(terms)
   end
 
   def name
@@ -146,6 +157,7 @@ class User < ActiveRecord::Base
       confirmation_token: nil,
       reset_password_token: nil,
       email_verification_token: nil,
+      tsv: nil,
       confirmed_phone: nil,
       unconfirmed_phone: nil
     )
@@ -159,9 +171,9 @@ class User < ActiveRecord::Base
     Lock.find_or_create_by(user: self).locked?
   end
 
-  def self.search(term)
-    term.present? ? where("email = ? OR username ILIKE ?", term, "%#{term}%") : none
-  end
+  #def self.search(term)
+  #  term.present? ? where("email = ? OR username ILIKE ?", term, "%#{term}%") : none
+  #end
 
   def self.username_max_length
     @@username_max_length ||= self.columns.find { |c| c.name == 'username' }.limit || 60

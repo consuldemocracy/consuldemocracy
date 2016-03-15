@@ -1,6 +1,7 @@
 class SpendingProposal < ActiveRecord::Base
   include Measurable
   include Sanitizable
+  include Searchable
   include Taggable
 
   apply_simple_captcha
@@ -19,6 +20,7 @@ class SpendingProposal < ActiveRecord::Base
   validates :description, length: { maximum: SpendingProposal.description_max_length }
   validates :terms_of_service, acceptance: { allow_nil: false }, on: :create
 
+
   scope :valuation_open,         -> { where(valuation_finished: false) }
   scope :without_admin,          -> { valuation_open.where(administrator_id: nil) }
   scope :managed,                -> { valuation_open.where(valuation_assignments_count: 0).where("administrator_id IS NOT ?", nil) }
@@ -30,6 +32,16 @@ class SpendingProposal < ActiveRecord::Base
   scope :by_valuator, -> (valuator) { where("valuation_assignments.valuator_id = ?", valuator.presence).joins(:valuation_assignments) }
 
   scope :for_render,             -> { includes(:geozone, administrator: :user, valuators: :user) }
+
+  def searchable_values
+    { title             => 'A',
+      description       => 'B'
+    }
+  end
+
+  def self.search_title(terms)
+    self.pg_search(terms)
+  end
 
   def description
     super.try :html_safe

@@ -34,6 +34,8 @@ en:
         hidden_debate: Hidden debate
         hidden_proposal: Hidden proposal
         title: Hidden comments
+        search: Search
+        search_placeholder: Search comments
     dashboard:
       index:
         title: Administration
@@ -45,6 +47,8 @@ en:
           with_confirmed_hide: Confirmed
           without_confirmed_hide: Pending
         title: Hidden debates
+        search: Search
+        search_placeholder: Search debates
     menu:
       activity: Moderator activity
       debate_topics: Debate topics
@@ -127,6 +131,8 @@ en:
           with_confirmed_hide: Confirmed
           without_confirmed_hide: Pending
         title: Hidden proposals
+        search: Search
+        search_placeholder: Search proposals
     settings:
       flash:
         updated: Value updated
@@ -161,6 +167,8 @@ en:
         assigned_admin: Assigned administrator
         no_admin_assigned: No admin assigned
         no_valuators_assigned: No valuators assigned
+        search: Search
+        search_placeholder: Search for title or description
       show:
         assigned_admin: Assigned administrator
         assigned_valuators: Assigned valuators
@@ -219,6 +227,8 @@ en:
           with_confirmed_hide: Confirmed
           without_confirmed_hide: Pending
         title: Hidden users
+        search: Search
+        search_placeholder: Search users
       show:
         back: Back
         email: 'Email:'

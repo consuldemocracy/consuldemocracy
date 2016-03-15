@@ -89,6 +89,7 @@ ActiveRecord::Schema.define(version: 20160308184050) do
     t.datetime "confirmed_hide_at"
     t.string   "ancestry"
     t.integer  "confidence_score",   default: 0, null: false
+    t.tsvector "tsv"
   end
 
   add_index "comments", ["ancestry"], name: "index_comments_on_ancestry", using: :btree
@@ -97,6 +98,7 @@ ActiveRecord::Schema.define(version: 20160308184050) do
   add_index "comments", ["cached_votes_up"], name: "index_comments_on_cached_votes_up", using: :btree
   add_index "comments", ["commentable_id", "commentable_type"], name: "index_comments_on_commentable_id_and_commentable_type", using: :btree
   add_index "comments", ["hidden_at"], name: "index_comments_on_hidden_at", using: :btree
+  add_index "comments", ["tsv"], name: "index_comments_on_tsv", using: :gin
   add_index "comments", ["user_id"], name: "index_comments_on_user_id", using: :btree
 
   create_table "debates", force: :cascade do |t|
@@ -309,12 +311,14 @@ ActiveRecord::Schema.define(version: 20160308184050) do
     t.text     "explanations_log"
     t.integer  "administrator_id"
     t.integer  "valuation_assignments_count",           default: 0
+    t.tsvector "tsv"
     t.integer  "price_first_year",            limit: 8
     t.string   "time_scope"
   end
 
   add_index "spending_proposals", ["author_id"], name: "index_spending_proposals_on_author_id", using: :btree
   add_index "spending_proposals", ["geozone_id"], name: "index_spending_proposals_on_geozone_id", using: :btree
+  add_index "spending_proposals", ["tsv"], name: "index_spending_proposals_on_tsv", using: :gin
 
   create_table "taggings", force: :cascade do |t|
     t.integer  "tag_id"
@@ -417,6 +421,7 @@ ActiveRecord::Schema.define(version: 20160308184050) do
     t.string   "oauth_email"
     t.integer  "geozone_id"
     t.string   "redeemable_code"
+    t.tsvector "tsv"
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree
@@ -424,6 +429,7 @@ ActiveRecord::Schema.define(version: 20160308184050) do
   add_index "users", ["geozone_id"], name: "index_users_on_geozone_id", using: :btree
   add_index "users", ["hidden_at"], name: "index_users_on_hidden_at", using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+  add_index "users", ["tsv"], name: "index_users_on_tsv", using: :gin
 
   create_table "valuation_assignments", force: :cascade do |t|
     t.integer  "valuator_id"
