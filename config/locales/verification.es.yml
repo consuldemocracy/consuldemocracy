@@ -51,6 +51,7 @@ es:
           success: Residencia verificada
       new:
         accept_terms_text: Acepto %{terms_url} al Padrón
+        accept_terms_text_title: Acepto los términos de acceso al Padrón
         date_of_birth: Fecha de nacimiento
         document_number: Número de documento
         document_type:

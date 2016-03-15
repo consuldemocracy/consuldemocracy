@@ -78,4 +78,4 @@ en:
       password: Password
       submit: Verify my account
       title: Verify your account
-    while_unfinished_html: While we finish, we encourage you to visit the <a href="/blog" target="_blank">Citizen Participation Area, Transparency and Open Government blog</a> to know about our progress and news; or the <a href="/">Citizen Participation section</a> where you can decide which is the city you want.
+    while_unfinished_html: While we finish, we encourage you to visit the <a href="/blog" target="_blank" title="(link opens in new window)">Citizen Participation Area, Transparency and Open Government blog</a> to know about our progress and news; or the <a href="/">Citizen Participation section</a> where you can decide which is the city you want.

@@ -21,6 +21,7 @@ class User < ActiveRecord::Base
   has_many :debates, -> { with_hidden }, foreign_key: :author_id
   has_many :proposals, -> { with_hidden }, foreign_key: :author_id
   has_many :comments, -> { with_hidden }
+  has_many :spending_proposals, foreign_key: :author_id
   has_many :failed_census_calls
   has_many :notifications
   belongs_to :geozone

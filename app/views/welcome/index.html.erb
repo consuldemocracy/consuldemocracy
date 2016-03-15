@@ -12,13 +12,13 @@
     </div>
 
     <div class="hide-for-small-only small-12 medium-5 column text-center">
-      <%= image_tag("icon_home.png", size: "330x240", alt:"", role:"presentation") %>
+      <%= image_tag("icon_home.png", size: "330x240", alt:"") %>
     </div>
   </div>
 </div>
 
 <% cache [locale_and_user_status, @featured_debates, @featured_proposals, 'featured'] do %>
-  <section role="main">
+  <main>
     <div class="row text-center margin">
       <div class="small-12 medium-3 column">
         <%= image_tag("icon_home_debate.png", size: "168x168", alt: t("welcome.debates.alt"), title: t("welcome.debates.title")) %>
@@ -43,5 +43,5 @@
         <p><%= t("welcome.do.description") %></p>
       </div>
     </div>
-  </section>
+  </main>
 <% end %>

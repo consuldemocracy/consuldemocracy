@@ -11,12 +11,12 @@
     <div id="<%= dom_id(@proposal) %>" class="row">
       <div class="small-12 medium-9 column">
         <%= link_to :back, class: "back" do %>
-          <i class="icon-angle-left"></i>
+          <span class="icon-angle-left"></span>
           <%= t("proposals.show.back_link") %>
         <% end %>
         <% if current_user && @proposal.editable_by?(current_user) %>
           <%= link_to edit_proposal_path(@proposal), class: 'edit-proposal button success small float-right' do %>
-            <i class="icon-edit"></i>
+            <span class="icon-edit"></span>
             <%= t("proposals.show.edit_proposal_link") %>
           <% end %>
         <% end %>
@@ -34,7 +34,7 @@
           <span class="bullet">&nbsp;&bull;&nbsp;</span>
           <%= l @proposal.created_at.to_date %>
           <span class="bullet">&nbsp;&bull;&nbsp;</span>
-          <i class="icon-comments"></i>&nbsp;
+          <span class="icon-comments"></span>&nbsp;
           <%= link_to t("proposals.show.comments", count: @proposal.comments_count), "#comments" %>
           <span class="bullet">&nbsp;&bull;&nbsp;</span>
           <span class="js-flag-actions">

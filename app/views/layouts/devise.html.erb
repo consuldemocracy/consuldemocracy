@@ -25,27 +25,29 @@
       </div>
 
       <div class="row auth">
-        <div class="small-12 medium-8 large-5 column small-centered panel padding margin-bottom">
-          <% if notice %>
-            <div data-alert class="callout success" data-closable>
-              <button class="close-button" aria-label="<%= t("application.close") %>" type="button" data-close>
-                <span aria-hidden="true">&times;</span>
-              </button>
-              <%= notice %>
-            </div>
-          <% end %>
+        <main>
+          <div class="small-12 medium-8 large-5 column small-centered panel padding margin-bottom">
+            <% if notice %>
+              <div data-alert class="callout success" data-closable>
+                <button class="close-button" aria-label="<%= t("application.close") %>" type="button" data-close>
+                  <span aria-hidden="true">&times;</span>
+                </button>
+                <%= notice %>
+              </div>
+            <% end %>
 
-          <% if alert %>
-            <div data-alert class="callout warning" data-closable>
-              <button class="close-button" aria-label="<%= t("application.close") %>" type="button" data-close>
-                <span aria-hidden="true">&times;</span>
-              </button>
-              <%= alert %>
-            </div>
-          <% end %>
+            <% if alert %>
+              <div data-alert class="callout warning" data-closable>
+                <button class="close-button" aria-label="<%= t("application.close") %>" type="button" data-close>
+                  <span aria-hidden="true">&times;</span>
+                </button>
+                <%= alert %>
+              </div>
+            <% end %>
 
-          <%= yield %>
-        </div>
+            <%= yield %>
+          </div>
+        </main>
       </div>
       <div class="push"></div>
     </div>

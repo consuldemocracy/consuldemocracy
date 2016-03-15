@@ -52,7 +52,7 @@
         <strong><%= spending_proposal.id %></strong>
       </td>
       <td>
-        <%= link_to spending_proposal.title, admin_spending_proposal_path(spending_proposal) %>
+        <%= link_to spending_proposal.title, admin_spending_proposal_path(spending_proposal, SpendingProposal.filter_params(params)) %>
       </td>
       <td class="small">
         <% if spending_proposal.administrator.present? %>
