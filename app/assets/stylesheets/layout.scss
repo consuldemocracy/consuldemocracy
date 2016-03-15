@@ -879,7 +879,7 @@ img.avatar, img.admin-avatar, img.moderator-avatar, img.initialjs-avatar {
 }
 
 .user-deleted {
-  top: -9px;
+  top: -4px;
 }
 
 .user-permissions {
@@ -1550,6 +1550,7 @@ table {
 
   .comment {
     margin: $line-height/4 0;
+    position: relative;
 
     p {
       margin-bottom: 0;
