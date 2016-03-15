@@ -4,10 +4,13 @@ class Admin::SpendingProposalsController < Admin::BaseController
 
   has_filters %w{valuation_open without_admin managed valuating valuation_finished}, only: :index
 
+  before_action :parse_search_terms, only: [:index]
+
   load_and_authorize_resource
 
   def index
-    @spending_proposals = SpendingProposal.search(params, @current_filter).order(created_at: :desc).page(params[:page])
+    @spending_proposals = SpendingProposal.search(params, @current_filter).order(created_at: :desc).page(params[:page])   
+    @spending_proposals =  @spending_proposals.search_title(@search_terms) if @search_terms.present? 
   end
 
   def show
@@ -26,6 +29,10 @@ class Admin::SpendingProposalsController < Admin::BaseController
       render :edit
     end
   end
+
+  def parse_search_terms 
+    @search_terms = params[:search] if params[:search].present? 
+  end 
 
   private
 

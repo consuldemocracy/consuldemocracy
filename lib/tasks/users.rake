@@ -1,5 +1,12 @@
 namespace :users do
 
+  desc "Updates all users"
+   task touch: :environment do
+     User.find_in_batches do |user|
+       user.each(&:save)
+     end
+   end
+
   desc "Recalculates all the failed census calls counters for users"
   task count_failed_census_calls: :environment do
     User.find_each{ |user| User.reset_counters(user.id, :failed_census_calls)}

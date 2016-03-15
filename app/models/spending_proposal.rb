@@ -2,6 +2,7 @@ class SpendingProposal < ActiveRecord::Base
   include Measurable
   include Sanitizable
   include Taggable
+  include Searchable
 
   apply_simple_captcha
 
@@ -43,6 +44,17 @@ class SpendingProposal < ActiveRecord::Base
     results = results.by_valuator(params[:valuator_id])           if params[:valuator_id].present?
     results = results.send(current_filter)                        if current_filter.present?
     results.for_render
+  end
+
+  def searchable_values
+    { title                   => 'A',
+      description             => 'B',
+      author.try(:username)   => 'C'
+    }
+  end
+
+  def self.search_title(terms)
+    self.pg_search(terms)
   end
 
   def self.by_geozone(geozone)

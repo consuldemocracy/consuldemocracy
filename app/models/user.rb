@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
 
   include Verification
+  include Searchable
 
   apply_simple_captcha
   devise :database_authenticatable, :registerable, :confirmable,
@@ -68,6 +69,17 @@ class User < ActiveRecord::Base
     )
   end
 
+  def searchable_values
+    { username          => 'A',
+      email             => 'B',
+      document_number   => 'C'
+    }
+  end
+
+  def self.search(terms)
+    self.pg_search(terms)
+  end
+  
   def name
     organization? ? organization.name : username
   end

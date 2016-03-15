@@ -91,4 +91,40 @@ feature 'Admin debates' do
     expect(current_url).to include('page=2')
   end
 
+  context "Search" do
+    background do
+      debate = create(:debate, 
+                      :hidden,
+                         title: "Testing debate",
+                         hidden_at: '016-01-25 13:04:01.021165')
+    end
+ 
+    scenario "The search is not running if search is empty" do
+      visit admin_debates_path
+      fill_in "search", with: "      "
+      click_button "Search"
+      expect(current_path).to eq(admin_debates_path)
+      expect(page).to have_content("Testing debate")
+    end
+ 
+    scenario "Returns no results if search does not exist" do
+      visit admin_debates_path
+ 
+      fill_in "search", with: "Prueba"
+      click_button "Search"
+      expect(current_path).to eq(admin_debates_path)
+      expect(page).to_not have_content("Prueba")
+      expect(page).to have_content("debates cannot be found")
+    end
+    
+    scenario "Finds by title" do
+      visit admin_debates_path
+ 
+      fill_in "search", with: "Testing debate"
+      click_button "Search"
+      expect(current_path).to eq(admin_debates_path)
+      expect(page).to have_content("Testing debate")
+    end
+  end
+
 end

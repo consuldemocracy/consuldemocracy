@@ -43,11 +43,11 @@ class Debate < ActiveRecord::Base
   attr_accessor :link_required
 
   def searchable_values
-    { title              => 'A',
-      author.username    => 'B',
-      tag_list.join(' ') => 'B',
-      geozone.try(:name) => 'B',
-      description        => 'D'
+    { title                     => 'A',
+      author.try(:username)     => 'B',
+      tag_list.join(' ')        => 'B',
+      geozone.try(:name)        => 'B',
+      description               => 'D'
     }
   end
 

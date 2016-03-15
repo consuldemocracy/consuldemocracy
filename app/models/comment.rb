@@ -1,5 +1,6 @@
 class Comment < ActiveRecord::Base
   include Flaggable
+  include Searchable
 
   acts_as_paranoid column: :hidden_at
   include ActsAsParanoidAliases
@@ -44,6 +45,17 @@ class Comment < ActiveRecord::Base
 
   def self.find_commentable(c_type, c_id)
     c_type.constantize.find(c_id)
+  end
+
+  def searchable_values
+    { body                    => 'A',
+      subject                 => 'B',
+      author.try(:username)   => 'C'
+    }
+  end
+
+  def self.search(terms)
+    self.pg_search(terms)
   end
 
   def author_id

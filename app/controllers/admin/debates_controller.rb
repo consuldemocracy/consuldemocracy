@@ -6,9 +6,11 @@ class Admin::DebatesController < Admin::BaseController
   has_filters %w{without_confirmed_hide all with_confirmed_hide}, only: :index
 
   before_action :load_debate, only: [:confirm_hide, :restore]
+  before_action :parse_search_terms, only: [:index]
 
   def index
     @debates = Debate.only_hidden.send(@current_filter).order(hidden_at: :desc).page(params[:page])
+    @debates = @debates.search(@search_terms)  if @search_terms.present? 
   end
 
   def confirm_hide
@@ -23,6 +25,10 @@ class Admin::DebatesController < Admin::BaseController
     redirect_to request.query_parameters.merge(action: :index)
   end
 
+  def parse_search_terms 
+    @search_terms = params[:search] if params[:search].present? 
+  end 
+  
   private
 
     def load_debate

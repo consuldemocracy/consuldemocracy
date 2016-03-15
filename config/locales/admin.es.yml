@@ -34,6 +34,8 @@ es:
         hidden_debate: Debate oculto
         hidden_proposal: Propuesta oculta
         title: Comentarios ocultos
+        search: Buscar
+        search_placeholder: Buscar Comentarios
     dashboard:
       index:
         title: Administración
@@ -45,6 +47,8 @@ es:
           with_confirmed_hide: Confirmados
           without_confirmed_hide: Pendientes
         title: Debates ocultos
+        search: Buscar
+        search_placeholder: Buscar debates
     menu:
       activity: Actividad de moderadores
       debate_topics: Temas de debate
@@ -127,6 +131,8 @@ es:
           with_confirmed_hide: Confirmadas
           without_confirmed_hide: Pendientes
         title: Propuestas ocultos
+        search: Buscar
+        search_placeholder: Buscar propuestas
     settings:
       flash:
         updated: Valor actualizado
@@ -161,6 +167,8 @@ es:
         assigned_admin: Administrador asignado
         no_admin_assigned: Sin admin asignado
         no_valuators_assigned: Sin evaluador
+        search: Buscar
+        search_placeholder: Buscar por título, desceipción y autor
       show:
         assigned_admin: Administrador asignado
         assigned_valuators: Evaluadores asignados
@@ -219,6 +227,8 @@ es:
           with_confirmed_hide: Confirmados
           without_confirmed_hide: Pendientes
         title: Usuarios bloqueados
+        search: Buscar
+        search_placeholder: Buscar por nombre, email y nº de documento
       show:
         back: Volver
         email: 'Email:'
