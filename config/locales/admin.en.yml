@@ -74,7 +74,8 @@ en:
       index:
         title: Valuators
       valuator:
-        add: Add
+        user_found: User found
+        add: Add to valuators
       search:
         email_placeholder: Search user by email
         search: Search
