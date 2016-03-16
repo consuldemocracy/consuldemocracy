@@ -12,7 +12,7 @@
     <%= form_for @valuator, url: admin_valuators_path do |f| %>
       <div class="row">
         <div class="small-12 medium-4 column ">
-          <%= f.text_field :description, label: false, placeholder: "descripción (opcional)" %>
+          <%= f.text_field :description, label: false, placeholder: t('admin.valuators.valuator.description_placeholder') %>
           <%= f.hidden_field :user_id %>
         </div>
         <div class="small-12 medium-2 column end" style="border:ddotted 10px red;">
