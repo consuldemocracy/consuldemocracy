@@ -421,10 +421,6 @@ header {
     }
   }
 
-  span {
-    color: $border;
-  }
-
   .input-group {
     padding-top: $line-height/4;
 
@@ -1728,6 +1724,7 @@ table {
     td {
       padding-left: $line-height*1.5;
       position: relative;
+      word-break: break-all;
 
       &:before {
         color: $brand;
