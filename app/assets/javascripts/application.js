@@ -41,6 +41,7 @@
 //= require registration_form
 //= require suggest
 //= require forms
+//= require valuation_spending_proposal_form
 
 var initialize_modules = function() {
   App.Comments.initialize();
@@ -57,6 +58,7 @@ var initialize_modules = function() {
   App.RegistrationForm.initialize();
   App.Suggest.initialize();
   App.Forms.initialize();
+  App.ValuationSpendingProposalForm.initialize();
 };
 
 $(function(){
