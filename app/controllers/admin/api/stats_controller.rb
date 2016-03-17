@@ -1,7 +1,8 @@
 class Admin::Api::StatsController < Admin::Api::BaseController
 
   def show
-    unless params[:events].present? || params[:visits].present?
+    unless params[:events].present? || params[:visits].present? || params[:subscript_users].present?
+      
       return render json: {}, status: :bad_request
     end
 
@@ -16,6 +17,10 @@ class Admin::Api::StatsController < Admin::Api::BaseController
 
     if params[:visits].present?
       ds.add "Visits", Visit.group_by_day(:started_at).count
+    end
+
+    if params[:subscript_users].present?
+      ds.add "Subscript users", User.group_by_day(:created_at).count
     end
 
     render json: ds.build

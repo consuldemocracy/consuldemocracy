@@ -18,6 +18,7 @@ class Admin::StatsController < Admin::BaseController
     @verified_users = User.with_hidden.level_two_or_three_verified.count
     @unverified_users = User.with_hidden.unverified.count
     @users = User.with_hidden.count
+    @subscript_users = User.with_hidden.count 
   end
 
 end

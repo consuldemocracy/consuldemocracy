@@ -18,6 +18,8 @@ class StatsController < ApplicationController
 
     @verified_users = daily_cache('verified_users') { User.with_hidden.level_two_or_three_verified.count }
     @unverified_users = daily_cache('unverified_users') { User.with_hidden.unverified.count }
+    @subscript_users = daily_cache('subscript_users') { User.with_hidden.count }
+  
   end
 
   private
