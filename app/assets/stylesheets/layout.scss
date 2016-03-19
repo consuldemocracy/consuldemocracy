@@ -421,10 +421,6 @@ header {
     }
   }
 
-  span {
-    color: $border;
-  }
-
   .input-group {
     padding-top: $line-height/4;
 
@@ -879,7 +875,7 @@ img.avatar, img.admin-avatar, img.moderator-avatar, img.initialjs-avatar {
 }
 
 .user-deleted {
-  top: -9px;
+  top: -4px;
 }
 
 .user-permissions {
@@ -1388,7 +1384,7 @@ table {
     }
   }
 
-  .date {
+  .date-of-birth {
 
     select {
       float: left;
@@ -1550,6 +1546,7 @@ table {
 
   .comment {
     margin: $line-height/4 0;
+    position: relative;
 
     p {
       margin-bottom: 0;
@@ -1727,6 +1724,7 @@ table {
     td {
       padding-left: $line-height*1.5;
       position: relative;
+      word-break: break-all;
 
       &:before {
         color: $brand;
