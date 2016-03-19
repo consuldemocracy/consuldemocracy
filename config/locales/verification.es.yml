@@ -79,6 +79,8 @@ es:
         accept_terms_text_title: Acepto los términos de acceso al Padrón
         date_of_birth: Fecha de nacimiento
         document_number: Número de documento
+        document_number_help_title: Ayuda
+        document_number_help_text_html: '<strong>DNI</strong>: 12345678A<br> <strong>Pasaporte</strong>: AAA000001<br> <strong>Tarjeta de residencia</strong>: X1234567P'
         document_type:
           passport: Pasaporte
           residence_card: Tarjeta de residencia
