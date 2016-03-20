@@ -27,6 +27,7 @@ class Admin::ValuatorsController < Admin::BaseController
 
   private
     def create_params
+      params[:valuator][:description] = nil if params[:valuator][:description].blank?
       params.require(:valuator).permit(:user_id, :description)
     end
 end
