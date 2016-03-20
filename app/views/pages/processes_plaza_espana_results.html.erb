@@ -1,0 +1,174 @@
+<% provide :title, "Remodelación de Plaza España | Resultados" %>
+<% provide :social_media_meta_tags do %>
+  <%= render "shared/social_media_meta_tags_plaza_espana" %>
+<% end %>
+
+<div class="expanded jumbo-survey">
+  <div class="row padding no-margin-top">
+    <div class="small-12 column">
+      <%= link_to "/processes_plaza_espana", class: "left back" do %>
+        <i class="icon-angle-left left"></i>
+        <%= t("pages.processes.back") %>
+      <% end %>
+      <div class="text-center">
+        <%= image_tag "processes_plaza_espana_debates.png", size: "580x270", alt: "#decideplazaespaña"%>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="survey-results margin">
+
+  <div class="row">
+
+    <!-- Resultados generales -->
+    <div class="small-12 medium-6 column">
+      <h1 class="title">Remodelación de<br>Plaza España</h1>
+    </div>
+
+    <div class="small-12 medium-6 column text-right">
+      <div class="panel green">
+        <p>TOTAL ENCUESTAS RELLENADAS</p>
+        <p class="big-number">20.000</p>
+      </div>
+    </div>
+
+    <hr class="double">
+
+    <!-- Canales de participación -->
+    <div class="small-12 column">
+      <h2 class="subtitle">Canales de<br>participación</h2>
+    </div>
+
+    <hr>
+
+    <div class="small-12 column">
+      <div class="panel text-center">
+        <%= image_tag ('survey_results/channels.png') %>
+      </div>
+    </div>
+
+    <div class="small-12 medium-4 column">
+      <div class="panel text-center">
+        <%= image_tag ('survey_results/channel_web.png') %>
+        <p>WEB (50%)</p>
+        <p class="big-number">10.000</p>
+      </div>
+    </div>
+
+    <div class="small-12 medium-4 column">
+      <div class="panel text-center">
+        <%= image_tag ('survey_results/channel_phone.png') %>
+        <p>010 (37.50%)</p>
+        <p class="big-number">8.000</p>
+      </div>
+    </div>
+
+    <div class="small-12 medium-4 column">
+      <div class="panel text-center">
+        <%= image_tag ('survey_results/channel_paper.png') %>
+        <p>PAPEL (12.50%)</p>
+        <p class="big-number">2000</p>
+      </div>
+    </div>
+  </div>
+
+  <hr class="double">
+
+  <div class="row" data-equalizer>
+
+    <!-- Participación por sexo -->
+    <div class="small-12 column">
+      <h2 class="subtitle">Participación<br>por sexo</h2>
+    </div>
+
+    <hr>
+
+    <div class="small-12 medium-6 column">
+      <div class="panel text-center" data-equalizer-watch>
+        <%= image_tag ('survey_results/sex.png') %>
+        <br>
+        <%= image_tag ('survey_results/sex_chart.png') %>
+      </div>
+    </div>
+
+    <div class="small-12 medium-3 column">
+      <div class="panel text-right" data-equalizer-watch>
+        <p>HOMBRES (50%)</p>
+        <p class="big-number">10.000</p>
+        <br>
+        <p><strong>WEB</strong> (90%) 1000</p>
+        <p><strong>010</strong> (8%) 1000</p>
+        <p><strong>PAPEL</strong> (2%) 100</p>
+      </div>
+    </div>
+
+    <div class="small-12 medium-3 column">
+      <div class="panel text-left" data-equalizer-watch>
+        <p>MUJERES (50%)</p>
+        <p class="big-number">10.000</p>
+        <br>
+        <p><strong>WEB</strong> (90%) 1000</p>
+        <p><strong>010</strong> (8%) 1000</p>
+        <p><strong>PAPEL</strong> (2%) 100</p>
+      </div>
+    </div>
+  </div>
+
+  <hr class="double">
+
+  <div class="row">
+
+    <!-- Participación por grupos de edad -->
+    <div class="small-12 column">
+      <h2 class="subtitle">Participación por<br>grupos de edad</h2>
+    </div>
+
+    <hr class="double">
+
+    <%= render 'processes_plaza_espana_results_age' %>
+  </div>
+
+  <hr class="double">
+
+  <div class="row">
+
+    <!-- Participación por distritos -->
+    <div class="small-12 column">
+      <h2 class="subtitle">Participación por<br>distritos</h2>
+    </div>
+
+    <hr class="double">
+
+    <div class="small-12 column">
+      <div class="text-center">
+        <%= image_tag ('survey_results/example_districts.png') %>
+      </div>
+      <!-- Arganzuela
+      Barajas
+      Carabanchel
+      Centro
+      Chamartin
+      Chamberí
+      Ciudad Lineal
+      Fuencarral - El Pardo
+      Hortaleza
+      Latina
+      Moncloa - Aravaca
+      Moratalaz
+      Puente de Vallecas
+      Retiro
+      San Blas - Canillejas
+      Salamanca
+      Tetuán
+      Usera
+      Vicálvaro
+      Villaverde
+      Villa de Vallecas -->
+    </div>
+  </div>
+
+  <hr class="double">
+
+  <%= render 'processes_plaza_espana_results_answers' %>
+</div>

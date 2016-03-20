@@ -14,7 +14,7 @@
       <h1><%= t("pages.processes.process_2.title") %></h1>
       <%= markdown t("pages.processes.process_2.text") %>
 
-      <p><strong>La encuesta ha finalizado. Próximamente publicaremos los resultados.</strong></p>
+      <%= link_to "Ver resultados de la encuesta", page_path('processes_plaza_espana_results'), class: "button large" %>
     </div>
     <div class="small-12 medium-5 column">
       <div class="flex-video">
