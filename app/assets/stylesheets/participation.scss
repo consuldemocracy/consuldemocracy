@@ -337,17 +337,17 @@
 
 .debate-show, .proposal-show {
 
-  .social-share-full .social-share-button{
+  .social-share-full .social-share-button {
     display:inline;
   }
 
-  .whatsapp:before{
-    vertical-align: 10px;
-    margin-left: 0.5px;
-    color: white;
+  .whatsapp:before {
     background-color: #43d854;
-    padding: 9.5px 9.8px 9.5px 9.8px;
+    color: white;
     font-size: 1.7em;
+    margin-left: rem-calc(0.5);
+    padding: rem-calc(9.5) rem-calc(9.8);
+    vertical-align: rem-calc(10);
   }
 
 
