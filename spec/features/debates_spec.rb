@@ -1008,4 +1008,43 @@ feature 'Debates' do
       end
     end
   end
+
+  scenario 'Mark debate as featured' do
+    admin = create(:administrator)
+    login_as(admin.user)
+    
+    debate1 = create(:debate)
+    debate2 = create(:debate, featured_at: Time.now)
+    
+    visit debate_path(debate1)
+    expect(page).to have_content("Feature")
+
+    visit debate_path(debate2)
+    expect(page).to have_content("Remove feature")
+
+  end  
+
+
+  scenario 'Show featured debates' do
+    admin = create(:administrator)
+    login_as(admin.user)
+    
+    debate1 = create(:debate, featured_at: Time.now)
+    debate2 = create(:debate)
+    
+    visit debates_path
+    expect(page).to have_content("Featured")
+  end    
+
+
+  scenario 'Dont show featured debates' do
+    admin = create(:administrator)
+    login_as(admin.user)
+    
+    debate1 = create(:debate)
+    debate2 = create(:debate)
+    
+    visit debates_path
+    expect(page).to_not have_content("Featured")
+  end      
 end

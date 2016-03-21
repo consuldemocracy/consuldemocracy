@@ -30,6 +30,10 @@ module Abilities
       can :confirm_hide, User
       cannot :confirm_hide, User, hidden_at: nil
 
+      can :feature, Debate
+
+      can :remove_feature, Debate
+
       can :comment_as_administrator, [Debate, Comment, Proposal]
 
       can [:search, :create, :index, :destroy], ::Moderator

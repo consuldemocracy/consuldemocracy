@@ -28,6 +28,16 @@ class DebatesController < ApplicationController
     set_debate_votes(@debate)
   end
 
+  def remove_feature
+    @debate.update_attribute(:featured_at, nil)
+    redirect_to request.query_parameters.merge(action: :index)
+  end
+
+  def feature
+    @debate.update_attribute(:featured_at, Time.now)
+    redirect_to request.query_parameters.merge(action: :index)
+  end
+
   private
 
     def debate_params
