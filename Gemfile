@@ -25,7 +25,7 @@ gem 'devise', '~> 3.5.6'
 gem 'omniauth'
 gem 'omniauth-twitter'
 gem 'omniauth-facebook', '~> 3.0.0'
-gem 'omniauth-google-oauth2', '~> 0.3.0'
+gem 'omniauth-google-oauth2', '~> 0.4.0'
 
 gem 'kaminari'
 gem 'ancestry'
@@ -59,6 +59,7 @@ gem 'tolk' # Web interface for translations
 gem 'browser'
 gem 'turnout'
 gem 'redcarpet'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'

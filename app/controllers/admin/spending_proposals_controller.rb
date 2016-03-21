@@ -15,7 +15,7 @@ class Admin::SpendingProposalsController < Admin::BaseController
 
   def edit
     @admins = Administrator.includes(:user).all
-    @valuators = Valuator.includes(:user).all.order("users.username ASC")
+    @valuators = Valuator.includes(:user).all.order("description ASC").order("users.email ASC")
     @tags = ActsAsTaggableOn::Tag.spending_proposal_tags
   end
 

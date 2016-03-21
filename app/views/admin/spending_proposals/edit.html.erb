@@ -32,7 +32,7 @@
   <%= f.label :valuator_ids, t("admin.spending_proposals.edit.assigned_valuators") %>
 
   <%= f.collection_check_boxes :valuator_ids, @valuators, :id, :email do |b| %>
-      <%= b.label(title: b.object.name) { b.check_box + b.text } %>
+      <%= b.label(title: valuator_label(b.object)) { b.check_box + truncate(b.object.description_or_email, length: 60) } %>
   <% end %>
 
   <p class="clear">

@@ -337,6 +337,20 @@
 
 .debate-show, .proposal-show {
 
+  .social-share-full .social-share-button {
+    display:inline;
+  }
+
+  .whatsapp:before {
+    background-color: #43d854;
+    color: white;
+    font-size: 1.7em;
+    margin-left: rem-calc(0.5);
+    padding: rem-calc(9.5) rem-calc(9.8);
+    vertical-align: rem-calc(10);
+  }
+
+
   .edit-debate, .edit-proposal {
     margin-bottom: 0;
   }

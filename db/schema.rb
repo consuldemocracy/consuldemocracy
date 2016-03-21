@@ -435,6 +435,7 @@ ActiveRecord::Schema.define(version: 20160315084335) do
 
   create_table "valuators", force: :cascade do |t|
     t.integer "user_id"
+    t.string  "description"
   end
 
   add_index "valuators", ["user_id"], name: "index_valuators_on_user_id", using: :btree
