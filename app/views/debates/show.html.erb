@@ -58,7 +58,7 @@
           <%= social_share_button_tag(@debate.title) %>
           <% if browser.mobile? %>
             <a href="whatsapp://send?text=<%= @debate.title %> <%= debate_url(@debate) %>" data-action="share/whatsapp/share">
-              <i class="icon-whatsapp whatsapp"></i>
+              <span class="icon-whatsapp whatsapp"></span>
             </a>
           <% end %>
         </div>
