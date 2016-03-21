@@ -194,6 +194,7 @@ es:
           debates: Debates
           proposal_votes: Votos en propuestas
           proposals: Propuestas
+          spending_proposals: Propuestas de inversión
           unverified_users: Usuarios sin verificar
           user_level_three: Usuarios de nivel tres
           user_level_two: Usuarios de nivel dos
@@ -201,6 +202,7 @@ es:
           verified_users: Usuarios verificados
           visits: Visitas
           votes: Votos
+        spending_proposals_title: Propuestas de inversión
         visits_title: Visitas
     tags:
       create: Crear Tema

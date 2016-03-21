@@ -14,4 +14,10 @@ module StatsHelper
     content_tag :div, "", opt
   end
 
+  def spending_proposals_chart_tag(opt={})
+    events = events.join(',') if events.is_a? Array
+    opt[:data] ||= {}
+    opt[:data][:graph] = admin_api_stats_path(spending_proposals: true)
+    content_tag :div, "", opt
+  end
 end
