@@ -515,6 +515,25 @@ table {
   }
 }
 
+.chart-legend {
+  bottom: $line-height;
+  list-style-type: none;
+
+  .label {
+    height: rem-calc(14);
+    padding: 0;
+    width: rem-calc(14);
+  }
+
+  strong {
+    text-transform: uppercase;
+  }
+}
+
+.label.large {
+  font-size: $base-font-size;
+}
+
 // 08. Spending proposals
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 

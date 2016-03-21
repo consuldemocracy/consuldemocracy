@@ -3,6 +3,9 @@
   <%= render "shared/social_media_meta_tags_plaza_espana" %>
 <% end %>
 
+<%= javascript_include_tag "chart", 'data-turbolinks-track' => true %>
+<%= javascript_include_tag "survey-charts", 'data-turbolinks-track' => true %>
+
 <div class="expanded jumbo-survey">
   <div class="row padding no-margin-top">
     <div class="small-12 column">
@@ -29,7 +32,7 @@
     <div class="small-12 medium-6 column text-right">
       <div class="panel green">
         <p>TOTAL ENCUESTAS RELLENADAS</p>
-        <p class="big-number">20.000</p>
+        <p class="big-number">26.962</p>
       </div>
     </div>
 
@@ -42,33 +45,54 @@
 
     <hr>
 
-    <div class="small-12 column">
-      <div class="panel text-center">
-        <%= image_tag ('survey_results/channels.png') %>
+    <div data-equalizer>
+      <div class="small-12 medium-6 large-4 large-offset-4 column" data-equalizer-watch>
+        <canvas id="chart-channels" width="300" height="300"></canvas>
+      </div>
+
+      <div class="small-12 medium-6 large-4 column relative" data-equalizer-watch>
+        <ul class="chart-legend absolute">
+          <li>
+            <span class="label" style="background: #00ad51"></span>
+            <strong>Web</strong>: 19.124 (70,93%)
+          </li>
+          <li>
+            <span class="label" style="background: #007dc3"></span>
+            <strong>010</strong>: 7.605 (28,21%)
+          </li>
+          <li>
+            <span class="label" style="background: #ffdc08"></span>
+            <strong>Papel</strong>: 233 (0,86%)
+          </li>
+        </ul>
       </div>
     </div>
+
+    <hr class="double">
+
+    <div class="clear"></div>
 
     <div class="small-12 medium-4 column">
       <div class="panel text-center">
         <%= image_tag ('survey_results/channel_web.png') %>
-        <p>WEB (50%)</p>
-        <p class="big-number">10.000</p>
+        <p>WEB (70,93%)</p>
+        <p class="big-number">19.124</p>
       </div>
     </div>
 
     <div class="small-12 medium-4 column">
       <div class="panel text-center">
         <%= image_tag ('survey_results/channel_phone.png') %>
-        <p>010 (37.50%)</p>
-        <p class="big-number">8.000</p>
+        <p>010 (28,21%)</p>
+        <p class="big-number">7.605</p>
       </div>
     </div>
 
     <div class="small-12 medium-4 column">
       <div class="panel text-center">
         <%= image_tag ('survey_results/channel_paper.png') %>
-        <p>PAPEL (12.50%)</p>
-        <p class="big-number">2000</p>
+        <p>PAPEL (0,86%)</p>
+        <p class="big-number">233</p>
       </div>
     </div>
   </div>
@@ -88,34 +112,48 @@
       <div class="panel text-center" data-equalizer-watch>
         <%= image_tag ('survey_results/sex.png') %>
         <br>
-        <%= image_tag ('survey_results/sex_chart.png') %>
+        <div class="large-offset-3 large-5 padding">
+          <canvas id="chart-sex" width="300" height="300"></canvas>
+        </div>
+
+        <div class="large-4 column relative">
+          <ul class="chart-legend absolute">
+            <li>
+              <span class="label" style="background: #00dae0"></span>
+              <strong>Hombres</strong>:<br> 16395 (61,04%)
+            </li>
+            <li>
+              <span class="label" style="background: #e00094"></span>
+              <strong>Mujeres</strong>:<br> 10466 (38,96%)
+            </li>
+          </ul>
+        </div>
+
       </div>
     </div>
 
     <div class="small-12 medium-3 column">
       <div class="panel text-right" data-equalizer-watch>
-        <p>HOMBRES (50%)</p>
-        <p class="big-number">10.000</p>
+        <p>HOMBRES (61,04%)</p>
+        <p class="big-number">16.395</p>
         <br>
-        <p><strong>WEB</strong> (90%) 1000</p>
-        <p><strong>010</strong> (8%) 1000</p>
-        <p><strong>PAPEL</strong> (2%) 100</p>
+        <p><strong>WEB</strong> 11802 (71,99%) </p>
+        <p><strong>010</strong> 4482 (27,34%)</p>
+        <p><strong>PAPEL</strong> 111 (0,68%)</p>
       </div>
     </div>
 
     <div class="small-12 medium-3 column">
       <div class="panel text-left" data-equalizer-watch>
-        <p>MUJERES (50%)</p>
-        <p class="big-number">10.000</p>
+        <p>MUJERES (38,96%)</p>
+        <p class="big-number">10.466</p>
         <br>
-        <p><strong>WEB</strong> (90%) 1000</p>
-        <p><strong>010</strong> (8%) 1000</p>
-        <p><strong>PAPEL</strong> (2%) 100</p>
+        <p><strong>WEB</strong> 7228 (69,06%)</p>
+        <p><strong>010</strong> 3116 (29,77%)</p>
+        <p><strong>PAPEL</strong> 122 (1,17%)</p>
       </div>
     </div>
   </div>
-
-  <hr class="double">
 
   <div class="row">
 
@@ -140,31 +178,191 @@
 
     <hr class="double">
 
+    <div class="small-12 medium-6 column small-centered">
+      <%= image_tag ('survey_results/districts.png') %>
+    </div>
+
     <div class="small-12 column">
-      <div class="text-center">
-        <%= image_tag ('survey_results/example_districts.png') %>
-      </div>
-      <!-- Arganzuela
-      Barajas
-      Carabanchel
-      Centro
-      Chamartin
-      Chamberí
-      Ciudad Lineal
-      Fuencarral - El Pardo
-      Hortaleza
-      Latina
-      Moncloa - Aravaca
-      Moratalaz
-      Puente de Vallecas
-      Retiro
-      San Blas - Canillejas
-      Salamanca
-      Tetuán
-      Usera
-      Vicálvaro
-      Villaverde
-      Villa de Vallecas -->
+      <table>
+        <thead>
+          <tr>
+            <th>DISTRITO</th>
+            <th>Nº ENCUESTAS</th>
+            <th>% PARTICIPACIÓN TOTAL</th>
+            <th>% PARTICIPACIÓN DISTRITO</th>
+          </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>
+            <span class="label large"><strong>Arganzuela</strong></span>
+          </td>
+          <td>2200</td>
+          <td>8,19%</td>
+          <td>1.447%</td>
+        </tr>
+        <tr>
+          <td>
+            <span class="label large"><strong>Barajas</strong></span>
+          </td>
+          <td>257</td>
+          <td>0,96%</td>
+          <td>0.55%</td>
+        </tr>
+        <tr>
+          <td>
+            <span class="label large"><strong>Carabanchel</strong></span>
+          </td>
+          <td>1287</td>
+          <td>4,79%</td>
+          <td>0.5296%</td>
+        </tr>
+        <tr>
+          <td>
+            <span class="label large"><strong>Centro</strong></span>
+          </td>
+          <td>4535</td>
+          <td>16,88%</td>
+          <td>3.4179%</td>
+        </tr>
+        <tr>
+          <td>
+            <span class="label large"><strong>Chamartin</strong></span>
+          </td>
+          <td>1410</td>
+          <td>5,25%</td>
+          <td>0.986%</td>
+        </tr>
+        <tr>
+          <td>
+            <span class="label large"><strong>Chamberí</strong></span>
+          </td>
+          <td>1740</td>
+          <td>6,48%</td>
+          <td>1.2623%</td>
+        </tr>
+        <tr>
+          <td>
+            <span class="label large"><strong>Ciudad Lineal</strong></span>
+          </td>
+          <td>1181</td>
+          <td>4,40%</td>
+          <td>0.5547%</td>
+        </tr>
+        <tr>
+          <td>
+            <span class="label large"><strong>Fuencarral - El Pardo</strong></span>
+          </td>
+          <td>1617</td>
+          <td>6,02%</td>
+          <td>0.6843%</td>
+        </tr>
+        <tr>
+          <td>
+            <span class="label large"><strong>Hortaleza</strong></span>
+          </td>
+          <td>1100</td>
+          <td>4,10%</td>
+          <td>0.62%</td>
+        </tr>
+        <tr>
+          <td>
+            <span class="label large"><strong>Latina</strong></span>
+          </td>
+          <td>1677</td>
+          <td>6,24%</td>
+          <td>0.7152%</td>
+        </tr>
+        <tr>
+          <td>
+            <span class="label large"><strong>Moncloa - Aravaca</strong></span>
+          </td>
+          <td>1610</td>
+          <td>5,99%</td>
+          <td>1.3774%</td>
+        </tr>
+        <tr>
+          <td>
+            <span class="label large"><strong>Moratalaz</strong></span>
+          </td>
+          <td>548</td>
+          <td>2,04%</td>
+          <td>0.5787%</td>
+        </tr>
+        <tr>
+          <td>
+            <span class="label large"><strong>Puente de Vallecas</strong></span>
+          </td>
+          <td>1028</td>
+          <td>3,83%</td>
+          <td>0.4515%</td>
+        </tr>
+        <tr>
+          <td>
+            <span class="label large"><strong>Retiro</strong></span>
+          </td>
+          <td>1283</td>
+          <td>4,78%</td>
+          <td>1.0791%</td>
+        </tr>
+        <tr>
+          <td>
+            <span class="label large"><strong>San Blas - Canillejas</strong></span>
+          </td>
+          <td>746</td>
+          <td>2,78%</td>
+          <td>0.4849%</td>
+        </tr>
+        <tr>
+          <td>
+            <span class="label large"><strong>Salamanca</strong></span>
+          </td>
+          <td>1212</td>
+          <td>4,51%</td>
+          <td>0.8433%</td>
+        </tr>
+        <tr>
+          <td>
+            <span class="label large"><strong>Tetuán</strong></td></span>
+            <td>1288</td>
+            <td>4,80%</td>
+            <td>0.8412%</td>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="label large"><strong>Usera</strong></span>
+          </td>
+          <td>584</td>
+          <td>2,17%</td>
+          <td>0.43%</td>
+        </tr>
+        <tr>
+          <td>
+            <span class="label large"><strong>Vicálvaro</strong></span>
+          </td>
+          <td>310</td>
+          <td>1,15%</td>
+          <td>0.44%</td>
+        </tr>
+        <tr>
+          <td>
+            <span class="label large"><strong>Villaverde</strong></span>
+          </td>
+          <td>594</td>
+          <td>2,21%</td>
+          <td>0.4187%</td>
+        </tr>
+        <tr>
+          <td>
+            <span class="label large"><strong>Villa de Vallecas</strong></span>
+          </td>
+          <td>654</td>
+          <td>2,43%</td>
+          <td>0.64%</td>
+        </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 
