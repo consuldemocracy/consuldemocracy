@@ -37,10 +37,16 @@ var doughnutDataSex = [
   ];
 
 
-  window.onload = function(){
-    var channels = document.getElementById("chart-channels").getContext("2d");
-    window.myDoughnut = new Chart(channels).Doughnut(doughnutData, {responsive : true});
+var load_charts = function(){
+  var channels = document.getElementById("chart-channels").getContext("2d");
+  window.myDoughnut = new Chart(channels).Doughnut(doughnutData, {responsive : true});
 
-    var sex = document.getElementById("chart-sex").getContext("2d");
-    window.myDoughnut = new Chart(sex).Doughnut(doughnutDataSex, {responsive : true});
-  };
+  var sex = document.getElementById("chart-sex").getContext("2d");
+  window.myDoughnut = new Chart(sex).Doughnut(doughnutDataSex, {responsive : true});
+};
+
+$(function(){
+  $(document).ready(load_charts);
+  $(document).on('page:load', load_charts);
+  $(document).on('ajax:complete', load_charts);
+});
