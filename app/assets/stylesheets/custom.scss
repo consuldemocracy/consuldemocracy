@@ -57,6 +57,13 @@ blockquote.featured {
   text-transform: uppercase;
 }
 
+@media (max-width: $small-breakpoint) {
+
+  .text-right {
+    text-align: left;
+  }
+}
+
 // 02. Header
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -482,6 +489,10 @@ table {
 
     &.questions-table {
 
+      tr.empty td {
+        border: 0 !important;
+      }
+
       td:first-child, th:first-child {
         border-right: 1px solid $border;
       }
@@ -581,6 +592,31 @@ table {
 
 .label.large {
   font-size: $base-font-size;
+}
+
+@media (max-width: $small-breakpoint) {
+
+  table.survey-districts thead {
+    font-size: $h6-font-size;
+
+    th {
+      width: 25%;
+      word-break: break-all;
+    }
+  }
+
+  table.questions-table {
+
+    thead th {
+      font-size: $h6-font-size;
+      width: 20%;
+      word-break: break-all;
+    }
+
+    td {
+      font-size: $h6-font-size;
+    }
+  }
 }
 
 // 08. Spending proposals

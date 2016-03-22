@@ -45,7 +45,7 @@
 
     <hr>
 
-    <div data-equalizer>
+    <div class="show-for-medium" data-equalizer>
       <div class="small-12 medium-6 large-4 large-offset-4 column" data-equalizer-watch>
         <canvas id="chart-channels" width="300" height="300"></canvas>
       </div>
@@ -108,7 +108,7 @@
 
     <hr>
 
-    <div class="small-12 medium-6 column">
+    <div class="small-12 medium-6 column show-for-medium">
       <div class="panel text-center" data-equalizer-watch>
         <%= image_tag ('survey_results/sex.png') %>
         <br>
@@ -129,6 +129,12 @@
           </ul>
         </div>
 
+      </div>
+    </div>
+
+    <div class="small-12 column show-for-small-only">
+      <div class="panel text-center">
+        <%= image_tag ('survey_results/sex.png') %>
       </div>
     </div>
 
@@ -193,7 +199,7 @@
     </map>
 
     <div class="small-12 column">
-      <table>
+      <table class="survey-districts">
         <thead>
           <tr>
             <th>DISTRITO</th>
