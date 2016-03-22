@@ -479,6 +479,30 @@ table {
   table {
     margin-top: $line-height*1.5;
 
+
+    &.questions-table {
+
+      td:first-child, th:first-child {
+        border-right: 1px solid $border;
+      }
+
+      td:last-child, th:last-child {
+        border-left: 1px solid $border;
+      }
+
+      @media (min-width: $small-breakpoint) {
+
+        th {
+          width: rem-calc(160);
+        }
+
+        th:first-child {
+          width: auto;
+        }
+      }
+
+    }
+
     tr td, tr th {
       text-align: left;
 
@@ -532,7 +556,10 @@ table {
       background: #c1fdd2;
       border-bottom: 2px solid #58ff87;
       border-top: 2px solid #58ff87;
-      font-weight: bold;
+
+      td:first-child, td:last-child {
+        font-weight: bold;
+      }
     }
   }
 }
