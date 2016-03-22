@@ -453,6 +453,7 @@ table {
 
   .progress-meter {
     background: #00dae0;
+    height: $line-height/2;
 
     &.web {
       background: #00ad51;
@@ -469,6 +470,7 @@ table {
 
   .progress-meter-text {
     color: #000201;
+    font-weight: normal;
     left: 0;
     top: $line-height/2;
     transform: initial;
@@ -482,6 +484,14 @@ table {
 
       @media (min-width: $small-breakpoint) {
         padding: $line-height/2 $line-height;
+      }
+
+      &.border-left {
+        border-left: 1px solid $border;
+      }
+
+      &.border-right {
+        border-right: 1px solid $border;
       }
     }
 
@@ -497,7 +507,7 @@ table {
       }
     }
 
-    th.table-age {
+    th.table-width {
 
       @media (min-width: $small-breakpoint) {
         width: rem-calc(200);
