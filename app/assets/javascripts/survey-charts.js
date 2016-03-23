@@ -13,7 +13,7 @@ var doughnutData = [
       label: "010"
     },
     {
-      value: 233,
+      value: 232,
       color: "#ffdc08",
       highlight: "#ffea6b",
       label: "Papel"
@@ -23,7 +23,7 @@ var doughnutData = [
 // Chart sex
 var doughnutDataSex = [
     {
-      value: 16395,
+      value: 16394,
       color:"#00dae0",
       highlight: "#66e9ec",
       label: "Hombres"
