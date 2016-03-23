@@ -759,11 +759,11 @@ table {
 
       .icon-proposals {
         color: #e5c300;
-        font-size: rem-calc(240);
+        font-size: rem-calc(128);
         line-height: rem-calc(170);
         position: absolute;
-        right: 15%;
-        top: 260px;
+        right: 2%;
+        top: 100px;
       }
     }
 
@@ -772,8 +772,8 @@ table {
       margin-bottom: 0;
 
       @media (min-width: $medium-breakpoint) {
-        background: #00DADE image-url('processes_plaza_espana_medium.png') no-repeat;
-        background-position: bottom right;
+        background: #00DADE image-url('survey_results/plaza_espana_logo.gif') no-repeat;
+        background-position: 90% 50%;
       }
     }
 
@@ -797,7 +797,7 @@ table {
   padding: $line-height/2;
 
   @media (min-width: $small-breakpoint) {
-    background: #33DADF image-url('processes_plaza_espana_small.png') no-repeat;
+    background: #33DADF image-url('processes_plaza_espana_small.gif') no-repeat;
     background-position: right;
     margin-left: 0 !important;
     margin-right: 0 !important;
