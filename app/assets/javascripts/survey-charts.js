@@ -24,14 +24,14 @@ var doughnutData = [
 var doughnutDataSex = [
     {
       value: 16394,
-      color:"#00dae0",
-      highlight: "#66e9ec",
+      color:"#FF6600",
+      highlight: "#fc9550",
       label: "Hombres"
     },
     {
       value: 10466,
-      color: "#e00094",
-      highlight: "#ec66bf",
+      color: "#FF9E01",
+      highlight: "#fbc56d",
       label: "Mujeres"
     },
   ];
