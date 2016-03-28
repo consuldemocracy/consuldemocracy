@@ -73,7 +73,7 @@ class SpendingProposal < ActiveRecord::Base
   end
 
   def unfeasible?
-    not feasible?
+    feasible == false
   end
 
   def valuation_finished?
