@@ -94,6 +94,19 @@ describe SpendingProposal do
            an exception occurs when sending the unfeasible email,
            because spending_proposal.administrator.id is nil.."
     end
+
+    describe "#code" do
+      let(:spending_proposal) { create(:spending_proposal) }
+
+      it "returns the proposal id" do
+        expect(spending_proposal.code).to eq("#{spending_proposal.id}")
+      end
+
+      it "returns the administrator id when assigned" do
+        spending_proposal.administrator = create(:administrator)
+        expect(spending_proposal.code).to eq("#{spending_proposal.id}-#{spending_proposal.administrator.id}")
+      end
+    end
   end
 
   describe "by_admin" do

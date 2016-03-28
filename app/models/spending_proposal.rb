@@ -76,4 +76,8 @@ class SpendingProposal < ActiveRecord::Base
     not feasible?
   end
 
+  def code
+    "#{id}" + (administrator.present? ? "-#{administrator.id}" : "")
+  end
+
 end
