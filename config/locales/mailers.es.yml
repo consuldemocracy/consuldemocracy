@@ -22,11 +22,11 @@ es:
       title: Nueva respuesta a tu comentario
     unfeasible_spending_proposal:
       hi: "Estimado usuario,"
-      new_html: "Por todo ello, te invitamos a que elabores una nueva propuesta que se ajuste a las condiciones de este proceso. Esto lo puedes hacer en este enlace: %{url}"
+      new_html: "Por todo ello, te invitamos a que elabores una <strong>nueva propuesta</strong> que se ajuste a las condiciones de este proceso. Esto lo puedes hacer en este enlace: %{url}."
       new_href: "nueva propuesta de inversión"
-      reconsider: "Si consideras que la propuesta rechazada cumple los requisitos para mantenerla como propuesta de inversión, podrás comunicarlo, en el plazo de 48 horas, respondiendo a este email. Por favor incluye toda la información relevante para reconsiderar la propuesta como válida."
+      reconsider_html: "Si consideras que la propuesta rechazada cumple los requisitos para mantenerla como propuesta de inversión, podrás comunicarlo, en el <strong>plazo de 48 horas, respondiendo a este email</strong>. Por favor incluye toda la información relevante para reconsiderar la propuesta como válida."
       sincerely: "Atentamente"
       signatory: "DIRECCIÓN GENERAL DE PARTICIPACIÓN CIUDADANA"
       sorry: "Sentimos las molestias ocasionadas y volvemos a darte las gracias por tu inestimable participación."
       subject: "Tu propuesta de inversión '%{code}' ha sido marcada como inviable"
-      unfeasible: "Desde el Ayuntamiento de Madrid queremos agradecer tu participación en los Presupuestos Participativos de la ciudad de Madrid. Lamentamos informarte de que tu propuesta '%{title}' quedará excluida de este proceso participativo por el siguiente motivo:"
+      unfeasible_html: "Desde el Ayuntamiento de Madrid queremos agradecer tu participación en los <strong>Presupuestos Participativos de la ciudad de Madrid</strong>. Lamentamos informarte de que tu propuesta <strong>'%{title}'</strong> quedará excluida de este proceso participativo por el siguiente motivo:"
