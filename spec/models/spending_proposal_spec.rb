@@ -59,6 +59,69 @@ describe SpendingProposal do
         expect(spending_proposal.feasibility).to eq "undefined"
       end
     end
+
+    describe "#unfeasible?" do
+      it "returns true when not feasible" do
+        spending_proposal.feasible = false
+        expect(spending_proposal.unfeasible?).to eq true
+      end
+
+      it "returns false when feasible" do
+        spending_proposal.feasible = true
+        expect(spending_proposal.unfeasible?).to eq false
+      end
+    end
+
+    describe "#unfeasible_email_pending?" do
+      let(:spending_proposal) { create(:spending_proposal) }
+
+      it "returns true when marked as unfeasibable and valuation_finished" do
+        spending_proposal.update(feasible: false, valuation_finished: true)
+        expect(spending_proposal.unfeasible_email_pending?).to eq true
+      end
+
+      it "returns false when marked as feasible" do
+        spending_proposal.update(feasible: true)
+        expect(spending_proposal.unfeasible_email_pending?).to eq false
+      end
+
+      it "returns false when marked as feasable and valuation_finished" do
+        spending_proposal.update(feasible: true, valuation_finished: true)
+        expect(spending_proposal.unfeasible_email_pending?).to eq false
+      end
+
+      it "returns false when unfeasible email already sent" do
+        spending_proposal.update(unfeasible_email_sent_at: 1.day.ago)
+        expect(spending_proposal.unfeasible_email_pending?).to eq false
+      end
+    end
+
+    describe "#send_unfeasible_email" do
+      let(:spending_proposal) { create(:spending_proposal) }
+
+      it "sets the time when the unfeasible email was sent" do
+        expect(spending_proposal.unfeasible_email_sent_at).to_not be
+        spending_proposal.send_unfeasible_email
+        expect(spending_proposal.unfeasible_email_sent_at).to be
+      end
+
+      it "send an email" do
+        expect {spending_proposal.send_unfeasible_email}.to change { ActionMailer::Base.deliveries.count }.by(1)
+      end
+    end
+
+    describe "#code" do
+      let(:spending_proposal) { create(:spending_proposal) }
+
+      it "returns the proposal id" do
+        expect(spending_proposal.code).to eq("#{spending_proposal.id}")
+      end
+
+      it "returns the administrator id when assigned" do
+        spending_proposal.administrator = create(:administrator)
+        expect(spending_proposal.code).to eq("#{spending_proposal.id}-A#{spending_proposal.administrator.id}")
+      end
+    end
   end
 
   describe "by_admin" do

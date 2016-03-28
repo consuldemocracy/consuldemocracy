@@ -33,6 +33,15 @@ class Mailer < ApplicationMailer
     end
   end
 
+  def unfeasible_spending_proposal(spending_proposal)
+    @spending_proposal = spending_proposal
+    @author = spending_proposal.author
+
+    with_user(@author) do
+      mail(to: @author.email, subject: t('mailers.unfeasible_spending_proposal.subject', code: @spending_proposal.code))
+    end
+  end
+
   private
 
   def with_user(user, &block)

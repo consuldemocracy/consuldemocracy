@@ -68,4 +68,25 @@ class SpendingProposal < ActiveRecord::Base
     end
   end
 
+  def unfeasible_email_pending?
+    unfeasible_email_sent_at.blank? && unfeasible? && valuation_finished?
+  end
+
+  def unfeasible?
+    feasible == false
+  end
+
+  def valuation_finished?
+    valuation_finished
+  end
+
+  def code
+    "#{id}" + (administrator.present? ? "-A#{administrator.id}" : "")
+  end
+
+  def send_unfeasible_email
+    Mailer.unfeasible_spending_proposal(self).deliver_later
+    update(unfeasible_email_sent_at: Time.now)
+  end
+
 end
