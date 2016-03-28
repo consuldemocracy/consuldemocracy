@@ -68,7 +68,7 @@ class SpendingProposal < ActiveRecord::Base
     end
   end
 
-  def marked_as_unfeasible?
+  def unfeasible_email_pending?
     unfeasible_email_sent_at.blank? && unfeasible? && valuation_finished?
   end
 

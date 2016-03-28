@@ -19,7 +19,7 @@ class Valuation::SpendingProposalsController < Valuation::BaseController
   def valuate
     if valid_price_params? && @spending_proposal.update(valuation_params)
 
-      if @spending_proposal.marked_as_unfeasible?
+      if @spending_proposal.unfeasible_email_pending?
         @spending_proposal.send_unfeasible_email
       end
 

@@ -72,27 +72,27 @@ describe SpendingProposal do
       end
     end
 
-    describe "#marked_as_unfeasible?" do
+    describe "#unfeasible_email_pending?" do
       let(:spending_proposal) { create(:spending_proposal) }
 
       it "returns true when marked as unfeasibable and valuation_finished" do
         spending_proposal.update(feasible: false, valuation_finished: true)
-        expect(spending_proposal.marked_as_unfeasible?).to eq true
+        expect(spending_proposal.unfeasible_email_pending?).to eq true
       end
 
       it "returns false when marked as feasible" do
         spending_proposal.update(feasible: true)
-        expect(spending_proposal.marked_as_unfeasible?).to eq false
+        expect(spending_proposal.unfeasible_email_pending?).to eq false
       end
 
       it "returns false when marked as feasable and valuation_finished" do
         spending_proposal.update(feasible: true, valuation_finished: true)
-        expect(spending_proposal.marked_as_unfeasible?).to eq false
+        expect(spending_proposal.unfeasible_email_pending?).to eq false
       end
 
       it "returns false when unfeasible email already sent" do
         spending_proposal.update(unfeasible_email_sent_at: 1.day.ago)
-        expect(spending_proposal.marked_as_unfeasible?).to eq false
+        expect(spending_proposal.unfeasible_email_pending?).to eq false
       end
     end
 
