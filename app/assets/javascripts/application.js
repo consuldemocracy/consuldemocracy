@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require jquery-ui/datepicker
 //= require jquery-ui/datepicker-es
+//= require jquery-ui/effect-shake
 //= require foundation
 //= require turbolinks
 //= require ckeditor/init
@@ -39,6 +40,8 @@
 //= require annotatable
 //= require advanced_search
 //= require registration_form
+//= require forms
+//= require survey_answers
 //= require suggest
 //= require forms
 //= require valuation_spending_proposal_form
@@ -56,6 +59,7 @@ var initialize_modules = function() {
   App.Annotatable.initialize();
   App.AdvancedSearch.initialize();
   App.RegistrationForm.initialize();
+  App.SurveyAnswers.initialize();
   App.Suggest.initialize();
   App.Forms.initialize();
   App.ValuationSpendingProposalForm.initialize();

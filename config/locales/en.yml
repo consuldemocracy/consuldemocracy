@@ -108,6 +108,8 @@ en:
       select_order: Order by
       start_debate: Start a debate
       title: Debates
+      top: Featured
+      top_link_debates: '#TúPreguntas'
     new:
       back_link: Go back
       form:
@@ -188,6 +190,7 @@ en:
       external_link_opendata_url: http://datos.madrid.es
       external_link_transparency: Transparency
       external_link_transparency_url: https://transparencia.madrid.es
+      help_translate: Help us translate
       locale: 'Language:'
       logo: Madrid
       moderation: Moderation
@@ -200,20 +203,14 @@ en:
         other: You have %{count} new notifications
       no_notifications: You don't have new notifications
       open: open
-      open_city_slogan_html: There are cities that are governed directly by their inhabitants, who <b>discuss</b> the topics they are concerned about, <b>propose</b> ideas to improve their lives and <b>decide</b> among themselves which ones will be carried out. Madrid is already one of these cities.
-      open_city_title: Love the city, and it will become a city you love.
+      open_city_slogan_html: In Madrid their inhabitants, <b>discuss</b> the topics they are concerned about, <b>propose</b> ideas to improve their lives and <b>decide</b> among themselves which ones will be carried out.
+      open_city_slogan_short: There are cities that are governed directly by their inhabitants, Madrid is already one of these cities.
+      open_city_title: The city you love will become the city you want.
       open_data: Open data
       open_gov: Open government
       proposals: Proposals
-      see_all: See proposals
-      spending_proposals: Spending proposals
-  legislation:
-    help:
-      alt: Select the text you want to comment and press the button with the pencil.
-      text: To comment this document you must %{sign_in} or %{sign_up}. Then select the text you want to comment and press the button with the pencil.
-      text_sign_in: login
-      text_sign_up: sign up
-      title: How I can comment this document?
+      processes: Open processes
+      spending_proposals: Participatory budgeting
   locale: English
   notifications:
     index:
@@ -230,7 +227,7 @@ en:
     title: "Districts"
     proposal_for_district: "Start a proposal for your district"
     select_district: Scope of operation
-    start_proposal: Create a proposal
+    start_proposal: Create proposal
   omniauth:
     facebook:
       sign_in: Sign in with Facebook
@@ -268,7 +265,7 @@ en:
       tag_category_label: "Categories"
       tags_instructions: "Tag this proposal. You can choose from proposed categories or add your own"
       tags_label: Tags
-      tags_placeholder: Enter the tags you would like to use, separated by commas (',')
+      tags_placeholder: "Enter the tags you would like to use, separated by commas (',')"
     index:
       featured_proposals: Featured
       filter_topic:
@@ -289,7 +286,7 @@ en:
         other: " containing the term '%{search_term}'"
       select_order: Order by
       select_order_long: 'You are viewing proposals according to:'
-      start_proposal: Create a proposal
+      start_proposal: Create proposal
       title: Proposals
       top: Top weekly
       top_link_proposals: The most supported proposals by category
@@ -298,6 +295,8 @@ en:
       form:
         submit_button: Create proposal
       more_info: How do citizen proposals work?
+      participatory_budget: Do you want to make an investment project?
+      participatory_budget_info_html: If you want to create an investment project, go to <strong><u>Participatory Budgets</u></strong>.
       recommendation_one: Do not use capital letters for the proposal title or for whole sentences. On the internet, this is considered shouting. And nobody likes being shouted at.
       recommendation_three: Enjoy this space and the voices that fill it. It belongs to you too.
       recommendation_two: Any proposal or comment suggesting illegal action will be deleted, as well as those intending to sabotage the debate spaces. Anything else is allowed.
@@ -406,23 +405,36 @@ en:
       association_name: 'Association name'
       description: Description
       external_url: Link to additional documentation
-      geozone: Scope of operation
+      geozone: Choose if a proposed citywide or district
       submit_buttons:
         create: Create
         new: Create
       title: Spending proposal title
     index:
       create_link: Create spending proposal
-      text_html: Here you can send spending proposals to be considered in the frame of the annual participatory budgeting.
-      title: Participatory budgeting
+      date_1: February 22 to March 31
+      date_1_info: Collecting proposals
+      date_2: April 1 to April 15
+      date_2_info: Support
+      date_3: April 16 to May 14
+      date_3_info: Evaluation
+      date_4: May 15 to June 30
+      date_4_info: Final vote
+      signin_only: For create spending proposals you must %{signin} or %{signup}.
+      signin: sign in
+      signup: sign up
+      title_html: You decide how to invest 60 million euros<br> to your city
+      title_page: Participatory budgeting
       verified_only: Only verified users can create spending proposals, %{verify_account}.
       verify_account: verify your account
     new:
       back_link: Back
-      more_info: How do participatory budgeting works?
+      more_info: "Important, not to be ruled out your proposal must comply:"
       recommendation_one: It's mandatory that the proposal makes reference to a budgetable action.
+      recommendation_one: See the %{requirements}.
+      recommendation_one_link: requirements to be met by a proposal
       recommendation_three: Try to go into details when describing your spending proposal so the reviewing team undertands your points.
-      recommendation_two: Any proposal or comment suggesting illegal action will be deleted.
+      recommendation_two: Each proposal must be submitted separately. You can make as many want.
       recommendations_title: How to create a spending proposal
       start_new: Create spending proposal
     wrong_price_format: Only integer numbers
@@ -489,6 +501,21 @@ en:
       alt: Icon it gets done
       description: If the proposal is accepted by the majority, the City Council accepts it as its own and it gets done.
       title: It gets done
+    featured:
+      page_title: Featured
+      process:
+        link: View results
+        text: The survey's results are already available.
+        title: Reshuffle Plaza de España
+      proposals:
+        link: See proposals
+        text: Create your own proposals and supports those of other citizens.
+        title: Citizen proposals
+      spending_proposals:
+        link: Send your proposal
+        text: You decide how to invest 60 million euros to your city.
+        title: Participatory budgeting
+    more_information: More information about this page
     proposal:
       alt: Icon propose
       description: Open space for citizen proposals about the kind of city we want to live in.
@@ -521,10 +548,3 @@ en:
     google_oauth2:
       sign_in: "Sign in with Google"
       sign_up: "Sign up with Google"
-  legislation:
-    help:
-      title: "How I can comment this document?"
-      text: "To comment this document you must %{sign_in} or %{sign_up}. Then select the text you want to comment and press the button with the pencil."
-      text_sign_in: "login"
-      text_sign_up: "sign up"
-      alt: "Select the text you want to comment and press the button with the pencil."

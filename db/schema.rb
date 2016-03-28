@@ -228,6 +228,21 @@ ActiveRecord::Schema.define(version: 20160315092854) do
 
   add_index "notifications", ["user_id"], name: "index_notifications_on_user_id", using: :btree
 
+  create_table "open_answers", force: :cascade do |t|
+    t.text     "text"
+    t.integer  "question_code"
+    t.integer  "user_id"
+    t.integer  "survey_code"
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
+    t.integer  "cached_votes_total", default: 0
+    t.integer  "cached_votes_up",    default: 0
+    t.integer  "cached_votes_down",  default: 0
+    t.integer  "confidence_score",   default: 0
+  end
+
+  add_index "open_answers", ["user_id"], name: "index_open_answers_on_user_id", using: :btree
+
   create_table "organizations", force: :cascade do |t|
     t.integer  "user_id"
     t.string   "name",             limit: 60
@@ -275,6 +290,16 @@ ActiveRecord::Schema.define(version: 20160315092854) do
   add_index "proposals", ["title"], name: "index_proposals_on_title", using: :btree
   add_index "proposals", ["tsv"], name: "index_proposals_on_tsv", using: :gin
 
+  create_table "redeemable_codes", force: :cascade do |t|
+    t.string   "token"
+    t.integer  "geozone_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "redeemable_codes", ["geozone_id"], name: "index_redeemable_codes_on_geozone_id", using: :btree
+  add_index "redeemable_codes", ["token"], name: "index_redeemable_codes_on_token", using: :btree
+
   create_table "settings", force: :cascade do |t|
     t.string "key"
     t.string "value"
@@ -315,6 +340,16 @@ ActiveRecord::Schema.define(version: 20160315092854) do
 
   add_index "spending_proposals", ["author_id"], name: "index_spending_proposals_on_author_id", using: :btree
   add_index "spending_proposals", ["geozone_id"], name: "index_spending_proposals_on_geozone_id", using: :btree
+
+  create_table "survey_answers", force: :cascade do |t|
+    t.string   "survey_code"
+    t.json     "answers"
+    t.integer  "user_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "survey_answers", ["user_id"], name: "index_survey_answers_on_user_id", using: :btree
 
   create_table "taggings", force: :cascade do |t|
     t.integer  "tag_id"
@@ -508,6 +543,7 @@ ActiveRecord::Schema.define(version: 20160315092854) do
   add_foreign_key "moderators", "users"
   add_foreign_key "notifications", "users"
   add_foreign_key "organizations", "users"
+  add_foreign_key "survey_answers", "users"
   add_foreign_key "users", "geozones"
   add_foreign_key "valuators", "users"
 end

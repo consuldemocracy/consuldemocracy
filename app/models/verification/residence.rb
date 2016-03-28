@@ -3,7 +3,7 @@ class Verification::Residence
   include ActiveModel::Dates
   include ActiveModel::Validations::Callbacks
 
-  attr_accessor :user, :document_number, :document_type, :date_of_birth, :postal_code, :terms_of_service
+  attr_accessor :user, :document_number, :document_type, :date_of_birth, :postal_code, :terms_of_service, :redeemable_code
 
   before_validation :call_census_api
 
@@ -18,11 +18,13 @@ class Verification::Residence
   validate :document_number_uniqueness
   validate :postal_code_in_madrid
   validate :residence_in_madrid
+  validate :redeemable_code_is_redeemable
 
   def initialize(attrs={})
     self.date_of_birth = parse_date('date_of_birth', attrs)
     attrs = remove_date('date_of_birth', attrs)
     super
+    self.redeemable_code ||= self.user.try(:redeemable_code)
     clean_document_number
   end
 
@@ -32,6 +34,11 @@ class Verification::Residence
                 document_type:         document_type,
                 geozone:               self.geozone,
                 residence_verified_at: Time.now)
+
+    if redeemable_code.present?
+      RedeemableCode.redeem(redeemable_code, self.geozone, user)
+    end
+    true
   end
 
   def allowed_age
@@ -45,6 +52,13 @@ class Verification::Residence
 
   def postal_code_in_madrid
     errors.add(:postal_code, I18n.t('verification.residence.new.error_not_allowed_postal_code')) unless valid_postal_code?
+  end
+
+  def redeemable_code_is_redeemable
+    return if redeemable_code.blank?
+    unless RedeemableCode.redeemable?(redeemable_code, self.geozone)
+      errors.add(:redeemable_code, I18n.t('verification.residence.new.error_can_not_redeem_code'))
+    end
   end
 
   def residence_in_madrid
@@ -63,12 +77,13 @@ class Verification::Residence
       document_number: document_number,
       document_type:   document_type,
       date_of_birth:   date_of_birth,
-      postal_code:     postal_code
+      postal_code:     postal_code,
+      district_code:   district_code
     })
   end
 
   def geozone
-    Geozone.where(census_code: district_code).first
+    Geozone.where(census_code: district_code).first if district_code.present?
   end
 
   def district_code

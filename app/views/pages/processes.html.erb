@@ -1,0 +1,29 @@
+<div class="row">
+
+  <div class="small-12 medium-6 column margin-bottom">
+    <%= link_to "/processes_plaza_espana" do %>
+      <%= image_tag "processes_plaza_espana.png" %>
+    <% end %>
+    <div id="spain-square" class="panel">
+      <h2><%= t("pages.processes.index.process_2_title") %></h2>
+      <p><%= t("pages.processes.index.process_2_description") %></p>
+      <div class="small-12 medium-8 large-6">
+        <%= link_to t("pages.processes.index.process_2_button"), "/processes_plaza_espana", class: "button expanded" %>
+      </div>
+    </div>
+  </div>
+
+  <div id="transparency-law"  class="small-12 medium-6 column margin-bottom">
+    <%= link_to "/processes_ordinance" do %>
+      <%= image_tag "processes_ordinance.png" %>
+    <% end %>
+    <div class="panel">
+      <h2><%= t("pages.processes.index.process_1_title") %></h2>
+      <p><%= t("pages.processes.index.process_1_description") %></p>
+      <div class="small-12 medium-8 large-6">
+        <%= link_to t("pages.processes.index.process_1_button"), "/processes_ordinance", class: "button expanded" %>
+      </div>
+    </div>
+  </div>
+
+</div>

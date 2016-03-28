@@ -1,0 +1,45 @@
+<% provide :title, "Remodelación de Plaza España - Valora otras respuestas" %>
+<% provide :social_media_meta_tags do %>
+  <%= render "shared/social_media_meta_tags_plaza_espana" %>
+<% end %>
+
+<div class="row margin">
+  <div class="survey-comments small-12 medium-9 column">
+
+    <%= link_to encuesta_plaza_espana_respuestas_path, class: "left back" do %>
+        <i class="icon-angle-left left"></i>
+        <%= t("pages.processes.back") %>
+      <% end %>
+
+    <h3><%= @question %></h3>
+
+    <section class="comments">
+      <div class="row">
+        <div id="comments" class="small-12 column">
+
+          <% @open_answers.each do |open_answer| %>
+            <div class="row">
+              <div id="comment_23578" class="comment small-12 column">
+                <div class="comment-body">
+                  <div class="comment-user">
+                    <p><%= open_answer.text %></p>
+                  </div>
+
+                  <div id="<%= dom_id(open_answer) %>_reply" class="reply">
+                    <span id="<%= dom_id(open_answer) %>_votes" class="comment-votes left">
+                      <%= render 'votes', open_answer: open_answer %>
+                    </span>
+                    <p>&nbsp;</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          <% end %>
+
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+
+<%= paginate @open_answers %>
