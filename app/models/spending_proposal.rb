@@ -77,7 +77,7 @@ class SpendingProposal < ActiveRecord::Base
   end
 
   def code
-    "#{id}" + (administrator.present? ? "-#{administrator.id}" : "")
+    "#{id}" + (administrator.present? ? "-A#{administrator.id}" : "")
   end
 
 end

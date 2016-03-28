@@ -122,7 +122,7 @@ feature 'Emails' do
     expect(email).to have_body_text(user_confirmation_path)
   end
 
-  scenario "Email on unfeasible spending proposal", :focus do
+  scenario "Email on unfeasible spending proposal" do
     spending_proposal = create(:spending_proposal)
     administrator = create(:administrator)
     valuator = create(:valuator)
@@ -140,7 +140,7 @@ feature 'Emails' do
     spending_proposal.reload
 
     email = open_last_email
-    expect(email).to have_subject("Your investment project '#{spending_proposal.id}-#{spending_proposal.administrator.id}' has been marked as unfeasible")
+    expect(email).to have_subject("Your investment project '#{spending_proposal.id}-A#{spending_proposal.administrator.id}' has been marked as unfeasible")
     expect(email).to deliver_to(spending_proposal.author.email)
     expect(email).to have_body_text(spending_proposal.title)
     expect(email).to have_body_text(spending_proposal.feasible_explanation)
