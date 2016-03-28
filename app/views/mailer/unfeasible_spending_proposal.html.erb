@@ -1,16 +1,17 @@
-<p>Estimado usuario,</p>
+<p><%= t("mailers.unfeasible_spending_proposal.hi") %></p>
 
-<p>Desde el Ayuntamiento de Madrid queremos agradecer tu participación en los Presupuestos Participativos de la ciudad de Madrid.
-Lamentamos informarte de que tu propuesta '<%= @spending_proposal.title %>' quedará excluida de este proceso participativo por el siguiente motivo:</p>
+<p><%= t("mailers.unfeasible_spending_proposal.unfeasible",
+         title: @spending_proposal.title) %></p>
 
 <p><%= @spending_proposal.feasible_explanation %></p>
 
-<p>Por todo ello, te invitamos a que elabores una nueva propuesta que se ajuste a las condiciones de este proceso. Esto lo puedes hacer en este enlace:
-<%= link_to "nueva propuesta de inversión", new_spending_proposal_url %></p>
+<p><%= t("mailers.unfeasible_spending_proposal.new_html",
+         url: link_to(t("mailers.unfeasible_spending_proposal.new_href"),
+                      new_spending_proposal_url)) %></p>
 
-<p>Si consideras que la propuesta rechazada cumple los requisitos para mantenerla como propuesta de inversión, podrás comunicarlo, en el plazo de 48 horas, al correo preparticipativos@madrid.es, indicando necesariamente para su tramitación el código <%= @spending_proposal.code %> como asunto del correo, correspondiente a tu propuesta.</p>
+<p><%= t("mailers.unfeasible_spending_proposal.reconsider") %></p>
 
-<p>Sentimos las molestias ocasionadas y volvemos a darte las gracias por tu inestimable participación.</p>
+<p><%= t("mailers.unfeasible_spending_proposal.sorry") %></p>
 
-<p>Atentamente</p>
-<p>DIRECCIÓN GENERAL DE PARTICIPACIÓN CIUDADANA</p>
+<p><%= t("mailers.unfeasible_spending_proposal.sincerely") %></p>
+<p><%= t("mailers.unfeasible_spending_proposal.signatory") %></p>
