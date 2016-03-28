@@ -134,6 +134,7 @@ feature 'Emails' do
 
     choose  'spending_proposal_feasible_false'
     fill_in 'spending_proposal_feasible_explanation', with: 'This is not legal as stated in Article 34.9'
+    check 'spending_proposal_valuation_finished'
     click_button 'Save changes'
 
     expect(page).to have_content "Dossier updated"

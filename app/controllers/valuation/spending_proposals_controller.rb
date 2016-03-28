@@ -20,7 +20,7 @@ class Valuation::SpendingProposalsController < Valuation::BaseController
     if valid_price_params? && @spending_proposal.update(valuation_params)
 
       if @spending_proposal.marked_as_unfeasible?
-        Mailer.unfeasible_spending_proposal(@spending_proposal).deliver_later
+        @spending_proposal.send_unfeasible_email
       end
 
       redirect_to valuation_spending_proposal_path(@spending_proposal), notice: t('valuation.spending_proposals.notice.valuate')

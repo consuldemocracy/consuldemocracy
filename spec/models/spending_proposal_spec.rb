@@ -75,24 +75,39 @@ describe SpendingProposal do
     describe "#marked_as_unfeasible?" do
       let(:spending_proposal) { create(:spending_proposal) }
 
-      it "returns true when feasibility has changed and it is false" do
-        spending_proposal.update(feasible: false)
+      it "returns true when marked as unfeasibable and valuation_finished" do
+        spending_proposal.update(feasible: false, valuation_finished: true)
         expect(spending_proposal.marked_as_unfeasible?).to eq true
       end
 
-      it "returns false when feasibility has not changed" do
-        spending_proposal.update(price: 1000000)
-        expect(spending_proposal.marked_as_unfeasible?).to eq false
-      end
-
-      it "returns false when it is feasible" do
+      it "returns false when marked as feasible" do
         spending_proposal.update(feasible: true)
         expect(spending_proposal.marked_as_unfeasible?).to eq false
       end
 
-      xit "when marked as unfeasible but there is no admin associated...
-           an exception occurs when sending the unfeasible email,
-           because spending_proposal.administrator.id is nil.."
+      it "returns false when marked as feasable and valuation_finished" do
+        spending_proposal.update(feasible: true, valuation_finished: true)
+        expect(spending_proposal.marked_as_unfeasible?).to eq false
+      end
+
+      it "returns false when unfeasible email already sent" do
+        spending_proposal.update(unfeasible_email_sent_at: 1.day.ago)
+        expect(spending_proposal.marked_as_unfeasible?).to eq false
+      end
+    end
+
+    describe "#send_unfeasible_email" do
+      let(:spending_proposal) { create(:spending_proposal) }
+
+      it "sets the time when the unfeasible email was sent" do
+        expect(spending_proposal.unfeasible_email_sent_at).to_not be
+        spending_proposal.send_unfeasible_email
+        expect(spending_proposal.unfeasible_email_sent_at).to be
+      end
+
+      it "send an email" do
+        expect {spending_proposal.send_unfeasible_email}.to change { ActionMailer::Base.deliveries.count }.by(1)
+      end
     end
 
     describe "#code" do
