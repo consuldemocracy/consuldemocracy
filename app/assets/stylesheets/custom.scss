@@ -57,6 +57,13 @@ blockquote.featured {
   text-transform: uppercase;
 }
 
+@media (max-width: $small-breakpoint) {
+
+  .text-right {
+    text-align: left;
+  }
+}
+
 // 02. Header
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -402,6 +409,223 @@ table {
   padding-top: $line-height;
 }
 
+.survey-results {
+
+  .title {
+    color: #000201;
+    font-size: rem-calc(40);
+    line-height: rem-calc(40);
+    text-transform: uppercase;
+
+    @media (min-width: $small-breakpoint) {
+      font-size: rem-calc(60);
+      line-height: rem-calc(60);
+    }
+  }
+
+  .subtitle {
+    background: #fae100;
+    color: #000201;
+    display: inline;
+    font-size: rem-calc(40);
+    line-height: rem-calc(40);
+    text-transform: uppercase;
+  }
+
+  .panel {
+    border: 0;
+
+    &.green {
+      background: #58ff87;
+    }
+
+  }
+
+  .big-number {
+    font-size: rem-calc(72);
+    font-weight: bold;
+  }
+
+  hr {
+    border: 0;
+
+    &.double {
+      height: $line-height*2;
+    }
+  }
+
+  .progress {
+    background: none;
+  }
+
+  .progress-meter {
+    background: #00dae0;
+    height: $line-height/2;
+
+    &.web {
+      background: #00ad51;
+    }
+
+    &.zero-ten {
+      background: #007dc3;
+    }
+
+    &.paper {
+      background: #ffdc08;
+    }
+  }
+
+  .progress-meter-text {
+    color: #000201;
+    font-weight: normal;
+    left: 0;
+    top: $line-height/2;
+    transform: initial;
+  }
+
+  table {
+    margin-top: $line-height*1.5;
+
+
+    &.questions-table {
+
+      tr.empty td {
+        border: 0 !important;
+      }
+
+      td:first-child, th:first-child {
+        border-right: 1px solid $border;
+      }
+
+      td:last-child, th:last-child {
+        border-left: 1px solid $border;
+      }
+
+      @media (min-width: $small-breakpoint) {
+
+        th {
+          width: rem-calc(160);
+        }
+
+        th:first-child {
+          width: auto;
+        }
+      }
+
+    }
+
+    tr td, tr th {
+      text-align: left;
+
+      @media (min-width: $small-breakpoint) {
+        padding: $line-height/2 $line-height;
+      }
+
+      &.border-left {
+        border-left: 1px solid $border;
+      }
+
+      &.border-right {
+        border-right: 1px solid $border;
+      }
+    }
+
+    tr.empty {
+      background: white;
+      border-left: 1px solid white;
+      border-right: 1px solid white;
+      border-top: 1px solid $border;
+      height: $line-height;
+
+      @media (min-width: $small-breakpoint) {
+        height: $line-height*1.5;
+      }
+    }
+
+    th.table-width {
+
+      @media (min-width: $small-breakpoint) {
+        width: rem-calc(200);
+      }
+    }
+
+    th.question {
+      background: #fff7b4;
+      border: 2px solid #fae100;
+
+      @media (min-width: $small-breakpoint) {
+        font-size: rem-calc(24);
+        line-height: $line-height;
+      }
+    }
+
+    th.question-subtitle {
+      background: #9af6f9;
+    }
+
+    tr.answer {
+      background: #c1fdd2;
+      border-bottom: 2px solid #58ff87;
+      border-top: 2px solid #58ff87;
+
+      td:first-child, td:last-child {
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+.chart-legend {
+  bottom: $line-height;
+  list-style-type: none;
+
+  .label {
+    height: rem-calc(14);
+    padding: 0;
+    width: rem-calc(14);
+  }
+
+  strong {
+    text-transform: uppercase;
+  }
+}
+
+.label.large {
+  font-size: $base-font-size;
+}
+
+@media (max-width: $small-breakpoint) {
+
+  table.survey-districts thead {
+    font-size: $h6-font-size;
+
+    th {
+      width: 25%;
+      word-break: break-all;
+    }
+  }
+
+  table.questions-table {
+
+    thead th {
+      font-size: $h6-font-size;
+      width: 20%;
+      word-break: break-all;
+    }
+
+    td {
+      font-size: $h6-font-size;
+    }
+  }
+}
+
+table.age-groups {
+
+  th {
+    width: 20%;
+  }
+}
+
 // 08. Spending proposals
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -542,11 +766,11 @@ table {
 
       .icon-proposals {
         color: #e5c300;
-        font-size: rem-calc(240);
+        font-size: rem-calc(128);
         line-height: rem-calc(170);
         position: absolute;
-        right: 15%;
-        top: 260px;
+        right: 2%;
+        top: 100px;
       }
     }
 
@@ -555,8 +779,8 @@ table {
       margin-bottom: 0;
 
       @media (min-width: $medium-breakpoint) {
-        background: #00DADE image-url('processes_plaza_espana_medium.png') no-repeat;
-        background-position: bottom right;
+        background: #00DADE image-url('survey_results/plaza_espana_logo.gif') no-repeat;
+        background-position: 90% 50%;
       }
     }
 
@@ -580,7 +804,7 @@ table {
   padding: $line-height/2;
 
   @media (min-width: $small-breakpoint) {
-    background: #33DADF image-url('processes_plaza_espana_small.png') no-repeat;
+    background: #33DADF image-url('processes_plaza_espana_small.gif') no-repeat;
     background-position: right;
     margin-left: 0 !important;
     margin-right: 0 !important;
