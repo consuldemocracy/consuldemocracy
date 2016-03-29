@@ -4,6 +4,7 @@ class SpendingProposal < ActiveRecord::Base
   include Taggable
 
   apply_simple_captcha
+  acts_as_votable
 
   belongs_to :author, -> { with_hidden }, class_name: 'User', foreign_key: 'author_id'
   belongs_to :geozone
@@ -83,6 +84,10 @@ class SpendingProposal < ActiveRecord::Base
     valuation_finished
   end
 
+  def total_votes
+    cached_votes_up
+  end
+
   def code
     "#{id}" + (administrator.present? ? "-A#{administrator.id}" : "")
   end
@@ -90,6 +95,16 @@ class SpendingProposal < ActiveRecord::Base
   def send_unfeasible_email
     Mailer.unfeasible_spending_proposal(self).deliver_later
     update(unfeasible_email_sent_at: Time.now)
+  end
+
+  def votable_by?(user)
+    user && user.level_two_or_three_verified?
+  end
+
+  def register_vote(user, vote_value)
+    if votable_by?(user)
+      vote_by(voter: user, vote: vote_value)
+    end
   end
 
 end

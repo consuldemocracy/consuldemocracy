@@ -43,13 +43,10 @@ module Abilities
       if user.level_two_or_three_verified?
         can :vote, Proposal
         can :vote_featured, Proposal
+        can :vote, SpendingProposal
         can :create, SpendingProposal
-
         can :read, SurveyAnswer
-
         can :read, OpenAnswer
-
-        can :destroy, SpendingProposal, author_id: user.id
       end
 
       can :create, Annotation

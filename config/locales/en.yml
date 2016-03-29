@@ -433,11 +433,19 @@ en:
       recommendation_two: Each proposal must be submitted separately. You can make as many want.
       recommendations_title: How to create a spending proposal
       start_new: Create spending proposal
+      back_link: Back
     show:
       author_deleted: User deleted
+    wrong_price_format: Only integer numbers
     spending_proposal:
       spending_proposal: Investment project
-    wrong_price_format: Only integer numbers
+      already_supported: You have already supported this. Share it!
+      support: Support
+      support_title: Support this project
+      supports:
+        one: 1 support
+        other: "%{count} supports"
+        zero: No supports
   stats:
     index:
       visits: Visits

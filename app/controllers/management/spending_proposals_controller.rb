@@ -19,6 +19,7 @@ class Management::SpendingProposalsController < Management::BaseController
 
   def show
     @spending_proposal = SpendingProposal.find(params[:id])
+    set_spending_proposal_votes(@spending_proposal)
   end
 
   private
@@ -35,6 +36,11 @@ class Management::SpendingProposalsController < Management::BaseController
 
     def current_user
       managed_user
+    end
+
+    # This should not be necessary. Maybe we could create a specific show view for managers.
+    def set_spending_proposal_votes(spending_proposals)
+      @spending_proposal_votes = current_user ? current_user.spending_proposal_votes(spending_proposals) : {}
     end
 
 end

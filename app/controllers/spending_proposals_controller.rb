@@ -9,6 +9,8 @@ class SpendingProposalsController < ApplicationController
 
   feature_flag :spending_proposals
 
+  respond_to :html, :js
+
   def index
     @spending_proposals = @search_terms.present? ? SpendingProposal.search(@search_terms) : SpendingProposal.all
     @spending_proposals = @spending_proposals.page(params[:page]).for_render
@@ -16,6 +18,10 @@ class SpendingProposalsController < ApplicationController
 
   def new
     @spending_proposal = SpendingProposal.new
+  end
+
+  def show
+    set_spending_proposal_votes(@spending_proposal)
   end
 
   def create
@@ -31,10 +37,16 @@ class SpendingProposalsController < ApplicationController
   end
 
   def destroy
-    spending_proposal = current_user.spending_proposals.find(params[:id])
+    spending_proposal = SpendingProposal.find(params[:id])
     spending_proposal.destroy
     redirect_to user_path(current_user, filter: 'spending_proposals'), notice: t('flash.actions.destroy.spending_proposal')
   end
+
+  def vote
+    @spending_proposal.register_vote(current_user, 'yes')
+    set_spending_proposal_votes(@spending_proposal)
+  end
+
 
   private
 
