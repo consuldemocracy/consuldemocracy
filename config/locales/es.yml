@@ -434,10 +434,9 @@ es:
       back_link: Volver
     show:
       author_deleted: Usuario eliminado
-    spending_proposal:
-      spending_proposal: Propuesta de inversión
     wrong_price_format: Solo puede incluir caracteres numéricos
     spending_proposal:
+      spending_proposal: Propuesta de inversión
       already_supported: Ya has apoyado este proyecto. Compartelo!
       support: Apoyar
       support_title: Apoyar este proyecto

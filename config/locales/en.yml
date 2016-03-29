@@ -434,10 +434,9 @@ en:
       back_link: Back
     show:
       author_deleted: User deleted
-    spending_proposal:
-      spending_proposal: Investment project
     wrong_price_format: Only integer numbers
     spending_proposal:
+      spending_proposal: Investment project
       already_supported: You have already supported this. Share it!
       support: Support
       support_title: Support this project
