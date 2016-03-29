@@ -417,8 +417,13 @@ en:
         button: Search
         placeholder: Investment projects...
         title: Search
+      search_results:
+        one: " containing the term '%{search_term}'"
+        other: " containing the term '%{search_term}'"
       sidebar:
         geozones: Scope of operation
+        feasibility: Feasibility
+      start_spending_proposal: Create a spending proposal
     new:
       back_link: Back
       more_info: How do participatory budgeting works?

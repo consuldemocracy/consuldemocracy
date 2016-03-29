@@ -417,8 +417,13 @@ es:
         button: Buscar
         placeholder: Propuestas de inversión...
         title: Buscar
+      search_results:
+        one: " que contiene '%{search_term}'"
+        other: " que contienen '%{search_term}'"
       sidebar:
         geozones: Ámbitos de actuación
+        feasibility: Viabilidad
+      start_spending_proposal: Crea una propuesta de inversión
     new:
       back_link: Volver
       more_info: "¿Cómo funcionan los presupuestos participativos?"
