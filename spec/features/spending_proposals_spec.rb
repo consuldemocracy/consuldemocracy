@@ -132,10 +132,12 @@ feature 'Spending proposals' do
 
   context "Destroy" do
 
-    scenario "User can destroy owned spending proposals" do
+    scenario "Admin can destroy owned spending proposals" do
+      admin = create(:administrator)
       user = create(:user, :level_two)
       spending_proposal = create(:spending_proposal, author: user)
-      login_as(user)
+
+      login_as(admin.user)
 
       visit user_path(user)
       within("#spending_proposal_#{spending_proposal.id}") do
