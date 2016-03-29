@@ -24,6 +24,9 @@ class SpendingProposal < ActiveRecord::Base
   scope :managed,                -> { valuation_open.where(valuation_assignments_count: 0).where("administrator_id IS NOT ?", nil) }
   scope :valuating,              -> { valuation_open.where("valuation_assignments_count > 0 AND valuation_finished = ?", false) }
   scope :valuation_finished,     -> { where(valuation_finished: true) }
+  scope :feasible,               -> { where(feasible: true) }
+  scope :unfeasible,             -> { where(feasible: false) }
+  scope :not_unfeasible,         -> { where("feasible IS ? OR feasible = ?", nil, true) }
 
   scope :by_admin,    -> (admin)    { where(administrator_id: admin.presence) }
   scope :by_tag,      -> (tag_name) { tagged_with(tag_name) }
