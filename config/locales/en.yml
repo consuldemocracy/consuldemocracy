@@ -412,11 +412,18 @@ en:
         new: Create
       title: Spending proposal title
     index:
-      create_link: Create spending proposal
-      text_html: Here you can send spending proposals to be considered in the frame of the annual participatory budgeting.
       title: Participatory budgeting
-      verified_only: Only verified users can create spending proposals, %{verify_account}.
-      verify_account: verify your account
+      search_form:
+        button: Search
+        placeholder: Investment projects...
+        title: Search
+      search_results:
+        one: " containing the term '%{search_term}'"
+        other: " containing the term '%{search_term}'"
+      sidebar:
+        geozones: Scope of operation
+        feasibility: Feasibility
+      start_spending_proposal: Create an investment project
     new:
       more_info: How do participatory budgeting works?
       recommendation_one: It's mandatory that the proposal makes reference to a budgetable action.
@@ -425,6 +432,10 @@ en:
       recommendations_title: How to create a spending proposal
       start_new: Create spending proposal
       back_link: Back
+    show:
+      author_deleted: User deleted
+    spending_proposal:
+      spending_proposal: Investment project
     wrong_price_format: Only integer numbers
     spending_proposal:
       already_supported: You have already supported this. Share it!

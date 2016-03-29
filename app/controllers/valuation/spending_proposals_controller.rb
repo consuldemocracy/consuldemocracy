@@ -10,7 +10,7 @@ class Valuation::SpendingProposalsController < Valuation::BaseController
 
   def index
     if current_user.valuator?
-      @spending_proposals = SpendingProposal.search(params_for_current_valuator, @current_filter).order(created_at: :desc).page(params[:page])
+      @spending_proposals = SpendingProposal.scoped_filter(params_for_current_valuator, @current_filter).order(created_at: :desc).page(params[:page])
     else
       @spending_proposals = SpendingProposal.none.page(params[:page])
     end
