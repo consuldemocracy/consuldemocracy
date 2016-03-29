@@ -78,10 +78,10 @@ es:
       index:
         process_1_title: Ordenanza de Transparencia
         process_1_description: Madrid quiere poner en marcha un sistema de transparencia pública a la altura de los más avanzados del mundo, para ello necesitamos tu ayuda.
-        process_1_button: Más información
+        process_1_button: Participa en la ordenanza
         process_2_title: Remodelación de Plaza España
         process_2_description: Contamos contigo para que decidas rellenando una pequeña encuesta como quieres que sea este nuevo espacio en tu ciudad.
-        process_2_button: Más información
+        process_2_button: Participa en la encuesta
       process_1:
         title: Ayúdanos a mejorar la Ordenanza de Transparencia de la Ciudad de Madrid
         comment: dejar tus comentarios
