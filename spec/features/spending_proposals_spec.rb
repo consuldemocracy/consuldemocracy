@@ -5,17 +5,17 @@ feature 'Spending proposals' do
   let(:author) { create(:user, :level_two, username: 'Isabel') }
 
   scenario 'Index' do
-    visit spending_proposals_path
-
-    expect(page).to_not have_link('Create spending proposal', href: new_spending_proposal_path)
-    expect(page).to have_link('verify your account')
-
-    login_as(author)
+    spending_proposals = [create(:spending_proposal), create(:spending_proposal), create(:spending_proposal)]
 
     visit spending_proposals_path
 
-    expect(page).to have_link('Create spending proposal', href: new_spending_proposal_path)
-    expect(page).to_not have_link('verify your account')
+    expect(page).to have_selector('#investment-projects .investment-project', count: 3)
+    spending_proposals.each do |spending_proposal|
+      within('#investment-projects') do
+        expect(page).to have_content spending_proposal.title
+        expect(page).to have_css("a[href='#{spending_proposal_path(spending_proposal)}']", text: spending_proposal.title)
+      end
+    end
   end
 
   scenario 'Create' do

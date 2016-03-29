@@ -32,7 +32,7 @@ class SpendingProposal < ActiveRecord::Base
   scope :by_tag,      -> (tag_name) { tagged_with(tag_name) }
   scope :by_valuator, -> (valuator) { where("valuation_assignments.valuator_id = ?", valuator.presence).joins(:valuation_assignments) }
 
-  scope :for_render,             -> { includes(:geozone, administrator: :user, valuators: :user) }
+  scope :for_render,             -> { includes(:geozone) }
 
   def description
     super.try :html_safe
@@ -42,14 +42,14 @@ class SpendingProposal < ActiveRecord::Base
     params.select{|x,_| %w{geozone_id administrator_id tag_name valuator_id}.include? x.to_s }
   end
 
-  def self.search(params, current_filter)
+  def self.scoped_filter(params, current_filter)
     results = self
     results = results.by_geozone(params[:geozone_id])             if params[:geozone_id].present?
     results = results.by_admin(params[:administrator_id])         if params[:administrator_id].present?
     results = results.by_tag(params[:tag_name])                   if params[:tag_name].present?
     results = results.by_valuator(params[:valuator_id])           if params[:valuator_id].present?
     results = results.send(current_filter)                        if current_filter.present?
-    results.for_render
+    results.includes(:geozone, administrator: :user, valuators: :user)
   end
 
   def self.by_geozone(geozone)

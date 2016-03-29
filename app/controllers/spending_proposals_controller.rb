@@ -10,6 +10,8 @@ class SpendingProposalsController < ApplicationController
   feature_flag :spending_proposals
 
   def index
+    @spending_proposals = @search_terms.present? ? SpendingProposal.search(@search_terms) : SpendingProposal.all
+    @spending_proposals = @spending_proposals.page(params[:page]).for_render
   end
 
   def new
