@@ -151,7 +151,7 @@ es:
     not_saved: 'impidieron guardar %{resource}:'
     policy: Política de privacidad
     proposal: la propuesta
-    spending_proposal: la propuesta de gasto
+    spending_proposal: la propuesta de inversión
     user: la cuenta
     verification/sms: el teléfono
   geozones:
@@ -429,8 +429,8 @@ es:
       recommendation_one: Es fundamental que haga referencia a una actuación presupuestable.
       recommendation_three: Intenta detallar lo máximo posible la propuesta para que el equipo de gobierno encargado de estudiarla tenga las menor dudas posibles.
       recommendation_two: Cualquier propuesta o comentario que implique acciones ilegales será eliminada.
-      recommendations_title: Cómo crear una propuesta de gasto
-      start_new: Crear una propuesta de gasto
+      recommendations_title: Cómo crear una propuesta de inversión
+      start_new: Crear una propuesta de inversión
     show:
       author_deleted: Usuario eliminado
     spending_proposal:

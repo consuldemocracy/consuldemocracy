@@ -268,4 +268,5 @@ Rails.application.routes.draw do
   get '/blog' => redirect("http://diario.madrid.es/participa/")
   get 'participatory_budget', to: 'spending_proposals#index', as: 'participatory_budget'
   resources :pages, path: '/', only: [:show]
+  get 'participatory_budget/in_two_minutes', to: 'pages#show', id: 'participatory_budget/in_two_minutes'
 end
