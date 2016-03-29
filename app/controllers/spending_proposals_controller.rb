@@ -5,12 +5,13 @@ class SpendingProposalsController < ApplicationController
 
   load_and_authorize_resource
 
-  before_action :verify_access, only: [:show]
   before_filter -> { flash.now[:notice] = flash[:notice].html_safe if flash[:html_safe] && flash[:notice] }
 
   feature_flag :spending_proposals
 
   def index
+    @spending_proposals = @search_terms.present? ? SpendingProposal.search(@search_terms) : SpendingProposal.all
+    @spending_proposals = @spending_proposals.page(params[:page]).for_render
   end
 
   def new
@@ -39,10 +40,6 @@ class SpendingProposalsController < ApplicationController
 
     def spending_proposal_params
       params.require(:spending_proposal).permit(:title, :description, :external_url, :geozone_id, :association_name, :terms_of_service, :captcha, :captcha_key)
-    end
-
-    def verify_access
-      raise CanCan::AccessDenied unless current_user.try(:valuator?) || current_user.try(:administrator?) || @spending_proposal.author == current_user
     end
 
 end

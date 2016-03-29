@@ -1,0 +1,11 @@
+<div class="sidebar-divider"></div>
+<h3 class="sidebar-title"><%= t("spending_proposals.index.sidebar.geozones") %></h3>
+<br>
+<div class="geozone">
+  <% Geozone.names.each do |geozone| %>
+    <%= link_to geozone, spending_proposals_path(search: geozone) %>
+  <% end %>
+</div>
+<div class="sidebar-divider"></div>
+<h3 class="sidebar-title"><%= t("spending_proposals.index.sidebar.feasibility") %></h3>
+<br>

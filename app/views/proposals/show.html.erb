@@ -62,7 +62,8 @@
           <div class="video-link">
             <%= text_with_links @proposal.video_url %>
           </div>
-        <% end %>
+          <div id="js-embedded-video" data-video-code="<%= embedded_video_code %>"></div>
+         <% end %>
 
         <h4><%= @proposal.question %></h4>
 
