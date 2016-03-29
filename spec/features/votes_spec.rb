@@ -409,7 +409,7 @@ feature 'Votes' do
         end
       end
 
-      scenario 'Create from proposal show', :focus, :js do
+      scenario 'Create from proposal show', :js do
         visit spending_proposal_path(@proposal)
 
         within('.supports') do
