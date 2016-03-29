@@ -12,12 +12,13 @@ class SpendingProposalsController < ApplicationController
   respond_to :html, :js
 
   def index
-    @spending_proposals = @search_terms.present? ? SpendingProposal.search(@search_terms) : SpendingProposal.all
+    @spending_proposals = search_terms.present? ? SpendingProposal.search(search_terms) : SpendingProposal.all
     @spending_proposals = @spending_proposals.page(params[:page]).for_render
   end
 
   def new
     @spending_proposal = SpendingProposal.new
+
   end
 
   def show
@@ -52,6 +53,10 @@ class SpendingProposalsController < ApplicationController
 
     def spending_proposal_params
       params.require(:spending_proposal).permit(:title, :description, :external_url, :geozone_id, :association_name, :terms_of_service, :captcha, :captcha_key)
+    end
+
+    def search_terms
+      params[:search].presence
     end
 
 end
