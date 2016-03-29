@@ -83,6 +83,11 @@ class User < ActiveRecord::Base
     voted.each_with_object({}) { |v, h| h[v.votable_id] = v.value }
   end
 
+  def spending_proposal_votes(spending_proposals)
+    voted = votes.for_spending_proposals(spending_proposals)
+    voted.each_with_object({}) { |v, h| h[v.votable_id] = v.value }
+  end
+
   def comment_flags(comments)
     comment_flags = flags.for_comments(comments)
     comment_flags.each_with_object({}){ |f, h| h[f.flaggable_id] = true }

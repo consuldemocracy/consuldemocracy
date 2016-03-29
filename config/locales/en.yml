@@ -426,6 +426,38 @@ en:
       recommendations_title: How to create a spending proposal
       start_new: Create spending proposal
     wrong_price_format: Only integer numbers
+    spending_proposal:
+      already_supported: You have already supported this. Share it!
+      comments:
+        one: 1 comment
+        other: "%{count} comments"
+        zero: No comments
+      proposal: Proposal
+      reason_for_supports_necessary: 2% of Census
+      support: Support
+      support_title: Support this proposal
+      supports:
+        one: 1 support
+        other: "%{count} supports"
+        zero: No supports
+      supports_necessary: "%{number} supports needed"
+      total_percent: 100%
+    show:
+      author_deleted: User deleted
+      back_link: Go back
+      code: 'Proposal code:'
+      comments:
+        one: 1 comment
+        other: "%{count} comments"
+        zero: No comments
+      comments_title: Comments
+      edit_proposal_link: Edit
+      flag: This proposal has been flagged as inappropriate by several users.
+      login_to_comment: You must %{signin} or %{signup} to leave a comment.
+      share: Share
+    update:
+      form:
+        submit_button: Save changes
   stats:
     index:
       visits: Visits
