@@ -425,18 +425,25 @@ en:
         feasibility: Feasibility
       start_spending_proposal: Create an investment project
     new:
-      back_link: Back
       more_info: How do participatory budgeting works?
       recommendation_one: It's mandatory that the proposal makes reference to a budgetable action.
       recommendation_three: Try to go into details when describing your spending proposal so the reviewing team undertands your points.
       recommendation_two: Any proposal or comment suggesting illegal action will be deleted.
       recommendations_title: How to create a spending proposal
       start_new: Create spending proposal
+      back_link: Back
     show:
       author_deleted: User deleted
+    wrong_price_format: Only integer numbers
     spending_proposal:
       spending_proposal: Investment project
-    wrong_price_format: Only integer numbers
+      already_supported: You have already supported this. Share it!
+      support: Support
+      support_title: Support this project
+      supports:
+        one: 1 support
+        other: "%{count} supports"
+        zero: No supports
   stats:
     index:
       visits: Visits
