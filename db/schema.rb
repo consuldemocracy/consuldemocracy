@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160329115418) do
+ActiveRecord::Schema.define(version: 20160329160106) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -313,10 +313,12 @@ ActiveRecord::Schema.define(version: 20160329115418) do
     t.string   "time_scope"
     t.datetime "unfeasible_email_sent_at"
     t.integer  "cached_votes_up"
+    t.tsvector "tsv"
   end
 
   add_index "spending_proposals", ["author_id"], name: "index_spending_proposals_on_author_id", using: :btree
   add_index "spending_proposals", ["geozone_id"], name: "index_spending_proposals_on_geozone_id", using: :btree
+  add_index "spending_proposals", ["tsv"], name: "index_spending_proposals_on_tsv", using: :gin
 
   create_table "taggings", force: :cascade do |t|
     t.integer  "tag_id"
