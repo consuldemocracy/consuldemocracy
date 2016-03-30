@@ -3,6 +3,7 @@ en:
   account:
     show:
       change_credentials_link: Change my credentials
+      delegation: Delegate your votes
       email_on_comment_label: Notify me by email when someone comments on my proposals or debates
       email_on_comment_reply_label: Notify me by email when someone replies to my comments
       erase_account_link: Erase my account
@@ -335,6 +336,12 @@ en:
     update:
       form:
         submit_button: Save changes
+  representatives:
+    none: Without representative
+    form:
+      label: Select the person to whom delegate your votes
+      submit_button: Save
+    title: Delegate your votes
   shared:
     advanced_search:
       author_type: 'By author category'

@@ -3,6 +3,7 @@ es:
   account:
     show:
       change_credentials_link: Cambiar mis datos de acceso
+      delegation: Delega tus votos
       email_on_comment_label: Recibir un email cuando alguien comenta en mis propuestas o debates
       email_on_comment_reply_label: Recibir un email cuando alguien contesta a mis comentarios
       erase_account_link: Darme de baja
@@ -335,6 +336,12 @@ es:
     update:
       form:
         submit_button: Guardar cambios
+  representatives:
+    none: Sin representante
+    form:
+      label: Selecciona en quién quieres delegar tus votos
+      submit_button: Guardar
+    title: Delega tus votos
   shared:
     advanced_search:
       author_type: 'Por categoría de autor'
