@@ -134,6 +134,7 @@ ActiveRecord::Schema.define(version: 20160330143851) do
   add_index "debates", ["hot_score"], name: "index_debates_on_hot_score", using: :btree
   add_index "debates", ["title"], name: "index_debates_on_title", using: :btree
   add_index "debates", ["tsv"], name: "index_debates_on_tsv", using: :gin
+  add_index "debates", ["description"], name: "index_debates_on_description", using: :btree
 
   create_table "delayed_jobs", force: :cascade do |t|
     t.integer  "priority",   default: 0, null: false
@@ -294,6 +295,7 @@ ActiveRecord::Schema.define(version: 20160330143851) do
   add_index "proposals", ["summary"], name: "index_proposals_on_summary", using: :btree
   add_index "proposals", ["title"], name: "index_proposals_on_title", using: :btree
   add_index "proposals", ["tsv"], name: "index_proposals_on_tsv", using: :gin
+  add_index "proposals", ["description"], name: "index_proposals_on_description", using: :btree
 
   create_table "redeemable_codes", force: :cascade do |t|
     t.string   "token"
