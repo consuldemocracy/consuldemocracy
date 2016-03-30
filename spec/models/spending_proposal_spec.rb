@@ -261,4 +261,45 @@ describe SpendingProposal do
     end
   end
 
+  describe 'Supports' do
+    let(:user)        { create(:user) }
+    let(:district)    { create(:geozone) }
+    let(:city_sp)     { create(:spending_proposal) }
+    let(:district_sp) { create(:spending_proposal, geozone: district) }
+
+    describe '#register_vote' do
+      it "increases a counter for city proposals" do
+        expect{ city_sp.register_vote(user, true) }.to change { user.reload.city_wide_spending_proposals_supported_count }.by(1)
+      end
+
+      it "increases a counter for district proposals and blocks the district" do
+        expect(user.supported_spending_proposals_geozone_id).to be_nil
+        expect{ district_sp.register_vote(user, true) }.to change { user.reload.district_wide_spending_proposals_supported_count }.by(1)
+        expect(user.supported_spending_proposals_geozone_id).to eq(district.id)
+      end
+    end
+
+    describe '#votable_by?' do
+      it "allows voting on city-wide if the counter is not too high" do
+        expect(city_sp.votable_by?(user)).to be
+        user.city_wide_spending_proposals_supported_count = SpendingProposal.max_supports_for_city_wide_spending_proposals + 1
+        expect(city_sp.votable_by?(user)).to_not be
+      end
+
+      it "allows voting on district-wide if the counter is not too high" do
+        expect(district_sp.votable_by?(user)).to be
+        user.district_wide_spending_proposals_supported_count = SpendingProposal.max_supports_for_city_wide_spending_proposals + 1
+        expect(district_sp.votable_by?(user)).to_not be
+      end
+
+      it "does now allow voting if the district is already set up" do
+        expect(district_sp.votable_by?(user)).to be
+        user.supported_spending_proposals_geozone_id = district.id + 1
+        expect(district_sp.votable_by?(user)).to_not be
+      end
+    end
+  end
+
+
+
 end
