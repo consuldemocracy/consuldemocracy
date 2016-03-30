@@ -1,0 +1,7 @@
+<%= form_for(@user, url: representatives_url, method: :post) do |f| %>
+
+  <%= f.select :representative_id, representative_select_options,
+               { include_blank: t("representatives.none"), label: false } %>
+
+  <%= f.submit class: "button", value: t("representatives.form.submit_button") %>
+<% end %>
