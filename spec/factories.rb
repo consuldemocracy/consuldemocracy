@@ -1,5 +1,4 @@
 FactoryGirl.define do
-
   sequence(:document_number) { |n| "#{n.to_s.rjust(8, '0')}X" }
 
   factory :user do
@@ -324,4 +323,8 @@ FactoryGirl.define do
     census_code { '01' }
   end
 
+  factory :forum do
+    sequence(:name) { |n| "Forum #{n}" }
+    user
+  end
 end
