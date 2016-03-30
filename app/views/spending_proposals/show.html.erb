@@ -1,12 +1,12 @@
 <% provide :title do %><%= @spending_proposal.title %><% end %>
 
-<section class="proposal-show">
+<section class="investment-project-show">
   <div id="<%= dom_id(@spending_proposal) %>" class="row">
     <div class="small-12 medium-9 column">
 
       <h1><%= @spending_proposal.title %></h1>
 
-      <div class="spending-proposal-info">
+      <div class="investment-project-info">
         <%= render '/shared/author_info', resource: @spending_proposal %>
 
         <span class="bullet">&nbsp;&bull;&nbsp;</span>
