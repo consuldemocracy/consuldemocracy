@@ -7,6 +7,7 @@
 
 <main>
 
+<% if @geozone_name.present? %>
   <div class="expanded jumbo-investment-project padding no-margin-top margin-bottom">
     <div class="row">
       <div class="small-12 medium-8 column">
@@ -15,10 +16,20 @@
           <%= t("pages.processes.back") %>
         <% end %>
 
-        <h1>DISTRICT NAME</h1>
+        <h1><%= @geozone_name %></h1>
       </div>
     </div>
   </div>
+<% else %>
+  <div class="expanded padding no-margin-top margin-bottom">
+    <div class="row">
+      <%= link_to :back, class: "back" do %>
+        <i class="icon-angle-left"></i>
+        <%= t("pages.processes.back") %>
+      <% end %>
+    </div>
+  </div>
+<% end %>
 
   <div class="wrap row">
     <div id="investment-projects" class="investment-projects-list small-12 medium-9 column">
