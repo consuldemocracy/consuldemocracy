@@ -154,6 +154,7 @@ es:
     verification/sms: el teléfono
   geozones:
     none: Toda la ciudad
+    all: Todos los ámbitos
   layouts:
     application:
       chrome: Google Chrome
@@ -413,6 +414,8 @@ es:
       title: Título de la propuesta de gasto
     index:
       title: Presupuestos participativos
+      unfeasible: Propuestas de inversión no viables
+      by_geozone: "Propuestas de inversión con ámbito: %{geozone}"
       search_form:
         button: Buscar
         placeholder: Propuestas de inversión...
@@ -423,6 +426,7 @@ es:
       sidebar:
         geozones: Ámbitos de actuación
         feasibility: Viabilidad
+        unfeasible: No viables
       start_spending_proposal: Crea una propuesta de inversión
     new:
       more_info: "¿Cómo funcionan los presupuestos participativos?"
