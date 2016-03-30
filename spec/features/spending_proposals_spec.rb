@@ -5,7 +5,8 @@ feature 'Spending proposals' do
   let(:author) { create(:user, :level_two, username: 'Isabel') }
 
   scenario 'Index' do
-    spending_proposals = [create(:spending_proposal), create(:spending_proposal), create(:spending_proposal)]
+    spending_proposals = [create(:spending_proposal), create(:spending_proposal), create(:spending_proposal, feasible: true)]
+    unfeasible_spending_proposal = create(:spending_proposal, feasible: false)
 
     visit spending_proposals_path
 
@@ -14,6 +15,7 @@ feature 'Spending proposals' do
       within('#investment-projects') do
         expect(page).to have_content spending_proposal.title
         expect(page).to have_css("a[href='#{spending_proposal_path(spending_proposal)}']", text: spending_proposal.title)
+        expect(page).to_not have_content(unfeasible_spending_proposal.title)
       end
     end
   end
@@ -36,6 +38,52 @@ feature 'Spending proposals' do
 
         expect(page).to have_content(spending_proposal1.title)
         expect(page).to have_content(spending_proposal2.title)
+        expect(page).to_not have_content(spending_proposal3.title)
+      end
+    end
+  end
+
+  context("Filters") do
+    scenario 'by geozone' do
+      geozone1 = create(:geozone)
+      spending_proposal1 = create(:spending_proposal, geozone: geozone1)
+      spending_proposal2 = create(:spending_proposal, geozone: create(:geozone))
+      spending_proposal3 = create(:spending_proposal, geozone: geozone1)
+      spending_proposal4 = create(:spending_proposal)
+
+      visit spending_proposals_path
+
+      within(".geozone") do
+        click_link geozone1.name
+      end
+
+      within("#investment-projects") do
+        expect(page).to have_css('.investment-project', count: 2)
+
+        expect(page).to have_content(spending_proposal1.title)
+        expect(page).to have_content(spending_proposal3.title)
+        expect(page).to_not have_content(spending_proposal2.title)
+        expect(page).to_not have_content(spending_proposal4.title)
+      end
+    end
+
+    scenario 'by unfeasibility' do
+      geozone1 = create(:geozone)
+      spending_proposal1 = create(:spending_proposal, feasible: false)
+      spending_proposal2 = create(:spending_proposal, feasible: true)
+      spending_proposal3 = create(:spending_proposal)
+
+      visit spending_proposals_path
+
+      within("#sidebar") do
+        click_link "Unfeasible"
+      end
+
+      within("#investment-projects") do
+        expect(page).to have_css('.investment-project', count: 1)
+
+        expect(page).to have_content(spending_proposal1.title)
+        expect(page).to_not have_content(spending_proposal2.title)
         expect(page).to_not have_content(spending_proposal3.title)
       end
     end

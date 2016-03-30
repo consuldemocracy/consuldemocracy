@@ -156,6 +156,7 @@ en:
     verification/sms: phone
   geozones:
     none: All city
+    all: All scopes
   layouts:
     application:
       chrome: Google Chrome
@@ -412,6 +413,8 @@ en:
       title: Spending proposal title
     index:
       title: Participatory budgeting
+      unfeasible: Unfeasible investment projects
+      by_geozone: "Investment projects with scope: %{geozone}"
       search_form:
         button: Search
         placeholder: Investment projects...
@@ -422,6 +425,7 @@ en:
       sidebar:
         geozones: Scope of operation
         feasibility: Feasibility
+        unfeasible: Unfeasible
       start_spending_proposal: Create an investment project
     new:
       back_link: Back
