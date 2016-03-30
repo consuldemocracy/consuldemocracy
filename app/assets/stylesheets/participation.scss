@@ -335,7 +335,7 @@
 // 03. Show participation
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
-.debate-show, .proposal-show {
+.debate-show, .proposal-show, .investment-project-show {
 
   .social-share-full .social-share-button {
     display:inline;
@@ -350,12 +350,11 @@
     vertical-align: rem-calc(10);
   }
 
-
   .edit-debate, .edit-proposal {
     margin-bottom: 0;
   }
 
-  .debate-info, .proposal-info {
+  .debate-info, .proposal-info, .investment-project-info {
     clear: both;
     color: $text-medium;
     font-size: $small-font-size;
@@ -806,7 +805,7 @@
   }
 }
 
-.investment-project {
+.investment-project, .investment-project-show {
 
   .supports {
     @include supports;

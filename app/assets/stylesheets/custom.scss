@@ -94,7 +94,7 @@ blockquote.featured {
   }
 }
 
-.jumbo-survey, .jumbo-featured {
+.jumbo-survey, .jumbo-featured, .jumbo-investment-project {
 
   h1, h2, .back, .icon-angle-left, .p, a {
     color: black;
@@ -135,6 +135,15 @@ blockquote.featured {
 .jumbo-featured {
   background: $featured;
   border-bottom: 1px solid $featured;
+}
+
+.jumbo-investment-project {
+  background: $budget;
+  border-bottom: 1px solid $budget;
+
+  h1, h2, .back, .icon-angle-left, .p, a {
+    color: white;
+  }
 }
 
 form.locale-form select {
@@ -727,6 +736,29 @@ table.age-groups {
   @media (max-width: $small-breakpoint) {
     .text-right {
       text-align: left !important;
+    }
+  }
+}
+
+.investment-project-sidebar-votes {
+
+  .sticky {
+    background: rgba(255,255,255,.85);
+  }
+
+  .callout {
+    height: rem-calc(140);
+    width: rem-calc(140);
+  }
+
+  .votes-number {
+    font-size: rem-calc(80);
+    font-weight: bold;
+    line-height: rem-calc(110);
+    vertical-align: top;
+
+    .icon-deleted {
+      line-height: rem-calc(130);
     }
   }
 }

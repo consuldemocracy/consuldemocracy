@@ -6,14 +6,30 @@
 <% end %>
 
 <main>
+
+  <div class="expanded jumbo-investment-project padding no-margin-top margin-bottom">
+    <div class="row">
+      <div class="small-12 medium-8 column">
+        <%= link_to :back, class: "back" do %>
+          <i class="icon-angle-left"></i>
+          <%= t("pages.processes.back") %>
+        <% end %>
+
+        <h1>DISTRICT NAME</h1>
+      </div>
+    </div>
+  </div>
+
   <div class="wrap row">
     <div id="investment-projects" class="investment-projects-list small-12 medium-9 column">
 
       <div class="small-12 search-results">
-        <% if @search_terms %>
+        <%= content_tag(:h2, t("spending_proposals.index.unfeasible")) if params[:unfeasible].present? %>
+        <%= content_tag(:h2, t("spending_proposals.index.by_geozone", geozone: @geozone_name)) if @geozone_name.present? %>
+        <% if params[:search].present? %>
           <h2>
             <%= page_entries_info @spending_proposals %>
-            <%= t("spending_proposals.index.search_results", count: @spending_proposals.size, search_term: @search_terms) %>
+            <%= t("spending_proposals.index.search_results", count: @spending_proposals.size, search_term: params[:search]) %>
           </h2>
         <% end %>
       </div>
@@ -26,7 +42,7 @@
     </div>
 
     <div class="small-12 medium-3 column">
-      <aside class="margin-bottom">
+      <aside id="sidebar" class="margin-bottom">
         <%= render 'sidebar' %>
       </aside>
     </div>

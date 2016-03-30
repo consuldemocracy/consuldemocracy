@@ -156,6 +156,7 @@ es:
     verification/sms: el teléfono
   geozones:
     none: Toda la ciudad
+    all: Todos los ámbitos
   layouts:
     application:
       chrome: Google Chrome
@@ -412,6 +413,8 @@ es:
       title: Título de la propuesta de inversión
     index:
       title: Presupuestos participativos
+      unfeasible: Propuestas de inversión no viables
+      by_geozone: "Propuestas de inversión con ámbito: %{geozone}"
       search_form:
         button: Buscar
         placeholder: Propuestas de inversión...
@@ -422,10 +425,14 @@ es:
       sidebar:
         geozones: Ámbitos de actuación
         feasibility: Viabilidad
+        unfeasible: No viables
+        votes: Votos restantes
+        votes_district: "Solo puedes votar en el distrito %{district}"
       start_spending_proposal: Crea una propuesta de inversión
     new:
       more_info: "¿Cómo funcionan los presupuestos participativos?"
-      recommendation_one: Es fundamental que haga referencia a una actuación presupuestable.
+      recommendation_one: Consulta los %{requirements}.
+      recommendation_one_link: requisitos que debe cumplir una propuesta
       recommendation_three: Intenta detallar lo máximo posible la propuesta para que el equipo de gobierno encargado de estudiarla tenga las menor dudas posibles.
       recommendation_two: Cualquier propuesta o comentario que implique acciones ilegales será eliminada.
       recommendations_title: Cómo crear una propuesta de inversión
