@@ -442,7 +442,7 @@ es:
       support_title: Apoyar este proyecto
       supports:
         one: 1 apoyo
-        other: "%{count} apoyo"
+        other: "%{count} apoyos"
         zero: Sin apoyos
   stats:
     index:
