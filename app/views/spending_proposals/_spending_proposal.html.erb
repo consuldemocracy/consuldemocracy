@@ -37,6 +37,9 @@
                   <%= t("shared.collective") %>
                 </span>
               <% end %>
+
+              <span class="bullet">&nbsp;&bull;&nbsp;</span>
+              <%= geozone_name(spending_proposal) %>
             </p>
             <div class="investment-project-description">
               <p><%= link_to spending_proposal.description, spending_proposal_path(spending_proposal) %></p>
