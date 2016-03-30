@@ -54,7 +54,7 @@ class SpendingProposalsController < ApplicationController
     end
 
     def search_terms
-      params[:search].presence
+      @search_terms ||= params[:search].presence
     end
 
 end
