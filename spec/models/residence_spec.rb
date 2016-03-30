@@ -24,7 +24,7 @@ describe Verification::Residence do
       end
     end
 
-    it "should validate user has allowed age" do
+    xit "should validate user has allowed age" do
       residence = Verification::Residence.new({"date_of_birth(3i)"=>"1", "date_of_birth(2i)"=>"1", "date_of_birth(1i)"=>"#{5.year.ago.year}"})
       expect(residence).to_not be_valid
       expect(residence.errors[:date_of_birth]).to include("You must be at least 16 years old")
