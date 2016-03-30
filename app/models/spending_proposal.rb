@@ -36,6 +36,9 @@ class SpendingProposal < ActiveRecord::Base
 
   scope :for_render,             -> { includes(:geozone) }
 
+  scope :district_wide,          -> { where.not(geozone_id: nil) }
+  scope :city_wide,              -> { where(geozone_id: nil) }
+
   def description
     super.try :html_safe
   end
@@ -118,6 +121,14 @@ class SpendingProposal < ActiveRecord::Base
     if votable_by?(user)
       vote_by(voter: user, vote: vote_value)
     end
+  end
+
+  def district_wide?
+    geozone.present?
+  end
+
+  def city_wide?
+    !district_wide?
   end
 
 end
