@@ -313,7 +313,7 @@ feature 'Votes' do
   scenario 'Not logged user trying to vote comments in proposals', :js do
     proposal = create(:proposal)
     comment = create(:comment, commentable: proposal)
-   
+
     visit comment_path(comment)
     within("#comment_#{comment.id}_reply") do
       find("div.votes").hover
@@ -359,6 +359,66 @@ feature 'Votes' do
     within("#proposal_#{proposal.id}") do
       find("div.supports").hover
       expect_message_only_verified_can_vote_proposals
+    end
+  end
+
+  feature 'Spending Proposals' do
+    background { login_as(@manuela) }
+
+    xscenario "Index shows user votes on proposals" do
+      proposal1 = create(:proposal)
+      proposal2 = create(:proposal)
+      proposal3 = create(:proposal)
+      create(:vote, voter: @manuela, votable: proposal1, vote_flag: true)
+
+      visit proposals_path
+
+      within("#proposals") do
+        within("#proposal_#{proposal1.id}_votes") do
+          expect(page).to have_content "You have already supported this proposal. Share it!"
+        end
+
+        within("#proposal_#{proposal2.id}_votes") do
+          expect(page).to_not have_content "You have already supported this proposal. Share it!"
+        end
+
+        within("#proposal_#{proposal3.id}_votes") do
+          expect(page).to_not have_content "You have already supported this proposal. Share it!"
+        end
+      end
+    end
+
+    feature 'Single spending proposal' do
+      background do
+        @proposal = create(:spending_proposal)
+      end
+
+      scenario 'Show no votes' do
+        visit spending_proposal_path(@proposal)
+        expect(page).to have_content "No supports"
+      end
+
+      scenario 'Trying to vote multiple times', :js do
+        visit spending_proposal_path(@proposal)
+
+        within('.supports') do
+          find('.in-favor a').click
+          expect(page).to have_content "1 support"
+
+          expect(page).to_not have_selector ".in-favor a"
+        end
+      end
+
+      scenario 'Create from proposal show', :js do
+        visit spending_proposal_path(@proposal)
+
+        within('.supports') do
+          find('.in-favor a').click
+
+          expect(page).to have_content "1 support"
+          expect(page).to have_content "You have already supported this. Share it!"
+        end
+      end
     end
   end
 end

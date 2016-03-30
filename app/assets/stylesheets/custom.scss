@@ -638,7 +638,12 @@ table.age-groups {
 
   h1 {
     color: white;
-    margin: $line-height*2 0;
+    margin: $line-height 0;
+  }
+
+  .button {
+    background: white;
+    color: $budget;
   }
 }
 

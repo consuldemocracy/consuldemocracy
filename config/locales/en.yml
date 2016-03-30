@@ -411,22 +411,18 @@ en:
         new: Create
       title: Spending proposal title
     index:
-      create_link: Create spending proposal
-      date_1: February 22 to March 31
-      date_1_info: Collecting proposals
-      date_2: April 1 to April 15
-      date_2_info: Support
-      date_3: April 16 to May 14
-      date_3_info: Evaluation
-      date_4: May 15 to June 30
-      date_4_info: Final vote
-      signin_only: For create spending proposals you must %{signin} or %{signup}.
-      signin: sign in
-      signup: sign up
-      title_html: You decide how to invest 60 million euros<br> to your city
-      title_page: Participatory budgeting
-      verified_only: Only verified users can create spending proposals, %{verify_account}.
-      verify_account: verify your account
+      title: Participatory budgeting
+      search_form:
+        button: Search
+        placeholder: Investment projects...
+        title: Search
+      search_results:
+        one: " containing the term '%{search_term}'"
+        other: " containing the term '%{search_term}'"
+      sidebar:
+        geozones: Scope of operation
+        feasibility: Feasibility
+      start_spending_proposal: Create an investment project
     new:
       back_link: Back
       more_info: "Important, not to be ruled out your proposal must comply:"
@@ -437,7 +433,19 @@ en:
       recommendation_two: Each proposal must be submitted separately. You can make as many want.
       recommendations_title: How to create a spending proposal
       start_new: Create spending proposal
+      back_link: Back
+    show:
+      author_deleted: User deleted
     wrong_price_format: Only integer numbers
+    spending_proposal:
+      spending_proposal: Investment project
+      already_supported: You have already supported this. Share it!
+      support: Support
+      support_title: Support this project
+      supports:
+        one: 1 support
+        other: "%{count} supports"
+        zero: No supports
   stats:
     index:
       visits: Visits

@@ -227,6 +227,38 @@ describe SpendingProposal do
         expect(valuation_finished.first).to eq(spending_proposal3)
       end
     end
+
+    describe "feasible" do
+      it "should return all feasible spending proposals" do
+        feasible_spending_proposal = create(:spending_proposal, feasible: true)
+        create(:spending_proposal)
+
+        expect(SpendingProposal.feasible).to eq [feasible_spending_proposal]
+      end
+    end
+
+    describe "unfeasible" do
+      it "should return all unfeasible spending proposals" do
+        unfeasible_spending_proposal = create(:spending_proposal, feasible: false)
+        create(:spending_proposal, feasible: true)
+
+        expect(SpendingProposal.unfeasible).to eq [unfeasible_spending_proposal]
+      end
+    end
+
+    describe "not_unfeasible" do
+      it "should return all not unfeasible spending proposals" do
+        not_unfeasible_spending_proposal_1 = create(:spending_proposal, feasible: true)
+        not_unfeasible_spending_proposal_2 = create(:spending_proposal)
+        create(:spending_proposal, feasible: false)
+
+        not_unfeasibles = SpendingProposal.not_unfeasible
+
+        expect(not_unfeasibles.size).to eq(2)
+        expect(not_unfeasibles.include?(not_unfeasible_spending_proposal_1)).to eq(true)
+        expect(not_unfeasibles.include?(not_unfeasible_spending_proposal_2)).to eq(true)
+      end
+    end
   end
 
 end
