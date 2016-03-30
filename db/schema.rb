@@ -463,8 +463,8 @@ ActiveRecord::Schema.define(version: 20160330143851) do
     t.string   "oauth_email"
     t.integer  "geozone_id"
     t.string   "redeemable_code"
-    t.integer  "district_wide_spending_proposals_supported_count",            default: 0
-    t.integer  "city_wide_spending_proposals_supported_count",                default: 0
+    t.integer  "district_wide_spending_proposals_supported_count",            default: 10
+    t.integer  "city_wide_spending_proposals_supported_count",                default: 10
     t.integer  "supported_spending_proposals_geozone_id"
     t.integer  "representative_id"
   end

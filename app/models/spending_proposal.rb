@@ -116,11 +116,11 @@ class SpendingProposal < ActiveRecord::Base
   def votable_by?(user)
     return false unless user || !user.level_two_or_three_verified?
     if city_wide?
-      user.city_wide_spending_proposals_supported_count < SpendingProposal.max_supports_for_city_wide_spending_proposals
+      user.city_wide_spending_proposals_supported_count > 0
     else # district_wide
       (user.supported_spending_proposals_geozone_id.nil? ||
       geozone_id == user.supported_spending_proposals_geozone_id) &&
-        user.district_wide_spending_proposals_supported_count < SpendingProposal.max_supports_for_district_wide_spending_proposals
+        user.district_wide_spending_proposals_supported_count > 0
     end
   end
 
@@ -129,10 +129,10 @@ class SpendingProposal < ActiveRecord::Base
       vote_by(voter: user, vote: vote_value)
       if city_wide?
         count = user.city_wide_spending_proposals_supported_count
-        user.update(city_wide_spending_proposals_supported_count: count + 1)
+        user.update(city_wide_spending_proposals_supported_count: count - 1)
       else
         count = user.district_wide_spending_proposals_supported_count
-        user.update(district_wide_spending_proposals_supported_count: count + 1,
+        user.update(district_wide_spending_proposals_supported_count: count - 1,
                     supported_spending_proposals_geozone_id: self.geozone_id)
       end
     end
@@ -144,14 +144,6 @@ class SpendingProposal < ActiveRecord::Base
 
   def city_wide?
     !district_wide?
-  end
-
-  def self.max_supports_for_city_wide_spending_proposals
-    10
-  end
-
-  def self.max_supports_for_district_wide_spending_proposals
-    10
   end
 
 end
