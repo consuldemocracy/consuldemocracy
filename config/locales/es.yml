@@ -426,6 +426,8 @@ es:
         geozones: Ámbitos de actuación
         feasibility: Viabilidad
         unfeasible: No viables
+        votes: Votos restantes
+        votes_district: "Solo puedes votar en el distrito %{district}"
       start_spending_proposal: Crea una propuesta de inversión
     new:
       more_info: "¿Cómo funcionan los presupuestos participativos?"
