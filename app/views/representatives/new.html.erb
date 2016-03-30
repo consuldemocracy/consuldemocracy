@@ -1,7 +1,17 @@
-<%= form_for(@user, url: representatives_url, method: :post) do |f| %>
+<div class="row margin-bottom">
+  <div class="small-12 column">
+    <h1 class="margin-bottom"><%= t("representatives.title") %></h1>
 
-  <%= f.select :representative_id, representative_select_options,
-               { include_blank: t("representatives.none"), label: false } %>
+    <%= form_for(@user, url: representatives_url, method: :post) do |f| %>
 
-  <%= f.submit class: "button", value: t("representatives.form.submit_button") %>
-<% end %>
+      <div class="small-12 medium-6">
+        <%= f.select :representative_id, representative_select_options,
+                   { include_blank: t("representatives.none"), label: t("representatives.form.label")} %>
+      </div>
+
+      <div class="small-12 medium-4">
+        <%= f.submit class: "button expanded", value: t("representatives.form.submit_button") %>
+      </div>
+    <% end %>
+  </div>
+</div>
