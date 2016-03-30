@@ -335,6 +335,10 @@ es:
     update:
       form:
         submit_button: Guardar cambios
+  representatives:
+    none: Sin representante
+    form:
+      submit_button: Guardar
   shared:
     advanced_search:
       author_type: 'Por categoría de autor'
