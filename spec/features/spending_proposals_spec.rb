@@ -89,37 +89,6 @@ feature 'Spending proposals' do
     end
   end
 
-  scenario 'Create' do
-    login_as(author)
-
-    visit spending_proposals_path
-    click_link 'Create spending proposal'
-
-    expect(current_path).to eq(page_path('proposal_type'))
-    within('#new_spending_proposal_container') do
-      click_link 'Create proposal'
-    end
-
-    expect(current_path).to eq(new_spending_proposal_path)
-
-    fill_in 'spending_proposal_title', with: 'Build a skyscraper'
-    fill_in 'spending_proposal_description', with: 'I want to live in a high tower over the clouds'
-    fill_in 'spending_proposal_external_url', with: 'http://http://skyscraperpage.com/'
-    fill_in 'spending_proposal_association_name', with: 'People of the neighbourhood'
-    fill_in 'spending_proposal_captcha', with: correct_captcha_text
-    select  'All city', from: 'spending_proposal_geozone_id'
-    check 'spending_proposal_terms_of_service'
-
-    click_button 'Create'
-
-    expect(page).to have_content 'Investment project created successfully'
-    expect(page).to have_content('Build a skyscraper')
-    expect(page).to have_content('I want to live in a high tower over the clouds')
-    expect(page).to have_content('Isabel')
-    expect(page).to have_content('People of the neighbourhood')
-    expect(page).to have_content('All city')
-  end
-
   scenario 'Create notice' do
     login_as(author)
 

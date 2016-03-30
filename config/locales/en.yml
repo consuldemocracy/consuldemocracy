@@ -432,7 +432,6 @@ en:
     new:
       back_link: Back
       more_info: "Important, not to be ruled out your proposal must comply:"
-      recommendation_one: It's mandatory that the proposal makes reference to a budgetable action.
       recommendation_one: See the %{requirements}.
       recommendation_one_link: requirements to be met by a proposal
       recommendation_three: Try to go into details when describing your spending proposal so the reviewing team undertands your points.

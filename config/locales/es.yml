@@ -431,7 +431,8 @@ es:
       start_spending_proposal: Crea una propuesta de inversión
     new:
       more_info: "¿Cómo funcionan los presupuestos participativos?"
-      recommendation_one: Es fundamental que haga referencia a una actuación presupuestable.
+      recommendation_one: Consulta los %{requirements}.
+      recommendation_one_link: requisitos que debe cumplir una propuesta
       recommendation_three: Intenta detallar lo máximo posible la propuesta para que el equipo de gobierno encargado de estudiarla tenga las menor dudas posibles.
       recommendation_two: Cualquier propuesta o comentario que implique acciones ilegales será eliminada.
       recommendations_title: Cómo crear una propuesta de inversión
