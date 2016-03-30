@@ -18,6 +18,29 @@ feature 'Spending proposals' do
     end
   end
 
+  context("Search") do
+    scenario 'Search by text' do
+      spending_proposal1 = create(:spending_proposal, title: "Get Schwifty")
+      spending_proposal2 = create(:spending_proposal, title: "Schwifty Hello")
+      spending_proposal3 = create(:spending_proposal, title: "Do not show me")
+
+      visit spending_proposals_path
+
+      within(".expanded #search_form") do
+        fill_in "search", with: "Schwifty"
+        click_button "Search"
+      end
+
+      within("#investment-projects") do
+        expect(page).to have_css('.investment-project', count: 2)
+
+        expect(page).to have_content(spending_proposal1.title)
+        expect(page).to have_content(spending_proposal2.title)
+        expect(page).to_not have_content(spending_proposal3.title)
+      end
+    end
+  end
+
   scenario 'Create' do
     login_as(author)
 
