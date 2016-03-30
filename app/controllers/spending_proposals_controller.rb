@@ -2,10 +2,9 @@ class SpendingProposalsController < ApplicationController
   include FeatureFlags
 
   before_action :authenticate_user!, except: [:index]
+  before_action -> { flash.now[:notice] = flash[:notice].html_safe if flash[:html_safe] && flash[:notice] }
 
   load_and_authorize_resource
-
-  before_filter -> { flash.now[:notice] = flash[:notice].html_safe if flash[:html_safe] && flash[:notice] }
 
   feature_flag :spending_proposals
 
@@ -47,7 +46,6 @@ class SpendingProposalsController < ApplicationController
     @spending_proposal.register_vote(current_user, 'yes')
     set_spending_proposal_votes(@spending_proposal)
   end
-
 
   private
 
