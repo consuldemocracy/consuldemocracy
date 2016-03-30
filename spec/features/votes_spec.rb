@@ -365,25 +365,39 @@ feature 'Votes' do
   feature 'Spending Proposals' do
     background { login_as(@manuela) }
 
-    xscenario "Index shows user votes on proposals" do
-      proposal1 = create(:proposal)
-      proposal2 = create(:proposal)
-      proposal3 = create(:proposal)
-      create(:vote, voter: @manuela, votable: proposal1, vote_flag: true)
+    feature 'Index' do
+      scenario "Index shows user votes on proposals" do
+        spending_proposal1 = create(:spending_proposal)
+        spending_proposal2 = create(:spending_proposal)
+        spending_proposal3 = create(:spending_proposal)
+        create(:vote, voter: @manuela, votable: spending_proposal1, vote_flag: true)
 
-      visit proposals_path
+        visit spending_proposals_path
 
-      within("#proposals") do
-        within("#proposal_#{proposal1.id}_votes") do
-          expect(page).to have_content "You have already supported this proposal. Share it!"
+        within("#investment-projects") do
+          within("#spending_proposal_#{spending_proposal1.id}_votes") do
+            expect(page).to have_content "You have already supported this. Share it!"
+          end
+
+          within("#spending_proposal_#{spending_proposal2.id}_votes") do
+            expect(page).to_not have_content "You have already supported this. Share it!"
+          end
+
+          within("#spending_proposal_#{spending_proposal3.id}_votes") do
+            expect(page).to_not have_content "You have already supported this. Share it!"
+          end
         end
+      end
 
-        within("#proposal_#{proposal2.id}_votes") do
-          expect(page).to_not have_content "You have already supported this proposal. Share it!"
-        end
+      scenario 'Create from spending proposal index', :js do
+        spending_proposal = create(:spending_proposal)
+        visit spending_proposals_path
 
-        within("#proposal_#{proposal3.id}_votes") do
-          expect(page).to_not have_content "You have already supported this proposal. Share it!"
+        within('.supports') do
+          find('.in-favor a').click
+
+          expect(page).to have_content "1 support"
+          expect(page).to have_content "You have already supported this. Share it!"
         end
       end
     end
