@@ -431,8 +431,6 @@ en:
         other: " containing the term '%{search_term}'"
       sidebar:
         geozones: Scope of operation
-        feasibility: Feasibility
-        unfeasible: Unfeasible
         votes: Supports remaining
         votes_district: "You can only vote in the district %{district}"
       start_spending_proposal: Create an investment project

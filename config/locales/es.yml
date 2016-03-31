@@ -431,8 +431,6 @@ es:
         other: " que contienen '%{search_term}'"
       sidebar:
         geozones: Ámbitos de actuación
-        feasibility: Viabilidad
-        unfeasible: No viables
         votes: Apoyos restantes
         votes_district: "Solo puedes votar en el distrito %{district}"
       start_spending_proposal: Crea una propuesta de inversión

@@ -73,11 +73,7 @@ feature 'Spending proposals' do
       spending_proposal2 = create(:spending_proposal, feasible: true)
       spending_proposal3 = create(:spending_proposal)
 
-      visit spending_proposals_path
-
-      within("#sidebar") do
-        click_link "Unfeasible"
-      end
+      visit spending_proposals_path(unfeasible: 1)
 
       within("#investment-projects") do
         expect(page).to have_css('.investment-project', count: 1)
