@@ -746,20 +746,37 @@ table.age-groups {
     background: rgba(255,255,255,.85);
   }
 
-  .callout {
-    height: rem-calc(140);
-    width: rem-calc(140);
+  .counters {
+
+    .callout {
+      float: left;
+      margin-right: $line-height/4;
+      min-height: rem-calc(130);
+      padding: $line-height/2 0;
+      width: rem-calc(125);
+    }
+
+    .callout.warning.unverified {
+      padding: $line-height/2;
+      width: 100%;
+    }
+
+    span {
+      text-transform: uppercase;
+    }
   }
 
   .votes-number {
     font-size: rem-calc(80);
     font-weight: bold;
-    line-height: rem-calc(110);
+    line-height: rem-calc(80);
+    margin-bottom: 0;
     vertical-align: top;
+  }
 
-    .icon-deleted {
-      line-height: rem-calc(130);
-    }
+  .icon-deleted {
+    font-size: rem-calc(40);
+    line-height: rem-calc(40);
   }
 }
 
@@ -825,7 +842,7 @@ table.age-groups {
       border: 0;
 
       @media (min-width: $small-breakpoint) {
-        padding-bottom: rem-calc(40);
+        padding-bottom: rem-calc(39);
       }
     }
   }

@@ -1,17 +1,18 @@
 <% if current_user %>
   <% if current_user.level_two_verified? %>
+    <div class="sidebar-divider"></div>
     <h3 class="sidebar-title"><%= t("spending_proposals.index.sidebar.votes") %></h3>
     <br>
 
     <% if current_user.city_wide_spending_proposals_supported_count > 0 %>
-      <div class="callout primary text-center">
-        <p class="votes-number"><%= current_user.city_wide_spending_proposals_supported_count %> </p>
-        <small><%= t('geozones.none') %></small>
+      <div class="callout primary text-center" data-equalizer-watch>
+        <span><%= t('geozones.none') %></span>
+        <p class="votes-number"><%= current_user.city_wide_spending_proposals_supported_count %></p>
       </div>
     <% else %>
-      <div class="callout alert text-center">
+      <div class="callout alert text-center" data-equalizer-watch>
+        <span><%= t('geozones.none') %></span>
         <p class="votes-number">0</p>
-        <small><%= t('geozones.none') %></small>
       </div>
     <% end %>
 
@@ -19,14 +20,19 @@
 
       <% if current_user.district_wide_spending_proposals_supported_count > 0 %>
 
-        <div class="callout success text-center">
+        <div class="callout success text-center" data-equalizer-watch>
+
+          <% if current_user.supported_spending_proposals_geozone.blank? %>
+            <span>DISTRITO</span>
+          <% else %>
+            <span><%= current_user.supported_spending_proposals_geozone.try(:name) %></span>
+          <% end %>
           <p class="votes-number"><%= current_user.district_wide_spending_proposals_supported_count %> </p>
-          <small><%= current_user.supported_spending_proposals_geozone.try(:name) %></small>
         </div>
 
       <% else %>
 
-        <div class="callout alert text-center">
+        <div class="callout alert text-center" data-equalizer-watch>
           <p class="votes-number">0</p>
         </div>
 
@@ -34,18 +40,24 @@
 
     <% else %>
 
-      <div class="callout warning text-center">
-        <p class="votes-number">
-          <span class="icon-deleted"></span>
-        </p>
+      <div class="callout warning text-center" data-equalizer-watch>
+        <span class="icon-deleted"></span>
+        <br>
+        <span>
+          <%= t("spending_proposals.index.sidebar.votes_district",
+              district: link_to("DISTRICT_NAME", "DISTRICT_NAME")).html_safe %>
+        </span>
       </div>
 
-      <p>
-        <%= t("spending_proposals.index.sidebar.votes_district",
-            district: link_to("DISTRICT_NAME", "DISTRICT_NAME")).html_safe %>
-      </p>
     <% end %>
 
+  <% else %>
+    <div class="callout warning unverified margin-top" data-equalizer-watch>
+      <p>
+        <%= t("votes.spending_proposals.not_verified",
+              verify_account: link_to(t("votes.verify_account"), verification_path)).html_safe %>
+      </p>
+    </div>
   <% end %>
 
 <% end %>

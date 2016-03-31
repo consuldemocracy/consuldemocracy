@@ -430,6 +430,7 @@ es:
         one: " que contiene '%{search_term}'"
         other: " que contienen '%{search_term}'"
       sidebar:
+        district: Distrito
         geozones: Ámbitos de actuación
         votes: Apoyos restantes
         votes_district: "Solo puedes votar en el distrito %{district}"
