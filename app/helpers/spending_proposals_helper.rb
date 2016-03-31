@@ -5,6 +5,9 @@ module SpendingProposalsHelper
   end
 
   def can_support_spending_proposals_on_current_district?
-    false
+     @filter_geozone.blank? ||
+       current_user.blank? ||
+       current_user.supported_spending_proposals_geozone_id.blank? ||
+       current_user.supported_spending_proposals_geozone_id == @filter_geozone.id
   end
 end
