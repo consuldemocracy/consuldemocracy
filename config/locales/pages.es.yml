@@ -117,7 +117,7 @@ es:
       participatory_budget_button: Crear propuesta
       participatory_budget_text_html: 'Las propuestas deben ser de inversión. Las que sean viables pasarán a votación, y las más votadas serán llevadas a cabo. Este proceso tiene fases de propuesta y de votación.<br> %{info}.'
       participatory_budget_text_link: Más información
-      participatory_budget_title: Propuesta de inversión
+      participatory_budget_title: Propuesta de inversión (presupuestos participativos)
       proposal_button: Crear propuesta
       proposal_signin: iniciar sesión
       proposal_signin_only: Para crear propuestas debes %{signin} o %{signup}.
