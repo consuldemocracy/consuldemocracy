@@ -1,0 +1,39 @@
+<% if current_user %>
+    <h3 class="sidebar-title"><%= t("spending_proposals.index.sidebar.votes") %></h3>
+    <br>
+
+    <% if current_user.city_wide_spending_proposals_supported_count > 0 %>
+      <div class="callout success text-center">
+        <p class="votes-number"><%= current_user.city_wide_spending_proposals_supported_count %> </p>
+      </div>
+    <% else %>
+      <div class="callout alert text-center">
+        <p class="votes-number">0</p>
+      </div>
+    <% end %>
+
+    <% if  can_support_spending_proposals_on_current_district? %>
+
+      <% if current_user.district_wide_spending_proposals_supported_count > 0 %>
+        <div class="callout success text-center">
+          <p class="votes-number"><%= current_user.district_wide_spending_proposals_supported_count %> </p>
+        </div>
+      <% else %>
+        <div class="callout alert text-center">
+          <p class="votes-number">0</p>
+        </div>
+      <% end %>
+
+    <% else %>
+      <div class="callout warning text-center">
+        <p class="votes-number">
+          <span class="icon-deleted"></span>
+        </p>
+      </div>
+      <p>
+        <%= t("spending_proposals.index.sidebar.votes_district",
+            district: link_to("DISTRICT_NAME", "DISTRICT_NAME")).html_safe %>
+      </p>
+    <% end %>
+  <% end %>
+

@@ -113,27 +113,39 @@ class SpendingProposal < ActiveRecord::Base
     update(unfeasible_email_sent_at: Time.now)
   end
 
-  def votable_by?(user)
-    return false unless user || !user.level_two_or_three_verified?
+  def reason_for_not_being_votable_by(user)
+    return :not_logged_in unless user
+    return :not_verified  unless user.level_two_or_three_verified?
+    return :organization  if user.organization?
     if city_wide?
-      user.city_wide_spending_proposals_supported_count < SpendingProposal.max_supports_for_city_wide_spending_proposals
+      return :no_city_supports_available unless user.city_wide_spending_proposals_supported_count > 0
     else # district_wide
-      (user.supported_spending_proposals_geozone_id.nil? ||
-      geozone_id == user.supported_spending_proposals_geozone_id) &&
-        user.district_wide_spending_proposals_supported_count < SpendingProposal.max_supports_for_district_wide_spending_proposals
+
+      if user.supported_spending_proposals_geozone_id.present? &&
+         geozone_id != user.supported_spending_proposals_geozone_id
+        return :different_district_assigned
+      end
+
+      return :no_district_supports_available unless user.district_wide_spending_proposals_supported_count > 0
     end
+  end
+
+  def votable_by?(user)
+    reason_for_not_being_votable_by(user).blank?
   end
 
   def register_vote(user, vote_value)
     if votable_by?(user)
       vote_by(voter: user, vote: vote_value)
-      if city_wide?
-        count = user.city_wide_spending_proposals_supported_count
-        user.update(city_wide_spending_proposals_supported_count: count + 1)
-      else
-        count = user.district_wide_spending_proposals_supported_count
-        user.update(district_wide_spending_proposals_supported_count: count + 1,
-                    supported_spending_proposals_geozone_id: self.geozone_id)
+      if vote_registered?
+        if city_wide?
+          count = user.city_wide_spending_proposals_supported_count
+          user.update(city_wide_spending_proposals_supported_count: count - 1)
+        else
+          count = user.district_wide_spending_proposals_supported_count
+          user.update(district_wide_spending_proposals_supported_count: count - 1,
+                      supported_spending_proposals_geozone_id: self.geozone_id)
+        end
       end
     end
   end
@@ -144,14 +156,6 @@ class SpendingProposal < ActiveRecord::Base
 
   def city_wide?
     !district_wide?
-  end
-
-  def self.max_supports_for_city_wide_spending_proposals
-    10
-  end
-
-  def self.max_supports_for_district_wide_spending_proposals
-    10
   end
 
 end

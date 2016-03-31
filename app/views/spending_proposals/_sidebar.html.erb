@@ -1,31 +1,9 @@
 <div class="sidebar-divider"></div>
 <div class="investment-project-sidebar-votes" data-sticky-container>
   <div class="sticky" data-sticky data-anchor="investment-projects">
-    <h3 class="sidebar-title"><%= t("spending_proposals.index.sidebar.votes") %></h3>
-    <br>
-
-    <!-- If votes remaining > 0 -->
-      <div class="callout success text-center">
-        <p class="votes-number">10</p>
-      </div>
-
-    <!-- else -->
-      <div class="callout alert text-center">
-        <p class="votes-number">0</p>
-      </div>
-
-    <!-- elsif other district -->
-      <div class="callout warning text-center">
-        <p class="votes-number">
-          <span class="icon-deleted"></span>
-        </p>
-      </div>
-      <p>
-        <%= t("spending_proposals.index.sidebar.votes_district",
-            district: link_to("DISTRICT_NAME", "DISTRICT_NAME")).html_safe %>
-      </p>
-    <!-- end -->
-
+    <div id="counters">
+      <%= render 'counters' %>
+   </div>
   </div>
 </div>
 
