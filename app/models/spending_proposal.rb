@@ -24,6 +24,8 @@ class SpendingProposal < ActiveRecord::Base
   validates :description, length: { maximum: SpendingProposal.description_max_length }
   validates :terms_of_service, acceptance: { allow_nil: false }, on: :create
 
+  scope :sort_by_confidence_score, -> { reorder(confidence_score: :desc) }
+
   scope :valuation_open,         -> { where(valuation_finished: false) }
   scope :without_admin,          -> { valuation_open.where(administrator_id: nil) }
   scope :managed,                -> { valuation_open.where(valuation_assignments_count: 0).where("administrator_id IS NOT ?", nil) }
@@ -41,6 +43,8 @@ class SpendingProposal < ActiveRecord::Base
 
   scope :district_wide,          -> { where.not(geozone_id: nil) }
   scope :city_wide,              -> { where(geozone_id: nil) }
+
+  before_save :calculate_confidence_score
 
   def description
     super.try :html_safe
@@ -160,6 +164,10 @@ class SpendingProposal < ActiveRecord::Base
 
   def city_wide?
     !district_wide?
+  end
+
+  def calculate_confidence_score
+    self.confidence_score = ScoreCalculator.confidence_score(total_votes, total_votes)
   end
 
 end

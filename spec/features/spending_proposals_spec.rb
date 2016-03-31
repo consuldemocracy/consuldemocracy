@@ -87,6 +87,25 @@ feature 'Spending proposals' do
     end
   end
 
+  context("Orders") do
+
+    scenario 'Proposals are ordered by confidence_score', :js do
+      create(:spending_proposal, title: 'Best proposal').update_column(:confidence_score, 10)
+      create(:spending_proposal, title: 'Worst proposal').update_column(:confidence_score, 2)
+      create(:spending_proposal, title: 'Medium proposal').update_column(:confidence_score, 5)
+
+      visit spending_proposals_path
+      click_link 'highest rated'
+      expect(page).to have_selector('a.active', text: 'highest rated')
+
+      within '#investment-projects' do
+        expect('Best proposal').to appear_before('Medium proposal')
+        expect('Medium proposal').to appear_before('Worst proposal')
+      end
+    end
+
+  end
+
   scenario 'Create notice' do
     login_as(author)
 
