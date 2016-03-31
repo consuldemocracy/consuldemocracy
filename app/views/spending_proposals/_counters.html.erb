@@ -1,4 +1,5 @@
 <% if current_user %>
+  <% if current_user.level_two_verified? %>
     <h3 class="sidebar-title"><%= t("spending_proposals.index.sidebar.votes") %></h3>
     <br>
 
@@ -44,5 +45,8 @@
             district: link_to("DISTRICT_NAME", "DISTRICT_NAME")).html_safe %>
       </p>
     <% end %>
+
   <% end %>
+
+<% end %>
 
