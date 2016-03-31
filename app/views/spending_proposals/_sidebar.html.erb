@@ -16,4 +16,14 @@
       <%= link_to geozone.name, spending_proposals_path(geozone: geozone.id) %>
     <% end %>
   </div>
+  <% if current_user %>
+    <% unless current_user.level_two_verified? %>
+      <div class="callout warning unverified margin-top" data-equalizer-watch>
+        <p>
+          <%= t("votes.spending_proposals.not_verified",
+                verify_account: link_to(t("votes.verify_account"), verification_path)).html_safe %>
+        </p>
+      </div>
+    <% end %>
+  <% end %>
 <% end %>
