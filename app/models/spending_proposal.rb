@@ -21,7 +21,7 @@ class SpendingProposal < ActiveRecord::Base
   validates :description, presence: true
 
   validates :title, length: { in: 4..SpendingProposal.title_max_length }
-  validates :description, length: { maximum: SpendingProposal.description_max_length }
+  validates :description, length: { maximum: 10000 }
   validates :terms_of_service, acceptance: { allow_nil: false }, on: :create
 
   scope :valuation_open,         -> { where(valuation_finished: false) }

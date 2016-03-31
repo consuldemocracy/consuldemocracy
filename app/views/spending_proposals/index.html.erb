@@ -7,33 +7,33 @@
 
 <main>
 
-<% if @filter_geozone_name.present? %>
-  <div class="expanded jumbo-investment-project padding no-margin-top margin-bottom">
-    <div class="row">
-      <div class="small-12 medium-8 column">
-        <%= link_to welcome_spending_proposals_path, class: "back" do %>
-          <i class="icon-angle-left"></i>
-          <%= t("pages.processes.back") %>
-        <% end %>
+  <% if @filter_geozone_name.present? %>
+    <div class="expanded jumbo-investment-project padding no-margin-top margin-bottom">
+      <div class="row">
+        <div class="small-12 medium-8 column">
+          <%= link_to welcome_spending_proposals_path, class: "back" do %>
+            <i class="icon-angle-left"></i>
+            <%= t("pages.processes.back") %>
+          <% end %>
 
-        <h1><%= @filter_geozone_name %></h1>
+          <h1><%= @filter_geozone_name %></h1>
+        </div>
       </div>
     </div>
-  </div>
-<% else %>
-  <div class="expanded jumbo-investment-project padding no-margin-top margin-bottom">
-    <div class="row">
-      <div class="small-12 medium-8 column">
-        <%= link_to welcome_spending_proposals_path, class: "back" do %>
-          <i class="icon-angle-left"></i>
-          <%= t("pages.processes.back") %>
-        <% end %>
+  <% else %>
+    <div class="expanded jumbo-investment-project padding no-margin-top margin-bottom">
+      <div class="row">
+        <div class="small-12 medium-8 column">
+          <%= link_to welcome_spending_proposals_path, class: "back" do %>
+            <i class="icon-angle-left"></i>
+            <%= t("pages.processes.back") %>
+          <% end %>
 
-        <h1><%= t('spending_proposals.index.title') %></h1>
+          <h1><%= t('spending_proposals.index.title') %></h1>
+        </div>
       </div>
     </div>
-  </div>
-<% end %>
+  <% end %>
 
   <div class="wrap row">
     <div id="investment-projects" class="investment-projects-list small-12 medium-9 column">

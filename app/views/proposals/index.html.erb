@@ -11,21 +11,23 @@
 
       <div class="small-12 search-results">
         <% if @search_terms || @advanced_search_terms %>
-          <h2 class="margin-top">
+          <h2>
             <%= page_entries_info @proposals %>
             <% if !@advanced_search_terms %>
               <%= t("proposals.index.search_results", count: @proposals.size, search_term: @search_terms) %>
             <% end %>
           </h2>
         <% elsif @tag_filter %>
-          <h2 class="margin-top">
+          <h2>
             <%= page_entries_info @proposals %>
             <%= t("proposals.index.filter_topic", count: @proposals.size, topic: @tag_filter) %>
           </h2>
         <% end %>
       </div>
 
-      <%= render "shared/#{["featured_process_banner", "featured_spending_proposals"].sample}" %>
+      <% if @search_terms.blank? && @advanced_search_terms.blank? %>
+        <%= render "shared/#{["featured_process_banner", "featured_spending_proposals"].sample}" %>
+      <% end %>
 
       <% if @featured_proposals.present? %>
         <div id="featured-proposals" class="row featured-proposals">

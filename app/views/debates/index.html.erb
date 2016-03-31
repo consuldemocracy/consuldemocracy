@@ -11,21 +11,23 @@
 
       <div class="small-12 search-results">
         <% if @search_terms || @advanced_search_terms %>
-          <h2 class="margin-top">
+          <h2>
             <%= page_entries_info @debates %>
             <% if !@advanced_search_terms %>
               <%= t("debates.index.search_results", count: @debates.size, search_term: @search_terms) %>
             <% end %>
           </h2>
         <% elsif @tag_filter %>
-          <h2 class="margin-top">
+          <h2>
             <%= page_entries_info @debates %>
             <%= t("debates.index.filter_topic", count: @debates.size, topic: @tag_filter) %>
           </h2>
         <% end %>
       </div>
 
-      <%= render "shared/#{["featured_process_banner", "featured_spending_proposals"].sample}" %>
+      <% if @search_terms.blank? && @advanced_search_terms.blank? %>
+        <%= render "shared/#{["featured_process_banner", "featured_spending_proposals"].sample}" %>
+      <% end %>
 
       <% unless @tag_filter || @search_terms %>
         <%= render "featured_debates_static" %>
