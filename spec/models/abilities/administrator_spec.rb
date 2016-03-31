@@ -55,4 +55,5 @@ describe "Abilities::Administrator" do
   it { should be_able_to(:read, SpendingProposal) }
   it { should be_able_to(:update, SpendingProposal) }
   it { should be_able_to(:valuate, SpendingProposal) }
+  it { should be_able_to(:destroy, SpendingProposal) }
 end

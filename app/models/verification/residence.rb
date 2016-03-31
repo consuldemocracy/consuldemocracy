@@ -14,7 +14,7 @@ class Verification::Residence
   validates :terms_of_service, acceptance: { allow_nil: false }
   validates :postal_code, length: { is: 5 }
 
-  #validate :allowed_age
+  validate :allowed_age
   validate :document_number_uniqueness
   validate :postal_code_in_madrid
   validate :residence_in_madrid

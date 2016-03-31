@@ -48,8 +48,6 @@ module Abilities
         can :read, SurveyAnswer
 
         can :read, OpenAnswer
-
-        can :destroy, SpendingProposal, author_id: user.id
       end
 
       can :create, Annotation
