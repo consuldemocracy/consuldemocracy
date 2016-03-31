@@ -56,11 +56,12 @@ class SpendingProposalsController < ApplicationController
       params.require(:spending_proposal).permit(:title, :description, :external_url, :geozone_id, :association_name, :terms_of_service, :captcha, :captcha_key)
     end
 
-    def set_geozone_name
+    def set_filter_geozone
       if params[:geozone] == 'all'
-        @geozone_name = t('geozones.none')
+        @filter_geozone_name = t('geozones.none')
       else
-        @geozone_name = Geozone.find(params[:geozone]).name
+        @filter_geozone = Geozone.find(params[:geozone])
+        @filter_geozone_name = @filter_geozone.name
       end
     end
 
@@ -68,7 +69,7 @@ class SpendingProposalsController < ApplicationController
       target = params[:unfeasible].present? ? target.unfeasible : target.not_unfeasible
       if params[:geozone].present?
         target = target.by_geozone(params[:geozone])
-        set_geozone_name
+        set_filter_geozone
       end
       target = target.search(params[:search]) if params[:search].present?
       target
