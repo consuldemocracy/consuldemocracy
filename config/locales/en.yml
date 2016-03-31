@@ -157,7 +157,6 @@ en:
     verification/sms: phone
   geozones:
     none: All city
-    all: All scopes
   layouts:
     application:
       chrome: Google Chrome
@@ -434,15 +433,15 @@ en:
         geozones: Scope of operation
         votes: Supports remaining
         votes_district: "You can only vote in the district %{district}"
-      start_spending_proposal: Create an investment project
     welcome:
       city: All city
       city_link: Support proposals of the city
-      city_text_html: Apoya <strong>10 propuestas de inversión</strong> que afecten a toda la ciudad.
-      description_html: Puedes apoyar <u>10 propuestas</u> de afecten a toda la ciudad y <u>10 propuestas</u> de un solo distrito.
+      city_text_html: Support <strong>10 investment projects</strong> of the city.
+      description_html: You can support <u>10 investment projects</u> of the city and <u>10 investment projects</u> of only one district.
       districts: Districts
       districts_link: Select a district
-      districts_text_html: Apoya <strong>10 propuestas de inversión</strong> que afecten a un solo distrito.
+      districts_text_html: Support <strong>10 investment projects</strong> of only one district.
+      in_two_minutes: Participatory budgets in two minutes
       title: "You already can support investment projetcs!"
       unfeasible: Unfeasible investment projects
       unfeasible_link: See unfeasible investment projects

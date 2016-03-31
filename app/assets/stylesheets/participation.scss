@@ -821,7 +821,7 @@
     border-left: 1px solid $border;
     margin: 0 rem-calc(-12);
     min-height: rem-calc(180);
-    padding-top: $line-height*2;
+    padding-top: $line-height*1.5;
 
     &:after {
       content: none;
@@ -860,6 +860,15 @@
 
     .no-supports-allowed p, .no-supports-allowed a {
       color: white;
+    }
+
+    .share-supported {
+
+      .social-share-button-twitter,
+      .social-share-button-facebook,
+      .social-share-button-google_plus {
+        color: $budget;
+      }
     }
   }
 }
