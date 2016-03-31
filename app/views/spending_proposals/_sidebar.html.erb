@@ -1,13 +1,13 @@
-<div class="sidebar-divider"></div>
 <% if can? :vote, SpendingProposal %>
   <div class="investment-project-sidebar-votes" data-sticky-container>
     <div class="sticky" data-sticky data-anchor="investment-projects">
-      <div id="counters">
+      <div id="counters" class="counters" data-equalizer>
         <%= render 'counters' %>
      </div>
     </div>
   </div>
 <% else %>
+  <div class="sidebar-divider"></div>
   <h3 class="sidebar-title"><%= t("spending_proposals.index.sidebar.geozones") %></h3>
   <br>
   <div class="geozone">

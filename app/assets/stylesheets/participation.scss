@@ -538,10 +538,17 @@
 // 04. List participation
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
-.debates-list, .proposals-list {
+.debates-list, .proposals-list, .investment-projects-list {
 
   @media (min-width: $small-breakpoint) {
     margin-bottom: rem-calc(48);
+  }
+}
+
+.investment-projects-list {
+
+  @media (min-width: $small-breakpoint) {
+    min-height: $line-height*15;
   }
 }
 
