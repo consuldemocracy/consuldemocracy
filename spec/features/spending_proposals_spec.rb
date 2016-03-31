@@ -8,14 +8,12 @@ feature 'Spending proposals' do
     visit spending_proposals_path
 
     expect(page).to_not have_link('Create spending proposal', href: new_spending_proposal_path)
-    expect(page).to have_content 'For create spending proposals you must sign in'
 
     login_as(author)
 
     visit spending_proposals_path
 
-    expect(page).to have_link('Create spending proposal', href: new_spending_proposal_path)
-    expect(page).to_not have_content 'Only verified users can create spending proposals, verify your account'
+    expect(page).to_not have_link('Create spending proposal', href: new_spending_proposal_path)
   end
 
   scenario 'Captcha is required for proposal creation' do
@@ -117,10 +115,12 @@ feature 'Spending proposals' do
 
   context "Destroy" do
 
-    scenario "User can destroy owned spending proposals" do
+    scenario "Admin can destroy spending proposals" do
+      admin = create(:administrator)
       user = create(:user, :level_two)
       spending_proposal = create(:spending_proposal, author: user)
-      login_as(user)
+
+      login_as(admin.user)
 
       visit user_path(user)
       within("#spending_proposal_#{spending_proposal.id}") do
