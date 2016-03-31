@@ -157,7 +157,6 @@ es:
     verification/sms: el teléfono
   geozones:
     none: Toda la ciudad
-    all: Todos los ámbitos
   layouts:
     application:
       chrome: Google Chrome
@@ -434,7 +433,6 @@ es:
         geozones: Ámbitos de actuación
         votes: Apoyos restantes
         votes_district: "Solo puedes votar en el distrito %{district}"
-      start_spending_proposal: Crea una propuesta de inversión
       orders:
         random: Aleatorias
         confidence_score: Mejor valoradas
@@ -446,6 +444,7 @@ es:
       districts: Distritos
       districts_link: Seleccionar un distrito
       districts_text_html: Apoya <strong>10 propuestas de inversión</strong> que afecten a un solo distrito.
+      in_two_minutes: Presupuestos participativos en dos minutos
       title: "¡Ya puedes apoyar las propuestas!"
       unfeasible: Propuestas de inversión no viables
       unfeasible_link: Ver propuestas de inversión no viables

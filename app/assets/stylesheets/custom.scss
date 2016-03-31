@@ -144,6 +144,13 @@ blockquote.featured {
   h1, h2, .back, .icon-angle-left, p, a {
     color: white;
   }
+
+  &.welcome {
+    background: $budget image-url('spending_proposals_bg.jpg');
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
 }
 
 form.locale-form select {
@@ -643,7 +650,6 @@ table.age-groups {
   background-position: 50% 50%;
   background-repeat: no-repeat;
   background-size: cover;
-  margin: 0 auto;
 
   h1 {
     color: white;
