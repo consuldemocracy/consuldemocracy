@@ -433,6 +433,9 @@ es:
         geozones: Ámbitos de actuación
         votes: Apoyos restantes
         votes_district: "Solo puedes votar en el distrito %{district}"
+      orders:
+        random: Aleatorias
+        confidence_score: Mejor valoradas
     welcome:
       city: Toda la ciudad
       city_link: Apoyar propuestas de toda la ciudad

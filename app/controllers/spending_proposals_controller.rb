@@ -10,13 +10,13 @@ class SpendingProposalsController < ApplicationController
 
   feature_flag :spending_proposals
 
-  has_orders %w{hot_score confidence_score created_at relevance}, only: :index
+  has_orders %w{random confidence_score}, only: :index
   has_orders %w{most_voted newest oldest}, only: :show
 
   respond_to :html, :js
 
   def index
-    @spending_proposals = apply_filters_and_search(SpendingProposal).page(params[:page]).for_render
+    @spending_proposals = apply_filters_and_search(SpendingProposal).send("sort_by_#{@current_order}").page(params[:page]).for_render
     set_spending_proposal_votes(@spending_proposals)
   end
 
