@@ -279,6 +279,12 @@ describe SpendingProposal do
         expect(district_sp.reason_for_not_being_votable_by(luser)).to eq(:not_verified)
       end
 
+      it "rejects organizations" do
+        create(:organization, user: user)
+        expect(city_sp.reason_for_not_being_votable_by(user)).to eq(:organization)
+        expect(district_sp.reason_for_not_being_votable_by(user)).to eq(:organization)
+      end
+
       it "rejects city wide votes if no votes left for the user"  do
         user.city_wide_spending_proposals_supported_count = 0
         expect(city_sp.reason_for_not_being_votable_by(user)).to eq(:no_city_supports_available)

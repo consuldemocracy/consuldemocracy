@@ -116,6 +116,7 @@ class SpendingProposal < ActiveRecord::Base
   def reason_for_not_being_votable_by(user)
     return :not_logged_in unless user
     return :not_verified  unless user.level_two_or_three_verified?
+    return :organization  if user.organization?
     if city_wide?
       return :no_city_supports_available unless user.city_wide_spending_proposals_supported_count > 0
     else # district_wide
