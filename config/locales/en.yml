@@ -459,6 +459,7 @@ en:
       back_link: Back
     show:
       author_deleted: User deleted
+      unfeasibility_explanation: Unfeasibility explanation
     wrong_price_format: Only integer numbers
     spending_proposal:
       spending_proposal: Investment project

@@ -179,6 +179,20 @@ feature 'Spending proposals' do
     expect(page).to have_content(spending_proposal.geozone.name)
   end
 
+  scenario "Show (unfeasible spending proposal)" do
+    user = create(:user)
+    login_as(user)
+
+    spending_proposal = create(:spending_proposal,
+                                feasible: false,
+                                feasible_explanation: 'Local government is not competent in this matter')
+
+    visit spending_proposal_path(spending_proposal)
+
+    expect(page).to have_content("Unfeasibility explanation")
+    expect(page).to have_content(spending_proposal.feasible_explanation)
+  end
+
   context "Destroy" do
 
     scenario "Admin can destroy owned spending proposals" do

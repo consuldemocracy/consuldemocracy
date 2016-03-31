@@ -23,6 +23,11 @@
         </div>
       <% end %>
 
+      <% if @spending_proposal.unfeasible? && @spending_proposal.feasible_explanation.present? %>
+        <h2><%= t('spending_proposals.show.unfeasibility_explanation') %></h2>
+        <p><%= @spending_proposal.feasible_explanation %></p>
+      <% end %>
+
     </div>
 
     <% unless namespace == 'management' %>
