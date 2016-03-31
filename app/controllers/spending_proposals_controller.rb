@@ -1,7 +1,7 @@
 class SpendingProposalsController < ApplicationController
   include FeatureFlags
 
-  before_action :authenticate_user!, except: [:index]
+  before_action :authenticate_user!, except: [:index, :welcome, :show]
   before_action -> { flash.now[:notice] = flash[:notice].html_safe if flash[:html_safe] && flash[:notice] }
 
   load_and_authorize_resource
@@ -13,6 +13,10 @@ class SpendingProposalsController < ApplicationController
   def index
     @spending_proposals = apply_filters_and_search(SpendingProposal).page(params[:page]).for_render
     set_spending_proposal_votes(@spending_proposals)
+  end
+
+  def welcome
+    @geozones = Geozone.all.order(name: :asc)
   end
 
   def new

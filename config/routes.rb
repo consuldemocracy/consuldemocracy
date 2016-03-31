@@ -67,6 +67,9 @@ Rails.application.routes.draw do
 
   scope '/participatory_budget' do
     resources :spending_proposals, only: [:index, :new, :create, :show, :destroy], path: 'investment_projects' do
+      collection do
+        get :welcome
+      end
       member do
         post :vote
       end
@@ -272,7 +275,7 @@ Rails.application.routes.draw do
 
   get "ordenanza-de-transparencia", to: "legislations#show", id: 1, as: :ordenanza_transparencia
   get '/blog' => redirect("http://diario.madrid.es/participa/")
-  get 'participatory_budget', to: 'spending_proposals#index', as: 'participatory_budget'
+  get 'participatory_budget', to: 'spending_proposals#welcome', as: 'participatory_budget'
   get 'delegacion', to: 'representatives#new', as: 'delegation'
   resources :pages, path: '/', only: [:show]
   get 'participatory_budget/in_two_minutes', to: 'pages#show', id: 'participatory_budget/in_two_minutes'

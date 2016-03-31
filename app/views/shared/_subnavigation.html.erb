@@ -14,7 +14,7 @@
     </li>
     <% if feature?(:spending_proposals) %>
       <li>
-        <%= link_to t("layouts.header.spending_proposals"), spending_proposals_path, class: ("active" if controller_name == "spending_proposals"), accesskey: "s" %>
+        <%= link_to t("layouts.header.spending_proposals"), participatory_budget_path, class: ("active" if controller_name == "spending_proposals"), accesskey: "s" %>
       </li>
     <% end %>
     <li>
