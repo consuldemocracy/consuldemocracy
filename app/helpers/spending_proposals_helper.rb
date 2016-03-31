@@ -22,4 +22,8 @@ module SpendingProposalsHelper
       nil
     end
   end
+
+  def first_time_voting_spending_proposal_for_district?
+    current_user.district_wide_spending_proposals_supported_count == 9
+  end
 end
