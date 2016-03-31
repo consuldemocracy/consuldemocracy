@@ -30,7 +30,7 @@ class SpendingProposal < ActiveRecord::Base
   scope :valuating,              -> { valuation_open.where("valuation_assignments_count > 0 AND valuation_finished = ?", false) }
   scope :valuation_finished,     -> { where(valuation_finished: true) }
   scope :feasible,               -> { where(feasible: true) }
-  scope :unfeasible,             -> { where(feasible: false) }
+  scope :unfeasible,             -> { valuation_finished.where(feasible: false) }
   scope :not_unfeasible,         -> { where("feasible IS ? OR feasible = ?", nil, true) }
 
   scope :by_admin,    -> (admin)    { where(administrator_id: admin.presence) }
@@ -96,7 +96,7 @@ class SpendingProposal < ActiveRecord::Base
   end
 
   def unfeasible?
-    feasible == false
+    feasible == false && valuation_finished == true
   end
 
   def valuation_finished?

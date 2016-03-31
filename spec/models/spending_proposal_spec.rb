@@ -61,14 +61,20 @@ describe SpendingProposal do
     end
 
     describe "#unfeasible?" do
-      it "returns true when not feasible" do
+      it "returns false when only not feasible" do
         spending_proposal.feasible = false
-        expect(spending_proposal.unfeasible?).to eq true
+        expect(spending_proposal.unfeasible?).to eq false
       end
 
       it "returns false when feasible" do
         spending_proposal.feasible = true
         expect(spending_proposal.unfeasible?).to eq false
+      end
+
+      it "returns true when not feasible and valuation finished" do
+        spending_proposal.feasible = false
+        spending_proposal.valuation_finished = true
+        expect(spending_proposal.unfeasible?).to eq true
       end
     end
 
@@ -239,8 +245,9 @@ describe SpendingProposal do
 
     describe "unfeasible" do
       it "should return all unfeasible spending proposals" do
-        unfeasible_spending_proposal = create(:spending_proposal, feasible: false)
+        unfeasible_spending_proposal = create(:spending_proposal, feasible: false, valuation_finished: true)
         create(:spending_proposal, feasible: true)
+        create(:spending_proposal, feasible: false)
 
         expect(SpendingProposal.unfeasible).to eq [unfeasible_spending_proposal]
       end
@@ -280,7 +287,7 @@ describe SpendingProposal do
       end
 
       it "rejects unfeasible spending proposals" do
-        unfeasible = create(:spending_proposal, feasible: false)
+        unfeasible = create(:spending_proposal, feasible: false, valuation_finished: true)
         expect(unfeasible.reason_for_not_being_votable_by(user)).to eq(:unfeasible)
       end
 
