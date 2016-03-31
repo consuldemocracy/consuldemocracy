@@ -430,6 +430,7 @@ en:
         one: " containing the term '%{search_term}'"
         other: " containing the term '%{search_term}'"
       sidebar:
+        district: District
         geozones: Scope of operation
         votes: Supports remaining
         votes_district: "You can only vote in the district %{district}"
