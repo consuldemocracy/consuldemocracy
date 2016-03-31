@@ -268,14 +268,21 @@ describe SpendingProposal do
     let(:district_sp) { create(:spending_proposal, geozone: district) }
 
     describe '#register_vote' do
-      it "increases a counter for city proposals" do
+      it "decreases a counter for city proposals" do
         expect{ city_sp.register_vote(user, true) }.to change { user.reload.city_wide_spending_proposals_supported_count }.by(-1)
       end
 
-      it "increases a counter for district proposals and blocks the district" do
+      it "decreases a counter for district proposals and blocks the district" do
         expect(user.supported_spending_proposals_geozone_id).to be_nil
         expect{ district_sp.register_vote(user, true) }.to change { user.reload.district_wide_spending_proposals_supported_count }.by(-1)
         expect(user.supported_spending_proposals_geozone_id).to eq(district.id)
+      end
+
+      it "does not decrease the counters if the user has already voted" do
+        city_sp.register_vote(user, true)
+        district_sp.register_vote(user, true)
+        expect{ city_sp.register_vote(user, true) }.to change { user.reload.city_wide_spending_proposals_supported_count }.by(0)
+        expect{ district_sp.register_vote(user, true) }.to change { user.reload.district_wide_spending_proposals_supported_count }.by(0)
       end
     end
 

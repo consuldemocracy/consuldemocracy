@@ -127,13 +127,15 @@ class SpendingProposal < ActiveRecord::Base
   def register_vote(user, vote_value)
     if votable_by?(user)
       vote_by(voter: user, vote: vote_value)
-      if city_wide?
-        count = user.city_wide_spending_proposals_supported_count
-        user.update(city_wide_spending_proposals_supported_count: count - 1)
-      else
-        count = user.district_wide_spending_proposals_supported_count
-        user.update(district_wide_spending_proposals_supported_count: count - 1,
-                    supported_spending_proposals_geozone_id: self.geozone_id)
+      if vote_registered?
+        if city_wide?
+          count = user.city_wide_spending_proposals_supported_count
+          user.update(city_wide_spending_proposals_supported_count: count - 1)
+        else
+          count = user.district_wide_spending_proposals_supported_count
+          user.update(district_wide_spending_proposals_supported_count: count - 1,
+                      supported_spending_proposals_geozone_id: self.geozone_id)
+        end
       end
     end
   end
