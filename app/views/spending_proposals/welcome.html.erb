@@ -1,42 +1,57 @@
 <div class="expanded jumbo-investment-project padding no-margin-top margin-bottom">
   <div class="row">
-    <div class="small-12 medium-8 column">
+    <div class="small-12 column">
       <h1><%= t("spending_proposals.welcome.title") %></h1>
-      <h2><%= t("spending_proposals.welcome.description_html") %></h2>
+      <p><%= t("spending_proposals.welcome.description_html") %></p>
     </div>
   </div>
 </div>
 
-<div class="row">
+<div class="row investment-projects-scope">
 
-  <div class="small-12 medium-6 column">
-    <h2><%= t("spending_proposals.welcome.city") %></h2>
-    <p><%= t("spending_proposals.welcome.city_text_html") %></p>
-    <%= link_to t("spending_proposals.welcome.city_link"), spending_proposals_path(geozone: nil), class: "button" %>
-
-    <div class="margin-top">
-      <h3><%= t("spending_proposals.welcome.unfeasible") %></h3>
-      <%= link_to t("spending_proposals.welcome.unfeasible_link"), spending_proposals_path(unfeasible: '1') %>
-    </div>
-  </div>
-
-  <div class="small-12 medium-6 column">
-    <h2><%= t("spending_proposals.welcome.districts") %></h2>
-    <p><%= t("spending_proposals.welcome.districts_text_html") %></p>
-
-    <div class="callout warning">
-      <p><%= t("spending_proposals.welcome.districts_text_remember_html") %></p>
-    </div>
-
-    <div class="row">
-      <% @geozones.each_slice(7) do |slice| %>
-        <div class="small-12 medium-4 column">
-          <% slice.each do |geozone| %>
-            <%= link_to geozone.name, proposals_path(search: geozone.name) %><br>
-          <% end %>
+  <div class="small-12 medium-6 column no-underline">
+    <%= link_to spending_proposals_path(geozone: 'all') do %>
+      <div class="callout primary">
+        <h2><%= t("spending_proposals.welcome.city") %></h2>
+        <p><%= t("spending_proposals.welcome.city_text_html") %></p>
+        <div class="small-12 medium-8">
+          <span class="button expanded"><%= t("spending_proposals.welcome.city_link") %></span>
         </div>
-      <% end %>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="small-12 medium-6 column">
+    <div class="callout success">
+      <ul class="accordion" data-accordion data-allow-all-closed="true">
+        <li class="accordion-item" data-accordion-item>
+
+          <a href="#" class="accordion-title">
+            <h2><%= t("spending_proposals.welcome.districts") %></h2>
+            <p><%= t("spending_proposals.welcome.districts_text_html") %></p>
+            <div class="small-12 medium-8">
+              <span class="button expanded"><%= t("spending_proposals.welcome.districts_link") %></span>
+            </div>
+          </a>
+
+          <div class="row accordion-content" data-tab-content>
+            <% @geozones.each_slice(7) do |slice| %>
+              <div class="small-12 medium-4 column">
+                <% slice.each do |geozone| %>
+                  <%= link_to geozone.name, spending_proposals_path(geozone: geozone.id) %><br>
+                <% end %>
+              </div>
+            <% end %>
+          </div>
+        </li>
     </div>
   </div>
 
+</div>
+
+<div class="row">
+  <div class="small-12 column margin-top">
+    <h3><%= t("spending_proposals.welcome.unfeasible") %></h3>
+    <%= link_to t("spending_proposals.welcome.unfeasible_link"), spending_proposals_path(unfeasible: '1') %>
+  </div>
 </div>

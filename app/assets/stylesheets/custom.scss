@@ -96,7 +96,7 @@ blockquote.featured {
 
 .jumbo-survey, .jumbo-featured, .jumbo-investment-project {
 
-  h1, h2, .back, .icon-angle-left, .p, a {
+  h1, h2, .back, .icon-angle-left, p, a {
     color: black;
   }
 
@@ -141,7 +141,7 @@ blockquote.featured {
   background: $budget;
   border-bottom: 1px solid $budget;
 
-  h1, h2, .back, .icon-angle-left, .p, a {
+  h1, h2, .back, .icon-angle-left, p, a {
     color: white;
   }
 }
@@ -761,6 +761,81 @@ table.age-groups {
       line-height: rem-calc(130);
     }
   }
+}
+
+.investment-projects-scope {
+
+  .callout {
+    background: white;
+    border-color: $border;
+    border-radius: 0;
+    color: $text;
+
+    @media (min-width: $small-breakpoint) {
+      height: $line-height*17;
+    }
+
+    a {
+      font-size: $base-font-size;
+    }
+  }
+
+  .callout.primary {
+    border-top: 4px solid $info-border;
+
+    @media (min-width: $small-breakpoint) {
+      background: image-url('investment_project_city.jpg') no-repeat bottom;
+    }
+  }
+
+  .callout.success {
+    border-top: 4px solid $success-border;
+
+    @media (min-width: $small-breakpoint) {
+      background: image-url('investment_project_districts.jpg') no-repeat bottom;
+    }
+
+    .button {
+      margin-bottom: 0;
+    }
+
+    .accordion {
+      background: white;
+      border: 0;
+    }
+
+    .accordion-title {
+      border: 0;
+      color: $text;
+      padding: 0;
+
+      &:before {
+        content: none;
+      }
+
+      &:hover, &:focus, &:hover h2, &:focus h2 {
+        background: none;
+        color: $text;
+        text-decoration: none;
+      }
+    }
+
+    .accordion-content {
+      background: none;
+      border: 0;
+
+      @media (min-width: $small-breakpoint) {
+        padding-bottom: rem-calc(40);
+      }
+    }
+  }
+}
+
+.no-underline a,
+.no-underline a:hover,
+.no-underline a:hover h2 {
+  color: $text !important;
+  text-decoration: none !important;
 }
 
 // 09. Featured

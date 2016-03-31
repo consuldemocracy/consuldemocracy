@@ -438,14 +438,14 @@ es:
       start_spending_proposal: Crea una propuesta de inversión
     welcome:
       city: Toda la ciudad
-      city_link: Ver propuestas de toda la ciudad
+      city_link: Apoyar propuestas de toda la ciudad
       city_text_html: Apoya <strong>10 propuestas de inversión</strong> que afecten a toda la ciudad.
-      description_html: Puedes apoyar <u>10 propuestas</u> de afecten a toda la ciudad y <u>10 propuestas</u> de un solo distrito.
+      description_html: Puedes apoyar <strong>10 propuestas</strong> que afecten a toda la ciudad y <strong>10 propuestas</strong> de un único distrito.
       districts: Distritos
+      districts_link: Seleccionar un distrito
       districts_text_html: Apoya <strong>10 propuestas de inversión</strong> que afecten a un solo distrito.
-      districts_text_remember_html: <strong>Sólo puedes apoyar propuestas de un único distrito</strong>.
       title: "¡Ya puedes apoyar las propuestas!"
-      unfeasible: No viables
+      unfeasible: Propuestas de inversión no viables
       unfeasible_link: Ver propuestas de inversión no viables
     new:
       more_info: "¿Cómo funcionan los presupuestos participativos?"
