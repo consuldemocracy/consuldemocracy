@@ -6,12 +6,15 @@ class SpendingProposal < ActiveRecord::Base
 
   apply_simple_captcha
   acts_as_votable
+  acts_as_paranoid column: :hidden_at
+  include ActsAsParanoidAliases
 
   belongs_to :author, -> { with_hidden }, class_name: 'User', foreign_key: 'author_id'
   belongs_to :geozone
   belongs_to :administrator
   has_many :valuation_assignments, dependent: :destroy
   has_many :valuators, through: :valuation_assignments
+  has_many :comments, as: :commentable
 
   validates :title, presence: true
   validates :author, presence: true

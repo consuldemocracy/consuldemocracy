@@ -10,7 +10,7 @@ class Comment < ActiveRecord::Base
 
   validates :body, presence: true
   validates :user, presence: true
-  validates_inclusion_of :commentable_type, in: ["Debate", "Proposal"]
+  validates_inclusion_of :commentable_type, in: ["Debate", "Proposal", "SpendingProposal"]
 
   validate :validate_body_length
 
@@ -95,7 +95,7 @@ class Comment < ActiveRecord::Base
   end
 
   def self.body_max_length
-    Setting['comments_body_max_length'].to_i 
+    Setting['comments_body_max_length'].to_i
   end
 
   def calculate_confidence_score

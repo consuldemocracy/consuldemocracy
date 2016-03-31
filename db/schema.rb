@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160330173339) do
+ActiveRecord::Schema.define(version: 20160331152642) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -129,12 +129,12 @@ ActiveRecord::Schema.define(version: 20160330173339) do
   add_index "debates", ["cached_votes_total"], name: "index_debates_on_cached_votes_total", using: :btree
   add_index "debates", ["cached_votes_up"], name: "index_debates_on_cached_votes_up", using: :btree
   add_index "debates", ["confidence_score"], name: "index_debates_on_confidence_score", using: :btree
+  add_index "debates", ["description"], name: "index_debates_on_description", using: :btree
   add_index "debates", ["geozone_id"], name: "index_debates_on_geozone_id", using: :btree
   add_index "debates", ["hidden_at"], name: "index_debates_on_hidden_at", using: :btree
   add_index "debates", ["hot_score"], name: "index_debates_on_hot_score", using: :btree
   add_index "debates", ["title"], name: "index_debates_on_title", using: :btree
   add_index "debates", ["tsv"], name: "index_debates_on_tsv", using: :gin
-  add_index "debates", ["description"], name: "index_debates_on_description", using: :btree
 
   create_table "delayed_jobs", force: :cascade do |t|
     t.integer  "priority",   default: 0, null: false
@@ -288,6 +288,7 @@ ActiveRecord::Schema.define(version: 20160330173339) do
   add_index "proposals", ["author_id"], name: "index_proposals_on_author_id", using: :btree
   add_index "proposals", ["cached_votes_up"], name: "index_proposals_on_cached_votes_up", using: :btree
   add_index "proposals", ["confidence_score"], name: "index_proposals_on_confidence_score", using: :btree
+  add_index "proposals", ["description"], name: "index_proposals_on_description", using: :btree
   add_index "proposals", ["geozone_id"], name: "index_proposals_on_geozone_id", using: :btree
   add_index "proposals", ["hidden_at"], name: "index_proposals_on_hidden_at", using: :btree
   add_index "proposals", ["hot_score"], name: "index_proposals_on_hot_score", using: :btree
@@ -295,7 +296,6 @@ ActiveRecord::Schema.define(version: 20160330173339) do
   add_index "proposals", ["summary"], name: "index_proposals_on_summary", using: :btree
   add_index "proposals", ["title"], name: "index_proposals_on_title", using: :btree
   add_index "proposals", ["tsv"], name: "index_proposals_on_tsv", using: :gin
-  add_index "proposals", ["description"], name: "index_proposals_on_description", using: :btree
 
   create_table "redeemable_codes", force: :cascade do |t|
     t.string   "token"
@@ -346,6 +346,8 @@ ActiveRecord::Schema.define(version: 20160330173339) do
     t.datetime "unfeasible_email_sent_at"
     t.integer  "cached_votes_up",                       default: 0
     t.tsvector "tsv"
+    t.integer  "comments_count"
+    t.datetime "hidden_at"
   end
 
   add_index "spending_proposals", ["author_id"], name: "index_spending_proposals_on_author_id", using: :btree

@@ -1,5 +1,7 @@
 class SpendingProposalsController < ApplicationController
   include FeatureFlags
+  include CommentableActions
+  include FlagActions
 
   before_action :authenticate_user!, except: [:index, :welcome, :show]
   before_action -> { flash.now[:notice] = flash[:notice].html_safe if flash[:html_safe] && flash[:notice] }
@@ -7,6 +9,9 @@ class SpendingProposalsController < ApplicationController
   load_and_authorize_resource
 
   feature_flag :spending_proposals
+
+  has_orders %w{hot_score confidence_score created_at relevance}, only: :index
+  has_orders %w{most_voted newest oldest}, only: :show
 
   respond_to :html, :js
 
@@ -24,6 +29,9 @@ class SpendingProposalsController < ApplicationController
   end
 
   def show
+    @commentable = @spending_proposal
+    @comment_tree = CommentTree.new(@commentable, params[:page], @current_order)
+    set_comment_flags(@comment_tree.comments)
     set_spending_proposal_votes(@spending_proposal)
   end
 
