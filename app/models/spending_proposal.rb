@@ -25,6 +25,7 @@ class SpendingProposal < ActiveRecord::Base
   validates :terms_of_service, acceptance: { allow_nil: false }, on: :create
 
   scope :sort_by_confidence_score, -> { reorder(confidence_score: :desc) }
+  scope :sort_by_random,           -> { reorder("RANDOM()") }
 
   scope :valuation_open,         -> { where(valuation_finished: false) }
   scope :without_admin,          -> { valuation_open.where(administrator_id: nil) }

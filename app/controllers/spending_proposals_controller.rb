@@ -10,7 +10,7 @@ class SpendingProposalsController < ApplicationController
 
   feature_flag :spending_proposals
 
-  has_orders %w{confidence_score}, only: :index
+  has_orders %w{random confidence_score}, only: :index
   has_orders %w{most_voted newest oldest}, only: :show
 
   respond_to :html, :js

@@ -89,6 +89,16 @@ feature 'Spending proposals' do
 
   context("Orders") do
 
+    scenario 'Default order is random', :js do
+      create(:spending_proposal, title: 'Best proposal')
+      create(:spending_proposal, title: 'Worst proposal')
+      create(:spending_proposal, title: 'Medium proposal')
+
+      visit spending_proposals_path
+
+      expect(page).to have_css('.investment-project', count: 3)
+    end
+
     scenario 'Proposals are ordered by confidence_score', :js do
       create(:spending_proposal, title: 'Best proposal').update_column(:confidence_score, 10)
       create(:spending_proposal, title: 'Worst proposal').update_column(:confidence_score, 2)
@@ -102,6 +112,9 @@ feature 'Spending proposals' do
         expect('Best proposal').to appear_before('Medium proposal')
         expect('Medium proposal').to appear_before('Worst proposal')
       end
+
+      expect(current_url).to include('order=confidence_score')
+      expect(current_url).to include('page=1')
     end
 
   end

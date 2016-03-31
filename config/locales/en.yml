@@ -435,6 +435,9 @@ en:
         votes: Supports remaining
         votes_district: "You can only vote in the district %{district}"
       start_spending_proposal: Create an investment project
+      orders:
+        random: random
+        confidence_score: highest rated
     welcome:
       city: All city
       city_link: Support proposals of the city

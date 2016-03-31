@@ -435,6 +435,9 @@ es:
         votes: Apoyos restantes
         votes_district: "Solo puedes votar en el distrito %{district}"
       start_spending_proposal: Crea una propuesta de inversión
+      orders:
+        random: Aleatorias
+        confidence_score: Mejor valoradas
     welcome:
       city: Toda la ciudad
       city_link: Apoyar propuestas de toda la ciudad
