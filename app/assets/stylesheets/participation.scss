@@ -825,7 +825,7 @@
       color: white;
 
       &:hover {
-        background: $proposals-border;
+        background: $budget-hover;
         color: white;
         cursor: pointer;
       }
@@ -839,6 +839,10 @@
       color: $budget;
       font-size: $base-font-size;
       font-weight: bold;
+    }
+
+    .supported {
+      color: $budget;
     }
 
     .not-logged,
