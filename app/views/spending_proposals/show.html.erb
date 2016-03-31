@@ -25,11 +25,16 @@
 
     </div>
 
-    <div id="<%= dom_id(@spending_proposal) %>_votes" class="small-12 medium-3 column text-center">
-        <%= render 'spending_proposals/votes',
-                  { spending_proposal: @spending_proposal, vote_url: vote_spending_proposal_path(@spending_proposal, value: 'yes') } %>
-    </div>
+    <% unless namespace == 'management' %>
+      <div id="<%= dom_id(@spending_proposal) %>_votes" class="small-12 medium-3 column text-center">
+          <%= render 'spending_proposals/votes',
+                    { spending_proposal: @spending_proposal, vote_url: vote_spending_proposal_path(@spending_proposal, value: 'yes') } %>
+      </div>
 
+    <% end %>
   </div>
 </section>
-<%= render "spending_proposals/comments" %>
+
+<% unless namespace == 'management' %>
+  <%= render "spending_proposals/comments" %>
+<% end %>
