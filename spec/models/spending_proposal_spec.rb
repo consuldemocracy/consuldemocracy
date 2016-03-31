@@ -36,8 +36,13 @@ describe SpendingProposal do
       expect(spending_proposal.description).to eq("alert('danger');")
     end
 
+    it "should be valid with allowed length" do
+      spending_proposal.description = "a" * 9999
+      expect(spending_proposal).to be_valid
+    end
+
     it "should not be valid when very long" do
-      spending_proposal.description = "a" * 6001
+      spending_proposal.description = "a" * 10001
       expect(spending_proposal).to_not be_valid
     end
   end
