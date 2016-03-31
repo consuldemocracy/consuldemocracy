@@ -521,7 +521,8 @@ es:
     spending_proposals:
       not_logged_in: Necesitas %{signin} o %{signup} para continuar.
       not_verified: Las propuestas de inversión sólo pueden ser apoyadas por usuarios verificados, %{verify_account}.
-      organization: Las organizaciones no pueden votar
+      unfeasible: Las propuestas no viables no pueden recibir apoyos.
+      organization: Las organizaciones no pueden votar.
       no_city_supports_available: Ya has usado todos tus apoyos de ciudad.
       no_district_supports_available: Ya has usado todos tus apoyos de distrito.
       different_district_assigned: Ya apoyaste propuestas de otro distrito.

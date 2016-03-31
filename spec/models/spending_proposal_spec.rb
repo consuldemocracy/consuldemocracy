@@ -279,6 +279,11 @@ describe SpendingProposal do
         expect(district_sp.reason_for_not_being_votable_by(luser)).to eq(:not_verified)
       end
 
+      it "rejects unfeasible spending proposals" do
+        unfeasible = create(:spending_proposal, feasible: false)
+        expect(unfeasible.reason_for_not_being_votable_by(user)).to eq(:unfeasible)
+      end
+
       it "rejects organizations" do
         create(:organization, user: user)
         expect(city_sp.reason_for_not_being_votable_by(user)).to eq(:organization)

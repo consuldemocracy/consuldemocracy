@@ -522,7 +522,8 @@ en:
     spending_proposals:
       not_logged_in: You must %{signin} or %{signup} to continue.
       not_verified: Only verified users can vote on proposals; %{verify_account}.
-      organization: Organisations are not permitted to vote
+      unfeasible: Unfeasible proposal.
+      organization: Organisations are not permitted to vote.
       no_city_supports_available: You have already used all your city-wide supports.
       no_district_supports_available: You have already used all your district-wide supports.
       different_district_assigned: You already supported other district proposals.
