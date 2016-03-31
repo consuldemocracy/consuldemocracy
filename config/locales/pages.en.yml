@@ -109,7 +109,6 @@ en:
       title: Verify your account
     while_unfinished_html: While we finish, we encourage you to visit the <a href="/blog" target="_blank" title="(link opens in new window)">Citizen Participation Area, Transparency and Open Government blog</a> to know about our progress and news; or the <a href="/">Citizen Participation section</a> where you can decide which is the city you want.
     proposal_type:
-      participatory_budget_button: Create proposal
       participatory_budget_text_html: 'Proposals must be investment. Which will be viable to the vote and the most votes will be carried out. This process has phases of proposal and voting.<br> %{info}.'
       participatory_budget_text_link: More information
       participatory_budget_title: Investment project (participatory budget)
