@@ -1,8 +1,11 @@
-<div class="expanded jumbo-investment-project padding no-margin-top margin-bottom">
+<div class="expanded jumbo-investment-project welcome padding no-margin-top margin-bottom">
   <div class="row">
-    <div class="small-12 column">
+    <div class="small-12 medium-8 column">
       <h1><%= t("spending_proposals.welcome.title") %></h1>
       <p><%= t("spending_proposals.welcome.description_html") %></p>
+    </div>
+    <div class="small-12 medium-4 column">
+      <%= link_to t("spending_proposals.welcome.in_two_minutes"), page_path('participatory_budget/in_two_minutes'), class: "button expanded margin-top" %>
     </div>
   </div>
 </div>
