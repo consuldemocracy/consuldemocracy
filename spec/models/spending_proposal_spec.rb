@@ -262,10 +262,45 @@ describe SpendingProposal do
   end
 
   describe 'Supports' do
-    let(:user)        { create(:user) }
+    let(:user)        { create(:user, :level_two) }
+    let(:luser)       { create(:user) }
     let(:district)    { create(:geozone) }
     let(:city_sp)     { create(:spending_proposal) }
     let(:district_sp) { create(:spending_proposal, geozone: district) }
+
+    describe '#reason_for_not_being_votable_by' do
+      it "rejects not logged in users" do
+        expect(city_sp.reason_for_not_being_votable_by(nil)).to eq(:not_logged_in)
+        expect(district_sp.reason_for_not_being_votable_by(nil)).to eq(:not_logged_in)
+      end
+
+      it "rejects not verified users" do
+        expect(city_sp.reason_for_not_being_votable_by(luser)).to eq(:not_verified)
+        expect(district_sp.reason_for_not_being_votable_by(luser)).to eq(:not_verified)
+      end
+
+      it "rejects city wide votes if no votes left for the user"  do
+        user.city_wide_spending_proposals_supported_count = 0
+        expect(city_sp.reason_for_not_being_votable_by(user)).to eq(:no_city_supports_available)
+      end
+
+      it "rejects district wide votes if no votes left for the user"  do
+        user.district_wide_spending_proposals_supported_count = 0
+        expect(district_sp.reason_for_not_being_votable_by(user)).to eq(:no_district_supports_available)
+      end
+
+      it "accepts valid district votes" do
+        expect(district_sp.reason_for_not_being_votable_by(user)).to be_nil
+        user.supported_spending_proposals_geozone_id = district.id
+        expect(district_sp.reason_for_not_being_votable_by(user)).to be_nil
+      end
+
+      it "rejects users with different and not nil district" do
+        user.supported_spending_proposals_geozone_id = create(:geozone).id
+        expect(district_sp.reason_for_not_being_votable_by(user)).to eq(:different_district_assigned)
+      end
+
+    end
 
     describe '#register_vote' do
       it "decreases a counter for city proposals" do
@@ -287,13 +322,13 @@ describe SpendingProposal do
     end
 
     describe '#votable_by?' do
-      it "allows voting on city-wide if the counter is not too high" do
+      it "allows voting on city-wide if the counter is not too low" do
         expect(city_sp.votable_by?(user)).to be
         user.city_wide_spending_proposals_supported_count = 0
         expect(city_sp.votable_by?(user)).to_not be
       end
 
-      it "allows voting on district-wide if the counter is not too high" do
+      it "allows voting on district-wide if the counter is not too low" do
         expect(district_sp.votable_by?(user)).to be
         user.district_wide_spending_proposals_supported_count = 0
         expect(district_sp.votable_by?(user)).to_not be
