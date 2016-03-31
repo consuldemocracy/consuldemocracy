@@ -1,2 +1,3 @@
 $("#<%= dom_id(@spending_proposal) %>_votes").html('<%= j render("spending_proposals/votes", spending_proposal: @spending_proposal) %>');
 $("#counters").html('<%= j render("counters") %>');
+Turbolinks.visit(location.toString());
