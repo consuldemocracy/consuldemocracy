@@ -69,9 +69,10 @@ feature 'Spending proposals' do
 
     scenario 'by unfeasibility' do
       geozone1 = create(:geozone)
-      spending_proposal1 = create(:spending_proposal, feasible: false)
+      spending_proposal1 = create(:spending_proposal, feasible: false, valuation_finished: true)
       spending_proposal2 = create(:spending_proposal, feasible: true)
       spending_proposal3 = create(:spending_proposal)
+      spending_proposal4 = create(:spending_proposal, feasible: false)
 
       visit spending_proposals_path(unfeasible: 1)
 
@@ -81,6 +82,7 @@ feature 'Spending proposals' do
         expect(page).to have_content(spending_proposal1.title)
         expect(page).to_not have_content(spending_proposal2.title)
         expect(page).to_not have_content(spending_proposal3.title)
+        expect(page).to_not have_content(spending_proposal4.title)
       end
     end
   end
@@ -173,6 +175,21 @@ feature 'Spending proposals' do
     expect(page).to have_content(spending_proposal.author.name)
     expect(page).to have_content(spending_proposal.association_name)
     expect(page).to have_content(spending_proposal.geozone.name)
+  end
+
+  scenario "Show (unfeasible spending proposal)" do
+    user = create(:user)
+    login_as(user)
+
+    spending_proposal = create(:spending_proposal,
+                                valuation_finished: true,
+                                feasible: false,
+                                feasible_explanation: 'Local government is not competent in this matter')
+
+    visit spending_proposal_path(spending_proposal)
+
+    expect(page).to have_content("Unfeasibility explanation")
+    expect(page).to have_content(spending_proposal.feasible_explanation)
   end
 
   context "Destroy" do

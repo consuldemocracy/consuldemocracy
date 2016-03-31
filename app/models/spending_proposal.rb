@@ -30,7 +30,7 @@ class SpendingProposal < ActiveRecord::Base
   scope :valuating,              -> { valuation_open.where("valuation_assignments_count > 0 AND valuation_finished = ?", false) }
   scope :valuation_finished,     -> { where(valuation_finished: true) }
   scope :feasible,               -> { where(feasible: true) }
-  scope :unfeasible,             -> { where(feasible: false) }
+  scope :unfeasible,             -> { valuation_finished.where(feasible: false) }
   scope :not_unfeasible,         -> { where("feasible IS ? OR feasible = ?", nil, true) }
 
   scope :by_admin,    -> (admin)    { where(administrator_id: admin.presence) }
@@ -96,7 +96,7 @@ class SpendingProposal < ActiveRecord::Base
   end
 
   def unfeasible?
-    feasible == false
+    feasible == false && valuation_finished == true
   end
 
   def valuation_finished?
@@ -119,6 +119,7 @@ class SpendingProposal < ActiveRecord::Base
   def reason_for_not_being_votable_by(user)
     return :not_logged_in unless user
     return :not_verified  unless user.level_two_or_three_verified?
+    return :unfeasible    if unfeasible?
     return :organization  if user.organization?
     if city_wide?
       return :no_city_supports_available unless user.city_wide_spending_proposals_supported_count > 0
