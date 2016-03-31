@@ -528,6 +528,7 @@ es:
       no_city_supports_available: Ya has usado todos tus apoyos de ciudad.
       no_district_supports_available: Ya has usado todos tus apoyos de distrito.
       different_district_assigned: Ya apoyaste propuestas de otro distrito.
+      confirm_first_vote_on_district: "Si apoyas esta propuesta eligirás este distrito y ya no podrás cambiarlo, y sólo podrás votar las propuestas de %{district} y de toda la ciudad... ¿Quieres continuar?"
   welcome:
     debates:
       alt: Icono debates

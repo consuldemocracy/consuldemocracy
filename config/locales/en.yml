@@ -529,6 +529,7 @@ en:
       no_city_supports_available: You have already used all your city-wide supports.
       no_district_supports_available: You have already used all your district-wide supports.
       different_district_assigned: You already supported other district proposals.
+      confirm_first_vote_on_district: "If you support this proposal you will choose this district without posibility to change it, You'll be able to vote only for %{district} and city-wide proposals. Do you want to continue?"
   welcome:
     debates:
       alt: Icon debates
