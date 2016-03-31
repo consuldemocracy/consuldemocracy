@@ -131,18 +131,7 @@ feature 'Spending proposals' do
     select  'All city', from: 'spending_proposal_geozone_id'
     check 'spending_proposal_terms_of_service'
 
-    click_button 'Create'
-
-    expect(page).to have_content 'Investment project created successfully'
-    expect(page).to have_content 'You can access it from My activity'
-
-    within "#notice" do
-      click_link 'My activity'
-    end
-
-    expect(current_url).to eq(user_url(author, filter: :spending_proposals))
-    expect(page).to have_content "1 Spending proposal"
-    expect(page).to have_content "Build a skyscraper"
+    expect(page).to_not have_link('Create spending proposal', href: new_spending_proposal_path)
   end
 
   scenario 'Captcha is required for proposal creation' do
@@ -226,7 +215,7 @@ feature 'Spending proposals' do
 
   context "Destroy" do
 
-    scenario "Admin can destroy owned spending proposals" do
+    scenario "Admin can destroy spending proposals" do
       admin = create(:administrator)
       user = create(:user, :level_two)
       spending_proposal = create(:spending_proposal, author: user)
