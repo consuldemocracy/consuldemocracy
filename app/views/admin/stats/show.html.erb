@@ -16,6 +16,10 @@
             <%= t "admin.stats.show.summary.surveys" %><br>
             <span class="number"><%= number_with_delimiter(@surveys) %></span>
           </p>
+          <p class="featured">
+            <%= t "admin.stats.show.summary.spending_proposals" %><br>
+            <span class="number"><%= number_with_delimiter(@spending_proposals) %></span>
+          </p>
           <p>
             <%= t "admin.stats.show.summary.debates" %><br>
             <span class="number"><%= number_with_delimiter(@debates) %></span>
@@ -39,6 +43,11 @@
           <p class="featured">
             <%= t "admin.stats.show.summary.open_answer_votes" %><br>
             <span class="number"><%= number_with_delimiter(@open_answer_votes) %><br></span>
+          </p>
+
+          <p class="featured">
+            <%= t "admin.stats.show.summary.spending_proposal_votes" %><br>
+            <span class="number"><%= number_with_delimiter(@spending_proposal_votes) %></span>
           </p>
 
           <p>
