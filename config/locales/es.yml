@@ -431,6 +431,7 @@ es:
         one: " que contiene '%{search_term}'"
         other: " que contienen '%{search_term}'"
       sidebar:
+        back: Volver a página de selección
         district: Distrito
         geozones: Ámbitos de actuación
         votes: Apoyos restantes

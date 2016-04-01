@@ -3,7 +3,12 @@
     <div class="sticky" data-sticky data-anchor="investment-projects">
       <div id="counters" class="counters" data-equalizer>
         <%= render 'counters' %>
-     </div>
+      </div>
+
+      <%= link_to welcome_spending_proposals_path, class: "back" do %>
+        <i class="icon-angle-left"></i>
+        <%= t("spending_proposals.index.sidebar.back") %>
+      <% end %>
     </div>
   </div>
 <% else %>
