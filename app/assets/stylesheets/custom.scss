@@ -94,9 +94,9 @@ blockquote.featured {
   }
 }
 
-.jumbo-survey, .jumbo-featured {
+.jumbo-survey, .jumbo-featured, .jumbo-investment-project {
 
-  h1, h2, .back, .icon-angle-left, .p, a {
+  h1, h2, .back, .icon-angle-left, p, a {
     color: black;
   }
 
@@ -135,6 +135,35 @@ blockquote.featured {
 .jumbo-featured {
   background: $featured;
   border-bottom: 1px solid $featured;
+}
+
+.jumbo-investment-project {
+  background: $budget;
+  border-bottom: 1px solid $budget;
+
+  h1, h2, .back, .icon-angle-left, p, a {
+    color: white;
+  }
+
+  &.welcome {
+    background: $budget image-url('spending_proposals_bg.jpg');
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    .spending-proposal-timeline {
+      padding-top: $line-height;
+
+      ul li {
+        margin-right: $line-height;
+        padding-top: $line-height/2;
+
+        .icon-calendar {
+          display: none;
+        }
+      }
+    }
+  }
 }
 
 form.locale-form select {
@@ -634,11 +663,15 @@ table.age-groups {
   background-position: 50% 50%;
   background-repeat: no-repeat;
   background-size: cover;
-  margin: 0 auto;
 
   h1 {
     color: white;
-    margin: $line-height*2 0;
+    margin: $line-height 0;
+  }
+
+  .button {
+    background: white;
+    color: $budget;
   }
 }
 
@@ -724,6 +757,126 @@ table.age-groups {
       text-align: left !important;
     }
   }
+}
+
+.investment-project-sidebar-votes {
+
+  .sticky {
+    background: rgba(255,255,255,.85);
+
+    @media (max-width: $small-breakpoint) {
+      margin-top: $line-height;
+      position: initial;
+    }
+  }
+
+  .counters {
+
+    .callout {
+      float: left;
+      margin-right: $line-height/4;
+      min-height: rem-calc(130);
+      padding: $line-height/2 0;
+      width: rem-calc(125);
+    }
+
+    .callout.warning.unverified {
+      padding: $line-height/2;
+      width: 100%;
+    }
+
+    span {
+      text-transform: uppercase;
+    }
+  }
+
+  .votes-number {
+    font-size: rem-calc(80);
+    font-weight: bold;
+    line-height: rem-calc(80);
+    margin-bottom: 0;
+    vertical-align: top;
+  }
+
+  .icon-deleted {
+    font-size: rem-calc(40);
+    line-height: rem-calc(40);
+  }
+}
+
+.investment-projects-scope {
+
+  .callout {
+    background: white;
+    border-color: $border;
+    border-radius: 0;
+    color: $text;
+
+    @media (min-width: $small-breakpoint) {
+      height: $line-height*17;
+    }
+
+    a {
+      font-size: $base-font-size;
+    }
+  }
+
+  .callout.primary {
+    border-top: 4px solid $info-border;
+
+    @media (min-width: $small-breakpoint) {
+      background: image-url('investment_project_city.jpg') no-repeat bottom;
+    }
+  }
+
+  .callout.success {
+    border-top: 4px solid $success-border;
+
+    @media (min-width: $small-breakpoint) {
+      background: image-url('investment_project_districts.jpg') no-repeat bottom;
+    }
+
+    .button {
+      margin-bottom: 0;
+    }
+
+    .accordion {
+      background: white;
+      border: 0;
+    }
+
+    .accordion-title {
+      border: 0;
+      color: $text;
+      padding: 0;
+
+      &:before {
+        content: none;
+      }
+
+      &:hover, &:focus, &:hover h2, &:focus h2 {
+        background: none;
+        color: $text;
+        text-decoration: none;
+      }
+    }
+
+    .accordion-content {
+      background: none;
+      border: 0;
+
+      @media (min-width: $small-breakpoint) {
+        padding-bottom: rem-calc(39);
+      }
+    }
+  }
+}
+
+.no-underline a,
+.no-underline a:hover,
+.no-underline a:hover h2 {
+  color: $text !important;
+  text-decoration: none !important;
 }
 
 // 09. Featured

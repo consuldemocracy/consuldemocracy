@@ -3,6 +3,7 @@ en:
   account:
     show:
       change_credentials_link: Change my credentials
+      delegation: Delegate your votes
       email_on_comment_label: Notify me by email when someone comments on my proposals or debates
       email_on_comment_reply_label: Notify me by email when someone replies to my comments
       erase_account_link: Erase my account
@@ -334,6 +335,12 @@ en:
     update:
       form:
         submit_button: Save changes
+  representatives:
+    none: Without representative
+    form:
+      label: Select the person to whom delegate your votes
+      submit_button: Save
+    title: Delegate your votes
   shared:
     advanced_search:
       author_type: 'By author category'
@@ -411,27 +418,62 @@ en:
         new: Create
       title: Spending proposal title
     index:
-      date_1: February 22 to March 31
-      date_1_info: Collecting proposals
-      date_2: April 1 to April 15
-      date_2_info: Support
-      date_3: April 16 to May 14
-      date_3_info: Evaluation
-      date_4: May 15 to June 30
-      date_4_info: Final vote
-      title_html: You decide how to invest 60 million euros<br> to your city
-      title_page: Participatory budgeting
+      title: Participatory budgeting
+      unfeasible: Unfeasible investment projects
+      unfeasible_text: The proposals must meet a number of criteria (legality, concreteness, be the responsibility of the city, not exceed the limit of the budget; %{definitions}) to be declared viable and reach the stage of final vote. All proposals don't meet these criteria are marked as unfeasible and published in the following list, along with its report of infeasibility.
+      unfeasible_text_definitions: see definitions here
+      by_geozone: "Investment projects with scope: %{geozone}"
+      search_form:
+        button: Search
+        placeholder: Investment projects...
+        title: Search
+      search_results:
+        one: " containing the term '%{search_term}'"
+        other: " containing the term '%{search_term}'"
+      sidebar:
+        back: Back to select page
+        district: District
+        geozones: Scope of operation
+        votes: Supports remaining
+        votes_district: "You can only vote in the district %{district}"
+      orders:
+        random: random
+        confidence_score: highest rated
+    welcome:
+      city: All city
+      city_link: Support proposals of the city
+      city_text_html: Support <strong>10 investment projects</strong> of the city.
+      delegation: Delegation of votes
+      description_html: You can support <u>10 investment projects</u> of the city and <u>10 investment projects</u> of only one district.
+      districts: Districts
+      districts_link: Select a district
+      districts_text_html: Support <strong>10 investment projects</strong> of only one district.
+      in_two_minutes: All information about participatory budgets
+      title: "You already can support investment projetcs!"
+      unfeasible_link: See unfeasible investment projects
     new:
       back_link: Back
       more_info: "Important, not to be ruled out your proposal must comply:"
-      recommendation_one: It's mandatory that the proposal makes reference to a budgetable action.
       recommendation_one: See the %{requirements}.
       recommendation_one_link: requirements to be met by a proposal
       recommendation_three: Try to go into details when describing your spending proposal so the reviewing team undertands your points.
       recommendation_two: Each proposal must be submitted separately. You can make as many want.
       recommendations_title: How to create a spending proposal
       start_new: Create spending proposal
+      back_link: Back
+    show:
+      author_deleted: User deleted
+      unfeasibility_explanation: Unfeasibility explanation
     wrong_price_format: Only integer numbers
+    spending_proposal:
+      spending_proposal: Investment project
+      already_supported: You have already supported this. Share it!
+      support: Support
+      support_title: Support this project
+      supports:
+        one: 1 support
+        other: "%{count} supports"
+        zero: No supports
   stats:
     index:
       visits: Visits
@@ -482,6 +524,15 @@ en:
     unauthenticated: You must %{signin} or %{signup} to continue.
     verified_only: Only verified users can vote on proposals; %{verify_account}.
     verify_account: verify your account
+    spending_proposals:
+      not_logged_in: You must %{signin} or %{signup} to continue.
+      not_verified: Only verified users can vote on proposals; %{verify_account}.
+      unfeasible: Unfeasible proposal.
+      organization: Organisations are not permitted to vote.
+      no_city_supports_available: You have already used all your city-wide supports.
+      no_district_supports_available: You have already used all your district-wide supports.
+      different_district_assigned: You already supported other district proposals.
+      confirm_first_vote_on_district: "Everyone can support the proposal of the city and one district of their choice, If you accept you support this proposal and only can support the proposals for %{district}. This district can't change later. Do you want support this proposal and select this district?"
   welcome:
     debates:
       alt: Icon debates
@@ -506,7 +557,7 @@ en:
         text: Create your own proposals and supports those of other citizens.
         title: Citizen proposals
       spending_proposals:
-        link: Send your proposal
+        link: Support proposals
         text: You decide how to invest 60 million euros to your city.
         title: Participatory budgeting
     more_information: More information about this page

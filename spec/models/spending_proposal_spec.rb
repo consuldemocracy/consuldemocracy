@@ -66,14 +66,20 @@ describe SpendingProposal do
     end
 
     describe "#unfeasible?" do
-      it "returns true when not feasible" do
+      it "returns false when only not feasible" do
         spending_proposal.feasible = false
-        expect(spending_proposal.unfeasible?).to eq true
+        expect(spending_proposal.unfeasible?).to eq false
       end
 
       it "returns false when feasible" do
         spending_proposal.feasible = true
         expect(spending_proposal.unfeasible?).to eq false
+      end
+
+      it "returns true when not feasible and valuation finished" do
+        spending_proposal.feasible = false
+        spending_proposal.valuation_finished = true
+        expect(spending_proposal.unfeasible?).to eq true
       end
     end
 
@@ -232,6 +238,130 @@ describe SpendingProposal do
         expect(valuation_finished.first).to eq(spending_proposal3)
       end
     end
+
+    describe "feasible" do
+      it "should return all feasible spending proposals" do
+        feasible_spending_proposal = create(:spending_proposal, feasible: true)
+        create(:spending_proposal)
+
+        expect(SpendingProposal.feasible).to eq [feasible_spending_proposal]
+      end
+    end
+
+    describe "unfeasible" do
+      it "should return all unfeasible spending proposals" do
+        unfeasible_spending_proposal = create(:spending_proposal, feasible: false, valuation_finished: true)
+        create(:spending_proposal, feasible: true)
+        create(:spending_proposal, feasible: false)
+
+        expect(SpendingProposal.unfeasible).to eq [unfeasible_spending_proposal]
+      end
+    end
+
+    describe "not_unfeasible" do
+      it "should return all not unfeasible spending proposals" do
+        not_unfeasible_spending_proposal_1 = create(:spending_proposal, feasible: true)
+        not_unfeasible_spending_proposal_2 = create(:spending_proposal)
+        create(:spending_proposal, feasible: false)
+
+        not_unfeasibles = SpendingProposal.not_unfeasible
+
+        expect(not_unfeasibles.size).to eq(2)
+        expect(not_unfeasibles.include?(not_unfeasible_spending_proposal_1)).to eq(true)
+        expect(not_unfeasibles.include?(not_unfeasible_spending_proposal_2)).to eq(true)
+      end
+    end
   end
 
+  describe 'Supports' do
+    let(:user)        { create(:user, :level_two) }
+    let(:luser)       { create(:user) }
+    let(:district)    { create(:geozone) }
+    let(:city_sp)     { create(:spending_proposal) }
+    let(:district_sp) { create(:spending_proposal, geozone: district) }
+
+    describe '#reason_for_not_being_votable_by' do
+      it "rejects not logged in users" do
+        expect(city_sp.reason_for_not_being_votable_by(nil)).to eq(:not_logged_in)
+        expect(district_sp.reason_for_not_being_votable_by(nil)).to eq(:not_logged_in)
+      end
+
+      it "rejects not verified users" do
+        expect(city_sp.reason_for_not_being_votable_by(luser)).to eq(:not_verified)
+        expect(district_sp.reason_for_not_being_votable_by(luser)).to eq(:not_verified)
+      end
+
+      it "rejects unfeasible spending proposals" do
+        unfeasible = create(:spending_proposal, feasible: false, valuation_finished: true)
+        expect(unfeasible.reason_for_not_being_votable_by(user)).to eq(:unfeasible)
+      end
+
+      it "rejects organizations" do
+        create(:organization, user: user)
+        expect(city_sp.reason_for_not_being_votable_by(user)).to eq(:organization)
+        expect(district_sp.reason_for_not_being_votable_by(user)).to eq(:organization)
+      end
+
+      it "rejects city wide votes if no votes left for the user"  do
+        user.city_wide_spending_proposals_supported_count = 0
+        expect(city_sp.reason_for_not_being_votable_by(user)).to eq(:no_city_supports_available)
+      end
+
+      it "rejects district wide votes if no votes left for the user"  do
+        user.district_wide_spending_proposals_supported_count = 0
+        expect(district_sp.reason_for_not_being_votable_by(user)).to eq(:no_district_supports_available)
+      end
+
+      it "accepts valid district votes" do
+        expect(district_sp.reason_for_not_being_votable_by(user)).to be_nil
+        user.supported_spending_proposals_geozone_id = district.id
+        expect(district_sp.reason_for_not_being_votable_by(user)).to be_nil
+      end
+
+      it "rejects users with different and not nil district" do
+        user.supported_spending_proposals_geozone_id = create(:geozone).id
+        expect(district_sp.reason_for_not_being_votable_by(user)).to eq(:different_district_assigned)
+      end
+
+    end
+
+    describe '#register_vote' do
+      it "decreases a counter for city proposals" do
+        expect{ city_sp.register_vote(user, true) }.to change { user.reload.city_wide_spending_proposals_supported_count }.by(-1)
+      end
+
+      it "decreases a counter for district proposals and blocks the district" do
+        expect(user.supported_spending_proposals_geozone_id).to be_nil
+        expect{ district_sp.register_vote(user, true) }.to change { user.reload.district_wide_spending_proposals_supported_count }.by(-1)
+        expect(user.supported_spending_proposals_geozone_id).to eq(district.id)
+      end
+
+      it "does not decrease the counters if the user has already voted" do
+        city_sp.register_vote(user, true)
+        district_sp.register_vote(user, true)
+        expect{ city_sp.register_vote(user, true) }.to change { user.reload.city_wide_spending_proposals_supported_count }.by(0)
+        expect{ district_sp.register_vote(user, true) }.to change { user.reload.district_wide_spending_proposals_supported_count }.by(0)
+      end
+    end
+
+    describe '#votable_by?' do
+      it "allows voting on city-wide if the counter is not too low" do
+        expect(city_sp.votable_by?(user)).to be
+        user.city_wide_spending_proposals_supported_count = 0
+        expect(city_sp.votable_by?(user)).to_not be
+      end
+
+      it "allows voting on district-wide if the counter is not too low" do
+        expect(district_sp.votable_by?(user)).to be
+        user.district_wide_spending_proposals_supported_count = 0
+        expect(district_sp.votable_by?(user)).to_not be
+      end
+
+      it "does now allow voting if the district is already set up" do
+        expect(district_sp.votable_by?(user)).to be
+        user.supported_spending_proposals_geozone_id = district.id + 1
+        expect(district_sp.votable_by?(user)).to_not be
+      end
+    end
+  end
 end

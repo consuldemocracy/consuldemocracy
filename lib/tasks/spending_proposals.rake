@@ -10,4 +10,11 @@ namespace :spending_proposals do
       end
     end
   end
+
+  desc "Updates all spending proposals to recalculate their tsv column"
+  task touch: :environment do
+    SpendingProposal.find_in_batches do |spending_propsal|
+      spending_propsal.each(&:save)
+    end
+  end
 end

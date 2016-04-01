@@ -3,6 +3,7 @@ es:
   account:
     show:
       change_credentials_link: Cambiar mis datos de acceso
+      delegation: Delega tus votos
       email_on_comment_label: Recibir un email cuando alguien comenta en mis propuestas o debates
       email_on_comment_reply_label: Recibir un email cuando alguien contesta a mis comentarios
       erase_account_link: Darme de baja
@@ -151,7 +152,7 @@ es:
     not_saved: 'impidieron guardar %{resource}:'
     policy: Política de privacidad
     proposal: la propuesta
-    spending_proposal: la propuesta de gasto
+    spending_proposal: la propuesta de inversión
     user: la cuenta
     verification/sms: el teléfono
   geozones:
@@ -334,6 +335,12 @@ es:
     update:
       form:
         submit_button: Guardar cambios
+  representatives:
+    none: Sin representante
+    form:
+      label: Selecciona en quién quieres delegar tus votos
+      submit_button: Guardar
+    title: Delega tus votos
   shared:
     advanced_search:
       author_type: 'Por categoría de autor'
@@ -411,26 +418,61 @@ es:
         new: Crear
       title: Título de la propuesta de inversión
     index:
-      date_1: 22 febrero - 31 marzo
-      date_1_info: Recogida de propuestas
-      date_2: 1 abril - 15 abril
-      date_2_info: Apoyos
-      date_3: 16 abril - 14 mayo
-      date_3_info: Evaluación
-      date_4: 15 mayo - 30 junio
-      date_4_info: Votación final
-      title_html: Tú decides cómo invertir 60 millones de euros<br> para tu ciudad
-      title_page: Presupuestos participativos
+      title: Presupuestos participativos
+      unfeasible: Propuestas de inversión no viables
+      unfeasible_text: Las propuestas presentadas deben cumplir una serie de criterios (legalidad, concreción, ser competencia del Ayuntamiento, no superar el tope del presupuesto; %{definitions}) para ser declaradas viables y llegar hasta la fase de votación final. Todas las propuestas que no cumplen estos criterios son marcadas como inviables y publicadas en la siguiente lista, junto con su informe de inviabilidad.
+      unfeasible_text_definitions: ver definiciones aquí
+      by_geozone: "Propuestas de inversión con ámbito: %{geozone}"
+      search_form:
+        button: Buscar
+        placeholder: Propuestas de inversión...
+        title: Buscar
+      search_results:
+        one: " que contiene '%{search_term}'"
+        other: " que contienen '%{search_term}'"
+      sidebar:
+        back: Volver a página de selección
+        district: Distrito
+        geozones: Ámbitos de actuación
+        votes: Apoyos restantes
+        votes_district: "Solo puedes votar en el distrito %{district}"
+      orders:
+        random: Aleatorias
+        confidence_score: Mejor valoradas
+    welcome:
+      city: Toda la ciudad
+      city_link: Apoyar propuestas de toda la ciudad
+      city_text_html: Apoya <strong>10 propuestas de inversión</strong> que afecten a toda la ciudad.
+      delegation: Delegación de voto
+      description_html: Puedes apoyar <strong>10 propuestas</strong> que afecten a toda la ciudad y <strong>10 propuestas</strong> de un único distrito.
+      districts: Distritos
+      districts_link: Seleccionar un distrito
+      districts_text_html: Apoya <strong>10 propuestas de inversión</strong> que afecten a un solo distrito.
+      in_two_minutes: Toda la información sobre los presupuestos participativos
+      title: "¡Ya puedes apoyar las propuestas!"
+      unfeasible_link: Ver propuestas de inversión no viables
     new:
-      back_link: Volver
-      more_info: "Importante, para no ser descartada tu propuesta debe cumplir:"
+      more_info: "¿Cómo funcionan los presupuestos participativos?"
       recommendation_one: Consulta los %{requirements}.
       recommendation_one_link: requisitos que debe cumplir una propuesta
-      recommendation_three: Intenta detallar lo máximo posible la propuesta para que el equipo de gobierno encargado de estudiarla tenga las menores dudas posibles.
-      recommendation_two: Cada propuesta debe presentarse por separado. Puedes hacer cuantas quieras.
+      recommendation_three: Intenta detallar lo máximo posible la propuesta para que el equipo de gobierno encargado de estudiarla tenga las menor dudas posibles.
+      recommendation_two: Cualquier propuesta o comentario que implique acciones ilegales será eliminada.
       recommendations_title: Cómo crear una propuesta de inversión
       start_new: Crear una propuesta de inversión
+      back_link: Volver
+    show:
+      author_deleted: Usuario eliminado
+      unfeasibility_explanation: Informe de inviabilidad
     wrong_price_format: Solo puede incluir caracteres numéricos
+    spending_proposal:
+      spending_proposal: Propuesta de inversión
+      already_supported: Ya has apoyado este proyecto. ¡Compártelo!
+      support: Apoyar
+      support_title: Apoyar este proyecto
+      supports:
+        one: 1 apoyo
+        other: "%{count} apoyos"
+        zero: Sin apoyos
   stats:
     index:
       visits: Visitas
@@ -481,6 +523,15 @@ es:
     unauthenticated: Necesitas %{signin} o %{signup} para continuar.
     verified_only: Las propuestas sólo pueden ser votadas por usuarios verificados, %{verify_account}.
     verify_account: verifica tu cuenta
+    spending_proposals:
+      not_logged_in: Necesitas %{signin} o %{signup} para continuar.
+      not_verified: Las propuestas de inversión sólo pueden ser apoyadas por usuarios verificados, %{verify_account}.
+      unfeasible: Las propuestas no viables no pueden recibir apoyos.
+      organization: Las organizaciones no pueden votar.
+      no_city_supports_available: Ya has usado todos tus apoyos de ciudad.
+      no_district_supports_available: Ya has usado todos tus apoyos de distrito.
+      different_district_assigned: Ya apoyaste propuestas de otro distrito.
+      confirm_first_vote_on_district: "Cada persona puede apoyar las propuestas de toda la ciudad y de un distrito a su elección. Si pulsas aceptar apoyarás esta propuesta y de ahora en adelante sólo podrás apoyar las propuestas de %{district}. Este distrito no se puede cambiar luego. ¿Quieres apoyar esta propuesta y seleccionar este distrito?"
   welcome:
     debates:
       alt: Icono debates
@@ -505,7 +556,7 @@ es:
         text: Crear tus propias propuestas y apoya las de otros ciudadanos.
         title: Propuestas ciudadanas
       spending_proposals:
-        link: Envia tu propuesta
+        link: Preselección de propuestas
         text: Tú decides cómo invertir 60 millones de euros para tu ciudad.
         title: Presupuestos participativos
     more_information: Más información sobre esta página

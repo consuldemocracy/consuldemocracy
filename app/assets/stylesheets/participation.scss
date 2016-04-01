@@ -238,7 +238,7 @@
     }
   }
 
-  .anonymous-votes, .organizations-votes {
+  .anonymous-votes, .organizations-votes, .no-supports-allowed {
     background: $warning-bg;
     color: $warning-color;
     height: 100%;
@@ -269,12 +269,16 @@
   }
 }
 
+.no-supports-allowed.minimal {
+  height: $line-height*3 !important;
+}
+
 // 02. New participation
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
 .debate-new, .debate-edit,
 .proposal-new, .proposal-edit,
-.spending-proposal-new, .spending-proposal-edit  {
+.spending-proposal-new, .spending-proposal-edit {
 
   .back {
     @include back;
@@ -335,7 +339,7 @@
 // 03. Show participation
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
-.debate-show, .proposal-show {
+.debate-show, .proposal-show, .investment-project-show {
 
   .social-share-full .social-share-button {
     display:inline;
@@ -350,12 +354,11 @@
     vertical-align: rem-calc(10);
   }
 
-
   .edit-debate, .edit-proposal {
     margin-bottom: 0;
   }
 
-  .debate-info, .proposal-info {
+  .debate-info, .proposal-info, .investment-project-info {
     clear: both;
     color: $text-medium;
     font-size: $small-font-size;
@@ -536,17 +539,28 @@
   color: $border;
 }
 
+.investment-project-show p {
+  word-break: break-word;
+}
+
 // 04. List participation
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
-.debates-list, .proposals-list {
+.debates-list, .proposals-list, .investment-projects-list {
 
   @media (min-width: $small-breakpoint) {
     margin-bottom: rem-calc(48);
   }
 }
 
-.debate, .proposal {
+.investment-projects-list {
+
+  @media (min-width: $small-breakpoint) {
+    min-height: $line-height*15;
+  }
+}
+
+.debate, .proposal, .investment-project {
   margin-bottom: 0;
   margin-top: 0;
 
@@ -565,7 +579,7 @@
       padding-bottom: rem-calc(12);
     }
 
-    .label-debate, .label-proposal {
+    .label-debate, .label-proposal, .label-investment-project {
       background: none;
       clear: both;
       display: block;
@@ -587,6 +601,10 @@
       color: $proposals;
     }
 
+    .label-investment-project {
+      color: $budget;
+    }
+
     h3 {
       font-weight: bold;
       margin: 0;
@@ -596,7 +614,7 @@
       }
     }
 
-    .debate-content, .proposal-content {
+    .debate-content, .proposal-content, .investment-project-content {
       margin: 0;
       min-height: rem-calc(180);
       position: relative;
@@ -606,24 +624,27 @@
       }
     }
 
-    .icon-debates, .icon-proposals {
+    .icon-debates, .icon-proposals, .icon-budget {
       font-size: rem-calc(18);
       line-height: $line-height;
-      position: absolute;
+      margin-left: rem-calc(6);
       top: 0;
     }
 
     .icon-debates {
       color: $debates;
-      left: rem-calc(48);
     }
 
     .icon-proposals {
       color: $proposals;
-      left: rem-calc(72);
     }
 
-    .debate-info, .proposal-info {
+    .icon-budget {
+      color: $budget;
+      font-size: $small-font-size;
+    }
+
+    .debate-info, .proposal-info, .investment-project-info {
       color: $text-medium;
       font-size: $small-font-size;
       margin: rem-calc(6) 0 0;
@@ -638,7 +659,7 @@
       }
     }
 
-    .debate-description, .proposal-description {
+    .debate-description, .proposal-description, .investment-project-description {
       color: $text;
       font-size: rem-calc(13);
       height: rem-calc(72);
@@ -794,6 +815,67 @@
         float: none;
         margin-left: 0;
         padding-top: 0;
+      }
+    }
+  }
+}
+
+.investment-project, .investment-project-show {
+
+  .supports {
+    @include supports;
+    background: none;
+    border: 0;
+    border-left: 1px solid $border;
+    margin: 0 rem-calc(-12);
+    min-height: rem-calc(180);
+    padding-top: $line-height*1.5;
+
+    &:after {
+      content: none;
+    }
+
+    .button-support {
+      background: $budget;
+      color: white;
+
+      &:hover {
+        background: $budget-hover;
+        color: white;
+        cursor: pointer;
+      }
+
+      &:active {
+        opacity: .75;
+      }
+    }
+
+    .total-supports {
+      color: $budget;
+      font-size: $base-font-size;
+      font-weight: bold;
+    }
+
+    .supported {
+      color: $budget;
+    }
+
+    .no-supports-allowed{
+      background: rgba(69,67,114,.96);
+      color: white;
+      padding: rem-calc(12);
+    }
+
+    .no-supports-allowed p, .no-supports-allowed a {
+      color: white;
+    }
+
+    .share-supported {
+
+      .social-share-button-twitter,
+      .social-share-button-facebook,
+      .social-share-button-google_plus {
+        color: $budget;
       }
     }
   }
