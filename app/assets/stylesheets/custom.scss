@@ -150,6 +150,19 @@ blockquote.featured {
     background-position: 50% 50%;
     background-repeat: no-repeat;
     background-size: cover;
+
+    .spending-proposal-timeline {
+      padding-top: $line-height;
+
+      ul li {
+        margin-right: $line-height;
+        padding-top: $line-height/2;
+
+        .icon-calendar {
+          display: none;
+        }
+      }
+    }
   }
 }
 
