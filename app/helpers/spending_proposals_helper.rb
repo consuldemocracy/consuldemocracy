@@ -28,6 +28,11 @@ module SpendingProposalsHelper
       current_user.district_wide_spending_proposals_supported_count == 9
   end
 
+  def last_available_vote_on_spending_proposal?(spending_proposal)
+    (spending_proposal.district_wide? && current_user.district_wide_spending_proposals_supported_count == 0) ||
+    (spending_proposal.city_wide? && current_user.city_wide_spending_proposals_supported_count == 0)
+  end
+
   def no_more_city_votes_css
     if params[:geozone] == 'all' && current_user.city_wide_spending_proposals_supported_count == 0 ||
        params[:geozone].present? && current_user.district_wide_spending_proposals_supported_count == 0
