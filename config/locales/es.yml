@@ -420,6 +420,8 @@ es:
     index:
       title: Presupuestos participativos
       unfeasible: Propuestas de inversión no viables
+      unfeasible_text: Las propuestas presentadas deben cumplir una serie de criterios (legalidad, concreción, ser competencia del Ayuntamiento, no superar el tope del presupuesto; %{definitions} para ser declaradas viables y llegar hasta la fase de votación final. Todas las propuestas que no cumplen estos criterios son marcadas como inviables y publicadas en la siguiente lista, junto con su informe de inviabilidad.
+      unfeasible_text_definitions: (ver definiciones aquí)
       by_geozone: "Propuestas de inversión con ámbito: %{geozone}"
       search_form:
         button: Buscar
@@ -440,13 +442,13 @@ es:
       city: Toda la ciudad
       city_link: Apoyar propuestas de toda la ciudad
       city_text_html: Apoya <strong>10 propuestas de inversión</strong> que afecten a toda la ciudad.
+      delegation: Delegación de voto
       description_html: Puedes apoyar <strong>10 propuestas</strong> que afecten a toda la ciudad y <strong>10 propuestas</strong> de un único distrito.
       districts: Distritos
       districts_link: Seleccionar un distrito
       districts_text_html: Apoya <strong>10 propuestas de inversión</strong> que afecten a un solo distrito.
-      in_two_minutes: Presupuestos participativos en dos minutos
+      in_two_minutes: Toda la información sobre los presupuestos participativos
       title: "¡Ya puedes apoyar las propuestas!"
-      unfeasible: Propuestas de inversión no viables
       unfeasible_link: Ver propuestas de inversión no viables
     new:
       more_info: "¿Cómo funcionan los presupuestos participativos?"
@@ -528,7 +530,7 @@ es:
       no_city_supports_available: Ya has usado todos tus apoyos de ciudad.
       no_district_supports_available: Ya has usado todos tus apoyos de distrito.
       different_district_assigned: Ya apoyaste propuestas de otro distrito.
-      confirm_first_vote_on_district: "Si apoyas esta propuesta eligirás este distrito y ya no podrás cambiarlo, y sólo podrás votar las propuestas de %{district} y de toda la ciudad... ¿Quieres continuar?"
+      confirm_first_vote_on_district: "Cada persona puede apoyar las propuestas de toda la ciudad y de un distrito a su elección. Si pulsas aceptar apoyarás esta propuesta y de ahora en adelante sólo podrás apoyar las propuestas de %{district}. Este distrito no se puede cambiar luego. ¿Quieres apoyar esta propuesta y seleccionar este distrito?"
   welcome:
     debates:
       alt: Icono debates
