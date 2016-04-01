@@ -89,14 +89,52 @@ feature 'Spending proposals' do
 
   context("Orders") do
 
-    scenario 'Default order is random', :js do
-      create(:spending_proposal, title: 'Best proposal')
-      create(:spending_proposal, title: 'Worst proposal')
-      create(:spending_proposal, title: 'Medium proposal')
+    scenario "Default order is random" do
+      per_page = Kaminari.config.default_per_page
+      (per_page + 2).times { create(:spending_proposal) }
+
+      visit spending_proposals_path
+      order = all(".investment-project h3").collect {|i| i.text }
+
+      visit spending_proposals_path
+      new_order = eq(all(".investment-project h3").collect {|i| i.text })
+
+      expect(order).to_not eq(new_order)
+    end
+
+    scenario "Random order after another order" do
+      per_page = Kaminari.config.default_per_page
+      (per_page + 2).times { create(:spending_proposal) }
+
+      visit spending_proposals_path
+      click_link "highest rated"
+      click_link "random"
+
+      order = all(".investment-project h3").collect {|i| i.text }
+
+      visit spending_proposals_path
+      new_order = eq(all(".investment-project h3").collect {|i| i.text })
+
+      expect(order).to_not eq(new_order)
+    end
+
+
+    scenario 'Random order maintained with pagination', :js do
+      per_page = Kaminari.config.default_per_page
+      (per_page + 2).times { create(:spending_proposal) }
 
       visit spending_proposals_path
 
-      expect(page).to have_css('.investment-project', count: 3)
+      order = all(".investment-project h3").collect {|i| i.text }
+
+      click_link 'Next'
+      expect(page).to have_content "You're on page 2"
+
+      click_link 'Previous'
+      expect(page).to have_content "You're on page 1"
+
+      new_order = all(".investment-project h3").collect {|i| i.text }
+      expect(order).to eq(new_order)
     end
 
     scenario 'Proposals are ordered by confidence_score', :js do
