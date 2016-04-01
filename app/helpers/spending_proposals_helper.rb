@@ -29,6 +29,7 @@ module SpendingProposalsHelper
   end
 
   def no_more_city_votes_css
+    return "" unless current_user.present?
     if params[:geozone] == 'all' && current_user.city_wide_spending_proposals_supported_count == 0 ||
        params[:geozone].present? && current_user.district_wide_spending_proposals_supported_count == 0
        "minimal"
