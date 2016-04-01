@@ -750,6 +750,11 @@ table.age-groups {
 
   .sticky {
     background: rgba(255,255,255,.85);
+
+    @media (max-width: $small-breakpoint) {
+      margin-top: $line-height;
+      position: initial;
+    }
   }
 
   .counters {

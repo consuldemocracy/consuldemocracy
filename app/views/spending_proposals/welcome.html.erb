@@ -5,7 +5,7 @@
       <p><%= t("spending_proposals.welcome.description_html") %></p>
     </div>
     <div class="small-12 medium-4 column">
-      <%= link_to t("spending_proposals.welcome.in_two_minutes"), page_path('participatory_budget/in_two_minutes'), class: "button expanded margin-top" %>
+      <%= link_to t("spending_proposals.welcome.in_two_minutes"), '/participatory_budget/in_two_minutes', class: "button expanded margin-top" %>
     </div>
   </div>
 </div>
@@ -54,7 +54,7 @@
 
 <div class="row">
   <div class="small-12 column margin-top">
-    <h3><%= t("spending_proposals.welcome.unfeasible") %></h3>
-    <%= link_to t("spending_proposals.welcome.unfeasible_link"), spending_proposals_path(unfeasible: '1') %>
+    <p><%= link_to t("spending_proposals.welcome.unfeasible_link"), spending_proposals_path(unfeasible: '1') %></p>
+    <p><%= link_to t("spending_proposals.welcome.delegation"), '/delegation' %></p>
   </div>
 </div>

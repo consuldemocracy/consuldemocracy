@@ -39,7 +39,15 @@
     <div id="investment-projects" class="investment-projects-list small-12 medium-9 column">
 
       <div class="small-12 search-results margin-bottom">
-        <%= content_tag(:h2, t("spending_proposals.index.unfeasible")) if params[:unfeasible].present? %>
+
+        <% if params[:unfeasible].present? %>
+          <h2><%= t("spending_proposals.index.unfeasible") %></h2>
+          <p>
+              <%= t("spending_proposals.index.unfeasible_text",
+              definitions: link_to(t("spending_proposals.index.unfeasible_text_definitions"), "https://decide.madrid.es/participatory_budget_info#20")).html_safe %>
+          </p>
+        <% end %>
+
         <%= content_tag(:h2, t("spending_proposals.index.by_geozone", geozone: @filter_geozone_name)) if @filter_geozone_name.present? %>
         <% if params[:search].present? %>
           <h2>
