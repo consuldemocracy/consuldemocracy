@@ -612,6 +612,14 @@ footer {
   }
 }
 
+.geozone a.featured-link {
+  display: block;
+  font-size: $base-font-size;
+  margin-bottom: $line-height;
+  text-align: center;
+  width: 100%;
+}
+
 h3.sidebar-title {
   border-top: 2px solid $brand;
   display: inline-block;
