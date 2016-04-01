@@ -11,6 +11,7 @@ describe "Abilities::Moderator" do
   let(:debate) { create(:debate) }
   let(:comment) { create(:comment) }
   let(:proposal) { create(:proposal) }
+  let(:spending_proposal) { create(:spending_proposal) }
 
   let(:own_debate) { create(:debate, author: user) }
   let(:own_comment) { create(:comment, author: user) }
@@ -101,7 +102,10 @@ describe "Abilities::Moderator" do
 
     it { should be_able_to(:comment_as_moderator, debate) }
     it { should be_able_to(:comment_as_moderator, proposal) }
+    it { should be_able_to(:comment_as_moderator, spending_proposal) }
+
     it { should_not be_able_to(:comment_as_administrator, debate) }
     it { should_not be_able_to(:comment_as_administrator, proposal) }
+    it { should_not be_able_to(:comment_as_administrator, spending_proposal) }
   end
 end
