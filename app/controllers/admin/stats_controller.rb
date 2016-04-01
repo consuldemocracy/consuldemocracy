@@ -6,11 +6,13 @@ class Admin::StatsController < Admin::BaseController
     @visits = Visit.count
     @debates = Debate.with_hidden.count
     @proposals = Proposal.with_hidden.count
+    @spending_proposals = SpendingProposal.with_hidden.count
     @comments = Comment.with_hidden.count
     @surveys = SurveyAnswer.count
 
     @debate_votes = Vote.where(votable_type: 'Debate').count
     @proposal_votes = Vote.where(votable_type: 'Proposal').count
+    @spending_proposal_votes = Vote.where(votable_type: 'SpendingProposal').count
     @comment_votes = Vote.where(votable_type: 'Comment').count
     @open_answer_votes = Vote.where(votable_type: 'OpenAnswer').count
     @votes = Vote.count

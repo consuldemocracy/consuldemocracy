@@ -196,6 +196,8 @@ es:
           open_answer_votes: Votos preguntas abiertas
           proposal_votes: Votos en propuestas
           proposals: Propuestas
+          spending_proposal_votes: Votos Propuesta Inversión
+          spending_proposals: Propuestas de inversión
           surveys: Encuestas rellenadas
           unverified_users: Usuarios sin verificar
           user_level_three: Usuarios de nivel tres

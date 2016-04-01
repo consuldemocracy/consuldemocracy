@@ -196,6 +196,8 @@ en:
           open_answer_votes: Open answer votes
           proposal_votes: Proposal votes
           proposals: Proposals
+          spending_proposal_votes: Investment project votes
+          spending_proposals: Investment projects
           surveys: Surveys completed
           unverified_users: Unverified users
           user_level_three: Level three users

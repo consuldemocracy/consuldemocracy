@@ -16,6 +16,7 @@ feature 'Stats' do
       3.times { create(:comment, commentable: Debate.first) }
       4.times { create(:visit) }
       5.times { create(:survey_answer) }
+      6.times { create(:spending_proposal) }
 
       visit admin_stats_path
 
@@ -24,6 +25,7 @@ feature 'Stats' do
       expect(page).to have_content "Comments 3"
       expect(page).to have_content "Visits 4"
       expect(page).to have_content "Surveys completed 5"
+      expect(page).to have_content "Investment projects 6"
     end
 
     scenario 'Votes' do
@@ -39,13 +41,17 @@ feature 'Stats' do
       open_answer = create(:open_answer)
       4.times { create(:vote, votable: open_answer) }
 
+      spending_proposal = create(:spending_proposal)
+      5.times { create(:vote, votable: spending_proposal) }
+
       visit admin_stats_path
 
       expect(page).to have_content "Debate votes 1"
       expect(page).to have_content "Proposal votes 2"
       expect(page).to have_content "Comment votes 3"
       expect(page).to have_content "Open answer votes 4"
-      expect(page).to have_content "Total votes 10"
+      expect(page).to have_content "Investment project votes 5"
+      expect(page).to have_content "Total votes 15"
     end
 
     scenario 'Users' do
