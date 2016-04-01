@@ -88,6 +88,8 @@ class SpendingProposalsController < ApplicationController
       if params[:order] == 'random' || params[:order].blank?
         params[:random_seed] ||= rand(99)/100.0
         SpendingProposal.connection.execute "select setseed(#{params[:random_seed]})"
+      else
+        params[:random_seed] = nil
       end
     end
 
