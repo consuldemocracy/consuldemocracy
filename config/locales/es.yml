@@ -3,6 +3,7 @@ es:
   account:
     show:
       change_credentials_link: Cambiar mis datos de acceso
+      delegation: Delega tus votos
       email_on_comment_label: Recibir un email cuando alguien comenta en mis propuestas o debates
       email_on_comment_reply_label: Recibir un email cuando alguien contesta a mis comentarios
       erase_account_link: Darme de baja
@@ -108,6 +109,8 @@ es:
       select_order: Ordenar por
       start_debate: Empieza un debate
       title: Debates
+      top: Destacados
+      top_link_debates: '#TúPreguntas'
     new:
       back_link: Volver
       form:
@@ -149,12 +152,11 @@ es:
     not_saved: 'impidieron guardar %{resource}:'
     policy: Política de privacidad
     proposal: la propuesta
-    spending_proposal: la propuesta de gasto
+    spending_proposal: la propuesta de inversión
     user: la cuenta
     verification/sms: el teléfono
   geozones:
     none: Toda la ciudad
-    all: Todos los ámbitos
   layouts:
     application:
       chrome: Google Chrome
@@ -189,6 +191,7 @@ es:
       external_link_opendata_url: http://datos.madrid.es
       external_link_transparency: Transparencia
       external_link_transparency_url: https://transparencia.madrid.es
+      help_translate: Ayúdanos a traducir
       locale: 'Idioma:'
       logo: Madrid
       moderation: Moderar
@@ -201,20 +204,14 @@ es:
         other: Tienes %{count} notificaciones nuevas
       no_notifications: No tienes notificaciones nuevas
       open: abierto
-      open_city_slogan_html: Existen ciudades gobernadas directamente por sus habitantes, que <strong>debaten</strong> sobre temas que les preocupan, <strong>proponen</strong> ideas para mejorar sus vidas y <strong>deciden</strong> entre todas y todos las que se llevan a cabo. Madrid ya es una de ellas.
+      open_city_slogan_html: En Madrid sus habitantes, <strong>debaten</strong> sobre temas que les preocupan, <strong>proponen</strong> ideas para mejorar sus vidas y <strong>deciden</strong> entre todas y todos las que se llevan a cabo.
+      open_city_slogan_short: Existen ciudades gobernadas directamente por sus habitantes, Madrid ya es una de ellas.
       open_city_title: La ciudad que quieres será la ciudad que quieras.
       open_data: Datos abiertos
       open_gov: Gobierno %{open}
       proposals: Propuestas
-      see_all: Ver propuestas
-      spending_proposals: Presupuestos ciudadanos
-  legislation:
-    help:
-      alt: Selecciona el texto que quieres comentar y pulsa en el botón con el lápiz.
-      text: Para comentar este documento debes %{sign_in} o %{sign_up}. Después selecciona el texto que quieres comentar y pulsa en el botón con el lápiz.
-      text_sign_in: iniciar sesión
-      text_sign_up: registrarte
-      title: "¿Cómo puedo comentar este documento?"
+      processes: Procesos abiertos
+      spending_proposals: Presupuestos participativos
   locale: Español
   notifications:
     index:
@@ -299,6 +296,8 @@ es:
       form:
         submit_button: Crear propuesta
       more_info: "¿Cómo funcionan las propuestas ciudadanas?"
+      participatory_budget: ¿Quieres hacer una propuesta de inversión?
+      participatory_budget_info_html: Si lo que quieres es crear una propuesta de inversión, entra en <strong><u>Presupuestos participativos</u></strong>.
       recommendation_one: No escribas el título de la propuesta o frases enteras en mayúsculas. En internet eso se considera gritar. Y a nadie le gusta que le griten.
       recommendation_three: Disfruta de este espacio, de las voces que lo llenan, también es tuyo.
       recommendation_two: Cualquier propuesta o comentario que implique una acción ilegal será eliminada, también las que tengan la intención de sabotear los espacios de propuesta, todo lo demás está permitido.
@@ -336,6 +335,12 @@ es:
     update:
       form:
         submit_button: Guardar cambios
+  representatives:
+    none: Sin representante
+    form:
+      label: Selecciona en quién quieres delegar tus votos
+      submit_button: Guardar
+    title: Delega tus votos
   shared:
     advanced_search:
       author_type: 'Por categoría de autor'
@@ -407,14 +412,16 @@ es:
       association_name: 'Nombre de la asociación'
       description: Descripción detallada
       external_url: Enlace a documentación adicional
-      geozone: "Ámbito de actuación"
+      geozone: "Elige si es una propuesta para toda la ciudad o para un distrito"
       submit_buttons:
         create: Crear
         new: Crear
-      title: Título de la propuesta de gasto
+      title: Título de la propuesta de inversión
     index:
       title: Presupuestos participativos
       unfeasible: Propuestas de inversión no viables
+      unfeasible_text: Las propuestas presentadas deben cumplir una serie de criterios (legalidad, concreción, ser competencia del Ayuntamiento, no superar el tope del presupuesto; %{definitions}) para ser declaradas viables y llegar hasta la fase de votación final. Todas las propuestas que no cumplen estos criterios son marcadas como inviables y publicadas en la siguiente lista, junto con su informe de inviabilidad.
+      unfeasible_text_definitions: ver definiciones aquí
       by_geozone: "Propuestas de inversión con ámbito: %{geozone}"
       search_form:
         button: Buscar
@@ -424,20 +431,38 @@ es:
         one: " que contiene '%{search_term}'"
         other: " que contienen '%{search_term}'"
       sidebar:
+        back: Volver a página de selección
+        district: Distrito
         geozones: Ámbitos de actuación
-        feasibility: Viabilidad
-        unfeasible: No viables
-      start_spending_proposal: Crea una propuesta de inversión
+        votes: Apoyos restantes
+        votes_district: "Solo puedes votar en el distrito %{district}"
+      orders:
+        random: Aleatorias
+        confidence_score: Mejor valoradas
+    welcome:
+      city: Toda la ciudad
+      city_link: Apoyar propuestas de toda la ciudad
+      city_text_html: Apoya <strong>10 propuestas de inversión</strong> que afecten a toda la ciudad.
+      delegation: Delegación de voto
+      description_html: Puedes apoyar <strong>10 propuestas</strong> que afecten a toda la ciudad y <strong>10 propuestas</strong> de un único distrito.
+      districts: Distritos
+      districts_link: Seleccionar un distrito
+      districts_text_html: Apoya <strong>10 propuestas de inversión</strong> que afecten a un solo distrito.
+      in_two_minutes: Toda la información sobre los presupuestos participativos
+      title: "¡Ya puedes apoyar las propuestas!"
+      unfeasible_link: Ver propuestas de inversión no viables
     new:
       more_info: "¿Cómo funcionan los presupuestos participativos?"
-      recommendation_one: Es fundamental que haga referencia a una actuación presupuestable.
+      recommendation_one: Consulta los %{requirements}.
+      recommendation_one_link: requisitos que debe cumplir una propuesta
       recommendation_three: Intenta detallar lo máximo posible la propuesta para que el equipo de gobierno encargado de estudiarla tenga las menor dudas posibles.
       recommendation_two: Cualquier propuesta o comentario que implique acciones ilegales será eliminada.
-      recommendations_title: Cómo crear una propuesta de gasto
-      start_new: Crear una propuesta de gasto
+      recommendations_title: Cómo crear una propuesta de inversión
+      start_new: Crear una propuesta de inversión
       back_link: Volver
     show:
       author_deleted: Usuario eliminado
+      unfeasibility_explanation: Informe de inviabilidad
     wrong_price_format: Solo puede incluir caracteres numéricos
     spending_proposal:
       spending_proposal: Propuesta de inversión
@@ -498,6 +523,15 @@ es:
     unauthenticated: Necesitas %{signin} o %{signup} para continuar.
     verified_only: Las propuestas sólo pueden ser votadas por usuarios verificados, %{verify_account}.
     verify_account: verifica tu cuenta
+    spending_proposals:
+      not_logged_in: Necesitas %{signin} o %{signup} para continuar.
+      not_verified: Las propuestas de inversión sólo pueden ser apoyadas por usuarios verificados, %{verify_account}.
+      unfeasible: Las propuestas no viables no pueden recibir apoyos.
+      organization: Las organizaciones no pueden votar.
+      no_city_supports_available: Ya has usado todos tus apoyos de ciudad.
+      no_district_supports_available: Ya has usado todos tus apoyos de distrito.
+      different_district_assigned: Ya apoyaste propuestas de otro distrito.
+      confirm_first_vote_on_district: "Cada persona puede apoyar las propuestas de toda la ciudad y de un distrito a su elección. Si pulsas aceptar apoyarás esta propuesta y de ahora en adelante sólo podrás apoyar las propuestas de %{district}. Este distrito no se puede cambiar luego. ¿Quieres apoyar esta propuesta y seleccionar este distrito?"
   welcome:
     debates:
       alt: Icono debates
@@ -511,6 +545,21 @@ es:
       alt: Icono se hace
       description: Si la propuesta es aceptada mayoritariamente, el Ayuntamiento la asume como propia y se hace.
       title: Se hace
+    featured:
+      page_title: Destacados
+      process:
+        link: Ver resultados
+        text: Ya están disponibles los resultados de la encuesta.
+        title: Remodelación de Plaza de España
+      proposals:
+        link: Ver propuestas
+        text: Crear tus propias propuestas y apoya las de otros ciudadanos.
+        title: Propuestas ciudadanas
+      spending_proposals:
+        link: Preselección de propuestas
+        text: Tú decides cómo invertir 60 millones de euros para tu ciudad.
+        title: Presupuestos participativos
+    more_information: Más información sobre esta página
     proposal:
       alt: Icono propones
       description: Espacio abierto para propuestas ciudadanas sobre el tipo de ciudad en el que queremos vivir.
@@ -543,10 +592,3 @@ es:
     google_oauth2:
       sign_in: "Entra con Google"
       sign_up: "Regístrate con Google"
-  legislation:
-    help:
-      title: "¿Cómo puedo comentar este documento?"
-      text: "Para comentar este documento debes %{sign_in} o %{sign_up}. Después selecciona el texto que quieres comentar y pulsa en el botón con el lápiz."
-      text_sign_in: "iniciar sesión"
-      text_sign_up: "registrarte"
-      alt: "Selecciona el texto que quieres comentar y pulsa en el botón con el lápiz."

@@ -6,8 +6,16 @@
       <%= t("proposals.new.back_link") %>
     <% end %>
     <h1><%= t("proposals.new.start_new") %></h1>
+
+    <div class="callout featured">
+      <%= link_to participatory_budget_path do %>
+        <h3><%= t("proposals.new.participatory_budget") %></h3>
+        <p><%= t("proposals.new.participatory_budget_info_html") %></p>
+      <% end %>
+    </div>
+
     <div data-alert class="callout primary">
-      <%= link_to "/proposals_info",title: t('shared.target_blank_html'), target: "_blank" do %>
+      <%= link_to "/proposals_info", title: t('shared.target_blank_html'), target: "_blank" do %>
         <%= t("proposals.new.more_info")%>
       <% end %>
     </div>

@@ -161,7 +161,7 @@ a {
   margin-top: rem-calc(-24);
 }
 
-.padding  {
+.padding {
   padding-bottom: $line-height;
   padding-top: $line-height;
 }
@@ -255,6 +255,10 @@ a {
 
 .back, .icon-angle-left {
   @include back;
+}
+
+.panel.white {
+  background: white;
 }
 
 // 02. Header
@@ -352,6 +356,44 @@ header {
       background: white;
       box-shadow: 0 7px 0 white, 0 14px 0 white;
     }
+  }
+}
+
+.jumbo {
+  background: $highlight;
+
+  @media (min-width: $small-breakpoint) {
+    padding: rem-calc(24) 0;
+  }
+
+  h1, p {
+    color: $highlight-color;
+  }
+}
+
+.jumbo-survey {
+  background: #33DADF;
+  border-bottom: 1px solid #33DADF;
+
+  @media (min-width: $small-breakpoint) {
+    padding-top: $line-height;
+  }
+
+  h1, h2, .back, .icon-angle-left, .p, a {
+    color: black;
+  }
+}
+
+.jumbo-featured {
+  background: $featured;
+  border-bottom: 1px solid $featured;
+
+  @media (min-width: $small-breakpoint) {
+    padding-top: $line-height;
+  }
+
+  h1, h2, .back, .icon-angle-left, .p, a {
+    color: black;
   }
 }
 
@@ -533,6 +575,7 @@ footer {
 .footer {
   background: $footer-bg;
   border-top: 6px solid $brand;
+  margin-top: $line-height*2;
   padding-top: $line-height;
 }
 
@@ -567,6 +610,14 @@ footer {
     background: $highlight;
     color: $link-hover;
   }
+}
+
+.geozone a.featured-link {
+  display: block;
+  font-size: $base-font-size;
+  margin-bottom: $line-height;
+  text-align: center;
+  width: 100%;
 }
 
 h3.sidebar-title {

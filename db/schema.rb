@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160329160106) do
+ActiveRecord::Schema.define(version: 20160331195656) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -177,6 +177,13 @@ ActiveRecord::Schema.define(version: 20160329160106) do
   add_index "flags", ["user_id", "flaggable_type", "flaggable_id"], name: "access_inappropiate_flags", using: :btree
   add_index "flags", ["user_id"], name: "index_flags_on_user_id", using: :btree
 
+  create_table "forums", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "geozones", force: :cascade do |t|
     t.string   "name"
     t.string   "html_map_coordinates"
@@ -228,6 +235,21 @@ ActiveRecord::Schema.define(version: 20160329160106) do
 
   add_index "notifications", ["user_id"], name: "index_notifications_on_user_id", using: :btree
 
+  create_table "open_answers", force: :cascade do |t|
+    t.text     "text"
+    t.integer  "question_code"
+    t.integer  "user_id"
+    t.integer  "survey_code"
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
+    t.integer  "cached_votes_total", default: 0
+    t.integer  "cached_votes_up",    default: 0
+    t.integer  "cached_votes_down",  default: 0
+    t.integer  "confidence_score",   default: 0
+  end
+
+  add_index "open_answers", ["user_id"], name: "index_open_answers_on_user_id", using: :btree
+
   create_table "organizations", force: :cascade do |t|
     t.integer  "user_id"
     t.string   "name",             limit: 60
@@ -275,6 +297,16 @@ ActiveRecord::Schema.define(version: 20160329160106) do
   add_index "proposals", ["title"], name: "index_proposals_on_title", using: :btree
   add_index "proposals", ["tsv"], name: "index_proposals_on_tsv", using: :gin
 
+  create_table "redeemable_codes", force: :cascade do |t|
+    t.string   "token"
+    t.integer  "geozone_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "redeemable_codes", ["geozone_id"], name: "index_redeemable_codes_on_geozone_id", using: :btree
+  add_index "redeemable_codes", ["token"], name: "index_redeemable_codes_on_token", using: :btree
+
   create_table "settings", force: :cascade do |t|
     t.string "key"
     t.string "value"
@@ -312,13 +344,26 @@ ActiveRecord::Schema.define(version: 20160329160106) do
     t.integer  "price_first_year",            limit: 8
     t.string   "time_scope"
     t.datetime "unfeasible_email_sent_at"
-    t.integer  "cached_votes_up"
+    t.integer  "cached_votes_up",                       default: 0
     t.tsvector "tsv"
+    t.integer  "comments_count",                        default: 0
+    t.datetime "hidden_at"
+    t.integer  "confidence_score",                      default: 0,     null: false
   end
 
   add_index "spending_proposals", ["author_id"], name: "index_spending_proposals_on_author_id", using: :btree
   add_index "spending_proposals", ["geozone_id"], name: "index_spending_proposals_on_geozone_id", using: :btree
   add_index "spending_proposals", ["tsv"], name: "index_spending_proposals_on_tsv", using: :gin
+
+  create_table "survey_answers", force: :cascade do |t|
+    t.string   "survey_code"
+    t.json     "answers"
+    t.integer  "user_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "survey_answers", ["user_id"], name: "index_survey_answers_on_user_id", using: :btree
 
   create_table "taggings", force: :cascade do |t|
     t.integer  "tag_id"
@@ -375,30 +420,30 @@ ActiveRecord::Schema.define(version: 20160329160106) do
   add_index "tolk_translations", ["phrase_id", "locale_id"], name: "index_tolk_translations_on_phrase_id_and_locale_id", unique: true, using: :btree
 
   create_table "users", force: :cascade do |t|
-    t.string   "email",                                default: ""
-    t.string   "encrypted_password",                   default: "",    null: false
+    t.string   "email",                                                       default: ""
+    t.string   "encrypted_password",                                          default: "",    null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",                        default: 0,     null: false
+    t.integer  "sign_in_count",                                               default: 0,     null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.datetime "created_at",                                           null: false
-    t.datetime "updated_at",                                           null: false
+    t.datetime "created_at",                                                                  null: false
+    t.datetime "updated_at",                                                                  null: false
     t.string   "confirmation_token"
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
     t.string   "unconfirmed_email"
-    t.boolean  "email_on_comment",                     default: false
-    t.boolean  "email_on_comment_reply",               default: false
-    t.string   "phone_number",              limit: 30
+    t.boolean  "email_on_comment",                                            default: false
+    t.boolean  "email_on_comment_reply",                                      default: false
+    t.string   "phone_number",                                     limit: 30
     t.string   "official_position"
-    t.integer  "official_level",                       default: 0
+    t.integer  "official_level",                                              default: 0
     t.datetime "hidden_at"
     t.string   "sms_confirmation_code"
-    t.string   "username",                  limit: 60
+    t.string   "username",                                         limit: 60
     t.string   "document_number"
     t.string   "document_type"
     t.datetime "residence_verified_at"
@@ -409,18 +454,22 @@ ActiveRecord::Schema.define(version: 20160329160106) do
     t.datetime "letter_requested_at"
     t.datetime "confirmed_hide_at"
     t.string   "letter_verification_code"
-    t.integer  "failed_census_calls_count",            default: 0
+    t.integer  "failed_census_calls_count",                                   default: 0
     t.datetime "level_two_verified_at"
     t.string   "erase_reason"
     t.datetime "erased_at"
-    t.boolean  "public_activity",                      default: true
-    t.boolean  "newsletter",                           default: false
-    t.integer  "notifications_count",                  default: 0
-    t.boolean  "registering_with_oauth",               default: false
+    t.boolean  "public_activity",                                             default: true
+    t.boolean  "newsletter",                                                  default: false
+    t.integer  "notifications_count",                                         default: 0
+    t.boolean  "registering_with_oauth",                                      default: false
     t.string   "locale"
     t.string   "oauth_email"
     t.integer  "geozone_id"
     t.string   "redeemable_code"
+    t.integer  "district_wide_spending_proposals_supported_count",            default: 10
+    t.integer  "city_wide_spending_proposals_supported_count",                default: 10
+    t.integer  "supported_spending_proposals_geozone_id"
+    t.integer  "representative_id"
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree
@@ -512,6 +561,7 @@ ActiveRecord::Schema.define(version: 20160329160106) do
   add_foreign_key "moderators", "users"
   add_foreign_key "notifications", "users"
   add_foreign_key "organizations", "users"
+  add_foreign_key "survey_answers", "users"
   add_foreign_key "users", "geozones"
   add_foreign_key "valuators", "users"
 end

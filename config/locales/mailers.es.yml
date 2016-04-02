@@ -24,7 +24,7 @@ es:
       hi: "Estimado usuario,"
       new_html: "Por todo ello, te invitamos a que elabores una <strong>nueva propuesta</strong> que se ajuste a las condiciones de este proceso. Esto lo puedes hacer en este enlace: %{url}."
       new_href: "nueva propuesta de inversión"
-      reconsider_html: "Si consideras que la propuesta rechazada cumple los requisitos para mantenerla como propuesta de inversión, podrás comunicarlo, en el plazo de 48 horas, al correo preparticipativos@madrid.es, indicando necesariamente para su tramitación el código %{code} como asunto del correo, correspondiente a tu propuesta."
+      reconsider_html: "En caso de que la fase de creación de propuestas haya acabado, puedes enviarnos el texto de subsanación o mejora de tu propuesta, en el plazo de 48 horas, al correo preparticipativos@madrid.es, indicando necesariamente para su tramitación el código %{code} como asunto del correo, correspondiente a tu propuesta."
       sincerely: "Atentamente"
       signatory: "DIRECCIÓN GENERAL DE PARTICIPACIÓN CIUDADANA"
       sorry: "Sentimos las molestias ocasionadas y volvemos a darte las gracias por tu inestimable participación."

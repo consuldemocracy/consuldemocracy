@@ -25,6 +25,10 @@
         <% end %>
       </div>
 
+      <% if @search_terms.blank? && @advanced_search_terms.blank? %>
+        <%= render "shared/#{["featured_process_banner", "featured_spending_proposals"].sample}" %>
+      <% end %>
+
       <% if @featured_proposals.present? %>
         <div id="featured-proposals" class="row featured-proposals">
           <div class="small-12 column">

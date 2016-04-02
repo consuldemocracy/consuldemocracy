@@ -1,17 +1,15 @@
 <% provide :title do %><%= t('pages.titles.opendata') %><% end %>
 
-<div class="row expanded highlight">
+<div class="row expanded highlight no-margin-top">
   <div class="row margin">
-    <div class="small-12 medium-7 column">
+    <div class="small-12 medium-8 column">
       <h1><%= t("pages.opendata.title") %></h1>
       <p><strong><%= t("pages.opendata.slogan_html") %></strong></p>
-      <%= link_to t("pages.opendata.go_old"), t("layouts.header.external_link_opendata_url"),
-          title: t('shared.target_blank_html'),
-          target: "_blank", class: "button" %>
-    </div>
-
-    <div class="show-for-medium small-12 medium-5 column text-center">
-      <%= image_tag("icon_home.png", size: "330x240", alt:"") %>
+      <%= link_to t("pages.opendata.go_old"),
+                  t("layouts.header.external_link_opendata_url"),
+                  title: t('shared.target_blank_html'),
+                  target: "_blank",
+                  class: "button" %>
     </div>
   </div>
 </div>

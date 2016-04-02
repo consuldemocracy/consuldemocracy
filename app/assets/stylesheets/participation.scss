@@ -238,7 +238,7 @@
     }
   }
 
-  .anonymous-votes, .organizations-votes {
+  .anonymous-votes, .organizations-votes, .no-supports-allowed {
     background: $warning-bg;
     color: $warning-color;
     height: 100%;
@@ -267,6 +267,10 @@
     color: white;
     margin-top: rem-calc(12);
   }
+}
+
+.no-supports-allowed.minimal {
+  height: $line-height*3 !important;
 }
 
 // 02. New participation
@@ -535,13 +539,24 @@
   color: $border;
 }
 
+.investment-project-show p {
+  word-break: break-word;
+}
+
 // 04. List participation
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
-.debates-list, .proposals-list {
+.debates-list, .proposals-list, .investment-projects-list {
 
   @media (min-width: $small-breakpoint) {
     margin-bottom: rem-calc(48);
+  }
+}
+
+.investment-projects-list {
+
+  @media (min-width: $small-breakpoint) {
+    min-height: $line-height*15;
   }
 }
 
@@ -814,7 +829,7 @@
     border-left: 1px solid $border;
     margin: 0 rem-calc(-12);
     min-height: rem-calc(180);
-    padding-top: $line-height*2;
+    padding-top: $line-height*1.5;
 
     &:after {
       content: none;
@@ -845,17 +860,23 @@
       color: $budget;
     }
 
-    .not-logged,
-    .organizations-votes,
-    .anonymous-votes {
+    .no-supports-allowed{
       background: rgba(69,67,114,.96);
       color: white;
       padding: rem-calc(12);
     }
 
-    .anonymous-votes p, .anonymous-votes a,
-    .organizations-votes p {
+    .no-supports-allowed p, .no-supports-allowed a {
       color: white;
+    }
+
+    .share-supported {
+
+      .social-share-button-twitter,
+      .social-share-button-facebook,
+      .social-share-button-google_plus {
+        color: $budget;
+      }
     }
   }
 }

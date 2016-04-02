@@ -60,7 +60,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
       params.require(:user).permit(:username, :email, :password,
                                    :password_confirmation, :captcha,
                                    :captcha_key, :terms_of_service, :locale,
-                                   :redeemable_code)
+                                   :use_redeemable_code, :redeemable_code)
     end
 
     def erase_params

@@ -1,0 +1,1005 @@
+// Table of Contents
+// Overrides and adds customized styles
+//
+// 01. Global styles
+// 02. Header
+// 03. Alerts
+// 04. Tables
+// 05. Social
+// 06. Choose proposal type
+// 07. Surveys
+// 08. Spending proposals
+// 09. Featured
+//
+
+// 01. Global styles
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+.absolute {
+  position: absolute;
+}
+
+.absolute-survey {
+  bottom: 0;
+  left: 0;
+  margin: 0;
+  position: fixed;
+  width: 100%;
+  z-index: 9;
+}
+
+.highlight {
+  background: $highlight;
+  padding: $line-height/2;
+
+  .callout.info {
+    border: 1px solid $info-color;
+  }
+}
+
+.no-margin-top {
+  margin-top: rem-calc(-24);
+}
+
+.panel {
+  background: white;
+  border: 1px solid $border;
+  padding: $line-height;
+}
+
+blockquote.featured {
+  border-left: 0;
+  border-top: 2px solid $brand;
+  color: $text;
+  display: inline-block;
+  padding-left: 0;
+  padding-right: 0;
+  text-transform: uppercase;
+}
+
+@media (max-width: $small-breakpoint) {
+
+  .text-right {
+    text-align: left;
+  }
+}
+
+// 02. Header
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+.home-page {
+  background: $highlight image-url('home_page_bg.jpg');
+  background-position: 50%;
+  background-size: cover;
+  padding: $line-height;
+
+  h1, p, a {
+    color: white;
+  }
+
+  a:not(.button) {
+    text-decoration: underline;
+  }
+}
+
+.jumbo {
+  background: $highlight;
+
+  @media (min-width: $small-breakpoint) {
+    padding: rem-calc(24) 0;
+  }
+
+  h1, p {
+    color: $highlight-color;
+  }
+}
+
+.jumbo-survey, .jumbo-featured, .jumbo-investment-project {
+
+  h1, h2, .back, .icon-angle-left, p, a {
+    color: black;
+  }
+
+  a {
+    text-decoration: underline;
+  }
+
+  a.button {
+    background: white;
+    color: $brand;
+    text-decoration: none;
+  }
+
+  .social-share-button a {
+    color: white;
+
+    &.social-share-button-twitter:hover {
+      color: #40A2D1;
+    }
+
+    &.social-share-button-facebook:hover {
+      color: #354F88;
+    }
+
+    &.social-share-button-google_plus:hover {
+      color: #CE3E26;
+    }
+  }
+}
+
+.jumbo-survey {
+  background: #33DADF;
+  border-bottom: 1px solid #33DADF;
+}
+
+.jumbo-featured {
+  background: $featured;
+  border-bottom: 1px solid $featured;
+}
+
+.jumbo-investment-project {
+  background: $budget;
+  border-bottom: 1px solid $budget;
+
+  h1, h2, .back, .icon-angle-left, p, a {
+    color: white;
+  }
+
+  &.welcome {
+    background: $budget image-url('spending_proposals_bg.jpg');
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    .spending-proposal-timeline {
+      padding-top: $line-height;
+
+      ul li {
+        margin-right: $line-height;
+        padding-top: $line-height/2;
+
+        .icon-calendar {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+form.locale-form select {
+  background-position: rem-calc(48);
+}
+
+// 03. Alerts
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+.callout.featured {
+  background-color: $featured;
+  border-color: $warning-border;
+  color: black;
+
+  a {
+    color: black;
+    font-weight: bold;
+
+    &:hover {
+      color: black;
+      text-decoration: none;
+
+      h3 {
+        color: black;
+      }
+    }
+  }
+
+  p {
+    margin-bottom: 0;
+  }
+}
+
+// 04. Tables
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+table {
+  border: $border;
+
+  th {
+    background: #f8f9fb;
+  }
+
+  tr {
+
+    &:nth-child(odd) {
+      background: white;
+    }
+
+    &:nth-child(even) {
+      background: #fafcfb;
+    }
+  }
+}
+
+// 05. Social
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+.button.button-twitter {
+  background: #40A2D1;
+}
+
+.button.button-facebook {
+  background: #354F88;
+}
+
+.button.button-google {
+  background: #CE3E26;
+}
+
+
+// 06. Choose proposal type
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+.choose-proposal-type {
+  min-height: $line-height*25;
+
+  .panel {
+
+    &.proposal, &.participatory-budget {
+      border: 0;
+      color: white;
+      position: relative;
+    }
+
+    &.proposal {
+      background: $proposals;
+    }
+
+    &.participatory-budget {
+      background: $budget;
+    }
+
+    .icon-proposals,
+    .icon-budget {
+      font-size: rem-calc(60);
+    }
+
+    p a {
+      color: white;
+      text-decoration: underline;
+    }
+
+    .button {
+      background: white;
+      color: $text;
+    }
+  }
+}
+
+// 07. Surveys
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+.survey {
+
+  .callout {
+    margin-bottom: 0;
+  }
+
+  form input[type=radio] {
+    height: $line-height !important;
+    vertical-align: top;
+    width: 18px\9;
+  }
+}
+
+.survey-questions {
+
+  &::before {
+    display: none;
+  }
+
+  article {
+    border-bottom: 1px solid $border;
+
+    @media only screen and (min-width: $medium-breakpoint) {
+      padding: $line-height 0;
+    }
+
+    &:last-of-type {
+      border-bottom: none;
+    }
+  }
+
+  .selections {
+    display: none;
+  }
+}
+
+.survey-timeline {
+  display: none;
+  width: 100%;
+  background-color: #f2f2f2;
+
+  ul {
+    height: $line-height*2;
+    margin: $line-height/4 0;
+
+    li {
+      counter-increment: articles;
+      display: inline-block;
+      height: $line-height*2;
+      list-style-type: none;
+      margin: 0 $line-height/4;
+      width: rem-calc(36);
+
+      &:last-of-type a::after {
+        display: none;
+      }
+    }
+  }
+}
+
+.survey-timeline a {
+  display: inline-block;
+  position: relative;
+
+  &::before {
+    border-radius: 50%;
+    bottom: auto;
+    content: counter(articles);
+    color: $text-medium;
+    position: absolute;
+    transform: translateY(-50%);
+    height: rem-calc(36);
+    line-height: rem-calc(36);
+    margin-top: $line-height/4;
+    text-align: center;
+    top: 50%;
+    transition: background-color 0.3s, color 0.3s;
+    -webkit-transition: background-color 0.3s, color 0.3s;
+    -moz-transition: background-color 0.3s, color 0.3s;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    width: rem-calc(36);
+  }
+
+  &.read::before {
+    background-color: $brand;
+    color: white;
+  }
+
+  &.reading {
+
+    svg {
+      display: block;
+    }
+
+    &::before {
+      background-color: White;
+      color: $text;
+    }
+  }
+}
+
+.survey-timeline svg {
+  bottom: auto;
+  display: none;
+  margin-top: $line-height/4;
+  position: absolute;
+  stroke: $brand;
+  top: 50%;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transition: all 0.5s ease
+}
+
+@media only screen and (min-width: $medium-breakpoint) {
+
+  .survey-timeline {
+    display: none;
+    padding: $line-height;
+    text-align: center;
+
+    &.fixed {
+      display: block;
+      padding: 0 $line-height;
+    }
+  }
+}
+
+.survey-comments {
+
+  .comments {
+    border: 1px solid $border;
+    padding-bottom: 0 !important;
+    padding-top: 0 !important;
+  }
+
+  .comment-body {
+    margin-left: $line-height/2 !important;
+    padding-left: $line-height/2 !important;
+    padding-right: $line-height/2 !important;
+  }
+
+  .reply {
+    border-bottom: 0 !important;
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+  }
+}
+
+.survey-timeline-line {
+  border-bottom: 1px solid $border;
+  border-top: 4px solid black;
+  color: black;
+  padding-top: $line-height;
+}
+
+.survey-results {
+
+  .title {
+    color: #000201;
+    font-size: rem-calc(40);
+    line-height: rem-calc(40);
+    text-transform: uppercase;
+
+    @media (min-width: $small-breakpoint) {
+      font-size: rem-calc(60);
+      line-height: rem-calc(60);
+    }
+  }
+
+  .subtitle {
+    background: #fae100;
+    color: #000201;
+    display: inline;
+    font-size: rem-calc(40);
+    line-height: rem-calc(40);
+    text-transform: uppercase;
+  }
+
+  .panel {
+    border: 0;
+
+    &.green {
+      background: #58ff87;
+    }
+
+  }
+
+  .big-number {
+    font-size: rem-calc(72);
+    font-weight: bold;
+  }
+
+  hr {
+    border: 0;
+
+    &.double {
+      height: $line-height*2;
+    }
+  }
+
+  .progress {
+    background: none;
+  }
+
+  .progress-meter {
+    background: #00dae0;
+    height: $line-height/2;
+
+    &.web {
+      background: #00ad51;
+    }
+
+    &.zero-ten {
+      background: #007dc3;
+    }
+
+    &.paper {
+      background: #ffdc08;
+    }
+  }
+
+  .progress-meter-text {
+    color: #000201;
+    font-weight: normal;
+    left: 0;
+    top: $line-height/2;
+    transform: initial;
+  }
+
+  table {
+    margin-top: $line-height*1.5;
+
+
+    &.questions-table {
+
+      tr.empty td {
+        border: 0 !important;
+      }
+
+      td:first-child, th:first-child {
+        border-right: 1px solid $border;
+      }
+
+      td:last-child, th:last-child {
+        border-left: 1px solid $border;
+      }
+
+      @media (min-width: $small-breakpoint) {
+
+        th {
+          width: rem-calc(160);
+        }
+
+        th:first-child {
+          width: auto;
+        }
+      }
+
+    }
+
+    tr td, tr th {
+      text-align: left;
+
+      @media (min-width: $small-breakpoint) {
+        padding: $line-height/2 $line-height;
+      }
+
+      &.border-left {
+        border-left: 1px solid $border;
+      }
+
+      &.border-right {
+        border-right: 1px solid $border;
+      }
+    }
+
+    tr.empty {
+      background: white;
+      border-left: 1px solid white;
+      border-right: 1px solid white;
+      border-top: 1px solid $border;
+      height: $line-height;
+
+      @media (min-width: $small-breakpoint) {
+        height: $line-height*1.5;
+      }
+    }
+
+    th.table-width {
+
+      @media (min-width: $small-breakpoint) {
+        width: rem-calc(200);
+      }
+    }
+
+    th.question {
+      background: #fff7b4;
+      border: 2px solid #fae100;
+
+      @media (min-width: $small-breakpoint) {
+        font-size: rem-calc(24);
+        line-height: $line-height;
+      }
+    }
+
+    th.question-subtitle {
+      background: #9af6f9;
+    }
+
+    tr.answer {
+      background: #c1fdd2;
+      border-bottom: 2px solid #58ff87;
+      border-top: 2px solid #58ff87;
+
+      td:first-child, td:last-child {
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+.chart-legend {
+  bottom: $line-height;
+  list-style-type: none;
+
+  .label {
+    height: rem-calc(14);
+    padding: 0;
+    width: rem-calc(14);
+  }
+
+  strong {
+    text-transform: uppercase;
+  }
+}
+
+.label.large {
+  font-size: $base-font-size;
+}
+
+@media (max-width: $small-breakpoint) {
+
+  table.survey-districts thead {
+    font-size: $h6-font-size;
+
+    th {
+      width: 25%;
+      word-break: break-all;
+    }
+  }
+
+  table.questions-table {
+
+    thead th {
+      font-size: $h6-font-size;
+      width: 20%;
+      word-break: break-all;
+    }
+
+    td {
+      font-size: $h6-font-size;
+    }
+  }
+}
+
+table.age-groups {
+
+  th {
+    width: 20%;
+  }
+}
+
+// 08. Spending proposals
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+.spending-proposals {
+  background: $budget image-url('spending_proposals_bg.jpg');
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  h1 {
+    color: white;
+    margin: $line-height 0;
+  }
+
+  .button {
+    background: white;
+    color: $budget;
+  }
+}
+
+.spending-proposal-timeline {
+
+  ul {
+    display: inline-block;
+
+    @media (min-width: $small-breakpoint) {
+      border-top: 2px solid $border;
+    }
+
+    h3, p {
+      color: white;
+    }
+
+
+    li {
+      padding-top: $line-height*1.5;
+      position: relative;
+
+      @media (min-width: $small-breakpoint) {
+        display: inline-block;
+        margin-right: $line-height*2.5;
+      }
+
+      .icon-calendar {
+        background: white;
+        border: 1px solid $border;
+        border-radius: rem-calc(30);
+        color: $budget;
+        height: rem-calc(40);
+        left: 50%;
+        margin-left: rem-calc(-20);
+        padding: rem-calc(10);
+        position: absolute;
+        top: -20px;
+        width: rem-calc(40);
+      }
+
+      &.active {
+        @media (min-width: $small-breakpoint) {
+          border-top: 1px solid $featured;
+          margin-top: rem-calc(-1);
+        }
+
+        .icon-calendar, h3, p {
+          color: $featured;
+        }
+
+        .icon-calendar {
+          background: $featured;
+          border: none;
+          box-shadow: 0 0 rem-calc(10) $featured;
+          color: black;
+        }
+      }
+    }
+  }
+}
+
+.spending-proposals-text {
+
+  table {
+
+    thead tr th {
+      background: $highlight;
+      text-transform: uppercase;
+    }
+
+    tr td {
+      font-size: $base-font-size;
+    }
+  }
+
+  .margin {
+    margin-bottom: $line-height*2;
+    margin-top: $line-height*2;
+  }
+
+  @media (max-width: $small-breakpoint) {
+    .text-right {
+      text-align: left !important;
+    }
+  }
+}
+
+.investment-project-sidebar-votes {
+
+  .sticky {
+    background: rgba(255,255,255,.85);
+
+    @media (max-width: $small-breakpoint) {
+      margin-top: $line-height;
+      position: initial;
+    }
+  }
+
+  .counters {
+
+    .callout {
+      float: left;
+      margin-right: $line-height/4;
+      min-height: rem-calc(130);
+      padding: $line-height/2 0;
+      width: rem-calc(125);
+    }
+
+    .callout.warning.unverified {
+      padding: $line-height/2;
+      width: 100%;
+    }
+
+    span {
+      text-transform: uppercase;
+    }
+  }
+
+  .votes-number {
+    font-size: rem-calc(80);
+    font-weight: bold;
+    line-height: rem-calc(80);
+    margin-bottom: 0;
+    vertical-align: top;
+  }
+
+  .icon-deleted {
+    font-size: rem-calc(40);
+    line-height: rem-calc(40);
+  }
+}
+
+.investment-projects-scope {
+
+  .callout {
+    background: white;
+    border-color: $border;
+    border-radius: 0;
+    color: $text;
+
+    @media (min-width: $small-breakpoint) {
+      height: $line-height*17;
+    }
+
+    a {
+      font-size: $base-font-size;
+    }
+  }
+
+  .callout.primary {
+    border-top: 4px solid $info-border;
+
+    @media (min-width: $small-breakpoint) {
+      background: image-url('investment_project_city.jpg') no-repeat bottom;
+    }
+  }
+
+  .callout.success {
+    border-top: 4px solid $success-border;
+
+    @media (min-width: $small-breakpoint) {
+      background: image-url('investment_project_districts.jpg') no-repeat bottom;
+    }
+
+    .button {
+      margin-bottom: 0;
+    }
+
+    .accordion {
+      background: white;
+      border: 0;
+    }
+
+    .accordion-title {
+      border: 0;
+      color: $text;
+      padding: 0;
+
+      &:before {
+        content: none;
+      }
+
+      &:hover, &:focus, &:hover h2, &:focus h2 {
+        background: none;
+        color: $text;
+        text-decoration: none;
+      }
+    }
+
+    .accordion-content {
+      background: none;
+      border: 0;
+
+      @media (min-width: $small-breakpoint) {
+        padding-bottom: rem-calc(39);
+      }
+    }
+  }
+}
+
+.no-underline a,
+.no-underline a:hover,
+.no-underline a:hover h2 {
+  color: $text !important;
+  text-decoration: none !important;
+}
+
+// 09. Featured
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+.home-page-featured {
+
+  a:hover, a:hover h2, a:hover p {
+    text-decoration: none;
+  }
+
+  .panel {
+
+    &.featured-one, &.featured-two, &.featured-three {
+      background-size: cover;
+      background-position: 50% 50%;
+      border: 0;
+      min-height: $line-height*10;
+      padding: $line-height;
+      position: relative;
+
+      h2, p {
+        color: $text;
+      }
+
+      .button {
+        background: white;
+        color: $text;
+        margin-top: $line-height;
+      }
+    }
+
+    &.featured-one {
+      background: $featured;
+      margin-top: $line-height;
+
+      @media (min-width: $small-breakpoint) {
+        margin-top: 0;
+      }
+
+      .icon-proposals {
+        color: #e5c300;
+        font-size: rem-calc(128);
+        line-height: rem-calc(170);
+        position: absolute;
+        right: 2%;
+        top: 100px;
+      }
+    }
+
+    &.featured-two {
+      background: #33DADF;
+      margin-bottom: 0;
+
+      @media (min-width: $medium-breakpoint) {
+        background: #00DADE image-url('survey_results/plaza_espana_logo.gif') no-repeat;
+        background-position: 90% 50%;
+      }
+    }
+
+    &.featured-three {
+      background: $budget;
+
+      @media (min-width: $medium-breakpoint) {
+        background: $budget image-url('featured_spending_proposals_medium.png') no-repeat;
+        background-position: bottom right;
+      }
+
+      h2, p {
+        color: #eaeaf2;
+      }
+    }
+  }
+}
+
+.featured-process {
+  background: #33DADF;
+  padding: $line-height/2;
+
+  @media (min-width: $small-breakpoint) {
+    background: #33DADF image-url('processes_plaza_espana_small.gif') no-repeat;
+    background-position: right;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  h2, h3, a {
+    color: #eaeaf2;
+    margin: 0;
+  }
+
+  a:hover h2, a:hover h3 {
+    color: #eaeaf2 !important;
+    text-decoration: none;
+  }
+}
+
+.featured-spending-proposals {
+  background: $budget;
+  padding: $line-height/2;
+
+  @media (min-width: $small-breakpoint) {
+    background: $budget image-url('featured_spending_proposals.png') no-repeat;
+    background-position: bottom right;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  h2, h3, a {
+    color: white;
+    margin: 0;
+  }
+
+  a:hover h2, a:hover h3 {
+    color: white !important;
+    text-decoration: none;
+  }
+}
+
+.process {
+  min-height: $line-height*12;
+
+  p {
+    margin: $line-height 0;
+  }
+}

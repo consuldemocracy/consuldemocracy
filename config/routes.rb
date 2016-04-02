@@ -67,6 +67,9 @@ Rails.application.routes.draw do
 
   scope '/participatory_budget' do
     resources :spending_proposals, only: [:index, :new, :create, :show, :destroy], path: 'investment_projects' do
+      collection do
+        get :welcome
+      end
       member do
         post :vote
       end
@@ -77,7 +80,7 @@ Rails.application.routes.draw do
 
   resources :legislations, only: [:show]
 
-  resources :annotations do
+  resources :annotations, only: [:index, :show] do
     collection do
       get :search
     end
@@ -102,6 +105,7 @@ Rails.application.routes.draw do
     resource :email, controller: "email", only: [:new, :show, :create]
     resource :letter, controller: "letter", only: [:new, :create, :show, :edit, :update]
   end
+  get "/verifica", to: "verification/letter#edit"
 
   namespace :admin do
     root to: "dashboard#index"
@@ -255,13 +259,24 @@ Rails.application.routes.draw do
     resources :spending_proposals, only: [:new, :create, :show]
   end
 
+  resources :representatives, only: [:new, :create]
+
+  resources :survey_answers, only: [:new, :create]
+
+  resources :open_answers, only: [:show, :index]
+
+  get "encuesta-plaza-espana", to: "survey_answers#new", as: :encuesta_plaza_espana
+
   if Rails.env.development?
     mount LetterOpenerWeb::Engine, at: "/letter_opener"
   end
 
   mount Tolk::Engine => '/translate', :as => 'tolk'
 
-  # static pages
+  get "ordenanza-de-transparencia", to: "legislations#show", id: 1, as: :ordenanza_transparencia
   get '/blog' => redirect("http://diario.madrid.es/participa/")
+  get 'participatory_budget', to: 'spending_proposals#welcome', as: 'participatory_budget'
+  get 'delegacion', to: 'representatives#new', as: 'delegation'
   resources :pages, path: '/', only: [:show]
+  get 'participatory_budget/in_two_minutes', to: 'pages#show', id: 'participatory_budget/in_two_minutes'
 end

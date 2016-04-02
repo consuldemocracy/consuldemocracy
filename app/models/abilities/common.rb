@@ -17,7 +17,7 @@ module Abilities
         proposal.editable_by?(user)
       end
 
-      can :read, SpendingProposal
+      can [:read, :welcome], SpendingProposal
 
       can :create, Comment
       can :create, Debate
@@ -45,6 +45,8 @@ module Abilities
         can :vote_featured, Proposal
         can :vote, SpendingProposal
         can :create, SpendingProposal
+        can :read, SurveyAnswer
+        can :read, OpenAnswer
       end
 
       can :create, Annotation

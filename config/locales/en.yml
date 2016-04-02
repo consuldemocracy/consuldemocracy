@@ -3,6 +3,7 @@ en:
   account:
     show:
       change_credentials_link: Change my credentials
+      delegation: Delegate your votes
       email_on_comment_label: Notify me by email when someone comments on my proposals or debates
       email_on_comment_reply_label: Notify me by email when someone replies to my comments
       erase_account_link: Erase my account
@@ -108,6 +109,8 @@ en:
       select_order: Order by
       start_debate: Start a debate
       title: Debates
+      top: Featured
+      top_link_debates: '#TúPreguntas'
     new:
       back_link: Go back
       form:
@@ -154,7 +157,6 @@ en:
     verification/sms: phone
   geozones:
     none: All city
-    all: All scopes
   layouts:
     application:
       chrome: Google Chrome
@@ -189,6 +191,7 @@ en:
       external_link_opendata_url: http://datos.madrid.es
       external_link_transparency: Transparency
       external_link_transparency_url: https://transparencia.madrid.es
+      help_translate: Help us translate
       locale: 'Language:'
       logo: Madrid
       moderation: Moderation
@@ -201,20 +204,14 @@ en:
         other: You have %{count} new notifications
       no_notifications: You don't have new notifications
       open: open
-      open_city_slogan_html: There are cities that are governed directly by their inhabitants, who <b>discuss</b> the topics they are concerned about, <b>propose</b> ideas to improve their lives and <b>decide</b> among themselves which ones will be carried out. Madrid is already one of these cities.
-      open_city_title: Love the city, and it will become a city you love.
+      open_city_slogan_html: In Madrid their inhabitants, <b>discuss</b> the topics they are concerned about, <b>propose</b> ideas to improve their lives and <b>decide</b> among themselves which ones will be carried out.
+      open_city_slogan_short: There are cities that are governed directly by their inhabitants, Madrid is already one of these cities.
+      open_city_title: The city you love will become the city you want.
       open_data: Open data
       open_gov: Open government
       proposals: Proposals
-      see_all: See proposals
-      spending_proposals: Spending proposals
-  legislation:
-    help:
-      alt: Select the text you want to comment and press the button with the pencil.
-      text: To comment this document you must %{sign_in} or %{sign_up}. Then select the text you want to comment and press the button with the pencil.
-      text_sign_in: login
-      text_sign_up: sign up
-      title: How I can comment this document?
+      processes: Open processes
+      spending_proposals: Participatory budgeting
   locale: English
   notifications:
     index:
@@ -231,7 +228,7 @@ en:
     title: "Districts"
     proposal_for_district: "Start a proposal for your district"
     select_district: Scope of operation
-    start_proposal: Create a proposal
+    start_proposal: Create proposal
   omniauth:
     facebook:
       sign_in: Sign in with Facebook
@@ -269,7 +266,7 @@ en:
       tag_category_label: "Categories"
       tags_instructions: "Tag this proposal. You can choose from proposed categories or add your own"
       tags_label: Tags
-      tags_placeholder: Enter the tags you would like to use, separated by commas (',')
+      tags_placeholder: "Enter the tags you would like to use, separated by commas (',')"
     index:
       featured_proposals: Featured
       filter_topic:
@@ -290,7 +287,7 @@ en:
         other: " containing the term '%{search_term}'"
       select_order: Order by
       select_order_long: 'You are viewing proposals according to:'
-      start_proposal: Create a proposal
+      start_proposal: Create proposal
       title: Proposals
       top: Top weekly
       top_link_proposals: The most supported proposals by category
@@ -299,6 +296,8 @@ en:
       form:
         submit_button: Create proposal
       more_info: How do citizen proposals work?
+      participatory_budget: Do you want to make an investment project?
+      participatory_budget_info_html: If you want to create an investment project, go to <strong><u>Participatory Budgets</u></strong>.
       recommendation_one: Do not use capital letters for the proposal title or for whole sentences. On the internet, this is considered shouting. And nobody likes being shouted at.
       recommendation_three: Enjoy this space and the voices that fill it. It belongs to you too.
       recommendation_two: Any proposal or comment suggesting illegal action will be deleted, as well as those intending to sabotage the debate spaces. Anything else is allowed.
@@ -336,6 +335,12 @@ en:
     update:
       form:
         submit_button: Save changes
+  representatives:
+    none: Without representative
+    form:
+      label: Select the person to whom delegate your votes
+      submit_button: Save
+    title: Delegate your votes
   shared:
     advanced_search:
       author_type: 'By author category'
@@ -407,7 +412,7 @@ en:
       association_name: 'Association name'
       description: Description
       external_url: Link to additional documentation
-      geozone: Scope of operation
+      geozone: Choose if a proposed citywide or district
       submit_buttons:
         create: Create
         new: Create
@@ -415,6 +420,8 @@ en:
     index:
       title: Participatory budgeting
       unfeasible: Unfeasible investment projects
+      unfeasible_text: The proposals must meet a number of criteria (legality, concreteness, be the responsibility of the city, not exceed the limit of the budget; %{definitions}) to be declared viable and reach the stage of final vote. All proposals don't meet these criteria are marked as unfeasible and published in the following list, along with its report of infeasibility.
+      unfeasible_text_definitions: see definitions here
       by_geozone: "Investment projects with scope: %{geozone}"
       search_form:
         button: Search
@@ -424,20 +431,39 @@ en:
         one: " containing the term '%{search_term}'"
         other: " containing the term '%{search_term}'"
       sidebar:
+        back: Back to select page
+        district: District
         geozones: Scope of operation
-        feasibility: Feasibility
-        unfeasible: Unfeasible
-      start_spending_proposal: Create an investment project
+        votes: Supports remaining
+        votes_district: "You can only vote in the district %{district}"
+      orders:
+        random: random
+        confidence_score: highest rated
+    welcome:
+      city: All city
+      city_link: Support proposals of the city
+      city_text_html: Support <strong>10 investment projects</strong> of the city.
+      delegation: Delegation of votes
+      description_html: You can support <u>10 investment projects</u> of the city and <u>10 investment projects</u> of only one district.
+      districts: Districts
+      districts_link: Select a district
+      districts_text_html: Support <strong>10 investment projects</strong> of only one district.
+      in_two_minutes: All information about participatory budgets
+      title: "You already can support investment projetcs!"
+      unfeasible_link: See unfeasible investment projects
     new:
-      more_info: How do participatory budgeting works?
-      recommendation_one: It's mandatory that the proposal makes reference to a budgetable action.
+      back_link: Back
+      more_info: "Important, not to be ruled out your proposal must comply:"
+      recommendation_one: See the %{requirements}.
+      recommendation_one_link: requirements to be met by a proposal
       recommendation_three: Try to go into details when describing your spending proposal so the reviewing team undertands your points.
-      recommendation_two: Any proposal or comment suggesting illegal action will be deleted.
+      recommendation_two: Each proposal must be submitted separately. You can make as many want.
       recommendations_title: How to create a spending proposal
       start_new: Create spending proposal
       back_link: Back
     show:
       author_deleted: User deleted
+      unfeasibility_explanation: Unfeasibility explanation
     wrong_price_format: Only integer numbers
     spending_proposal:
       spending_proposal: Investment project
@@ -498,6 +524,15 @@ en:
     unauthenticated: You must %{signin} or %{signup} to continue.
     verified_only: Only verified users can vote on proposals; %{verify_account}.
     verify_account: verify your account
+    spending_proposals:
+      not_logged_in: You must %{signin} or %{signup} to continue.
+      not_verified: Only verified users can vote on proposals; %{verify_account}.
+      unfeasible: Unfeasible proposal.
+      organization: Organisations are not permitted to vote.
+      no_city_supports_available: You have already used all your city-wide supports.
+      no_district_supports_available: You have already used all your district-wide supports.
+      different_district_assigned: You already supported other district proposals.
+      confirm_first_vote_on_district: "Everyone can support the proposal of the city and one district of their choice, If you accept you support this proposal and only can support the proposals for %{district}. This district can't change later. Do you want support this proposal and select this district?"
   welcome:
     debates:
       alt: Icon debates
@@ -511,6 +546,21 @@ en:
       alt: Icon it gets done
       description: If the proposal is accepted by the majority, the City Council accepts it as its own and it gets done.
       title: It gets done
+    featured:
+      page_title: Featured
+      process:
+        link: View results
+        text: The survey's results are already available.
+        title: Reshuffle Plaza de España
+      proposals:
+        link: See proposals
+        text: Create your own proposals and supports those of other citizens.
+        title: Citizen proposals
+      spending_proposals:
+        link: Support proposals
+        text: You decide how to invest 60 million euros to your city.
+        title: Participatory budgeting
+    more_information: More information about this page
     proposal:
       alt: Icon propose
       description: Open space for citizen proposals about the kind of city we want to live in.
@@ -543,10 +593,3 @@ en:
     google_oauth2:
       sign_in: "Sign in with Google"
       sign_up: "Sign up with Google"
-  legislation:
-    help:
-      title: "How I can comment this document?"
-      text: "To comment this document you must %{sign_in} or %{sign_up}. Then select the text you want to comment and press the button with the pencil."
-      text_sign_in: "login"
-      text_sign_up: "sign up"
-      alt: "Select the text you want to comment and press the button with the pencil."

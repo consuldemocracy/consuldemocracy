@@ -222,6 +222,12 @@ class User < ActiveRecord::Base
     self.update(registering_with_oauth: true, email: nil)
   end
 
+  def supported_spending_proposals_geozone
+    if supported_spending_proposals_geozone_id.present?
+      Geozone.find(supported_spending_proposals_geozone_id)
+    end
+  end
+
   private
     def clean_document_number
       self.document_number = self.document_number.gsub(/[^a-z0-9]+/i, "").upcase unless self.document_number.blank?

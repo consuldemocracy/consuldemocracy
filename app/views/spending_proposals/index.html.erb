@@ -6,12 +6,49 @@
 <% end %>
 
 <main>
+
+  <% if @filter_geozone_name.present? %>
+    <div class="expanded jumbo-investment-project padding no-margin-top margin-bottom">
+      <div class="row">
+        <div class="small-12 medium-8 column">
+          <%= link_to welcome_spending_proposals_path, class: "back" do %>
+            <i class="icon-angle-left"></i>
+            <%= t("pages.processes.back") %>
+          <% end %>
+
+          <h1><%= @filter_geozone_name %></h1>
+        </div>
+      </div>
+    </div>
+  <% else %>
+    <div class="expanded jumbo-investment-project padding no-margin-top margin-bottom">
+      <div class="row">
+        <div class="small-12 medium-8 column">
+          <%= link_to welcome_spending_proposals_path, class: "back" do %>
+            <i class="icon-angle-left"></i>
+            <%= t("pages.processes.back") %>
+          <% end %>
+
+          <h1><%= t('spending_proposals.index.title') %></h1>
+        </div>
+      </div>
+    </div>
+  <% end %>
+
   <div class="wrap row">
     <div id="investment-projects" class="investment-projects-list small-12 medium-9 column">
 
-      <div class="small-12 search-results">
-        <%= content_tag(:h2, t("spending_proposals.index.unfeasible")) if params[:unfeasible].present? %>
-        <%= content_tag(:h2, t("spending_proposals.index.by_geozone", geozone: @geozone_name)) if @geozone_name.present? %>
+      <div class="small-12 search-results margin-bottom">
+
+        <% if params[:unfeasible].present? %>
+          <h2><%= t("spending_proposals.index.unfeasible") %></h2>
+          <p>
+              <%= t("spending_proposals.index.unfeasible_text",
+              definitions: link_to(t("spending_proposals.index.unfeasible_text_definitions"), "https://decide.madrid.es/participatory_budget_info#20")).html_safe %>
+          </p>
+        <% end %>
+
+        <%= content_tag(:h2, t("spending_proposals.index.by_geozone", geozone: @filter_geozone_name)) if @filter_geozone_name.present? %>
         <% if params[:search].present? %>
           <h2>
             <%= page_entries_info @spending_proposals %>
@@ -20,9 +57,8 @@
         <% end %>
       </div>
 
-      <div class="show-for-small-only">
-        <%= link_to t("spending_proposals.index.start_spending_proposal"), new_spending_proposal_path, class: 'button expanded' %>
-      </div>
+      <%= render('shared/order_links', i18n_namespace: "spending_proposals.index") unless params[:unfeasible].present? %>
+
       <%= render partial: 'spending_proposals/spending_proposal', collection: @spending_proposals %>
       <%= paginate @spending_proposals %>
     </div>

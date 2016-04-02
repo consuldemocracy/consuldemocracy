@@ -69,15 +69,12 @@ feature 'Spending proposals' do
 
     scenario 'by unfeasibility' do
       geozone1 = create(:geozone)
-      spending_proposal1 = create(:spending_proposal, feasible: false)
+      spending_proposal1 = create(:spending_proposal, feasible: false, valuation_finished: true)
       spending_proposal2 = create(:spending_proposal, feasible: true)
       spending_proposal3 = create(:spending_proposal)
+      spending_proposal4 = create(:spending_proposal, feasible: false)
 
-      visit spending_proposals_path
-
-      within("#sidebar") do
-        click_link "Unfeasible"
-      end
+      visit spending_proposals_path(unfeasible: 1)
 
       within("#investment-projects") do
         expect(page).to have_css('.investment-project', count: 1)
@@ -85,30 +82,41 @@ feature 'Spending proposals' do
         expect(page).to have_content(spending_proposal1.title)
         expect(page).to_not have_content(spending_proposal2.title)
         expect(page).to_not have_content(spending_proposal3.title)
+        expect(page).to_not have_content(spending_proposal4.title)
       end
     end
   end
 
-  scenario 'Create' do
-    login_as(author)
+  context("Orders") do
 
-    visit new_spending_proposal_path
-    fill_in 'spending_proposal_title', with: 'Build a skyscraper'
-    fill_in 'spending_proposal_description', with: 'I want to live in a high tower over the clouds'
-    fill_in 'spending_proposal_external_url', with: 'http://http://skyscraperpage.com/'
-    fill_in 'spending_proposal_association_name', with: 'People of the neighbourhood'
-    fill_in 'spending_proposal_captcha', with: correct_captcha_text
-    select  'All city', from: 'spending_proposal_geozone_id'
-    check 'spending_proposal_terms_of_service'
+    scenario 'Default order is random', :js do
+      create(:spending_proposal, title: 'Best proposal')
+      create(:spending_proposal, title: 'Worst proposal')
+      create(:spending_proposal, title: 'Medium proposal')
 
-    click_button 'Create'
+      visit spending_proposals_path
 
-    expect(page).to have_content 'Spending proposal created successfully'
-    expect(page).to have_content('Build a skyscraper')
-    expect(page).to have_content('I want to live in a high tower over the clouds')
-    expect(page).to have_content('Isabel')
-    expect(page).to have_content('People of the neighbourhood')
-    expect(page).to have_content('All city')
+      expect(page).to have_css('.investment-project', count: 3)
+    end
+
+    scenario 'Proposals are ordered by confidence_score', :js do
+      create(:spending_proposal, title: 'Best proposal').update_column(:confidence_score, 10)
+      create(:spending_proposal, title: 'Worst proposal').update_column(:confidence_score, 2)
+      create(:spending_proposal, title: 'Medium proposal').update_column(:confidence_score, 5)
+
+      visit spending_proposals_path
+      click_link 'highest rated'
+      expect(page).to have_selector('a.active', text: 'highest rated')
+
+      within '#investment-projects' do
+        expect('Best proposal').to appear_before('Medium proposal')
+        expect('Medium proposal').to appear_before('Worst proposal')
+      end
+
+      expect(current_url).to include('order=confidence_score')
+      expect(current_url).to include('page=1')
+    end
+
   end
 
   scenario 'Create notice' do
@@ -123,18 +131,7 @@ feature 'Spending proposals' do
     select  'All city', from: 'spending_proposal_geozone_id'
     check 'spending_proposal_terms_of_service'
 
-    click_button 'Create'
-
-    expect(page).to have_content 'Spending proposal created successfully'
-    expect(page).to have_content 'You can access it from My activity'
-
-    within "#notice" do
-      click_link 'My activity'
-    end
-
-    expect(current_url).to eq(user_url(author, filter: :spending_proposals))
-    expect(page).to have_content "1 Spending proposal"
-    expect(page).to have_content "Build a skyscraper"
+    expect(page).to_not have_link('Create spending proposal', href: new_spending_proposal_path)
   end
 
   scenario 'Captcha is required for proposal creation' do
@@ -149,13 +146,13 @@ feature 'Spending proposals' do
 
     click_button 'Create'
 
-    expect(page).to_not have_content 'Spending proposal created successfully'
+    expect(page).to_not have_content 'Investment project created successfully'
     expect(page).to have_content '1 error'
 
     fill_in 'spending_proposal_captcha', with: correct_captcha_text
     click_button 'Create'
 
-    expect(page).to have_content 'Spending proposal created successfully'
+    expect(page).to have_content 'Investment project created successfully'
   end
 
   scenario 'Errors on create' do
@@ -201,9 +198,24 @@ feature 'Spending proposals' do
     expect(page).to have_content(spending_proposal.geozone.name)
   end
 
+  scenario "Show (unfeasible spending proposal)" do
+    user = create(:user)
+    login_as(user)
+
+    spending_proposal = create(:spending_proposal,
+                                valuation_finished: true,
+                                feasible: false,
+                                feasible_explanation: 'Local government is not competent in this matter')
+
+    visit spending_proposal_path(spending_proposal)
+
+    expect(page).to have_content("Unfeasibility explanation")
+    expect(page).to have_content(spending_proposal.feasible_explanation)
+  end
+
   context "Destroy" do
 
-    scenario "Admin can destroy owned spending proposals" do
+    scenario "Admin can destroy spending proposals" do
       admin = create(:administrator)
       user = create(:user, :level_two)
       spending_proposal = create(:spending_proposal, author: user)
