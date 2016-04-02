@@ -202,7 +202,8 @@ es:
           verified_users: Usuarios verificados
           visits: Visitas
           votes: Votos
-        visits_title: Visitas
+        visits_title: Visitas        
+        users_title: Usuarios subscritos
     tags:
       create: Crear Tema
       destroy: Eliminar Tema

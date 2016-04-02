@@ -90,6 +90,19 @@
           <%= events_chart_tag event %>
         <% end %>
       </div>
+
+
+      <div class="small-12 column">
+        <h2><%= t "admin.stats.show.users_title" %></h2>
+        <%= users_chart_tag id: "subscript_users" %>
+      </div>
+
+      <div class="small-12 column">
+        <% @event_types.each do |event, count| %>
+          <h2><%= event.titleize %> (<%= count %>)</h2>
+          <%= events_chart_tag event %>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>

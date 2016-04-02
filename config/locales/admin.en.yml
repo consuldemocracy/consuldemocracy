@@ -202,7 +202,8 @@ en:
           verified_users: Verified users
           visits: Visits
           votes: Total votes
-        visits_title: Visits
+        visits_title: Visits    
+        users_title: Subscrits users
     tags:
       create: Create Topic
       destroy: Destroy Topic
