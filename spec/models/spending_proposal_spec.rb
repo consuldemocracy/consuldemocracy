@@ -364,4 +364,33 @@ describe SpendingProposal do
       end
     end
   end
+
+  describe "Order" do
+    describe "#sort_by_confidence_score" do
+
+      it "should order by confidence_score" do
+        least_voted = create(:spending_proposal, cached_votes_up: 1)
+        most_voted = create(:spending_proposal, cached_votes_up: 10)
+        some_votes = create(:spending_proposal, cached_votes_up: 5)
+
+        expect(SpendingProposal.sort_by_confidence_score.first).to eq most_voted
+        expect(SpendingProposal.sort_by_confidence_score.second).to eq some_votes
+        expect(SpendingProposal.sort_by_confidence_score.third).to eq least_voted
+      end
+
+      it "should order by confidence_score and then by id" do
+        least_voted  = create(:spending_proposal, cached_votes_up: 1)
+        most_voted   = create(:spending_proposal, cached_votes_up: 10)
+        most_voted2  = create(:spending_proposal, cached_votes_up: 10)
+        least_voted2 = create(:spending_proposal, cached_votes_up: 1)
+
+
+        expect(SpendingProposal.sort_by_confidence_score.first).to  eq most_voted2
+        expect(SpendingProposal.sort_by_confidence_score.second).to  eq most_voted
+        expect(SpendingProposal.sort_by_confidence_score.third).to  eq least_voted2
+        expect(SpendingProposal.sort_by_confidence_score.fourth).to  eq least_voted
+      end
+
+    end
+  end
 end
