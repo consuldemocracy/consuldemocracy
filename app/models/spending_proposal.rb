@@ -24,7 +24,7 @@ class SpendingProposal < ActiveRecord::Base
   validates :description, length: { maximum: 10000 }
   validates :terms_of_service, acceptance: { allow_nil: false }, on: :create
 
-  scope :sort_by_confidence_score, -> (default) { reorder(confidence_score: :desc) }
+  scope :sort_by_confidence_score, -> (default=nil) { reorder(confidence_score: :desc, id: :desc) }
   scope :sort_by_random,           -> (seed)    { reorder("RANDOM()") }
 
   scope :valuation_open,         -> { where(valuation_finished: false) }
