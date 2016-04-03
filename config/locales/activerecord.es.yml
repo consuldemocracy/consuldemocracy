@@ -67,7 +67,7 @@ es:
       organization:
         name: "Nombre de organización"
         responsible_name: "Persona responsable del colectivo"
-      spending_proposal:
+      spendingproposal:
         administrator_id: "Administrador"
     errors:
       models:
