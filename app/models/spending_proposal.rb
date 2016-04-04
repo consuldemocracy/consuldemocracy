@@ -102,7 +102,11 @@ class SpendingProposal < ActiveRecord::Base
   end
 
   def code
-    "#{Setting["proposal_code_prefix"]}-#{created_at.strftime('%Y')}-#{id}" + (administrator.present? ? "-A#{administrator.id}" : "")
+    "#{Setting["proposal_code_prefix"]}-#{created_at.strftime('%Y')}-#{id}"
+  end
+
+  def code_with_admin
+    code + (administrator.present? ? "-A#{administrator.id}" : "")
   end
 
   def send_unfeasible_email
