@@ -38,7 +38,7 @@ class Mailer < ApplicationMailer
     @author = spending_proposal.author
 
     with_user(@author) do
-      mail(to: @author.email, subject: t('mailers.unfeasible_spending_proposal.subject', code: @spending_proposal.code))
+      mail(to: @author.email, subject: t('mailers.unfeasible_spending_proposal.subject', code: @spending_proposal.code_with_admin))
     end
   end
 

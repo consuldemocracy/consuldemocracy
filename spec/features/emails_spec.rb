@@ -141,10 +141,10 @@ feature 'Emails' do
     spending_proposal.reload
 
     email = open_last_email
-    expect(email).to have_subject("Your investment project '#{spending_proposal.code}' has been marked as unfeasible")
+    expect(email).to have_subject("Your investment project '#{spending_proposal.code_with_admin}' has been marked as unfeasible")
     expect(email).to deliver_to(spending_proposal.author.email)
     expect(email).to have_body_text(spending_proposal.title)
-    expect(email).to have_body_text(spending_proposal.code)
+    expect(email).to have_body_text(spending_proposal.code_with_admin)
     expect(email).to have_body_text(spending_proposal.feasible_explanation)
   end
 

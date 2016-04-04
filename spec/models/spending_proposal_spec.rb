@@ -116,10 +116,18 @@ describe SpendingProposal do
       it "returns the proposal id" do
         expect(spending_proposal.code).to include("#{spending_proposal.id}")
       end
+    end
 
-      it "returns the administrator id when assigned" do
+    describe '#code_with_admin' do
+      let(:spending_proposal) { create(:spending_proposal) }
+
+      it "contains the proposal id" do
+        expect(spending_proposal.code_with_admin).to include("#{spending_proposal.id}")
+      end
+
+      it "contains the administrator id when assigned" do
         spending_proposal.administrator = create(:administrator)
-        expect(spending_proposal.code).to include("#{spending_proposal.id}-A#{spending_proposal.administrator.id}")
+        expect(spending_proposal.code_with_admin).to include("#{spending_proposal.id}-A#{spending_proposal.administrator.id}")
       end
     end
   end
