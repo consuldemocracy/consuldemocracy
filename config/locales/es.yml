@@ -438,6 +438,7 @@ es:
       back_link: Volver
     show:
       author_deleted: Usuario eliminado
+      code: 'Código propuesta de gasto:'
       share: Compartir
     wrong_price_format: Solo puede incluir caracteres numéricos
     spending_proposal:
