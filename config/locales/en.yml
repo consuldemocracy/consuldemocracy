@@ -464,6 +464,7 @@ en:
     show:
       author_deleted: User deleted
       unfeasibility_explanation: Unfeasibility explanation
+      code: 'Investment project code:'
       share: Share
     wrong_price_format: Only integer numbers
     spending_proposal:
