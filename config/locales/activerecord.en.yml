@@ -37,7 +37,7 @@ en:
       proposal:
         one: "Citizen proposal"
         other: "Citizen proposals"
-      spending_proposal:
+      spendingproposal:
         one: "Spending proposal"
         other: "Spending proposals"
     attributes:
