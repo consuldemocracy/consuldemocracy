@@ -63,7 +63,7 @@ module CommonActions
     commentable_path = commentable.is_a?(Proposal) ? proposal_path(commentable) : debate_path(commentable)
     visit commentable_path
 
-    fill_in "comment-body-#{commentable.class.name.downcase}_#{commentable.id}", with: 'Have you thought about...?'
+    fill_in "comment-body-#{commentable.class.name.underscore}_#{commentable.id}", with: 'Have you thought about...?'
     click_button 'Publish comment'
 
     expect(page).to have_content 'Have you thought about...?'
