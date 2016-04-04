@@ -16,55 +16,65 @@
 
   <body class="admin">
     <header>
-      <div class="top-links">
+      <section class="top-links">
         <div class="row">
           <%= render 'shared/locale_switcher' %>
         </div>
-      </div>
+      </section>
 
-      <div class="contain-to-grid clear">
-        <nav class="top-bar" data-topbar>
-          <ul class="title-area">
-            <li class="name">
-              <%= link_to management_root_path do %>
-                <%= image_tag('header_logo_madrid.png', class: 'float-left', size: '96x96') %>
-                <%= Setting['org_name'] %> <span>|</span> <span class="logo-site"><%= t("management.dashboard.index.title") %></span>
+      <div class="row">
+        <div class="top-bar">
+
+          <%= link_to Setting['org_name'], management_root_path, class: "logo show-for-small-only" %>
+
+          <span data-responsive-toggle="responsive-menu" data-hide-for="medium" class="float-right">
+            <span class="menu-icon dark" data-toggle></span>
+            <%= t("application.menu")%>
+          </span>
+
+          <div id="responsive-menu">
+            <div class="top-bar-title">
+              <%= link_to management_root_path, class: "hide-for-small-only" do %>
+                <%= image_tag('header_logo_madrid.png', class: 'hide-for-small-only float-left', size: '80x80', alt: t("layouts.header.logo")) %>
+                <%= Setting['org_name'] %>
+                &nbsp;|&nbsp;<%= t("management.dashboard.index.title") %>
               <% end %>
-            </li>
-            <li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li>
-          </ul>
-        </nav>
+            </div>
+          </div>
+        </div>
       </div>
     </header>
-    <div class="row">
 
-      <div class="small-12 medium-3 column">
-        <%= render "/management/menu" %>
-      </div>
+    <div class="row expanded">
+      <main>
+        <div class="small-12 medium-3 column">
+          <%= render "/management/menu" %>
+        </div>
 
-      <%= render "management/account_info" %>
+        <%= render "management/account_info" %>
 
-      <div class="admin-content small-12 medium-9 column">
-        <% if notice %>
-          <div data-alert class="callout success" data-closable>
-            <button class="close-button" aria-label="<%= t("application.close") %>" type="button" data-close>
-              <span aria-hidden="true">&times;</span>
-            </button>
-            <%= notice %>
-          </div>
-        <% end %>
+        <div class="admin-content small-12 medium-9 column">
+          <% if notice %>
+            <div data-alert class="callout success" data-closable>
+              <button class="close-button" aria-label="<%= t("application.close") %>" type="button" data-close>
+                <span aria-hidden="true">&times;</span>
+              </button>
+              <%= notice %>
+            </div>
+          <% end %>
 
-        <% if alert %>
-          <div data-alert class="callout alert" data-closable>
-            <button class="close-button" aria-label="<%= t("application.close") %>" type="button" data-close>
-              <span aria-hidden="true">&times;</span>
-            </button>
-            <%= alert %>
-          </div>
-        <% end %>
+          <% if alert %>
+            <div data-alert class="callout alert" data-closable>
+              <button class="close-button" aria-label="<%= t("application.close") %>" type="button" data-close>
+                <span aria-hidden="true">&times;</span>
+              </button>
+              <%= alert %>
+            </div>
+          <% end %>
 
-        <%= yield %>
-      </div>
+          <%= yield %>
+        </div>
+      </main>
     </div>
   </body>
 </html>
