@@ -37,7 +37,7 @@ es:
       proposal:
         one: "Propuesta ciudadana"
         other: "Propuestas ciudadanas"
-      spendingproposal:
+      spending_proposal:
         one: "Propuesta de inversión"
         other: "Propuestas de inversión"
     attributes:
