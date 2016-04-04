@@ -37,7 +37,7 @@ es:
       proposal:
         one: "Propuesta ciudadana"
         other: "Propuestas ciudadanas"
-      spending_proposal:
+      spendingproposal:
         one: "Propuesta de inversión"
         other: "Propuestas de inversión"
     attributes:
@@ -67,7 +67,7 @@ es:
       organization:
         name: "Nombre de organización"
         responsible_name: "Persona responsable del colectivo"
-      spendingproposal:
+      spending_proposal:
         administrator_id: "Administrador"
     errors:
       models:
