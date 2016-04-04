@@ -2,7 +2,7 @@
   <span class="icon-angle-left"></span> <%= t("valuation.spending_proposals.show.back") %>
 <% end %>
 
-<h2><%= t("valuation.spending_proposals.show.heading") %> <%= @spending_proposal.id %> </h2>
+<h2><%= t("valuation.spending_proposals.show.heading") %> <%= @spending_proposal.code_with_admin %> </h2>
 <h1><%= @spending_proposal.title %></h1>
 
 <%= safe_html_with_links @spending_proposal.description %>
