@@ -463,6 +463,7 @@ es:
     show:
       author_deleted: Usuario eliminado
       unfeasibility_explanation: Informe de inviabilidad
+      share: Compartir
     wrong_price_format: Solo puede incluir caracteres numéricos
     spending_proposal:
       spending_proposal: Propuesta de inversión
