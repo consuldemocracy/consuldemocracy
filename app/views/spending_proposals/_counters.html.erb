@@ -1,5 +1,5 @@
 <% if current_user %>
-  <% if current_user.level_two_verified? %>
+  <% if can? :vote, SpendingProposal %>
     <div class="sidebar-divider"></div>
     <h3 class="sidebar-title"><%= t("spending_proposals.index.sidebar.votes") %></h3>
     <br>
@@ -52,5 +52,4 @@
 
     <% end %>
   <% end %>
-
 <% end %>
