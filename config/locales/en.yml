@@ -438,6 +438,7 @@ en:
       back_link: Back
     show:
       author_deleted: User deleted
+      share: Share
     wrong_price_format: Only integer numbers
     spending_proposal:
       spending_proposal: Investment project
