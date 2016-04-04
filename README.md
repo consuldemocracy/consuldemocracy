@@ -70,6 +70,12 @@ a.residence_verified_at = Date.today
 a.save
 ```
 
+### OAuth
+
+To test authentication services with external OAuth suppliers - right now Twitter, Facebook and Google - you'll need to create an "application" in each of the supported platforms and set the *key* and *secret* provided in your *secrets.yml*
+
+In the case of Google, verify that the APIs *Contacts API* and *Google+ API* are enabled for the application.
+
 ## Licence
 
 Code published under AFFERO GPL v3 (see [LICENSE-AGPLv3.txt](LICENSE-AGPLv3.txt))
