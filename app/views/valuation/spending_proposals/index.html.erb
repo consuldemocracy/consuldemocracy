@@ -14,6 +14,8 @@
 
 <%= render 'shared/filter_subnav', i18n_namespace: "valuation.spending_proposals.index" %>
 
+<h3><%= page_entries_info @spending_proposals %></h3>
+
 <table>
   <% @spending_proposals.each do |spending_proposal| %>
     <tr id="<%= dom_id(spending_proposal) %>">
@@ -35,3 +37,5 @@
     </tr>
   <% end %>
 </table>
+
+<%= paginate @spending_proposals %>
