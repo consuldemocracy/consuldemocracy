@@ -181,6 +181,9 @@ feature 'Spending proposals' do
     expect(page).to have_content(spending_proposal.author.name)
     expect(page).to have_content(spending_proposal.association_name)
     expect(page).to have_content(spending_proposal.geozone.name)
+    within("#spending_proposal_code") do
+      expect(page).to have_content(spending_proposal.id)
+    end
   end
 
   context "Destroy" do
