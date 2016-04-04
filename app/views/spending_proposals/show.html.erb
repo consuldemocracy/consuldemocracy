@@ -13,6 +13,8 @@
         <%= l @spending_proposal.created_at.to_date %>
         <span class="bullet">&nbsp;&bull;&nbsp;</span>
         <%= geozone_name(@spending_proposal) %>
+        <span class="bullet">&nbsp;&bull;&nbsp;</span>
+        <%= @spending_proposal.id %>
       </div>
 
       <%= safe_html_with_links @spending_proposal.description.html_safe %>
