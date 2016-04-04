@@ -55,7 +55,7 @@
         <div class="sidebar-divider"></div>
         <h3><%= t("debates.show.share") %></h3>
         <div class="social-share-full">
-          <%= social_share_button_tag(@debate.title) %>
+          <%= social_share_button_tag("#{@debate.title} #{setting['twitter_hashtag']}") %>
           <% if browser.mobile? %>
             <a href="whatsapp://send?text=<%= @debate.title %> <%= debate_url(@debate) %>" data-action="share/whatsapp/share">
               <span class="icon-whatsapp whatsapp"></span>

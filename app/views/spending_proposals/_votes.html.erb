@@ -41,7 +41,7 @@
 
   <% if voted_for?(@spending_proposal_votes, spending_proposal) && setting['twitter_handle'] %>
     <div class="share-supported">
-      <%= social_share_button_tag(spending_proposal.title, url: spending_proposal_url(spending_proposal), via: setting['twitter_handle']) %>
+      <%= social_share_button_tag("#{spending_proposal.title} #{setting['twitter_hashtag']}", url: spending_proposal_url(spending_proposal), via: setting['twitter_handle']) %>
     </div>
   <% end %>
 </div>
