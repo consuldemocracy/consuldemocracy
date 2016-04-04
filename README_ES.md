@@ -55,6 +55,20 @@ Para ejecutar los tests:
 bin/rspec
 ```
 
+Puedes usar el usuario administrador por defecto del fichero seeds:
+
+ **user:** admin@madrid.es
+ **pass:** 12345678
+
+Pero para ciertas acciones, como apoyar, necesitarás verificarle, abre una consola con `rails console` y escribe:
+```
+a = User.first
+a.verified_at = Date.today
+a.level_two_verified_at = Date.today
+a.residence_verified_at = Date.today
+a.save
+```
+
 ### OAuth
 
 Para probar los servicios de autenticación mediante proveedores externos OAuth — en este momento Twitter, Facebook y Google —, necesitas crear una "aplicación" en cada una de las plataformas soportadas y configurar la *key* y el *secret* proporcionados en tu *secrets.yml*
