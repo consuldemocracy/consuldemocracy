@@ -15,6 +15,12 @@
         <%= geozone_name(@spending_proposal) %>
       </div>
 
+      <br>
+      <p id="spending_proposal_code">
+        <%= t("spending_proposals.show.code") %>
+        <strong><%= @spending_proposal.id %></strong>
+      </p>
+
       <%= safe_html_with_links @spending_proposal.description.html_safe %>
 
       <% if @spending_proposal.external_url.present? %>
