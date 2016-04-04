@@ -40,7 +40,7 @@ gem 'ckeditor', '~> 4.1.5'
 gem 'cancancan'
 gem 'social-share-button', git: 'https://github.com/huacnlee/social-share-button.git', ref: 'e46a6a3e82b86023bc'
 gem 'initialjs-rails', '0.2.0.1'
-gem 'unicorn', '~> 5.0.1'
+gem 'unicorn', '~> 5.1.0'
 gem 'paranoia'
 gem 'rinku', require: 'rails_rinku'
 gem 'savon'
@@ -60,7 +60,6 @@ gem 'tolk' # Web interface for translations
 gem 'browser'
 gem 'turnout'
 gem 'redcarpet'
-gem 'jwt', '~> 1.5.4'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

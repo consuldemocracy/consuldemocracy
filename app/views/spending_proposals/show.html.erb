@@ -27,14 +27,32 @@
         <h2><%= t('spending_proposals.show.unfeasibility_explanation') %></h2>
         <p><%= @spending_proposal.feasible_explanation %></p>
       <% end %>
-
     </div>
 
     <% if namespace != 'management' && !@spending_proposal.unfeasible? %>
-      <div id="<%= dom_id(@spending_proposal) %>_votes" class="small-12 medium-3 column text-center">
-          <%= render 'spending_proposals/votes',
-                    { spending_proposal: @spending_proposal, vote_url: vote_spending_proposal_path(@spending_proposal, value: 'yes') } %>
-      </div>
+      <aside class="small-12 medium-3 column">
+        <div class="sidebar-divider"></div>
+        <h3><%= t("votes.supports") %></h3>
+        <div class="text-center">
+          <div id="<%= dom_id(@spending_proposal) %>_votes">
+            <%= render 'spending_proposals/votes',
+                        { spending_proposal: @spending_proposal, vote_url:   vote_spending_proposal_path(@spending_proposal, value: 'yes') } %>
+          </div>
+        </div>
+        <div class="sidebar-divider"></div>
+        <h3><%= t("spending_proposals.show.share") %></h3>
+        <div class="social-share-full">
+          <%= social_share_button_tag(@spending_proposal.title) %>
+          <% if browser.mobile? %>
+            <a href="whatsapp://send?text=
+              <%= @spending_proposal.title %>
+              <%= proposal_url(@spending_proposal) %>"
+              data-action="share/whatsapp/share">
+              <span class="icon-whatsapp whatsapp"></span>
+            </a>
+          <% end %>
+        </div>
+      </aside>
     <% end %>
   </div>
 </section>

@@ -206,6 +206,7 @@ es:
           verified_users: Usuarios verificados
           visits: Visitas
           votes: Votos
+        spending_proposals_title: Propuestas de inversión
         visits_title: Visitas
     tags:
       create: Crear Tema
