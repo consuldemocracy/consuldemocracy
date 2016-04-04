@@ -195,6 +195,7 @@ en:
           debates: Debates
           proposal_votes: Proposal votes
           proposals: Proposals
+          spending_proposals: Spending Proposals
           unverified_users: Unverified users
           user_level_three: Level three users
           user_level_two: Level two users
@@ -202,6 +203,7 @@ en:
           verified_users: Verified users
           visits: Visits
           votes: Total votes
+        spending_proposals_title: Spending Proposals
         visits_title: Visits
     tags:
       create: Create Topic

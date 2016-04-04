@@ -77,11 +77,30 @@
             <span class="number"><%= number_with_delimiter(@user_level_three) %></span>
           </p>
         </div>
+
+        <div class="small-12 medium-3 column">
+          <p class="featured">
+            <%= t "admin.stats.show.summary.spending_proposals" %><br>
+            <span class="number"><%= number_with_delimiter(@spending_proposals) %></span>
+          </p>
+        </div>        
       </div>
 
       <div class="small-12 column">
         <h2><%= t "admin.stats.show.visits_title" %></h2>
         <%= visits_chart_tag id: "visits" %>
+      </div>
+
+      <div class="small-12 column">
+        <% @event_types.each do |event, count| %>
+          <h2><%= event.titleize %> (<%= count %>)</h2>
+          <%= events_chart_tag event %>
+        <% end %>
+      </div>
+
+      <div class="small-12 column">
+        <h2><%= t "admin.stats.show.spending_proposals_title" %></h2>
+        <%= spending_proposals_chart_tag id: "spending_proposals" %>
       </div>
 
       <div class="small-12 column">
