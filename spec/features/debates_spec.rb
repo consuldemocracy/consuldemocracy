@@ -272,6 +272,7 @@ feature 'Debates' do
 
     visit edit_debate_path(debate)
     expect(current_path).not_to eq(edit_debate_path(debate))
+    expect(current_path).to eq(proposals_path)
     expect(page).to have_content "You do not have permission to carry out the action 'edit' on debate."
   end
 
@@ -286,6 +287,7 @@ feature 'Debates' do
     visit edit_debate_path(debate)
 
     expect(current_path).not_to eq(edit_debate_path(debate))
+    expect(current_path).to eq(proposals_path)
     expect(page).to have_content 'You do not have permission to'
   end
 

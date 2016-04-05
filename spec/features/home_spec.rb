@@ -11,11 +11,11 @@ feature "Home" do
   end
 
   feature "For signed in users" do
-    scenario 'Redirect to spending proposals' do
+    scenario 'Redirect to proposals' do
       login_as(create(:user))
       visit root_path
 
-      expect(current_path).to eq welcome_spending_proposals_path
+      expect(current_path).to eq proposals_path
     end
   end
 
