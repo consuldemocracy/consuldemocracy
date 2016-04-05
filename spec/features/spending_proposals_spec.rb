@@ -288,19 +288,6 @@ feature 'Spending proposals' do
 
   context "Badge" do
 
-    scenario "Spending proposal created by a User" do
-      user = create(:user)
-      user_spending_proposal = create(:spending_proposal)
-
-      visit spending_proposal_path(user_spending_proposal)
-      expect(page).to_not have_css "is-forum"
-
-      visit spending_proposals_path(user_spending_proposal)
-      within "#spending_proposal_#{user_spending_proposal.id}" do
-        expect(page).to_not have_css "is-forum"
-      end
-    end
-
     scenario "Spending proposal created by a Foum" do
       forum = create(:forum)
       spending_proposal = create(:spending_proposal, forum: true)
@@ -311,6 +298,19 @@ feature 'Spending proposals' do
       visit spending_proposals_path
       within "#spending_proposal_#{spending_proposal.id}" do
         expect(page).to have_css ".is-forum"
+      end
+    end
+
+    scenario "Spending proposal created by a User" do
+      user = create(:user)
+      user_spending_proposal = create(:spending_proposal)
+
+      visit spending_proposal_path(user_spending_proposal)
+      expect(page).to_not have_css "is-forum"
+
+      visit spending_proposals_path(user_spending_proposal)
+      within "#spending_proposal_#{user_spending_proposal.id}" do
+        expect(page).to_not have_css "is-forum"
       end
     end
 

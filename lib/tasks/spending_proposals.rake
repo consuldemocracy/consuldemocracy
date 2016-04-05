@@ -18,7 +18,7 @@ namespace :spending_proposals do
     end
   end
 
-  desc "Sets spending proposal as proposed by Forum"
+  desc "Sets spending proposal as created by Forum"
   task set_forum: :environment do
     proposals_ids = [1,2,3]
     proposals_ids.each do |proposal_id|
