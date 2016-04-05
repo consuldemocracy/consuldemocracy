@@ -284,7 +284,7 @@ tags = Faker::Lorem.words(10)
 
 (1..60).each do |i|
   geozone = Geozone.reorder("RANDOM()").first
-  author = User.reorder("RANDOM()").first
+  author = User.reorder("RANDOM()").reject {|a| a.organization? }.first
   description = "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>"
   forum = ["true", "false"].sample
   spending_proposal = SpendingProposal.create!(author: author,
