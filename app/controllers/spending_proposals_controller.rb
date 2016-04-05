@@ -80,6 +80,9 @@ class SpendingProposalsController < ApplicationController
         target = target.by_geozone(params[:geozone])
         set_filter_geozone
       end
+      if params[:forum].present?
+        target = target.by_forum
+      end
       target = target.search(params[:search]) if params[:search].present?
       target
     end

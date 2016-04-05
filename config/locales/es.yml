@@ -436,6 +436,7 @@ es:
         geozones: Ámbitos de actuación
         votes: Apoyos restantes
         votes_district: "Solo puedes votar en el distrito %{district}"
+        forum_proposals: "Ver propuestas de inversión del espacio de debate distrital"
       orders:
         random: Aleatorias
         confidence_score: Mejor valoradas

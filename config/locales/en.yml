@@ -436,6 +436,7 @@ en:
         geozones: Scope of operation
         votes: Supports remaining
         votes_district: "You can only vote in the district %{district}"
+        forum_proposals: "See investment proposals from the district discussion space"
       orders:
         random: random
         confidence_score: highest rated

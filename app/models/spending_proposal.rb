@@ -36,6 +36,8 @@ class SpendingProposal < ActiveRecord::Base
   scope :unfeasible,             -> { valuation_finished.where(feasible: false) }
   scope :not_unfeasible,         -> { where("feasible IS ? OR feasible = ?", nil, true) }
 
+  scope :by_forum,               -> { where(forum: true) }
+
   scope :by_admin,    -> (admin)    { where(administrator_id: admin.presence) }
   scope :by_tag,      -> (tag_name) { tagged_with(tag_name) }
   scope :by_valuator, -> (valuator) { where("valuation_assignments.valuator_id = ?", valuator.presence).joins(:valuation_assignments) }
