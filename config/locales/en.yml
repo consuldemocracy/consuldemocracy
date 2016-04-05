@@ -366,6 +366,7 @@ en:
       to: 'To'
     author_info:
       author_deleted: User deleted
+      forum: District discussion space
     check: Select
     check_all: All
     check_none: None
