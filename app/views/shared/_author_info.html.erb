@@ -23,7 +23,7 @@
   <% end %>
 <% end %>
 
-<% if resource.author.verified_organization? %>
+<% if resource.author.verified_organization? || resource.forum? %>
   &nbsp;&bull;&nbsp;
   <span class="label round is-association">
     <%= t("shared.collective") %>
