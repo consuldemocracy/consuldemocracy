@@ -37,6 +37,7 @@ Setting['per_page_code'] =  ''
 
 # Social settings
 Setting["twitter_handle"] = "abriendomadrid"
+Setting["twitter_hashtag"] = "#decidemadrid"
 Setting["facebook_handle"] = "Abriendo-Madrid-1475577616080350"
 Setting["youtube_handle"] = "channel/UCFmaChI9quIY7lwHplnacfg"
 Setting["blog_url"] = "/blog"
