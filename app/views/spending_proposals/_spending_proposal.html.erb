@@ -31,10 +31,10 @@
                 <% end %>
               <% end %>
 
-              <% if spending_proposal.author.verified_organization? %>
+              <% if spending_proposal.forum? %>
                 <span class="bullet">&nbsp;&bull;&nbsp;</span>
-                <span class="label round is-association">
-                  <%= t("shared.collective") %>
+                <span class="label round is-forum">
+                  <%= t("spending_proposals.spending_proposal.forum") %>
                 </span>
               <% end %>
 

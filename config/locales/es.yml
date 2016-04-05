@@ -366,6 +366,7 @@ es:
       to: 'Hasta'
     author_info:
       author_deleted: Usuario eliminado
+      forum: Espacio de debate distrital
     check: Seleccionar
     check_all: Todos
     check_none: Ninguno
@@ -436,6 +437,8 @@ es:
         geozones: Ámbitos de actuación
         votes: Apoyos restantes
         votes_district: "Solo puedes votar en el distrito %{district}"
+        forum_proposals: "Ver propuestas de inversión del espacio de debate distrital"
+        forum_proposals_title: "Espacios de debate"
       orders:
         random: Aleatorias
         confidence_score: Mejor valoradas
@@ -469,6 +472,7 @@ es:
     spending_proposal:
       spending_proposal: Propuesta de inversión
       already_supported: Ya has apoyado este proyecto. ¡Compártelo!
+      forum: Espacio de debate distrital
       support: Apoyar
       support_title: Apoyar este proyecto
       supports:

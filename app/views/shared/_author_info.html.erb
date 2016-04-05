@@ -29,3 +29,10 @@
     <%= t("shared.collective") %>
   </span>
 <% end %>
+
+<% if resource.try(:forum?) %>
+  &nbsp;&bull;&nbsp;
+  <span class="label round is-forum">
+    <%= t("shared.author_info.forum") %>
+  </span>
+<% end %>

@@ -366,6 +366,7 @@ en:
       to: 'To'
     author_info:
       author_deleted: User deleted
+      forum: District discussion space
     check: Select
     check_all: All
     check_none: None
@@ -436,6 +437,8 @@ en:
         geozones: Scope of operation
         votes: Supports remaining
         votes_district: "You can only vote in the district %{district}"
+        forum_proposals: "See investment proposals from the district discussion space"
+        forum_proposals_title: "Discussion spaces"
       orders:
         random: random
         confidence_score: highest rated
@@ -470,6 +473,7 @@ en:
     spending_proposal:
       spending_proposal: Investment project
       already_supported: You have already supported this. Share it!
+      forum: District discussion space
       support: Support
       support_title: Support this project
       supports:

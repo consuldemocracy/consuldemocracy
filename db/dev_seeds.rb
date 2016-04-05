@@ -282,10 +282,11 @@ puts "Creating Spending Proposals"
 
 tags = Faker::Lorem.words(10)
 
-(1..30).each do |i|
+(1..60).each do |i|
   geozone = Geozone.reorder("RANDOM()").first
-  author = User.reorder("RANDOM()").first
+  author = User.reorder("RANDOM()").reject {|a| a.organization? }.first
   description = "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>"
+  forum = ["true", "false"].sample
   spending_proposal = SpendingProposal.create!(author: author,
                               title: Faker::Lorem.sentence(3).truncate(60),
                               external_url: Faker::Internet.url,
@@ -293,6 +294,7 @@ tags = Faker::Lorem.words(10)
                               created_at: rand((Time.now - 1.week) .. Time.now),
                               geozone: [geozone, nil].sample,
                               tag_list: tags.sample(3).join(','),
+                              forum: forum,
                               terms_of_service: "1")
   puts "    #{spending_proposal.title}"
 end

@@ -46,14 +46,15 @@ feature 'Spending proposals' do
   context("Filters") do
     scenario 'by geozone' do
       geozone1 = create(:geozone)
+      geozone2 = create(:geozone)
       spending_proposal1 = create(:spending_proposal, geozone: geozone1)
-      spending_proposal2 = create(:spending_proposal, geozone: create(:geozone))
+      spending_proposal2 = create(:spending_proposal, geozone: geozone2)
       spending_proposal3 = create(:spending_proposal, geozone: geozone1)
       spending_proposal4 = create(:spending_proposal)
 
       visit spending_proposals_path
 
-      within(".geozone") do
+      within("#geozones") do
         click_link geozone1.name
       end
 
@@ -64,6 +65,33 @@ feature 'Spending proposals' do
         expect(page).to have_content(spending_proposal3.title)
         expect(page).to_not have_content(spending_proposal2.title)
         expect(page).to_not have_content(spending_proposal4.title)
+      end
+    end
+
+    scenario "by forum" do
+      geozone1 = create(:geozone)
+      geozone2 = create(:geozone)
+      spending_proposal1 = create(:spending_proposal, geozone: geozone1, forum: true)
+      spending_proposal2 = create(:spending_proposal, geozone: geozone1, forum: true)
+      spending_proposal3 = create(:spending_proposal, geozone: geozone1)
+      spending_proposal4 = create(:spending_proposal, geozone: geozone2)
+      spending_proposal5 = create(:spending_proposal)
+
+
+      visit spending_proposals_path(geozone: geozone1.id)
+
+      within("#forum") do
+        click_link "See investment proposals from the district discussion space"
+      end
+
+      within("#investment-projects") do
+        expect(page).to have_css('.investment-project', count: 2)
+
+        expect(page).to have_content(spending_proposal1.title)
+        expect(page).to have_content(spending_proposal2.title)
+        expect(page).to_not have_content(spending_proposal3.title)
+        expect(page).to_not have_content(spending_proposal4.title)
+        expect(page).to_not have_content(spending_proposal5.title)
       end
     end
 
@@ -254,6 +282,36 @@ feature 'Spending proposals' do
 
       visit user_path(user)
       expect(page).not_to have_css("spending_proposal_list")
+    end
+
+  end
+
+  context "Badge" do
+
+    scenario "Spending proposal created by a Foum" do
+      forum = create(:forum)
+      spending_proposal = create(:spending_proposal, forum: true)
+
+      visit spending_proposal_path(spending_proposal)
+      expect(page).to have_css ".is-forum"
+
+      visit spending_proposals_path
+      within "#spending_proposal_#{spending_proposal.id}" do
+        expect(page).to have_css ".is-forum"
+      end
+    end
+
+    scenario "Spending proposal created by a User" do
+      user = create(:user)
+      user_spending_proposal = create(:spending_proposal)
+
+      visit spending_proposal_path(user_spending_proposal)
+      expect(page).to_not have_css "is-forum"
+
+      visit spending_proposals_path(user_spending_proposal)
+      within "#spending_proposal_#{user_spending_proposal.id}" do
+        expect(page).to_not have_css "is-forum"
+      end
     end
 
   end
