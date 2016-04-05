@@ -17,4 +17,13 @@ namespace :spending_proposals do
       spending_propsal.each(&:save)
     end
   end
+
+  desc "Sets spending proposal as proposed by Forum"
+  task set_forum: :environment do
+    proposals_ids = [1,2,3]
+    proposals_ids.each do |proposal_id|
+      proposal = SpendingProposal.find(proposal_id)
+      proposal.update(forum: true)
+    end
+  end
 end
