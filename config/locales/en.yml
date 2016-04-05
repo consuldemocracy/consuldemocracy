@@ -472,6 +472,7 @@ en:
     spending_proposal:
       spending_proposal: Investment project
       already_supported: You have already supported this. Share it!
+      forum: District discussion space
       support: Support
       support_title: Support this project
       supports:
