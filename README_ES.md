@@ -62,11 +62,7 @@ Puedes usar el usuario administrador por defecto del fichero seeds:
 
 Pero para ciertas acciones, como apoyar, necesitarás verificarle, abre una consola con `rails console` y escribe:
 ```
-a = User.first
-a.verified_at = Date.today
-a.level_two_verified_at = Date.today
-a.residence_verified_at = Date.today
-a.save
+User.first.update_attributes(verified_at: Date.today, residence_verified_at: Date.today, level_two_verified_at: Date.today)
 ```
 
 ### OAuth

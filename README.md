@@ -63,11 +63,7 @@ You can use the default admin user from the seeds file:
 
 But for some actions like voting, you will need to verify him, opening a console with `rails console` and then:
 ```
-a = User.first
-a.verified_at = Date.today
-a.level_two_verified_at = Date.today
-a.residence_verified_at = Date.today
-a.save
+User.first.update_attributes(verified_at: Date.today, residence_verified_at: Date.today, level_two_verified_at: Date.today)
 ```
 
 ### OAuth
