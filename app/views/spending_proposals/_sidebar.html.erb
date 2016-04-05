@@ -22,6 +22,15 @@
     <% end %>
   </div>
 
+  <div class="sidebar-divider"></div>
+
+  <% if @filter_geozone.present? %>
+    <div id="forum">
+      <%= link_to t("spending_proposals.index.sidebar.forum_proposals"),
+                  spending_proposals_path(geozone: @filter_geozone.id, forum: true) %>
+    </div>
+  <% end %>
+
   <% if current_user %>
     <% unless current_user.level_two_verified? %>
       <div class="callout warning unverified margin-top" data-equalizer-watch>
@@ -33,10 +42,4 @@
     <% end %>
   <% end %>
 
-  <% if @filter_geozone.present? %>
-    <div id="forum">
-      <%= link_to t("spending_proposals.index.sidebar.forum_proposals"),
-                  spending_proposals_path(geozone: @filter_geozone.id, forum: true) %>
-    </div>
-  <% end %>
 <% end %>
