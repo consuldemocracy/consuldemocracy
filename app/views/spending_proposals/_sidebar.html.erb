@@ -5,6 +5,16 @@
         <%= render 'counters' %>
       </div>
 
+      <% if @filter_geozone.present? %>
+        <%= link_to spending_proposals_path(geozone: @filter_geozone.id, forum: true), class: "back" do %>
+          <i class="icon-angle-left"></i>
+          <%= t("spending_proposals.index.sidebar.forum_proposals") %>
+        <% end %>
+      <% end %>
+
+      <div class="clear"></div>
+      <br>
+
       <%= link_to welcome_spending_proposals_path, class: "back" do %>
         <i class="icon-angle-left"></i>
         <%= t("spending_proposals.index.sidebar.back") %>
@@ -22,8 +32,9 @@
     <% end %>
   </div>
 
-  <div class="sidebar-divider"></div>
   <% if @filter_geozone.present? %>
+    <div class="sidebar-divider"></div>
+    <h3 class="sidebar-title"><%= t("spending_proposals.index.sidebar.forum_proposals_title") %></h3>
     <div id="forum">
       <%= link_to t("spending_proposals.index.sidebar.forum_proposals"),
                   spending_proposals_path(geozone: @filter_geozone.id, forum: true) %>
