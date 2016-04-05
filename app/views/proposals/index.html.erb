@@ -26,7 +26,7 @@
       </div>
 
       <% if @search_terms.blank? && @advanced_search_terms.blank? %>
-        <%= render "shared/#{["featured_process_banner", "featured_spending_proposals"].sample}" %>
+        <%= render "shared/featured_spending_proposals" %>
       <% end %>
 
       <% if @featured_proposals.present? %>
