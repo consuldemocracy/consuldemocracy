@@ -6,7 +6,7 @@ feature 'Spending Proposals' do
     login_as_manager
   end
 
-  context "Create" do
+  xcontext "Create" do
 
     scenario 'Creating spending proposals on behalf of someone' do
       user = create(:user, :level_two)

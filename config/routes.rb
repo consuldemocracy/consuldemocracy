@@ -256,7 +256,7 @@ Rails.application.routes.draw do
       end
     end
 
-    resources :spending_proposals, only: [:new, :create, :show]
+    # resources :spending_proposals, only: [:new, :create, :show]
   end
 
   resources :representatives, only: [:new, :create]

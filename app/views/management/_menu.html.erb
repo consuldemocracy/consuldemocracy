@@ -27,12 +27,14 @@
       <% end %>
     </li>
 
-    <li <%= "class=active" if controller_name == "spending_proposals" and action_name == "new" %>>
-      <%= link_to new_management_spending_proposal_path do %>
-        <span class="icon-budget"></span>
-        <%= t("management.menu.create_spending_proposal") %>
-      <% end %>
-    </li>
+    <% if can? :create, SpendingProposal %>
+      <li <%= "class=active" if controller_name == "spending_proposals" and action_name == "new" %>>
+        <%= link_to new_management_spending_proposal_path do %>
+          <span class="icon-budget"></span>
+          <%= t("management.menu.create_spending_proposal") %>
+        <% end %>
+      </li>
+    <% end %>
 
     <li <%= "class=active" if controller_name == "proposals" and action_name == "print" %>>
       <%= link_to print_management_proposals_path do %>
