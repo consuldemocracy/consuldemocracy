@@ -438,7 +438,7 @@ en:
       back_link: Back
     show:
       author_deleted: User deleted
-      code: 'Investment project code:'
+      code: 'Proposal code:'
       share: Share
     wrong_price_format: Only integer numbers
     spending_proposal:
