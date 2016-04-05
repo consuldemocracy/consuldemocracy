@@ -120,6 +120,7 @@ ActiveRecord::Schema.define(version: 20160329160106) do
     t.integer  "confidence_score",                        default: 0
     t.integer  "geozone_id"
     t.tsvector "tsv"
+    t.datetime "featured_at"
   end
 
   add_index "debates", ["author_id", "hidden_at"], name: "index_debates_on_author_id_and_hidden_at", using: :btree

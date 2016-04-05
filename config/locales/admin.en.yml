@@ -7,6 +7,8 @@ en:
       hide: Hide
       hide_author: Hide author
       restore: Restore
+      feature: Feature
+      remove_feature: Remove feature
     activity:
       show:
         action: Action
@@ -50,6 +52,7 @@ en:
       debate_topics: Debate topics
       hidden_comments: Hidden comments
       hidden_debates: Hidden debates
+      featured_debates: Featured debates
       hidden_proposals: Hidden proposals
       hidden_users: Hidden users
       incomplete_verifications: Incomplete verifications

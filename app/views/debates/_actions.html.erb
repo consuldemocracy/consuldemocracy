@@ -8,3 +8,14 @@
   <%= link_to t("admin.actions.hide_author").capitalize, hide_moderation_user_path(debate.author_id),
               method: :put, data: { confirm: t('admin.actions.confirm') } %>
 <% end %>
+
+<% if can? :feature, debate %>
+  &nbsp;|&nbsp;   
+  <% if debate.featured? %>
+  <%= link_to t("admin.actions.remove_feature").capitalize,  remove_feature_debate_path(debate),
+              method: :put, data: { confirm: t('admin.actions.confirm') } %>
+  <% else %>
+  <%= link_to t("admin.actions.feature").capitalize, feature_debate_path(debate),
+              method: :put, data: { confirm: t('admin.actions.confirm') } %>
+  <% end %>
+<% end %>
