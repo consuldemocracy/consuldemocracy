@@ -12,7 +12,6 @@ feature 'Admin' do
     visit admin_root_path
 
     expect(current_path).not_to eq(admin_root_path)
-    expect(current_path).to eq(proposals_path)
     expect(page).to have_content "You do not have permission to access this page"
   end
 
@@ -22,7 +21,6 @@ feature 'Admin' do
     visit admin_root_path
 
     expect(current_path).not_to eq(admin_root_path)
-    expect(current_path).to eq(proposals_path)
     expect(page).to have_content "You do not have permission to access this page"
   end
 
@@ -32,7 +30,6 @@ feature 'Admin' do
     visit admin_root_path
 
     expect(current_path).not_to eq(admin_root_path)
-    expect(current_path).to eq(proposals_path)
     expect(page).to have_content "You do not have permission to access this page"
   end
 
