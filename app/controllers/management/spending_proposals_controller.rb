@@ -1,6 +1,6 @@
 class Management::SpendingProposalsController < Management::BaseController
 
-  before_action :check_verified_user
+  before_action :check_verified_user, except: :print
   before_action :set_spending_proposal, only: [:vote, :show]
 
   def index
@@ -32,6 +32,12 @@ class Management::SpendingProposalsController < Management::BaseController
     set_spending_proposal_votes(@spending_proposal)
   end
 
+  def print
+    params[:geozone] ||= 'all'
+    @spending_proposals = apply_filters_and_search(SpendingProposal).order(cached_votes_up: :desc).for_render.limit(15)
+    set_spending_proposal_votes(@spending_proposals)
+  end
+
   private
 
     def set_spending_proposal
@@ -55,6 +61,14 @@ class Management::SpendingProposalsController < Management::BaseController
     # This should not be necessary. Maybe we could create a specific show view for managers.
     def set_spending_proposal_votes(spending_proposals)
       @spending_proposal_votes = current_user ? current_user.spending_proposal_votes(spending_proposals) : {}
+    end
+
+    def set_geozone_name
+      if params[:geozone] == 'all'
+        @geozone_name = t('geozones.none')
+      else
+        @geozone_name = Geozone.find(params[:geozone]).name
+      end
     end
 
     def apply_filters_and_search(target)
