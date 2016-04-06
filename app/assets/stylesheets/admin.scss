@@ -116,7 +116,7 @@ body.admin {
     [class^="icon-"] {
       display: inline-block;
       font-size: rem-calc(24);
-      padding-right: rem-calc(24);
+      padding-right: rem-calc(12);
       padding-top: rem-calc(4);
       padding-left: 12px\9 !important;
       padding-right: 12px\9 !important;
@@ -349,3 +349,9 @@ body.admin {
   margin-bottom: 0;
 }
 
+body.admin {
+
+  .investment-projects-list.medium-9 {
+    width: 100%;
+  }
+}

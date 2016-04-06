@@ -51,4 +51,128 @@ feature 'Spending Proposals' do
     end
   end
 
+  context "Searching" do
+    scenario "by title" do
+      spending_proposal1 = create(:spending_proposal, title: "Show me what you got")
+      spending_proposal2 = create(:spending_proposal, title: "Get Schwifty")
+
+      user = create(:user, :level_two)
+      login_managed_user(user)
+
+      click_link "Support spending proposals"
+
+      fill_in "search", with: "what you got"
+      click_button "Search"
+
+      expect(current_path).to eq(management_spending_proposals_path)
+
+      within("#investment-projects") do
+        expect(page).to have_css('.investment-project', count: 1)
+        expect(page).to have_content(spending_proposal1.title)
+        expect(page).to_not have_content(spending_proposal2.title)
+        expect(page).to have_css("a[href='#{management_spending_proposal_path(spending_proposal1)}']", text: spending_proposal1.title)
+        expect(page).to have_css("a[href='#{management_spending_proposal_path(spending_proposal1)}']", text: spending_proposal1.description)
+      end
+    end
+
+    scenario "by district" do
+      spending_proposal1 = create(:spending_proposal, title: "Hey ho", geozone_id: create(:geozone, name: "District 9").id)
+      spending_proposal2 = create(:spending_proposal, title: "Let's go", geozone_id: create(:geozone, name: "Area 52").id)
+
+      user = create(:user, :level_two)
+      login_managed_user(user)
+
+      click_link "Support spending proposals"
+
+      fill_in "search", with: "Area 52"
+      click_button "Search"
+
+      expect(current_path).to eq(management_spending_proposals_path)
+
+      within("#investment-projects") do
+        expect(page).to have_css('.investment-project', count: 1)
+        expect(page).to_not have_content(spending_proposal1.title)
+        expect(page).to have_content(spending_proposal2.title)
+        expect(page).to have_css("a[href='#{management_spending_proposal_path(spending_proposal2)}']", text: spending_proposal2.title)
+        expect(page).to have_css("a[href='#{management_spending_proposal_path(spending_proposal2)}']", text: spending_proposal2.description)
+      end
+    end
+  end
+
+  scenario "Listing" do
+    spending_proposal1 = create(:spending_proposal, title: "Show me what you got")
+    spending_proposal2 = create(:spending_proposal, title: "Get Schwifty")
+
+    user = create(:user, :level_two)
+    login_managed_user(user)
+
+    click_link "Support spending proposals"
+
+    expect(current_path).to eq(management_spending_proposals_path)
+
+    within(".account-info") do
+      expect(page).to have_content "Identified as"
+      expect(page).to have_content "#{user.username}"
+      expect(page).to have_content "#{user.email}"
+      expect(page).to have_content "#{user.document_number}"
+    end
+
+    within("#investment-projects") do
+      expect(page).to have_css('.investment-project', count: 2)
+      expect(page).to have_css("a[href='#{management_spending_proposal_path(spending_proposal1)}']", text: spending_proposal1.title)
+      expect(page).to have_css("a[href='#{management_spending_proposal_path(spending_proposal1)}']", text: spending_proposal1.description)
+      expect(page).to have_css("a[href='#{management_spending_proposal_path(spending_proposal2)}']", text: spending_proposal2.title)
+      expect(page).to have_css("a[href='#{management_spending_proposal_path(spending_proposal2)}']", text: spending_proposal2.description)
+    end
+  end
+
+  context "Voting" do
+
+    scenario 'Voting spending proposals on behalf of someone in index view', :js do
+      spending_proposal = create(:spending_proposal)
+
+      user = create(:user, :level_two)
+      login_managed_user(user)
+
+      click_link "Support spending proposals"
+
+      within("#investment-projects") do
+        find('.in-favor a').click
+
+        expect(page).to have_content "1 support"
+        expect(page).to have_content "You have already supported this. Share it!"
+      end
+      expect(current_path).to eq(management_spending_proposals_path)
+    end
+
+    scenario 'Voting spending proposals on behalf of someone in show view', :js do
+      spending_proposal = create(:spending_proposal)
+
+      user = create(:user, :level_two)
+      login_managed_user(user)
+
+      click_link "Support spending proposals"
+
+      within("#investment-projects") do
+        click_link spending_proposal.title
+      end
+
+      find('.in-favor a').click
+      expect(page).to have_content "1 support"
+      expect(page).to have_content "You have already supported this. Share it!"
+      expect(current_path).to eq(management_spending_proposal_path(spending_proposal))
+    end
+
+    scenario "Should not allow unverified users to vote proposals" do
+      spending_proposal = create(:spending_proposal)
+
+      user = create(:user)
+      login_managed_user(user)
+
+      click_link "Support spending proposals"
+
+      expect(page).to have_content "User is not verified"
+    end
+  end
+
 end
