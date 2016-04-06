@@ -261,4 +261,12 @@ describe SpendingProposal do
     end
   end
 
+  describe "responsible_name" do
+    it "gets updated with the user name" do
+      u = create(:user, username: "manolo")
+      sp = create(:spending_proposal, author: u)
+      expect(sp.responsible_name).to eq("manolo")
+    end
+  end
+
 end
