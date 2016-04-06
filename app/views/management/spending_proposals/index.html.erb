@@ -1,8 +1,11 @@
 <main>
-  <%= render 'admin/shared/spending_proposal_search', url: management_spending_proposals_path %>
+  <span class="not-print">
+    <%= render 'admin/shared/spending_proposal_search', url: management_spending_proposals_path %>
+  </span>
 
   <div class="wrap row">
     <div id="investment-projects" class="investment-projects-list small-12 medium-9 column">
+
 
       <div class="small-12 search-results">
         <%= content_tag(:h2, t("spending_proposals.index.unfeasible")) if params[:unfeasible].present? %>
