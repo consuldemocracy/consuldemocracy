@@ -363,76 +363,162 @@ feature 'Votes' do
   end
 
   feature 'Spending Proposals' do
-    background { login_as(@manuela) }
 
-    feature 'Index' do
-      scenario "Index shows user votes on proposals" do
-        spending_proposal1 = create(:spending_proposal)
-        spending_proposal2 = create(:spending_proposal)
-        spending_proposal3 = create(:spending_proposal)
-        create(:vote, voter: @manuela, votable: spending_proposal1, vote_flag: true)
+    context "Verified User" do
 
-        visit spending_proposals_path
+      background { login_as(@manuela) }
 
-        within("#investment-projects") do
-          within("#spending_proposal_#{spending_proposal1.id}_votes") do
+      feature 'Index' do
+        scenario "Index shows user votes on proposals" do
+          spending_proposal1 = create(:spending_proposal)
+          spending_proposal2 = create(:spending_proposal)
+          spending_proposal3 = create(:spending_proposal)
+          create(:vote, voter: @manuela, votable: spending_proposal1, vote_flag: true)
+
+          visit spending_proposals_path
+
+          within("#investment-projects") do
+            within("#spending_proposal_#{spending_proposal1.id}_votes") do
+              expect(page).to have_content "You have already supported this. Share it!"
+            end
+
+            within("#spending_proposal_#{spending_proposal2.id}_votes") do
+              expect(page).to_not have_content "You have already supported this. Share it!"
+            end
+
+            within("#spending_proposal_#{spending_proposal3.id}_votes") do
+              expect(page).to_not have_content "You have already supported this. Share it!"
+            end
+          end
+        end
+
+        scenario 'Create from spending proposal index', :js do
+          spending_proposal = create(:spending_proposal)
+          visit spending_proposals_path
+
+          within('.supports') do
+            find('.in-favor a').click
+
+            expect(page).to have_content "1 support"
             expect(page).to have_content "You have already supported this. Share it!"
           end
+        end
+      end
 
-          within("#spending_proposal_#{spending_proposal2.id}_votes") do
-            expect(page).to_not have_content "You have already supported this. Share it!"
+      feature 'Single spending proposal' do
+        background do
+          @proposal = create(:spending_proposal)
+        end
+
+        scenario 'Show no votes' do
+          visit spending_proposal_path(@proposal)
+          expect(page).to have_content "No supports"
+        end
+
+        scenario 'Trying to vote multiple times', :js do
+          visit spending_proposal_path(@proposal)
+
+          within('.supports') do
+            find('.in-favor a').click
+            expect(page).to have_content "1 support"
+
+            expect(page).to_not have_selector ".in-favor a"
           end
+        end
 
-          within("#spending_proposal_#{spending_proposal3.id}_votes") do
-            expect(page).to_not have_content "You have already supported this. Share it!"
+        scenario 'Create from proposal show', :js do
+          visit spending_proposal_path(@proposal)
+
+          within('.supports') do
+            find('.in-favor a').click
+
+            expect(page).to have_content "1 support"
+            expect(page).to have_content "You have already supported this. Share it!"
           end
         end
       end
 
-      scenario 'Create from spending proposal index', :js do
-        spending_proposal = create(:spending_proposal)
-        visit spending_proposals_path
-
-        within('.supports') do
-          find('.in-favor a').click
-
-          expect(page).to have_content "1 support"
-          expect(page).to have_content "You have already supported this. Share it!"
-        end
-      end
     end
 
-    feature 'Single spending proposal' do
+    context "Forum" do
+
       background do
-        @proposal = create(:spending_proposal)
+        @user = create(:user)
+        forum = create(:forum, user: @user)
+
+        login_as(@user)
       end
 
-      scenario 'Show no votes' do
-        visit spending_proposal_path(@proposal)
-        expect(page).to have_content "No supports"
-      end
+      feature 'Index' do
+        scenario "Index shows user votes on proposals" do
+          spending_proposal1 = create(:spending_proposal)
+          spending_proposal2 = create(:spending_proposal)
+          spending_proposal3 = create(:spending_proposal)
+          create(:vote, voter: @user, votable: spending_proposal1, vote_flag: true)
 
-      scenario 'Trying to vote multiple times', :js do
-        visit spending_proposal_path(@proposal)
+          visit spending_proposals_path
 
-        within('.supports') do
-          find('.in-favor a').click
-          expect(page).to have_content "1 support"
+          within("#investment-projects") do
+            within("#spending_proposal_#{spending_proposal1.id}_votes") do
+              expect(page).to have_content "You have already supported this. Share it!"
+            end
 
-          expect(page).to_not have_selector ".in-favor a"
+            within("#spending_proposal_#{spending_proposal2.id}_votes") do
+              expect(page).to_not have_content "You have already supported this. Share it!"
+            end
+
+            within("#spending_proposal_#{spending_proposal3.id}_votes") do
+              expect(page).to_not have_content "You have already supported this. Share it!"
+            end
+          end
+        end
+
+        scenario 'Create from spending proposal index', :js do
+          spending_proposal = create(:spending_proposal)
+          visit spending_proposals_path
+
+          within('.supports') do
+            find('.in-favor a').click
+
+            expect(page).to have_content "1 support"
+            expect(page).to have_content "You have already supported this. Share it!"
+          end
         end
       end
 
-      scenario 'Create from proposal show', :js do
-        visit spending_proposal_path(@proposal)
+      feature 'Single spending proposal' do
+        background do
+          @proposal = create(:spending_proposal)
+        end
 
-        within('.supports') do
-          find('.in-favor a').click
+        scenario 'Show no votes' do
+          visit spending_proposal_path(@proposal)
+          expect(page).to have_content "No supports"
+        end
 
-          expect(page).to have_content "1 support"
-          expect(page).to have_content "You have already supported this. Share it!"
+        scenario 'Trying to vote multiple times', :js do
+          visit spending_proposal_path(@proposal)
+
+          within('.supports') do
+            find('.in-favor a').click
+            expect(page).to have_content "1 support"
+
+            expect(page).to_not have_selector ".in-favor a"
+          end
+        end
+
+        scenario 'Create from proposal show', :js do
+          visit spending_proposal_path(@proposal)
+
+          within('.supports') do
+            find('.in-favor a').click
+
+            expect(page).to have_content "1 support"
+            expect(page).to have_content "You have already supported this. Share it!"
+          end
         end
       end
+
     end
   end
 end

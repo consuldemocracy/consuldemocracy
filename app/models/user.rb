@@ -14,6 +14,7 @@ class User < ActiveRecord::Base
   has_one :moderator
   has_one :valuator
   has_one :organization
+  has_one :forum
   has_one :lock
   has_many :flags
   has_many :identities, dependent: :destroy
@@ -107,6 +108,10 @@ class User < ActiveRecord::Base
 
   def organization?
     organization.present?
+  end
+
+  def forum?
+    forum.present?
   end
 
   def verified_organization?
@@ -227,6 +232,11 @@ class User < ActiveRecord::Base
       Geozone.find(supported_spending_proposals_geozone_id)
     end
   end
+
+  def ability
+    @ability ||= Ability.new(self)
+  end
+  delegate :can?, :cannot?, to: :ability
 
   private
     def clean_document_number
