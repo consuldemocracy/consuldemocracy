@@ -36,7 +36,7 @@ class SpendingProposal < ActiveRecord::Base
 
   scope :for_render,             -> { includes(:geozone) }
 
-  before_validation :update_responsible_name
+  before_validation :set_responsible_name
 
   def description
     super.try :html_safe
@@ -122,7 +122,7 @@ class SpendingProposal < ActiveRecord::Base
     end
   end
 
-  def update_responsible_name
+  def set_responsible_name
     self.responsible_name = author.try(:username)
   end
 
