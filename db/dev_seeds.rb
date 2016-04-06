@@ -333,5 +333,6 @@ Proposal.only_hidden.flagged.reorder("RANDOM()").limit(5).each(&:confirm_hide)
 puts "Creating district Forums"
 forums = ["Leganes", "Retiro", "Vallecas", "Salamanca"]
 forums.each do |forum|
-  Forum.create(name: forum)
+  user = User.unverified.reorder("RANDOM()").reject {|u| u.organization? }.first
+  Forum.create(name: forum, user: user)
 end
