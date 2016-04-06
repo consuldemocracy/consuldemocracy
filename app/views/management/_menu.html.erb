@@ -37,6 +37,13 @@
       </li>
     <% end %>
 
+    <li <%= "class=active" if controller_name == "spending_proposals" and action_name == "index" %>>
+      <%= link_to management_spending_proposals_path do %>
+        <span class="icon-like"></span>
+        <%= t("management.menu.support_spending_proposals") %>
+      <% end %>
+    </li>
+
     <li <%= "class=active" if controller_name == "proposals" and action_name == "print" %>>
       <%= link_to print_management_proposals_path do %>
         <span class="icon-print"></span>

@@ -256,7 +256,12 @@ Rails.application.routes.draw do
       end
     end
 
-    # resources :spending_proposals, only: [:new, :create, :show]
+    resources :spending_proposals, only: [:index, :show] do #[:new, :create] temporary disabled
+      member do
+        post :vote
+      end
+    end
+
   end
 
   resources :representatives, only: [:new, :create]

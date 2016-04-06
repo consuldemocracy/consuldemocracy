@@ -35,14 +35,14 @@
       <% end %>
     </div>
 
-    <% if namespace != 'management' && !@spending_proposal.unfeasible? %>
+    <% unless @spending_proposal.unfeasible? %>
       <aside class="small-12 medium-3 column">
         <div class="sidebar-divider"></div>
         <h3><%= t("votes.supports") %></h3>
         <div class="text-center">
           <div id="<%= dom_id(@spending_proposal) %>_votes">
-            <%= render 'spending_proposals/votes',
-                        { spending_proposal: @spending_proposal, vote_url:   vote_spending_proposal_path(@spending_proposal, value: 'yes') } %>
+            <%= render 'votes',
+                        { spending_proposal: @spending_proposal, vote_url: vote_spending_proposal_path(@spending_proposal, value: 'yes') } %>
           </div>
         </div>
         <div class="sidebar-divider"></div>

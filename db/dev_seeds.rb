@@ -72,6 +72,12 @@ moderator.create_moderator
 valuator = create_user('valuator@madrid.es', 'valuator')
 valuator.create_valuator
 
+level_2 = create_user('leveltwo@madrid.es', 'level 2')
+level_2.update(residence_verified_at: Time.now, confirmed_phone: Faker::PhoneNumber.phone_number, document_number: "2222222222", document_type: "1" )
+
+verified = create_user('verified@madrid.es', 'verified')
+verified.update(residence_verified_at: Time.now, confirmed_phone: Faker::PhoneNumber.phone_number, document_type: "1", verified_at: Time.now, document_number: "3333333333")
+
 (1..10).each do |i|
   org_name = Faker::Company.name
   org_user = create_user("org#{i}@madrid.es", org_name)

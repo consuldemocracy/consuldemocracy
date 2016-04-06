@@ -33,4 +33,13 @@ module SpendingProposalsHelper
     (spending_proposal.city_wide? && current_user.city_wide_spending_proposals_supported_count == 0)
   end
 
+  def namespaced_spending_proposal_path(spending_proposal, options={})
+    @namespace_spending_proposal_path ||= namespace
+    case @namespace_spending_proposal_path
+    when "management"
+      management_spending_proposal_path(spending_proposal, options)
+    else
+      spending_proposal_path(spending_proposal, options)
+    end
+  end
 end

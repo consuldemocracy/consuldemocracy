@@ -41,6 +41,7 @@ en:
       print_proposals: Print proposals
       support_proposals: Support proposals
       create_spending_proposal: Create spending proposal
+      support_spending_proposals: Support spending proposals
       title: Management
       users: Users
     permissions:
