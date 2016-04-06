@@ -125,7 +125,7 @@ class SpendingProposal < ActiveRecord::Base
 
   def reason_for_not_being_votable_by(user)
     return :not_logged_in unless user
-    return :not_verified  unless user.level_two_or_three_verified?
+    return :not_verified  unless user.can?(:vote, SpendingProposal)
     return :unfeasible    if unfeasible?
     return :organization  if user.organization?
     if city_wide?
