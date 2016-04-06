@@ -67,12 +67,8 @@ Rails.application.routes.draw do
 
   scope '/participatory_budget' do
     resources :spending_proposals, only: [:index, :new, :create, :show, :destroy], path: 'investment_projects' do
-      collection do
-        get :welcome
-      end
-      member do
-        post :vote
-      end
+      get :welcome, on: :collection
+      post :vote, on: :member
     end
   end
 
@@ -81,19 +77,17 @@ Rails.application.routes.draw do
   resources :legislations, only: [:show]
 
   resources :annotations, only: [:index, :show] do
-    collection do
-      get :search
-    end
+    get :search, on: :collection
   end
 
   resources :users, only: [:show]
 
   resource :account, controller: "account", only: [:show, :update, :delete] do
-    collection { get :erase }
+    get :erase, on: :collection
   end
 
   resources :notifications, only: [:index, :show] do
-    collection { put :mark_all_as_read }
+    put :mark_all_as_read, on: :collection
   end
 
   resource :verification, controller: "verification", only: [:show]
@@ -110,7 +104,7 @@ Rails.application.routes.draw do
   namespace :admin do
     root to: "dashboard#index"
     resources :organizations, only: :index do
-      collection { get :search }
+      get :search, on: :collection
       member do
         put :verify
         put :reject
@@ -154,20 +148,20 @@ Rails.application.routes.draw do
 
     resources :tags, only: [:index, :create, :update, :destroy]
     resources :officials, only: [:index, :edit, :update, :destroy] do
-      collection { get :search}
+      get :search, on: :collection
     end
 
     resources :settings, only: [:index, :update]
     resources :moderators, only: [:index, :create, :destroy] do
-      collection { get :search }
+      get :search, on: :collection
     end
 
     resources :valuators, only: [:index, :create] do
-      collection { get :search }
+      get :search, on: :collection
     end
 
     resources :verifications, controller: :verifications, only: :index do
-      collection { get :search}
+      get :search, on: :collection
     end
 
     resource :activity, controller: :activity, only: :show
@@ -189,30 +183,18 @@ Rails.application.routes.draw do
     end
 
     resources :debates, only: :index do
-      member do
-        put :hide
-      end
-      collection do
-        put :moderate
-      end
+      put :hide, on: :member
+      put :moderate, on: :collection
     end
 
     resources :proposals, only: :index do
-      member do
-        put :hide
-      end
-      collection do
-        put :moderate
-      end
+      put :hide, on: :member
+      put :moderate, on: :collection
     end
 
     resources :comments, only: :index do
-      member do
-        put :hide
-      end
-      collection do
-        put :moderate
-      end
+      put :hide, on: :member
+      put :moderate, on: :collection
     end
   end
 
@@ -220,9 +202,7 @@ Rails.application.routes.draw do
     root to: "spending_proposals#index"
 
     resources :spending_proposals, only: [:index, :show, :edit] do
-      member do
-        patch :valuate
-      end
+      patch :valuate, on: :member
     end
   end
 
@@ -230,36 +210,26 @@ Rails.application.routes.draw do
     root to: "dashboard#index"
 
     resources :document_verifications, only: [:index, :new, :create] do
-      collection do
-        post :check
-      end
+      post :check, on: :collection
     end
 
     resources :email_verifications, only: [:new, :create]
 
     resources :users, only: [:new, :create] do
-      collection do
-        delete :logout
-      end
+      delete :logout, on: :collection
     end
 
     get 'sign_in', to: 'sessions#create'
 
     resource :session, only: [:create, :destroy]
     resources :proposals, only: [:index, :new, :create, :show] do
-      member do
-        post :vote
-      end
-
-      collection do
-        get :print
-      end
+      post :vote, on: :member
+      get :print, on: :collection
     end
 
     resources :spending_proposals, only: [:index, :show] do #[:new, :create] temporary disabled
-      member do
-        post :vote
-      end
+      post :vote, on: :member
+      get :print, on: :collection
     end
 
   end

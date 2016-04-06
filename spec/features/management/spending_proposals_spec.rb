@@ -175,4 +175,50 @@ feature 'Spending Proposals' do
     end
   end
 
+  context "Printing" do
+
+    scenario 'Printing spending proposals' do
+      16.times { create(:spending_proposal, geozone_id: nil) }
+
+      click_link "Print spending proposals"
+
+      expect(page).to have_css('.investment-project', count: 15)
+      expect(page).to have_css("a[href='javascript:window.print();']", text: 'Print')
+    end
+
+    scenario "Filtering spending proposals by geozone to be printed", :js do
+      district_9 = create(:geozone, name: "District Nine")
+      create(:spending_proposal, title: 'Change district 9', geozone: district_9, cached_votes_up: 10)
+      create(:spending_proposal, title: 'Destroy district 9', geozone: district_9, cached_votes_up: 100)
+      create(:spending_proposal, title: 'Nuke district 9', geozone: district_9, cached_votes_up: 1)
+      create(:spending_proposal, title: 'Add new districts to the city', geozone_id: nil)
+
+      user = create(:user, :level_two)
+      login_managed_user(user)
+
+      click_link "Print spending proposals"
+
+      expect(page).to have_content "Investment projects with scope: All city"
+
+      within '#investment-projects' do
+        expect(page).to have_content('Add new districts to the city')
+        expect(page).to_not have_content('Change district 9')
+        expect(page).to_not have_content('Destroy district 9')
+        expect(page).to_not have_content('Nuke district 9')
+      end
+
+      select 'District Nine', from: 'geozone'
+
+      expect(page).to have_content "Investment projects with scope: District Nine"
+      expect(current_url).to include("geozone=#{district_9.id}")
+
+      within '#investment-projects' do
+        expect(page).to_not have_content('Add new districts to the city')
+        expect('Destroy district 9').to appear_before('Change district 9')
+        expect('Change district 9').to appear_before('Nuke district 9')
+      end
+    end
+
+  end
+
 end

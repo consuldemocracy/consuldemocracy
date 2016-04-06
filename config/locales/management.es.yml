@@ -41,7 +41,8 @@ es:
       print_proposals: Imprimir propuestas
       support_proposals: Apoyar propuestas
       create_spending_proposal: Crear propuesta de inversión
-      support_spending_proposals: Apoyar propuestas de inversión
+      print_spending_proposals: Imprimir propts. de inversión
+      support_spending_proposals: Apoyar propts. de inversión
       title: Gestión
       users: Usuarios
     permissions:
@@ -50,9 +51,11 @@ es:
       support_proposals: Apoyar propuestas
       vote_proposals: Participar en las votaciones finales
     print:
-      info: Haz tu propuesta en http://decide.madrid.es
-      note: Las propuestas más apoyadas serán llevadas a votación. Y si las acepta una mayoría, el Ayuntamiento las llevará a cabo.
+      proposals_info: Haz tu propuesta en http://decide.madrid.es
+      proposals_note: Las propuestas más apoyadas serán llevadas a votación. Y si las acepta una mayoría, el Ayuntamiento las llevará a cabo.
       proposals_title: 'Propuestas:'
+      spending_proposals_info: Participa en http://decide.madrid.es
+      spending_proposals_note: Los presupuestos participativos se invertirán en las propuestas de inversión más apoyadas.
     print_info: Imprimir esta información
     proposals:
       alert:
@@ -64,6 +67,14 @@ es:
       alert:
         unverified_user: Este usuario no está verificado
       create: Crear propuesta de inversión
+      filters:
+        unfeasible: Propuestas de inversión no viables
+        by_geozone: "Propuestas de inversión con ámbito: %{geozone}"
+      print:
+        print_button: Imprimir
+      search_results:
+        one: " que contiene '%{search_term}'"
+        other: " que contienen '%{search_term}'"
     sessions:
       signed_out: Has cerrado la sesión correctamente.
       signed_out_managed_user: Se ha cerrado correctamente la sesión del usuario.

@@ -8,12 +8,12 @@
 
 
       <div class="small-12 search-results">
-        <%= content_tag(:h2, t("spending_proposals.index.unfeasible")) if params[:unfeasible].present? %>
-        <%= content_tag(:h2, t("spending_proposals.index.by_geozone", geozone: @geozone_name)) if @geozone_name.present? %>
+        <%= content_tag(:h2, t("management.spending_proposals.filters.unfeasible")) if params[:unfeasible].present? %>
+        <%= content_tag(:h2, t("management.spending_proposals.filters.by_geozone", geozone: @geozone_name)) if @geozone_name.present? %>
         <% if params[:search].present? %>
           <h2>
             <%= page_entries_info @spending_proposals %>
-            <%= t("spending_proposals.index.search_results", count: @spending_proposals.size, search_term: params[:search]) %>
+            <%= t("management.spending_proposals.search_results", count: @spending_proposals.size, search_term: params[:search]) %>
           </h2>
         <% end %>
       </div>

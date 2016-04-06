@@ -50,5 +50,12 @@
         <%= t("management.menu.print_proposals") %>
       <% end %>
     </li>
+
+    <li <%= "class=active" if controller_name == "spending_proposals" and action_name == "print" %>>
+      <%= link_to print_management_spending_proposals_path do %>
+        <span class="icon-print"></span>
+        <%= t("management.menu.print_spending_proposals") %>
+      <% end %>
+    </li>
   </ul>
 </div>
