@@ -8,7 +8,7 @@
           <% cache [locale_and_user_status(spending_proposal), 'index', spending_proposal, spending_proposal.author] do %>
             <span class="label-investment-project float-left"><%= t("spending_proposals.spending_proposal.spending_proposal") %></span>
             <span class="icon-budget"></span>
-            <h3><%= link_to spending_proposal.title, spending_proposal_path(spending_proposal) %></h3>
+            <h3><%= link_to spending_proposal.title, namespaced_spending_proposal_path(spending_proposal) %></h3>
             <p class="investment-project-info">
 
               <%= l spending_proposal.created_at.to_date %>
@@ -42,7 +42,7 @@
               <%= geozone_name(spending_proposal) %>
             </p>
             <div class="investment-project-description">
-              <p><%= link_to spending_proposal.description, spending_proposal_path(spending_proposal) %></p>
+              <p><%= link_to spending_proposal.description, namespaced_spending_proposal_path(spending_proposal) %></p>
               <div class="truncate"></div>
             </div>
           <% end %>
@@ -50,7 +50,7 @@
       </div>
 
       <div id="<%= dom_id(spending_proposal) %>_votes" class="small-12 medium-3 column text-center">
-          <%= render 'spending_proposals/votes',
+          <%= render 'votes',
                     { spending_proposal: spending_proposal, vote_url: vote_spending_proposal_path(spending_proposal, value: 'yes') } %>
       </div>
 

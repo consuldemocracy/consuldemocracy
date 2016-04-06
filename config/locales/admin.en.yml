@@ -145,6 +145,9 @@ en:
       proposal_search:
         button: Search
         placeholder: Search proposals by title, code, description or question
+      spending_proposal_search:
+        button: Search
+        placeholder: Search spending proposals by title or description
       user_search:
         button: Search
         placeholder: Search user by name or email'

@@ -252,7 +252,11 @@ Rails.application.routes.draw do
       end
     end
 
-    resources :spending_proposals, only: [:index, :new, :create, :show]
+    resources :spending_proposals, only: [:index, :new, :create, :show] do
+      member do
+        post :vote
+      end
+    end
   end
 
   if Rails.env.development?
