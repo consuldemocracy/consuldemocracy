@@ -253,9 +253,8 @@ Rails.application.routes.draw do
     end
 
     resources :spending_proposals, only: [:index, :new, :create, :show] do
-      member do
-        post :vote
-      end
+      post :vote, on: :member
+      get :print, on: :collection
     end
   end
 
