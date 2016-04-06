@@ -30,6 +30,7 @@ describe "Abilities::Common" do
 
   it { should be_able_to(:index, SpendingProposal) }
   it { should_not be_able_to(:create, SpendingProposal) }
+  it { should_not be_able_to(:vote, SpendingProposal) }
   it { should_not be_able_to(:destroy, SpendingProposal) }
 
   it { should_not be_able_to(:comment_as_administrator, debate) }
@@ -91,6 +92,8 @@ describe "Abilities::Common" do
     it { should be_able_to(:vote_featured, Proposal) }
 
     it { should be_able_to(:create, SpendingProposal) }
+    it { should be_able_to(:vote, SpendingProposal) }
+
     it { should_not be_able_to(:destroy, create(:spending_proposal)) }
     it { should_not be_able_to(:destroy, own_spending_proposal) }
   end
@@ -103,7 +106,10 @@ describe "Abilities::Common" do
     it { should be_able_to(:vote_featured, Proposal) }
 
     it { should be_able_to(:create, SpendingProposal) }
+    it { should be_able_to(:vote, SpendingProposal) }
+
     it { should_not be_able_to(:destroy, create(:spending_proposal)) }
     it { should_not be_able_to(:destroy, own_spending_proposal) }
   end
+
 end
