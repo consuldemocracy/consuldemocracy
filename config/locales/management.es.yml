@@ -41,6 +41,7 @@ es:
       print_proposals: Imprimir propuestas
       support_proposals: Apoyar propuestas
       create_spending_proposal: Crear propuesta de gasto
+      support_spending_proposals: Apoyar propuestas de gasto
       title: Gestión
       users: Usuarios
     permissions:
