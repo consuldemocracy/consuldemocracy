@@ -24,7 +24,8 @@
       <%= f.hidden_field :id %>
 
       <div class="small-12 medium-4">
-        <%= f.submit class: "button expanded", value: "Delegar en #{@forum.name}" %>
+        <%= f.submit class: "button expanded",
+        value: "Delegar en #{@forum.name.gsub('Presupuestos participativos', '')}" %>
       </div>
     <% end %>
   </div>
