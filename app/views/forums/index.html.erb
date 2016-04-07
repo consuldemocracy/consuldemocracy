@@ -15,7 +15,10 @@
       <% end %>
     </div>
 
-    Estás delegando tus votos en <strong>distrito</strong> <%= link_to "Desactivar", "#", class: "delete" %>
+    <% if current_user.representative.present? %>
+      Estás delegando tus votos en <strong><%= current_user.representative.name %></strong>
+      <%= link_to "Desactivar", "#", class: "delete" %>
+    <% end %>
   </div>
 
   <div class="small-12 medium-3 column">
