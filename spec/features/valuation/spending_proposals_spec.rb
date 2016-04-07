@@ -76,17 +76,17 @@ feature 'Valuation spending proposals' do
     expect(page).to have_link("Realocate visitors")
     expect(page).to have_link("Destroy the city")
 
-    select "District 9", from: "geozone_id"
+    click_link "District 9", exact: false
 
     expect(page).to have_link("Realocate visitors")
     expect(page).to_not have_link("Destroy the city")
 
-    select "All city", from: "geozone_id"
+    click_link "All city", exact: false
 
     expect(page).to have_link("Destroy the city")
     expect(page).to_not have_link("Realocate visitors")
 
-    select "All zones", from: "geozone_id"
+    click_link "All zones", exact: false
     expect(page).to have_link("Realocate visitors")
     expect(page).to have_link("Destroy the city")
   end

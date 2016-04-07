@@ -1,13 +1,14 @@
 <h2><%= t("valuation.spending_proposals.index.title") %></h2>
 
-<div>
-  <%= form_tag valuation_spending_proposals_path, method: :get, enforce_utf8: false do %>
-    <div class="small-12 medium-4 column float-right">
-      <%= select_tag :geozone_id,
-                     options_for_select(geozone_select_options.unshift([t("geozones.none"), "all"]), params[:geozone_id]),
-                     { prompt: t("valuation.spending_proposals.index.geozone_filter_all"),
-                       label: false,
-                       class: "js-submit-on-change" } %>
+<div class="row collapse">
+  <% @geozone_filters.each_slice(8) do |slice| %>
+    <div class="small-12 medium-4 column select-geozone">
+      <% slice.each do |filter| %>
+        <%= link_to valuation_spending_proposals_path(geozone_id: filter[:id]),
+                    class: "#{'active' if params[:geozone_id].to_s == filter[:id].to_s}" do %>
+          <%= filter[:name] %>&nbsp;(<%= filter[:pending_count] %>)
+        <% end %>
+      <% end %>
     </div>
   <% end %>
 </div>
