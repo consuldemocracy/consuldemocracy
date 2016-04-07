@@ -883,6 +883,26 @@ table.age-groups {
   background: $budget;
 }
 
+.forum.active {
+  color: $check;
+  font-weight: bold;
+
+  a {
+    background: $success-bg;
+    border: 1px solid $success-border;
+    border-radius: 35px;
+    color: $success-color;
+    padding: rem-calc(6) rem-calc(12);
+  }
+
+  &:after {
+    color: $check;
+    content: "\6c";
+    font-family: 'icons';
+    margin-left: rem-calc(6);
+  }
+}
+
 // 09. Featured
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
