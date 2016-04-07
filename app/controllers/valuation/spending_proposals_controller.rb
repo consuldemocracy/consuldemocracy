@@ -49,7 +49,7 @@ class Valuation::SpendingProposalsController < Valuation::BaseController
           id: g.id,
           pending_count: spending_proposals.count{|x| x.geozone_id == g.id}
         }
-      end
+      end.select{ |x| x[:pending_count] > 0 }
     end
 
     def valuation_params
