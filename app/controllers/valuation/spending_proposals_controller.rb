@@ -9,6 +9,7 @@ class Valuation::SpendingProposalsController < Valuation::BaseController
   load_and_authorize_resource
 
   def index
+    @geozone_filters = geozone_filters
     if current_user.valuator?
       @spending_proposals = SpendingProposal.scoped_filter(params_for_current_valuator, @current_filter).order(created_at: :desc).page(params[:page])
     else
@@ -30,6 +31,26 @@ class Valuation::SpendingProposalsController < Valuation::BaseController
   end
 
   private
+
+    def geozone_filters
+
+      spending_proposals = SpendingProposal.by_valuator(current_user.valuator.try(:id)).valuation_open.all.to_a
+
+      [ { name: t('valuation.spending_proposals.index.geozone_filter_all'),
+          id: nil,
+          pending_count: spending_proposals.size
+        },
+        { name: t('geozones.none'),
+          id: 'all',
+          pending_count: spending_proposals.count{|x| x.geozone_id.nil?}
+        }
+      ] + Geozone.all.order(name: :asc).collect do |g|
+        { name: g.name,
+          id: g.id,
+          pending_count: spending_proposals.count{|x| x.geozone_id == g.id}
+        }
+      end
+    end
 
     def valuation_params
       params[:spending_proposal][:feasible] = nil if params[:spending_proposal][:feasible] == 'nil'

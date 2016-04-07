@@ -359,3 +359,16 @@ body.admin {
     width: 100%;
   }
 }
+
+.admin-content .select-geozone {
+
+  a {
+    display: block;
+
+    &.active {
+      color: $brand;
+      font-weight: bold;
+      text-decoration: underline;
+    }
+  }
+}
