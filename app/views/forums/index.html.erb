@@ -1,16 +1,19 @@
-<div class="row margin-bottom">
-  <div class="small-12 column">
-    <h1 class="margin-bottom"><%= t("representatives.title") %></h1>
+<div class="row">
+  <div class="small-12 medium-9 column">
+    <h1><%= t("representatives.title") %></h1>
+    <p>Delega tu decisión sobre los apoyos y la votación final en lo que se decida en cualquiera de los espacios presenciales de debate.</p>
 
-    <p>Puedes delegar tu decisión sobre los apoyos y sobre la votación final en lo que se decida en cualquiera de los <a href="https://decide.madrid.es/participatory_budget_meetings">espacios presenciales de debate</a>. Si activas la delegación en cualquiera de los espacios señalados abajo, tus apoyos y votos se realizarán automáticamente sobre las propuestas que haya decidido el espacio correspondiente.</p>
-    <p>Mientras dure la fase de apoyos o de votación puedes activar o desactivar la delegación de votos cuando quieras. En esta página también se mostrará la decisión sobre los apoyos y votos que haya tomado cualquiera de estos espacios.</p>
+    <div id="forums" class="row collapse">
+      <% @forums.each_slice(7) do |slice| %>
+      <div class="small-12 medium-4 column">
+        <% slice.each do |forum| %>
+          <p id="<%= dom_id(forum) %>" class="forum <%= css_for_representative(forum) %>">
+            <%= link_to forum.name, forum %>
+          </p>
+        <% end %>
+      </div>
+      <% end %>
+    </div>
   </div>
-
-  <ul id="forums">
-    <% @forums.each do |forum| %>
-      <li id="<%= dom_id(forum) %>" class="forum <%= css_for_representative(forum) %>">
-        <%= link_to forum.name, forum %>
-      </li>
-    <% end %>
-  </ul>
 </div>
+

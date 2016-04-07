@@ -4,7 +4,7 @@ class ForumsController < ApplicationController
   skip_authorization_check
 
   def index
-    @forums = Forum.all
+    @forums = Forum.all.order(name: :asc)
   end
 
   def show
