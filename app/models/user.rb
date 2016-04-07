@@ -25,6 +25,7 @@ class User < ActiveRecord::Base
   has_many :failed_census_calls
   has_many :notifications
   belongs_to :geozone
+  belongs_to :representative, class_name: "Forum"
 
   validates :username, presence: true, if: :username_required?
   validates :username, uniqueness: true, if: :username_required?

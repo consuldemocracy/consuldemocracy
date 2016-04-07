@@ -1,0 +1,23 @@
+<h2><%= @forum.name %></h2>
+
+<div class="row">
+  <div id="city" class="small-12 medium-6 column">
+    Toda la ciudad
+    <%= render 'votes', votes: @forum.votes_for(:city) %>
+  </div>
+
+  <div id="district" class="small-12 medium-6 column">
+    Distrito de ...
+    <%= render 'votes', votes: @forum.votes_for(:district) %>
+  </div>
+</div>
+
+<%= form_for(@forum, url: representatives_url, method: :post) do |f| %>
+  <%= f.hidden_field :id %>
+
+  <div class="small-12 medium-4">
+    <%= f.submit class: "button expanded", value: "Delegar" %>
+  </div>
+<% end %>
+
+<%= link_to "Volver", forums_path %>

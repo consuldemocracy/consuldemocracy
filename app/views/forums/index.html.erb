@@ -4,17 +4,11 @@
 
     <p>Puedes delegar tu decisión sobre los apoyos y sobre la votación final en lo que se decida en cualquiera de los <a href="https://decide.madrid.es/participatory_budget_meetings">espacios presenciales de debate</a>. Si activas la delegación en cualquiera de los espacios señalados abajo, tus apoyos y votos se realizarán automáticamente sobre las propuestas que haya decidido el espacio correspondiente.</p>
     <p>Mientras dure la fase de apoyos o de votación puedes activar o desactivar la delegación de votos cuando quieras. En esta página también se mostrará la decisión sobre los apoyos y votos que haya tomado cualquiera de estos espacios.</p>
-
-    <%= form_for(@user, url: representatives_url, method: :post) do |f| %>
-
-      <div class="small-12 medium-6">
-        <%= f.select :representative_id, representative_select_options,
-                   { include_blank: t("representatives.none"), label: t("representatives.form.label")} %>
-      </div>
-
-      <div class="small-12 medium-4">
-        <%= f.submit class: "button expanded", value: t("representatives.form.submit_button") %>
-      </div>
-    <% end %>
   </div>
+
+  <ul id="forums">
+    <% @forums.each do |forum| %>
+      <li><%= link_to forum.name, forum %></li>
+    <% end %>
+  </ul>
 </div>
