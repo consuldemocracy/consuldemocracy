@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160329160106) do
+ActiveRecord::Schema.define(version: 20160406163649) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -314,6 +314,7 @@ ActiveRecord::Schema.define(version: 20160329160106) do
     t.datetime "unfeasible_email_sent_at"
     t.integer  "cached_votes_up",      default: 0
     t.tsvector "tsv"
+    t.string   "responsible_name",            limit: 60
   end
 
   add_index "spending_proposals", ["author_id"], name: "index_spending_proposals_on_author_id", using: :btree
