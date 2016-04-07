@@ -8,7 +8,9 @@
 
   <ul id="forums">
     <% @forums.each do |forum| %>
-      <li><%= link_to forum.name, forum %></li>
+      <li id="<%= dom_id(forum) %>" class="forum">
+        <%= link_to forum.name, forum %>
+      </li>
     <% end %>
   </ul>
 </div>
