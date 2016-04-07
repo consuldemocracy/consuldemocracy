@@ -12,10 +12,9 @@ feature 'Representatives' do
 
     click_link forum1.name
     click_button "Delegar"
-    expect(page).to have_content "You have updated your representative"
 
-    user.reload
-    expect(user.representative).to eq forum1
+    expect(page).to have_content "You have updated your representative"
+    expect(page).to have_css("#forum_#{forum1.id}.active")
   end
 
 end

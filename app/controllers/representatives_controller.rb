@@ -7,7 +7,7 @@ class RepresentativesController < ApplicationController
     representative = Forum.find(representative_params[:id])
     current_user.representative = representative
     current_user.save
-    redirect_to representative, notice: t("flash.actions.create.representative")
+    redirect_to forums_path, notice: t("flash.actions.create.representative")
   end
 
   private
