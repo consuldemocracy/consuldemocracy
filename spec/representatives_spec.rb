@@ -8,15 +8,14 @@ feature 'Representatives' do
     user = create(:user, :level_two)
     login_as(user)
 
-    visit new_representative_path
+    visit forums_path
 
-    select forum1.name, from: 'user_representative_id'
-    click_button "Save"
+    click_link forum1.name
+    click_button "Delegar"
     expect(page).to have_content "You have updated your representative"
 
-    visit root_path
-    visit new_representative_path
-    expect(page).to have_select('user_representative_id', selected: "#{forum1.name}")
+    user.reload
+    expect(user.representative).to eq forum1
   end
 
 end

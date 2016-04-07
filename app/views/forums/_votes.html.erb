@@ -1,6 +1,6 @@
 <ul>
   <% votes.each do |vote| %>
-    <li>
+    <li class="forum_vote">
       <%= link_to vote.votable.title, vote.votable %>
     </li>
   <% end %>

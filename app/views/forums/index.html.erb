@@ -7,15 +7,12 @@
       <% @forums.each_slice(7) do |slice| %>
       <div class="small-12 medium-4 column">
         <% slice.each do |forum| %>
-          <p><%= link_to forum.name, forum %></p>
+          <p id="<%= dom_id(forum) %>" class="forum">
+            <%= link_to forum.name, forum %>
+          </p>
         <% end %>
       </div>
       <% end %>
     </div>
-  </div>
-
-  <div class="small-12 medium-3 column">
-    <h2>¿Cómo funciona la delegación?</h2>
-    <p>Si activas la delegación en cualquiera de los <a href="https://decide.madrid.es/participatory_budget_meetings">espacios presenciales de debate</a> señalados, tus apoyos y votos se realizarán automáticamente sobre las propuestas que haya decidido el espacio correspondiente. Mientras dure la fase de apoyos o de votación puedes activar o desactivar la delegación de votos cuando quieras.</p>
   </div>
 </div>
