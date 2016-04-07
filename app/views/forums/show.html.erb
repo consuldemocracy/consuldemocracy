@@ -15,7 +15,7 @@
       </div>
 
       <div id="district" class="small-12 medium-6 column">
-        <h3>Distrito de <%= @forum.name %></h3>
+        <h3>Distrito de <%= @forum.name.gsub("Presupuestos participativos", "") %></h3>
         <%= render 'votes', votes: @forum.votes_for(:district) %>
       </div>
     </div>
