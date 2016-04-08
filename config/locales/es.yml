@@ -160,6 +160,7 @@ es:
       deactivate_link: "Desactivar"
       delegating: "Estás delegando tus votos en <strong>%{representative}</strong>"
       not_delegating: No estás delegando tus votos
+      title: Delega tus votos
     show:
       delegate_button: "Delegar en %{forum}"
       sign_in_to_delegate: "Debes estar idenficado para delegar"
@@ -344,12 +345,6 @@ es:
     update:
       form:
         submit_button: Guardar cambios
-  representatives:
-    none: Sin representante
-    form:
-      label: Selecciona en quién quieres delegar tus votos
-      submit_button: Guardar
-    title: Delega tus votos
   shared:
     advanced_search:
       author_type: 'Por categoría de autor'

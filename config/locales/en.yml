@@ -160,6 +160,7 @@ en:
       deactivate_link: "Deactivate"
       delegating: "You are delegating your votes on <strong>%{representative}</strong>"
       not_delegating: "You are not delegating your votes"
+      title: Delegate your votes
     show:
       delegate_button: "Delegate on %{forum}"
       sign_in_to_delegate: "Sign in to delegate"
@@ -344,12 +345,6 @@ en:
     update:
       form:
         submit_button: Save changes
-  representatives:
-    none: Without representative
-    form:
-      label: Select the person to whom delegate your votes
-      submit_button: Save
-    title: Delegate your votes
   shared:
     advanced_search:
       author_type: 'By author category'
