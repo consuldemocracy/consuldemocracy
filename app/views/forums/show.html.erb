@@ -38,10 +38,16 @@
         <div class="callout warning">
           <%= link_to t("forums.show.verify_accont_to_delegate"), verification_path %>
         </div>
+        <p class="button secondary">
+          <%= t("forums.show.delegate_button", forum: @forum.name.gsub('Presupuestos participativos', '')) %>
+        </p>
       <% else %>
-        <div class="callout primary">
+        <div class="callout warning">
           <strong><%= link_to t("forums.show.sign_in_to_delegate"), new_user_session_path %></  strong>
         </div>
+        <p class="button secondary">
+          <%= t("forums.show.delegate_button", forum: @forum.name.gsub('Presupuestos participativos', '')) %>
+        </p>
       <% end %>
 
     </div>
