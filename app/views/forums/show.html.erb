@@ -32,28 +32,30 @@
         </div>
       </div>
 
-      <% if current_user && current_user.can?(:vote, SpendingProposal) %>
-        <%= render 'representatives/new' %>
-      <% elsif current_user && current_user.unverified? %>
-        <div class="callout warning">
-          <%= link_to t("forums.show.verify_accont_to_delegate"), verification_path %>
-        </div>
-        <p class="button secondary">
-          <%= t("forums.show.delegate_button", forum: @forum.name.gsub('Presupuestos participativos', '')) %>
-        </p>
-      <% else %>
-        <div class="callout warning">
-          <strong><%= link_to t("forums.show.sign_in_to_delegate"), new_user_session_path %></  strong>
-        </div>
-        <p class="button secondary">
-          <%= t("forums.show.delegate_button", forum: @forum.name.gsub('Presupuestos participativos', '')) %>
-        </p>
-      <% end %>
-
     </div>
   <% else %>
     <div class="callout primary">
       <%= t("forums.show.no_votes") %>
     </div>
+  <% end %>
+</div>
+
+<div class="row">
+  <% if current_user && current_user.can?(:vote, SpendingProposal) %>
+    <%= render 'representatives/new' %>
+  <% elsif current_user && current_user.unverified? %>
+    <div class="callout warning">
+      <%= link_to t("forums.show.verify_accont_to_delegate"), verification_path %>
+    </div>
+    <p class="button secondary">
+      <%= t("forums.show.delegate_button", forum: @forum.name.gsub('Presupuestos participativos', '')) %>
+    </p>
+  <% else %>
+    <div class="callout warning">
+      <strong><%= link_to t("forums.show.sign_in_to_delegate"), new_user_session_path %></  strong>
+    </div>
+    <p class="button secondary">
+      <%= t("forums.show.delegate_button", forum: @forum.name.gsub('Presupuestos participativos', '')) %>
+    </p>
   <% end %>
 </div>
