@@ -7,7 +7,9 @@
       <% end %>
 
       <h2>
-        Propuestas apoyadas por el espacio de debate<br>
+        <% if @forum.has_voted? %>
+          Propuestas apoyadas por el espacio de debate<br>
+        <% end %>
         <%= @forum.name %>
       </h2>
     </div>
@@ -44,6 +46,8 @@
 
     </div>
   <% else %>
-    <%= t("forums.show.no_votes") %>
+    <div class="callout primary">
+      <%= t("forums.show.no_votes") %>
+    </div>
   <% end %>
 </div>
