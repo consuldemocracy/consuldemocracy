@@ -115,6 +115,10 @@ class User < ActiveRecord::Base
     forum.present?
   end
 
+  def has_representative?
+    representative.present?
+  end
+
   def verified_organization?
     organization && organization.verified?
   end

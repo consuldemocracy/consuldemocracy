@@ -12,15 +12,25 @@ module SpendingProposalsHelper
   end
 
   def supports_confirm_for_current_user(spending_proposal)
-    if current_user.present? &&
-       spending_proposal.present? &&
-       current_user.supported_spending_proposals_geozone_id.blank? &&
-       spending_proposal.geozone_id.present?
+    confirm = ""
 
-       {confirm: t('votes.spending_proposals.confirm_first_vote_on_district', district: spending_proposal.geozone.name)}
-    else
-      nil
+    if current_user.try(:has_representative?)
+      confirm += t("votes.spending_proposals.confirm_discard_delegation")
     end
+
+    if has_not_voted_for_district?
+       confirm += t('votes.spending_proposals.confirm_first_vote_on_district',
+                  district: spending_proposal.geozone.name)
+    end
+
+    confirm.blank? ? nil : {confirm: confirm }
+  end
+
+  def has_not_voted_for_district?
+    current_user.present? &&
+    spending_proposal.present? &&
+    current_user.supported_spending_proposals_geozone_id.blank? &&
+    spending_proposal.geozone_id.present?
   end
 
   def first_time_voting_spending_proposal_for_district?(spending_proposal)

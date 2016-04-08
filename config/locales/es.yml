@@ -545,6 +545,7 @@ es:
       no_district_supports_available: Ya has usado todos tus apoyos de distrito.
       different_district_assigned: Ya apoyaste propuestas de otro distrito.
       confirm_first_vote_on_district: "Cada persona puede apoyar las propuestas de toda la ciudad y de un distrito a su elección. Si pulsas aceptar apoyarás esta propuesta y de ahora en adelante sólo podrás apoyar las propuestas de %{district}. Este distrito no se puede cambiar luego. ¿Quieres apoyar esta propuesta y seleccionar este distrito?"
+      confirm_discard_delegation: "Si votas dejarás de delegar. "
   welcome:
     debates:
       alt: Icono debates
