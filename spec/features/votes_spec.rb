@@ -538,6 +538,9 @@ feature 'Votes' do
 
           user.reload
           expect(user.accepted_delegation_alert).to eq(true)
+
+          visit forums_path
+          expect(page).to have_content "You are not delegating your votes"
         end
 
       end

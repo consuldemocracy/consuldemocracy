@@ -58,7 +58,7 @@ class SpendingProposalsController < ApplicationController
     @spending_proposal.register_vote(current_user, 'yes')
     set_spending_proposal_votes(@spending_proposal)
     if current_user.pending_delegation_alert?
-      current_user.update(accepted_delegation_alert: true)
+      current_user.update(accepted_delegation_alert: true, representative: nil)
       @accepted_delegation_alert = true
     end
   end
