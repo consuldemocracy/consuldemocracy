@@ -13,6 +13,13 @@
       <% end %>
     </li>
 
+    <li <%= "class=active" if controller_name == "account" %>>
+      <%= link_to management_account_path do %>
+        <span class="icon-user"></span>
+        <%= t("management.menu.edit_user_accounts") %>
+      <% end %>
+    </li>
+
     <li <%= "class=active" if controller_name == "proposals" and action_name == "new" %>>
       <%= link_to new_management_proposal_path do %>
         <span class="icon-proposals"></span>

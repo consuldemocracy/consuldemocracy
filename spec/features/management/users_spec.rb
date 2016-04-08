@@ -1,10 +1,12 @@
 require 'rails_helper'
 
-feature 'users' do
+feature 'Users' do
+
+  background do
+    login_as_manager
+  end
 
   scenario 'Create a level 3 user from scratch' do
-
-    login_as_manager
 
     visit management_document_verifications_path
     fill_in 'document_verification_document_number', with: '1234'
@@ -44,7 +46,6 @@ feature 'users' do
 
   scenario 'Delete a level 2 user account from document verification page', :js do
     level_2_user = create(:user, :level_two, document_number: 13579)
-    login_as_manager
 
     visit management_document_verifications_path
     fill_in 'document_verification_document_number', with: '13579'

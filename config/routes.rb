@@ -220,6 +220,8 @@ Rails.application.routes.draw do
       end
     end
 
+    resource :account, controller: "account", only: [:show]
+
     get 'sign_in', to: 'sessions#create'
 
     resource :session, only: [:create, :destroy]

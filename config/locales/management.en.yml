@@ -1,6 +1,11 @@
 ---
 en:
   management:
+    account:
+      alert:
+        unverified_user: No verified user logged in yet
+      show:
+        title: User account
     account_info:
       change_user: Change user
       document_number_label: 'Document number:'
@@ -45,6 +50,7 @@ en:
       support_spending_proposals: Support spending proposals
       title: Management
       users: Users
+      edit_user_accounts: Edit user account
     permissions:
       create_proposals: Create proposals
       debates: Engage in debates

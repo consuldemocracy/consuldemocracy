@@ -1,6 +1,11 @@
 ---
 es:
   management:
+    account:
+      alert:
+        unverified_user: Solo se pueden editar cuentas de usuarios verificados
+      show:
+        title: Cuenta de usuario
     account_info:
       change_user: Cambiar usuario
       document_number_label: 'Número de documento:'
@@ -45,6 +50,7 @@ es:
       support_spending_proposals: Apoyar propts. de inversión
       title: Gestión
       users: Usuarios
+      edit_user_accounts: Editar cuenta de usuario
     permissions:
       create_proposals: Crear nuevas propuestas
       debates: Participar en debates
