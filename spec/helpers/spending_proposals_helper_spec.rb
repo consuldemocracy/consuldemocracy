@@ -16,6 +16,15 @@ describe SpendingProposalsHelper do
             {confirm: "If you vote you will stop delegating. "})
     end
 
+    it "returns delegation message once" do
+      user = create(:user, representative: forum, accepted_delegation_alert: true)
+      spending_proposal = create(:spending_proposal)
+      set_stubs(user, spending_proposal)
+
+      expect(confirmation(spending_proposal)).to eq(nil)
+    end
+
+
     it "returns geozone lockdown message" do
       user = create(:user)
       spending_proposal = create(:spending_proposal, geozone: geozone)

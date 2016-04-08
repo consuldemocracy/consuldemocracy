@@ -519,6 +519,29 @@ feature 'Votes' do
         end
       end
 
+      feature 'Alert' do
+
+        scenario "accepted delegation alert", :js do
+          forum = create(:forum)
+          user = create(:user, :level_two, representative: forum)
+          proposal = create(:spending_proposal)
+
+          login_as(user)
+
+          visit spending_proposal_path(proposal)
+          within('.supports') do
+            find('.in-favor a').click
+
+            expect(page).to have_content "1 support"
+            expect(page).to have_content "You have already supported this. Share it!"
+          end
+
+          user.reload
+          expect(user.accepted_delegation_alert).to eq(true)
+        end
+
+      end
+
     end
   end
 end

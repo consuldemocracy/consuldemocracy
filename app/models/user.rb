@@ -119,6 +119,10 @@ class User < ActiveRecord::Base
     representative.present?
   end
 
+  def pending_delegation_alert?
+    has_representative? && accepted_delegation_alert == false
+  end
+
   def verified_organization?
     organization && organization.verified?
   end

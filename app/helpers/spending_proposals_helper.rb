@@ -14,7 +14,7 @@ module SpendingProposalsHelper
   def supports_confirm_for_current_user(spending_proposal)
     confirm = ""
 
-    if current_user.try(:has_representative?)
+    if current_user.try(:pending_delegation_alert?)
       confirm += t("votes.spending_proposals.confirm_discard_delegation")
     end
 
