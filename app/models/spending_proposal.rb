@@ -36,6 +36,8 @@ class SpendingProposal < ActiveRecord::Base
 
   scope :for_render,             -> { includes(:geozone) }
 
+  before_validation :set_responsible_name
+
   def description
     super.try :html_safe
   end
@@ -118,6 +120,10 @@ class SpendingProposal < ActiveRecord::Base
     if votable_by?(user)
       vote_by(voter: user, vote: vote_value)
     end
+  end
+
+  def set_responsible_name
+    self.responsible_name = author.try(:document_number)
   end
 
 end
