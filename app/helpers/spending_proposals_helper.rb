@@ -18,7 +18,7 @@ module SpendingProposalsHelper
       confirm += t("votes.spending_proposals.confirm_discard_delegation")
     end
 
-    if has_not_voted_for_district?
+    if has_not_voted_for_district?(spending_proposal)
        confirm += t('votes.spending_proposals.confirm_first_vote_on_district',
                   district: spending_proposal.geozone.name)
     end
@@ -26,7 +26,7 @@ module SpendingProposalsHelper
     confirm.blank? ? nil : {confirm: confirm }
   end
 
-  def has_not_voted_for_district?
+  def has_not_voted_for_district?(spending_proposal)
     current_user.present? &&
     spending_proposal.present? &&
     current_user.supported_spending_proposals_geozone_id.blank? &&
