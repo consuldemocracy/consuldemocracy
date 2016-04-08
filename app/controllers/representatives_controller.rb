@@ -6,12 +6,12 @@ class RepresentativesController < ApplicationController
   def create
     representative = Forum.find(representative_params[:id])
     current_user.representative = representative
-    current_user.save
+    current_user.save!
     redirect_to forums_path, notice: t("flash.actions.create.representative")
   end
 
   def destroy
-    current_user.update(representative: nil)
+    current_user.update!(representative: nil)
     redirect_to forums_path, notice: t("flash.actions.destroy.representative")
   end
 
