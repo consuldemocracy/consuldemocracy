@@ -8,7 +8,7 @@
       <div class="small-12 medium-4 column">
         <% slice.each do |forum| %>
           <p id="<%= dom_id(forum) %>" class="forum <%= css_for_representative(forum) %>">
-            <%= link_to forum.name.gsub("Presupuestos participativos", ""), forum %>
+            <%= link_to forum_short_name(forum), forum %>
           </p>
         <% end %>
       </div>
