@@ -214,7 +214,10 @@ Rails.application.routes.draw do
     resources :email_verifications, only: [:new, :create]
 
     resources :users, only: [:new, :create] do
-      delete :logout, on: :collection
+      collection do
+        delete :logout
+        delete :erase
+      end
     end
 
     get 'sign_in', to: 'sessions#create'

@@ -24,6 +24,10 @@ en:
       title: User management
       under_age: You must be over 16 to verify your account.
       verify: Verify
+      erase_account_link: Delete user
+      erase_account_confirm: Are you sure you want to erase the account? This action can not be undone
+      erase_warning: This action can not be undone. Please make sure you want to erase this account.
+      erase_submit: Delete account
     email_label: Email
     email_verifications:
       already_verified: This user account is already verified.
@@ -84,3 +88,5 @@ en:
       create_user_info: 'We will create an account with the following data:'
       create_user_submit: Create user
       create_user_success_html: We have sent an email to the email address <b>%{email}</b> in order to verify that it belongs to this user. It contains a link they have to click. Then they will have to set their access password before being able to log in to the website
+      erased_notice: User account deleted.
+      erased_by_manager: "Deleted by manager: %{manager}"
