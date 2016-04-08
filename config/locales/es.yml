@@ -165,6 +165,7 @@ es:
       delegate_button: "Delegar en %{forum}"
       sign_in_to_delegate: "Debes estar idenficado para delegar"
       verify_accont_to_delegate: "Debes estar verificado para delegar"
+      no_votes: Este espacio de debate distrital aún no ha apoyado ninguna propuesta
   geozones:
     none: Toda la ciudad
   layouts:

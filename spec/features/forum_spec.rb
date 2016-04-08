@@ -64,6 +64,14 @@ feature "Forum" do
       end
     end
 
+    scenario "No votes" do
+      forum = create(:forum)
+      visit forum_path(forum)
+
+      expect(page).to_not have_css("#city")
+      expect(page).to have_content "This Forum has not supported any investment proposals"
+    end
+
   end
 
 end

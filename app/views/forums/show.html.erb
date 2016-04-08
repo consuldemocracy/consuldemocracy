@@ -15,31 +15,35 @@
 </div>
 
 <div class="row">
-  <div class="small-12 column">
+  <% if @forum.has_voted? %>
+    <div class="small-12 column">
 
-    <div class="row collapse">
-      <div id="city" class="small-12 medium-6 column">
-        <h3>Toda la ciudad</h3>
-        <%= render 'votes', votes: @forum.votes_for(:city) %>
+      <div class="row collapse">
+        <div id="city" class="small-12 medium-6 column">
+          <h3>Toda la ciudad</h3>
+          <%= render 'votes', votes: @forum.votes_for(:city) %>
+        </div>
+
+        <div id="district" class="small-12 medium-6 column">
+          <h3>Distrito de <%= forum_short_name(@forum) %></h3>
+          <%= render 'votes', votes: @forum.votes_for(:district) %>
+        </div>
       </div>
 
-      <div id="district" class="small-12 medium-6 column">
-        <h3>Distrito de <%= forum_short_name(@forum) %></h3>
-        <%= render 'votes', votes: @forum.votes_for(:district) %>
-      </div>
+      <% if current_user && current_user.can?(:vote, SpendingProposal) %>
+        <%= render 'representatives/new' %>
+      <% elsif current_user && current_user.unverified? %>
+        <div class="callout warning">
+          <%= link_to t("forums.show.verify_accont_to_delegate"), verification_path %>
+        </div>
+      <% else %>
+        <div class="callout primary">
+          <strong><%= link_to t("forums.show.sign_in_to_delegate"), new_user_session_path %></  strong>
+        </div>
+      <% end %>
+
     </div>
-
-    <% if current_user && current_user.can?(:vote, SpendingProposal) %>
-      <%= render 'representatives/new' %>
-    <% elsif current_user && current_user.unverified? %>
-      <div class="callout warning">
-        <%= link_to t("forums.show.verify_accont_to_delegate"), verification_path %>
-      </div>
-    <% else %>
-      <div class="callout primary">
-        <strong><%= link_to t("forums.show.sign_in_to_delegate"), new_user_session_path %></strong>
-      </div>
-    <% end %>
-
-  </div>
+  <% else %>
+    <%= t("forums.show.no_votes") %>
+  <% end %>
 </div>

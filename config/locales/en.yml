@@ -165,6 +165,7 @@ en:
       delegate_button: "Delegate on %{forum}"
       sign_in_to_delegate: "Sign in to delegate"
       verify_accont_to_delegate: "Verify your account to delegate"
+      no_votes: This Forum has not supported any investment proposals
   geozones:
     none: All city
   layouts:
