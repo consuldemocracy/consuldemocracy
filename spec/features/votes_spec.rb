@@ -531,8 +531,6 @@ feature 'Votes' do
           visit spending_proposal_path(proposal)
           within('.supports') do
             find('.in-favor a').click
-
-            expect(page).to have_content "1 support"
             expect(page).to have_content "You have already supported this. Share it!"
           end
 
@@ -541,6 +539,31 @@ feature 'Votes' do
 
           visit forums_path
           expect(page).to have_content "You are not delegating your votes"
+        end
+
+        scenario "accepted delegation alert multiple times", :js, :focus do
+          forum = create(:forum)
+          user = create(:user, :level_two, representative: forum)
+          proposal = create(:spending_proposal)
+
+          login_as(user)
+
+          visit spending_proposal_path(proposal)
+          within('.supports') do
+            find('.in-favor a').click
+            expect(page).to have_content "You have already supported this. Share it!"
+          end
+
+          user.reload
+          expect(user.accepted_delegation_alert).to eq(true)
+
+          visit forum_path(forum)
+          click_button "Delegate on #{forum.name}"
+
+          expect(page).to have_content "You have updated your representative"
+
+          user.reload
+          expect(user.accepted_delegation_alert).to eq(false)
         end
 
       end

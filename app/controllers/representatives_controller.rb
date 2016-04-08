@@ -6,6 +6,7 @@ class RepresentativesController < ApplicationController
   def create
     representative = Forum.find(representative_params[:id])
     current_user.representative = representative
+    current_user.accepted_delegation_alert = false
     current_user.save!
     redirect_to forums_path, notice: t("flash.actions.create.representative")
   end
