@@ -265,7 +265,7 @@ Rails.application.routes.draw do
   end
 
   resources :forums, only: [:index, :create, :show]
-  resources :representatives, only: :create
+  resources :representatives, only: [:create, :destroy]
 
   resources :survey_answers, only: [:new, :create]
 

@@ -10,6 +10,11 @@ class RepresentativesController < ApplicationController
     redirect_to forums_path, notice: t("flash.actions.create.representative")
   end
 
+  def destroy
+    current_user.update(representative: nil)
+    redirect_to forums_path, notice: t("flash.actions.destroy.representative")
+  end
+
   private
 
     def representative_params
