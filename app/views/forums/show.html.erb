@@ -25,7 +25,9 @@
 
       <div class="small-12 medium-4">
         <%= f.submit class: "button expanded",
-        value: "Delegar en #{@forum.name.gsub('Presupuestos participativos', '')}" %>
+            value: t("forums.show.delegate_button",
+                   forum: @forum.name.gsub('Presupuestos participativos', ''))
+             %>
       </div>
     <% end %>
   </div>

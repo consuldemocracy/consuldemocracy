@@ -17,12 +17,15 @@
 
     <% if current_user.representative.present? %>
       <div class="callout success inline-block">
-        Estás delegando tus votos en <strong><%= current_user.representative.name %></strong>
+        <%= t("forums.index.delegating",
+            representative: current_user.representative.name).html_safe %>
       </div>&nbsp;
-      <%= link_to "Desactivar", "#", class: "delete" %>
+      <%= link_to t("forums.index.deactivate_link"),
+                  representative_url(current_user.representative),
+                  class: "delete", method: :delete %>
     <% else %>
       <div class="callout primary inline-block">
-        No estás delegando tus votos
+        <%= t("forums.index.not_delegating") %>
       </div>
     <% end %>
   </div>

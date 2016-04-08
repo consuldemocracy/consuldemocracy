@@ -17,3 +17,4 @@ es:
         spending_proposal: "Propuesta de inversión actualizada correctamente."
       destroy:
         spending_proposal: "Propuesta de inversión eliminada."
+        representative: "Ya no tienes un representante"

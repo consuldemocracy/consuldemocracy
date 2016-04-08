@@ -17,3 +17,4 @@ en:
         spending_proposal: "Investment project updated succesfully."
       destroy:
         spending_proposal: "Spending proposal deleted succesfully."
+        representative: "You do not have a representative anymore."

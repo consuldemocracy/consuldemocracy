@@ -155,6 +155,13 @@ es:
     spending_proposal: la propuesta de inversión
     user: la cuenta
     verification/sms: el teléfono
+  forums:
+    index:
+      deactivate_link: "Desactivar"
+      delegating: "Estás delegando tus votos en <strong>%{representative}</strong>"
+      not_delegating: No estás delegando tus votos
+    show:
+      delegate_button: "Delegar en %{forum}"
   geozones:
     none: Toda la ciudad
   layouts:

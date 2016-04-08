@@ -155,6 +155,13 @@ en:
     spending_proposal: Spending proposal
     user: Account
     verification/sms: phone
+  forums:
+    index:
+      deactivate_link: "Deactivate"
+      delegating: "You are delegating your votes on <strong>%{representative}</strong>"
+      not_delegating: "You are not delegating your votes"
+    show:
+      delegate_button: "Delegate on %{forum}"
   geozones:
     none: All city
   layouts:
