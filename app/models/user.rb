@@ -25,6 +25,7 @@ class User < ActiveRecord::Base
   has_many :failed_census_calls
   has_many :notifications
   belongs_to :geozone
+  belongs_to :representative, class_name: "Forum"
 
   validates :username, presence: true, if: :username_required?
   validates :username, uniqueness: true, if: :username_required?
@@ -112,6 +113,14 @@ class User < ActiveRecord::Base
 
   def forum?
     forum.present?
+  end
+
+  def has_representative?
+    representative.present?
+  end
+
+  def pending_delegation_alert?
+    has_representative? && accepted_delegation_alert == false
   end
 
   def verified_organization?

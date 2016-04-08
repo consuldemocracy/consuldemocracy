@@ -155,6 +155,17 @@ es:
     spending_proposal: la propuesta de inversión
     user: la cuenta
     verification/sms: el teléfono
+  forums:
+    index:
+      deactivate_link: "Desactivar"
+      delegating: "Estás delegando tus votos en <strong>%{representative}</strong>"
+      not_delegating: No estás delegando tus votos
+      title: Delega tus votos
+    show:
+      delegate_button: "Delegar en %{forum}"
+      sign_in_to_delegate: "Debes estar idenficado para delegar"
+      verify_accont_to_delegate: "Debes estar verificado para delegar"
+      no_votes: Este espacio de debate distrital aún no ha apoyado ninguna propuesta
   geozones:
     none: Toda la ciudad
   layouts:
@@ -335,12 +346,6 @@ es:
     update:
       form:
         submit_button: Guardar cambios
-  representatives:
-    none: Sin representante
-    form:
-      label: Selecciona en quién quieres delegar tus votos
-      submit_button: Guardar
-    title: Delega tus votos
   shared:
     advanced_search:
       author_type: 'Por categoría de autor'
@@ -538,6 +543,7 @@ es:
       no_district_supports_available: Ya has usado todos tus apoyos de distrito.
       different_district_assigned: Ya apoyaste propuestas de otro distrito.
       confirm_first_vote_on_district: "Cada persona puede apoyar las propuestas de toda la ciudad y de un distrito a su elección. Si pulsas aceptar apoyarás esta propuesta y de ahora en adelante sólo podrás apoyar las propuestas de %{district}. Este distrito no se puede cambiar luego. ¿Quieres apoyar esta propuesta y seleccionar este distrito?"
+      confirm_discard_delegation: "Si votas dejarás de delegar. "
   welcome:
     debates:
       alt: Icono debates

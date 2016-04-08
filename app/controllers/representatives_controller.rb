@@ -3,14 +3,23 @@ class RepresentativesController < ApplicationController
   before_action :authenticate_user!
   skip_authorization_check
 
-  def new
-    @user = current_user
-    @forums = Forum.all
+  def create
+    representative = Forum.find(representative_params[:id])
+    current_user.representative = representative
+    current_user.accepted_delegation_alert = false
+    current_user.save!
+    redirect_to forums_path, notice: t("flash.actions.create.representative")
   end
 
-  def create
-    current_user.update(representative_id: params[:user][:representative_id])
-    redirect_to new_representative_path, notice: t("flash.actions.create.representative")
+  def destroy
+    current_user.update!(representative: nil)
+    redirect_to forums_path, notice: t("flash.actions.destroy.representative")
   end
+
+  private
+
+    def representative_params
+      params.require(:forum).permit(:id)
+    end
 
 end
