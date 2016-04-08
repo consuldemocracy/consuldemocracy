@@ -162,6 +162,8 @@ es:
       not_delegating: No estás delegando tus votos
     show:
       delegate_button: "Delegar en %{forum}"
+      sign_in_to_delegate: "Debes estar idenficado para delegar"
+      verify_accont_to_delegate: "Debes estar verificado para delegar"
   geozones:
     none: Toda la ciudad
   layouts:

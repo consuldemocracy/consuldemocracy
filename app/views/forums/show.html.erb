@@ -20,15 +20,13 @@
       </div>
     </div>
 
-    <%= form_for(@forum, url: representatives_url, method: :post) do |f| %>
-      <%= f.hidden_field :id %>
-
-      <div class="small-12 medium-4">
-        <%= f.submit class: "button expanded",
-            value: t("forums.show.delegate_button",
-                   forum: @forum.name.gsub('Presupuestos participativos', ''))
-             %>
-      </div>
+    <% if current_user && current_user.can?(:vote, SpendingProposal) %>
+      <%= render 'representatives/new' %>
+    <% elsif current_user && current_user.unverified? %>
+      <%= link_to t("forums.show.verify_accont_to_delegate"), verification_path %>
+    <% else %>
+       <%= link_to t("forums.show.sign_in_to_delegate"), new_user_session_path %>
     <% end %>
+
   </div>
 </div>

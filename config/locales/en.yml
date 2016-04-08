@@ -162,6 +162,8 @@ en:
       not_delegating: "You are not delegating your votes"
     show:
       delegate_button: "Delegate on %{forum}"
+      sign_in_to_delegate: "Sign in to delegate"
+      verify_accont_to_delegate: "Verify your account to delegate"
   geozones:
     none: All city
   layouts:

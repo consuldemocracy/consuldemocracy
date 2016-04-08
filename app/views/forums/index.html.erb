@@ -15,7 +15,7 @@
       <% end %>
     </div>
 
-    <% if current_user.representative.present? %>
+    <% if current_user.try(:representative).present? %>
       <div class="callout success inline-block">
         <%= t("forums.index.delegating",
             representative: current_user.representative.name).html_safe %>

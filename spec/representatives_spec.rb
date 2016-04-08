@@ -33,4 +33,25 @@ feature 'Representatives' do
     expect(page).to have_content "You are not delegating your votes"
   end
 
+  scenario "User not logged in" do
+    forum = create(:forum)
+
+    visit forums_path
+    click_link forum.name
+
+    expect(page).to_not have_selector(:button, "Delegate on #{forum.name}")
+    expect(page).to have_content "Sign in to delegate"
+  end
+
+  scenario "User not verified" do
+    unverified_user = create(:user)
+    forum = create(:forum)
+
+    login_as(unverified_user)
+    visit forums_path
+    click_link forum.name
+
+    expect(page).to_not have_selector(:button, "Delegate on #{forum.name}")
+    expect(page).to have_content "Verify your account to delegate"
+  end
 end
