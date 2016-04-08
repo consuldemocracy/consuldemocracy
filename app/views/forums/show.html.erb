@@ -1,12 +1,21 @@
+<div class="expanded jumbo-investment-project padding no-margin-top margin-bottom">
+  <div class="row">
+    <div class="small-12 medium-8 column">
+      <%= link_to forums_path, class: "back" do %>
+        <span class="icon-angle-left"></span>
+        Volver
+      <% end %>
+
+      <h2>
+        Propuestas apoyadas por el espacio de debate<br>
+        <%= @forum.name %>
+      </h2>
+    </div>
+  </div>
+</div>
+
 <div class="row">
   <div class="small-12 column">
-
-    <%= link_to forums_path, class: "back" do %>
-      <span class="icon-angle-left"></span>
-      Volver
-    <% end %>
-
-    <h2><%= @forum.name %></h2>
 
     <div class="row collapse">
       <div id="city" class="small-12 medium-6 column">
@@ -23,9 +32,13 @@
     <% if current_user && current_user.can?(:vote, SpendingProposal) %>
       <%= render 'representatives/new' %>
     <% elsif current_user && current_user.unverified? %>
-      <%= link_to t("forums.show.verify_accont_to_delegate"), verification_path %>
+      <div class="callout warning">
+        <%= link_to t("forums.show.verify_accont_to_delegate"), verification_path %>
+      </div>
     <% else %>
-       <%= link_to t("forums.show.sign_in_to_delegate"), new_user_session_path %>
+      <div class="callout primary">
+        <strong><%= link_to t("forums.show.sign_in_to_delegate"), new_user_session_path %></strong>
+      </div>
     <% end %>
 
   </div>
