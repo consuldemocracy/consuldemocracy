@@ -16,8 +16,14 @@
     </div>
 
     <% if current_user.representative.present? %>
-      Estás delegando tus votos en <strong><%= current_user.representative.name %></strong>
+      <div class="callout success inline-block">
+        Estás delegando tus votos en <strong><%= current_user.representative.name %></strong>
+      </div>&nbsp;
       <%= link_to "Desactivar", "#", class: "delete" %>
+    <% else %>
+      <div class="callout primary inline-block">
+        No estás delegando tus votos
+      </div>
     <% end %>
   </div>
 
