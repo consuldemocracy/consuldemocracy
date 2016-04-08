@@ -1,6 +1,11 @@
 ---
 en:
   management:
+    account:
+      alert:
+        unverified_user: No verified user logged in yet
+      show:
+        title: User account
     account_info:
       change_user: Change user
       document_number_label: 'Document number:'
@@ -12,6 +17,7 @@ en:
     dashboard:
       index:
         title: Management
+        info: Here you can manage users through all actions listed in the left menu.
     document_number: Document number
     document_type_label: Document type
     document_verifications:
@@ -45,6 +51,7 @@ en:
       support_spending_proposals: Support spending proposals
       title: Management
       users: Users
+      edit_user_accounts: Edit user account
     permissions:
       create_proposals: Create proposals
       debates: Engage in debates
@@ -84,3 +91,9 @@ en:
       create_user_info: 'We will create an account with the following data:'
       create_user_submit: Create user
       create_user_success_html: We have sent an email to the email address <b>%{email}</b> in order to verify that it belongs to this user. It contains a link they have to click. Then they will have to set their access password before being able to log in to the website
+      erased_notice: User account deleted.
+      erased_by_manager: "Deleted by manager: %{manager}"
+      erase_account_link: Delete user
+      erase_account_confirm: Are you sure you want to erase the account? This action can not be undone
+      erase_warning: This action can not be undone. Please make sure you want to erase this account.
+      erase_submit: Delete account

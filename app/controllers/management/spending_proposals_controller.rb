@@ -1,6 +1,6 @@
 class Management::SpendingProposalsController < Management::BaseController
 
-  before_action :check_verified_user, except: :print
+  before_action :only_verified_users, except: :print
   before_action :set_spending_proposal, only: [:vote, :show]
 
   def index
@@ -48,14 +48,8 @@ class Management::SpendingProposalsController < Management::BaseController
       params.require(:spending_proposal).permit(:title, :description, :external_url, :geozone_id, :terms_of_service, :captcha, :captcha_key)
     end
 
-    def check_verified_user
-      unless current_user.level_two_or_three_verified?
-        redirect_to management_document_verifications_path, alert: t("management.spending_proposals.alert.unverified_user")
-      end
-    end
-
-    def current_user
-      managed_user
+    def only_verified_users
+      check_verified_user t("management.spending_proposals.alert.unverified_user")
     end
 
     # This should not be necessary. Maybe we could create a specific show view for managers.
