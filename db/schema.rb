@@ -213,6 +213,19 @@ ActiveRecord::Schema.define(version: 20160406163649) do
 
   add_index "locks", ["user_id"], name: "index_locks_on_user_id", using: :btree
 
+  create_table "mentions", force: :cascade do |t|
+    t.integer  "mentionee_id"
+    t.string   "mentionee_type"
+    t.integer  "mentioner_id"
+    t.string   "mentioner_type"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  add_index "mentions", ["mentionee_id", "mentionee_type", "mentioner_id", "mentioner_type"], name: "mentions_mentionee_mentioner_idx", unique: true, using: :btree
+  add_index "mentions", ["mentionee_id", "mentionee_type"], name: "mentions_mentionee_idx", using: :btree
+  add_index "mentions", ["mentioner_id", "mentioner_type"], name: "mentions_mentioner_idx", using: :btree
+
   create_table "moderators", force: :cascade do |t|
     t.integer "user_id"
   end

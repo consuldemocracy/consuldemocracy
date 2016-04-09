@@ -6,6 +6,11 @@ en:
       new_comment_by_html: There is a new comment from <b>%{commenter}</b>
       subject: Someone has commented on your %{commentable}
       title: New comment
+    mention:
+      hi: Hi
+      new_comment_by_html: <b>@%{commenter}</b> has mentioned you in a comment in
+      subject: You have been mentioned in a comment
+      title: You have been mentioned
     config:
       manage_email_subscriptions: To stop receiving these emails change your settings in
     email_verification:

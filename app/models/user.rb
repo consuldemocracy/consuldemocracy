@@ -25,6 +25,8 @@ class User < ActiveRecord::Base
   has_many :notifications
   belongs_to :geozone
 
+  act_as_mentionee
+
   validates :username, presence: true, if: :username_required?
   validates :username, uniqueness: true, if: :username_required?
   validates :document_number, uniqueness: { scope: :document_type }, allow_nil: true

@@ -8,6 +8,8 @@ class Comment < ActiveRecord::Base
 
   attr_accessor :as_moderator, :as_administrator
 
+  act_as_mentioner
+
   validates :body, presence: true
   validates :user, presence: true
   validates_inclusion_of :commentable_type, in: ["Debate", "Proposal"]
@@ -95,7 +97,7 @@ class Comment < ActiveRecord::Base
   end
 
   def self.body_max_length
-    Setting['comments_body_max_length'].to_i 
+    Setting['comments_body_max_length'].to_i
   end
 
   def calculate_confidence_score

@@ -60,6 +60,8 @@ gem 'browser'
 gem 'turnout'
 gem 'redcarpet'
 
+gem 'mention_system' # for gestionate user mentions
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'

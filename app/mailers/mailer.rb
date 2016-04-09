@@ -7,7 +7,16 @@ class Mailer < ApplicationMailer
     @comment = comment
     @commentable = comment.commentable
     with_user(@commentable.author) do
-      mail(to: @commentable.author.email, subject: t('mailers.comment.subject', commentable: t("activerecord.models.#{@commentable.class.name.underscore}", count: 1).downcase)) if @commentable.present? && @commentable.author.present?
+      mail(to: @commentable.author.email, subject: t('mailers.comment.subject', commentable: t("activerecord.models.#{@commentable.class.name.downcase}", count: 1).downcase)) if @commentable.present? && @commentable.author.present?
+    end
+  end
+
+  def mention(comment, user)
+    @comment = comment
+    @commentable = comment.commentable
+    @user = user
+    with_user(@user) do
+      mail(to: @user.email, subject: t('mailers.mention.subject')) if @user.present?
     end
   end
 
