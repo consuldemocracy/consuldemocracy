@@ -22,6 +22,7 @@ class CommentNotifier
 
   def send_mention_emails
     m = CommentMentionProcessor.new
+    m.add_before_callback Proc.new { |post, user| user.email_on_mention? }
     m.add_before_callback Proc.new { |post, user| user != @author }
     m.add_after_callback Proc.new { |post, user| Mailer.mention(post, user).deliver_later }
     m.process_mentions(@comment)

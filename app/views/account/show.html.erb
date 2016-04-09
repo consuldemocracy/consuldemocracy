@@ -55,6 +55,13 @@
           </div>
 
           <div>
+            <%= f.label :email_on_comment_reply do %>
+              <%= f.check_box :email_on_comment_reply, title: t('account.show.email_on_mention_label'), label: false %>
+              <span class="checkbox"><%= t("account.show.email_on_mention_label") %></span>
+            <% end %>
+          </div>
+
+          <div>
             <%= f.label :email_newsletter_subscribed do %>
               <%= f.check_box :newsletter, title: t('account.show.subscription_to_website_newsletter_label'), label: false %>
               <span class="checkbox"><%= t("account.show.subscription_to_website_newsletter_label") %></span>

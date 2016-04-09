@@ -5,6 +5,7 @@ en:
       change_credentials_link: Change my credentials
       email_on_comment_label: Notify me by email when someone comments on my proposals or debates
       email_on_comment_reply_label: Notify me by email when someone replies to my comments
+      email_on_mention_label: Notify me by email when someone mentions me in a comment
       erase_account_link: Erase my account
       finish_verification: Complete verification
       notifications: Notifications

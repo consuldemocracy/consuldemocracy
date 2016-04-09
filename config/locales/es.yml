@@ -5,6 +5,7 @@ es:
       change_credentials_link: Cambiar mis datos de acceso
       email_on_comment_label: Recibir un email cuando alguien comenta en mis propuestas o debates
       email_on_comment_reply_label: Recibir un email cuando alguien contesta a mis comentarios
+      email_on_mention_label: Recibir un email cuando alguien me menciona en un comentario
       erase_account_link: Darme de baja
       finish_verification: Finalizar verificación
       notifications: Notificaciones
