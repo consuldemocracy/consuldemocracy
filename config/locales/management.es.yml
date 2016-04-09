@@ -1,6 +1,11 @@
 ---
 es:
   management:
+    account:
+      alert:
+        unverified_user: Solo se pueden editar cuentas de usuarios verificados
+      show:
+        title: Cuenta de usuario
     account_info:
       change_user: Cambiar usuario
       document_number_label: 'Número de documento:'
@@ -12,6 +17,7 @@ es:
     dashboard:
       index:
         title: Gestión
+        info: Desde aquí puedes gestionar usuarios a través de las acciones listadas en el menú de la izquierda.
     document_number: Número de documento
     document_type_label: Tipo de documento
     document_verifications:
@@ -45,6 +51,7 @@ es:
       support_spending_proposals: Apoyar propts. de inversión
       title: Gestión
       users: Usuarios
+      edit_user_accounts: Editar cuenta de usuario
     permissions:
       create_proposals: Crear nuevas propuestas
       debates: Participar en debates
@@ -84,3 +91,9 @@ es:
       create_user_info: 'Procedemos a crear un usuario con la siguiente información:'
       create_user_submit: Crear usuario
       create_user_success_html: Hemos enviado un correo electrónico a <b>%{email}</b> para verificar que es suya. El correo enviado contiene un link que el usuario deberá pulsar. Entonces podrá seleccionar una clave de acceso, y entrar en la web de participación.
+      erased_notice: Cuenta de usuario borrada.
+      erased_by_manager: "Borrada por el manager: %{manager}"
+      erase_account_link: Borrar cuenta
+      erase_account_confirm: ¿Seguro que quieres borrar a este usuario? Esta acción no se puede deshacer
+      erase_warning: Esta acción no se puede deshacer. Por favor asegurese de que quiere eliminar esta cuenta.
+      erase_submit: Borrar cuenta

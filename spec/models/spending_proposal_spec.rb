@@ -393,4 +393,13 @@ describe SpendingProposal do
 
     end
   end
+
+  describe "responsible_name" do
+    it "gets updated with the document_number" do
+      u = create(:user, document_number: "123456")
+      sp = create(:spending_proposal, author: u)
+      expect(sp.responsible_name).to eq("123456")
+    end
+  end
+
 end

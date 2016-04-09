@@ -48,6 +48,7 @@ class SpendingProposal < ActiveRecord::Base
   scope :city_wide,              -> { where(geozone_id: nil) }
 
   before_save :calculate_confidence_score
+  before_validation :set_responsible_name
 
   def description
     super.try :html_safe
@@ -171,6 +172,10 @@ class SpendingProposal < ActiveRecord::Base
 
   def calculate_confidence_score
     self.confidence_score = ScoreCalculator.confidence_score(total_votes, total_votes)
+  end
+
+  def set_responsible_name
+    self.responsible_name = author.try(:document_number)
   end
 
 end
