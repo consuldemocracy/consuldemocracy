@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160406163649) do
+ActiveRecord::Schema.define(version: 20160408130128) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -328,8 +328,8 @@ ActiveRecord::Schema.define(version: 20160406163649) do
     t.text     "description"
     t.integer  "author_id"
     t.string   "external_url"
-    t.datetime "created_at",                                            null: false
-    t.datetime "updated_at",                                            null: false
+    t.datetime "created_at",                                             null: false
+    t.datetime "updated_at",                                             null: false
     t.integer  "geozone_id"
     t.integer  "price",                       limit: 8
     t.boolean  "feasible"
@@ -337,19 +337,19 @@ ActiveRecord::Schema.define(version: 20160406163649) do
     t.text     "price_explanation"
     t.text     "feasible_explanation"
     t.text     "internal_comments"
-    t.boolean  "valuation_finished",                    default: false
+    t.boolean  "valuation_finished",                     default: false
     t.text     "explanations_log"
     t.integer  "administrator_id"
-    t.integer  "valuation_assignments_count",           default: 0
+    t.integer  "valuation_assignments_count",            default: 0
     t.integer  "price_first_year",            limit: 8
     t.string   "time_scope"
     t.datetime "unfeasible_email_sent_at"
-    t.integer  "cached_votes_up",                       default: 0
+    t.integer  "cached_votes_up",                        default: 0
     t.tsvector "tsv"
-    t.integer  "comments_count",                        default: 0
+    t.integer  "comments_count",                         default: 0
     t.datetime "hidden_at"
-    t.integer  "confidence_score",                      default: 0,     null: false
-    t.boolean  "forum",                                 default: false
+    t.integer  "confidence_score",                       default: 0,     null: false
+    t.boolean  "forum",                                  default: false
     t.string   "responsible_name",            limit: 60
   end
 
