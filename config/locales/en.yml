@@ -372,6 +372,7 @@ en:
     author_info:
       author_deleted: User deleted
       forum: District discussion space
+    back: Back
     check: Select
     check_all: All
     check_none: None
@@ -448,17 +449,18 @@ en:
         random: random
         confidence_score: highest rated
     welcome:
-      city: All city
-      city_link: Support proposals of the city
-      city_text_html: Support <strong>10 investment projects</strong> of the city.
+      city_link: Vote proposals of the city
       delegation: Delegation of votes
-      description_html: You can support <u>10 investment projects</u> of the city and <u>10 investment projects</u> of only one district.
+      delegation_info_html: "Si activas la delegación en cualquiera de los espacios, tus votos se realizarán<br> automáticamente sobre las propuestas que haya decidido el espacio correspondiente."
+      delegation_meetings: espacios presenciales de debate
+      delegation_text: Delega tu votación en lo que se decida en cualquiera de los %{meetings}
+      delegation_title: Delegación de voto
       districts: Districts
       districts_link: Select a district
-      districts_text_html: Support <strong>10 investment projects</strong> of only one district.
       in_two_minutes: All information about participatory budgets
       title: "You already can support investment projetcs!"
-      unfeasible_link: See unfeasible investment projects
+      text_first_html: "Desde hoy <strong>15 de mayo</strong> hasta el día <strong>30 de junio</strong> puedes votar las propuestas de inversión de los Presupuestos participativos 2016."
+      text_second_html: "Puedes votar todas las propuestas que quieras hasta alcanzar el presupuesto destinado para el ámbito de <strong>toda la ciudad</strong> y del <strong>distrito</strong> que hayas seleccionado."
     new:
       back_link: Back
       more_info: "Important, not to be ruled out your proposal must comply:"

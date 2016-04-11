@@ -372,6 +372,7 @@ es:
     author_info:
       author_deleted: Usuario eliminado
       forum: Espacio de debate distrital
+    back: Volver
     check: Seleccionar
     check_all: Todos
     check_none: Ninguno
@@ -448,17 +449,18 @@ es:
         random: Aleatorias
         confidence_score: Mejor valoradas
     welcome:
-      city: Toda la ciudad
-      city_link: Apoyar propuestas de toda la ciudad
-      city_text_html: Apoya <strong>10 propuestas de inversión</strong> que afecten a toda la ciudad.
-      delegation: Delegación de voto
-      description_html: Puedes apoyar <strong>10 propuestas</strong> que afecten a toda la ciudad y <strong>10 propuestas</strong> de un único distrito.
+      city_link: Votar para toda la ciudad
+      delegation: Delegar mis votos
+      delegation_info_html: "Si activas la delegación en cualquiera de los espacios, tus votos se realizarán<br> automáticamente sobre las propuestas que haya decidido el espacio correspondiente."
+      delegation_meetings: espacios presenciales de debate
+      delegation_text: Delega tu votación en lo que se decida en cualquiera de los %{meetings}
+      delegation_title: Delegación de voto
       districts: Distritos
       districts_link: Seleccionar un distrito
-      districts_text_html: Apoya <strong>10 propuestas de inversión</strong> que afecten a un solo distrito.
       in_two_minutes: Toda la información sobre los presupuestos participativos
-      title: "¡Ya puedes apoyar las propuestas!"
-      unfeasible_link: Ver propuestas de inversión no viables
+      title: "Ya puedes votar las propuestas"
+      text_first_html: "Desde hoy <strong>15 de mayo</strong> hasta el día <strong>30 de junio</strong> puedes votar las propuestas de inversión de los Presupuestos participativos 2016."
+      text_second_html: "Puedes votar todas las propuestas que quieras hasta alcanzar el presupuesto destinado para el ámbito de <strong>toda la ciudad</strong> y del <strong>distrito</strong> que hayas seleccionado."
     new:
       more_info: "¿Cómo funcionan los presupuestos participativos?"
       recommendation_one: Consulta los %{requirements}.

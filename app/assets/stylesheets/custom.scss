@@ -903,6 +903,63 @@ table.age-groups {
   }
 }
 
+.jumbo-investment-project-votes {
+  background: #F6F5F8;
+
+  @media (min-width: $medium-breakpoint) {
+    background: #F6F5F8 image-url('investment_project_welcome.png');
+    background-position: right;
+    background-repeat: no-repeat;
+  }
+
+  .content {
+    background: #F6F5F8;
+  }
+
+  h1 {
+    color: $budget;
+  }
+
+  .button.budget {
+    background: $budget;
+
+    &:hover {
+      background: $budget-hover;
+    }
+  }
+}
+
+.investment-projects-scope {
+
+  a {
+    line-height: $line-height*2;
+  }
+}
+
+.jumbo-delegation {
+  background: $budget image-url('investment_project_delegation.jpg');
+  margin-bottom: rem-calc(-96);
+
+  @media (min-width: $small-breakpoint) {
+    min-height: $line-height*15;
+  }
+
+  h2, h3, p {
+    color: white;
+  }
+
+  h3 a {
+    color: white;
+    text-decoration: underline;
+  }
+
+  .button {
+    background: white;
+    color: $budget;
+  }
+
+}
+
 // 09. Featured
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 

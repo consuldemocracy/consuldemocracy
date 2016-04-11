@@ -1,85 +1,64 @@
-<div class="expanded jumbo-investment-project welcome padding no-margin-top margin-bottom">
+<div class="expanded jumbo-investment-project-votes no-margin-top margin-bottom">
   <div class="row">
-    <div class="small-12 medium-7 column">
+    <div class="small-12 medium-7 column padding content">
       <h1><%= t("spending_proposals.welcome.title") %></h1>
-      <p><%= t("spending_proposals.welcome.description_html") %></p>
-      <div class="small-12 medium-8">
-        <%= link_to t("spending_proposals.welcome.in_two_minutes"), '/participatory_budget/in_two_minutes', class: "button expanded" %>
-      </div>
-    </div>
+      <p><%= t("spending_proposals.welcome.text_first_html") %></p>
+      <p><%= t("spending_proposals.welcome.text_second_html") %></p>
 
-    <div class="small-12 medium-5 column">
-      <div class="spending-proposal-timeline">
-        <ul class="no-bullet">
-          <li class="active">
-            <i class="icon-calendar"></i>
-            <h3><%= t('participatory_budget.in_two_minutes.date_2_info') %></h3>
-            <p><%= t('participatory_budget.in_two_minutes.date_2') %></p>
-          </li>
+      <div class="row">
+        <div class="small-12 medium-5 column">
+          <%= link_to t("spending_proposals.welcome.city_link"),
+                      spending_proposals_path(geozone: 'all'),
+                      data: { no_turbolink: true }, class: "button budget expanded" %>
+        </div>
 
-          <li>
-            <i class="icon-calendar"></i>
-            <h3><%= t('participatory_budget.in_two_minutes.date_3_info') %></h3>
-            <p><%= t('participatory_budget.in_two_minutes.date_3') %></p>
-          </li>
-
-          <li>
-            <i class="icon-calendar"></i>
-            <h3><%= t('participatory_budget.in_two_minutes.date_4_info') %></h3>
-            <p><%= t('participatory_budget.in_two_minutes.date_4') %></p>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="row investment-projects-scope">
-
-  <div class="small-12 medium-6 column no-underline">
-    <%= link_to spending_proposals_path(geozone: 'all'), data: { no_turbolink: true } do %>
-      <div class="callout primary">
-        <h2><%= t("spending_proposals.welcome.city") %></h2>
-        <p><%= t("spending_proposals.welcome.city_text_html") %></p>
-        <div class="small-12 medium-8">
-          <span class="button expanded"><%= t("spending_proposals.welcome.city_link") %></span>
+        <div class="small-12 medium-5 column end">
+          <%= link_to t("spending_proposals.welcome.districts_link"), '#select-district', class: "button budget expanded" %>
         </div>
       </div>
-    <% end %>
+
+      <%= link_to t("spending_proposals.welcome.in_two_minutes"), '/participatory_budget/in_two_minutes' %>
+    </div>
   </div>
+</div>
 
-  <div class="small-12 medium-6 column">
-    <div class="callout success">
-      <ul class="accordion" data-accordion data-allow-all-closed="true">
-        <li class="accordion-item" data-accordion-item>
+<div class="row investment-projects-scope margin-bottom">
+  <div id="select-district" class="small-12 medium-7 column">
+    <h2><%= t("spending_proposals.welcome.districts") %></h2>
 
-          <a href="#" class="accordion-title">
-            <h2><%= t("spending_proposals.welcome.districts") %></h2>
-            <p><%= t("spending_proposals.welcome.districts_text_html") %></p>
-            <div class="small-12 medium-8">
-              <span class="button expanded"><%= t("spending_proposals.welcome.districts_link") %></span>
-            </div>
-          </a>
-
-          <div class="row accordion-content" data-tab-content>
-            <% @geozones.each_slice(7) do |slice| %>
-              <div class="small-12 medium-4 column">
-                <% slice.each do |geozone| %>
-                  <%= link_to geozone.name, spending_proposals_path(geozone: geozone.id),
-                              data: { no_turbolink: true } %><br>
-                <% end %>
-              </div>
-            <% end %>
-          </div>
-        </li>
+    <div class="row">
+      <% @geozones.each_slice(7) do |slice| %>
+        <div class="small-12 medium-4 column">
+          <% slice.each do |geozone| %>
+            <%= link_to geozone.name, spending_proposals_path(geozone: geozone.id),
+                        data: { no_turbolink: true } %><br>
+          <% end %>
+        </div>
+      <% end %>
     </div>
   </div>
 
+  <div class="medium-5 column show-for-medium text-center">
+    <%= image_tag "map.jpg" %>
+  </div>
 </div>
 
-<div class="row">
-  <div class="small-12 column margin-top">
-    <p><%= link_to t("spending_proposals.welcome.unfeasible_link"), spending_proposals_path(unfeasible: '1') %></p>
-    <p><%= link_to t("spending_proposals.welcome.delegation"), '/delegacion' %></p>
+<div class="row expanded jumbo-delegation padding">
+  <div class="row">
+    <div class="small-12 column margin-top">
+      <h2><%= t("spending_proposals.welcome.delegation_title") %></h2>
+
+      <h3>
+        <%= t("spending_proposals.welcome.delegation_text",
+            meetings: link_to(t("spending_proposals.welcome.delegation_meetings"),
+            page_path('participatory_budget_meetings'))).html_safe %>
+      </h3>
+
+      <p><%= t("spending_proposals.welcome.delegation_info_html") %></p>
+
+      <div class="small-12 medium-4">
+        <p><%= link_to t("spending_proposals.welcome.delegation"), '/delegacion', class: "button expanded" %></p>
+      </div>
+    </div>
   </div>
 </div>
