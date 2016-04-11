@@ -76,12 +76,17 @@ en:
     processes:
       back: Back
       index:
+        featured: Featured
         process_1_title: Transparency Ordinance
         process_1_description: Madrid wants launch a system of public transparency at the level of the most advanced in the world, and we need your help.
         process_1_button: More information
         process_2_title: Remodeling of the Plaza España
         process_2_description: We count on you for decide how you want it this new space in your city.
         process_2_button: More information
+        process_3_title: "#PlenoAbierto"
+        process_3_description: Envía una propuesta o lanza una pregunta que será contestada en la Jornadas de puertas abiertas en el pleno durante el fin de semana del 22 al 24 de abril.
+        process_3_button: Envíar una propuesta o pregunta
+        title: Open processes
       process_1:
         title: Help us improve transparency Ordinance of the City of Madrid
         comment: leave your comments
@@ -93,6 +98,9 @@ en:
       process_2:
         title: Remodeling of the Plaza de España
         text: We count on you for filling out a short survey decide how you want it this new space in your city.
+      process_3:
+        send_proposal: Send a proposal
+        send_question: Make a question
     titles:
       accessibility: Accessibility
       conditions: Terms of use

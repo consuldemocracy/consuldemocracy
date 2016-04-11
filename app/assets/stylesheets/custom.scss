@@ -10,6 +10,7 @@
 // 07. Surveys
 // 08. Spending proposals
 // 09. Featured
+// 10. Processes
 //
 
 // 01. Global styles
@@ -1032,5 +1033,38 @@ table.age-groups {
 
   p {
     margin: $line-height 0;
+  }
+}
+
+// 10. Processes
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+.processes {
+  background: $brand;
+
+  @media (min-width: $medium-breakpoint) {
+    background: $brand image-url('processes_featured.jpg') no-repeat;
+    background-position: 80%;
+    height: $line-height*14;
+  }
+
+  h1 {
+    border-left: 2px solid white;
+    padding-left: $line-height;
+  }
+
+  h1, h2, p {
+    color: white
+  }
+
+  .button {
+    background: white;
+    color: $brand;
+  }
+
+  .label {
+    background: none;
+    padding: 0;
+    text-transform: uppercase;
   }
 }
