@@ -11,7 +11,7 @@ class Valuation::SpendingProposalsController < Valuation::BaseController
   def index
     @geozone_filters = geozone_filters
     if current_user.valuator?
-      @spending_proposals = SpendingProposal.scoped_filter(params_for_current_valuator, @current_filter).order(created_at: :desc).page(params[:page])
+      @spending_proposals = SpendingProposal.scoped_filter(params_for_current_valuator, @current_filter).order(cached_votes_up: :desc).page(params[:page])
     else
       @spending_proposals = SpendingProposal.none.page(params[:page])
     end
@@ -33,7 +33,6 @@ class Valuation::SpendingProposalsController < Valuation::BaseController
   private
 
     def geozone_filters
-
       spending_proposals = SpendingProposal.by_valuator(current_user.valuator.try(:id)).valuation_open.all.to_a
 
       [ { name: t('valuation.spending_proposals.index.geozone_filter_all'),
