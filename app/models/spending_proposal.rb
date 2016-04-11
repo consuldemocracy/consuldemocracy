@@ -123,7 +123,7 @@ class SpendingProposal < ActiveRecord::Base
   end
 
   def set_responsible_name
-    self.responsible_name = author.try(:document_number)
+    self.responsible_name = author.try(:document_number) if author.try(:document_number).present?
   end
 
 end
