@@ -12,11 +12,15 @@
 
       <div class="row">
         <div class="small-12 medium-5 column">
-          <%= link_to t("pages.processes.process_3.send_proposal"), "#", class: "button expanded" %>
+          <%= link_to t("pages.processes.process_3.send_proposal"),
+                      new_proposal_path(tag: "plenoabierto"),
+                      class: "button expanded" %>
         </div>
 
         <div class="small-12 medium-5 column end">
-        <%= link_to t("pages.processes.process_3.send_question"), "#", class: "button expanded" %>
+        <%= link_to t("pages.processes.process_3.send_question"),
+                    new_debate_path(tag: "plenoabierto"),
+                    class: "button expanded" %>
         </div>
       </div>
 
