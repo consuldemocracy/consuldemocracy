@@ -395,10 +395,18 @@ describe SpendingProposal do
   end
 
   describe "responsible_name" do
+    let(:user) { create(:user, document_number: "123456") }
+    let!(:spending_proposal) { create(:spending_proposal, author: user) }
+
     it "gets updated with the document_number" do
-      u = create(:user, document_number: "123456")
-      sp = create(:spending_proposal, author: u)
-      expect(sp.responsible_name).to eq("123456")
+      expect(spending_proposal.responsible_name).to eq("123456")
+    end
+
+    it "does not get updated if the user is erased" do
+      user.erase
+      expect(user.document_number).to be_blank
+      spending_proposal.touch
+      expect(spending_proposal.responsible_name).to eq("123456")
     end
   end
 
