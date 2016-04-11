@@ -108,6 +108,20 @@ feature 'Debates' do
     expect(page).to have_content I18n.l(Debate.last.created_at.to_date)
   end
 
+  scenario 'Create (predefined tag in url)' do
+    author = create(:user)
+    login_as(author)
+
+    visit new_debate_path(tag: "open-plenary")
+    fill_in_debate
+    click_button 'Start a debate'
+
+    expect(page).to have_content 'Debate created successfully.'
+    within("#tags") do
+      expect(page).to have_content "open-plenary"
+    end
+  end
+
   scenario 'Captcha is required for debate creation' do
     login_as(create(:user))
 
