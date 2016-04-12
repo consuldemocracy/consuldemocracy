@@ -2,7 +2,15 @@
   <span class="icon-angle-left"></span> <%= t("valuation.spending_proposals.show.back") %>
 <% end %>
 
-<h2><%= t("valuation.spending_proposals.show.heading") %> <%= @spending_proposal.id %> </h2>
+<div class="callout success float-right">
+  <strong>
+    <%= t("valuation.spending_proposals.show.vote_count") %>:
+    <%= @spending_proposal.total_votes %>
+  </strong>
+</div>
+<br>
+
+<h2 class="inline-block"><%= t("valuation.spending_proposals.show.heading") %> <%= @spending_proposal.id %></h2>
 <h1><%= @spending_proposal.title %></h1>
 
 <%= safe_html_with_links @spending_proposal.description %>
@@ -30,14 +38,6 @@
 <p><strong><%= t("valuation.spending_proposals.show.sent") %>:</strong>
   <%= l @spending_proposal.created_at, format: :datetime %>
 </p>
-
-
-
-<p><strong><%= t("valuation.spending_proposals.show.vote_count") %>:</strong>
-  <%= @spending_proposal.total_votes %>
-</p>
-
-
 
 <h2><%= t("valuation.spending_proposals.show.responsibles") %></h2>
 
