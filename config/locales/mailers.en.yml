@@ -22,8 +22,6 @@ en:
       title: New response to your comment
     unfeasible_spending_proposal:
       hi: "Dear user,"
-      new_html: "For all these, we invite you to elaborate a <strong>new proposal</strong> that ajusts to the conditions of this process. You can do it following this link: %{url}."
-      new_href: "new investment project"
       reconsider_html: "Should the proposed creation phase be finished, you can send us improvements to your proposal within 48 hours, responding to the email address preparticipativos@madrid.es. Including the code %{code} in the subject of the email."
       sincerely: "Sincerely"
       signatory: "DEPARTMENT OF PUBLIC PARTICIPATION"
