@@ -46,7 +46,7 @@ namespace :users do
       begin
         response = CensusApi.new.call(u.document_type, u.document_number)
         if response.valid?
-          u.genre = response.genre == 'Varón' ? 'male' : 'female'
+          u.genre = response.genre
           u.date_of_birth = response.date_of_birth.to_datetime
           u.save
           print "."
