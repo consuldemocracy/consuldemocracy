@@ -85,7 +85,7 @@ describe Verification::Residence do
 
   describe "save" do
 
-    it "should store document number, document type, and geozone" do
+    it "should store document number, document type, geozone, date of birth and genre" do
       user = create(:user)
       residence.user = user
       residence.save
@@ -93,6 +93,10 @@ describe Verification::Residence do
       user.reload
       expect(user.document_number).to eq('12345678Z')
       expect(user.document_type).to eq("1")
+      expect(user.date_of_birth.year).to eq(1980)
+      expect(user.date_of_birth.month).to eq(12)
+      expect(user.date_of_birth.day).to eq(31)
+      expect(user.genre).to eq('male')
       expect(user.geozone).to eq(geozone)
     end
 

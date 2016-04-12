@@ -40,5 +40,23 @@ namespace :users do
     end
   end
 
+  desc "Associates demographic information to users"
+  task assign_demographic: :environment do
+    User.residence_verified.where(genre: nil).find_each do |u|
+      begin
+        response = CensusApi.new.call(u.document_type, u.document_number)
+        if response.valid?
+          u.genre = response.genre
+          u.date_of_birth = response.date_of_birth.to_datetime
+          u.save
+          print "."
+        else
+          print "X"
+        end
+      rescue
+        puts "Could not assign genre/dob for user: #{u.id}"
+      end
+    end
+  end
 
 end
