@@ -144,8 +144,8 @@ feature 'Admin spending proposals' do
     end
 
     scenario "Filtering by valuator", :js do
-      user = create(:user, username: 'Valuator 1')
-      valuator = create(:valuator, user: user)
+      user = create(:user)
+      valuator = create(:valuator, user: user, description: 'Valuator 1')
 
       spending_proposal = create(:spending_proposal, title: "Realocate visitors")
       spending_proposal.valuators << valuator
