@@ -486,6 +486,7 @@ es:
         one: 1 apoyo
         other: "%{count} apoyos"
         zero: Sin apoyos
+      vote: Votar
   stats:
     index:
       visits: Visitas

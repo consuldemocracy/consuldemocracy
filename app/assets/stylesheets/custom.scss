@@ -10,7 +10,7 @@
 // 07. Surveys
 // 08. Spending proposals
 // 09. Featured
-//
+// 11. Spending proposals votes
 
 // 01. Global styles
 // - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -1091,3 +1091,62 @@ table.age-groups {
     margin: $line-height 0;
   }
 }
+
+// 11. Spending proposals votes
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+.progress-votes {
+  position: relative;
+
+  .progress {
+    background: white;
+    border-radius: rem-calc(20);
+  }
+
+  .progress-meter {
+    background: rgba(241,231,103,1);
+    background: -moz-linear-gradient(left, rgba(241,231,103,1) 0%, rgba(254,182,69,1) 100%);
+    background: -webkit-gradient(left top, right top, color-stop(0%, rgba(241,231,103,1)), color-stop(100%, rgba(254,182,69,1)));
+    background: -webkit-linear-gradient(left, rgba(241,231,103,1) 0%, rgba(254,182,69,1) 100%);
+    background: -o-linear-gradient(left, rgba(241,231,103,1) 0%, rgba(254,182,69,1) 100%);
+    background: -ms-linear-gradient(left, rgba(241,231,103,1) 0%, rgba(254,182,69,1) 100%);
+    background: linear-gradient(to right, rgba(241,231,103,1) 0%, rgba(254,182,69,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f1e767', endColorstr='#feb645', GradientType=1 );
+    -webkit-transition: width 2s;
+    transition: width 2s;
+  }
+
+  .spent-amount-progress,
+  .spent-amount-meter {
+    background: none !important;
+  }
+
+  .spent-amount-text {
+    color: white;
+    font-size: rem-calc(24);
+    font-weight: bold;
+    left: auto;
+    right: -50px;
+
+    &:before {
+      content: "\61";
+      font-family: 'icons';
+      position: absolute;
+      right: 0;
+      top: -18px;
+    }
+  }
+
+  .total-amount {
+    color: white;
+    font-size: rem-calc(18);
+    font-weight: bold;
+    position: absolute;
+    right: 12px;
+    top: -24px;
+  }
+}
+
+
+
+

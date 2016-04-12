@@ -19,6 +19,24 @@
           <h1><%= @filter_geozone_name %></h1>
         </div>
       </div>
+
+      <div class="row progress-votes">
+        <div class="small-12 column">
+          <div class="progress" role="progressbar" tabindex="0" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+            <div class="progress-meter" style="width: 50%"></div>
+          </div>
+
+          <span class="total-amount">24.000.000€</span>
+
+          <div class="progress spent-amount-progress " role="progressbar" tabindex="0" aria-valuenow="20" aria-valuemin="0" aria-valuetext="25 percent" aria-valuemax="100">
+            <span class="progress-meter spent-amount-meter" style="width: 50%">
+              <p class="progress-meter-text spent-amount-text">125.000€</p>
+            </span>
+          </div>
+
+        </div>
+      </div>
+
     </div>
   <% else %>
     <div class="expanded jumbo-investment-project padding no-margin-top margin-bottom">

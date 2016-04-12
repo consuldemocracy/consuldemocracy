@@ -487,6 +487,7 @@ en:
         one: 1 support
         other: "%{count} supports"
         zero: No supports
+      vote: Vote
   stats:
     index:
       visits: Visits
