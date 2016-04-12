@@ -160,6 +160,7 @@ feature 'Valuation spending proposals' do
                                   feasible_explanation: 'It is impossible',
                                   administrator: administrator)
       spending_proposal.valuators << [@valuator, valuator2]
+      create(:vote, votable: spending_proposal)
 
       visit valuation_spending_proposals_path
 
@@ -174,6 +175,7 @@ feature 'Valuation spending proposals' do
       expect(page).to have_content('Not feasible')
       expect(page).to have_content('It is impossible')
       expect(page).to have_content('Ana (ana@admins.org)')
+      expect(page).to have_content("Votes: 1")
 
       within('#assigned_valuators') do
         expect(page).to have_content('Rachel (rachel@valuators.org)')
