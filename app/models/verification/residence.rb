@@ -31,6 +31,8 @@ class Verification::Residence
     user.update(document_number:       document_number,
                 document_type:         document_type,
                 geozone:               self.geozone,
+                date_of_birth:         date_of_birth.to_datetime,
+                genre:                 genre,
                 residence_verified_at: Time.now)
   end
 
@@ -73,6 +75,15 @@ class Verification::Residence
 
   def district_code
     @census_api_response.district_code
+  end
+
+  def genre
+    case @census_api_response.genre
+    when "Varón"
+      "male"
+    when "Mujer"
+      "female"
+    end
   end
 
   private
