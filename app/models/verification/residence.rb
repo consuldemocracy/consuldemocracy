@@ -78,12 +78,7 @@ class Verification::Residence
   end
 
   def genre
-    case @census_api_response.genre
-    when "Varón"
-      "male"
-    when "Mujer"
-      "female"
-    end
+    @census_api_response.genre
   end
 
   private
@@ -95,7 +90,7 @@ class Verification::Residence
     def residency_valid?
       @census_api_response.valid? &&
         @census_api_response.postal_code == postal_code &&
-        @census_api_response.date_of_birth == date_to_string(date_of_birth)
+        @census_api_response.date_of_birth == date_of_birth
     end
 
     def clean_document_number
