@@ -32,7 +32,7 @@ class Verification::Management::Document
   end
 
   def under_sixteen?(response)
-    16.years.ago < string_to_date(response.date_of_birth)
+    16.years.ago < response.date_of_birth
   end
 
   def verified?
