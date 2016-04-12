@@ -101,6 +101,8 @@ en:
       process_3:
         send_proposal: Send a proposal
         send_question: Make a question
+        view_proposals: See all proposals
+        view_questions: See all questions
     titles:
       accessibility: Accessibility
       conditions: Terms of use

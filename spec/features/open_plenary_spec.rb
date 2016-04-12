@@ -40,4 +40,20 @@ feature 'Open Plenary' do
     end
   end
 
+  scenario "Debate index" do
+    author = create(:user)
+    create(:debate, tag_list: "plenoabierto")
+
+    login_as(author)
+    visit root_path
+
+    first(:link, "Open processes").click
+    click_link "Send a proposal or question"
+    click_link "Make a question"
+  end
+
+  scenario "Proposal index" do
+
+  end
+
 end

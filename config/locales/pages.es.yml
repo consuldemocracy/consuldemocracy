@@ -106,6 +106,8 @@ es:
       process_3:
         send_proposal: Enviar una propuesta
         send_question: Hacer una pregunta
+        view_proposals: Ver todas las propuestas
+        view_questions: Ver todas las preguntas
     titles:
       accessibility: Accesibilidad
       conditions: Condiciones de uso

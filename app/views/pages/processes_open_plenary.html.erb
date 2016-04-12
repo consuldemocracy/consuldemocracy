@@ -42,7 +42,8 @@
     <h4>#PlenoAbierto</h4>
     <ul>
       <li>
-        <%= link_to "Ver todas las propuestas", "#" %>
+        <%= link_to t("pages.processes.process_3.view_proposals"),
+                    proposals_path(search: "plenoabierto") %>
       </li>
       <li>
         <%= link_to "Ver todas las preguntas", "#" %>
