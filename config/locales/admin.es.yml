@@ -173,6 +173,7 @@ es:
         back: Volver
         classification: Clasificación
         heading: Propuesta de inversión %{id}
+        edit: Editar
         edit_classification: Editar clasificación
         association_name: Asociación
         by: Autor

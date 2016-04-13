@@ -173,6 +173,7 @@ en:
         back: Back
         classification: Clasification
         heading: "Investment project %{id}"
+        edit: Edit
         edit_classification: Edit classification
         association_name: Association
         by: By
