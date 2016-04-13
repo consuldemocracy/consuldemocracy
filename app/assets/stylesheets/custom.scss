@@ -1068,3 +1068,18 @@ table.age-groups {
     text-transform: uppercase;
   }
 }
+
+.processes-show {
+  @extend .processes;
+
+  @media (min-width: $medium-breakpoint) {
+    background: $brand;
+    height: auto;
+  }
+
+  @media (min-width: $medium-breakpoint) {
+    img {
+      position: absolute;
+    }
+  }
+}
