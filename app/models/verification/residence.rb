@@ -34,7 +34,7 @@ class Verification::Residence
                 document_type:         document_type,
                 geozone:               self.geozone,
                 date_of_birth:         date_of_birth.to_datetime,
-                genre:                 genre,
+                gender:                gender,
                 residence_verified_at: Time.now)
 
     if redeemable_code.present?
@@ -92,8 +92,8 @@ class Verification::Residence
     @census_api_response.district_code
   end
 
-  def genre
-    @census_api_response.genre
+  def gender
+    @census_api_response.gender
   end
 
   private

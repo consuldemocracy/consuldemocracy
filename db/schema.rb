@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160411161531) do
+ActiveRecord::Schema.define(version: 20160413122359) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -473,7 +473,7 @@ ActiveRecord::Schema.define(version: 20160411161531) do
     t.integer  "supported_spending_proposals_geozone_id"
     t.integer  "representative_id"
     t.boolean  "accepted_delegation_alert",                                   default: false
-    t.string   "genre",                     limit: 10
+    t.string   "gender",                    limit: 10
     t.datetime "date_of_birth"
   end
 
