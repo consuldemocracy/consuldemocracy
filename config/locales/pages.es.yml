@@ -81,7 +81,11 @@ es:
         process_1_button: Más información
         process_2_title: Remodelación de Plaza España
         process_2_description: Contamos contigo para que decidas rellenando una pequeña encuesta como quieres que sea este nuevo espacio en tu ciudad.
-        process_2_button: Más información
+        process_2_button: Más información sobre la remodelación
+        process_3_title: "#PlenoAbierto"
+        process_3_description: Formula propuestas y preguntas a los grupos parlamentarios
+        process_3_button: Envíar una propuesta o pregunta
+        title: Procesos sectoriales
       process_1:
         title: Ayúdanos a mejorar la Ordenanza de Transparencia de la Ciudad de Madrid
         comment: dejar tus comentarios
