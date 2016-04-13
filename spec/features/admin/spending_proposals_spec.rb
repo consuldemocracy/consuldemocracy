@@ -330,6 +330,24 @@ feature 'Admin spending proposals' do
 
   context "Edit" do
 
+    scenario "Change title, description or geozone" do
+      spending_proposal = create(:spending_proposal)
+      create(:geozone, name: "Barbate")
+
+      visit admin_spending_proposal_path(spending_proposal)
+      click_link 'Edit'
+
+      fill_in 'spending_proposal_title', with: 'Potatoes'
+      fill_in 'spending_proposal_description', with: 'Carrots'
+      select 'Barbate', from: 'spending_proposal[geozone_id]'
+
+      click_button 'Update'
+
+      expect(page).to have_content 'Potatoes'
+      expect(page).to have_content 'Carrots'
+      expect(page).to have_content 'Barbate'
+    end
+
     scenario "Add administrator" do
       spending_proposal = create(:spending_proposal)
       administrator = create(:administrator, user: create(:user, username: 'Marta', email: 'marta@admins.org'))
