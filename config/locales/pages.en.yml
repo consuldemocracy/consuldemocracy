@@ -7,10 +7,10 @@ en:
     help_translate:
       title: Help us translate!
       text: |-
-        If you speak other languages please help us to translate this website and the software under it.
+        If you speak other languages please help us translate this website and the software behind it.
 
-        Contact us in <a href="mailto:ag.gobiernoabierto@madrid.es">ag.gobiernoabierto@madrid.es</a> to give you access to the collaborative translation system.
-        Together we will make this tool available for any country. A million thanks!
+        Contact us at <a href="mailto:ag.gobiernoabierto@madrid.es">ag.gobiernoabierto@madrid.es</a> We'll give you access to the collaborative translation tool.
+        Together we can make this open government tool available to any country. Thanks a million!
     more_information:
       description:
         faq: Frecuently asked question about tecnical problems
