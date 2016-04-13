@@ -1,14 +1,20 @@
 <% provide :title, "Plenario Abierto" %>
 <% provide :social_media_meta_tags do %>
-  <%= render "shared/social_media_meta_tags" %>
+<%= render "shared/social_media_meta_tags",
+          social_url: page_url("processes_open_plenary"),
+          social_title: t("pages.processes.index.process_3_title") ,
+          social_description: t("pages.processes.index.process_3_description") %>
 <% end %>
 
-<div class="expanded processes no-margin-top">
+<div class="expanded processes-show no-margin-top">
   <div class="row padding">
     <div class="small-12 medium-7 column">
 
       <h1 class="margin-bottom"><%= t("pages.processes.index.process_3_title") %></h1>
       <p><%= t("pages.processes.index.process_3_description") %></p>
+      <p>El próximo <strong>24 de abril</strong> será día de <strong>puertas abiertas en el Salón de Plenos de Madrid</strong> y los portavoces de los grupos parlamentarios dedicarán su comparecencia a responder a las propuestas y preguntas que le formule la ciudadanía.</p>
+
+      <p>Puedes mandarnos <strong>tu pregunta o propuesta</strong> para los grupos parlamentarios <strong>hasta el jueves 21</strong> y apoyar las que más te gusten. Las más votadas serán respondidas el próximo domingo en el Pleno e invitaremos a sus autores a asistir para formularlas directamente.</p>
 
       <div class="row">
         <div class="small-12 medium-5 column">
@@ -23,32 +29,27 @@
                     class: "button expanded" %>
         </div>
       </div>
+    </div>
 
+    <div class="show-for-medium medium-5 column relative">
+      <%= image_tag "pleno_abierto_cartel.jpg" %>
     </div>
   </div>
 </div>
-
-<div class="process row margin-top">
-  <div class="small-12 medium-7 column">
-    <h3>Información sobre esta página</h3>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-
-    <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
-
-    <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</p>
-  </div>
-
-  <div class="small-12 medium-5 column">
-    <h4>#PlenoAbierto</h4>
+<div class="row process margin">
+  <div class="small-12 column">
+    <h2>Apoyar propuestas y preguntas</h2>
     <ul>
       <li>
         <%= link_to t("pages.processes.process_3.view_proposals"),
                     proposals_path(search: "plenoabierto") %>
       </li>
       <li>
-        <%= link_to "Ver todas las preguntas", "#" %>
+        <%= link_to "Ver todas las preguntas enviadas", "#" %>
       </li>
     </ul>
+    <div class="show-for-small-only">
+      <%= image_tag "pleno_abierto_cartel.jpg" %>
+    </div>
   </div>
-
 </div>
