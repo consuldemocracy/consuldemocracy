@@ -33,7 +33,7 @@ class Admin::SpendingProposalsController < Admin::BaseController
   private
 
     def spending_proposal_params
-      params.require(:spending_proposal).permit(:administrator_id, :tag_list, valuator_ids: [])
+      params.require(:spending_proposal).permit(:title, :description, :external_url, :geozone_id, :association_name, :administrator_id, :tag_list, valuator_ids: [])
     end
 
 end
