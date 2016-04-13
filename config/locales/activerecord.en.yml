@@ -68,7 +68,12 @@ en:
         name: "Name of organisation"
         responsible_name: "Person responsible for the group"
       spending_proposal:
-        administrator_id: "Administrator"
+        administrator_id: "Administrador"
+        association_name: "Association name"
+        description: "Description"
+        external_url: "Link to additional documentation"
+        geozone_id: "Scope of operation"
+        title: "Title"
     errors:
       models:
         debate:
