@@ -52,7 +52,7 @@ class CensusApi
       data[:datos_vivienda][:item][:codigo_distrito]
     end
 
-    def genre # "Varón" or "Mujer"
+    def gender
       case data[:datos_habitante][:item][:descripcion_sexo]
       when "Varón"
         "male"
