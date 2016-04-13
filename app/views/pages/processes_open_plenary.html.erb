@@ -1,6 +1,9 @@
 <% provide :title, "Plenario Abierto" %>
 <% provide :social_media_meta_tags do %>
-  <%= render "shared/social_media_meta_tags" %>
+  <%= render "shared/social_media_meta_tags",
+            social_url: page_url("processes_open_plenary"),
+            social_title: t("pages.processes.index.process_3_title") ,
+            social_description: t("pages.processes.index.process_3_description") %>
 <% end %>
 
 <div class="expanded processes no-margin-top">
