@@ -21,10 +21,8 @@ class Admin::SpendingProposalsController < Admin::BaseController
 
   def update
     if @spending_proposal.update(spending_proposal_params)
-      path = admin_spending_proposal_path( @spending_proposal,
-        { anchor: 'classification' }.merge(SpendingProposal.filter_params(params)))
-
-      redirect_to path, notice: t("flash.actions.update.spending_proposal")
+      redirect_to admin_spending_proposal_path(@spending_proposal, SpendingProposal.filter_params(params)),
+                  notice: t("flash.actions.update.spending_proposal")
     else
       render :edit
     end
