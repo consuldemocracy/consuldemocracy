@@ -1,8 +1,8 @@
 <% if can? :vote, SpendingProposal %>
-  <div class="investment-project-sidebar-votes" data-sticky-container>
-    <div class="sticky" data-sticky data-anchor="investment-projects">
+  <div class="investment-project-sidebar-votes">
+    <div>
       <div id="counters" class="counters" data-equalizer>
-        <%= render 'counters' %>
+        <%#= render 'counters' %>
       </div>
 
       <% if @filter_geozone.present? %>

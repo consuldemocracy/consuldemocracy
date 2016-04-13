@@ -5,10 +5,16 @@
              i18n_namespace: "spending_proposals.index.search_form" %>
 <% end %>
 
-<main>
+<main id="investment-projects-main">
 
   <% if @filter_geozone_name.present? %>
-    <div class="expanded jumbo-investment-project padding no-margin-top margin-bottom">
+    <section class="no-margin-top margin-bottom" data-sticky-container>
+    <div class="expanded jumbo-investment-project padding sticky"
+         data-sticky
+         data-options="marginTop:0;"
+         data-anchor="investment-projects-main"
+         style="width: 100%;">
+
       <div class="row">
         <div class="small-12 medium-8 column">
           <%= link_to welcome_spending_proposals_path, class: "back" do %>
@@ -21,23 +27,26 @@
       </div>
 
       <div class="row progress-votes">
-        <div class="small-12 column">
+        <div class="small-12 medium-9 column relative">
           <div class="progress" role="progressbar" tabindex="0" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
-            <div class="progress-meter" style="width: 50%"></div>
+            <div class="progress-meter" style="width: 75%"></div>
           </div>
 
           <span class="total-amount">24.000.000€</span>
 
           <div class="progress spent-amount-progress " role="progressbar" tabindex="0" aria-valuenow="20" aria-valuemin="0" aria-valuetext="25 percent" aria-valuemax="100">
-            <span class="progress-meter spent-amount-meter" style="width: 50%">
-              <p class="progress-meter-text spent-amount-text">125.000€</p>
+            <span class="progress-meter spent-amount-meter" style="width: 75%">
+              <p class="progress-meter-text spent-amount-text">18.000.000€</p>
             </span>
           </div>
+        </div>
 
+        <div class="small-12 medium-3 column">
+          <%= link_to "Revisar mis votos", "#", class: "button expanded"%>
         </div>
       </div>
-
     </div>
+    </section>
   <% else %>
     <div class="expanded jumbo-investment-project padding no-margin-top margin-bottom">
       <div class="row">

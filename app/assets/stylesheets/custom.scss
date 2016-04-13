@@ -140,6 +140,7 @@ blockquote.featured {
 .jumbo-investment-project {
   background: $budget;
   border-bottom: 1px solid $budget;
+  min-height: $line-height*9;
 
   h1, h2, .back, .icon-angle-left, p, a {
     color: white;
@@ -908,7 +909,7 @@ table.age-groups {
 
   @media (min-width: $medium-breakpoint) {
     background: #F6F5F8 image-url('investment_project_welcome.png');
-    background-position: right;
+    background-position: 150%;
     background-repeat: no-repeat;
   }
 
@@ -1126,7 +1127,8 @@ table.age-groups {
     font-size: rem-calc(24);
     font-weight: bold;
     left: auto;
-    right: -50px;
+    right: 0;
+    transform: translate(0%, -50%);
 
     &:before {
       content: "\61";
