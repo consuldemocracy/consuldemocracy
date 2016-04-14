@@ -48,7 +48,7 @@ bin/rails s
 
 ```
 
-Prerequisites for testing: install PhantomJS >= 2.0
+Prerequisites for testing: install PhantomJS >= 1.9.8
 
 Run the tests with:
 
