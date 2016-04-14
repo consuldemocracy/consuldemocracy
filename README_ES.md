@@ -47,7 +47,7 @@ Para ejecutar la aplicación en local:
 bin/rails s
 ```
 
-Prerequisitos para los tests: tener instalado PhantomJS >= 2.0
+Prerequisitos para los tests: tener instalado PhantomJS >= 1.9.8
 
 Para ejecutar los tests:
 
