@@ -12,7 +12,7 @@ ActsAsVotable::Vote.class_eval do
   end
 
   def self.representative_votes
-    where(votable_type: 'SpendingProposal', voter_id: User.forums)
+    where(votable_type: 'SpendingProposal', voter_id: User.forums.pluck(:id))
   end
 
   def self.city_wide
