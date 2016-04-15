@@ -3,7 +3,6 @@ en:
   account:
     show:
       change_credentials_link: Change my credentials
-      delegation: Delegate your votes
       email_on_comment_label: Notify me by email when someone comments on my proposals or debates
       email_on_comment_reply_label: Notify me by email when someone replies to my comments
       erase_account_link: Erase my account
@@ -162,7 +161,7 @@ en:
       not_delegating: "You are not delegating your votes"
       title: Delegate your votes
     show:
-      delegate_button: "Delegate on %{forum}"
+      delegate_button: "The delegation will be activated in the next voting."
       sign_in_to_delegate: "Sign in to delegate"
       verify_accont_to_delegate: "Verify your account to delegate"
       no_votes: This Forum has not supported any investment proposals
@@ -450,7 +449,6 @@ en:
     welcome:
       city: All city
       city_link: See results of the preselection for the city
-      delegation: Delegation of votes
       description_html: As we evaluate the proposals submitted, you can see in the following links the final order of the proposals in the preselection stage.
       districts: Districts
       districts_link: Select a district

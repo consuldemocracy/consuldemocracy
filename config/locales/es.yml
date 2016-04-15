@@ -3,7 +3,6 @@ es:
   account:
     show:
       change_credentials_link: Cambiar mis datos de acceso
-      delegation: Delega tus votos
       email_on_comment_label: Recibir un email cuando alguien comenta en mis propuestas o debates
       email_on_comment_reply_label: Recibir un email cuando alguien contesta a mis comentarios
       erase_account_link: Darme de baja
@@ -162,7 +161,7 @@ es:
       not_delegating: No estás delegando tus votos
       title: Delega tus votos
     show:
-      delegate_button: "Delegar en %{forum}"
+      delegate_button: "La delegación se activará en la próxima fase de votación."
       sign_in_to_delegate: "Debes estar idenficado para delegar"
       verify_accont_to_delegate: "Debes estar verificado para delegar"
       no_votes: Este espacio de debate distrital aún no ha apoyado ninguna propuesta
@@ -450,7 +449,6 @@ es:
     welcome:
       city: Toda la ciudad
       city_link: Ver resultado de la preselección para toda la ciudad
-      delegation: Delegación de voto
       description_html: Mientras evaluamos las propuestas presentadas, puedes ver en los siguientes enlaces el orden final de las propuestas en la fase de preselección.
       districts: Distritos
       districts_link: Seleccionar un distrito

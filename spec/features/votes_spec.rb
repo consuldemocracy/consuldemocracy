@@ -541,7 +541,7 @@ feature 'Votes' do
           expect(page).to have_content "You are not delegating your votes"
         end
 
-        scenario "accepted delegation alert multiple times", :js do
+        xscenario "accepted delegation alert multiple times", :js do
           forum = create(:forum)
           user = create(:user, :level_two, representative: forum)
           proposal = create(:spending_proposal)
