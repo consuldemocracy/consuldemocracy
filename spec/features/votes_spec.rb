@@ -480,7 +480,7 @@ feature 'Votes' do
           within('.supports') do
             find('.in-favor a').click
 
-            expect(page).to have_content "1 support"
+            expect(page).to have_content "No supports"
             expect(page).to have_content "You have already supported this. Share it!"
           end
         end
@@ -501,7 +501,7 @@ feature 'Votes' do
 
           within('.supports') do
             find('.in-favor a').click
-            expect(page).to have_content "1 support"
+            expect(page).to have_content "No supports"
 
             expect(page).to_not have_selector ".in-favor a"
           end
@@ -513,7 +513,7 @@ feature 'Votes' do
           within('.supports') do
             find('.in-favor a').click
 
-            expect(page).to have_content "1 support"
+            expect(page).to have_content "No supports"
             expect(page).to have_content "You have already supported this. Share it!"
           end
         end

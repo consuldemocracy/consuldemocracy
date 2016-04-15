@@ -112,7 +112,23 @@ class SpendingProposal < ActiveRecord::Base
   end
 
   def total_votes
-    cached_votes_up + physical_votes
+    cached_votes_up + physical_votes + delegated_votes - forum_votes
+  end
+
+  def delegated_votes
+    count = 0
+    representative_voters.each do |voter|
+      count += voter.forum.represented_users.select { |u| !u.voted_for?(self) }.count
+    end
+    return count
+  end
+
+  def representative_voters
+    Vote.representative_votes.for_spending_proposals(self).collect(&:voter)
+  end
+
+  def forum_votes
+    Vote.representative_votes.for_spending_proposals(self).count
   end
 
   def code
