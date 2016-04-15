@@ -277,4 +277,15 @@ describe SpendingProposal do
     end
   end
 
+  describe "total votes" do
+    it "takes into account physical votes in addition to web votes" do
+      sp = create(:spending_proposal)
+      sp.register_vote(create(:user, :level_two), true)
+      expect(sp.total_votes).to eq(1)
+      sp.physical_votes = 10
+      expect(sp.total_votes).to eq(11)
+    end
+  end
+
+
 end
