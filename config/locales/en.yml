@@ -450,7 +450,6 @@ en:
     welcome:
       city: All city
       city_link: See results of the preselection for the city
-      delegation: Delegation of votes
       description_html: As we evaluate the proposals submitted, you can see in the following links the final order of the proposals in the preselection stage.
       districts: Districts
       districts_link: Select a district

@@ -450,7 +450,6 @@ es:
     welcome:
       city: Toda la ciudad
       city_link: Ver resultado de la preselección para toda la ciudad
-      delegation: Delegación de voto
       description_html: Mientras evaluamos las propuestas presentadas, puedes ver en los siguientes enlaces el orden final de las propuestas en la fase de preselección.
       districts: Distritos
       districts_link: Seleccionar un distrito
