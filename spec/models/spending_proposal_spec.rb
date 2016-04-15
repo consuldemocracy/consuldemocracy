@@ -302,6 +302,18 @@ describe SpendingProposal do
         expect(district_sp.reason_for_not_being_votable_by(user)).to eq(:organization)
       end
 
+      it "rejects votes when voting is not allowed (via admin setting)" do
+        Setting["feature.spending_proposal_features.voting_allowed"] = nil
+        expect(city_sp.reason_for_not_being_votable_by(user)).to eq(:not_voting_allowed)
+        expect(district_sp.reason_for_not_being_votable_by(user)).to eq(:not_voting_allowed)
+      end
+
+      it "accepts valid votes when voting is allowed" do
+        Setting["feature.spending_proposal_features.voting_allowed"] = true
+        expect(city_sp.reason_for_not_being_votable_by(user)).to be_nil
+        expect(district_sp.reason_for_not_being_votable_by(user)).to be_nil
+      end
+
       it "rejects city wide votes if no votes left for the user"  do
         user.city_wide_spending_proposals_supported_count = 0
         expect(city_sp.reason_for_not_being_votable_by(user)).to eq(:no_city_supports_available)
@@ -390,7 +402,6 @@ describe SpendingProposal do
         expect(SpendingProposal.sort_by_confidence_score.third).to  eq least_voted2
         expect(SpendingProposal.sort_by_confidence_score.fourth).to  eq least_voted
       end
-
     end
   end
 

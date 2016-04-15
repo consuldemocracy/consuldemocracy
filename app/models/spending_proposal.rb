@@ -129,6 +129,7 @@ class SpendingProposal < ActiveRecord::Base
     return :not_verified  unless user.can?(:vote, SpendingProposal)
     return :unfeasible    if unfeasible?
     return :organization  if user.organization?
+    return :not_voting_allowed if Setting["feature.spending_proposal_features.voting_allowed"].blank?
     if city_wide?
       return :no_city_supports_available unless user.city_wide_spending_proposals_supported_count > 0
     else # district_wide
