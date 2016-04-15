@@ -46,7 +46,7 @@ class User < ActiveRecord::Base
   attr_accessor :skip_password_validation
   attr_accessor :use_redeemable_code
 
-  scope :administrators, -> { joins(:administrators) }
+  scope :administrators, -> { joins(:administrator) }
   scope :moderators,     -> { joins(:moderator) }
   scope :organizations,  -> { joins(:organization) }
   scope :forums,         -> { joins(:forum) }
