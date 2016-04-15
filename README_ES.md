@@ -60,10 +60,11 @@ Puedes usar el usuario administrador por defecto del fichero seeds:
  **user:** admin@madrid.es
  **pass:** 12345678
 
-Pero para ciertas acciones, como apoyar, necesitarás verificarle, abre una consola con `rails console` y escribe:
-```
-User.first.update_attributes(verified_at: Date.today, residence_verified_at: Date.today, level_two_verified_at: Date.today)
-```
+Pero para ciertas acciones, como apoyar, necesitarás un usuario verificado, el fichero seeds proporciona uno:
+
+ **user:** verified@madrid.es
+ **pass:** 12345678
+
 
 ### OAuth
 

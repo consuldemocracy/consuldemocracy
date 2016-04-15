@@ -61,10 +61,10 @@ You can use the default admin user from the seeds file:
  **user:** admin@madrid.es
  **pass:** 12345678
 
-But for some actions like voting, you will need to verify him, opening a console with `rails console` and then:
-```
-User.first.update_attributes(verified_at: Date.today, residence_verified_at: Date.today, level_two_verified_at: Date.today)
-```
+But for some actions like voting, you will need a verified user, the seeds file also includes one:
+
+ **user:** verified@madrid.es
+ **pass:** 12345678
 
 ### OAuth
 
