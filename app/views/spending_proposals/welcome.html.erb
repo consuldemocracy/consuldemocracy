@@ -13,12 +13,6 @@
         <ul class="no-bullet">
           <li class="active">
             <i class="icon-calendar"></i>
-            <h3><%= t('participatory_budget.in_two_minutes.date_2_info') %></h3>
-            <p><%= t('participatory_budget.in_two_minutes.date_2') %></p>
-          </li>
-
-          <li>
-            <i class="icon-calendar"></i>
             <h3><%= t('participatory_budget.in_two_minutes.date_3_info') %></h3>
             <p><%= t('participatory_budget.in_two_minutes.date_3') %></p>
           </li>
@@ -40,8 +34,7 @@
     <%= link_to spending_proposals_path(geozone: 'all'), data: { no_turbolink: true } do %>
       <div class="callout primary">
         <h2><%= t("spending_proposals.welcome.city") %></h2>
-        <p><%= t("spending_proposals.welcome.city_text_html") %></p>
-        <div class="small-12 medium-8">
+        <div class="small-12 medium-10">
           <span class="button expanded"><%= t("spending_proposals.welcome.city_link") %></span>
         </div>
       </div>
@@ -55,7 +48,6 @@
 
           <a href="#" class="accordion-title">
             <h2><%= t("spending_proposals.welcome.districts") %></h2>
-            <p><%= t("spending_proposals.welcome.districts_text_html") %></p>
             <div class="small-12 medium-8">
               <span class="button expanded"><%= t("spending_proposals.welcome.districts_link") %></span>
             </div>

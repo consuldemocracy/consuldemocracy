@@ -449,15 +449,13 @@ en:
         confidence_score: highest rated
     welcome:
       city: All city
-      city_link: Support proposals of the city
-      city_text_html: Support <strong>10 investment projects</strong> of the city.
+      city_link: See results of the preselection for the city
       delegation: Delegation of votes
-      description_html: You can support <u>10 investment projects</u> of the city and <u>10 investment projects</u> of only one district.
+      description_html: As we evaluate the proposals submitted, you can see in the following links the final order of the proposals in the preselection stage.
       districts: Districts
       districts_link: Select a district
-      districts_text_html: Support <strong>10 investment projects</strong> of only one district.
       in_two_minutes: All information about participatory budgets
-      title: "You already can support investment projetcs!"
+      title: "On May 15 we start with the final vote"
       unfeasible_link: See unfeasible investment projects
     new:
       back_link: Back
