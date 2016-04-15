@@ -240,7 +240,7 @@
     }
   }
 
-  .anonymous-votes, .organizations-votes {
+  .anonymous-votes, .organizations-votes, .no-supports-allowed {
     background: $warning-bg;
     color: $warning-color;
     height: 100%;
@@ -847,16 +847,13 @@
       color: $budget;
     }
 
-    .not-logged,
-    .organizations-votes,
-    .anonymous-votes {
+    .no-supports-allowed {
       background: rgba(69,67,114,.96);
       color: white;
       padding: rem-calc(12);
     }
 
-    .anonymous-votes p, .anonymous-votes a,
-    .organizations-votes p {
+    .no-supports-allowed p, .no-supports-allowed a {
       color: white;
     }
   }
