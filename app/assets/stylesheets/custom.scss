@@ -1034,3 +1034,34 @@ table.age-groups {
     margin: $line-height 0;
   }
 }
+
+.processes-show-temp {
+  background: $brand;
+
+  @media (min-width: $medium-breakpoint) {
+    background: $brand;
+    height: auto;
+  }
+
+  h1 {
+    border-left: 2px solid white;
+    padding-left: $line-height;
+  }
+
+  h1, h2, p {
+    color: white
+  }
+
+  @media (min-width: $medium-breakpoint) {
+    img {
+      position: absolute;
+    }
+  }
+}
+
+@media (min-width: $medium-breakpoint) {
+
+  .img-space {
+    height: rem-calc(500);
+  }
+}
