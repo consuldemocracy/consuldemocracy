@@ -413,12 +413,65 @@ describe SpendingProposal do
   describe "total votes" do
     it "takes into account physical votes in addition to web votes" do
       sp = create(:spending_proposal)
+
       sp.register_vote(create(:user, :level_two), true)
       expect(sp.total_votes).to eq(1)
+
       sp.physical_votes = 10
       expect(sp.total_votes).to eq(11)
     end
+
+    it "takes into account delegated votes in addition to web votes" do
+      forum = create(:forum)
+      sp = create(:spending_proposal)
+      user = create(:user, :level_two)
+      represented_user = create(:user, representative: forum)
+
+      sp.register_vote(user, true)
+      expect(sp.total_votes).to eq(1)
+
+      sp.register_vote(forum.user, true)
+      expect(sp.total_votes).to eq(2)
+    end
+
+    it "does not take into account forum votes" do
+      forum = create(:forum)
+      sp = create(:spending_proposal)
+
+      sp.register_vote(forum.user, true)
+      expect(sp.total_votes).to eq(0)
+    end
   end
 
+  describe "#delegated_votes" do
+    it "counts delegated votes" do
+      forum = create(:forum)
+      user1 = create(:user, representative: forum)
+      user2 = create(:user, representative: forum)
+      sp = create(:spending_proposal)
+
+      sp.register_vote(forum.user, true)
+      expect(sp.delegated_votes).to eq(2)
+    end
+
+    it "does not count delegated votes if user has also voted" do
+      forum = create(:forum)
+      user = create(:user, :level_two, representative: forum)
+      sp = create(:spending_proposal)
+
+      sp.register_vote(forum.user, true)
+      sp.register_vote(user, true)
+
+      expect(sp.delegated_votes).to eq(0)
+    end
+
+    it "does not count forum votes" do
+      forum = create(:forum)
+      sp = create(:spending_proposal)
+
+      sp.register_vote(forum.user, true)
+      expect(sp.delegated_votes).to eq(0)
+    end
+  end
 
 end
