@@ -449,15 +449,13 @@ es:
         confidence_score: Mejor valoradas
     welcome:
       city: Toda la ciudad
-      city_link: Apoyar propuestas de toda la ciudad
-      city_text_html: Apoya <strong>10 propuestas de inversión</strong> que afecten a toda la ciudad.
+      city_link: Ver resultado de la preselección para toda la ciudad
       delegation: Delegación de voto
-      description_html: Puedes apoyar <strong>10 propuestas</strong> que afecten a toda la ciudad y <strong>10 propuestas</strong> de un único distrito.
+      description_html: Mientras evaluamos las propuestas presentadas, puedes ver en los siguientes enlaces el orden final de las propuestas en la fase de preselección.
       districts: Distritos
       districts_link: Seleccionar un distrito
-      districts_text_html: Apoya <strong>10 propuestas de inversión</strong> que afecten a un solo distrito.
       in_two_minutes: Toda la información sobre los presupuestos participativos
-      title: "¡Ya puedes apoyar las propuestas!"
+      title: "El día 15 de mayo comenzamos con la votación final"
       unfeasible_link: Ver propuestas de inversión no viables
     new:
       more_info: "¿Cómo funcionan los presupuestos participativos?"
