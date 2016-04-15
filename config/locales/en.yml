@@ -57,11 +57,22 @@ en:
     select_order: Sort by
     show:
       return_to_commentable: 'Go back to '
+  questions:
+    form:
+      leave_comment: Leave your question
   comments_helper:
     comment_button: Publish comment
     comment_link: Comment
     reply_button: Publish reply
     reply_link: Reply
+  questions_helper:
+    comment_button: Publish question
+    comment_link: Question
+    reply_button: Publish reply
+    reply_link: Reply
+  comment_kinds:
+    comment: Comment
+    question: Question
   debates:
     create:
       form:
@@ -83,6 +94,8 @@ en:
         submit_button: Save changes
       show_link: View debate
     form:
+      comment_kind_instructions: Comment kind
+      comment_kind_label: Choose the comment kind
       debate_text: Initial debate text
       debate_title: Debate title
       tags_instructions: Tag this debate.
@@ -131,7 +144,12 @@ en:
         one: 1 comment
         other: "%{count} comments"
         zero: No comments
+      questions:
+        one: 1 question
+        other: "%{count} questions"
+        zero: No questions
       comments_title: Comments
+      questions_title: Questions
       edit_debate_link: Edit
       flag: This debate has been flagged as inappropriate by several users.
       login_to_comment: You must %{signin} or %{signup} to leave a comment.

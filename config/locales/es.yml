@@ -57,11 +57,22 @@ es:
     select_order: Ordenar por
     show:
       return_to_commentable: 'Volver a '
+  questions:
+    form:
+      leave_comment: Haz tu pregunta
   comments_helper:
     comment_button: Publicar comentario
     comment_link: Comentar
     reply_button: Publicar respuesta
     reply_link: Responder
+  questions_helper:
+    comment_button: Publicar pregunta
+    comment_link: Preguntar
+    reply_button: Publicar respuesta
+    reply_link: Respuesta
+  comment_kinds:
+    comment: Comentario
+    question: Pregunta
   debates:
     create:
       form:
@@ -83,6 +94,8 @@ es:
         submit_button: Guardar cambios
       show_link: Ver debate
     form:
+      comment_kind_label: Tipo de comentarios
+      comment_kind_instructions: Escoge el tipo de comentario
       debate_text: Texto inicial del debate
       debate_title: Título del debate
       tags_instructions: Etiqueta este debate.
@@ -131,7 +144,12 @@ es:
         one: 1 Comentario
         other: "%{count} Comentarios"
         zero: Sin comentarios
+      questions:
+        one: 1 pregunta
+        other: "%{count} preguntas"
+        zero: Sin preguntas
       comments_title: Comentarios
+      questions_title: Preguntas
       edit_debate_link: Editar debate
       flag: Este debate ha sido marcado como inapropiado por varios usuarios.
       login_to_comment: Necesitas %{signin} o %{signup} para comentar.

@@ -122,6 +122,48 @@ feature 'Debates' do
     end
   end
 
+  scenario 'Create (debate for questions)' do
+    author = create(:user)
+    login_as(author)
+
+    visit new_debate_path(tag: "open-plenary")
+    fill_in_debate
+    select 'Question', from: 'debate_comment_kind'
+    click_button 'Start a debate'
+
+    expect(page).to have_content 'Debate created successfully.'
+    within("#debate_#{Debate.last.id}") do
+      expect(page).to have_content "No questions"
+    end
+
+    within("#comments") do
+      expect(page).to have_content "Questions (0)"
+      expect(page).to have_content "Leave your question"
+      expect(page).to have_button "Publish question"
+    end
+  end
+
+  scenario 'Create (debate for comments)' do
+    author = create(:user)
+    login_as(author)
+
+    visit new_debate_path(tag: "open-plenary")
+    fill_in_debate
+    select 'Comment', from: 'debate_comment_kind'
+    click_button 'Start a debate'
+
+    expect(page).to have_content 'Debate created successfully.'
+    within("#debate_#{Debate.last.id}") do
+      expect(page).to have_content "No comments"
+    end
+
+    within("#comments") do
+      expect(page).to have_content "Comments (0)"
+      expect(page).to have_content "Leave your comment"
+      expect(page).to have_button "Publish comment"
+    end
+  end
+
   scenario 'Captcha is required for debate creation' do
     login_as(create(:user))
 
