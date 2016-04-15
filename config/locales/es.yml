@@ -3,7 +3,6 @@ es:
   account:
     show:
       change_credentials_link: Cambiar mis datos de acceso
-      delegation: Delega tus votos
       email_on_comment_label: Recibir un email cuando alguien comenta en mis propuestas o debates
       email_on_comment_reply_label: Recibir un email cuando alguien contesta a mis comentarios
       erase_account_link: Darme de baja

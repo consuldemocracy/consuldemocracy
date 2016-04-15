@@ -3,7 +3,6 @@ en:
   account:
     show:
       change_credentials_link: Change my credentials
-      delegation: Delegate your votes
       email_on_comment_label: Notify me by email when someone comments on my proposals or debates
       email_on_comment_reply_label: Notify me by email when someone replies to my comments
       erase_account_link: Erase my account
