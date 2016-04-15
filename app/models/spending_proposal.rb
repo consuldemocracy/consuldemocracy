@@ -118,11 +118,7 @@ class SpendingProposal < ActiveRecord::Base
   def delegated_votes
     count = 0
     representative_voters.each do |voter|
-      voter.forum.represented_users.each do |represented_user|
-        if !represented_user.voted_for?(self)
-          count += 1
-        end
-      end
+      count += voter.forum.represented_users.select { |u| !u.voted_for?(self) }.count
     end
     return count
   end
