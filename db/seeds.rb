@@ -22,6 +22,9 @@ Setting["max_votes_for_debate_edit"] = 1000
 # Max votes where a proposal is still editable
 Setting["max_votes_for_proposal_edit"] = 1000
 
+# Max length for comments
+Setting['comments_body_max_length'] = 1000
+
 # Prefix for the Proposal codes
 Setting["proposal_code_prefix"] = 'MAD'
 
@@ -59,5 +62,5 @@ Setting['feature.facebook_login'] = true
 Setting['feature.google_login'] = true
 Setting['feature.public_stats'] = true
 
-# Max length for comments
-Setting['comments_body_max_length'] = 1000
+# Spending proposals feature flags
+Setting['feature.spending_proposal_features.voting_allowed'] = true

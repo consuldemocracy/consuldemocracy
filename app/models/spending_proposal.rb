@@ -112,8 +112,16 @@ class SpendingProposal < ActiveRecord::Base
     update(unfeasible_email_sent_at: Time.now)
   end
 
+  def reason_for_not_being_votable_by(user)
+    return :not_logged_in unless user
+    return :not_verified  unless user.can?(:vote, SpendingProposal)
+    return :unfeasible    if unfeasible?
+    return :organization  if user.organization?
+    return :not_voting_allowed if Setting["feature.spending_proposal_features.voting_allowed"].blank?
+  end
+
   def votable_by?(user)
-    user && user.level_two_or_three_verified?
+    reason_for_not_being_votable_by(user).blank?
   end
 
   def register_vote(user, vote_value)

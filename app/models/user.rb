@@ -222,6 +222,11 @@ class User < ActiveRecord::Base
     self.update(registering_with_oauth: true, email: nil)
   end
 
+  def ability
+    @ability ||= Ability.new(self)
+  end
+  delegate :can?, :cannot?, to: :ability
+
   private
     def clean_document_number
       self.document_number = self.document_number.gsub(/[^a-z0-9]+/i, "").upcase unless self.document_number.blank?

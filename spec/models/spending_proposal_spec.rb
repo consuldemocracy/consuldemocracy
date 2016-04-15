@@ -261,6 +261,49 @@ describe SpendingProposal do
     end
   end
 
+  describe 'Supports' do
+    let(:user)        { create(:user, :level_two) }
+    let(:luser)       { create(:user) }
+    let(:district)    { create(:geozone) }
+    let(:city_sp)     { create(:spending_proposal) }
+    let(:district_sp) { create(:spending_proposal, geozone: district) }
+
+    describe '#reason_for_not_being_votable_by' do
+      it "rejects not logged in users" do
+        expect(city_sp.reason_for_not_being_votable_by(nil)).to eq(:not_logged_in)
+        expect(district_sp.reason_for_not_being_votable_by(nil)).to eq(:not_logged_in)
+      end
+
+      it "rejects not verified users" do
+        expect(city_sp.reason_for_not_being_votable_by(luser)).to eq(:not_verified)
+        expect(district_sp.reason_for_not_being_votable_by(luser)).to eq(:not_verified)
+      end
+
+      it "rejects unfeasible spending proposals" do
+        unfeasible = create(:spending_proposal, feasible: false, valuation_finished: true)
+        expect(unfeasible.reason_for_not_being_votable_by(user)).to eq(:unfeasible)
+      end
+
+      it "rejects organizations" do
+        create(:organization, user: user)
+        expect(city_sp.reason_for_not_being_votable_by(user)).to eq(:organization)
+        expect(district_sp.reason_for_not_being_votable_by(user)).to eq(:organization)
+      end
+
+      it "rejects votes when voting is not allowed (via admin setting)" do
+        Setting["feature.spending_proposal_features.voting_allowed"] = nil
+        expect(city_sp.reason_for_not_being_votable_by(user)).to eq(:not_voting_allowed)
+        expect(district_sp.reason_for_not_being_votable_by(user)).to eq(:not_voting_allowed)
+      end
+
+      it "accepts valid votes when voting is allowed" do
+        Setting["feature.spending_proposal_features.voting_allowed"] = true
+        expect(city_sp.reason_for_not_being_votable_by(user)).to be_nil
+        expect(district_sp.reason_for_not_being_votable_by(user)).to be_nil
+      end
+    end
+  end
+
   describe "responsible_name" do
     let(:user) { create(:user, document_number: "123456") }
     let!(:spending_proposal) { create(:spending_proposal, author: user) }
