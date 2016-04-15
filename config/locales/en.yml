@@ -162,7 +162,7 @@ en:
       not_delegating: "You are not delegating your votes"
       title: Delegate your votes
     show:
-      delegate_button: "Delegate on %{forum}"
+      delegate_button: "The delegation will be activated in the next voting."
       sign_in_to_delegate: "Sign in to delegate"
       verify_accont_to_delegate: "Verify your account to delegate"
       no_votes: This Forum has not supported any investment proposals

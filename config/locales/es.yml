@@ -162,7 +162,7 @@ es:
       not_delegating: No estás delegando tus votos
       title: Delega tus votos
     show:
-      delegate_button: "Delegar en %{forum}"
+      delegate_button: "La delegación se activará en la próxima fase de votación."
       sign_in_to_delegate: "Debes estar idenficado para delegar"
       verify_accont_to_delegate: "Debes estar verificado para delegar"
       no_votes: Este espacio de debate distrital aún no ha apoyado ninguna propuesta
