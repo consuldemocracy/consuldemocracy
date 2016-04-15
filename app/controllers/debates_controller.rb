@@ -31,7 +31,7 @@ class DebatesController < ApplicationController
   private
 
     def debate_params
-      params.require(:debate).permit(:title, :description, :tag_list, :terms_of_service, :captcha, :captcha_key)
+      params.require(:debate).permit(:title, :description, :tag_list, :comment_kind, :terms_of_service, :captcha, :captcha_key)
     end
 
     def resource_model

@@ -97,6 +97,7 @@ FactoryGirl.define do
   factory :debate do
     sequence(:title)     { |n| "Debate #{n} title" }
     description          'Debate description'
+    comment_kind         'comment'
     terms_of_service     '1'
     association :author, factory: :user
 

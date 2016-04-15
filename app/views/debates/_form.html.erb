@@ -19,6 +19,16 @@
                         label: false,
                         placeholder: t("debates.form.tags_placeholder") %>
     </div>
+
+    <% if current_user.administrator? %>
+      <div class="small-12 column">
+        <%= f.label :comment_kind, t("debates.form.comment_kind_label") %>
+        <p class="note"><%= t("debates.form.comment_kind_instructions") %></p>
+
+        <%= f.select :comment_kind, comment_kind_select_options, { label: false } %>
+      </div>
+    <% end %>
+
     <div class="small-12 column">
       <% if @debate.new_record? %>
         <%= f.label :terms_of_service do %>
