@@ -182,11 +182,11 @@ class User < ActiveRecord::Base
   end
 
   def username_required?
-    !organization? && !erased? && !registering_with_oauth
+    !organization? && !erased?
   end
 
   def email_required?
-    !erased? && !registering_with_oauth
+    !erased?
   end
 
   def has_official_email?
@@ -215,11 +215,15 @@ class User < ActiveRecord::Base
   end
 
   def save_requiring_finish_signup
-    self.update(registering_with_oauth: true)
-  end
-
-  def save_requiring_finish_signup_without_email
-    self.update(registering_with_oauth: true, email: nil)
+    begin
+      self.registering_with_oauth= true
+      self.save(validate: false)
+    # Devise puts unique constraints for the email the db, so we must detect & handle that
+    rescue ActiveRecord::RecordNotUnique
+      self.email = nil
+      self.save(validate: false)
+    end
+    true
   end
 
   def ability
