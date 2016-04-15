@@ -158,22 +158,22 @@ feature 'Admin spending proposals' do
 
       select "Valuator 1", from: "valuator_id"
 
-      expect(page).to have_content('There is 1 spending proposal')
+      expect(page).to have_content('There is 1 investment project')
       expect(page).to_not have_link("Destroy the city")
       expect(page).to have_link("Realocate visitors")
 
       select "All valuators", from: "valuator_id"
 
-      expect(page).to have_content('There are 2 spending proposals')
+      expect(page).to have_content('There are 2 investment projects')
       expect(page).to have_link("Destroy the city")
       expect(page).to have_link("Realocate visitors")
 
       select "Valuator 1", from: "valuator_id"
-      expect(page).to have_content('There is 1 spending proposal')
+      expect(page).to have_content('There is 1 investment project')
       click_link("Realocate visitors")
       click_link("Back")
 
-      expect(page).to have_content('There is 1 spending proposal')
+      expect(page).to have_content('There is 1 investment project')
       expect(page).to_not have_link("Destroy the city")
       expect(page).to have_link("Realocate visitors")
 
@@ -184,7 +184,7 @@ feature 'Admin spending proposals' do
       expect(page).to_not have_button("Update")
       click_on("Back")
 
-      expect(page).to have_content('There is 1 spending proposal')
+      expect(page).to have_content('There is 1 investment project')
       expect(page).to_not have_link("Destroy the city")
       expect(page).to have_link("Realocate visitors")
     end
