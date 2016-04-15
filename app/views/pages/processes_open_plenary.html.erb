@@ -11,10 +11,9 @@
     <div class="small-12 medium-7 column">
 
       <h1 class="margin-bottom"><%= t("pages.processes.index.process_3_title") %></h1>
-      <p><%= t("pages.processes.index.process_3_description") %></p>
-      <p>El próximo <strong>24 de abril</strong> será día de <strong>puertas abiertas en el Salón de Plenos de Madrid</strong> y los portavoces de los grupos parlamentarios dedicarán su comparecencia a responder a las propuestas y preguntas que le formule la ciudadanía.</p>
+      <p>Envía una propuesta o lanza una pregunta, y si están entre las cinco preguntas o cinco propuestas más votadas podrás formularla en persona a los grupos políticos en el Pleno Abierto del 24 de abril.</p>
 
-      <p>Puedes mandarnos <strong>tu pregunta o propuesta</strong> para los grupos parlamentarios <strong>hasta el jueves 21</strong> y apoyar las que más te gusten. Las más votadas serán respondidas el próximo domingo en el Pleno e invitaremos a sus autores a asistir para formularlas directamente.</p>
+      <p>Si tu pregunta o propuesta está entre las ​<strong>cinco más votadas al finalizar el jueves, te contactaremos para invitarte a formularla en persona</strong>​ en el Pleno del día 24 a todos los grupos políticos.</p>
 
       <div class="row">
         <div class="small-12 medium-5 column">
@@ -45,11 +44,11 @@
                     proposals_path(search: "plenoabierto") %>
       </li>
       <li>
-        <%= link_to "Ver todas las preguntas enviadas", "#" %>
+        <%= link_to t("pages.processes.process_3.view_questions"), "#" %>
       </li>
     </ul>
     <div class="show-for-small-only">
-      <%= image_tag "pleno_abierto_cartel.jpg" %>
+      <%= image_tag "pleno_abierto_cartel.gif" %>
     </div>
   </div>
 </div>
