@@ -2,7 +2,9 @@ require 'rails_helper'
 
 feature 'Open Plenary' do
 
-  scenario "Create a debate" do
+  let!(:debate) { create(:debate, comment_kind: 'question') }
+
+  scenario "Create a question", :js do
     author = create(:user)
     login_as(author)
 
@@ -11,13 +13,12 @@ feature 'Open Plenary' do
     click_link "Send a proposal or question"
     click_link "Make a question"
 
-    fill_in_debate
-    click_button 'Start a debate'
+    fill_in "comment-body-debate_#{debate.id}", with: 'Is there a way to...?'
+    click_button 'Publish question'
 
-    expect(page).to have_content 'Debate created successfully.'
-
-    within("#tags") do
-      expect(page).to have_content "plenoabierto"
+    within "#comments" do
+      expect(page).to have_content 'Is there a way to...?'
+      expect(page).to have_content 'Questions (1)'
     end
   end
 
