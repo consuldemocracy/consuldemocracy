@@ -2,7 +2,7 @@ require 'rails_helper'
 
 feature 'Open Plenary' do
 
-  let!(:debate) { create(:debate, comment_kind: 'question') }
+  let!(:debate) { create(:debate, comment_kind: 'question', tag_list: "plenoabierto") }
 
   scenario "Create a question", :js do
     author = create(:user)
@@ -43,14 +43,19 @@ feature 'Open Plenary' do
 
   scenario "Debate index" do
     author = create(:user)
-    create(:debate, tag_list: "plenoabierto")
+    question1 = create(:comment, commentable: debate)
+    question2 = create(:comment, commentable: debate)
 
     login_as(author)
-    visit root_path
+    visit "processes_open_plenary"
 
-    first(:link, "Open processes").click
-    click_link "Send a proposal or question"
-    click_link "Make a question"
+    click_link "See all questions"
+
+    within("#comments") do
+      expect(page).to have_content "Questions (2)"
+      expect(page).to have_content question1.body
+      expect(page).to have_content question2.body
+    end
   end
 
   scenario "Proposal index" do

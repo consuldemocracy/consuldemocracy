@@ -46,7 +46,8 @@
                     proposals_path(search: "plenoabierto") %>
       </li>
       <li>
-        <%= link_to "Ver todas las preguntas enviadas", "#" %>
+        <%= link_to t("pages.processes.process_3.view_questions"),
+                    debate_path(open_plenary_debate) %>
       </li>
     </ul>
     <div class="show-for-small-only">
