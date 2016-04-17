@@ -27,6 +27,7 @@ class Debate < ActiveRecord::Base
   validates :terms_of_service, acceptance: { allow_nil: false }, on: :create
 
   before_save :calculate_hot_score, :calculate_confidence_score
+  before_save :set_comment_kind
 
   scope :for_render,               -> { includes(:tags) }
   scope :sort_by_hot_score ,       -> { reorder(hot_score: :desc) }
@@ -130,6 +131,10 @@ class Debate < ActiveRecord::Base
 
   def after_restore
     self.tags.each{ |t| t.increment_custom_counter_for('Debate') }
+  end
+
+  def set_comment_kind
+    self.comment_kind ||= 'comment'
   end
 
 end

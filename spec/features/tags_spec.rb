@@ -98,7 +98,7 @@ feature 'Tags' do
     login_as(debate.author)
     visit edit_debate_path(debate)
 
-    expect(page).to have_selector("input[value='Economía']")
+    expect(page).to have_selector("input[value='Economía,']")
 
     fill_in 'debate_tag_list', with: "Economía, Hacienda"
     fill_in 'debate_captcha', with: correct_captcha_text

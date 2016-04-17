@@ -122,9 +122,9 @@ feature 'Debates' do
     end
   end
 
-  scenario 'Create (debate for questions)' do
-    author = create(:user)
-    login_as(author)
+  scenario 'Create (debate for questions as admin)' do
+    admin = create(:administrator)
+    login_as(admin.user)
 
     visit new_debate_path(tag: "open-plenary")
     fill_in_debate
@@ -143,9 +143,9 @@ feature 'Debates' do
     end
   end
 
-  scenario 'Create (debate for comments)' do
-    author = create(:user)
-    login_as(author)
+  scenario 'Create (debate for comments as admin)' do
+    admin = create(:administrator)
+    login_as(admin.user)
 
     visit new_debate_path(tag: "open-plenary")
     fill_in_debate
@@ -162,6 +162,14 @@ feature 'Debates' do
       expect(page).to have_content "Leave your comment"
       expect(page).to have_button "Publish comment"
     end
+  end
+
+  scenario 'Create (debate for questions as user)' do
+    admin = create(:administrator)
+    login_as(admin.user)
+
+    visit new_debate_path(tag: "open-plenary")
+    expect(page).to_not have_css 'debate_comment_kind'
   end
 
   scenario 'Captcha is required for debate creation' do
