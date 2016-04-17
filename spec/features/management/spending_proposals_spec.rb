@@ -128,7 +128,7 @@ feature 'Spending Proposals' do
 
   context "Voting" do
 
-    scenario 'Voting spending proposals on behalf of someone in index view', :js do
+    xscenario 'Voting spending proposals on behalf of someone in index view', :js do
       spending_proposal = create(:spending_proposal)
 
       user = create(:user, :level_two)
@@ -145,7 +145,7 @@ feature 'Spending Proposals' do
       expect(current_path).to eq(management_spending_proposals_path)
     end
 
-    scenario 'Voting spending proposals on behalf of someone in show view', :js do
+    xscenario 'Voting spending proposals on behalf of someone in show view', :js do
       spending_proposal = create(:spending_proposal)
 
       user = create(:user, :level_two)

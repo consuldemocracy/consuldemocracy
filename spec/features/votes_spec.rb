@@ -392,7 +392,7 @@ feature 'Votes' do
           end
         end
 
-        scenario 'Create from spending proposal index', :js do
+        xscenario 'Create from spending proposal index', :js do
           spending_proposal = create(:spending_proposal)
           visit spending_proposals_path
 
@@ -415,7 +415,7 @@ feature 'Votes' do
           expect(page).to have_content "No supports"
         end
 
-        scenario 'Trying to vote multiple times', :js do
+        xscenario 'Trying to vote multiple times', :js do
           visit spending_proposal_path(@proposal)
 
           within('.supports') do
@@ -426,7 +426,7 @@ feature 'Votes' do
           end
         end
 
-        scenario 'Create from proposal show', :js do
+        xscenario 'Create from proposal show', :js do
           visit spending_proposal_path(@proposal)
 
           within('.supports') do
@@ -473,7 +473,7 @@ feature 'Votes' do
           end
         end
 
-        scenario 'Create from spending proposal index', :js do
+        xscenario 'Create from spending proposal index', :js do
           spending_proposal = create(:spending_proposal)
           visit spending_proposals_path
 
@@ -496,7 +496,7 @@ feature 'Votes' do
           expect(page).to have_content "No supports"
         end
 
-        scenario 'Trying to vote multiple times', :js do
+        xscenario 'Trying to vote multiple times', :js do
           visit spending_proposal_path(@proposal)
 
           within('.supports') do
@@ -507,7 +507,7 @@ feature 'Votes' do
           end
         end
 
-        scenario 'Create from proposal show', :js do
+        xscenario 'Create from proposal show', :js do
           visit spending_proposal_path(@proposal)
 
           within('.supports') do
@@ -521,7 +521,7 @@ feature 'Votes' do
 
       feature 'Alert' do
 
-        scenario "accepted delegation alert", :js do
+        xscenario "accepted delegation alert", :js do
           forum = create(:forum)
           user = create(:user, :level_two, representative: forum)
           proposal = create(:spending_proposal)
