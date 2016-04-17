@@ -22,8 +22,6 @@ es:
       title: Nueva respuesta a tu comentario
     unfeasible_spending_proposal:
       hi: "Estimado usuario,"
-      new_html: "Por todo ello, te invitamos a que elabores una <strong>nueva propuesta</strong> que se ajuste a las condiciones de este proceso. Esto lo puedes hacer en este enlace: %{url}."
-      new_href: "nueva propuesta de inversión"
       reconsider_html: "En caso de que la fase de creación de propuestas haya acabado, puedes enviarnos el texto de subsanación o mejora de tu propuesta, en el plazo de 48 horas, al correo preparticipativos@madrid.es, indicando necesariamente para su tramitación el código %{code} como asunto del correo, correspondiente a tu propuesta."
       sincerely: "Atentamente"
       signatory: "DIRECCIÓN GENERAL DE PARTICIPACIÓN CIUDADANA"

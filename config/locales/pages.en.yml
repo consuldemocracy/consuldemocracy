@@ -7,10 +7,10 @@ en:
     help_translate:
       title: Help us translate!
       text: |-
-        If you speak other languages please help us to translate this website and the software under it.
+        If you speak other languages please help us translate this website and the software behind it.
 
-        Contact us in <a href="mailto:ag.gobiernoabierto@madrid.es">ag.gobiernoabierto@madrid.es</a> to give you access to the collaborative translation system.
-        Together we will make this tool available for any country. A million thanks!
+        Contact us at <a href="mailto:ag.gobiernoabierto@madrid.es">ag.gobiernoabierto@madrid.es</a> We'll give you access to the collaborative translation tool.
+        Together we can make this open government tool available to any country. Thanks a million!
     more_information:
       description:
         faq: Frecuently asked question about tecnical problems
@@ -128,6 +128,6 @@ en:
       date_3_info: Evaluation
       date_4: May 15 to June 30
       date_4_info: Final vote
-      support_button: Support investment projects
+      support_button: See result of the preselection
       title_html: You decide how to invest 60 million euros<br> to your city
       title_page: Participatory budgeting

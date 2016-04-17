@@ -3,7 +3,6 @@ en:
   account:
     show:
       change_credentials_link: Change my credentials
-      delegation: Delegate your votes
       email_on_comment_label: Notify me by email when someone comments on my proposals or debates
       email_on_comment_reply_label: Notify me by email when someone replies to my comments
       erase_account_link: Erase my account
@@ -180,7 +179,7 @@ en:
       not_delegating: "You are not delegating your votes"
       title: Delegate your votes
     show:
-      delegate_button: "Delegate on %{forum}"
+      delegate_button: "The delegation will be activated in the next voting."
       sign_in_to_delegate: "Sign in to delegate"
       verify_accont_to_delegate: "Verify your account to delegate"
       no_votes: This Forum has not supported any investment proposals
@@ -465,15 +464,13 @@ en:
         confidence_score: highest rated
     welcome:
       city: All city
-      city_link: Support proposals of the city
-      city_text_html: Support <strong>10 investment projects</strong> of the city.
+      city_link: See results of the preselection for the city
       delegation: Delegation of votes
-      description_html: You can support <u>10 investment projects</u> of the city and <u>10 investment projects</u> of only one district.
+      description_html: As we evaluate the proposals submitted, you can see in the following links the final order of the proposals in the preselection stage.
       districts: Districts
-      districts_link: Select a district
-      districts_text_html: Support <strong>10 investment projects</strong> of only one district.
+      districts_link: See results of the preselection for the districts
       in_two_minutes: All information about participatory budgets
-      title: "You already can support investment projetcs!"
+      title: "On May 15 we start with the final vote"
       unfeasible_link: See unfeasible investment projects
     new:
       back_link: Back
@@ -556,6 +553,7 @@ en:
       not_verified: Only verified users can vote on proposals; %{verify_account}.
       unfeasible: Unfeasible proposal.
       organization: Organisations are not permitted to vote.
+      not_voting_allowed: Voting phase is closed
       no_city_supports_available: You have already used all your city-wide supports.
       no_district_supports_available: You have already used all your district-wide supports.
       different_district_assigned: You already supported other district proposals.
@@ -575,6 +573,10 @@ en:
       description: If the proposal is accepted by the majority, the City Council accepts it as its own and it gets done.
       title: It gets done
     featured:
+      open_plenary:
+        link: Send proposal or question
+        text: Send your proposal or question to any political party and support the most you like.
+        title: Open plenary
       page_title: Featured
       process:
         link: View results
@@ -585,7 +587,7 @@ en:
         text: Create your own proposals and supports those of other citizens.
         title: Citizen proposals
       spending_proposals:
-        link: Support proposals
+        link: See results of proposals preselection
         text: You decide how to invest 60 million euros to your city.
         title: Participatory budgeting
     more_information: More information about this page

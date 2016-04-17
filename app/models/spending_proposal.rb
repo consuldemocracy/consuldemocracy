@@ -112,7 +112,23 @@ class SpendingProposal < ActiveRecord::Base
   end
 
   def total_votes
-    cached_votes_up
+    cached_votes_up + physical_votes + delegated_votes - forum_votes
+  end
+
+  def delegated_votes
+    count = 0
+    representative_voters.each do |voter|
+      count += voter.forum.represented_users.select { |u| !u.voted_for?(self) }.count
+    end
+    return count
+  end
+
+  def representative_voters
+    Vote.representative_votes.for_spending_proposals(self).collect(&:voter)
+  end
+
+  def forum_votes
+    Vote.representative_votes.for_spending_proposals(self).count
   end
 
   def code
@@ -129,6 +145,7 @@ class SpendingProposal < ActiveRecord::Base
     return :not_verified  unless user.can?(:vote, SpendingProposal)
     return :unfeasible    if unfeasible?
     return :organization  if user.organization?
+    return :not_voting_allowed if Setting["feature.spending_proposal_features.voting_allowed"].blank?
     if city_wide?
       return :no_city_supports_available unless user.city_wide_spending_proposals_supported_count > 0
     else # district_wide
