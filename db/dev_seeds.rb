@@ -13,6 +13,7 @@ Setting.create(key: 'max_votes_for_debate_edit', value: '1000')
 Setting.create(key: 'max_votes_for_proposal_edit', value: '1000')
 Setting.create(key: 'proposal_code_prefix', value: 'MAD')
 Setting.create(key: 'votes_for_proposal_success', value: '100')
+Setting.create(key: 'comments_body_max_length', value: '1000')
 
 Setting.create(key: 'blog_url', value: '/blog')
 Setting.create(key: 'url', value: 'http://localhost:3000')
@@ -20,11 +21,11 @@ Setting.create(key: 'org_name', value: 'Consul')
 Setting.create(key: 'place_name', value: 'City')
 Setting.create(key: 'feature.debates', value: "true")
 Setting.create(key: 'feature.spending_proposals', value: "true")
+Setting.create(key: 'feature.spending_proposal_features.voting_allowed', value: "true")
 Setting.create(key: 'feature.twitter_login', value: "true")
 Setting.create(key: 'feature.facebook_login', value: "true")
 Setting.create(key: 'feature.google_login', value: "true")
 
-Setting.create(key: 'comments_body_max_length', value: '1000')
 
 puts "Creating Geozones"
 ('A'..'Z').each{ |i| Geozone.create(name: "District #{i}") }
