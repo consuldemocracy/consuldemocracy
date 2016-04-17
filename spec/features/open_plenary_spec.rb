@@ -41,7 +41,7 @@ feature 'Open Plenary' do
     end
   end
 
-  scenario "Debate index" do
+  scenario "Question's index" do
     author = create(:user)
     question1 = create(:comment, commentable: debate)
     question2 = create(:comment, commentable: debate)
@@ -58,8 +58,22 @@ feature 'Open Plenary' do
     end
   end
 
-  scenario "Proposal index" do
+  scenario "Proposal's index" do
+    proposal1 = create(:proposal, title: "Plant more trees",  tag_list: 'plenoabierto')
+    proposal2 = create(:proposal, title: "Feed the children", tag_list: 'plenoabierto')
+    proposal3 = create(:proposal, title: "Take care of the rich")
 
+    visit "processes_open_plenary"
+
+    click_link "See all proposals"
+
+    within("#proposals") do
+      expect(page).to have_css('.proposal', count: 2)
+
+      expect(page).to have_content(proposal1.title)
+      expect(page).to have_content(proposal2.title)
+      expect(page).to_not have_content(proposal3.title)
+    end
   end
 
 end
