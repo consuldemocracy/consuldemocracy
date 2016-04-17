@@ -465,9 +465,10 @@ en:
     welcome:
       city: All city
       city_link: See results of the preselection for the city
+      delegation: Delegation of votes
       description_html: As we evaluate the proposals submitted, you can see in the following links the final order of the proposals in the preselection stage.
       districts: Districts
-      districts_link: Select a district
+      districts_link: See results of the preselection for the districts
       in_two_minutes: All information about participatory budgets
       title: "On May 15 we start with the final vote"
       unfeasible_link: See unfeasible investment projects
@@ -572,6 +573,10 @@ en:
       description: If the proposal is accepted by the majority, the City Council accepts it as its own and it gets done.
       title: It gets done
     featured:
+      open_plenary:
+        link: Send proposal or question
+        text: Send your proposal or question to any political party and support the most you like.
+        title: Open plenary
       page_title: Featured
       process:
         link: View results
@@ -582,7 +587,7 @@ en:
         text: Create your own proposals and supports those of other citizens.
         title: Citizen proposals
       spending_proposals:
-        link: Support proposals
+        link: See results of proposals preselection
         text: You decide how to invest 60 million euros to your city.
         title: Participatory budgeting
     more_information: More information about this page

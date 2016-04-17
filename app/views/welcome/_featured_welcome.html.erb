@@ -7,12 +7,12 @@
   </div>
 
   <div class="small-12 column">
-    <%= link_to participatory_budget_path do %>
-      <div class="panel featured-three">
-        <h2><%= t('welcome.featured.spending_proposals.title') %></h2>
-        <p><%= t('welcome.featured.spending_proposals.text') %></p>
-        <div class="small-12 medium-4">
-          <span class="button expanded"><%= t('welcome.featured.spending_proposals.link') %></span>
+    <%= link_to page_path('processes_open_plenary') do %>
+      <div class="panel featured-brand">
+        <h2><%= t('welcome.featured.open_plenary.title') %></h2>
+        <p><%= t('welcome.featured.open_plenary.text') %></p>
+        <div class="small-12 medium-5 large-3">
+          <span class="button expanded"><%= t('welcome.featured.open_plenary.link') %></span>
         </div>
       </div>
     <% end %>
@@ -21,12 +21,12 @@
   <div class="clear"><br></div>
 
   <div class="small-12 medium-6 column">
-    <%= link_to page_path('encuesta-plaza-espana-resultados') do %>
-      <div class="panel featured-two" data-equalizer-watch>
-        <h2><%= t('welcome.featured.process.title') %></h2>
-        <p><%= t('welcome.featured.process.text') %></p>
-        <div class="small-12 medium-6">
-          <span class="button expanded"><%= t('welcome.featured.process.link') %></span>
+    <%= link_to participatory_budget_path do %>
+      <div class="panel featured-three" data-equalizer-watch>
+        <h2><%= t('welcome.featured.spending_proposals.title') %></h2>
+        <p><%= t('welcome.featured.spending_proposals.text') %></p>
+        <div class="small-12 medium-9">
+          <span class="button expanded"><%= t('welcome.featured.spending_proposals.link') %></span>
         </div>
       </div>
     <% end %>

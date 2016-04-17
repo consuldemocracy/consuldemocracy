@@ -904,6 +904,17 @@ table.age-groups {
   }
 }
 
+.investment-project .supports .button-support,
+.investment-project-show .supports .button-support {
+  display: none !important;
+}
+
+.investment-project .supports .total-supports,
+.investment-project-show .supports .total-supports {
+  display: block;
+  margin-top: $line-height*1.5;
+}
+
 // 09. Featured
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -934,6 +945,24 @@ table.age-groups {
         background: white;
         color: $text;
         margin-top: $line-height;
+      }
+    }
+
+    &.featured-brand {
+      background: $brand;
+
+      @media (min-width: $medium-breakpoint) {
+        background: $brand image-url('featured_open_plenary.jpg') no-repeat;
+        background-position: 90% 0;
+      }
+
+      .button {
+        background: white;
+        color: $brand;
+      }
+
+      h2, p {
+        color: white;
       }
     }
 
@@ -973,8 +1002,8 @@ table.age-groups {
       background: $budget;
 
       @media (min-width: $medium-breakpoint) {
-        background: $budget image-url('featured_spending_proposals_home.png') no-repeat;
-        background-position: 90% 0;
+        background: $budget image-url('featured_spending_proposals.png') no-repeat;
+        background-position: bottom right;
       }
 
       h2, p {
@@ -1020,6 +1049,32 @@ table.age-groups {
   h2, h3, a {
     color: white;
     margin: 0;
+  }
+
+  a:hover h2, a:hover h3 {
+    color: white !important;
+    text-decoration: none;
+  }
+}
+
+.featured-open-plenary {
+  background: $brand;
+  padding: $line-height/2;
+
+  @media (min-width: $small-breakpoint) {
+    background: $brand image-url('featured_open_plenary_small.jpg') no-repeat;
+    background-position: bottom right;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  h2, h3, a {
+    color: white;
+    margin: 0;
+
+    &:hover {
+      text-decoration: none;
+    }
   }
 
   a:hover h2, a:hover h3 {

@@ -465,9 +465,10 @@ es:
     welcome:
       city: Toda la ciudad
       city_link: Ver resultado de la preselección para toda la ciudad
+      delegation: Delegación de voto
       description_html: Mientras evaluamos las propuestas presentadas, puedes ver en los siguientes enlaces el orden final de las propuestas en la fase de preselección.
       districts: Distritos
-      districts_link: Seleccionar un distrito
+      districts_link: Ver resultado de la preselección en distritos
       in_two_minutes: Toda la información sobre los presupuestos participativos
       title: "El día 15 de mayo comenzamos con la votación final"
       unfeasible_link: Ver propuestas de inversión no viables
@@ -571,6 +572,10 @@ es:
       description: Si la propuesta es aceptada mayoritariamente, el Ayuntamiento la asume como propia y se hace.
       title: Se hace
     featured:
+      open_plenary:
+        link: Enviar propuesta o pregunta
+        text: Envía tu propuesta o tu pregunta para cualquiera de los grupos políticos y apoya las que más te gusten.
+        title: Pleno Abierto
       page_title: Destacados
       process:
         link: Ver resultados
@@ -581,7 +586,7 @@ es:
         text: Crear tus propias propuestas y apoya las de otros ciudadanos.
         title: Propuestas ciudadanas
       spending_proposals:
-        link: Preselección de propuestas
+        link: Ver resultado de la preselección de propuestas
         text: Tú decides cómo invertir 60 millones de euros para tu ciudad.
         title: Presupuestos participativos
     more_information: Más información sobre esta página
