@@ -15,4 +15,6 @@ es:
     per_page_code: "Código a incluir en cada página"
     feature:
       debates: Debates
-      spending_proposals: Propuestas de gasto
+      spending_proposals: Propuestas de inversión
+      spending_proposal_features:
+        voting_allowed: Votaciones sobre propuestas de inversión.

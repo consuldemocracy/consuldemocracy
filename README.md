@@ -48,13 +48,29 @@ bin/rails s
 
 ```
 
-Prerequisites for testing: install PhantomJS >= 2.0
+Prerequisites for testing: install PhantomJS >= 1.9.8
 
 Run the tests with:
 
 ```
 bin/rspec
 ```
+
+You can use the default admin user from the seeds file:
+
+ **user:** admin@madrid.es
+ **pass:** 12345678
+
+But for some actions like voting, you will need a verified user, the seeds file also includes one:
+
+ **user:** verified@madrid.es
+ **pass:** 12345678
+
+### OAuth
+
+To test authentication services with external OAuth suppliers - right now Twitter, Facebook and Google - you'll need to create an "application" in each of the supported platforms and set the *key* and *secret* provided in your *secrets.yml*
+
+In the case of Google, verify that the APIs *Contacts API* and *Google+ API* are enabled for the application.
 
 ## Licence
 

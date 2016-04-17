@@ -66,7 +66,7 @@ Rails.application.routes.draw do
   end
 
   scope '/participatory_budget' do
-    resources :spending_proposals, only: [:index, :new, :create, :show, :destroy], path: 'investment_projects' do
+    resources :spending_proposals, only: [:index, :show, :destroy], path: 'investment_projects' do #[:new, :create] temporary disabled
       get :welcome, on: :collection
       post :vote, on: :member
     end
@@ -258,6 +258,7 @@ Rails.application.routes.draw do
   get '/blog' => redirect("http://diario.madrid.es/participa/")
   get 'participatory_budget', to: 'spending_proposals#welcome', as: 'participatory_budget'
   get 'delegacion', to: 'forums#index', as: 'delegation'
+  get 'plenoabierto', to: 'pages#show', id: 'processes_open_plenary'
   resources :pages, path: '/', only: [:show]
   get 'participatory_budget/in_two_minutes', to: 'pages#show', id: 'participatory_budget/in_two_minutes'
 end
