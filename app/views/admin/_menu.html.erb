@@ -99,6 +99,13 @@
       <% end %>
     </li>
 
+    <li <%= "class=active" if controller_name == "newsletter" %>>
+      <%= link_to admin_newsletters_path do %>
+        <span class="icon-stats"></span>
+        Newsletter
+      <% end %>
+    </li>
+
     <li <%= "class=active" if controller_name == "stats" %>>
       <%= link_to admin_stats_path do %>
         <span class="icon-stats"></span>
