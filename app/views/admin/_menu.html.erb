@@ -162,5 +162,12 @@
         <% end %>
       </li>
     <% end %>
+
+    <li <%= "class=active" if controller_name == "newsletter" %>>
+      <%= link_to admin_newsletters_path do %>
+        <span class="icon-stats"></span>
+        Newsletter
+      <% end %>
+    </li>
   </ul>
 </div>
