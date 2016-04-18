@@ -154,6 +154,7 @@ class User < ActiveRecord::Base
       confirmed_phone: nil,
       unconfirmed_phone: nil
     )
+    self.identities.destroy_all
   end
 
   def erased?
