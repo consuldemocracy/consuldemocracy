@@ -176,7 +176,7 @@ module CommonActions
 
   def expect_message_voting_not_allowed
     expect(page).to have_content 'Voting phase is closed'
-    expect(page).to have_selector('.in-favor a', visible: false)
+    expect(page).to_not have_selector('.in-favor a')
   end
 
   def create_featured_proposals

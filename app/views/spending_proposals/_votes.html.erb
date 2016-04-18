@@ -1,15 +1,19 @@
 <div class="supports">
 
-  <span class="total-supports">
+  <% reason = spending_proposal.reason_for_not_being_votable_by(current_user) %>
+  <% voting_allowed = true unless reason.presence == :not_voting_allowed %>
+  <% user_voted_for = voted_for?(@spending_proposal_votes, spending_proposal) %>
+
+  <span class="total-supports <%= 'no-button' unless voting_allowed || user_voted_for %>">
     <%= t("spending_proposals.spending_proposal.supports", count: spending_proposal.total_votes) %>
   </span>
 
   <div class="in-favor">
-    <% if voted_for?(@spending_proposal_votes, spending_proposal) %>
+    <% if user_voted_for %>
       <div class="supported">
         <%= t("spending_proposals.spending_proposal.already_supported") %>
       </div>
-    <% else %>
+    <% elsif voting_allowed %>
       <%= link_to vote_url,
           class: "button button-support small expanded",
           title: t('spending_proposals.spending_proposal.support_title'), method: "post", remote: true do %>
@@ -18,9 +22,7 @@
     <% end %>
   </div>
 
-  <% reason = spending_proposal.reason_for_not_being_votable_by(current_user) %>
-
-  <% if reason.present? && !voted_for?(@spending_proposal_votes, spending_proposal) %>
+  <% if reason.present? && !user_voted_for %>
     <div class="no-supports-allowed" style='display:none'>
       <p>
           <%= t("votes.spending_proposals.#{reason}",
@@ -32,7 +34,7 @@
     </div>
   <% end %>
 
-  <% if voted_for?(@spending_proposal_votes, spending_proposal) && setting['twitter_handle'] %>
+  <% if user_voted_for && setting['twitter_handle'] %>
     <div class="share-supported">
       <%= social_share_button_tag("#{spending_proposal.title} #{setting['twitter_hashtag']}", url: spending_proposal_url(spending_proposal), via: setting['twitter_handle']) %>
     </div>
