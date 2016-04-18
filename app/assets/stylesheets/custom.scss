@@ -1133,3 +1133,31 @@ table.age-groups {
     }
   }
 }
+
+// News page
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+.news-page {
+
+  .row.expanded {
+    background: $brand;
+
+    h1, h2 {
+      color: white;
+    }
+
+    h2 {
+      font-weight: normal;
+
+      span {
+        font-weight: bold;
+      }
+    }
+  }
+
+  .row.expanded.banner {
+    background: #FFDC00;
+    margin-bottom: rem-calc(-48);
+    padding-top: $line-height;
+  }
+}
