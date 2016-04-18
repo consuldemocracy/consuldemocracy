@@ -12,16 +12,14 @@
       <div class="supported">
         <%= t("spending_proposals.spending_proposal.already_supported") %>
       </div>
-    <% else %>
-      <%= if voting_allowed
-          link_to vote_url,
-            class: "button button-support small expanded",
-            title: t('spending_proposals.spending_proposal.support_title'),
-            method: "post",
-            remote: true,
-            data: supports_confirm_for_current_user(spending_proposal) do %>
-          <%= t("spending_proposals.spending_proposal.support") %>
-        <% end %>
+    <% elsif voting_allowed %>
+      <%= link_to vote_url,
+          class: "button button-support small expanded",
+          title: t('spending_proposals.spending_proposal.support_title'),
+          method: "post",
+          remote: true,
+          data: supports_confirm_for_current_user(spending_proposal) do %>
+        <%= t("spending_proposals.spending_proposal.support") %>
       <% end %>
     <% end %>
   </div>
