@@ -15,7 +15,7 @@ class NewsletterZip
   end
 
   def create
-    Zip::File.open("#{filename}.zip", Zip::File::CREATE) do |zipfile|
+    Zip::File.open(path, Zip::File::CREATE) do |zipfile|
       zipfile.get_output_stream("#{filename}.txt") do |file|
         file.write emails
       end
