@@ -54,7 +54,7 @@ es:
       hidden_users: Usuarios bloqueados
       incomplete_verifications: Verificaciones incompletas
       moderators: Moderadores
-      newsletter: Newsletters
+      newsletter: Envío de Newsletters
       valuators: Evaluadores
       officials: Cargos públicos
       organizations: Organizaciones
@@ -71,6 +71,10 @@ es:
         email_placeholder: Buscar usuario por email
         search: Buscar
         user_not_found: Usuario no encontrado
+    newsletters:
+      index:
+        title: Envío de newsletters
+        button: Descargar zip con lista de usuarios
     valuators:
       index:
         title: Evaluadores
