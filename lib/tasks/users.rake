@@ -71,4 +71,9 @@ namespace :users do
       user_ids_to_review.each { |id| User.find(id).update(registering_with_oauth: true) }
     end
   end
+
+  desc "Removes identities associated to erased users"
+  task remove_erased_identities: :environment do
+    Identity.joins(:user).where('users.erased_at IS NOT NULL').destroy_all
+  end
 end
