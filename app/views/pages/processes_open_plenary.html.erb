@@ -23,7 +23,7 @@
         </div>
 
         <div class="small-12 medium-5 column end">
-        <% open_plenary_debate = Debate.where(comment_kind: 'question').first %>
+        <% open_plenary_debate = Debate.find(4588) %>
         <%= link_to t("pages.processes.process_3.send_question"),
                     debate_path(open_plenary_debate, anchor: 'comments'),
                     class: "button expanded" %>
