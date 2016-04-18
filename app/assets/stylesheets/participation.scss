@@ -890,6 +890,12 @@
   }
 }
 
+.investment-project .supports .total-supports.no-button,
+.investment-project-show .supports .total-supports.no-button {
+  display: block;
+  margin-top: $line-height*1.5;
+}
+
 // 05. Featured
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 

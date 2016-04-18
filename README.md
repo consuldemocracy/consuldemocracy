@@ -72,7 +72,7 @@ To test authentication services with external OAuth suppliers - right now Twitte
 
 In the case of Google, verify that the APIs *Contacts API* and *Google+ API* are enabled for the application.
 
-## Licence
+## License
 
 Code published under AFFERO GPL v3 (see [LICENSE-AGPLv3.txt](LICENSE-AGPLv3.txt))
 
