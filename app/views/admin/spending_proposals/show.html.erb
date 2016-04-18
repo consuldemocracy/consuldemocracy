@@ -1,4 +1,4 @@
-<%= link_to admin_spending_proposals_path(SpendingProposal.filter_params(params)) do %>
+<%= link_to admin_spending_proposals_path(SpendingProposal.filter_params(params)), data: {no_turbolink: true} do %>
   <span class="icon-angle-left"></span> <%= t("admin.spending_proposals.show.back") %>
 <% end %>
 

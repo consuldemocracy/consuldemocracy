@@ -141,11 +141,11 @@ class SpendingProposal < ActiveRecord::Base
   end
 
   def reason_for_not_being_votable_by(user)
+    return :not_voting_allowed if Setting["feature.spending_proposal_features.voting_allowed"].blank?
     return :not_logged_in unless user
     return :not_verified  unless user.can?(:vote, SpendingProposal)
     return :unfeasible    if unfeasible?
     return :organization  if user.organization?
-    return :not_voting_allowed if Setting["feature.spending_proposal_features.voting_allowed"].blank?
     if city_wide?
       return :no_city_supports_available unless user.city_wide_spending_proposals_supported_count > 0
     else # district_wide

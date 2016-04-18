@@ -1,16 +1,57 @@
 <% provide :title, "Pleno Abierto" %>
+<% provide :social_media_meta_tags do %>
+<%= render "shared/social_media_meta_tags",
+          social_url: page_url("processes_open_plenary"),
+          social_title: t("pages.processes.index.process_3_title") ,
+          social_description: t("pages.processes.index.process_3_description") %>
+<% end %>
 
-<div class="expanded processes-show-temp no-margin-top">
+<div class="expanded processes-show no-margin-top">
   <div class="row padding">
     <div class="small-12 medium-7 column">
-      <h1 class="margin-bottom">Pleno abierto</h1>
-      <p>Desde el <strong>lunes 18 al jueves 21</strong> podrás hacer tus preguntas y propuestas para el <strong>Pleno Abierto del domingo 24</strong>.</p>
+
+      <h1 class="margin-bottom"><%= t("pages.processes.index.process_3_title") %></h1>
+      <p>Envía tu propuesta o tu pregunta para cualquiera de los grupos políticos y apoya las que más te gusten.</p>
+
+      <p>Si tu pregunta o propuesta está entre ​<strong>las cinco más votadas al finalizar el jueves, te contactaremos para invitarte a formularla en persona</strong>​ en el Pleno del día 24 a todos los grupos políticos.</p>
+
+      <div class="row">
+        <div class="small-12 medium-5 column">
+          <%= link_to t("pages.processes.process_3.send_proposal"),
+                      new_proposal_path(tag: "plenoabierto"),
+                      class: "button expanded" %>
+        </div>
+
+        <div class="small-12 medium-5 column end">
+        <% open_plenary_debate = Debate.where(comment_kind: 'question').first %>
+        <%= link_to t("pages.processes.process_3.send_question"),
+                    debate_path(open_plenary_debate, anchor: 'comments'),
+                    class: "button expanded" %>
+        </div>
+      </div>
     </div>
 
-    <div class="medium-5 column relative">
+    <div class="show-for-medium medium-5 column relative">
       <%= image_tag "pleno_abierto_cartel.gif" %>
     </div>
   </div>
 </div>
 
-<div class="row img-space">&nbsp;</div>
+<div class="row process margin">
+  <div class="small-12 column">
+    <h2>Apoyar propuestas y preguntas</h2>
+    <ul>
+      <li>
+        <%= link_to t("pages.processes.process_3.view_proposals"),
+                    proposals_path(search: "plenoabierto") %>
+      </li>
+      <li>
+        <%= link_to t("pages.processes.process_3.view_questions"),
+                    debate_path(open_plenary_debate) %>
+      </li>
+    </ul>
+    <div class="show-for-small-only">
+      <%= image_tag "pleno_abierto_cartel.gif" %>
+    </div>
+  </div>
+</div>

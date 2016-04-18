@@ -57,7 +57,7 @@
       </div>
 
       <br>
-      <%= f.text_field :tag_list, value: @proposal.tag_list.to_s,
+      <%= f.text_field :tag_list, value: display_tag_list(@proposal),
                         label: false,
                         placeholder: t("proposals.form.tags_placeholder"),
                         class: 'js-tag-list' %>

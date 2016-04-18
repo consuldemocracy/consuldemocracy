@@ -152,6 +152,20 @@ feature 'Proposals' do
     expect(page).to have_content I18n.l(Proposal.last.created_at.to_date)
   end
 
+  scenario 'Create (predefined tag in url)' do
+    author = create(:user)
+    login_as(author)
+
+    visit new_proposal_path(tag: "open-plenary")
+    fill_in_proposal
+    click_button 'Create proposal'
+
+    expect(page).to have_content 'Proposal created successfully.'
+    within("#tags") do
+      expect(page).to have_content "open-plenary"
+    end
+  end
+
   scenario 'Responsible name is stored for anonymous users' do
     author = create(:user)
     login_as(author)

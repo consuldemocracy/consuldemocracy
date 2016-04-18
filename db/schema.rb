@@ -103,8 +103,8 @@ ActiveRecord::Schema.define(version: 20160415150524) do
     t.string   "title",                        limit: 80
     t.text     "description"
     t.integer  "author_id"
-    t.datetime "created_at",                                          null: false
-    t.datetime "updated_at",                                          null: false
+    t.datetime "created_at",                                                  null: false
+    t.datetime "updated_at",                                                  null: false
     t.string   "visit_id"
     t.datetime "hidden_at"
     t.integer  "flags_count",                             default: 0
@@ -120,6 +120,7 @@ ActiveRecord::Schema.define(version: 20160415150524) do
     t.integer  "confidence_score",                        default: 0
     t.integer  "geozone_id"
     t.tsvector "tsv"
+    t.string   "comment_kind",                            default: "comment"
   end
 
   add_index "debates", ["author_id", "hidden_at"], name: "index_debates_on_author_id_and_hidden_at", using: :btree

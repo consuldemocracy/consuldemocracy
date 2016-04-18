@@ -28,6 +28,21 @@ describe Debate do
       debate.title = "a" * 81
       expect(debate).to_not be_valid
     end
+
+    it "should be valid with a comment kind of comment" do
+      debate.comment_kind = 'comment'
+      expect(debate).to be_valid
+    end
+
+    it "should be valid with a comment kind of question" do
+      debate.comment_kind = 'comment'
+      expect(debate).to be_valid
+    end
+
+    it "should not be valid with a wrong comment kind" do
+      debate.comment_kind = 'misc'
+      expect(debate).to_not be_valid
+    end
   end
 
   describe "#description" do

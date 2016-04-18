@@ -76,12 +76,17 @@ es:
     processes:
       back: Volver
       index:
+        featured: Destacado
         process_1_title: Ordenanza de Transparencia
-        process_1_description: Madrid quiere poner en marcha un sistema de transparencia pública a la altura de los más avanzados del mundo, para ello necesitamos tu ayuda.
-        process_1_button: Más información
+        process_1_description: Madrid quiere poner en marcha un sistema de transparencia pública a la altura de los más avanzados del mundo.
+        process_1_button: Más información sobre la Ordenanza
         process_2_title: Remodelación de Plaza España
         process_2_description: Contamos contigo para que decidas rellenando una pequeña encuesta como quieres que sea este nuevo espacio en tu ciudad.
-        process_2_button: Más información
+        process_2_button: Más información sobre la remodelación
+        process_3_title: "#PlenoAbierto"
+        process_3_description: Envía una propuesta o lanza una pregunta, y si están entre las cinco más votadas podrás formularla en persona a los grupos políticos en el Pleno Abierto del 24 de abril.
+        process_3_button: Enviar una propuesta o pregunta
+        title: Procesos sectoriales
       process_1:
         title: Ayúdanos a mejorar la Ordenanza de Transparencia de la Ciudad de Madrid
         comment: dejar tus comentarios
@@ -98,6 +103,11 @@ es:
       process_2:
         title: Remodelación de Plaza España
         text: Contamos contigo para que decidas cómo debe ser este nuevo espacio en tu ciudad.
+      process_3:
+        send_proposal: Enviar una propuesta
+        send_question: Hacer una pregunta
+        view_proposals: Ver todas las propuestas enviadas
+        view_questions: Ver todas las preguntas enviadas
     titles:
       accessibility: Accesibilidad
       conditions: Condiciones de uso

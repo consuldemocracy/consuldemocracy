@@ -35,6 +35,25 @@ module CommonActions
     allow_any_instance_of(Management::BaseController).to receive(:managed_user).and_return(user)
   end
 
+  def fill_in_proposal
+    fill_in 'proposal_title', with: 'Help refugees'
+    fill_in 'proposal_question', with: '¿Would you like to give assistance to war refugees?'
+    fill_in 'proposal_summary', with: 'In summary, what we want is...'
+    fill_in 'proposal_description', with: 'This is very important because...'
+    fill_in 'proposal_external_url', with: 'http://rescue.org/refugees'
+    fill_in 'proposal_video_url', with: 'http://youtube.com'
+    fill_in 'proposal_responsible_name', with: 'Isabel Garcia'
+    fill_in 'proposal_captcha', with: correct_captcha_text
+    check 'proposal_terms_of_service'
+  end
+
+  def fill_in_debate
+    fill_in 'debate_title', with: 'A title for a debate'
+    fill_in 'debate_description', with: 'This is very important because...'
+    fill_in 'debate_captcha', with: correct_captcha_text
+    check 'debate_terms_of_service'
+  end
+
   def confirm_email
     body = ActionMailer::Base.deliveries.last.try(:body)
     expect(body).to be_present
@@ -176,7 +195,7 @@ module CommonActions
 
   def expect_message_voting_not_allowed
     expect(page).to have_content 'Voting phase is closed'
-    expect(page).to have_selector('.in-favor a', visible: false)
+    expect(page).to_not have_selector('.in-favor a')
   end
 
   def create_featured_proposals

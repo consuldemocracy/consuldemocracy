@@ -10,6 +10,7 @@
 // 07. Surveys
 // 08. Spending proposals
 // 09. Featured
+// 10. Processes
 //
 
 // 01. Global styles
@@ -903,6 +904,12 @@ table.age-groups {
   }
 }
 
+.investment-project .supports .total-supports.no-button,
+.investment-project-show .supports .total-supports.no-button {
+  display: block;
+  margin-top: $line-height*1.5;
+}
+
 // 09. Featured
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -933,6 +940,24 @@ table.age-groups {
         background: white;
         color: $text;
         margin-top: $line-height;
+      }
+    }
+
+    &.featured-brand {
+      background: $brand;
+
+      @media (min-width: $medium-breakpoint) {
+        background: $brand image-url('featured_open_plenary.jpg') no-repeat;
+        background-position: 90% 0;
+      }
+
+      .button {
+        background: white;
+        color: $brand;
+      }
+
+      h2, p {
+        color: white;
       }
     }
 
@@ -972,8 +997,8 @@ table.age-groups {
       background: $budget;
 
       @media (min-width: $medium-breakpoint) {
-        background: $budget image-url('featured_spending_proposals_home.png') no-repeat;
-        background-position: 90% 0;
+        background: $budget image-url('featured_spending_proposals.png') no-repeat;
+        background-position: bottom right;
       }
 
       h2, p {
@@ -1027,6 +1052,32 @@ table.age-groups {
   }
 }
 
+.featured-open-plenary {
+  background: $brand;
+  padding: $line-height/2;
+
+  @media (min-width: $small-breakpoint) {
+    background: $brand image-url('featured_open_plenary_small.jpg') no-repeat;
+    background-position: bottom right;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  h2, h3, a {
+    color: white;
+    margin: 0;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  a:hover h2, a:hover h3 {
+    color: white !important;
+    text-decoration: none;
+  }
+}
+
 .process {
   min-height: $line-height*12;
 
@@ -1035,12 +1086,16 @@ table.age-groups {
   }
 }
 
-.processes-show-temp {
+// 10. Processes
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+.processes {
   background: $brand;
 
   @media (min-width: $medium-breakpoint) {
-    background: $brand;
-    height: auto;
+    background: $brand image-url('processes_featured.jpg') no-repeat;
+    background-position: 80%;
+    height: $line-height*14;
   }
 
   h1 {
@@ -1052,16 +1107,29 @@ table.age-groups {
     color: white
   }
 
+  .button {
+    background: white;
+    color: $brand;
+  }
+
+  .label {
+    background: none;
+    padding: 0;
+    text-transform: uppercase;
+  }
+}
+
+.processes-show {
+  @extend .processes;
+
+  @media (min-width: $medium-breakpoint) {
+    background: $brand;
+    height: auto;
+  }
+
   @media (min-width: $medium-breakpoint) {
     img {
       position: absolute;
     }
-  }
-}
-
-@media (min-width: $medium-breakpoint) {
-
-  .img-space {
-    height: rem-calc(500);
   }
 }
