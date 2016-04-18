@@ -1,6 +1,9 @@
 <div class="supports">
 
-  <span class="total-supports">
+  <% reason = spending_proposal.reason_for_not_being_votable_by(current_user) %>
+  <% voting_allowed = true unless reason.presence == :not_voting_allowed %>
+
+  <span class="total-supports <%= 'no-button' unless voting_allowed %>">
     <%= t("spending_proposals.spending_proposal.supports", count: spending_proposal.total_votes) %>
   </span>
 
@@ -10,18 +13,18 @@
         <%= t("spending_proposals.spending_proposal.already_supported") %>
       </div>
     <% else %>
-      <%= link_to vote_url,
-          class: "button button-support small expanded",
-          title: t('spending_proposals.spending_proposal.support_title'),
-          method: "post",
-          remote: true,
-          data: supports_confirm_for_current_user(spending_proposal) do %>
-        <%= t("spending_proposals.spending_proposal.support") %>
+      <%= if voting_allowed
+          link_to vote_url,
+            class: "button button-support small expanded",
+            title: t('spending_proposals.spending_proposal.support_title'),
+            method: "post",
+            remote: true,
+            data: supports_confirm_for_current_user(spending_proposal) do %>
+          <%= t("spending_proposals.spending_proposal.support") %>
+        <% end %>
       <% end %>
     <% end %>
   </div>
-
-  <% reason = spending_proposal.reason_for_not_being_votable_by(current_user) %>
 
   <% if reason.present? && !voted_for?(@spending_proposal_votes, spending_proposal) %>
     <div class="no-supports-allowed" style='display:none'>
