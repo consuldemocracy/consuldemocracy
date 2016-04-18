@@ -432,6 +432,7 @@ ActiveRecord::Schema.define(version: 20160418172919) do
   add_index "users", ["geozone_id"], name: "index_users_on_geozone_id", using: :btree
   add_index "users", ["hidden_at"], name: "index_users_on_hidden_at", using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+  add_index "users", ["username"], name: "index_users_on_username", using: :btree
 
   create_table "valuation_assignments", force: :cascade do |t|
     t.integer  "valuator_id"
