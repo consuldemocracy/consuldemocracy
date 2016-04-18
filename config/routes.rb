@@ -165,6 +165,9 @@ Rails.application.routes.draw do
     end
 
     resource :activity, controller: :activity, only: :show
+    resources :newsletters, only: :index do
+      get :users, on: :collection
+    end
     resource :stats, only: :show
 
     namespace :api do

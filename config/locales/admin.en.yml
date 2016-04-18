@@ -54,6 +54,7 @@ en:
       hidden_users: Hidden users
       incomplete_verifications: Incomplete verifications
       moderators: Moderators
+      newsletter: Newsletters
       valuators: Valuators
       officials: Officials
       organizations: Organisations
@@ -70,6 +71,10 @@ en:
         email_placeholder: Search user by email
         search: Search
         user_not_found: User not found
+    newsletters:
+      index:
+        title: Newsletters
+        button: Download zip with users list
     valuators:
       index:
         title: Valuators
