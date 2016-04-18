@@ -79,8 +79,8 @@ describe User do
     end
 
     describe 'subscription_to_website_newsletter' do
-      it 'should be false by default' do
-        expect(subject.newsletter).to eq(false)
+      it 'should be true by default' do
+        expect(subject.newsletter).to eq(true)
       end
     end
   end
