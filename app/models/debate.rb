@@ -23,6 +23,7 @@ class Debate < ActiveRecord::Base
 
   validates :title, length: { in: 4..Debate.title_max_length }
   validates :description, length: { in: 10..Debate.description_max_length }
+  validates_inclusion_of :comment_kind, in: ["comment", "question"]
 
   validates :terms_of_service, acceptance: { allow_nil: false }, on: :create
 
