@@ -1,7 +1,10 @@
 <div class="supports">
 
   <% if proposal.open_plenary? %>
-    <span class="total-supports">
+    <p class="supports-open-plenary-title">
+      <%= t("pages.processes.index.process_3_title") %>
+    </p>
+    <span class="total-supports supports-open-plenary-number">
       <%= t("proposals.proposal.supports", count: proposal.total_votes) %>&nbsp;
     <span>
   <% else %>
