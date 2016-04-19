@@ -1134,6 +1134,19 @@ table.age-groups {
   }
 }
 
+.supports-open-plenary-title {
+  color: white !important;
+  font-size: rem-calc(12);
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.supports-open-plenary-number {
+  font-size: rem-calc(18) !important;
+  font-weight: bold;
+  padding: $line-height/2;
+}
+
 // News page
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 

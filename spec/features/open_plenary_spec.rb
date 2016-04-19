@@ -76,4 +76,35 @@ feature 'Open Plenary' do
     end
   end
 
+  scenario "Supports (index)" do
+    proposal = create(:proposal, title: "Plant more trees",  tag_list: 'plenoabierto')
+
+    visit "processes_open_plenary"
+
+    click_link "See all proposals"
+
+    within("#proposals") do
+      expect(page).to have_css('.proposal', count: 1)
+      expect(page).to have_content(proposal.title)
+      expect(page).to have_content('#PlenoAbierto')
+
+      expect(page).to_not have_content "0% / 100%"
+      expect(page).to_not have_content('supports needed')
+    end
+  end
+
+  scenario "Supports (show)" do
+    proposal = create(:proposal, title: "Plant more trees",  tag_list: 'plenoabierto')
+
+    visit proposal_path(proposal)
+
+    within("#proposal_#{proposal.id}") do
+      expect(page).to have_content(proposal.title)
+      expect(page).to have_content('#PlenoAbierto')
+
+      expect(page).to_not have_content "0% / 100%"
+      expect(page).to_not have_content('supports needed')
+    end
+  end
+
 end
