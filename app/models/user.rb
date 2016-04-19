@@ -217,7 +217,7 @@ class User < ActiveRecord::Base
 
   def save_requiring_finish_signup
     begin
-      self.registering_with_oauth= true
+      self.registering_with_oauth = true
       self.save(validate: false)
     # Devise puts unique constraints for the email the db, so we must detect & handle that
     rescue ActiveRecord::RecordNotUnique
