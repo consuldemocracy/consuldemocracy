@@ -33,7 +33,7 @@ feature 'Admin tags' do
   scenario 'Update' do
     visit admin_tags_path
     featured_checkbox = find("#tag_featured_#{@tag1.id}")
-    expect(featured_checkbox.checked?).to be_nil
+    expect(featured_checkbox.checked?).to be_blank
 
     within("#edit_tag_#{@tag1.id}") do
       check "tag_featured_#{@tag1.id}"
@@ -42,7 +42,7 @@ feature 'Admin tags' do
 
     visit admin_tags_path
     featured_checkbox = find("#tag_featured_#{@tag1.id}")
-    expect(featured_checkbox.checked?).to eq('checked')
+    expect(featured_checkbox.checked?).to eq(true)
   end
 
   scenario 'Delete' do

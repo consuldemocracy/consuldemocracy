@@ -74,7 +74,7 @@ group :development, :test do
   gem 'quiet_assets'
   gem 'letter_opener_web', '~> 1.3.0'
   gem 'i18n-tasks'
-  gem 'capistrano', '3.4.0',           require: false
+  gem 'capistrano', '3.4.1',           require: false
   gem "capistrano-bundler", '1.1.4',   require: false
   gem "capistrano-rails", '1.1.6',     require: false
   gem "capistrano-rvm",                require: false
