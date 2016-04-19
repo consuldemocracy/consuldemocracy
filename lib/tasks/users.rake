@@ -59,4 +59,21 @@ namespace :users do
     end
   end
 
+  desc "Makes duplicate username users change their username"
+  task social_network_reset: :environment do
+    duplicated_usernames = User.all.select(:username).group(:username).having('count(username) > 1').pluck(:username)
+
+    duplicated_usernames.each do |username|
+      print "."
+      user_ids = User.where(username: username).order(created_at: :asc).pluck(:id)
+      user_ids_to_review = Identity.where(user_id: user_ids).pluck(:user_id)
+      user_ids_to_review.shift if user_ids.size == user_ids_to_review.size
+      user_ids_to_review.each { |id| User.find(id).update(registering_with_oauth: true) }
+    end
+  end
+
+  desc "Removes identities associated to erased users"
+  task remove_erased_identities: :environment do
+    Identity.joins(:user).where('users.erased_at IS NOT NULL').destroy_all
+  end
 end
