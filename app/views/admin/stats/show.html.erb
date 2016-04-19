@@ -100,7 +100,7 @@
             <%= t "admin.stats.show.summary.spending_proposals" %><br>
             <span class="number"><%= number_with_delimiter(@spending_proposals) %></span>
           </p>
-        </div>        
+        </div>
       </div>
 
       <div class="small-12 column">
@@ -120,12 +120,6 @@
         <%= spending_proposals_chart_tag id: "spending_proposals" %>
       </div>
 
-      <div class="small-12 column">
-        <% @event_types.each do |event, count| %>
-          <h2><%= event.titleize %> (<%= count %>)</h2>
-          <%= events_chart_tag event %>
-        <% end %>
-      </div>
     </div>
   </div>
 </div>
