@@ -610,6 +610,7 @@ en:
   omniauth:
     finish_signup:
       title: "Additional details"
+      username_warning: "Due to a change in the way we interact with social networks, it is possible that your username now appears as 'already in use'. If that is your case, please choose a different username."
     twitter:
       sign_in: "Sign in with Twitter"
       sign_up: "Sign up with Twitter"
