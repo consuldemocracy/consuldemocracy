@@ -107,4 +107,17 @@ feature 'Open Plenary' do
     end
   end
 
+  scenario "Hide advanced search", :js do
+    create(:proposal, title: "Plant more trees",  tag_list: 'plenoabierto')
+
+    visit "processes_open_plenary"
+    click_link "See all proposals"
+
+    within("#proposals") do
+      expect(page).to have_css('.proposal', count: 1)
+    end
+
+    expect(page).to have_css("#js-advanced-search", visible: false)
+  end
+
 end

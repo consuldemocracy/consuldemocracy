@@ -17,6 +17,11 @@ class ProposalsController < ApplicationController
   helper_method :resource_model, :resource_name
   respond_to :html, :js
 
+  def index
+    super
+    hide_advanced_search if open_plenary?
+  end
+
   def show
     super
     redirect_to proposal_path(@proposal), status: :moved_permanently if request.path != proposal_path(@proposal)
@@ -57,6 +62,14 @@ class ProposalsController < ApplicationController
 
     def set_featured_proposal_votes(proposals)
       @featured_proposals_votes = current_user ? current_user.proposal_votes(proposals) : {}
+    end
+
+    def open_plenary?
+      params[:search] == 'plenoabierto'
+    end
+
+    def hide_advanced_search
+      @advanced_search_terms = nil
     end
 
 end
