@@ -339,6 +339,10 @@
 
 .debate-show, .proposal-show, .investment-project-show {
 
+  p {
+    word-wrap: break-word;
+  }
+
   .social-share-full .social-share-button {
     display:inline;
   }
