@@ -1,15 +1,16 @@
-<table id="spending_proposals_list" class="clear activity-proposals">
+<table id="spending_proposals_list" class="clear activity-investment-projects">
   <% @spending_proposals.each do |spending_proposal| %>
     <tr id="spending_proposal_<%= spending_proposal.id %>">
       <td>
         <%= link_to spending_proposal.title, spending_proposal %>
-
+      </td>
+      <td>
         <% if can?(:destroy, spending_proposal) %>
           <%= link_to t("users.show.delete_spending_proposal"),
                       spending_proposal,
                       method: :delete,
                       data: { confirm: t("users.show.confirm_deletion_spending_proposal") },
-                      class: 'button small warning' %>
+                      class: 'delete' %>
         <% end %>
       </td>
     </tr>

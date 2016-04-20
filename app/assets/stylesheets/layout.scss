@@ -1743,19 +1743,24 @@ table {
       }
     }
 
-    &.activity-comments td:before {
+    &.activity-comments td:first-child:before {
       content: "e";
       top: 18px;
     }
 
-    &.activity-debates td:before {
+    &.activity-debates td:first-child:before {
       content: "i";
       top: 14px;
     }
 
-    &.activity-proposals td:before {
+    &.activity-proposals td:first-child:before {
       content: "h";
       top: 18px;
+    }
+
+    &.activity-investment-projects td:first-child:before {
+      content: "\53";
+      top: 10px;
     }
   }
 }
