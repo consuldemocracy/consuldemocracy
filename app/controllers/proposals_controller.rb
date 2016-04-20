@@ -17,11 +17,6 @@ class ProposalsController < ApplicationController
   helper_method :resource_model, :resource_name
   respond_to :html, :js
 
-  def index
-    super
-    hide_advanced_search if open_plenary?
-  end
-
   def show
     super
     redirect_to proposal_path(@proposal), status: :moved_permanently if request.path != proposal_path(@proposal)
@@ -33,6 +28,7 @@ class ProposalsController < ApplicationController
       set_featured_proposal_votes(@featured_proposals)
       @resources = @resources.where('proposals.id NOT IN (?)', @featured_proposals.map(&:id))
     end
+    hide_advanced_search if open_plenary?
   end
 
   def vote
