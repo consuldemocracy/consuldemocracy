@@ -45,6 +45,7 @@
         <%= link_to t("pages.processes.process_3.view_proposals"),
                     proposals_path(search: 'plenoabierto',
                                    order: :confidence_score,
+                                   custom_search: true,
                                    advanced_search: {date_min: "18-04-2016"}) %>
       </li>
       <li>

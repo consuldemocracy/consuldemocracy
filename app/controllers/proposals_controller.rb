@@ -28,7 +28,7 @@ class ProposalsController < ApplicationController
       set_featured_proposal_votes(@featured_proposals)
       @resources = @resources.where('proposals.id NOT IN (?)', @featured_proposals.map(&:id))
     end
-    hide_advanced_search if open_plenary?
+    hide_advanced_search if custom_search?
   end
 
   def vote
@@ -60,8 +60,8 @@ class ProposalsController < ApplicationController
       @featured_proposals_votes = current_user ? current_user.proposal_votes(proposals) : {}
     end
 
-    def open_plenary?
-      params[:search] == 'plenoabierto'
+    def custom_search?
+      params[:custom_search].present?
     end
 
     def hide_advanced_search
