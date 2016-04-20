@@ -30,11 +30,11 @@ App.Comments =
     $("#js-comment-form-#{id}").toggle()
 
   toggle_arrow: (id) ->
-    arrow = "i##{id}_arrow"
-    if $(arrow).hasClass("icon-angle-right")
-      $(arrow).removeClass("icon-angle-right").addClass("icon-angle-down")
+    arrow = "span##{id}_arrow"
+    if $(arrow).hasClass("icon-arrow-right")
+      $(arrow).removeClass("icon-arrow-right").addClass("icon-arrow-down")
     else
-      $(arrow).removeClass("icon-angle-down").addClass("icon-angle-right")
+      $(arrow).removeClass("icon-arrow-down").addClass("icon-arrow-right")
 
   initialize: ->
     $('body .js-add-comment-link').each ->
