@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160418172919) do
+ActiveRecord::Schema.define(version: 20160420105023) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -260,6 +260,7 @@ ActiveRecord::Schema.define(version: 20160418172919) do
     t.integer  "physical_votes",               default: 0
     t.tsvector "tsv"
     t.integer  "geozone_id"
+    t.datetime "retired_at"
   end
 
   add_index "proposals", ["author_id", "hidden_at"], name: "index_proposals_on_author_id_and_hidden_at", using: :btree
