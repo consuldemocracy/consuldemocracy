@@ -541,13 +541,24 @@
   color: $border;
 }
 
+.investment-project-show p {
+  word-break: break-word;
+}
+
 // 04. List participation
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
-.debates-list, .proposals-list {
+.debates-list, .proposals-list, .investment-projects-list {
 
   @media (min-width: $small-breakpoint) {
     margin-bottom: rem-calc(48);
+  }
+}
+
+.investment-projects-list {
+
+  @media (min-width: $small-breakpoint) {
+    min-height: $line-height*15;
   }
 }
 
@@ -820,7 +831,7 @@
     border-left: 1px solid $border;
     margin: 0 rem-calc(-12);
     min-height: rem-calc(180);
-    padding-top: $line-height*2;
+    padding-top: $line-height*1.5;
 
     &:after {
       content: none;
@@ -859,6 +870,15 @@
 
     .no-supports-allowed p, .no-supports-allowed a {
       color: white;
+    }
+
+    .share-supported {
+
+      .social-share-button-twitter,
+      .social-share-button-facebook,
+      .social-share-button-google_plus {
+        color: $budget;
+      }
     }
   }
 }

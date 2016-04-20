@@ -73,8 +73,8 @@
             </span>
 
             <% if comment.children.size > 0 %>
-              <%= link_to "", class: "js-toggle-children", data:  {'id': "#{dom_id(comment)}"} do %>
-                <span id="<%= dom_id(comment) %>_children_arrow" class="icon-angle-down"></span> <%= t("comments.comment.responses", count: comment.children.size) %>
+              <%= link_to "", class: "js-toggle-children relative", data:  {'id': "#{dom_id(comment)}"} do %>
+                <span id="<%= dom_id(comment) %>_children_arrow" class="icon-arrow-down"></span> <%= t("comments.comment.responses", count: comment.children.size) %>
               <% end %>
             <% else %>
               <%= t("comments.comment.responses", count: 0) %>
