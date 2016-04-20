@@ -107,4 +107,30 @@ feature 'Open Plenary' do
     end
   end
 
+  scenario "Hide advanced search", :js do
+    create(:proposal, title: "Plant more trees",  tag_list: 'plenoabierto')
+
+    visit "processes_open_plenary"
+    click_link "See all proposals"
+
+    within("#proposals") do
+      expect(page).to have_css('.proposal', count: 1)
+    end
+
+    expect(page).to_not have_css("#js-advanced-search")
+  end
+
+  scenario "Displays proposals created after official start date (April 18th)" do
+    proposal1 = create(:proposal, title: "Before start date",  tag_list: 'plenoabierto', created_at: Date.parse('17-04-2016'))
+    proposal2 = create(:proposal, title: "After start date",   tag_list: 'plenoabierto', created_at: Date.parse('18-04-2016'))
+
+    visit "processes_open_plenary"
+    click_link "See all proposals"
+
+    within("#proposals") do
+      expect(page).to have_content(proposal2.title)
+      expect(page).to_not have_content(proposal1.title)
+    end
+  end
+
 end

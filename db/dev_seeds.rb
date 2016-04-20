@@ -344,3 +344,25 @@ users = User.unverified.reorder("RANDOM()").reject {|u| u.organization? }[0..20]
 forums.each_with_index do |forum, i|
   Forum.create(name: forum, user: users[i])
 end
+
+puts "Open plenary debate"
+debate = Debate.create!(author: User.reorder("RANDOM()").first,
+                        title: "Pregunta en el Pleno Abierto",
+                        created_at: Date.parse("20-04-2016"),
+                        description: "<p>Pleno Abierto preguntas</p>",
+                        terms_of_service: "1",
+                        tag_list: 'plenoabierto',
+                        comment_kind: 'question')
+puts "#{debate.title}"
+
+puts "Open plenary proposal"
+proposal = Proposal.create!(author: User.reorder("RANDOM()").first,
+                              title: "Pleno Abierto propuesta",
+                              question: Faker::Lorem.sentence(3),
+                              summary: Faker::Lorem.sentence(3),
+                              responsible_name: Faker::Name.name,
+                              description: "<p>Pleno Abierto propuesta</p>",
+                              created_at: Date.parse("20-04-2016"),
+                              terms_of_service: "1",
+                              tag_list: 'plenoabierto')
+puts "#{proposal.title}"

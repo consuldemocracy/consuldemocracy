@@ -28,6 +28,7 @@ class ProposalsController < ApplicationController
       set_featured_proposal_votes(@featured_proposals)
       @resources = @resources.where('proposals.id NOT IN (?)', @featured_proposals.map(&:id))
     end
+    hide_advanced_search if custom_search?
   end
 
   def vote
@@ -57,6 +58,14 @@ class ProposalsController < ApplicationController
 
     def set_featured_proposal_votes(proposals)
       @featured_proposals_votes = current_user ? current_user.proposal_votes(proposals) : {}
+    end
+
+    def custom_search?
+      params[:custom_search].present?
+    end
+
+    def hide_advanced_search
+      @advanced_search_terms = nil
     end
 
 end
