@@ -27,7 +27,7 @@ module CommonActions
 
   def login_as_manager
     login, user_key, date = "JJB042", "31415926", Time.now.strftime("%Y%m%d%H%M%S")
-    allow_any_instance_of(ManagerAuthenticator).to receive(:auth).and_return({login: login, user_key: user_key, date: date})
+    allow_any_instance_of(ManagerAuthenticator).to receive(:auth).and_return({login: login, user_key: user_key, date: date}.with_indifferent_access)
     visit management_sign_in_path(login: login, clave_usuario: user_key, fecha_conexion: date)
   end
 
@@ -63,7 +63,7 @@ module CommonActions
     commentable_path = commentable.is_a?(Proposal) ? proposal_path(commentable) : debate_path(commentable)
     visit commentable_path
 
-    fill_in "comment-body-#{commentable.class.name.downcase}_#{commentable.id}", with: 'Have you thought about...?'
+    fill_in "comment-body-#{commentable.class.name.underscore}_#{commentable.id}", with: 'Have you thought about...?'
     click_button 'Publish comment'
 
     expect(page).to have_content 'Have you thought about...?'
@@ -172,6 +172,11 @@ module CommonActions
   def expect_message_only_verified_can_vote_proposals
     expect(page).to have_content 'Only verified users can vote on proposals'
     expect(page).to have_selector('.in-favor a', visible: false)
+  end
+
+  def expect_message_voting_not_allowed
+    expect(page).to have_content 'Voting phase is closed'
+    expect(page).to_not have_selector('.in-favor a')
   end
 
   def create_featured_proposals

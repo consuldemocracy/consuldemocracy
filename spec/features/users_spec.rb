@@ -240,19 +240,19 @@ feature 'Users' do
         expect(page).to have_content('Build a school')
       end
 
-      scenario 'delete button is shown if logged in user is author' do
+      scenario 'delete button is not shown if logged in user is author' do
         login_as(@author)
         visit user_path(@author)
         within("#spending_proposal_#{@spending_proposal.id}") do
-          expect(page).to have_content('Delete')
+          expect(page).to_not have_content('Delete')
         end
       end
 
-      scenario 'delete button is not shown if logged in user is admin' do
+      scenario 'delete button is shown if logged in user is admin' do
         login_as(create(:administrator).user)
         visit user_path(@author)
         within("#spending_proposal_#{@spending_proposal.id}") do
-          expect(page).to_not have_content('Delete')
+          expect(page).to have_content('Delete')
         end
       end
 

@@ -31,6 +31,8 @@ class Verification::Residence
     user.update(document_number:       document_number,
                 document_type:         document_type,
                 geozone:               self.geozone,
+                date_of_birth:         date_of_birth.to_datetime,
+                gender:                gender,
                 residence_verified_at: Time.now)
   end
 
@@ -75,6 +77,10 @@ class Verification::Residence
     @census_api_response.district_code
   end
 
+  def gender
+    @census_api_response.gender
+  end
+
   private
 
     def call_census_api
@@ -84,7 +90,7 @@ class Verification::Residence
     def residency_valid?
       @census_api_response.valid? &&
         @census_api_response.postal_code == postal_code &&
-        @census_api_response.date_of_birth == date_to_string(date_of_birth)
+        @census_api_response.date_of_birth == date_of_birth
     end
 
     def clean_document_number

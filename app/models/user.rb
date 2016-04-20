@@ -26,7 +26,7 @@ class User < ActiveRecord::Base
   belongs_to :geozone
 
   validates :username, presence: true, if: :username_required?
-  validates :username, uniqueness: true, if: :username_required?
+  validates :username, uniqueness: { scope: :registering_with_oauth }, if: :username_required?
   validates :document_number, uniqueness: { scope: :document_type }, allow_nil: true
 
   validate :validate_username_length
@@ -80,6 +80,11 @@ class User < ActiveRecord::Base
 
   def proposal_votes(proposals)
     voted = votes.for_proposals(proposals)
+    voted.each_with_object({}) { |v, h| h[v.votable_id] = v.value }
+  end
+
+  def spending_proposal_votes(spending_proposals)
+    voted = votes.for_spending_proposals(spending_proposals)
     voted.each_with_object({}) { |v, h| h[v.votable_id] = v.value }
   end
 
@@ -149,6 +154,7 @@ class User < ActiveRecord::Base
       confirmed_phone: nil,
       unconfirmed_phone: nil
     )
+    self.identities.destroy_all
   end
 
   def erased?
@@ -177,11 +183,11 @@ class User < ActiveRecord::Base
   end
 
   def username_required?
-    !organization? && !erased? && !registering_with_oauth
+    !organization? && !erased?
   end
 
   def email_required?
-    !erased? && !registering_with_oauth
+    !erased?
   end
 
   def has_official_email?
@@ -210,12 +216,21 @@ class User < ActiveRecord::Base
   end
 
   def save_requiring_finish_signup
-    self.update(registering_with_oauth: true)
+    begin
+      self.registering_with_oauth = true
+      self.save(validate: false)
+    # Devise puts unique constraints for the email the db, so we must detect & handle that
+    rescue ActiveRecord::RecordNotUnique
+      self.email = nil
+      self.save(validate: false)
+    end
+    true
   end
 
-  def save_requiring_finish_signup_without_email
-    self.update(registering_with_oauth: true, email: nil)
+  def ability
+    @ability ||= Ability.new(self)
   end
+  delegate :can?, :cannot?, to: :ability
 
   private
     def clean_document_number

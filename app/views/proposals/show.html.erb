@@ -50,6 +50,14 @@
 
         <blockquote><%= @proposal.summary %></blockquote>
 
+        <% if @proposal.video_url.present? %>
+          <div class="small-12 medium-7 small-centered">
+            <div class="flex-video">
+              <div id="js-embedded-video" data-video-code="<%= embedded_video_code %>"></div>
+            </div>
+          </div>
+        <% end %>
+
         <%= safe_html_with_links @proposal.description %>
 
         <% if @proposal.external_url.present? %>
@@ -86,7 +94,14 @@
         </div>
         <div class="sidebar-divider"></div>
         <h3><%= t("proposals.show.share") %></h3>
-        <%= social_share_button_tag(@proposal.title) %>
+        <div class="social-share-full">
+          <%= social_share_button_tag("#{@proposal.title} #{setting['twitter_hashtag']}") %>
+          <% if browser.device.mobile? %>
+            <a href="whatsapp://send?text=<%= @proposal.title %> <%= proposal_url(@proposal) %>" data-action="share/whatsapp/share">
+              <span class="icon-whatsapp whatsapp"></span>
+            </a>
+          <% end %>
+        </div>
       </aside>
     </div>
   </section>

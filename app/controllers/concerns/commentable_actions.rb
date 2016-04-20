@@ -65,8 +65,7 @@ module CommentableActions
     end
   end
 
-
-   def map
+  def map
     @resource = resource_model.new
     @tag_cloud = tag_cloud
   end

@@ -185,7 +185,7 @@ feature 'Proposals' do
 
   context "Printing" do
 
-    scenario 'Printing proposals', :js do
+    scenario 'Printing proposals' do
       6.times { create(:proposal) }
 
       click_link "Print proposals"

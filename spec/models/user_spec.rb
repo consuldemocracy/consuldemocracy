@@ -79,8 +79,8 @@ describe User do
     end
 
     describe 'subscription_to_website_newsletter' do
-      it 'should be false by default' do
-        expect(subject.newsletter).to eq(false)
+      it 'should be true by default' do
+        expect(subject.newsletter).to eq(true)
       end
     end
   end
@@ -333,6 +333,7 @@ describe User do
                      email_verification_token: "token3",
                      confirmed_phone:"5678",
                      unconfirmed_phone:"5678")
+
       user.erase('a test')
       user.reload
 
@@ -353,6 +354,14 @@ describe User do
       expect(user.confirmation_token).to be_nil
       expect(user.reset_password_token).to be_nil
       expect(user.email_verification_token).to be_nil
+
+    end
+
+    it "destroys associated identities" do
+      user = create(:user)
+      identity = create(:identity, user: user)
+      user.erase('an identity test')
+      expect(Identity.exists?(identity.id)).to_not be
     end
   end
 

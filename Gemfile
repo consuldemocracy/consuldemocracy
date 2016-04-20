@@ -19,7 +19,7 @@ gem 'jquery-ui-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 
-gem 'devise', '~> 3.5.6'
+gem 'devise', '~> 3.5.7'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 gem 'omniauth'
@@ -39,7 +39,7 @@ gem 'ckeditor', '~> 4.1.5'
 gem 'cancancan'
 gem 'social-share-button', git: 'https://github.com/huacnlee/social-share-button.git', ref: 'e46a6a3e82b86023bc'
 gem 'initialjs-rails', '0.2.0.1'
-gem 'unicorn', '~> 5.0.1'
+gem 'unicorn', '~> 5.1.0'
 gem 'paranoia'
 gem 'rinku', require: 'rails_rinku'
 gem 'savon'
@@ -52,13 +52,14 @@ gem 'newrelic_rpm', '~> 3.14'
 gem 'whenever', require: false
 gem 'pg_search'
 
-gem 'ahoy_matey', '~> 1.2.1'
+gem 'ahoy_matey', '~> 1.4.0'
 gem 'groupdate'   # group temporary data
 gem 'tolk' # Web interface for translations
 
 gem 'browser'
 gem 'turnout'
 gem 'redcarpet'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
@@ -73,7 +74,7 @@ group :development, :test do
   gem 'quiet_assets'
   gem 'letter_opener_web', '~> 1.3.0'
   gem 'i18n-tasks'
-  gem 'capistrano', '3.4.0',           require: false
+  gem 'capistrano', '3.4.1',           require: false
   gem "capistrano-bundler", '1.1.4',   require: false
   gem "capistrano-rails", '1.1.6',     require: false
   gem "capistrano-rvm",                require: false

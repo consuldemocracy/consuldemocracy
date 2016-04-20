@@ -5,11 +5,13 @@ App.Votes =
       $("div.anonymous-votes", votes).show();
       $("div.organizations-votes", votes).show();
       $("div.not-logged", votes).show();
+      $("div.no-supports-allowed", votes).show();
       $("div.logged", votes).hide();
     , ->
       $("div.anonymous-votes", votes).hide();
       $("div.organizations-votes", votes).hide();
       $("div.not-logged", votes).hide();
+      $("div.no-supports-allowed", votes).hide();
       $("div.logged", votes).show();
 
   initialize: ->

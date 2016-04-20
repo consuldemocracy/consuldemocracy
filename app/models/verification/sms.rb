@@ -4,13 +4,8 @@ class Verification::Sms
   attr_accessor :user, :phone, :confirmation_code
 
   validates_presence_of :phone
-  validates :phone, length: { is: 9 }
-  validate :spanish_phone
+  validates :phone, format: { with: /\A[\d \+]+\z/ }
   validate :uniqness_phone
-
-  def spanish_phone
-    errors.add(:phone, :invalid) unless phone.start_with?('6', '7')
-  end
 
   def uniqness_phone
     errors.add(:phone, :taken) if User.where(confirmed_phone: phone).any?

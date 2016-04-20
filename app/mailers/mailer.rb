@@ -7,7 +7,7 @@ class Mailer < ApplicationMailer
     @comment = comment
     @commentable = comment.commentable
     with_user(@commentable.author) do
-      mail(to: @commentable.author.email, subject: t('mailers.comment.subject', commentable: t("activerecord.models.#{@commentable.class.name.downcase}", count: 1).downcase)) if @commentable.present? && @commentable.author.present?
+      mail(to: @commentable.author.email, subject: t('mailers.comment.subject', commentable: t("activerecord.models.#{@commentable.class.name.underscore}", count: 1).downcase)) if @commentable.present? && @commentable.author.present?
     end
   end
 
@@ -30,6 +30,15 @@ class Mailer < ApplicationMailer
 
     with_user(user) do
       mail(to: @recipient, subject: t('mailers.email_verification.subject'))
+    end
+  end
+
+  def unfeasible_spending_proposal(spending_proposal)
+    @spending_proposal = spending_proposal
+    @author = spending_proposal.author
+
+    with_user(@author) do
+      mail(to: @author.email, subject: t('mailers.unfeasible_spending_proposal.subject', code: @spending_proposal.code))
     end
   end
 

@@ -13,6 +13,7 @@ Setting.create(key: 'max_votes_for_debate_edit', value: '1000')
 Setting.create(key: 'max_votes_for_proposal_edit', value: '1000')
 Setting.create(key: 'proposal_code_prefix', value: 'MAD')
 Setting.create(key: 'votes_for_proposal_success', value: '100')
+Setting.create(key: 'comments_body_max_length', value: '1000')
 
 Setting.create(key: 'blog_url', value: '/blog')
 Setting.create(key: 'url', value: 'http://localhost:3000')
@@ -20,6 +21,7 @@ Setting.create(key: 'org_name', value: 'Consul')
 Setting.create(key: 'place_name', value: 'City')
 Setting.create(key: 'feature.debates', value: "true")
 Setting.create(key: 'feature.spending_proposals', value: "true")
+Setting.create(key: 'feature.spending_proposal_features.voting_allowed', value: "true")
 Setting.create(key: 'feature.twitter_login', value: "true")
 Setting.create(key: 'feature.facebook_login', value: "true")
 Setting.create(key: 'feature.google_login', value: "true")
@@ -45,6 +47,12 @@ moderator.create_moderator
 
 valuator = create_user('valuator@madrid.es', 'valuator')
 valuator.create_valuator
+
+level_2 = create_user('leveltwo@madrid.es', 'level 2')
+level_2.update(residence_verified_at: Time.now, confirmed_phone: Faker::PhoneNumber.phone_number, document_number: "2222222222", document_type: "1" )
+
+verified = create_user('verified@madrid.es', 'verified')
+verified.update(residence_verified_at: Time.now, confirmed_phone: Faker::PhoneNumber.phone_number, document_type: "1", verified_at: Time.now, document_number: "3333333333")
 
 (1..10).each do |i|
   org_name = Faker::Company.name

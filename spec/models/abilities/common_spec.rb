@@ -92,7 +92,7 @@ describe "Abilities::Common" do
 
     it { should be_able_to(:create, SpendingProposal) }
     it { should_not be_able_to(:destroy, create(:spending_proposal)) }
-    it { should be_able_to(:destroy, own_spending_proposal) }
+    it { should_not be_able_to(:destroy, own_spending_proposal) }
   end
 
   describe "when level 3 verified" do
@@ -104,6 +104,6 @@ describe "Abilities::Common" do
 
     it { should be_able_to(:create, SpendingProposal) }
     it { should_not be_able_to(:destroy, create(:spending_proposal)) }
-    it { should be_able_to(:destroy, own_spending_proposal) }
+    it { should_not be_able_to(:destroy, own_spending_proposal) }
   end
 end

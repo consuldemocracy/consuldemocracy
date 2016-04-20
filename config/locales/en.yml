@@ -154,6 +154,7 @@ en:
     verification/sms: phone
   geozones:
     none: All city
+    all: All scopes
   layouts:
     application:
       chrome: Google Chrome
@@ -412,20 +413,43 @@ en:
         new: Create
       title: Spending proposal title
     index:
-      create_link: Create spending proposal
-      text_html: Here you can send spending proposals to be considered in the frame of the annual participatory budgeting.
       title: Participatory budgeting
-      verified_only: Only verified users can create spending proposals, %{verify_account}.
-      verify_account: verify your account
+      unfeasible: Unfeasible investment projects
+      by_geozone: "Investment projects with scope: %{geozone}"
+      search_form:
+        button: Search
+        placeholder: Investment projects...
+        title: Search
+      search_results:
+        one: " containing the term '%{search_term}'"
+        other: " containing the term '%{search_term}'"
+      sidebar:
+        geozones: Scope of operation
+        feasibility: Feasibility
+        unfeasible: Unfeasible
+      start_spending_proposal: Create an investment project
     new:
-      back_link: Back
       more_info: How do participatory budgeting works?
       recommendation_one: It's mandatory that the proposal makes reference to a budgetable action.
       recommendation_three: Try to go into details when describing your spending proposal so the reviewing team undertands your points.
       recommendation_two: Any proposal or comment suggesting illegal action will be deleted.
       recommendations_title: How to create a spending proposal
       start_new: Create spending proposal
+      back_link: Back
+    show:
+      author_deleted: User deleted
+      code: 'Proposal code:'
+      share: Share
     wrong_price_format: Only integer numbers
+    spending_proposal:
+      spending_proposal: Investment project
+      already_supported: You have already supported this. Share it!
+      support: Support
+      support_title: Support this project
+      supports:
+        one: 1 support
+        other: "%{count} supports"
+        zero: No supports
   stats:
     index:
       visits: Visits
@@ -476,6 +500,12 @@ en:
     unauthenticated: You must %{signin} or %{signup} to continue.
     verified_only: Only verified users can vote on proposals; %{verify_account}.
     verify_account: verify your account
+    spending_proposals:
+      not_logged_in: You must %{signin} or %{signup} to continue.
+      not_verified: Only verified users can vote on proposals; %{verify_account}.
+      organization: Organisations are not permitted to vote
+      unfeasible: Unfeasible investment projects can not be supported
+      not_voting_allowed: Voting phase is closed
   welcome:
     debates:
       alt: Icon debates
@@ -512,6 +542,7 @@ en:
   omniauth:
     finish_signup:
       title: "Additional details"
+      username_warning: "Due to a change in the way we interact with social networks, it is possible that your username now appears as 'already in use'. If that is your case, please choose a different username."
     twitter:
       sign_in: "Sign in with Twitter"
       sign_up: "Sign up with Twitter"

@@ -2,7 +2,7 @@ class Management::ProposalsController < Management::BaseController
   include HasOrders
   include CommentableActions
 
-  before_action :check_verified_user, except: :print
+  before_action :only_verified_users, except: :print
   before_action :set_proposal, only: [:vote, :show]
   before_action :parse_search_terms, only: :index
   before_action :load_categories, only: [:new, :edit]
@@ -40,14 +40,8 @@ class Management::ProposalsController < Management::BaseController
       Proposal
     end
 
-    def check_verified_user
-      unless current_user.level_two_or_three_verified?
-        redirect_to management_document_verifications_path, alert: t("management.proposals.alert.unverified_user")
-      end
-    end
-
-    def current_user
-      managed_user
+    def only_verified_users
+      check_verified_user t("management.proposals.alert.unverified_user")
     end
 
     ### Duplicated in application_controller. Move to a concern.

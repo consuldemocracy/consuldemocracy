@@ -1,12 +1,12 @@
 <% provide :title do %><%= @spending_proposal.title %><% end %>
 
-<section class="proposal-show">
+<section class="investment-project-show">
   <div id="<%= dom_id(@spending_proposal) %>" class="row">
     <div class="small-12 medium-9 column">
 
       <h1><%= @spending_proposal.title %></h1>
 
-      <div class="spending-proposal-info">
+      <div class="investment-project-info">
         <%= render '/shared/author_info', resource: @spending_proposal %>
 
         <span class="bullet">&nbsp;&bull;&nbsp;</span>
@@ -14,6 +14,12 @@
         <span class="bullet">&nbsp;&bull;&nbsp;</span>
         <%= geozone_name(@spending_proposal) %>
       </div>
+
+      <br>
+      <p id="spending_proposal_code">
+        <%= t("spending_proposals.show.code") %>
+        <strong><%= @spending_proposal.id %></strong>
+      </p>
 
       <%= safe_html_with_links @spending_proposal.description.html_safe %>
 
@@ -24,6 +30,27 @@
       <% end %>
 
     </div>
+
+    <aside class="small-12 medium-3 column">
+      <div class="sidebar-divider"></div>
+      <h3><%= t("votes.supports") %></h3>
+      <div class="text-center">
+        <div id="<%= dom_id(@spending_proposal) %>_votes">
+          <%= render 'votes',
+                      { spending_proposal: @spending_proposal, vote_url: vote_spending_proposal_path(@spending_proposal, value: 'yes') } %>
+        </div>
+      </div>
+      <div class="sidebar-divider"></div>
+      <h3><%= t("spending_proposals.show.share") %></h3>
+      <div class="social-share-full">
+        <%= social_share_button_tag("#{@spending_proposal.title} #{setting['twitter_hashtag']}") %>
+        <% if browser.device.mobile? %>
+          <a href="whatsapp://send?text=<%= @spending_proposal.title %> <%= spending_proposal_url(@spending_proposal) %>" data-action="share/whatsapp/share">
+            <span class="icon-whatsapp whatsapp"></span>
+          </a>
+        <% end %>
+      </div>
+    </aside>
 
   </div>
 </section>

@@ -59,6 +59,69 @@ describe SpendingProposal do
         expect(spending_proposal.feasibility).to eq "undefined"
       end
     end
+
+    describe "#unfeasible?" do
+      it "returns true when not feasible" do
+        spending_proposal.feasible = false
+        expect(spending_proposal.unfeasible?).to eq true
+      end
+
+      it "returns false when feasible" do
+        spending_proposal.feasible = true
+        expect(spending_proposal.unfeasible?).to eq false
+      end
+    end
+
+    describe "#unfeasible_email_pending?" do
+      let(:spending_proposal) { create(:spending_proposal) }
+
+      it "returns true when marked as unfeasibable and valuation_finished" do
+        spending_proposal.update(feasible: false, valuation_finished: true)
+        expect(spending_proposal.unfeasible_email_pending?).to eq true
+      end
+
+      it "returns false when marked as feasible" do
+        spending_proposal.update(feasible: true)
+        expect(spending_proposal.unfeasible_email_pending?).to eq false
+      end
+
+      it "returns false when marked as feasable and valuation_finished" do
+        spending_proposal.update(feasible: true, valuation_finished: true)
+        expect(spending_proposal.unfeasible_email_pending?).to eq false
+      end
+
+      it "returns false when unfeasible email already sent" do
+        spending_proposal.update(unfeasible_email_sent_at: 1.day.ago)
+        expect(spending_proposal.unfeasible_email_pending?).to eq false
+      end
+    end
+
+    describe "#send_unfeasible_email" do
+      let(:spending_proposal) { create(:spending_proposal) }
+
+      it "sets the time when the unfeasible email was sent" do
+        expect(spending_proposal.unfeasible_email_sent_at).to_not be
+        spending_proposal.send_unfeasible_email
+        expect(spending_proposal.unfeasible_email_sent_at).to be
+      end
+
+      it "send an email" do
+        expect {spending_proposal.send_unfeasible_email}.to change { ActionMailer::Base.deliveries.count }.by(1)
+      end
+    end
+
+    describe "#code" do
+      let(:spending_proposal) { create(:spending_proposal) }
+
+      it "returns the proposal id" do
+        expect(spending_proposal.code).to include("#{spending_proposal.id}")
+      end
+
+      it "returns the administrator id when assigned" do
+        spending_proposal.administrator = create(:administrator)
+        expect(spending_proposal.code).to include("#{spending_proposal.id}-A#{spending_proposal.administrator.id}")
+      end
+    end
   end
 
   describe "by_admin" do
@@ -164,6 +227,108 @@ describe SpendingProposal do
         expect(valuation_finished.first).to eq(spending_proposal3)
       end
     end
+
+    describe "feasible" do
+      it "should return all feasible spending proposals" do
+        feasible_spending_proposal = create(:spending_proposal, feasible: true)
+        create(:spending_proposal)
+
+        expect(SpendingProposal.feasible).to eq [feasible_spending_proposal]
+      end
+    end
+
+    describe "unfeasible" do
+      it "should return all unfeasible spending proposals" do
+        unfeasible_spending_proposal = create(:spending_proposal, feasible: false)
+        create(:spending_proposal, feasible: true)
+
+        expect(SpendingProposal.unfeasible).to eq [unfeasible_spending_proposal]
+      end
+    end
+
+    describe "not_unfeasible" do
+      it "should return all not unfeasible spending proposals" do
+        not_unfeasible_spending_proposal_1 = create(:spending_proposal, feasible: true)
+        not_unfeasible_spending_proposal_2 = create(:spending_proposal)
+        create(:spending_proposal, feasible: false)
+
+        not_unfeasibles = SpendingProposal.not_unfeasible
+
+        expect(not_unfeasibles.size).to eq(2)
+        expect(not_unfeasibles.include?(not_unfeasible_spending_proposal_1)).to eq(true)
+        expect(not_unfeasibles.include?(not_unfeasible_spending_proposal_2)).to eq(true)
+      end
+    end
   end
+
+  describe 'Supports' do
+    let(:user)        { create(:user, :level_two) }
+    let(:luser)       { create(:user) }
+    let(:district)    { create(:geozone) }
+    let(:city_sp)     { create(:spending_proposal) }
+    let(:district_sp) { create(:spending_proposal, geozone: district) }
+
+    describe '#reason_for_not_being_votable_by' do
+      it "rejects not logged in users" do
+        expect(city_sp.reason_for_not_being_votable_by(nil)).to eq(:not_logged_in)
+        expect(district_sp.reason_for_not_being_votable_by(nil)).to eq(:not_logged_in)
+      end
+
+      it "rejects not verified users" do
+        expect(city_sp.reason_for_not_being_votable_by(luser)).to eq(:not_verified)
+        expect(district_sp.reason_for_not_being_votable_by(luser)).to eq(:not_verified)
+      end
+
+      it "rejects unfeasible spending proposals" do
+        unfeasible = create(:spending_proposal, feasible: false, valuation_finished: true)
+        expect(unfeasible.reason_for_not_being_votable_by(user)).to eq(:unfeasible)
+      end
+
+      it "rejects organizations" do
+        create(:organization, user: user)
+        expect(city_sp.reason_for_not_being_votable_by(user)).to eq(:organization)
+        expect(district_sp.reason_for_not_being_votable_by(user)).to eq(:organization)
+      end
+
+      it "rejects votes when voting is not allowed (via admin setting)" do
+        Setting["feature.spending_proposal_features.voting_allowed"] = nil
+        expect(city_sp.reason_for_not_being_votable_by(user)).to eq(:not_voting_allowed)
+        expect(district_sp.reason_for_not_being_votable_by(user)).to eq(:not_voting_allowed)
+      end
+
+      it "accepts valid votes when voting is allowed" do
+        Setting["feature.spending_proposal_features.voting_allowed"] = true
+        expect(city_sp.reason_for_not_being_votable_by(user)).to be_nil
+        expect(district_sp.reason_for_not_being_votable_by(user)).to be_nil
+      end
+    end
+  end
+
+  describe "responsible_name" do
+    let(:user) { create(:user, document_number: "123456") }
+    let!(:spending_proposal) { create(:spending_proposal, author: user) }
+
+    it "gets updated with the document_number" do
+      expect(spending_proposal.responsible_name).to eq("123456")
+    end
+
+    it "does not get updated if the user is erased" do
+      user.erase
+      expect(user.document_number).to be_blank
+      spending_proposal.touch
+      expect(spending_proposal.responsible_name).to eq("123456")
+    end
+  end
+
+  describe "total votes" do
+    it "takes into account physical votes in addition to web votes" do
+      sp = create(:spending_proposal)
+      sp.register_vote(create(:user, :level_two), true)
+      expect(sp.total_votes).to eq(1)
+      sp.physical_votes = 10
+      expect(sp.total_votes).to eq(11)
+    end
+  end
+
 
 end

@@ -1,19 +1,26 @@
 class SpendingProposalsController < ApplicationController
   include FeatureFlags
 
-  load_and_authorize_resource
-
   before_action :authenticate_user!, except: [:index]
-  before_action :verify_access, only: [:show]
-  before_filter -> { flash.now[:notice] = flash[:notice].html_safe if flash[:html_safe] && flash[:notice] }
+  before_action -> { flash.now[:notice] = flash[:notice].html_safe if flash[:html_safe] && flash[:notice] }
+
+  load_and_authorize_resource
 
   feature_flag :spending_proposals
 
+  respond_to :html, :js
+
   def index
+    @spending_proposals = apply_filters_and_search(SpendingProposal).page(params[:page]).for_render
+    set_spending_proposal_votes(@spending_proposals)
   end
 
   def new
     @spending_proposal = SpendingProposal.new
+  end
+
+  def show
+    set_spending_proposal_votes(@spending_proposal)
   end
 
   def create
@@ -29,9 +36,14 @@ class SpendingProposalsController < ApplicationController
   end
 
   def destroy
-    spending_proposal = current_user.spending_proposals.find(params[:id])
+    spending_proposal = SpendingProposal.find(params[:id])
     spending_proposal.destroy
     redirect_to user_path(current_user, filter: 'spending_proposals'), notice: t('flash.actions.destroy.spending_proposal')
+  end
+
+  def vote
+    @spending_proposal.register_vote(current_user, 'yes')
+    set_spending_proposal_votes(@spending_proposal)
   end
 
   private
@@ -40,8 +52,22 @@ class SpendingProposalsController < ApplicationController
       params.require(:spending_proposal).permit(:title, :description, :external_url, :geozone_id, :association_name, :terms_of_service, :captcha, :captcha_key)
     end
 
-    def verify_access
-      raise CanCan::AccessDenied unless current_user.try(:valuator?) || current_user.try(:administrator?) || @spending_proposal.author == current_user
+    def set_geozone_name
+      if params[:geozone] == 'all'
+        @geozone_name = t('geozones.none')
+      else
+        @geozone_name = Geozone.find(params[:geozone]).name
+      end
+    end
+
+    def apply_filters_and_search(target)
+      target = params[:unfeasible].present? ? target.unfeasible : target.not_unfeasible
+      if params[:geozone].present?
+        target = target.by_geozone(params[:geozone])
+        set_geozone_name
+      end
+      target = target.search(params[:search]) if params[:search].present?
+      target
     end
 
 end

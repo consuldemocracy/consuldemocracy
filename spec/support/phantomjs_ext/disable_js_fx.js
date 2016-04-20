@@ -1,3 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
-  $.fx.off = true;
+  if (typeof $ !== 'undefined') {
+    $.fx.off = true;
+  }
 });

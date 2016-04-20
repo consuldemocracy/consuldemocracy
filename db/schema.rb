@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160315092854) do
+ActiveRecord::Schema.define(version: 20160418172919) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -296,8 +296,8 @@ ActiveRecord::Schema.define(version: 20160315092854) do
     t.text     "description"
     t.integer  "author_id"
     t.string   "external_url"
-    t.datetime "created_at",                                            null: false
-    t.datetime "updated_at",                                            null: false
+    t.datetime "created_at",                                             null: false
+    t.datetime "updated_at",                                             null: false
     t.integer  "geozone_id"
     t.integer  "price",                       limit: 8
     t.boolean  "feasible"
@@ -305,16 +305,22 @@ ActiveRecord::Schema.define(version: 20160315092854) do
     t.text     "price_explanation"
     t.text     "feasible_explanation"
     t.text     "internal_comments"
-    t.boolean  "valuation_finished",                    default: false
+    t.boolean  "valuation_finished",                     default: false
     t.text     "explanations_log"
     t.integer  "administrator_id"
-    t.integer  "valuation_assignments_count",           default: 0
+    t.integer  "valuation_assignments_count",            default: 0
     t.integer  "price_first_year",            limit: 8
     t.string   "time_scope"
+    t.datetime "unfeasible_email_sent_at"
+    t.integer  "cached_votes_up",                        default: 0
+    t.tsvector "tsv"
+    t.string   "responsible_name",            limit: 60
+    t.integer  "physical_votes",                         default: 0
   end
 
   add_index "spending_proposals", ["author_id"], name: "index_spending_proposals_on_author_id", using: :btree
   add_index "spending_proposals", ["geozone_id"], name: "index_spending_proposals_on_geozone_id", using: :btree
+  add_index "spending_proposals", ["tsv"], name: "index_spending_proposals_on_tsv", using: :gin
 
   create_table "taggings", force: :cascade do |t|
     t.integer  "tag_id"
@@ -410,13 +416,15 @@ ActiveRecord::Schema.define(version: 20160315092854) do
     t.string   "erase_reason"
     t.datetime "erased_at"
     t.boolean  "public_activity",                      default: true
-    t.boolean  "newsletter",                           default: false
+    t.boolean  "newsletter",                           default: true
     t.integer  "notifications_count",                  default: 0
     t.boolean  "registering_with_oauth",               default: false
     t.string   "locale"
     t.string   "oauth_email"
     t.integer  "geozone_id"
     t.string   "redeemable_code"
+    t.string   "gender",                    limit: 10
+    t.datetime "date_of_birth"
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree
@@ -424,6 +432,7 @@ ActiveRecord::Schema.define(version: 20160315092854) do
   add_index "users", ["geozone_id"], name: "index_users_on_geozone_id", using: :btree
   add_index "users", ["hidden_at"], name: "index_users_on_hidden_at", using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+  add_index "users", ["username"], name: "index_users_on_username", using: :btree
 
   create_table "valuation_assignments", force: :cascade do |t|
     t.integer  "valuator_id"

@@ -20,6 +20,16 @@ class Management::BaseController < ActionController::Base
       @managed_user ||= Verification::Management::ManagedUser.find(session[:document_type], session[:document_number])
     end
 
+    def current_user
+      managed_user
+    end
+
+    def check_verified_user(alert_msg)
+      unless current_user.level_two_or_three_verified?
+        redirect_to management_document_verifications_path, alert: alert_msg
+      end
+    end
+
     def set_locale
       if params[:locale] && I18n.available_locales.include?(params[:locale].to_sym)
         session[:locale] = params[:locale]

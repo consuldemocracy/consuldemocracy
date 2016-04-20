@@ -145,6 +145,9 @@ es:
       proposal_search:
         button: Buscar
         placeholder: Buscar propuestas por título, código, descripción o pregunta
+      spending_proposal_search:
+        button: Buscar
+        placeholder: Buscar propuestas por título o descripción
       user_search:
         button: Buscar
         placeholder: Buscar usuario por nombre o email
@@ -152,6 +155,7 @@ es:
       index:
         geozone_filter_all: Todos los ámbitos de actuación
         administrator_filter_all: Todos los administradores
+        valuator_filter_all: Todos los evaluadores
         tags_filter_all: Todas las etiquetas
         filters:
           valuation_open: Abiertas
@@ -169,6 +173,7 @@ es:
         back: Volver
         classification: Clasificación
         heading: Propuesta de inversión %{id}
+        edit: Editar
         edit_classification: Editar clasificación
         association_name: Asociación
         by: Autor
@@ -195,6 +200,7 @@ es:
           debates: Debates
           proposal_votes: Votos en propuestas
           proposals: Propuestas
+          spending_proposals: Propuestas de inversión
           unverified_users: Usuarios sin verificar
           user_level_three: Usuarios de nivel tres
           user_level_two: Usuarios de nivel dos
@@ -203,6 +209,7 @@ es:
           verified_users_who_didnt_vote_proposals: Usuarios verificados que no han votado propuestas
           visits: Visitas
           votes: Votos
+        spending_proposals_title: Propuestas de inversión
         visits_title: Visitas
     tags:
       create: Crear Tema

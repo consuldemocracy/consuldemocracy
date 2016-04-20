@@ -47,13 +47,24 @@ Para ejecutar la aplicación en local:
 bin/rails s
 ```
 
-Prerequisitos para los tests: tener instalado PhantomJS >= 2.0
+Prerequisitos para los tests: tener instalado PhantomJS >= 1.9.8
 
 Para ejecutar los tests:
 
 ```
 bin/rspec
 ```
+
+Puedes usar el usuario administrador por defecto del fichero seeds:
+
+ **user:** admin@madrid.es
+ **pass:** 12345678
+
+Pero para ciertas acciones, como apoyar, necesitarás un usuario verificado, el fichero seeds proporciona uno:
+
+ **user:** verified@madrid.es
+ **pass:** 12345678
+
 
 ### OAuth
 

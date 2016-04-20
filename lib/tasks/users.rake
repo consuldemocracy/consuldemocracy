@@ -40,5 +40,40 @@ namespace :users do
     end
   end
 
+  desc "Associates demographic information to users"
+  task assign_demographic: :environment do
+    User.residence_verified.where(gender: nil).find_each do |u|
+      begin
+        response = CensusApi.new.call(u.document_type, u.document_number)
+        if response.valid?
+          u.gender = response.gender
+          u.date_of_birth = response.date_of_birth.to_datetime
+          u.save
+          print "."
+        else
+          print "X"
+        end
+      rescue
+        puts "Could not assign gender/dob for user: #{u.id}"
+      end
+    end
+  end
 
+  desc "Makes duplicate username users change their username"
+  task social_network_reset: :environment do
+    duplicated_usernames = User.all.select(:username).group(:username).having('count(username) > 1').pluck(:username)
+
+    duplicated_usernames.each do |username|
+      print "."
+      user_ids = User.where(username: username).order(created_at: :asc).pluck(:id)
+      user_ids_to_review = Identity.where(user_id: user_ids).pluck(:user_id)
+      user_ids_to_review.shift if user_ids.size == user_ids_to_review.size
+      user_ids_to_review.each { |id| User.find(id).update(registering_with_oauth: true) }
+    end
+  end
+
+  desc "Removes identities associated to erased users"
+  task remove_erased_identities: :environment do
+    Identity.joins(:user).where('users.erased_at IS NOT NULL').destroy_all
+  end
 end
