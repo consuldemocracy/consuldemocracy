@@ -117,7 +117,7 @@ feature 'Open Plenary' do
       expect(page).to have_css('.proposal', count: 1)
     end
 
-    expect(page).to have_css("#js-advanced-search", visible: false)
+    expect(page).to_not have_css("#js-advanced-search")
   end
 
   scenario "Displays proposals created after official start date (April 18th)" do
