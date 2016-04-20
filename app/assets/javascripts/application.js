@@ -44,6 +44,7 @@
 //= require survey_answers
 //= require suggest
 //= require forms
+//= require tracks
 //= require valuation_spending_proposal_form
 //= require embed_video
 
@@ -63,6 +64,7 @@ var initialize_modules = function() {
   App.SurveyAnswers.initialize();
   App.Suggest.initialize();
   App.Forms.initialize();
+  App.Tracks.initialize();
   App.ValuationSpendingProposalForm.initialize();
   App.EmbedVideo.initialize();
 };
