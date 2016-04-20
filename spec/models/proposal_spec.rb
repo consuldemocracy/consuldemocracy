@@ -741,4 +741,23 @@ describe Proposal do
     end
   end
 
+  describe "retired" do
+    before(:all) do
+      @proposal1 = create(:proposal)
+      @proposal2 = create(:proposal, retired_at: Time.now)
+    end
+
+    it "retired? is true" do
+      expect(@proposal1.retired?).to eq false
+      expect(@proposal2.retired?).to eq true
+    end
+
+    it "scope retired" do
+      retired = Proposal.retired
+
+      expect(retired.size).to eq(1)
+      expect(retired.first).to eq(@proposal2)
+    end
+  end
+
 end

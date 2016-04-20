@@ -42,6 +42,7 @@ class Proposal < ActiveRecord::Base
   scope :sort_by_relevance,        -> { all }
   scope :sort_by_flags,            -> { order(flags_count: :desc, updated_at: :desc) }
   scope :last_week,                -> { where("proposals.created_at >= ?", 7.days.ago)}
+  scope :retired,                  -> { where.not(retired_at: nil) }
 
   def to_param
     "#{id}-#{title}".parameterize
@@ -103,6 +104,10 @@ class Proposal < ActiveRecord::Base
 
   def votable_by?(user)
     user && user.level_two_or_three_verified?
+  end
+
+  def retired?
+    retired_at.present?
   end
 
   def register_vote(user, vote_value)
