@@ -252,6 +252,8 @@ end
 
 puts "Creating Spending Proposals"
 
+tags = Faker::Lorem.words(10)
+
 (1..30).each do |i|
   geozone = Geozone.reorder("RANDOM()").first
   author = User.reorder("RANDOM()").first
@@ -262,6 +264,7 @@ puts "Creating Spending Proposals"
                               description: description,
                               created_at: rand((Time.now - 1.week) .. Time.now),
                               geozone: [geozone, nil].sample,
+                              tag_list: tags.sample(3).join(','),
                               terms_of_service: "1")
   puts "    #{spending_proposal.title}"
 end

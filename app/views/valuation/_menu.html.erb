@@ -7,7 +7,7 @@
     <% if feature?(:spending_proposals) %>
       <li <%= "class=active" if controller_name == "spending_proposals" %>>
         <%= link_to valuation_spending_proposals_path do %>
-          <i class="icon-budget"></i>
+          <span class="icon-budget"></span>
           <%= t("valuation.menu.spending_proposals") %>
         <% end %>
       </li>

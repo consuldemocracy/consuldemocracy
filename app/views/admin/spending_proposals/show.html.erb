@@ -1,5 +1,5 @@
-<%= link_to :back, class: 'back' do %>
-  <i class="icon-angle-left"></i> <%= t("admin.spending_proposals.show.back") %>
+<%= link_to admin_spending_proposals_path(SpendingProposal.filter_params(params)) do %>
+  <span class="icon-angle-left"></span> <%= t("admin.spending_proposals.show.back") %>
 <% end %>
 
 <%= render 'written_by_author' %>
@@ -8,7 +8,8 @@
 
 <p>
   <%= link_to t("admin.spending_proposals.show.edit_classification"),
-            edit_admin_spending_proposal_path(@spending_proposal, anchor: "form") %>
+                edit_admin_spending_proposal_path(@spending_proposal,
+                                                  {anchor: 'form'}.merge(SpendingProposal.filter_params(params))) %>
 </p>
 
 <p><strong><%= t("admin.spending_proposals.show.assigned_admin") %>:</strong>

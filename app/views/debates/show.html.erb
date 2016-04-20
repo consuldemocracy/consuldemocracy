@@ -4,12 +4,12 @@
     <div id="<%= dom_id(@debate) %>" class="row">
       <div class="small-12 medium-9 column">
         <%= link_to :back, class: "back" do %>
-          <i class="icon-angle-left"></i>
+          <span class="icon-angle-left"></span>
           <%= t("debates.show.back_link") %>
         <% end %>
         <% if current_user && @debate.editable_by?(current_user) %>
           <%= link_to edit_debate_path(@debate), class: 'edit-debate button success small float-right' do %>
-            <i class="icon-edit"></i>
+            <span class="icon-edit"></span>
             <%= t("debates.show.edit_debate_link") %>
           <% end %>
         <% end %>
@@ -27,7 +27,7 @@
           <span class="bullet">&nbsp;&bull;&nbsp;</span>
           <%= l @debate.created_at.to_date %>
           <span class="bullet">&nbsp;&bull;&nbsp;</span>
-          <i class="icon-comments"></i>&nbsp;
+          <span class="icon-comments"></span>&nbsp;
           <%= link_to t("debates.show.comments", count: @debate.comments_count), "#comments" %>
           <span class="bullet">&nbsp;&bull;&nbsp;</span>
           <span class="js-flag-actions">

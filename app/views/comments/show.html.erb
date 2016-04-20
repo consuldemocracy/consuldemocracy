@@ -1,7 +1,7 @@
 <div class="row">
   <div class="small-12 column margin-top">
     <%= link_to @comment.commentable, class: "back" do %>
-      <i class="icon-angle-left"></i>
+      <span class="icon-angle-left"></span>
       <%= t("comments.show.return_to_commentable") + @comment.commentable.title %>
     <% end %>
   </div>

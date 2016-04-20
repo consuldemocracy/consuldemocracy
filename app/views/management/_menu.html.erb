@@ -8,35 +8,35 @@
                               controller_name == "email_verifications" ||
                               controller_name == "users" %>>
       <%= link_to management_document_verifications_path do %>
-        <i class="icon-user"></i>
+        <span class="icon-user"></span>
         <%= t("management.menu.users") %>
       <% end %>
     </li>
 
     <li <%= "class=active" if controller_name == "proposals" and action_name == "new" %>>
       <%= link_to new_management_proposal_path do %>
-        <i class="icon-proposals"></i>
+        <span class="icon-proposals"></span>
         <%= t("management.menu.create_proposal") %>
       <% end %>
     </li>
 
     <li <%= "class=active" if controller_name == "proposals" and action_name == "index"  %>>
       <%= link_to management_proposals_path do %>
-        <i class="icon-like"></i>
+        <span class="icon-like"></span>
         <%= t("management.menu.support_proposals") %>
       <% end %>
     </li>
 
     <li <%= "class=active" if controller_name == "spending_proposals" and action_name == "new" %>>
       <%= link_to new_management_spending_proposal_path do %>
-        <i class="icon-budget"></i>
+        <span class="icon-budget"></span>
         <%= t("management.menu.create_spending_proposal") %>
       <% end %>
     </li>
 
     <li <%= "class=active" if controller_name == "proposals" and action_name == "print" %>>
       <%= link_to print_management_proposals_path do %>
-        <i class="icon-print"></i>
+        <span class="icon-print"></span>
         <%= t("management.menu.print_proposals") %>
       <% end %>
     </li>

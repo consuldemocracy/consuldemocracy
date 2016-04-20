@@ -163,4 +163,24 @@ feature 'Spending proposals' do
     expect(page).to have_content("You do not have permission to access this page")
   end
 
+  context "Destroy" do
+
+    scenario "User can destroy owned spending proposals" do
+      user = create(:user, :level_two)
+      spending_proposal = create(:spending_proposal, author: user)
+      login_as(user)
+
+      visit user_path(user)
+      within("#spending_proposal_#{spending_proposal.id}") do
+        click_link "Delete"
+      end
+
+      expect(page).to have_content("Spending proposal deleted succesfully.")
+
+      visit user_path(user)
+      expect(page).not_to have_css("spending_proposal_list")
+    end
+
+  end
+
 end

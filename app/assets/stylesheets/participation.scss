@@ -70,7 +70,7 @@
     line-height: rem-calc(48);
     vertical-align: super;
 
-    span {
+    span.percentage {
       color: white;
       display: inline-block;
       font-size: rem-calc(16);
@@ -730,7 +730,7 @@
     @media (min-width: $small-breakpoint) {
       .like, .unlike {
 
-        span {
+        span.percentage {
           display: block;
           line-height: $line-height/2;
         }

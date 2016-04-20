@@ -37,7 +37,7 @@ module Abilities
 
       can :manage, Annotation
 
-      can :manage, SpendingProposal
+      can [:read, :update], SpendingProposal
     end
   end
 end

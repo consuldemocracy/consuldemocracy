@@ -66,11 +66,6 @@ feature 'Admin spending proposals' do
       expect(page).to have_link("Realocate visitors")
       expect(page).to have_link("Destroy the city")
 
-      select "District 9", from: "geozone_id"
-
-      expect(page).to have_link("Realocate visitors")
-      expect(page).to_not have_link("Destroy the city")
-
       select "All city", from: "geozone_id"
 
       expect(page).to have_link("Destroy the city")
@@ -79,6 +74,28 @@ feature 'Admin spending proposals' do
       select "All zones", from: "geozone_id"
       expect(page).to have_link("Realocate visitors")
       expect(page).to have_link("Destroy the city")
+
+      select "District 9", from: "geozone_id"
+
+      expect(page).to_not have_link("Destroy the city")
+      expect(page).to have_link("Realocate visitors")
+
+      click_link("Realocate visitors")
+      click_link("Back")
+
+      expect(page).to_not have_link("Destroy the city")
+      expect(page).to have_link("Realocate visitors")
+
+      click_link("Realocate visitors")
+      click_on("Edit classification")
+      expect(page).to have_button("Update")
+      click_on("Back")
+      expect(page).to_not have_button("Update")
+      click_on("Back")
+
+      expect(page).to_not have_link("Destroy the city")
+      expect(page).to have_link("Realocate visitors")
+
     end
 
     scenario "Filtering by admin", :js do
@@ -94,13 +111,36 @@ feature 'Admin spending proposals' do
 
       select "Admin 1", from: "administrator_id"
 
-      expect(page).to have_link("Realocate visitors")
+      expect(page).to have_content('There is 1 spending proposal')
       expect(page).to_not have_link("Destroy the city")
+      expect(page).to have_link("Realocate visitors")
 
       select "All administrators", from: "administrator_id"
 
+      expect(page).to have_content('There are 2 spending proposals')
       expect(page).to have_link("Destroy the city")
       expect(page).to have_link("Realocate visitors")
+
+      select "Admin 1", from: "administrator_id"
+      expect(page).to have_content('There is 1 spending proposal')
+      click_link("Realocate visitors")
+      click_link("Back")
+
+      expect(page).to have_content('There is 1 spending proposal')
+      expect(page).to_not have_link("Destroy the city")
+      expect(page).to have_link("Realocate visitors")
+
+      click_link("Realocate visitors")
+      click_on("Edit classification")
+      expect(page).to have_button("Update")
+      click_on("Back")
+      expect(page).to_not have_button("Update")
+      click_on("Back")
+
+      expect(page).to have_content('There is 1 spending proposal')
+      expect(page).to_not have_link("Destroy the city")
+      expect(page).to have_link("Realocate visitors")
+
     end
 
     scenario "Current filter is properly highlighted" do
@@ -183,10 +223,28 @@ feature 'Admin spending proposals' do
 
       visit admin_spending_proposals_path(tag_name: 'Education')
 
+      expect(page).to_not have_content("More hospitals")
       expect(page).to have_css(".spending_proposal", count: 2)
       expect(page).to have_content("Educate the children")
       expect(page).to have_content("More schools")
+
+      click_link("Educate the children")
+      click_link("Back")
+
       expect(page).to_not have_content("More hospitals")
+      expect(page).to have_content("Educate the children")
+      expect(page).to have_content("More schools")
+
+      click_link("Educate the children")
+      click_on("Edit classification")
+      expect(page).to have_button("Update")
+      click_on("Back")
+      expect(page).to_not have_button("Update")
+      click_on("Back")
+
+      expect(page).to_not have_content("More hospitals")
+      expect(page).to have_content("Educate the children")
+      expect(page).to have_content("More schools")
     end
 
   end

@@ -35,6 +35,10 @@ class SpendingProposal < ActiveRecord::Base
     super.try :html_safe
   end
 
+  def self.filter_params(params)
+    params.select{|x,_| %w{geozone_id administrator_id tag_name valuator_id}.include? x.to_s }
+  end
+
   def self.search(params, current_filter)
     results = self
     results = results.by_geozone(params[:geozone_id])             if params[:geozone_id].present?

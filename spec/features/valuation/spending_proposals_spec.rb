@@ -288,6 +288,60 @@ feature 'Valuation spending proposals' do
       expect(find "#spending_proposal_feasible_nil").to be_checked
     end
 
+    scenario 'Feasibility selection makes proper fields visible', :js do
+      feasible_true_fields  = ['Price (€)','Cost during the first year (€)','Price explanation','Time scope']
+      feasible_false_fields = ['Feasibility explanation']
+      feasible_any_fields   = ['Valuation finished','Internal comments']
+      feasible_nil_fields   = feasible_true_fields + feasible_false_fields + feasible_any_fields
+
+      visit edit_valuation_spending_proposal_path(@spending_proposal)
+
+      expect(find "#spending_proposal_feasible_nil").to be_checked
+
+      feasible_nil_fields.each do |field|
+        expect(page).to have_content(field)
+      end
+
+      choose 'spending_proposal_feasible_true'
+
+      feasible_false_fields.each do |field|
+        expect(page).to_not have_content(field)
+      end
+
+      (feasible_true_fields + feasible_any_fields).each do |field|
+        expect(page).to have_content(field)
+      end
+
+      choose 'spending_proposal_feasible_false'
+
+      feasible_true_fields.each do |field|
+        expect(page).to_not have_content(field)
+      end
+
+      (feasible_false_fields + feasible_any_fields).each do |field|
+        expect(page).to have_content(field)
+      end
+
+      click_button 'Save changes'
+
+      visit edit_valuation_spending_proposal_path(@spending_proposal)
+
+      expect(find "#spending_proposal_feasible_false").to be_checked
+      feasible_true_fields.each do |field|
+        expect(page).to_not have_content(field)
+      end
+
+      (feasible_false_fields + feasible_any_fields).each do |field|
+        expect(page).to have_content(field)
+      end
+
+      choose 'spending_proposal_feasible_nil'
+
+      feasible_nil_fields.each do |field|
+        expect(page).to have_content(field)
+      end
+    end
+
     scenario 'Finish valuation' do
       visit valuation_spending_proposal_path(@spending_proposal)
       click_link 'Edit dossier'

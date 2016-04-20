@@ -1,5 +1,6 @@
 en:
   settings:
+    comments_body_max_length: "Comments body max length"
     official_level_1_name: "Level 1 public official"
     official_level_2_name: "Level 2 public official"
     official_level_3_name: "Level 3 public official"

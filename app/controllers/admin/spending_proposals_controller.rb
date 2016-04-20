@@ -15,13 +15,16 @@ class Admin::SpendingProposalsController < Admin::BaseController
 
   def edit
     @admins = Administrator.includes(:user).all
-    @valuators = Valuator.includes(:user).all.order("users.username ASC")
+    @valuators = Valuator.includes(:user).all.order("description ASC").order("users.email ASC")
     @tags = ActsAsTaggableOn::Tag.spending_proposal_tags
   end
 
   def update
     if @spending_proposal.update(spending_proposal_params)
-      redirect_to admin_spending_proposal_path(@spending_proposal, anchor: 'classification'), notice: t("flash.actions.update.spending_proposal")
+      path = admin_spending_proposal_path( @spending_proposal,
+        { anchor: 'classification' }.merge(SpendingProposal.filter_params(params)))
+
+      redirect_to path, notice: t("flash.actions.update.spending_proposal")
     else
       render :edit
     end
