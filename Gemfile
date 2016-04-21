@@ -90,6 +90,7 @@ group :test do
   gem 'poltergeist'
   gem 'coveralls', require: false
   gem 'email_spec'
+  gem 'timecop'
 end
 
 group :development do
