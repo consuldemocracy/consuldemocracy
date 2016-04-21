@@ -134,7 +134,7 @@ class Debate < ActiveRecord::Base
   end
 
   def featured?
-    ! self.featured_at.nil?
+    self.featured_at.present?
   end
 
 end

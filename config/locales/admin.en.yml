@@ -7,8 +7,8 @@ en:
       hide: Hide
       hide_author: Hide author
       restore: Restore
-      feature: Feature
-      remove_feature: Remove feature
+      mark_featured: Featured
+      unmark_featured: Unmark featured
     activity:
       show:
         action: Action

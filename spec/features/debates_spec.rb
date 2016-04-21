@@ -1017,10 +1017,10 @@ feature 'Debates' do
     debate2 = create(:debate, featured_at: Time.now)
     
     visit debate_path(debate1)
-    expect(page).to have_content("Feature")
+    expect(page).to have_content("Featured")
 
     visit debate_path(debate2)
-    expect(page).to have_content("Remove feature")
+    expect(page).to have_content("Unmark featured")
 
   end  
 
