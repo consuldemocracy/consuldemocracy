@@ -10,14 +10,14 @@
         <% end %>
       <% else %>
         <% if comment.as_administrator? %>
-          <%= image_tag("admin_avatar.png", size: 32, class: "admin-avatar float-left") %>
+          <%= image_tag("avatar_admin.png", size: 32, class: "admin-avatar float-left") %>
         <% elsif comment.as_moderator? %>
-          <%= image_tag("moderator_avatar.png", size: 32, class: "moderator-avatar float-left") %>
+          <%= image_tag("avatar_moderator.png", size: 32, class: "moderator-avatar float-left") %>
         <% else %>
         <% if comment.user.hidden? || comment.user.erased? %>
             <span class="icon-deleted user-deleted"></span>
           <% elsif comment.user.organization? %>
-            <%= image_tag("collective_avatar.png", size: 32, class: "avatar float-left") %>
+            <%= image_tag("avatar_collective.png", size: 32, class: "avatar float-left") %>
           <% else %>
             <%= avatar_image(comment.user, seed: comment.user_id, size: 32, class: "float-left") %>
           <% end %>
