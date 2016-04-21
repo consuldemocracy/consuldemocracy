@@ -133,4 +133,37 @@ feature 'Open Plenary' do
     end
   end
 
+  context "Closed" do
+
+    scenario "Display different text after official end time" do
+      Timecop.freeze(DateTime.new(2016,4,22).beginning_of_day) do
+        visit "processes_open_plenary"
+        expect(page).to_not have_content("Apoya las propuestas y preguntas que más te gusten.")
+      end
+
+      Timecop.freeze(DateTime.new(2016,4,23).beginning_of_day) do
+        visit "processes_open_plenary"
+        expect(page).to have_content("Apoya las propuestas y preguntas que más te gusten.")
+      end
+    end
+
+    scenario 'Displays proposals between the official dates' do
+      proposal1 = create(:proposal, title: "Before start date",       tag_list: 'plenoabierto', created_at: Date.parse('17-04-2016'))
+      proposal2 = create(:proposal, title: "During official dates",   tag_list: 'plenoabierto', created_at: Date.parse('18-04-2016'))
+      proposal3 = create(:proposal, title: "During official dates",   tag_list: 'plenoabierto', created_at: Date.parse('19-04-2016'))
+      proposal4 = create(:proposal, title: "After start date",        tag_list: 'plenoabierto', created_at: Date.parse('22-04-2016'))
+
+      visit "processes_open_plenary"
+      click_link "See all proposals"
+
+      within("#proposals") do
+        expect(page).to_not have_content(proposal1.title)
+        expect(page).to have_content(proposal2.title)
+        expect(page).to have_content(proposal3.title)
+        expect(page).to_not have_content(proposal4.title)
+      end
+    end
+
+  end
+
 end
