@@ -178,6 +178,14 @@ blockquote.featured {
   }
 }
 
+.jumbo-brand {
+  background: $brand;
+
+  h1, p, a {
+    color: white;
+  }
+}
+
 .jumbo-survey {
   background: #33DADF;
   border-bottom: 1px solid #33DADF;
@@ -1195,6 +1203,17 @@ table.age-groups {
   font-size: rem-calc(18) !important;
   font-weight: bold;
   padding: $line-height/2;
+}
+
+.plenaries {
+
+  h3 {
+    margin-bottom: 0;
+  }
+
+  [class^="icon-"] {
+    color: $text-light;
+  }
 }
 
 // News page
