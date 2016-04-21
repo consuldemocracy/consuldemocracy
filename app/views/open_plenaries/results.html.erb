@@ -1,0 +1,29 @@
+<h2>Ganadores del Pleno Abierto</h2>
+
+<p>Preguntas ganadoras</p>
+<div>
+  <% @questions.each do |question| %>
+    <div>
+      <span><%= question.body %></span>
+    </div>
+    <div>
+      <span>Up: <%= question.cached_votes_up %></span>
+      <span>Down: <%= question.cached_votes_down %></span>
+      <span>Total: <%= question.cached_votes_total %></span>
+      <span>Score: <%= question.confidence_score %></span>
+    </div>
+  <% end %>
+</div>
+
+<p>Propuestas ganadoras</p>
+<div>
+  <% @proposals.each do |proposal| %>
+    <div>
+      <span><%= proposal.title %></span>
+    </div>
+    <div>
+      <span>Up: <%= proposal.confidence_score %></span>
+      <span>Score: <%= proposal.cached_votes_up %></span>
+    </div>
+  <% end %>
+</div>

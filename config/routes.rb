@@ -72,6 +72,10 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :open_plenaries, only: [] do
+    get :results, on: :collection
+  end
+
   resources :stats, only: [:index]
 
   resources :legislations, only: [:show]

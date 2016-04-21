@@ -138,4 +138,11 @@ class Debate < ActiveRecord::Base
     self.comment_kind ||= 'comment'
   end
 
+  def self.open_plenary_winners
+    where(comment_kind: 'question').first.
+    comments.
+    sort_by_most_voted.
+    limit(5)
+  end
+
 end
