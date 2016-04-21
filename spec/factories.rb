@@ -188,6 +188,7 @@ FactoryGirl.define do
   factory :spending_proposal do
     sequence(:title)     { |n| "Spending Proposal #{n} title" }
     description          'Spend money on this'
+    feasible_explanation 'This proposal is not viable because...'
     external_url         'http://external_documention.org'
     terms_of_service     '1'
     association :author, factory: :user
