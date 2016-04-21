@@ -5,39 +5,43 @@ feature 'Open Plenary' do
   let!(:debate) { create(:debate, comment_kind: 'question', tag_list: "plenoabierto") }
 
   scenario "Create a question", :js do
-    author = create(:user)
-    login_as(author)
+    Timecop.freeze(DateTime.new(2016,4,21).beginning_of_day) do
+      author = create(:user)
+      login_as(author)
 
-    visit root_path
-    first(:link, "Open processes").click
-    click_link "Send a proposal or question"
-    click_link "Make a question"
+      visit root_path
+      first(:link, "Open processes").click
+      click_link "Send a proposal or question"
+      click_link "Make a question"
 
-    fill_in "comment-body-debate_#{debate.id}", with: 'Is there a way to...?'
-    click_button 'Publish question'
+      fill_in "comment-body-debate_#{debate.id}", with: 'Is there a way to...?'
+      click_button 'Publish question'
 
-    within "#comments" do
-      expect(page).to have_content 'Is there a way to...?'
-      expect(page).to have_content 'Questions (1)'
+      within "#comments" do
+        expect(page).to have_content 'Is there a way to...?'
+        expect(page).to have_content 'Questions (1)'
+      end
     end
   end
 
   scenario "Create a proposal" do
-    author = create(:user)
-    login_as(author)
+    Timecop.freeze(DateTime.new(2016,4,21).beginning_of_day) do
+      author = create(:user)
+      login_as(author)
 
-    visit root_path
-    first(:link, "Open processes").click
-    click_link "Send a proposal or question"
-    click_link "Send a proposal"
+      visit root_path
+      first(:link, "Open processes").click
+      click_link "Send a proposal or question"
+      click_link "Send a proposal"
 
-    fill_in_proposal
-    click_button 'Create proposal'
+      fill_in_proposal
+      click_button 'Create proposal'
 
-    expect(page).to have_content 'Proposal created successfully.'
+      expect(page).to have_content 'Proposal created successfully.'
 
-    within("#tags") do
-      expect(page).to have_content "plenoabierto"
+      within("#tags") do
+        expect(page).to have_content "plenoabierto"
+      end
     end
   end
 
@@ -59,37 +63,41 @@ feature 'Open Plenary' do
   end
 
   scenario "Proposal's index" do
-    proposal1 = create(:proposal, title: "Plant more trees",  tag_list: 'plenoabierto')
-    proposal2 = create(:proposal, title: "Feed the children", tag_list: 'plenoabierto')
-    proposal3 = create(:proposal, title: "Take care of the rich")
+    Timecop.freeze(DateTime.new(2016,4,21).beginning_of_day) do
+      proposal1 = create(:proposal, title: "Plant more trees",  tag_list: 'plenoabierto')
+      proposal2 = create(:proposal, title: "Feed the children", tag_list: 'plenoabierto')
+      proposal3 = create(:proposal, title: "Take care of the rich")
 
-    visit "processes_open_plenary"
+      visit "processes_open_plenary"
 
-    click_link "See all proposals"
+      click_link "See all proposals"
 
-    within("#proposals") do
-      expect(page).to have_css('.proposal', count: 2)
+      within("#proposals") do
+        expect(page).to have_css('.proposal', count: 2)
 
-      expect(page).to have_content(proposal1.title)
-      expect(page).to have_content(proposal2.title)
-      expect(page).to_not have_content(proposal3.title)
+        expect(page).to have_content(proposal1.title)
+        expect(page).to have_content(proposal2.title)
+        expect(page).to_not have_content(proposal3.title)
+      end
     end
   end
 
   scenario "Supports (index)" do
-    proposal = create(:proposal, title: "Plant more trees",  tag_list: 'plenoabierto')
+    Timecop.freeze(DateTime.new(2016,4,21).beginning_of_day) do
+      proposal = create(:proposal, title: "Plant more trees",  tag_list: 'plenoabierto')
 
-    visit "processes_open_plenary"
+      visit "processes_open_plenary"
 
-    click_link "See all proposals"
+      click_link "See all proposals"
 
-    within("#proposals") do
-      expect(page).to have_css('.proposal', count: 1)
-      expect(page).to have_content(proposal.title)
-      expect(page).to have_content('#PlenoAbierto')
+      within("#proposals") do
+        expect(page).to have_css('.proposal', count: 1)
+        expect(page).to have_content(proposal.title)
+        expect(page).to have_content('#PlenoAbierto')
 
-      expect(page).to_not have_content "0% / 100%"
-      expect(page).to_not have_content('supports needed')
+        expect(page).to_not have_content "0% / 100%"
+        expect(page).to_not have_content('supports needed')
+      end
     end
   end
 
@@ -108,16 +116,18 @@ feature 'Open Plenary' do
   end
 
   scenario "Hide advanced search", :js do
-    create(:proposal, title: "Plant more trees",  tag_list: 'plenoabierto')
+    Timecop.freeze(DateTime.new(2016,4,21).beginning_of_day) do
+      create(:proposal, title: "Plant more trees",  tag_list: 'plenoabierto')
 
-    visit "processes_open_plenary"
-    click_link "See all proposals"
+      visit "processes_open_plenary"
+      click_link "See all proposals"
 
-    within("#proposals") do
-      expect(page).to have_css('.proposal', count: 1)
+      within("#proposals") do
+        expect(page).to have_css('.proposal', count: 1)
+      end
+
+      expect(page).to_not have_css("#js-advanced-search")
     end
-
-    expect(page).to_not have_css("#js-advanced-search")
   end
 
   scenario "Displays proposals created after official start date (April 18th)" do
@@ -136,12 +146,12 @@ feature 'Open Plenary' do
   context "Closed" do
 
     scenario "Display different text after official end time" do
-      Timecop.freeze(DateTime.new(2016,4,22).beginning_of_day) do
+      Timecop.freeze(DateTime.new(2016,4,21).beginning_of_day) do
         visit "processes_open_plenary"
         expect(page).to_not have_content("Apoya las propuestas y preguntas que más te gusten.")
       end
 
-      Timecop.freeze(DateTime.new(2016,4,23).beginning_of_day) do
+      Timecop.freeze(DateTime.new(2016,4,22).beginning_of_day) do
         visit "processes_open_plenary"
         expect(page).to have_content("Apoya las propuestas y preguntas que más te gusten.")
       end
