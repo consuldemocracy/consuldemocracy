@@ -44,11 +44,13 @@ describe SpendingProposal do
 
   describe "#feasible_explanation" do
     it "should be valid if valuation not finished" do
+      spending_proposal.feasible_explanation = ""
       spending_proposal.valuation_finished = false
       expect(spending_proposal).to be_valid
     end
 
     it "should not be valid if valuation finished" do
+      spending_proposal.feasible_explanation = ""
       spending_proposal.valuation_finished = true
       expect(spending_proposal).to_not be_valid
     end
