@@ -6,8 +6,15 @@
       <div id="open-plenary" class="small-12 medium-7 margin-bottom">
         <span class="label"><%= t("pages.processes.index.featured") %></span>
         <h2><%= t("pages.processes.index.process_3_title") %></h2>
-        <p><%= t("pages.processes.index.process_3_description") %></p>
-        <%= link_to t("pages.processes.index.process_3_button"), page_path("processes_open_plenary"), class: "button" %>
+
+        <% if Time.now.in_time_zone <= DateTime.new(2016,4,21) %>
+          <p><%= t("pages.processes.index.process_3_description") %></p>
+          <%= link_to t("pages.processes.index.process_3_button"), page_path("processes_open_plenary"), class: "button" %>
+        <% else %>
+          <p><%= t("pages.processes.index.process_3_description_close") %></p>
+          <%= link_to t("pages.processes.index.process_3_button_close"), page_path("processes_open_plenary"), class: "button" %>
+        <% end %>
+
       </div>
     </div>
   </div>

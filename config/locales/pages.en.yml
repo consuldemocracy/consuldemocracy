@@ -84,8 +84,10 @@ en:
         process_2_description: We count on you for decide how you want it this new space in your city.
         process_2_button: More information
         process_3_title: "#PlenoAbierto"
-        process_3_description: Envía una propuesta o lanza una pregunta, y si están entre las cinco más votadas podrás formularla en persona a los grupos políticos en el Pleno Abierto del 24 de abril.
+        process_3_description: Send a proposal or make a question. The five most voted will be made in person to the political groups in the Open Plenary Session of 24 April.
+        process_3_description_close: Supports proposals and questions. The five most voted will be made in person to the political groups in the Open Plenary Session of 24 April.
         process_3_button: Send a proposal or question
+        process_3_button_close: Support proposals and questions
         title: Open processes
       process_1:
         title: Help us improve transparency Ordinance of the City of Madrid

@@ -1,0 +1,41 @@
+<div class="expanded processes-show no-margin-top">
+  <div class="row padding">
+    <div class="small-12 medium-7 column">
+
+      <h1 class="margin-bottom"><%= t("pages.processes.index.process_3_title") %></h1>
+      <p>Apoya las propuestas y preguntas que más te gusten.</p>
+
+      <p>De entre todas las propuestas y preguntas enviadas,​ <strong>las cinco más votadas serán formuladas en persona</strong>​ en el Pleno del día 24 a todos los grupos políticos.</p>
+
+      <div class="row">
+        <div class="small-12 medium-6 column">
+          <%= link_to t("pages.processes.process_3.view_proposals"),
+                    proposals_path(search: 'plenoabierto',
+                                   order: :confidence_score,
+                                   custom_search: true,
+                                   advanced_search: {date_min: "18-04-2016", date_max: "21-04-2016"}),
+                    class: "button expanded" %>
+        </div>
+
+        <div class="small-12 medium-6 column">
+          <% open_plenary_debate = Debate.where(comment_kind: 'question').first %>
+          <%= link_to t("pages.processes.process_3.view_questions"),
+                      debate_path(open_plenary_debate),
+                      class: "button expanded" %>
+        </div>
+      </div>
+    </div>
+
+    <div class="show-for-medium medium-5 column relative">
+      <%= image_tag "pleno_abierto_cartel.gif" %>
+    </div>
+  </div>
+</div>
+
+<div class="row process margin">
+  <div class="small-12 column">
+    <div class="show-for-small-only">
+      <%= image_tag "pleno_abierto_cartel.gif" %>
+    </div>
+  </div>
+</div>
