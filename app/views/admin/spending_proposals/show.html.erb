@@ -34,7 +34,7 @@
 <p>
   <%= link_to t("admin.spending_proposals.show.edit_classification"),
                 edit_admin_spending_proposal_path(@spending_proposal,
-                                                  {anchor: 'classification'}.merge(SpendingProposal.filter_params(params)), data: {no_turbolink: true}) %>
+                                                  {anchor: 'classification'}.merge(SpendingProposal.filter_params(params))) %>
 </p>
 
 <hr>
