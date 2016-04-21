@@ -1,7 +1,6 @@
 require "application_responder"
 
 class ApplicationController < ActionController::Base
-  include SimpleCaptcha::ControllerHelpers
   include HasFilters
   include HasOrders
 

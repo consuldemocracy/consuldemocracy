@@ -13,7 +13,6 @@ feature 'Organizations' do
     fill_in 'user_email',                         with: 'green@peace.com'
     fill_in 'user_password',                      with: 'greenpeace'
     fill_in 'user_password_confirmation',         with: 'greenpeace'
-    fill_in 'user_captcha', with: correct_captcha_text
     check 'user_terms_of_service'
 
     click_button 'Register'

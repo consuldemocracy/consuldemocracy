@@ -96,7 +96,6 @@ feature 'Debates' do
     visit new_debate_path
     fill_in 'debate_title', with: 'A title for a debate'
     fill_in 'debate_description', with: 'This is very important because...'
-    fill_in 'debate_captcha', with: correct_captcha_text
     check 'debate_terms_of_service'
 
     click_button 'Start a debate'
@@ -106,26 +105,6 @@ feature 'Debates' do
     expect(page).to have_content 'This is very important because...'
     expect(page).to have_content author.name
     expect(page).to have_content I18n.l(Debate.last.created_at.to_date)
-  end
-
-  scenario 'Captcha is required for debate creation' do
-    login_as(create(:user))
-
-    visit new_debate_path
-    fill_in 'debate_title', with: "Great title"
-    fill_in 'debate_description', with: 'Very important issue...'
-    fill_in 'debate_captcha', with: "wrongText!"
-    check 'debate_terms_of_service'
-
-    click_button "Start a debate"
-
-    expect(page).to_not have_content "Debate created successfully."
-    expect(page).to have_content "1 error"
-
-    fill_in 'debate_captcha', with: correct_captcha_text
-    click_button "Start a debate"
-
-    expect(page).to have_content "Debate created successfully."
   end
 
   scenario 'Errors on create' do
@@ -144,7 +123,6 @@ feature 'Debates' do
     visit new_debate_path
     fill_in 'debate_title', with: 'Testing an attack'
     fill_in 'debate_description', with: '<p>This is <script>alert("an attack");</script></p>'
-    fill_in 'debate_captcha', with: correct_captcha_text
     check 'debate_terms_of_service'
 
     click_button 'Start a debate'
@@ -163,7 +141,6 @@ feature 'Debates' do
     visit new_debate_path
     fill_in 'debate_title', with: 'Testing auto link'
     fill_in 'debate_description', with: '<p>This is a link www.example.org</p>'
-    fill_in 'debate_captcha', with: correct_captcha_text
     check 'debate_terms_of_service'
 
     click_button 'Start a debate'
@@ -180,7 +157,6 @@ feature 'Debates' do
     visit new_debate_path
     fill_in 'debate_title', with: 'Testing auto link'
     fill_in 'debate_description', with: "<script>alert('hey')</script> <a href=\"javascript:alert('surprise!')\">click me<a/> http://example.org"
-    fill_in 'debate_captcha', with: correct_captcha_text
     check 'debate_terms_of_service'
 
     click_button 'Start a debate'
@@ -213,7 +189,6 @@ feature 'Debates' do
 
       fill_in 'debate_title', with: 'Testing auto link'
       fill_in 'debate_description', with: "<script>alert('hey')</script> <a href=\"javascript:alert('surprise!')\">click me<a/> http://example.org"
-      fill_in 'debate_captcha', with: correct_captcha_text
       check 'debate_terms_of_service'
 
       find('.js-add-tag-link', text: 'Education').click
@@ -232,7 +207,6 @@ feature 'Debates' do
 
       fill_in 'debate_title', with: "Great title"
       fill_in 'debate_description', with: 'Very important issue...'
-      fill_in 'debate_captcha', with: correct_captcha_text
       check 'debate_terms_of_service'
 
       fill_in 'debate_tag_list', with: 'Refugees, Solidarity'
@@ -250,7 +224,6 @@ feature 'Debates' do
 
       fill_in 'debate_title', with: 'A test of dangerous strings'
       fill_in 'debate_description', with: 'A description suitable for this test'
-      fill_in 'debate_captcha', with: correct_captcha_text
       check 'debate_terms_of_service'
 
       fill_in 'debate_tag_list', with: 'user_id=1, &a=3, <script>alert("hey");</script>'
@@ -300,7 +273,6 @@ feature 'Debates' do
 
     fill_in 'debate_title', with: "End child poverty"
     fill_in 'debate_description', with: "Let's do something to end child poverty"
-    fill_in 'debate_captcha', with: correct_captcha_text
 
     click_button "Save changes"
 
@@ -318,26 +290,6 @@ feature 'Debates' do
     click_button "Save changes"
 
     expect(page).to have_content error_message
-  end
-
-  scenario 'Captcha is required to update a debate' do
-    debate = create(:debate)
-    login_as(debate.author)
-
-    visit edit_debate_path(debate)
-    expect(current_path).to eq(edit_debate_path(debate))
-
-    fill_in 'debate_title', with: "New title"
-    fill_in 'debate_captcha', with: "wrong!"
-    click_button "Save changes"
-
-    expect(page).to_not have_content "Debate updated successfully."
-    expect(page).to have_content "error"
-
-    fill_in 'debate_captcha', with: correct_captcha_text
-    click_button "Save changes"
-
-    expect(page).to have_content "Debate updated successfully."
   end
 
   describe 'Limiting tags shown' do

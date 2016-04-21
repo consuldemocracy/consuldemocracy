@@ -417,15 +417,6 @@ en:
       categories: "Categories"
     target_blank_html: " (link opens in new window)"
     unflag: Unflag
-  simple_captcha:
-    label: Enter the text from the image in the box below
-    message:
-      debate: the secret code does not match the image
-      proposal: the secret code does not match the image
-      spendingproposal: the secret code does not match the image
-      user: the secret code does not match the image
-    placeholder: Enter the text from the image
-    refresh_button_text: Refresh
   social:
     blog: Blog
     facebook: Facebook

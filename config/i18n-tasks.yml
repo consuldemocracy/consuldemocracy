@@ -105,7 +105,6 @@ ignore_unused:
   - 'activerecord.*'
   - 'activemodel.*'
   - 'unauthorized.*'
-  - 'simple_captcha.*'
   - 'admin.officials.level_*'
   - 'admin.comments.index.filter*'
   - 'admin.debates.index.filter*'

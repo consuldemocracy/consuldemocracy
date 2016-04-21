@@ -27,7 +27,7 @@ class SpendingProposalsController < ApplicationController
     @spending_proposal = SpendingProposal.new(spending_proposal_params)
     @spending_proposal.author = current_user
 
-    if @spending_proposal.save_with_captcha
+    if @spending_proposal.save
       notice = t('flash.actions.create.spending_proposal', activity: "<a href='#{user_path(current_user, filter: :spending_proposals)}'>#{t('layouts.header.my_activity_link')}</a>")
       redirect_to @spending_proposal, notice: notice, flash: { html_safe: true }
     else
@@ -49,7 +49,7 @@ class SpendingProposalsController < ApplicationController
   private
 
     def spending_proposal_params
-      params.require(:spending_proposal).permit(:title, :description, :external_url, :geozone_id, :association_name, :terms_of_service, :captcha, :captcha_key)
+      params.require(:spending_proposal).permit(:title, :description, :external_url, :geozone_id, :association_name, :terms_of_service)
     end
 
     def set_geozone_name

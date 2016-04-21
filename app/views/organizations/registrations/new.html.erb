@@ -24,9 +24,6 @@
                            label: t("devise_views.organizations.registrations.new.password_confirmation_label"),
                            placeholder: t("devise_views.organizations.registrations.new.password_confirmation_label") %>
 
-      <%= f.simple_captcha input_html: {required: false} %>
-
-
       <%= f.label :terms_of_service do %>
         <%= f.check_box :terms_of_service, title: t('devise_views.users.registrations.new.terms_title'), label: false %>
         <span class="checkbox">

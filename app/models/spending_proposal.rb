@@ -4,7 +4,6 @@ class SpendingProposal < ActiveRecord::Base
   include Taggable
   include Searchable
 
-  apply_simple_captcha
   acts_as_votable
 
   belongs_to :author, -> { with_hidden }, class_name: 'User', foreign_key: 'author_id'

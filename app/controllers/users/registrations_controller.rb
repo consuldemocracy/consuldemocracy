@@ -9,7 +9,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   def create
     build_resource(sign_up_params)
-    if resource.valid_with_captcha?
+    if resource.valid?
       super
     else
       render :new
@@ -58,8 +58,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     def sign_up_params
       params[:user].delete(:redeemable_code) if params[:user].present? && params[:user][:redeemable_code].blank?
       params.require(:user).permit(:username, :email, :password,
-                                   :password_confirmation, :captcha,
-                                   :captcha_key, :terms_of_service, :locale,
+                                   :password_confirmation, :terms_of_service, :locale,
                                    :redeemable_code)
     end
 

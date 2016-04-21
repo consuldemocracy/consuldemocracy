@@ -2,15 +2,6 @@ require 'rails_helper'
 
 describe DebatesController do
 
-  before(:all) do
-    @original_captcha_pass_value = SimpleCaptcha.always_pass
-    SimpleCaptcha.always_pass = true
-  end
-
-  after(:all) do
-    SimpleCaptcha.always_pass = @original_captcha_pass_value
-  end
-
   describe 'POST create' do
     it 'should create an ahoy event' do
 
