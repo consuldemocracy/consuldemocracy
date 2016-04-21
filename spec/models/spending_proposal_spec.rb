@@ -42,6 +42,18 @@ describe SpendingProposal do
     end
   end
 
+  describe "#feasible_explanation" do
+    it "should be valid if valuation not finished" do
+      spending_proposal.valuation_finished = false
+      expect(spending_proposal).to be_valid
+    end
+
+    it "should not be valid if valuation finished" do
+      spending_proposal.valuation_finished = true
+      expect(spending_proposal).to_not be_valid
+    end
+  end
+
   describe "dossier info" do
     describe "#feasibility" do
       it "can be feasible" do
