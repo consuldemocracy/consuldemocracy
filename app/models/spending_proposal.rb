@@ -16,6 +16,7 @@ class SpendingProposal < ActiveRecord::Base
   validates :title, presence: true
   validates :author, presence: true
   validates :description, presence: true
+  validates_presence_of :feasible_explanation, if: :valuation_finished?
 
   validates :title, length: { in: 4..SpendingProposal.title_max_length }
   validates :description, length: { maximum: SpendingProposal.description_max_length }
