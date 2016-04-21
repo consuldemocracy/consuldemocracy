@@ -9,6 +9,7 @@ module CommentableActions
     @resources = @resources.tagged_with(@tag_filter) if @tag_filter
     @resources = @resources.page(params[:page]).for_render.send("sort_by_#{@current_order}")
     index_customization if index_customization.present?
+    featured_debates if featured_debates.present?
 
     @tag_cloud = tag_cloud
     set_resource_votes(@resources)
@@ -152,4 +153,9 @@ module CommentableActions
     def index_customization
       nil
     end
+
+    def featured_debates
+      nil
+    end
+
 end
