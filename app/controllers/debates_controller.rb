@@ -18,6 +18,10 @@ class DebatesController < ApplicationController
   helper_method :resource_model, :resource_name
   respond_to :html, :js
 
+  def index_customization
+     @featured_debates = @debates.featured
+  end
+
   def show
     super
     redirect_to debate_path(@debate), status: :moved_permanently if request.path != debate_path(@debate)
@@ -36,10 +40,6 @@ class DebatesController < ApplicationController
   def mark_featured
     @debate.update_attribute(:featured_at, Time.now)
     redirect_to request.query_parameters.merge(action: :index)
-  end
-
-  def featured_debates
-     @featured_debates = @debates.featured
   end
 
   private
