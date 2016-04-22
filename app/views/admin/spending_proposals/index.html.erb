@@ -36,6 +36,8 @@
 </div>
 
 <%= render 'shared/filter_subnav', i18n_namespace: "admin.spending_proposals.index" %>
+<%= link_to t("admin.spending_proposals.index.summary_link"),
+            summary_admin_spending_proposals_path %>
 
 <h3><%= page_entries_info @spending_proposals %></h3>
 
