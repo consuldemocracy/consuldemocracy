@@ -23,7 +23,13 @@ class ProposalsController < ApplicationController
   end
 
   def index_customization
-    @featured_proposals = Proposal.all.sort_by_confidence_score.limit(3) if (!@advanced_search_terms && @search_terms.blank? && @tag_filter.blank?)
+    if params[:retired].present?
+      @resources = @resources.retired
+    else
+      @resources = @resources.not_retired
+    end
+
+    @featured_proposals = Proposal.all.sort_by_confidence_score.limit(3) if (!@advanced_search_terms && @search_terms.blank? && @tag_filter.blank? && params[:retired].blank?)
     if @featured_proposals.present?
       set_featured_proposal_votes(@featured_proposals)
       @resources = @resources.where('proposals.id NOT IN (?)', @featured_proposals.map(&:id))

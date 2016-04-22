@@ -430,7 +430,7 @@ feature 'Proposals' do
 
   end
 
-  context 'Retire a proposal' do
+  context 'Retired proposals' do
     scenario 'Retire' do
       proposal = create(:proposal)
       login_as(proposal.author)
@@ -465,6 +465,34 @@ feature 'Proposals' do
 
       expect(page).to_not have_content 'Proposal retired'
       expect(page).to have_content "can't be blank", count: 2
+    end
+
+    scenario 'Index do not list retired proposals by default' do
+      create_featured_proposals
+      not_retired = create(:proposal)
+      retired = create(:proposal, retired_at: Time.now)
+
+      visit proposals_path
+
+      expect(page).to have_selector('#proposals .proposal', count: 1)
+      within('#proposals') do
+        expect(page).to have_content not_retired.title
+        expect(page).to_not have_content retired.title
+      end
+    end
+
+    scenario 'Index has a link to retired proposals list' do
+      create_featured_proposals
+      not_retired = create(:proposal)
+      retired = create(:proposal, retired_at: Time.now)
+
+      visit proposals_path
+
+      expect(page).to_not have_content retired.title
+      click_link 'Proposals retired by the author (duplicated, unfeasibles, done, etc.)'
+
+      expect(page).to have_content retired.title
+      expect(page).to_not have_content not_retired.title
     end
   end
 

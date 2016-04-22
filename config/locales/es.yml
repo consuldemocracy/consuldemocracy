@@ -296,6 +296,8 @@ es:
         hot_score: Más activas hoy
         most_commented: Más comentadas
         relevance: Más relevantes
+      retired_proposals: Propuestas retiradas
+      retired_proposals_link: "Propuestas retiradas por sus autores (realizadas, en ejecución, inviables, duplicadas, etc.)"
       search_form:
         button: Buscar
         placeholder: Buscar propuestas...

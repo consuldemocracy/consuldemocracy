@@ -758,6 +758,13 @@ describe Proposal do
       expect(retired.size).to eq(1)
       expect(retired.first).to eq(@proposal2)
     end
+
+    it "scope not_retired" do
+      not_retired = Proposal.not_retired
+
+      expect(not_retired.size).to eq(1)
+      expect(not_retired.first).to eq(@proposal1)
+    end
   end
 
 end

@@ -46,6 +46,7 @@ class Proposal < ActiveRecord::Base
   scope :sort_by_flags,            -> { order(flags_count: :desc, updated_at: :desc) }
   scope :last_week,                -> { where("proposals.created_at >= ?", 7.days.ago)}
   scope :retired,                  -> { where.not(retired_at: nil) }
+  scope :not_retired,              -> { where(retired_at: nil) }
 
   def to_param
     "#{id}-#{title}".parameterize
