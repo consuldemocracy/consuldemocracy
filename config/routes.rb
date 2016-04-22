@@ -49,6 +49,8 @@ Rails.application.routes.draw do
       post :vote_featured
       put :flag
       put :unflag
+      get :retire_form
+      patch :retire
     end
     collection do
       get :map

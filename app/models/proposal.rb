@@ -12,6 +12,8 @@ class Proposal < ActiveRecord::Base
   acts_as_paranoid column: :hidden_at
   include ActsAsParanoidAliases
 
+  RETIRE_OPTIONS = %w(duplicated started unfeasible done other)
+
   belongs_to :author, -> { with_hidden }, class_name: 'User', foreign_key: 'author_id'
   belongs_to :geozone
   has_many :comments, as: :commentable
@@ -26,6 +28,7 @@ class Proposal < ActiveRecord::Base
   validates :description, length: { maximum: Proposal.description_max_length }
   validates :question, length: { in: 10..Proposal.question_max_length }
   validates :responsible_name, length: { in: 6..Proposal.responsible_name_max_length }
+  validates :retired_reason, inclusion: {in: RETIRE_OPTIONS, allow_nil: true}
 
   validates :terms_of_service, acceptance: { allow_nil: false }, on: :create
 

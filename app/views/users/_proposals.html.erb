@@ -2,9 +2,18 @@
   <% @proposals.each do |proposal| %>
     <tr id="proposal_<%= proposal.id %>">
       <td>
-        <%= link_to proposal.title, proposal %>
+        <%= link_to proposal.title, proposal, proposal.retired? ? {class: 'delete'} : {} %>
         <br>
         <%= proposal.summary %>
+      </td>
+      <td>
+        <% if proposal.retired? %>
+          <%= t('users.show.retired') %>
+        <% else %>
+          <%= link_to t('users.show.retire'),
+                      retire_form_proposal_path(proposal),
+                      class: 'delete' %>
+        <% end %>
       </td>
     </tr>
   <% end %>

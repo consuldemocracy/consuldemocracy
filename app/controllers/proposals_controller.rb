@@ -35,6 +35,17 @@ class ProposalsController < ApplicationController
     set_proposal_votes(@proposal)
   end
 
+  def retire
+    if valid_retired_params? && @proposal.update(retired_params.merge(retired_at: Time.now))
+      redirect_to proposal_path(@proposal), notice: t('proposals.notice.retired')
+    else
+      render action: :retire_form
+    end
+  end
+
+  def retire_form
+  end
+
   def vote_featured
     @proposal.register_vote(current_user, 'yes')
     set_featured_proposal_votes(@proposal)
@@ -49,6 +60,16 @@ class ProposalsController < ApplicationController
 
     def proposal_params
       params.require(:proposal).permit(:title, :question, :summary, :description, :external_url, :video_url, :responsible_name, :tag_list, :terms_of_service, :captcha, :captcha_key, :geozone_id)
+    end
+
+    def retired_params
+      params.require(:proposal).permit(:retired_reason, :retired_explanation)
+    end
+
+    def valid_retired_params?
+      @proposal.errors.add(:retired_reason, I18n.t('errors.messages.blank')) if params[:proposal][:retired_reason].blank?
+      @proposal.errors.add(:retired_explanation, I18n.t('errors.messages.blank')) if params[:proposal][:retired_explanation].blank?
+      @proposal.errors.empty?
     end
 
     def resource_model

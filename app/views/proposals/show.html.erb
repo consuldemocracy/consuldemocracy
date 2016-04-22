@@ -22,7 +22,11 @@
         <% end %>
 
         <h1><%= @proposal.title %></h1>
-        <% if @proposal.conflictive? %>
+        <% if @proposal.retired? %>
+          <div data-alert class="callout alert margin-top">
+            <strong><%= t("proposals.show.retired_warning") %></strong>
+          </div>
+        <% elsif @proposal.conflictive? %>
           <div data-alert class="callout alert margin-top">
             <strong><%= t("proposals.show.flag") %></strong>
           </div>
@@ -73,6 +77,11 @@
         <% end %>
 
         <h4><%= @proposal.question %></h4>
+
+        <% if @proposal.retired? %>
+          <h2><%= t('proposals.show.retired') %>: <%= t("proposals.retire_options.#{@proposal.retired_reason}") unless @proposal.retired_reason == 'other' %></h2>
+          <%= simple_format text_with_links(@proposal.retired_explanation), {}, sanitize: false %>
+        <% end %>
 
         <%= render 'shared/tags', taggable: @proposal %>
 

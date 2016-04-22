@@ -254,6 +254,20 @@ es:
       form:
         submit_button: Guardar cambios
       show_link: Ver propuesta
+    retire_form:
+      title: Retirar propuesta
+      warning: "Si sigues adelante tu propuesta podrá seguir recibiendo apoyos, pero dejará de ser listada en la lista principal, y aparecerá un mensaje para todos los usuarios avisándoles de que el autor considera que esta propuesta no debe seguir recogiendo apoyos."
+      retired_reason_label: Razón por la que se retira la propuesta
+      retired_reason_blank: Selecciona una opción
+      retired_explanation_label: Explicación
+      retired_explanation_placeholder: Explica brevemente por que consideras que esta propuesta no debe recoger más apoyos
+      submit_button: Retirar propuesta
+    retire_options:
+      duplicated: Duplicada
+      started: Ejecutándose
+      unfeasible: Inviable
+      done: Hecha
+      other: Otra
     form:
       geozone: "Ámbito de actuación"
       proposal_external_url: Enlace a documentación adicional
@@ -305,6 +319,8 @@ es:
       recommendation_two: Cualquier propuesta o comentario que implique una acción ilegal será eliminada, también las que tengan la intención de sabotear los espacios de propuesta, todo lo demás está permitido.
       recommendations_title: Recomendaciones para crear una propuesta
       start_new: Crear una propuesta
+    notice:
+      retired: Propuesta retirada
     proposal:
       already_supported: "¡Ya has apoyado esta propuesta, compártela!"
       comments:
@@ -333,6 +349,8 @@ es:
       edit_proposal_link: Editar propuesta
       flag: Esta propuesta ha sido marcada como inapropiada por varios usuarios.
       login_to_comment: Necesitas %{signin} o %{signup} para comentar.
+      retired_warning: "El autor de esta propuesta considera que ya no debe seguir recogiendo apoyos. Revisa su explicación antes de apoyarla."
+      retired: Propuesta retirada por el autor
       share: Compartir
     update:
       form:
@@ -489,6 +507,8 @@ es:
           other: "%{count} Propuestas de inversión"
       no_activity: Usuario sin actividad pública
       private_activity: Este usuario ha decidido mantener en privado su lista de actividades
+      retire: Retirar
+      retired: Retirada
   votes:
     agree: Estoy de acuerdo
     anonymous: Demasiados votos anónimos, para poder votar %{verify_account}.
