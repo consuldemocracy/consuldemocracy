@@ -346,23 +346,42 @@ forums.each_with_index do |forum, i|
 end
 
 puts "Open plenary debate"
-debate = Debate.create!(author: User.reorder("RANDOM()").first,
+open_plenary = Debate.create!(author: User.reorder("RANDOM()").first,
                         title: "Pregunta en el Pleno Abierto",
                         created_at: Date.parse("20-04-2016"),
                         description: "<p>Pleno Abierto preguntas</p>",
                         terms_of_service: "1",
                         tag_list: 'plenoabierto',
                         comment_kind: 'question')
-puts "#{debate.title}"
+puts "#{open_plenary.title}"
+
+puts "Open plenary questions"
+(1..30).each do |i|
+  author = User.reorder("RANDOM()").first
+  cached_votes_up = rand(1000)
+  cached_votes_down = rand(1000)
+  cached_votes_total =  cached_votes_up + cached_votes_down
+  Comment.create!(user: author,
+                  created_at: rand(open_plenary.created_at .. Time.now),
+                  commentable: open_plenary,
+                  body: Faker::Lorem.sentence,
+                  cached_votes_up: cached_votes_up,
+                  cached_votes_down: cached_votes_down,
+                  cached_votes_total: cached_votes_total)
+end
 
 puts "Open plenary proposal"
-proposal = Proposal.create!(author: User.reorder("RANDOM()").first,
-                              title: "Pleno Abierto propuesta",
+(1..30).each do |i|
+  description = "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>"
+  proposal = Proposal.create!(author: User.reorder("RANDOM()").first,
+                              title: Faker::Lorem.sentence(3).truncate(60),
                               question: Faker::Lorem.sentence(3),
                               summary: Faker::Lorem.sentence(3),
                               responsible_name: Faker::Name.name,
-                              description: "<p>Pleno Abierto propuesta</p>",
+                              description: description,
                               created_at: Date.parse("20-04-2016"),
                               terms_of_service: "1",
-                              tag_list: 'plenoabierto')
-puts "#{proposal.title}"
+                              tag_list: 'plenoabierto',
+                              cached_votes_up: rand(1000))
+  puts "#{proposal.title}"
+end
