@@ -545,7 +545,7 @@ footer {
 // 04. Tags
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
-.tags a , .tag-cloud a, .categories a, .geozone a {
+.tags a , .tag-cloud a, .categories a, .geozone a, .sidebar-links a {
   background: #ececec;
   border-radius: rem-calc(6);
   color: $text;
@@ -1730,9 +1730,12 @@ table {
     border: 0;
 
     td {
-      padding-left: $line-height*1.5;
       position: relative;
-      word-break: break-all;
+
+      &:first-child {
+        padding-left: $line-height*1.5;
+        width: 80%;
+      }
 
       &:before {
         color: $brand;
@@ -1753,9 +1756,16 @@ table {
       top: 14px;
     }
 
-    &.activity-proposals td:first-child:before {
-      content: "h";
-      top: 18px;
+    &.activity-proposals {
+
+      td:first-child:before {
+        content: "h";
+        top: 18px;
+      }
+
+      .retired {
+        text-decoration: line-through;
+      }
     }
 
     &.activity-investment-projects td:first-child:before {

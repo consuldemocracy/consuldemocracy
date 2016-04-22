@@ -2,33 +2,34 @@
 
   <div class="small-12 column">
 
-    <div class="float-right">
-      <%= link_to @proposal.title, @proposal %>
-    </div>
+    <h1 class="inline-block"><%= t("proposals.retire_form.title") %></h1>
 
-    <h1><%= t("proposals.retire_form.title") %></h1>
+    <h3><%= link_to @proposal.title, @proposal %></h3>
 
-    <div data-alert class="callout primary">
+    <div data-alert class="callout warning">
      <%= t("proposals.retire_form.warning") %>
     </div>
 
     <%= form_for(@proposal, url: retire_proposal_path(@proposal)) do |f| %>
       <%= render 'shared/errors', resource: @proposal %>
       <div class="row">
-
-        <div class="small-12 medium-6 column">
+        <div class="small-12 medium-6 large-4 column">
           <%= f.label :retired_reason,  t("proposals.retire_form.retired_reason_label") %>
           <%= f.select :retired_reason, retire_proposals_options, {include_blank: t("proposals.retire_form.retired_reason_blank"), label: false} %>
         </div>
+      </div>
 
-        <div class="small-12 column">
+      <div class="row">
+        <div class="small-12 medium-9 column">
           <%= f.label :retired_explanation, t("proposals.retire_form.retired_explanation_label") %>
           <%= f.text_area :retired_explanation, rows: 4, maxlength: 500, label: false,
                           placeholder: t('proposals.retire_form.retired_explanation_placeholder') %>
         </div>
+      </div>
 
-        <div class="actions small-12 column">
-          <%= f.submit(class: "button", value: t("proposals.retire_form.submit_button")) %>
+      <div class="row">
+        <div class="actions small-12 medium-3 column">
+          <%= f.submit(class: "button expanded", value: t("proposals.retire_form.submit_button")) %>
         </div>
       </div>
     <% end %>
