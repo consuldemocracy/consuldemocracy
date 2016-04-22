@@ -2,5 +2,12 @@
 <h3 class="sidebar-title"><%= t("proposals.index.retired_proposals") %></h3>
 
 <p>
-  <%= link_to t("proposals.index.retired_proposals_link"), proposals_path(retired: 1), class: "small" %><br>
+<% if params[:retired].blank? %>
+  <%= link_to t("proposals.index.retired_proposals_link"), proposals_path(retired: 'all'), class: "small" %><br>
+<% else %>
+  <%= link_to t("proposals.index.retired_links.all"), proposals_path(retired: 'all'), ({class: "small"} unless params[:retired] == 'all') %><br>
+  <% Proposal::RETIRE_OPTIONS.each do |option| %>
+    <%= link_to t("proposals.index.retired_links.#{option}"), proposals_path(retired: option), ({class: "small"} unless params[:retired] == option) %><br>
+  <% end %>
+<% end %>
 </p>

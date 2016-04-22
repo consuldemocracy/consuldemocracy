@@ -25,6 +25,7 @@ class ProposalsController < ApplicationController
   def index_customization
     if params[:retired].present?
       @resources = @resources.retired
+      @resources = @resources.where(retired_reason: params[:retired]) if Proposal::RETIRE_OPTIONS.include?(params[:retired])
     else
       @resources = @resources.not_retired
     end

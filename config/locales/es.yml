@@ -297,7 +297,14 @@ es:
         most_commented: Más comentadas
         relevance: Más relevantes
       retired_proposals: Propuestas retiradas
-      retired_proposals_link: "Propuestas retiradas por sus autores (realizadas, en ejecución, inviables, duplicadas, etc.)"
+      retired_proposals_link: "Propuestas retiradas por sus autores"
+      retired_links:
+        all: Todas
+        duplicated: Duplicadas
+        started: Empezadas
+        unfeasible: Inviables
+        done: Hechas
+        other: Otras
       search_form:
         button: Buscar
         placeholder: Buscar propuestas...

@@ -297,7 +297,14 @@ en:
         most_commented: most commented
         relevance: relevance
       retired_proposals: Retired proposals
-      retired_proposals_link: "Proposals retired by the author (duplicated, unfeasibles, done, etc.)"
+      retired_proposals_link: "Proposals retired by the author"
+      retired_links:
+        all: All
+        duplicated: Duplicated
+        started: Underway
+        unfeasible: Unfeasible
+        done: Done
+        other: Other
       search_form:
         button: Search
         placeholder: Search proposals...

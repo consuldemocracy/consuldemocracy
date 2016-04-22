@@ -489,10 +489,38 @@ feature 'Proposals' do
       visit proposals_path
 
       expect(page).to_not have_content retired.title
-      click_link 'Proposals retired by the author (duplicated, unfeasibles, done, etc.)'
+      click_link 'Proposals retired by the author'
 
       expect(page).to have_content retired.title
       expect(page).to_not have_content not_retired.title
+    end
+
+    scenario 'Retired proposals index interface elements' do
+      visit proposals_path(retired: 'all')
+
+      expect(page).to_not have_content 'Advanced search'
+      expect(page).to_not have_content 'Categories'
+      expect(page).to_not have_content 'Districts'
+    end
+
+    scenario 'Retired proposals index has links to filter by retired_reason' do
+      unfeasible = create(:proposal, retired_at: Time.now, retired_reason: 'unfeasible')
+      duplicated = create(:proposal, retired_at: Time.now, retired_reason: 'duplicated')
+
+      visit proposals_path(retired: 'all')
+
+      expect(page).to have_content unfeasible.title
+      expect(page).to have_content duplicated.title
+      expect(page).to have_link 'Duplicated'
+      expect(page).to have_link 'Underway'
+      expect(page).to have_link 'Unfeasible'
+      expect(page).to have_link 'Done'
+      expect(page).to have_link 'Other'
+
+      click_link 'Unfeasible'
+
+      expect(page).to have_content unfeasible.title
+      expect(page).to_not have_content duplicated.title
     end
   end
 
