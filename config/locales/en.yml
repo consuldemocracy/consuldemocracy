@@ -254,6 +254,20 @@ en:
       form:
         submit_button: Save changes
       show_link: View proposal
+    retire_form:
+      title: Retire proposal
+      warning: "If you retire the proposal it would still accept supports, but will be removed from the main list and a message will be visible to all users stating that the author considers the proposal should not be supported anymore"
+      retired_reason_label: Reason to retire the proposal
+      retired_reason_blank: Choose an option
+      retired_explanation_label: Explanation
+      retired_explanation_placeholder: Explain shortly why you think this proposal should not receive more supports
+      submit_button: Retire proposal
+    retire_options:
+      duplicated: Duplicated
+      started: Already underway
+      unfeasible: Unfeasible
+      done: Done
+      other: Other
     form:
       geozone: Scope of operation
       proposal_external_url: Link to additional documentation
@@ -282,6 +296,15 @@ en:
         hot_score: most active
         most_commented: most commented
         relevance: relevance
+      retired_proposals: Retired proposals
+      retired_proposals_link: "Proposals retired by the author"
+      retired_links:
+        all: All
+        duplicated: Duplicated
+        started: Underway
+        unfeasible: Unfeasible
+        done: Done
+        other: Other
       search_form:
         button: Search
         placeholder: Search proposals...
@@ -305,6 +328,8 @@ en:
       recommendation_two: Any proposal or comment suggesting illegal action will be deleted, as well as those intending to sabotage the debate spaces. Anything else is allowed.
       recommendations_title: Recommendations for creating a proposal
       start_new: Create new proposal
+    notice:
+      retired: Proposal retired
     proposal:
       already_supported: You have already supported this proposal. Share it!
       comments:
@@ -333,6 +358,9 @@ en:
       edit_proposal_link: Edit
       flag: This proposal has been flagged as inappropriate by several users.
       login_to_comment: You must %{signin} or %{signup} to leave a comment.
+      retired_warning: "The author considers this proposal should not receive more supports."
+      retired_warning_link_to_explanation: Read the explanation before voting for it.
+      retired: Proposal retired by the author
       share: Share
     update:
       form:
@@ -490,6 +518,8 @@ en:
           other: "%{count} Spending proposals"
       no_activity: User has no public activity
       private_activity: This user decided to keep the activity list private
+      retire: Retire
+      retired: Retired
   votes:
     agree: I agree
     anonymous: Too many anonymous votes to admit vote %{verify_account}.
