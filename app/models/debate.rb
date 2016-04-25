@@ -38,7 +38,8 @@ class Debate < ActiveRecord::Base
   scope :sort_by_random,           -> { reorder("RANDOM()") }
   scope :sort_by_relevance,        -> { all }
   scope :sort_by_flags,            -> { order(flags_count: :desc, updated_at: :desc) }
-  scope :last_week,            -> { where("created_at >= ?", 7.days.ago)}
+  scope :last_week,                -> { where("created_at >= ?", 7.days.ago)}
+  scope :featured,                 -> { where("featured_at is not null")}
   # Ahoy setup
   visitable # Ahoy will automatically assign visit_id on create
 
@@ -143,6 +144,10 @@ class Debate < ActiveRecord::Base
     comments.
     sort_by_most_voted.
     limit(5)
+  end
+
+  def featured?
+    self.featured_at.present?
   end
 
 end

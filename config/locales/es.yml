@@ -289,9 +289,9 @@ es:
       submit_button: Retirar propuesta
     retire_options:
       duplicated: Duplicada
-      started: Ejecutándose
+      started: En ejecución
       unfeasible: Inviable
-      done: Hecha
+      done: Realizada
       other: Otra
     form:
       geozone: "Ámbito de actuación"
@@ -326,9 +326,9 @@ es:
       retired_links:
         all: Todas
         duplicated: Duplicadas
-        started: Empezadas
+        started: En ejecución
         unfeasible: Inviables
-        done: Hechas
+        done: Realizadas
         other: Otras
       search_form:
         button: Buscar

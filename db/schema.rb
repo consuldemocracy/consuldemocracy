@@ -121,6 +121,7 @@ ActiveRecord::Schema.define(version: 20160422094733) do
     t.integer  "geozone_id"
     t.tsvector "tsv"
     t.string   "comment_kind",                            default: "comment"
+    t.datetime "featured_at"
   end
 
   add_index "debates", ["author_id", "hidden_at"], name: "index_debates_on_author_id_and_hidden_at", using: :btree

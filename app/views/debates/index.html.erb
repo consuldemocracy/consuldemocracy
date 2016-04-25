@@ -29,8 +29,8 @@
         <%= render "shared/featured_open_plenary" %>
       <% end %>
 
-      <% unless @tag_filter || @search_terms %>
-        <%= render "featured_debates_static" %>
+      <% unless @tag_filter || @search_terms || !has_featured? %>
+        <%= render "featured_debates" %>
       <% end %>
 
       <%= render "shared/advanced_search", search_path: debates_path(page: 1) %>

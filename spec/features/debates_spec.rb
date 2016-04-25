@@ -1072,4 +1072,53 @@ feature 'Debates' do
       end
     end
   end
+
+  scenario 'Matk/Unmark a debate as featured' do
+    admin = create(:administrator)
+    login_as(admin.user)
+
+    debate = create(:debate)
+
+    visit debates_path
+    expect(page).to_not have_content 'Featured'
+
+    click_link debate.title
+
+    click_link 'Featured'
+
+    visit debates_path
+    expect(page).to have_content 'Featured'
+    within('#featured-debates') do
+      expect(page).to have_content debate.title
+    end
+
+    visit debate_path(debate)
+    click_link 'Unmark featured'
+
+    expect(page).to_not have_content 'Featured'
+  end
+
+
+  scenario 'Index include featured debates' do
+    admin = create(:administrator)
+    login_as(admin.user)
+
+    debate1 = create(:debate, featured_at: Time.now)
+    debate2 = create(:debate)
+
+    visit debates_path
+    expect(page).to have_content("Featured")
+  end
+
+
+  scenario 'Index do not show featured debates if none is marked as featured' do
+    admin = create(:administrator)
+    login_as(admin.user)
+
+    debate1 = create(:debate)
+    debate2 = create(:debate)
+
+    visit debates_path
+    expect(page).to_not have_content("Featured")
+  end
 end
