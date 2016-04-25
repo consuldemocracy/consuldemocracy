@@ -74,6 +74,7 @@ Rails.application.routes.draw do
     resource :ballot, only: [] do
       post :add, on: :collection
       delete :remove, on: :collection
+      get :preview, on: :collection
     end
   end
 

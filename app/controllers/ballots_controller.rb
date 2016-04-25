@@ -1,6 +1,6 @@
 class BallotsController < ApplicationController
   before_action :load_ballot
-  before_action :load_spending_proposal
+  before_action :load_spending_proposal, only: [:add, :remove]
   skip_authorization_check
 
   def add
@@ -11,6 +11,10 @@ class BallotsController < ApplicationController
   def remove
     ballot_line = @ballot.ballot_lines.where(spending_proposal: @spending_proposal).first
     ballot_line.destroy
+  end
+
+  def preview
+    @ballot = current_user.ballot
   end
 
   private

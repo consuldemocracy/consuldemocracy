@@ -365,6 +365,59 @@ feature 'Spending proposals' do
       expect(page).to have_css("#amount-spent", text: "0")
     end
 
+    scenario "Confirm", :js do
+      user = create(:user, :level_two)
+      california = create(:geozone)
+      new_york = create(:geozone)
+      sp1 = create(:spending_proposal, feasible: true, price: 10000, geozone: nil)
+      sp2 = create(:spending_proposal, feasible: true, price: 20000, geozone: nil)
+      sp3 = create(:spending_proposal, feasible: true, price: 30000, geozone: nil)
+      sp4 = create(:spending_proposal, feasible: true, price: 40000, geozone: california)
+      sp5 = create(:spending_proposal, feasible: true, price: 50000, geozone: california)
+      sp6 = create(:spending_proposal, feasible: true, price: 60000, geozone: new_york)
+
+      login_as(user)
+      visit root_path
+
+      first(:link, "Participatory budgeting").click
+      click_link "Vote proposals of the city"
+
+      add_to_ballot(sp1)
+      add_to_ballot(sp2)
+
+      first(:link, "Participatory budgeting").click
+      click_link california.name
+
+      add_to_ballot(sp4)
+      add_to_ballot(sp5)
+
+      click_link "Revisar mis votos"
+
+      expect(page).to have_content "Confirm your ballot"
+
+      within("#city_wide") do
+        expect(page).to have_content sp1.title
+        expect(page).to have_content sp1.price
+
+        expect(page).to have_content sp2.title
+        expect(page).to have_content sp2.price
+
+        expect(page).to_not have_content sp3.title
+        expect(page).to_not have_content sp3.price
+      end
+
+      within("#district_wide") do
+        expect(page).to have_content sp4.title
+        expect(page).to have_content sp4.price
+
+        expect(page).to have_content sp4.title
+        expect(page).to have_content sp5.price
+
+        expect(page).to_not have_content sp6.title
+        expect(page).to_not have_content sp6.price
+      end
+    end
+
   end
 
 end

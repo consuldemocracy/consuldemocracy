@@ -1,0 +1,13 @@
+<h2>Confirm your ballot</h2>
+
+<div id="city_wide">
+  <p>City Wide</p>
+  <%= render partial: 'spending_proposal',
+             collection: @ballot.spending_proposals.city_wide %>
+</div>
+
+<div id="district_wide">
+  <p>District Wide</p>
+  <%= render partial: 'spending_proposal',
+             collection: @ballot.spending_proposals.district_wide %>
+</div>

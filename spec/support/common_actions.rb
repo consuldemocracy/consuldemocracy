@@ -189,4 +189,10 @@ module CommonActions
     tag_cloud.tags.map(&:name)
   end
 
+  def add_to_ballot(spending_proposal)
+    within("#spending_proposal_#{spending_proposal.id}") do
+      find('.add a').click
+    end
+  end
+
 end
