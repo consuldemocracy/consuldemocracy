@@ -16,7 +16,7 @@ class SpendingProposal < ActiveRecord::Base
   validates :title, presence: true
   validates :author, presence: true
   validates :description, presence: true
-  validates_presence_of :feasible_explanation, if: :valuation_finished?
+  validates_presence_of :feasible_explanation, if: :feasible_explanation_required?
 
   validates :title, length: { in: 4..SpendingProposal.title_max_length }
   validates :description, length: { maximum: SpendingProposal.description_max_length }
@@ -100,6 +100,10 @@ class SpendingProposal < ActiveRecord::Base
     valuation_finished
   end
 
+  def feasible_explanation_required?
+    valuation_finished? && unfeasible?
+  end
+
   def total_votes
     cached_votes_up + physical_votes
   end
@@ -138,5 +142,6 @@ class SpendingProposal < ActiveRecord::Base
   def self.for_summary
     valuation_finished.feasible
   end
+
 
 end
