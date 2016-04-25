@@ -49,8 +49,16 @@ describe SpendingProposal do
       expect(spending_proposal).to be_valid
     end
 
-    it "should not be valid if valuation finished" do
+    it "should be valid if valuation finished and feasible" do
       spending_proposal.feasible_explanation = ""
+      spending_proposal.feasible = true
+      spending_proposal.valuation_finished = true
+      expect(spending_proposal).to be_valid
+    end
+
+    it "should not be valid if valuation finished and unfeasible" do
+      spending_proposal.feasible_explanation = ""
+      spending_proposal.feasible = false
       spending_proposal.valuation_finished = true
       expect(spending_proposal).to_not be_valid
     end
