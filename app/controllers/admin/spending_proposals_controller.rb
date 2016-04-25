@@ -7,7 +7,7 @@ class Admin::SpendingProposalsController < Admin::BaseController
   load_and_authorize_resource
 
   def index
-    @spending_proposals = SpendingProposal.scoped_filter(params, @current_filter).order(created_at: :desc).page(params[:page])
+    @spending_proposals = SpendingProposal.scoped_filter(params, @current_filter).order(cached_votes_up: :desc, created_at: :desc).page(params[:page])
   end
 
   def show

@@ -175,6 +175,10 @@ es:
         no_admin_assigned: Sin admin asignado
         no_valuators_assigned: Sin evaluador
         summary_link: "Resumen"
+        feasibility:
+          feasible: "Viable (%{price})"
+          not_feasible: "Inviable"
+          undefined: "Sin definir"
       show:
         assigned_admin: Administrador asignado
         assigned_valuators: Evaluadores asignados
