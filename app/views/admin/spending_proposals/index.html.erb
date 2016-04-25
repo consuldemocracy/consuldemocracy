@@ -29,6 +29,7 @@
                        label: false,
                        class: "js-submit-on-change" } %>
     </div>
+
     <div class="small-12 medium-3 column">
       <%= select_tag :tag_name,
                      options_for_select(spending_proposal_tags_select_options, params[:tag_name]),
@@ -68,6 +69,9 @@
       </td>
       <td class="small">
         <%= geozone_name(spending_proposal) %>
+      </td>
+      <td class="small">
+        <%= t("admin.spending_proposals.index.feasibility.#{spending_proposal.feasibility}", price: spending_proposal.price) %>
       </td>
     </tr>
   <% end %>
