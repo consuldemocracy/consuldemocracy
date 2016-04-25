@@ -152,4 +152,5 @@ module CommentableActions
     def index_customization
       nil
     end
+
 end

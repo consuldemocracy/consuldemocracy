@@ -7,6 +7,8 @@ es:
       hide: Ocultar
       hide_author: Bloquear al autor
       restore: Volver a mostrar
+      mark_featured: Destacar
+      unmark_featured: Quitar destacado
     activity:
       show:
         action: Acción
