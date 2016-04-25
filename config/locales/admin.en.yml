@@ -172,6 +172,7 @@ en:
         assigned_admin: Assigned administrator
         no_admin_assigned: No admin assigned
         no_valuators_assigned: No valuators assigned
+        summary_link: "Summary"
       show:
         assigned_admin: Assigned administrator
         assigned_valuators: Assigned valuators
@@ -195,6 +196,11 @@ en:
         tags: Tags
         tags_placeholder: "Write the tags you want separated by commas (,)"
         undefined: Undefined
+      summary:
+        title: Summary for feasible and finished investment projects
+        geozone_name: Scope
+        count_for_geozone: Count
+        cost_for_geozone: Cost
     stats:
       show:
         stats_title: Stats

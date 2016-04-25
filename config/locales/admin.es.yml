@@ -172,6 +172,7 @@ es:
         assigned_admin: Administrador asignado
         no_admin_assigned: Sin admin asignado
         no_valuators_assigned: Sin evaluador
+        summary_link: "Resumen"
       show:
         assigned_admin: Administrador asignado
         assigned_valuators: Evaluadores asignados
@@ -195,6 +196,11 @@ es:
         tags: Etiquetas
         tags_placeholder: "Escribe las etiquetas que desees separadas por comas (,)"
         undefined: Sin definir
+      summary:
+        title: Resumen de propuestas viables y finalizadas
+        geozone_name: Ámbito de ciudad
+        count_for_geozone: Número de propuestas
+        cost_for_geozone: Coste total
     stats:
       show:
         stats_title: Estadísticas

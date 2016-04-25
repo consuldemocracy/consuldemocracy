@@ -280,6 +280,7 @@ es:
         submit_button: Guardar cambios
       show_link: Ver propuesta
     form:
+      geozone: "Ámbito de actuación"
       proposal_external_url: Enlace a documentación adicional
       proposal_question: Pregunta de la propuesta
       proposal_question_example_html: Debe ser resumida en una pregunta cuya respuesta sea Sí o No. <em>Ej. '¿Está usted de acuerdo en peatonalizar la calle Mayor?'</em>
@@ -387,6 +388,7 @@ es:
     author_info:
       author_deleted: Usuario eliminado
       forum: Espacio de debate distrital
+    back: Volver
     check: Seleccionar
     check_all: Todos
     check_none: Ninguno

@@ -56,4 +56,13 @@ module SpendingProposalsHelper
       spending_proposal_path(spending_proposal, options)
     end
   end
+
+  def spending_proposal_count_for_geozone(geozone)
+    if geozone.present?
+      geozone.spending_proposals.for_summary.count
+    else
+      SpendingProposal.where(geozone: nil).for_summary.count
+    end
+  end
+
 end

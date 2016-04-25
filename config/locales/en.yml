@@ -280,6 +280,7 @@ en:
         submit_button: Save changes
       show_link: View proposal
     form:
+      geozone: Scope of operation
       proposal_external_url: Link to additional documentation
       proposal_question: Proposal question
       proposal_question_example_html: Must be summarised in one question with a Yes or No answer. <em>E.g. 'Do you agree with the pedestrianisation of Calle Mayor?'</em>
@@ -387,6 +388,7 @@ en:
     author_info:
       author_deleted: User deleted
       forum: District discussion space
+    back: Back
     check: Select
     check_all: All
     check_none: None
