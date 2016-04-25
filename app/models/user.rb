@@ -16,6 +16,7 @@ class User < ActiveRecord::Base
   has_one :organization
   has_one :forum
   has_one :lock
+  has_one :ballot
   has_many :flags
   has_many :identities, dependent: :destroy
   has_many :debates, -> { with_hidden }, foreign_key: :author_id

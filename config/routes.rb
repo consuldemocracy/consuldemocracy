@@ -70,6 +70,11 @@ Rails.application.routes.draw do
       get :welcome, on: :collection
       post :vote, on: :member
     end
+
+    resource :ballot, only: [] do
+      post :add, on: :collection
+      delete :remove, on: :collection
+    end
   end
 
   resources :stats, only: [:index]

@@ -316,4 +316,55 @@ feature 'Spending proposals' do
 
   end
 
+  context "Final Voting" do
+
+    scenario "Add a proposal", :js do
+      user = create(:user, :level_two)
+      sp1 = create(:spending_proposal, feasible: true, price: 10000)
+      sp2 = create(:spending_proposal, feasible: true, price: 20000)
+
+      login_as(user)
+      visit root_path
+
+      first(:link, "Participatory budgeting").click
+      click_link "Vote proposals of the city"
+
+      within("#spending_proposal_#{sp2.id}") do
+        find('.add a').click
+      end
+
+      expect(page).to have_css("#amount-spent", text: "20000")
+
+      within("#spending_proposal_#{sp1.id}") do
+        find('.add a').click
+      end
+
+      expect(page).to have_css("#amount-spent", text: "30000")
+    end
+
+    scenario "Remove a proposal", :js do
+      user = create(:user, :level_two)
+      sp1 = create(:spending_proposal, feasible: true, price: 10000)
+
+      login_as(user)
+      visit root_path
+
+      first(:link, "Participatory budgeting").click
+      click_link "Vote proposals of the city"
+
+      within("#spending_proposal_#{sp1.id}") do
+        find('.add a').click
+      end
+
+      expect(page).to have_css("#amount-spent", text: "10000")
+
+      within("#spending_proposal_#{sp1.id}") do
+        find('.remove a').click
+      end
+
+      expect(page).to have_css("#amount-spent", text: "0")
+    end
+
+  end
+
 end
