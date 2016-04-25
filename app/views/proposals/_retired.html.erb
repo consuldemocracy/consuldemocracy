@@ -1,0 +1,13 @@
+<div class="sidebar-divider"></div>
+<h3 class="sidebar-title"><%= t("proposals.index.retired_proposals") %></h3>
+
+<% if params[:retired].blank? %>
+  <p><%= link_to t("proposals.index.retired_proposals_link"), proposals_path(retired: 'all'), class: "small" %></p>
+<% else %>
+  <div class="sidebar-links">
+    <%= link_to t("proposals.index.retired_links.all"), proposals_path(retired: 'all'), ({class: "small"} unless params[:retired] == 'all') %>
+    <% Proposal::RETIRE_OPTIONS.each do |option| %>
+      <%= link_to t("proposals.index.retired_links.#{option}"), proposals_path(retired: option), ({class: "small"} unless params[:retired] == option) %>
+    <% end %>
+  </div>
+<% end %>

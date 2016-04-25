@@ -22,6 +22,8 @@
             <%= page_entries_info @proposals %>
             <%= t("proposals.index.filter_topic", count: @proposals.size, topic: @tag_filter) %>
           </h2>
+        <% elsif params[:retired].present? %>
+          <h2><%= t("proposals.index.retired_proposals") %>
         <% end %>
       </div>
 
@@ -42,7 +44,7 @@
         </div>
       <% end %>
 
-      <%= render "shared/advanced_search", search_path: proposals_path(page: 1)%>
+      <%= render("shared/advanced_search", search_path: proposals_path(page: 1)) unless params[:retired].present? %>
 
       <%= render 'shared/order_links', i18n_namespace: "proposals.index" %>
 
@@ -57,10 +59,13 @@
     <div class="small-12 medium-3 column">
       <aside class="margin-bottom">
         <%= link_to t("proposals.index.start_proposal"), new_proposal_path, class: 'button expanded' %>
-        <%= render "shared/tag_cloud", taggable: 'proposal' %>
-        <%= render 'categories' %>
-        <%= render 'geozones' %>
-        <%= render 'popular' %>
+        <% if params[:retired].blank? %>
+            <%= render "shared/tag_cloud", taggable: 'proposal' %>
+            <%= render 'categories' %>
+            <%= render 'geozones' %>
+            <%= render 'popular' %>
+          <% end %>
+          <%= render 'retired' %>
       </aside>
     </div>
 
