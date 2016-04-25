@@ -8,6 +8,8 @@ class SpendingProposalsController < ApplicationController
 
   feature_flag :spending_proposals
 
+  invisible_captcha only: [:create, :update], honeypot: :subtitle
+
   respond_to :html, :js
 
   def index

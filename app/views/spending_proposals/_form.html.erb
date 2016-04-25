@@ -7,6 +7,8 @@
       <%= f.text_field :title, maxlength: SpendingProposal.title_max_length, placeholder: t("spending_proposals.form.title"), label: false %>
     </div>
 
+    <%= f.invisible_captcha :subtitle %>
+
     <div class="ckeditor small-12 column">
       <%= f.label :description, t("spending_proposals.form.description") %>
       <%= f.cktext_area :description, maxlength: SpendingProposal.description_max_length, ckeditor: { language: I18n.locale }, label: false %>

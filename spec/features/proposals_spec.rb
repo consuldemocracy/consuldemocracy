@@ -145,6 +145,29 @@ feature 'Proposals' do
     expect(page).to have_content I18n.l(Proposal.last.created_at.to_date)
   end
 
+  scenario 'Create with invisible_captcha honeypot field' do
+    # Display the honeypot so capybara can fill it as a spammer would do
+    allow(InvisibleCaptcha).to receive(:visual_honeypots).and_return(true)
+
+    author = create(:user)
+    login_as(author)
+
+    visit new_proposal_path
+    fill_in 'proposal_title', with: 'I am a bot'
+    fill_in 'proposal_subtitle', with: 'This is the honeypot field'
+    fill_in 'proposal_question', with: 'This is a question'
+    fill_in 'proposal_summary', with: 'This is the summary'
+    fill_in 'proposal_description', with: 'This is the description'
+    fill_in 'proposal_external_url', with: 'http://google.com/robots.txt'
+    fill_in 'proposal_responsible_name', with: 'Some other robot'
+    check 'proposal_terms_of_service'
+
+    click_button 'Create proposal'
+
+    expect(page).to_not have_content 'Proposal created successfully.'
+    expect(current_path).to eq(root_path)
+  end
+
   scenario 'Responsible name is stored for anonymous users' do
     author = create(:user)
     login_as(author)
