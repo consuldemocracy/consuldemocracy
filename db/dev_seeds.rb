@@ -266,17 +266,24 @@ puts "Creating Spending Proposals"
 
 tags = Faker::Lorem.words(10)
 
-(1..30).each do |i|
+(1..60).each do |i|
   geozone = Geozone.reorder("RANDOM()").first
   author = User.reorder("RANDOM()").first
   description = "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>"
+  feasible_explanation = "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>"
+  valuation_finished = [true, false].sample
+  feasible = [true, false].sample
   spending_proposal = SpendingProposal.create!(author: author,
                               title: Faker::Lorem.sentence(3).truncate(60),
                               external_url: Faker::Internet.url,
                               description: description,
                               created_at: rand((Time.now - 1.week) .. Time.now),
                               geozone: [geozone, nil].sample,
+                              feasible: feasible,
+                              feasible_explanation: feasible_explanation,
+                              valuation_finished: valuation_finished,
                               tag_list: tags.sample(3).join(','),
+                              price: rand(1000000),
                               terms_of_service: "1")
   puts "    #{spending_proposal.title}"
 end

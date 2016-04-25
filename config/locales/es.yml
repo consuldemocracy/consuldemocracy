@@ -362,6 +362,7 @@ es:
       to: 'Hasta'
     author_info:
       author_deleted: Usuario eliminado
+    back: Volver
     check: Seleccionar
     check_all: Todos
     check_none: Ninguno

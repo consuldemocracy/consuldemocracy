@@ -1,4 +1,8 @@
-<h2><%= t("admin.spending_proposals.index.title") %></h2>
+<%= link_to t("admin.spending_proposals.index.summary_link"),
+            summary_admin_spending_proposals_path,
+            class: "button float-right" %>
+
+<h2 class="inline-block"><%= t("admin.spending_proposals.index.title") %></h2>
 
 <div class="row margin">
   <%= form_tag admin_spending_proposals_path, method: :get, enforce_utf8: false do %>

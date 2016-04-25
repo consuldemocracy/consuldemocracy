@@ -425,4 +425,47 @@ feature 'Admin spending proposals' do
 
   end
 
+  context 'Summary' do
+
+    scenario "Diplays summary for every geozone" do
+      california = create(:geozone)
+      new_york   = create(:geozone)
+      washington = create(:geozone)
+
+      proposal1 = create(:spending_proposal, title: "Build a highway",    price: '10000000', geozone: nil,        feasible: true, valuation_finished: true)
+      proposal1 = create(:spending_proposal, title: "Build a university", price: '5000000',  geozone: nil,        feasible: true, valuation_finished: true)
+      proposal3 = create(:spending_proposal, title: "Build a hospital",   price: '1000000',  geozone: california, feasible: true, valuation_finished: true)
+      proposal4 = create(:spending_proposal, title: "Build a school",     price: '500000',   geozone: california, feasible: true, valuation_finished: true)
+      proposal5 = create(:spending_proposal, title: "Plant more trees",   price: '30000',    geozone: new_york,   feasible: true, valuation_finished: true)
+      proposal6 = create(:spending_proposal, title: "Destroy the seas",   price: '999999',   geozone: washington, feasible: false, valuation_finished: true)
+
+      visit admin_spending_proposals_path
+
+      click_link "Summary"
+
+      expect(page).to have_content "Summary for feasible and finished investment projects"
+
+      within("#geozone_all_city") do
+        expect(page).to have_css(".name",            text: "All city")
+        expect(page).to have_css(".proposals-count", text: 2)
+        expect(page).to have_css(".total-price",     text: "$15,000,000")
+      end
+
+      within("#geozone_#{california.id}") do
+        expect(page).to have_css(".name",            text: california.name)
+        expect(page).to have_css(".proposals-count", text: 2)
+        expect(page).to have_css(".total-price",     text: "$1,500,000")
+      end
+
+      within("#geozone_#{new_york.id}") do
+        expect(page).to have_css(".name",            text: new_york.name)
+        expect(page).to have_css(".proposals-count", text: 1)
+        expect(page).to have_css(".total-price",     text: '$30,000')
+      end
+
+      expect(page).to_not have_content washington.name
+    end
+
+  end
+
 end

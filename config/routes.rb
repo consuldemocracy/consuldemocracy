@@ -135,6 +135,8 @@ Rails.application.routes.draw do
         patch :assign_admin
         patch :assign_valuators
       end
+
+      get :summary, on: :collection
     end
 
     resources :comments, only: :index do
