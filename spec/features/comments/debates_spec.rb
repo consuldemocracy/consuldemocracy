@@ -32,7 +32,7 @@ feature 'Commenting debates' do
     expect(page).to have_content first_child.body
     expect(page).to have_content second_child.body
 
-    expect(page).to have_link "Go back to #{debate.title}", debate_path(debate)
+    expect(page).to have_link "Go back to #{debate.title}", href: debate_path(debate)
   end
 
   scenario 'Collapsable comments', :js do
