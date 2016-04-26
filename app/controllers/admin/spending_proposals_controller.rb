@@ -32,7 +32,7 @@ class Admin::SpendingProposalsController < Admin::BaseController
   end
 
   def summary
-    @spending_proposals = SpendingProposal.for_summary.group(:geozone).sum(:price)
+    @spending_proposals = SpendingProposal.group(:geozone).sum(:price)
   end
 
   private

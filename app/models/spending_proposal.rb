@@ -139,8 +139,12 @@ class SpendingProposal < ActiveRecord::Base
     self.responsible_name = author.try(:document_number) if author.try(:document_number).present?
   end
 
-  def self.for_summary
+  def self.finished_and_feasible
     valuation_finished.feasible
+  end
+
+  def self.finished_and_unfeasible
+    valuation_finished.unfeasible
   end
 
 
