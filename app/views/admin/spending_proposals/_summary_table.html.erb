@@ -13,19 +13,19 @@
         <%= geozone.present? ? geozone.name : t("geozones.none") %>
       </td>
       <td class="finished-and-feasible-count">
-        <%= spending_proposal_count_for_geozone("finished_and_feasible", geozone) %>
+        <%= spending_proposal_count_for_geozone("finished_and_feasible", geozone, second_scope) %>
       </td>
       <td class="finished-and-unfeasible-count">
-        <%= spending_proposal_count_for_geozone("finished_and_unfeasible", geozone) %>
+        <%= spending_proposal_count_for_geozone("finished_and_unfeasible", geozone, second_scope) %>
       </td>
       <td class="finished-count">
-        <%= spending_proposal_count_for_geozone("valuation_finished", geozone) %>
+        <%= spending_proposal_count_for_geozone("valuation_finished", geozone, second_scope) %>
       </td>
       <td class="in-evaluation-count">
-        <%= spending_proposal_count_for_geozone("valuating", geozone) %>
+        <%= spending_proposal_count_for_geozone("valuating", geozone, second_scope) %>
       </td>
       <td class="total-count">
-        <%= spending_proposal_count_for_geozone("all", geozone) %>
+        <%= spending_proposal_count_for_geozone("all", geozone, second_scope) %>
       </td>
       <td class="total-price text-center">
         <%= number_to_currency(price) %>
