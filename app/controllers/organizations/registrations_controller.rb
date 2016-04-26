@@ -1,5 +1,7 @@
 class Organizations::RegistrationsController < Devise::RegistrationsController
 
+  invisible_captcha only: [:create], honeypot: :address, scope: :user, on_timestamp_spam: :redirect_timestamp_spam
+
   def new
     super do |user|
       user.build_organization

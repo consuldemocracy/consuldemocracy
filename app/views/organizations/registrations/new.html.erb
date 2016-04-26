@@ -17,6 +17,8 @@
 
       <%= f.text_field  :phone_number,  placeholder: t("devise_views.organizations.registrations.new.phone_number_label") %>
 
+      <%= f.invisible_captcha :address %>
+
       <%= f.password_field :password, autocomplete: "off",
                            placeholder: t("devise_views.organizations.registrations.new.password_label") %>
 
