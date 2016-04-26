@@ -107,6 +107,41 @@ feature 'Debates' do
     expect(page).to have_content I18n.l(Debate.last.created_at.to_date)
   end
 
+  scenario 'Create with invisible_captcha honeypot field' do
+    author = create(:user)
+    login_as(author)
+
+    visit new_debate_path
+    fill_in 'debate_title', with: 'I am a bot'
+    fill_in 'debate_subtitle', with: 'This is a honeypot field'
+    fill_in 'debate_description', with: 'This is the description'
+    check 'debate_terms_of_service'
+
+    click_button 'Start a debate'
+
+    expect(page.status_code).to eq(200)
+    expect(page.html).to be_empty
+    expect(current_path).to eq(debates_path)
+  end
+
+  scenario 'Create debate too fast' do
+    allow(InvisibleCaptcha).to receive(:timestamp_threshold).and_return(Float::INFINITY)
+
+    author = create(:user)
+    login_as(author)
+
+    visit new_debate_path
+    fill_in 'debate_title', with: 'I am a bot'
+    fill_in 'debate_description', with: 'This is the description'
+    check 'debate_terms_of_service'
+
+    click_button 'Start a debate'
+
+    expect(page).to have_content 'Sorry, that was too quick! Please resubmit'
+
+    expect(current_path).to eq(proposals_path)
+  end
+
   scenario 'Errors on create' do
     author = create(:user)
     login_as(author)

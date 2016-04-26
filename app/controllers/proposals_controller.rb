@@ -2,6 +2,7 @@ class ProposalsController < ApplicationController
   include CommentableActions
   include FlagActions
 
+
   before_action :parse_search_terms, only: [:index, :suggest]
   before_action :parse_advanced_search_terms, only: :index
   before_action :parse_tag_filter, only: :index
@@ -10,7 +11,7 @@ class ProposalsController < ApplicationController
   before_action :load_geozones, only: [:edit, :map, :summary]
   before_action :authenticate_user!, except: [:index, :show, :map, :summary]
 
-  invisible_captcha only: [:create, :update], honeypot: :subtitle
+  invisible_captcha only: [:create, :update], honeypot: :subtitle, on_timestamp_spam: :redirect_timestamp_spam
 
   has_orders %w{hot_score confidence_score created_at relevance}, only: :index
   has_orders %w{most_voted newest oldest}, only: :show
@@ -95,4 +96,9 @@ class ProposalsController < ApplicationController
         @resources = @resources.where('proposals.id NOT IN (?)', @featured_proposals.map(&:id))
       end
     end
+
+    def redirect_timestamp_spam
+      redirect_to root_path, notice: InvisibleCaptcha.timestamp_error_message
+    end
+
 end

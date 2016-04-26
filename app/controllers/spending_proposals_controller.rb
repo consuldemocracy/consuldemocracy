@@ -8,7 +8,7 @@ class SpendingProposalsController < ApplicationController
 
   feature_flag :spending_proposals
 
-  invisible_captcha only: [:create, :update], honeypot: :subtitle
+  invisible_captcha only: [:create, :update], honeypot: :subtitle, on_timestamp_spam: :redirect_timestamp_spam
 
   respond_to :html, :js
 
@@ -70,6 +70,10 @@ class SpendingProposalsController < ApplicationController
       end
       target = target.search(params[:search]) if params[:search].present?
       target
+    end
+
+    def redirect_timestamp_spam
+      redirect_to root_path, notice: InvisibleCaptcha.timestamp_error_message
     end
 
 end

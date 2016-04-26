@@ -110,6 +110,40 @@ feature 'Spending proposals' do
     expect(page).to have_content('All city')
   end
 
+  scenario 'Create with invisible_captcha honeypot field' do
+    login_as(author)
+
+    visit new_spending_proposal_path
+    fill_in 'spending_proposal_title', with: 'I am a bot'
+    fill_in 'spending_proposal_subtitle', with: 'This is the honeypot'
+    fill_in 'spending_proposal_description', with: 'This is the description'
+    select  'All city', from: 'spending_proposal_geozone_id'
+    check 'spending_proposal_terms_of_service'
+
+    click_button 'Create'
+
+    expect(page.status_code).to eq(200)
+    expect(page.html).to be_empty
+    expect(current_path).to eq(spending_proposals_path)
+  end
+
+  scenario 'Create spending proposal too fast' do
+    allow(InvisibleCaptcha).to receive(:timestamp_threshold).and_return(Float::INFINITY)
+
+    login_as(author)
+
+    visit new_spending_proposal_path
+    fill_in 'spending_proposal_title', with: 'I am a bot'
+    fill_in 'spending_proposal_description', with: 'This is the description'
+    select  'All city', from: 'spending_proposal_geozone_id'
+    check 'spending_proposal_terms_of_service'
+
+    click_button 'Create'
+
+    expect(page).to have_content 'Sorry, that was too quick! Please resubmit'
+    expect(current_path).to eq(proposals_path)
+  end
+
   scenario 'Create notice' do
     login_as(author)
 
