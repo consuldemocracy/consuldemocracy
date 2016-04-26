@@ -362,7 +362,7 @@ en:
       to: 'To'
     author_info:
       author_deleted: User deleted
-    back: Back
+    back: Go back
     check: Select
     check_all: All
     check_none: None

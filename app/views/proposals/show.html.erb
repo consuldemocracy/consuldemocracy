@@ -10,10 +10,8 @@
   <section class="proposal-show">
     <div id="<%= dom_id(@proposal) %>" class="row">
       <div class="small-12 medium-9 column">
-        <%= link_to :back, class: "back" do %>
-          <span class="icon-angle-left"></span>
-          <%= t("proposals.show.back_link") %>
-        <% end %>
+        <%= render "shared/back_link" %>
+
         <% if current_user && @proposal.editable_by?(current_user) %>
           <%= link_to edit_proposal_path(@proposal), class: 'edit-proposal button success small float-right' do %>
             <span class="icon-edit"></span>

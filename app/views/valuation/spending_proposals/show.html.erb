@@ -1,6 +1,4 @@
-<%= link_to :back, class: 'back' do %>
-  <span class="icon-angle-left"></span> <%= t("valuation.spending_proposals.show.back") %>
-<% end %>
+<%= render "shared/back_link" %>
 
 <h2><%= t("valuation.spending_proposals.show.heading") %> <%= @spending_proposal.id %> </h2>
 <h1><%= @spending_proposal.title %></h1>
