@@ -29,7 +29,7 @@
 
   <% reason = spending_proposal.reason_for_not_being_votable_by(current_user) %>
 
-  <% if reason.present? && !added_to_ballot?(@ballot, spending_proposal) %>
+  <% if false #reason.present? && !added_to_ballot?(@ballot, spending_proposal) %>
     <div class="no-supports-allowed" style='display:none'>
       <p>
         <%= t("votes.spending_proposals.#{reason}",
