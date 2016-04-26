@@ -162,6 +162,7 @@ Rails.application.routes.draw do
 
     resources :valuators, only: [:index, :create] do
       get :search, on: :collection
+      get :summary, on: :collection
     end
 
     resources :verifications, controller: :verifications, only: :index do

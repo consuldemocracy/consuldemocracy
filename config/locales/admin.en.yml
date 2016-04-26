@@ -83,6 +83,15 @@ en:
         email_placeholder: Search user by email
         search: Search
         user_not_found: User not found
+      summary:
+        title: Valuator summary for investment projects
+        valuator_name: Valuator
+        finished_and_feasible_count: Finished and feasible
+        finished_and_unfeasible_count: Finished and unfeasible
+        finished_count: Finished
+        in_evaluation_count: In evaluation
+        total_count: Total
+        cost: Cost
     officials:
       edit:
         back: Back
@@ -170,7 +179,8 @@ en:
         assigned_admin: Assigned administrator
         no_admin_assigned: No admin assigned
         no_valuators_assigned: No valuators assigned
-        summary_link: "Summary"
+        summary_link: "Investment project summary"
+        valuator_summary_link: "Valuator summary"
         feasibility:
           feasible: "Feasible (%{price})"
           not_feasible: "Not feasible"
