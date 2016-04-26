@@ -76,7 +76,6 @@ es:
         other: "%{count} votos"
         zero: Sin votos
     edit:
-      back_link: Volver
       editing: Editar debate
       form:
         submit_button: Guardar cambios
@@ -109,7 +108,6 @@ es:
       start_debate: Empieza un debate
       title: Debates
     new:
-      back_link: Volver
       form:
         submit_button: Empieza un debate
       info: Si lo que quieres es hacer una propuesta, esta es la sección incorrecta, entra en %{info_link}.
@@ -123,7 +121,6 @@ es:
       start_new: Empezar un debate
     show:
       author_deleted: Usuario eliminado
-      back_link: Volver
       comments:
         one: 1 Comentario
         other: "%{count} Comentarios"
@@ -249,7 +246,6 @@ es:
       form:
         submit_button: Crear propuesta
     edit:
-      back_link: Volver
       editing: Editar propuesta
       form:
         submit_button: Guardar cambios
@@ -296,7 +292,6 @@ es:
       top: Top semanal
       top_link_proposals: Propuestas más apoyadas por categoría
     new:
-      back_link: Volver
       form:
         submit_button: Crear propuesta
       more_info: "¿Cómo funcionan las propuestas ciudadanas?"
@@ -323,7 +318,6 @@ es:
       total_percent: 100%
     show:
       author_deleted: Usuario eliminado
-      back_link: Volver
       code: 'Código de la propuesta:'
       comments:
         one: 1 Comentario
@@ -437,7 +431,6 @@ es:
       recommendation_two: Cualquier propuesta o comentario que implique acciones ilegales será eliminada.
       recommendations_title: Cómo crear una propuesta de gasto
       start_new: Crear una propuesta de gasto
-      back_link: Volver
     show:
       author_deleted: Usuario eliminado
       code: 'Código de la propuesta:'
