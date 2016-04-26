@@ -423,6 +423,20 @@ feature 'Admin spending proposals' do
       end
     end
 
+    scenario "Errors on update" do
+      spending_proposal = create(:spending_proposal)
+      create(:geozone, name: "Barbate")
+
+      visit admin_spending_proposal_path(spending_proposal)
+      click_link 'Edit'
+
+      fill_in 'spending_proposal_title', with: ''
+
+      click_button 'Update'
+
+      expect(page).to have_content "can't be blank"
+    end
+
   end
 
   context 'Summary' do
