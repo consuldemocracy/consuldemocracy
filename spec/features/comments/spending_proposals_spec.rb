@@ -32,7 +32,7 @@ feature 'Commenting spending_proposals' do
     expect(page).to have_content first_child.body
     expect(page).to have_content second_child.body
 
-    expect(page).to have_link "Go back to #{spending_proposal.title}", spending_proposal_path(spending_proposal)
+    expect(page).to have_link "Go back to #{spending_proposal.title}", href: spending_proposal_path(spending_proposal)
   end
 
   scenario 'Collapsable comments', :js do
