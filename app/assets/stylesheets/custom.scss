@@ -10,7 +10,9 @@
 // 07. Surveys
 // 08. Spending proposals
 // 09. Featured
+// 10. Processes
 // 11. Spending proposals votes
+//
 
 // 01. Global styles
 // - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -62,6 +64,56 @@ blockquote.featured {
   .text-right {
     text-align: left;
   }
+}
+
+.panel.white {
+  background: white;
+}
+
+.jumbo {
+  background: $highlight;
+
+  @media (min-width: $small-breakpoint) {
+    padding: rem-calc(24) 0;
+  }
+
+  h1, p {
+    color: $highlight-color;
+  }
+}
+
+.jumbo-survey {
+  background: #33DADF;
+  border-bottom: 1px solid #33DADF;
+
+  @media (min-width: $small-breakpoint) {
+    padding-top: $line-height;
+  }
+
+  h1, h2, .back, .icon-angle-left, .p, a {
+    color: black;
+  }
+}
+
+.jumbo-featured {
+  background: $featured;
+  border-bottom: 1px solid $featured;
+
+  @media (min-width: $small-breakpoint) {
+    padding-top: $line-height;
+  }
+
+  h1, h2, .back, .icon-angle-left, .p, a {
+    color: black;
+  }
+}
+
+.geozone a.featured-link {
+  display: block;
+  font-size: $base-font-size;
+  margin-bottom: $line-height;
+  text-align: center;
+  width: 100%;
 }
 
 // 02. Header
@@ -124,6 +176,14 @@ blockquote.featured {
     &.social-share-button-google_plus:hover {
       color: #CE3E26;
     }
+  }
+}
+
+.jumbo-brand {
+  background: $brand;
+
+  h1, p, a {
+    color: white;
   }
 }
 
@@ -958,7 +1018,12 @@ table.age-groups {
     background: white;
     color: $budget;
   }
+}
 
+.investment-project .supports .total-supports.no-button,
+.investment-project-show .supports .total-supports.no-button {
+  display: block;
+  margin-top: $line-height*1.5;
 }
 
 // 09. Featured
@@ -991,6 +1056,24 @@ table.age-groups {
         background: white;
         color: $text;
         margin-top: $line-height;
+      }
+    }
+
+    &.featured-brand {
+      background: $brand;
+
+      @media (min-width: $medium-breakpoint) {
+        background: $brand image-url('featured_open_plenary.jpg') no-repeat;
+        background-position: 90% 0;
+      }
+
+      .button {
+        background: white;
+        color: $brand;
+      }
+
+      h2, p {
+        color: white;
       }
     }
 
@@ -1030,8 +1113,8 @@ table.age-groups {
       background: $budget;
 
       @media (min-width: $medium-breakpoint) {
-        background: $budget image-url('featured_spending_proposals_home.png') no-repeat;
-        background-position: 90% 0;
+        background: $budget image-url('featured_spending_proposals.png') no-repeat;
+        background-position: bottom right;
       }
 
       h2, p {
@@ -1085,11 +1168,109 @@ table.age-groups {
   }
 }
 
+.featured-open-plenary {
+  background: $brand;
+  padding: $line-height/2;
+
+  @media (min-width: $small-breakpoint) {
+    background: $brand image-url('featured_open_plenary_small.jpg') no-repeat;
+    background-position: bottom right;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  h2, h3, a {
+    color: white;
+    margin: 0;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  a:hover h2, a:hover h3 {
+    color: white !important;
+    text-decoration: none;
+  }
+}
+
 .process {
-  min-height: $line-height*12;
+  min-height: $line-height*15;
 
   p {
     margin: $line-height 0;
+  }
+}
+
+// 10. Processes
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+.processes {
+  background: $brand;
+
+  @media (min-width: $medium-breakpoint) {
+    background: $brand image-url('processes_featured.jpg') no-repeat;
+    background-position: 80%;
+    height: $line-height*14;
+  }
+
+  h1 {
+    border-left: 2px solid white;
+    padding-left: $line-height;
+  }
+
+  h1, h2, p {
+    color: white
+  }
+
+  .button {
+    background: white;
+    color: $brand;
+  }
+
+  .label {
+    background: none;
+    padding: 0;
+    text-transform: uppercase;
+  }
+}
+
+.processes-show {
+  @extend .processes;
+
+  @media (min-width: $medium-breakpoint) {
+    background: $brand;
+    height: auto;
+  }
+
+  @media (min-width: $medium-breakpoint) {
+    img {
+      position: absolute;
+    }
+  }
+}
+
+.supports-open-plenary-title {
+  color: white !important;
+  font-size: rem-calc(12);
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.supports-open-plenary-number {
+  font-size: rem-calc(18) !important;
+  font-weight: bold;
+  padding: $line-height/2;
+}
+
+.plenaries {
+
+  h3 {
+    margin-bottom: 0;
+  }
+
+  [class^="icon-"] {
+    color: $text-light;
   }
 }
 
@@ -1146,5 +1327,33 @@ table.age-groups {
     position: absolute;
     right: 12px;
     top: -24px;
+  }
+}
+
+// News page
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+.news-page {
+
+  .row.expanded {
+    background: $brand;
+
+    h1, h2 {
+      color: white;
+    }
+
+    h2 {
+      font-weight: normal;
+
+      span {
+        font-weight: bold;
+      }
+    }
+  }
+
+  .row.expanded.banner {
+    background: #FFDC00;
+    margin-bottom: rem-calc(-48);
+    padding-top: $line-height;
   }
 }

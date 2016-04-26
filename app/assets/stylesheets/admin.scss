@@ -358,6 +358,18 @@ body.admin {
   .investment-projects-list.medium-9 {
     width: 100%;
   }
+
+  .investment-projects-summary {
+
+    th {
+      text-align: center;
+      width: 33%;
+
+      &:first-child {
+        text-align: left;
+      }
+    }
+  }
 }
 
 .admin-content .select-geozone {

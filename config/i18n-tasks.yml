@@ -134,6 +134,10 @@ ignore_unused:
   - 'spending_proposals.index.orders.*'
   - 'proposals.index.search_form.*'
   - 'spending_proposals.index.search_form.*'
+  - 'debates.show.comments*'
+  - 'debates.show.questions*'
+  - 'comments_helper.*'
+  - 'questions_helper.*'
   - 'notifications.index.comments_on*'
   - 'notifications.index.replies_to*'
   - 'helpers.page_entries_info.*' # kaminari

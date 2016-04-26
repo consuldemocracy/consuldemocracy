@@ -3,7 +3,6 @@ en:
   account:
     show:
       change_credentials_link: Change my credentials
-      delegation: Delegate your votes
       email_on_comment_label: Notify me by email when someone comments on my proposals or debates
       email_on_comment_reply_label: Notify me by email when someone replies to my comments
       erase_account_link: Erase my account
@@ -57,11 +56,22 @@ en:
     select_order: Sort by
     show:
       return_to_commentable: 'Go back to '
+  questions:
+    form:
+      leave_comment: Leave your question
   comments_helper:
     comment_button: Publish comment
     comment_link: Comment
     reply_button: Publish reply
     reply_link: Reply
+  questions_helper:
+    comment_button: Publish question
+    comment_link: Question
+    reply_button: Publish reply
+    reply_link: Reply
+  comment_kinds:
+    comment: Comment
+    question: Question
   debates:
     create:
       form:
@@ -83,6 +93,8 @@ en:
         submit_button: Save changes
       show_link: View debate
     form:
+      comment_kind_instructions: Comment kind
+      comment_kind_label: Choose the comment kind
       debate_text: Initial debate text
       debate_title: Debate title
       tags_instructions: Tag this debate.
@@ -131,7 +143,12 @@ en:
         one: 1 comment
         other: "%{count} comments"
         zero: No comments
+      questions:
+        one: 1 question
+        other: "%{count} questions"
+        zero: No questions
       comments_title: Comments
+      questions_title: Questions
       edit_debate_link: Edit
       flag: This debate has been flagged as inappropriate by several users.
       login_to_comment: You must %{signin} or %{signup} to leave a comment.
@@ -162,7 +179,7 @@ en:
       not_delegating: "You are not delegating your votes"
       title: Delegate your votes
     show:
-      delegate_button: "Delegate on %{forum}"
+      delegate_button: "The delegation will be activated in the next voting."
       sign_in_to_delegate: "Sign in to delegate"
       verify_accont_to_delegate: "Verify your account to delegate"
       no_votes: This Forum has not supported any investment proposals
@@ -262,7 +279,22 @@ en:
       form:
         submit_button: Save changes
       show_link: View proposal
+    retire_form:
+      title: Retire proposal
+      warning: "If you retire the proposal it would still accept supports, but will be removed from the main list and a message will be visible to all users stating that the author considers the proposal should not be supported anymore"
+      retired_reason_label: Reason to retire the proposal
+      retired_reason_blank: Choose an option
+      retired_explanation_label: Explanation
+      retired_explanation_placeholder: Explain shortly why you think this proposal should not receive more supports
+      submit_button: Retire proposal
+    retire_options:
+      duplicated: Duplicated
+      started: Already underway
+      unfeasible: Unfeasible
+      done: Done
+      other: Other
     form:
+      geozone: Scope of operation
       proposal_external_url: Link to additional documentation
       proposal_question: Proposal question
       proposal_question_example_html: Must be summarised in one question with a Yes or No answer. <em>E.g. 'Do you agree with the pedestrianisation of Calle Mayor?'</em>
@@ -289,6 +321,15 @@ en:
         hot_score: most active
         most_commented: most commented
         relevance: relevance
+      retired_proposals: Retired proposals
+      retired_proposals_link: "Proposals retired by the author"
+      retired_links:
+        all: All
+        duplicated: Duplicated
+        started: Underway
+        unfeasible: Unfeasible
+        done: Done
+        other: Other
       search_form:
         button: Search
         placeholder: Search proposals...
@@ -307,13 +348,13 @@ en:
       form:
         submit_button: Create proposal
       more_info: How do citizen proposals work?
-      participatory_budget: Do you want to make an investment project?
-      participatory_budget_info_html: If you want to create an investment project, go to <strong><u>Participatory Budgets</u></strong>.
       recommendation_one: Do not use capital letters for the proposal title or for whole sentences. On the internet, this is considered shouting. And nobody likes being shouted at.
       recommendation_three: Enjoy this space and the voices that fill it. It belongs to you too.
       recommendation_two: Any proposal or comment suggesting illegal action will be deleted, as well as those intending to sabotage the debate spaces. Anything else is allowed.
       recommendations_title: Recommendations for creating a proposal
       start_new: Create new proposal
+    notice:
+      retired: Proposal retired
     proposal:
       already_supported: You have already supported this proposal. Share it!
       comments:
@@ -342,6 +383,9 @@ en:
       edit_proposal_link: Edit
       flag: This proposal has been flagged as inappropriate by several users.
       login_to_comment: You must %{signin} or %{signup} to leave a comment.
+      retired_warning: "The author considers this proposal should not receive more supports."
+      retired_warning_link_to_explanation: Read the explanation before voting for it.
+      retired: Proposal retired by the author
       share: Share
     update:
       form:
@@ -458,7 +502,7 @@ en:
       districts: Districts
       districts_link: Select a district
       in_two_minutes: All information about participatory budgets
-      title: "You already can support investment projetcs!"
+      title: "You already can vote investment projetcs!"
       text_first_html: "Desde hoy <strong>15 de mayo</strong> hasta el día <strong>30 de junio</strong> puedes votar las propuestas de inversión de los Presupuestos participativos 2016."
       text_second_html: "Puedes votar todas las propuestas que quieras hasta alcanzar el presupuesto destinado para el ámbito de <strong>toda la ciudad</strong> y del <strong>distrito</strong> que hayas seleccionado."
     new:
@@ -526,6 +570,8 @@ en:
           other: "%{count} Spending proposals"
       no_activity: User has no public activity
       private_activity: This user decided to keep the activity list private
+      retire: Retire
+      retired: Retired
   votes:
     agree: I agree
     anonymous: Too many anonymous votes to admit vote %{verify_account}.
@@ -543,6 +589,7 @@ en:
       not_verified: Only verified users can vote on proposals; %{verify_account}.
       unfeasible: Unfeasible proposal.
       organization: Organisations are not permitted to vote.
+      not_voting_allowed: Voting phase is closed
       no_city_supports_available: You have already used all your city-wide supports.
       no_district_supports_available: You have already used all your district-wide supports.
       different_district_assigned: You already supported other district proposals.
@@ -562,17 +609,17 @@ en:
       description: If the proposal is accepted by the majority, the City Council accepts it as its own and it gets done.
       title: It gets done
     featured:
+      open_plenary:
+        link: See proposals and questions
+        text: Read proposals and questions to any political party and support the most you like.
+        title: Open plenary
       page_title: Featured
-      process:
-        link: View results
-        text: The survey's results are already available.
-        title: Reshuffle Plaza de España
       proposals:
         link: See proposals
         text: Create your own proposals and supports those of other citizens.
         title: Citizen proposals
       spending_proposals:
-        link: Support proposals
+        link: See results of proposals preselection
         text: You decide how to invest 60 million euros to your city.
         title: Participatory budgeting
     more_information: More information about this page
@@ -599,6 +646,7 @@ en:
   omniauth:
     finish_signup:
       title: "Additional details"
+      username_warning: "Due to a change in the way we interact with social networks, it is possible that your username now appears as 'already in use'. If that is your case, please choose a different username."
     twitter:
       sign_in: "Sign in with Twitter"
       sign_up: "Sign up with Twitter"

@@ -28,7 +28,7 @@
           <%= l @debate.created_at.to_date %>
           <span class="bullet">&nbsp;&bull;&nbsp;</span>
           <span class="icon-comments"></span>&nbsp;
-          <%= link_to t("debates.show.comments", count: @debate.comments_count), "#comments" %>
+          <%= link_to comment_count(@debate), "#comments" %>
           <span class="bullet">&nbsp;&bull;&nbsp;</span>
           <span class="js-flag-actions">
             <%= render 'debates/flag_actions', debate: @debate %>
@@ -56,7 +56,7 @@
         <h3><%= t("debates.show.share") %></h3>
         <div class="social-share-full">
           <%= social_share_button_tag("#{@debate.title} #{setting['twitter_hashtag']}") %>
-          <% if browser.mobile? %>
+          <% if browser.device.mobile? %>
             <a href="whatsapp://send?text=<%= @debate.title %> <%= debate_url(@debate) %>" data-action="share/whatsapp/share">
               <span class="icon-whatsapp whatsapp"></span>
             </a>

@@ -185,7 +185,7 @@ feature 'Spending proposals' do
 
   end
 
-  scenario 'Create notice' do
+  xscenario 'Create notice' do
     login_as(author)
 
     visit new_spending_proposal_path
@@ -200,7 +200,7 @@ feature 'Spending proposals' do
     expect(page).to_not have_link('Create spending proposal', href: new_spending_proposal_path)
   end
 
-  scenario 'Captcha is required for proposal creation' do
+  xscenario 'Captcha is required for proposal creation' do
     login_as(author)
 
     visit new_spending_proposal_path
@@ -221,7 +221,7 @@ feature 'Spending proposals' do
     expect(page).to have_content 'Investment project created successfully'
   end
 
-  scenario 'Errors on create' do
+  xscenario 'Errors on create' do
     login_as(author)
 
     visit new_spending_proposal_path

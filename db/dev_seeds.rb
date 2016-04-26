@@ -13,17 +13,23 @@ Setting.create(key: 'max_votes_for_debate_edit', value: '1000')
 Setting.create(key: 'max_votes_for_proposal_edit', value: '1000')
 Setting.create(key: 'proposal_code_prefix', value: 'MAD')
 Setting.create(key: 'votes_for_proposal_success', value: '100')
+Setting.create(key: 'comments_body_max_length', value: '1000')
 
+Setting.create(key: 'twitter_handle', value: '@consul_dev')
+Setting.create(key: 'twitter_hashtag', value: '#consul_dev')
+Setting.create(key: 'facebook_handle', value: 'consul')
+Setting.create(key: 'youtube_handle', value: 'consul')
 Setting.create(key: 'blog_url', value: '/blog')
 Setting.create(key: 'url', value: 'http://localhost:3000')
 Setting.create(key: 'org_name', value: 'Consul')
 Setting.create(key: 'place_name', value: 'City')
 Setting.create(key: 'feature.debates', value: "true")
 Setting.create(key: 'feature.spending_proposals', value: "true")
+Setting.create(key: 'feature.spending_proposal_features.voting_allowed', value: "true")
 Setting.create(key: 'feature.twitter_login', value: "true")
 Setting.create(key: 'feature.facebook_login', value: "true")
 Setting.create(key: 'feature.google_login', value: "true")
-
+Setting.create(key: 'per_page_code', value: "")
 Setting.create(key: 'comments_body_max_length', value: '1000')
 
 puts "Creating Geozones"
@@ -293,14 +299,21 @@ tags = Faker::Lorem.words(10)
   author = User.reorder("RANDOM()").reject {|a| a.organization? }.first
   description = "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>"
   forum = ["true", "false"].sample
+  feasible_explanation = "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>"
+  valuation_finished = [true, false].sample
+  feasible = [true, false].sample
   spending_proposal = SpendingProposal.create!(author: author,
                               title: Faker::Lorem.sentence(3).truncate(60),
                               external_url: Faker::Internet.url,
                               description: description,
                               created_at: rand((Time.now - 1.week) .. Time.now),
                               geozone: [geozone, nil].sample,
+                              feasible: feasible,
+                              feasible_explanation: feasible_explanation,
+                              valuation_finished: valuation_finished,
                               tag_list: tags.sample(3).join(','),
                               forum: forum,
+                              price: rand(1000000),
                               terms_of_service: "1")
   puts "    #{spending_proposal.title}"
 end
@@ -341,4 +354,45 @@ forums = ["Fuencarral - El Pardo", "Moncloa - Aravaca", "Tetuán", "Chamberí", 
 users = User.unverified.reorder("RANDOM()").reject {|u| u.organization? }[0..20]
 forums.each_with_index do |forum, i|
   Forum.create(name: forum, user: users[i])
+end
+
+puts "Open plenary debate"
+open_plenary = Debate.create!(author: User.reorder("RANDOM()").first,
+                        title: "Pregunta en el Pleno Abierto",
+                        created_at: Date.parse("20-04-2016"),
+                        description: "<p>Pleno Abierto preguntas</p>",
+                        terms_of_service: "1",
+                        tag_list: 'plenoabierto',
+                        comment_kind: 'question')
+puts "#{open_plenary.title}"
+
+puts "Open plenary questions"
+(1..30).each do |i|
+  author = User.reorder("RANDOM()").first
+  cached_votes_up = rand(1000)
+  cached_votes_down = rand(1000)
+  cached_votes_total =  cached_votes_up + cached_votes_down
+  Comment.create!(user: author,
+                  created_at: rand(open_plenary.created_at .. Time.now),
+                  commentable: open_plenary,
+                  body: Faker::Lorem.sentence,
+                  cached_votes_up: cached_votes_up,
+                  cached_votes_down: cached_votes_down,
+                  cached_votes_total: cached_votes_total)
+end
+
+puts "Open plenary proposal"
+(1..30).each do |i|
+  description = "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>"
+  proposal = Proposal.create!(author: User.reorder("RANDOM()").first,
+                              title: Faker::Lorem.sentence(3).truncate(60),
+                              question: Faker::Lorem.sentence(3),
+                              summary: Faker::Lorem.sentence(3),
+                              responsible_name: Faker::Name.name,
+                              description: description,
+                              created_at: Date.parse("20-04-2016"),
+                              terms_of_service: "1",
+                              tag_list: 'plenoabierto',
+                              cached_votes_up: rand(1000))
+  puts "#{proposal.title}"
 end

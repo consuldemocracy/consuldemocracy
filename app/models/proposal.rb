@@ -12,6 +12,8 @@ class Proposal < ActiveRecord::Base
   acts_as_paranoid column: :hidden_at
   include ActsAsParanoidAliases
 
+  RETIRE_OPTIONS = %w(duplicated started unfeasible done other)
+
   belongs_to :author, -> { with_hidden }, class_name: 'User', foreign_key: 'author_id'
   belongs_to :geozone
   has_many :comments, as: :commentable
@@ -26,6 +28,7 @@ class Proposal < ActiveRecord::Base
   validates :description, length: { maximum: Proposal.description_max_length }
   validates :question, length: { in: 10..Proposal.question_max_length }
   validates :responsible_name, length: { in: 6..Proposal.responsible_name_max_length }
+  validates :retired_reason, inclusion: {in: RETIRE_OPTIONS, allow_nil: true}
 
   validates :terms_of_service, acceptance: { allow_nil: false }, on: :create
 
@@ -42,6 +45,8 @@ class Proposal < ActiveRecord::Base
   scope :sort_by_relevance,        -> { all }
   scope :sort_by_flags,            -> { order(flags_count: :desc, updated_at: :desc) }
   scope :last_week,                -> { where("proposals.created_at >= ?", 7.days.ago)}
+  scope :retired,                  -> { where.not(retired_at: nil) }
+  scope :not_retired,              -> { where(retired_at: nil) }
 
   def to_param
     "#{id}-#{title}".parameterize
@@ -105,6 +110,10 @@ class Proposal < ActiveRecord::Base
     user && user.level_two_or_three_verified?
   end
 
+  def retired?
+    retired_at.present?
+  end
+
   def register_vote(user, vote_value)
     if votable_by?(user)
       vote_by(voter: user, vote: vote_value)
@@ -140,6 +149,22 @@ class Proposal < ActiveRecord::Base
 
   def self.votes_needed_for_success
     Setting['votes_for_proposal_success'].to_i
+  end
+
+  def open_plenary?
+    tag_list.include?('plenoabierto') &&
+    created_at >= Date.parse("18-04-2016").beginning_of_day
+  end
+
+  def self.open_plenary_winners
+    tagged_with('plenoabierto').
+    by_date_range(open_plenary_dates).
+    sort_by_confidence_score.
+    limit(5)
+  end
+
+  def self.open_plenary_dates
+    Date.parse("18-04-2016").beginning_of_day..Date.parse("21-04-2016").end_of_day
   end
 
   protected

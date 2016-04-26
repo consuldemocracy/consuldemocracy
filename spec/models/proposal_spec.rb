@@ -741,4 +741,51 @@ describe Proposal do
     end
   end
 
+
+  describe "#open_plenary?" do
+    it "returns false when it does not have the open plenary tag" do
+      proposal = create(:proposal, tag_list: 'health')
+      expect(proposal.open_plenary?).to eq false
+    end
+
+    it "returns false when it was created before the open plenary start" do
+      proposal = create(:proposal, created_at: Date.parse("01-01-2016"))
+      expect(proposal.open_plenary?).to eq false
+    end
+
+    it "returns true when open it is an open plenary proposal" do
+      proposal1 = create(:proposal, tag_list: 'plenoabierto',        created_at: Date.parse("18-04-2016"))
+      proposal2 = create(:proposal, tag_list: 'plenoabierto, health', created_at: Date.parse("20-04-2016"))
+
+      expect(proposal1.open_plenary?).to eq true
+      expect(proposal2.open_plenary?).to eq true
+    end
+  end
+
+  describe "retired" do
+    before(:all) do
+      @proposal1 = create(:proposal)
+      @proposal2 = create(:proposal, retired_at: Time.now)
+    end
+
+    it "retired? is true" do
+      expect(@proposal1.retired?).to eq false
+      expect(@proposal2.retired?).to eq true
+    end
+
+    it "scope retired" do
+      retired = Proposal.retired
+
+      expect(retired.size).to eq(1)
+      expect(retired.first).to eq(@proposal2)
+    end
+
+    it "scope not_retired" do
+      not_retired = Proposal.not_retired
+
+      expect(not_retired.size).to eq(1)
+      expect(not_retired.first).to eq(@proposal1)
+    end
+  end
+
 end

@@ -257,10 +257,6 @@ a {
   @include back;
 }
 
-.panel.white {
-  background: white;
-}
-
 // 02. Header
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -356,44 +352,6 @@ header {
       background: white;
       box-shadow: 0 7px 0 white, 0 14px 0 white;
     }
-  }
-}
-
-.jumbo {
-  background: $highlight;
-
-  @media (min-width: $small-breakpoint) {
-    padding: rem-calc(24) 0;
-  }
-
-  h1, p {
-    color: $highlight-color;
-  }
-}
-
-.jumbo-survey {
-  background: #33DADF;
-  border-bottom: 1px solid #33DADF;
-
-  @media (min-width: $small-breakpoint) {
-    padding-top: $line-height;
-  }
-
-  h1, h2, .back, .icon-angle-left, .p, a {
-    color: black;
-  }
-}
-
-.jumbo-featured {
-  background: $featured;
-  border-bottom: 1px solid $featured;
-
-  @media (min-width: $small-breakpoint) {
-    padding-top: $line-height;
-  }
-
-  h1, h2, .back, .icon-angle-left, .p, a {
-    color: black;
   }
 }
 
@@ -587,7 +545,7 @@ footer {
 // 04. Tags
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
-.tags a , .tag-cloud a, .categories a, .geozone a {
+.tags a , .tag-cloud a, .categories a, .geozone a, .sidebar-links a {
   background: #ececec;
   border-radius: rem-calc(6);
   color: $text;
@@ -610,14 +568,6 @@ footer {
     background: $highlight;
     color: $link-hover;
   }
-}
-
-.geozone a.featured-link {
-  display: block;
-  font-size: $base-font-size;
-  margin-bottom: $line-height;
-  text-align: center;
-  width: 100%;
 }
 
 h3.sidebar-title {
@@ -1637,6 +1587,13 @@ table {
         margin: rem-calc(6) 0;
         padding: rem-calc(6);
 
+        [class^="icon-arrow"] {
+          font-size: rem-calc(18);
+          left: -20px;
+          position: absolute;
+          top: 0;
+        }
+
         .divider {
           color: $text-light;
         }
@@ -1773,9 +1730,12 @@ table {
     border: 0;
 
     td {
-      padding-left: $line-height*1.5;
       position: relative;
-      word-break: break-all;
+
+      &:first-child {
+        padding-left: $line-height*1.5;
+        width: 80%;
+      }
 
       &:before {
         color: $brand;
@@ -1786,19 +1746,31 @@ table {
       }
     }
 
-    &.activity-comments td:before {
+    &.activity-comments td:first-child:before {
       content: "e";
       top: 18px;
     }
 
-    &.activity-debates td:before {
+    &.activity-debates td:first-child:before {
       content: "i";
       top: 14px;
     }
 
-    &.activity-proposals td:before {
-      content: "h";
-      top: 18px;
+    &.activity-proposals {
+
+      td:first-child:before {
+        content: "h";
+        top: 18px;
+      }
+
+      .retired {
+        text-decoration: line-through;
+      }
+    }
+
+    &.activity-investment-projects td:first-child:before {
+      content: "\53";
+      top: 10px;
     }
   }
 }

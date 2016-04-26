@@ -7,6 +7,8 @@ es:
       hide: Ocultar
       hide_author: Bloquear al autor
       restore: Volver a mostrar
+      mark_featured: Destacar
+      unmark_featured: Quitar destacado
     activity:
       show:
         action: Acción
@@ -54,6 +56,7 @@ es:
       hidden_users: Usuarios bloqueados
       incomplete_verifications: Verificaciones incompletas
       moderators: Moderadores
+      newsletter: Envío de Newsletters
       valuators: Evaluadores
       officials: Cargos públicos
       organizations: Organizaciones
@@ -70,6 +73,10 @@ es:
         email_placeholder: Buscar usuario por email
         search: Buscar
         user_not_found: Usuario no encontrado
+    newsletters:
+      index:
+        title: Envío de newsletters
+        button: Descargar zip con lista de usuarios
     valuators:
       index:
         title: Evaluadores
@@ -155,6 +162,7 @@ es:
       index:
         geozone_filter_all: Todos los ámbitos de actuación
         administrator_filter_all: Todos los administradores
+        valuator_filter_all: Todos los evaluadores
         tags_filter_all: Todas las etiquetas
         filters:
           valuation_open: Abiertas
@@ -162,16 +170,23 @@ es:
           managed: Gestionando
           valuating: En evaluación
           valuation_finished: Evaluación finalizada
+          all: Todas
         title: Propuestas de inversión para presupuestos participativos
         assigned_admin: Administrador asignado
         no_admin_assigned: Sin admin asignado
         no_valuators_assigned: Sin evaluador
+        summary_link: "Resumen"
+        feasibility:
+          feasible: "Viable (%{price})"
+          not_feasible: "Inviable"
+          undefined: "Sin definir"
       show:
         assigned_admin: Administrador asignado
         assigned_valuators: Evaluadores asignados
         back: Volver
         classification: Clasificación
         heading: Propuesta de inversión %{id}
+        edit: Editar
         edit_classification: Editar clasificación
         association_name: Asociación
         by: Autor
@@ -188,6 +203,11 @@ es:
         tags: Etiquetas
         tags_placeholder: "Escribe las etiquetas que desees separadas por comas (,)"
         undefined: Sin definir
+      summary:
+        title: Resumen de propuestas viables y finalizadas
+        geozone_name: Ámbito de ciudad
+        count_for_geozone: Número de propuestas
+        cost_for_geozone: Coste total
     stats:
       show:
         stats_title: Estadísticas
@@ -207,6 +227,7 @@ es:
           user_level_two: Usuarios de nivel dos
           users: Usuarios
           verified_users: Usuarios verificados
+          verified_users_who_didnt_vote_proposals: Usuarios verificados que no han votado propuestas
           visits: Visitas
           votes: Votos
         spending_proposals_title: Propuestas de inversión

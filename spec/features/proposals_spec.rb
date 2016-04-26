@@ -152,6 +152,20 @@ feature 'Proposals' do
     expect(page).to have_content I18n.l(Proposal.last.created_at.to_date)
   end
 
+  scenario 'Create (predefined tag in url)' do
+    author = create(:user)
+    login_as(author)
+
+    visit new_proposal_path(tag: "open-plenary")
+    fill_in_proposal
+    click_button 'Create proposal'
+
+    expect(page).to have_content 'Proposal created successfully.'
+    within("#tags") do
+      expect(page).to have_content "open-plenary"
+    end
+  end
+
   scenario 'Responsible name is stored for anonymous users' do
     author = create(:user)
     login_as(author)
@@ -381,7 +395,7 @@ feature 'Proposals' do
     end
   end
 
-  context "Geozones" do
+  context 'Geozones' do
 
     scenario "Default whole city" do
       author = create(:user)
@@ -434,6 +448,100 @@ feature 'Proposals' do
       end
     end
 
+  end
+
+  context 'Retired proposals' do
+    scenario 'Retire' do
+      proposal = create(:proposal)
+      login_as(proposal.author)
+
+      visit user_path(proposal.author)
+      within("#proposal_#{proposal.id}") do
+        click_link 'Retire'
+      end
+      expect(current_path).to eq(retire_form_proposal_path(proposal))
+
+      select 'Duplicated', from: 'proposal_retired_reason'
+      fill_in 'proposal_retired_explanation', with: 'There are three other better proposals with the same subject'
+      click_button "Retire proposal"
+
+      expect(page).to have_content "Proposal retired"
+
+      visit proposal_path(proposal)
+
+      expect(page).to have_content proposal.title
+      expect(page).to have_content 'Proposal retired by the author'
+      expect(page).to have_content 'Duplicated'
+      expect(page).to have_content 'There are three other better proposals with the same subject'
+    end
+
+    scenario 'Fields are mandatory' do
+      proposal = create(:proposal)
+      login_as(proposal.author)
+
+      visit retire_form_proposal_path(proposal)
+
+      click_button 'Retire proposal'
+
+      expect(page).to_not have_content 'Proposal retired'
+      expect(page).to have_content "can't be blank", count: 2
+    end
+
+    scenario 'Index do not list retired proposals by default' do
+      create_featured_proposals
+      not_retired = create(:proposal)
+      retired = create(:proposal, retired_at: Time.now)
+
+      visit proposals_path
+
+      expect(page).to have_selector('#proposals .proposal', count: 1)
+      within('#proposals') do
+        expect(page).to have_content not_retired.title
+        expect(page).to_not have_content retired.title
+      end
+    end
+
+    scenario 'Index has a link to retired proposals list' do
+      create_featured_proposals
+      not_retired = create(:proposal)
+      retired = create(:proposal, retired_at: Time.now)
+
+      visit proposals_path
+
+      expect(page).to_not have_content retired.title
+      click_link 'Proposals retired by the author'
+
+      expect(page).to have_content retired.title
+      expect(page).to_not have_content not_retired.title
+    end
+
+    scenario 'Retired proposals index interface elements' do
+      visit proposals_path(retired: 'all')
+
+      expect(page).to_not have_content 'Advanced search'
+      expect(page).to_not have_content 'Categories'
+      expect(page).to_not have_content 'Districts'
+    end
+
+    scenario 'Retired proposals index has links to filter by retired_reason' do
+      unfeasible = create(:proposal, retired_at: Time.now, retired_reason: 'unfeasible')
+      duplicated = create(:proposal, retired_at: Time.now, retired_reason: 'duplicated')
+
+      visit proposals_path(retired: 'all')
+
+      expect(page).to have_content unfeasible.title
+      expect(page).to have_content duplicated.title
+      expect(page).to have_link 'Duplicated'
+      expect(page).to have_link 'Underway'
+      expect(page).to have_link 'Unfeasible'
+      expect(page).to have_link 'Done'
+      expect(page).to have_link 'Other'
+
+      click_link 'Unfeasible'
+
+      expect(page).to have_content unfeasible.title
+      expect(page).to_not have_content duplicated.title
+    end
   end
 
   scenario 'Update should not be posible if logged user is not the author' do

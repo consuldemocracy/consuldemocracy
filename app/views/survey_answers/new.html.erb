@@ -3,8 +3,8 @@
   <%= render "shared/social_media_meta_tags_plaza_espana" %>
 <% end %>
 
-<div class="expanded jumbo-survey">
-  <div class="row no-margin-top padding">
+<div class="expanded jumbo-survey no-margin-top">
+  <div class="row">
     <div class="small-12 medium-8 column">
       <%= link_to "/processes_plaza_espana", class: "left back" do %>
         <i class="icon-angle-left left"></i>
@@ -12,8 +12,9 @@
       <% end %>
 
       <h1><%= t("pages.processes.process_2.title") %></h1>
-      <h3>La encuesta ha finalizado. Próximamente publicaremos los resultados. Entretanto, más abajo puedes leer las preguntas que se realizaron en la encuesta.</h3>
-      <p>Puedes <a href="/processes_plaza_espana">ver toda la información relacionada con el proceso</a>, y mucha información útil sobre las preguntas del cuestionario.</p>
+      <h3>La encuesta ha finalizado. Más abajo puedes leer las preguntas que se realizaron en la encuesta.</h3>
+      <p>También puedes <a href="/processes_plaza_espana">leer toda la información relacionada con el proceso</a>, y mucha información útil sobre las preguntas del cuestionario.</p>
+      <%= link_to "Ver los resultados de la encuesta", page_path('encuesta-plaza-espana-resultados'), class: "button" %>
     </div>
     <div class="small-12 medium-4 column text-center margin-top">
       <h3>¡Comparte esta encuesta!</h3>

@@ -169,6 +169,12 @@ feature 'Users' do
 
         expect(current_path).to eq(finish_signup_path)
 
+        expect(page).to have_field('user_username', with: 'manuela')
+
+        click_button 'Register'
+
+        expect(current_path).to eq(do_finish_signup_path)
+
         fill_in 'user_username', with: 'manuela2'
         click_button 'Register'
 

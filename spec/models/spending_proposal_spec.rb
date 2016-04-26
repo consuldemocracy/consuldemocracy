@@ -47,6 +47,28 @@ describe SpendingProposal do
     end
   end
 
+  describe "#feasible_explanation" do
+    it "should be valid if valuation not finished" do
+      spending_proposal.feasible_explanation = ""
+      spending_proposal.valuation_finished = false
+      expect(spending_proposal).to be_valid
+    end
+
+    it "should be valid if valuation finished and feasible" do
+      spending_proposal.feasible_explanation = ""
+      spending_proposal.feasible = true
+      spending_proposal.valuation_finished = true
+      expect(spending_proposal).to be_valid
+    end
+
+    it "should not be valid if valuation finished and unfeasible" do
+      spending_proposal.feasible_explanation = ""
+      spending_proposal.feasible = false
+      spending_proposal.valuation_finished = true
+      expect(spending_proposal).to_not be_valid
+    end
+  end
+
   describe "dossier info" do
     describe "#feasibility" do
       it "can be feasible" do
@@ -302,6 +324,18 @@ describe SpendingProposal do
         expect(district_sp.reason_for_not_being_votable_by(user)).to eq(:organization)
       end
 
+      it "rejects votes when voting is not allowed (via admin setting)" do
+        Setting["feature.spending_proposal_features.voting_allowed"] = nil
+        expect(city_sp.reason_for_not_being_votable_by(user)).to eq(:not_voting_allowed)
+        expect(district_sp.reason_for_not_being_votable_by(user)).to eq(:not_voting_allowed)
+      end
+
+      it "accepts valid votes when voting is allowed" do
+        Setting["feature.spending_proposal_features.voting_allowed"] = true
+        expect(city_sp.reason_for_not_being_votable_by(user)).to be_nil
+        expect(district_sp.reason_for_not_being_votable_by(user)).to be_nil
+      end
+
       it "rejects city wide votes if no votes left for the user"  do
         user.city_wide_spending_proposals_supported_count = 0
         expect(city_sp.reason_for_not_being_votable_by(user)).to eq(:no_city_supports_available)
@@ -390,15 +424,110 @@ describe SpendingProposal do
         expect(SpendingProposal.sort_by_confidence_score.third).to  eq least_voted2
         expect(SpendingProposal.sort_by_confidence_score.fourth).to  eq least_voted
       end
-
     end
   end
 
   describe "responsible_name" do
+    let(:user) { create(:user, document_number: "123456") }
+    let!(:spending_proposal) { create(:spending_proposal, author: user) }
+
     it "gets updated with the document_number" do
-      u = create(:user, document_number: "123456")
-      sp = create(:spending_proposal, author: u)
-      expect(sp.responsible_name).to eq("123456")
+      expect(spending_proposal.responsible_name).to eq("123456")
+    end
+
+    it "does not get updated if the user is erased" do
+      user.erase
+      expect(user.document_number).to be_blank
+      spending_proposal.touch
+      expect(spending_proposal.responsible_name).to eq("123456")
+    end
+  end
+
+  describe "total votes" do
+    it "takes into account physical votes in addition to web votes" do
+      sp = create(:spending_proposal)
+
+      sp.register_vote(create(:user, :level_two), true)
+      expect(sp.total_votes).to eq(1)
+
+      sp.physical_votes = 10
+      expect(sp.total_votes).to eq(11)
+    end
+
+    it "takes into account delegated votes in addition to web votes" do
+      forum = create(:forum)
+      sp = create(:spending_proposal)
+      user = create(:user, :level_two)
+      represented_user = create(:user, representative: forum)
+
+      sp.register_vote(user, true)
+      expect(sp.total_votes).to eq(1)
+
+      sp.register_vote(forum.user, true)
+      expect(sp.total_votes).to eq(2)
+    end
+
+    it "does not take into account forum votes" do
+      forum = create(:forum)
+      sp = create(:spending_proposal)
+
+      sp.register_vote(forum.user, true)
+      expect(sp.total_votes).to eq(0)
+    end
+  end
+
+  describe "#delegated_votes" do
+    it "counts delegated votes" do
+      forum = create(:forum)
+      user1 = create(:user, representative: forum)
+      user2 = create(:user, representative: forum)
+      sp = create(:spending_proposal)
+
+      sp.register_vote(forum.user, true)
+      expect(sp.delegated_votes).to eq(2)
+    end
+
+    it "does not count delegated votes if user has also voted" do
+      forum = create(:forum)
+      user = create(:user, :level_two, representative: forum)
+      sp = create(:spending_proposal)
+
+      sp.register_vote(forum.user, true)
+      sp.register_vote(user, true)
+
+      expect(sp.delegated_votes).to eq(0)
+    end
+
+    it "does not count forum votes" do
+      forum = create(:forum)
+      sp = create(:spending_proposal)
+
+      sp.register_vote(forum.user, true)
+      expect(sp.delegated_votes).to eq(0)
+    end
+  end
+
+  describe "#for_summary" do
+    it "returns only feasible and valuation finished proposals" do
+      sp1 = create(:spending_proposal, feasible: true, valuation_finished: true)
+      sp2 = create(:spending_proposal, feasible: true, valuation_finished: true)
+      sp3 = create(:spending_proposal, feasible: false, valuation_finished: false)
+
+      expect(SpendingProposal.for_summary).to include(sp1)
+      expect(SpendingProposal.for_summary).to include(sp2)
+      expect(SpendingProposal.for_summary).to_not include(sp3)
+    end
+
+    it "does not return unfeasible proposals" do
+      sp = create(:spending_proposal, feasible: false, valuation_finished: true)
+
+      expect(SpendingProposal.for_summary).to_not include(sp)
+    end
+
+    it "does not return proposals pending valuation" do
+      sp = create(:spending_proposal, feasible: true, valuation_finished: false)
+
+      expect(SpendingProposal.for_summary).to_not include(sp)
     end
   end
 

@@ -19,6 +19,7 @@ class SpendingProposal < ActiveRecord::Base
   validates :title, presence: true
   validates :author, presence: true
   validates :description, presence: true
+  validates_presence_of :feasible_explanation, if: :feasible_explanation_required?
 
   validates :title, length: { in: 4..SpendingProposal.title_max_length }
   validates :description, length: { maximum: 10000 }
@@ -111,8 +112,28 @@ class SpendingProposal < ActiveRecord::Base
     valuation_finished
   end
 
+  def feasible_explanation_required?
+    valuation_finished? && unfeasible?
+  end
+
   def total_votes
-    cached_votes_up
+    cached_votes_up + physical_votes + delegated_votes - forum_votes
+  end
+
+  def delegated_votes
+    count = 0
+    representative_voters.each do |voter|
+      count += voter.forum.represented_users.select { |u| !u.voted_for?(self) }.count
+    end
+    return count
+  end
+
+  def representative_voters
+    Vote.representative_votes.for_spending_proposals(self).collect(&:voter)
+  end
+
+  def forum_votes
+    Vote.representative_votes.for_spending_proposals(self).count
   end
 
   def code
@@ -125,6 +146,7 @@ class SpendingProposal < ActiveRecord::Base
   end
 
   def reason_for_not_being_votable_by(user)
+    return :not_voting_allowed if Setting["feature.spending_proposal_features.voting_allowed"].blank?
     return :not_logged_in unless user
     return :not_verified  unless user.can?(:vote, SpendingProposal)
     return :unfeasible    if unfeasible?
@@ -175,7 +197,12 @@ class SpendingProposal < ActiveRecord::Base
   end
 
   def set_responsible_name
-    self.responsible_name = author.try(:document_number)
+    self.responsible_name = author.try(:document_number) if author.try(:document_number).present?
   end
+
+  def self.for_summary
+    valuation_finished.feasible
+  end
+
 
 end

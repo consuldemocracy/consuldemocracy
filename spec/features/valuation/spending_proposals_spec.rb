@@ -37,6 +37,21 @@ feature 'Valuation spending proposals' do
     expect(page).to_not have_content(spending_proposal2.title)
   end
 
+  scenario 'Index orders spending proposals by votes' do
+    spending_proposal10 = create(:spending_proposal, cached_votes_up: 10)
+    spending_proposal100 = create(:spending_proposal, cached_votes_up: 100)
+    spending_proposal1 = create(:spending_proposal, cached_votes_up: 1)
+
+    spending_proposal1.valuators << @valuator
+    spending_proposal10.valuators << @valuator
+    spending_proposal100.valuators << @valuator
+
+    visit valuation_spending_proposals_path
+
+    expect(spending_proposal100.title).to appear_before(spending_proposal10.title)
+    expect(spending_proposal10.title).to appear_before(spending_proposal1.title)
+  end
+
   scenario 'Index shows assignments info' do
     spending_proposal1 = create(:spending_proposal)
     spending_proposal2 = create(:spending_proposal)
@@ -145,6 +160,7 @@ feature 'Valuation spending proposals' do
                                   feasible_explanation: 'It is impossible',
                                   administrator: administrator)
       spending_proposal.valuators << [@valuator, valuator2]
+      create(:vote, votable: spending_proposal)
 
       visit valuation_spending_proposals_path
 
@@ -159,6 +175,7 @@ feature 'Valuation spending proposals' do
       expect(page).to have_content('Not feasible')
       expect(page).to have_content('It is impossible')
       expect(page).to have_content('Ana (ana@admins.org)')
+      expect(page).to have_content("Votes: 1")
 
       within('#assigned_valuators') do
         expect(page).to have_content('Rachel (rachel@valuators.org)')

@@ -23,16 +23,35 @@ class ProposalsController < ApplicationController
   end
 
   def index_customization
-    @featured_proposals = Proposal.all.sort_by_confidence_score.limit(2) if (!@advanced_search_terms && @search_terms.blank? && @tag_filter.blank?)
+    if params[:retired].present?
+      @resources = @resources.retired
+      @resources = @resources.where(retired_reason: params[:retired]) if Proposal::RETIRE_OPTIONS.include?(params[:retired])
+    else
+      @resources = @resources.not_retired
+    end
+
+    @featured_proposals = Proposal.all.sort_by_confidence_score.limit(2) if (!@advanced_search_terms && @search_terms.blank? && @tag_filter.blank? && params[:retired].blank?)
     if @featured_proposals.present?
       set_featured_proposal_votes(@featured_proposals)
       @resources = @resources.where('proposals.id NOT IN (?)', @featured_proposals.map(&:id))
     end
+    hide_advanced_search if custom_search?
   end
 
   def vote
     @proposal.register_vote(current_user, 'yes')
     set_proposal_votes(@proposal)
+  end
+
+  def retire
+    if valid_retired_params? && @proposal.update(retired_params.merge(retired_at: Time.now))
+      redirect_to proposal_path(@proposal), notice: t('proposals.notice.retired')
+    else
+      render action: :retire_form
+    end
+  end
+
+  def retire_form
   end
 
   def vote_featured
@@ -51,12 +70,30 @@ class ProposalsController < ApplicationController
       params.require(:proposal).permit(:title, :question, :summary, :description, :external_url, :video_url, :responsible_name, :tag_list, :terms_of_service, :captcha, :captcha_key, :geozone_id)
     end
 
+    def retired_params
+      params.require(:proposal).permit(:retired_reason, :retired_explanation)
+    end
+
+    def valid_retired_params?
+      @proposal.errors.add(:retired_reason, I18n.t('errors.messages.blank')) if params[:proposal][:retired_reason].blank?
+      @proposal.errors.add(:retired_explanation, I18n.t('errors.messages.blank')) if params[:proposal][:retired_explanation].blank?
+      @proposal.errors.empty?
+    end
+
     def resource_model
       Proposal
     end
 
     def set_featured_proposal_votes(proposals)
       @featured_proposals_votes = current_user ? current_user.proposal_votes(proposals) : {}
+    end
+
+    def custom_search?
+      params[:custom_search].present?
+    end
+
+    def hide_advanced_search
+      @advanced_search_terms = nil
     end
 
 end

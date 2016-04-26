@@ -143,12 +143,59 @@ feature 'Admin spending proposals' do
 
     end
 
+    scenario "Filtering by valuator", :js do
+      user = create(:user)
+      valuator = create(:valuator, user: user, description: 'Valuator 1')
+
+      spending_proposal = create(:spending_proposal, title: "Realocate visitors")
+      spending_proposal.valuators << valuator
+
+      create(:spending_proposal, title: "Destroy the city")
+
+      visit admin_spending_proposals_path
+      expect(page).to have_link("Realocate visitors")
+      expect(page).to have_link("Destroy the city")
+
+      select "Valuator 1", from: "valuator_id"
+
+      expect(page).to have_content('There is 1 investment project')
+      expect(page).to_not have_link("Destroy the city")
+      expect(page).to have_link("Realocate visitors")
+
+      select "All valuators", from: "valuator_id"
+
+      expect(page).to have_content('There are 2 investment projects')
+      expect(page).to have_link("Destroy the city")
+      expect(page).to have_link("Realocate visitors")
+
+      select "Valuator 1", from: "valuator_id"
+      expect(page).to have_content('There is 1 investment project')
+      click_link("Realocate visitors")
+      click_link("Back")
+
+      expect(page).to have_content('There is 1 investment project')
+      expect(page).to_not have_link("Destroy the city")
+      expect(page).to have_link("Realocate visitors")
+
+      click_link("Realocate visitors")
+      click_on("Edit classification")
+      expect(page).to have_button("Update")
+      click_on("Back")
+      expect(page).to_not have_button("Update")
+      click_on("Back")
+
+      expect(page).to have_content('There is 1 investment project')
+      expect(page).to_not have_link("Destroy the city")
+      expect(page).to have_link("Realocate visitors")
+    end
+
     scenario "Current filter is properly highlighted" do
       filters_links = {'valuation_open' => 'Open',
                        'without_admin' => 'Without assigned admin',
                        'managed' => 'Managed',
                        'valuating' => 'Under valuation',
-                       'valuation_finished' => 'Valuation finished'}
+                       'valuation_finished' => 'Valuation finished',
+                       'all' => 'All'}
 
       visit admin_spending_proposals_path
 
@@ -206,6 +253,10 @@ feature 'Admin spending proposals' do
       visit admin_spending_proposals_path(filter: 'valuation_finished')
 
       expect(page).to_not have_content("Ongoing valuation")
+      expect(page).to have_content("Old idea")
+
+      visit admin_spending_proposals_path(filter: 'all')
+      expect(page).to have_content("Ongoing valuation")
       expect(page).to have_content("Old idea")
     end
 
@@ -284,6 +335,24 @@ feature 'Admin spending proposals' do
 
   context "Edit" do
 
+    scenario "Change title, description or geozone" do
+      spending_proposal = create(:spending_proposal)
+      create(:geozone, name: "Barbate")
+
+      visit admin_spending_proposal_path(spending_proposal)
+      click_link 'Edit'
+
+      fill_in 'spending_proposal_title', with: 'Potatoes'
+      fill_in 'spending_proposal_description', with: 'Carrots'
+      select 'Barbate', from: 'spending_proposal[geozone_id]'
+
+      click_button 'Update'
+
+      expect(page).to have_content 'Potatoes'
+      expect(page).to have_content 'Carrots'
+      expect(page).to have_content 'Barbate'
+    end
+
     scenario "Add administrator" do
       spending_proposal = create(:spending_proposal)
       administrator = create(:administrator, user: create(:user, username: 'Marta', email: 'marta@admins.org'))
@@ -357,6 +426,63 @@ feature 'Admin spending proposals' do
         expect(page).to have_content 'Refugees'
         expect(page).to have_content 'Solidarity'
       end
+    end
+
+    scenario "Errors on update" do
+      spending_proposal = create(:spending_proposal)
+      create(:geozone, name: "Barbate")
+
+      visit admin_spending_proposal_path(spending_proposal)
+      click_link 'Edit'
+
+      fill_in 'spending_proposal_title', with: ''
+
+      click_button 'Update'
+
+      expect(page).to have_content "can't be blank"
+    end
+
+  end
+
+  context 'Summary' do
+
+    scenario "Diplays summary for every geozone" do
+      california = create(:geozone)
+      new_york   = create(:geozone)
+      washington = create(:geozone)
+
+      proposal1 = create(:spending_proposal, title: "Build a highway",    price: '10000000', geozone: nil,        feasible: true, valuation_finished: true)
+      proposal1 = create(:spending_proposal, title: "Build a university", price: '5000000',  geozone: nil,        feasible: true, valuation_finished: true)
+      proposal3 = create(:spending_proposal, title: "Build a hospital",   price: '1000000',  geozone: california, feasible: true, valuation_finished: true)
+      proposal4 = create(:spending_proposal, title: "Build a school",     price: '500000',   geozone: california, feasible: true, valuation_finished: true)
+      proposal5 = create(:spending_proposal, title: "Plant more trees",   price: '30000',    geozone: new_york,   feasible: true, valuation_finished: true)
+      proposal6 = create(:spending_proposal, title: "Destroy the seas",   price: '999999',   geozone: washington, feasible: false, valuation_finished: true)
+
+      visit admin_spending_proposals_path
+
+      click_link "Summary"
+
+      expect(page).to have_content "Summary for feasible and finished investment projects"
+
+      within("#geozone_all_city") do
+        expect(page).to have_css(".name",            text: "All city")
+        expect(page).to have_css(".proposals-count", text: 2)
+        expect(page).to have_css(".total-price",     text: "$15,000,000")
+      end
+
+      within("#geozone_#{california.id}") do
+        expect(page).to have_css(".name",            text: california.name)
+        expect(page).to have_css(".proposals-count", text: 2)
+        expect(page).to have_css(".total-price",     text: "$1,500,000")
+      end
+
+      within("#geozone_#{new_york.id}") do
+        expect(page).to have_css(".name",            text: new_york.name)
+        expect(page).to have_css(".proposals-count", text: 1)
+        expect(page).to have_css(".total-price",     text: '$30,000')
+      end
+
+      expect(page).to_not have_content washington.name
     end
 
   end

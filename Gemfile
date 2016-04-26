@@ -20,7 +20,7 @@ gem 'jquery-ui-rails'
 gem 'turbolinks'
 gem 'sprockets-rails', '~> 2.3.3'
 
-gem 'devise', '~> 3.5.6'
+gem 'devise', '~> 3.5.7'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 gem 'omniauth'
@@ -45,7 +45,7 @@ gem 'paranoia'
 gem 'rinku', require: 'rails_rinku'
 gem 'savon'
 gem 'dalli'
-gem 'rollbar', '~> 2.8.0'
+gem 'rollbar', '~> 2.10.0'
 gem 'delayed_job_active_record', '~> 4.1.0'
 gem 'daemons'
 gem 'devise-async'
@@ -53,13 +53,14 @@ gem 'newrelic_rpm', '~> 3.14'
 gem 'whenever', require: false
 gem 'pg_search'
 
-gem 'ahoy_matey', '~> 1.2.1'
+gem 'ahoy_matey', '~> 1.4.0'
 gem 'groupdate'   # group temporary data
 gem 'tolk' # Web interface for translations
 
 gem 'browser'
 gem 'turnout'
 gem 'redcarpet'
+gem 'rubyzip'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -75,7 +76,7 @@ group :development, :test do
   gem 'quiet_assets'
   gem 'letter_opener_web', '~> 1.3.0'
   gem 'i18n-tasks'
-  gem 'capistrano', '3.4.0',           require: false
+  gem 'capistrano', '3.4.1',           require: false
   gem "capistrano-bundler", '1.1.4',   require: false
   gem "capistrano-rails", '1.1.6',     require: false
   gem "capistrano-rvm",                require: false
@@ -89,6 +90,7 @@ group :test do
   gem 'poltergeist'
   gem 'coveralls', require: false
   gem 'email_spec'
+  gem 'timecop'
 end
 
 group :development do

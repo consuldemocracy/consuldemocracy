@@ -36,6 +36,8 @@ Rails.application.routes.draw do
       post :vote
       put :flag
       put :unflag
+      put :mark_featured
+      put :unmark_featured
     end
     collection do
       get :map
@@ -49,6 +51,8 @@ Rails.application.routes.draw do
       post :vote_featured
       put :flag
       put :unflag
+      get :retire_form
+      patch :retire
     end
     collection do
       get :map
@@ -66,7 +70,7 @@ Rails.application.routes.draw do
   end
 
   scope '/participatory_budget' do
-    resources :spending_proposals, only: [:index, :new, :create, :show, :destroy], path: 'investment_projects' do
+    resources :spending_proposals, only: [:index, :show, :destroy], path: 'investment_projects' do #[:new, :create] temporary disabled
       get :welcome, on: :collection
       post :vote, on: :member
     end
@@ -76,6 +80,10 @@ Rails.application.routes.draw do
       delete :remove, on: :collection
       get :preview, on: :collection
     end
+  end
+
+  resources :open_plenaries, only: [] do
+    get :results, on: :collection
   end
 
   resources :stats, only: [:index]
@@ -143,6 +151,8 @@ Rails.application.routes.draw do
         patch :assign_admin
         patch :assign_valuators
       end
+
+      get :summary, on: :collection
     end
 
     resources :comments, only: :index do
@@ -171,6 +181,9 @@ Rails.application.routes.draw do
     end
 
     resource :activity, controller: :activity, only: :show
+    resources :newsletters, only: :index do
+      get :users, on: :collection
+    end
     resource :stats, only: :show
 
     namespace :api do
@@ -264,6 +277,8 @@ Rails.application.routes.draw do
   get '/blog' => redirect("http://diario.madrid.es/participa/")
   get 'participatory_budget', to: 'spending_proposals#welcome', as: 'participatory_budget'
   get 'delegacion', to: 'forums#index', as: 'delegation'
+  get 'plenoabierto', to: 'pages#show', id: 'processes_open_plenary'
+  get 'noticias', to: 'pages#show', id: 'news'
   resources :pages, path: '/', only: [:show]
   get 'participatory_budget/in_two_minutes', to: 'pages#show', id: 'participatory_budget/in_two_minutes'
 end

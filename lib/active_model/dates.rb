@@ -13,13 +13,4 @@ module ActiveModel::Dates
     attrs.except("#{field}(1i)", "#{field}(2i)", "#{field}(3i)")
   end
 
-  def date_to_string(date)
-    date.strftime("%d-%m-%Y")
-  end
-
-  def string_to_date(value)
-    day, month, year = value.split("-")
-    Date.new(year.to_i, month.to_i, day.to_i)
-  end
-
 end
