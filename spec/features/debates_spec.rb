@@ -1073,21 +1073,27 @@ feature 'Debates' do
     end
   end
 
-  scenario 'Matk/Unmark a debate as featured' do
+  scenario 'Mark/Unmark a debate as featured' do
     admin = create(:administrator)
     login_as(admin.user)
 
     debate = create(:debate)
 
     visit debates_path
-    expect(page).to_not have_content 'Featured'
+    within('#debates') do
+      expect(page).to_not have_content 'Featured'
+    end
 
     click_link debate.title
 
     click_link 'Featured'
 
     visit debates_path
-    expect(page).to have_content 'Featured'
+
+    within('#debates') do
+      expect(page).to have_content 'Featured'
+    end
+
     within('#featured-debates') do
       expect(page).to have_content debate.title
     end
@@ -1095,7 +1101,9 @@ feature 'Debates' do
     visit debate_path(debate)
     click_link 'Unmark featured'
 
-    expect(page).to_not have_content 'Featured'
+    within('#debates') do
+      expect(page).to_not have_content 'Featured'
+    end
   end
 
 
@@ -1107,7 +1115,9 @@ feature 'Debates' do
     debate2 = create(:debate)
 
     visit debates_path
-    expect(page).to have_content("Featured")
+    within('#debates') do
+      expect(page).to have_content("Featured")
+    end
   end
 
 
@@ -1119,6 +1129,8 @@ feature 'Debates' do
     debate2 = create(:debate)
 
     visit debates_path
-    expect(page).to_not have_content("Featured")
+    within('#debates') do
+      expect(page).to_not have_content("Featured")
+    end
   end
 end
