@@ -1330,6 +1330,27 @@ table.age-groups {
   }
 }
 
+.ballot {
+
+  th {
+    background: $info-bg;
+    border: 1px solid $info-border;
+    color: $info-color;
+  }
+
+  .total-cost {
+    background: $success-bg;
+    border: 1px solid $success-border;
+    color: $success-color;
+    font-weight: bold;
+    text-transform: uppercase;
+
+    span {
+      font-size: rem-calc(24);
+    }
+  }
+}
+
 // News page
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 

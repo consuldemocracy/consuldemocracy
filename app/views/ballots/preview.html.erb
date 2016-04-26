@@ -1,13 +1,61 @@
-<h2>Confirm your ballot</h2>
+<div class="row ballot">
 
-<div id="city_wide">
-  <p>City Wide</p>
-  <%= render partial: 'spending_proposal',
-             collection: @ballot.spending_proposals.city_wide %>
-</div>
+  <%= link_to :back, class: "back" do %>
+    <span class="icon-angle-left"></span>
+    Volver
+  <% end %>
 
-<div id="district_wide">
-  <p>District Wide</p>
-  <%= render partial: 'spending_proposal',
-             collection: @ballot.spending_proposals.district_wide %>
+  <h1>Confirm your ballot</h1>
+
+  <div class="row">
+    <div id="city_wide" class="small-12 medium-6 column">
+      <table>
+        <thead>
+          <tr>
+            <th colspan="2">City Wide</th>
+          </tr>
+        </thead>
+        <tbody>
+          <%= render partial: 'spending_proposal',
+                     collection: @ballot.spending_proposals.city_wide %>
+          <tr class="total-cost">
+            <td>
+              Coste total
+            </td>
+            <td>
+              <span>23.980.000€</span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div id="district_wide" class="small-12 medium-6 column">
+      <table>
+        <thead>
+          <tr>
+            <th colspan="2">District Wide (District name)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <%= render partial: 'spending_proposal',
+                     collection: @ballot.spending_proposals.district_wide %>
+          <tr class="total-cost">
+            <td>
+              Coste total
+            </td>
+            <td>
+              <span>1.125.000€</span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="small-12 medium-4 column">
+      <%= link_to "Confirmar mi votación", "", class: "button expanded" %>
+    </div>
+  </div>
 </div>
