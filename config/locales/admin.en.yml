@@ -199,9 +199,14 @@ en:
         tags_placeholder: "Write the tags you want separated by commas (,)"
         undefined: Undefined
       summary:
-        title: Summary for feasible and finished investment projects
+        title: Summary for investment projects
+        title_proposals_with_supports: Summary for investment projects with supports
         geozone_name: Scope
-        count_for_geozone: Count
+        finished_and_feasible_count: Finished and feasible
+        finished_and_unfeasible_count: Finished and unfeasible
+        finished_count: Finished
+        in_evaluation_count: In evaluation
+        total_count: Total
         cost_for_geozone: Cost
     stats:
       show:
