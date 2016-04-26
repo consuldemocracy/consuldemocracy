@@ -147,5 +147,8 @@ class SpendingProposal < ActiveRecord::Base
     valuation_finished.unfeasible
   end
 
+  def self.with_supports
+    SpendingProposal.where(id: Vote.for_spending_proposals(SpendingProposal.all).map(&:votable).map(&:id))
+  end
 
 end
