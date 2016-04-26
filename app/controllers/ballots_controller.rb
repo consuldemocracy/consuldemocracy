@@ -1,6 +1,7 @@
 class BallotsController < ApplicationController
   before_action :load_ballot
   before_action :load_spending_proposal, only: [:add, :remove]
+  before_action :authenticate_user!
   skip_authorization_check
 
   def add
