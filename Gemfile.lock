@@ -8,9 +8,8 @@ GIT
       sass-rails
 
 GIT
-  remote: https://github.com/kikito/invisible_captcha
-  revision: b5c6ebe4cfaa029012de7279314ce26709d80199
-  branch: timestamp_in_session
+  remote: https://github.com/markets/invisible_captcha
+  revision: 344ce197b8e0761c037fd70a9937ce5e2f22f80a
   specs:
     invisible_captcha (0.8.1)
       rails
