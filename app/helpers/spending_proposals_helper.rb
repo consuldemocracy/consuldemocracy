@@ -57,11 +57,11 @@ module SpendingProposalsHelper
     end
   end
 
-  def spending_proposal_count_for_geozone(scope, geozone)
+  def spending_proposal_count_for_geozone(scope, geozone, second_scope)
     if geozone.present?
-      geozone.spending_proposals.send(scope).count
+      geozone.spending_proposals.send(scope).send(second_scope).count
     else
-      SpendingProposal.where(geozone: nil).send(scope).count
+      SpendingProposal.where(geozone: nil).send(scope).send(second_scope).count
     end
   end
 

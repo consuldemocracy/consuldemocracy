@@ -516,11 +516,11 @@ feature 'Admin spending proposals' do
       new_york   = create(:geozone)
 
       proposal1 = create(:spending_proposal, geozone: nil,        feasible: false, valuation_finished: true)
-      proposal1 = create(:spending_proposal, geozone: nil,        feasible: false, valuation_finished: true)
+      proposal2 = create(:spending_proposal, geozone: nil,        feasible: false, valuation_finished: true)
       proposal3 = create(:spending_proposal, geozone: california, feasible: false, valuation_finished: true)
       proposal4 = create(:spending_proposal, geozone: california, feasible: false, valuation_finished: true)
       proposal5 = create(:spending_proposal, geozone: new_york,   feasible: false, valuation_finished: true)
-      proposal5 = create(:spending_proposal, geozone: new_york,   feasible: true,  valuation_finished: true)
+      proposal6 = create(:spending_proposal, geozone: new_york,   feasible: true,  valuation_finished: true)
 
       visit admin_spending_proposals_path
 
@@ -546,11 +546,11 @@ feature 'Admin spending proposals' do
       new_york   = create(:geozone)
 
       proposal1 = create(:spending_proposal, geozone: nil,        valuation_finished: true)
-      proposal1 = create(:spending_proposal, geozone: nil,        valuation_finished: true)
+      proposal2 = create(:spending_proposal, geozone: nil,        valuation_finished: true)
       proposal3 = create(:spending_proposal, geozone: california, valuation_finished: true)
       proposal4 = create(:spending_proposal, geozone: california, valuation_finished: true)
       proposal5 = create(:spending_proposal, geozone: new_york,   valuation_finished: true)
-      proposal5 = create(:spending_proposal, geozone: new_york,   valuation_finished: false)
+      proposal6 = create(:spending_proposal, geozone: new_york,   valuation_finished: false)
 
       visit admin_spending_proposals_path
 
@@ -576,7 +576,7 @@ feature 'Admin spending proposals' do
       new_york   = create(:geozone)
 
       proposal1 = create(:spending_proposal, geozone: nil,        valuation_finished: false)
-      proposal1 = create(:spending_proposal, geozone: nil,        valuation_finished: false)
+      proposal2 = create(:spending_proposal, geozone: nil,        valuation_finished: false)
       proposal3 = create(:spending_proposal, geozone: california, valuation_finished: false)
       proposal4 = create(:spending_proposal, geozone: california, valuation_finished: false)
       proposal5 = create(:spending_proposal, geozone: new_york,   valuation_finished: false)
@@ -605,6 +605,59 @@ feature 'Admin spending proposals' do
       within("#geozone_#{new_york.id}") do
         expect(page).to have_css(".in-evaluation-count", text: 1)
       end
+    end
+
+    context "Second table" do
+
+      scenario "should not display proposals without votes" do
+        california = create(:geozone)
+        new_york   = create(:geozone)
+
+        proposal1 = create(:spending_proposal, geozone: nil,        valuation_finished: true)
+        proposal2 = create(:spending_proposal, geozone: nil,        valuation_finished: true)
+        proposal3 = create(:spending_proposal, geozone: california, valuation_finished: true)
+        proposal4 = create(:spending_proposal, geozone: california, valuation_finished: true)
+        proposal5 = create(:spending_proposal, geozone: new_york,   valuation_finished: true)
+        proposal6 = create(:spending_proposal, geozone: new_york,   valuation_finished: false)
+
+
+        create(:vote, votable: proposal1)
+        create(:vote, votable: proposal2)
+        create(:vote, votable: proposal3)
+
+        visit admin_spending_proposals_path
+
+        click_link "Summary"
+
+        expect(page).to have_content "Summary for investment projects"
+
+        within("#all-proposals") do
+          within("#geozone_all_city") do
+            expect(page).to have_css(".finished-count", text: 2)
+          end
+
+          within("#geozone_#{california.id}") do
+            expect(page).to have_css(".finished-count", text: 2)
+          end
+
+          within("#geozone_#{new_york.id}") do
+            expect(page).to have_css(".finished-count", text: 1)
+          end
+        end
+
+        within("#proposals-with-votes") do
+          within("#geozone_all_city") do
+            expect(page).to have_css(".finished-count", text: 2)
+          end
+
+          within("#geozone_#{california.id}") do
+            expect(page).to have_css(".finished-count", text: 1)
+          end
+
+          expect(page).to_not have_css("#geozone_#{new_york.id}")
+        end
+      end
+
     end
 
   end
