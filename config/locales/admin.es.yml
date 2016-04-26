@@ -204,9 +204,14 @@ es:
         tags_placeholder: "Escribe las etiquetas que desees separadas por comas (,)"
         undefined: Sin definir
       summary:
-        title: Resumen de propuestas viables y finalizadas
+        title: Resumen de propuestas de inversión
+        title_proposals_with_supports: Resumen para propuestas que han superado la fase de apoyos
         geozone_name: Ámbito de ciudad
-        count_for_geozone: Número de propuestas
+        finished_and_feasible_count: Finalizadas viables
+        finished_and_unfeasible_count: Finished inviables
+        finished_count: Finalizadas
+        in_evaluation_count: En evaluación
+        total_count: Total
         cost_for_geozone: Coste total
     stats:
       show:

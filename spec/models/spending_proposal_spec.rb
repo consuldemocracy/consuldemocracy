@@ -507,27 +507,14 @@ describe SpendingProposal do
     end
   end
 
-  describe "#for_summary" do
-    it "returns only feasible and valuation finished proposals" do
-      sp1 = create(:spending_proposal, feasible: true, valuation_finished: true)
-      sp2 = create(:spending_proposal, feasible: true, valuation_finished: true)
-      sp3 = create(:spending_proposal, feasible: false, valuation_finished: false)
+  describe "#with_supports" do
+    it "should return proposals with supports" do
+      sp1 = create(:spending_proposal)
+      sp2 = create(:spending_proposal)
+      create(:vote, votable: sp1)
 
-      expect(SpendingProposal.for_summary).to include(sp1)
-      expect(SpendingProposal.for_summary).to include(sp2)
-      expect(SpendingProposal.for_summary).to_not include(sp3)
-    end
-
-    it "does not return unfeasible proposals" do
-      sp = create(:spending_proposal, feasible: false, valuation_finished: true)
-
-      expect(SpendingProposal.for_summary).to_not include(sp)
-    end
-
-    it "does not return proposals pending valuation" do
-      sp = create(:spending_proposal, feasible: true, valuation_finished: false)
-
-      expect(SpendingProposal.for_summary).to_not include(sp)
+      expect(SpendingProposal.with_supports).to include(sp1)
+      expect(SpendingProposal.with_supports).to_not include(sp2)
     end
   end
 

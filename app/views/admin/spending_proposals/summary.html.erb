@@ -4,17 +4,7 @@
 <% end %>
 
 <h2><%= t("admin.spending_proposals.summary.title") %></h2>
+<%= render 'summary_table', spending_proposals: @spending_proposals %>
 
-<table id="spending_proposals" class="investment-projects-summary">
-  <th><%= t("admin.spending_proposals.summary.geozone_name") %></th>
-  <th><%= t("admin.spending_proposals.summary.count_for_geozone") %></th>
-  <th><%= t("admin.spending_proposals.summary.cost_for_geozone") %></th>
-
-  <% @spending_proposals.each do |geozone, price| %>
-    <tr id="<%= geozone.present? ? dom_id(geozone) : 'geozone_all_city' %>">
-      <td class="name"><%= geozone.present? ? geozone.name : t("geozones.none") %></td>
-      <td class="proposals-count text-center"><%= spending_proposal_count_for_geozone(geozone) %></td>
-      <td class="total-price text-center"><%= number_to_currency(price) %></td>
-    </tr>
-  <% end %>
-</table>
+<h2><%= t("admin.spending_proposals.summary.title_proposals_with_supports") %></h2>
+<%= render 'summary_table', spending_proposals: @spending_proposals_with_supports %>
