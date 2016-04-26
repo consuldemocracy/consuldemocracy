@@ -54,8 +54,4 @@ class DebatesController < ApplicationController
       Debate
     end
 
-    def redirect_timestamp_spam
-      redirect_to root_path, notice: InvisibleCaptcha.timestamp_error_message
-    end
-
 end
