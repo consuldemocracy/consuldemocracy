@@ -26,7 +26,7 @@ class Admin::ValuatorsController < Admin::BaseController
   end
 
   def summary
-    @valuators = Valuator.all
+    @valuators = Valuator.order(spending_proposals_count: :desc)
   end
 
   private

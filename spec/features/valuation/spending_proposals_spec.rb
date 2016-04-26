@@ -410,7 +410,6 @@ feature 'Valuation spending proposals' do
       in_evaluation1 = create(:spending_proposal, feasible: true, valuation_finished: false)
       in_evaluation2 = create(:spending_proposal, feasible: true, valuation_finished: false)
 
-
       finished_and_feasible1.valuators << scarlett
       finished_and_feasible2.valuators << scarlett
 
@@ -443,6 +442,22 @@ feature 'Valuation spending proposals' do
         expect(page).to have_css(".total-count", text: '3')
         expect(page).to have_css(".total-price", text: '$0.00')
       end
+    end
+
+    scenario "Order by investment project count" do
+      isabel = create(:valuator)
+      john = create(:valuator)
+      scarlett  = create(:valuator)
+
+      3.times { create(:spending_proposal, valuators: [scarlett])}
+      1.times { create(:spending_proposal, valuators: [john])}
+      2.times { create(:spending_proposal, valuators: [isabel])}
+
+      visit admin_spending_proposals_path
+      click_link "Valuator summary"
+
+      expect(scarlett.email).to appear_before(isabel.email)
+      expect(isabel.email).to appear_before(john.email)
     end
 
     scenario "Back link" do

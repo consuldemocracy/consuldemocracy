@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160422094733) do
+ActiveRecord::Schema.define(version: 20160426211658) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -500,6 +500,7 @@ ActiveRecord::Schema.define(version: 20160422094733) do
   create_table "valuators", force: :cascade do |t|
     t.integer "user_id"
     t.string  "description"
+    t.integer "spending_proposals_count", default: 0
   end
 
   add_index "valuators", ["user_id"], name: "index_valuators_on_user_id", using: :btree
