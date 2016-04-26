@@ -165,6 +165,7 @@ en:
           managed: Managed
           valuating: Under valuation
           valuation_finished: Valuation finished
+          all: All
         title: Investment projects for participatory budgeting
         assigned_admin: Assigned administrator
         no_admin_assigned: No admin assigned

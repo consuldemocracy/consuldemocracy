@@ -2,7 +2,7 @@ class Admin::SpendingProposalsController < Admin::BaseController
   include FeatureFlags
   feature_flag :spending_proposals
 
-  has_filters %w{valuation_open without_admin managed valuating valuation_finished}, only: :index
+  has_filters %w{valuation_open without_admin managed valuating valuation_finished all}, only: :index
 
   load_and_authorize_resource
 
