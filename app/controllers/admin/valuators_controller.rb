@@ -25,6 +25,10 @@ class Admin::ValuatorsController < Admin::BaseController
     redirect_to admin_valuators_path
   end
 
+  def summary
+    @valuators = Valuator.all
+  end
+
   private
     def create_params
       params[:valuator][:description] = nil if params[:valuator][:description].blank?

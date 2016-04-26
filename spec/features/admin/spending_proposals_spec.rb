@@ -458,7 +458,7 @@ feature 'Admin spending proposals' do
 
       visit admin_spending_proposals_path
 
-      click_link "Summary"
+      click_link "Investment project summary"
 
       expect(page).to have_content "Summary for investment projects"
 
@@ -493,7 +493,7 @@ feature 'Admin spending proposals' do
 
       visit admin_spending_proposals_path
 
-      click_link "Summary"
+      click_link "Investment project summary"
 
       expect(page).to have_content "Summary for investment projects"
 
@@ -524,7 +524,7 @@ feature 'Admin spending proposals' do
 
       visit admin_spending_proposals_path
 
-      click_link "Summary"
+      click_link "Investment project summary"
 
       expect(page).to have_content "Summary for investment projects"
 
@@ -554,7 +554,7 @@ feature 'Admin spending proposals' do
 
       visit admin_spending_proposals_path
 
-      click_link "Summary"
+      click_link "Investment project summary"
 
       expect(page).to have_content "Summary for investment projects"
 
@@ -590,7 +590,7 @@ feature 'Admin spending proposals' do
 
       visit admin_spending_proposals_path
 
-      click_link "Summary"
+      click_link "Investment project summary"
 
       expect(page).to have_content "Summary for investment projects"
 
@@ -627,7 +627,7 @@ feature 'Admin spending proposals' do
 
         visit admin_spending_proposals_path
 
-        click_link "Summary"
+        click_link "Investment project summary"
 
         expect(page).to have_content "Summary for investment projects"
 
