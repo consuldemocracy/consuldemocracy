@@ -170,6 +170,7 @@ es:
           managed: Gestionando
           valuating: En evaluación
           valuation_finished: Evaluación finalizada
+          all: Todas
         title: Propuestas de inversión para presupuestos participativos
         assigned_admin: Administrador asignado
         no_admin_assigned: Sin admin asignado

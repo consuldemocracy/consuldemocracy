@@ -194,7 +194,8 @@ feature 'Admin spending proposals' do
                        'without_admin' => 'Without assigned admin',
                        'managed' => 'Managed',
                        'valuating' => 'Under valuation',
-                       'valuation_finished' => 'Valuation finished'}
+                       'valuation_finished' => 'Valuation finished',
+                       'all' => 'All'}
 
       visit admin_spending_proposals_path
 
@@ -252,6 +253,10 @@ feature 'Admin spending proposals' do
       visit admin_spending_proposals_path(filter: 'valuation_finished')
 
       expect(page).to_not have_content("Ongoing valuation")
+      expect(page).to have_content("Old idea")
+
+      visit admin_spending_proposals_path(filter: 'all')
+      expect(page).to have_content("Ongoing valuation")
       expect(page).to have_content("Old idea")
     end
 
