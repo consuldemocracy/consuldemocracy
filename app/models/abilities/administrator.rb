@@ -36,7 +36,7 @@ module Abilities
       can :comment_as_administrator, [Debate, Comment, Proposal]
 
       can [:search, :create, :index, :destroy], ::Moderator
-      can [:search, :create, :index], ::Valuator
+      can [:search, :create, :index, :summary], ::Valuator
 
       can :manage, Annotation
 
