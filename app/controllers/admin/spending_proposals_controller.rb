@@ -14,9 +14,9 @@ class Admin::SpendingProposalsController < Admin::BaseController
   end
 
   def edit
-    @admins = Administrator.includes(:user).all
-    @valuators = Valuator.includes(:user).all.order("description ASC").order("users.email ASC")
-    @tags = ActsAsTaggableOn::Tag.spending_proposal_tags
+    load_admins
+    load_valuators
+    load_tags
   end
 
   def update
@@ -24,6 +24,9 @@ class Admin::SpendingProposalsController < Admin::BaseController
       redirect_to admin_spending_proposal_path(@spending_proposal, SpendingProposal.filter_params(params)),
                   notice: t("flash.actions.update.spending_proposal")
     else
+      load_admins
+      load_valuators
+      load_tags
       render :edit
     end
   end
@@ -36,6 +39,18 @@ class Admin::SpendingProposalsController < Admin::BaseController
 
     def spending_proposal_params
       params.require(:spending_proposal).permit(:title, :description, :external_url, :geozone_id, :association_name, :administrator_id, :tag_list, valuator_ids: [])
+    end
+
+    def load_admins
+      @admins = Administrator.includes(:user).all
+    end
+
+    def load_valuators
+      @valuators = Valuator.includes(:user).all.order("description ASC").order("users.email ASC")
+    end
+
+    def load_tags
+      @tags = ActsAsTaggableOn::Tag.spending_proposal_tags
     end
 
 end
