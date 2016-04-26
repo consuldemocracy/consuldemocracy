@@ -30,6 +30,7 @@ class SpendingProposal < ActiveRecord::Base
   scope :feasible,               -> { where(feasible: true) }
   scope :unfeasible,             -> { where(feasible: false) }
   scope :not_unfeasible,         -> { where("feasible IS ? OR feasible = ?", nil, true) }
+  scope :with_supports,          -> { where('cached_votes_up > 0') }
 
   scope :by_admin,    -> (admin)    { where(administrator_id: admin.presence) }
   scope :by_tag,      -> (tag_name) { tagged_with(tag_name) }
@@ -145,10 +146,6 @@ class SpendingProposal < ActiveRecord::Base
 
   def self.finished_and_unfeasible
     valuation_finished.unfeasible
-  end
-
-  def self.with_supports
-    SpendingProposal.where(id: Vote.for_spending_proposals(SpendingProposal.all).map(&:votable).map(&:id))
   end
 
 end
