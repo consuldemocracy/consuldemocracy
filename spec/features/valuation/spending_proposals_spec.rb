@@ -420,7 +420,7 @@ feature 'Valuation spending proposals' do
 
       visit admin_spending_proposals_path
 
-      click_link "Valuator Summary"
+      click_link "Valuator summary"
 
       expect(page).to have_content "Valuator summary for investment projects"
 
@@ -446,7 +446,7 @@ feature 'Valuation spending proposals' do
     scenario "Back link" do
       visit admin_spending_proposals_path
 
-      click_link "Valuator Summary"
+      click_link "Valuator summary"
       expect(page).to have_content "Valuator summary for investment projects"
 
       click_link "Back"
