@@ -357,12 +357,26 @@ body.admin {
 
   .investment-projects-summary {
 
-    th {
+    th, td {
       text-align: center;
-      width: 33%;
 
       &:first-child {
+        font-weight: bold;
         text-align: left;
+      }
+
+      &:last-child {
+        font-weight: bold;
+      }
+    }
+
+    tr {
+      &:nth-child(even) td:last-child {
+        background: $success-border;
+      }
+
+      &:nth-child(odd) td:last-child {
+        background: $success-bg;
       }
     }
   }
