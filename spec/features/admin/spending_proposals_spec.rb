@@ -30,8 +30,8 @@ feature 'Admin spending proposals' do
       spending_proposal2 = create(:spending_proposal)
       spending_proposal3 = create(:spending_proposal)
 
-      valuator1 = create(:valuator, user: create(:user, username: 'Olga'))
-      valuator2 = create(:valuator, user: create(:user, username: 'Miriam'))
+      valuator1 = create(:valuator, user: create(:user, username: 'Olga'), description: 'Valuator Olga')
+      valuator2 = create(:valuator, user: create(:user, username: 'Miriam'), description: 'Valuator Miriam')
       admin = create(:administrator, user: create(:user, username: 'Gema'))
 
       spending_proposal1.valuators << valuator1
@@ -42,13 +42,13 @@ feature 'Admin spending proposals' do
 
       within("#spending_proposal_#{spending_proposal1.id}") do
         expect(page).to have_content("No admin assigned")
-        expect(page).to have_content("Olga")
+        expect(page).to have_content("Valuator Olga")
       end
 
       within("#spending_proposal_#{spending_proposal2.id}") do
         expect(page).to have_content("No admin assigned")
-        expect(page).to have_content("Olga")
-        expect(page).to have_content("Miriam")
+        expect(page).to have_content("Valuator Olga")
+        expect(page).to have_content("Valuator Miriam")
       end
 
       within("#spending_proposal_#{spending_proposal3.id}") do
