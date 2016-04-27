@@ -68,7 +68,7 @@
         <% if spending_proposal.valuators.size == 0 %>
           <%= t("admin.spending_proposals.index.no_valuators_assigned") %>
         <% else %>
-          <%= spending_proposal.valuators.collect(&:name).join(', ') %>
+          <%= spending_proposal.valuators.collect(&:description).join(', ') %>
         <% end %>
       </td>
       <td class="small">
