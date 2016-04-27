@@ -523,6 +523,8 @@ en:
     wrong_price_format: Only integer numbers
     spending_proposal:
       spending_proposal: Investment project
+      add: Add
+      already_added: You have already added this investment project
       already_supported: You have already supported this. Share it!
       forum: District discussion space
       support: Support

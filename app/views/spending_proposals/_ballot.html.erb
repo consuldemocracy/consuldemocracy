@@ -2,10 +2,11 @@
 
   <% if added_to_ballot?(@ballot, spending_proposal) %>
     <div class="remove supported inline-block">
-      <%# t("spending_proposals.spending_proposal.already_supported") %>
-      Ya has añadido esta propuesta a tu...
+
+      <span class="icon-check-circle bounce-in animation" title="<%= t("spending_proposals.spending_proposal.already_added") %>"></span>
+
       <%= link_to remove_ballot_url(spending_proposal_id: spending_proposal.id),
-        class: "button button-support small expanded",
+        class: "delete-vote small expanded",
         title: t('spending_proposals.spending_proposal.support_title'),
         method: "delete",
         remote: true,
@@ -21,8 +22,7 @@
           method: "post",
           remote: true,
           data: supports_confirm_for_current_user(spending_proposal) do %>
-        <%# t("spending_proposals.spending_proposal.vote") %>
-        Add
+          <%= t("spending_proposals.spending_proposal.add") %>
       <% end %>
     </div>
   <% end %>
@@ -40,5 +40,4 @@
       </p>
     </div>
   <% end %>
-
 </div>

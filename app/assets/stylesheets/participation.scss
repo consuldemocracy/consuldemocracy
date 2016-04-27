@@ -841,6 +841,12 @@
       content: none;
     }
 
+    .delete-vote {
+      border-bottom: 1px dotted $budget;
+      color: $budget;
+      text-decoration: none;
+    }
+
     .button-support {
       background: $budget;
       color: white;
@@ -864,6 +870,11 @@
 
     .supported {
       color: $budget;
+    }
+
+    .remove .icon-check-circle {
+      display: block;
+      font-size: rem-calc(70);
     }
 
     .no-supports-allowed {
