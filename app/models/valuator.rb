@@ -10,4 +10,8 @@ class Valuator < ActiveRecord::Base
   def description_or_email
     description.present? ? description : email
   end
+
+  def description_or_name
+    description.present? ? description : name
+  end
 end
