@@ -55,7 +55,9 @@
 
   <div class="row">
     <div class="small-12 medium-4 column">
-      <%= link_to "Confirmar mi votación", "", class: "button expanded" %>
+      <%= form_for @ballot, url: ballot_path do |f| %>
+        <%= f.submit "Confirmar mi votación", class: "button expanded" %>
+      <% end %>
     </div>
   </div>
 </div>

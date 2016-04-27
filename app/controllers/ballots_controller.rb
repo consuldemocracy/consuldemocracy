@@ -18,6 +18,16 @@ class BallotsController < ApplicationController
     @ballot = current_user.ballot
   end
 
+  def update
+    @ballot = current_user.ballot
+    @ballot.update(confirmed_at: Time.now)
+    redirect_to ballot_path, notice: "Your Ballot has been successfully saved. You can access it any time in my activity"
+  end
+
+  def show
+    @ballot = current_user.ballot
+  end
+
   private
 
     def load_ballot

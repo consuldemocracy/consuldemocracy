@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160425190722) do
+ActiveRecord::Schema.define(version: 20160427115529) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -72,8 +72,9 @@ ActiveRecord::Schema.define(version: 20160425190722) do
 
   create_table "ballots", force: :cascade do |t|
     t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.datetime "confirmed_at"
   end
 
   create_table "campaigns", force: :cascade do |t|
@@ -133,8 +134,8 @@ ActiveRecord::Schema.define(version: 20160425190722) do
     t.integer  "confidence_score",                        default: 0
     t.integer  "geozone_id"
     t.tsvector "tsv"
-    t.string   "comment_kind",                            default: "comment"
     t.datetime "featured_at"
+    t.string   "comment_kind",                            default: "comment"
   end
 
   add_index "debates", ["author_id", "hidden_at"], name: "index_debates_on_author_id_and_hidden_at", using: :btree
@@ -480,9 +481,9 @@ ActiveRecord::Schema.define(version: 20160425190722) do
     t.string   "erase_reason"
     t.datetime "erased_at"
     t.boolean  "public_activity",                                             default: true
+    t.boolean  "newsletter",                                                  default: true
     t.integer  "notifications_count",                                         default: 0
     t.boolean  "registering_with_oauth",                                      default: false
-    t.boolean  "newsletter",                                                  default: true
     t.string   "locale"
     t.string   "oauth_email"
     t.integer  "geozone_id"
@@ -513,6 +514,7 @@ ActiveRecord::Schema.define(version: 20160425190722) do
   create_table "valuators", force: :cascade do |t|
     t.integer "user_id"
     t.string  "description"
+    t.integer "spending_proposals_count", default: 0
   end
 
   add_index "valuators", ["user_id"], name: "index_valuators_on_user_id", using: :btree
