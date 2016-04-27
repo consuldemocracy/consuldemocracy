@@ -23,18 +23,8 @@ class ProposalsController < ApplicationController
   end
 
   def index_customization
-    if params[:retired].present?
-      @resources = @resources.retired
-      @resources = @resources.where(retired_reason: params[:retired]) if Proposal::RETIRE_OPTIONS.include?(params[:retired])
-    else
-      @resources = @resources.not_retired
-    end
-
-    @featured_proposals = Proposal.all.sort_by_confidence_score.limit(3) if (!@advanced_search_terms && @search_terms.blank? && @tag_filter.blank? && params[:retired].blank?)
-    if @featured_proposals.present?
-      set_featured_proposal_votes(@featured_proposals)
-      @resources = @resources.where('proposals.id NOT IN (?)', @featured_proposals.map(&:id))
-    end
+    load_retired
+    load_featured
   end
 
   def vote
@@ -87,4 +77,20 @@ class ProposalsController < ApplicationController
       @featured_proposals_votes = current_user ? current_user.proposal_votes(proposals) : {}
     end
 
+    def load_retired
+      if params[:retired].present?
+        @resources = @resources.retired
+        @resources = @resources.where(retired_reason: params[:retired]) if Proposal::RETIRE_OPTIONS.include?(params[:retired])
+      else
+        @resources = @resources.not_retired
+      end
+    end
+
+    def load_featured
+      @featured_proposals = Proposal.all.sort_by_confidence_score.limit(3) if (!@advanced_search_terms && @search_terms.blank? && @tag_filter.blank? && params[:retired].blank?)
+      if @featured_proposals.present?
+        set_featured_proposal_votes(@featured_proposals)
+        @resources = @resources.where('proposals.id NOT IN (?)', @featured_proposals.map(&:id))
+      end
+    end
 end
