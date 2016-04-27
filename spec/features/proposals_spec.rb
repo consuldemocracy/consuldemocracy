@@ -185,7 +185,7 @@ feature 'Proposals' do
 
     expect(page).to have_content 'Sorry, that was too quick! Please resubmit'
 
-    expect(current_path).to eq(spending_proposals_path)
+    expect(current_path).to eq(proposals_path)
   end
 
   scenario 'Responsible name is stored for anonymous users' do
