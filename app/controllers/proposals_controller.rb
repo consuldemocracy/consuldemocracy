@@ -83,12 +83,12 @@ class ProposalsController < ApplicationController
         @resources = @resources.retired
         @resources = @resources.where(retired_reason: params[:retired]) if Proposal::RETIRE_OPTIONS.include?(params[:retired])
       else
-        @resources = @resources.not_retired
+      @resources = @resources.not_retired
       end
     end
 
     def load_featured
-      @featured_proposals = Proposal.all.sort_by_confidence_score.limit(3) if (!@advanced_search_terms && @search_terms.blank? && @tag_filter.blank? && params[:retired].blank?)
+      @featured_proposals = Proposal.all.sort_by_confidence_score.limit(2) if (!@advanced_search_terms && @search_terms.blank? && @tag_filter.blank? && params[:retired].blank?)
       if @featured_proposals.present?
         set_featured_proposal_votes(@featured_proposals)
         @resources = @resources.where('proposals.id NOT IN (?)', @featured_proposals.map(&:id))
@@ -102,4 +102,5 @@ class ProposalsController < ApplicationController
     def custom_search?
       params[:custom_search].present?
     end
+
 end
