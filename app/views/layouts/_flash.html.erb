@@ -1,0 +1,10 @@
+<% flash.each do |flash_key, flash_message| %>
+  <div id="<%= flash_key %>" data-alert class="row" data-closable>
+    <div class="callout <%= flash_key %>">
+      <button class="close-button" aria-label="<%= t("application.close") %>" type="button" data-close>
+        <span aria-hidden="true">&times;</span>
+      </button>
+      <%= flash_message %>
+    </div>
+  </div>
+<% end %>
