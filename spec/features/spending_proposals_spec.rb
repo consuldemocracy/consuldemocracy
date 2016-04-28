@@ -141,7 +141,7 @@ feature 'Spending proposals' do
     click_button 'Create'
 
     expect(page).to have_content 'Sorry, that was too quick! Please resubmit'
-    expect(current_path).to eq(proposals_path)
+    expect(current_path).to eq(new_spending_proposal_path)
   end
 
   scenario 'Create notice' do

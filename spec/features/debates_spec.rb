@@ -139,7 +139,7 @@ feature 'Debates' do
 
     expect(page).to have_content 'Sorry, that was too quick! Please resubmit'
 
-    expect(current_path).to eq(proposals_path)
+    expect(current_path).to eq(new_debate_path)
   end
 
   scenario 'Errors on create' do

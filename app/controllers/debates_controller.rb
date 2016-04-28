@@ -11,7 +11,7 @@ class DebatesController < ApplicationController
 
   feature_flag :debates
 
-  invisible_captcha only: [:create, :update], honeypot: :subtitle, on_timestamp_spam: :redirect_timestamp_spam
+  invisible_captcha only: [:create, :update], honeypot: :subtitle
 
   has_orders %w{hot_score confidence_score created_at relevance}, only: :index
   has_orders %w{most_voted newest oldest}, only: :show

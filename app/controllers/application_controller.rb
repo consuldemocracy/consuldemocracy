@@ -114,8 +114,4 @@ class ApplicationController < ActionController::Base
         store_location_for(:user, request.path)
       end
     end
-
-    def redirect_timestamp_spam
-      redirect_to root_path, notice: InvisibleCaptcha.timestamp_error_message
-    end
 end

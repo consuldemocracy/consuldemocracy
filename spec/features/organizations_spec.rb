@@ -55,7 +55,7 @@ feature 'Organizations' do
 
     expect(page).to have_content 'Sorry, that was too quick! Please resubmit'
 
-    expect(current_path).to eq(root_path)
+    expect(current_path).to eq(new_organization_registration_path)
   end
 
   scenario 'Errors on create' do

@@ -1,7 +1,7 @@
 class Users::RegistrationsController < Devise::RegistrationsController
   prepend_before_action :authenticate_scope!, only: [:edit, :update, :destroy, :finish_signup, :do_finish_signup]
 
-  invisible_captcha only: [:create], honeypot: :family_name, scope: :user, on_timestamp_spam: :redirect_timestamp_spam
+  invisible_captcha only: [:create], honeypot: :family_name, scope: :user
 
   def new
     super do |user|

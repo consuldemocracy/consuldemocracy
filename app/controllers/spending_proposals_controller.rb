@@ -8,7 +8,7 @@ class SpendingProposalsController < ApplicationController
 
   feature_flag :spending_proposals
 
-  invisible_captcha only: [:create, :update], honeypot: :subtitle, on_timestamp_spam: :redirect_timestamp_spam
+  invisible_captcha only: [:create, :update], honeypot: :subtitle
 
   respond_to :html, :js
 
