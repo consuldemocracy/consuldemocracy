@@ -87,11 +87,11 @@ feature 'Admin spending proposals' do
       expect(page).to have_link("Realocate visitors")
 
       click_link("Realocate visitors")
-      click_on("Edit classification")
+      click_link("Edit classification")
       expect(page).to have_button("Update")
-      click_on("Back")
+      click_link("Back")
       expect(page).to_not have_button("Update")
-      click_on("Back")
+      click_link("Back")
 
       expect(page).to_not have_link("Destroy the city")
       expect(page).to have_link("Realocate visitors")
@@ -131,11 +131,11 @@ feature 'Admin spending proposals' do
       expect(page).to have_link("Realocate visitors")
 
       click_link("Realocate visitors")
-      click_on("Edit classification")
+      click_link("Edit classification")
       expect(page).to have_button("Update")
-      click_on("Back")
+      click_link("Back")
       expect(page).to_not have_button("Update")
-      click_on("Back")
+      click_link("Back")
 
       expect(page).to have_content('There is 1 investment project')
       expect(page).to_not have_link("Destroy the city")
@@ -178,11 +178,11 @@ feature 'Admin spending proposals' do
       expect(page).to have_link("Realocate visitors")
 
       click_link("Realocate visitors")
-      click_on("Edit classification")
+      click_link("Edit classification")
       expect(page).to have_button("Update")
-      click_on("Back")
+      click_link("Back")
       expect(page).to_not have_button("Update")
-      click_on("Back")
+      click_link("Back")
 
       expect(page).to have_content('There is 1 investment project')
       expect(page).to_not have_link("Destroy the city")
@@ -287,11 +287,11 @@ feature 'Admin spending proposals' do
       expect(page).to have_content("More schools")
 
       click_link("Educate the children")
-      click_on("Edit classification")
+      click_link("Edit classification")
       expect(page).to have_button("Update")
-      click_on("Back")
+      click_link("Back")
       expect(page).to_not have_button("Update")
-      click_on("Back")
+      click_link("Back")
 
       expect(page).to_not have_content("More hospitals")
       expect(page).to have_content("Educate the children")
@@ -401,6 +401,9 @@ feature 'Admin spending proposals' do
       click_link 'Edit classification'
 
       find('.js-add-tag-link', text: 'Education').click
+
+      fill_in 'spending_proposal_title', with: 'Updated title'
+
       click_button 'Update'
 
       expect(page).to have_content 'Investment project updated succesfully.'

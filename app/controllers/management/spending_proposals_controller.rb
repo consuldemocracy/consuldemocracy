@@ -28,7 +28,7 @@ class Management::SpendingProposalsController < Management::BaseController
   end
 
   def vote
-    @spending_proposal.register_vote(current_user, 'yes')
+    @spending_proposal.register_vote(managed_user, 'yes')
     set_spending_proposal_votes(@spending_proposal)
   end
 
@@ -54,7 +54,7 @@ class Management::SpendingProposalsController < Management::BaseController
 
     # This should not be necessary. Maybe we could create a specific show view for managers.
     def set_spending_proposal_votes(spending_proposals)
-      @spending_proposal_votes = current_user ? current_user.spending_proposal_votes(spending_proposals) : {}
+      @spending_proposal_votes = managed_user ? managed_user.spending_proposal_votes(spending_proposals) : {}
     end
 
     def set_geozone_name

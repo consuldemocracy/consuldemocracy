@@ -96,7 +96,6 @@ es:
           submit: Borrar mi cuenta
           title: Darme de baja
         edit:
-          back_link: Atrás
           current_password_label: Contraseña actual
           edit: Editar
           email_label: Email
