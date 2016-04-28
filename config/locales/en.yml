@@ -82,6 +82,11 @@ en:
   comment_kinds:
     comment: Comment
     question: Question
+  custom_variable:
+    gender:
+      unknow: Unknow
+      male:   Male
+      female: Female
   debates:
     create:
       form:

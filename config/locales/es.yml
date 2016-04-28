@@ -82,6 +82,11 @@ es:
   comment_kinds:
     comment: Comentario
     question: Pregunta
+  custom_variable:
+    gender:
+      unknow: Desconocido
+      male:   Hombre
+      female: Mujer
   debates:
     create:
       form:

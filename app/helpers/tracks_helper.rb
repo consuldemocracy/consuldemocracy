@@ -1,12 +1,10 @@
 module TracksHelper
-  def track_event(data={})
-    track_data = ""
-    prefix = " data-track-event-"
-    data.each do |key, value|
-      track_data = track_data + prefix + key.to_s + '=' + value + " "
+  def track_event(category, action)
+    content_for :track_event_category do
+      category
     end
-    content_for :track_event do
-      track_data
+    content_for :track_event_action do
+      action
     end
   end
 end

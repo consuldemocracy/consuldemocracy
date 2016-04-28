@@ -295,6 +295,7 @@ en:
         proposal_notifications: Proposal notifications
         redeemable_codes: Redeemable codes
         user_invites: Invitations
+        external_stats: Estadísticas externas
         summary:
           ballot_line_votes: Votes in investment projects
           ballot_votes: Budgets voted

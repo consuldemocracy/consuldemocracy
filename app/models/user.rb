@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
 
   include Verification
+  require 'date'
 
   devise :database_authenticatable, :registerable, :confirmable,
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable, :async
@@ -276,6 +277,32 @@ class User < ActiveRecord::Base
   end
   delegate :can?, :cannot?, to: :ability
 
+  def user_gender
+    self.gender.present? ? I18n.t("custom_variable.gender.#{gender}") : I18n.t("custom_variable.gender.unknow")
+  end
+
+  def age_group
+    if self.date_of_birth.nil?
+      "Desconocido"
+    else
+      birthday = self.date_of_birth.to_date.to_date
+      a= (Date.today - birthday).to_i
+      edad = (a / 365.25).to_i
+      case
+      when (edad == 0)
+        'Desconocido'
+      when (edad < 30)
+        '< 30'
+      when (edad  > 29) &  (edad < 46)
+        '30-45'
+      when (edad  > 45) &  (edad < 61)
+        '45-60'
+      when (edad > 60)
+        '> 60'
+      end
+    end
+  end
+
   private
     def clean_document_number
       self.document_number = self.document_number.gsub(/[^a-z0-9]+/i, "").upcase unless self.document_number.blank?
@@ -287,5 +314,4 @@ class User < ActiveRecord::Base
         maximum: User.username_max_length)
       validator.validate(self)
     end
-
 end

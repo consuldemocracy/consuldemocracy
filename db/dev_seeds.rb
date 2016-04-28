@@ -39,6 +39,7 @@ Setting.create(key: 'feature.google_login', value: "true")
 Setting.create(key: 'feature.probe.plaza', value: 'true')
 Setting.create(key: 'per_page_code', value: "")
 Setting.create(key: 'comments_body_max_length', value: '1000')
+Setting.create(key: 'analytics_url', value: "")
 
 puts "Creating Geozones"
 
