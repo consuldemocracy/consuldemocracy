@@ -39,7 +39,7 @@ class Admin::SpendingProposalsController < Admin::BaseController
   def priority
     @valuator_priorities = Valuator.all.collect do |valuator|
       [valuator, valuator.spending_proposals.minimum_per_district(params[:proposals_to_evaluate_per_district])]
-    end
+    end.sort_by {|valuator, spending_proposals| spending_proposals.count }
   end
 
   private
