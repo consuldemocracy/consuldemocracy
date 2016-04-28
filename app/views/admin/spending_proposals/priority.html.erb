@@ -10,9 +10,11 @@
 
   <div id="valuators">
     <% @valuator_priorities.each do |valuator, spending_proposals| %>
-      <div id="<%= dom_id(valuator) %>">
-        <div>Evaluador: <%= valuator.description_or_email %></div>
-        <div class="total-count">Total: <%= spending_proposals.count %>
+      <div id="<%= dom_id(valuator) %>" class="margin-top">
+        <div>
+          Evaluador: <%= valuator.description_or_email %>
+          <span class="total-count">Total: <%= spending_proposals.count %></span>
+        </div>
 
         <% spending_proposals.each do |spending_proposal| %>
           <div>
