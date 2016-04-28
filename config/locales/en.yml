@@ -76,7 +76,6 @@ en:
         other: "%{count} votes"
         zero: No votes
     edit:
-      back_link: Go back
       editing: Edit debate
       form:
         submit_button: Save changes
@@ -86,7 +85,7 @@ en:
       debate_title: Debate title
       tags_instructions: Tag this debate.
       tags_label: Topics
-      tags_placeholder: Enter the tags you would like to use, separated by commas (',')
+      tags_placeholder: "Enter the tags you would like to use, separated by commas (',')"
     index:
       featured_debates: Featured
       filter_topic:
@@ -109,7 +108,6 @@ en:
       start_debate: Start a debate
       title: Debates
     new:
-      back_link: Go back
       form:
         submit_button: Start a debate
       info: If you want to make a proposal, this is the wrong section, enter %{info_link}.
@@ -123,7 +121,6 @@ en:
       start_new: Start a debate
     show:
       author_deleted: User deleted
-      back_link: Go back
       comments:
         one: 1 comment
         other: "%{count} comments"
@@ -249,7 +246,6 @@ en:
       form:
         submit_button: Create proposal
     edit:
-      back_link: Go back
       editing: Edit proposal
       form:
         submit_button: Save changes
@@ -284,7 +280,7 @@ en:
       tag_category_label: "Categories"
       tags_instructions: "Tag this proposal. You can choose from proposed categories or add your own"
       tags_label: Tags
-      tags_placeholder: Enter the tags you would like to use, separated by commas (',')
+      tags_placeholder: "Enter the tags you would like to use, separated by commas (',')"
     index:
       featured_proposals: Featured
       filter_topic:
@@ -319,7 +315,6 @@ en:
       top: Top weekly
       top_link_proposals: The most supported proposals by category
     new:
-      back_link: Go back
       form:
         submit_button: Create proposal
       more_info: How do citizen proposals work?
@@ -348,7 +343,6 @@ en:
       total_percent: 100%
     show:
       author_deleted: User deleted
-      back_link: Go back
       code: 'Proposal code:'
       comments:
         one: 1 comment
@@ -390,7 +384,7 @@ en:
       to: 'To'
     author_info:
       author_deleted: User deleted
-    back: Back
+    back: Go back
     check: Select
     check_all: All
     check_none: None
@@ -456,7 +450,6 @@ en:
       recommendation_two: Any proposal or comment suggesting illegal action will be deleted.
       recommendations_title: How to create a spending proposal
       start_new: Create spending proposal
-      back_link: Back
     show:
       author_deleted: User deleted
       code: 'Proposal code:'

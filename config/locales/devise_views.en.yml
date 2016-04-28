@@ -96,7 +96,6 @@ en:
           submit: Erase my account
           title: Erase account
         edit:
-          back_link: Back
           current_password_label: Current password
           edit: Edit
           email_label: Email
