@@ -464,7 +464,7 @@ feature 'Valuation spending proposals' do
       click_link "Valuator summary"
       expect(page).to have_content "Valuator summary for investment projects"
 
-      click_link "Back"
+      click_link "Go back"
       expect(page).to have_content "Investment projects for participatory budgeting"
     end
 
