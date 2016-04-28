@@ -755,7 +755,7 @@ form {
   font-family: $font-sans;
   font-size: $small-font-size;
 
-  &.success {
+  &.success, &.notice {
     background-color: $success-bg;
     border-color: $success-border;
     color: $success-color;
@@ -779,7 +779,7 @@ form {
     }
   }
 
-  &.alert {
+  &.alert, &.error {
     background-color: $alert-bg;
     border-color: $alert-border;
     color: $alert-color;
