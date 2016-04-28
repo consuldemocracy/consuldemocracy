@@ -19,7 +19,7 @@
         <% spending_proposals.each do |spending_proposal| %>
           <div>
             <%= link_to spending_proposal.title, admin_spending_proposal_path(spending_proposal) %>
-            <%= spending_proposal.cached_votes_up %>
+            Votos: <%= spending_proposal.cached_votes_up %>
             <%= geozone_name(spending_proposal) %>
           </div>
         <% end %>
