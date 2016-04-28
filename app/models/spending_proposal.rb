@@ -208,4 +208,12 @@ class SpendingProposal < ActiveRecord::Base
     valuation_finished.unfeasible
   end
 
+  def self.minimum_per_district(number)
+    priority = []
+    self.group(:geozone_id).count.each do |geozone, count|
+      priority << self.by_geozone(geozone || 'all').sort_by_confidence_score.limit(number)
+    end
+    priority.flatten
+  end
+
 end

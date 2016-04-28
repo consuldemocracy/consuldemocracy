@@ -1,0 +1,30 @@
+<h2>Propuestas Prioritarias por evaluador</h2>
+
+<%= form_tag priority_admin_spending_proposals_path, method: :get do %>
+  <%= label_tag 'proposals_to_evaluate_per_district', 'Número de propuestas mínimas a evaluar por distrito' %>
+  <%= text_field_tag 'proposals_to_evaluate_per_district', params[:proposals_to_evaluate_per_district] %>
+  <%= submit_tag "Enviar" %>
+<% end %>
+
+<% if params[:proposals_to_evaluate_per_district] %>
+
+  <div id="valuators">
+    <% @valuator_priorities.each do |valuator, spending_proposals| %>
+      <div id="<%= dom_id(valuator) %>">
+        <div>Evaluador: <%= valuator.description_or_email %></div>
+        <div class="total-count">Total: <%= spending_proposals.count %>
+
+        <% spending_proposals.each do |spending_proposal| %>
+          <div>
+            <%= link_to spending_proposal.title, admin_spending_proposal_path(spending_proposal) %>
+            <%= geozone_name(spending_proposal) %>
+          </div>
+        <% end %>
+
+      </div>
+    <% end %>
+  </div>
+
+<% else %>
+  Debes escoger un número de propuestas mínimas a evaluar por distrito
+<% end %>
