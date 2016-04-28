@@ -229,7 +229,7 @@ Rails.application.routes.draw do
 
     resource :account, controller: "account", only: [:show]
 
-    get 'sign_in', to: 'sessions#create'
+    get 'sign_in', to: 'sessions#create', as: :sign_in
 
     resource :session, only: [:create, :destroy]
     resources :proposals, only: [:index, :new, :create, :show] do
