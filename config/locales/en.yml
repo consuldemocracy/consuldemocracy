@@ -645,6 +645,5 @@ en:
       sign_up: "Sign up with Google"
   invisible_captcha:
     sentence_for_humans: "If you are human, ignore this field"
-    error_message: "Robot activity detected"
     timestamp_error_message: "Sorry, that was too quick! Please resubmit."
 

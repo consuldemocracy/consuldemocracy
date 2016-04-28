@@ -644,5 +644,4 @@ es:
       sign_up: "Regístrate con Google"
   invisible_captcha:
     sentence_for_humans: "Si eres humano, por favor ignora este campo"
-    error_message: "Eres un robot!"
     timestamp_error_message: "Eso ha sido demasiado rápido. Por favor, reenvía el formulario."
