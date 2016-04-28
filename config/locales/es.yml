@@ -522,6 +522,8 @@ es:
     wrong_price_format: Solo puede incluir caracteres numéricos
     spending_proposal:
       spending_proposal: Propuesta de inversión
+      add: Añadir
+      already_added: "Ya has añadido esta propuesta de inversión"
       already_supported: Ya has apoyado este proyecto. ¡Compártelo!
       forum: Espacio de debate distrital
       support: Apoyar
