@@ -9,7 +9,6 @@ module CommonActions
     fill_in 'user_email',                 with: email
     fill_in 'user_password',              with: password
     fill_in 'user_password_confirmation', with: password
-    fill_in 'user_captcha',               with: correct_captcha_text
     check 'user_terms_of_service'
 
     click_button 'Register'
@@ -43,14 +42,12 @@ module CommonActions
     fill_in 'proposal_external_url', with: 'http://rescue.org/refugees'
     fill_in 'proposal_video_url', with: 'http://youtube.com'
     fill_in 'proposal_responsible_name', with: 'Isabel Garcia'
-    fill_in 'proposal_captcha', with: correct_captcha_text
     check 'proposal_terms_of_service'
   end
 
   def fill_in_debate
     fill_in 'debate_title', with: 'A title for a debate'
     fill_in 'debate_description', with: 'This is very important because...'
-    fill_in 'debate_captcha', with: correct_captcha_text
     check 'debate_terms_of_service'
   end
 
@@ -103,10 +100,6 @@ module CommonActions
       click_button 'Publish reply'
     end
     expect(page).to have_content 'It will be done next week.'
-  end
-
-  def correct_captcha_text
-    SimpleCaptcha::SimpleCaptchaData.last.value
   end
 
   def avatar(name)

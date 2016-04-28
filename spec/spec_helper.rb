@@ -63,6 +63,7 @@ RSpec.configure do |config|
 
   config.before(:each, type: :feature) do
     Bullet.start_request
+    allow(InvisibleCaptcha).to receive(:timestamp_threshold).and_return(0)
   end
 
   config.after(:each, type: :feature) do

@@ -443,15 +443,6 @@ en:
       categories: "Categories"
     target_blank_html: " (link opens in new window)"
     unflag: Unflag
-  simple_captcha:
-    label: Enter the text from the image in the box below
-    message:
-      debate: the secret code does not match the image
-      proposal: the secret code does not match the image
-      spendingproposal: the secret code does not match the image
-      user: the secret code does not match the image
-    placeholder: Enter the text from the image
-    refresh_button_text: Refresh
   social:
     blog: Blog
     facebook: Facebook
@@ -652,3 +643,8 @@ en:
     google_oauth2:
       sign_in: "Sign in with Google"
       sign_up: "Sign up with Google"
+  invisible_captcha:
+    sentence_for_humans: "If you are human, ignore this field"
+    error_message: "Robot activity detected"
+    timestamp_error_message: "Sorry, that was too quick! Please resubmit."
+

@@ -746,26 +746,6 @@ form {
     line-height: $line-height;
     vertical-align: middle;
   }
-
-  .captcha {
-    border: 0;
-    padding: $line-height/2 0;
-
-    input {
-      margin-bottom: 0 !important;
-    }
-  }
-
-  .button.margin-top {
-    margin-top: $line-height;
-  }
-}
-
-.captcha {
-
-  label {
-    display: none;
-  }
 }
 
 // 07. Alerts

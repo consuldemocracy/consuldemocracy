@@ -16,7 +16,7 @@ class Management::SpendingProposalsController < Management::BaseController
     @spending_proposal = SpendingProposal.new(spending_proposal_params)
     @spending_proposal.author = managed_user
 
-    if @spending_proposal.save_with_captcha
+    if @spending_proposal.save
       redirect_to management_spending_proposal_path(@spending_proposal), notice: t('flash.actions.create.notice', resource_name: t("activerecord.models.spending_proposal", count: 1))
     else
       render :new
@@ -45,7 +45,7 @@ class Management::SpendingProposalsController < Management::BaseController
     end
 
     def spending_proposal_params
-      params.require(:spending_proposal).permit(:title, :description, :external_url, :geozone_id, :terms_of_service, :captcha, :captcha_key)
+      params.require(:spending_proposal).permit(:title, :description, :external_url, :geozone_id, :terms_of_service)
     end
 
     def only_verified_users

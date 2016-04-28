@@ -27,7 +27,6 @@ feature 'Proposals' do
       fill_in 'proposal_description', with: 'This is very important because...'
       fill_in 'proposal_external_url', with: 'http://rescue.org/refugees'
       fill_in 'proposal_video_url', with: 'http://youtube.com'
-      fill_in 'proposal_captcha', with: correct_captcha_text
       check 'proposal_terms_of_service'
 
       click_button 'Create proposal'

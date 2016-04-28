@@ -11,6 +11,8 @@ class DebatesController < ApplicationController
 
   feature_flag :debates
 
+  invisible_captcha only: [:create, :update], honeypot: :subtitle
+
   has_orders %w{hot_score confidence_score created_at relevance}, only: :index
   has_orders %w{most_voted newest oldest}, only: :show
 
@@ -45,7 +47,7 @@ class DebatesController < ApplicationController
   private
 
     def debate_params
-      params.require(:debate).permit(:title, :description, :tag_list, :comment_kind, :terms_of_service, :captcha, :captcha_key)
+      params.require(:debate).permit(:title, :description, :tag_list, :comment_kind, :terms_of_service)
     end
 
     def resource_model
