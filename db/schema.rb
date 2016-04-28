@@ -286,15 +286,6 @@ ActiveRecord::Schema.define(version: 20160426211658) do
 
   add_index "settings", ["key"], name: "index_settings_on_key", using: :btree
 
-  create_table "simple_captcha_data", force: :cascade do |t|
-    t.string   "key",        limit: 40
-    t.string   "value",      limit: 6
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "simple_captcha_data", ["key"], name: "idx_key", using: :btree
-
   create_table "spending_proposals", force: :cascade do |t|
     t.string   "title"
     t.text     "description"

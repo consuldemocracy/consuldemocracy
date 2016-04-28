@@ -417,15 +417,6 @@ es:
       categories: "Categorías"
     target_blank_html: " (se abre en ventana nueva)"
     unflag: Deshacer denuncia
-  simple_captcha:
-    label: Introduce el texto de la imagen en la siguiente caja
-    message:
-      debate: el código secreto no coincide con la imagen
-      proposal: el código secreto no coincide con la imagen
-      spendingproposal: el código secreto no coincide con la imagen
-      user: el código secreto no coincide con la imagen
-    placeholder: Introduce el texto de la imagen
-    refresh_button_text: Refrescar
   social:
     blog: Blog
     facebook: Facebook
@@ -591,3 +582,6 @@ es:
       text_sign_in: "iniciar sesión"
       text_sign_up: "registrarte"
       alt: "Selecciona el texto que quieres comentar y pulsa en el botón con el lápiz."
+  invisible_captcha:
+    sentence_for_humans: "Si eres humano, por favor ignora este campo"
+    timestamp_error_message: "Eso ha sido demasiado rápido. Por favor, reenvía el formulario."

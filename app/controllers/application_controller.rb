@@ -1,7 +1,6 @@
 require "application_responder"
 
 class ApplicationController < ActionController::Base
-  include SimpleCaptcha::ControllerHelpers
   include HasFilters
   include HasOrders
 
@@ -115,5 +114,4 @@ class ApplicationController < ActionController::Base
         store_location_for(:user, request.path)
       end
     end
-
 end

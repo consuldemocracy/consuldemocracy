@@ -1,6 +1,8 @@
 class Users::RegistrationsController < Devise::RegistrationsController
   prepend_before_action :authenticate_scope!, only: [:edit, :update, :destroy, :finish_signup, :do_finish_signup]
 
+  invisible_captcha only: [:create], honeypot: :family_name, scope: :user
+
   def new
     super do |user|
       user.use_redeemable_code = true if params[:use_redeemable_code].present?
@@ -9,7 +11,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   def create
     build_resource(sign_up_params)
-    if resource.valid_with_captcha?
+    if resource.valid?
       super
     else
       render :new
@@ -58,8 +60,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     def sign_up_params
       params[:user].delete(:redeemable_code) if params[:user].present? && params[:user][:redeemable_code].blank?
       params.require(:user).permit(:username, :email, :password,
-                                   :password_confirmation, :captcha,
-                                   :captcha_key, :terms_of_service, :locale,
+                                   :password_confirmation, :terms_of_service, :locale,
                                    :redeemable_code)
     end
 

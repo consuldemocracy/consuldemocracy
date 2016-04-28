@@ -2,6 +2,7 @@ class ProposalsController < ApplicationController
   include CommentableActions
   include FlagActions
 
+
   before_action :parse_search_terms, only: [:index, :suggest]
   before_action :parse_advanced_search_terms, only: :index
   before_action :parse_tag_filter, only: :index
@@ -9,6 +10,8 @@ class ProposalsController < ApplicationController
   before_action :load_categories, only: [:index, :new, :edit, :map, :summary]
   before_action :load_geozones, only: [:edit, :map, :summary]
   before_action :authenticate_user!, except: [:index, :show, :map, :summary]
+
+  invisible_captcha only: [:create, :update], honeypot: :subtitle
 
   has_orders %w{hot_score confidence_score created_at relevance}, only: :index
   has_orders %w{most_voted newest oldest}, only: :show
@@ -56,7 +59,7 @@ class ProposalsController < ApplicationController
   private
 
     def proposal_params
-      params.require(:proposal).permit(:title, :question, :summary, :description, :external_url, :video_url, :responsible_name, :tag_list, :terms_of_service, :captcha, :captcha_key, :geozone_id)
+      params.require(:proposal).permit(:title, :question, :summary, :description, :external_url, :video_url, :responsible_name, :tag_list, :terms_of_service, :geozone_id)
     end
 
     def retired_params
@@ -93,4 +96,5 @@ class ProposalsController < ApplicationController
         @resources = @resources.where('proposals.id NOT IN (?)', @featured_proposals.map(&:id))
       end
     end
+
 end

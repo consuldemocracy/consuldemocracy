@@ -8,6 +8,8 @@
     </div>
     <div id="js-suggest"></div>
 
+    <%= f.invisible_captcha :subtitle %>
+
     <div class="small-12 column">
       <%= f.label :question, t("proposals.form.proposal_question") %>
       <span class="note-marked">
@@ -82,10 +84,6 @@
           </span>
         <% end %>
       <% end %>
-    </div>
-
-    <div class="small-12 column">
-      <%= f.simple_captcha input_html: { required: false } %>
     </div>
 
     <div class="actions small-12 column">

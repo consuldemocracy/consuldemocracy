@@ -417,15 +417,6 @@ en:
       categories: "Categories"
     target_blank_html: " (link opens in new window)"
     unflag: Unflag
-  simple_captcha:
-    label: Enter the text from the image in the box below
-    message:
-      debate: the secret code does not match the image
-      proposal: the secret code does not match the image
-      spendingproposal: the secret code does not match the image
-      user: the secret code does not match the image
-    placeholder: Enter the text from the image
-    refresh_button_text: Refresh
   social:
     blog: Blog
     facebook: Facebook
@@ -591,3 +582,7 @@ en:
       text_sign_in: "login"
       text_sign_up: "sign up"
       alt: "Select the text you want to comment and press the button with the pencil."
+  invisible_captcha:
+    sentence_for_humans: "If you are human, ignore this field"
+    timestamp_error_message: "Sorry, that was too quick! Please resubmit."
+
