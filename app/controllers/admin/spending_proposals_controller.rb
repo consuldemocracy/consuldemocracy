@@ -36,6 +36,12 @@ class Admin::SpendingProposalsController < Admin::BaseController
     @spending_proposals_with_supports = SpendingProposal.with_supports.group(:geozone).sum(:price).sort_by{|geozone, count| geozone.present? ? geozone.name : "z"}
   end
 
+  def priority
+    @valuator_priorities = Valuator.all.collect do |valuator|
+      [valuator, valuator.spending_proposals.minimum_per_district(params[:proposals_to_evaluate_per_district])]
+    end.sort_by {|valuator, spending_proposals| spending_proposals.count }.reverse
+  end
+
   private
 
     def spending_proposal_params
