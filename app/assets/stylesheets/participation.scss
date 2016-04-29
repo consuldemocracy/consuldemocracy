@@ -841,10 +841,11 @@
       content: none;
     }
 
-    .delete-vote {
-      border-bottom: 1px dotted $budget;
+    .investment-project-amount {
       color: $budget;
-      text-decoration: none;
+      font-size: rem-calc(20);
+      font-weight: bold;
+      margin-bottom: 0;
     }
 
     .button-support {
@@ -870,11 +871,13 @@
 
     .supported {
       color: $budget;
+      margin-top: 0;
     }
 
     .remove .icon-check-circle {
       display: block;
       font-size: rem-calc(70);
+      line-height: rem-calc(70);
     }
 
     .no-supports-allowed {

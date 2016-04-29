@@ -3,10 +3,13 @@
   <% if added_to_ballot?(@ballot, spending_proposal) %>
     <div class="remove supported inline-block">
 
-      <span class="icon-check-circle bounce-in animation" title="<%= t("spending_proposals.spending_proposal.already_added") %>"></span>
+      <span class="icon-check-circle bounceIn animation" title="<%= t("spending_proposals.spending_proposal.already_added") %>"></span>
+
+      <!-- PENDING TEST -->
+      <p class="investment-project-amount"><%= number_to_currency(spending_proposal.price) %></p>
 
       <%= link_to remove_ballot_url(spending_proposal_id: spending_proposal.id),
-        class: "delete-vote small expanded",
+        class: "delete small expanded",
         title: t('spending_proposals.spending_proposal.support_title'),
         method: "delete",
         remote: true,
@@ -16,6 +19,9 @@
     </div>
   <% else %>
     <div class="add">
+      <!-- PENDING TEST -->
+      <p class="investment-project-amount"><%= number_to_currency(spending_proposal.price) %></p>
+
       <%= link_to add_ballot_url(spending_proposal_id: spending_proposal.id),
           class: "button button-support small expanded",
           title: t('spending_proposals.spending_proposal.support_title'),
