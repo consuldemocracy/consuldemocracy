@@ -3,6 +3,10 @@
 <section class="investment-project-show">
   <div id="<%= dom_id(@spending_proposal) %>" class="row">
     <div class="small-12 medium-9 column">
+      <%= link_to :back, class: "back" do %>
+        <span class="icon-angle-left"></span>
+        <%= t("shared.back") %>
+      <% end %>
 
       <h1><%= @spending_proposal.title %></h1>
 
