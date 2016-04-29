@@ -40,7 +40,7 @@ module Abilities
 
       can :manage, Annotation
 
-      can [:read, :update, :destroy, :summary, :priority], SpendingProposal
+      can [:read, :update, :destroy, :summary], SpendingProposal
     end
   end
 end
