@@ -173,6 +173,8 @@ es:
         administrator_filter_all: Todos los administradores
         valuator_filter_all: Todos los evaluadores
         tags_filter_all: Todas las etiquetas
+        max_per_geozone: Corte por distrito
+        max_for_no_geozone: Corte por ciudad
         filters:
           valuation_open: Abiertas
           without_admin: Sin administrador
