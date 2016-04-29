@@ -298,6 +298,74 @@ feature 'Admin spending proposals' do
       expect(page).to have_content("More schools")
     end
 
+    context "Limiting the number of proposals" do
+      scenario "Limiting by geozone", :js do
+        california = create(:geozone)
+        new_york   = create(:geozone)
+
+        [2, 3, 5, 10, 20, 99].each do |votes|
+          create(:spending_proposal, geozone: california, cached_votes_up: votes, title: "Cali with #{votes} supports")
+          create(:spending_proposal, geozone: new_york, cached_votes_up: votes, title: "NY voted #{votes} times")
+        end
+
+        visit admin_spending_proposals_path
+
+        [2, 3, 5, 10, 20, 99].each do |votes|
+          expect(page).to have_link "Cali with #{votes} supports"
+          expect(page).to have_link "NY voted #{votes} times"
+        end
+
+        select "5", from: "max_per_geozone"
+
+        expect(page).to have_content('There are 10 investment projects')
+        expect(page).to_not have_link "Cali with 2 supports"
+        expect(page).to_not have_link "NY voted 2 times"
+      end
+
+      scenario "Limiting the proposals with no geozone", :js do
+        [2, 3, 5, 10, 20, 99].each do |votes|
+          create(:spending_proposal, cached_votes_up: votes, title: "#{votes} supports!")
+        end
+
+        visit admin_spending_proposals_path
+
+        [2, 3, 5, 10, 20, 99].each do |votes|
+          expect(page).to have_link "#{votes} supports!"
+        end
+
+        select "5", from: "max_for_no_geozone"
+
+        expect(page).to have_content('There are 5 investment projects')
+        expect(page).to_not have_link "2 supports!"
+      end
+
+      scenario "Limiting both", :js do
+        skane = create(:geozone)
+
+        [10, 20, 99].each do |votes|
+          create(:spending_proposal, geozone: skane, cached_votes_up: votes, title: "Skane with #{votes} supports")
+          create(:spending_proposal, cached_votes_up: votes, title: "No geozone, #{votes} supports")
+        end
+
+        visit admin_spending_proposals_path
+
+        [10, 20, 99].each do |votes|
+          expect(page).to have_link "Skane with #{votes} supports"
+          expect(page).to have_link "No geozone, #{votes} supports"
+        end
+
+        visit admin_spending_proposals_path(max_for_no_geozone: 2, max_per_geozone: 1)
+
+        expect(page).to have_content('There are 3 investment projects')
+        expect(page).to have_link "Skane with 99 supports"
+        expect(page).to_not have_link "Skane with 20 supports"
+        expect(page).to_not have_link "Skane with 10 supports"
+        expect(page).to have_link "No geozone, 99 supports"
+        expect(page).to have_link "No geozone, 20 supports"
+        expect(page).to_not have_link "No geozone, 10 supports"
+      end
+    end
+
   end
 
   scenario 'Show' do

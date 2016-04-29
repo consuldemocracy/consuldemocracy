@@ -65,4 +65,13 @@ module SpendingProposalsHelper
     end
   end
 
+  def numeric_range_options(range, step, number)
+    values = range
+    values = values.step(step) if step.present?
+    values = values.to_a
+    values = (values + [number.to_i]).uniq.compact.sort if number.present?
+
+    options_for_select(values, number)
+  end
+
 end
