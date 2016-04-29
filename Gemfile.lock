@@ -65,6 +65,8 @@ GEM
       nokogiri
     ancestry (2.1.0)
       activerecord (>= 3.0.0)
+    animate-rails (1.0.10)
+      rails
     arel (6.0.3)
     ast (2.2.0)
     babel-source (5.8.35)
@@ -443,6 +445,7 @@ DEPENDENCIES
   acts_as_votable
   ahoy_matey (~> 1.4.0)
   ancestry
+  animate-rails
   browser
   bullet
   byebug
