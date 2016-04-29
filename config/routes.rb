@@ -147,7 +147,6 @@ Rails.application.routes.draw do
       end
 
       get :summary, on: :collection
-      get :priority, on: :collection
     end
 
     resources :comments, only: :index do

@@ -518,38 +518,4 @@ describe SpendingProposal do
     end
   end
 
-  describe "#priority_proposals" do
-
-    it "#priority_proposals" do
-      scarlett = create(:valuator)
-
-      california = create(:geozone)
-      new_york = create(:geozone)
-      washington = create(:geozone)
-
-      cali_some_votes  = create(:spending_proposal, geozone: california, cached_votes_up: 50)
-      cali_least_votes = create(:spending_proposal, geozone: california, cached_votes_up: 25)
-      cali_most_votes  = create(:spending_proposal, geozone: california, cached_votes_up: 75)
-
-      new_york_some_votes  = create(:spending_proposal, geozone: new_york, cached_votes_up: 50)
-      new_york_least_votes = create(:spending_proposal, geozone: new_york, cached_votes_up: 25)
-      new_york_most_votes  = create(:spending_proposal, geozone: new_york, cached_votes_up: 75)
-
-      SpendingProposal.all.each do |sp|
-        sp.valuators << scarlett
-      end
-
-      priority_proposals = scarlett.spending_proposals.minimum_per_district(2)
-
-      expect(priority_proposals).to include(cali_most_votes)
-      expect(priority_proposals).to include(cali_some_votes)
-      expect(priority_proposals).to include(new_york_most_votes)
-      expect(priority_proposals).to include(new_york_some_votes)
-
-      expect(priority_proposals).to_not include(cali_least_votes)
-      expect(priority_proposals).to_not include(new_york_least_votes)
-    end
-
-  end
-
 end
