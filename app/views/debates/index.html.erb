@@ -25,10 +25,6 @@
         <% end %>
       </div>
 
-      <% if @search_terms.blank? && @advanced_search_terms.blank? %>
-        <%= render "shared/featured_open_plenary" %>
-      <% end %>
-
       <% unless @tag_filter || @search_terms || !has_featured? %>
         <%= render "featured_debates" %>
       <% end %>
