@@ -590,10 +590,6 @@ en:
       description: If the proposal is accepted by the majority, the City Council accepts it as its own and it gets done.
       title: It gets done
     featured:
-      open_plenary:
-        link: See proposals and questions
-        text: Read proposals and questions to any political party and support the most you like.
-        title: Open plenary
       page_title: Featured
       proposals:
         link: See proposals
