@@ -58,6 +58,10 @@ blockquote.featured {
   text-transform: uppercase;
 }
 
+blockquote p {
+  font-size: $h3-font-size;
+}
+
 @media (max-width: $small-breakpoint) {
 
   .text-right {
