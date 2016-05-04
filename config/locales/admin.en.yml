@@ -217,7 +217,6 @@ en:
         undefined: Undefined
       summary:
         title: Summary for investment projects
-        title_proposals_with_supports: Summary for investment projects with supports
         geozone_name: Scope
         finished_and_feasible_count: Finished and feasible
         finished_and_unfeasible_count: Finished and unfeasible

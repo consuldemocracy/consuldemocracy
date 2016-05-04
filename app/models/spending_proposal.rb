@@ -236,8 +236,4 @@ class SpendingProposal < ActiveRecord::Base
     valuation_finished.feasible
   end
 
-  def self.finished_and_unfeasible
-    valuation_finished.unfeasible
-  end
-
 end

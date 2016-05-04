@@ -57,12 +57,9 @@ module SpendingProposalsHelper
     end
   end
 
-  def spending_proposal_count_for_geozone(scope, geozone, second_scope)
-    if geozone.present?
-      geozone.spending_proposals.send(scope).send(second_scope).count
-    else
-      SpendingProposal.where(geozone: nil).send(scope).send(second_scope).count
-    end
+  def spending_proposal_count_for_geozone(scope, geozone)
+    geozone_id = geozone.present? ? geozone.id : nil
+    SpendingProposal.scoped_filter(params, nil).where(geozone_id: geozone_id).send(scope).count
   end
 
   def numeric_range_options(range, step, number)
