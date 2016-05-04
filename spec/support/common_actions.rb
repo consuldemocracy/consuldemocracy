@@ -215,7 +215,7 @@ module CommonActions
 
   def add_to_ballot(spending_proposal)
     within("#spending_proposal_#{spending_proposal.id}") do
-      find('.add a').click
+      find('.add a').trigger('click')
     end
   end
 

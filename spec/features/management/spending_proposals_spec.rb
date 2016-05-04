@@ -128,6 +128,10 @@ feature 'Spending Proposals' do
 
   context "Voting" do
 
+    background do
+      Setting["feature.spending_proposal_features.fase2"] = true
+    end
+
     scenario 'Voting spending proposals on behalf of someone in index view', :js do
       spending_proposal = create(:spending_proposal)
 

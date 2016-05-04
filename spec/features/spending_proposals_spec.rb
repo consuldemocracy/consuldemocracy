@@ -318,7 +318,11 @@ feature 'Spending proposals' do
 
   context "Final Voting" do
 
-    scenario "Add a proposal", :js do
+    background do
+      Setting["feature.spending_proposal_features.fase3"] = true
+    end
+
+    scenario "Add a proposal", :focus do
       user = create(:user, :level_two)
       sp1 = create(:spending_proposal, feasible: true, price: 10000)
       sp2 = create(:spending_proposal, feasible: true, price: 20000)
