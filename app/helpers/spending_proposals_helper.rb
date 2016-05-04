@@ -62,6 +62,10 @@ module SpendingProposalsHelper
     SpendingProposal.scoped_filter(params, nil).where(geozone_id: geozone_id).send(scope).count
   end
 
+  def spending_proposal_count_for_valuator(scope, valuator)
+    SpendingProposal.limit_results(valuator.spending_proposals, params).send(scope).count
+  end
+
   def numeric_range_options(range, step, number)
     values = range
     values = values.step(step) if step.present?
