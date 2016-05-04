@@ -32,8 +32,7 @@ class Admin::SpendingProposalsController < Admin::BaseController
   end
 
   def summary
-    @spending_proposals = SpendingProposal.group(:geozone).sum(:price).sort_by{|geozone, count| geozone.present? ? geozone.name : "z"}
-    @spending_proposals_with_supports = SpendingProposal.with_supports.group(:geozone).sum(:price).sort_by{|geozone, count| geozone.present? ? geozone.name : "z"}
+    @spending_proposals = SpendingProposal.limit_results(SpendingProposal, params).group(:geozone).sum(:price).sort_by{|geozone, count| geozone.present? ? geozone.name : "ZZ"}
   end
 
   private

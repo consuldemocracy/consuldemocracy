@@ -592,6 +592,7 @@ feature 'Admin spending proposals' do
       proposal4 = create(:spending_proposal, geozone: california, feasible: false, valuation_finished: true)
       proposal5 = create(:spending_proposal, geozone: new_york,   feasible: false, valuation_finished: true)
       proposal6 = create(:spending_proposal, geozone: new_york,   feasible: true,  valuation_finished: true)
+      proposal6 = create(:spending_proposal, geozone: new_york,   feasible: false, valuation_finished: false)
 
       visit admin_spending_proposals_path
 
@@ -678,57 +679,90 @@ feature 'Admin spending proposals' do
       end
     end
 
-    context "Second table" do
+    scenario "Can be limited to top results by geozone", :js do
+      california = create(:geozone)
 
-      scenario "should not display proposals without votes" do
-        california = create(:geozone)
-        new_york   = create(:geozone)
+      create(:spending_proposal, :with_confidence_score, cached_votes_up: 1 ,  price: '10000000', geozone: nil,        feasible: true, valuation_finished: true)
+      create(:spending_proposal, :with_confidence_score, cached_votes_up: 100, price: '5000000',  geozone: nil,        feasible: false, valuation_finished: true)
+      create(:spending_proposal, :with_confidence_score, cached_votes_up:  1,  price: '1000000',  geozone: california, feasible: true, valuation_finished: true)
+      create(:spending_proposal, :with_confidence_score, cached_votes_up: 100, price: '500000',   geozone: california, feasible: false, valuation_finished: true)
+      create(:spending_proposal, :with_confidence_score, cached_votes_up: 10,  price: '30000',    geozone: california, feasible: true, valuation_finished: true)
 
-        proposal1 = create(:spending_proposal, geozone: nil,        valuation_finished: true)
-        proposal2 = create(:spending_proposal, geozone: nil,        valuation_finished: true)
-        proposal3 = create(:spending_proposal, geozone: california, valuation_finished: true)
-        proposal4 = create(:spending_proposal, geozone: california, valuation_finished: true)
-        proposal5 = create(:spending_proposal, geozone: new_york,   valuation_finished: true)
-        proposal6 = create(:spending_proposal, geozone: new_york,   valuation_finished: false)
+      visit summary_admin_spending_proposals_path(max_for_no_geozone: 1, max_per_geozone: 2)
 
+      expect(page).to have_content "Summary for investment projects"
 
-        create(:vote, votable: proposal1)
-        create(:vote, votable: proposal2)
-        create(:vote, votable: proposal3)
-
-        visit admin_spending_proposals_path
-
-        click_link "Investment project summary"
-
-        expect(page).to have_content "Summary for investment projects"
-
-        within("#all-proposals") do
-          within("#geozone_all_city") do
-            expect(page).to have_css(".finished-count", text: 2)
-          end
-
-          within("#geozone_#{california.id}") do
-            expect(page).to have_css(".finished-count", text: 2)
-          end
-
-          within("#geozone_#{new_york.id}") do
-            expect(page).to have_css(".finished-count", text: 1)
-          end
-        end
-
-        within("#proposals-with-votes") do
-          within("#geozone_all_city") do
-            expect(page).to have_css(".finished-count", text: 2)
-          end
-
-          within("#geozone_#{california.id}") do
-            expect(page).to have_css(".finished-count", text: 1)
-          end
-
-          expect(page).to_not have_css("#geozone_#{new_york.id}")
-        end
+      within("#geozone_all_city") do
+        expect(page).to have_css(".name",                          text: "All city")
+        expect(page).to have_css(".finished-and-feasible-count",   text: 0)
+        expect(page).to have_css(".finished-and-unfeasible-count", text: 1)
+        expect(page).to have_css(".total-price",                   text: "$5,000,000")
       end
 
+      within("#geozone_#{california.id}") do
+        expect(page).to have_css(".name",                          text: california.name)
+        expect(page).to have_css(".finished-and-feasible-count",   text: 1)
+        expect(page).to have_css(".finished-and-unfeasible-count", text: 1)
+        expect(page).to have_css(".total-price",                   text: "$530,000")
+      end
+    end
+
+  end
+
+  context 'Valuators Summary' do
+    scenario "Display info on valuator's assigned pending proposals" do
+      proposal1 = create(:spending_proposal, price: '10000000', geozone: nil, feasible: true, valuation_finished: true)
+      proposal2 = create(:spending_proposal, price: '5000000',  geozone: nil, feasible: false, valuation_finished: true)
+      valuator = create(:valuator, description: 'SuperValuator')
+      proposal1.valuators << valuator
+      proposal2.valuators << valuator
+
+      visit summary_admin_valuators_path
+
+      within("#valuator_#{valuator.id}") do
+        expect(page).to have_css(".name",                          text: "SuperValuator")
+        expect(page).to have_css(".finished-and-feasible-count",   text: 1)
+        expect(page).to have_css(".finished-and-unfeasible-count", text: 1)
+        expect(page).to have_css(".total-price",                   text: "$15,000,000")
+      end
+    end
+
+    scenario "Can be limited to top results by geozone", :js do
+      california = create(:geozone)
+      valuator1 = create(:valuator, description: 'Valuator number 1')
+      valuatorA = create(:valuator, description: 'Valuator series A')
+
+      proposal1 = create(:spending_proposal, :with_confidence_score, cached_votes_up: 100, price: '100',  geozone: nil,        feasible: true, valuation_finished: true)
+      proposal2 = create(:spending_proposal, :with_confidence_score, cached_votes_up: 1,   price: '8000', geozone: nil,        feasible: false, valuation_finished: true)
+      proposal3 = create(:spending_proposal, :with_confidence_score, cached_votes_up: 50,  price: '5000', geozone: california, feasible: false, valuation_finished: true)
+      proposalA = create(:spending_proposal, :with_confidence_score, cached_votes_up: 10,  price: '10',   geozone: nil,        feasible: true, valuation_finished: true)
+      proposalB = create(:spending_proposal, :with_confidence_score, cached_votes_up: 5,   price: '1000', geozone: california, feasible: true, valuation_finished: true)
+      proposalC = create(:spending_proposal, :with_confidence_score, cached_votes_up: 500, price: '7000', geozone: california, feasible: false, valuation_finished: true)
+
+      proposal1.valuators << valuator1
+      proposal2.valuators << valuator1
+      proposal3.valuators << valuator1
+      proposalA.valuators << valuatorA
+      proposalB.valuators << valuatorA
+      proposalC.valuators << valuatorA
+
+      visit summary_admin_valuators_path(max_for_no_geozone: 1, max_per_geozone: 2) # 1 3 C
+
+      within("#valuator_#{valuator1.id}") do
+        expect(page).to have_css(".name",                          text: "Valuator number 1")
+        expect(page).to have_css(".finished-and-feasible-count",   text: 1)
+        expect(page).to have_css(".finished-and-unfeasible-count", text: 1)
+        expect(page).to have_css(".total-count",                   text: 2)
+        expect(page).to have_css(".total-price",                   text: "$5,100")
+      end
+
+      within("#valuator_#{valuatorA.id}") do
+        expect(page).to have_css(".name",                          text:  "Valuator series A")
+        expect(page).to have_css(".finished-and-feasible-count",   text: 0)
+        expect(page).to have_css(".finished-and-unfeasible-count", text: 1)
+        expect(page).to have_css(".total-count",                   text: 1)
+        expect(page).to have_css(".total-price",                   text: "$7,000")
+      end
     end
 
   end

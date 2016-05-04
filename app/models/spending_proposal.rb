@@ -79,12 +79,12 @@ class SpendingProposal < ActiveRecord::Base
     ids = []
     if max_per_geozone > 0
       Geozone.pluck(:id).each do |gid|
-        ids += SpendingProposal.select(:id).where(geozone_id: gid).order(cached_votes_up: :desc).limit(max_per_geozone).map(&:id)
+        ids += SpendingProposal.select(:id).where(geozone_id: gid).order(confidence_score: :desc).limit(max_per_geozone).map(&:id)
       end
     end
 
     if max_for_no_geozone > 0
-      ids += SpendingProposal.select(:id).city_wide.order(cached_votes_up: :desc).limit(max_for_no_geozone).map(&:id)
+      ids += SpendingProposal.select(:id).city_wide.order(confidence_score: :desc).limit(max_for_no_geozone).map(&:id)
     end
 
     conditions = ["spending_proposals.id IN (?)"]
@@ -234,10 +234,6 @@ class SpendingProposal < ActiveRecord::Base
 
   def self.finished_and_feasible
     valuation_finished.feasible
-  end
-
-  def self.finished_and_unfeasible
-    valuation_finished.unfeasible
   end
 
 end
