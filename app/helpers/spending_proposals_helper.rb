@@ -59,7 +59,7 @@ module SpendingProposalsHelper
 
   def spending_proposal_count_for_geozone(scope, geozone)
     geozone_id = geozone.present? ? geozone.id : nil
-    SpendingProposal.scoped_filter(params, nil).where(geozone_id: geozone_id).send(scope).count
+    SpendingProposal.limit_results(SpendingProposal.where(geozone_id: geozone_id), params).send(scope).count
   end
 
   def spending_proposal_count_for_valuator(scope, valuator)
