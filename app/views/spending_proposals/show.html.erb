@@ -42,6 +42,7 @@
     <% unless @spending_proposal.unfeasible? %>
       <aside class="small-12 medium-3 column">
         <div class="sidebar-divider"></div>
+
          <% if Setting["feature.spending_proposal_features.fase2"] %>
            <h3><%= t("votes.supports") %></h3>
            <div class="text-center">

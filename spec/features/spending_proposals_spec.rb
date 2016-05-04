@@ -322,6 +322,44 @@ feature 'Spending proposals' do
       Setting["feature.spending_proposal_features.fase3"] = true
     end
 
+    scenario "Index" do
+      user = create(:user, :level_two)
+      sp1 = create(:spending_proposal, feasible: true, price: 10000)
+      sp2 = create(:spending_proposal, feasible: true, price: 20000)
+
+      login_as(user)
+      visit root_path
+
+      first(:link, "Participatory budgeting").click
+      click_link "Vote proposals of the city"
+
+      within("#spending_proposal_#{sp1.id}") do
+        expect(page).to have_content sp1.title
+        expect(page).to have_content "$10,000"
+      end
+
+      within("#spending_proposal_#{sp2.id}") do
+        find('.add a').trigger('click')
+        expect(page).to have_content sp2.title
+        expect(page).to have_content "$20,000"
+      end
+    end
+
+    scenario "Show" do
+      user = create(:user, :level_two)
+      sp1 = create(:spending_proposal, feasible: true, price: 10000)
+
+      login_as(user)
+      visit root_path
+
+      first(:link, "Participatory budgeting").click
+      click_link "Vote proposals of the city"
+
+      click_link sp1.title
+
+      expect(page).to have_content "$10,000"
+    end
+
     scenario "Add a proposal", :js do
       user = create(:user, :level_two)
       sp1 = create(:spending_proposal, feasible: true, price: 10000)
@@ -333,18 +371,18 @@ feature 'Spending proposals' do
       first(:link, "Participatory budgeting").click
       click_link "Vote proposals of the city"
 
-      within("#spending_proposal_#{sp2.id}") do
-        find('.add a').trigger('click')
-      end
-
-      expect(page).to have_css("#amount-spent", text: "20000")
-      expect(page).to have_css("#amount-available", text: "$23,980,000")
-
       within("#spending_proposal_#{sp1.id}") do
         find('.add a').trigger('click')
       end
 
-      expect(page).to have_css("#amount-spent", text: "30000")
+      expect(page).to have_css("#amount-spent", text: "10000")
+      expect(page).to have_css("#amount-available", text: "$23,990,000")
+
+      within("#spending_proposal_#{sp2.id}") do
+        find('.add a').trigger('click')
+      end
+
+      expect(page).to have_css("#amount-spent", text: "$30,000")
       expect(page).to have_css("#amount-available", text: "$23,970,000")
     end
 
@@ -362,14 +400,15 @@ feature 'Spending proposals' do
         find('.add a').trigger('click')
       end
 
-      expect(page).to have_css("#amount-spent", text: "10000")
+      expect(page).to have_css("#amount-spent", text: "$10,000")
       expect(page).to have_css("#amount-available", text: "$23,990,000")
+
 
       within("#spending_proposal_#{sp1.id}") do
         find('.remove a').trigger('click')
       end
 
-      expect(page).to have_css("#amount-spent", text: "0")
+      expect(page).to have_css("#amount-spent", text: "$0")
       expect(page).to have_css("#amount-available", text: "$24,000,000")
     end
 
