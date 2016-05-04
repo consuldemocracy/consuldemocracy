@@ -295,7 +295,7 @@ describe SpendingProposal do
     end
   end
 
-  describe 'Supports' do
+  describe 'Permissions' do
     let(:user)        { create(:user, :level_two) }
     let(:luser)       { create(:user) }
     let(:district)    { create(:geozone) }
@@ -311,11 +311,6 @@ describe SpendingProposal do
       it "rejects not verified users" do
         expect(city_sp.reason_for_not_being_votable_by(luser)).to eq(:not_verified)
         expect(district_sp.reason_for_not_being_votable_by(luser)).to eq(:not_verified)
-      end
-
-      it "rejects unfeasible spending proposals" do
-        unfeasible = create(:spending_proposal, feasible: false, valuation_finished: true)
-        expect(unfeasible.reason_for_not_being_votable_by(user)).to eq(:unfeasible)
       end
 
       it "rejects organizations" do
@@ -531,36 +526,102 @@ describe SpendingProposal do
     end
   end
 
-  describe "#amount_spent" do
-    it "returns the amount spent in spending proposals" do
-      sp1 = create(:spending_proposal, price: 10000)
-      sp2 = create(:spending_proposal, price: 20000)
+  describe "Final Voting", :focus do
 
-      ballot = create(:ballot)
-      ballot.spending_proposals << sp1
+    describe 'Permissions' do
+      let(:user)        { create(:user, :level_two) }
+      let(:luser)       { create(:user) }
+      let(:district)    { create(:geozone) }
+      let(:city_sp)     { create(:spending_proposal) }
+      let(:district_sp) { create(:spending_proposal, geozone: district) }
 
-      expect(ballot.amount_spent).to eq 10000
+      describe '#reason_for_not_being_ballotable_by' do
+        it "rejects not logged in users" do
+          expect(city_sp.reason_for_not_being_ballotable_by(nil)).to eq(:not_logged_in)
+          expect(district_sp.reason_for_not_being_ballotable_by(nil)).to eq(:not_logged_in)
+        end
 
-      ballot.spending_proposals << sp2
+        it "rejects not verified users" do
+          expect(city_sp.reason_for_not_being_ballotable_by(luser)).to eq(:not_verified)
+          expect(district_sp.reason_for_not_being_ballotable_by(luser)).to eq(:not_verified)
+        end
 
-      expect(ballot.amount_spent).to eq 30000
+        it "rejects organizations" do
+          create(:organization, user: user)
+          expect(city_sp.reason_for_not_being_ballotable_by(user)).to eq(:organization)
+          expect(district_sp.reason_for_not_being_ballotable_by(user)).to eq(:organization)
+        end
+
+        it "rejects votes when voting is not allowed (via admin setting)" do
+          Setting["feature.spending_proposal_features.final_voting_allowed"] = nil
+          expect(city_sp.reason_for_not_being_ballotable_by(user)).to eq(:no_ballots_allowed)
+          expect(district_sp.reason_for_not_being_ballotable_by(user)).to eq(:no_ballots_allowed)
+        end
+
+        it "accepts valid votes when voting is allowed" do
+          Setting["feature.spending_proposal_features.final_voting_allowed"] = true
+          expect(city_sp.reason_for_not_being_ballotable_by(user)).to be_nil
+          expect(district_sp.reason_for_not_being_ballotable_by(user)).to be_nil
+        end
+
+        xit "rejects city wide votes if no city money available"  do
+          user.city_wide_spending_proposals_supported_count = 0
+          expect(city_sp.reason_for_not_being_ballotable_by(user)).to eq(:no_city_supports_available)
+        end
+
+        xit "rejects district wide votes if no district money available"  do
+          user.district_wide_spending_proposals_supported_count = 0
+          expect(district_sp.reason_for_not_being_ballotable_by(user)).to eq(:no_district_supports_available)
+        end
+
+        xit "accepts valid district votes" do
+          expect(district_sp.reason_for_not_being_votable_by(user)).to be_nil
+          user.supported_spending_proposals_geozone_id = district.id
+          expect(district_sp.reason_for_not_being_ballotable_by(user)).to be_nil
+        end
+
+        xit "rejects users with different and not nil district" do
+          user.supported_spending_proposals_geozone_id = create(:geozone).id
+          expect(district_sp.reason_for_not_being_ballotable_by(user)).to eq(:different_district_assigned)
+        end
+
+      end
+
     end
-  end
 
-  describe "#amount_available" do
-    it "returns the amount available to spend on spending proposals" do
-      sp1 = create(:spending_proposal, price: 10000)
-      sp2 = create(:spending_proposal, price: 20000)
+    describe "#amount_spent" do
+      it "returns the amount spent in spending proposals" do
+        sp1 = create(:spending_proposal, price: 10000)
+        sp2 = create(:spending_proposal, price: 20000)
 
-      ballot = create(:ballot)
-      ballot.spending_proposals << sp1
+        ballot = create(:ballot)
+        ballot.spending_proposals << sp1
 
-      expect(ballot.amount_available).to eq 23990000
+        expect(ballot.amount_spent).to eq 10000
 
-      ballot.spending_proposals << sp2
+        ballot.spending_proposals << sp2
 
-      expect(ballot.amount_available).to eq 23970000
+        expect(ballot.amount_spent).to eq 30000
+      end
     end
+
+    describe "#amount_available" do
+      it "returns the amount available to spend on spending proposals" do
+        sp1 = create(:spending_proposal, price: 10000)
+        sp2 = create(:spending_proposal, price: 20000)
+
+        ballot = create(:ballot)
+        ballot.spending_proposals << sp1
+
+        expect(ballot.amount_available).to eq 23990000
+
+        ballot.spending_proposals << sp2
+
+        expect(ballot.amount_available).to eq 23970000
+      end
+
+    end
+
   end
 
 end

@@ -146,11 +146,9 @@ class SpendingProposal < ActiveRecord::Base
   end
 
   def reason_for_not_being_votable_by(user)
-    return :not_voting_allowed if Setting["feature.spending_proposal_features.voting_allowed"].blank?
-    return :not_logged_in unless user
-    return :not_verified  unless user.can?(:vote, SpendingProposal)
-    return :unfeasible    if unfeasible?
-    return :organization  if user.organization?
+    return permission_problem(user) if permission_problem?(user)
+    return :not_voting_allowed if voting_allowed?
+
     if city_wide?
       return :no_city_supports_available unless user.city_wide_spending_proposals_supported_count > 0
     else # district_wide
@@ -164,9 +162,39 @@ class SpendingProposal < ActiveRecord::Base
     end
   end
 
+  def reason_for_not_being_ballotable_by(user)
+    return permission_problem(user) if permission_problem?(user)
+    return :no_ballots_allowed if final_voting_allowed?
+  end
+
+  def permission_problem(user)
+    return :not_logged_in unless user
+    return :organization  if user.organization?
+    return :not_verified  unless user.can?(:vote, SpendingProposal)
+    return nil
+  end
+
+  def permission_problem?(user)
+    permission_problem(user).present?
+  end
+
   def votable_by?(user)
     reason_for_not_being_votable_by(user).blank?
   end
+
+  def ballotable_by?(user)
+    reason_for_not_being_ballotable_by(user).blank?
+  end
+
+  ### Think of a better way to describe the different phases
+  def voting_allowed?
+    Setting["feature.spending_proposal_features.voting_allowed"].blank?
+  end
+
+  def final_voting_allowed?
+    Setting["feature.spending_proposal_features.final_voting_allowed"].blank?
+  end
+  ###
 
   def register_vote(user, vote_value)
     if votable_by?(user)
@@ -203,6 +231,5 @@ class SpendingProposal < ActiveRecord::Base
   def self.for_summary
     valuation_finished.feasible
   end
-
 
 end
