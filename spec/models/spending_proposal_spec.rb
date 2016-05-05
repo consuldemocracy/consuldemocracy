@@ -567,9 +567,15 @@ describe SpendingProposal do
           expect(district_sp.reason_for_not_being_ballotable_by(user)).to be_nil
         end
 
-        xit "rejects users with different and not nil district" do
-          user.supported_spending_proposals_geozone_id = create(:geozone).id
-          expect(district_sp.reason_for_not_being_ballotable_by(user)).to eq(:different_district_assigned)
+        it "rejects users with different geozone" do
+          california = create(:geozone)
+          new_york = create(:geozone)
+
+          sp1 = create(:spending_proposal, geozone: california)
+          sp2 = create(:spending_proposal, geozone: new_york)
+          create(:ballot, user: user, geozone: california, spending_proposals: [sp1])
+
+          expect(sp2.reason_for_not_being_ballotable_by(user)).to eq(:different_geozone_assigned)
         end
 
       end

@@ -1,5 +1,6 @@
 class Ballot < ActiveRecord::Base
   belongs_to :user
+  belongs_to :geozone
   has_many :ballot_lines
   has_many :spending_proposals, through: :ballot_lines
   has_many :city_wide_spending_proposals, -> { city_wide }, through: :ballot_lines, source: :spending_proposal

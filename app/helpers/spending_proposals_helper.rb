@@ -84,7 +84,7 @@ module SpendingProposalsHelper
   end
 
   def authentication_message(spending_proposal)
-    spending_proposal.permission_problem(current_user)
+    spending_proposal.reason_for_not_being_ballotable_by(current_user)
   end
 
 end

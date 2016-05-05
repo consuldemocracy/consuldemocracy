@@ -337,7 +337,7 @@ feature 'Spending proposals' do
 
   end
 
-  context "Final Voting" do
+  context "Phase 3 - Final Voting" do
 
     background do
       Setting["feature.spending_proposal_features.phase3"] = true
@@ -352,7 +352,7 @@ feature 'Spending proposals' do
       visit root_path
 
       first(:link, "Participatory budgeting").click
-      click_link "Vote proposals of the city"
+      click_link "Vote city proposals"
 
       within("#spending_proposal_#{sp1.id}") do
         expect(page).to have_content sp1.title
@@ -373,63 +373,11 @@ feature 'Spending proposals' do
       visit root_path
 
       first(:link, "Participatory budgeting").click
-      click_link "Vote proposals of the city"
+      click_link "Vote city proposals"
 
       click_link sp1.title
 
       expect(page).to have_content "$10,000"
-    end
-
-    scenario "Add a proposal", :js do
-      user = create(:user, :level_two)
-      sp1 = create(:spending_proposal, feasible: true, price: 10000)
-      sp2 = create(:spending_proposal, feasible: true, price: 20000)
-
-      login_as(user)
-      visit root_path
-
-      first(:link, "Participatory budgeting").click
-      click_link "Vote proposals of the city"
-
-      within("#spending_proposal_#{sp1.id}") do
-        find('.add a').trigger('click')
-      end
-
-      expect(page).to have_css("#amount-spent", text: "$10,000")
-      expect(page).to have_css("#amount-available", text: "$23,990,000")
-
-      within("#spending_proposal_#{sp2.id}") do
-        find('.add a').trigger('click')
-      end
-
-      expect(page).to have_css("#amount-spent", text: "$30,000")
-      expect(page).to have_css("#amount-available", text: "$23,970,000")
-    end
-
-    scenario "Remove a proposal", :js do
-      user = create(:user, :level_two)
-      sp1 = create(:spending_proposal, feasible: true, price: 10000)
-
-      login_as(user)
-      visit root_path
-
-      first(:link, "Participatory budgeting").click
-      click_link "Vote proposals of the city"
-
-      within("#spending_proposal_#{sp1.id}") do
-        find('.add a').trigger('click')
-      end
-
-      expect(page).to have_css("#amount-spent", text: "$10,000")
-      expect(page).to have_css("#amount-available", text: "$23,990,000")
-
-
-      within("#spending_proposal_#{sp1.id}") do
-        find('.remove a').trigger('click')
-      end
-
-      expect(page).to have_css("#amount-spent", text: "$0")
-      expect(page).to have_css("#amount-available", text: "$24,000,000")
     end
 
     scenario "Confirm", :js do
@@ -447,13 +395,13 @@ feature 'Spending proposals' do
       visit root_path
 
       first(:link, "Participatory budgeting").click
-      click_link "Vote proposals of the city"
+      click_link "Vote city proposals"
 
       add_to_ballot(sp1)
       add_to_ballot(sp2)
 
       first(:link, "Participatory budgeting").click
-      click_link "Vote proposals district"
+      click_link "Vote district proposals"
       click_link california.name
 
       add_to_ballot(sp4)

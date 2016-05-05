@@ -201,6 +201,12 @@ module CommonActions
     expect(page).to_not have_selector('.in-favor a')
   end
 
+  def expect_message_already_voted_in_another_geozone(geozone)
+    expect(page).to have_content 'You have already supported other district proposals.'
+    expect(page).to have_link(geozone.name, href: spending_proposals_path(geozone: geozone))
+    expect(page).to have_selector('.in-favor a', visible: false)
+  end
+
   def create_featured_proposals
     [create(:proposal, :with_confidence_score, cached_votes_up: 100),
      create(:proposal, :with_confidence_score, cached_votes_up: 90)]

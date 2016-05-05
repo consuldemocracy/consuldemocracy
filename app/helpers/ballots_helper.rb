@@ -8,4 +8,8 @@ module BallotsHelper
     (amount_spent/amount_available.to_f * 100).to_s + "%"
   end
 
+  def css_for_ballot_geozone(geozone)
+    return '' unless current_user.try(:ballot)
+    current_user.ballot.geozone == geozone ? 'active' : ''
+  end
 end
