@@ -1,6 +1,6 @@
 <div class="expanded jumbo-investment-project-votes no-margin-top margin-bottom">
   <div class="row">
-    <div class="small-12 medium-7 column padding content">
+    <div class="small-12 large-7 column padding content">
       <h1><%= t("spending_proposals.welcome.title") %></h1>
       <p><%= t("spending_proposals.welcome.text_first_html") %></p>
       <p><%= t("spending_proposals.welcome.text_second_html") %></p>
@@ -13,38 +13,28 @@
         </div>
 
         <div class="small-12 medium-5 column end">
-          <%= link_to t("spending_proposals.welcome.districts_link"), '#select-district', class: "button budget expanded" %>
+          <%= link_to t("spending_proposals.welcome.districts_link"),
+                      select_district_path,
+                      class: "button budget expanded" %>
         </div>
       </div>
-
-      <%= link_to t("spending_proposals.welcome.in_two_minutes"), '/participatory_budget/in_two_minutes' %>
     </div>
   </div>
 </div>
 
-<div class="row investment-projects-scope margin-bottom">
-  <div id="select-district" class="small-12 medium-7 column">
-    <h2><%= t("spending_proposals.welcome.districts") %></h2>
-
-    <div class="row">
-      <% @geozones.each_slice(7) do |slice| %>
-        <div class="small-12 medium-4 column">
-          <% slice.each do |geozone| %>
-            <%= link_to geozone.name, spending_proposals_path(geozone: geozone.id),
-                        data: { no_turbolink: true } %><br>
-          <% end %>
-        </div>
-      <% end %>
-    </div>
+<div class="row margin">
+  <div class="small-12 medium-6 column text-center">
+    <h1 class="big-number">60.000.000&euro;</h1>
   </div>
 
-  <div class="medium-5 column show-for-medium text-center">
-    <%= image_tag "map.jpg" %>
+  <div class="small-12 medium-6 column">
+    <p>Hemos reservado <strong>60 millones de euros</strong> de inversiones del próximo presupuesto de Madrid para que sea la gente la que decida qué proyectos llevar a cabo. La gente ha hecho sus propuestas, y las ha preseleccionado. <strong>Hasta el 30 de junio podrás votarlas</strong>. El Gobierno asumirá la decisión como vinculante y la incluirá en los presupuestos municipales, que se ejecutarán a partir del 1 de enero de 2017. Propones, decides, se hace.</p>
+    <%= link_to t("spending_proposals.welcome.in_two_minutes"), '/participatory_budget/in_two_minutes' %>
   </div>
 </div>
 
 <div class="expanded jumbo-delegation padding">
-  <div class="row">
+  <div class="row margin-bottom">
     <div class="small-12 column margin-top">
       <h2><%= t("spending_proposals.welcome.delegation_title") %></h2>
 

@@ -432,6 +432,7 @@ feature 'Spending proposals' do
       add_to_ballot(sp2)
 
       first(:link, "Participatory budgeting").click
+      click_link "Vote proposals district"
       click_link california.name
 
       add_to_ballot(sp4)

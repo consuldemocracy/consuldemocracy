@@ -22,7 +22,7 @@ class SpendingProposalsController < ApplicationController
     set_spending_proposal_votes(@spending_proposals)
   end
 
-  def welcome
+  def select_district
     @geozones = Geozone.all.order(name: :asc)
   end
 

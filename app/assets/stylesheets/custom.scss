@@ -1334,6 +1334,17 @@ table.age-groups {
   }
 }
 
+.big-number {
+  color: $budget;
+  font-size: rem-calc(60);
+  line-height: rem-calc(120);
+
+  @media (min-width: $medium-breakpoint) {
+    font-size: rem-calc(90);
+    line-height: rem-calc(150);
+  }
+}
+
 .ballot {
 
   th {
