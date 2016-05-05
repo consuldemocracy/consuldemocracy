@@ -351,9 +351,9 @@ Proposal.only_hidden.flagged.reorder("RANDOM()").limit(5).each(&:confirm_hide)
 
 puts "Creating district Forums"
 forums = ["Fuencarral - El Pardo", "Moncloa - Aravaca", "Tetuán", "Chamberí", "Centro", "Latina", "Carabanchel", "Arganzuela", "Usera", "Villaverde", "Chamartin", "Salamanca", "Retiro", "Puente de Vallecas", "Villa de Vallecas", "Hortaleza", "Barajas", "Ciudad Lineal", "Moratalaz", "San Blas - Canillejas", "Vicálvaro"]
-users = User.unverified.reorder("RANDOM()").reject {|u| u.organization? }[0..20]
 forums.each_with_index do |forum, i|
-  Forum.create(name: forum, user: users[i])
+  user = create_user("user_for_forum#{i}@example.es")
+  Forum.create(name: forum, user: user)
 end
 
 puts "Open plenary debate"
