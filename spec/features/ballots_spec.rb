@@ -124,6 +124,7 @@ feature 'Ballots' do
   end
 
   context 'Showing the ballot' do
+
     scenario 'Displaying the correct count & amount' do
       user = create(:user)
       ballot = create(:ballot, user: user)
@@ -140,6 +141,7 @@ feature 'Ballots' do
       within("#city_wide") { expect(page).to have_content "20€" }
       within("#district_wide") { expect(page).to have_content "15€" }
     end
+
   end
 
   context 'Permissions' do
