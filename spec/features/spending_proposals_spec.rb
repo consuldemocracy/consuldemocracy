@@ -440,7 +440,7 @@ feature 'Spending proposals' do
 
       click_link "Revisar mis votos"
 
-      expect(page).to have_content "Confirm your ballot"
+      expect(page).to have_content "You can change your vote at any time until June 30"
 
       within("#city_wide") do
         expect(page).to have_content sp1.title
