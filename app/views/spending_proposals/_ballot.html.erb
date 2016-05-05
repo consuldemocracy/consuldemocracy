@@ -5,8 +5,9 @@
 
       <span class="icon-check-circle bounceIn animation" title="<%= t("spending_proposals.spending_proposal.already_added") %>"></span>
 
-      <!-- PENDING TEST -->
-      <p class="investment-project-amount"><%= number_to_currency(spending_proposal.price) %></p>
+      <p class="investment-project-amount">
+        <%= price(spending_proposal.price) %>
+      </p>
 
       <%= link_to remove_ballot_url(spending_proposal_id: spending_proposal.id),
         class: "delete small expanded",
@@ -18,9 +19,11 @@
       <% end %>
     </div>
   <% else %>
+
     <div class="add in-favor">
-      <!-- PENDING TEST -->
-      <p class="investment-project-amount"><%= number_to_currency(spending_proposal.price) %></p>
+      <p class="investment-project-amount">
+        <%= price(spending_proposal.price) %>
+      </p>
 
       <%= link_to add_ballot_url(spending_proposal_id: spending_proposal.id),
           class: "button button-support small expanded",

@@ -13,7 +13,7 @@
     <span class="progress-meter spent-amount-meter"
           style="width: <%= progress_bar_width(24000000, @ballot.amount_spent) %>">
       <p id="amount-spent" class="progress-meter-text spent-amount-text">
-        <%= @ballot.amount_spent %>
+        <%= price(@ballot.amount_spent) %>
       </p>
     </span>
   </div>
