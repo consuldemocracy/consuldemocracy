@@ -525,7 +525,7 @@ en:
       info_html: "You can change your vote at any time <strong>until June 30</strong>"
       title: Your ballot
       total_cost: Total cost
-      voted: "You voted <span>%{number}</span> proposals with a total cost of <span>%{amount}</span>."
+      voted_html: "You voted <span>%{number}</span> proposals with a total cost of <span>%{amount}</span>."
   stats:
     index:
       visits: Visits

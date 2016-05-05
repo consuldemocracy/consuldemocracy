@@ -1,0 +1,65 @@
+<div class="row ballot">
+
+  <%= link_to :back, class: "back" do %>
+    <span class="icon-angle-left"></span>
+    <%= t("shared.back") %>
+  <% end %>
+
+  <h1><%= t("ballots.preview.title") %></h1>
+
+  <h2>
+    <%= t("ballots.preview.voted_html",
+        number: "NUMBER",
+        amount: "AMOUNT") %>
+  </h2>
+
+  <div class="callout primary">
+    <%= t("ballots.preview.info_html") %>
+  </div>
+
+  <div class="row">
+    <div id="city_wide" class="small-12 medium-6 column">
+      <table>
+        <thead>
+          <tr>
+            <th colspan="3"><%= t("ballots.preview.city_wide") %></th>
+          </tr>
+        </thead>
+        <tbody>
+          <%= render partial: 'spending_proposal',
+                     collection: @ballot.spending_proposals.city_wide %>
+          <tr class="total-cost">
+            <td>
+              <%= t("ballots.preview.total_cost") %>
+            </td>
+            <td colspan="2">
+              <span>23.980.000€</span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div id="district_wide" class="small-12 medium-6 column">
+      <table>
+        <thead>
+          <tr>
+            <th colspan="3"><%= t("ballots.preview.district_wide") %> (District name)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <%= render partial: 'spending_proposal',
+                     collection: @ballot.spending_proposals.district_wide %>
+          <tr class="total-cost">
+            <td>
+              <%= t("ballots.preview.total_cost") %>
+            </td>
+            <td colspan="2">
+              <span>1.125.000€</span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
