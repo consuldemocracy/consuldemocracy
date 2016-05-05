@@ -19,10 +19,11 @@ feature 'Admin spending proposals' do
   context "Index" do
 
     scenario 'Displaying spending proposals' do
-      spending_proposal = create(:spending_proposal)
+      spending_proposal = create(:spending_proposal, cached_votes_up: 10, physical_votes: 20)
       visit admin_spending_proposals_path
 
       expect(page).to have_content(spending_proposal.title)
+      expect(page).to have_css(".total-votes", text: 30)
     end
 
     scenario 'Displaying assignments info' do
