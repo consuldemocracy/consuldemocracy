@@ -1351,10 +1351,8 @@ table.age-groups {
 
 .ballot {
 
-  th {
-    background: $info-bg;
-    border: 1px solid $info-border;
-    color: $info-color;
+  h2 span {
+    text-decoration: underline;
   }
 
   .total-cost {

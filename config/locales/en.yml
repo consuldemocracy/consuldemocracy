@@ -518,6 +518,14 @@ en:
         other: "%{count} supports"
         zero: No supports
       vote: Vote
+  ballots:
+    preview:
+      city_wide: City Wide
+      district_wide: District Wide
+      info_html: "You can change your vote at any time <strong>until June 30</strong>"
+      title: Your ballot
+      total_cost: Total cost
+      voted: "You voted <span>%{number}</span> proposals with a total cost of <span>%{amount}</span>."
   stats:
     index:
       visits: Visits
