@@ -22,7 +22,7 @@ class SpendingProposalsController < ApplicationController
     @ballot = Ballot.where(user: current_user).first_or_create
   end
 
-  def welcome
+  def select_district
     @geozones = Geozone.all.order(name: :asc)
   end
 
