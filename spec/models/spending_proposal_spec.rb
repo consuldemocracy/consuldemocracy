@@ -526,7 +526,7 @@ describe SpendingProposal do
     end
   end
 
-  describe "Final Voting", :focus do
+  describe "Final Voting" do
 
     describe 'Permissions' do
       let(:user)        { create(:user, :level_two) }
