@@ -19,6 +19,7 @@ App.Annotatable =
       $this       = $(this)
       ann_type    = $this.data("annotatable-type")
       ann_id      = $this.data("annotatable-id")
+      readonly    = $this.data("annotatable-readonly")
 
       app = new annotator.App()
         .include ->
@@ -26,12 +27,13 @@ App.Annotatable =
             ann[ann_type + "_id"] = ann_id
             ann.permissions = ann.permissions || {}
             ann.permissions.admin = []
+
         .include(annotator.ui.main, { element: this })
         .include(annotator.storage.http, { prefix: "", urls: { search: "/annotations/search" } })
 
-
       app.start().then ->
-        app.ident.identity = current_user_id
+        unless readonly
+          app.ident.identity = current_user_id
 
         options = {}
         options[ann_type + "_id"] = ann_id

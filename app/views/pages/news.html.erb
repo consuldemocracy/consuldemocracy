@@ -1,0 +1,52 @@
+<div class="news-page no-margin-top">
+  <div class="row expanded">
+    <div class="row">
+      <div class="small-12 column text-center margin">
+        <h1>La noticia que has leído es falsa.</h1>
+        <h2>Pero <span>podría ser realidad si una de las 10 propuestas más apoyadas</span><br> de Decide Madrid consigue los apoyos necesarios para votarse.</h2>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="small-12 column text-center margin">
+      <h2>Hay dos opciones:</h2>
+    </div>
+  </div>
+
+  <div class="row margin-bottom" data-equalizer>
+
+    <div class="small-12 medium-6 column">
+    <div class="callout panel" data-equalizer-watch>
+      <h3>O te ha encantado la noticia</h3>
+      <p>En este caso, <strong>puedes hacerla realidad</strong> entrando, registrándote y apoyándola.</p>
+      <p>Porque si consigue los apoyos suficientes se votará, y si hay una mayoría a favor el gobierno del Ayuntamiento de Madrid asumirá como propia la propuesta y la llevará a cabo.</p>
+      <div class="small-12 medium-8">
+        <%= link_to "¡Sí, quiero!", proposals_path(order: "confidence_score"), class: "button expanded" %>
+      </div>
+      </div>
+    </div>
+
+    <div class="small-12 medium-6 column">
+    <div class="callout panel" data-equalizer-watch>
+      <h3>O te ha horrorizado la noticia</h3>
+      <p>Si es así tienes la opción de <strong>no apoyar la propuesta</strong> que podría hacerla realidad.</p>
+      <p>Pero puedes ir más allá. <strong>Puedes crear una propuesta</strong> de signo contrario y si consigue los apoyos suficientes se votará, y si hay una mayoría a favor el gobierno del Ayuntamiento de Madrid la asumirá como propia y la llevará a cabo.</p>
+      <div class="small-12 medium-8">
+        <%= link_to "¡Vamos allá!", proposals_path(order: "confidence_score"), class: "button expanded" %>
+      </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row expanded banner">
+    <div class="row">
+      <div class="show-for-medium medium-7 column">
+        <%= image_tag "news_page_photos.png" %>
+      </div>
+      <div class="small-12 medium-5 column text-center padding">
+        <%= image_tag "news_page_banner.jpg" %>
+      </div>
+    </div>
+  </div>
+</div>

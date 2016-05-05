@@ -1,0 +1,61 @@
+<% reason = spending_proposal.reason_for_not_being_ballotable_by(current_user) %>
+<% voting_allowed = true unless reason.presence == :no_ballots_allowed %>
+<% user_voted_for = added_to_ballot?(@ballot, spending_proposal) %>
+
+<div class="supports ballot">
+
+  <% if added_to_ballot?(@ballot, spending_proposal) %>
+    <div class="remove supported inline-block">
+
+      <span class="icon-check-circle bounceIn animation" title="<%= t("spending_proposals.spending_proposal.already_added") %>"></span>
+
+      <p class="investment-project-amount">
+        <%= price(spending_proposal.price) %>
+      </p>
+
+      <%= link_to remove_ballot_url(spending_proposal_id: spending_proposal.id),
+        class: "delete small expanded",
+        title: t('spending_proposals.spending_proposal.support_title'),
+        method: "delete",
+        remote: true,
+        data: supports_confirm_for_current_user(spending_proposal) do %>
+        Quitar
+      <% end %>
+    </div>
+  <% else %>
+
+    <div class="add in-favor">
+      <p class="investment-project-amount">
+        <%= price(spending_proposal.price) %>
+      </p>
+
+      <% if user_voted_for %>
+        <div class="supported">
+          <%= t("spending_proposals.spending_proposal.already_supported") %>
+        </div>
+      <% elsif voting_allowed %>
+
+        <%= link_to add_ballot_url(spending_proposal_id: spending_proposal.id),
+            class: "button button-support small expanded",
+            title: t('spending_proposals.spending_proposal.support_title'),
+            method: "post",
+            remote: true,
+            data: supports_confirm_for_current_user(spending_proposal) do %>
+            <%= t("spending_proposals.spending_proposal.add") %>
+        <% end %>
+      <% end %>
+    </div>
+  <% end %>
+
+  <% if reason.present? && !added_to_ballot?(@ballot, spending_proposal) %>
+    <div class="no-supports-allowed" style='display:none'>
+      <p>
+        <%= t("votes.spending_proposals.#{reason}",
+              verify_account: link_to(t("votes.verify_account"), verification_path),
+              signin: link_to(t("votes.signin"), new_user_session_path),
+              signup: link_to(t("votes.signup"), new_user_registration_path)
+         ).html_safe %>
+      </p>
+    </div>
+  <% end %>
+</div>

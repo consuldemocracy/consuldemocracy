@@ -199,6 +199,10 @@ body.admin {
 }
 
 .delete {
+  color: $delete;
+}
+
+a.delete {
   border-bottom: 1px dotted #CF2A0E;
   color: $delete;
   font-size: $small-font-size;

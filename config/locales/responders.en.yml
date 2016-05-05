@@ -6,7 +6,8 @@ en:
         notice: "%{resource_name} created successfully."
         debate: "Debate created successfully."
         proposal: "Proposal created successfully."
-        spending_proposal: "Spending proposal created successfully. You can access it from %{activity}"
+        spending_proposal: "Investment project created successfully. You can access it from %{activity}"
+        representative: "You have updated your representative"
       save_changes:
         notice: Changes saved
       update:
@@ -16,3 +17,4 @@ en:
         spending_proposal: "Investment project updated succesfully."
       destroy:
         spending_proposal: "Spending proposal deleted succesfully."
+        representative: "You do not have a representative anymore."

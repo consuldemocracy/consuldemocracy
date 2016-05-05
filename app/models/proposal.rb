@@ -150,6 +150,22 @@ class Proposal < ActiveRecord::Base
     Setting['votes_for_proposal_success'].to_i
   end
 
+  def open_plenary?
+    tag_list.include?('plenoabierto') &&
+    created_at >= Date.parse("18-04-2016").beginning_of_day
+  end
+
+  def self.open_plenary_winners
+    tagged_with('plenoabierto').
+    by_date_range(open_plenary_dates).
+    sort_by_confidence_score.
+    limit(5)
+  end
+
+  def self.open_plenary_dates
+    Date.parse("18-04-2016").beginning_of_day..Date.parse("21-04-2016").end_of_day
+  end
+
   protected
 
     def set_responsible_name

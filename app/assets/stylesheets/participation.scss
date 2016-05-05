@@ -841,6 +841,13 @@
       content: none;
     }
 
+    .investment-project-amount {
+      color: $budget;
+      font-size: rem-calc(20);
+      font-weight: bold;
+      margin-bottom: 0;
+    }
+
     .button-support {
       background: $budget;
       color: white;
@@ -864,6 +871,13 @@
 
     .supported {
       color: $budget;
+      margin-top: 0;
+    }
+
+    .remove .icon-check-circle {
+      display: block;
+      font-size: rem-calc(70);
+      line-height: rem-calc(70);
     }
 
     .no-supports-allowed {

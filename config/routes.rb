@@ -70,16 +70,26 @@ Rails.application.routes.draw do
   end
 
   scope '/participatory_budget' do
-    resources :spending_proposals, only: [:index, :new, :create, :show, :destroy], path: 'investment_projects' do
+    resources :spending_proposals, only: [:index, :show, :destroy], path: 'investment_projects' do #[:new, :create] temporary disabled
+      get :welcome, on: :collection
       post :vote, on: :member
     end
+
+    resource :ballot, only: [] do
+      post :add, on: :collection
+      delete :remove, on: :collection
+    end
+  end
+
+  resources :open_plenaries, only: [] do
+    get :results, on: :collection
   end
 
   resources :stats, only: [:index]
 
   resources :legislations, only: [:show]
 
-  resources :annotations do
+  resources :annotations, only: [:index, :show] do
     get :search, on: :collection
   end
 
@@ -102,6 +112,7 @@ Rails.application.routes.draw do
     resource :email, controller: "email", only: [:new, :show, :create]
     resource :letter, controller: "letter", only: [:new, :create, :show, :edit, :update]
   end
+  get "/verifica", to: "verification/letter#edit"
 
   namespace :admin do
     root to: "dashboard#index"
@@ -170,6 +181,9 @@ Rails.application.routes.draw do
     end
 
     resource :activity, controller: :activity, only: :show
+    resources :newsletters, only: :index do
+      get :users, on: :collection
+    end
     resource :stats, only: :show
 
     namespace :api do
@@ -237,11 +251,21 @@ Rails.application.routes.draw do
       get :print, on: :collection
     end
 
-    resources :spending_proposals, only: [:index, :new, :create, :show] do
+    resources :spending_proposals, only: [:index, :show] do #[:new, :create] temporary disabled
       post :vote, on: :member
       get :print, on: :collection
     end
+
   end
+
+  resources :forums, only: [:index, :create, :show]
+  resources :representatives, only: [:create, :destroy]
+
+  resources :survey_answers, only: [:new, :create]
+
+  resources :open_answers, only: [:show, :index]
+
+  get "encuesta-plaza-espana", to: "survey_answers#new", as: :encuesta_plaza_espana
 
   if Rails.env.development?
     mount LetterOpenerWeb::Engine, at: "/letter_opener"
@@ -249,7 +273,13 @@ Rails.application.routes.draw do
 
   mount Tolk::Engine => '/translate', :as => 'tolk'
 
-  # static pages
+  get "ordenanza-de-transparencia", to: "legislations#show", id: 1, as: :ordenanza_transparencia
   get '/blog' => redirect("http://diario.madrid.es/participa/")
+  get 'participatory_budget', to: 'spending_proposals#welcome', as: 'participatory_budget'
+  get 'participatory_budget/select_district', to: 'spending_proposals#select_district', as: 'select_district'
+  get 'delegacion', to: 'forums#index', as: 'delegation'
+  get 'plenoabierto', to: 'pages#show', id: 'processes_open_plenary'
+  get 'noticias', to: 'pages#show', id: 'news'
   resources :pages, path: '/', only: [:show]
+  get 'participatory_budget/in_two_minutes', to: 'pages#show', id: 'participatory_budget/in_two_minutes'
 end
