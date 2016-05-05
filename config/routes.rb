@@ -75,7 +75,7 @@ Rails.application.routes.draw do
       post :vote, on: :member
     end
 
-    resource :ballot, only: [] do
+    resource :ballot, only: [:show] do
       post :add, on: :collection
       delete :remove, on: :collection
     end
