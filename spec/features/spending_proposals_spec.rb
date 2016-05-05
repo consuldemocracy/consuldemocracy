@@ -339,7 +339,6 @@ feature 'Spending proposals' do
       end
 
       within("#spending_proposal_#{sp2.id}") do
-        find('.add a').trigger('click')
         expect(page).to have_content sp2.title
         expect(page).to have_content "$20,000"
       end
@@ -375,7 +374,7 @@ feature 'Spending proposals' do
         find('.add a').trigger('click')
       end
 
-      expect(page).to have_css("#amount-spent", text: "10000")
+      expect(page).to have_css("#amount-spent", text: "$10,000")
       expect(page).to have_css("#amount-available", text: "$23,990,000")
 
       within("#spending_proposal_#{sp2.id}") do
