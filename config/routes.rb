@@ -174,6 +174,7 @@ Rails.application.routes.draw do
 
     resources :valuators, only: [:index, :create] do
       get :search, on: :collection
+      get :summary, on: :collection
     end
 
     resources :verifications, controller: :verifications, only: :index do
@@ -243,7 +244,7 @@ Rails.application.routes.draw do
 
     resource :account, controller: "account", only: [:show]
 
-    get 'sign_in', to: 'sessions#create'
+    get 'sign_in', to: 'sessions#create', as: :sign_in
 
     resource :session, only: [:create, :destroy]
     resources :proposals, only: [:index, :new, :create, :show] do

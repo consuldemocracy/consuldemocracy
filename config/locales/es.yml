@@ -87,7 +87,6 @@ es:
         other: "%{count} votos"
         zero: Sin votos
     edit:
-      back_link: Volver
       editing: Editar debate
       form:
         submit_button: Guardar cambios
@@ -124,7 +123,6 @@ es:
       top: Destacados
       top_link_debates: '#TúPreguntas'
     new:
-      back_link: Volver
       form:
         submit_button: Empieza un debate
       info: Si lo que quieres es hacer una propuesta, esta es la sección incorrecta, entra en %{info_link}.
@@ -138,7 +136,6 @@ es:
       start_new: Empezar un debate
     show:
       author_deleted: Usuario eliminado
-      back_link: Volver
       comments:
         one: 1 Comentario
         other: "%{count} Comentarios"
@@ -222,6 +219,7 @@ es:
       help_translate: Ayúdanos a traducir
       locale: 'Idioma:'
       logo: Madrid
+      management: Gestión
       moderation: Moderar
       valuation: Evaluación
       more_information: Más información
@@ -274,7 +272,6 @@ es:
       form:
         submit_button: Crear propuesta
     edit:
-      back_link: Volver
       editing: Editar propuesta
       form:
         submit_button: Guardar cambios
@@ -344,7 +341,6 @@ es:
       top: Top semanal
       top_link_proposals: Propuestas más apoyadas por categoría
     new:
-      back_link: Volver
       form:
         submit_button: Crear propuesta
       more_info: "¿Cómo funcionan las propuestas ciudadanas?"
@@ -373,7 +369,6 @@ es:
       total_percent: 100%
     show:
       author_deleted: Usuario eliminado
-      back_link: Volver
       code: 'Código de la propuesta:'
       comments:
         one: 1 Comentario
@@ -443,15 +438,6 @@ es:
       categories: "Categorías"
     target_blank_html: " (se abre en ventana nueva)"
     unflag: Deshacer denuncia
-  simple_captcha:
-    label: Introduce el texto de la imagen en la siguiente caja
-    message:
-      debate: el código secreto no coincide con la imagen
-      proposal: el código secreto no coincide con la imagen
-      spendingproposal: el código secreto no coincide con la imagen
-      user: el código secreto no coincide con la imagen
-    placeholder: Introduce el texto de la imagen
-    refresh_button_text: Refrescar
   social:
     blog: Blog
     facebook: Facebook
@@ -609,10 +595,6 @@ es:
       description: Si la propuesta es aceptada mayoritariamente, el Ayuntamiento la asume como propia y se hace.
       title: Se hace
     featured:
-      open_plenary:
-        link: Ver propuestas y preguntas
-        text: Lee las propuestas y preguntas para cualquiera de los grupos políticos y apoya las que más te gusten.
-        title: Pleno Abierto
       page_title: Destacados
       proposals:
         link: Ver propuestas
@@ -656,3 +638,6 @@ es:
     google_oauth2:
       sign_in: "Entra con Google"
       sign_up: "Regístrate con Google"
+  invisible_captcha:
+    sentence_for_humans: "Si eres humano, por favor ignora este campo"
+    timestamp_error_message: "Eso ha sido demasiado rápido. Por favor, reenvía el formulario."

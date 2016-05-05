@@ -390,4 +390,85 @@ feature 'Valuation spending proposals' do
     end
   end
 
+  context "Summary" do
+
+    background do
+      admin = create(:administrator)
+      login_as(admin.user)
+    end
+
+    scenario "Summary table" do
+      scarlett  = create(:valuator)
+      john = create(:valuator)
+
+      finished_and_feasible1 = create(:spending_proposal, valuation_finished: true, feasible: true, price: '3000000')
+      finished_and_feasible2 = create(:spending_proposal, valuation_finished: true, feasible: true, price: '7000000')
+
+      finished_and_unfeasible1 = create(:spending_proposal, valuation_finished: true, feasible: false)
+      finished_and_unfeasible2 = create(:spending_proposal, valuation_finished: true, feasible: false)
+
+      in_evaluation1 = create(:spending_proposal, feasible: true, valuation_finished: false)
+      in_evaluation2 = create(:spending_proposal, feasible: true, valuation_finished: false)
+
+      finished_and_feasible1.valuators << scarlett
+      finished_and_feasible2.valuators << scarlett
+
+      finished_and_unfeasible1.valuators << john
+      finished_and_unfeasible2.valuators << john
+
+      in_evaluation1.valuators << scarlett
+      in_evaluation2.valuators << john
+
+      visit admin_spending_proposals_path
+
+      click_link "Valuator summary"
+
+      expect(page).to have_content "Valuator summary for investment projects"
+
+      within("#valuator_#{scarlett.id}") do
+        expect(page).to have_css(".finished-and-feasible-count", text: '2')
+        expect(page).to have_css(".finished-and-unfeasible-count", text: '0')
+        expect(page).to have_css(".finished-count", text: '2')
+        expect(page).to have_css(".in-evaluation-count", text: '1')
+        expect(page).to have_css(".total-count", text: '3')
+        expect(page).to have_css(".total-price", text: "$10,000,000.00")
+      end
+
+      within("#valuator_#{john.id}") do
+        expect(page).to have_css(".finished-and-feasible-count", text: '0')
+        expect(page).to have_css(".finished-and-unfeasible-count", text: '2')
+        expect(page).to have_css(".finished-count", text: '2')
+        expect(page).to have_css(".in-evaluation-count", text: '1')
+        expect(page).to have_css(".total-count", text: '3')
+        expect(page).to have_css(".total-price", text: '$0.00')
+      end
+    end
+
+    scenario "Order by investment project count" do
+      isabel = create(:valuator)
+      john = create(:valuator)
+      scarlett  = create(:valuator)
+
+      3.times { create(:spending_proposal, valuators: [scarlett])}
+      1.times { create(:spending_proposal, valuators: [john])}
+      2.times { create(:spending_proposal, valuators: [isabel])}
+
+      visit admin_spending_proposals_path
+      click_link "Valuator summary"
+
+      expect(scarlett.email).to appear_before(isabel.email)
+      expect(isabel.email).to appear_before(john.email)
+    end
+
+    scenario "Back link" do
+      visit admin_spending_proposals_path
+
+      click_link "Valuator summary"
+      expect(page).to have_content "Valuator summary for investment projects"
+
+      click_link "Go back"
+      expect(page).to have_content "Investment projects for participatory budgeting"
+    end
+
+  end
 end

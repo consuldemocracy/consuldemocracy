@@ -57,12 +57,22 @@ module SpendingProposalsHelper
     end
   end
 
-  def spending_proposal_count_for_geozone(geozone)
-    if geozone.present?
-      geozone.spending_proposals.for_summary.count
-    else
-      SpendingProposal.where(geozone: nil).for_summary.count
-    end
+  def spending_proposal_count_for_geozone(scope, geozone)
+    geozone_id = geozone.present? ? geozone.id : nil
+    SpendingProposal.limit_results(SpendingProposal.where(geozone_id: geozone_id), params).send(scope).count
+  end
+
+  def spending_proposal_count_for_valuator(scope, valuator)
+    SpendingProposal.limit_results(valuator.spending_proposals, params).send(scope).count
+  end
+
+  def numeric_range_options(range, step, number)
+    values = range
+    values = values.step(step) if step.present?
+    values = values.to_a
+    values = (values + [number.to_i]).uniq.compact.sort if number.present?
+
+    options_for_select(values, number)
   end
 
   def price(number)

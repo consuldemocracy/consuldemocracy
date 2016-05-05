@@ -192,6 +192,10 @@ FactoryGirl.define do
     external_url         'http://external_documention.org'
     terms_of_service     '1'
     association :author, factory: :user
+
+    trait :with_confidence_score do
+      before(:save) { |sp| sp.calculate_confidence_score }
+    end
   end
 
   factory :vote do

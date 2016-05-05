@@ -3,9 +3,9 @@ require 'rails_helper'
 describe Management::SessionsController do
 
   describe 'Sign in' do
-    it "should return 404 if wrong credentials" do
+    it "should deny access if wrong manager credentials" do
       allow_any_instance_of(ManagerAuthenticator).to receive(:auth).and_return(false)
-      expect { get :create, login: "nonexistent" , clave_usuario: "wrong"}.to raise_error "Not Found"
+      expect { get :create, login: "nonexistent" , clave_usuario: "wrong"}.to raise_error CanCan::AccessDenied
     end
 
     it "should redirect to management root path if right credentials" do
@@ -14,6 +14,17 @@ describe Management::SessionsController do
 
       get :create, login: "JJB033" , clave_usuario: "31415926", fecha_conexion: "20151031135905"
       expect(response).to be_redirect
+    end
+
+    it "should redirect to management root path if user is admin" do
+      sign_in create(:administrator).user
+      get :create
+      expect(response).to be_redirect
+    end
+
+    it "should deny access if user is not admin" do
+      sign_in create(:user)
+      expect { get :create}.to raise_error CanCan::AccessDenied
     end
   end
 

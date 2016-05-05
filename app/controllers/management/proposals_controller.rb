@@ -17,7 +17,7 @@ class Management::ProposalsController < Management::BaseController
   end
 
   def vote
-    @proposal.register_vote(current_user, 'yes')
+    @proposal.register_vote(managed_user, 'yes')
     set_proposal_votes(@proposal)
   end
 
@@ -33,7 +33,7 @@ class Management::ProposalsController < Management::BaseController
     end
 
     def proposal_params
-      params.require(:proposal).permit(:title, :question, :summary, :description, :external_url, :video_url, :responsible_name, :tag_list, :terms_of_service, :captcha, :captcha_key)
+      params.require(:proposal).permit(:title, :question, :summary, :description, :external_url, :video_url, :responsible_name, :tag_list, :terms_of_service, :geozone_id)
     end
 
     def resource_model
@@ -44,14 +44,12 @@ class Management::ProposalsController < Management::BaseController
       check_verified_user t("management.proposals.alert.unverified_user")
     end
 
-    ### Duplicated in application_controller. Move to a concern.
     def set_proposal_votes(proposals)
-      @proposal_votes = current_user ? current_user.proposal_votes(proposals) : {}
+      @proposal_votes = managed_user ? managed_user.proposal_votes(proposals) : {}
     end
 
     def set_comment_flags(comments)
-      @comment_flags = current_user ? current_user.comment_flags(comments) : {}
+      @comment_flags = managed_user ? managed_user.comment_flags(comments) : {}
     end
-    ###
 
 end

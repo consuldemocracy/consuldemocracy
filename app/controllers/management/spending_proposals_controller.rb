@@ -17,7 +17,7 @@ class Management::SpendingProposalsController < Management::BaseController
     @spending_proposal = SpendingProposal.new(spending_proposal_params)
     @spending_proposal.author = managed_user
 
-    if @spending_proposal.save_with_captcha
+    if @spending_proposal.save
       redirect_to management_spending_proposal_path(@spending_proposal), notice: t('flash.actions.create.notice', resource_name: t("activerecord.models.spending_proposal", count: 1))
     else
       render :new
@@ -29,7 +29,7 @@ class Management::SpendingProposalsController < Management::BaseController
   end
 
   def vote
-    @spending_proposal.register_vote(current_user, 'yes')
+    @spending_proposal.register_vote(managed_user, 'yes')
     set_spending_proposal_votes(@spending_proposal)
   end
 
@@ -46,7 +46,7 @@ class Management::SpendingProposalsController < Management::BaseController
     end
 
     def spending_proposal_params
-      params.require(:spending_proposal).permit(:title, :description, :external_url, :geozone_id, :terms_of_service, :captcha, :captcha_key)
+      params.require(:spending_proposal).permit(:title, :description, :external_url, :geozone_id, :terms_of_service)
     end
 
     def only_verified_users
@@ -55,7 +55,7 @@ class Management::SpendingProposalsController < Management::BaseController
 
     # This should not be necessary. Maybe we could create a specific show view for managers.
     def set_spending_proposal_votes(spending_proposals)
-      @spending_proposal_votes = current_user ? current_user.spending_proposal_votes(spending_proposals) : {}
+      @spending_proposal_votes = managed_user ? managed_user.spending_proposal_votes(spending_proposals) : {}
     end
 
     def set_geozone_name

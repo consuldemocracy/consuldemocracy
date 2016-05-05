@@ -4,7 +4,6 @@ class SpendingProposal < ActiveRecord::Base
   include Taggable
   include Searchable
 
-  apply_simple_captcha
   acts_as_votable
   acts_as_paranoid column: :hidden_at
   include ActsAsParanoidAliases
@@ -36,6 +35,7 @@ class SpendingProposal < ActiveRecord::Base
   scope :feasible,               -> { where(feasible: true) }
   scope :unfeasible,             -> { valuation_finished.where(feasible: false) }
   scope :not_unfeasible,         -> { where("feasible IS ? OR feasible = ?", nil, true) }
+  scope :with_supports,          -> { where('cached_votes_up > 0') }
 
   scope :by_forum,               -> { where(forum: true) }
 
@@ -61,12 +61,44 @@ class SpendingProposal < ActiveRecord::Base
 
   def self.scoped_filter(params, current_filter)
     results = self
+    results = limit_results(results, params)                      if params[:max_for_no_geozone].present? || params[:max_per_geozone].present?
     results = results.by_geozone(params[:geozone_id])             if params[:geozone_id].present?
     results = results.by_admin(params[:administrator_id])         if params[:administrator_id].present?
     results = results.by_tag(params[:tag_name])                   if params[:tag_name].present?
     results = results.by_valuator(params[:valuator_id])           if params[:valuator_id].present?
     results = results.send(current_filter)                        if current_filter.present?
     results.includes(:geozone, administrator: :user, valuators: :user)
+  end
+
+  def self.limit_results(results, params)
+    max_per_geozone = params[:max_per_geozone].to_i
+    max_for_no_geozone = params[:max_for_no_geozone].to_i
+
+    return results if max_per_geozone <= 0 && max_for_no_geozone <= 0
+
+    ids = []
+    if max_per_geozone > 0
+      Geozone.pluck(:id).each do |gid|
+        ids += SpendingProposal.select(:id).where(geozone_id: gid).order(confidence_score: :desc).limit(max_per_geozone).map(&:id)
+      end
+    end
+
+    if max_for_no_geozone > 0
+      ids += SpendingProposal.select(:id).city_wide.order(confidence_score: :desc).limit(max_for_no_geozone).map(&:id)
+    end
+
+    conditions = ["spending_proposals.id IN (?)"]
+    values = [ids]
+
+    if params[:max_per_geozone].blank?
+      conditions << "spending_proposals.geozone_id IS NOT ?"
+      values << nil
+    elsif params[:max_for_no_geozone].blank?
+      conditions << "spending_proposals.geozone_id IS ?"
+      values << nil
+    end
+
+    results.where(conditions.join(' OR '), *values)
   end
 
   def searchable_values
@@ -228,7 +260,7 @@ class SpendingProposal < ActiveRecord::Base
     self.responsible_name = author.try(:document_number) if author.try(:document_number).present?
   end
 
-  def self.for_summary
+  def self.finished_and_feasible
     valuation_finished.feasible
   end
 

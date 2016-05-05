@@ -13,7 +13,6 @@ feature 'Organizations' do
     fill_in 'user_email',                         with: 'green@peace.com'
     fill_in 'user_password',                      with: 'greenpeace'
     fill_in 'user_password_confirmation',         with: 'greenpeace'
-    fill_in 'user_captcha', with: correct_captcha_text
     check 'user_terms_of_service'
 
     click_button 'Register'
@@ -22,6 +21,41 @@ feature 'Organizations' do
     expect(user).to be
     expect(user).to be_organization
     expect(user.organization).to_not be_verified
+  end
+
+  scenario 'Create with invisible_captcha honeypot field' do
+    visit new_organization_registration_path
+
+    fill_in 'user_organization_attributes_name',  with: 'robot'
+    fill_in 'user_address',                       with: 'This is the honeypot field'
+    fill_in 'user_organization_attributes_responsible_name', with: 'Robots are more responsible than humans'
+    fill_in 'user_email',                         with: 'robot@robot.com'
+    fill_in 'user_password',                      with: 'destroyallhumans'
+    fill_in 'user_password_confirmation',         with: 'destroyallhumans'
+
+    check 'user_terms_of_service'
+
+    click_button 'Register'
+
+    expect(page.status_code).to eq(200)
+    expect(page.html).to be_empty
+    expect(current_path).to eq(organization_registration_path)
+  end
+
+  scenario 'Create organization too fast' do
+    allow(InvisibleCaptcha).to receive(:timestamp_threshold).and_return(Float::INFINITY)
+    visit new_organization_registration_path
+    fill_in 'user_organization_attributes_name',  with: 'robot'
+    fill_in 'user_organization_attributes_responsible_name', with: 'Robots are more responsible than humans'
+    fill_in 'user_email',                         with: 'robot@robot.com'
+    fill_in 'user_password',                      with: 'destroyallhumans'
+    fill_in 'user_password_confirmation',         with: 'destroyallhumans'
+
+    click_button 'Register'
+
+    expect(page).to have_content 'Sorry, that was too quick! Please resubmit'
+
+    expect(current_path).to eq(new_organization_registration_path)
   end
 
   scenario 'Errors on create' do

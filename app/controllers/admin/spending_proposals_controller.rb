@@ -7,7 +7,7 @@ class Admin::SpendingProposalsController < Admin::BaseController
   load_and_authorize_resource
 
   def index
-    @spending_proposals = SpendingProposal.scoped_filter(params, @current_filter).order(cached_votes_up: :desc, created_at: :desc).page(params[:page])
+    @spending_proposals = SpendingProposal.scoped_filter(params, @current_filter).order(confidence_score: :desc, created_at: :desc).page(params[:page])
   end
 
   def show
@@ -32,7 +32,7 @@ class Admin::SpendingProposalsController < Admin::BaseController
   end
 
   def summary
-    @spending_proposals = SpendingProposal.for_summary.group(:geozone).sum(:price)
+    @spending_proposals = SpendingProposal.limit_results(SpendingProposal, params).group(:geozone).sum(:price).sort_by{|geozone, count| geozone.present? ? geozone.name : "ZZ"}
   end
 
   private

@@ -24,7 +24,6 @@ feature 'Spending Proposals' do
       fill_in 'spending_proposal_title', with: 'Build a park in my neighborhood'
       fill_in 'spending_proposal_description', with: 'There is no parks here...'
       fill_in 'spending_proposal_external_url', with: 'http://moarparks.com'
-      fill_in 'spending_proposal_captcha', with: correct_captcha_text
       check 'spending_proposal_terms_of_service'
 
       click_button 'Create'

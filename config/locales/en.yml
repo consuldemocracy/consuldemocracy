@@ -87,7 +87,6 @@ en:
         other: "%{count} votes"
         zero: No votes
     edit:
-      back_link: Go back
       editing: Edit debate
       form:
         submit_button: Save changes
@@ -99,7 +98,7 @@ en:
       debate_title: Debate title
       tags_instructions: Tag this debate.
       tags_label: Topics
-      tags_placeholder: Enter the tags you would like to use, separated by commas (',')
+      tags_placeholder: "Enter the tags you would like to use, separated by commas (',')"
     index:
       featured_debates: Featured
       filter_topic:
@@ -124,7 +123,6 @@ en:
       top: Featured
       top_link_debates: '#TúPreguntas'
     new:
-      back_link: Go back
       form:
         submit_button: Start a debate
       info: If you want to make a proposal, this is the wrong section, enter %{info_link}.
@@ -138,7 +136,6 @@ en:
       start_new: Start a debate
     show:
       author_deleted: User deleted
-      back_link: Go back
       comments:
         one: 1 comment
         other: "%{count} comments"
@@ -222,6 +219,7 @@ en:
       help_translate: Help us translate
       locale: 'Language:'
       logo: Madrid
+      management: Management
       moderation: Moderation
       valuation: Valuation
       more_information: More information
@@ -274,7 +272,6 @@ en:
       form:
         submit_button: Create proposal
     edit:
-      back_link: Go back
       editing: Edit proposal
       form:
         submit_button: Save changes
@@ -344,7 +341,6 @@ en:
       top: Top weekly
       top_link_proposals: The most supported proposals by category
     new:
-      back_link: Go back
       form:
         submit_button: Create proposal
       more_info: How do citizen proposals work?
@@ -373,7 +369,6 @@ en:
       total_percent: 100%
     show:
       author_deleted: User deleted
-      back_link: Go back
       code: 'Proposal code:'
       comments:
         one: 1 comment
@@ -416,7 +411,7 @@ en:
     author_info:
       author_deleted: User deleted
       forum: District discussion space
-    back: Back
+    back: Go back
     check: Select
     check_all: All
     check_none: None
@@ -443,15 +438,6 @@ en:
       categories: "Categories"
     target_blank_html: " (link opens in new window)"
     unflag: Unflag
-  simple_captcha:
-    label: Enter the text from the image in the box below
-    message:
-      debate: the secret code does not match the image
-      proposal: the secret code does not match the image
-      spendingproposal: the secret code does not match the image
-      user: the secret code does not match the image
-    placeholder: Enter the text from the image
-    refresh_button_text: Refresh
   social:
     blog: Blog
     facebook: Facebook
@@ -514,7 +500,6 @@ en:
       recommendation_two: Each proposal must be submitted separately. You can make as many want.
       recommendations_title: How to create a spending proposal
       start_new: Create spending proposal
-      back_link: Back
     show:
       author_deleted: User deleted
       unfeasibility_explanation: Unfeasibility explanation
@@ -610,10 +595,6 @@ en:
       description: If the proposal is accepted by the majority, the City Council accepts it as its own and it gets done.
       title: It gets done
     featured:
-      open_plenary:
-        link: See proposals and questions
-        text: Read proposals and questions to any political party and support the most you like.
-        title: Open plenary
       page_title: Featured
       proposals:
         link: See proposals
@@ -657,3 +638,7 @@ en:
     google_oauth2:
       sign_in: "Sign in with Google"
       sign_up: "Sign up with Google"
+  invisible_captcha:
+    sentence_for_humans: "If you are human, ignore this field"
+    timestamp_error_message: "Sorry, that was too quick! Please resubmit."
+

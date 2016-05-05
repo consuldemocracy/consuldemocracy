@@ -88,6 +88,15 @@ es:
         email_placeholder: Buscar usuario por email
         search: Buscar
         user_not_found: Usuario no encontrado
+      summary:
+        title: Resumen de evaluación de propuestas de inversión
+        valuator_name: Evaluador
+        finished_and_feasible_count: Finalizadas viables
+        finished_and_unfeasible_count: Finalizadas inviables
+        finished_count: Finalizadas
+        in_evaluation_count: En evaluación
+        total_count: Total
+        cost: Coste total
     officials:
       edit:
         back: Volver
@@ -164,6 +173,8 @@ es:
         administrator_filter_all: Todos los administradores
         valuator_filter_all: Todos los evaluadores
         tags_filter_all: Todas las etiquetas
+        max_per_geozone: Corte por distrito
+        max_for_no_geozone: Corte por ciudad
         filters:
           valuation_open: Abiertas
           without_admin: Sin administrador
@@ -175,7 +186,8 @@ es:
         assigned_admin: Administrador asignado
         no_admin_assigned: Sin admin asignado
         no_valuators_assigned: Sin evaluador
-        summary_link: "Resumen"
+        summary_link: "Resumen de propuestas"
+        valuator_summary_link: "Resumen de evaluadores"
         feasibility:
           feasible: "Viable (%{price})"
           not_feasible: "Inviable"
@@ -204,9 +216,13 @@ es:
         tags_placeholder: "Escribe las etiquetas que desees separadas por comas (,)"
         undefined: Sin definir
       summary:
-        title: Resumen de propuestas viables y finalizadas
+        title: Resumen de propuestas de inversión
         geozone_name: Ámbito de ciudad
-        count_for_geozone: Número de propuestas
+        finished_and_feasible_count: Finalizadas viables
+        finished_and_unfeasible_count: Finalizadas inviables
+        finished_count: Finalizadas
+        in_evaluation_count: En evaluación
+        total_count: Total
         cost_for_geozone: Coste total
     stats:
       show:

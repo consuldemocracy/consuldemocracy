@@ -105,7 +105,6 @@ ignore_unused:
   - 'activerecord.*'
   - 'activemodel.*'
   - 'unauthorized.*'
-  - 'simple_captcha.*'
   - 'admin.officials.level_*'
   - 'admin.comments.index.filter*'
   - 'admin.debates.index.filter*'
@@ -143,6 +142,7 @@ ignore_unused:
   - 'helpers.page_entries_info.*' # kaminari
   - 'views.pagination.*' # kaminari
   - 'shared.suggest.*'
+  - 'invisible_captcha.*'
 # - '{devise,kaminari,will_paginate}.*'
 # - 'simple_form.{yes,no}'
 # - 'simple_form.{placeholders,hints,labels}.*'

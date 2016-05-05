@@ -54,23 +54,8 @@
         <%= render "management/account_info" %>
 
         <div class="admin-content small-12 medium-9 column">
-          <% if notice %>
-            <div data-alert class="callout success" data-closable>
-              <button class="close-button" aria-label="<%= t("application.close") %>" type="button" data-close>
-                <span aria-hidden="true">&times;</span>
-              </button>
-              <%= notice %>
-            </div>
-          <% end %>
 
-          <% if alert %>
-            <div data-alert class="callout alert" data-closable>
-              <button class="close-button" aria-label="<%= t("application.close") %>" type="button" data-close>
-                <span aria-hidden="true">&times;</span>
-              </button>
-              <%= alert %>
-            </div>
-          <% end %>
+          <%= render 'layouts/flash' %>
 
           <%= yield %>
         </div>

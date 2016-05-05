@@ -157,6 +157,10 @@ a {
   margin-bottom: $line-height;
 }
 
+.margin-right {
+  margin-right: $line-height;
+}
+
 .no-margin-top {
   margin-top: rem-calc(-24);
 }
@@ -742,26 +746,6 @@ form {
     line-height: $line-height;
     vertical-align: middle;
   }
-
-  .captcha {
-    border: 0;
-    padding: $line-height/2 0;
-
-    input {
-      margin-bottom: 0 !important;
-    }
-  }
-
-  .button.margin-top {
-    margin-top: $line-height;
-  }
-}
-
-.captcha {
-
-  label {
-    display: none;
-  }
 }
 
 // 07. Alerts
@@ -771,7 +755,7 @@ form {
   font-family: $font-sans;
   font-size: $small-font-size;
 
-  &.success {
+  &.success, &.notice {
     background-color: $success-bg;
     border-color: $success-border;
     color: $success-color;
@@ -795,7 +779,7 @@ form {
     }
   }
 
-  &.alert {
+  &.alert, &.error {
     background-color: $alert-bg;
     border-color: $alert-border;
     color: $alert-color;

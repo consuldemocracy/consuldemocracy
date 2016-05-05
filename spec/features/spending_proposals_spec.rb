@@ -185,6 +185,40 @@ feature 'Spending proposals' do
 
   end
 
+  xscenario 'Create with invisible_captcha honeypot field' do
+    login_as(author)
+
+    visit new_spending_proposal_path
+    fill_in 'spending_proposal_title', with: 'I am a bot'
+    fill_in 'spending_proposal_subtitle', with: 'This is the honeypot'
+    fill_in 'spending_proposal_description', with: 'This is the description'
+    select  'All city', from: 'spending_proposal_geozone_id'
+    check 'spending_proposal_terms_of_service'
+
+    click_button 'Create'
+
+    expect(page.status_code).to eq(200)
+    expect(page.html).to be_empty
+    expect(current_path).to eq(spending_proposals_path)
+  end
+
+  xscenario 'Create spending proposal too fast' do
+    allow(InvisibleCaptcha).to receive(:timestamp_threshold).and_return(Float::INFINITY)
+
+    login_as(author)
+
+    visit new_spending_proposal_path
+    fill_in 'spending_proposal_title', with: 'I am a bot'
+    fill_in 'spending_proposal_description', with: 'This is the description'
+    select  'All city', from: 'spending_proposal_geozone_id'
+    check 'spending_proposal_terms_of_service'
+
+    click_button 'Create'
+
+    expect(page).to have_content 'Sorry, that was too quick! Please resubmit'
+    expect(current_path).to eq(new_spending_proposal_path)
+  end
+
   xscenario 'Create notice' do
     login_as(author)
 
@@ -193,21 +227,7 @@ feature 'Spending proposals' do
     fill_in 'spending_proposal_description', with: 'I want to live in a high tower over the clouds'
     fill_in 'spending_proposal_external_url', with: 'http://http://skyscraperpage.com/'
     fill_in 'spending_proposal_association_name', with: 'People of the neighbourhood'
-    fill_in 'spending_proposal_captcha', with: correct_captcha_text
     select  'All city', from: 'spending_proposal_geozone_id'
-    check 'spending_proposal_terms_of_service'
-
-    expect(page).to_not have_link('Create spending proposal', href: new_spending_proposal_path)
-  end
-
-  xscenario 'Captcha is required for proposal creation' do
-    login_as(author)
-
-    visit new_spending_proposal_path
-    fill_in 'spending_proposal_title', with: 'Build a skyscraper'
-    fill_in 'spending_proposal_description', with: 'I want to live in a high tower over the clouds'
-    fill_in 'spending_proposal_external_url', with: 'http://http://skyscraperpage.com/'
-    fill_in 'spending_proposal_captcha', with: 'wrongText'
     check 'spending_proposal_terms_of_service'
 
     click_button 'Create'
@@ -215,8 +235,9 @@ feature 'Spending proposals' do
     expect(page).to_not have_content 'Investment project created successfully'
     expect(page).to have_content '1 error'
 
-    fill_in 'spending_proposal_captcha', with: correct_captcha_text
-    click_button 'Create'
+    within "#notice" do
+      click_link 'My activity'
+    end
 
     expect(page).to have_content 'Investment project created successfully'
   end
