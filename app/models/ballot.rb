@@ -6,4 +6,8 @@ class Ballot < ActiveRecord::Base
   def amount_spent
     spending_proposals.sum(:price).to_i
   end
+
+  def amount_available
+    24000000 - amount_spent
+  end
 end

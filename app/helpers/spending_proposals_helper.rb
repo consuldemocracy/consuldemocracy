@@ -65,4 +65,8 @@ module SpendingProposalsHelper
     end
   end
 
+  def price(number)
+    number_to_currency(number, precision: 0)
+  end
+
 end

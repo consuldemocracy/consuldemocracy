@@ -329,4 +329,9 @@ FactoryGirl.define do
     sequence(:name) { |n| "Forum #{n}" }
     user
   end
+
+  factory :ballot do
+    user
+  end
+
 end

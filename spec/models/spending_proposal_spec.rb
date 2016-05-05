@@ -531,4 +531,36 @@ describe SpendingProposal do
     end
   end
 
+  describe "#amount_spent" do
+    it "returns the amount spent in spending proposals" do
+      sp1 = create(:spending_proposal, price: 10000)
+      sp2 = create(:spending_proposal, price: 20000)
+
+      ballot = create(:ballot)
+      ballot.spending_proposals << sp1
+
+      expect(ballot.amount_spent).to eq 10000
+
+      ballot.spending_proposals << sp2
+
+      expect(ballot.amount_spent).to eq 30000
+    end
+  end
+
+  describe "#amount_available" do
+    it "returns the amount available to spend on spending proposals" do
+      sp1 = create(:spending_proposal, price: 10000)
+      sp2 = create(:spending_proposal, price: 20000)
+
+      ballot = create(:ballot)
+      ballot.spending_proposals << sp1
+
+      expect(ballot.amount_available).to eq 23990000
+
+      ballot.spending_proposals << sp2
+
+      expect(ballot.amount_available).to eq 23970000
+    end
+  end
+
 end
