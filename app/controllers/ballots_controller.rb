@@ -14,7 +14,7 @@ class BallotsController < ApplicationController
     ballot_line.destroy
   end
 
-  def preview
+  def show
     @ballot = current_user.ballot
   end
 
