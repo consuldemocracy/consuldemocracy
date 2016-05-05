@@ -31,7 +31,7 @@
         <% end %>
       </div>
 
-      <%= render('shared/order_links', i18n_namespace: "spending_proposals.index") unless params[:unfeasible].present? %>
+      <%= render('shared/order_links', i18n_namespace: "spending_proposals.index") unless params[:unfeasible].present? || feature?("spending_proposal_features.phase3") %>
 
       <%= render partial: 'spending_proposals/spending_proposal', collection: @spending_proposals %>
       <%= paginate @spending_proposals %>
