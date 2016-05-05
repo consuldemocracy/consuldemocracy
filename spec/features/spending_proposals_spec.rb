@@ -340,7 +340,7 @@ feature 'Spending proposals' do
   context "Final Voting" do
 
     background do
-      Setting["feature.spending_proposal_features.fase3"] = true
+      Setting["feature.spending_proposal_features.phase3"] = true
     end
 
     scenario "Index" do

@@ -63,8 +63,8 @@ Setting['feature.google_login'] = true
 Setting['feature.public_stats'] = true
 
 # Spending proposals feature flags
-Setting['feature.spending_proposal_features.fase1'] = true
-Setting['feature.spending_proposal_features.fase2'] = nil
-Setting['feature.spending_proposal_features.fase3'] = nil
+Setting['feature.spending_proposal_features.phase1'] = true
+Setting['feature.spending_proposal_features.phase2'] = nil
+Setting['feature.spending_proposal_features.phase3'] = nil
 Setting['feature.spending_proposal_features.voting_allowed'] = true
 Setting['feature.spending_proposal_features.final_voting_allowed'] = true

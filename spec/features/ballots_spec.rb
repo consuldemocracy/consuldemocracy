@@ -3,7 +3,7 @@ require 'rails_helper'
 feature 'Ballots' do
 
   background do
-    Setting['feature.spending_proposal_features.fase3'] = true
+    Setting['feature.spending_proposal_features.phase3'] = true
   end
 
   context 'Permissions' do
