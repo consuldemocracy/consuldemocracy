@@ -42,19 +42,17 @@
     <% unless @spending_proposal.unfeasible? %>
       <aside class="small-12 medium-3 column">
         <div class="sidebar-divider"></div>
-         <% if feature?("spending_proposal_features.phase2") %>
-           <h3><%= t("votes.supports") %></h3>
-           <div class="text-center">
-             <div id="<%= dom_id(@spending_proposal) %>_votes">
-               <%= render 'votes',
+        <h3><%= t("votes.supports") %></h3>
+        <div class="text-center">
+          <% if feature?("spending_proposal_features.phase2") %>
+            <div id="<%= dom_id(@spending_proposal) %>_votes">
+              <%= render 'votes',
                           { spending_proposal: @spending_proposal, vote_url:   vote_spending_proposal_path(@spending_proposal, value: 'yes') } %>
-             </div>
-           </div>
-         <% elsif feature?("spending_proposal_features.phase3") %>
-           <div id="<%= dom_id(@spending_proposal) %>_ballot"
-                class="small-12 medium-3 column text-center">
-             <%= render 'ballot', spending_proposal: @spending_proposal %>
-           </div>
+            </div>
+          <% elsif feature?("spending_proposal_features.phase3") %>
+            <div id="<%= dom_id(@spending_proposal) %>_ballot">
+              <%= render 'ballot', spending_proposal: @spending_proposal %>
+            </div>
          <% end %>
 
         <div class="sidebar-divider"></div>
