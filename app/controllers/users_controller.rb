@@ -3,6 +3,7 @@ class UsersController < ApplicationController
 
   load_and_authorize_resource
   helper_method :authorized_for_filter?
+  helper_method :author_or_admin?
 
   def show
     load_filtered_activity if valid_access?
