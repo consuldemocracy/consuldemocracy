@@ -204,7 +204,10 @@ blockquote p {
 .jumbo-investment-project {
   background: $budget;
   border-bottom: 1px solid $budget;
-  min-height: $line-height*9;
+
+  &.investment-project-geozone {
+    min-height: $line-height*9;
+  }
 
   h1, h2, .back, .icon-angle-left, p, a {
     color: white;
@@ -1316,14 +1319,13 @@ table.age-groups {
     font-size: rem-calc(24);
     font-weight: bold;
     left: auto;
-    right: -6px;
     transform: translate(0%, -50%);
 
     &:before {
-      content: "\61";
+      content: "\57";
       font-family: 'icons';
       position: absolute;
-      right: 0;
+      left: -2px;
       top: -18px;
     }
   }
