@@ -551,6 +551,12 @@ es:
       deleted_proposal: Este propuesta ha sido eliminada
       delete_spending_proposal: Eliminar
       confirm_deletion_spending_proposal: "¿Seguro que desea eliminar esta propuesta?"
+      ballot_link_text:
+        zero: Todavía no has votado por ninguna propuesta.
+        one: "Has votado sólo una propuesta por un valor de %{amount_spent}."
+        other: "Has votado %{count} propuestas por un valor de %{amount_spent}."
+      ballot_verified_only: En que invertir los presupuestos participativos lo deciden sólo los usuarios verificados, %{verify_account}.
+      verify_account: verifica tu cuenta
       filters:
         comments:
           one: 1 Comentario
@@ -564,6 +570,7 @@ es:
         spending_proposals:
           one: 1 Propuesta de inversión
           other: "%{count} Propuestas de inversión"
+        ballot: Presupuestos participativos
       no_activity: Usuario sin actividad pública
       private_activity: Este usuario ha decidido mantener en privado su lista de actividades
       retire: Retirar
