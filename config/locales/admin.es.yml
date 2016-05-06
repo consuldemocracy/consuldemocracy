@@ -56,6 +56,7 @@ es:
       hidden_users: Usuarios bloqueados
       incomplete_verifications: Verificaciones incompletas
       moderators: Moderadores
+      newsletter: Envío de Newsletters
       valuators: Evaluadores
       officials: Cargos públicos
       organizations: Organizaciones
@@ -72,6 +73,10 @@ es:
         email_placeholder: Buscar usuario por email
         search: Buscar
         user_not_found: Usuario no encontrado
+    newsletters:
+      index:
+        title: Envío de newsletters
+        button: Descargar zip con lista de usuarios
     valuators:
       index:
         title: Evaluadores
@@ -168,6 +173,8 @@ es:
         administrator_filter_all: Todos los administradores
         valuator_filter_all: Todos los evaluadores
         tags_filter_all: Todas las etiquetas
+        max_per_geozone: Corte por distrito
+        max_for_no_geozone: Corte por ciudad
         filters:
           valuation_open: Abiertas
           without_admin: Sin administrador
@@ -210,7 +217,6 @@ es:
         undefined: Sin definir
       summary:
         title: Resumen de propuestas de inversión
-        title_proposals_with_supports: Resumen para propuestas que han superado la fase de apoyos
         geozone_name: Ámbito de ciudad
         finished_and_feasible_count: Finalizadas viables
         finished_and_unfeasible_count: Finalizadas inviables
@@ -226,9 +232,12 @@ es:
           comments: Comentarios
           debate_votes: Votos en debates
           debates: Debates
+          open_answer_votes: Votos preguntas abiertas
           proposal_votes: Votos en propuestas
           proposals: Propuestas
+          spending_proposal_votes: Votos Propuesta Inversión
           spending_proposals: Propuestas de inversión
+          surveys: Encuestas rellenadas
           unverified_users: Usuarios sin verificar
           user_level_three: Usuarios de nivel tres
           user_level_two: Usuarios de nivel dos

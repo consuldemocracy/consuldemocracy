@@ -13,7 +13,9 @@ class User < ActiveRecord::Base
   has_one :moderator
   has_one :valuator
   has_one :organization
+  has_one :forum
   has_one :lock
+  has_one :ballot
   has_many :flags
   has_many :identities, dependent: :destroy
   has_many :debates, -> { with_hidden }, foreign_key: :author_id
@@ -23,6 +25,7 @@ class User < ActiveRecord::Base
   has_many :failed_census_calls
   has_many :notifications
   belongs_to :geozone
+  belongs_to :representative, class_name: "Forum"
 
   validates :username, presence: true, if: :username_required?
   validates :username, uniqueness: { scope: :registering_with_oauth }, if: :username_required?
@@ -43,10 +46,12 @@ class User < ActiveRecord::Base
   attr_accessor :skip_password_validation
   attr_accessor :use_redeemable_code
 
-  scope :administrators, -> { joins(:administrators) }
+  scope :administrators, -> { joins(:administrator) }
   scope :moderators,     -> { joins(:moderator) }
   scope :organizations,  -> { joins(:organization) }
+  scope :forums,         -> { joins(:forum) }
   scope :officials,      -> { where("official_level > 0") }
+  scope :newsletter,     -> { where(newsletter: true) }
   scope :for_render,     -> { includes(:organization) }
   scope :by_document,    -> (document_type, document_number) { where(document_type: document_type, document_number: document_number) }
 
@@ -106,6 +111,18 @@ class User < ActiveRecord::Base
 
   def organization?
     organization.present?
+  end
+
+  def forum?
+    forum.present?
+  end
+
+  def has_representative?
+    representative.present?
+  end
+
+  def pending_delegation_alert?
+    has_representative? && accepted_delegation_alert == false
   end
 
   def verified_organization?
@@ -224,6 +241,12 @@ class User < ActiveRecord::Base
       self.save(validate: false)
     end
     true
+  end
+
+  def supported_spending_proposals_geozone
+    if supported_spending_proposals_geozone_id.present?
+      Geozone.find(supported_spending_proposals_geozone_id)
+    end
   end
 
   def ability

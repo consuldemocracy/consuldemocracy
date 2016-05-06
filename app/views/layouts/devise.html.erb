@@ -9,6 +9,7 @@
     <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
     <%= favicon_link_tag "favicon.ico" %>
+    <%= setting['per_page_code'].try(:html_safe) %>
   </head>
 
   <body class="auth-page">

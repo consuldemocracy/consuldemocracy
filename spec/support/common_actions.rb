@@ -34,6 +34,23 @@ module CommonActions
     allow_any_instance_of(Management::BaseController).to receive(:managed_user).and_return(user)
   end
 
+  def fill_in_proposal
+    fill_in 'proposal_title', with: 'Help refugees'
+    fill_in 'proposal_question', with: '¿Would you like to give assistance to war refugees?'
+    fill_in 'proposal_summary', with: 'In summary, what we want is...'
+    fill_in 'proposal_description', with: 'This is very important because...'
+    fill_in 'proposal_external_url', with: 'http://rescue.org/refugees'
+    fill_in 'proposal_video_url', with: 'http://youtube.com'
+    fill_in 'proposal_responsible_name', with: 'Isabel Garcia'
+    check 'proposal_terms_of_service'
+  end
+
+  def fill_in_debate
+    fill_in 'debate_title', with: 'A title for a debate'
+    fill_in 'debate_description', with: 'This is very important because...'
+    check 'debate_terms_of_service'
+  end
+
   def confirm_email
     body = ActionMailer::Base.deliveries.last.try(:body)
     expect(body).to be_present
@@ -150,6 +167,9 @@ module CommonActions
 
   def expect_message_you_need_to_sign_in
     expect(page).to have_content 'You must Sign in or Sign up to continue'
+    expect(page).to have_link("Sign in", href: new_user_session_path)
+    expect(page).to have_link("Sign up", href: new_user_registration_path)
+
     expect(page).to have_selector('.in-favor a', visible: false)
   end
 
@@ -166,6 +186,13 @@ module CommonActions
 
   def expect_message_only_verified_can_vote_proposals
     expect(page).to have_content 'Only verified users can vote on proposals'
+    expect(page).to have_link("verify your account", href: verification_path)
+
+    expect(page).to have_selector('.in-favor a', visible: false)
+  end
+
+  def expect_message_organizations_cannot_vote
+    expect(page).to have_content 'Organisations are not permitted to vote.'
     expect(page).to have_selector('.in-favor a', visible: false)
   end
 
@@ -176,8 +203,7 @@ module CommonActions
 
   def create_featured_proposals
     [create(:proposal, :with_confidence_score, cached_votes_up: 100),
-     create(:proposal, :with_confidence_score, cached_votes_up: 90),
-     create(:proposal, :with_confidence_score, cached_votes_up: 80)]
+     create(:proposal, :with_confidence_score, cached_votes_up: 90)]
   end
 
   def create_featured_debates
@@ -188,6 +214,12 @@ module CommonActions
 
   def tag_names(tag_cloud)
     tag_cloud.tags.map(&:name)
+  end
+
+  def add_to_ballot(spending_proposal)
+    within("#spending_proposal_#{spending_proposal.id}") do
+      find('.add a').trigger('click')
+    end
   end
 
 end

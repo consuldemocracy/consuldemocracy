@@ -1,0 +1,16 @@
+<div class="add in-favor">
+  <p class="investment-project-amount">
+    <%= price(spending_proposal.price) %>
+  </p>
+
+  <% if feature?("spending_proposal_features.final_voting_allowed") %>
+    <%= link_to add_ballot_url(spending_proposal_id: spending_proposal.id),
+        class: "button button-support small expanded",
+        title: t('spending_proposals.spending_proposal.support_title'),
+        method: "post",
+        remote: true,
+        data: supports_confirm_for_current_user(spending_proposal) do %>
+        <%= t("spending_proposals.spending_proposal.add") %>
+    <% end %>
+  <% end %>
+</div>

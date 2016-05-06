@@ -56,6 +56,7 @@ en:
       hidden_users: Hidden users
       incomplete_verifications: Incomplete verifications
       moderators: Moderators
+      newsletter: Newsletters
       valuators: Valuators
       officials: Officials
       organizations: Organisations
@@ -72,6 +73,10 @@ en:
         email_placeholder: Search user by email
         search: Search
         user_not_found: User not found
+    newsletters:
+      index:
+        title: Newsletters
+        button: Download zip with users list
     valuators:
       index:
         title: Valuators
@@ -168,6 +173,8 @@ en:
         administrator_filter_all: All administrators
         valuator_filter_all: All valuators
         tags_filter_all: All tags
+        max_per_geozone: Max per geozone
+        max_for_no_geozone: Max for city-wide
         filters:
           valuation_open: Open
           without_admin: Without assigned admin
@@ -210,7 +217,6 @@ en:
         undefined: Undefined
       summary:
         title: Summary for investment projects
-        title_proposals_with_supports: Summary for investment projects with supports
         geozone_name: Scope
         finished_and_feasible_count: Finished and feasible
         finished_and_unfeasible_count: Finished and unfeasible
@@ -226,9 +232,12 @@ en:
           comments: Comments
           debate_votes: Debate votes
           debates: Debates
+          open_answer_votes: Open answer votes
           proposal_votes: Proposal votes
           proposals: Proposals
-          spending_proposals: Spending Proposals
+          spending_proposal_votes: Investment project votes
+          spending_proposals: Investment projects
+          surveys: Surveys completed
           unverified_users: Unverified users
           user_level_three: Level three users
           user_level_two: Level two users

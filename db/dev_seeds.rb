@@ -25,7 +25,11 @@ Setting.create(key: 'org_name', value: 'Consul')
 Setting.create(key: 'place_name', value: 'City')
 Setting.create(key: 'feature.debates', value: "true")
 Setting.create(key: 'feature.spending_proposals', value: "true")
+Setting.create(key: 'feature.spending_proposal_features.phase1', value: "true")
+Setting.create(key: 'feature.spending_proposal_features.phase2', value: nil)
+Setting.create(key: 'feature.spending_proposal_features.phase3', value: nil)
 Setting.create(key: 'feature.spending_proposal_features.voting_allowed', value: "true")
+Setting.create(key: 'feature.spending_proposal_features.final_voting_allowed', value: "true")
 Setting.create(key: 'feature.twitter_login', value: "true")
 Setting.create(key: 'feature.facebook_login', value: "true")
 Setting.create(key: 'feature.google_login', value: "true")
@@ -33,7 +37,33 @@ Setting.create(key: 'per_page_code', value: "")
 Setting.create(key: 'comments_body_max_length', value: '1000')
 
 puts "Creating Geozones"
-('A'..'Z').each{ |i| Geozone.create(name: "District #{i}") }
+
+geozones = [
+  ["Fuencarral - El Pardo", "3,86,27,60,134,54,220,88,295,3,348,85,312,108,230,94,270,198,248,239,200,259,57,235,34,164"],
+  ["Moncloa - Aravaca", "54,234,200,261,185,329,115,355,125,290,105,288,90,261,50,246"],
+  ["Tetuán", "199,258,228,253,224,292,199,290,196,292"],
+  ["Chamberí", "190,292,222,294,224,324,193,317"],
+  ["Centro", "190,317,184,342,214,352,218,325"],
+  ["Latina", "179,335,113,357,48,355,68,406,114,416,147,381,181,350"],
+  ["Carabanchel", "178,353,198,370,176,412,116,416,176,354"],
+  ["Arganzuela", "184,342,218,351,238,373,214,390,183,348"],
+  ["Usera", "178,412,201,371,222,420"],
+  ["Villaverde", "177,415,225,424,245,470,183,478,168,451"],
+  ["Chamartin", "231,247,224,303,237,309,257,300,246,241"],
+  ["Salamanca", "223,306,235,310,256,301,258,335,219,332"],
+  ["Retiro", "218,334,259,338,240,369,216,350"],
+  ["Puente de Vallecas", "214,390,250,356,265,362,271,372,295,384,291,397,256,406,243,420,223,422"],
+  ["Villa de Vallecas", "227,423,258,407,292,397,295,387,322,398,323,413,374,440,334,494,317,502,261,468,246,471"],
+  ["Hortaleza", "271,197,297,205,320,203,338,229,305,255,301,272,326,295,277,296,258,265,262,245,249,238"],
+  ["Barajas", "334,217,391,207,387,222,420,274,410,305,327,295,312,283,304,258,339,232"],
+  ["Ciudad Lineal", "246,240,258,243,258,267,285,307,301,347,258,338,255,271"],
+  ["Moratalaz", "259,338,302,346,290,380,251,355"],
+  ["San Blas - Canillejas", "282,295,404,306,372,320,351,340,335,359,303,346"],
+  ["Vicálvaro", "291,381,304,347,335,362,351,342,358,355,392,358,404,342,423,360,417,392,393,387,375,438,325,413,323,393"]
+]
+geozones.each do |name, coordinates|
+  Geozone.create(name: name, html_map_coordinates: coordinates)
+end
 
 puts "Creating Users"
 
@@ -97,6 +127,7 @@ ActsAsTaggableOn::Tag.create!(name:  "Asociaciones", featured: true, kind: "cate
 ActsAsTaggableOn::Tag.create!(name:  "Cultura", featured: true, kind: "category")
 ActsAsTaggableOn::Tag.create!(name:  "Deportes", featured: true, kind: "category")
 ActsAsTaggableOn::Tag.create!(name:  "Derechos Sociales", featured: true, kind: "category")
+ActsAsTaggableOn::Tag.create!(name:  "Distritos", featured: true, kind: "category")
 ActsAsTaggableOn::Tag.create!(name:  "Economía", featured: true, kind: "category")
 ActsAsTaggableOn::Tag.create!(name:  "Empleo", featured: true, kind: "category")
 ActsAsTaggableOn::Tag.create!(name:  "Equidad", featured: true, kind: "category")
@@ -108,6 +139,7 @@ ActsAsTaggableOn::Tag.create!(name:  "Salud", featured: true , kind: "category")
 ActsAsTaggableOn::Tag.create!(name:  "Transparencia", featured: true, kind: "category")
 ActsAsTaggableOn::Tag.create!(name:  "Seguridad y Emergencias", featured: true, kind: "category")
 ActsAsTaggableOn::Tag.create!(name:  "Medio Ambiente", featured: true, kind: "category")
+ActsAsTaggableOn::Tag.create!(name:  "Urbanismo", featured: true, kind: "category")
 
 puts "Creating Debates"
 
@@ -268,8 +300,9 @@ tags = Faker::Lorem.words(10)
 
 (1..60).each do |i|
   geozone = Geozone.reorder("RANDOM()").first
-  author = User.reorder("RANDOM()").first
+  author = User.reorder("RANDOM()").reject {|a| a.organization? }.first
   description = "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>"
+  forum = ["true", "false"].sample
   feasible_explanation = "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>"
   valuation_finished = [true, false].sample
   feasible = [true, false].sample
@@ -283,6 +316,7 @@ tags = Faker::Lorem.words(10)
                               feasible_explanation: feasible_explanation,
                               valuation_finished: valuation_finished,
                               tag_list: tags.sample(3).join(','),
+                              forum: forum,
                               price: rand(1000000),
                               terms_of_service: "1")
   puts "    #{spending_proposal.title}"
@@ -318,3 +352,51 @@ puts "Confirming hiding in debates, comments & proposals"
 Comment.only_hidden.flagged.reorder("RANDOM()").limit(10).each(&:confirm_hide)
 Debate.only_hidden.flagged.reorder("RANDOM()").limit(5).each(&:confirm_hide)
 Proposal.only_hidden.flagged.reorder("RANDOM()").limit(5).each(&:confirm_hide)
+
+puts "Creating district Forums"
+forums = ["Fuencarral - El Pardo", "Moncloa - Aravaca", "Tetuán", "Chamberí", "Centro", "Latina", "Carabanchel", "Arganzuela", "Usera", "Villaverde", "Chamartin", "Salamanca", "Retiro", "Puente de Vallecas", "Villa de Vallecas", "Hortaleza", "Barajas", "Ciudad Lineal", "Moratalaz", "San Blas - Canillejas", "Vicálvaro"]
+forums.each_with_index do |forum, i|
+  user = create_user("user_for_forum#{i}@example.es")
+  Forum.create(name: forum, user: user)
+end
+
+puts "Open plenary debate"
+open_plenary = Debate.create!(author: User.reorder("RANDOM()").first,
+                        title: "Pregunta en el Pleno Abierto",
+                        created_at: Date.parse("20-04-2016"),
+                        description: "<p>Pleno Abierto preguntas</p>",
+                        terms_of_service: "1",
+                        tag_list: 'plenoabierto',
+                        comment_kind: 'question')
+puts "#{open_plenary.title}"
+
+puts "Open plenary questions"
+(1..30).each do |i|
+  author = User.reorder("RANDOM()").first
+  cached_votes_up = rand(1000)
+  cached_votes_down = rand(1000)
+  cached_votes_total =  cached_votes_up + cached_votes_down
+  Comment.create!(user: author,
+                  created_at: rand(open_plenary.created_at .. Time.now),
+                  commentable: open_plenary,
+                  body: Faker::Lorem.sentence,
+                  cached_votes_up: cached_votes_up,
+                  cached_votes_down: cached_votes_down,
+                  cached_votes_total: cached_votes_total)
+end
+
+puts "Open plenary proposal"
+(1..30).each do |i|
+  description = "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>"
+  proposal = Proposal.create!(author: User.reorder("RANDOM()").first,
+                              title: Faker::Lorem.sentence(3).truncate(60),
+                              question: Faker::Lorem.sentence(3),
+                              summary: Faker::Lorem.sentence(3),
+                              responsible_name: Faker::Name.name,
+                              description: description,
+                              created_at: Date.parse("20-04-2016"),
+                              terms_of_service: "1",
+                              tag_list: 'plenoabierto',
+                              cached_votes_up: rand(1000))
+  puts "#{proposal.title}"
+end

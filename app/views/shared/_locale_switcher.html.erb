@@ -11,6 +11,10 @@
             <%= I18n.t("locale", locale: loc) %>
           </option>
         <% end %>
+        <option disabled>──────────</option>
+        <option value="/help_translate">
+          <%= t("layouts.header.help_translate") %>
+        </option>
       </select>
     </form>
   </div>

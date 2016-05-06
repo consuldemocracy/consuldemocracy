@@ -5,7 +5,7 @@ class Verification::ResidenceController < ApplicationController
   skip_authorization_check
 
   def new
-    @residence = Verification::Residence.new
+    @residence = Verification::Residence.new(user: current_user)
   end
 
   def create
@@ -20,6 +20,6 @@ class Verification::ResidenceController < ApplicationController
   private
 
     def residence_params
-      params.require(:residence).permit(:document_number, :document_type, :date_of_birth, :postal_code, :terms_of_service)
+      params.require(:residence).permit(:document_number, :document_type, :date_of_birth, :postal_code, :terms_of_service, :redeemable_code)
     end
 end

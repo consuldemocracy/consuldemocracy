@@ -16,6 +16,7 @@
 .annotator-adder {
   background-image: image-url("annotator_adder.png");
   margin-top: -52px;
+  display: none; // ugly hack due to the fact that annotator does not have read-only mode now
 }
 
 .annotator-widget {

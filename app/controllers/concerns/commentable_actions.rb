@@ -25,6 +25,7 @@ module CommentableActions
 
   def new
     @resource = resource_model.new
+    add_predefined_tag
     set_geozone
     set_resource_instance
   end
@@ -153,4 +154,7 @@ module CommentableActions
       nil
     end
 
+    def add_predefined_tag
+      @resource.tag_list << params[:tag] if params[:tag].present?
+    end
 end

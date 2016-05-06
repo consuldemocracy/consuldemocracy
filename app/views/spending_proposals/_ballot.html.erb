@@ -1,0 +1,11 @@
+<div class="supports ballot">
+  <% if added_to_ballot?(@ballot, spending_proposal) %>
+    <%= render 'ballots/remove', spending_proposal: spending_proposal %>
+  <% else %>
+    <%= render 'ballots/add', spending_proposal: spending_proposal %>
+  <% end %>
+
+  <% if cannot_vote_spending_proposal?(spending_proposal) %>
+    <%= render 'shared/authentication', message: authentication_message(spending_proposal) %>
+  <% end %>
+</div>

@@ -1,0 +1,37 @@
+<div class="expanded processes no-margin-top">
+  <div class="row padding">
+    <div class="small-12 column">
+      <h1 class="margin-bottom"><%= t("pages.processes.index.title") %></h1>
+
+      <div id="open-plenary" class="small-12 medium-7 margin-bottom">
+        <span class="label"><%= t("pages.processes.index.featured") %></span>
+        <h2><%= t("pages.processes.index.process_3_title") %></h2>
+
+        <% if Time.now.in_time_zone <= DateTime.new(2016,4,21) %>
+          <p><%= t("pages.processes.index.process_3_description") %></p>
+          <%= link_to t("pages.processes.index.process_3_button"), page_path("processes_open_plenary"), class: "button" %>
+        <% else %>
+          <p><%= t("pages.processes.index.process_3_description_close") %></p>
+          <%= link_to t("pages.processes.index.process_3_button_close"), page_path("processes_open_plenary"), class: "button" %>
+        <% end %>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row margin">
+
+  <div id="spain-square" class="small-12 medium-6 large-4 column">
+    <h3><%= t("pages.processes.index.process_2_title") %></h3>
+    <p><%= t("pages.processes.index.process_2_description") %></p>
+    <%= link_to t("pages.processes.index.process_2_button"), page_path("processes_plaza_espana") %>
+  </div>
+
+  <div id="transparency-law" class="small-12 medium-6 large-4 column end">
+    <h3><%= t("pages.processes.index.process_1_title") %></h3>
+    <p><%= t("pages.processes.index.process_1_description") %></p>
+    <%= link_to t("pages.processes.index.process_1_button"), page_path("processes_ordinance") %>
+  </div>
+
+</div>

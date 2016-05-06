@@ -1,0 +1,43 @@
+<% if @filter_geozone_name.present? %>
+  <section class="no-margin-top margin-bottom" data-sticky-container>
+  <div class="expanded jumbo-investment-project padding sticky"
+       data-sticky
+       data-options="marginTop:0;"
+       data-anchor="investment-projects-main"
+       style="width: 100%;">
+
+    <div class="row">
+      <div class="small-12 medium-8 column">
+        <%= link_to welcome_spending_proposals_path, class: "back" do %>
+          <i class="icon-angle-left"></i>
+          <%= t("pages.processes.back") %>
+        <% end %>
+
+        <h1><%= @filter_geozone_name %></h1>
+      </div>
+    </div>
+
+    <div class="row progress-votes">
+      <div id="progress_bar">
+        <%= render 'progress_bar' %>
+      </div>
+      <div class="small-12 medium-3 column">
+        <%= link_to "Revisar mis votos", ballot_path, class: "button expanded"%>
+      </div>
+    </div>
+  </div>
+  </section>
+<% else %>
+  <div class="expanded jumbo-investment-project padding no-margin-top margin-bottom">
+    <div class="row">
+      <div class="small-12 medium-8 column">
+        <%= link_to welcome_spending_proposals_path, class: "back" do %>
+          <i class="icon-angle-left"></i>
+          <%= t("pages.processes.back") %>
+        <% end %>
+
+        <h1><%= t('spending_proposals.index.title') %></h1>
+      </div>
+    </div>
+  </div>
+<% end %>
