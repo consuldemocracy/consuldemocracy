@@ -526,8 +526,8 @@ en:
       title: Your ballot
       amount_spent: Amount spent
       voted_html:
-        one: "You voted <span>one</span> proposal with a total cost of <span>%{amount_spent}</span>."
-        other: "You voted <span>%{count}</span> proposals with a total cost of <span>%{amount_spent}</span>."
+        one: "You voted <span>one</span> proposal with a total cost of <span>%{amount_spent}€</span>."
+        other: "You voted <span>%{count}</span> proposals with a total cost of <span>%{amount_spent}€</span>."
   stats:
     index:
       visits: Visits

@@ -526,8 +526,8 @@ es:
       title: Mis votos
       amount_spent: Coste total
       voted_html:
-        one: "Has votado <span>%{count}</span> propuestas por un valor de <span>%{amount_spent}</span>."
-        other: "Has votado <span>una</span> propuesta por un valor de <span>%{amount_spent}</span>."
+        one: "Has votado <span>una</span> propuesta por un valor de <span>%{amount_spent}€</span>."
+        other: "Has votado <span>%{count}</span> propuestas por un valor de <span>%{amount_spent}€</span>."
   stats:
     index:
       visits: Visitas
