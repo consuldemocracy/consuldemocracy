@@ -436,12 +436,12 @@ feature 'Spending proposals' do
       user = create(:user, :level_two)
       california = create(:geozone)
       new_york = create(:geozone)
-      sp1 = create(:spending_proposal, feasible: true, price: 10000, geozone: nil)
-      sp2 = create(:spending_proposal, feasible: true, price: 20000, geozone: nil)
-      sp3 = create(:spending_proposal, feasible: true, price: 30000, geozone: nil)
-      sp4 = create(:spending_proposal, feasible: true, price: 40000, geozone: california)
-      sp5 = create(:spending_proposal, feasible: true, price: 50000, geozone: california)
-      sp6 = create(:spending_proposal, feasible: true, price: 60000, geozone: new_york)
+      sp1 = create(:spending_proposal, feasible: true, price:      1, geozone: nil)
+      sp2 = create(:spending_proposal, feasible: true, price:     10, geozone: nil)
+      sp3 = create(:spending_proposal, feasible: true, price:    100, geozone: nil)
+      sp4 = create(:spending_proposal, feasible: true, price:   1000, geozone: california)
+      sp5 = create(:spending_proposal, feasible: true, price:  10000, geozone: california)
+      sp6 = create(:spending_proposal, feasible: true, price: 100000, geozone: new_york)
 
       login_as(user)
       visit root_path

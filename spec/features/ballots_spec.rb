@@ -6,6 +6,25 @@ feature 'Ballots' do
     Setting['feature.spending_proposal_features.phase3'] = true
   end
 
+  context 'Showing the ballot' do
+    scenario 'Displaying the correct count & amount' do
+      user = create(:user)
+      ballot = create(:ballot, user: user)
+      geozone = create(:geozone)
+
+      ballot.spending_proposals =
+        create_list(:spending_proposal, 2, price: 10) +
+        create_list(:spending_proposal, 3, price: 5, geozone: geozone)
+
+      login_as(user)
+      visit ballot_path
+
+      expect(page).to have_content("You voted 5 proposals with a total cost of 35")
+      within("#city_wide") { expect(page).to have_content "20€" }
+      within("#district_wide") { expect(page).to have_content "15€" }
+    end
+  end
+
   context 'Permissions' do
 
     scenario 'User not logged in', :js do

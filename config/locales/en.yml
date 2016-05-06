@@ -519,13 +519,15 @@ en:
         zero: No supports
       vote: Vote
   ballots:
-    preview:
+    show:
       city_wide: City Wide
       district_wide: District Wide
       info_html: "You can change your vote at any time <strong>until June 30</strong>"
       title: Your ballot
-      total_cost: Total cost
-      voted_html: "You voted <span>%{number}</span> proposals with a total cost of <span>%{amount}</span>."
+      amount_spent: Amount spent
+      voted_html:
+        one: "You voted <span>one</span> proposal with a total cost of <span>%{amount_spent}</span>."
+        other: "You voted <span>%{count}</span> proposals with a total cost of <span>%{amount_spent}</span>."
   stats:
     index:
       visits: Visits
