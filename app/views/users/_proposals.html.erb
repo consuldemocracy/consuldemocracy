@@ -6,15 +6,18 @@
         <br>
         <%= proposal.summary %>
       </td>
-      <td class="text-center">
-        <% if proposal.retired? %>
-          <span class="label alert"><%= t('users.show.retired') %></span>
-        <% else %>
-          <%= link_to t('users.show.retire'),
-                      retire_form_proposal_path(proposal),
-                      class: 'delete' %>
-        <% end %>
-      </td>
+
+      <% if author_or_admin? %>
+        <td class="text-center">
+          <% if proposal.retired? %>
+            <span class="label alert"><%= t('users.show.retired') %></span>
+          <% else %>
+            <%= link_to t('users.show.retire'),
+                        retire_form_proposal_path(proposal),
+                        class: 'delete' %>
+          <% end %>
+        </td>
+      <% end %>
     </tr>
   <% end %>
 </table>
