@@ -551,6 +551,12 @@ en:
       deleted_proposal: This proposal has been deleted
       delete_spending_proposal: Delete
       confirm_deletion_spending_proposal: Are you sure? This action can not be undone
+      ballot_link_text:
+        zero: You have not voted for any proposal yet.
+        one: You voted for one proposal with a total cost of %{amount_spent}.
+        other: You voted for %{count} proposals with a total cost of %{amount_spent}.
+      ballot_verified_only: Only verified users can vote on participatory budget, %{verify_account}.
+      verify_account: verify your account
       filters:
         comments:
           one: 1 Comment
@@ -564,6 +570,7 @@ en:
         spending_proposals:
           one: 1 Spending proposal
           other: "%{count} Spending proposals"
+        ballot: Participatory budget
       no_activity: User has no public activity
       private_activity: This user decided to keep the activity list private
       retire: Retire

@@ -257,6 +257,62 @@ feature 'Users' do
       end
 
     end
+
+    feature 'Ballot' do
+      background do
+        Setting["feature.spending_proposal_features.phase3"] = true
+        @author = create(:user, :level_two)
+        create(:spending_proposal, author: @author, title: 'Build a school')
+        spending_proposal = create(:spending_proposal, price: 1234567, feasible: true, valuation_finished: true)
+        create(:ballot, user: @author, spending_proposals: [spending_proposal])
+      end
+
+      scenario 'link is not shown if no user logged in' do
+        visit user_path(@author)
+        within(".activity") do
+          expect(page).to_not have_content('Participatory budget')
+        end
+      end
+
+      scenario 'is not shown if no user logged in (filtered url)' do
+        visit user_path(@author, filter: 'ballot')
+        within(".activity") do
+          expect(page).to_not have_content('Participatory budget')
+        end
+        expect(page).to_not have_content('You voted for one proposal')
+      end
+
+      scenario 'is not shown if author is not the current_user' do
+        login_as(create(:user))
+        visit user_path(@author)
+        within(".activity") do
+          expect(page).to_not have_content('Participatory budget')
+        end
+
+        visit user_path(@author, filter: 'ballot')
+        expect(page).to_not have_content('You voted for one proposal')
+      end
+
+      scenario 'is shown if logged in user is author' do
+        login_as(@author)
+        visit user_path(@author)
+
+        within(".activity") do
+          click_link 'Participatory budget'
+        end
+        expect(page).to have_content('You voted for one proposal with a total cost of $1,234,567')
+      end
+
+      scenario 'link is not shown if participatory budget phase 3 is not active' do
+        Setting["feature.spending_proposal_features.phase3"] = nil
+        login_as(@author)
+        visit user_path(@author)
+
+        within(".activity") do
+          expect(page).to_not have_content('Participatory budget')
+        end
+      end
+    end
   end
 
   feature 'Special comments' do
