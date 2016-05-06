@@ -7,7 +7,7 @@
                       amount_spent: price(@ballot.amount_spent)),
                       ballot_path %>
       <% else %>
-        <%= t("users.show.verified_only", verify_account: link_to(t("users.show.verify_account"), verification_path )).html_safe %>
+        <%= t("users.show.ballot_verified_only", verify_account: link_to(t("users.show.verify_account"), verification_path )).html_safe %>
       <% end %>
     </td>
 
