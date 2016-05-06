@@ -5,16 +5,16 @@
     <%= t("shared.back") %>
   <% end %>
 
-  <h1><%= t("ballots.preview.title") %></h1>
+  <h1><%= t("ballots.show.title") %></h1>
 
   <h2>
-    <%= t("ballots.preview.voted_html",
-        number: "NUMBER",
-        amount: "AMOUNT") %>
+    <%= t("ballots.show.voted_html",
+        count: @ballot.spending_proposals.count,
+        amount_spent: @ballot.amount_spent) %>
   </h2>
 
   <div class="callout primary">
-    <%= t("ballots.preview.info_html") %>
+    <%= t("ballots.show.info_html") %>
   </div>
 
   <div class="row">
@@ -22,18 +22,18 @@
       <table>
         <thead>
           <tr>
-            <th colspan="3"><%= t("ballots.preview.city_wide") %></th>
+            <th colspan="3"><%= t("ballots.show.city_wide") %></th>
           </tr>
         </thead>
         <tbody>
           <%= render partial: 'spending_proposal',
-                     collection: @ballot.spending_proposals.city_wide %>
-          <tr class="total-cost">
+                     collection: @ballot.city_wide_spending_proposals %>
+          <tr class="amount-spent">
             <td>
-              <%= t("ballots.preview.total_cost") %>
+              <%= t("ballots.show.amount_spent") %>
             </td>
             <td colspan="2">
-              <span>23.980.000€</span>
+              <span><%= @ballot.city_wide_amount_spent %>€</span>
             </td>
           </tr>
         </tbody>
@@ -44,18 +44,18 @@
       <table>
         <thead>
           <tr>
-            <th colspan="3"><%= t("ballots.preview.district_wide") %> (District name)</th>
+            <th colspan="3"><%= t("ballots.show.district_wide") %> (District name)</th>
           </tr>
         </thead>
         <tbody>
           <%= render partial: 'spending_proposal',
-                     collection: @ballot.spending_proposals.district_wide %>
-          <tr class="total-cost">
+                     collection: @ballot.district_wide_spending_proposals %>
+          <tr class="amount-spent">
             <td>
-              <%= t("ballots.preview.total_cost") %>
+              <%= t("ballots.show.amount_spent") %>
             </td>
             <td colspan="2">
-              <span>1.125.000€</span>
+              <span><%= @ballot.district_wide_amount_spent %>€</span>
             </td>
           </tr>
         </tbody>

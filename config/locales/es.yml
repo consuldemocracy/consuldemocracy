@@ -519,13 +519,15 @@ es:
         zero: Sin apoyos
       vote: Votar
   ballots:
-    preview:
+    show:
       city_wide: Toda la ciudad
       district_wide: Distrito
       info_html: "Puedes cambiar tus votos en cualquier momento <strong>hasta el 30 de junio</strong>"
       title: Mis votos
-      total_cost: Coste total
-      voted_html: "Has votado <span>%{number}</span> propuestas por un valor de <span>%{amount}</span>."
+      amount_spent: Coste total
+      voted_html:
+        one: "Has votado <span>%{count}</span> propuestas por un valor de <span>%{amount_spent}</span>."
+        other: "Has votado <span>una</span> propuesta por un valor de <span>%{amount_spent}</span>."
   stats:
     index:
       visits: Visitas
