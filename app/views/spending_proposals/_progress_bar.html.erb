@@ -1,4 +1,4 @@
-<div class="small-12 medium-9 column relative">
+<div class="small-12 column relative">
   <div class="progress" role="progressbar" tabindex="0"
         aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
     <div class="progress-meter"
@@ -14,6 +14,9 @@
           style="width: <%= progress_bar_width(24000000, @ballot.amount_spent) %>">
       <p id="amount-spent" class="progress-meter-text spent-amount-text">
         <%= price(@ballot.amount_spent) %>
+        <span id="amount-available" class="amount-available ">
+          <%= t("spending_proposals.index.available") %> <%= price(@ballot.amount_available) %>
+        </span>
       </p>
     </span>
   </div>
