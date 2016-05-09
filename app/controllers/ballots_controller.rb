@@ -12,6 +12,7 @@ class BallotsController < ApplicationController
   def remove
     ballot_line = @ballot.ballot_lines.where(spending_proposal: @spending_proposal).first
     ballot_line.destroy
+    redirect_to :back
   end
 
   def show

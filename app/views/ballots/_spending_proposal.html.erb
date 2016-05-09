@@ -1,6 +1,10 @@
-<tr>
+<tr id="<%= dom_id(spending_proposal) %>" >
   <td>
-    <span class="icon-x delete"></span>&nbsp;
+    <%= link_to remove_ballot_path(spending_proposal_id: spending_proposal.id),
+                method: :delete,
+                title: t('ballots.show.remove') do %>
+      <span class="icon-x delete"></span>&nbsp;
+    <% end %>
     <%= link_to spending_proposal.title, spending_proposal %>
   </td>
   <td class="text-right">
