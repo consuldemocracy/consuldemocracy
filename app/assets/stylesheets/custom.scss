@@ -1292,19 +1292,12 @@ table.age-groups {
   position: relative;
 
   .progress {
-    background: white;
-    border-radius: rem-calc(20);
+    background: #212033;
   }
 
   .progress-meter {
-    background: rgba(241,231,103,1);
-    background: -moz-linear-gradient(left, rgba(241,231,103,1) 0%, rgba(254,182,69,1) 100%);
-    background: -webkit-gradient(left top, right top, color-stop(0%, rgba(241,231,103,1)), color-stop(100%, rgba(254,182,69,1)));
-    background: -webkit-linear-gradient(left, rgba(241,231,103,1) 0%, rgba(254,182,69,1) 100%);
-    background: -o-linear-gradient(left, rgba(241,231,103,1) 0%, rgba(254,182,69,1) 100%);
-    background: -ms-linear-gradient(left, rgba(241,231,103,1) 0%, rgba(254,182,69,1) 100%);
-    background: linear-gradient(to right, rgba(241,231,103,1) 0%, rgba(254,182,69,1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f1e767', endColorstr='#feb645', GradientType=1 );
+    background: #fdcb10;
+    border-radius: 0;
     -webkit-transition: width 2s;
     transition: width 2s;
   }
@@ -1318,15 +1311,20 @@ table.age-groups {
     color: white;
     font-size: rem-calc(24);
     font-weight: bold;
-    left: auto;
-    transform: translate(0%, -50%);
+    position: absolute;
+    right: 0;
+    text-align: right;
+    top: 16px;
+    width: 100%;
 
     &:before {
+      color: #a5a1ff;
       content: "\57";
       font-family: 'icons';
+      font-size: $small-font-size;
       position: absolute;
-      left: -2px;
-      top: -18px;
+      right: -6px;
+      top: -17px;
     }
   }
 
@@ -1337,6 +1335,13 @@ table.age-groups {
     position: absolute;
     right: 12px;
     top: -24px;
+  }
+
+  .amount-available {
+    display: block;
+    font-size: $small-font-size;
+    font-weight: normal;
+    text-align: right;
   }
 }
 
