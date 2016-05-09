@@ -25,7 +25,7 @@ feature 'Ballots' do
     end
   end
 
-  scenario 'Removing spending proposals from ballot' do
+  scenario 'Removing spending proposals from ballot', :js do
     user = create(:user)
     ballot = create(:ballot, user: user)
     sp = create(:spending_proposal, price: 10)
