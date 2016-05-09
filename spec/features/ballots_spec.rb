@@ -7,7 +7,7 @@ feature 'Ballots' do
     Setting['feature.spending_proposal_features.final_voting_allowed'] = true
   end
 
-  context 'District' do
+  context "Voting" do
     let!(:user) { create(:user, :level_two) }
 
     background do
@@ -15,7 +15,49 @@ feature 'Ballots' do
       visit welcome_spending_proposals_path
     end
 
-    context "Voting" do
+    context "City" do
+
+      scenario "Add a proposal", :js do
+        sp1 = create(:spending_proposal, feasible: true, price: 10000)
+        sp2 = create(:spending_proposal, feasible: true, price: 20000)
+
+        click_link "Vote city proposals"
+
+        within("#spending_proposal_#{sp1.id}") do
+          find('.add a').trigger('click')
+        end
+
+        expect(page).to have_css("#amount-spent", text: "$10,000")
+        expect(page).to have_css("#amount-available", text: "$23,990,000")
+
+        within("#spending_proposal_#{sp2.id}") do
+          find('.add a').trigger('click')
+        end
+
+        expect(page).to have_css("#amount-spent", text: "$30,000")
+        expect(page).to have_css("#amount-available", text: "$23,970,000")
+      end
+
+      scenario "Remove a proposal", :js do
+        sp1 = create(:spending_proposal, feasible: true, price: 10000)
+        ballot = create(:ballot, user: user, spending_proposals: [sp1])
+
+        click_link "Vote city proposals"
+
+        expect(page).to have_css("#amount-spent", text: "$10,000")
+        expect(page).to have_css("#amount-available", text: "$23,990,000")
+
+        within("#spending_proposal_#{sp1.id}") do
+          find('.remove a').trigger('click')
+        end
+
+        expect(page).to have_css("#amount-spent", text: "$0")
+        expect(page).to have_css("#amount-available", text: "$24,000,000")
+      end
+
+    end
+
+    context 'District' do
 
       scenario "Add a proposal", :js do
         california = create(:geozone)
@@ -61,6 +103,51 @@ feature 'Ballots' do
         expect(page).to have_css("#amount-available", text: "$24,000,000")
       end
 
+    end
+
+    context "City and District" do
+
+      scenario "Independent progress bar for city and district proposals", :js do
+        california = create(:geozone)
+
+        sp1 = create(:spending_proposal, geozone: nil,        feasible: true, price: 10000)
+        sp2 = create(:spending_proposal, geozone: california, feasible: true, price: 20000)
+
+        click_link "Vote city proposals"
+
+        within("#spending_proposal_#{sp1.id}") do
+          find('.add a').trigger('click')
+        end
+
+        expect(page).to have_css("#amount-spent", text: "$10,000")
+        expect(page).to have_css("#amount-available", text: "$23,990,000")
+
+        visit spending_proposals_path(geozone: california)
+
+        expect(page).to_not have_css("#amount-spent")
+
+        within("#spending_proposal_#{sp2.id}") do
+          find('.add a').trigger('click')
+        end
+
+        expect(page).to have_css("#amount-spent", text: "$20,000")
+        expect(page).to have_css("#amount-available", text: "$23,980,000")
+
+        click_link "Participatory budgeting"
+        click_link "Vote city proposals"
+
+        expect(page).to have_css("#amount-spent", text: "$10,000")
+        expect(page).to have_css("#amount-available", text: "$23,990,000")
+      end
+    end
+  end
+
+  context "Choosing my district" do
+    let!(:user) { create(:user, :level_two) }
+
+    background do
+      login_as(user)
+      visit welcome_spending_proposals_path
     end
 
     scenario 'Select my district', :js do
@@ -123,56 +210,6 @@ feature 'Ballots' do
 
   end
 
-  context 'City' do
-    let!(:user) { create(:user, :level_two) }
-
-    background do
-      login_as(user)
-      visit welcome_spending_proposals_path
-    end
-
-    context "Voting" do
-      scenario "Add a proposal", :js do
-        sp1 = create(:spending_proposal, feasible: true, price: 10000)
-        sp2 = create(:spending_proposal, feasible: true, price: 20000)
-
-        click_link "Vote city proposals"
-
-        within("#spending_proposal_#{sp1.id}") do
-          find('.add a').trigger('click')
-        end
-
-        expect(page).to have_css("#amount-spent", text: "$10,000")
-        expect(page).to have_css("#amount-available", text: "$23,990,000")
-
-        within("#spending_proposal_#{sp2.id}") do
-          find('.add a').trigger('click')
-        end
-
-        expect(page).to have_css("#amount-spent", text: "$30,000")
-        expect(page).to have_css("#amount-available", text: "$23,970,000")
-      end
-
-      scenario "Remove a proposal", :js do
-        sp1 = create(:spending_proposal, feasible: true, price: 10000)
-        ballot = create(:ballot, user: user, spending_proposals: [sp1])
-
-        click_link "Vote city proposals"
-
-        expect(page).to have_css("#amount-spent", text: "$10,000")
-        expect(page).to have_css("#amount-available", text: "$23,990,000")
-
-        within("#spending_proposal_#{sp1.id}") do
-          find('.remove a').trigger('click')
-        end
-
-        expect(page).to have_css("#amount-spent", text: "$0")
-        expect(page).to have_css("#amount-available", text: "$24,000,000")
-      end
-    end
-
-  end
-
   context 'Showing the ballot' do
 
     scenario 'Displaying the correct count & amount' do
@@ -192,49 +229,6 @@ feature 'Ballots' do
       within("#district_wide") { expect(page).to have_content "15€" }
     end
 
-  end
-
-  context "City and District" do
-
-    let!(:user) { create(:user, :level_two) }
-
-    background do
-      login_as(user)
-      visit welcome_spending_proposals_path
-    end
-
-    scenario "Voting", :js do
-      california = create(:geozone)
-
-      sp1 = create(:spending_proposal, geozone: nil,        feasible: true, price: 10000)
-      sp2 = create(:spending_proposal, geozone: california, feasible: true, price: 20000)
-
-      click_link "Vote city proposals"
-
-      within("#spending_proposal_#{sp1.id}") do
-        find('.add a').trigger('click')
-      end
-
-      expect(page).to have_css("#amount-spent", text: "$10,000")
-      expect(page).to have_css("#amount-available", text: "$23,990,000")
-
-      visit spending_proposals_path(geozone: california)
-
-      expect(page).to_not have_css("#amount-spent")
-
-      within("#spending_proposal_#{sp2.id}") do
-        find('.add a').trigger('click')
-      end
-
-      expect(page).to have_css("#amount-spent", text: "$20,000")
-      expect(page).to have_css("#amount-available", text: "$23,980,000")
-
-      click_link "Participatory budgeting"
-      click_link "Vote city proposals"
-
-      expect(page).to have_css("#amount-spent", text: "$10,000")
-      expect(page).to have_css("#amount-available", text: "$23,990,000")
-    end
   end
 
   context 'Permissions' do
@@ -308,4 +302,5 @@ feature 'Ballots' do
     end
 
   end
+
 end
