@@ -15,7 +15,8 @@
       <p id="amount-spent" class="progress-meter-text spent-amount-text">
         <%= price(@ballot.amount_spent(@geozone)) %>
         <span id="amount-available" class="amount-available ">
-          <%= t("spending_proposals.index.available") %> <%= price(@ballot.amount_available) %>
+          <%= t("spending_proposals.index.available") %>
+          <%= price(@ballot.amount_available(@geozone)) %>
         </span>
       </p>
     </span>
@@ -25,6 +26,7 @@
     Disponible: <%= price(@ballot.amount_available(@geozone)) %>
   </span>
 </div>
+
 <div class="small-12 medium-3 column">
   <%= link_to "Revisar mis votos", ballot_path, class: "button expanded"%>
 </div>
