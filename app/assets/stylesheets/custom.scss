@@ -209,6 +209,10 @@ blockquote p {
     min-height: $line-height*9;
   }
 
+  h1 {
+    margin-bottom: 0;
+  }
+
   h1, h2, .back, .icon-angle-left, p, a {
     color: white;
   }
@@ -1293,6 +1297,7 @@ table.age-groups {
 
   .progress {
     background: #212033;
+    clear: both;
   }
 
   .progress-meter {
@@ -1332,9 +1337,7 @@ table.age-groups {
     color: white;
     font-size: rem-calc(18);
     font-weight: bold;
-    position: absolute;
-    right: 12px;
-    top: -24px;
+    float: right;
   }
 
   .amount-available {
@@ -1400,5 +1403,46 @@ table.age-groups {
     background: #FFDC00;
     margin-bottom: rem-calc(-48);
     padding-top: $line-height;
+  }
+}
+
+// Animaton on progress bar
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+.progress-bar-nav {
+  position: relative;
+  z-index: 3;
+
+  @media only screen and (min-width: $medium-breakpoint) {
+    background-color: $budget;
+    height: 100px;
+    -webkit-transition: height 0.3s;
+    -moz-transition: height 0.3s;
+    transition: height 0.3s;
+    z-index: 1;
+
+    h1 {
+      -webkit-transition: font-size 0.3s;
+      -moz-transition: font-size 0.3s;
+      transition: font-size 0.3s;
+    }
+
+    &.is-fixed {
+      height: $line-height*6;
+      left: 0;
+      padding: rem-calc(24);
+      padding-bottom: 0;
+      position: fixed;
+      top: 0;
+      width: 100%;
+
+      h1 {
+        font-size: $h3-font-size;
+        line-height: $h3-line-height;
+        -webkit-transition: font-size 0.3s;
+        -moz-transition: font-size 0.3s;
+        transition: font-size 0.3s;
+      }
+    }
   }
 }
