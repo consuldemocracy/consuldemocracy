@@ -10,7 +10,7 @@
   <h2>
     <%= t("ballots.show.voted_html",
         count: @ballot.spending_proposals.count,
-        amount_spent: @ballot.amount_spent) %>
+        amount_spent: @ballot.total_amount_spent) %>
   </h2>
 
   <div class="callout primary">
