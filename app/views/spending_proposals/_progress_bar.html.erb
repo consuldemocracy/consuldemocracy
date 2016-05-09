@@ -1,24 +1,22 @@
-<div id="progress_bar" class="no-margin-top">
-  <span class="total-amount">24.000.000€</span>
+<span class="total-amount">24.000.000€</span>
 
-  <div class="progress" role="progressbar" tabindex="0"
-        aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
-    <div class="progress-meter"
-         style="width: <%= progress_bar_width(24000000, @ballot.amount_spent(@geozone)) %>">
-    </div>
+<div class="progress" role="progressbar" tabindex="0"
+      aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+  <div class="progress-meter"
+       style="width: <%= progress_bar_width(24000000, @ballot.amount_spent(@geozone)) %>">
   </div>
+</div>
 
-  <div class="progress spent-amount-progress" role="progressbar" tabindex="0"
-       aria-valuenow="20" aria-valuemin="0" aria-valuetext="25 percent" aria-valuemax="100">
-    <span class="progress-meter spent-amount-meter"
-          style="width: <%= progress_bar_width(24000000, @ballot.amount_spent(@geozone)) %>">
-      <p id="amount-spent" class="progress-meter-text spent-amount-text">
-        <%= price(@ballot.amount_spent(@geozone)) %>
-        <span id="amount-available" class="amount-available">
-          <%= t("spending_proposals.index.available") %>
-          <span><%= price(@ballot.amount_available(@geozone)) %></span>
-        </span>
-      </p>
-    </span>
-  </div>
+<div class="progress spent-amount-progress" role="progressbar" tabindex="0"
+     aria-valuenow="20" aria-valuemin="0" aria-valuetext="25 percent" aria-valuemax="100">
+  <span class="progress-meter spent-amount-meter"
+        style="width: <%= progress_bar_width(24000000, @ballot.amount_spent(@geozone)) %>">
+    <p id="amount-spent" class="progress-meter-text spent-amount-text">
+      <%= price(@ballot.amount_spent(@geozone)) %>
+      <span id="amount-available" class="amount-available">
+        <%= t("spending_proposals.index.available") %>
+        <span><%= price(@ballot.amount_available(@geozone)) %></span>
+      </span>
+    </p>
+  </span>
 </div>
