@@ -1314,8 +1314,8 @@ table.age-groups {
 
   .spent-amount-text {
     color: white;
-    font-size: rem-calc(24);
-    font-weight: bold;
+    font-size: $base-font-size;
+    font-weight: normal;
     position: absolute;
     right: 0;
     text-align: right;
@@ -1342,9 +1342,12 @@ table.age-groups {
 
   .amount-available {
     display: block;
-    font-size: $small-font-size;
-    font-weight: normal;
     text-align: right;
+
+    span {
+      font-size: rem-calc(24);
+      font-weight: bold;
+    }
   }
 }
 
@@ -1415,7 +1418,7 @@ table.age-groups {
 
   @media only screen and (min-width: $medium-breakpoint) {
     background-color: $budget;
-    height: 100px;
+    height: rem-calc(100);
     -webkit-transition: height 0.3s;
     -moz-transition: height 0.3s;
     transition: height 0.3s;
