@@ -13,6 +13,12 @@ class Ballot < ActiveRecord::Base
     end
   end
 
+  def remove(spending_proposal)
+    ballot_line = ballot_lines.where(spending_proposal: spending_proposal).first
+    ballot_line.destroy
+    reset_geozone if spending_proposal.geozone_id.present?
+  end
+
   def amount_spent
     spending_proposals.sum(:price).to_i
   end
@@ -50,6 +56,10 @@ class Ballot < ActiveRecord::Base
   def set_geozone(new_geozone_id)
     return if new_geozone_id.blank?
     self.update(geozone_id: new_geozone_id) unless new_geozone_id == geozone_id
+  end
+
+  def reset_geozone
+    self.update(geozone_id: nil) if district_wide_spending_proposals.count == 0
   end
 
 end

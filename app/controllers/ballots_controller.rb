@@ -9,8 +9,7 @@ class BallotsController < ApplicationController
   end
 
   def remove
-    ballot_line = @ballot.ballot_lines.where(spending_proposal: @spending_proposal).first
-    ballot_line.destroy
+    @ballot.remove(@spending_proposal)
   end
 
   def show
