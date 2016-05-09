@@ -1,10 +1,6 @@
 <% if @filter_geozone_name.present? %>
-  <section class="no-margin-top margin-bottom" data-sticky-container>
-    <div class="expanded jumbo-investment-project investment-project-geozone padding sticky"
-         data-sticky
-         data-options="marginTop:0;"
-         data-anchor="investment-projects-main"
-         style="width: 100%;">
+  <section class="no-margin-top margin-bottom">
+    <div class="expanded jumbo-investment-project investment-project-geozone padding">
 
       <div class="row">
         <div class="small-12 column">
@@ -13,20 +9,21 @@
             <%= t("pages.processes.back") %>
           <% end %>
 
-          <%= link_to "Revisar mis votos", ballot_path, class: "float-right"%>
-
-          <h1><%= @filter_geozone_name %></h1>
+          <%= link_to t("spending_proposals.header.check_ballot"), ballot_path, class: "float-right" %>
         </div>
       </div>
 
       <div class="row progress-votes">
-        <div id="progress_bar">
-          <% if params[:geozone] == 'all' || my_geozone?(@geozone, @ballot) %>
-            <%= render 'progress_bar' %>
-          <% elsif @ballot.geozone.present? %>
-            <%= t("spending_proposals.header.different_district_active") %>
-            <%= link_to @ballot.geozone.name, spending_proposals_path(geozone: @ballot.geozone) %>
-          <% end %>
+        <div class="small-12 column">
+          <div class="progress-bar-nav">
+            <h1 class="inline-block"><%= @filter_geozone_name %></h1>
+            <% if params[:geozone] == 'all' || my_geozone?(@geozone, @ballot) %>
+              <%= render 'progress_bar' %>
+            <% elsif @ballot.geozone.present? %>
+              <%= t("spending_proposals.header.different_district_active") %>
+              <%= link_to @ballot.geozone.name, spending_proposals_path(geozone: @ballot.geozone) %>
+            <% end %>
+          </div>
         </div>
       </div>
     </div>
