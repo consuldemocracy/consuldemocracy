@@ -12,4 +12,13 @@ module BallotsHelper
     return '' unless current_user.try(:ballot)
     current_user.ballot.geozone == geozone ? 'active' : ''
   end
+
+  def district_wide_amount_spent(ballot)
+    ballot.amount_spent(ballot.geozone)
+  end
+
+  def city_wide_amount_spent(ballot)
+    ballot.amount_spent('all')
+  end
+
 end

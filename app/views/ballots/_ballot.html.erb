@@ -27,13 +27,13 @@
         </thead>
         <tbody>
           <%= render partial: 'spending_proposal',
-                     collection: @ballot.city_wide_spending_proposals %>
+                     collection: @ballot.spending_proposals.city_wide %>
           <tr class="amount-spent">
             <td>
               <%= t("ballots.show.amount_spent") %>
             </td>
             <td colspan="2">
-              <span><%= @ballot.city_wide_amount_spent %>€</span>
+              <span><%= city_wide_amount_spent(@ballot) %>€</span>
             </td>
           </tr>
         </tbody>
@@ -49,13 +49,13 @@
         </thead>
         <tbody>
           <%= render partial: 'spending_proposal',
-                     collection: @ballot.district_wide_spending_proposals %>
+                     collection: @ballot.spending_proposals.district_wide %>
           <tr class="amount-spent">
             <td>
               <%= t("ballots.show.amount_spent") %>
             </td>
             <td colspan="2">
-              <span><%= @ballot.district_wide_amount_spent %>€</span>
+              <span><%= district_wide_amount_spent(@ballot) %>€</span>
             </td>
           </tr>
         </tbody>
