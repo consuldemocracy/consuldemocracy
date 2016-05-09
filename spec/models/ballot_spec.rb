@@ -10,11 +10,11 @@ describe Ballot do
       ballot = create(:ballot)
       ballot.spending_proposals << sp1
 
-      expect(ballot.amount_spent).to eq 10000
+      expect(ballot.total_amount_spent).to eq 10000
 
       ballot.spending_proposals << sp2
 
-      expect(ballot.amount_spent).to eq 30000
+      expect(ballot.total_amount_spent).to eq 30000
     end
   end
 
