@@ -518,6 +518,8 @@ en:
         other: "%{count} supports"
         zero: No supports
       vote: Vote
+    header:
+      different_district_active: You have active votes in another district.
   ballots:
     show:
       city_wide: City Wide

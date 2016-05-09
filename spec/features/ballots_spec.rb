@@ -57,6 +57,22 @@ feature 'Ballots' do
       expect(page).to_not have_css("#geozone_#{california.id}.active")
     end
 
+    scenario 'View another district' do
+      california = create(:geozone)
+      new_york = create(:geozone)
+
+      sp1 = create(:spending_proposal, geozone: california, feasible: true)
+      sp2 = create(:spending_proposal, geozone: new_york,   feasible: true)
+
+      create(:ballot, user: user, geozone: california, spending_proposals: [sp1])
+
+      visit spending_proposals_path(geozone: new_york)
+
+      expect(page).to_not have_css "#progressbar"
+      expect(page).to have_content "You have active votes in another district."
+      expect(page).to have_link california.name, href: spending_proposals_path(geozone: california)
+    end
+
   end
 
   context 'City' do

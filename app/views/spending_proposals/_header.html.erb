@@ -18,12 +18,14 @@
     </div>
 
     <div class="row progress-votes">
-      <div id="progress_bar">
-        <%= render 'progress_bar' %>
-      </div>
-      <div class="small-12 medium-3 column">
-        <%= link_to "Revisar mis votos", ballot_path, class: "button expanded"%>
-      </div>
+      <% if my_geozone?(@geozone, @ballot) %>
+        <div id="progress_bar">
+          <%= render 'progress_bar' %>
+        </div>
+      <% else %>
+        <%= t("spending_proposals.header.different_district_active") %>
+        <%= link_to @ballot.geozone.name, spending_proposals_path(geozone: @ballot.geozone) %>
+      <% end %>
     </div>
   </div>
   </section>
