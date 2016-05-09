@@ -1,17 +1,15 @@
 class BallotsController < ApplicationController
+  before_action :authenticate_user!
   before_action :load_ballot
   before_action :load_spending_proposal, only: [:add, :remove]
-  before_action :authenticate_user!
   skip_authorization_check
 
   def add
-    ballot_line = @ballot.ballot_lines.create(spending_proposal: @spending_proposal)
-    @ballot.ballot_lines << ballot_line
+    @ballot.add(@spending_proposal)
   end
 
   def remove
-    ballot_line = @ballot.ballot_lines.where(spending_proposal: @spending_proposal).first
-    ballot_line.destroy
+    @ballot.remove(@spending_proposal)
   end
 
   def show

@@ -6,7 +6,8 @@ class SpendingProposalsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :welcome, :show]
   before_action -> { flash.now[:notice] = flash[:notice].html_safe if flash[:html_safe] && flash[:notice] }
   before_action :set_random_seed, only: :index
-  before_action :load_ballot, only: [:index, :show]
+  before_action :load_ballot,  only: [:index, :show]
+  before_action :load_geozone, only: [:index, :show]
 
   load_and_authorize_resource
 
@@ -105,6 +106,14 @@ class SpendingProposalsController < ApplicationController
 
     def load_ballot
       @ballot = Ballot.where(user: current_user).first_or_create
+    end
+
+    def load_geozone
+      @geozone = Geozone.find(params[:geozone]) if geozone?
+    end
+
+    def geozone?
+      params[:geozone].present? && params[:geozone] != 'all'
     end
 
 end

@@ -6,6 +6,8 @@
   <% end %>
 
   <% if cannot_vote_spending_proposal?(spending_proposal) %>
-    <%= render 'shared/authentication', message: authentication_message(spending_proposal) %>
+    <%= render 'shared/authentication',
+                message: authentication_message(spending_proposal),
+                my_geozone: @ballot.geozone %>
   <% end %>
 </div>

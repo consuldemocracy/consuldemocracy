@@ -11,8 +11,10 @@
       <% @geozones.each_slice(7) do |slice| %>
         <div class="small-12 medium-4 column">
           <% slice.each do |geozone| %>
-            <%= link_to geozone.name, spending_proposals_path(geozone: geozone.id),
+            <span id="<%= dom_id(geozone) %>" class="<%= css_for_ballot_geozone(geozone) %>">
+              <%= link_to geozone.name, spending_proposals_path(geozone: geozone.id),
                         data: { no_turbolink: true } %><br>
+            </span>
           <% end %>
         </div>
       <% end %>

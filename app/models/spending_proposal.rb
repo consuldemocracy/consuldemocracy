@@ -195,8 +195,9 @@ class SpendingProposal < ActiveRecord::Base
   end
 
   def reason_for_not_being_ballotable_by(user)
-    return permission_problem(user) if permission_problem?(user)
-    return :no_ballots_allowed if final_voting_allowed?
+    return permission_problem(user)    if permission_problem?(user)
+    return :no_ballots_allowed         if final_voting_allowed?
+    return :different_geozone_assigned unless can_vote_in_geozone?(user)
   end
 
   def permission_problem(user)
@@ -227,6 +228,13 @@ class SpendingProposal < ActiveRecord::Base
     Setting["feature.spending_proposal_features.final_voting_allowed"].blank?
   end
   ###
+
+  def can_vote_in_geozone?(user)
+    return true if city_wide? || user.ballot.blank?
+
+    geozone == user.ballot.geozone ||
+    user.ballot.spending_proposals.district_wide.blank?
+  end
 
   def register_vote(user, vote_value)
     if votable_by?(user)

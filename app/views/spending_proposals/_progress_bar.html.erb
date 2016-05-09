@@ -20,4 +20,11 @@
       </p>
     </span>
   </div>
+
+  <span id="amount-available">
+    Disponible: <%= price(@ballot.city_wide_amount_available) %>
+  </span>
+</div>
+<div class="small-12 medium-3 column">
+  <%= link_to "Revisar mis votos", ballot_path, class: "button expanded"%>
 </div>

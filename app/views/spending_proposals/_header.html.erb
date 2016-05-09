@@ -21,7 +21,12 @@
 
       <div class="row progress-votes">
         <div id="progress_bar">
-          <%= render 'progress_bar' %>
+          <% if params[:geozone] == 'all' || my_geozone?(@geozone, @ballot) %>
+            <%= render 'progress_bar' %>
+          <% elsif @ballot.geozone.present? %>
+            <%= t("spending_proposals.header.different_district_active") %>
+            <%= link_to @ballot.geozone.name, spending_proposals_path(geozone: @ballot.geozone) %>
+          <% end %>
         </div>
       </div>
     </div>

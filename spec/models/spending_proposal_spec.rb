@@ -567,44 +567,17 @@ describe SpendingProposal do
           expect(district_sp.reason_for_not_being_ballotable_by(user)).to be_nil
         end
 
-        xit "rejects users with different and not nil district" do
-          user.supported_spending_proposals_geozone_id = create(:geozone).id
-          expect(district_sp.reason_for_not_being_ballotable_by(user)).to eq(:different_district_assigned)
+        it "rejects users with different geozone" do
+          california = create(:geozone)
+          new_york = create(:geozone)
+
+          sp1 = create(:spending_proposal, geozone: california)
+          sp2 = create(:spending_proposal, geozone: new_york)
+          create(:ballot, user: user, geozone: california, spending_proposals: [sp1])
+
+          expect(sp2.reason_for_not_being_ballotable_by(user)).to eq(:different_geozone_assigned)
         end
 
-      end
-
-    end
-
-    describe "#amount_spent" do
-      it "returns the amount spent in spending proposals" do
-        sp1 = create(:spending_proposal, price: 10000)
-        sp2 = create(:spending_proposal, price: 20000)
-
-        ballot = create(:ballot)
-        ballot.spending_proposals << sp1
-
-        expect(ballot.amount_spent).to eq 10000
-
-        ballot.spending_proposals << sp2
-
-        expect(ballot.amount_spent).to eq 30000
-      end
-    end
-
-    describe "#amount_available" do
-      it "returns the amount available to spend on spending proposals" do
-        sp1 = create(:spending_proposal, price: 10000)
-        sp2 = create(:spending_proposal, price: 20000)
-
-        ballot = create(:ballot)
-        ballot.spending_proposals << sp1
-
-        expect(ballot.amount_available).to eq 23990000
-
-        ballot.spending_proposals << sp2
-
-        expect(ballot.amount_available).to eq 23970000
       end
 
     end
