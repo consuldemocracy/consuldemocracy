@@ -528,6 +528,7 @@ es:
       info_html: "Puedes cambiar tus votos en cualquier momento <strong>hasta el 30 de junio</strong>"
       title: Mis votos
       amount_spent: Coste total
+      remove: Quitar voto
       voted_html:
         one: "Has votado <span>una</span> propuesta por un valor de <span>%{amount_spent}€</span>."
         other: "Has votado <span>%{count}</span> propuestas por un valor de <span>%{amount_spent}€</span>."

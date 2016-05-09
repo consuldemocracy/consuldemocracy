@@ -224,11 +224,30 @@ feature 'Ballots' do
       login_as(user)
       visit ballot_path
 
-      expect(page).to have_content("You voted 5 proposals with a total cost of 35")
+      expect(page).to have_content("You voted 5 proposals with a total cost of 35€")
       within("#city_wide") { expect(page).to have_content "20€" }
       within("#district_wide") { expect(page).to have_content "15€" }
     end
 
+  end
+
+  scenario 'Removing spending proposals from ballot', :js do
+    user = create(:user)
+    ballot = create(:ballot, user: user)
+    sp = create(:spending_proposal, price: 10)
+    ballot.spending_proposals = [sp]
+
+    login_as(user)
+    visit ballot_path
+
+    expect(page).to have_content("You voted one proposal with a total cost of 10€")
+
+    within("#spending_proposal_#{sp.id}") do
+      find(".delete").trigger('click')
+    end
+
+    expect(current_path).to eq(ballot_path)
+    expect(page).to have_content("You voted 0 proposals with a total cost of 0")
   end
 
   context 'Permissions' do
