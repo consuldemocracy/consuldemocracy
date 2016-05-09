@@ -37,7 +37,7 @@ feature 'Ballots' do
     expect(page).to have_content("You voted one proposal with a total cost of 10€")
 
     within("#spending_proposal_#{sp.id}") do
-      click_link "Remove vote"
+      find(".delete").trigger('click')
     end
 
     expect(current_path).to eq(ballot_path)
