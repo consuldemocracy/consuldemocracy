@@ -79,12 +79,4 @@ module SpendingProposalsHelper
     number_to_currency(number, precision: 0)
   end
 
-  def cannot_vote_spending_proposal?(spending_proposal)
-    authentication_message(spending_proposal).present?
-  end
-
-  def authentication_message(spending_proposal)
-    spending_proposal.reason_for_not_being_ballotable_by(current_user)
-  end
-
 end

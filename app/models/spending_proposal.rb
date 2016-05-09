@@ -198,6 +198,7 @@ class SpendingProposal < ActiveRecord::Base
     return permission_problem(user)    if permission_problem?(user)
     return :no_ballots_allowed         unless final_voting_allowed?
     return :different_geozone_assigned unless can_vote_in_geozone?(user)
+    return :not_enough_money           unless enough_money?(user.ballot)
   end
 
   def permission_problem(user)
@@ -228,6 +229,12 @@ class SpendingProposal < ActiveRecord::Base
     Setting["feature.spending_proposal_features.final_voting_allowed"].present?
   end
   ###
+
+  def enough_money?(ballot)
+    return true if ballot.blank?
+    available_money = geozone_id.present? ? ballot.district_wide_amount_available : ballot.city_wide_amount_available
+    price.to_i <= available_money
+  end
 
   def can_vote_in_geozone?(user)
     return true if city_wide? || user.ballot.blank?
