@@ -311,6 +311,43 @@ feature 'Ballots' do
     expect(page).to have_content("You voted 0 proposals with a total cost of 0")
   end
 
+  scenario 'Removing spending proposals from ballot (sidebar)', :js do
+    user = create(:user)
+    sp1 = create(:spending_proposal, price: 10000)
+    sp2 = create(:spending_proposal, price: 20000)
+
+    ballot = create(:ballot, user: user, spending_proposals: [sp1, sp2])
+
+    login_as(user)
+    visit spending_proposals_path(geozone: 'all')
+
+    expect(page).to have_css("#amount-spent", text: "$30,000")
+    expect(page).to have_css("#amount-available", text: "$23,970,000")
+
+    within("#sidebar") do
+      expect(page).to have_content sp1.title
+      expect(page).to have_content sp1.price
+
+      expect(page).to have_content sp2.title
+      expect(page).to have_content sp2.price
+    end
+
+    within("#sidebar #spending_proposal_#{sp1.id}_sidebar") do
+      find(".delete").trigger('click')
+    end
+
+    expect(page).to have_css("#amount-spent", text: "$20,000")
+    expect(page).to have_css("#amount-available", text: "$23,980,000")
+
+    within("#sidebar") do
+      expect(page).to_not have_content sp1.title
+      expect(page).to_not have_content sp1.price
+
+      expect(page).to have_content sp2.title
+      expect(page).to have_content sp2.price
+    end
+  end
+
   context 'Permissions' do
 
     scenario 'User not logged in', :js do
