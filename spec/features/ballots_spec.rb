@@ -468,6 +468,21 @@ feature 'Ballots' do
       end
     end
 
+    scenario 'Insufficient funds', :js do
+      user = create(:user, :level_two)
+      california = create(:geozone)
+
+      sp1 = create(:spending_proposal, feasible: true, price: 25000000)
+
+      login_as(user)
+      visit spending_proposals_path(geozone: 'all')
+
+      within("#spending_proposal_#{sp1.id}") do
+        find('.add a').trigger('click')
+        expect_message_insufficient_funds
+      end
+    end
+
   end
 
 end
