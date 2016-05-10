@@ -1,6 +1,6 @@
 <div class="add in-favor">
   <p class="investment-project-amount">
-    <%= price(spending_proposal.price) %>
+    <%= format_price(spending_proposal.price) %>
   </p>
 
   <% if feature?("spending_proposal_features.final_voting_allowed") %>
