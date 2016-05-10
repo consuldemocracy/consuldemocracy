@@ -12,6 +12,6 @@
     <%= link_to spending_proposal.title, spending_proposal %>
   </td>
   <td class="text-right">
-    <%= spending_proposal.price %>
+    <%= format_price(spending_proposal.price) %>
   </td>
 </tr>

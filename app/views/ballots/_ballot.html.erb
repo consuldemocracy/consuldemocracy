@@ -10,7 +10,7 @@
   <h2>
     <%= t("ballots.show.voted_html",
         count: @ballot.spending_proposals.count,
-        amount_spent: @ballot.total_amount_spent) %>
+        amount_spent: format_price(@ballot.total_amount_spent)) %>
   </h2>
 
   <div class="callout primary">
@@ -33,7 +33,7 @@
               <%= t("ballots.show.amount_spent") %>
             </td>
             <td colspan="2">
-              <span><%= city_wide_amount_spent(@ballot) %>€</span>
+              <span><%= format_price(city_wide_amount_spent(@ballot)) %></span>
             </td>
           </tr>
         </tbody>
@@ -55,7 +55,7 @@
               <%= t("ballots.show.amount_spent") %>
             </td>
             <td colspan="2">
-              <span><%= district_wide_amount_spent(@ballot) %>€</span>
+              <span><%= format_price(district_wide_amount_spent(@ballot)) %></span>
             </td>
           </tr>
         </tbody>

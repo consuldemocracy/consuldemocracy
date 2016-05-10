@@ -12,10 +12,10 @@
   <span class="progress-meter spent-amount-meter"
         style="width: <%= progress_bar_width(24000000, @ballot.amount_spent(@geozone)) %>">
     <p id="amount-spent" class="progress-meter-text spent-amount-text">
-      <%= price(@ballot.amount_spent(@geozone)) %>
+      <%= format_price(@ballot.amount_spent(@geozone)) %>
       <span id="amount-available" class="amount-available">
         <%= t("spending_proposals.index.available") %>
-        <span><%= price(@ballot.amount_available(@geozone)) %></span>
+        <span><%= format_price(@ballot.amount_available(@geozone)) %></span>
       </span>
     </p>
   </span>
