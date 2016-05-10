@@ -342,4 +342,9 @@ FactoryGirl.define do
     user
   end
 
+  factory :ballot_line do
+    ballot
+    spending_proposal
+  end
+
 end

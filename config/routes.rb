@@ -76,8 +76,7 @@ Rails.application.routes.draw do
     end
 
     resource :ballot, only: [:show] do
-      post :add, on: :collection
-      delete :remove, on: :collection
+      resources :ballot_lines, only: [:create, :destroy], shallow: true
     end
   end
 

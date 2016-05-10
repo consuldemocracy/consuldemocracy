@@ -4,7 +4,7 @@
   </p>
 
   <% if feature?("spending_proposal_features.final_voting_allowed") %>
-    <%= link_to add_ballot_url(spending_proposal_id: spending_proposal.id),
+    <%= link_to ballot_ballot_lines_url(spending_proposal_id: spending_proposal.id),
         class: "button button-support small expanded",
         title: t('spending_proposals.spending_proposal.support_title'),
         method: "post",
