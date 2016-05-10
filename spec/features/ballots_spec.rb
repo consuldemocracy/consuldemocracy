@@ -253,7 +253,7 @@ feature 'Ballots' do
   context 'Permissions' do
 
     scenario 'User not logged in', :js do
-      spending_proposal = create(:spending_proposal)
+      spending_proposal = create(:spending_proposal, feasible: true)
 
       visit spending_proposals_path
 
@@ -265,7 +265,7 @@ feature 'Ballots' do
 
     scenario 'User not verified', :js do
       user = create(:user)
-      spending_proposal = create(:spending_proposal)
+      spending_proposal = create(:spending_proposal, feasible: true)
 
       login_as(user)
       visit spending_proposals_path
@@ -278,7 +278,7 @@ feature 'Ballots' do
 
     scenario 'User is organization', :js do
       org = create(:organization)
-      spending_proposal = create(:spending_proposal)
+      spending_proposal = create(:spending_proposal, feasible: true)
 
       login_as(org.user)
       visit spending_proposals_path
@@ -289,7 +289,7 @@ feature 'Ballots' do
       end
     end
 
-    scenario 'Spending proposal unfeasible', :js do
+    scenario 'Spending proposal unfeasible' do
       user = create(:user, :level_two)
       spending_proposal = create(:spending_proposal, feasible: false, valuation_finished: true)
 
@@ -298,6 +298,19 @@ feature 'Ballots' do
 
       within("#spending_proposal_#{spending_proposal.id}") do
         expect(page).to_not have_css("div.ballot")
+      end
+    end
+
+    scenario 'Spending proposal with feasibility undecided are not shown' do
+      user = create(:user, :level_two)
+      spending_proposal = create(:spending_proposal, feasible: nil, valuation_finished: true)
+
+      login_as(user)
+      visit spending_proposals_path
+
+      within("#investment-projects") do
+        expect(page).to_not have_css("div.ballot")
+        expect(page).to_not have_css("#spending_proposal_#{spending_proposal.id}")
       end
     end
 

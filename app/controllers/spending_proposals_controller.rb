@@ -83,7 +83,8 @@ class SpendingProposalsController < ApplicationController
     end
 
     def apply_filters_and_search(target)
-      target = params[:unfeasible].present? ? target.unfeasible : target.not_unfeasible
+      default_target = Setting["feature.spending_proposal_features.phase3"].present? ? target.feasible : target.not_unfeasible
+      target = params[:unfeasible].present? ? target.unfeasible : default_target
       params[:geozone] = 'all' if params[:geozone].blank?
       target = target.by_geozone(params[:geozone])
       set_filter_geozone
