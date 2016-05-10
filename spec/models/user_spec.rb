@@ -121,6 +121,18 @@ describe User do
     end
   end
 
+  describe "manager?" do
+    it "is false when the user is not a manager" do
+      expect(subject.manager?).to be false
+    end
+
+    it "is true when the user is a manager" do
+      subject.save
+      create(:manager, user: subject)
+      expect(subject.manager?).to be true
+    end
+  end
+
   describe "organization?" do
     it "is false when the user is not an organization" do
       expect(subject.organization?).to be false
