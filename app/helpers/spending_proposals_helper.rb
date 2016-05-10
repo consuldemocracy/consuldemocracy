@@ -75,8 +75,8 @@ module SpendingProposalsHelper
     options_for_select(values, number)
   end
 
-  def price(number)
-    number_to_currency(number, precision: 0)
+  def format_price(number)
+    number_to_currency(number, precision: 0, locale: 'es')
   end
 
 end
