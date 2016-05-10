@@ -224,9 +224,9 @@ feature 'Ballots' do
       login_as(user)
       visit ballot_path
 
-      expect(page).to have_content("You voted 5 proposals with a total cost of 35€")
-      within("#city_wide") { expect(page).to have_content "20€" }
-      within("#district_wide") { expect(page).to have_content "15€" }
+      expect(page).to have_content("You voted 5 proposals with a total cost of $35")
+      within("#city_wide") { expect(page).to have_content "$20" }
+      within("#district_wide") { expect(page).to have_content "$15" }
     end
 
   end
@@ -240,14 +240,14 @@ feature 'Ballots' do
     login_as(user)
     visit ballot_path
 
-    expect(page).to have_content("You voted one proposal with a total cost of 10€")
+    expect(page).to have_content("You voted one proposal with a total cost of $10")
 
     within("#spending_proposal_#{sp.id}") do
       find(".delete").trigger('click')
     end
 
     expect(current_path).to eq(ballot_path)
-    expect(page).to have_content("You voted 0 proposals with a total cost of 0")
+    expect(page).to have_content("You voted 0 proposals with a total cost of $0")
   end
 
   context 'Permissions' do

@@ -424,13 +424,13 @@ feature 'Spending proposals' do
 
       within("#district_wide") do
         expect(page).to have_content sp4.title
-        expect(page).to have_content sp4.price
+        expect(page).to have_content "$1,000"
 
         expect(page).to have_content sp4.title
-        expect(page).to have_content sp5.price
+        expect(page).to have_content "$10,000"
 
         expect(page).to_not have_content sp6.title
-        expect(page).to_not have_content sp6.price
+        expect(page).to_not have_content "$100,000"
       end
     end
 
