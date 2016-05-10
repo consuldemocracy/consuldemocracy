@@ -55,11 +55,7 @@
               <%= t("ballots.show.amount_spent") %>
             </td>
             <td colspan="2">
-<<<<<<< HEAD
-              <span><%= district_wide_amount_spent(@ballot) %>€</span>
-=======
               <span><%= format_price(@ballot.district_wide_amount_spent) %></span>
->>>>>>> Uses format_price instead of price everywhere
             </td>
           </tr>
         </tbody>
