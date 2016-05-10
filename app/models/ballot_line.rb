@@ -4,6 +4,7 @@ class BallotLine < ActiveRecord::Base
 
   validate :insufficient_funds
   validate :different_geozone, :if => :district_proposal?
+  validate :unfeasible
 
   def insufficient_funds
     errors.add(:money, "") if ballot.amount_available(ballot.geozone) < spending_proposal.price.to_i
@@ -11,6 +12,10 @@ class BallotLine < ActiveRecord::Base
 
   def different_geozone
     errors.add(:geozone, "") if (ballot.geozone.present? && spending_proposal.geozone != ballot.geozone)
+  end
+
+  def unfeasible
+    errors.add(:unfeasible, "") unless spending_proposal.feasibility == 'feasible'
   end
 
   def district_proposal?

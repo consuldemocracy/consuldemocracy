@@ -30,7 +30,7 @@ describe BallotLine do
       end
 
       it "should be valid if sufficient funds (city-wide)" do
-        sp = create(:spending_proposal, price: 23000000)
+        sp = create(:spending_proposal, :feasible, price: 23000000)
         ballot_line = build(:ballot_line, spending_proposal: sp)
 
         expect(ballot_line).to be_valid
@@ -38,7 +38,7 @@ describe BallotLine do
 
       it "should be valid if sufficient funds (district-wide)" do
         geozone = create(:geozone)
-        sp = create(:spending_proposal, price: 23000000, geozone: geozone)
+        sp = create(:spending_proposal, :feasible, price: 23000000, geozone: geozone)
 
         ballot = create(:ballot, geozone: geozone)
         ballot_line = build(:ballot_line, ballot: ballot, spending_proposal: sp)
@@ -65,7 +65,7 @@ describe BallotLine do
       it "should be valid for the the right geozone" do
         california = create(:geozone)
 
-        sp = create(:spending_proposal, geozone: california)
+        sp = create(:spending_proposal, :feasible, geozone: california)
 
         ballot = create(:ballot, geozone: california)
         ballot_line = build(:ballot_line, ballot: ballot, spending_proposal: sp)
@@ -74,5 +74,31 @@ describe BallotLine do
       end
 
     end
+
+    describe 'Feasibility' do
+
+      it "should not be valid if spending proposal is unfeasible" do
+        sp = create(:spending_proposal, price: 20000, feasible: false)
+        ballot_line = build(:ballot_line, spending_proposal: sp)
+
+        expect(ballot_line).to_not be_valid
+      end
+
+      it "should not be valid if spending proposal feasibility is undecided" do
+        sp = create(:spending_proposal, price: 20000, feasible: nil)
+        ballot_line = build(:ballot_line, spending_proposal: sp)
+
+        expect(ballot_line).to_not be_valid
+      end
+
+      it "should be valid if spending proposal is feasible" do
+        sp = create(:spending_proposal, price: 20000, feasible: true)
+        ballot_line = build(:ballot_line, spending_proposal: sp)
+
+        expect(ballot_line).to be_valid
+      end
+
+    end
+
   end
 end

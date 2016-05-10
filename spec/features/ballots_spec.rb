@@ -279,8 +279,8 @@ feature 'Ballots' do
       ballot = create(:ballot, user: user, geozone: geozone)
 
       ballot.spending_proposals =
-        create_list(:spending_proposal, 2, price: 10) +
-        create_list(:spending_proposal, 3, price: 5, geozone: geozone)
+        create_list(:spending_proposal, 2, price: 10, feasible: true) +
+        create_list(:spending_proposal, 3, price: 5, geozone: geozone, feasible: true)
 
       login_as(user)
       visit ballot_path
@@ -295,7 +295,7 @@ feature 'Ballots' do
   scenario 'Removing spending proposals from ballot', :js do
     user = create(:user)
     ballot = create(:ballot, user: user)
-    sp = create(:spending_proposal, price: 10)
+    sp = create(:spending_proposal, price: 10, feasible: true)
     ballot.spending_proposals = [sp]
 
     login_as(user)

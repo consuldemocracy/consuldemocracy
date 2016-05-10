@@ -17,13 +17,6 @@ class Ballot < ActiveRecord::Base
     spending_proposals.sum(:price).to_i
   end
 
-  ### Move to ballot_line.rb
-  def valid_spending_proposal?(spending_proposal)
-    return false unless spending_proposal.feasibility == 'feasible'
-    true
-  end
-  ###
-
   def set_geozone(new_geozone)
     return if new_geozone.blank?
     self.update(geozone: new_geozone) unless new_geozone == geozone
