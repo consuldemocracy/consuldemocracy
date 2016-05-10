@@ -6,7 +6,7 @@
 <div class="clear"></div>
 
 <div class="sidebar-divider"></div>
-<h3 class="sidebar-title">MIS VOTOS</h3>
+<h3 class="sidebar-title"><%= t("spending_proposals.index.sidebar.my_ballot") %></h3>
 
 <ul class="ballot-sidebar">
   <% @ballot.spending_proposals.by_geozone(@geozone).each do |spending_proposal| %>

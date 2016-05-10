@@ -472,11 +472,9 @@ en:
       sidebar:
         back: Back to select page
         district: District
-        geozones: Scope of operation
+        my_ballot: My ballot
         votes: Supports remaining
         votes_district: "You can only vote in the district %{district}"
-        forum_proposals: "See investment proposals from the district discussion space"
-        forum_proposals_title: "Discussion spaces"
       orders:
         random: random
         confidence_score: highest rated
