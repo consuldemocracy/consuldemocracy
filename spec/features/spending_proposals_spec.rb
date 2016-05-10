@@ -43,7 +43,7 @@ feature 'Spending proposals' do
     end
   end
 
-
+  context("Filters") do
     scenario 'by unfeasibility' do
       geozone1 = create(:geozone)
       spending_proposal1 = create(:spending_proposal, feasible: false, valuation_finished: true)
