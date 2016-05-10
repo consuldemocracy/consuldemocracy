@@ -4,7 +4,7 @@ feature 'Ballots' do
 
   background do
     Setting['feature.spending_proposal_features.phase3'] = true
-    Setting['feature.spending_proposal_features.final_voting_allowed'] = true
+    Setting['feature.spending_proposal_features.final_voting_allowed'] ||= true
   end
 
   context "Voting" do
