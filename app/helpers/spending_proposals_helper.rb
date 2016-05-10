@@ -79,4 +79,12 @@ module SpendingProposalsHelper
     number_to_currency(number, precision: 0)
   end
 
+  def spending_proposal_votable_in_show?(spending_proposal)
+    if feature?("spending_proposal_features.phase3")
+      spending_proposal.feasibility == 'feasible'
+    else
+      spending_proposal.feasibility != 'not_feasible'
+    end
+  end
+
 end

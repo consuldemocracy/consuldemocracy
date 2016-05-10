@@ -39,7 +39,7 @@
       <% end %>
     </div>
 
-    <% unless @spending_proposal.unfeasible? %>
+    <% if spending_proposal_votable_in_show?(@spending_proposal) %>
       <aside class="small-12 medium-3 column">
         <div class="sidebar-divider"></div>
         <h3><%= t("votes.supports") %></h3>
