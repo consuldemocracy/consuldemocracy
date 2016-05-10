@@ -313,8 +313,8 @@ feature 'Ballots' do
 
   scenario 'Removing spending proposals from ballot (sidebar)', :js do
     user = create(:user)
-    sp1 = create(:spending_proposal, price: 10000)
-    sp2 = create(:spending_proposal, price: 20000)
+    sp1 = create(:spending_proposal, :feasible, price: 10000)
+    sp2 = create(:spending_proposal, :feasible, price: 20000)
 
     ballot = create(:ballot, user: user, spending_proposals: [sp1, sp2])
 
@@ -350,8 +350,8 @@ feature 'Ballots' do
 
   scenario 'Removing spending proposals from ballot (sidebar)', :js do
     user = create(:user)
-    sp1 = create(:spending_proposal, price: 10000)
-    sp2 = create(:spending_proposal, price: 20000)
+    sp1 = create(:spending_proposal, :feasible, price: 10000)
+    sp2 = create(:spending_proposal, :feasible, price: 20000)
 
     ballot = create(:ballot, user: user, spending_proposals: [sp1, sp2])
 
