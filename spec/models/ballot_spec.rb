@@ -53,15 +53,29 @@ describe Ballot do
 
   describe "#valid_spending_proposal?" do
     it "returns false if wrong geozone" do
-      sp = create(:spending_proposal, price: 20000, geozone: create(:geozone))
+      sp = create(:spending_proposal, :feasible, price: 20000, geozone: create(:geozone))
       ballot = create(:ballot, geozone: create(:geozone))
+
+      expect(ballot.valid_spending_proposal?(sp)).to eq false
+    end
+
+    it "returns false if spending proposal is unfeasible" do
+      sp = create(:spending_proposal, price: 20000, feasible: false)
+      ballot = create(:ballot)
+
+      expect(ballot.valid_spending_proposal?(sp)).to eq false
+    end
+
+    it "returns false if spending_proposal feasibility is undedided" do
+      sp = create(:spending_proposal, price: 20000, feasible: nil)
+      ballot = create(:ballot)
 
       expect(ballot.valid_spending_proposal?(sp)).to eq false
     end
 
     it "returns false if right geozone but no money available" do
       geozone = create(:geozone)
-      sp = create(:spending_proposal, price: 25000000, geozone: geozone)
+      sp = create(:spending_proposal, :feasible, price: 25000000, geozone: geozone)
       ballot = create(:ballot, geozone: geozone)
       ballot2 = create(:ballot)
 
@@ -70,7 +84,7 @@ describe Ballot do
     end
 
     it "returns false if city-wide proposal but no money available" do
-      sp = create(:spending_proposal, price: 25000000)
+      sp = create(:spending_proposal, :feasible, price: 25000000)
       ballot = create(:ballot, geozone: create(:geozone))
       ballot2 = create(:ballot)
 
@@ -79,7 +93,7 @@ describe Ballot do
     end
 
     it "returns true if city-wide proposal and money available" do
-      sp = create(:spending_proposal, price: 20000)
+      sp = create(:spending_proposal, :feasible, price: 20000)
       ballot = create(:ballot)
 
       expect(ballot.valid_spending_proposal?(sp)).to eq true
@@ -87,7 +101,7 @@ describe Ballot do
 
     it "returns true if geozone-wide proposal and money available" do
       geozone = create(:geozone)
-      sp = create(:spending_proposal, price: 25000, geozone: geozone)
+      sp = create(:spending_proposal, :feasible, price: 25000, geozone: geozone)
       ballot = create(:ballot, geozone: geozone)
       ballot2 = create(:ballot)
 

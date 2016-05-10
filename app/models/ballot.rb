@@ -31,6 +31,7 @@ class Ballot < ActiveRecord::Base
   end
 
   def valid_spending_proposal?(spending_proposal)
+    return false unless spending_proposal.feasibility == 'feasible'
     return false if geozone_id.present? && spending_proposal.geozone_id != geozone_id
     return false if amount_available(geozone) < spending_proposal.price.to_i
     true
