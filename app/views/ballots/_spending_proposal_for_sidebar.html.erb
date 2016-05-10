@@ -1,13 +1,14 @@
-<div id="<%= dom_id(spending_proposal) %>_sidebar">
+<li id="<%= dom_id(spending_proposal) %>_sidebar">
   <%= spending_proposal.title %>
-  <%= spending_proposal.price %>
+  <span><%= price(spending_proposal.price) %></span>
 
   <% if feature?("spending_proposal_features.final_voting_allowed") %>
     <%= link_to remove_ballot_path(spending_proposal_id: spending_proposal.id),
                 title: t('ballots.show.remove'),
+                class: "remove-investment-project",
                 method: :delete,
                 remote: true do %>
        <span class="icon-x delete"></span>&nbsp;
     <% end %>
   <% end %>
-</div>
+</li>
