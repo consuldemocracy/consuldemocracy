@@ -435,6 +435,7 @@ en:
     tags_cloud:
       tags: Trending
       districts: "Districts"
+      districts_list: "Districts list"
       categories: "Categories"
     target_blank_html: " (link opens in new window)"
     unflag: Unflag
