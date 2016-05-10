@@ -33,7 +33,7 @@
               <%= t("ballots.show.amount_spent") %>
             </td>
             <td colspan="2">
-              <span><%= format_price(@ballot.city_wide_amount_spent) %></span>
+              <span><%= format_price(city_wide_amount_spent(@ballot)) %></span>
             </td>
           </tr>
         </tbody>
@@ -55,7 +55,7 @@
               <%= t("ballots.show.amount_spent") %>
             </td>
             <td colspan="2">
-              <span><%= format_price(@ballot.district_wide_amount_spent) %></span>
+              <span><%= format_price(district_wide_amount_spent(@ballot)) %></span>
             </td>
           </tr>
         </tbody>
