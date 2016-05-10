@@ -73,6 +73,28 @@ describe BallotLine do
         expect(ballot_line).to be_valid
       end
 
+      it "should be valid for city-wide proposals" do
+        sp = create(:spending_proposal, :feasible, geozone: nil)
+
+        ballot = create(:ballot, geozone: nil)
+        ballot_line = build(:ballot_line, ballot: ballot, spending_proposal: sp)
+
+        expect(ballot_line).to be_valid
+      end
+
+      it "should be valid for city-wide proposals (when district is set)" do
+        california = create(:geozone)
+
+        sp1 = create(:spending_proposal, :feasible, geozone: california)
+        sp2 = create(:spending_proposal, :feasible, geozone: nil)
+
+        ballot = create(:ballot, geozone: california, spending_proposals: [sp1])
+
+        ballot_line = build(:ballot_line, ballot: ballot, spending_proposal: sp2)
+
+        expect(ballot_line).to be_valid
+      end
+
     end
 
     describe 'Feasibility' do
