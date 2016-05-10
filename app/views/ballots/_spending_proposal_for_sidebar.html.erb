@@ -1,6 +1,6 @@
 <li id="<%= dom_id(spending_proposal) %>_sidebar">
   <%= spending_proposal.title %>
-  <span><%= price(spending_proposal.price) %></span>
+  <span><%= format_price(spending_proposal.price) %></span>
 
   <% if feature?("spending_proposal_features.final_voting_allowed") %>
     <%= link_to remove_ballot_path(spending_proposal_id: spending_proposal.id),

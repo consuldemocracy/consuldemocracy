@@ -32,7 +32,7 @@ feature 'Ballots' do
 
         within("#sidebar") do
           expect(page).to have_content sp1.title
-          expect(page).to have_content sp1.price
+          expect(page).to have_content "$10,000"
         end
 
         within("#spending_proposal_#{sp2.id}") do
@@ -44,7 +44,7 @@ feature 'Ballots' do
 
         within("#sidebar") do
           expect(page).to have_content sp2.title
-          expect(page).to have_content sp2.price
+          expect(page).to have_content "$20,000"
         end
       end
 
@@ -59,7 +59,7 @@ feature 'Ballots' do
 
         within("#sidebar") do
           expect(page).to have_content sp1.title
-          expect(page).to have_content sp1.price
+          expect(page).to have_content "$10,000"
         end
 
         within("#spending_proposal_#{sp1.id}") do
@@ -71,7 +71,7 @@ feature 'Ballots' do
 
         within("#sidebar") do
           expect(page).to_not have_content sp1.title
-          expect(page).to_not have_content sp1.price
+          expect(page).to_not have_content "$10,000"
         end
       end
 
@@ -97,7 +97,7 @@ feature 'Ballots' do
 
         within("#sidebar") do
           expect(page).to have_content sp1.title
-          expect(page).to have_content sp1.price
+          expect(page).to have_content "$10,000"
         end
 
         within("#spending_proposal_#{sp2.id}") do
@@ -109,7 +109,7 @@ feature 'Ballots' do
 
         within("#sidebar") do
           expect(page).to have_content sp2.title
-          expect(page).to have_content sp2.price
+          expect(page).to have_content "$20,000"
         end
       end
 
@@ -127,7 +127,7 @@ feature 'Ballots' do
 
         within("#sidebar") do
           expect(page).to have_content sp1.title
-          expect(page).to have_content sp1.price
+          expect(page).to have_content "$10,000"
         end
 
         within("#spending_proposal_#{sp1.id}") do
@@ -139,7 +139,7 @@ feature 'Ballots' do
 
         within("#sidebar") do
           expect(page).to_not have_content sp1.title
-          expect(page).to_not have_content sp1.price
+          expect(page).to_not have_content "$10,000"
         end
       end
 
@@ -164,7 +164,7 @@ feature 'Ballots' do
 
         within("#sidebar") do
           expect(page).to have_content sp1.title
-          expect(page).to have_content sp1.price
+          expect(page).to have_content "$10,000"
         end
 
         visit spending_proposals_path(geozone: california)
@@ -180,7 +180,7 @@ feature 'Ballots' do
 
         within("#sidebar") do
           expect(page).to have_content sp2.title
-          expect(page).to have_content sp2.price
+          expect(page).to have_content "$20,000"
 
           expect(page).to_not have_content sp1.title
           expect(page).to_not have_content sp1.price
@@ -194,10 +194,10 @@ feature 'Ballots' do
 
         within("#sidebar") do
           expect(page).to have_content sp1.title
-          expect(page).to have_content sp1.price
+          expect(page).to have_content "$10,000"
 
           expect(page).to_not have_content sp2.title
-          expect(page).to_not have_content sp2.price
+          expect(page).to_not have_content "$20,000"
         end
       end
     end
@@ -326,14 +326,14 @@ feature 'Ballots' do
 
     within("#sidebar") do
       expect(page).to have_content sp1.title
-      expect(page).to have_content sp1.price
+      expect(page).to have_content "$10,000"
 
       expect(page).to have_content sp2.title
-      expect(page).to have_content sp2.price
+      expect(page).to have_content "$20,000"
     end
 
     within("#sidebar #spending_proposal_#{sp1.id}_sidebar") do
-      find(".delete").trigger('click')
+      find(".remove-investment-project").trigger('click')
     end
 
     expect(page).to have_css("#amount-spent", text: "$20,000")
@@ -341,10 +341,10 @@ feature 'Ballots' do
 
     within("#sidebar") do
       expect(page).to_not have_content sp1.title
-      expect(page).to_not have_content sp1.price
+      expect(page).to_not have_content "$10,000"
 
       expect(page).to have_content sp2.title
-      expect(page).to have_content sp2.price
+      expect(page).to have_content "$20,000"
     end
   end
 
