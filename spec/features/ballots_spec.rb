@@ -214,8 +214,8 @@ feature 'Ballots' do
 
     scenario 'Displaying the correct count & amount' do
       user = create(:user)
-      ballot = create(:ballot, user: user)
       geozone = create(:geozone)
+      ballot = create(:ballot, user: user, geozone: geozone)
 
       ballot.spending_proposals =
         create_list(:spending_proposal, 2, price: 10) +

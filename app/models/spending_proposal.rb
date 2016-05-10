@@ -232,7 +232,7 @@ class SpendingProposal < ActiveRecord::Base
 
   def enough_money?(ballot)
     return true if ballot.blank?
-    available_money = geozone_id.present? ? ballot.district_wide_amount_available : ballot.city_wide_amount_available
+    available_money = ballot.amount_available(geozone)
     price.to_i <= available_money
   end
 

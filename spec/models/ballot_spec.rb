@@ -3,7 +3,7 @@ require 'rails_helper'
 describe Ballot do
 
   describe "#amount_spent" do
-    it "returns the amount spent in spending proposals" do
+    it "returns the total amount spent in spending proposals" do
       sp1 = create(:spending_proposal, price: 10000)
       sp2 = create(:spending_proposal, price: 20000)
 
@@ -18,7 +18,7 @@ describe Ballot do
     end
   end
 
-  describe "#city_wide_amount_available" do
+  describe "#amount_available city_wide" do
     it "returns the amount available to spend on city_wide spending proposals" do
       sp1 = create(:spending_proposal, price: 10000)
       sp2 = create(:spending_proposal, price: 20000)
@@ -26,15 +26,15 @@ describe Ballot do
       ballot = create(:ballot)
       ballot.spending_proposals << sp1
 
-      expect(ballot.city_wide_amount_available).to eq 23990000
+      expect(ballot.amount_available(nil)).to eq 23990000
 
       ballot.spending_proposals << sp2
 
-      expect(ballot.city_wide_amount_available).to eq 23970000
+      expect(ballot.amount_available(nil)).to eq 23970000
     end
   end
 
-  describe "#district_wide_amount_available" do
+  describe "#amount_available district_wide" do
     it "returns the amount available to spend on city_wide spending proposals" do
       geozone =  create(:geozone)
       sp1 = create(:spending_proposal, price: 20000, geozone: geozone)
@@ -43,11 +43,11 @@ describe Ballot do
       ballot = create(:ballot)
       ballot.spending_proposals << sp1
 
-      expect(ballot.district_wide_amount_available).to eq 23980000
+      expect(ballot.amount_available(geozone)).to eq 23980000
 
       ballot.spending_proposals << sp2
 
-      expect(ballot.district_wide_amount_available).to eq 23950000
+      expect(ballot.amount_available(geozone)).to eq 23950000
     end
   end
 
@@ -78,14 +78,14 @@ describe Ballot do
       expect(ballot2.valid_spending_proposal?(sp)).to eq false
     end
 
-    it "returns true if city-wide proposal and money vailable" do
+    it "returns true if city-wide proposal and money available" do
       sp = create(:spending_proposal, price: 20000)
       ballot = create(:ballot)
 
       expect(ballot.valid_spending_proposal?(sp)).to eq true
     end
 
-    it "returns true if geozone-wide proposal and money vailable" do
+    it "returns true if geozone-wide proposal and money available" do
       geozone = create(:geozone)
       sp = create(:spending_proposal, price: 25000, geozone: geozone)
       ballot = create(:ballot, geozone: geozone)
