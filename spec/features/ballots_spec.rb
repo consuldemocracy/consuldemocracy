@@ -27,15 +27,15 @@ feature 'Ballots' do
           find('.add a').trigger('click')
         end
 
-        expect(page).to have_css("#amount-spent", text: "$10,000")
-        expect(page).to have_css("#amount-available", text: "$23,990,000")
+        expect(page).to have_css("#amount-spent", text: "10.000 €")
+        expect(page).to have_css("#amount-available", text: "23.990.000 €")
 
         within("#spending_proposal_#{sp2.id}") do
           find('.add a').trigger('click')
         end
 
-        expect(page).to have_css("#amount-spent", text: "$30,000")
-        expect(page).to have_css("#amount-available", text: "$23,970,000")
+        expect(page).to have_css("#amount-spent", text: "30.000 €")
+        expect(page).to have_css("#amount-available", text: "23.970.000 €")
       end
 
       scenario "Remove a proposal", :js do
@@ -44,15 +44,15 @@ feature 'Ballots' do
 
         click_link "Vote city proposals"
 
-        expect(page).to have_css("#amount-spent", text: "$10,000")
-        expect(page).to have_css("#amount-available", text: "$23,990,000")
+        expect(page).to have_css("#amount-spent", text: "10.000 €")
+        expect(page).to have_css("#amount-available", text: "23.990.000 €")
 
         within("#spending_proposal_#{sp1.id}") do
           find('.remove a').trigger('click')
         end
 
-        expect(page).to have_css("#amount-spent", text: "$0")
-        expect(page).to have_css("#amount-available", text: "$24,000,000")
+        expect(page).to have_css("#amount-spent", text: "0 €")
+        expect(page).to have_css("#amount-available", text: "24.000.000 €")
       end
 
     end
@@ -72,15 +72,15 @@ feature 'Ballots' do
           find('.add a').trigger('click')
         end
 
-        expect(page).to have_css("#amount-spent", text: "$10,000")
-        expect(page).to have_css("#amount-available", text: "$23,990,000")
+        expect(page).to have_css("#amount-spent", text: "10.000 €")
+        expect(page).to have_css("#amount-available", text: "23.990.000 €")
 
         within("#spending_proposal_#{sp2.id}") do
           find('.add a').trigger('click')
         end
 
-        expect(page).to have_css("#amount-spent", text: "$30,000")
-        expect(page).to have_css("#amount-available", text: "$23,970,000")
+        expect(page).to have_css("#amount-spent", text: "30.000 €")
+        expect(page).to have_css("#amount-available", text: "23.970.000 €")
       end
 
       scenario "Remove a proposal", :js do
@@ -92,15 +92,15 @@ feature 'Ballots' do
         click_link "Vote district proposals"
         click_link california.name
 
-        expect(page).to have_css("#amount-spent", text: "$10,000")
-        expect(page).to have_css("#amount-available", text: "$23,990,000")
+        expect(page).to have_css("#amount-spent", text: "10.000 €")
+        expect(page).to have_css("#amount-available", text: "23.990.000 €")
 
         within("#spending_proposal_#{sp1.id}") do
           find('.remove a').trigger('click')
         end
 
-        expect(page).to have_css("#amount-spent", text: "$0")
-        expect(page).to have_css("#amount-available", text: "$24,000,000")
+        expect(page).to have_css("#amount-spent", text: "0 €")
+        expect(page).to have_css("#amount-available", text: "24.000.000 €")
       end
 
     end
@@ -119,8 +119,8 @@ feature 'Ballots' do
           find('.add a').trigger('click')
         end
 
-        expect(page).to have_css("#amount-spent", text: "$10,000")
-        expect(page).to have_css("#amount-available", text: "$23,990,000")
+        expect(page).to have_css("#amount-spent", text: "10.000 €")
+        expect(page).to have_css("#amount-available", text: "23.990.000 €")
 
         visit spending_proposals_path(geozone: california)
 
@@ -130,14 +130,14 @@ feature 'Ballots' do
           find('.add a').trigger('click')
         end
 
-        expect(page).to have_css("#amount-spent", text: "$20,000")
-        expect(page).to have_css("#amount-available", text: "$23,980,000")
+        expect(page).to have_css("#amount-spent", text: "20.000 €")
+        expect(page).to have_css("#amount-available", text: "23.980.000 €")
 
         click_link "Participatory budgeting"
         click_link "Vote city proposals"
 
-        expect(page).to have_css("#amount-spent", text: "$10,000")
-        expect(page).to have_css("#amount-available", text: "$23,990,000")
+        expect(page).to have_css("#amount-spent", text: "10.000 €")
+        expect(page).to have_css("#amount-available", text: "23.990.000 €")
       end
     end
   end
@@ -224,9 +224,9 @@ feature 'Ballots' do
       login_as(user)
       visit ballot_path
 
-      expect(page).to have_content("You voted 5 proposals with a total cost of 35€")
-      within("#city_wide") { expect(page).to have_content "20€" }
-      within("#district_wide") { expect(page).to have_content "15€" }
+      expect(page).to have_content("You voted 5 proposals with a total cost of 35 €")
+      within("#city_wide") { expect(page).to have_content "20 €" }
+      within("#district_wide") { expect(page).to have_content "15 €" }
     end
 
   end
@@ -240,10 +240,10 @@ feature 'Ballots' do
     login_as(user)
     visit ballot_path
 
-    expect(page).to have_content("You voted one proposal with a total cost of 10€")
+    expect(page).to have_content("You voted one proposal with a total cost of 10 €")
 
     within("#spending_proposal_#{sp.id}") do
-      find(".delete").trigger('click')
+      find(".remove-investment-project").trigger('click')
     end
 
     expect(current_path).to eq(ballot_path)
