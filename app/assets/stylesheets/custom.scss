@@ -1398,7 +1398,7 @@ ul.ballot-sidebar {
       font-style: italic;
     }
 
-    .remove-investment-project {
+    .remove-investment-project .icon-x {
       color: white;
       display: none;
       line-height: $line-height/2;
@@ -1416,7 +1416,7 @@ ul.ballot-sidebar {
         color: white;
       }
 
-      .remove-investment-project {
+      .remove-investment-project .icon-x {
         display: inherit;
       }
     }
