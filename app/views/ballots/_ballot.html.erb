@@ -26,7 +26,7 @@
           </tr>
         </thead>
         <tbody>
-          <%= render partial: 'spending_proposal',
+          <%= render partial: 'ballots/spending_proposal',
                      collection: @ballot.spending_proposals.city_wide %>
           <tr class="amount-spent">
             <td>
@@ -48,7 +48,7 @@
           </tr>
         </thead>
         <tbody>
-          <%= render partial: 'spending_proposal',
+          <%= render partial: 'ballots/spending_proposal',
                      collection: @ballot.spending_proposals.district_wide %>
           <tr class="amount-spent">
             <td>

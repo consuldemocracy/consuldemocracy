@@ -4,7 +4,7 @@ feature 'Ballots' do
 
   background do
     Setting['feature.spending_proposal_features.phase3'] = true
-    Setting['feature.spending_proposal_features.final_voting_allowed'] = true
+    Setting['feature.spending_proposal_features.final_voting_allowed'] ||= true
   end
 
   context "Voting" do
@@ -279,8 +279,8 @@ feature 'Ballots' do
       ballot = create(:ballot, user: user, geozone: geozone)
 
       ballot.spending_proposals =
-        create_list(:spending_proposal, 2, price: 10) +
-        create_list(:spending_proposal, 3, price: 5, geozone: geozone)
+        create_list(:spending_proposal, 2, price: 10, feasible: true) +
+        create_list(:spending_proposal, 3, price: 5, geozone: geozone, feasible: true)
 
       login_as(user)
       visit ballot_path
@@ -295,7 +295,7 @@ feature 'Ballots' do
   scenario 'Removing spending proposals from ballot', :js do
     user = create(:user)
     ballot = create(:ballot, user: user)
-    sp = create(:spending_proposal, price: 10)
+    sp = create(:spending_proposal, price: 10, feasible: true)
     ballot.spending_proposals = [sp]
 
     login_as(user)
@@ -313,8 +313,8 @@ feature 'Ballots' do
 
   scenario 'Removing spending proposals from ballot (sidebar)', :js do
     user = create(:user)
-    sp1 = create(:spending_proposal, price: 10000)
-    sp2 = create(:spending_proposal, price: 20000)
+    sp1 = create(:spending_proposal, :feasible, price: 10000)
+    sp2 = create(:spending_proposal, :feasible, price: 20000)
 
     ballot = create(:ballot, user: user, spending_proposals: [sp1, sp2])
 
@@ -350,8 +350,8 @@ feature 'Ballots' do
 
   scenario 'Removing spending proposals from ballot (sidebar)', :js do
     user = create(:user)
-    sp1 = create(:spending_proposal, price: 10000)
-    sp2 = create(:spending_proposal, price: 20000)
+    sp1 = create(:spending_proposal, :feasible, price: 10000)
+    sp2 = create(:spending_proposal, :feasible, price: 20000)
 
     ballot = create(:ballot, user: user, spending_proposals: [sp1, sp2])
 
@@ -449,7 +449,7 @@ feature 'Ballots' do
       end
     end
 
-    scenario 'Wrong district', :js do
+    scenario 'Different district', :js do
       user = create(:user, :level_two)
       california = create(:geozone)
       new_york = create(:geozone)
@@ -465,6 +465,21 @@ feature 'Ballots' do
       within("#spending_proposal_#{sp2.id}") do
         find("div.ballot").hover
         expect_message_already_voted_in_another_geozone(california)
+      end
+    end
+
+    scenario 'Insufficient funds', :js do
+      user = create(:user, :level_two)
+      california = create(:geozone)
+
+      sp1 = create(:spending_proposal, feasible: true, price: 25000000)
+
+      login_as(user)
+      visit spending_proposals_path(geozone: 'all')
+
+      within("#spending_proposal_#{sp1.id}") do
+        find('.add a').trigger('click')
+        expect_message_insufficient_funds
       end
     end
 

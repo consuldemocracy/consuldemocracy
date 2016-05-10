@@ -207,6 +207,11 @@ module CommonActions
     expect(page).to have_selector('.in-favor a', visible: false)
   end
 
+  def expect_message_insufficient_funds
+    expect(page).to have_content "This proposal's price is more than the available amount left"
+    expect(page).to have_selector('.in-favor a', visible: false)
+  end
+
   def create_featured_proposals
     [create(:proposal, :with_confidence_score, cached_votes_up: 100),
      create(:proposal, :with_confidence_score, cached_votes_up: 90)]
