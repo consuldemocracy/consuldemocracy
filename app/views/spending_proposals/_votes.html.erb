@@ -19,14 +19,15 @@
           title: t('spending_proposals.spending_proposal.support_title'),
           method: "post",
           remote: true,
-          data: supports_confirm_for_current_user(spending_proposal) do %>
+          data: supports_confirm_for_current_user(spending_proposal),
+          "aria-hidden" => css_for_aria_hidden(reason) do %>
         <%= t("spending_proposals.spending_proposal.support") %>
       <% end %>
     <% end %>
   </div>
 
   <% if reason.present? && !user_voted_for %>
-    <div class="no-supports-allowed" style='display:none'>
+    <div class="no-supports-allowed" style='display:none' aria-hidden="false">
       <p>
           <%= t("votes.spending_proposals.#{reason}",
                 verify_account: link_to(t("votes.verify_account"), verification_path),
