@@ -472,11 +472,9 @@ es:
       sidebar:
         back: Volver a página de selección
         district: Distrito
-        geozones: Ámbitos de actuación
+        my_ballot: Mis votos
         votes: Apoyos restantes
         votes_district: "Solo puedes votar en el distrito %{district}"
-        forum_proposals: "Ver propuestas de inversión del espacio de debate distrital"
-        forum_proposals_title: "Espacios de debate"
       orders:
         random: Aleatorias
         confidence_score: Mejor valoradas

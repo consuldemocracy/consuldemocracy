@@ -30,12 +30,22 @@ feature 'Ballots' do
         expect(page).to have_css("#amount-spent", text: "$10,000")
         expect(page).to have_css("#amount-available", text: "$23,990,000")
 
+        within("#sidebar") do
+          expect(page).to have_content sp1.title
+          expect(page).to have_content "$10,000"
+        end
+
         within("#spending_proposal_#{sp2.id}") do
           find('.add a').trigger('click')
         end
 
         expect(page).to have_css("#amount-spent", text: "$30,000")
         expect(page).to have_css("#amount-available", text: "$23,970,000")
+
+        within("#sidebar") do
+          expect(page).to have_content sp2.title
+          expect(page).to have_content "$20,000"
+        end
       end
 
       scenario "Remove a proposal", :js do
@@ -47,12 +57,22 @@ feature 'Ballots' do
         expect(page).to have_css("#amount-spent", text: "$10,000")
         expect(page).to have_css("#amount-available", text: "$23,990,000")
 
+        within("#sidebar") do
+          expect(page).to have_content sp1.title
+          expect(page).to have_content "$10,000"
+        end
+
         within("#spending_proposal_#{sp1.id}") do
           find('.remove a').trigger('click')
         end
 
         expect(page).to have_css("#amount-spent", text: "$0")
         expect(page).to have_css("#amount-available", text: "$24,000,000")
+
+        within("#sidebar") do
+          expect(page).to_not have_content sp1.title
+          expect(page).to_not have_content "$10,000"
+        end
       end
 
     end
@@ -75,12 +95,22 @@ feature 'Ballots' do
         expect(page).to have_css("#amount-spent", text: "$10,000")
         expect(page).to have_css("#amount-available", text: "$23,990,000")
 
+        within("#sidebar") do
+          expect(page).to have_content sp1.title
+          expect(page).to have_content "$10,000"
+        end
+
         within("#spending_proposal_#{sp2.id}") do
           find('.add a').trigger('click')
         end
 
         expect(page).to have_css("#amount-spent", text: "$30,000")
         expect(page).to have_css("#amount-available", text: "$23,970,000")
+
+        within("#sidebar") do
+          expect(page).to have_content sp2.title
+          expect(page).to have_content "$20,000"
+        end
       end
 
       scenario "Remove a proposal", :js do
@@ -95,12 +125,22 @@ feature 'Ballots' do
         expect(page).to have_css("#amount-spent", text: "$10,000")
         expect(page).to have_css("#amount-available", text: "$23,990,000")
 
+        within("#sidebar") do
+          expect(page).to have_content sp1.title
+          expect(page).to have_content "$10,000"
+        end
+
         within("#spending_proposal_#{sp1.id}") do
           find('.remove a').trigger('click')
         end
 
         expect(page).to have_css("#amount-spent", text: "$0")
         expect(page).to have_css("#amount-available", text: "$24,000,000")
+
+        within("#sidebar") do
+          expect(page).to_not have_content sp1.title
+          expect(page).to_not have_content "$10,000"
+        end
       end
 
     end
@@ -122,6 +162,11 @@ feature 'Ballots' do
         expect(page).to have_css("#amount-spent", text: "$10,000")
         expect(page).to have_css("#amount-available", text: "$23,990,000")
 
+        within("#sidebar") do
+          expect(page).to have_content sp1.title
+          expect(page).to have_content "$10,000"
+        end
+
         visit spending_proposals_path(geozone: california)
 
         expect(page).to_not have_css("#amount-spent")
@@ -133,11 +178,27 @@ feature 'Ballots' do
         expect(page).to have_css("#amount-spent", text: "$20,000")
         expect(page).to have_css("#amount-available", text: "$23,980,000")
 
+        within("#sidebar") do
+          expect(page).to have_content sp2.title
+          expect(page).to have_content "$20,000"
+
+          expect(page).to_not have_content sp1.title
+          expect(page).to_not have_content "$10,000"
+        end
+
         click_link "Participatory budgeting"
         click_link "Vote city proposals"
 
         expect(page).to have_css("#amount-spent", text: "$10,000")
         expect(page).to have_css("#amount-available", text: "$23,990,000")
+
+        within("#sidebar") do
+          expect(page).to have_content sp1.title
+          expect(page).to have_content "$10,000"
+
+          expect(page).to_not have_content sp2.title
+          expect(page).to_not have_content "$20,000"
+        end
       end
     end
   end
@@ -248,6 +309,80 @@ feature 'Ballots' do
 
     expect(current_path).to eq(ballot_path)
     expect(page).to have_content("You voted 0 proposals with a total cost of $0")
+  end
+
+  scenario 'Removing spending proposals from ballot (sidebar)', :js do
+    user = create(:user)
+    sp1 = create(:spending_proposal, price: 10000)
+    sp2 = create(:spending_proposal, price: 20000)
+
+    ballot = create(:ballot, user: user, spending_proposals: [sp1, sp2])
+
+    login_as(user)
+    visit spending_proposals_path(geozone: 'all')
+
+    expect(page).to have_css("#amount-spent", text: "$30,000")
+    expect(page).to have_css("#amount-available", text: "$23,970,000")
+
+    within("#sidebar") do
+      expect(page).to have_content sp1.title
+      expect(page).to have_content "$10,000"
+
+      expect(page).to have_content sp2.title
+      expect(page).to have_content "$20,000"
+    end
+
+    within("#sidebar #spending_proposal_#{sp1.id}_sidebar") do
+      find(".remove-investment-project").trigger('click')
+    end
+
+    expect(page).to have_css("#amount-spent", text: "$20,000")
+    expect(page).to have_css("#amount-available", text: "$23,980,000")
+
+    within("#sidebar") do
+      expect(page).to_not have_content sp1.title
+      expect(page).to_not have_content "$10,000"
+
+      expect(page).to have_content sp2.title
+      expect(page).to have_content "$20,000"
+    end
+  end
+
+  scenario 'Removing spending proposals from ballot (sidebar)', :js do
+    user = create(:user)
+    sp1 = create(:spending_proposal, price: 10000)
+    sp2 = create(:spending_proposal, price: 20000)
+
+    ballot = create(:ballot, user: user, spending_proposals: [sp1, sp2])
+
+    login_as(user)
+    visit spending_proposals_path(geozone: 'all')
+
+    expect(page).to have_css("#amount-spent", text: "$30,000")
+    expect(page).to have_css("#amount-available", text: "$23,970,000")
+
+    within("#sidebar") do
+      expect(page).to have_content sp1.title
+      expect(page).to have_content "$10,000"
+
+      expect(page).to have_content sp2.title
+      expect(page).to have_content "$20,000"
+    end
+
+    within("#sidebar #spending_proposal_#{sp1.id}_sidebar") do
+      find(".remove-investment-project").trigger('click')
+    end
+
+    expect(page).to have_css("#amount-spent", text: "$20,000")
+    expect(page).to have_css("#amount-available", text: "$23,980,000")
+
+    within("#sidebar") do
+      expect(page).to_not have_content sp1.title
+      expect(page).to_not have_content "$10,000"
+
+      expect(page).to have_content sp2.title
+      expect(page).to have_content "$20,000"
+    end
   end
 
   context 'Permissions' do

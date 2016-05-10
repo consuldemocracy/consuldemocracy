@@ -1381,6 +1381,48 @@ table.age-groups {
   }
 }
 
+ul.ballot-sidebar {
+  list-style: none;
+  margin-left: 0;
+
+  li {
+    background: #f9f9f9;
+    line-height: $line-height;
+    margin-bottom: $line-height/4;
+    padding: $line-height/2;
+    position: relative;
+
+    span {
+      color: #9f9f9f;
+      display: block;
+      font-style: italic;
+    }
+
+    .remove-investment-project .icon-x {
+      color: white;
+      display: none;
+      line-height: $line-height/2;
+      position: absolute;
+      right: 6px;
+      text-decoration: none;
+      top: 6px;
+    }
+
+    &:hover {
+      background: $budget;
+      color: white;
+
+      span {
+        color: white;
+      }
+
+      .remove-investment-project .icon-x {
+        display: inherit;
+      }
+    }
+  }
+}
+
 // News page
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
