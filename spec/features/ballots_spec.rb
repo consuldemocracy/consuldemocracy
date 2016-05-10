@@ -370,7 +370,7 @@ feature 'Ballots' do
     end
 
     within("#sidebar #spending_proposal_#{sp1.id}_sidebar") do
-      find(".delete").trigger('click')
+      find(".remove-investment-project").trigger('click')
     end
 
     expect(page).to have_css("#amount-spent", text: "$20,000")
