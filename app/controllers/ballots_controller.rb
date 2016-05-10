@@ -26,8 +26,8 @@ class BallotsController < ApplicationController
     def load_spending_proposal
       @spending_proposal = SpendingProposal.find(params[:spending_proposal_id])
     end
-
+    
     def load_geozone
-      @geozone = @spending_proposal.geozone
+       @geozone = @spending_proposal.geozone
     end
 end

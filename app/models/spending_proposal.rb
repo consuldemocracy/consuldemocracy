@@ -179,7 +179,7 @@ class SpendingProposal < ActiveRecord::Base
 
   def reason_for_not_being_votable_by(user)
     return permission_problem(user) if permission_problem?(user)
-    return :not_voting_allowed if voting_allowed?
+    return :not_voting_allowed unless voting_allowed?
 
     if city_wide?
       return :no_city_supports_available unless user.city_wide_spending_proposals_supported_count > 0
@@ -196,8 +196,9 @@ class SpendingProposal < ActiveRecord::Base
 
   def reason_for_not_being_ballotable_by(user)
     return permission_problem(user)    if permission_problem?(user)
-    return :no_ballots_allowed         if final_voting_allowed?
+    return :no_ballots_allowed         unless final_voting_allowed?
     return :different_geozone_assigned unless can_vote_in_geozone?(user)
+    return :not_enough_money           unless enough_money?(user.ballot)
   end
 
   def permission_problem(user)
@@ -221,19 +222,24 @@ class SpendingProposal < ActiveRecord::Base
 
   ### Think of a better way to describe the different phases
   def voting_allowed?
-    Setting["feature.spending_proposal_features.voting_allowed"].blank?
+    Setting["feature.spending_proposal_features.voting_allowed"].present?
   end
 
   def final_voting_allowed?
-    Setting["feature.spending_proposal_features.final_voting_allowed"].blank?
+    Setting["feature.spending_proposal_features.final_voting_allowed"].present?
   end
   ###
+
+  def enough_money?(ballot)
+    return true if ballot.blank?
+    available_money = geozone_id.present? ? ballot.district_wide_amount_available : ballot.city_wide_amount_available
+    price.to_i <= available_money
+  end
 
   def can_vote_in_geozone?(user)
     return true if city_wide? || user.ballot.blank?
 
-    geozone == user.ballot.geozone ||
-    user.ballot.spending_proposals.district_wide.blank?
+    (geozone == user.ballot.geozone) || user.ballot.spending_proposals.district_wide.blank?
   end
 
   def register_vote(user, vote_value)

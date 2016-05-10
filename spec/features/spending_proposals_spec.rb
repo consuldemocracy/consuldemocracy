@@ -407,7 +407,7 @@ feature 'Spending proposals' do
       add_to_ballot(sp4)
       add_to_ballot(sp5)
 
-      click_link "Revisar mis votos"
+      click_link "Check my ballot"
 
       expect(page).to have_content "You can change your vote at any time until June 30"
 
