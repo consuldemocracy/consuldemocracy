@@ -85,6 +85,13 @@
       <% end %>
     </li>
 
+    <li <%= 'class=active' if controller_name == 'managers' %>>
+      <%= link_to admin_managers_path do %>
+        <span class="icon-user"></span>
+        <%= t('admin.menu.managers') %>
+      <% end %>
+    </li>
+
     <li <%= 'class=active' if controller_name == 'activity' %>>
       <%= link_to admin_activity_path do %>
         <span class="icon-eye"></span>

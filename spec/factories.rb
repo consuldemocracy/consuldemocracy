@@ -265,6 +265,10 @@ FactoryGirl.define do
     user
   end
 
+  factory :manager do
+    user
+  end
+
   factory :organization do
     user
     responsible_name "Johnny Utah"
