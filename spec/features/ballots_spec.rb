@@ -274,7 +274,7 @@ feature 'Ballots' do
   context 'Showing the ballot' do
 
     scenario 'Displaying the correct count & amount' do
-      user = create(:user)
+      user = create(:user, :level_two)
       geozone = create(:geozone, name: "Carabanchel")
       ballot = create(:ballot, user: user, geozone: geozone)
 
@@ -293,7 +293,7 @@ feature 'Ballots' do
   end
 
   scenario 'Removing spending proposals from ballot', :js do
-    user = create(:user)
+    user = create(:user, :level_two)
     ballot = create(:ballot, user: user)
     sp = create(:spending_proposal, price: 10, feasible: true)
     ballot.spending_proposals = [sp]
@@ -312,7 +312,7 @@ feature 'Ballots' do
   end
 
   scenario 'Removing spending proposals from ballot (sidebar)', :js do
-    user = create(:user)
+    user = create(:user, :level_two)
     sp1 = create(:spending_proposal, :feasible, price: 10000)
     sp2 = create(:spending_proposal, :feasible, price: 20000)
 
@@ -349,7 +349,7 @@ feature 'Ballots' do
   end
 
   scenario 'Removing spending proposals from ballot (sidebar)', :js do
-    user = create(:user)
+    user = create(:user, :level_two)
     sp1 = create(:spending_proposal, :feasible, price: 10000)
     sp2 = create(:spending_proposal, :feasible, price: 20000)
 
