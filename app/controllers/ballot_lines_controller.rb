@@ -1,6 +1,7 @@
 class BallotLinesController < ApplicationController
   before_action :authenticate_user!
   before_action :load_ballot
+  before_action :load_spending_proposals
   load_and_authorize_resource :ballot_line, through: :ballot, find_by: :spending_proposal_id
 
   def create
@@ -15,11 +16,11 @@ class BallotLinesController < ApplicationController
   end
 
   def destroy
-    @ballot_line.destroy
-
     load_spending_proposal
+    load_spending_proposals
     load_geozone
 
+    @ballot_line.destroy
     @ballot.reset_geozone
   end
 
@@ -35,6 +36,12 @@ class BallotLinesController < ApplicationController
 
     def load_spending_proposal
       @spending_proposal = @ballot_line.spending_proposal
+    end
+
+    def load_spending_proposals
+      if params[:spending_proposals_ids].present?
+        @spending_proposals = SpendingProposal.where(id: params[:spending_proposals_ids])
+      end
     end
 
     def load_geozone

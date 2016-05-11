@@ -9,7 +9,8 @@
 
   <% if feature?("spending_proposal_features.final_voting_allowed") %>
     <%= link_to t('ballots.show.remove'),
-                ballot_line_path(id: spending_proposal.id),
+                ballot_line_path(id: spending_proposal.id,
+                                 spending_proposals_ids: spending_proposal_ids),
                 class: "delete small expanded",
                 method: :delete,
                 remote: true %>
