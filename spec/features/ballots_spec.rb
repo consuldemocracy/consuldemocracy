@@ -495,9 +495,11 @@ feature 'Ballots' do
 
       within("#spending_proposal_#{sp1.id}") do
         find('.add a').trigger('click')
+        expect(page).to have_content "Remove vote"
       end
 
       within("#spending_proposal_#{sp2.id}") do
+        find("div.ballot").hover
         expect_message_insufficient_funds
       end
 
@@ -523,6 +525,36 @@ feature 'Ballots' do
       within("#spending_proposal_#{sp1.id}") do
         find('.remove a').trigger('click')
       end
+
+      within("#spending_proposal_#{sp2.id}") do
+        find("div.ballot").hover
+        expect(page).to_not have_content "This proposal's price is more than the available amount left"
+        expect(page).to have_selector('.in-favor a', visible: true)
+      end
+    end
+
+    scenario 'Displays error message for all proposals (on destroy from sidebar)', :js do
+      user = create(:user, :level_two)
+
+      sp1 = create(:spending_proposal, feasible: true, price: 24000000)
+      sp2 = create(:spending_proposal, feasible: true, price: 5000000)
+
+      create(:ballot, user: user, spending_proposals: [sp1])
+
+      login_as(user)
+      visit spending_proposals_path(geozone: 'all')
+
+      within("#spending_proposal_#{sp2.id}") do
+        find("div.ballot").hover
+        expect(page).to have_content "This proposal's price is more than the available amount left"
+        expect(page).to have_selector('.in-favor a', visible: false)
+      end
+
+      within("#spending_proposal_#{sp1.id}_sidebar") do
+        find('.remove-investment-project').trigger('click')
+      end
+
+      expect(page).to_not have_css "#spending_proposal_#{sp1.id}_sidebar"
 
       within("#spending_proposal_#{sp2.id}") do
         find("div.ballot").hover
