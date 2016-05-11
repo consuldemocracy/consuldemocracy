@@ -90,7 +90,10 @@ feature 'Ballots' do
 
         within("#spending_proposal_#{sp1.id}") do
           find('.add a').trigger('click')
+          expect(page).to have_content "Remove"
         end
+
+        visit spending_proposals_path(geozone: carabanchel)
 
         expect(page).to have_css("#amount-spent", text: "$10,000")
         expect(page).to have_css("#amount-available", text: "$3,237,830")
@@ -157,6 +160,7 @@ feature 'Ballots' do
 
         within("#spending_proposal_#{sp1.id}") do
           find('.add a').trigger('click')
+          expect(page).to have_content "Remove"
         end
 
         expect(page).to have_css("#amount-spent", text: "$10,000")
@@ -173,7 +177,10 @@ feature 'Ballots' do
 
         within("#spending_proposal_#{sp2.id}") do
           find('.add a').trigger('click')
+          expect(page).to have_content "Remove"
         end
+
+        visit spending_proposals_path(geozone: carabanchel)
 
         expect(page).to have_css("#amount-spent", text: "$20,000")
         expect(page).to have_css("#amount-available", text: "$3,227,830")
@@ -285,7 +292,7 @@ feature 'Ballots' do
       login_as(user)
       visit ballot_path
 
-      expect(page).to have_content("You voted 5 proposals with a total cost of $35")
+      expect(page).to have_content("You voted 5 proposals with a cost of $35")
       within("#city_wide") { expect(page).to have_content "$20" }
       within("#district_wide") { expect(page).to have_content "$15" }
     end
@@ -301,14 +308,14 @@ feature 'Ballots' do
     login_as(user)
     visit ballot_path
 
-    expect(page).to have_content("You voted one proposal with a total cost of $10")
+    expect(page).to have_content("You voted one proposal with a cost of $10")
 
     within("#spending_proposal_#{sp.id}") do
-      find(".delete").trigger('click')
+      find(".remove-investment-project").trigger('click')
     end
 
     expect(current_path).to eq(ballot_path)
-    expect(page).to have_content("You voted 0 proposals with a total cost of $0")
+    expect(page).to have_content("You voted 0 proposals with a cost of $0")
   end
 
   scenario 'Removing spending proposals from ballot (sidebar)', :js do

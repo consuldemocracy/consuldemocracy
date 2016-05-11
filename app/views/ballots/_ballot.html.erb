@@ -5,61 +5,72 @@
     <%= t("shared.back") %>
   <% end %>
 
-  <h1><%= t("ballots.show.title") %></h1>
+  <h1 class="text-center"><%= t("ballots.show.title") %></h1>
 
-  <h2>
-    <%= t("ballots.show.voted_html",
-        count: @ballot.spending_proposals.count,
-        amount_spent: format_price(@ballot.total_amount_spent)) %>
-  </h2>
+  <div class="small-12 medium-6 column small-centered text-center">
+    <h2>
+      <%= t("ballots.show.voted_html",
+          count: @ballot.spending_proposals.count,
+          amount_spent: format_price(@ballot.total_amount_spent)) %>
+    </h2>
 
-  <div class="callout primary">
-    <%= t("ballots.show.info_html") %>
+    <p>
+      <small>
+        <%= t("ballots.show.voted_info_html") %>
+      </small>
+    </p>
   </div>
 
-  <div class="row">
+  <hr>
+
+  <div class="row margin-top">
     <div id="city_wide" class="small-12 medium-6 column">
-      <table>
-        <thead>
-          <tr>
-            <th colspan="3"><%= t("ballots.show.city_wide") %></th>
-          </tr>
-        </thead>
-        <tbody>
-          <%= render partial: 'ballots/spending_proposal',
-                     collection: @ballot.spending_proposals.city_wide %>
-          <tr class="amount-spent">
-            <td>
-              <%= t("ballots.show.amount_spent") %>
-            </td>
-            <td colspan="2">
-              <span><%= format_price(city_wide_amount_spent(@ballot)) %></span>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+      <h3><%= t("ballots.show.city_wide") %></h3>
+      <% if @ballot.spending_proposals.by_geozone(@geozone).count > 0 %>
+        <h4 class="amount-spent text-right">
+          <%= t("ballots.show.amount_spent") %>
+          <span><%= format_price(city_wide_amount_spent(@ballot)) %></span>
+        </h4>
+      <% else %>
+        <p>
+          <%= t("ballots.show.zero") %><br>
+          <%= link_to t("ballots.show.city_link"),
+                      spending_proposals_path(geozone: 'all'),
+                      data: { no_turbolink: true } %>
+        </p>
+      <% end %>
+
+      <ul class="ballot-list">
+        <%= render partial: 'ballots/spending_proposal',
+                   collection: @ballot.spending_proposals.city_wide %>
+      </ul>
     </div>
 
     <div id="district_wide" class="small-12 medium-6 column">
-      <table>
-        <thead>
-          <tr>
-            <th colspan="3"><%= t("ballots.show.district_wide") %> (District name)</th>
-          </tr>
-        </thead>
-        <tbody>
-          <%= render partial: 'ballots/spending_proposal',
-                     collection: @ballot.spending_proposals.district_wide %>
-          <tr class="amount-spent">
-            <td>
-              <%= t("ballots.show.amount_spent") %>
-            </td>
-            <td colspan="2">
-              <span><%= format_price(district_wide_amount_spent(@ballot)) %></span>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+      <h3>
+        <%= t("ballots.show.district_wide") %>
+        <span>
+          <% if @ballot.geozone.present? %>
+            (<%= @ballot.geozone.name %>)
+          <% end %>
+        </span>
+      </h3>
+      <% if @ballot.geozone.present? %>
+        <h4 class="amount-spent text-right">
+          <%= t("ballots.show.amount_spent") %>
+          <span><%= format_price(district_wide_amount_spent(@ballot)) %></span>
+        </h4>
+      <% else %>
+        <p>
+          <%= t("ballots.show.zero") %><br>
+          <%= link_to t("ballots.show.districts_link"), select_district_path %>
+        </p>
+      <% end %>
+
+      <ul class="ballot-list">
+        <%= render partial: 'ballots/spending_proposal',
+                   collection: @ballot.spending_proposals.district_wide %>
+      </ul>
     </div>
   </div>
 </div>

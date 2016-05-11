@@ -473,8 +473,13 @@ es:
         back: Volver a página de selección
         district: Distrito
         my_ballot: Mis votos
+        voted_html:
+          one: "<strong>Has votado una propuesta por un valor de %{amount_spent}</strong>"
+          other: "<strong>Has votado %{count} propuestas por un valor de %{amount_spent}</strong>"
+        voted_info: Puedes cambiar tus votos en cualquier momento hasta el cierre de esta fase. No hace falta que gastes todo el dinero disponible.
         votes: Apoyos restantes
         votes_district: "Solo puedes votar en el distrito %{district}"
+        zero: "Todavía no has votado ninguna propuesta de inversión."
       orders:
         random: Aleatorias
         confidence_score: Mejor valoradas
@@ -523,15 +528,18 @@ es:
       different_district_active: Ya apoyaste propuestas de otro distrito.
   ballots:
     show:
+      city_link: Votar para toda la ciudad
       city_wide: Toda la ciudad
+      districts_link: Votar propuestas de distrito
       district_wide: Distrito
-      info_html: "Puedes cambiar tus votos en cualquier momento <strong>hasta el 30 de junio</strong>"
       title: Mis votos
       amount_spent: Coste total
       remove: Quitar voto
       voted_html:
-        one: "Has votado <span>una</span> propuesta por un valor de <span>%{amount_spent}</span>."
-        other: "Has votado <span>%{count}</span> propuestas por un valor de <span>%{amount_spent}</span>."
+        one: "Has votado <span>una</span> propuesta por un valor de <span>%{amount_spent}</span>"
+        other: "Has votado <span>%{count}</span> propuestas por un valor de <span>%{amount_spent}</span>"
+      voted_info_html: "Puedes cambiar tus votos en cualquier momento hasta el cierre de esta fase.<br> No hace falta que gastes todo el dinero disponible."
+      zero: "Todavía no has votado ninguna propuesta de inversión."
   stats:
     index:
       visits: Visitas

@@ -300,7 +300,7 @@ feature 'Users' do
         within(".activity") do
           click_link 'Participatory budget'
         end
-        expect(page).to have_content('You voted for one proposal with a total cost of $1,234,567')
+        expect(page).to have_content('You voted for one proposal with a cost of $1,234,567')
       end
 
       scenario 'link is not shown if participatory budget phase 3 is not active' do
