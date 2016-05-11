@@ -331,13 +331,13 @@ feature 'Spending proposals' do
 
     scenario "Confirm", :js do
       user = create(:user, :level_two)
-      california = create(:geozone)
+      carabanchel = create(:geozone, name: "Carabanchel")
       new_york = create(:geozone)
       sp1 = create(:spending_proposal, feasible: true, price:      1, geozone: nil)
       sp2 = create(:spending_proposal, feasible: true, price:     10, geozone: nil)
       sp3 = create(:spending_proposal, feasible: true, price:    100, geozone: nil)
-      sp4 = create(:spending_proposal, feasible: true, price:   1000, geozone: california)
-      sp5 = create(:spending_proposal, feasible: true, price:  10000, geozone: california)
+      sp4 = create(:spending_proposal, feasible: true, price:   1000, geozone: carabanchel)
+      sp5 = create(:spending_proposal, feasible: true, price:  10000, geozone: carabanchel)
       sp6 = create(:spending_proposal, feasible: true, price: 100000, geozone: new_york)
 
       login_as(user)
@@ -351,7 +351,7 @@ feature 'Spending proposals' do
 
       first(:link, "Participatory budgeting").click
       click_link "Vote district proposals"
-      click_link california.name
+      click_link carabanchel.name
 
       add_to_ballot(sp4)
       add_to_ballot(sp5)
@@ -375,7 +375,7 @@ feature 'Spending proposals' do
         expect(page).to have_content sp4.title
         expect(page).to have_content "$1,000"
 
-        expect(page).to have_content sp4.title
+        expect(page).to have_content sp5.title
         expect(page).to have_content "$10,000"
 
         expect(page).to_not have_content sp6.title
