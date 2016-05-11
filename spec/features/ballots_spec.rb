@@ -208,6 +208,24 @@ feature 'Ballots' do
         end
       end
     end
+
+    scenario "Display progress bar after first district vote", :js do
+      carabanchel = create(:geozone, name: "Carabanchel")
+
+      sp1 = create(:spending_proposal, geozone: carabanchel, feasible: true, price: 10000)
+
+      click_link "Vote district proposals"
+      click_link carabanchel.name
+
+      within("#spending_proposal_#{sp1.id}") do
+        find('.add a').trigger('click')
+        expect(page).to have_content "Remove"
+      end
+
+      within("#progress_bar") do
+        expect(page).to have_css("#amount-spent", text: "$10,000")
+      end
+    end
   end
 
   context "Choosing my district" do
