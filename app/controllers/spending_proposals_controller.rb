@@ -3,7 +3,7 @@ class SpendingProposalsController < ApplicationController
   include CommentableActions
   include FlagActions
 
-  before_action :authenticate_user!, except: [:index, :welcome, :show]
+  before_action :authenticate_user!, except: [:index, :welcome, :show, :select_district]
   before_action -> { flash.now[:notice] = flash[:notice].html_safe if flash[:html_safe] && flash[:notice] }
   before_action :set_random_seed, only: :index
   before_action :load_ballot,  only: [:index, :show]
