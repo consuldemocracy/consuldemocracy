@@ -358,7 +358,7 @@ feature 'Spending proposals' do
 
       click_link "Check my ballot"
 
-      expect(page).to have_content "You can change your vote at any time until June 30"
+      expect(page).to have_content "You can change your vote at any time until the close of this phase"
 
       within("#city_wide") do
         expect(page).to have_content sp1.title

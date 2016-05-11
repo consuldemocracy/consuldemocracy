@@ -537,7 +537,7 @@ es:
       remove: Quitar voto
       voted_html:
         one: "Has votado <span>una</span> propuesta por un valor de <span>%{amount_spent}</span>"
-        other: "Has votado un total de <span>%{count}</span> propuestas por un valor de <span>%{amount_spent}</span>"
+        other: "Has votado <span>%{count}</span> propuestas por un valor de <span>%{amount_spent}</span>"
       voted_info_html: "Puedes cambiar tus votos en cualquier momento hasta el cierre de esta fase.<br> No hace falta que gastes todo el dinero disponible."
       zero: "Todavía no has votado ninguna propuesta de inversión."
   stats:

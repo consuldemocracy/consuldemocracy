@@ -474,8 +474,8 @@ en:
         district: District
         my_ballot: My ballot
         voted_html:
-          one: "<strong>You voted one proposal with a total cost of %{amount_spent}</strong>"
-          other: "<strong>You voted %{count} proposals with a total cost of %{amount_spent}</strong>"
+          one: "<strong>You voted one proposal with a cost of %{amount_spent}</strong>"
+          other: "<strong>You voted %{count} proposals with a cost of %{amount_spent}</strong>"
         voted_info: You can change your vote at any time until the close of this phase. No need to spend all the money available.
         votes: Supports remaining
         votes_district: "You can only vote in the district %{district}"
@@ -536,8 +536,8 @@ en:
       amount_spent: Amount spent
       remove: Remove vote
       voted_html:
-        one: "You voted <span>one</span> proposal with a total cost of <span>%{amount_spent}</span>"
-        other: "You voted a total of <span>%{count}</span> proposals with a total cost of <span>%{amount_spent}</span>"
+        one: "You voted <span>one</span> proposal with a cost of <span>%{amount_spent}</span>"
+        other: "You voted <span>%{count}</span> proposals with a cost of <span>%{amount_spent}</span>"
       voted_info_html: "You can change your vote at any time until the close of this phase.<br> No need to spend all the money available."
       zero: You have not voted any investment project.
   stats:
@@ -565,8 +565,8 @@ en:
       confirm_deletion_spending_proposal: Are you sure? This action can not be undone
       ballot_link_text:
         zero: You have not voted for any proposal yet.
-        one: You voted for one proposal with a total cost of %{amount_spent}.
-        other: You voted for %{count} proposals with a total cost of %{amount_spent}.
+        one: You voted for one proposal with a cost of %{amount_spent}.
+        other: You voted for %{count} proposals with a cost of %{amount_spent}.
       ballot_verified_only: Only verified users can vote on participatory budget, %{verify_account}.
       verify_account: verify your account
       filters:
