@@ -563,6 +563,27 @@ feature 'Ballots' do
       end
     end
 
+    scenario "Display hover for ajax generated content", :js do
+      user = create(:user, :level_two)
+      california = create(:geozone)
+
+      sp1 = create(:spending_proposal, feasible: true, price: 20000000)
+      sp2 = create(:spending_proposal, feasible: true, price: 5000000)
+
+      login_as(user)
+      visit spending_proposals_path(geozone: 'all')
+
+      within("#spending_proposal_#{sp1.id}") do
+        find('.add a').trigger('click')
+        expect(page).to have_content "Remove vote"
+      end
+
+      within("#spending_proposal_#{sp2.id}") do
+        find("div.ballot").trigger(:mouseover)
+        expect_message_insufficient_funds
+      end
+    end
+
   end
 
 end
