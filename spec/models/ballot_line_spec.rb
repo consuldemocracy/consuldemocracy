@@ -48,7 +48,7 @@ describe BallotLine do
 
       it "should be valid if sufficient funds city-wide but insufficient funds district-wide" do
         geozone = create(:geozone, name: "Carabanchel")
-        sp1 = create(:spending_proposal,  :feasible, price: 3000000, geozone: geozone)
+        sp1 = create(:spending_proposal, :feasible, price: 3000000, geozone: geozone)
         sp2 = create(:spending_proposal, :feasible, price: 3000000, geozone: nil)
 
         ballot = create(:ballot, geozone: geozone, spending_proposals: [sp1])
@@ -60,8 +60,8 @@ describe BallotLine do
 
       it "should be valid if sufficient funds district-wide but insufficient funds city-wide" do
         geozone = create(:geozone, name: "Carabanchel")
-        sp1 = create(:spending_proposal,  :feasible, price: 3000000, geozone: nil)
-        sp2 = create(:spending_proposal, :feasible, price: 3000000, geozone: geozone)
+        sp1 = create(:spending_proposal, :feasible, price: 23000000, geozone: nil)
+        sp2 = create(:spending_proposal, :feasible, price: 3000000,  geozone: geozone)
 
         ballot = create(:ballot, geozone: geozone, spending_proposals: [sp1])
 
