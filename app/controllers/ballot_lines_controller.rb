@@ -1,11 +1,9 @@
 class BallotLinesController < ApplicationController
   before_action :authenticate_user!
-  before_action :load_ballot,  only: [:create, :destroy]
-
-  skip_authorization_check
+  before_action :load_ballot
+  load_and_authorize_resource :ballot_line, through: :ballot, find_by: :spending_proposal_id
 
   def create
-    @ballot_line = @ballot.ballot_lines.new(ballot_line_params)
     load_spending_proposal
     load_geozone
 
@@ -17,7 +15,6 @@ class BallotLinesController < ApplicationController
   end
 
   def destroy
-    @ballot_line = BallotLine.where(spending_proposal_id: params[:id]).first
     @ballot_line.destroy
 
     load_spending_proposal

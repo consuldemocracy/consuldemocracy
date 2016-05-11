@@ -1,10 +1,15 @@
 class BallotsController < ApplicationController
   before_action :authenticate_user!
-
-  skip_authorization_check
+  before_action :load_ballot
+  load_and_authorize_resource
 
   def show
-    @ballot = current_user.ballot
   end
+
+  private
+
+    def load_ballot
+      @ballot = current_user.ballot
+    end
 
 end
