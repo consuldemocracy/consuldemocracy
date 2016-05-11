@@ -90,7 +90,7 @@ feature 'Ballots' do
 
         within("#spending_proposal_#{sp1.id}") do
           find('.add a').trigger('click')
-          wait_for_ajax
+          expect(page).to have_content "Remove"
         end
 
         visit spending_proposals_path(geozone: carabanchel)
@@ -160,7 +160,7 @@ feature 'Ballots' do
 
         within("#spending_proposal_#{sp1.id}") do
           find('.add a').trigger('click')
-          wait_for_ajax
+          expect(page).to have_content "Remove"
         end
 
         expect(page).to have_css("#amount-spent", text: "$10,000")
@@ -177,7 +177,7 @@ feature 'Ballots' do
 
         within("#spending_proposal_#{sp2.id}") do
           find('.add a').trigger('click')
-          wait_for_ajax
+          expect(page).to have_content "Remove"
         end
 
         visit spending_proposals_path(geozone: carabanchel)
