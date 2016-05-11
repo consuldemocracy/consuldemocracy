@@ -8,8 +8,22 @@
 <div class="sidebar-divider"></div>
 <h3 class="sidebar-title"><%= t("spending_proposals.index.sidebar.my_ballot") %></h3>
 
+<% if @ballot.spending_proposals.by_geozone(@geozone).count > 0 %>
+  <p>
+    <em>
+      <%= t("spending_proposals.index.sidebar.voted_html",
+          count: @ballot.spending_proposals.by_geozone(@geozone).count,
+          amount_spent: format_price(@ballot.amount_spent(@geozone))) %>
+    </em>
+  </p>
+<% else %>
+  <p><strong><%= t("spending_proposals.index.sidebar.zero_voted") %></strong></p>
+<% end %>
+
 <ul class="ballot-sidebar">
   <% @ballot.spending_proposals.by_geozone(@geozone).each do |spending_proposal| %>
     <%= render 'ballots/spending_proposal_for_sidebar', spending_proposal: spending_proposal %>
   <% end %>
 </ul>
+
+<p class="callout primary"><%= t("spending_proposals.index.sidebar.voted_info") %></p>

@@ -473,8 +473,13 @@ en:
         back: Back to select page
         district: District
         my_ballot: My ballot
+        voted_html:
+          one: "<strong>You voted one proposal with a total cost of %{amount_spent}</strong>."
+          other: "<strong>You voted %{count} proposals with a total cost of %{amount_spent}</strong>."
+        voted_info: You can change your vote at any time until the close of this phase. No need to spend all the money available.
         votes: Supports remaining
         votes_district: "You can only vote in the district %{district}"
+        zero_voted: You have not voted any investment project.
       orders:
         random: random
         confidence_score: highest rated
