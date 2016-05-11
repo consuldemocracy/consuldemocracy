@@ -4,8 +4,7 @@
       <%= link_to ballot_line_path(id: spending_proposal.id),
                   title: t('ballots.show.remove'),
                   method: :delete,
-                  remote: true,
-                  data: supports_confirm_for_current_user(spending_proposal) do %>
+                  remote: true do %>
          <span class="icon-x delete"></span>&nbsp;
       <% end %>
     <% end %>
