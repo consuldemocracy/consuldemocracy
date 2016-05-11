@@ -474,12 +474,12 @@ en:
         district: District
         my_ballot: My ballot
         voted_html:
-          one: "<strong>You voted one proposal with a total cost of %{amount_spent}</strong>."
-          other: "<strong>You voted %{count} proposals with a total cost of %{amount_spent}</strong>."
+          one: "<strong>You voted one proposal with a total cost of %{amount_spent}</strong>"
+          other: "<strong>You voted %{count} proposals with a total cost of %{amount_spent}</strong>"
         voted_info: You can change your vote at any time until the close of this phase. No need to spend all the money available.
         votes: Supports remaining
         votes_district: "You can only vote in the district %{district}"
-        zero_voted: You have not voted any investment project.
+        zero: You have not voted any investment project.
       orders:
         random: random
         confidence_score: highest rated
@@ -528,15 +528,18 @@ en:
       different_district_active: You have active votes in another district.
   ballots:
     show:
+      city_link: Vote city proposals
       city_wide: City Wide
+      districts_link: Vote district proposals
       district_wide: District Wide
-      info_html: "You can change your vote at any time <strong>until June 30</strong>"
       title: Your ballot
       amount_spent: Amount spent
       remove: Remove vote
       voted_html:
-        one: "You voted <span>one</span> proposal with a total cost of <span>%{amount_spent}</span>."
-        other: "You voted <span>%{count}</span> proposals with a total cost of <span>%{amount_spent}</span>."
+        one: "You voted <span>one</span> proposal with a total cost of <span>%{amount_spent}</span>"
+        other: "You voted a total of <span>%{count}</span> proposals with a total cost of <span>%{amount_spent}</span>"
+      voted_info_html: "You can change your vote at any time until the close of this phase.<br> No need to spend all the money available."
+      zero: You have not voted any investment project.
   stats:
     index:
       visits: Visits

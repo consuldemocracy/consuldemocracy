@@ -1366,24 +1366,39 @@ table.age-groups {
 
 .ballot {
 
-  h2 span {
-    text-decoration: underline;
+  h2 {
+    font-weight: normal;
+
+    span {
+      color: $budget;
+      font-weight: bold;
+    }
+  }
+
+  h3 {
+    border-bottom: 3px solid $budget;
+    display: inline-block;
+
+    span {
+      font-size: $base-font-size;
+      font-weight: normal;
+    }
   }
 
   .amount-spent {
     background: $success-bg;
-    border: 1px solid $success-border;
     color: $success-color;
-    font-weight: bold;
-    text-transform: uppercase;
+    font-weight: normal;
+    padding: $line-height/2;
 
     span {
       font-size: rem-calc(24);
+      font-weight: bold;
     }
   }
 }
 
-ul.ballot-sidebar {
+ul.ballot-list {
   list-style: none;
   margin-left: 0;
 
@@ -1394,28 +1409,39 @@ ul.ballot-sidebar {
     padding: $line-height/2;
     position: relative;
 
+    a {
+      color: $text;
+    }
+
     span {
       color: #9f9f9f;
       display: block;
       font-style: italic;
     }
 
-    .remove-investment-project .icon-x {
-      color: white;
-      display: none;
-      line-height: $line-height/2;
-      position: absolute;
-      right: 6px;
-      text-decoration: none;
-      top: 6px;
+    .remove-investment-project {
+      display: block;
+      height: 0;
+
+      .icon-x {
+        color: white;
+        display: none;
+        line-height: $line-height/2;
+        position: absolute;
+        right: 6px;
+        text-decoration: none;
+        top: 6px;
+      }
     }
 
     &:hover {
       background: $budget;
       color: white;
 
-      span {
+      a, span {
         color: white;
+        outline: 0;
+        text-decoration: none;
       }
 
       .remove-investment-project .icon-x {
