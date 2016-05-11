@@ -3,7 +3,8 @@
   <span><%= format_price(spending_proposal.price) %></span>
 
   <% if feature?("spending_proposal_features.final_voting_allowed") %>
-    <%= link_to ballot_line_path(id: spending_proposal.id),
+    <%= link_to ballot_line_path(id: spending_proposal.id,
+                                 spending_proposals_ids: spending_proposal_ids),
                 title: t('ballots.show.remove'),
                 class: "remove-investment-project",
                 method: :delete,

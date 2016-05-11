@@ -87,4 +87,8 @@ module SpendingProposalsHelper
     end
   end
 
+  def spending_proposal_ids
+    @spending_proposals.present? ? @spending_proposals.map(&:id) : []
+  end
+
 end
