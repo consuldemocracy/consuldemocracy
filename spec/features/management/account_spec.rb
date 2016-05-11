@@ -26,7 +26,7 @@ feature 'Account' do
 
     expect(page).to have_content "User account deleted."
 
-    expect(user.reload.erase_reason).to eq "Deleted by manager: JJB042"
+    expect(user.reload.erase_reason).to eq "Deleted by manager: manager_user_#{Manager.last.user_id}"
   end
 
 end

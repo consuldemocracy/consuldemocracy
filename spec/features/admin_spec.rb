@@ -36,6 +36,16 @@ feature 'Admin' do
     expect(page).to have_content "You do not have permission to access this page"
   end
 
+  scenario 'Access as a manager is not authorized' do
+    create(:manager, user: user)
+    login_as(user)
+    visit admin_root_path
+
+    expect(current_path).not_to eq(admin_root_path)
+    expect(current_path).to eq(proposals_path)
+    expect(page).to have_content "You do not have permission to access this page"
+  end
+
   scenario 'Access as an administrator is authorized' do
     login_as(administrator)
     visit admin_root_path
@@ -51,6 +61,7 @@ feature 'Admin' do
     expect(page).to have_link('Administration')
     expect(page).to have_link('Moderation')
     expect(page).to have_link('Valuation')
+    expect(page).to have_link('Management')
   end
 
   scenario 'Admin dashboard' do
@@ -63,49 +74,6 @@ feature 'Admin' do
     expect(page).to have_css('#admin_menu')
     expect(page).to_not have_css('#moderation_menu')
     expect(page).to_not have_css('#valuation_menu')
-  end
-
-  context 'Tags' do
-    let(:unfeatured_tag) { create :tag, :unfeatured, name: 'Mi barrio' }
-
-    background do
-      login_as(administrator)
-    end
-
-    scenario 'adding a new tag' do
-      visit admin_tags_path
-
-      fill_in 'tag_name', with: 'Papeleras'
-
-      click_on 'Create Topic'
-
-      expect(page).to have_content 'Papeleras'
-    end
-
-    scenario 'deleting tag' do
-      unfeatured_tag
-
-      visit admin_tags_path
-
-      expect(page).to have_content 'Mi barrio'
-
-      click_link 'Destroy Topic'
-
-      expect(page).not_to have_content 'Mi barrio'
-    end
-
-    scenario 'marking tags as featured / unfeatured' do
-      expect(unfeatured_tag).not_to be_featured
-
-      visit admin_tags_path
-
-      expect(page).to have_content 'Mi barrio'
-
-      check "tag_featured_#{unfeatured_tag.id}"
-      click_button 'Update Topic'
-
-      expect(page).to have_checked_field("tag_featured_#{unfeatured_tag.id}")
-    end
   end
 
 end
