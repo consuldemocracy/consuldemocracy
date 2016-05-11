@@ -163,6 +163,8 @@ blockquote p {
   a.button {
     background: white;
     color: $brand;
+    font-size: $small-font-size;
+    margin-bottom: rem-calc(3);
     text-decoration: none;
   }
 
@@ -1419,6 +1421,28 @@ ul.ballot-sidebar {
       .remove-investment-project .icon-x {
         display: inherit;
       }
+    }
+  }
+}
+
+.select-district .active a {
+  background: #f9f9f9;
+  border-radius: rem-calc(3);
+  color: $budget;
+  font-weight: bold;
+  padding: $line-height/4;
+
+  &:after {
+    content: "\56";
+    font-family: "icons";
+    font-size: $small-font-size;
+    font-weight: normal;
+    line-height: $line-height;
+    padding-left: rem-calc(3);
+    vertical-align: baseline;
+
+    &:hover {
+      text-decoration: none;
     }
   }
 }
