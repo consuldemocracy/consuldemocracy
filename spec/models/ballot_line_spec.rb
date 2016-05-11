@@ -46,6 +46,30 @@ describe BallotLine do
         expect(ballot_line).to be_valid
       end
 
+      it "should be valid if sufficient funds city-wide but insufficient funds district-wide" do
+        geozone = create(:geozone, name: "Carabanchel")
+        sp1 = create(:spending_proposal, :feasible, price: 3000000, geozone: geozone)
+        sp2 = create(:spending_proposal, :feasible, price: 3000000, geozone: nil)
+
+        ballot = create(:ballot, geozone: geozone, spending_proposals: [sp1])
+
+        ballot_line = build(:ballot_line, ballot: ballot, spending_proposal: sp2)
+
+        expect(ballot_line).to be_valid
+      end
+
+      it "should be valid if sufficient funds district-wide but insufficient funds city-wide" do
+        geozone = create(:geozone, name: "Carabanchel")
+        sp1 = create(:spending_proposal, :feasible, price: 23000000, geozone: nil)
+        sp2 = create(:spending_proposal, :feasible, price: 3000000,  geozone: geozone)
+
+        ballot = create(:ballot, geozone: geozone, spending_proposals: [sp1])
+
+        ballot_line = build(:ballot_line, ballot: ballot, spending_proposal: sp2)
+
+        expect(ballot_line).to be_valid
+      end
+
     end
 
     describe 'Geozone' do
