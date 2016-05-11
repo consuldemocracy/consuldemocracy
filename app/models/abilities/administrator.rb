@@ -37,6 +37,7 @@ module Abilities
 
       can [:search, :create, :index, :destroy], ::Moderator
       can [:search, :create, :index, :summary], ::Valuator
+      can [:search, :create, :index, :destroy], ::Manager
 
       can :manage, Annotation
 

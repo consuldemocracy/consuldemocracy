@@ -36,6 +36,16 @@ feature 'Admin' do
     expect(page).to have_content "You do not have permission to access this page"
   end
 
+  scenario 'Access as a manager is not authorized' do
+    create(:manager, user: user)
+    login_as(user)
+    visit admin_root_path
+
+    expect(current_path).not_to eq(admin_root_path)
+    expect(current_path).to eq(proposals_path)
+    expect(page).to have_content "You do not have permission to access this page"
+  end
+
   scenario 'Access as an administrator is authorized' do
     login_as(administrator)
     visit admin_root_path
@@ -51,6 +61,7 @@ feature 'Admin' do
     expect(page).to have_link('Administration')
     expect(page).to have_link('Moderation')
     expect(page).to have_link('Valuation')
+    expect(page).to have_link('Management')
   end
 
   scenario 'Admin dashboard' do

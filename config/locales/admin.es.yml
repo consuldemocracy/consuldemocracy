@@ -47,6 +47,16 @@ es:
           with_confirmed_hide: Confirmados
           without_confirmed_hide: Pendientes
         title: Debates ocultos
+    managers:
+      index:
+        title: Gestores
+      manager:
+        add: Añadir como Gestor
+        delete: Borrar
+      search:
+        email_placeholder: Buscar usuario por email
+        search: Buscar
+        user_not_found: Usuario no encontrado
     menu:
       activity: Actividad de moderadores
       debate_topics: Temas de debate
@@ -55,6 +65,7 @@ es:
       hidden_proposals: Propuestas ocultas
       hidden_users: Usuarios bloqueados
       incomplete_verifications: Verificaciones incompletas
+      managers: Gestores
       moderators: Moderadores
       valuators: Evaluadores
       officials: Cargos públicos
@@ -66,7 +77,7 @@ es:
       index:
         title: Moderadores
       moderator:
-        add: Añadir
+        add: Añadir como Moderador
         delete: Borrar
       search:
         email_placeholder: Buscar usuario por email
