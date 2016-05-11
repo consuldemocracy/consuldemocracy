@@ -579,10 +579,10 @@ describe SpendingProposal do
         end
 
         it "rejects proposals with price higher than current available money" do
-          california = create(:geozone)
-          sp1 = create(:spending_proposal, :feasible, geozone: california, price: 23000000)
-          sp2 = create(:spending_proposal, :feasible, geozone: california, price:  1000001)
-          create(:ballot, user: user, geozone: california, spending_proposals: [sp1])
+          carabanchel = create(:geozone, name: "Carabanchel")
+          sp1 = create(:spending_proposal, :feasible, geozone: carabanchel, price: 3000000)
+          sp2 = create(:spending_proposal, :feasible, geozone: carabanchel, price: 1000000)
+          create(:ballot, user: user, geozone: carabanchel, spending_proposals: [sp1])
 
           expect(sp2.reason_for_not_being_ballotable_by(user)).to eq(:not_enough_money)
         end

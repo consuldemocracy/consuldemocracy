@@ -35,19 +35,22 @@ describe Ballot do
   end
 
   describe "#amount_available district_wide" do
-    it "returns the amount available to spend on city_wide spending proposals" do
-      geozone =  create(:geozone)
+    it "returns the amount available to spend on district_wide spending proposals" do
+      geozone = create(:geozone, name: "Centro")
       sp1 = create(:spending_proposal, :feasible, price: 20000, geozone: geozone)
       sp2 = create(:spending_proposal, :feasible, price: 30000, geozone: geozone)
 
       ballot = create(:ballot)
+
+      expect(ballot.initial_budget(geozone)).to eq 1353966
+
       ballot.spending_proposals << sp1
 
-      expect(ballot.amount_available(geozone)).to eq 23980000
+      expect(ballot.amount_available(geozone)).to eq 1333966
 
       ballot.spending_proposals << sp2
 
-      expect(ballot.amount_available(geozone)).to eq 23950000
+      expect(ballot.amount_available(geozone)).to eq 1303966
     end
   end
 

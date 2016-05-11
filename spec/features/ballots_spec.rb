@@ -80,20 +80,20 @@ feature 'Ballots' do
     context 'District' do
 
       scenario "Add a proposal", :js do
-        california = create(:geozone)
+        carabanchel = create(:geozone, name: "Carabanchel")
 
-        sp1 = create(:spending_proposal, geozone: california, feasible: true, price: 10000)
-        sp2 = create(:spending_proposal, geozone: california, feasible: true, price: 20000)
+        sp1 = create(:spending_proposal, geozone: carabanchel, feasible: true, price: 10000)
+        sp2 = create(:spending_proposal, geozone: carabanchel, feasible: true, price: 20000)
 
         click_link "Vote district proposals"
-        click_link california.name
+        click_link carabanchel.name
 
         within("#spending_proposal_#{sp1.id}") do
           find('.add a').trigger('click')
         end
 
         expect(page).to have_css("#amount-spent", text: "$10,000")
-        expect(page).to have_css("#amount-available", text: "$23,990,000")
+        expect(page).to have_css("#amount-available", text: "$3,237,830")
 
         within("#sidebar") do
           expect(page).to have_content sp1.title
@@ -105,7 +105,7 @@ feature 'Ballots' do
         end
 
         expect(page).to have_css("#amount-spent", text: "$30,000")
-        expect(page).to have_css("#amount-available", text: "$23,970,000")
+        expect(page).to have_css("#amount-available", text: "$3,217,830")
 
         within("#sidebar") do
           expect(page).to have_content sp2.title
@@ -114,16 +114,16 @@ feature 'Ballots' do
       end
 
       scenario "Remove a proposal", :js do
-        california = create(:geozone)
+        carabanchel = create(:geozone, name: "Carabanchel")
 
-        sp1 = create(:spending_proposal, geozone: california, feasible: true, price: 10000)
-        ballot = create(:ballot, user: user, geozone: california, spending_proposals: [sp1])
+        sp1 = create(:spending_proposal, geozone: carabanchel, feasible: true, price: 10000)
+        ballot = create(:ballot, user: user, geozone: carabanchel, spending_proposals: [sp1])
 
         click_link "Vote district proposals"
-        click_link california.name
+        click_link carabanchel.name
 
         expect(page).to have_css("#amount-spent", text: "$10,000")
-        expect(page).to have_css("#amount-available", text: "$23,990,000")
+        expect(page).to have_css("#amount-available", text: "$3,237,830")
 
         within("#sidebar") do
           expect(page).to have_content sp1.title
@@ -135,7 +135,7 @@ feature 'Ballots' do
         end
 
         expect(page).to have_css("#amount-spent", text: "$0")
-        expect(page).to have_css("#amount-available", text: "$24,000,000")
+        expect(page).to have_css("#amount-available", text: "$3,247,830")
 
         within("#sidebar") do
           expect(page).to_not have_content sp1.title
@@ -148,10 +148,10 @@ feature 'Ballots' do
     context "City and District" do
 
       scenario "Independent progress bar for city and district proposals", :js do
-        california = create(:geozone)
+        carabanchel = create(:geozone, name: "Carabanchel")
 
-        sp1 = create(:spending_proposal, geozone: nil,        feasible: true, price: 10000)
-        sp2 = create(:spending_proposal, geozone: california, feasible: true, price: 20000)
+        sp1 = create(:spending_proposal, geozone: nil,         feasible: true, price: 10000)
+        sp2 = create(:spending_proposal, geozone: carabanchel, feasible: true, price: 20000)
 
         click_link "Vote city proposals"
 
@@ -167,7 +167,7 @@ feature 'Ballots' do
           expect(page).to have_content "$10,000"
         end
 
-        visit spending_proposals_path(geozone: california)
+        visit spending_proposals_path(geozone: carabanchel)
 
         expect(page).to_not have_css("#amount-spent")
 
@@ -176,7 +176,7 @@ feature 'Ballots' do
         end
 
         expect(page).to have_css("#amount-spent", text: "$20,000")
-        expect(page).to have_css("#amount-available", text: "$23,980,000")
+        expect(page).to have_css("#amount-available", text: "$3,227,830")
 
         within("#sidebar") do
           expect(page).to have_content sp2.title
@@ -275,7 +275,7 @@ feature 'Ballots' do
 
     scenario 'Displaying the correct count & amount' do
       user = create(:user)
-      geozone = create(:geozone)
+      geozone = create(:geozone, name: "Carabanchel")
       ballot = create(:ballot, user: user, geozone: geozone)
 
       ballot.spending_proposals =
