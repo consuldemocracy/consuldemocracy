@@ -47,6 +47,16 @@ en:
           with_confirmed_hide: Confirmed
           without_confirmed_hide: Pending
         title: Hidden debates
+    managers:
+      index:
+        title: Managers
+      manager:
+        add: Add
+        delete: Delete
+      search:
+        email_placeholder: Search user by email
+        search: Search
+        user_not_found: User not found
     menu:
       activity: Moderator activity
       debate_topics: Debate topics
@@ -55,6 +65,7 @@ en:
       hidden_proposals: Hidden proposals
       hidden_users: Hidden users
       incomplete_verifications: Incomplete verifications
+      managers: Managers
       moderators: Moderators
       newsletter: Newsletters
       valuators: Valuators

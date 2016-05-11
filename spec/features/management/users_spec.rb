@@ -59,7 +59,7 @@ feature 'Users' do
 
     expect(page).to have_content "User account deleted."
 
-    expect(level_2_user.reload.erase_reason).to eq "Deleted by manager: JJB042"
+    expect(level_2_user.reload.erase_reason).to eq "Deleted by manager: manager_user_#{Manager.last.user_id}"
 
     visit management_document_verifications_path
     fill_in 'document_verification_document_number', with: '13579'

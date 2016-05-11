@@ -175,6 +175,10 @@ Rails.application.routes.draw do
       get :summary, on: :collection
     end
 
+    resources :managers, only: [:index, :create, :destroy] do
+      get :search, on: :collection
+    end
+
     resources :verifications, controller: :verifications, only: :index do
       get :search, on: :collection
     end

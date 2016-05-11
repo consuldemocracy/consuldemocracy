@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160505200851) do
+ActiveRecord::Schema.define(version: 20160510161858) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -236,6 +236,12 @@ ActiveRecord::Schema.define(version: 20160505200851) do
   end
 
   add_index "locks", ["user_id"], name: "index_locks_on_user_id", using: :btree
+
+  create_table "managers", force: :cascade do |t|
+    t.integer "user_id"
+  end
+
+  add_index "managers", ["user_id"], name: "index_managers_on_user_id", using: :btree
 
   create_table "moderators", force: :cascade do |t|
     t.integer "user_id"
@@ -577,6 +583,7 @@ ActiveRecord::Schema.define(version: 20160505200851) do
   add_foreign_key "flags", "users"
   add_foreign_key "identities", "users"
   add_foreign_key "locks", "users"
+  add_foreign_key "managers", "users"
   add_foreign_key "moderators", "users"
   add_foreign_key "notifications", "users"
   add_foreign_key "organizations", "users"

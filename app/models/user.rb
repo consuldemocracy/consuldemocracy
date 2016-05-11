@@ -12,6 +12,7 @@ class User < ActiveRecord::Base
   has_one :administrator
   has_one :moderator
   has_one :valuator
+  has_one :manager
   has_one :organization
   has_one :forum
   has_one :lock
@@ -107,6 +108,10 @@ class User < ActiveRecord::Base
 
   def valuator?
     valuator.present?
+  end
+
+  def manager?
+    manager.present?
   end
 
   def organization?
