@@ -1,6 +1,4 @@
 class BallotLinesController < ApplicationController
-  include SpendingProposalsSearch
-
   before_action :authenticate_user!
   before_action :load_ballot
   before_action :load_spending_proposals
