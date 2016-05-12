@@ -41,11 +41,12 @@
         </ul>
       </li>
       <li><a href="#19"><strong>Explicación detallada del proceso</strong></a></li>
+      <li><a href="#26"><strong>¿Qué es la delegación de voto?</strong></a></li>
     </ul>
   </div>
 
   <div class="text small-12 medium-9 column">
-    <h1 id="20">¿Qué puedo proponer? ¿Cómo lo hago?</h1>
+    <h2 id="20">¿Qué puedo proponer? ¿Cómo lo hago?</h2>
 
     <p>Una inversión es básicamente todo aquello que el Ayuntamiento puede construir o adquirir y que su duración prevista es superior a un año. <a href="#21">Sigue leyendo para entender la definición en detalle</a>.</p>
 
@@ -144,7 +145,7 @@
     <p>Las inversiones tienen que reunir las siguientes características: a) Que <strong>no sean bienes fungibles</strong>, es decir, que no se consuman con el uso; b) Que tengan una <strong>duración superior</strong> al ejercicio presupuestario, <strong>12 meses</strong>; c) Que sean <strong>susceptibles de inclusión en inventario</strong>, siendo éste una relación detallada, ordenada y valorada de los elementos que componen el patrimonio.</p>
 
     <p>Si tienes alguna duda puedes consultar las <a href="#1">Preguntas Frecuentes</a>.</p>
-    <h1 id="1">¿Qué son los Presupuestos Participativos?</h1>
+    <h2 id="1">¿Qué son los Presupuestos Participativos?</h2>
 
     <p>Los Presupuestos Participativos son unos procesos democráticos mediante los que los vecinos y vecinas pueden decidir de manera directa en qué emplear una parte del presupuesto municipal. Este año se votarán propuestas de inversión para llevar a cabo en 2017.</p>
 
@@ -182,7 +183,7 @@
     <p>La sección general de propuestas no tiene todos los límites que los presupuestos participativos imponen. En la sección de Propuestas Ciudadanas, se puede proponer cualquier cosa que el Ayuntamiento pueda hacer, mientras que en los Presupuestos Participativos se trata de propuestas sobre cómo gastar una parte del presupuesto de inversiones. Además las propuestas generales están siempre abiertas a recibir nuevas propuestas, que se llevarán a votación en el momento que alcancen el 2% de apoyos, mientras que los presupuestos participativos ocurren en un periodo concreto del año, previo a la aprobación de los presupuestos.</p>
 
     <h3 id="10">¿Sobre cuánto dinero vamos a decidir y cómo se reparte en la ciudad? </h3>
-    <p>El Presupuesto Participativo de este año asciende a <strong>60 millones de euros</strong>. Esta cantidad se dividirá en dos partes: <strong>36 millones de euros (60%)</strong> que se destinarán a propuestas localizadas en los distritos, y <strong>24 millones de euros (40%)</strong> destinados a propuestas para todo Madrid. Puedes ver la <%= link_to "distribución entre los distritos", spending_proposals_path(anchor: "spending-proposals-budget") %>.</p>
+    <p>El Presupuesto Participativo de este año asciende a <strong>60 millones de euros</strong>. Esta cantidad se dividirá en dos partes: <strong>36 millones de euros (60%)</strong> que se destinarán a propuestas localizadas en los distritos, y <strong>24 millones de euros (40%)</strong> destinados a propuestas para todo Madrid. Puedes ver la <%= link_to "distribución entre los distritos", '/participatory_budget/in_two_minutes#spending-proposals-budget', data: { no_turbolink: true } %>.</p>
 
     <h3 id="11">¿Puedo votar propuestas de cualquier distrito?</h3>
     <p>Cualquier persona puede votar respecto a las propuestas a nivel ciudad, y en un distrito de su elección (¡pero sólo en uno!). Esta última libertad la hemos activado para que cada uno decida en qué distrito quiere implicarse más; puede ser el distrito donde esa persona está empadronada, pero podría ser también donde trabaja, donde tiene a su pareja, etc.</p>
@@ -215,7 +216,7 @@
     <h3 id="18">¿Existen, además de la web, mecanismos presenciales para participar? ¿Se ha planteado llegar a los ciudadanos y ciudadanas con dificultades de acceso a Internet o en situación de exclusión?</h3>
     <p>Las Juntas de Distrito pondrán en marcha espacios presenciales de participación para desarrollar todo el proceso. En estos espacios se promoverá el diagnóstico, debate y diseño colectivo de propuestas, así como su votación en las distintas fases, y su posterior seguimiento y evaluación. Además, todas las acciones relacionadas con el proceso pueden realizarse presencialmente en cualquiera de las 26 Oficinas de Atención a la Ciudadanía repartidas por todos los distritos de Madrid. También se ha creado en el Área de Gobierno de Participación Ciudadana, Transparencia y Gobierno Abierto el Servicio de Inclusión, Neutralidad y Privacidad que ha puesto en marcha una mesa de inclusión con personal del Ayuntamiento y asociaciones que trabajan con colectivos en situación de exclusión, para diseñar mecanismos especiales para que puedan participar dichos colectivos.</p>
 
-    <h1 id="19">Explicación detallada del proceso</h1>
+    <h2 id="19">Explicación detallada del proceso</h2>
     <p>El Ayuntamiento de Madrid reservará 60 millones de euros del proyecto de presupuestos que se apruebe en el segundo semestre de 2016 (correspondiente al ejercicio de 2017) para que la ciudadanía decida su destino.</p>
 
     <p>La cantidad se dividirá en dos partes: <strong>36 millones de euros (60%)</strong> que se destinarán a propuestas localizadas en los distritos, y <strong>24 millones de euros (40%)</strong> destinados a propuestas para todo Madrid. Puedes ver la <%= link_to "distribución entre los distritos", spending_proposals_path(anchor: "spending-proposals-budget") %>.</p>
@@ -236,6 +237,7 @@
       </li>
       <li>
         <p><strong>Votación final (15 mayo – 30 junio)</strong>. Todas las personas empadronadas en Madrid mayores de 16 años podrán votar en la fase final. Cada persona podrá participar en la votación de las propuestas para toda la ciudad y en la votación de un distrito concreto a su elección. Ambos ámbitos de votación funcionarán de la misma manera: se publicará el presupuesto disponible en cada votación y todas las propuestas con su coste estimado; y se podrá seleccionar propuestas hasta agotar el presupuesto (aunque no habrá necesidad de que se agote completamente), otorgándole un voto a cada una.</p>
+        <p>Según votemos propuestas la barra de presupuesto disponible en la parte superior se irá reduciendo. Podremos votar todas las propuestas que queramos mientras tengamos presupuesto disponible (aunque no hará falta consumirlo todo, podemos votar incluso una única propuesta). Las propuestas votadas se visualizarán en la barra lateral. Ahí podremos cancelar nuestros votos en cualquier momento hasta el final de la fase de votación. Si cancelamos todos los votos del distrito elegido podremos votar en otro distrito. No hace falta confirmar la votación en ningún momento.</p>
         <p>El resultado final del proceso se obtendrá, una vez finalizada la votación, ordenando todas las propuestas en cada lista (para toda la ciudad y para de cada distrito) por votos, y seleccionando las propuestas de la más votada hasta la última, teniendo en cuenta que cada propuesta incluida no supere el presupuesto restante destinado a dicha lista. Si una propuesta supera este límite, se ignorará y se pasará a la siguiente.</p>
         <p>La selección final se integrará en el proyecto inicial del Presupuesto General del Ayuntamiento de Madrid que apruebe la Junta de Gobierno. Aprobados los presupuestos por el Pleno, se publicará cada uno de los proyectos seleccionados con descripción de las actuaciones y de las fases en que se encuentren, de forma que se permita entender de manera sencilla la evolución de cada proyecto. Los espacios presenciales de participación en los distritos podrán realizar el seguimiento y evaluación de la ejecución.</p>
         <p>El Área de Gobierno de Participación Ciudadana, Transparencia y Gobierno Abierto coordinará todo el proceso, siendo la garante de su neutralidad y efectividad. Finalizado el mismo, a partir de las evaluaciones de sus resultados se promoverán las modificaciones en el proceso del año siguiente necesarias, y se aumentará la cantidad presupuestaria sometida a este proceso en función del éxito del mismo.</p>
@@ -245,5 +247,9 @@
     <p>Puedes consultar el <a href="http://www.madrid.es/portales/munimadrid/es/Inicio/El-Ayuntamiento/Boletin-Oficial-del-Ayuntamiento/Ultimo-Boletin/373-2016-02-22-directrices-presupuestos-participativos?vgnextfmt=default&vgnextoid=de7bcba7ac803510VgnVCM1000000b205a0aRCRD&vgnextchannel=8d4eb351fd18d010VgnVCM1000009b25680aRCRD" target="_blank">acuerdo del por el que se aprueban las directrices para el desarrollo de los presupuestos participativos a través de la web de Gobierno Abierto</a>, el <a href="http://www.madrid.es/portales/munimadrid/es/Inicio/El-Ayuntamiento/Boletin-Oficial-del-Ayuntamiento/Ultimo-Boletin/372-2016-02-22-cuantia-presupuestos-participativos?vgnextfmt=default&vgnextoid=4b651478dc803510VgnVCM2000000c205a0aRCRD&vgnextchannel=8d4eb351fd18d010VgnVCM1000009b25680aRCRD" target="_blank">acuerdo por el que se determina la cuantía que se destinará en el proyecto del Presupuesto General del Ayuntamiento de Madrid para 2017 a los presupuestos participativos y se establece su fórmula de distribución</a> y el <a href="http://www.madrid.es/portales/munimadrid/es/Inicio/El-Ayuntamiento/Boletin-Oficial-del-Ayuntamiento/Ultimo-Boletin/369-2016-02-22-DA-Audiencia-publica-sobre-Presupuestos-participativos-?vgnextfmt=default&vgnextoid=81c9844b99803510VgnVCM1000000b205a0aRCRD&vgnextchannel=8d4eb351fd18d010VgnVCM1000009b25680aRCRD" target="_blank">decreto de la Alcaldesa por el que se inicia la audiencia pública sobre presupuestos participativos</a></p>
 
     <p>Si tienes alguna duda puedes consultar las <a href="#1">Preguntas Frecuentes</a>.</p>
+
+    <h2 id="26">¿Qué es la delegación de voto?</h2>
+    <p>Si activas la <%= link_to "delegación", "/delegacion" %> en cualquiera de los <%= link_to "espacios presenciales de debate", page_path('participatory_budget_meetings') %> señalados, tus apoyos y votos se realizarán automáticamente sobre las propuestas que haya decidido el espacio correspondiente. Mientras dure la fase de apoyos o de votación puedes activar o desactivar la delegación de votos cuando quieras.</p>
+
   </div>
 </div>
