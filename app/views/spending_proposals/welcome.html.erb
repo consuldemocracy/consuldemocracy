@@ -29,7 +29,9 @@
 
   <div class="small-12 medium-6 column">
     <p>Hemos reservado <strong>60 millones de euros</strong> de inversiones del próximo presupuesto de Madrid para que sea la gente la que decida qué proyectos llevar a cabo. La gente ha hecho sus propuestas, y las ha preseleccionado. <strong>Hasta el 30 de junio podrás votarlas</strong>. El Gobierno asumirá la decisión como vinculante y la incluirá en los presupuestos municipales, que se ejecutarán a partir del 1 de enero de 2017. Propones, decides, se hace.</p>
-    <%= link_to t("spending_proposals.welcome.in_two_minutes"), '/participatory_budget/in_two_minutes' %>
+    <%= link_to t("spending_proposals.welcome.in_two_minutes"), '/participatory_budget/in_two_minutes',
+                class: "button" %>
+    <p><%= link_to t("spending_proposals.welcome.unfeasible_link"), spending_proposals_path(unfeasible: '1') %></p>
   </div>
 </div>
 
