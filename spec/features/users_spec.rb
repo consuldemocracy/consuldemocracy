@@ -279,7 +279,7 @@ feature 'Users' do
         within(".activity") do
           expect(page).to_not have_content('Participatory budget')
         end
-        expect(page).to_not have_content('You voted for one proposal')
+        expect(page).to_not have_content('You voted one proposal')
       end
 
       scenario 'is not shown if author is not the current_user' do
@@ -290,7 +290,7 @@ feature 'Users' do
         end
 
         visit user_path(@author, filter: 'ballot')
-        expect(page).to_not have_content('You voted for one proposal')
+        expect(page).to_not have_content('You voted one proposal')
       end
 
       scenario 'is shown if logged in user is author' do
@@ -300,7 +300,7 @@ feature 'Users' do
         within(".activity") do
           click_link 'Participatory budget'
         end
-        expect(page).to have_content('You voted for one proposal with a cost of $1,234,567')
+        expect(page).to have_content('You voted one proposal')
       end
 
       scenario 'link is not shown if participatory budget phase 3 is not active' do
