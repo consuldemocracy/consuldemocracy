@@ -534,10 +534,12 @@ en:
       district_wide: District Wide
       title: Your ballot
       amount_spent: Amount spent
+      remaining_city_html: "You are <span>%{amount_city}</span> to invest citywide."
+      remaining_district_html: "You are <span>%{amount_district}</span> to invest on <span>%{geozone}</span>."
       remove: Remove vote
       voted_html:
-        one: "You voted <span>one</span> proposal with a cost of <span>%{amount_spent}</span>"
-        other: "You voted <span>%{count}</span> proposals with a cost of <span>%{amount_spent}</span>"
+        one: "You voted <span>one</span> proposal."
+        other: "You voted <span>%{count}</span> proposals."
       voted_info_html: "You can change your vote at any time until the close of this phase.<br> No need to spend all the money available."
       zero: You have not voted any investment project.
   stats:
@@ -565,8 +567,8 @@ en:
       confirm_deletion_spending_proposal: Are you sure? This action can not be undone
       ballot_link_text:
         zero: You have not voted for any proposal yet.
-        one: You voted for one proposal with a cost of %{amount_spent}.
-        other: You voted for %{count} proposals with a cost of %{amount_spent}.
+        one: You voted one proposal with a cost of %{amount_spent}.
+        other: You voted %{count} proposals with a cost of %{amount_spent}.
       ballot_verified_only: Only verified users can vote on participatory budget, %{verify_account}.
       verify_account: verify your account
       filters:
