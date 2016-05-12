@@ -1366,7 +1366,7 @@ table.age-groups {
 
 .ballot {
 
-  h2 {
+  h2, h3 {
     font-weight: normal;
 
     span {
@@ -1375,7 +1375,7 @@ table.age-groups {
     }
   }
 
-  h3 {
+  h3.subtitle {
     border-bottom: 3px solid $budget;
     display: inline-block;
 
@@ -1424,8 +1424,7 @@ ul.ballot-list {
       height: 0;
 
       .icon-x {
-        color: white;
-        display: none;
+        color: #9f9f9f;
         line-height: $line-height/2;
         position: absolute;
         right: 6px;
@@ -1445,7 +1444,7 @@ ul.ballot-list {
       }
 
       .remove-investment-project .icon-x {
-        display: inherit;
+        color: white;
       }
     }
   }

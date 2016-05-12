@@ -534,10 +534,12 @@ es:
       district_wide: Distrito
       title: Mis votos
       amount_spent: Coste total
+      remaining_city_html: "Te quedan <span>%{amount_city}</span> para invertir en toda la ciudad."
+      remaining_district_html: "Te quedan <span>%{amount_district}</span> para invertir en <span>%{geozone}</span>."
       remove: Quitar voto
       voted_html:
-        one: "Has votado <span>una</span> propuesta por un valor de <span>%{amount_spent}</span>"
-        other: "Has votado <span>%{count}</span> propuestas por un valor de <span>%{amount_spent}</span>"
+        one: "Has votado <span>una</span> propuesta."
+        other: "Has votado <span>%{count}</span> propuestas."
       voted_info_html: "Puedes cambiar tus votos en cualquier momento hasta el cierre de esta fase.<br> No hace falta que gastes todo el dinero disponible."
       zero: "Todavía no has votado ninguna propuesta de inversión."
   stats:

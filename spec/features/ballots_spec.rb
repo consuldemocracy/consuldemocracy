@@ -310,7 +310,7 @@ feature 'Ballots' do
       login_as(user)
       visit ballot_path
 
-      expect(page).to have_content("You voted 5 proposals with a cost of $35")
+      expect(page).to have_content("You voted 5 proposals")
       within("#city_wide") { expect(page).to have_content "$20" }
       within("#district_wide") { expect(page).to have_content "$15" }
     end
@@ -326,14 +326,14 @@ feature 'Ballots' do
     login_as(user)
     visit ballot_path
 
-    expect(page).to have_content("You voted one proposal with a cost of $10")
+    expect(page).to have_content("You voted one proposal")
 
     within("#spending_proposal_#{sp.id}") do
       find(".remove-investment-project").trigger('click')
     end
 
     expect(current_path).to eq(ballot_path)
-    expect(page).to have_content("You voted 0 proposals with a cost of $0")
+    expect(page).to have_content("You voted 0 proposals")
   end
 
   scenario 'Removing spending proposals from ballot (sidebar)', :js do
