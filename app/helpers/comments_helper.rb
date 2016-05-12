@@ -1,5 +1,7 @@
 module CommentsHelper
 
+  ROOT_COLLAPSE_COMMENTS = 20
+
   def comment_link_text(parent_id)
     parent_id.present? ? t("comments_helper.reply_link") : t("comments_helper.comment_link")
   end
@@ -38,5 +40,21 @@ module CommentsHelper
     else
       "" # Default not author class
     end
+  end
+
+  def css_for_collapse_comments(comments_count, ancestry, parent)
+    if comments_count > collapse_comments_arrow && ancestry == nil && @parent_id != parent.id
+        "display: none"
+    else
+        "display: block"
+    end
+  end
+  
+  def collapse_comments_arrow
+      ROOT_COLLAPSE_COMMENTS
+  end
+
+  def parent_id(comment)
+    @parent_id = comment.parent_id
   end
 end

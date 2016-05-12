@@ -74,7 +74,12 @@
 
             <% if comment.children.size > 0 %>
               <%= link_to "", class: "js-toggle-children relative", data:  {'id': "#{dom_id(comment)}"} do %>
-                <span id="<%= dom_id(comment) %>_children_arrow" class="icon-arrow-down"></span> <%= t("comments.comment.responses", count: comment.children.size) %>
+                <% if comment.commentable.comments_count > collapse_comments_arrow && comment.ancestry == nil %>
+                  <span id="<%= dom_id(comment) %>_children_arrow" class="icon-arrow-right"></span>
+                <% else %>
+                  <span id="<%= dom_id(comment) %>_children_arrow" class="icon-arrow-down"></span>
+                <% end %>
+                <%= t("comments.comment.responses", count: comment.children.size) %>
               <% end %>
             <% else %>
               <%= t("comments.comment.responses", count: 0) %>
@@ -92,8 +97,7 @@
           </div>
         </div>
       <% end %>
-
-      <div id="<%= dom_id(comment) %>_children" class="comment-children">
+      <div id="<%= dom_id(comment) %>_children" class="comment-children" style="<%= css_for_collapse_comments(comment.commentable.comments_count, comment.ancestry, comment) %>">
         <% child_comments_of(comment).each do |child| %>
           <%= render 'comments/comment', comment: child %>
         <% end %>

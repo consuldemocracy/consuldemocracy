@@ -48,8 +48,10 @@ App.Comments =
         ).data 'initialized', 'yes'
 
     $('body .js-toggle-children').each ->
-      $(this).on('click', ->
-        children_container_id = "#{$(this).data().id}_children"
+      $this = $(this)
+      $this.unbind('click')
+      $this.on('click', ->
+        children_container_id = "#{$this.data().id}_children"
         $("##{children_container_id}").toggle('slow')
         App.Comments.toggle_arrow(children_container_id)
         false
