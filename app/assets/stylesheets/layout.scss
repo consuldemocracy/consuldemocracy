@@ -488,6 +488,10 @@ header {
   }
 }
 
+.search-form-header input[type=text] {
+  max-width: none;
+}
+
 // 03. Footer
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
