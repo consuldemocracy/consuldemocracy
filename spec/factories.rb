@@ -201,6 +201,10 @@ FactoryGirl.define do
       feasible true
     end
 
+    trait :unfeasible do
+      feasible false
+    end
+
     trait :finished do
       valuation_finished true
     end
