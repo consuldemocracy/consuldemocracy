@@ -483,6 +483,7 @@ en:
       orders:
         random: random
         confidence_score: highest rated
+        price: by price
     welcome:
       city_link: Vote city proposals
       delegation: Delegation of votes
