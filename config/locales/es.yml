@@ -483,6 +483,7 @@ es:
       orders:
         random: Aleatorias
         confidence_score: Mejor valoradas
+        price: Por coste
     welcome:
       city_link: Votar para toda la ciudad
       delegation: Delegar mis votos

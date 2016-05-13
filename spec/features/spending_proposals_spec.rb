@@ -314,6 +314,25 @@ feature 'Spending proposals' do
       end
     end
 
+    scenario 'Order by cost (only in phase3)' do
+      create(:spending_proposal, title: 'Build a nice house',  price:  1000, feasible: true).update_column(:confidence_score, 10)
+      create(:spending_proposal, title: 'Build an ugly house', price:  1000, feasible: true).update_column(:confidence_score, 5)
+      create(:spending_proposal, title: 'Build a skyscraper',  price: 20000, feasible: true)
+
+      visit spending_proposals_path
+
+      click_link 'by price'
+      expect(page).to have_selector('a.active', text: 'by price')
+
+      within '#investment-projects' do
+        expect('Build a skyscraper').to appear_before('Build a nice house')
+        expect('Build a nice house').to appear_before('Build an ugly house')
+      end
+
+      expect(current_url).to include('order=price')
+      expect(current_url).to include('page=1')
+    end
+
     scenario "Show" do
       user = create(:user, :level_two)
       sp1 = create(:spending_proposal, feasible: true, price: 10000)

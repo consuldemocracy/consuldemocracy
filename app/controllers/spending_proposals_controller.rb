@@ -8,13 +8,13 @@ class SpendingProposalsController < ApplicationController
   before_action :set_random_seed, only: :index
   before_action :load_ballot,  only: [:index, :show]
   before_action :load_geozone, only: [:index, :show]
+  before_action :has_index_orders, only: :index
+
+  has_orders %w{most_voted newest oldest}, only: :show
 
   load_and_authorize_resource
 
   feature_flag :spending_proposals
-
-  has_orders %w{random confidence_score}, only: :index
-  has_orders %w{most_voted newest oldest}, only: :show
 
   invisible_captcha only: [:create, :update], honeypot: :subtitle
 
@@ -116,5 +116,14 @@ class SpendingProposalsController < ApplicationController
     def geozone?
       params[:geozone].present? && params[:geozone] != 'all'
     end
+
+    def has_index_orders
+      if Setting["feature.spending_proposal_features.phase3"].present?
+        @valid_orders = %w{random price}
+      else
+        @valid_orders =  %w{random confidence_score}
+      end
+      @current_order = @valid_orders.include?(params[:order]) ? params[:order] : @valid_orders.first
+  end
 
 end
