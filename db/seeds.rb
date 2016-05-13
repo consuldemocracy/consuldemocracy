@@ -64,4 +64,4 @@ Setting['feature.public_stats'] = true
 
 # Spending proposals feature flags
 Setting['feature.spending_proposal_features.voting_allowed'] = true
-Setting['feature.spending_proposal_features.valuation_allowed'] = false
+Setting['feature.spending_proposal_features.valuation_allowed'] = nil
