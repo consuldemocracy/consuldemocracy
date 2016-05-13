@@ -294,8 +294,8 @@ feature 'Spending proposals' do
 
     scenario "Index" do
       user = create(:user, :level_two)
-      sp1 = create(:spending_proposal, feasible: true, price: 10000)
-      sp2 = create(:spending_proposal, feasible: true, price: 20000)
+      sp1 = create(:spending_proposal, :feasible, :finished, price: 10000)
+      sp2 = create(:spending_proposal, :feasible, :finished, price: 20000)
 
       login_as(user)
       visit root_path
@@ -315,9 +315,9 @@ feature 'Spending proposals' do
     end
 
     scenario 'Order by cost (only in phase3)' do
-      create(:spending_proposal, title: 'Build a nice house',  price:  1000, feasible: true).update_column(:confidence_score, 10)
-      create(:spending_proposal, title: 'Build an ugly house', price:  1000, feasible: true).update_column(:confidence_score, 5)
-      create(:spending_proposal, title: 'Build a skyscraper',  price: 20000, feasible: true)
+      create(:spending_proposal, :feasible, :finished, title: 'Build a nice house',  price:  1000).update_column(:confidence_score, 10)
+      create(:spending_proposal, :feasible, :finished, title: 'Build an ugly house', price:  1000).update_column(:confidence_score, 5)
+      create(:spending_proposal, :feasible, :finished, title: 'Build a skyscraper',  price: 20000)
 
       visit spending_proposals_path
 
@@ -335,7 +335,7 @@ feature 'Spending proposals' do
 
     scenario "Show" do
       user = create(:user, :level_two)
-      sp1 = create(:spending_proposal, feasible: true, price: 10000)
+      sp1 = create(:spending_proposal, :feasible, :finished, price: 10000)
 
       login_as(user)
       visit root_path
@@ -352,12 +352,12 @@ feature 'Spending proposals' do
       user = create(:user, :level_two)
       carabanchel = create(:geozone, name: "Carabanchel")
       new_york = create(:geozone)
-      sp1 = create(:spending_proposal, feasible: true, price:      1, geozone: nil)
-      sp2 = create(:spending_proposal, feasible: true, price:     10, geozone: nil)
-      sp3 = create(:spending_proposal, feasible: true, price:    100, geozone: nil)
-      sp4 = create(:spending_proposal, feasible: true, price:   1000, geozone: carabanchel)
-      sp5 = create(:spending_proposal, feasible: true, price:  10000, geozone: carabanchel)
-      sp6 = create(:spending_proposal, feasible: true, price: 100000, geozone: new_york)
+      sp1 = create(:spending_proposal, :feasible, :finished, price:      1, geozone: nil)
+      sp2 = create(:spending_proposal, :feasible, :finished, price:     10, geozone: nil)
+      sp3 = create(:spending_proposal, :feasible, :finished, price:    100, geozone: nil)
+      sp4 = create(:spending_proposal, :feasible, :finished, price:   1000, geozone: carabanchel)
+      sp5 = create(:spending_proposal, :feasible, :finished, price:  10000, geozone: carabanchel)
+      sp6 = create(:spending_proposal, :feasible, :finished, price: 100000, geozone: new_york)
 
       login_as(user)
       visit root_path
