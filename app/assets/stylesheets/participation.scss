@@ -835,10 +835,21 @@
     border-left: 1px solid $border;
     margin: 0 rem-calc(-12);
     min-height: rem-calc(180);
-    padding-top: $line-height*1.5;
+    padding-top: 0;
+
+    @media (min-width: $small-breakpoint) {
+      padding-top: $line-height*1.5;
+    }
 
     &:after {
       content: none;
+    }
+
+    .investment-project-amount {
+      color: $budget;
+      font-size: rem-calc(20);
+      font-weight: bold;
+      margin-bottom: 0;
     }
 
     .button-support {
@@ -864,6 +875,14 @@
 
     .supported {
       color: $budget;
+      margin-top: 0;
+      width: 100%;
+    }
+
+    .remove .icon-check-circle {
+      display: block;
+      font-size: rem-calc(70);
+      line-height: rem-calc(70);
     }
 
     .no-supports-allowed {

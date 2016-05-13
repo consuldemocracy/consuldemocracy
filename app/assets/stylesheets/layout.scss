@@ -488,6 +488,10 @@ header {
   }
 }
 
+.search-form-header input[type=text] {
+  max-width: none;
+}
+
 // 03. Footer
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -1756,7 +1760,7 @@ table {
       }
     }
 
-    &.activity-investment-projects td:first-child:before {
+    &.activity-investment-projects td:first-child:before, &.activity-ballot td:first-child:before {
       content: "\53";
       top: 10px;
     }
