@@ -173,7 +173,8 @@ feature 'Ballots' do
 
         visit spending_proposals_path(geozone: carabanchel)
 
-        expect(page).to_not have_css("#amount-spent")
+        expect(page).to have_css("#amount-spent", text: "$0")
+        expect(page).to have_css("#amount-spent", text: "$3,247,830")
 
         within("#spending_proposal_#{sp2.id}") do
           find('.add a').trigger('click')
