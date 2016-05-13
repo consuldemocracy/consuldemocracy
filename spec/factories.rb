@@ -196,6 +196,18 @@ FactoryGirl.define do
     trait :with_confidence_score do
       before(:save) { |sp| sp.calculate_confidence_score }
     end
+
+    trait :feasible do
+      feasible true
+    end
+
+    trait :unfeasible do
+      feasible false
+    end
+
+    trait :finished do
+      valuation_finished true
+    end
   end
 
   factory :vote do

@@ -27,4 +27,21 @@ namespace :spending_proposals do
       puts "."
     end
   end
+
+  desc "Sets spending proposals to undecided if below minimum number of votes"
+  task set_undecided: :environment do
+    SpendingProposal.find_each do |spending_proposal|
+      proposal_calculator = ProposalCalculator.new(spending_proposal)
+
+      if proposal_calculator.mark_as_undecided?
+        spending_proposal.update(feasible: nil)
+
+        print "Id: #{spending_proposal.id}, "
+        print "District: #{spending_proposal.geozone_id || 'ciudad'} "
+        puts "REJECTED"
+      else
+        print "."
+      end
+    end
+  end
 end
