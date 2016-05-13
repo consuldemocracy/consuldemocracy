@@ -6,6 +6,10 @@ describe "Abilities::Administrator" do
   let(:user) { administrator.user }
   let(:administrator) { create(:administrator) }
 
+  before(:each) do
+    Setting['feature.spending_proposal_features.valuation_allowed'] = true
+  end
+
   let(:other_user) { create(:user) }
   let(:hidden_user) { create(:user, :hidden) }
 
