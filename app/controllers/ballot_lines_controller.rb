@@ -10,6 +10,7 @@ class BallotLinesController < ApplicationController
 
     if @ballot_line.save
       @ballot.set_geozone(@geozone)
+      @current_user.update(representative_id: nil)
     else
       render :new
     end

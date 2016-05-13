@@ -610,6 +610,26 @@ feature 'Ballots' do
       end
     end
 
+    scenario "Voting proposals when delegating", :js do
+      forum = create(:forum, name: 'hydra')
+      user = create(:user, :level_two, representative_id: forum.id)
+      sp = create(:spending_proposal, :feasible, :finished)
+
+      login_as(user)
+      visit forums_path
+      expect(page).to have_content("You are delegating your votes on hydra")
+
+      visit spending_proposals_path(geozone: 'all')
+
+      within("#spending_proposal_#{sp.id}") do
+        find('.add a').trigger('click')
+        expect(page).to have_content "Remove vote"
+      end
+
+      visit forums_path
+      expect(page).to_not have_content("You are delegating your votes on hydra")
+    end
+
   end
 
 end

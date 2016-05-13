@@ -3,6 +3,7 @@ es:
   account:
     show:
       change_credentials_link: Cambiar mis datos de acceso
+      delegation: Delegación de voto en presupuestos participativos
       email_on_comment_label: Recibir un email cuando alguien comenta en mis propuestas o debates
       email_on_comment_reply_label: Recibir un email cuando alguien contesta a mis comentarios
       erase_account_link: Darme de baja
@@ -176,10 +177,11 @@ es:
       not_delegating: No estás delegando tus votos
       title: Delega tus votos
     show:
-      delegate_button: "La delegación se activará en la próxima fase de votación."
+      delegate_button: "Delegar en %{forum}"
       sign_in_to_delegate: "Debes estar idenficado para delegar"
       verify_accont_to_delegate: "Debes estar verificado para delegar"
       no_votes: Este espacio de debate distrital aún no ha apoyado ninguna propuesta
+      confirm: Ya has votado algunas propuestas de inversión. Si delegas tu voto en %{forum}, tus votos se eliminarán y pasarás a votar lo que vote este espacio distrital.
   geozones:
     none: Toda la ciudad
   layouts:
