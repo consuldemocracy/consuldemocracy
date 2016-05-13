@@ -9,7 +9,7 @@
 
     <div class="row">
       <% @geozones.each_slice(7) do |slice| %>
-        <div class="small-12 medium-4 column">
+        <div class="small-6 medium-4 column end">
           <% slice.each do |geozone| %>
             <span id="<%= dom_id(geozone) %>" class="<%= css_for_ballot_geozone(geozone) %>">
               <%= link_to geozone.name, spending_proposals_path(geozone: geozone.id),

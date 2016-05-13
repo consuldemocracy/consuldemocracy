@@ -208,7 +208,7 @@ blockquote p {
   border-bottom: 1px solid $budget;
 
   &.investment-project-geozone {
-    min-height: $line-height*9;
+    min-height: $line-height*10;
   }
 
   h1 {
@@ -1360,7 +1360,7 @@ table.age-groups {
 
   @media (min-width: $medium-breakpoint) {
     font-size: rem-calc(90);
-    line-height: rem-calc(150);
+    line-height: rem-calc(240);
   }
 }
 
@@ -1377,7 +1377,6 @@ table.age-groups {
 
   h3.subtitle {
     border-bottom: 3px solid $budget;
-    display: inline-block;
 
     span {
       font-size: $base-font-size;
@@ -1425,11 +1424,16 @@ ul.ballot-list {
 
       .icon-x {
         color: #9f9f9f;
+        font-size: rem-calc(24);
         line-height: $line-height/2;
         position: absolute;
         right: 6px;
         text-decoration: none;
         top: 6px;
+
+        @media (min-width: $small-breakpoint) {
+          font-size: $base-font-size;
+        }
       }
     }
 

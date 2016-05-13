@@ -835,7 +835,11 @@
     border-left: 1px solid $border;
     margin: 0 rem-calc(-12);
     min-height: rem-calc(180);
-    padding-top: $line-height*1.5;
+    padding-top: 0;
+
+    @media (min-width: $small-breakpoint) {
+      padding-top: $line-height*1.5;
+    }
 
     &:after {
       content: none;
@@ -872,6 +876,7 @@
     .supported {
       color: $budget;
       margin-top: 0;
+      width: 100%;
     }
 
     .remove .icon-check-circle {
