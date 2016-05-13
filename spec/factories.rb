@@ -200,6 +200,10 @@ FactoryGirl.define do
     trait :feasible do
       feasible true
     end
+
+    trait :finished do
+      valuation_finished true
+    end
   end
 
   factory :vote do

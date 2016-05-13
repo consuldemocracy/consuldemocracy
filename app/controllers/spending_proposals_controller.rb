@@ -83,7 +83,7 @@ class SpendingProposalsController < ApplicationController
     end
 
     def apply_filters_and_search(target)
-      default_target = Setting["feature.spending_proposal_features.phase3"].present? ? target.feasible : target.not_unfeasible
+      default_target = Setting["feature.spending_proposal_features.phase3"].present? ? target.feasible.valuation_finished : target.not_unfeasible
       target = params[:unfeasible].present? ? target.unfeasible : default_target
       params[:geozone] = 'all' if params[:geozone].blank?
       target = target.by_geozone(params[:geozone])
@@ -121,7 +121,7 @@ class SpendingProposalsController < ApplicationController
       if Setting["feature.spending_proposal_features.phase3"].present?
         @valid_orders = %w{random price}
       else
-        @valid_orders =  %w{random confidence_score}
+        @valid_orders = %w{random confidence_score}
       end
       @current_order = @valid_orders.include?(params[:order]) ? params[:order] : @valid_orders.first
   end

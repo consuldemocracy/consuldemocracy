@@ -18,8 +18,8 @@ feature 'Ballots' do
     context "City" do
 
       scenario "Add a proposal", :js do
-        sp1 = create(:spending_proposal, feasible: true, price: 10000)
-        sp2 = create(:spending_proposal, feasible: true, price: 20000)
+        sp1 = create(:spending_proposal, :feasible, :finished, price: 10000)
+        sp2 = create(:spending_proposal, :feasible, :finished, price: 20000)
 
         click_link "Vote city proposals"
 
@@ -49,7 +49,7 @@ feature 'Ballots' do
       end
 
       scenario "Remove a proposal", :js do
-        sp1 = create(:spending_proposal, feasible: true, price: 10000)
+        sp1 = create(:spending_proposal, :feasible, :finished, price: 10000)
         ballot = create(:ballot, user: user, spending_proposals: [sp1])
 
         click_link "Vote city proposals"
@@ -82,8 +82,8 @@ feature 'Ballots' do
       scenario "Add a proposal", :js do
         carabanchel = create(:geozone, name: "Carabanchel")
 
-        sp1 = create(:spending_proposal, geozone: carabanchel, feasible: true, price: 10000)
-        sp2 = create(:spending_proposal, geozone: carabanchel, feasible: true, price: 20000)
+        sp1 = create(:spending_proposal, :feasible, :finished, geozone: carabanchel, price: 10000)
+        sp2 = create(:spending_proposal, :feasible, :finished, geozone: carabanchel, price: 20000)
 
         click_link "Vote district proposals"
         click_link carabanchel.name
@@ -119,7 +119,7 @@ feature 'Ballots' do
       scenario "Remove a proposal", :js do
         carabanchel = create(:geozone, name: "Carabanchel")
 
-        sp1 = create(:spending_proposal, geozone: carabanchel, feasible: true, price: 10000)
+        sp1 = create(:spending_proposal, :feasible, :finished, geozone: carabanchel, price: 10000)
         ballot = create(:ballot, user: user, geozone: carabanchel, spending_proposals: [sp1])
 
         click_link "Vote district proposals"
@@ -153,8 +153,8 @@ feature 'Ballots' do
       scenario "Independent progress bar for city and district proposals", :js do
         carabanchel = create(:geozone, name: "Carabanchel")
 
-        sp1 = create(:spending_proposal, geozone: nil,         feasible: true, price: 10000)
-        sp2 = create(:spending_proposal, geozone: carabanchel, feasible: true, price: 20000)
+        sp1 = create(:spending_proposal, :feasible, :finished, geozone: nil,        price: 10000)
+        sp2 = create(:spending_proposal, :feasible, :finished, geozone: carabanchel, price: 20000)
 
         click_link "Vote city proposals"
 
@@ -213,7 +213,7 @@ feature 'Ballots' do
     scenario "Display progress bar after first district vote", :js do
       carabanchel = create(:geozone, name: "Carabanchel")
 
-      sp1 = create(:spending_proposal, geozone: carabanchel, feasible: true, price: 10000)
+      sp1 = create(:spending_proposal, :feasible, :finished, geozone: carabanchel, price: 10000)
 
       click_link "Vote district proposals"
       click_link carabanchel.name
@@ -240,7 +240,7 @@ feature 'Ballots' do
     scenario 'Select my district', :js do
       california = create(:geozone)
       new_york = create(:geozone)
-      sp1 = create(:spending_proposal, geozone: california, feasible: true)
+      sp1 = create(:spending_proposal, :feasible, :finished, geozone: california)
 
       click_link "Vote district proposals"
       click_link california.name
@@ -257,8 +257,8 @@ feature 'Ballots' do
       california = create(:geozone)
       new_york = create(:geozone)
 
-      sp1 = create(:spending_proposal, geozone: california, feasible: true)
-      sp2 = create(:spending_proposal, geozone: new_york,   feasible: true)
+      sp1 = create(:spending_proposal, :feasible, :finished, geozone: california)
+      sp2 = create(:spending_proposal, :feasible, :finished, geozone: new_york)
 
       create(:ballot, user: user, geozone: california, spending_proposals: [sp1])
 
@@ -283,8 +283,8 @@ feature 'Ballots' do
       california = create(:geozone)
       new_york = create(:geozone)
 
-      sp1 = create(:spending_proposal, geozone: california, feasible: true)
-      sp2 = create(:spending_proposal, geozone: new_york,   feasible: true)
+      sp1 = create(:spending_proposal, :feasible, :finished, geozone: california)
+      sp2 = create(:spending_proposal, :feasible, :finished, geozone: new_york)
 
       create(:ballot, user: user, geozone: california, spending_proposals: [sp1])
 
@@ -305,8 +305,8 @@ feature 'Ballots' do
       ballot = create(:ballot, user: user, geozone: geozone)
 
       ballot.spending_proposals =
-        create_list(:spending_proposal, 2, price: 10, feasible: true) +
-        create_list(:spending_proposal, 3, price: 5, geozone: geozone, feasible: true)
+        create_list(:spending_proposal, 2, :feasible, :finished, price: 10) +
+        create_list(:spending_proposal, 3, :feasible, :finished, price: 5, geozone: geozone)
 
       login_as(user)
       visit ballot_path
@@ -321,7 +321,7 @@ feature 'Ballots' do
   scenario 'Removing spending proposals from ballot', :js do
     user = create(:user, :level_two)
     ballot = create(:ballot, user: user)
-    sp = create(:spending_proposal, price: 10, feasible: true)
+    sp = create(:spending_proposal, :feasible, :finished, price: 10)
     ballot.spending_proposals = [sp]
 
     login_as(user)
@@ -339,8 +339,8 @@ feature 'Ballots' do
 
   scenario 'Removing spending proposals from ballot (sidebar)', :js do
     user = create(:user, :level_two)
-    sp1 = create(:spending_proposal, :feasible, price: 10000)
-    sp2 = create(:spending_proposal, :feasible, price: 20000)
+    sp1 = create(:spending_proposal, :feasible, :finished, price: 10000)
+    sp2 = create(:spending_proposal, :feasible, :finished, price: 20000)
 
     ballot = create(:ballot, user: user, spending_proposals: [sp1, sp2])
 
@@ -376,8 +376,8 @@ feature 'Ballots' do
 
   scenario 'Removing spending proposals from ballot (sidebar)', :js do
     user = create(:user, :level_two)
-    sp1 = create(:spending_proposal, :feasible, price: 10000)
-    sp2 = create(:spending_proposal, :feasible, price: 20000)
+    sp1 = create(:spending_proposal, :feasible, :finished, price: 10000)
+    sp2 = create(:spending_proposal, :feasible, :finished, price: 20000)
 
     ballot = create(:ballot, user: user, spending_proposals: [sp1, sp2])
 
@@ -414,7 +414,7 @@ feature 'Ballots' do
   context 'Permissions' do
 
     scenario 'User not logged in', :js do
-      spending_proposal = create(:spending_proposal, feasible: true)
+      spending_proposal = create(:spending_proposal, :feasible, :finished)
 
       visit spending_proposals_path
 
@@ -426,7 +426,7 @@ feature 'Ballots' do
 
     scenario 'User not verified', :js do
       user = create(:user)
-      spending_proposal = create(:spending_proposal, feasible: true)
+      spending_proposal = create(:spending_proposal, :feasible, :finished)
 
       login_as(user)
       visit spending_proposals_path
@@ -439,7 +439,7 @@ feature 'Ballots' do
 
     scenario 'User is organization', :js do
       org = create(:organization)
-      spending_proposal = create(:spending_proposal, feasible: true)
+      spending_proposal = create(:spending_proposal, :feasible, :finished)
 
       login_as(org.user)
       visit spending_proposals_path
@@ -452,7 +452,7 @@ feature 'Ballots' do
 
     scenario 'Spending proposal unfeasible' do
       user = create(:user, :level_two)
-      spending_proposal = create(:spending_proposal, feasible: false, valuation_finished: true)
+      spending_proposal = create(:spending_proposal, :finished, feasible: false)
 
       login_as(user)
       visit spending_proposals_path(unfeasible: 1)
@@ -464,7 +464,7 @@ feature 'Ballots' do
 
     scenario 'Spending proposal with feasibility undecided are not shown' do
       user = create(:user, :level_two)
-      spending_proposal = create(:spending_proposal, feasible: nil, valuation_finished: true)
+      spending_proposal = create(:spending_proposal, :finished, feasible: nil)
 
       login_as(user)
       visit spending_proposals_path
@@ -480,8 +480,8 @@ feature 'Ballots' do
       california = create(:geozone)
       new_york = create(:geozone)
 
-      sp1 = create(:spending_proposal, geozone: california, feasible: true)
-      sp2 = create(:spending_proposal, geozone: new_york,   feasible: true)
+      sp1 = create(:spending_proposal, :feasible, :finished, geozone: california)
+      sp2 = create(:spending_proposal, :feasible, :finished, geozone: new_york)
 
       create(:ballot, user: user, geozone: california, spending_proposals: [sp1])
 
@@ -498,7 +498,7 @@ feature 'Ballots' do
       user = create(:user, :level_two)
       california = create(:geozone)
 
-      sp1 = create(:spending_proposal, feasible: true, price: 25000000)
+      sp1 = create(:spending_proposal, :feasible, :finished, price: 25000000)
 
       login_as(user)
       visit spending_proposals_path(geozone: 'all')
@@ -513,8 +513,8 @@ feature 'Ballots' do
       user = create(:user, :level_two)
       california = create(:geozone)
 
-      sp1 = create(:spending_proposal, feasible: true, price: 20000000)
-      sp2 = create(:spending_proposal, feasible: true, price: 5000000)
+      sp1 = create(:spending_proposal, :feasible, :finished, price: 20000000)
+      sp2 = create(:spending_proposal, :feasible, :finished, price: 5000000)
 
       login_as(user)
       visit spending_proposals_path(geozone: 'all')
@@ -534,8 +534,8 @@ feature 'Ballots' do
     scenario 'Displays error message for all proposals (on destroy)', :js do
       user = create(:user, :level_two)
 
-      sp1 = create(:spending_proposal, feasible: true, price: 24000000)
-      sp2 = create(:spending_proposal, feasible: true, price: 5000000)
+      sp1 = create(:spending_proposal, :feasible, :finished, price: 24000000)
+      sp2 = create(:spending_proposal, :feasible, :finished, price: 5000000)
 
       create(:ballot, user: user, spending_proposals: [sp1])
 
@@ -562,8 +562,8 @@ feature 'Ballots' do
     scenario 'Displays error message for all proposals (on destroy from sidebar)', :js do
       user = create(:user, :level_two)
 
-      sp1 = create(:spending_proposal, feasible: true, price: 24000000)
-      sp2 = create(:spending_proposal, feasible: true, price: 5000000)
+      sp1 = create(:spending_proposal, :feasible, :finished, price: 24000000)
+      sp2 = create(:spending_proposal, :feasible, :finished, price: 5000000)
 
       create(:ballot, user: user, spending_proposals: [sp1])
 
@@ -593,8 +593,8 @@ feature 'Ballots' do
       user = create(:user, :level_two)
       california = create(:geozone)
 
-      sp1 = create(:spending_proposal, feasible: true, price: 20000000)
-      sp2 = create(:spending_proposal, feasible: true, price: 5000000)
+      sp1 = create(:spending_proposal, :feasible, :finished, price: 20000000)
+      sp2 = create(:spending_proposal, :feasible, :finished, price: 5000000)
 
       login_as(user)
       visit spending_proposals_path(geozone: 'all')
