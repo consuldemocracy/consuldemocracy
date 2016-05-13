@@ -180,6 +180,7 @@ es:
       sign_in_to_delegate: "Debes estar idenficado para delegar"
       verify_accont_to_delegate: "Debes estar verificado para delegar"
       no_votes: Este espacio de debate distrital aún no ha apoyado ninguna propuesta
+      confirm: Ya has votado algunas propuestas de inversión. Si delegas tu voto en %{forum}, tus votos se eliminarán y pasarás a votar lo que vote este espacio distrital.
   geozones:
     none: Toda la ciudad
   layouts:

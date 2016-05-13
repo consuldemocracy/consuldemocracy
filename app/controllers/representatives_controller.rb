@@ -8,6 +8,8 @@ class RepresentativesController < ApplicationController
     current_user.representative = representative
     current_user.accepted_delegation_alert = false
     current_user.save!
+
+    current_user.ballot.ballot_lines.destroy_all if current_user.ballot.present?
     redirect_to forums_path, notice: t("flash.actions.create.representative")
   end
 
