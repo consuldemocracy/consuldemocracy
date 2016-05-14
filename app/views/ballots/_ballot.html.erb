@@ -40,7 +40,7 @@
       <h3 class="subtitle">
         <%= t("ballots.show.city_wide") %>
       </h3>
-      <% if @ballot.spending_proposals.by_geozone(@geozone).count > 0 %>
+      <% if @ballot.spending_proposals.by_geozone(nil).count > 0 %>
         <h4 class="amount-spent text-right">
           <%= t("ballots.show.amount_spent") %>
           <span><%= format_price(city_wide_amount_spent(@ballot)) %></span>
