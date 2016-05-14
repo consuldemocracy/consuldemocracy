@@ -2,7 +2,7 @@ class Ballot < ActiveRecord::Base
   belongs_to :user
   belongs_to :geozone
 
-  has_many :ballot_lines
+  has_many :ballot_lines, dependent: :destroy
   has_many :spending_proposals, through: :ballot_lines
 
   DISTRICT_BUDGETS = { "Arganzuela"          => 1556169,
