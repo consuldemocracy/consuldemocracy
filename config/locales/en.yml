@@ -541,6 +541,7 @@ en:
       remaining_city_html: "You are <span>%{amount_city}</span> to invest citywide."
       remaining_district_html: "You are <span>%{amount_district}</span> to invest on <span>%{geozone}</span>."
       remove: Remove vote
+      social_share: I've decided where to invest %{amount} for %{geozone}
       voted_html:
         one: "You voted <span>one</span> proposal."
         other: "You voted <span>%{count}</span> proposals."

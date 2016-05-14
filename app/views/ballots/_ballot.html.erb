@@ -13,6 +13,14 @@
           count: @ballot.spending_proposals.count) %>
     </h2>
 
+
+    <% if @ballot.geozone.present? && district_wide_amount_spent(@ballot) > 0 %>
+      <%= social_share_button_tag("#{t('ballots.show.social_share',
+                                        amount: format_price(district_wide_amount_spent(@ballot)),
+                                        geozone: @ballot.geozone.name)} #{setting['twitter_hashtag']}",
+                                  url: participatory_budget_url) %>
+    <% end %>
+
     <h3>
       <%= t("ballots.show.remaining_city_html",
           amount_city: format_price(@ballot.amount_available(nil))) %>
