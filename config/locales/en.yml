@@ -489,13 +489,14 @@ en:
     welcome:
       city_link: Vote city proposals
       delegation: Delegation of votes
-      delegation_info_html: "Si activas la delegación en cualquiera de los espacios, tus votos se realizarán<br> automáticamente sobre las propuestas que haya decidido el espacio correspondiente."
-      delegation_meetings: espacios presenciales de debate
-      delegation_text: Delega tu votación en lo que se decida en cualquiera de los %{meetings}
-      delegation_title: Delegación de voto
+      delegation_info_html: "If you activate vote delegation on any local space, proposals decided by that space will automaticaly receive your votes"
+      delegation_meetings: local debate spaces
+      delegation_text: Delegate your votes to the proposals decided at any of the %{meetings}
+      delegation_title: Vote delegation
       districts: Districts
       districts_link: Vote district proposals
       in_two_minutes: All information about participatory budgets
+      page_title: Participatory budgeting
       title: "You already can vote investment projetcs!"
       text_first_html: "Desde hoy <strong>15 de mayo</strong> hasta el día <strong>30 de junio</strong> puedes votar las propuestas de inversión de los Presupuestos participativos 2016."
       text_second_html: "Puedes votar todas las propuestas que quieras hasta alcanzar el presupuesto destinado para el ámbito de <strong>toda la ciudad</strong> y del <strong>distrito</strong> que hayas seleccionado."
