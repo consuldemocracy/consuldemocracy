@@ -10,6 +10,13 @@ describe ProposalCalculator do
       expect(calculator.mark_as_undecided?).to eq true
     end
 
+    it "returns true if below required number of votes, has votes, unfeasible and not reclassified" do
+      spending_proposal = create(:spending_proposal, :unfeasible, id: 99999, cached_votes_up: 5)
+      calculator = ProposalCalculator.new(spending_proposal)
+
+      expect(calculator.mark_as_undecided?).to eq true
+    end
+
     it "returns false if above required number of votes" do
       spending_proposal = create(:spending_proposal, :feasible, cached_votes_up: 500)
       calculator = ProposalCalculator.new(spending_proposal)
@@ -26,13 +33,6 @@ describe ProposalCalculator do
 
     it "returns false if included in reclassified list" do
       spending_proposal = create(:spending_proposal, :feasible, id: 4517)
-      calculator = ProposalCalculator.new(spending_proposal)
-
-      expect(calculator.mark_as_undecided?).to eq false
-    end
-
-    it "returns false if unfeasible" do
-      spending_proposal = create(:spending_proposal, :unfeasible)
       calculator = ProposalCalculator.new(spending_proposal)
 
       expect(calculator.mark_as_undecided?).to eq false
