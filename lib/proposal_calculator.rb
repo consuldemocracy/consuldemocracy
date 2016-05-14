@@ -31,7 +31,7 @@ class ProposalCalculator
   end
 
   def mark_as_undecided?
-    has_votes? && insufficient_votes? && feasible? && !reclassified?
+    has_votes? && insufficient_votes? && !reclassified?
   end
 
   def has_votes?
