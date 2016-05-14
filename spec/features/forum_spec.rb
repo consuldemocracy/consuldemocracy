@@ -30,7 +30,7 @@ feature "Forum" do
       expect(page).to have_content forum.name
     end
 
-    scenario "Forum votes" do
+    xscenario "Forum votes" do
       forum = create(:forum)
       geozone = create(:geozone)
 
