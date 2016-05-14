@@ -5,6 +5,15 @@
     <%= t("shared.back") %>
   <% end %>
 
+  <div class="float-right">
+    <% if @ballot.geozone.present? && district_wide_amount_spent(@ballot) > 0 %>
+      <%= social_share_button_tag("#{t('ballots.show.social_share',
+                                        amount: format_price(district_wide_amount_spent(@ballot)),
+                                        geozone: @ballot.geozone.name)} #{setting['twitter_hashtag']}",
+                                  url: participatory_budget_url) %>
+    <% end %>
+  </div>
+
   <h1 class="text-center"><%= t("ballots.show.title") %></h1>
 
   <div class="small-12 medium-8 column small-centered text-center">
@@ -40,7 +49,7 @@
       <h3 class="subtitle">
         <%= t("ballots.show.city_wide") %>
       </h3>
-      <% if @ballot.spending_proposals.by_geozone(@geozone).count > 0 %>
+      <% if @ballot.spending_proposals.by_geozone(nil).count > 0 %>
         <h4 class="amount-spent text-right">
           <%= t("ballots.show.amount_spent") %>
           <span><%= format_price(city_wide_amount_spent(@ballot)) %></span>
