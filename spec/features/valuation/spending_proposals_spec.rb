@@ -5,6 +5,7 @@ feature 'Valuation spending proposals' do
   background do
     @valuator = create(:valuator, user: create(:user, username: 'Rachel', email: 'rachel@valuators.org'))
     login_as(@valuator.user)
+    Setting['feature.spending_proposal_features.valuation_allowed'] = true
   end
 
   scenario 'Disabled with a feature flag' do
