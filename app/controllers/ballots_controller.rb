@@ -9,7 +9,7 @@ class BallotsController < ApplicationController
   private
 
     def load_ballot
-      @ballot = current_user.ballot
+      @ballot = Ballot.where(user: current_user).first_or_create
     end
 
 end
