@@ -82,4 +82,25 @@ feature 'Stats' do
     expect(page).to have_content "Level 2 User (1)"
   end
 
+  context "Ballot" do
+
+    scenario "Number of users that have voted a investment project" do
+      spending_proposal = create(:spending_proposal, :feasible)
+
+      ballot_with_votes = create(:ballot, spending_proposals: [spending_proposal])
+      ballot_with_votes2 = create(:ballot, spending_proposals: [spending_proposal])
+      ballot_without_votes = create(:ballot)
+
+      visit admin_stats_path
+      expect(page).to have_content "Budgets voted 2"
+    end
+
+    scenario "Total number of votes in investment projects" do
+      3.times { create(:ballot_line) }
+      visit admin_stats_path
+      expect(page).to have_content "Votes in investment projects 3"
+    end
+
+  end
+
 end

@@ -9,6 +9,7 @@ class Admin::StatsController < Admin::BaseController
     @spending_proposals = SpendingProposal.with_hidden.count
     @comments = Comment.with_hidden.count
     @surveys = SurveyAnswer.count
+    @ballot_lines = BallotLine.count
 
     @debate_votes = Vote.where(votable_type: 'Debate').count
     @proposal_votes = Vote.where(votable_type: 'Proposal').count
@@ -26,6 +27,6 @@ class Admin::StatsController < Admin::BaseController
      ActsAsVotable::Vote.where(votable_type: 'Proposal').pluck(:voter_id).uniq.count
     @user_ids_who_didnt_vote_proposals = @verified_users - @user_ids_who_voted_proposals
     @spending_proposals = SpendingProposal.count
-
+    @ballots_with_votes = Ballot.all.reject {|ballot| ballot.spending_proposals.count == 0 }.count
   end
 end

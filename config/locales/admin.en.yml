@@ -239,6 +239,8 @@ en:
       show:
         stats_title: Stats
         summary:
+          ballot_line_votes: Votes in investment projects
+          ballot_votes: Budgets voted
           comment_votes: Comment votes
           comments: Comments
           debate_votes: Debate votes
