@@ -55,7 +55,7 @@
           <%= spending_proposal_count_for_geozone("all", geozone) %>
         </td>
         <td class="total-price text-center">
-          <%= number_to_currency(price) %>
+          <%= format_price(price) %>
         </td>
       </tr>
     <% end %>

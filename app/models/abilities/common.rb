@@ -48,6 +48,8 @@ module Abilities
         can :create, SpendingProposal
         can :read, SurveyAnswer
         can :read, OpenAnswer
+        can :show, Ballot
+        can [:create, :destroy], BallotLine
       end
 
       if user.forum?

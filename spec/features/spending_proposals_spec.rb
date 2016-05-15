@@ -44,57 +44,6 @@ feature 'Spending proposals' do
   end
 
   context("Filters") do
-    scenario 'by geozone' do
-      geozone1 = create(:geozone)
-      geozone2 = create(:geozone)
-      spending_proposal1 = create(:spending_proposal, geozone: geozone1)
-      spending_proposal2 = create(:spending_proposal, geozone: geozone2)
-      spending_proposal3 = create(:spending_proposal, geozone: geozone1)
-      spending_proposal4 = create(:spending_proposal)
-
-      visit spending_proposals_path
-
-      within("#geozones") do
-        click_link geozone1.name
-      end
-
-      within("#investment-projects") do
-        expect(page).to have_css('.investment-project', count: 2)
-
-        expect(page).to have_content(spending_proposal1.title)
-        expect(page).to have_content(spending_proposal3.title)
-        expect(page).to_not have_content(spending_proposal2.title)
-        expect(page).to_not have_content(spending_proposal4.title)
-      end
-    end
-
-    scenario "by forum" do
-      geozone1 = create(:geozone)
-      geozone2 = create(:geozone)
-      spending_proposal1 = create(:spending_proposal, geozone: geozone1, forum: true)
-      spending_proposal2 = create(:spending_proposal, geozone: geozone1, forum: true)
-      spending_proposal3 = create(:spending_proposal, geozone: geozone1)
-      spending_proposal4 = create(:spending_proposal, geozone: geozone2)
-      spending_proposal5 = create(:spending_proposal)
-
-
-      visit spending_proposals_path(geozone: geozone1.id)
-
-      within("#forum") do
-        click_link "See investment proposals from the district discussion space"
-      end
-
-      within("#investment-projects") do
-        expect(page).to have_css('.investment-project', count: 2)
-
-        expect(page).to have_content(spending_proposal1.title)
-        expect(page).to have_content(spending_proposal2.title)
-        expect(page).to_not have_content(spending_proposal3.title)
-        expect(page).to_not have_content(spending_proposal4.title)
-        expect(page).to_not have_content(spending_proposal5.title)
-      end
-    end
-
     scenario 'by unfeasibility' do
       geozone1 = create(:geozone)
       spending_proposal1 = create(:spending_proposal, feasible: false, valuation_finished: true)
@@ -332,6 +281,124 @@ feature 'Spending proposals' do
       visit spending_proposals_path(user_spending_proposal)
       within "#spending_proposal_#{user_spending_proposal.id}" do
         expect(page).to_not have_css "is-forum"
+      end
+    end
+
+  end
+
+  context "Phase 3 - Final Voting" do
+
+    background do
+      Setting["feature.spending_proposal_features.phase3"] = true
+    end
+
+    scenario "Index" do
+      user = create(:user, :level_two)
+      sp1 = create(:spending_proposal, :feasible, :finished, price: 10000)
+      sp2 = create(:spending_proposal, :feasible, :finished, price: 20000)
+
+      login_as(user)
+      visit root_path
+
+      first(:link, "Participatory budgeting").click
+      click_link "Vote city proposals"
+
+      within("#spending_proposal_#{sp1.id}") do
+        expect(page).to have_content sp1.title
+        expect(page).to have_content "$10,000"
+      end
+
+      within("#spending_proposal_#{sp2.id}") do
+        expect(page).to have_content sp2.title
+        expect(page).to have_content "$20,000"
+      end
+    end
+
+    scenario 'Order by cost (only in phase3)' do
+      create(:spending_proposal, :feasible, :finished, title: 'Build a nice house',  price:  1000).update_column(:confidence_score, 10)
+      create(:spending_proposal, :feasible, :finished, title: 'Build an ugly house', price:  1000).update_column(:confidence_score, 5)
+      create(:spending_proposal, :feasible, :finished, title: 'Build a skyscraper',  price: 20000)
+
+      visit spending_proposals_path
+
+      click_link 'by price'
+      expect(page).to have_selector('a.active', text: 'by price')
+
+      within '#investment-projects' do
+        expect('Build a skyscraper').to appear_before('Build a nice house')
+        expect('Build a nice house').to appear_before('Build an ugly house')
+      end
+
+      expect(current_url).to include('order=price')
+      expect(current_url).to include('page=1')
+    end
+
+    scenario "Show" do
+      user = create(:user, :level_two)
+      sp1 = create(:spending_proposal, :feasible, :finished, price: 10000)
+
+      login_as(user)
+      visit root_path
+
+      first(:link, "Participatory budgeting").click
+      click_link "Vote city proposals"
+
+      click_link sp1.title
+
+      expect(page).to have_content "$10,000"
+    end
+
+    scenario "Confirm", :js do
+      user = create(:user, :level_two)
+      carabanchel = create(:geozone, name: "Carabanchel")
+      new_york = create(:geozone)
+      sp1 = create(:spending_proposal, :feasible, :finished, price:      1, geozone: nil)
+      sp2 = create(:spending_proposal, :feasible, :finished, price:     10, geozone: nil)
+      sp3 = create(:spending_proposal, :feasible, :finished, price:    100, geozone: nil)
+      sp4 = create(:spending_proposal, :feasible, :finished, price:   1000, geozone: carabanchel)
+      sp5 = create(:spending_proposal, :feasible, :finished, price:  10000, geozone: carabanchel)
+      sp6 = create(:spending_proposal, :feasible, :finished, price: 100000, geozone: new_york)
+
+      login_as(user)
+      visit root_path
+
+      first(:link, "Participatory budgeting").click
+      click_link "Vote city proposals"
+
+      add_to_ballot(sp1)
+      add_to_ballot(sp2)
+
+      first(:link, "Participatory budgeting").click
+      click_link "Vote district proposals"
+      click_link carabanchel.name
+
+      add_to_ballot(sp4)
+      add_to_ballot(sp5)
+
+      click_link "Check my ballot"
+
+      expect(page).to have_content "You can change your vote at any time until the close of this phase"
+
+      within("#city_wide") do
+        expect(page).to have_content sp1.title
+        expect(page).to have_content sp1.price
+
+        expect(page).to have_content sp2.title
+        expect(page).to have_content sp2.price
+
+        expect(page).to_not have_content sp3.title
+        expect(page).to_not have_content sp3.price
+      end
+
+      within("#district_wide") do
+        expect(page).to have_content sp4.title
+        expect(page).to have_content "$1,000"
+
+        expect(page).to have_content sp5.title
+        expect(page).to have_content "$10,000"
+
+        expect(page).to_not have_content sp6.title
+        expect(page).to_not have_content "$100,000"
       end
     end
 

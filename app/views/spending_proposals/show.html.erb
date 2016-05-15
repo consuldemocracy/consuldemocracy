@@ -3,6 +3,10 @@
 <section class="investment-project-show">
   <div id="<%= dom_id(@spending_proposal) %>" class="row">
     <div class="small-12 medium-9 column">
+      <%= link_to :back, class: "back" do %>
+        <span class="icon-angle-left"></span>
+        <%= t("shared.back") %>
+      <% end %>
 
       <h1><%= @spending_proposal.title %></h1>
 
@@ -35,16 +39,23 @@
       <% end %>
     </div>
 
-    <% unless @spending_proposal.unfeasible? %>
+    <% if spending_proposal_votable_in_show?(@spending_proposal) %>
       <aside class="small-12 medium-3 column">
         <div class="sidebar-divider"></div>
         <h3><%= t("votes.supports") %></h3>
         <div class="text-center">
-          <div id="<%= dom_id(@spending_proposal) %>_votes">
-            <%= render 'votes',
-                        { spending_proposal: @spending_proposal, vote_url: vote_spending_proposal_path(@spending_proposal, value: 'yes') } %>
-          </div>
+          <% if feature?("spending_proposal_features.phase2") %>
+            <div id="<%= dom_id(@spending_proposal) %>_votes">
+              <%= render 'votes',
+                          { spending_proposal: @spending_proposal, vote_url:   vote_spending_proposal_path(@spending_proposal, value: 'yes') } %>
+            </div>
+          <% elsif feature?("spending_proposal_features.phase3") %>
+            <div id="<%= dom_id(@spending_proposal) %>_ballot">
+              <%= render 'ballot', spending_proposal: @spending_proposal %>
+            </div>
+         <% end %>
         </div>
+
         <div class="sidebar-divider"></div>
         <h3><%= t("spending_proposals.show.share") %></h3>
         <div class="social-share-full">

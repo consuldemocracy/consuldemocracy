@@ -25,6 +25,7 @@ class SpendingProposal < ActiveRecord::Base
   validates :terms_of_service, acceptance: { allow_nil: false }, on: :create
 
   scope :sort_by_confidence_score, -> (default=nil) { reorder(confidence_score: :desc, id: :desc) }
+  scope :sort_by_price,            -> (default=nil) { reorder(price: :desc, confidence_score: :desc, id: :desc) }
   scope :sort_by_random,           -> (seed)    { reorder("RANDOM()") }
 
   scope :valuation_open,         -> { where(valuation_finished: false) }
@@ -178,11 +179,9 @@ class SpendingProposal < ActiveRecord::Base
   end
 
   def reason_for_not_being_votable_by(user)
-    return :not_voting_allowed if Setting["feature.spending_proposal_features.voting_allowed"].blank?
-    return :not_logged_in unless user
-    return :not_verified  unless user.can?(:vote, SpendingProposal)
-    return :unfeasible    if unfeasible?
-    return :organization  if user.organization?
+    return permission_problem(user) if permission_problem?(user)
+    return :not_voting_allowed unless voting_allowed?
+
     if city_wide?
       return :no_city_supports_available unless user.city_wide_spending_proposals_supported_count > 0
     else # district_wide
@@ -196,8 +195,52 @@ class SpendingProposal < ActiveRecord::Base
     end
   end
 
+  def reason_for_not_being_ballotable_by(user)
+    return permission_problem(user)    if permission_problem?(user)
+    return :no_ballots_allowed         unless final_voting_allowed?
+    return :different_geozone_assigned unless can_vote_in_geozone?(user)
+    return :not_enough_money           unless enough_money?(user.ballot)
+  end
+
+  def permission_problem(user)
+    return :not_logged_in unless user
+    return :organization  if user.organization?
+    return :not_verified  unless user.can?(:vote, SpendingProposal)
+    return nil
+  end
+
+  def permission_problem?(user)
+    permission_problem(user).present?
+  end
+
   def votable_by?(user)
     reason_for_not_being_votable_by(user).blank?
+  end
+
+  def ballotable_by?(user)
+    reason_for_not_being_ballotable_by(user).blank?
+  end
+
+  ### Think of a better way to describe the different phases
+  def voting_allowed?
+    Setting["feature.spending_proposal_features.voting_allowed"].present?
+  end
+
+  def final_voting_allowed?
+    Setting["feature.spending_proposal_features.final_voting_allowed"].present?
+  end
+  ###
+
+  def enough_money?(ballot)
+    return true if ballot.blank?
+    available_money = ballot.amount_available(geozone)
+    price.to_i <= available_money
+  end
+
+  def can_vote_in_geozone?(user)
+    return true if city_wide? || user.ballot.blank?
+
+    (geozone == user.ballot.geozone) || user.ballot.spending_proposals.district_wide.blank?
   end
 
   def register_vote(user, vote_value)

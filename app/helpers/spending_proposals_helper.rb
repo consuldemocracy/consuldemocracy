@@ -75,4 +75,20 @@ module SpendingProposalsHelper
     options_for_select(values, number)
   end
 
+  def format_price(number)
+    number_to_currency(number, precision: 0, locale: I18n.default_locale)
+  end
+
+  def spending_proposal_votable_in_show?(spending_proposal)
+    if feature?("spending_proposal_features.phase3")
+      spending_proposal.feasibility == 'feasible'
+    else
+      spending_proposal.feasibility != 'not_feasible'
+    end
+  end
+
+  def spending_proposal_ids
+    @spending_proposals.present? ? @spending_proposals.map(&:id) : []
+  end
+
 end

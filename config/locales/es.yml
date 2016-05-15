@@ -3,6 +3,7 @@ es:
   account:
     show:
       change_credentials_link: Cambiar mis datos de acceso
+      delegation: Delegación de voto en presupuestos participativos
       email_on_comment_label: Recibir un email cuando alguien comenta en mis propuestas o debates
       email_on_comment_reply_label: Recibir un email cuando alguien contesta a mis comentarios
       erase_account_link: Darme de baja
@@ -23,7 +24,7 @@ es:
       user_permission_title: Participación
       user_permission_verify: Para poder realizar todas las acciones verifica tu cuenta.
       user_permission_verify_info: "* Sólo usuarios empadronados en el municipio de Madrid."
-      user_permission_votes: Participar en las votaciones finales*
+      user_permission_votes: Participar en todas las consultas*
       username_label: Nombre de usuario
       verified_account: Cuenta verificada
       verify_my_account: Verificar mi cuenta
@@ -176,10 +177,11 @@ es:
       not_delegating: No estás delegando tus votos
       title: Delega tus votos
     show:
-      delegate_button: "La delegación se activará en la próxima fase de votación."
+      delegate_button: "Delegar en %{forum}"
       sign_in_to_delegate: "Debes estar idenficado para delegar"
       verify_accont_to_delegate: "Debes estar verificado para delegar"
       no_votes: Este espacio de debate distrital aún no ha apoyado ninguna propuesta
+      confirm: Ya has votado algunas propuestas de inversión. Si delegas tu voto en %{forum}, tus votos se eliminarán y pasarás a votar lo que vote este espacio distrital.
   geozones:
     none: Toda la ciudad
   layouts:
@@ -456,6 +458,7 @@ es:
         new: Crear
       title: Título de la propuesta de inversión
     index:
+      available: "Disponible:"
       title: Presupuestos participativos
       unfeasible: Propuestas de inversión no viables
       unfeasible_text: Las propuestas presentadas deben cumplir una serie de criterios (legalidad, concreción, ser competencia del Ayuntamiento, no superar el tope del presupuesto; %{definitions}) para ser declaradas viables y llegar hasta la fase de votación final. Todas las propuestas que no cumplen estos criterios son marcadas como inviables y publicadas en la siguiente lista, junto con su informe de inviabilidad.
@@ -471,23 +474,32 @@ es:
       sidebar:
         back: Volver a página de selección
         district: Distrito
-        geozones: Ámbitos de actuación
+        my_ballot: Mis votos
+        voted_html:
+          one: "<strong>Has votado una propuesta por un valor de %{amount_spent}</strong>"
+          other: "<strong>Has votado %{count} propuestas por un valor de %{amount_spent}</strong>"
+        voted_info: Puedes cambiar tus votos en cualquier momento hasta el cierre de esta fase. No hace falta que gastes todo el dinero disponible.
         votes: Apoyos restantes
         votes_district: "Solo puedes votar en el distrito %{district}"
-        forum_proposals: "Ver propuestas de inversión del espacio de debate distrital"
-        forum_proposals_title: "Espacios de debate"
+        zero: "Todavía no has votado ninguna propuesta de inversión."
       orders:
         random: Aleatorias
         confidence_score: Mejor valoradas
+        price: Por coste
     welcome:
-      city: Toda la ciudad
-      city_link: Ver resultado de la preselección para toda la ciudad
-      delegation: Delegación de voto
-      description_html: Mientras evaluamos las propuestas presentadas, puedes ver en los siguientes enlaces el orden final de las propuestas en la fase de preselección.
+      city_link: Votar para toda la ciudad
+      delegation: Delegar mis votos
+      delegation_info_html: "Si activas la delegación en cualquiera de los espacios, tus votos se realizarán<br> automáticamente sobre las propuestas que haya decidido el espacio correspondiente."
+      delegation_meetings: espacios presenciales de debate
+      delegation_text: Delega tu votación en lo que se decida en cualquiera de los %{meetings}
+      delegation_title: Delegación de voto
       districts: Distritos
-      districts_link: Ver resultado de la preselección en distritos
+      districts_link: Votar propuestas de distrito
       in_two_minutes: Toda la información sobre los presupuestos participativos
-      title: "El día 15 de mayo comenzamos con la votación final"
+      page_title: Presupuestos participativos
+      title: "Ya puedes votar las propuestas"
+      text_first_html: "Desde hoy <strong>15 de mayo</strong> hasta el día <strong>30 de junio</strong> puedes votar las propuestas de inversión de los Presupuestos participativos 2016."
+      text_second_html: "Puedes votar todas las propuestas que quieras hasta alcanzar el presupuesto destinado para el ámbito de <strong>toda la ciudad</strong> y del <strong>distrito</strong> que hayas seleccionado."
       unfeasible_link: Ver propuestas de inversión no viables
     new:
       more_info: "¿Cómo funcionan los presupuestos participativos?"
@@ -506,14 +518,36 @@ es:
     wrong_price_format: Solo puede incluir caracteres numéricos
     spending_proposal:
       spending_proposal: Propuesta de inversión
+      add: Añadir
+      already_added: "Ya has añadido esta propuesta de inversión"
       already_supported: Ya has apoyado este proyecto. ¡Compártelo!
       forum: Espacio de debate distrital
-      support: Apoyar
       support_title: Apoyar este proyecto
       supports:
         one: 1 apoyo
         other: "%{count} apoyos"
         zero: Sin apoyos
+      vote: Votar
+    header:
+      check_ballot: Revisar mis votos
+      different_district_active: Ya apoyaste propuestas de otro distrito.
+  ballots:
+    show:
+      city_link: Votar para toda la ciudad
+      city_wide: Toda la ciudad
+      districts_link: Votar propuestas de distrito
+      district_wide: Distrito
+      title: Mis votos
+      amount_spent: Coste total
+      remaining_city_html: "Te quedan <span>%{amount_city}</span> para invertir en toda la ciudad."
+      remaining_district_html: "Te quedan <span>%{amount_district}</span> para invertir en <span>%{geozone}</span>."
+      remove: Quitar voto
+      social_share: He decidido dónde quiero que se inviertan %{amount} para %{geozone}. ¡Participa!
+      voted_html:
+        one: "Has votado <span>una</span> propuesta."
+        other: "Has votado <span>%{count}</span> propuestas."
+      voted_info_html: "Puedes cambiar tus votos en cualquier momento hasta el cierre de esta fase.<br> No hace falta que gastes todo el dinero disponible."
+      zero: "Todavía no has votado ninguna propuesta de inversión."
   stats:
     index:
       visits: Visitas
@@ -537,6 +571,12 @@ es:
       deleted_proposal: Este propuesta ha sido eliminada
       delete_spending_proposal: Eliminar
       confirm_deletion_spending_proposal: "¿Seguro que desea eliminar esta propuesta?"
+      ballot_link_text:
+        zero: Todavía no has votado por ninguna propuesta.
+        one: "Has votado sólo una propuesta por un valor de %{amount_spent}."
+        other: "Has votado %{count} propuestas por un valor de %{amount_spent}."
+      ballot_verified_only: En que invertir los presupuestos participativos lo deciden sólo los usuarios verificados, %{verify_account}.
+      verify_account: verifica tu cuenta
       filters:
         comments:
           one: 1 Comentario
@@ -550,6 +590,7 @@ es:
         spending_proposals:
           one: 1 Propuesta de inversión
           other: "%{count} Propuestas de inversión"
+        ballot: Presupuestos participativos
       no_activity: Usuario sin actividad pública
       private_activity: Este usuario ha decidido mantener en privado su lista de actividades
       retire: Retirar
@@ -575,6 +616,8 @@ es:
       no_city_supports_available: Ya has usado todos tus apoyos de ciudad.
       no_district_supports_available: Ya has usado todos tus apoyos de distrito.
       different_district_assigned: Ya apoyaste propuestas de otro distrito.
+      different_geozone_assigned: Tienes votos activos en otro distrito. %{my_geozone}
+      not_enough_money: El precio de esta propuesta es mayor que el presupuesto que te queda disponible.
       confirm_first_vote_on_district: "Cada persona puede apoyar las propuestas de toda la ciudad y de un distrito a su elección. Si pulsas aceptar apoyarás esta propuesta y de ahora en adelante sólo podrás apoyar las propuestas de %{district}. Este distrito no se puede cambiar luego. ¿Quieres apoyar esta propuesta y seleccionar este distrito?"
       confirm_discard_delegation: "Si votas dejarás de delegar. "
   welcome:
@@ -597,7 +640,7 @@ es:
         text: Crear tus propias propuestas y apoya las de otros ciudadanos.
         title: Propuestas ciudadanas
       spending_proposals:
-        link: Ver resultado de la preselección de propuestas
+        link: Participa en la votación final
         text: Tú decides cómo invertir 60 millones de euros para tu ciudad.
         title: Presupuestos participativos
     more_information: Más información sobre esta página

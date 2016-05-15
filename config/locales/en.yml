@@ -3,6 +3,7 @@ en:
   account:
     show:
       change_credentials_link: Change my credentials
+      delegation: Delegation
       email_on_comment_label: Notify me by email when someone comments on my proposals or debates
       email_on_comment_reply_label: Notify me by email when someone replies to my comments
       erase_account_link: Erase my account
@@ -176,10 +177,11 @@ en:
       not_delegating: "You are not delegating your votes"
       title: Delegate your votes
     show:
-      delegate_button: "The delegation will be activated in the next voting."
+      delegate_button: "Delegate in %{forum}"
       sign_in_to_delegate: "Sign in to delegate"
       verify_accont_to_delegate: "Verify your account to delegate"
       no_votes: This Forum has not supported any investment proposals
+      confirm: You have already voted some investment proposals. If you delegate your votes in %{forum}, your votes will be erased and you will vote whatever this forum votes.
   geozones:
     none: All city
   layouts:
@@ -456,6 +458,7 @@ en:
         new: Create
       title: Spending proposal title
     index:
+      available: "Available:"
       title: Participatory budgeting
       unfeasible: Unfeasible investment projects
       unfeasible_text: "The proposals must meet a number of criteria (legality, concreteness, be the responsibility of the city, not exceed the limit of the budget; %{definitions}) to be declared viable and reach the stage of final vote. All proposals don't meet these criteria are marked as unfeasible and published in the following list, along with its report of infeasibility."
@@ -471,23 +474,32 @@ en:
       sidebar:
         back: Back to select page
         district: District
-        geozones: Scope of operation
+        my_ballot: My ballot
+        voted_html:
+          one: "<strong>You voted one proposal with a cost of %{amount_spent}</strong>"
+          other: "<strong>You voted %{count} proposals with a cost of %{amount_spent}</strong>"
+        voted_info: You can change your vote at any time until the close of this phase. No need to spend all the money available.
         votes: Supports remaining
         votes_district: "You can only vote in the district %{district}"
-        forum_proposals: "See investment proposals from the district discussion space"
-        forum_proposals_title: "Discussion spaces"
+        zero: You have not voted any investment project.
       orders:
         random: random
         confidence_score: highest rated
+        price: by price
     welcome:
-      city: All city
-      city_link: See results of the preselection for the city
+      city_link: Vote city proposals
       delegation: Delegation of votes
-      description_html: As we evaluate the proposals submitted, you can see in the following links the final order of the proposals in the preselection stage.
+      delegation_info_html: "If you activate vote delegation on any local space, proposals decided by that space will automaticaly receive your votes"
+      delegation_meetings: local debate spaces
+      delegation_text: Delegate your votes to the proposals decided at any of the %{meetings}
+      delegation_title: Vote delegation
       districts: Districts
-      districts_link: See results of the preselection for the districts
+      districts_link: Vote district proposals
       in_two_minutes: All information about participatory budgets
-      title: "On May 15 we start with the final vote"
+      page_title: Participatory budgeting
+      title: "You already can vote investment projetcs!"
+      text_first_html: "Desde hoy <strong>15 de mayo</strong> hasta el día <strong>30 de junio</strong> puedes votar las propuestas de inversión de los Presupuestos participativos 2016."
+      text_second_html: "Puedes votar todas las propuestas que quieras hasta alcanzar el presupuesto destinado para el ámbito de <strong>toda la ciudad</strong> y del <strong>distrito</strong> que hayas seleccionado."
       unfeasible_link: See unfeasible investment projects
     new:
       back_link: Back
@@ -506,14 +518,36 @@ en:
     wrong_price_format: Only integer numbers
     spending_proposal:
       spending_proposal: Investment project
+      add: Add
+      already_added: You have already added this investment project
       already_supported: You have already supported this. Share it!
       forum: District discussion space
-      support: Support
       support_title: Support this project
       supports:
         one: 1 support
         other: "%{count} supports"
         zero: No supports
+      vote: Vote
+    header:
+      check_ballot: Check my ballot
+      different_district_active: You have active votes in another district.
+  ballots:
+    show:
+      city_link: Vote city proposals
+      city_wide: City Wide
+      districts_link: Vote district proposals
+      district_wide: District Wide
+      title: Your ballot
+      amount_spent: Amount spent
+      remaining_city_html: "You are <span>%{amount_city}</span> to invest citywide."
+      remaining_district_html: "You are <span>%{amount_district}</span> to invest on <span>%{geozone}</span>."
+      remove: Remove vote
+      social_share: I've decided where to invest %{amount} for %{geozone}
+      voted_html:
+        one: "You voted <span>one</span> proposal."
+        other: "You voted <span>%{count}</span> proposals."
+      voted_info_html: "You can change your vote at any time until the close of this phase.<br> No need to spend all the money available."
+      zero: You have not voted any investment project.
   stats:
     index:
       visits: Visits
@@ -537,6 +571,12 @@ en:
       deleted_proposal: This proposal has been deleted
       delete_spending_proposal: Delete
       confirm_deletion_spending_proposal: Are you sure? This action can not be undone
+      ballot_link_text:
+        zero: You have not voted for any proposal yet.
+        one: You voted one proposal with a cost of %{amount_spent}.
+        other: You voted %{count} proposals with a cost of %{amount_spent}.
+      ballot_verified_only: Only verified users can vote on participatory budget, %{verify_account}.
+      verify_account: verify your account
       filters:
         comments:
           one: 1 Comment
@@ -550,6 +590,7 @@ en:
         spending_proposals:
           one: 1 Spending proposal
           other: "%{count} Spending proposals"
+        ballot: Participatory budget
       no_activity: User has no public activity
       private_activity: This user decided to keep the activity list private
       retire: Retire
@@ -574,7 +615,9 @@ en:
       not_voting_allowed: Voting phase is closed
       no_city_supports_available: You have already used all your city-wide supports.
       no_district_supports_available: You have already used all your district-wide supports.
-      different_district_assigned: You already supported other district proposals.
+      different_district_assigned: You have already supported other district proposals.
+      different_geozone_assigned: You have already supported other district proposals. %{my_geozone}.
+      not_enough_money: "This proposal's price is more than the available amount left"
       confirm_first_vote_on_district: "Everyone can support the proposal of the city and one district of their choice, If you accept you support this proposal and only can support the proposals for %{district}. This district can't change later. Do you want support this proposal and select this district?"
       confirm_discard_delegation: "If you vote you will stop delegating. "
   welcome:

@@ -1,5 +1,11 @@
 <div class="row">
   <div class="small-12 medium-9 column">
+
+    <%= link_to :back, class: "back" do %>
+      <i class="icon-angle-left"></i>
+      <%= t("shared.back") %>
+    <% end %>
+
     <h1><%= t("forums.index.title") %></h1>
     <p>Delega tu decisión sobre los apoyos y la votación final en lo que se decida en cualquiera de los espacios presenciales de debate.</p>
 
@@ -32,6 +38,9 @@
 
   <div class="small-12 medium-3 column">
     <h2>¿Cómo funciona la delegación?</h2>
-    <p>Si activas la delegación en cualquiera de los <a href="https://decide.madrid.es/participatory_budget_meetings">espacios presenciales de debate</a> señalados, tus apoyos y votos se realizarán automáticamente sobre las propuestas que haya decidido el espacio correspondiente. Mientras dure la fase de apoyos o de votación puedes activar o desactivar la delegación de votos cuando quieras.</p>
+    <p>Si activas la delegación en cualquiera de los <a href="https://decide.madrid.es/participatory_budget_meetings">espacios presenciales de debate</a>
+       señalados, tus apoyos y votos se realizarán automáticamente sobre las propuestas que haya decidido el espacio correspondiente.
+       Mientras dure la fase de apoyos o de votación puedes activar o desactivar la delegación de votos cuando quieras.
+       <strong>Si, tras delegar tu voto, decides votar alguna propuesta, tu delegación de voto se cancelará automáticamente</strong></p>
   </div>
 </div>

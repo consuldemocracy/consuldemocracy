@@ -8,4 +8,8 @@ module GeozonesHelper
     Geozone.all.order(name: :asc).collect { |g| [ g.name, g.id ] }
   end
 
+  def my_geozone?(geozone, geozonable)
+    geozone == geozonable.geozone
+  end
+
 end

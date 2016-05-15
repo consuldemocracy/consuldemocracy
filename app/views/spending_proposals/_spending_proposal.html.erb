@@ -50,10 +50,18 @@
       </div>
 
       <% unless spending_proposal.unfeasible? %>
-        <div id="<%= dom_id(spending_proposal) %>_votes" class="small-12 medium-3 column text-center">
-          <%= render 'votes',
-                    { spending_proposal: spending_proposal, vote_url: vote_spending_proposal_path(spending_proposal, value: 'yes') } %>
-        </div>
+        <% if feature?("spending_proposal_features.phase2") %>
+          <div id="<%= dom_id(spending_proposal) %>_votes"
+               class="small-12 medium-3 column text-center">
+            <%= render 'votes',
+                      { spending_proposal: spending_proposal, vote_url: vote_spending_proposal_path(spending_proposal, value: 'yes') } %>
+          </div>
+        <% elsif feature?("spending_proposal_features.phase3") %>
+          <div id="<%= dom_id(spending_proposal) %>_ballot"
+                class="small-12 medium-3 column text-center">
+            <%= render 'ballot', spending_proposal: spending_proposal %>
+          </div>
+        <% end %>
       <% end %>
     </div>
   </div>

@@ -366,7 +366,10 @@ feature 'Votes' do
 
     context "Verified User" do
 
-      background { login_as(@manuela) }
+      background do
+        login_as(@manuela)
+        Setting["feature.spending_proposal_features.phase2"] = true
+      end
 
       feature 'Index' do
         scenario "Index shows user votes on proposals" do
@@ -447,6 +450,7 @@ feature 'Votes' do
         forum = create(:forum, user: @user)
 
         login_as(@user)
+        Setting["feature.spending_proposal_features.phase2"] = true
       end
 
       feature 'Index' do
@@ -573,6 +577,7 @@ feature 'Votes' do
 
   scenario 'Disable voting on spending proposals', :js do
     login_as(@manuela)
+    Setting["feature.spending_proposal_features.phase2"] = true
     Setting["feature.spending_proposal_features.voting_allowed"] = nil
     spending_proposal = create(:spending_proposal)
 

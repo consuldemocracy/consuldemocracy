@@ -30,7 +30,7 @@ feature "Forum" do
       expect(page).to have_content forum.name
     end
 
-    scenario "Forum votes" do
+    xscenario "Forum votes" do
       forum = create(:forum)
       geozone = create(:geozone)
 
@@ -72,6 +72,27 @@ feature "Forum" do
       expect(page).to have_content "This Forum has not supported any investment proposals"
     end
 
+  end
+
+  scenario "Delegating after voting" do
+    Setting['feature.spending_proposal_features.phase3'] = true
+    Setting['feature.spending_proposal_features.final_voting_allowed'] = true
+
+    forum = create(:forum, name: "Cobra")
+    user = create(:user, :level_two)
+    ballot = create(:ballot, user: user)
+    ballot.spending_proposals << create(:spending_proposal, :feasible, :finished)
+
+    login_as(user)
+
+    visit ballot_path
+    expect(page).to have_content("You voted one proposal")
+
+    visit forum_path(forum)
+    click_button "Delegate in Cobra"
+
+    visit ballot_path
+    expect(page).to have_content("You voted 0 proposals")
   end
 
 end
