@@ -39,20 +39,20 @@ Setting["email_domain_for_officials"] = ''
 Setting['per_page_code'] =  ''
 
 # Social settings
-Setting["twitter_handle"] = nil
-Setting["twitter_hashtag"] = nil
-Setting["facebook_handle"] = nil
-Setting["youtube_handle"] = nil
-Setting["blog_url"] = nil
+Setting["twitter_handle"] = "abriendomadrid"
+Setting["twitter_hashtag"] = "#decidemadrid"
+Setting["facebook_handle"] = "Abriendo-Madrid-1475577616080350"
+Setting["youtube_handle"] = "channel/UCFmaChI9quIY7lwHplnacfg"
+Setting["blog_url"] = "/blog"
 
 # Public-facing URL of the app.
-Setting["url"] = "http://example.com"
+Setting["url"] = "https://decide.madrid.es"
 
 # Consul installation's organization name
-Setting["org_name"] = "Consul"
+Setting["org_name"] = "Decide Madrid"
 
 # Consul installation place name (City, Country...)
-Setting["place_name"] = "Consul-land"
+Setting["place_name"] = "Madrid"
 
 # Feature flags
 Setting['feature.debates'] = true
@@ -63,4 +63,9 @@ Setting['feature.google_login'] = true
 Setting['feature.public_stats'] = true
 
 # Spending proposals feature flags
+Setting['feature.spending_proposal_features.phase1'] = true
+Setting['feature.spending_proposal_features.phase2'] = nil
+Setting['feature.spending_proposal_features.phase3'] = nil
 Setting['feature.spending_proposal_features.voting_allowed'] = true
+Setting['feature.spending_proposal_features.final_voting_allowed'] = true
+Setting['feature.spending_proposal_features.valuation_allowed'] = nil

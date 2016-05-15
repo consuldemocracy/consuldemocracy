@@ -1,5 +1,4 @@
 FactoryGirl.define do
-
   sequence(:document_number) { |n| "#{n.to_s.rjust(8, '0')}X" }
 
   factory :user do
@@ -98,6 +97,7 @@ FactoryGirl.define do
   factory :debate do
     sequence(:title)     { |n| "Debate #{n} title" }
     description          'Debate description'
+    comment_kind         'comment'
     terms_of_service     '1'
     association :author, factory: :user
 
@@ -180,13 +180,34 @@ FactoryGirl.define do
     end
   end
 
+  factory :redeemable_code do
+    sequence(:token) { |n| "token#{n}" }
+    geozone
+  end
+
   factory :spending_proposal do
     sequence(:title)     { |n| "Spending Proposal #{n} title" }
     description          'Spend money on this'
-    feasible_explanation 'This proposal is not viable because...'
+    feasible_explanation 'This proposal is viable because...'
     external_url         'http://external_documention.org'
     terms_of_service     '1'
     association :author, factory: :user
+
+    trait :with_confidence_score do
+      before(:save) { |sp| sp.calculate_confidence_score }
+    end
+
+    trait :feasible do
+      feasible true
+    end
+
+    trait :unfeasible do
+      feasible false
+    end
+
+    trait :finished do
+      valuation_finished true
+    end
   end
 
   factory :vote do
@@ -239,7 +260,7 @@ FactoryGirl.define do
   factory :annotation do
     quote "ipsum"
     text "Loremp ipsum dolor"
-    ranges [{"start"=>"/div[1]", "startOffset"=>5, "end"=>"/div[1]", "endOffset"=>10}]
+    ranges [{"start"=>"/span[1]", "startOffset"=>1, "end"=>"/span[1]", "endOffset"=>5}]
     legislation
     user
   end
@@ -272,6 +293,13 @@ FactoryGirl.define do
     trait :rejected do
       rejected_at Time.now
     end
+  end
+
+  factory :open_answer do
+  end
+
+  factory :survey_answer do
+    user
   end
 
   factory :tag, class: 'ActsAsTaggableOn::Tag' do
@@ -316,4 +344,19 @@ FactoryGirl.define do
     sequence(:name) { |n| "District #{n}" }
     census_code { '01' }
   end
+
+  factory :forum do
+    sequence(:name) { |n| "Forum #{n}" }
+    user
+  end
+
+  factory :ballot do
+    user
+  end
+
+  factory :ballot_line do
+    ballot
+    spending_proposal { FactoryGirl.build(:spending_proposal, feasible: true) }
+  end
+
 end

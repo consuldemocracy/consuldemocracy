@@ -6,12 +6,17 @@ describe "Abilities::Administrator" do
   let(:user) { administrator.user }
   let(:administrator) { create(:administrator) }
 
+  before(:each) do
+    Setting['feature.spending_proposal_features.valuation_allowed'] = true
+  end
+
   let(:other_user) { create(:user) }
   let(:hidden_user) { create(:user, :hidden) }
 
   let(:debate) { create(:debate) }
   let(:comment) { create(:comment) }
   let(:proposal) { create(:proposal) }
+  let(:spending_proposal) { create(:spending_proposal) }
 
   let(:hidden_debate) { create(:debate, :hidden) }
   let(:hidden_comment) { create(:comment, :hidden) }
@@ -49,6 +54,9 @@ describe "Abilities::Administrator" do
 
   it { should be_able_to(:comment_as_administrator, proposal) }
   it { should_not be_able_to(:comment_as_moderator, proposal) }
+
+  it { should be_able_to(:comment_as_administrator, spending_proposal) }
+  it { should_not be_able_to(:comment_as_moderator, spending_proposal) }
 
   it { should be_able_to(:manage, Annotation) }
 

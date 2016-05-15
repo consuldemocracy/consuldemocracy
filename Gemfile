@@ -6,6 +6,7 @@ gem 'rails', '4.2.6'
 gem 'pg'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0', '>= 5.0.4'
+gem "animate-rails"
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
@@ -18,6 +19,7 @@ gem 'jquery-rails'
 gem 'jquery-ui-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
+gem 'sprockets-rails', '~> 2.3.3'
 
 gem 'devise', '~> 3.5.7'
 # Use ActiveModel has_secure_password
@@ -59,6 +61,7 @@ gem 'tolk' # Web interface for translations
 gem 'browser'
 gem 'turnout'
 gem 'redcarpet'
+gem 'rubyzip'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -88,6 +91,7 @@ group :test do
   gem 'poltergeist'
   gem 'coveralls', require: false
   gem 'email_spec'
+  gem 'timecop'
 end
 
 group :development do

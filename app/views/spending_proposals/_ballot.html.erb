@@ -1,0 +1,14 @@
+<% reason = spending_proposal.reason_for_not_being_ballotable_by(current_user) %>
+<div class="supports ballot">
+  <% if added_to_ballot?(@ballot, spending_proposal) %>
+    <%= render 'ballots/remove', spending_proposal: spending_proposal %>
+  <% else %>
+    <%= render 'ballots/add', spending_proposal: spending_proposal %>
+  <% end %>
+
+  <% if reason.present? && !added_to_ballot?(@ballot, spending_proposal) %>
+    <%= render 'shared/authentication',
+                message: reason,
+                my_geozone: @ballot.geozone %>
+  <% end %>
+</div>

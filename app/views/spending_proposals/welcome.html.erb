@@ -1,0 +1,62 @@
+<% provide :title do %><%= t('spending_proposals.welcome.page_title') %><% end %>
+<% provide :social_media_meta_tags do %>
+<%= render "shared/social_media_meta_tags_participatory_budget" %>
+<% end %>
+<div class="expanded jumbo-investment-project-votes no-margin-top margin-bottom">
+  <div class="row">
+    <div class="small-12 large-7 column padding content">
+      <h1><%= t("spending_proposals.welcome.title") %></h1>
+      <p><%= t("spending_proposals.welcome.text_first_html") %></p>
+      <p><%= t("spending_proposals.welcome.text_second_html") %></p>
+
+      <div class="row">
+        <div class="small-12 medium-5 column">
+          <%= link_to t("spending_proposals.welcome.city_link"),
+                      spending_proposals_path(geozone: 'all'),
+                      data: { no_turbolink: true }, class: "button budget expanded" %>
+        </div>
+
+        <div class="small-12 medium-5 column end">
+          <%= link_to t("spending_proposals.welcome.districts_link"),
+                      select_district_path,
+                      class: "button budget expanded" %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row margin">
+  <div class="small-12 medium-6 column text-center">
+    <h1 class="big-number">60.000.000&euro;</h1>
+  </div>
+
+  <div class="small-12 medium-6 column">
+    <p>Hemos reservado <strong>60 millones de euros</strong> de inversiones del próximo presupuesto de Madrid para que sea la gente la que decida qué proyectos llevar a cabo. La gente ha hecho sus propuestas, y las ha preseleccionado. <strong>Hasta el 30 de junio podrás votarlas</strong>. El Gobierno asumirá la decisión como vinculante y la incluirá en los presupuestos municipales, que se ejecutarán a partir del 1 de enero de 2017. Propones, decides, se hace.</p>
+    <div class="small-12 medium-10">
+      <%= link_to t("spending_proposals.welcome.in_two_minutes"), '/participatory_budget/in_two_minutes',
+                  class: "button expanded" %>
+    </div>
+    <p><%= link_to t("spending_proposals.welcome.unfeasible_link"), spending_proposals_path(unfeasible: '1') %></p>
+  </div>
+</div>
+
+<div class="expanded jumbo-delegation padding">
+  <div class="row margin-bottom">
+    <div class="small-12 column margin-top">
+      <h2><%= t("spending_proposals.welcome.delegation_title") %></h2>
+
+      <h3>
+        <%= t("spending_proposals.welcome.delegation_text",
+            meetings: link_to(t("spending_proposals.welcome.delegation_meetings"),
+            page_path('participatory_budget_meetings'))).html_safe %>
+      </h3>
+
+      <p><%= t("spending_proposals.welcome.delegation_info_html") %></p>
+
+      <div class="small-12 medium-4">
+        <p><%= link_to t("spending_proposals.welcome.delegation"), '/delegacion', class: "button expanded" %></p>
+      </div>
+    </div>
+  </div>
+</div>

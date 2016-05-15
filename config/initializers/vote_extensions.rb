@@ -11,6 +11,18 @@ ActsAsVotable::Vote.class_eval do
     where(votable_type: 'SpendingProposal', votable_id: spending_proposals)
   end
 
+  def self.representative_votes
+    where(votable_type: 'SpendingProposal', voter_id: User.forums.pluck(:id))
+  end
+
+  def self.city_wide
+    joins(:votable).where("#{votable.table_name}.geozone is null")
+  end
+
+  def self.district_wide
+    joins(:votable).where("#{votable.table_name}.geozone is not null")
+  end
+
   def value
     vote_flag
   end

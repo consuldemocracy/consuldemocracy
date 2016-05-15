@@ -6,4 +6,13 @@ namespace :debates do
     end
   end
 
+  desc "Updates comment kind of all debates"
+  task set_comment_kind: :environment do
+    Debate.find_in_batches do |debates|
+      debates.each do |debate|
+        debate.update(comment_kind: 'comment')
+      end
+    end
+  end
+
 end

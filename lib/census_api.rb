@@ -34,7 +34,7 @@ class CensusApi
     end
 
     def valid?
-      data[:datos_habitante][:item].present?
+      datos_habitante.present?
     end
 
     def date_of_birth
@@ -45,11 +45,11 @@ class CensusApi
     end
 
     def postal_code
-      data[:datos_vivienda][:item][:codigo_postal]
+      datos_vivienda[:codigo_postal]
     end
 
     def district_code
-      data[:datos_vivienda][:item][:codigo_distrito]
+      datos_vivienda[:codigo_distrito]
     end
 
     def gender
@@ -63,8 +63,16 @@ class CensusApi
 
     private
 
+      def datos_habitante
+        (data[:datos_habitante] && data[:datos_habitante][:item]) || {}
+      end
+
+      def datos_vivienda
+        (data[:datos_vivienda] && data[:datos_vivienda][:item]) || {}
+      end
+
       def data
-        @body[:get_habita_datos_response][:get_habita_datos_return]
+        (@body[:get_habita_datos_response] && @body[:get_habita_datos_response][:get_habita_datos_return]) || {}
       end
   end
 
