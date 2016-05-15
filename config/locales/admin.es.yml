@@ -239,6 +239,8 @@ es:
       show:
         stats_title: Estadísticas
         summary:
+          ballot_line_votes: Votos en inversión
+          ballot_votes: Presupuestos votados
           comment_votes: Votos en comentarios
           comments: Comentarios
           debate_votes: Votos en debates
