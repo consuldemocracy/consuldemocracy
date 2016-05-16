@@ -259,6 +259,10 @@ en:
           votes: Total votes
         spending_proposals_title: Spending Proposals
         visits_title: Visits
+      graph:
+        debate_created: Debates
+        spending_proposals: Investment projects
+        visit: Visits
     tags:
       create: Create Topic
       destroy: Destroy Topic

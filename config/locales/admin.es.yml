@@ -259,6 +259,10 @@ es:
           votes: Votos
         spending_proposals_title: Propuestas de inversión
         visits_title: Visitas
+      graph:
+        debate_created: Debates
+        spending_proposals: Propuestas de inversión
+        visit: Visitas
     tags:
       create: Crear Tema
       destroy: Eliminar Tema
