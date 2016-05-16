@@ -1,7 +1,7 @@
 class Admin::StatsController < Admin::BaseController
 
   def show
-    @event_types = Ahoy::Event.group(:name).count
+    @event_types = Ahoy::Event.pluck(:name).uniq.sort
 
     @visits    = Visit.count
     @debates   = Debate.with_hidden.count
@@ -29,6 +29,17 @@ class Admin::StatsController < Admin::BaseController
     budgets_ids = Budget.where.not(phase: "finished").pluck(:id)
     @budgets = budgets_ids.size
     @investments = Budget::Investment.where(budget_id: budgets_ids).count
+  end
+
+  def graph
+    @name = params[:id]
+    @event = params[:event]
+
+    if params[:event]
+      @count = Ahoy::Event.where(name: params[:event]).count
+    else
+      @count = params[:count]
+    end
   end
 
   def proposal_notifications

@@ -1452,11 +1452,16 @@ es:
           votes: Votos
         spending_proposals_title: Propuestas de inversión
         budgets_title: Presupuestos participativos
-        visits_title: Visitas
         direct_messages: Mensajes directos
         proposal_notifications: Notificaciones de propuestas
         incomplete_verifications: Verificaciones incompletas
         polls: Votaciones
+      graph:
+        debate_created: Debates
+        spending_proposals: Propuestas de inversión
+        visit: Visitas
+        level_2_user: Usuarios nivel 2
+        proposal_created: Propuestas Ciudadanas
       direct_messages:
         title: Mensajes directos
         total: Total

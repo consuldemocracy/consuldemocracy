@@ -1453,11 +1453,16 @@ en:
           votes: Total votes
         spending_proposals_title: Spending Proposals
         budgets_title: Participatory budgeting
-        visits_title: Visits
         direct_messages: Direct messages
         proposal_notifications: Proposal notifications
         incomplete_verifications: Incomplete verifications
         polls: Polls
+      graph:
+        debate_created: Debates
+        spending_proposals: Investment projects
+        visit: Visits
+        level_2_user: Level 2 users
+        proposal_created: Citizen proposals
       direct_messages:
         title: Direct messages
         total: Total
