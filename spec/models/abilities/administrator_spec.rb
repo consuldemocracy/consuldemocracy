@@ -66,8 +66,6 @@ describe "Abilities::Administrator" do
       Setting['feature.spending_proposal_features.valuation_allowed'] = true
     end
 
-    it { should be_able_to(:update, SpendingProposal) }
-    it { should be_able_to(:valuate, SpendingProposal) }
     it { should be_able_to(:destroy, SpendingProposal) }
   end
 
@@ -77,8 +75,6 @@ describe "Abilities::Administrator" do
       Setting['feature.spending_proposal_features.valuation_allowed'] = nil
     end
 
-    it { should_not be_able_to(:update, SpendingProposal) }
-    it { should_not be_able_to(:valuate, SpendingProposal) }
     it { should_not be_able_to(:destroy, SpendingProposal) }
   end
 end
