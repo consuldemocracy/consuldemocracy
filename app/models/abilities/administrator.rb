@@ -40,8 +40,11 @@ module Abilities
       can [:search, :create, :index, :destroy], ::Manager
 
       can :manage, Annotation
+      can [:read, :summary], SpendingProposal
 
-      can [:read, :update, :destroy, :summary], SpendingProposal
+      if Setting['feature.spending_proposal_features.valuation_allowed'].present?
+        can [:update, :destroy], SpendingProposal
+      end
     end
   end
 end
