@@ -97,4 +97,39 @@ feature 'Stats' do
 
   end
 
+  context "graphs" do
+
+    scenario "custom graphs", :js do
+      spending_proposal = create(:spending_proposal)
+
+      visit admin_stats_path
+
+      within("#stats") do
+        click_link "Investment projects"
+      end
+
+      expect(page).to have_content "Investment projects(1)"
+      within("#graph") do
+        expect(page).to have_content spending_proposal.created_at.strftime("%Y-%m-%d")
+      end
+    end
+
+    scenario "event graphs", :js do
+      campaign = create(:campaign)
+
+      visit root_path(track_id: campaign.track_id)
+      visit admin_stats_path
+
+      within("#stats") do
+        click_link campaign.name
+      end
+
+      expect(page).to have_content "#{campaign.name}(1)"
+      within("#graph") do
+        event_created_at = Ahoy::Event.where(name: campaign.name).first.time
+        expect(page).to have_content event_created_at.strftime("%Y-%m-%d")
+      end
+    end
+  end
+
 end
