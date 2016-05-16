@@ -1,7 +1,7 @@
 class Admin::Api::StatsController < Admin::Api::BaseController
 
   def show
-    unless params[:events].present? ||
+    unless params[:event].present? ||
            params[:visits].present? ||
            params[:spending_proposals].present? ||
            params[:budget_investments].present?
@@ -10,11 +10,8 @@ class Admin::Api::StatsController < Admin::Api::BaseController
 
     ds = Ahoy::DataSource.new
 
-    if params[:events].present?
-      event_types = params[:events].split ","
-      event_types.each do |event|
-        ds.add event.titleize, Ahoy::Event.where(name: event).group_by_day(:time).count
-      end
+    if params[:event].present?
+      ds.add params[:event].titleize, Ahoy::Event.where(name: params[:event]).group_by_day(:time).count
     end
 
     if params[:visits].present?
