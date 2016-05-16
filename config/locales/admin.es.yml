@@ -263,6 +263,8 @@ es:
         debate_created: Debates
         spending_proposals: Propuestas de inversión
         visit: Visitas
+        level_2_user: Usuarios nivel 2
+        proposal_created: Propuestas Ciudadanas
     tags:
       create: Crear Tema
       destroy: Eliminar Tema

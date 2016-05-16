@@ -263,6 +263,8 @@ en:
         debate_created: Debates
         spending_proposals: Investment projects
         visit: Visits
+        level_2_user: Level 2 users
+        proposal_created: Citizen proposals
     tags:
       create: Create Topic
       destroy: Destroy Topic
