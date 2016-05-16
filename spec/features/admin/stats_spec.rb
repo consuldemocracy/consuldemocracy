@@ -102,6 +102,25 @@ feature "Stats" do
 
   end
 
+  context "graphs" do
+    scenario "event graphs", :js do
+      campaign = create(:campaign)
+
+      visit root_path(track_id: campaign.track_id)
+      visit admin_stats_path
+
+      within("#stats") do
+        click_link campaign.name
+      end
+
+      expect(page).to have_content "#{campaign.name}(1)"
+      within("#graph") do
+        event_created_at = Ahoy::Event.where(name: campaign.name).first.time
+        expect(page).to have_content event_created_at.strftime("%Y-%m-%d")
+      end
+    end
+  end
+
   context "Proposal notifications" do
 
     scenario "Summary stats" do
