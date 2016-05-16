@@ -372,8 +372,9 @@ ActiveRecord::Schema.define(version: 20190205131722) do
 
   create_table "ballots", force: :cascade do |t|
     t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
+    t.integer  "ballot_lines_count", default: 0
   end
 
   create_table "campaigns", force: :cascade do |t|
