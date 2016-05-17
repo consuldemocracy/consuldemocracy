@@ -25,6 +25,6 @@ class Admin::StatsController < Admin::BaseController
      ActsAsVotable::Vote.where(votable_type: 'Proposal').pluck(:voter_id).uniq.count
     @user_ids_who_didnt_vote_proposals = @verified_users - @user_ids_who_voted_proposals
     @spending_proposals = SpendingProposal.count
-    @ballots_with_votes = Ballot.all.reject {|ballot| ballot.spending_proposals.count == 0 }.count
+    @ballots_with_votes = Ballot.where("ballot_lines_count > ?", 0).count
   end
 end
