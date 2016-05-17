@@ -6,10 +6,6 @@ describe "Abilities::Administrator" do
   let(:user) { administrator.user }
   let(:administrator) { create(:administrator) }
 
-  before(:each) do
-    Setting['feature.spending_proposal_features.valuation_allowed'] = true
-  end
-
   let(:other_user) { create(:user) }
   let(:hidden_user) { create(:user, :hidden) }
 
@@ -61,7 +57,24 @@ describe "Abilities::Administrator" do
   it { should be_able_to(:manage, Annotation) }
 
   it { should be_able_to(:read, SpendingProposal) }
-  it { should be_able_to(:update, SpendingProposal) }
-  it { should be_able_to(:valuate, SpendingProposal) }
-  it { should be_able_to(:destroy, SpendingProposal) }
+  it { should be_able_to(:summary, SpendingProposal) }
+
+
+  describe "valuation open" do
+
+    before(:each) do
+      Setting['feature.spending_proposal_features.valuation_allowed'] = true
+    end
+
+    it { should be_able_to(:destroy, SpendingProposal) }
+  end
+
+  describe "valuation finished" do
+
+    before(:each) do
+      Setting['feature.spending_proposal_features.valuation_allowed'] = nil
+    end
+
+    it { should_not be_able_to(:destroy, SpendingProposal) }
+  end
 end

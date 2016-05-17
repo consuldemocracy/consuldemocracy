@@ -18,6 +18,10 @@ feature 'Admin spending proposals' do
 
   context "Index" do
 
+    background do
+      Setting['feature.spending_proposal_features.valuation_allowed'] = true
+    end
+
     scenario 'Displaying spending proposals' do
       spending_proposal = create(:spending_proposal, cached_votes_up: 10, physical_votes: 20)
       visit admin_spending_proposals_path
@@ -403,6 +407,10 @@ feature 'Admin spending proposals' do
   end
 
   context "Edit" do
+
+    background do
+      Setting['feature.spending_proposal_features.valuation_allowed'] = true
+    end
 
     scenario "Change title, description or geozone" do
       spending_proposal = create(:spending_proposal)

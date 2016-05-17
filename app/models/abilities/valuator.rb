@@ -3,9 +3,12 @@ module Abilities
     include CanCan::Ability
 
     def initialize(user)
+      can :read, SpendingProposal
+
       if Setting['feature.spending_proposal_features.valuation_allowed'].present?
-        can [:read, :update, :valuate], SpendingProposal
+        can [:update, :valuate], SpendingProposal
       end
+
     end
   end
 end
