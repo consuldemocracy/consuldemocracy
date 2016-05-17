@@ -41,7 +41,6 @@
 //= require advanced_search
 //= require registration_form
 //= require forms
-//= require survey_answers
 //= require suggest
 //= require forms
 //= require tracks
@@ -62,7 +61,6 @@ var initialize_modules = function() {
   App.Annotatable.initialize();
   App.AdvancedSearch.initialize();
   App.RegistrationForm.initialize();
-  App.SurveyAnswers.initialize();
   App.Suggest.initialize();
   App.Forms.initialize();
   App.Tracks.initialize();
