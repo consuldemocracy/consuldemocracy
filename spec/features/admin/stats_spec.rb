@@ -73,7 +73,7 @@ feature 'Stats' do
 
     visit admin_stats_path
 
-    expect(page).to have_content "Level 2 User (1)"
+    expect(page).to have_content "Level two users 1"
   end
 
   context "Ballot" do

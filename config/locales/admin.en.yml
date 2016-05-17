@@ -257,8 +257,6 @@ en:
           verified_users_who_didnt_vote_proposals: Verified users who didn't votes proposals
           visits: Visits
           votes: Total votes
-        spending_proposals_title: Spending Proposals
-        visits_title: Visits
       graph:
         debate_created: Debates
         spending_proposals: Investment projects
