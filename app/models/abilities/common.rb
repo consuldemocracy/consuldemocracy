@@ -46,8 +46,6 @@ module Abilities
         can :vote_featured, Proposal
         can :vote, SpendingProposal
         can :create, SpendingProposal
-        can :read, SurveyAnswer
-        can :read, OpenAnswer
         can :show, Ballot
         can [:create, :destroy], BallotLine
       end
