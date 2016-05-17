@@ -236,7 +236,7 @@ feature 'Spending proposals' do
 
   context "Destroy" do
 
-    scenario "Admin can destroy spending proposals" do
+    scenario "Admin cannot destroy spending proposals" do
       admin = create(:administrator)
       user = create(:user, :level_two)
       spending_proposal = create(:spending_proposal, author: user)
@@ -245,13 +245,8 @@ feature 'Spending proposals' do
 
       visit user_path(user)
       within("#spending_proposal_#{spending_proposal.id}") do
-        click_link "Delete"
+        expect(page).to_not have_link "Delete"
       end
-
-      expect(page).to have_content("Spending proposal deleted succesfully.")
-
-      visit user_path(user)
-      expect(page).not_to have_css("spending_proposal_list")
     end
 
   end
