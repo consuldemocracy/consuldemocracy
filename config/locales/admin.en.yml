@@ -263,6 +263,11 @@ en:
         visit: Visits
         level_2_user: Level 2 users
         proposal_created: Citizen proposals
+        participatory_budget: Participatory Budget
+      spending_proposals:
+        title: Participatory Budgets
+        districts: District
+        users: Users
     tags:
       create: Create Topic
       destroy: Destroy Topic

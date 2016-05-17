@@ -1,0 +1,17 @@
+<h2><%= t("admin.stats.spending_proposals.title")%></h2>
+
+<table class="investment-projects-summary">
+  <th><%= t("admin.stats.spending_proposals.districts") %></th>
+  <th><%= t("admin.stats.spending_proposals.users") %></th>
+
+  <% @ballots.each do |geozone, count| %>
+    <tr id="<%= geozone.present? ? dom_id(geozone) : 'geozone_all_city' %>">
+      <td class="name">
+        <%= geozone.present? ? geozone.name : t("geozones.none") %>
+      </td>
+      <td class="name">
+        <%= count %>
+      </td>
+    </tr>
+  <% end %>
+</table>
