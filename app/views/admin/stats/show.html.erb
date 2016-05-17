@@ -17,10 +17,6 @@
             <span class="number"><%= number_with_delimiter(@ballot_lines) %></span>
           </p>
           <p class="featured">
-            <%= t "admin.stats.show.summary.surveys" %><br>
-            <span class="number"><%= number_with_delimiter(@surveys) %></span>
-          </p>
-          <p class="featured">
             <%= t "admin.stats.show.summary.spending_proposals" %><br>
             <span class="number"><%= number_with_delimiter(@spending_proposals) %></span>
           </p>
@@ -47,11 +43,6 @@
           <p class="featured">
             <%= t "admin.stats.show.summary.ballot_votes" %><br>
             <span class="number"><%= number_with_delimiter(@ballots_with_votes) %><br></span>
-          </p>
-
-          <p class="featured">
-            <%= t "admin.stats.show.summary.open_answer_votes" %><br>
-            <span class="number"><%= number_with_delimiter(@open_answer_votes) %><br></span>
           </p>
 
           <p class="featured">
