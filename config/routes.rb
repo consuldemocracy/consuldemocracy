@@ -264,25 +264,21 @@ Rails.application.routes.draw do
   resources :forums, only: [:index, :create, :show]
   resources :representatives, only: [:create, :destroy]
 
-  resources :survey_answers, only: [:new, :create]
-
-  resources :open_answers, only: [:show, :index]
-
-  get "encuesta-plaza-espana", to: "survey_answers#new", as: :encuesta_plaza_espana
-
   if Rails.env.development?
     mount LetterOpenerWeb::Engine, at: "/letter_opener"
   end
 
   mount Tolk::Engine => '/translate', :as => 'tolk'
 
-  get "ordenanza-de-transparencia", to: "legislations#show", id: 1, as: :ordenanza_transparencia
-  get '/blog' => redirect("http://diario.madrid.es/participa/")
+  get 'ordenanza-de-transparencia', to: 'legislations#show', id: 1, as: :ordenanza_transparencia
+  get 'encuesta-plaza-espana' => redirect('/encuesta-plaza-espana-resultados')
+  get '/blog' => redirect('http://diario.madrid.es/participa/')
   get 'participatory_budget', to: 'spending_proposals#welcome', as: 'participatory_budget'
   get 'participatory_budget/select_district', to: 'spending_proposals#select_district', as: 'select_district'
   get 'delegacion', to: 'forums#index', as: 'delegation'
   get 'plenoabierto', to: 'pages#show', id: 'processes_open_plenary'
   get 'noticias', to: 'pages#show', id: 'news'
-  resources :pages, path: '/', only: [:show]
   get 'participatory_budget/in_two_minutes', to: 'pages#show', id: 'participatory_budget/in_two_minutes'
+
+  resources :pages, path: '/', only: [:show]
 end
