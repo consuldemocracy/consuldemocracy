@@ -130,7 +130,7 @@
 
   .anonymous-votes, .organizations-votes {
     background: $warning-bg;
-    color: $warning-color;
+    color: $color-warning;
     height: 100%;
     left: 0;
     line-height: $line-height;
@@ -141,13 +141,13 @@
     width: 100%;
 
     p {
-      color: $warning-color;
+      color: $color-warning;
       margin: 0 rem-calc(12);
       text-align: left;
     }
 
     a {
-      color: $warning-color;
+      color: $color-warning;
       font-weight: bold;
       text-decoration: underline;
     }
@@ -242,7 +242,7 @@
 
   .anonymous-votes, .organizations-votes, .no-supports-allowed {
     background: $warning-bg;
-    color: $warning-color;
+    color: $color-warning;
     height: 100%;
     left: 0;
     line-height: $line-height;
@@ -253,13 +253,13 @@
     width: 100%;
 
     p {
-      color: $warning-color;
+      color: $color-warning;
       margin: 0 rem-calc(12);
       text-align: left;
     }
 
     a {
-      color: $warning-color;
+      color: $color-warning;
       font-weight: bold;
       text-decoration: underline;
     }
@@ -990,18 +990,18 @@
     .organizations-votes,
     .anonymous-votes {
       background: $featured;
-      color: $warning-color;
+      color: $color-warning;
       font-size: $small-font-size;
       line-height: $line-height;
       padding-top: 0;
 
       a {
-        color: $warning-color;
+        color: $color-warning;
         font-weight: bold;
       }
 
       p {
-        color: $warning-color;
+        color: $color-warning;
         font-size: $small-font-size;
         line-height: $line-height;
       }
