@@ -57,8 +57,8 @@ describe "Abilities::Administrator" do
   it { should be_able_to(:manage, Annotation) }
 
   it { should be_able_to(:read, SpendingProposal) }
+  it { should be_able_to(:edit, SpendingProposal) }
   it { should be_able_to(:summary, SpendingProposal) }
-
 
   describe "valuation open" do
 
