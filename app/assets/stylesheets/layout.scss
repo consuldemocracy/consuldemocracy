@@ -766,22 +766,22 @@ form {
   &.success, &.notice {
     background-color: $success-bg;
     border-color: $success-border;
-    color: $success-color;
+    color: $color-success;
   }
 
   &.primary {
     background-color: $info-bg;
     border-color: $info-border;
-    color: $info-color;
+    color: $color-info;
   }
 
   &.warning {
     background-color: $warning-bg;
     border-color: $warning-border;
-    color: $warning-color;
+    color: $color-warning;
 
     a {
-      color: $warning-color;
+      color: $color-warning;
       font-weight: bold;
       text-decoration: underline;
     }
@@ -790,7 +790,7 @@ form {
   &.alert, &.error {
     background-color: $alert-bg;
     border-color: $alert-border;
-    color: $alert-color;
+    color: $color-alert;
   }
 
   .close {
@@ -800,23 +800,23 @@ form {
 
 span.error, small.error {
   background: $alert-bg;
-  color: $alert-color;
+  color: $color-alert;
 }
 
 span.no-error, small.no-error {
   background: $success-bg;
-  color: $success-color;
+  color: $color-success;
 }
 
 .error small.error {
   background: $alert-bg;
-  color: $alert-color;
+  color: $color-alert;
   display: inline-block;
   margin: 0 $line-height/4;
 }
 
 label.error, label.error a {
-  color: $alert-color;
+  color: $color-alert;
 }
 
 // 08. User account
@@ -836,7 +836,7 @@ label.error, label.error a {
   .final-votes-info {
     background: $warning-bg;
     border: 1px solid $warning-border;
-    color: $warning-color;
+    color: $color-warning;
     margin-top: $line-height;
     padding: $line-height/2;
 
@@ -1507,7 +1507,7 @@ table {
 
     .icon-letter {
       background: white;
-      color: $info-color;
+      color: $color-info;
       font-size: rem-calc(24);
       margin-left: -27px;
       padding: 0 $line-height/2;
