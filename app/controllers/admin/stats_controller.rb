@@ -1,7 +1,7 @@
 class Admin::StatsController < Admin::BaseController
 
   def show
-    @event_types = Ahoy::Event.group(:name).count
+    @event_types = Ahoy::Event.pluck(:name).uniq.sort
 
     @visits = Visit.count
     @debates = Debate.with_hidden.count
@@ -26,5 +26,16 @@ class Admin::StatsController < Admin::BaseController
     @user_ids_who_didnt_vote_proposals = @verified_users - @user_ids_who_voted_proposals
     @spending_proposals = SpendingProposal.count
     @ballots_with_votes = Ballot.where("ballot_lines_count > ?", 0).count
+  end
+
+  def graph
+    @name = params[:id]
+    @event = params[:event]
+
+    if params[:event]
+      @count = Ahoy::Event.where(name: params[:event]).count
+    else
+      @count = params[:count]
+    end
   end
 end

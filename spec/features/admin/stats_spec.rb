@@ -73,7 +73,7 @@ feature 'Stats' do
 
     visit admin_stats_path
 
-    expect(page).to have_content "Level 2 User (1)"
+    expect(page).to have_content "Level two users 1"
   end
 
   context "Ballot" do
@@ -95,6 +95,41 @@ feature 'Stats' do
       expect(page).to have_content "Votes in investment projects 3"
     end
 
+  end
+
+  context "graphs" do
+
+    scenario "custom graphs", :js do
+      spending_proposal = create(:spending_proposal)
+
+      visit admin_stats_path
+
+      within("#stats") do
+        click_link "Investment projects"
+      end
+
+      expect(page).to have_content "Investment projects (1)"
+      within("#graph") do
+        expect(page).to have_content spending_proposal.created_at.strftime("%Y-%m-%d")
+      end
+    end
+
+    scenario "event graphs", :js do
+      campaign = create(:campaign)
+
+      visit root_path(track_id: campaign.track_id)
+      visit admin_stats_path
+
+      within("#stats") do
+        click_link campaign.name
+      end
+
+      expect(page).to have_content "#{campaign.name} (1)"
+      within("#graph") do
+        event_created_at = Ahoy::Event.where(name: campaign.name).first.time
+        expect(page).to have_content event_created_at.strftime("%Y-%m-%d")
+      end
+    end
   end
 
 end
