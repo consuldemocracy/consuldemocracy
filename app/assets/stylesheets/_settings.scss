@@ -642,11 +642,6 @@ $footer-color:      #171819;
 $footer-link:       #454A4C;
 $footer-border:     #BFC1C3;
 
-// 03. Forms
-// - - - - - - - - - - - - - - - - - - - - - - - - -
-
-$input-bg:          #F8F8F8;
-
 // 04. Alerts
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -665,30 +660,3 @@ $color-warning:     #8A6D3B;
 $alert-bg:          #F2DEDE;
 $alert-border:      #EBCCD1;
 $color-alert:       #A94442;
-
-// 05. Levels
-// - - - - - - - - - - - - - - - - - - - - - - - - -
-
-$level-1:           #1ABC9C;
-$level-2:           #43AC6A;
-$level-3:           #43AC6A;
-$level-4:           #43AC6A;
-$level-5:           #F08A24;
-
-$author:            #008CCF;
-$association:       #C0392B;
-$deleted:           #E7E7E7;
-
-$comment-author:    rgba(45,144,248,.15);
-$comment-level-5:   rgba(255,241,204,1);
-$comment-admin:     rgba(45,144,248,.15);
-$comment-official:  rgba(70,219,145,.3);
-
-// 06. Responsive
-// - - - - - - - - - - - - - - - - - - - - - - - - -
-
-$small:             rem-calc(480);
-$small-breakpoint:  rem-calc(640);
-$medium-breakpoint: rem-calc(1024);
-$large-breakpoint:  rem-calc(1440);
-$xlarge-breakpoint: rem-calc(1920);

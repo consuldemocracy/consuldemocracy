@@ -216,13 +216,6 @@ a {
   border: 0;
 }
 
-#drop-help.f-dropdown.content {
-
-  @media (min-width: $small-breakpoint) {
-    max-width: $line-height*15;
-  }
-}
-
 .menu.simple {
   border-bottom: 1px solid $border;
   margin: $line-height 0;
@@ -277,7 +270,7 @@ header {
     float: none;
     height: $line-height*1.5;
 
-    @media (min-width: $small-breakpoint) {
+    @include breakpoint(small) {
       float: left;
       margin-left: $line-height/2;
     }
@@ -288,7 +281,7 @@ header {
     padding: rem-calc(6) 0;
     text-align: center;
 
-    @media (min-width: $small-breakpoint) {
+    @include breakpoint(small) {
       float: right;
     }
   }
@@ -302,7 +295,7 @@ header {
   padding-bottom: 0;
   padding-top: 0;
 
-  @media (min-width: $small-breakpoint) {
+  @include breakpoint(small) {
     padding: 0;
   }
 
@@ -322,7 +315,7 @@ header {
     &.menu > li {
       display: block;
 
-      @media (min-width: $small-breakpoint) {
+      @include breakpoint(small) {
         display: table-cell;
         height: $line-height*3.5;
       }
@@ -331,7 +324,7 @@ header {
         color: white;
         padding-left: 0;
 
-        @media (min-width: $small-breakpoint) {
+        @include breakpoint(small) {
           font-size: $small-font-size;
           padding: rem-calc(11) rem-calc(16);
         }
@@ -339,7 +332,7 @@ header {
         &.button {
           text-align: left;
 
-          @media (min-width: $small-breakpoint) {
+          @include breakpoint(small) {
             background: white;
             color: $brand;
             text-align: center;
@@ -377,7 +370,7 @@ header {
 
 .subnavigation {
 
-  @media (min-width: $small-breakpoint) {
+  @include breakpoint(small) {
     background: white;
     padding-bottom: 0;
   }
@@ -387,7 +380,7 @@ header {
     margin: 0;
 
     li {
-      @media (min-width: $small-breakpoint) {
+      @include breakpoint(small) {
         display: inline-block;
         margin-right: rem-calc(36);
       }
@@ -400,7 +393,7 @@ header {
         text-align: left;
         width: 100%;
 
-        @media (min-width: $small-breakpoint) {
+        @include breakpoint(small) {
           color: $text;
           display: block;
           font-weight: bold;
@@ -416,7 +409,7 @@ header {
         &.active {
           color: white;
 
-          @media (min-width: $small-breakpoint) {
+          @include breakpoint(small) {
             border-bottom: 2px solid $brand;
             color: $brand;
           }
@@ -428,7 +421,7 @@ header {
   .input-group {
     padding-top: $line-height/4;
 
-    @media (min-width: $small-breakpoint) {
+    @include breakpoint(small) {
       margin-bottom: 0;
     }
   }
@@ -473,7 +466,7 @@ header {
     position: relative;
     text-align: left;
 
-    @media (min-width: $small-breakpoint) {
+    @include breakpoint(small) {
       margin-right: $line-height*1.5;
     }
 
@@ -528,7 +521,6 @@ footer {
   }
 
   h2 a {
-
     border-bottom: 1px solid $footer-border;
     display: block;
     font-size: $h3-font-size;
@@ -604,7 +596,7 @@ h3.sidebar-title {
       line-height: rem-calc(80); // Same as logo image height
       text-align: center;
 
-      @media (min-width: $small-breakpoint) {
+      @include breakpoint(small) {
         display: inline-block;
         text-align: left;
       }
@@ -710,7 +702,7 @@ form {
   }
 
   input[type]:not([type=submit]):not([type=file]):not([type=checkbox]):not([type=radio]) {
-    background: $input-bg;
+    background: #F8F8F8;
     height: $line-height*2;
     margin-bottom: rem-calc(16);
 
@@ -1002,7 +994,7 @@ img.avatar, img.admin-avatar, img.moderator-avatar, img.initialjs-avatar {
   float: left;
   margin: $line-height 0;
 
-  @media (min-width: $small-breakpoint) {
+  @include breakpoint(small) {
     float: right;
     margin-bottom: 0;
     margin-top: rem-calc(28);
@@ -1019,8 +1011,7 @@ img.avatar, img.admin-avatar, img.moderator-avatar, img.initialjs-avatar {
     height: $line-height*2;
   }
 
-  @media (max-width: $medium-breakpoint) {
-
+  @include breakpoint(medium down) {
     .column {
       padding: 0;
     }
@@ -1035,35 +1026,27 @@ img.avatar, img.admin-avatar, img.moderator-avatar, img.initialjs-avatar {
 }
 
 .is-author {
-  background: $author;
+  background: #008CCF;
 }
 
 .is-association {
-  background: $association;
+  background: #C0392B;
 }
 
 .is-deleted {
-  background: $deleted;
+  background: #E7E7E7;
 }
 
 .level-1 {
-  background: $level-1;
+  background: #1ABC9C;
 }
 
-.level-2 {
-  background: $level-2;
-}
-
-.level-3 {
-  background: $level-3;
-}
-
-.level-4 {
-  background: $level-4;
+.level-2, .level-3, .level-4 {
+  background: #43AC6A;
 }
 
 .level-5 {
-  background: $level-5;
+  background: #F08A24;
 }
 
 // 12. Tables
@@ -1358,7 +1341,7 @@ table {
         right: 0;
         top: 24px;
 
-        @media (min-width: $small-breakpoint) {
+        @include breakpoint(small) {
           content: 'c';
         }
       }
@@ -1371,7 +1354,7 @@ table {
 
 .verification {
 
-  @media (min-width: $small-breakpoint) {
+  @include breakpoint(small) {
     .left + .left {
       margin-left: $line-height/2;
     }
@@ -1383,7 +1366,7 @@ table {
       float: left;
       width: 30%;
 
-      @media (min-width: $small-breakpoint) {
+      @include breakpoint(small) {
         width: 25%;
       }
     }
@@ -1392,7 +1375,7 @@ table {
   .progress {
     height: $line-height*3;
 
-    @media (min-width: $small-breakpoint) {
+    @include breakpoint(small) {
       height: $line-height*2;
     }
 
@@ -1409,7 +1392,7 @@ table {
     text-transform: uppercase;
     vertical-align: top;
 
-    @media (min-width: $small-breakpoint) {
+    @include breakpoint(small) {
       line-height: $line-height*2;
       padding: 0;
     }
@@ -1417,7 +1400,7 @@ table {
     .number {
       display: block;
 
-      @media (min-width: $small-breakpoint) {
+      @include breakpoint(small) {
         background-color: white;
         border-radius: rem-calc(30);
         color: #43AC6A;
@@ -1596,42 +1579,32 @@ table {
         padding: $line-height/4 0;
         overflow: hidden;
 
-        @each $n in ("1", "2", "3","4", "5") {
-          &.level-#{$n} {
-            @if $n == "5" {
-              background: $comment-level-5;
-              padding: $line-height/4 $line-height/2;
-            }
-            @elseif $n == "1" {
-              background: none;
-              padding: $line-height/4 $line-height/2;
-            }
-            @else {
-              background: $comment-official;
-              padding: $line-height/4 $line-height/2;
-            }
-          }
-        }
-
-        &.is-author {
-          background: $comment-author;
+        &.level-1, &.level-2, &.level-3, &.level-4, &.level-5,
+        &.is-author, &.is-admin, &.is-moderator {
+          background: rgba(70,219,145,.3);
           padding: $line-height/4 $line-height/2;
         }
 
-        &.is-admin, &.is-moderator {
-          background: $comment-admin;
-          padding: $line-height/4 $line-height/2;
+        &.level-1 {
+          background: none;
         }
 
         &.level-5 {
-          background: $comment-level-5;
-          padding: $line-height/4 $line-height/2;
+          background: rgba(255,241,204,1);
+        }
+
+        &.is-author {
+          background: rgba(45,144,248,.15);
+        }
+
+        &.is-admin, &.is-moderator {
+          background: rgba(45,144,248,.15);
         }
       }
     }
 
     .is-deleted {
-      background: $deleted;
+      background: #E7E7E7;
       margin-left: rem-calc(42);
       padding: $line-height/4 $line-height/2;
     }
@@ -1669,7 +1642,7 @@ table {
   float: none;
   margin-top: 0;
 
-  @media (min-width: $small-breakpoint) {
+  @include breakpoint(small) {
     float: right;
     margin-top: rem-calc(-24);
   }
@@ -1678,7 +1651,7 @@ table {
     padding-right: $line-height/2;
     float: none;
 
-    @media (min-width: $small-breakpoint) {
+    @include breakpoint(small) {
       float: right;
     }
   }
