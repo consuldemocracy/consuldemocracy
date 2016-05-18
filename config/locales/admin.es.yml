@@ -238,6 +238,7 @@ es:
     stats:
       show:
         stats_title: Estadísticas
+        participatory_budget: Presupuestos Participativos
         summary:
           ballot_line_votes: Votos en inversión
           ballot_votes: Presupuestos votados
@@ -263,6 +264,11 @@ es:
         visit: Visitas
         level_2_user: Usuarios nivel 2
         proposal_created: Propuestas Ciudadanas
+        participatory_budget: Presupuestos Participativos
+      spending_proposals:
+        title: Presupuestos participativos
+        districts: Distrito
+        users: Usuarios
     tags:
       create: Crear Tema
       destroy: Eliminar Tema

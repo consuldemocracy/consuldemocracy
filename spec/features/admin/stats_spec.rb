@@ -76,7 +76,7 @@ feature 'Stats' do
     expect(page).to have_content "Level two users 1"
   end
 
-  context "Ballot" do
+  context "Participatory Budgets" do
 
     scenario "Number of users that have voted a investment project" do
       spending_proposal = create(:spending_proposal, :feasible)
@@ -89,12 +89,36 @@ feature 'Stats' do
       expect(page).to have_content "Budgets voted 2"
     end
 
-    scenario "Total number of votes in investment projects" do
+    scenario "Number of users that have voted a investment project per geozone" do
+      california = create(:geozone)
+
+      create(:spending_proposal, :feasible, geozone: california)
+      create(:spending_proposal, :feasible, geozone: california)
+      create(:spending_proposal, :feasible, geozone: nil)
+
+      SpendingProposal.all.each do |spending_proposal|
+        create(:ballot, spending_proposals: [spending_proposal], geozone: spending_proposal.geozone)
+      end
+
+      visit admin_stats_path
+      click_link "Participatory Budget"
+
+      within("#geozone_#{california.id}") do
+        expect(page).to have_content california.name
+        expect(page).to have_content 2
+      end
+
+      within("#geozone_all_city") do
+        expect(page).to have_content "All city"
+        expect(page).to have_content 1
+      end
+    end
+
+    scenario "Number of votes in investment projects" do
       3.times { create(:ballot_line) }
       visit admin_stats_path
       expect(page).to have_content "Votes in investment projects 3"
     end
-
   end
 
   context "graphs" do

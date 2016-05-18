@@ -38,4 +38,9 @@ class Admin::StatsController < Admin::BaseController
       @count = params[:count]
     end
   end
+
+  def spending_proposals
+    @ballots = Ballot.group(:geozone).count
+  end
+
 end

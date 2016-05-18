@@ -187,7 +187,9 @@ Rails.application.routes.draw do
     resources :newsletters, only: :index do
       get :users, on: :collection
     end
+
     resource :stats, only: :show do
+      get :spending_proposals, on: :collection
       get :graph, on: :member
     end
 
