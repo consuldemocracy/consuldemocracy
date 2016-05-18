@@ -238,6 +238,7 @@ es:
     stats:
       show:
         stats_title: Estadísticas
+        participatory_budget: Presupuestos Participativos
         summary:
           ballot_line_votes: Votos en inversión
           ballot_votes: Presupuestos votados
