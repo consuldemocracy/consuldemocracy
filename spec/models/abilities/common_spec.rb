@@ -33,6 +33,8 @@ describe "Abilities::Common" do
   it { should_not be_able_to(:vote, SpendingProposal) }
   it { should_not be_able_to(:destroy, SpendingProposal) }
 
+  it { should_not be_able_to(:show, Ballot) }
+
   it { should_not be_able_to(:comment_as_administrator, debate) }
   it { should_not be_able_to(:comment_as_moderator, debate) }
   it { should_not be_able_to(:comment_as_administrator, proposal) }
@@ -97,6 +99,8 @@ describe "Abilities::Common" do
 
     it { should_not be_able_to(:destroy, spending_proposal) }
     it { should_not be_able_to(:destroy, own_spending_proposal) }
+
+    it { should be_able_to(:show, Ballot) }
   end
 
   describe "when level 3 verified" do
@@ -112,6 +116,8 @@ describe "Abilities::Common" do
 
     it { should_not be_able_to(:destroy, spending_proposal) }
     it { should_not be_able_to(:destroy, own_spending_proposal) }
+
+    it { should be_able_to(:show, Ballot) }
   end
 
   describe "when forum" do
