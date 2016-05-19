@@ -265,6 +265,7 @@ en:
         level_2_user: Level 2 users
         proposal_created: Citizen proposals
         participatory_budget: Participatory Budget
+        user_voted_budgets: Users that have voted
       spending_proposals:
         title: Participatory Budgets
         districts: District

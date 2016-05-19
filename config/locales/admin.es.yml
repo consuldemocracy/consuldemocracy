@@ -265,6 +265,7 @@ es:
         level_2_user: Usuarios nivel 2
         proposal_created: Propuestas Ciudadanas
         participatory_budget: Presupuestos Participativos
+        user_voted_budgets: Usuarios que han votado
       spending_proposals:
         title: Presupuestos participativos
         districts: Distrito
