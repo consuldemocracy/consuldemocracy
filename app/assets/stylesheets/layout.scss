@@ -909,8 +909,8 @@ img.avatar, img.admin-avatar, img.moderator-avatar, img.initialjs-avatar {
     color: #ecf00b;
     font-size: $tiny-font-size;
     position: absolute;
-    right: 4px;
-    top: -6px;
+    right: 8px;
+    top: 6px;
   }
 }
 
@@ -918,9 +918,9 @@ img.avatar, img.admin-avatar, img.moderator-avatar, img.initialjs-avatar {
   background: $border;
   content: '';
   height: 100%;
-  left: 28px;
+  left: 22px;
   position: absolute;
-  top: 84px;
+  top: 60px;
   width: 2px;
 }
 
@@ -949,7 +949,7 @@ img.avatar, img.admin-avatar, img.moderator-avatar, img.initialjs-avatar {
     color: $brand;
     content: "\4d";
     font-family: "icons" !important;
-    left: 6px;
+    left: 0;
     position: absolute;
   }
 
