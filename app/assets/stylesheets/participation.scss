@@ -1,4 +1,4 @@
-// Table of Contents - Styles for debates and proposals
+// Table of Contents
 //
 // 01. Votes and supports
 // 02. New participation
@@ -8,7 +8,7 @@
 //
 
 // 01. Votes and supports
-// - - - - - - - - - - - - - - - - - - - - - - - - -
+// ----------------------
 
 @mixin votes {
   background: $votes-bg;
@@ -272,7 +272,7 @@
 }
 
 // 02. New participation
-// - - - - - - - - - - - - - - - - - - - - - - - - -
+// ---------------------
 
 .debate-new, .debate-edit,
 .proposal-new, .proposal-edit,
@@ -335,7 +335,7 @@
 }
 
 // 03. Show participation
-// - - - - - - - - - - - - - - - - - - - - - - - - -
+// ----------------------
 
 .debate-show, .proposal-show, .investment-project-show {
 
@@ -550,7 +550,7 @@
 }
 
 // 04. List participation
-// - - - - - - - - - - - - - - - - - - - - - - - - -
+// ----------------------
 
 .debates-list, .proposals-list, .investment-projects-list {
 
@@ -924,7 +924,7 @@
 }
 
 // 05. Featured
-// - - - - - - - - - - - - - - - - - - - - - - - - -
+// ------------
 
 .featured-debates, .featured-proposals {
   padding: $line-height/2 0;

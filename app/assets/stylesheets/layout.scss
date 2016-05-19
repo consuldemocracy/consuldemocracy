@@ -10,17 +10,17 @@
 // 08. User account
 // 09. Search
 // 10. Official levels
-// 12. Tables
-// 13. Social
-// 14. Pages
-// 15. Verification
-// 16. Comments
-// 17. Flags
-// 18. Activity
+// 11. Tables
+// 12. Social
+// 13. Pages
+// 14. Verification
+// 15. Comments
+// 16. Flags
+// 17. Activity
 //
 
 // 01. Global styles
-// - - - - - - - - - - - - - - - - - - - - - - - - -
+// -----------------
 
 *, html {
   margin: 0;
@@ -255,7 +255,7 @@ a {
 }
 
 // 02. Header
-// - - - - - - - - - - - - - - - - - - - - - - - - -
+// ----------
 
 header {
   background: $brand;
@@ -267,13 +267,9 @@ header {
   }
 
   .locale {
-    float: none;
+    float: left;
     height: $line-height*1.5;
-
-    @include breakpoint(small) {
-      float: left;
-      margin-left: $line-height/2;
-    }
+    margin-left: $line-height/2;
   }
 
   .external-links {
@@ -281,7 +277,7 @@ header {
     padding: rem-calc(6) 0;
     text-align: center;
 
-    @include breakpoint(small) {
+    @include breakpoint(medium) {
       float: right;
     }
   }
@@ -295,7 +291,7 @@ header {
   padding-bottom: 0;
   padding-top: 0;
 
-  @include breakpoint(small) {
+  @include breakpoint(medium) {
     padding: 0;
   }
 
@@ -315,7 +311,7 @@ header {
     &.menu > li {
       display: block;
 
-      @include breakpoint(small) {
+      @include breakpoint(medium) {
         display: table-cell;
         height: $line-height*3.5;
       }
@@ -324,7 +320,7 @@ header {
         color: white;
         padding-left: 0;
 
-        @include breakpoint(small) {
+        @include breakpoint(medium) {
           font-size: $small-font-size;
           padding: rem-calc(11) rem-calc(16);
         }
@@ -332,7 +328,7 @@ header {
         &.button {
           text-align: left;
 
-          @include breakpoint(small) {
+          @include breakpoint(medium) {
             background: white;
             color: $brand;
             text-align: center;
@@ -370,7 +366,7 @@ header {
 
 .subnavigation {
 
-  @include breakpoint(small) {
+  @include breakpoint(medium) {
     background: white;
     padding-bottom: 0;
   }
@@ -380,7 +376,7 @@ header {
     margin: 0;
 
     li {
-      @include breakpoint(small) {
+      @include breakpoint(medium) {
         display: inline-block;
         margin-right: rem-calc(36);
       }
@@ -393,7 +389,7 @@ header {
         text-align: left;
         width: 100%;
 
-        @include breakpoint(small) {
+        @include breakpoint(medium) {
           color: $text;
           display: block;
           font-weight: bold;
@@ -409,7 +405,7 @@ header {
         &.active {
           color: white;
 
-          @include breakpoint(small) {
+          @include breakpoint(medium) {
             border-bottom: 2px solid $brand;
             color: $brand;
           }
@@ -421,7 +417,7 @@ header {
   .input-group {
     padding-top: $line-height/4;
 
-    @include breakpoint(small) {
+    @include breakpoint(medium) {
       margin-bottom: 0;
     }
   }
@@ -466,7 +462,7 @@ header {
     position: relative;
     text-align: left;
 
-    @include breakpoint(small) {
+    @include breakpoint(medium) {
       margin-right: $line-height*1.5;
     }
 
@@ -486,7 +482,7 @@ header {
 }
 
 // 03. Footer
-// - - - - - - - - - - - - - - - - - - - - - - - - -
+// ----------
 
 footer {
   color: $footer-color;
@@ -543,7 +539,7 @@ footer {
 }
 
 // 04. Tags
-// - - - - - - - - - - - - - - - - - - - - - - - - -
+// --------
 
 .tags a , .tag-cloud a, .categories a, .geozone a, .sidebar-links a {
   background: #ececec;
@@ -580,7 +576,7 @@ h3.sidebar-title {
 }
 
 // 05. Auth pages
-// - - - - - - - - - - - - - - - - - - - - - - - - -
+// --------------
 
 .auth-page {
   background: $brand image-url("auth_bg.jpg");
@@ -596,7 +592,7 @@ h3.sidebar-title {
       line-height: rem-calc(80); // Same as logo image height
       text-align: center;
 
-      @include breakpoint(small) {
+      @include breakpoint(medium) {
         display: inline-block;
         text-align: left;
       }
@@ -617,7 +613,7 @@ h3.sidebar-title {
 }
 
 // 06. Forms
-// - - - - - - - - - - - - - - - - - - - - - - - - -
+// ---------
 
 form.locale-form {
   display: inline-block;
@@ -749,7 +745,7 @@ form {
 }
 
 // 07. Alerts
-// - - - - - - - - - - - - - - - - - - - - - - - - -
+// ----------
 
 .callout {
   font-family: $font-sans;
@@ -812,7 +808,7 @@ label.error, label.error a {
 }
 
 // 08. User account
-// - - - - - - - - - - - - - - - - - - - - - - - - -
+// ----------------
 
 .account {
 
@@ -969,32 +965,27 @@ img.avatar, img.admin-avatar, img.moderator-avatar, img.initialjs-avatar {
 }
 
 // 09. Search
-// - - - - - - - - - - - - - - - - - - - - - - - - -
+// ----------
 
-.search-form {
-
-  h3 {
-    border-top: 1px solid $votes-border;
-    display: inline-block;
-    font-size: rem-calc(16);
-    margin: -1px 0 $line-height/2;
-    padding-top: $line-height/4;
-    text-transform: uppercase;
-  }
+.search-form h3 {
+  border-top: 1px solid $votes-border;
+  display: inline-block;
+  font-size: rem-calc(16);
+  margin: -1px 0 $line-height/2;
+  padding-top: $line-height/4;
+  text-transform: uppercase;
 }
 
-.search-results {
-
-  h2 {
-    margin-bottom: 0;
-  }
+.search-results h2 {
+  margin-bottom: 0;
 }
 
 .advanced-search {
   float: left;
   margin: $line-height 0;
+  position: inherit;
 
-  @include breakpoint(small) {
+  @include breakpoint(medium) {
     float: right;
     margin-bottom: 0;
     margin-top: rem-calc(28);
@@ -1011,15 +1002,15 @@ img.avatar, img.admin-avatar, img.moderator-avatar, img.initialjs-avatar {
     height: $line-height*2;
   }
 
-  @include breakpoint(medium down) {
-    .column {
+  @include breakpoint(medium) {
+    & > .column {
       padding: 0;
     }
   }
 }
 
 // 10. Officials levels
-// - - - - - - - - - - - - - - - - - - - - - - - - -
+// --------------------
 
 [class^="level-"] {
   color: white;
@@ -1049,8 +1040,8 @@ img.avatar, img.admin-avatar, img.moderator-avatar, img.initialjs-avatar {
   background: #F08A24;
 }
 
-// 12. Tables
-// - - - - - - - - - - - - - - - - - - - - - - - - -
+// 11. Tables
+// ----------
 
 table {
   border: $border;
@@ -1083,8 +1074,8 @@ table {
   }
 }
 
-// 13. Social
-// - - - - - - - - - - - - - - - - - - - - - - - - -
+// 12. Social
+// ----------
 
 .button.button-twitter,
 .button.button-facebook,
@@ -1301,8 +1292,8 @@ table {
   }
 }
 
-// 14. Pages
-// - - - - - - - - - - - - - - - - - - - - - - - - -
+// 13. Pages
+// ---------
 
 .more-information {
 
@@ -1341,7 +1332,7 @@ table {
         right: 0;
         top: 24px;
 
-        @include breakpoint(small) {
+        @include breakpoint(medium) {
           content: 'c';
         }
       }
@@ -1349,12 +1340,12 @@ table {
   }
 }
 
-// 15. Verification
-// - - - - - - - - - - - - - - - - - - - - - - - - -
+// 14. Verification
+// ----------------
 
 .verification {
 
-  @include breakpoint(small) {
+  @include breakpoint(medium) {
     .left + .left {
       margin-left: $line-height/2;
     }
@@ -1366,7 +1357,7 @@ table {
       float: left;
       width: 30%;
 
-      @include breakpoint(small) {
+      @include breakpoint(medium) {
         width: 25%;
       }
     }
@@ -1375,7 +1366,7 @@ table {
   .progress {
     height: $line-height*3;
 
-    @include breakpoint(small) {
+    @include breakpoint(medium) {
       height: $line-height*2;
     }
 
@@ -1392,7 +1383,7 @@ table {
     text-transform: uppercase;
     vertical-align: top;
 
-    @include breakpoint(small) {
+    @include breakpoint(medium) {
       line-height: $line-height*2;
       padding: 0;
     }
@@ -1400,7 +1391,7 @@ table {
     .number {
       display: block;
 
-      @include breakpoint(small) {
+      @include breakpoint(medium) {
         background-color: white;
         border-radius: rem-calc(30);
         color: #43AC6A;
@@ -1500,8 +1491,8 @@ table {
   }
 }
 
-// 16. Comments
-// - - - - - - - - - - - - - - - - - - - - - - - - -
+// 15. Comments
+// ------------
 
 .comments {
   background: $white;
@@ -1642,7 +1633,7 @@ table {
   float: none;
   margin-top: 0;
 
-  @include breakpoint(small) {
+  @include breakpoint(medium) {
     float: right;
     margin-top: rem-calc(-24);
   }
@@ -1651,14 +1642,14 @@ table {
     padding-right: $line-height/2;
     float: none;
 
-    @include breakpoint(small) {
+    @include breakpoint(medium) {
       float: right;
     }
   }
 }
 
-// 17. Flags
-// - - - - - - - - - - - - - - - - - - - - - - - - -
+// 16. Flags
+// ---------
 
 .flag-content {
 
@@ -1685,8 +1676,8 @@ table {
   color: $text-medium;
 }
 
-// 18. Activity
-// - - - - - - - - - - - - - - - - - - - - - - - - -
+// 17. Activity
+// ------------
 
 .activity {
   margin-bottom: $line-height*2;
