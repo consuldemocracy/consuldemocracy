@@ -41,6 +41,7 @@ class Admin::StatsController < Admin::BaseController
 
   def spending_proposals
     @ballots = Ballot.group(:geozone).count
+    @user_count = Ballot.where('ballot_lines_count > ?', 0).count
   end
 
 end
