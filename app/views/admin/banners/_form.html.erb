@@ -1,0 +1,69 @@
+<%= form_for [:admin, @banner] do |f| %>
+
+  <%= render 'errors' %>
+   
+  <div class="row">
+    <div class="small-3 column">
+    <%= f.label :style, t("admin.banners.banner.style") %>
+    <%= f.select :style, options_for_select(@banner_styles, @banner.style),:include_blank => '-',
+                      label: false,placeholder: t("admin.banners.banner.style") %>
+    </div>
+    <div class="small-3 column">
+    <%= f.label :image, t("admin.banners.banner.image") %>
+    <%= f.select :image, options_for_select(@banner_imgs, @banner.image),:include_blank => '-',
+                      label: false, placeholder: t("admin.banners.banner.image") %>
+    </div>
+    <div class="small-12 column">
+      <%= f.label :title, t("admin.banners.banner.title") %>
+      <%= f.text_field :title, placeholder: t("admin.banners.banner.title"), label: false, 
+                        data: {js_banner_title: "js_banner_title"} %>
+    </div>
+
+    <div class="small-12 column">
+      <%= f.label :description, t("admin.banners.banner.description") %>
+      <%= f.text_field :description,
+                        label: false,
+                        data: {js_banner_description: "js_banner_description"},
+                        placeholder: t("admin.banners.banner.description") %>
+    </div>
+
+    <div class="small-12 column">
+      <%= f.label :target_url, t("admin.banners.banner.target_url") %>
+      <%= f.text_field :target_url,
+                        label: false,
+                        placeholder: t("admin.banners.banner.target_url") %>
+    </div>
+    <% date_started_at = @banner.post_started_at.present? ? I18n.localize(@banner.post_started_at) : "" %>
+    <div class="small-3 column">
+      <%= f.label :post_started_at, t("admin.banners.banner.post_started_at") %>
+      <%= f.text_field :post_started_at,
+                        label: false,
+                        placeholder: t("admin.banners.banner.post_started_at"),
+                        value: date_started_at,
+                        class: "js-calendar-full",
+                        id: "post_started_at" %>
+    </div>
+    <% date_ended_at = @banner.post_ended_at.present? ? I18n.localize(@banner.post_ended_at) : ""%>
+    <div class="small-3 column">
+      <%= f.label :post_ended_at, t("admin.banners.banner.post_ended_at") %>
+      <%= f.text_field  :post_ended_at,
+                        label: false,
+                        placeholder: t("admin.banners.banner.post_ended_at"),
+                        value: date_ended_at,
+                        class: "js-calendar-full",
+                        id: "post_ended_at" %>
+    </div>
+
+    <div class="actions small-12 column">
+      <%= f.submit(class: "button", value: t("admin.banners.edit.form.submit_button")) %>
+    </div>
+  </div>
+  <div id="js-banner-style" class="<%= @banner.style %>">
+    <div id="js-banner-image" class="<%= @banner.image %>">
+      <%= link_to @banner.target_url do %>
+        <h2 id="js-banner-title"><%= @banner.title %></h2>
+        <h3 id="js-banner-description"><%= @banner.description %></h3>
+      <% end %>
+    </div>
+  </div>
+<% end %>

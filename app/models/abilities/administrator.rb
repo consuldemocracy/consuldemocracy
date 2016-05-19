@@ -42,6 +42,7 @@ module Abilities
       can :manage, Annotation
 
       can [:read, :update, :destroy, :summary], SpendingProposal
+      can [:search, :edit, :update, :create, :index, :destroy], Banner
     end
   end
 end

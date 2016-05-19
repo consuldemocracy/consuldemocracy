@@ -11,6 +11,8 @@ module CommentableActions
     index_customization if index_customization.present?
 
     @tag_cloud = tag_cloud
+    @banners = Banner.with_active
+    
     set_resource_votes(@resources)
     set_resources_instance
   end

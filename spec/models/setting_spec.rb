@@ -54,4 +54,28 @@ describe Setting do
       expect(setting.enabled?).to eq false
     end
   end
+
+  describe "#banner_style?" do
+    it "should be true if key starts with 'banner-style.'" do
+      setting = Setting.create(key: 'banner-style.whatever')
+      expect(setting.banner_style?).to eq true
+    end
+
+    it "should be false if key does not start with 'banner-style.'" do
+      setting = Setting.create(key: 'whatever')
+      expect(setting.banner_style?).to eq false
+    end
+  end
+
+  describe "#banner_img?" do
+    it "should be true if key starts with 'banner-img.'" do
+      setting = Setting.create(key: 'banner-img.whatever')
+      expect(setting.banner_img?).to eq true
+    end
+
+    it "should be false if key does not start with 'banner-img.'" do
+      setting = Setting.create(key: 'whatever')
+      expect(setting.banner_img?).to eq false
+    end
+  end
 end
