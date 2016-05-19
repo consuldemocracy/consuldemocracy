@@ -1,4 +1,4 @@
-// Table of Contents - Styles for debates and proposals
+// Table of Contents
 //
 // 01. Votes and supports
 // 02. New participation
@@ -8,12 +8,11 @@
 //
 
 // 01. Votes and supports
-// - - - - - - - - - - - - - - - - - - - - - - - - -
+// ----------------------
 
 @mixin votes {
   background: $votes-bg;
   border-top: 1px solid $votes-border;
-  font-family: $font-sans;
   margin: 0 rem-calc(-12);
   padding: rem-calc(14) rem-calc(12);
   position: relative;
@@ -157,7 +156,6 @@
 @mixin supports {
   background: $proposals;
   border-top: 1px solid $proposals-border;
-  font-family: $font-sans;
   margin: 0 rem-calc(-12);
   padding: rem-calc(14) rem-calc(12);
   position: relative;
@@ -272,15 +270,11 @@
 }
 
 // 02. New participation
-// - - - - - - - - - - - - - - - - - - - - - - - - -
+// ---------------------
 
 .debate-new, .debate-edit,
 .proposal-new, .proposal-edit,
 .spending-proposal-new, .spending-proposal-edit {
-
-  .back {
-    @include back;
-  }
 
   .icon-debates {
     color: $debates;
@@ -335,7 +329,7 @@
 }
 
 // 03. Show participation
-// - - - - - - - - - - - - - - - - - - - - - - - - -
+// ----------------------
 
 .debate-show, .proposal-show, .investment-project-show {
 
@@ -491,7 +485,7 @@
       padding: rem-calc(24);
     }
 
-    @media (min-width: $small-breakpoint  + rem-calc(1)) and (max-width:$medium-breakpoint) {
+    @include breakpoint(small + rem-calc(1) and medium down) {
       .in-favor, .against {
         text-align: left;
         width: rem-calc(100);
@@ -502,7 +496,7 @@
       display: none;
     }
 
-    @media (min-width: $medium-breakpoint) {
+    @include breakpoint(medium) {
       .divider {
         display: inline-block;
       }
@@ -550,18 +544,18 @@
 }
 
 // 04. List participation
-// - - - - - - - - - - - - - - - - - - - - - - - - -
+// ----------------------
 
 .debates-list, .proposals-list, .investment-projects-list {
 
-  @media (min-width: $small-breakpoint) {
+  @include breakpoint(small) {
     margin-bottom: rem-calc(48);
   }
 }
 
 .investment-projects-list {
 
-  @media (min-width: $small-breakpoint) {
+  @include breakpoint(small) {
     min-height: $line-height*15;
   }
 }
@@ -580,7 +574,7 @@
     min-height: rem-calc(192);
     padding: rem-calc(12) rem-calc(12) 0 rem-calc(12);
 
-    @media (min-width: $small-breakpoint) {
+    @include breakpoint(small) {
       margin-bottom: rem-calc(-1);
       padding-bottom: rem-calc(12);
     }
@@ -589,7 +583,6 @@
       background: none;
       clear: both;
       display: block;
-      font-family: $font-sans;
       font-size: rem-calc(12);
       font-weight: bold;
       line-height: $line-height;
@@ -715,7 +708,7 @@
     display: none;
   }
 
-  @media (min-width: $medium-breakpoint) {
+  @include breakpoint(medium) {
     .divider {
       display: inline-block;
     }
@@ -729,7 +722,7 @@
     border: 1px solid $votes-border;
     margin: 0 rem-calc(-12);
 
-    @media (min-width: $small-breakpoint) {
+    @include breakpoint(small) {
       border-top-left-radius: 3px;
       border-bottom-left-radius: 3px;
       margin: 0 rem-calc(-25) 0 rem-calc(12);
@@ -747,7 +740,7 @@
       right: -1px;
       border-width: 13px 13px 0 0;
 
-      @media (min-width: $small-breakpoint) {
+      @include breakpoint(small) {
         content: "";
       }
     }
@@ -759,7 +752,7 @@
       padding-top: rem-calc(12);
       vertical-align: top;
 
-      @media (min-width: $small-breakpoint) {
+      @include breakpoint(small) {
         display: block;
         float: none;
         line-height: $line-height*2;
@@ -768,7 +761,7 @@
       }
     }
 
-    @media (min-width: $small-breakpoint) {
+    @include breakpoint(small) {
       .like, .unlike {
 
         span.percentage {
@@ -787,7 +780,7 @@
     border: 1px solid $proposals-border;
     margin: 0 rem-calc(-12);
 
-    @media (min-width: $small-breakpoint) {
+    @include breakpoint(small) {
       border-top-left-radius: 3px;
       border-bottom-left-radius: 3px;
       margin: 0 rem-calc(-25) 0 rem-calc(12);
@@ -805,7 +798,7 @@
       right: -1px;
       border-width: 13px 13px 0 0;
 
-      @media (min-width: $small-breakpoint) {
+      @include breakpoint(small) {
         content: "";
       }
     }
@@ -816,7 +809,7 @@
       padding-top: rem-calc(12);
       vertical-align: top;
 
-      @media (min-width: $small-breakpoint) {
+      @include breakpoint(small) {
         display: block;
         float: none;
         margin-left: 0;
@@ -837,7 +830,7 @@
     min-height: rem-calc(180);
     padding-top: 0;
 
-    @media (min-width: $small-breakpoint) {
+    @include breakpoint(small) {
       padding-top: $line-height*1.5;
     }
 
@@ -924,12 +917,12 @@
 }
 
 // 05. Featured
-// - - - - - - - - - - - - - - - - - - - - - - - - -
+// ------------
 
 .featured-debates, .featured-proposals {
   padding: $line-height/2 0;
 
-  @media (min-width: $medium-breakpoint) {
+  @include breakpoint(medium) {
     margin-left: 0 !important;
     margin-right: 0 !important;
   }
@@ -945,7 +938,7 @@
 
     a {
       color: $text;
-      font-size: $h3-font-size;
+      font-size: rem-calc(24);
     }
   }
 
