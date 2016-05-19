@@ -353,7 +353,7 @@ ActiveRecord::Schema.define(version: 20160518141543) do
     t.integer  "price_first_year",            limit: 8
     t.string   "time_scope"
     t.datetime "unfeasible_email_sent_at"
-    t.integer  "cached_votes_up"
+    t.integer  "cached_votes_up", default: 0
     t.tsvector "tsv"
     t.string   "responsible_name",            limit: 60
     t.integer  "physical_votes",                         default: 0
