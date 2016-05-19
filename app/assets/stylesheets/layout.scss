@@ -1545,11 +1545,7 @@ table {
           background: rgba(255,241,204,1);
         }
 
-        &.is-author {
-          background: rgba(45,144,248,.15);
-        }
-
-        &.is-admin, &.is-moderator {
+        &.is-author, &.is-admin, &.is-moderator {
           background: rgba(45,144,248,.15);
         }
       }
