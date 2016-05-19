@@ -6,7 +6,7 @@
 // 04. Tags
 // 05. Auth pages
 // 06. Forms
-// 07. Alerts
+// 07. Callout
 // 08. User account
 // 09. Search
 // 10. Official levels
@@ -22,56 +22,18 @@
 // 01. Global styles
 // -----------------
 
-*, html {
-  margin: 0;
-  padding: 0;
-}
-
-html, body {
-  height: 100%;
-}
-
 body {
-  background: white;
-  color: $text;
-  font-family: $font-sans;
   font-size: $base-font-size;
 }
 
 h1, h2, h3, h4, h5, h6 {
   clear: both;
-  font-family: $font-sans;
-  font-weight: $font-bold;
-}
-
-h1 {
-  @include h1();
-}
-
-h2 {
-  @include h2();
-}
-
-h3 {
-  @include h3();
-}
-
-h4 {
-  @include h4();
-}
-
-h5 {
-  @include h5();
-}
-
-h6 {
-  @include h6();
-  font-weight: $font-normal;
+  font-weight: 700;
 }
 
 p {
   font-size: $base-font-size;
-  font-weight: $font-normal;
+  font-weight: 400;
   line-height: $base-line-height;
 }
 
@@ -200,7 +162,7 @@ a {
   width: 100%;
 
   a.close {
-    font-size: $h2-font-size;
+    font-size: rem-calc(34);
     top: 20%;
   }
 }
@@ -251,7 +213,9 @@ a {
 }
 
 .back, .icon-angle-left {
-  @include back;
+  clear: both;
+  color: $text-medium;
+  float: left;
 }
 
 // 02. Header
@@ -488,7 +452,7 @@ footer {
   color: $footer-color;
 
   .logo a {
-    font-family: $font-logo;
+    font-family: 'Lato' !important;
     text-decoration: none;
 
     &:hover {
@@ -519,8 +483,8 @@ footer {
   h2 a {
     border-bottom: 1px solid $footer-border;
     display: block;
-    font-size: $h3-font-size;
-    line-height: $h3-line-height;
+    font-size: rem-calc(24);
+    line-height: rem-calc(31);
     padding-bottom: $line-height/4;
     text-decoration: none;
   }
@@ -657,7 +621,6 @@ form.locale-form {
 }
 
 form {
-  font-family: $font-sans;
 
   label {
     font-size: $base-font-size;
@@ -744,11 +707,10 @@ form {
   }
 }
 
-// 07. Alerts
-// ----------
+// 07. Callout
+// -----------
 
 .callout {
-  font-family: $font-sans;
   font-size: $small-font-size;
 
   &.success, &.notice {
@@ -901,13 +863,13 @@ img.avatar, img.admin-avatar, img.moderator-avatar, img.initialjs-avatar {
   }
 
   [class^="icon-"] {
-    font-size: $h4-font-size;
+    font-size: rem-calc(19);
     vertical-align: middle;
   }
 
   .icon-circle {
     color: #ecf00b;
-    font-size: $tiny-font-size;
+    font-size: rem-calc(10);
     position: absolute;
     right: 8px;
     top: 6px;
@@ -1206,7 +1168,7 @@ table {
 .social {
 
   a {
-    font-size: $h3-font-size;
+    font-size: rem-calc(24);
     margin: 0 $line-height/2;
     text-decoration: none;
 
@@ -1521,7 +1483,6 @@ table {
 
     .comment-votes {
       color: $text-medium;
-      font-family: $font-sans;
       font-size: $small-font-size;
       line-height: $line-height;
 
@@ -1612,7 +1573,6 @@ table {
 
     .comment-info {
       color: $text-medium;
-      font-family: $font-sans;
       font-size: $small-font-size;
       margin-top: $line-height/4;
       vertical-align: middle;

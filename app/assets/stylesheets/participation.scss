@@ -13,7 +13,6 @@
 @mixin votes {
   background: $votes-bg;
   border-top: 1px solid $votes-border;
-  font-family: $font-sans;
   margin: 0 rem-calc(-12);
   padding: rem-calc(14) rem-calc(12);
   position: relative;
@@ -157,7 +156,6 @@
 @mixin supports {
   background: $proposals;
   border-top: 1px solid $proposals-border;
-  font-family: $font-sans;
   margin: 0 rem-calc(-12);
   padding: rem-calc(14) rem-calc(12);
   position: relative;
@@ -277,10 +275,6 @@
 .debate-new, .debate-edit,
 .proposal-new, .proposal-edit,
 .spending-proposal-new, .spending-proposal-edit {
-
-  .back {
-    @include back;
-  }
 
   .icon-debates {
     color: $debates;
@@ -589,7 +583,6 @@
       background: none;
       clear: both;
       display: block;
-      font-family: $font-sans;
       font-size: rem-calc(12);
       font-weight: bold;
       line-height: $line-height;
@@ -945,7 +938,7 @@
 
     a {
       color: $text;
-      font-size: $h3-font-size;
+      font-size: rem-calc(24);
     }
   }
 
