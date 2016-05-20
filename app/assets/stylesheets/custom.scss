@@ -35,7 +35,7 @@
   padding: $line-height/2;
 
   .callout.info {
-    border: 1px solid $info-color;
+    border: 1px solid $color-info;
   }
 }
 
@@ -60,10 +60,10 @@ blockquote.featured {
 }
 
 blockquote p {
-  font-size: $h3-font-size;
+  font-size: rem-calc(24);
 }
 
-@media (max-width: $small-breakpoint) {
+@include breakpoint(medium down) {
 
   .text-right {
     text-align: left;
@@ -77,12 +77,12 @@ blockquote p {
 .jumbo {
   background: $highlight;
 
-  @media (min-width: $small-breakpoint) {
+  @include breakpoint(medium) {
     padding: rem-calc(24) 0;
   }
 
   h1, p {
-    color: $highlight-color;
+    color: $text;
   }
 }
 
@@ -90,7 +90,7 @@ blockquote p {
   background: #33DADF;
   border-bottom: 1px solid #33DADF;
 
-  @media (min-width: $small-breakpoint) {
+  @include breakpoint(medium) {
     padding-top: $line-height;
   }
 
@@ -103,7 +103,7 @@ blockquote p {
   background: $featured;
   border-bottom: 1px solid $featured;
 
-  @media (min-width: $small-breakpoint) {
+  @include breakpoint(medium) {
     padding-top: $line-height;
   }
 
@@ -141,12 +141,12 @@ blockquote p {
 .jumbo {
   background: $highlight;
 
-  @media (min-width: $small-breakpoint) {
+  @include breakpoint(medium) {
     padding: rem-calc(24) 0;
   }
 
   h1, p {
-    color: $highlight-color;
+    color: $text;
   }
 }
 
@@ -372,7 +372,7 @@ table {
   article {
     border-bottom: 1px solid $border;
 
-    @media only screen and (min-width: $medium-breakpoint) {
+    @include breakpoint(large) {
       padding: $line-height 0;
     }
 
@@ -469,7 +469,7 @@ table {
   transition: all 0.5s ease
 }
 
-@media only screen and (min-width: $medium-breakpoint) {
+@include breakpoint(large) {
 
   .survey-timeline {
     display: none;
@@ -519,7 +519,7 @@ table {
     line-height: rem-calc(40);
     text-transform: uppercase;
 
-    @media (min-width: $small-breakpoint) {
+    @include breakpoint(medium) {
       font-size: rem-calc(60);
       line-height: rem-calc(60);
     }
@@ -603,7 +603,7 @@ table {
         border-left: 1px solid $border;
       }
 
-      @media (min-width: $small-breakpoint) {
+      @include breakpoint(medium) {
 
         th {
           width: rem-calc(160);
@@ -619,7 +619,7 @@ table {
     tr td, tr th {
       text-align: left;
 
-      @media (min-width: $small-breakpoint) {
+      @include breakpoint(medium) {
         padding: $line-height/2 $line-height;
       }
 
@@ -639,14 +639,14 @@ table {
       border-top: 1px solid $border;
       height: $line-height;
 
-      @media (min-width: $small-breakpoint) {
+      @include breakpoint(medium) {
         height: $line-height*1.5;
       }
     }
 
     th.table-width {
 
-      @media (min-width: $small-breakpoint) {
+      @include breakpoint(medium) {
         width: rem-calc(200);
       }
     }
@@ -655,7 +655,7 @@ table {
       background: #fff7b4;
       border: 2px solid #fae100;
 
-      @media (min-width: $small-breakpoint) {
+      @include breakpoint(medium) {
         font-size: rem-calc(24);
         line-height: $line-height;
       }
@@ -696,10 +696,10 @@ table {
   font-size: $base-font-size;
 }
 
-@media (max-width: $small-breakpoint) {
+@include breakpoint(medium down) {
 
   table.survey-districts thead {
-    font-size: $h6-font-size;
+    font-size: rem-calc(13);
 
     th {
       width: 25%;
@@ -710,13 +710,13 @@ table {
   table.questions-table {
 
     thead th {
-      font-size: $h6-font-size;
+      font-size: rem-calc(13);
       width: 20%;
       word-break: break-all;
     }
 
     td {
-      font-size: $h6-font-size;
+      font-size: rem-calc(13);
     }
   }
 }
@@ -753,7 +753,7 @@ table.age-groups {
   ul {
     display: inline-block;
 
-    @media (min-width: $small-breakpoint) {
+    @include breakpoint(medium) {
       border-top: 2px solid $border;
     }
 
@@ -766,7 +766,7 @@ table.age-groups {
       padding-top: $line-height*1.5;
       position: relative;
 
-      @media (min-width: $small-breakpoint) {
+      @include breakpoint(medium) {
         display: inline-block;
         margin-right: $line-height*2.5;
       }
@@ -786,7 +786,7 @@ table.age-groups {
       }
 
       &.active {
-        @media (min-width: $small-breakpoint) {
+        @include breakpoint(medium) {
           border-top: 1px solid $featured;
           margin-top: rem-calc(-1);
         }
@@ -825,7 +825,7 @@ table.age-groups {
     margin-top: $line-height*2;
   }
 
-  @media (max-width: $small-breakpoint) {
+  @include breakpoint(medium down) {
     .text-right {
       text-align: left !important;
     }
@@ -837,7 +837,7 @@ table.age-groups {
   .sticky {
     background: rgba(255,255,255,.85);
 
-    @media (max-width: $small-breakpoint) {
+    @include breakpoint(medium down) {
       margin-top: $line-height;
       position: initial;
     }
@@ -885,7 +885,7 @@ table.age-groups {
     border-radius: 0;
     color: $text;
 
-    @media (min-width: $small-breakpoint) {
+    @include breakpoint(medium) {
       height: $line-height*17;
     }
 
@@ -897,7 +897,7 @@ table.age-groups {
   .callout.primary {
     border-top: 4px solid $info-border;
 
-    @media (min-width: $small-breakpoint) {
+    @include breakpoint(medium) {
       background: image-url('investment_project_city.jpg') no-repeat bottom;
     }
   }
@@ -905,7 +905,7 @@ table.age-groups {
   .callout.success {
     border-top: 4px solid $success-border;
 
-    @media (min-width: $small-breakpoint) {
+    @include breakpoint(medium) {
       background: image-url('investment_project_districts.jpg') no-repeat bottom;
     }
 
@@ -938,7 +938,7 @@ table.age-groups {
       background: none;
       border: 0;
 
-      @media (min-width: $small-breakpoint) {
+      @include breakpoint(medium) {
         padding-bottom: rem-calc(39);
       }
     }
@@ -979,13 +979,13 @@ table.age-groups {
 .jumbo-investment-project-votes {
   background: #F6F5F8;
 
-  @media (min-width: $medium-breakpoint) {
+  @include breakpoint(large) {
     background: #F6F5F8 image-url('investment_project_welcome.png');
     background-position: 150%;
     background-repeat: no-repeat;
   }
 
-  @media (min-width: $large-breakpoint) {
+  @include breakpoint(large) {
     background-position: right;
   }
 
@@ -1017,7 +1017,7 @@ table.age-groups {
   background: $budget image-url('investment_project_delegation.jpg');
   margin-bottom: rem-calc(-96);
 
-  @media (min-width: $small-breakpoint) {
+  @include breakpoint(medium) {
     min-height: $line-height*15;
   }
 
@@ -1060,7 +1060,7 @@ table.age-groups {
       padding: $line-height;
       position: relative;
 
-      @media (min-width: $small-breakpoint) {
+      @include breakpoint(medium) {
         min-height: $line-height*11;
       }
 
@@ -1078,7 +1078,7 @@ table.age-groups {
     &.featured-brand {
       background: $brand;
 
-      @media (min-width: $medium-breakpoint) {
+      @include breakpoint(large) {
         background: $brand image-url('featured_open_plenary.jpg') no-repeat;
         background-position: 90% 0;
       }
@@ -1097,7 +1097,7 @@ table.age-groups {
       background: $featured;
       margin-top: $line-height;
 
-      @media (min-width: $small-breakpoint) {
+      @include breakpoint(medium) {
         margin-top: 0;
       }
 
@@ -1109,7 +1109,7 @@ table.age-groups {
         right: 2%;
         top: 100px;
 
-        @media (max-width: $medium-breakpoint) {
+        @include breakpoint(medium down) {
           display: none;
         }
       }
@@ -1119,7 +1119,7 @@ table.age-groups {
       background: #33DADF;
       margin-bottom: 0;
 
-      @media (min-width: $medium-breakpoint) {
+      @include breakpoint(large) {
         background: #00DADE image-url('processes_plaza_espana_small.gif') no-repeat;
         background-position: bottom right;
       }
@@ -1128,7 +1128,7 @@ table.age-groups {
     &.featured-three {
       background: $budget;
 
-      @media (min-width: $medium-breakpoint) {
+      @include breakpoint(large) {
         background: $budget image-url('featured_spending_proposals.png') no-repeat;
         background-position: bottom right;
       }
@@ -1144,7 +1144,7 @@ table.age-groups {
   background: #33DADF;
   padding: $line-height/2;
 
-  @media (min-width: $small-breakpoint) {
+  @include breakpoint(medium) {
     background: #33DADF image-url('processes_plaza_espana_small.gif') no-repeat;
     background-position: right;
     margin-left: 0 !important;
@@ -1166,7 +1166,7 @@ table.age-groups {
   background: $budget;
   padding: $line-height/2;
 
-  @media (min-width: $small-breakpoint) {
+  @include breakpoint(medium) {
     background: $budget image-url('featured_spending_proposals.png') no-repeat;
     background-position: bottom right;
     margin-left: 0 !important;
@@ -1188,7 +1188,7 @@ table.age-groups {
   background: $brand;
   padding: $line-height/2;
 
-  @media (min-width: $small-breakpoint) {
+  @include breakpoint(medium) {
     background: $brand image-url('featured_open_plenary_small.jpg') no-repeat;
     background-position: bottom right;
     margin-left: 0 !important;
@@ -1224,7 +1224,7 @@ table.age-groups {
 .processes {
   background: $brand;
 
-  @media (min-width: $medium-breakpoint) {
+  @include breakpoint(large) {
     background: $brand image-url('processes_featured.jpg') no-repeat;
     background-position: 80%;
     height: $line-height*14;
@@ -1254,12 +1254,12 @@ table.age-groups {
 .processes-show {
   @extend .processes;
 
-  @media (min-width: $medium-breakpoint) {
+  @include breakpoint(large) {
     background: $brand;
     height: auto;
   }
 
-  @media (min-width: $medium-breakpoint) {
+  @include breakpoint(large) {
     img {
       position: absolute;
     }
@@ -1357,7 +1357,7 @@ table.age-groups {
   font-size: rem-calc(60);
   line-height: rem-calc(120);
 
-  @media (min-width: $medium-breakpoint) {
+  @include breakpoint(large) {
     font-size: rem-calc(90);
     line-height: rem-calc(240);
   }
@@ -1430,7 +1430,7 @@ ul.ballot-list {
         text-decoration: none;
         top: 6px;
 
-        @media (min-width: $small-breakpoint) {
+        @include breakpoint(medium) {
           font-size: $base-font-size;
         }
       }
@@ -1510,7 +1510,7 @@ ul.ballot-list {
   position: relative;
   z-index: 3;
 
-  @media only screen and (min-width: $medium-breakpoint) {
+  @include breakpoint(large) {
     background-color: $budget;
     height: rem-calc(100);
     -webkit-transition: height 0.3s;
@@ -1534,8 +1534,8 @@ ul.ballot-list {
       width: 100%;
 
       h1 {
-        font-size: $h3-font-size;
-        line-height: $h3-line-height;
+        font-size: rem-calc(24);
+        line-height: rem-calc(31);
         -webkit-transition: font-size 0.3s;
         -moz-transition: font-size 0.3s;
         transition: font-size 0.3s;
