@@ -358,4 +358,9 @@ FactoryGirl.define do
     sequence(:name) { |n| "District #{n}" }
     census_code { '01' }
   end
+
+  factory :budget do
+    sequence(:name) {|n| "Budget #{n}" }
+    phase "on_hold"
+  end
 end
