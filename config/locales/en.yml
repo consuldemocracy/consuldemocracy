@@ -488,6 +488,8 @@ en:
         price: by price
     welcome:
       city_link: Vote city proposals
+      contact_html: If you have any doubt %{contact_faq} or send us an email at <strong>preparticipativos@madrid.es</strong>
+      contact_faq: check the faqs
       delegation: Delegation of votes
       delegation_info_html: "If you activate vote delegation on any local space, proposals decided by that space will automaticaly receive your votes"
       delegation_meetings: local debate spaces

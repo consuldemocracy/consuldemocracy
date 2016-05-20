@@ -21,6 +21,14 @@
                       select_district_path,
                       class: "button budget expanded" %>
         </div>
+        <div class="small-12 column">
+          <p>
+            <small>
+              <%= t("spending_proposals.welcome.contact_html",
+                  contact_faq: link_to(t("spending_proposals.welcome.contact_faq"), page_path("participatory_budget_info"))).html_safe %>
+            </small>
+          </p>
+        </div>
       </div>
     </div>
   </div>
