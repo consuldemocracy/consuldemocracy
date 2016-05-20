@@ -488,6 +488,8 @@ es:
         price: Por coste
     welcome:
       city_link: Votar para toda la ciudad
+      contact_html: Si tienes alguna duda puedes %{contact_faq} o enviarnos un email a <strong>preparticipativos@madrid.es</strong>
+      contact_faq: consultar las preguntas frecuentes
       delegation: Delegar mis votos
       delegation_info_html: "Si activas la delegación en cualquiera de los espacios, tus votos se realizarán<br> automáticamente sobre las propuestas que haya decidido el espacio correspondiente."
       delegation_meetings: espacios presenciales de debate
