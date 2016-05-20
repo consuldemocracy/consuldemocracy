@@ -111,11 +111,13 @@ ActiveRecord::Schema.define(version: 20160523143320) do
     t.datetime "created_at",                                                   null: false
     t.datetime "updated_at",                                                   null: false
     t.integer  "heading_id"
+    t.integer  "budget_id"
   end
 
   add_index "budget_investments", ["administrator_id"], name: "index_budget_investments_on_administrator_id", using: :btree
   add_index "budget_investments", ["author_id"], name: "index_budget_investments_on_author_id", using: :btree
   add_index "budget_investments", ["heading_id"], name: "index_budget_investments_on_heading_id", using: :btree
+  add_index "budget_investments", ["budget_id"], name: "index_budget_investments_on_budget_id", using: :btree
   add_index "budget_investments", ["tsv"], name: "index_budget_investments_on_tsv", using: :gin
 
   create_table "budgets", force: :cascade do |t|
