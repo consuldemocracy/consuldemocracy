@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160523150146) do
+ActiveRecord::Schema.define(version: 20160523164449) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -111,16 +111,17 @@ ActiveRecord::Schema.define(version: 20160523150146) do
     t.integer  "confidence_score",                      default: 0,           null: false
     t.integer  "physical_votes",                        default: 0
     t.tsvector "tsv"
-    t.datetime "created_at",                                                   null: false
-    t.datetime "updated_at",                                                   null: false
+    t.datetime "created_at",                                                  null: false
+    t.datetime "updated_at",                                                  null: false
     t.integer  "heading_id"
     t.integer  "budget_id"
+    t.string   "responsible_name"
   end
 
   add_index "budget_investments", ["administrator_id"], name: "index_budget_investments_on_administrator_id", using: :btree
   add_index "budget_investments", ["author_id"], name: "index_budget_investments_on_author_id", using: :btree
-  add_index "budget_investments", ["heading_id"], name: "index_budget_investments_on_heading_id", using: :btree
   add_index "budget_investments", ["budget_id"], name: "index_budget_investments_on_budget_id", using: :btree
+  add_index "budget_investments", ["heading_id"], name: "index_budget_investments_on_heading_id", using: :btree
   add_index "budget_investments", ["tsv"], name: "index_budget_investments_on_tsv", using: :gin
 
   create_table "budget_valuator_assignments", force: :cascade do |t|
