@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160510161858) do
+ActiveRecord::Schema.define(version: 20160518141543) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -62,6 +62,21 @@ ActiveRecord::Schema.define(version: 20160510161858) do
 
   add_index "annotations", ["legislation_id"], name: "index_annotations_on_legislation_id", using: :btree
   add_index "annotations", ["user_id"], name: "index_annotations_on_user_id", using: :btree
+
+  create_table "banners", force: :cascade do |t|
+    t.string   "title",           limit: 80
+    t.string   "description"
+    t.string   "target_url"
+    t.string   "style"
+    t.string   "image"
+    t.date     "post_started_at"
+    t.date     "post_ended_at"
+    t.datetime "hidden_at"
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+  end
+
+  add_index "banners", ["hidden_at"], name: "index_banners_on_hidden_at", using: :btree
 
   create_table "campaigns", force: :cascade do |t|
     t.string   "name"

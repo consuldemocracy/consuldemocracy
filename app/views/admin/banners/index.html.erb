@@ -1,0 +1,45 @@
+<%= link_to t("admin.banners.index.create"),
+              new_admin_banner_path, class: "button large success float-right" %>
+
+<h2 class="inline-block"><%= t("admin.banners.index.title") %></h2>
+
+<%= render 'shared/filter_subnav', i18n_namespace: "admin.banners.index" %>
+
+<h3><%= page_entries_info @banners %></h3>
+
+<table>
+  <% @banners.each do |banner| %>
+    <tr id="<%= dom_id(banner) %>">
+      <td class="small-12 medium-9">
+        <div class="<%= banner.style %>">
+          <div class="<%= banner.image %>">
+            <%= link_to banner.target_url do %>
+              <h2><%= banner.title %></h2>
+              <h3><%= banner.description %></h3>
+           <% end %>
+          </div>
+        </div>
+
+        <%= t("admin.banners.banner.post_started_at")%> <strong><%= banner.post_started_at %></strong>
+        &nbsp;|&nbsp;
+        <%= t("admin.banners.banner.post_ended_at")%> <strong><%= banner.post_ended_at%></strong>
+      </td>
+      <td class="text-center">
+        <%= link_to edit_admin_banner_path(banner),
+            class: 'edit-banner button' do %>
+              <span class="icon-edit"></span>
+              <%= t("admin.banners.index.edit") %>
+            <% end %>
+       </td>
+       <td>
+        <%= link_to admin_banner_path(banner), method: :delete,
+            class: 'delete' do %>
+              <span class="icon-delete"></span>
+              <%= t("admin.banners.index.delete") %>
+            <% end %>
+      </td>
+    </tr>
+  <% end %>
+</table>
+
+<%= paginate @banners %>

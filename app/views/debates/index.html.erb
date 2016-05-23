@@ -25,6 +25,10 @@
         <% end %>
       </div>
 
+      <% if has_banners %>
+        <%= render "shared/banner" %>
+      <% end %>
+
       <% unless @tag_filter || @search_terms || !has_featured? %>
         <%= render "featured_debates" %>
       <% end %>
