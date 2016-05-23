@@ -1,5 +1,4 @@
 FactoryGirl.define do
-
   sequence(:document_number) { |n| "#{n.to_s.rjust(8, '0')}X" }
 
   factory :user do
@@ -189,6 +188,66 @@ FactoryGirl.define do
     association :author, factory: :user
   end
 
+  factory :budget do
+    sequence(:name) { |n| "Budget #{n}" }
+    currency_symbol "€"
+    phase 'on_hold'
+
+    trait :selecting do
+      phase 'selecting'
+    end
+
+    trait :balloting do
+      phase 'balloting'
+    end
+
+    trait :finished do
+      phase 'finished'
+    end
+  end
+
+  factory :budget_heading, class: Budget::Heading do
+    budget
+    sequence(:name) { |n| "Heading #{n}" }
+    price 1000000
+  end
+
+  factory :budget_investment, class: Budget::Investment do
+    sequence(:title)     { |n| "Budget Investment #{n} title" }
+    association :budget
+    association :author, factory: :user
+    description          'Spend money on this'
+    unfeasibility_explanation ''
+    external_url         'http://external_documention.org'
+    terms_of_service     '1'
+
+    trait :with_confidence_score do
+      before(:save) { |i| i.calculate_confidence_score }
+    end
+
+    trait :feasible do
+      feasibility "feasible"
+    end
+
+    trait :unfeasible do
+      feasibility "unfeasible"
+    end
+
+    trait :finished do
+      valuation_finished true
+    end
+  end
+
+  factory :budget_ballot, class: Budget::Ballot do
+    association :user, factory: :user
+    budget
+  end
+
+  factory :budget_ballot_line, class: Budget::Ballot::Line do
+    association :ballot, factory: :budget_ballot
+    investment { FactoryGirl.build(:budget_investment, :feasible) }
+  end
+
   factory :vote do
     association :votable, factory: :debate
     association :voter,   factory: :user
@@ -316,4 +375,6 @@ FactoryGirl.define do
     sequence(:name) { |n| "District #{n}" }
     census_code { '01' }
   end
+
+
 end
