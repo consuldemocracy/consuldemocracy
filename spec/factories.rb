@@ -189,6 +189,48 @@ FactoryGirl.define do
     association :author, factory: :user
   end
 
+  factory :budget do
+    sequence(:name) { |n| "Budget #{n}" }
+    currency_symbol "€"
+  end
+
+  factory :budget_heading, class: Budget::Heading do
+    budget
+    sequence(:name) { |n| "Heading #{n}" }
+    price 1000000
+  end
+
+  factory :budget_investment, class: Budget::Investment do
+    sequence(:title)     { |n| "Investment #{n} title" }
+    description          'Spend money on this'
+    price                1000
+    external_url         'http://external_documention.org'
+    terms_of_service     '1'
+    association :author, factory: :user
+
+    trait :feasible do
+      feasibility "feasible"
+    end
+
+    trait :unfeasible do
+      feasibility "unfeasible"
+    end
+
+    trait :finished do
+      valuation_finished true
+    end
+  end
+
+  factory :budget_ballot, class: Budget::Ballot do
+    association :user, factory: :user
+    budget
+  end
+
+  factory :budget_ballot_line, class: Budget::Ballot::Line do
+    association :ballot, factory: :budget_ballot
+    investment { FactoryGirl.build(:budget_investment, :feasible) }
+  end
+
   factory :vote do
     association :votable, factory: :debate
     association :voter,   factory: :user
