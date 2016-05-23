@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160510161858) do
+ActiveRecord::Schema.define(version: 20160518141543) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -62,6 +62,21 @@ ActiveRecord::Schema.define(version: 20160510161858) do
 
   add_index "annotations", ["legislation_id"], name: "index_annotations_on_legislation_id", using: :btree
   add_index "annotations", ["user_id"], name: "index_annotations_on_user_id", using: :btree
+
+  create_table "banners", force: :cascade do |t|
+    t.string   "title",           limit: 80
+    t.string   "description"
+    t.string   "target_url"
+    t.string   "style"
+    t.string   "image"
+    t.date     "post_started_at"
+    t.date     "post_ended_at"
+    t.datetime "hidden_at"
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+  end
+
+  add_index "banners", ["hidden_at"], name: "index_banners_on_hidden_at", using: :btree
 
   create_table "campaigns", force: :cascade do |t|
     t.string   "name"
@@ -235,6 +250,21 @@ ActiveRecord::Schema.define(version: 20160510161858) do
 
   add_index "notifications", ["user_id"], name: "index_notifications_on_user_id", using: :btree
 
+  create_table "open_answers", force: :cascade do |t|
+    t.text     "text"
+    t.integer  "question_code"
+    t.integer  "user_id"
+    t.integer  "survey_code"
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
+    t.integer  "cached_votes_total", default: 0
+    t.integer  "cached_votes_up",    default: 0
+    t.integer  "cached_votes_down",  default: 0
+    t.integer  "confidence_score",   default: 0
+  end
+
+  add_index "open_answers", ["user_id"], name: "index_open_answers_on_user_id", using: :btree
+
   create_table "organizations", force: :cascade do |t|
     t.integer  "user_id"
     t.string   "name",             limit: 60
@@ -285,6 +315,16 @@ ActiveRecord::Schema.define(version: 20160510161858) do
   add_index "proposals", ["title"], name: "index_proposals_on_title", using: :btree
   add_index "proposals", ["tsv"], name: "index_proposals_on_tsv", using: :gin
 
+  create_table "redeemable_codes", force: :cascade do |t|
+    t.string   "token"
+    t.integer  "geozone_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "redeemable_codes", ["geozone_id"], name: "index_redeemable_codes_on_geozone_id", using: :btree
+  add_index "redeemable_codes", ["token"], name: "index_redeemable_codes_on_token", using: :btree
+
   create_table "settings", force: :cascade do |t|
     t.string "key"
     t.string "value"
@@ -313,7 +353,7 @@ ActiveRecord::Schema.define(version: 20160510161858) do
     t.integer  "price_first_year",            limit: 8
     t.string   "time_scope"
     t.datetime "unfeasible_email_sent_at"
-    t.integer  "cached_votes_up",                        default: 0
+    t.integer  "cached_votes_up", default: 0
     t.tsvector "tsv"
     t.string   "responsible_name",            limit: 60
     t.integer  "physical_votes",                         default: 0
@@ -322,6 +362,16 @@ ActiveRecord::Schema.define(version: 20160510161858) do
   add_index "spending_proposals", ["author_id"], name: "index_spending_proposals_on_author_id", using: :btree
   add_index "spending_proposals", ["geozone_id"], name: "index_spending_proposals_on_geozone_id", using: :btree
   add_index "spending_proposals", ["tsv"], name: "index_spending_proposals_on_tsv", using: :gin
+
+  create_table "survey_answers", force: :cascade do |t|
+    t.string   "survey_code"
+    t.json     "answers"
+    t.integer  "user_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "survey_answers", ["user_id"], name: "index_survey_answers_on_user_id", using: :btree
 
   create_table "taggings", force: :cascade do |t|
     t.integer  "tag_id"
@@ -520,6 +570,7 @@ ActiveRecord::Schema.define(version: 20160510161858) do
   add_foreign_key "moderators", "users"
   add_foreign_key "notifications", "users"
   add_foreign_key "organizations", "users"
+  add_foreign_key "survey_answers", "users"
   add_foreign_key "users", "geozones"
   add_foreign_key "valuators", "users"
 end
