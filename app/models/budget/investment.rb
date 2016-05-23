@@ -17,7 +17,6 @@ class Budget
     has_many :valuation_assignments, dependent: :destroy
     has_many :valuators, through: :valuation_assignments
     has_many :comments, as: :commentable
-    has_many :headings, dependent: :destroy
 
     validates :title, presence: true
     validates :author, presence: true
