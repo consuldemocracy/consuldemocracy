@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160520151954) do
+ActiveRecord::Schema.define(version: 20160523150146) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -96,20 +96,20 @@ ActiveRecord::Schema.define(version: 20160520151954) do
     t.string   "title"
     t.text     "description"
     t.string   "external_url"
-    t.integer  "price",                       limit: 8
-    t.string   "feasibility",                 limit: 15, default: "undecided"
+    t.integer  "price",                      limit: 8
+    t.string   "feasibility",                limit: 15, default: "undecided"
     t.text     "price_explanation"
     t.text     "unfeasibility_explanation"
     t.text     "internal_comments"
-    t.boolean  "valuation_finished",                     default: false
-    t.integer  "valuation_assignments_count",            default: 0
-    t.integer  "price_first_year",            limit: 8
+    t.boolean  "valuation_finished",                    default: false
+    t.integer  "valuator_assignments_count",            default: 0
+    t.integer  "price_first_year",           limit: 8
     t.string   "duration"
     t.datetime "hidden_at"
-    t.integer  "cached_votes_up",                        default: 0
-    t.integer  "comments_count",                         default: 0
-    t.integer  "confidence_score",                       default: 0,           null: false
-    t.integer  "physical_votes",                         default: 0
+    t.integer  "cached_votes_up",                       default: 0
+    t.integer  "comments_count",                        default: 0
+    t.integer  "confidence_score",                      default: 0,           null: false
+    t.integer  "physical_votes",                        default: 0
     t.tsvector "tsv"
     t.datetime "created_at",                                                   null: false
     t.datetime "updated_at",                                                   null: false
@@ -122,6 +122,15 @@ ActiveRecord::Schema.define(version: 20160520151954) do
   add_index "budget_investments", ["heading_id"], name: "index_budget_investments_on_heading_id", using: :btree
   add_index "budget_investments", ["budget_id"], name: "index_budget_investments_on_budget_id", using: :btree
   add_index "budget_investments", ["tsv"], name: "index_budget_investments_on_tsv", using: :gin
+
+  create_table "budget_valuator_assignments", force: :cascade do |t|
+    t.integer  "valuator_id"
+    t.integer  "investment_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  add_index "budget_valuator_assignments", ["investment_id"], name: "index_budget_valuator_assignments_on_investment_id", using: :btree
 
   create_table "budgets", force: :cascade do |t|
     t.string   "name",            limit: 30
@@ -516,6 +525,7 @@ ActiveRecord::Schema.define(version: 20160520151954) do
     t.integer "user_id"
     t.string  "description"
     t.integer "spending_proposals_count", default: 0
+    t.integer "budget_investments_count", default: 0
   end
 
   add_index "valuators", ["user_id"], name: "index_valuators_on_user_id", using: :btree
