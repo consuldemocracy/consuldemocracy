@@ -4,6 +4,6 @@ class Budget
     belongs_to :budget
 
     has_many :lines, dependent: :destroy
-    has_many :spending_proposals, through: :lines
+    has_many :investments, through: :lines
   end
 end
