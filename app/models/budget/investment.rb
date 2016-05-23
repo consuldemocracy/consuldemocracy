@@ -11,12 +11,13 @@ class Budget
     include ActsAsParanoidAliases
 
     belongs_to :author, -> { with_hidden }, class_name: 'User', foreign_key: 'author_id'
-    belongs_to :geozone
+    belongs_to :heading
     belongs_to :administrator
 
     has_many :valuation_assignments, dependent: :destroy
     has_many :valuators, through: :valuation_assignments
     has_many :comments, as: :commentable
+    has_many :headings, dependent: :destroy
 
     validates :title, presence: true
     validates :author, presence: true
@@ -46,53 +47,54 @@ class Budget
     scope :by_tag,      -> (tag_name)    { tagged_with(tag_name) }
     scope :by_valuator, -> (valuator_id) { where("valuation_assignments.valuator_id = ?", valuator_id).joins(:valuation_assignments) }
 
-    scope :for_render,             -> { includes(:geozone) }
+    scope :for_render,             -> { includes(heading: :geozone) }
 
-    scope :with_geozone,           -> { where.not(geozone_id: nil) }
-    scope :no_geozone,             -> { where(geozone_id: nil) }
+    scope :with_heading,           -> { where.not(heading_id: nil) }
+    scope :no_heading,             -> { where(heading_id: nil) }
 
     before_save :calculate_confidence_score
     before_validation :set_responsible_name
 
     def self.filter_params(params)
-      params.select{|x,_| %w{geozone_id administrator_id tag_name valuator_id}.include? x.to_s }
+      params.select{|x,_| %w{heading_id administrator_id tag_name valuator_id}.include? x.to_s }
     end
 
     def self.scoped_filter(params, current_filter)
+      budget = Budget.find!(params[:budget_id])
       results = self.by_budget(params[:budget_id])
-      if params[:max_for_no_geozone].present? || params[:max_per_geozone].present?
-        results = limit_results(results, params[:max_per_geozone].to_i, params[:max_for_no_geozone].to_i)
+      if params[:max_for_no_heading].present? || params[:max_per_heading].present?
+        results = limit_results(results, budget, params[:max_per_heading].to_i, params[:max_for_no_heading].to_i)
       end
-      results = results.by_geozone(params[:geozone_id])             if params[:geozone_id].present?
+      results = results.by_heading(params[:heading_id])             if params[:heading_id].present?
       results = results.by_admin(params[:administrator_id])         if params[:administrator_id].present?
       results = results.by_tag(params[:tag_name])                   if params[:tag_name].present?
       results = results.by_valuator(params[:valuator_id])           if params[:valuator_id].present?
       results = results.send(current_filter)                        if current_filter.present?
-      results.includes(:geozone, administrator: :user, valuators: :user)
+      results.includes(:heading, administrator: :user, valuators: :user)
     end
 
-    def self.limit_results(results, max_per_geozone, max_for_no_geozone)
-      return results if max_per_geozone <= 0 && max_for_no_geozone <= 0
+    def self.limit_results(results, budget, max_per_heading, max_for_no_heading)
+      return results if max_per_heading <= 0 && max_for_no_heading <= 0
 
       ids = []
-      if max_per_geozone > 0
-        Geozone.pluck(:id).each do |gid|
-          ids += Investment.where(geozone_id: gid).order(confidence_score: :desc).limit(max_per_geozone).pluck(:id)
+      if max_per_heading > 0
+        budget.headings.pluck(:id).each do |hid|
+          ids += Investment.where(heading_id: hid).order(confidence_score: :desc).limit(max_per_heading).pluck(:id)
         end
       end
 
-      if max_for_no_geozone > 0
-        ids += Investment.no_geozone.order(confidence_score: :desc).limit(max_for_no_geozone).pluck(:id)
+      if max_for_no_heading > 0
+        ids += Investment.no_heading.order(confidence_score: :desc).limit(max_for_no_heading).pluck(:id)
       end
 
       conditions = ["investments.id IN (?)"]
       values = [ids]
 
-      if max_per_geozone == 0
-        conditions << "investments.geozone_id IS NOT ?"
+      if max_per_heading == 0
+        conditions << "investments.heading_id IS NOT ?"
         values << nil
-      elsif max_for_no_geozone == 0
-        conditions << "investments.geozone_id IS ?"
+      elsif max_for_no_heading == 0
+        conditions << "investments.heading_id IS ?"
         values << nil
       end
 
@@ -102,7 +104,7 @@ class Budget
     def searchable_values
       { title              => 'A',
         author.username    => 'B',
-        geozone.try(:name) => 'B',
+        heading.try(:name) => 'B',
         description        => 'C'
       }
     end
@@ -111,8 +113,8 @@ class Budget
       self.pg_search(terms)
     end
 
-    def self.by_geozone(geozone)
-      where(geozone_id: geozone == 'all' ? nil : geozone.presence)
+    def self.by_heading(heading)
+      where(heading_id: heading == 'all' ? nil : heading.presence)
     end
 
     def undecided?
@@ -156,7 +158,7 @@ class Budget
     def reason_for_not_being_ballotable_by(user, ballot)
       return permission_problem(user)    if permission_problem?(user)
       return :no_ballots_allowed         unless budget.balloting?
-      return :different_geozone_assigned unless geozone_id.blank? || ballot.blank? || geozone_id == ballot.geozone_id || ballot.geozone_id.nil?
+      return :different_heading_assigned unless heading_id.blank? || ballot.blank? || heading_id == ballot.heading_id || ballot.heading_id.nil?
       return :not_enough_money           unless enough_money?(ballot)
     end
 
@@ -181,7 +183,7 @@ class Budget
 
     def enough_money?(ballot)
       return true if ballot.blank?
-      available_money = ballot.amount_available(geozone)
+      available_money = ballot.amount_available(heading)
       price.to_i <= available_money
     end
 

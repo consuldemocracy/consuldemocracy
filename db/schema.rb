@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160520100347) do
+ActiveRecord::Schema.define(version: 20160520114820) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -74,15 +74,23 @@ ActiveRecord::Schema.define(version: 20160520100347) do
   add_index "budget_ballot_lines", ["investment_id"], name: "index_budget_ballot_lines_on_investment_id", using: :btree
 
   create_table "budget_ballots", force: :cascade do |t|
-    t.integer  "geozone_id"
     t.integer  "user_id"
     t.integer  "budget_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "heading_id"
+  end
+
+  add_index "budget_ballots", ["heading_id"], name: "index_budget_ballots_on_heading_id", using: :btree
+
+  create_table "budget_headings", force: :cascade do |t|
+    t.integer "budget_id"
+    t.integer "geozone_id"
+    t.string  "name",       limit: 50
+    t.integer "price",      limit: 8
   end
 
   create_table "budget_investments", force: :cascade do |t|
-    t.integer  "geozone_id"
     t.integer  "author_id"
     t.integer  "administrator_id"
     t.string   "title"
@@ -105,10 +113,12 @@ ActiveRecord::Schema.define(version: 20160520100347) do
     t.tsvector "tsv"
     t.datetime "created_at",                                                   null: false
     t.datetime "updated_at",                                                   null: false
+    t.integer  "heading_id"
   end
 
   add_index "budget_investments", ["administrator_id"], name: "index_budget_investments_on_administrator_id", using: :btree
   add_index "budget_investments", ["author_id"], name: "index_budget_investments_on_author_id", using: :btree
+  add_index "budget_investments", ["heading_id"], name: "index_budget_investments_on_heading_id", using: :btree
   add_index "budget_investments", ["tsv"], name: "index_budget_investments_on_tsv", using: :gin
 
   create_table "budgets", force: :cascade do |t|
