@@ -10,7 +10,7 @@
 <table>
   <% @banners.each do |banner| %>
     <tr id="<%= dom_id(banner) %>">
-      <td class="samll-12 medium-9">
+      <td class="small-12 medium-9">
         <div class="<%= banner.style %>">
           <div class="<%= banner.image %>">
             <%= link_to banner.target_url do %>
@@ -19,13 +19,13 @@
            <% end %>
           </div>
         </div>
-        
+
         <%= t("admin.banners.banner.post_started_at")%> <strong><%= banner.post_started_at %></strong>
         &nbsp;|&nbsp;
         <%= t("admin.banners.banner.post_ended_at")%> <strong><%= banner.post_ended_at%></strong>
       </td>
       <td class="text-center">
-        <%= link_to edit_admin_banner_path(banner), 
+        <%= link_to edit_admin_banner_path(banner),
             class: 'edit-banner button' do %>
               <span class="icon-edit"></span>
               <%= t("admin.banners.index.edit") %>
