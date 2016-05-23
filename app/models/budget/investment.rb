@@ -10,6 +10,7 @@ class Budget
     acts_as_paranoid column: :hidden_at
     include ActsAsParanoidAliases
 
+    belongs_to :budget
     belongs_to :author, -> { with_hidden }, class_name: 'User', foreign_key: 'author_id'
     belongs_to :heading
     belongs_to :administrator
@@ -23,8 +24,8 @@ class Budget
     validates :description, presence: true
     validates_presence_of :unfeasibility_explanation, if: :unfeasibility_explanation_required?
 
-    validates :title, length: { in: 4..Investment.title_max_length }
-    validates :description, length: { maximum: Investment.description_max_length }
+    validates :title, length: { in: 4 .. Budget::Investment.title_max_length }
+    validates :description, length: { maximum: Budget::Investment.description_max_length }
     validates :terms_of_service, acceptance: { allow_nil: false }, on: :create
 
     scope :sort_by_confidence_score, -> { reorder(confidence_score: :desc, id: :desc) }
@@ -36,9 +37,9 @@ class Budget
     scope :managed,                -> { valuation_open.where(valuator_assignments_count: 0).where("administrator_id IS NOT ?", nil) }
     scope :valuating,              -> { valuation_open.where("valuator_assignments_count > 0 AND valuation_finished = ?", false) }
     scope :valuation_finished,     -> { where(valuation_finished: true) }
-    scope :feasible,               -> { where(feasible: true) }
-    scope :unfeasible,             -> { valuation_finished.where(feasible: false) }
-    scope :not_unfeasible,         -> { where("feasible IS ? OR feasible = ?", nil, true) }
+    scope :feasible,               -> { where(feasibility: "feasible") }
+    scope :unfeasible,             -> { where(feasibility: "unfeasible") }
+    scope :undecided,              -> { where(feasibility: "undecided") }
     scope :with_supports,          -> { where('cached_votes_up > 0') }
 
     scope :by_budget,   -> (budget_id)   { where(budget_id: budget_id) }
@@ -133,15 +134,7 @@ class Budget
     end
 
     def total_votes
-      cached_votes_up + physical_votes + delegated_votes - forum_votes
-    end
-
-    def delegated_votes
-      count = 0
-      representative_voters.each do |voter|
-        count += voter.forum.represented_users.select { |u| !u.voted_for?(self) }.count
-      end
-      return count
+      cached_votes_up + physical_votes
     end
 
     def code
@@ -151,14 +144,14 @@ class Budget
     def reason_for_not_being_selectable_by(user)
       return permission_problem(user) if permission_problem?(user)
 
-      return :not_voting_allowed unless budget.selecting?
+      return :no_selecting_allowed unless budget.selecting?
     end
 
     def reason_for_not_being_ballotable_by(user, ballot)
       return permission_problem(user)    if permission_problem?(user)
       return :no_ballots_allowed         unless budget.balloting?
       return :different_heading_assigned unless heading_id.blank? || ballot.blank? || heading_id == ballot.heading_id || ballot.heading_id.nil?
-      return :not_enough_money           unless enough_money?(ballot)
+      return :not_enough_money           if ballot.present? && !enough_money?
     end
 
     def permission_problem(user)
@@ -180,9 +173,8 @@ class Budget
       reason_for_not_being_ballotable_by(user).blank?
     end
 
-    def enough_money?(ballot)
-      return true if ballot.blank?
-      available_money = ballot.amount_available(heading)
+    def enough_money?
+      available_money = budget.amount_available(self.heading)
       price.to_i <= available_money
     end
 

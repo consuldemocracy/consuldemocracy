@@ -6,6 +6,7 @@ class Budget < ActiveRecord::Base
 
   has_many :investments
   has_many :ballots
+  has_many :headings
 
   def on_hold?
     phase == "on_hold"
@@ -27,5 +28,9 @@ class Budget < ActiveRecord::Base
     phase == "finished"
   end
 
+  def amount_available(heading)
+    return 0 unless heading_ids.include?(heading.try(:id))
+    heading.try(:price) || 10000 # FIXME
+  end
 end
 
