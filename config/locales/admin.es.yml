@@ -11,7 +11,7 @@ es:
       unmark_featured: Quitar destacado
     banners:
       index:
-        title: Publicar anuncios
+        title: Anuncios
         create: Crear un banner
         edit: Editar banner
         delete: Eliminar banner
@@ -22,12 +22,12 @@ es:
       banner:
         title: Título
         description:  Descripción
-        target_url:  Enlace 
+        target_url:  Enlace
         style: Estilo
         image: Imagen
         post_started_at: Inicio de publicación
         post_ended_at: Fin de publicación
-      edit: 
+      edit:
         back: Volver
         editing: Editar el banner
         form:
@@ -37,7 +37,7 @@ es:
           error:
             one: "error impidió guardar el banner"
             other: "errores impidieron guardar el banner."
-      new: 
+      new:
         back: Volver
         creating: Crear banner
     activity:
@@ -90,7 +90,7 @@ es:
         user_not_found: Usuario no encontrado
     menu:
       activity: Actividad de moderadores
-      banner: Publicar banner
+      banner: Gestionar banners
       debate_topics: Temas de debate
       hidden_comments: Comentarios ocultos
       hidden_debates: Debates ocultos
