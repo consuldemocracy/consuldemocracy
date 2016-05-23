@@ -14,8 +14,8 @@ class Budget
     belongs_to :heading
     belongs_to :administrator
 
-    has_many :valuation_assignments, dependent: :destroy
-    has_many :valuators, through: :valuation_assignments
+    has_many :valuator_assignments, dependent: :destroy
+    has_many :valuators, through: :valuator_assignments
     has_many :comments, as: :commentable
 
     validates :title, presence: true
@@ -33,8 +33,8 @@ class Budget
 
     scope :valuation_open,         -> { where(valuation_finished: false) }
     scope :without_admin,          -> { valuation_open.where(administrator_id: nil) }
-    scope :managed,                -> { valuation_open.where(valuation_assignments_count: 0).where("administrator_id IS NOT ?", nil) }
-    scope :valuating,              -> { valuation_open.where("valuation_assignments_count > 0 AND valuation_finished = ?", false) }
+    scope :managed,                -> { valuation_open.where(valuator_assignments_count: 0).where("administrator_id IS NOT ?", nil) }
+    scope :valuating,              -> { valuation_open.where("valuator_assignments_count > 0 AND valuation_finished = ?", false) }
     scope :valuation_finished,     -> { where(valuation_finished: true) }
     scope :feasible,               -> { where(feasible: true) }
     scope :unfeasible,             -> { valuation_finished.where(feasible: false) }
@@ -44,7 +44,7 @@ class Budget
     scope :by_budget,   -> (budget_id)   { where(budget_id: budget_id) }
     scope :by_admin,    -> (admin_id)    { where(administrator_id: admin_id) }
     scope :by_tag,      -> (tag_name)    { tagged_with(tag_name) }
-    scope :by_valuator, -> (valuator_id) { where("valuation_assignments.valuator_id = ?", valuator_id).joins(:valuation_assignments) }
+    scope :by_valuator, -> (valuator_id) { where("budget_valuator_assignments.valuator_id = ?", valuator_id).joins(:valuator_assignments) }
 
     scope :for_render,             -> { includes(heading: :geozone) }
 
