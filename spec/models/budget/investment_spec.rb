@@ -329,29 +329,20 @@ describe Budget::Investment do
           expect(district_sp.reason_for_not_being_ballotable_by(user, ballot)).to eq(:no_ballots_allowed)
         end
 
-        xit "accepts valid votes when voting is allowed" do
+        it "accepts valid ballots when voting is allowed" do
           budget.phase = "balloting"
           expect(city_sp.reason_for_not_being_ballotable_by(user, ballot)).to be_nil
           expect(district_sp.reason_for_not_being_ballotable_by(user, ballot)).to be_nil
         end
 
-        xit "rejects city wide votes if no city money available"  do
-          user.city_wide_investments_supported_count = 0
-          expect(city_sp.reason_for_not_being_ballotable_by(user, ballot)).to eq(:no_city_supports_available)
-        end
-
-        xit "rejects district wide votes if no district money available"  do
-          user.district_wide_investments_supported_count = 0
-          expect(district_sp.reason_for_not_being_ballotable_by(user, ballot)).to eq(:no_district_supports_available)
-        end
-
-        xit "accepts valid district votes" do
+        it "accepts valid district selections" do
+          budget.phase = "selecting"
           expect(district_sp.reason_for_not_being_selectable_by(user)).to be_nil
-          user.supported_investments_geozone_id = district.id
-          expect(district_sp.reason_for_not_being_ballotable_by(user, ballot)).to be_nil
+          ballot.heading_id = heading.id
+          expect(district_sp.reason_for_not_being_selectable_by(user)).to be_nil
         end
 
-        xit "rejects users with different headings" do
+        it "rejects users with different headings" do
           budget.phase = "balloting"
           california = create(:budget_heading, budget: budget)
           new_york = create(:budget_heading, budget: budget)
@@ -363,14 +354,14 @@ describe Budget::Investment do
           expect(sp2.reason_for_not_being_ballotable_by(user, b)).to eq(:different_heading_assigned)
         end
 
-        xit "rejects proposals with price higher than current available money" do
+        it "rejects proposals with price higher than current available money" do
           budget.phase = "balloting"
-          carabanchel = create(:budget_heading, budget: budget, price: 2000000)
-          sp1 = create(:budget_investment, :feasible, heading: carabanchel, price: 3000000, budget: budget)
-          sp2 = create(:budget_investment, :feasible, heading: carabanchel, price: 1000000, budget: budget)
-          b = create(:budget_ballot, user: user, heading: carabanchel, investments: [sp1])
+          carabanchel = create(:budget_heading, budget: budget, price: 35)
+          sp1 = create(:budget_investment, :feasible, heading: carabanchel, price: 30, budget: budget)
+          sp2 = create(:budget_investment, :feasible, heading: carabanchel, price: 10, budget: budget)
+          ballot = create(:budget_ballot, user: user, heading: carabanchel, investments: [sp1])
 
-          expect(sp2.reason_for_not_being_ballotable_by(user, b)).to eq(:not_enough_money)
+          expect(sp2.reason_for_not_being_ballotable_by(user, ballot)).to eq(:not_enough_money)
         end
 
       end
