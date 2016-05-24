@@ -9,4 +9,8 @@ class Forum < ActiveRecord::Base
   def has_voted?
     user.votes.for_spending_proposals(SpendingProposal.all).any?
   end
+
+  def has_balloted?
+    Ballot.where(user: user).first_or_create.spending_proposals.any?
+  end
 end

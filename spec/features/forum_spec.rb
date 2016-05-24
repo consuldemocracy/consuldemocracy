@@ -18,19 +18,24 @@ feature "Forum" do
     end
   end
 
-  context "Show" do
+  scenario "Forum info" do
+    forum = create(:forum)
 
-    scenario "Forum info" do
-      forum = create(:forum)
+    user = create(:user, :level_two)
+    login_as(user)
+    visit forum_path(forum)
 
-      user = create(:user, :level_two)
-      login_as(user)
-      visit forum_path(forum)
+    expect(page).to have_content forum.name
+  end
 
-      expect(page).to have_content forum.name
+  context "Selection phase" do
+
+    background do
+      Setting['feature.spending_proposal_features.phase2'] = true
+      Setting['feature.spending_proposal_features.voting_allowed'] ||= true
     end
 
-    xscenario "Forum votes" do
+    scenario "Forum votes" do
       forum = create(:forum)
       geozone = create(:geozone)
 
@@ -74,25 +79,59 @@ feature "Forum" do
 
   end
 
-  scenario "Delegating after voting" do
-    Setting['feature.spending_proposal_features.phase3'] = true
-    Setting['feature.spending_proposal_features.final_voting_allowed'] = true
+  context "Balloting phase" do
 
-    forum = create(:forum, name: "Cobra")
-    user = create(:user, :level_two)
-    ballot = create(:ballot, user: user)
-    ballot.spending_proposals << create(:spending_proposal, :feasible, :finished)
+    background do
+      Setting['feature.spending_proposal_features.voting_allowed'] = nil
+      Setting['feature.spending_proposal_features.phase3'] = true
+      Setting['feature.spending_proposal_features.final_voting_allowed'] ||= true
+    end
 
-    login_as(user)
+    scenario "Forum votes" do
+      forum = create(:forum)
+      geozone = create(:geozone)
 
-    visit ballot_path
-    expect(page).to have_content("You voted one proposal")
+      sp1 = create(:spending_proposal, :feasible, :finished, geozone: nil)
+      sp2 = create(:spending_proposal, :feasible, :finished, geozone: nil)
+      sp3 = create(:spending_proposal, :feasible, :finished, geozone: geozone)
+      sp4 = create(:spending_proposal, :feasible, :finished, geozone: geozone)
 
-    visit forum_path(forum)
-    click_button "Delegate in Cobra"
+      ballot = create(:ballot, user: forum.user, geozone: geozone, spending_proposals: [sp1, sp3, sp4])
 
-    visit ballot_path
-    expect(page).to have_content("You voted 0 proposals")
+      login_as(forum.user)
+      visit forum_path(forum)
+
+      within("#city") do
+        expect(page).to have_css(".forum_vote", count: 1)
+        expect(page).to have_content sp1.title
+        expect(page).to_not have_content sp2.title
+      end
+
+      within("#district") do
+        expect(page).to have_css(".forum_vote", count: 2)
+        expect(page).to have_content sp3.title
+        expect(page).to have_content sp4.title
+      end
+    end
+
+    scenario "Delegating after voting" do
+      forum = create(:forum, name: "Cobra")
+      user = create(:user, :level_two)
+      ballot = create(:ballot, user: user)
+      ballot.spending_proposals << create(:spending_proposal, :feasible, :finished)
+
+      login_as(user)
+
+      visit ballot_path
+      expect(page).to have_content("You voted one proposal")
+
+      visit forum_path(forum)
+      click_button "Delegate on Cobra"
+
+      visit ballot_path
+      expect(page).to have_content("You voted 0 proposals")
+    end
+
   end
 
 end
