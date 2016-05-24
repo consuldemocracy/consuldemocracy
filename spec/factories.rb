@@ -194,13 +194,13 @@ FactoryGirl.define do
     currency_symbol "€"
   end
 
-  factory :budget_heading, class: Budget::Heading do
+  factory :budget_heading, class: 'Budget::Heading' do
     budget
     sequence(:name) { |n| "Heading #{n}" }
     price 1000000
   end
 
-  factory :budget_investment, class: Budget::Investment do
+  factory :budget_investment, class: 'Budget::Investment' do
     sequence(:title)     { |n| "Investment #{n} title" }
     description          'Spend money on this'
     price                1000
@@ -221,12 +221,12 @@ FactoryGirl.define do
     end
   end
 
-  factory :budget_ballot, class: Budget::Ballot do
+  factory :budget_ballot, class: 'Budget::Ballot' do
     association :user, factory: :user
     budget
   end
 
-  factory :budget_ballot_line, class: Budget::Ballot::Line do
+  factory :budget_ballot_line, class: 'Budget::Ballot::Line' do
     association :ballot, factory: :budget_ballot
     investment { FactoryGirl.build(:budget_investment, :feasible) }
   end
