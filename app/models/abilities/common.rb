@@ -52,6 +52,7 @@ module Abilities
 
       if user.forum?
         can :vote, SpendingProposal
+        can [:create, :destroy], BallotLine
       end
 
       can :create, Annotation
