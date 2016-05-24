@@ -191,6 +191,7 @@ FactoryGirl.define do
   factory :budget do
     sequence(:name) { |n| "Budget #{n}" }
     currency_symbol "€"
+    price 10000
     phase 'on_hold'
 
     trait :selecting do
