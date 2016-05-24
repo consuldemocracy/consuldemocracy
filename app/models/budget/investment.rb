@@ -133,15 +133,7 @@ class Budget
     end
 
     def total_votes
-      cached_votes_up + physical_votes + delegated_votes - forum_votes
-    end
-
-    def delegated_votes
-      count = 0
-      representative_voters.each do |voter|
-        count += voter.forum.represented_users.select { |u| !u.voted_for?(self) }.count
-      end
-      return count
+      cached_votes_up + physical_votes
     end
 
     def code
