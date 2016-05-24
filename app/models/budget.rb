@@ -28,9 +28,9 @@ class Budget < ActiveRecord::Base
     phase == "finished"
   end
 
-  def amount_available(heading)
-    return 0 unless heading_ids.include?(heading.try(:id))
-    heading.try(:price) || 10000 # FIXME
+  def heading_price(heading)
+    return price unless heading.present?
+    heading_ids.include?(heading.id) ? heading.price : -1
   end
 end
 

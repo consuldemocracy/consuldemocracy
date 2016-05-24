@@ -151,7 +151,7 @@ class Budget
       return permission_problem(user)    if permission_problem?(user)
       return :no_ballots_allowed         unless budget.balloting?
       return :different_heading_assigned unless heading_id.blank? || ballot.blank? || heading_id == ballot.heading_id || ballot.heading_id.nil?
-      return :not_enough_money           if ballot.present? && !enough_money?
+      return :not_enough_money           if ballot.present? && !enough_money?(ballot)
     end
 
     def permission_problem(user)
@@ -173,8 +173,8 @@ class Budget
       reason_for_not_being_ballotable_by(user).blank?
     end
 
-    def enough_money?
-      available_money = budget.amount_available(self.heading)
+    def enough_money?(ballot)
+      available_money = ballot.amount_available(self.heading)
       price.to_i <= available_money
     end
 
