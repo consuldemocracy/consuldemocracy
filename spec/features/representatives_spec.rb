@@ -2,7 +2,7 @@ require 'rails_helper'
 
 feature 'Representatives' do
 
-  xscenario "Select a representative" do
+  scenario "Select a representative" do
     forum1 = create(:forum)
     forum2 = create(:forum)
     user = create(:user, :level_two)

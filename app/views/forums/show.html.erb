@@ -17,26 +17,49 @@
 </div>
 
 <div class="row">
-  <% if @forum.has_voted? && false %>
-    <div class="small-12 column">
+  <% if feature?("spending_proposal_features.voting_allowed") %>
+    <% if @forum.has_voted? %>
+      <div class="small-12 column">
 
-      <div class="row collapse">
-        <div id="city" class="small-12 medium-6 column">
-          <h3>Toda la ciudad</h3>
-          <%= render 'votes', votes: @forum.votes_for(:city) %>
-        </div>
+        <div class="row collapse">
+          <div id="city" class="small-12 medium-6 column">
+            <h3>Toda la ciudad</h3>
+            <%= render 'votes', votes: @forum.votes_for(:city) %>
+          </div>
 
-        <div id="district" class="small-12 medium-6 column">
-          <h3>Distrito de <%= forum_short_name(@forum) %></h3>
-          <%= render 'votes', votes: @forum.votes_for(:district) %>
+          <div id="district" class="small-12 medium-6 column">
+            <h3>Distrito de <%= forum_short_name(@forum) %></h3>
+            <%= render 'votes', votes: @forum.votes_for(:district) %>
+          </div>
         </div>
       </div>
-    </div>
+    <% else %>
+      <div class="callout primary">
+        <%= t("forums.show.no_votes") %>
+      </div>
+    <% end %>
 
-  <% else %>
-    <div class="callout primary">
-      <%= t("forums.show.no_votes") %>
-    </div>
+  <% elsif feature?("spending_proposal_features.final_voting_allowed") %>
+    <% if @forum.has_balloted? %>
+      <div class="small-12 column">
+
+        <div class="row collapse">
+          <div id="city" class="small-12 medium-6 column">
+            <h3>Toda la ciudad</h3>
+            <%= render 'ballot', spending_proposals: @forum.user.ballot.spending_proposals.city_wide %>
+          </div>
+
+          <div id="district" class="small-12 medium-6 column">
+            <h3>Distrito de <%= forum_short_name(@forum) %></h3>
+            <%= render 'ballot', spending_proposals: @forum.user.ballot.spending_proposals.by_geozone(@forum.user.ballot.geozone) %>
+          </div>
+        </div>
+      </div>
+    <% else %>
+      <div class="callout primary">
+        <%= t("forums.show.no_votes") %>
+      </div>
+    <% end %>
   <% end %>
 </div>
 

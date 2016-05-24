@@ -97,6 +97,9 @@ describe "Abilities::Common" do
     it { should be_able_to(:create, SpendingProposal) }
     it { should be_able_to(:vote, SpendingProposal) }
 
+    it { should be_able_to(:create, BallotLine) }
+    it { should be_able_to(:destroy, BallotLine) }
+
     it { should_not be_able_to(:destroy, spending_proposal) }
     it { should_not be_able_to(:destroy, own_spending_proposal) }
 
@@ -113,6 +116,9 @@ describe "Abilities::Common" do
 
     it { should be_able_to(:create, SpendingProposal) }
     it { should be_able_to(:vote, SpendingProposal) }
+
+    it { should be_able_to(:create, BallotLine) }
+    it { should be_able_to(:destroy, BallotLine) }
 
     it { should_not be_able_to(:destroy, spending_proposal) }
     it { should_not be_able_to(:destroy, own_spending_proposal) }
@@ -132,6 +138,9 @@ describe "Abilities::Common" do
     it { should_not be_able_to(:create, SpendingProposal) }
 
     it { should be_able_to(:vote, SpendingProposal) }
+
+    it { should be_able_to(:create, BallotLine) }
+    it { should be_able_to(:destroy, BallotLine) }
 
     it { should_not be_able_to(:destroy, spending_proposal) }
     it { should_not be_able_to(:destroy, own_spending_proposal) }
