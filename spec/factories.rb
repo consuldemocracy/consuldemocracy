@@ -212,7 +212,7 @@ FactoryGirl.define do
     price 1000000
   end
 
-  factory :budget_investment, class: Budget::Investment do
+  factory :budget_investment, class: 'Budget::Investment' do
     sequence(:title)     { |n| "Budget Investment #{n} title" }
     association :budget
     association :author, factory: :user
