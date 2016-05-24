@@ -2,6 +2,7 @@ class Budget
   class Ballot < ActiveRecord::Base
     belongs_to :user
     belongs_to :budget
+    belongs_to :heading
 
     has_many :lines, dependent: :destroy
     has_many :investments, through: :lines
@@ -12,6 +13,10 @@ class Budget
 
     def amount_spent(heading)
       investments.by_heading(heading).sum(:price).to_i
+    end
+
+    def amount_available(heading)
+      budget.heading_price(heading) - amount_spent(heading)
     end
   end
 end

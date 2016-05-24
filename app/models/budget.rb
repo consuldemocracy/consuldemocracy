@@ -1,5 +1,13 @@
 class Budget < ActiveRecord::Base
 
+  VALID_PHASES = %W{on_hold accepting selecting balloting finished}
+
+  validates :phase, inclusion: { in: VALID_PHASES }
+
+  has_many :investments
+  has_many :ballots
+  has_many :headings
+
   def on_hold?
     phase == "on_hold"
   end
@@ -20,4 +28,9 @@ class Budget < ActiveRecord::Base
     phase == "finished"
   end
 
+  def heading_price(heading)
+    return price unless heading.present?
+    heading_ids.include?(heading.id) ? heading.price : -1
+  end
 end
+
