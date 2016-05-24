@@ -356,7 +356,7 @@ Proposal.only_hidden.flagged.reorder("RANDOM()").limit(5).each(&:confirm_hide)
 puts "Creating district Forums"
 forums = ["Fuencarral - El Pardo", "Moncloa - Aravaca", "Tetuán", "Chamberí", "Centro", "Latina", "Carabanchel", "Arganzuela", "Usera", "Villaverde", "Chamartin", "Salamanca", "Retiro", "Puente de Vallecas", "Villa de Vallecas", "Hortaleza", "Barajas", "Ciudad Lineal", "Moratalaz", "San Blas - Canillejas", "Vicálvaro"]
 forums.each_with_index do |forum, i|
-  user = create_user("user_for_forum#{i}@example.es")
+  user = create_user("user_for_forum#{i+1}@example.es")
   Forum.create(name: forum, user: user)
 end
 
