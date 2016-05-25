@@ -39,7 +39,7 @@ cp config/secrets.yml.example config/secrets.yml
 rake db:create
 bin/rake db:setup
 bin/rake db:dev_seed
-RAILS_ENV=test bin/rake db:setup
+RAILS_ENV=test rake db:setup
 ```
 
 Para ejecutar la aplicación en local:
