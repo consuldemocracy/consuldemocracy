@@ -514,6 +514,7 @@ en:
       start_new: Create spending proposal
     show:
       author_deleted: User deleted
+      price_explanation: Price explanation
       unfeasibility_explanation: Unfeasibility explanation
       code: 'Investment project code:'
       share: Share
