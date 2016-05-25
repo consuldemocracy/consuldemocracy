@@ -37,6 +37,11 @@
         <h2><%= t('spending_proposals.show.unfeasibility_explanation') %></h2>
         <p><%= @spending_proposal.feasible_explanation %></p>
       <% end %>
+
+      <% if @spending_proposal.feasible? && @spending_proposal.price_explanation.present? %>
+        <h2><%= t('spending_proposals.show.price_explanation') %></h2>
+        <p><%= @spending_proposal.price_explanation %></p>
+      <% end %>
     </div>
 
     <% if spending_proposal_votable_in_show?(@spending_proposal) %>

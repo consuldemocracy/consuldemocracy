@@ -219,6 +219,22 @@ feature 'Spending proposals' do
     end
   end
 
+  scenario "Show (feasible spending proposal)" do
+    user = create(:user)
+    login_as(user)
+
+    spending_proposal = create(:spending_proposal,
+                                valuation_finished: true,
+                                feasible: true,
+                                price: 16,
+                                price_explanation: 'Every wheel is 4 euros, so total is 16')
+
+    visit spending_proposal_path(spending_proposal)
+
+    expect(page).to have_content("Price explanation")
+    expect(page).to have_content(spending_proposal.price_explanation)
+  end
+
   scenario "Show (unfeasible spending proposal)" do
     user = create(:user)
     login_as(user)

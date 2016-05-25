@@ -514,6 +514,7 @@ es:
       back_link: Volver
     show:
       author_deleted: Usuario eliminado
+      price_explanation: Informe de coste
       unfeasibility_explanation: Informe de inviabilidad
       code: 'Código propuesta de gasto:'
       share: Compartir
