@@ -38,8 +38,32 @@
     </div>
 
     <div class="small-12 medium-3 column">
-      <aside id="sidebar" class="margin-bottom">
-        <%= render 'sidebar' %>
+      <aside class="margin-bottom">
+        <% if @filter_geozone.present? && !@ballot.has_city_wide_votes? %>
+          <div class="callout success">
+            <p>
+              <small>
+                <%= t("spending_proposals.index.sidebar.remember_city",
+                    city: link_to(t("spending_proposals.index.sidebar.remember_city_link_html"),
+                          spending_proposals_path(geozone: 'all'),
+                          data: { no_turbolink: true })).html_safe %>
+              </small>
+            </p>
+          </div>
+        <% elsif @filter_geozone.blank? && !@ballot.has_district_wide_votes? %>
+          <div class="callout success">
+            <p>
+              <small>
+                <%= t("spending_proposals.index.sidebar.remember_district",
+                    district: link_to(t("spending_proposals.index.sidebar.remember_district_link_html"),
+                          select_district_path)).html_safe %>
+              </small>
+            </p>
+          </div>
+        <% end %>
+        <div id="sidebar">
+          <%= render 'sidebar' %>
+        </div>
       </aside>
     </div>
 
