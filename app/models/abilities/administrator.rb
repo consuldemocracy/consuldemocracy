@@ -45,6 +45,8 @@ module Abilities
       if Setting['feature.spending_proposal_features.valuation_allowed'].present?
         can [:update, :destroy], SpendingProposal
       end
+
+      can [:search, :edit, :update, :create, :index, :destroy], Banner
     end
   end
 end

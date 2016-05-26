@@ -400,3 +400,21 @@ puts "Open plenary proposal"
                               cached_votes_up: rand(1000))
   puts "#{proposal.title}"
 end
+
+puts "Creating banners"
+
+Proposal.last(3).each do |proposal|
+  title = Faker::Lorem.sentence(word_count = 3)
+  description = Faker::Lorem.sentence(word_count = 12)
+  banner = Banner.create!(title: title,
+                          description: description,
+                          style: ["banner-style banner-style-one", "banner-style banner-style-two",
+                                  "banner-style banner-style-three"].sample,
+                          image: ["banner-img banner-img-one", "banner-img banner-img-two",
+                                  "banner-img banner-img-three"].sample,
+                          target_url: Rails.application.routes.url_helpers.proposal_path(proposal),
+                          post_started_at: rand((Time.now - 1.week) .. (Time.now - 1.day)),
+                          post_ended_at:   rand((Time.now  - 1.day) .. (Time.now + 1.week)),
+                          created_at: rand((Time.now - 1.week) .. Time.now))
+  puts "    #{banner.title}"
+end

@@ -43,6 +43,13 @@
       </li>
     <% end %>
 
+    <li <%= "class=active" if controller_name == "banners" %>>
+      <%= link_to admin_banners_path do %>
+        <span class="icon-eye"></span>
+        <%= t("admin.menu.banner") %>
+      <% end %>
+    </li>
+    
     <li <%= "class=active" if controller_name == "users" %>>
       <%= link_to admin_users_path do %>
         <span class="icon-eye"></span>

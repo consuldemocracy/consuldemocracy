@@ -9,6 +9,39 @@ en:
       restore: Restore
       mark_featured: Featured
       unmark_featured: Unmark featured
+    banners:
+      index:
+        title: Banners
+        create: Create banner
+        edit: Edit banner
+        delete: Delete banner
+        filters:
+          all: All
+          with_active: Active
+          with_inactive: Inactive
+      banner:
+        title: Title
+        description:  Description
+        target_url:  Link
+        style: Style
+        image: Image
+        post_started_at: Post started at
+        post_ended_at: Post ended at
+      edit:
+        back: Back
+        editing: Edit banner
+        form:
+          submit_button: Save changes
+      errors:
+        form:
+      errors:
+        form:
+          error:
+            one: "prevented this banner from being saved"
+            other: 'prevented this banner from being saved'
+      new:
+        back: Back
+        creating: Create banner
     activity:
       show:
         action: Action
@@ -59,6 +92,7 @@ en:
         user_not_found: User not found
     menu:
       activity: Moderator activity
+      banner: Manage banners
       debate_topics: Debate topics
       hidden_comments: Hidden comments
       hidden_debates: Hidden debates
@@ -160,6 +194,8 @@ en:
       flash:
         updated: Value updated
       index:
+        banners: Estilos de banners
+        banner_imgs: Imágenes para los banners
         title: Configuration settings
         update_setting: Update
         feature_flags: Features

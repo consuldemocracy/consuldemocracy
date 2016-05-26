@@ -9,6 +9,37 @@ es:
       restore: Volver a mostrar
       mark_featured: Destacar
       unmark_featured: Quitar destacado
+    banners:
+      index:
+        title: Anuncios
+        create: Crear un banner
+        edit: Editar banner
+        delete: Eliminar banner
+        filters:
+          all: Todos
+          with_active: Activos
+          with_inactive: Inactivos
+      banner:
+        title: Título
+        description:  Descripción
+        target_url:  Enlace
+        style: Estilo
+        image: Imagen
+        post_started_at: Inicio de publicación
+        post_ended_at: Fin de publicación
+      edit:
+        back: Volver
+        editing: Editar el banner
+        form:
+          submit_button: Guardar Cambios
+      errors:
+        form:
+          error:
+            one: "error impidió guardar el banner"
+            other: "errores impidieron guardar el banner."
+      new:
+        back: Volver
+        creating: Crear banner
     activity:
       show:
         action: Acción
@@ -59,6 +90,7 @@ es:
         user_not_found: Usuario no encontrado
     menu:
       activity: Actividad de moderadores
+      banner: Gestionar banners
       debate_topics: Temas de debate
       hidden_comments: Comentarios ocultos
       hidden_debates: Debates ocultos
@@ -160,6 +192,8 @@ es:
       flash:
         updated: Valor actualizado
       index:
+        banners: Banner style
+        banner_imgs: Banner images
         title: Configuración global
         update_setting: Actualizar
         feature_flags: Funcionalidades

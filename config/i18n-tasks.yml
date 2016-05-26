@@ -107,6 +107,7 @@ ignore_unused:
   - 'unauthorized.*'
   - 'admin.officials.level_*'
   - 'admin.comments.index.filter*'
+  - 'admin.banners.index.filters.*'
   - 'admin.debates.index.filter*'
   - 'admin.proposals.index.filter*'
   - 'admin.spending_proposals.index.filter*'

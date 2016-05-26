@@ -145,6 +145,7 @@ body.admin {
 
     li a:not(.button) {
       color: rgba(255,255,255,0.3);
+      display: block;
       line-height: rem-calc(48);
       padding-left: rem-calc(12);
       vertical-align: top;
