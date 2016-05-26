@@ -52,4 +52,12 @@ class Ballot < ActiveRecord::Base
     geozone.blank? ? 24000000 : DISTRICT_BUDGETS[geozone.name].to_i
   end
 
+  def has_district_wide_votes?
+    geozone_id.present?
+  end
+
+  def has_city_wide_votes?
+    spending_proposals.city_wide.count > 0
+  end
+
 end
