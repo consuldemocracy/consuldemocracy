@@ -526,7 +526,53 @@ feature 'Debates' do
           end
         end
 
-        scenario "Municipal Organization", :js do
+        scenario "Users", :js do
+          ana = create :user, official_level: 0
+          john = create :user, official_level: 3
+
+          debate1 = create(:debate, author: ana)
+          debate2 = create(:debate, author: ana)
+          debate3 = create(:debate, author: john)
+
+          visit debates_path
+
+          click_link "Advanced search"
+          select "Users", from: "advanced_search_official_level"
+          click_button "Filter"
+
+          expect(page).to have_content("There are 2 debates")
+
+          within("#debates") do
+            expect(page).to have_content(debate1.title)
+            expect(page).to have_content(debate2.title)
+            expect(page).to_not have_content(debate3.title)
+          end
+        end
+
+        scenario "Collective Users", :js do
+          ana = create :user, official_level: 21
+          john = create :user, official_level: 1
+
+          debate1 = create(:debate, author: ana)
+          debate2 = create(:debate, author: ana)
+          debate3 = create(:debate, author: john)
+
+          visit debates_path
+
+          click_link "Advanced search"
+          select "Collective users", from: "advanced_search_official_level"
+          click_button "Filter"
+
+          expect(page).to have_content("There are 2 debates")
+
+          within("#debates") do
+            expect(page).to have_content(debate1.title)
+            expect(page).to have_content(debate2.title)
+            expect(page).to_not have_content(debate3.title)
+          end
+        end
+
+       pending "Municipal Organization", :js do
           ana = create :user, official_level: 2
           john = create :user, official_level: 3
 

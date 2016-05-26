@@ -365,10 +365,11 @@ en:
       author_type: 'By author category'
       author_type_blank: 'Select a category'
       author_type_1: 'Public employee'
-      author_type_2: 'Municipal Organization'
       author_type_3: 'General director'
       author_type_4: 'City councillor'
       author_type_5: 'Mayoress'
+      author_type_0: 'Users'
+      author_type_21: 'Collective users'      
       date: 'By date'
       date_placeholder: 'DD/MM/YYYY'
       date_range_blank: 'Choose a date'
@@ -390,6 +391,7 @@ en:
     check_all: All
     check_none: None
     collective: Collective
+    users: Users
     flag: Flag as inappropriate
     print:
       print_button: Print this info

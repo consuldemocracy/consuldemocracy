@@ -40,6 +40,12 @@
                   <%= t("shared.collective") %>
                 </span>
               <% end %>
+              <% if proposal.author.user_level? %>
+                <span class="bullet">&nbsp;&bull;&nbsp;</span>
+                <span class="label round">
+                  <%= t("shared.users") %>
+                </span>
+              <% end %>
             </p>
             <div class="proposal-description">
               <p><%= link_to proposal.summary, namespaced_proposal_path(proposal) %></p>
