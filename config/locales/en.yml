@@ -475,6 +475,10 @@ en:
         back: Back to select page
         district: District
         my_ballot: My ballot
+        remember_city: You can also vote %{city} investment projects.
+        remember_city_link_html: <strong>city-wide</strong>
+        remember_district: You can also vote investment projects for %{district}.
+        remember_district_link_html: <strong>a district</strong>
         voted_html:
           one: "<strong>You voted one proposal with a cost of %{amount_spent}</strong>"
           other: "<strong>You voted %{count} proposals with a cost of %{amount_spent}</strong>"
@@ -501,7 +505,7 @@ en:
       page_title: Participatory budgeting
       title: "You already can vote investment projetcs!"
       text_first_html: "Desde hoy <strong>15 de mayo</strong> hasta el día <strong>30 de junio</strong> puedes votar las propuestas de inversión de los Presupuestos participativos 2016."
-      text_second_html: "Puedes votar todas las propuestas que quieras hasta alcanzar el presupuesto destinado para el ámbito de <strong>toda la ciudad</strong> y del <strong>distrito</strong> que hayas seleccionado."
+      text_second_html: "Puedes votar todas las propuestas que quieras hasta alcanzar el presupuesto destinado para el ámbito de <strong>toda la ciudad y además del distrito</strong> que selecciones."
       unfeasible_link: See unfeasible investment projects
     new:
       back_link: Back

@@ -985,12 +985,8 @@ table.age-groups {
 
   @include breakpoint(large) {
     background: #F6F5F8 image-url('investment_project_welcome.png');
-    background-position: 150%;
+    background-position: 200%;
     background-repeat: no-repeat;
-  }
-
-  @include breakpoint(large) {
-    background-position: right;
   }
 
   .content {
