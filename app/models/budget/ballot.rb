@@ -11,12 +11,12 @@ class Budget
       investments.sum(:price).to_i
     end
 
-    def amount_spent(heading)
-      investments.by_heading(heading).sum(:price).to_i
+    def amount_spent(heading_id)
+      investments.by_heading(heading_id).sum(:price).to_i
     end
 
     def amount_available(heading)
-      budget.heading_price(heading) - amount_spent(heading)
+      budget.heading_price(heading) - amount_spent(heading.try(:id))
     end
   end
 end
