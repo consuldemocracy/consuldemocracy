@@ -49,7 +49,7 @@ module Abilities
         can :create, SpendingProposal
         can :create, Budget::Investment, budget: { phase: "accepting" }
         can :vote,   Budget::Investment, budget: { phase: "selecting" }
-        can :ballot, Budget::Investment, budget: { phase: "balloting" }
+        can :create, Budget::Ballot,     budget: { phase: "balloting" }
       end
 
       can :create, Annotation
