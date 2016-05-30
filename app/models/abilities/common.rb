@@ -19,6 +19,7 @@ module Abilities
       can [:retire_form, :retire], Proposal, author_id: user.id
 
       can :read, SpendingProposal
+      can :read, Budget::Investment
 
       can :create, Comment
       can :create, Debate
@@ -46,6 +47,9 @@ module Abilities
         can :vote_featured, Proposal
         can :vote, SpendingProposal
         can :create, SpendingProposal
+        can :create, Budget::Investment, budget: { phase: "accepting" }
+        can :vote,   Budget::Investment, budget: { phase: "selecting" }
+        can :create, Budget::Ballot,     budget: { phase: "balloting" }
       end
 
       can :create, Annotation

@@ -56,4 +56,16 @@ describe "Abilities::Administrator" do
   it { should be_able_to(:update, SpendingProposal) }
   it { should be_able_to(:valuate, SpendingProposal) }
   it { should be_able_to(:destroy, SpendingProposal) }
+
+  it { should be_able_to(:create, Budget) }
+  it { should be_able_to(:update, Budget) }
+
+  it { should be_able_to(:create, Budget::ValuatorAssignment) }
+
+  it { should be_able_to(:update, Budget::Investment) }
+  it { should be_able_to(:hide,   Budget::Investment) }
+
+  it { should be_able_to(:valuate, create(:budget_investment, budget: create(:budget, valuating: true))) }
+  it { should_not be_able_to(:valuate, create(:budget_investment, budget: create(:budget, valuating: false))) }
+
 end
