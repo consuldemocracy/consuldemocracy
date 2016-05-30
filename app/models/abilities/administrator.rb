@@ -4,7 +4,6 @@ module Abilities
 
     def initialize(user)
       self.merge Abilities::Moderation.new(user)
-      self.merge Abilities::Valuator.new(user)
 
       can :restore, Comment
       cannot :restore, Comment, hidden_at: nil
@@ -41,7 +40,12 @@ module Abilities
 
       can :manage, Annotation
 
-      can [:read, :update, :destroy, :summary], SpendingProposal
+      can [:read, :update, :valuate, :destroy, :summary], SpendingProposal
+
+      can [:create, :update], Budget
+      can [:hide, :update], Budget::Investment
+      can :valuate, Budget::Investment, budget: { valuating: true }
+      can :create, Budget::ValuatorAssignment
     end
   end
 end
