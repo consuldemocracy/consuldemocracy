@@ -8,9 +8,20 @@
 //
 
 // 01. Global styles
-// - - - - - - - - - - - - - - - - - - - - - - - - -
+// -----------------
+
+$admin-color: #CF3638;
 
 body.admin {
+
+  header {
+    border: 0;
+  }
+
+  .top-bar {
+    background: $admin-color !important;
+    height: auto;
+  }
 
   form {
     .button {
@@ -49,7 +60,6 @@ body.admin {
   }
 
   .dashboard {
-    margin-bottom: rem-calc(48);
 
     ul, ol {
       margin-left: rem-calc(12);
@@ -99,17 +109,20 @@ body.admin {
   display: none;
 }
 
+.admin-content {
+  padding: $line-height !important;
+}
+
 // 02. Sidebar
-// - - - - - - - - - - - - - - - - - - - - - - - - -
+// -----------
 
 .admin-sidebar {
-
-  a {
-    color: white\9 !important;
-  }
+  border-bottom: 1px solid $border;
+  border-right: 1px solid $border;
 
   ul {
     list-style-type: none;
+    margin-bottom: 0;
     margin-left: 0;
     padding: 0;
 
@@ -120,45 +133,44 @@ body.admin {
       padding-top: rem-calc(4);
       padding-left: 12px\9 !important;
       padding-right: 12px\9 !important;
+      vertical-align: middle;
     }
 
     li {
-      background: #2E343F;
-      border-bottom: 1px solid #292f39;
-      border-top: 1px solid #353c49;
+      background: white;
       margin: 0;
       outline: 0;
 
-      &:first-child {
+      &.active a {
+        background: #f3f6f7;
+        color: $admin-color;
         font-weight: bold;
-        text-transform: uppercase;
-      }
-
-      &.active{
-        background: #373D47;
-
-        a:not(.button) {
-          color: white;
-        }
       }
     }
 
-    li a:not(.button) {
-      color: rgba(255,255,255,0.3);
+    li.section {
+      border-bottom: 1px dotted #d5d5d5;
+      border-top: 1px dotted #d5d5d5;
+      height: $line-height/2;
+    }
+
+    li a {
+      color: $text;
       display: block;
       line-height: rem-calc(48);
       padding-left: rem-calc(12);
       vertical-align: top;
 
       &:hover {
-        color: white;
+        background: #f3f6f7;
+        text-decoration: none;
       }
     }
   }
 }
 
 // 03. List elements
-// - - - - - - - - - - - - - - - - - - - - - - - - -
+// -----------------
 
 .admin-list {
   list-style-type: none;
@@ -277,7 +289,7 @@ body.admin {
 }
 
 // 04. Stats
-// - - - - - - - - - - - - - - - - - - - - - - - - -
+// ---------
 
 .stats {
   background: white;
@@ -305,7 +317,7 @@ body.admin {
 }
 
 // 05. Management
-// - - - - - - - - - - - - - - - - - - - - - - - - -
+// --------------
 
 .user-permissions {
 

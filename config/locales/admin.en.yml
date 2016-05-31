@@ -71,6 +71,7 @@ en:
         title: Hidden comments
     dashboard:
       index:
+        back: Go back to
         title: Administration
     debates:
       index:

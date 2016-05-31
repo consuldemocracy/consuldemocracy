@@ -69,6 +69,7 @@ es:
         title: Comentarios ocultos
     dashboard:
       index:
+        back: Volver a
         title: Administración
     debates:
       index:
@@ -182,7 +183,7 @@ es:
           all: Todas
           with_confirmed_hide: Confirmadas
           without_confirmed_hide: Pendientes
-        title: Propuestas ocultos
+        title: Propuestas ocultas
     settings:
       flash:
         updated: Valor actualizado

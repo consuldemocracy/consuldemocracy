@@ -1,5 +1,8 @@
 <div class="dashboard">
-  <h2><%= t("admin.dashboard.index.title") %></h2>
+
+  <%= link_to t("admin.dashboard.index.back") + " " + Setting['org_name'], root_path, class: "button float-right" %>
+
+  <h2 class="inline-block"><%= t("admin.dashboard.index.title") %></h2>
 
   <p>Desde aquí puedes administrar el sistema, a través de las siguientes acciones:</p>
 

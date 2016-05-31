@@ -16,19 +16,18 @@
   <body class="admin">
     <%= render 'layouts/admin_header' %>
 
-    <div class="row expanded">
-      <main>
-        <div class="small-12 medium-3 column">
-          <%= side_menu %>
-        </div>
+    <main class="no-margin-top row no-max-width collapse">
+      <div class="small-12 medium-3 large-2 column">
+        <%= side_menu %>
+      </div>
 
-        <div class="admin-content small-12 medium-9 column">
+      <div class="admin-content small-12 medium-9 large-10 column">
 
-          <%= render 'layouts/flash' %>
+        <%= render 'layouts/flash' %>
 
-          <%= yield %>
-        </div>
-      </main>
-    </div>
+        <%= yield %>
+      </div>
+    </main>
+
   </body>
 </html>
