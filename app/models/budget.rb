@@ -1,8 +1,11 @@
 class Budget < ActiveRecord::Base
 
+  include Sanitizable
+
   VALID_PHASES = %W{on_hold accepting selecting balloting finished}
 
   validates :phase, inclusion: { in: VALID_PHASES }
+  validates :currency_symbol, presence: true
 
   has_many :investments
   has_many :ballots

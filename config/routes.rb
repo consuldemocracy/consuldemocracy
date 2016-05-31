@@ -69,6 +69,12 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :budgets, only: [:show, :index] do
+    resources :investments, controller: "budgets/investments", only: [:index, :new, :create, :show, :destroy] do
+      member { post :vote }
+    end
+  end
+
   scope '/participatory_budget' do
     resources :spending_proposals, only: [:index, :new, :create, :show, :destroy], path: 'investment_projects' do
       post :vote, on: :member

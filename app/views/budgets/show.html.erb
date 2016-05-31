@@ -1,0 +1,15 @@
+<h1><%= @budget.name %></h1>
+
+<div><%= @budget.description %></div>
+
+<ul>
+  <li><%= link_to budget_investments_path(budget_id: @budget.id, heading_id: nil) do %>
+    No heading (<%= format_price(@budget, @budget.price) %>)
+  <% end %></li>
+  <% @budget.headings.each do |heading| %>
+    <li><%= link_to budget_investments_path(budget_id: @budget.id, heading_id: heading.id) do %>
+      <%= heading.name %> (<%= format_price(@budget, heading.price) %>)
+    <% end %>
+    </li>
+  <% end %>
+</ul>

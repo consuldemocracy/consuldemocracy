@@ -1,0 +1,7 @@
+<h1>Budget Index</h1>
+
+<ul>
+<% @budgets.each do |budget| %>
+  <li><%= link_to budget.name, budget %></li>
+<% end %>
+</ul>
