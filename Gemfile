@@ -94,3 +94,5 @@ group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 3.0'
 end
+
+eval_gemfile './Gemfile_custom'
