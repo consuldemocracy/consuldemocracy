@@ -97,6 +97,10 @@ class Proposal < ActiveRecord::Base
     cached_votes_up + physical_votes
   end
 
+  def voters
+    votes_for.voters
+  end
+
   def editable?
     total_votes <= Setting["max_votes_for_proposal_edit"].to_i
   end

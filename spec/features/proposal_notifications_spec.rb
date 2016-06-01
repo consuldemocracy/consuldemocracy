@@ -3,9 +3,6 @@ require 'rails_helper'
 feature 'Proposal Notifications' do
 
   scenario "Send a notification" do
-    noelia = create(:user)
-    vega = create(:user)
-
     author = create(:user)
     proposal = create(:proposal, author: author)
 

@@ -42,6 +42,14 @@ class Mailer < ApplicationMailer
     end
   end
 
+  def proposal_notification(notification, voter)
+    @notification = notification
+
+    with_user(voter) do
+      mail(to: voter.email, subject: @notification.title)
+    end
+  end
+
   private
 
   def with_user(user, &block)
