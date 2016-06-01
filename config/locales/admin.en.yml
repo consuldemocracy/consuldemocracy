@@ -50,6 +50,7 @@ en:
           hide: Hidden
           restore: Restored
         by: Moderated by
+        content: Content
         filter: Show
         filters:
           all: All
@@ -93,6 +94,7 @@ en:
         user_not_found: User not found
     menu:
       activity: Moderator activity
+      admin: Admin menu
       banner: Manage banners
       debate_topics: Debate topics
       hidden_comments: Hidden comments
@@ -140,7 +142,6 @@ en:
         cost: Cost
     officials:
       edit:
-        back: Back
         destroy: Remove 'Official' status
         title: 'Officials: Edit user'
       flash:
@@ -166,9 +167,9 @@ en:
           pending: Pending
           rejected: Rejected
           verified: Verified
-        hidden_count:
-          one: There is also one organisation with no users or with a hidden user
-          other: There are %{count} organisations with no users or with a hidden user
+        hidden_count_html:
+          one: There is also <strong>one organisation</strong> with no users or with a hidden user.
+          other: There are <strong>%{count} organisations</strong> with no users or with a hidden user.
         reject: Reject
         rejected: Rejected
         search: Search
@@ -306,11 +307,10 @@ en:
           without_confirmed_hide: Pending
         title: Hidden users
       show:
-        back: Back
         email: 'Email:'
         hidden_at: 'Hidden at:'
         registered_at: 'Registered at:'
-        title: Activity of user %{user}
+        title: Activity of user (%{user})
     verifications:
       index:
         phone_not_given: Phone not given
