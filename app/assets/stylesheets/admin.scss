@@ -24,6 +24,7 @@ body.admin {
   }
 
   form {
+
     .button {
       margin-top: 0;
     }
@@ -38,21 +39,32 @@ body.admin {
 
   table {
 
+    th {
+      text-align: left;
+    }
+
     tr {
-      background: #f4f4f4;
+      background: white;
+      border: 1px solid $border;
 
-      &:nth-child(odd) {
-        background: white;
-      }
-
-      &:nth-child(even) {
-        background: #f0f0f0;
+      &:hover {
+        background: #f3f6f7;
       }
     }
 
-    td.small {
-      font-size: $small-font-size;
+    input[type="submit"] ~ a, a ~ a {
+      margin-left: $line-height/2;
+      margin-right: $line-height/2;
     }
+  }
+
+  hr {
+    max-width: none;
+  }
+
+  .menu.simple li.active {
+    border-bottom: 2px solid $admin-color;
+    color: $admin-color;
   }
 
   #proposals {
@@ -95,12 +107,29 @@ body.admin {
   padding: $line-height !important;
 }
 
+@include breakpoint(medium) {
+
+  tr {
+
+    .on-hover {
+      display: none;
+    }
+
+    &:hover .on-hover {
+      display: inline;
+    }
+  }
+}
+
 // 02. Sidebar
 // -----------
 
 .admin-sidebar {
-  border-bottom: 1px solid $border;
   border-right: 1px solid $border;
+
+  @include breakpoint(medium) {
+    padding-bottom: $line-height*3;
+  }
 
   ul {
     list-style-type: none;
@@ -154,45 +183,6 @@ body.admin {
 // 03. List elements
 // -----------------
 
-.admin-list {
-  list-style-type: none;
-  margin: 0;
-  margin-bottom: rem-calc(48);
-
-  form {
-    clear: both;
-
-    .checkbox {
-      font-size: $small-font-size;
-    }
-  }
-
-  li {
-    border-bottom: 1px solid #E7E9EC;
-    font-size: rem-calc(14);
-    min-height: rem-calc(72);
-    padding: rem-calc(12);
-
-    &:first-child {
-      border-top: 1px solid #E7E9EC;
-    }
-
-    &:nth-child(odd) {
-      background: #F0F2F6;
-    }
-  }
-
-  .tag {
-    float: left;
-    font-size: rem-calc(18);
-    padding: 0;
-  }
-
-  .button {
-    margin: 0;
-  }
-}
-
 .delete {
   border-bottom: 1px dotted #CF2A0E;
   color: $delete;
@@ -234,14 +224,9 @@ body.admin {
   font-style: italic;
 }
 
-.level {
-  font-size: rem-calc(12);
-}
-
 .official {
   background-color: #e7e7e7;
   border-radius: rem-calc(3);
-  font-size: rem-calc(12);
   font-weight: normal;
   padding: rem-calc(6) rem-calc(12);
 }
@@ -257,13 +242,10 @@ body.admin {
 .moderation-description {
   max-height: rem-calc(65);
   overflow: hidden;
-  max-width: rem-calc(590);
+  max-width: rem-calc(700);
 
   &:hover {
-    cursor: text;
     max-height: rem-calc(1000);
-    outline: 3px solid #ffbf47;
-    padding: rem-calc(12);
     transition: max-height 0.9s;
     -moz-transition: max-height 0.9s;
     -webkit-transition: max-height 0.9s;
@@ -332,8 +314,8 @@ body.admin {
   border-radius: rem-calc(3);
   font-size: rem-calc(16);
   font-weight: normal;
-  margin-bottom: rem-calc(12);
-  padding: rem-calc(6) rem-calc(12);
+  margin: $line-height;
+  padding: $line-height/2;
 
   strong {
     font-size: rem-calc(18);
