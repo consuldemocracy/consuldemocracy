@@ -12,6 +12,8 @@
 
 #print_link { display: none !important; }
 
+#responsive-menu { display: none !important; }
+
 .admin-sidebar { display: none !important; }
 
 img.left { display: none !important; }
