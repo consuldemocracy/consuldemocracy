@@ -510,8 +510,10 @@ es:
           other: "%{count} Propuestas de inversión"
       no_activity: Usuario sin actividad pública
       private_activity: Este usuario ha decidido mantener en privado su lista de actividades
-      retire: Retirar
-      retired: Retirada
+    proposals:
+      send_message: "Enviar mensaje"
+      retire: "Retirar"
+      retired: "Retirada"
   votes:
     agree: Estoy de acuerdo
     anonymous: Demasiados votos anónimos, para poder votar %{verify_account}.

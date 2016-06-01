@@ -3,6 +3,7 @@ class UsersController < ApplicationController
 
   load_and_authorize_resource
   helper_method :authorized_for_filter?
+  helper_method :author?
   helper_method :author_or_admin?
 
   def show
@@ -65,8 +66,12 @@ class UsersController < ApplicationController
       @user.public_activity || authorized_current_user?
     end
 
+    def author?
+      @author ||= current_user && (current_user == @user)
+    end
+
     def author_or_admin?
-      @author_or_admin ||= current_user && (current_user == @user || current_user.administrator?)
+      @author_or_admin ||= current_user && (author? || current_user.administrator?)
     end
 
     def authorized_current_user?

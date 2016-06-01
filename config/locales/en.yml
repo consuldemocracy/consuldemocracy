@@ -510,8 +510,10 @@ en:
           other: "%{count} Spending proposals"
       no_activity: User has no public activity
       private_activity: This user decided to keep the activity list private
-      retire: Retire
-      retired: Retired
+    proposals:
+      send_message: "Send message"
+      retire: "Retire"
+      retired: "Retired"
   votes:
     agree: I agree
     anonymous: Too many anonymous votes to admit vote %{verify_account}.
