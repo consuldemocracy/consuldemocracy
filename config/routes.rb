@@ -93,6 +93,8 @@ Rails.application.routes.draw do
     put :mark_all_as_read, on: :collection
   end
 
+  resources :proposal_notifications, only: [:new, :create, :show]
+
   resource :verification, controller: "verification", only: [:show]
 
   scope module: :verification do

@@ -146,6 +146,7 @@ en:
     not_saved: 'prevented this %{resource} from being saved:'
     policy: Privacy Policy
     proposal: Proposal
+    proposal_notification: "Notification"
     spending_proposal: Spending proposal
     user: Account
     verification/sms: phone
@@ -360,6 +361,11 @@ en:
     update:
       form:
         submit_button: Save changes
+  proposal_notifications:
+    new:
+      title_label: "Title"
+      body_label: "Message"
+      submit_button: "Send"
   shared:
     advanced_search:
       author_type: 'By author category'

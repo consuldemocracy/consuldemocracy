@@ -146,6 +146,7 @@ es:
     not_saved: 'impidieron guardar %{resource}:'
     policy: Política de privacidad
     proposal: la propuesta
+    proposal_notification: "la notificación"
     spending_proposal: la propuesta de gasto
     user: la cuenta
     verification/sms: el teléfono
@@ -360,6 +361,11 @@ es:
     update:
       form:
         submit_button: Guardar cambios
+  proposal_notifications:
+    new:
+      title_label: "Título"
+      body_label: "Mensaje"
+      submit_button: "Enviar"
   shared:
     advanced_search:
       author_type: 'Por categoría de autor'

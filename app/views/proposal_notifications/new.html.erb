@@ -1,0 +1,13 @@
+<%= form_for @notification do |f| %>
+  <%= render "shared/errors", resource: @notification %>
+
+  <%= f.label :title, t("proposal_notifications.new.title_label") %>
+  <%= f.text_field :title, label: false %>
+
+  <%= f.label :body, t("proposal_notifications.new.body_label") %>
+  <%= f.text_area :body, label: false %>
+
+  <%= f.hidden_field :proposal_id, value: @proposal.id %>
+
+  <%= f.submit t("proposal_notifications.new.submit_button") %>
+<% end %>
