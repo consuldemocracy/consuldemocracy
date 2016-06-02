@@ -147,7 +147,10 @@ feature 'Admin banners magement' do
                               post_started_at: (Time.now + 4.days),
                               post_ended_at:   (Time.now + 10.days))
     visit admin_root_path
-    click_link "Manage banners"
+
+    within("#side_menu") do
+      click_link "Manage banners"
+    end
 
     expect(page).to have_content 'Ugly banner'
 
