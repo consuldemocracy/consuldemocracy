@@ -16,6 +16,10 @@ body.admin {
 
   header {
     border: 0;
+
+    .top-links {
+      background: darken($admin-color, 15%);
+    }
   }
 
   .top-bar {

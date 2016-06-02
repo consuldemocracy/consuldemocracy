@@ -16,6 +16,12 @@
 
   <body class="admin">
     <header>
+      <section class="top-links">
+        <div class="expanded row">
+          <%= render 'shared/locale_switcher' %>
+        </div>
+      </section>
+
       <div class="expanded row">
         <div class="top-bar">
 
@@ -40,13 +46,13 @@
     </header>
 
     <main class="no-margin-top row no-max-width collapse">
-      <div class="small-12 medium-3 large-2 column">
+      <div class="small-12 medium-3 column">
         <%= render "/management/menu" %>
       </div>
 
       <%= render "management/account_info" %>
 
-      <div class="admin-content small-12 medium-9 large-10 column">
+      <div class="admin-content small-12 medium-9 column">
         <%= render 'layouts/flash' %>
         <%= yield %>
       </div>
