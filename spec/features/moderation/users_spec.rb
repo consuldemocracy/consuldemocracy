@@ -62,13 +62,13 @@ feature 'Moderate users' do
     fill_in 'name_or_email', with: 'Wanda'
     click_button 'Search'
 
-    within(".admin-list") do
+    within("#moderation_users") do
         expect(page).to have_content citizen.name
         expect(page).not_to have_content "Blocked"
         click_link 'Block'
     end
 
-    within(".admin-list") do
+    within("#moderation_users") do
       expect(page).to have_content citizen.name
       expect(page).to have_content "Blocked"
     end

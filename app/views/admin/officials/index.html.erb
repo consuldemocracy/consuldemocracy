@@ -4,20 +4,24 @@
 
 <h3><%= page_entries_info @officials %></h3>
 
-<ul class="admin-list">
-<% @officials.each do |official| %>
-  <li>
-    <%= link_to official.name, edit_admin_official_path(official) %>
-    <span class="bullet">&nbsp;&bull;&nbsp;</span>
-    <span class="level"><%= t("admin.officials.level_#{official.official_level}") %></span>
-    <span class="bullet">&nbsp;&bull;&nbsp;</span>
-    <span class="label round level-<%= official.official_level %>">
-      <%= official.official_position %>
-    </span>
-
-    <%= link_to official.official? ? t("admin.officials.search.edit_official") : t("admin.officials.search.make_official"), edit_admin_official_path(official), class: "button small float-right" %>
-  </li>
-<% end %>
-</ul>
+<table>
+  <% @officials.each do |official| %>
+    <tr>
+      <td>
+        <%= link_to official.name, edit_admin_official_path(official) %>
+      </td>
+      <td>
+        <span class="label round level-<%= official.official_level %>">
+          <%= official.official_position %>
+        </span>
+        (<%= t("admin.officials.level_#{official.official_level}") %>)
+      </td>
+      <td class="text-right">
+        <%= link_to official.official? ? t("admin.officials.search.edit_official") : t("admin.officials.search.make_official"),
+                    edit_admin_official_path(official), class: "button hollow" %>
+      </td>
+    </tr>
+  <% end %>
+</table>
 
 <%= paginate @officials %>

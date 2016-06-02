@@ -1,0 +1,13 @@
+<div class="banner-new row">
+
+  <div class="small-12 column">
+    <%= link_to admin_banners_path, class: "back" do %>
+      <span class="icon-angle-left"></span>
+      <%= t("admin.banners.new.back") %>
+    <% end %>
+
+    <h1><%= t("admin.banners.new.creating") %></h1>
+
+    <%= render "form" %>
+  </div>
+</div>

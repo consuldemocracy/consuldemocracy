@@ -9,7 +9,7 @@ feature 'Admin feature flags' do
   scenario 'Enabled features are listed on menu' do
     visit admin_root_path
 
-    within('#admin_menu') do
+    within('#side_menu') do
       expect(page).to have_link "Spending proposals"
       expect(page).to have_link "Hidden debates"
     end
@@ -28,7 +28,7 @@ feature 'Admin feature flags' do
 
     visit admin_root_path
 
-    within('#admin_menu') do
+    within('#side_menu') do
       expect(page).not_to have_link "Spending proposals"
     end
 
@@ -42,7 +42,7 @@ feature 'Admin feature flags' do
 
     visit admin_root_path
 
-    within('#admin_menu') do
+    within('#side_menu') do
       expect(page).not_to have_link "Spending proposals"
     end
 
@@ -56,7 +56,7 @@ feature 'Admin feature flags' do
 
     visit admin_root_path
 
-    within('#admin_menu') do
+    within('#side_menu') do
       expect(page).to have_link "Spending proposals"
     end
   end
