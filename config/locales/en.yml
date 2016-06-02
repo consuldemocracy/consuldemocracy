@@ -363,9 +363,12 @@ en:
         submit_button: Save changes
   proposal_notifications:
     new:
+      title: "Send message"
       title_label: "Title"
       body_label: "Message"
-      submit_button: "Send"
+      submit_button: "Send message"
+    show:
+      back: "Go back to my activity"
   shared:
     advanced_search:
       author_type: 'By author category'

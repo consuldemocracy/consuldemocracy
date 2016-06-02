@@ -1,13 +1,23 @@
-<%= form_for @notification do |f| %>
-  <%= render "shared/errors", resource: @notification %>
+<div class="row">
+  <div class="small-12 medium-9 column">
+    <%= render 'shared/back_link' %>
 
-  <%= f.label :title, t("proposal_notifications.new.title_label") %>
-  <%= f.text_field :title, label: false %>
+    <h1><%= t("proposal_notifications.new.title") %></h1>
 
-  <%= f.label :body, t("proposal_notifications.new.body_label") %>
-  <%= f.text_area :body, label: false %>
+    <%= form_for @notification do |f| %>
+      <%= render "shared/errors", resource: @notification %>
 
-  <%= f.hidden_field :proposal_id, value: @proposal.id %>
+      <%= f.label :title, t("proposal_notifications.new.title_label") %>
+      <%= f.text_field :title, label: false %>
 
-  <%= f.submit t("proposal_notifications.new.submit_button") %>
-<% end %>
+      <%= f.label :body, t("proposal_notifications.new.body_label") %>
+      <%= f.text_area :body, label: false, rows: "3" %>
+
+      <%= f.hidden_field :proposal_id, value: @proposal.id %>
+
+      <div class="small-12 medium-4">
+        <%= f.submit t("proposal_notifications.new.submit_button"), class: "button expanded" %>
+      </div>
+    <% end %>
+  </div>
+</div>

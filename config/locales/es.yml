@@ -363,9 +363,12 @@ es:
         submit_button: Guardar cambios
   proposal_notifications:
     new:
+      title: "Enviar mensaje"
       title_label: "Título"
       body_label: "Mensaje"
-      submit_button: "Enviar"
+      submit_button: "Enviar mensaje"
+    show:
+      back: "Volver a mi actividad"
   shared:
     advanced_search:
       author_type: 'Por categoría de autor'
