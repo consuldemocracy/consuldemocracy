@@ -1,12 +1,16 @@
-<h3><%= t('admin.valuators.valuator.user_found') %>:</h3>
-<div class="row">
-  <div class="small-12 medium-12 column">
-    <h4>
-      <%= valuator.name %>
-      <span class="bullet">&nbsp;&bull;&nbsp;</span>
-      <%= valuator.email %>
-    </h4>
-  </div>
+<div class="small-12 column">
+  <h3><%= t('admin.valuators.valuator.user_found') %></h3>
+
+  <table>
+    <tr>
+      <td>
+        <%= valuator.name %>
+      </td>
+      <td>
+        <%= valuator.email %>
+      </td>
+    </tr>
+  </table>
 
   <% unless @valuator.persisted? %>
     <%= form_for @valuator, url: admin_valuators_path do |f| %>

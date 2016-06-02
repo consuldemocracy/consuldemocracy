@@ -14,19 +14,17 @@
           <%= debate.description %>
         </div>
       </td>
-      <td>
+      <td class="text-right">
         <%= link_to t("admin.actions.restore"),
               restore_admin_debate_path(debate, request.query_parameters),
               method: :put,
               data: { confirm: t("admin.actions.confirm") },
-              class: "button small success no-margin" %>
-      </td>
-      <td>
+              class: "button hollow on-hover" %>
         <% unless debate.confirmed_hide? %>
           <%= link_to t("admin.actions.confirm_hide"),
                 confirm_hide_admin_debate_path(debate, request.query_parameters),
                 method: :put,
-                class: "button small warning float-right" %>
+                class: "button hollow warning on-hover" %>
         <% end %>
       </td>
     </tr>

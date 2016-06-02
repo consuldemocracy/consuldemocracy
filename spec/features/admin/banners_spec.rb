@@ -67,14 +67,17 @@ feature 'Admin banners magement' do
   scenario 'Banners publication is listed on admin menu' do
     visit admin_root_path
 
-    within('#admin_menu') do
+    within('#side_menu') do
       expect(page).to have_link "Manage banners"
     end
   end
 
   scenario 'Publish a banner' do
     visit admin_root_path
-    click_link "Manage banners"
+
+    within('#side_menu') do
+      click_link "Manage banners"
+    end
 
     click_link "Create banner"
 
@@ -108,7 +111,10 @@ feature 'Admin banners magement' do
                               post_ended_at:   (Time.now + 10.days))
 
     visit admin_root_path
-    click_link "Manage banners"
+
+    within('#side_menu') do
+      click_link "Manage banners"
+    end
 
     click_link "Edit banner"
 

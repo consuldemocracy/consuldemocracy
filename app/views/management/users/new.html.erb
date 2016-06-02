@@ -5,7 +5,7 @@
       permissions: [:debates, :create_proposals, :support_proposals, :vote_proposals] %>
 
 <div class="row">
-  <div class="small-12 medium-9 column">
+  <div class="small-12 medium-6 column">
     <%= form_for @user, url: management_users_path do |f| %>
       <%= f.hidden_field :document_type %>
       <%= f.hidden_field :document_number %>
