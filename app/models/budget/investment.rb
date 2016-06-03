@@ -39,6 +39,7 @@ class Budget
     scope :valuation_finished,     -> { where(valuation_finished: true) }
     scope :feasible,               -> { where(feasibility: "feasible") }
     scope :unfeasible,             -> { where(feasibility: "unfeasible") }
+    scope :not_unfeasible,         -> { where.not(feasibility: "unfeasible") }
     scope :undecided,              -> { where(feasibility: "undecided") }
     scope :with_supports,          -> { where('cached_votes_up > 0') }
 

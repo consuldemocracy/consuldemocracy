@@ -18,5 +18,13 @@ class Budget
     def amount_available(heading)
       budget.heading_price(heading) - amount_spent(heading.try(:id))
     end
+
+    def has_lines_with_no_heading?
+      investments.no_heading.count > 0
+    end
+
+    def has_lines_with_heading?
+      self.heading_id.present?
+    end
   end
 end
