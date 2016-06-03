@@ -304,6 +304,11 @@ es:
         title: Presupuestos participativos
         districts: Distrito
         users: Usuarios
+        users_city_total: Usuarios que han votado propuestas de ciudad
+        users_district_total: Usuarios que han votado propuestas de distrito
+        users_city_only: Usuarios que han votado SOLO propuestas de CIUDAD
+        users_district_only: Usuarios que han votado SOLO propuestas de DISTRITO
+        users_both_total: Usuarios que han votado AMBAS
     tags:
       create: Crear Tema
       destroy: Eliminar Tema

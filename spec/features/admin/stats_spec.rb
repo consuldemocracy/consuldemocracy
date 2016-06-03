@@ -107,11 +107,25 @@ feature 'Stats' do
         expect(page).to have_content california.name
         expect(page).to have_content 2
       end
+    end
 
-      within("#geozone_all_city") do
-        expect(page).to have_content "All city"
-        expect(page).to have_content 1
-      end
+    scenario "Number of users that have voted geozone/no-geozone wide proposals" do
+      with_geozone = create(:spending_proposal, :feasible, geozone: create(:geozone))
+      no_geozone   = create(:spending_proposal, :feasible, geozone: nil)
+
+      both        = create(:ballot, spending_proposals: [with_geozone, no_geozone], geozone: with_geozone.geozone)
+      geozoned    = create(:ballot, spending_proposals: [with_geozone], geozone: with_geozone.geozone)
+      no_geozoned = create(:ballot, spending_proposals: [no_geozone], geozone: nil)
+
+
+      visit admin_stats_path
+      click_link "Participatory Budget"
+
+      within("#city_voters") {expect(page).to have_content 2}
+      within("#district_voters") {expect(page).to have_content 2}
+      within("#in_both_voters") {expect(page).to have_content 1}
+      within("#only_district_voters") {expect(page).to have_content 1}
+      within("#only_city_voters") {expect(page).to have_content 1}
     end
 
     scenario "Number of votes in investment projects" do

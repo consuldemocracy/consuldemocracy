@@ -306,6 +306,11 @@ en:
         title: Participatory Budgets
         districts: District
         users: Users
+        users_city_total: Users who voted for city-wide proposals
+        users_district_total: Users who voted for district-wide proposals
+        users_city_only: Users who voted ONLY for city-wide proposals
+        users_district_only: Users who voted ONLY for district-wide proposals
+        users_both_total:  Users who voted for BOTH
     tags:
       create: Create Topic
       destroy: Destroy Topic
