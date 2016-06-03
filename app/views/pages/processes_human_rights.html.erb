@@ -1,0 +1,108 @@
+<% provide :title, "Plan de Derechos Humanos" %>
+<% provide :social_media_meta_tags do %>
+<%= render "shared/social_media_meta_tags",
+          social_url: page_url("processes_human_rights"),
+          social_title: t("pages.processes.index.process_5_title"),
+          social_description: t("pages.processes.index.process_5_description") %>
+<% end %>
+
+<div class="expanded processes-show no-margin-top">
+  <div class="row padding">
+    <div class="small-12 medium-7 column">
+
+      <h1 class="margin-bottom"><%= t("pages.processes.index.process_5_title") %></h1>
+      <h2>¿Por qué el Ayuntamiento pretende adoptar un Plan de Derechos Humanos?</h2>
+
+      <p>El Ayuntamiento de Madrid quiere reforzar su compromiso con los derechos humanos con la elaboración del Plan de Derechos Humanos que será el instrumento para el desarrollo de sus políticas públicas con enfoque de derechos humanos.</p>
+    </div>
+
+    <div class="show-for-medium medium-5 column relative">
+      <%= image_tag "processes_human_rights.png", class: "human-rights-img", alt: "Plan de Derechos Humanos" %>
+    </div>
+  </div>
+</div>
+
+<div class="row margin-top">
+  <div class="small-12 column">
+    <h3>Participa en la elaboración del Plan de Derechos Humanos</h3>
+
+    <p>La importancia del Plan de DDHH para la ciudad de Madrid implica que su elaboración se quiera que sea fruto de un amplio e inclusivo proceso de aportaciones colectivas. Por ello, además de este proceso de participación ciudadana, se están abriendo cauces de recogida de aportaciones de las personas que trabajan en el Ayuntamiento, así como del tejido asociativo y los movimientos sociales de Madrid, como conjunto de personas "titulares de derechos".</p>
+
+    <p>Participa respondiendo a las siguientes preguntas ayudándonos a definir los principales puntos del Plan de Derechos Humanos. Más adelante abriremos un proceso de consulta donde la gente de Madrid pueda priorizar los aspectos más relevantes y decidir qué Plan de Derechos Humanos queremos para Madrid.</p>
+  </div>
+</div>
+
+<div class="row" data-equalizer>
+  <div class="small-12 medium-4 column">
+    <div class="panel category" data-equalizer-watch>
+      <h4>¿Cuáles consideras que son los principales problemas de Derechos Humanos que existen hoy en la ciudad de Madrid?</h4>
+      <%= link_to "Contestar pregunta", "#", class: "button hollow" %>
+    </div>
+  </div>
+
+  <div class="small-12 medium-4 column" data-equalizer-watch>
+    <div class="panel category" data-equalizer-watch>
+      <h4>Selecciona aquellos derechos que te interesan/preocupan más y propón medidas concretas de actuación municipal para la defensa de los mismos.</h4>
+      <%= link_to "Crear propuesta", "#", class: "button hollow" %>
+    </div>
+  </div>
+
+  <div class="small-12 medium-4 column" data-equalizer-watch>
+    <div class="panel category" data-equalizer-watch>
+      <h4>¿Qué propondrías para que la ciudadanía madrileña pueda conocer y defender mejor sus derechos?</h4>
+      <%= link_to "Crear propuesta", "#", class: "button hollow" %>
+    </div>
+  </div>
+</div>
+
+<div class="row margin">
+  <div class="small-12 column">
+    <h3>¿Qué significa trabajar con enfoque de derechos humanos?</h3>
+
+    <div class="row">
+      <div class="small-12 medium-4 column quoted">
+        <div class="panel">
+          <h4>Alineación con los estándares de derechos humanos</h4>
+          <p>El Gobierno del Ayuntamiento de Madrid se compromete a alinear, en el marco de sus competencias, los objetivos de las políticas públicas, planes, programas y servicios municipales, a las obligaciones del marco normativo de derechos humanos ratificados por el Estado. Y se compromete a trabajar para asegurar que  los servicios municipales respondan a los estándares de: disponibilidad, accesibilidad, calidad y adaptabilidad.</p>
+        </div>
+      </div>
+
+      <div class="small-12 medium-4 column quoted">
+        <div class="panel">
+          <h4>No discriminación</h4>
+          <p>El Ayuntamiento reconoce la prohibición de discriminación (directa e indirecta) como un eje central de sus políticas. Para ello, identifica los obstáculos para el ejercicio de los derechos que afectan específicamente a determinados sectores de la población,  por razón de sexo,  edad, etnia, condición migratoria, orientación sexual o identidad de género, ente otros.</p>
+        </div>
+      </div>
+
+      <div class="small-12 medium-4 column quoted">
+        <div class="panel">
+          <h4>Empoderamiento</h4>
+          <p>El Ayuntamiento contribuye a fortalecer las capacidades de  la ciudadanía madrileña para reclamar y ejercer sus derechos.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="small-12 medium-4 column quoted">
+        <div class="panel">
+          <h4>Participación</h4>
+          <p>El Ayuntamiento garantiza el derecho a la participación activa, libre y significativa de  la ciudadanía madrileña en políticas públicas, planes, programas, proyectos y actividades.</p>
+        </div>
+      </div>
+
+      <div class="small-12 medium-4 column quoted">
+        <div class="panel">
+          <h4>Rendición de cuentas</h4>
+          <p>El Ayuntamiento analiza el impacto sus actuaciones e informa y rinde cuentas ante la ciudadanía sobre los resultados de la gestión.</p>
+        </div>
+      </div>
+
+      <div class="small-12 medium-4 column text-center quoted">
+        <div class="panel">
+          <span class="vertical-image"></span>
+          <%= image_tag "derechos_humanos.jpg", alt: t("pages.processes.index.process_5_title") %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

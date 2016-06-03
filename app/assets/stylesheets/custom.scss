@@ -1333,6 +1333,7 @@ table.age-groups {
 
   &.show {
     height: auto;
+    background-position: 80% 100%;
   }
 
   h1 {
@@ -1372,6 +1373,10 @@ table.age-groups {
   @include breakpoint(large) {
     img {
       position: absolute;
+
+      &.human-rights-img {
+        top: -30px;
+      }
     }
   }
 }
@@ -1397,6 +1402,58 @@ table.age-groups {
 
   [class^="icon-"] {
     color: $text-light;
+  }
+}
+
+@include breakpoint(large) {
+
+  .human-rights{
+    background: $brand image-url('processes_featured.jpg') no-repeat;
+    background-position: 80% 100%;
+  }
+}
+
+.quoted .panel {
+  border: 0;
+  padding:0;
+
+  @include breakpoint(medium) {
+    padding: $line-height;
+
+    h4 {
+      position: relative;
+
+      &:before {
+        color: #ddd;
+        content: "\201C";
+        font-size: rem-calc(60);
+        left: -40px;
+        position: absolute;
+        top: -20px;
+      }
+    }
+  }
+}
+
+.vertical-image {
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+
+.panel.category {
+  min-height: $line-height*11;
+  position: relative;
+
+  h3 {
+    font-size: rem-calc(20);
+  }
+
+  a, .button {
+    bottom: 12px;
+    left: 24px;
+    position: absolute;
+    right: 24px;
   }
 }
 
