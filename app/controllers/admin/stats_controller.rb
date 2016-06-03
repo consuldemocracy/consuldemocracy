@@ -39,7 +39,9 @@ class Admin::StatsController < Admin::BaseController
   end
 
   def spending_proposals
-    @ballots = Ballot.group(:geozone).count
+    @ballots = Ballot.where.not(geozone_id: nil).group(:geozone).count
+    @voters_in_city = BallotLine.select(:ballot_id).uniq.joins(:spending_proposal).where("spending_proposals.geozone_id" => nil).to_a.size
+    @voters_in_district = @ballots.values.sum
     @user_count = Ballot.where('ballot_lines_count > ?', 0).count
   end
 
