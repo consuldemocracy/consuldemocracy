@@ -80,6 +80,10 @@ class ApplicationController < ActionController::Base
       @spending_proposal_votes = current_user ? current_user.spending_proposal_votes(spending_proposals) : {}
     end
 
+    def set_budget_investment_votes(budget_investments)
+      @budget_investments_votes = current_user ? current_user.budget_investment_votes(budget_investments) : {}
+    end
+
     def set_comment_flags(comments)
       @comment_flags = current_user ? current_user.comment_flags(comments) : {}
     end
