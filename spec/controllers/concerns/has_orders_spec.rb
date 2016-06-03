@@ -7,8 +7,13 @@ describe 'HasOrders' do
   controller(FakeController) do
     include HasOrders
     has_orders ['created_at', 'votes_count', 'flags_count'], only: :index
+    has_orders ->{ ['votes_count', 'flags_count'] }, only: :new
 
     def index
+      render text: "#{@current_order} (#{@valid_orders.join(' ')})"
+    end
+
+    def new
       render text: "#{@current_order} (#{@valid_orders.join(' ')})"
     end
   end
@@ -16,6 +21,11 @@ describe 'HasOrders' do
   it "has the valid orders set up" do
     get :index
     expect(response.body).to eq('created_at (created_at votes_count flags_count)')
+  end
+
+  it "allows specifying the orders via a lambda" do
+    get :new
+    expect(response.body).to eq('votes_count (votes_count flags_count)')
   end
 
   describe "the current order" do
