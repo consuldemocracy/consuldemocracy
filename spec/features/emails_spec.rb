@@ -148,40 +148,60 @@ feature 'Emails' do
     expect(email).to have_body_text(spending_proposal.feasible_explanation)
   end
 
-  scenario "Proposal notification" do
-    author = create(:user)
+  context "Proposal notifications" do
 
-    noelia = create(:user)
-    vega = create(:user)
-    cristina = create(:user)
+    scenario "Proposal notification" do
+      author = create(:user)
 
-    proposal = create(:proposal, author: author)
+      noelia = create(:user)
+      vega = create(:user)
+      cristina = create(:user)
 
-    create(:vote, voter: noelia, votable: proposal, vote_flag: true)
-    create(:vote, voter: vega,   votable: proposal, vote_flag: true)
+      proposal = create(:proposal, author: author)
 
-    reset_mailer
+      create(:vote, voter: noelia, votable: proposal, vote_flag: true)
+      create(:vote, voter: vega,   votable: proposal, vote_flag: true)
 
-    login_as(author)
-    visit root_path
+      reset_mailer
 
-    visit new_proposal_notification_path(proposal_id: proposal.id)
+      login_as(author)
+      visit root_path
 
-    fill_in 'proposal_notification_title', with: "Thank you for supporting my proposal"
-    fill_in 'proposal_notification_body', with: "Please share it with others so we can make it happen!"
-    click_button "Send"
+      visit new_proposal_notification_path(proposal_id: proposal.id)
 
-    expect(page).to have_content "Your message has been sent correctly."
+      fill_in 'proposal_notification_title', with: "Thank you for supporting my proposal"
+      fill_in 'proposal_notification_body', with: "Please share it with others so we can make it happen!"
+      click_button "Send message"
 
-    expect(unread_emails_for(noelia.email).size).to   eql parse_email_count(1)
-    expect(unread_emails_for(vega.email).size).to     eql parse_email_count(1)
-    expect(unread_emails_for(cristina.email).size).to eql parse_email_count(0)
-    expect(unread_emails_for(author.email).size).to   eql parse_email_count(0)
+      expect(page).to have_content "Your message has been sent correctly."
 
-    email = open_last_email
-    expect(email).to have_subject("Thank you for supporting my proposal")
-    expect(email).to have_body_text("Please share it with others so we can make it happen!")
-    expect(email).to have_body_text(proposal.title)
+      expect(unread_emails_for(noelia.email).size).to   eql parse_email_count(1)
+      expect(unread_emails_for(vega.email).size).to     eql parse_email_count(1)
+      expect(unread_emails_for(cristina.email).size).to eql parse_email_count(0)
+      expect(unread_emails_for(author.email).size).to   eql parse_email_count(0)
+
+      email = open_last_email
+      expect(email).to have_subject("Thank you for supporting my proposal")
+      expect(email).to have_body_text("Please share it with others so we can make it happen!")
+      expect(email).to have_body_text(proposal.title)
+    end
+
+    scenario "Do not send email about proposal notifications unless set in preferences", :js do
+      author = create(:user)
+      voter = create(:user, email_on_proposal_notification: false)
+
+      proposal = create(:proposal)
+      create(:vote, voter: voter, votable: proposal, vote_flag: true)
+
+      login_as(author)
+      visit new_proposal_notification_path(proposal_id: proposal.id)
+
+      fill_in 'proposal_notification_title', with: "Thank you for supporting my proposal"
+      fill_in 'proposal_notification_body', with: "Please share it with others so we can make it happen!"
+      click_button "Send message"
+
+      expect { open_last_email }.to raise_error "No email has been sent!"
+    end
   end
 
 end

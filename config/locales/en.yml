@@ -15,6 +15,7 @@ en:
       public_activity_label: Keep my list of activities public
       save_changes_submit: Save changes
       subscription_to_website_newsletter_label: Receive by email website relevant information
+      email_on_proposal_notification_label: Receive by email notifications about proposals
       title: My account
       user_permission_debates: Participate on debates
       user_permission_info: With your account you can...

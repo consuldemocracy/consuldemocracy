@@ -35,6 +35,7 @@ feature 'Account' do
     fill_in 'account_username', with: 'Larry Bird'
     check 'account_email_on_comment'
     check 'account_email_on_comment_reply'
+    uncheck 'account_email_on_proposal_notification'
     click_button 'Save changes'
 
     expect(page).to have_content "Changes saved"
@@ -42,8 +43,9 @@ feature 'Account' do
     visit account_path
 
     expect(page).to have_selector("input[value='Larry Bird']")
-    expect(page).to have_selector("input[id='account_email_on_comment'][value='1']")
-    expect(page).to have_selector("input[id='account_email_on_comment_reply'][value='1']")
+    expect(find("#account_email_on_comment")).to be_checked
+    expect(find("#account_email_on_comment_reply")).to be_checked
+    expect(find("#account_email_on_proposal_notification")).to_not be_checked
   end
 
   scenario 'Edit Organization' do
@@ -53,6 +55,7 @@ feature 'Account' do
     fill_in 'account_organization_attributes_name', with: 'Google'
     check 'account_email_on_comment'
     check 'account_email_on_comment_reply'
+
     click_button 'Save changes'
 
     expect(page).to have_content "Changes saved"
@@ -60,8 +63,8 @@ feature 'Account' do
     visit account_path
 
     expect(page).to have_selector("input[value='Google']")
-    expect(page).to have_selector("input[id='account_email_on_comment'][value='1']")
-    expect(page).to have_selector("input[id='account_email_on_comment_reply'][value='1']")
+    expect(find("#account_email_on_comment")).to be_checked
+    expect(find("#account_email_on_comment_reply")).to be_checked
   end
 
   scenario "Errors on edit" do

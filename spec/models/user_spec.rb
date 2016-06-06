@@ -83,6 +83,12 @@ describe User do
         expect(subject.newsletter).to eq(true)
       end
     end
+
+    describe 'email_on_proposal_notification' do
+      it 'should be true by default' do
+        expect(subject.email_on_proposal_notification).to eq(true)
+      end
+    end
   end
 
   describe "administrator?" do
