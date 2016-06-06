@@ -1476,18 +1476,9 @@ table.age-groups {
     min-height: $line-height*4;
     vertical-align: top;
 
-    &.active {
+    &:hover {
       background: $highlight;
       position: relative;
-
-      &:hover {
-        background: #fcf1e7;
-
-        &:before {
-          color: $delete;
-          content: "\76";
-        }
-      }
 
       &:before {
         color: $brand;
@@ -1502,10 +1493,6 @@ table.age-groups {
     a {
       color: $text;
       text-decoration: none;
-    }
-
-    &:hover {
-      background: #e0e0e0;
     }
   }
 }
