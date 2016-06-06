@@ -16,6 +16,7 @@ class Proposal < ActiveRecord::Base
   belongs_to :author, -> { with_hidden }, class_name: 'User', foreign_key: 'author_id'
   belongs_to :geozone
   has_many :comments, as: :commentable
+  has_many :proposal_notifications
 
   validates :title, presence: true
   validates :question, presence: true
@@ -152,6 +153,10 @@ class Proposal < ActiveRecord::Base
 
   def self.votes_needed_for_success
     Setting['votes_for_proposal_success'].to_i
+  end
+
+  def notifications
+    proposal_notifications
   end
 
   protected

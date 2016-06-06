@@ -24,6 +24,20 @@ feature 'Proposal Notifications' do
     expect(page).to have_content "Please share it with others so we can make it happen!"
   end
 
+  scenario "Show notifications" do
+    proposal = create(:proposal)
+    notification1 = create(:proposal_notification, proposal: proposal, title: "Hey guys", body: "Just wanted to let you know that...")
+    notification2 = create(:proposal_notification, proposal: proposal, title: "Another update", body: "We are almost there please share with your peoples!")
+
+    visit proposal_path(proposal)
+
+    expect(page).to have_content "Hey guys"
+    expect(page).to have_content "Just wanted to let you know that..."
+
+    expect(page).to have_content "Another update"
+    expect(page).to have_content "We are almost there please share with your peoples!"
+  end
+
   context "Permissions" do
 
     scenario "Link to send the message" do
