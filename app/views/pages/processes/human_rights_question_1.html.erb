@@ -1,0 +1,53 @@
+<% provide :title, "Plan de Derechos Humanos" %>
+<% provide :social_media_meta_tags do %>
+<%= render "shared/social_media_meta_tags",
+          social_url: page_url("processes_human_rights"),
+          social_title: t("pages.processes.index.process_5_title"),
+          social_description: t("pages.processes.index.process_5_description") %>
+<% end %>
+
+<div class="expanded processes-show no-margin-top">
+  <div class="row padding">
+    <div class="small-12 medium-9 column">
+      <%= render "shared/back_link" %>
+
+      <h1 class="margin-bottom"><%= t("pages.processes.index.process_5_title") %></h1>
+      <h2>¿Cuáles consideras que son los principales problemas de Derechos Humanos que existen hoy en la ciudad de Madrid?</h2>
+
+      <form>
+        <textarea rows="5"></textarea>
+      </form>
+
+      <div class="small-12 medium-4">
+        <%= link_to "Contestar pregunta", "#", class: "button expanded" %>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="row margin-top">
+  <div class="small-12 column">
+    <h3>Otros ciudadanos han respondido</h3>
+    <div class="process-comment">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto fuga sed ad aspernatur, perferendis id! Sapiente recusandae, eveniet rem quisquam quae animi excepturi magnam enim, ipsa error nobis, aliquid quidem.</p>
+    </div>
+
+    <div class="process-comment">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto fuga sed ad aspernatur, perferendis id! Sapiente recusandae, eveniet rem quisquam quae animi excepturi magnam enim, ipsa error nobis, aliquid quidem.</p>
+    </div>
+
+    <div class="process-comment">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto fuga sed ad aspernatur, perferendis id! Sapiente recusandae, eveniet rem quisquam quae animi excepturi magnam enim, ipsa error nobis, aliquid quidem.</p>
+    </div>
+
+    <div class="process-comment">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto fuga sed ad aspernatur, perferendis id! Sapiente recusandae, eveniet rem quisquam quae animi excepturi magnam enim, ipsa error nobis, aliquid quidem.</p>
+    </div>
+
+    <div class="process-comment">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto fuga sed ad aspernatur, perferendis id! Sapiente recusandae, eveniet rem quisquam quae animi excepturi magnam enim, ipsa error nobis, aliquid quidem.</p>
+    </div>
+
+  </div>
+</div>

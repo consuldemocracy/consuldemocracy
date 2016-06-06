@@ -1,0 +1,30 @@
+<% provide :title, "Plan de Derechos Humanos" %>
+<% provide :social_media_meta_tags do %>
+<%= render "shared/social_media_meta_tags",
+          social_url: page_url("processes_human_rights"),
+          social_title: t("pages.processes.index.process_5_title"),
+          social_description: t("pages.processes.index.process_5_description") %>
+<% end %>
+
+<div class="expanded processes-show no-margin-top">
+  <div class="row padding">
+    <div class="small-12 medium-9 column">
+      <%= render "shared/back_link" %>
+
+      <h1 class="margin-bottom"><%= t("pages.processes.index.process_5_title") %></h1>
+      <h2>¿Qué propondrías para que la ciudadanía madrileña pueda conocer y defender mejor sus derechos?</h2>
+
+      <div class="small-12 medium-4">
+        <%= link_to "Crear propuesta", "#", class: "button expanded" %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row margin-top">
+  <div class="small-12 column">
+    <h3>Propuestas de otros ciudadanos</h3>
+
+    <%= image_tag "processes_proposal_example.jpg" %>
+  </div>
+</div>

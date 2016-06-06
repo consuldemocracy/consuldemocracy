@@ -1457,6 +1457,59 @@ table.age-groups {
   }
 }
 
+.process-comment {
+  border-bottom: 1px solid $border;
+  border-top: 1px solid $border;
+  margin: $line-height 0;
+  padding: $line-height/2 0;
+}
+
+.process-collection {
+  list-style-type: none;
+  margin-left: 0;
+
+  li .panel {
+    background: #ececec;
+    border: 0;
+    border-radius: rem-calc(6);
+    margin: $line-height/2 $line-height/4;
+    min-height: $line-height*4;
+    vertical-align: top;
+
+    &.active {
+      background: $highlight;
+      position: relative;
+
+      &:hover {
+        background: #fcf1e7;
+
+        &:before {
+          color: $delete;
+          content: "\76";
+        }
+      }
+
+      &:before {
+        color: $brand;
+        content: "\56";
+        font-family: "icons";
+        position: absolute;
+        right: -6px;
+        top: -12px;
+      }
+    }
+
+    a {
+      color: $text;
+      text-decoration: none;
+    }
+
+    &:hover {
+      background: #e0e0e0;
+    }
+  }
+}
+
 // 11. Spending proposals votes
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 

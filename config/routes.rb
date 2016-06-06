@@ -294,6 +294,7 @@ Rails.application.routes.draw do
   get 'participatory_budget/select_district', to: 'spending_proposals#select_district', as: 'select_district'
   get 'delegacion', to: 'forums#index', as: 'delegation'
   get 'plenoabierto', to: 'pages#show', id: 'processes_open_plenary'
+  get 'derechos-humanos', to: 'pages#show', id: 'processes/human_rights'
   get 'noticias', to: 'pages#show', id: 'news'
   get 'participatory_budget/in_two_minutes', to: 'pages#show', id: 'participatory_budget/in_two_minutes'
 
