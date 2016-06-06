@@ -17,7 +17,7 @@ feature 'Proposal Notifications' do
 
     fill_in 'proposal_notification_title', with: "Thank you for supporting my proposal"
     fill_in 'proposal_notification_body', with: "Please share it with others so we can make it happen!"
-    click_button "Send"
+    click_button "Send message"
 
     expect(page).to have_content "Your message has been sent correctly."
     expect(page).to have_content "Thank you for supporting my proposal"
@@ -66,7 +66,7 @@ feature 'Proposal Notifications' do
     proposal = create(:proposal)
 
     visit new_proposal_notification_path(proposal_id: proposal.id)
-    click_button "Send"
+    click_button "Send message"
 
     expect(page).to have_content error_message
   end

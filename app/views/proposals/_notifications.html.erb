@@ -1,6 +1,8 @@
-<div>
-  <% @notifications.each do |notification| %>
-    <div><%= notification.title %></div>
-    <div><%= notification.body %></div>
-  <% end %>
-</div>
+<% if @notifications.present? %>
+  <div>
+    <% @notifications.each do |notification| %>
+      <div><%= notification.title %></div>
+      <div><%= notification.body %></div>
+    <% end %>
+  </div>
+<% end %>
