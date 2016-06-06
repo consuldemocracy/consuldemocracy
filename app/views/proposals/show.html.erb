@@ -13,8 +13,7 @@
         <%= render "shared/back_link" %>
 
         <% if current_user && @proposal.editable_by?(current_user) %>
-          <%= link_to edit_proposal_path(@proposal), class: 'edit-proposal button success small float-right' do %>
-            <span class="icon-edit"></span>
+          <%= link_to edit_proposal_path(@proposal), class: 'edit-proposal button hollow float-right' do %>
             <%= t("proposals.show.edit_proposal_link") %>
           <% end %>
         <% end %>
