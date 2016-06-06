@@ -118,5 +118,14 @@
     </div>
   </section>
 <% end %>
-<%= render "proposals/notifications" %>
-<%= render "proposals/comments" %>
+
+<div class="tabs-content" data-tabs-content="example-tabs">
+  <% if @notifications.present? %>
+    <%= render "proposals/filter_subnav" %>
+    <%= render "proposals/notifications" %>
+  <% end %>
+
+  <div class="tabs-panel is-active" id="tab-comments">
+    <%= render "proposals/comments" %>
+  </div>
+</div>
