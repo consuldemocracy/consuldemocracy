@@ -38,6 +38,19 @@ feature 'Proposal Notifications' do
     expect(page).to have_content "We are almost there please share with your peoples!"
   end
 
+  scenario "Message about receivers" do
+    author = create(:user)
+    proposal = create(:proposal, author: author)
+
+    7.times { create(:vote, votable: proposal, vote_flag: true) }
+
+    login_as(author)
+    visit new_proposal_notification_path(proposal_id: proposal.id)
+
+    expect(page).to have_content "This message will be send to 7 people and it will be visible in the proposal's page"
+    expect(page).to have_link("the proposal's page", href: proposal_path(proposal))
+  end
+
   context "Permissions" do
 
     scenario "Link to send the message" do

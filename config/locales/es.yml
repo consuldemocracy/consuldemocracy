@@ -370,6 +370,8 @@ es:
       title_label: "Título"
       body_label: "Mensaje"
       submit_button: "Enviar mensaje"
+      info_about_receivers: "Este mensaje se enviará a %{count} usuarios y se publicará en "
+      proposal_page: "la página de la propuesta"
     show:
       back: "Volver a mi actividad"
   shared:

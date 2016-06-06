@@ -4,6 +4,14 @@
 
     <h1><%= t("proposal_notifications.new.title") %></h1>
 
+    <p>
+      <%= t("proposal_notifications.new.info_about_receivers",
+            count: @proposal.voters.count) %>
+
+      <%= link_to t("proposal_notifications.new.proposal_page"),
+                  proposal_path(@proposal) %>
+    </p>
+
     <%= form_for @notification do |f| %>
       <%= render "shared/errors", resource: @notification %>
 
