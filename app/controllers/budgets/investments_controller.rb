@@ -12,6 +12,7 @@ module Budgets
     before_action -> { flash.now[:notice] = flash[:notice].html_safe if flash[:html_safe] && flash[:notice] }
     before_action :load_ballot, only: [:index, :show]
     before_action :load_heading, only: [:index, :show]
+    before_action :set_random_seed, only: :index
 
     feature_flag :budgets
 
@@ -59,6 +60,15 @@ module Budgets
     end
 
     private
+
+      def set_random_seed
+        if params[:order] == 'random' || params[:order].blank?
+          params[:random_seed] ||= rand(99)/100.0
+          Budget::Investment.connection.execute "select setseed(#{params[:random_seed]})"
+        else
+          params[:random_seed] = nil
+        end
+      end
 
       def investment_params
         params.require(:investment).permit(:title, :description, :external_url, :heading_id, :terms_of_service)
