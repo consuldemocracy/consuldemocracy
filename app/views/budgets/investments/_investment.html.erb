@@ -1,9 +1,9 @@
-<div id="<%= dom_id(investment) %>" class="investment-project clear">
+<div id="<%= dom_id(investment) %>" class="budget-investment clear">
   <div class="panel">
     <div class="row">
 
       <div class="small-12 medium-9 column">
-        <div class="investment-project-content">
+        <div class="budget-investment-content">
 
           <% cache [locale_and_user_status(investment), 'index', investment, investment.author] do %>
             <span class="label-budget-investment float-left"><%= t("budget.investments.investment.title") %></span>

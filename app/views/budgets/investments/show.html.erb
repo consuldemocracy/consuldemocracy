@@ -1,4 +1,83 @@
-<h1><%= @investment.title %></h1>
+<% provide :title do %><%= @investment.title %><% end %>
 
-<p><%= @investment.author.username %>
-   <%= @investment.price %></p>
+<section class="budget-investment-show">
+  <div id="<%= dom_id(@investment) %>" class="row">
+    <div class="small-12 medium-9 column">
+      <%= link_to :back, class: "back" do %>
+        <span class="icon-angle-left"></span>
+        <%= t("shared.back") %>
+      <% end %>
+
+      <h1><%= @investment.title %></h1>
+
+      <div class="budget-investment-info">
+        <%= render '/shared/author_info', resource: @investment %>
+
+        <span class="bullet">&nbsp;&bull;&nbsp;</span>
+        <%= l @investment.created_at.to_date %>
+        <span class="bullet">&nbsp;&bull;&nbsp;</span>
+        <%= heading_name(@investment.heading) %>
+      </div>
+
+      <br>
+      <p id="investment_code">
+        <%= t("budget.investments.show.code") %>
+        <strong><%= @investment.id %></strong>
+      </p>
+
+      <%= safe_html_with_links @investment.description.html_safe %>
+
+      <% if @investment.external_url.present? %>
+        <div class="document-link">
+          <%= text_with_links @investment.external_url %>
+        </div>
+      <% end %>
+
+      <% if @investment.unfeasible? && @investment.feasible_explanation.present? %>
+        <h2><%= t('budget.investments.show.unfeasibility_explanation') %></h2>
+        <p><%= @investment.feasible_explanation %></p>
+      <% end %>
+
+      <% if @investment.feasible? && @investment.price_explanation.present? %>
+        <h2><%= t('budget.investments.show.price_explanation') %></h2>
+        <p><%= @investment.price_explanation %></p>
+      <% end %>
+    </div>
+
+    <% if (@budget.selecting? && !@investment.unfeasible?) ||
+          (@budget.balloting? && @investment.feasible?) %>
+      <aside class="small-12 medium-3 column">
+        <div class="sidebar-divider"></div>
+        <h3><%= t("votes.supports") %></h3>
+        <div class="text-center">
+          <% if @budget.selecting? %>
+            <div id="<%= dom_id(@investment) %>_votes">
+              <%= render 'votes',
+                          { investment: @investment, vote_url: vote_budget_investment_path(budget_id: @budget.id, id: @investment.id) } %>
+            </div>
+          <% else %>
+            <div id="<%= dom_id(@investment) %>_ballot">
+              <%= render 'ballot', investment: @investment %>
+            </div>
+         <% end %>
+        </div>
+
+        <div class="sidebar-divider"></div>
+        <h3><%= t("budget.investments.show.share") %></h3>
+        <div class="social-share-full">
+          <%= social_share_button_tag("#{@investment.title} #{setting['twitter_hashtag']}") %>
+          <% if browser.device.mobile? %>
+            <a href="whatsapp://send?text=<%= @investment.title %> <%= budget_investment_url(budget_id: budget.id, id: @investment.id) %>" data-action="share/whatsapp/share">
+              <span class="icon-whatsapp whatsapp"></span>
+            </a>
+          <% end %>
+        </div>
+      </aside>
+    <% end %>
+
+  </div>
+</section>
+
+<% unless namespace == 'management' %>
+  <%= render "budgets/investments/comments" %>
+<% end %>
