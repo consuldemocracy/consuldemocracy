@@ -81,7 +81,7 @@ class ApplicationController < ActionController::Base
     end
 
     def set_budget_investment_votes(budget_investments)
-      @budget_investments_votes = current_user ? current_user.budget_investment_votes(budget_investments) : {}
+      @budget_investment_votes = current_user ? current_user.budget_investment_votes(budget_investments) : {}
     end
 
     def set_comment_flags(comments)
