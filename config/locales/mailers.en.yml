@@ -30,3 +30,6 @@ en:
       sorry: "Sorry for the inconvenience and we again thank you for your invaluable participation."
       subject: "Your investment project '%{code}' has been marked as unfeasible"
       unfeasible_html: "From the Madrid City Council we want to thank you for your participation in the <strong>participatory budgets of the city of Madrid</strong>. We regret to inform you that your proposal <strong>'%{title}'</strong> will be excluded from this participatory process for the following reason:"
+    proposal_notification:
+      share: Share
+      comment: Comment proposal

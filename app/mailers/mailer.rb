@@ -46,7 +46,7 @@ class Mailer < ApplicationMailer
     @notification = notification
 
     with_user(voter) do
-      mail(to: voter.email, subject: @notification.title)
+      mail(to: voter.email, subject: @notification.title + ": " + @notification.proposal.title)
     end
   end
 

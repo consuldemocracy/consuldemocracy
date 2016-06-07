@@ -30,3 +30,6 @@ es:
       sorry: "Sentimos las molestias ocasionadas y volvemos a darte las gracias por tu inestimable participación."
       subject: "Tu propuesta de inversión '%{code}' ha sido marcada como inviable"
       unfeasible_html: "Desde el Ayuntamiento de Madrid queremos agradecer tu participación en los <strong>Presupuestos Participativos de la ciudad de Madrid</strong>. Lamentamos informarte de que tu propuesta <strong>'%{title}'</strong> quedará excluida de este proceso participativo por el siguiente motivo:"
+    proposal_notification:
+      share: Compartir
+      comment: Comentar propuesta
