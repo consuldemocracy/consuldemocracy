@@ -21,4 +21,19 @@ class Notification < ActiveRecord::Base
       Notification.create!(user_id: user_id, notifiable: notifiable)
     end
   end
+
+  def notifiable_title
+    case notifiable.class.name
+    when "ProposalNotification"
+      notifiable.proposal.title
+    when "Comment"
+      notifiable.commentable.title
+    else
+      notifiable.title
+    end
+  end
+
+  def linkable_resource
+    notifiable.is_a?(ProposalNotification) ? notifiable.proposal : notifiable
+  end
 end
