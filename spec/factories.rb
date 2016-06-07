@@ -232,6 +232,7 @@ FactoryGirl.define do
 
     trait :unfeasible do
       feasibility "unfeasible"
+      unfeasibility_explanation "set to unfeasible on creation"
     end
 
     trait :finished do
