@@ -18,12 +18,12 @@
 <table id="search-results">
   <% @organizations.each do |organization| %>
   <tr>
-    <td><%= organization.name %></td>
-    <td><%= organization.email %></td>
-    <td><%= organization.phone_number %></td>
-    <td><%= organization.responsible_name %></td>
+    <td><p><%= organization.name %></p></td>
+    <td><p><%= organization.email %></p></td>
+    <td><p><%= organization.phone_number %></p></td>
+    <td><p><%= organization.responsible_name %></p></td>
     <% if organization.verified? %>
-      <td class="verified">
+      <td class="verified text-center">
         <span class="icon-check"></span>
         <%= t("admin.organizations.index.verified") %>
       </td>
@@ -32,12 +32,12 @@
       <td>
         <%= link_to t("admin.organizations.index.verify"),
                 verify_admin_organization_path(organization, request.query_parameters),
-                method: :put, class: "button small success"
+                method: :put, class: "button success expanded"
         %>
       </td>
     <% end %>
     <% if organization.rejected? %>
-      <td class="rejected">
+      <td class="rejected text-center">
         <span class="icon-x"></span>
         <%= t("admin.organizations.index.rejected") %>
       </td>
@@ -45,7 +45,7 @@
     <% if can? :reject, organization %>
       <td><%= link_to t("admin.organizations.index.reject"),
                 reject_admin_organization_path(organization, request.query_parameters),
-                method: :put, class: "button small alert"
+                method: :put, class: "button hollow alert expanded"
           %>
       </td>
     <% end %>

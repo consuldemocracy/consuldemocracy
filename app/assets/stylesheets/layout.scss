@@ -247,6 +247,9 @@ a {
   h2 {
     font-size: $base-font-size;
   }
+
+.no-max-width {
+  max-width: none;
 }
 
 // 02. Header
