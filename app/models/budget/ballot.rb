@@ -26,5 +26,9 @@ class Budget
     def has_lines_with_heading?
       self.heading_id.present?
     end
+
+    def has_investment?(investment)
+      self.investment_ids.include?(investment.id)
+    end
   end
 end
