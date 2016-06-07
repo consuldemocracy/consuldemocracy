@@ -229,6 +229,7 @@ a {
     right: 0;
     top: 0;
   };
+  margin-bottom: $line-height;
 
   .tabs-title > a {
     color: $text-medium;
@@ -1512,7 +1513,7 @@ table {
 
     .comment-votes {
       color: $text-medium;
-      font-size: $small-font-size;
+      font-size: rem-calc(14);
       line-height: $line-height;
 
       a {
