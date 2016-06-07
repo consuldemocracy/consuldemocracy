@@ -84,3 +84,6 @@ es:
           attributes:
             tag_list:
               less_than_or_equal_to: "los temas deben ser menor o igual que %{count}"
+        proposal_notification:
+          attributes:
+            minimum_interval: "Debes esperar un mínimo de %{interval} días entre notificaciones"
