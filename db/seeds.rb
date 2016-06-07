@@ -61,6 +61,7 @@ Setting['feature.twitter_login'] = true
 Setting['feature.facebook_login'] = true
 Setting['feature.google_login'] = true
 Setting['feature.public_stats'] = true
+Setting['feature.budgets'] = true
 
 # Spending proposals feature flags
 Setting['feature.spending_proposal_features.voting_allowed'] = true
