@@ -86,11 +86,8 @@ feature 'Proposal Notifications' do
 
   context "Limits" do
 
-    pending "Cannot send more than one notification within established interval" do
-    end
-
-    pending "use timecop to make sure notifications can be sent after time interval" do
-    end
+    pending "Cannot send more than one notification within established interval"
+    pending "use timecop to make sure notifications can be sent after time interval"
 
   end
 

@@ -1,11 +1,5 @@
 en:
   activerecord:
-    errors:
-      models:
-        user:
-          attributes:
-            email:
-              password_already_set: "This user already has a password"
     models:
       activity:
         one: "activity"
@@ -76,6 +70,10 @@ en:
         title: "Title"
     errors:
       models:
+        user:
+          attributes:
+            email:
+              password_already_set: "This user already has a password"
         debate:
           attributes:
             tag_list:
@@ -86,4 +84,5 @@ en:
               less_than_or_equal_to: "tags must be less than or equal to %{count}"
         proposal_notification:
           attributes:
-            minimum_interval: "You have to wait a minium of %{interval} days between notifications"
+            minimum_interval:
+              invalid: "You have to wait a minium of %{interval} days between notifications"

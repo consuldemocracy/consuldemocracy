@@ -95,6 +95,7 @@ search:
 # - '{devise,simple_form}.*'
 ignore_missing:
   - 'unauthorized.*'
+  - 'activerecord.errors.models.proposal_notification.*'
   - 'errors.messages.blank'
   - 'errors.messages.taken'
   - 'devise.failure.invalid'
@@ -134,6 +135,7 @@ ignore_unused:
   - 'spending_proposals.index.search_form.*'
   - 'notifications.index.comments_on*'
   - 'notifications.index.replies_to*'
+  - 'notifications.index.proposal_notification*'
   - 'helpers.page_entries_info.*' # kaminari
   - 'views.pagination.*' # kaminari
   - 'shared.suggest.*'

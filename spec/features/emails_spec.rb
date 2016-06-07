@@ -181,7 +181,7 @@ feature 'Emails' do
       expect(unread_emails_for(author.email).size).to   eql parse_email_count(0)
 
       email = open_last_email
-      expect(email).to have_subject("Thank you for supporting my proposal")
+      expect(email).to have_subject("Thank you for supporting my proposal: #{proposal.title}")
       expect(email).to have_body_text("Please share it with others so we can make it happen!")
       expect(email).to have_body_text(proposal.title)
     end

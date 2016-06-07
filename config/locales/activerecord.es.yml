@@ -1,11 +1,5 @@
 es:
   activerecord:
-    errors:
-      models:
-        user:
-          attributes:
-            email:
-              password_already_set: "Este usuario ya tiene una clave asociada"
     models:
       activity:
         one: "actividad"
@@ -76,6 +70,10 @@ es:
         title: "Título"
     errors:
       models:
+        user:
+          attributes:
+            email:
+              password_already_set: "Este usuario ya tiene una clave asociada"
         debate:
           attributes:
             tag_list:
@@ -86,4 +84,5 @@ es:
               less_than_or_equal_to: "los temas deben ser menor o igual que %{count}"
         proposal_notification:
           attributes:
-            minimum_interval: "Debes esperar un mínimo de %{interval} días entre notificaciones"
+            minimum_interval:
+              invalid: "Debes esperar un mínimo de %{interval} días entre notificaciones"
