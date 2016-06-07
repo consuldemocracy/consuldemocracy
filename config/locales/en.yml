@@ -422,6 +422,10 @@ en:
     headings:
       none: Whole City
       all: All scopes
+    index:
+      name: Budget's name
+      phase: Phase
+      title: Participatory budgets
     investments:
       form:
         association_name_label: 'If you propose in name of an assocation or collective add the name here'
@@ -497,6 +501,10 @@ en:
       header:
         check_ballot: Check my ballot
         different_heading_active: You have active votes in another district.
+    show:
+      heading: Heading
+      price: Price
+      no_heading: No Heading
   spending_proposals:
     form:
       association_name_label: 'If you propose in name of an assocation or collective add the name here'

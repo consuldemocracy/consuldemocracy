@@ -422,6 +422,10 @@ es:
     headings:
       none: Toda la ciudad
       all: Todos los ámbitos
+    index:
+      name: Nombre del presupuesto
+      phase: Fase
+      title: Presupuestos participativos
     investments:
       form:
         association_name_label: 'Si propones en nombre de una asociación o colectivo añade el nombre aquí'
@@ -497,6 +501,10 @@ es:
       header:
         check_ballot: Revisar mis votos
         different_heading_active: Ya apoyaste propuestas de otro distrito.
+    show:
+      heading: Partida
+      price: Cantidad
+      no_heading: Sin línea
   spending_proposals:
     form:
       association_name_label: 'Si propones en nombre de una asociación o colectivo añade el nombre aquí'

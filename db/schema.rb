@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160531102008) do
+ActiveRecord::Schema.define(version: 20160606102427) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -62,6 +62,21 @@ ActiveRecord::Schema.define(version: 20160531102008) do
 
   add_index "annotations", ["legislation_id"], name: "index_annotations_on_legislation_id", using: :btree
   add_index "annotations", ["user_id"], name: "index_annotations_on_user_id", using: :btree
+
+  create_table "banners", force: :cascade do |t|
+    t.string   "title",           limit: 80
+    t.string   "description"
+    t.string   "target_url"
+    t.string   "style"
+    t.string   "image"
+    t.date     "post_started_at"
+    t.date     "post_ended_at"
+    t.datetime "hidden_at"
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+  end
+
+  add_index "banners", ["hidden_at"], name: "index_banners_on_hidden_at", using: :btree
 
   create_table "budget_ballot_lines", force: :cascade do |t|
     t.integer  "ballot_id"
@@ -326,6 +341,15 @@ ActiveRecord::Schema.define(version: 20160531102008) do
 
   add_index "organizations", ["user_id"], name: "index_organizations_on_user_id", using: :btree
 
+  create_table "proposal_notifications", force: :cascade do |t|
+    t.string   "title"
+    t.text     "body"
+    t.integer  "author_id"
+    t.integer  "proposal_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
   create_table "proposals", force: :cascade do |t|
     t.string   "title",               limit: 80
     t.text     "description"
@@ -460,30 +484,30 @@ ActiveRecord::Schema.define(version: 20160531102008) do
   add_index "tolk_translations", ["phrase_id", "locale_id"], name: "index_tolk_translations_on_phrase_id_and_locale_id", unique: true, using: :btree
 
   create_table "users", force: :cascade do |t|
-    t.string   "email",                                default: ""
-    t.string   "encrypted_password",                   default: "",    null: false
+    t.string   "email",                                     default: ""
+    t.string   "encrypted_password",                        default: "",    null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",                        default: 0,     null: false
+    t.integer  "sign_in_count",                             default: 0,     null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.datetime "created_at",                                           null: false
-    t.datetime "updated_at",                                           null: false
+    t.datetime "created_at",                                                null: false
+    t.datetime "updated_at",                                                null: false
     t.string   "confirmation_token"
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
     t.string   "unconfirmed_email"
-    t.boolean  "email_on_comment",                     default: false
-    t.boolean  "email_on_comment_reply",               default: false
-    t.string   "phone_number",              limit: 30
+    t.boolean  "email_on_comment",                          default: false
+    t.boolean  "email_on_comment_reply",                    default: false
+    t.string   "phone_number",                   limit: 30
     t.string   "official_position"
-    t.integer  "official_level",                       default: 0
+    t.integer  "official_level",                            default: 0
     t.datetime "hidden_at"
     t.string   "sms_confirmation_code"
-    t.string   "username",                  limit: 60
+    t.string   "username",                       limit: 60
     t.string   "document_number"
     t.string   "document_type"
     t.datetime "residence_verified_at"
@@ -494,20 +518,21 @@ ActiveRecord::Schema.define(version: 20160531102008) do
     t.datetime "letter_requested_at"
     t.datetime "confirmed_hide_at"
     t.string   "letter_verification_code"
-    t.integer  "failed_census_calls_count",            default: 0
+    t.integer  "failed_census_calls_count",                 default: 0
     t.datetime "level_two_verified_at"
     t.string   "erase_reason"
     t.datetime "erased_at"
-    t.boolean  "public_activity",                      default: true
-    t.boolean  "newsletter",                           default: true
-    t.integer  "notifications_count",                  default: 0
-    t.boolean  "registering_with_oauth",               default: false
+    t.boolean  "public_activity",                           default: true
+    t.boolean  "newsletter",                                default: true
+    t.integer  "notifications_count",                       default: 0
+    t.boolean  "registering_with_oauth",                    default: false
     t.string   "locale"
     t.string   "oauth_email"
     t.integer  "geozone_id"
     t.string   "redeemable_code"
-    t.string   "gender",                    limit: 10
+    t.string   "gender",                         limit: 10
     t.datetime "date_of_birth"
+    t.boolean  "email_on_proposal_notification",            default: true
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree

@@ -5,6 +5,7 @@
 // 03. Show participation
 // 04. List participation
 // 05. Featured
+// 06. Budget
 //
 
 // 01. Votes and supports
@@ -1028,3 +1029,15 @@
     }
   }
 }
+
+// 06. Budget
+// ----------
+
+.expanded.budget {
+  background: $budget;
+
+  h1, p, a {
+    color: white;
+  }
+}
+
