@@ -84,4 +84,14 @@ feature 'Proposal Notifications' do
     expect(page).to have_content error_message
   end
 
+  context "Limits" do
+
+    pending "Cannot send more than one notification within established interval" do
+    end
+
+    pending "use timecop to make sure notifications can be sent after time interval" do
+    end
+
+  end
+
 end
