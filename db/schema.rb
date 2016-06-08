@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160523231659) do
+ActiveRecord::Schema.define(version: 20160608102733) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -332,12 +332,10 @@ ActiveRecord::Schema.define(version: 20160523231659) do
 
   create_table "redeemable_codes", force: :cascade do |t|
     t.string   "token"
-    t.integer  "geozone_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  add_index "redeemable_codes", ["geozone_id"], name: "index_redeemable_codes_on_geozone_id", using: :btree
   add_index "redeemable_codes", ["token"], name: "index_redeemable_codes_on_token", using: :btree
 
   create_table "settings", force: :cascade do |t|

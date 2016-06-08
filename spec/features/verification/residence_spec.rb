@@ -33,7 +33,7 @@ feature 'Residence' do
   end
 
   scenario 'Verify a resident in Madrid with a redeemable code' do
-    code = create(:redeemable_code, geozone: geozone)
+    code = create(:redeemable_code)
     user = create(:user)
     login_as(user)
 
