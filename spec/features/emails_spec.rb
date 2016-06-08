@@ -190,7 +190,7 @@ feature 'Emails' do
       author = create(:user)
       voter = create(:user, email_on_proposal_notification: false)
 
-      proposal = create(:proposal)
+      proposal = create(:proposal, author: author)
       create(:vote, voter: voter, votable: proposal, vote_flag: true)
 
       login_as(author)
