@@ -73,10 +73,25 @@ feature 'Proposal Notifications' do
       end
     end
 
+    scenario "Accessing form directly" do
+      user = create(:user)
+      author = create(:user)
+      proposal = create(:proposal, author: author)
+
+      login_as(user)
+      visit new_proposal_notification_path(proposal_id: proposal.id)
+
+      expect(current_path).to eq(proposals_path)
+      expect(page).to have_content("You do not have permission to carry out the action")
+    end
+
   end
 
   scenario "Error messages" do
-    proposal = create(:proposal)
+    author = create(:user)
+    proposal = create(:proposal, author: author)
+
+    login_as(author)
 
     visit new_proposal_notification_path(proposal_id: proposal.id)
     click_button "Send message"

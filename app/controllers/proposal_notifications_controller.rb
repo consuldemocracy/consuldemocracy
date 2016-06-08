@@ -1,14 +1,15 @@
 class ProposalNotificationsController < ApplicationController
-  skip_authorization_check
+  load_and_authorize_resource except: [:new]
 
   def new
-    @notification = ProposalNotification.new
     @proposal = Proposal.find(params[:proposal_id])
+    @notification = ProposalNotification.new(proposal_id: @proposal.id)
+    authorize! :new, @notification
   end
 
   def create
-    @notification = ProposalNotification.new(notification_params)
-    @proposal = Proposal.find(notification_params[:proposal_id])
+    @notification = ProposalNotification.new(proposal_notification_params)
+    @proposal = Proposal.find(proposal_notification_params[:proposal_id])
     if @notification.save
       @proposal.voters.each do |voter|
         Notification.add(voter.id, @notification)
@@ -28,7 +29,7 @@ class ProposalNotificationsController < ApplicationController
 
   private
 
-  def notification_params
+  def proposal_notification_params
     params.require(:proposal_notification).permit(:title, :body, :proposal_id)
   end
 

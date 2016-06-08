@@ -48,9 +48,12 @@ module Abilities
         can :create, SpendingProposal
       end
 
+      can [:new, :create, :show], ProposalNotification do |notification|
+        notification.proposal.author_id == user.id
+      end
+
       can :create, Annotation
       can [:update, :destroy], Annotation, user_id: user.id
-
     end
   end
 end
