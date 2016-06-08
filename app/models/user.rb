@@ -23,6 +23,7 @@ class User < ActiveRecord::Base
   has_many :spending_proposals, foreign_key: :author_id
   has_many :failed_census_calls
   has_many :notifications
+  has_many :direct_messages
   belongs_to :geozone
 
   validates :username, presence: true, if: :username_required?

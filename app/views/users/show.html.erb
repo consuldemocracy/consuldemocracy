@@ -10,6 +10,8 @@
         <% end %>
       </h2>
 
+      <p><%= link_to "Enviar un mensaje privado", new_user_direct_message_path(@user) %></p>
+
       <% if @user.public_activity || @authorized_current_user %>
         <ul class="menu simple margin-top">
           <% @valid_filters.each do |filter| %>

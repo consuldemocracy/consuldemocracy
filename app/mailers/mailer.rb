@@ -50,6 +50,15 @@ class Mailer < ApplicationMailer
     end
   end
 
+  def direct_message(direct_message)
+    @direct_message = direct_message
+    @receiver = @direct_message.receiver
+
+    with_user(@receiver) do
+      mail(to: @receiver.email, subject: "Has recibido un nuevo mensaje privado")
+    end
+  end
+
   private
 
   def with_user(user, &block)

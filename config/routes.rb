@@ -83,7 +83,9 @@ Rails.application.routes.draw do
     get :search, on: :collection
   end
 
-  resources :users, only: [:show]
+  resources :users, only: [:show] do
+    resources :direct_messages, only: [:new, :create, :show]
+  end
 
   resource :account, controller: "account", only: [:show, :update, :delete] do
     get :erase, on: :collection
