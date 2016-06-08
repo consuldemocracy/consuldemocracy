@@ -3,20 +3,18 @@ class RedeemableCode < ActiveRecord::Base
 
   belongs_to :geozone
 
-  validates :token, uniqueness: { scope: :geozone_id }
+  validates :token, uniqueness: true
 
   def self.generate_token
     (1..10).inject([]){|chars, _| chars << VALID_CHARS.sample} * ''
   end
 
-  def self.redeemable?(token, geozone)
-    return false unless geozone.present?
-    self.where(token: token, geozone_id: geozone.id).exists?
+  def self.redeemable?(token)
+    self.where(token: token).exists?
   end
 
-  def self.redeem(token, geozone, user)
-    return false unless geozone.present?
-    instance = self.where(token: token, geozone_id: geozone.id).first
+  def self.redeem(token, user)
+    instance = self.where(token: token).first
 
     if instance.present?
       instance.delete

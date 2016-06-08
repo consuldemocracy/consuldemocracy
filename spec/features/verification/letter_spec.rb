@@ -183,27 +183,6 @@ feature 'Verify Letter' do
         expect(page).to have_content "Verification code incorrect"
       end
 
-      scenario 'Error message on incorrect geozone' do
-        california = create(:geozone)
-        new_york   = create(:geozone)
-        token = RedeemableCode.generate_token
-        redeemable_code = create(:redeemable_code, geozone: california, token: token)
-
-        user = create(:user, residence_verified_at: Time.now,
-                             confirmed_phone:       "611111111",
-                             geozone:               new_york)
-
-        login_as(user)
-
-        visit edit_letter_path
-        fill_in "verification_letter_email", with: user.email
-        fill_in "verification_letter_password", with: user.password
-        fill_in "verification_letter_verification_code", with: redeemable_code.token
-        click_button "Verify my account"
-
-        expect(page).to have_content "Verification code incorrect"
-      end
-
     end
 
   end
