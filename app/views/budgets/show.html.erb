@@ -1,7 +1,11 @@
 <div class="expanded budget no-margin-top padding">
   <div class="row">
     <div class="small-12 medium-9 column">
-      <%= render 'shared/back_link' %>
+      <%= link_to budgets_path do %>
+        <span class="icon-angle-left"></span>
+        <%= t('shared.back') %>
+      <% end %>
+
       <h1><%= @budget.name %></h1>
       <p><%= @budget.description %></p>
     </div>
