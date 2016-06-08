@@ -182,7 +182,6 @@ FactoryGirl.define do
 
   factory :redeemable_code do
     sequence(:token) { |n| "token#{n}" }
-    geozone
   end
 
   factory :spending_proposal do

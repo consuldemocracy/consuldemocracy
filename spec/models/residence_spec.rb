@@ -102,7 +102,7 @@ describe Verification::Residence do
 
     it "ups the user to level 3 if a redeemable code exists" do
       user = create(:user)
-      create(:redeemable_code, token: "1234", geozone: geozone)
+      create(:redeemable_code, token: "1234")
 
       residence.redeemable_code = "1234"
       residence.user = user

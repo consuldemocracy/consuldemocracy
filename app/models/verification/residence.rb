@@ -38,7 +38,7 @@ class Verification::Residence
                 residence_verified_at: Time.now)
 
     if redeemable_code.present?
-      RedeemableCode.redeem(redeemable_code, self.geozone, user)
+      RedeemableCode.redeem(redeemable_code, user)
     end
     true
   end
@@ -58,7 +58,7 @@ class Verification::Residence
 
   def redeemable_code_is_redeemable
     return if redeemable_code.blank?
-    unless RedeemableCode.redeemable?(redeemable_code, self.geozone)
+    unless RedeemableCode.redeemable?(redeemable_code)
       errors.add(:redeemable_code, I18n.t('verification.residence.new.error_can_not_redeem_code'))
     end
   end

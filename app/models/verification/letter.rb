@@ -41,11 +41,11 @@ class Verification::Letter
   end
 
   def correct_reedemable_code?
-    RedeemableCode.redeemable?(verification_code, user.try(:geozone))
+    RedeemableCode.redeemable?(verification_code)
   end
 
   def redeem_code
-    RedeemableCode.redeem(verification_code, user.try(:geozone), user)
+    RedeemableCode.redeem(verification_code, user)
   end
 
   def verify?
