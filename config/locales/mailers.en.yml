@@ -33,3 +33,5 @@ en:
     proposal_notification:
       share: Share
       comment: Comment proposal
+    direct_message:
+      reply: Reply to %{sender}
