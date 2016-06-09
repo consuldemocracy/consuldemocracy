@@ -503,10 +503,11 @@ es:
     direct_messages:
       new:
         body_label: "Mensaje"
-        direct_message_info_html: Este mensaje se enviará al usuario <strong>%{receiver}</strong>.
         submit_button: "Enviar mensaje"
-        title: Enviar mensaje privado
+        title: Enviar mensaje privado a %{receiver}
         title_label: "Título"
+        verified_only: Para enviar un mensaje privado %{verify_account}
+        verify_account: verifica tu cuenta
       show:
         receiver: Mensaje enviado a %{receiver}
     show:
