@@ -190,38 +190,33 @@ describe Budget::Investment do
 
   describe 'Permissions' do
     let(:budget)      { create(:budget) }
-    let(:heading)     { create(:budget_heading, budget: budget) }
+    let(:group)       { create(:budget_group, budget: budget) }
+    let(:heading)     { create(:budget_heading, group: group) }
     let(:user)        { create(:user, :level_two) }
     let(:luser)       { create(:user) }
-    let(:city_sp)     { create(:budget_investment, budget: budget) }
-    let(:district_sp) { create(:budget_investment, budget: budget, heading: heading) }
+    let(:district_sp) { create(:budget_investment, heading: heading) }
 
     describe '#reason_for_not_being_selectable_by' do
       it "rejects not logged in users" do
-        expect(city_sp.reason_for_not_being_selectable_by(nil)).to eq(:not_logged_in)
         expect(district_sp.reason_for_not_being_selectable_by(nil)).to eq(:not_logged_in)
       end
 
       it "rejects not verified users" do
-        expect(city_sp.reason_for_not_being_selectable_by(luser)).to eq(:not_verified)
         expect(district_sp.reason_for_not_being_selectable_by(luser)).to eq(:not_verified)
       end
 
       it "rejects organizations" do
         create(:organization, user: user)
-        expect(city_sp.reason_for_not_being_selectable_by(user)).to eq(:organization)
         expect(district_sp.reason_for_not_being_selectable_by(user)).to eq(:organization)
       end
 
       it "rejects selections when selecting is not allowed (via admin setting)" do
         budget.phase = "on_hold"
-        expect(city_sp.reason_for_not_being_selectable_by(user)).to eq(:no_selecting_allowed)
         expect(district_sp.reason_for_not_being_selectable_by(user)).to eq(:no_selecting_allowed)
       end
 
       it "accepts valid selections when selecting is allowed" do
         budget.phase = "selecting"
-        expect(city_sp.reason_for_not_being_selectable_by(user)).to be_nil
         expect(district_sp.reason_for_not_being_selectable_by(user)).to be_nil
       end
     end
@@ -274,7 +269,9 @@ describe Budget::Investment do
   describe "total votes" do
     it "takes into account physical votes in addition to web votes" do
       b = create(:budget, :selecting)
-      sp = create(:budget_investment, budget: b)
+      g = create(:budget_group, budget: b)
+      h = create(:budget_heading, group: g)
+      sp = create(:budget_investment, heading: h)
 
       sp.register_selection(create(:user, :level_two))
       expect(sp.total_votes).to eq(1)
@@ -299,56 +296,52 @@ describe Budget::Investment do
 
     describe 'Permissions' do
       let(:budget)      { create(:budget) }
-      let(:heading)     { create(:budget_heading, budget: budget) }
+      let(:group)       { create(:budget_group, budget: budget) }
+      let(:heading)     { create(:budget_heading, group: group) }
       let(:user)        { create(:user, :level_two) }
       let(:luser)       { create(:user) }
       let(:ballot)      { create(:budget_ballot, budget: budget) }
-      let(:city_sp)     { create(:budget_investment, budget: budget) }
-      let(:district_sp) { create(:budget_investment, budget: budget, heading: heading) }
+      let(:investment)  { create(:budget_investment, heading: heading) }
 
       describe '#reason_for_not_being_ballotable_by' do
         it "rejects not logged in users" do
-          expect(city_sp.reason_for_not_being_ballotable_by(nil, ballot)).to eq(:not_logged_in)
-          expect(district_sp.reason_for_not_being_ballotable_by(nil, ballot)).to eq(:not_logged_in)
+          expect(investment.reason_for_not_being_ballotable_by(nil, ballot)).to eq(:not_logged_in)
         end
 
         it "rejects not verified users" do
-          expect(city_sp.reason_for_not_being_ballotable_by(luser, ballot)).to eq(:not_verified)
-          expect(district_sp.reason_for_not_being_ballotable_by(luser, ballot)).to eq(:not_verified)
+          expect(investment.reason_for_not_being_ballotable_by(luser, ballot)).to eq(:not_verified)
         end
 
         it "rejects organizations" do
           create(:organization, user: user)
-          expect(city_sp.reason_for_not_being_ballotable_by(user, ballot)).to eq(:organization)
-          expect(district_sp.reason_for_not_being_ballotable_by(user, ballot)).to eq(:organization)
+          expect(investment.reason_for_not_being_ballotable_by(user, ballot)).to eq(:organization)
         end
 
         it "rejects votes when voting is not allowed (via admin setting)" do
           budget.phase = "on_hold"
-          expect(city_sp.reason_for_not_being_ballotable_by(user, ballot)).to eq(:no_ballots_allowed)
-          expect(district_sp.reason_for_not_being_ballotable_by(user, ballot)).to eq(:no_ballots_allowed)
+          expect(investment.reason_for_not_being_ballotable_by(user, ballot)).to eq(:no_ballots_allowed)
         end
 
         it "accepts valid ballots when voting is allowed" do
           budget.phase = "balloting"
-          expect(city_sp.reason_for_not_being_ballotable_by(user, ballot)).to be_nil
-          expect(district_sp.reason_for_not_being_ballotable_by(user, ballot)).to be_nil
+          expect(investment.reason_for_not_being_ballotable_by(user, ballot)).to be_nil
         end
 
         it "accepts valid district selections" do
           budget.phase = "selecting"
-          expect(district_sp.reason_for_not_being_selectable_by(user)).to be_nil
+          expect(investment.reason_for_not_being_selectable_by(user)).to be_nil
           ballot.heading_id = heading.id
-          expect(district_sp.reason_for_not_being_selectable_by(user)).to be_nil
+          expect(investment.reason_for_not_being_selectable_by(user)).to be_nil
         end
 
         it "rejects users with different headings" do
           budget.phase = "balloting"
-          california = create(:budget_heading, budget: budget)
-          new_york = create(:budget_heading, budget: budget)
+          group = create(:budget_group, budget: budget)
+          california = create(:budget_heading, group: group)
+          new_york = create(:budget_heading, group: group)
 
-          sp1 = create(:budget_investment, :feasible, heading: california, budget: budget)
-          sp2 = create(:budget_investment, :feasible, heading: new_york, budget: budget)
+          sp1 = create(:budget_investment, :feasible, heading: california)
+          sp2 = create(:budget_investment, :feasible, heading: new_york)
           b = create(:budget_ballot, user: user, heading: california, investments: [sp1])
 
           expect(sp2.reason_for_not_being_ballotable_by(user, b)).to eq(:different_heading_assigned)
@@ -356,9 +349,10 @@ describe Budget::Investment do
 
         it "rejects proposals with price higher than current available money" do
           budget.phase = "balloting"
-          carabanchel = create(:budget_heading, budget: budget, price: 35)
-          sp1 = create(:budget_investment, :feasible, heading: carabanchel, price: 30, budget: budget)
-          sp2 = create(:budget_investment, :feasible, heading: carabanchel, price: 10, budget: budget)
+          distritos = create(:budget_group, budget: budget)
+          carabanchel = create(:budget_heading, group: distritos, price: 35)
+          sp1 = create(:budget_investment, :feasible, heading: carabanchel, price: 30)
+          sp2 = create(:budget_investment, :feasible, heading: carabanchel, price: 10)
           ballot = create(:budget_ballot, user: user, heading: carabanchel, investments: [sp1])
 
           expect(sp2.reason_for_not_being_ballotable_by(user, ballot)).to eq(:not_enough_money)

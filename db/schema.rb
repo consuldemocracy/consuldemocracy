@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160531102008) do
+ActiveRecord::Schema.define(version: 20160609152026) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -63,6 +63,21 @@ ActiveRecord::Schema.define(version: 20160531102008) do
   add_index "annotations", ["legislation_id"], name: "index_annotations_on_legislation_id", using: :btree
   add_index "annotations", ["user_id"], name: "index_annotations_on_user_id", using: :btree
 
+  create_table "banners", force: :cascade do |t|
+    t.string   "title",           limit: 80
+    t.string   "description"
+    t.string   "target_url"
+    t.string   "style"
+    t.string   "image"
+    t.date     "post_started_at"
+    t.date     "post_ended_at"
+    t.datetime "hidden_at"
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+  end
+
+  add_index "banners", ["hidden_at"], name: "index_banners_on_hidden_at", using: :btree
+
   create_table "budget_ballot_lines", force: :cascade do |t|
     t.integer  "ballot_id"
     t.integer  "investment_id"
@@ -83,12 +98,21 @@ ActiveRecord::Schema.define(version: 20160531102008) do
 
   add_index "budget_ballots", ["heading_id"], name: "index_budget_ballots_on_heading_id", using: :btree
 
-  create_table "budget_headings", force: :cascade do |t|
+  create_table "budget_groups", force: :cascade do |t|
     t.integer "budget_id"
+    t.string  "name",      limit: 50
+  end
+
+  add_index "budget_groups", ["budget_id"], name: "index_budget_groups_on_budget_id", using: :btree
+
+  create_table "budget_headings", force: :cascade do |t|
+    t.integer "group_id"
     t.integer "geozone_id"
     t.string  "name",       limit: 50
     t.integer "price",      limit: 8
   end
+
+  add_index "budget_headings", ["group_id"], name: "index_budget_headings_on_group_id", using: :btree
 
   create_table "budget_investments", force: :cascade do |t|
     t.integer  "author_id"
@@ -114,13 +138,11 @@ ActiveRecord::Schema.define(version: 20160531102008) do
     t.datetime "created_at",                                                  null: false
     t.datetime "updated_at",                                                  null: false
     t.integer  "heading_id"
-    t.integer  "budget_id"
     t.string   "responsible_name"
   end
 
   add_index "budget_investments", ["administrator_id"], name: "index_budget_investments_on_administrator_id", using: :btree
   add_index "budget_investments", ["author_id"], name: "index_budget_investments_on_author_id", using: :btree
-  add_index "budget_investments", ["budget_id"], name: "index_budget_investments_on_budget_id", using: :btree
   add_index "budget_investments", ["heading_id"], name: "index_budget_investments_on_heading_id", using: :btree
   add_index "budget_investments", ["tsv"], name: "index_budget_investments_on_tsv", using: :gin
 
@@ -141,23 +163,7 @@ ActiveRecord::Schema.define(version: 20160531102008) do
     t.boolean  "valuating",                  default: false
     t.datetime "created_at",                                     null: false
     t.datetime "updated_at",                                     null: false
-    t.integer  "price"
   end
-
-  create_table "banners", force: :cascade do |t|
-    t.string   "title",           limit: 80
-    t.string   "description"
-    t.string   "target_url"
-    t.string   "style"
-    t.string   "image"
-    t.date     "post_started_at"
-    t.date     "post_ended_at"
-    t.datetime "hidden_at"
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
-  end
-
-  add_index "banners", ["hidden_at"], name: "index_banners_on_hidden_at", using: :btree
 
   create_table "campaigns", force: :cascade do |t|
     t.string   "name"
@@ -204,10 +210,10 @@ ActiveRecord::Schema.define(version: 20160531102008) do
     t.string   "visit_id"
     t.datetime "hidden_at"
     t.integer  "flags_count",                             default: 0
+    t.datetime "ignored_flag_at"
     t.integer  "cached_votes_total",                      default: 0
     t.integer  "cached_votes_up",                         default: 0
     t.integer  "cached_votes_down",                       default: 0
-    t.datetime "ignored_flag_at"
     t.integer  "comments_count",                          default: 0
     t.datetime "confirmed_hide_at"
     t.integer  "cached_anonymous_votes_total",            default: 0

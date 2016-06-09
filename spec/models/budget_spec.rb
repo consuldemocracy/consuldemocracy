@@ -33,14 +33,11 @@ describe Budget do
   end
 
   describe "heading_price" do
-    let(:budget) { create(:budget, price: 1000) }
-
-    it "returns the budget price if no heading is provided" do
-      expect(budget.heading_price(nil)).to eq(1000)
-    end
+    let(:budget) { create(:budget) }
+    let(:group) { create(:budget_group, budget: budget) }
 
     it "returns the heading price if the heading provided is part of the budget" do
-      heading = create(:budget_heading, price: 100, budget: budget)
+      heading = create(:budget_heading, price: 100, group: group)
       expect(budget.heading_price(heading)).to eq(100)
     end
 

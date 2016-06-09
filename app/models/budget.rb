@@ -4,9 +4,11 @@ class Budget < ActiveRecord::Base
 
   validates :phase, inclusion: { in: VALID_PHASES }
 
-  has_many :investments
-  has_many :ballots
-  has_many :headings
+  has_many :investments, dependent: :destroy
+  has_many :ballots, dependent: :destroy
+  has_many :groups, dependent: :destroy
+  has_many :headings, through: :groups
+  has_many :investments, through: :headings
 
   def on_hold?
     phase == "on_hold"
@@ -29,7 +31,6 @@ class Budget < ActiveRecord::Base
   end
 
   def heading_price(heading)
-    return price unless heading.present?
     heading_ids.include?(heading.id) ? heading.price : -1
   end
 end

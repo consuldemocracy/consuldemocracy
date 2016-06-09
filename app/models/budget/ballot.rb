@@ -16,7 +16,7 @@ class Budget
     end
 
     def amount_available(heading)
-      budget.heading_price(heading) - amount_spent(heading.try(:id))
+      budget.heading_price(heading) - amount_spent(heading.id)
     end
   end
 end
