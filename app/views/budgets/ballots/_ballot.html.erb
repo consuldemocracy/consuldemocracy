@@ -1,9 +1,6 @@
 <div class="row ballot">
 
-  <%= link_to :back, class: "back" do %>
-    <span class="icon-angle-left"></span>
-    <%= t("shared.back") %>
-  <% end %>
+  <%= render 'shared/back_link' %>
 
   <h1 class="text-center"><%= t("budgets.ballots.show.title") %></h1>
 

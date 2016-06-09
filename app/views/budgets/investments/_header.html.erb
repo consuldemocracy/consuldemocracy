@@ -10,7 +10,7 @@
           <% end %>
 
           <% if can? :show, @ballot %>
-            <%= link_to t("budget.investments.header.check_ballot"), ballot_path, class: "button float-right" %>
+            <%= link_to t("budget.investments.header.check_ballot"), budget_ballot_path(@budget, @ballot), class: "button float-right" %>
           <% end %>
         </div>
       </div>
