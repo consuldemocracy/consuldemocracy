@@ -1,5 +1,5 @@
 class DirectMessagesController < ApplicationController
-  skip_authorization_check
+  load_and_authorize_resource
 
   def new
     @receiver = User.find(params[:user_id])

@@ -46,6 +46,8 @@ module Abilities
         can :vote_featured, Proposal
         can :vote, SpendingProposal
         can :create, SpendingProposal
+        can :create, DirectMessage
+        can :show, DirectMessage, sender_id: user.id
       end
 
       can [:new, :create, :show], ProposalNotification do |notification|

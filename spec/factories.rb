@@ -331,4 +331,11 @@ FactoryGirl.define do
     body     "Please let others know so we can make it happen"
     proposal
   end
+
+  factory :direct_message do
+    title    "Hey!"
+    body     "How are You doing?"
+    association :sender,   factory: :user
+    association :receiver, factory: :user
+  end
 end
