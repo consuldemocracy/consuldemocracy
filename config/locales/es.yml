@@ -500,6 +500,15 @@ es:
     manage:
       all: "No tienes permiso para realizar la acción '%{action}' sobre %{subject}."
   users:
+    direct_messages:
+      new:
+        body_label: "Mensaje"
+        direct_message_info_html: Este mensaje se enviará al usuario <strong>%{receiver}</strong>.
+        submit_button: "Enviar mensaje"
+        title: Enviar mensaje privado
+        title_label: "Título"
+      show:
+        receiver: Mensaje enviado a %{receiver}
     show:
       deleted: Eliminado
       deleted_debate: Este debate ha sido eliminado
@@ -521,6 +530,7 @@ es:
           other: "%{count} Propuestas de inversión"
       no_activity: Usuario sin actividad pública
       private_activity: Este usuario ha decidido mantener en privado su lista de actividades
+      send_private_message: "Enviar un mensaje privado"
     proposals:
       send_message: "Enviar mensaje"
       retire: "Retirar"

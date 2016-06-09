@@ -500,6 +500,15 @@ en:
     manage:
       all: "You do not have permission to carry out the action '%{action}' on %{subject}."
   users:
+    direct_messages:
+      new:
+        body_label: Message
+        direct_message_info_html: This message will be send to user <strong>%{receiver}</strong>.
+        submit_button: Send message
+        title: Send private message
+        title_label: Title
+      show:
+        receiver: Message sent to %{receiver}
     show:
       deleted: Deleted
       deleted_debate: This debate has been deleted
@@ -521,6 +530,7 @@ en:
           other: "%{count} Spending proposals"
       no_activity: User has no public activity
       private_activity: This user decided to keep the activity list private
+      send_private_message: "Send private message"
     proposals:
       send_message: "Send message"
       retire: "Retire"

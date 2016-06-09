@@ -2,25 +2,26 @@
   <div class="small-12 medium-9 column">
     <%= render 'shared/back_link' %>
 
-    <h1><%= t("proposal_notifications.new.title") %></h1>
+    <h1><%= t("users.direct_messages.new.title") %></h1>
 
     <div class="callout primary">
       <p>
-        Este mensaje se enviará al usuario <%= @receiver.name %>
+        <%= t("users.direct_messages.new.direct_message_info_html",
+        receiver: @receiver.name) %>
       </p>
     </div>
 
     <%= form_for [@receiver, @direct_message] do |f| %>
       <%= render "shared/errors", resource: @direct_message %>
 
-      <%= f.label :title, t("proposal_notifications.new.title_label") %>
+      <%= f.label :title, t("users.direct_messages.new.title_label") %>
       <%= f.text_field :title, label: false %>
 
-      <%= f.label :body, t("proposal_notifications.new.body_label") %>
+      <%= f.label :body, t("users.direct_messages.new.body_label") %>
       <%= f.text_area :body, label: false, rows: "3" %>
 
       <div class="small-12 medium-4">
-        <%= f.submit t("proposal_notifications.new.submit_button"), class: "button expanded" %>
+        <%= f.submit t("users.direct_messages.new.submit_button"), class: "button expanded" %>
       </div>
     <% end %>
   </div>
