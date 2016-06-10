@@ -1375,9 +1375,14 @@ table.age-groups {
       position: absolute;
 
       &.human-rights-img {
-        top: -30px;
+        top: -50px;
       }
     }
+  }
+
+  a.white {
+    color: white;
+    text-decoration: underline;
   }
 }
 
@@ -1407,7 +1412,7 @@ table.age-groups {
 
 @include breakpoint(large) {
 
-  .human-rights{
+  .human-rights {
     background: $brand image-url('processes_featured.jpg') no-repeat;
     background-position: 80% 100%;
   }
