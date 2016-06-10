@@ -13,7 +13,7 @@
       <h1 class="margin-bottom">
         <%= t("pages.processes.index.process_5_title") %>
       </h1>
-      <p>El Ayuntamiento de Madrid quiere reforzar su compromiso con los Derechos Humanos con la elaboración de un Plan que será el instrumento para el desarrollo de sus políticas públicas con un <a href="[LINK A SECCIÓN ¿Qué significa trabajar con enfoque de derechos humanos? EN MAS INFO]" class="white">enfoque transversal</a> que afecte a toda la actuación municipal.</p>
+      <p>El Ayuntamiento de Madrid quiere reforzar su compromiso con los Derechos Humanos con la elaboración de un Plan que será el instrumento para el desarrollo de sus políticas públicas con un <%= link_to "enfoque transversal", page_path('human_rights_info'), class: "white" %> que afecte a toda la actuación municipal.</p>
     </div>
 
     <div class="show-for-medium medium-5 column relative">
@@ -35,7 +35,6 @@
   </div>
 </div>
 
-<!-- Subprocesses -->
 <div class="row" data-equalizer>
   <div class="small-12 medium-4 column">
     <div class="panel category" data-equalizer-watch>
@@ -58,4 +57,3 @@
     </div>
   </div>
 </div>
-<!-- /. Subprocesses -->
