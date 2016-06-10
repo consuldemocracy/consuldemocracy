@@ -49,6 +49,7 @@ Rails.application.routes.draw do
     member do
       post :vote
       post :vote_featured
+      get :vote
       put :flag
       put :unflag
       get :retire_form

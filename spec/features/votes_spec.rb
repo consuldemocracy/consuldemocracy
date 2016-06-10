@@ -571,8 +571,52 @@ feature 'Votes' do
         end
 
       end
-
     end
+  end
+
+  feature 'voting Proposals via a GET link' do
+
+    background do
+      @proposal = create(:proposal)
+    end
+
+    scenario 'works inmediately when logged in' do
+      login_as(@manuela)
+      visit proposal_path(@proposal)
+
+      within('.supports') do
+        expect(page).to have_content "No supports"
+        expect(page).to have_selector ".in-favor a"
+      end
+
+      visit vote_proposal_path(@proposal)
+
+      expect(page).to have_content "You have successfully voted this proposal"
+
+      within('.supports') do
+        expect(page).to have_content "1 support"
+        expect(page).to_not have_selector ".in-favor a"
+      end
+    end
+
+    scenario 'requires logging in when not logged in' do
+      visit vote_proposal_path(@proposal)
+
+      expect(page).to have_content "You must sign in or register to continue"
+
+      fill_in 'user_email', with: @manuela.email
+      fill_in 'user_password', with: @manuela.password
+
+      click_button 'Enter'
+
+      expect(page).to have_content "You have successfully voted this proposal"
+
+      within('.supports') do
+        expect(page).to have_content "1 support"
+        expect(page).to_not have_selector ".in-favor a"
+      end
+    end
+
   end
 
   scenario 'Disable voting on spending proposals', :js do

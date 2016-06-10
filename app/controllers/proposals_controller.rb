@@ -33,7 +33,11 @@ class ProposalsController < ApplicationController
 
   def vote
     @proposal.register_vote(current_user, 'yes')
-    set_proposal_votes(@proposal)
+    if request.get?
+      redirect_to @proposal, notice: t('proposals.notice.voted')
+    else
+      set_proposal_votes(@proposal)
+    end
   end
 
   def retire
