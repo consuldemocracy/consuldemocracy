@@ -300,18 +300,21 @@ puts "Creating Budgets"
 (1..10).each do |i|
   budget = Budget.create!(name: (Date.today.year - 10 + i).to_s,
                           description: "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>",
-                          price: rand(1 .. 100) * 100000,
                           phase: %w{on_hold accepting selecting balloting finished}.sample,
                           valuating: [false, true].sample)
   puts budget.name
-  puts "    "
-  geozones = Geozone.reorder("RANDOM()").limit(10)
-  geozones.each do |geozone|
-    heading = budget.headings.create!(name: geozone.name,
-                                      geozone: geozone,
-                                      price: rand(1 .. 100) * 10000)
-    budget.headings << heading
-    print "heading.name "
+
+  (1..[1,2,3].sample).each do |i|
+    group = budget.groups.create!(name: Faker::StarWars.planet)
+
+    geozones = Geozone.reorder("RANDOM()").limit([2,5,6,7].sample)
+    geozones.each do |geozone|
+      group.headings << group.headings.create!(name: geozone.name,
+                                               geozone: geozone,
+                                               price: rand(1 .. 100) * 10000)
+
+    end
+    print "#{group.name} "
   end
   puts ""
 end

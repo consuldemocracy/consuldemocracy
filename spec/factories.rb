@@ -191,7 +191,6 @@ FactoryGirl.define do
   factory :budget do
     sequence(:name) { |n| "Budget #{n}" }
     currency_symbol "€"
-    price 10000
     phase 'on_hold'
 
     trait :selecting do
@@ -207,15 +206,20 @@ FactoryGirl.define do
     end
   end
 
-  factory :budget_heading, class: 'Budget::Heading' do
+  factory :budget_group, class: 'Budget::Group' do
     budget
+    sequence(:name) { |n| "Group #{n}" }
+  end
+
+  factory :budget_heading, class: 'Budget::Heading' do
+    association :group, factory: :budget_group
     sequence(:name) { |n| "Heading #{n}" }
     price 1000000
   end
 
   factory :budget_investment, class: 'Budget::Investment' do
     sequence(:title)     { |n| "Budget Investment #{n} title" }
-    association :budget
+    association :heading, factory: :budget_heading
     association :author, factory: :user
     description          'Spend money on this'
     unfeasibility_explanation ''
