@@ -352,6 +352,7 @@ en:
       recommendations_title: Recommendations for creating a proposal
       start_new: Create new proposal
     notice:
+      voted: You have successfully voted this proposal
       retired: Proposal retired
     proposal:
       already_supported: You have already supported this proposal. Share it!

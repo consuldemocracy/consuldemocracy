@@ -352,6 +352,7 @@ es:
       recommendations_title: Recomendaciones para crear una propuesta
       start_new: Crear una propuesta
     notice:
+      voted: Has apoyado esta propuesta
       retired: Propuesta retirada
     proposal:
       already_supported: "¡Ya has apoyado esta propuesta, compártela!"
