@@ -33,5 +33,9 @@ es:
     proposal_notification:
       share: Compartir
       comment: Comentar propuesta
+    proposal_notification_digest:
+      title: Has recibido las siguientes notificaciones
+      share: Compartir
+      comment: Comentar propuesta
     direct_message:
       reply: Responder a %{sender}

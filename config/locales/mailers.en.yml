@@ -33,5 +33,9 @@ en:
     proposal_notification:
       share: Share
       comment: Comment proposal
+    proposal_notification_digest:
+      title: You received the following notifications
+      share: Share
+      comment: Comment proposal
     direct_message:
       reply: Reply to %{sender}
