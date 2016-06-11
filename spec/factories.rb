@@ -222,6 +222,7 @@ FactoryGirl.define do
     association :heading, factory: :budget_heading
     association :author, factory: :user
     description          'Spend money on this'
+    price                10
     unfeasibility_explanation ''
     external_url         'http://external_documention.org'
     terms_of_service     '1'
@@ -249,8 +250,11 @@ FactoryGirl.define do
   end
 
   factory :budget_ballot_line, class: 'Budget::Ballot::Line' do
-    association :ballot, factory: :budget_ballot
-    investment { FactoryGirl.build(:budget_investment, :feasible) }
+    budget
+    ballot     { create :budget_ballot, budget: budget }
+    group      { create :budget_group, budget: budget }
+    heading    { create :budget_heading, group: group }
+    investment { create :budget_investment, :feasible, heading: heading }
   end
 
   factory :vote do
