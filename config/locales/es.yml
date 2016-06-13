@@ -530,6 +530,7 @@ es:
           one: 1 Propuesta de inversión
           other: "%{count} Propuestas de inversión"
       no_activity: Usuario sin actividad pública
+      no_private_messages: "Este usuario no acepta mensajes privados."
       private_activity: Este usuario ha decidido mantener en privado su lista de actividades
       send_private_message: "Enviar un mensaje privado"
     proposals:
