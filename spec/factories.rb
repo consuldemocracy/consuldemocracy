@@ -333,7 +333,7 @@ FactoryGirl.define do
   end
 
   factory :direct_message do
-    title    "Hey!"
+    title    "Hey"
     body     "How are You doing?"
     association :sender,   factory: :user
     association :receiver, factory: :user
