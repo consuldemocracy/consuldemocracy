@@ -1478,7 +1478,9 @@ table.age-groups {
     border: 0;
     border-radius: rem-calc(6);
     margin: $line-height/2 $line-height/4;
-    min-height: $line-height*4;
+    min-height: $line-height*6;
+    padding: 0;
+    position: relative;
     vertical-align: top;
 
     &:hover {
@@ -1497,7 +1499,12 @@ table.age-groups {
 
     a {
       color: $text;
+      display: block;
+      height: 100%;
+      padding: $line-height;
+      position: absolute;
       text-decoration: none;
+      width: 100%;
     }
   }
 }
