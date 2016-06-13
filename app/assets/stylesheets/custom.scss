@@ -1502,6 +1502,51 @@ table.age-groups {
   }
 }
 
+.timeline {
+  border-bottom: 1px solid #d8d8d8;
+  padding-bottom: $line-height/2;
+
+  @include breakpoint(medium) {
+    margin-bottom: $line-height*2.5;
+    padding-top: $line-height;
+  }
+
+  span {
+    display: block;
+    padding: $line-height/2 0;
+    position: relative;
+
+    @include breakpoint(medium) {
+      display: inline;
+      padding: 0;
+    }
+
+    &:after {
+      background: $border;
+      border-radius: rem-calc(20);
+      bottom: -24px;
+      content: none;
+      height: rem-calc(20);
+      left: 50%;
+      margin-left: rem-calc(-10);
+      position: absolute;
+      width: rem-calc(20);
+
+      @include breakpoint(medium) {
+        content: " ";
+      }
+    }
+
+    &.active {
+      font-weight: bold;
+
+      &:after {
+        background: $brand;
+      }
+    }
+  }
+}
+
 // 11. Spending proposals votes
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 

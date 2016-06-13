@@ -13,7 +13,11 @@
       <h1 class="margin-bottom">
         <%= t("pages.processes.index.process_5_title") %>
       </h1>
-      <p>El Ayuntamiento de Madrid quiere reforzar su compromiso con los Derechos Humanos con la elaboración de un Plan que será el instrumento para el desarrollo de sus políticas públicas con un <%= link_to "enfoque transversal", page_path('human_rights_info'), class: "white" %> que afecte a toda la actuación municipal.</p>
+      <p>El Ayuntamiento de Madrid quiere reforzar su compromiso con los Derechos Humanos con la elaboración de un Plan que será el instrumento para el desarrollo de sus políticas públicas con un <%= link_to "enfoque transversal", page_path('human_rights_info', anchor: '3'), class: "white" %> que afecte a toda la actuación municipal.</p>
+
+      <div class="small-12 medium-4">
+        <%= link_to "Más información", page_path('human_rights_info'), class: 'button expanded' %>
+      </div>
     </div>
 
     <div class="show-for-medium medium-5 column relative">
@@ -22,8 +26,22 @@
   </div>
 </div>
 
+<div class="expanded timeline">
+  <div class="row">
+    <div class="small-12 medium-4 column text-center">
+      <span class="active">Propuestas y debates</span>
+    </div>
+    <div class="small-12 medium-4 column text-center">
+      <span>Análisis de la información</span>
+    </div>
+    <div class="small-12 medium-4 column text-center">
+      <span>Priorización</span>
+    </div>
+  </div>
+</div>
+
 <div class="row margin" data-equalizer>
-  <div class="small-12 medium-4 column text-center" data-equalizer-watch>
+  <div class="show-for-medium small-12 medium-4 column text-center" data-equalizer-watch>
     <span class="vertical-image"></span>
     <%= image_tag "derechos_humanos.jpg", alt: t("pages.processes.index.process_5_title") %>
   </div>
