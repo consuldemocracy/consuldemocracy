@@ -51,6 +51,7 @@ class User < ActiveRecord::Base
   scope :officials,      -> { where("official_level > 0") }
   scope :for_render,     -> { includes(:organization) }
   scope :by_document,    -> (document_type, document_number) { where(document_type: document_type, document_number: document_number) }
+  scope :email_digest,   -> { where(email_digest: true) }
 
   before_validation :clean_document_number
 

@@ -2,7 +2,7 @@ require 'rails_helper'
 
 feature 'Direct messages' do
 
-  scenario "Create", :focus do
+  scenario "Create" do
     sender   = create(:user, :level_two)
     receiver = create(:user, :level_two)
 

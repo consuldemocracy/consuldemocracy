@@ -51,6 +51,53 @@ feature 'Proposal Notifications' do
     expect(page).to have_link("the proposal's page", href: proposal_path(proposal))
   end
 
+  context "Receivers" do
+
+    scenario "Only send a digest to users that have the option set in their profile" do
+      user1 = create(:user, email_digest: true)
+      user2 = create(:user, email_digest: true)
+      user3 = create(:user, email_digest: false)
+
+      proposal = create(:proposal)
+
+      [user1, user2, user3].each do |user|
+        create(:vote, votable: proposal, voter: user)
+      end
+
+      create_proposal_notification(proposal)
+
+      reset_mailer
+      email_digest = EmailDigest.new
+      email_digest.create
+
+      expect(unread_emails_for(user1.email).size).to   eql parse_email_count(1)
+      expect(unread_emails_for(user2.email).size).to   eql parse_email_count(1)
+      expect(unread_emails_for(user3.email).size).to   eql parse_email_count(0)
+    end
+
+    scenario "Only send a digest to users that have voted for a proposal" do
+      user1 = create(:user, email_digest: true)
+      user2 = create(:user, email_digest: true)
+      user3 = create(:user, email_digest: true)
+
+      proposal = create(:proposal)
+
+      [user1, user2].each do |user|
+        create(:vote, votable: proposal, voter: user)
+      end
+
+      create_proposal_notification(proposal)
+
+      reset_mailer
+      email_digest = EmailDigest.new
+      email_digest.create
+
+      expect(unread_emails_for(user1.email).size).to   eql parse_email_count(1)
+      expect(unread_emails_for(user2.email).size).to   eql parse_email_count(1)
+      expect(unread_emails_for(user3.email).size).to   eql parse_email_count(0)
+    end
+
+  end
   context "Permissions" do
 
     scenario "Link to send the message" do

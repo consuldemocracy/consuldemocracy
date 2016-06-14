@@ -204,4 +204,51 @@ feature 'Emails' do
     end
   end
 
+  context "Proposal notification digest" do
+
+    scenario "notifications for proposals that I have supported" do
+      user = create(:user, email_digest: true)
+
+      proposal1 = create(:proposal)
+      proposal2 = create(:proposal)
+      proposal3 = create(:proposal)
+
+      create(:vote, votable: proposal1, voter: user)
+      create(:vote, votable: proposal2, voter: user)
+
+      reset_mailer
+
+      notification1 = create_proposal_notification(proposal1)
+      notification2 = create_proposal_notification(proposal2)
+      notification3 = create_proposal_notification(proposal3)
+
+      email_digest = EmailDigest.new
+      email_digest.create
+
+      email = open_last_email
+      expect(email).to have_subject("Email digest")
+      expect(email).to deliver_to(user.email)
+
+      expect(email).to have_body_text(proposal1.title)
+      expect(email).to have_body_text(notification1.notifiable.title)
+      expect(email).to have_body_text(notification1.notifiable.body)
+      expect(email).to have_body_text(proposal1.author.name)
+
+      expect(email).to have_body_text(/#{notification_path(notification1)}/)
+      expect(email).to have_body_text(/#{proposal_path(proposal1, anchor: 'comments')}/)
+      expect(email).to have_body_text(/#{proposal_path(proposal1, anchor: 'social-share')}/)
+
+      expect(email).to have_body_text(proposal2.title)
+      expect(email).to have_body_text(notification2.notifiable.title)
+      expect(email).to have_body_text(notification2.notifiable.body)
+      expect(email).to have_body_text(/#{notification_path(notification2)}/)
+      expect(email).to have_body_text(/#{proposal_path(proposal2, anchor: 'comments')}/)
+      expect(email).to have_body_text(/#{proposal_path(proposal2, anchor: 'social-share')}/)
+      expect(email).to have_body_text(proposal2.author.name)
+
+      expect(email).to_not have_body_text(proposal3.title)
+    end
+
+  end
+
 end

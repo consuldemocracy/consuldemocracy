@@ -136,7 +136,7 @@ FactoryGirl.define do
 
   factory :proposal do
     sequence(:title)     { |n| "Proposal #{n} title" }
-    summary              'In summary, what we want is...'
+    sequence(:summary)   { |n| "In summary, what we want is... #{n}" }
     description          'Proposal description'
     question             'Proposal question'
     external_url         'http://external_documention.es'
