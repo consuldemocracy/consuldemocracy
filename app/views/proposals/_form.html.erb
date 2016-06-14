@@ -1,6 +1,23 @@
 <%= form_for(@proposal, url: form_url) do |f| %>
   <%= render 'shared/errors', resource: @proposal %>
 
+  <% if @proposal.proceeding? %>
+    <h2><%= @proposal.proceeding %></h2>
+    <%= f.hidden_field :proceeding %>
+    <% if @proposal.sub_proceeding? && @proposal.errors[:sub_proceeding].empty? %>
+      <h3><%= @proposal.sub_proceeding %></h3>
+      <%= f.hidden_field :sub_proceeding %>
+    <% else %>
+      <div class="row">
+        <div class="small-12 column">
+          <%= f.label :sub_proceeding, t("proposals.form.sub_proceeding") %>
+          <%= f.text_field :sub_proceeding, maxlength: 200, label: false %>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+
+
   <div class="row">
     <div class="small-12 column">
       <%= f.label :title, t("proposals.form.proposal_title") %>

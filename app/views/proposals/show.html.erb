@@ -37,6 +37,10 @@
           </div>
         <% end %>
 
+        <% if @proposal.proceeding? %>
+          <h2><%= @proposal.proceeding %> - <%= @proposal.sub_proceeding %></h2>
+        <% end %>
+
         <div class="proposal-info">
           <%= render '/shared/author_info', resource: @proposal %>
 
