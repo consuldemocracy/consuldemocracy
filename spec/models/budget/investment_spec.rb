@@ -66,7 +66,7 @@ describe Budget::Investment do
   end
 
   describe "by_admin" do
-    it "should return spending investments assigned to specific administrator" do
+    it "should return investments assigned to specific administrator" do
       investment1 = create(:budget_investment, administrator_id: 33)
       create(:budget_investment)
 
@@ -78,7 +78,7 @@ describe Budget::Investment do
   end
 
   describe "by_valuator" do
-    it "should return spending proposals assigned to specific valuator" do
+    it "should return investments assigned to specific valuator" do
       investment1 = create(:budget_investment)
       investment2 = create(:budget_investment)
       investment3 = create(:budget_investment)
@@ -99,7 +99,7 @@ describe Budget::Investment do
 
   describe "scopes" do
     describe "valuation_open" do
-      it "should return all spending proposals with false valuation_finished" do
+      it "should return all investments with false valuation_finished" do
         investment1 = create(:budget_investment, valuation_finished: true)
         investment2 = create(:budget_investment)
 
@@ -111,7 +111,7 @@ describe Budget::Investment do
     end
 
     describe "without_admin" do
-      it "should return all open spending proposals without assigned admin" do
+      it "should return all open investments without assigned admin" do
         investment1 = create(:budget_investment, valuation_finished: true)
         investment2 = create(:budget_investment, administrator: create(:administrator))
         investment3 = create(:budget_investment)
@@ -124,7 +124,7 @@ describe Budget::Investment do
     end
 
     describe "managed" do
-      it "should return all open spending proposals with assigned admin but without assigned valuators" do
+      it "should return all open investments with assigned admin but without assigned valuators" do
         investment1 = create(:budget_investment, administrator: create(:administrator))
         investment2 = create(:budget_investment, administrator: create(:administrator), valuation_finished: true)
         investment3 = create(:budget_investment, administrator: create(:administrator))
@@ -138,7 +138,7 @@ describe Budget::Investment do
     end
 
     describe "valuating" do
-      it "should return all spending proposals with assigned valuator but valuation not finished" do
+      it "should return all investments with assigned valuator but valuation not finished" do
         investment1 = create(:budget_investment)
         investment2 = create(:budget_investment)
         investment3 = create(:budget_investment, valuation_finished: true)
@@ -154,7 +154,7 @@ describe Budget::Investment do
     end
 
     describe "valuation_finished" do
-      it "should return all spending proposals with valuation finished" do
+      it "should return all investments with valuation finished" do
         investment1 = create(:budget_investment)
         investment2 = create(:budget_investment)
         investment3 = create(:budget_investment, valuation_finished: true)
@@ -170,7 +170,7 @@ describe Budget::Investment do
     end
 
     describe "feasible" do
-      it "should return all feasible spending proposals" do
+      it "should return all feasible investments" do
         feasible_investment = create(:budget_investment, :feasible)
         create(:budget_investment)
 
@@ -179,7 +179,7 @@ describe Budget::Investment do
     end
 
     describe "unfeasible" do
-      it "should return all unfeasible spending proposals" do
+      it "should return all unfeasible investments" do
         unfeasible_investment = create(:budget_investment, :unfeasible)
         create(:budget_investment, :feasible)
 
@@ -283,12 +283,12 @@ describe Budget::Investment do
 
   describe "#with_supports" do
     it "should return proposals with supports" do
-      sp1 = create(:budget_investment)
-      sp2 = create(:budget_investment)
-      create(:vote, votable: sp1)
+      inv1 = create(:budget_investment)
+      inv2 = create(:budget_investment)
+      create(:vote, votable: inv1)
 
-      expect(Budget::Investment.with_supports).to include(sp1)
-      expect(Budget::Investment.with_supports).to_not include(sp2)
+      expect(Budget::Investment.with_supports).to include(inv1)
+      expect(Budget::Investment.with_supports).to_not include(inv2)
     end
   end
 
@@ -327,10 +327,8 @@ describe Budget::Investment do
           expect(investment.reason_for_not_being_ballotable_by(user, ballot)).to be_nil
         end
 
-        it "accepts valid district selections" do
+        it "accepts valid selections" do
           budget.phase = "selecting"
-          expect(investment.reason_for_not_being_selectable_by(user)).to be_nil
-          ballot.heading_id = heading.id
           expect(investment.reason_for_not_being_selectable_by(user)).to be_nil
         end
 
@@ -340,22 +338,25 @@ describe Budget::Investment do
           california = create(:budget_heading, group: group)
           new_york = create(:budget_heading, group: group)
 
-          sp1 = create(:budget_investment, :feasible, heading: california)
-          sp2 = create(:budget_investment, :feasible, heading: new_york)
-          b = create(:budget_ballot, user: user, heading: california, investments: [sp1])
+          inv1 = create(:budget_investment, :feasible, heading: california)
+          inv2 = create(:budget_investment, :feasible, heading: new_york)
+          b = create(:budget_ballot, user: user, budget: budget)
+          b.add_investment inv1
 
-          expect(sp2.reason_for_not_being_ballotable_by(user, b)).to eq(:different_heading_assigned)
+          expect(inv2.reason_for_not_being_ballotable_by(user, b)).to eq(:different_heading_assigned)
         end
 
         it "rejects proposals with price higher than current available money" do
           budget.phase = "balloting"
           distritos = create(:budget_group, budget: budget)
           carabanchel = create(:budget_heading, group: distritos, price: 35)
-          sp1 = create(:budget_investment, :feasible, heading: carabanchel, price: 30)
-          sp2 = create(:budget_investment, :feasible, heading: carabanchel, price: 10)
-          ballot = create(:budget_ballot, user: user, heading: carabanchel, investments: [sp1])
+          inv1 = create(:budget_investment, :feasible, heading: carabanchel, price: 30)
+          inv2 = create(:budget_investment, :feasible, heading: carabanchel, price: 10)
 
-          expect(sp2.reason_for_not_being_ballotable_by(user, ballot)).to eq(:not_enough_money)
+          ballot = create(:budget_ballot, user: user, budget: budget)
+          ballot.add_investment inv1
+
+          expect(inv2.reason_for_not_being_ballotable_by(user, ballot)).to eq(:not_enough_money)
         end
 
       end

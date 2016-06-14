@@ -21,6 +21,7 @@ class Budget
     validates :title, presence: true
     validates :author, presence: true
     validates :description, presence: true
+    validates :heading_id, presence: true
     validates_presence_of :unfeasibility_explanation, if: :unfeasibility_explanation_required?
 
     validates :title, length: { in: 4 .. Budget::Investment.title_max_length }
@@ -152,7 +153,7 @@ class Budget
     def reason_for_not_being_ballotable_by(user, ballot)
       return permission_problem(user)    if permission_problem?(user)
       return :no_ballots_allowed         unless budget.balloting?
-      return :different_heading_assigned unless heading_id.blank? || ballot.blank? || heading_id == ballot.heading_id || ballot.heading_id.nil?
+      return :different_heading_assigned unless ballot.valid_heading?(heading)
       return :not_enough_money           if ballot.present? && !enough_money?(ballot)
     end
 
