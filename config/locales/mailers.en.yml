@@ -37,5 +37,8 @@ en:
       title: You received the following notifications
       share: Share
       comment: Comment proposal
-    direct_message:
+    direct_message_for_receiver:
+      subject: "You have received a new private message"
       reply: Reply to %{sender}
+    direct_message_for_sender:
+      subject: "You have send a new private message"

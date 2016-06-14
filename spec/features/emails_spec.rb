@@ -148,6 +148,41 @@ feature 'Emails' do
     expect(email).to have_body_text(spending_proposal.feasible_explanation)
   end
 
+  context "Direct Message" do
+
+    scenario "Receiver email" do
+      sender   = create(:user, :level_two)
+      receiver = create(:user, :level_two)
+
+      direct_message = create_direct_message(sender, receiver)
+
+      email = unread_emails_for(receiver.email).first
+
+      expect(email).to have_subject("You have received a new private message")
+      expect(email).to have_body_text(direct_message.title)
+      expect(email).to have_body_text(direct_message.body)
+      expect(email).to have_body_text(direct_message.sender.name)
+      expect(email).to have_body_text(/#{user_path(direct_message.sender_id)}/)
+    end
+
+    scenario "Sender email" do
+      sender   = create(:user, :level_two)
+      receiver = create(:user, :level_two)
+
+      direct_message = create_direct_message(sender, receiver)
+
+      email = unread_emails_for(sender.email).first
+
+      expect(email).to have_subject("You have send a new private message")
+      expect(email).to have_body_text(direct_message.title)
+      expect(email).to have_body_text(direct_message.body)
+      expect(email).to have_body_text(direct_message.receiver.name)
+    end
+
+    pending "In the copy sent to the sender, display the receiver's name"
+
+  end
+
   context "Proposal notifications" do
 
     scenario "Proposal notification" do
