@@ -95,6 +95,12 @@ describe User do
         expect(subject.email_digest).to eq(true)
       end
     end
+
+    describe 'email_on_direct_message' do
+      it 'should be true by default' do
+        expect(subject.email_on_direct_message).to eq(true)
+      end
+    end
   end
 
   describe "administrator?" do

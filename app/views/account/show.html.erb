@@ -87,6 +87,15 @@
             <% end %>
           </div>
 
+          <div>
+            <%= f.label :email_on_direct_message do %>
+              <%= f.check_box :email_on_direct_message, title: t('account.show.email_on_direct_message_label'), label: false %>
+              <span class="checkbox">
+                <%= t("account.show.email_on_direct_message_label") %>
+              </span>
+            <% end %>
+          </div>
+
           <%= f.submit t("account.show.save_changes_submit"), class: "button" %>
         </div>
 
