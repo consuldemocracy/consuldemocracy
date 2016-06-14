@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160609152026) do
+ActiveRecord::Schema.define(version: 20160614091639) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -83,6 +83,9 @@ ActiveRecord::Schema.define(version: 20160609152026) do
     t.integer  "investment_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
+    t.integer  "budget_id"
+    t.integer  "group_id"
+    t.integer  "heading_id"
   end
 
   add_index "budget_ballot_lines", ["ballot_id"], name: "index_budget_ballot_lines_on_ballot_id", using: :btree
@@ -93,10 +96,7 @@ ActiveRecord::Schema.define(version: 20160609152026) do
     t.integer  "budget_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer  "heading_id"
   end
-
-  add_index "budget_ballots", ["heading_id"], name: "index_budget_ballots_on_heading_id", using: :btree
 
   create_table "budget_groups", force: :cascade do |t|
     t.integer "budget_id"
