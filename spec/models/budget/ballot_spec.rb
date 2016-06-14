@@ -45,20 +45,22 @@ describe Budget::Ballot do
     it "returns how much is left after taking some investments" do
       budget = create(:budget)
       group = create(:budget_group, budget: budget)
-      heading = create(:budget_heading, group: group, price: 1000)
-      inv1 = create(:budget_investment, :feasible, price: 100, heading: heading)
-      inv2 = create(:budget_investment, :feasible, price: 200, heading: create(:budget_heading))
-      inv3 = create(:budget_investment, :feasible, price: 400, heading: heading)
+      heading1 = create(:budget_heading, group: group, price: 1000)
+      heading2 = create(:budget_heading, group: group, price: 300)
+      inv1 = create(:budget_investment, :feasible, price: 100, heading: heading1)
+      inv2 = create(:budget_investment, :feasible, price: 200, heading: heading2)
+      inv3 = create(:budget_investment, :feasible, price: 400, heading: heading1)
 
       ballot = create(:budget_ballot, budget: budget)
       ballot.add_investment inv1
       ballot.add_investment inv2
 
-      expect(ballot.amount_available(heading)).to eq 900
+      expect(ballot.amount_available(heading1)).to eq 900
+      expect(ballot.amount_available(heading2)).to eq 100
 
       ballot.add_investment inv3
 
-      expect(ballot.amount_available(heading)).to eq 500
+      expect(ballot.amount_available(heading1)).to eq 500
     end
   end
 
