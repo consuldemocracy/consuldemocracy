@@ -28,6 +28,7 @@ class ProposalsController < ApplicationController
   def index_customization
     load_retired
     load_featured
+    hide_proceedings
     hide_advanced_search if custom_search?
   end
 
@@ -106,6 +107,10 @@ class ProposalsController < ApplicationController
         set_featured_proposal_votes(@featured_proposals)
         @resources = @resources.where('proposals.id NOT IN (?)', @featured_proposals.map(&:id))
       end
+    end
+
+    def hide_proceedings
+      @resources = @resources.not_proceedings
     end
 
     def hide_advanced_search
