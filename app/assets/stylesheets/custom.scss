@@ -1002,6 +1002,11 @@ table.age-groups {
 
   .content {
     background: #F6F5F8;
+
+    @include breakpoint(large) {
+      padding-bottom: $line-height;
+      padding-top: $line-height;
+    }
   }
 
   h1 {
