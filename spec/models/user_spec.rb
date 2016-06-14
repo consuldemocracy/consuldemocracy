@@ -89,6 +89,12 @@ describe User do
         expect(subject.email_on_proposal_notification).to eq(true)
       end
     end
+
+    describe 'email_digest' do
+      it 'should be true by default' do
+        expect(subject.email_digest).to eq(true)
+      end
+    end
   end
 
   describe "administrator?" do

@@ -36,6 +36,7 @@ feature 'Account' do
     check 'account_email_on_comment'
     check 'account_email_on_comment_reply'
     uncheck 'account_email_on_proposal_notification'
+    uncheck 'account_email_digest'
     click_button 'Save changes'
 
     expect(page).to have_content "Changes saved"
@@ -45,7 +46,7 @@ feature 'Account' do
     expect(page).to have_selector("input[value='Larry Bird']")
     expect(find("#account_email_on_comment")).to be_checked
     expect(find("#account_email_on_comment_reply")).to be_checked
-    expect(find("#account_email_on_proposal_notification")).to_not be_checked
+    expect(find("#account_email_digest")).to_not be_checked
   end
 
   scenario 'Edit Organization' do
