@@ -304,6 +304,7 @@ es:
       other: Otra
     form:
       geozone: "Ámbito de actuación"
+      sub_proceeding: "Derecho"
       proposal_external_url: Enlace a documentación adicional
       proposal_question: Pregunta de la propuesta
       proposal_question_example_html: Debe ser resumida en una pregunta cuya respuesta sea Sí o No. <em>Ej. '¿Está usted de acuerdo en peatonalizar la calle Mayor?'</em>
