@@ -49,9 +49,6 @@ class Budget
 
     scope :for_render,             -> { includes(heading: :geozone) }
 
-    scope :with_heading,           -> { where.not(heading_id: nil) }
-    scope :no_heading,             -> { where(heading_id: nil) }
-
     before_save :calculate_confidence_score
     before_validation :set_responsible_name
 
