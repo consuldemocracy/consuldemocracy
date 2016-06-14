@@ -29,6 +29,7 @@
               <p class="callout warning inline-block">
                 <%= t("spending_proposals.header.different_district_active") %>
                 <%= link_to @ballot.geozone.name, spending_proposals_path(geozone: @ballot.geozone) %>
+                <%= t("spending_proposals.header.different_district_active_info") %>
               </p>
               <% else %>
               <div id="progress_bar" class="no-margin-top">

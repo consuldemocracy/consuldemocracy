@@ -538,7 +538,8 @@ en:
       vote: Vote
     header:
       check_ballot: Check my ballot
-      different_district_active: You have active votes in another district.
+      different_district_active: "You have active votes in another district:"
+      different_district_active_info: "(If you remove all votes of this district you can select another one)"
   ballots:
     show:
       city_link: Vote city proposals
