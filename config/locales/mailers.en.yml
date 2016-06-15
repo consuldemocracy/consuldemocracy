@@ -32,7 +32,7 @@ en:
       unfeasible_html: "From the Madrid City Council we want to thank you for your participation in the <strong>participatory budgets of the city of Madrid</strong>. We regret to inform you that your proposal <strong>'%{title}'</strong> will be excluded from this participatory process for the following reason:"
     proposal_notification_digest:
       title: You received the following notifications
-      share: Share
+      share: Share proposal
       comment: Comment proposal
     direct_message_for_receiver:
       subject: "You have received a new private message"
