@@ -152,6 +152,7 @@ Rails.application.routes.draw do
       end
 
       get :summary, on: :collection
+      get :results, on: :collection
     end
 
     resources :banners, only: [:index, :new, :create, :edit, :update, :destroy] do

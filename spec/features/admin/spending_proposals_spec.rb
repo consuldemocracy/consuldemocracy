@@ -776,4 +776,106 @@ feature 'Admin spending proposals' do
 
   end
 
+  context 'Results' do
+
+    context "Diplays proposals ordered by ballot_lines_count" do
+
+      background do
+        @california = create(:geozone)
+
+        @proposal1 = create(:spending_proposal, :finished, :feasible, price: 10, ballot_lines_count: 20, geozone: nil)
+        @proposal2 = create(:spending_proposal, :finished, :feasible, price: 10, ballot_lines_count: 60, geozone: nil)
+        @proposal3 = create(:spending_proposal, :finished, :feasible, price: 10, ballot_lines_count: 40, geozone: nil)
+        @proposal4 = create(:spending_proposal, :finished, :feasible, price: 10, ballot_lines_count: 33, geozone: @california)
+        @proposal5 = create(:spending_proposal, :finished, :feasible, price: 10, ballot_lines_count: 99, geozone: @california)
+        @proposal6 = create(:spending_proposal, :finished, :feasible, price: 10, ballot_lines_count: 11, geozone: @california)
+        @proposal7 = create(:spending_proposal, :finished, :feasible, price: 10, ballot_lines_count: 100, geozone: create(:geozone))
+      end
+
+      scenario "Spending proposals with no geozone" do
+        visit admin_spending_proposals_path
+
+        click_link "Current results"
+
+        expect(page).to have_content "Current final voting ranking"
+
+        within("#spending-proposals-results") do
+          expect(page).to have_content @proposal1.title
+          expect(page).to have_content @proposal2.title
+          expect(page).to have_content @proposal3.title
+          expect(page).to_not have_content @proposal4.title
+          expect(page).to_not have_content @proposal5.title
+          expect(page).to_not have_content @proposal6.title
+          expect(page).to_not have_content @proposal7.title
+
+          expect(@proposal2.title).to appear_before(@proposal3.title)
+          expect(@proposal3.title).to appear_before(@proposal1.title)
+        end
+      end
+
+      scenario "Geozoned spending proposals" do
+        visit results_admin_spending_proposals_path(geozone_id: @california.id)
+
+        within("#spending-proposals-results") do
+          expect(page).to_not have_content @proposal1.title
+          expect(page).to_not have_content @proposal2.title
+          expect(page).to_not have_content @proposal3.title
+          expect(page).to have_content @proposal4.title
+          expect(page).to have_content @proposal5.title
+          expect(page).to have_content @proposal6.title
+          expect(page).to_not have_content @proposal7.title
+
+          expect(@proposal5.title).to appear_before(@proposal4.title)
+          expect(@proposal4.title).to appear_before(@proposal6.title)
+        end
+      end
+    end
+
+    scenario "Displays only finished feasible spending proposals" do
+      california = create(:geozone)
+
+      proposal1 = create(:spending_proposal, :finished, :feasible, price: 10, ballot_lines_count: 20, geozone: california)
+      proposal2 = create(:spending_proposal, :finished, price: 10, ballot_lines_count: 60, geozone: california)
+      proposal3 = create(:spending_proposal, :feasible, price: 10, ballot_lines_count: 40, geozone: california)
+      proposal4 = create(:spending_proposal, price: 10, ballot_lines_count: 40, geozone: california)
+
+      visit results_admin_spending_proposals_path(geozone_id: california.id)
+
+      within("#spending-proposals-results") do
+        expect(page).to have_content proposal1.title
+        expect(page).to_not have_content proposal2.title
+        expect(page).to_not have_content proposal3.title
+        expect(page).to_not have_content proposal4.title
+      end
+    end
+
+    scenario "Highlights winner candidates (within budget), if tied most expensive first" do
+      centro = create(:geozone, name: "Centro") #budget: 1353966
+
+      proposal1 = create(:spending_proposal, :finished, :feasible, price: 1000000, ballot_lines_count: 999, geozone: centro)
+      proposal2 = create(:spending_proposal, :finished, :feasible, price:  900000, ballot_lines_count: 888, geozone: centro)
+      proposal3 = create(:spending_proposal, :finished, :feasible, price:  700000, ballot_lines_count: 777, geozone: centro)
+      proposal4 = create(:spending_proposal, :finished, :feasible, price:  350000, ballot_lines_count: 666, geozone: centro)
+      proposal5 = create(:spending_proposal, :finished, :feasible, price:  320000, ballot_lines_count: 666, geozone: centro)
+      proposal6 = create(:spending_proposal, :finished, :feasible, price:      10, ballot_lines_count: 555, geozone: centro)
+
+      visit results_admin_spending_proposals_path(geozone_id: centro.id)
+
+      within("#spending-proposals-results") do
+        expect(proposal1.title).to appear_before(proposal2.title)
+        expect(proposal2.title).to appear_before(proposal3.title)
+        expect(proposal3.title).to appear_before(proposal4.title)
+        expect(proposal4.title).to appear_before(proposal5.title)
+        expect(proposal5.title).to appear_before(proposal6.title)
+
+        expect(page).to have_css("#spending_proposal_#{proposal1.id}.success")
+        expect(page).to have_css("#spending_proposal_#{proposal4.id}.success")
+        expect(page).to have_css("#spending_proposal_#{proposal6.id}.success")
+        expect(page).to_not have_css("#spending_proposal_#{proposal2.id}.success")
+        expect(page).to_not have_css("#spending_proposal_#{proposal3.id}.success")
+        expect(page).to_not have_css("#spending_proposal_#{proposal5.id}.success")
+      end
+    end
+  end
+
 end

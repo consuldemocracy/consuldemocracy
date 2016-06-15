@@ -1,6 +1,6 @@
 class BallotLine < ActiveRecord::Base
   belongs_to :ballot, counter_cache: true
-  belongs_to :spending_proposal
+  belongs_to :spending_proposal, counter_cache: true
 
   validate :insufficient_funds
   validate :different_geozone, :if => :district_proposal?

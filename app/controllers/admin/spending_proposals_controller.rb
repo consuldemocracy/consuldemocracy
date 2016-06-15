@@ -31,6 +31,16 @@ class Admin::SpendingProposalsController < Admin::BaseController
     end
   end
 
+  def results
+    @spending_proposals = SpendingProposal.feasible.valuation_finished.
+                                          by_geozone(params[:geozone_id]).
+                                          order(ballot_lines_count: :desc, price: :desc).
+                                          page(params[:page]).per(300)
+
+    load_geozone
+    @initial_budget = Ballot.initial_budget(@geozone)
+  end
+
   def summary
     @spending_proposals = SpendingProposal.limit_results(SpendingProposal, params).group(:geozone).sum(:price).sort_by{|geozone, count| geozone.present? ? geozone.name : "ZZ"}
   end
@@ -51,6 +61,10 @@ class Admin::SpendingProposalsController < Admin::BaseController
 
     def load_tags
       @tags = ActsAsTaggableOn::Tag.spending_proposal_tags
+    end
+
+    def load_geozone
+      @geozone = (params[:geozone_id].blank? || params[:geozone_id] == 'all') ? nil : Geozone.find(params[:geozone_id])
     end
 
 end

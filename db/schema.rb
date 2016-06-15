@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160608102733) do
+ActiveRecord::Schema.define(version: 20160615074547) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -374,6 +374,7 @@ ActiveRecord::Schema.define(version: 20160608102733) do
     t.boolean  "forum",                                  default: false
     t.string   "responsible_name",            limit: 60
     t.integer  "physical_votes",                         default: 0
+    t.integer  "ballot_lines_count",                     default: 0
   end
 
   add_index "spending_proposals", ["author_id"], name: "index_spending_proposals_on_author_id", using: :btree

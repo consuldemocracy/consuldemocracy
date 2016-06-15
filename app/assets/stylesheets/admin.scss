@@ -37,6 +37,10 @@ body.admin {
       &:nth-child(even) {
         background: #f0f0f0;
       }
+
+      &.success {
+        background: $success-bg;
+      }
     }
 
     td.small {
