@@ -2,7 +2,7 @@
   <%= link_to notification do %>
     <p>
       <em>
-        <%= t("notifications.index.#{notification_action(notification)}",
+        <%= t("notifications.index.#{notification.notifiable_action}",
               count: notification.counter) %>
       </em>
       <strong><%= notification.notifiable_title %></strong>

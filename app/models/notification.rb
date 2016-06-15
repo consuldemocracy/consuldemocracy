@@ -33,6 +33,17 @@ class Notification < ActiveRecord::Base
     end
   end
 
+  def notifiable_action
+    case notifiable_type
+    when "ProposalNotification"
+      "proposal_notification"
+    when "Comment"
+      "replies_to"
+    else
+      "comments_on"
+    end
+  end
+
   def linkable_resource
     notifiable.is_a?(ProposalNotification) ? notifiable.proposal : notifiable
   end
