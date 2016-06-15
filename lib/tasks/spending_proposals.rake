@@ -28,6 +28,13 @@ namespace :spending_proposals do
     end
   end
 
+  desc "Recalculates ballot_lines_count for all spending proposals"
+  task reset_ballot_lines_counter: :environment do
+    SpendingProposal.find_each do |spending_proposal|
+      SpendingProposal.reset_counters(spending_proposal.id, :ballot_lines)
+    end
+  end
+
   desc "Sets spending proposals to undecided if below minimum number of votes"
   task set_undecided: :environment do
     SpendingProposal.find_each do |spending_proposal|
