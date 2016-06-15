@@ -37,8 +37,8 @@ class Admin::SpendingProposalsController < Admin::BaseController
                                           order(ballot_lines_count: :desc, price: :desc).
                                           page(params[:page]).per(300)
 
-    geozone = (params[:geozone_id].blank? || params[:geozone_id] == 'all') ? nil : Geozone.find(params[:geozone_id])
-    @initial_budget = Ballot.initial_budget(geozone)
+    load_geozone
+    @initial_budget = Ballot.initial_budget(@geozone)
   end
 
   def summary
@@ -61,6 +61,10 @@ class Admin::SpendingProposalsController < Admin::BaseController
 
     def load_tags
       @tags = ActsAsTaggableOn::Tag.spending_proposal_tags
+    end
+
+    def load_geozone
+      @geozone = (params[:geozone_id].blank? || params[:geozone_id] == 'all') ? nil : Geozone.find(params[:geozone_id])
     end
 
 end
