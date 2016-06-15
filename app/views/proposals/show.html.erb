@@ -124,10 +124,8 @@
 <% end %>
 
 <div class="tabs-content" data-tabs-content="example-tabs">
-  <% if @notifications.present? %>
-    <%= render "proposals/filter_subnav" %>
-    <%= render "proposals/notifications" %>
-  <% end %>
+  <%= render "proposals/filter_subnav" %>
+  <%= render "proposals/notifications" %>
 
   <div class="tabs-panel is-active" id="tab-comments">
     <%= render "proposals/comments" %>

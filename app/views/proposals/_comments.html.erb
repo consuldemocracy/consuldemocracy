@@ -2,13 +2,6 @@
   <section class="comments">
     <div class="row">
       <div id="comments" class="small-12 column">
-        <% if @notifications.blank? %>
-          <h2>
-            <%= t("proposals.show.comments_title") %>
-            <span class="js-comments-count">(<%= @proposal.comments_count %>)</span>
-          </h2>
-        <% end %>
-
         <%= render 'shared/wide_order_selector', i18n_namespace: "comments" %>
 
         <% if user_signed_in? %>

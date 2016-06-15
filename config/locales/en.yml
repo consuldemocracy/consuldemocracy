@@ -356,7 +356,6 @@ en:
         other: "%{count} comments"
         zero: No comments
       comments_tab: Comments
-      comments_title: Comments
       edit_proposal_link: Edit
       flag: This proposal has been flagged as inappropriate by several users.
       login_to_comment: You must %{signin} or %{signup} to leave a comment.
@@ -366,6 +365,7 @@ en:
       retired: Proposal retired by the author
       share: Share
       send_notification: Send notification
+      no_notifications: "This proposal has any notifications."
     update:
       form:
         submit_button: Save changes
