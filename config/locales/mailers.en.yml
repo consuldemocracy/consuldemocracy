@@ -34,6 +34,8 @@ en:
       title: You received the following notifications
       share: Share proposal
       comment: Comment proposal
+      unsubscribe: "If you don't want receive proposal's notification, visit %{account} and unckeck 'Receive a summary of proposal notifications'."
+      unsubscribe_account: My account
     direct_message_for_receiver:
       subject: "You have received a new private message"
       reply: Reply to %{sender}
