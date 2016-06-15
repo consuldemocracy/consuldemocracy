@@ -32,4 +32,8 @@ module ProposalsHelper
     Proposal::RETIRE_OPTIONS.collect { |option| [ t("proposals.retire_options.#{option}"), option ] }
   end
 
+  def link_to_new_proposal_proceeding_path(proceeding, sub_proceeding, title=nil)
+    link_to title || sub_proceeding, new_proposal_path(proceeding: proceeding, sub_proceeding: sub_proceeding)
+  end
+
 end
