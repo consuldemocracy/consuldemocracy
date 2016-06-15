@@ -4,7 +4,8 @@
       <tr>
         <td style="padding-left: 10px;">
           <h1 style="font-family: 'Open Sans','Helvetica Neue',arial,sans-serif;">
-            <%= t('mailers.proposal_notification_digest.title') %>
+            <%= t('mailers.proposal_notification_digest.title',
+                  org_name: Setting['org_name']) %>
           </h1>
         </td>
       </tr>
