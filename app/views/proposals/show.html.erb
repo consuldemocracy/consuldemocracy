@@ -12,6 +12,11 @@
       <div class="small-12 medium-9 column">
         <%= render "shared/back_link" %>
 
+        <% if author_of?(@proposal, current_user) %>
+          <%= link_to t("proposals.show.send_notification"), new_proposal_notification_path(proposal_id: @proposal.id),
+                      class: 'button hollow float-right' %>
+        <% end %>
+
         <% if current_user && @proposal.editable_by?(current_user) %>
           <%= link_to edit_proposal_path(@proposal), class: 'edit-proposal button hollow float-right' do %>
             <%= t("proposals.show.edit_proposal_link") %>

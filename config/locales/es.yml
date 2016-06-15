@@ -364,6 +364,7 @@ es:
       retired_warning: "El autor de esta propuesta considera que ya no debe seguir recogiendo apoyos."
       retired_warning_link_to_explanation: Revisa su explicación antes de apoyarla.
       retired: Propuesta retirada por el autor
+      send_notification: Enviar notificación
       share: Compartir
     update:
       form:
@@ -535,7 +536,7 @@ es:
       private_activity: Este usuario ha decidido mantener en privado su lista de actividades
       send_private_message: "Enviar un mensaje privado"
     proposals:
-      send_message: "Enviar mensaje"
+      send_notification: "Enviar notificación"
       retire: "Retirar"
       retired: "Retirada"
   votes:

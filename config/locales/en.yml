@@ -365,6 +365,7 @@ en:
       retired_warning_link_to_explanation: Read the explanation before voting for it.
       retired: Proposal retired by the author
       share: Share
+      send_notification: Send notification
     update:
       form:
         submit_button: Save changes
@@ -535,7 +536,7 @@ en:
       private_activity: This user decided to keep the activity list private
       send_private_message: "Send private message"
     proposals:
-      send_message: "Send message"
+      send_notification: "Send notification"
       retire: "Retire"
       retired: "Retired"
   votes:

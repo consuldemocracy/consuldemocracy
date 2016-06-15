@@ -253,6 +253,10 @@ a {
   max-width: none;
 }
 
+.button.float-right ~ .button.float-right {
+  margin: 0 $line-height/2;
+}
+
 // 02. Header
 // ----------
 
