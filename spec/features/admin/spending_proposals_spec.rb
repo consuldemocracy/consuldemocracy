@@ -783,13 +783,13 @@ feature 'Admin spending proposals' do
       background do
         @california = create(:geozone)
 
-        @proposal1 = create(:spending_proposal, :finished, :feasible, ballot_lines_count: 20, geozone: nil)
-        @proposal2 = create(:spending_proposal, :finished, :feasible, ballot_lines_count: 60, geozone: nil)
-        @proposal3 = create(:spending_proposal, :finished, :feasible, ballot_lines_count: 40, geozone: nil)
-        @proposal4 = create(:spending_proposal, :finished, :feasible, ballot_lines_count: 33, geozone: @california)
-        @proposal5 = create(:spending_proposal, :finished, :feasible, ballot_lines_count: 99, geozone: @california)
-        @proposal6 = create(:spending_proposal, :finished, :feasible, ballot_lines_count: 11, geozone: @california)
-        @proposal7 = create(:spending_proposal, :finished, :feasible, ballot_lines_count: 100, geozone: create(:geozone))
+        @proposal1 = create(:spending_proposal, :finished, :feasible, price: 10, ballot_lines_count: 20, geozone: nil)
+        @proposal2 = create(:spending_proposal, :finished, :feasible, price: 10, ballot_lines_count: 60, geozone: nil)
+        @proposal3 = create(:spending_proposal, :finished, :feasible, price: 10, ballot_lines_count: 40, geozone: nil)
+        @proposal4 = create(:spending_proposal, :finished, :feasible, price: 10, ballot_lines_count: 33, geozone: @california)
+        @proposal5 = create(:spending_proposal, :finished, :feasible, price: 10, ballot_lines_count: 99, geozone: @california)
+        @proposal6 = create(:spending_proposal, :finished, :feasible, price: 10, ballot_lines_count: 11, geozone: @california)
+        @proposal7 = create(:spending_proposal, :finished, :feasible, price: 10, ballot_lines_count: 100, geozone: create(:geozone))
       end
 
       scenario "Spending proposals with no geozone" do
@@ -834,10 +834,10 @@ feature 'Admin spending proposals' do
     scenario "Displays only finished feasible spending proposals" do
       california = create(:geozone)
 
-      proposal1 = create(:spending_proposal, :finished, :feasible, ballot_lines_count: 20, geozone: california)
-      proposal2 = create(:spending_proposal, :finished, ballot_lines_count: 60, geozone: california)
-      proposal3 = create(:spending_proposal, :feasible, ballot_lines_count: 40, geozone: california)
-      proposal4 = create(:spending_proposal, ballot_lines_count: 40, geozone: california)
+      proposal1 = create(:spending_proposal, :finished, :feasible, price: 10, ballot_lines_count: 20, geozone: california)
+      proposal2 = create(:spending_proposal, :finished, price: 10, ballot_lines_count: 60, geozone: california)
+      proposal3 = create(:spending_proposal, :feasible, price: 10, ballot_lines_count: 40, geozone: california)
+      proposal4 = create(:spending_proposal, price: 10, ballot_lines_count: 40, geozone: california)
 
       visit results_admin_spending_proposals_path(geozone_id: california.id)
 

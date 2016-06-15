@@ -190,7 +190,6 @@ FactoryGirl.define do
     feasible_explanation 'This proposal is viable because...'
     external_url         'http://external_documention.org'
     terms_of_service     '1'
-    price                10
     association :author, factory: :user
 
     trait :with_confidence_score do
