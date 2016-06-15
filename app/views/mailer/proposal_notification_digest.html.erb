@@ -56,13 +56,13 @@
     <tbody>
       <tr>
         <td style="padding-left: 10px;">
-        <p style="font-family: 'Open Sans','Helvetica Neue',arial,sans-serif;font-size: 14px;font-weight: normal;line-height: 24px; margin: 0; font-style: italic; padding-bottom: 20px;">
-          <%= t('mailers.proposal_notification_digest.unsubscribe',
-              account: link_to(t('mailers.proposal_notification_digest.unsubscribe_account'),
-                              account_path)).html_safe %>
-        </p>
-      </td>
-    </tr>
-  </tbody>
-
+          <p style="font-family: 'Open Sans','Helvetica Neue',arial,sans-serif;font-size: 14px;font-weight: normal;line-height: 24px; margin: 0; font-style: italic; padding-bottom: 20px;">
+            <%= t('mailers.proposal_notification_digest.unsubscribe',
+                account: link_to(t('mailers.proposal_notification_digest.unsubscribe_account'),
+                                account_path, style: "color: #2895F1; text-decoration: none;")).html_safe %>
+          </p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </td>
