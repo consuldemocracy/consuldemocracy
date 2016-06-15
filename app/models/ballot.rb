@@ -27,6 +27,10 @@ class Ballot < ActiveRecord::Base
                        "Villa de Vallecas"   => 1220810,
                        "Villaverde"          => 2030275 }
 
+  def self.initial_budget(geozone)
+    geozone.blank? ? 24000000 : DISTRICT_BUDGETS[geozone.name].to_i
+  end
+
   def amount_spent(geozone)
     spending_proposals.by_geozone(geozone).sum(:price).to_i
   end
@@ -49,7 +53,7 @@ class Ballot < ActiveRecord::Base
   end
 
   def initial_budget(geozone)
-    geozone.blank? ? 24000000 : DISTRICT_BUDGETS[geozone.name].to_i
+    Ballot.initial_budget(geozone)
   end
 
   def has_district_wide_votes?
