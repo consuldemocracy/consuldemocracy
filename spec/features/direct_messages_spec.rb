@@ -24,12 +24,23 @@ feature 'Direct messages' do
 
   context "Permissions" do
 
-    scenario "Link to send the message" do
-      sender   = create(:user, :level_two)
+    scenario "Do not display link to send message to myself" do
+      sender = create(:user, :level_two)
 
       login_as(sender)
       visit user_path(sender)
 
+      expect(page).to_not have_link "Send private message"
+    end
+
+    scenario "Do not display link if direct message for user not allowed" do
+      sender   = create(:user, :level_two)
+      receiver = create(:user, :level_two, email_on_direct_message: false)
+
+      login_as(sender)
+      visit user_path(receiver)
+
+      expect(page).to have_content "This user doesn't accept private messages."
       expect(page).to_not have_link "Send private message"
     end
 

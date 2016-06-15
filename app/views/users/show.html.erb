@@ -2,11 +2,11 @@
   <div class="activity row margin-top">
     <div class="small-12 column">
 
-      <% if @user != current_user %> <!-- AND RECEIVE PRIVATE MESSAGES == TRUE -->
+      <% if @user != current_user && @user.email_on_direct_message? %>
         <%= link_to t("users.show.send_private_message"),
                     new_user_direct_message_path(@user),
                     class: "button hollow float-right" %>
-        <!-- ELSE -->
+      <% else %>
         <div class="callout primary float-right">
           <%= t("users.show.no_private_messages") %>
         </div>
