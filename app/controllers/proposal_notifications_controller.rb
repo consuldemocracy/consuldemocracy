@@ -13,9 +13,6 @@ class ProposalNotificationsController < ApplicationController
     if @notification.save
       @proposal.voters.each do |voter|
         Notification.add(voter.id, @notification)
-        if voter.email_on_proposal_notification?
-          Mailer.proposal_notification(@notification, voter).deliver_later
-        end
       end
       redirect_to @notification, notice: I18n.t("flash.actions.create.proposal_notification")
     else

@@ -15,7 +15,6 @@ en:
       public_activity_label: Keep my list of activities public
       save_changes_submit: Save changes
       subscription_to_website_newsletter_label: Receive by email website relevant information
-      email_on_proposal_notification_label: Receive by email notifications about proposals
       email_on_direct_message_label: Receive emails about direct messages
       email_digest_label: Receive a summary of proposal notifications
       title: My account

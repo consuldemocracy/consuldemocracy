@@ -183,62 +183,6 @@ feature 'Emails' do
 
   end
 
-  context "Proposal notifications" do
-
-    scenario "Proposal notification" do
-      author = create(:user)
-
-      noelia = create(:user)
-      vega = create(:user)
-      cristina = create(:user)
-
-      proposal = create(:proposal, author: author)
-
-      create(:vote, voter: noelia, votable: proposal, vote_flag: true)
-      create(:vote, voter: vega,   votable: proposal, vote_flag: true)
-
-      reset_mailer
-
-      login_as(author)
-      visit root_path
-
-      visit new_proposal_notification_path(proposal_id: proposal.id)
-
-      fill_in 'proposal_notification_title', with: "Thank you for supporting my proposal"
-      fill_in 'proposal_notification_body', with: "Please share it with others so we can make it happen!"
-      click_button "Send message"
-
-      expect(page).to have_content "Your message has been sent correctly."
-
-      expect(unread_emails_for(noelia.email).size).to   eql parse_email_count(1)
-      expect(unread_emails_for(vega.email).size).to     eql parse_email_count(1)
-      expect(unread_emails_for(cristina.email).size).to eql parse_email_count(0)
-      expect(unread_emails_for(author.email).size).to   eql parse_email_count(0)
-
-      email = open_last_email
-      expect(email).to have_subject("Thank you for supporting my proposal: #{proposal.title}")
-      expect(email).to have_body_text("Please share it with others so we can make it happen!")
-      expect(email).to have_body_text(proposal.title)
-    end
-
-    scenario "Do not send email about proposal notifications unless set in preferences", :js do
-      author = create(:user)
-      voter = create(:user, email_on_proposal_notification: false)
-
-      proposal = create(:proposal, author: author)
-      create(:vote, voter: voter, votable: proposal, vote_flag: true)
-
-      login_as(author)
-      visit new_proposal_notification_path(proposal_id: proposal.id)
-
-      fill_in 'proposal_notification_title', with: "Thank you for supporting my proposal"
-      fill_in 'proposal_notification_body', with: "Please share it with others so we can make it happen!"
-      click_button "Send message"
-
-      expect { open_last_email }.to raise_error "No email has been sent!"
-    end
-  end
-
   context "Proposal notification digest" do
 
     scenario "notifications for proposals that I have supported" do

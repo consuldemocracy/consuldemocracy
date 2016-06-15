@@ -35,7 +35,6 @@ feature 'Account' do
     fill_in 'account_username', with: 'Larry Bird'
     check 'account_email_on_comment'
     check 'account_email_on_comment_reply'
-    uncheck 'account_email_on_proposal_notification'
     uncheck 'account_email_digest'
     uncheck 'account_email_on_direct_message'
     click_button 'Save changes'

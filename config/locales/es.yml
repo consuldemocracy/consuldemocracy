@@ -15,7 +15,6 @@ es:
       public_activity_label: Mostrar públicamente mi lista de actividades
       save_changes_submit: Guardar cambios
       subscription_to_website_newsletter_label: Recibir emails con información interesante sobre la web
-      email_on_proposal_notification_label: Recibir emails con notificaciones sobre propuestas
       email_on_direct_message_label: Recibir emails con mensajes directos
       email_digest_label: Recibir resumen de notificaciones sobre propuestas
       title: Mi cuenta
