@@ -374,7 +374,7 @@ en:
       title_label: "Title"
       body_label: "Message"
       submit_button: "Send message"
-      info_about_receivers_html: "This message will be send to <strong>%{count} people</strong> and it will be visible in "
+      info_about_receivers_html: "This message will be send to <strong>%{count} people</strong> and it will be visible in %{proposal_page}."
       proposal_page: "the proposal's page"
     show:
       back: "Go back to my activity"
