@@ -232,7 +232,7 @@ es:
         other: Tienes %{count} notificaciones nuevas
       no_notifications: No tienes notificaciones nuevas
       open: abierto
-      open_city_slogan_html: En Madrid sus habitantes, <strong>debaten</strong> sobre temas que les preocupan, <strong>proponen</strong> ideas para mejorar sus vidas y <strong>deciden</strong> entre todas y todos las que se llevan a cabo.
+      open_city_slogan_html: En Madrid sus habitantes, <span>debaten sobre temas</span> que les preocupan, <span>proponen ideas</span> para mejorar sus vidas y <span>deciden entre todas y todos</span> las que se llevan a cabo.
       open_city_slogan_short: Existen ciudades gobernadas directamente por sus habitantes, Madrid ya es una de ellas.
       open_city_title: La ciudad que quieres será la ciudad que quieras.
       open_data: Datos abiertos
@@ -652,7 +652,7 @@ es:
         link: Participa en la votación final
         text: Tú decides cómo invertir 60 millones de euros para tu ciudad.
         title: Presupuestos participativos
-    more_information: Más información sobre esta página
+    more_information: Más información sobre %{org_name}
     proposal:
       alt: Icono propones
       description: Espacio abierto para propuestas ciudadanas sobre el tipo de ciudad en el que queremos vivir.
