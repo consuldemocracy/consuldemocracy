@@ -85,7 +85,9 @@
           </div>
         <% end %>
 
-        <h4><%= @proposal.question %></h4>
+        <% unless @proposal.proceeding? %>
+          <h4><%= @proposal.question %></h4>
+        <% end %>
 
         <% if @proposal.retired? %>
           <div id="retired_explanation" class="callout">
@@ -96,33 +98,37 @@
 
         <%= render 'shared/tags', taggable: @proposal %>
 
-        <%= render 'shared/geozone', geozonable: @proposal %>
+        <% unless @proposal.proceeding? %>
+          <%= render 'shared/geozone', geozonable: @proposal %>
+        <% end %>
 
         <div class="js-moderator-proposal-actions margin">
           <%= render 'proposals/actions', proposal: @proposal %>
         </div>
       </div>
 
-      <aside class="small-12 medium-3 column">
-        <div class="sidebar-divider"></div>
-        <h3><%= t("votes.supports") %></h3>
-        <div class="text-center">
-          <div id="<%= dom_id(@proposal) %>_votes">
-           <%= render 'votes',
-                      { proposal: @proposal, vote_url: vote_proposal_path(@proposal, value: 'yes') } %>
+      <% unless @proposal.proceeding? %>
+        <aside class="small-12 medium-3 column">
+          <div class="sidebar-divider"></div>
+          <h3><%= t("votes.supports") %></h3>
+          <div class="text-center">
+            <div id="<%= dom_id(@proposal) %>_votes">
+             <%= render 'votes',
+                        { proposal: @proposal, vote_url: vote_proposal_path(@proposal, value: 'yes') } %>
+            </div>
           </div>
-        </div>
-        <div id="social-share" class="sidebar-divider"></div>
-        <h3><%= t("proposals.show.share") %></h3>
-        <div class="social-share-full">
-          <%= social_share_button_tag("#{@proposal.title} #{setting['twitter_hashtag']}") %>
-          <% if browser.device.mobile? %>
-            <a href="whatsapp://send?text=<%= @proposal.title %> <%= proposal_url(@proposal) %>" data-action="share/whatsapp/share">
-              <span class="icon-whatsapp whatsapp"></span>
-            </a>
-          <% end %>
-        </div>
-      </aside>
+          <div id="social-share" class="sidebar-divider"></div>
+          <h3><%= t("proposals.show.share") %></h3>
+          <div class="social-share-full">
+            <%= social_share_button_tag("#{@proposal.title} #{setting['twitter_hashtag']}") %>
+            <% if browser.device.mobile? %>
+              <a href="whatsapp://send?text=<%= @proposal.title %> <%= proposal_url(@proposal) %>" data-action="share/whatsapp/share">
+                <span class="icon-whatsapp whatsapp"></span>
+              </a>
+            <% end %>
+          </div>
+        </aside>
+      <% end %>
     </div>
   </section>
 <% end %>

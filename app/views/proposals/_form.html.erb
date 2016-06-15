@@ -27,13 +27,15 @@
 
     <%= f.invisible_captcha :subtitle %>
 
-    <div class="small-12 column">
-      <%= f.label :question, t("proposals.form.proposal_question") %>
-      <span class="note-marked">
-        <%= t("proposals.form.proposal_question_example_html") %>
-      </span>
-      <%= f.text_field :question, maxlength: Proposal.question_max_length, placeholder: t("proposals.form.proposal_question"), label: false %>
-    </div>
+    <% unless @proposal.proceeding? %>
+      <div class="small-12 column">
+        <%= f.label :question, t("proposals.form.proposal_question") %>
+        <span class="note-marked">
+          <%= t("proposals.form.proposal_question_example_html") %>
+        </span>
+        <%= f.text_field :question, maxlength: Proposal.question_max_length, placeholder: t("proposals.form.proposal_question"), label: false %>
+      </div>
+    <% end %>
 
     <div class="small-12 column">
       <%= f.label :summary, t("proposals.form.proposal_summary") %>
@@ -59,10 +61,12 @@
       <%= f.text_field :external_url, placeholder: t("proposals.form.proposal_external_url"), label: false %>
     </div>
 
-    <div class="small-12 medium-6 column">
-      <%= f.label :geozone_id,  t("proposals.form.geozone") %>
-      <%= f.select :geozone_id, geozone_select_options, {include_blank: t("geozones.none"), label: false} %>
-    </div>
+    <% unless @proposal.proceeding? %>
+      <div class="small-12 medium-6 column">
+        <%= f.label :geozone_id,  t("proposals.form.geozone") %>
+        <%= f.select :geozone_id, geozone_select_options, {include_blank: t("geozones.none"), label: false} %>
+      </div>
+    <% end %>
 
     <div class="small-12 column">
       <%= f.label :tag_list, t("proposals.form.tags_label") %>
