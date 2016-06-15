@@ -233,6 +233,7 @@ en:
         assigned_admin: Assigned administrator
         no_admin_assigned: No admin assigned
         no_valuators_assigned: No valuators assigned
+        results_link: "Current results"
         summary_link: "Investment project summary"
         valuator_summary_link: "Valuator summary"
         feasibility:
@@ -262,6 +263,12 @@ en:
         tags: Tags
         tags_placeholder: "Write the tags you want separated by commas (,)"
         undefined: Undefined
+      results:
+        title: Current final voting ranking
+        spending_proposal: Proposal title
+        ballot_lines_count: Times selected
+        price: Cost
+        amount_available: Available budget
       summary:
         title: Summary for investment projects
         geozone_name: Scope
