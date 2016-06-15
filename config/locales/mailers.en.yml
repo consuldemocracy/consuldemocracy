@@ -44,3 +44,4 @@ en:
       unsubscribe_account: My account
     direct_message_for_sender:
       subject: "You have send a new private message"
+      title_html: "You have send a new private message to <strong>%{receiver}</strong> with the content:"
