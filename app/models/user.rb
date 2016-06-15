@@ -31,7 +31,7 @@ class User < ActiveRecord::Base
 
   validate :validate_username_length
 
-  validates :official_level, inclusion: {in: 0..21}
+  validates :official_level, inclusion: {in: 0..6}
   validates :terms_of_service, acceptance: { allow_nil: false }, on: :create
 
   validates :locale, inclusion: {in: I18n.available_locales.map(&:to_s),
@@ -47,7 +47,7 @@ class User < ActiveRecord::Base
   scope :administrators, -> { joins(:administrators) }
   scope :moderators,     -> { joins(:moderator) }
   scope :organizations,  -> { joins(:organization) }
-  scope :officials,      -> { where("official_level > 0 and official_level < 21") }
+  scope :officials,      -> { where("official_level > 0") }
   scope :for_render,     -> { includes(:organization) }
   scope :by_document,    -> (document_type, document_number) { where(document_type: document_type, document_number: document_number) }
 
@@ -118,7 +118,7 @@ class User < ActiveRecord::Base
   end
 
   def official?
-    official_level && official_level > 0 and official_level < 21
+    official_level && official_level > 0
   end
 
   def user_level?

@@ -3,13 +3,12 @@ module SearchHelper
   def official_level_search_options
     options_for_select([
       [t("shared.advanced_search.author_type_0"), 0],
-      [t("shared.advanced_search.author_type_21"), 21],
       [t("shared.advanced_search.author_type_1"), 1],
-#      [t("shared.advanced_search.author_type_2"), 2],
       [t("shared.advanced_search.author_type_3"), 3],
       [t("shared.advanced_search.author_type_4"), 4],
-      [t("shared.advanced_search.author_type_5"), 5]],
-    params[:advanced_search].try(:[], :official_level))
+      [t("shared.advanced_search.author_type_5"), 5],
+      [t("shared.advanced_search.author_type_6"), 6]],
+      params[:advanced_search].try(:[], :official_level))
   end
 
   def date_range_options

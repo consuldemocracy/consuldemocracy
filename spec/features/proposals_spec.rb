@@ -805,7 +805,7 @@ feature 'Proposals' do
         end
 
         scenario "Collective Users", :js do
-          ana = create :user, official_level: 21
+          ana = create :user, official_level: 6
           john = create :user, official_level: 1
 
           proposal1 = create(:proposal, author: ana)

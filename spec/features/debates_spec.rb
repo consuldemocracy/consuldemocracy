@@ -550,7 +550,7 @@ feature 'Debates' do
         end
 
         scenario "Collective Users", :js do
-          ana = create :user, official_level: 21
+          ana = create :user, official_level: 6
           john = create :user, official_level: 1
 
           debate1 = create(:debate, author: ana)
