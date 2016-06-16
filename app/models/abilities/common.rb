@@ -59,6 +59,7 @@ module Abilities
         can [:create, :destroy], BallotLine
       end
 
+      can [:create, :read], Answer
       can :create, Annotation
       can [:update, :destroy], Annotation, user_id: user.id
     end
