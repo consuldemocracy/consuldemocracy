@@ -15,6 +15,8 @@ es:
       public_activity_label: Mostrar públicamente mi lista de actividades
       save_changes_submit: Guardar cambios
       subscription_to_website_newsletter_label: Recibir emails con información interesante sobre la web
+      email_on_direct_message_label: Recibir emails con mensajes directos
+      email_digest_label: Recibir resumen de notificaciones sobre propuestas
       title: Mi cuenta
       user_permission_debates: Participar en debates
       user_permission_info: Con tu cuenta ya puedes...
@@ -141,11 +143,13 @@ es:
     accept_terms_title: Acepto la Política de privacidad y las Condiciones de uso
     conditions: Condiciones de uso
     debate: el debate
+    direct_message: el mensaje privado
     error: error
     errors: errores
     not_saved: 'impidieron guardar %{resource}:'
     policy: Política de privacidad
     proposal: la propuesta
+    proposal_notification: "la notificación"
     spending_proposal: la propuesta de gasto
     user: la cuenta
     verification/sms: el teléfono
@@ -221,6 +225,9 @@ es:
         other: Hay %{count} comentarios nuevos en
       empty_notifications: No tienes notificaciones nuevas.
       mark_all_as_read: Marcar todas como leídas
+      proposal_notification:
+        one: Hay una nueva notificación en
+        other: Hay %{count} nuevas notificaciones en
       replies_to:
         one: Hay una respuesta nueva a tu comentario en
         other: Hay %{count} nuevas respuestas a tu comentario en
@@ -349,17 +356,30 @@ es:
         one: 1 Comentario
         other: "%{count} Comentarios"
         zero: Sin comentarios
-      comments_title: Comentarios
+      comments_tab: Comentarios
       edit_proposal_link: Editar propuesta
       flag: Esta propuesta ha sido marcada como inapropiada por varios usuarios.
       login_to_comment: Necesitas %{signin} o %{signup} para comentar.
+      notifications_tab: Notificaciones
       retired_warning: "El autor de esta propuesta considera que ya no debe seguir recogiendo apoyos."
       retired_warning_link_to_explanation: Revisa su explicación antes de apoyarla.
       retired: Propuesta retirada por el autor
+      send_notification: Enviar notificación
       share: Compartir
+      no_notifications: "Esta propuesta no tiene notificaciones."
     update:
       form:
         submit_button: Guardar cambios
+  proposal_notifications:
+    new:
+      title: "Enviar mensaje"
+      title_label: "Título"
+      body_label: "Mensaje"
+      submit_button: "Enviar mensaje"
+      info_about_receivers_html: "Este mensaje se enviará a <strong>%{count} usuarios</strong> y se publicará en %{proposal_page}.<br> El mensaje no se enviará inmediatamente, los usuarios recibirán periódicamente un email con todas las notificaciones de propuestas."
+      proposal_page: "la página de la propuesta"
+    show:
+      back: "Volver a mi actividad"
   shared:
     advanced_search:
       author_type: 'Por categoría de autor'
@@ -483,6 +503,20 @@ es:
     manage:
       all: "No tienes permiso para realizar la acción '%{action}' sobre %{subject}."
   users:
+    direct_messages:
+      new:
+        body_label: "Mensaje"
+        direct_messages_bloqued: "Este usuarios ha decidido no recibir mensajes directos"
+        submit_button: "Enviar mensaje"
+        title: Enviar mensaje privado a %{receiver}
+        title_label: "Título"
+        verified_only: Para enviar un mensaje privado %{verify_account}
+        verify_account: verifica tu cuenta
+        authenticate: Necesitas %{signin} o %{signup}.
+        signin: iniciar sesión
+        signup: registrarte
+      show:
+        receiver: Mensaje enviado a %{receiver}
     show:
       deleted: Eliminado
       deleted_debate: Este debate ha sido eliminado
@@ -503,9 +537,13 @@ es:
           one: 1 Propuesta de inversión
           other: "%{count} Propuestas de inversión"
       no_activity: Usuario sin actividad pública
+      no_private_messages: "Este usuario no acepta mensajes privados."
       private_activity: Este usuario ha decidido mantener en privado su lista de actividades
-      retire: Retirar
-      retired: Retirada
+      send_private_message: "Enviar un mensaje privado"
+    proposals:
+      send_notification: "Enviar notificación"
+      retire: "Retirar"
+      retired: "Retirada"
   votes:
     agree: Estoy de acuerdo
     anonymous: Demasiados votos anónimos, para poder votar %{verify_account}.

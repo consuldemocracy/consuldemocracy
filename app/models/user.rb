@@ -23,6 +23,8 @@ class User < ActiveRecord::Base
   has_many :spending_proposals, foreign_key: :author_id
   has_many :failed_census_calls
   has_many :notifications
+  has_many :direct_messages_sent,     class_name: 'DirectMessage', foreign_key: :sender_id
+  has_many :direct_messages_received, class_name: 'DirectMessage', foreign_key: :receiver_id
   belongs_to :geozone
 
   validates :username, presence: true, if: :username_required?
@@ -50,6 +52,7 @@ class User < ActiveRecord::Base
   scope :officials,      -> { where("official_level > 0") }
   scope :for_render,     -> { includes(:organization) }
   scope :by_document,    -> (document_type, document_number) { where(document_type: document_type, document_number: document_number) }
+  scope :email_digest,   -> { where(email_digest: true) }
 
   before_validation :clean_document_number
 

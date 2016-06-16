@@ -13,6 +13,7 @@ class Management::ProposalsController < Management::BaseController
 
   def show
     super
+    @notifications = @proposal.notifications
     redirect_to management_proposal_path(@proposal), status: :moved_permanently if request.path != management_proposal_path(@proposal)
   end
 

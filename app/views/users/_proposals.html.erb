@@ -7,17 +7,25 @@
         <%= proposal.summary %>
       </td>
 
+      <% if author? %>
+        <td class="text-center">
+          <%= link_to t("users.proposals.send_notification"), new_proposal_notification_path(proposal_id: proposal.id),
+            class: 'button hollow' %>
+        </td>
+      <% end %>
+
       <% if author_or_admin? %>
         <td class="text-center">
           <% if proposal.retired? %>
-            <span class="label alert"><%= t('users.show.retired') %></span>
+            <span class="label alert"><%= t('users.proposals.retired') %></span>
           <% else %>
-            <%= link_to t('users.show.retire'),
+            <%= link_to t('users.proposals.retire'),
                         retire_form_proposal_path(proposal),
-                        class: 'delete' %>
+                        class: 'button hollow alert' %>
           <% end %>
         </td>
       <% end %>
+
     </tr>
   <% end %>
 </table>

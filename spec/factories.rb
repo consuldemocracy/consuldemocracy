@@ -1,5 +1,4 @@
 FactoryGirl.define do
-
   sequence(:document_number) { |n| "#{n.to_s.rjust(8, '0')}X" }
 
   factory :user do
@@ -137,7 +136,7 @@ FactoryGirl.define do
 
   factory :proposal do
     sequence(:title)     { |n| "Proposal #{n} title" }
-    summary              'In summary, what we want is...'
+    sequence(:summary)   { |n| "In summary, what we want is... #{n}" }
     description          'Proposal description'
     question             'Proposal question'
     external_url         'http://external_documention.es'
@@ -323,7 +322,20 @@ FactoryGirl.define do
     style {["banner-style-one", "banner-style-two", "banner-style-three"].sample}
     image {["banner.banner-img-one", "banner.banner-img-two", "banner.banner-img-three"].sample}
     target_url {["/proposals", "/debates" ].sample}
-    post_started_at Time.now - 7.days 
-    post_ended_at Time.now + 7.days 
+    post_started_at Time.now - 7.days
+    post_ended_at Time.now + 7.days
+  end
+
+  factory :proposal_notification do
+    title    "Thank you for supporting my proposal"
+    body     "Please let others know so we can make it happen"
+    proposal
+  end
+
+  factory :direct_message do
+    title    "Hey"
+    body     "How are You doing?"
+    association :sender,   factory: :user
+    association :receiver, factory: :user
   end
 end

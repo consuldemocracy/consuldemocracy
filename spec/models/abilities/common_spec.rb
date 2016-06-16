@@ -37,6 +37,10 @@ describe "Abilities::Common" do
   it { should_not be_able_to(:comment_as_administrator, proposal) }
   it { should_not be_able_to(:comment_as_moderator, proposal) }
 
+  it { should be_able_to(:new, DirectMessage) }
+  it { should_not be_able_to(:create, DirectMessage) }
+  it { should_not be_able_to(:show, DirectMessage) }
+
   describe 'flagging content' do
     it { should be_able_to(:flag, debate) }
     it { should be_able_to(:unflag, debate) }
@@ -85,6 +89,7 @@ describe "Abilities::Common" do
 
   describe "when level 2 verified" do
     let(:own_spending_proposal) { create(:spending_proposal, author: user) }
+    let(:own_direct_message) { create(:direct_message, sender: user) }
     before{ user.update(residence_verified_at: Time.now, confirmed_phone: "1") }
 
     it { should be_able_to(:vote, Proposal) }
@@ -93,10 +98,16 @@ describe "Abilities::Common" do
     it { should be_able_to(:create, SpendingProposal) }
     it { should_not be_able_to(:destroy, create(:spending_proposal)) }
     it { should_not be_able_to(:destroy, own_spending_proposal) }
+
+    it { should be_able_to(:new, DirectMessage) }
+    it { should be_able_to(:create, DirectMessage) }
+    it { should be_able_to(:show, own_direct_message) }
+    it { should_not be_able_to(:show, create(:direct_message)) }
   end
 
   describe "when level 3 verified" do
     let(:own_spending_proposal) { create(:spending_proposal, author: user) }
+    let(:own_direct_message) { create(:direct_message, sender: user) }
     before{ user.update(verified_at: Time.now) }
 
     it { should be_able_to(:vote, Proposal) }
@@ -105,5 +116,10 @@ describe "Abilities::Common" do
     it { should be_able_to(:create, SpendingProposal) }
     it { should_not be_able_to(:destroy, create(:spending_proposal)) }
     it { should_not be_able_to(:destroy, own_spending_proposal) }
+
+    it { should be_able_to(:new, DirectMessage) }
+    it { should be_able_to(:create, DirectMessage) }
+    it { should be_able_to(:show, own_direct_message) }
+    it { should_not be_able_to(:show, create(:direct_message)) }
   end
 end
