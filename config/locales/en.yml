@@ -34,6 +34,12 @@ en:
   application:
     close: Close
     menu: Menu
+  answers:
+    index:
+      title: Respuesta enviada
+      sent: Tu respuesta ha sido enviada. Gracias por participar.
+    new:
+      send: Send answer
   comments:
     comment:
       admin: Administrator
