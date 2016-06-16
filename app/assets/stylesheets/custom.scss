@@ -994,12 +994,6 @@ table.age-groups {
 .jumbo-investment-project-votes {
   background: #F6F5F8;
 
-  @include breakpoint(large) {
-    background: #F6F5F8 image-url('investment_project_welcome.png');
-    background-position: 200%;
-    background-repeat: no-repeat;
-  }
-
   .content {
     background: #F6F5F8;
 
@@ -1020,6 +1014,11 @@ table.age-groups {
       background: $budget-hover;
     }
   }
+}
+
+.jumbo-investment-image {
+  height: rem-calc(387);
+  position: absolute;
 }
 
 .investment-projects-scope {

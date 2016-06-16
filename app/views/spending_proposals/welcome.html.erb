@@ -3,8 +3,8 @@
 <%= render "shared/social_media_meta_tags_participatory_budget" %>
 <% end %>
 <div class="expanded jumbo-investment-project-votes no-margin-top margin-bottom">
-  <div class="row">
-    <div class="small-12 large-7 column content">
+  <div class="row" data-equalizer>
+    <div class="small-12 large-7 column content" data-equalizer-watch>
       <h1><%= t("spending_proposals.welcome.title") %></h1>
       <p><%= t("spending_proposals.welcome.text_first_html") %></p>
       <p><%= t("spending_proposals.welcome.text_second_html") %></p>
@@ -30,6 +30,10 @@
           </p>
         </div>
       </div>
+    </div>
+
+    <div class="show-for-large large-5 column" data-equalizer-watch>
+      <%= image_tag "investment_project_welcome.png", class: "jumbo-investment-image" %>
     </div>
   </div>
 </div>
