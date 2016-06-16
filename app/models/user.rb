@@ -23,7 +23,8 @@ class User < ActiveRecord::Base
   has_many :spending_proposals, foreign_key: :author_id
   has_many :failed_census_calls
   has_many :notifications
-  has_many :direct_messages
+  has_many :direct_messages_sent,     class_name: 'DirectMessage', foreign_key: :sender_id
+  has_many :direct_messages_received, class_name: 'DirectMessage', foreign_key: :receiver_id
   belongs_to :geozone
 
   validates :username, presence: true, if: :username_required?

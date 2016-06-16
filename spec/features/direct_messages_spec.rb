@@ -72,4 +72,33 @@ feature 'Direct messages' do
     expect(page).to have_content error_message
   end
 
+  context "Limits" do
+
+    background do
+      Setting[:direct_message_max_per_day] = 3
+    end
+
+    scenario "Can only send a maximum number of direct messages per day" do
+      sender   = create(:user, :level_two)
+      receiver = create(:user, :level_two)
+
+      3.times { create(:direct_message, sender: sender) }
+
+      login_as(sender)
+      visit user_path(receiver)
+
+      click_link "Send private message"
+
+      expect(page).to have_content "Send private message to #{receiver.name}"
+
+      fill_in 'direct_message_title', with: "Hey!"
+      fill_in 'direct_message_body',  with: "How are you doing?"
+      click_button "Send message"
+
+      expect(page).to have_content "You can only send a maximum of 3 direct messages per day"
+      expect(page).to_not have_content "You message has been sent successfully."
+    end
+
+  end
+
 end

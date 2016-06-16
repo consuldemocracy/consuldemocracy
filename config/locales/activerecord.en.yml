@@ -78,6 +78,10 @@ en:
           attributes:
             tag_list:
               less_than_or_equal_to: "tags must be less than or equal to %{count}"
+        direct_message:
+          attributes:
+            max_per_day:
+              invalid: "You can only send a maximum of %{max} direct messages per day"
         proposal:
           attributes:
             tag_list:
