@@ -290,6 +290,7 @@ es:
         proposal_notifications: Notificaciones de propuestas
       direct_messages:
         title: Mensajes directos
+        total: Total
         users_who_have_sent_message: Usuarios que han enviado un mensaje privado
       proposal_notifications:
         title: Notificaciones de propuestas

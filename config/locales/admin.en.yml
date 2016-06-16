@@ -292,6 +292,7 @@ en:
         proposal_notifications: Proposal notifications
       direct_messages:
         title: Direct messages
+        total: Total
         users_who_have_sent_message: Users that have sent a private message
       proposal_notifications:
         title: Proposal notifications
