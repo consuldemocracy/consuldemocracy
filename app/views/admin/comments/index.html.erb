@@ -20,12 +20,12 @@
               restore_admin_comment_path(comment, request.query_parameters),
               method: :put,
               data: { confirm: t("admin.actions.confirm") },
-              class: "button hollow on-hover" %>
+              class: "button hollow on-hover-block" %>
         <% unless comment.confirmed_hide? %>
           <%= link_to t("admin.actions.confirm_hide"),
                 confirm_hide_admin_comment_path(comment, request.query_parameters),
                 method: :put,
-                class: "button hollow warning on-hover" %>
+                class: "button hollow warning on-hover-block" %>
         <% end %>
       </td>
     </tr>

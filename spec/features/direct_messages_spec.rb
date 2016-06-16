@@ -113,7 +113,7 @@ feature 'Direct messages' do
       fill_in 'direct_message_body',  with: "How are you doing?"
       click_button "Send message"
 
-      expect(page).to have_content "You can only send a maximum of 3 direct messages per day"
+      expect(page).to have_content "You have reached the maximum number of private messages per day"
       expect(page).to_not have_content "You message has been sent successfully."
     end
 
