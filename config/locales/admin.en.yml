@@ -233,7 +233,6 @@ en:
         assigned_admin: Assigned administrator
         no_admin_assigned: No admin assigned
         no_valuators_assigned: No valuators assigned
-        results_link: "Current results"
         summary_link: "Investment project summary"
         valuator_summary_link: "Valuator summary"
         feasibility:
