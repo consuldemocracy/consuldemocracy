@@ -15,7 +15,7 @@ es:
       public_activity_label: Mostrar públicamente mi lista de actividades
       save_changes_submit: Guardar cambios
       subscription_to_website_newsletter_label: Recibir emails con información interesante sobre la web
-      email_on_direct_message_label: Recibir emails con mensajes directos
+      email_on_direct_message_label: Recibir emails con mensajes privados
       email_digest_label: Recibir resumen de notificaciones sobre propuestas
       title: Mi cuenta
       user_permission_debates: Participar en debates
@@ -506,7 +506,7 @@ es:
     direct_messages:
       new:
         body_label: "Mensaje"
-        direct_messages_bloqued: "Este usuarios ha decidido no recibir mensajes directos"
+        direct_messages_bloqued: "Este usuario ha decidido no recibir mensajes privados"
         submit_button: "Enviar mensaje"
         title: Enviar mensaje privado a %{receiver}
         title_label: "Título"
