@@ -63,6 +63,17 @@ ActiveRecord::Schema.define(version: 20160622152333) do
   add_index "annotations", ["legislation_id"], name: "index_annotations_on_legislation_id", using: :btree
   add_index "annotations", ["user_id"], name: "index_annotations_on_user_id", using: :btree
 
+  create_table "answers", force: :cascade do |t|
+    t.integer  "author_id"
+    t.text     "text"
+    t.string   "context"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "answers", ["author_id"], name: "index_answers_on_author_id", using: :btree
+  add_index "answers", ["context"], name: "index_answers_on_context", using: :btree
+
   create_table "audits", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
