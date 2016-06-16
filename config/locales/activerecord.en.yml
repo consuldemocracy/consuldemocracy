@@ -81,7 +81,7 @@ en:
         direct_message:
           attributes:
             max_per_day:
-              invalid: "You can only send a maximum of %{max} direct messages per day"
+              invalid: "You have reached the maximum number of private messages per day"
         proposal:
           attributes:
             tag_list:
