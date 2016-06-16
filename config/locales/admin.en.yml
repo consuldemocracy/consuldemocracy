@@ -288,6 +288,15 @@ en:
           votes: Total votes
         spending_proposals_title: Spending Proposals
         visits_title: Visits
+        direct_messages: Direct messages
+        proposal_notifications: Proposal notifications
+      direct_messages:
+        title: Direct messages
+        users_who_have_sent_message: Users that have sent a private message
+      proposal_notifications:
+        title: Proposal notifications
+        total: Total
+        proposals_with_notifications: Proposals with notifications
     tags:
       create: Create Topic
       destroy: Destroy Topic

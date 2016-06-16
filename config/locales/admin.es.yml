@@ -292,7 +292,7 @@ es:
         title: Mensajes directos
         users_who_have_sent_message: Usuarios que han enviado un mensaje privado
       proposal_notifications:
-        title: Mensajes directos
+        title: Notificaciones de propuestas
         total: Total
         proposals_with_notifications: Propuestas con notificaciones
     tags:

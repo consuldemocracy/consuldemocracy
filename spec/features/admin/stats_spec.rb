@@ -70,4 +70,64 @@ feature 'Stats' do
     expect(page).to have_content "Level 2 User (1)"
   end
 
+  context "Proposal notifications" do
+
+    scenario "Summary stats" do
+      proposal = create(:proposal)
+
+      create(:proposal_notification, proposal: proposal)
+      create(:proposal_notification, proposal: proposal)
+      create(:proposal_notification)
+
+      visit admin_stats_path
+      click_link "Proposal notifications"
+
+      within("#proposal_notifications_count") do
+        expect(page).to have_content "3"
+      end
+
+      within("#proposals_with_notifications_count") do
+        expect(page).to have_content "2"
+      end
+    end
+
+    scenario "Index" do
+      3.times { create(:proposal_notification) }
+
+      visit admin_stats_path
+      click_link "Proposal notifications"
+
+      expect(page).to have_css(".proposal_notification", count: 3)
+
+      ProposalNotification.all.each do |proposal_notification|
+        expect(page).to have_content proposal_notification.title
+        expect(page).to have_content proposal_notification.body
+      end
+    end
+
+  end
+
+  context "Direct messages" do
+
+    scenario "Summary stats" do
+      sender = create(:user, :level_two)
+
+      create(:direct_message, sender: sender)
+      create(:direct_message, sender: sender)
+      create(:direct_message)
+
+      visit admin_stats_path
+      click_link "Direct messages"
+
+      within("#direct_messages_count") do
+        expect(page).to have_content "3"
+      end
+
+      within("#users_who_have_sent_message_count") do
+        expect(page).to have_content "2"
+      end
+    end
+
+  end
+
 end
