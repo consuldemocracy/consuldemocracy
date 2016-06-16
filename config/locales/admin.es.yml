@@ -264,6 +264,8 @@ es:
         title: Ranking actual de propuestas - Votaciones finales
         spending_proposal: Título
         ballot_lines_count: Votos
+        hide_discarded_link: Ocultar descartadas
+        show_all_link: Mostrar todas
         price: Coste
         amount_available: Presupuesto disponible
       summary:

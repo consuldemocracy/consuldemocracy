@@ -266,6 +266,8 @@ en:
         title: Current final voting ranking
         spending_proposal: Proposal title
         ballot_lines_count: Times selected
+        hide_discarded_link: Hide discarded
+        show_all_link: Show all
         price: Cost
         amount_available: Available budget
       summary:

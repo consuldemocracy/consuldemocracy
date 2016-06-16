@@ -14,7 +14,9 @@
   <% end %>
 </div>
 
-<h3><%= page_entries_info @spending_proposals %></h3>
+<h3 class="inline-block"><%= page_entries_info @spending_proposals %></h3>
+
+ <span class="float-right"><%= link_to t("admin.spending_proposals.results.hide_discarded_link"), "#", class: "js-toggle-link button hollow margin-bottom", data: {'toggle-selector' => '.js-discarded', 'toggle-text' => t("admin.spending_proposals.results.show_all_link")} %></span>
 
 <table id="spending-proposals-results">
   <th><%= t("admin.spending_proposals.results.spending_proposal") %></th>
@@ -27,7 +29,7 @@
     <% initial_budget = available_budget
        budget = available_budget - spending_proposal.price
        available_budget = budget if budget >= 0 %>
-    <tr id="<%= dom_id(spending_proposal) %>" class="spending_proposal <%= 'success' if budget >= 0 %>">
+    <tr id="<%= dom_id(spending_proposal) %>" class="spending_proposal <%= budget >= 0 ? 'success' : 'js-discarded' %>">
       <td>
         <% if budget >= 0 %>
           <span class="icon-check"></span>
