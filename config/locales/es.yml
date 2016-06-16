@@ -143,6 +143,7 @@ es:
     accept_terms_title: Acepto la Política de privacidad y las Condiciones de uso
     conditions: Condiciones de uso
     debate: el debate
+    direct_message: el mensaje privado
     error: error
     errors: errores
     not_saved: 'impidieron guardar %{resource}:'
@@ -504,11 +505,15 @@ es:
     direct_messages:
       new:
         body_label: "Mensaje"
+        direct_messages_bloqued: "Este usuarios ha decidido no recibir mensajes directos"
         submit_button: "Enviar mensaje"
         title: Enviar mensaje privado a %{receiver}
         title_label: "Título"
         verified_only: Para enviar un mensaje privado %{verify_account}
         verify_account: verifica tu cuenta
+        authenticate: Necesitas %{signin} o %{signup}.
+        signin: iniciar sesión
+        signup: registrarte
       show:
         receiver: Mensaje enviado a %{receiver}
     show:

@@ -2,6 +2,10 @@ require 'rails_helper'
 
 feature 'Direct messages' do
 
+  background do
+    Setting[:direct_message_max_per_day] = 3
+  end
+
   scenario "Create" do
     sender   = create(:user, :level_two)
     receiver = create(:user, :level_two)
@@ -44,19 +48,37 @@ feature 'Direct messages' do
       expect(page).to_not have_link "Send private message"
     end
 
-    scenario "Accessing form directly" do
-      user = create(:user)
-      author = create(:user)
-      proposal = create(:proposal, author: author)
+    scenario "Unverified user" do
+      sender = create(:user)
+      receiver = create(:user)
 
-      login_as(user)
-      visit new_proposal_notification_path(proposal_id: proposal.id)
+      login_as(sender)
+      visit new_user_direct_message_path(receiver)
 
-      expect(current_path).to eq(proposals_path)
-      expect(page).to have_content("You do not have permission to carry out the action")
+      expect(page).to have_content "To send a private message verify your account"
+      expect(page).to_not have_link "Send private message"
     end
 
-    pending "unverified user"
+    scenario "User not logged in" do
+      sender = create(:user)
+      receiver = create(:user)
+
+      visit new_user_direct_message_path(receiver)
+
+      expect(page).to have_content "You must sign in or sign up to continue."
+      expect(page).to_not have_link "Send private message"
+    end
+
+    scenario "Accessing form directly" do
+      sender   = create(:user, :level_two)
+      receiver = create(:user, :level_two, email_on_direct_message: false)
+
+      login_as(sender)
+      visit new_user_direct_message_path(receiver)
+
+      expect(page).to have_content("This user has decided not to receive direct messages")
+      expect(page).to_not have_css("#direct_message_title")
+    end
 
   end
 
@@ -73,10 +95,6 @@ feature 'Direct messages' do
   end
 
   context "Limits" do
-
-    background do
-      Setting[:direct_message_max_per_day] = 3
-    end
 
     scenario "Can only send a maximum number of direct messages per day" do
       sender   = create(:user, :level_two)

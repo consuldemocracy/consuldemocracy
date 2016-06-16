@@ -504,11 +504,15 @@ en:
     direct_messages:
       new:
         body_label: Message
+        direct_messages_bloqued: "This user has decided not to receive direct messages"
         submit_button: Send message
         title: Send private message to %{receiver}
         title_label: Title
         verified_only: To send a private message %{verify_account}
         verify_account: verify your account
+        authenticate: You must %{signin} or %{signup} to continue.
+        signin: sign in
+        signup: sign up
       show:
         receiver: Message sent to %{receiver}
     show:
