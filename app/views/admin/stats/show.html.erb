@@ -1,21 +1,20 @@
 <% content_for :head do %>
   <%= javascript_include_tag "stat_graphs", 'data-turbolinks-track' => true %>
 <% end %>
-<div class="stats row-full">
+<div class="stats">
   <div class="row">
     <div class="small-12 column">
-      <h1><%= t "admin.stats.show.stats_title" %></h1>
+      <h1 class="inline-block"><%= t "admin.stats.show.stats_title" %></h1>
 
-      <div class="row">
-        <div class="small-24 medium-6 column">
-          <%= link_to t("admin.stats.show.direct_messages"),
-                      direct_messages_admin_stats_path %>
-        </div>
-        <div class="small-24 medium-6 column">
-          <%= link_to t("admin.stats.show.proposal_notifications"),
-                      proposal_notifications_admin_stats_path %>
-        </div>
+      <div class="float-right clear">
+        <%= link_to t("admin.stats.show.direct_messages"),
+                    direct_messages_admin_stats_path, class: "button hollow" %>
+        <%= link_to t("admin.stats.show.proposal_notifications"),
+                    proposal_notifications_admin_stats_path, class: "button hollow" %>
+
       </div>
+
+      <div class="clear"></div>
 
       <div class="row stats-numbers">
         <div class="small-12 medium-3 column">
