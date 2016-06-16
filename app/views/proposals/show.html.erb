@@ -38,7 +38,8 @@
         <% end %>
 
         <% if @proposal.proceeding? %>
-          <h2><%= @proposal.proceeding %> - <%= @proposal.sub_proceeding %></h2>
+          <h2 class="proceeding"><%= @proposal.proceeding %></h2>
+          <h3 class="sub-proceeding"><%= @proposal.sub_proceeding %></h3>
         <% end %>
 
         <div class="proposal-info">

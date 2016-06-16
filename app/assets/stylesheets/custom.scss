@@ -1478,10 +1478,18 @@ table.age-groups {
     border: 0;
     border-radius: rem-calc(6);
     margin: $line-height/2 $line-height/4;
-    min-height: $line-height*6;
+    min-height: $line-height*5;
     padding: 0;
     position: relative;
     vertical-align: top;
+
+    @include breakpoint(medium) {
+      min-height: $line-height*7;
+    }
+
+    @include breakpoint(large) {
+      min-height: $line-height*6;
+    }
 
     &:hover {
       background: $highlight;
@@ -1505,6 +1513,31 @@ table.age-groups {
       position: absolute;
       text-decoration: none;
       width: 100%;
+    }
+  }
+}
+
+.proposal-new, .proposal-show {
+
+  h2.proceeding {
+    color: #cacaca;
+  }
+
+  h3.sub-proceeding {
+    background: $highlight;
+    border-radius: rem-calc(6);
+    color: $brand;
+    font-size: rem-calc(18);
+    padding: $line-height/2;
+    position: relative;
+
+    &:after {
+      color: $brand;
+      content: "\56";
+      font-family: "icons";
+      position: absolute;
+      right: -6px;
+      top: -12px;
     }
   }
 }

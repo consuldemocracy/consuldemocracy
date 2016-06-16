@@ -2,16 +2,17 @@
   <%= render 'shared/errors', resource: @proposal %>
 
   <% if @proposal.proceeding? %>
-    <h2><%= @proposal.proceeding %></h2>
+    <h2 class="proceeding"><%= @proposal.proceeding %></h2>
     <%= f.hidden_field :proceeding %>
     <% if @proposal.sub_proceeding? && @proposal.errors[:sub_proceeding].empty? %>
-      <h3><%= @proposal.sub_proceeding %></h3>
+      <h3 class="sub-proceeding"><%= @proposal.sub_proceeding %></h3>
       <%= f.hidden_field :sub_proceeding %>
     <% else %>
       <div class="row">
         <div class="small-12 column">
           <%= f.label :sub_proceeding, t("proposals.form.sub_proceeding") %>
-          <%= f.text_field :sub_proceeding, maxlength: 200, label: false %>
+          <%= f.text_field :sub_proceeding, maxlength: 200, label: false,
+                            placeholder: t("proposals.form.sub_proceeding") %>
         </div>
       </div>
     <% end %>
@@ -69,11 +70,10 @@
     <% end %>
 
     <div class="small-12 column">
-      <%= f.label :tag_list, t("proposals.form.tags_label") %>
+      <%= f.label :tag_list, t("proposals.form.tag_category_label") %>
       <p class="note"><%= t("proposals.form.tags_instructions") %></p>
 
       <div id="category_tags" class="tags">
-        <%= f.label :category_tag_list, t("proposals.form.tag_category_label") %>
         <% @categories.each do |tag| %>
           <a class="js-add-tag-link"><%= tag.name %></a>
         <% end %>
