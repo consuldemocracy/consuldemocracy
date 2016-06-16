@@ -143,6 +143,7 @@ en:
     accept_terms_title: I agree to the Privacy Policy and the Terms and conditions of use
     conditions: Terms and conditions of use
     debate: Debate
+    direct_message: private message
     error: error
     errors: errors
     not_saved: 'prevented this %{resource} from being saved:'

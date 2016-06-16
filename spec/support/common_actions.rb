@@ -203,7 +203,7 @@ module CommonActions
     click_link "My activity"
 
     within("#proposal_#{proposal.id}") do
-      click_link "Send message"
+      click_link "Send notification"
     end
 
     fill_in 'proposal_notification_title', with: "Thank you for supporting my proposal #{proposal.title}"
@@ -224,6 +224,7 @@ module CommonActions
 
     fill_in 'direct_message_title', with: "Hey #{receiver.name}!"
     fill_in 'direct_message_body',  with: "How are you doing? This is #{sender.name}"
+
     click_button "Send message"
 
     expect(page).to have_content "You message has been sent successfully."

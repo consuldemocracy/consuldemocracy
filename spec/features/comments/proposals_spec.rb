@@ -168,7 +168,10 @@ feature 'Commenting proposals' do
 
     within "#comments" do
       expect(page).to have_content 'Have you thought about...?'
-      expect(page).to have_content '(1)'
+    end
+
+    within "#tab-comments-label" do
+      expect(page).to have_content 'Comments (1)'
     end
   end
 

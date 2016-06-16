@@ -205,7 +205,7 @@ feature 'Emails' do
       email_digest.create
 
       email = open_last_email
-      expect(email).to have_subject("Email digest")
+      expect(email).to have_subject("Proposal notifications in Consul")
       expect(email).to deliver_to(user.email)
 
       expect(email).to have_body_text(proposal1.title)
@@ -226,6 +226,7 @@ feature 'Emails' do
       expect(email).to have_body_text(proposal2.author.name)
 
       expect(email).to_not have_body_text(proposal3.title)
+      expect(email).to have_body_text(/#{account_path}/)
     end
 
   end

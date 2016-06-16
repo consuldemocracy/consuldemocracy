@@ -96,6 +96,7 @@ search:
 ignore_missing:
   - 'unauthorized.*'
   - 'activerecord.errors.models.proposal_notification.*'
+  - 'activerecord.errors.models.direct_message.*'
   - 'errors.messages.blank'
   - 'errors.messages.taken'
   - 'devise.failure.invalid'

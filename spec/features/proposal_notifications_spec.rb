@@ -12,7 +12,7 @@ feature 'Proposal Notifications' do
     click_link "My activity"
 
     within("#proposal_#{proposal.id}") do
-      click_link "Send message"
+      click_link "Send notification"
     end
 
     fill_in 'proposal_notification_title', with: "Thank you for supporting my proposal"
@@ -48,7 +48,7 @@ feature 'Proposal Notifications' do
     visit new_proposal_notification_path(proposal_id: proposal.id)
 
     expect(page).to have_content "This message will be send to 7 people and it will be visible in the proposal's page"
-    expect(page).to have_link("the proposal's page", href: proposal_path(proposal))
+    expect(page).to have_link("the proposal's page", href: proposal_path(proposal, anchor: 'comments'))
   end
 
   context "Permissions" do
@@ -62,7 +62,7 @@ feature 'Proposal Notifications' do
       visit user_path(author)
 
       within("#proposal_#{proposal.id}") do
-        expect(page).to have_link "Send message"
+        expect(page).to have_link "Send notification"
       end
 
       login_as(user)
