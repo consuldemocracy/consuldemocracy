@@ -1,0 +1,35 @@
+<%= render 'shared/back_link' %>
+
+<h2><%= t("admin.stats.proposal_notifications.title")%></h2>
+
+<div class="stats row-full">
+  <div class="row">
+    <div class="small-12 column">
+
+      <div class="row stats-numbers">
+        <div class="small-12 medium-3 column">
+          <p class="featured">
+            <%= t("admin.stats.proposal_notifications.total") %><br>
+            <span class="number"><%= @proposal_notifications.count %></span>
+          </p>
+        </div>
+
+        <div class="small-12 medium-3 column">
+          <p class="featured">
+            <%= t("admin.stats.proposal_notifications.proposals_with_notifications") %><br>
+            <span class="number"><%= @proposals_with_notifications.count %></span>
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div id="proposal_notifications">
+  <% @proposal_notifications.each do |notification| %>
+    <p><%= link_to notification.proposal.title, proposal_path(notification.proposal) %></p>
+    <p><%= notification.title %></p>
+    <p><%= notification.body %></p>
+  <% end %>
+</div>
