@@ -235,7 +235,6 @@ en:
         assigned_admin: Assigned administrator
         no_admin_assigned: No admin assigned
         no_valuators_assigned: No valuators assigned
-        results_link: "Current results"
         summary_link: "Investment project summary"
         valuator_summary_link: "Valuator summary"
         feasibility:
@@ -269,6 +268,8 @@ en:
         title: Current final voting ranking
         spending_proposal: Proposal title
         ballot_lines_count: Times selected
+        hide_discarded_link: Hide discarded
+        show_all_link: Show all
         price: Cost
         amount_available: Available budget
       summary:

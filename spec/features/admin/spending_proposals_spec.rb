@@ -793,9 +793,7 @@ feature 'Admin spending proposals' do
       end
 
       scenario "Spending proposals with no geozone" do
-        visit admin_spending_proposals_path
-
-        click_link "Current results"
+        visit results_admin_spending_proposals_path
 
         expect(page).to have_content "Current final voting ranking"
 
