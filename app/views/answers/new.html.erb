@@ -20,12 +20,13 @@
   <div class="small-12 medium-9 column">
     <h2>¿Cuáles consideras que son los principales problemas de Derechos Humanos que existen hoy en la ciudad de Madrid?</h2>
 
-    <form>
-      <textarea rows="5"></textarea>
-    </form>
+    <%= form_for @answer do |f| %>
+      <%= f.hidden_field :context, value: 'Derechos Humanos' %>
+      <%= f.text_area :text, rows: 5, label: false %>
 
-    <div class="small-12 medium-6">
-      <%= link_to "Contestar pregunta", "#", class: "button expanded" %>
-    </div>
+      <div class="small-12 medium-6">
+        <%= f.submit t("answers.new.send"), class: "button expanded" %>
+      </div>
+    <% end %>
   </div>
 </div>
