@@ -1,6 +1,7 @@
 ---
 en:
   mailers:
+    no_reply: "This message was sent from an email address that does not accept replies."
     comment:
       hi: Hi
       new_comment_by_html: There is a new comment from <b>%{commenter}</b>
@@ -31,11 +32,16 @@ en:
       subject: "Your investment project '%{code}' has been marked as unfeasible"
       unfeasible_html: "From the Madrid City Council we want to thank you for your participation in the <strong>participatory budgets of the city of Madrid</strong>. We regret to inform you that your proposal <strong>'%{title}'</strong> will be excluded from this participatory process for the following reason:"
     proposal_notification_digest:
-      title: You received the following notifications
-      share: Share
+      title: "Proposal notifications in %{org_name}"
+      share: Share proposal
       comment: Comment proposal
+      unsubscribe: "If you don't want receive proposal's notification, visit %{account} and unckeck 'Receive a summary of proposal notifications'."
+      unsubscribe_account: My account
     direct_message_for_receiver:
       subject: "You have received a new private message"
       reply: Reply to %{sender}
+      unsubscribe: "If you don't want receive direct messages, visit %{account} and unckeck 'Receive emails about direct messages'."
+      unsubscribe_account: My account
     direct_message_for_sender:
       subject: "You have send a new private message"
+      title_html: "You have send a new private message to <strong>%{receiver}</strong> with the content:"
