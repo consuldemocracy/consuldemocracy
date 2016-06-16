@@ -182,7 +182,10 @@ Rails.application.routes.draw do
     end
 
     resource :activity, controller: :activity, only: :show
-    resource :stats, only: :show
+    resource :stats, only: :show do
+      get :proposal_notifications, on: :collection
+      get :direct_messages, on: :collection
+    end
 
     namespace :api do
       resource :stats, only: :show
