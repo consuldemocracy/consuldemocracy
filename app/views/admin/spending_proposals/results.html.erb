@@ -35,7 +35,8 @@
           <span class="icon-x"></span>
         <% end %>
 
-        <%= link_to spending_proposal.title, spending_proposal_path(spending_proposal), title: "ID: #{spending_proposal.id}" %>
+        <%= link_to spending_proposal.title, spending_proposal_path(spending_proposal) %>
+        (id: <%= spending_proposal.id %>)
       </td>
       <td class="text-center">
         <%= spending_proposal.ballot_lines_count %>
