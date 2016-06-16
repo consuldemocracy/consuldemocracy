@@ -191,6 +191,15 @@ ActiveRecord::Schema.define(version: 20160615074547) do
 
   add_index "delayed_jobs", ["priority", "run_at"], name: "delayed_jobs_priority", using: :btree
 
+  create_table "direct_messages", force: :cascade do |t|
+    t.integer  "sender_id"
+    t.integer  "receiver_id"
+    t.string   "title"
+    t.text     "body"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
   create_table "failed_census_calls", force: :cascade do |t|
     t.integer  "user_id"
     t.string   "document_number"
@@ -289,6 +298,15 @@ ActiveRecord::Schema.define(version: 20160615074547) do
   end
 
   add_index "organizations", ["user_id"], name: "index_organizations_on_user_id", using: :btree
+
+  create_table "proposal_notifications", force: :cascade do |t|
+    t.string   "title"
+    t.text     "body"
+    t.integer  "author_id"
+    t.integer  "proposal_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
 
   create_table "proposals", force: :cascade do |t|
     t.string   "title",               limit: 80
@@ -498,6 +516,9 @@ ActiveRecord::Schema.define(version: 20160615074547) do
     t.boolean  "accepted_delegation_alert",                                   default: false
     t.string   "gender",                                           limit: 10
     t.datetime "date_of_birth"
+    t.boolean  "email_on_proposal_notification",            default: true
+    t.boolean  "email_digest",                              default: true
+    t.boolean  "email_on_direct_message",                   default: true
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree

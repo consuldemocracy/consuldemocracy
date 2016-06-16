@@ -219,6 +219,44 @@ a {
   float: left;
 }
 
+.tabs-content {
+  border: 0;
+}
+
+.tabs {
+  border: {
+    left: 0;
+    right: 0;
+    top: 0;
+  };
+  margin-bottom: $line-height;
+
+  .tabs-title > a {
+    color: $text-medium;
+    margin-bottom: rem-calc(-1);
+    margin-right: $line-height;
+
+    &[aria-selected='true'],
+    &.is-active {
+      color: $brand;
+      border-bottom: 2px solid $brand;
+      font-weight: bold;
+    }
+  }
+
+  h2 {
+    font-size: $base-font-size;
+  }
+}
+
+.no-max-width {
+  max-width: none;
+}
+
+.button.float-right ~ .button.float-right {
+  margin: 0 $line-height/2;
+}
+
 // 02. Header
 // ----------
 
@@ -1460,7 +1498,6 @@ table {
 .comments {
   background: $white;
   background-repeat: repeat-x;
-  padding-top: $line-height;
   padding-bottom: $line-height*4;
 
   h2 {
@@ -1484,7 +1521,7 @@ table {
 
     .comment-votes {
       color: $text-medium;
-      font-size: $small-font-size;
+      font-size: rem-calc(14);
       line-height: $line-height;
 
       a {
@@ -1647,7 +1684,7 @@ table {
 
       &:first-child {
         padding-left: $line-height*1.5;
-        width: 80%;
+        width: 75%;
       }
 
       &:before {

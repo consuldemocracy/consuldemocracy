@@ -53,11 +53,14 @@ module Abilities
       if user.forum?
         can :vote, SpendingProposal
         can [:create, :destroy], BallotLine
+        can :create, DirectMessage
+        can :show, DirectMessage, sender_id: user.id
       end
+
+      can [:create, :show], ProposalNotification, proposal: { author_id: user.id }
 
       can :create, Annotation
       can [:update, :destroy], Annotation, user_id: user.id
-
     end
   end
 end

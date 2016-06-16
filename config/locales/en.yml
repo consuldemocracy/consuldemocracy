@@ -16,6 +16,8 @@ en:
       public_activity_label: Keep my list of activities public
       save_changes_submit: Save changes
       subscription_to_website_newsletter_label: Receive by email website relevant information
+      email_on_direct_message_label: Receive emails about direct messages
+      email_digest_label: Receive a summary of proposal notifications
       title: My account
       user_permission_debates: Participate on debates
       user_permission_info: With your account you can...
@@ -162,11 +164,13 @@ en:
     accept_terms_title: I agree to the Privacy Policy and the Terms and conditions of use
     conditions: Terms and conditions of use
     debate: Debate
+    direct_message: private message
     error: error
     errors: errors
     not_saved: 'prevented this %{resource} from being saved:'
     policy: Privacy Policy
     proposal: Proposal
+    proposal_notification: "Notification"
     spending_proposal: Spending proposal
     user: Account
     verification/sms: phone
@@ -248,6 +252,9 @@ en:
         other: There are %{count} new comments on
       empty_notifications: You don't have new notifications.
       mark_all_as_read: Mark all as read
+      proposal_notification:
+        one: There is one new notification on
+        other: There are %{count} new notifications on
       replies_to:
         one: Someone replied to your comment on
         other: There are %{count} new replies to your comment on
@@ -377,17 +384,30 @@ en:
         one: 1 comment
         other: "%{count} comments"
         zero: No comments
-      comments_title: Comments
+      comments_tab: Comments
       edit_proposal_link: Edit
       flag: This proposal has been flagged as inappropriate by several users.
       login_to_comment: You must %{signin} or %{signup} to leave a comment.
+      notifications_tab: Notifications
       retired_warning: "The author considers this proposal should not receive more supports."
       retired_warning_link_to_explanation: Read the explanation before voting for it.
       retired: Proposal retired by the author
       share: Share
+      send_notification: Send notification
+      no_notifications: "This proposal has any notifications."
     update:
       form:
         submit_button: Save changes
+  proposal_notifications:
+    new:
+      title: "Send message"
+      title_label: "Title"
+      body_label: "Message"
+      submit_button: "Send message"
+      info_about_receivers_html: "This message will be send to <strong>%{count} people</strong> and it will be visible in %{proposal_page}.<br> Message are not sent immediately, users will receive periodically an email with all proposal notifications."
+      proposal_page: "the proposal's page"
+    show:
+      back: "Go back to my activity"
   shared:
     advanced_search:
       author_type: 'By author category'
@@ -574,6 +594,20 @@ en:
     manage:
       all: "You do not have permission to carry out the action '%{action}' on %{subject}."
   users:
+    direct_messages:
+      new:
+        body_label: Message
+        direct_messages_bloqued: "This user has decided not to receive direct messages"
+        submit_button: Send message
+        title: Send private message to %{receiver}
+        title_label: Title
+        verified_only: To send a private message %{verify_account}
+        verify_account: verify your account
+        authenticate: You must %{signin} or %{signup} to continue.
+        signin: sign in
+        signup: sign up
+      show:
+        receiver: Message sent to %{receiver}
     show:
       deleted: Deleted
       deleted_debate: This debate has been deleted
@@ -601,9 +635,13 @@ en:
           other: "%{count} Spending proposals"
         ballot: Participatory budget
       no_activity: User has no public activity
+      no_private_messages: "This user doesn't accept private messages."
       private_activity: This user decided to keep the activity list private
-      retire: Retire
-      retired: Retired
+      send_private_message: "Send private message"
+    proposals:
+      send_notification: "Send notification"
+      retire: "Retire"
+      retired: "Retired"
   votes:
     agree: I agree
     anonymous: Too many anonymous votes to admit vote %{verify_account}.

@@ -220,7 +220,7 @@ feature 'Admin activity' do
 
       visit moderation_users_path(name_or_email: user.username)
 
-      within(".admin-list") do
+      within("#moderation_users") do
         click_link 'Block'
       end
 

@@ -11,7 +11,7 @@ es:
       unmark_featured: Quitar destacado
     banners:
       index:
-        title: Anuncios
+        title: Banners
         create: Crear un banner
         edit: Editar banner
         delete: Eliminar banner
@@ -48,6 +48,7 @@ es:
           hide: Ocultado
           restore: Restaurado
         by: Moderado por
+        content: Contenido
         filter: Mostrar
         filters:
           all: Todo
@@ -69,6 +70,7 @@ es:
         title: Comentarios ocultos
     dashboard:
       index:
+        back: Volver a
         title: Administración
     debates:
       index:
@@ -90,6 +92,7 @@ es:
         user_not_found: Usuario no encontrado
     menu:
       activity: Actividad de moderadores
+      admin: Menú de administración
       banner: Gestionar banners
       debate_topics: Temas de debate
       hidden_comments: Comentarios ocultos
@@ -142,7 +145,6 @@ es:
         cost: Coste total
     officials:
       edit:
-        back: Volver
         destroy: Eliminar condición de 'Cargo Público'
         title: 'Cargos Públicos: Editar usuario'
       flash:
@@ -168,9 +170,9 @@ es:
           pending: Pendientes
           rejected: Rechazadas
           verified: Verificadas
-        hidden_count:
-          one: Hay además una organización sin usuario o con el usuario bloqueado
-          other: Hay %{count} organizaciones sin usuario o con el usuario bloqueado
+        hidden_count_html:
+          one: Hay además <strong>una organización</strong> sin usuario o con el usuario bloqueado.
+          other: Hay <strong>%{count} organizaciones</strong> sin usuario o con el usuario bloqueado.
         reject: Rechazar
         rejected: Rechazada
         search: Buscar
@@ -187,7 +189,7 @@ es:
           all: Todas
           with_confirmed_hide: Confirmadas
           without_confirmed_hide: Pendientes
-        title: Propuestas ocultos
+        title: Propuestas ocultas
     settings:
       flash:
         updated: Valor actualizado
@@ -335,11 +337,10 @@ es:
           without_confirmed_hide: Pendientes
         title: Usuarios bloqueados
       show:
-        back: Volver
         email: 'Email:'
         hidden_at: 'Bloqueado:'
         registered_at: 'Fecha de alta:'
-        title: Actividad del usuario %{user}
+        title: Actividad del usuario (%{user})
     verifications:
       index:
         phone_not_given: No ha dado su teléfono

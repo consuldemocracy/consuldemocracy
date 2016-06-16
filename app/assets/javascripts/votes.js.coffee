@@ -2,7 +2,7 @@ App.Votes =
 
   hoverize: (votes) ->
     $(document).on {
-      mouseenter: ->
+      'mouseenter focus': ->
         $("div.anonymous-votes", this).show();
         $("div.organizations-votes", this).show();
         $("div.not-logged", this).show();

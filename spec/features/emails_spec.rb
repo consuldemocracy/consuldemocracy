@@ -148,4 +148,87 @@ feature 'Emails' do
     expect(email).to have_body_text(spending_proposal.feasible_explanation)
   end
 
+  context "Direct Message" do
+
+    scenario "Receiver email" do
+      sender   = create(:user, :level_two)
+      receiver = create(:user, :level_two)
+
+      direct_message = create_direct_message(sender, receiver)
+
+      email = unread_emails_for(receiver.email).first
+
+      expect(email).to have_subject("You have received a new private message")
+      expect(email).to have_body_text(direct_message.title)
+      expect(email).to have_body_text(direct_message.body)
+      expect(email).to have_body_text(direct_message.sender.name)
+      expect(email).to have_body_text(/#{user_path(direct_message.sender_id)}/)
+    end
+
+    scenario "Sender email" do
+      sender   = create(:user, :level_two)
+      receiver = create(:user, :level_two)
+
+      direct_message = create_direct_message(sender, receiver)
+
+      email = unread_emails_for(sender.email).first
+
+      expect(email).to have_subject("You have send a new private message")
+      expect(email).to have_body_text(direct_message.title)
+      expect(email).to have_body_text(direct_message.body)
+      expect(email).to have_body_text(direct_message.receiver.name)
+    end
+
+    pending "In the copy sent to the sender, display the receiver's name"
+
+  end
+
+  context "Proposal notification digest" do
+
+    scenario "notifications for proposals that I have supported" do
+      user = create(:user, email_digest: true)
+
+      proposal1 = create(:proposal)
+      proposal2 = create(:proposal)
+      proposal3 = create(:proposal)
+
+      create(:vote, votable: proposal1, voter: user)
+      create(:vote, votable: proposal2, voter: user)
+
+      reset_mailer
+
+      notification1 = create_proposal_notification(proposal1)
+      notification2 = create_proposal_notification(proposal2)
+      notification3 = create_proposal_notification(proposal3)
+
+      email_digest = EmailDigest.new
+      email_digest.create
+
+      email = open_last_email
+      expect(email).to have_subject("Proposal notifications in Consul")
+      expect(email).to deliver_to(user.email)
+
+      expect(email).to have_body_text(proposal1.title)
+      expect(email).to have_body_text(notification1.notifiable.title)
+      expect(email).to have_body_text(notification1.notifiable.body)
+      expect(email).to have_body_text(proposal1.author.name)
+
+      expect(email).to have_body_text(/#{notification_path(notification1)}/)
+      expect(email).to have_body_text(/#{proposal_path(proposal1, anchor: 'comments')}/)
+      expect(email).to have_body_text(/#{proposal_path(proposal1, anchor: 'social-share')}/)
+
+      expect(email).to have_body_text(proposal2.title)
+      expect(email).to have_body_text(notification2.notifiable.title)
+      expect(email).to have_body_text(notification2.notifiable.body)
+      expect(email).to have_body_text(/#{notification_path(notification2)}/)
+      expect(email).to have_body_text(/#{proposal_path(proposal2, anchor: 'comments')}/)
+      expect(email).to have_body_text(/#{proposal_path(proposal2, anchor: 'social-share')}/)
+      expect(email).to have_body_text(proposal2.author.name)
+
+      expect(email).to_not have_body_text(proposal3.title)
+      expect(email).to have_body_text(/#{account_path}/)
+    end
+
+  end
+
 end

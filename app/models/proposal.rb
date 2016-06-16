@@ -16,6 +16,7 @@ class Proposal < ActiveRecord::Base
   belongs_to :author, -> { with_hidden }, class_name: 'User', foreign_key: 'author_id'
   belongs_to :geozone
   has_many :comments, as: :commentable
+  has_many :proposal_notifications
 
   validates :title, presence: true
   validates :question, presence: true
@@ -97,6 +98,10 @@ class Proposal < ActiveRecord::Base
     cached_votes_up + physical_votes
   end
 
+  def voters
+    votes_for.voters
+  end
+
   def editable?
     total_votes <= Setting["max_votes_for_proposal_edit"].to_i
   end
@@ -164,6 +169,10 @@ class Proposal < ActiveRecord::Base
 
   def self.open_plenary_dates
     Date.parse("18-04-2016").beginning_of_day..Date.parse("21-04-2016").end_of_day
+  end
+
+  def notifications
+    proposal_notifications
   end
 
   protected

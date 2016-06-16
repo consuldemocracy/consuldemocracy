@@ -2,7 +2,6 @@ class ProposalsController < ApplicationController
   include CommentableActions
   include FlagActions
 
-
   before_action :parse_search_terms, only: [:index, :suggest]
   before_action :parse_advanced_search_terms, only: :index
   before_action :parse_tag_filter, only: :index
@@ -22,6 +21,7 @@ class ProposalsController < ApplicationController
 
   def show
     super
+    @notifications = @proposal.notifications
     redirect_to proposal_path(@proposal), status: :moved_permanently if request.path != proposal_path(@proposal)
   end
 

@@ -1,6 +1,7 @@
 ---
 es:
   mailers:
+    no_reply: "Este mensaje se ha enviado desde una dirección de correo electrónico que no admite respuestas."
     comment:
       hi: Hola
       new_comment_by_html: Hay un nuevo comentario de <b>%{commenter}</b> en
@@ -28,3 +29,17 @@ es:
       sorry: "Sentimos las molestias ocasionadas y volvemos a darte las gracias por tu inestimable participación."
       subject: "Tu propuesta de inversión '%{code}' ha sido marcada como inviable"
       unfeasible_html: "Desde el Ayuntamiento de Madrid queremos agradecer tu participación en los <strong>Presupuestos Participativos de la ciudad de Madrid</strong>. Lamentamos informarte de que tu propuesta <strong>'%{title}'</strong> quedará excluida de este proceso participativo por el siguiente motivo:"
+    proposal_notification_digest:
+      title: "Notificaciones de propuestas en %{org_name}"
+      share: Compartir propuesta
+      comment: Comentar propuesta
+      unsubscribe: "Si no quieres recibir notificaciones de propuestas, puedes entrar en %{account} y desmarcar la opción 'Recibir resumen de notificaciones sobre propuestas'."
+      unsubscribe_account: Mi cuenta
+    direct_message_for_receiver:
+      subject: "Has recibido un nuevo mensaje privado"
+      reply: Responder a %{sender}
+      unsubscribe: "Si no quieres recibir mensajes privados, puedes entrar en %{account} y desmarcar la opción 'Recibir emails con mensajes directos'."
+      unsubscribe_account: Mi cuenta
+    direct_message_for_sender:
+      subject: "Has enviado un nuevo mensaje privado"
+      title_html: "Has enviado un nuevo mensaje privado a <strong>%{receiver}</strong> con el siguiente contenido:"

@@ -12,6 +12,7 @@ module Abilities
       can :read, Legislation
       can :read, User
       can [:search, :read], Annotation
+      can :new, DirectMessage
     end
   end
 end

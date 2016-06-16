@@ -42,6 +42,32 @@ class Mailer < ApplicationMailer
     end
   end
 
+  def direct_message_for_receiver(direct_message)
+    @direct_message = direct_message
+    @receiver = @direct_message.receiver
+
+    with_user(@receiver) do
+      mail(to: @receiver.email, subject: t('mailers.direct_message_for_receiver.subject'))
+    end
+  end
+
+  def direct_message_for_sender(direct_message)
+    @direct_message = direct_message
+    @sender = @direct_message.sender
+
+    with_user(@sender) do
+      mail(to: @sender.email, subject: t('mailers.direct_message_for_sender.subject'))
+    end
+  end
+
+  def proposal_notification_digest(user)
+    @notifications = user.notifications.where(notifiable_type: "ProposalNotification")
+
+    with_user(user) do
+      mail(to: user.email, subject: t('mailers.proposal_notification_digest.title', org_name: Setting['org_name']))
+    end
+  end
+
   private
 
   def with_user(user, &block)

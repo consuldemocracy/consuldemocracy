@@ -239,4 +239,39 @@ module CommonActions
     end
   end
 
+  def create_proposal_notification(proposal)
+    login_as(proposal.author)
+    visit root_path
+
+    click_link "My activity"
+
+    within("#proposal_#{proposal.id}") do
+      click_link "Send notification"
+    end
+
+    fill_in 'proposal_notification_title', with: "Thank you for supporting my proposal #{proposal.title}"
+    fill_in 'proposal_notification_body', with: "Please share it with others so we can make it happen! #{proposal.summary}"
+    click_button "Send message"
+
+    expect(page).to have_content "Your message has been sent correctly."
+    Notification.last
+  end
+
+  def create_direct_message(sender, receiver)
+    login_as(sender)
+    visit user_path(receiver)
+
+    click_link "Send private message"
+
+    expect(page).to have_content "Send private message to #{receiver.name}"
+
+    fill_in 'direct_message_title', with: "Hey #{receiver.name}!"
+    fill_in 'direct_message_body',  with: "How are you doing? This is #{sender.name}"
+
+    click_button "Send message"
+
+    expect(page).to have_content "You message has been sent successfully."
+    DirectMessage.last
+  end
+
 end
