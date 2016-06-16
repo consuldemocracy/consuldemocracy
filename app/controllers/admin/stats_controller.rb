@@ -38,6 +38,16 @@ class Admin::StatsController < Admin::BaseController
     end
   end
 
+  def proposal_notifications
+    @proposal_notifications = ProposalNotification.all
+    @proposals_with_notifications = @proposal_notifications.select(:proposal_id).distinct.count
+  end
+
+  def direct_messages
+    @direct_messages = DirectMessage.count
+    @users_who_have_sent_message = DirectMessage.select(:sender_id).distinct.count
+  end
+
   def spending_proposals
     @ballots = Ballot.where.not(geozone_id: nil).group(:geozone).count
     @voters_in_city = BallotLine.select(:ballot_id).uniq.joins(:spending_proposal).where("spending_proposals.geozone_id" => nil).to_a.size

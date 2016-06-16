@@ -285,6 +285,8 @@ en:
       show:
         stats_title: Stats
         participatory_budget: Participatory Budget
+        direct_messages: Direct messages
+        proposal_notifications: Proposal notifications
         summary:
           ballot_line_votes: Votes in investment projects
           ballot_votes: Budgets voted
@@ -321,6 +323,14 @@ en:
         users_city_only: Users who voted ONLY for city-wide proposals
         users_district_only: Users who voted ONLY for district-wide proposals
         users_both_total:  Users who voted for BOTH
+      direct_messages:
+        title: Direct messages
+        total: Total
+        users_who_have_sent_message: Users that have sent a private message
+      proposal_notifications:
+        title: Proposal notifications
+        total: Total
+        proposals_with_notifications: Proposals with notifications
     tags:
       create: Create Topic
       destroy: Destroy Topic

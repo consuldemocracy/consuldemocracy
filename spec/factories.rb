@@ -362,8 +362,8 @@ FactoryGirl.define do
   end
 
   factory :proposal_notification do
-    title    "Thank you for supporting my proposal"
-    body     "Please let others know so we can make it happen"
+    sequence(:title) { |n| "Thank you for supporting my proposal #{n}" }
+    sequence(:body) { |n| "Please let others know so we can make it happen #{n}" }
     proposal
   end
 
