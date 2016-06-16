@@ -25,11 +25,11 @@ class Admin::StatsController < Admin::BaseController
 
   def proposal_notifications
     @proposal_notifications = ProposalNotification.all
-    @proposals_with_notifications = @proposal_notifications.distinct.count(:proposal_id)
+    @proposals_with_notifications = @proposal_notifications.select(:proposal_id).distinct.count
   end
 
   def direct_messages
     @direct_messages = DirectMessage.count
-    @users_who_have_sent_message = DirectMessage.distinct.count(:sender_id)
+    @users_who_have_sent_message = DirectMessage.select(:sender_id).distinct.count
   end
 end
