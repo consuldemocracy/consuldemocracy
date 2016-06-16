@@ -134,6 +134,10 @@ describe "Abilities::Common" do
     it { should_not be_able_to(:destroy, own_spending_proposal) }
 
     it { should be_able_to(:show, Ballot) }
+    it { should be_able_to(:new, DirectMessage) }
+    it { should be_able_to(:create, DirectMessage) }
+    it { should be_able_to(:show, own_direct_message) }
+    it { should_not be_able_to(:show, create(:direct_message)) }
   end
 
   describe "when forum" do
@@ -154,11 +158,6 @@ describe "Abilities::Common" do
 
     it { should_not be_able_to(:destroy, spending_proposal) }
     it { should_not be_able_to(:destroy, own_spending_proposal) }
-
-    it { should be_able_to(:new, DirectMessage) }
-    it { should be_able_to(:create, DirectMessage) }
-    it { should be_able_to(:show, own_direct_message) }
-    it { should_not be_able_to(:show, create(:direct_message)) }
   end
 
 end

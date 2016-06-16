@@ -205,7 +205,7 @@ feature 'Emails' do
       email_digest.create
 
       email = open_last_email
-      expect(email).to have_subject("Proposal notifications in Consul")
+      expect(email).to have_subject("Proposal notifications in Decide Madrid")
       expect(email).to deliver_to(user.email)
 
       expect(email).to have_body_text(proposal1.title)
