@@ -115,6 +115,23 @@ body.admin {
 
   tr {
 
+    .on-hover-block {
+      display: none;
+    }
+
+    &:hover .on-hover-block {
+      display: block;
+      margin: 0;
+      margin-top: $line-height/2;
+      width: 100%;
+    }
+  }
+}
+
+@include breakpoint(medium) {
+
+  tr {
+
     .on-hover {
       display: none;
     }
