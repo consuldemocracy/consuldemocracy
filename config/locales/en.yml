@@ -185,6 +185,8 @@ en:
       sign_in_to_delegate: "Sign in to delegate"
       verify_accont_to_delegate: "Verify your account to delegate"
       no_votes: This Forum has not supported any investment proposals
+      no_city_votes: This Forum has not supported any city investment proposals
+      no_district_votes: This Forum has not supported any district investment proposals
       confirm: You have already voted some investment proposals. If you delegate your votes in %{forum}, your votes will be erased and you will vote whatever this forum votes.
   geozones:
     none: All city

@@ -46,13 +46,26 @@
         <div class="row collapse">
           <div id="city" class="small-12 medium-6 column">
             <h3>Toda la ciudad</h3>
-            <%= render 'ballot', spending_proposals: @forum.user.ballot.spending_proposals.city_wide %>
+            <% if @forum.balloted_city_proposals.any? %>
+              <%= render 'ballot', spending_proposals: @forum.balloted_city_proposals %>
+            <% else %>
+              <div class="callout primary">
+               <%= t("forums.show.no_city_votes") %>
+              </div>
+            <% end %>
           </div>
 
           <div id="district" class="small-12 medium-6 column">
             <h3>Distrito de <%= forum_short_name(@forum) %></h3>
-            <%= render 'ballot', spending_proposals: @forum.user.ballot.spending_proposals.by_geozone(@forum.user.ballot.geozone) %>
+            <% if @forum.balloted_district_proposals.any? %>
+              <%= render 'ballot', spending_proposals: @forum.balloted_district_proposals %>
+            <% else %>
+              <div class="callout primary">
+                 <%= t("forums.show.no_district_votes") %>
+              </div>
+            <% end %>
           </div>
+
         </div>
       </div>
     <% else %>
