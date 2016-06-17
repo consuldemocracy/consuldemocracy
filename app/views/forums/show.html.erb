@@ -43,16 +43,29 @@
     <% if @forum.has_balloted? %>
       <div class="small-12 column">
 
-        <div class="row collapse">
+        <div class="row">
           <div id="city" class="small-12 medium-6 column">
             <h3>Toda la ciudad</h3>
-            <%= render 'ballot', spending_proposals: @forum.user.ballot.spending_proposals.city_wide %>
+            <% if @forum.balloted_city_proposals.any? %>
+              <%= render 'ballot', spending_proposals: @forum.balloted_city_proposals %>
+            <% else %>
+              <div class="callout primary">
+               <%= t("forums.show.no_city_votes") %>
+              </div>
+            <% end %>
           </div>
 
           <div id="district" class="small-12 medium-6 column">
             <h3>Distrito de <%= forum_short_name(@forum) %></h3>
-            <%= render 'ballot', spending_proposals: @forum.user.ballot.spending_proposals.by_geozone(@forum.user.ballot.geozone) %>
+            <% if @forum.balloted_district_proposals.any? %>
+              <%= render 'ballot', spending_proposals: @forum.balloted_district_proposals %>
+            <% else %>
+              <div class="callout primary">
+                 <%= t("forums.show.no_district_votes") %>
+              </div>
+            <% end %>
           </div>
+
         </div>
       </div>
     <% else %>
@@ -64,24 +77,26 @@
 </div>
 
 <div class="row">
-  <p>Delega tu decisión sobre los  <strong>apoyos</strong> y la  <strong>votación final
-  </strong> en lo que se decida en este espacio presencial de debate.</p>
+  <div class="small-12 column">
+    <p>Delega tu decisión sobre los  <strong>apoyos</strong> y la  <strong>votación final
+    </strong> en lo que se decida en este espacio presencial de debate.</p>
 
-  <% if current_user && current_user.can?(:vote, SpendingProposal) %>
-    <%= render 'representatives/new' %>
-  <% elsif current_user && current_user.unverified? %>
-    <div class="callout warning">
-      <%= link_to t("forums.show.verify_accont_to_delegate"), verification_path %>
-    </div>
-    <p class="button secondary">
-      <%= t("forums.show.delegate_button", forum: @forum.name.gsub('Presupuestos participativos', '')) %>
-    </p>
-  <% else %>
-    <div class="callout warning">
-      <strong><%= link_to t("forums.show.sign_in_to_delegate"), new_user_session_path %></strong>
-    </div>
-    <p class="button secondary">
-      <%= t("forums.show.delegate_button", forum: @forum.name.gsub('Presupuestos participativos', '')) %>
-    </p>
-  <% end %>
+    <% if current_user && current_user.can?(:vote, SpendingProposal) %>
+      <%= render 'representatives/new' %>
+    <% elsif current_user && current_user.unverified? %>
+      <div class="callout warning">
+        <%= link_to t("forums.show.verify_accont_to_delegate"), verification_path %>
+      </div>
+      <p class="button secondary">
+        <%= t("forums.show.delegate_button", forum: @forum.name.gsub('Presupuestos participativos', '')) %>
+      </p>
+    <% else %>
+      <div class="callout warning">
+        <strong><%= link_to t("forums.show.sign_in_to_delegate"), new_user_session_path %></strong>
+      </div>
+      <p class="button secondary">
+        <%= t("forums.show.delegate_button", forum: @forum.name.gsub('Presupuestos participativos', '')) %>
+      </p>
+    <% end %>
+  </div>
 </div>

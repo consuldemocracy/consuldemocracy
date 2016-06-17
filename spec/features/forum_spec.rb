@@ -87,31 +87,82 @@ feature "Forum" do
       Setting['feature.spending_proposal_features.final_voting_allowed'] ||= true
     end
 
-    scenario "Forum votes" do
-      forum = create(:forum)
-      geozone = create(:geozone)
+    context "Forum votes" do
 
-      sp1 = create(:spending_proposal, :feasible, :finished, geozone: nil)
-      sp2 = create(:spending_proposal, :feasible, :finished, geozone: nil)
-      sp3 = create(:spending_proposal, :feasible, :finished, geozone: geozone)
-      sp4 = create(:spending_proposal, :feasible, :finished, geozone: geozone)
+      scenario "Votes in both city and district" do
+        forum = create(:forum)
+        geozone = create(:geozone)
 
-      ballot = create(:ballot, user: forum.user, geozone: geozone, spending_proposals: [sp1, sp3, sp4])
+        sp1 = create(:spending_proposal, :feasible, :finished, geozone: nil)
+        sp2 = create(:spending_proposal, :feasible, :finished, geozone: nil)
+        sp3 = create(:spending_proposal, :feasible, :finished, geozone: geozone)
+        sp4 = create(:spending_proposal, :feasible, :finished, geozone: geozone)
 
-      login_as(forum.user)
-      visit forum_path(forum)
+        ballot = create(:ballot, user: forum.user, geozone: geozone, spending_proposals: [sp1, sp3, sp4])
 
-      within("#city") do
-        expect(page).to have_css(".forum_vote", count: 1)
-        expect(page).to have_content sp1.title
-        expect(page).to_not have_content sp2.title
+        login_as(forum.user)
+        visit forum_path(forum)
+
+        within("#city") do
+          expect(page).to have_css(".forum_vote", count: 1)
+          expect(page).to have_content sp1.title
+          expect(page).to_not have_content sp2.title
+        end
+
+        within("#district") do
+          expect(page).to have_css(".forum_vote", count: 2)
+          expect(page).to have_content sp3.title
+          expect(page).to have_content sp4.title
+        end
       end
 
-      within("#district") do
-        expect(page).to have_css(".forum_vote", count: 2)
-        expect(page).to have_content sp3.title
-        expect(page).to have_content sp4.title
+      scenario "Votes in city and no votes in district" do
+        forum = create(:forum)
+
+        sp1 = create(:spending_proposal, :feasible, :finished, geozone: nil)
+        sp2 = create(:spending_proposal, :feasible, :finished, geozone: nil)
+
+        ballot = create(:ballot, user: forum.user, spending_proposals: [sp1, sp2])
+
+        login_as(forum.user)
+        visit forum_path(forum)
+
+        within("#city") do
+          expect(page).to have_css(".forum_vote", count: 2)
+          expect(page).to have_content sp1.title
+          expect(page).to have_content sp2.title
+        end
+
+        within("#district") do
+          expect(page).to have_css(".forum_vote", count: 0)
+          expect(page).to have_content "This Forum has not supported any district investment proposals"
+        end
       end
+
+      scenario "Votes in district and no votes in city" do
+        forum = create(:forum)
+        geozone = create(:geozone)
+
+        sp1 = create(:spending_proposal, :feasible, :finished, geozone: geozone)
+        sp2 = create(:spending_proposal, :feasible, :finished, geozone: geozone)
+
+        ballot = create(:ballot, user: forum.user, geozone: geozone, spending_proposals: [sp1, sp2])
+
+        login_as(forum.user)
+        visit forum_path(forum)
+
+        within("#city") do
+          expect(page).to have_css(".forum_vote", count: 0)
+          expect(page).to have_content  "This Forum has not supported any city investment proposals"
+        end
+
+        within("#district") do
+          expect(page).to have_css(".forum_vote", count: 2)
+          expect(page).to have_content sp1.title
+          expect(page).to have_content sp2.title
+        end
+      end
+
     end
 
     scenario "Delegating after voting" do
