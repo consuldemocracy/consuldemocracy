@@ -12,6 +12,7 @@
 // 09. Featured
 // 10. Processes
 // 11. Spending proposals votes
+// 12. Collaborative legislation
 //
 
 // 01. Global styles
@@ -1557,5 +1558,34 @@ ul.ballot-list {
         transition: font-size 0.3s;
       }
     }
+  }
+}
+
+// 12. Collaborative legislation
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+.legislation {
+
+  h1, h2, h3, h4, h5, h6 {
+    color: $brand;
+  }
+
+  ul, ol {
+    margin-bottom: $line-height;
+
+    li {
+      padding: $line-height/4 0;
+    }
+
+    li ul {
+      margin-bottom: 0;
+    }
+  }
+
+  .download {
+    background: $highlight;
+    border-radius: rem-calc(6);
+    margin-bottom: $line-height;
+    padding: $line-height/2;
   }
 }
