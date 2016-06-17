@@ -287,6 +287,7 @@ en:
         participatory_budget: Participatory Budget
         direct_messages: Direct messages
         proposal_notifications: Proposal notifications
+        redeemable_codes: Redeemable codes
         summary:
           ballot_line_votes: Votes in investment projects
           ballot_votes: Budgets voted
@@ -331,6 +332,10 @@ en:
         title: Proposal notifications
         total: Total
         proposals_with_notifications: Proposals with notifications
+      reedemable_codes:
+        title: Redeemable codes
+        total: Total
+        campaign: After sending 400.000 letters
     tags:
       create: Create Topic
       destroy: Destroy Topic

@@ -285,6 +285,7 @@ es:
         participatory_budget: Presupuestos Participativos
         direct_messages: Mensajes directos
         proposal_notifications: Notificaciones de propuestas
+        redeemable_codes: Códigos enviados por carta
         summary:
           ballot_line_votes: Votos en inversión
           ballot_votes: Presupuestos votados
@@ -329,6 +330,10 @@ es:
         title: Notificaciones de propuestas
         total: Total
         proposals_with_notifications: Propuestas con notificaciones
+      reedemable_codes:
+        title: Códigos enviados por carta
+        total: Total
+        campaign: Después de las 400.000 cartas
     tags:
       create: Crear Tema
       destroy: Eliminar Tema
