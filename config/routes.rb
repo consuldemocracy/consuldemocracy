@@ -287,7 +287,6 @@ Rails.application.routes.draw do
 
   mount Tolk::Engine => '/translate', :as => 'tolk'
 
-  get 'ordenanza-de-transparencia', to: 'legislations#show', id: 1, as: :ordenanza_transparencia
   get 'encuesta-plaza-espana' => redirect('/encuesta-plaza-espana-resultados')
   get '/blog' => redirect('http://diario.madrid.es/participa/')
   get 'participatory_budget', to: 'spending_proposals#welcome', as: 'participatory_budget'
