@@ -95,6 +95,12 @@ describe User do
         expect(subject.email_on_direct_message).to eq(true)
       end
     end
+
+    describe 'official_position_badge' do
+      it 'should be false by default' do
+        expect(subject.official_position_badge).to eq(false)
+      end
+    end
   end
 
   describe "administrator?" do

@@ -37,6 +37,7 @@ feature 'Account' do
     check 'account_email_on_comment_reply'
     uncheck 'account_email_digest'
     uncheck 'account_email_on_direct_message'
+    check   'account_official_position_badge'
     click_button 'Save changes'
 
     expect(page).to have_content "Changes saved"
@@ -48,6 +49,7 @@ feature 'Account' do
     expect(find("#account_email_on_comment_reply")).to be_checked
     expect(find("#account_email_digest")).to_not be_checked
     expect(find("#account_email_on_direct_message")).to_not be_checked
+    expect(find("#account_official_position_badge")).to be_checked
   end
 
   scenario 'Edit Organization' do
