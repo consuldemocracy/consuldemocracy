@@ -2,7 +2,7 @@ require 'rails_helper'
 
 feature 'Legislation' do
 
-  scenario 'Show' do
+  xscenario 'Show' do
     legislation = create(:legislation, title: 'Change the world', body: 'To achieve this...')
 
     visit legislation_path(legislation)
@@ -75,7 +75,7 @@ feature 'Legislation' do
       expect(page).to_not have_css ".annotator-hl"
     end
 
-    scenario 'Search' do
+    xscenario 'Search' do
       legislation = create(:legislation)
       annotation1 = create(:annotation, legislation: legislation, text: "my annotation",       ranges: [{"start"=>"/span[1]", "startOffset"=>1, "end"=>"/span[1]", "endOffset"=>5}])
       annotation2 = create(:annotation, legislation: legislation, text: "my other annotation", ranges: [{"start"=>"/span[1]", "startOffset"=>6, "end"=>"/span[1]", "endOffset"=>10}])
