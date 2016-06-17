@@ -55,4 +55,9 @@ class Admin::StatsController < Admin::BaseController
     @user_count = Ballot.where('ballot_lines_count > ?', 0).count
   end
 
+  def redeemable_codes
+    @users = User.where.not(redeemable_code: nil)
+    @users_after_campaign = @users.where("verified_at >= ?", Date.new(2016, 6, 17).beginning_of_day).count
+  end
+
 end

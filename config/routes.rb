@@ -203,6 +203,7 @@ Rails.application.routes.draw do
       get :graph, on: :member
       get :proposal_notifications, on: :collection
       get :direct_messages, on: :collection
+      get :redeemable_codes, on: :collection
     end
 
     namespace :api do

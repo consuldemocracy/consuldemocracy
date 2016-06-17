@@ -230,4 +230,34 @@ feature 'Stats' do
 
   end
 
+  context "Redeemable codes" do
+
+    scenario "Total" do
+      create(:user, redeemable_code: 'abc')
+      create(:user, redeemable_code: 'def')
+      create(:user, redeemable_code: 'ghi')
+
+      visit admin_stats_path
+      click_link "Redeemable codes"
+
+      within("#redeemable_codes_count") do
+        expect(page).to have_content "3"
+      end
+    end
+
+    scenario "After campaign of June 17th 2016" do
+      create(:user, redeemable_code: 'abd', verified_at: Date.new(2016, 6, 16))
+      create(:user, redeemable_code: 'def', verified_at: Date.new(2016, 6, 17))
+      create(:user, redeemable_code: 'ghi', verified_at: Date.new(2016, 6, 18))
+
+      visit admin_stats_path
+      click_link "Redeemable codes"
+
+      within("#redeemable_codes_after_campaign_count") do
+        expect(page).to have_content "2"
+      end
+    end
+
+  end
+
 end
