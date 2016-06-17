@@ -1244,7 +1244,11 @@ table.age-groups {
   @include breakpoint(large) {
     background: $brand image-url('processes_featured.jpg') no-repeat;
     background-position: 80%;
-    height: $line-height*14;
+    height: $line-height*15;
+  }
+
+  &.show {
+    height: auto;
   }
 
   h1 {
@@ -1266,6 +1270,11 @@ table.age-groups {
     padding: 0;
     text-transform: uppercase;
   }
+}
+
+.services-letters h3 {
+  font-size: rem-calc(18);
+  line-height: $line-height;
 }
 
 .processes-show {

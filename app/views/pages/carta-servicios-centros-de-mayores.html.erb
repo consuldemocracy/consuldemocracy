@@ -20,6 +20,24 @@
     <div class="float-right">
       <p><strong>Fecha de aprobación: 13 de marzo de 2013</strong><br>
       <strong>Fecha de la última evaluación: 3 de marzo de 2016</strong></p>
+      <a class="button warning" type="button" data-toggle="annotator-help">
+        <sub><span class="icon-edit"></span></sub>&nbsp;
+        <%= t("annotator.help.title") %>
+      </a>
+
+      <div class="dropdown-pane" id="annotator-help" data-dropdown data-auto-focus="true">
+        <% if user_signed_in? %>
+          <%= t("annotator.help.alt") %>
+        <% else %>
+          <p>
+            <%= t("annotator.help.text",
+                sign_in: link_to(t("annotator.help.text_sign_in"), new_user_session_path),
+                sign_up: link_to(t("annotator.help.text_sign_up"), new_user_registration_path)).html_safe %>
+          </p>
+        <% end %>
+
+        <%= image_tag ("annotator_help.gif"), alt: t("annotator.help.alt") %>
+      </div>
     </div>
 
     <section data-annotatable-type="legislation"
