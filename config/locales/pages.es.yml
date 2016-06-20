@@ -84,10 +84,11 @@ es:
         process_2_description: Contamos contigo para que decidas rellenando una pequeña encuesta como quieres que sea este nuevo espacio en tu ciudad.
         process_2_button: Más información sobre la remodelación
         process_3_title: "#PlenoAbierto"
-        process_3_description: Envía una propuesta o lanza una pregunta, y si están entre las cinco más votadas podrás formularla en persona a los grupos políticos en el Pleno Abierto del 24 de abril.
-        process_3_description_close: Apoya las propuestas y preguntas enviadas. Las cinco más votadas serán formuladas en persona a los grupos políticos en el Pleno Abierto del 24 de abril.
-        process_3_button: Enviar una propuesta o pregunta
-        process_3_button_close: Ver propuestas y preguntas
+        process_3_description: Apoya las propuestas y preguntas enviadas. Las cinco más votadas serán formuladas en persona a los grupos políticos en el Pleno Abierto del 24 de abril.
+        process_3_button: Ver propuestas y preguntas
+        process_6_title: Cartas de Servicios
+        process_6_description: Deja tus comentarios en las Cartas de Servicios de los servicios de Ayuda a Domicilio, de los Centros de Día del Ayuntamiento de Madrid, de Centros Municipales de Mayores y de Teleasistencia Domiciliaria.
+        process_6_button: Comenta las Cartas de Servicios
         title: Procesos sectoriales
       process_1:
         title: Ayúdanos a mejorar la Ordenanza de Transparencia de la Ciudad de Madrid
@@ -101,7 +102,7 @@ es:
 
           El proceso de consulta pública finalizó el 31 de Enero de 2016.
 
-        button: Ver borrador con comentarios ciudadanos
+        button: Ver borrador
       process_2:
         title: Remodelación de Plaza España
         text: Contamos contigo para que decidas cómo debe ser este nuevo espacio en tu ciudad.
@@ -139,3 +140,10 @@ es:
       support_button: Votar propuestas de inversión
       title_html: Tú decides cómo invertir 60 millones de euros<br> para tu ciudad
       title_page: Presupuestos participativos
+  annotator:
+    help:
+      alt: Selecciona el texto que quieres comentar y pulsa en el botón con el lápiz.
+      text: Para comentar este documento debes %{sign_in} o %{sign_up}. Después selecciona el texto que quieres comentar y pulsa en el botón con el lápiz.
+      text_sign_in: iniciar sesión
+      text_sign_up: registrarte
+      title: "¿Cómo puedo comentar este documento?"
