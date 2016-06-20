@@ -136,14 +136,99 @@ blockquote p {
   background: $highlight image-url('home_page_bg.jpg');
   background-position: 50%;
   background-size: cover;
-  padding: $line-height;
+
+  @include breakpoint(medium) {
+    min-height: $line-height*13;
+
+    h1 {
+      font-size: rem-calc(60);
+      line-height: rem-calc(72);
+      margin-top: rem-calc(18);
+    }
+  }
+
+  p {
+    font-size: rem-calc(24);
+    line-height: rem-calc(36);
+  }
 
   h1, p, a {
     color: white;
   }
 
-  a:not(.button) {
-    text-decoration: underline;
+  .button {
+    background: none;
+    border: 1px solid white;
+    color: white;
+  }
+}
+
+h2.featured {
+  border-left: 2px solid #ccc;
+  font-size: rem-calc(18);
+  padding: $line-height/2;
+  text-transform: uppercase;
+}
+
+.featured-welcome {
+  background: #f7f8fb;
+
+  &.features {
+    background: white;
+    border-bottom: 1px solid #eaeaea;
+    margin-bottom: $line-height;
+
+    h2 {
+      font-size: rem-calc(18);
+    }
+
+    .panel {
+      border: 0;
+    }
+  }
+
+  .panel {
+    border: 0;
+    margin-bottom: $line-height;
+
+    .button {
+      color: white;
+    }
+  }
+
+  .panel.budget {
+
+    h3 {
+      color: $budget;
+    }
+
+    .button {
+      background: $budget;
+    }
+  }
+
+  .panel.proposals {
+
+    h3 {
+      color: $proposals;
+    }
+
+    .button {
+      background: $proposals;
+    }
+  }
+}
+
+.slogan {
+
+  p {
+    font-size: rem-calc(30);
+    line-height: rem-calc(48);
+  }
+
+  span {
+    background: #f4fb2d;
+    font-weight: bold;
   }
 }
 

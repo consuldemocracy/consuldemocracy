@@ -1,33 +1,30 @@
-<div class="row home-page-featured margin-top" data-equalizer>
+<div class="expanded featured-welcome">
 
-  <div class="small-12 column">
-    <blockquote class="featured">
-      <strong><%= t('welcome.featured.page_title') %></strong>
-    </blockquote>
+  <div class="row">
+    <div class="small-12 column margin">
+      <h2 class="featured"><%= t('welcome.featured.page_title') %></h2>
+    </div>
   </div>
 
-  <div class="small-12 medium-6 column">
-    <%= link_to participatory_budget_path do %>
-      <div class="panel featured-three" data-equalizer-watch>
-        <h2><%= t('welcome.featured.spending_proposals.title') %></h2>
+  <div class="row" data-equalizer>
+    <div class="small-12 medium-6 column" data-equalizer-watch>
+      <div class="panel budget">
+        <h3><%= t('welcome.featured.spending_proposals.title') %></h3>
         <p><%= t('welcome.featured.spending_proposals.text') %></p>
-        <div class="small-12 medium-9">
-          <span class="button expanded"><%= t('welcome.featured.spending_proposals.link') %></span>
+        <div class="small-12 medium-6">
+          <%= link_to t('welcome.featured.spending_proposals.link'), participatory_budget_path, class: "button expanded" %>
         </div>
       </div>
-    <% end %>
-  </div>
+    </div>
 
-  <div class="small-12 medium-6 column">
-    <%= link_to proposals_path do %>
-      <div class="panel featured-one" data-equalizer-watch>
-        <h2><%= t('welcome.featured.proposals.title') %></h2>
+    <div class="small-12 medium-6 column" data-equalizer-watch>
+      <div class="panel proposals">
+        <h3><%= t('welcome.featured.proposals.title') %></h3>
         <p><%= t('welcome.featured.proposals.text') %></p>
         <div class="small-12 medium-6">
-          <span class="button expanded"><%= t('welcome.featured.proposals.link') %></span>
+          <%= link_to t('welcome.featured.proposals.link'), proposals_path, class: "button expanded" %>
         </div>
-        <i class="icon-proposals show-for-large-up"></i>
       </div>
-    <% end %>
+    </div>
   </div>
 </div>

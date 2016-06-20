@@ -238,7 +238,7 @@ en:
         other: You have %{count} new notifications
       no_notifications: You don't have new notifications
       open: open
-      open_city_slogan_html: In Madrid their inhabitants, <b>discuss</b> the topics they are concerned about, <b>propose</b> ideas to improve their lives and <b>decide</b> among themselves which ones will be carried out.
+      open_city_slogan_html: In Madrid their inhabitants, <span>discuss the topics</span> they are concerned about, <span>propose ideas</span> to improve their lives and <span>decide among themselves</span> which ones will be carried out.
       open_city_slogan_short: There are cities that are governed directly by their inhabitants, Madrid is already one of these cities.
       open_city_title: The city you love will become the city you want.
       open_data: Open data
@@ -692,7 +692,7 @@ en:
         link: See results of proposals preselection
         text: You decide how to invest 60 million euros to your city.
         title: Participatory budgeting
-    more_information: More information about this page
+    more_information: More information about %{org_name}
     proposal:
       alt: Icon propose
       description: Open space for citizen proposals about the kind of city we want to live in.
