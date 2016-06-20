@@ -32,6 +32,7 @@ en:
       subject: "Your investment project '%{code}' has been marked as unfeasible"
       unfeasible_html: "From the Madrid City Council we want to thank you for your participation in the <strong>participatory budgets of the city of Madrid</strong>. We regret to inform you that your proposal <strong>'%{title}'</strong> will be excluded from this participatory process for the following reason:"
     proposal_notification_digest:
+      info: "Here are the new notifications that have published the authors of the proposals that your are supporting in %{org_name}."
       title: "Proposal notifications in %{org_name}"
       share: Share proposal
       comment: Comment proposal

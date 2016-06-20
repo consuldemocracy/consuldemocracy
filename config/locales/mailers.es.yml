@@ -32,6 +32,7 @@ es:
       subject: "Tu propuesta de inversión '%{code}' ha sido marcada como inviable"
       unfeasible_html: "Desde el Ayuntamiento de Madrid queremos agradecer tu participación en los <strong>Presupuestos Participativos de la ciudad de Madrid</strong>. Lamentamos informarte de que tu propuesta <strong>'%{title}'</strong> quedará excluida de este proceso participativo por el siguiente motivo:"
     proposal_notification_digest:
+      info: "A continuación te mostramos las nuevas notificaciones que han publicado los autores de las propuestas que estás apoyando en %{org_name}."
       title: "Notificaciones de propuestas en %{org_name}"
       share: Compartir propuesta
       comment: Comentar propuesta
