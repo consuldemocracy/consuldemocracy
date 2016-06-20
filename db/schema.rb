@@ -171,8 +171,8 @@ ActiveRecord::Schema.define(version: 20160622152333) do
     t.integer  "confidence_score",                         default: 0
     t.integer  "geozone_id"
     t.tsvector "tsv"
-    t.datetime "featured_at"
     t.string   "comment_kind",                             default: "comment"
+    t.datetime "featured_at"
     t.string   "external_link",                limit: 100
   end
 
@@ -521,9 +521,9 @@ ActiveRecord::Schema.define(version: 20160622152333) do
     t.string   "erase_reason"
     t.datetime "erased_at"
     t.boolean  "public_activity",                                             default: true
-    t.boolean  "newsletter",                                                  default: true
     t.integer  "notifications_count",                                         default: 0
     t.boolean  "registering_with_oauth",                                      default: false
+    t.boolean  "newsletter",                                                  default: true
     t.string   "locale"
     t.string   "oauth_email"
     t.integer  "geozone_id"

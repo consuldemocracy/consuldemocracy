@@ -53,7 +53,7 @@ feature 'Open Plenary' do
       within("#proposals") do
         expect(page).to have_css('.proposal', count: 1)
         expect(page).to have_content(proposal.title)
-        expect(page).to have_content('#PlenoAbierto')
+        expect(page).to have_content('Pleno Abierto')
 
         expect(page).to_not have_content "0% / 100%"
         expect(page).to_not have_content('supports needed')
@@ -68,7 +68,7 @@ feature 'Open Plenary' do
 
     within("#proposal_#{proposal.id}") do
       expect(page).to have_content(proposal.title)
-      expect(page).to have_content('#PlenoAbierto')
+      expect(page).to have_content('Pleno Abierto')
 
       expect(page).to_not have_content "0% / 100%"
       expect(page).to_not have_content('supports needed')
