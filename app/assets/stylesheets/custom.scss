@@ -1447,6 +1447,7 @@ table.age-groups {
 }
 
 .panel.category {
+  margin-bottom: $line-height;
   min-height: $line-height*11;
   position: relative;
 
@@ -1454,11 +1455,13 @@ table.age-groups {
     font-size: rem-calc(20);
   }
 
-  a, .button {
-    bottom: 12px;
-    left: 24px;
-    position: absolute;
-    right: 24px;
+  &.subcategory {
+    a, .button {
+      bottom: 12px;
+      left: 24px;
+      position: absolute;
+      right: 24px;
+    }
   }
 }
 
