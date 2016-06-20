@@ -133,6 +133,16 @@ class User < ActiveRecord::Base
     update official_position: nil, official_level: 0
   end
 
+  def has_official_email?
+    domain = Setting['email_domain_for_officials']
+    !email.blank? && ( (email.end_with? "@#{domain}") || (email.end_with? ".#{domain}") )
+  end
+
+  def display_official_position_badge?
+    return true if official_level > 1
+    official_position_badge? && official_level == 1
+  end
+
   def block
     debates_ids = Debate.where(author_id: id).pluck(:id)
     comments_ids = Comment.where(user_id: id).pluck(:id)
@@ -195,11 +205,6 @@ class User < ActiveRecord::Base
 
   def email_required?
     !erased?
-  end
-
-  def has_official_email?
-    domain = Setting['email_domain_for_officials']
-    !email.blank? && ( (email.end_with? "@#{domain}") || (email.end_with? ".#{domain}") )
   end
 
   def locale
