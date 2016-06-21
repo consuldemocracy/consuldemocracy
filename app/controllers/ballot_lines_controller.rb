@@ -15,7 +15,11 @@ class BallotLinesController < ApplicationController
         redirect_to @spending_proposal, notice: t('spending_proposals.notice.voted')
       end
     else
-      render :new
+      if request.get?
+        redirect_to @spending_proposal, notice: t('spending_proposals.notice.count_not_vote')
+      else
+        render :new
+      end
     end
   end
 

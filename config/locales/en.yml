@@ -473,6 +473,7 @@ en:
   spending_proposals:
     notice:
       voted: You have voted this proposal.
+      could_not_vote: We could not store your vote. Please check that you have enough budget and that you are not trying to vote in two districts simultaneously.
     form:
       association_name_label: 'If you propose in name of an assocation or collective add the name here'
       association_name: 'Association name'
