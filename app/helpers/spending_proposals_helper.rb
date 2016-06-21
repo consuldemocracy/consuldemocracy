@@ -91,4 +91,8 @@ module SpendingProposalsHelper
     @spending_proposals.present? ? @spending_proposals.map(&:id) : []
   end
 
+  def display_budget_countdown?
+    Date.new(2016,7,1).beginning_of_day >= Time.now.in_time_zone
+  end
+
 end

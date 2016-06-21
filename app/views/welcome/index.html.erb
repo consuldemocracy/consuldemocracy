@@ -8,10 +8,7 @@
     </div>
   </div>
 
-  <%
-    close_time = Time.strptime('1-JUL-16 00.00.00', '%d-%b-%y %H.%M.%S')
-    if (close_time) >= Time.now.in_time_zone
-  %>
+  <% if display_budget_countdown? %>
     <div class="expanded jumbo-counter padding">
       <div class="row">
         <div class="small-12 medium-6 column">

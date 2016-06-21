@@ -1704,6 +1704,27 @@ ul.ballot-list {
     background: white;
     color: $budget;
   }
+
+  &.banner {
+
+    h2 {
+      font-size: rem-calc(24);
+      margin-top: $line-height;
+    }
+
+    h3 {
+      font-size: rem-calc(18);
+    }
+
+    a:hover {
+      background: #363559;
+      display: block;
+
+      h2, h3 {
+        color: white;
+      }
+    }
+  }
 }
 
 #countdown {
@@ -1722,7 +1743,10 @@ ul.ballot-list {
       border-radius: rem-calc(3);
       display: inline-block;
       padding: $line-height/2;
-      width: rem-calc(60);
+
+      @include breakpoint(medium) {
+        width: rem-calc(60);
+      }
     }
   }
 
