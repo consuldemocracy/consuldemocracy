@@ -231,4 +231,18 @@ module CommonActions
     DirectMessage.last
   end
 
+  def expect_badge_for(resource_name, resource)
+    within("##{resource_name}_#{resource.id}") do
+      expect(page).to have_css ".label.round"
+      expect(page).to have_content "Employee"
+    end
+  end
+
+  def expect_no_badge_for(resource_name, resource)
+    within("##{resource_name}_#{resource.id}") do
+      expect(page).to_not have_css ".label.round"
+      expect(page).to_not have_content "Employee"
+    end
+  end
+
 end

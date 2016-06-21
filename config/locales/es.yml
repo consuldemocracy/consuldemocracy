@@ -17,6 +17,7 @@ es:
       subscription_to_website_newsletter_label: Recibir emails con información interesante sobre la web
       email_on_direct_message_label: Recibir emails con mensajes privados
       email_digest_label: Recibir resumen de notificaciones sobre propuestas
+      official_position_badge_label: Mostrar etiqueta de tipo de usuario
       title: Mi cuenta
       user_permission_debates: Participar en debates
       user_permission_info: Con tu cuenta ya puedes...
