@@ -15,7 +15,7 @@
     </span>
   <% end %>
 
-  <% if resource.author.official? %>
+  <% if resource.author.display_official_position_badge? %>
     &nbsp;&bull;&nbsp;
     <span class="label round level-<%= resource.author.official_level %>">
       <%= resource.author.official_position %>

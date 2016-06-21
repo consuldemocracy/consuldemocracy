@@ -69,6 +69,39 @@ feature 'Account' do
     expect(find("#account_email_on_comment_reply")).to be_checked
   end
 
+  context "Option to display badge for official position" do
+
+    scenario "Users with official position of level 1" do
+      official_user = create(:user, official_level: 1)
+
+      login_as(official_user)
+      visit account_path
+
+      check 'account_official_position_badge'
+      click_button 'Save changes'
+      expect(page).to have_content "Changes saved"
+
+      visit account_path
+      expect(find("#account_official_position_badge")).to be_checked
+    end
+
+    scenario "Users with official position of level 2 and above" do
+      official_user2 = create(:user, official_level: 2)
+      official_user3 = create(:user, official_level: 3)
+
+      login_as(official_user2)
+      visit account_path
+
+      expect(page).to_not have_css '#account_official_position_badge'
+
+      login_as(official_user3)
+      visit account_path
+
+      expect(page).to_not have_css '#account_official_position_badge'
+    end
+
+  end
+
   scenario "Errors on edit" do
     visit account_path
 

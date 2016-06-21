@@ -200,9 +200,6 @@ feature 'Spending proposals' do
   end
 
   scenario "Show" do
-    user = create(:user)
-    login_as(user)
-
     spending_proposal = create(:spending_proposal,
                                 geozone: create(:geozone),
                                 association_name: 'People of the neighbourhood')

@@ -89,6 +89,19 @@
             <% end %>
           </div>
 
+          <% if @account.official_level == 1 %>
+            <div>
+              <%= f.label :official_position_badge do %>
+                <%= f.check_box :official_position_badge,
+                                 title: t('account.show.official_position_badge_label'),
+                                 label: false %>
+                <span class="checkbox">
+                  <%= t("account.show.official_position_badge_label") %>
+                </span>
+              <% end %>
+            </div>
+          <% end %>
+
           <%= f.submit t("account.show.save_changes_submit"), class: "button" %>
         </div>
 

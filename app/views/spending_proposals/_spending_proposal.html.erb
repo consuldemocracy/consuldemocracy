@@ -23,7 +23,7 @@
                 <span class="author">
                   <%= spending_proposal.author.name %>
                 </span>
-                <% if spending_proposal.author.official? %>
+                <% if spending_proposal.author.display_official_position_badge? %>
                   <span class="bullet">&nbsp;&bull;&nbsp;</span>
                   <span class="label round level-<%= spending_proposal.author.official_level %>">
                     <%= spending_proposal.author.official_position %>
