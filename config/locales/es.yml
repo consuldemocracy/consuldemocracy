@@ -442,6 +442,14 @@ es:
     check_all: Todos
     check_none: Ninguno
     collective: Colectivo
+    counter:
+      budget_title: Presupuestos participativos
+      budget_text_html: "¡Participa hasta el <span>30 de junio</span>!"
+      budget_button: "Participa en la votación final"
+      days: "Días"
+      hours: Horas
+      minutes: Minutos
+      seconds: Segundos
     flag: Denunciar como inapropiado
     print:
       print_button: Imprimir esta información

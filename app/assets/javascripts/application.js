@@ -48,6 +48,7 @@
 //= require embed_video
 //= require fixed_bar
 //= require banners
+//= require countdown
 
 var initialize_modules = function() {
   App.Comments.initialize();
@@ -69,6 +70,7 @@ var initialize_modules = function() {
   App.EmbedVideo.initialize();
   App.FixedBar.initialize();
   App.Banners.initialize();
+  App.Countdown.initialize();
 };
 
 $(function(){
