@@ -1,7 +1,7 @@
 App.Countdown =
 
   initialize: ->
-    deadline = 'Jun 30 2016 00:00:00 GMT-0200'
+    deadline = 'Jul 1 2016 00:00:00 GMT-0200'
 
     getTimeRemaining = (endtime) ->
       t = Date.parse(endtime) - Date.parse(new Date)
