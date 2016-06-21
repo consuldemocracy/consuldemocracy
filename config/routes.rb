@@ -77,10 +77,9 @@ Rails.application.routes.draw do
     end
 
     resource :ballot, only: [:show] do
-      resources :ballot_lines, only: [:create, :destroy], shallow: true do
-        get :create, on: :collection, as: :create
-      end
+      resources :ballot_lines, only: [:create, :destroy], shallow: true
     end
+    get '/ballot/ballot_lines/create', to: 'ballot_lines#create', as: :create_ballot_line
   end
 
   resources :open_plenaries, only: [] do

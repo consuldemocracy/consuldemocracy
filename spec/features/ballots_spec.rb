@@ -641,13 +641,13 @@ feature 'Ballots' do
       background { login_as(user) }
 
       scenario "Vote a City proposal", :js do
-        visit create_ballot_ballot_lines_path(spending_proposal_id: sp_city.id)
+        visit create_ballot_line_path(spending_proposal_id: sp_city.id)
         expect(page).to have_content("You have voted this proposal")
         expect(page).to have_link "Remove vote"
       end
 
       scenario "Vote a District proposal", :js do
-        visit create_ballot_ballot_lines_path(spending_proposal_id: sp_district.id)
+        visit create_ballot_line_path(spending_proposal_id: sp_district.id)
         expect(page).to have_content("You have voted this proposal")
         expect(page).to have_link "Remove vote"
       end
@@ -655,7 +655,7 @@ feature 'Ballots' do
 
     context "When not logged in" do
       scenario "Vote a City proposal", :js do
-        visit create_ballot_ballot_lines_path(spending_proposal_id: sp_city.id)
+        visit create_ballot_line_path(spending_proposal_id: sp_city.id)
 
         expect(page).to have_content "You must sign in or register to continue"
         fill_in 'user_email', with: user.email
@@ -667,7 +667,7 @@ feature 'Ballots' do
       end
 
       scenario "Vote a District proposal", :js do
-        visit create_ballot_ballot_lines_path(spending_proposal_id: sp_district.id)
+        visit create_ballot_line_path(spending_proposal_id: sp_district.id)
 
         expect(page).to have_content "You must sign in or register to continue"
         fill_in 'user_email', with: user.email
