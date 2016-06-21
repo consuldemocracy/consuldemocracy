@@ -3,6 +3,7 @@ require 'database_cleaner'
 DatabaseCleaner.clean_with :truncation
 
 puts "Creating Settings"
+Setting["email_domain_for_officials"] = 'madrid.es'
 Setting.create(key: 'official_level_1_name', value: 'Empleados públicos')
 Setting.create(key: 'official_level_2_name', value: 'Organización Municipal')
 Setting.create(key: 'official_level_3_name', value: 'Directores generales')
