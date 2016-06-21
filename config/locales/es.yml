@@ -471,6 +471,8 @@ es:
     twitter: Twitter
     youtube: YouTube
   spending_proposals:
+    notice:
+      voted: Has votado esta propuesta
     form:
       association_name_label: 'Si propones en nombre de una asociación o colectivo añade el nombre aquí'
       association_name: 'Nombre de la asociación'

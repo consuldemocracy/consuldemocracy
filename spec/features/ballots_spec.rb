@@ -632,4 +632,52 @@ feature 'Ballots' do
 
   end
 
+  context "voting with GET" do
+    let!(:user) { create(:user, :level_two) }
+    let!(:sp_city) { create(:spending_proposal, :feasible, :finished, price: 10000) }
+    let!(:sp_district) { create(:spending_proposal, :feasible, :finished, price: 10000, geozone: create(:geozone, name: "Barajas")) }
+
+    context "When logged in" do
+      background { login_as(user) }
+
+      scenario "Vote a City proposal", :js do
+        visit create_ballot_ballot_lines_path(spending_proposal_id: sp_city.id)
+        expect(page).to have_content("You have voted this proposal")
+        expect(page).to have_link "Remove vote"
+      end
+
+      scenario "Vote a District proposal", :js do
+        visit create_ballot_ballot_lines_path(spending_proposal_id: sp_district.id)
+        expect(page).to have_content("You have voted this proposal")
+        expect(page).to have_link "Remove vote"
+      end
+    end
+
+    context "When not logged in" do
+      scenario "Vote a City proposal", :js do
+        visit create_ballot_ballot_lines_path(spending_proposal_id: sp_city.id)
+
+        expect(page).to have_content "You must sign in or register to continue"
+        fill_in 'user_email', with: user.email
+        fill_in 'user_password', with: user.password
+        click_button 'Enter'
+
+        expect(page).to have_content("You have voted this proposal")
+        expect(page).to have_link "Remove vote"
+      end
+
+      scenario "Vote a District proposal", :js do
+        visit create_ballot_ballot_lines_path(spending_proposal_id: sp_district.id)
+
+        expect(page).to have_content "You must sign in or register to continue"
+        fill_in 'user_email', with: user.email
+        fill_in 'user_password', with: user.password
+        click_button 'Enter'
+
+        expect(page).to have_content("You have voted this proposal")
+        expect(page).to have_link "Remove vote"
+      end
+    end
+  end
+
 end
