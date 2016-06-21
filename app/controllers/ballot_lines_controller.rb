@@ -16,7 +16,7 @@ class BallotLinesController < ApplicationController
       end
     else
       if request.get?
-        redirect_to @spending_proposal, notice: t('spending_proposals.notice.count_not_vote')
+        redirect_to @spending_proposal, notice: t('spending_proposals.notice.could_not_vote')
       else
         render :new
       end
