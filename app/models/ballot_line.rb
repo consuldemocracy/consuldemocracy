@@ -5,6 +5,7 @@ class BallotLine < ActiveRecord::Base
   validate :insufficient_funds
   validate :different_geozone, :if => :district_proposal?
   validate :unfeasible
+  validates :spending_proposal_id, uniqueness: { scope: :ballot_id }
 
   def insufficient_funds
     errors.add(:money, "") if ballot.amount_available(spending_proposal.geozone) < spending_proposal.price.to_i
