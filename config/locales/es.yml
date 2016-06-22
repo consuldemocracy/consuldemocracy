@@ -161,7 +161,7 @@ es:
     application:
       chrome: Google Chrome
       firefox: Firefox
-      ie: Hemos detectado que estás navegando desde Internet Explorer. Para una mejor experiencia te recomendamos utilizar %{chrome} o %{firefox}.
+      ie: Hemos detectado que estás navegando desde Internet Explorer. Para una mejor experiencia te recomendamos utilizar %{firefox} o %{chrome}.
       ie_title: Esta web no está optimizada para tu navegador
     footer:
       accessibility: Accesibilidad
