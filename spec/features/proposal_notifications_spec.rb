@@ -81,7 +81,7 @@ feature 'Proposal Notifications' do
       login_as(user)
       visit new_proposal_notification_path(proposal_id: proposal.id)
 
-      expect(current_path).to eq(proposals_path)
+      expect(current_path).to eq(welcome_spending_proposals_path)
       expect(page).to have_content("You do not have permission to carry out the action")
     end
 
