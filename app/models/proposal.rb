@@ -12,6 +12,7 @@ class Proposal < ActiveRecord::Base
   include ActsAsParanoidAliases
 
   RETIRE_OPTIONS = %w(duplicated started unfeasible done other)
+  PROCEEDINGS = [ 'Derechos Humanos' ]
 
   belongs_to :author, -> { with_hidden }, class_name: 'User', foreign_key: 'author_id'
   belongs_to :geozone
@@ -19,16 +20,18 @@ class Proposal < ActiveRecord::Base
   has_many :proposal_notifications
 
   validates :title, presence: true
-  validates :question, presence: true
+  validates :question, presence: true, unless: :proceeding?
   validates :summary, presence: true
   validates :author, presence: true
   validates :responsible_name, presence: true
 
   validates :title, length: { in: 4..Proposal.title_max_length }
   validates :description, length: { maximum: Proposal.description_max_length }
-  validates :question, length: { in: 10..Proposal.question_max_length }
+  validates :question, length: { in: 10..Proposal.question_max_length }, unless: :proceeding?
   validates :responsible_name, length: { in: 6..Proposal.responsible_name_max_length }
-  validates :retired_reason, inclusion: {in: RETIRE_OPTIONS, allow_nil: true}
+  validates :retired_reason, inclusion: { in: RETIRE_OPTIONS, allow_nil: true }
+  validates :proceeding, inclusion: { in: PROCEEDINGS, allow_nil: true }
+  validates :sub_proceeding, presence: true, length: { in: 10..150 }, if: :proceeding?
 
   validates :terms_of_service, acceptance: { allow_nil: false }, on: :create
 
@@ -47,6 +50,8 @@ class Proposal < ActiveRecord::Base
   scope :last_week,                -> { where("proposals.created_at >= ?", 7.days.ago)}
   scope :retired,                  -> { where.not(retired_at: nil) }
   scope :not_retired,              -> { where(retired_at: nil) }
+  scope :proceedings,              -> { where.not(proceeding: nil) }
+  scope :not_proceedings,          -> { where(proceeding: nil) }
 
   def to_param
     "#{id}-#{title}".parameterize

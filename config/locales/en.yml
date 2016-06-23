@@ -34,6 +34,12 @@ en:
   application:
     close: Close
     menu: Menu
+  answers:
+    index:
+      title: Respuesta enviada
+      sent: Tu respuesta ha sido enviada. Gracias por participar.
+    new:
+      send: Send answer
   comments:
     comment:
       admin: Administrator
@@ -304,6 +310,7 @@ en:
       other: Other
     form:
       geozone: Scope of operation
+      sub_proceeding: Human right
       proposal_external_url: Link to additional documentation
       proposal_question: Proposal question
       proposal_question_example_html: Must be summarised in one question with a Yes or No answer. <em>E.g. 'Do you agree with the pedestrianisation of Calle Mayor?'</em>
@@ -317,7 +324,6 @@ en:
       proposal_video_url_note: You may add a link to YouTube or Vimeo
       tag_category_label: "Categories"
       tags_instructions: "Tag this proposal. You can choose from proposed categories or add your own"
-      tags_label: Tags
       tags_placeholder: "Enter the tags you would like to use, separated by commas (',')"
     index:
       featured_proposals: Featured

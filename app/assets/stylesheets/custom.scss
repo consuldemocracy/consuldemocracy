@@ -1333,6 +1333,7 @@ table.age-groups {
 
   &.show {
     height: auto;
+    background-position: 80% 100%;
   }
 
   h1 {
@@ -1340,7 +1341,7 @@ table.age-groups {
     padding-left: $line-height;
   }
 
-  h1, h2, p {
+  h1, h2, h3, p {
     color: white
   }
 
@@ -1372,7 +1373,16 @@ table.age-groups {
   @include breakpoint(large) {
     img {
       position: absolute;
+
+      &.human-rights-img {
+        top: -50px;
+      }
     }
+  }
+
+  a.white {
+    color: white;
+    text-decoration: underline;
   }
 }
 
@@ -1397,6 +1407,186 @@ table.age-groups {
 
   [class^="icon-"] {
     color: $text-light;
+  }
+}
+
+@include breakpoint(large) {
+
+  .human-rights {
+    background: $brand image-url('processes_featured.jpg') no-repeat;
+    background-position: 80% 100%;
+  }
+}
+
+.quoted .panel {
+  border: 0;
+  padding:0;
+
+  @include breakpoint(medium) {
+    padding: $line-height;
+
+    h4 {
+      position: relative;
+
+      &:before {
+        color: #ddd;
+        content: "\201C";
+        font-size: rem-calc(60);
+        left: -40px;
+        position: absolute;
+        top: -20px;
+      }
+    }
+  }
+}
+
+.vertical-image {
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+
+.panel.category {
+  margin-bottom: $line-height;
+  min-height: $line-height*11;
+  position: relative;
+
+  h3 {
+    font-size: rem-calc(20);
+  }
+
+  &.subcategory {
+    a, .button {
+      bottom: 12px;
+      left: 24px;
+      position: absolute;
+      right: 24px;
+    }
+  }
+}
+
+.process-comment {
+  border-bottom: 1px solid $border;
+  border-top: 1px solid $border;
+  margin: $line-height 0;
+  padding: $line-height/2 0;
+}
+
+.process-collection {
+  list-style-type: none;
+  margin-left: 0;
+
+  li .panel {
+    background: #ececec;
+    border: 0;
+    border-radius: rem-calc(6);
+    margin: $line-height/2 $line-height/4;
+    min-height: $line-height*5;
+    padding: 0;
+    position: relative;
+    vertical-align: top;
+
+    @include breakpoint(medium) {
+      min-height: $line-height*7;
+    }
+
+    @include breakpoint(large) {
+      min-height: $line-height*6;
+    }
+
+    &:hover {
+      background: $highlight;
+      position: relative;
+
+      &:before {
+        color: $brand;
+        content: "\56";
+        font-family: "icons";
+        position: absolute;
+        right: -6px;
+        top: -12px;
+      }
+    }
+
+    a {
+      color: $text;
+      display: block;
+      height: 100%;
+      padding: $line-height;
+      position: absolute;
+      text-decoration: none;
+      width: 100%;
+    }
+  }
+}
+
+.proposal-new, .proposal-show {
+
+  h2.proceeding {
+    color: #cacaca;
+  }
+
+  h3.sub-proceeding {
+    background: $highlight;
+    border-radius: rem-calc(6);
+    color: $brand;
+    font-size: rem-calc(18);
+    padding: $line-height/2;
+    position: relative;
+
+    &:after {
+      color: $brand;
+      content: "\56";
+      font-family: "icons";
+      position: absolute;
+      right: -6px;
+      top: -12px;
+    }
+  }
+}
+
+.timeline {
+  border-bottom: 1px solid #d8d8d8;
+  padding-bottom: $line-height/2;
+
+  @include breakpoint(medium) {
+    margin-bottom: $line-height*2.5;
+    padding-top: $line-height;
+  }
+
+  span {
+    display: block;
+    padding: $line-height/2 0;
+    position: relative;
+
+    @include breakpoint(medium) {
+      display: inline;
+      padding: 0;
+    }
+
+    &:after {
+      background: $border;
+      border-radius: rem-calc(20);
+      bottom: -24px;
+      content: none;
+      height: rem-calc(20);
+      left: 50%;
+      margin-left: rem-calc(-10);
+      position: absolute;
+      width: rem-calc(20);
+
+      @include breakpoint(medium) {
+        content: " ";
+      }
+    }
+
+    &.active {
+      font-weight: bold;
+
+      &:after {
+        background: $brand;
+      }
+    }
   }
 }
 

@@ -34,6 +34,12 @@ es:
   application:
     close: Cerrar
     menu: Menú
+  answers:
+    index:
+      title: Respuesta enviada
+      sent: Tu respuesta ha sido enviada. Gracias por participar.
+    new:
+      send: Enviar respuesta
   comments:
     comment:
       admin: Administrador
@@ -304,6 +310,7 @@ es:
       other: Otra
     form:
       geozone: "Ámbito de actuación"
+      sub_proceeding: "Derecho"
       proposal_external_url: Enlace a documentación adicional
       proposal_question: Pregunta de la propuesta
       proposal_question_example_html: Debe ser resumida en una pregunta cuya respuesta sea Sí o No. <em>Ej. '¿Está usted de acuerdo en peatonalizar la calle Mayor?'</em>
@@ -316,7 +323,6 @@ es:
       proposal_video_url: Enlace a vídeo externo
       proposal_video_url_note: Puedes añadir un enlace a YouTube o Vimeo
       tags_instructions: "Etiqueta esta propuesta. Puedes elegir entre las categorías propuestas o introducir las que desees"
-      tags_label: Temas
       tag_category_label: "Categorías"
       tags_placeholder: "Escribe las etiquetas que desees separadas por una coma (',')"
     index:

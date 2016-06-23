@@ -63,6 +63,17 @@ ActiveRecord::Schema.define(version: 20160622152333) do
   add_index "annotations", ["legislation_id"], name: "index_annotations_on_legislation_id", using: :btree
   add_index "annotations", ["user_id"], name: "index_annotations_on_user_id", using: :btree
 
+  create_table "answers", force: :cascade do |t|
+    t.integer  "author_id"
+    t.text     "text"
+    t.string   "context"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "answers", ["author_id"], name: "index_answers_on_author_id", using: :btree
+  add_index "answers", ["context"], name: "index_answers_on_context", using: :btree
+
   create_table "audits", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
@@ -160,8 +171,8 @@ ActiveRecord::Schema.define(version: 20160622152333) do
     t.integer  "confidence_score",                         default: 0
     t.integer  "geozone_id"
     t.tsvector "tsv"
-    t.datetime "featured_at"
     t.string   "comment_kind",                             default: "comment"
+    t.datetime "featured_at"
     t.string   "external_link",                limit: 100
   end
 
@@ -337,6 +348,8 @@ ActiveRecord::Schema.define(version: 20160622152333) do
     t.datetime "retired_at"
     t.string   "retired_reason"
     t.text     "retired_explanation"
+    t.string   "proceeding"
+    t.string   "sub_proceeding"
   end
 
   add_index "proposals", ["author_id", "hidden_at"], name: "index_proposals_on_author_id_and_hidden_at", using: :btree
@@ -347,7 +360,9 @@ ActiveRecord::Schema.define(version: 20160622152333) do
   add_index "proposals", ["geozone_id"], name: "index_proposals_on_geozone_id", using: :btree
   add_index "proposals", ["hidden_at"], name: "index_proposals_on_hidden_at", using: :btree
   add_index "proposals", ["hot_score"], name: "index_proposals_on_hot_score", using: :btree
+  add_index "proposals", ["proceeding"], name: "index_proposals_on_proceeding", using: :btree
   add_index "proposals", ["question"], name: "index_proposals_on_question", using: :btree
+  add_index "proposals", ["sub_proceeding"], name: "index_proposals_on_sub_proceeding", using: :btree
   add_index "proposals", ["summary"], name: "index_proposals_on_summary", using: :btree
   add_index "proposals", ["title"], name: "index_proposals_on_title", using: :btree
   add_index "proposals", ["tsv"], name: "index_proposals_on_tsv", using: :gin
@@ -506,9 +521,9 @@ ActiveRecord::Schema.define(version: 20160622152333) do
     t.string   "erase_reason"
     t.datetime "erased_at"
     t.boolean  "public_activity",                                             default: true
-    t.boolean  "newsletter",                                                  default: true
     t.integer  "notifications_count",                                         default: 0
     t.boolean  "registering_with_oauth",                                      default: false
+    t.boolean  "newsletter",                                                  default: true
     t.string   "locale"
     t.string   "oauth_email"
     t.integer  "geozone_id"

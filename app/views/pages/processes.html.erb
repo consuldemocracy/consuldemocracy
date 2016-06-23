@@ -1,13 +1,15 @@
 <div class="expanded processes no-margin-top">
   <div class="row padding">
     <div class="small-12 column">
-      <h1 class="margin-bottom"><%= t("pages.processes.index.title") %></h1>
+      <h1 class="margin-bottom">
+        <%= t("pages.processes.index.title") %>
+      </h1>
 
-      <div id="service-letters" class="small-12 medium-7 margin-bottom">
+      <div id="human-rights" class="small-12 medium-7 margin-bottom">
         <span class="label"><%= t("pages.processes.index.featured") %></span>
-        <h2><%= t("pages.processes.index.process_6_title") %></h2>
-        <p><%= t("pages.processes.index.process_6_description") %></p>
-        <%= link_to t("pages.processes.index.process_6_button"), page_path("processes_services_letters"), class: "button" %>
+        <h2><%= t("pages.processes.index.process_5_title") %></h2>
+        <p><%= t("pages.processes.index.process_5_description") %></p>
+        <%= link_to t("pages.processes.index.process_5_button"), "derechos-humanos", class: "button" %>
       </div>
     </div>
   </div>
@@ -15,28 +17,35 @@
 
 <div class="row margin" data-equalizer>
 
+  <div id="service-letters" class="small-12 medium-6 large-4 column">
+    <div class="panel category" data-equalizer-watch>
+      <h3><%= t("pages.processes.index.process_6_title") %></h3>
+      <p><%= t("pages.processes.index.process_6_description") %></p>
+      <%= link_to t("pages.processes.index.process_6_button"), page_path("processes_services_letters"), class: "button hollow expanded" %>
+    </div>
+  </div>
+
   <div id="open-plenary" class="small-12 medium-6 large-4 column">
-    <div class="panel" data-equalizer-watch>
+    <div class="panel category" data-equalizer-watch>
       <h3><%= t("pages.processes.index.process_3_title") %></h3>
       <p><%= t("pages.processes.index.process_3_description") %></p>
-      <%= link_to t("pages.processes.index.process_3_button"), page_path("processes_open_plenary") %>
+      <%= link_to t("pages.processes.index.process_3_button"), page_path("processes_open_plenary"), class: "button hollow expanded" %>
     </div>
   </div>
 
   <div id="spain-square" class="small-12 medium-6 large-4 column">
-    <div class="panel" data-equalizer-watch>
+    <div class="panel category" data-equalizer-watch>
       <h3><%= t("pages.processes.index.process_2_title") %></h3>
       <p><%= t("pages.processes.index.process_2_description") %></p>
-      <%= link_to t("pages.processes.index.process_2_button"), page_path("processes_plaza_espana") %>
+      <%= link_to t("pages.processes.index.process_2_button"), page_path("processes_plaza_espana"), class: "button hollow expanded" %>
     </div>
   </div>
 
   <div id="transparency-law" class="small-12 medium-6 large-4 column end">
-    <div class="panel" data-equalizer-watch>
+    <div class="panel category" data-equalizer-watch>
       <h3><%= t("pages.processes.index.process_1_title") %></h3>
       <p><%= t("pages.processes.index.process_1_description") %></p>
-      <%= link_to t("pages.processes.index.process_1_button"), page_path("processes_ordinance") %>
+      <%= link_to t("pages.processes.index.process_1_button"), page_path("processes_ordinance"), class: "button hollow expanded" %>
     </div>
   </div>
-
 </div>

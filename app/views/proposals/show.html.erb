@@ -10,14 +10,14 @@
   <section class="proposal-show">
     <div id="<%= dom_id(@proposal) %>" class="row">
       <div class="small-12 medium-9 column">
-        <%= render "shared/back_link" %>
+        <%= render "shared/back_link", path: @proposal.proceeding? ? page_path('derechos-humanos') : proposals_path %>
 
-        <% if author_of?(@proposal, current_user) %>
+        <% if author_of?(@proposal, current_user) && !@proposal.proceeding? %>
           <%= link_to t("proposals.show.send_notification"), new_proposal_notification_path(proposal_id: @proposal.id),
                       class: 'button hollow float-right' %>
         <% end %>
 
-        <% if current_user && @proposal.editable_by?(current_user) %>
+        <% if current_user && @proposal.editable_by?(current_user) && !@proposal.proceeding? %>
           <%= link_to edit_proposal_path(@proposal), class: 'edit-proposal button hollow float-right' do %>
             <%= t("proposals.show.edit_proposal_link") %>
           <% end %>
@@ -35,6 +35,11 @@
           <div data-alert class="callout alert margin-top">
             <strong><%= t("proposals.show.flag") %></strong>
           </div>
+        <% end %>
+
+        <% if @proposal.proceeding? %>
+          <h2 class="proceeding"><%= @proposal.proceeding %></h2>
+          <h3 class="sub-proceeding"><%= @proposal.sub_proceeding %></h3>
         <% end %>
 
         <div class="proposal-info">
@@ -81,7 +86,9 @@
           </div>
         <% end %>
 
-        <h4><%= @proposal.question %></h4>
+        <% unless @proposal.proceeding? %>
+          <h4><%= @proposal.question %></h4>
+        <% end %>
 
         <% if @proposal.retired? %>
           <div id="retired_explanation" class="callout">
@@ -92,33 +99,37 @@
 
         <%= render 'shared/tags', taggable: @proposal %>
 
-        <%= render 'shared/geozone', geozonable: @proposal %>
+        <% unless @proposal.proceeding? %>
+          <%= render 'shared/geozone', geozonable: @proposal %>
+        <% end %>
 
         <div class="js-moderator-proposal-actions margin">
           <%= render 'proposals/actions', proposal: @proposal %>
         </div>
       </div>
 
-      <aside class="small-12 medium-3 column">
-        <div class="sidebar-divider"></div>
-        <h3><%= t("votes.supports") %></h3>
-        <div class="text-center">
-          <div id="<%= dom_id(@proposal) %>_votes">
-           <%= render 'votes',
-                      { proposal: @proposal, vote_url: vote_proposal_path(@proposal, value: 'yes') } %>
+      <% unless @proposal.proceeding? %>
+        <aside class="small-12 medium-3 column">
+          <div class="sidebar-divider"></div>
+          <h3><%= t("votes.supports") %></h3>
+          <div class="text-center">
+            <div id="<%= dom_id(@proposal) %>_votes">
+             <%= render 'votes',
+                        { proposal: @proposal, vote_url: vote_proposal_path(@proposal, value: 'yes') } %>
+            </div>
           </div>
-        </div>
-        <div id="social-share" class="sidebar-divider"></div>
-        <h3><%= t("proposals.show.share") %></h3>
-        <div class="social-share-full">
-          <%= social_share_button_tag("#{@proposal.title} #{setting['twitter_hashtag']}") %>
-          <% if browser.device.mobile? %>
-            <a href="whatsapp://send?text=<%= @proposal.title %> <%= proposal_url(@proposal) %>" data-action="share/whatsapp/share">
-              <span class="icon-whatsapp whatsapp"></span>
-            </a>
-          <% end %>
-        </div>
-      </aside>
+          <div id="social-share" class="sidebar-divider"></div>
+          <h3><%= t("proposals.show.share") %></h3>
+          <div class="social-share-full">
+            <%= social_share_button_tag("#{@proposal.title} #{setting['twitter_hashtag']}") %>
+            <% if browser.device.mobile? %>
+              <a href="whatsapp://send?text=<%= @proposal.title %> <%= proposal_url(@proposal) %>" data-action="share/whatsapp/share">
+                <span class="icon-whatsapp whatsapp"></span>
+              </a>
+            <% end %>
+          </div>
+        </aside>
+      <% end %>
     </div>
   </section>
 <% end %>

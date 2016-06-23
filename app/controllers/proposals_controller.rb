@@ -26,6 +26,7 @@ class ProposalsController < ApplicationController
   end
 
   def index_customization
+    hide_proceedings
     load_retired
     load_featured
     hide_advanced_search if custom_search?
@@ -61,10 +62,16 @@ class ProposalsController < ApplicationController
     @tag_cloud = tag_cloud
   end
 
+  def new
+    super
+    @resource.proceeding = params[:proceeding]
+    @resource.sub_proceeding = params[:sub_proceeding]
+  end
+
   private
 
     def proposal_params
-      params.require(:proposal).permit(:title, :question, :summary, :description, :external_url, :video_url, :responsible_name, :tag_list, :terms_of_service, :geozone_id)
+      params.require(:proposal).permit(:title, :question, :summary, :description, :external_url, :video_url, :responsible_name, :tag_list, :terms_of_service, :geozone_id, :proceeding, :sub_proceeding)
     end
 
     def retired_params
@@ -95,11 +102,15 @@ class ProposalsController < ApplicationController
     end
 
     def load_featured
-      @featured_proposals = Proposal.all.sort_by_confidence_score.limit(2) if (!@advanced_search_terms && @search_terms.blank? && @tag_filter.blank? && params[:retired].blank?)
+      @featured_proposals = Proposal.not_proceedings.sort_by_confidence_score.limit(2) if (!@advanced_search_terms && @search_terms.blank? && @tag_filter.blank? && params[:retired].blank?)
       if @featured_proposals.present?
         set_featured_proposal_votes(@featured_proposals)
         @resources = @resources.where('proposals.id NOT IN (?)', @featured_proposals.map(&:id))
       end
+    end
+
+    def hide_proceedings
+      @resources = @resources.not_proceedings
     end
 
     def hide_advanced_search
