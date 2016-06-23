@@ -1724,13 +1724,19 @@ ul.ballot-list {
         color: white;
       }
     }
+
+    #countdown {
+      background: none;
+    }
   }
 }
 
 #countdown {
+  background: #e6434d;
+  border-radius: rem-calc(6);
   color: white;
   display: inline-block;
-  font-weight: 100;
+  font-weight: bold;
   text-align: center;
   font-size: rem-calc(30);
 
@@ -1739,7 +1745,7 @@ ul.ballot-list {
     padding: $line-height/2;
 
     .days, .hours, .minutes, .seconds {
-      background: #6562a6;
+      background: #dc2d43;
       border-radius: rem-calc(3);
       display: inline-block;
       padding: $line-height/2;
@@ -1752,7 +1758,6 @@ ul.ballot-list {
 
   .counter-text {
     font-size: $small-font-size;
-    font-weight: bold;
     text-transform: uppercase;
     padding-top: $line-height/4;
   }
