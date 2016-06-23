@@ -12,9 +12,7 @@
           <%= link_to t("users.proposals.send_notification"), new_proposal_notification_path(proposal_id: proposal.id),
             class: 'button hollow' %>
         </td>
-      <% end %>
 
-      <% if author_or_admin? %>
         <td class="text-center">
           <% if proposal.retired? %>
             <span class="label alert"><%= t('users.proposals.retired') %></span>
