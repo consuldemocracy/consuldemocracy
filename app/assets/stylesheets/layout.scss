@@ -396,8 +396,6 @@ header {
           color: $text;
           display: block;
           font-weight: bold;
-          margin-left: 18px\9;
-          margin-right: 18px\9;
           width: auto;
 
           &:hover {
@@ -671,24 +669,9 @@ form {
     font-weight: bold;
   }
 
-  input, textarea {
-    height: 48px\9;
-    line-height: 48px\9;
-    margin-bottom: 24px\9;
-    width: 100%\9;
-  }
-
-  input[type="checkbox"],
-  input[type="radio"] {
-    height: auto\9;
-    line-height: inherit\9;
-    width: auto\9;
-  }
-
   input[type="radio"] {
     height: $line-height !important;
     vertical-align: top;
-    width: 18px\9;
 
     + label {
       font-weight: normal;
