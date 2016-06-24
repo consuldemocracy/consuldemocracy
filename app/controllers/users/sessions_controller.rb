@@ -11,7 +11,7 @@ class Users::SessionsController < Devise::SessionsController
     end
 
     def after_sign_out_path_for(resource)
-      request.referrer.present? ? request.referrer : super
+      super
     end
 
     def verifying_via_email?
