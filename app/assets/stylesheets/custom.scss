@@ -13,6 +13,7 @@
 // 10. Processes
 // 11. Spending proposals votes
 // 12. Collaborative legislation
+// 13. Counter
 //
 
 // 01. Global styles
@@ -1870,5 +1871,85 @@ ul.ballot-list {
     border-radius: rem-calc(6);
     margin-bottom: $line-height;
     padding: $line-height/2;
+  }
+}
+
+// 13. Counter
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+.jumbo-counter {
+  background: $budget;
+  text-align: center;
+
+  h2, h3 {
+    color: white;
+
+    span {
+      text-decoration: underline;
+    }
+  }
+
+  .button {
+    background: white;
+    color: $budget;
+  }
+
+  &.banner {
+
+    h2 {
+      font-size: rem-calc(24);
+      margin-top: $line-height;
+    }
+
+    h3 {
+      font-size: rem-calc(18);
+    }
+
+    a {
+      &:hover {
+        background: #363559;
+        display: block;
+
+        h2, h3 {
+          color: white;
+        }
+      }
+    }
+
+    .countdown {
+      background: none;
+    }
+  }
+}
+
+.countdown {
+  background: #e6434d;
+  border-radius: rem-calc(6);
+  color: white;
+  display: inline-block;
+  font-weight: bold;
+  text-align: center;
+  font-size: rem-calc(30);
+
+  .number {
+    display: inline-block;
+    padding: $line-height/2;
+
+    .value {
+      background: #dc2d43;
+      border-radius: rem-calc(3);
+      display: inline-block;
+      padding: $line-height/2;
+
+      @include breakpoint(medium) {
+        width: rem-calc(60);
+      }
+    }
+  }
+
+  .counter-text {
+    font-size: $small-font-size;
+    text-transform: uppercase;
+    padding-top: $line-height/4;
   }
 }

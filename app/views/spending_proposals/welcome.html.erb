@@ -2,6 +2,18 @@
 <% provide :social_media_meta_tags do %>
 <%= render "shared/social_media_meta_tags_participatory_budget" %>
 <% end %>
+<% if display_budget_countdown? %>
+  <div class="expanded no-margin-top jumbo-counter padding">
+    <div class="row">
+      <div class="small-12 medium-6 column">
+        <h2 class="margin-top"><%= t("shared.counter.budget_text_html") %></h2>
+      </div>
+      <div class="small-12 medium-6 column margin-bottom">
+        <%= render "shared/budget_counter" %>
+      </div>
+    </div>
+  </div>
+<% end %>
 <div class="expanded jumbo-investment-project-votes no-margin-top margin-bottom">
   <div class="row" data-equalizer>
     <div class="small-12 large-7 column content" data-equalizer-watch>

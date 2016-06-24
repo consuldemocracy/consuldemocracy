@@ -8,6 +8,23 @@
     </div>
   </div>
 
+  <% if display_budget_countdown? %>
+    <div class="expanded jumbo-counter padding">
+      <div class="row">
+        <div class="small-12 medium-6 column">
+          <h2><%= t("shared.counter.budget_text_html") %></h2>
+          <h3><%= t("shared.counter.budget_title") %></h3>
+          <div class="small-12 medium-6 small-centered">
+            <%= link_to t("shared.counter.budget_button"), participatory_budget_path, class: "button expanded" %>
+          </div>
+        </div>
+        <div class="small-12 medium-6 column">
+          <%= render "shared/budget_counter" %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+
   <%= render "featured_welcome" %>
 
   <div class="expanded padding featured-welcome features">
