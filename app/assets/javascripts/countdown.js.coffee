@@ -1,41 +1,35 @@
 App.Countdown =
 
+  getTimeRemaining: (deadline) ->
+    t = Date.parse(deadline) - Date.parse(new Date)
+    return {
+      total: t,
+      days: Math.floor(t / (1000 * 60 * 60 * 24)),
+      hours: Math.floor(t / (1000 * 60 * 60) % 24),
+      minutes: Math.floor(t / 1000 / 60 % 60),
+      seconds: Math.floor(t / 1000 % 60)
+    }
+
   initialize: ->
-    deadline = 'Jul 1 2016 00:00:00 GMT-0200'
 
-    getTimeRemaining = (endtime) ->
-      t = Date.parse(endtime) - Date.parse(new Date)
-      seconds = Math.floor(t / 1000 % 60)
-      minutes = Math.floor(t / 1000 / 60 % 60)
-      hours = Math.floor(t / (1000 * 60 * 60) % 24)
-      days = Math.floor(t / (1000 * 60 * 60 * 24))
-      {
-        'total': t
-        'days': days
-        'hours': hours
-        'minutes': minutes
-        'seconds': seconds
-      }
+    $('[data-countdown]').each ->
+      $this = $(this)
 
-    initializeClock = (id, endtime) ->
-      clock = document.getElementById(id)
-      daysSpan = clock.querySelector('.days')
-      hoursSpan = clock.querySelector('.hours')
-      minutesSpan = clock.querySelector('.minutes')
-      secondsSpan = clock.querySelector('.seconds')
+      deadline = $this.data('countdown')
+
+      $days = $this.find('[data-days]')
+      $hours = $this.find('[data-hours]')
+      $minutes = $this.find('[data-minutes]')
+      $seconds = $this.find('[data-seconds]')
 
       updateClock = ->
-        t = getTimeRemaining(endtime)
-        daysSpan.innerHTML = t.days
-        hoursSpan.innerHTML = ('0' + t.hours).slice(-2)
-        minutesSpan.innerHTML = ('0' + t.minutes).slice(-2)
-        secondsSpan.innerHTML = ('0' + t.seconds).slice(-2)
+        t = App.Countdown.getTimeRemaining(deadline)
+        $days.text(t.days)
+        $hours.text(('0' + t.hours).slice(-2))
+        $minutes.text(('0' + t.minutes).slice(-2))
+        $seconds.text(('0' + t.seconds).slice(-2))
         if t.total <= 0
           clearInterval timeinterval
-        return
 
       updateClock()
       timeinterval = setInterval(updateClock, 1000)
-      return
-
-    initializeClock 'countdown', deadline

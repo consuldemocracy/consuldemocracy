@@ -1716,22 +1716,24 @@ ul.ballot-list {
       font-size: rem-calc(18);
     }
 
-    a:hover {
-      background: #363559;
-      display: block;
+    a {
+      &:hover {
+        background: #363559;
+        display: block;
 
-      h2, h3 {
-        color: white;
+        h2, h3 {
+          color: white;
+        }
       }
     }
 
-    #countdown {
+    .countdown {
       background: none;
     }
   }
 }
 
-#countdown {
+.countdown {
   background: #e6434d;
   border-radius: rem-calc(6);
   color: white;
@@ -1744,7 +1746,7 @@ ul.ballot-list {
     display: inline-block;
     padding: $line-height/2;
 
-    .days, .hours, .minutes, .seconds {
+    .value {
       background: #dc2d43;
       border-radius: rem-calc(3);
       display: inline-block;
