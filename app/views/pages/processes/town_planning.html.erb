@@ -12,12 +12,127 @@
       <%= render "shared/back_link" %>
 
       <h1 class="margin-bottom"><%= t("pages.processes.index.process_7_title") %></h1>
-      <h2>Participa hasta el 20 de agosto. Selecciona el diseño de banco que más te guste y pulsa en votar.</h2>
+      <h2>Participa hasta el 20 de agosto. Selecciona el diseño de banco que más te guste.</h2>
     </div>
   </div>
 </div>
 
-<div class="row margin-top">
-  <div class="small-12 column">
-  </div>
+<div class="row margin-top survey-radio-images" data-equalizer>
+  <form>
+    <div class="row margin-top">
+      <div class="small-12 medium-4 column" data-equalizer-watch>
+        <label>
+          <span>Banco número 1</span>
+          <input type="radio" name="bench" value="1">
+          <%= image_tag "town_planning/banco_1.jpg", alt: "Banco número 1" %>
+          <span class="selected"></span>
+        </label>
+      </div>
+      <div class="small-12 medium-4 column" data-equalizer-watch>
+        <label>
+          <span>Banco número 2</span>
+          <input type="radio" name="bench" value="2">
+          <%= image_tag "town_planning/banco_2.jpg", alt: "Banco número 2" %>
+          <span class="selected"></span>
+        </label>
+      </div>
+      <div class="small-12 medium-4 column" data-equalizer-watch>
+        <label>
+          <span>Banco número 3</span>
+          <input type="radio" name="bench" value="3">
+          <%= image_tag "town_planning/banco_3.jpg", alt: "Banco número 3" %>
+          <span class="selected"></span>
+        </label>
+      </div>
+    </div>
+
+    <div class="row margin-top">
+      <div class="small-12 medium-4 column" data-equalizer-watch>
+        <label>
+          <span>Banco número 4</span>
+          <input type="radio" name="bench" value="4">
+          <%= image_tag "town_planning/banco_4.jpg", alt: "Banco número 4" %>
+          <span class="selected"></span>
+        </label>
+      </div>
+      <div class="small-12 medium-4 column" data-equalizer-watch>
+        <label>
+          <span>Banco número 5</span>
+          <input type="radio" name="bench" value="5">
+          <%= image_tag "town_planning/banco_5.jpg", alt: "Banco número 5" %>
+          <span class="selected"></span>
+        </label>
+      </div>
+      <div class="small-12 medium-4 column" data-equalizer-watch>
+        <label>
+          <span>Banco número 6</span>
+          <input type="radio" name="bench" value="6">
+          <%= image_tag "town_planning/banco_6.jpg", alt: "Banco número 6" %>
+          <span class="selected"></span>
+        </label>
+      </div>
+    </div>
+
+    <div class="row margin-top">
+      <div class="small-12 medium-4 column" data-equalizer-watch>
+        <label>
+          <span>Banco número 7</span>
+          <input type="radio" name="bench" value="7">
+          <%= image_tag "town_planning/banco_7.jpg", alt: "Banco número 7" %>
+          <span class="selected"></span>
+        </label>
+      </div>
+      <div class="small-12 medium-4 column" data-equalizer-watch>
+        <label>
+          <span>Banco número 8</span>
+          <input type="radio" name="bench" value="8">
+          <%= image_tag "town_planning/banco_8.jpg", alt: "Banco número 8" %>
+          <span class="selected"></span>
+        </label>
+      </div>
+      <div class="small-12 medium-4 column" data-equalizer-watch>
+        <label>
+          <span>Banco número 9</span>
+          <input type="radio" name="bench" value="9">
+          <%= image_tag "town_planning/banco_9.jpg", alt: "Banco número 9" %>
+          <span class="selected"></span>
+        </label>
+      </div>
+    </div>
+
+    <div class="row margin-top">
+      <div class="small-12 medium-4 column" data-equalizer-watch>
+        <label>
+          <span>Banco número 10</span>
+          <input type="radio" name="bench" value="10">
+          <%= image_tag "town_planning/banco_10.jpg", alt: "Banco número 10" %>
+          <span class="selected"></span>
+        </label>
+      </div>
+      <div class="small-12 medium-4 column" data-equalizer-watch>
+        <label>
+          <span>Banco número 11</span>
+          <input type="radio" name="bench" value="11">
+          <%= image_tag "town_planning/banco_11.jpg", alt: "Banco número 11" %>
+          <span class="selected"></span>
+        </label>
+      </div>
+      <div class="small-12 medium-4 column" data-equalizer-watch>
+        <label>
+          <span>Banco número 12</span>
+          <input type="radio" name="bench" value="12">
+          <%= image_tag "town_planning/banco_12.jpg", alt: "Banco número 12" %>
+          <span class="selected"></span>
+        </label>
+      </div>
+    </div>
+
+    <div class="row margin-top">
+      <div class="small-12 medium-4 column small-centered text-center">
+        <%= link_to '/processes/town_planning_success' do %>
+          <input type="submit" value="Enviar voto" class="button expanded">
+        <% end %>
+      </div>
+    </div>
+  </form>
 </div>

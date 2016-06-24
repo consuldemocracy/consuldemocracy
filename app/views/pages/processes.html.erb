@@ -5,11 +5,13 @@
         <%= t("pages.processes.index.title") %>
       </h1>
 
-      <div id="human-rights" class="small-12 medium-7 margin-bottom">
+      <div id="town-planning" class="small-12 medium-7 margin-bottom">
         <span class="label"><%= t("pages.processes.index.featured") %></span>
         <h2><%= t("pages.processes.index.process_7_title") %></h2>
         <p><%= t("pages.processes.index.process_7_description") %></p>
-        <%= link_to t("pages.processes.index.process_7_button"), 'processes/town_planning', class: "button" %>
+        <div class="small-12 medium-6">
+          <%= link_to t("pages.processes.index.process_7_button"), 'processes/town_planning', class: "button expanded" %>
+        </div>
       </div>
     </div>
   </div>

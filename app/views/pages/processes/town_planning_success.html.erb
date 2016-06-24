@@ -1,0 +1,34 @@
+<% provide :title, "Plan de Urbanismo: nuevos bancos" %>
+<% provide :social_media_meta_tags do %>
+<%= render "shared/social_media_meta_tags",
+          social_url: page_url("processes_town_planning"),
+          social_title: t("pages.processes.index.process_7_title"),
+          social_description: t("pages.processes.index.process_7_description") %>
+<% end %>
+
+<div class="expanded processes-show no-margin-top">
+  <div class="row padding">
+    <div class="small-12 medium-9 column">
+      <%= render "shared/back_link" %>
+
+      <h1 class="margin-bottom">¡Gracias por participar!</h1>
+    </div>
+  </div>
+</div>
+
+<div class="row margin-top">
+  <div class="small-12 column">
+    <div class="callout success">
+      ¡Tu voto ha sido recibido! puedes cambiarlo en cualquier momento hasta el día <u>20 de agosto</u>.
+    </div>
+  </div>
+</div>
+
+<div class="row margin-top">
+  <div class="small-12 medium-6 small-centered column text-center">
+    <h2>Has votado: Banco número 4</h2>
+      <%= image_tag "town_planning/banco_4.jpg", alt: "Banco número 4" %>
+      <p><%= link_to "Cambiar mi voto", '/processes/town_planning', class: "button hollow margin-top" %></p>
+    </div>
+  </div>
+</div>
