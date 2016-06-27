@@ -1,0 +1,306 @@
+<div class="expanded spending-proposals results no-margin-top">
+  <div class="row">
+    <div class="small-12 column padding text-center">
+      <%= link_to participatory_budget_path, class: "left back" do %>
+        <i class="icon-angle-left"></i>
+        <%= t("pages.processes.back") %>
+      <% end %>
+
+      <h1 class="title">PRESUPUESTOS PARTICIPATIVOS</h1>
+    </div>
+  </div>
+</div>
+
+<div class="row margin-top">
+  <div class="small-12 column">
+    <ul class="tabs">
+      <li class="tabs-title">
+        <%= link_to "Resultados", "/presupuestos-participativos-resultados"%>
+      </li>
+      <li class="tabs-title is-active">
+        <%= link_to "Estadísticas de participación", "/presupuestos-participativos-estadisticas", class: "is-active" %>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="survey-results margin">
+
+  <div class="row" data-equalizer>
+
+    <!-- Resultados generales -->
+    <div class="small-12 medium-6 column text-right" data-equalizer-watch>
+      <div class="panel purple">
+        <p>TOTAL PROPUESTAS VIABLES</p>
+        <p class="big-number-stat">6.961</p>
+      </div>
+
+      <div class="small-12 column margin-top">
+        <p class="chart-legend">
+          <strong>PROPUESTAS TOTALES</strong>: 8.249<br>
+
+          <span class="label" style="background: #E87461"></span>&nbsp;
+          <strong>PROPUESTAS INVIABLES</strong>: 1.288 (20,45%)<br>
+
+          <span class="label" style="background: #9CC56A"></span>&nbsp;
+          <strong>PROPUESTAS VIABLES</strong>: 6.961 (80,02%)<br>
+        </p>
+      </div>
+    </div>
+
+    <div class="medium-4 show-for-medium column" data-equalizer-watch>
+      <canvas id="chart-totals" width="300" height="300"></canvas>
+    </div>
+  </div>
+
+  <div class="clear"></div>
+  <hr>
+
+  <div class="row" data-equalizer>
+
+    <!-- Participación por sexo -->
+    <div class="small-12 column">
+      <h2 class="subtitle">Participación<br>por sexo</h2>
+    </div>
+
+    <hr>
+
+    <div class="small-12 medium-6 column show-for-medium"  data-equalizer-watch>
+      <div class="panel text-center">
+        <%= image_tag ('survey_results/sex.png') %>
+        <br>
+        <div class="large-offset-3 large-5 padding">
+          <canvas id="chart-sex" width="300" height="300"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <div class="small-12 medium-6 column" data-equalizer-watch>
+      <div class="small-12 medium-6 column">
+        <div class="panel text-right chart-legend">
+          <p>
+            <span class="label" style="background: #FF6600"></span>
+            &nbsp;HOMBRES (50,00%)
+          </p>
+          <p class="big-number-stat">15.000</p>
+        </div>
+      </div>
+
+      <div class="small-12 medium-6 column">
+        <div class="panel text-left chart-legend">
+          <p>
+            <span class="label" style="background: #FF9E01"></span>
+            &nbsp;MUJERES (50,00%)
+          </p>
+          <p class="big-number-stat">15.000</p>
+        </div>
+      </div>
+
+      <div class="small-12 column">
+        <div class="panel purple text-right">
+          <p>TOTAL PARTICIPANTES</p>
+          <p class="big-number-stat">30.000</p>
+        </div>
+      </div>
+  </div>
+
+  <div class="row">
+
+    <!-- Participación por grupos de edad -->
+    <div class="small-12 column">
+      <h2 class="subtitle">Participación por<br>grupos de edad</h2>
+    </div>
+
+    <hr class="double">
+
+    <%= render 'spending_proposals_results_age' %>
+  </div>
+
+  <hr class="double">
+
+  <div class="row">
+
+    <!-- Participación por distritos -->
+    <div class="small-12 column">
+      <h2 class="subtitle">Participación por<br>distritos</h2>
+    </div>
+
+    <hr class="double">
+
+    <div class="show-for-medium medium-6 column small-centered">
+      <%= image_tag("map.jpg", usemap: "#map") %>
+    </div>
+
+    <map name="map" id="html_map">
+      <% Geozone.all.each do |geozone| %>
+        <area shape="poly"
+              coords="<%= geozone.html_map_coordinates %>"
+              href="#<%= geozone.name.parameterize %>"
+              title="<%= geozone.name %>"
+              alt="<%= geozone.name %>">
+      <% end %>
+    </map>
+
+    <div class="small-12 column">
+      <table class="survey-districts">
+        <thead>
+          <tr>
+            <th>DISTRITO</th>
+            <th>Nº PROPUESTAS ENVIADAS</th>
+            <th>% PARTICIPACIÓN TOTAL PROPUESTAS</th>
+          </tr>
+        </thead>
+        <tbody>
+        <tr id="arganzuela">
+          <td>
+            <span class="label large"><strong>Arganzuela</strong></span>
+          </td>
+          <td>2200</td>
+          <td>8,19%</td>
+        </tr>
+        <tr id="barajas">
+          <td>
+            <span class="label large"><strong>Barajas</strong></span>
+          </td>
+          <td>257</td>
+          <td>0,96%</td>
+        </tr>
+        <tr id="carabanchel">
+          <td>
+            <span class="label large"><strong>Carabanchel</strong></span>
+          </td>
+          <td>1287</td>
+          <td>4,79%</td>
+        </tr>
+        <tr id="centro">
+          <td>
+            <span class="label large"><strong>Centro</strong></span>
+          </td>
+          <td>4534</td>
+          <td>16,88%</td>
+        </tr>
+        <tr id="chamartin">
+          <td>
+            <span class="label large"><strong>Chamartin</strong></span>
+          </td>
+          <td>1410</td>
+          <td>5,25%</td>
+        </tr>
+        <tr id="chamberi">
+          <td>
+            <span class="label large"><strong>Chamberí</strong></span>
+          </td>
+          <td>1740</td>
+          <td>6,48%</td>
+        </tr>
+        <tr id="ciudad-lineal">
+          <td>
+            <span class="label large"><strong>Ciudad Lineal</strong></span>
+          </td>
+          <td>1181</td>
+          <td>4,40%</td>
+        </tr>
+        <tr id="fuencarral-el-pardo">
+          <td>
+            <span class="label large"><strong>Fuencarral - El Pardo</strong></span>
+          </td>
+          <td>1617</td>
+          <td>6,02%</td>
+        </tr>
+        <tr id="hortaleza">
+          <td>
+            <span class="label large"><strong>Hortaleza</strong></span>
+          </td>
+          <td>1100</td>
+          <td>4,10%</td>
+        </tr>
+        <tr id="latina">
+          <td>
+            <span class="label large"><strong>Latina</strong></span>
+          </td>
+          <td>1677</td>
+          <td>6,24%</td>
+        </tr>
+        <tr id="moncloa-aravaca">
+          <td>
+            <span class="label large"><strong>Moncloa - Aravaca</strong></span>
+          </td>
+          <td>1610</td>
+          <td>5,99%</td>
+        </tr>
+        <tr id="moratalaz">
+          <td>
+            <span class="label large"><strong>Moratalaz</strong></span>
+          </td>
+          <td>548</td>
+          <td>2,04%</td>
+        </tr>
+        <tr id="puente-de-vallecas">
+          <td>
+            <span class="label large"><strong>Puente de Vallecas</strong></span>
+          </td>
+          <td>1028</td>
+          <td>3,83%</td>
+        </tr>
+        <tr id="retiro">
+          <td>
+            <span class="label large"><strong>Retiro</strong></span>
+          </td>
+          <td>1283</td>
+          <td>4,78%</td>
+        </tr>
+        <tr id="san-blas-canillejas">
+          <td>
+            <span class="label large"><strong>San Blas - Canillejas</strong></span>
+          </td>
+          <td>746</td>
+          <td>2,78%</td>
+        </tr>
+        <tr id="salamanca">
+          <td>
+            <span class="label large"><strong>Salamanca</strong></span>
+          </td>
+          <td>1212</td>
+          <td>4,51%</td>
+        </tr>
+        <tr id="tetuan">
+          <td>
+            <span class="label large"><strong>Tetuán</strong></td></span>
+            <td>1288</td>
+            <td>4,80%</td>
+          </td>
+        </tr>
+        <tr id="usera">
+          <td>
+            <span class="label large"><strong>Usera</strong></span>
+          </td>
+          <td>584</td>
+          <td>2,17%</td>
+        </tr>
+        <tr id="vicalvaro">
+          <td>
+            <span class="label large"><strong>Vicálvaro</strong></span>
+          </td>
+          <td>310</td>
+          <td>1,15%</td>
+        </tr>
+        <tr id="villaverde">
+          <td>
+            <span class="label large"><strong>Villaverde</strong></span>
+          </td>
+          <td>594</td>
+          <td>2,21%</td>
+        </tr>
+        <tr id="villa-de-vallecas">
+          <td>
+            <span class="label large"><strong>Villa de Vallecas</strong></span>
+          </td>
+          <td>654</td>
+          <td>2,43%</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
