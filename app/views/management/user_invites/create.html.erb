@@ -4,6 +4,6 @@
   <h1><%= t('management.user_invites.create.title') %></h1>
 
   <div class="callout success">
-    <%= t('management.user_invites.create.success_html') %>
+    <%= t('management.user_invites.create.success_html', count: @emails.count) %>
   </div>
 </div>

@@ -104,5 +104,5 @@ en:
         submit: Send invites
         title: User's invites
       create:
-        success_html: <strong>COUNT invitations</strong> have been sent.
+        success_html: <strong>%{count} invitations</strong> have been sent.
         title: User's invites

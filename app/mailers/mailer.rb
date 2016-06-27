@@ -68,6 +68,10 @@ class Mailer < ApplicationMailer
     end
   end
 
+  def user_invite(email)
+    mail(to: email, subject: t('mailers.user_invite.subject', org_name: Setting["org_name"]))
+  end
+
   private
 
   def with_user(user, &block)

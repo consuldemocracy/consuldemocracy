@@ -104,5 +104,5 @@ es:
         submit: Enviar invitaciones
         title: Invitaciones para usuarios
       create:
-        success_html: Se han enviado <strong>COUNT invitaciones</strong>.
+        success_html: Se han enviado <strong>%{count} invitaciones</strong>.
         title: Invitaciones para usuarios
