@@ -69,7 +69,9 @@ class Mailer < ApplicationMailer
   end
 
   def user_invite(email)
-    mail(to: email, subject: t('mailers.user_invite.subject', org_name: Setting["org_name"]))
+    I18n.with_locale(I18n.default_locale) do
+      mail(to: email, subject: t('mailers.user_invite.subject', org_name: Setting["org_name"]))
+    end
   end
 
   private
