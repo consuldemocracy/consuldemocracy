@@ -532,7 +532,7 @@ es:
         confidence_score: Mejor valoradas
         price: Por coste
     welcome:
-      city_link: Votar para toda la ciudad
+      city_link: Propuestas de toda la ciudad
       contact_html: Si tienes alguna duda puedes %{contact_faq} o enviarnos un email a <strong>preparticipativos@madrid.es</strong>
       contact_faq: consultar las preguntas frecuentes
       delegation: Delegar mis votos
@@ -541,12 +541,12 @@ es:
       delegation_text: Delega tu votación en lo que se decida en cualquiera de los %{meetings}
       delegation_title: Delegación de voto
       districts: Distritos
-      districts_link: Votar propuestas de distrito
+      districts_link: Propuestas de distrito
       in_two_minutes: Toda la información sobre los presupuestos participativos
       page_title: Presupuestos participativos
-      title: "Ya puedes votar las propuestas"
-      text_first_html: "Desde el <strong>15 de mayo</strong> hasta el día <strong>30 de junio</strong> puedes votar las propuestas de inversión de los Presupuestos participativos 2016."
-      text_second_html: "Puedes votar todas las propuestas que quieras hasta alcanzar el presupuesto destinado para el ámbito de <strong>toda la ciudad y además del distrito</strong> que selecciones."
+      title: "Se terminó el plazo para votar propuestas"
+      text_first_html: "El <strong>30 de junio</strong> finalizó el plazo para votar propuestas de inversión de los Presupuestos participativos 2016."
+      text_second_html: "En breve mostraremos los resultados de las votaciones."
       unfeasible_link: Ver propuestas de inversión no viables
     new:
       more_info: "¿Cómo funcionan los presupuestos participativos?"

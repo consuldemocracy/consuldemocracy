@@ -532,7 +532,7 @@ en:
         confidence_score: highest rated
         price: by price
     welcome:
-      city_link: Vote city proposals
+      city_link: City proposals
       contact_html: If you have any doubt %{contact_faq} or send us an email at <strong>preparticipativos@madrid.es</strong>
       contact_faq: check the faqs
       delegation: Delegation of votes
@@ -541,12 +541,12 @@ en:
       delegation_text: Delegate your votes to the proposals decided at any of the %{meetings}
       delegation_title: Vote delegation
       districts: Districts
-      districts_link: Vote district proposals
+      districts_link: District proposals
       in_two_minutes: All information about participatory budgets
       page_title: Participatory budgeting
       title: "You already can vote investment projects!"
-      text_first_html: "Desde el <strong>15 de mayo</strong> hasta el día <strong>30 de junio</strong> puedes votar las propuestas de inversión de los Presupuestos participativos 2016."
-      text_second_html: "Puedes votar todas las propuestas que quieras hasta alcanzar el presupuesto destinado para el ámbito de <strong>toda la ciudad y además del distrito</strong> que selecciones."
+      text_first_html: "Ballot ended on <strong>July the 30th</strong>"
+      text_second_html: "We will publish the ballot results shortly"
       unfeasible_link: See unfeasible investment projects
     new:
       back_link: Back
