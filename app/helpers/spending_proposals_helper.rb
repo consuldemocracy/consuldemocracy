@@ -80,11 +80,8 @@ module SpendingProposalsHelper
   end
 
   def spending_proposal_votable_in_show?(spending_proposal)
-    if feature?("spending_proposal_features.phase3")
-      spending_proposal.feasibility == 'feasible'
-    else
-      spending_proposal.feasibility != 'not_feasible'
-    end
+    (feature?("spending_proposal_features.phase2") && spending_proposal.feasibility != 'not_feasible') ||
+    (feature?("spending_proposal_features.phase3") && spending_proposal.feasibility == 'feasible')
   end
 
   def spending_proposal_ids
