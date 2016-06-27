@@ -46,3 +46,9 @@ es:
     direct_message_for_sender:
       subject: "Has enviado un nuevo mensaje privado"
       title_html: "Has enviado un nuevo mensaje privado a <strong>%{receiver}</strong> con el siguiente contenido:"
+    user_invites:
+      ignore: "Por favor, si no has solicitado esta invitación ignora este email."
+      text: "Para empezar a participar completa tu registro en el Portal de Gobierno Abierto del Ayuntamiento de Madrid."
+      thanks: "Muchas gracias."
+      title: "Completa tu registro en %{org}"
+      button: Completar registro
