@@ -47,8 +47,8 @@ en:
       subject: "You have send a new private message"
       title_html: "You have send a new private message to <strong>%{receiver}</strong> with the content:"
     user_invites:
-      ignore: "Please, if you have not requested this invite ignore this email."
-      text: "To start participating complete your registration in the Open Government Portal of the Madrid City Council."
+      ignore: "If you have not requested this invitation don't worry, you can ignore this email."
+      text: "Thank you for applying to join %{org}! In seconds you can start to decide the city you want, just fill the form below:"
       thanks: "Thank you very much."
-      title: "Complete your registration in %{org}"
+      title: "Welcome to %{org}"
       button: Complete registration
