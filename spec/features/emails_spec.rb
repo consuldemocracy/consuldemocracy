@@ -247,7 +247,7 @@ feature 'Emails' do
       expect(unread_emails_for("isable@example.com").count).to eq 1
 
       email = open_last_email
-      expect(email).to have_subject("Invitation to Consul")
+      expect(email).to have_subject("Invitation to Decide Madrid")
       expect(email).to have_body_text(/#{new_user_registration_path}/)
     end
 
