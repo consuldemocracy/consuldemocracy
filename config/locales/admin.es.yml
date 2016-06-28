@@ -286,6 +286,7 @@ es:
         direct_messages: Mensajes directos
         proposal_notifications: Notificaciones de propuestas
         redeemable_codes: Códigos enviados por carta
+        user_invites: Invitaciones Linea Madrid
         summary:
           ballot_line_votes: Votos en inversión
           ballot_votes: Presupuestos votados
@@ -334,6 +335,10 @@ es:
         title: Códigos enviados por carta
         total: Total
         campaign: Después de las 400.000 cartas
+      user_invites:
+        title: Invitaciones Linea Madrid
+        clicked_email_link: Link del email clickado
+        clicked_signup_button: Botón de registrarse clickado
     tags:
       create: Crear Tema
       destroy: Eliminar Tema

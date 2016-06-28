@@ -288,6 +288,7 @@ en:
         direct_messages: Direct messages
         proposal_notifications: Proposal notifications
         redeemable_codes: Redeemable codes
+        user_invites: Invitations
         summary:
           ballot_line_votes: Votes in investment projects
           ballot_votes: Budgets voted
@@ -336,6 +337,10 @@ en:
         title: Redeemable codes
         total: Total
         campaign: After sending 400.000 letters
+      user_invites:
+        title: Invitations from Linea Madrid
+        clicked_email_link: Clicked email link
+        clicked_signup_button: Clicked signup button
     tags:
       create: Create Topic
       destroy: Destroy Topic
