@@ -46,3 +46,10 @@ en:
     direct_message_for_sender:
       subject: "You have send a new private message"
       title_html: "You have send a new private message to <strong>%{receiver}</strong> with the content:"
+    user_invite:
+      ignore: "If you have not requested this invitation don't worry, you can ignore this email."
+      text: "Thank you for applying to join %{org}! In seconds you can start to decide the city you want, just fill the form below:"
+      thanks: "Thank you very much."
+      title: "Welcome to %{org}"
+      button: Complete registration
+      subject: "Invitation to %{org_name}"
