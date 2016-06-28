@@ -11,6 +11,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   def create
     build_resource(sign_up_params)
+    track_event
     if resource.valid?
       super
     else
@@ -70,6 +71,12 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
     def after_inactive_sign_up_path_for(resource_or_scope)
       users_sign_up_success_path
+    end
+
+    def track_event
+      if session[:track_signup].present?
+        ahoy.track(:clicked_signup_button) rescue nil
+      end
     end
 
 end

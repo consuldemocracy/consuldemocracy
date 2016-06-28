@@ -107,6 +107,10 @@ class ApplicationController < ActionController::Base
         campaign = Campaign.where(track_id: params[:track_id]).first
         ahoy.track campaign.name if campaign.present?
       end
+
+      if params[:track_id] == "172943750183759812"
+        session[:track_signup] = true
+      end
     end
 
     def set_return_url
