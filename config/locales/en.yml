@@ -516,14 +516,9 @@ en:
         back: Back to select page
         district: District
         my_ballot: My ballot
-        remember_city: You can also vote %{city} investment projects.
-        remember_city_link_html: <strong>city-wide</strong>
-        remember_district: You can also vote investment projects for %{district}.
-        remember_district_link_html: <strong>a district</strong>
         voted_html:
           one: "<strong>You voted one proposal with a cost of %{amount_spent}</strong>"
           other: "<strong>You voted %{count} proposals with a cost of %{amount_spent}</strong>"
-        voted_info: You can change your vote at any time until the close of this phase. No need to spend all the money available.
         votes: Supports remaining
         votes_district: "You can only vote in the district %{district}"
         zero: You have not voted any investment project.
@@ -544,7 +539,7 @@ en:
       districts_link: District proposals
       in_two_minutes: All information about participatory budgets
       page_title: Participatory budgeting
-      title: "You already can vote investment projects!"
+      title: "Participatory budgeting"
       text_first_html: "Ballot ended on <strong>July the 30th</strong>"
       text_second_html: "We will publish the ballot results shortly"
       unfeasible_link: See unfeasible investment projects
@@ -582,20 +577,15 @@ en:
       different_district_active_info: "(If you remove all votes of this district you can select another one)"
   ballots:
     show:
-      city_link: Vote city proposals
       city_wide: City Wide
-      districts_link: Vote district proposals
       district_wide: District Wide
       title: Your ballot
       amount_spent: Amount spent
-      remaining_city_html: "You are <span>%{amount_city}</span> to invest citywide."
-      remaining_district_html: "You are <span>%{amount_district}</span> to invest on <span>%{geozone}</span>."
       remove: Remove vote
       social_share: I've decided where to invest %{amount} for %{geozone}
       voted_html:
         one: "You voted <span>one</span> proposal."
         other: "You voted <span>%{count}</span> proposals."
-      voted_info_html: "You can change your vote at any time until the close of this phase.<br> No need to spend all the money available."
       zero: You have not voted any investment project.
   stats:
     index:
@@ -708,7 +698,7 @@ en:
         text: Create your own proposals and supports those of other citizens.
         title: Citizen proposals
       spending_proposals:
-        link: Participates in the final vote
+        link: See investment projects
         text: You decide how to invest 60 million euros to your city.
         title: Participatory budgeting
     more_information: More information about %{org_name}
