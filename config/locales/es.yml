@@ -687,6 +687,7 @@ es:
       not_enough_money: El precio de esta propuesta es mayor que el presupuesto que te queda disponible.
       confirm_first_vote_on_district: "Cada persona puede apoyar las propuestas de toda la ciudad y de un distrito a su elección. Si pulsas aceptar apoyarás esta propuesta y de ahora en adelante sólo podrás apoyar las propuestas de %{district}. Este distrito no se puede cambiar luego. ¿Quieres apoyar esta propuesta y seleccionar este distrito?"
       confirm_discard_delegation: "Si votas dejarás de delegar. "
+      no_ballots_allowed: No se puede votar
   welcome:
     debates:
       alt: Icono debates
