@@ -309,7 +309,7 @@ feature 'Spending proposals' do
       visit root_path
 
       first(:link, "Participatory budgeting").click
-      click_link "Vote city proposals"
+      click_link "City proposals"
 
       within("#spending_proposal_#{sp1.id}") do
         expect(page).to have_content sp1.title
@@ -349,7 +349,7 @@ feature 'Spending proposals' do
       visit root_path
 
       first(:link, "Participatory budgeting").click
-      click_link "Vote city proposals"
+      click_link "City proposals"
 
       click_link sp1.title
 
@@ -371,13 +371,13 @@ feature 'Spending proposals' do
       visit root_path
 
       first(:link, "Participatory budgeting").click
-      click_link "Vote city proposals"
+      click_link "City proposals"
 
       add_to_ballot(sp1)
       add_to_ballot(sp2)
 
       first(:link, "Participatory budgeting").click
-      click_link "Vote district proposals"
+      click_link "District proposals"
       click_link carabanchel.name
 
       add_to_ballot(sp4)

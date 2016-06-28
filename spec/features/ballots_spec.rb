@@ -21,7 +21,7 @@ feature 'Ballots' do
         sp1 = create(:spending_proposal, :feasible, :finished, price: 10000)
         sp2 = create(:spending_proposal, :feasible, :finished, price: 20000)
 
-        click_link "Vote city proposals"
+        click_link "City proposals"
 
         within("#spending_proposal_#{sp1.id}") do
           find('.add a').trigger('click')
@@ -52,7 +52,7 @@ feature 'Ballots' do
         sp1 = create(:spending_proposal, :feasible, :finished, price: 10000)
         ballot = create(:ballot, user: user, spending_proposals: [sp1])
 
-        click_link "Vote city proposals"
+        click_link "City proposals"
 
         expect(page).to have_css("#amount-spent", text: "$10,000")
         expect(page).to have_css("#amount-available", text: "$23,990,000")
@@ -85,7 +85,7 @@ feature 'Ballots' do
         sp1 = create(:spending_proposal, :feasible, :finished, geozone: carabanchel, price: 10000)
         sp2 = create(:spending_proposal, :feasible, :finished, geozone: carabanchel, price: 20000)
 
-        click_link "Vote district proposals"
+        click_link "District proposals"
         click_link carabanchel.name
 
         within("#spending_proposal_#{sp1.id}") do
@@ -122,7 +122,7 @@ feature 'Ballots' do
         sp1 = create(:spending_proposal, :feasible, :finished, geozone: carabanchel, price: 10000)
         ballot = create(:ballot, user: user, geozone: carabanchel, spending_proposals: [sp1])
 
-        click_link "Vote district proposals"
+        click_link "District proposals"
         click_link carabanchel.name
 
         expect(page).to have_css("#amount-spent", text: "$10,000")
@@ -156,7 +156,7 @@ feature 'Ballots' do
         sp1 = create(:spending_proposal, :feasible, :finished, geozone: nil,        price: 10000)
         sp2 = create(:spending_proposal, :feasible, :finished, geozone: carabanchel, price: 20000)
 
-        click_link "Vote city proposals"
+        click_link "City proposals"
 
         within("#spending_proposal_#{sp1.id}") do
           find('.add a').trigger('click')
@@ -195,7 +195,7 @@ feature 'Ballots' do
         end
 
         click_link "Participatory budgeting"
-        click_link "Vote city proposals"
+        click_link "City proposals"
 
         expect(page).to have_css("#amount-spent", text: "$10,000")
         expect(page).to have_css("#amount-available", text: "$23,990,000")
@@ -215,7 +215,7 @@ feature 'Ballots' do
 
       sp1 = create(:spending_proposal, :feasible, :finished, geozone: carabanchel, price: 10000)
 
-      click_link "Vote district proposals"
+      click_link "District proposals"
       click_link carabanchel.name
 
       within("#spending_proposal_#{sp1.id}") do
@@ -242,7 +242,7 @@ feature 'Ballots' do
       new_york = create(:geozone)
       sp1 = create(:spending_proposal, :feasible, :finished, geozone: california)
 
-      click_link "Vote district proposals"
+      click_link "District proposals"
       click_link california.name
 
       within("#spending_proposal_#{sp1.id}") do
