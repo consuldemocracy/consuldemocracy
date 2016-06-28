@@ -643,13 +643,20 @@ table {
       background: #58ff87;
     }
 
-    &.purple {
-      background: $budget;
+    &.purple, &.light-green {
 
       p {
         color: white;
         margin-bottom: 0;
       }
+    }
+
+    &.purple {
+      background: $budget;
+    }
+
+    &.light-green {
+      background: #9CC56A;
     }
   }
 
