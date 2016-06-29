@@ -19,6 +19,23 @@
                                         geozone: @ballot.geozone.name)} #{setting['twitter_hashtag']}",
                                   url: participatory_budget_url) %>
     <% end %>
+
+    <% if Setting["feature.spending_proposal_features.final_voting_allowed"].present? %>
+      <h3>
+        <%= t("ballots.show.remaining_city_html",
+            amount_city: format_price(@ballot.amount_available(nil))) %>
+      </h3>
+
+      <% if @ballot.geozone.present? %>
+        <h3>
+          <%= t("ballots.show.remaining_district_html",
+              amount_district: format_price(@ballot.amount_available(@ballot.geozone)),
+              geozone: @ballot.geozone.name) %>
+        </h3>
+      <% end %>
+
+      <p><small><%= t("ballots.show.voted_info_html") %></small></p>
+    <% end %>
   </div>
 
   <hr>
@@ -35,7 +52,12 @@
         </h4>
       <% else %>
         <p>
-          <%= t("ballots.show.zero") %>
+          <%= t("ballots.show.zero") %><br>
+          <% if Setting["feature.spending_proposal_features.final_voting_allowed"].present? %>
+            <%= link_to t("ballots.show.city_link"),
+                        spending_proposals_path(geozone: 'all'),
+                        data: { no_turbolink: true } %>
+          <% end %>
         </p>
       <% end %>
 
@@ -61,7 +83,10 @@
         </h4>
       <% else %>
         <p>
-          <%= t("ballots.show.zero") %>
+          <%= t("ballots.show.zero") %><br>
+          <% if Setting["feature.spending_proposal_features.final_voting_allowed"].present? %>
+            <%= link_to t("ballots.show.districts_link"), select_district_path %>
+          <% end %>
         </p>
       <% end %>
 

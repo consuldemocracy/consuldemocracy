@@ -32,3 +32,7 @@
     <%= render 'ballots/spending_proposal_for_sidebar', spending_proposal: spending_proposal %>
   <% end %>
 </ul>
+
+<% if Setting["feature.spending_proposal_features.final_voting_allowed"].present? %>
+  <p class="callout primary"><%= t("spending_proposals.index.sidebar.voted_info") %></p>
+<% end %>

@@ -516,9 +516,14 @@ es:
         back: Volver a página de selección
         district: Distrito
         my_ballot: Mis votos
+        remember_city: Además puedes votar propuestas de inversión para %{city}.
+        remember_city_link_html: <strong>toda la ciudad</strong>
+        remember_district: Además puedes votar propuestas de inversión para %{district}.
+        remember_district_link_html: <strong>un distrito</strong>
         voted_html:
           one: "<strong>Has votado una propuesta por un valor de %{amount_spent}</strong>"
           other: "<strong>Has votado %{count} propuestas por un valor de %{amount_spent}</strong>"
+        voted_info: Puedes cambiar tus votos en cualquier momento hasta el cierre de esta fase. No hace falta que gastes todo el dinero disponible.
         votes: Apoyos restantes
         votes_district: "Solo puedes votar en el distrito %{district}"
         zero: "Todavía no has votado ninguna propuesta de inversión."
@@ -527,7 +532,8 @@ es:
         confidence_score: Mejor valoradas
         price: Por coste
     welcome:
-      city_link: Propuestas de toda la ciudad
+      city_link: Votar para toda la ciudad
+      city_link_close: Propuestas de toda la ciudad
       contact_html: Si tienes alguna duda puedes %{contact_faq} o enviarnos un email a <strong>preparticipativos@madrid.es</strong>
       contact_faq: consultar las preguntas frecuentes
       delegation: Delegar mis votos
@@ -536,12 +542,16 @@ es:
       delegation_text: Delega tu votación en lo que se decida en cualquiera de los %{meetings}
       delegation_title: Delegación de voto
       districts: Distritos
-      districts_link: Propuestas de distrito
+      districts_link: Votar propuestas de distrito
+      districts_link_close: Propuestas de distrito
       in_two_minutes: Toda la información sobre los presupuestos participativos
       page_title: Presupuestos participativos
-      title: "Presupuestos participativos"
-      text_first_html: "El <strong>30 de junio</strong> finalizó el plazo para votar propuestas de inversión de los Presupuestos participativos 2016."
-      text_second_html: "En breve mostraremos los resultados de las votaciones."
+      title: "Ya puedes votar las propuestas"
+      title_close: "Presupuestos participativos"
+      text_first_html: "Desde el <strong>15 de mayo</strong> hasta el día <strong>30 de junio</strong> puedes votar las propuestas de inversión de los Presupuestos participativos 2016."
+      text_first_close_html: "El <strong>30 de junio</strong> finalizó el plazo para votar propuestas de inversión de los Presupuestos participativos 2016."
+      text_second_html: "Puedes votar todas las propuestas que quieras hasta alcanzar el presupuesto destinado para el ámbito de <strong>toda la ciudad y además del distrito</strong> que selecciones."
+      text_second_close_html: "En breve mostraremos los resultados de las votaciones."
       unfeasible_link: Ver propuestas de inversión no viables
     new:
       more_info: "¿Cómo funcionan los presupuestos participativos?"
@@ -577,15 +587,20 @@ es:
       different_district_active_info: "(Si retiras todos los votos de este distrito puedes seleccionar otro)"
   ballots:
     show:
+      city_link: Votar para toda la ciudad
       city_wide: Toda la ciudad
+      districts_link: Votar propuestas de distrito
       district_wide: Distrito
       title: Mis votos
       amount_spent: Coste total
+      remaining_city_html: "Te quedan <span>%{amount_city}</span> para invertir en toda la ciudad."
+      remaining_district_html: "Te quedan <span>%{amount_district}</span> para invertir en <span>%{geozone}</span>."
       remove: Quitar voto
       social_share: He decidido dónde quiero que se inviertan %{amount} para %{geozone}. ¡Participa!
       voted_html:
         one: "Has votado <span>una</span> propuesta."
         other: "Has votado <span>%{count}</span> propuestas."
+      voted_info_html: "Puedes cambiar tus votos en cualquier momento hasta el cierre de esta fase.<br> No hace falta que gastes todo el dinero disponible."
       zero: "Todavía no has votado ninguna propuesta de inversión."
   stats:
     index:
@@ -698,7 +713,8 @@ es:
         text: Crear tus propias propuestas y apoya las de otros ciudadanos.
         title: Propuestas ciudadanas
       spending_proposals:
-        link: Ver propuestas de inversión
+        link: Participa en la votación final
+        link_close: Ver propuestas de inversión
         text: Tú decides cómo invertir 60 millones de euros para tu ciudad.
         title: Presupuestos participativos
     more_information: Más información sobre %{org_name}
