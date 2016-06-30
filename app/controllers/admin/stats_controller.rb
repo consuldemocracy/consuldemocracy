@@ -62,6 +62,7 @@ class Admin::StatsController < Admin::BaseController
 
   def user_invites
     user_invites_campaign = Campaign.where(track_id: "172943750183759812").first
+    @user_invites = Ahoy::Event.where(name: :user_invite).count
     @clicked_email_link = Ahoy::Event.where(name: user_invites_campaign.name).count
     @clicked_signup_button = Ahoy::Event.where(name: :clicked_signup_button).count
   end

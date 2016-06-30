@@ -337,6 +337,7 @@ es:
         campaign: Después de las 400.000 cartas
       user_invites:
         title: Invitaciones Linea Madrid
+        total: Total
         clicked_email_link: Link del email clickado
         clicked_signup_button: Botón de registrarse clickado
     tags:

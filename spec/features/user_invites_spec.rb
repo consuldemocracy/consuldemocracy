@@ -4,7 +4,6 @@ feature 'User invites' do
 
   scenario "Send invitations" do
     login_as_manager
-
     visit new_management_user_invite_path
 
     fill_in "emails", with: "john@example.com, ana@example.com, isable@example.com"
@@ -17,6 +16,26 @@ feature 'User invites' do
 
     background do
       create(:campaign, track_id: 172943750183759812)
+    end
+
+    scenario "Invitations sent" do
+      login_as_manager
+      visit new_management_user_invite_path
+
+      fill_in "emails", with: "john@example.com, ana@example.com, isable@example.com"
+      click_button "Send invites"
+
+      expect(page).to have_content "3 invitations have been sent."
+
+      admin = create(:administrator)
+      login_as(admin.user)
+
+      visit admin_stats_path
+      click_link "Invitations"
+
+      within("#total") do
+        expect(page).to have_content "3"
+      end
     end
 
     scenario "Clicks on registration button" do

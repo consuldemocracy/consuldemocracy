@@ -339,6 +339,7 @@ en:
         campaign: After sending 400.000 letters
       user_invites:
         title: Invitations from Linea Madrid
+        total: Total
         clicked_email_link: Clicked email link
         clicked_signup_button: Clicked signup button
     tags:
