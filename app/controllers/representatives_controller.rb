@@ -1,6 +1,8 @@
 class RepresentativesController < ApplicationController
 
   before_action :authenticate_user!
+  before_action :ensure_final_voting_allowed
+
   skip_authorization_check
 
   def create
@@ -26,6 +28,13 @@ class RepresentativesController < ApplicationController
 
     def representative_params
       params.require(:forum).permit(:id)
+    end
+
+    def ensure_final_voting_allowed
+       if Setting["feature.spending_proposal_features.phase3"].blank? ||
+          Setting["feature.spending_proposal_features.final_voting_allowed"].blank?
+          head(:forbidden)
+       end
     end
 
 end
