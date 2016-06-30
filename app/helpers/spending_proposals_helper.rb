@@ -89,7 +89,7 @@ module SpendingProposalsHelper
   end
 
   def display_budget_countdown?
-    Date.new(2016,7,1).beginning_of_day >= Time.now.in_time_zone
+    Setting["feature.spending_proposal_features.final_voting_allowed"].present?
   end
 
 end
