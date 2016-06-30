@@ -47,7 +47,9 @@ module Abilities
         can :vote, SpendingProposal
         can :create, SpendingProposal
         can :show, Ballot
-        can [:create, :destroy], BallotLine
+        if Setting["feature.spending_proposal_features.final_voting_allowed"]
+          can [:create, :destroy], BallotLine
+        end
         can :create, DirectMessage
         can :show, DirectMessage, sender_id: user.id
       end
