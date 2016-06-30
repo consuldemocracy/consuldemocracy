@@ -12,8 +12,10 @@
 
 <div class="clear"></div>
 
-<div class="sidebar-divider"></div>
-<h3 class="sidebar-title"><%= t("spending_proposals.index.sidebar.my_ballot") %></h3>
+<% if current_user && @ballot.spending_proposals.by_geozone(@geozone).count > 0 %>
+  <div class="sidebar-divider"></div>
+  <h3 class="sidebar-title"><%= t("spending_proposals.index.sidebar.my_ballot") %></h3>
+<% end %>
 
 <% if @ballot.spending_proposals.by_geozone(@geozone).count > 0 %>
   <p>
@@ -24,7 +26,9 @@
     </em>
   </p>
 <% else %>
-  <p><strong><%= t("spending_proposals.index.sidebar.zero") %></strong></p>
+  <% if Setting["feature.spending_proposal_features.final_voting_allowed"].present? %>
+    <p><strong><%= t("spending_proposals.index.sidebar.zero") %></strong></p>
+  <% end %>
 <% end %>
 
 <ul class="ballot-list">
