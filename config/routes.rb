@@ -81,7 +81,8 @@ Rails.application.routes.draw do
     resource :ballot, only: [:show] do
       resources :ballot_lines, only: [:create, :destroy], shallow: true
     end
-    get '/ballot/ballot_lines/create', to: 'ballot_lines#create', as: :create_ballot_line
+    get '/ballot/ballot_lines/create', to: 'ballot_lines#create', as: :create_ballot_line,
+    constraints: lambda { |request| Setting["feature.spending_proposal_features.final_voting_allowed"].present? }
   end
 
   resources :open_plenaries, only: [] do

@@ -679,5 +679,23 @@ feature 'Ballots' do
       end
     end
   end
-
 end
+
+feature "Ballots in the wrong phase" do
+
+  background { login_as(create(:user, :level_two)) }
+  let(:sp) { create(:spending_proposal, :feasible, :finished, price: 10000) }
+
+  scenario "When not on phase 3" do
+    Setting['feature.spending_proposal_features.phase3'] = nil
+    visit create_ballot_line_path(spending_proposal_id: sp.id)
+    expect(page.status_code).to eq(403)
+  end
+
+  scenario "When in phase 3 but voting disabled" do
+    Setting['feature.spending_proposal_features.phase3'] = true
+    Setting['feature.spending_proposal_features.final_voting_allowed'] = nil
+    expect{visit create_ballot_line_path(spending_proposal_id: sp.id)}.to raise_error(ActionController::RoutingError)
+  end
+end
+

@@ -187,6 +187,7 @@ en:
       delegating: "You are delegating your votes on <strong>%{representative}</strong>"
       not_delegating: "You are not delegating your votes"
       title: Delegate your votes
+      title_closed: Vote delegations
     show:
       delegate_button: "Delegate on %{forum}"
       sign_in_to_delegate: "Sign in to delegate"
@@ -523,7 +524,7 @@ en:
         voted_html:
           one: "<strong>You voted one proposal with a cost of %{amount_spent}</strong>"
           other: "<strong>You voted %{count} proposals with a cost of %{amount_spent}</strong>"
-        voted_info: You can change your vote at any time until the close of this phase. No need to spend all the money available.
+        voted_info: You can change your vote at any time until the close of this phase. No need to spend all the money
         votes: Supports remaining
         votes_district: "You can only vote in the district %{district}"
         zero: You have not voted any investment project.
@@ -533,20 +534,27 @@ en:
         price: by price
     welcome:
       city_link: Vote city proposals
+      city_link_close: City proposals
       contact_html: If you have any doubt %{contact_faq} or send us an email at <strong>preparticipativos@madrid.es</strong>
       contact_faq: check the faqs
-      delegation: Delegation of votes
+      delegation: Vote Delegation
+      delegation_closed: See vote delegations
       delegation_info_html: "If you activate vote delegation on any local space, proposals decided by that space will automaticaly receive your votes"
       delegation_meetings: local debate spaces
       delegation_text: Delegate your votes to the proposals decided at any of the %{meetings}
+      delegation_text_closed: You can see what the %{meetings} have decided
       delegation_title: Vote delegation
       districts: Districts
       districts_link: Vote district proposals
+      districts_link_close: District proposals
       in_two_minutes: All information about participatory budgets
       page_title: Participatory budgeting
       title: "You already can vote investment projects!"
+      title_close: "Participatory budgeting"
       text_first_html: "Desde el <strong>15 de mayo</strong> hasta el día <strong>30 de junio</strong> puedes votar las propuestas de inversión de los Presupuestos participativos 2016."
+      text_first_close_html: "Ballot ended on <strong>July the 30th</strong>"
       text_second_html: "Puedes votar todas las propuestas que quieras hasta alcanzar el presupuesto destinado para el ámbito de <strong>toda la ciudad y además del distrito</strong> que selecciones."
+      text_second_close_html: "We will publish the ballot results shortly"
       unfeasible_link: See unfeasible investment projects
     new:
       back_link: Back
@@ -687,6 +695,7 @@ en:
       not_enough_money: "This proposal's price is more than the available amount left"
       confirm_first_vote_on_district: "Everyone can support the proposal of the city and one district of their choice, If you accept you support this proposal and only can support the proposals for %{district}. This district can't change later. Do you want support this proposal and select this district?"
       confirm_discard_delegation: "If you vote you will stop delegating. "
+      no_ballots_allowed: No ballots allowed
   welcome:
     debates:
       alt: Icon debates
@@ -708,6 +717,7 @@ en:
         title: Citizen proposals
       spending_proposals:
         link: Participates in the final vote
+        link_close: See investment projects
         text: You decide how to invest 60 million euros to your city.
         title: Participatory budgeting
     more_information: More information about %{org_name}
