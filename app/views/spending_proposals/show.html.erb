@@ -47,7 +47,9 @@
     <aside class="small-12 medium-3 column">
       <% if spending_proposal_votable_in_show?(@spending_proposal) %>
         <div class="sidebar-divider"></div>
-          <h3><%= t("votes.supports") %></h3>
+          <% if feature?("spending_proposal_features.final_voting_allowed") %>
+            <h3><%= t("votes.supports") %></h3>
+          <% end %>
           <div class="text-center">
             <% if feature?("spending_proposal_features.phase2") %>
               <div id="<%= dom_id(@spending_proposal) %>_votes">

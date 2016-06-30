@@ -187,6 +187,7 @@ es:
       delegating: "Estás delegando tus votos en <strong>%{representative}</strong>"
       not_delegating: No estás delegando tus votos
       title: Delega tus votos
+      title_closed: Delegación de votos
     show:
       delegate_button: "Delegar en %{forum}"
       sign_in_to_delegate: "Debes estar idenficado para delegar"
@@ -537,9 +538,11 @@ es:
       contact_html: Si tienes alguna duda puedes %{contact_faq} o enviarnos un email a <strong>preparticipativos@madrid.es</strong>
       contact_faq: consultar las preguntas frecuentes
       delegation: Delegar mis votos
+      delegation_closed: Ver delegaciones de voto
       delegation_info_html: "Si activas la delegación en cualquiera de los espacios, tus votos se realizarán<br> automáticamente sobre las propuestas que haya decidido el espacio correspondiente."
       delegation_meetings: espacios presenciales de debate
       delegation_text: Delega tu votación en lo que se decida en cualquiera de los %{meetings}
+      delegation_text_closed: A continuación podrás ver lo que se ha decido en los %{meetings}
       delegation_title: Delegación de voto
       districts: Distritos
       districts_link: Votar propuestas de distrito
