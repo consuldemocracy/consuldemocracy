@@ -3,7 +3,6 @@ require 'rails_helper'
 feature 'Representatives' do
 
   scenario "Select a representative" do
-    Setting["feature.spending_proposal_features.phase3"] = true
     Setting["feature.spending_proposal_features.final_voting_allowed"] = true
 
     forum1 = create(:forum)
@@ -21,7 +20,6 @@ feature 'Representatives' do
   end
 
   scenario "Delete a representative" do
-    Setting["feature.spending_proposal_features.phase3"] = true
     Setting["feature.spending_proposal_features.final_voting_allowed"] = true
 
     forum = create(:forum)
@@ -49,7 +47,6 @@ feature 'Representatives' do
   end
 
   scenario "User not verified" do
-    Setting["feature.spending_proposal_features.phase3"] = true
     Setting["feature.spending_proposal_features.final_voting_allowed"] = true
 
     unverified_user = create(:user)
@@ -63,21 +60,29 @@ feature 'Representatives' do
     expect(page).to have_content "Verify your account to delegate"
   end
 
-  feature "Representatives in the wrong phase" do
+  feature "Final voting is not set" do
 
-    background { login_as(create(:user, :level_two)) }
-    let(:forum) { create(:forum) }
+    let!(:user) { create(:user, :level_two) }
+    let!(:forum) { create(:forum) }
 
-    scenario "Phase 3 not set" do
-      Setting['feature.spending_proposal_features.phase3'] = false
+    background do
+      Setting['feature.spending_proposal_features.final_voting_allowed'] = false
+      login_as(user)
+    end
+
+    scenario "Button is not shown" do
+      visit forums_path
+      click_link forum.name
+      expect(page).to_not have_button("Delegate on #{forum.name}")
+    end
+
+    scenario "Forcing the creation returns forbidden" do
       page.driver.post representatives_path(id: forum.id)
       expect(page.status_code).to eq(403)
     end
 
-    scenario "Final voting not set" do
-      Setting['feature.spending_proposal_features.phase3'] = true
-      Setting['feature.spending_proposal_features.final_voting_allowed'] = false
-      page.driver.post representatives_path(id: forum.id)
+    scenario "Forcing the deletion returns forbidden" do
+      page.driver.delete representative_path(id: forum.id)
       expect(page.status_code).to eq(403)
     end
 

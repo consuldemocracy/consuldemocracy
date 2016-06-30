@@ -31,9 +31,8 @@ class RepresentativesController < ApplicationController
     end
 
     def ensure_final_voting_allowed
-       if Setting["feature.spending_proposal_features.phase3"].blank? ||
-          Setting["feature.spending_proposal_features.final_voting_allowed"].blank?
-          head(:forbidden)
+       if Setting["feature.spending_proposal_features.final_voting_allowed"].blank?
+         head(:forbidden)
        end
     end
 
