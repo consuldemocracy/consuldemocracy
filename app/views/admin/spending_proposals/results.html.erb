@@ -41,7 +41,7 @@
         (id: <%= spending_proposal.id %>)
       </td>
       <td class="text-center">
-        <%= spending_proposal.ballot_lines_count %>
+        <%= spending_proposal.ballot_lines_count + @delegated_ballots[spending_proposal.id] || 0 %>
       </td>
       <td class="text-center">
         <%= format_price spending_proposal.price %>
