@@ -26,4 +26,19 @@ class Forum < ActiveRecord::Base
     ballot.spending_proposals.district_wide
   end
 
+  def self.delegated_ballots
+    result = {}
+    all.each do |forum|
+      forum.ballot.spending_proposals.each do |sp|
+        result[sp.id] ||= 0
+        # The votes of the original forum user have to be removed from the total
+        # count of users. We use a rails counter for that (spending_proposal.ballot_lines_counter)
+        # removing that vote there is complicated. It is much simpler to do so here:
+        # we just remove 1 vote to compensate that when calculating the delegated votes
+        result[sp.id] += (forum.represented_users.count - 1)
+      end
+    end
+    result
+  end
+
 end

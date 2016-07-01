@@ -827,6 +827,22 @@ feature 'Admin spending proposals' do
           expect(@proposal4.title).to appear_before(@proposal6.title)
         end
       end
+
+      scenario "Delegated votes affecting the result" do
+
+        forum = create(:forum)
+        create_list(:user, 30, :level_two, representative: forum)
+        forum.ballot.spending_proposals << @proposal3
+
+        visit results_admin_spending_proposals_path
+
+        expect(page).to have_content @proposal1.title
+        expect(page).to have_content @proposal2.title
+        expect(page).to have_content @proposal3.title
+
+        expect(@proposal3.title).to appear_before(@proposal2.title)
+        expect(@proposal2.title).to appear_before(@proposal1.title)
+      end
     end
 
     scenario "Displays only finished feasible spending proposals" do

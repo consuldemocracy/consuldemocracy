@@ -32,10 +32,9 @@ class Admin::SpendingProposalsController < Admin::BaseController
   end
 
   def results
-    @spending_proposals = SpendingProposal.feasible.valuation_finished.
-                                          by_geozone(params[:geozone_id]).
-                                          order(ballot_lines_count: :desc, price: :desc).
-                                          page(params[:page]).per(300)
+    @spending_proposals = SpendingProposal.feasible.valuation_finished.by_geozone(params[:geozone_id])
+    @spending_proposals = SpendingProposal.sort_by_delegated_ballots_and_price(@spending_proposals, Forum.delegated_ballots)
+    @spending_proposals = Kaminari.paginate_array(@spending_proposals).page(params[:page]).per(300)
 
     load_geozone
     @initial_budget = Ballot.initial_budget(@geozone)
