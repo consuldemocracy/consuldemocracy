@@ -818,10 +818,14 @@ table {
   font-size: $base-font-size;
 }
 
+table.survey-districts thead {
+  vertical-align: top;
+}
+
 @include breakpoint(medium down) {
 
   table.survey-districts thead {
-    font-size: rem-calc(13);
+    font-size: rem-calc(12);
 
     th {
       width: 25%;
