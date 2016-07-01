@@ -806,6 +806,10 @@ feature 'Admin spending proposals' do
           expect(page).to_not have_content @proposal6.title
           expect(page).to_not have_content @proposal7.title
 
+          within("#spending_proposal_#{@proposal1.id}") { expect(page).to have_content "20" }
+          within("#spending_proposal_#{@proposal2.id}") { expect(page).to have_content "60" }
+          within("#spending_proposal_#{@proposal3.id}") { expect(page).to have_content "40" }
+
           expect(@proposal2.title).to appear_before(@proposal3.title)
           expect(@proposal3.title).to appear_before(@proposal1.title)
         end
@@ -839,6 +843,10 @@ feature 'Admin spending proposals' do
         expect(page).to have_content @proposal1.title
         expect(page).to have_content @proposal2.title
         expect(page).to have_content @proposal3.title
+
+        within("#spending_proposal_#{@proposal1.id}") { expect(page).to have_content "20" }
+        within("#spending_proposal_#{@proposal2.id}") { expect(page).to have_content "60" }
+        within("#spending_proposal_#{@proposal3.id}") { expect(page).to have_content "70" }
 
         expect(@proposal3.title).to appear_before(@proposal2.title)
         expect(@proposal2.title).to appear_before(@proposal1.title)
