@@ -69,6 +69,17 @@ describe SpendingProposal do
     end
   end
 
+  describe "compatible" do
+    it "should return compatible spending proposals" do
+      sp1 = create(:spending_proposal, compatible: true)
+      sp2 = create(:spending_proposal, compatible: true)
+      sp3 = create(:spending_proposal, compatible: false)
+
+      expect(SpendingProposal.compatible).to include(sp1, sp2)
+      expect(SpendingProposal.compatible).to_not include(sp3)
+    end
+  end
+
   describe "dossier info" do
     describe "#feasibility" do
       it "can be feasible" do

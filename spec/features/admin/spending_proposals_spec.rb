@@ -832,8 +832,23 @@ feature 'Admin spending proposals' do
         end
       end
 
-      scenario "Delegated votes affecting the result" do
+      scenario "Compatible spending proposals" do
+        compatible_proposal1 = create(:spending_proposal, :finished, :feasible, price: 10, compatible: true)
+        compatible_proposal2 = create(:spending_proposal, :finished, :feasible, price: 10, compatible: true)
 
+        incompatible_proposal = create(:spending_proposal, :finished, :feasible, price: 10, compatible: false)
+
+        visit results_admin_spending_proposals_path(geozone_id: nil)
+
+        within("#spending-proposals-results") do
+          expect(page).to have_content compatible_proposal1.title
+          expect(page).to have_content compatible_proposal2.title
+
+          expect(page).to_not have_content incompatible_proposal.title
+        end
+      end
+
+      scenario "Delegated votes affecting the result" do
         forum = create(:forum)
         create_list(:user, 30, :level_two, representative: forum)
         forum.ballot.spending_proposals << @proposal3

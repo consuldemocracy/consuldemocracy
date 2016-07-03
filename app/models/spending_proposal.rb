@@ -36,8 +36,10 @@ class SpendingProposal < ActiveRecord::Base
   scope :valuation_finished,     -> { where(valuation_finished: true) }
   scope :feasible,               -> { where(feasible: true) }
   scope :unfeasible,             -> { valuation_finished.where(feasible: false) }
+  scope :compatible,             -> { where(compatible: true) }
   scope :not_unfeasible,         -> { where("feasible IS ? OR feasible = ?", nil, true) }
   scope :with_supports,          -> { where('cached_votes_up > 0') }
+
 
   scope :by_forum,               -> { where(forum: true) }
 
