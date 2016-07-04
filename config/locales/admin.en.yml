@@ -269,7 +269,6 @@ en:
         tags_placeholder: "Write the tags you want separated by commas (,)"
         undefined: Undefined
         incompatibility: Incompatibility
-        mark_as_incompatible: Mark this investement project as incompatible
       results:
         title: Current final voting ranking
         spending_proposal: Proposal title
