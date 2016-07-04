@@ -66,12 +66,10 @@
 
   <h2><%= t("admin.spending_proposals.edit.incompatibility") %></h2>
 
-  <form>
-    <label>
-      <input type="checkbox">
-      <span class="checkbox"><%= t("admin.spending_proposals.edit.mark_as_incompatible") %></span>
-    </label>
-  </form>
+  <label>
+    <%= f.check_box :compatible %>
+    <span class="checkbox"><%= t("admin.spending_proposals.edit.mark_as_incompatible") %></span>
+  </label>
 
   <p class="clear">
     <%= f.submit(class: "button", value: t("admin.spending_proposals.edit.submit_button")) %>

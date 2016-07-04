@@ -244,6 +244,10 @@ es:
         assigned_valuators: Evaluadores asignados
         back: Volver
         classification: Clasificación
+        compatibility_title: Compatibilidad
+        compatibility:
+          "true": "Compatible"
+          "false": "Incompatible"
         heading: Propuesta de inversión %{id}
         edit: Editar
         edit_classification: Editar clasificación

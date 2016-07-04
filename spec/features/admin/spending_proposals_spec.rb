@@ -508,6 +508,24 @@ feature 'Admin spending proposals' do
       end
     end
 
+    scenario "Mark as incompatible" do
+      Setting['feature.spending_proposal_features.valuation_allowed'] = false
+
+      spending_proposal = create(:spending_proposal, compatible: true)
+
+      visit admin_spending_proposal_path(spending_proposal)
+      click_link 'Edit'
+
+      uncheck 'spending_proposal_compatible'
+      click_button 'Update'
+
+      expect(page).to have_content "Investment project updated succesfully."
+
+      within("#compatibility") do
+        expect(page).to have_content "Incompatible"
+      end
+    end
+
     scenario "Errors on update" do
       spending_proposal = create(:spending_proposal)
       create(:geozone, name: "Barbate")

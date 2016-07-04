@@ -246,6 +246,10 @@ en:
         assigned_valuators: Assigned valuators
         back: Back
         classification: Clasification
+        compatibility_title: Compatibility
+        compatibility:
+          "true": "Compatible"
+          "false": "Incompatible"
         heading: "Investment project %{id}"
         edit: Edit
         edit_classification: Edit classification
