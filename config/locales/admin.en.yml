@@ -268,7 +268,7 @@ en:
         tags: Tags
         tags_placeholder: "Write the tags you want separated by commas (,)"
         undefined: Undefined
-        incompatibility: Incompatibility
+        compatibility: Compatibility
       results:
         title: Current final voting ranking
         spending_proposal: Proposal title

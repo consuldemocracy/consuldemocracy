@@ -266,7 +266,7 @@ es:
         tags: Etiquetas
         tags_placeholder: "Escribe las etiquetas que desees separadas por comas (,)"
         undefined: Sin definir
-        incompatibility: Incompatibilidad
+        compatibility: Compatibilidad
       results:
         title: Ranking actual de propuestas - Votaciones finales
         spending_proposal: Título
