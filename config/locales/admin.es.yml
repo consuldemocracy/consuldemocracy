@@ -276,6 +276,7 @@ es:
         show_all_link: Mostrar todas
         price: Coste
         amount_available: Presupuesto disponible
+        incompatible: Incompatibles
       summary:
         title: Resumen de propuestas de inversión
         geozone_name: Ámbito de ciudad

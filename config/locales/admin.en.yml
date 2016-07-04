@@ -278,6 +278,7 @@ en:
         show_all_link: Show all
         price: Cost
         amount_available: Available budget
+        incompatible: Incompatibles
       summary:
         title: Summary for investment projects
         geozone_name: Scope
