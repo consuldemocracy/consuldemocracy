@@ -12,7 +12,7 @@ es:
     email_verification:
       click_here_to_verify: en este enlace
       instructions_2_html: Este email es para verificar tu cuenta con <b>%{document_type} %{document_number}</b>. Si esos no son tus datos, por favor no pulses el enlace anterior e ignora este email.
-      instructions_html: Para terminar de verificar tu cuenta de usuario en el Portal de Gobierno Abierto del Ayuntamiento de Madrid, necesitamos que pulses %{verification_link}.
+      instructions_html: Para terminar de verificar tu cuenta de usuario en el Portal de Gobierno Abierto, necesitamos que pulses %{verification_link}.
       subject: Verifica tu email
       thanks: Muchas gracias.
       title: Verifica tu cuenta con el siguiente enlace
@@ -30,7 +30,7 @@ es:
       signatory: "DIRECCIÓN GENERAL DE PARTICIPACIÓN CIUDADANA"
       sorry: "Sentimos las molestias ocasionadas y volvemos a darte las gracias por tu inestimable participación."
       subject: "Tu propuesta de inversión '%{code}' ha sido marcada como inviable"
-      unfeasible_html: "Desde el Ayuntamiento de Madrid queremos agradecer tu participación en los <strong>Presupuestos Participativos de la ciudad de Madrid</strong>. Lamentamos informarte de que tu propuesta <strong>'%{title}'</strong> quedará excluida de este proceso participativo por el siguiente motivo:"
+      unfeasible_html: "Desde el Ayuntamiento queremos agradecer tu participación en los <strong>Presupuestos Participativos</strong>. Lamentamos informarte de que tu propuesta <strong>'%{title}'</strong> quedará excluida de este proceso participativo por el siguiente motivo:"
     proposal_notification_digest:
       info: "A continuación te mostramos las nuevas notificaciones que han publicado los autores de las propuestas que estás apoyando en %{org_name}."
       title: "Notificaciones de propuestas en %{org_name}"

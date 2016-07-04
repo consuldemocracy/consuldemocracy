@@ -840,7 +840,7 @@ pt-BR:
       consul: Aplicativo Consul
       consul_url: https://github.com/consul/consul
       contact_us: Para suporte técnico entre
-      copyright: Ayuntamiento de Madrid, %{year}
+      copyright: Consul, %{year}
       description: Este portal usa o %{consul} que é %{open_source}. De Madrid para
         o mundo.
       faq: suporte técnico
@@ -854,17 +854,16 @@ pt-BR:
       privacy: Política de privacidade
       transparency_text: Descubra tudo sobre a Câmara da Cidade de Madrid.
       transparency_title: Transparência
-      transparency_url: https://transparencia.madrid.es
+      transparency_url: https://yourtransparencysite.com
     header:
       administration: Administração
       debates: Debates
       external_link_blog: Blog
       external_link_opendata: Dados abertos
-      external_link_opendata_url: http://datos.madrid.es
       external_link_transparency: Transparência
-      external_link_transparency_url: https://transparencia.madrid.es
+      external_link_transparency_url: https://yourtransparencysite.com
       locale: 'Idioma:'
-      logo: Madrid
+      logo: Consul
       moderation: Moderação
       more_information: Mais informações
       my_account_link: Minha conta
@@ -881,7 +880,6 @@ pt-BR:
       open_city_title: Ame a cidade e ela se transformará na cidade que você ama.
       open_data: Dados abertos
       open_gov: Governo aberto
-      processes: Processos abertos
       proposals: Propostas
       spending_proposals: Propostas de despesas
   locale: Português brasileiro
@@ -928,7 +926,7 @@ pt-BR:
         em <b>'Register'</b> na parte superior esquerda de sua tela/janela.
       in_census_has_following_permissions: 'Este usuário pode participar no website
         com as seguintes permissões:'
-      not_in_census: Este documento não está registrado em Madrid.
+      not_in_census: Este documento não está registrado.
       not_in_census_info: 'Cidadãos fora do Censo podem participar no website com
         as seguintes permissões:'
       please_check_account_data: Por favor confira se os dados da conta acima estão
@@ -1246,36 +1244,11 @@ pt-BR:
         signature_sheet: Página de assinaturas
         spending_proposals_info: Como funciona o orçamento participativo?
     opendata:
-      go_old: Vá para o Portal de Dados Abertos
-      slogan_html: 'Estamos trabalhando no novo Portal de Dados Abertos da Câmara
+      slogan: 'Estamos trabalhando no novo Portal de Dados Abertos da Câmara
         da Cidade de Madrid, enquanto isso você pode visitar o atual Portal de Dados
         abertos:'
       title: Dados Abertos
     privacy: Políticas de Privacidade
-    processes:
-      back: Voltar
-      index:
-        process_1_button: Mais informações
-        process_1_description: Madrid quer lançar um sistema de transparência pública
-          de nível mais avançado no mundo e nós precisamos de sua ajuda.
-        process_1_title: Planejamento transparente
-        process_2_button: Mais informações
-        process_2_description: Contamos com você para decidir como você deseja este
-          novo espaço em sua cidade.
-        process_2_title: Remodelagem da Plaza Espanã.
-      process_1:
-        button: Comentar o planejamento
-        comment: deixe seus comentários
-        text: "Até o próximo 31 de janeiro você pode %{comment} o ante-projeto de
-          Orçamento Transparente da cidade de Madrid ou enviar um e-mail para transparencia@madrid.es.\r\n\r\nAgora
-          você pode ver o [projeto final Orçamento Transparente da Cidade de Madrid]
-          (/docs/ordenanza_de_transparencia_de_la_ciudad_de_madrid.doc 'Orçamento
-          Transparente da Cidade de Madrid')."
-        title: Ajude-nos a melhorar
-      process_2:
-        text: Contamos com você no preenchimento de uma enquete curta de como você
-          gostaria que fosse este novo espaço em sua cidade.
-        title: Remodelagem da Plaza de España
     titles:
       accessibility: Acessibilidade
       conditions: Termos de uso
@@ -1290,11 +1263,6 @@ pt-BR:
       password: Senha
       submit: Verificar minha conta
       title: Verificar sua conta
-    while_unfinished_html: Enquanto terminamos, nós encorajamos você a visitar o <a
-      href="/blog" target="_blank">Blog da Área de Participação Cidadã, Transparência
-      e Governo Aberto</a> para saber de nossos progressos e notícias; ou a <a href="/">Seção
-      de Participação Cidadã</a> onde você poderá decidir qual é a cidade que você
-      quer.
   proposals:
     create:
       form:
@@ -1547,7 +1515,7 @@ pt-BR:
       create:
         flash:
           offices: Escritórios de Apoio ao Cidadão
-          offices_url: http://www.madrid.es/portales/munimadrid/es/Inicio/El-Ayuntamiento/Atencion-al-ciudadano/Oficinas-de-Atencion-al-Ciudadano?vgnextfmt=default&vgnextchannel=5b99cde2e09a4310VgnVCM1000000b205a0aRCRD
+          offices_url: http://yourcitizensupportofficesite.com
           success_html: Obrigado por solicitar seu <b>código de segurança máxima (somente
             solicitado em votações finais)</b>. Em poucos dias nós lhe enviaremos
             para seu endereço relacionado nos dados que temos em arquivo. Por favor
@@ -1563,7 +1531,7 @@ pt-BR:
         go_to_index: Ver propostas
         office: Verificar em qualquer %{office}
         offices: Escritórios de Apoio ao Cidadão
-        offices_url: http://www.madrid.es/portales/munimadrid/es/Inicio/El-Ayuntamiento/Atencion-al-ciudadano/Oficinas-de-Atencion-al-Ciudadano?vgnextfmt=default&vgnextchannel=5b99cde2e09a4310VgnVCM1000000b205a0aRCRD
+        offices_url: http://yourcitizensupportofficesite.com
         send_letter: Envie-me uma carta com o código
         title: Parabéns!
         user_permission_info: Com a sua conta você pode...

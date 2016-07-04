@@ -12,7 +12,7 @@ en:
     email_verification:
       click_here_to_verify: this link
       instructions_2_html: This email will verify your account with <b>%{document_type} %{document_number}</b>. If these don't belong to you, please don't click on the previous link and ignore this email.
-      instructions_html: To complete the verification of your user account in the Open Government Portal of the Madrid City Council, you must click %{verification_link}.
+      instructions_html: To complete the verification of your user account in the Open Government Portal, you must click %{verification_link}.
       subject: Confirm your email
       thanks: Thank you very much.
       title: Confirm your account using the following link
@@ -30,7 +30,7 @@ en:
       signatory: "DEPARTMENT OF PUBLIC PARTICIPATION"
       sorry: "Sorry for the inconvenience and we again thank you for your invaluable participation."
       subject: "Your investment project '%{code}' has been marked as unfeasible"
-      unfeasible_html: "From the Madrid City Council we want to thank you for your participation in the <strong>participatory budgets of the city of Madrid</strong>. We regret to inform you that your proposal <strong>'%{title}'</strong> will be excluded from this participatory process for the following reason:"
+      unfeasible_html: "From the City Council we want to thank you for your participation in the <strong>participatory budgets</strong>. We regret to inform you that your proposal <strong>'%{title}'</strong> will be excluded from this participatory process for the following reason:"
     proposal_notification_digest:
       info: "Here are the new notifications that have been published by authors of the proposals that you have supported in %{org_name}."
       title: "Proposal notifications in %{org_name}"
