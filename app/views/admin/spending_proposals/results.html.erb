@@ -22,7 +22,9 @@
   <th><%= t("admin.spending_proposals.results.spending_proposal") %></th>
   <th><%= t("admin.spending_proposals.results.ballot_lines_count") %></th>
   <th><%= t("admin.spending_proposals.results.price") %></th>
-  <th title="<%= t("admin.spending_proposals.results.amount_available") %>"><%= format_price(@initial_budget) %></th>
+  <th title="<%= t("admin.spending_proposals.results.amount_available") %>">
+    <%= format_price(@initial_budget) %>
+  </th>
 
   <% available_budget = @initial_budget.to_i %>
   <% @spending_proposals.each do |spending_proposal| %>
@@ -49,6 +51,25 @@
       <td class="text-center small" title="<%= format_price(initial_budget) %> - <%= format_price(spending_proposal.price) %>">
         <%= format_price budget %>
       </td>
+    </tr>
+  <% end %>
+</table>
+
+<table id="incompatible-spending-proposals">
+  <% @incompatibles.each do |spending_proposal| %>
+    <tr id="<%= dom_id(spending_proposal) %>" class="spending_proposal js-discarded">
+      <td>
+        <span class="icon-x"></span>
+        <%= link_to spending_proposal.title, spending_proposal_path(spending_proposal) %>
+        (id: <%= spending_proposal.id %>)
+      </td>
+      <td class="text-center">
+        <%= spending_proposal.ballot_lines_count + (@delegated_ballots[spending_proposal.id] || 0) %>
+      </td>
+      <td class="text-center">
+        <%= format_price spending_proposal.price %>
+      </td>
+      <td class="text-center small" title=""> </td>
     </tr>
   <% end %>
 </table>

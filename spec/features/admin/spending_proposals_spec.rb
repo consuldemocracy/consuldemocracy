@@ -832,20 +832,40 @@ feature 'Admin spending proposals' do
         end
       end
 
-      scenario "Compatible spending proposals" do
-        compatible_proposal1 = create(:spending_proposal, :finished, :feasible, price: 10, compatible: true)
-        compatible_proposal2 = create(:spending_proposal, :finished, :feasible, price: 10, compatible: true)
+      context "Compatible spending proposals" do
 
-        incompatible_proposal = create(:spending_proposal, :finished, :feasible, price: 10, compatible: false)
+        scenario "Include compatible spending proposals in results" do
+          compatible_proposal1 = create(:spending_proposal, :finished, :feasible, price: 10, compatible: true)
+          compatible_proposal2 = create(:spending_proposal, :finished, :feasible, price: 10, compatible: true)
 
-        visit results_admin_spending_proposals_path(geozone_id: nil)
+          incompatible_proposal = create(:spending_proposal, :finished, :feasible, price: 10, compatible: false)
 
-        within("#spending-proposals-results") do
-          expect(page).to have_content compatible_proposal1.title
-          expect(page).to have_content compatible_proposal2.title
+          visit results_admin_spending_proposals_path(geozone_id: nil)
 
-          expect(page).to_not have_content incompatible_proposal.title
+          within("#spending-proposals-results") do
+            expect(page).to have_content compatible_proposal1.title
+            expect(page).to have_content compatible_proposal2.title
+
+            expect(page).to_not have_content incompatible_proposal.title
+          end
         end
+
+        scenario "Display incompatible spending proposals after results" do
+          incompatible_proposal1  = create(:spending_proposal, :finished, :feasible, price: 10, compatible: false)
+          incompatible_proposal2 = create(:spending_proposal, :finished, :feasible, price: 10, compatible: false)
+
+          compatible_proposal = create(:spending_proposal, :finished, :feasible, price: 10, compatible: true)
+
+          visit results_admin_spending_proposals_path(geozone_id: nil)
+
+          within("#incompatible-spending-proposals") do
+            expect(page).to have_content incompatible_proposal1.title
+            expect(page).to have_content incompatible_proposal2.title
+
+            expect(page).to_not have_content compatible_proposal.title
+          end
+        end
+
       end
 
       scenario "Delegated votes affecting the result" do
