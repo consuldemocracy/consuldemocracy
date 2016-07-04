@@ -244,6 +244,10 @@ es:
         assigned_valuators: Evaluadores asignados
         back: Volver
         classification: Clasificación
+        compatibility_title: Compatibilidad
+        compatibility:
+          "true": "Compatible"
+          "false": "Incompatible"
         heading: Propuesta de inversión %{id}
         edit: Editar
         edit_classification: Editar clasificación
@@ -262,6 +266,8 @@ es:
         tags: Etiquetas
         tags_placeholder: "Escribe las etiquetas que desees separadas por comas (,)"
         undefined: Sin definir
+        incompatibility: Incompatibilidad
+        mark_as_incompatible: Marcar esta propuesta de inversión como incompatible
       results:
         title: Ranking actual de propuestas - Votaciones finales
         spending_proposal: Título
@@ -270,6 +276,7 @@ es:
         show_all_link: Mostrar todas
         price: Coste
         amount_available: Presupuesto disponible
+        incompatible: Incompatibles
       summary:
         title: Resumen de propuestas de inversión
         geozone_name: Ámbito de ciudad

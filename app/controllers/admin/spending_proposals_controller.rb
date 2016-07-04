@@ -39,6 +39,7 @@ class Admin::SpendingProposalsController < Admin::BaseController
 
     load_geozone
     @initial_budget = Ballot.initial_budget(@geozone)
+    @incompatibles = SpendingProposal.incompatible.by_geozone(params[:geozone_id])
   end
 
   def summary
@@ -48,7 +49,7 @@ class Admin::SpendingProposalsController < Admin::BaseController
   private
 
     def spending_proposal_params
-      params.require(:spending_proposal).permit(:title, :description, :external_url, :geozone_id, :association_name, :administrator_id, :tag_list, valuator_ids: [])
+      params.require(:spending_proposal).permit(:title, :description, :external_url, :geozone_id, :association_name, :administrator_id, :tag_list, :compatible, valuator_ids: [])
     end
 
     def load_admins

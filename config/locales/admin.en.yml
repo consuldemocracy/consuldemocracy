@@ -246,6 +246,10 @@ en:
         assigned_valuators: Assigned valuators
         back: Back
         classification: Clasification
+        compatibility_title: Compatibility
+        compatibility:
+          "true": "Compatible"
+          "false": "Incompatible"
         heading: "Investment project %{id}"
         edit: Edit
         edit_classification: Edit classification
@@ -264,6 +268,8 @@ en:
         tags: Tags
         tags_placeholder: "Write the tags you want separated by commas (,)"
         undefined: Undefined
+        incompatibility: Incompatibility
+        mark_as_incompatible: Mark this investement project as incompatible
       results:
         title: Current final voting ranking
         spending_proposal: Proposal title
@@ -272,6 +278,7 @@ en:
         show_all_link: Show all
         price: Cost
         amount_available: Available budget
+        incompatible: Incompatibles
       summary:
         title: Summary for investment projects
         geozone_name: Scope
