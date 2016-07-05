@@ -1,5 +1,5 @@
 class ApplicationMailer < ActionMailer::Base
   helper :settings
-  default from: "Decide Madrid <no-reply@madrid.es>"
+  default from: "Consul <no-reply@consul.es>"
   layout 'mailer'
 end

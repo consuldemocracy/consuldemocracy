@@ -267,6 +267,6 @@ Rails.application.routes.draw do
   mount Tolk::Engine => '/translate', :as => 'tolk'
 
   # static pages
-  get '/blog' => redirect("http://diario.madrid.es/participa/")
+  get '/blog' => redirect("http://hereyourblogsite.com/")
   resources :pages, path: '/', only: [:show]
 end

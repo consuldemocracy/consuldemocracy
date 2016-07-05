@@ -26,7 +26,7 @@ es:
       link: Consul
       in_census_has_following_permissions: 'Este usuario puede participar en el Portal de Gobierno Abierto con las siguientes posibilidades:'
       not_in_census: Este documento no está registrado.
-      not_in_census_info: 'Las personas no empadronadas en Madrid pueden participar en el Portal de Gobierno Abierto del Ayuntamiento de Madrid con las siguientes posibilidades:'
+      not_in_census_info: 'Las personas no empadronadas pueden participar en el Portal de Gobierno Abierto con las siguientes posibilidades:'
       please_check_account_data: Compruebe que los datos anteriores son correctos para proceder a verificar la cuenta completamente.
       title: Gestión de usuarios
       under_age: Debes ser mayor de 16 años para verificar tu cuenta.
