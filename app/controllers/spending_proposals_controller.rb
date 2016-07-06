@@ -68,6 +68,24 @@ class SpendingProposalsController < ApplicationController
   end
 
   def stats
+    stats = {}
+    stats[:total_participants] = total_participants
+    stats[:total_spending_proposals] = total_spending_proposals
+    stats[:total_feasible_spending_proposals] = total_feasible_spending_proposals
+    stats[:total_unfeasible_spending_proposals] = total_unfeasible_spending_proposals
+    stats[:total_male_participants] = total_male_participants
+    stats[:total_female_participants] = total_female_participants
+    stats[:male_percentage] = male_percentage
+    stats[:female_percentage] = female_percentage
+
+    stats[:age_groups] = Hash.new(0)
+    participants.find_each do |participant|
+      if participant.date_of_birth.present?
+        stats[:age_groups][age_group(participant.date_of_birth)] += 1
+      end
+    end
+
+    @stats = stats
   end
 
   def results
@@ -130,6 +148,87 @@ class SpendingProposalsController < ApplicationController
         @valid_orders = %w{random confidence_score}
       end
       @current_order = @valid_orders.include?(params[:order]) ? params[:order] : @valid_orders.first
-  end
+    end
 
+    def users_that_have_voted
+      ActsAsVotable::Vote.where(votable_type: 'SpendingProposal').pluck(:voter_id).uniq
+    end
+
+    def users_that_have_balloted
+      Ballot.where('ballot_lines_count > ?', 0).pluck(:user_id).uniq
+    end
+
+    def total_participants
+      participants.distinct.count
+    end
+
+    def participants
+      User.where(id: users_that_have_voted + users_that_have_balloted)
+    end
+
+    def total_spending_proposals
+      SpendingProposal.count
+    end
+
+    def total_feasible_spending_proposals
+      SpendingProposal.feasible.count
+    end
+
+    def total_unfeasible_spending_proposals
+      SpendingProposal.unfeasible.count
+    end
+
+    def total_male_participants
+      participants.where(gender: 'male').count
+    end
+
+    def total_female_participants
+      participants.where(gender: 'female').count
+    end
+
+    def male_percentage
+       total_male_participants / total_participants.to_f * 100
+    end
+
+    def female_percentage
+      total_female_participants / total_participants.to_f * 100
+    end
+
+    def age(dob)
+      now = Time.now.utc.to_date
+      now.year - dob.year - ((now.month > dob.month || (now.month == dob.month && now.day >= dob.day)) ? 0 : 1)
+    end
+
+    def age_group(dob)
+      user_age = age(dob)
+
+      if (16..19).include?(user_age)
+        "16 - 19"
+      elsif (20..24).include?(user_age)
+        "20 - 24"
+      elsif (25..29).include?(user_age)
+        "25 - 29"
+      elsif (30..34).include?(user_age)
+        "30 - 34"
+      elsif (35..39).include?(user_age)
+        "35 - 39"
+      elsif (40..44).include?(user_age)
+        "40 - 44"
+      elsif (45..49).include?(user_age)
+        "45 - 49"
+      elsif (50..54).include?(user_age)
+        "50 - 54"
+      elsif (55..59).include?(user_age)
+        "55 - 59"
+      elsif (60..64).include?(user_age)
+        "60 - 64"
+      elsif (65..69).include?(user_age)
+        "65 - 69"
+      elsif (70..120).include?(user_age)
+        "+ 70"
+      else
+        puts "Cannot determine age group for dob: #{dob} and age: #{age(dob)}"
+        "Unknown"
+      end
+    end
 end

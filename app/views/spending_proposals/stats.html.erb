@@ -31,7 +31,9 @@
     <div class="small-12 column">
       <div class="panel purple text-center">
         <p>TOTAL PARTICIPANTES</p>
-        <p class="big-number-stat">30.000</p>
+        <p id="total_participants" class="big-number-stat">
+          <%= @stats[:total_participants] %>
+        </p>
       </div>
     </div>
   </div>
@@ -43,16 +45,24 @@
     <div class="small-12 medium-6 column text-right" data-equalizer-watch>
       <div class="panel light-green">
         <p>TOTAL PROPUESTAS ENVIADAS</p>
-        <p class="big-number-stat">6.000</p>
+        <p id="total_spending_proposals" class="big-number-stat">
+          <%= @stats[:total_spending_proposals] %>
+        </p>
       </div>
 
       <div class="small-12 column margin-top">
         <p class="chart-legend">
           <span class="label" style="background: #9CC56A"></span>&nbsp;
-          <strong>PROPUESTAS EN LA FASE FINAL</strong>: 3.000<br>
+          <span id="total_feasible_spending_proposals">
+            <strong>PROPUESTAS EN LA FASE FINAL</strong>:
+            <%= @stats[:total_feasible_spending_proposals] %><br>
+          </span>
 
           <span class="label" style="background: #E87461"></span>&nbsp;
-          <strong>PROPUESTAS INVIABLES</strong>: 1.000<br>
+          <span id="total_unfeasible_spending_proposals">
+            <strong>PROPUESTAS INVIABLES</strong>:
+            <%= @stats[:total_unfeasible_spending_proposals] %><br>
+          </span>
         </p>
       </div>
     </div>
@@ -87,21 +97,31 @@
     <div class="small-12 medium-6 column" data-equalizer-watch>
       <div class="small-12 medium-6 column">
         <div class="panel text-right chart-legend">
-          <p>
+          <p id="male_percentage" >
             <span class="label" style="background: #FF6600"></span>
-            &nbsp;HOMBRES (50,00%)
+            &nbsp;HOMBRES
+            (<%= number_to_percentage(@stats[:male_percentage],
+                                      strip_insignificant_zeros: true,
+                                      precision: 2) %>)
           </p>
-          <p class="big-number-stat">15.000</p>
+          <p id="total_male_participants" class="big-number-stat">
+            <%= @stats[:total_male_participants] %>
+          </p>
         </div>
       </div>
 
       <div class="small-12 medium-6 column">
         <div class="panel text-left chart-legend">
-          <p>
+          <p id="female_percentage">
             <span class="label" style="background: #FF9E01"></span>
-            &nbsp;MUJERES (50,00%)
+            &nbsp;MUJERES
+            (<%= number_to_percentage(@stats[:female_percentage],
+                                      strip_insignificant_zeros: true,
+                                      precision: 2) %>)
           </p>
-          <p class="big-number-stat">15.000</p>
+          <p id="total_female_participants" class="big-number-stat">
+            <%= @stats[:total_female_participants] %>
+          </p>
         </div>
       </div>
   </div>

@@ -414,55 +414,72 @@ feature 'Spending proposals' do
 
   context "Results" do
 
-    scenario "Participation stats" do
+    #test distinct particpants at unit level
+    scenario "Participation stats", :focus do
+      isabel  = create(:user, :level_two, gender: 'female', date_of_birth: 17.years.ago)
+      eva     = create(:user, :level_two, gender: 'female', date_of_birth: 18.years.ago)
+      antonio = create(:user, :level_two, gender: 'male',   date_of_birth: 36.years.ago)
+
+      sp1 = create(:spending_proposal, valuation_finished: true, feasible: true)
+      sp2 = create(:spending_proposal, valuation_finished: true, feasible: true)
+      sp3 = create(:spending_proposal, valuation_finished: true, feasible: false)
+
+      create(:vote, votable: sp1, voter: isabel)
+      create(:vote, votable: sp2, voter: eva)
+      create(:ballot, spending_proposals: [sp1], user: antonio)
 
       visit stats_spending_proposals_path
 
-      expect(page).to have_content "Total participants 30.000"
-
-
-
+      #Take into account... something else apart from supporting and voting? authors? comments?
+      #Yes
+      #me salen 45892
+      #son gente que o bien ha delegado, o ha votado, o ha apoyado, o ha comentado propuestas de inversión
       within "#total_participants" do
-        expect(page).to have_content "30.000"
+        expect(page).to have_content "3"
       end
-
-
-
 
       within "#total_spending_proposals" do
-        expect(page).to have_content "6.000"
+        expect(page).to have_content "3"
       end
 
+      #Take into account... something else apart from feasible...? minimum number of votes?
+      #Nop it is only feasible and valuation finished
       within "#total_feasible_spending_proposals" do
-        expect(page).to have_content "3.000"
+        expect(page).to have_content "2"
+      end
+
+      within "#total_unfeasible_spending_proposals" do
+        expect(page).to have_content "1"
       end
 
       within "#male_percentage" do
-        expect(page).to have_content "50.00%"
+        expect(page).to have_content "33.33%"
       end
 
       within "#female_percentage" do
-        expect(page).to have_content "50.00%"
+        expect(page).to have_content "66.67%"
       end
 
       within "#total_male_participants" do
-        expect(page).to have_content "15.000"
+        expect(page).to have_content "1"
       end
 
       within "#total_female_participants" do
-        expect(page).to have_content "15.000"
+        expect(page).to have_content "2"
       end
+
+      #Take into account users that do not have a date of birth in the foot note...
+      #take into account unknown ages when calculating percentage in table?
 
       within "#age_group_16_to_19" do
         expect(page).to have_content "16 - 19"
-        expect(page).to have_content "418 (1.56%)"
+        expect(page).to have_content "2 (66.67%)"
       end
 
       within "#age_group_35_to_39" do
         expect(page).to have_content "35 - 39"
-        expect(page).to have_content "4263 (15,87%)"
+        expect(page).to have_content "1 (33.33%)"
       end
-
 
     end
 
