@@ -18,7 +18,7 @@ module Abilities
       end
       can [:retire_form, :retire], Proposal, author_id: user.id
 
-      can [:read, :welcome, :stats], SpendingProposal
+      can [:read, :welcome], SpendingProposal
 
       can :create, Comment
       can :create, Debate
