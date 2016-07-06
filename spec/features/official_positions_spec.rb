@@ -55,7 +55,6 @@ feature 'Official positions' do
 
       scenario "Index" do
         visit proposals_path
-        debugger
 
         expect_badge_for("proposal", @proposal1)
         expect_no_badge_for("proposal", @proposal2)
