@@ -182,14 +182,14 @@ es:
       privacy: Política de privacidad
       transparency_text: Obtén cualquier información sobre la ciudad.
       transparency_title: Transparencia
-      transparency_url: https://yourtransparencysite.com
+      transparency_url: https://transparency.consul
     header:
       administration: Administrar
       debates: Debates
       external_link_blog: Blog
       external_link_opendata: Datos abiertos
       external_link_transparency: Transparencia
-      external_link_transparency_url: https://yourtransparencysite.com
+      external_link_transparency_url: https://transparency.consul
       locale: 'Idioma:'
       logo: Consul
       management: Gestión

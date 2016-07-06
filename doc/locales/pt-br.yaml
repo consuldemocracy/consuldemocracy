@@ -854,14 +854,14 @@ pt-BR:
       privacy: Política de privacidade
       transparency_text: Descubra tudo sobre a Câmara da Cidade de Madrid.
       transparency_title: Transparência
-      transparency_url: https://yourtransparencysite.com
+      transparency_url: https://transparency.consul
     header:
       administration: Administração
       debates: Debates
       external_link_blog: Blog
       external_link_opendata: Dados abertos
       external_link_transparency: Transparência
-      external_link_transparency_url: https://yourtransparencysite.com
+      external_link_transparency_url: https://transparency.consul
       locale: 'Idioma:'
       logo: Consul
       moderation: Moderação
@@ -1515,7 +1515,7 @@ pt-BR:
       create:
         flash:
           offices: Escritórios de Apoio ao Cidadão
-          offices_url: http://yourcitizensupportofficesite.com
+          offices_url: http://offices.consul
           success_html: Obrigado por solicitar seu <b>código de segurança máxima (somente
             solicitado em votações finais)</b>. Em poucos dias nós lhe enviaremos
             para seu endereço relacionado nos dados que temos em arquivo. Por favor
@@ -1531,7 +1531,7 @@ pt-BR:
         go_to_index: Ver propostas
         office: Verificar em qualquer %{office}
         offices: Escritórios de Apoio ao Cidadão
-        offices_url: http://yourcitizensupportofficesite.com
+        offices_url: http://offices.consul
         send_letter: Envie-me uma carta com o código
         title: Parabéns!
         user_permission_info: Com a sua conta você pode...
