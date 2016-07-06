@@ -75,6 +75,7 @@ Rails.application.routes.draw do
   scope '/participatory_budget' do
     resources :spending_proposals, only: [:index, :show, :destroy], path: 'investment_projects' do #[:new, :create] temporary disabled
       get :welcome, on: :collection
+      get :stats, on: :collection
       post :vote, on: :member
     end
 
