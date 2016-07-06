@@ -412,4 +412,60 @@ feature 'Spending proposals' do
 
   end
 
+  context "Results" do
+
+    scenario "Participation stats" do
+
+      visit stats_spending_proposals_path
+
+      expect(page).to have_content "Total participants 30.000"
+
+
+
+      within "#total_participants" do
+        expect(page).to have_content "30.000"
+      end
+
+
+
+
+      within "#total_spending_proposals" do
+        expect(page).to have_content "6.000"
+      end
+
+      within "#total_feasible_spending_proposals" do
+        expect(page).to have_content "3.000"
+      end
+
+      within "#male_percentage" do
+        expect(page).to have_content "50.00%"
+      end
+
+      within "#female_percentage" do
+        expect(page).to have_content "50.00%"
+      end
+
+      within "#total_male_participants" do
+        expect(page).to have_content "15.000"
+      end
+
+      within "#total_female_participants" do
+        expect(page).to have_content "15.000"
+      end
+
+      within "#age_group_16_to_19" do
+        expect(page).to have_content "16 - 19"
+        expect(page).to have_content "418 (1.56%)"
+      end
+
+      within "#age_group_35_to_39" do
+        expect(page).to have_content "35 - 39"
+        expect(page).to have_content "4263 (15,87%)"
+      end
+
+
+    end
+
+  end
+
 end
