@@ -588,6 +588,19 @@ en:
       check_ballot: Check my ballot
       different_district_active: "You have active votes in another district:"
       different_district_active_info: "(If you remove all votes of this district you can select another one)"
+    results:
+      page_title: "Participatory budget | Results"
+      heading: "PARTICIPATORY BUDGET"
+      results_link: Results
+      stats_link: "Participation stats"
+      geozone_selection_title: "By district"
+      spending_proposal: Proposal title
+      ballot_lines_count: Times selected
+      hide_discarded_link: Hide discarded
+      show_all_link: Show all
+      price: Cost
+      amount_available: Available budget
+      incompatible: Incompatibles
   ballots:
     show:
       city_link: Vote city proposals
