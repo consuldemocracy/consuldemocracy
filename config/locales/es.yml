@@ -25,7 +25,7 @@ es:
       user_permission_support_proposal: Apoyar propuestas*
       user_permission_title: Participación
       user_permission_verify: Para poder realizar todas las acciones verifica tu cuenta.
-      user_permission_verify_info: "* Sólo usuarios empadronados en el municipio de Madrid."
+      user_permission_verify_info: "* Sólo usuarios empadronados."
       user_permission_votes: Participar en las votaciones finales*
       username_label: Nombre de usuario
       verified_account: Cuenta verificada
@@ -169,30 +169,29 @@ es:
       consul: aplicación Consul
       consul_url: https://github.com/consul/consul
       contact_us: Para asistencia técnica entra en
-      copyright: Ayuntamiento de Madrid, %{year}
-      description: Este portal usa la %{consul} que es %{open_source}. De Madrid, para el mundo entero.
+      copyright: Consul, %{year}
+      description: Este portal usa la %{consul} que es %{open_source}.
       faq: Asistencia técnica
       more_info: Más información
       open_data_text: Todos los datos del Ayuntamiento son tuyos.
       open_data_title: Datos Abiertos
       open_source: software libre
       open_source_url: http://www.gnu.org/licenses/agpl-3.0.html
-      participation_text: Decide cómo debe ser la ciudad de Madrid que quieres.
+      participation_text: Decide cómo debe ser la ciudad que quieres.
       participation_title: Participación
       privacy: Política de privacidad
-      transparency_text: Obtén cualquier información sobre el Ayuntamiento de Madrid.
+      transparency_text: Obtén cualquier información sobre la ciudad.
       transparency_title: Transparencia
-      transparency_url: https://transparencia.madrid.es
+      transparency_url: https://transparency.consul
     header:
       administration: Administrar
       debates: Debates
       external_link_blog: Blog
       external_link_opendata: Datos abiertos
-      external_link_opendata_url: http://datos.madrid.es
       external_link_transparency: Transparencia
-      external_link_transparency_url: https://transparencia.madrid.es
+      external_link_transparency_url: https://transparency.consul
       locale: 'Idioma:'
-      logo: Madrid
+      logo: Consul
       management: Gestión
       moderation: Moderar
       valuation: Evaluación
@@ -204,7 +203,7 @@ es:
         other: Tienes %{count} notificaciones nuevas
       no_notifications: No tienes notificaciones nuevas
       open: abierto
-      open_city_slogan_html: Existen ciudades gobernadas directamente por sus habitantes, que <strong>debaten</strong> sobre temas que les preocupan, <strong>proponen</strong> ideas para mejorar sus vidas y <strong>deciden</strong> entre todas y todos las que se llevan a cabo. Madrid ya es una de ellas.
+      open_city_slogan_html: Existen ciudades gobernadas directamente por sus habitantes, que <strong>debaten</strong> sobre temas que les preocupan, <strong>proponen</strong> ideas para mejorar sus vidas y <strong>deciden</strong> entre todas y todos las que se llevan a cabo.
       open_city_title: La ciudad que quieres será la ciudad que quieras.
       open_data: Datos abiertos
       open_gov: Gobierno %{open}
@@ -593,7 +592,7 @@ es:
       user_permission_proposal: Crear nuevas propuestas
       user_permission_support_proposal: Apoyar propuestas*
       user_permission_verify: Para poder realizar todas las acciones, verifica tu cuenta.
-      user_permission_verify_info: "* Sólo usuarios empadronados en el municipio de Madrid."
+      user_permission_verify_info: "* Sólo usuarios empadronados."
       user_permission_verify_my_account: Verificar mi cuenta
       user_permission_votes: Participar en las votaciones finales*
   omniauth:

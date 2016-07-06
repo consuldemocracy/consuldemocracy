@@ -25,7 +25,7 @@ en:
       user_permission_support_proposal: Support proposals
       user_permission_title: Participation
       user_permission_verify: To perform all the actions verify your account.
-      user_permission_verify_info: "* Only for users on Madrid City Census."
+      user_permission_verify_info: "* Only for users on Census."
       user_permission_votes: Participate on final voting
       username_label: Username
       verified_account: Account verified
@@ -169,30 +169,29 @@ en:
       consul: Consul application
       consul_url: https://github.com/consul/consul
       contact_us: For technical assistance enters
-      copyright: Ayuntamiento de Madrid, %{year}
-      description: This portal uses the %{consul} which is %{open_source}. From Madrid out into the world.
+      copyright: Consul, %{year}
+      description: This portal uses the %{consul} which is %{open_source}.
       faq: technical assistance
       more_info: More information
       open_data_text: Every detail about the City Council is yours to access.
       open_data_title: Open data
       open_source: open-source software
       open_source_url: http://www.gnu.org/licenses/agpl-3.0.html
-      participation_text: Decide how to shape the Madrid you want to live in.
+      participation_text: Decide how to shape the city you want to live in.
       participation_title: Participation
       privacy: Privacy Policy
-      transparency_text: Find out anything about the Madrid City Council.
+      transparency_text: Find out anything about the city.
       transparency_title: Transparency
-      transparency_url: https://transparencia.madrid.es
+      transparency_url: https://transparency.consul
     header:
       administration: Administration
       debates: Debates
       external_link_blog: Blog
       external_link_opendata: Open data
-      external_link_opendata_url: http://datos.madrid.es
       external_link_transparency: Transparency
-      external_link_transparency_url: https://transparencia.madrid.es
+      external_link_transparency_url: https://transparency.consul
       locale: 'Language:'
-      logo: Madrid
+      logo: Consul
       management: Management
       moderation: Moderation
       valuation: Valuation
@@ -204,7 +203,7 @@ en:
         other: You have %{count} new notifications
       no_notifications: You don't have new notifications
       open: open
-      open_city_slogan_html: There are cities that are governed directly by their inhabitants, who <b>discuss</b> the topics they are concerned about, <b>propose</b> ideas to improve their lives and <b>decide</b> among themselves which ones will be carried out. Madrid is already one of these cities.
+      open_city_slogan_html: There are cities that are governed directly by their inhabitants, who <b>discuss</b> the topics they are concerned about, <b>propose</b> ideas to improve their lives and <b>decide</b> among themselves which ones will be carried out.
       open_city_title: Love the city, and it will become a city you love.
       open_data: Open data
       open_gov: Open government
@@ -593,7 +592,7 @@ en:
       user_permission_proposal: Create new proposals
       user_permission_support_proposal: Support proposals*
       user_permission_verify: To perform all the actions verify your account.
-      user_permission_verify_info: "* Only for users on Madrid Census."
+      user_permission_verify_info: "* Only for users on Census."
       user_permission_verify_my_account: Verify my account
       user_permission_votes: Participate on final voting
   omniauth:
