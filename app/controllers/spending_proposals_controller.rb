@@ -70,6 +70,9 @@ class SpendingProposalsController < ApplicationController
   def stats
   end
 
+  def results
+  end
+
   private
 
     def spending_proposal_params

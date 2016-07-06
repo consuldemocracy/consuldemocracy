@@ -1,0 +1,70 @@
+<% provide :title, "Presupuestos particpativos | Resultados" %>
+<% provide :social_media_meta_tags do %>
+  <%= render "shared/social_media_meta_tags_participatory_budget" %>
+<% end %>
+
+<%= javascript_include_tag "chart", 'data-turbolinks-track' => true %>
+<%= javascript_include_tag "participatory-budget-charts", 'data-turbolinks-track' => true %>
+
+<div class="expanded spending-proposals results no-margin-top">
+  <div class="row">
+    <div class="small-12 column padding text-center">
+      <%= link_to participatory_budget_path, class: "left back" do %>
+        <i class="icon-angle-left"></i>
+        <%= t("pages.processes.back") %>
+      <% end %>
+
+      <h1 class="title">PRESUPUESTOS PARTICIPATIVOS</h1>
+    </div>
+  </div>
+</div>
+
+<div class="row margin-top">
+  <div class="small-12 column">
+    <ul class="tabs">
+      <li class="tabs-title is-active">
+        <%= link_to "Resultados", "/presupuestos-participativos-resultados", class: "is-active" %>
+      </li>
+      <li class="tabs-title">
+        <%= link_to "Estadísticas de participación", "/presupuestos-participativos-estadisticas" %>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="row">
+  <div class="small-12 medium-3 column">
+    <ul class="vertical menu">
+      <li><strong>Ámbito de actuación</strong>
+        <ul class="vertical menu clear">
+          <li><a href="#toda_ciudad"><strong>Toda la ciudad</strong></a></li>
+          <li><a href="#arganzuela"><strong>Arganzuela</strong></a></li>
+          <li><a href="#barajas"><strong>Barajas</strong></a></li>
+          <li><a href="#carabanchel"><strong>Carabanchel</strong></a></li>
+          <li><a href="#centro"><strong>Centro</strong></a></li>
+          <li><a href="#chamartin"><strong>Chamartin</strong></a></li>
+          <li><a href="#chamberi"><strong>Chamberí</strong></a></li>
+          <li><a href="#ciudad_lineal"><strong>Ciudad Lineal</strong></a></li>
+          <li><a href="#fuencarral_el_pardo"><strong>Fuencarral - El Pardo</strong></a></li>
+          <li><a href="#hortaleza"><strong>Hortaleza</strong></a></li>
+          <li><a href="#latina"><strong>Latina</strong></a></li>
+          <li><a href="#moncloa_aravaca"><strong>Moncloa - Aravaca</strong></a></li>
+          <li><a href="#moratalaz"><strong>Moratalaz</strong></a></li>
+          <li><a href="#puente_de_vallecas"><strong>Puente de Vallecas</strong></a></li>
+          <li><a href="#retiro"><strong>Retiro</strong></a></li>
+          <li><a href="#san_blas_canillejas"><strong>San Blas - Canillejas</strong></a></li>
+          <li><a href="#salamanca"><strong>Salamanca</strong></a></li>
+          <li><a href="#tetuan"><strong>Tetuán</strong></a></li>
+          <li><a href="#usera"><strong>Usera</strong></a></li>
+          <li><a href="#vicalvaro"><strong>Vicálvaro</strong></a></li>
+          <li><a href="#villaverde"><strong>Villaverde</strong></a></li>
+          <li><a href="#villa_de_vallecas"><strong>Villa de Vallecas</strong></a></li>
+        </ul>
+      </li>
+  </div>
+
+  <%= render 'results_table' %>
+
+</div>
+
+
