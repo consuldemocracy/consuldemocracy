@@ -85,7 +85,7 @@ feature 'Admin banners magement' do
     select 'Banner image 2', from: 'banner_image'
     fill_in 'banner_title', with: 'Such banner'
     fill_in 'banner_description', with: 'many text wow link'
-    fill_in 'banner_target_url', with: 'https://decide.madrid.es'
+    fill_in 'banner_target_url', with: 'https://www.url.com'
     last_week = Time.now - 7.days
     next_week = Time.now + 7.days
     fill_in 'post_started_at', with: last_week.strftime("%d/%m/%Y")
@@ -98,7 +98,7 @@ feature 'Admin banners magement' do
     visit proposals_path
 
     expect(page).to have_content 'Such banner'
-    expect(page).to have_link 'Such banner many text wow link', href: 'https://decide.madrid.es'
+    expect(page).to have_link 'Such banner many text wow link', href: 'https://www.url.com'
   end
 
   scenario 'Edit banner with live refresh', :js do
