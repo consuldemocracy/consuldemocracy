@@ -508,6 +508,24 @@ feature 'Admin spending proposals' do
       end
     end
 
+    scenario "Mark as incompatible" do
+      Setting['feature.spending_proposal_features.valuation_allowed'] = false
+
+      spending_proposal = create(:spending_proposal, compatible: true)
+
+      visit admin_spending_proposal_path(spending_proposal)
+      click_link 'Edit'
+
+      uncheck 'spending_proposal_compatible'
+      click_button 'Update'
+
+      expect(page).to have_content "Investment project updated succesfully."
+
+      within("#compatibility") do
+        expect(page).to have_content "Incompatible"
+      end
+    end
+
     scenario "Errors on update" do
       spending_proposal = create(:spending_proposal)
       create(:geozone, name: "Barbate")
@@ -806,6 +824,10 @@ feature 'Admin spending proposals' do
           expect(page).to_not have_content @proposal6.title
           expect(page).to_not have_content @proposal7.title
 
+          within("#spending_proposal_#{@proposal1.id}") { expect(page).to have_content "20" }
+          within("#spending_proposal_#{@proposal2.id}") { expect(page).to have_content "60" }
+          within("#spending_proposal_#{@proposal3.id}") { expect(page).to have_content "40" }
+
           expect(@proposal2.title).to appear_before(@proposal3.title)
           expect(@proposal3.title).to appear_before(@proposal1.title)
         end
@@ -826,6 +848,61 @@ feature 'Admin spending proposals' do
           expect(@proposal5.title).to appear_before(@proposal4.title)
           expect(@proposal4.title).to appear_before(@proposal6.title)
         end
+      end
+
+      context "Compatible spending proposals" do
+
+        scenario "Include compatible spending proposals in results" do
+          compatible_proposal1 = create(:spending_proposal, :finished, :feasible, price: 10, compatible: true)
+          compatible_proposal2 = create(:spending_proposal, :finished, :feasible, price: 10, compatible: true)
+
+          incompatible_proposal = create(:spending_proposal, :finished, :feasible, price: 10, compatible: false)
+
+          visit results_admin_spending_proposals_path(geozone_id: nil)
+
+          within("#spending-proposals-results") do
+            expect(page).to have_content compatible_proposal1.title
+            expect(page).to have_content compatible_proposal2.title
+
+            expect(page).to_not have_content incompatible_proposal.title
+          end
+        end
+
+        scenario "Display incompatible spending proposals after results" do
+          incompatible_proposal1  = create(:spending_proposal, :finished, :feasible, price: 10, compatible: false)
+          incompatible_proposal2 = create(:spending_proposal, :finished, :feasible, price: 10, compatible: false)
+
+          compatible_proposal = create(:spending_proposal, :finished, :feasible, price: 10, compatible: true)
+
+          visit results_admin_spending_proposals_path(geozone_id: nil)
+
+          within("#incompatible-spending-proposals") do
+            expect(page).to have_content incompatible_proposal1.title
+            expect(page).to have_content incompatible_proposal2.title
+
+            expect(page).to_not have_content compatible_proposal.title
+          end
+        end
+
+      end
+
+      scenario "Delegated votes affecting the result" do
+        forum = create(:forum)
+        create_list(:user, 30, :level_two, representative: forum)
+        forum.ballot.spending_proposals << @proposal3
+
+        visit results_admin_spending_proposals_path
+
+        expect(page).to have_content @proposal1.title
+        expect(page).to have_content @proposal2.title
+        expect(page).to have_content @proposal3.title
+
+        within("#spending_proposal_#{@proposal1.id}") { expect(page).to have_content "20" }
+        within("#spending_proposal_#{@proposal2.id}") { expect(page).to have_content "60" }
+        within("#spending_proposal_#{@proposal3.id}") { expect(page).to have_content "70" }
+
+        expect(@proposal3.title).to appear_before(@proposal2.title)
+        expect(@proposal2.title).to appear_before(@proposal1.title)
       end
     end
 

@@ -15,7 +15,7 @@ feature "Home" do
       login_as(create(:user))
       visit root_path
 
-      expect(current_path).to eq welcome_spending_proposals_path
+      expect(current_path).to eq proposals_path
     end
   end
 

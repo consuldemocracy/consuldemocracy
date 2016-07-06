@@ -246,6 +246,10 @@ en:
         assigned_valuators: Assigned valuators
         back: Back
         classification: Clasification
+        compatibility_title: Compatibility
+        compatibility:
+          "true": "Compatible"
+          "false": "Incompatible"
         heading: "Investment project %{id}"
         edit: Edit
         edit_classification: Edit classification
@@ -264,6 +268,7 @@ en:
         tags: Tags
         tags_placeholder: "Write the tags you want separated by commas (,)"
         undefined: Undefined
+        compatibility: Compatibility
       results:
         title: Current final voting ranking
         spending_proposal: Proposal title
@@ -272,6 +277,7 @@ en:
         show_all_link: Show all
         price: Cost
         amount_available: Available budget
+        incompatible: Incompatibles
       summary:
         title: Summary for investment projects
         geozone_name: Scope
@@ -288,6 +294,7 @@ en:
         direct_messages: Direct messages
         proposal_notifications: Proposal notifications
         redeemable_codes: Redeemable codes
+        user_invites: Invitations
         summary:
           ballot_line_votes: Votes in investment projects
           ballot_votes: Budgets voted
@@ -336,6 +343,11 @@ en:
         title: Redeemable codes
         total: Total
         campaign: After sending 400.000 letters
+      user_invites:
+        title: Invitations from Linea Madrid
+        total: Total
+        clicked_email_link: Clicked email link
+        clicked_signup_button: Clicked signup button
     tags:
       create: Create Topic
       destroy: Destroy Topic

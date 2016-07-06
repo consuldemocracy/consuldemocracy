@@ -69,6 +69,28 @@ describe SpendingProposal do
     end
   end
 
+  describe "compatible" do
+    it "should return compatible spending proposals" do
+      sp1 = create(:spending_proposal, compatible: true)
+      sp2 = create(:spending_proposal, compatible: true)
+      sp3 = create(:spending_proposal, compatible: false)
+
+      expect(SpendingProposal.compatible).to include(sp1, sp2)
+      expect(SpendingProposal.compatible).to_not include(sp3)
+    end
+  end
+
+  describe "incompatible" do
+    it "should return incompatible spending proposals" do
+      sp1 = create(:spending_proposal, compatible: false)
+      sp2 = create(:spending_proposal, compatible: false)
+      sp3 = create(:spending_proposal, compatible: true)
+
+      expect(SpendingProposal.incompatible).to include(sp1, sp2)
+      expect(SpendingProposal.incompatible).to_not include(sp3)
+    end
+  end
+
   describe "dossier info" do
     describe "#feasibility" do
       it "can be feasible" do
@@ -419,6 +441,27 @@ describe SpendingProposal do
         expect(SpendingProposal.sort_by_confidence_score.third).to  eq least_voted2
         expect(SpendingProposal.sort_by_confidence_score.fourth).to  eq least_voted
       end
+    end
+
+    describe "#sort_by_delegated_ballots_and_price" do
+      let(:sp1) { create(:spending_proposal, ballot_lines_count: 5, price: 10) }
+      let(:sp2) { create(:spending_proposal, ballot_lines_count: 5, price: 20) }
+      let(:sp3) { create(:spending_proposal, ballot_lines_count: 7, price: 30) }
+
+      it "returns an array" do
+        expect(SpendingProposal.sort_by_delegated_ballots_and_price([],{})).to eq([])
+      end
+
+      it "returns an array of sps sorted by ballots and price if there are no delegated ballots" do
+        expect(SpendingProposal.sort_by_delegated_ballots_and_price([sp1, sp2, sp3], {})).to eq([sp3, sp2, sp1])
+      end
+
+      it "returns an array of sps sorted by ballots, delegated_ballots and price if there are delegated ballots" do
+        expect(SpendingProposal.sort_by_delegated_ballots_and_price([sp1, sp2, sp3], {sp1.id =>  2})).to eq([sp3, sp1, sp2])
+        expect(SpendingProposal.sort_by_delegated_ballots_and_price([sp1, sp2, sp3], {sp2.id =>  3})).to eq([sp2, sp3, sp1])
+        expect(SpendingProposal.sort_by_delegated_ballots_and_price([sp1, sp2, sp3], {sp3.id => -2})).to eq([sp3, sp2, sp1])
+      end
+
     end
   end
 

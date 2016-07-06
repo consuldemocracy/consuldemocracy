@@ -1,9 +1,5 @@
 <div class="admin-sidebar">
   <ul id="admin_menu">
-    <li>
-      <%= link_to t("management.menu.title"), management_root_path %>
-    </li>
-
     <li <%= "class=active" if controller_name == "document_verifications" ||
                               controller_name == "email_verifications" ||
                               controller_name == "users" %>>
@@ -62,6 +58,13 @@
       <%= link_to print_management_spending_proposals_path do %>
         <span class="icon-print"></span>
         <%= t("management.menu.print_spending_proposals") %>
+      <% end %>
+    </li>
+
+    <li>
+      <%= link_to new_management_user_invite_path do %>
+        <span class="icon-letter"></span>
+        <%= t("management.menu.user_invites") %>
       <% end %>
     </li>
   </ul>

@@ -231,4 +231,26 @@ feature 'Emails' do
 
   end
 
+  context "User invites" do
+
+    scenario "Send an invitation" do
+      login_as_manager
+      visit new_management_user_invite_path
+
+      fill_in "emails", with: " john@example.com, ana@example.com,isable@example.com "
+      click_button "Send invites"
+
+      expect(page).to have_content "3 invitations have been sent."
+
+      expect(unread_emails_for("john@example.com").count).to eq 1
+      expect(unread_emails_for("ana@example.com").count).to eq 1
+      expect(unread_emails_for("isable@example.com").count).to eq 1
+
+      email = open_last_email
+      expect(email).to have_subject("Invitation to Decide Madrid")
+      expect(email).to have_body_text(/#{new_user_registration_path}/)
+    end
+
+  end
+
 end

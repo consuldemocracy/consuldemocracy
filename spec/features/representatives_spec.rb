@@ -3,8 +3,9 @@ require 'rails_helper'
 feature 'Representatives' do
 
   scenario "Select a representative" do
+    Setting["feature.spending_proposal_features.final_voting_allowed"] = true
+
     forum1 = create(:forum)
-    forum2 = create(:forum)
     user = create(:user, :level_two)
     login_as(user)
 
@@ -19,8 +20,10 @@ feature 'Representatives' do
   end
 
   scenario "Delete a representative" do
+    Setting["feature.spending_proposal_features.final_voting_allowed"] = true
+
     forum = create(:forum)
-    user = create(:user, :level_two, representative: forum)
+    user = create(:user, :level_two, representative_id: forum.id)
 
     login_as(user)
     visit forums_path
@@ -44,6 +47,8 @@ feature 'Representatives' do
   end
 
   scenario "User not verified" do
+    Setting["feature.spending_proposal_features.final_voting_allowed"] = true
+
     unverified_user = create(:user)
     forum = create(:forum)
 
@@ -53,5 +58,33 @@ feature 'Representatives' do
 
     expect(page).to_not have_selector(:button, "Delegate on #{forum.name}")
     expect(page).to have_content "Verify your account to delegate"
+  end
+
+  feature "Final voting is not set" do
+
+    let!(:user) { create(:user, :level_two) }
+    let!(:forum) { create(:forum) }
+
+    background do
+      Setting['feature.spending_proposal_features.final_voting_allowed'] = false
+      login_as(user)
+    end
+
+    scenario "Button is not shown" do
+      visit forums_path
+      click_link forum.name
+      expect(page).to_not have_button("Delegate on #{forum.name}")
+    end
+
+    scenario "Forcing the creation returns forbidden" do
+      page.driver.post representatives_path(id: forum.id)
+      expect(page.status_code).to eq(403)
+    end
+
+    scenario "Forcing the deletion returns forbidden" do
+      page.driver.delete representative_path(id: forum.id)
+      expect(page.status_code).to eq(403)
+    end
+
   end
 end
