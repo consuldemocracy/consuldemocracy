@@ -130,6 +130,10 @@ blockquote p {
   table-layout: fixed;
 }
 
+.text-center {
+  text-align: center !important;
+}
+
 // 02. Header
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -390,6 +394,10 @@ table {
 
     &:nth-child(even) {
       background: #fafcfb;
+    }
+
+    &.success {
+      background: $success-bg;
     }
   }
 }
@@ -1135,7 +1143,7 @@ table.age-groups {
 }
 
 .jumbo-investment-image {
-  height: rem-calc(387);
+  height: rem-calc(360);
   position: absolute;
 }
 

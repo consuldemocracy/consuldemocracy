@@ -1,5 +1,6 @@
 class BallotLinesController < ApplicationController
   before_action :authenticate_user!
+  before_action :ensure_final_voting_allowed
   before_action :load_ballot
   before_action :load_spending_proposals
   load_and_authorize_resource :ballot_line, through: :ballot, find_by: :spending_proposal_id
@@ -33,6 +34,13 @@ class BallotLinesController < ApplicationController
   end
 
   private
+
+    def ensure_final_voting_allowed
+      if Setting["feature.spending_proposal_features.phase3"].blank? ||
+         Setting["feature.spending_proposal_features.final_voting_allowed"].blank?
+        head(:forbidden)
+      end
+    end
 
     def ballot_line_params
       params.permit(:spending_proposal_id)

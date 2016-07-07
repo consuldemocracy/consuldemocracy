@@ -3,7 +3,7 @@ class SpendingProposalsController < ApplicationController
   include CommentableActions
   include FlagActions
 
-  before_action :authenticate_user!, except: [:index, :welcome, :show, :select_district, :stats]
+  before_action :authenticate_user!, except: [:index, :welcome, :show, :select_district, :stats, :results]
   before_action -> { flash.now[:notice] = flash[:notice].html_safe if flash[:html_safe] && flash[:notice] }
   before_action :set_random_seed, only: :index
   before_action :load_ballot,  only: [:index, :show]
@@ -83,6 +83,13 @@ class SpendingProposalsController < ApplicationController
   end
 
   def results
+    @delegated_ballots = Forum.delegated_ballots
+    @spending_proposals = SpendingProposal.feasible.compatible.valuation_finished.by_geozone(params[:geozone_id])
+    @spending_proposals = SpendingProposal.sort_by_delegated_ballots_and_price(@spending_proposals, @delegated_ballots)
+
+    @geozone = (params[:geozone_id].blank? || params[:geozone_id] == 'all') ? nil : Geozone.find(params[:geozone_id])
+    @initial_budget = Ballot.initial_budget(@geozone)
+    @incompatibles = SpendingProposal.incompatible.by_geozone(params[:geozone_id])
   end
 
   private

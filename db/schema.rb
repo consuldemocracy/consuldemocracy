@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160622152333) do
+ActiveRecord::Schema.define(version: 20160703190103) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -73,12 +73,6 @@ ActiveRecord::Schema.define(version: 20160622152333) do
 
   add_index "answers", ["author_id"], name: "index_answers_on_author_id", using: :btree
   add_index "answers", ["context"], name: "index_answers_on_context", using: :btree
-
-  create_table "audits", force: :cascade do |t|
-    t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
 
   create_table "ballot_lines", force: :cascade do |t|
     t.integer  "ballot_id"
@@ -412,20 +406,12 @@ ActiveRecord::Schema.define(version: 20160622152333) do
     t.string   "responsible_name",            limit: 60
     t.integer  "physical_votes",                         default: 0
     t.integer  "ballot_lines_count",                     default: 0
+    t.boolean  "compatible",                             default: true
   end
 
   add_index "spending_proposals", ["author_id"], name: "index_spending_proposals_on_author_id", using: :btree
   add_index "spending_proposals", ["geozone_id"], name: "index_spending_proposals_on_geozone_id", using: :btree
   add_index "spending_proposals", ["tsv"], name: "index_spending_proposals_on_tsv", using: :gin
-
-  create_table "statements", force: :cascade do |t|
-    t.integer  "audit_id"
-    t.string   "filename"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string   "title"
-    t.text     "body"
-  end
 
   create_table "taggings", force: :cascade do |t|
     t.integer  "tag_id"

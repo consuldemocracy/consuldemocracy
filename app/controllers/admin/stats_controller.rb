@@ -60,4 +60,11 @@ class Admin::StatsController < Admin::BaseController
     @users_after_campaign = @users.where("verified_at >= ?", Date.new(2016, 6, 17).beginning_of_day).count
   end
 
+  def user_invites
+    user_invites_campaign = Campaign.where(track_id: "172943750183759812").first
+    @user_invites = Ahoy::Event.where(name: :user_invite).count
+    @clicked_email_link = Ahoy::Event.where(name: user_invites_campaign.name).count
+    @clicked_signup_button = Ahoy::Event.where(name: :clicked_signup_button).count
+  end
+
 end

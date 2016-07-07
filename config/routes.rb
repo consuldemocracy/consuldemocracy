@@ -82,7 +82,8 @@ Rails.application.routes.draw do
     resource :ballot, only: [:show] do
       resources :ballot_lines, only: [:create, :destroy], shallow: true
     end
-    get '/ballot/ballot_lines/create', to: 'ballot_lines#create', as: :create_ballot_line
+    get '/ballot/ballot_lines/create', to: 'ballot_lines#create', as: :create_ballot_line,
+    constraints: lambda { |request| Setting["feature.spending_proposal_features.final_voting_allowed"].present? }
   end
 
   resources :open_plenaries, only: [] do
@@ -208,6 +209,7 @@ Rails.application.routes.draw do
       get :proposal_notifications, on: :collection
       get :direct_messages, on: :collection
       get :redeemable_codes, on: :collection
+      get :user_invites, on: :collection
     end
 
     namespace :api do
@@ -258,6 +260,8 @@ Rails.application.routes.draw do
 
     resources :email_verifications, only: [:new, :create]
 
+    resources :user_invites, only: [:new, :create]
+
     resources :users, only: [:new, :create] do
       collection do
         delete :logout
@@ -304,6 +308,7 @@ Rails.application.routes.draw do
   get 'noticias', to: 'pages#show', id: 'news'
   get 'participatory_budget/in_two_minutes', to: 'pages#show', id: 'participatory_budget/in_two_minutes'
   get 'presupuestos-participativos-resultados', to: 'spending_proposals#results', as: 'participatory_budget_results'
+  get 'presupuestos-participativos-estadisticas', to: 'spending_proposals#stats', as: 'participatory_budget_stats'
 
   resources :pages, path: '/', only: [:show]
 end

@@ -244,6 +244,10 @@ es:
         assigned_valuators: Evaluadores asignados
         back: Volver
         classification: Clasificación
+        compatibility_title: Compatibilidad
+        compatibility:
+          "true": "Compatible"
+          "false": "Incompatible"
         heading: Propuesta de inversión %{id}
         edit: Editar
         edit_classification: Editar clasificación
@@ -262,6 +266,7 @@ es:
         tags: Etiquetas
         tags_placeholder: "Escribe las etiquetas que desees separadas por comas (,)"
         undefined: Sin definir
+        compatibility: Compatibilidad
       results:
         title: Ranking actual de propuestas - Votaciones finales
         spending_proposal: Título
@@ -270,6 +275,7 @@ es:
         show_all_link: Mostrar todas
         price: Coste
         amount_available: Presupuesto disponible
+        incompatible: Incompatibles
       summary:
         title: Resumen de propuestas de inversión
         geozone_name: Ámbito de ciudad
@@ -286,6 +292,7 @@ es:
         direct_messages: Mensajes directos
         proposal_notifications: Notificaciones de propuestas
         redeemable_codes: Códigos enviados por carta
+        user_invites: Invitaciones Linea Madrid
         summary:
           ballot_line_votes: Votos en inversión
           ballot_votes: Presupuestos votados
@@ -334,6 +341,11 @@ es:
         title: Códigos enviados por carta
         total: Total
         campaign: Después de las 400.000 cartas
+      user_invites:
+        title: Invitaciones Linea Madrid
+        total: Total
+        clicked_email_link: Link del email clickado
+        clicked_signup_button: Botón de registrarse clickado
     tags:
       create: Crear Tema
       destroy: Eliminar Tema

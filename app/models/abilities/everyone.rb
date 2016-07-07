@@ -6,7 +6,7 @@ module Abilities
       can [:read, :map], Debate
       can [:read, :map, :summary], Proposal
       can :read, Comment
-      can [:read, :welcome, :select_district, :stats], SpendingProposal
+      can [:read, :welcome, :select_district, :stats, :results], SpendingProposal
       can :read, Legislation
       can :read, User
       can [:search, :read], Annotation

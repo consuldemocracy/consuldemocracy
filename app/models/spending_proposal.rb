@@ -36,6 +36,8 @@ class SpendingProposal < ActiveRecord::Base
   scope :valuation_finished,     -> { where(valuation_finished: true) }
   scope :feasible,               -> { where(feasible: true) }
   scope :unfeasible,             -> { valuation_finished.where(feasible: false) }
+  scope :compatible,             -> { where(compatible: true) }
+  scope :incompatible,           -> { where(compatible: false) }
   scope :not_unfeasible,         -> { where("feasible IS ? OR feasible = ?", nil, true) }
   scope :with_supports,          -> { where('cached_votes_up > 0') }
 
@@ -278,6 +280,19 @@ class SpendingProposal < ActiveRecord::Base
 
   def self.finished_and_feasible
     valuation_finished.feasible
+  end
+
+  def self.sort_by_delegated_ballots_and_price(spending_proposals, delegated_ballots)
+    arr = spending_proposals.map do |sp|
+      { sp: sp,
+        ballots: sp.ballot_lines_count + (delegated_ballots[sp.id] || 0),
+        price: sp.price }
+    end
+    arr.sort! do |a,b|
+      ballots = b[:ballots] <=> a[:ballots]
+      ballots != 0 ? ballots : b[:price] <=> a[:price]
+    end
+    arr.map{|h| h[:sp]}
   end
 
 end

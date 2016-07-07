@@ -6,8 +6,12 @@
       <%= t("shared.back") %>
     <% end %>
 
-    <h1><%= t("forums.index.title") %></h1>
-    <p>Delega tu decisión sobre los apoyos y la votación final en lo que se decida en cualquiera de los espacios presenciales de debate.</p>
+    <% if Setting["feature.spending_proposal_features.final_voting_allowed"].present? %>
+      <h1><%= t("forums.index.title") %></h1>
+      <p>Delega tu decisión sobre los apoyos y la votación final en lo que se decida en cualquiera de los espacios presenciales de debate.</p>
+    <% else %>
+      <h1><%= t("forums.index.title_closed") %></h1>
+    <% end %>
 
     <div id="forums" class="row collapse">
       <% @forums.each_slice(7) do |slice| %>
@@ -26,9 +30,12 @@
         <%= t("forums.index.delegating",
             representative: current_user.representative.name).html_safe %>
       </div>&nbsp;
-      <%= link_to t("forums.index.deactivate_link"),
-                  representative_url(current_user.representative),
-                  class: "delete", method: :delete %>
+
+      <% if Setting["feature.spending_proposal_features.final_voting_allowed"].present? %>
+        <%= link_to t("forums.index.deactivate_link"),
+                    representative_url(current_user.representative),
+                    class: "delete", method: :delete %>
+      <% end %>
     <% else %>
       <div class="callout primary inline-block">
         <%= t("forums.index.not_delegating") %>

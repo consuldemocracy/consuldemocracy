@@ -44,35 +44,37 @@
       <% end %>
     </div>
 
-    <% if spending_proposal_votable_in_show?(@spending_proposal) %>
-      <aside class="small-12 medium-3 column">
+    <aside class="small-12 medium-3 column">
+      <% if spending_proposal_votable_in_show?(@spending_proposal) %>
         <div class="sidebar-divider"></div>
-        <h3><%= t("votes.supports") %></h3>
-        <div class="text-center">
-          <% if feature?("spending_proposal_features.phase2") %>
-            <div id="<%= dom_id(@spending_proposal) %>_votes">
-              <%= render 'votes',
-                          { spending_proposal: @spending_proposal, vote_url:   vote_spending_proposal_path(@spending_proposal, value: 'yes') } %>
-            </div>
-          <% elsif feature?("spending_proposal_features.phase3") %>
-            <div id="<%= dom_id(@spending_proposal) %>_ballot">
-              <%= render 'ballot', spending_proposal: @spending_proposal %>
-            </div>
-         <% end %>
-        </div>
-
-        <div class="sidebar-divider"></div>
-        <h3><%= t("spending_proposals.show.share") %></h3>
-        <div class="social-share-full">
-          <%= social_share_button_tag("#{@spending_proposal.title} #{setting['twitter_hashtag']}") %>
-          <% if browser.device.mobile? %>
-            <a href="whatsapp://send?text=<%= @spending_proposal.title %> <%= spending_proposal_url(@spending_proposal) %>" data-action="share/whatsapp/share">
-              <span class="icon-whatsapp whatsapp"></span>
-            </a>
+          <% if feature?("spending_proposal_features.final_voting_allowed") %>
+            <h3><%= t("votes.supports") %></h3>
           <% end %>
+          <div class="text-center">
+            <% if feature?("spending_proposal_features.phase2") %>
+              <div id="<%= dom_id(@spending_proposal) %>_votes">
+                <%= render 'votes',
+                            { spending_proposal: @spending_proposal, vote_url:   vote_spending_proposal_path(@spending_proposal, value: 'yes') } %>
+              </div>
+            <% elsif feature?("spending_proposal_features.phase3") %>
+              <div id="<%= dom_id(@spending_proposal) %>_ballot">
+                <%= render 'ballot', spending_proposal: @spending_proposal %>
+              </div>
+           <% end %>
         </div>
-      </aside>
-    <% end %>
+      <% end %>
+
+      <div class="sidebar-divider"></div>
+      <h3><%= t("spending_proposals.show.share") %></h3>
+      <div class="social-share-full">
+        <%= social_share_button_tag("#{@spending_proposal.title} #{setting['twitter_hashtag']}") %>
+        <% if browser.device.mobile? %>
+          <a href="whatsapp://send?text=<%= @spending_proposal.title %> <%= spending_proposal_url(@spending_proposal) %>" data-action="share/whatsapp/share">
+            <span class="icon-whatsapp whatsapp"></span>
+          </a>
+        <% end %>
+      </div>
+    </aside>
 
   </div>
 </section>
