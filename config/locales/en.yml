@@ -601,6 +601,11 @@ en:
       price: Cost
       amount_available: Available budget
       incompatible: Incompatibles
+    stats:
+      page_title: "Participatory budget | Participation stats"
+      heading: "PARTICIPATORY BUDGET"
+      results_link: Results
+      stats_link: "Participation stats"
   ballots:
     show:
       city_link: Vote city proposals

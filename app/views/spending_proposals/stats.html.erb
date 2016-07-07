@@ -1,3 +1,8 @@
+<% provide :title, t("spending_proposals.stats.page_title") %>
+<% provide :social_media_meta_tags do %>
+  <%= render "shared/social_media_meta_tags_participatory_budget" %>
+<% end %>
+
 <div class="expanded spending-proposals results no-margin-top">
   <div class="row">
     <div class="small-12 column padding text-center">
@@ -6,7 +11,7 @@
         <%= t("pages.processes.back") %>
       <% end %>
 
-      <h1 class="title">PRESUPUESTOS PARTICIPATIVOS</h1>
+      <h1 class="title"><%= t("spending_proposals.stats.heading") %></h1>
     </div>
   </div>
 </div>
@@ -15,10 +20,10 @@
   <div class="small-12 column">
     <ul class="tabs">
       <li class="tabs-title">
-        <%= link_to "Resultados", "/presupuestos-participativos-resultados"%>
+        <%= link_to t("spending_proposals.stats.results_link"), participatory_budget_results_path %>
       </li>
       <li class="tabs-title is-active">
-        <%= link_to "Estadísticas de participación", "/presupuestos-participativos-estadisticas", class: "is-active" %>
+        <%= link_to t("spending_proposals.stats.stats_link"), participatory_budget_stats_path, class: "is-active" %>
       </li>
     </ul>
   </div>
