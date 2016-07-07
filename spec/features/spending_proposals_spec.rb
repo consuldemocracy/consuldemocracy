@@ -603,7 +603,7 @@ feature 'Spending proposals' do
     end
   end
 
-  context "Stats", :focus do
+  context "Stats" do
 
     scenario "Participation" do
       isabel   = create(:user, :level_two)
