@@ -453,8 +453,9 @@ feature 'Spending proposals' do
         end
       end
 
-      scenario "Geozoned spending proposals" do
+      scenario "Geozoned spending proposals", :js do
         visit participatory_budget_results_path(geozone_id: @california.id)
+        click_link "Show all"
 
         within("#spending-proposals-results") do
           expect(page).to_not have_content @proposal1.title
@@ -488,13 +489,14 @@ feature 'Spending proposals' do
           end
         end
 
-        scenario "Display incompatible spending proposals after results" do
-          incompatible_proposal1  = create(:spending_proposal, :finished, :feasible, price: 10, compatible: false)
+        scenario "Display incompatible spending proposals after results", :js do
+          incompatible_proposal1 = create(:spending_proposal, :finished, :feasible, price: 10, compatible: false)
           incompatible_proposal2 = create(:spending_proposal, :finished, :feasible, price: 10, compatible: false)
 
           compatible_proposal = create(:spending_proposal, :finished, :feasible, price: 10, compatible: true)
 
           visit participatory_budget_results_path(geozone_id: nil)
+          click_link "Show all"
 
           within("#incompatible-spending-proposals") do
             expect(page).to have_content incompatible_proposal1.title
@@ -502,6 +504,31 @@ feature 'Spending proposals' do
 
             expect(page).to_not have_content compatible_proposal.title
           end
+        end
+
+        scenario "Incompatible and not winners are hidden by default", :js do
+          centro = create(:geozone, name: "Centro") #budget: 1353966
+          proposal1 = create(:spending_proposal, :finished, :feasible, price: 1000000, ballot_lines_count: 999, geozone: centro)
+          proposal2 = create(:spending_proposal, :finished, :feasible, price:  900000, ballot_lines_count: 888, geozone: centro)
+          proposal3 = create(:spending_proposal, :finished, :feasible, price:  350000, ballot_lines_count: 777, geozone: centro)
+          incompatible_proposal = create(:spending_proposal, :finished, :feasible, price: 10, compatible: false, geozone: centro)
+
+          visit participatory_budget_results_path(geozone_id: centro.id)
+
+          within("#spending-proposals-results") do
+            expect(proposal1.title).to appear_before(proposal3.title)
+
+            expect(page).to_not have_content(proposal2.title)
+            expect(page).to_not have_content(incompatible_proposal.title)
+          end
+
+          click_link "Show all"
+
+          within("#spending-proposals-results") do
+            expect(proposal1.title).to appear_before(proposal2.title)
+            expect(proposal2.title).to appear_before(proposal3.title)
+          end
+          expect(proposal3.title).to appear_before(incompatible_proposal.title)
         end
 
       end
@@ -526,7 +553,7 @@ feature 'Spending proposals' do
       end
     end
 
-    scenario "Displays only finished feasible spending proposals" do
+    scenario "Displays only finished feasible spending proposals", :js do
       california = create(:geozone)
 
       proposal1 = create(:spending_proposal, :finished, :feasible, price: 10, ballot_lines_count: 20, geozone: california)
@@ -535,6 +562,7 @@ feature 'Spending proposals' do
       proposal4 = create(:spending_proposal, price: 10, ballot_lines_count: 40, geozone: california)
 
       visit participatory_budget_results_path(geozone_id: california.id)
+      click_link "Show all"
 
       within("#spending-proposals-results") do
         expect(page).to have_content proposal1.title
@@ -544,7 +572,7 @@ feature 'Spending proposals' do
       end
     end
 
-    scenario "Highlights winner candidates (within budget), if tied most expensive first" do
+    scenario "Highlights winner candidates (within budget), if tied most expensive first", :js do
       centro = create(:geozone, name: "Centro") #budget: 1353966
 
       proposal1 = create(:spending_proposal, :finished, :feasible, price: 1000000, ballot_lines_count: 999, geozone: centro)
@@ -555,6 +583,7 @@ feature 'Spending proposals' do
       proposal6 = create(:spending_proposal, :finished, :feasible, price:      10, ballot_lines_count: 555, geozone: centro)
 
       visit participatory_budget_results_path(geozone_id: centro.id)
+      click_link "Show all"
 
       within("#spending-proposals-results") do
         expect(proposal1.title).to appear_before(proposal2.title)
