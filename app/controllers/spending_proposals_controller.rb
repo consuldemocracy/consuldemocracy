@@ -77,13 +77,7 @@ class SpendingProposalsController < ApplicationController
     stats[:total_female_participants] = total_female_participants
     stats[:male_percentage] = male_percentage
     stats[:female_percentage] = female_percentage
-
-    stats[:age_groups] = Hash.new(0)
-    participants.find_each do |participant|
-      if participant.date_of_birth.present?
-        stats[:age_groups][age_group(participant.date_of_birth)] += 1
-      end
-    end
+    stats[:age_groups] = age_groups
 
     @stats = stats
   end
@@ -230,5 +224,15 @@ class SpendingProposalsController < ApplicationController
         puts "Cannot determine age group for dob: #{dob} and age: #{age(dob)}"
         "Unknown"
       end
+    end
+
+    def age_groups
+      groups = Hash.new(0)
+      participants.find_each do |participant|
+        if participant.date_of_birth.present?
+          groups[age_group(participant.date_of_birth)] += 1
+        end
+      end
+      groups
     end
 end
