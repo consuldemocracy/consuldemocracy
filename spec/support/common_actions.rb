@@ -288,4 +288,18 @@ module CommonActions
     end
   end
 
+  def create_vote_for(*users)
+    sp = create(:spending_proposal, :finished, :feasible)
+    users.each do |user|
+      create(:vote, votable: sp, voter: user)
+    end
+  end
+
+  def create_ballot_for(*users)
+    sp = create(:spending_proposal, :finished, :feasible)
+    users.each do |user|
+      create(:ballot, spending_proposals: [sp], user: user)
+    end
+  end
+
 end

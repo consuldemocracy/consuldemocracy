@@ -412,38 +412,41 @@ feature 'Spending proposals' do
 
   end
 
-  context "Results" do
+  context "Stats" do
 
-    #test distinct particpants at unit level
-    scenario "Participation stats", :focus do
-      isabel  = create(:user, :level_two, gender: 'female', date_of_birth: 17.years.ago)
-      eva     = create(:user, :level_two, gender: 'female', date_of_birth: 18.years.ago)
-      antonio = create(:user, :level_two, gender: 'male',   date_of_birth: 36.years.ago)
+    scenario "Participation" do
+      isabel   = create(:user, :level_two)
+      eva      = create(:user, :level_two)
+      antonio  = create(:user, :level_two)
+      jose     = create(:user, :level_two)
+      josefine = create(:user, :level_two)
+      edward   = create(:user, :level_two)
 
-      sp1 = create(:spending_proposal, valuation_finished: true, feasible: true)
-      sp2 = create(:spending_proposal, valuation_finished: true, feasible: true)
-      sp3 = create(:spending_proposal, valuation_finished: true, feasible: false)
-
-      create(:vote, votable: sp1, voter: isabel)
-      create(:vote, votable: sp2, voter: eva)
-      create(:ballot, spending_proposals: [sp1], user: antonio)
+      #create_spending_proposal_for(isabel)
+      create_vote_for(eva)
+      create_ballot_for(antonio)
+      #create_delegation_for(jose)
+      #create_comment_for(josefine, jose)
 
       visit stats_spending_proposals_path
 
-      #Take into account... something else apart from supporting and voting? authors? comments?
-      #Yes
-      #me salen 45892
-      #son gente que o bien ha delegado, o ha votado, o ha apoyado, o ha comentado propuestas de inversión
+      #created, voted, balloted, delegated, commented
       within "#total_participants" do
-        expect(page).to have_content "3"
+        expect(page).to have_content "2"
       end
+    end
+
+    scenario "Investment projects" do
+      sp1 = create(:spending_proposal, :finished, :feasible)
+      sp2 = create(:spending_proposal, :finished, :feasible)
+      sp3 = create(:spending_proposal, :finished, :unfeasible)
+
+      visit stats_spending_proposals_path
 
       within "#total_spending_proposals" do
         expect(page).to have_content "3"
       end
 
-      #Take into account... something else apart from feasible...? minimum number of votes?
-      #Nop it is only feasible and valuation finished
       within "#total_feasible_spending_proposals" do
         expect(page).to have_content "2"
       end
@@ -451,14 +454,16 @@ feature 'Spending proposals' do
       within "#total_unfeasible_spending_proposals" do
         expect(page).to have_content "1"
       end
+    end
 
-      within "#male_percentage" do
-        expect(page).to have_content "33.33%"
-      end
+    scenario "Gender" do
+      isabel  = create(:user, :level_two, gender: 'female')
+      eva     = create(:user, :level_two, gender: 'female')
+      antonio = create(:user, :level_two, gender: 'male')
 
-      within "#female_percentage" do
-        expect(page).to have_content "66.67%"
-      end
+      create_vote_for(isabel, eva, antonio)
+
+      visit stats_spending_proposals_path
 
       within "#total_male_participants" do
         expect(page).to have_content "1"
@@ -468,9 +473,26 @@ feature 'Spending proposals' do
         expect(page).to have_content "2"
       end
 
+      within "#male_percentage" do
+        expect(page).to have_content "33.33%"
+      end
+
+      within "#female_percentage" do
+        expect(page).to have_content "66.67%"
+      end
+    end
+
+    scenario "Age group" do
+      isabel  = create(:user, :level_two, date_of_birth: 17.years.ago)
+      eva     = create(:user, :level_two, date_of_birth: 18.years.ago)
+      antonio = create(:user, :level_two, date_of_birth: 36.years.ago)
+
+      create_vote_for(isabel, eva, antonio)
+
+      visit stats_spending_proposals_path
+
       #Take into account users that do not have a date of birth in the foot note...
       #take into account unknown ages when calculating percentage in table?
-
       within "#age_group_16_to_19" do
         expect(page).to have_content "16 - 19"
         expect(page).to have_content "2 (66.67%)"
@@ -480,6 +502,9 @@ feature 'Spending proposals' do
         expect(page).to have_content "35 - 39"
         expect(page).to have_content "1 (33.33%)"
       end
+    end
+
+    scenario "Geozones" do
 
     end
 
