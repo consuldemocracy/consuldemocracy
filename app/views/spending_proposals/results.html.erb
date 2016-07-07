@@ -30,18 +30,16 @@
 </div>
 
 <div class="row">
-  <div class="small-12 medium-3 column">
-    <ul class="vertical menu">
-      <li><strong><%= t("spending_proposals.results.geozone_selection_title") %></strong>
-        <ul class="vertical menu clear">
+  <div class="small-12 medium-2 column">
+    <ul class="menu vertical no-padding">
+      <li><strong><%= t("spending_proposals.results.geozone_selection_title") %></strong></li>
 
-          <li><%= link_to content_tag(:strong, t("geozones.none")), participatory_budget_results_path %></li>
+      <li><%= link_to content_tag(:strong, t("geozones.none")), participatory_budget_results_path %></li>
 
-          <% geozone_select_options.each do |geozone| %>
-            <li><%= link_to content_tag(:strong, geozone[0]), participatory_budget_results_path(geozone_id: geozone[1]) %></li>
-          <% end %>
-        </ul>
-      </li>
+      <% geozone_select_options.each do |geozone| %>
+        <li><%= link_to content_tag(:strong, geozone[0]), participatory_budget_results_path(geozone_id: geozone[1]) %></li>
+      <% end %>
+    </ul>
   </div>
 
   <%= render 'results_table' %>

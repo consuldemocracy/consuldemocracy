@@ -134,6 +134,10 @@ blockquote p {
   text-align: center !important;
 }
 
+.menu.no-padding>li>a {
+  padding-left: 0;
+}
+
 // 02. Header
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 

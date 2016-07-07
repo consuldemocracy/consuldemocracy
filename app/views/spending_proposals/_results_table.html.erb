@@ -1,4 +1,4 @@
-<div class="small-12 medium-9 column" id="results-container">
+<div class="small-12 medium-10 column" id="results-container">
   <h2 class="inline-block"><%= @geozone.nil? ? t('geozones.none') : @geozone.name %></h2>
 
   <span class="float-right"><%= link_to t("spending_proposals.results.show_all_link"), "#", class: "js-toggle-link button hollow margin-bottom", data: {'toggle-selector' => '.js-discarded', 'toggle-text' => t("spending_proposals.results.hide_discarded_link")} %></span>
@@ -6,9 +6,9 @@
   <table id="spending-proposals-results">
     <thead>
       <th><%= t("spending_proposals.results.spending_proposal") %></th>
-      <th><%= t("spending_proposals.results.ballot_lines_count") %></th>
-      <th><%= t("spending_proposals.results.price") %></th>
-      <th title="<%= t("spending_proposals.results.amount_available") %>">
+      <th class="text-right"><%= t("spending_proposals.results.ballot_lines_count") %></th>
+      <th class="text-right"><%= t("spending_proposals.results.price") %></th>
+      <th class="text-right" title="<%= t("spending_proposals.results.amount_available") %>" style="width:120px">
         <%= format_price(@initial_budget) %>
       </th>
     </thead>
@@ -24,24 +24,21 @@
         <% else %>
           <tr id="<%= dom_id(spending_proposal) %>" class="spending_proposal js-discarded" style="display:none">
         <% end %>
-
             <td>
               <% if budget >= 0 %>
                 <span class="icon-check"></span>
               <% else %>
                 <span class="icon-x"></span>
               <% end %>
-
               <%= link_to spending_proposal.title, spending_proposal_path(spending_proposal) %>
-              (id: <%= spending_proposal.id %>)
             </td>
-            <td class="text-center">
+            <td class="text-right">
               <%= spending_proposal.ballot_lines_count + (@delegated_ballots[spending_proposal.id] || 0) %>
             </td>
-            <td class="text-center">
+            <td class="text-right" style="width:100px">
               <%= format_price spending_proposal.price %>
             </td>
-            <td class="text-center small" title="<%= format_price(initial_budget) %> - <%= format_price(spending_proposal.price) %>">
+            <td class="small text-right" title="<%= format_price(initial_budget) %> - <%= format_price(spending_proposal.price) %>">
               <%= format_price budget %>
             </td>
         </tr>
