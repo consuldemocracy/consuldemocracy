@@ -163,9 +163,8 @@ class SpendingProposalsController < ApplicationController
     def participants
       stats_cache('participants') {
 
-        #users = (authors + voters + balloters + delegators + commentators).uniq
-        users = authors
-        User.where(id: users).limit(10)
+        users = (authors + voters + balloters + delegators + commentators).uniq
+        User.where(id: users)
       }
     end
 
