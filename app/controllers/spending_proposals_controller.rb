@@ -217,27 +217,25 @@ class SpendingProposalsController < ApplicationController
     end
 
     def age_groups
-
-    end
-
-    def age_groups
-      groups = Hash.new(0)
-      ["16 - 19",
-      "20 - 24",
-      "25 - 29",
-      "30 - 34",
-      "35 - 39",
-      "40 - 44",
-      "45 - 49",
-      "50 - 54",
-      "55 - 59",
-      "60 - 64",
-      "65 - 69",
-      "70 - 140"].each do |group|
-        start, finish = group.split(" - ")
-        groups[group] = User.where(id: participants).where("date_of_birth > ? AND date_of_birth < ?", eval(finish).years.ago.beginning_of_year, eval(start).years.ago.end_of_year).count
-      end
-      groups
+      stats_cache('age_groups') {
+        groups = Hash.new(0)
+        ["16 - 19",
+        "20 - 24",
+        "25 - 29",
+        "30 - 34",
+        "35 - 39",
+        "40 - 44",
+        "45 - 49",
+        "50 - 54",
+        "55 - 59",
+        "60 - 64",
+        "65 - 69",
+        "70 - 140"].each do |group|
+          start, finish = group.split(" - ")
+          groups[group] = User.where(id: participants).where("date_of_birth > ? AND date_of_birth < ?", eval(finish).years.ago.beginning_of_year, eval(start).years.ago.end_of_year).count
+        end
+        groups
+      }
     end
 
     def stats_cache(key, &block)
