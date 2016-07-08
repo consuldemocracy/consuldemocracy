@@ -157,28 +157,30 @@ class SpendingProposalsController < ApplicationController
     end
 
     def participants
-      users = (authors + voters + balloters + delegators + commentators).uniq
-      User.where(id: users)
+      stats_cache('participants') {
+        users = (authors + voters + balloters + delegators + commentators).uniq
+        User.where(id: users)
+      }
     end
 
     def authors
-      SpendingProposal.pluck(:author_id)
+      stats_cache('authors') { SpendingProposal.pluck(:author_id) }
     end
 
     def voters
-      ActsAsVotable::Vote.where(votable_type: 'SpendingProposal').pluck(:voter_id)
+      stats_cache('voters') { ActsAsVotable::Vote.where(votable_type: 'SpendingProposal').pluck(:voter_id) }
     end
 
     def balloters
-      Ballot.where('ballot_lines_count > ?', 0).pluck(:user_id)
+      stats_cache('balloters') { Ballot.where('ballot_lines_count > ?', 0).pluck(:user_id) }
     end
 
     def delegators
-      User.where.not(representative_id: nil).pluck(:id)
+      stats_cache('delegators') { User.where.not(representative_id: nil).pluck(:id) }
     end
 
     def commentators
-      Comment.where(commentable_type: 'SpendingProposal').pluck(:user_id)
+      stats_cache('commentators') { Comment.where(commentable_type: 'SpendingProposal').pluck(:user_id) }
     end
 
     def total_spending_proposals
@@ -256,4 +258,9 @@ class SpendingProposalsController < ApplicationController
       end
       groups
     end
+
+    def stats_cache(key, &block)
+      Rails.cache.fetch("spending_proposals_stats/#{key}", &block)
+    end
+
 end
