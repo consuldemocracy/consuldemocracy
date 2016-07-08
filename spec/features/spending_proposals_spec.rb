@@ -651,6 +651,7 @@ feature 'Spending proposals' do
       eva     = create(:user, :level_two, gender: 'female')
       antonio = create(:user, :level_two, gender: 'male')
 
+      create_spending_proposal_for(isabel)
       create_vote_for(isabel, eva, antonio)
 
       visit stats_spending_proposals_path
