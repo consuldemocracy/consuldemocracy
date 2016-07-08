@@ -951,6 +951,29 @@ feature 'Admin spending proposals' do
         expect(page).to_not have_css("#spending_proposal_#{proposal5.id}.success")
       end
     end
+
+    scenario "Display winner emails" do
+      centro = create(:geozone, name: "Centro") #budget: 1353966
+
+      proposal1 = create(:spending_proposal, :finished, :feasible, price: 1000000, ballot_lines_count: 999, geozone: centro)
+      proposal2 = create(:spending_proposal, :finished, :feasible, price:  900000, ballot_lines_count: 888, geozone: centro)
+      proposal3 = create(:spending_proposal, :finished, :feasible, price:  700000, ballot_lines_count: 777, geozone: centro)
+      proposal4 = create(:spending_proposal, :finished, :feasible, price:  350000, ballot_lines_count: 666, geozone: centro)
+      proposal5 = create(:spending_proposal, :finished, :feasible, price:  320000, ballot_lines_count: 666, geozone: centro)
+      proposal6 = create(:spending_proposal, :finished, :feasible, price:      10, ballot_lines_count: 555, geozone: centro)
+
+      visit results_admin_spending_proposals_path(geozone_id: centro.id)
+
+      within("#spending-proposals-winners") do
+        expect(page).to have_content(proposal1.author.email)
+        expect(page).to have_content(proposal4.author.email)
+        expect(page).to have_content(proposal6.author.email)
+
+        expect(page).to_not have_content(proposal2.author.email)
+        expect(page).to_not have_content(proposal3.author.email)
+        expect(page).to_not have_content(proposal5.author.email)
+      end
+    end
   end
 
 end
