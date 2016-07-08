@@ -695,25 +695,224 @@ feature 'Spending proposals' do
       end
     end
 
-    scenario "Geozones" do
-      california = create(:geozone)
-      new_york = create(:geozone)
+    context "Geozones" do
 
-      sp1 = create(:spending_proposal, geozone: california)
-      sp2 = create(:spending_proposal, geozone: california)
-      sp3 = create(:spending_proposal, geozone: new_york)
+      scenario "Investment projects" do
+        california = create(:geozone)
+        new_york = create(:geozone)
 
-      visit stats_spending_proposals_path
+        sp1 = create(:spending_proposal, geozone: california)
+        sp2 = create(:spending_proposal, geozone: california)
+        sp3 = create(:spending_proposal, geozone: new_york)
 
-      within("#total_spending_proposals_geozone_#{california.id}") do
-        expect(page).to have_content "2"
+        visit stats_spending_proposals_path
+
+        within("#total_spending_proposals_geozone_#{california.id}") do
+          expect(page).to have_content "2"
+        end
+
+        within("#total_spending_proposals_geozone_#{new_york.id}") do
+          expect(page).to have_content "1"
+        end
       end
 
-      within("#total_spending_proposals_geozone_#{new_york.id}") do
-        expect(page).to have_content "1"
+      context "Support phase" do
+
+        background do
+          @barajas = create(:geozone, name: "Barajas")
+          @carabanchel = create(:geozone, name: "Carabanchel")
+
+          isabel   = create(:user, :level_two)
+          eva      = create(:user, :level_two)
+          antonio  = create(:user, :level_two)
+
+          jose     = create(:user, :level_two)
+          josefine = create(:user, :level_two)
+          edward   = create(:user, :level_two)
+
+          sp1 = create(:spending_proposal, geozone: @barajas,     author: isabel)
+          sp2 = create(:spending_proposal, geozone: @carabanchel, author: jose)
+          sp3 = create(:spending_proposal, geozone: @carabanchel, author: jose)
+
+          create(:vote, votable: sp1, voter: isabel)
+          create(:vote, votable: sp1, voter: eva)
+          create(:vote, votable: sp1, voter: antonio)
+
+          create(:vote, votable: sp2, voter: jose)
+          create(:vote, votable: sp3, voter: josefine)
+        end
+
+        scenario "Total participation" do
+          visit stats_spending_proposals_path
+
+          within("#total_participants_support_phase_geozone_#{@barajas.id}") do
+            expect(page).to have_content "3"
+          end
+
+          within("#total_participants_support_phase_geozone_#{@carabanchel.id}") do
+            expect(page).to have_content "2"
+          end
+        end
+
+        scenario "Percentage of total participation" do
+          visit stats_spending_proposals_path
+
+          within("#percentage_participants_support_phase_geozone_#{@barajas.id}") do
+            expect(page).to have_content "60%"
+          end
+
+          within("#percentage_participants_support_phase_geozone_#{@carabanchel.id}") do
+            expect(page).to have_content "40%"
+          end
+        end
+
+        scenario "Percentage of district population" do
+          visit stats_spending_proposals_path
+
+          within("#percentage_district_population_support_phase_geozone_#{@barajas.id}") do
+            expect(page).to have_content "0.00648%"
+          end
+
+          within("#percentage_district_population_support_phase_geozone_#{@carabanchel.id}") do
+            expect(page).to have_content "0.00083%"
+          end
+        end
+      end
+
+      context "Vote phase" do
+
+        background do
+          @barajas = create(:geozone, name: "Barajas")
+          @carabanchel = create(:geozone, name: "Carabanchel")
+
+          isabel   = create(:user, :level_two)
+          eva      = create(:user, :level_two)
+          antonio  = create(:user, :level_two)
+
+          jose     = create(:user, :level_two)
+          josefine = create(:user, :level_two)
+          edward   = create(:user, :level_two)
+
+          sp1 = create(:spending_proposal, :finished, :feasible, geozone: @barajas)
+          sp2 = create(:spending_proposal, :finished, :feasible, geozone: @carabanchel)
+          sp3 = create(:spending_proposal, :finished, :feasible, geozone: @carabanchel)
+
+          create(:ballot, spending_proposals: [sp1], user: isabel,  geozone: @barajas)
+          create(:ballot, spending_proposals: [sp1], user: eva,     geozone: @barajas)
+          create(:ballot, spending_proposals: [sp1], user: antonio, geozone: @barajas)
+
+          create(:ballot, spending_proposals: [sp2], user: jose,     geozone: @carabanchel)
+          create(:ballot, spending_proposals: [sp3], user: josefine, geozone: @carabanchel)
+        end
+
+        scenario "Total participation" do
+          visit stats_spending_proposals_path
+
+          within("#total_participants_vote_phase_geozone_#{@barajas.id}") do
+            expect(page).to have_content "3"
+          end
+
+          within("#total_participants_vote_phase_geozone_#{@carabanchel.id}") do
+            expect(page).to have_content "2"
+          end
+        end
+
+        scenario "Percentage of total participation" do
+          visit stats_spending_proposals_path
+
+          within("#percentage_participants_vote_phase_geozone_#{@barajas.id}") do
+            expect(page).to have_content "60%"
+          end
+
+          within("#percentage_participants_vote_phase_geozone_#{@carabanchel.id}") do
+            expect(page).to have_content "40%"
+          end
+        end
+
+        scenario "Percentage of district population" do
+          visit stats_spending_proposals_path
+
+          within("#percentage_district_population_vote_phase_geozone_#{@barajas.id}") do
+            expect(page).to have_content "0.00648%"
+          end
+
+          within("#percentage_district_population_vote_phase_geozone_#{@carabanchel.id}") do
+            expect(page).to have_content "0.00083%"
+          end
+        end
+      end
+
+      context "All phases" do
+
+        background do
+          @barajas = create(:geozone, name: "Barajas")
+          @carabanchel = create(:geozone, name: "Carabanchel")
+
+          isabel   = create(:user, :level_two)
+          eva      = create(:user, :level_two)
+          antonio  = create(:user, :level_two)
+
+          jose     = create(:user, :level_two)
+          josefine = create(:user, :level_two)
+          edward   = create(:user, :level_two)
+
+          sp1 = create(:spending_proposal, :finished, :feasible, geozone: @barajas,     author: isabel)
+          sp2 = create(:spending_proposal, :finished, :feasible, geozone: @carabanchel, author: jose)
+          sp3 = create(:spending_proposal, :finished, :feasible, geozone: @carabanchel, author: jose)
+
+          create(:vote, votable: sp1, voter: isabel)
+          create(:vote, votable: sp1, voter: eva)
+          create(:vote, votable: sp1, voter: antonio)
+
+          create(:vote, votable: sp2, voter: jose)
+          create(:vote, votable: sp3, voter: josefine)
+
+          create(:ballot, spending_proposals: [sp1], user: isabel,  geozone: @barajas)
+          create(:ballot, spending_proposals: [sp1], user: eva,     geozone: @barajas)
+          create(:ballot, spending_proposals: [sp1], user: antonio, geozone: @barajas)
+
+          create(:ballot, spending_proposals: [sp2], user: jose,     geozone: @carabanchel)
+          create(:ballot, spending_proposals: [sp3], user: josefine, geozone: @carabanchel)
+          create(:ballot, spending_proposals: [sp3], user: edward,   geozone: @carabanchel)
+        end
+
+        scenario "Total participation" do
+          visit stats_spending_proposals_path
+
+          within("#total_participants_all_phase_geozone_#{@barajas.id}") do
+            expect(page).to have_content "3"
+          end
+
+          within("#total_participants_all_phase_geozone_#{@carabanchel.id}") do
+            expect(page).to have_content "3"
+          end
+        end
+
+        scenario "Percentage of total participation" do
+          visit stats_spending_proposals_path
+
+          within("#percentage_participants_all_phase_geozone_#{@barajas.id}") do
+            expect(page).to have_content "50%"
+          end
+
+          within("#percentage_participants_all_phase_geozone_#{@carabanchel.id}") do
+            expect(page).to have_content "50%"
+          end
+        end
+
+        scenario "Percentage of district population" do
+          visit stats_spending_proposals_path
+
+          within("#percentage_district_population_all_phase_geozone_#{@barajas.id}") do
+            expect(page).to have_content "0.00648%"
+          end
+
+          within("#percentage_district_population_all_phase_geozone_#{@carabanchel.id}") do
+            expect(page).to have_content "0.00124%"
+          end
+        end
+
       end
     end
-
   end
-
 end

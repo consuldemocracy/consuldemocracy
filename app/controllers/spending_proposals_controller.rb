@@ -68,6 +68,7 @@ class SpendingProposalsController < ApplicationController
   end
 
   def stats
+    @geozones = Geozone.order(:name)
     stats = {}
     stats[:total_participants] = total_participants
     stats[:total_spending_proposals] = total_spending_proposals
@@ -78,9 +79,9 @@ class SpendingProposalsController < ApplicationController
     stats[:male_percentage] = male_percentage
     stats[:female_percentage] = female_percentage
     stats[:age_groups] = age_groups
+    stats[:geozones] = geozones
 
     @stats = stats
-    @geozones = Geozone.order(:name)
   end
 
   def results
@@ -162,7 +163,6 @@ class SpendingProposalsController < ApplicationController
 
     def participants
       stats_cache('participants') {
-
         users = (authors + voters + balloters + delegators + commentators).uniq
         User.where(id: users)
       }
@@ -176,8 +176,16 @@ class SpendingProposalsController < ApplicationController
       stats_cache('voters') { ActsAsVotable::Vote.where(votable_type: 'SpendingProposal').pluck(:voter_id) }
     end
 
+    def voters_by_geozone(geozone_id)
+      ActsAsVotable::Vote.where(votable_type: 'SpendingProposal', votable_id: SpendingProposal.by_geozone(geozone_id)).pluck(:voter_id)
+    end
+
     def balloters
       stats_cache('balloters') { Ballot.where('ballot_lines_count > ?', 0).pluck(:user_id) }
+    end
+
+    def balloters_by_geozone(geozone_id)
+      Ballot.where('ballot_lines_count > ? AND geozone_id = ?', 0, geozone_id).pluck(:user_id)
     end
 
     def delegators
@@ -236,6 +244,49 @@ class SpendingProposalsController < ApplicationController
         end
         groups
       }
+    end
+
+    def geozones
+      groups = Hash.new(0)
+      @geozones.each do |geozone|
+        groups[geozone.id] = Hash.new(0)
+        groups[geozone.id][:total_participants_support_phase] = voters_by_geozone(geozone.id).uniq.count
+        groups[geozone.id][:percentage_participants_support_phase] = voters_by_geozone(geozone.id).uniq.count / voters.uniq.count.to_f * 100
+        groups[geozone.id][:percentage_district_population_support_phase] = voters_by_geozone(geozone.id).uniq.count / district_population[geozone.name].to_f * 100
+
+        groups[geozone.id][:total_participants_vote_phase] = balloters_by_geozone(geozone.id).uniq.count
+        groups[geozone.id][:percentage_participants_vote_phase] = balloters_by_geozone(geozone.id).uniq.count / balloters.uniq.count.to_f * 100
+        groups[geozone.id][:percentage_district_population_vote_phase] = balloters_by_geozone(geozone.id).uniq.count / district_population[geozone.name].to_f * 100
+
+        groups[geozone.id][:total_participants_all_phase] = (voters_by_geozone(geozone.id) + balloters_by_geozone(geozone.id)).uniq.count
+        groups[geozone.id][:percentage_participants_all_phase] = (voters_by_geozone(geozone.id) + balloters_by_geozone(geozone.id)).uniq.count / (voters + balloters).uniq.count.to_f * 100
+        groups[geozone.id][:percentage_district_population_all_phase] = (voters_by_geozone(geozone.id) + balloters_by_geozone(geozone.id)).uniq.count / district_population[geozone.name].to_f * 100
+      end
+      groups
+    end
+
+    def district_population
+      {"Arganzuela"          => 151520,
+       "Barajas"             =>  46264,
+       "Carabanchel"         => 242000,
+       "Centro"              => 132644,
+       "Chamartin"           => 142610,
+       "Chamberí"            => 137532,
+       "Ciudad Lineal"       => 212431,
+       "Fuencarral-El Pardo" => 235482,
+       "Hortaleza"           => 177738,
+       "Latina"              => 234015,
+       "Moncloa-Aravaca"     => 116689,
+       "Moratalaz"           =>  94607,
+       "Puente de Vallecas"  => 227195,
+       "Retiro"              => 118559,
+       "Salamanca"           => 143244,
+       "San Blas-Canillejas" => 153411,
+       "Tetuán"              => 152545,
+       "Usera"               => 134015,
+       "Vicálvaro"           =>  69800,
+       "Villa de Vallecas"   => 102140,
+       "Villaverde"          => 141442}
     end
 
     def stats_cache(key, &block)

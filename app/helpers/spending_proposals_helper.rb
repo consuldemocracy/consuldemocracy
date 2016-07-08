@@ -92,4 +92,8 @@ module SpendingProposalsHelper
     setting["feature.spending_proposal_features.final_voting_allowed"].present?
   end
 
+  def css_for_highlight_spending_proposal_stat(phase)
+    phase == "all" ? "success" : ""
+  end
+
 end
