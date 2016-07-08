@@ -900,9 +900,9 @@
 
     .share-supported {
 
-      .social-share-button-twitter,
-      .social-share-button-facebook,
-      .social-share-button-google_plus {
+      .ssb-twitter,
+      .ssb-facebook,
+      .ssb-google_plus {
         color: $budget;
       }
     }
@@ -1016,9 +1016,9 @@
 
     .share-supported {
 
-      .social-share-button-twitter,
-      .social-share-button-facebook,
-      .social-share-button-google_plus {
+      .ssb-twitter,
+      .ssb-facebook,
+      .ssb-google_plus {
         height: rem-calc(33);
 
         &:before {
