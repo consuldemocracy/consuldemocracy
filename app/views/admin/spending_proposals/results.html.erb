@@ -28,6 +28,7 @@
     </th>
   </thead>
   <tbody>
+    <% winners = [] %>
     <% available_budget = @initial_budget.to_i %>
     <% @spending_proposals.each do |spending_proposal| %>
       <% initial_budget = available_budget
@@ -37,6 +38,7 @@
         <td>
           <% if budget >= 0 %>
             <span class="icon-check"></span>
+            <% winners << spending_proposal.author %>
           <% else %>
             <span class="icon-x"></span>
           <% end %>
@@ -89,5 +91,14 @@
     </table>
   </div>
 <% end %>
+
+<div id="spending-proposals-winners">
+  <h3 class="inline-block">Ganadores</h3>
+  <div>
+    <% winners.each do |winner| %>
+      <%= winner.email %><%= winner.equal?(winners.last) ? "" : "," %>
+    <% end %>
+  </div>
+</div>
 
 <%= paginate @spending_proposals %>
