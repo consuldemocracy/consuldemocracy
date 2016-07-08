@@ -767,14 +767,19 @@ feature 'Spending proposals' do
         end
 
         scenario "Percentage of district population" do
+          allow_any_instance_of(SpendingProposalsController).
+          to receive(:district_population).
+          and_return({ "Barajas"     => 1000,
+                       "Carabanchel" => 100})
+
           visit stats_spending_proposals_path
 
           within("#percentage_district_population_support_phase_geozone_#{@barajas.id}") do
-            expect(page).to have_content "0.00648%"
+            expect(page).to have_content "3%"
           end
 
           within("#percentage_district_population_support_phase_geozone_#{@carabanchel.id}") do
-            expect(page).to have_content "0.00083%"
+            expect(page).to have_content "2%"
           end
         end
       end
@@ -830,14 +835,19 @@ feature 'Spending proposals' do
         end
 
         scenario "Percentage of district population" do
+          allow_any_instance_of(SpendingProposalsController).
+          to receive(:district_population).
+          and_return({ "Barajas"     => 1000,
+                       "Carabanchel" => 100})
+
           visit stats_spending_proposals_path
 
           within("#percentage_district_population_vote_phase_geozone_#{@barajas.id}") do
-            expect(page).to have_content "0.00648%"
+            expect(page).to have_content "0.3%"
           end
 
           within("#percentage_district_population_vote_phase_geozone_#{@carabanchel.id}") do
-            expect(page).to have_content "0.00083%"
+            expect(page).to have_content "2%"
           end
         end
       end
@@ -901,14 +911,19 @@ feature 'Spending proposals' do
         end
 
         scenario "Percentage of district population" do
+          allow_any_instance_of(SpendingProposalsController).
+          to receive(:district_population).
+          and_return({ "Barajas"     => 1000,
+                       "Carabanchel" => 100})
+
           visit stats_spending_proposals_path
 
           within("#percentage_district_population_all_phase_geozone_#{@barajas.id}") do
-            expect(page).to have_content "0.00648%"
+            expect(page).to have_content "0.3%"
           end
 
           within("#percentage_district_population_all_phase_geozone_#{@carabanchel.id}") do
-            expect(page).to have_content "0.00124%"
+            expect(page).to have_content "3%"
           end
         end
 

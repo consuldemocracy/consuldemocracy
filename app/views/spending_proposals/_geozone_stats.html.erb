@@ -49,7 +49,7 @@
                 class="border-left border-right <%= css_for_highlight_spending_proposal_stat(phase) %>">
               <%= number_to_percentage(@stats[:geozones][geozone.id]["percentage_district_population_#{phase}_phase".to_sym],
                 strip_insignificant_zeros: true,
-                precision: 5)%>
+                precision: 2)%>
             </td>
           <% end %>
         </tr>
