@@ -2,12 +2,12 @@
   <div class="row">
     <%= render "shared/locale_switcher" %>
     <div class="external-links">
-      <%= link_to Setting['org_name'], root_path, class: ("selected" unless current_page?("/opendata")) %>&nbsp;|
+      <%= link_to setting['org_name'], root_path, class: ("selected" unless current_page?("/opendata")) %>&nbsp;|
       <%= link_to t("layouts.header.external_link_transparency"), t("layouts.header.external_link_transparency_url") %>&nbsp;|
       <%= link_to t("layouts.header.external_link_opendata"), "/opendata", class: ("selected" if current_page?("/opendata")) %>
-      <% if Setting['blog_url'] %>
+      <% if setting['blog_url'] %>
         &nbsp;|
-        <%= link_to Setting['blog_url'], title: t('shared.target_blank_html'), target: "_blank" do %>
+        <%= link_to setting['blog_url'], title: t('shared.target_blank_html'), target: "_blank" do %>
           <%= t("layouts.header.external_link_blog") %>
         <% end %>
       <% end %>

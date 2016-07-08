@@ -12,7 +12,7 @@
         <h3><%= t('welcome.featured.spending_proposals.title') %></h3>
         <p><%= t('welcome.featured.spending_proposals.text') %></p>
         <div class="small-12 medium-6">
-          <% if Setting["feature.spending_proposal_features.final_voting_allowed"].present? %>
+          <% if setting["feature.spending_proposal_features.final_voting_allowed"].present? %>
             <%= link_to t('welcome.featured.spending_proposals.link'), participatory_budget_path, class: "button expanded" %>
           <% else %>
             <%= link_to t('welcome.featured.spending_proposals.link_close'), participatory_budget_path, class: "button expanded" %>

@@ -7,7 +7,7 @@
 
 <main id="investment-projects-main">
 
-  <% if Setting["feature.spending_proposal_features.final_voting_allowed"].present? %>
+  <% if setting["feature.spending_proposal_features.final_voting_allowed"].present? %>
     <%= render 'header' %>
   <% end %>
 
@@ -16,7 +16,7 @@
 
       <div class="small-12 search-results margin-bottom">
 
-        <% if Setting["feature.spending_proposal_features.final_voting_allowed"].present? %>
+        <% if setting["feature.spending_proposal_features.final_voting_allowed"].present? %>
           <div class="show-for-small-only">
             <% if @filter_geozone.present? && !@ballot.has_city_wide_votes? %>
               <div class="callout highlighted">
@@ -64,7 +64,7 @@
 
     <div class="small-12 medium-3 column">
       <aside class="margin-bottom">
-        <% if Setting["feature.spending_proposal_features.final_voting_allowed"].present? %>
+        <% if setting["feature.spending_proposal_features.final_voting_allowed"].present? %>
           <% if @filter_geozone.present? && !@ballot.has_city_wide_votes? %>
             <div class="callout highlighted">
               <p><strong>

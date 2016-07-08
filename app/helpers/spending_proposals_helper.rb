@@ -89,7 +89,7 @@ module SpendingProposalsHelper
   end
 
   def display_budget_countdown?
-    Setting["feature.spending_proposal_features.final_voting_allowed"].present?
+    setting["feature.spending_proposal_features.final_voting_allowed"].present?
   end
 
 end
