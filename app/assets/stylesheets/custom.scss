@@ -830,8 +830,32 @@ table {
   font-size: $base-font-size;
 }
 
-table.survey-districts thead {
-  vertical-align: top;
+table.survey-districts {
+
+  tr th {
+    border: 1px solid $border;
+    padding: 0;
+    text-align: center;
+  }
+
+  .tiny {
+    font-size: rem-calc(11);
+    font-weight: normal;
+  }
+
+  .success {
+    background: #c1fdd2;
+  }
+
+  .border-left-success {
+    background: #c1fdd2;
+    border-left: 2px solid #58ff87;
+  }
+
+  .border-right-success {
+    background: #c1fdd2;
+    border-right: 2px solid #58ff87;
+  }
 }
 
 @include breakpoint(medium down) {
