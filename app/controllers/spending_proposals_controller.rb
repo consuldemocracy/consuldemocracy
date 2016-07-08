@@ -84,16 +84,20 @@ class SpendingProposalsController < ApplicationController
   end
 
   def results
-    @delegated_ballots = Forum.delegated_ballots
-    @spending_proposals = SpendingProposal.feasible.compatible.valuation_finished.by_geozone(params[:geozone_id])
-    @spending_proposals = SpendingProposal.sort_by_delegated_ballots_and_price(@spending_proposals, @delegated_ballots)
+    @geozone = daily_cache("geozone_geozone_#{params[:geozone_id]}") { (params[:geozone_id].blank? || params[:geozone_id] == 'all') ? nil : Geozone.find(params[:geozone_id]) }
+    @delegated_ballots = daily_cache("delegated_geozone_#{params[:geozone_id]}") { Forum.delegated_ballots }
+    @spending_proposals = daily_cache("sps_geozone_#{params[:geozone_id]}") { SpendingProposal.feasible.compatible.valuation_finished.by_geozone(params[:geozone_id]) }
+    @spending_proposals = daily_cache("sorted_sps_geozone_#{params[:geozone_id]}") { SpendingProposal.sort_by_delegated_ballots_and_price(@spending_proposals, @delegated_ballots) }
 
-    @geozone = (params[:geozone_id].blank? || params[:geozone_id] == 'all') ? nil : Geozone.find(params[:geozone_id])
-    @initial_budget = Ballot.initial_budget(@geozone)
-    @incompatibles = SpendingProposal.incompatible.by_geozone(params[:geozone_id])
+    @initial_budget = daily_cache("initial_budget_geozone_#{params[:geozone_id]}") { Ballot.initial_budget(@geozone) }
+    @incompatibles = daily_cache("incompatibles_geozone_#{params[:geozone_id]}") { SpendingProposal.incompatible.by_geozone(params[:geozone_id]) }
   end
 
   private
+
+    def daily_cache(key, &block)
+      Rails.cache.fetch("spending_proposals_results/#{Time.now.strftime("%Y-%m-%d")}/#{key}", &block)
+    end
 
     def spending_proposal_params
       params.require(:spending_proposal).permit(:title, :description, :external_url, :geozone_id, :association_name, :terms_of_service)
