@@ -216,50 +216,26 @@ class SpendingProposalsController < ApplicationController
       stats_cache('female_percentage') { total_female_participants / total_participants.to_f * 100 }
     end
 
-    def age(dob)
-      now = Time.now.utc.to_date
-      now.year - dob.year - ((now.month > dob.month || (now.month == dob.month && now.day >= dob.day)) ? 0 : 1)
-    end
+    def age_groups
 
-    def age_group(dob)
-      user_age = age(dob)
-
-      if (16..19).include?(user_age)
-        "16 - 19"
-      elsif (20..24).include?(user_age)
-        "20 - 24"
-      elsif (25..29).include?(user_age)
-        "25 - 29"
-      elsif (30..34).include?(user_age)
-        "30 - 34"
-      elsif (35..39).include?(user_age)
-        "35 - 39"
-      elsif (40..44).include?(user_age)
-        "40 - 44"
-      elsif (45..49).include?(user_age)
-        "45 - 49"
-      elsif (50..54).include?(user_age)
-        "50 - 54"
-      elsif (55..59).include?(user_age)
-        "55 - 59"
-      elsif (60..64).include?(user_age)
-        "60 - 64"
-      elsif (65..69).include?(user_age)
-        "65 - 69"
-      elsif (70..120).include?(user_age)
-        "+ 70"
-      else
-        puts "Cannot determine age group for dob: #{dob} and age: #{age(dob)}"
-        "Unknown"
-      end
     end
 
     def age_groups
       groups = Hash.new(0)
-      participants.find_each do |participant|
-        if participant.date_of_birth.present?
-          groups[age_group(participant.date_of_birth)] += 1
-        end
+      ["16 - 19",
+      "20 - 24",
+      "25 - 29",
+      "30 - 34",
+      "35 - 39",
+      "40 - 44",
+      "45 - 49",
+      "50 - 54",
+      "55 - 59",
+      "60 - 64",
+      "65 - 69",
+      "70 - 140"].each do |group|
+        start, finish = group.split(" - ")
+        groups[group] = User.where(id: participants).where("date_of_birth > ? AND date_of_birth < ?", eval(finish).years.ago.beginning_of_year, eval(start).years.ago.end_of_year).count
       end
       groups
     end
