@@ -153,7 +153,7 @@ class SpendingProposalsController < ApplicationController
     end
 
     def total_participants
-      participants.distinct.count
+      stats_cache('total_participants') { participants.distinct.count }
     end
 
     def participants
@@ -184,31 +184,31 @@ class SpendingProposalsController < ApplicationController
     end
 
     def total_spending_proposals
-      SpendingProposal.count
+      stats_cache('total_spending_proposals') { SpendingProposal.count }
     end
 
     def total_feasible_spending_proposals
-      SpendingProposal.feasible.count
+      stats_cache('total_feasible_spending_proposals') { SpendingProposal.feasible.count }
     end
 
     def total_unfeasible_spending_proposals
-      SpendingProposal.unfeasible.count
+      stats_cache('total_unfeasible_spending_proposals') { SpendingProposal.unfeasible.count }
     end
 
     def total_male_participants
-      participants.where(gender: 'male').count
+      stats_cache('total_male_participants') { participants.where(gender: 'male').count }
     end
 
     def total_female_participants
-      participants.where(gender: 'female').count
+      stats_cache('total_female_participants') { participants.where(gender: 'female').count }
     end
 
     def male_percentage
-       total_male_participants / total_participants.to_f * 100
+      stats_cache('male_percentage') { total_male_participants / total_participants.to_f * 100 }
     end
 
     def female_percentage
-      total_female_participants / total_participants.to_f * 100
+      stats_cache('female_percentage') { total_female_participants / total_participants.to_f * 100 }
     end
 
     def age(dob)
