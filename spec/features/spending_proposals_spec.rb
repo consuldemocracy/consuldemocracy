@@ -695,7 +695,22 @@ feature 'Spending proposals' do
     end
 
     scenario "Geozones" do
+      california = create(:geozone)
+      new_york = create(:geozone)
 
+      sp1 = create(:spending_proposal, geozone: california)
+      sp2 = create(:spending_proposal, geozone: california)
+      sp3 = create(:spending_proposal, geozone: new_york)
+
+      visit stats_spending_proposals_path
+
+      within("#total_spending_proposals_geozone_#{california.id}") do
+        expect(page).to have_content "2"
+      end
+
+      within("#total_spending_proposals_geozone_#{new_york.id}") do
+        expect(page).to have_content "1"
+      end
     end
 
   end

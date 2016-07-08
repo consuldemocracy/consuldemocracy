@@ -80,6 +80,7 @@ class SpendingProposalsController < ApplicationController
     stats[:age_groups] = age_groups
 
     @stats = stats
+    @geozones = Geozone.order(:name)
   end
 
   def results
