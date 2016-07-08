@@ -288,17 +288,45 @@ module CommonActions
     end
   end
 
+  def create_spending_proposal_for(*users)
+    users.each do |user|
+      create(:spending_proposal, :finished, :feasible, author: user)
+    end
+  end
+
   def create_vote_for(*users)
-    sp = create(:spending_proposal, :finished, :feasible)
+    sp = first_or_create_spending_spending_proposal
     users.each do |user|
       create(:vote, votable: sp, voter: user)
     end
   end
 
   def create_ballot_for(*users)
-    sp = create(:spending_proposal, :finished, :feasible)
+    sp = first_or_create_spending_spending_proposal
     users.each do |user|
       create(:ballot, spending_proposals: [sp], user: user)
+    end
+  end
+
+  def create_delegation_for(*users)
+    forum = create(:forum)
+    users.each do |user|
+      user.update(representative: forum)
+    end
+  end
+
+  def create_comment_for(*users)
+    sp = first_or_create_spending_spending_proposal
+    users.each do |user|
+      create(:comment, commentable: sp, user: user)
+    end
+  end
+
+  def first_or_create_spending_spending_proposal
+    if SpendingProposal.any?
+      return SpendingProposal.first
+    else
+      return create(:spending_proposal, :finished, :feasible)
     end
   end
 

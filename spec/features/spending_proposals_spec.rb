@@ -613,16 +613,16 @@ feature 'Spending proposals' do
       josefine = create(:user, :level_two)
       edward   = create(:user, :level_two)
 
-      #create_spending_proposal_for(isabel)
+      create_spending_proposal_for(isabel)
       create_vote_for(eva)
       create_ballot_for(antonio)
-      #create_delegation_for(jose)
-      #create_comment_for(josefine, jose)
+      create_delegation_for(jose)
+      create_comment_for(josefine, jose)
 
       visit stats_spending_proposals_path
 
       within "#total_participants" do
-        expect(page).to have_content "2"
+        expect(page).to have_content "5"
       end
     end
 
