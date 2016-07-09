@@ -616,8 +616,7 @@ feature 'Spending proposals' do
       create_spending_proposal_for(isabel)
       create_vote_for(eva)
       create_ballot_for(antonio)
-      create_delegation_for(jose)
-      create_comment_for(josefine, jose)
+      create_delegation_for(jose, josefine)
 
       visit stats_spending_proposals_path
 

@@ -167,7 +167,7 @@ class SpendingProposalsController < ApplicationController
 
     def participants
       stats_cache('participants') {
-        users = (authors + voters + balloters + delegators + commentators).uniq
+        users = (authors + voters + balloters + delegators).uniq
         User.where(id: users)
       }
     end
@@ -194,10 +194,6 @@ class SpendingProposalsController < ApplicationController
 
     def delegators
       stats_cache('delegators') { User.where.not(representative_id: nil).pluck(:id) }
-    end
-
-    def commentators
-      stats_cache('commentators') { Comment.where(commentable_type: 'SpendingProposal').pluck(:user_id) }
     end
 
     def total_spending_proposals

@@ -315,13 +315,6 @@ module CommonActions
     end
   end
 
-  def create_comment_for(*users)
-    sp = first_or_create_spending_spending_proposal
-    users.each do |user|
-      create(:comment, commentable: sp, user: user)
-    end
-  end
-
   def first_or_create_spending_spending_proposal
     if SpendingProposal.any?
       return SpendingProposal.first
