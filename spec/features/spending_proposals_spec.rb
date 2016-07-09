@@ -413,7 +413,7 @@ feature 'Spending proposals' do
   end
 
 
-  context 'Results' do
+  xcontext 'Results' do
 
     context "Diplays proposals ordered by ballot_lines_count" do
 
