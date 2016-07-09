@@ -268,27 +268,32 @@ class SpendingProposalsController < ApplicationController
       groups = Hash.new(0)
       @geozones.each do |geozone|
         groups[geozone.id] = Hash.new(0)
-        groups[geozone.id][:total_participants_support_phase] = voters_by_geozone(geozone.id).uniq.count
-        groups[geozone.id][:percentage_participants_support_phase] = voters_by_geozone(geozone.id).uniq.count / voters_in_geozones.uniq.count.to_f * 100
+        groups[geozone.id][:total_participants_support_phase]             = voters_by_geozone(geozone.id).uniq.count
+        groups[geozone.id][:percentage_participants_support_phase]        = voters_by_geozone(geozone.id).uniq.count / voters_in_geozones.uniq.count.to_f * 100
         groups[geozone.id][:percentage_district_population_support_phase] = voters_by_geozone(geozone.id).uniq.count / district_population[geozone.name].to_f * 100
 
-        groups[geozone.id][:total_participants_vote_phase] = balloters_by_geozone(geozone.id).uniq.count
-        groups[geozone.id][:percentage_participants_vote_phase] = balloters_by_geozone(geozone.id).uniq.count / balloters_in_geozones.uniq.count.to_f * 100
+        groups[geozone.id][:total_participants_vote_phase]             = balloters_by_geozone(geozone.id).uniq.count
+        groups[geozone.id][:percentage_participants_vote_phase]        = balloters_by_geozone(geozone.id).uniq.count / balloters_in_geozones.uniq.count.to_f * 100
         groups[geozone.id][:percentage_district_population_vote_phase] = balloters_by_geozone(geozone.id).uniq.count / district_population[geozone.name].to_f * 100
 
-        groups[geozone.id][:total_participants_all_phase] = (voters_by_geozone(geozone.id) + balloters_by_geozone(geozone.id)).uniq.count
-        groups[geozone.id][:percentage_participants_all_phase] = (voters_by_geozone(geozone.id) + balloters_by_geozone(geozone.id)).uniq.count / (voters_in_geozones + balloters_in_geozones).uniq.count.to_f * 100
+        groups[geozone.id][:total_participants_all_phase]             = (voters_by_geozone(geozone.id) + balloters_by_geozone(geozone.id)).uniq.count
+        groups[geozone.id][:percentage_participants_all_phase]        = (voters_by_geozone(geozone.id) + balloters_by_geozone(geozone.id)).uniq.count / (voters_in_geozones + balloters_in_geozones).uniq.count.to_f * 100
         groups[geozone.id][:percentage_district_population_all_phase] = (voters_by_geozone(geozone.id) + balloters_by_geozone(geozone.id)).uniq.count / district_population[geozone.name].to_f * 100
       end
 
       groups[:total] = Hash.new(0)
+      groups[:total][:total_participants_support_phase]      = groups.collect {|k,v| v[:total_participants_support_phase]}.sum
       groups[:total][:percentage_participants_support_phase] = groups.collect {|k,v| v[:percentage_participants_support_phase]}.sum
-      groups[:total][:percentage_participants_vote_phase] = groups.collect {|k,v| v[:percentage_participants_vote_phase]}.sum
-      groups[:total][:percentage_participants_all_phase] = groups.collect {|k,v| v[:percentage_participants_all_phase]}.sum
+
+      groups[:total][:total_participants_vote_phase]         = groups.collect {|k,v| v[:total_participants_vote_phase]}.sum
+      groups[:total][:percentage_participants_vote_phase]    = groups.collect {|k,v| v[:percentage_participants_vote_phase]}.sum
+
+      groups[:total][:total_participants_all_phase]          = groups.collect {|k,v| v[:total_participants_all_phase]}.sum
+      groups[:total][:percentage_participants_all_phase]     = groups.collect {|k,v| v[:percentage_participants_all_phase]}.sum
 
       groups[:total][:rounded_percentage_participants_support_phase] = groups.collect {|k,v| v[:percentage_participants_support_phase]}.collect {|v| v.round(2)}[0..-2].sum
-      groups[:total][:rounded_percentage_participants_vote_phase] = groups.collect {|k,v| v[:percentage_participants_vote_phase]}.collect {|v| v.round(2)}[0..-2].sum
-      groups[:total][:rounded_percentage_participants_all_phase] = groups.collect {|k,v| v[:percentage_participants_all_phase]}.collect {|v| v.round(2)}[0..-2].sum
+      groups[:total][:rounded_percentage_participants_vote_phase]    = groups.collect {|k,v| v[:percentage_participants_vote_phase]}.collect {|v| v.round(2)}[0..-2].sum
+      groups[:total][:rounded_percentage_participants_all_phase]     = groups.collect {|k,v| v[:percentage_participants_all_phase]}.collect {|v| v.round(2)}[0..-2].sum
 
       groups
     end
