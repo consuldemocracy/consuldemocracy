@@ -673,6 +673,37 @@ feature 'Spending proposals' do
       end
     end
 
+    scenario "Gender unknown" do
+      isabel  = create(:user, :level_two, gender: 'female')
+      unknown = create(:user, :level_two, gender:  nil)
+      antonio = create(:user, :level_two, gender: 'male')
+
+      create_spending_proposal_for(isabel)
+      create_vote_for(isabel, unknown, antonio)
+
+      visit stats_spending_proposals_path
+
+      within "#total_participants" do
+        expect(page).to have_content "3"
+      end
+
+      within "#total_male_participants" do
+        expect(page).to have_content "1"
+      end
+
+      within "#total_female_participants" do
+        expect(page).to have_content "1"
+      end
+
+      within "#male_percentage" do
+        expect(page).to have_content "50%"
+      end
+
+      within "#female_percentage" do
+        expect(page).to have_content "50%"
+      end
+    end
+
     scenario "Age group" do
       isabel  = create(:user, :level_two, date_of_birth: 17.years.ago)
       eva     = create(:user, :level_two, date_of_birth: 18.years.ago)

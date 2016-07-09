@@ -161,6 +161,10 @@ class SpendingProposalsController < ApplicationController
       stats_cache('total_participants') { participants.distinct.count }
     end
 
+    def total_participants_with_gender
+      stats_cache('total_participants_with_gender') { participants.where.not(gender: nil).distinct.count }
+    end
+
     def participants
       stats_cache('participants') {
         users = (authors + voters + balloters + delegators + commentators).uniq
@@ -217,11 +221,11 @@ class SpendingProposalsController < ApplicationController
     end
 
     def male_percentage
-      stats_cache('male_percentage') { total_male_participants / total_participants.to_f * 100 }
+      stats_cache('male_percentage') { total_male_participants / total_participants_with_gender.to_f * 100 }
     end
 
     def female_percentage
-      stats_cache('female_percentage') { total_female_participants / total_participants.to_f * 100 }
+      stats_cache('female_percentage') { total_female_participants / total_participants_with_gender.to_f * 100 }
     end
 
     def age_groups
