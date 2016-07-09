@@ -181,9 +181,13 @@ class SpendingProposalsController < ApplicationController
     end
 
     def voters_in_geozones
-      stats_cache('voters_in_geozones') {
-        ActsAsVotable::Vote.where(votable_type: 'SpendingProposal', votable_id: SpendingProposal.district_wide).pluck(:voter_id)
-      }
+      #stats_cache('voters_in_geozones') {
+        voter_ids = []
+        @geozones.each do |geozone|
+          voter_ids << voters_by_geozone(geozone.id).uniq
+        end
+        [voter_ids].flatten.uniq
+      #}
     end
 
     def voters_by_geozone(geozone_id)
@@ -280,9 +284,9 @@ class SpendingProposalsController < ApplicationController
       groups[:total][:percentage_participants_vote_phase] = groups.collect {|k,v| v[:percentage_participants_vote_phase]}.sum
       groups[:total][:percentage_participants_all_phase] = groups.collect {|k,v| v[:percentage_participants_all_phase]}.sum
 
-      groups[:total][:rounded_percentage_participants_support_phase] = groups.collect {|k,v| v[:percentage_participants_support_phase]}.collect {|v| v.round(2)}.sum
-      groups[:total][:rounded_percentage_participants_vote_phase] = groups.collect {|k,v| v[:percentage_participants_vote_phase]}.collect {|v| v.round(2)}.sum
-      groups[:total][:rounded_percentage_participants_all_phase] = groups.collect {|k,v| v[:percentage_participants_all_phase]}.collect {|v| v.round(2)}.sum
+      groups[:total][:rounded_percentage_participants_support_phase] = groups.collect {|k,v| v[:percentage_participants_support_phase]}.collect {|v| v.round(2)}[0..-2].sum
+      groups[:total][:rounded_percentage_participants_vote_phase] = groups.collect {|k,v| v[:percentage_participants_vote_phase]}.collect {|v| v.round(2)}[0..-2].sum
+      groups[:total][:rounded_percentage_participants_all_phase] = groups.collect {|k,v| v[:percentage_participants_all_phase]}.collect {|v| v.round(2)}[0..-2].sum
 
       groups
     end
