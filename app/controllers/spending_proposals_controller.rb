@@ -182,8 +182,7 @@ class SpendingProposalsController < ApplicationController
 
     def voters_in_geozones
       stats_cache('voters_in_geozones') {
-        voter_ids = ActsAsVotable::Vote.where(votable_type: 'SpendingProposal').pluck(:voter_id)
-        User.where(id: voter_ids).where.not(supported_spending_proposals_geozone_id: nil).pluck(:id)
+        ActsAsVotable::Vote.where(votable_type: 'SpendingProposal', votable_id: SpendingProposal.district_wide).pluck(:voter_id)
       }
     end
 
