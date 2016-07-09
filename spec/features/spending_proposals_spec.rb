@@ -958,6 +958,79 @@ feature 'Spending proposals' do
         end
 
       end
+
+      scenario "Disregard participantes that have not voted in district spending proposals", :focus do
+        @barajas      = create(:geozone, name: "Barajas")
+        @carabanchel = create(:geozone, name: "Carabanchel")
+
+        isabel   = create(:user, :level_two, supported_spending_proposals_geozone_id: @barajas.id)
+        eva      = create(:user, :level_two, supported_spending_proposals_geozone_id: @carabanchel.id)
+        antonio  = create(:user, :level_two)
+
+        sp1 = create(:spending_proposal, :finished, :feasible, geozone: @barajas,     author: isabel)
+        sp2 = create(:spending_proposal, :finished, :feasible, geozone: @carabanchel, author: eva)
+        sp3 = create(:spending_proposal, :finished, :feasible, geozone: nil,          author: antonio)
+
+        create(:vote, votable: sp1, voter: isabel)
+        create(:vote, votable: sp2, voter: eva)
+        create(:vote, votable: sp3, voter: antonio)
+
+        create(:ballot, spending_proposals: [sp1], user: isabel,  geozone: @barajas)
+        create(:ballot, spending_proposals: [sp2], user: eva,     geozone: @carabanchel)
+        create(:ballot, spending_proposals: [sp3], user: antonio, geozone: nil)
+
+        visit stats_spending_proposals_path
+
+        within("#total_participants_support_phase_geozone_#{@barajas.id}") do
+          expect(page).to have_content "1"
+        end
+
+        within("#total_participants_support_phase_geozone_#{@carabanchel.id}") do
+          expect(page).to have_content "1"
+        end
+
+        within("#percentage_participants_support_phase_geozone_#{@barajas.id}") do
+          expect(page).to have_content "50%"
+        end
+
+        within("#percentage_participants_support_phase_geozone_#{@carabanchel.id}") do
+          expect(page).to have_content "50%"
+        end
+
+
+        within("#total_participants_vote_phase_geozone_#{@barajas.id}") do
+          expect(page).to have_content "1"
+        end
+
+        within("#total_participants_vote_phase_geozone_#{@carabanchel.id}") do
+          expect(page).to have_content "1"
+        end
+
+        within("#percentage_participants_vote_phase_geozone_#{@barajas.id}") do
+          expect(page).to have_content "50%"
+        end
+
+        within("#percentage_participants_vote_phase_geozone_#{@carabanchel.id}") do
+          expect(page).to have_content "50%"
+        end
+
+
+        within("#total_participants_all_phase_geozone_#{@barajas.id}") do
+          expect(page).to have_content "1"
+        end
+
+        within("#total_participants_all_phase_geozone_#{@carabanchel.id}") do
+          expect(page).to have_content "1"
+        end
+
+        within("#percentage_participants_all_phase_geozone_#{@barajas.id}") do
+          expect(page).to have_content "50%"
+        end
+
+        within("#percentage_participants_all_phase_geozone_#{@carabanchel.id}") do
+          expect(page).to have_content "50%"
+        end
+      end
     end
   end
 end

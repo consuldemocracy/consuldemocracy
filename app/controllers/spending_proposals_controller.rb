@@ -180,12 +180,26 @@ class SpendingProposalsController < ApplicationController
       stats_cache('voters') { ActsAsVotable::Vote.where(votable_type: 'SpendingProposal').pluck(:voter_id) }
     end
 
+    def voters_in_geozones
+      stats_cache('voters_in_geozones') {
+        voter_ids = ActsAsVotable::Vote.where(votable_type: 'SpendingProposal').pluck(:voter_id)
+        User.where(id: voter_ids).where.not(supported_spending_proposals_geozone_id: nil).pluck(:id)
+      }
+    end
+
     def voters_by_geozone(geozone_id)
       ActsAsVotable::Vote.where(votable_type: 'SpendingProposal', votable_id: SpendingProposal.by_geozone(geozone_id)).pluck(:voter_id)
     end
 
     def balloters
       stats_cache('balloters') { Ballot.where('ballot_lines_count > ?', 0).pluck(:user_id) }
+    end
+
+    def balloters_in_geozones
+      stats_cache('balloters_in_geozones') {
+        user_ids = Ballot.where('ballot_lines_count > ?', 0).where.not(geozone_id: nil).pluck(:user_id)
+        User.where(id: user_ids).pluck(:id)
+      }
     end
 
     def balloters_by_geozone(geozone_id)
@@ -251,15 +265,15 @@ class SpendingProposalsController < ApplicationController
       @geozones.each do |geozone|
         groups[geozone.id] = Hash.new(0)
         groups[geozone.id][:total_participants_support_phase] = voters_by_geozone(geozone.id).uniq.count
-        groups[geozone.id][:percentage_participants_support_phase] = voters_by_geozone(geozone.id).uniq.count / voters.uniq.count.to_f * 100
+        groups[geozone.id][:percentage_participants_support_phase] = voters_by_geozone(geozone.id).uniq.count / voters_in_geozones.uniq.count.to_f * 100
         groups[geozone.id][:percentage_district_population_support_phase] = voters_by_geozone(geozone.id).uniq.count / district_population[geozone.name].to_f * 100
 
         groups[geozone.id][:total_participants_vote_phase] = balloters_by_geozone(geozone.id).uniq.count
-        groups[geozone.id][:percentage_participants_vote_phase] = balloters_by_geozone(geozone.id).uniq.count / balloters.uniq.count.to_f * 100
+        groups[geozone.id][:percentage_participants_vote_phase] = balloters_by_geozone(geozone.id).uniq.count / balloters_in_geozones.uniq.count.to_f * 100
         groups[geozone.id][:percentage_district_population_vote_phase] = balloters_by_geozone(geozone.id).uniq.count / district_population[geozone.name].to_f * 100
 
         groups[geozone.id][:total_participants_all_phase] = (voters_by_geozone(geozone.id) + balloters_by_geozone(geozone.id)).uniq.count
-        groups[geozone.id][:percentage_participants_all_phase] = (voters_by_geozone(geozone.id) + balloters_by_geozone(geozone.id)).uniq.count / (voters + balloters).uniq.count.to_f * 100
+        groups[geozone.id][:percentage_participants_all_phase] = (voters_by_geozone(geozone.id) + balloters_by_geozone(geozone.id)).uniq.count / (voters_in_geozones + balloters_in_geozones).uniq.count.to_f * 100
         groups[geozone.id][:percentage_district_population_all_phase] = (voters_by_geozone(geozone.id) + balloters_by_geozone(geozone.id)).uniq.count / district_population[geozone.name].to_f * 100
       end
       groups
