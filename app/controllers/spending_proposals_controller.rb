@@ -278,14 +278,9 @@ class SpendingProposalsController < ApplicationController
       end
 
       groups[:total] = Hash.new(0)
-      groups[:total][:percentage_participants_support_phase] = groups.collect {|k,v| v[:total_participants_support_phase]}.sum
-      groups[:total][:percentage_district_population_support_phase] = groups.collect {|k,v| v[:percentage_district_population_support_phase]}.sum
-
+      groups[:total][:percentage_participants_support_phase] = groups.collect {|k,v| v[:percentage_participants_support_phase]}.sum
       groups[:total][:percentage_participants_vote_phase] = groups.collect {|k,v| v[:percentage_participants_vote_phase]}.sum
-      groups[:total][:percentage_district_population_vote_phase] = groups.collect {|k,v| v[:percentage_district_population_vote_phase]}.sum
-
       groups[:total][:percentage_participants_all_phase] = groups.collect {|k,v| v[:percentage_participants_all_phase]}.sum
-      groups[:total][:percentage_district_population_all_phase] = groups.collect {|k,v| v[:percentage_district_population_all_phase]}.sum
 
       groups
     end
