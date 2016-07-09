@@ -280,6 +280,10 @@ class SpendingProposalsController < ApplicationController
       groups[:total][:percentage_participants_vote_phase] = groups.collect {|k,v| v[:percentage_participants_vote_phase]}.sum
       groups[:total][:percentage_participants_all_phase] = groups.collect {|k,v| v[:percentage_participants_all_phase]}.sum
 
+      groups[:total][:rounded_percentage_participants_support_phase] = groups.collect {|k,v| v[:percentage_participants_support_phase]}.collect {|v| v.round(2)}.sum
+      groups[:total][:rounded_percentage_participants_vote_phase] = groups.collect {|k,v| v[:percentage_participants_vote_phase]}.collect {|v| v.round(2)}.sum
+      groups[:total][:rounded_percentage_participants_all_phase] = groups.collect {|k,v| v[:percentage_participants_all_phase]}.collect {|v| v.round(2)}.sum
+
       groups
     end
 
