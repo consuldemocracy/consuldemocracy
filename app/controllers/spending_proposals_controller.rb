@@ -195,13 +195,15 @@ class SpendingProposalsController < ApplicationController
     end
 
     def balloters
-      stats_cache('balloters') { Ballot.where('ballot_lines_count > ?', 0).pluck(:user_id) }
+      #stats_cache('balloters') {
+        Ballot.where('ballot_lines_count > ?', 0).pluck(:user_id)
+      #}
     end
 
     def balloters_in_geozones
-      stats_cache('balloters_in_geozones') {
-        Ballot.where('ballot_lines_count > ? AND geozone_id IS NOT null', 0).pluck(:user_id)
-      }
+      #stats_cache('balloters_in_geozones') {
+        Ballot.where('ballot_lines_count > ? AND geozone_id IS NOT null', 0).pluck(:user_id).uniq
+      #}
     end
 
     def balloters_by_geozone(geozone_id)
