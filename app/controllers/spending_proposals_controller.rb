@@ -196,8 +196,7 @@ class SpendingProposalsController < ApplicationController
 
     def balloters_in_geozones
       stats_cache('balloters_in_geozones') {
-        user_ids = Ballot.where('ballot_lines_count > ?', 0).where.not(geozone_id: nil).pluck(:user_id)
-        User.where(id: user_ids).pluck(:id)
+        Ballot.where('ballot_lines_count > ? AND geozone_id IS NOT null', 0).pluck(:user_id)
       }
     end
 
@@ -309,7 +308,7 @@ class SpendingProposalsController < ApplicationController
     end
 
     def stats_cache(key, &block)
-      Rails.cache.fetch("spending_proposals_stats/v1/#{key}", &block)
+      Rails.cache.fetch("spending_proposals_stats/v2/#{key}", &block)
     end
 
 end
