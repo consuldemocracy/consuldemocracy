@@ -3,6 +3,10 @@ require 'rails_helper'
 describe DebatesController do
 
   describe 'POST create' do
+    before(:each) do
+      InvisibleCaptcha.timestamp_enabled = false
+    end
+
     it 'should create an ahoy event' do
 
       sign_in create(:user)
