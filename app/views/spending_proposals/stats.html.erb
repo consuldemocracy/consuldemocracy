@@ -1,4 +1,4 @@
-<% cache [@stats, @geozones, "v3"] do %>
+<% cache [@stats, @geozones] do %>
   <% provide :title, t("spending_proposals.stats.page_title") %>
   <% provide :social_media_meta_tags do %>
     <%= render "shared/social_media_meta_tags_participatory_budget" %>
@@ -142,6 +142,7 @@
             </p>
           </div>
         </div>
+      </div>
     </div>
 
     <div class="row">
