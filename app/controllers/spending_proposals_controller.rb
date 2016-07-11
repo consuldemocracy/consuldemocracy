@@ -82,6 +82,7 @@ class SpendingProposalsController < ApplicationController
     stats[:female_percentage] = female_percentage
     stats[:age_groups] = age_groups
     stats[:geozones] = geozones
+    stats[:total_unknown_gender_or_age] = total_unknown_gender_or_age
 
     @stats = stats
   end
@@ -335,6 +336,11 @@ class SpendingProposalsController < ApplicationController
         "Villaverde"          => 117478 }
     end
 
+    def total_unknown_gender_or_age
+      stats_cache('total_unknown_gender_or_age') {
+        participants.where("gender IS NULL OR date_of_birth is NULL").uniq.count
+      }
+    end
 
     def stats_cache(key, &block)
       Rails.cache.fetch("spending_proposals_stats/20160711121901/#{key}", &block)

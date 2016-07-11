@@ -625,7 +625,7 @@ feature 'Spending proposals' do
       end
     end
 
-    scenario "Total participation in phases", :focus do
+    scenario "Total participation in phases" do
       isabel   = create(:user, :level_two)
       eva      = create(:user, :level_two)
       antonio  = create(:user, :level_two)
@@ -745,6 +745,25 @@ feature 'Spending proposals' do
       within "#age_group_35_to_39" do
         expect(page).to have_content "35 - 39"
         expect(page).to have_content "1 (33.33%)"
+      end
+    end
+
+    scenario "Unknown sex or gender" do
+      isabel  = create(:user, :level_two, gender: 'female', date_of_birth: 17.years.ago)
+      antonio = create(:user, :level_two, gender: 'male',   date_of_birth: 17.years.ago)
+      unknown = create(:user, :level_two, gender:  nil,     date_of_birth: 17.years.ago)
+
+      eva      = create(:user, :level_two, gender: 'female', date_of_birth: 17.years.ago)
+      jose     = create(:user, :level_two, gender: 'male',   date_of_birth: 17.years.ago)
+      unknown2 = create(:user, :level_two, gender:  nil,     date_of_birth: nil)
+
+      create_spending_proposal_for(isabel)
+      create_vote_for(isabel, antonio, unknown, eva, jose, unknown2)
+
+      visit stats_spending_proposals_path
+
+      within "#total_unknown_gender_or_age" do
+        expect(page).to have_content "2"
       end
     end
 

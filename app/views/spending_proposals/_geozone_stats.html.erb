@@ -57,10 +57,16 @@
     </tbody>
   </table>
 
-  <!-- <div class="row">
+  <div class="row">
     <div class="small-12 column">
-      <p><em>* No se dispone de los datos demográficos de 101 participantes.</em></p>
+      <p id="total_unknown_gender_or_age">
+        <em>
+          * No se dispone de los datos demográficos de
+          <%= @stats[:total_unknown_gender_or_age] %>
+          participantes.
+        </em>
+      </p>
     </div>
-  </div> -->
+  </div>
 
 </div>
