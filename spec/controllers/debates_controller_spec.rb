@@ -7,6 +7,10 @@ describe DebatesController do
       InvisibleCaptcha.timestamp_enabled = false
     end
 
+    after(:each) do
+      InvisibleCaptcha.timestamp_enabled = true
+    end
+
     it 'should create an ahoy event' do
 
       sign_in create(:user)
