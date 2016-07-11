@@ -36,17 +36,17 @@
 
           <% ["support", "vote", "all"].each do |phase| %>
             <td id="total_participants_<%= phase %>_phase_geozone_<%= geozone.id %>"
-                class="border-left <%= css_for_highlight_spending_proposal_stat(phase) %>">
+                class="border-left text-center <%= css_for_highlight_spending_proposal_stat(phase) %>">
               <%= @stats[:geozones][geozone.id]["total_participants_#{phase}_phase".to_sym] %>
             </td>
             <td id="percentage_participants_<%= phase %>_phase_geozone_<%= geozone.id %>"
-                class="<%= css_for_highlight_spending_proposal_stat(phase) %>">
+                class="border-left border-right text-center <%= css_for_highlight_spending_proposal_stat(phase) %>">
               <%= number_to_percentage(@stats[:geozones][geozone.id]["percentage_participants_#{phase}_phase".to_sym],
                 strip_insignificant_zeros: true,
                 precision: 2) %>
             </td>
             <td id="percentage_district_population_<%= phase %>_phase_geozone_<%= geozone.id %>"
-                class="border-left border-right <%= css_for_highlight_spending_proposal_stat(phase) %>">
+                class="text-center <%= css_for_highlight_spending_proposal_stat(phase) %>">
               <%= number_to_percentage(@stats[:geozones][geozone.id]["percentage_district_population_#{phase}_phase".to_sym],
                 strip_insignificant_zeros: true,
                 precision: 2)%>
@@ -56,6 +56,12 @@
       <% end %>
     </tbody>
   </table>
+
+  <div class="row">
+    <div class="small-12 column">
+      <p><em>* No se dispone de los datos demográficos de 101 participantes.</em></p>
+    </div>
+  </div>
 
   <div>
     <p>Total percentages:</p>

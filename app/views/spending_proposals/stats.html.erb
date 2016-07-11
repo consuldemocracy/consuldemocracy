@@ -4,6 +4,8 @@
     <%= render "shared/social_media_meta_tags_participatory_budget" %>
   <% end %>
 
+  <%= javascript_include_tag "participatory-budget-charts", 'data-turbolinks-track' => true %>
+
   <div class="expanded spending-proposals results no-margin-top">
     <div class="row">
       <div class="small-12 column padding text-center">
@@ -41,45 +43,52 @@
             <%= @stats[:total_participants] %>
           </p>
         </div>
+        <div class="small-12 column margin-top text-center">
+          <p class="chart-legend">
+            <span id="total_feasible_spending_proposals">
+              <strong>PARTICIPANTES EN LA FASE DE APOYOS</strong>: 30.000
+            </span>
+            &nbsp;&nbsp;|&nbsp;&nbsp;
+            <span id="total_unfeasible_spending_proposals">
+              <strong>PARTICIPANTES EN LA FASE DE VOTACIÓN</strong>: 10.000
+            </span>
+          </p>
+        </div>
       </div>
     </div>
 
     <hr>
 
-    <div class="row" data-equalizer>
+    <div class="row">
       <!-- Resultados generales -->
-      <div class="small-12 medium-6 column text-right" data-equalizer-watch>
+      <div class="small-12 medium-6 column text-right">
         <div class="panel light-green">
           <p>TOTAL PROPUESTAS ENVIADAS</p>
           <p id="total_spending_proposals" class="big-number-stat">
             <%= @stats[:total_spending_proposals] %>
           </p>
         </div>
-
-        <div class="small-12 column margin-top">
-          <p class="chart-legend">
-            <span class="label" style="background: #9CC56A"></span>&nbsp;
-            <span id="total_feasible_spending_proposals">
-              <strong>PROPUESTAS EN LA FASE FINAL</strong>:
-              <%= @stats[:total_feasible_spending_proposals] %><br>
-            </span>
-
-            <span class="label" style="background: #E87461"></span>&nbsp;
-            <span id="total_unfeasible_spending_proposals">
-              <strong>PROPUESTAS INVIABLES</strong>:
-              <%= @stats[:total_unfeasible_spending_proposals] %><br>
-            </span>
-          </p>
-        </div>
       </div>
 
-      <div class="medium-4 medium-offset-1 show-for-medium column end text-center" data-equalizer-watch>
-        <canvas id="chart-totals" width="300" height="300"></canvas>
+      <div class="small-12 medium-6 column margin-top">
+        <p class="chart-legend">
+          <span class="label" style="background: #9CC56A"></span>&nbsp;
+          <span id="total_feasible_spending_proposals">
+            <strong>PROPUESTAS EN LA FASE FINAL</strong>:
+            <%= @stats[:total_feasible_spending_proposals] %><br>
+          </span>
+
+          <span class="label" style="background: #E87461"></span>&nbsp;
+          <span id="total_unfeasible_spending_proposals">
+            <strong>PROPUESTAS INVIABLES</strong>:
+            <%= @stats[:total_unfeasible_spending_proposals] %>
+          </span>
+        </p>
       </div>
     </div>
 
     <div class="clear"></div>
-    <hr>
+    <hr class="double">
 
     <div class="row" data-equalizer>
 
@@ -92,10 +101,10 @@
 
       <div class="small-12 medium-6 column show-for-medium"  data-equalizer-watch>
         <div class="panel text-center">
-          <%= image_tag ('survey_results/sex.png') %>
+          <%= image_tag ('participatory_budget_stats/sex.png') %>
           <br>
           <div class="large-offset-3 large-5 padding">
-            <canvas id="chart-sex" width="300" height="300"></canvas>
+            <canvas id="sps-chart-sex" width="300" height="300"></canvas>
           </div>
         </div>
       </div>
