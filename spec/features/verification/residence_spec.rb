@@ -4,7 +4,7 @@ feature 'Residence' do
 
   let!(:geozone) { create(:geozone) }
 
-  scenario 'Verify resident in Madrid' do
+  scenario 'Verify resident' do
     user = create(:user)
     login_as(user)
 
@@ -65,7 +65,7 @@ feature 'Residence' do
     expect(page).to have_content /\d errors? prevented the verification of your residence/
   end
 
-  scenario 'Error on postal code not in Madrid census' do
+  scenario 'Error on postal code not in census' do
     user = create(:user)
     login_as(user)
 
@@ -85,7 +85,7 @@ feature 'Residence' do
     expect(page).to have_content 'In order to be verified, you must be registered in the municipality of Madrid'
   end
 
-  scenario 'Error on Madrid census' do
+  scenario 'Error on census' do
     user = create(:user)
     login_as(user)
 
