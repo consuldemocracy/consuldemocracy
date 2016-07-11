@@ -959,7 +959,7 @@ feature 'Spending proposals' do
 
       end
 
-      scenario "Disregard participantes that have not voted in district spending proposals", :focus do
+      scenario "Disregard participantes that have not voted in district spending proposals" do
         @barajas      = create(:geozone, name: "Barajas")
         @carabanchel = create(:geozone, name: "Carabanchel")
 
