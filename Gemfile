@@ -66,7 +66,7 @@ group :development, :test do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-commands-rspec'
-  gem 'rspec-rails', '~> 3.3'
+  gem 'rspec-rails', '~> 3.5'
   gem 'capybara'
   gem 'factory_girl_rails'
   gem 'fuubar'
@@ -76,7 +76,7 @@ group :development, :test do
   gem 'i18n-tasks'
   gem 'capistrano', '3.4.1',           require: false
   gem "capistrano-bundler", '1.1.4',   require: false
-  gem "capistrano-rails", '1.1.6',     require: false
+  gem "capistrano-rails", '1.1.7',     require: false
   gem "capistrano-rvm",                require: false
   gem 'capistrano3-delayed-job', '~> 1.0'
   gem "bullet"
@@ -92,5 +92,5 @@ end
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
-  gem 'web-console', '~> 3.0'
+  gem 'web-console', '3.3.0'
 end
