@@ -9,7 +9,7 @@
     <% @stats[:age_groups].each do |age_group, count| %>
       <tr id="age_group_<%= age_group.gsub(" - ", "_to_") %>">
         <td class="border-right">
-          <%= age_group %> años
+          <%= age_group.gsub("+", "Más de") %> años
         </td>
         <td class="border-left">
           <strong>

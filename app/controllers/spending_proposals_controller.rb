@@ -272,7 +272,8 @@ class SpendingProposalsController < ApplicationController
         "65 - 69",
         "70 - 140"].each do |group|
           start, finish = group.split(" - ")
-          groups[group] = User.where(id: participants).where("date_of_birth > ? AND date_of_birth < ?", eval(finish).years.ago.beginning_of_year, eval(start).years.ago.end_of_year).count
+          group_name = (group == "70 - 140" ? "+ 70" : group)
+          groups[group_name] = User.where(id: participants).where("date_of_birth > ? AND date_of_birth < ?", finish.to_i.years.ago.beginning_of_year, eval(start).years.ago.end_of_year).count
         end
         groups
       }
@@ -311,31 +312,31 @@ class SpendingProposalsController < ApplicationController
     end
 
     def district_population
-      {"Arganzuela"          => 151520,
-       "Barajas"             =>  46264,
-       "Carabanchel"         => 242000,
-       "Centro"              => 132644,
-       "Chamartin"           => 142610,
-       "Chamberí"            => 137532,
-       "Ciudad Lineal"       => 212431,
-       "Fuencarral-El Pardo" => 235482,
-       "Hortaleza"           => 177738,
-       "Latina"              => 234015,
-       "Moncloa-Aravaca"     => 116689,
-       "Moratalaz"           =>  94607,
-       "Puente de Vallecas"  => 227195,
-       "Retiro"              => 118559,
-       "Salamanca"           => 143244,
-       "San Blas-Canillejas" => 153411,
-       "Tetuán"              => 152545,
-       "Usera"               => 134015,
-       "Vicálvaro"           =>  69800,
-       "Villa de Vallecas"   => 102140,
-       "Villaverde"          => 141442}
+      { "Arganzuela"          => 131429,
+        "Barajas"             =>  37725,
+        "Carabanchel"         => 205197,
+        "Centro"              => 120867,
+        "Chamartin"           => 123099,
+        "Chamberí"            => 122280,
+        "Ciudad Lineal"       => 184285,
+        "Fuencarral-El Pardo" => 194232,
+        "Hortaleza"           => 146471,
+        "Latina"              => 204427,
+        "Moncloa-Aravaca"     =>  99274,
+        "Moratalaz"           =>  82741,
+        "Puente de Vallecas"  => 194314,
+        "Retiro"              => 103666,
+        "Salamanca"           => 126699,
+        "San Blas-Canillejas" => 127800,
+        "Tetuán"              => 133972,
+        "Usera"               => 112158,
+        "Vicálvaro"           =>  55783,
+        "Villa de Vallecas"   =>  82504,
+        "Villaverde"          => 117478 }
     end
 
     def stats_cache(key, &block)
-      Rails.cache.fetch("spending_proposals_stats/v3/#{key}", &block)
+      Rails.cache.fetch("spending_proposals_stats/20160711121900/#{key}", &block)
     end
 
 end
