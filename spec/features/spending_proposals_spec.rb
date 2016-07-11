@@ -625,6 +625,29 @@ feature 'Spending proposals' do
       end
     end
 
+    scenario "Total participation in phases", :focus do
+      isabel   = create(:user, :level_two)
+      eva      = create(:user, :level_two)
+      antonio  = create(:user, :level_two)
+      jose     = create(:user, :level_two)
+      josefine = create(:user, :level_two)
+      edward   = create(:user, :level_two)
+
+      create_spending_proposal_for(isabel)
+      create_vote_for(eva, antonio)
+      create_ballot_for(eva, jose, josefine)
+
+      visit stats_spending_proposals_path
+
+      within "#total_participants_support_phase" do
+        expect(page).to have_content "2"
+      end
+
+      within "#total_participants_vote_phase" do
+        expect(page).to have_content "3"
+      end
+    end
+
     scenario "Investment projects" do
       sp1 = create(:spending_proposal, :finished, :feasible)
       sp2 = create(:spending_proposal, :finished, :feasible)

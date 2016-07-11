@@ -71,6 +71,8 @@ class SpendingProposalsController < ApplicationController
     @geozones = Geozone.order(:name)
     stats = {}
     stats[:total_participants] = total_participants
+    stats[:total_participants_support_phase] = total_participants_support_phase
+    stats[:total_participants_vote_phase] = total_participants_vote_phase
     stats[:total_spending_proposals] = total_spending_proposals
     stats[:total_feasible_spending_proposals] = total_feasible_spending_proposals
     stats[:total_unfeasible_spending_proposals] = total_unfeasible_spending_proposals
@@ -169,6 +171,18 @@ class SpendingProposalsController < ApplicationController
       stats_cache('participants') {
         users = (authors + voters + balloters + delegators).uniq
         User.where(id: users)
+      }
+    end
+
+    def total_participants_support_phase
+      stats_cache('total_participants_support_phase') {
+        voters.count
+      }
+    end
+
+    def total_participants_vote_phase
+      stats_cache('total_participants_vote_phase') {
+        balloters.count
       }
     end
 
