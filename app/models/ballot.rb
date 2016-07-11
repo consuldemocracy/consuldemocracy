@@ -9,7 +9,7 @@ class Ballot < ActiveRecord::Base
                        "Barajas"             => 433589,
                        "Carabanchel"         => 3247830,
                        "Centro"              => 1353966,
-                       "Chamartin"           => 1313747,
+                       "Chamartín"           => 1313747,
                        "Chamberí"            => 1259587,
                        "Ciudad Lineal"       => 2287757,
                        "Fuencarral-El Pardo" => 2441608,
