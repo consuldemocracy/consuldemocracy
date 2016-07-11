@@ -504,7 +504,6 @@ DEPENDENCIES
   social-share-button!
   spring
   spring-commands-rspec
-  sprockets-rails (~> 2.3.3)
   timecop
   tolk
   turbolinks
