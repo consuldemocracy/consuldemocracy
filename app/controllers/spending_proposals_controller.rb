@@ -176,13 +176,13 @@ class SpendingProposalsController < ApplicationController
 
     def total_participants_support_phase
       stats_cache('total_participants_support_phase') {
-        voters.count
+        voters.uniq.count
       }
     end
 
     def total_participants_vote_phase
       stats_cache('total_participants_vote_phase') {
-        balloters.count
+        balloters.uniq.count
       }
     end
 
