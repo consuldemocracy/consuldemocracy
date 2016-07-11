@@ -317,7 +317,7 @@ class SpendingProposalsController < ApplicationController
         "Barajas"             =>  37725,
         "Carabanchel"         => 205197,
         "Centro"              => 120867,
-        "Chamartin"           => 123099,
+        "Chamartín"           => 123099,
         "Chamberí"            => 122280,
         "Ciudad Lineal"       => 184285,
         "Fuencarral-El Pardo" => 194232,
