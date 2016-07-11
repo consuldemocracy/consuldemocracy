@@ -4,6 +4,7 @@
     <%= render "shared/social_media_meta_tags_participatory_budget" %>
   <% end %>
 
+  <%= javascript_include_tag "chart", 'data-turbolinks-track' => true %>
   <%= javascript_include_tag "participatory-budget-charts", 'data-turbolinks-track' => true %>
 
   <div class="expanded spending-proposals results no-margin-top">
@@ -144,7 +145,7 @@
     <div class="row">
 
       <!-- Participación por grupos de edad -->
-      <div class="small-12 column">
+      <div class="small-12 column margin-top">
         <h2 class="subtitle">Participación por<br>grupos de edad</h2>
       </div>
 
