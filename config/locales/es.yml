@@ -604,7 +604,7 @@ es:
     stats:
       page_title: "Presupuestos participativos | Estadísticas de participación"
       heading: "PRESUPUESTOS PARTICIPATIVOS"
-      results_link: Resultados
+      #results_link: Resultados
       stats_link: "Estadísticas de participación"
   ballots:
     show:

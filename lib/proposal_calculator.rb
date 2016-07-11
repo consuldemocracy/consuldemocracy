@@ -6,7 +6,7 @@ class ProposalCalculator
     "Barajas"               => 10,
     "Carabanchel"           => 37,
     "Centro"                => 49,
-    "Chamartin"             => 31,
+    "Chamartín"             => 31,
     "Chamberí"              => 28,
     "Ciudad Lineal"         => 43,
     "Fuencarral-El Pardo"   => 56,

@@ -50,7 +50,7 @@ geozones = [
   ["Arganzuela", "184,342,218,351,238,373,214,390,183,348"],
   ["Usera", "178,412,201,371,222,420"],
   ["Villaverde", "177,415,225,424,245,470,183,478,168,451"],
-  ["Chamartin", "231,247,224,303,237,309,257,300,246,241"],
+  ["Chamartín", "231,247,224,303,237,309,257,300,246,241"],
   ["Salamanca", "223,306,235,310,256,301,258,335,219,332"],
   ["Retiro", "218,334,259,338,240,369,216,350"],
   ["Puente de Vallecas", "214,390,250,356,265,362,271,372,295,384,291,397,256,406,243,420,223,422"],
@@ -350,7 +350,7 @@ Debate.only_hidden.flagged.reorder("RANDOM()").limit(5).each(&:confirm_hide)
 Proposal.only_hidden.flagged.reorder("RANDOM()").limit(5).each(&:confirm_hide)
 
 puts "Creating district Forums"
-forums = ["Fuencarral - El Pardo", "Moncloa - Aravaca", "Tetuán", "Chamberí", "Centro", "Latina", "Carabanchel", "Arganzuela", "Usera", "Villaverde", "Chamartin", "Salamanca", "Retiro", "Puente de Vallecas", "Villa de Vallecas", "Hortaleza", "Barajas", "Ciudad Lineal", "Moratalaz", "San Blas - Canillejas", "Vicálvaro"]
+forums = ["Fuencarral - El Pardo", "Moncloa - Aravaca", "Tetuán", "Chamberí", "Centro", "Latina", "Carabanchel", "Arganzuela", "Usera", "Villaverde", "Chamartín", "Salamanca", "Retiro", "Puente de Vallecas", "Villa de Vallecas", "Hortaleza", "Barajas", "Ciudad Lineal", "Moratalaz", "San Blas - Canillejas", "Vicálvaro"]
 forums.each_with_index do |forum, i|
   user = create_user("user_for_forum#{i+1}@example.es")
   Forum.create(name: forum, user: user)
