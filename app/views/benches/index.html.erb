@@ -1,0 +1,91 @@
+<% provide :title, "Plan de Urbanismo: nuevos bancos" %>
+<% provide :social_media_meta_tags do %>
+<%= render "shared/social_media_meta_tags",
+          social_url: page_url("processes_town_planning"),
+          social_title: t("pages.processes.index.process_7_title"),
+          social_description: t("pages.processes.index.process_7_description") %>
+<% end %>
+
+<div class="expanded processes-show no-margin-top">
+  <div class="row padding">
+    <div class="small-12 medium-9 column">
+      <%= render "shared/back_link" %>
+
+      <h1 class="margin-bottom"><%= t("pages.processes.index.process_7_title") %></h1>
+      <h2>Participa hasta el 20 de agosto. Selecciona el diseño de banco que más te guste.</h2>
+    </div>
+  </div>
+</div>
+
+<div class="row margin-top" data-equalizer>
+  <%= render @benches %>
+</div>
+
+<div class="row">
+  <div class="small-12 column">
+    <h3 class="margin-bottom">Selecciona el proyecto que quieres votar</h3>
+    <form>
+      <div class="small-12 medium-4 column">
+        <label>
+          <input type="radio" name="bench" value="1">
+          <span>Balle Malle Hupe und Artur</span>
+        </label>
+        <label>
+          <input type="radio" name="bench" value="2">
+          <span>Delta</span>
+        </label>
+        <label>
+          <input type="radio" name="bench" value="3">
+          <span>Mas Madrid</span>
+        </label>
+        <label>
+          <input type="radio" name="bench" value="4">
+          <span>MADBENCH</span>
+        </label>
+      </div>
+      <div class="small-12 medium-4 column">
+        <label>
+          <input type="radio" name="bench" value="5">
+          <span>Yo tenía tres sillas en mi casa...</span>
+        </label>
+        <label>
+          <input type="radio" name="bench" value="6">
+          <span>Sedere</span>
+        </label>
+        <label>
+          <input type="radio" name="bench" value="7">
+          <span>TAKETE</span>
+        </label>
+        <label>
+          <input type="radio" name="bench" value="8">
+          <span>Mucho gusto Madrid</span>
+        </label>
+      </div>
+
+      <div class="small-12 medium-4 column">
+        <label>
+          <input type="radio" name="bench" value="9">
+          <span>SIENTAMADRID!</span>
+        </label>
+        <label>
+          <input type="radio" name="bench" value="10">
+          <span>ARCO</span>
+        </label>
+        <label>
+          <input type="radio" name="bench" value="11">
+          <span>a_park_ando</span>
+        </label>
+        <label>
+          <input type="radio" name="bench" value="12">
+          <span>Benditas costumbres</span>
+        </label>
+      </div>
+
+      <div class="small-12 medium-4 column end text-center">
+        <%= link_to '/processes/town_planning_success' do %>
+          <input type="submit" value="Enviar voto" class="button expanded margin-top">
+        <% end %>
+      </div>
+    </form>
+  </div>
+</div>

@@ -289,6 +289,8 @@ Rails.application.routes.draw do
   resources :forums, only: [:index, :create, :show]
   resources :representatives, only: [:create, :destroy]
 
+  resources :benches
+
   if Rails.env.development?
     mount LetterOpenerWeb::Engine, at: "/letter_opener"
   end

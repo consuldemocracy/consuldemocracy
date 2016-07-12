@@ -1,0 +1,25 @@
+<div class="row margin-top" data-equalizer>
+  <div class="small-12 medium-4 column padding" data-equalizer-watch>
+    <div class="media-object">
+      <div class="media-object-section">
+        <div class="thumbnail">
+          <%= link_to bench.original_image_url, target: '_blank' do %>
+            <%= image_tag bench.thumb_image_url, alt: bench.name %>
+          <% end %>
+        </div>
+      </div>
+
+      <div class="media-object-section">
+        <h4><%= bench.name %></h4>
+        <%= link_to "Ver detalle", bench.original_image_url,
+                    title: t("shared.target_blank_html"),
+                    target: "_blank",
+                    class: "button hollow" %>
+        <br>
+        <%= link_to "Descargar dossier <small>(PDF | #{bench.pdf_size})</small>".html_safe,
+                    bench.pdf_url,
+                    title: bench.pdf_title,
+                    target: "_blank" %>
+      </div>
+    </div>
+  </div>

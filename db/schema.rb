@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160703190103) do
+ActiveRecord::Schema.define(version: 20160712093954) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -107,6 +107,11 @@ ActiveRecord::Schema.define(version: 20160703190103) do
   end
 
   add_index "banners", ["hidden_at"], name: "index_banners_on_hidden_at", using: :btree
+
+  create_table "benches", force: :cascade do |t|
+    t.string "name"
+    t.string "code"
+  end
 
   create_table "campaigns", force: :cascade do |t|
     t.string   "name"
