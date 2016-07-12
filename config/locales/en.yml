@@ -604,7 +604,7 @@ en:
     stats:
       page_title: "Participatory budget | Participation stats"
       heading: "PARTICIPATORY BUDGET"
-      #results_link: Results
+      results_link: Results
       stats_link: "Participation stats"
   ballots:
     show:
