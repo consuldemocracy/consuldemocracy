@@ -551,9 +551,13 @@ es:
       page_title: Presupuestos participativos
       title: "Ya puedes votar las propuestas"
       title_close: "Presupuestos participativos"
+      title_results: "Presupuestos participativos"
       text_first_html: "Desde el <strong>15 de mayo</strong> hasta el día <strong>30 de junio</strong> puedes votar las propuestas de inversión de los Presupuestos participativos 2016."
-      text_first_close_html: "El <strong>30 de junio</strong> finalizó el plazo para votar propuestas de inversión de los Presupuestos participativos 2016. Ya puedes consultar los resultados"
+      text_first_close_html: "El <strong>30 de junio</strong> finalizó el plazo para votar propuestas de inversión de los Presupuestos participativos 2016."
+      text_first_results_html: "El <strong>30 de junio</strong> finalizó el plazo para votar propuestas de inversión de los Presupuestos participativos 2016."
       text_second_html: "Puedes votar todas las propuestas que quieras hasta alcanzar el presupuesto destinado para el ámbito de <strong>toda la ciudad y además del distrito</strong> que selecciones."
+      text_second_close_html: "En breve mostraremos los resultados de las votaciones."
+      text_second_results_html: "Ya puedes consultar los resultados."
       unfeasible_link: Ver propuestas de inversión no viables
       see_results: Ver resultados
     new:
@@ -736,6 +740,7 @@ es:
       spending_proposals:
         link: Participa en la votación final
         link_close: Ver propuestas de inversión
+        see_results: Ver resultados
         text: Tú decides cómo invertir 60 millones de euros para tu ciudad.
         title: Presupuestos participativos
     more_information: Más información sobre %{org_name}

@@ -14,6 +14,8 @@
         <div class="small-12 medium-6">
           <% if setting["feature.spending_proposal_features.final_voting_allowed"].present? %>
             <%= link_to t('welcome.featured.spending_proposals.link'), participatory_budget_path, class: "button expanded" %>
+          <% elsif setting["feature.spending_proposal_features.open_results_page"].present? %>
+            <%= link_to t('welcome.featured.spending_proposals.see_results'), participatory_budget_path, class: "button expanded" %>
           <% else %>
             <%= link_to t('welcome.featured.spending_proposals.link_close'), participatory_budget_path, class: "button expanded" %>
           <% end %>

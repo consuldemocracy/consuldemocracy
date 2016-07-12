@@ -413,7 +413,15 @@ feature 'Spending proposals' do
   end
 
 
-  xcontext 'Results' do
+  context 'Results' do
+
+    before(:each) do
+      Setting["feature.spending_proposal_features.open_results_page"] = true
+    end
+
+    after(:each) do
+      Setting["feature.spending_proposal_features.open_results_page"] = nil
+    end
 
     context "Diplays proposals ordered by ballot_lines_count" do
 
@@ -604,6 +612,14 @@ feature 'Spending proposals' do
   end
 
   context "Stats" do
+
+    before(:each) do
+      Setting["feature.spending_proposal_features.open_results_page"] = true
+    end
+
+    after(:each) do
+      Setting["feature.spending_proposal_features.open_results_page"] = nil
+    end
 
     scenario "Participation" do
       isabel   = create(:user, :level_two)

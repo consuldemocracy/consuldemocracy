@@ -551,9 +551,13 @@ en:
       page_title: Participatory budgeting
       title: "You already can vote investment projects!"
       title_close: "Participatory budgeting"
-      text_first_html: "Desde el <strong>15 de mayo</strong> hasta el día <strong>30 de junio</strong> puedes votar las propuestas de inversión de los Presupuestos participativos 2016."
-      text_first_close_html: "Ballot ended on <strong>July the 30th</strong>. You can already see the results."
-      text_second_html: "Puedes votar todas las propuestas que quieras hasta alcanzar el presupuesto destinado para el ámbito de <strong>toda la ciudad y además del distrito</strong> que selecciones."
+      title_results: "Participatory budgeting"
+      text_first_html: "From <strong>May 15th</strong> to <strong>June 30th</strong> you can vote proposals for the 2016 participatory budget."
+      text_first_close_html: "Ballot ended on <strong>June the 30th</strong>."
+      text_first_results_html: "Ballot ended on <strong>June the 30th</strong>."
+      text_second_html: "You can vote for as many proposals as you want with a budget limit for both <strong>city-wide and district-wide</strong> proposals."
+      text_second_close_html: "Results we'll be ready soon."
+      text_second_results_html: "You can already see the results."
       unfeasible_link: See unfeasible investment projects
       see_results: See results
     new:
@@ -736,6 +740,7 @@ en:
       spending_proposals:
         link: Participates in the final vote
         link_close: See investment projects
+        see_results: See results
         text: You decide how to invest 60 million euros to your city.
         title: Participatory budgeting
     more_information: More information about %{org_name}

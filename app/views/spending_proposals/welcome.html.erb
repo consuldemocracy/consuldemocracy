@@ -22,9 +22,14 @@
         <h1><%= t("spending_proposals.welcome.title") %></h1>
         <p><%= t("spending_proposals.welcome.text_first_html") %></p>
         <p><%= t("spending_proposals.welcome.text_second_html") %></p>
+      <% elsif setting["feature.spending_proposal_features.open_results_page"].present? %>
+        <h1><%= t("spending_proposals.welcome.title_results") %></h1>
+        <p><%= t("spending_proposals.welcome.text_first_results_html") %></p>
+        <p><%= t("spending_proposals.welcome.text_second_results_html") %></p>
       <% else %>
         <h1><%= t("spending_proposals.welcome.title_close") %></h1>
         <p><%= t("spending_proposals.welcome.text_first_close_html") %></p>
+        <p><%= t("spending_proposals.welcome.text_second_close_html") %></p>
       <% end %>
 
       <div class="row">
@@ -40,22 +45,23 @@
                         select_district_path,
                         class: "button budget expanded" %>
           </div>
-        <% else %>
+        <% elsif setting["feature.spending_proposal_features.open_results_page"].present? %>
           <div class="small-12 medium-6 column">
             <%= link_to t("spending_proposals.welcome.see_results"),
-                        participatory_budget_stats_path,
+                        participatory_budget_results_path,
                         class: "button budget expanded" %>
           </div>
+        <% else %>
+          <div class="small-12 medium-5 column">
+            <%= link_to t("spending_proposals.welcome.city_link_close"),
+                        spending_proposals_path(geozone: 'all'),
+                        data: { no_turbolink: true }, class: "button budget expanded" %>
+          </div>
 
-          <div class="small-12 column">
-            <p>
-              <%= link_to t("spending_proposals.welcome.city_link_close"),
-                          spending_proposals_path(geozone: 'all'),
-                          data: { no_turbolink: true } %>
-              &nbsp;|&nbsp;
-              <%= link_to t("spending_proposals.welcome.districts_link_close"),
-                          select_district_path %>
-            </p>
+          <div class="small-12 medium-5 column end">
+            <%= link_to t("spending_proposals.welcome.districts_link_close"),
+                        select_district_path,
+                        class: "button budget expanded" %>
           </div>
         <% end %>
 
@@ -119,7 +125,7 @@
         <p>&nbsp;</p>
 
         <div class="small-12 medium-4">
-          <p><%= link_to t("spending_proposals.welcome.delegation_closed"), '/delegacion', class: "button   expanded" %></p>
+          <p><%= link_to t("spending_proposals.welcome.delegation_closed"), '/delegacion', class: "button expanded" %></p>
         </div>
       <% end %>
     </div>
