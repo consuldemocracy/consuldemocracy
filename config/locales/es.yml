@@ -558,6 +558,9 @@ es:
       text_second_html: "Puedes votar todas las propuestas que quieras hasta alcanzar el presupuesto destinado para el ámbito de <strong>toda la ciudad y además del distrito</strong> que selecciones."
       text_second_close_html: "En breve mostraremos los resultados de las votaciones."
       text_second_results_html: "Ya puedes consultar los resultados."
+      text_long_html: "Hemos reservado <strong>60 millones de euros</strong> de inversiones del próximo presupuesto de Madrid para que sea la gente la que decida qué proyectos llevar a cabo. La gente hace propuestas, y las vota. El Gobierno asumirá la decisión como vinculante y la incluirá en los presupuestos municipales, que se ejecutarán a partir del 1 de enero de 2017. Propones, decides, se hace."
+      text_long_close_html: "Hemos reservado <strong>60 millones de euros</strong> de inversiones del próximo presupuesto de Madrid para que sea la gente la que decida qué proyectos llevar a cabo. La gente ha hecho sus propuestas, y las ha votado. <strong>En breve podrás ver los resultados</strong>. El Gobierno asumirá la decisión como vinculante y la incluirá en los presupuestos municipales, que se ejecutarán a partir del 1 de enero de 2017. Propones, decides, se hace."
+      text_long_results_html: "Hemos reservado <strong>60 millones de euros</strong> de inversiones del próximo presupuesto de Madrid para que sea la gente la que decida qué proyectos llevar a cabo. La gente ha hecho sus propuestas, y las ha votado. <strong>Puedes consultar los resultados</strong>. El Gobierno asume la decisión como vinculante y la incluirá en los presupuestos municipales, que se ejecutarán a partir del 1 de enero de 2017. Propones, decides, se hace."
       unfeasible_link: Ver propuestas de inversión no viables
       see_results: Ver resultados
     new:
