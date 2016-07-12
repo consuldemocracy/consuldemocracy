@@ -9,7 +9,10 @@
 <div class="expanded processes-show no-margin-top">
   <div class="row padding">
     <div class="small-12 medium-9 column">
-      <%= render "shared/back_link" %>
+      <%= link_to "/processes", class: "back" do %>
+        <span class="icon-angle-left"></span>
+        <%= t("shared.back") %>
+      <% end %>
 
       <h1 class="margin-bottom">¡Gracias por participar!</h1>
     </div>
@@ -19,7 +22,7 @@
 <div class="row margin-top">
   <div class="small-12 column">
     <div class="callout success">
-      ¡Tu voto ha sido recibido! puedes cambiarlo en cualquier momento hasta el día <u>20 de agosto</u>.
+      ¡Gracias, tu voto ha sido recibido! puedes cambiarlo en cualquier momento hasta el día <u>20 de agosto</u>.
     </div>
   </div>
 </div>
@@ -28,7 +31,6 @@
   <div class="small-12 medium-6 small-centered column text-center">
     <h2>Has votado el proyecto: TAKETE</h2>
       <%= image_tag "town_planning/048_takete_thumb.jpg", alt: "TAKETE" %>
-      <p><%= link_to "Cambiar mi voto", benches_path, class: "button hollow margin-top" %></p>
     </div>
   </div>
 </div>

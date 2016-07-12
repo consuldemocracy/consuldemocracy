@@ -24,6 +24,17 @@
 <div class="row">
   <div class="small-12 column">
     <h3 class="margin-bottom">Selecciona el proyecto que quieres votar</h3>
+
+    <!-- IF USER ALREADY HAS VOTED -->
+    <div class="row margin-top">
+      <div class="small-12 column">
+        <div class="callout success">
+          Has votado el proyecto <strong>SIENTAMADRID!</strong>. Puedes cambiarlo en cualquier momento hasta el día <u>20 de agosto</u>.
+        </div>
+      </div>
+    </div>
+    <!-- END -->
+
     <%= form_tag vote_benches_path do %>
       <div class="small-12 medium-4 column">
         <% @benches.each do |bench| %>
@@ -32,10 +43,30 @@
             <span><%= bench.name %></span>
           </label>
         <% end %>
-
-      <div class="small-12 medium-4 column end text-center">
-        <input type="submit" value="Enviar voto" class="button expanded margin-top">
       </div>
+
+      <% if user_signed_in? %>
+        <% if current_user.level_two_or_three_verified? %>
+          <div class="small-12 medium-4 column end text-center">
+            <input type="submit" value="Enviar voto" class="button expanded margin-top">
+          </div>
+        <% else %>
+          <div class="small-12 column">
+            <div class="callout primary">
+              <%= t("benches.index.verified_only",
+                  verify_account: link_to(t("benches.index.verify_account"), verification_path )).html_safe %>
+            </div>
+          </div>
+        <% end %>
+      <% else %>
+        <div class="small-12 column">
+          <div class="callout primary">
+            <%= t("benches.index.not_logged_in",
+                signin: link_to(t("benches.index.signin"), new_user_session_path),
+                signup: link_to(t("benches.index.signup"), new_user_registration_path)).html_safe %>
+          </div>
+        </div>
+      <% end %>
     <% end %>
   </div>
 </div>
