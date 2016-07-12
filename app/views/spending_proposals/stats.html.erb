@@ -173,7 +173,7 @@
       </div>
 
       <map name="map" id="html_map">
-        <% Geozone.all.each do |geozone| %>
+        <% @geozones.each do |geozone| %>
           <area shape="poly"
                 coords="<%= geozone.html_map_coordinates %>"
                 href="#<%= geozone.name.parameterize %>"
