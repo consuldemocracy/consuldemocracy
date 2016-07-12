@@ -198,6 +198,7 @@ en:
       more_information: More information
       my_account_link: My account
       my_activity_link: My activity
+      notifications: Notifications
       new_notifications:
         one: You have a new notification
         other: You have %{count} new notifications

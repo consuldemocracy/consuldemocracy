@@ -198,6 +198,7 @@ es:
       more_information: Más información
       my_account_link: Mi cuenta
       my_activity_link: Mi actividad
+      notifications: Notificaciones
       new_notifications:
         one: Tienes una nueva notificación
         other: Tienes %{count} notificaciones nuevas
