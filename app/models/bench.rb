@@ -21,4 +21,14 @@ class Bench < ActiveRecord::Base
     helper.number_to_human_size(pdf_url.size)
   end
 
+  def register_vote(user, vote_value)
+    if votable_by?(user)
+      vote_by(voter: user, vote: vote_value)
+    end
+  end
+
+  def votable_by?(user)
+    user && user.level_two_or_three_verified?
+  end
+
 end

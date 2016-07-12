@@ -24,68 +24,18 @@
 <div class="row">
   <div class="small-12 column">
     <h3 class="margin-bottom">Selecciona el proyecto que quieres votar</h3>
-    <form>
+    <%= form_tag vote_benches_path do %>
       <div class="small-12 medium-4 column">
-        <label>
-          <input type="radio" name="bench" value="1">
-          <span>Balle Malle Hupe und Artur</span>
-        </label>
-        <label>
-          <input type="radio" name="bench" value="2">
-          <span>Delta</span>
-        </label>
-        <label>
-          <input type="radio" name="bench" value="3">
-          <span>Mas Madrid</span>
-        </label>
-        <label>
-          <input type="radio" name="bench" value="4">
-          <span>MADBENCH</span>
-        </label>
-      </div>
-      <div class="small-12 medium-4 column">
-        <label>
-          <input type="radio" name="bench" value="5">
-          <span>Yo tenía tres sillas en mi casa...</span>
-        </label>
-        <label>
-          <input type="radio" name="bench" value="6">
-          <span>Sedere</span>
-        </label>
-        <label>
-          <input type="radio" name="bench" value="7">
-          <span>TAKETE</span>
-        </label>
-        <label>
-          <input type="radio" name="bench" value="8">
-          <span>Mucho gusto Madrid</span>
-        </label>
-      </div>
-
-      <div class="small-12 medium-4 column">
-        <label>
-          <input type="radio" name="bench" value="9">
-          <span>SIENTAMADRID!</span>
-        </label>
-        <label>
-          <input type="radio" name="bench" value="10">
-          <span>ARCO</span>
-        </label>
-        <label>
-          <input type="radio" name="bench" value="11">
-          <span>a_park_ando</span>
-        </label>
-        <label>
-          <input type="radio" name="bench" value="12">
-          <span>Benditas costumbres</span>
-        </label>
-      </div>
+        <% @benches.each do |bench| %>
+          <label>
+            <input type="radio" name="id" value="<%= bench.id %>">
+            <span><%= bench.name %></span>
+          </label>
+        <% end %>
 
       <div class="small-12 medium-4 column end text-center">
-        <%= link_to '/processes/town_planning_success' do %>
-          <input type="submit" value="Enviar voto" class="button expanded margin-top">
-        <% end %>
+        <input type="submit" value="Enviar voto" class="button expanded margin-top">
       </div>
-    </form>
+    <% end %>
   </div>
 </div>
