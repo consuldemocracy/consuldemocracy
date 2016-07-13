@@ -31,6 +31,7 @@ Setting.create(key: 'feature.spending_proposal_features.phase2', value: nil)
 Setting.create(key: 'feature.spending_proposal_features.phase3', value: nil)
 Setting.create(key: 'feature.spending_proposal_features.voting_allowed', value: "true")
 Setting.create(key: 'feature.spending_proposal_features.final_voting_allowed', value: "true")
+Setting.create(key: 'feature.spending_proposal_features.open_results_page', value: nil)
 Setting.create(key: 'feature.twitter_login', value: "true")
 Setting.create(key: 'feature.facebook_login', value: "true")
 Setting.create(key: 'feature.google_login', value: "true")
@@ -71,7 +72,7 @@ puts "Creating Users"
 def create_user(email, username = Faker::Name.name)
   pwd = '12345678'
   puts "    #{username}"
-  User.create!(username: username, email: email, password: pwd, password_confirmation: pwd, confirmed_at: Time.now, terms_of_service: "1")
+  User.create!(username: username, email: email, password: pwd, password_confirmation: pwd, confirmed_at: Time.now, date_of_birth: (16..100).to_a.sample.years.ago, terms_of_service: "1")
 end
 
 admin = create_user('admin@madrid.es', 'admin')

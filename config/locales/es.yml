@@ -551,11 +551,18 @@ es:
       page_title: Presupuestos participativos
       title: "Ya puedes votar las propuestas"
       title_close: "Presupuestos participativos"
+      title_results: "Presupuestos participativos"
       text_first_html: "Desde el <strong>15 de mayo</strong> hasta el día <strong>30 de junio</strong> puedes votar las propuestas de inversión de los Presupuestos participativos 2016."
       text_first_close_html: "El <strong>30 de junio</strong> finalizó el plazo para votar propuestas de inversión de los Presupuestos participativos 2016."
+      text_first_results_html: "El <strong>30 de junio</strong> finalizó el plazo para votar propuestas de inversión de los Presupuestos participativos 2016."
       text_second_html: "Puedes votar todas las propuestas que quieras hasta alcanzar el presupuesto destinado para el ámbito de <strong>toda la ciudad y además del distrito</strong> que selecciones."
       text_second_close_html: "En breve mostraremos los resultados de las votaciones."
+      text_second_results_html: "Ya puedes consultar los resultados."
+      text_long_html: "Hemos reservado <strong>60 millones de euros</strong> de inversiones del próximo presupuesto de Madrid para que sea la gente la que decida qué proyectos llevar a cabo. La gente hace propuestas, y las vota. El Gobierno asumirá la decisión como vinculante y la incluirá en los presupuestos municipales, que se ejecutarán a partir del 1 de enero de 2017. Propones, decides, se hace."
+      text_long_close_html: "Hemos reservado <strong>60 millones de euros</strong> de inversiones del próximo presupuesto de Madrid para que sea la gente la que decida qué proyectos llevar a cabo. La gente ha hecho sus propuestas, y las ha votado. <strong>En breve podrás ver los resultados</strong>. El Gobierno asumirá la decisión como vinculante y la incluirá en los presupuestos municipales, que se ejecutarán a partir del 1 de enero de 2017. Propones, decides, se hace."
+      text_long_results_html: "Hemos reservado <strong>60 millones de euros</strong> de inversiones del próximo presupuesto de Madrid para que sea la gente la que decida qué proyectos llevar a cabo. La gente ha hecho sus propuestas, y las ha votado. <strong>Puedes consultar los resultados</strong>. El Gobierno asume la decisión como vinculante y la incluirá en los presupuestos municipales, que se ejecutarán a partir del 1 de enero de 2017. Propones, decides, se hace."
       unfeasible_link: Ver propuestas de inversión no viables
+      see_results: Ver resultados
     new:
       more_info: "¿Cómo funcionan los presupuestos participativos?"
       recommendation_one: Consulta los %{requirements}.
@@ -588,6 +595,24 @@ es:
       check_ballot: Revisar mis votos
       different_district_active: "Ya apoyaste propuestas de otro distrito:"
       different_district_active_info: "(Si retiras todos los votos de este distrito puedes seleccionar otro)"
+    results:
+      page_title: "Presupuestos participativos | Resultados"
+      heading: "PRESUPUESTOS PARTICIPATIVOS"
+      results_link: Resultados
+      stats_link: "Estadísticas de participación"
+      geozone_selection_title: "Ámbito de actuación"
+      spending_proposal: Título
+      ballot_lines_count: Votos
+      hide_discarded_link: Ocultar descartadas
+      show_all_link: Mostrar todas
+      price: Coste
+      amount_available: Presupuesto disponible
+      incompatible: Incompatibles
+    stats:
+      page_title: "Presupuestos participativos | Estadísticas de participación"
+      heading: "PRESUPUESTOS PARTICIPATIVOS"
+      results_link: Resultados
+      stats_link: "Estadísticas de participación"
   ballots:
     show:
       city_link: Votar para toda la ciudad
@@ -718,6 +743,7 @@ es:
       spending_proposals:
         link: Participa en la votación final
         link_close: Ver propuestas de inversión
+        see_results: Ver resultados
         text: Tú decides cómo invertir 60 millones de euros para tu ciudad.
         title: Presupuestos participativos
     more_information: Más información sobre %{org_name}

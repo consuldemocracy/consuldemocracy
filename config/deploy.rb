@@ -1,5 +1,5 @@
 # config valid only for current version of Capistrano
-lock '3.4.1'
+lock '3.5.0'
 
 def deploysecret(key)
   @deploy_secrets_yml ||= YAML.load_file('config/deploy-secrets.yml')[fetch(:stage).to_s]
@@ -7,7 +7,7 @@ def deploysecret(key)
 end
 
 set :rails_env, fetch(:stage)
-set :rvm_ruby_version, '2.2.3'
+set :rvm_ruby_version, '2.3.1'
 set :rvm_type, :user
 
 set :application, 'consul'

@@ -75,6 +75,7 @@ Rails.application.routes.draw do
   scope '/participatory_budget' do
     resources :spending_proposals, only: [:index, :show, :destroy], path: 'investment_projects' do #[:new, :create] temporary disabled
       get :welcome, on: :collection
+      get :stats, on: :collection
       post :vote, on: :member
     end
 
@@ -306,6 +307,8 @@ Rails.application.routes.draw do
   get 'processes/human_rights_question_3', to: 'pages#show', id: 'processes/human_rights_question_3'
   get 'noticias', to: 'pages#show', id: 'news'
   get 'participatory_budget/in_two_minutes', to: 'pages#show', id: 'participatory_budget/in_two_minutes'
+  get 'presupuestos-participativos-resultados', to: 'spending_proposals#results', as: 'participatory_budget_results'
+  get 'presupuestos-participativos-estadisticas', to: 'spending_proposals#stats', as: 'participatory_budget_stats'
 
   resources :pages, path: '/', only: [:show]
 end

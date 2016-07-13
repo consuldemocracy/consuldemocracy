@@ -6,11 +6,11 @@
   <meta name="twitter:image" content="<%= image_url '/social-media-plazaesp.png' %>" />
   <!-- Facebook OG -->
   <meta id="ogtitle" property="og:title" content="Resultados encuesta de Plaza España"/>
-  <% if Setting['url'] %>
-    <meta property="article:publisher" content=<%= Setting['url'] %>/>
+  <% if setting['url'] %>
+    <meta property="article:publisher" content=<%= setting['url'] %>/>
   <% end %>
-  <% if Setting['facebook_handle'] %>
-    <meta property="article:author" content="https://www.facebook.com/<%= Setting['facebook_handle'] %>"/>
+  <% if setting['facebook_handle'] %>
+    <meta property="article:author" content="https://www.facebook.com/<%= setting['facebook_handle'] %>"/>
   <% end %>
   <meta property="og:type" content="article"/>
   <meta id="ogurl" property="og:url" content="https://decide.madrid.es/encuesta-plaza-espana-resultados"/>

@@ -20,5 +20,6 @@ es:
         phase1: "Prespuestos participativos: Fase 1 - Aceptar propuestas"
         phase2: "Prespuestos participativos: Fase 2 - Preselección de propuestas"
         phase3: "Prespuestos participativos: Fase 3 - Votación final"
+        open_results_page:  "Prespuestos participativos: Hacer públicos los resultados"
         voting_allowed: Votaciones de preselección sobre propuestas de inversión.
         final_voting_allowed: Votaciones finales en propuestas de inversión.

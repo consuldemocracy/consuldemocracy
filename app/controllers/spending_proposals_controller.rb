@@ -3,7 +3,7 @@ class SpendingProposalsController < ApplicationController
   include CommentableActions
   include FlagActions
 
-  before_action :authenticate_user!, except: [:index, :welcome, :show, :select_district]
+  before_action :authenticate_user!, except: [:index, :welcome, :show, :select_district, :stats, :results]
   before_action -> { flash.now[:notice] = flash[:notice].html_safe if flash[:html_safe] && flash[:notice] }
   before_action :set_random_seed, only: :index
   before_action :load_ballot,  only: [:index, :show]
@@ -67,7 +67,41 @@ class SpendingProposalsController < ApplicationController
     end
   end
 
+  def stats
+    @geozones = Geozone.order(:name)
+    stats = {}
+    stats[:total_participants] = total_participants
+    stats[:total_participants_support_phase] = total_participants_support_phase
+    stats[:total_participants_vote_phase] = total_participants_vote_phase
+    stats[:total_spending_proposals] = total_spending_proposals
+    stats[:total_feasible_spending_proposals] = total_feasible_spending_proposals
+    stats[:total_unfeasible_spending_proposals] = total_unfeasible_spending_proposals
+    stats[:total_male_participants] = total_male_participants
+    stats[:total_female_participants] = total_female_participants
+    stats[:male_percentage] = male_percentage
+    stats[:female_percentage] = female_percentage
+    stats[:age_groups] = age_groups
+    stats[:geozones] = geozones
+    stats[:total_unknown_gender_or_age] = total_unknown_gender_or_age
+
+    @stats = stats
+  end
+
+  def results
+    @geozone = daily_cache("geozone_geozone_#{params[:geozone_id]}") { (params[:geozone_id].blank? || params[:geozone_id] == 'all') ? nil : Geozone.find(params[:geozone_id]) }
+    @delegated_ballots = daily_cache("delegated_geozone_#{params[:geozone_id]}") { Forum.delegated_ballots }
+    @spending_proposals = daily_cache("sps_geozone_#{params[:geozone_id]}") { SpendingProposal.feasible.compatible.valuation_finished.by_geozone(params[:geozone_id]) }
+    @spending_proposals = daily_cache("sorted_sps_geozone_#{params[:geozone_id]}") { SpendingProposal.sort_by_delegated_ballots_and_price(@spending_proposals, @delegated_ballots) }
+
+    @initial_budget = daily_cache("initial_budget_geozone_#{params[:geozone_id]}") { Ballot.initial_budget(@geozone) }
+    @incompatibles = daily_cache("incompatibles_geozone_#{params[:geozone_id]}") { SpendingProposal.incompatible.by_geozone(params[:geozone_id]) }
+  end
+
   private
+
+    def daily_cache(key, &block)
+      Rails.cache.fetch("spending_proposals_results/#{Time.now.strftime("%Y-%m-%d")}/#{key}", &block)
+    end
 
     def spending_proposal_params
       params.require(:spending_proposal).permit(:title, :description, :external_url, :geozone_id, :association_name, :terms_of_service)
@@ -124,6 +158,192 @@ class SpendingProposalsController < ApplicationController
         @valid_orders = %w{random confidence_score}
       end
       @current_order = @valid_orders.include?(params[:order]) ? params[:order] : @valid_orders.first
-  end
+    end
+
+    def total_participants
+      stats_cache('total_participants') { participants.distinct.count }
+    end
+
+    def total_participants_with_gender
+      stats_cache('total_participants_with_gender') { participants.where.not(gender: nil).distinct.count }
+    end
+
+    def participants
+      stats_cache('participants') {
+        users = (authors + voters + balloters + delegators).uniq
+        User.where(id: users)
+      }
+    end
+
+    def total_participants_support_phase
+      stats_cache('total_participants_support_phase') {
+        voters.uniq.count
+      }
+    end
+
+    def total_participants_vote_phase
+      stats_cache('total_participants_vote_phase') {
+        balloters.uniq.count
+      }
+    end
+
+    def authors
+      stats_cache('authors') { SpendingProposal.pluck(:author_id) }
+    end
+
+    def voters
+      stats_cache('voters') { ActsAsVotable::Vote.where(votable_type: 'SpendingProposal').pluck(:voter_id) }
+    end
+
+    def voters_in_geozones
+      #stats_cache('voters_in_geozones') {
+        voter_ids = []
+        @geozones.each do |geozone|
+          voter_ids << voters_by_geozone(geozone.id).uniq
+        end
+        [voter_ids].flatten.uniq
+      #}
+    end
+
+    def voters_by_geozone(geozone_id)
+      ActsAsVotable::Vote.where(votable_type: 'SpendingProposal', votable_id: SpendingProposal.by_geozone(geozone_id)).pluck(:voter_id)
+    end
+
+    def balloters
+      #stats_cache('balloters') {
+        Ballot.where('ballot_lines_count > ?', 0).pluck(:user_id)
+      #}
+    end
+
+    def balloters_in_geozones
+      #stats_cache('balloters_in_geozones') {
+        Ballot.where('ballot_lines_count > ? AND geozone_id IS NOT null', 0).pluck(:user_id).uniq
+      #}
+    end
+
+    def balloters_by_geozone(geozone_id)
+      Ballot.where('ballot_lines_count > ? AND geozone_id = ?', 0, geozone_id).pluck(:user_id)
+    end
+
+    def delegators
+      stats_cache('delegators') { User.where.not(representative_id: nil).pluck(:id) }
+    end
+
+    def total_spending_proposals
+      stats_cache('total_spending_proposals') { SpendingProposal.count }
+    end
+
+    def total_feasible_spending_proposals
+      stats_cache('total_feasible_spending_proposals') { SpendingProposal.feasible.count }
+    end
+
+    def total_unfeasible_spending_proposals
+      stats_cache('total_unfeasible_spending_proposals') { SpendingProposal.unfeasible.count }
+    end
+
+    def total_male_participants
+      stats_cache('total_male_participants') { participants.where(gender: 'male').count }
+    end
+
+    def total_female_participants
+      stats_cache('total_female_participants') { participants.where(gender: 'female').count }
+    end
+
+    def male_percentage
+      stats_cache('male_percentage') { total_male_participants / total_participants_with_gender.to_f * 100 }
+    end
+
+    def female_percentage
+      stats_cache('female_percentage') { total_female_participants / total_participants_with_gender.to_f * 100 }
+    end
+
+    def age_groups
+      stats_cache('age_groups') {
+        groups = Hash.new(0)
+        ["16 - 19",
+        "20 - 24",
+        "25 - 29",
+        "30 - 34",
+        "35 - 39",
+        "40 - 44",
+        "45 - 49",
+        "50 - 54",
+        "55 - 59",
+        "60 - 64",
+        "65 - 69",
+        "70 - 140"].each do |group|
+          start, finish = group.split(" - ")
+          group_name = (group == "70 - 140" ? "+ 70" : group)
+          groups[group_name] = User.where(id: participants).where("date_of_birth > ? AND date_of_birth < ?", finish.to_i.years.ago.beginning_of_year, eval(start).years.ago.end_of_year).count
+        end
+        groups
+      }
+    end
+
+    def geozones
+      groups = Hash.new(0)
+      @geozones.each do |geozone|
+        groups[geozone.id] = Hash.new(0)
+        groups[geozone.id][:total_participants_support_phase] = voters_by_geozone(geozone.id).uniq.count
+        groups[geozone.id][:total_participants_vote_phase]    = balloters_by_geozone(geozone.id).uniq.count
+        groups[geozone.id][:total_participants_all_phase]     = (voters_by_geozone(geozone.id) + balloters_by_geozone(geozone.id)).uniq.count
+      end
+
+      groups[:total] = Hash.new(0)
+      groups[:total][:total_participants_support_phase] = groups.collect {|k,v| v[:total_participants_support_phase]}.sum
+      groups[:total][:total_participants_vote_phase]    = groups.collect {|k,v| v[:total_participants_vote_phase]}.sum
+      groups[:total][:total_participants_all_phase]     = groups.collect {|k,v| v[:total_participants_all_phase]}.sum
+
+      @geozones.each do |geozone|
+        groups[geozone.id][:percentage_participants_support_phase]        = voters_by_geozone(geozone.id).uniq.count / groups[:total][:total_participants_support_phase].to_f * 100
+        groups[geozone.id][:percentage_district_population_support_phase] = voters_by_geozone(geozone.id).uniq.count / district_population[geozone.name].to_f * 100
+
+        groups[geozone.id][:percentage_participants_vote_phase]        = balloters_by_geozone(geozone.id).uniq.count / groups[:total][:total_participants_vote_phase].to_f * 100
+        groups[geozone.id][:percentage_district_population_vote_phase] = balloters_by_geozone(geozone.id).uniq.count / district_population[geozone.name].to_f * 100
+
+        groups[geozone.id][:percentage_participants_all_phase]        = (voters_by_geozone(geozone.id) + balloters_by_geozone(geozone.id)).uniq.count / groups[:total][:total_participants_all_phase].to_f * 100
+        groups[geozone.id][:percentage_district_population_all_phase] = (voters_by_geozone(geozone.id) + balloters_by_geozone(geozone.id)).uniq.count / district_population[geozone.name].to_f * 100
+      end
+
+      groups[:total][:percentage_participants_support_phase] = groups.collect {|k,v| v[:percentage_participants_support_phase]}.sum
+      groups[:total][:percentage_participants_vote_phase]    = groups.collect {|k,v| v[:percentage_participants_vote_phase]}.sum
+      groups[:total][:percentage_participants_all_phase]     = groups.collect {|k,v| v[:percentage_participants_all_phase]}.sum
+
+      groups
+    end
+
+    def district_population
+      { "Arganzuela"          => 131429,
+        "Barajas"             =>  37725,
+        "Carabanchel"         => 205197,
+        "Centro"              => 120867,
+        "Chamartín"           => 123099,
+        "Chamberí"            => 122280,
+        "Ciudad Lineal"       => 184285,
+        "Fuencarral-El Pardo" => 194232,
+        "Hortaleza"           => 146471,
+        "Latina"              => 204427,
+        "Moncloa-Aravaca"     =>  99274,
+        "Moratalaz"           =>  82741,
+        "Puente de Vallecas"  => 194314,
+        "Retiro"              => 103666,
+        "Salamanca"           => 126699,
+        "San Blas-Canillejas" => 127800,
+        "Tetuán"              => 133972,
+        "Usera"               => 112158,
+        "Vicálvaro"           =>  55783,
+        "Villa de Vallecas"   =>  82504,
+        "Villaverde"          => 117478 }
+    end
+
+    def total_unknown_gender_or_age
+      stats_cache('total_unknown_gender_or_age') {
+        participants.where("gender IS NULL OR date_of_birth is NULL").uniq.count
+      }
+    end
+
+    def stats_cache(key, &block)
+      Rails.cache.fetch("spending_proposals_stats/20160711121902/#{key}", &block)
+    end
 
 end

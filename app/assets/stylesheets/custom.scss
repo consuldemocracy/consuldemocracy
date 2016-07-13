@@ -134,6 +134,10 @@ blockquote p {
   text-align: center !important;
 }
 
+.menu.no-padding>li>a {
+  padding-left: 0;
+}
+
 // 02. Header
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -395,6 +399,10 @@ table {
     &:nth-child(even) {
       background: #fafcfb;
     }
+
+    &.success {
+      background: $success-bg;
+    }
   }
 }
 
@@ -647,11 +655,31 @@ table {
       background: #58ff87;
     }
 
+    &.purple, &.light-green {
+
+      p {
+        color: white;
+        margin-bottom: 0;
+      }
+    }
+
+    &.purple {
+      background: $budget;
+    }
+
+    &.light-green {
+      background: #9CC56A;
+    }
   }
 
-  .big-number {
+  .big-number-stat {
     font-size: rem-calc(72);
     font-weight: bold;
+    line-height: rem-calc(72);
+  }
+
+  .chart-legend .big-number-stat {
+    color: $budget;
   }
 
   hr {
@@ -802,10 +830,38 @@ table {
   font-size: $base-font-size;
 }
 
+table.survey-districts {
+
+  tr th {
+    border: 1px solid $border;
+    padding: 0;
+    text-align: center;
+  }
+
+  .tiny {
+    font-size: rem-calc(11);
+    font-weight: normal;
+  }
+
+  .success {
+    background: #c1fdd2;
+  }
+
+  .border-left-success {
+    background: #c1fdd2;
+    border-left: 2px solid #58ff87;
+  }
+
+  .border-right-success {
+    background: #c1fdd2;
+    border-right: 2px solid #58ff87;
+  }
+}
+
 @include breakpoint(medium down) {
 
   table.survey-districts thead {
-    font-size: rem-calc(13);
+    font-size: rem-calc(12);
 
     th {
       width: 25%;
@@ -851,6 +907,13 @@ table.age-groups {
   .button {
     background: white;
     color: $budget;
+  }
+
+  &.results {
+
+    .back {
+      color: white;
+    }
   }
 }
 
@@ -1146,6 +1209,18 @@ table.age-groups {
 .investment-project-show .supports .total-supports.no-button {
   display: block;
   margin-top: $line-height*1.5;
+}
+
+table.age-groups-investment-projects {
+
+  .progress {
+    background: #dad9e3;
+    height: $line-height/2;
+  }
+
+  .progress-meter {
+    background: $budget;
+  }
 }
 
 // 09. Featured

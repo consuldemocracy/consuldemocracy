@@ -68,6 +68,7 @@ Setting['feature.spending_proposal_features.phase2'] = nil
 Setting['feature.spending_proposal_features.phase3'] = nil
 Setting['feature.spending_proposal_features.voting_allowed'] = true
 Setting['feature.spending_proposal_features.final_voting_allowed'] = true
+Setting['feature.spending_proposal_features.open_results_page'] = nil
 Setting['feature.spending_proposal_features.valuation_allowed'] = nil
 
 # Banner styles
