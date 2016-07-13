@@ -45,6 +45,11 @@
 
           <%= link_to spending_proposal.title, spending_proposal_path(spending_proposal) %>
           (id: <%= spending_proposal.id %>)
+          (autor:
+          <span>
+            <%= link_to spending_proposal.author.name,
+                     admin_user_path(spending_proposal.author) %>)
+          </span>
         </td>
         <td class="text-center">
           <%= spending_proposal.ballot_lines_count + (@delegated_ballots[spending_proposal.id] || 0) %>
@@ -96,7 +101,7 @@
   <h3 class="inline-block">Ganadores</h3>
   <div>
     <% winners.each do |winner| %>
-      <%= winner.email %> (<%= winner.confirmed_phone %>)<%= winner.equal?(winners.last) ? "" : ", " %>
+      <%= winner.email %><%= winner.equal?(winners.last) ? "" : ", " %>
     <% end %>
   </div>
 </div>
