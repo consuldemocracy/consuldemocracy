@@ -195,34 +195,22 @@ class SpendingProposalsController < ApplicationController
       stats_cache('voters') { ActsAsVotable::Vote.where(votable_type: 'SpendingProposal').pluck(:voter_id) }
     end
 
-    def voters_in_geozones
-      #stats_cache('voters_in_geozones') {
-        voter_ids = []
-        @geozones.each do |geozone|
-          voter_ids << voters_by_geozone(geozone.id).uniq
-        end
-        [voter_ids].flatten.uniq
-      #}
-    end
-
     def voters_by_geozone(geozone_id)
-      ActsAsVotable::Vote.where(votable_type: 'SpendingProposal', votable_id: SpendingProposal.by_geozone(geozone_id)).pluck(:voter_id)
+      stats_cache("voters_geozone_#{geozone_id}") {
+        ActsAsVotable::Vote.where(votable_type: 'SpendingProposal', votable_id: SpendingProposal.by_geozone(geozone_id)).pluck(:voter_id)
+      }
     end
 
     def balloters
-      #stats_cache('balloters') {
+      stats_cache('balloters') {
         Ballot.where('ballot_lines_count > ?', 0).pluck(:user_id)
-      #}
-    end
-
-    def balloters_in_geozones
-      #stats_cache('balloters_in_geozones') {
-        Ballot.where('ballot_lines_count > ? AND geozone_id IS NOT null', 0).pluck(:user_id).uniq
-      #}
+      }
     end
 
     def balloters_by_geozone(geozone_id)
-      Ballot.where('ballot_lines_count > ? AND geozone_id = ?', 0, geozone_id).pluck(:user_id)
+      stats_cache("balloters_geozone_#{geozone_id}") {
+        Ballot.where('ballot_lines_count > ? AND geozone_id = ?', 0, geozone_id).pluck(:user_id)
+      }
     end
 
     def delegators
@@ -281,35 +269,37 @@ class SpendingProposalsController < ApplicationController
     end
 
     def geozones
-      groups = Hash.new(0)
-      @geozones.each do |geozone|
-        groups[geozone.id] = Hash.new(0)
-        groups[geozone.id][:total_participants_support_phase] = voters_by_geozone(geozone.id).uniq.count
-        groups[geozone.id][:total_participants_vote_phase]    = balloters_by_geozone(geozone.id).uniq.count
-        groups[geozone.id][:total_participants_all_phase]     = (voters_by_geozone(geozone.id) + balloters_by_geozone(geozone.id)).uniq.count
-      end
+      stats_cache('geozones') {
+        groups = Hash.new(0)
+        @geozones.each do |geozone|
+          groups[geozone.id] = Hash.new(0)
+          groups[geozone.id][:total_participants_support_phase] = voters_by_geozone(geozone.id).uniq.count
+          groups[geozone.id][:total_participants_vote_phase]    = balloters_by_geozone(geozone.id).uniq.count
+          groups[geozone.id][:total_participants_all_phase]     = (voters_by_geozone(geozone.id) + balloters_by_geozone(geozone.id)).uniq.count
+        end
 
-      groups[:total] = Hash.new(0)
-      groups[:total][:total_participants_support_phase] = groups.collect {|k,v| v[:total_participants_support_phase]}.sum
-      groups[:total][:total_participants_vote_phase]    = groups.collect {|k,v| v[:total_participants_vote_phase]}.sum
-      groups[:total][:total_participants_all_phase]     = groups.collect {|k,v| v[:total_participants_all_phase]}.sum
+        groups[:total] = Hash.new(0)
+        groups[:total][:total_participants_support_phase] = groups.collect {|k,v| v[:total_participants_support_phase]}.sum
+        groups[:total][:total_participants_vote_phase]    = groups.collect {|k,v| v[:total_participants_vote_phase]}.sum
+        groups[:total][:total_participants_all_phase]     = groups.collect {|k,v| v[:total_participants_all_phase]}.sum
 
-      @geozones.each do |geozone|
-        groups[geozone.id][:percentage_participants_support_phase]        = voters_by_geozone(geozone.id).uniq.count / groups[:total][:total_participants_support_phase].to_f * 100
-        groups[geozone.id][:percentage_district_population_support_phase] = voters_by_geozone(geozone.id).uniq.count / district_population[geozone.name].to_f * 100
+        @geozones.each do |geozone|
+          groups[geozone.id][:percentage_participants_support_phase]        = voters_by_geozone(geozone.id).uniq.count / groups[:total][:total_participants_support_phase].to_f * 100
+          groups[geozone.id][:percentage_district_population_support_phase] = voters_by_geozone(geozone.id).uniq.count / district_population[geozone.name].to_f * 100
 
-        groups[geozone.id][:percentage_participants_vote_phase]        = balloters_by_geozone(geozone.id).uniq.count / groups[:total][:total_participants_vote_phase].to_f * 100
-        groups[geozone.id][:percentage_district_population_vote_phase] = balloters_by_geozone(geozone.id).uniq.count / district_population[geozone.name].to_f * 100
+          groups[geozone.id][:percentage_participants_vote_phase]        = balloters_by_geozone(geozone.id).uniq.count / groups[:total][:total_participants_vote_phase].to_f * 100
+          groups[geozone.id][:percentage_district_population_vote_phase] = balloters_by_geozone(geozone.id).uniq.count / district_population[geozone.name].to_f * 100
 
-        groups[geozone.id][:percentage_participants_all_phase]        = (voters_by_geozone(geozone.id) + balloters_by_geozone(geozone.id)).uniq.count / groups[:total][:total_participants_all_phase].to_f * 100
-        groups[geozone.id][:percentage_district_population_all_phase] = (voters_by_geozone(geozone.id) + balloters_by_geozone(geozone.id)).uniq.count / district_population[geozone.name].to_f * 100
-      end
+          groups[geozone.id][:percentage_participants_all_phase]        = (voters_by_geozone(geozone.id) + balloters_by_geozone(geozone.id)).uniq.count / groups[:total][:total_participants_all_phase].to_f * 100
+          groups[geozone.id][:percentage_district_population_all_phase] = (voters_by_geozone(geozone.id) + balloters_by_geozone(geozone.id)).uniq.count / district_population[geozone.name].to_f * 100
+        end
 
-      groups[:total][:percentage_participants_support_phase] = groups.collect {|k,v| v[:percentage_participants_support_phase]}.sum
-      groups[:total][:percentage_participants_vote_phase]    = groups.collect {|k,v| v[:percentage_participants_vote_phase]}.sum
-      groups[:total][:percentage_participants_all_phase]     = groups.collect {|k,v| v[:percentage_participants_all_phase]}.sum
+        groups[:total][:percentage_participants_support_phase] = groups.collect {|k,v| v[:percentage_participants_support_phase]}.sum
+        groups[:total][:percentage_participants_vote_phase]    = groups.collect {|k,v| v[:percentage_participants_vote_phase]}.sum
+        groups[:total][:percentage_participants_all_phase]     = groups.collect {|k,v| v[:percentage_participants_all_phase]}.sum
 
-      groups
+        groups
+      }
     end
 
     def district_population
@@ -343,7 +333,7 @@ class SpendingProposalsController < ApplicationController
     end
 
     def stats_cache(key, &block)
-      Rails.cache.fetch("spending_proposals_stats/20160711121902/#{key}", &block)
+      Rails.cache.fetch("spending_proposals_stats/201607131316/#{key}", &block)
     end
 
 end
