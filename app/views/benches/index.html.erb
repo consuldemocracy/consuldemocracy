@@ -36,14 +36,16 @@
     <!-- END -->
 
     <%= form_tag vote_benches_path do %>
-      <div class="small-12 medium-4 column">
-        <% @benches.each do |bench| %>
-          <label>
-            <input type="radio" name="id" value="<%= bench.id %>">
-            <span><%= bench.name %></span>
-          </label>
-        <% end %>
-      </div>
+      <% @benches.in_groups_of(4).each do |benches| %>
+        <div class="small-12 medium-4 column">
+          <% benches.each do |bench| %>
+            <label>
+              <input type="radio" name="id" value="<%= bench.id %>">
+              <span><%= bench.name %></span>
+            </label>
+          <% end %>
+        </div>
+      <% end %>
 
       <% if user_signed_in? %>
         <% if current_user.level_two_or_three_verified? %>
