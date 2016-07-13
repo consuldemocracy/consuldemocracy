@@ -1,4 +1,5 @@
 class Bench < ActiveRecord::Base
+  acts_as_votable
 
   def original_image_url
     "docs/town_planning/#{code}_#{name.parameterize.underscore}.jpg"
@@ -23,12 +24,21 @@ class Bench < ActiveRecord::Base
 
   def register_vote(user, vote_value)
     if votable_by?(user)
+      remove_previous_votes(user)
       vote_by(voter: user, vote: vote_value)
     end
   end
 
+  def remove_previous_votes(user)
+    user.votes.up.for_type(Bench).destroy_all
+  end
+
   def votable_by?(user)
     user && user.level_two_or_three_verified?
+  end
+
+  def self.voted_by(user)
+    user.votes.for_type(Bench).last.votable
   end
 
 end

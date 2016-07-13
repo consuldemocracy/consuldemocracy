@@ -3,6 +3,7 @@ class BenchesController < ApplicationController
 
   def index
     @benches = Bench.all
+    load_vote
   end
 
   def vote
@@ -12,6 +13,14 @@ class BenchesController < ApplicationController
   end
 
   def thanks
+    load_vote
   end
 
+  private
+
+    def load_vote
+      if current_user && current_user.voted_for?(Bench)
+        @bench = Bench.voted_by(current_user)
+      end
+    end
 end

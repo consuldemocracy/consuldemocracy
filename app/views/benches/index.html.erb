@@ -25,22 +25,22 @@
   <div class="small-12 column">
     <h3 class="margin-bottom">Selecciona el proyecto que quieres votar</h3>
 
-    <!-- IF USER ALREADY HAS VOTED -->
-    <div class="row margin-top">
-      <div class="small-12 column">
-        <div class="callout success">
-          Has votado el proyecto <strong>SIENTAMADRID!</strong>. Puedes cambiarlo en cualquier momento hasta el día <u>20 de agosto</u>.
+    <% if @bench.present? %>
+      <div class="row margin-top">
+        <div class="small-12 column">
+          <div class="callout success">
+            Has votado el proyecto <strong><%= @bench.name %></strong>. Puedes cambiarlo en cualquier momento hasta el día <u>20 de agosto</u>.
+          </div>
         </div>
       </div>
-    </div>
-    <!-- END -->
+    <% end %>
 
     <%= form_tag vote_benches_path do %>
       <% @benches.in_groups_of(4).each do |benches| %>
         <div class="small-12 medium-4 column">
           <% benches.each do |bench| %>
             <label>
-              <input type="radio" name="id" value="<%= bench.id %>">
+              <%= radio_button_tag("id", bench.id, @bench.try(:id) == bench.id) %>
               <span><%= bench.name %></span>
             </label>
           <% end %>
