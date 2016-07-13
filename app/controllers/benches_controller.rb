@@ -7,9 +7,13 @@ class BenchesController < ApplicationController
   end
 
   def vote
-    @bench = Bench.find(params[:id])
-    @bench.register_vote(current_user, 'yes')
-    redirect_to thanks_benches_path
+    if params[:id].blank?
+      redirect_to benches_path
+    else
+      @bench = Bench.find(params[:id])
+      @bench.register_vote(current_user, 'yes')
+      redirect_to thanks_benches_path
+    end
   end
 
   def thanks
