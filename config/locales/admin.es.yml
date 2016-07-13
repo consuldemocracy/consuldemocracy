@@ -293,6 +293,7 @@ es:
         proposal_notifications: Notificaciones de propuestas
         redeemable_codes: Códigos enviados por carta
         user_invites: Invitaciones Linea Madrid
+        benches: Urbanismo bancos
         summary:
           ballot_line_votes: Votos en inversión
           ballot_votes: Presupuestos votados
@@ -346,6 +347,11 @@ es:
         total: Total
         clicked_email_link: Link del email clickado
         clicked_signup_button: Botón de registrarse clickado
+      benches:
+        title: "Urbanismo: nuevos bancos"
+        total: Total
+        name: Banco
+        votes: Votos
     tags:
       create: Crear Tema
       destroy: Eliminar Tema
