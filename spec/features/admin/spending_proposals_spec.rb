@@ -974,6 +974,36 @@ feature 'Admin spending proposals' do
         expect(page).to_not have_content(proposal5.author.email)
       end
     end
+
+    scenario "Display winner phones" do
+      centro = create(:geozone, name: "Centro") #budget: 1353966
+
+      user1 = create(:user, confirmed_phone: "12345678")
+      user2 = create(:user, confirmed_phone: "22345678")
+      user3 = create(:user, confirmed_phone: "32345678")
+      user4 = create(:user, confirmed_phone: "42345678")
+      user5 = create(:user, confirmed_phone: "52345678")
+      user6 = create(:user, confirmed_phone: "62345678")
+
+      proposal1 = create(:spending_proposal, :finished, :feasible, author: user1, price: 1000000, ballot_lines_count: 999, geozone: centro)
+      proposal2 = create(:spending_proposal, :finished, :feasible, author: user2, price:  900000, ballot_lines_count: 888, geozone: centro)
+      proposal3 = create(:spending_proposal, :finished, :feasible, author: user3, price:  700000, ballot_lines_count: 777, geozone: centro)
+      proposal4 = create(:spending_proposal, :finished, :feasible, author: user4, price:  350000, ballot_lines_count: 666, geozone: centro)
+      proposal5 = create(:spending_proposal, :finished, :feasible, author: user5, price:  320000, ballot_lines_count: 666, geozone: centro)
+      proposal6 = create(:spending_proposal, :finished, :feasible, author: user6, price:      10, ballot_lines_count: 555, geozone: centro)
+
+      visit results_admin_spending_proposals_path(geozone_id: centro.id)
+
+      within("#spending-proposals-winners") do
+        expect(page).to have_content(proposal1.author.confirmed_phone)
+        expect(page).to have_content(proposal4.author.confirmed_phone)
+        expect(page).to have_content(proposal6.author.confirmed_phone)
+
+        expect(page).to_not have_content(proposal2.author.confirmed_phone)
+        expect(page).to_not have_content(proposal3.author.confirmed_phone)
+        expect(page).to_not have_content(proposal5.author.confirmed_phone)
+      end
+    end
   end
 
 end
