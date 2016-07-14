@@ -414,6 +414,7 @@ en:
     flag: Flag as inappropriate
     print:
       print_button: Print this info
+    show: Show
     suggest:
       debate:
         found:

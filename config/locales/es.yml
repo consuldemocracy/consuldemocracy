@@ -414,6 +414,7 @@ es:
     flag: Denunciar como inapropiado
     print:
       print_button: Imprimir esta información
+    show: Mostrar
     suggest:
       debate:
         found:
