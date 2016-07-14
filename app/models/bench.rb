@@ -2,7 +2,7 @@ class Bench < ActiveRecord::Base
   acts_as_votable
 
   def original_image_url
-    "docs/town_planning/#{code}_#{name.parameterize.underscore}.jpg"
+    "/docs/town_planning/#{code}_#{name.parameterize.underscore}.jpg"
   end
 
   def thumb_image_url
