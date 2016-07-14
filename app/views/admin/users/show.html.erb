@@ -5,7 +5,8 @@
 <p>
   <strong><%= t("admin.users.show.email") %></strong> <%= @user.email %> |
   <strong><%= t("admin.users.show.phone") %></strong> <%= @user.phone %> |
-  <strong><%= t("admin.users.show.registered_at") %></strong> <%= @user.confirmed_at %> |
+  <strong><%= t("admin.users.show.registered_at") %></strong>
+  <%= l @user.confirmed_at, format: :long %> |
   <strong><%= t("admin.users.show.hidden_at") %></strong> <%= @user.hidden_at || "No" %>
 </p>
 
