@@ -8,7 +8,7 @@ feature 'Users' do
       click_link 'Register'
 
       fill_in 'user_username',              with: 'Manuela Carmena'
-      fill_in 'user_email',                 with: 'manuela@madrid.es'
+      fill_in 'user_email',                 with: 'manuela@consul.dev'
       fill_in 'user_password',              with: 'judgementday'
       fill_in 'user_password_confirmation', with: 'judgementday'
       check 'user_terms_of_service'
@@ -31,11 +31,11 @@ feature 'Users' do
     end
 
     scenario 'Sign in' do
-      create(:user, email: 'manuela@madrid.es', password: 'judgementday')
+      create(:user, email: 'manuela@consul.dev', password: 'judgementday')
 
       visit '/'
       click_link 'Sign in'
-      fill_in 'user_email',    with: 'manuela@madrid.es'
+      fill_in 'user_email',    with: 'manuela@consul.dev'
       fill_in 'user_password', with: 'judgementday'
       click_button 'Enter'
 
@@ -140,7 +140,7 @@ feature 'Users' do
       end
 
       scenario 'Sign in, user was already signed up with OAuth' do
-        user = create(:user, email: 'manuela@madrid.es', password: 'judgementday')
+        user = create(:user, email: 'manuela@consul.dev', password: 'judgementday')
         create(:identity, uid: '12345', provider: 'twitter', user: user)
         OmniAuth.config.add_mock(:twitter, twitter_hash)
 
@@ -159,7 +159,7 @@ feature 'Users' do
       end
 
       scenario 'Try to register with the username of an already existing user' do
-        create(:user, username: 'manuela', email: 'manuela@madrid.es', password: 'judgementday')
+        create(:user, username: 'manuela', email: 'manuela@consul.dev', password: 'judgementday')
         OmniAuth.config.add_mock(:twitter, twitter_hash_with_verified_email)
 
         visit '/'
@@ -265,13 +265,13 @@ feature 'Users' do
   end
 
   scenario 'Reset password' do
-    create(:user, email: 'manuela@madrid.es')
+    create(:user, email: 'manuela@consul.dev')
 
     visit '/'
     click_link 'Sign in'
     click_link 'Forgotten your password?'
 
-    fill_in 'user_email', with: 'manuela@madrid.es'
+    fill_in 'user_email', with: 'manuela@consul.dev'
     click_button 'Send instructions'
 
     expect(page).to have_content "In a few minutes, you will receive an email containing instructions on resetting your password."
