@@ -103,7 +103,7 @@
   <h3 class="inline-block">Ganadores</h3>
   <div>
     <% winners.each do |winner| %>
-      <%= winner.email %> (<%= winner.phone %>)<%= winner.equal?(winners.last) ? "" : ", " %>
+      <%= winner.email %><%= winner.equal?(winners.last) ? "" : ", " %>
     <% end %>
   </div>
 </div>
