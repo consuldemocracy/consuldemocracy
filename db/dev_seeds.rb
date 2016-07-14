@@ -43,24 +43,24 @@ def create_user(email, username = Faker::Name.name)
   User.create!(username: username, email: email, password: pwd, password_confirmation: pwd, confirmed_at: Time.now, terms_of_service: "1")
 end
 
-admin = create_user('admin@madrid.es', 'admin')
+admin = create_user('admin@consul.dev', 'admin')
 admin.create_administrator
 
-moderator = create_user('mod@madrid.es', 'mod')
+moderator = create_user('mod@consul.dev', 'mod')
 moderator.create_moderator
 
-valuator = create_user('valuator@madrid.es', 'valuator')
+valuator = create_user('valuator@consul.dev', 'valuator')
 valuator.create_valuator
 
-level_2 = create_user('leveltwo@madrid.es', 'level 2')
+level_2 = create_user('leveltwo@consul.dev', 'level 2')
 level_2.update(residence_verified_at: Time.now, confirmed_phone: Faker::PhoneNumber.phone_number, document_number: "2222222222", document_type: "1" )
 
-verified = create_user('verified@madrid.es', 'verified')
+verified = create_user('verified@consul.dev', 'verified')
 verified.update(residence_verified_at: Time.now, confirmed_phone: Faker::PhoneNumber.phone_number, document_type: "1", verified_at: Time.now, document_number: "3333333333")
 
 (1..10).each do |i|
   org_name = Faker::Company.name
-  org_user = create_user("org#{i}@madrid.es", org_name)
+  org_user = create_user("org#{i}@consul.dev", org_name)
   org_responsible_name = Faker::Name.name
   org = org_user.create_organization(name: org_name, responsible_name: org_responsible_name)
 
@@ -73,12 +73,12 @@ verified.update(residence_verified_at: Time.now, confirmed_phone: Faker::PhoneNu
 end
 
 (1..5).each do |i|
-  official = create_user("official#{i}@madrid.es")
+  official = create_user("official#{i}@consul.dev")
   official.update(official_level: i, official_position: "Official position #{i}")
 end
 
 (1..40).each do |i|
-  user = create_user("user#{i}@madrid.es")
+  user = create_user("user#{i}@consul.dev")
   level = [1,2,3].sample
   if level >= 2 then
     user.update(residence_verified_at: Time.now, confirmed_phone: Faker::PhoneNumber.phone_number, document_number: Faker::Number.number(10), document_type: "1" )

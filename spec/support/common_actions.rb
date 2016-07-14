@@ -1,6 +1,6 @@
 module CommonActions
 
-  def sign_up(email='manuela@madrid.es', password='judgementday')
+  def sign_up(email='manuela@consul.dev', password='judgementday')
     visit '/'
 
     click_link 'Register'
@@ -51,13 +51,13 @@ module CommonActions
   end
 
   def reset_password
-    create(:user, email: 'manuela@madrid.es')
+    create(:user, email: 'manuela@consul.dev')
 
     visit '/'
     click_link 'Sign in'
     click_link 'Forgotten your password?'
 
-    fill_in 'user_email', with: 'manuela@madrid.es'
+    fill_in 'user_email', with: 'manuela@consul.dev'
     click_button 'Send instructions'
   end
 
