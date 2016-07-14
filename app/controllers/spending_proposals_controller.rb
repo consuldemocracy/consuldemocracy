@@ -74,6 +74,8 @@ class SpendingProposalsController < ApplicationController
     stats[:total_participants_support_phase] = total_participants_support_phase
     stats[:total_participants_vote_phase] = total_participants_vote_phase
     stats[:total_spending_proposals] = total_spending_proposals
+    stats[:total_supports] = total_supports
+    stats[:total_votes] = total_votes
     stats[:total_feasible_spending_proposals] = total_feasible_spending_proposals
     stats[:total_unfeasible_spending_proposals] = total_unfeasible_spending_proposals
     stats[:total_male_participants] = total_male_participants
@@ -184,6 +186,18 @@ class SpendingProposalsController < ApplicationController
     def total_participants_vote_phase
       stats_cache('total_participants_vote_phase') {
         balloters.uniq.count
+      }
+    end
+
+    def total_supports
+      stats_cache('total_supports') {
+        ActsAsVotable::Vote.where(votable_type: 'SpendingProposal').count
+      }
+    end
+
+    def total_votes
+      stats_cache('total_votes') {
+        BallotLine.count
       }
     end
 
