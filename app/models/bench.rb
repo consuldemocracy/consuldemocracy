@@ -18,8 +18,10 @@ class Bench < ActiveRecord::Base
   end
 
   def pdf_size
-    helper = Object.new.extend(ActionView::Helpers::NumberHelper)
-    helper.number_to_human_size(File.size("#{Rails.root}/public/#{pdf_url}"), precision: 3)
+    if File.exist?("#{Rails.root}/public/#{pdf_url}")
+      helper = Object.new.extend(ActionView::Helpers::NumberHelper)
+      helper.number_to_human_size(File.size("#{Rails.root}/public#{pdf_url}"), precision: 3)
+    end
   end
 
   def register_vote(user, vote_value)

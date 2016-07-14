@@ -38,7 +38,7 @@
     <%= form_tag vote_benches_path do %>
       <% @benches.in_groups_of(4).each do |benches| %>
         <div class="small-12 medium-4 column">
-          <% benches.each do |bench| %>
+          <% benches.compact.each do |bench| %>
             <label>
               <%= radio_button_tag("id", bench.id, @bench.try(:id) == bench.id) %>
               <span><%= bench.name %></span>
