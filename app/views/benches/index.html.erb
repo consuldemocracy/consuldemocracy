@@ -12,28 +12,28 @@
       <%= render "shared/back_link" %>
 
       <h1 class="margin-bottom"><%= t("pages.processes.index.process_7_title") %></h1>
-      <h2>Participa hasta el 20 de agosto. Selecciona el diseño de banco que más te guste.</h2>
+      <h2>Participa hasta el <u>29 de julio</u>. Selecciona el diseño de banco que más te guste.</h2>
     </div>
   </div>
 </div>
 
-<div class="row margin-top" data-equalizer>
+<% if @bench.present? %>
+  <div class="row margin-top">
+    <div class="small-12 column">
+      <div class="callout success">
+        Has votado el proyecto <strong><%= @bench.name %></strong>. Puedes cambiarlo en cualquier momento hasta el día <u>29 de julio</u>.
+      </div>
+    </div>
+  </div>
+<% end %>
+
+<div class="row" data-equalizer>
   <%= render @benches %>
 </div>
 
 <div class="row">
   <div class="small-12 column">
     <h3 class="margin-bottom">Selecciona el proyecto que quieres votar</h3>
-
-    <% if @bench.present? %>
-      <div class="row margin-top">
-        <div class="small-12 column">
-          <div class="callout success">
-            Has votado el proyecto <strong><%= @bench.name %></strong>. Puedes cambiarlo en cualquier momento hasta el día <u>20 de agosto</u>.
-          </div>
-        </div>
-      </div>
-    <% end %>
 
     <%= form_tag vote_benches_path do %>
       <% @benches.in_groups_of(4).each do |benches| %>
