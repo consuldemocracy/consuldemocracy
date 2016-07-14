@@ -366,6 +366,7 @@ es:
         title: Usuarios bloqueados
       show:
         email: 'Email:'
+        phone: Teléfono
         hidden_at: 'Bloqueado:'
         registered_at: 'Fecha de alta:'
         title: Actividad del usuario (%{user})

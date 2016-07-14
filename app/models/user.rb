@@ -81,6 +81,10 @@ class User < ActiveRecord::Base
     organization? ? organization.name : username
   end
 
+  def phone
+    confirmed_phone || phone_number
+  end
+
   def debate_votes(debates)
     voted = votes.for_debates(debates)
     voted.each_with_object({}) { |v, h| h[v.votable_id] = v.value }

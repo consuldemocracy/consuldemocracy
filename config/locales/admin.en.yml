@@ -368,6 +368,7 @@ en:
         title: Hidden users
       show:
         email: 'Email:'
+        phone: Phone
         hidden_at: 'Hidden at:'
         registered_at: 'Registered at:'
         title: Activity of user (%{user})
