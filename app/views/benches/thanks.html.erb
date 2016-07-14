@@ -31,6 +31,11 @@
   <div class="small-12 medium-6 small-centered column text-center">
     <h2>Has votado el proyecto: <%= @bench.name %></h2>
       <%= image_tag "town_planning/048_takete_thumb.jpg", alt: "TAKETE" %>
+      <p class="margin-top">
+        <%= link_to "Ver otros procesos", processes_path, class: "button hollow" %>
+      </p>
     </div>
   </div>
 </div>
+
+

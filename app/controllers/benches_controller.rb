@@ -12,7 +12,7 @@ class BenchesController < ApplicationController
     else
       @bench = Bench.find(params[:id])
       @bench.register_vote(current_user, 'yes')
-      redirect_to thanks_benches_path
+      redirect_to town_planning_thanks_path
     end
   end
 
