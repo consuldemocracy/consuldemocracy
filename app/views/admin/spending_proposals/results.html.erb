@@ -45,11 +45,13 @@
 
           <%= link_to spending_proposal.title, spending_proposal_path(spending_proposal) %>
           (id: <%= spending_proposal.id %>)
-          (autor:
-          <span>
-            <%= link_to spending_proposal.author.name,
-                     admin_user_path(spending_proposal.author) %>)
-          </span>
+          <% if budget >= 0 %>
+            (autor:
+            <span>
+              <%= link_to spending_proposal.author.name,
+                       admin_user_path(spending_proposal.author) %>)
+            </span>
+          <% end %>
         </td>
         <td class="text-center">
           <%= spending_proposal.ballot_lines_count + (@delegated_ballots[spending_proposal.id] || 0) %>
