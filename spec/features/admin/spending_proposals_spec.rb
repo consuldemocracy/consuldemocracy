@@ -975,7 +975,7 @@ feature 'Admin spending proposals' do
       end
     end
 
-    scenario "Display winner phones" do
+    scenario "Display winner contact information" do
       centro = create(:geozone, name: "Centro") #budget: 1353966
 
       user1 = create(:user, confirmed_phone: "12345678")
@@ -994,7 +994,7 @@ feature 'Admin spending proposals' do
 
       visit results_admin_spending_proposals_path(geozone_id: centro.id)
 
-      within("#spending-proposals-winners") do
+      within("#spending-proposals-results") do
         expect(page).to have_content(proposal1.author.confirmed_phone)
         expect(page).to have_content(proposal4.author.confirmed_phone)
         expect(page).to have_content(proposal6.author.confirmed_phone)
@@ -1002,6 +1002,16 @@ feature 'Admin spending proposals' do
         expect(page).to_not have_content(proposal2.author.confirmed_phone)
         expect(page).to_not have_content(proposal3.author.confirmed_phone)
         expect(page).to_not have_content(proposal5.author.confirmed_phone)
+      end
+
+      within("#spending-proposals-results") do
+        expect(page).to have_link proposal1.author.name, href: admin_user_path(proposal1.author)
+        expect(page).to have_link proposal4.author.name, href: admin_user_path(proposal4.author)
+        expect(page).to have_link proposal6.author.name, href: admin_user_path(proposal6.author)
+
+        expect(page).to_not have_link proposal2.author.name
+        expect(page).to_not have_link proposal3.author.name
+        expect(page).to_not have_link proposal5.author.name
       end
     end
   end
