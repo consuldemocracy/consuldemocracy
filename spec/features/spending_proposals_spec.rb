@@ -708,7 +708,7 @@ feature 'Spending proposals' do
       visit stats_spending_proposals_path
 
       within "#total_spending_proposals" do
-        expect(page).to have_content "3"
+        expect(page).to have_content "115" # 3 + 112 paper spending proposals
       end
 
       within "#total_feasible_spending_proposals" do

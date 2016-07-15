@@ -74,6 +74,7 @@ class SpendingProposalsController < ApplicationController
     stats[:total_participants_support_phase] = total_participants_support_phase
     stats[:total_participants_vote_phase] = total_participants_vote_phase
     stats[:total_spending_proposals] = total_spending_proposals
+    stats[:paper_spending_proposals] = paper_spending_proposals
     stats[:total_supports] = total_supports
     stats[:total_votes] = total_votes
     stats[:total_feasible_spending_proposals] = total_feasible_spending_proposals
@@ -233,6 +234,10 @@ class SpendingProposalsController < ApplicationController
 
     def total_spending_proposals
       stats_cache('total_spending_proposals') { SpendingProposal.count }
+    end
+
+    def paper_spending_proposals
+      112
     end
 
     def total_feasible_spending_proposals
