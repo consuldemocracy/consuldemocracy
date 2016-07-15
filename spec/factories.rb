@@ -3,7 +3,7 @@ FactoryGirl.define do
 
   factory :user do
     sequence(:username) { |n| "Manuela#{n}" }
-    sequence(:email)    { |n| "manuela#{n}@madrid.es" }
+    sequence(:email)    { |n| "manuela#{n}@consul.dev" }
 
     password            'judgmentday'
     terms_of_service     '1'
@@ -78,7 +78,7 @@ FactoryGirl.define do
 
   factory :verification_letter, class: Verification::Letter do
     user
-    email 'user@madrid.es'
+    email 'user@consul.dev'
     password '1234'
     verification_code '5555'
   end
