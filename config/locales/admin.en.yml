@@ -322,6 +322,7 @@ en:
         proposal_created: Citizen proposals
         participatory_budget: Participatory Budget
         user_voted_budgets: Users that have voted
+        unverified_users: Unverified users
       spending_proposals:
         title: Participatory Budgets
         districts: District

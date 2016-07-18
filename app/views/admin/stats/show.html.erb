@@ -93,7 +93,9 @@
           </p>
 
           <p class="featured">
-            <%= t "admin.stats.show.summary.unverified_users" %><br>
+            <%= link_to t("admin.stats.show.summary.unverified_users"),
+                        graph_admin_stats_path(id: 'unverified_users',
+                                               count: @unverified_users) %><br>
             <span class="number"><%= number_with_delimiter(@unverified_users) %></span>
           </p>
         </div>
