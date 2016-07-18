@@ -1,4 +1,5 @@
 var comment_html = "<%= j(render @comment) %>"
+<% parent_id(@comment)%>
 
 <% if @comment.root? -%>
   var commentable_id = '<%= dom_id(@commentable) %>';
