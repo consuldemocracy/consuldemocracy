@@ -295,6 +295,7 @@ en:
         proposal_notifications: Proposal notifications
         redeemable_codes: Redeemable codes
         user_invites: Invitations
+        benches: Town planning benches
         summary:
           ballot_line_votes: Votes in investment projects
           ballot_votes: Budgets voted
@@ -348,6 +349,10 @@ en:
         total: Total
         clicked_email_link: Clicked email link
         clicked_signup_button: Clicked signup button
+      benches:
+        title: "Town Planning: new benches"
+        name: Bench
+        votes: Votes
     tags:
       create: Create Topic
       destroy: Destroy Topic

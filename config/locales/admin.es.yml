@@ -349,7 +349,6 @@ es:
         clicked_signup_button: Botón de registrarse clickado
       benches:
         title: "Urbanismo: nuevos bancos"
-        total: Total
         name: Banco
         votes: Votos
     tags:
