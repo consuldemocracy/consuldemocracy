@@ -154,7 +154,7 @@ feature 'Stats' do
         end
       end
 
-      scenario "Unverified users", :js, :focus do
+      scenario "Unverified users", :js do
         user = create(:user)
 
         visit admin_stats_path
