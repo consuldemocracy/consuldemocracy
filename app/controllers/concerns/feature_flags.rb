@@ -3,7 +3,7 @@ module FeatureFlags
 
   class_methods do
     def feature_flag(name, *options)
-      before_filter(*options) do
+      before_action(*options) do
         check_feature_flag(name)
       end
     end
