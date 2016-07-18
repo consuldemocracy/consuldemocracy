@@ -4,6 +4,7 @@ class Admin::Api::StatsController < Admin::Api::BaseController
 
     unless params[:event].present? ||
            params[:visits].present? ||
+           params[:unverified_users].present? ||
            params[:spending_proposals].present? ||
            params[:user_voted_budgets].present?
       return render json: {}, status: :bad_request
@@ -17,6 +18,10 @@ class Admin::Api::StatsController < Admin::Api::BaseController
 
     if params[:visits].present?
       ds.add "Visits", Visit.group_by_day(:started_at).count
+    end
+
+    if params[:unverified_users].present?
+      ds.add "Usuarios sin verificar", User.with_hidden.unverified.group_by_day(:created_at).count
     end
 
     if params[:spending_proposals].present?

@@ -137,19 +137,38 @@ feature 'Stats' do
 
   context "graphs" do
 
-    scenario "custom graphs", :js do
-      spending_proposal = create(:spending_proposal)
+    context "custom graphs" do
 
-      visit admin_stats_path
+      scenario "spending proposals", :js do
+        spending_proposal = create(:spending_proposal)
 
-      within("#stats") do
-        click_link "Investment projects"
+        visit admin_stats_path
+
+        within("#stats") do
+          click_link "Investment projects"
+        end
+
+        expect(page).to have_content "Investment projects (1)"
+        within("#graph") do
+          expect(page).to have_content spending_proposal.created_at.strftime("%Y-%m-%d")
+        end
       end
 
-      expect(page).to have_content "Investment projects (1)"
-      within("#graph") do
-        expect(page).to have_content spending_proposal.created_at.strftime("%Y-%m-%d")
+      scenario "Unverified users", :js do
+        user = create(:user)
+
+        visit admin_stats_path
+
+        within("#stats") do
+          click_link "Unverified users"
+        end
+
+        expect(page).to have_content "Unverified users (2)" #including seed admin
+        within("#graph") do
+          expect(page).to have_content user.created_at.strftime("%Y-%m-%d")
+        end
       end
+
     end
 
     scenario "event graphs", :js do
