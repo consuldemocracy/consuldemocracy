@@ -1,0 +1,41 @@
+<% provide :title, "Plan de Urbanismo: nuevos bancos" %>
+<% provide :social_media_meta_tags do %>
+<%= render "shared/social_media_meta_tags",
+          social_url: page_url("processes_town_planning"),
+          social_title: t("pages.processes.index.process_7_title"),
+          social_description: t("pages.processes.index.process_7_description") %>
+<% end %>
+
+<div class="expanded processes-show no-margin-top">
+  <div class="row padding">
+    <div class="small-12 medium-9 column">
+      <%= link_to "/processes", class: "back" do %>
+        <span class="icon-angle-left"></span>
+        <%= t("shared.back") %>
+      <% end %>
+
+      <h1 class="margin-bottom">¡Gracias por participar!</h1>
+    </div>
+  </div>
+</div>
+
+<div class="row margin-top">
+  <div class="small-12 column">
+    <div class="callout success">
+      Tu voto ha sido recibido, puedes cambiarlo en cualquier momento hasta el día <u>29 de julio</u>.
+    </div>
+  </div>
+</div>
+
+<div class="row margin-top">
+  <div class="small-12 medium-6 small-centered column text-center">
+    <h2>Has votado el proyecto: <%= @bench.name %></h2>
+      <%= image_tag "town_planning/048_takete_thumb.jpg", alt: "TAKETE" %>
+      <p class="margin-top">
+        <%= link_to "Ver otros procesos", processes_path, class: "button hollow" %>
+      </p>
+    </div>
+  </div>
+</div>
+
+

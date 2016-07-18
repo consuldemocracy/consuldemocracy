@@ -374,4 +374,9 @@ FactoryGirl.define do
     association :receiver, factory: :user
   end
 
+  factory :bench do
+    sequence(:name) { |n| "Super comfy bench #{n}" }
+    code "1234"
+  end
+
 end

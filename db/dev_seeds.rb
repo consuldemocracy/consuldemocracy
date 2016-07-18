@@ -415,3 +415,23 @@ Proposal.last(3).each do |proposal|
                           created_at: rand((Time.now - 1.week) .. Time.now))
   puts "    #{banner.title}"
 end
+
+puts "Creating Benches for Town Planning project"
+
+benches = [
+["Balle Malle Hupe und Artur", "003"],
+["Delta", "022"],
+["Mas Madrid", "025"],
+["MADBENCH", "033"],
+["Yo tenía tres sillas en mi casa...", "036"],
+["Sedere", "040"],
+["TAKETE", "048"],
+["Mucho gusto Madrid", "054"],
+["SIENTAMADRID!", "084"],
+["ARCO", "130"],
+["a_park_ando", "149"],
+["Benditas costumbres", "174"]]
+
+benches.each do |name, code|
+  Bench.create(name: name, code: code)
+end

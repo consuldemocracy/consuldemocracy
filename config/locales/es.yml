@@ -783,3 +783,10 @@ es:
   invisible_captcha:
     sentence_for_humans: "Si eres humano, por favor ignora este campo"
     timestamp_error_message: "Eso ha sido demasiado rápido. Por favor, reenvía el formulario."
+  benches:
+    index:
+      not_logged_in: Para continuar debes %{signin} o %{signup}.
+      signin: iniciar sesión
+      signup: registrarte
+      verified_only: Para continuar %{verify_account}.
+      verify_account: verifica tu cuenta
