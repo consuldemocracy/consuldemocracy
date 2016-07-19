@@ -26,7 +26,7 @@ class BenchesController < ApplicationController
   private
 
     def load_vote
-      if current_user && current_user.voted_for?(Bench)
+      if current_user && current_user.voted_for_any?(Bench)
         @bench = Bench.voted_by(current_user)
       end
     end

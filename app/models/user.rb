@@ -105,7 +105,7 @@ class User < ActiveRecord::Base
     comment_flags.each_with_object({}){ |f, h| h[f.flaggable_id] = true }
   end
 
-  def voted_for?(class_name)
+  def voted_for_any?(class_name)
     votes.for_type(class_name).any?
   end
 
