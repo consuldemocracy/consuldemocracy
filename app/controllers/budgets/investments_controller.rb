@@ -1,4 +1,4 @@
-class Budget
+module Budgets
   class InvestmentsController < ApplicationController
     skip_authorization_check
 

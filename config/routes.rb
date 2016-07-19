@@ -75,8 +75,10 @@ Rails.application.routes.draw do
     end
   end
 
-  namespace :budget do
-    resources :investments, only: [:index]
+  scope module: :budgets do
+    resources :budgets do
+      resources :investments, only: [:index]
+    end
   end
 
   resources :stats, only: [:index]
