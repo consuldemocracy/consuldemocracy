@@ -12,7 +12,12 @@
       <%= render "shared/back_link" %>
 
       <h1 class="margin-bottom"><%= t("pages.processes.index.process_7_title") %></h1>
-      <h2>Participa hasta el <u>27 de julio</u>. Selecciona el diseño de banco que más te guste.</h2>
+      <h2>Participa hasta el <u>27 de julio</u>.<br>Selecciona el diseño de banco que más te guste.</h2>
+      <div class="small-12 medium-4">
+        <%= link_to "Más información",
+                    "http://www.coam.org/es/servicios/concursos/concursos-ocam/bancos-compartir",
+                    target: "_blank", title: t("shared.target_blank_html"), class: "button hollow expanded" %>
+      </div>
     </div>
   </div>
 </div>
@@ -78,3 +83,11 @@
     <% end %>
   </div>
 </div>
+
+<div class="row">
+  <div class="small-12 medium-9 column">
+    <p>* Los tres bancos más votados obtendrán 3, 2 y 1 punto respectivamente, que se sumarán a los puntos del jurado para la selección final. Puedes <%= link_to "consultar toda la información", "http://www.coam.org/media/Default%20Files/servicios/concursos/concursos_ocam/2015/bancos-para-compartir/160310_pliego_administrativo.pdf", target: "_blank", title: t("shared.target_blank_html") %> sobre el jurado y el proceso.
+    </p>
+  </div>
+</div>
+
