@@ -323,12 +323,11 @@ end
 puts "Creating Investments"
 tags = Faker::Lorem.words(10)
 (1..60).each do |i|
-  heading = [Budget::Heading.reorder("RANDOM()").first, nil].sample
+  heading = Budget::Heading.reorder("RANDOM()").first
 
   investment = Budget::Investment.create!(
     author: User.reorder("RANDOM()").first,
     heading: heading,
-    budget: heading.try(:budget) || Budget.reorder("RANDOM()").first,
     title: Faker::Lorem.sentence(3).truncate(60),
     external_url: Faker::Internet.url,
     description: "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>",
