@@ -8,13 +8,13 @@ Aplicación de Participación Ciudadana y Gobierno Abierto
 [![Build Status](https://travis-ci.org/consul/consul.svg?branch=master)](https://travis-ci.org/consul/consul)
 [![Code Climate](https://codeclimate.com/github/consul/consul/badges/gpa.svg)](https://codeclimate.com/github/consul/consul)
 [![Dependency Status](https://gemnasium.com/consul/consul.svg)](https://gemnasium.com/consul/consul)
-[![Coverage Status](https://coveralls.io/repos/consul/consul/badge.svg?branch=master&service=github)](https://coveralls.io/github/consul/consul?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/consul/consul/badge.svg?branch=master)](https://coveralls.io/github/consul/consul?branch=master)
 
 Este es el repositorio de código abierto de la Aplicación de Participación Ciudadana Consul, creada originariamente por el Ayuntamiento de Madrid.
 
 ## Estado del proyecto
 
-El desarrollo de esta aplicación comenzó el [15 de Julio de 2015](https://github.com/consul/consul/commit/8db36308379accd44b5de4f680a54c41a0cc6fc6) y el código fue puesto en producción el día 7 de Septiembre de 2015 en [decide.madrid.es](https://decide.madrid.es). Desde entonces se le añaden mejoras y funcionalidades constantemente. La evolución y futura lista de funcionalidades a implementar se pueden consultar en la lista de [tareas por hacer](https://github.com/consul/consul/issues).
+El desarrollo de esta aplicación comenzó el [15 de Julio de 2015](https://github.com/consul/consul/commit/8db36308379accd44b5de4f680a54c41a0cc6fc6) y el código fue puesto en producción el día 7 de Septiembre de 2015 en [decide.madrid.es](https://decide.madrid.es). Desde entonces se le añaden mejoras y funcionalidades constantemente. Las funcionalidades actuales se pueden consultar en la [documentación](https://github.com/consul/consul/tree/master/doc) y las siguientes funcionaliades en la lista de [tareas por hacer](https://github.com/consul/consul/issues).
 
 ## Tecnología
 
