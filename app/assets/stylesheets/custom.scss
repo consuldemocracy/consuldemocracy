@@ -1464,6 +1464,17 @@ table.age-groups-investment-projects {
     color: white;
     text-decoration: underline;
   }
+
+  .button.hollow {
+    background: none;
+    border-color: white;
+    color: white;
+
+    &:hover {
+      background: white;
+      color: $brand;
+    }
+  }
 }
 
 .supports-open-plenary-title {
