@@ -45,6 +45,7 @@
 //= require valuation_spending_proposal_form
 //= require embed_video
 //= require banners
+//= require custom
 
 var initialize_modules = function() {
   App.Comments.initialize();
