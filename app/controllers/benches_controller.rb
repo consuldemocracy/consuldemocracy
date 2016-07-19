@@ -18,6 +18,9 @@ class BenchesController < ApplicationController
 
   def thanks
     load_vote
+    unless @bench.present?
+      redirect_to town_planning_path
+    end
   end
 
   private
