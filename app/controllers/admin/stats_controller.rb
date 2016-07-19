@@ -21,6 +21,15 @@ class Admin::StatsController < Admin::BaseController
     @user_ids_who_voted_proposals = ActsAsVotable::Vote.where(votable_type: 'Proposal').distinct.count(:voter_id)
     @user_ids_who_didnt_vote_proposals = @verified_users - @user_ids_who_voted_proposals
     @spending_proposals = SpendingProposal.count
+  end
 
+  def proposal_notifications
+    @proposal_notifications = ProposalNotification.all
+    @proposals_with_notifications = @proposal_notifications.select(:proposal_id).distinct.count
+  end
+
+  def direct_messages
+    @direct_messages = DirectMessage.count
+    @users_who_have_sent_message = DirectMessage.select(:sender_id).distinct.count
   end
 end

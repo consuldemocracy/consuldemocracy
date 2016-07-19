@@ -89,7 +89,9 @@ Rails.application.routes.draw do
     get :search, on: :collection
   end
 
-  resources :users, only: [:show]
+  resources :users, only: [:show] do
+    resources :direct_messages, only: [:new, :create, :show]
+  end
 
   resource :account, controller: "account", only: [:show, :update, :delete] do
     get :erase, on: :collection
@@ -98,6 +100,8 @@ Rails.application.routes.draw do
   resources :notifications, only: [:index, :show] do
     put :mark_all_as_read, on: :collection
   end
+
+  resources :proposal_notifications, only: [:new, :create, :show]
 
   resource :verification, controller: "verification", only: [:show]
 
@@ -184,7 +188,10 @@ Rails.application.routes.draw do
     end
 
     resource :activity, controller: :activity, only: :show
-    resource :stats, only: :show
+    resource :stats, only: :show do
+      get :proposal_notifications, on: :collection
+      get :direct_messages, on: :collection
+    end
 
     namespace :api do
       resource :stats, only: :show
@@ -234,6 +241,8 @@ Rails.application.routes.draw do
 
     resources :email_verifications, only: [:new, :create]
 
+    resources :user_invites, only: [:new, :create]
+
     resources :users, only: [:new, :create] do
       collection do
         delete :logout
@@ -264,6 +273,6 @@ Rails.application.routes.draw do
   mount Tolk::Engine => '/translate', :as => 'tolk'
 
   # static pages
-  get '/blog' => redirect("http://diario.madrid.es/participa/")
+  get '/blog' => redirect("http://blog.consul/")
   resources :pages, path: '/', only: [:show]
 end

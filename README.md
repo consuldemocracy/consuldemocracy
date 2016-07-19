@@ -8,17 +8,13 @@ Citizen Participation and Open Government Application
 [![Build Status](https://travis-ci.org/consul/consul.svg?branch=master)](https://travis-ci.org/consul/consul)
 [![Code Climate](https://codeclimate.com/github/consul/consul/badges/gpa.svg)](https://codeclimate.com/github/consul/consul)
 [![Dependency Status](https://gemnasium.com/consul/consul.svg)](https://gemnasium.com/consul/consul)
-[![Coverage Status](https://coveralls.io/repos/consul/consul/badge.svg?branch=master&service=github)](https://coveralls.io/github/consul/consul?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/consul/consul/badge.svg?branch=master)](https://coveralls.io/github/consul/consul?branch=master)
 
 This is the opensource code repository of the eParticipation website originally developed for the Madrid City government eParticipation website
 
 ## Current state
 
-Development started on [2015 July 15th](https://github.com/consul/consul/commit/8db36308379accd44b5de4f680a54c41a0cc6fc6). Code was deployed to production on 2015 september 7th to [decide.madrid.es](https://decide.madrid.es). Since then new features are added often. You can take a look at a roadmap and future features in the [open issues list](https://github.com/consul/consul/issues).
-
-## Roadmap
-
-See [ROADMAP_ES.md](ROADMAP_ES.md)
+Development started on [2015 July 15th](https://github.com/consul/consul/commit/8db36308379accd44b5de4f680a54c41a0cc6fc6). Code was deployed to production on 2015 september 7th to [decide.madrid.es](https://decide.madrid.es). Since then new features are added often. You can take a look at the current features in the [docs](https://github.com/consul/consul/tree/master/doc) and future features in the [open issues list](https://github.com/consul/consul/issues).
 
 ## Tech stack
 
@@ -58,12 +54,12 @@ bin/rspec
 
 You can use the default admin user from the seeds file:
 
- **user:** admin@madrid.es
+ **user:** admin@consul.dev
  **pass:** 12345678
 
 But for some actions like voting, you will need a verified user, the seeds file also includes one:
 
- **user:** verified@madrid.es
+ **user:** verified@consul.dev
  **pass:** 12345678
 
 ### OAuth

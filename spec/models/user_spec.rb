@@ -83,6 +83,24 @@ describe User do
         expect(subject.newsletter).to eq(true)
       end
     end
+
+    describe 'email_digest' do
+      it 'should be true by default' do
+        expect(subject.email_digest).to eq(true)
+      end
+    end
+
+    describe 'email_on_direct_message' do
+      it 'should be true by default' do
+        expect(subject.email_on_direct_message).to eq(true)
+      end
+    end
+
+    describe 'official_position_badge' do
+      it 'should be false by default' do
+        expect(subject.official_position_badge).to eq(false)
+      end
+    end
   end
 
   describe "administrator?" do
@@ -271,11 +289,47 @@ describe User do
     end
   end
 
+  describe "official_position_badge" do
+
+    describe "Users of level 1" do
+
+      it "displays the badge if set in preferences" do
+        user = create(:user, official_level: 1, official_position_badge: true)
+
+        expect(user.display_official_position_badge?).to eq true
+      end
+
+      it "does not display the badge if set in preferences" do
+        user = create(:user, official_level: 1, official_position_badge: false)
+
+        expect(user.display_official_position_badge?).to eq false
+      end
+
+    end
+
+    describe "Users higher than level 1" do
+
+      it "displays the badge regardless of preferences" do
+        user1 = create(:user, official_level: 2, official_position_badge: false)
+        user2 = create(:user, official_level: 3, official_position_badge: false)
+        user3 = create(:user, official_level: 4, official_position_badge: false)
+        user4 = create(:user, official_level: 5, official_position_badge: false)
+
+        expect(user1.display_official_position_badge?).to eq true
+        expect(user2.display_official_position_badge?).to eq true
+        expect(user3.display_official_position_badge?).to eq true
+        expect(user4.display_official_position_badge?).to eq true
+      end
+
+    end
+
+  end
+
   describe "self.search" do
     it "find users by email" do
-      user1 = create(:user, email: "larry@madrid.es")
-      create(:user, email: "bird@madrid.es")
-      search = User.search("larry@madrid.es")
+      user1 = create(:user, email: "larry@consul.dev")
+      create(:user, email: "bird@consul.dev")
+      search = User.search("larry@consul.dev")
       expect(search.size).to eq(1)
       expect(search.first).to eq(user1)
     end

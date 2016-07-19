@@ -219,8 +219,42 @@ a {
   float: left;
 }
 
+.tabs-content {
+  border: 0;
+}
+
+.tabs {
+  border: {
+    left: 0;
+    right: 0;
+    top: 0;
+  };
+  margin-bottom: $line-height;
+
+  .tabs-title > a {
+    color: $text-medium;
+    margin-bottom: rem-calc(-1);
+    margin-right: $line-height;
+
+    &[aria-selected='true'],
+    &.is-active {
+      color: $brand;
+      border-bottom: 2px solid $brand;
+      font-weight: bold;
+    }
+  }
+
+  h2 {
+    font-size: $base-font-size;
+  }
+}
+
 .no-max-width {
   max-width: none;
+}
+
+.button.float-right ~ .button.float-right {
+  margin: 0 $line-height/2;
 }
 
 // 02. Header
@@ -362,8 +396,6 @@ header {
           color: $text;
           display: block;
           font-weight: bold;
-          margin-left: 18px\9;
-          margin-right: 18px\9;
           width: auto;
 
           &:hover {
@@ -637,24 +669,9 @@ form {
     font-weight: bold;
   }
 
-  input, textarea {
-    height: 48px\9;
-    line-height: 48px\9;
-    margin-bottom: 24px\9;
-    width: 100%\9;
-  }
-
-  input[type="checkbox"],
-  input[type="radio"] {
-    height: auto\9;
-    line-height: inherit\9;
-    width: auto\9;
-  }
-
   input[type="radio"] {
     height: $line-height !important;
     vertical-align: top;
-    width: 18px\9;
 
     + label {
       font-weight: normal;
@@ -1068,12 +1085,13 @@ table {
   }
 }
 
-.social-share-button-twitter {
+.ssb-twitter {
   background: #45B0E3;
+  background-image: none !important;
   color: white;
-  height: $line-height*2;
+  height: $line-height*2 !important;
   position: relative;
-  width: $line-height*2;
+  width: $line-height*2 !important;
 
   &:before {
     content: "f";
@@ -1107,12 +1125,13 @@ table {
   }
 }
 
-.social-share-button-facebook {
+.ssb-facebook {
   background: #3B5998;
+  background-image: none !important;
   color: white;
-  height: rem-calc(48);
+  height: rem-calc(48) !important;
   position: relative;
-  width: rem-calc(48);
+  width: rem-calc(48) !important;
 
   &:before {
     content: "A";
@@ -1146,12 +1165,13 @@ table {
   }
 }
 
-.social-share-button-google_plus {
+.ssb-google_plus {
   background: #DE4C34;
+  background-image: none !important;
   color: white;
-  height: $line-height*2;
+  height: $line-height*2 !important;
   position: relative;
-  width: $line-height*2;
+  width: $line-height*2 !important;
 
   &:before {
     content: "B";
@@ -1189,7 +1209,7 @@ table {
     display: inline-block;
   }
 
-  .social-share-button-twitter {
+  .ssb-twitter {
     background: none;
     color: white;
     height: $line-height;
@@ -1212,7 +1232,7 @@ table {
     }
   }
 
-  .social-share-button-facebook {
+  .ssb-facebook {
     background: none;
     color: white;
     height: rem-calc(24);
@@ -1235,7 +1255,7 @@ table {
     }
   }
 
-  .social-share-button-google_plus {
+  .ssb-google_plus {
     background: none;
     color: white;
     height: rem-calc(24);
@@ -1464,7 +1484,6 @@ table {
 .comments {
   background: $white;
   background-repeat: repeat-x;
-  padding-top: $line-height;
   padding-bottom: $line-height*4;
 
   h2 {
@@ -1488,7 +1507,7 @@ table {
 
     .comment-votes {
       color: $text-medium;
-      font-size: $small-font-size;
+      font-size: rem-calc(14);
       line-height: $line-height;
 
       a {
@@ -1651,7 +1670,7 @@ table {
 
       &:first-child {
         padding-left: $line-height*1.5;
-        width: 80%;
+        width: 75%;
       }
 
       &:before {

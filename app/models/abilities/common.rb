@@ -47,14 +47,19 @@ module Abilities
         can :vote_featured, Proposal
         can :vote, SpendingProposal
         can :create, SpendingProposal
+
         can :create, Budget::Investment, budget: { phase: "accepting" }
         can :vote,   Budget::Investment, budget: { phase: "selecting" }
         can :create, Budget::Ballot,     budget: { phase: "balloting" }
+
+        can :create, DirectMessage
+        can :show, DirectMessage, sender_id: user.id
       end
+
+      can [:create, :show], ProposalNotification, proposal: { author_id: user.id }
 
       can :create, Annotation
       can [:update, :destroy], Annotation, user_id: user.id
-
     end
   end
 end

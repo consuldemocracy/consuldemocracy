@@ -11,6 +11,7 @@ module Abilities
       can :read, User
       can [:search, :read], Annotation
       can [:read], Budget
+      can :new, DirectMessage
     end
   end
 end

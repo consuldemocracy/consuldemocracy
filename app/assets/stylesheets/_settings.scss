@@ -3,6 +3,7 @@
 //
 //  Table of Contents:
 //
+//   0. Custom variables
 //   1. Global
 //   2. Breakpoints
 //   3. The Grid
@@ -42,6 +43,70 @@
 //  37. Custom variables
 
 @import 'util/util';
+
+// 0. Custom variables
+// --------------------
+
+$base-font-size:      rem-calc(17);
+$base-line-height:    rem-calc(26);
+$small-font-size:     rem-calc(14);
+$line-height:         rem-calc(24);
+
+$brand:             #004A83;
+$body:              #E9E9E9;
+$background:        #EDEFF0;
+$border:            #DEE0E3;
+$dark:              darken($brand, 10%);
+
+$text:              #222222;
+$text-medium:       #999999;
+$text-light:        #CCCCCC;
+
+$link:              #2895F1;
+$link-hover:        #2178BF;
+
+$debates:           #008CCF;
+$votes-bg:          #26AEEE;
+$votes-border:      #1F94CB;
+
+$votes-like:        #7BD2A8;
+$votes-like-act:    #5D9E7F;
+$votes-unlike:      #EF8585;
+$votes-unlike-act:  #BD6A6A;
+
+$delete:            #F04124;
+$check:             #46DB91;
+
+$proposals:         #FFA42D;
+$proposals-border:  #CC8425;
+
+$budget:            #454372;
+$budget-hover:      #7571BF;
+
+$highlight:         #E7F2FC;
+$featured:          #FED900;
+
+$footer-bg:         #DEE0E2;
+$footer-color:      #171819;
+$footer-link:       #454A4C;
+$footer-border:     #BFC1C3;
+
+$success-bg:        #DFF0D8;
+$success-border:    #D6E9C6;
+$color-success:     #3C763D;
+
+$info-bg:           #D9EDF7;
+$info-border:       #BCE8F1;
+$color-info:        #31708F;
+
+$warning-bg:        #FCF8E3;
+$warning-border:    #FAEBCC;
+$color-warning:     #8A6D3B;
+
+$alert-bg:          #F2DEDE;
+$alert-border:      #EBCCD1;
+$color-alert:       #A94442;
+
 
 // 1. Global
 // ---------
@@ -127,7 +192,7 @@ $header-color: inherit;
 $header-lineheight: 1.4;
 $header-margin-bottom: 0.5rem;
 $header-text-rendering: optimizeLegibility;
-$small-font-size: 80%;
+$small-font-size: rem-calc(14);
 $header-small-font-color: $medium-gray;
 $paragraph-lineheight: 1.6;
 $paragraph-margin-bottom: 1rem;
@@ -194,12 +259,12 @@ $input-error-font-weight: $global-weight-bold;
 
 $accordion-background: $white;
 $accordion-plusminus: true;
-$accordion-item-color: foreground($accordion-background, $primary-color);
+$accordion-item-color: foreground($accordion-background, $text);
 $accordion-item-background-hover: $light-gray;
 $accordion-item-padding: 1.25rem 1rem;
 $accordion-content-background: $white;
 $accordion-content-border: 1px solid $light-gray;
-$accordion-content-color: foreground($accordion-background, $primary-color);
+$accordion-content-color: foreground($accordion-background, $text);
 $accordion-content-padding: 1rem;
 
 // 8. Accordion Menu
@@ -510,13 +575,13 @@ $show-header-for-stacked: false;
 
 $tab-margin: 0;
 $tab-background: $white;
-$tab-background-active: $light-gray;
-$tab-item-font-size: rem-calc(12);
+$tab-background-active: $white;
+$tab-item-font-size: $base-font-size;
 $tab-item-background-hover: $white;
-$tab-item-padding: 1.25rem 1.5rem;
+$tab-item-padding: $line-height/2  0;
 $tab-expand-max: 6;
 $tab-content-background: $white;
-$tab-content-border: $light-gray;
+$tab-content-border: $border;
 $tab-content-color: foreground($tab-background, $primary-color);
 $tab-content-padding: 1rem;
 
@@ -563,66 +628,3 @@ $topbar-submenu-background: $topbar-background;
 $topbar-title-spacing: 1rem;
 $topbar-input-width: 200px;
 $topbar-unstack-breakpoint: medium;
-
-// 37. Custom variables
-// --------------------
-
-$base-font-size:      rem-calc(17);
-$base-line-height:    rem-calc(26);
-$small-font-size:     rem-calc(14);
-$line-height:         rem-calc(24);
-
-$brand:             #004A83;
-$body:              #E9E9E9;
-$background:        #EDEFF0;
-$border:            #DEE0E3;
-$dark:              darken($brand, 10%);
-
-$text:              #222222;
-$text-medium:       #999999;
-$text-light:        #CCCCCC;
-
-$link:              #2895F1;
-$link-hover:        #2178BF;
-
-$debates:           #008CCF;
-$votes-bg:          #26AEEE;
-$votes-border:      #1F94CB;
-
-$votes-like:        #7BD2A8;
-$votes-like-act:    #5D9E7F;
-$votes-unlike:      #EF8585;
-$votes-unlike-act:  #BD6A6A;
-
-$delete:            #F04124;
-$check:             #46DB91;
-
-$proposals:         #FFA42D;
-$proposals-border:  #CC8425;
-
-$budget:            #454372;
-$budget-hover:      #7571BF;
-
-$highlight:         #E7F2FC;
-$featured:          #FED900;
-
-$footer-bg:         #DEE0E2;
-$footer-color:      #171819;
-$footer-link:       #454A4C;
-$footer-border:     #BFC1C3;
-
-$success-bg:        #DFF0D8;
-$success-border:    #D6E9C6;
-$color-success:     #3C763D;
-
-$info-bg:           #D9EDF7;
-$info-border:       #BCE8F1;
-$color-info:        #31708F;
-
-$warning-bg:        #FCF8E3;
-$warning-border:    #FAEBCC;
-$color-warning:     #8A6D3B;
-
-$alert-bg:          #F2DEDE;
-$alert-border:      #EBCCD1;
-$color-alert:       #A94442;

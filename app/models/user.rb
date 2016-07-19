@@ -23,6 +23,8 @@ class User < ActiveRecord::Base
   has_many :spending_proposals, foreign_key: :author_id
   has_many :failed_census_calls
   has_many :notifications
+  has_many :direct_messages_sent,     class_name: 'DirectMessage', foreign_key: :sender_id
+  has_many :direct_messages_received, class_name: 'DirectMessage', foreign_key: :receiver_id
   belongs_to :geozone
 
   validates :username, presence: true, if: :username_required?
@@ -50,6 +52,7 @@ class User < ActiveRecord::Base
   scope :officials,      -> { where("official_level > 0") }
   scope :for_render,     -> { includes(:organization) }
   scope :by_document,    -> (document_type, document_number) { where(document_type: document_type, document_number: document_number) }
+  scope :email_digest,   -> { where(email_digest: true) }
 
   before_validation :clean_document_number
 
@@ -130,6 +133,16 @@ class User < ActiveRecord::Base
     update official_position: nil, official_level: 0
   end
 
+  def has_official_email?
+    domain = Setting['email_domain_for_officials']
+    !email.blank? && ( (email.end_with? "@#{domain}") || (email.end_with? ".#{domain}") )
+  end
+
+  def display_official_position_badge?
+    return true if official_level > 1
+    official_position_badge? && official_level == 1
+  end
+
   def block
     debates_ids = Debate.where(author_id: id).pluck(:id)
     comments_ids = Comment.where(user_id: id).pluck(:id)
@@ -192,11 +205,6 @@ class User < ActiveRecord::Base
 
   def email_required?
     !erased?
-  end
-
-  def has_official_email?
-    domain = Setting['email_domain_for_officials']
-    !email.blank? && ( (email.end_with? "@#{domain}") || (email.end_with? ".#{domain}") )
   end
 
   def locale

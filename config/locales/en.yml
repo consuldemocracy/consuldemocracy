@@ -15,6 +15,9 @@ en:
       public_activity_label: Keep my list of activities public
       save_changes_submit: Save changes
       subscription_to_website_newsletter_label: Receive by email website relevant information
+      email_on_direct_message_label: Receive emails about direct messages
+      email_digest_label: Receive a summary of proposal notifications
+      official_position_badge_label: Show official position badge
       title: My account
       user_permission_debates: Participate on debates
       user_permission_info: With your account you can...
@@ -22,7 +25,7 @@ en:
       user_permission_support_proposal: Support proposals
       user_permission_title: Participation
       user_permission_verify: To perform all the actions verify your account.
-      user_permission_verify_info: "* Only for users on Madrid City Census."
+      user_permission_verify_info: "* Only for users on Census."
       user_permission_votes: Participate on final voting
       username_label: Username
       verified_account: Account verified
@@ -141,11 +144,13 @@ en:
     accept_terms_title: I agree to the Privacy Policy and the Terms and conditions of use
     conditions: Terms and conditions of use
     debate: Debate
+    direct_message: private message
     error: error
     errors: errors
     not_saved: 'prevented this %{resource} from being saved:'
     policy: Privacy Policy
     proposal: Proposal
+    proposal_notification: "Notification"
     spending_proposal: Spending proposal
     user: Account
     verification/sms: phone
@@ -156,7 +161,7 @@ en:
     application:
       chrome: Google Chrome
       firefox: Firefox
-      ie: We have detected that you are browsing with Internet Explorer. For an enhanced experience, we recommend using %{chrome} or %{firefox}.
+      ie: We have detected that you are browsing with Internet Explorer. For an enhanced experience, we recommend using %{firefox} or %{chrome}.
       ie_title: This website is not optimised for your browser
     footer:
       accessibility: Accessibility
@@ -164,30 +169,29 @@ en:
       consul: Consul application
       consul_url: https://github.com/consul/consul
       contact_us: For technical assistance enters
-      copyright: Ayuntamiento de Madrid, %{year}
-      description: This portal uses the %{consul} which is %{open_source}. From Madrid out into the world.
+      copyright: Consul, %{year}
+      description: This portal uses the %{consul} which is %{open_source}.
       faq: technical assistance
       more_info: More information
       open_data_text: Every detail about the City Council is yours to access.
       open_data_title: Open data
       open_source: open-source software
       open_source_url: http://www.gnu.org/licenses/agpl-3.0.html
-      participation_text: Decide how to shape the Madrid you want to live in.
+      participation_text: Decide how to shape the city you want to live in.
       participation_title: Participation
       privacy: Privacy Policy
-      transparency_text: Find out anything about the Madrid City Council.
+      transparency_text: Find out anything about the city.
       transparency_title: Transparency
-      transparency_url: https://transparencia.madrid.es
+      transparency_url: https://transparency.consul
     header:
       administration: Administration
       debates: Debates
       external_link_blog: Blog
       external_link_opendata: Open data
-      external_link_opendata_url: http://datos.madrid.es
       external_link_transparency: Transparency
-      external_link_transparency_url: https://transparencia.madrid.es
+      external_link_transparency_url: https://transparency.consul
       locale: 'Language:'
-      logo: Madrid
+      logo: Consul
       management: Management
       moderation: Moderation
       valuation: Valuation
@@ -199,7 +203,7 @@ en:
         other: You have %{count} new notifications
       no_notifications: You don't have new notifications
       open: open
-      open_city_slogan_html: There are cities that are governed directly by their inhabitants, who <b>discuss</b> the topics they are concerned about, <b>propose</b> ideas to improve their lives and <b>decide</b> among themselves which ones will be carried out. Madrid is already one of these cities.
+      open_city_slogan_html: There are cities that are governed directly by their inhabitants, who <b>discuss</b> the topics they are concerned about, <b>propose</b> ideas to improve their lives and <b>decide</b> among themselves which ones will be carried out.
       open_city_title: Love the city, and it will become a city you love.
       open_data: Open data
       open_gov: Open government
@@ -221,6 +225,9 @@ en:
         other: There are %{count} new comments on
       empty_notifications: You don't have new notifications.
       mark_all_as_read: Mark all as read
+      proposal_notification:
+        one: There is one new notification on
+        other: There are %{count} new notifications on
       replies_to:
         one: Someone replied to your comment on
         other: There are %{count} new replies to your comment on
@@ -349,17 +356,30 @@ en:
         one: 1 comment
         other: "%{count} comments"
         zero: No comments
-      comments_title: Comments
+      comments_tab: Comments
       edit_proposal_link: Edit
       flag: This proposal has been flagged as inappropriate by several users.
       login_to_comment: You must %{signin} or %{signup} to leave a comment.
+      notifications_tab: Notifications
       retired_warning: "The author considers this proposal should not receive more supports."
       retired_warning_link_to_explanation: Read the explanation before voting for it.
       retired: Proposal retired by the author
       share: Share
+      send_notification: Send notification
+      no_notifications: "This proposal has any notifications."
     update:
       form:
         submit_button: Save changes
+  proposal_notifications:
+    new:
+      title: "Send message"
+      title_label: "Title"
+      body_label: "Message"
+      submit_button: "Send message"
+      info_about_receivers_html: "This message will be send to <strong>%{count} people</strong> and it will be visible in %{proposal_page}.<br> Message are not sent immediately, users will receive periodically an email with all proposal notifications."
+      proposal_page: "the proposal's page"
+    show:
+      back: "Go back to my activity"
   shared:
     advanced_search:
       author_type: 'By author category'
@@ -483,6 +503,20 @@ en:
     manage:
       all: "You do not have permission to carry out the action '%{action}' on %{subject}."
   users:
+    direct_messages:
+      new:
+        body_label: Message
+        direct_messages_bloqued: "This user has decided not to receive direct messages"
+        submit_button: Send message
+        title: Send private message to %{receiver}
+        title_label: Title
+        verified_only: To send a private message %{verify_account}
+        verify_account: verify your account
+        authenticate: You must %{signin} or %{signup} to continue.
+        signin: sign in
+        signup: sign up
+      show:
+        receiver: Message sent to %{receiver}
     show:
       deleted: Deleted
       deleted_debate: This debate has been deleted
@@ -503,9 +537,13 @@ en:
           one: 1 Spending proposal
           other: "%{count} Spending proposals"
       no_activity: User has no public activity
+      no_private_messages: "This user doesn't accept private messages."
       private_activity: This user decided to keep the activity list private
-      retire: Retire
-      retired: Retired
+      send_private_message: "Send private message"
+    proposals:
+      send_notification: "Send notification"
+      retire: "Retire"
+      retired: "Retired"
   votes:
     agree: I agree
     anonymous: Too many anonymous votes to admit vote %{verify_account}.
@@ -554,7 +592,7 @@ en:
       user_permission_proposal: Create new proposals
       user_permission_support_proposal: Support proposals*
       user_permission_verify: To perform all the actions verify your account.
-      user_permission_verify_info: "* Only for users on Madrid Census."
+      user_permission_verify_info: "* Only for users on Census."
       user_permission_verify_my_account: Verify my account
       user_permission_votes: Participate on final voting
   omniauth:
