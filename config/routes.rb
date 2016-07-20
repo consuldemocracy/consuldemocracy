@@ -75,7 +75,7 @@ Rails.application.routes.draw do
     end
   end
 
-  scope module: :budgets do
+  scope module: :budget do
     resources :budgets do
       resources :investments, only: [:index]
     end
