@@ -566,19 +566,15 @@ es:
       not_voting_allowed: El periodo de votación está cerrado.
   welcome:
     debates:
-      alt: Icono debates
       description: Encontrarnos, debatir y compartir lo que nos parece importante en nuestra ciudad.
       title: Debates
     decide:
-      alt: Icono decides
       description: La ciudadanía decide si acepta o rechaza las propuestas más apoyadas.
       title: Decides
     do:
-      alt: Icono se hace
       description: Si la propuesta es aceptada mayoritariamente, el Ayuntamiento la asume como propia y se hace.
       title: Se hace
     proposal:
-      alt: Icono propones
       description: Espacio abierto para propuestas ciudadanas sobre el tipo de ciudad en el que queremos vivir.
       title: Propones
     verification:

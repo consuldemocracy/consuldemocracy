@@ -566,19 +566,15 @@ en:
       not_voting_allowed: Voting phase is closed
   welcome:
     debates:
-      alt: Icon debates
       description: For meeting, discussing and sharing the things that matter to us in our city.
       title: Debates
     decide:
-      alt: Icon decide
       description: The public decides if it accepts or rejects the most supported proposals.
       title: You decide
     do:
-      alt: Icon it gets done
       description: If the proposal is accepted by the majority, the City Council accepts it as its own and it gets done.
       title: It gets done
     proposal:
-      alt: Icon propose
       description: Open space for citizen proposals about the kind of city we want to live in.
       title: You propose
     verification:
