@@ -61,6 +61,9 @@ Pero para ciertas acciones, como apoyar, necesitarás un usuario verificado, el 
  **user:** verified@consul.dev
  **pass:** 12345678
 
+### Customización
+
+Ver fichero [CUSTOMIZE_ES.md](CUSTOMIZE_ES.md)
 
 ### OAuth
 
