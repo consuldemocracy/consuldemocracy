@@ -1731,6 +1731,17 @@ table.age-groups-investment-projects {
   }
 }
 
+table.benches-results {
+
+  tr:nth-child(1), tr:nth-child(2), tr:nth-child(3) {
+    background: $success-bg;
+
+    td:last-child {
+      font-weight: bold;
+    }
+  }
+}
+
 // 11. Spending proposals votes
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
