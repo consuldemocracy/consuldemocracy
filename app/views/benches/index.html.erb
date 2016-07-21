@@ -12,7 +12,7 @@
       <%= render "shared/back_link" %>
 
       <h1 class="margin-bottom"><%= t("pages.processes.index.process_7_title") %></h1>
-      <h2>Participa hasta el <u>27 de julio</u>.<br>Selecciona el diseño de banco que más te guste.</h2>
+      <p>Hasta el 27 de julio, la ciudadanía formó parte del jurado que está decidiendo cómo serán los nuevos bancos, tras un concurso público abierto entre el Área de Desarrollo Urbano Sostenible y el Colegio de Arquitectos de Madrid (COAM).</hp>
       <div class="small-12 medium-4">
         <%= link_to "Más información",
                     "https://diario.madrid.es/blog/2016/07/20/participa-en-la-eleccion-del-diseno-de-los-bancos-de-madrid/",
@@ -32,62 +32,27 @@
   </div>
 <% end %>
 
-<div class="row" data-equalizer>
-  <%= render @benches %>
-</div>
-
-<div class="row">
-  <div class="small-12 column">
-    <h3 class="margin-bottom">Selecciona el proyecto que quieres votar</h3>
-
-    <%= form_tag vote_benches_path do %>
-      <% @benches.in_groups_of(4).each do |benches| %>
-        <div class="small-12 medium-4 column">
-          <% benches.compact.each do |bench| %>
-            <label>
-              <%= radio_button_tag("id", bench.id, @bench.try(:id) == bench.id) %>
-              <span><%= bench.name %></span>
-            </label>
-          <% end %>
-        </div>
-      <% end %>
-
-      <% if user_signed_in? %>
-        <% if current_user.level_two_or_three_verified? %>
-          <div class="row">
-            <div class="small-12 medium-4 column end text-center">
-              <input type="submit" value="Enviar voto" class="button expanded margin-top">
-            </div>
-          </div>
-        <% else %>
-          <div class="row">
-            <div class="small-12 column">
-              <div class="callout warning">
-                <%= t("benches.index.verified_only",
-                    verify_account: link_to(t("benches.index.verify_account"), verification_path )).html_safe %>
-              </div>
-            </div>
-          </div>
-        <% end %>
-      <% else %>
-        <div class="row">
-          <div class="small-12 column">
-            <div class="callout primary">
-              <%= t("benches.index.not_logged_in",
-                  signin: link_to(t("benches.index.signin"), new_user_session_path),
-                  signup: link_to(t("benches.index.signup"), new_user_registration_path)).html_safe %>
-            </div>
-          </div>
-        </div>
-      <% end %>
-    <% end %>
-  </div>
-</div>
-
-<div class="row">
+<div class="row margin-top">
   <div class="small-12 medium-9 column">
-    <p>* Los tres bancos más votados obtendrán 3, 2 y 1 punto respectivamente, que se sumarán a los puntos del jurado para la selección final. Puedes <%= link_to "consultar toda la información", "http://www.coam.org/media/Default%20Files/servicios/concursos/concursos_ocam/2015/bancos-para-compartir/160310_pliego_administrativo.pdf", target: "_blank", title: t("shared.target_blank_html") %> sobre el jurado y el proceso.
+    <h2>Resultados de la votación</h2>
+    <p>Los tres bancos más votados han obtenido 3, 2 y 1 punto respectivamente, que se sumarán a los puntos del jurado para la selección final. Puedes <%= link_to "consultar toda la información", "http://www.coam.org/media/Default%20Files/servicios/concursos/concursos_ocam/2015/bancos-para-compartir/160310_pliego_administrativo.pdf", target: "_blank", title: t("shared.target_blank_html") %> sobre el jurado y el proceso.
     </p>
   </div>
 </div>
 
+<div class="row">
+  <div class="small-12 column">
+    <table>
+      <thead>
+        <tr>
+          <th colspan="2">Proyecto</th>
+          <th>Dossier</th>
+          <th class="text-center">Número de votos</th>
+        </tr>
+      </thead>
+      <tbody>
+        <%= render @benches %>
+      </tbody>
+    </table>
+  </div>
+</div>
