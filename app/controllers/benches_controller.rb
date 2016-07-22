@@ -2,7 +2,7 @@ class BenchesController < ApplicationController
   skip_authorization_check
 
   def index
-    @benches = Bench.all
+    @benches = Bench.all.order(cached_votes_up: :desc)
     load_vote
   end
 
