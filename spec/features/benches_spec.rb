@@ -16,9 +16,4 @@ feature 'Town Planning - Benches' do
     expect(page).to_not have_content "Enviar voto"
   end
 
-  scenario "Permissions user not logged in" do
-    visit town_planning_thanks_path
-    expect(current_path).to eq(town_planning_path)
-  end
-
 end
