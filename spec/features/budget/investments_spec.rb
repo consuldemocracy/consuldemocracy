@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-feature 'Budget Investments' do
+xfeature 'Budget Investments' do
 
   let(:author) { create(:user, :level_two, username: 'Isabel') }
   let(:budget) { create(:budget) }
