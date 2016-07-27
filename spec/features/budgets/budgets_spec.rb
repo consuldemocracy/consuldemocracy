@@ -2,7 +2,7 @@ require 'rails_helper'
 
 feature 'Budgets' do
 
-  scenario "Index" do
+  xscenario "Index" do
     budget1 = create(:budget)
     budget2 = create(:budget)
     budget3 = create(:budget)
