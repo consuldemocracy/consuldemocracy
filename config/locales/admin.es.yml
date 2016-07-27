@@ -9,6 +9,37 @@ es:
       restore: Volver a mostrar
       mark_featured: Destacar
       unmark_featured: Quitar destacado
+    banners:
+      index:
+        title: Banners
+        create: Crear un banner
+        edit: Editar banner
+        delete: Eliminar banner
+        filters:
+          all: Todos
+          with_active: Activos
+          with_inactive: Inactivos
+      banner:
+        title: Título
+        description:  Descripción
+        target_url:  Enlace
+        style: Estilo
+        image: Imagen
+        post_started_at: Inicio de publicación
+        post_ended_at: Fin de publicación
+      edit:
+        back: Volver
+        editing: Editar el banner
+        form:
+          submit_button: Guardar Cambios
+      errors:
+        form:
+          error:
+            one: "error impidió guardar el banner"
+            other: "errores impidieron guardar el banner."
+      new:
+        back: Volver
+        creating: Crear banner
     activity:
       show:
         action: Acción
@@ -17,6 +48,7 @@ es:
           hide: Ocultado
           restore: Restaurado
         by: Moderado por
+        content: Contenido
         filter: Mostrar
         filters:
           all: Todo
@@ -38,6 +70,7 @@ es:
         title: Comentarios ocultos
     dashboard:
       index:
+        back: Volver a
         title: Administración
     debates:
       index:
@@ -59,6 +92,8 @@ es:
         user_not_found: Usuario no encontrado
     menu:
       activity: Actividad de moderadores
+      admin: Menú de administración
+      banner: Gestionar banners
       debate_topics: Temas de debate
       hidden_comments: Comentarios ocultos
       hidden_debates: Debates ocultos
@@ -105,7 +140,6 @@ es:
         cost: Coste total
     officials:
       edit:
-        back: Volver
         destroy: Eliminar condición de 'Cargo Público'
         title: 'Cargos Públicos: Editar usuario'
       flash:
@@ -131,9 +165,9 @@ es:
           pending: Pendientes
           rejected: Rechazadas
           verified: Verificadas
-        hidden_count:
-          one: Hay además una organización sin usuario o con el usuario bloqueado
-          other: Hay %{count} organizaciones sin usuario o con el usuario bloqueado
+        hidden_count_html:
+          one: Hay además <strong>una organización</strong> sin usuario o con el usuario bloqueado.
+          other: Hay <strong>%{count} organizaciones</strong> sin usuario o con el usuario bloqueado.
         reject: Rechazar
         rejected: Rechazada
         search: Buscar
@@ -150,11 +184,13 @@ es:
           all: Todas
           with_confirmed_hide: Confirmadas
           without_confirmed_hide: Pendientes
-        title: Propuestas ocultos
+        title: Propuestas ocultas
     settings:
       flash:
         updated: Valor actualizado
       index:
+        banners: Banner style
+        banner_imgs: Banner images
         title: Configuración global
         update_setting: Actualizar
         feature_flags: Funcionalidades
@@ -250,6 +286,16 @@ es:
           votes: Votos
         spending_proposals_title: Propuestas de inversión
         visits_title: Visitas
+        direct_messages: Mensajes directos
+        proposal_notifications: Notificaciones de propuestas
+      direct_messages:
+        title: Mensajes directos
+        total: Total
+        users_who_have_sent_message: Usuarios que han enviado un mensaje privado
+      proposal_notifications:
+        title: Notificaciones de propuestas
+        total: Total
+        proposals_with_notifications: Propuestas con notificaciones
     tags:
       create: Crear Tema
       destroy: Eliminar Tema
@@ -269,11 +315,10 @@ es:
           without_confirmed_hide: Pendientes
         title: Usuarios bloqueados
       show:
-        back: Volver
         email: 'Email:'
         hidden_at: 'Bloqueado:'
         registered_at: 'Fecha de alta:'
-        title: Actividad del usuario %{user}
+        title: Actividad del usuario (%{user})
     verifications:
       index:
         phone_not_given: No ha dado su teléfono

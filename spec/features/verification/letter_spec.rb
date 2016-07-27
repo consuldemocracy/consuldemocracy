@@ -26,7 +26,7 @@ feature 'Verify Letter' do
     login_as(user)
     visit new_letter_path
 
-    expect(page).to have_link "Citizen Support Offices", href: "http://www.madrid.es/portales/munimadrid/es/Inicio/El-Ayuntamiento/Atencion-al-ciudadano/Oficinas-de-Atencion-al-Ciudadano?vgnextfmt=default&vgnextchannel=5b99cde2e09a4310VgnVCM1000000b205a0aRCRD"
+    expect(page).to have_link "Citizen Support Offices", href: "http://offices.consul"
   end
 
   scenario "Deny access unless verified residence" do

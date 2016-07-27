@@ -1,7 +1,7 @@
 # coding: utf-8
 # Default admin user (change password after first deploy to a server!)
 if Administrator.count == 0 && !Rails.env.test?
-  admin = User.create!(username: 'admin', email: 'admin@madrid.es', password: '12345678', password_confirmation: '12345678', confirmed_at: Time.now, terms_of_service: "1")
+  admin = User.create!(username: 'admin', email: 'admin@consul.dev', password: '12345678', password_confirmation: '12345678', confirmed_at: Time.now, terms_of_service: "1")
   admin.create_administrator
 end
 
@@ -65,3 +65,17 @@ Setting['feature.budgets'] = true
 
 # Spending proposals feature flags
 Setting['feature.spending_proposal_features.voting_allowed'] = true
+
+# Banner styles
+Setting['banner-style.banner-style-one']   = "Banner style 1"
+Setting['banner-style.banner-style-two']   = "Banner style 2"
+Setting['banner-style.banner-style-three'] = "Banner style 3"
+
+# Banner images
+Setting['banner-img.banner-img-one']   = "Banner image 1"
+Setting['banner-img.banner-img-two']   = "Banner image 2"
+Setting['banner-img.banner-img-three'] = "Banner image 3"
+
+# Proposal notifications
+Setting['proposal_notification_minimum_interval_in_days'] = 3
+Setting['direct_message_max_per_day'] = 3

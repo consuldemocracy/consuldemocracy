@@ -1,6 +1,6 @@
 module CommonActions
 
-  def sign_up(email='manuela@madrid.es', password='judgementday')
+  def sign_up(email='manuela@consul.dev', password='judgementday')
     visit '/'
 
     click_link 'Register'
@@ -51,13 +51,13 @@ module CommonActions
   end
 
   def reset_password
-    create(:user, email: 'manuela@madrid.es')
+    create(:user, email: 'manuela@consul.dev')
 
     visit '/'
     click_link 'Sign in'
     click_link 'Forgotten your password?'
 
-    fill_in 'user_email', with: 'manuela@madrid.es'
+    fill_in 'user_email', with: 'manuela@consul.dev'
     click_button 'Send instructions'
   end
 
@@ -194,6 +194,55 @@ module CommonActions
 
   def tag_names(tag_cloud)
     tag_cloud.tags.map(&:name)
+  end
+
+  def create_proposal_notification(proposal)
+    login_as(proposal.author)
+    visit root_path
+
+    click_link "My activity"
+
+    within("#proposal_#{proposal.id}") do
+      click_link "Send notification"
+    end
+
+    fill_in 'proposal_notification_title', with: "Thank you for supporting my proposal #{proposal.title}"
+    fill_in 'proposal_notification_body', with: "Please share it with others so we can make it happen! #{proposal.summary}"
+    click_button "Send message"
+
+    expect(page).to have_content "Your message has been sent correctly."
+    Notification.last
+  end
+
+  def create_direct_message(sender, receiver)
+    login_as(sender)
+    visit user_path(receiver)
+
+    click_link "Send private message"
+
+    expect(page).to have_content "Send private message to #{receiver.name}"
+
+    fill_in 'direct_message_title', with: "Hey #{receiver.name}!"
+    fill_in 'direct_message_body',  with: "How are you doing? This is #{sender.name}"
+
+    click_button "Send message"
+
+    expect(page).to have_content "You message has been sent successfully."
+    DirectMessage.last
+  end
+
+  def expect_badge_for(resource_name, resource)
+    within("##{resource_name}_#{resource.id}") do
+      expect(page).to have_css ".label.round"
+      expect(page).to have_content "Employee"
+    end
+  end
+
+  def expect_no_badge_for(resource_name, resource)
+    within("##{resource_name}_#{resource.id}") do
+      expect(page).to_not have_css ".label.round"
+      expect(page).to_not have_content "Employee"
+    end
   end
 
   def add_to_ballot(budget_investment)

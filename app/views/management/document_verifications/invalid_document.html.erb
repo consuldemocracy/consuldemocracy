@@ -12,6 +12,5 @@
 
 <p>
   <%= t("management.document_verifications.has_no_account_html",
-      link: link_to('http://decide.madrid.es', 'http://decide.madrid.es'),
-      target: "_blank") %>
+      link: link_to(t('management.document_verifications.link'), root_path, target: "_blank")).html_safe %>
 </p>

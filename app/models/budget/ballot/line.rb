@@ -2,11 +2,15 @@ class Budget
   class Ballot
     class Line < ActiveRecord::Base
       belongs_to :ballot
+      belongs_to :budget
+      belongs_to :group
+      belongs_to :heading
       belongs_to :investment
 
       validate :insufficient_funds
       validate :different_geozone, :if => :district_proposal?
       validate :unfeasible
+      #needed? validates :ballot_id, :budget_id, :group_id, :heading_id, :investment_id, presence: true
 
       def insufficient_funds
         errors.add(:money, "") if ballot.amount_available(investment.heading) < investment.price.to_i
@@ -23,7 +27,6 @@ class Budget
       def heading_proposal?
         investment.heading_id.present?
       end
-
     end
   end
 end

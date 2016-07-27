@@ -118,13 +118,13 @@ feature 'Commenting debates' do
   end
 
   scenario 'Sanitizes comment body for security' do
-    create :comment, commentable: debate, body: "<script>alert('hola')</script> <a href=\"javascript:alert('sorpresa!')\">click me<a/> http://madrid.es"
+    create :comment, commentable: debate, body: "<script>alert('hola')</script> <a href=\"javascript:alert('sorpresa!')\">click me<a/> http://www.url.com"
 
     visit debate_path(debate)
 
     within first('.comment') do
-      expect(page).to have_content "click me http://madrid.es"
-      expect(page).to have_link('http://madrid.es', href: 'http://madrid.es')
+      expect(page).to have_content "click me http://www.url.com"
+      expect(page).to have_link('http://www.url.com', href: 'http://www.url.com')
       expect(page).not_to have_link('click me')
     end
   end

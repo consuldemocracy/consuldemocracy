@@ -66,7 +66,7 @@ describe Budget::Investment do
   end
 
   describe "by_admin" do
-    it "should return spending investments assigned to specific administrator" do
+    it "should return investments assigned to specific administrator" do
       investment1 = create(:budget_investment, administrator_id: 33)
       create(:budget_investment)
 
@@ -78,7 +78,7 @@ describe Budget::Investment do
   end
 
   describe "by_valuator" do
-    it "should return spending proposals assigned to specific valuator" do
+    it "should return investments assigned to specific valuator" do
       investment1 = create(:budget_investment)
       investment2 = create(:budget_investment)
       investment3 = create(:budget_investment)
@@ -99,7 +99,7 @@ describe Budget::Investment do
 
   describe "scopes" do
     describe "valuation_open" do
-      it "should return all spending proposals with false valuation_finished" do
+      it "should return all investments with false valuation_finished" do
         investment1 = create(:budget_investment, valuation_finished: true)
         investment2 = create(:budget_investment)
 
@@ -111,7 +111,7 @@ describe Budget::Investment do
     end
 
     describe "without_admin" do
-      it "should return all open spending proposals without assigned admin" do
+      it "should return all open investments without assigned admin" do
         investment1 = create(:budget_investment, valuation_finished: true)
         investment2 = create(:budget_investment, administrator: create(:administrator))
         investment3 = create(:budget_investment)
@@ -124,7 +124,7 @@ describe Budget::Investment do
     end
 
     describe "managed" do
-      it "should return all open spending proposals with assigned admin but without assigned valuators" do
+      it "should return all open investments with assigned admin but without assigned valuators" do
         investment1 = create(:budget_investment, administrator: create(:administrator))
         investment2 = create(:budget_investment, administrator: create(:administrator), valuation_finished: true)
         investment3 = create(:budget_investment, administrator: create(:administrator))
@@ -138,7 +138,7 @@ describe Budget::Investment do
     end
 
     describe "valuating" do
-      it "should return all spending proposals with assigned valuator but valuation not finished" do
+      it "should return all investments with assigned valuator but valuation not finished" do
         investment1 = create(:budget_investment)
         investment2 = create(:budget_investment)
         investment3 = create(:budget_investment, valuation_finished: true)
@@ -154,7 +154,7 @@ describe Budget::Investment do
     end
 
     describe "valuation_finished" do
-      it "should return all spending proposals with valuation finished" do
+      it "should return all investments with valuation finished" do
         investment1 = create(:budget_investment)
         investment2 = create(:budget_investment)
         investment3 = create(:budget_investment, valuation_finished: true)
@@ -170,7 +170,7 @@ describe Budget::Investment do
     end
 
     describe "feasible" do
-      it "should return all feasible spending proposals" do
+      it "should return all feasible investments" do
         feasible_investment = create(:budget_investment, :feasible)
         create(:budget_investment)
 
@@ -179,7 +179,7 @@ describe Budget::Investment do
     end
 
     describe "unfeasible" do
-      it "should return all unfeasible spending proposals" do
+      it "should return all unfeasible investments" do
         unfeasible_investment = create(:budget_investment, :unfeasible)
         create(:budget_investment, :feasible)
 
@@ -190,38 +190,33 @@ describe Budget::Investment do
 
   describe 'Permissions' do
     let(:budget)      { create(:budget) }
-    let(:heading)     { create(:budget_heading, budget: budget) }
+    let(:group)       { create(:budget_group, budget: budget) }
+    let(:heading)     { create(:budget_heading, group: group) }
     let(:user)        { create(:user, :level_two) }
     let(:luser)       { create(:user) }
-    let(:city_sp)     { create(:budget_investment, budget: budget) }
-    let(:district_sp) { create(:budget_investment, budget: budget, heading: heading) }
+    let(:district_sp) { create(:budget_investment, heading: heading) }
 
     describe '#reason_for_not_being_selectable_by' do
       it "rejects not logged in users" do
-        expect(city_sp.reason_for_not_being_selectable_by(nil)).to eq(:not_logged_in)
         expect(district_sp.reason_for_not_being_selectable_by(nil)).to eq(:not_logged_in)
       end
 
       it "rejects not verified users" do
-        expect(city_sp.reason_for_not_being_selectable_by(luser)).to eq(:not_verified)
         expect(district_sp.reason_for_not_being_selectable_by(luser)).to eq(:not_verified)
       end
 
       it "rejects organizations" do
         create(:organization, user: user)
-        expect(city_sp.reason_for_not_being_selectable_by(user)).to eq(:organization)
         expect(district_sp.reason_for_not_being_selectable_by(user)).to eq(:organization)
       end
 
       it "rejects selections when selecting is not allowed (via admin setting)" do
         budget.phase = "on_hold"
-        expect(city_sp.reason_for_not_being_selectable_by(user)).to eq(:no_selecting_allowed)
         expect(district_sp.reason_for_not_being_selectable_by(user)).to eq(:no_selecting_allowed)
       end
 
       it "accepts valid selections when selecting is allowed" do
         budget.phase = "selecting"
-        expect(city_sp.reason_for_not_being_selectable_by(user)).to be_nil
         expect(district_sp.reason_for_not_being_selectable_by(user)).to be_nil
       end
     end
@@ -274,7 +269,9 @@ describe Budget::Investment do
   describe "total votes" do
     it "takes into account physical votes in addition to web votes" do
       b = create(:budget, :selecting)
-      sp = create(:budget_investment, budget: b)
+      g = create(:budget_group, budget: b)
+      h = create(:budget_heading, group: g)
+      sp = create(:budget_investment, heading: h)
 
       sp.register_selection(create(:user, :level_two))
       expect(sp.total_votes).to eq(1)
@@ -286,12 +283,12 @@ describe Budget::Investment do
 
   describe "#with_supports" do
     it "should return proposals with supports" do
-      sp1 = create(:budget_investment)
-      sp2 = create(:budget_investment)
-      create(:vote, votable: sp1)
+      inv1 = create(:budget_investment)
+      inv2 = create(:budget_investment)
+      create(:vote, votable: inv1)
 
-      expect(Budget::Investment.with_supports).to include(sp1)
-      expect(Budget::Investment.with_supports).to_not include(sp2)
+      expect(Budget::Investment.with_supports).to include(inv1)
+      expect(Budget::Investment.with_supports).to_not include(inv2)
     end
   end
 
@@ -299,69 +296,67 @@ describe Budget::Investment do
 
     describe 'Permissions' do
       let(:budget)      { create(:budget) }
-      let(:heading)     { create(:budget_heading, budget: budget) }
+      let(:group)       { create(:budget_group, budget: budget) }
+      let(:heading)     { create(:budget_heading, group: group) }
       let(:user)        { create(:user, :level_two) }
       let(:luser)       { create(:user) }
       let(:ballot)      { create(:budget_ballot, budget: budget) }
-      let(:city_sp)     { create(:budget_investment, budget: budget) }
-      let(:district_sp) { create(:budget_investment, budget: budget, heading: heading) }
+      let(:investment)  { create(:budget_investment, heading: heading) }
 
       describe '#reason_for_not_being_ballotable_by' do
         it "rejects not logged in users" do
-          expect(city_sp.reason_for_not_being_ballotable_by(nil, ballot)).to eq(:not_logged_in)
-          expect(district_sp.reason_for_not_being_ballotable_by(nil, ballot)).to eq(:not_logged_in)
+          expect(investment.reason_for_not_being_ballotable_by(nil, ballot)).to eq(:not_logged_in)
         end
 
         it "rejects not verified users" do
-          expect(city_sp.reason_for_not_being_ballotable_by(luser, ballot)).to eq(:not_verified)
-          expect(district_sp.reason_for_not_being_ballotable_by(luser, ballot)).to eq(:not_verified)
+          expect(investment.reason_for_not_being_ballotable_by(luser, ballot)).to eq(:not_verified)
         end
 
         it "rejects organizations" do
           create(:organization, user: user)
-          expect(city_sp.reason_for_not_being_ballotable_by(user, ballot)).to eq(:organization)
-          expect(district_sp.reason_for_not_being_ballotable_by(user, ballot)).to eq(:organization)
+          expect(investment.reason_for_not_being_ballotable_by(user, ballot)).to eq(:organization)
         end
 
         it "rejects votes when voting is not allowed (via admin setting)" do
           budget.phase = "on_hold"
-          expect(city_sp.reason_for_not_being_ballotable_by(user, ballot)).to eq(:no_ballots_allowed)
-          expect(district_sp.reason_for_not_being_ballotable_by(user, ballot)).to eq(:no_ballots_allowed)
+          expect(investment.reason_for_not_being_ballotable_by(user, ballot)).to eq(:no_ballots_allowed)
         end
 
         it "accepts valid ballots when voting is allowed" do
           budget.phase = "balloting"
-          expect(city_sp.reason_for_not_being_ballotable_by(user, ballot)).to be_nil
-          expect(district_sp.reason_for_not_being_ballotable_by(user, ballot)).to be_nil
+          expect(investment.reason_for_not_being_ballotable_by(user, ballot)).to be_nil
         end
 
-        it "accepts valid district selections" do
+        it "accepts valid selections" do
           budget.phase = "selecting"
-          expect(district_sp.reason_for_not_being_selectable_by(user)).to be_nil
-          ballot.heading_id = heading.id
-          expect(district_sp.reason_for_not_being_selectable_by(user)).to be_nil
+          expect(investment.reason_for_not_being_selectable_by(user)).to be_nil
         end
 
         it "rejects users with different headings" do
           budget.phase = "balloting"
-          california = create(:budget_heading, budget: budget)
-          new_york = create(:budget_heading, budget: budget)
+          group = create(:budget_group, budget: budget)
+          california = create(:budget_heading, group: group)
+          new_york = create(:budget_heading, group: group)
 
-          sp1 = create(:budget_investment, :feasible, heading: california, budget: budget)
-          sp2 = create(:budget_investment, :feasible, heading: new_york, budget: budget)
-          b = create(:budget_ballot, user: user, heading: california, investments: [sp1])
+          inv1 = create(:budget_investment, :feasible, heading: california)
+          inv2 = create(:budget_investment, :feasible, heading: new_york)
+          b = create(:budget_ballot, user: user, budget: budget)
+          b.add_investment inv1
 
-          expect(sp2.reason_for_not_being_ballotable_by(user, b)).to eq(:different_heading_assigned)
+          expect(inv2.reason_for_not_being_ballotable_by(user, b)).to eq(:different_heading_assigned)
         end
 
         it "rejects proposals with price higher than current available money" do
           budget.phase = "balloting"
-          carabanchel = create(:budget_heading, budget: budget, price: 35)
-          sp1 = create(:budget_investment, :feasible, heading: carabanchel, price: 30, budget: budget)
-          sp2 = create(:budget_investment, :feasible, heading: carabanchel, price: 10, budget: budget)
-          ballot = create(:budget_ballot, user: user, heading: carabanchel, investments: [sp1])
+          distritos = create(:budget_group, budget: budget)
+          carabanchel = create(:budget_heading, group: distritos, price: 35)
+          inv1 = create(:budget_investment, :feasible, heading: carabanchel, price: 30)
+          inv2 = create(:budget_investment, :feasible, heading: carabanchel, price: 10)
 
-          expect(sp2.reason_for_not_being_ballotable_by(user, ballot)).to eq(:not_enough_money)
+          ballot = create(:budget_ballot, user: user, budget: budget)
+          ballot.add_investment inv1
+
+          expect(inv2.reason_for_not_being_ballotable_by(user, ballot)).to eq(:not_enough_money)
         end
 
       end

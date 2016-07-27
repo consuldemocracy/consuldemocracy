@@ -28,7 +28,7 @@ feature 'Registration form' do
     visit new_user_registration_path(use_redeemable_code: 'true')
 
     fill_in 'user_username',              with: "NewUserWithCode77"
-    fill_in 'user_email',                 with: "new@madrid.es"
+    fill_in 'user_email',                 with: "new@consul.dev"
     fill_in 'user_password',              with: "password"
     fill_in 'user_password_confirmation', with: "password"
     fill_in 'user_redeemable_code',       with: "            "

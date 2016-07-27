@@ -4,7 +4,7 @@ feature 'Residence' do
 
   background { create(:geozone) }
 
-  scenario 'Verify resident in Madrid' do
+  scenario 'Verify resident' do
     user = create(:user)
     login_as(user)
 
@@ -34,7 +34,7 @@ feature 'Residence' do
     expect(page).to have_content /\d errors? prevented the verification of your residence/
   end
 
-  scenario 'Error on postal code not in Madrid census' do
+  scenario 'Error on postal code not in census' do
     user = create(:user)
     login_as(user)
 
@@ -51,10 +51,10 @@ feature 'Residence' do
 
     click_button 'Verify residence'
 
-    expect(page).to have_content 'In order to be verified, you must be registered in the municipality of Madrid'
+    expect(page).to have_content 'In order to be verified, you must be registered'
   end
 
-  scenario 'Error on Madrid census' do
+  scenario 'Error on census' do
     user = create(:user)
     login_as(user)
 
@@ -71,7 +71,7 @@ feature 'Residence' do
 
     click_button 'Verify residence'
 
-    expect(page).to have_content 'The Madrid Census was unable to verify your information'
+    expect(page).to have_content 'The Census was unable to verify your information'
   end
 
   scenario '5 tries allowed' do
@@ -91,7 +91,7 @@ feature 'Residence' do
       check 'residence_terms_of_service'
 
       click_button 'Verify residence'
-      expect(page).to have_content 'The Madrid Census was unable to verify your information'
+      expect(page).to have_content 'The Census was unable to verify your information'
     end
 
     click_button 'Verify residence'

@@ -14,21 +14,41 @@
   </head>
 
   <body class="admin">
-    <%= render 'layouts/admin_header' %>
+    <div class="off-canvas-wrapper">
+      <div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
+        <div class="off-canvas position-left" id="offCanvas" data-off-canvas>
 
-    <div class="row expanded">
-      <main>
-        <div class="small-12 medium-3 column">
-          <%= side_menu %>
+          <button class="close-button" aria-label="Close menu" type="button" data-close>
+            <span aria-hidden="true">&times;</span>
+          </button>
+
+          <div class="show-for-small-only">
+            <%= side_menu %>
+          </div>
         </div>
 
-        <div class="admin-content small-12 medium-9 column">
+        <div class="off-canvas-content" data-off-canvas-content>
+          <%= render 'layouts/admin_header' %>
 
-          <%= render 'layouts/flash' %>
+          <main class="no-margin-top row no-max-width collapse">
+            <div class="small-12 medium-3 column">
 
-          <%= yield %>
+              <div class="show-for-small-only">
+                <button type="button" class="button hollow expanded" data-toggle="offCanvas"><%= t("admin.menu.admin") %></button>
+              </div>
+
+              <div id="side_menu" class="hide-for-small-only">
+                <%= side_menu %>
+              </div>
+            </div>
+
+            <div class="admin-content small-12 medium-9 column">
+              <%= render 'layouts/flash' %>
+              <%= yield %>
+            </div>
+          </main>
         </div>
-      </main>
+      </div>
     </div>
   </body>
 </html>

@@ -12,9 +12,16 @@ describe "Abilities::Common" do
   let(:accepting_budget) { create(:budget, phase: 'accepting') }
   let(:selecting_budget) { create(:budget, phase: 'selecting') }
   let(:balloting_budget) { create(:budget, phase: 'balloting') }
-  let(:investment_in_accepting_budget) { create(:budget_investment, budget: accepting_budget) }
-  let(:investment_in_selecting_budget) { create(:budget_investment, budget: selecting_budget) }
-  let(:investment_in_balloting_budget) { create(:budget_investment, budget: balloting_budget) }
+  let(:accepting_budget_group) { create(:budget_group, budget: accepting_budget) }
+  let(:selecting_budget_group) { create(:budget_group, budget: selecting_budget) }
+  let(:balloting_budget_group) { create(:budget_group, budget: balloting_budget) }
+  let(:accepting_budget_heading) { create(:budget_heading, group: accepting_budget_group) }
+  let(:selecting_budget_heading) { create(:budget_heading, group: selecting_budget_group) }
+  let(:balloting_budget_heading) { create(:budget_heading, group: balloting_budget_group) }
+
+  let(:investment_in_accepting_budget) { create(:budget_investment, heading: accepting_budget_heading) }
+  let(:investment_in_selecting_budget) { create(:budget_investment, heading: selecting_budget_heading) }
+  let(:investment_in_balloting_budget) { create(:budget_investment, heading: balloting_budget_heading) }
   let(:ballot_in_accepting_budget) { create(:budget_ballot, budget: accepting_budget) }
   let(:ballot_in_selecting_budget) { create(:budget_ballot, budget: selecting_budget) }
   let(:ballot_in_balloting_budget) { create(:budget_ballot, budget: balloting_budget) }
@@ -45,6 +52,10 @@ describe "Abilities::Common" do
   it { should_not be_able_to(:comment_as_moderator, debate) }
   it { should_not be_able_to(:comment_as_administrator, proposal) }
   it { should_not be_able_to(:comment_as_moderator, proposal) }
+
+  it { should be_able_to(:new, DirectMessage) }
+  it { should_not be_able_to(:create, DirectMessage) }
+  it { should_not be_able_to(:show, DirectMessage) }
 
   describe 'flagging content' do
     it { should be_able_to(:flag, debate) }
@@ -94,6 +105,7 @@ describe "Abilities::Common" do
 
   describe "when level 2 verified" do
     let(:own_spending_proposal) { create(:spending_proposal, author: user) }
+    let(:own_direct_message) { create(:direct_message, sender: user) }
     before{ user.update(residence_verified_at: Time.now, confirmed_phone: "1") }
 
     it { should be_able_to(:vote, Proposal) }
@@ -115,10 +127,15 @@ describe "Abilities::Common" do
     it { should_not be_able_to(:create, ballot_in_selecting_budget) }
     it { should be_able_to(:create, ballot_in_balloting_budget) }
 
+    it { should be_able_to(:new, DirectMessage) }
+    it { should be_able_to(:create, DirectMessage) }
+    it { should be_able_to(:show, own_direct_message) }
+    it { should_not be_able_to(:show, create(:direct_message)) }
   end
 
   describe "when level 3 verified" do
     let(:own_spending_proposal) { create(:spending_proposal, author: user) }
+    let(:own_direct_message) { create(:direct_message, sender: user) }
     before{ user.update(verified_at: Time.now) }
 
     it { should be_able_to(:vote, Proposal) }
@@ -127,5 +144,10 @@ describe "Abilities::Common" do
     it { should be_able_to(:create, SpendingProposal) }
     it { should_not be_able_to(:destroy, create(:spending_proposal)) }
     it { should_not be_able_to(:destroy, own_spending_proposal) }
+
+    it { should be_able_to(:new, DirectMessage) }
+    it { should be_able_to(:create, DirectMessage) }
+    it { should be_able_to(:show, own_direct_message) }
+    it { should_not be_able_to(:show, create(:direct_message)) }
   end
 end

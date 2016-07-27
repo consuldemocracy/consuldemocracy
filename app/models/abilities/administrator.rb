@@ -46,6 +46,8 @@ module Abilities
       can [:hide, :update], Budget::Investment
       can :valuate, Budget::Investment, budget: { valuating: true }
       can :create, Budget::ValuatorAssignment
+
+      can [:search, :edit, :update, :create, :index, :destroy], Banner
     end
   end
 end

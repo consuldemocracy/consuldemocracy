@@ -10,7 +10,6 @@ class Budget
     acts_as_paranoid column: :hidden_at
     include ActsAsParanoidAliases
 
-    belongs_to :budget
     belongs_to :author, -> { with_hidden }, class_name: 'User', foreign_key: 'author_id'
     belongs_to :heading
     belongs_to :administrator
@@ -22,6 +21,7 @@ class Budget
     validates :title, presence: true
     validates :author, presence: true
     validates :description, presence: true
+    validates :heading_id, presence: true
     validates_presence_of :unfeasibility_explanation, if: :unfeasibility_explanation_required?
 
     validates :title, length: { in: 4 .. Budget::Investment.title_max_length }
@@ -44,15 +44,11 @@ class Budget
     scope :with_supports,          -> { where('cached_votes_up > 0') }
 
     scope :by_heading,  -> (heading_id)  { where(heading_id: heading_id) }
-    scope :by_budget,   -> (budget_id)   { where(budget_id: budget_id) }
     scope :by_admin,    -> (admin_id)    { where(administrator_id: admin_id) }
     scope :by_tag,      -> (tag_name)    { tagged_with(tag_name) }
     scope :by_valuator, -> (valuator_id) { where("budget_valuator_assignments.valuator_id = ?", valuator_id).joins(:valuator_assignments) }
 
     scope :for_render,             -> { includes(heading: :geozone) }
-
-    scope :with_heading,           -> { where.not(heading_id: nil) }
-    scope :no_heading,             -> { where(heading_id: nil) }
 
     before_save :calculate_confidence_score
     before_validation :set_responsible_name
@@ -62,8 +58,7 @@ class Budget
     end
 
     def self.scoped_filter(params, current_filter)
-      budget = Budget.find!(params[:budget_id])
-      results = self.by_budget(params[:budget_id])
+      results = budget.investments
       if params[:max_for_no_heading].present? || params[:max_per_heading].present?
         results = limit_results(results, budget, params[:max_per_heading].to_i, params[:max_for_no_heading].to_i)
       end
@@ -119,6 +114,10 @@ class Budget
       where(heading_id: heading == 'all' ? nil : heading.presence)
     end
 
+    def budget
+      heading.group.budget
+    end
+
     def undecided?
       feasibility == "undecided"
     end
@@ -140,7 +139,7 @@ class Budget
     end
 
     def code
-      "B#{budget_id}I#{id}"
+      "B#{budget.id}I#{id}"
     end
 
     def reason_for_not_being_selectable_by(user)
@@ -152,7 +151,7 @@ class Budget
     def reason_for_not_being_ballotable_by(user, ballot)
       return permission_problem(user)    if permission_problem?(user)
       return :no_ballots_allowed         unless budget.balloting?
-      return :different_heading_assigned unless heading_id.blank? || ballot.blank? || heading_id == ballot.heading_id || ballot.heading_id.nil?
+      return :different_heading_assigned unless ballot.valid_heading?(heading)
       return :not_enough_money           if ballot.present? && !enough_money?(ballot)
     end
 

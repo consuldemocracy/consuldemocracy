@@ -44,24 +44,24 @@ def create_user(email, username = Faker::Name.name)
   User.create!(username: username, email: email, password: pwd, password_confirmation: pwd, confirmed_at: Time.now, terms_of_service: "1")
 end
 
-admin = create_user('admin@madrid.es', 'admin')
+admin = create_user('admin@consul.dev', 'admin')
 admin.create_administrator
 
-moderator = create_user('mod@madrid.es', 'mod')
+moderator = create_user('mod@consul.dev', 'mod')
 moderator.create_moderator
 
-valuator = create_user('valuator@madrid.es', 'valuator')
+valuator = create_user('valuator@consul.dev', 'valuator')
 valuator.create_valuator
 
-level_2 = create_user('leveltwo@madrid.es', 'level 2')
+level_2 = create_user('leveltwo@consul.dev', 'level 2')
 level_2.update(residence_verified_at: Time.now, confirmed_phone: Faker::PhoneNumber.phone_number, document_number: "2222222222", document_type: "1" )
 
-verified = create_user('verified@madrid.es', 'verified')
+verified = create_user('verified@consul.dev', 'verified')
 verified.update(residence_verified_at: Time.now, confirmed_phone: Faker::PhoneNumber.phone_number, document_type: "1", verified_at: Time.now, document_number: "3333333333")
 
 (1..10).each do |i|
   org_name = Faker::Company.name
-  org_user = create_user("org#{i}@madrid.es", org_name)
+  org_user = create_user("org#{i}@consul.dev", org_name)
   org_responsible_name = Faker::Name.name
   org = org_user.create_organization(name: org_name, responsible_name: org_responsible_name)
 
@@ -74,12 +74,12 @@ verified.update(residence_verified_at: Time.now, confirmed_phone: Faker::PhoneNu
 end
 
 (1..5).each do |i|
-  official = create_user("official#{i}@madrid.es")
+  official = create_user("official#{i}@consul.dev")
   official.update(official_level: i, official_position: "Official position #{i}")
 end
 
 (1..40).each do |i|
-  user = create_user("user#{i}@madrid.es")
+  user = create_user("user#{i}@consul.dev")
   level = [1,2,3].sample
   if level >= 2 then
     user.update(residence_verified_at: Time.now, confirmed_phone: Faker::PhoneNumber.phone_number, document_number: Faker::Number.number(10), document_type: "1" )
@@ -306,14 +306,18 @@ puts "Creating Budgets"
                           phase: %w{on_hold accepting selecting balloting finished}.sample,
                           valuating: [false, true].sample)
   puts budget.name
-  puts "    "
-  geozones = Geozone.reorder("RANDOM()").limit(10)
-  geozones.each do |geozone|
-    heading = budget.headings.create!(name: geozone.name,
-                                      geozone: geozone,
-                                      price: rand(1 .. 100) * 10000)
-    budget.headings << heading
-    print "heading.name "
+
+  (1..[1,2,3].sample).each do |i|
+    group = budget.groups.create!(name: Faker::StarWars.planet)
+
+    geozones = Geozone.reorder("RANDOM()").limit([2,5,6,7].sample)
+    geozones.each do |geozone|
+      group.headings << group.headings.create!(name: geozone.name,
+                                               geozone: geozone,
+                                               price: rand(1 .. 100) * 10000)
+
+    end
+    print "#{group.name} "
   end
   puts ""
 end
@@ -322,12 +326,11 @@ end
 puts "Creating Investments"
 tags = Faker::Lorem.words(10)
 (1..60).each do |i|
-  heading = [Budget::Heading.reorder("RANDOM()").first, nil].sample
+  heading = Budget::Heading.reorder("RANDOM()").first
 
   investment = Budget::Investment.create!(
     author: User.reorder("RANDOM()").first,
     heading: heading,
-    budget: heading.try(:budget) || Budget.reorder("RANDOM()").first,
     title: Faker::Lorem.sentence(3).truncate(60),
     external_url: Faker::Internet.url,
     description: "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>",
@@ -372,3 +375,21 @@ puts "Confirming hiding in debates, comments & proposals"
 Comment.only_hidden.flagged.reorder("RANDOM()").limit(10).each(&:confirm_hide)
 Debate.only_hidden.flagged.reorder("RANDOM()").limit(5).each(&:confirm_hide)
 Proposal.only_hidden.flagged.reorder("RANDOM()").limit(5).each(&:confirm_hide)
+
+puts "Creating banners"
+
+Proposal.last(3).each do |proposal|
+  title = Faker::Lorem.sentence(word_count = 3)
+  description = Faker::Lorem.sentence(word_count = 12)
+  banner = Banner.create!(title: title,
+                          description: description,
+                          style: ["banner-style banner-style-one", "banner-style banner-style-two",
+                                  "banner-style banner-style-three"].sample,
+                          image: ["banner-img banner-img-one", "banner-img banner-img-two",
+                                  "banner-img banner-img-three"].sample,
+                          target_url: Rails.application.routes.url_helpers.proposal_path(proposal),
+                          post_started_at: rand((Time.now - 1.week) .. (Time.now - 1.day)),
+                          post_ended_at:   rand((Time.now  - 1.day) .. (Time.now + 1.week)),
+                          created_at: rand((Time.now - 1.week) .. Time.now))
+  puts "    #{banner.title}"
+end

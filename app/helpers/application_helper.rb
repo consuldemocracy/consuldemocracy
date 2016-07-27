@@ -35,4 +35,9 @@ module ApplicationHelper
     }
     Redcarpet::Markdown.new(renderer, extensions).render(text).html_safe
   end
+
+  def author_of?(authorable, user)
+    return false if authorable.blank? || user.blank?
+    authorable.author_id == user.id
+  end
 end
