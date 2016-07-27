@@ -207,9 +207,7 @@ FactoryGirl.define do
   end
 
   factory :budget_group, class: 'Budget::Group' do
-    ### TMP HACK to associate existing budget to a group
-    budget { Budget.first }
-    ###
+    budget
     sequence(:name) { |n| "Group #{n}" }
   end
 

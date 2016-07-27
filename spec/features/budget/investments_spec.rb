@@ -1,13 +1,15 @@
 require 'rails_helper'
 
-xfeature 'Budget Investments' do
+feature 'Budget Investments' do
 
   let(:author) { create(:user, :level_two, username: 'Isabel') }
   let(:budget) { create(:budget) }
+  let(:group)  { create(:budget_group, budget: budget) }
 
   scenario 'Index' do
-    investments = [create(:budget_investment, budget: budget), create(:budget_investment, budget: budget), create(:budget_investment, :feasible, budget: budget)]
-    unfeasible_investment = create(:budget_investment, :unfeasible, budget: budget)
+    heading = create(:budget_heading, group: group)
+    investments = [create(:budget_investment, heading: heading), create(:budget_investment, heading: heading), create(:budget_investment, :feasible, heading: heading)]
+    unfeasible_investment = create(:budget_investment, :unfeasible, heading: heading)
 
     visit budget_investments_path(budget_id: budget.id)
 

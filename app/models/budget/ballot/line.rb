@@ -8,7 +8,7 @@ class Budget
       belongs_to :investment
 
       validate :insufficient_funds
-      validate :different_geozone, :if => :district_proposal?
+      #needed? validate :different_geozone, :if => :district_proposal?
       validate :unfeasible
       #needed? validates :ballot_id, :budget_id, :group_id, :heading_id, :investment_id, presence: true
 

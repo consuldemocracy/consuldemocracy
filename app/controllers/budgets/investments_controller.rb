@@ -82,7 +82,7 @@ module Budgets
           @filter_heading_name = @filter_heading.name
         end
 
-        investments = investments.by_heading(params[:heading_id].presence)
+        investments = investments.by_heading(params[:heading_id].presence || @budget.headings.first)
 
         if params[:unfeasible].present?
           investments = investments.unfeasible
