@@ -2,26 +2,18 @@ require 'rails_helper'
 
 feature 'Town Planning - Benches' do
 
-  scenario "Vote benches" do
+  scenario "Results published: Voting not allowed" do
     user = create(:user, :level_two)
     login_as(user)
 
-    bench1 = create(:bench)
-    bench2 = create(:bench)
+    bench1 = create(:bench, cached_votes_up: 5)
+    bench2 = create(:bench, cached_votes_up: 50)
 
     visit processes_path
-    click_link "Participa en la votación"
+    click_link "See the results"
 
-    choose "id_#{bench1.id}"
-    click_button "Enviar voto"
-
-    expect(page).to have_content "Tu voto ha sido recibido"
-    expect(page).to have_content "Has votado el proyecto: #{bench1.name}"
-  end
-
-  scenario "Permissions user not logged in" do
-    visit town_planning_thanks_path
-    expect(current_path).to eq(town_planning_path)
+    expect(bench2.name).to appear_before(bench1.name)
+    expect(page).to_not have_content "Enviar voto"
   end
 
 end
