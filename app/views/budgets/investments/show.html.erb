@@ -33,9 +33,9 @@
         </div>
       <% end %>
 
-      <% if @investment.unfeasible? && @investment.feasible_explanation.present? %>
+      <% if @investment.unfeasible? && @investment.unfeasibility_explanation.present? %>
         <h2><%= t('budget.investments.show.unfeasibility_explanation') %></h2>
-        <p><%= @investment.feasible_explanation %></p>
+        <p><%= @investment.unfeasibility_explanation %></p>
       <% end %>
 
       <% if @investment.feasible? && @investment.price_explanation.present? %>
