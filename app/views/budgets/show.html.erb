@@ -25,7 +25,7 @@
             <%= link_to t('budget.show.no_heading'), budget_investments_path(budget_id: @budget.id, heading_id: nil) %>
           </td>
           <td>
-            <%= format_price(@budget, @budget.price) %>
+            <%# format_price(@budget, @budget.price) %>
           </td>
         </tr>
         <% @budget.headings.each do |heading| %>
