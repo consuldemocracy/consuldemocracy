@@ -196,4 +196,9 @@ module CommonActions
     tag_cloud.tags.map(&:name)
   end
 
+  def add_to_ballot(budget_investment)
+    within("#budget_investment_#{budget_investment.id}") do
+      click_link "Spend money on this"#find('.add a').trigger('click')
+    end
+  end
 end
