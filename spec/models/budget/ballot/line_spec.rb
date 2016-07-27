@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe "Budget::Ballot::Line" do
+xdescribe "Budget::Ballot::Line" do
 
   let(:ballot_line) { build(:budget_ballot_line) }
 
