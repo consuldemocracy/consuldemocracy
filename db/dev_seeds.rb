@@ -301,7 +301,6 @@ puts "Creating Budgets"
 (1..10).each do |i|
   budget = Budget.create!(name: (Date.today.year - 10 + i).to_s,
                           description: "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>",
-                          price: rand(1 .. 100) * 100000,
                           currency_symbol: "€",
                           phase: %w{on_hold accepting selecting balloting finished}.sample,
                           valuating: [false, true].sample)
