@@ -84,12 +84,6 @@ Rails.application.routes.draw do
     end
   end
 
-  scope module: :budget do
-    resources :budgets do
-      resources :investments, only: [:index]
-    end
-  end
-
   resources :stats, only: [:index]
 
   resources :legislations, only: [:show]
