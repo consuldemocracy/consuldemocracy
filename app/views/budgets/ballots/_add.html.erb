@@ -7,10 +7,10 @@
     <%= link_to budget_ballot_lines_url(investment_id: investment.id,
                                         investments_ids: @ballot.investment_ids),
         class: "button button-support small expanded",
-        title: t('investments.investment.support_title'),
+        title: t('budget.investments.investment.support_title'),
         method: "post",
         remote: true do %>
-        <%= t("investments.investment.add") %>
+        <%= t("budget.investments.investment.add") %>
     <% end %>
   <% end %>
 </div>
