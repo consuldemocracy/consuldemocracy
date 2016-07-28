@@ -60,6 +60,13 @@ en:
           on_users: Users
         title: Moderator activity
         type: Type
+    budgets:
+      index:
+        title: Participatory budgets
+        new_link: Create new
+        filters:
+          open: Open
+          finished: Finished
     comments:
       index:
         filter: Filter
@@ -96,6 +103,7 @@ en:
       activity: Moderator activity
       admin: Admin menu
       banner: Manage banners
+      budgets: Participatory budgets
       debate_topics: Debate topics
       hidden_comments: Hidden comments
       hidden_debates: Hidden debates

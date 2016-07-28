@@ -58,6 +58,13 @@ es:
           on_users: Usuarios
         title: Actividad de los Moderadores
         type: Tipo
+    budgets:
+      index:
+        title: Presupuestos participativos
+        new_link: Crear nuevo
+        filters:
+          open: Abiertos
+          finished: Terminados
     comments:
       index:
         filter: Filtro
@@ -94,6 +101,7 @@ es:
       activity: Actividad de moderadores
       admin: Menú de administración
       banner: Gestionar banners
+      budgets: Presupuestos participativos
       debate_topics: Temas de debate
       hidden_comments: Comentarios ocultos
       hidden_debates: Debates ocultos
