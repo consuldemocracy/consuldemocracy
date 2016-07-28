@@ -65,6 +65,22 @@ es:
         filters:
           open: Abiertos
           finished: Terminados
+      new:
+        title: Nuevo presupuesto ciudadano
+        create: Crear presupuesto
+        name: Nombre del presupuesto
+        description: Descripción
+        phase: Fase
+        currency: Divisa
+        group: Nombre del grupo
+        add_group: Añadir nuevo grupo
+        heading: Nombre de la partida
+        add_heading: Añadir partida
+        save_heading: Guardar partida
+        no_heading: Este grupo no tiene ninguna partida asignada.
+        table_heading: Partida
+        table_amount: Cantidad
+        table_geozone: Ámbito de actuación
     comments:
       index:
         filter: Filtro

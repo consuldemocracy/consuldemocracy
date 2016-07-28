@@ -6,4 +6,7 @@ class Admin::BudgetsController < Admin::BaseController
     @budgets = Budget.send(@current_filter).order(created_at: :desc).page(params[:page])
   end
 
+  def new
+  end
+
 end

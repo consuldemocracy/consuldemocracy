@@ -36,6 +36,11 @@ body.admin {
     input[type="text"], textarea {
       width: 100%;
     }
+
+    .input-group input[type="text"] {
+      border-radius: 0;
+      margin-bottom: 0 !important;
+    }
   }
 
   table {
