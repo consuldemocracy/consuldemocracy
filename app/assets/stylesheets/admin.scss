@@ -47,6 +47,10 @@ body.admin {
 
     th {
       text-align: left;
+
+      &.with-button {
+        line-height: $line-height*2;
+      }
     }
 
     tr {

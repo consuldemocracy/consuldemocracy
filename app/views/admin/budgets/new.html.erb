@@ -31,9 +31,6 @@
   </div>
 </div>
 
-<hr>
-
-<!-- When admin created a new budget appears this -->
 <div class="row">
   <div class="small-12 column">
     <h3 class="inline-block">Nombre del budget</h3>
@@ -41,20 +38,25 @@
     <%= link_to t("admin.budgets.new.add_group"), "#", class: "button float-right" %>
 
     <form>
-      <label><%= t("admin.budgets.new.group") %></label>
-      <input type="text" placeholder="<%= t("admin.budgets.new.group") %>">
+      <div class="input-group">
+        <span class="input-group-label">
+          <label><%= t("admin.budgets.new.group") %></label>
+        </span>
+        <input type="text" placeholder="<%= t("admin.budgets.new.group") %>">
+        <div class="input-group-button">
+          <input type="submit" value="<%= t("admin.budgets.new.create_group") %>", class="button success">
+        </div>
+      </div>
     </form>
   </div>
 </div>
-
-<hr>
 
 <div class="row">
   <div class="small-12 column">
     <table>
       <thead>
         <tr>
-          <th colspan="3">
+          <th colspan="3" class="with-button">
             Nombre del grupo
             <%= link_to t("admin.budgets.new.add_heading"), "#", class: "button float-right" %>
           </th>
@@ -79,30 +81,37 @@
         <tr>
           <td colspan="3">
             <form>
-              <div class="input-group">
-                <span class="input-group-label">
-                  <label><%= t("admin.budgets.new.heading") %></label>
-                </span>
-                <input type="text" placeholder="<%= t("admin.budgets.new.heading") %>">
-                <div class="input-group-button">
-                  <input type="submit" value="<%= t("admin.budgets.new.save_heading") %>", class="button success">
+              <label><%= t("admin.budgets.new.heading") %></label>
+              <input type="text" placeholder="<%= t("admin.budgets.new.heading") %>">
+
+              <div class="row">
+                <div class="small-12 medium-6 column">
+                  <label><%= t("admin.budgets.new.amount") %></label>
+                  <input type="text" placeholder="<%= t("admin.budgets.new.amount") %>">
+                </div>
+                <div class="small-12 medium-6 column">
+                  <label><%= t("admin.budgets.new.geozone") %></label>
+                  <select>
+                    <option><%= t("admin.budgets.new.no_geozone") %></option>
+                  </select>
                 </div>
               </div>
+
+              <input type="submit" value="<%= t("admin.budgets.new.save_heading") %>", class="button success">
             </form>
           </td>
         </tr>
-        <!-- headings -->
+        <!-- /. new heading form -->
+        <!-- headings list -->
         <tr>
           <td>
             Heading 1 name
           </td>
           <td>
-            9999€
+            190.000€
           </td>
           <td>
-            <select>
-              <option><%= t("admin.budgets.new.table_geozone") %></option>
-            </select>
+            Geozone B
           </td>
         </tr>
         <tr>
@@ -110,12 +119,10 @@
             Heading 2 name
           </td>
           <td>
-            24000000€
+            24.000.000€
           </td>
           <td>
-            <select>
-              <option><%= t("admin.budgets.new.table_geozone") %></option>
-            </select>
+            Does not apply
           </td>
         </tr>
         <tr>
@@ -123,14 +130,13 @@
             Heading 3 name
           </td>
           <td>
-            1265000€
+            1.265.000€
           </td>
           <td>
-            <select>
-              <option><%= t("admin.budgets.new.table_geozone") %></option>
-            </select>
+            Geozone A
           </td>
         </tr>
+        <!-- /. headings list -->
       </tbody>
     </table>
   </div>

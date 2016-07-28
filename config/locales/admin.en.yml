@@ -34,8 +34,6 @@ en:
           submit_button: Save changes
       errors:
         form:
-      errors:
-        form:
           error:
             one: "prevented this banner from being saved"
             other: 'prevented this banner from being saved'
@@ -67,6 +65,26 @@ en:
         filters:
           open: Open
           finished: Finished
+      new:
+        title: New participatory budget
+        create: Create budget
+        name: Budget's name
+        description: Description
+        phase: Phase
+        currency: Currency
+        group: Group's name
+        add_group: Add new group
+        create_group: Create group
+        heading: Heading's name
+        add_heading: Add heading
+        amount: Amount
+        save_heading: Save heading
+        no_heading: This group has no assigned heading.
+        geozone: Scope of operation
+        no_geozone: Does not apply
+        table_heading: Heading
+        table_amount: Amount
+        table_geozone: Scope of operation
     comments:
       index:
         filter: Filter
