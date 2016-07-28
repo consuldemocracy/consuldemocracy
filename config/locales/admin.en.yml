@@ -341,6 +341,7 @@ en:
         title: Proposal notifications
         total: Total
         proposals_with_notifications: Proposals with notifications
+        not_available: Proposal not available
       reedemable_codes:
         title: Redeemable codes
         total: Total
