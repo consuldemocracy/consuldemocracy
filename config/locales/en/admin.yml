@@ -1302,6 +1302,7 @@ en:
         title: Proposal notifications
         total: Total
         proposals_with_notifications: Proposals with notifications
+        not_available: "Proposal not available"
       polls:
         title: Poll Stats
         all: Polls

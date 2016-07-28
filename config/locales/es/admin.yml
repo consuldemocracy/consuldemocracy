@@ -1301,6 +1301,7 @@ es:
         title: Notificaciones de propuestas
         total: Total
         proposals_with_notifications: Propuestas con notificaciones
+        not_available: "Esta propuesta ya no está disponible"
       polls:
         title: Estadísticas de votaciones
         all: Votaciones
