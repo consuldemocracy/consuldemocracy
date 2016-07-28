@@ -339,6 +339,7 @@ es:
         title: Notificaciones de propuestas
         total: Total
         proposals_with_notifications: Propuestas con notificaciones
+        not_available: Esta propuesta ya no está disponible
       reedemable_codes:
         title: Códigos enviados por carta
         total: Total
