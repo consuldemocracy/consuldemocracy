@@ -65,6 +65,8 @@ es:
         filters:
           open: Abiertos
           finished: Terminados
+      create:
+        notice: ¡Nueva campaña de presupuestos participativos creada con éxito!
       new:
         title: Nuevo presupuesto ciudadano
         create: Crear presupuesto

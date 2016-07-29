@@ -7,7 +7,7 @@ feature 'Admin budgets' do
     login_as(admin.user)
   end
 
-  context "Feature flag" do
+  context 'Feature flag' do
 
     xscenario 'Disabled with a feature flag' do
       Setting['feature.budgets'] = nil
@@ -16,7 +16,7 @@ feature 'Admin budgets' do
 
   end
 
-  context "Index" do
+  context 'Index' do
 
     scenario 'Displaying budgets' do
       budget = create(:budget)
@@ -40,14 +40,14 @@ feature 'Admin budgets' do
       expect(page).to have_content(budget4.name)
       expect(page).to_not have_content(budget5.name)
 
-      click_link "Finished"
+      click_link 'Finished'
       expect(page).to_not have_content(budget1.name)
       expect(page).to_not have_content(budget2.name)
       expect(page).to_not have_content(budget3.name)
       expect(page).to_not have_content(budget4.name)
       expect(page).to have_content(budget5.name)
 
-      click_link "Open"
+      click_link 'Open'
       expect(page).to have_content(budget1.name)
       expect(page).to have_content(budget2.name)
       expect(page).to have_content(budget3.name)
@@ -56,7 +56,7 @@ feature 'Admin budgets' do
     end
 
 
-    scenario "Current filter is properly highlighted" do
+    scenario 'Current filter is properly highlighted' do
       filters_links = {'open' => 'Open', 'finished' => 'Finished'}
 
       visit admin_budgets_path
@@ -73,6 +73,31 @@ feature 'Admin budgets' do
           expect(page).to have_link(filters_links[filter])
         end
       end
+    end
+
+  end
+
+  context 'New' do
+    scenario 'Create budget' do
+      visit admin_budgets_path
+      click_link 'Create new'
+
+      fill_in 'budget_name', with: 'M30 - Summer campaign'
+      fill_in 'budget_description', with: 'Budgeting for summer 2017 maintenance and improvements of the road M-30'
+      select 'Accepting proposals', from: 'budget[phase]'
+
+      click_button 'Create budget'
+
+      expect(page).to have_content 'New participatory budget created successfully!'
+      expect(page).to have_content 'M30 - Summer campaign'
+    end
+
+    scenario 'Name is mandatory' do
+      visit new_admin_budget_path
+      click_button 'Create budget'
+
+      expect(page).to_not have_content 'New participatory budget created successfully!'
+      expect(page).to have_css("label.error", text: "Budget's name")
     end
 
   end

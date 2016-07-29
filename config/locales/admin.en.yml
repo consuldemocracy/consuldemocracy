@@ -65,6 +65,8 @@ en:
         filters:
           open: Open
           finished: Finished
+      create:
+        notice: New participatory budget created successfully!
       new:
         title: New participatory budget
         create: Create budget
