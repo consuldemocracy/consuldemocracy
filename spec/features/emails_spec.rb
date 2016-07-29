@@ -229,6 +229,9 @@ feature 'Emails' do
       expect(email).to have_body_text(/#{account_path}/)
     end
 
+    xscenario "Delete all Notifications included in the digest after email sent" do
+    end
+
   end
 
   context "User invites" do
