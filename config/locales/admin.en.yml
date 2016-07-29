@@ -87,6 +87,9 @@ en:
         table_heading: Heading
         table_amount: Amount
         table_geozone: Scope of operation
+      show:
+        phase: Current phase
+        currency: Currency
     comments:
       index:
         filter: Filter

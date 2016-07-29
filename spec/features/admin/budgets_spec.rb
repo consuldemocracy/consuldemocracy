@@ -55,7 +55,6 @@ feature 'Admin budgets' do
       expect(page).to_not have_content(budget5.name)
     end
 
-
     scenario 'Current filter is properly highlighted' do
       filters_links = {'open' => 'Open', 'finished' => 'Finished'}
 
@@ -78,6 +77,7 @@ feature 'Admin budgets' do
   end
 
   context 'New' do
+
     scenario 'Create budget' do
       visit admin_budgets_path
       click_link 'Create new'

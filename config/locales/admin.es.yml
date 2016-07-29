@@ -87,6 +87,9 @@ es:
         table_heading: Partida
         table_amount: Cantidad
         table_geozone: Ámbito de actuación
+      show:
+        phase: Fase actual
+        currency: Divisa
     comments:
       index:
         filter: Filtro
