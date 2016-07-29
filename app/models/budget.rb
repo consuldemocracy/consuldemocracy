@@ -1,7 +1,9 @@
 class Budget < ActiveRecord::Base
 
   VALID_PHASES = %W{on_hold accepting selecting balloting finished}
+  CURRENCY_SYMBOLS = %W{€ $ £ ¥}
 
+  validates :name, presence: true
   validates :phase, inclusion: { in: VALID_PHASES }
 
   has_many :investments, dependent: :destroy
