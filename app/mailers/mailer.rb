@@ -63,11 +63,6 @@ class Mailer < ApplicationMailer
   def proposal_notification_digest(user)
     @notifications = user.notifications.where(notifiable_type: "ProposalNotification")
 
-    ### Tmp hack to send only notifications for top proposal
-    top_proposal = Proposal.find(9)
-    @notifications = @notifications.select { |notification| notification.notifiable.proposal == top_proposal }
-    ###
-
     with_user(user) do
       mail(to: user.email, subject: t('mailers.proposal_notification_digest.title', org_name: Setting['org_name']))
     end
