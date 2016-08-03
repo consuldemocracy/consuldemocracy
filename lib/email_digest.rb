@@ -7,7 +7,7 @@ class EmailDigest
   end
 
   def notifications
-    user.notifications.not_emailed.where(notifiable_type: "ProposalNotification").to_a
+    user.notifications.not_emailed.where(notifiable_type: "ProposalNotification")
   end
 
   def pending_notifications?
@@ -16,8 +16,12 @@ class EmailDigest
 
   def deliver
     if pending_notifications?
-      Mailer.proposal_notification_digest(user, notifications).deliver_later
+      Mailer.proposal_notification_digest(user, notifications.to_a).deliver_later
     end
+  end
+
+  def mark_as_emailed
+    notifications.update_all(emailed_at: Time.now)
   end
 
 end

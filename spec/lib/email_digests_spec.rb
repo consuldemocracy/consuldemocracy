@@ -94,4 +94,27 @@ describe EmailDigest do
 
   end
 
+  describe "mark_as_emailed" do
+
+    it "marks notifications as emailed" do
+      user = create(:user)
+
+      proposal_notification = create(:proposal_notification)
+      notification1 = create(:notification, notifiable: proposal_notification, user: user)
+      notification2 = create(:notification, notifiable: proposal_notification, user: user)
+
+      expect(notification1.emailed_at).to_not be
+      expect(notification2.emailed_at).to_not be
+
+      email_digest = EmailDigest.new(user)
+      email_digest.mark_as_emailed
+
+      notification1.reload
+      notification2.reload
+      expect(notification1.emailed_at).to be
+      expect(notification2.emailed_at).to be
+    end
+
+  end
+
 end

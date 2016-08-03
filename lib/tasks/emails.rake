@@ -5,6 +5,7 @@ namespace :emails do
     User.email_digest.find_each do |user|
       email_digest = EmailDigest.new(user)
       email_digest.deliver
+      email_digest.mark_as_emailed
     end
   end
 
