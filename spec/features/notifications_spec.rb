@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-feature "Notifications" do
+feature "Notifications", :focus do
   let(:author) { create :user }
   let(:user) { create :user }
   let(:debate) { create :debate, author: author }
@@ -151,7 +151,7 @@ feature "Notifications" do
 
   context "Proposal notification" do
 
-    scenario "Voters should receive a notification", :js, :focus do
+    scenario "Voters should receive a notification", :js do
       author = create(:user)
 
       user1 = create(:user)
