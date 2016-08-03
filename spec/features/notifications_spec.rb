@@ -151,7 +151,7 @@ feature "Notifications" do
 
   context "Proposal notification" do
 
-    scenario "Voters should receive a notification", :js do
+    scenario "Voters should receive a notification", :js, :focus do
       author = create(:user)
 
       user1 = create(:user)
@@ -180,9 +180,10 @@ feature "Notifications" do
 
       find(".icon-notification").click
 
+      notification_for_user1 = Notification.where(user: user1).first
       expect(page).to have_css ".notification", count: 1
       expect(page).to have_content "There is one new notification on #{proposal.title}"
-      expect(page).to have_xpath "//a[@href='#{notification_path(Notification.last)}']"
+      expect(page).to have_xpath "//a[@href='#{notification_path(notification_for_user1)}']"
 
       logout
       login_as user2
@@ -190,9 +191,10 @@ feature "Notifications" do
 
       find(".icon-notification").click
 
+      notification_for_user2 = Notification.where(user: user2).first
       expect(page).to have_css ".notification", count: 1
       expect(page).to have_content "There is one new notification on #{proposal.title}"
-      expect(page).to have_xpath "//a[@href='#{notification_path(Notification.first)}']"
+      expect(page).to have_xpath "//a[@href='#{notification_path(notification_for_user2)}']"
 
       logout
       login_as user3
