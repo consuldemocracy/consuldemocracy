@@ -31,4 +31,19 @@ describe GeozonesHelper do
     end
   end
 
+  describe "#geozone_name_from_id" do
+
+    it "returns geozone name if present" do
+      g1 = create(:geozone, name: "AAA")
+      g2 = create(:geozone, name: "BBB")
+
+      expect(geozone_name_from_id(g1.id)).to eq "AAA"
+      expect(geozone_name_from_id(g2.id)).to eq "BBB"
+    end
+
+    it "returns default string for no geozone if geozone is blank" do
+      expect(geozone_name_from_id(nil)).to eq "All city"
+    end
+  end
+
 end
