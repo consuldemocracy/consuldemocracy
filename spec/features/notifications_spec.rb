@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-feature "Notifications", :focus do
+feature "Notifications" do
   let(:author) { create :user }
   let(:user) { create :user }
   let(:debate) { create :debate, author: author }
