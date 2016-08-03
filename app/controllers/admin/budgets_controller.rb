@@ -9,6 +9,7 @@ class Admin::BudgetsController < Admin::BaseController
   end
 
   def show
+    @budget = Budget.includes(groups: :headings).find(params[:id])
   end
 
   def new

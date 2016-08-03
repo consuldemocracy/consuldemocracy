@@ -101,4 +101,58 @@ feature 'Admin budgets' do
     end
 
   end
+
+  context 'Manage groups and headings' do
+
+    scenario 'Create group', :js do
+      create(:budget, name: 'Yearly participatory budget')
+
+      visit admin_budgets_path
+      click_link 'Yearly participatory budget'
+
+      expect(page).to have_content 'No groups created yet.'
+
+      click_link 'Add new group'
+
+      fill_in 'budget_group_name', with: 'General improvments'
+      click_button 'Create group'
+
+      expect(page).to have_content 'Yearly participatory budget'
+      expect(page).to_not have_content 'No groups created yet.'
+
+      visit admin_budgets_path
+      click_link 'Yearly participatory budget'
+
+      expect(page).to have_content 'Yearly participatory budget'
+      expect(page).to_not have_content 'No groups created yet.'
+    end
+
+    scenario 'Create heading', :js do
+      budget = create(:budget, name: 'Yearly participatory budget')
+      group  = create(:budget_group, budget: budget, name: 'Districts improvments')
+
+      visit admin_budget_path(budget)
+
+      within("#budget_group_#{group.id}") do
+        expect(page).to have_content 'This group has no assigned heading.'
+        click_link 'Add heading'
+
+        fill_in 'budget_heading_name', with: 'District 9 reconstruction'
+        fill_in 'budget_heading_price', with: '6785'
+        click_button 'Save heading'
+      end
+
+      expect(page).to_not have_content 'This group has no assigned heading.'
+
+      visit admin_budget_path(budget)
+      within("#budget_group_#{group.id}") do
+        expect(page).to_not have_content 'This group has no assigned heading.'
+
+        expect(page).to have_content 'District 9 reconstruction'
+        expect(page).to have_content '6785'
+        expect(page).to have_content 'All city'
+      end
+    end
+
+  end
 end

@@ -42,7 +42,9 @@ module Abilities
 
       can [:read, :update, :valuate, :destroy, :summary], SpendingProposal
 
-      can [:read, :create, :update], Budget
+      can [:index, :read, :new, :create, :update, :destroy], Budget
+      can [:read, :create, :update, :destroy], Budget::Group
+      can [:read, :create, :update, :destroy], Budget::Heading
       can [:hide, :update], Budget::Investment
       can :valuate, Budget::Investment, budget: { valuating: true }
       can :create, Budget::ValuatorAssignment

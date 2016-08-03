@@ -23,7 +23,7 @@
           <%= f.select :currency_symbol, budget_currency_symbol_select_options, {label: false} %>
         </div>
       </div>
-      <input type="submit" value="<%= t("admin.budgets.new.create") %>" class="button success">
+      <%= f.submit t("admin.budgets.new.create"), class: "button success" %>
     <% end %>
   </div>
 </div>

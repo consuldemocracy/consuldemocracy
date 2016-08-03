@@ -74,7 +74,13 @@ en:
         description: Description
         phase: Phase
         currency: Currency
+      show:
+        phase: Current phase
+        currency: Currency
+        groups: Groups of budget headings
+      form:
         group: Group's name
+        no_groups: No groups created yet. Each user will be able to vote in only one heading per group.
         add_group: Add new group
         create_group: Create group
         heading: Heading's name
@@ -87,9 +93,6 @@ en:
         table_heading: Heading
         table_amount: Amount
         table_geozone: Scope of operation
-      show:
-        phase: Current phase
-        currency: Currency
     comments:
       index:
         filter: Filter

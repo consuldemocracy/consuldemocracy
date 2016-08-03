@@ -74,7 +74,13 @@ es:
         description: Descripción
         phase: Fase
         currency: Divisa
+      show:
+        phase: Fase actual
+        currency: Divisa
+        groups: Grupos de partidas presupuestarias
+      form:
         group: Nombre del grupo
+        no_groups: No hay grupos creados todavía. Cada usuario podrá votar en una sola partida de cada grupo.
         add_group: Añadir nuevo grupo
         create_group: Crear grupo
         heading: Nombre de la partida
@@ -87,9 +93,6 @@ es:
         table_heading: Partida
         table_amount: Cantidad
         table_geozone: Ámbito de actuación
-      show:
-        phase: Fase actual
-        currency: Divisa
     comments:
       index:
         filter: Filtro
