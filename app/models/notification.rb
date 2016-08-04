@@ -2,9 +2,11 @@ class Notification < ActiveRecord::Base
   belongs_to :user, counter_cache: true
   belongs_to :notifiable, polymorphic: true
 
-  scope :unread, -> { all }
-  scope :recent, -> { order(id: :desc) }
-  scope :for_render, -> { includes(:notifiable) }
+  scope :unread,      -> { all }
+  scope :recent,      -> { order(id: :desc) }
+  scope :not_emailed, -> { where(emailed_at: nil) }
+  scope :for_render,  -> { includes(:notifiable) }
+
 
   def timestamp
     notifiable.created_at

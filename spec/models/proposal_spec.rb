@@ -367,6 +367,50 @@ describe Proposal do
     end
   end
 
+  describe "voters" do
+
+    it "returns users that have voted for the proposal" do
+      proposal = create(:proposal)
+      voter1 = create(:user, :level_two)
+      voter2 = create(:user, :level_two)
+      voter3 = create(:user, :level_two)
+
+      create(:vote, voter: voter1, votable: proposal)
+      create(:vote, voter: voter2, votable: proposal)
+
+      expect(proposal.voters).to include(voter1)
+      expect(proposal.voters).to include(voter2)
+      expect(proposal.voters).to_not include(voter3)
+    end
+
+    it "does not return users that have been erased" do
+      proposal = create(:proposal)
+      voter1 = create(:user, :level_two)
+      voter2 = create(:user, :level_two)
+
+      create(:vote, voter: voter1, votable: proposal)
+      create(:vote, voter: voter2, votable: proposal)
+      voter2.erase
+
+      expect(proposal.voters).to include(voter1)
+      expect(proposal.voters).to_not include(voter2)
+    end
+
+    it "does not return users that have been blocked" do
+      proposal = create(:proposal)
+      voter1 = create(:user, :level_two)
+      voter2 = create(:user, :level_two)
+
+      create(:vote, voter: voter1, votable: proposal)
+      create(:vote, voter: voter2, votable: proposal)
+      voter2.block
+
+      expect(proposal.voters).to include(voter1)
+      expect(proposal.voters).to_not include(voter2)
+    end
+
+  end
+
   describe "search" do
 
     context "attributes" do

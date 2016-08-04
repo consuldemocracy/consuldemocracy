@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160722095325) do
+ActiveRecord::Schema.define(version: 20160803154011) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -298,10 +298,11 @@ ActiveRecord::Schema.define(version: 20160722095325) do
   add_index "moderators", ["user_id"], name: "index_moderators_on_user_id", using: :btree
 
   create_table "notifications", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "notifiable_id"
-    t.string  "notifiable_type"
-    t.integer "counter",         default: 1
+    t.integer  "user_id"
+    t.integer  "notifiable_id"
+    t.string   "notifiable_type"
+    t.integer  "counter",         default: 1
+    t.datetime "emailed_at"
   end
 
   add_index "notifications", ["user_id"], name: "index_notifications_on_user_id", using: :btree

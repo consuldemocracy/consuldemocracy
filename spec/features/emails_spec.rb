@@ -201,8 +201,9 @@ feature 'Emails' do
       notification2 = create_proposal_notification(proposal2)
       notification3 = create_proposal_notification(proposal3)
 
-      email_digest = EmailDigest.new
-      email_digest.create
+      email_digest = EmailDigest.new(user)
+      email_digest.deliver
+      email_digest.mark_as_emailed
 
       email = open_last_email
       expect(email).to have_subject("Proposal notifications in Decide Madrid")
@@ -227,6 +228,11 @@ feature 'Emails' do
 
       expect(email).to_not have_body_text(proposal3.title)
       expect(email).to have_body_text(/#{account_path}/)
+
+      notification1.reload
+      notification2.reload
+      expect(notification1.emailed_at).to be
+      expect(notification2.emailed_at).to be
     end
 
     xscenario "Delete all Notifications included in the digest after email sent" do
