@@ -24,6 +24,44 @@ feature 'Proposal Notifications' do
     expect(page).to have_content "Please share it with others so we can make it happen!"
   end
 
+  scenario "Send a notification (Active voter)" do
+    author = create(:user)
+    proposal = create(:proposal, author: author)
+
+    voter = create(:user, :level_two)
+    create(:vote, voter: voter, votable: proposal)
+
+    create_proposal_notification(proposal)
+
+    expect(Notification.count).to eq(1)
+  end
+
+  scenario "Send a notification (Blocked voter)" do
+    author = create(:user)
+    proposal = create(:proposal, author: author)
+
+    voter = create(:user, :level_two)
+    create(:vote, voter: voter, votable: proposal)
+    voter.block
+
+    create_proposal_notification(proposal)
+
+    expect(Notification.count).to eq(0)
+  end
+
+  scenario "Send a notification (Erased voter)" do
+    author = create(:user)
+    proposal = create(:proposal, author: author)
+
+    voter = create(:user, :level_two)
+    create(:vote, voter: voter, votable: proposal)
+    voter.erase
+
+    create_proposal_notification(proposal)
+
+    expect(Notification.count).to eq(0)
+  end
+
   scenario "Show notifications" do
     proposal = create(:proposal)
     notification1 = create(:proposal_notification, proposal: proposal, title: "Hey guys", body: "Just wanted to let you know that...")
