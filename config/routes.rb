@@ -153,6 +153,13 @@ Rails.application.routes.draw do
       get :summary, on: :collection
     end
 
+    resources :budgets do
+      resources :budget_groups do
+        resources :budget_headings do
+        end
+      end
+    end
+
     resources :banners, only: [:index, :new, :create, :edit, :update, :destroy] do
       collection { get :search}
     end

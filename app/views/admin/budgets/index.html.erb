@@ -1,0 +1,25 @@
+<h2 class="inline-block"><%= t("admin.budgets.index.title") %></h2>
+
+<%= link_to t("admin.budgets.index.new_link"),
+            new_admin_budget_path,
+            class: "button float-right margin-right" %>
+
+<%= render 'shared/filter_subnav', i18n_namespace: "admin.budgets.index" %>
+
+
+<h3><%= page_entries_info @budgets %></h3>
+
+<table>
+  <% @budgets.each do |budget| %>
+    <tr id="<%= dom_id(budget) %>" class="budget">
+      <td>
+        <%= link_to budget.name, admin_budget_path(budget) %>
+      </td>
+      <td class="small">
+        <%= t("budget.phase.#{budget.phase}") %>
+      </td>
+    </tr>
+  <% end %>
+</table>
+
+<%= paginate @budgets %>
