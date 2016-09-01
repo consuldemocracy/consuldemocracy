@@ -16,7 +16,7 @@
 //= require jquery-ui/datepicker-es
 //= require foundation
 //= require turbolinks
-//= require ckeditor/init
+//= require ckeditor/loader
 //= require_directory ./ckeditor
 //= require social-share-button
 //= require initial
