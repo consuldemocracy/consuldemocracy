@@ -20,6 +20,9 @@ gem 'jquery-ui-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 
+# Fix sprockets on the
+gem 'sprockets', '~> 3.6.3'
+
 gem 'devise', '~> 3.5.7'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -97,3 +100,5 @@ group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '3.3.0'
 end
+
+eval_gemfile './Gemfile_custom'

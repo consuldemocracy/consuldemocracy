@@ -16,8 +16,6 @@ class Verification::Residence
 
   validate :allowed_age
   validate :document_number_uniqueness
-  validate :postal_code_in_madrid
-  validate :residence_in_madrid
   validate :redeemable_code_is_redeemable
 
   def initialize(attrs={})
@@ -52,24 +50,10 @@ class Verification::Residence
     errors.add(:document_number, I18n.t('errors.messages.taken')) if User.where(document_number: document_number).any?
   end
 
-  def postal_code_in_madrid
-    errors.add(:postal_code, I18n.t('verification.residence.new.error_not_allowed_postal_code')) unless valid_postal_code?
-  end
-
   def redeemable_code_is_redeemable
     return if redeemable_code.blank?
     unless RedeemableCode.redeemable?(redeemable_code)
       errors.add(:redeemable_code, I18n.t('verification.residence.new.error_can_not_redeem_code'))
-    end
-  end
-
-  def residence_in_madrid
-    return if errors.any?
-
-    unless residency_valid?
-      errors.add(:residence_in_madrid, false)
-      store_failed_attempt
-      Lock.increase_tries(user)
     end
   end
 
@@ -110,10 +94,6 @@ class Verification::Residence
 
     def clean_document_number
       self.document_number = self.document_number.gsub(/[^a-z0-9]+/i, "").upcase unless self.document_number.blank?
-    end
-
-    def valid_postal_code?
-      postal_code =~ /^280/
     end
 
 end

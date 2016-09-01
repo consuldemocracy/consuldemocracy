@@ -17,7 +17,7 @@
 //= require jquery-ui/effect-shake
 //= require foundation
 //= require turbolinks
-//= require ckeditor/init
+//= require ckeditor/loader
 //= require_directory ./ckeditor
 //= require social-share-button
 //= require initial
@@ -49,6 +49,7 @@
 //= require fixed_bar
 //= require banners
 //= require countdown
+//= require custom
 
 var initialize_modules = function() {
   App.Comments.initialize();
