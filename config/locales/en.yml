@@ -33,6 +33,13 @@ en:
   application:
     close: Close
     menu: Menu
+  budget:
+    phase:
+      on_hold: On hold
+      accepting: Accepting proposals
+      selecting: Selecting
+      balloting: Balloting
+      finished: Finished
   comments:
     comment:
       admin: Administrator

@@ -33,6 +33,13 @@ es:
   application:
     close: Cerrar
     menu: Menú
+  budget:
+    phase:
+      on_hold: En pausa
+      accepting: Aceptando propuestas
+      selecting: Fase de selección
+      balloting: Fase de Votación
+      finished: Terminado
   comments:
     comment:
       admin: Administrador
