@@ -56,3 +56,27 @@
     </table>
   </div>
 </div>
+
+<div class="row">
+  <div class="small-12 medium-9 column">
+    <h2>Resultado final de la selección</h2>
+    <p>A continuación puedes ver las actas del resultado final del concurso con los finalmente seleccionados:</p>
+    <ul>
+      <li>
+        <%= link_to "Acto público de apertura de plicas <small>(PDF | 106Kb)</small>".html_safe,
+          "/docs/town_planning/acta_apertura_280716.pdf",
+          target: "_blank", title: t("shared.target_blank_html") %>
+      </li>
+      <li>
+        <%= link_to "Acta del jurado <small>(PDF | 304Kb)</small>".html_safe,
+          "/docs/town_planning/acta_jurado_130616.pdf",
+          target: "_blank", title: t("shared.target_blank_html") %>
+      </li>
+      <li>
+        <%= link_to "Designación miembros mesa del jurado <small>(PDF | 457Kb)</small>".html_safe,
+          "/docs/town_planning/miembros_mesa_jurado.pdf",
+          target: "_blank", title: t("shared.target_blank_html") %>
+      </li>
+    </ul>
+  </div>
+</div>
