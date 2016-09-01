@@ -89,7 +89,6 @@ es:
         save_heading: Guardar partida
         no_heading: Este grupo no tiene ninguna partida asignada.
         geozone: Ámbito de actuación
-        no_geozone: No aplica
         table_heading: Partida
         table_amount: Cantidad
         table_geozone: Ámbito de actuación

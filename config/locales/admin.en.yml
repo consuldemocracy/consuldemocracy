@@ -89,7 +89,6 @@ en:
         save_heading: Save heading
         no_heading: This group has no assigned heading.
         geozone: Scope of operation
-        no_geozone: Does not apply
         table_heading: Heading
         table_amount: Amount
         table_geozone: Scope of operation
