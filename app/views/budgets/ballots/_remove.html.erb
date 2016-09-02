@@ -8,7 +8,7 @@
   </p>
 
   <% if @budget.balloting? %>
-    <%= link_to t('ballots.show.remove'),
+    <%= link_to t('budgets.ballots.show.remove'),
                 ballot_line_path(id: investment.id,
                                  investments_ids: investment_ids),
                 class: "delete small expanded",

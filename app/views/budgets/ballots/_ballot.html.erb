@@ -18,7 +18,7 @@
     <% end %>
 
     <h3>
-      <%= t("ballots.show.remaining_city_html",
+      <%= t("budgets.ballots.show.remaining_city_html",
           amount_city: format_price(@ballot.amount_available(nil))) %>
     </h3>
 
@@ -52,7 +52,7 @@
       <% else %>
         <p>
           <%= t("budgets.ballots.show.zero") %><br>
-          <%= link_to t("ballots.show.city_link"),
+          <%= link_to t("budgets.ballots.show.city_link"),
                       investments_path(geozone: 'all'),
                       data: { no_turbolink: true } %>
         </p>
@@ -66,7 +66,7 @@
 
     <div id="district_wide" class="small-12 medium-6 column">
       <h3 class="subtitle">
-        <%= t("ballots.show.district_wide") %>
+        <%= t("budgets.ballots.show.district_wide") %>
         <span>
           <% if @ballot.geozone.present? %>
             (<%= @ballot.geozone.name %>)
@@ -75,13 +75,13 @@
       </h3>
       <% if @ballot.geozone.present? %>
         <h4 class="amount-spent text-right">
-          <%= t("ballots.show.amount_spent") %>
+          <%= t("budgets.ballots.show.amount_spent") %>
           <span><%= format_price(district_wide_amount_spent(@ballot)) %></span>
         </h4>
       <% else %>
         <p>
-          <%= t("ballots.show.zero") %><br>
-          <%= link_to t("budget.ballots.show.districts_link"), select_district_path %>
+          <%= t("budgets.ballots.show.zero") %><br>
+          <%= link_to t("budgets.ballots.show.districts_link"), select_district_path %>
         </p>
       <% end %>
 
