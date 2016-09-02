@@ -4,6 +4,9 @@ es:
       activity:
         one: "actividad"
         other: "actividades"
+      budget:
+        one: "Presupuesto participativo"
+        other: "Presupuestos participativos"
       comment:
         one: "Comentario"
         other: "Comentarios"

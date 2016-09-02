@@ -60,8 +60,8 @@ class Mailer < ApplicationMailer
     end
   end
 
-  def proposal_notification_digest(user)
-    @notifications = user.notifications.where(notifiable_type: "ProposalNotification")
+  def proposal_notification_digest(user, notifications)
+    @notifications = notifications
 
     with_user(user) do
       mail(to: user.email, subject: t('mailers.proposal_notification_digest.title', org_name: Setting['org_name']))

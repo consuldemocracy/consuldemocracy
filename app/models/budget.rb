@@ -3,7 +3,9 @@ class Budget < ActiveRecord::Base
   include Sanitizable
 
   VALID_PHASES = %W{on_hold accepting selecting balloting finished}
+  CURRENCY_SYMBOLS = %W{€ $ £ ¥}
 
+  validates :name, presence: true
   validates :phase, inclusion: { in: VALID_PHASES }
   validates :currency_symbol, presence: true
 
@@ -12,6 +14,9 @@ class Budget < ActiveRecord::Base
   has_many :groups, dependent: :destroy
   has_many :headings, through: :groups
   has_many :investments, through: :headings
+
+  scope :open,     -> { where.not(phase: "finished") }
+  scope :finished, -> { where(phase: "finished") }
 
   def on_hold?
     phase == "on_hold"

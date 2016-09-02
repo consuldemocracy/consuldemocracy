@@ -34,8 +34,6 @@ en:
           submit_button: Save changes
       errors:
         form:
-      errors:
-        form:
           error:
             one: "prevented this banner from being saved"
             other: 'prevented this banner from being saved'
@@ -60,6 +58,40 @@ en:
           on_users: Users
         title: Moderator activity
         type: Type
+    budgets:
+      index:
+        title: Participatory budgets
+        new_link: Create new
+        filters:
+          open: Open
+          finished: Finished
+      create:
+        notice: New participatory budget created successfully!
+      new:
+        title: New participatory budget
+        create: Create budget
+        name: Budget's name
+        description: Description
+        phase: Phase
+        currency: Currency
+      show:
+        phase: Current phase
+        currency: Currency
+        groups: Groups of budget headings
+      form:
+        group: Group's name
+        no_groups: No groups created yet. Each user will be able to vote in only one heading per group.
+        add_group: Add new group
+        create_group: Create group
+        heading: Heading's name
+        add_heading: Add heading
+        amount: Amount
+        save_heading: Save heading
+        no_heading: This group has no assigned heading.
+        geozone: Scope of operation
+        table_heading: Heading
+        table_amount: Amount
+        table_geozone: Scope of operation
     comments:
       index:
         filter: Filter
@@ -96,6 +128,7 @@ en:
       activity: Moderator activity
       admin: Admin menu
       banner: Manage banners
+      budgets: Participatory budgets
       debate_topics: Debate topics
       hidden_comments: Hidden comments
       hidden_debates: Hidden debates

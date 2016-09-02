@@ -7,7 +7,9 @@
       <% if can?(:vote, comment) %>
         <%= link_to vote_comment_path(comment, value: 'yes'),
             method: "post", remote: true do %>
-            <span class="icon-angle-up"></span>
+            <span class="icon-angle-up">
+              <span class="sr-only"><%= t('votes.agree') %></span>
+            </span>
         <% end %>
       <% else %>
         <span class="icon-angle-up"></span>
@@ -19,7 +21,9 @@
       <% if can?(:vote, comment) %>
         <%= link_to vote_comment_path(comment, value: 'no'),
             method: "post", remote: true do %>
-            <span class="icon-angle-down"></span>
+            <span class="icon-angle-down">
+              <span class="sr-only"><%= t('votes.disagree') %></span>
+            </span>
         <% end %>
       <% else %>
         <span class="icon-angle-down"></span>

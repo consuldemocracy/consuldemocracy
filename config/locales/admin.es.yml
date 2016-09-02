@@ -58,6 +58,40 @@ es:
           on_users: Usuarios
         title: Actividad de los Moderadores
         type: Tipo
+    budgets:
+      index:
+        title: Presupuestos participativos
+        new_link: Crear nuevo
+        filters:
+          open: Abiertos
+          finished: Terminados
+      create:
+        notice: ¡Nueva campaña de presupuestos participativos creada con éxito!
+      new:
+        title: Nuevo presupuesto ciudadano
+        create: Crear presupuesto
+        name: Nombre del presupuesto
+        description: Descripción
+        phase: Fase
+        currency: Divisa
+      show:
+        phase: Fase actual
+        currency: Divisa
+        groups: Grupos de partidas presupuestarias
+      form:
+        group: Nombre del grupo
+        no_groups: No hay grupos creados todavía. Cada usuario podrá votar en una sola partida de cada grupo.
+        add_group: Añadir nuevo grupo
+        create_group: Crear grupo
+        heading: Nombre de la partida
+        add_heading: Añadir partida
+        amount: Cantidad
+        save_heading: Guardar partida
+        no_heading: Este grupo no tiene ninguna partida asignada.
+        geozone: Ámbito de actuación
+        table_heading: Partida
+        table_amount: Cantidad
+        table_geozone: Ámbito de actuación
     comments:
       index:
         filter: Filtro
@@ -94,6 +128,7 @@ es:
       activity: Actividad de moderadores
       admin: Menú de administración
       banner: Gestionar banners
+      budgets: Presupuestos participativos
       debate_topics: Temas de debate
       hidden_comments: Comentarios ocultos
       hidden_debates: Debates ocultos
