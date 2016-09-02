@@ -1,3 +1,4 @@
+
 require File.expand_path('../boot', __FILE__)
 
 require 'rails/all'
@@ -34,5 +35,17 @@ module Consul
     config.autoload_paths << Rails.root.join('lib')
     config.time_zone = 'Madrid'
     config.active_job.queue_adapter = :delayed_job
+
+    # Consul specific custom overrides
+    # Read more on documentation:
+    # * English: https://github.com/consul/consul/blob/master/CUSTOMIZE_EN.md
+    # * Spanish: https://github.com/consul/consul/blob/master/CUSTOMIZE_ES.md
+    #
+    config.autoload_paths << "#{Rails.root}/app/controllers/custom"
+    config.autoload_paths << "#{Rails.root}/app/models/custom"
+    config.paths['app/views'].unshift(Rails.root.join('app', 'views', 'custom'))
+
   end
 end
+
+require "./config/application_custom.rb"

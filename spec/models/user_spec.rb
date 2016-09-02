@@ -325,6 +325,34 @@ describe User do
 
   end
 
+  describe "scopes" do
+
+    describe "active" do
+
+      it "returns users that have not been erased" do
+        user1 = create(:user, erased_at: nil)
+        user2 = create(:user, erased_at: nil)
+        user3 = create(:user, erased_at: Time.now)
+
+        expect(User.active).to include(user1)
+        expect(User.active).to include(user2)
+        expect(User.active).to_not include(user3)
+      end
+
+      it "returns users that have not been blocked" do
+        user1 = create(:user)
+        user2 = create(:user)
+        user3 = create(:user)
+        user3.block
+
+        expect(User.active).to include(user1)
+        expect(User.active).to include(user2)
+        expect(User.active).to_not include(user3)
+      end
+
+    end
+  end
+
   describe "self.search" do
     it "find users by email" do
       user1 = create(:user, email: "larry@consul.dev")
