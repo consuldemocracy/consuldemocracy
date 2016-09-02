@@ -16,7 +16,7 @@
 //= require jquery-ui/datepicker-es
 //= require foundation
 //= require turbolinks
-//= require ckeditor/init
+//= require ckeditor/loader
 //= require_directory ./ckeditor
 //= require social-share-button
 //= require initial
@@ -45,6 +45,7 @@
 //= require valuation_spending_proposal_form
 //= require embed_video
 //= require banners
+//= require custom
 
 var initialize_modules = function() {
   App.Comments.initialize();

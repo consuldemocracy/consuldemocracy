@@ -1,0 +1,29 @@
+<div class="row">
+  <div class="small-12 medium-9 column">
+    <h2><%= t("admin.budgets.new.title") %></h2>
+
+    <%= form_for [:admin, @budget] do |f| %>
+
+      <%= f.label :name, t("admin.budgets.new.name") %>
+      <%= f.text_field :name,
+                        label: false,
+                        maxlength: 30,
+                        placeholder: t("admin.budgets.new.name") %>
+
+      <%= f.label :description, t("admin.budgets.new.description") %>
+      <%= f.text_area :description, rows: 3, maxlength: 6000, label: false, placeholder: t("admin.budgets.new.description") %>
+
+      <div class="row">
+        <div class="small-12 medium-9 column">
+          <%= f.label :description, t("admin.budgets.new.phase") %>
+          <%= f.select :phase, budget_phases_select_options, {label: false} %>
+        </div>
+        <div class="small-12 medium-3 column">
+          <%= f.label :description, t("admin.budgets.new.currency") %>
+          <%= f.select :currency_symbol, budget_currency_symbol_select_options, {label: false} %>
+        </div>
+      </div>
+      <%= f.submit t("admin.budgets.new.create"), class: "button success" %>
+    <% end %>
+  </div>
+</div>

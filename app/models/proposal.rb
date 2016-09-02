@@ -95,7 +95,7 @@ class Proposal < ActiveRecord::Base
   end
 
   def voters
-    votes_for.voters
+    User.active.where(id: votes_for.voters)
   end
 
   def editable?

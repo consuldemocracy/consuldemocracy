@@ -4,6 +4,9 @@ en:
       activity:
         one: "activity"
         other: "activities"
+      budget:
+        one: "Participatory budget"
+        other: "Participatory budgets"
       comment:
         one: "Comment"
         other: "Comments"

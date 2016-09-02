@@ -193,6 +193,10 @@ FactoryGirl.define do
     currency_symbol "€"
     phase 'on_hold'
 
+    trait :accepting do
+      phase 'accepting'
+    end
+
     trait :selecting do
       phase 'selecting'
     end
