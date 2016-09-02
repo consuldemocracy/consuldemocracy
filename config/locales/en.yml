@@ -33,13 +33,6 @@ en:
   application:
     close: Close
     menu: Menu
-  budget:
-    phase:
-      on_hold: On hold
-      accepting: Accepting proposals
-      selecting: Selecting
-      balloting: Balloting
-      finished: Finished
   comments:
     comment:
       admin: Administrator
@@ -217,7 +210,7 @@ en:
       open_gov: Open government
       proposals: Proposals
       see_all: See proposals
-      spending_proposals: Spending proposals
+      budgets: Participatory budgeting
   legislation:
     help:
       alt: Select the text you want to comment and press the button with the pencil.
@@ -470,9 +463,11 @@ en:
         one: " containing the term '%{search_term}'"
         other: " containing the term '%{search_term}'"
       sidebar:
+        back: Volver
         geozones: Scope of operation
         feasibility: Feasibility
         unfeasible: Unfeasible
+        my_ballot: My votes
       start_spending_proposal: Create an investment project
     new:
       more_info: How do participatory budgeting works?

@@ -31,5 +31,17 @@ class Budget
 
       true
     end
+
+    def has_lines_with_no_heading?
+      investments.no_heading.count > 0
+    end
+
+    def has_lines_with_heading?
+      self.heading_id.present?
+    end
+
+    def has_investment?(investment)
+      self.investment_ids.include?(investment.id)
+    end
   end
 end

@@ -7,20 +7,26 @@ class Budget
       belongs_to :heading
       belongs_to :investment
 
-      validates :ballot_id, :budget_id, :group_id, :heading_id, :investment_id, presence: true
       validate :insufficient_funds
+      #needed? validate :different_geozone, :if => :district_proposal?
       validate :unfeasible
+      #needed? validates :ballot_id, :budget_id, :group_id, :heading_id, :investment_id, presence: true
 
       def insufficient_funds
-        return unless errors.blank?
-        errors.add(:money, "") if ballot.amount_available(heading) < investment.price.to_i
+        errors.add(:money, "") if ballot.amount_available(investment.heading) < investment.price.to_i
+      end
+
+      def different_geozone
+        errors.add(:heading, "") if (ballot.heading.present? && investment.heading != ballot.heading)
       end
 
       def unfeasible
-        return unless errors.blank?
         errors.add(:unfeasible, "") unless investment.feasible?
       end
 
+      def heading_proposal?
+        investment.heading_id.present?
+      end
     end
   end
 end

@@ -3,7 +3,7 @@ require 'rails_helper'
 describe Budget::Ballot do
 
   describe "#amount_spent" do
-    it "returns the total amount spent in investments" do
+    xit "returns the total amount spent in investments" do
       budget = create(:budget)
       group1 = create(:budget_group, budget: budget)
       group2 = create(:budget_group, budget: budget)
@@ -22,7 +22,7 @@ describe Budget::Ballot do
       expect(ballot.total_amount_spent).to eq 30000
     end
 
-    it "returns the amount spent on all investments assigned to a specific heading" do
+    xit "returns the amount spent on all investments assigned to a specific heading" do
       heading = create(:budget_heading)
       budget = heading.group.budget
       inv1 = create(:budget_investment, :feasible, price: 10000, heading: heading)
@@ -42,7 +42,7 @@ describe Budget::Ballot do
   end
 
   describe "#amount_available" do
-    it "returns how much is left after taking some investments" do
+    xit "returns how much is left after taking some investments" do
       budget = create(:budget)
       group = create(:budget_group, budget: budget)
       heading1 = create(:budget_heading, group: group, price: 1000)

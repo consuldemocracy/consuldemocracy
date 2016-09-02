@@ -1,0 +1,29 @@
+<%= link_to @budget, class: "back" do %>
+  <i class="icon-angle-left"></i>
+  <%= t("spending_proposals.index.sidebar.back") %>
+<% end %>
+
+<div class="clear"></div>
+
+<div class="sidebar-divider"></div>
+<h3 class="sidebar-title"><%= t("spending_proposals.index.sidebar.my_ballot") %></h3>
+
+<% if @ballot.investments.by_heading(@heading).count > 0 %>
+  <p>
+    <em>
+      <%= t("budget.investments.index.sidebar.voted_html",
+          count: @ballot.investments.by_heading(@heading.id).count,
+          amount_spent: format_price(@ballot.amount_spent(@heading))) %>
+    </em>
+  </p>
+<% else %>
+  <p><strong><%= t("budget.investments.index.sidebar.zero") %></strong></p>
+<% end %>
+
+<ul class="ballot-list">
+  <% @ballot.investments.by_heading(@heading).each do |investment| %>
+    <%= render 'ballots/investment_for_sidebar', investment: investment %>
+  <% end %>
+</ul>
+
+<p class="callout primary"><%= t("budget.investments.index.sidebar.voted_info") %></p>

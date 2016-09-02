@@ -26,6 +26,7 @@ Setting.create(key: 'place_name', value: 'City')
 Setting.create(key: 'feature.debates', value: "true")
 Setting.create(key: 'feature.spending_proposals', value: "true")
 Setting.create(key: 'feature.spending_proposal_features.voting_allowed', value: "true")
+Setting.create(key: 'feature.budgets', value: "true")
 Setting.create(key: 'feature.twitter_login', value: "true")
 Setting.create(key: 'feature.facebook_login', value: "true")
 Setting.create(key: 'feature.google_login', value: "true")
@@ -300,6 +301,7 @@ puts "Creating Budgets"
 (1..10).each do |i|
   budget = Budget.create!(name: (Date.today.year - 10 + i).to_s,
                           description: "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>",
+                          currency_symbol: "€",
                           phase: %w{on_hold accepting selecting balloting finished}.sample,
                           valuating: [false, true].sample)
   puts budget.name

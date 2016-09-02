@@ -1,0 +1,44 @@
+<div class="expanded budget no-margin-top padding">
+  <div class="row">
+    <div class="small-12 medium-9 column">
+      <%= link_to budgets_path do %>
+        <span class="icon-angle-left"></span>
+        <%= t('shared.back') %>
+      <% end %>
+
+      <h1><%= @budget.name %></h1>
+      <p><%= @budget.description %></p>
+    </div>
+  </div>
+</div>
+
+<div class="row margin-top">
+  <div class="small-12 medium-6 column">
+    <table class="table-fixed">
+      <thead>
+        <th><%= t('budget.show.heading') %></th>
+        <th><%= t('budget.show.price') %></th>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <%= link_to t('budget.show.no_heading'), budget_investments_path(budget_id: @budget.id, heading_id: nil) %>
+          </td>
+          <td>
+            <%# format_price(@budget, @budget.price) %>
+          </td>
+        </tr>
+        <% @budget.headings.each do |heading| %>
+          <tr>
+            <td>
+              <%= link_to heading.name, budget_investments_path(budget_id: @budget.id, heading_id: heading.id) %>
+            </td>
+            <td>
+              <%= format_price(@budget, heading.price) %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

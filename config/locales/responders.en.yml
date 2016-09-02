@@ -9,7 +9,7 @@ en:
         proposal: "Proposal created successfully."
         proposal_notification: "Your message has been sent correctly."
         spending_proposal: "Spending proposal created successfully. You can access it from %{activity}"
-
+        budget_investment: "Budget Investment created successfully. You can access it from %{activity}"
       save_changes:
         notice: Changes saved
       update:
@@ -17,5 +17,7 @@ en:
         debate: "Debate updated successfully."
         proposal: "Proposal updated successfully."
         spending_proposal: "Investment project updated succesfully."
+        budget_investment: "Budget Investment updated succesfully."
       destroy:
         spending_proposal: "Spending proposal deleted succesfully."
+        budget_investment: "Budget Investment deleted succesfully."

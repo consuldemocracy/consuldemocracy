@@ -1,0 +1,23 @@
+<% reason = investment.reason_for_not_being_ballotable_by(current_user, @ballot) %>
+<div class="supports ballot">
+  <% if @ballot.has_investment?(investment) %>
+    <%= render 'budgets/ballots/remove', investment: investment %>
+  <% else %>
+    <%= render 'budgets/ballots/add', investment: investment %>
+  <% end %>
+
+  <% if reason.present? && !@ballot.has_investment?(investment) %>
+
+    <div class="no-supports-allowed" style='display:none'>
+      <p>
+        <%= t("votes.budget_investments.#{reason}",
+              verify_account: link_to(t("votes.verify_account"), verification_path),
+              signin: link_to(t("votes.signin"), new_user_session_path),
+              signup: link_to(t("votes.signup"), new_user_registration_path),
+              my_heading: link_to(@ballot.heading.try(:name), budget_investments_path(budget_id: @budget.id, heading_id: @ballot.heading_id))
+         ).html_safe %>
+      </p>
+    </div>
+
+  <% end %>
+</div>

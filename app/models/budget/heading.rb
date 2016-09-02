@@ -8,5 +8,14 @@ class Budget
     validates :group_id, presence: true
     validates :name, presence: true
     validates :price, presence: true
+
+    def budget
+      group.budget
+    end
+
+    def budget=(resource)
+      group.budget = resource
+    end
+
   end
 end

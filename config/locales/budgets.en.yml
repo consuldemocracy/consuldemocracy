@@ -1,0 +1,106 @@
+en:
+  budgets:
+    ballots:
+      show:
+        amount_spent: "pending translation"
+        city_wide: "pending translation"
+        districts_link: "pending translation"
+        remaining_district_html: "pending translation"
+        social_share: "pending translation"
+        title: "pending translation"
+        voted_html: "pending translation"
+        voted_info_html: "pending translation"
+        zero: "pending translation"
+  budget:
+    phase:
+      on_hold: On hold
+      accepting: Accepting proposals
+      selecting: Selecting
+      balloting: Balloting
+      finished: Finished
+    headings:
+      none: Whole City
+      all: All scopes
+    index:
+      name: Budget's name
+      phase: Phase
+      title: Participatory budgets
+    investments:
+      form:
+        association_name_label: 'If you propose in name of an assocation or collective add the name here'
+        association_name: 'Association name'
+        description: Description
+        external_url: Link to additional documentation
+        heading: Choose if a proposed citywide or district
+        submit_buttons:
+          create: Create
+          new: Create
+        title: Investment title
+      index:
+        available: "Available:"
+        title: Participatory budgeting
+        unfeasible: Unfeasible investment projects
+        unfeasible_text: "The proposals must meet a number of criteria (legality, concreteness, be the responsibility of the city, not exceed the limit of the budget; %{definitions}) to be declared viable and reach the stage of final vote. All proposals don't meet these criteria are marked as unfeasible and published in the following list, along with its report of infeasibility."
+        unfeasible_text_definitions: see definitions here
+        by_heading: "Investment projects with scope: %{heading}"
+        search_form:
+          button: Search
+          placeholder: Investment projects...
+          title: Search
+        search_results:
+          one: " containing the term '%{search_term}'"
+          other: " containing the term '%{search_term}'"
+        sidebar:
+          back: Back to select page
+          district: District
+          my_ballot: My ballot
+          remember_city: You can also vote %{city} investment projects.
+          remember_city_link_html: <strong>city-wide</strong>
+          remember_district: You can also vote investment projects for %{district}.
+          remember_district_link_html: <strong>a district</strong>
+          voted_html:
+            one: "<strong>You voted one proposal with a cost of %{amount_spent}</strong>"
+            other: "<strong>You voted %{count} proposals with a cost of %{amount_spent}</strong>"
+          voted_info: You can change your vote at any time until the close of this phase. No need to spend all the money available.
+          votes: Supports remaining
+          votes_district: "You can only vote in the district %{district}"
+          zero: You have not voted any investment project.
+        orders:
+          random: random
+          confidence_score: highest rated
+          price: by price
+      new:
+        back_link: Back
+        more_info: "Important, not to be ruled out your proposal must comply:"
+        recommendation_one: See the %{requirements}.
+        recommendation_one_link: requirements to be met by a proposal
+        recommendation_three: Try to go into details when describing your spending proposal so the reviewing team undertands your points.
+        recommendation_two: Each proposal must be submitted separately. You can make as many want.
+        recommendations_title: How to create a spending proposal
+        start_new: Create spending proposal
+      show:
+        author_deleted: User deleted
+        price_explanation: Price explanation
+        unfeasibility_explanation: Unfeasibility explanation
+        code: 'Investment project code:'
+        share: Share
+      wrong_price_format: Only integer numbers
+      investment:
+        title: Investment project
+        add: Add
+        already_added: You have already added this investment project
+        already_supported: You have already supported this. Share it!
+        forum: District discussion space
+        support_title: Support this project
+        supports:
+          one: 1 support
+          other: "%{count} supports"
+          zero: No supports
+        vote: Vote
+      header:
+        check_ballot: Check my ballot
+        different_heading_active: You have active votes in another district.
+    show:
+      heading: Heading
+      price: Price
+      no_heading: No Heading

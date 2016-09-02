@@ -33,13 +33,6 @@ es:
   application:
     close: Cerrar
     menu: Menú
-  budget:
-    phase:
-      on_hold: En pausa
-      accepting: Aceptando propuestas
-      selecting: Fase de selección
-      balloting: Fase de Votación
-      finished: Terminado
   comments:
     comment:
       admin: Administrador
@@ -163,7 +156,7 @@ es:
     verification/sms: el teléfono
   geozones:
     none: Toda la ciudad
-    all: Todos los ámbitos
+    all: Todos los ámbitos de actuación
   layouts:
     application:
       chrome: Google Chrome
@@ -217,7 +210,7 @@ es:
       open_gov: Gobierno %{open}
       proposals: Propuestas
       see_all: Ver propuestas
-      spending_proposals: Presupuestos ciudadanos
+      budgets: Presupuestos ciudadanos
   legislation:
     help:
       alt: Selecciona el texto que quieres comentar y pulsa en el botón con el lápiz.
@@ -470,9 +463,11 @@ es:
         one: " que contiene '%{search_term}'"
         other: " que contienen '%{search_term}'"
       sidebar:
+        back: Volver
         geozones: Ámbitos de actuación
         feasibility: Viabilidad
         unfeasible: No viables
+        my_ballot: Mis votos
       start_spending_proposal: Crea una propuesta de inversión
     new:
       more_info: "¿Cómo funcionan los presupuestos participativos?"
