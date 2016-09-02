@@ -94,6 +94,8 @@ search:
 # - 'errors.messages.{accepted,blank,invalid,too_short,too_long}'
 # - '{devise,simple_form}.*'
 ignore_missing:
+  - 'budget.*'
+  - 'budgets.*'
   - 'unauthorized.*'
   - 'activerecord.errors.models.proposal_notification.*'
   - 'activerecord.errors.models.direct_message.*'
@@ -104,6 +106,8 @@ ignore_missing:
 
 ## Consider these keys used:
 ignore_unused:
+  - 'budget.*'
+  - 'budgets.*'
   - 'activerecord.*'
   - 'activemodel.*'
   - 'unauthorized.*'
