@@ -12,6 +12,8 @@ class Budget
 
     belongs_to :author, -> { with_hidden }, class_name: 'User', foreign_key: 'author_id'
     belongs_to :heading
+    belongs_to :group
+    belongs_to :budget
     belongs_to :administrator
 
     has_many :valuator_assignments, dependent: :destroy
@@ -58,16 +60,14 @@ class Budget
     end
 
     def self.scoped_filter(params, current_filter)
-      results = budget.investments
-      if params[:max_for_no_heading].present? || params[:max_per_heading].present?
-        results = limit_results(results, budget, params[:max_per_heading].to_i, params[:max_for_no_heading].to_i)
-      end
+      results = Investment.where(budget_id: params[:budget_id])
+      results = results.where(group_id: params[:group_id])          if params[:group_id].present?
       results = results.by_heading(params[:heading_id])             if params[:heading_id].present?
       results = results.by_admin(params[:administrator_id])         if params[:administrator_id].present?
       results = results.by_tag(params[:tag_name])                   if params[:tag_name].present?
       results = results.by_valuator(params[:valuator_id])           if params[:valuator_id].present?
       results = results.send(current_filter)                        if current_filter.present?
-      results.includes(:heading, administrator: :user, valuators: :user)
+      results.includes(:heading, :group, :budget, administrator: :user, valuators: :user)
     end
 
     def self.limit_results(results, budget, max_per_heading, max_for_no_heading)
@@ -112,14 +112,6 @@ class Budget
 
     def self.by_heading(heading)
       where(heading_id: heading == 'all' ? nil : heading.presence)
-    end
-
-    def budget
-      heading.group.budget
-    end
-
-    def budget=(resource)
-      heading.group.budget = resource
     end
 
     def undecided?

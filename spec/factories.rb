@@ -223,7 +223,9 @@ FactoryGirl.define do
 
   factory :budget_investment, class: 'Budget::Investment' do
     sequence(:title)     { |n| "Budget Investment #{n} title" }
-    association :heading, factory: :budget_heading
+    budget
+    group      { create :budget_group, budget: budget }
+    heading    { create :budget_heading, group: group }
     association :author, factory: :user
     description          'Spend money on this'
     price                10
