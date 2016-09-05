@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160803154011) do
+ActiveRecord::Schema.define(version: 20160905092539) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -139,6 +139,8 @@ ActiveRecord::Schema.define(version: 20160803154011) do
     t.datetime "updated_at",                                                  null: false
     t.integer  "heading_id"
     t.string   "responsible_name"
+    t.integer  "budget_id"
+    t.integer  "group_id"
   end
 
   add_index "budget_investments", ["administrator_id"], name: "index_budget_investments_on_administrator_id", using: :btree
@@ -210,10 +212,10 @@ ActiveRecord::Schema.define(version: 20160803154011) do
     t.string   "visit_id"
     t.datetime "hidden_at"
     t.integer  "flags_count",                             default: 0
+    t.datetime "ignored_flag_at"
     t.integer  "cached_votes_total",                      default: 0
     t.integer  "cached_votes_up",                         default: 0
     t.integer  "cached_votes_down",                       default: 0
-    t.datetime "ignored_flag_at"
     t.integer  "comments_count",                          default: 0
     t.datetime "confirmed_hide_at"
     t.integer  "cached_anonymous_votes_total",            default: 0
