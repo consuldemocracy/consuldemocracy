@@ -13,10 +13,13 @@
   <% @budgets.each do |budget| %>
     <tr id="<%= dom_id(budget) %>" class="budget">
       <td>
-        <%= link_to budget.name, admin_budget_path(budget) %>
+        <%= link_to budget.name, admin_budget_budget_investments_path(budget_id: budget.id) %>
       </td>
       <td class="small">
         <%= t("budget.phase.#{budget.phase}") %>
+      </td>
+      <td class="small">
+        <%= link_to t("admin.budgets.index.info_link"), admin_budget_path(budget) %>
       </td>
     </tr>
   <% end %>

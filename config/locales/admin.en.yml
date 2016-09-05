@@ -62,6 +62,7 @@ en:
       index:
         title: Participatory budgets
         new_link: Create new
+        info_link: Info
         filters:
           open: Open
           finished: Finished
@@ -92,6 +93,27 @@ en:
         table_heading: Heading
         table_amount: Amount
         table_geozone: Scope of operation
+    budget_investments:
+      index:
+        group_filter_all: All voting groups
+        administrator_filter_all: All administrators
+        valuator_filter_all: All valuators
+        tags_filter_all: All tags
+        filters:
+          valuation_open: Open
+          without_admin: Without assigned admin
+          managed: Managed
+          valuating: Under valuation
+          valuation_finished: Valuation finished
+          all: All
+        title: Investment projects
+        assigned_admin: Assigned administrator
+        no_admin_assigned: No admin assigned
+        no_valuators_assigned: No valuators assigned
+        feasibility:
+          feasible: "Feasible (%{price})"
+          not_feasible: "Not feasible"
+          undefined: "Undefined"
     comments:
       index:
         filter: Filter

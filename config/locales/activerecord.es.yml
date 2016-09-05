@@ -7,6 +7,9 @@ es:
       budget:
         one: "Presupuesto participativo"
         other: "Presupuestos participativos"
+      budget/investment:
+        one: "Propuesta de inversión"
+        other: "Propuestas de inversión"
       comment:
         one: "Comentario"
         other: "Comentarios"

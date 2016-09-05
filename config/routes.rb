@@ -161,6 +161,8 @@ Rails.application.routes.draw do
         resources :budget_headings do
         end
       end
+
+      resources :budget_investments, only: [:index, :show]
     end
 
     resources :banners, only: [:index, :new, :create, :edit, :update, :destroy] do

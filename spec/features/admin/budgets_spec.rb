@@ -105,10 +105,13 @@ feature 'Admin budgets' do
   context 'Manage groups and headings' do
 
     scenario 'Create group', :js do
-      create(:budget, name: 'Yearly participatory budget')
+      budget = create(:budget, name: 'Yearly participatory budget')
 
       visit admin_budgets_path
-      click_link 'Yearly participatory budget'
+
+      within("#budget_#{budget.id}") do
+        click_link 'Info'
+      end
 
       expect(page).to have_content 'No groups created yet.'
 
