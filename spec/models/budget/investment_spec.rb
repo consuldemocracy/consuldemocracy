@@ -194,7 +194,7 @@ describe Budget::Investment do
     let(:heading)     { create(:budget_heading, group: group) }
     let(:user)        { create(:user, :level_two) }
     let(:luser)       { create(:user) }
-    let(:district_sp) { create(:budget_investment, heading: heading) }
+    let(:district_sp) { create(:budget_investment, budget: budget, group: group, heading: heading) }
 
     describe '#reason_for_not_being_selectable_by' do
       it "rejects not logged in users" do
@@ -271,13 +271,13 @@ describe Budget::Investment do
       b = create(:budget, :selecting)
       g = create(:budget_group, budget: b)
       h = create(:budget_heading, group: g)
-      sp = create(:budget_investment, heading: h)
+      i = create(:budget_investment, budget: b, group: g, heading: h)
 
-      sp.register_selection(create(:user, :level_two))
-      expect(sp.total_votes).to eq(1)
+      i.register_selection(create(:user, :level_two))
+      expect(i.total_votes).to eq(1)
 
-      sp.physical_votes = 10
-      expect(sp.total_votes).to eq(11)
+      i.physical_votes = 10
+      expect(i.total_votes).to eq(11)
     end
   end
 
@@ -301,7 +301,7 @@ describe Budget::Investment do
       let(:user)        { create(:user, :level_two) }
       let(:luser)       { create(:user) }
       let(:ballot)      { create(:budget_ballot, budget: budget) }
-      let(:investment)  { create(:budget_investment, heading: heading) }
+      let(:investment)  { create(:budget_investment, budget: budget, group: group, heading: heading) }
 
       describe '#reason_for_not_being_ballotable_by' do
         it "rejects not logged in users" do
@@ -338,8 +338,8 @@ describe Budget::Investment do
           california = create(:budget_heading, group: group)
           new_york = create(:budget_heading, group: group)
 
-          inv1 = create(:budget_investment, :feasible, heading: california)
-          inv2 = create(:budget_investment, :feasible, heading: new_york)
+          inv1 = create(:budget_investment, :feasible, budget: budget, group: group, heading: california)
+          inv2 = create(:budget_investment, :feasible, budget: budget, group: group, heading: new_york)
           b = create(:budget_ballot, user: user, budget: budget)
           b.add_investment inv1
 
@@ -348,10 +348,10 @@ describe Budget::Investment do
 
         it "rejects proposals with price higher than current available money" do
           budget.phase = "balloting"
-          distritos = create(:budget_group, budget: budget)
-          carabanchel = create(:budget_heading, group: distritos, price: 35)
-          inv1 = create(:budget_investment, :feasible, heading: carabanchel, price: 30)
-          inv2 = create(:budget_investment, :feasible, heading: carabanchel, price: 10)
+          districts = create(:budget_group, budget: budget)
+          carabanchel = create(:budget_heading, group: districts, price: 35)
+          inv1 = create(:budget_investment, :feasible, budget: budget, group: districts, heading: carabanchel, price: 30)
+          inv2 = create(:budget_investment, :feasible, budget: budget, group: districts, heading: carabanchel, price: 10)
 
           ballot = create(:budget_ballot, user: user, budget: budget)
           ballot.add_investment inv1

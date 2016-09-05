@@ -12,16 +12,10 @@ describe "Abilities::Common" do
   let(:accepting_budget) { create(:budget, phase: 'accepting') }
   let(:selecting_budget) { create(:budget, phase: 'selecting') }
   let(:balloting_budget) { create(:budget, phase: 'balloting') }
-  let(:accepting_budget_group) { create(:budget_group, budget: accepting_budget) }
-  let(:selecting_budget_group) { create(:budget_group, budget: selecting_budget) }
-  let(:balloting_budget_group) { create(:budget_group, budget: balloting_budget) }
-  let(:accepting_budget_heading) { create(:budget_heading, group: accepting_budget_group) }
-  let(:selecting_budget_heading) { create(:budget_heading, group: selecting_budget_group) }
-  let(:balloting_budget_heading) { create(:budget_heading, group: balloting_budget_group) }
 
-  let(:investment_in_accepting_budget) { create(:budget_investment, heading: accepting_budget_heading) }
-  let(:investment_in_selecting_budget) { create(:budget_investment, heading: selecting_budget_heading) }
-  let(:investment_in_balloting_budget) { create(:budget_investment, heading: balloting_budget_heading) }
+  let(:investment_in_accepting_budget) { create(:budget_investment, budget: accepting_budget) }
+  let(:investment_in_selecting_budget) { create(:budget_investment, budget: selecting_budget) }
+  let(:investment_in_balloting_budget) { create(:budget_investment, budget: balloting_budget) }
   let(:ballot_in_accepting_budget) { create(:budget_ballot, budget: accepting_budget) }
   let(:ballot_in_selecting_budget) { create(:budget_ballot, budget: selecting_budget) }
   let(:ballot_in_balloting_budget) { create(:budget_ballot, budget: balloting_budget) }

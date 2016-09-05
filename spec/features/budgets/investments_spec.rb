@@ -8,8 +8,8 @@ feature 'Budget Investments' do
   let(:heading) { create(:budget_heading, group: group) }
 
   scenario 'Index' do
-    investments = [create(:budget_investment, heading: heading), create(:budget_investment, heading: heading), create(:budget_investment, :feasible, heading: heading)]
-    unfeasible_investment = create(:budget_investment, :unfeasible, heading: heading)
+    investments = [create(:budget_investment, budget: budget, group: group, heading: heading), create(:budget_investment, budget: budget, group: group, heading: heading), create(:budget_investment, :feasible, budget: budget, group: group, heading: heading)]
+    unfeasible_investment = create(:budget_investment, :unfeasible, budget: budget, group: group, heading: heading)
 
     visit budget_investments_path(budget_id: budget.id)
 
@@ -25,9 +25,9 @@ feature 'Budget Investments' do
 
   context("Search") do
     scenario 'Search by text' do
-      investment1 = create(:budget_investment, heading: heading, title: "Get Schwifty")
-      investment2 = create(:budget_investment, heading: heading, title: "Schwifty Hello")
-      investment3 = create(:budget_investment, heading: heading, title: "Do not show me")
+      investment1 = create(:budget_investment, budget: budget, group: group, heading: heading, title: "Get Schwifty")
+      investment2 = create(:budget_investment, budget: budget, group: group, heading: heading, title: "Schwifty Hello")
+      investment3 = create(:budget_investment, budget: budget, group: group, heading: heading, title: "Do not show me")
 
       visit budget_investments_path(budget_id: budget.id)
 
@@ -48,10 +48,10 @@ feature 'Budget Investments' do
 
   context("Filters") do
     scenario 'by unfeasibility' do
-      investment1 = create(:budget_investment, :unfeasible, heading: heading, valuation_finished: true)
-      investment2 = create(:budget_investment, :feasible, heading: heading)
-      investment3 = create(:budget_investment, heading: heading)
-      investment4 = create(:budget_investment, :feasible, heading: heading)
+      investment1 = create(:budget_investment, :unfeasible, budget: budget, group: group, heading: heading, valuation_finished: true)
+      investment2 = create(:budget_investment, :feasible, budget: budget, group: group, heading: heading)
+      investment3 = create(:budget_investment, budget: budget, group: group, heading: heading)
+      investment4 = create(:budget_investment, :feasible, budget: budget, group: group, heading: heading)
 
       visit budget_investments_path(budget_id: budget.id, unfeasible: 1)
 
@@ -99,7 +99,7 @@ feature 'Budget Investments' do
 
     scenario 'Random order maintained with pagination', :js do
       per_page = Kaminari.config.default_per_page
-      (per_page + 2).times { create(:budget_investment, heading: heading) }
+      (per_page + 2).times { create(:budget_investment, budget: budget, group: group, heading: heading) }
 
       visit budget_investments_path(budget_id: budget.id)
 
@@ -116,9 +116,9 @@ feature 'Budget Investments' do
     end
 
     scenario 'Proposals are ordered by confidence_score', :js do
-      create(:budget_investment, heading: heading, title: 'Best proposal').update_column(:confidence_score, 10)
-      create(:budget_investment, heading: heading, title: 'Worst proposal').update_column(:confidence_score, 2)
-      create(:budget_investment, heading: heading, title: 'Medium proposal').update_column(:confidence_score, 5)
+      create(:budget_investment, budget: budget, group: group, heading: heading, title: 'Best proposal').update_column(:confidence_score, 10)
+      create(:budget_investment, budget: budget, group: group, heading: heading, title: 'Worst proposal').update_column(:confidence_score, 2)
+      create(:budget_investment, budget: budget, group: group, heading: heading, title: 'Medium proposal').update_column(:confidence_score, 5)
 
       visit budget_investments_path(budget_id: budget.id)
       click_link 'highest rated'
@@ -203,7 +203,7 @@ feature 'Budget Investments' do
     user = create(:user)
     login_as(user)
 
-    investment = create(:budget_investment, heading: heading)
+    investment = create(:budget_investment, budget: budget, group: group, heading: heading)
 
     visit budget_investment_path(budget_id: budget.id, id: investment.id)
 
@@ -223,6 +223,8 @@ feature 'Budget Investments' do
     investment = create(:budget_investment,
                         :feasible,
                         :finished,
+                        budget: budget,
+                        group: group,
                         heading: heading,
                         price: 16,
                         price_explanation: 'Every wheel is 4 euros, so total is 16')
@@ -240,6 +242,8 @@ feature 'Budget Investments' do
     investment = create(:budget_investment,
                         :unfeasible,
                         :finished,
+                        budget: budget,
+                        group: group,
                         heading: heading,
                         unfeasibility_explanation: 'Local government is not competent in this matter')
 
@@ -254,7 +258,7 @@ feature 'Budget Investments' do
     xscenario "Admin cannot destroy spending proposals" do
       admin = create(:administrator)
       user = create(:user, :level_two)
-      investment = create(:budget_investment, heading: heading, author: user)
+      investment = create(:budget_investment, budget: budget, group: group, heading: heading, author: user)
 
       login_as(admin.user)
       visit user_path(user)
@@ -270,7 +274,7 @@ feature 'Budget Investments' do
 
     scenario "Spending proposal created by a User" do
       user = create(:user)
-      user_investment = create(:budget_investment, heading: heading)
+      user_investment = create(:budget_investment, budget: budget, group: group, heading: heading)
 
       visit budget_investment_path(budget_id: budget.id, id: user_investment.id)
       expect(page).to_not have_css "is-forum"
@@ -291,8 +295,8 @@ feature 'Budget Investments' do
 
     xscenario "Index" do
       user = create(:user, :level_two)
-      sp1 = create(:budget_investment, :feasible, :finished, heading: heading, price: 10000)
-      sp2 = create(:budget_investment, :feasible, :finished, heading: heading, price: 20000)
+      sp1 = create(:budget_investment, :feasible, :finished, budget: budget, group: group, heading: heading, price: 10000)
+      sp2 = create(:budget_investment, :feasible, :finished, budget: budget, group: group, heading: heading, price: 20000)
 
       login_as(user)
       visit root_path
@@ -313,9 +317,9 @@ feature 'Budget Investments' do
     end
 
     xscenario 'Order by cost (only in phase3)' do
-      create(:budget_investment, :feasible, :finished, heading: heading, title: 'Build a nice house',  price:  1000).update_column(:confidence_score, 10)
-      create(:budget_investment, :feasible, :finished, heading: heading, title: 'Build an ugly house', price:  1000).update_column(:confidence_score, 5)
-      create(:budget_investment, :feasible, :finished, heading: heading, title: 'Build a skyscraper',  price: 20000)
+      create(:budget_investment, :feasible, :finished, budget: budget, group: group, heading: heading, title: 'Build a nice house',  price:  1000).update_column(:confidence_score, 10)
+      create(:budget_investment, :feasible, :finished, budget: budget, group: group, heading: heading, title: 'Build an ugly house', price:  1000).update_column(:confidence_score, 5)
+      create(:budget_investment, :feasible, :finished, budget: budget, group: group, heading: heading, title: 'Build a skyscraper',  price: 20000)
 
       visit budget_investments_path(budget_id: budget.id)
 
@@ -333,7 +337,7 @@ feature 'Budget Investments' do
 
     scenario "Show" do
       user = create(:user, :level_two)
-      sp1 = create(:budget_investment, :feasible, :finished, heading: heading, price: 10000)
+      sp1 = create(:budget_investment, :feasible, :finished, budget: budget, group: group, heading: heading, price: 10000)
 
       login_as(user)
       visit root_path
@@ -354,14 +358,14 @@ feature 'Budget Investments' do
       new_york    = create(:geozone, name: "New York")
 
       carabanchel_heading = create(:budget_heading, heading: heading, geozone: carabanchel, name: carabanchel.name)
-      new_york_heading     = create(:budget_heading, heading: heading, geozone: new_york, name: new_york.name)
+      new_york_heading    = create(:budget_heading, heading: heading, geozone: new_york, name: new_york.name)
 
       sp1 = create(:budget_investment, :feasible, :finished, price:      1, heading: nil)
       sp2 = create(:budget_investment, :feasible, :finished, price:     10, heading: nil)
       sp3 = create(:budget_investment, :feasible, :finished, price:    100, heading: nil)
-      sp4 = create(:budget_investment, :feasible, :finished, price:   1000, heading: carabanchel_heading)
-      sp5 = create(:budget_investment, :feasible, :finished, price:  10000, heading: carabanchel_heading)
-      sp6 = create(:budget_investment, :feasible, :finished, price: 100000, heading: new_york_heading)
+      sp4 = create(:budget_investment, :feasible, :finished, price:   1000, budget: budget, group: group, heading: carabanchel_heading)
+      sp5 = create(:budget_investment, :feasible, :finished, price:  10000, budget: budget, group: group, heading: carabanchel_heading)
+      sp6 = create(:budget_investment, :feasible, :finished, price: 100000, budget: budget, group: group, heading: new_york_heading)
 
       login_as(user)
       visit root_path
