@@ -330,6 +330,8 @@ tags = Faker::Lorem.words(10)
   investment = Budget::Investment.create!(
     author: User.reorder("RANDOM()").first,
     heading: heading,
+    group: heading.group,
+    budget: heading.group.budget,
     title: Faker::Lorem.sentence(3).truncate(60),
     external_url: Faker::Internet.url,
     description: "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>",
