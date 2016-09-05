@@ -43,18 +43,23 @@
       </div>
 
       <% unless investment.unfeasible? %>
-        <% if feature?("investment_features.phase2") %>
+
+        <% if @budget.selecting? || @budget.on_hold? %>
+
           <div id="<%= dom_id(investment) %>_votes"
                class="small-12 medium-3 column text-center">
             <%= render 'votes',
-                      { investment: investment, vote_url: vote_investment_path(investment, value: 'yes') } %>
+                      { investment: investment,
+                        vote_url: vote_budget_investment_path(@budget, investment, value: 'yes') } %>
           </div>
+
         <% elsif feature?("investment_features.phase3") %>
           <div id="<%= dom_id(investment) %>_ballot"
                 class="small-12 medium-3 column text-center">
             <%= render 'ballot', investment: investment %>
           </div>
         <% end %>
+
       <% end %>
     </div>
   </div>

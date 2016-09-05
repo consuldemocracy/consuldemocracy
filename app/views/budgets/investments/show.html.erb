@@ -45,15 +45,19 @@
     </div>
 
     <% if (@budget.selecting? && !@investment.unfeasible?) ||
-          (@budget.balloting? && @investment.feasible?) %>
+          (@budget.balloting? && @investment.feasible? ||
+          (@budget.on_hold?)) %>
       <aside class="small-12 medium-3 column">
         <div class="sidebar-divider"></div>
         <h3><%= t("votes.supports") %></h3>
         <div class="text-center">
-          <% if @budget.selecting? %>
+
+          <% if @budget.selecting? || @budget.on_hold? %>
             <div id="<%= dom_id(@investment) %>_votes">
               <%= render 'votes',
-                          { investment: @investment, vote_url: vote_budget_investment_path(budget_id: @budget.id, id: @investment.id) } %>
+                          { investment: @investment,
+                            vote_url: vote_budget_investment_path(@budget, @investment, value: 'yes') }
+              %>
             </div>
           <% else %>
             <div id="<%= dom_id(@investment) %>_ballot">

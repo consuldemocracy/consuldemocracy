@@ -180,6 +180,11 @@ module CommonActions
     expect(page).to_not have_selector('.in-favor a')
   end
 
+  def expect_message_selecting_not_allowed
+    expect(page).to have_content 'No Selecting Allowed'
+    expect(page).to_not have_selector('.in-favor a')
+  end
+
   def create_featured_proposals
     [create(:proposal, :with_confidence_score, cached_votes_up: 100),
      create(:proposal, :with_confidence_score, cached_votes_up: 90),
