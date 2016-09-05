@@ -20,4 +20,8 @@ module BudgetHelper
       budget_investment_path(investment, options)
     end
   end
+
+  def display_budget_countdown?(budget)
+    budget.balloting?
+  end
 end
