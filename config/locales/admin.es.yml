@@ -95,7 +95,7 @@ es:
         table_geozone: Ámbito de actuación
     budget_investments:
       index:
-        group_filter_all: Todos los grupos
+        heading_filter_all: Todas las partidas
         administrator_filter_all: Todos los administradores
         valuator_filter_all: Todos los evaluadores
         tags_filter_all: Todas las etiquetas

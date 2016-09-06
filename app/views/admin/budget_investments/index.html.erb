@@ -19,9 +19,9 @@
     </div>
 
     <div class="small-12 medium-3 column">
-      <%= select_tag :group_id,
-                     options_for_select(budget_group_select_options(@budget.groups), params[:group_id]),
-                     { prompt: t("admin.budget_investments.index.group_filter_all"),
+      <%= select_tag :heading_id,
+                     options_for_select(budget_heading_select_options(@budget), params[:heading_id]),
+                     { prompt: t("admin.budget_investments.index.heading_filter_all"),
                        label: false,
                        class: "js-submit-on-change" } %>
     </div>
@@ -47,7 +47,7 @@
         <strong><%= investment.id %></strong>
       </td>
       <td>
-        <%= link_to investment.title, admin_budget_budget_investment_path(budget_id: @budget.id, id: investment.id), Budget::Investment.filter_params(params) %>
+        <%= link_to investment.title, admin_budget_budget_investment_path(budget_id: @budget.id, id: investment.id, params: Budget::Investment.filter_params(params)) %>
       </td>
       <td class="small">
         <% if investment.administrator.present? %>
@@ -64,7 +64,7 @@
         <% end %>
       </td>
       <td class="small">
-        <%= investment.group.name %>
+        <%= investment.heading.name %>
       </td>
       <td class="small">
         <%= t("admin.budget_investments.index.feasibility.#{investment.feasibility}", price: investment.price) %>

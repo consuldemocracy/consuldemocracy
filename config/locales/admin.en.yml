@@ -95,7 +95,7 @@ en:
         table_geozone: Scope of operation
     budget_investments:
       index:
-        group_filter_all: All voting groups
+        heading_filter_all: All headings
         administrator_filter_all: All administrators
         valuator_filter_all: All valuators
         tags_filter_all: All tags
