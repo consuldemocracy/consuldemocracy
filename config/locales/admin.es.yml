@@ -114,6 +114,21 @@ es:
           feasible: "Viable (%{price})"
           not_feasible: "Inviable"
           undefined: "Sin definir"
+      show:
+        assigned_admin: Administrador asignado
+        assigned_valuators: Evaluadores asignados
+        classification: Clasificación
+        info: "%{budget_name} - Grupo: %{group_name} - Propuesta de inversión %{id}"
+        edit: Editar
+        edit_classification: Editar clasificación
+        by: Autor
+        sent: Fecha
+        group: Grupo
+        heading: Partida
+        dossier: Informe
+        edit_dossier: Editar informe
+        tags: Etiquetas
+        undefined: Sin definir
     comments:
       index:
         filter: Filtro

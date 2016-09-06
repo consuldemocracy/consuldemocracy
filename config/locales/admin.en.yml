@@ -114,6 +114,21 @@ en:
           feasible: "Feasible (%{price})"
           not_feasible: "Not feasible"
           undefined: "Undefined"
+      show:
+        assigned_admin: Assigned administrator
+        assigned_valuators: Assigned valuators
+        classification: Clasification
+        info: "%{budget_name} - Group: %{group_name} - Investment project %{id}"
+        edit: Edit
+        edit_classification: Edit classification
+        by: By
+        sent: Sent
+        group: Grupo
+        heading: Partida
+        dossier: Dossier
+        edit_dossier: Edit dossier
+        tags: Tags
+        undefined: Undefined
     comments:
       index:
         filter: Filter
