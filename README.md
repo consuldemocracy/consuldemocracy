@@ -32,16 +32,16 @@ cd consul
 bundle install
 cp config/database.yml.example config/database.yml
 cp config/secrets.yml.example config/secrets.yml
-rake db:create
+bin/rake db:create
 bin/rake db:setup
 bin/rake db:dev_seed
-RAILS_ENV=test rake db:setup
+RAILS_ENV=test bin/rake db:setup
 ```
 
 Run the app locally:
+
 ```
 bin/rails s
-
 ```
 
 Prerequisites for testing: install PhantomJS >= 1.9.8

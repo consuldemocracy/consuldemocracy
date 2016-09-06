@@ -26,19 +26,19 @@ Las herramientas utilizadas para el frontend no están cerradas aún. Los estilo
 Prerequisitos: tener instalado git, Ruby 2.2.3, la gema `bundler`, ghostscript y PostgreSQL (9.4 o superior).
 
 ```
-
 git clone https://github.com/consul/consul.git
 cd consul
 bundle install
 cp config/database.yml.example config/database.yml
 cp config/secrets.yml.example config/secrets.yml
-rake db:create
+bin/rake db:create
 bin/rake db:setup
 bin/rake db:dev_seed
-RAILS_ENV=test rake db:setup
+RAILS_ENV=test bin/rake db:setup
 ```
 
 Para ejecutar la aplicación en local:
+
 ```
 bin/rails s
 ```
