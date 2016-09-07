@@ -1,16 +1,7 @@
 class SpendingProposalsImporter
 
   def import(sp)
-    # feasibility
-    # unfeasibility_explanation
-    # heading_id
-    # valuator_assignments_count
-    # hidden_at
-    # comments_count
-    # group_id
-    # budget_id
-    # duration
-
+    # votes
     # comments
 
     budget = Budget.last || Budget.create!(name: Date.today.year.to_s, currency_symbol: "€")
@@ -35,7 +26,7 @@ class SpendingProposalsImporter
                     'undecided'
                   end
 
-    Budget::Investment.create!(
+    investment = Budget::Investment.create!(
       heading_id: heading.id,
       author_id: sp.author_id,
       administrator_id: sp.administrator_id,
@@ -45,7 +36,9 @@ class SpendingProposalsImporter
       price: sp.price,
       price_explanation: sp.price_explanation,
       internal_comments: sp.internal_comments,
+      duration: sp.time_scope,
       feasibility: feasibility,
+      unfeasibility_explanation: sp.feasible_explanation,
       valuation_finished: sp.valuation_finished,
       price_first_year: sp.price_first_year,
       cached_votes_up: sp.cached_votes_up,
@@ -55,6 +48,10 @@ class SpendingProposalsImporter
       responsible_name: sp.responsible_name,
       terms_of_service: "1"
     )
+
+    investment.valuators = sp.valuation_assignments.map(&:valuator)
+
+    investment
   end
 
 end

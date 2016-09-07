@@ -61,5 +61,18 @@ describe SpendingProposalsImporter do
       expect(importer.import(feasible).feasibility).to eq('feasible')
       expect(importer.import(unfeasible).feasibility).to eq('unfeasible')
     end
+
+    it "Imports valuation assignments" do
+      sp = create(:spending_proposal)
+      peter = create(:valuator)
+      john = create(:valuator)
+      sp.valuators << peter << john
+
+      inv = importer.import(sp)
+
+      expect(inv.valuator_assignments.count).to eq(2)
+      expect(inv.valuators).to include(peter)
+      expect(inv.valuators).to include(john)
+    end
   end
 end
