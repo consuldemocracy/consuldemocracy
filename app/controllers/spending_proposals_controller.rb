@@ -123,7 +123,7 @@ class SpendingProposalsController < ApplicationController
       default_target = Setting["feature.spending_proposal_features.phase3"].present? ? target.feasible.valuation_finished : target.not_unfeasible
       target = params[:unfeasible].present? ? target.unfeasible : default_target
       params[:geozone] = 'all' if params[:geozone].blank?
-      target = target.by_geozone(params[:geozone])
+      target = target.by_geozone(params[:geozone]) unless params[:unfeasible].present?
       set_filter_geozone
 
       if params[:forum].present?
