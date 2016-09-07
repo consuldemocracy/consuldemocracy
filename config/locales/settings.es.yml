@@ -14,7 +14,8 @@ es:
     email_domain_for_officials: "Dominio de email para cargos públicos"
     per_page_code: "Código a incluir en cada página"
     feature:
+      budgets: Presupuestos participativos
       debates: Debates
       spending_proposals: Propuestas de inversión
       spending_proposal_features:
-        voting_allowed: Votaciones sobre propuestas de inversión.
+        voting_allowed: Votaciones sobre propuestas de inversión
