@@ -1,21 +1,21 @@
 # Funcionalidades
 
-Actualmente Consul soporta: 
+Actualmente Consul soporta:
 
-* Registro y verificación de usuarios tanto en la misma aplicación como con distintos proveedores (Twitter, Facebook, Google) 
-* Distintos perfiles de usuario, tanto ciudadanos individuales como organizaciones. 
-* Distintos perfiles de administración, gestión y moderación. 
-* Espacio permanente de debates y propuestas. 
-* Comentarios anidados en debates y propuestas. 
-* Presupuestos participativos a través de distintas fases. 
+* Registro y verificación de usuarios tanto en la misma aplicación como con distintos proveedores (Twitter, Facebook, Google).
+* Distintos perfiles de usuario, tanto ciudadanos individuales como organizaciones.
+* Distintos perfiles de administración, gestión y moderación.
+* Espacio permanente de debates y propuestas.
+* Comentarios anidados en debates y propuestas.
+* Presupuestos participativos a través de distintas fases.
 
 # Usuario
 
-Para registrar un usuario nuevo es posible hacerlo en la propia aplicación, dando un nombre de usuario (Nombre público que aparecerá en tus publicaciones), un correo electrónico y una contraseña con la que se accederá a la web. Se deben aceptar las condiciones de uso. El usuario debe confirmar su correo electrónico para poder iniciar sesión
+Para registrar un usuario nuevo es posible hacerlo en la propia aplicación, dando un nombre de usuario (nombre público que aparecerá en tus publicaciones), un correo electrónico y una contraseña con la que se accederá a la web. Se deben aceptar las condiciones de uso. El usuario debe confirmar su correo electrónico para poder iniciar sesión.
 
 ![Registro de usuario](imgs/user_registration.png "Registro de usuario")
 
-Por otro lado también se puede habilitar el registro a través de servicios externos como Twitter, Facebook y Google. Para esto hace falta tener la configuración habilitada en Settings y las claves y secretos de estos servicios en el fichero *config/secrets.yml*. 
+Por otro lado también se puede habilitar el registro a través de servicios externos como Twitter, Facebook y Google. Para esto hace falta tener la configuración habilitada en Settings y las claves y secretos de estos servicios en el fichero *config/secrets.yml*.
 
 ```
   twitter_key: ""
@@ -26,7 +26,7 @@ Por otro lado también se puede habilitar el registro a través de servicios ext
   google_oauth2_secret: ""
 ```
 
-Una vez el usuario ha iniciado sesión le aparecerá la posibilidad de verificar su cuenta, a través de una conexión con el padrón municipal. 
+Una vez el usuario ha iniciado sesión le aparecerá la posibilidad de verificar su cuenta, a través de una conexión con el padrón municipal.
 
 ![Verificación de usuario](imgs/user_preverification.png?raw=true "Verificación de usuario")
 
@@ -36,17 +36,17 @@ Para esta funcionalidad hace falta que el padrón municipal soporte la posibilid
 
 # Perfil de usuario
 
-Dentro de su perfil cada usuario puede configurar si quiere mostrar públicamente su lista de actividades, así como las notificaciones que le enviará la aplicación a través de correo electrónico. Estas notificiaciones pueden ser: 
+Dentro de su perfil cada usuario puede configurar si quiere mostrar públicamente su lista de actividades, así como las notificaciones que le enviará la aplicación a través de correo electrónico. Estas notificiaciones pueden ser:
 
-* Recibir un email cuando alguien comenta en sus propuestas o debates
-* Recibir un email cuando alguien contesta a sus comentarios
-* Recibir emails con información interesante sobre la web
-* Recibir resumen de notificaciones sobre propuestas
-* Recibir emails con mensajes privados
+* Recibir un email cuando alguien comenta en sus propuestas o debates.
+* Recibir un email cuando alguien contesta a sus comentarios.
+* Recibir emails con información interesante sobre la web.
+* Recibir resumen de notificaciones sobre propuestas.
+* Recibir emails con mensajes privados.
 
-# Paneles de administración, gestión y moderación 
+# Paneles de administración, gestión y moderación
 
-Consul cuenta con tres perfiles de usuario diferenciados para hacer tareas de revisión y moderación de los contenidos. Se detallan a continuación: 
+Consul cuenta con tres perfiles de usuario diferenciados para hacer tareas de revisión y moderación de los contenidos. Se detallan a continuación:
 
 ## Administración
 
@@ -56,7 +56,7 @@ Desde aquí puedes administrar el sistema, a través de las siguientes acciones:
 
 ### Temas de debate
 
-Los temas (también llamadas tags, o etiquetas) de debate son palabras que definen los usuarios al crear debates, para catalogarlos (ej: sanidad, movilidad, arganzuela, ...). Aquí se pueden eliminar temas inapropiados, o marcarlos para ser propuestos al crear debates (cada usuario puede definir los que quiera, pero se le sugieren algunos que nos parecen útiles como catalogación por defecto; aquí se puede cambiar cuáles se sugieren)
+Los temas (también llamadas tags, o etiquetas) de debate son palabras que definen los usuarios al crear debates, para catalogarlos (ej: sanidad, movilidad, arganzuela, ...). Aquí se pueden eliminar temas inapropiados, o marcarlos para ser propuestos al crear debates (cada usuario puede definir los que quiera, pero se le sugieren algunos que nos parecen útiles como catalogación por defecto; aquí se puede cambiar cuáles se sugieren).
 
 ### Propuestas/Debates/Comentarios ocultos
 
@@ -77,8 +77,6 @@ En la web hay dos tipos de usuarios: individuales y organizaciones. Cualquier pe
 
 En caso de que el proceso de verificación haya sido negativo, se pulsa el botón "Rechazar". Para editar alguno de los datos de la organización, se pulsa el botón "Editar".
 
-En caso de que el proceso de verificación haya sido negativo, se pulsa el botón "Rechazar". Para editar alguno de los datos de la organización, se pulsa el botón "Editar".
-
 Las organizaciones que no aparecen en la lista pueden ser encontradas para actuar sobre ellas por medio del buscador en la parte superior. Para facilitar la gestión, arriba encontramos un filtro con las secciones: "pendientes" (las organizaciones que todavía no han sido verificadas o rechazadas), "verificadas", "rechazadas" y "todas".
 
 Es recomendable revisar regularmente la sección "pendientes".
@@ -89,7 +87,7 @@ En la web, los usuarios individuales pueden ser usuarios normales, o cargos púb
 
 ### Moderadores
 
-Mediante el buscador de la parte superior se pueden buscar usuarios, para activarlos o desactivarlos como moderadores de la web. Los moderadores al acceder a la web con su usuario ven en la parte superior una nueva sección llamada "Moderar"
+Mediante el buscador de la parte superior se pueden buscar usuarios, para activarlos o desactivarlos como moderadores de la web. Los moderadores al acceder a la web con su usuario ven en la parte superior una nueva sección llamada "Moderar".
 
 ### Actividad de moderadores
 
@@ -103,7 +101,7 @@ Opciones generales de configuración del sistema.
 
 Estadísticas generales del sistema.
 
-## Moderación 
+## Moderación
 
 ![Panel de moderación](imgs/panel_moderation.png?raw=true "Panel de moderación")
 
@@ -116,13 +114,14 @@ Cuando un usuario marca en una Propuesta/Debate/Comentario la opción de "denunc
 A la derecha de cada elemento aparece una caja que podemos marcar para seleccionar todos los que queramos de la lista. Una vez seleccionados uno o varios, encontramos al final de la página tres botones para realizar acciones sobre ellos:
 
 * Ocultar: hará que esos elementos dejen de mostrarse en la web.
-* Bloquear autores: hará que el autor de ese elemento deje de poder acceder a la web, y que además todos las Propuestas/Debates/Comentarios de ese usuario dejen de mostrarse en la web.
+* Bloquear autores: hará que el autor de ese elemento deje de poder acceder a la web, y que además todas las Propuestas/Debates/Comentarios de ese usuario dejen de mostrarse en la web.
 * Marcar como revisados cuando consideramos que esos elementos no deben ser moderados, que su contenido es correcto, y que por lo tanto deben dejar de ser mostrados en esta lista de elementos inapropiados.
 
 Para facilitar la gestión, arriba encontramos un filtro con las secciones:
-Pendientes: las Propuestas/Debates/Comentarios sobre los que todavía no se ha pulsado "ocultar", "bloquear" o "marcar como revisados", y que por lo tanto deberían ser revisados todavía
-Todos: mostrando todos las Propuestas/Debates/Comentarios de la web, y no sólo los marcados como inapropiados.
-Marcados como revisados: los que algún moderador ha marcado como revisados y por lo tanto parecen correctos.
+
+* Pendientes: las Propuestas/Debates/Comentarios sobre los que todavía no se ha pulsado "ocultar", "bloquear" o "marcar como revisados", y que por lo tanto deberían ser revisados todavía.
+* Todos: mostrando todos las Propuestas/Debates/Comentarios de la web, y no sólo los marcados como inapropiados.
+* Marcados como revisados: los que algún moderador ha marcado como revisados y por lo tanto parecen correctos.
 
 Es recomendable revisar regularmente la sección "pendientes".
 
@@ -136,12 +135,12 @@ Un buscador nos permite encontrar cualquier usuario introduciendo su nombre de u
 
 Desde aquí puedes gestionar usuarios a través de las siguientes acciones:
 
-* Usuarios
-* Editar cuenta de usuario
-* Crear propuesta
-* Apoyar propuestas
-* Crear propuesta de inversión
-* Apoyar propts. de inversión
-* Imprimir propuestas
-* Imprimir propts. de inversión
-* Invitaciones para usuarios
+* Usuarios.
+* Editar cuenta de usuario.
+* Crear propuesta.
+* Apoyar propuestas.
+* Crear propuesta de inversión.
+* Apoyar propts. de inversión.
+* Imprimir propuestas.
+* Imprimir propts. de inversión.
+* Invitaciones para usuarios.
