@@ -382,6 +382,8 @@ es:
     voting: "próxima votación"
     featured_title: "Próxima votación"
     nothing_to_vote: "No hay nada que votar en este momento."
+    info: "Hay propuestas que han alcanzado el número de apoyos necesarios y pasarán a la siguiente votación."
+    info_button: "Más información sobre la votación"
   proposal_notifications:
     new:
       title: "Enviar mensaje"

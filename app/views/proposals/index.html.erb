@@ -32,6 +32,19 @@
       <% end %>
 
       <% if @proposal_ballots.present? %>
+        <div class="row featured-proposals-ballot-banner margin-bottom">
+          <div class="small-12 column padding">
+            <div class="icon-successfull"></div>
+            <h2>
+              <%= t("proposal_ballots.featured_title") %>
+            </h2>
+            <p><%= t("proposal_ballots.info") %></p>
+            <div class="small-12 medium-4 small-centered">
+              <%= link_to t("proposal_ballots.info_button"), proposal_ballots_path, class: "button expanded" %>
+            </div>
+          </div>
+        </div>
+
         <div class="row featured-proposals-ballot">
           <div class="small-12 column">
             <div class="icon-successfull"></div>

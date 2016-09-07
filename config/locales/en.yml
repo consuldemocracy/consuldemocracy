@@ -382,6 +382,8 @@ en:
     voting: "next voting"
     featured_title: "Next voting"
     nothing_to_vote: "There is nothing to vote at the moment."
+    info: "There are proposals that have reached the required supports and will be voted."
+    info_button: "More information about voting"
   proposal_notifications:
     new:
       title: "Send message"
