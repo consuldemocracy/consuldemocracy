@@ -5,12 +5,25 @@ describe SpendingProposalsImporter do
   let(:importer) { SpendingProposalsImporter.new }
 
   describe '#import' do
+
+    it "Creates the budget if it doesn't exist" do
+      sp = create(:spending_proposal)
+      expect { importer.import(sp) }.to change{ Budget.count }.from(0).to(1)
+      importer.import(create(:spending_proposal))
+      expect(Budget.count).to eq(1)
+    end
+
+    it "Creates the and returns investments" do
+      inv = nil
+      sp = create(:spending_proposal)
+      expect { inv = importer.import(sp) }.to change{ Budget::Investment.count }.from(0).to(1)
+      expect(inv).to be_kind_of(Budget::Investment)
+    end
+
     it "Imports a city spending proposal" do
       sp = create(:spending_proposal)
 
-      expect { importer.import(sp) }.to change{ Budget::Investment.count }.from(0).to(1)
-
-      inv = Budget::Investment.last
+      inv = importer.import(sp)
 
       expect(inv.author).to eq(sp.author)
       expect(inv.title).to eq(sp.title)
@@ -21,9 +34,7 @@ describe SpendingProposalsImporter do
     it "Imports a city spending proposal" do
       sp = create(:spending_proposal, geozone: create(:geozone, name: "Bel Air"))
 
-      expect { importer.import(sp) }.to change{ Budget::Investment.count }.from(0).to(1)
-
-      inv = Budget::Investment.last
+      inv = importer.import(sp)
 
       expect(inv.author).to eq(sp.author)
       expect(inv.title).to eq(sp.title)
@@ -35,18 +46,15 @@ describe SpendingProposalsImporter do
       sp1 = create(:spending_proposal, geozone: create(:geozone, name: "Bel Air"))
       sp2 = create(:spending_proposal, geozone: create(:geozone, name: "Bel Air"))
 
-      expect { importer.import(sp1) }.to change{ Budget::Investment.count }.from(0).to(1)
-      expect { importer.import(sp2) }.to change{ Budget::Investment.count }.from(1).to(2)
-
-      inv1 = Budget::Investment.first
-      inv2 = Budget::Investment.last
+      inv1 = importer.import(sp1)
+      inv2 = importer.import(sp2)
 
       expect(inv2.heading).to eq(inv1.heading)
     end
 
     it "Imports feasibility correctly" do
-      sp = create(:spending_proposal)
-      feasible = create(:spending_proposal, feasible: true)
+      sp         = create(:spending_proposal)
+      feasible   = create(:spending_proposal, feasible: true)
       unfeasible = create(:spending_proposal, feasible: false)
 
       expect(importer.import(sp).feasibility).to eq('undecided')
