@@ -209,6 +209,7 @@ en:
       open_data: Open data
       open_gov: Open government
       proposals: Proposals
+      proposal_ballot: Voting
       see_all: See proposals
       spending_proposals: Spending proposals
   legislation:
@@ -371,6 +372,15 @@ en:
     update:
       form:
         submit_button: Save changes
+  proposal_ballots:
+    title: "Votings"
+    description_html: "These are the proposals that have reached the required supports <em>(%{supports})</em> and will be voted."
+    date_title: "Dates of participation"
+    date: "September 15 to September 30, 2016"
+    successfull: "This proposal has reached the required supports and will be voted in the %{voting}."
+    voting: "next voting"
+    featured_title: "Next voting"
+    nothing_to_vote: "There is nothing to vote at the moment."
   proposal_notifications:
     new:
       title: "Send message"

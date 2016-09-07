@@ -30,8 +30,20 @@
       <% if has_banners %>
         <%= render "shared/banner" %>
       <% end %>
-      
-      <% if @featured_proposals.present? %>
+
+      <% if @proposal_ballots.present? %>
+        <div class="row featured-proposals-ballot">
+          <div class="small-12 column">
+            <div class="icon-successfull"></div>
+            <h2>
+              <%= t("proposal_ballots.featured_title") %>
+            </h2>
+            <% @proposal_ballots.each do |proposal_ballot| %>
+              <%= render "proposal_ballots/featured_successfull_proposal", proposal: proposal_ballot %>
+            <% end %>
+          </div>
+        </div>
+      <% elsif @featured_proposals.present? %>
         <div id="featured-proposals" class="row featured-proposals">
           <div class="small-12 column">
             <h2>

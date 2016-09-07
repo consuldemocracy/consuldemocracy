@@ -28,6 +28,7 @@ class ProposalsController < ApplicationController
   def index_customization
     load_retired
     load_featured
+    load_proposal_ballots
   end
 
   def vote
@@ -95,6 +96,10 @@ class ProposalsController < ApplicationController
         set_featured_proposal_votes(@featured_proposals)
         @resources = @resources.where('proposals.id NOT IN (?)', @featured_proposals.map(&:id))
       end
+    end
+
+    def load_proposal_ballots
+      @proposal_ballots = Proposal.successfull.sort_by_confidence_score
     end
 
 end

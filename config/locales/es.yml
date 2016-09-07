@@ -209,6 +209,7 @@ es:
       open_data: Datos abiertos
       open_gov: Gobierno %{open}
       proposals: Propuestas
+      proposal_ballot: Votaciones
       see_all: Ver propuestas
       spending_proposals: Presupuestos ciudadanos
   legislation:
@@ -371,6 +372,15 @@ es:
     update:
       form:
         submit_button: Guardar cambios
+  proposal_ballots:
+    title: "Votaciones"
+    description_html: "Estas son las propuestas que han alcanzado el número de apoyos necesarios <em>(%{supports})</em> y que pasarán a la siguiente votación."
+    date_title: "Fechas de participación"
+    date: "Del 15 de septiembre al 30 de septiembre de 2016"
+    successfull: "Esta propuesta ha alcanzado los apoyos necesarios y pasará a la %{voting}."
+    voting: "próxima votación"
+    featured_title: "Próxima votación"
+    nothing_to_vote: "No hay nada que votar en este momento."
   proposal_notifications:
     new:
       title: "Enviar mensaje"
