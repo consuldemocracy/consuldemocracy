@@ -1,4 +1,6 @@
 class Admin::BudgetInvestmentsController < Admin::BaseController
+  include FeatureFlags
+  feature_flag :budgets
 
   before_action :load_budget
   before_action :load_investment, only: [:show, :edit, :update]

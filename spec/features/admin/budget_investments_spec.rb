@@ -9,6 +9,15 @@ feature 'Admin budget investments' do
     @budget = create(:budget)
   end
 
+  context "Feature flag" do
+
+    scenario 'Disabled with a feature flag' do
+      Setting['feature.budgets'] = nil
+      expect{ visit admin_budgets_path }.to raise_exception(FeatureFlags::FeatureDisabled)
+    end
+
+  end
+
   context "Index" do
 
     scenario 'Displaying investmentss' do
