@@ -7,7 +7,14 @@
       <% else %>
         <%= proposal.author.name %>
       <% end %>
-      &nbsp;&bull;&nbsp;
+
+      <% if proposal.author.display_official_position_badge? %>
+        <span class="bullet">&nbsp;&bull;&nbsp;</span>
+        <span class="label round level-<%= proposal.author.official_level %>">
+          <%= proposal.author.official_position %>
+        </span>
+      <% end %>
+
       <strong><%= t("proposals.proposal.supports", count: proposal.total_votes) %></strong>
     </div>
   </div>
