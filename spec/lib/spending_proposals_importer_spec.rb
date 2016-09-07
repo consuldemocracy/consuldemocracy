@@ -74,5 +74,19 @@ describe SpendingProposalsImporter do
       expect(inv.valuators).to include(peter)
       expect(inv.valuators).to include(john)
     end
+
+    it "Imports votes" do
+      sp = create(:spending_proposal)
+      votes = create_list(:vote, 4, votable: sp)
+      voters = votes.map(&:voter).sort_by(&:id)
+
+      inv = importer.import(sp)
+
+      expect(inv.total_votes).to eq(sp.total_votes)
+
+      imported_votes = ActsAsVotable::Vote.where(votable_type: "Budget::Investment", votable_id: inv.id)
+
+      expect(imported_votes.map(&:voter).sort_by(&:id)).to eq(voters)
+    end
   end
 end

@@ -51,6 +51,10 @@ class SpendingProposalsImporter
 
     investment.valuators = sp.valuation_assignments.map(&:valuator)
 
+    votes = ActsAsVotable::Vote.where(votable_type: 'SpendingProposal', votable_id: sp.id)
+
+    votes.each {|v| investment.vote_by({voter: v.voter, vote: 'yes'}) }
+
     investment
   end
 
