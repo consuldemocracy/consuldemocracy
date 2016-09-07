@@ -129,6 +129,14 @@ es:
         edit_dossier: Editar informe
         tags: Etiquetas
         undefined: Sin definir
+      edit:
+        classification: Clasificación
+        assigned_valuators: Evaluadores
+        select_heading: Seleccionar partida
+        submit_button: Actualizar
+        tags: Etiquetas
+        tags_placeholder: "Escribe las etiquetas que desees separadas por comas (,)"
+        undefined: Sin definir
     comments:
       index:
         filter: Filtro

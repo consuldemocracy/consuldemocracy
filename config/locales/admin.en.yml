@@ -129,6 +129,14 @@ en:
         edit_dossier: Edit dossier
         tags: Tags
         undefined: Undefined
+      edit:
+        classification: Clasification
+        assigned_valuators: Valuators
+        select_heading: Select heading
+        submit_button: Update
+        tags: Tags
+        tags_placeholder: "Write the tags you want separated by commas (,)"
+        undefined: Undefined
     comments:
       index:
         filter: Filter

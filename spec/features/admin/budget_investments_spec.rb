@@ -98,15 +98,16 @@ feature 'Admin budget investments' do
       expect(page).to have_link("Change name")
       expect(page).to_not have_link("Plant trees")
 
-      # click_link("Realocate visitors")
-      # click_link("Edit classification")
-      # expect(page).to have_button("Update")
-      # click_link("Go back")
-      # expect(page).to_not have_button("Update")
-      # click_link("Go back")
+      click_link("Change name")
+      click_link("Edit classification")
+      expect(page).to have_button("Update")
+      click_link("Go back")
+      expect(page).to_not have_button("Update")
+      click_link("Go back")
 
-      # expect(page).to_not have_link("Destroy the city")
-      # expect(page).to have_link("Realocate visitors")
+      expect(page).to_not have_link("Realocate visitors")
+      expect(page).to have_link("Change name")
+      expect(page).to_not have_link("Plant trees")
     end
 
     scenario "Filtering by admin", :js do
@@ -142,16 +143,16 @@ feature 'Admin budget investments' do
       expect(page).to_not have_link("Destroy the city")
       expect(page).to have_link("Realocate visitors")
 
-      # click_link("Realocate visitors")
-      # click_link("Edit classification")
-      # expect(page).to have_button("Update")
-      # click_link("Go back")
-      # expect(page).to_not have_button("Update")
-      # click_link("Go back")
+      click_link("Realocate visitors")
+      click_link("Edit classification")
+      expect(page).to have_button("Update")
+      click_link("Go back")
+      expect(page).to_not have_button("Update")
+      click_link("Go back")
 
-      # expect(page).to have_content('There is 1 investment')
-      # expect(page).to_not have_link("Destroy the city")
-      # expect(page).to have_link("Realocate visitors")
+      expect(page).to have_content('There is 1 investment')
+      expect(page).to_not have_link("Destroy the city")
+      expect(page).to have_link("Realocate visitors")
     end
 
     scenario "Filtering by valuator", :js do
@@ -188,16 +189,16 @@ feature 'Admin budget investments' do
       expect(page).to_not have_link("Destroy the city")
       expect(page).to have_link("Realocate visitors")
 
-      # click_link("Realocate visitors")
-      # click_link("Edit classification")
-      # expect(page).to have_button("Update")
-      # click_link("Go back")
-      # expect(page).to_not have_button("Update")
-      # click_link("Go back")
+      click_link("Realocate visitors")
+      click_link("Edit classification")
+      expect(page).to have_button("Update")
+      click_link("Go back")
+      expect(page).to_not have_button("Update")
+      click_link("Go back")
 
-      # expect(page).to have_content('There is 1 investment')
-      # expect(page).to_not have_link("Destroy the city")
-      # expect(page).to have_link("Realocate visitors")
+      expect(page).to have_content('There is 1 investment')
+      expect(page).to_not have_link("Destroy the city")
+      expect(page).to have_link("Realocate visitors")
     end
 
     scenario "Current filter is properly highlighted" do
@@ -297,16 +298,159 @@ feature 'Admin budget investments' do
       expect(page).to have_content("Educate the children")
       expect(page).to have_content("More schools")
 
-      # click_link("Educate the children")
-      # click_link("Edit classification")
-      # expect(page).to have_button("Update")
-      # click_link("Go back")
-      # expect(page).to_not have_button("Update")
-      # click_link("Go back")
+      click_link("Educate the children")
+      click_link("Edit classification")
+      expect(page).to have_button("Update")
+      click_link("Go back")
+      expect(page).to_not have_button("Update")
+      click_link("Go back")
 
-      # expect(page).to_not have_content("More hospitals")
-      # expect(page).to have_content("Educate the children")
-      # expect(page).to have_content("More schools")
+      expect(page).to_not have_content("More hospitals")
+      expect(page).to have_content("Educate the children")
+      expect(page).to have_content("More schools")
+    end
+
+  end
+
+  scenario 'Show' do
+    administrator = create(:administrator, user: create(:user, username: 'Ana', email: 'ana@admins.org'))
+    valuator = create(:valuator, user: create(:user, username: 'Rachel', email: 'rachel@valuators.org'))
+    budget_investment = create(:budget_investment,
+                                price: 1234,
+                                price_first_year: 1000,
+                                feasibility: "unfeasible",
+                                unfeasibility_explanation: 'It is impossible',
+                                administrator: administrator)
+    budget_investment.valuators << valuator
+
+    visit admin_budget_budget_investments_path(budget_investment.budget)
+
+    click_link budget_investment.title
+
+    expect(page).to have_content(budget_investment.title)
+    expect(page).to have_content(budget_investment.description)
+    expect(page).to have_content(budget_investment.author.name)
+    expect(page).to have_content(budget_investment.heading.name)
+    expect(page).to have_content('1234')
+    expect(page).to have_content('1000')
+    expect(page).to have_content('Unfeasible')
+    expect(page).to have_content('It is impossible')
+    expect(page).to have_content('Ana (ana@admins.org)')
+
+    within('#assigned_valuators') do
+      expect(page).to have_content('Rachel (rachel@valuators.org)')
+    end
+  end
+
+  context "Edit" do
+
+    scenario "Change title, description or heading" do
+      budget_investment = create(:budget_investment)
+      create(:budget_heading, group: budget_investment.group, name: "Barbate")
+
+      visit admin_budget_budget_investment_path(budget_investment.budget, budget_investment)
+      click_link 'Edit'
+
+      fill_in 'budget_investment_title', with: 'Potatoes'
+      fill_in 'budget_investment_description', with: 'Carrots'
+      select "#{budget_investment.group.name}: Barbate", from: 'budget_investment[heading_id]'
+
+      click_button 'Update'
+
+      expect(page).to have_content 'Potatoes'
+      expect(page).to have_content 'Carrots'
+      expect(page).to have_content 'Barbate'
+    end
+
+    scenario "Add administrator" do
+      budget_investment = create(:budget_investment)
+      administrator = create(:administrator, user: create(:user, username: 'Marta', email: 'marta@admins.org'))
+
+      visit admin_budget_budget_investment_path(budget_investment.budget, budget_investment)
+      click_link 'Edit classification'
+
+      select 'Marta (marta@admins.org)', from: 'budget_investment[administrator_id]'
+      click_button 'Update'
+
+      expect(page).to have_content 'Investment project updated succesfully.'
+      expect(page).to have_content 'Assigned administrator: Marta'
+    end
+
+    scenario "Add valuators" do
+      budget_investment = create(:budget_investment)
+
+      valuator1 = create(:valuator, user: create(:user, username: 'Valentina', email: 'v1@valuators.org'))
+      valuator2 = create(:valuator, user: create(:user, username: 'Valerian',  email: 'v2@valuators.org'))
+      valuator3 = create(:valuator, user: create(:user, username: 'Val',       email: 'v3@valuators.org'))
+
+      visit admin_budget_budget_investment_path(budget_investment.budget, budget_investment)
+      click_link 'Edit classification'
+
+      check "budget_investment_valuator_ids_#{valuator1.id}"
+      check "budget_investment_valuator_ids_#{valuator3.id}"
+
+      click_button 'Update'
+
+      expect(page).to have_content 'Investment project updated succesfully.'
+
+      within('#assigned_valuators') do
+        expect(page).to have_content('Valentina (v1@valuators.org)')
+        expect(page).to have_content('Val (v3@valuators.org)')
+        expect(page).to_not have_content('Undefined')
+        expect(page).to_not have_content('Valerian (v2@valuators.org)')
+      end
+    end
+
+    scenario "Adds existing tags", :js do
+      create(:budget_investment, tag_list: 'Education, Health')
+
+      budget_investment = create(:budget_investment)
+
+      visit admin_budget_budget_investment_path(budget_investment.budget, budget_investment)
+      click_link 'Edit classification'
+
+      find('.js-add-tag-link', text: 'Education').click
+
+      fill_in 'budget_investment_title', with: 'Updated title'
+
+      click_button 'Update'
+
+      expect(page).to have_content 'Investment project updated succesfully.'
+
+      within "#tags" do
+        expect(page).to have_content 'Education'
+        expect(page).to_not have_content 'Health'
+      end
+    end
+
+    scenario "Adds non existent tags" do
+      budget_investment = create(:budget_investment)
+
+      visit admin_budget_budget_investment_path(budget_investment.budget, budget_investment)
+      click_link 'Edit classification'
+
+      fill_in 'budget_investment_tag_list', with: 'Refugees, Solidarity'
+      click_button 'Update'
+
+      expect(page).to have_content 'Investment project updated succesfully.'
+
+      within "#tags" do
+        expect(page).to have_content 'Refugees'
+        expect(page).to have_content 'Solidarity'
+      end
+    end
+
+    scenario "Errors on update" do
+      budget_investment = create(:budget_investment)
+
+      visit admin_budget_budget_investment_path(budget_investment.budget, budget_investment)
+      click_link 'Edit'
+
+      fill_in 'budget_investment_title', with: ''
+
+      click_button 'Update'
+
+      expect(page).to have_content "can't be blank"
     end
 
   end

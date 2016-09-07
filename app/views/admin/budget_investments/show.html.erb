@@ -5,7 +5,7 @@
 <%= render 'written_by_author' %>
 
 <%= link_to t("admin.budget_investments.show.edit"),
-            admin_budget_budget_investment_path(@budget, @investment,
+            edit_admin_budget_budget_investment_path(@budget, @investment,
                                                 Budget::Investment.filter_params(params)) %>
 
 <hr>
@@ -33,7 +33,7 @@
 
 <p>
   <%= link_to t("admin.budget_investments.show.edit_classification"),
-                edit_admin_spending_proposal_path(@investment,
+                edit_admin_budget_budget_investment_path(@budget, @investment,
                                                   {anchor: 'classification'}.merge(Budget::Investment.filter_params(params))) %>
 </p>
 
@@ -41,7 +41,7 @@
 
 <h2><%= t("admin.budget_investments.show.dossier") %></h2>
 
-<%# render 'valuation/budget_investments/written_by_valuators' %>
+<%= render 'valuation/budget_investments/written_by_valuators' %>
 
 <p>
   <%= link_to t("admin.budget_investments.show.edit_dossier"), edit_valuation_spending_proposal_path(@investment) %>
