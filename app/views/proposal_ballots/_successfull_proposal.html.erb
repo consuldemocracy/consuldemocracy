@@ -1,0 +1,13 @@
+<div id="<%= dom_id(proposal) %>" class="proposal-sucessfull">
+  <h3><%= link_to proposal.title, proposal %></h3>
+  <h4><%= proposal.question %></h4>
+  <div class="info">
+    <% if proposal.author.hidden? || proposal.author.erased? %>
+      <%= t("proposals.show.author_deleted") %>
+    <% else %>
+      <%= proposal.author.name %>
+    <% end %>
+    &nbsp;&bull;&nbsp;
+    <strong><%= t("proposals.proposal.supports", count: proposal.total_votes) %></strong>
+  </div>
+</div>
