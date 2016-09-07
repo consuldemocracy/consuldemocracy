@@ -1,9 +1,6 @@
 class SpendingProposalsImporter
 
   def import(sp)
-    # votes
-    # comments
-
     budget = Budget.last || Budget.create!(name: Date.today.year.to_s, currency_symbol: "€")
 
     group = nil
@@ -54,6 +51,16 @@ class SpendingProposalsImporter
     votes = ActsAsVotable::Vote.where(votable_type: 'SpendingProposal', votable_id: sp.id)
 
     votes.each {|v| investment.vote_by({voter: v.voter, vote: 'yes'}) }
+
+    # Spending proposals are not commentable in Consul so we can not test this
+    #
+    # Comment.where(commentable_type: 'SpendingProposal', commentable_id: sp.id).update_all(
+    #   commentable_type: 'Budget::Investment', commentable_id: investment.id
+    # )
+    # Budget::Investment.reset_counters(investment.id, :comments)
+
+    # Spending proposals have ballot_lines in Madrid, but not in consul, so we
+    # can not test this either
 
     investment
   end
