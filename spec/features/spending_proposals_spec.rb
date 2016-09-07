@@ -50,11 +50,12 @@ feature 'Spending proposals' do
       spending_proposal2 = create(:spending_proposal, feasible: true)
       spending_proposal3 = create(:spending_proposal)
       spending_proposal4 = create(:spending_proposal, feasible: false)
+      spending_proposal5 = create(:spending_proposal, feasible: false, valuation_finished: true, geozone: create(:geozone))
 
       visit spending_proposals_path(unfeasible: 1)
 
       within("#investment-projects") do
-        expect(page).to have_css('.investment-project', count: 1)
+        expect(page).to have_css('.investment-project', count: 2)
 
         expect(page).to have_content(spending_proposal1.title)
         expect(page).to_not have_content(spending_proposal2.title)
