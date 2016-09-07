@@ -44,6 +44,7 @@ class Proposal < ActiveRecord::Base
   scope :sort_by_random,           -> { reorder("RANDOM()") }
   scope :sort_by_relevance,        -> { all }
   scope :sort_by_flags,            -> { order(flags_count: :desc, updated_at: :desc) }
+  scope :archived,                 -> { where("proposals.created_at <= ?", 1.year.ago)}
   scope :last_week,                -> { where("proposals.created_at >= ?", 7.days.ago)}
   scope :retired,                  -> { where.not(retired_at: nil) }
   scope :not_retired,              -> { where(retired_at: nil) }

@@ -302,6 +302,7 @@ en:
         hot_score: most active
         most_commented: most commented
         relevance: relevance
+        archived: Archived
       retired_proposals: Retired proposals
       retired_proposals_link: "Proposals retired by the author"
       retired_links:
