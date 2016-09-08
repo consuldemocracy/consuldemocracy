@@ -149,7 +149,7 @@ tags = Faker::Lorem.words(25)
   description = "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>"
   proposal = Proposal.create!(author: author,
                               title: Faker::Lorem.sentence(3).truncate(60),
-                              question: Faker::Lorem.sentence(3),
+                              question: Faker::Lorem.sentence(3) + "?",
                               summary: Faker::Lorem.sentence(3),
                               responsible_name: Faker::Name.name,
                               external_url: Faker::Internet.url,
@@ -168,7 +168,7 @@ tags = ActsAsTaggableOn::Tag.where(kind: 'category')
   description = "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>"
   proposal = Proposal.create!(author: author,
                               title: Faker::Lorem.sentence(3).truncate(60),
-                              question: Faker::Lorem.sentence(3),
+                              question: Faker::Lorem.sentence(3) + "?",
                               summary: Faker::Lorem.sentence(3),
                               responsible_name: Faker::Name.name,
                               external_url: Faker::Internet.url,
