@@ -9,7 +9,7 @@ feature 'Admin budgets' do
 
   context 'Feature flag' do
 
-    xscenario 'Disabled with a feature flag' do
+    scenario 'Disabled with a feature flag' do
       Setting['feature.budgets'] = nil
       expect{ visit admin_budgets_path }.to raise_exception(FeatureFlags::FeatureDisabled)
     end

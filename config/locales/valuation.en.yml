@@ -3,8 +3,27 @@ en:
   valuation:
     menu:
       title: Valuation
+      budgets: Participatory budgets
       spending_proposals: Spending proposals
+    budgets:
+      index:
+        title: Participatory budgets
+        filters:
+          open: Open
+          finished: Finished
     budget_investments:
+      index:
+        headings_filter_all: All headings
+        filters:
+          valuation_open: Open
+          valuating: Under valuation
+          valuation_finished: Valuation finished
+        title: Investment projects
+        edit: Edit
+        valuators_assigned:
+          one: Assigned valuator
+          other: "%{count} valuators assigned"
+        no_valuators_assigned: No valuators assigned
       show:
         back: Back
         heading: Investment project
@@ -27,6 +46,8 @@ en:
         responsibles: Responsibles
         assigned_admin: Assigned admin
         assigned_valuators: Assigned valuators
+      notice:
+        valuate: "Dossier updated"
     spending_proposals:
       index:
         geozone_filter_all: All zones
@@ -36,10 +57,6 @@ en:
           valuation_finished: Valuation finished
         title: Investment projects for participatory budgeting
         edit: Edit
-        valuators_assigned:
-          one: Assigned valuator
-          other: "%{count} valuators assigned"
-        no_valuators_assigned: No valuators assigned
       show:
         back: Back
         heading: Investment project

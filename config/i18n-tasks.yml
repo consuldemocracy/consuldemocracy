@@ -132,6 +132,8 @@ ignore_unused:
   - 'moderation.debates.index.filter*'
   - 'moderation.debates.index.order*'
   - 'valuation.spending_proposals.index.filter*'
+  - 'valuation.budgets.index.filter*'
+  - 'valuation.budget_investments.index.filter*'
   - 'users.show.filters.*'
   - 'debates.index.select_order'
   - 'debates.index.orders.*'
