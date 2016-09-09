@@ -380,7 +380,7 @@ feature 'Ballots' do
     expect(page).to have_content("You have voted 0 proposals")
   end
 
-  scenario 'Removing spending proposals from ballot (sidebar)', :js, :focus do
+  scenario 'Removing spending proposals from ballot (sidebar)', :js do
     user = create(:user, :level_two)
     investment1 = create(:budget_investment, :feasible, :finished, price: 10000, heading: heading)
     investment2 = create(:budget_investment, :feasible, :finished, price: 20000, heading: heading)
@@ -420,68 +420,68 @@ feature 'Ballots' do
   context 'Permissions' do
 
     scenario 'User not logged in', :js do
-      spending_proposal = create(:spending_proposal, :feasible, :finished)
+      investment = create(:budget_investment, :feasible, :finished, heading: heading)
 
-      visit spending_proposals_path
+      visit budget_investments_path(budget, heading_id: heading.id)
 
-      within("#spending_proposal_#{spending_proposal.id}") do
+      within("#budget_investment_#{investment.id}") do
         find("div.ballot").hover
-        expect_message_you_need_to_sign_in
+        expect_message_you_need_to_sign_in_to_ballot
       end
     end
 
     scenario 'User not verified', :js do
       user = create(:user)
-      spending_proposal = create(:spending_proposal, :feasible, :finished)
+      investment = create(:budget_investment, :feasible, :finished, heading: heading)
 
       login_as(user)
-      visit spending_proposals_path
+      visit budget_investments_path(budget, heading_id: heading.id)
 
-      within("#spending_proposal_#{spending_proposal.id}") do
+      within("#budget_investment_#{investment.id}") do
         find("div.ballot").hover
-        expect_message_only_verified_can_vote_proposals
+        expect_message_only_verified_can_vote_investments
       end
     end
 
     scenario 'User is organization', :js do
       org = create(:organization)
-      spending_proposal = create(:spending_proposal, :feasible, :finished)
+      investment = create(:budget_investment, :feasible, :finished, heading: heading)
 
       login_as(org.user)
-      visit spending_proposals_path
+      visit budget_investments_path(budget, heading_id: heading.id)
 
-      within("#spending_proposal_#{spending_proposal.id}") do
+      within("#budget_investment_#{investment.id}") do
         find("div.ballot").hover
         expect_message_organizations_cannot_vote
       end
     end
 
-    scenario 'Spending proposal unfeasible' do
+    scenario 'Unfeasible investments' do
       user = create(:user, :level_two)
-      spending_proposal = create(:spending_proposal, :finished, feasible: false)
+      investment = create(:budget_investment, :finished, :unfeasible, heading: heading)
 
       login_as(user)
-      visit spending_proposals_path(unfeasible: 1)
+      visit budget_investments_path(budget, heading_id: heading.id, unfeasible: 1)
 
-      within("#spending_proposal_#{spending_proposal.id}") do
+      within("#budget_investment_#{investment.id}") do
         expect(page).to_not have_css("div.ballot")
       end
     end
 
-    scenario 'Spending proposal with feasibility undecided are not shown' do
+    scenario 'Investments with feasibility undecided are not shown' do
       user = create(:user, :level_two)
-      spending_proposal = create(:spending_proposal, :finished, feasible: nil)
+      investment = create(:budget_investment, :finished, feasibility: "undecided", heading: heading)
 
       login_as(user)
-      visit spending_proposals_path
+      visit budget_investments_path(budget, heading_id: heading.id)
 
-      within("#investment-projects") do
+      within("#budget-investments") do
         expect(page).to_not have_css("div.ballot")
-        expect(page).to_not have_css("#spending_proposal_#{spending_proposal.id}")
+        expect(page).to_not have_css("#budget_investment_#{investment.id}")
       end
     end
 
-    scenario 'Different district', :js do
+    scenario 'Different district', :js, :focus do
       user = create(:user, :level_two)
       california = create(:geozone)
       new_york = create(:geozone)
