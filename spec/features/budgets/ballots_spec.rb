@@ -481,7 +481,7 @@ feature 'Ballots' do
       end
     end
 
-    scenario 'Different district', :js, :focus do
+    scenario 'Different district', :js do
       user = create(:user, :level_two)
       california = create(:geozone)
       new_york = create(:geozone)
