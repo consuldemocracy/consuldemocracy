@@ -170,25 +170,29 @@ feature 'Budget Investments' do
   end
 
   xscenario 'Create notice' do
+    budget.update(phase: "accepting")
     login_as(author)
 
     visit new_budget_investment_path(budget_id: budget.id)
-    fill_in 'investment_title', with: 'Build a skyscraper'
-    fill_in 'investment_description', with: 'I want to live in a high tower over the clouds'
-    fill_in 'investment_external_url', with: 'http://http://skyscraperpage.com/'
+    save_and_open_page
+    fill_in 'budget_investment_title', with: 'Build a skyscraper'
+    fill_in 'budget_investment_description', with: 'I want to live in a high tower over the clouds'
+    fill_in 'budget_investment_external_url', with: 'http://http://skyscraperpage.com/'
     select  'All city', from: 'investment_heading_id'
     check 'investment_terms_of_service'
 
     click_button 'Create'
 
-    expect(page).to_not have_content 'Investment project created successfully'
-    expect(page).to have_content '1 error'
+    expect(page).to have_content 'Investment created successfully'
+    expect(page).to have_content 'You can access it from My activity'
 
     within "#notice" do
       click_link 'My activity'
     end
 
-    expect(page).to have_content 'Investment project created successfully'
+    expect(current_url).to eq(user_url(author, filter: :budget_investments))
+    expect(page).to have_content "1 Investment"
+    expect(page).to have_content "Build a skyscraper"
   end
 
   xscenario 'Errors on create' do

@@ -525,8 +525,6 @@ en:
       deleted: Deleted
       deleted_debate: This debate has been deleted
       deleted_proposal: This proposal has been deleted
-      delete_spending_proposal: Delete
-      confirm_deletion_spending_proposal: Are you sure? This action can not be undone
       filters:
         comments:
           one: 1 Comment
@@ -537,9 +535,9 @@ en:
         proposals:
           one: 1 Proposal
           other: "%{count} Proposals"
-        spending_proposals:
-          one: 1 Spending proposal
-          other: "%{count} Spending proposals"
+        budget_investments:
+          one: 1 Investment
+          other: "%{count} Investments"
       no_activity: User has no public activity
       no_private_messages: "This user doesn't accept private messages."
       private_activity: This user decided to keep the activity list private
