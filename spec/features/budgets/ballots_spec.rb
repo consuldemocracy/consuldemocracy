@@ -616,76 +616,8 @@ feature 'Ballots' do
       end
     end
 
-    scenario "Voting proposals when delegating", :js do
-      forum = create(:forum, name: 'hydra')
-      user = create(:user, :level_two, representative_id: forum.id)
-      sp = create(:spending_proposal, :feasible, :finished)
-
-      login_as(user)
-      visit forums_path
-      expect(page).to have_content("You are delegating your votes on hydra")
-
-      visit spending_proposals_path(geozone: 'all')
-
-      within("#spending_proposal_#{sp.id}") do
-        find('.add a').trigger('click')
-        expect(page).to have_content "Remove vote"
-      end
-
-      visit forums_path
-      expect(page).to_not have_content("You are delegating your votes on hydra")
-    end
 
   end
-
-  context "voting with GET" do
-    let!(:user) { create(:user, :level_two) }
-    let!(:sp_city) { create(:spending_proposal, :feasible, :finished, price: 10000) }
-    let!(:sp_district) { create(:spending_proposal, :feasible, :finished, price: 10000, geozone: create(:geozone, name: "Barajas")) }
-
-    context "When logged in" do
-      background { login_as(user) }
-
-      scenario "Vote a City proposal", :js do
-        visit create_ballot_line_path(spending_proposal_id: sp_city.id)
-        expect(page).to have_content("You have voted this proposal")
-        expect(page).to have_link "Remove vote"
-      end
-
-      scenario "Vote a District proposal", :js do
-        visit create_ballot_line_path(spending_proposal_id: sp_district.id)
-        expect(page).to have_content("You have voted this proposal")
-        expect(page).to have_link "Remove vote"
-      end
-    end
-
-    context "When not logged in" do
-      scenario "Vote a City proposal", :js do
-        visit create_ballot_line_path(spending_proposal_id: sp_city.id)
-
-        expect(page).to have_content "You must sign in or register to continue"
-        fill_in 'user_email', with: user.email
-        fill_in 'user_password', with: user.password
-        click_button 'Enter'
-
-        expect(page).to have_content("You have voted this proposal")
-        expect(page).to have_link "Remove vote"
-      end
-
-      scenario "Vote a District proposal", :js do
-        visit create_ballot_line_path(spending_proposal_id: sp_district.id)
-
-        expect(page).to have_content "You must sign in or register to continue"
-        fill_in 'user_email', with: user.email
-        fill_in 'user_password', with: user.password
-        click_button 'Enter'
-
-        expect(page).to have_content("You have voted this proposal")
-        expect(page).to have_link "Remove vote"
-      end
-    end
-  end
-end
 
 feature "Ballots in the wrong phase" do
 
