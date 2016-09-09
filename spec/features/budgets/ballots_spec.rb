@@ -315,16 +315,15 @@ feature 'Ballots' do
 
   context 'Showing the ballot' do
     pending "Do not display heading name if there is only one heading in the group (example: group city)"
-    pending "Money remaining in each group (maybe integrate in an existing scenario)"
 
-    scenario 'Displaying the correct count & amount', :focus do
+    scenario 'Displaying the correct count & amount' do
       user = create(:user, :level_two)
 
       group1 = create(:budget_group, budget: budget)
       group2 = create(:budget_group, budget: budget)
 
-      heading1 = create(:budget_heading, name: "District 1", group: group1)
-      heading2 = create(:budget_heading, name: "District 2", group: group2)
+      heading1 = create(:budget_heading, name: "District 1", group: group1, price: 100)
+      heading2 = create(:budget_heading, name: "District 2", group: group2, price: 50)
 
       ballot = create(:budget_ballot, user: user, budget: budget)
 
@@ -349,12 +348,14 @@ feature 'Ballots' do
 
       within("#budget_group_#{group1.id}") do
         expect(page).to have_content "#{group1.name} - #{heading1.name}"
-        expect(page).to have_content "€20"
+        expect(page).to have_content "Amount spent €20"
+        expect(page).to have_content "You still have €80 to invest"
       end
 
       within("#budget_group_#{group2.id}") do
         expect(page).to have_content "#{group2.name} - #{heading2.name}"
-        expect(page).to have_content "€15"
+        expect(page).to have_content "Amount spent €15"
+        expect(page).to have_content "You still have €35 to invest"
       end
     end
 

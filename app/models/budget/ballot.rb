@@ -55,7 +55,7 @@ class Budget
     end
 
     def heading_for_group(group)
-      self.headings.where(group: group).first.id
+      self.headings.where(group: group).first
     end
 
   end
