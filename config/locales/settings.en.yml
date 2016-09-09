@@ -14,6 +14,7 @@ en:
     email_domain_for_officials: "Email domain for public officials"
     per_page_code: "Code to be included on every page"
     feature:
+      budgets: Participatory budgeting
       debates: Debates
       spending_proposals: Investment projects
       spending_proposal_features:

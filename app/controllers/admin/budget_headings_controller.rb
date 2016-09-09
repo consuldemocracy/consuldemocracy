@@ -1,4 +1,6 @@
 class Admin::BudgetHeadingsController < Admin::BaseController
+  include FeatureFlags
+  feature_flag :budgets
 
   def create
     @budget = Budget.find params[:budget_id]

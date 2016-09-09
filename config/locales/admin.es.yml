@@ -62,6 +62,7 @@ es:
       index:
         title: Presupuestos participativos
         new_link: Crear nuevo
+        info_link: Info
         filters:
           open: Abiertos
           finished: Terminados
@@ -92,6 +93,50 @@ es:
         table_heading: Partida
         table_amount: Cantidad
         table_geozone: Ámbito de actuación
+    budget_investments:
+      index:
+        heading_filter_all: Todas las partidas
+        administrator_filter_all: Todos los administradores
+        valuator_filter_all: Todos los evaluadores
+        tags_filter_all: Todas las etiquetas
+        filters:
+          valuation_open: Abiertas
+          without_admin: Sin administrador
+          managed: Gestionando
+          valuating: En evaluación
+          valuation_finished: Evaluación finalizada
+          all: Todas
+        title: Propuestas de inversión
+        assigned_admin: Administrador asignado
+        no_admin_assigned: Sin admin asignado
+        no_valuators_assigned: Sin evaluador
+        feasibility:
+          feasible: "Viable (%{price})"
+          not_feasible: "Inviable"
+          undefined: "Sin definir"
+      show:
+        assigned_admin: Administrador asignado
+        assigned_valuators: Evaluadores asignados
+        classification: Clasificación
+        info: "%{budget_name} - Grupo: %{group_name} - Propuesta de inversión %{id}"
+        edit: Editar
+        edit_classification: Editar clasificación
+        by: Autor
+        sent: Fecha
+        group: Grupo
+        heading: Partida
+        dossier: Informe
+        edit_dossier: Editar informe
+        tags: Etiquetas
+        undefined: Sin definir
+      edit:
+        classification: Clasificación
+        assigned_valuators: Evaluadores
+        select_heading: Seleccionar partida
+        submit_button: Actualizar
+        tags: Etiquetas
+        tags_placeholder: "Escribe las etiquetas que desees separadas por comas (,)"
+        undefined: Sin definir
     comments:
       index:
         filter: Filtro
