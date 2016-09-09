@@ -335,12 +335,12 @@ feature 'Ballots' do
       investment4 = create(:budget_investment, :feasible, price: 5,  heading: heading2, group: group2)
       investment5 = create(:budget_investment, :feasible, price: 5,  heading: heading2, group: group2)
 
-      create(:budget_ballot_line, ballot: ballot, investment: investment1, heading: heading1, group: group1)
-      create(:budget_ballot_line, ballot: ballot, investment: investment2, heading: heading1, group: group1)
+      create(:budget_ballot_line, ballot: ballot, investment: investment1, group: group1)
+      create(:budget_ballot_line, ballot: ballot, investment: investment2, group: group1)
 
-      create(:budget_ballot_line, ballot: ballot, investment: investment3, heading: heading2, group: group2)
-      create(:budget_ballot_line, ballot: ballot, investment: investment4, heading: heading2, group: group2)
-      create(:budget_ballot_line, ballot: ballot, investment: investment5, heading: heading2, group: group2)
+      create(:budget_ballot_line, ballot: ballot, investment: investment3, group: group2)
+      create(:budget_ballot_line, ballot: ballot, investment: investment4, group: group2)
+      create(:budget_ballot_line, ballot: ballot, investment: investment5, group: group2)
 
       login_as(user)
       visit budget_ballot_path(budget)
