@@ -363,93 +363,56 @@ feature 'Ballots' do
 
   scenario 'Removing spending proposals from ballot', :js do
     user = create(:user, :level_two)
-    ballot = create(:ballot, user: user)
-    sp = create(:spending_proposal, :feasible, :finished, price: 10)
-    ballot.spending_proposals = [sp]
+    ballot = create(:budget_ballot, user: user, budget: budget)
+    investment = create(:budget_investment, :feasible, :finished, price: 10, heading: heading, group: group)
+    create(:budget_ballot_line, ballot: ballot, investment: investment, heading: heading, group: group)
 
     login_as(user)
-    visit ballot_path
+    visit budget_ballot_path(budget)
 
-    expect(page).to have_content("You voted one proposal")
+    expect(page).to have_content("You have voted one proposal")
 
-    within("#spending_proposal_#{sp.id}") do
+    within("#budget_investment_#{investment.id}") do
       find(".remove-investment-project").trigger('click')
     end
 
-    expect(current_path).to eq(ballot_path)
-    expect(page).to have_content("You voted 0 proposals")
+    expect(current_path).to eq(budget_ballot_path(budget))
+    expect(page).to have_content("You have voted 0 proposals")
   end
 
-  scenario 'Removing spending proposals from ballot (sidebar)', :js do
+  scenario 'Removing spending proposals from ballot (sidebar)', :js, :focus do
     user = create(:user, :level_two)
-    sp1 = create(:spending_proposal, :feasible, :finished, price: 10000)
-    sp2 = create(:spending_proposal, :feasible, :finished, price: 20000)
+    investment1 = create(:budget_investment, :feasible, :finished, price: 10000, heading: heading)
+    investment2 = create(:budget_investment, :feasible, :finished, price: 20000, heading: heading)
 
-    ballot = create(:ballot, user: user, spending_proposals: [sp1, sp2])
+    ballot = create(:budget_ballot, budget: budget, user: user, investments: [investment1, investment2])
 
     login_as(user)
-    visit spending_proposals_path(geozone: 'all')
+    visit budget_investments_path(budget, heading_id: heading.id)
 
     expect(page).to have_css("#amount-spent", text: "€30,000")
-    expect(page).to have_css("#amount-available", text: "€23,970,000")
+    expect(page).to have_css("#amount-available", text: "€970,000")
 
     within("#sidebar") do
-      expect(page).to have_content sp1.title
+      expect(page).to have_content investment1.title
       expect(page).to have_content "€10,000"
 
-      expect(page).to have_content sp2.title
+      expect(page).to have_content investment2.title
       expect(page).to have_content "€20,000"
     end
 
-    within("#sidebar #spending_proposal_#{sp1.id}_sidebar") do
+    within("#sidebar #budget_investment_#{investment1.id}_sidebar") do
       find(".remove-investment-project").trigger('click')
     end
 
     expect(page).to have_css("#amount-spent", text: "€20,000")
-    expect(page).to have_css("#amount-available", text: "€23,980,000")
+    expect(page).to have_css("#amount-available", text: "€980,000")
 
     within("#sidebar") do
-      expect(page).to_not have_content sp1.title
+      expect(page).to_not have_content investment1.title
       expect(page).to_not have_content "€10,000"
 
-      expect(page).to have_content sp2.title
-      expect(page).to have_content "€20,000"
-    end
-  end
-
-  scenario 'Removing spending proposals from ballot (sidebar)', :js do
-    user = create(:user, :level_two)
-    sp1 = create(:spending_proposal, :feasible, :finished, price: 10000)
-    sp2 = create(:spending_proposal, :feasible, :finished, price: 20000)
-
-    ballot = create(:ballot, user: user, spending_proposals: [sp1, sp2])
-
-    login_as(user)
-    visit spending_proposals_path(geozone: 'all')
-
-    expect(page).to have_css("#amount-spent", text: "€30,000")
-    expect(page).to have_css("#amount-available", text: "€23,970,000")
-
-    within("#sidebar") do
-      expect(page).to have_content sp1.title
-      expect(page).to have_content "€10,000"
-
-      expect(page).to have_content sp2.title
-      expect(page).to have_content "€20,000"
-    end
-
-    within("#sidebar #spending_proposal_#{sp1.id}_sidebar") do
-      find(".remove-investment-project").trigger('click')
-    end
-
-    expect(page).to have_css("#amount-spent", text: "€20,000")
-    expect(page).to have_css("#amount-available", text: "€23,980,000")
-
-    within("#sidebar") do
-      expect(page).to_not have_content sp1.title
-      expect(page).to_not have_content "€10,000"
-
-      expect(page).to have_content sp2.title
+      expect(page).to have_content investment2.title
       expect(page).to have_content "€20,000"
     end
   end
