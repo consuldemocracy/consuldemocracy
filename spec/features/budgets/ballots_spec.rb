@@ -4,7 +4,7 @@ feature 'Ballots' do
 
   let(:budget)  { create(:budget, phase: "balloting") }
   let(:group)   { create(:budget_group, budget: budget) }
-  let(:heading) { create(:budget_heading, group: group) }
+  let(:heading) { create(:budget_heading, group: group, name: "Heading 1", price: 1000000) }
 
   context "Voting" do
     let!(:user) { create(:user, :level_two) }
@@ -16,11 +16,12 @@ feature 'Ballots' do
 
     context "City" do
 
-      scenario "Add a proposal", :js, :focus do
+      scenario "Add a proposal", :js do
         investment1 = create(:budget_investment, :feasible, :finished, budget: budget, heading: heading, price: 10000)
         investment2 = create(:budget_investment, :feasible, :finished, budget: budget, heading: heading, price: 20000)
 
-        click_link "No Heading"
+        visit budget_path(budget)
+        click_link "Heading 1"
 
         within("#budget_investment_#{investment1.id}") do
           find('.add a').trigger('click')
@@ -48,35 +49,38 @@ feature 'Ballots' do
       end
 
       scenario "Remove a proposal", :js do
-        sp1 = create(:spending_proposal, :feasible, :finished, price: 10000)
-        ballot = create(:ballot, user: user, spending_proposals: [sp1])
+        investment1 = create(:budget_investment, :feasible, :finished, budget: budget, heading: heading, price: 10000)
+        ballot = create(:budget_ballot, user: user, budget: budget, investments: [investment1])
 
-        click_link "Vote city proposals"
+        visit budget_path(budget)
+        click_link "Heading 1"
 
+        expect(page).to have_content investment1.title
         expect(page).to have_css("#amount-spent", text: "€10,000")
-        expect(page).to have_css("#amount-available", text: "€23,990,000")
+        expect(page).to have_css("#amount-available", text: "€990,000")
 
         within("#sidebar") do
-          expect(page).to have_content sp1.title
+          expect(page).to have_content investment1.title
           expect(page).to have_content "€10,000"
         end
 
-        within("#spending_proposal_#{sp1.id}") do
+        within("#budget_investment_#{investment1.id}") do
           find('.remove a').trigger('click')
         end
 
         expect(page).to have_css("#amount-spent", text: "€0")
-        expect(page).to have_css("#amount-available", text: "€24,000,000")
+        expect(page).to have_css("#amount-available", text: "€1,000,000")
 
         within("#sidebar") do
-          expect(page).to_not have_content sp1.title
+          expect(page).to_not have_content investment1.title
           expect(page).to_not have_content "€10,000"
         end
       end
 
     end
 
-    context 'District' do
+    #Not used anymore?
+    xcontext 'District' do
 
       scenario "Add a proposal", :js do
         carabanchel = create(:geozone, name: "Carabanchel")
@@ -147,77 +151,92 @@ feature 'Ballots' do
 
     end
 
-    context "City and District" do
+    #Break up or simplify with helpers
+    context "Balloting in multiple headings" do
 
-      scenario "Independent progress bar for city and district proposals", :js do
-        carabanchel = create(:geozone, name: "Carabanchel")
+      scenario "Independent progress bar for headings", :js do
+        city      = create(:budget_group, budget: budget)
+        districts = create(:budget_group, budget: budget)
 
-        sp1 = create(:spending_proposal, :feasible, :finished, geozone: nil,        price: 10000)
-        sp2 = create(:spending_proposal, :feasible, :finished, geozone: carabanchel, price: 20000)
+        city_heading      = create(:budget_heading, group: city,      name: "All city",   price: 10000000)
+        district_heading1 = create(:budget_heading, group: districts, name: "District 1", price: 1000000)
+        district_heading2 = create(:budget_heading, group: districts, name: "District 2", price: 2000000)
 
-        click_link "Vote city proposals"
+        investment1 = create(:budget_investment, :feasible, :finished, heading: city_heading,      price: 10000)
+        investment2 = create(:budget_investment, :feasible, :finished, heading: district_heading1, price: 20000)
+        investment3 = create(:budget_investment, :feasible, :finished, heading: district_heading2, price: 30000)
 
-        within("#spending_proposal_#{sp1.id}") do
+        visit budget_path(budget)
+        click_link "All city"
+
+        within("#budget_investment_#{investment1.id}") do
           find('.add a').trigger('click')
           expect(page).to have_content "Remove"
         end
 
-        expect(page).to have_css("#amount-spent", text: "€10,000")
-        expect(page).to have_css("#amount-available", text: "€23,990,000")
+        expect(page).to have_css("#amount-spent",     text: "€10,000")
+        expect(page).to have_css("#amount-available", text: "€9,990,000")
 
         within("#sidebar") do
-          expect(page).to have_content sp1.title
+          expect(page).to have_content investment1.title
           expect(page).to have_content "€10,000"
         end
 
-        visit spending_proposals_path(geozone: carabanchel)
+        visit budget_path(budget)
+        click_link "District 1"
 
         expect(page).to have_css("#amount-spent", text: "€0")
-        expect(page).to have_css("#amount-spent", text: "€3,247,830")
+        expect(page).to have_css("#amount-spent", text: "€1,000,000")
 
-        within("#spending_proposal_#{sp2.id}") do
+        within("#budget_investment_#{investment2.id}") do
           find('.add a').trigger('click')
           expect(page).to have_content "Remove"
         end
 
-        visit spending_proposals_path(geozone: carabanchel)
+        visit budget_path(budget)
+        click_link "District 1"
 
-        expect(page).to have_css("#amount-spent", text: "€20,000")
-        expect(page).to have_css("#amount-available", text: "€3,227,830")
+        expect(page).to have_css("#amount-spent",     text: "€20,000")
+        expect(page).to have_css("#amount-available", text: "€980,000")
 
         within("#sidebar") do
-          expect(page).to have_content sp2.title
+          expect(page).to have_content investment2.title
           expect(page).to have_content "€20,000"
 
-          expect(page).to_not have_content sp1.title
+          expect(page).to_not have_content investment1.title
           expect(page).to_not have_content "€10,000"
         end
 
-        click_link "Participatory budgeting"
-        click_link "Vote city proposals"
+        visit budget_path(budget)
+        click_link "All city"
 
-        expect(page).to have_css("#amount-spent", text: "€10,000")
-        expect(page).to have_css("#amount-available", text: "€23,990,000")
+        expect(page).to have_css("#amount-spent",     text: "€10,000")
+        expect(page).to have_css("#amount-available", text: "€9,990,000")
 
         within("#sidebar") do
-          expect(page).to have_content sp1.title
+          expect(page).to have_content investment1.title
           expect(page).to have_content "€10,000"
 
-          expect(page).to_not have_content sp2.title
+          expect(page).to_not have_content investment2.title
           expect(page).to_not have_content "€20,000"
         end
+
+        visit budget_path(budget)
+        click_link "District 2"
+
+        expect(page).to have_css("#amount-spent", text: "€0")
+        expect(page).to have_css("#amount-spent", text: "€2,000,000")
       end
     end
 
-    scenario "Display progress bar after first district vote", :js do
-      carabanchel = create(:geozone, name: "Carabanchel")
+    scenario "Display progress bar after first vote", :js do
+      investment = create(:budget_investment, :feasible, :finished, heading: heading, price: 10000)
 
-      sp1 = create(:spending_proposal, :feasible, :finished, geozone: carabanchel, price: 10000)
+      visit budget_path(budget)
+      click_link "Heading 1"
 
-      click_link "Vote district proposals"
-      click_link carabanchel.name
-
-      within("#spending_proposal_#{sp1.id}") do
+      expect(page).to have_content investment.title
+      within("#budget_investment_#{investment.id}") do
         find('.add a').trigger('click')
         expect(page).to have_content "Remove"
       end
@@ -228,70 +247,71 @@ feature 'Ballots' do
     end
   end
 
-  context "Choosing my district" do
+  context "Groups" do
     let!(:user) { create(:user, :level_two) }
+    let!(:districts_group)    { create(:budget_group, budget: budget, name: "Districts") }
+    let!(:california_heading) { create(:budget_heading, group: districts_group, name: "California") }
+    let!(:new_york_heading)   { create(:budget_heading, group: districts_group, name: "New York") }
+    let!(:investment)         { create(:budget_investment, :feasible, :finished, heading: california_heading) }
 
     background do
       login_as(user)
-      visit welcome_spending_proposals_path
     end
 
-    scenario 'Select my district', :js do
-      california = create(:geozone)
-      new_york = create(:geozone)
-      sp1 = create(:spending_proposal, :feasible, :finished, geozone: california)
+    scenario 'Select my heading', :js do
+      visit budget_path(budget)
+      click_link "Districts"
+      click_link "California"
 
-      click_link "Vote district proposals"
-      click_link california.name
-
-      within("#spending_proposal_#{sp1.id}") do
+      within("#budget_investment_#{investment.id}") do
         find('.add a').trigger('click')
+        expect(page).to have_content "Remove"
       end
 
-      visit select_district_path
-      expect(page).to have_css("#geozone_#{california.id}.active")
+      visit budget_path(budget)
+      click_link "Districts"
+
+      expect(page).to have_content "California"
+      expect(page).to have_css("#budget_heading_#{california_heading.id}.active")
     end
 
-    scenario 'Change my district', :js do
-      california = create(:geozone)
-      new_york = create(:geozone)
+    scenario 'Change my heading', :js, :focus do
+      investment1 = create(:budget_investment, :feasible, :finished, heading: california_heading)
+      investment2 = create(:budget_investment, :feasible, :finished, heading: new_york_heading)
 
-      sp1 = create(:spending_proposal, :feasible, :finished, geozone: california)
-      sp2 = create(:spending_proposal, :feasible, :finished, geozone: new_york)
+      create(:budget_ballot, user: user, budget: budget, investments: [investment1])
 
-      create(:ballot, user: user, geozone: california, spending_proposals: [sp1])
+      visit budget_investments_path(budget, heading_id: california_heading.id)
 
-      visit spending_proposals_path(geozone: california)
-
-      within("#spending_proposal_#{sp1.id}") do
+      within("#budget_investment_#{investment1.id}") do
         find('.remove a').trigger('click')
       end
 
-      visit spending_proposals_path(geozone: new_york)
+      visit budget_investments_path(budget, heading_id: new_york_heading.id)
 
-      within("#spending_proposal_#{sp2.id}") do
+      within("#budget_investment_#{investment2.id}") do
         find('.add a').trigger('click')
       end
 
-      visit select_district_path
-      expect(page).to have_css("#geozone_#{new_york.id}.active")
-      expect(page).to_not have_css("#geozone_#{california.id}.active")
+      visit budget_path(budget)
+      click_link "Districts"
+      expect(page).to have_css("#budget_heading_#{new_york_heading.id}.active")
+      expect(page).to_not have_css("#budget_heading_#{california_heading.id}.active")
     end
 
-    scenario 'View another district' do
-      california = create(:geozone)
-      new_york = create(:geozone)
 
-      sp1 = create(:spending_proposal, :feasible, :finished, geozone: california)
-      sp2 = create(:spending_proposal, :feasible, :finished, geozone: new_york)
+#From here on, not implemented yet
 
-      create(:ballot, user: user, geozone: california, spending_proposals: [sp1])
+    scenario 'View another heading' do
+      investment = create(:budget_investment, :feasible, :finished, heading: california_heading)
 
-      visit spending_proposals_path(geozone: new_york)
+      create(:budget_ballot, user: user, budget: budget, investments: [investment])
+
+      visit budget_investments_path(budget, heading_id: new_york_heading.id)
 
       expect(page).to_not have_css "#progressbar"
       expect(page).to have_content "You have active votes in another district:"
-      expect(page).to have_link california.name, href: spending_proposals_path(geozone: california)
+      expect(page).to have_link california_heading.name, href: budget_investments_path(budget, heading: california_heading)
     end
 
   end

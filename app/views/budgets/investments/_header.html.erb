@@ -27,7 +27,11 @@
                             budget_ballot_path(@budget) %>
               <% end %>
             </div>
-              <% if @heading.present? && @ballot.heading.present? && @ballot.heading != @heading %>
+              <% if false
+                    #@heading.present? &&
+                    #@ballot.heading.present? &&
+                    #@ballot.heading != @heading
+              %>
               <br>
               <p class="callout warning inline-block">
                 <%= t("budget.investments.header.different_heading_active") %>
@@ -35,7 +39,7 @@
               </p>
               <% else %>
               <div id="progress_bar" class="no-margin-top">
-                <%= render 'progress_bar' %>
+                <%= render 'budgets/ballot/progress_bar' %>
               </div>
               <% end %>
           </div>

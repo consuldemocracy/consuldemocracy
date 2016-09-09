@@ -13,15 +13,15 @@ class Budget
       #needed? validates :ballot_id, :budget_id, :group_id, :heading_id, :investment_id, presence: true
 
       def insufficient_funds
-        errors.add(:money, "") if ballot.amount_available(investment.heading) < investment.price.to_i
+        errors.add(:money, "insufficient funds") if ballot.amount_available(investment.heading) < investment.price.to_i
       end
 
       def different_geozone
-        errors.add(:heading, "") if (ballot.heading.present? && investment.heading != ballot.heading)
+        errors.add(:heading, "different heading assigned") if (ballot.heading.present? && investment.heading != ballot.heading)
       end
 
       def unfeasible
-        errors.add(:unfeasible, "") unless investment.feasible?
+        errors.add(:unfeasible, "unfeasible investment") unless investment.feasible?
       end
 
       def heading_proposal?

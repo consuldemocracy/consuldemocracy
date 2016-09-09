@@ -32,12 +32,12 @@ module Budgets
       end
 
       def destroy
-        load_spending_proposal
-        load_spending_proposals
-        load_geozone
+        @investment = @line.investment
+        load_heading
 
-        @ballot_line.destroy
-        @ballot.reset_geozone
+        @line.destroy
+        load_investments
+        #@ballot.reset_geozone
       end
 
       private
@@ -72,9 +72,6 @@ module Budgets
           @heading = @investment.heading
         end
 
-        def load_geozone
-          @geozone = @line.investment.geozone
-        end
     end
   end
 end

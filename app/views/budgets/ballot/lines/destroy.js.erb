@@ -1,6 +1,6 @@
-$("#progress_bar").html('<%= j render("spending_proposals/progress_bar", ballot: @ballot) %>');
+$("#progress_bar").html('<%= j render("budgets/ballot/progress_bar", ballot: @ballot) %>');
 $("#sidebar").html('<%= j render("spending_proposals/sidebar") %>');
-$("#ballot").html('<%= j render("ballots/ballot") %>')
-$("#<%= dom_id(@spending_proposal) %>_ballot").html('<%= j render("spending_proposals/ballot", spending_proposal: @spending_proposal) %>');
+// $("#ballot").html('<%# j render("ballots/ballot") %>')
+$("#<%= dom_id(@investment) %>_ballot").html('<%= j render("budgets/investments/ballot", investment: @investment) %>');
 
 <%= render 'refresh_ballots' %>
