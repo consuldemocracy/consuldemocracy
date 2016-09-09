@@ -525,8 +525,6 @@ es:
       deleted: Eliminado
       deleted_debate: Este debate ha sido eliminado
       deleted_proposal: Este propuesta ha sido eliminada
-      delete_spending_proposal: Eliminar
-      confirm_deletion_spending_proposal: "¿Seguro que desea eliminar esta propuesta?"
       filters:
         comments:
           one: 1 Comentario
@@ -537,7 +535,7 @@ es:
         proposals:
           one: 1 Propuesta
           other: "%{count} Propuestas"
-        spending_proposals:
+        budget_investments:
           one: 1 Propuesta de inversión
           other: "%{count} Propuestas de inversión"
       no_activity: Usuario sin actividad pública
