@@ -1,8 +1,7 @@
 class UsersController < ApplicationController
-  has_filters %w{proposals debates comments spending_proposals}, only: :show
+  has_filters %w{proposals debates budget_investments comments}, only: :show
 
   load_and_authorize_resource
-  helper_method :authorized_for_filter?
   helper_method :author?
   helper_method :author_or_admin?
 
@@ -15,8 +14,8 @@ class UsersController < ApplicationController
       @activity_counts = HashWithIndifferentAccess.new(
                           proposals: Proposal.where(author_id: @user.id).count,
                           debates: Debate.where(author_id: @user.id).count,
-                          comments: Comment.not_as_admin_or_moderator.where(user_id: @user.id).count,
-                          spending_proposals: SpendingProposal.where(author_id: @user.id).count)
+                          budget_investments: Budget::Investment.where(author_id: @user.id).count,
+                          comments: Comment.not_as_admin_or_moderator.where(user_id: @user.id).count)
     end
 
     def load_filtered_activity
@@ -24,8 +23,8 @@ class UsersController < ApplicationController
       case params[:filter]
       when "proposals" then load_proposals
       when "debates"   then load_debates
+      when "budget_investments" then load_budget_investments
       when "comments"  then load_comments
-      when "spending_proposals"  then load_spending_proposals if author_or_admin?
       else load_available_activity
       end
     end
@@ -37,12 +36,12 @@ class UsersController < ApplicationController
       elsif  @activity_counts[:debates] > 0
         load_debates
         @current_filter = "debates"
+      elsif  @activity_counts[:budget_investments] > 0
+        load_budget_investments
+        @current_filter = "budget_investments"
       elsif  @activity_counts[:comments] > 0
         load_comments
         @current_filter = "comments"
-      elsif  @activity_counts[:spending_proposals] > 0 && author_or_admin?
-        load_spending_proposals
-        @current_filter = "spending_proposals"
       end
     end
 
@@ -58,8 +57,8 @@ class UsersController < ApplicationController
       @comments = Comment.not_as_admin_or_moderator.where(user_id: @user.id).includes(:commentable).order(created_at: :desc).page(params[:page])
     end
 
-    def load_spending_proposals
-      @spending_proposals = SpendingProposal.where(author_id: @user.id).order(created_at: :desc).page(params[:page])
+    def load_budget_investments
+      @budget_investments = Budget::Investment.where(author_id: @user.id).order(created_at: :desc).page(params[:page])
     end
 
     def valid_access?
@@ -78,7 +77,4 @@ class UsersController < ApplicationController
       @authorized_current_user ||= current_user && (current_user == @user || current_user.moderator? || current_user.administrator?)
     end
 
-    def authorized_for_filter?(filter)
-      filter == "spending_proposals" ? author_or_admin? : true
-    end
 end
