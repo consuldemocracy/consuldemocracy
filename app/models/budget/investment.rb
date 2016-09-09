@@ -45,6 +45,7 @@ class Budget
     scope :undecided,              -> { where(feasibility: "undecided") }
     scope :with_supports,          -> { where('cached_votes_up > 0') }
 
+    scope :by_group,    -> (group_id)    { where(group_id: group_id) }
     scope :by_heading,  -> (heading_id)  { where(heading_id: heading_id) }
     scope :by_admin,    -> (admin_id)    { where(administrator_id: admin_id) }
     scope :by_tag,      -> (tag_name)    { tagged_with(tag_name) }

@@ -275,7 +275,7 @@ feature 'Ballots' do
       expect(page).to have_css("#budget_heading_#{california_heading.id}.active")
     end
 
-    scenario 'Change my heading', :js, :focus do
+    scenario 'Change my heading', :js do
       investment1 = create(:budget_investment, :feasible, :finished, heading: california_heading)
       investment2 = create(:budget_investment, :feasible, :finished, heading: new_york_heading)
 
@@ -299,9 +299,6 @@ feature 'Ballots' do
       expect(page).to_not have_css("#budget_heading_#{california_heading.id}.active")
     end
 
-
-#From here on, not implemented yet
-
     scenario 'View another heading' do
       investment = create(:budget_investment, :feasible, :finished, heading: california_heading)
 
@@ -317,22 +314,47 @@ feature 'Ballots' do
   end
 
   context 'Showing the ballot' do
+    pending "do not display heading name if there is only one heading in the group (example: group city)"
 
-    scenario 'Displaying the correct count & amount' do
+    scenario 'Displaying the correct count & amount', :focus do
       user = create(:user, :level_two)
-      geozone = create(:geozone, name: "Carabanchel")
-      ballot = create(:ballot, user: user, geozone: geozone)
 
-      ballot.spending_proposals =
-        create_list(:spending_proposal, 2, :feasible, :finished, price: 10) +
-        create_list(:spending_proposal, 3, :feasible, :finished, price: 5, geozone: geozone)
+      group1 = create(:budget_group, budget: budget)
+      group2 = create(:budget_group, budget: budget)
+
+      heading1 = create(:budget_heading, name: "District 1", group: group1)
+      heading2 = create(:budget_heading, name: "District 2", group: group2)
+
+      ballot = create(:budget_ballot, user: user, budget: budget)
+
+      investment1 = create(:budget_investment, :feasible, price: 10, heading: heading1, group: group1)
+      investment2 = create(:budget_investment, :feasible, price: 10, heading: heading1, group: group1)
+
+      investment3 = create(:budget_investment, :feasible, price: 5,  heading: heading2, group: group2)
+      investment4 = create(:budget_investment, :feasible, price: 5,  heading: heading2, group: group2)
+      investment5 = create(:budget_investment, :feasible, price: 5,  heading: heading2, group: group2)
+
+      create(:budget_ballot_line, ballot: ballot, investment: investment1, heading: heading1, group: group1)
+      create(:budget_ballot_line, ballot: ballot, investment: investment2, heading: heading1, group: group1)
+
+      create(:budget_ballot_line, ballot: ballot, investment: investment3, heading: heading2, group: group2)
+      create(:budget_ballot_line, ballot: ballot, investment: investment4, heading: heading2, group: group2)
+      create(:budget_ballot_line, ballot: ballot, investment: investment5, heading: heading2, group: group2)
 
       login_as(user)
-      visit ballot_path
+      visit budget_ballot_path(budget)
 
-      expect(page).to have_content("You voted 5 proposals")
-      within("#city_wide") { expect(page).to have_content "€20" }
-      within("#district_wide") { expect(page).to have_content "€15" }
+      expect(page).to have_content("You have voted 5 proposals")
+
+      within("#budget_group_#{group1.id}") do
+        expect(page).to have_content "#{group1.name} - #{heading1.name}"
+        expect(page).to have_content "€20"
+      end
+
+      within("#budget_group_#{group2.id}") do
+        expect(page).to have_content "#{group2.name} - #{heading2.name}"
+        expect(page).to have_content "€15"
+      end
     end
 
   end

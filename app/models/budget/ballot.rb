@@ -5,6 +5,8 @@ class Budget
 
     has_many :lines, dependent: :destroy
     has_many :investments, through: :lines
+    has_many :groups, -> { uniq }, through: :lines
+    has_many :headings, -> { uniq }, through: :groups
 
     def add_investment(investment)
       lines.create!(budget: budget, investment: investment, heading: investment.heading, group_id: investment.heading.group_id)
@@ -20,6 +22,10 @@ class Budget
 
     def amount_available(heading)
       budget.heading_price(heading) - amount_spent(heading.id)
+    end
+
+    def has_lines_in_group?(group)
+      self.groups.include?(group)
     end
 
     def valid_heading?(heading)
@@ -47,5 +53,10 @@ class Budget
     def has_investment?(investment)
       self.investment_ids.include?(investment.id)
     end
+
+    def heading_for_group(group)
+      self.headings.where(group: group).first.id
+    end
+
   end
 end

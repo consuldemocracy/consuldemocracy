@@ -2,15 +2,15 @@ es:
   budgets:
     ballots:
       show:
-        amount_spent: "pending translation"
-        city_wide: "pending translation"
-        districts_link: "pending translation"
-        remaining_district_html: "pending translation"
-        social_share: "pending translation"
-        title: "pending translation"
-        voted_html: "pending translation"
-        voted_info_html: "pending translation"
-        zero: "pending translation"
+        title: Mis votos
+        amount_spent: Coste total
+        remaining: "Te quedan <span>%{amount_city}</span> para invertir"
+        remove: Quitar voto
+        voted_html:
+          one: "Has votado <span>una</span> propuesta."
+          other: "Has votado <span>%{count}</span> propuestas."
+        voted_info_html: "Puedes cambiar tus votos en cualquier momento hasta el cierre de esta fase.<br> No hace falta que inviertas todo el dinero disponible."
+        zero: "Todavía no has votado ninguna propuesta de inversión."
   budget:
     phase:
       on_hold: En pausa

@@ -16,7 +16,7 @@ module Budgets
         load_investment
         load_heading
 
-        if @line.save
+        if @ballot.add_investment(@investment)
           #@ballot.set_geozone(@geozone)
           #@current_user.update(representative_id: nil)
           if request.get?
