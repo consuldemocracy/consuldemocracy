@@ -18,6 +18,9 @@ es:
       selecting: Fase de selección
       balloting: Fase de Votación
       finished: Terminado
+    groups:
+      index:
+        group_title: "Grupos"
     headings:
       none: Toda la ciudad
       all: Todos los ámbitos
@@ -101,6 +104,7 @@ es:
         check_ballot: Revisar mis votos
         different_heading_active: Ya apoyaste propuestas de otro distrito.
     show:
+      group: Grupo
       heading: Partida
       price: Cantidad
       no_heading: Sin línea

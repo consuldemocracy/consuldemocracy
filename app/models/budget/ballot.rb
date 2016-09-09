@@ -40,6 +40,10 @@ class Budget
       self.heading_id.present?
     end
 
+    def has_lines_in_heading?(heading)
+      investments.by_heading(heading.id).any?
+    end
+
     def has_investment?(investment)
       self.investment_ids.include?(investment.id)
     end

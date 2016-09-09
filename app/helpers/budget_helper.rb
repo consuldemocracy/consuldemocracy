@@ -24,4 +24,13 @@ module BudgetHelper
   def display_budget_countdown?(budget)
     budget.balloting?
   end
+
+  def css_for_ballot_heading(heading)
+    return '' unless current_ballot.present?
+    current_ballot.has_lines_in_heading?(heading) ? 'active' : ''
+  end
+
+  def current_ballot
+    Budget::Ballot.where(user: current_user, budget: @budget).first
+  end
 end
