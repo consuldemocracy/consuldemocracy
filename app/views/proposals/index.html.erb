@@ -30,7 +30,7 @@
       <% if has_banners %>
         <%= render "shared/banner" %>
       <% end %>
-      
+
       <% if @featured_proposals.present? %>
         <div id="featured-proposals" class="row featured-proposals">
           <div class="small-12 column">
@@ -52,8 +52,10 @@
         <%= link_to t("proposals.index.start_proposal"), new_proposal_path, class: 'button expanded' %>
       </div>
 
-      <%= render partial: 'proposals/proposal', collection: @proposals %>
-      <%= paginate @proposals %>
+      <div id="proposals-list">
+        <%= render partial: 'proposals/proposal', collection: @proposals %>
+        <%= paginate @proposals %>
+      </div>
     </div>
 
     <div class="small-12 medium-3 column">
