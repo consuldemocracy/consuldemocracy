@@ -23,6 +23,11 @@ GEM
     activejob (4.2.7.1)
       activesupport (= 4.2.7.1)
       globalid (>= 0.3.0)
+    active_model_serializers (0.10.2)
+      actionpack (>= 4.1, < 6)
+      activemodel (>= 4.1, < 6)
+      jsonapi (~> 0.1.1.beta2)
+      railties (>= 4.1, < 6)
     activemodel (4.2.7.1)
       activesupport (= 4.2.7.1)
       builder (~> 3.1)
@@ -207,6 +212,8 @@ GEM
     jquery-ui-rails (5.0.5)
       railties (>= 3.2.16)
     json (1.8.3)
+    jsonapi (0.1.1.beta2)
+      json (~> 1.8)
     jwt (1.5.4)
     kaminari (0.17.0)
       actionpack (>= 3.0.0)
@@ -437,6 +444,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  active_model_serializers
   acts-as-taggable-on
   acts_as_votable
   ahoy_matey (~> 1.4.0)
