@@ -314,7 +314,8 @@ feature 'Ballots' do
   end
 
   context 'Showing the ballot' do
-    pending "do not display heading name if there is only one heading in the group (example: group city)"
+    pending "Do not display heading name if there is only one heading in the group (example: group city)"
+    pending "Money remaining in each group (maybe integrate in an existing scenario)"
 
     scenario 'Displaying the correct count & amount', :focus do
       user = create(:user, :level_two)
