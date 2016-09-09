@@ -45,7 +45,7 @@ class Proposal < ActiveRecord::Base
   scope :sort_by_relevance,        -> { all }
   scope :sort_by_flags,            -> { order(flags_count: :desc, updated_at: :desc) }
   scope :sort_by_archival_date,    -> { archived.order(created_at: :desc) }
-  scope :archived,                 -> { where("proposals.created_at <= ?", 12.months.ago)}
+  scope :archived,                 -> { where("proposals.created_at <= ?", Setting["months_to_archive_proposals"].to_i.months.ago)}
   scope :last_week,                -> { where("proposals.created_at >= ?", 7.days.ago)}
   scope :retired,                  -> { where.not(retired_at: nil) }
   scope :not_retired,              -> { where(retired_at: nil) }
@@ -158,7 +158,7 @@ class Proposal < ActiveRecord::Base
   end
 
   def archived?
-    self.created_at <= 12.months.ago
+    self.created_at <= Setting["months_to_archive_proposals"].to_i.months.ago
   end
 
   def notifications

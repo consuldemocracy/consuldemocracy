@@ -193,8 +193,8 @@ module CommonActions
   end
 
   def create_archived_proposals
-    [create(:proposal, title: "This is an expired proposal", created_at: Time.now - 12.month),
-     create(:proposal, title: "This is an oldest expired proposal", created_at: Time.now - 14.month)]
+    [create(:proposal, title: "This is an expired proposal", created_at: Time.now - Setting["months_to_archive_proposals"].to_i.month),
+     create(:proposal, title: "This is an oldest expired proposal", created_at: Time.now - Setting["months_to_archive_proposals"].to_i.month - 2.month)]
   end
 
   def tag_names(tag_cloud)
