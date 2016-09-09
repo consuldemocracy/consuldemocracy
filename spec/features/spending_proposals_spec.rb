@@ -159,14 +159,6 @@ feature 'Spending proposals' do
 
     expect(page).to have_content 'Spending proposal created successfully'
     expect(page).to have_content 'You can access it from My activity'
-
-    within "#notice" do
-      click_link 'My activity'
-    end
-
-    expect(current_url).to eq(user_url(author, filter: :spending_proposals))
-    expect(page).to have_content "1 Spending proposal"
-    expect(page).to have_content "Build a skyscraper"
   end
 
   scenario 'Errors on create' do
