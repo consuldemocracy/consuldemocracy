@@ -51,6 +51,7 @@ gem 'devise-async'
 gem 'newrelic_rpm', '~> 3.16'
 gem 'whenever', require: false
 gem 'pg_search'
+gem 'active_model_serializers'
 
 gem 'ahoy_matey', '~> 1.4.0'
 gem 'groupdate'   # group temporary data
