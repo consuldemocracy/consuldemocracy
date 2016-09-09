@@ -283,6 +283,9 @@ en:
       proposal_search:
         button: Search
         placeholder: Search proposals by title, code, description or question
+      budget_investment_search:
+        button: Search
+        placeholder: Search investments by title or description
       spending_proposal_search:
         button: Search
         placeholder: Search spending proposals by title or description
