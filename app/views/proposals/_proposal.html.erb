@@ -50,9 +50,17 @@
         </div>
       </div>
 
-      <div id="<%= dom_id(proposal) %>_votes" class="small-12 medium-3 column text-center">
-          <%= render 'votes',
-                    { proposal: proposal, vote_url: vote_proposal_path(proposal, value: 'yes') } %>
+      <div id="<%= dom_id(proposal) %>_votes" class="small-12 medium-3 column">
+        <% if proposal.archived? %>
+          <div class="message">
+            <p><%= t("proposals.proposal.archived") %></p>
+          </div>
+        <% else %>
+          <div class="text-center">
+            <%= render 'votes',
+                      { proposal: proposal, vote_url: vote_proposal_path(proposal, value: 'yes') } %>
+          </div>
+        <% end %>
       </div>
 
     </div>

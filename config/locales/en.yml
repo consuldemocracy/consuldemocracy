@@ -301,6 +301,7 @@ en:
         hot_score: most active
         most_commented: most commented
         relevance: relevance
+        archival_date: Archived
       retired_proposals: Retired proposals
       retired_proposals_link: "Proposals retired by the author"
       retired_links:
@@ -350,6 +351,7 @@ en:
         zero: No supports
       supports_necessary: "%{number} supports needed"
       total_percent: 100%
+      archived: "This proposal has been archived and can't collect supports."
     show:
       author_deleted: User deleted
       code: 'Proposal code:'
