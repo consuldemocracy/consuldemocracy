@@ -13,7 +13,6 @@ class Budget < ActiveRecord::Base
   has_many :ballots, dependent: :destroy
   has_many :groups, dependent: :destroy
   has_many :headings, through: :groups
-  has_many :investments, through: :headings
 
   scope :open,     -> { where.not(phase: "finished") }
   scope :finished, -> { where(phase: "finished") }
