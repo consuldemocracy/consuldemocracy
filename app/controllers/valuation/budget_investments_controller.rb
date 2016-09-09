@@ -4,6 +4,7 @@ class Valuation::BudgetInvestmentsController < Valuation::BaseController
 
   before_action :restrict_access_to_assigned_items, only: [:show, :edit, :valuate]
   before_action :load_budget
+  before_action :load_investment, only: [:show, :edit, :valuate]
 
   has_filters %w{valuating valuation_finished}, only: :index
 
@@ -20,12 +21,7 @@ class Valuation::BudgetInvestmentsController < Valuation::BaseController
 
   def valuate
     if valid_price_params? && @investment.update(valuation_params)
-
-      if @investment.unfeasible_email_pending?
-        @investment.send_unfeasible_email
-      end
-
-      redirect_to valuation_budget_investment_path(@investment), notice: t('valuation.budget_investments.notice.valuate')
+      redirect_to valuation_budget_budget_investment_path(@budget, @investment), notice: t('valuation.budget_investments.notice.valuate')
     else
       render action: :edit
     end
@@ -35,6 +31,10 @@ class Valuation::BudgetInvestmentsController < Valuation::BaseController
 
     def load_budget
       @budget = Budget.find(params[:budget_id])
+    end
+
+    def load_investment
+      @investment = @budget.investments.find params[:id]
     end
 
     def heading_filters
@@ -57,13 +57,11 @@ class Valuation::BudgetInvestmentsController < Valuation::BaseController
     end
 
     def valuation_params
-      params[:budget_investment][:feasible] = nil if params[:budget_investment][:feasible] == 'nil'
-
-      params.require(:budget_investment).permit(:price, :price_first_year, :price_explanation, :feasible, :feasible_explanation, :duration, :valuation_finished, :internal_comments)
+      params.require(:budget_investment).permit(:price, :price_first_year, :price_explanation, :feasibility, :unfeasibility_explanation, :duration, :valuation_finished, :internal_comments)
     end
 
     def restrict_access_to_assigned_items
-      raise ActionController::RoutingError.new('Not Found') unless current_user.administrator? || ValuatorAssignment.exists?(investment_id: params[:id], valuator_id: current_user.valuator.id)
+      raise ActionController::RoutingError.new('Not Found') unless current_user.administrator? || Budget::ValuatorAssignment.exists?(investment_id: params[:id], valuator_id: current_user.valuator.id)
     end
 
     def valid_price_params?
