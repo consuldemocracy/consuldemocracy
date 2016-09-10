@@ -11,7 +11,7 @@ feature 'Budget Investments' do
     investments = [create(:budget_investment, budget: budget, group: group, heading: heading), create(:budget_investment, budget: budget, group: group, heading: heading), create(:budget_investment, :feasible, budget: budget, group: group, heading: heading)]
     unfeasible_investment = create(:budget_investment, :unfeasible, budget: budget, group: group, heading: heading)
 
-    visit budget_investments_path(budget_id: budget.id)
+    visit budget_investments_path(budget, heading_id: heading.id)
 
     expect(page).to have_selector('#budget-investments .budget-investment', count: 3)
     investments.each do |investment|
@@ -29,7 +29,7 @@ feature 'Budget Investments' do
       investment2 = create(:budget_investment, budget: budget, group: group, heading: heading, title: "Schwifty Hello")
       investment3 = create(:budget_investment, budget: budget, group: group, heading: heading, title: "Do not show me")
 
-      visit budget_investments_path(budget_id: budget.id)
+      visit budget_investments_path(budget, heading_id: heading.id)
 
       within(".expanded #search_form") do
         fill_in "search", with: "Schwifty"
@@ -53,7 +53,7 @@ feature 'Budget Investments' do
       investment3 = create(:budget_investment, budget: budget, group: group, heading: heading)
       investment4 = create(:budget_investment, :feasible, budget: budget, group: group, heading: heading)
 
-      visit budget_investments_path(budget_id: budget.id, unfeasible: 1)
+      visit budget_investments_path(budget_id: budget.id, heading_id: heading.id, unfeasible: 1)
 
       within("#budget-investments") do
         expect(page).to have_css('.budget-investment', count: 1)
@@ -72,10 +72,10 @@ feature 'Budget Investments' do
       per_page = Kaminari.config.default_per_page
       (per_page + 2).times { create(:budget_investment) }
 
-      visit budget_investments_path(budget_id: budget.id)
+      visit budget_investments_path(budget, heading_id: heading.id)
       order = all(".budget-investment h3").collect {|i| i.text }
 
-      visit budget_investments_path(budget_id: budget.id)
+      visit budget_investments_path(budget, heading_id: heading.id)
       new_order = eq(all(".budget-investment h3").collect {|i| i.text })
 
       expect(order).to_not eq(new_order)
@@ -85,13 +85,13 @@ feature 'Budget Investments' do
       per_page = Kaminari.config.default_per_page
       (per_page + 2).times { create(:budget_investment) }
 
-      visit budget_investments_path(budget_id: budget.id)
+      visit budget_investments_path(budget, heading_id: heading.id)
       click_link "highest rated"
       click_link "random"
 
       order = all(".budget-investment h3").collect {|i| i.text }
 
-      visit budget_investments_path(budget_id: budget.id)
+      visit budget_investments_path(budget, heading_id: heading.id)
       new_order = eq(all(".budget-investment h3").collect {|i| i.text })
 
       expect(order).to_not eq(new_order)
@@ -101,7 +101,7 @@ feature 'Budget Investments' do
       per_page = Kaminari.config.default_per_page
       (per_page + 2).times { create(:budget_investment, budget: budget, group: group, heading: heading) }
 
-      visit budget_investments_path(budget_id: budget.id)
+      visit budget_investments_path(budget, heading_id: heading.id)
 
       order = all(".budget-investment h3").collect {|i| i.text }
 
@@ -120,7 +120,7 @@ feature 'Budget Investments' do
       create(:budget_investment, budget: budget, group: group, heading: heading, title: 'Worst proposal').update_column(:confidence_score, 2)
       create(:budget_investment, budget: budget, group: group, heading: heading, title: 'Medium proposal').update_column(:confidence_score, 5)
 
-      visit budget_investments_path(budget_id: budget.id)
+      visit budget_investments_path(budget, heading_id: heading.id)
       click_link 'highest rated'
       expect(page).to have_selector('a.active', text: 'highest rated')
 
@@ -274,23 +274,6 @@ feature 'Budget Investments' do
 
   end
 
-  context "Badge" do
-
-    scenario "Spending proposal created by a User" do
-      user = create(:user)
-      user_investment = create(:budget_investment, budget: budget, group: group, heading: heading)
-
-      visit budget_investment_path(budget_id: budget.id, id: user_investment.id)
-      expect(page).to_not have_css "is-forum"
-
-      visit budget_investments_path(budget_id: budget.id, id: user_investment.id)
-      within "#budget_investment_#{user_investment.id}" do
-        expect(page).to_not have_css "is-forum"
-      end
-    end
-
-  end
-
   context "Phase 3 - Final Voting" do
 
     background do
@@ -325,7 +308,7 @@ feature 'Budget Investments' do
       create(:budget_investment, :feasible, :finished, budget: budget, group: group, heading: heading, title: 'Build an ugly house', price:  1000).update_column(:confidence_score, 5)
       create(:budget_investment, :feasible, :finished, budget: budget, group: group, heading: heading, title: 'Build a skyscraper',  price: 20000)
 
-      visit budget_investments_path(budget_id: budget.id)
+      visit budget_investments_path(budget, heading_id: heading.id)
 
       click_link 'by price'
       expect(page).to have_selector('a.active', text: 'by price')
@@ -344,11 +327,7 @@ feature 'Budget Investments' do
       sp1 = create(:budget_investment, :feasible, :finished, budget: budget, group: group, heading: heading, price: 10000)
 
       login_as(user)
-      visit root_path
-
-      first(:link, "Participatory budgeting").click
-      click_link budget.name
-      click_link "No Heading"
+      visit budget_investments_path(budget, heading_id: heading.id)
 
       click_link sp1.title
 

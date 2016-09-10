@@ -22,7 +22,7 @@ feature 'Votes' do
         investment3 = create(:budget_investment, heading: heading)
         create(:vote, voter: @manuela, votable: investment1, vote_flag: true)
 
-        visit budget_investments_path(budget_id: budget.id)
+        visit budget_investments_path(budget, heading_id: heading.id)
 
         within("#budget-investments") do
           within("#budget_investment_#{investment1.id}_votes") do
@@ -42,7 +42,7 @@ feature 'Votes' do
       scenario 'Create from spending proposal index', :js do
         investment = create(:budget_investment, heading: heading, budget: budget)
 
-        visit budget_investments_path(budget_id: budget.id)
+        visit budget_investments_path(budget, heading_id: heading.id)
 
         within('.supports') do
           find('.in-favor a').click
@@ -89,9 +89,9 @@ feature 'Votes' do
     scenario 'Disable voting on spending proposals', :js do
       login_as(@manuela)
       budget.update(phase: "on_hold")
-      investment = create(:budget_investment, budget: budget)
+      investment = create(:budget_investment, budget: budget, heading: heading)
 
-      visit budget_investments_path(budget)
+      visit budget_investments_path(budget, heading_id: heading.id)
 
       within("#budget_investment_#{investment.id}") do
         find("div.supports").hover
