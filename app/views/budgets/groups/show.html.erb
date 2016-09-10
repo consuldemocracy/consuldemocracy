@@ -1,9 +1,9 @@
 <div class="row investment-projects-scope margin-bottom no-margin-top">
   <div id="select-district" class="small-12 medium-7 column select-district">
-    <%# link_to participatory_budget_path, class: "back" do %>
+    <%= link_to budget_path(@budget), class: "back" do %>
       <span class="icon-angle-left"></span>
       <%= t('shared.back') %>
-    <%# end %>
+    <% end %>
 
     <h2><%# t("spending_proposals.welcome.districts") %></h2>
 
@@ -13,8 +13,9 @@
           <% slice.each do |heading| %>
             <span id="<%= dom_id(heading) %>"
                   class="<%= css_for_ballot_heading(heading) %>">
-              <%= link_to heading.name, budget_investments_path(heading_id: heading.id),
-                        data: { no_turbolink: true } %><br>
+              <%= link_to heading.name,
+                          budget_investments_path(heading_id: heading.id),
+                          data: { no_turbolink: true } %><br>
             </span>
           <% end %>
         </div>

@@ -22,7 +22,14 @@
         <% @budget.groups.each do |group| %>
           <tr>
             <td>
-              <%= link_to group.name, budget_group_path(@budget, group) %>
+              <% if group.headings.count == 1 %>
+                <%= link_to group.name,
+                            budget_investments_path(@budget, heading_id: group.headings.first.id),
+                            data: { no_turbolink: true } %>
+              <% else %>
+                <%= link_to group.name, budget_group_path(@budget, group) %>
+              <% end %>
+              <br>
             </td>
           </tr>
         <% end %>

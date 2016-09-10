@@ -151,12 +151,105 @@ feature 'Ballots' do
 
     end
 
+    context "Group and Heading Navigation" do
+
+      scenario "Groups" do
+        city      = create(:budget_group, budget: budget, name: "City")
+        districts = create(:budget_group, budget: budget, name: "Districts")
+
+        visit budget_path(budget)
+
+        expect(page).to have_link "City"
+        expect(page).to have_link "Districts"
+      end
+
+      scenario "Headings" do
+        city      = create(:budget_group, budget: budget, name: "City")
+        districts = create(:budget_group, budget: budget, name: "Districts")
+
+        city_heading1     = create(:budget_heading, group: city,      name: "Investments Type1")
+        city_heading2     = create(:budget_heading, group: city,      name: "Investments Type2")
+        district_heading1 = create(:budget_heading, group: districts, name: "District 1")
+        district_heading2 = create(:budget_heading, group: districts, name: "District 2")
+
+        visit budget_path(budget)
+        click_link "City"
+
+        expect(page).to have_link "Investments Type1"
+        expect(page).to have_link "Investments Type2"
+
+        click_link "Go back"
+        click_link "Districts"
+
+        expect(page).to have_link "District 1"
+        expect(page).to have_link "District 2"
+
+      end
+
+      scenario "Investments" do
+        city      = create(:budget_group, budget: budget, name: "City")
+        districts = create(:budget_group, budget: budget, name: "Districts")
+
+        city_heading1     = create(:budget_heading, group: city,      name: "Investments Type1")
+        city_heading2     = create(:budget_heading, group: city,      name: "Investments Type2")
+        district_heading1 = create(:budget_heading, group: districts, name: "District 1")
+        district_heading2 = create(:budget_heading, group: districts, name: "District 2")
+
+        city_investment1      = create(:budget_investment, :feasible, :finished, heading: city_heading1)
+        city_investment2      = create(:budget_investment, :feasible, :finished, heading: city_heading1)
+        district1_investment1 = create(:budget_investment, :feasible, :finished, heading: district_heading1)
+        district1_investment2 = create(:budget_investment, :feasible, :finished, heading: district_heading1)
+        district2_investment1 = create(:budget_investment, :feasible, :finished, heading: district_heading2)
+
+        visit budget_path(budget)
+        click_link "City"
+        click_link "Investments Type1"
+
+        expect(page).to have_css(".budget-investment", count: 2)
+        expect(page).to have_content city_investment1.title
+        expect(page).to have_content city_investment2.title
+
+        click_link "Go back"
+        click_link "Go back"
+
+        click_link "Districts"
+        click_link "District 1"
+
+        expect(page).to have_css(".budget-investment", count: 2)
+        expect(page).to have_content district1_investment1.title
+        expect(page).to have_content district1_investment2.title
+
+        click_link "Go back"
+        click_link "District 2"
+
+        expect(page).to have_css(".budget-investment", count: 1)
+        expect(page).to have_content district2_investment1.title
+      end
+
+      scenario "Redirect to first heading if there is only one", :focus do
+        city      = create(:budget_group, budget: budget, name: "City")
+        districts = create(:budget_group, budget: budget, name: "Districts")
+
+        city_heading      = create(:budget_heading, group: city,      name: "City")
+        district_heading1 = create(:budget_heading, group: districts, name: "District 1")
+        district_heading2 = create(:budget_heading, group: districts, name: "District 2")
+
+        city_investment = create(:budget_investment, :feasible, :finished, heading: city_heading)
+
+        visit budget_path(budget)
+        click_link "City"
+
+        expect(page).to have_content city_investment.title
+      end
+
+    end
+
     #Break up or simplify with helpers
     context "Balloting in multiple headings" do
 
       scenario "Independent progress bar for headings", :js do
-        city      = create(:budget_group, budget: budget)
-        districts = create(:budget_group, budget: budget)
+        city      = create(:budget_group, budget: budget, name: "City")
+        districts = create(:budget_group, budget: budget, name: "Districts")
 
         city_heading      = create(:budget_heading, group: city,      name: "All city",   price: 10000000)
         district_heading1 = create(:budget_heading, group: districts, name: "District 1", price: 1000000)
