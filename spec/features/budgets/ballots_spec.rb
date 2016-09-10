@@ -3,7 +3,7 @@ require 'rails_helper'
 feature 'Ballots' do
 
   let(:budget)  { create(:budget, phase: "balloting") }
-  let(:group)   { create(:budget_group, budget: budget) }
+  let(:group)   { create(:budget_group, budget: budget, name: "Group 1") }
   let(:heading) { create(:budget_heading, group: group, name: "Heading 1", price: 1000000) }
 
   context "Voting" do
@@ -12,143 +12,6 @@ feature 'Ballots' do
     background do
       login_as(user)
       visit budget_path(budget)
-    end
-
-    context "City" do
-
-      scenario "Add a proposal", :js do
-        investment1 = create(:budget_investment, :feasible, :finished, budget: budget, heading: heading, price: 10000)
-        investment2 = create(:budget_investment, :feasible, :finished, budget: budget, heading: heading, price: 20000)
-
-        visit budget_path(budget)
-        click_link "Heading 1"
-
-        within("#budget_investment_#{investment1.id}") do
-          find('.add a').trigger('click')
-        end
-
-        expect(page).to have_css("#amount-spent", text: "€10,000")
-        expect(page).to have_css("#amount-available", text: "€990,000")
-
-        within("#sidebar") do
-          expect(page).to have_content investment1.title
-          expect(page).to have_content "€10,000"
-        end
-
-        within("#budget_investment_#{investment2.id}") do
-          find('.add a').trigger('click')
-        end
-
-        expect(page).to have_css("#amount-spent", text: "€30,000")
-        expect(page).to have_css("#amount-available", text: "€970,000")
-
-        within("#sidebar") do
-          expect(page).to have_content investment2.title
-          expect(page).to have_content "€20,000"
-        end
-      end
-
-      scenario "Remove a proposal", :js do
-        investment1 = create(:budget_investment, :feasible, :finished, budget: budget, heading: heading, price: 10000)
-        ballot = create(:budget_ballot, user: user, budget: budget, investments: [investment1])
-
-        visit budget_path(budget)
-        click_link "Heading 1"
-
-        expect(page).to have_content investment1.title
-        expect(page).to have_css("#amount-spent", text: "€10,000")
-        expect(page).to have_css("#amount-available", text: "€990,000")
-
-        within("#sidebar") do
-          expect(page).to have_content investment1.title
-          expect(page).to have_content "€10,000"
-        end
-
-        within("#budget_investment_#{investment1.id}") do
-          find('.remove a').trigger('click')
-        end
-
-        expect(page).to have_css("#amount-spent", text: "€0")
-        expect(page).to have_css("#amount-available", text: "€1,000,000")
-
-        within("#sidebar") do
-          expect(page).to_not have_content investment1.title
-          expect(page).to_not have_content "€10,000"
-        end
-      end
-
-    end
-
-    #Not used anymore?
-    xcontext 'District' do
-
-      scenario "Add a proposal", :js do
-        carabanchel = create(:geozone, name: "Carabanchel")
-
-        sp1 = create(:spending_proposal, :feasible, :finished, geozone: carabanchel, price: 10000)
-        sp2 = create(:spending_proposal, :feasible, :finished, geozone: carabanchel, price: 20000)
-
-        click_link "Vote district proposals"
-        click_link carabanchel.name
-
-        within("#spending_proposal_#{sp1.id}") do
-          find('.add a').trigger('click')
-          expect(page).to have_content "Remove"
-        end
-
-        visit spending_proposals_path(geozone: carabanchel)
-
-        expect(page).to have_css("#amount-spent", text: "€10,000")
-        expect(page).to have_css("#amount-available", text: "€3,237,830")
-
-        within("#sidebar") do
-          expect(page).to have_content sp1.title
-          expect(page).to have_content "€10,000"
-        end
-
-        within("#spending_proposal_#{sp2.id}") do
-          find('.add a').trigger('click')
-        end
-
-        expect(page).to have_css("#amount-spent", text: "€30,000")
-        expect(page).to have_css("#amount-available", text: "€3,217,830")
-
-        within("#sidebar") do
-          expect(page).to have_content sp2.title
-          expect(page).to have_content "€20,000"
-        end
-      end
-
-      scenario "Remove a proposal", :js do
-        carabanchel = create(:geozone, name: "Carabanchel")
-
-        sp1 = create(:spending_proposal, :feasible, :finished, geozone: carabanchel, price: 10000)
-        ballot = create(:ballot, user: user, geozone: carabanchel, spending_proposals: [sp1])
-
-        click_link "Vote district proposals"
-        click_link carabanchel.name
-
-        expect(page).to have_css("#amount-spent", text: "€10,000")
-        expect(page).to have_css("#amount-available", text: "€3,237,830")
-
-        within("#sidebar") do
-          expect(page).to have_content sp1.title
-          expect(page).to have_content "€10,000"
-        end
-
-        within("#spending_proposal_#{sp1.id}") do
-          find('.remove a').trigger('click')
-        end
-
-        expect(page).to have_css("#amount-spent", text: "€0")
-        expect(page).to have_css("#amount-available", text: "€3,247,830")
-
-        within("#sidebar") do
-          expect(page).to_not have_content sp1.title
-          expect(page).to_not have_content "€10,000"
-        end
-      end
-
     end
 
     context "Group and Heading Navigation" do
@@ -226,7 +89,7 @@ feature 'Ballots' do
         expect(page).to have_content district2_investment1.title
       end
 
-      scenario "Redirect to first heading if there is only one", :focus do
+      scenario "Redirect to first heading if there is only one" do
         city      = create(:budget_group, budget: budget, name: "City")
         districts = create(:budget_group, budget: budget, name: "Districts")
 
@@ -240,6 +103,71 @@ feature 'Ballots' do
         click_link "City"
 
         expect(page).to have_content city_investment.title
+      end
+
+    end
+
+    context "Adding and Removing Investments" do
+
+      scenario "Add a proposal", :js do
+        investment1 = create(:budget_investment, :feasible, :finished, budget: budget, heading: heading, group: group, price: 10000)
+        investment2 = create(:budget_investment, :feasible, :finished, budget: budget, heading: heading, group: group, price: 20000)
+
+        visit budget_path(budget)
+        click_link "Group 1"
+
+        within("#budget_investment_#{investment1.id}") do
+          find('.add a').trigger('click')
+        end
+
+        expect(page).to have_css("#amount-spent", text: "€10,000")
+        expect(page).to have_css("#amount-available", text: "€990,000")
+
+        within("#sidebar") do
+          expect(page).to have_content investment1.title
+          expect(page).to have_content "€10,000"
+        end
+
+        within("#budget_investment_#{investment2.id}") do
+          find('.add a').trigger('click')
+        end
+
+        expect(page).to have_css("#amount-spent", text: "€30,000")
+        expect(page).to have_css("#amount-available", text: "€970,000")
+
+        within("#sidebar") do
+          expect(page).to have_content investment2.title
+          expect(page).to have_content "€20,000"
+        end
+      end
+
+      scenario "Remove a proposal", :js do
+        investment1 = create(:budget_investment, :feasible, :finished, budget: budget, heading: heading, group: group, price: 10000)
+        ballot = create(:budget_ballot, user: user, budget: budget, investments: [investment1])
+
+        visit budget_path(budget)
+        click_link "Group 1"
+
+        expect(page).to have_content investment1.title
+        expect(page).to have_css("#amount-spent", text: "€10,000")
+        expect(page).to have_css("#amount-available", text: "€990,000")
+
+        within("#sidebar") do
+          expect(page).to have_content investment1.title
+          expect(page).to have_content "€10,000"
+        end
+
+        within("#budget_investment_#{investment1.id}") do
+          find('.remove a').trigger('click')
+        end
+
+        expect(page).to have_css("#amount-spent", text: "€0")
+        expect(page).to have_css("#amount-available", text: "€1,000,000")
+
+        within("#sidebar") do
+          expect(page).to_not have_content investment1.title
+          expect(page).to_not have_content "€10,000"
+        end
       end
 
     end
@@ -260,7 +188,7 @@ feature 'Ballots' do
         investment3 = create(:budget_investment, :feasible, :finished, heading: district_heading2, price: 30000)
 
         visit budget_path(budget)
-        click_link "All city"
+        click_link "City"
 
         within("#budget_investment_#{investment1.id}") do
           find('.add a').trigger('click')
@@ -276,6 +204,7 @@ feature 'Ballots' do
         end
 
         visit budget_path(budget)
+        click_link "Districts"
         click_link "District 1"
 
         expect(page).to have_css("#amount-spent", text: "€0")
@@ -287,6 +216,7 @@ feature 'Ballots' do
         end
 
         visit budget_path(budget)
+        click_link "Districts"
         click_link "District 1"
 
         expect(page).to have_css("#amount-spent",     text: "€20,000")
@@ -301,7 +231,7 @@ feature 'Ballots' do
         end
 
         visit budget_path(budget)
-        click_link "All city"
+        click_link "City"
 
         expect(page).to have_css("#amount-spent",     text: "€10,000")
         expect(page).to have_css("#amount-available", text: "€9,990,000")
@@ -315,6 +245,7 @@ feature 'Ballots' do
         end
 
         visit budget_path(budget)
+        click_link "Districts"
         click_link "District 2"
 
         expect(page).to have_css("#amount-spent", text: "€0")
@@ -325,8 +256,7 @@ feature 'Ballots' do
     scenario "Display progress bar after first vote", :js do
       investment = create(:budget_investment, :feasible, :finished, heading: heading, price: 10000)
 
-      visit budget_path(budget)
-      click_link "Heading 1"
+      visit budget_investments_path(budget, heading_id: heading.id)
 
       expect(page).to have_content investment.title
       within("#budget_investment_#{investment.id}") do
@@ -708,9 +638,8 @@ feature 'Ballots' do
         expect_message_insufficient_funds
       end
     end
-
-
   end
+end
 
 feature "Ballots in the wrong phase" do
 
