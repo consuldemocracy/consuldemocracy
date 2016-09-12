@@ -11,6 +11,9 @@ es:
           other: "Has votado <span>%{count}</span> propuestas."
         voted_info_html: "Puedes cambiar tus votos en cualquier momento hasta el cierre de esta fase.<br> No hace falta que inviertas todo el dinero disponible."
         zero: "Todavía no has votado ninguna propuesta de inversión."
+    groups:
+      show:
+        title: Selecciona una partida
   budget:
     phase:
       on_hold: En pausa

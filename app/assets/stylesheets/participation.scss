@@ -1275,12 +1275,17 @@ ul.ballot-list {
   }
 }
 
+.select-district a {
+  display: inline-block;
+  margin: $line-height/4 0;
+  padding: $line-height/4;
+}
+
 .select-district .active a {
   background: #f9f9f9;
   border-radius: rem-calc(3);
   color: $budget;
   font-weight: bold;
-  padding: $line-height/4;
 
   &:after {
     content: "\56";
