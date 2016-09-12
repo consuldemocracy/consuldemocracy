@@ -27,8 +27,8 @@ class ProposalsController < ApplicationController
 
   def index_customization
     load_retired
-    load_featured
     load_proposal_ballots
+    load_featured if @proposal_ballots.blank?
   end
 
   def vote
