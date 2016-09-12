@@ -1,3 +1,5 @@
+require 'api_constraints'
+
 Rails.application.routes.draw do
 
   devise_for :users, controllers: {
@@ -257,6 +259,12 @@ Rails.application.routes.draw do
     resources :spending_proposals, only: [:index, :new, :create, :show] do
       post :vote, on: :member
       get :print, on: :collection
+    end
+  end
+
+  namespace :api, defaults: {format: 'json'} do
+    scope module: :v1, constraints: ApiConstraints.new(version: 1, default: true) do
+      resources :proposals, only: [:index, :show]
     end
   end
 
