@@ -811,4 +811,23 @@ describe Proposal do
     end
   end
 
+  describe "archived" do
+    before(:all) do
+      @new_proposal = create(:proposal)
+      @archived_proposal = create(:proposal, created_at: (Setting["months_to_archive_proposals"].to_i + 1).months.ago)
+    end
+
+    it "archived? is true only for proposals created more than n (configured months) ago" do
+      expect(@new_proposal.archived?).to eq false
+      expect(@archived_proposal.archived?).to eq true
+    end
+
+    it "scope archived" do
+      archived = Proposal.archived
+
+      expect(archived.size).to eq(1)
+      expect(archived.first).to eq(@archived_proposal)
+    end
+  end
+
 end

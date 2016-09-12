@@ -678,7 +678,7 @@ feature 'Proposals' do
 
   feature 'Archived proposals' do
 
-    scenario 'Archived proposals show on archived tab' do
+    scenario 'Show on archived tab' do
       create_featured_proposals
       archived_proposals = create_archived_proposals
 
@@ -692,7 +692,7 @@ feature 'Proposals' do
       end
     end
 
-    scenario 'Archived proposals do not show support buttons in index' do
+    scenario 'Do not show support buttons in index' do
       create_featured_proposals
       archived_proposals = create_archived_proposals
 
@@ -708,19 +708,14 @@ feature 'Proposals' do
       end
     end
 
-    scenario 'Archived proposals do not show support buttons in show' do
+    scenario 'Do not show support buttons in show' do
       create_featured_proposals
       archived_proposals = create_archived_proposals
 
-      visit proposals_path
-
-      within("#proposals-list") do
-        archived_proposals.each do |proposal|
-          within("#proposal_#{proposal.id}_votes") do
-            expect(page).to_not have_css(".supports")
-            expect(page).to have_content "This proposal has been archived and can't collect supports"
-          end
-        end
+      archived_proposals.each do |proposal|
+        visit proposal_path(proposal)
+        expect(page).to_not have_css(".supports")
+        expect(page).to have_content "This proposal has been archived and can't collect supports"
       end
     end
 
