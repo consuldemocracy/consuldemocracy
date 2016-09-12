@@ -1,9 +1,9 @@
 <li id="<%= dom_id(investment) %>">
-  <%= link_to investment.title, investment %>
-  <span><%= format_price(investment.price) %></span>
+  <%= link_to investment.title, budget_investment_path(@budget, investment) %>
+  <span><%= format_price(@budget, investment.price) %></span>
 
   <% if @budget.balloting? %>
-    <%= link_to ballot_line_path(id: investment.id),
+    <%= link_to budget_ballot_line_path(@budget, id: investment.id),
                 title: t('budgets.ballots.show.remove'),
                 class: "remove-investment-project",
                 method: :delete,

@@ -4,12 +4,12 @@
   </span>
 
   <p class="investment-project-amount">
-    <%= format_price(investment.price) %>
+    <%= format_price(@budget, investment.price) %>
   </p>
 
   <% if @budget.balloting? %>
     <%= link_to t('budgets.ballots.show.remove'),
-                ballot_line_path(id: investment.id,
+                budget_ballot_line_path(id: investment.id,
                                  investments_ids: investment_ids),
                 class: "delete small expanded",
                 method: :delete,

@@ -10,12 +10,11 @@ feature 'Budgets' do
 
   scenario 'Show' do
     budget = create(:budget)
-    group = create(:budget_group, budget: budget)
-    heading = create(:budget_heading, group: group)
+    group1 = create(:budget_group, budget: budget)
+    group2 = create(:budget_group, budget: budget)
 
     visit budget_path(budget)
 
-    expect(page).to have_content(budget.name)
-    expect(page).to have_content(heading.name)
+    budget.groups.each {|group| expect(page).to have_link(group.name)}
   end
 end

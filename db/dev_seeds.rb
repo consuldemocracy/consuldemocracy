@@ -298,11 +298,12 @@ end
 
 puts "Creating Budgets"
 
-(1..10).each do |i|
+phases = %w{on_hold accepting selecting balloting finished}
+phases.each_with_index do |phase, i|
   budget = Budget.create!(name: (Date.today.year - 10 + i).to_s,
                           description: "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>",
                           currency_symbol: "€",
-                          phase: %w{on_hold accepting selecting balloting finished}.sample,
+                          phase: phase,
                           valuating: [false, true].sample)
   puts budget.name
 
@@ -313,7 +314,7 @@ puts "Creating Budgets"
     geozones.each do |geozone|
       group.headings << group.headings.create!(name: geozone.name,
                                                geozone: geozone,
-                                               price: rand(1 .. 100) * 10000)
+                                               price: rand(1 .. 100) * 100000)
 
     end
     print "#{group.name} "
@@ -324,7 +325,7 @@ end
 
 puts "Creating Investments"
 tags = Faker::Lorem.words(10)
-(1..60).each do |i|
+(1..100).each do |i|
   heading = Budget::Heading.reorder("RANDOM()").first
 
   investment = Budget::Investment.create!(
@@ -340,7 +341,7 @@ tags = Faker::Lorem.words(10)
     unfeasibility_explanation: "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>",
     valuation_finished: [false, true].sample,
     tag_list: tags.sample(3).join(','),
-    price: rand(1 .. 100) * 1000000,
+    price: rand(1 .. 100) * 100000,
     terms_of_service: "1")
   puts "    #{investment.title}"
 end

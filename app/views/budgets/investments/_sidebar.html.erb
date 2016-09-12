@@ -13,7 +13,7 @@
     <em>
       <%= t("budget.investments.index.sidebar.voted_html",
           count: @ballot.investments.by_heading(@heading.id).count,
-          amount_spent: format_price(@ballot.amount_spent(@heading))) %>
+          amount_spent: format_price(@budget, @ballot.amount_spent(@heading))) %>
     </em>
   </p>
 <% else %>
@@ -22,7 +22,9 @@
 
 <ul class="ballot-list">
   <% @ballot.investments.by_heading(@heading).each do |investment| %>
-    <%= render 'ballots/investment_for_sidebar', investment: investment %>
+    <%= render 'budgets/ballot/investment_for_sidebar',
+                investment: investment,
+                investment_ids: @investments %>
   <% end %>
 </ul>
 

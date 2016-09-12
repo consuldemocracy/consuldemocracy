@@ -99,7 +99,7 @@ module Budgets
       end
 
       def load_heading
-        @heading = @budget.headings.find(params[:heading_id]) if params[:geozone_id].present?
+        @heading = @budget.headings.find(params[:heading_id]) if params[:heading_id].present?
       end
 
   end

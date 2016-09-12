@@ -13,7 +13,7 @@
       <div class="supported">
         <%= t("budget.investments.investment.already_supported") %>
       </div>
-    <% elsif voting_allowed %>
+    <% elsif @budget.selecting? %>
 
       <%= link_to vote_url,
           class: "button button-support small expanded",

@@ -7,7 +7,9 @@
 
 <main id="budget-investments-main">
 
-  <%= render 'header' %>
+  <% unless params[:search].present? %>
+    <%= render 'header' %>
+  <% end %>
 
   <div class="wrap row">
     <div id="budget-investments" class="budget-investments-list small-12 medium-9 column">
