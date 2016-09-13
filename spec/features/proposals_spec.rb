@@ -738,6 +738,33 @@ feature 'Proposals' do
       expect(page).to have_content "This proposal has been archived and can't collect supports"
     end
 
+    scenario 'do not show in featured proposals section' do
+      featured_proposal = create(:proposal, :with_confidence_score, cached_votes_up: 100)
+      archived_proposal = create(:proposal, :archived, :with_confidence_score, cached_votes_up: 10000)
+
+      visit proposals_path
+
+      within("#featured-proposals") do
+        expect(page).to have_content(featured_proposal.title)
+        expect(page).to_not have_content(archived_proposal.title)
+      end
+      within("#proposals-list") do
+        expect(page).to_not have_content(featured_proposal.title)
+        expect(page).to_not have_content(archived_proposal.title)
+      end
+
+      click_link "Archived"
+
+      within("#featured-proposals") do
+        expect(page).to have_content(featured_proposal.title)
+        expect(page).to_not have_content(archived_proposal.title)
+      end
+      within("#proposals-list") do
+        expect(page).to_not have_content(featured_proposal.title)
+        expect(page).to have_content(archived_proposal.title)
+      end
+    end
+
   end
 
   context "Search" do
