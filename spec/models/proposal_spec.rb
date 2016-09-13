@@ -819,7 +819,7 @@ describe Proposal do
   end
 
   describe "archived" do
-    before(:all) do
+    before(:each) do
       @new_proposal = create(:proposal)
       @archived_proposal = create(:proposal, :archived)
     end
@@ -834,6 +834,13 @@ describe Proposal do
 
       expect(archived.size).to eq(1)
       expect(archived.first).to eq(@archived_proposal)
+    end
+
+    it "scope archived" do
+      not_archived = Proposal.not_archived
+
+      expect(not_archived.size).to eq(1)
+      expect(not_archived.first).to eq(@new_proposal)
     end
   end
 
