@@ -21,7 +21,7 @@
 
     <div class="small-12 column">
       <%= f.label :heading_id,  t("budget.investments.form.heading") %>
-      <%= f.select :heading_id, heading_select_options, {include_blank: t("budget.headings.none"), label: false} %>
+      <%= f.select :heading_id, budget_heading_select_options(@budget), {include_blank: t("budget.headings.none"), label: false} %>
     </div>
 
     <div class="small-12 column">

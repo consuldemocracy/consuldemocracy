@@ -283,6 +283,11 @@ Rails.application.routes.draw do
       post :vote, on: :member
       get :print, on: :collection
     end
+
+    resources :budget_investments, only: [:index, :new, :create, :show] do
+      post :vote, on: :member
+      get :print, on: :collection
+    end
   end
 
   if Rails.env.development?
