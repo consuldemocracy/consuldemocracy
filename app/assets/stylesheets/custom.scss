@@ -1436,6 +1436,17 @@ table.age-groups-investment-projects {
   }
 }
 
+tr td, tr th {
+
+  &.border-left {
+    border-left: 1px solid $border;
+  }
+
+  &.border-right {
+    border-right: 1px solid $border;
+  }
+}
+
 .services-letters h3 {
   font-size: rem-calc(18);
   line-height: $line-height;
