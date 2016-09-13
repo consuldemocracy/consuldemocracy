@@ -24,6 +24,8 @@ Frontend tools used include [SCSS](http://sass-lang.com/) over [Foundation](http
 
 ## Configuration for development and test environments
 
+**NOTE**: For more detailed instructions check the [docs](https://github.com/consul/consul/tree/master/doc/en/dev_test_setup.md)
+
 Prerequisites: install git, Ruby 2.2.3, bundler gem, ghostscript and PostgreSQL (>=9.4).
 
 ```
