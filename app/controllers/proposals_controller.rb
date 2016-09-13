@@ -26,6 +26,7 @@ class ProposalsController < ApplicationController
   end
 
   def index_customization
+    discard_archived
     load_retired
     load_featured
   end
@@ -78,6 +79,10 @@ class ProposalsController < ApplicationController
 
     def set_featured_proposal_votes(proposals)
       @featured_proposals_votes = current_user ? current_user.proposal_votes(proposals) : {}
+    end
+
+    def discard_archived
+      @resources = @resources.not_archived unless @current_order == "archival_date"
     end
 
     def load_retired

@@ -3,46 +3,48 @@ require 'rails_helper'
 
 feature 'Proposals' do
 
-  scenario 'Index' do
-    featured_proposals = create_featured_proposals
-    proposals = [create(:proposal), create(:proposal), create(:proposal)]
+  context 'Index' do
+    scenario 'Lists featured and regular proposals' do
+      featured_proposals = create_featured_proposals
+      proposals = [create(:proposal), create(:proposal), create(:proposal)]
 
-    visit proposals_path
+      visit proposals_path
 
-    expect(page).to have_selector('#proposals .proposal-featured', count: 3)
-    featured_proposals.each do |featured_proposal|
-      within('#featured-proposals') do
-        expect(page).to have_content featured_proposal.title
-        expect(page).to have_css("a[href='#{proposal_path(featured_proposal)}']")
+      expect(page).to have_selector('#proposals .proposal-featured', count: 3)
+      featured_proposals.each do |featured_proposal|
+        within('#featured-proposals') do
+          expect(page).to have_content featured_proposal.title
+          expect(page).to have_css("a[href='#{proposal_path(featured_proposal)}']")
+        end
+      end
+
+      expect(page).to have_selector('#proposals .proposal', count: 3)
+      proposals.each do |proposal|
+        within('#proposals') do
+          expect(page).to have_content proposal.title
+          expect(page).to have_css("a[href='#{proposal_path(proposal)}']", text: proposal.title)
+          expect(page).to have_css("a[href='#{proposal_path(proposal)}']", text: proposal.summary)
+        end
       end
     end
 
-    expect(page).to have_selector('#proposals .proposal', count: 3)
-    proposals.each do |proposal|
-      within('#proposals') do
-        expect(page).to have_content proposal.title
-        expect(page).to have_css("a[href='#{proposal_path(proposal)}']", text: proposal.title)
-        expect(page).to have_css("a[href='#{proposal_path(proposal)}']", text: proposal.summary)
+    scenario 'Pagination' do
+      per_page = Kaminari.config.default_per_page
+      (per_page + 5).times { create(:proposal) }
+
+      visit proposals_path
+
+      expect(page).to have_selector('#proposals .proposal', count: per_page)
+
+      within("ul.pagination") do
+        expect(page).to have_content("1")
+        expect(page).to have_content("2")
+        expect(page).to_not have_content("3")
+        click_link "Next", exact: false
       end
+
+      expect(page).to have_selector('#proposals .proposal', count: 2)
     end
-  end
-
-  scenario 'Paginated Index' do
-    per_page = Kaminari.config.default_per_page
-    (per_page + 5).times { create(:proposal) }
-
-    visit proposals_path
-
-    expect(page).to have_selector('#proposals .proposal', count: per_page)
-
-    within("ul.pagination") do
-      expect(page).to have_content("1")
-      expect(page).to have_content("2")
-      expect(page).to_not have_content("3")
-      click_link "Next", exact: false
-    end
-
-    expect(page).to have_selector('#proposals .proposal', count: 2)
   end
 
   scenario 'Show' do
@@ -678,7 +680,7 @@ feature 'Proposals' do
 
   feature 'Archived proposals' do
 
-    scenario 'Show on archived tab' do
+    scenario 'show on archived tab' do
       create_featured_proposals
       archived_proposals = create_archived_proposals
 
@@ -692,11 +694,31 @@ feature 'Proposals' do
       end
     end
 
-    scenario 'Do not show support buttons in index' do
+    scenario 'do not show in other index tabs' do
+      create_featured_proposals
+      archived_proposal = create(:proposal, :archived)
+
+      visit proposals_path
+
+      within("#proposals-list") do
+        expect(page).to_not have_content archived_proposal.title
+      end
+
+      orders = %w{hot_score confidence_score created_at relevance}
+      orders.each do |order|
+        visit proposals_path(order: order)
+
+        within("#proposals-list") do
+          expect(page).to_not have_content archived_proposal.title
+        end
+      end
+    end
+
+    scenario 'do not show support buttons in index' do
       create_featured_proposals
       archived_proposals = create_archived_proposals
 
-      visit proposals_path
+      visit proposals_path(order: 'archival_date')
 
       within("#proposals-list") do
         archived_proposals.each do |proposal|
@@ -708,15 +730,12 @@ feature 'Proposals' do
       end
     end
 
-    scenario 'Do not show support buttons in show' do
-      create_featured_proposals
-      archived_proposals = create_archived_proposals
+    scenario 'do not show support buttons in show' do
+      archived_proposal = create(:proposal, :archived)
 
-      archived_proposals.each do |proposal|
-        visit proposal_path(proposal)
-        expect(page).to_not have_css(".supports")
-        expect(page).to have_content "This proposal has been archived and can't collect supports"
-      end
+      visit proposal_path(archived_proposal)
+      expect(page).to_not have_css(".supports")
+      expect(page).to have_content "This proposal has been archived and can't collect supports"
     end
 
   end
