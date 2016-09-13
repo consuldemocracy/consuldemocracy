@@ -94,6 +94,8 @@ search:
 # - 'errors.messages.{accepted,blank,invalid,too_short,too_long}'
 # - '{devise,simple_form}.*'
 ignore_missing:
+  - 'budget.*'
+  - 'budgets.*'
   - 'unauthorized.*'
   - 'activerecord.errors.models.proposal_notification.*'
   - 'activerecord.errors.models.direct_message.*'
@@ -104,6 +106,8 @@ ignore_missing:
 
 ## Consider these keys used:
 ignore_unused:
+  - 'budget.*'
+  - 'budgets.*'
   - 'activerecord.*'
   - 'activemodel.*'
   - 'unauthorized.*'
@@ -112,6 +116,8 @@ ignore_unused:
   - 'admin.banners.index.filters.*'
   - 'admin.debates.index.filter*'
   - 'admin.proposals.index.filter*'
+  - 'admin.budgets.index.filter*'
+  - 'admin.budget_investments.index.filter*'
   - 'admin.spending_proposals.index.filter*'
   - 'admin.organizations.index.filter*'
   - 'admin.users.index.filter*'
@@ -126,6 +132,8 @@ ignore_unused:
   - 'moderation.debates.index.filter*'
   - 'moderation.debates.index.order*'
   - 'valuation.spending_proposals.index.filter*'
+  - 'valuation.budgets.index.filter*'
+  - 'valuation.budget_investments.index.filter*'
   - 'users.show.filters.*'
   - 'debates.index.select_order'
   - 'debates.index.orders.*'

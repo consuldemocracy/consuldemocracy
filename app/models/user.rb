@@ -19,6 +19,7 @@ class User < ActiveRecord::Base
   has_many :identities, dependent: :destroy
   has_many :debates, -> { with_hidden }, foreign_key: :author_id
   has_many :proposals, -> { with_hidden }, foreign_key: :author_id
+  has_many :budget_investments, -> { with_hidden }, foreign_key: :author_id, class_name: 'Budget::Investment'
   has_many :comments, -> { with_hidden }
   has_many :spending_proposals, foreign_key: :author_id
   has_many :failed_census_calls
@@ -89,6 +90,11 @@ class User < ActiveRecord::Base
 
   def spending_proposal_votes(spending_proposals)
     voted = votes.for_spending_proposals(spending_proposals)
+    voted.each_with_object({}) { |v, h| h[v.votable_id] = v.value }
+  end
+
+  def budget_investment_votes(budget_investments)
+    voted = votes.for_budget_investments(budget_investments)
     voted.each_with_object({}) { |v, h| h[v.votable_id] = v.value }
   end
 

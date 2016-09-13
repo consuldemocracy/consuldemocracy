@@ -1,0 +1,39 @@
+<div class="expanded budget no-margin-top padding">
+  <div class="row">
+    <div class="small-12 medium-9 column">
+      <%= link_to budgets_path do %>
+        <span class="icon-angle-left"></span>
+        <%= t('shared.back') %>
+      <% end %>
+
+      <h1><%= @budget.name %></h1>
+      <p><%= @budget.description %></p>
+    </div>
+  </div>
+</div>
+
+<div class="row margin-top">
+  <div class="small-12 medium-6 column">
+    <table class="table-fixed">
+      <thead>
+        <th><%= t('budget.show.group') %></th>
+      </thead>
+      <tbody>
+        <% @budget.groups.each do |group| %>
+          <tr>
+            <td>
+              <% if group.headings.count == 1 %>
+                <%= link_to group.name,
+                            budget_investments_path(@budget, heading_id: group.headings.first.id),
+                            data: { no_turbolink: true } %>
+              <% else %>
+                <%= link_to group.name, budget_group_path(@budget, group) %>
+              <% end %>
+              <br>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

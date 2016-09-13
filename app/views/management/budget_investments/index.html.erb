@@ -1,0 +1,25 @@
+<main>
+  <span class="not-print">
+    <%= render 'admin/shared/budget_investment_search', url: management_budget_investments_path %>
+  </span>
+
+  <div class="wrap row">
+    <div id="investment-projects" class="investment-projects-list small-12 medium-9 column">
+
+
+      <div class="small-12 search-results">
+        <%= content_tag(:h2, t("management.budget_investments.filters.unfeasible")) if params[:unfeasible].present? %>
+        <%= content_tag(:h2, t("management.budget_investments.filters.by_geozone", geozone: @geozone_name)) if @geozone_name.present? %>
+        <% if params[:search].present? %>
+          <h2>
+            <%= page_entries_info @budget_investments %>
+            <%= t("management.budget_investments.search_results", count: @budget_investments.size, search_term: params[:search]) %>
+          </h2>
+        <% end %>
+      </div>
+
+      <%= render @budget_investments %>
+      <%= paginate @budget_investments %>
+    </div>
+  </div>
+</main>

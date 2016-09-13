@@ -1,0 +1,113 @@
+es:
+  budgets:
+    ballots:
+      show:
+        title: Mis votos
+        amount_spent: Coste total
+        remaining: "Te quedan <span>%{amount_city}</span> para invertir"
+        remove: Quitar voto
+        voted_html:
+          one: "Has votado <span>una</span> propuesta."
+          other: "Has votado <span>%{count}</span> propuestas."
+        voted_info_html: "Puedes cambiar tus votos en cualquier momento hasta el cierre de esta fase.<br> No hace falta que inviertas todo el dinero disponible."
+        zero: "Todavía no has votado ninguna propuesta de inversión."
+    groups:
+      show:
+        title: Selecciona una partida
+  budget:
+    phase:
+      on_hold: En pausa
+      accepting: Aceptando propuestas
+      selecting: Fase de selección
+      balloting: Fase de Votación
+      finished: Terminado
+    groups:
+      index:
+        group_title: "Grupos"
+    headings:
+      none: Toda la ciudad
+      all: Todos los ámbitos
+    index:
+      name: Nombre del presupuesto
+      phase: Fase
+      title: Presupuestos participativos
+    investments:
+      form:
+        association_name_label: 'Si propones en nombre de una asociación o colectivo añade el nombre aquí'
+        association_name: 'Nombre de la asociación'
+        description: Descripción detallada
+        external_url: Enlace a documentación adicional
+        heading: "Elige si es una propuesta para toda la ciudad o para un distrito"
+        submit_buttons:
+          create: Crear
+          new: Crear
+        title: Título de la propuesta de inversión
+      index:
+        available: "Disponible:"
+        title: Presupuestos participativos
+        unfeasible: Propuestas de inversión no viables
+        unfeasible_text: Las propuestas presentadas deben cumplir una serie de criterios (legalidad, concreción, ser competencia del Ayuntamiento, no superar el tope del presupuesto; %{definitions}) para ser declaradas viables y llegar hasta la fase de votación final. Todas las propuestas que no cumplen estos criterios son marcadas como inviables y publicadas en la siguiente lista, junto con su informe de inviabilidad.
+        unfeasible_text_definitions: ver definiciones aquí
+        by_heading: "Propuestas de inversión con ámbito: %{heading}"
+        search_form:
+          button: Buscar
+          placeholder: Propuestas de inversión...
+          title: Buscar
+        search_results:
+          one: " que contiene '%{search_term}'"
+          other: " que contienen '%{search_term}'"
+        sidebar:
+          back: Volver a página de selección
+          district: Distrito
+          my_ballot: Mis votos
+          remember_city: Además puedes votar propuestas de inversión para %{city}.
+          remember_city_link_html: <strong>toda la ciudad</strong>
+          remember_district: Además puedes votar propuestas de inversión para %{district}.
+          remember_district_link_html: <strong>un distrito</strong>
+          voted_html:
+            one: "<strong>Has votado una propuesta por un valor de %{amount_spent}</strong>"
+            other: "<strong>Has votado %{count} propuestas por un valor de %{amount_spent}</strong>"
+          voted_info: Puedes cambiar tus votos en cualquier momento hasta el cierre de esta fase. No hace falta que gastes todo el dinero disponible.
+          votes: Apoyos restantes
+          votes_district: "Solo puedes votar en el distrito %{district}"
+          zero: "Todavía no has votado ninguna propuesta de inversión."
+        orders:
+          random: Aleatorias
+          confidence_score: Mejor valoradas
+          price: Por coste
+      new:
+        more_info: "¿Cómo funcionan los presupuestos participativos?"
+        recommendation_one: Consulta los %{requirements}.
+        recommendation_one_link: requisitos que debe cumplir una propuesta
+        recommendation_three: Intenta detallar lo máximo posible la propuesta para que el equipo de gobierno encargado de estudiarla tenga las menor dudas posibles.
+        recommendation_two: Cualquier propuesta o comentario que implique acciones ilegales será eliminada.
+        recommendations_title: Cómo crear una propuesta de inversión
+        start_new: Crear una propuesta de inversión
+        back_link: Volver
+      show:
+        author_deleted: Usuario eliminado
+        price_explanation: Informe de coste
+        unfeasibility_explanation: Informe de inviabilidad
+        code: 'Código propuesta de gasto:'
+        share: Compartir
+      wrong_price_format: Solo puede incluir caracteres numéricos
+      investment:
+        title: Propuesta de inversión
+        add: Añadir
+        already_added: "Ya has añadido esta propuesta de inversión"
+        already_supported: Ya has apoyado este proyecto. ¡Compártelo!
+        forum: Espacio de debate distrital
+        support_title: Apoyar este proyecto
+        supports:
+          one: 1 apoyo
+          other: "%{count} apoyos"
+          zero: Sin apoyos
+        vote: Votar
+      header:
+        check_ballot: Revisar mis votos
+        different_heading_active: Ya apoyaste propuestas de otro distrito.
+    show:
+      group: Grupo
+      heading: Partida
+      price: Cantidad
+      no_heading: Sin línea

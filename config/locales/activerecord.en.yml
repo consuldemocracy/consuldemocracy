@@ -4,6 +4,12 @@ en:
       activity:
         one: "activity"
         other: "activities"
+      budget:
+        one: "Participatory budget"
+        other: "Participatory budgets"
+      budget/investment:
+        one: "Investment"
+        other: "Investments"
       comment:
         one: "Comment"
         other: "Comments"
@@ -35,6 +41,12 @@ en:
         one: "Spending proposal"
         other: "Spending proposals"
     attributes:
+      budget/investment:
+        administrator_id: "Administrator"
+        description: "Description"
+        external_url: "Link to additional documentation"
+        heading_id: "Heading"
+        title: "Title"
       comment:
         body: "Comment"
         user: "User"

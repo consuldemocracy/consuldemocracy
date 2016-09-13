@@ -1,0 +1,16 @@
+<div class="add in-favor">
+  <p class="investment-project-amount">
+    <%= format_price(@budget, investment.price) %>
+  </p>
+
+  <% if @budget.balloting? %>
+    <%= link_to budget_ballot_lines_url(investment_id: investment.id,
+                                        investments_ids: @ballot.investment_ids),
+        class: "button button-support small expanded",
+        title: t('budget.investments.investment.support_title'),
+        method: "post",
+        remote: true do %>
+        <%= t("budget.investments.investment.add") %>
+    <% end %>
+  <% end %>
+</div>

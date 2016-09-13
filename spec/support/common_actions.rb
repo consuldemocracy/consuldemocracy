@@ -159,6 +159,11 @@ module CommonActions
     expect(page).to have_selector('.in-favor a', visible: false)
   end
 
+  def expect_message_you_need_to_sign_in_to_ballot
+    expect(page).to have_content 'Not Logged In'
+    expect(page).to have_selector('.in-favor a', visible: false)
+  end
+
    def expect_message_you_need_to_sign_in_to_vote_comments
     expect(page).to have_content 'You must Sign in or Sign up to vote'
     expect(page).to have_selector('.logged', visible: false)
@@ -175,9 +180,25 @@ module CommonActions
     expect(page).to have_selector('.in-favor a', visible: false)
   end
 
+  def expect_message_only_verified_can_vote_investments
+    expect(page).to have_content 'Not Verified'
+    expect(page).to have_selector('.in-favor a', visible: false)
+  end
+
   def expect_message_voting_not_allowed
     expect(page).to have_content 'Voting phase is closed'
     expect(page).to_not have_selector('.in-favor a')
+  end
+
+  def expect_message_selecting_not_allowed
+    expect(page).to have_content 'No Selecting Allowed'
+    expect(page).to_not have_selector('.in-favor a')
+  end
+
+  def expect_message_organizations_cannot_vote
+    #expect(page).to have_content 'Organisations are not permitted to vote.'
+    expect(page).to have_content 'Organization'
+    expect(page).to have_selector('.in-favor a', visible: false)
   end
 
   def create_featured_proposals
@@ -245,4 +266,9 @@ module CommonActions
     end
   end
 
+  def add_to_ballot(budget_investment)
+    within("#budget_investment_#{budget_investment.id}") do
+      click_link "Spend money on this"#find('.add a').trigger('click')
+    end
+  end
 end

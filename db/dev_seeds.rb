@@ -26,6 +26,7 @@ Setting.create(key: 'place_name', value: 'City')
 Setting.create(key: 'feature.debates', value: "true")
 Setting.create(key: 'feature.spending_proposals', value: "true")
 Setting.create(key: 'feature.spending_proposal_features.voting_allowed', value: "true")
+Setting.create(key: 'feature.budgets', value: "true")
 Setting.create(key: 'feature.twitter_login', value: "true")
 Setting.create(key: 'feature.facebook_login', value: "true")
 Setting.create(key: 'feature.google_login', value: "true")
@@ -149,7 +150,7 @@ tags = Faker::Lorem.words(25)
   description = "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>"
   proposal = Proposal.create!(author: author,
                               title: Faker::Lorem.sentence(3).truncate(60),
-                              question: Faker::Lorem.sentence(3),
+                              question: Faker::Lorem.sentence(4),
                               summary: Faker::Lorem.sentence(3),
                               responsible_name: Faker::Name.name,
                               external_url: Faker::Internet.url,
@@ -168,7 +169,7 @@ tags = ActsAsTaggableOn::Tag.where(kind: 'category')
   description = "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>"
   proposal = Proposal.create!(author: author,
                               title: Faker::Lorem.sentence(3).truncate(60),
-                              question: Faker::Lorem.sentence(3),
+                              question: Faker::Lorem.sentence(4),
                               summary: Faker::Lorem.sentence(3),
                               responsible_name: Faker::Name.name,
                               external_url: Faker::Internet.url,
@@ -266,7 +267,7 @@ puts "Creating Spending Proposals"
 
 tags = Faker::Lorem.words(10)
 
-(1..60).each do |i|
+(1..10).each do |i|
   geozone = Geozone.reorder("RANDOM()").first
   author = User.reorder("RANDOM()").first
   description = "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>"
@@ -293,6 +294,64 @@ puts "Creating Valuation Assignments"
 (1..17).to_a.sample.times do
   SpendingProposal.reorder("RANDOM()").first.valuators << valuator.valuator
 end
+
+
+puts "Creating Budgets"
+
+phases = %w{on_hold accepting selecting balloting finished}
+phases.each_with_index do |phase, i|
+  budget = Budget.create!(name: (Date.today.year - 10 + i).to_s,
+                          description: "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>",
+                          currency_symbol: "€",
+                          phase: phase,
+                          valuating: [false, true].sample)
+  puts budget.name
+
+  (1..[1,2,3].sample).each do |i|
+    group = budget.groups.create!(name: Faker::StarWars.planet)
+
+    geozones = Geozone.reorder("RANDOM()").limit([2,5,6,7].sample)
+    geozones.each do |geozone|
+      group.headings << group.headings.create!(name: geozone.name,
+                                               geozone: geozone,
+                                               price: rand(1 .. 100) * 100000)
+
+    end
+    print "#{group.name} "
+  end
+  puts ""
+end
+
+
+puts "Creating Investments"
+tags = Faker::Lorem.words(10)
+(1..100).each do |i|
+  heading = Budget::Heading.reorder("RANDOM()").first
+
+  investment = Budget::Investment.create!(
+    author: User.reorder("RANDOM()").first,
+    heading: heading,
+    group: heading.group,
+    budget: heading.group.budget,
+    title: Faker::Lorem.sentence(3).truncate(60),
+    external_url: Faker::Internet.url,
+    description: "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>",
+    created_at: rand((Time.now - 1.week) .. Time.now),
+    feasibility: %w{undecided feasible unfeasible}.sample,
+    unfeasibility_explanation: "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>",
+    valuation_finished: [false, true].sample,
+    tag_list: tags.sample(3).join(','),
+    price: rand(1 .. 100) * 100000,
+    terms_of_service: "1")
+  puts "    #{investment.title}"
+end
+
+puts "Creating Valuation Assignments"
+
+(1..17).to_a.sample.times do
+  Budget::Investment.reorder("RANDOM()").first.valuators << valuator.valuator
+end
+
 
 puts "Creating Legislation"
 

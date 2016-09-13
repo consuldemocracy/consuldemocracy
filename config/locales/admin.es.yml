@@ -58,6 +58,85 @@ es:
           on_users: Usuarios
         title: Actividad de los Moderadores
         type: Tipo
+    budgets:
+      index:
+        title: Presupuestos participativos
+        new_link: Crear nuevo
+        info_link: Info
+        filters:
+          open: Abiertos
+          finished: Terminados
+      create:
+        notice: ¡Nueva campaña de presupuestos participativos creada con éxito!
+      new:
+        title: Nuevo presupuesto ciudadano
+        create: Crear presupuesto
+        name: Nombre del presupuesto
+        description: Descripción
+        phase: Fase
+        currency: Divisa
+      show:
+        phase: Fase actual
+        currency: Divisa
+        groups: Grupos de partidas presupuestarias
+      form:
+        group: Nombre del grupo
+        no_groups: No hay grupos creados todavía. Cada usuario podrá votar en una sola partida de cada grupo.
+        add_group: Añadir nuevo grupo
+        create_group: Crear grupo
+        heading: Nombre de la partida
+        add_heading: Añadir partida
+        amount: Cantidad
+        save_heading: Guardar partida
+        no_heading: Este grupo no tiene ninguna partida asignada.
+        geozone: Ámbito de actuación
+        table_heading: Partida
+        table_amount: Cantidad
+        table_geozone: Ámbito de actuación
+    budget_investments:
+      index:
+        heading_filter_all: Todas las partidas
+        administrator_filter_all: Todos los administradores
+        valuator_filter_all: Todos los evaluadores
+        tags_filter_all: Todas las etiquetas
+        filters:
+          valuation_open: Abiertas
+          without_admin: Sin administrador
+          managed: Gestionando
+          valuating: En evaluación
+          valuation_finished: Evaluación finalizada
+          all: Todas
+        title: Propuestas de inversión
+        assigned_admin: Administrador asignado
+        no_admin_assigned: Sin admin asignado
+        no_valuators_assigned: Sin evaluador
+        feasibility:
+          feasible: "Viable (%{price})"
+          not_feasible: "Inviable"
+          undefined: "Sin definir"
+      show:
+        assigned_admin: Administrador asignado
+        assigned_valuators: Evaluadores asignados
+        classification: Clasificación
+        info: "%{budget_name} - Grupo: %{group_name} - Propuesta de inversión %{id}"
+        edit: Editar
+        edit_classification: Editar clasificación
+        by: Autor
+        sent: Fecha
+        group: Grupo
+        heading: Partida
+        dossier: Informe
+        edit_dossier: Editar informe
+        tags: Etiquetas
+        undefined: Sin definir
+      edit:
+        classification: Clasificación
+        assigned_valuators: Evaluadores
+        select_heading: Seleccionar partida
+        submit_button: Actualizar
+        tags: Etiquetas
+        tags_placeholder: "Escribe las etiquetas que desees separadas por comas (,)"
+        undefined: Sin definir
     comments:
       index:
         filter: Filtro
@@ -94,6 +173,7 @@ es:
       activity: Actividad de moderadores
       admin: Menú de administración
       banner: Gestionar banners
+      budgets: Presupuestos participativos
       debate_topics: Temas de debate
       hidden_comments: Comentarios ocultos
       hidden_debates: Debates ocultos

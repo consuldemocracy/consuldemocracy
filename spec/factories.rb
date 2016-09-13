@@ -188,6 +188,82 @@ FactoryGirl.define do
     association :author, factory: :user
   end
 
+  factory :budget do
+    sequence(:name) { |n| "Budget #{n}" }
+    currency_symbol "€"
+    phase 'on_hold'
+
+    trait :accepting do
+      phase 'accepting'
+    end
+
+    trait :selecting do
+      phase 'selecting'
+    end
+
+    trait :balloting do
+      phase 'balloting'
+    end
+
+    trait :finished do
+      phase 'finished'
+    end
+  end
+
+  factory :budget_group, class: 'Budget::Group' do
+    budget
+    sequence(:name) { |n| "Group #{n}" }
+  end
+
+  factory :budget_heading, class: 'Budget::Heading' do
+    association :group, factory: :budget_group
+    sequence(:name) { |n| "Heading #{n}" }
+    price 1000000
+  end
+
+  factory :budget_investment, class: 'Budget::Investment' do
+    sequence(:title)     { |n| "Budget Investment #{n} title" }
+    budget
+    group      { create :budget_group, budget: budget }
+    heading    { create :budget_heading, group: group }
+    association :author, factory: :user
+    description          'Spend money on this'
+    price                10
+    unfeasibility_explanation ''
+    external_url         'http://external_documention.org'
+    terms_of_service     '1'
+
+    trait :with_confidence_score do
+      before(:save) { |i| i.calculate_confidence_score }
+    end
+
+    trait :feasible do
+      feasibility "feasible"
+    end
+
+    trait :unfeasible do
+      feasibility "unfeasible"
+      unfeasibility_explanation "set to unfeasible on creation"
+    end
+
+    trait :finished do
+      valuation_finished true
+    end
+  end
+
+  factory :budget_ballot, class: 'Budget::Ballot' do
+    association :user, factory: :user
+    budget
+  end
+
+  factory :budget_ballot_line, class: 'Budget::Ballot::Line' do
+    budget
+    ballot     { create :budget_ballot, budget: budget }
+    group      { create :budget_group, budget: budget }
+    heading    { create :budget_heading, group: group }
+    investment { create :budget_investment, :feasible, heading: heading }
+  end
+
   factory :vote do
     association :votable, factory: :debate
     association :voter,   factory: :user
@@ -338,4 +414,5 @@ FactoryGirl.define do
     association :sender,   factory: :user
     association :receiver, factory: :user
   end
+
 end

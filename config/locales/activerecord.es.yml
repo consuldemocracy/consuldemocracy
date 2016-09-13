@@ -4,6 +4,12 @@ es:
       activity:
         one: "actividad"
         other: "actividades"
+      budget:
+        one: "Presupuesto participativo"
+        other: "Presupuestos participativos"
+      budget/investment:
+        one: "Propuesta de inversión"
+        other: "Propuestas de inversión"
       comment:
         one: "Comentario"
         other: "Comentarios"
@@ -35,6 +41,12 @@ es:
         one: "Propuesta de inversión"
         other: "Propuestas de inversión"
     attributes:
+      budget/investment:
+        administrator_id: "Administrador"
+        description: "Descripción"
+        external_url: "Enlace a documentación adicional"
+        heading_id: "Partida presupuestaria"
+        title: "Título"
       comment:
         body: "Comentario"
         user: "Usuario"
