@@ -2,6 +2,7 @@ class Management::BudgetInvestmentsController < Management::BaseController
 
   before_action :only_verified_users, except: :print
   before_action :set_budget_investment, only: [:vote, :show]
+  before_action :load_budget
 
   def index
     @budget_investments = apply_filters_and_search(Budget::Investment).order(cached_votes_up: :desc).page(params[:page]).for_render

@@ -4,6 +4,15 @@ feature 'Budget Investments' do
 
   background do
     login_as_manager
+    @budget = create(:budget)
+  end
+
+  context "Select a budget" do
+    budget2 = create(:budget)
+    budget3 = create(:budget)
+
+    click_link "Create budget investment"
+
   end
 
   context "Create" do
@@ -12,7 +21,6 @@ feature 'Budget Investments' do
       user = create(:user, :level_two)
       login_managed_user(user)
 
-      save_and_open_page
       click_link "Create budget investment"
 
       within(".account-info") do
