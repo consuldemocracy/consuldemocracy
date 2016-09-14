@@ -1,4 +1,4 @@
-class Comment < ActiveRecord::Base
+class Comment < ApplicationRecord
   include Flaggable
 
   acts_as_paranoid column: :hidden_at
@@ -95,7 +95,7 @@ class Comment < ActiveRecord::Base
   end
 
   def self.body_max_length
-    Setting['comments_body_max_length'].to_i 
+    Setting['comments_body_max_length'].to_i
   end
 
   def calculate_confidence_score

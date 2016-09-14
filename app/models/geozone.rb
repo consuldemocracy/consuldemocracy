@@ -1,4 +1,4 @@
-class Geozone < ActiveRecord::Base
+class Geozone < ApplicationRecord
   has_many :spending_proposals
   validates :name, presence: true
 

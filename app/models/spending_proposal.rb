@@ -1,4 +1,4 @@
-class SpendingProposal < ActiveRecord::Base
+class SpendingProposal < ApplicationRecord
   include Measurable
   include Sanitizable
   include Taggable
