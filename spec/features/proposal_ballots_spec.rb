@@ -50,7 +50,6 @@ feature 'Proposal ballots' do
 
     successfull_proposals.each do |proposal|
       expect(page).to have_content(proposal.title)
-      expect(page).to have_content(proposal.author_id)
     end
   end
 
