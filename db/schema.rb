@@ -399,7 +399,6 @@ ActiveRecord::Schema.define(version: 20160914082608) do
     t.integer "proposals_count",                     default: 0
     t.integer "spending_proposals_count",            default: 0
     t.string  "kind"
-    t.integer "budget/investments_count",            default: 0
   end
 
   add_index "tags", ["debates_count"], name: "index_tags_on_debates_count", using: :btree
@@ -506,7 +505,6 @@ ActiveRecord::Schema.define(version: 20160914082608) do
     t.integer "user_id"
     t.string  "description"
     t.integer "spending_proposals_count", default: 0
-    t.integer "budget_investments_count", default: 0
   end
 
   add_index "valuators", ["user_id"], name: "index_valuators_on_user_id", using: :btree
