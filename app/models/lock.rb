@@ -1,4 +1,4 @@
-class Lock < ActiveRecord::Base
+class Lock < ApplicationRecord
   belongs_to :user
 
   before_save :set_locked_until

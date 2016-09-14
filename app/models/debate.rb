@@ -1,5 +1,5 @@
 require "numeric"
-class Debate < ActiveRecord::Base
+class Debate < ApplicationRecord
   include Rails.application.routes.url_helpers
   include Flaggable
   include Taggable

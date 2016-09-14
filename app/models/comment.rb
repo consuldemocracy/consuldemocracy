@@ -1,4 +1,4 @@
-class Comment < ActiveRecord::Base
+class Comment < ApplicationRecord
   include Flaggable
   include HasPublicAuthor
   include Graphqlable
