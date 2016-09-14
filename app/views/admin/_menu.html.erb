@@ -35,6 +35,14 @@
       </li>
     <% end %>
 
+    <% if feature?(:enquiries) %>
+      <li <%= "class=active" if controller_name == "enquiries" %>>
+        <%= link_to admin_enquiries_path do %>
+          <span class="icon-budget"></span><%= t("admin.menu.enquiries") %>
+        <% end %>
+      </li>
+    <% end %>
+
     <li <%= "class=active" if controller_name == "banners" %>>
       <%= link_to admin_banners_path do %>
         <span class="icon-eye"></span><%= t("admin.menu.banner") %>

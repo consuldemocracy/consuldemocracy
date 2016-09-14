@@ -1,0 +1,10 @@
+
+<ul>
+<% @enquiries.each do |enquiry| %>
+  <li id="<%= dom_id(enquiry) %>">
+    <%= link_to enquiry.title, enquiry %>
+    <%= link_to t('shared.edit'), edit_admin_enquiry_path(enquiry) %>
+    <%= link_to t('shared.delete'), admin_enquiry_path(enquiry), method: :delete %>
+  </li>
+<% end %>
+</ul>
