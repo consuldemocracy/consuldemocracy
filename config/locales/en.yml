@@ -374,15 +374,15 @@ en:
         submit_button: Save changes
   proposal_ballots:
     title: "Votings"
-    description_html: "These are the proposals that have reached the required supports <em>(%{supports})</em> and will be voted."
+    description_html: "The proposals that have reached the <strong>required supports <em>(%{supports})</em></strong> will be voted."
     date_title: "Dates of participation"
-    date: "September 15 to September 30, 2016"
+    date: "November 21 to November 27, 2016"
     successfull: "This proposal has reached the required supports and will be voted in the %{voting}."
     voting: "next voting"
-    featured_title: "Next voting"
+    featured_title: "#VotingProposal"
     nothing_to_vote: "There is nothing to vote at the moment."
     info: "There are proposals that have reached the required supports and will be voted."
-    info_button: "More information about voting"
+    button: "I want to vote"
   proposal_notifications:
     new:
       title: "Send message"

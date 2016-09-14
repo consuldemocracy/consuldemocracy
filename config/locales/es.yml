@@ -374,15 +374,15 @@ es:
         submit_button: Guardar cambios
   proposal_ballots:
     title: "Votaciones"
-    description_html: "Estas son las propuestas que han alcanzado el número de apoyos necesarios <em>(%{supports})</em> y que pasarán a la siguiente votación."
+    description_html: "Las propuestas que han alcanzado el <strong>número de apoyos necesarios <em>(%{supports})</em></strong> pasarán a votación."
     date_title: "Fechas de participación"
-    date: "Del 15 de septiembre al 30 de septiembre de 2016"
+    date: "Del 21 de noviembre al 27 de noviembre de 2016"
     successfull: "Esta propuesta ha alcanzado los apoyos necesarios y pasará a la %{voting}."
     voting: "próxima votación"
-    featured_title: "Próxima votación"
+    featured_title: "#VotaUnaPropuesta"
     nothing_to_vote: "No hay nada que votar en este momento."
-    info: "Hay propuestas que han alcanzado el número de apoyos necesarios y pasarán a la siguiente votación."
-    info_button: "Más información sobre la votación"
+    info: "Algunas propuestas ya han conseguido los apoyos para pasar a votación."
+    button: "Quiero participar"
   proposal_notifications:
     new:
       title: "Enviar mensaje"

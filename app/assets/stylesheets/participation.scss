@@ -930,7 +930,7 @@
 // 05. Featured
 // ------------
 
-.featured-debates, .featured-proposals, .featured-proposals-ballot,
+.featured-debates, .featured-proposals,
 .proposals-ballot, .proposals-ballot-list {
   padding: $line-height/2 0;
 
@@ -1035,36 +1035,44 @@
 // 06. Proposals successfull
 // -------------------------
 
-.successfull-heading {
+.dark-heading {
   background: #2D3E50;
   color: white;
-  min-height: $line-height*8;
+
+  @include breakpoint(medium) {
+    padding-bottom: $line-height;
+  }
 
   p {
     margin-bottom: 0;
+
+    &.title {
+      color: #FFD200;
+    }
   }
 
   .info {
-    background: #34495E;
-    padding: $line-height;
+    background: #314253;
+    padding-top: $line-height;
 
     @include breakpoint(medium) {
-      border-radius: rem-calc(6);
+      border-top: rem-calc(6) solid #FFD200;
     }
   }
 }
 
 .featured-proposals-ballot-banner {
-  background: #2D3E50;
+  background: #2D3E50 image-url("ballot.gif");
+  background-position: 90% 0;
+  background-repeat: no-repeat;
   position: relative;
-  text-align: center;
 
-  h2, p {
-    color: white;
+  h2, a:hover h2 {
+    color: #FFD200 !important;
   }
 
-  .button {
-    background: #E74B3C;
+  p {
+    color: white;
   }
 
   @include breakpoint(medium) {
@@ -1073,35 +1081,11 @@
   }
 }
 
-.featured-proposals-ballot {
-  background: #FFFBCC;
-  position: relative;
-
-  .button {
-    color: white;
-    font-size: $base-font-size;
-    margin-bottom: 0;
-  }
-
-  a {
-    display: block;
-    padding: $line-height/2 0;
-
-    &:hover {
-      text-decoration: none;
-    }
-
-    &:focus {
-      outline: none;
-    }
-  }
-}
-
-.featured-proposals-ballot, .featured-proposals-ballot-banner,
+.featured-proposals-ballot-banner,
 .successfull .panel {
 
   .icon-successfull {
-    border-right: 60px solid #34495E;
+    border-right: 60px solid #FFD200;
     border-top: 0;
     border-bottom: 60px solid transparent;
     height: 0;
@@ -1111,7 +1095,7 @@
     width: 0;
 
     &:after {
-      color: white;
+      color: #1B254C;
       content: "\59";
       font-family: "icons" !important;
       left: 34px;
