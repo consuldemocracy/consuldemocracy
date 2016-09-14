@@ -10,6 +10,8 @@ class Enquiry < ActiveRecord::Base
   validates :question, presence: true
   validates :summary, presence: true
   validates :author, presence: true
+  validates :open_at, presence: true
+  validates :closed_at, presence: true, date: { after_or_equal_to: :open_at}
 
   validates :title, length: { in: 4..Enquiry.title_max_length }
   validates :description, length: { maximum: Enquiry.description_max_length }
