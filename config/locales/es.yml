@@ -376,7 +376,7 @@ es:
     title: "Votaciones"
     description_html: "Las propuestas que han alcanzado el <strong>número de apoyos necesarios <em>(%{supports})</em></strong> pasarán a votación."
     date_title: "Fechas de participación"
-    date: "Del 21 de noviembre al 27 de noviembre de 2016"
+    date: "En breve anunciaremos la fecha de votación de estas propuestas."
     successfull: "Esta propuesta ha alcanzado los apoyos necesarios y pasará a la %{voting}."
     voting: "próxima votación"
     featured_title: "#VotaUnaPropuesta"

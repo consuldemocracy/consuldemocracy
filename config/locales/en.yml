@@ -376,7 +376,7 @@ en:
     title: "Votings"
     description_html: "The proposals that have reached the <strong>required supports <em>(%{supports})</em></strong> will be voted."
     date_title: "Dates of participation"
-    date: "November 21 to November 27, 2016"
+    date: "Soon we'll announce the date of vote these proposals."
     successfull: "This proposal has reached the required supports and will be voted in the %{voting}."
     voting: "next voting"
     featured_title: "#VotingProposal"
