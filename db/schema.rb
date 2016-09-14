@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160803154011) do
+ActiveRecord::Schema.define(version: 20160914082608) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -123,10 +123,10 @@ ActiveRecord::Schema.define(version: 20160803154011) do
     t.string   "visit_id"
     t.datetime "hidden_at"
     t.integer  "flags_count",                             default: 0
+    t.datetime "ignored_flag_at"
     t.integer  "cached_votes_total",                      default: 0
     t.integer  "cached_votes_up",                         default: 0
     t.integer  "cached_votes_down",                       default: 0
-    t.datetime "ignored_flag_at"
     t.integer  "comments_count",                          default: 0
     t.datetime "confirmed_hide_at"
     t.integer  "cached_anonymous_votes_total",            default: 0
@@ -145,7 +145,6 @@ ActiveRecord::Schema.define(version: 20160803154011) do
   add_index "debates", ["cached_votes_total"], name: "index_debates_on_cached_votes_total", using: :btree
   add_index "debates", ["cached_votes_up"], name: "index_debates_on_cached_votes_up", using: :btree
   add_index "debates", ["confidence_score"], name: "index_debates_on_confidence_score", using: :btree
-  add_index "debates", ["description"], name: "index_debates_on_description", using: :btree
   add_index "debates", ["geozone_id"], name: "index_debates_on_geozone_id", using: :btree
   add_index "debates", ["hidden_at"], name: "index_debates_on_hidden_at", using: :btree
   add_index "debates", ["hot_score"], name: "index_debates_on_hot_score", using: :btree
@@ -176,6 +175,29 @@ ActiveRecord::Schema.define(version: 20160803154011) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
+
+  create_table "enquiries", force: :cascade do |t|
+    t.integer  "author_id"
+    t.string   "question"
+    t.string   "title"
+    t.string   "summary"
+    t.text     "description"
+    t.string   "external_url"
+    t.datetime "open_at"
+    t.datetime "closed_at"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  add_index "enquiries", ["author_id"], name: "index_enquiries_on_author_id", using: :btree
+
+  create_table "enquiries_geozones", force: :cascade do |t|
+    t.integer "enquiry_id"
+    t.integer "geozone_id"
+  end
+
+  add_index "enquiries_geozones", ["enquiry_id"], name: "index_enquiries_geozones_on_enquiry_id", using: :btree
+  add_index "enquiries_geozones", ["geozone_id"], name: "index_enquiries_geozones_on_geozone_id", using: :btree
 
   create_table "failed_census_calls", force: :cascade do |t|
     t.integer  "user_id"
@@ -310,7 +332,6 @@ ActiveRecord::Schema.define(version: 20160803154011) do
   add_index "proposals", ["author_id"], name: "index_proposals_on_author_id", using: :btree
   add_index "proposals", ["cached_votes_up"], name: "index_proposals_on_cached_votes_up", using: :btree
   add_index "proposals", ["confidence_score"], name: "index_proposals_on_confidence_score", using: :btree
-  add_index "proposals", ["description"], name: "index_proposals_on_description", using: :btree
   add_index "proposals", ["geozone_id"], name: "index_proposals_on_geozone_id", using: :btree
   add_index "proposals", ["hidden_at"], name: "index_proposals_on_hidden_at", using: :btree
   add_index "proposals", ["hot_score"], name: "index_proposals_on_hot_score", using: :btree
@@ -550,6 +571,9 @@ ActiveRecord::Schema.define(version: 20160803154011) do
   add_foreign_key "administrators", "users"
   add_foreign_key "annotations", "legislations"
   add_foreign_key "annotations", "users"
+  add_foreign_key "enquiries", "users", column: "author_id"
+  add_foreign_key "enquiries_geozones", "enquiries"
+  add_foreign_key "enquiries_geozones", "geozones"
   add_foreign_key "failed_census_calls", "users"
   add_foreign_key "flags", "users"
   add_foreign_key "identities", "users"

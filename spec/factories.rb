@@ -1,4 +1,5 @@
 FactoryGirl.define do
+
   sequence(:document_number) { |n| "#{n.to_s.rjust(8, '0')}X" }
 
   factory :user do
@@ -337,5 +338,15 @@ FactoryGirl.define do
     body     "How are You doing?"
     association :sender,   factory: :user
     association :receiver, factory: :user
+  end
+
+  factory :enquiry do
+    association :author, factory: :user
+    sequence(:title) { |n| "Enquiry title #{n}" }
+    sequence(:summary) { |n| "Enquiry summary #{n}" }
+    sequence(:description) { |n| "Enquiry description #{n}" }
+    sequence(:question) { |n| "Enquiry question #{n}" }
+    open_at { 1.month.ago }
+    closed_at { 1.month.from_now }
   end
 end
