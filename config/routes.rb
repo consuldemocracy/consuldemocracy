@@ -61,6 +61,8 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :enquiries, only: [:index, :show]
+
   resources :comments, only: [:create, :show], shallow: true do
     member do
       post :vote
@@ -137,6 +139,8 @@ Rails.application.routes.draw do
         put :confirm_hide
       end
     end
+
+    resources :enquiries
 
     resources :spending_proposals, only: [:index, :show, :edit, :update] do
       member do
