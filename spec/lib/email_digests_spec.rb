@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe EmailDigest do
+describe 'EmailDigest' do
 
   describe "notifications" do
 

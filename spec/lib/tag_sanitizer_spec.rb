@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe TagSanitizer do
+describe 'TagSanitizer' do
 
   subject { described_class.new }
 
