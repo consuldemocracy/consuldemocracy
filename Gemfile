@@ -30,7 +30,7 @@ gem 'omniauth-twitter'
 gem 'omniauth-facebook' #, '~> 3.0.0'
 gem 'omniauth-google-oauth2' #, '~> 0.4.0'
 
-gem 'kaminari'
+gem 'kaminari', github: 'amatsuda/kaminari'
 gem 'ancestry'
 gem 'acts-as-taggable-on'
 gem 'responders'
@@ -57,7 +57,7 @@ gem 'pg_search'
 
 gem 'ahoy_matey' #, '~> 1.4.0'
 gem 'groupdate'   # group temporary data
-gem 'tolk' # Web interface for translations
+gem 'tolk', github: 'tolk/tolk' # Web interface for translations
 
 gem 'browser'
 gem 'turnout'
