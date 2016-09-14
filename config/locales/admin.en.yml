@@ -105,6 +105,7 @@ en:
       managers: Managers
       moderators: Moderators
       valuators: Valuators
+      poll_officers: Poll officers
       officials: Officials
       organizations: Organisations
       settings: Configuration settings
@@ -140,6 +141,16 @@ en:
         in_evaluation_count: In evaluation
         total_count: Total
         cost: Cost
+    poll_officers:
+      index:
+        title: Poll officers
+      officer:
+        add: Add
+        delete: Delete
+      search:
+        email_placeholder: Search user by email
+        search: Search
+        user_not_found: User not found
     officials:
       edit:
         destroy: Remove 'Official' status

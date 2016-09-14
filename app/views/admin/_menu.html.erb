@@ -83,6 +83,12 @@
       <% end %>
     </li>
 
+    <li <%= 'class=active' if controller_name == 'officers_controller' %>>
+      <%= link_to admin_poll_officers_path do %>
+        <span class="icon-user"></span><%= t('admin.menu.poll_officers') %>
+      <% end %>
+    </li>
+
     <li <%= 'class=active' if controller_name == 'activity' %>>
       <%= link_to admin_activity_path do %>
         <span class="icon-eye"></span><%= t('admin.menu.activity') %>
