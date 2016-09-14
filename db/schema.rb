@@ -270,6 +270,14 @@ ActiveRecord::Schema.define(version: 20161102133838) do
 
   add_index "organizations", ["user_id"], name: "index_organizations_on_user_id", using: :btree
 
+  create_table "poll_officers", force: :cascade do |t|
+    t.integer "user_id"
+  end
+
+  create_table "polls", force: :cascade do |t|
+    t.string "name"
+  end
+
   create_table "proposal_notifications", force: :cascade do |t|
     t.string   "title"
     t.text     "body"

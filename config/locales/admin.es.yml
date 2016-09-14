@@ -103,6 +103,7 @@ es:
       managers: Gestores
       moderators: Moderadores
       valuators: Evaluadores
+      poll_officers: Presidentes de mesa
       officials: Cargos públicos
       organizations: Organizaciones
       settings: Configuración global
@@ -138,6 +139,16 @@ es:
         in_evaluation_count: En evaluación
         total_count: Total
         cost: Coste total
+    poll_officers:
+      index:
+        title: Presidentes de mesa
+      officer:
+        add: Añadir como Presidente de mesa
+        delete: Borrar
+      search:
+        email_placeholder: Buscar usuario por email
+        search: Buscar
+        user_not_found: Usuario no encontrado
     officials:
       edit:
         destroy: Eliminar condición de 'Cargo Público'
