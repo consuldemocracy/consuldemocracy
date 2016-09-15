@@ -102,12 +102,19 @@
       <aside class="small-12 medium-3 column">
         <div class="sidebar-divider"></div>
         <h3><%= t("votes.supports") %></h3>
-        <div class="text-center">
-          <div id="<%= dom_id(@proposal) %>_votes">
-           <%= render 'votes',
-                      { proposal: @proposal, vote_url: vote_proposal_path(@proposal, value: 'yes') } %>
+        <% if @proposal.archived? %>
+          <p class="text-center">
+            <strong><%= t("proposals.proposal.supports", count: @proposal.total_votes) %></strong>
+          </p>
+          <p><%= t("proposals.proposal.archived") %></p>
+        <% else %>
+          <div class="text-center">
+            <div id="<%= dom_id(@proposal) %>_votes">
+             <%= render 'votes',
+                        { proposal: @proposal, vote_url: vote_proposal_path(@proposal, value: 'yes') } %>
+            </div>
           </div>
-        </div>
+        <% end %>
         <div id="social-share" class="sidebar-divider"></div>
         <h3><%= t("proposals.show.share") %></h3>
         <div class="social-share-full">

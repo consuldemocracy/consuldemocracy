@@ -12,7 +12,7 @@ class ProposalsController < ApplicationController
 
   invisible_captcha only: [:create, :update], honeypot: :subtitle
 
-  has_orders %w{hot_score confidence_score created_at relevance}, only: :index
+  has_orders %w{hot_score confidence_score created_at relevance archival_date}, only: :index
   has_orders %w{most_voted newest oldest}, only: :show
 
   load_and_authorize_resource
@@ -26,6 +26,7 @@ class ProposalsController < ApplicationController
   end
 
   def index_customization
+    discard_archived
     load_retired
     load_featured
   end
@@ -80,6 +81,10 @@ class ProposalsController < ApplicationController
       @featured_proposals_votes = current_user ? current_user.proposal_votes(proposals) : {}
     end
 
+    def discard_archived
+      @resources = @resources.not_archived unless @current_order == "archival_date"
+    end
+
     def load_retired
       if params[:retired].present?
         @resources = @resources.retired
@@ -90,7 +95,7 @@ class ProposalsController < ApplicationController
     end
 
     def load_featured
-      @featured_proposals = Proposal.all.sort_by_confidence_score.limit(3) if (!@advanced_search_terms && @search_terms.blank? && @tag_filter.blank? && params[:retired].blank?)
+      @featured_proposals = Proposal.not_archived.sort_by_confidence_score.limit(3) if (!@advanced_search_terms && @search_terms.blank? && @tag_filter.blank? && params[:retired].blank?)
       if @featured_proposals.present?
         set_featured_proposal_votes(@featured_proposals)
         @resources = @resources.where('proposals.id NOT IN (?)', @featured_proposals.map(&:id))

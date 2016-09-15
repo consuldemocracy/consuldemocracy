@@ -204,6 +204,13 @@ describe Proposal do
         expect {proposal.register_vote(user, 'yes')}.to change{proposal.reload.votes_for.size}.by(0)
       end
     end
+
+    it "should not register vote for archived proposals" do
+      user = create(:user, verified_at: Time.now)
+      archived_proposal = create(:proposal, :archived)
+
+      expect {archived_proposal.register_vote(user, 'yes')}.to change{proposal.reload.votes_for.size}.by(0)
+    end
   end
 
   describe '#cached_votes_up' do
@@ -808,6 +815,32 @@ describe Proposal do
 
       expect(not_retired.size).to eq(1)
       expect(not_retired.first).to eq(@proposal1)
+    end
+  end
+
+  describe "archived" do
+    before(:each) do
+      @new_proposal = create(:proposal)
+      @archived_proposal = create(:proposal, :archived)
+    end
+
+    it "archived? is true only for proposals created more than n (configured months) ago" do
+      expect(@new_proposal.archived?).to eq false
+      expect(@archived_proposal.archived?).to eq true
+    end
+
+    it "scope archived" do
+      archived = Proposal.archived
+
+      expect(archived.size).to eq(1)
+      expect(archived.first).to eq(@archived_proposal)
+    end
+
+    it "scope archived" do
+      not_archived = Proposal.not_archived
+
+      expect(not_archived.size).to eq(1)
+      expect(not_archived.first).to eq(@new_proposal)
     end
   end
 
