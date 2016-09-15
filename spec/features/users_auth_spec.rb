@@ -293,7 +293,7 @@ feature 'Users' do
     login_as(admin.user)
     visit root_path
     
-    expect(page).to have_content "Your password has expired"
+    expect(page).to have_content "Your password is expired"
 
     fill_in 'user_current_password', with: 'judgmentday'
     fill_in 'user_password', with: '123456789'
