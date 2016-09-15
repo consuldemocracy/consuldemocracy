@@ -29,8 +29,9 @@ class ProposalsController < ApplicationController
     hide_proceedings
     discard_archived
     load_retired
-    load_featured
     hide_advanced_search if custom_search?
+    load_proposal_ballots
+    load_featured unless @proposal_successfull_exists
   end
 
   def vote
@@ -125,6 +126,10 @@ class ProposalsController < ApplicationController
 
     def custom_search?
       params[:custom_search].present?
+    end
+
+    def load_proposal_ballots
+      @proposal_successfull_exists = Proposal.successfull.exists?
     end
 
 end

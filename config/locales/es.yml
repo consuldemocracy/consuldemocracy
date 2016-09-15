@@ -255,6 +255,8 @@ es:
       proposals: Propuestas
       processes: Procesos sectoriales
       spending_proposals: Presupuestos participativos
+      proposal_ballot: Votaciones
+      spending_proposals: Presupuestos ciudadanos
   locale: Español
   notifications:
     index:
@@ -411,6 +413,17 @@ es:
     update:
       form:
         submit_button: Guardar cambios
+  proposal_ballots:
+    title: "Votaciones"
+    description_html: "Las siguientes propuestas ciudadanas han alcanzado el <strong>número de apoyos necesarios</strong> y pasarán a votación."
+    date_title: "Fechas de participación"
+    date: "En breve anunciaremos la fecha de votación de estas propuestas."
+    successfull: "Esta propuesta ha alcanzado los apoyos necesarios y pasará a la %{voting}."
+    voting: "próxima votación"
+    featured_title: "#PróximaVotación"
+    nothing_to_vote: "No hay nada que votar en este momento."
+    info: "Nuevas propuestas ciudadanas han llegado a la fase de votación."
+    button: "Quiero decidir"
   proposal_notifications:
     new:
       title: "Enviar mensaje"

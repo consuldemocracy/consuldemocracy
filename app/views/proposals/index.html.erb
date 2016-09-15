@@ -35,7 +35,9 @@
         <%= render "shared/banner" %>
       <% end %>
 
-      <% if @featured_proposals.present? %>
+      <% if @proposal_successfull_exists %>
+        <%= render "proposal_ballots_banner" %>
+      <% elsif @featured_proposals.present? %>
         <div id="featured-proposals" class="row featured-proposals">
           <div class="small-12 column">
             <h2>

@@ -55,6 +55,7 @@ class Proposal < ActiveRecord::Base
   scope :not_retired,              -> { where(retired_at: nil) }
   scope :proceedings,              -> { where.not(proceeding: nil) }
   scope :not_proceedings,          -> { where(proceeding: nil) }
+  scope :successfull,              -> { where("cached_votes_up + physical_votes >= ?", Proposal.votes_needed_for_success)}
 
   def to_param
     "#{id}-#{title}".parameterize
@@ -177,6 +178,10 @@ class Proposal < ActiveRecord::Base
 
   def self.open_plenary_dates
     Date.parse("18-04-2016").beginning_of_day..Date.parse("21-04-2016").end_of_day
+  end
+
+  def successfull?
+    total_votes >= Proposal.votes_needed_for_success
   end
 
   def archived?
