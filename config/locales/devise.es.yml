@@ -1,5 +1,11 @@
 es:
   devise:
+    password_expired:
+      expire_password: "Contraseña caducada"
+      change_required: "Tu contraseña ha caducado"
+      change_password: "Cambia tu contraseña"
+      new_password: "Nueva contraseña"
+      updated: "Contraseña actualizada con éxito"
     confirmations:
       confirmed: "Tu cuenta ha sido confirmada. Por favor autentifícate con tu red social o tu usuario y contraseña"
       send_instructions: "Recibirás un correo electrónico en unos minutos con instrucciones sobre cómo restablecer tu contraseña."
@@ -60,3 +66,4 @@ es:
       not_saved:
         one: "1 error impidió que este %{resource} fuera guardado:"
         other: "%{count} errores impidieron que este %{resource} fuera guardado:"
+      equal_to_current_password: "debe ser diferente a la contraseña actual"

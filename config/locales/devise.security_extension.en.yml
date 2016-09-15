@@ -1,0 +1,16 @@
+en:
+  errors:
+    messages:
+      taken_in_past: "was used previously."
+      equal_to_current_password: "must be different than the current password."
+      password_format: "must contain big, small letters and digits"
+  devise:
+    invalid_captcha: "The captcha input was invalid."
+    paranoid_verify:
+      code_required: "Please enter the code our support team provided"
+    password_expired:
+      updated: "Your new password is saved."
+      change_required: "Your password is expired. Please renew your password."
+    failure:
+      session_limited: 'Your login credentials were used in another browser. Please sign in again to continue in this browser.'
+      expired: 'Your account has expired due to inactivity. Please contact the site administrator.'

@@ -1,0 +1,10 @@
+it:
+  errors:
+    messages:
+      taken_in_past: "e' stata gia' utilizzata in passato!"
+      equal_to_current_password: " deve essere differente dalla password corrente!"
+  devise:
+    invalid_captcha: "Il captcha inserito non e' valido!"
+    password_expired:
+      updated: "La tua nuova password e' stata salvata."
+      change_required: "La tua password e' scaduta. Si prega di rinnovarla!"

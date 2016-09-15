@@ -1,8 +1,8 @@
-class User < ActiveRecord::Base
+  class User < ActiveRecord::Base
 
   include Verification
 
-  devise :database_authenticatable, :registerable, :confirmable,
+  devise :password_expirable, :secure_validatable, :database_authenticatable, :registerable, :confirmable,
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable, :async
 
   acts_as_voter
