@@ -22,7 +22,7 @@ class DebatesController < ApplicationController
 
   def index_customization
      @featured_debates = @debates.featured
-     @proposal_ballots = Proposal.successfull.sort_by_confidence_score
+     @proposal_successfull_exists = Proposal.successfull.exists?
   end
 
   def show

@@ -28,7 +28,7 @@ class ProposalsController < ApplicationController
   def index_customization
     load_retired
     load_proposal_ballots
-    load_featured if @proposal_ballots.blank?
+    load_featured unless @proposal_successfull_exists
   end
 
   def vote
@@ -99,7 +99,7 @@ class ProposalsController < ApplicationController
     end
 
     def load_proposal_ballots
-      @proposal_ballots = Proposal.successfull.sort_by_confidence_score
+      @proposal_successfull_exists = Proposal.successfull.exists?
     end
 
 end
