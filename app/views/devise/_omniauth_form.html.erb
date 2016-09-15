@@ -3,30 +3,30 @@
   <% if current_page?(new_user_session_path) %>
 
     <% if feature? :twitter_login %>
-      <%= link_to t("omniauth.twitter.sign_in"), user_omniauth_authorize_path(:twitter), class: "button-twitter button expanded" %>
+      <%= link_to t("omniauth.twitter.sign_in"), user_twitter_omniauth_authorize_path, class: "button-twitter button expanded" %>
     <% end %>
 
     <% if feature? :facebook_login %>
-      <%= link_to t("omniauth.facebook.sign_in"), user_omniauth_authorize_path(:facebook), class: "button-facebook button expanded" %>
+      <%= link_to t("omniauth.facebook.sign_in"), user_facebook_omniauth_authorize_path, class: "button-facebook button expanded" %>
     <% end %>
 
     <% if feature? :google_login %>
-      <%= link_to t("omniauth.google_oauth2.sign_in"), user_omniauth_authorize_path(:google_oauth2), class: "button-google button expanded" %>
+      <%= link_to t("omniauth.google_oauth2.sign_in"), user_google_oauth2_omniauth_authorize_path, class: "button-google button expanded" %>
     <% end %>
 
     <hr/>
   <% elsif current_page?(new_user_registration_path) %>
 
     <% if feature? :twitter_login %>
-      <%= link_to t("omniauth.twitter.sign_up"), user_omniauth_authorize_path(:twitter), class: "button-twitter button expanded" %>
+      <%= link_to t("omniauth.twitter.sign_up"), user_twitter_omniauth_authorize_path, class: "button-twitter button expanded" %>
     <% end %>
 
     <% if feature? :facebook_login %>
-      <%= link_to t("omniauth.facebook.sign_up"), user_omniauth_authorize_path(:facebook), class: "button-facebook button expanded" %>
+      <%= link_to t("omniauth.facebook.sign_up"), user_facebook_omniauth_authorize_path, class: "button-facebook button expanded" %>
     <% end %>
 
     <% if feature? :google_login %>
-      <%= link_to t("omniauth.google_oauth2.sign_up"), user_omniauth_authorize_path(:google_oauth2), class: "button-google button expanded" %>
+      <%= link_to t("omniauth.google_oauth2.sign_up"), user_google_oauth2_omniauth_authorize_path, class: "button-google button expanded" %>
     <% end %>
 
     <hr/>

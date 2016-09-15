@@ -57,6 +57,7 @@ feature 'Managed User' do
       user = create(:user)
 
       visit management_document_verifications_path
+
       fill_in 'document_verification_document_number', with: '1234'
       click_button 'Check'
 

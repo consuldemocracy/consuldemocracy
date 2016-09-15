@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe 'TagSanitizer' do
 
-  subject { described_class.new }
+  subject { TagSanitizer.new }
 
   describe '#sanitize_tag' do
     it 'allows regular text, even spaces' do
