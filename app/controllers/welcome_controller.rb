@@ -7,6 +7,7 @@ class WelcomeController < ApplicationController
     if current_user
       redirect_to proposals_path
     end
+    @proposal_successfull_exists = Proposal.successfull.exists?
   end
 
   def welcome

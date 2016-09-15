@@ -25,6 +25,23 @@
     </div>
   <% end %>
 
+  <% if @proposal_successfull_exists %>
+    <div class="expanded jumbo-proposal-ballots">
+      <div class="row">
+        <div class="small-12 medium-6 column padding">
+          <h2><%= t("proposal_ballots.featured_title") %></h2>
+          <h3><%= t("proposal_ballots.info") %></h3>
+          <div class="small-12 medium-6 small-centered">
+            <%= link_to t("proposal_ballots.button"), proposal_ballots_index_path, class: "button expanded" %>
+          </div>
+        </div>
+        <div class="small-12 medium-6 column">
+          <%= image_tag ("ballot.gif") %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+
   <%= render "featured_welcome" %>
 
   <div class="expanded padding featured-welcome features">
