@@ -194,7 +194,7 @@ feature 'Ballots' do
           expect(page).to_not have_content "$10,000"
         end
 
-        click_link "Participatory budgeting"
+        click_link "Spending proposals"
         click_link "Vote city proposals"
 
         expect(page).to have_css("#amount-spent", text: "$10,000")

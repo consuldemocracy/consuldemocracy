@@ -14,7 +14,7 @@
     <li>
       <%= link_to t("layouts.header.processes"), "/processes",
               class: ("active" if current_page?("/processes") || current_page?("/processes_ordinance")), accesskey: "o"  %>
-    <li>
+    </li>
     <% if feature?(:spending_proposals) %>
       <li>
         <%= link_to t("layouts.header.spending_proposals"), participatory_budget_path,
