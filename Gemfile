@@ -5,11 +5,11 @@ gem 'rails', '5.0.0.1'
 # Use PostgreSQL
 gem 'pg'
 # Use SCSS for stylesheets
-gem 'sass-rails' #, '~> 5.0', '>= 5.0.4'
+gem 'sass-rails', '~> 5.0', '>= 5.0.6'
 # Use Uglifier as compressor for JavaScript assets
-gem 'uglifier' #, '>= 1.3.0'
+gem 'uglifier', '>= 3.0.2'
 # Use CoffeeScript for .coffee assets and views
-gem 'coffee-rails' #, '~> 4.2.1'
+gem 'coffee-rails', '~> 4.2.1'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
@@ -17,18 +17,18 @@ gem 'coffee-rails' #, '~> 4.2.1'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
-gem 'turbolinks'
+gem 'turbolinks', '~> 5.0.1'
 
 # Fix sprockets on the
-gem 'sprockets' #, '~> 3.6.3'
+gem 'sprockets', '~> 3.7.0'
 
-gem 'devise' #, '~> 3.5.7'
+gem 'devise', '~> 4.2.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 gem 'omniauth'
 gem 'omniauth-twitter'
-gem 'omniauth-facebook' #, '~> 3.0.0'
-gem 'omniauth-google-oauth2' #, '~> 0.4.0'
+gem 'omniauth-facebook', '~> 4.0.0'
+gem 'omniauth-google-oauth2', '~> 0.4.1'
 
 gem 'kaminari', github: 'amatsuda/kaminari'
 gem 'ancestry'
@@ -37,25 +37,25 @@ gem 'responders'
 gem 'foundation-rails'
 gem 'foundation_rails_helper'
 gem 'acts_as_votable'
-gem 'ckeditor' #, '~> 4.2.0'
-gem 'invisible_captcha' #, '~> 0.9.1'
+gem 'ckeditor', '~> 4.2.0'
+gem 'invisible_captcha', github: 'markets/invisible_captcha' # update once a version > 0.9.1 is released
 gem 'cancancan'
 gem 'social-share-button'
-gem 'initialjs-rails' #, '0.2.0.1'
+gem 'initialjs-rails', '0.2.0.3'
 gem 'unicorn', '~> 5.1.0'
 gem 'paranoia', "~> 2.2.0.pre"
 gem 'rinku', require: 'rails_rinku'
 gem 'savon'
 gem 'dalli'
 gem 'rollbar', '~> 2.12.0'
-gem 'delayed_job_active_record' #, '~> 4.1.0'
+gem 'delayed_job_active_record', '~> 4.1.1'
 gem 'daemons'
 gem 'devise-async'
-gem 'newrelic_rpm' #, '~> 3.16'
+gem 'newrelic_rpm', '~> 3.16'
 gem 'whenever', require: false
 gem 'pg_search'
 
-gem 'ahoy_matey' #, '~> 1.4.0'
+gem 'ahoy_matey', '~> 1.5.2'
 gem 'groupdate'   # group temporary data
 gem 'tolk', github: 'tolk/tolk' # Web interface for translations
 
@@ -69,18 +69,18 @@ group :development, :test do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-commands-rspec'
-  gem 'rspec-rails' #, '~> 3.5'
+  gem 'rspec-rails', '~> 3.5'
   gem 'capybara'
   gem 'factory_girl_rails'
   gem 'fuubar'
   gem 'launchy'
-  gem 'letter_opener_web' #, '~> 1.3.0'
+  gem 'letter_opener_web', '~> 1.3.0'
   gem 'i18n-tasks'
   gem 'capistrano', '3.5.0',           require: false
   gem "capistrano-bundler", '1.1.4',   require: false
   gem "capistrano-rails", '1.1.7',     require: false
   gem "capistrano-rvm",                require: false
-  gem 'capistrano3-delayed-job', '~> 1.0'
+  gem 'capistrano3-delayed-job', '~> 1.7.2'
   gem "bullet"
   gem "faker"
 end
@@ -94,7 +94,7 @@ end
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
-  gem 'web-console' #, '3.3.0'
+  gem 'web-console', '3.3.1'
 end
 
 eval_gemfile './Gemfile_custom'
