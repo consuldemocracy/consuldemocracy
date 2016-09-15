@@ -317,6 +317,7 @@ Rails.application.routes.draw do
   get 'participatory_budget/in_two_minutes', to: 'pages#show', id: 'participatory_budget/in_two_minutes'
   get 'presupuestos-participativos-resultados', to: 'spending_proposals#results', as: 'participatory_budget_results'
   get 'presupuestos-participativos-estadisticas', to: 'spending_proposals#stats', as: 'participatory_budget_stats'
+  get 'vota', to: 'proposal_ballots#index', as: 'proposal_ballots_index'
 
   resources :pages, path: '/', only: [:show]
 end

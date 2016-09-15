@@ -309,7 +309,7 @@ feature 'Spending proposals' do
       login_as(user)
       visit root_path
 
-      first(:link, "Participatory budgeting").click
+      first(:link, "Spending proposals").click
       click_link "Vote city proposals"
 
       within("#spending_proposal_#{sp1.id}") do
@@ -349,7 +349,7 @@ feature 'Spending proposals' do
       login_as(user)
       visit root_path
 
-      first(:link, "Participatory budgeting").click
+      first(:link, "Spending proposals").click
       click_link "Vote city proposals"
 
       click_link sp1.title
@@ -371,13 +371,13 @@ feature 'Spending proposals' do
       login_as(user)
       visit root_path
 
-      first(:link, "Participatory budgeting").click
+      first(:link, "Spending proposals").click
       click_link "Vote city proposals"
 
       add_to_ballot(sp1)
       add_to_ballot(sp2)
 
-      first(:link, "Participatory budgeting").click
+      first(:link, "Spending proposals").click
       click_link "Vote district proposals"
       click_link carabanchel.name
 

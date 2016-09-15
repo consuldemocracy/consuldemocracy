@@ -9,11 +9,11 @@
       <%= link_to t("layouts.header.proposals"), proposals_path, class: ("active" if  controller_name == "proposals"), accesskey: "p" %>
     </li>
     <li>
+      <%= link_to t("layouts.header.proposal_ballot"), proposal_ballots_index_path, class: ("active" if  controller_name == "proposal_ballots"), accesskey: "v" %>
+    </li>
+    <li>
       <%= link_to t("layouts.header.processes"), "/processes",
               class: ("active" if current_page?("/processes") || current_page?("/processes_ordinance")), accesskey: "o"  %>
-    <li>
-    <li>
-      <%= link_to t("layouts.header.proposal_ballot"), proposal_ballots_path, class: ("active" if  controller_name == "proposal_ballots"), accesskey: "v" %>
     </li>
     <% if feature?(:spending_proposals) %>
       <li>
@@ -21,8 +21,5 @@
                     class: ("active" if controller_name == "spending_proposals" || current_page?("/participatory_budget/in_two_minutes")), accesskey: "s" %>
       </li>
     <% end %>
-    <li>
-      <%= link_to t("layouts.header.more_information"), page_path('more_information'), class: ("active" if current_page?("/more_information")), accesskey: "i"  %>
-    </li>
   </ul>
 </div>
