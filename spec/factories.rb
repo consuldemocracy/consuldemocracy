@@ -163,6 +163,10 @@ FactoryGirl.define do
       end
     end
 
+    trait :archived do
+      created_at 25.months.ago
+    end
+
     trait :with_hot_score do
       before(:save) { |d| d.calculate_hot_score }
     end
