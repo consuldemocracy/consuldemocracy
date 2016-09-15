@@ -31,6 +31,9 @@ Setting["proposal_code_prefix"] = 'MAD'
 # Number of votes needed for proposal success
 Setting["votes_for_proposal_success"] = 53726
 
+# Months to archive proposals
+Setting["months_to_archive_proposals"] = 12
+
 # Users with this email domain will automatically be marked as level 1 officials
 # Emails under the domain's subdomains will also be included
 Setting["email_domain_for_officials"] = ''

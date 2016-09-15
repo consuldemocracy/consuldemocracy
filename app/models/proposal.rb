@@ -47,6 +47,9 @@ class Proposal < ActiveRecord::Base
   scope :sort_by_random,           -> { reorder("RANDOM()") }
   scope :sort_by_relevance,        -> { all }
   scope :sort_by_flags,            -> { order(flags_count: :desc, updated_at: :desc) }
+  scope :sort_by_archival_date,    -> { archived.order(created_at: :desc) }
+  scope :archived,                 -> { where("proposals.created_at <= ?", Setting["months_to_archive_proposals"].to_i.months.ago)}
+  scope :not_archived,             -> { where("proposals.created_at > ?", Setting["months_to_archive_proposals"].to_i.months.ago)}
   scope :last_week,                -> { where("proposals.created_at >= ?", 7.days.ago)}
   scope :retired,                  -> { where.not(retired_at: nil) }
   scope :not_retired,              -> { where(retired_at: nil) }
@@ -124,7 +127,7 @@ class Proposal < ActiveRecord::Base
   end
 
   def register_vote(user, vote_value)
-    if votable_by?(user)
+    if votable_by?(user) && !archived?
       vote_by(voter: user, vote: vote_value)
     end
   end
@@ -174,6 +177,10 @@ class Proposal < ActiveRecord::Base
 
   def self.open_plenary_dates
     Date.parse("18-04-2016").beginning_of_day..Date.parse("21-04-2016").end_of_day
+  end
+
+  def archived?
+    self.created_at <= Setting["months_to_archive_proposals"].to_i.months.ago
   end
 
   def notifications

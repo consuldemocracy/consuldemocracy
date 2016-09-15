@@ -338,6 +338,7 @@ es:
         hot_score: Más activas hoy
         most_commented: Más comentadas
         relevance: Más relevantes
+        archival_date: Archivadas
       retired_proposals: Propuestas retiradas
       retired_proposals_link: "Propuestas retiradas por sus autores"
       retired_links:
@@ -388,6 +389,7 @@ es:
         zero: Sin apoyos
       supports_necessary: "%{number} apoyos necesarios"
       total_percent: 100%
+      archived: "Esta propuesta ha sido archivada y ya no puede recoger apoyos."
     show:
       author_deleted: Usuario eliminado
       code: 'Código de la propuesta:'

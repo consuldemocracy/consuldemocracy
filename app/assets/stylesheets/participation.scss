@@ -269,6 +269,21 @@
   }
 }
 
+.message {
+  @include supports;
+  background: none;
+  border-top: 0;
+
+  @include breakpoint(medium) {
+    border-left: 1px solid $border;
+    margin: $line-height rem-calc(-25) 0 rem-calc(12);
+  }
+
+  p {
+    font-size: $small-font-size;
+  }
+}
+
 // 02. New participation
 // ---------------------
 
