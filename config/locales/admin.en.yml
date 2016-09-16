@@ -9,6 +9,7 @@ en:
       restore: Restore
       mark_featured: Featured
       unmark_featured: Unmark featured
+      edit: Edit
     banners:
       index:
         title: Banners
@@ -153,6 +154,20 @@ en:
         email_placeholder: Search user by email
         search: Search
         user_not_found: User not found
+    polls:
+      index:
+        title: "List of polls"
+        no_polls: "There are any poll."
+        create: "Create poll"
+        name: "Name"
+        status: "Status"
+      new:
+        title: "New poll"
+        name: "Name"
+        reference: "Reference number"
+        open_date: "Open date"
+        close_date: "Close date"
+        submit_button: "Create poll"
     officials:
       edit:
         destroy: Remove 'Official' status

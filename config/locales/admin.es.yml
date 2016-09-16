@@ -9,6 +9,7 @@ es:
       restore: Volver a mostrar
       mark_featured: Destacar
       unmark_featured: Quitar destacado
+      edit: Editar
     banners:
       index:
         title: Banners
@@ -151,6 +152,20 @@ es:
         email_placeholder: Buscar usuario por email
         search: Buscar
         user_not_found: Usuario no encontrado
+    polls:
+      index:
+        title: "Listado de votaciones"
+        no_polls: "No hay ninguna votación."
+        create: "Crear votación"
+        name: "Nombre"
+        status: "Estado"
+      new:
+        title: "Nueva votación"
+        name: "Nombre"
+        reference: "Número de referencia"
+        open_date: "Fecha de apertura"
+        close_date: "Fecha de cierre"
+        submit_button: "Crear votación"
     officials:
       edit:
         destroy: Eliminar condición de 'Cargo Público'
