@@ -1,0 +1,18 @@
+<div class="admin-sidebar">
+  <ul id="admin_menu">
+
+    <li <%= "class=active" if controller_name == "voters" %>>
+      <%= link_to new_officing_poll_voter_path(Poll.last) do %>
+        <span class="icon-user"></span>
+        <%= t("officing.menu.voters") %>
+      <% end %>
+    </li>
+
+    <li <%= "class=active" if controller_name == "results" %>>
+      <%= link_to new_officing_poll_result_path(Poll.last) do %>
+        <span class="icon-user"></span>
+        <%= t("officing.menu.results") %>
+      <% end %>
+    </li>
+
+</div>

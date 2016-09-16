@@ -179,9 +179,12 @@ Rails.application.routes.draw do
       get :search, on: :collection
     end
 
-    namespace :poll do
-      resources :officers, only: [:index, :create, :destroy] do
-        get :search, on: :collection
+    scope module: 'poll' do
+      resources :polls do
+        resources :booths
+        resources :officers do
+          get :search, on: :collection
+        end
       end
     end
 
@@ -266,6 +269,14 @@ Rails.application.routes.draw do
       post :vote, on: :member
       get :print, on: :collection
     end
+  end
+
+  namespace :officing do
+    resources :polls do
+      resources :voters, only: [:new, :show]
+      resources :results, only: [:new, :index, :show]
+    end
+    root to: "dashboard#index"
   end
 
   if Rails.env.development?

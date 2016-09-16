@@ -1,0 +1,10 @@
+---
+es:
+  officing:
+    dashboard:
+      index:
+        title: Presidir mesa de votaciones
+        info: Aquí puedes validar documentos de ciudadanos y guardar los resultados de las urnas
+    menu:
+      voters: Validar documento de identidad
+      results: Guardar resultados de la votación
