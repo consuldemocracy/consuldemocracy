@@ -785,6 +785,21 @@ feature 'Proposals' do
       end
     end
 
+    scenario "Order by votes" do
+      create(:proposal, :archived, title: "Least voted").update_column(:confidence_score, 10)
+      create(:proposal, :archived, title: "Most voted").update_column(:confidence_score, 50)
+      create(:proposal, :archived, title: "Some votes").update_column(:confidence_score, 25)
+
+      visit proposals_path
+      click_link 'Archived'
+
+      within("#proposals-list") do
+        expect(all(".proposal")[0].text).to match "Most voted"
+        expect(all(".proposal")[1].text).to match "Some votes"
+        expect(all(".proposal")[2].text).to match "Least voted"
+      end
+    end
+
   end
 
   context "Search" do

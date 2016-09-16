@@ -47,7 +47,7 @@ class Proposal < ActiveRecord::Base
   scope :sort_by_random,           -> { reorder("RANDOM()") }
   scope :sort_by_relevance,        -> { all }
   scope :sort_by_flags,            -> { order(flags_count: :desc, updated_at: :desc) }
-  scope :sort_by_archival_date,    -> { archived.order(created_at: :desc) }
+  scope :sort_by_archival_date,    -> { archived.sort_by_confidence_score }
   scope :archived,                 -> { where("proposals.created_at <= ?", Setting["months_to_archive_proposals"].to_i.months.ago)}
   scope :not_archived,             -> { where("proposals.created_at > ?", Setting["months_to_archive_proposals"].to_i.months.ago)}
   scope :last_week,                -> { where("proposals.created_at >= ?", 7.days.ago)}
