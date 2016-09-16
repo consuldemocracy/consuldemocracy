@@ -1,3 +1,18 @@
+<% if @proposal_successfull_exists %>
+  <div class="expanded jumbo-proposal-ballots-small no-margin-top">
+    <div class="row">
+      <div class="small-12 column">
+        <div class="banner-text inline-block">
+          <h2 class="inline-block"><%= t("proposal_ballots.featured_title") %></h2>&nbsp;
+          <p class="inline-block"><%= t("proposal_ballots.info") %></p>
+          <%= link_to t("proposal_ballots.button"), proposal_ballots_index_path %>
+        </div>
+        <%= image_tag ("ballot_tiny.gif"), class: "float-right" %>
+      </div>
+    </div>
+  </div>
+<% end %>
+
 <div class="expanded processes no-margin-top">
   <div class="row padding">
     <div class="small-12 column">

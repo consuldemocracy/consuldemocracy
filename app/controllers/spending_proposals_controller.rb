@@ -25,6 +25,10 @@ class SpendingProposalsController < ApplicationController
     set_spending_proposal_votes(@spending_proposals)
   end
 
+  def welcome
+    @proposal_successfull_exists = Proposal.successfull.exists?
+  end
+
   def select_district
     @geozones = Geozone.all.order(name: :asc)
   end
