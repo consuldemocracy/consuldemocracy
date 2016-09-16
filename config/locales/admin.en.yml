@@ -188,6 +188,11 @@ en:
           with_confirmed_hide: Confirmed
           without_confirmed_hide: Pending
         title: Hidden proposals
+    enquiries:
+      edit:
+        title: "Edit Enquiry"
+      new:
+        title: "Create Enquiry"
     settings:
       flash:
         updated: Value updated

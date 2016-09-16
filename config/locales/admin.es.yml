@@ -186,6 +186,11 @@ es:
           with_confirmed_hide: Confirmadas
           without_confirmed_hide: Pendientes
         title: Propuestas ocultas
+    enquiries:
+      edit:
+        title: "Editar Votación"
+      new:
+        title: "Crear Votacion"
     settings:
       flash:
         updated: Valor actualizado
