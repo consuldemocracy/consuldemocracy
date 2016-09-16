@@ -1,5 +1,5 @@
 class Admin::Poll::OfficersController < Admin::BaseController
-  load_and_authorize_resource :officer, class: "Poll::Officer"
+  load_and_authorize_resource :officer, class: "Poll::Officer", except: [:edit, :show]
 
   def index
     @officers = @officers.page(params[:page])
@@ -29,4 +29,11 @@ class Admin::Poll::OfficersController < Admin::BaseController
     @officer.destroy
     redirect_to admin_poll_officers_path
   end
+
+  def show
+  end
+
+  def edit
+  end
+
 end
