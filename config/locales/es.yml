@@ -382,7 +382,7 @@ es:
         other: "%{count} Comentarios"
         zero: Sin comentarios
       proposal: Propuesta
-      reason_for_supports_necessary: 2% del Censo
+      reason_for_supports_necessary: 1% del Censo
       support: Apoyar
       support_title: Apoyar esta propuesta
       supports:

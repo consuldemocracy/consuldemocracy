@@ -45,6 +45,10 @@
   margin-top: rem-calc(-24);
 }
 
+.no-margin-top ~ .no-margin-top {
+  margin-top: 0 !important;
+}
+
 .panel {
   background: white;
   border: 1px solid $border;
@@ -2135,5 +2139,27 @@ ul.ballot-list {
   .button {
     background: #FFD200;
     color: $text;
+  }
+}
+
+.jumbo-proposal-ballots-small {
+  @extend .jumbo-proposal-ballots;
+  color: white;
+
+  h2 {
+    font-size: rem-calc(24);
+  }
+
+  h2, p {
+    margin-bottom: 0;
+  }
+
+  a {
+    color: #FFD200;
+    text-decoration: underline;
+  }
+
+  .banner-text {
+    padding: $line-height/4;
   }
 }
