@@ -1,0 +1,40 @@
+<%= form_for(@enquiry, url: form_url) do |f| %>
+
+  <%= render 'shared/errors', resource: @enquiry %>
+
+  <div class="row">
+    <div class="small-12 column">
+      <%= f.text_field :title, maxlength: Enquiry.title_max_length %>
+    </div>
+  </div>
+
+  <div class="small-12 column">
+    <%= f.text_field :question, maxlength: Enquiry.question_max_length %>
+  </div>
+
+  <div class="small-12 column">
+    <%= f.text_area :summary, rows: 4, maxlength: 200 %>
+  </div>
+
+  <div class="ckeditor small-12 column">
+    <%= f.cktext_area :description, maxlength: Enquiry.description_max_length, ckeditor: { language: I18n.locale } %>
+  </div>
+
+  <div class="small-12 column">
+    <%= f.text_field :external_url %>
+  </div>
+
+  <div class="small-12 medium-6 column">
+    <%= f.collection_check_boxes(:geozone_ids, @geozones, :id, :name) %>
+  </div>
+  <%# TODO include all link %>
+
+  <%= f.date_select(:open_at) %>
+
+  <%= f.date_select(:closed_at) %>
+
+  <div class="actions small-12 column">
+    <%= f.submit(class: "button", value: t("shared.save")) %>
+  </div>
+
+<% end %>

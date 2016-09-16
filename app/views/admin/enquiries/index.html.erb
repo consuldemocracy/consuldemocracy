@@ -1,4 +1,7 @@
 
+
+<%= link_to t('shared.create_new'), new_admin_enquiry_path %>
+
 <ul>
 <% @enquiries.each do |enquiry| %>
   <li id="<%= dom_id(enquiry) %>">

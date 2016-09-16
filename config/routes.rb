@@ -140,7 +140,7 @@ Rails.application.routes.draw do
       end
     end
 
-    resources :enquiries
+    resources :enquiries, except: :show
 
     resources :spending_proposals, only: [:index, :show, :edit, :update] do
       member do

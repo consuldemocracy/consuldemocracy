@@ -1,0 +1,14 @@
+<div class="row">
+
+  <div class="small-12 column">
+    <%= render "shared/back_link" %>
+
+    <div class="float-right">
+      <%= link_to t("admin.enquiries.edit.show_link"), @enquiry %>
+    </div>
+
+    <h1><%= t("admin.enquiries.edit.title") %></h1>
+
+    <%= render "form", form_url: admin_enquiry_path(@enquiry) %>
+  </div>
+</div>

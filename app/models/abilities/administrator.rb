@@ -15,7 +15,7 @@ module Abilities
       can :restore, Proposal
       cannot :restore, Proposal, hidden_at: nil
 
-      can [:read, :update], Enquiry
+      can [:read, :create, :update], Enquiry
       can :destroy, Enquiry # , comments_count: 0, votes_up: 0
 
       can :restore, User

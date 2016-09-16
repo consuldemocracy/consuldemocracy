@@ -20,4 +20,5 @@ class Enquiry < ActiveRecord::Base
   def open?(timestamp = DateTime.now)
     open_at <= timestamp && timestamp <= closed_at
   end
+
 end
