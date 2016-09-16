@@ -1077,9 +1077,8 @@
 }
 
 .featured-proposals-ballot-banner {
-  background: #2D3E50 image-url("ballot.gif");
-  background-position: 90% 0;
-  background-repeat: no-repeat;
+  background: #2D3E50 image-url("ballot_tiny.gif") no-repeat;
+  background-position: 75% 0;
   position: relative;
 
   h2, a:hover h2 {
@@ -1093,6 +1092,11 @@
   @include breakpoint(medium) {
     margin-left: 0 !important;
     margin-right: 0 !important;
+  }
+
+  @include breakpoint(large) {
+    background: #2D3E50 image-url("ballot.gif") no-repeat;
+    background-position: 90% 0;
   }
 }
 
