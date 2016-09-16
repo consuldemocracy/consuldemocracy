@@ -1,1 +1,36 @@
-polls index
+<h2 class="inline-block"><%= t("admin.polls.index.title") %></h2>
+
+<%= link_to t("admin.polls.index.create"), new_admin_poll_path, class: "button success float-right" %>
+
+<!-- If polls == 0 -->
+<div class="callout primary">
+  <%= t("admin.polls.index.no_polls") %>
+</div>
+
+<!-- Else -->
+
+<table>
+  <thead>
+    <th><%= t("admin.polls.index.name") %></th>
+    <th><%= t("admin.polls.index.status") %></th>
+    <th>&nbsp;</th>
+  </thead>
+  <tbody>
+  <!-- @polls.each do |poll| -->
+    <tr>
+      <td>
+        <strong>
+          <%= link_to "Votación de propuestas 2016", "#" %>
+        </strong>
+      </td>
+      <td>
+        Próximamente <!-- Estado: Activa, Próximamente o Archivada -->
+        <br>(<small>15/12/2016 - 15/02/2017</small>)
+      </td>
+      <td class="text-right">
+        <%= link_to t("admin.actions.edit"), "#", class: "button hollow" %>
+      </td>
+    </tr>
+  <!-- end -->
+  </tbody>
+</table>

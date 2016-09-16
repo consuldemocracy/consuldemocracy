@@ -1,1 +1,36 @@
-poll new
+<%= render 'shared/back_link' %>
+
+<h2><%= t("admin.polls.new.title") %></h2>
+
+<form>
+  <div class="row">
+    <div class="small-12 medium-6 column">
+      <label><%= t("admin.polls.new.name") %></label>
+      <input type="text" placeholder="<%= t('admin.polls.new.name') %>">
+    </div>
+
+    <div class="small-12 medium-6 column">
+      <label><%= t("admin.polls.new.reference") %></label>
+      <input type="text" placeholder="<%= t('admin.polls.new.reference') %>">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="small-12 medium-6 column">
+      <label><%= t("admin.polls.new.open_date") %></label>
+      <input type="date">
+    </div>
+
+    <div class="small-12 medium-6 column">
+      <label><%= t("admin.polls.new.close_date") %></label>
+      <input type="date">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="small-12 medium-4 column">
+      <input type="submit" value="<%= t('admin.polls.new.submit_button') %>" class="button success expanded">
+    </div>
+  </div>
+
+</form>
