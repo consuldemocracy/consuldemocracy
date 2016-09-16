@@ -1316,7 +1316,7 @@ fr:
         other: "%{count} commentaires"
         zero: Aucun commentaire
       proposal: Proposition
-      reason_for_supports_necessary: 2% du Recensement
+      reason_for_supports_necessary: 1% du Recensement
       support: Soutenir
       supports:
         one: 1 soutien
