@@ -358,3 +358,9 @@ Proposal.last(3).each do |proposal|
                           created_at: rand((Time.now - 1.week) .. Time.now))
   puts "    #{banner.title}"
 end
+
+puts "Creating polls"
+
+3.times.each_with_index do |i|
+  Poll.create(name: "Poll #{i}")
+end
