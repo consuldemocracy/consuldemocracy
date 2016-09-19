@@ -35,8 +35,6 @@ en:
           submit_button: Save changes
       errors:
         form:
-      errors:
-        form:
           error:
             one: "prevented this banner from being saved"
             other: 'prevented this banner from being saved'
@@ -168,6 +166,19 @@ en:
         open_date: "Open date"
         close_date: "Close date"
         submit_button: "Create poll"
+      edit:
+        title: "Edit poll"
+        name: "Name"
+        reference: "Reference number"
+        open_date: "Open date"
+        close_date: "Close date"
+        submit_button: "Update poll"
+      show:
+        no_booths: "There is no booths in this poll."
+        add_booth: "Add booth"
+        booths_title: "List of booths"
+        name: "Name"
+        location: "Location"
     officials:
       edit:
         destroy: Remove 'Official' status
