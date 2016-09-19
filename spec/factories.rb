@@ -263,10 +263,6 @@ FactoryGirl.define do
     sequence(:name) { |n| "Poll #{n}" }
   end
 
-  factory :poll_officer, class: 'Poll::Officer' do
-    user
-  end
-
   factory :poll_booth, class: 'Poll::Booth' do
     sequence(:name) { |n| "Booth #{n}" }
     poll
