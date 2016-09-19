@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160914082608) do
+ActiveRecord::Schema.define(version: 20160919094639) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -187,9 +187,11 @@ ActiveRecord::Schema.define(version: 20160914082608) do
     t.datetime "closed_at"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+    t.integer  "proposal_id"
   end
 
   add_index "enquiries", ["author_id"], name: "index_enquiries_on_author_id", using: :btree
+  add_index "enquiries", ["proposal_id"], name: "index_enquiries_on_proposal_id", using: :btree
 
   create_table "enquiries_geozones", force: :cascade do |t|
     t.integer "enquiry_id"
@@ -571,6 +573,7 @@ ActiveRecord::Schema.define(version: 20160914082608) do
   add_foreign_key "administrators", "users"
   add_foreign_key "annotations", "legislations"
   add_foreign_key "annotations", "users"
+  add_foreign_key "enquiries", "proposals"
   add_foreign_key "enquiries", "users", column: "author_id"
   add_foreign_key "enquiries_geozones", "enquiries"
   add_foreign_key "enquiries_geozones", "geozones"
