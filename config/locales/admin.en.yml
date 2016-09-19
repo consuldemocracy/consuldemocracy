@@ -179,6 +179,15 @@ en:
         booths_title: "List of booths"
         name: "Name"
         location: "Location"
+    booths:
+      index:
+        title: "List of booths"
+        select_poll: "Select a poll"
+        title_list: "List of booths of poll %{poll}"
+        no_booths: "There is no booths in this poll."
+        name: "Name"
+        location: "Location"
+        add_officer: "Add officer"
     officials:
       edit:
         destroy: Remove 'Official' status
