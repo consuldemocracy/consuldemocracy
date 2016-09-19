@@ -166,6 +166,19 @@ es:
         open_date: "Fecha de apertura"
         close_date: "Fecha de cierre"
         submit_button: "Crear votación"
+      edit:
+        title: "Editar votación"
+        name: "Nombre"
+        reference: "Número de referencia"
+        open_date: "Fecha de apertura"
+        close_date: "Fecha de cierre"
+        submit_button: "Actualizar votación"
+      show:
+        no_booths: "No hay urnas en esta votación."
+        add_booth: "Añadir urna"
+        booths_title: "Listado de urnas"
+        name: "Nombre"
+        location: "Ubicación"
     officials:
       edit:
         destroy: Eliminar condición de 'Cargo Público'
