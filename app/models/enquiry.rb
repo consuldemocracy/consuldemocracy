@@ -5,6 +5,7 @@ class Enquiry < ActiveRecord::Base
 
   has_many :comments, as: :commentable
   has_and_belongs_to_many :geozones
+  belongs_to :proposal
 
   validates :title, presence: true
   validates :question, presence: true

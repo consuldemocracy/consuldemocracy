@@ -2,6 +2,8 @@
 
   <%= render 'shared/errors', resource: @enquiry %>
 
+  <%= f.hidden_field :proposal_id %>
+
   <div class="row">
     <div class="small-12 column">
       <%= f.text_field :title, maxlength: Enquiry.title_max_length %>

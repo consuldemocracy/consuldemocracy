@@ -9,10 +9,20 @@ class Admin::EnquiriesController < Admin::BaseController
   def new
     @enquiry.open_at = Date.today.to_datetime
     @enquiry.closed_at = 1.month.from_now
+    proposal = Proposal.find(params[:proposal_id]) if params[:proposal_id].present?
+    if proposal.present?
+      @enquiry.proposal_id = proposal.id
+      @enquiry.title = proposal.title
+      @enquiry.description = proposal.description
+      @enquiry.summary = proposal.summary
+      @enquiry.question = proposal.question
+      @enquiry.external_url = proposal.external_url
+    end
   end
 
   def create
-    @enquiry.author = current_user
+    @enquiry.author = @enquiry.proposal.try(:author) || current_user
+
     if @enquiry.save
       redirect_to enquiry_path(@enquiry)
     else
@@ -44,7 +54,7 @@ class Admin::EnquiriesController < Admin::BaseController
     end
 
     def enquiry_params
-      params.require(:enquiry).permit(:title, :question, :summary, :description, :external_url, :open_at, :closed_at, :geozone_ids => [])
+      params.require(:enquiry).permit(:title, :question, :summary, :description, :external_url, :open_at, :closed_at, :proposal_id, :geozone_ids => [])
     end
 
 end

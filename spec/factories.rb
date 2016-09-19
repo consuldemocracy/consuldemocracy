@@ -182,6 +182,10 @@ FactoryGirl.define do
         4.times { create(:vote, votable: debate) }
       end
     end
+
+    trait :successful do
+      cached_votes_up { Proposal.votes_needed_for_success + 100 }
+    end
   end
 
   factory :spending_proposal do

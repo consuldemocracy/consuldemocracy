@@ -396,6 +396,9 @@ es:
       proposal_page: "la página de la propuesta"
     show:
       back: "Volver a mi actividad"
+  enquiries:
+    original_proposal: "Propuesta original"
+    author: "Autor"
   shared:
     edit: 'Editar'
     create_new: 'Crear nuevo'

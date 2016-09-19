@@ -1,8 +1,16 @@
 <h1><%= @enquiry.title %></h1>
 
+<% if @enquiry.proposal.present? %>
+  <%= link_to t('enquiries.original_proposal'), @enquiry.proposal %>
+<% end %>
+
 <h2><%= @enquiry.question %></h2>
 
+<p><%= t('enquiries.author') %>: <%= link_to @enquiry.author.name, @enquiry.author %></p>
+
 <p><%= l(@enquiry.open_at) %> - <%= l(@enquiry.closed_at) %></p>
+
+<p><%= @enquiry.external_url %></p>
 
 <p><%= @enquiry.summary %></p>
 

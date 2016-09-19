@@ -74,4 +74,26 @@ feature 'Admin enquiries' do
     expect(page).to have_content(question)
   end
 
+  scenario 'Create from successful proposal' do
+    p = create(:proposal, :successful)
+
+    visit proposals_path
+    click_link "Create Enquiry"
+
+    expect(current_path).to eq(new_admin_enquiry_path)
+    expect(page).to have_field('enquiry_title', with: p.title)
+    expect(page).to have_field('enquiry_summary', with: p.summary)
+    expect(page).to have_field('enquiry_description', with: p.description)
+    expect(page).to have_field('enquiry_question', with: p.question)
+
+    click_button 'Save'
+
+    expect(page).to have_content(p.title)
+    expect(page).to have_content(p.summary)
+    expect(page).to have_content(p.description)
+    expect(page).to have_content(p.question)
+    expect(page).to have_link('Original Proposal', href: proposal_path(p))
+    expect(page).to have_link(p.author.name, href: user_path(p.author))
+  end
+
 end
