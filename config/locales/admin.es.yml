@@ -185,9 +185,22 @@ es:
         select_poll: "Selecciona una votación"
         title_list: "Lista de urnas de la votación %{poll}"
         no_booths: "No hay urnas en esta votación."
+        add_booth: "Añadir urna"
         name: "Nombre"
         location: "Ubicación"
         add_officer: "Añadir presidente"
+      new:
+        title: "Votación %{poll}"
+        subtitle: "Nueva urna"
+        name: "Nombre"
+        reference: "Número de referencia"
+        location: "Ubicación"
+        submit_button: "Crear urna"
+      show:
+        location: "Ubicación"
+        add_officer: "Añadir presidente de mesa"
+        officers_list: "Lista de presidentes de mesa"
+        no_officers: "No hay presidentes de mesa en esta urna."
     officials:
       edit:
         destroy: Eliminar condición de 'Cargo Público'

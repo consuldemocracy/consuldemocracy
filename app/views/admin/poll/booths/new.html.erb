@@ -1,1 +1,28 @@
-booth new
+<%= render 'shared/back_link' %>
+
+<h2><%= t("admin.booths.new.title") %>: <%= t("admin.booths.new.subtitle") %></h2>
+
+<form>
+  <div class="row">
+    <div class="small-12 medium-6 column">
+      <label><%= t("admin.booths.new.name") %></label>
+      <input type="text" placeholder="<%= t('admin.booths.new.name') %>">
+    </div>
+
+    <div class="small-12 medium-6 column">
+      <label><%= t("admin.booths.new.reference") %></label>
+      <input type="text" placeholder="<%= t('admin.booths.new.reference') %>">
+    </div>
+
+    <div class="small-12 column">
+      <label><%= t("admin.booths.new.location") %></label>
+      <input type="text" placeholder="<%= t("admin.booths.new.location") %>">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="small-12 medium-4 column">
+      <input type="submit" value="<%= t('admin.booths.new.submit_button') %>" class="button success expanded">
+    </div>
+  </div>
+</form>

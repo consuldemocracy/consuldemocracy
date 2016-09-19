@@ -185,9 +185,29 @@ en:
         select_poll: "Select a poll"
         title_list: "List of booths of poll %{poll}"
         no_booths: "There is no booths in this poll."
+        add_booth: "Add booth"
         name: "Name"
         location: "Location"
         add_officer: "Add officer"
+      new:
+        title: "Poll %{poll}"
+        subtitle: "New booth"
+        name: "Name"
+        reference: "Reference number"
+        location: "Location"
+        submit_button: "Create booth"
+      edit:
+        title: "Poll %{poll}"
+        subtitle: "Edit booth"
+        name: "Name"
+        reference: "Reference number"
+        location: "Location"
+        submit_button: "Update booth"
+      show:
+        location: "Location"
+        add_officer: "Add officer"
+        officers_list: "List of officers"
+        no_officers: "There is no officers in this booth."
     officials:
       edit:
         destroy: Remove 'Official' status
