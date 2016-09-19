@@ -263,10 +263,33 @@ FactoryGirl.define do
     user
   end
 
+  factory :poll do
+    sequence(:name) { |n| "Poll #{n}" }
+  end
+
   factory :poll_officer, class: 'Poll::Officer' do
     user
   end
 
+  factory :poll_booth, class: 'Poll::Booth' do
+    sequence(:name) { |n| "Booth #{n}" }
+    poll
+  end
+
+  factory :poll_voter, class: 'Poll::Voter' do
+    association :booth, factory: :budget_booth
+    trait :valid_document do
+      document_type   "1"
+      document_number "12345678Z"
+    end
+
+    trait :invalid_document do
+      document_type   "1"
+      document_number "99999999A"
+    end
+  end
+
+>>>>>>> validates voter in census
   factory :organization do
     user
     responsible_name "Johnny Utah"

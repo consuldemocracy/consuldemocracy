@@ -270,10 +270,27 @@ ActiveRecord::Schema.define(version: 20161102133838) do
 
   add_index "organizations", ["user_id"], name: "index_organizations_on_user_id", using: :btree
 
+<<<<<<< HEAD
+=======
+  create_table "poll_booths", force: :cascade do |t|
+    t.string  "name"
+    t.integer "poll_id"
+  end
+
+>>>>>>> validates voter in census
   create_table "poll_officers", force: :cascade do |t|
     t.integer "user_id"
   end
 
+<<<<<<< HEAD
+=======
+  create_table "poll_voters", force: :cascade do |t|
+    t.integer "booth_id"
+    t.string  "document_number"
+    t.string  "document_type"
+  end
+
+>>>>>>> validates voter in census
   create_table "polls", force: :cascade do |t|
     t.string "name"
   end
