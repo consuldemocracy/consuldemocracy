@@ -82,6 +82,10 @@ es:
           attributes:
             max_per_day:
               invalid: "Has llegado al número máximo de mensajes privados por día"
+        poll/voter:
+          attributes:
+            document_number:
+              not_in_census: "Este documento no aparece en el censo"
         proposal:
           attributes:
             tag_list:
