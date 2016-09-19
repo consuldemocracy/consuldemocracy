@@ -275,10 +275,6 @@ ActiveRecord::Schema.define(version: 20160914172535) do
     t.integer "poll_id"
   end
 
-  create_table "poll_officers", force: :cascade do |t|
-    t.integer "user_id"
-  end
-
   create_table "poll_voters", force: :cascade do |t|
     t.integer "booth_id"
     t.string  "document_number"
