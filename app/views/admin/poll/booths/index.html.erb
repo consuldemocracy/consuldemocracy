@@ -14,8 +14,9 @@
 <div class="callout primary">
   <%= t("admin.booths.index.no_booths") %>
 </div>
+<!-- end -->
 
-<!-- else -->
+<%= link_to t("admin.booths.index.add_booth"), new_admin_poll_booth_path, class: "button success" %>
 
 <table>
   <thead>
@@ -35,8 +36,8 @@
         C/ Isaac Peral, 25. 28003, Madrid
       </td>
       <td class="text-right">
-        <%= link_to t("admin.actions.edit"), "/edit", class: "button hollow" %>
-        <%= link_to t("admin.booths.index.add_officer"), "/edit", class: "button success" %>
+        <%= link_to t("admin.actions.edit"), "#", class: "button hollow" %>
+        <%= link_to t("admin.booths.index.add_officer"), "#", class: "button success" %>
       </td>
     </tr>
   <!-- end -->

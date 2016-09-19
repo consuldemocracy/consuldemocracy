@@ -1,1 +1,40 @@
-booth show
+<%= render 'shared/back_link' %>
+<div class="clear"></div>
+
+<h2 class="inline-block">Urna Moncloa (REFNUM)</h2>
+<%= link_to t("admin.actions.edit"), "#", class: "button hollow float-right" %>
+
+<p><strong><%= t("admin.booths.show.location") %></strong>: C/ Isaac Peral, 25. 28003, Madrid</p>
+
+<h3><%= t("admin.booths.show.officers_list") %></h3>
+
+<!-- If officers in this booth == 0 -->
+<div class="callout primary">
+  <%= t("admin.booths.show.no_officers") %>
+</div>
+<!-- end -->
+
+<%= link_to t("admin.booths.show.add_officer"), "#", class: "button success" %>
+
+<table>
+  <%# @officers.each do |officer| %>
+    <tr>
+      <td>
+        <%# officer.name %>
+        Admin
+      </td>
+      <td>
+        admin@consul.dev
+        <%# officer.email %>
+      </td>
+      <td class="text-right">
+        <%= link_to t('admin.poll_officers.officer.delete'), "#", class: "button hollow alert" %>
+        <%# link_to t('admin.poll_officers.officer.delete'),
+                      admin_poll_officer_path(Poll.last, officer),
+                      method: :delete,
+                      class: "button hollow alert"
+        %>
+      </td>
+    </tr>
+  <%# end %>
+</table>
