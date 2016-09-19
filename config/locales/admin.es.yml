@@ -179,6 +179,15 @@ es:
         booths_title: "Listado de urnas"
         name: "Nombre"
         location: "Ubicación"
+    booths:
+      index:
+        title: "Lista de urnas"
+        select_poll: "Selecciona una votación"
+        title_list: "Lista de urnas de la votación %{poll}"
+        no_booths: "No hay urnas en esta votación."
+        name: "Nombre"
+        location: "Ubicación"
+        add_officer: "Añadir presidente"
     officials:
       edit:
         destroy: Eliminar condición de 'Cargo Público'
