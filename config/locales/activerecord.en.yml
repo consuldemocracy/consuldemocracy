@@ -86,6 +86,7 @@ en:
           attributes:
             document_number:
               not_in_census: "Document not in census"
+              has_voted: "Has already voted"
         proposal:
           attributes:
             tag_list:
