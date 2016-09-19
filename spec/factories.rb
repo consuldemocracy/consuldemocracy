@@ -274,6 +274,7 @@ FactoryGirl.define do
 
   factory :poll_voter, class: 'Poll::Voter' do
     association :booth, factory: :budget_booth
+
     trait :valid_document do
       document_type   "1"
       document_number "12345678Z"
