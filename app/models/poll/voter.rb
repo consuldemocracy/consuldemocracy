@@ -11,15 +11,19 @@ class Poll
     end
 
     def has_not_voted
-      errors.add(:document_number, :has_voted) if has_voted?
+      errors.add(:document_number, :has_voted, name: name) if has_voted?
     end
 
     def census_api_response
-      CensusApi.new.call(document_type, document_number)
+      @census ||= CensusApi.new.call(document_type, document_number)
     end
 
     def has_voted?
       poll.voters.where(document_number: document_number, document_type: document_type).present?
+    end
+
+    def name
+      @census.name
     end
 
   end
