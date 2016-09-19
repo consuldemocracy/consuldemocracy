@@ -375,6 +375,7 @@ es:
       form:
         submit_button: Guardar cambios
   proposal_ballots:
+    create_enquiry: "Crear votación"
     title: "Votaciones"
     description_html: "Las siguientes propuestas ciudadanas han alcanzado el <strong>número de apoyos necesarios</strong> y pasarán a votación."
     date_title: "Fechas de participación"

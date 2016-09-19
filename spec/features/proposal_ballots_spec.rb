@@ -53,5 +53,28 @@ feature 'Proposal ballots' do
     end
   end
 
+  scenario 'Successfull proposals show create enquiry button to admin users' do
+    successfull_proposals = create_successfull_proposals
+
+    visit proposals_path
+
+    successfull_proposals.each do |proposal|
+      within("#proposal_#{proposal.id}_votes") do
+        expect(page).to_not have_link "Create Enquiry"
+      end
+    end
+
+    login_as(create(:administrator).user)
+
+    visit proposals_path
+
+    successfull_proposals.each do |proposal|
+      within("#proposal_#{proposal.id}_votes") do
+        expect(page).to have_link "Create Enquiry"
+      end
+    end
+
+  end
+
 end
 

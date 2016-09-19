@@ -58,6 +58,9 @@
             <p>
               <%= t("proposal_ballots.successfull",
                   voting: link_to(t("proposal_ballots.voting"), proposal_ballots_path)).html_safe %>
+              <% if can? :create, Enquiry %>
+                <%= link_to(t('proposal_ballots.create_enquiry'), new_admin_enquiry_path(proposal_id: proposal.id)) %>
+              <% end %>
             </p>
         <% elsif proposal.archived? %>
           <div class="message">

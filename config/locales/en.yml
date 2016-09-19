@@ -375,6 +375,7 @@ en:
       form:
         submit_button: Save changes
   proposal_ballots:
+    create_enquiry: "Create Enquiry"
     title: "Votings"
     description_html: "The following citizen proposals that have reached the <strong>required supports</strong> and will be voted."
     date_title: "Dates of participation"
