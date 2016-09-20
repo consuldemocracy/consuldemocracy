@@ -22,6 +22,7 @@
   <thead>
     <th><%= t("admin.booths.index.name") %></th>
     <th><%= t("admin.booths.index.location") %></th>
+    <th><%= t("admin.booths.index.officers") %></th>
     <th>&nbsp;</th>
   </thead>
   <tbody>
@@ -29,15 +30,17 @@
     <tr>
       <td>
         <strong>
-          <%= link_to "Urna Moncloa (REFNUM)", "#" %>
+          <%= link_to "Urna Moncloa (REFNUM)", "booths/1" %>
         </strong>
       </td>
       <td>
         C/ Isaac Peral, 25. 28003, Madrid
       </td>
+      <td>
+        N <%= t("admin.booths.index.officers") %>
+      </td>
       <td class="text-right">
-        <%= link_to t("admin.actions.edit"), "#", class: "button hollow" %>
-        <%= link_to t("admin.booths.index.add_officer"), "#", class: "button success" %>
+        <%= link_to t("admin.actions.edit"), "booths/1/edit", class: "button hollow" %>
       </td>
     </tr>
   <!-- end -->
