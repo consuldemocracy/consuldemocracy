@@ -108,6 +108,12 @@
               <%= t("proposal_ballots.successfull",
                   voting: link_to(t("proposal_ballots.voting"), proposal_ballots_path)).html_safe %>
             </p>
+            <% if can? :create, Enquiry %>
+              <p class="text-center">
+                <%= link_to(t('proposal_ballots.create_enquiry'), new_admin_enquiry_path(proposal_id: @proposal.id),
+                            class: "button hollow expanded") %>
+              </p>
+            <% end %>
           <% elsif @proposal.archived? %>
             <p class="text-center">
               <strong><%= t("proposals.proposal.supports", count: @proposal.total_votes) %></strong>
