@@ -188,7 +188,7 @@ en:
         add_booth: "Add booth"
         name: "Name"
         location: "Location"
-        add_officer: "Add officer"
+        officers: "Officers"
       new:
         title: "Poll %{poll}"
         subtitle: "New booth"
@@ -205,7 +205,7 @@ en:
         submit_button: "Update booth"
       show:
         location: "Location"
-        add_officer: "Add officer"
+        assign_officer: "Assign officer"
         officers_list: "List of officers"
         no_officers: "There is no officers in this booth."
     officials:

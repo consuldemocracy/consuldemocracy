@@ -2,7 +2,7 @@
 <div class="clear"></div>
 
 <h2 class="inline-block">Urna Moncloa (REFNUM)</h2>
-<%= link_to t("admin.actions.edit"), "#", class: "button hollow float-right" %>
+<%= link_to t("admin.actions.edit"), "1/edit", class: "button hollow float-right" %>
 
 <p><strong><%= t("admin.booths.show.location") %></strong>: C/ Isaac Peral, 25. 28003, Madrid</p>
 
@@ -14,7 +14,17 @@
 </div>
 <!-- end -->
 
-<%= link_to t("admin.booths.show.add_officer"), "#", class: "button success" %>
+<%= link_to t("admin.booths.show.assign_officer"), "#", class: "button success" %>
+
+<div class="small-12 column">
+  <!-- List of officers, something like:
+       "/admin/spending_proposals/_assigned_valuators.html.erb" -->
+  <%# f.label :valuator_ids, t("admin.spending_proposals.edit.assigned_valuators") %>
+
+  <%# f.collection_check_boxes :valuator_ids, @valuators, :id, :email do |b| %>
+      <%# b.label(title: valuator_label(b.object)) { b.check_box + truncate(b.object.description_or_email, length: 60) } %>
+  <%# end %>
+</div>
 
 <table>
   <%# @officers.each do |officer| %>

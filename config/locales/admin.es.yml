@@ -188,7 +188,7 @@ es:
         add_booth: "Añadir urna"
         name: "Nombre"
         location: "Ubicación"
-        add_officer: "Añadir presidente"
+        officers: "Presidentes de mesa"
       new:
         title: "Votación %{poll}"
         subtitle: "Nueva urna"
@@ -196,9 +196,16 @@ es:
         reference: "Número de referencia"
         location: "Ubicación"
         submit_button: "Crear urna"
+      edit:
+        title: "Votación %{poll}"
+        subtitle: "Editar urna"
+        name: "Nombre"
+        reference: "Número de referencia"
+        location: "Ubicación"
+        submit_button: "Actualizar urna"
       show:
         location: "Ubicación"
-        add_officer: "Añadir presidente de mesa"
+        assign_officer: "Asignar presidente de mesa"
         officers_list: "Lista de presidentes de mesa"
         no_officers: "No hay presidentes de mesa en esta urna."
     officials:
