@@ -57,7 +57,7 @@ feature 'Managed User' do
       user = create(:user)
 
       visit management_document_verifications_path
-      fill_in 'document_verification_document_number', with: '1234'
+      fill_in 'document_verification_document_number', with: '12345678Z'
       click_button 'Check'
 
       within(".account-info") do
@@ -88,7 +88,7 @@ feature 'Managed User' do
       login_as_manager
 
       visit management_document_verifications_path
-      fill_in 'document_verification_document_number', with: '1234'
+      fill_in 'document_verification_document_number', with: '12345678Z'
       click_button 'Check'
 
       expect(page).to have_content "Please introduce the email used on the account"
