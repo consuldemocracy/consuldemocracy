@@ -187,6 +187,10 @@ es:
           without_confirmed_hide: Pendientes
         title: Propuestas ocultas
     enquiries:
+      index:
+        title: "Votaciones"
+        create: "Crear votación"
+        no_enquiries: "No hay ninguna votación."
       edit:
         title: "Editar Votación"
       new:

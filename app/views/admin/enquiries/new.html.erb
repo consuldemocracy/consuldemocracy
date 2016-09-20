@@ -1,10 +1,5 @@
-<div class="row">
+<%= render "shared/back_link" %>
 
-  <div class="small-12 column">
-    <%= render "shared/back_link" %>
+<h2><%= t("admin.enquiries.new.title") %></h2>
 
-    <h1><%= t("admin.enquiries.new.title") %></h1>
-
-    <%= render "form", form_url: admin_enquiries_path %>
-  </div>
-</div>
+<%= render "form", form_url: admin_enquiries_path %>

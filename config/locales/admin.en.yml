@@ -189,6 +189,10 @@ en:
           without_confirmed_hide: Pending
         title: Hidden proposals
     enquiries:
+      index:
+        title: "Enquiries"
+        create: "Create enquiry"
+        no_enquiries: "There is not any enquiry."
       edit:
         title: "Edit Enquiry"
       new:
