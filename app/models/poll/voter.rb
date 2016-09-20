@@ -19,7 +19,7 @@ class Poll
     end
 
     def has_voted?
-      poll.voters.where(document_number: document_number, document_type: document_type).present?
+      poll.voters.where(document_number: document_number, document_type: document_type).exists?
     end
 
     def name
