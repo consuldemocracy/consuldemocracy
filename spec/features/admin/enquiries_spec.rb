@@ -75,6 +75,7 @@ feature 'Admin enquiries' do
   end
 
   scenario 'Create from successful proposal' do
+    geozones = create_list(:geozone, 3)
     p = create(:proposal, :successful)
 
     visit proposals_path
@@ -86,6 +87,10 @@ feature 'Admin enquiries' do
     expect(page).to have_field('enquiry_description', with: p.description)
     expect(page).to have_field('enquiry_question', with: p.question)
 
+    geozones.each do |g|
+      expect(page).to have_checked_field("enquiry_geozone_ids_#{g.id}")
+    end
+
     click_button 'Save'
 
     expect(page).to have_content(p.title)
@@ -94,6 +99,9 @@ feature 'Admin enquiries' do
     expect(page).to have_content(p.question)
     expect(page).to have_link('Original Proposal', href: proposal_path(p))
     expect(page).to have_link(p.author.name, href: user_path(p.author))
+    geozones.each do |g|
+      expect(page).to have_content(g.name)
+    end
   end
 
 end

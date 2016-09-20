@@ -17,6 +17,7 @@ class Admin::EnquiriesController < Admin::BaseController
       @enquiry.summary = proposal.summary
       @enquiry.question = proposal.question
       @enquiry.external_url = proposal.external_url
+      @enquiry.geozones = @geozones
     end
   end
 

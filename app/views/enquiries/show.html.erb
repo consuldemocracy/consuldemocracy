@@ -8,6 +8,12 @@
 
 <p><%= t('enquiries.author') %>: <%= link_to @enquiry.author.name, @enquiry.author %></p>
 
+<ul>
+  <% @enquiry.geozones.each do |g| %>
+    <li><%= g.name %></li>
+  <% end %>
+</ul>
+
 <p><%= l(@enquiry.open_at) %> - <%= l(@enquiry.closed_at) %></p>
 
 <p><%= @enquiry.external_url %></p>
@@ -15,3 +21,4 @@
 <p><%= @enquiry.summary %></p>
 
 <p><%= @enquiry.description %></p>
+
