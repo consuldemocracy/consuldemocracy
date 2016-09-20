@@ -177,6 +177,12 @@ Rails.application.routes.draw do
       get :search, on: :collection
     end
 
+    namespace :poll do
+      resources :officers, only: [:index, :create, :destroy] do
+        get :search, on: :collection
+      end
+    end
+
     resources :verifications, controller: :verifications, only: :index do
       get :search, on: :collection
     end

@@ -259,6 +259,10 @@ FactoryGirl.define do
     user
   end
 
+  factory :poll_officer, class: 'Poll::Officer' do
+    user
+  end
+
   factory :organization do
     user
     responsible_name "Johnny Utah"

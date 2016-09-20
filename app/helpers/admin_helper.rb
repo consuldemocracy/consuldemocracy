@@ -19,7 +19,7 @@ module AdminHelper
   private
 
     def namespace
-      controller.class.parent.name.downcase
+      controller.class.parent.name.downcase.gsub("::", "/")
     end
 
 end
