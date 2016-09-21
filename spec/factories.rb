@@ -356,5 +356,15 @@ FactoryGirl.define do
     sequence(:question) { |n| "Enquiry question #{n}" }
     open_at { 1.month.ago }
     closed_at { 1.month.from_now }
+
+    trait :incoming do
+      open_at { 2.days.from_now }
+      closed_at { 1.month.from_now }
+    end
+
+    trait :expired do
+      open_at { 1.month.ago }
+      closed_at { 15.days.ago }
+    end
   end
 end

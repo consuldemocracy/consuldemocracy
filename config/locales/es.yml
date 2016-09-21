@@ -398,6 +398,11 @@ es:
       back: "Volver a mi actividad"
   enquiries:
     index:
+      filter: "Filtrar"
+      filters:
+        opened: "Abiertas"
+        incoming: "Próximamente"
+        expired: "Terminadas"
       title: "Votaciones"
       description_html: "Las siguientes propuestas ciudadanas han alcanzado el <strong>número de apoyos necesarios</strong> y pasarán a votación."
       nothing_to_vote: "No hay nada que votar en este momento."

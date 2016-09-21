@@ -12,6 +12,12 @@
       <% end %>
 
       <p><%= @enquiry.summary %></p>
+
+      <ul>
+        <% @enquiry.geozones.each do |g| %>
+          <li><%= g.name %></li>
+        <% end %>
+      </ul>
     </div>
 
     <div class="small-12 medium-3 column info">

@@ -398,6 +398,11 @@ en:
       back: "Go back to my activity"
   enquiries:
     index:
+      filter: "Filter"
+      filters:
+        opened: "Open"
+        incoming: "Incoming"
+        expired: "Expired"
       title: "Enquiries"
       description_html: "The following citizen proposals that have reached the <strong>required supports</strong> and will be voted."
       nothing_to_vote: "There is nothing to vote at the moment."
