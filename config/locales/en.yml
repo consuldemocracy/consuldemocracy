@@ -396,6 +396,10 @@ en:
       proposal_page: "the proposal's page"
     show:
       back: "Go back to my activity"
+  enquiries:
+    show:
+      original_proposal: "Propuesta original"
+      author: "Autor"
   shared:
     edit: 'Edit'
     create_new: 'Create new'

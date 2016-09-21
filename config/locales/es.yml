@@ -397,8 +397,9 @@ es:
     show:
       back: "Volver a mi actividad"
   enquiries:
-    original_proposal: "Propuesta original"
-    author: "Autor"
+    show:
+      original_proposal: "Propuesta original"
+      author: "Autor"
   shared:
     edit: 'Editar'
     create_new: 'Crear nuevo'
