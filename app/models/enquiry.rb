@@ -20,9 +20,21 @@ class Enquiry < ActiveRecord::Base
 
   scope :sort_for_list, -> { order('proposal_id IS NULL', :open_at, :closed_at)}
   scope :for_render, -> { includes(:author, :proposal) }
+  scope :opened,   -> { where('open_at <= ? and ? <= closed_at', Time.now, Time.now) }
+  scope :incoming, -> { where('? < open_at', Time.now) }
+  scope :expired,  -> { where('closed_at < ?', Time.now) }
 
-  def open?(timestamp = DateTime.now)
+  def opened?(timestamp = DateTime.now)
     open_at <= timestamp && timestamp <= closed_at
   end
+
+  def incoming?(timestamp = DateTime.now)
+    timestamp < open_at
+  end
+
+  def expired?(timestamp = DateTime.now)
+    closed_at < timestamp
+  end
+
 
 end
