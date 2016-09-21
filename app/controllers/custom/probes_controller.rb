@@ -2,7 +2,7 @@ class ProbesController < ApplicationController
   skip_authorization_check
 
   def show
-    @probe = Probe.find_by_codename params[:id]
+    @probe = Probe.find_by! codename: params[:id]
     @probe_options = @probe.probe_options.all.order(cached_votes_up: :desc)
     load_user_vote
 
