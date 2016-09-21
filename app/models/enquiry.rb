@@ -18,6 +18,9 @@ class Enquiry < ActiveRecord::Base
   validates :description, length: { maximum: Enquiry.description_max_length }
   validates :question, length: { in: 10..Enquiry.question_max_length }
 
+  scope :sort_for_list, -> { order('proposal_id IS NULL', :open_at, :closed_at)}
+  scope :for_render, -> { includes(:author, :proposal) }
+
   def open?(timestamp = DateTime.now)
     open_at <= timestamp && timestamp <= closed_at
   end
