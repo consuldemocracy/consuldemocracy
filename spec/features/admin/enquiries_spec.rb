@@ -59,7 +59,7 @@ feature 'Admin enquiries' do
     question = "Aren't you a little short for a stormtrooper?"
 
     visit admin_enquiries_path
-    click_link "Create new"
+    click_link "Create enquiry"
 
     fill_in 'enquiry_title', with: title
     fill_in 'enquiry_summary', with: summary
@@ -78,7 +78,7 @@ feature 'Admin enquiries' do
     p = create(:proposal, :successful)
 
     visit proposals_path
-    click_link "Create Enquiry"
+    click_link "Create enquiry"
 
     expect(current_path).to eq(new_admin_enquiry_path)
     expect(page).to have_field('enquiry_title', with: p.title)
@@ -92,7 +92,7 @@ feature 'Admin enquiries' do
     expect(page).to have_content(p.summary)
     expect(page).to have_content(p.description)
     expect(page).to have_content(p.question)
-    expect(page).to have_link('Original Proposal', href: proposal_path(p))
+    expect(page).to have_link('Original proposal', href: proposal_path(p))
     expect(page).to have_link(p.author.name, href: user_path(p.author))
   end
 
