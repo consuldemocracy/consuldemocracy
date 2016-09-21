@@ -1055,13 +1055,13 @@
   background: #2D3E50;
   color: white;
 
+  @include breakpoint(medium) {
+    padding-bottom: $line-height/2;
+  }
+
   &.enquiries {
     background: #2D3E50 image-url('heading_enquiries.jpg') no-repeat;
     background-position: 70%;
-  }
-
-  @include breakpoint(medium) {
-    padding-bottom: $line-height;
   }
 
   p {
@@ -1101,6 +1101,22 @@
   a {
     color: white;
     text-decoration: underline;
+  }
+
+  ul.tags {
+    list-style-type: none;
+    margin: $line-height 0 0;
+
+    li {
+      background: #ececec;
+      border-radius: rem-calc(6);
+      color: $text;
+      display: inline-block;
+      font-size: $small-font-size;
+      margin-right: $line-height/4;
+      padding: $line-height/4 $line-height/3;
+      text-decoration: none;
+    }
   }
 
   .info {
@@ -1176,6 +1192,11 @@
     border-top: 1px solid $border;
     padding: $line-height 0;
     position: relative;
+
+    &:first-child {
+      border-top: 0;
+      padding-top: 0;
+    }
   }
 }
 

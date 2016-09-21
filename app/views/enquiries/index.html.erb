@@ -14,9 +14,9 @@
 <main>
   <div class="row">
     <div class="small-12 column">
-      <% if @enquiries.present? %>
-        <%= render 'shared/filter_subnav', i18n_namespace: "enquiries.index" %>
+      <%= render 'shared/filter_subnav', i18n_namespace: "enquiries.index" %>
 
+      <% if @enquiries.present? %>
         <div class="proposals-ballot-list">
           <% @enquiries.each do |enquiry| %>
             <div class="proposal-sucessfull">

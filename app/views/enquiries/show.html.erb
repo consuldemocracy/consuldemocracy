@@ -6,14 +6,14 @@
       <h1><%= @enquiry.title %></h1>
 
       <% if @enquiry.proposal.present? %>
-        <p class="margin-bottom">
+        <div class="margin-bottom">
           <%= link_to t('enquiries.show.original_proposal'), @enquiry.proposal %>
-        </p>
+        </div>
       <% end %>
 
       <p><%= @enquiry.summary %></p>
 
-      <ul>
+      <ul class="tags">
         <% @enquiry.geozones.each do |g| %>
           <li><%= g.name %></li>
         <% end %>
