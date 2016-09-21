@@ -397,11 +397,22 @@ es:
     show:
       back: "Volver a mi actividad"
   enquiries:
-    original_proposal: "Propuesta original"
-    author: "Autor"
+    index:
+      title: "Votaciones"
+      description_html: "Las siguientes propuestas ciudadanas han alcanzado el <strong>número de apoyos necesarios</strong> y pasarán a votación."
+      nothing_to_vote: "No hay nada que votar en este momento."
+      date_from: "Desde el"
+      date_to: "hasta el"
+    show:
+      original_proposal: "Propuesta original"
+      author: "Autor"
+      dates: "Fechas de participación"
+      external_url: "Documentación adicional"
+      more_info: "Más información"
+      button_yes: "Sí"
+      button_no: "No"
   shared:
     edit: 'Editar'
-    create_new: 'Crear nuevo'
     save: 'Guardar'
     delete: 'Borrar'
     advanced_search:

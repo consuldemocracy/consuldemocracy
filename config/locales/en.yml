@@ -375,7 +375,7 @@ en:
       form:
         submit_button: Save changes
   proposal_ballots:
-    create_enquiry: "Create Enquiry"
+    create_enquiry: "Create enquiry"
     title: "Votings"
     description_html: "The following citizen proposals that have reached the <strong>required supports</strong> and will be voted."
     date_title: "Dates of participation"
@@ -396,9 +396,23 @@ en:
       proposal_page: "the proposal's page"
     show:
       back: "Go back to my activity"
+  enquiries:
+    index:
+      title: "Enquiries"
+      description_html: "The following citizen proposals that have reached the <strong>required supports</strong> and will be voted."
+      nothing_to_vote: "There is nothing to vote at the moment."
+      date_from: "From"
+      date_to: "to"
+    show:
+      original_proposal: "Original proposal"
+      author: "Author"
+      dates: "Participation dates"
+      external_url: "Additional documentation"
+      more_info: "More information"
+      button_yes: "Yes"
+      button_no: "No"
   shared:
     edit: 'Edit'
-    create_new: 'Create new'
     save: 'Save'
     delete: 'Delete'
     advanced_search:

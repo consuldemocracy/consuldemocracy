@@ -1,17 +1,58 @@
-<h1><%= @enquiry.title %></h1>
+<div class="expanded no-margin-top dark-heading">
+  <div class="row">
+    <div class="small-12 medium-9 column padding">
+      <%= render "shared/back_link" %>
 
-<% if @enquiry.proposal.present? %>
-  <%= link_to t('enquiries.original_proposal'), @enquiry.proposal %>
-<% end %>
+      <h1><%= @enquiry.title %></h1>
 
-<h2><%= @enquiry.question %></h2>
+      <% if @enquiry.proposal.present? %>
+        <p class="margin-bottom">
+          <%= link_to t('enquiries.show.original_proposal'), @enquiry.proposal %>
+        </p>
+      <% end %>
 
-<p><%= t('enquiries.author') %>: <%= link_to @enquiry.author.name, @enquiry.author %></p>
+      <p><%= @enquiry.summary %></p>
+    </div>
 
-<p><%= l(@enquiry.open_at) %> - <%= l(@enquiry.closed_at) %></p>
+    <div class="small-12 medium-3 column info">
+      <p>
+        <span class="title author"><%= t('enquiries.show.author') %></span><br>
+        <%= link_to @enquiry.author.name, @enquiry.author %>
+      </p>
 
-<p><%= @enquiry.external_url %></p>
+      <p>
+        <span class="title calendar"><%= t('enquiries.show.dates') %></span><br>
+        <%= l(@enquiry.open_at.to_date) %> - <%= l(@enquiry.closed_at.to_date) %>
+      </p>
 
-<p><%= @enquiry.summary %></p>
+      <p>
+        <span class="title url"><%= t('enquiries.show.external_url') %></span><br>
+        <%= link_to @enquiry.external_url, @enquiry.external_url %>
+      </p>
+    </div>
+  </div>
+</div>
 
-<p><%= @enquiry.description %></p>
+<div class="row margin-top">
+  <div class="small-12 column text-center">
+    <h2><%= @enquiry.question %></h2>
+  </div>
+</div>
+
+<div class="row margin-top text-center">
+  <div class="enquiries-buttons">
+    <div class="small-12 medium-6 large-3 large-offset-3 column">
+      <%= link_to t("enquiries.show.button_yes"), "#", class: "button expanded success" %>
+    </div>
+    <div class="small-12 medium-6 large-3 end column">
+      <%= link_to t("enquiries.show.button_no"), "#", class: "button expanded alert" %>
+    </div>
+  </div>
+</div>
+
+<div class="row margin-top">
+  <div class="small-12 medium-9 column">
+    <h3><%= t('enquiries.show.more_info') %></h3>
+    <%= safe_html_with_links @enquiry.description %>
+  </div>
+</div>
