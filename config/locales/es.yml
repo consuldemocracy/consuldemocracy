@@ -400,6 +400,12 @@ es:
     show:
       original_proposal: "Propuesta original"
       author: "Autor"
+    index:
+      filter: "Filtrar"
+      filters:
+        opened: "Abiertas"
+        incoming: "Próximamente"
+        expired: "Terminadas"
   shared:
     edit: 'Editar'
     create_new: 'Crear nuevo'
