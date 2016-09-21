@@ -294,6 +294,8 @@ Rails.application.routes.draw do
 
   resources :benches, only: [:index]
 
+  resources :probes, only: [:show]
+
   if Rails.env.development?
     mount LetterOpenerWeb::Engine, at: "/letter_opener"
   end
