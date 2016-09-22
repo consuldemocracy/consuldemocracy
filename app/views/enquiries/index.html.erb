@@ -22,10 +22,9 @@
             <div class="proposal-sucessfull">
               <h3><%= link_to enquiry.title, enquiry %></h3>
               <div class="info">
-                <%= t("enquiries.index.date_from") %>
-                <%= enquiry.open_at.to_date %>
-                <%= t("enquiries.index.date_to") %>
-                <%= enquiry.closed_at.to_date %>
+                <%= t('enquiries.index.dates',
+                    open_at: l(enquiry.open_at.to_date),
+                    closed_at: l(enquiry.closed_at.to_date)).html_safe %>
               </div>
             </div>
           <% end %>
@@ -33,8 +32,8 @@
 
         <%= paginate @enquiries %>
       <% else %>
-      <div class="callout primary">
-          <%= t("enquiries.index.nothing_to_vote") %>
+        <div class="callout primary">
+          <%= t("enquiries.index.no_enquiries_#{@current_filter}") %>
         </div>
       <% end %>
     </div>

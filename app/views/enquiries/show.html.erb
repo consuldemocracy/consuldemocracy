@@ -27,8 +27,10 @@
       </p>
 
       <p>
-        <span class="title calendar"><%= t('enquiries.show.dates') %></span><br>
-        <%= l(@enquiry.open_at.to_date) %> - <%= l(@enquiry.closed_at.to_date) %>
+        <span class="title calendar"><%= t('enquiries.show.dates_title') %></span><br>
+        <%= t('enquiries.show.dates',
+          open_at: l(@enquiry.open_at.to_date),
+          closed_at: l(@enquiry.closed_at.to_date)).html_safe %>
       </p>
 
       <p>
