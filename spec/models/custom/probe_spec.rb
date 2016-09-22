@@ -18,7 +18,7 @@ describe Probe do
     end
 
     it "returns the probe_option voted by the user" do
-      @probe_option.register_vote(@user, 'yes')
+      @probe_option.select(@user)
       expect(@probe.option_voted_by(@user)).to eq(@probe_option)
     end
   end

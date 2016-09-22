@@ -315,7 +315,7 @@ Rails.application.routes.draw do
   get 'processes/human_rights_question_3', to: 'pages#show', id: 'processes/human_rights_question_3'
   get 'processes/urbanismo-bancos', to: 'benches#index', as: 'town_planning'
   get 'processes/urbanismo-bancos-gracias', to: 'benches#thanks', as: 'town_planning_thanks'
-  get 'probes/urbanismo-bancos', to: 'probes#show', id: 'town_planning'
+  get 'xxx/yyy', to: 'probes#show', id: 'town_planning'
   get 'noticias', to: 'pages#show', id: 'news'
   get 'participatory_budget/in_two_minutes', to: 'pages#show', id: 'participatory_budget/in_two_minutes'
   get 'presupuestos-participativos-resultados', to: 'spending_proposals#results', as: 'participatory_budget_results'

@@ -3,7 +3,7 @@ class ProbesController < ApplicationController
 
   def show
     @probe = Probe.find_by! codename: params[:id]
-    @probe_options = @probe.probe_options.all.order(cached_votes_up: :desc)
+    @probe_options = @probe.probe_options.all.order(probe_selections_count: :desc)
     load_user_vote
 
     render @probe.codename

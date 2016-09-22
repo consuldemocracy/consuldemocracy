@@ -2,40 +2,45 @@ require 'rails_helper'
 
 describe ProbeOption do
 
-  describe '#register_vote' do
+  describe '#select' do
     before(:each) do
       @probe = Probe.create(codename: 'test_probe')
       @probe_option = @probe.probe_options.create(code: '01' , name: 'First Option')
       @user = create(:user, :level_two)
     end
 
-    it 'should register valid user vote' do
-      expect{ @probe_option.register_vote(@user, 'yes') }.to change { @probe_option.cached_votes_up }.by(1)
+    it 'should create valid user selection' do
+      expect{ @probe_option.select(@user) }.to change {
+        ProbeSelection.where(probe_option: @probe_option.id,
+                             probe_id: @probe.id,
+                             user_id: @user.id).count
+      }.by(1)
     end
 
-    it 'should not register vote if voting is not allowed' do
-      @probe.update!(voting_allowed: false)
-      expect{ @probe_option.register_vote(@user, 'yes') }.to_not change { @probe_option.cached_votes_up }
+    it 'should not register selection if selecting is not allowed' do
+      @probe.update!(selecting_allowed: false)
+      expect{ @probe_option.select(@user) }.to_not change { ProbeSelection.count }
     end
 
-    it 'removes previous user votes in the same probe' do
+    it 'removes previous user selection in the same probe' do
       second_probe_option = @probe.probe_options.create(code: '02' , name: 'Second Option')
 
       different_probe = Probe.create(codename: 'another_probe')
       different_probe_option = different_probe.probe_options.create(code: 'ABC' , name: 'XYZ')
 
-      @probe_option.register_vote(@user, 'yes')
-      different_probe_option.register_vote(@user, 'yes')
+      @probe_option.select(@user)
+      different_probe_option.select(@user)
 
-      expect(second_probe_option.reload.cached_votes_up).to eq(0)
-      expect(@probe_option.reload.cached_votes_up).to eq(1)
-      expect(different_probe_option.reload.cached_votes_up).to eq(1)
+      expect(ProbeSelection.where(probe_id: @probe.id, user_id: @user.id).count).to eq(1)
+      expect(ProbeSelection.where(probe_id: @probe.id, user_id: @user.id).first.probe_option_id).to eq(@probe_option.id)
 
-      second_probe_option.register_vote(@user, 'yes')
+      second_probe_option.select(@user)
 
-      expect(second_probe_option.reload.cached_votes_up).to eq(1)
-      expect(@probe_option.reload.cached_votes_up).to eq(0)
-      expect(different_probe_option.reload.cached_votes_up).to eq(1)
+      expect(ProbeSelection.where(probe_id: @probe.id, user_id: @user.id).count).to eq(1)
+      expect(ProbeSelection.where(probe_id: @probe.id, user_id: @user.id).first.probe_option_id).to eq(second_probe_option.id)
+
+      expect(ProbeSelection.where(probe_id: different_probe.id, user_id: @user.id).count).to eq(1)
+      expect(ProbeSelection.where(probe_id: different_probe.id, user_id: @user.id).first.probe_option_id).to eq(different_probe_option.id)
     end
 
   end

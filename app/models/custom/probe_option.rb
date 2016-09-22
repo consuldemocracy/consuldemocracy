@@ -1,7 +1,6 @@
 class ProbeOption < ActiveRecord::Base
   belongs_to :probe
-
-  acts_as_votable
+  has_many :probe_selections
 
   def original_image_url
     "/docs/#{probe.codename}/#{code}_#{name.parameterize.underscore}.jpg"
@@ -26,23 +25,14 @@ class ProbeOption < ActiveRecord::Base
     end
   end
 
-  def register_vote(user, vote_value)
-    if votable_by?(user)
-      remove_previous_votes(user)
-      vote_by(voter: user, vote: vote_value)
+  def select(user)
+    if selectable_by?(user)
+      selection = ProbeSelection.find_or_create_by(user_id: user.id, probe_id: probe.id)
+      selection.update(probe_option_id: id)
     end
   end
 
-  def remove_previous_votes(user)
-    user.votes.up.for_type(ProbeOption).where(votable_id: probe_option_ids).destroy_all
-    probe.probe_options.find_each &:update_cached_votes
-  end
-
-  def votable_by?(user)
-    probe.voting_allowed && user && user.level_two_or_three_verified?
-  end
-
-  def probe_option_ids
-    probe.probe_option_ids
+  def selectable_by?(user)
+    probe.selecting_allowed && user && user.level_two_or_three_verified?
   end
 end

@@ -4,10 +4,6 @@ class Probe < ActiveRecord::Base
   validates :codename, presence: true, uniqueness: true
 
   def option_voted_by(user)
-    options_ids = probe_option_ids
-    return nil if options_ids.blank?
-
-    vote = user.votes.for_type(ProbeOption).where(votable_id: options_ids).first
-    vote.blank? ? nil : vote.votable
+    ProbeSelection.where("probe_id = ? AND user_id = ?", id, user.id).limit(1).first.try(:probe_option)
   end
 end

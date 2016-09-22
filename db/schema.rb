@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160921103813) do
+ActiveRecord::Schema.define(version: 20160922144818) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -321,14 +321,22 @@ ActiveRecord::Schema.define(version: 20160921103813) do
     t.string  "code"
     t.string  "name"
     t.integer "probe_id"
-    t.integer "cached_votes_up", default: 0
+    t.integer "probe_selections_count", default: 0
   end
 
-  add_index "probe_options", ["cached_votes_up"], name: "index_probe_options_on_cached_votes_up", using: :btree
+  create_table "probe_selections", force: :cascade do |t|
+    t.integer "probe_id"
+    t.integer "probe_option_id"
+    t.integer "user_id"
+  end
+
+  add_index "probe_selections", ["probe_id"], name: "index_probe_selections_on_probe_id", using: :btree
+  add_index "probe_selections", ["probe_option_id"], name: "index_probe_selections_on_probe_option_id", using: :btree
+  add_index "probe_selections", ["user_id"], name: "index_probe_selections_on_user_id", using: :btree
 
   create_table "probes", force: :cascade do |t|
     t.string  "codename"
-    t.boolean "voting_allowed", default: true
+    t.boolean "selecting_allowed", default: true
   end
 
   add_index "probes", ["codename"], name: "index_probes_on_codename", using: :btree
