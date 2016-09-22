@@ -36,5 +36,9 @@ class Enquiry < ActiveRecord::Base
     closed_at < timestamp
   end
 
+  def description
+    super.try :html_safe
+  end
+
 
 end
