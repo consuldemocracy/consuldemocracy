@@ -43,5 +43,18 @@ class Enquiry < ActiveRecord::Base
     super.try :html_safe
   end
 
+  def copy_attributes_from_proposal(proposal)
+    if proposal.present?
+      self.author = proposal.author
+      self.proposal_id = proposal.id
+      self.title = proposal.title
+      self.description = proposal.description
+      self.summary = proposal.summary
+      self.question = proposal.question
+      self.external_url = proposal.external_url
+      self.geozones = Geozone.all
+    end
+  end
+
 
 end

@@ -10,15 +10,7 @@ class Admin::EnquiriesController < Admin::BaseController
     @enquiry.open_at = Date.today.to_datetime
     @enquiry.closed_at = 1.month.from_now
     proposal = Proposal.find(params[:proposal_id]) if params[:proposal_id].present?
-    if proposal.present?
-      @enquiry.proposal_id = proposal.id
-      @enquiry.title = proposal.title
-      @enquiry.description = proposal.description
-      @enquiry.summary = proposal.summary
-      @enquiry.question = proposal.question
-      @enquiry.external_url = proposal.external_url
-      @enquiry.geozones = @geozones
-    end
+    @enquiry.copy_attributes_from_proposal(proposal)
   end
 
   def create
