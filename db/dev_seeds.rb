@@ -182,6 +182,32 @@ tags = ActsAsTaggableOn::Tag.where(kind: 'category')
   puts "    #{proposal.title}"
 end
 
+puts "Creating Enquiries"
+(1..30).each do |i|
+  author = User.reorder("RANDOM()").first
+  description = "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>"
+  open_at = rand(2.months.ago .. 2.months.from_now)
+  enquiry = Enquiry.create!(author: author,
+                            title: Faker::Lorem.sentence(3).truncate(60),
+                            question: Faker::Lorem.sentence(3) + "?",
+                            summary: Faker::Lorem.sentence(3),
+                            external_url: Faker::Internet.url,
+                            description: description,
+                            open_at: open_at,
+                            closed_at: open_at + 1.month,
+                            geozones: Geozone.reorder("RANDOM()").limit(3))
+  puts "    #{enquiry.title}"
+end
+
+(1..5).each do |i|
+  proposal = Proposal.reorder("RANDOM()").first
+  open_at = rand(proposal.created_at .. (proposal.created_at + 1.month))
+  enquiry = Enquiry.create(open_at: open_at, closed_at: open_at + 1.month)
+  enquiry.copy_attributes_from_proposal(proposal)
+  enquiry.save
+
+  puts " #{enquiry.title} (from proposal)"
+end
 
 puts "Commenting Debates"
 
@@ -206,6 +232,16 @@ puts "Commenting Proposals"
                   body: Faker::Lorem.sentence)
 end
 
+puts "Commenting Enquiries"
+
+(1..100).each do |i|
+  author = User.reorder("RANDOM()").first
+  enquiry = Enquiry.reorder("RANDOM()").first
+  Comment.create!(user: author,
+                  created_at: rand(enquiry.created_at .. Time.now),
+                  commentable: enquiry,
+                  body: Faker::Lorem.sentence)
+end
 
 puts "Commenting Comments"
 
