@@ -398,7 +398,6 @@ en:
       back: "Go back to my activity"
   enquiries:
     index:
-      filter: "Filter"
       filters:
         opened: "Open"
         incoming: "Incoming"

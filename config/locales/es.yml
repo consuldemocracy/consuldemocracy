@@ -398,7 +398,6 @@ es:
       back: "Volver a mi actividad"
   enquiries:
     index:
-      filter: "Filtrar"
       filters:
         opened: "Abiertas"
         incoming: "Próximamente"
