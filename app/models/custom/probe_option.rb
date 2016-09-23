@@ -7,7 +7,7 @@ class ProbeOption < ActiveRecord::Base
   end
 
   def thumb_image_url
-    "custom/#{probe.codename}/#{code}_#{name.parameterize.underscore}_thumb.jpg"
+    "#{probe.codename}/#{code}_#{name.parameterize.underscore}_thumb.jpg"
   end
 
   def pdf_url
