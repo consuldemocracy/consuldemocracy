@@ -9,7 +9,7 @@ class EnquiriesController < ApplicationController
   end
 
   def show
-    @commentable = @enquiry
+    @commentable = @enquiry.proposal.present? ? @enquiry.proposal : @enquiry
     @comment_tree = CommentTree.new(@commentable, params[:page], @current_order)
     set_comment_flags(@comment_tree.comments)
   end

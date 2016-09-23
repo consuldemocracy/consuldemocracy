@@ -5,6 +5,40 @@ feature 'Commenting enquiries' do
   let(:user)   { create :user }
   let(:enquiry) { create :enquiry }
 
+  context 'Enquiries about proposals' do
+    scenario 'Index' do
+      proposal = create(:proposal)
+      comment = create(:comment, commentable: proposal)
+      enquiry = create(:enquiry, proposal: proposal)
+
+      visit enquiry_path(enquiry)
+
+      expect(page).to have_content comment.body
+    end
+
+    scenario 'Create', :js do
+      proposal = create(:proposal)
+      enquiry = create(:enquiry, proposal: proposal)
+      login_as(user)
+      visit enquiry_path(enquiry)
+
+      fill_in "comment-body-proposal_#{proposal.id}", with: 'Have you thought about...?'
+      click_button 'Publish comment'
+
+      within "#comments" do
+        expect(page).to have_content 'Have you thought about...?'
+      end
+
+      visit proposal_path(proposal)
+
+      within "#comments" do
+        expect(page).to have_content 'Have you thought about...?'
+      end
+    end
+
+
+  end
+
   scenario 'Index' do
     3.times { create(:comment, commentable: enquiry) }
 
