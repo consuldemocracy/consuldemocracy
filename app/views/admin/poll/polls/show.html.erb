@@ -1,8 +1,12 @@
 <%= render "shared/back_link" %>
 <div class="clear"></div>
 
-<h2 class="inline-block">Votación de propuestas 2016</h2>
+<h2 class="inline-block">
+  <%= @poll.name %>
+</h2>
+
 <%= link_to t("admin.actions.edit"), "#", class: "button hollow float-right" %>
+
 <p>(REFNUM)</p>
 <p>Próximamente <small>(15/12/2016 - 15/02/2017)</small></p>
 <%= link_to t("admin.polls.show.add_booth"), "#", class: "button success" %>

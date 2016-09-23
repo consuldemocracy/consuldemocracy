@@ -1,0 +1,16 @@
+<tr id="<%= dom_id(poll) %>" class="poll">
+  <td>
+    <strong>
+      <%= link_to poll.name, admin_poll_path(poll) %>
+    </strong>ß
+  </td>
+  <td>
+    Próximamente <!-- Estado: Activa, Próximamente o Archivada -->
+    <br>(<small>15/12/2016 - 15/02/2017</small>)
+  </td>
+  <td class="text-right">
+    <%= link_to t("admin.actions.edit"),
+                edit_admin_poll_path(poll),
+                class: "button hollow" %>
+  </td>
+</tr>
