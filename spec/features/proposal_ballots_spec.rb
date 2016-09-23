@@ -60,7 +60,7 @@ feature 'Proposal ballots' do
 
     successfull_proposals.each do |proposal|
       within("#proposal_#{proposal.id}_votes") do
-        expect(page).to_not have_link "Create Enquiry"
+        expect(page).to_not have_link "Create enquiry"
       end
     end
 
@@ -70,7 +70,7 @@ feature 'Proposal ballots' do
 
     successfull_proposals.each do |proposal|
       within("#proposal_#{proposal.id}_votes") do
-        expect(page).to have_link "Create Enquiry"
+        expect(page).to have_link "Create enquiry"
       end
     end
 
