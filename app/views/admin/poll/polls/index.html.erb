@@ -16,21 +16,6 @@
     <th>&nbsp;</th>
   </thead>
   <tbody>
-  <!-- @polls.each do |poll| -->
-    <tr>
-      <td>
-        <strong>
-          <%= link_to "Votación de propuestas 2016 (REFNUM)", "polls/3" %>
-        </strong>
-      </td>
-      <td>
-        Próximamente <!-- Estado: Activa, Próximamente o Archivada -->
-        <br>(<small>15/12/2016 - 15/02/2017</small>)
-      </td>
-      <td class="text-right">
-        <%= link_to t("admin.actions.edit"), "polls/3/edit", class: "button hollow" %>
-      </td>
-    </tr>
-  <!-- end -->
+    <%= render @polls %>
   </tbody>
 </table>
