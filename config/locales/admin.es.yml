@@ -95,6 +95,7 @@ es:
       admin: Menú de administración
       banner: Gestionar banners
       debate_topics: Temas de debate
+      enquiries: Votaciones
       hidden_comments: Comentarios ocultos
       hidden_debates: Debates ocultos
       hidden_proposals: Propuestas ocultas
@@ -185,6 +186,15 @@ es:
           with_confirmed_hide: Confirmadas
           without_confirmed_hide: Pendientes
         title: Propuestas ocultas
+    enquiries:
+      index:
+        title: "Votaciones"
+        create: "Crear votación"
+        no_enquiries: "No hay ninguna votación."
+      edit:
+        title: "Editar Votación"
+      new:
+        title: "Crear Votacion"
     settings:
       flash:
         updated: Valor actualizado

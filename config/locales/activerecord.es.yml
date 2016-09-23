@@ -68,6 +68,14 @@ es:
         external_url: "Enlace a documentación adicional"
         geozone_id: "Ámbito de actuación"
         title: "Título"
+      enquiry:
+        title: "Título"
+        question: "Pregunta"
+        summary: "Resumen"
+        description: "Descripción"
+        open_at: "Fecha apertura"
+        closed_at: "Fecha cierre"
+        external_url: "Enlace a documentación adicional"
     errors:
       models:
         user:

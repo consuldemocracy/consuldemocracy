@@ -6,6 +6,7 @@
 // 04. List participation
 // 05. Featured
 // 06. Proposals successfull
+// 07. Enquiries
 //
 
 // 01. Votes and supports
@@ -1055,20 +1056,80 @@
   color: white;
 
   @include breakpoint(medium) {
-    padding-bottom: $line-height;
+    padding-bottom: $line-height/2;
+  }
+
+  &.enquiries {
+    background: #2D3E50 image-url('heading_enquiries.jpg') no-repeat;
+    background-position: 70%;
   }
 
   p {
     margin-bottom: 0;
+  }
 
-    &.title {
-      color: #FFD200;
+  .title {
+    color: #FFD200;
+    display: inline-block;
+    font-weight: bold;
+    margin-left: $line-height;
+    position: relative;
+
+    &.author:before {
+      content: "o ";
+      font-family: "icons" !important;
+      left: -24px;
+      position: absolute;
+      top: -1px;
+    }
+
+    &.calendar:before {
+      content: "g ";
+      font-family: "icons" !important;
+      left: -24px;
+      position: absolute;
+    }
+
+    &.url:before {
+      content: "F ";
+      font-family: "icons" !important;
+      left: -24px;
+      position: absolute;
+    }
+  }
+
+  a {
+    color: white;
+    text-decoration: underline;
+  }
+
+  ul.tags {
+    list-style-type: none;
+    margin: $line-height 0 0;
+
+    li {
+      background: #ececec;
+      border-radius: rem-calc(6);
+      color: $text;
+      display: inline-block;
+      font-size: $small-font-size;
+      margin-right: $line-height/4;
+      padding: $line-height/4 $line-height/3;
+      text-decoration: none;
     }
   }
 
   .info {
     background: #314253;
-    padding-top: $line-height;
+    padding: $line-height;
+
+    p {
+      padding-top: $line-height;
+
+      &:first-child {
+        padding-top: 0;
+      }
+    }
 
     @include breakpoint(medium) {
       border-top: rem-calc(6) solid #FFD200;
@@ -1131,6 +1192,11 @@
     border-top: 1px solid $border;
     padding: $line-height 0;
     position: relative;
+
+    &:first-child {
+      border-top: 0;
+      padding-top: 0;
+    }
   }
 }
 
@@ -1153,5 +1219,17 @@
       border-left: 1px solid $border;
       margin: $line-height rem-calc(-25) 0 rem-calc(12);
     }
+  }
+}
+
+// 07. Enquiries
+// -------------
+
+.enquiries-buttons {
+
+  .button {
+    font-size: rem-calc(24);
+    font-weight: bold;
+    padding: $line-height 0;
   }
 }

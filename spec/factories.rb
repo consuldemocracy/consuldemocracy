@@ -182,6 +182,10 @@ FactoryGirl.define do
         4.times { create(:vote, votable: debate) }
       end
     end
+
+    trait :successful do
+      cached_votes_up { Proposal.votes_needed_for_success + 100 }
+    end
   end
 
   factory :spending_proposal do
@@ -352,5 +356,15 @@ FactoryGirl.define do
     sequence(:question) { |n| "Enquiry question #{n}" }
     open_at { 1.month.ago }
     closed_at { 1.month.from_now }
+
+    trait :incoming do
+      open_at { 2.days.from_now }
+      closed_at { 1.month.from_now }
+    end
+
+    trait :expired do
+      open_at { 1.month.ago }
+      closed_at { 15.days.ago }
+    end
   end
 end

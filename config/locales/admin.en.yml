@@ -97,6 +97,7 @@ en:
       admin: Admin menu
       banner: Manage banners
       debate_topics: Debate topics
+      enquiries: Enquiries
       hidden_comments: Hidden comments
       hidden_debates: Hidden debates
       hidden_proposals: Hidden proposals
@@ -187,6 +188,15 @@ en:
           with_confirmed_hide: Confirmed
           without_confirmed_hide: Pending
         title: Hidden proposals
+    enquiries:
+      index:
+        title: "Enquiries"
+        create: "Create enquiry"
+        no_enquiries: "There is not any enquiry."
+      edit:
+        title: "Edit Enquiry"
+      new:
+        title: "Create Enquiry"
     settings:
       flash:
         updated: Value updated

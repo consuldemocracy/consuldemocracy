@@ -12,6 +12,7 @@ describe "Abilities::Administrator" do
   let(:debate) { create(:debate) }
   let(:comment) { create(:comment) }
   let(:proposal) { create(:proposal) }
+  let(:enquiry) { create(:enquiry) }
 
   let(:hidden_debate) { create(:debate, :hidden) }
   let(:hidden_comment) { create(:comment, :hidden) }
@@ -23,6 +24,11 @@ describe "Abilities::Administrator" do
 
   it { should be_able_to(:index, Proposal) }
   it { should be_able_to(:show, proposal) }
+
+  it { should be_able_to(:index, Enquiry) }
+  it { should be_able_to(:show, enquiry) }
+  it { should be_able_to(:update, enquiry) }
+  it { should be_able_to(:destroy, enquiry) }
 
   it { should_not be_able_to(:restore, comment) }
   it { should_not be_able_to(:restore, debate) }

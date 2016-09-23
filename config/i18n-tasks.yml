@@ -141,6 +141,8 @@ ignore_unused:
   - 'views.pagination.*' # kaminari
   - 'shared.suggest.*'
   - 'invisible_captcha.*'
+  - 'enquiries.index.filters.*'
+  - 'enquiries.index.no_enquiries_*'
 # - '{devise,kaminari,will_paginate}.*'
 # - 'simple_form.{yes,no}'
 # - 'simple_form.{placeholders,hints,labels}.*'

@@ -61,6 +61,8 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :enquiries, only: [:index, :show]
+
   resources :proposal_ballots, only: [:index]
 
   resources :comments, only: [:create, :show], shallow: true do
@@ -139,6 +141,8 @@ Rails.application.routes.draw do
         put :confirm_hide
       end
     end
+
+    resources :enquiries, except: :show
 
     resources :spending_proposals, only: [:index, :show, :edit, :update] do
       member do
