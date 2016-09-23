@@ -209,7 +209,7 @@ en:
       open_data: Open data
       open_gov: Open government
       proposals: Proposals
-      proposal_ballot: Voting
+      enquiries: Voting
       see_all: See proposals
       spending_proposals: Spending proposals
   legislation:
@@ -353,6 +353,8 @@ en:
       supports_necessary: "%{number} supports needed"
       total_percent: 100%
       archived: "This proposal has been archived and can't collect supports."
+      successfull: "This proposal has reached the required supports and will be voted in the %{voting}."
+      voting: "next voting"
     show:
       author_deleted: User deleted
       code: 'Proposal code:'
@@ -374,18 +376,6 @@ en:
     update:
       form:
         submit_button: Save changes
-  proposal_ballots:
-    create_enquiry: "Create enquiry"
-    title: "Votings"
-    description_html: "The following citizen proposals that have reached the <strong>required supports</strong> and will be voted."
-    date_title: "Dates of participation"
-    date: "Soon we'll announce the date of vote these proposals."
-    successfull: "This proposal has reached the required supports and will be voted in the %{voting}."
-    voting: "next voting"
-    featured_title: "#NextVoting"
-    nothing_to_vote: "There is nothing to vote at the moment."
-    info: "New proposals that have reached the voting phase."
-    button: "I want to decide"
   proposal_notifications:
     new:
       title: "Send message"
@@ -397,6 +387,7 @@ en:
     show:
       back: "Go back to my activity"
   enquiries:
+    create_enquiry: "Create enquiry"
     index:
       filters:
         opened: "Open"
@@ -417,6 +408,9 @@ en:
       more_info: "More information"
       button_yes: "Yes"
       button_no: "No"
+    banner:
+      featured_title: "#NextVoting"
+      info: "New proposals that have reached the voting phase."
   shared:
     edit: 'Edit'
     save: 'Save'

@@ -947,7 +947,7 @@
 // ------------
 
 .featured-debates, .featured-proposals,
-.proposals-ballot, .proposals-ballot-list {
+.enquiries-list {
   padding: $line-height/2 0;
 
   @include breakpoint(medium) {
@@ -1056,7 +1056,7 @@
   color: white;
 
   @include breakpoint(medium) {
-    padding-bottom: $line-height/2;
+    padding-bottom: $line-height;
   }
 
   &.enquiries {
@@ -1137,7 +1137,7 @@
   }
 }
 
-.featured-proposals-ballot-banner {
+.sucessfull-proposals-banner {
   background: #2D3E50 image-url("ballot_tiny.gif") no-repeat;
   background-position: 75% 0;
   position: relative;
@@ -1161,7 +1161,7 @@
   }
 }
 
-.featured-proposals-ballot-banner,
+.sucessfull-proposals-banner,
 .successfull .panel {
 
   .icon-successfull {
@@ -1185,9 +1185,9 @@
   }
 }
 
-.proposals-ballot-list {
+.enquiries-list {
 
-  .proposal-sucessfull {
+  .enquiry {
     background: white;
     border-top: 1px solid $border;
     padding: $line-height 0;

@@ -56,12 +56,12 @@
         <% if proposal.successfull? %>
           <div class="message">
             <p>
-              <%= t("proposal_ballots.successfull",
-                  voting: link_to(t("proposal_ballots.voting"), proposal_ballots_path)).html_safe %>
+              <%= t("proposals.proposal.successfull",
+                  voting: link_to(t("proposals.proposal.voting"), enquiries_path)).html_safe %>
             </p>
             <% if can? :create, Enquiry %>
               <p class="text-center">
-                <%= link_to(t('proposal_ballots.create_enquiry'), new_admin_enquiry_path(proposal_id: proposal.id),
+                <%= link_to(t('enquiries.create_enquiry'), new_admin_enquiry_path(proposal_id: proposal.id),
                             class: "button hollow") %>
               </p>
             <% end %>
