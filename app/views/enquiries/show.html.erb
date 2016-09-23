@@ -61,6 +61,10 @@
 <div class="row margin-top">
   <div class="small-12 medium-9 column">
     <h3><%= t('enquiries.show.more_info') %></h3>
-    <%= safe_html_with_links @enquiry.description %>
+    <%= @enquiry.description %>
   </div>
 </div>
+
+
+<%= render "enquiries/comments" %>
+
