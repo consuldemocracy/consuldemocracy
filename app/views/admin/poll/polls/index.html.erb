@@ -1,21 +1,22 @@
 <h2 class="inline-block"><%= t("admin.polls.index.title") %></h2>
 
-<%= link_to t("admin.polls.index.create"), new_admin_poll_path, class: "button success float-right" %>
+<%= link_to t("admin.polls.index.create"),
+            new_admin_poll_path,
+            class: "button success float-right" %>
 
-<!-- If polls == 0 -->
-<div class="callout primary">
-  <%= t("admin.polls.index.no_polls") %>
-</div>
-
-<!-- else -->
-
-<table>
-  <thead>
-    <th><%= t("admin.polls.index.name") %></th>
-    <th><%= t("admin.polls.index.status") %></th>
-    <th>&nbsp;</th>
-  </thead>
-  <tbody>
-    <%= render @polls %>
-  </tbody>
-</table>
+<% if Poll.any? %>
+  <table>
+    <thead>
+      <th><%= t("admin.polls.index.name") %></th>
+      <th><%= t("admin.polls.index.status") %></th>
+      <th>&nbsp;</th>
+    </thead>
+    <tbody>
+      <%= render @polls %>
+    </tbody>
+  </table>
+<% else %>
+  <div class="callout primary">
+    <%= t("admin.polls.index.no_polls") %>
+  </div>
+<% end %>

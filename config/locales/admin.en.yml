@@ -155,7 +155,7 @@ en:
     polls:
       index:
         title: "List of polls"
-        no_polls: "There are any poll."
+        no_polls: "There are no polls."
         create: "Create poll"
         name: "Name"
         status: "Status"
