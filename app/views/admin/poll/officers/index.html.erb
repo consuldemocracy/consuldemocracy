@@ -1,7 +1,7 @@
 <h2><%= t("admin.poll_officers.index.title") %></h2>
 
 <div class="row">
-  <%= form_tag search_admin_poll_officers_path, method: :get, remote: true  do %>
+  <%= form_tag search_admin_officers_path, method: :get, remote: true  do %>
     <div class="small-12 medium-6 column">
       <%= text_field_tag :email, '', placeholder: t('admin.poll_officers.search.email_placeholder') %>
     </div>
@@ -27,7 +27,7 @@
       <td class="text-right">
         <% if officer.persisted? %>
           <%= link_to t('admin.poll_officers.officer.delete'),
-                      admin_poll_officer_path(Poll.last, officer),
+                      admin_officer_path(officer),
                       method: :delete,
                       class: "button hollow alert"
           %>

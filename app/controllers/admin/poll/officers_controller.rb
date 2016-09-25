@@ -22,12 +22,12 @@ class Admin::Poll::OfficersController < Admin::BaseController
     @officer.user_id = params[:user_id]
     @officer.save
 
-    redirect_to admin_poll_officers_path
+    redirect_to admin_officers_path
   end
 
   def destroy
     @officer.destroy
-    redirect_to admin_poll_officers_path
+    redirect_to admin_officers_path
   end
 
   def show

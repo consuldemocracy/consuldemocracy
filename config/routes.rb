@@ -180,11 +180,11 @@ Rails.application.routes.draw do
     end
 
     scope module: 'poll' do
+      resources :officers do
+        get :search, on: :collection
+      end
       resources :polls do
         resources :booths
-        resources :officers do
-          get :search, on: :collection
-        end
       end
     end
 
