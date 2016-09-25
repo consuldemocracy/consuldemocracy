@@ -30,7 +30,6 @@ feature 'Admin polls' do
     Poll.all.each do |poll|
       within("#poll_#{poll.id}") do
         expect(page).to have_content poll.name
-#expect(page).to have_content "Status/Dates" - Hardcoded
       end
     end
     expect(page).to_not have_content "There are no polls"
@@ -43,8 +42,6 @@ feature 'Admin polls' do
     click_link poll.name
 
     expect(page).to have_content poll.name
-#expect(page).to have_content "Status/Dates" - Hardcoded
-#expect(page).to have_content "REFNUM" - Hardcoded
   end
 
   scenario "Create" do
@@ -52,12 +49,9 @@ feature 'Admin polls' do
     click_link "Create poll"
 
     fill_in "poll_name", with: "Upcoming poll"
-#fill_in reference_number - Hardcoded
-#fill_in open_date - Hardcoded
-#fill_in close_date - Hardcoded
     click_button "Create poll"
-    expect(page).to have_content "Poll created successfully"
 
+    expect(page).to have_content "Poll created successfully"
     expect(page).to have_content "Upcoming poll"
   end
 
@@ -66,14 +60,11 @@ feature 'Admin polls' do
 
     visit admin_poll_path(poll)
     click_link "Edit"
-save_and_open_page
-    fill_in "poll_name", with: "Next Poll"
-#fill_in reference_number - Hardcoded
-#fill_in open_date - Hardcoded
-#fill_in close_date - Hardcoded
-    click_button "Update poll"
-    expect(page).to have_content "Poll updated successfully"
 
+    fill_in "poll_name", with: "Next Poll"
+    click_button "Update poll"
+
+    expect(page).to have_content "Poll updated successfully"
     expect(page).to have_content "Next Poll"
   end
 
