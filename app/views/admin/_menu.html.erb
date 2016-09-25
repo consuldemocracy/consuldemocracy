@@ -84,7 +84,7 @@
     </li>
 
     <li <%= 'class=active' if controller_name == 'officers' %>>
-      <%= link_to admin_poll_officers_path(Poll.last) do %>
+      <%= link_to admin_officers_path do %>
         <span class="icon-user"></span><%= t('admin.menu.poll_officers') %>
       <% end %>
     </li>
@@ -95,11 +95,13 @@
       <% end %>
     </li>
 
-    <li <%= 'class=active' if controller_name == 'booths' %>>
-      <%= link_to admin_poll_booths_url(Poll.last) do %>
-        <span class="icon-user"></span><%= t('admin.menu.booths') %>
-      <% end %>
-    </li>
+    <% if Poll.any? %>
+      <li <%= 'class=active' if controller_name == 'booths' %>>
+        <%= link_to admin_poll_booths_url(Poll.last) do %>
+          <span class="icon-user"></span><%= t('admin.menu.booths') %>
+        <% end %>
+      </li>
+    <% end %>
 
     <li <%= 'class=active' if controller_name == 'activity' %>>
       <%= link_to admin_activity_path do %>
