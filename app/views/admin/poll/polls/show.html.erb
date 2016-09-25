@@ -5,7 +5,7 @@
   <%= @poll.name %>
 </h2>
 
-<%= link_to t("admin.actions.edit"), "#", class: "button hollow float-right" %>
+<%= link_to t("admin.actions.edit"), edit_admin_poll_path(@poll), class: "button hollow float-right" %>
 
 <p>(REFNUM)</p>
 <p>Próximamente <small>(15/12/2016 - 15/02/2017)</small></p>
@@ -26,7 +26,7 @@
     <th>&nbsp;</th>
   </thead>
   <tbody>
-  <!-- @booths.each do |booth| -->
+  <%= @poll.booths.each do |booth| %>
     <tr>
       <td>
         <strong>
@@ -40,6 +40,6 @@
         <%= link_to t("admin.actions.edit"), "#", class: "button hollow" %>
       </td>
     </tr>
-  <!-- end -->
+  <% end %>
   </tbody>
 </table>

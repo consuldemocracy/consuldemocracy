@@ -6,15 +6,16 @@ en:
         notice: "%{resource_name} created successfully."
         debate: "Debate created successfully."
         direct_message: "You message has been sent successfully."
+        poll: "Poll created successfully."
         proposal: "Proposal created successfully."
         proposal_notification: "Your message has been sent correctly."
         spending_proposal: "Spending proposal created successfully. You can access it from %{activity}"
-
       save_changes:
         notice: Changes saved
       update:
         notice: "%{resource_name} updated successfully."
         debate: "Debate updated successfully."
+        poll: "Poll updated successfully."
         proposal: "Proposal updated successfully."
         spending_proposal: "Investment project updated succesfully."
       destroy:
