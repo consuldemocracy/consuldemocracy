@@ -17,9 +17,9 @@
       <%= render 'shared/filter_subnav', i18n_namespace: "enquiries.index" %>
 
       <% if @enquiries.present? %>
-        <div class="proposals-ballot-list">
+        <div class="enquiries-list">
           <% @enquiries.each do |enquiry| %>
-            <div class="proposal-sucessfull">
+            <div class="enquiry">
               <h3><%= link_to enquiry.title, enquiry %></h3>
               <div class="info">
                 <%= t('enquiries.index.dates',

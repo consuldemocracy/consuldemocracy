@@ -63,8 +63,6 @@ Rails.application.routes.draw do
 
   resources :enquiries, only: [:index, :show]
 
-  resources :proposal_ballots, only: [:index]
-
   resources :comments, only: [:create, :show], shallow: true do
     member do
       post :vote

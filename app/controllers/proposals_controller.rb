@@ -28,7 +28,7 @@ class ProposalsController < ApplicationController
   def index_customization
     discard_archived
     load_retired
-    load_proposal_ballots
+    load_successfull_proposals
     load_featured unless @proposal_successfull_exists
   end
 
@@ -103,7 +103,7 @@ class ProposalsController < ApplicationController
       end
     end
 
-    def load_proposal_ballots
+    def load_successfull_proposals
       @proposal_successfull_exists = Proposal.successfull.exists?
     end
 
