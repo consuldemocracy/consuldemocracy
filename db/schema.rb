@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160922161430) do
+ActiveRecord::Schema.define(version: 20160926100901) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -202,6 +202,17 @@ ActiveRecord::Schema.define(version: 20160922161430) do
 
   add_index "enquiries_geozones", ["enquiry_id"], name: "index_enquiries_geozones_on_enquiry_id", using: :btree
   add_index "enquiries_geozones", ["geozone_id"], name: "index_enquiries_geozones_on_geozone_id", using: :btree
+
+  create_table "enquiry_answers", force: :cascade do |t|
+    t.integer "author_id"
+    t.integer "enquiry_id"
+    t.string  "answer"
+  end
+
+  add_index "enquiry_answers", ["answer"], name: "index_enquiry_answers_on_answer", using: :btree
+  add_index "enquiry_answers", ["author_id", "enquiry_id"], name: "index_enquiry_answers_on_author_id_and_enquiry_id", unique: true, using: :btree
+  add_index "enquiry_answers", ["author_id"], name: "index_enquiry_answers_on_author_id", using: :btree
+  add_index "enquiry_answers", ["enquiry_id"], name: "index_enquiry_answers_on_enquiry_id", using: :btree
 
   create_table "failed_census_calls", force: :cascade do |t|
     t.integer  "user_id"
@@ -579,6 +590,7 @@ ActiveRecord::Schema.define(version: 20160922161430) do
   add_foreign_key "enquiries", "users", column: "author_id"
   add_foreign_key "enquiries_geozones", "enquiries"
   add_foreign_key "enquiries_geozones", "geozones"
+  add_foreign_key "enquiry_answers", "users", column: "author_id"
   add_foreign_key "failed_census_calls", "users"
   add_foreign_key "flags", "users"
   add_foreign_key "identities", "users"
