@@ -5,7 +5,13 @@ class Api::V1::CommentsController < ApplicationController
 
   def index
     begin
-      comments = Comment.all.page(params[:page])
+      # requests coming from links provided by /proposals, /spending_proposals and /debates
+      if (params[:commentable_id] && params[:commentable_type])
+        comments = Comment.where(commentable_id: params[:commentable_id], commentable_type: params[:commentable_type]).page(params[:page])
+      # standard request
+      else
+        comments = Comment.all.page(params[:page])
+      end
       render json: comments, each_serializer: Api::V1::Comments::IndexSerializer
     rescue
       render json: {errors: [{status: 404, title: "not-found"}]}.to_json, status: 404
