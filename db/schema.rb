@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160922144818) do
+ActiveRecord::Schema.define(version: 20160926130805) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -325,9 +325,11 @@ ActiveRecord::Schema.define(version: 20160922144818) do
   end
 
   create_table "probe_selections", force: :cascade do |t|
-    t.integer "probe_id"
-    t.integer "probe_option_id"
-    t.integer "user_id"
+    t.integer  "probe_id"
+    t.integer  "probe_option_id"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   add_index "probe_selections", ["probe_id"], name: "index_probe_selections_on_probe_id", using: :btree
@@ -335,8 +337,10 @@ ActiveRecord::Schema.define(version: 20160922144818) do
   add_index "probe_selections", ["user_id"], name: "index_probe_selections_on_user_id", using: :btree
 
   create_table "probes", force: :cascade do |t|
-    t.string  "codename"
-    t.boolean "selecting_allowed", default: true
+    t.string   "codename"
+    t.boolean  "selecting_allowed", default: true
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   add_index "probes", ["codename"], name: "index_probes_on_codename", using: :btree
