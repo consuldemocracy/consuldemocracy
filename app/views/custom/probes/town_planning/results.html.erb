@@ -1,10 +1,4 @@
-<% provide :title, "Plan de Urbanismo: nuevos bancos" %>
-<% provide :social_media_meta_tags do %>
-<%= render "shared/social_media_meta_tags",
-          social_url: page_url("processes_town_planning"),
-          social_title: t("pages.processes.index.process_7_title"),
-          social_description: t("pages.processes.index.process_7_description") %>
-<% end %>
+<%= render "probes/#{@probe.codename}/header" %>
 
 <div class="expanded processes-show no-margin-top">
   <div class="row padding">
@@ -51,7 +45,7 @@
         </tr>
       </thead>
       <tbody>
-        <%= render partial: 'town_planning_option', collection: @probe_options %>
+        <%= render partial: '/custom/probes/town_planning/town_planning_option', collection: @probe_options %>
       </tbody>
     </table>
   </div>

@@ -1,0 +1,8 @@
+---
+es:
+  probes:
+    verified_only: La participación en este proceso está restringida a usuarios verificados, %{verify_account}.
+    verify_account: verifica tu cuenta
+    not_logged_in: Necesitas %{signin} o %{signup} para continuar.
+    signin: iniciar sesión
+    signup: registrarte

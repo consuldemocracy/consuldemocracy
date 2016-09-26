@@ -1,0 +1,8 @@
+---
+en:
+  probes:
+    verified_only: To participate in this process you need to %{verify_account}
+    verify_account: verify your account
+    not_logged_in: You must %{signin} or %{signup} to continue.
+    signin: Sign in
+    signup: Sign up

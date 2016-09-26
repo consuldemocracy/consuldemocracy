@@ -1,17 +1,51 @@
 class ProbesController < ApplicationController
   skip_authorization_check
 
-  def show
-    @probe = Probe.find_by! codename: params[:id]
-    @probe_options = @probe.probe_options.all.order(probe_selections_count: :desc)
-    load_user_vote
+  before_action :load_probe
+  before_action :load_user_selection, only: [:show, :thanks]
 
-    render @probe.codename
+  def show
+    @probe_options = @probe.probe_options.all.order(probe_selections_count: :desc)
+    render probe_show_page
+  end
+
+  def selection
+    if params[:option_id].blank?
+      redirect_to probe_show_route
+    else
+      @probe_option = @probe.probe_options.find(params[:option_id])
+      @probe_option.select(current_user)
+      redirect_to probe_thanks_route
+    end
+  end
+
+  def thanks
+    if @probe_option.blank?
+      redirect_to probe_show_route
+    else
+      render "probes/#{@probe.codename}/thanks"
+    end
   end
 
   private
 
-    def load_user_vote
+    def probe_show_page
+      @probe.selecting_allowed? ? "probes/#{@probe.codename}/selecting" : "probes/#{@probe.codename}/results"
+    end
+
+    def load_user_selection
       @probe_option = @probe.option_voted_by(current_user) if current_user
+    end
+
+    def load_probe
+      @probe = Probe.find_by! codename: params[:id]
+    end
+
+    def probe_show_route
+      method("#{@probe.codename}_path").call
+    end
+
+    def probe_thanks_route
+      method("#{@probe.codename}_thanks_path").call
     end
 end

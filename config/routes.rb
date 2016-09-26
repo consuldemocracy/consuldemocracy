@@ -294,7 +294,10 @@ Rails.application.routes.draw do
 
   resources :benches, only: [:index]
 
-  resources :probes, only: [:show]
+  resources :probes, only: [:show] do
+    post :selection,  on: :collection
+    get :thanks, on: :collection
+  end
 
   if Rails.env.development?
     mount LetterOpenerWeb::Engine, at: "/letter_opener"
@@ -313,9 +316,8 @@ Rails.application.routes.draw do
   get 'processes/human_rights_question_1', to: 'pages#show', id: 'processes/human_rights_question_1'
   get 'processes/human_rights_question_2', to: 'pages#show', id: 'processes/human_rights_question_2'
   get 'processes/human_rights_question_3', to: 'pages#show', id: 'processes/human_rights_question_3'
-  get 'processes/urbanismo-bancos', to: 'benches#index', as: 'town_planning'
-  get 'processes/urbanismo-bancos-gracias', to: 'benches#thanks', as: 'town_planning_thanks'
-  get 'xxx/yyy', to: 'probes#show', id: 'town_planning'
+  get 'processes/urbanismo-bancos', to: 'probes#show', id: 'town_planning', as: 'town_planning'
+  get 'processes/urbanismo-bancos-gracias', to: 'probes#thanks', id: 'town_planning', as: 'town_planning_thanks'
   get 'noticias', to: 'pages#show', id: 'news'
   get 'participatory_budget/in_two_minutes', to: 'pages#show', id: 'participatory_budget/in_two_minutes'
   get 'presupuestos-participativos-resultados', to: 'spending_proposals#results', as: 'participatory_budget_results'
