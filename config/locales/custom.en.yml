@@ -4,10 +4,16 @@ en:
     probes:
       index:
         title: Probes
+        no_results: No probes created
         status:
           selecting: Selecting
           results: Results published
+      show:
+        option: Option
+        selects: Votes
   probes:
+    codenames:
+      town_planning: 'Town planning - Benches'
     verified_only: To participate in this process you need to %{verify_account}
     verify_account: verify your account
     not_logged_in: You must %{signin} or %{signup} to continue.

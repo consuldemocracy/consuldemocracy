@@ -41,8 +41,6 @@ feature 'Probes' do
         expect(page).to have_content "Tu voto ha sido recibido"
         expect(page).to have_content "Has votado el proyecto: #{@probe_option_1.name}"
       end
-
-
     end
 
     scenario 'Selecting not allowed: Results published' do

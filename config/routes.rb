@@ -166,6 +166,8 @@ Rails.application.routes.draw do
       get :results, on: :collection
     end
 
+    resources :probes, only: [:index, :show]
+
     resources :banners, only: [:index, :new, :create, :edit, :update, :destroy] do
       collection { get :search}
     end

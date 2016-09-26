@@ -4,10 +4,16 @@ es:
     probes:
       index:
         title: Sondeos
+        no_results: No se creado ningún sondeo
         status:
           selecting: Votación en curso
           results: Resultados publicados
+      show:
+        option: Opción
+        selects: Número de votos
   probes:
+    codenames:
+      town_planning: 'Planificación urbana - Bancos'
     verified_only: La participación en este proceso está restringida a usuarios verificados, %{verify_account}.
     verify_account: verifica tu cuenta
     not_logged_in: Necesitas %{signin} o %{signup} para continuar.
