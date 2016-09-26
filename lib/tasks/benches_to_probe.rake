@@ -1,7 +1,7 @@
 namespace :temp do
   desc "Migrates benches feature to custom probe"
   task benches_to_probe: :environment do |t|
-    town_planning = Probe.create!(codename: "town_planning")
+    town_planning = Probe.create!(codename: "town_planning", selecting_allowed: false)
 
     Bench.find_each do |bench|
       option = ProbeOption.create(probe_id: town_planning.id, name: bench.name, code: bench.code)
