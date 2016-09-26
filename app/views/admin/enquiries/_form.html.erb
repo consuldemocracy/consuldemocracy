@@ -19,6 +19,8 @@
 
       <%= f.text_field :question, maxlength: Enquiry.question_max_length %>
 
+      <%= f.text_field :valid_answers %>
+
       <%= f.text_area :summary, rows: 4, maxlength: 200 %>
 
       <div class="ckeditor">

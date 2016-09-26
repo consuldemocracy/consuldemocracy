@@ -71,6 +71,7 @@ es:
       enquiry:
         title: "Título"
         question: "Pregunta"
+        valid_answers: "Posibles respuestas"
         summary: "Resumen"
         description: "Descripción"
         open_at: "Fecha apertura"

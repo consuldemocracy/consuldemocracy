@@ -388,6 +388,7 @@ en:
       back: "Go back to my activity"
   enquiries:
     create_enquiry: "Create enquiry"
+    default_valid_answers: "Yes, No"
     index:
       filters:
         opened: "Open"

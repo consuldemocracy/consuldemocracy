@@ -43,6 +43,10 @@ class Enquiry < ActiveRecord::Base
     super.try :html_safe
   end
 
+  def valid_answers
+    (super.try(:split, ',') || []).map(&:strip)
+  end
+
   def copy_attributes_from_proposal(proposal)
     if proposal.present?
       self.author = proposal.author

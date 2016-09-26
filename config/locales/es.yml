@@ -388,6 +388,7 @@ es:
       back: "Volver a mi actividad"
   enquiries:
     create_enquiry: "Crear votación"
+    default_valid_answers: "Sí, No"
     index:
       filters:
         opened: "Abiertas"

@@ -356,6 +356,7 @@ FactoryGirl.define do
     sequence(:question) { |n| "Enquiry question #{n}" }
     open_at { 1.month.ago }
     closed_at { 1.month.from_now }
+    valid_answers { Faker::Lorem.words(3).join(', ') }
 
     trait :incoming do
       open_at { 2.days.from_now }

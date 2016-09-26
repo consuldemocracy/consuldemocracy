@@ -86,6 +86,7 @@ feature 'Admin enquiries' do
     expect(page).to have_field('enquiry_summary', with: p.summary)
     expect(page).to have_field('enquiry_description', with: p.description)
     expect(page).to have_field('enquiry_question', with: p.question)
+    expect(page).to have_field('enquiry_valid_answers', with: "Yes, No")
 
     geozones.each do |g|
       expect(page).to have_checked_field("enquiry_geozone_ids_#{g.id}")

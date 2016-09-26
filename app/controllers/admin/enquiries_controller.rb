@@ -9,6 +9,7 @@ class Admin::EnquiriesController < Admin::BaseController
   def new
     @enquiry.open_at = Date.today.to_datetime
     @enquiry.closed_at = 1.month.from_now
+    @enquiry.valid_answers = I18n.t('enquiries.default_valid_answers')
     proposal = Proposal.find(params[:proposal_id]) if params[:proposal_id].present?
     @enquiry.copy_attributes_from_proposal(proposal)
   end
@@ -47,7 +48,7 @@ class Admin::EnquiriesController < Admin::BaseController
     end
 
     def enquiry_params
-      params.require(:enquiry).permit(:title, :question, :summary, :description, :external_url, :open_at, :closed_at, :proposal_id, :geozone_ids => [])
+      params.require(:enquiry).permit(:title, :question, :summary, :description, :external_url, :open_at, :closed_at, :proposal_id, :valid_answers, :geozone_ids => [])
     end
 
 end

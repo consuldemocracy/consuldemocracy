@@ -25,5 +25,12 @@ RSpec.describe Enquiry, type: :model do
     end
   end
 
+  describe "valid_answers" do
+    it "gets a comma-separated string, but returns an array" do
+      e = create(:enquiry, valid_answers: "Yes, No")
+      expect(e.valid_answers).to eq(["Yes", "No"])
+    end
+  end
+
 
 end
