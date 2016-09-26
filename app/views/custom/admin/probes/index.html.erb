@@ -1,0 +1,25 @@
+<h2 class="inline-block"><%= t("admin.probes.index.title") %></h2>
+
+<% if @probes.blank? %>
+  <h3><% t("admin.probes.index.no_results") %></h3>
+<% end %>
+
+<table>
+  <% @probes.each do |probe| %>
+    <tr id="<%= dom_id(probe) %>" class="probe">
+      <td>
+        <%= link_to t("probes.codenames.#{probe.codename}"), admin_probe_path(probe) %>
+      </td>
+      <td class="small">
+        <% if probe.selecting_allowed? %>
+          <%= t("admin.probes.index.status.selecting") %>
+        <% else %>
+          <%= t("admin.probes.index.status.results") %>
+        <% end %>
+      </td>
+
+    </tr>
+  <% end %>
+</table>
+
+<%= paginate @probes %>

@@ -457,3 +457,25 @@ benches = [
 benches.each do |name, code|
   Bench.create(name: name, code: code)
 end
+
+puts "Creating Probe and ProbeOptions for Town Planning project"
+
+town_planning = Probe.create(codename: "town_planning")
+
+town_planning_options = [
+["Balle Malle Hupe und Artur", "003"],
+["Delta", "022"],
+["Mas Madrid", "025"],
+["MADBENCH", "033"],
+["Yo tenía tres sillas en mi casa...", "036"],
+["Sedere", "040"],
+["TAKETE", "048"],
+["Mucho gusto Madrid", "054"],
+["SIENTAMADRID!", "084"],
+["ARCO", "130"],
+["a_park_ando", "149"],
+["Benditas costumbres", "174"]]
+
+town_planning_options.each do |name, code|
+  ProbeOption.create(probe_id: town_planning.id, name: name, code: code)
+end
