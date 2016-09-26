@@ -1,5 +1,12 @@
 ---
 en:
+  admin:
+    probes:
+      index:
+        title: Probes
+        status:
+          selecting: Selecting
+          results: Results published
   probes:
     verified_only: To participate in this process you need to %{verify_account}
     verify_account: verify your account

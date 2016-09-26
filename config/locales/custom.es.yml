@@ -1,5 +1,12 @@
 ---
 es:
+  admin:
+    probes:
+      index:
+        title: Sondeos
+        status:
+          selecting: Votación en curso
+          results: Resultados publicados
   probes:
     verified_only: La participación en este proceso está restringida a usuarios verificados, %{verify_account}.
     verify_account: verifica tu cuenta
