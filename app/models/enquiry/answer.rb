@@ -6,5 +6,6 @@ class Enquiry::Answer < ActiveRecord::Base
   validates :enquiry, presence: true
   validates :author, presence: true
   validates :answer, presence: true
+  validates :answer, inclusion: {in: ->(a) { a.enquiry.valid_answers }}
 
 end

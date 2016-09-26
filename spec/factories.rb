@@ -368,4 +368,9 @@ FactoryGirl.define do
       closed_at { 15.days.ago }
     end
   end
+
+  factory :enquiry_answer, class: 'Enquiry::Answer' do
+    association :author, factory: :user
+    enquiry
+  end
 end
