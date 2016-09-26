@@ -9,7 +9,7 @@
   <th><%= t("admin.probes.show.option") %></th>
   <th><%= t("admin.probes.show.selects") %></th>
 
-<% @probe.probe_options.each do |probe_option| %>
+<% @probe_options.each do |probe_option| %>
   <tr id="<%= dom_id(probe_option) %>">
     <td class="name">
       <%= probe_option.name %>
