@@ -214,7 +214,6 @@ Rails.application.routes.draw do
       get :direct_messages, on: :collection
       get :redeemable_codes, on: :collection
       get :user_invites, on: :collection
-      get :benches, on: :collection
     end
 
     namespace :api do
@@ -293,8 +292,6 @@ Rails.application.routes.draw do
 
   resources :forums, only: [:index, :create, :show]
   resources :representatives, only: [:create, :destroy]
-
-  resources :benches, only: [:index]
 
   resources :probes, only: [:show] do
     post :selection,  on: :collection

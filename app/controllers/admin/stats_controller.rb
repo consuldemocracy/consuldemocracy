@@ -67,8 +67,4 @@ class Admin::StatsController < Admin::BaseController
     @clicked_signup_button = Ahoy::Event.where(name: :clicked_signup_button).count
   end
 
-  def benches
-    @benches = Bench.all
-  end
-
 end
