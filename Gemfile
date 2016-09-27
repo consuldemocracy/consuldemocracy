@@ -19,6 +19,9 @@ gem 'jquery-ui-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 
+# Fix sprockets on the
+gem 'sprockets', '~> 3.6.3'
+
 gem 'devise', '~> 3.5.7'
 gem 'devise_security_extension'
 # Use ActiveModel has_secure_password
@@ -39,7 +42,7 @@ gem 'ckeditor', '~> 4.2.0'
 gem 'invisible_captcha', '~> 0.9.1'
 gem 'cancancan'
 gem 'social-share-button'
-gem 'initialjs-rails', '0.2.0.1'
+gem 'initialjs-rails', '0.2.0.4'
 gem 'unicorn', '~> 5.1.0'
 gem 'paranoia'
 gem 'rinku', require: 'rails_rinku'

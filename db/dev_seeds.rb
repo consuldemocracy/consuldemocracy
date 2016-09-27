@@ -13,6 +13,7 @@ Setting.create(key: 'max_votes_for_debate_edit', value: '1000')
 Setting.create(key: 'max_votes_for_proposal_edit', value: '1000')
 Setting.create(key: 'proposal_code_prefix', value: 'MAD')
 Setting.create(key: 'votes_for_proposal_success', value: '100')
+Setting.create(key: 'months_to_archive_proposals', value: '12')
 Setting.create(key: 'comments_body_max_length', value: '1000')
 
 Setting.create(key: 'twitter_handle', value: '@consul_dev')
@@ -149,7 +150,7 @@ tags = Faker::Lorem.words(25)
   description = "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>"
   proposal = Proposal.create!(author: author,
                               title: Faker::Lorem.sentence(3).truncate(60),
-                              question: Faker::Lorem.sentence(3),
+                              question: Faker::Lorem.sentence(3) + "?",
                               summary: Faker::Lorem.sentence(3),
                               responsible_name: Faker::Name.name,
                               external_url: Faker::Internet.url,
@@ -161,6 +162,27 @@ tags = Faker::Lorem.words(25)
   puts "    #{proposal.title}"
 end
 
+puts "Creating Archived Proposals"
+
+tags = Faker::Lorem.words(25)
+(1..5).each do |i|
+  author = User.reorder("RANDOM()").first
+  description = "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>"
+  proposal = Proposal.create!(author: author,
+                              title: Faker::Lorem.sentence(3).truncate(60),
+                              question: Faker::Lorem.sentence(3) + "?",
+                              summary: Faker::Lorem.sentence(3),
+                              responsible_name: Faker::Name.name,
+                              external_url: Faker::Internet.url,
+                              description: description,
+                              created_at: rand((Time.now - 1.week) .. Time.now),
+                              tag_list: tags.sample(3).join(','),
+                              geozone: Geozone.reorder("RANDOM()").first,
+                              terms_of_service: "1",
+                              created_at: Setting["months_to_archive_proposals"].to_i.months.ago)
+  puts "    #{proposal.title}"
+end
+
 
 tags = ActsAsTaggableOn::Tag.where(kind: 'category')
 (1..30).each do |i|
@@ -168,7 +190,7 @@ tags = ActsAsTaggableOn::Tag.where(kind: 'category')
   description = "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>"
   proposal = Proposal.create!(author: author,
                               title: Faker::Lorem.sentence(3).truncate(60),
-                              question: Faker::Lorem.sentence(3),
+                              question: Faker::Lorem.sentence(3) + "?",
                               summary: Faker::Lorem.sentence(3),
                               responsible_name: Faker::Name.name,
                               external_url: Faker::Internet.url,
