@@ -48,6 +48,7 @@ module Abilities
         can :create, SpendingProposal
         can :create, DirectMessage
         can :show, DirectMessage, sender_id: user.id
+        can :create, Enquiry::Answer
       end
 
       can [:create, :show], ProposalNotification, proposal: { author_id: user.id }

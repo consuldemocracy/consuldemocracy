@@ -409,6 +409,9 @@ en:
       more_info: "More information"
       button_yes: "Yes"
       button_no: "No"
+      login_to_vote: "You must log in in order to vote"
+      verify_to_vote_html: "You must %{verify_link} in order to vote"
+      verify_link: "verify your account"
     banner:
       featured_title: "#NextVoting"
       info: "New proposals that have reached the voting phase."

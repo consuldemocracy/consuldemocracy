@@ -103,6 +103,8 @@ describe "Abilities::Common" do
     it { should be_able_to(:create, DirectMessage) }
     it { should be_able_to(:show, own_direct_message) }
     it { should_not be_able_to(:show, create(:direct_message)) }
+
+    it { should be_able_to(:create, Enquiry::Answer) }
   end
 
   describe "when level 3 verified" do

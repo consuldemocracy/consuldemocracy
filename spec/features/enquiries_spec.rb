@@ -51,4 +51,42 @@ feature 'Enquiries' do
       expect(page).to_not have_link('Expired')
     end
   end
+
+  context 'Show' do
+    background do
+      @enquiry = create(:enquiry, valid_answers: 'Han Solo, Chewbacca')
+    end
+
+    scenario 'Non-logged in users' do
+      visit enquiry_path(@enquiry)
+
+      expect(page).to have_content('Han Solo')
+      expect(page).to have_content('Chewbacca')
+      expect(page).to have_content('You must log in in order to vote')
+
+      expect(page).to_not have_link('Han Solo')
+      expect(page).to_not have_link('Chewbacca')
+    end
+
+    scenario 'Level 1 users' do
+      login_as(create(:user))
+      visit enquiry_path(@enquiry)
+
+      expect(page).to have_content('Han Solo')
+      expect(page).to have_content('Chewbacca')
+      expect(page).to have_content('You must verify your account in order to vote')
+
+      expect(page).to_not have_link('Han Solo')
+      expect(page).to_not have_link('Chewbacca')
+    end
+
+    scenario 'Level 2 users' do
+      login_as(create(:user, :level_two))
+      visit enquiry_path(@enquiry)
+
+      expect(page).to have_link('Han Solo')
+      expect(page).to have_link('Chewbacca')
+    end
+  end
+
 end

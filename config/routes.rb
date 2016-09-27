@@ -61,7 +61,9 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :enquiries, only: [:index, :show]
+  resources :enquiries, only: [:index, :show] do
+    resources :answer, only: [:create]
+  end
 
   resources :comments, only: [:create, :show], shallow: true do
     member do
