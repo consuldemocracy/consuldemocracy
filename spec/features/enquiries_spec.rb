@@ -52,7 +52,7 @@ feature 'Enquiries' do
     end
   end
 
-  context 'Show' do
+  context 'Answering' do
     background do
       @enquiry = create(:enquiry, valid_answers: 'Han Solo, Chewbacca')
     end
@@ -80,7 +80,7 @@ feature 'Enquiries' do
       expect(page).to_not have_link('Chewbacca')
     end
 
-    scenario 'Level 2 users' do
+    scenario 'Level 2 users who can answer' do
       login_as(create(:user, :level_two))
       visit enquiry_path(@enquiry)
 
@@ -98,6 +98,18 @@ feature 'Enquiries' do
       expect(page).to_not have_link('Chewbacca')
       expect(page).to have_content('Chewbacca')
     end
+
+    scenario 'Level 2 users answering', :js do
+      user = create(:user, :level_two)
+      login_as user
+      visit enquiry_path(@enquiry)
+
+      click_link 'Han Solo'
+
+      expect(page).to_not have_link('Han Solo')
+      expect(page).to have_link('Chewbacca')
+    end
+
   end
 
 end
