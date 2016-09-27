@@ -87,6 +87,17 @@ feature 'Enquiries' do
       expect(page).to have_link('Han Solo')
       expect(page).to have_link('Chewbacca')
     end
+
+    scenario 'Level 2 users who have already answered' do
+      user = create(:user, :level_two)
+      create(:enquiry_answer, enquiry: @enquiry, author: user, answer: 'Chewbacca')
+      login_as user
+      visit enquiry_path(@enquiry)
+
+      expect(page).to have_link('Han Solo')
+      expect(page).to_not have_link('Chewbacca')
+      expect(page).to have_content('Chewbacca')
+    end
   end
 
 end

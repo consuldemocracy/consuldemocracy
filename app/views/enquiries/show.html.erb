@@ -52,7 +52,12 @@
     <% if can? :create, Enquiry::Answer %>
       <% @enquiry.valid_answers.each do |answer| %>
         <div class="small-12 medium-6 large-3 large-offset-3 column">
-          <%= link_to answer, "#", class: "button expanded" %>
+          <%= @existing_answer %>
+          <% if @existing_answer.try(:answer) == answer %>
+            <span><%= answer %></span>
+          <% else %>
+            <%= link_to answer, "#", class: "button expanded" %>
+          <% end %>
         </div>
       <% end %>
     <% else %>
