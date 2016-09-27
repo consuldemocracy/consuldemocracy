@@ -62,7 +62,7 @@ Rails.application.routes.draw do
   end
 
   resources :enquiries, only: [:index, :show] do
-    resources :answer, only: [:create]
+    member { post :answer }
   end
 
   resources :comments, only: [:create, :show], shallow: true do
