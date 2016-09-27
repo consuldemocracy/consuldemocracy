@@ -195,6 +195,7 @@ puts "Creating Enquiries"
                             description: description,
                             open_at: open_at,
                             closed_at: open_at + 1.month,
+                            valid_answers: Faker::Lorem.words(3).join(', '),
                             geozones: Geozone.reorder("RANDOM()").limit(3))
   puts "    #{enquiry.title}"
 end
@@ -202,7 +203,7 @@ end
 (1..5).each do |i|
   proposal = Proposal.reorder("RANDOM()").first
   open_at = rand(proposal.created_at .. (proposal.created_at + 1.month))
-  enquiry = Enquiry.create(open_at: open_at, closed_at: open_at + 1.month)
+  enquiry = Enquiry.create(open_at: open_at, closed_at: open_at + 1.month, valid_answers: "Yes, No")
   enquiry.copy_attributes_from_proposal(proposal)
   enquiry.save
 
