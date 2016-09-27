@@ -47,33 +47,8 @@
   </div>
 </div>
 
-<div class="row margin-top text-center">
-  <div class="enquiries-buttons">
-    <% if can? :create, Enquiry::Answer %>
-      <% @enquiry.valid_answers.each do |answer| %>
-        <div class="small-12 medium-6 large-3 large-offset-3 column">
-          <%= @existing_answer %>
-          <% if @existing_answer.try(:answer) == answer %>
-            <span><%= answer %></span>
-          <% else %>
-            <%= link_to answer, "#", class: "button expanded" %>
-          <% end %>
-        </div>
-      <% end %>
-    <% else %>
-      <% @enquiry.valid_answers.each do |answer| %>
-        <div class="small-12 medium-6 large-3 large-offset-3 column">
-          <span><%= answer %></span>
-        </div>
-      <% end %>
-      <% if current_user.present? %>
-        <%= t('enquiries.show.verify_to_vote_html',
-              verify_link: link_to(t('enquiries.show.verify_link'), verification_path)) %>
-      <% else %>
-        <%= t('enquiries.show.login_to_vote') %>
-      <% end %>
-    <% end %>
-  </div>
+<div class="row margin-top text-center" id="<%= dom_id(@enquiry) %>_answers">
+  <%= render "enquiries/answers", enquiry: @enquiry %>
 </div>
 
 <div class="row margin-top">

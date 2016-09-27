@@ -1,0 +1,27 @@
+<div class="enquiries-answers">
+  <div class="small-12 medium-6 large-3 large-offset-3 column">
+    <% if can? :answer, enquiry %>
+      <% enquiry.valid_answers.each do |answer| %>
+        <% if @enquiry_answer.try(:answer) == answer %>
+          <span class="button success"><%= answer %></span>
+        <% else %>
+          <%= link_to answer,
+            answer_enquiry_path(enquiry: enquiry, answer: answer),
+            method: :post,
+            remote: true,
+            class: "button expanded" %>
+        <% end %>
+      <% end %>
+    <% else %>
+      <% enquiry.valid_answers.each do |answer| %>
+        <span class="button disabled"><%= answer %></span>
+      <% end %>
+      <% if current_user.present? %>
+        <%= t('enquiries.show.verify_to_vote_html',
+              verify_link: link_to(t('enquiries.show.verify_link'), verification_path)) %>
+      <% else %>
+        <%= t('enquiries.show.login_to_vote') %>
+      <% end %>
+    <% end %>
+  </div>
+</div>
