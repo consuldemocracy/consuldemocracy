@@ -4,7 +4,7 @@ en:
   devise:
     password_expired:
       expire_password: "Password expired"
-      change_required: "Your password has expired"
+      change_required: "Your password is expired"
       change_password: "Change your password"
       new_password: "New password"
       updated: "Password successfully updated"
