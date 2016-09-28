@@ -262,6 +262,11 @@ Rails.application.routes.draw do
     end
   end
 
+  # GraphQL
+  mount GraphiQL::Rails::Engine, at: "/graphiql", graphql_path: "/queries"
+  post '/queries', to: 'graphql#query'
+
+
   if Rails.env.development?
     mount LetterOpenerWeb::Engine, at: "/letter_opener"
   end
