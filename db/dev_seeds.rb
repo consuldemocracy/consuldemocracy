@@ -364,3 +364,7 @@ puts "Creating polls"
 3.times.each_with_index do |i|
   Poll.create(name: "Poll #{i}")
 end
+
+10.times.each_with_index do |i|
+  Poll::Booth.create(name: "Booth #{i}", poll: Poll.all.sample)
+end
