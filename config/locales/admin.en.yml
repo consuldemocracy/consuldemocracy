@@ -208,7 +208,7 @@ en:
         location: "Location"
         assign_officer: "Assign officer"
         officers_list: "List of officers"
-        no_officers: "There is no officers in this booth."
+        no_officers: "There are no officers assigned to this booth"
     officials:
       edit:
         destroy: Remove 'Official' status

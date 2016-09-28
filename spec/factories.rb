@@ -267,6 +267,11 @@ FactoryGirl.define do
     user
   end
 
+  factory :officing_booth, class: 'Poll::OfficingBooth' do
+    association :officer, factory: :poll_officer
+    association :booth,   factory: :poll_booth
+  end
+
   factory :poll_booth, class: 'Poll::Booth' do
     sequence(:name) { |n| "Booth #{n}" }
     sequence(:location) { |n| "Street #{n}" }

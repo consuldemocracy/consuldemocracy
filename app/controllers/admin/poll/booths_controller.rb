@@ -8,6 +8,7 @@ class Admin::Poll::BoothsController < Admin::BaseController
   end
 
   def show
+    @officers = Poll::Officer.all
   end
 
   def new
@@ -35,7 +36,7 @@ class Admin::Poll::BoothsController < Admin::BaseController
   private
 
     def booth_params
-      params.require(:poll_booth).permit(:name, :location)
+      params.require(:poll_booth).permit(:name, :location, officer_ids: [])
     end
 
     def load_polls
