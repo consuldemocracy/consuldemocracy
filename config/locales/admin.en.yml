@@ -179,6 +179,7 @@ en:
         booths_title: "List of booths"
         name: "Name"
         location: "Location"
+        officers: "Officers"
     booths:
       index:
         title: "List of booths"
