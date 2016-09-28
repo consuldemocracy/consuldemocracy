@@ -80,6 +80,10 @@ feature 'Enquiries' do
       expect(page).to_not have_link('Chewbacca')
     end
 
+    xscenario 'Level 2 users in an incoming enquiry'
+    xscenario 'Level 2 users in an expired enquiry'
+    xscenario 'Level 2 users in an enquiry for a geozone which is not theirs'
+
     scenario 'Level 2 users who can answer' do
       login_as(create(:user, :level_two))
       visit enquiry_path(@enquiry)
