@@ -9,37 +9,28 @@
             edit_admin_poll_path(@poll),
             class: "button hollow float-right" %>
 
-<%= link_to t("admin.polls.show.add_booth"), "#", class: "button success" %>
+<%= link_to t("admin.polls.show.add_booth"),
+            new_admin_poll_booth_path(@poll),
+            class: "button success" %>
 
-<!-- If booth in this poll == 0 -->
-<div class="callout primary">
-  <%= t("admin.polls.show.no_booths") %>
-</div>
-<!-- else -->
+<% if @poll.booths.empty? %>
+  <div class="callout primary">
+    <%= t("admin.polls.show.no_booths") %>
+  </div>
+<% else %>
+  <h2><%= t("admin.polls.show.booths_title") %></h2>
 
-<h2><%= t("admin.polls.show.booths_title") %></h2>
-
-<table>
-  <thead>
-    <th><%= t("admin.polls.show.name") %></th>
-    <th><%= t("admin.polls.show.location") %></th>
-    <th>&nbsp;</th>
-  </thead>
-  <tbody>
-  <%= @poll.booths.each do |booth| %>
-    <tr>
-      <td>
-        <strong>
-          <%= link_to "Urna Moncloa (REFNUM)", "#" %>
-        </strong>
-      </td>
-      <td>
-        C/ Isaac Peral, 25. 28003, Madrid
-      </td>
-      <td class="text-right">
-        <%= link_to t("admin.actions.edit"), "#", class: "button hollow" %>
-      </td>
-    </tr>
-  <% end %>
-  </tbody>
-</table>
+  <table>
+    <thead>
+      <th><%= t("admin.polls.show.name") %></th>
+      <th><%= t("admin.polls.show.location") %></th>
+      <th><%= t("admin.polls.show.officers") %></th>
+      <th>&nbsp;</th>
+    </thead>
+    <tbody>
+      <% @poll.booths.each do |booth| %>
+        <%= render partial: "admin/poll/booths/booth", locals: { booth: booth } %>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>

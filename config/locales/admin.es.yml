@@ -179,6 +179,7 @@ es:
         booths_title: "Listado de urnas"
         name: "Nombre"
         location: "Ubicación"
+        officers: "Presidentes de mesa"
     booths:
       index:
         title: "Lista de urnas"

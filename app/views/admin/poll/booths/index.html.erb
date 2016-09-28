@@ -20,7 +20,7 @@
 <% end %>
 
 <%= link_to t("admin.booths.index.add_booth"),
-            new_admin_poll_booth_path,
+            new_admin_poll_booth_path(@poll),
             class: "button success" %>
 
 <table>
@@ -32,24 +32,7 @@
   </thead>
   <tbody>
   <% @booths.each do |booth| %>
-    <tr id="booth_<%= booth.id %>" class="booth">
-      <td>
-        <strong>
-          <%= link_to booth.name, admin_poll_booth_path(@poll, booth) %>
-        </strong>
-      </td>
-      <td>
-        <%= booth.location %>
-      </td>
-      <td>
-        N <%= t("admin.booths.index.officers") %>
-      </td>
-      <td class="text-right">
-        <%= link_to t("admin.actions.edit"),
-                    edit_admin_poll_booth_path(@poll, booth),
-                    class: "button hollow" %>
-      </td>
-    </tr>
+    <%= render partial: "booth", locals: { booth: booth } %>
   <% end %>
   </tbody>
 </table>

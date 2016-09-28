@@ -1,0 +1,18 @@
+<tr id="booth_<%= booth.id %>" class="booth">
+  <td>
+    <strong>
+      <%= link_to booth.name, admin_poll_booth_path(@poll, booth) %>
+    </strong>
+  </td>
+  <td>
+    <%= booth.location %>
+  </td>
+  <td>
+    N <%= t("admin.booths.index.officers") %>
+  </td>
+  <td class="text-right">
+    <%= link_to t("admin.actions.edit"),
+                edit_admin_poll_booth_path(@poll, booth),
+                class: "button hollow" %>
+  </td>
+</tr>

@@ -27,7 +27,8 @@ feature 'Admin polls' do
 
     expect(page).to have_css ".poll", count: 3
 
-    Poll.all.each do |poll|
+    polls = Poll.all
+    polls.each do |poll|
       within("#poll_#{poll.id}") do
         expect(page).to have_content poll.name
       end
@@ -77,6 +78,47 @@ feature 'Admin polls' do
     end
 
     expect(current_path).to eq(edit_admin_poll_path(poll))
+  end
+
+  context "Booths" do
+
+    context "Poll show" do
+
+      scenario "No booths" do
+        poll = create(:poll)
+        visit admin_poll_path(poll)
+
+        expect(page).to have_content "There are no booths in this poll."
+      end
+
+      scenario "Booth list" do
+        poll = create(:poll)
+        3.times { create(:poll_booth, poll: poll) }
+
+        visit admin_poll_path(poll)
+
+        expect(page).to have_css ".booth", count: 3
+
+        booths = Poll::Booth.all
+        booths.each do |booth|
+          within("#booth_#{booth.id}") do
+            expect(page).to have_content booth.name
+            expect(page).to have_content booth.location
+          end
+        end
+        expect(page).to_not have_content "There are no booths"
+      end
+
+      scenario "Add booth" do
+        poll = create(:poll)
+        visit admin_poll_path(poll)
+
+        click_link "Add booth"
+
+        expect(current_path).to eq(new_admin_poll_booth_path(poll))
+        expect(page).to have_content poll.name
+      end
+    end
   end
 
 end
