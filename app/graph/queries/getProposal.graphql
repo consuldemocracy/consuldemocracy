@@ -1,0 +1,7 @@
+query getProposal {
+  proposal(id: 22) {
+    id,
+    title,
+    description
+  }
+}
