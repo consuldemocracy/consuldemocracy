@@ -280,8 +280,11 @@ ActiveRecord::Schema.define(version: 20161102133838) do
     t.integer "user_id"
   end
 
-  create_table "poll_officers", force: :cascade do |t|
-    t.integer "user_id"
+  create_table "poll_officing_booths", force: :cascade do |t|
+    t.integer  "officer_id"
+    t.integer  "booth_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "poll_voters", force: :cascade do |t|
