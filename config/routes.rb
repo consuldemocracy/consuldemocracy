@@ -179,7 +179,7 @@ Rails.application.routes.draw do
       get :search, on: :collection
     end
 
-    scope module: 'poll' do
+    scope module: :poll do
       resources :officers do
         get :search, on: :collection
       end

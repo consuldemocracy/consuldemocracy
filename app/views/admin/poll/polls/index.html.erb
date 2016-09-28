@@ -4,7 +4,7 @@
             new_admin_poll_path,
             class: "button success float-right" %>
 
-<% if Poll.any? %>
+<% if @polls.any? %>
   <table>
     <thead>
       <th><%= t("admin.polls.index.name") %></th>
