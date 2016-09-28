@@ -315,13 +315,18 @@ Rails.application.routes.draw do
   get 'processes/human_rights_question_1', to: 'pages#show', id: 'processes/human_rights_question_1'
   get 'processes/human_rights_question_2', to: 'pages#show', id: 'processes/human_rights_question_2'
   get 'processes/human_rights_question_3', to: 'pages#show', id: 'processes/human_rights_question_3'
-  get 'processes/urbanismo-bancos', to: 'probes#show', id: 'town_planning', as: 'town_planning'
-  get 'processes/urbanismo-bancos-gracias', to: 'probes#thanks', id: 'town_planning', as: 'town_planning_thanks'
   get 'noticias', to: 'pages#show', id: 'news'
   get 'participatory_budget/in_two_minutes', to: 'pages#show', id: 'participatory_budget/in_two_minutes'
   get 'presupuestos-participativos-resultados', to: 'spending_proposals#results', as: 'participatory_budget_results'
   get 'presupuestos-participativos-estadisticas', to: 'spending_proposals#stats', as: 'participatory_budget_stats'
   get 'vota', to: 'proposal_ballots#index', as: 'proposal_ballots_index'
+
+  #Probes
+  get 'processes/urbanismo-bancos', to: 'probes#show', id: 'town_planning', as: 'town_planning'
+  get 'processes/urbanismo-bancos-gracias', to: 'probes#thanks', id: 'town_planning', as: 'town_planning_thanks'
+  get 'proceso/plaza-espana', to: 'probes#show', id: 'plaza', as: 'plaza'
+  get 'proceso/plaza-espana-gracias', to: 'probes#thanks', id: 'plaza', as: 'plaza_thanks'
+
 
   resources :pages, path: '/', only: [:show]
 end

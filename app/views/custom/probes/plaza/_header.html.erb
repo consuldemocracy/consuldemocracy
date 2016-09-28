@@ -1,0 +1,7 @@
+<% provide :title, "Plaza de España" %>
+<% provide :social_media_meta_tags do %>
+<%= render "shared/social_media_meta_tags",
+           social_url: page_url("processes_plaza"),
+           social_title: t("pages.processes.index.process_plaza_title"),
+           social_description: t("pages.processes.index.process_plaza_description") %>
+<% end %>

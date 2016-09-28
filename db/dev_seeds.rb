@@ -439,9 +439,7 @@ Proposal.last(3).each do |proposal|
 end
 
 puts "Creating Probe and ProbeOptions for Town Planning project"
-
 town_planning = Probe.create(codename: "town_planning")
-
 town_planning_options = [
 ["Balle Malle Hupe und Artur", "003"],
 ["Delta", "022"],
@@ -458,4 +456,13 @@ town_planning_options = [
 
 town_planning_options.each do |name, code|
   ProbeOption.create(probe_id: town_planning.id, name: name, code: code)
+end
+
+puts "Creating Probe and ProbeOptions for Plaza de España project"
+plaza = Probe.create(codename: "plaza")
+plaza_options = [
+["Más o menos", "01"]]
+
+plaza_options.each do |option_name, option_code|
+  ProbeOption.create(probe_id: plaza.id, name: option_name, code: option_code)
 end
