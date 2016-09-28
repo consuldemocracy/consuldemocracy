@@ -478,7 +478,7 @@ plaza_options = [
 ["Alla donde se cruzan los caminos", "15"],
 ["NADA CORRE PEDALEA", "16"],
 ["El sueño de Cervantes", "19"],
-["ESplazal", "20"],
+["ESplaza", "20"],
 ["En un lugar de Madrid", "21"],
 ["CodigoAbierto", "22"],
 ["CampoCampo", "23"],
