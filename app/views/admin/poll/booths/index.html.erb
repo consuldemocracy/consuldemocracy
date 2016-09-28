@@ -1,22 +1,27 @@
 <h2><%= t("admin.booths.index.title") %></h2>
 
-<form>
-  <div class="small-12 medium-6">
-    <select>
-      <option><%= t("admin.booths.index.select_poll") %></option>
-    </select>
-  </div>
-</form>
-
-<h3><%= t("admin.booths.index.title_list") %></h3>
-
-<!-- If booths of this poll == 0 -->
-<div class="callout primary">
-  <%= t("admin.booths.index.no_booths") %>
+<div class="small-12 medium-6">
+  <%= form_tag '', method: :get do %>
+    <%= select_tag "poll_id",
+                   options_for_select(@polls.collect {|poll|
+                     [poll.name, admin_poll_booths_path(poll)]
+                   }),
+                   prompt: t("admin.booths.index.select_poll"),
+                   class: "js-location-changer" %>
+  <% end %>
 </div>
-<!-- end -->
 
-<%= link_to t("admin.booths.index.add_booth"), new_admin_poll_booth_path, class: "button success" %>
+<h3><%= t("admin.booths.index.title_list", poll: @poll.name) %></h3>
+
+<% if @booths.empty? %>
+  <div class="callout primary">
+    <%= t("admin.booths.index.no_booths") %>
+  </div>
+<% end %>
+
+<%= link_to t("admin.booths.index.add_booth"),
+            new_admin_poll_booth_path,
+            class: "button success" %>
 
 <table>
   <thead>
@@ -26,23 +31,25 @@
     <th>&nbsp;</th>
   </thead>
   <tbody>
-  <!-- @polls.each do |poll| -->
-    <tr>
+  <% @booths.each do |booth| %>
+    <tr id="booth_<%= booth.id %>" class="booth">
       <td>
         <strong>
-          <%= link_to "Urna Moncloa (REFNUM)", "booths/1" %>
+          <%= link_to booth.name, admin_poll_booth_path(@poll, booth) %>
         </strong>
       </td>
       <td>
-        C/ Isaac Peral, 25. 28003, Madrid
+        <%= booth.location %>
       </td>
       <td>
         N <%= t("admin.booths.index.officers") %>
       </td>
       <td class="text-right">
-        <%= link_to t("admin.actions.edit"), "booths/1/edit", class: "button hollow" %>
+        <%= link_to t("admin.actions.edit"),
+                    edit_admin_poll_booth_path(@poll, booth),
+                    class: "button hollow" %>
       </td>
     </tr>
-  <!-- end -->
+  <% end %>
   </tbody>
 </table>
