@@ -174,7 +174,7 @@ en:
         close_date: "Close date"
         submit_button: "Update poll"
       show:
-        no_booths: "There is no booths in this poll."
+        no_booths: "There are no booths in this poll."
         add_booth: "Add booth"
         booths_title: "List of booths"
         name: "Name"
@@ -184,7 +184,7 @@ en:
         title: "List of booths"
         select_poll: "Select a poll"
         title_list: "List of booths of poll %{poll}"
-        no_booths: "There is no booths in this poll."
+        no_booths: "There are no booths in this poll."
         add_booth: "Add booth"
         name: "Name"
         location: "Location"

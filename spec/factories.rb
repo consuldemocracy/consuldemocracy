@@ -269,6 +269,7 @@ FactoryGirl.define do
 
   factory :poll_booth, class: 'Poll::Booth' do
     sequence(:name) { |n| "Booth #{n}" }
+    sequence(:location) { |n| "Street #{n}" }
     poll
   end
 

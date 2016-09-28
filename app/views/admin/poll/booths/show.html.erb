@@ -1,10 +1,17 @@
 <%= render 'shared/back_link' %>
 <div class="clear"></div>
 
-<h2 class="inline-block">Urna Moncloa (REFNUM)</h2>
-<%= link_to t("admin.actions.edit"), "1/edit", class: "button hollow float-right" %>
+<h2 class="inline-block">
+  <%= @booth.name %>
+</h2>
+<%= link_to t("admin.actions.edit"),
+            edit_admin_poll_booth_path(@poll, @booth),
+            class: "button hollow float-right" %>
 
-<p><strong><%= t("admin.booths.show.location") %></strong>: C/ Isaac Peral, 25. 28003, Madrid</p>
+<p>
+  <strong><%= t("admin.booths.show.location") %></strong>:
+  <%= @booth.location %>
+</p>
 
 <h3><%= t("admin.booths.show.officers_list") %></h3>
 

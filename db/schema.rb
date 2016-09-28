@@ -273,6 +273,11 @@ ActiveRecord::Schema.define(version: 20161102133838) do
   create_table "poll_booths", force: :cascade do |t|
     t.string  "name"
     t.integer "poll_id"
+    t.string  "location"
+  end
+
+  create_table "poll_officers", force: :cascade do |t|
+    t.integer "user_id"
   end
 
   create_table "poll_officers", force: :cascade do |t|

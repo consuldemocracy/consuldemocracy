@@ -1,28 +1,7 @@
 <%= render 'shared/back_link' %>
 
-<h2><%= t("admin.booths.edit.title") %>: <%= t("admin.booths.edit.subtitle") %></h2>
+<h2><%= t("admin.booths.edit.title", poll: @poll.name) %>: <%= t("admin.booths.edit.subtitle") %></h2>
 
-<form>
-  <div class="row">
-    <div class="small-12 medium-6 column">
-      <label><%= t("admin.booths.edit.name") %></label>
-      <input type="text" placeholder="<%= t('admin.booths.edit.name') %>">
-    </div>
-
-    <div class="small-12 medium-6 column">
-      <label><%= t("admin.booths.edit.reference") %></label>
-      <input type="text" placeholder="<%= t('admin.booths.edit.reference') %>">
-    </div>
-
-    <div class="small-12 column">
-      <label><%= t("admin.booths.edit.location") %></label>
-      <input type="text" placeholder="<%= t("admin.booths.edit.location") %>">
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="small-12 medium-4 column">
-      <input type="submit" value="<%= t('admin.booths.edit.submit_button') %>" class="button success expanded">
-    </div>
-  </div>
-</form>
+<%= form_for @booth, url: admin_poll_booth_path(@poll, @booth) do |f| %>
+  <%= render "form", f: f %>
+<% end %>

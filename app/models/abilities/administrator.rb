@@ -40,12 +40,13 @@ module Abilities
       can [:search, :create, :index, :destroy], ::Manager
       can [:search, :create, :index, :destroy], ::Poll::Officer
 
-      can [:manage], Poll
-
       can :manage, Annotation
 
       can [:read, :update, :destroy, :summary], SpendingProposal
       can [:search, :edit, :update, :create, :index, :destroy], Banner
+
+      can [:manage], Poll
+      can [:manage], Poll::Booth
     end
   end
 end

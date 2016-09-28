@@ -56,4 +56,7 @@ describe "Abilities::Administrator" do
   it { should be_able_to(:update, SpendingProposal) }
   it { should be_able_to(:valuate, SpendingProposal) }
   it { should be_able_to(:destroy, SpendingProposal) }
+
+  it { should be_able_to(:manage, Poll) }
+  it { should be_able_to(:manage, Poll::Booth) }
 end
