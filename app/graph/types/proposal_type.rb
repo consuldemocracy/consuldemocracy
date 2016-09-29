@@ -17,4 +17,7 @@ ProposalType = GraphQL::ObjectType.define do
   field :retired_at, types.String, "Date when this proposal was retired"
   field :retired_reason, types.String, "Reason why this proposal was retired"
   field :retired_explanation, types.String, "Explanation why this proposal was retired"
+
+  # Linked resources
+  field :comments, !types[!CommentType], "Comments in this proposal"
 end
