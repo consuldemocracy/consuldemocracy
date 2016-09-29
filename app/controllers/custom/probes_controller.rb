@@ -2,10 +2,10 @@ class ProbesController < ApplicationController
   skip_authorization_check
 
   before_action :load_probe
+  before_action :load_probe_options, only: [:show]
   before_action :load_user_selection, only: [:show, :thanks]
 
   def show
-    @probe_options = @probe.probe_options.all.order(probe_selections_count: :desc)
     render probe_show_page
   end
 
@@ -39,6 +39,11 @@ class ProbesController < ApplicationController
 
     def load_probe
       @probe = Probe.find_by! codename: params[:id]
+    end
+
+    def load_probe_options
+      order = @probe.selecting_allowed? ? "RANDOM()" : { probe_selections_count: :desc }
+      @probe_options = @probe.probe_options.all.order(order)
     end
 
     def probe_show_route
