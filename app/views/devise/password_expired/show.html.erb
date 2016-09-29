@@ -1,7 +1,6 @@
 <h2><%= t("devise.password_expired.expire_password") %></h2>
 
 <%= form_for(resource, :as => resource_name, :url => [resource_name, :password_expired], :html => { :method => :put }) do |f| %>
-  <%= devise_error_messages! %>
 
   <%= f.password_field :current_password %></p>
 
