@@ -1,7 +1,7 @@
 <%= render "probes/#{@probe.codename}/header" %>
 
 
-<div class="expanded processes-show no-margin-top">
+<div class="expanded processes-show no-margin-top margin-bottom">
   <div class="row padding">
     <div class="small-12 medium-9 column">
       <%= render "shared/back_link" %>
@@ -15,7 +15,7 @@
 </div>
 
 <% if @probe_option.present? %>
-  <div class="row margin-top">
+  <div class="row margin">
     <div class="small-12 column">
       <div class="callout success">
         Has votado el proyecto <strong><%= @probe_option.name %></strong>. Puedes cambiarlo en cualquier momento hasta el día <u>33 de Febrero</u>.
@@ -26,27 +26,24 @@
 
 <div class="row" data-equalizer>
   <% @probe_options.each do |probe_option| %>
-    <div class="small-12 medium-4 column padding" data-equalizer-watch>
-      <div class="media-object">
-        <div class="media-object-section">
-          <div class="thumbnail">
-            <%= link_to probe_option.original_image_url, target: '_blank' do %>
-              <%= image_tag probe_option.thumb_image_url, alt: probe_option.name %>
-            <% end %>
-          </div>
+    <div class="small-6 medium-3 large-2 column end">
+      <div class="project" data-equalizer-watch>
+        <div class="thumbnail">
+          <%= link_to probe_option.original_image_url, class: 'project-thumbnail', target: '_blank' do %>
+            <%= image_tag probe_option.thumb_image_url, alt: probe_option.name %>
+          <% end %>
         </div>
 
-        <div class="media-object-section">
-          <h4><%= probe_option.name %></h4>
-          <%= link_to "Ver detalle", probe_option.original_image_url,
-                      title: t("shared.target_blank_html"),
-                      target: "_blank",
-                      class: "button hollow" %>
-          <br>
-          <%= link_to "Descargar dossier <small>(PDF | #{probe_option.pdf_size})</small>".html_safe,
-                      probe_option.pdf_url,
-                      title: probe_option.pdf_title,
-                      target: "_blank" %>
+        <div>
+          <h4 class="probe-title"><%= probe_option.name %></h4>
+
+          <div class="probe-links">
+            <%= link_to probe_option.pdf_url, title: probe_option.pdf_title,
+                        class: "download-pdf", target: "_blank" do %>
+                        <%= image_tag "icon_pdf.png" %>
+                        <%= "<small>(#{probe_option.pdf_size})</small>".html_safe %>
+            <% end %>
+          </div>
         </div>
       </div>
     </div>
@@ -63,7 +60,7 @@
           <% probe_option_group.compact.each do |probe_option| %>
             <label>
               <%= radio_button_tag("option_id", probe_option.id, @probe_option.try(:id) == probe_option.id) %>
-              <span><%= probe_option.name %></span>
+              <span class="probe-option"><%= probe_option.name %></span>
             </label>
           <% end %>
         </div>

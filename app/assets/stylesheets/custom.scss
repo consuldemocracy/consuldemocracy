@@ -1757,6 +1757,58 @@ table.probe-results {
   }
 }
 
+.project {
+  background: #F3F3F3;
+  border-bottom: 2px solid #e0e0e0;
+  margin-bottom: $line-height/2;
+  padding: 0 $line-height/2 $line-height;
+  position: relative;
+  text-align: center;
+
+  .thumbnail {
+    box-shadow: none;
+    margin-top: $line-height;
+  }
+}
+
+.probe-title {
+  font-size: $small-font-size;
+}
+
+.project-thumbnail {
+  display: block;
+  position: relative;
+
+  &:before {
+    bottom: 6px;
+    content: image-url('icon_zoom.png');
+    position: absolute;
+    right: 6px;
+  }
+}
+
+.probe-links {
+  bottom: 0;
+  left: 0;
+  padding-bottom: $line-height/2;
+  padding-left: $line-height/2;
+  position: absolute;
+  text-align: left;
+  width: 100%;
+
+  a.download-pdf {
+
+    img {
+      vertical-align: text-bottom;
+    }
+  }
+}
+
+.probe-option {
+  font-size: $small-font-size;
+  font-weight: normal;
+}
+
 // 11. Spending proposals votes
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
