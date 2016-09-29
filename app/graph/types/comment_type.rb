@@ -14,4 +14,7 @@ CommentType = GraphQL::ObjectType.define do
   field :cached_votes_total, types.Int, "The total number of votes of this comment"
   field :cached_votes_up, types.Int, "The total number of upvotes of this comment"
   field :cached_votes_down, types.Int, "The total number of downvotes of this comment"
+
+  # Linked resources
+  field :user, !UserType, "User who made this comment"
 end
