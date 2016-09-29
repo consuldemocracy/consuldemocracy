@@ -8,6 +8,8 @@
 
       <h1 class="margin-bottom"><%= t("pages.processes.index.process_plaza_title") %></h1>
       <h2>Participa hasta el <u>33 de Febrero</u>. Selecciona el proyecto de Plaza de España que más te guste.</h2>
+      <%= link_to t("pages.processes.index.process_2_button"),
+                      page_path("processes_plaza_espana"), class: "white" %>
     </div>
   </div>
 </div>
@@ -69,7 +71,7 @@
 
       <% if user_signed_in? %>
         <% if current_user.level_two_or_three_verified? %>
-          <div class="row">
+          <div class="row clear">
             <div class="small-12 medium-4 column end text-center">
               <input type="hidden" name="id" value="<%= @probe.codename %>">
               <input type="submit" value="Enviar voto" class="button expanded margin-top">

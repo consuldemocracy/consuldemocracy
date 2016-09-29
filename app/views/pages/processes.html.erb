@@ -20,13 +20,13 @@
         <%= t("pages.processes.index.title") %>
       </h1>
 
-      <div id="town-planning" class="small-12 medium-7 margin-bottom">
+      <div id="spain-square" class="small-12 medium-7 margin-bottom">
         <span class="label"><%= t("pages.processes.index.featured") %></span>
-        <h2><%= t("pages.processes.index.process_7_title") %></h2>
-        <p><%= t("pages.processes.index.process_7_description") %></p>
+        <h2><%= t("pages.processes.index.process_2_title") %></h2>
+        <p><%= t("pages.processes.index.process_2_description") %></p>
         <div class="small-12 medium-6">
-          <%= link_to t("pages.processes.index.process_7_button"),
-                      town_planning_path, class: "button expanded" %>
+          <%= link_to t("pages.processes.index.process_2_button_vote"),
+                      plaza_path, class: "button expanded" %>
         </div>
       </div>
     </div>
@@ -34,6 +34,14 @@
 </div>
 
 <div class="row margin" data-equalizer>
+  <div id="town-planning" class="small-12 medium-6 large-4 column">
+    <div class="panel category" data-equalizer-watch>
+      <h3><%= t("pages.processes.index.process_7_title") %></h3>
+      <p><%= t("pages.processes.index.process_7_description") %></p>
+      <%= link_to t("pages.processes.index.process_7_button"), town_planning_path, class: "button hollow expanded" %>
+    </div>
+  </div>
+
   <div id="human-rights" class="small-12 medium-6 large-4 column">
     <div class="panel category" data-equalizer-watch>
       <h3><%= t("pages.processes.index.process_5_title") %></h3>
