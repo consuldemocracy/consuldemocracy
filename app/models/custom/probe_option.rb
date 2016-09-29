@@ -3,15 +3,15 @@ class ProbeOption < ActiveRecord::Base
   has_many :probe_selections
 
   def original_image_url
-    "/docs/#{probe.codename}/#{code}_#{name.parameterize.underscore}.jpg"
+    "/docs/#{probe.codename}/#{code}_#{param_name}.jpg"
   end
 
   def thumb_image_url
-    "/docs/#{probe.codename}/#{code}_#{name.parameterize.underscore}_thumb.jpg"
+    "/docs/#{probe.codename}/#{code}_#{param_name}_thumb.jpg"
   end
 
   def pdf_url
-    "/docs/#{probe.codename}/#{code}_dossier_#{name.parameterize.underscore}.pdf"
+    "/docs/#{probe.codename}/#{code}_#{ref}_#{param_name}.#{extension}"
   end
 
   def pdf_title
@@ -23,6 +23,10 @@ class ProbeOption < ActiveRecord::Base
       helper = Object.new.extend(ActionView::Helpers::NumberHelper)
       helper.number_to_human_size(File.size("#{Rails.root}/public#{pdf_url}"), precision: 3)
     end
+  end
+
+  def param_name
+    @param_name ||= name.parameterize.underscore
   end
 
   def select(user)
