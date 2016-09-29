@@ -10,18 +10,14 @@ class ProbeOption < ActiveRecord::Base
     "/docs/#{probe.codename}/#{code}_#{param_name}_thumb.jpg"
   end
 
-  def pdf_url
+  def file_path(ref, extension)
     "/docs/#{probe.codename}/#{code}_#{ref}_#{param_name}.#{extension}"
   end
 
-  def pdf_title
-    "Dossier #{name} (PDF | #{pdf_size})"
-  end
-
-  def pdf_size
-    if File.exist?("#{Rails.root}/public/#{pdf_url}")
+  def file_size(ref, extension)
+    if File.exist?("#{Rails.root}/public/#{file_path(ref, extension)}")
       helper = Object.new.extend(ActionView::Helpers::NumberHelper)
-      helper.number_to_human_size(File.size("#{Rails.root}/public#{pdf_url}"), precision: 3)
+      helper.number_to_human_size(File.size("#{Rails.root}/public#{file_path(ref, extension)}"), precision: 3)
     end
   end
 
@@ -39,4 +35,6 @@ class ProbeOption < ActiveRecord::Base
   def selectable_by?(user)
     probe.selecting_allowed && user && user.level_two_or_three_verified?
   end
+
+
 end

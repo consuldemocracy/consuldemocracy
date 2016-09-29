@@ -38,10 +38,11 @@
           <h4 class="probe-title"><%= probe_option.name %></h4>
 
           <div class="probe-links">
-            <%= link_to probe_option.pdf_url, title: probe_option.pdf_title,
+            <%= link_to probe_option.file_path('dossier', 'pdf'),
+                        title: "PDF #{probe_option.name} | #{probe_option.file_size('dossier', 'pdf')}",
                         class: "download-pdf", target: "_blank" do %>
                         <%= image_tag "icon_pdf.png" %>
-                        <%= "<small>(#{probe_option.pdf_size})</small>".html_safe %>
+                        <%= "<small>(#{probe_option.file_size('dossier', 'pdf')})</small>".html_safe %>
             <% end %>
           </div>
         </div>
