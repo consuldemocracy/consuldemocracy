@@ -23,10 +23,13 @@
 
 <div class="row margin-top">
   <div class="small-12 medium-6 small-centered column text-center">
-    <h2>Has votado el proyecto: <%= @probe_option.name %></h2>
-      <%= image_tag @probe_option.thumb_image_url, alt: @probe_option.name %>
+    <h2>Has votado el proyecto:<br> <%= @probe_option.name %></h2>
+      <div class="thumbnail">
+        <%= image_tag @probe_option.thumb_image_url, alt: @probe_option.name %>
+      </div>
       <p class="margin-top">
-        <%= link_to "Ver otros procesos", processes_path, class: "button hollow" %>
+        <%= link_to "Volver a la lista", plaza_path, class: "button hollow" %>
+        <%= link_to "Ver otros procesos", processes_path, class: "button" %>
       </p>
     </div>
   </div>
