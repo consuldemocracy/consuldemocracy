@@ -21,4 +21,5 @@ ProposalType = GraphQL::ObjectType.define do
   # Linked resources
   field :author, UserType, "Author of this proposal"
   field :comments, !types[!CommentType], "Comments in this proposal"
+  field :geozone, GeozoneType, "Geozone affected by this proposal"
 end

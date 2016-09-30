@@ -8,4 +8,7 @@ UserType = GraphQL::ObjectType.define do
   field :geozone_id, types.Int, "The ID of the geozone where this user is active"
   field :gender, types.String, "The gender of this user"
   field :date_of_birth, types.String, "The birthdate of this user"
+
+  # Linked resources
+  field :geozone, GeozoneType, "Geozone where this user is registered"
 end
