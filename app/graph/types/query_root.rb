@@ -12,7 +12,7 @@ QueryRoot = GraphQL::ObjectType.define do
   end
 
   field :proposals do
-    type types[ProposalType]
+    type !types[!ProposalType]
     description "Find all Proposals"
     resolve -> (object, arguments, context) {
       Proposal.all
@@ -29,7 +29,7 @@ QueryRoot = GraphQL::ObjectType.define do
   end
 
   field :comments do
-    type types[CommentType]
+    type !types[!CommentType]
     description "Find all Comments"
     resolve -> (object, arguments, context) {
       Comment.all
