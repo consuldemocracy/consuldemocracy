@@ -75,7 +75,7 @@
 
 <div class="row" data-equalizer>
   <% @probe_options.each do |probe_option| %>
-    <div class="small-6 medium-3 large-2 column end">
+    <div class="small-12 medium-4 large-3 column end">
       <div class="project" data-equalizer-watch>
 
         <h4 class="probe-title"><%= probe_option.name %></h4>
@@ -97,6 +97,7 @@
                       <%= image_tag "icon_pdf.png" %>
                       <%= "<small>Memoria (#{probe_option.file_size('memoria', 'pdf')})</small>".html_safe %>
           <% end %>
+          &nbsp;
           <%= link_to probe_option.file_path('dossier', 'pdf'),
                       title: "PDF #{probe_option.name} | #{probe_option.file_size('dossier', 'pdf')}",
                       class: "download-pdf", target: "_blank" do %>

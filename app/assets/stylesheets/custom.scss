@@ -1775,9 +1775,12 @@ table.probe-results {
   border-bottom: 1px solid #e0e0e0;
   font-size: $small-font-size;
   margin-bottom: 0;
-  min-height: rem-calc(100);
   padding-bottom: $line-height/2;
   padding-top: $line-height;
+
+  @include breakpoint(medium) {
+    min-height: rem-calc(75);
+  }
 }
 
 .project-thumbnail {
