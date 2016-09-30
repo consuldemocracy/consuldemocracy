@@ -12,10 +12,3 @@ CommentableInterface = GraphQL::InterfaceType.define do
   field :comments, !types[!CommentType], "Comments in this commentable"
   field :geozone, GeozoneType, "Geozone affected by this commentable"
 end
-
-
-# Then, object types may include it:
-CoffeeType = GraphQL::ObjectType.define do
-  # ...
-  interfaces([BeverageInterface])
-end
