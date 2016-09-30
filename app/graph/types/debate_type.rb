@@ -1,6 +1,9 @@
 DebateType = GraphQL::ObjectType.define do
   name "Debate"
   description "A single debate entry with associated info"
+
+  interfaces([CommentableInterface])
+
   # Expose fields associated with Debate model
   field :id, !types.ID, "The id of this debate"
   field :title, types.String, "The title of this debate"

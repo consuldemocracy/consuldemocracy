@@ -17,4 +17,5 @@ CommentType = GraphQL::ObjectType.define do
 
   # Linked resources
   field :user, !UserType, "User who made this comment"
+  field :commentable, CommentableInterface, "Element which was commented"
 end
