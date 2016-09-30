@@ -7,7 +7,7 @@
       <%= render "shared/back_link" %>
 
       <h1 class="margin-bottom"><%= t("pages.processes.index.process_plaza_title") %></h1>
-      <h2>Participa hasta el <u>33 de Febrero</u>. Selecciona el proyecto de Plaza de España que más te guste.</h2>
+      <h2>Participa hasta el <u>28 de octubre</u>. Selecciona el proyecto de Plaza de España que más te guste.</h2>
       <%= link_to t("pages.processes.index.process_2_button"),
                       page_path("processes_plaza_espana"), class: "white" %>
     </div>
@@ -18,63 +18,36 @@
   <div class="row margin">
     <div class="small-12 column">
       <div class="callout success">
-        Has votado el proyecto <strong><%= @probe_option.name %></strong>. Puedes cambiarlo en cualquier momento hasta el día <u>33 de Febrero</u>.
+        Has votado el proyecto <strong><%= @probe_option.name %></strong>. Puedes cambiarlo en cualquier momento hasta el día <u>28 de octubre</u>.
       </div>
     </div>
   </div>
 <% end %>
 
-<div class="row" data-equalizer>
-  <% @probe_options.each do |probe_option| %>
-    <div class="small-6 medium-3 large-2 column end">
-      <div class="project" data-equalizer-watch>
-        <div class="thumbnail">
-          <%= link_to probe_option.original_image_url, class: 'project-thumbnail', target: '_blank' do %>
-            <%= image_tag probe_option.thumb_image_url, alt: probe_option.name %>
-          <% end %>
-        </div>
-
-        <div>
-          <h4 class="probe-title"><%= probe_option.name %></h4>
-
-          <div class="probe-links">
-            <%= link_to probe_option.file_path('dossier', 'pdf'),
-                        title: "PDF #{probe_option.name} | #{probe_option.file_size('dossier', 'pdf')}",
-                        class: "download-pdf", target: "_blank" do %>
-                        <%= image_tag "icon_pdf.png" %>
-                        <%= "<small>(#{probe_option.file_size('dossier', 'pdf')})</small>".html_safe %>
-            <% end %>
-          </div>
-        </div>
-      </div>
-    </div>
-  <% end %>
-</div>
-
 <div class="row">
   <div class="small-12 column">
-    <h3 class="margin-bottom">Selecciona el proyecto que quieres votar</h3>
+    <!-- <h3 class="margin-bottom">Selecciona el proyecto que quieres votar</h3> -->
 
-    <%= form_tag selection_probes_path do %>
-      <% @probe_options.in_groups_of(4).each do |probe_option_group| %>
-        <div class="small-12 medium-4 column">
-          <% probe_option_group.compact.each do |probe_option| %>
-            <label>
-              <%= radio_button_tag("option_id", probe_option.id, @probe_option.try(:id) == probe_option.id) %>
-              <span class="probe-option"><%= probe_option.name %></span>
-            </label>
-          <% end %>
-        </div>
-      <% end %>
+    <%# form_tag selection_probes_path do %>
+      <%# @probe_options.in_groups_of(4).each do |probe_option_group| %>
+        <!-- <div class="small-12 medium-4 column"> -->
+          <%# probe_option_group.compact.each do |probe_option| %>
+            <!-- <label> -->
+              <%# radio_button_tag("option_id", probe_option.id, @probe_option.try(:id) == probe_option.id) %>
+              <!-- <span class="probe-option"><%# probe_option.name %></span> -->
+            <!-- </label> -->
+          <%# end %>
+        <!-- </div> -->
+      <%# end %>
 
       <% if user_signed_in? %>
         <% if current_user.level_two_or_three_verified? %>
-          <div class="row clear">
+          <!-- <div class="row clear">
             <div class="small-12 medium-4 column end text-center">
-              <input type="hidden" name="id" value="<%= @probe.codename %>">
+              <input type="hidden" name="id" value="<%# @probe.codename %>">
               <input type="submit" value="Enviar voto" class="button expanded margin-top">
             </div>
-          </div>
+          </div> -->
         <% else %>
           <div class="row">
             <div class="small-12 column">
@@ -96,6 +69,42 @@
           </div>
         </div>
       <% end %>
-    <% end %>
+    <%# end %>
   </div>
+</div>
+
+<div class="row" data-equalizer>
+  <% @probe_options.each do |probe_option| %>
+    <div class="small-6 medium-3 large-2 column end">
+      <div class="project" data-equalizer-watch>
+
+        <h4 class="probe-title"><%= probe_option.name %></h4>
+
+        <div class="thumbnail">
+          <%= link_to probe_option.original_image_url, class: 'project-thumbnail', target: '_blank' do %>
+            <%= image_tag probe_option.thumb_image_url, alt: probe_option.name %>
+          <% end %>
+        </div>
+
+        <div class="probe-links">
+          <form>
+            <input type="submit" value="Votar" class="button small expanded margin-top">
+          </form>
+
+          <%= link_to probe_option.file_path('dossier', 'pdf'),
+                      title: "PDF #{probe_option.name} | #{probe_option.file_size('dossier', 'pdf')}",
+                      class: "download-pdf", target: "_blank" do %>
+                      <%= image_tag "icon_pdf.png" %>
+                      <%= "<small>Memoria (#{probe_option.file_size('dossier', 'pdf')})</small>".html_safe %>
+          <% end %>
+          <%= link_to probe_option.file_path('dossier', 'pdf'),
+                      title: "PDF #{probe_option.name} | #{probe_option.file_size('dossier', 'pdf')}",
+                      class: "download-pdf", target: "_blank" do %>
+                      <%= image_tag "icon_pdf.png" %>
+                      <%= "<small>Imágenes (#{probe_option.file_size('dossier', 'pdf')})</small>".html_safe %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  <% end %>
 </div>
