@@ -55,16 +55,13 @@ module Devise
       def password_expired?
         self.password_changed_at < self.expire_password_after.ago
       end
-
-    end #module PasswordExpirable
+    end
 
     module SecureValidatable
       def self.included(base)
         base.extend ClassMethods
         assert_secure_validations_api!(base)
-
         base.class_eval do
-         
           validate :current_equal_password_validation
         end
       end
@@ -77,8 +74,6 @@ module Devise
           self.errors.add(:password, :equal_to_current_password) if dummy.valid_password?(self.password)
         end
       end
-
-    end #module SecureValidatable
-
-  end #module Models
-end #module Devise
+    end
+  end
+end

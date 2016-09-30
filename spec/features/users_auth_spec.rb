@@ -333,7 +333,6 @@ feature 'Users' do
     fill_in 'user_password_confirmation', with: '123456789'
     click_button 'Change your password'  
     expect(page).to have_content "must be different than the current password."
-    #expect(page).to have_content "You can not use the same password. Please choose another one."
   end              
 
 
