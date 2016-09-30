@@ -324,8 +324,8 @@ Rails.application.routes.draw do
   #Probes
   get 'processes/urbanismo-bancos', to: 'probes#show', id: 'town_planning', as: 'town_planning'
   get 'processes/urbanismo-bancos-gracias', to: 'probes#thanks', id: 'town_planning', as: 'town_planning_thanks'
-  get 'vota/plaza-espana', to: 'probes#show', id: 'plaza', as: 'plaza'
-  get 'vota/plaza-espana-gracias', to: 'probes#thanks', id: 'plaza', as: 'plaza_thanks'
+  get 'proceso/plaza-espana', to: 'probes#show', id: 'plaza', as: 'plaza'
+  get 'proceso/plaza-espana-gracias', to: 'probes#thanks', id: 'plaza', as: 'plaza_thanks'
 
 
   resources :pages, path: '/', only: [:show]
