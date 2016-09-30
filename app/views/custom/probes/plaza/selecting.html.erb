@@ -91,11 +91,11 @@
             <input type="submit" value="Votar" class="button small expanded margin-top">
           </form>
 
-          <%= link_to probe_option.file_path('dossier', 'pdf'),
-                      title: "PDF #{probe_option.name} | #{probe_option.file_size('dossier', 'pdf')}",
+          <%= link_to probe_option.file_path('memoria', 'pdf'),
+                      title: "PDF #{probe_option.name} | #{probe_option.file_size('memoria', 'pdf')}",
                       class: "download-pdf", target: "_blank" do %>
                       <%= image_tag "icon_pdf.png" %>
-                      <%= "<small>Memoria (#{probe_option.file_size('dossier', 'pdf')})</small>".html_safe %>
+                      <%= "<small>Memoria (#{probe_option.file_size('memoria', 'pdf')})</small>".html_safe %>
           <% end %>
           <%= link_to probe_option.file_path('dossier', 'pdf'),
                       title: "PDF #{probe_option.name} | #{probe_option.file_size('dossier', 'pdf')}",
