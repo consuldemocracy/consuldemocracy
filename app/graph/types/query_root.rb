@@ -19,6 +19,23 @@ QueryRoot = GraphQL::ObjectType.define do
     }
   end
 
+  field :debate do
+    type DebateType
+    description "Find a Debate by id"
+    argument :id, !types.ID
+    resolve -> (object, arguments, context) {
+      Debate.find(arguments["id"])
+    }
+  end
+
+  field :debates do
+    type !types[!DebateType]
+    description "Find all Debates"
+    resolve -> (object, arguments, context) {
+      Debate.all
+    }
+  end
+
   field :comment do
     type CommentType
     description "Find a Comment by id"
