@@ -34,5 +34,8 @@ module Consul
     config.autoload_paths << Rails.root.join('lib')
     config.time_zone = 'Madrid'
     config.active_job.queue_adapter = :delayed_job
+
+    # Disables the escaping of HTML entities in JSON serialization.
+    config.active_support.escape_html_entities_in_json = false
   end
 end
