@@ -18,9 +18,7 @@
   <div class="row margin">
     <div class="small-12 column">
       <div class="callout success">
-        <p>Has votado el proyecto <strong><%= @probe_option.name %></strong>. Puedes cambiarlo en cualquier momento hasta el día <u>28 de octubre</u>.</p>
-        <p><small>* Las cinco plazas con mayor puntuación obtienen de 5 a 1 punto respectivamente, que se sumarán a los puntos del jurado para esta primera preselección. Pasada la fase de preselección, las dos plazas finalistas serán votadas por la ciudadanía, que decidirá directamente cuál de las dos será la ganadora. Puedes <a href="http://www.coam.org/media/Default%20Files/servicios/concursos/concursos_ocam/2016/plaza_espania/160617_bases_plaza_espana.pdf" target="_blank" title="<%= t("shared.target_blank_html") %>">consultar toda la información</a> sobre el jurado y el proceso.</small></p>
-        <p><small>** El jurado está evaluando que todos los proyectos cumplan los requisitos exigidos, incluyendo los criterios ciudadanos aprobados. En caso de que alguno no los cumpla y sea descalificado, se informará por correo electrónico a sus votantes. Puedes cambiar tu voto hasta el último día de votación.</small></p>
+        Has votado el proyecto <strong><%= @probe_option.name %></strong>. Puedes cambiarlo en cualquier momento hasta el día <u>28 de octubre</u>.
       </div>
     </div>
   </div>
@@ -69,12 +67,29 @@
         </div>
 
         <div class="probe-links">
-          <% if user_signed_in? && current_user.level_two_or_three_verified? %>
-            <%= form_tag selection_probes_path, id: "#{dom_id(probe_option)}_form" do %>
-              <input type="hidden" name="id" value="<%= @probe.codename %>">
-              <input type="hidden" name="option_id" value="<%= probe_option.id %>">
-              <input type="submit" value="Votar" class="button small expanded margin-top">
+          <% if user_signed_in? %>
+            <% if current_user.level_two_or_three_verified? %>
+              <%= form_tag selection_probes_path, id: "#{dom_id(probe_option)}_form" do %>
+                <input type="hidden" name="id" value="<%= @probe.codename %>">
+                <input type="hidden" name="option_id" value="<%= probe_option.id %>">
+                <input type="submit" value="Votar" class="button small expanded margin-top">
+              <% end %>
+            <% else %>
+              <p class="callout warning callout-small">
+                <%= t("probes.verified_only",
+                    verify_account: link_to(t("probes.verify_account"), verification_path, class: "probe-message")).html_safe %>
+              </p>
+              <p class="button small expanded secondary disabled margin-top">Votar</p>
             <% end %>
+          <% else %>
+            <p class="callout primary callout-small">
+              <small>
+                <%= t("probes.not_logged_in",
+                    signin: link_to(t("probes.signin"), new_user_session_path, class: "probe-message"),
+                    signup: link_to(t("probes.signup"), new_user_registration_path, class: "probe-message")).html_safe %>
+              </small>
+            </p>
+            <p class="button small expanded secondary disabled margin-top">Votar</p>
           <% end %>
           <%= link_to probe_option.file_path('memoria', 'pdf'),
                       title: "PDF #{probe_option.name} | #{probe_option.file_size('memoria', 'pdf')}",
