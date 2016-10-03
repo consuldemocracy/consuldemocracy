@@ -1,6 +1,6 @@
 namespace :probes do
   desc "Create a debate for each probe option of the town planning probe"
-  task town_planning_debates: :environment do
+  task plaza_debates: :environment do
     probe = Probe.where(codename: "plaza").first
 
     probe.probe_options.each do |probe_option|
