@@ -87,9 +87,11 @@
         </div>
 
         <div class="probe-links">
-          <form>
+          <%= form_tag selection_probes_path, html: { id: "#{dom_id(probe_option)}_form" }  do %>
+            <input type="hidden" name="id" value="<%= @probe.codename %>">
+            <input type="hidden" name="option_id" value="<%= probe_option.id %>">
             <input type="submit" value="Votar" class="button small expanded margin-top">
-          </form>
+          <% end %>
 
           <%= link_to probe_option.file_path('memoria', 'pdf'),
                       title: "PDF #{probe_option.name} | #{probe_option.file_size('memoria', 'pdf')}",
