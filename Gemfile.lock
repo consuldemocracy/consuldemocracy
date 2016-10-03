@@ -82,7 +82,7 @@ GEM
       capistrano (~> 3.1)
       sshkit (~> 1.2)
     capistrano-harrow (0.5.3)
-    capistrano-rails (1.1.7)
+    capistrano-rails (1.1.8)
       capistrano (~> 3.1)
       capistrano-bundler (~> 1.1)
     capistrano-rvm (0.1.2)
@@ -447,7 +447,7 @@ DEPENDENCIES
   cancancan
   capistrano (= 3.5.0)
   capistrano-bundler (= 1.1.4)
-  capistrano-rails (= 1.1.7)
+  capistrano-rails (= 1.1.8)
   capistrano-rvm
   capistrano3-delayed-job (~> 1.0)
   capybara
