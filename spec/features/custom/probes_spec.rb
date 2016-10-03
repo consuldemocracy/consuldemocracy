@@ -70,12 +70,11 @@ feature 'Probes' do
 
         visit probe_path(id: @probe.codename)
 
-        expect(page).to have_content 'You must Sign in or Sign up to continue'
+        expect(page).to have_content 'You must Sign in or Sign up to participate'
         expect(page).to have_content('Plaza Option 1')
         expect(page).to have_content('Plaza Option II')
         expect(page).to_not have_css("#probe_option_#{@probe_option_1.id}_form")
         expect(page).to_not have_css("#probe_option_#{@probe_option_2.id}_form")
-        expect(page).to_not have_content 'Votar'
 
         login_as(create(:user))
 
@@ -86,7 +85,6 @@ feature 'Probes' do
         expect(page).to have_content('Plaza Option II')
         expect(page).to_not have_css("#probe_option_#{@probe_option_1.id}_form")
         expect(page).to_not have_css("#probe_option_#{@probe_option_2.id}_form")
-        expect(page).to_not have_content 'Votar'
       end
 
       scenario 'User selects an option' do
