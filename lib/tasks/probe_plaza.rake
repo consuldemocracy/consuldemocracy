@@ -89,7 +89,7 @@ namespace :temp do
       puts "Creating debate for probe option: #{probe_option.name}"
 
       title = probe_option.name
-      description = "Este es uno de los proyectos presentados para la Remodelación de Plaza España, puedes participar en el proceso y votar el que más te guste en http://decidepre.madrid.es/proceso/plaza-espana."
+      description = "Este es uno de los proyectos presentados para la Remodelación de Plaza España, puedes participar en el proceso y votar el que más te guste en #{Rails.application.routes.url_helpers.plaza_url}"
       author = User.where(username: "Abriendo Madrid").first || User.first
 
       debate = Debate.where(title: title.ljust(4), description: description, author: author).first_or_initialize
