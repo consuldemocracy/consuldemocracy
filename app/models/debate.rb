@@ -15,6 +15,7 @@ class Debate < ActiveRecord::Base
   belongs_to :author, -> { with_hidden }, class_name: 'User', foreign_key: 'author_id'
   belongs_to :geozone
   has_many :comments, as: :commentable
+  has_one :probe_option
 
   validates :title, presence: true
   validates :description, presence: true
