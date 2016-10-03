@@ -99,6 +99,7 @@ class Debate < ActiveRecord::Base
 
   def votable_by?(user)
     return false unless user
+    return false if ProbeOption.where(debate: self).present?
     total_votes <= 100 ||
       !user.unverified? ||
       Setting['max_ratio_anon_votes_on_debates'].to_i == 100 ||

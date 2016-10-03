@@ -170,6 +170,13 @@ describe Debate do
       user = create(:user)
       expect(debate.votable_by?(user)).to be false
     end
+
+    it "should be false for debates associated to probe options" do
+      probe = Probe.create(codename: 'plaza')
+      probe_option = probe.probe_options.create(code: 'PL1' , name: 'Plaza Option 1', debate: debate)
+      user = create(:user, verified_at: Time.now)
+      expect(debate.votable_by?(user)).to be false
+    end
   end
 
   describe "#register_vote" do
