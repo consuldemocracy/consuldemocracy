@@ -79,7 +79,7 @@
                 <%= t("probes.verified_only",
                     verify_account: link_to(t("probes.verify_account"), verification_path, class: "probe-message")).html_safe %>
               </p>
-              <%= link_to "Votar", plaza_path , class: "button small expanded secondary" %>
+              <p class="button small expanded secondary disabled margin-top">Votar</p>
             <% end %>
           <% else %>
             <p class="callout primary callout-small">
@@ -89,7 +89,7 @@
                     signup: link_to(t("probes.signup"), new_user_registration_path, class: "probe-message")).html_safe %>
               </small>
             </p>
-            <%= link_to "Votar", plaza_path , class: "button small expanded secondary" %>
+            <p class="button small expanded secondary disabled margin-top">Votar</p>
           <% end %>
           <%= link_to probe_option.file_path('memoria', 'pdf'),
                       title: "PDF #{probe_option.name} | #{probe_option.file_size('memoria', 'pdf')}",
