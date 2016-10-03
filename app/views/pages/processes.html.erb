@@ -23,11 +23,19 @@
       <div id="spain-square" class="small-12 medium-7 margin-bottom">
         <span class="label"><%= t("pages.processes.index.featured") %></span>
         <h2><%= t("pages.processes.index.process_2_title") %></h2>
-        <p><%= t("pages.processes.index.process_2_description") %></p>
-        <div class="small-12 medium-6">
-          <%= link_to t("pages.processes.index.process_2_button_vote"),
-                      plaza_path, class: "button expanded" %>
-        </div>
+        <!-- IF PLAZA ESPAÑA ACTIVA -->
+          <p><%= t("pages.processes.index.process_2_description") %></p>
+          <div class="small-12 medium-6">
+            <%= link_to t("pages.processes.index.process_2_button_vote"),
+                        plaza_path, class: "button expanded" %>
+          </div>
+        <!-- ELSE -->
+          <p><%= t("pages.processes.index.process_2_description_close") %></p>
+          <div class="small-12 medium-6">
+            <%= link_to t("pages.processes.index.process_2_button"),
+                        page_path("processes_plaza_espana"), class: "button expanded" %>
+          </div>
+        <!-- END -->
       </div>
     </div>
   </div>
@@ -63,14 +71,6 @@
       <h3><%= t("pages.processes.index.process_3_title") %></h3>
       <p><%= t("pages.processes.index.process_3_description") %></p>
       <%= link_to t("pages.processes.index.process_3_button"), page_path("processes_open_plenary"), class: "button hollow" %>
-    </div>
-  </div>
-
-  <div id="spain-square" class="small-12 medium-6 large-4 column">
-    <div class="panel category subcategory" data-equalizer-watch>
-      <h3><%= t("pages.processes.index.process_2_title") %></h3>
-      <p><%= t("pages.processes.index.process_2_description") %></p>
-      <%= link_to t("pages.processes.index.process_2_button"), page_path("processes_plaza_espana"), class: "button hollow" %>
     </div>
   </div>
 

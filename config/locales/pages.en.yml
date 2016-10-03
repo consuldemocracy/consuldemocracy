@@ -83,7 +83,8 @@ en:
         process_1_description: Madrid wants launch a system of public transparency at the level of the most advanced in the world, and we need your help.
         process_1_button: More information
         process_2_title: Remodeling of the Plaza España
-        process_2_description: Choose which of these square would you like the new Plaza Spain.
+        process_2_description_close: Very soon you can choose how you would like the new Plaza España.
+        process_2_description: Choose which of these square would you like the new Plaza España.
         process_2_button: More information
         process_2_button_vote: Vote a project
         process_3_title: "Pleno Abierto"
