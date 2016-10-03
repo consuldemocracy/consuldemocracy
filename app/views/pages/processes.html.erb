@@ -23,19 +23,19 @@
       <div id="spain-square" class="small-12 medium-7 margin-bottom">
         <span class="label"><%= t("pages.processes.index.featured") %></span>
         <h2><%= t("pages.processes.index.process_2_title") %></h2>
-        <!-- IF PLAZA ESPAÑA ACTIVA -->
+        <% if feature?("probe.plaza") %>
           <p><%= t("pages.processes.index.process_2_description") %></p>
           <div class="small-12 medium-6">
             <%= link_to t("pages.processes.index.process_2_button_vote"),
                         plaza_path, class: "button expanded" %>
           </div>
-        <!-- ELSE -->
+        <% else %>
           <p><%= t("pages.processes.index.process_2_description_close") %></p>
           <div class="small-12 medium-6">
             <%= link_to t("pages.processes.index.process_2_button"),
                         page_path("processes_plaza_espana"), class: "button expanded" %>
           </div>
-        <!-- END -->
+        <% end %>
       </div>
     </div>
   </div>

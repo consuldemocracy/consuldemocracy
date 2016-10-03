@@ -24,3 +24,5 @@ es:
         open_results_page:  "Prespuestos participativos: Hacer públicos los resultados"
         voting_allowed: Votaciones de preselección sobre propuestas de inversión.
         final_voting_allowed: Votaciones finales en propuestas de inversión.
+      probe:
+        plaza: "Sondeo Plaza España"
