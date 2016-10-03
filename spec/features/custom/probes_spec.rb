@@ -137,6 +137,16 @@ feature 'Probes' do
         expect(page).to_not have_css ('.in-favor')
         expect(page).to_not have_css ('.against')
       end
+
+      scenario 'do not show in index' do
+        @probe_option_1.update(debate: create(:debate))
+        @probe_option_2.update(debate: create(:debate))
+
+        visit debates_path
+
+        expect(page).to_not have_content @probe_option_1.debate.title
+        expect(page).to_not have_content @probe_option_2.debate.title
+      end
     end
 
   end

@@ -23,6 +23,7 @@ class DebatesController < ApplicationController
   def index_customization
      @featured_debates = @debates.featured
      @proposal_successfull_exists = Proposal.successfull.exists?
+     discard_probe_debates
   end
 
   def show
@@ -43,6 +44,10 @@ class DebatesController < ApplicationController
   def mark_featured
     @debate.update_attribute(:featured_at, Time.now)
     redirect_to request.query_parameters.merge(action: :index)
+  end
+
+  def discard_probe_debates
+    @resources = @resources.not_probe
   end
 
   private

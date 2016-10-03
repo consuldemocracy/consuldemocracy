@@ -720,4 +720,19 @@ describe Debate do
     end
   end
 
+  describe "#not_probe" do
+    it "should return debates that are not associated to a probe" do
+      debate1 = create(:debate)
+      debate2 = create(:debate)
+      debate3 = create(:debate)
+
+      probe = Probe.create(codename: 'plaza')
+      probe.probe_options.create(debate: debate1)
+      probe.probe_options.create(debate: debate2)
+
+      expect(Debate.not_probe).to include(debate3)
+      expect(Debate.not_probe).to_not include(debate1, debate2)
+    end
+  end
+
 end
