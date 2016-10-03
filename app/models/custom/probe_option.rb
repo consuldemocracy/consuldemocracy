@@ -1,5 +1,6 @@
 class ProbeOption < ActiveRecord::Base
   belongs_to :probe
+  belongs_to :debate
   has_many :probe_selections
 
   def original_image_url

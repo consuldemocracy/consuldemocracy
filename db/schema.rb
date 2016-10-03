@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160927100528) do
+ActiveRecord::Schema.define(version: 20161003120650) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -314,7 +314,10 @@ ActiveRecord::Schema.define(version: 20160927100528) do
     t.string  "name"
     t.integer "probe_id"
     t.integer "probe_selections_count", default: 0
+    t.integer "debate_id"
   end
+
+  add_index "probe_options", ["debate_id"], name: "index_probe_options_on_debate_id", using: :btree
 
   create_table "probe_selections", force: :cascade do |t|
     t.integer  "probe_id"
@@ -648,6 +651,7 @@ ActiveRecord::Schema.define(version: 20160927100528) do
   add_foreign_key "moderators", "users"
   add_foreign_key "notifications", "users"
   add_foreign_key "organizations", "users"
+  add_foreign_key "probe_options", "debates"
   add_foreign_key "users", "geozones"
   add_foreign_key "valuators", "users"
 end

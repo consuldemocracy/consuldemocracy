@@ -109,5 +109,23 @@ feature 'Probes' do
       end
     end
 
+    context "Debate" do
+
+      scenario "Each probe option should link to a debate" do
+        @probe.probe_options.each do |probe_option|
+          debate = create(:debate)
+          probe_option.update(debate: debate)
+        end
+
+        visit probe_path(id: @probe.codename)
+
+        @probe.probe_options.each do |probe_option|
+          within("#probe_option_#{probe_option.id}") do
+            expect(page).to have_link "Comentar proyecto", href: debate_path(probe_option.debate)
+          end
+        end
+      end
+    end
+
   end
 end
