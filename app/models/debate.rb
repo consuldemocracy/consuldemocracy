@@ -15,6 +15,7 @@ class Debate < ActiveRecord::Base
   belongs_to :author, -> { with_hidden }, class_name: 'User', foreign_key: 'author_id'
   belongs_to :geozone
   has_many :comments, as: :commentable
+  has_one :probe_option
 
   validates :title, presence: true
   validates :description, presence: true
@@ -29,7 +30,7 @@ class Debate < ActiveRecord::Base
   before_save :calculate_hot_score, :calculate_confidence_score
   before_save :set_comment_kind
 
-  scope :for_render,               -> { includes(:tags) }
+  scope :for_render,               -> { includes(:tags, :probe_option, author: :organization) }
   scope :sort_by_hot_score ,       -> { reorder(hot_score: :desc) }
   scope :sort_by_confidence_score, -> { reorder(confidence_score: :desc) }
   scope :sort_by_created_at,       -> { reorder(created_at: :desc) }
@@ -39,6 +40,7 @@ class Debate < ActiveRecord::Base
   scope :sort_by_flags,            -> { order(flags_count: :desc, updated_at: :desc) }
   scope :last_week,                -> { where("created_at >= ?", 7.days.ago)}
   scope :featured,                 -> { where("featured_at is not null")}
+  scope :not_probe,                -> { where.not(id: ProbeOption.pluck(:debate_id))}
   # Ahoy setup
   visitable # Ahoy will automatically assign visit_id on create
 
@@ -98,6 +100,7 @@ class Debate < ActiveRecord::Base
 
   def votable_by?(user)
     return false unless user
+    return false if ProbeOption.where(debate: self).present?
     total_votes <= 100 ||
       !user.unverified? ||
       Setting['max_ratio_anon_votes_on_debates'].to_i == 100 ||

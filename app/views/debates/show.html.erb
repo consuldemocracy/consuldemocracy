@@ -43,13 +43,19 @@
       </div>
 
       <aside class="small-12 medium-3 column">
-        <div class="sidebar-divider"></div>
-        <h3><%= t("votes.supports") %></h3>
-        <div class="text-center">
-          <div id="<%= dom_id(@debate) %>_votes">
-           <%= render 'debates/votes', debate: @debate %>
+        <% if @debate.probe_option.present? %>
+          <div class="probe-banner">
+            <%= link_to t("shared.probe_plaza_banner"), plaza_path %>
           </div>
-        </div>
+        <% else %>
+          <div class="sidebar-divider"></div>
+          <h3><%= t("votes.supports") %></h3>
+          <div class="text-center">
+            <div id="<%= dom_id(@debate) %>_votes">
+             <%= render 'debates/votes', debate: @debate %>
+            </div>
+          </div>
+        <% end %>
         <div class="sidebar-divider"></div>
         <h3><%= t("debates.show.share") %></h3>
         <div class="social-share-full">

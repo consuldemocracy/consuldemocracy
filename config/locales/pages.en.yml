@@ -83,21 +83,25 @@ en:
         process_1_description: Madrid wants launch a system of public transparency at the level of the most advanced in the world, and we need your help.
         process_1_button: More information
         process_2_title: Remodeling of the Plaza España
-        process_2_description: We count on you for decide how you want it this new space in your city.
+        process_2_description_close: Very soon you can choose how you would like the new Plaza España.
+        process_2_description: Choose which of these square would you like the new Plaza España.
         process_2_button: More information
+        process_2_button_vote: Vote a project
         process_3_title: "Pleno Abierto"
         process_3_description: Supports proposals and questions. The five most voted will be made in person to the political groups in the Open Plenary Session of 24 April.
         process_3_button: See proposals and questions
         process_5_title: Plan de Derechos Humanos
-        process_5_description: El Ayuntamiento de Madrid quiere reforzar su compromiso con los Derechos Humanos con la elaboración de un Plan que será el instrumento para el desarrollo de sus políticas públicas con un enfoque transversal que afecte a toda la actuación municipal.
-        process_5_button: Participa en la elaboración del Plan de Derechos Humanos
+        process_5_description: El Ayuntamiento de Madrid quiere reforzar su compromiso con los Derechos Humanos con la elaboración de un Plan para el desarrollo de sus políticas públicas.
+        process_5_button: Participa en la elaboración del Plan
         process_6_title: Cartas de Servicios
-        process_6_description: Puedes dejar tus comentarios en las Cartas de Servicios de los servicios de Ayuda a Domicilio, de los Centros de Día del Ayuntamiento de Madrid, de Centros Municipales de Mayores y de Teleasistencia Domiciliaria.
+        process_6_description: Puedes dejar tus comentarios en las Cartas de Servicios de los servicios de Ayuda a Domicilio, de los Centros de Día, de Centros Municipales de Mayores y de Teleasistencia Domiciliaria.
         process_6_button: Comenta las Cartas de Servicios
         process_7_title: "Urbanismo: nuevos bancos"
-        process_7_description: Elige el nuevo diseño de bancos para sentarse que te gustaría que se instalasen en la ciudad.
+        process_7_description: Los ciudadanos eligieron el nuevo diseño de bancos para sentarse que les gustaría que se instalasen en la ciudad.
         process_7_button: See the results
         title: Open processes
+        process_plaza_title: Remodeling of the Plaza España
+        process_plaza_description: Select the project that you like for this new space in your city.
       process_1:
         title: Help us improve transparency Ordinance of the City of Madrid
         comment: leave your comments

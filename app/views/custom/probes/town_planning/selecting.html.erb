@@ -41,9 +41,9 @@
                       target: "_blank",
                       class: "button hollow" %>
           <br>
-          <%= link_to "Descargar dossier <small>(PDF | #{probe_option.pdf_size})</small>".html_safe,
-                      probe_option.pdf_url,
-                      title: probe_option.pdf_title,
+          <%= link_to "Descargar dossier <small>(PDF | #{probe_option.file_size('dossier', 'pdf')})</small>".html_safe,
+                      probe_option.file_path('dossier', 'pdf'),
+                      title: "PDF #{probe_option.name} | #{probe_option.file_size('dossier', 'pdf')}",
                       target: "_blank" %>
         </div>
       </div>

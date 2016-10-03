@@ -1554,7 +1554,7 @@ tr td, tr th {
 
 .panel.category {
   margin-bottom: $line-height;
-  min-height: $line-height*11;
+  min-height: $line-height*12;
   position: relative;
 
   h3 {
@@ -1754,6 +1754,80 @@ table.probe-results {
     td:last-child {
       font-weight: bold;
     }
+  }
+}
+
+.project {
+  background: #F3F3F3;
+  border-bottom: 2px solid #e0e0e0;
+  margin-bottom: $line-height;
+  padding: 0 $line-height/2 $line-height;
+  position: relative;
+  text-align: center;
+
+  .thumbnail {
+    box-shadow: none;
+    margin-top: $line-height;
+  }
+}
+
+.probe-title {
+  border-bottom: 1px solid #e0e0e0;
+  font-size: $small-font-size;
+  margin-bottom: 0;
+  padding-bottom: $line-height/2;
+  padding-top: $line-height;
+
+  @include breakpoint(medium) {
+    min-height: rem-calc(75);
+  }
+}
+
+.project-thumbnail {
+  display: block;
+  position: relative;
+
+  &:before {
+    background: rgba(0,74,131, 0.7);
+    bottom: 6px;
+    content: image-url('icon_zoom.png');
+    padding: $line-height/4;
+    position: absolute;
+    right: 6px;
+  }
+}
+
+.probe-links {
+  border-top: 1px solid #e0e0e0;
+  text-align: left;
+
+  a {
+    display: inline-block;
+    margin-top: $line-height/2;
+
+    :first-child {
+      margin-top: 0;
+    }
+
+    img {
+      vertical-align: text-bottom;
+    }
+  }
+}
+
+.probe-option {
+  font-size: $small-font-size;
+  font-weight: normal;
+}
+
+.probe-banner {
+  border: 1px solid black;
+  color: black;
+  padding: $line-height/2;
+  text-align: center;
+
+  a {
+    color: black;
   }
 }
 

@@ -170,6 +170,13 @@ describe Debate do
       user = create(:user)
       expect(debate.votable_by?(user)).to be false
     end
+
+    it "should be false for debates associated to probe options" do
+      probe = Probe.create(codename: 'plaza')
+      probe_option = probe.probe_options.create(code: 'PL1' , name: 'Plaza Option 1', debate: debate)
+      user = create(:user, verified_at: Time.now)
+      expect(debate.votable_by?(user)).to be false
+    end
   end
 
   describe "#register_vote" do
@@ -710,6 +717,21 @@ describe Debate do
   describe "#to_param" do
     it "should return a friendly url" do
       expect(debate.to_param).to eq "#{debate.id} #{debate.title}".parameterize
+    end
+  end
+
+  describe "#not_probe" do
+    it "should return debates that are not associated to a probe" do
+      debate1 = create(:debate)
+      debate2 = create(:debate)
+      debate3 = create(:debate)
+
+      probe = Probe.create(codename: 'plaza')
+      probe.probe_options.create(debate: debate1)
+      probe.probe_options.create(debate: debate2)
+
+      expect(Debate.not_probe).to include(debate3)
+      expect(Debate.not_probe).to_not include(debate1, debate2)
     end
   end
 

@@ -54,4 +54,100 @@ feature 'Probes' do
     end
   end
 
+  context 'Plaza' do
+    background do
+      @probe = Probe.create(codename: 'plaza')
+      @probe_option_1 = @probe.probe_options.create(code: 'PL1' , name: 'Plaza Option 1')
+      @probe_option_2 = @probe.probe_options.create(code: 'PL2' , name: 'Plaza Option II')
+      @user = create(:user, :level_two)
+      logout
+      login_as(@user)
+    end
+
+    context 'Selecting is allowed' do
+      scenario 'User needs permission to select' do
+        logout
+
+        visit probe_path(id: @probe.codename)
+
+        expect(page).to have_content 'You must Sign in or Sign up to continue'
+        expect(page).to have_content('Plaza Option 1')
+        expect(page).to have_content('Plaza Option II')
+        expect(page).to_not have_css("#probe_option_#{@probe_option_1.id}_form")
+        expect(page).to_not have_css("#probe_option_#{@probe_option_2.id}_form")
+        expect(page).to_not have_content 'Votar'
+
+        login_as(create(:user))
+
+        visit probe_path(id: @probe.codename)
+
+        expect(page).to have_content 'To participate in this process you need to verify your account'
+        expect(page).to have_content('Plaza Option 1')
+        expect(page).to have_content('Plaza Option II')
+        expect(page).to_not have_css("#probe_option_#{@probe_option_1.id}_form")
+        expect(page).to_not have_css("#probe_option_#{@probe_option_2.id}_form")
+        expect(page).to_not have_content 'Votar'
+      end
+
+      scenario 'User selects an option' do
+        visit probe_path(id: @probe.codename)
+
+        within("#probe_option_#{@probe_option_2.id}_form") do
+          click_button "Votar"
+        end
+        expect(page).to have_content "Tu voto ha sido recibido"
+        expect(page).to have_content "Has votado el proyecto: #{@probe_option_2.name}"
+
+        visit probe_path(id: @probe.codename)
+
+        within("#probe_option_#{@probe_option_1.id}_form") do
+          click_button "Votar"
+        end
+
+        expect(page).to have_content "Tu voto ha sido recibido"
+        expect(page).to have_content "Has votado el proyecto: #{@probe_option_1.name}"
+      end
+    end
+
+    context "Debate" do
+
+      scenario "Each probe option should link to a debate" do
+        @probe.probe_options.each do |probe_option|
+          debate = create(:debate)
+          probe_option.update(debate: debate)
+        end
+
+        visit probe_path(id: @probe.codename)
+
+        @probe.probe_options.each do |probe_option|
+          within("#probe_option_#{probe_option.id}") do
+            expect(page).to have_link "Comentar proyecto", href: debate_path(probe_option.debate)
+          end
+        end
+      end
+
+      scenario "A probe option's debate should not be votable" do
+        probe_option = @probe.probe_options.first
+
+        debate = create(:debate)
+        probe_option.update(debate: debate)
+
+        visit debate_path(probe_option.debate)
+
+        expect(page).to_not have_css ('.in-favor')
+        expect(page).to_not have_css ('.against')
+      end
+
+      scenario 'do not show in index' do
+        @probe_option_1.update(debate: create(:debate))
+        @probe_option_2.update(debate: create(:debate))
+
+        visit debates_path
+
+        expect(page).to_not have_content @probe_option_1.debate.title
+        expect(page).to_not have_content @probe_option_2.debate.title
+      end
+    end
+
+  end
 end
