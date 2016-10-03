@@ -87,8 +87,8 @@
                       <%= image_tag "icon_pdf.png" %>
                       <%= "<small>Imágenes (#{probe_option.file_size('dossier', 'pdf')})</small>".html_safe %>
           <% end %>
-
           <% if probe_option.debate.present? %>
+            <br>
             <%= link_to "https://decidepre.madrid.es/debates/62-titulo-del-proyecto",
                         title: "Comentar" do %>
                         <%= image_tag "icon_comment.png" %>
