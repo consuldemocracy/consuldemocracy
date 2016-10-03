@@ -1801,7 +1801,7 @@ table.probe-results {
   border-top: 1px solid #e0e0e0;
   text-align: left;
 
-  a {
+  a:not(.probe-message) {
     display: inline-block;
     margin-top: $line-height/2;
 
@@ -1813,6 +1813,11 @@ table.probe-results {
       vertical-align: text-bottom;
     }
   }
+}
+
+.callout-small {
+  margin-bottom: 0;
+  padding: $line-height/4;
 }
 
 .probe-option {
