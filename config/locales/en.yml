@@ -497,6 +497,7 @@ en:
       categories: "Categories"
     target_blank_html: " (link opens in new window)"
     unflag: Unflag
+    probe_plaza_banner: "#RemodelingPlazaEspaña"
   social:
     blog: Blog
     facebook: Facebook

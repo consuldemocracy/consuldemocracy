@@ -1801,7 +1801,7 @@ table.probe-results {
   border-top: 1px solid #e0e0e0;
   text-align: left;
 
-  a.download-pdf {
+  a {
     display: inline-block;
     margin-top: $line-height/2;
 
@@ -1818,6 +1818,17 @@ table.probe-results {
 .probe-option {
   font-size: $small-font-size;
   font-weight: normal;
+}
+
+.probe-banner {
+  border: 1px solid black;
+  color: black;
+  padding: $line-height/2;
+  text-align: center;
+
+  a {
+    color: black;
+  }
 }
 
 // 11. Spending proposals votes
