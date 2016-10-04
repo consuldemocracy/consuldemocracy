@@ -25,8 +25,6 @@ class Admin::StatsController < Admin::BaseController
     @user_ids_who_didnt_vote_proposals = @verified_users - @user_ids_who_voted_proposals
     @spending_proposals = SpendingProposal.count
     @ballots_with_votes = Ballot.where("ballot_lines_count > ?", 0).count
-
-    @plaza = Probe.where(codename: 'plaza').first
   end
 
   def graph

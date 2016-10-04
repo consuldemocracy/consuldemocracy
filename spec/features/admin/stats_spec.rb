@@ -377,8 +377,10 @@ feature 'Stats' do
 
     visit admin_stats_path
     click_link "Plaza España Probe"
+    click_link "Remodeling of the Plaza España"
 
-    expect(page).to have_content "Remodeling of the Plaza España"
+    expect(page).to have_content "Option"
+    expect(page).to have_content "Votes"
   end
 
 end
