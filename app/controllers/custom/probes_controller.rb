@@ -43,7 +43,7 @@ class ProbesController < ApplicationController
 
     def load_probe_options
       order = @probe.selecting_allowed? ? "RANDOM()" : { probe_selections_count: :desc }
-      @probe_options = @probe.probe_options.all.order(order)
+      @probe_options = @probe.probe_options.all.includes(:debate).order(order)
     end
 
     def probe_show_route
