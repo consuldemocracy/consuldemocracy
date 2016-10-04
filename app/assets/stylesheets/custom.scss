@@ -2122,7 +2122,7 @@ ul.ballot-list {
 // 13. Counter
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
-.jumbo-counter {
+.jumbo-counter, .jumbo-brand {
   background: $budget;
   text-align: center;
 
@@ -2167,6 +2167,10 @@ ul.ballot-list {
   }
 }
 
+.jumbo-brand {
+  background: $brand;
+}
+
 .countdown {
   background: #e6434d;
   border-radius: rem-calc(6);
@@ -2196,6 +2200,25 @@ ul.ballot-list {
     font-size: $small-font-size;
     text-transform: uppercase;
     padding-top: $line-height/4;
+  }
+}
+
+.featured-brand-banner {
+  background: $brand image-url("plaza_banner_small.jpg") no-repeat;
+  background-position: 100% 0;
+  position: relative;
+
+  h2, a:hover h2 {
+    color: #FFF !important;
+  }
+
+  p {
+    color: white;
+  }
+
+  @include breakpoint(medium) {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
   }
 }
 
