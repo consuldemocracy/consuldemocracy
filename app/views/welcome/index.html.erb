@@ -1,4 +1,4 @@
-<% cache ["welcome_index_20160915", display_budget_countdown?] do %>
+<% cache ["welcome_index_20161004", display_budget_countdown?] do %>
   <div class="expanded home-page padding no-margin-top">
     <div class="row">
       <div class="small-12 medium-8 column small-centered text-center">
@@ -20,6 +20,23 @@
         </div>
         <div class="small-12 medium-6 column">
           <%= render "shared/budget_counter" %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+
+  <% if feature?("probe.plaza") %>
+    <div class="expanded jumbo-brand padding">
+      <div class="row">
+        <div class="small-12 medium-6 column">
+          <h2><%= t("probes.plaza_banner.title") %></h2>
+          <h3><%= t("probes.plaza_banner.date_html") %></h3>
+          <div class="small-12 medium-6 small-centered">
+            <%= link_to t("probes.plaza_banner.button"), plaza_path, class: "button expanded" %>
+          </div>
+        </div>
+        <div class="small-12 medium-6 column">
+          <%= image_tag ("plaza_banner.jpg") %>
         </div>
       </div>
     </div>
