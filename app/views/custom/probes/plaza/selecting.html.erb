@@ -57,7 +57,7 @@
 
   <div class="row" data-equalizer>
     <% @probe_options.each do |probe_option| %>
-      <% cache ["plaza", "probe_selection_fragment1"] do %>
+      <% cache ["plaza", "probe_selection_fragment1", probe_option] do %>
         <div id="<%= dom_id(probe_option) %>" class="small-12 medium-4 large-3 column end">
           <div class="project" data-equalizer-watch>
 
@@ -99,25 +99,27 @@
                 <p class="button small expanded secondary disabled margin-top">Votar</p>
               <% end %>
             <% end %>
-            <%= link_to probe_option.file_path('memoria', 'pdf'),
-                        title: "PDF #{probe_option.name} | #{probe_option.file_size('memoria', 'pdf')}",
-                        target: "_blank" do %>
-                        <%= image_tag "icon_pdf.png" %>
-                        <%= "<small>Memoria (#{probe_option.file_size('memoria', 'pdf')})</small>".html_safe %>
-            <% end %>
-            &nbsp;
-            <%= link_to probe_option.file_path('dossier', 'pdf'),
-                        title: "PDF #{probe_option.name} | #{probe_option.file_size('dossier', 'pdf')}",
-                        target: "_blank" do %>
-                        <%= image_tag "icon_pdf.png" %>
-                        <%= "<small>Imágenes (#{probe_option.file_size('dossier', 'pdf')})</small>".html_safe %>
-            <% end %>
-            <% if probe_option.debate.present? %>
-              <br>
-              <%= link_to debate_path(probe_option.debate),
-                          title: "Comentar" do %>
-                          <%= image_tag "icon_comment.png" %>
-                          <%= "<small>Comentar proyecto</small>".html_safe %>
+            <% cache ["plaza", "probe_selection_fragment2", probe_option] do %>
+              <%= link_to probe_option.file_path('memoria', 'pdf'),
+                          title: "PDF #{probe_option.name} | #{probe_option.file_size('memoria', 'pdf')}",
+                          target: "_blank" do %>
+                          <%= image_tag "icon_pdf.png" %>
+                          <%= "<small>Memoria (#{probe_option.file_size('memoria', 'pdf')})</small>".html_safe %>
+              <% end %>
+              &nbsp;
+              <%= link_to probe_option.file_path('dossier', 'pdf'),
+                          title: "PDF #{probe_option.name} | #{probe_option.file_size('dossier', 'pdf')}",
+                          target: "_blank" do %>
+                          <%= image_tag "icon_pdf.png" %>
+                          <%= "<small>Imágenes (#{probe_option.file_size('dossier', 'pdf')})</small>".html_safe %>
+              <% end %>
+              <% if probe_option.debate.present? %>
+                <br>
+                <%= link_to debate_path(probe_option.debate),
+                            title: "Comentar" do %>
+                            <%= image_tag "icon_comment.png" %>
+                            <%= "<small>Comentar proyecto</small>".html_safe %>
+                <% end %>
               <% end %>
             <% end %>
           </div>
