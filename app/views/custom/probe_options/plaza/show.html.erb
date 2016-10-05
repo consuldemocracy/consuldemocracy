@@ -19,7 +19,9 @@
 <% end %>
 
 <% if user_signed_in? %>
-  <% if current_user.level_two_or_three_verified? %>
+  <% if @probe_option == @user_selection %>
+   HAS VOTADO POR ESTA OPCION
+  <% elsif current_user.level_two_or_three_verified? %>
     <%= form_tag selection_probes_path, id: "#{dom_id(@probe_option)}_form" do %>
       <input type="hidden" name="id" value="<%= @probe.codename %>">
       <input type="hidden" name="option_id" value="<%= @probe_option.id %>">
