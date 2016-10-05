@@ -166,9 +166,7 @@ Rails.application.routes.draw do
       get :results, on: :collection
     end
 
-    resources :probes, only: [:index, :show] do
-      resources :probe_options, only: :show
-    end
+    resources :probes, only: [:index, :show]
 
     resources :banners, only: [:index, :new, :create, :edit, :update, :destroy] do
       collection { get :search}
@@ -298,6 +296,8 @@ Rails.application.routes.draw do
   resources :probes, only: [:show] do
     post :selection,  on: :collection
     get :thanks, on: :collection
+
+    resources :probe_options, only: :show
   end
 
   if Rails.env.development?
