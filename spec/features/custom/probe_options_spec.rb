@@ -14,7 +14,7 @@ feature 'Probe options' do
         visit probe_probe_option_path(probe_id: 'plaza', id: @probe_option.id)
 
         expect(page).to have_content 'Plaza Option 1'
-        expect(page).to have_link('Memoria ()', href: "sdfsf")
+        expect(page).to have_link('Memoria ()')
         expect(page).to have_link('Imágenes ()')
       end
 
