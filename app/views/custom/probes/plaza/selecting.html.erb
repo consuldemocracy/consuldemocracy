@@ -63,11 +63,11 @@
           <div class="project" data-equalizer-watch>
 
             <h4 class="probe-title">
-              <%= link_to probe_option.name, probe_option_path(probe_option) %>
+              <%= link_to probe_option.name, plaza_probe_option_path(probe_option) %>
             </h4>
 
             <div class="thumbnail">
-              <%= link_to probe_option_path(probe_option),
+              <%= link_to plaza_probe_option_path(probe_option),
                           class: 'project-thumbnail',
                           target: '_blank' do %>
                 <%= image_tag probe_option.thumb_image_url, alt: probe_option.name %>
@@ -120,7 +120,7 @@
               <% end %>
 
               <br>
-              <%= link_to probe_option_path(probe_option),
+              <%= link_to plaza_probe_option_path(probe_option),
                           title: "Comentar" do %>
                           <%= image_tag "icon_comment.png" %>
                           <%= "<small>Comentar proyecto</small>".html_safe %>
