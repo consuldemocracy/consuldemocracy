@@ -1,0 +1,51 @@
+<h1><%= @probe_option.name %></h1>
+
+<h2><%= t("probes.codenames.#{@probe.codename}") %></h2>
+
+<div><%= image_tag @probe_option.thumb_image_url, alt: @probe_option.name %></div>
+
+<%= link_to @probe_option.file_path('memoria', 'pdf'),
+                          title: "PDF #{@probe_option.name} | #{@probe_option.file_size('memoria', 'pdf')}",
+                          target: "_blank" do %>
+                          <%= image_tag "icon_pdf.png" %>
+                          <%= "<small>Memoria (#{@probe_option.file_size('memoria', 'pdf')})</small>".html_safe %>
+<% end %>
+&nbsp;
+<%= link_to @probe_option.file_path('dossier', 'pdf'),
+            title: "PDF #{@probe_option.name} | #{@probe_option.file_size('dossier', 'pdf')}",
+            target: "_blank" do %>
+            <%= image_tag "icon_pdf.png" %>
+            <%= "<small>Imágenes (#{@probe_option.file_size('dossier', 'pdf')})</small>".html_safe %>
+<% end %>
+
+<% if user_signed_in? %>
+  <% if current_user.level_two_or_three_verified? %>
+    <%= form_tag selection_probes_path, id: "#{dom_id(@probe_option)}_form" do %>
+      <input type="hidden" name="id" value="<%= @probe.codename %>">
+      <input type="hidden" name="option_id" value="<%= @probe_option.id %>">
+      <input type="submit" value="Votar" class="button small expanded margin-top">
+    <% end %>
+  <% else %>
+    <% cache ["plaza", "user_not_verified_msg"] do %>
+      <p class="callout warning callout-small">
+        <%= t("probes.verified_only",
+            verify_account: link_to(t("probes.verify_account"), verification_path, class: "probe-message")).html_safe %>
+      </p>
+      <p class="button small expanded secondary disabled margin-top">Votar</p>
+    <% end %>
+  <% end %>
+<% else %>
+  <% cache ["plaza", "user_not_logged_in_msg"] do %>
+    <p class="callout primary callout-small">
+      <small>
+        <%= t("probes.not_logged_in",
+            signin: link_to(t("probes.signin"), new_user_session_path, class: "probe-message"),
+            signup: link_to(t("probes.signup"), new_user_registration_path, class: "probe-message")).html_safe %>
+      </small>
+    </p>
+    <p class="button small expanded secondary disabled margin-top">Votar</p>
+  <% end %>
+<% end %>
+
+
+COMMENTS:
