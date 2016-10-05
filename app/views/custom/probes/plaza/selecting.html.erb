@@ -58,13 +58,18 @@
   <div class="row" data-equalizer>
     <% @probe_options.each do |probe_option| %>
       <% cache ["plaza", "probe_selection_fragment1", probe_option] do %>
-        <div id="<%= dom_id(probe_option) %>" class="small-12 medium-4 large-3 column end">
+        <div id="<%= dom_id(probe_option) %>"
+             class="probe_option small-12 medium-4 large-3 column end">
           <div class="project" data-equalizer-watch>
 
-            <h4 class="probe-title"><%= probe_option.name %></h4>
+            <h4 class="probe-title">
+              <%= link_to probe_option.name, plaza_probe_option_path(probe_option) %>
+            </h4>
 
             <div class="thumbnail">
-              <%= link_to probe_option.original_image_url, class: 'project-thumbnail', target: '_blank' do %>
+              <%= link_to plaza_probe_option_path(probe_option),
+                          class: 'project-thumbnail',
+                          target: '_blank' do %>
                 <%= image_tag probe_option.thumb_image_url, alt: probe_option.name %>
               <% end %>
             </div>
@@ -113,14 +118,14 @@
                           <%= image_tag "icon_pdf.png" %>
                           <%= "<small>Imágenes (#{probe_option.file_size('dossier', 'pdf')})</small>".html_safe %>
               <% end %>
-              <% if probe_option.debate.present? %>
-                <br>
-                <%= link_to debate_path(probe_option.debate),
-                            title: "Comentar" do %>
-                            <%= image_tag "icon_comment.png" %>
-                            <%= "<small>Comentar proyecto</small>".html_safe %>
-                <% end %>
+
+              <br>
+              <%= link_to plaza_probe_option_path(probe_option),
+                          title: "Comentar" do %>
+                          <%= image_tag "icon_comment.png" %>
+                          <%= "<small>Comentar proyecto</small>".html_safe %>
               <% end %>
+
             <% end %>
           </div>
         </div>
