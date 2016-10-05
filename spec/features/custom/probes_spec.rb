@@ -138,7 +138,7 @@ feature 'Probes' do
 
         @probe.probe_options.each do |probe_option|
           within("#probe_option_#{probe_option.id}") do
-            expect(page).to have_link "Comentar proyecto", href: debate_path(probe_option.debate)
+            expect(page).to have_link "Comentar proyecto", href: probe_option_path(probe_option)
           end
         end
       end
