@@ -1836,6 +1836,34 @@ table.probe-results {
   }
 }
 
+.probe-show {
+
+  h1 {
+    margin-bottom: 0;
+  }
+
+  h2 {
+
+    &.codename {
+      color: $text-medium !important;
+      font-size: rem-calc(24);
+      font-style: italic;
+    }
+  }
+}
+
+aside {
+
+  h3 {
+    border-top: 2px solid $brand;
+    display: inline-block;
+    font-size: rem-calc(16);
+    margin: -1px 0 rem-calc(12);
+    padding-top: rem-calc(6);
+    text-transform: uppercase;
+  }
+}
+
 // 11. Spending proposals votes
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 

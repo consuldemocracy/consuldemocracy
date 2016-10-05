@@ -24,3 +24,9 @@ es:
       title: '#RemodelaciónPlazaEspaña'
       date_html: '¡Participa hasta el <u>28 de octubre</u>!'
       button: 'Votar un proyecto'
+    back: "Volver al listado"
+    show:
+      vote: "Votar"
+      documents: "Documentación"
+      share: "Compartir"
+      button: "Votar"
