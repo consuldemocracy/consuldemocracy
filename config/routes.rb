@@ -294,6 +294,8 @@ Rails.application.routes.draw do
   resources :representatives, only: [:create, :destroy]
 
   resources :probes, only: [:show] do
+    resources :probe_options, only: [:show], shallow: true
+
     post :selection,  on: :collection
     get :thanks, on: :collection
 

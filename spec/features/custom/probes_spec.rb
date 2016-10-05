@@ -55,6 +55,7 @@ feature 'Probes' do
   end
 
   context 'Plaza' do
+
     background do
       @probe = Probe.create(codename: 'plaza')
       @probe_option_1 = @probe.probe_options.create(code: 'PL1' , name: 'Plaza Option 1')
@@ -65,6 +66,24 @@ feature 'Probes' do
     end
 
     context 'Selecting is allowed' do
+
+      scenario 'Index' do
+        visit probe_path(id: @probe.codename)
+
+        expect(page).to have_css(".probe_option", count: 2)
+        expect(page).to have_content @probe_option_1.name
+        expect(page).to have_content @probe_option_2.name
+
+        within("#probe_option_#{@probe_option_1.id}") do
+          expect(page).to have_css("a", :text => /Memoria/)
+          expect(page).to have_css("a", :text => /Imágenes/)
+
+          expect(page).to have_link @probe_option_1.name, href: probe_option_path(@probe_option_1)
+          expect(page).to have_link "Comentar proyecto",  href: probe_option_path(@probe_option_1)
+          expect(page).to have_css(".project-thumbnail[href='#{probe_option_path(@probe_option_1)}']")
+        end
+      end
+
       scenario 'User needs permission to select' do
         logout
 
