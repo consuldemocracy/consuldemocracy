@@ -372,15 +372,31 @@ feature 'Stats' do
 
   end
 
-  scenario "Plaza España Probe" do
-    probe = Probe.create(codename: 'plaza')
+  context "Probes" do
 
-    visit admin_stats_path
-    click_link "Plaza España Probe"
-    click_link "Remodeling of the Plaza España"
+    scenario "Index" do
+      probe1 = Probe.create(codename: 'town_planning')
+      probe2 = Probe.create(codename: 'plaza')
 
-    expect(page).to have_content "Option"
-    expect(page).to have_content "Votes"
+      visit admin_stats_path
+      click_link "Probes"
+
+      expect(page).to have_link "Town planning - Benches", admin_probe_path(probe1)
+      expect(page).to have_link "Remodeling of the Plaza España", admin_probe_path(probe2)
+    end
+
+    scenario "Show" do
+      probe1 = Probe.create(codename: 'plaza')
+
+      visit admin_stats_path
+      click_link "Probes"
+
+      click_link "Remodeling of the Plaza España"
+
+      expect(page).to have_content "Option"
+      expect(page).to have_content "Votes"
+    end
+
   end
 
 end
