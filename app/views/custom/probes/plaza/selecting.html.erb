@@ -63,7 +63,9 @@
           <div class="project" data-equalizer-watch>
 
             <h4 class="probe-title">
-              <%= link_to probe_option.name, plaza_probe_option_path(probe_option) %>
+              <%= probe_option.name %>
+              <br>
+              (<%= t("probes.plaza.selecting.code_html", code: probe_option.code) %>)
             </h4>
 
             <div class="thumbnail">
