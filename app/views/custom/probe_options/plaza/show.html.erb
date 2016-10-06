@@ -22,8 +22,15 @@
 
       <% if user_signed_in? %>
         <% if @probe_option == @user_selection %>
-         HAS VOTADO POR ESTA OPCION
+          <div class="callout success">
+            <strong>Has votado este proyecto</strong><br>Puedes cambiarlo en cualquier momento hasta el día <u>28 de octubre</u>.
+          </div>
         <% elsif current_user.level_two_or_three_verified? %>
+          <% if @probe_option.present? != @user_selection %>
+            <div class="callout success">
+              <strong>Has votado el proyecto <%= link_to @user_selection.name, plaza_probe_option_path(@user_selection) %></strong><br>Puedes cambiarlo en cualquier momento hasta el día <u>28 de octubre</u>.
+            </div>
+          <% end %>
           <%= form_tag selection_probes_path, id: "#{dom_id(@probe_option)}_form" do %>
             <input type="hidden" name="id" value="<%= @probe.codename %>">
             <input type="hidden" name="option_id" value="<%= @probe_option.id %>">
