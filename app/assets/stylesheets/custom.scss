@@ -1786,15 +1786,6 @@ table.probe-results {
 .project-thumbnail {
   display: block;
   position: relative;
-
-  &:before {
-    background: rgba(0,74,131, 0.7);
-    bottom: 6px;
-    content: image-url('icon_zoom.png');
-    padding: $line-height/4;
-    position: absolute;
-    right: 6px;
-  }
 }
 
 .probe-links {
