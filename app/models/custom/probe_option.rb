@@ -12,7 +12,7 @@ class ProbeOption < ActiveRecord::Base
   end
 
   def file_path(ref, extension)
-    "/docs/#{probe.codename}/#{code}_#{ref}_#{param_name}.#{extension}?r=1"
+    "/docs/#{probe.codename}/#{code}_#{ref}_#{param_name}.#{extension}"
   end
 
   def file_size(ref, extension)

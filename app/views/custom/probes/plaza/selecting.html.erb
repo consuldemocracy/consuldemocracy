@@ -107,7 +107,7 @@
                           <%= "<small>Memoria (#{probe_option.file_size('memoria', 'pdf')})</small>".html_safe %>
               <% end %>
               &nbsp;
-              <%= link_to probe_option.file_path('dossier', 'pdf'),
+              <%= link_to "#{probe_option.file_path('dossier', 'pdf')}?r=1",
                           title: "PDF #{probe_option.name} | #{probe_option.file_size('dossier', 'pdf')}",
                           target: "_blank" do %>
                           <%= image_tag "icon_pdf.png" %>
