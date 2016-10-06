@@ -814,54 +814,51 @@ describe Proposal do
   end
 
   describe "retired" do
-    before(:all) do
-      @proposal1 = create(:proposal)
-      @proposal2 = create(:proposal, retired_at: Time.now)
-    end
+
+    let!(:proposal1) { create(:proposal) }
+    let!(:proposal2) { create(:proposal, retired_at: Time.now) }
 
     it "retired? is true" do
-      expect(@proposal1.retired?).to eq false
-      expect(@proposal2.retired?).to eq true
+      expect(proposal1.retired?).to eq false
+      expect(proposal2.retired?).to eq true
     end
 
     it "scope retired" do
       retired = Proposal.retired
 
       expect(retired.size).to eq(1)
-      expect(retired.first).to eq(@proposal2)
+      expect(retired.first).to eq(proposal2)
     end
 
     it "scope not_retired" do
       not_retired = Proposal.not_retired
 
       expect(not_retired.size).to eq(1)
-      expect(not_retired.first).to eq(@proposal1)
+      expect(not_retired.first).to eq(proposal1)
     end
   end
 
   describe "archived" do
-    before(:all) do
-      @new_proposal = create(:proposal)
-      @archived_proposal = create(:proposal, :archived)
-    end
+    let!(:new_proposal)      { create(:proposal) }
+    let!(:archived_proposal) { create(:proposal, :archived) }
 
     it "archived? is true only for proposals created more than n (configured months) ago" do
-      expect(@new_proposal.archived?).to eq false
-      expect(@archived_proposal.archived?).to eq true
+      expect(new_proposal.archived?).to eq false
+      expect(archived_proposal.archived?).to eq true
     end
 
     it "scope archived" do
       archived = Proposal.archived
 
       expect(archived.size).to eq(1)
-      expect(archived.first).to eq(@archived_proposal)
+      expect(archived.first).to eq(archived_proposal)
     end
 
     it "scope archived" do
       not_archived = Proposal.not_archived
 
       expect(not_archived.size).to eq(1)
-      expect(not_archived.first).to eq(@new_proposal)
+      expect(not_archived.first).to eq(new_proposal)
     end
   end
 
