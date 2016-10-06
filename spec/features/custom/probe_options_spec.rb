@@ -39,8 +39,9 @@ feature 'Probe options' do
         visit probe_probe_option_path(probe_id: 'plaza', id: @probe_option.id)
 
         within("#probe_option_#{@probe_option.id}_form") do
-          click_button "Votar"
+          click_button "Vote"
         end
+
         expect(page).to have_content "Tu voto ha sido recibido"
         expect(page).to have_content "Has votado el proyecto: #{@probe_option.name}"
       end

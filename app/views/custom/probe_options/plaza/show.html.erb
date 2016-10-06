@@ -1,53 +1,81 @@
-<h1><%= @probe_option.name %></h1>
+<div class="probe-show">
+  <div class="row">
+    <div class="small-12 medium-9 column">
+      <%= link_to plaza_path, class: "back" do %>
+        <span class="icon-angle-left"></span>
+        <%= t("probes.back") %>
+      <% end %>
 
-<h2><%= t("probes.codenames.#{@probe.codename}") %></h2>
+      <h1><%= @probe_option.name %></h1>
+      <h2 class="codename"><%= t("probes.codenames.#{@probe.codename}") %></h2>
 
-<div><%= image_tag @probe_option.thumb_image_url, alt: @probe_option.name %></div>
+      <div class="margin">
+        <%= image_tag @probe_option.original_image_url, alt: @probe_option.name %>
+      </div>
+    </div>
 
-<%= link_to @probe_option.file_path('memoria', 'pdf'),
-            title: "PDF #{@probe_option.name} | #{@probe_option.file_size('memoria', 'pdf')}",
-            target: "_blank" do %>
-            <%= image_tag "icon_pdf.png" %>
-            <%= "<small>Memoria (#{@probe_option.file_size('memoria', 'pdf')})</small>".html_safe %>
-<% end %>
-&nbsp;
-<%= link_to @probe_option.file_path('dossier', 'pdf'),
-            title: "PDF #{@probe_option.name} | #{@probe_option.file_size('dossier', 'pdf')}",
-            target: "_blank" do %>
-            <%= image_tag "icon_pdf.png" %>
-            <%= "<small>Imágenes (#{@probe_option.file_size('dossier', 'pdf')})</small>".html_safe %>
-<% end %>
+    <aside class="small-12 medium-3 column">
+      <div class="sidebar-divider"></div>
+      <h3><%= t("probes.show.vote") %></h3>
 
-<% if user_signed_in? %>
-  <% if @probe_option == @user_selection %>
-   HAS VOTADO POR ESTA OPCION
-  <% elsif current_user.level_two_or_three_verified? %>
-    <%= form_tag selection_probes_path, id: "#{dom_id(@probe_option)}_form" do %>
-      <input type="hidden" name="id" value="<%= @probe.codename %>">
-      <input type="hidden" name="option_id" value="<%= @probe_option.id %>">
-      <input type="submit" value="Votar" class="button small expanded margin-top">
-    <% end %>
-  <% else %>
-    <% cache ["plaza", "user_not_verified_msg"] do %>
-      <p class="callout warning callout-small">
-        <%= t("probes.verified_only",
-            verify_account: link_to(t("probes.verify_account"), verification_path, class: "probe-message")).html_safe %>
-      </p>
-      <p class="button small expanded secondary disabled margin-top">Votar</p>
-    <% end %>
-  <% end %>
-<% else %>
-  <% cache ["plaza", "user_not_logged_in_msg"] do %>
-    <p class="callout primary callout-small">
-      <small>
-        <%= t("probes.not_logged_in",
-            signin: link_to(t("probes.signin"), new_user_session_path, class: "probe-message"),
-            signup: link_to(t("probes.signup"), new_user_registration_path, class: "probe-message")).html_safe %>
-      </small>
-    </p>
-    <p class="button small expanded secondary disabled margin-top">Votar</p>
-  <% end %>
-<% end %>
+      <% if user_signed_in? %>
+        <% if @probe_option == @user_selection %>
+         HAS VOTADO POR ESTA OPCION
+        <% elsif current_user.level_two_or_three_verified? %>
+          <%= form_tag selection_probes_path, id: "#{dom_id(@probe_option)}_form" do %>
+            <input type="hidden" name="id" value="<%= @probe.codename %>">
+            <input type="hidden" name="option_id" value="<%= @probe_option.id %>">
+            <input type="submit" value="<%= t("probes.show.button") %>" class="button expanded">
+          <% end %>
+        <% else %>
+          <% cache ["plaza", "user_not_verified_msg"] do %>
+            <p class="callout warning callout-small">
+              <%= t("probes.verified_only",
+                  verify_account: link_to(t("probes.verify_account"), verification_path, class: "probe-message")).html_safe %>
+            </p>
+            <p class="button expanded secondary disabled margin-top"><%= t("probes.show.button") %></p>
+          <% end %>
+        <% end %>
+      <% else %>
+        <% cache ["plaza", "user_not_logged_in_msg"] do %>
+          <p class="callout primary callout-small">
+            <small>
+              <%= t("probes.not_logged_in",
+                  signin: link_to(t("probes.signin"), new_user_session_path, class: "probe-message"),
+                  signup: link_to(t("probes.signup"), new_user_registration_path, class: "probe-message")).html_safe %>
+            </small>
+          </p>
+          <p class="button expanded secondary disabled margin-top"><%= t("probes.show.button") %></p>
+        <% end %>
+      <% end %>
 
+      <div class="sidebar-divider"></div>
+      <h3><%= t("probes.show.documents") %></h3>
+      <%= link_to @probe_option.file_path('memoria', 'pdf'),
+                  title: "PDF #{@probe_option.name} | #{@probe_option.file_size('memoria', 'pdf')}",
+                  target: "_blank", class: "button hollow expanded" do %>
+                  <%= image_tag "icon_pdf.png" %>
+                  <%= "<small>Memoria (#{@probe_option.file_size('memoria', 'pdf')})</small>".html_safe %>
+      <% end %>
+      <%= link_to @probe_option.file_path('dossier', 'pdf'),
+                  title: "PDF #{@probe_option.name} | #{@probe_option.file_size('dossier', 'pdf')}",
+                  target: "_blank", class: "button hollow expanded" do %>
+                  <%= image_tag "icon_pdf.png" %>
+                  <%= "<small>Imágenes (#{@probe_option.file_size('dossier', 'pdf')})</small>".html_safe %>
+      <% end %>
 
-COMMENTS:
+      <div class="sidebar-divider"></div>
+      <h3><%= t("probes.show.share") %></h3>
+      <div class="social-share-full">
+        <%= social_share_button_tag("#{@probe_option.name} #{setting['twitter_hashtag']}") %>
+        <!-- Adds whatsapp -->
+      </div>
+    </aside>
+  </div>
+
+  <div class="row margin-top">
+    <div class="small-12 column">
+      <h2>COMMENTS</h2>
+    </div>
+  </div>
+</div>
