@@ -1,0 +1,59 @@
+---
+fr:
+  valuation:
+    menu:
+      title: Instruction
+      spending_proposals: Propositions de dépenses
+    spending_proposals:
+      index:
+        geozone_filter_all: Tous secteurs
+        filters:
+          valuation_open: Ouvert
+          valuating: En cours d'instruction
+          valuation_finished: Instruction terminée
+        title: Projets d'investissements pour le budget participatif
+        edit: Éditer
+        valuators_assigned:
+          one: Instructeur désigné
+          other: "%{count} valuators assigned"
+        no_valuators_assigned: Aucun instructeur désigné
+      show:
+        back: Retour
+        heading: Propositions d'investissements
+        info: Info auteur
+        association_name: Association
+        by: Envoyé par
+        sent: Envoyé à
+        geozone: Zone
+        dossier: Dossier
+        edit_dossier: Éditer le dossier
+        price: Coût
+        price_first_year: Coût la première année
+        currency: "€"
+        feasibility: Faisabilité
+        feasible: Faisable
+        not_feasible: Non-faisable
+        undefined: Indéfini
+        valuation_finished: Instruction terminée
+        time_scope: Délai prévu
+        internal_comments: Commentaires internes
+        responsibles: Responsables
+        assigned_admin: Administrateur désigné
+        assigned_valuators: Instructeurs désignés
+      edit:
+        dossier: Dossier
+        price_html: "Coût (%{currency})"
+        price_first_year_html: "Coût lors de la première année (%{currency})"
+        currency: "€"
+        price_explanation_html: Explication sur le coût
+        feasibility: Faisabilité
+        feasible: Faisable
+        not_feasible: Non-faisable
+        undefined_feasible: En cours
+        feasible_explanation_html: Explication sur la faisabilité
+        valuation_finished: Instruction terminée
+        time_scope_html: Délai prévu
+        internal_comments_html: Commentaires internes
+        save: Sauvegarder les changements
+      notice:
+        valuate: "Dossier actualisé"
