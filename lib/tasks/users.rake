@@ -80,7 +80,7 @@ namespace :users do
   desc "Update password changed at for existing users"
   task update_password_changed_at: :environment do
     User.all.each do |user|
-      user.update(password_changed_at:user.created_at)
+      user.update(password_changed_at: user.created_at)
     end
   end 
 

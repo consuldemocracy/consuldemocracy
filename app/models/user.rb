@@ -1,4 +1,4 @@
-  class User < ActiveRecord::Base
+class User < ActiveRecord::Base
 
   include Verification
 
@@ -56,8 +56,6 @@
   scope :active,         -> { where(erased_at: nil) }
 
   before_validation :clean_document_number
-
-  before_create :set_password_changed_at
 
   # Get the existing user by email if the provider gives us a verified email.
   def self.first_or_initialize_for_oauth(auth)
@@ -241,10 +239,6 @@
     end
     true
   end
-
-  def set_password_changed_at
-    set_password_changed_at = created_at
-  end 
 
   def ability
     @ability ||= Ability.new(self)

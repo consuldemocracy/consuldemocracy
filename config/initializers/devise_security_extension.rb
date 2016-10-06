@@ -41,16 +41,8 @@ module Devise
   module Models
     module PasswordExpirable
       def need_change_password?
-        if password_change? 
-          password_expired?
-        else 
-          false 
-        end 
-      end 
-        
-      def password_change? 
         self.administrator? && password_expired?
-      end
+      end 
 
       def password_expired?
         self.password_changed_at < self.expire_password_after.ago
