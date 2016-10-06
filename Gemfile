@@ -82,7 +82,7 @@ group :development, :test do
   gem 'i18n-tasks'
   gem 'capistrano', '3.5.0',           require: false
   gem "capistrano-bundler", '1.1.4',   require: false
-  gem "capistrano-rails", '1.1.7',     require: false
+  gem "capistrano-rails", '1.1.8',     require: false
   gem "capistrano-rvm",                require: false
   gem 'capistrano3-delayed-job', '~> 1.0'
   gem "bullet"
