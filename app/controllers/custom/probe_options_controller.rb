@@ -5,7 +5,13 @@ class ProbeOptionsController < ApplicationController
   before_action :load_probe_option, only: [:show]
   before_action :load_user_selection, only: [:show]
 
+  has_orders %w{most_voted newest oldest}, only: :show
+
   def show
+    @commentable = @probe_option
+    @comment_tree = CommentTree.new(@commentable, params[:page], @current_order)
+    set_comment_flags(@comment_tree.comments)
+
     render "probe_options/#{@probe.codename}/show"
   end
 

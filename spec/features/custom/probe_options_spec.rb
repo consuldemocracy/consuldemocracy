@@ -70,7 +70,7 @@ feature 'Probe options' do
         expect(page).to have_content "Has votado el proyecto #{@probe_option1.name}"
         expect(page).to have_button "Vote"
       end
-    end
 
+    end
   end
 end

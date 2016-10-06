@@ -2,6 +2,9 @@ class ProbeOption < ActiveRecord::Base
   belongs_to :probe
   belongs_to :debate
   has_many :probe_selections
+  has_many :comments, as: :commentable
+
+  scope :with_hidden, -> { all }
 
   def original_image_url
     "/docs/#{probe.codename}/#{code}_#{param_name}.jpg"
