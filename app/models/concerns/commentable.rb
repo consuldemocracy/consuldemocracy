@@ -3,7 +3,6 @@ module Commentable
 
   included do
     has_many :comments, as: :commentable
-    scope :with_hidden, -> { all }
   end
 
   def commentable_path
