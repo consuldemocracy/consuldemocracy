@@ -45,6 +45,31 @@ feature 'Probe options' do
         expect(page).to have_content "Tu voto ha sido recibido"
         expect(page).to have_content "Has votado el proyecto: #{@probe_option.name}"
       end
+
+      scenario 'User has voted for this options' do
+        user = create(:user, :level_two)
+        ProbeSelection.create!(user: user, probe_option: @probe_option, probe: @probe)
+
+        login_as(user)
+        visit probe_probe_option_path(probe_id: 'plaza', id: @probe_option.id)
+
+        expect(page).to have_content "Has votado este proyecto"
+        expect(page).to_not have_button "Vote"
+      end
+
+      scenario 'User has voted for another option' do
+        user = create(:user, :level_two)
+        @probe_option1 = @probe.probe_options.create(code: 'PL1' , name: 'Plaza Option 1')
+        @probe_option2 = @probe.probe_options.create(code: 'PL2' , name: 'Plaza Option 2')
+
+        ProbeSelection.create!(user: user, probe_option: @probe_option1, probe: @probe)
+
+        login_as(user)
+        visit probe_probe_option_path(probe_id: 'plaza', id: @probe_option2.id)
+
+        expect(page).to have_content "Has votado el proyecto #{@probe_option1.name}"
+        expect(page).to have_button "Vote"
+      end
     end
 
   end
