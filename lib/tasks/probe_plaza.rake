@@ -81,7 +81,7 @@ namespace :temp do
     puts "Plaza probe created with #{plaza_options.size} selection options"
   end
 
-  desc "Create a debate for each probe option of the town planning probe"
+  desc "Create a debate for each probe option of the plaza probe"
   task plaza_debates: :environment do
     probe = Probe.where(codename: "plaza").first
 
@@ -99,7 +99,7 @@ namespace :temp do
     end
   end
 
-  desc "Create a debate for each probe option of the town planning probe"
+  desc "Migrates comments from debates to probe options in the plaza probe"
   task plaza_migrate_comments: :environment do
     probe = Probe.where(codename: "plaza").first
 
