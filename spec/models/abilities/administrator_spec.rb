@@ -12,6 +12,7 @@ describe "Abilities::Administrator" do
   let(:debate) { create(:debate) }
   let(:comment) { create(:comment) }
   let(:proposal) { create(:proposal) }
+  let(:probe_option) { create(:probe_option) }
   let(:spending_proposal) { create(:spending_proposal) }
 
   let(:hidden_debate) { create(:debate, :hidden) }
@@ -50,6 +51,9 @@ describe "Abilities::Administrator" do
 
   it { should be_able_to(:comment_as_administrator, proposal) }
   it { should_not be_able_to(:comment_as_moderator, proposal) }
+
+  it { should be_able_to(:comment_as_administrator, probe_option) }
+  it { should_not be_able_to(:comment_as_moderator, probe_option) }
 
   it { should be_able_to(:comment_as_administrator, spending_proposal) }
   it { should_not be_able_to(:comment_as_moderator, spending_proposal) }

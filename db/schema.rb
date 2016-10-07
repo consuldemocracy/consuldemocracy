@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161003120650) do
+ActiveRecord::Schema.define(version: 20161006095613) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -315,6 +315,7 @@ ActiveRecord::Schema.define(version: 20161003120650) do
     t.integer "probe_id"
     t.integer "probe_selections_count", default: 0
     t.integer "debate_id"
+    t.integer "comments_count",         default: 0, null: false
   end
 
   add_index "probe_options", ["debate_id"], name: "index_probe_options_on_debate_id", using: :btree

@@ -336,6 +336,16 @@ FactoryGirl.define do
     association :notifiable, factory: :proposal
   end
 
+  factory :probe do
+    sequence(:codename) { |n| "probe_#{n}" }
+  end
+
+  factory :probe_option do
+    probe
+    sequence(:name) { |n| "Probe option #{n}" }
+    sequence(:code) { |n| "probe_option_#{n}" }
+  end
+
   factory :geozone do
     sequence(:name) { |n| "District #{n}" }
     census_code { '01' }
