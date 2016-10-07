@@ -99,4 +99,21 @@ namespace :temp do
     end
   end
 
+  desc "Create a debate for each probe option of the town planning probe"
+  task plaza_migrate_comments: :environment do
+    probe = Probe.where(codename: "plaza").first
+
+    probe.probe_options.each do |probe_option|
+      puts "Migrating comments for probe option #{probe_option.name}"
+      debate = probe_option.debate
+      if debate.present?
+        debate.comments.each do |comment|
+          comment.update!(commentable_type: "ProbeOption", commentable_id: probe_option.id)
+        end
+        debate.destroy
+        probe_option.update!(debate_id: nil)
+      end
+    end
+  end
+
 end
