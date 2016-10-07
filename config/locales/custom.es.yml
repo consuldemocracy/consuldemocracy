@@ -24,6 +24,9 @@ es:
       title: '#RemodelaciónPlazaEspaña'
       date_html: '¡Participa hasta el <u>28 de octubre</u>!'
       button: 'Votar un proyecto'
+    plaza:
+      selecting:
+        code_html: '<abbr title="Referencia">REF.</abbr> %{code}'
     back: "Volver al listado"
     show:
       vote: "Votar"

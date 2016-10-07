@@ -17,7 +17,7 @@
     <div class="row margin">
       <div class="small-12 column">
         <div class="callout success">
-          Has votado el proyecto <strong><%= @probe_option.name %></strong>. Puedes cambiarlo en cualquier momento hasta el día <u>28 de octubre</u>.
+          Has votado el proyecto <strong><%= link_to @probe_option.name, plaza_probe_option_path(@probe_option) %></strong>. Puedes cambiarlo en cualquier momento hasta el día <u>28 de octubre</u>.
         </div>
       </div>
     </div>
@@ -63,13 +63,14 @@
           <div class="project" data-equalizer-watch>
 
             <h4 class="probe-title">
-              <%= link_to probe_option.name, plaza_probe_option_path(probe_option) %>
+              <%= probe_option.name %>
+              <br>
+              (<%= t("probes.plaza.selecting.code_html", code: probe_option.code) %>)
             </h4>
 
             <div class="thumbnail">
               <%= link_to plaza_probe_option_path(probe_option),
-                          class: 'project-thumbnail',
-                          target: '_blank' do %>
+                          class: 'project-thumbnail' do %>
                 <%= image_tag probe_option.thumb_image_url, alt: probe_option.name %>
               <% end %>
             </div>
