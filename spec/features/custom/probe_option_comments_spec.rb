@@ -33,7 +33,7 @@ feature 'Commenting Probe Options' do
     expect(page).to have_content first_child.body
     expect(page).to have_content second_child.body
 
-    expect(page).to have_link "Go back to #{probe_option.title}", href: probe_probe_option_path(probe_id: probe.codename, id: probe_option.id)
+    expect(page).to have_link "Go back to #{probe_option.name}", href: probe_probe_option_path(probe_id: probe.codename, id: probe_option.id)
   end
 
   scenario 'Collapsable comments', :js do
@@ -67,17 +67,17 @@ feature 'Commenting Probe Options' do
     c2 = create(:comment, :with_confidence_score, commentable: probe_option, cached_votes_up: 10, cached_votes_total: 12, created_at: Time.now - 1)
     c3 = create(:comment, :with_confidence_score, commentable: probe_option, cached_votes_up: 1, cached_votes_total: 2, created_at: Time.now)
 
-    visit probe_probe_option_path(probe_id: probe.id, id: probe_option, order: :most_voted)
+    visit probe_probe_option_path(probe_id: probe.codename, id: probe_option, order: :most_voted)
 
     expect(c1.body).to appear_before(c2.body)
     expect(c2.body).to appear_before(c3.body)
 
-    visit probe_probe_option_path(probe_id: probe.id, id: probe_option.id, order: :newest)
+    visit probe_probe_option_path(probe_id: probe.codename, id: probe_option.id, order: :newest)
 
     expect(c3.body).to appear_before(c2.body)
     expect(c2.body).to appear_before(c1.body)
 
-    visit probe_probe_option_path(probe_id: probe.id, id: probe_option.id, order: :oldest)
+    visit probe_probe_option_path(probe_id: probe.codename, id: probe_option.id, order: :oldest)
 
     expect(c1.body).to appear_before(c2.body)
     expect(c2.body).to appear_before(c3.body)
@@ -89,17 +89,17 @@ feature 'Commenting Probe Options' do
     old_child = create(:comment, commentable: probe_option, parent_id: new_root.id, created_at: Time.now - 10)
     new_child = create(:comment, commentable: probe_option, parent_id: new_root.id, created_at: Time.now)
 
-    visit probe_probe_option_path(probe_id: probe.id, id: probe_option.id, order: :most_voted)
+    visit probe_probe_option_path(probe_id: probe.codename, id: probe_option.id, order: :most_voted)
 
     expect(new_root.body).to appear_before(old_root.body)
     expect(old_child.body).to appear_before(new_child.body)
 
-    visit probe_probe_option_path(probe_id: probe.id, id: probe_option.id, order: :newest)
+    visit probe_probe_option_path(probe_id: probe.codename, id: probe_option.id, order: :newest)
 
     expect(new_root.body).to appear_before(old_root.body)
     expect(new_child.body).to appear_before(old_child.body)
 
-    visit probe_probe_option_path(probe_id: probe.id, id: probe_option.id, order: :oldest)
+    visit probe_probe_option_path(probe_id: probe.codename, id: probe_option.id, order: :oldest)
 
     expect(old_root.body).to appear_before(new_root.body)
     expect(old_child.body).to appear_before(new_child.body)
@@ -264,12 +264,10 @@ feature 'Commenting Probe Options' do
   end
 
   scenario "Flagging turbolinks sanity check", :js do
-    probe_option = create(:probe_option, title: "Should we change the world?")
     comment = create(:comment, commentable: probe_option)
 
     login_as(user)
-    visit probe_path(id: probe.codename)
-    click_link "Should we change the world?"
+    visit probe_probe_option_path(probe_id: probe.codename, id: probe.id)
 
     within "#comment_#{comment.id}" do
       page.find("#flag-expand-comment-#{comment.id}").click
@@ -278,7 +276,6 @@ feature 'Commenting Probe Options' do
   end
 
   scenario "Erasing a comment's author" do
-    probe_option = create(:probe_option)
     comment = create(:comment, commentable: probe_option, body: 'this should be visible')
     comment.user.erase
 
@@ -290,7 +287,6 @@ feature 'Commenting Probe Options' do
   end
 
   scenario 'Submit button is disabled after clicking', :js do
-    probe_option = create(:probe_option)
     login_as(user)
     visit probe_probe_option_path(probe_id: probe.codename, id: probe_option.id)
 
@@ -420,7 +416,8 @@ feature 'Commenting Probe Options' do
     background do
       @manuela = create(:user, verified_at: Time.now)
       @pablo = create(:user)
-      @probe_option = create(:probe_option)
+      @probe = create(:probe, codename: 'plaza')
+      @probe_option = create(:probe_option, probe: @probe)
       @comment = create(:comment, commentable: @probe_option)
 
       login_as(@manuela)
@@ -430,7 +427,7 @@ feature 'Commenting Probe Options' do
       create(:vote, voter: @manuela, votable: @comment, vote_flag: true)
       create(:vote, voter: @pablo, votable: @comment, vote_flag: false)
 
-      visit probe_probe_option_path(@probe_option)
+      visit probe_probe_option_path(probe_id: @probe.codename, id: @probe_option.id)
 
       within("#comment_#{@comment.id}_votes") do
         within(".in_favor") do
@@ -446,7 +443,7 @@ feature 'Commenting Probe Options' do
     end
 
     scenario 'Create', :js do
-      visit probe_probe_option_path(probe_id: @probe.id, id: @probe_option.id)
+      visit probe_probe_option_path(probe_id: @probe.codename, id: @probe_option.id)
 
       within("#comment_#{@comment.id}_votes") do
         find(".in_favor a").click
@@ -464,7 +461,7 @@ feature 'Commenting Probe Options' do
     end
 
     scenario 'Update', :js do
-      visit probe_probe_option_path(probe_id: @probe.id, id: @probe_option.id)
+      visit probe_probe_option_path(probe_id: @probe.codename, id: @probe_option.id)
 
       within("#comment_#{@comment.id}_votes") do
         find('.in_favor a').click
@@ -483,7 +480,7 @@ feature 'Commenting Probe Options' do
     end
 
     xscenario 'Trying to vote multiple times', :js do
-      visit probe_probe_option_path(probe_id: @probe.id, id: @probe_option.id)
+      visit probe_probe_option_path(probe_id: @probe.codename, id: @probe_option.id)
 
       within("#comment_#{@comment.id}_votes") do
         find('.in_favor a').click
