@@ -1,10 +1,9 @@
 class ProbeOption < ActiveRecord::Base
+  include Commentable
+
   belongs_to :probe
   belongs_to :debate
   has_many :probe_selections
-  has_many :comments, as: :commentable
-
-  scope :with_hidden, -> { all }
 
   def original_image_url
     "/docs/#{probe.codename}/#{code}_#{param_name}.jpg"
@@ -38,6 +37,14 @@ class ProbeOption < ActiveRecord::Base
 
   def selectable_by?(user)
     probe.selecting_allowed && user && user.level_two_or_three_verified?
+  end
+
+  def commentable_path
+    Rails.application.routes.url_helpers.probe_probe_option_path(probe_id: self.probe.codename, id: self.id)
+  end
+
+  def commentable_title
+    self.name
   end
 
 

@@ -3,6 +3,7 @@ class SpendingProposal < ActiveRecord::Base
   include Sanitizable
   include Taggable
   include Searchable
+  include Commentable
 
   acts_as_votable
   acts_as_paranoid column: :hidden_at
@@ -13,7 +14,6 @@ class SpendingProposal < ActiveRecord::Base
   belongs_to :administrator
   has_many :valuation_assignments, dependent: :destroy
   has_many :valuators, through: :valuation_assignments
-  has_many :comments, as: :commentable
   has_many :ballot_lines, dependent: :destroy
 
   validates :title, presence: true
