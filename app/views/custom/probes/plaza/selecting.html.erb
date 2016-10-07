@@ -58,7 +58,8 @@
   <div class="row" data-equalizer>
     <% @probe_options.each do |probe_option| %>
       <% cache ["plaza", "probe_selection_fragment2", probe_option] do %>
-        <div id="<%= dom_id(probe_option) %>" class="small-12 medium-4 large-3 column end">
+        <div id="<%= dom_id(probe_option) %>"
+             class="probe_option small-12 medium-4 large-3 column end">
           <div class="project" data-equalizer-watch>
 
             <h4 class="probe-title">
