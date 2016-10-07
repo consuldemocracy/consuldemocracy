@@ -152,7 +152,7 @@ feature 'Commenting Probe Options' do
       create(:comment, commentable: probe_option)
       visit probe_probe_option_path(probe_id: probe.codename, id: probe_option.id)
 
-      expect(page).to have_content 'You must Sign in or Sign up to leave a comment'
+      expect(page).to have_content 'You must Sign in or Sign up to participate'
       within('#comments') do
         expect(page).to_not have_content 'Write a comment'
         expect(page).to_not have_content 'Reply'
