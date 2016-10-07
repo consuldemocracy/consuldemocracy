@@ -65,6 +65,20 @@ feature 'Probes' do
     end
 
     context 'Selecting is allowed' do
+
+      scenario 'Index' do
+        visit probe_path(id: @probe.codename)
+
+        expect(page).to have_css(".probe_option", count: 2)
+        expect(page).to have_content @probe_option_1.name
+        expect(page).to have_content @probe_option_2.name
+
+        within("#probe_option_#{@probe_option_1.id}") do
+          expect(page).to have_content @probe_option_1.name
+          expect(page).to have_content "(REF. #{@probe_option_1.code})"
+        end
+      end
+
       scenario 'User needs permission to select' do
         logout
 
