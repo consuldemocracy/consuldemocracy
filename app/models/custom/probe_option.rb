@@ -53,5 +53,8 @@ class ProbeOption < ActiveRecord::Base
     self.name
   end
 
+  def hidden?
+    false
+  end
 
 end
