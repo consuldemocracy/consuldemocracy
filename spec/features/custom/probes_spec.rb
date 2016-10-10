@@ -75,6 +75,8 @@ feature 'Probes' do
         expect(page).to have_content @probe_option_2.name
 
         within("#probe_option_#{@probe_option_1.id}") do
+          expect(page).to have_content "(REF. #{@probe_option_1.code})"
+
           expect(page).to have_css("a", :text => /Memoria/)
           expect(page).to have_css("a", :text => /Imágenes/)
 

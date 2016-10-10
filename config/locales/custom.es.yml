@@ -33,3 +33,4 @@ es:
       documents: "Documentación"
       share: "Compartir"
       button: "Votar"
+        code_html: '<abbr title="Referencia">REF.</abbr> %{code}'
