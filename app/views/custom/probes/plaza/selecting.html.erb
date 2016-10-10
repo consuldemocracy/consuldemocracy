@@ -62,11 +62,13 @@
              class="probe_option small-12 medium-4 large-3 column end">
           <div class="project" data-equalizer-watch>
 
-            <h4 class="probe-title">
-              <%= probe_option.name %>
-              <br>
-              (<%= t("probes.plaza.selecting.code_html", code: probe_option.code) %>)
-            </h4>
+            <%= link_to plaza_probe_option_path(probe_option) do %>
+              <h4 class="probe-title">
+                <%= probe_option.name %>
+                <br>
+                (<%= t("probes.plaza.selecting.code_html", code: probe_option.code) %>)
+              </h4>
+            <% end %>
 
             <div class="thumbnail">
               <%= link_to plaza_probe_option_path(probe_option),
@@ -122,9 +124,9 @@
 
               <br>
               <%= link_to plaza_probe_option_path(probe_option),
-                          title: "Comentar" do %>
+                          title: "Ver detalles del proyecto" do %>
                           <%= image_tag "icon_comment.png" %>
-                          <%= "<small>Comentar proyecto</small>".html_safe %>
+                          <%= "<small>Ver detalles del proyecto</small>".html_safe %>
               <% end %>
 
             <% end %>

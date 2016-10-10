@@ -8,7 +8,10 @@
         <%= t("probes.back") %>
       <% end %>
 
-      <h1><%= @probe_option.name %></h1>
+      <h1>
+        <%= @probe_option.name %>
+        <span>(<%= t("probes.plaza.selecting.code_html", code: @probe_option.code) %>)</span>
+      </h1>
       <h2 class="codename"><%= t("probes.codenames.#{@probe.codename}") %></h2>
 
       <div class="margin">
