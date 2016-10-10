@@ -42,7 +42,7 @@ class ProbeOption < ActiveRecord::Base
   end
 
   def to_param
-    "#{id} #{name}".parameterize
+    "#{id}-#{name}".parameterize
   end
 
   def commentable_path
