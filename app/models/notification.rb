@@ -29,7 +29,7 @@ class Notification < ActiveRecord::Base
     when "ProposalNotification"
       notifiable.proposal.title
     when "Comment"
-      notifiable.commentable.title
+      notifiable.commentable.commentable_title
     else
       notifiable.title
     end
