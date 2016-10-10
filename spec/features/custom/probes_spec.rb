@@ -86,39 +86,18 @@ feature 'Probes' do
         end
       end
 
-      context "Random order" do
+      scenario 'Randome order maintained when going back from show' do
+        10.times { |i| @probe.probe_options.create(code: "PL#{i + 2}" , name: "Plaza Option #{i + 2}") }
 
-        background do
-          10.times { |i| @probe.probe_options.create(code: "PL#{i + 2}" , name: "Plaza Option #{i + 2}") }
-        end
+        visit probe_path(id: @probe.codename)
 
-        scenario 'Order maintained when going back from show' do
-          visit probe_path(id: @probe.codename)
+        order = all(".probe_option h4").collect {|i| i.text }
 
-          order = all(".probe_option h4").collect {|i| i.text }
+        click_link @probe_option_1.name
+        click_link "Back to list"
 
-          click_link @probe_option_1.name
-          click_link "Back to list"
-
-          new_order = all(".probe_option h4").collect {|i| i.text }
-          expect(order).to eq(new_order)
-        end
-
-        scenario 'Order maintained when going back from voting' do
-          visit probe_path(id: @probe.codename)
-
-          order = all(".probe_option h4").collect {|i| i.text }
-
-          within("#probe_option_#{@probe_option_1.id}") do
-            click_button "Votar"
-          end
-
-          expect(page).to have_content "¡Gracias por participar en Plaza de España!"
-          click_link "Volver a la lista"
-
-          new_order = all(".probe_option h4").collect {|i| i.text }
-          expect(order).to eq(new_order)
-        end
+        new_order = all(".probe_option h4").collect {|i| i.text }
+        expect(order).to eq(new_order)
       end
 
       scenario 'User needs permission to select' do
