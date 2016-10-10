@@ -44,4 +44,12 @@ describe ProbeOption do
     end
 
   end
+
+  describe '#to_param' do
+    it "should return a friendly url" do
+      probe_option = create(:probe_option)
+      expect(probe_option.to_param).to eq "#{probe_option.id} #{probe_option.name}".parameterize
+    end
+  end
+
 end
