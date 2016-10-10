@@ -145,18 +145,6 @@ feature 'Probes' do
         end
       end
 
-      scenario "A probe option's debate should not be votable" do
-        probe_option = @probe.probe_options.first
-
-        debate = create(:debate)
-        probe_option.update(debate: debate)
-
-        visit debate_path(probe_option.debate)
-
-        expect(page).to_not have_css ('.in-favor')
-        expect(page).to_not have_css ('.against')
-      end
-
       scenario 'do not show in index' do
         @probe_option_1.update(debate: create(:debate))
         @probe_option_2.update(debate: create(:debate))
