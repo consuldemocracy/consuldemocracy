@@ -2,6 +2,7 @@ class ProbesController < ApplicationController
   skip_authorization_check
 
   before_action :load_probe
+  before_action :set_random_seed, only: [:show]
   before_action :load_probe_options, only: [:show]
   before_action :load_user_selection, only: [:show, :thanks]
 
@@ -52,5 +53,10 @@ class ProbesController < ApplicationController
 
     def probe_thanks_route
       method("#{@probe.codename}_thanks_path").call
+    end
+
+    def set_random_seed
+      session[:random_seed] ||= rand(99)/100.0
+      ProbeOption.connection.execute "select setseed(#{session[:random_seed]})"
     end
 end
