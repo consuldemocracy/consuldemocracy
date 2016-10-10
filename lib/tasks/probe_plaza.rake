@@ -81,7 +81,7 @@ namespace :temp do
     puts "Plaza probe created with #{plaza_options.size} selection options"
   end
 
-  desc "Create a debate for each probe option of the town planning probe"
+  desc "Create a debate for each probe option of the plaza probe"
   task plaza_debates: :environment do
     probe = Probe.where(codename: "plaza").first
 
@@ -96,6 +96,22 @@ namespace :temp do
       debate.terms_of_service = "1"
       debate.save!
       probe_option.update!(debate: debate)
+    end
+  end
+
+  desc "Migrates comments from debates to probe options in the plaza probe"
+  task plaza_migrate_comments: :environment do
+    probe = Probe.where(codename: "plaza").first
+
+    probe.probe_options.each do |probe_option|
+      puts "Migrating comments for probe option #{probe_option.name}"
+      debate = probe_option.debate
+      if debate.present?
+        debate.comments.each do |comment|
+          comment.update!(commentable_type: "ProbeOption", commentable_id: probe_option.id)
+        end
+        ProbeOption.reset_counters(probe_option.id, :comments)
+      end
     end
   end
 

@@ -19,8 +19,8 @@ feature 'Probes' do
         visit probe_path(id: @probe.codename)
 
         expect(page).to have_content 'Selecciona el proyecto que quieres votar'
-        expect(page).to have_content('First Option')
-        expect(page).to have_content('Second Option')
+        expect(page).to have_content 'First Option'
+        expect(page).to have_content 'Second Option'
         expect(page).to_not have_content 'Enviar voto'
       end
 
@@ -55,6 +55,7 @@ feature 'Probes' do
   end
 
   context 'Plaza' do
+
     background do
       @probe = Probe.create(codename: 'plaza')
       @probe_option_1 = @probe.probe_options.create(code: 'PL1' , name: 'Plaza Option 1')
@@ -74,8 +75,14 @@ feature 'Probes' do
         expect(page).to have_content @probe_option_2.name
 
         within("#probe_option_#{@probe_option_1.id}") do
-          expect(page).to have_content @probe_option_1.name
           expect(page).to have_content "(REF. #{@probe_option_1.code})"
+
+          expect(page).to have_css("a", :text => /Memoria/)
+          expect(page).to have_css("a", :text => /Imágenes/)
+
+          expect(page).to have_link @probe_option_1.name, href: plaza_probe_option_path(@probe_option_1)
+          expect(page).to have_link "Ver detalles del proyecto",  href: plaza_probe_option_path(@probe_option_1)
+          expect(page).to have_css(".project-thumbnail[href='#{plaza_probe_option_path(@probe_option_1)}']")
         end
       end
 
@@ -85,8 +92,8 @@ feature 'Probes' do
         visit probe_path(id: @probe.codename)
 
         expect(page).to have_content 'You must Sign in or Sign up to participate'
-        expect(page).to have_content('Plaza Option 1')
-        expect(page).to have_content('Plaza Option II')
+        expect(page).to have_content 'Plaza Option 1'
+        expect(page).to have_content 'Plaza Option II'
         expect(page).to_not have_css("#probe_option_#{@probe_option_1.id}_form")
         expect(page).to_not have_css("#probe_option_#{@probe_option_2.id}_form")
 
@@ -95,8 +102,8 @@ feature 'Probes' do
         visit probe_path(id: @probe.codename)
 
         expect(page).to have_content 'To participate in this process you need to verify your account'
-        expect(page).to have_content('Plaza Option 1')
-        expect(page).to have_content('Plaza Option II')
+        expect(page).to have_content 'Plaza Option 1'
+        expect(page).to have_content 'Plaza Option II'
         expect(page).to_not have_css("#probe_option_#{@probe_option_1.id}_form")
         expect(page).to_not have_css("#probe_option_#{@probe_option_2.id}_form")
       end
@@ -133,21 +140,9 @@ feature 'Probes' do
 
         @probe.probe_options.each do |probe_option|
           within("#probe_option_#{probe_option.id}") do
-            expect(page).to have_link "Comentar proyecto", href: debate_path(probe_option.debate)
+            expect(page).to have_link "Ver detalles del proyecto", href: plaza_probe_option_path(probe_option)
           end
         end
-      end
-
-      scenario "A probe option's debate should not be votable" do
-        probe_option = @probe.probe_options.first
-
-        debate = create(:debate)
-        probe_option.update(debate: debate)
-
-        visit debate_path(probe_option.debate)
-
-        expect(page).to_not have_css ('.in-favor')
-        expect(page).to_not have_css ('.against')
       end
 
       scenario 'do not show in index' do
@@ -158,6 +153,16 @@ feature 'Probes' do
 
         expect(page).to_not have_content @probe_option_1.debate.title
         expect(page).to_not have_content @probe_option_2.debate.title
+      end
+
+      scenario 'debate show should redirect to probe show' do
+        probe_option = @probe.probe_options.first
+
+        debate = create(:debate)
+        probe_option.update(debate: debate)
+
+        visit debate_path(probe_option.debate)
+        expect(current_url).to include("proceso/plaza-espana/proyectos/#{@probe_option_1.id}")
       end
     end
 

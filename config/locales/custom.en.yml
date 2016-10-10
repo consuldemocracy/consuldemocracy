@@ -27,3 +27,10 @@ en:
     plaza:
       selecting:
         code_html: '<abbr title="Reference">REF.</abbr> %{code}'
+    back: "Back to list"
+    show:
+      vote: "Vote"
+      documents: "Documents"
+      share: "Share"
+      button: "Vote"
+      code_html: '<abbr title="Reference">REF.</abbr> %{code}'
