@@ -140,7 +140,7 @@ feature 'Probes' do
 
         @probe.probe_options.each do |probe_option|
           within("#probe_option_#{probe_option.id}") do
-            expect(page).to have_link "Comentar proyecto", href: plaza_probe_option_path(probe_option)
+            expect(page).to have_link "Ver detalles del proyecto", href: plaza_probe_option_path(probe_option)
           end
         end
       end
@@ -165,6 +165,16 @@ feature 'Probes' do
 
         expect(page).to_not have_content @probe_option_1.debate.title
         expect(page).to_not have_content @probe_option_2.debate.title
+      end
+
+      scenario 'debate show should redirect to probe show' do
+        probe_option = @probe.probe_options.first
+
+        debate = create(:debate)
+        probe_option.update(debate: debate)
+
+        visit debate_path(probe_option.debate)
+        expect(current_url).to include("proceso/plaza-espana/proyectos/#{@probe_option_1.id}")
       end
     end
 
