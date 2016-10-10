@@ -110,9 +110,7 @@ namespace :temp do
         debate.comments.each do |comment|
           comment.update!(commentable_type: "ProbeOption", commentable_id: probe_option.id)
         end
-        debate.destroy
         ProbeOption.reset_counters(probe_option.id, :comments)
-        probe_option.update!(debate_id: nil)
       end
     end
   end
