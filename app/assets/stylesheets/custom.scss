@@ -1769,6 +1769,13 @@ table.probe-results {
     box-shadow: none;
     margin-top: $line-height;
   }
+
+  a {
+
+    h4.probe-title {
+      color: $text;
+    }
+  }
 }
 
 .probe-title {
@@ -1831,6 +1838,10 @@ table.probe-results {
 
   h1 {
     margin-bottom: 0;
+
+    span {
+      font-size: rem-calc(24);
+    }
   }
 
   h2 {
