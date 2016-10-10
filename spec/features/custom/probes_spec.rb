@@ -86,7 +86,7 @@ feature 'Probes' do
         end
       end
 
-      scenario 'Randome order maintained when going back from show' do
+      scenario 'Random order maintained when going back from show' do
         10.times { |i| @probe.probe_options.create(code: "PL#{i + 2}" , name: "Plaza Option #{i + 2}") }
 
         visit probe_path(id: @probe.codename)
