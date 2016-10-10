@@ -81,7 +81,7 @@ feature 'Probes' do
           expect(page).to have_css("a", :text => /Imágenes/)
 
           expect(page).to have_link @probe_option_1.name, href: plaza_probe_option_path(@probe_option_1)
-          expect(page).to have_link "Comentar proyecto",  href: plaza_probe_option_path(@probe_option_1)
+          expect(page).to have_link "Ver detalles del proyecto",  href: plaza_probe_option_path(@probe_option_1)
           expect(page).to have_css(".project-thumbnail[href='#{plaza_probe_option_path(@probe_option_1)}']")
         end
       end
@@ -140,7 +140,7 @@ feature 'Probes' do
 
         @probe.probe_options.each do |probe_option|
           within("#probe_option_#{probe_option.id}") do
-            expect(page).to have_link "Comentar proyecto", href: plaza_probe_option_path(probe_option)
+            expect(page).to have_link "Ver detalles del proyecto", href: plaza_probe_option_path(probe_option)
           end
         end
       end
