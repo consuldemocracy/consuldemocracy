@@ -41,6 +41,10 @@ class ProbeOption < ActiveRecord::Base
     probe.selecting_allowed && user && user.level_two_or_three_verified?
   end
 
+  def to_param
+    "#{id}-#{name}".parameterize
+  end
+
   def commentable_path
     Rails.application.routes.url_helpers.probe_probe_option_path(probe_id: self.probe.codename, id: self.id)
   end
