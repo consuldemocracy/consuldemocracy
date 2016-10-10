@@ -262,18 +262,7 @@ puts "Commenting Proposals"
 end
 
 
-puts "Commenting Comments"
 
-(1..200).each do |i|
-  author = User.reorder("RANDOM()").first
-  parent = Comment.reorder("RANDOM()").first
-  Comment.create!(user: author,
-                  created_at: rand(parent.created_at .. Time.now),
-                  commentable_id: parent.commentable_id,
-                  commentable_type: parent.commentable_type,
-                  body: Faker::Lorem.sentence,
-                  parent: parent)
-end
 
 
 puts "Voting Debates, Proposals & Comments"
@@ -535,4 +524,28 @@ plaza_options = [
 
 plaza_options.each do |option_name, option_code|
   ProbeOption.create(probe_id: plaza.id, name: option_name, code: option_code)
+end
+
+puts "Commenting probe options"
+
+(1..100).each do |i|
+  author = User.reorder("RANDOM()").first
+  probe_option = ProbeOption.reorder("RANDOM()").first
+  Comment.create!(user: author,
+                  created_at: rand(probe_option.probe.created_at .. Time.now),
+                  commentable: probe_option,
+                  body: Faker::Lorem.sentence)
+end
+
+puts "Commenting Comments"
+
+(1..300).each do |i|
+  author = User.reorder("RANDOM()").first
+  parent = Comment.reorder("RANDOM()").first
+  Comment.create!(user: author,
+                  created_at: rand(parent.created_at .. Time.now),
+                  commentable_id: parent.commentable_id,
+                  commentable_type: parent.commentable_type,
+                  body: Faker::Lorem.sentence,
+                  parent: parent)
 end
