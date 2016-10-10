@@ -64,9 +64,10 @@ class DebatesController < ApplicationController
     end
 
     def redirect_to_plaza
-      probe_option = ProbeOption.where(probe_id: 2, debate_id: params[:id]).first
+      plaza = Probe.where(codename: 'plaza').first
+      probe_option = ProbeOption.where(probe: plaza, debate_id: params[:id]).first
       if probe_option.present?
-        redirect_to probe_probe_option_path(probe_id: 'plaza', id: probe_option.id, anchor: 'comments')
+        redirect_to plaza_probe_option_path(probe_option, anchor: 'comments')
       end
     end
 
