@@ -86,6 +86,20 @@ feature 'Probes' do
         end
       end
 
+      scenario 'Random order maintained when going back from show' do
+        10.times { |i| @probe.probe_options.create(code: "PL#{i + 2}" , name: "Plaza Option #{i + 2}") }
+
+        visit probe_path(id: @probe.codename)
+
+        order = all(".probe_option h4").collect {|i| i.text }
+
+        click_link @probe_option_1.name
+        click_link "Back to list"
+
+        new_order = all(".probe_option h4").collect {|i| i.text }
+        expect(order).to eq(new_order)
+      end
+
       scenario 'User needs permission to select' do
         logout
 
