@@ -14,17 +14,18 @@
   </div>
 </div>
 
-<% cache ["plaza", "selected_probe", @probe_option.id] do %>
+
   <% if @probe_option.present? %>
-    <div class="row margin">
-      <div class="small-12 column">
-        <div class="callout success">
-          Has votado el proyecto <strong><%= link_to @probe_option.name, plaza_probe_option_path(@probe_option) %></strong>. Puedes cambiarlo en cualquier momento hasta el día <u>28 de octubre</u>.
+    <% cache ["plaza", "selected_probe", @probe_option.id] do %>
+      <div class="row margin">
+        <div class="small-12 column">
+          <div class="callout success">
+            Has votado el proyecto <strong><%= link_to @probe_option.name, plaza_probe_option_path(@probe_option) %></strong>. Puedes cambiarlo en cualquier momento hasta el día <u>28 de octubre</u>.
+          </div>
         </div>
       </div>
-    </div>
+    <% end %>
   <% end %>
-<% end %>
 
 <% cache ["plaza", "user_status_callout", locale_and_user_status] do %>
   <div class="row">
