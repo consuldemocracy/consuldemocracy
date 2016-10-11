@@ -51,7 +51,6 @@ feature 'Tracking' do
 
       expect(page).to have_css('meta[data-track-event-category="Verification"]', visible: false)
       expect(page.html).to include 'data-track-event-action="Start residence verification"'
-      puts page.html
     end
 
     scenario 'Verification: success residence verification' do
