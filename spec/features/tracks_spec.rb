@@ -7,7 +7,7 @@ feature 'Tracking' do
      scenario 'Usertype anonymous' do
       visit proposals_path
 
-      expect(page.html).to include "Anónimo"
+      expect(page.html).to include I18n.t("tracking.custom_variable.user_type.anonymous")
     end
 
     scenario 'Usertype level_1_user' do
@@ -16,7 +16,7 @@ feature 'Tracking' do
 
       visit proposals_path
 
-      expect(page.html).to include "level_1_user"
+      expect(page.html).to include I18n.t("tracking.custom_variable.user_type.level_one")
     end
 
     scenario 'Usertype level_2_user', :js do
@@ -35,7 +35,7 @@ feature 'Tracking' do
       user = user.reload
       fill_in 'sms_confirmation_code', with: user.sms_confirmation_code
       click_button 'Send'
-      expect(page.html).to include "level_2_user"
+      expect(page.html).to include I18n.t("tracking.custom_variable.user_type.level_two")
     end
   end
 
@@ -48,12 +48,9 @@ feature 'Tracking' do
       visit account_path
 
       click_link 'Verify my account'
-      save_and_open_page
-  
-      #expect(page.html).to include "data-track-event-category=\"Verificación\""
-      #expect(page.html).to include "data-track-event-action=\"Inicio_verificación_de_residencia\""
 
-      expect(page).to have_css('meta[data-track-event-category="Verificación"]', visible: false)
+      expect(page).to have_css('meta[data-track-event-category="Verification"]', visible: false)
+      expect(page.html).to include 'data-track-event-action="Start residence verification"'
       puts page.html
     end
 
@@ -67,8 +64,8 @@ feature 'Tracking' do
 
       verify_residence
 
-        expect(page.html).to include "data-track-event-category=Verificación"
-        expect(page.html).to include "data-track-event-action=Residencia_verificada"
+        expect(page.html).to include 'data-track-event-category="Verification"'
+        expect(page.html).to include 'data-track-event-action="Residence verified"'
     end
 
     scenario 'Verification: start phone verification' do
@@ -84,8 +81,8 @@ feature 'Tracking' do
       fill_in 'sms_phone', with: "611111111"
       click_button 'Send'
 
-      expect(page.html).to include "data-track-event-category=Verificación"
-      expect(page.html).to include "data-track-event-action=Inicio_verificación_de_teléfono"
+      expect(page.html).to include 'data-track-event-category="Verification"'
+      expect(page.html).to include 'data-track-event-action="Start phone verification"'
     end
 
     scenario 'Verification: success phone verification' do
@@ -105,8 +102,8 @@ feature 'Tracking' do
       fill_in 'sms_confirmation_code', with: user.sms_confirmation_code
       click_button 'Send'
 
-      expect(page.html).to include "data-track-event-category=Verificación"
-      expect(page.html).to include "data-track-event-action=Teléfono_verificado"
+      expect(page.html).to include 'data-track-event-category="Verification"'
+      expect(page.html).to include 'data-track-event-action="Phone verified"'
     end
 
     scenario 'Verification: letter code' do
@@ -128,8 +125,8 @@ feature 'Tracking' do
 
       click_link "Send me a letter with the code"
 
-      expect(page.html).to include "data-track-event-category=Verificación"
-      expect(page.html).to include "data-track-event-action=Solicitado_envio_de_código_por_carta"
+      expect(page.html).to include 'data-track-event-category="Verification"'
+      expect(page.html).to include 'data-track-event-action="Requested sending letter"'
     end
   end
 end

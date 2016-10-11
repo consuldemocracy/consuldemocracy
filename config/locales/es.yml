@@ -82,11 +82,6 @@ es:
   comment_kinds:
     comment: Comentario
     question: Pregunta
-  custom_variable:
-    gender:
-      unknow: Desconocido
-      male:   Hombre
-      female: Mujer
   debates:
     create:
       form:
@@ -668,6 +663,29 @@ es:
       votes: Votos
       verified_users: Usuarios verificados
       unverified_users: Usuarios sin verificar
+  tracking:
+    custom_variable:
+      age_group:
+        unknow: Desconocida
+      gender:
+        unknow: Desconocido
+        male:   Hombre
+        female: Mujer
+      user_type:
+        level_one: Nivel 1
+        level_two: Nivel 2
+        level_three: Nivel 3
+        anonymous: Anónimo
+    events:
+      category:
+        verification: Verificación
+      action:
+        letter_code: Introducir código de carta
+        phone_verified: Teléfono verificado
+        requested_sending_letter: Solicitado envio de código por carta
+        start_residency_verification: Inicio verificación de residencia
+        start_phone_verification: Inicio verificación de teléfono
+        residence_verified: Residencia verificada
   unauthorized:
     default: No tienes permiso para acceder a esta página.
     manage:

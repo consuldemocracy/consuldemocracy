@@ -88,7 +88,7 @@ group :development, :test do
   gem "faker"
 end
 
-group :test, :preproduction do
+group :test do
   gem 'database_cleaner'
   gem 'poltergeist'
   gem 'coveralls', require: false

@@ -1,6 +1,7 @@
 <div class="row">
-  <%track_event("Verificación", "Solicitado_envio_de_código_por_carta" )%>
-  <div class="small-12 column">
+  <% track_event(t("tracking.events.category.verification"),
+                 t("tracking.events.action.requested_sending_letter")) %>
+    <div class="small-12 column">
 
     <%= link_to account_path, class: "back" do %>
       <span class="icon-angle-left"></span>
