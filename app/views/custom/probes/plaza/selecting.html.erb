@@ -1,4 +1,6 @@
-<%= render "probes/#{@probe.codename}/header" %>
+<% cache ["plaza", "header"] do %>
+  <%= render partial: "probes/plaza/header" %>
+<% end %>
 
 <div class="expanded processes-show no-margin-top margin-bottom">
   <div class="row padding">
@@ -12,7 +14,7 @@
   </div>
 </div>
 
-<% cache ["plaza", "selected_probe2", @probe_option] do %>
+<% cache ["plaza", "selected_probe", @probe_option.id] do %>
   <% if @probe_option.present? %>
     <div class="row margin">
       <div class="small-12 column">
@@ -57,7 +59,7 @@
 
   <div class="row" data-equalizer>
     <% @probe_options.each do |probe_option| %>
-      <% cache ["plaza", "probe_selection_fragment3", probe_option] do %>
+      <% cache ["plaza", "probe_selection_fragment_1", probe_option.id] do %>
         <div id="<%= dom_id(probe_option) %>"
              class="probe_option small-12 medium-4 large-3 column end">
           <div class="project" data-equalizer-watch>
@@ -107,7 +109,7 @@
                 <p class="button small expanded secondary disabled margin-top">Votar</p>
               <% end %>
             <% end %>
-            <% cache ["plaza", "probe_selection_fragment4", probe_option] do %>
+            <% cache ["plaza", "probe_selection_fragment_2", probe_option.id] do %>
               <%= link_to probe_option.file_path('memoria', 'pdf'),
                           title: "PDF #{probe_option.name} | #{probe_option.file_size('memoria', 'pdf')}",
                           target: "_blank" do %>
@@ -115,7 +117,7 @@
                           <%= "<small>Memoria (#{probe_option.file_size('memoria', 'pdf')})</small>".html_safe %>
               <% end %>
               &nbsp;
-              <%= link_to "#{probe_option.file_path('dossier', 'pdf')}?r=1",
+              <%= link_to "#{probe_option.file_path('dossier', 'pdf')}",
                           title: "PDF #{probe_option.name} | #{probe_option.file_size('dossier', 'pdf')}",
                           target: "_blank" do %>
                           <%= image_tag "icon_pdf.png" %>
