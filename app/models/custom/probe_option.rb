@@ -7,10 +7,6 @@ class ProbeOption < ActiveRecord::Base
 
   scope :with_hidden, -> { all }
 
-  def hidden?
-    false
-  end
-
   def original_image_url
     "/docs/#{probe.codename}/#{code}_#{param_name}.jpg"
   end
