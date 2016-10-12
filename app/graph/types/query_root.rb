@@ -49,4 +49,14 @@ QueryRoot = GraphQL::ObjectType.define do
       Comment.all
     }
   end
+
+  field :user do
+    type UserType
+    description "Find a User by id"
+    argument :id, !types.ID
+    resolve -> (object, arguments, context) {
+      User.find(arguments["id"])
+    }
+  end
+
 end
