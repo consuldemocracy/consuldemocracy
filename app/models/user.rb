@@ -285,19 +285,17 @@ class User < ActiveRecord::Base
     if self.date_of_birth.nil?
       I18n.t("tracking.custom_variable.gender.unknow")
     else
-      birthday = self.date_of_birth.to_date.to_date
-      a= (Date.today - birthday).to_i
-      edad = (a / 365.25).to_i
+      age = ((Date.today - self.date_of_birth.to_date).to_i / 365.25).to_i
       case
-      when (edad == 0)
+      when (age == 0)
         I18n.t("tracking.custom_variable.gender.unknow")
-      when (edad < 30)
+      when (age < 30)
         '< 30'
-      when (edad  > 29) &  (edad < 46)
+      when (age  > 29) && (age < 46)
         '30-45'
-      when (edad  > 45) &  (edad < 61)
+      when (age  > 45) && (age < 61)
         '45-60'
-      when (edad > 60)
+      when (age > 60)
         '> 60'
       end
     end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161008083712) do
+ActiveRecord::Schema.define(version: 20161006095613) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -165,8 +165,8 @@ ActiveRecord::Schema.define(version: 20161008083712) do
     t.integer  "confidence_score",                         default: 0
     t.integer  "geozone_id"
     t.tsvector "tsv"
-    t.datetime "featured_at"
     t.string   "comment_kind",                             default: "comment"
+    t.datetime "featured_at"
     t.string   "external_link",                limit: 100
   end
 
@@ -432,12 +432,12 @@ ActiveRecord::Schema.define(version: 20161008083712) do
     t.datetime "unfeasible_email_sent_at"
     t.integer  "cached_votes_up",                        default: 0
     t.tsvector "tsv"
-    t.string   "responsible_name",            limit: 60
-    t.integer  "physical_votes",                         default: 0
     t.integer  "comments_count",                         default: 0
     t.datetime "hidden_at"
     t.integer  "confidence_score",                       default: 0,     null: false
     t.boolean  "forum",                                  default: false
+    t.string   "responsible_name",            limit: 60
+    t.integer  "physical_votes",                         default: 0
     t.integer  "ballot_lines_count",                     default: 0
     t.boolean  "compatible",                             default: true
   end
@@ -456,7 +456,7 @@ ActiveRecord::Schema.define(version: 20161008083712) do
     t.datetime "created_at"
   end
 
-  add_index "taggings", ["tag_id", "taggable_id", "taggable_type", "context", "tagger_id", "tagger_type"], name: "taggings_idx", unique: true, using: :btree
+  add_index "taggings", ["tag_id"], name: "index_taggings_on_tag_id", using: :btree
   add_index "taggings", ["taggable_id", "taggable_type", "context"], name: "index_taggings_on_taggable_id_and_taggable_type_and_context", using: :btree
 
   create_table "tags", force: :cascade do |t|
@@ -540,32 +540,30 @@ ActiveRecord::Schema.define(version: 20161008083712) do
     t.string   "erase_reason"
     t.datetime "erased_at"
     t.boolean  "public_activity",                                             default: true
-    t.boolean  "newsletter",                                                  default: true
     t.integer  "notifications_count",                                         default: 0
     t.boolean  "registering_with_oauth",                                      default: false
+    t.boolean  "newsletter",                                                  default: true
     t.string   "locale"
     t.string   "oauth_email"
     t.integer  "geozone_id"
     t.string   "redeemable_code"
-    t.string   "gender",                                           limit: 10
-    t.datetime "date_of_birth"
     t.integer  "district_wide_spending_proposals_supported_count",            default: 10
     t.integer  "city_wide_spending_proposals_supported_count",                default: 10
     t.integer  "supported_spending_proposals_geozone_id"
     t.integer  "representative_id"
     t.boolean  "accepted_delegation_alert",                                   default: false
+    t.string   "gender",                                           limit: 10
+    t.datetime "date_of_birth"
     t.boolean  "email_on_proposal_notification",                              default: true
     t.boolean  "email_digest",                                                default: true
     t.boolean  "email_on_direct_message",                                     default: true
     t.boolean  "official_position_badge",                                     default: false
-    t.datetime "password_changed_at"
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["geozone_id"], name: "index_users_on_geozone_id", using: :btree
   add_index "users", ["hidden_at"], name: "index_users_on_hidden_at", using: :btree
-  add_index "users", ["password_changed_at"], name: "index_users_on_password_changed_at", using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   add_index "users", ["username"], name: "index_users_on_username", using: :btree
 
