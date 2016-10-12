@@ -1,8 +1,6 @@
 class GraphqlController < ApplicationController
 
-  # (!!) Está autorizando todos los resources, no sólo Proposal ¿por qué?
-  # (!!) Nos da acceso a recursos a los que se supone que no tenemos acceso, cómo 'Geozones', ¿por qué?
-  authorize_resource :proposal
+  skip_authorization_check
 
   def query
     render json: ConsulSchema.execute(
