@@ -3,8 +3,9 @@ ProposalType = GraphQL::ObjectType.define do
   description "A single proposal entry returns a proposal with author, total votes and comments"
 
   interfaces([CommentableInterface])
-  
+
   # Expose fields associated with Proposal model
+
   field :id, !types.ID, "The id of this proposal"
   field :title, types.String, "The title of this proposal"
   field :description, types.String, "The description of this proposal"
@@ -22,7 +23,12 @@ ProposalType = GraphQL::ObjectType.define do
   field :retired_explanation, types.String, "Explanation why this proposal was retired"
 
   # Linked resources
+
   field :author, UserType, "Author of this proposal"
-  field :comments, !types[!CommentType], "Comments in this proposal"
+
+  connection :comments, CommentType.connection_type do
+    description "Comments in this proposal"
+  end
+
   field :geozone, GeozoneType, "Geozone affected by this proposal"
 end

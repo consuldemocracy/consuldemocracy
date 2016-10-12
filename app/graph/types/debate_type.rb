@@ -5,6 +5,7 @@ DebateType = GraphQL::ObjectType.define do
   interfaces([CommentableInterface])
 
   # Expose fields associated with Debate model
+
   field :id, !types.ID, "The id of this debate"
   field :title, types.String, "The title of this debate"
   field :description, types.String, "The description of this debate"
@@ -19,7 +20,12 @@ DebateType = GraphQL::ObjectType.define do
   field :geozone_id, types.Int, "ID of the geozone affected by this debate"
 
   # Linked resources
+  
   field :author, UserType, "Author of this debate"
-  field :comments, !types[!CommentType], "Comments in this debate"
+
+  connection :comments, CommentType.connection_type do
+    description "Comments in this debate"
+  end
+
   field :geozone, GeozoneType, "Geozone affected by this debate"
 end

@@ -11,8 +11,7 @@ QueryRoot = GraphQL::ObjectType.define do
     }
   end
 
-  field :proposals do
-    type !types[!ProposalType]
+  connection :proposals, ProposalType.connection_type do
     description "Find all Proposals"
     resolve -> (object, arguments, context) {
       Proposal.all
@@ -28,8 +27,7 @@ QueryRoot = GraphQL::ObjectType.define do
     }
   end
 
-  field :debates do
-    type !types[!DebateType]
+  connection :debates, DebateType.connection_type do
     description "Find all Debates"
     resolve -> (object, arguments, context) {
       Debate.all
@@ -45,8 +43,7 @@ QueryRoot = GraphQL::ObjectType.define do
     }
   end
 
-  field :comments do
-    type !types[!CommentType]
+  connection :comments, CommentType.connection_type do
     description "Find all Comments"
     resolve -> (object, arguments, context) {
       Comment.all
