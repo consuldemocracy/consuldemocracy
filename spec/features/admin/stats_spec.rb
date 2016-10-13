@@ -380,8 +380,8 @@ feature 'Stats' do
 
       visit admin_probes_path
 
-      expect(page).to have_link "Town planning - Benches", admin_probe_path(probe1)
-      expect(page).to have_link "Remodeling of the Plaza España", admin_probe_path(probe2)
+      expect(page).to have_link "Town planning - Benches", href: admin_probe_path(probe1)
+      expect(page).to have_link "Remodeling of the Plaza España", href: admin_probe_path(probe2)
     end
 
     scenario "Show" do
