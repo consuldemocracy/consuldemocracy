@@ -1,1 +1,5 @@
-<meta name="tracking_data" data-track-usertype="<%=current_user ? current_user.user_type : :anonymous%>" <%= yield(:track_event) %>/>
+name="tracking_data"
+     data-track-usertype="<%=current_user ? current_user.user_type : t("tracking.custom_variable.user_type.anonymous")%>"
+     data-track-age_group="<%= current_user ? current_user.age_group : t("tracking.custom_variable.age_group.unknow") %>"
+     data-track-gender="<%= current_user ? current_user.user_gender : t("tracking.custom_variable.age_group.unknow") %>"
+     data-track-event-category="<%= yield(:track_event_category) %>" data-track-event-action="<%= yield(:track_event_action) %>"

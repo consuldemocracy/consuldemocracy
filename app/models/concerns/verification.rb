@@ -57,11 +57,11 @@ module Verification
   def user_type
     case
     when level_three_verified?
-      :level_3_user
+      I18n.t("tracking.custom_variable.user_type.level_three")
     when level_two_verified?
-      :level_2_user
+      I18n.t("tracking.custom_variable.user_type.level_two")
     else
-      :level_1_user
+      I18n.t("tracking.custom_variable.user_type.level_one")
     end
   end
 

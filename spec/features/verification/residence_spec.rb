@@ -16,7 +16,6 @@ feature 'Residence' do
     select_date '31-December-1980', from: 'residence_date_of_birth'
     fill_in 'residence_postal_code', with: '28013'
     check 'residence_terms_of_service'
-
     click_button 'Verify residence'
 
     expect(page).to have_content 'Residence verified'
