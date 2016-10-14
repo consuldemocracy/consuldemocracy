@@ -6,5 +6,28 @@ es:
         title: Presidir mesa de votaciones
         info: Aquí puedes validar documentos de ciudadanos y guardar los resultados de las urnas
     menu:
-      voters: Validar documento de identidad
-      results: Guardar resultados de la votación
+      voters: Validar documento
+      results: Guardar resultados
+    voters:
+      new:
+        title: Validar documento
+        document_number: Número de documento
+        document_type:
+          passport: Pasaporte
+          residence_card: Tarjeta de residencia
+          spanish_id: DNI
+        document_type_label: Tipo de documento
+        submit: Validar documento
+      show:
+        title: Validar documento
+        error_verifying_census: "El Padrón no pudo verificar tu información."
+        error_already_voted: "La persona asociada al documento ya ha participado en la votación."
+        success: "La persona asociada al documento puede participar en la votación."
+        submit: Validar voto
+    results:
+      index:
+        title: "Resultados de la votación"
+      new:
+        title: "Añadir resultados"
+      show:
+        title: "Resultados"

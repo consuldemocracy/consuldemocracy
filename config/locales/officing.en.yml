@@ -6,5 +6,19 @@ en:
         title: Poll officing
         info: Here you can validate user documents and store voting results
     menu:
-      voters: Validate citizen document
-      results: Store voting results
+      voters: Validate document
+      results: Store results
+    voters:
+      new:
+        title: Validate document
+        document_number: Document number
+        document_type:
+          passport: Passport
+          residence_card: Residence card
+          spanish_id: DNI
+        document_type_label: Document type
+        submit: Validate document
+      show:
+        title: Validate document
+        error_verifying_census: "The Census was unable to verify your information."
+        error_already_voted: "La persona asociada al documento ya ha participado en la votación."
