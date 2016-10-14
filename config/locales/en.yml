@@ -401,7 +401,7 @@ en:
       no_enquiries_incoming: "There aren't incoming enquiries."
     show:
       original_proposal: "Original proposal"
-      author: "Author"
+      author: "Created by"
       dates_title: "Participation dates"
       dates: "From %{open_at} to %{closed_at}"
       external_url: "Additional documentation"

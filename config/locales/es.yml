@@ -401,7 +401,7 @@ es:
       no_enquiries_incoming: "No hay votaciones próximamente."
     show:
       original_proposal: "Propuesta original"
-      author: "Autor"
+      author: "Creado por"
       dates_title: "Fechas de participación"
       dates: "Desde el %{open_at} hasta el %{closed_at}"
       external_url: "Documentación adicional"

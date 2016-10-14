@@ -22,15 +22,15 @@
 
     <div class="small-12 medium-3 column info">
       <p>
-        <span class="title author"><%= t('enquiries.show.author') %></span><br>
-        <%= link_to @enquiry.author.name, @enquiry.author %>
-      </p>
-
-      <p>
         <span class="title calendar"><%= t('enquiries.show.dates_title') %></span><br>
         <%= t('enquiries.show.dates',
           open_at: l(@enquiry.open_at.to_date),
           closed_at: l(@enquiry.closed_at.to_date)).html_safe %>
+      </p>
+
+      <p>
+        <span class="title author"><%= t('enquiries.show.author') %></span><br>
+        <%= link_to @enquiry.author.name, @enquiry.author %>
       </p>
 
       <p>
