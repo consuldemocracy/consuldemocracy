@@ -3,8 +3,9 @@ require 'cancan/matchers'
 
 describe "Abilities::Common" do
   subject(:ability) { Ability.new(user) }
+  let(:geozone) { create(:geozone) }
 
-  let(:user) { create(:user) }
+  let(:user) { create(:user, geozone: geozone) }
 
   let(:debate) { create(:debate) }
   let(:comment) { create(:comment) }
@@ -12,6 +13,10 @@ describe "Abilities::Common" do
   let(:own_debate) { create(:debate, author: user) }
   let(:own_comment) { create(:comment, author: user) }
   let(:own_proposal) { create(:proposal, author: user) }
+  let(:incoming_enquiry) { create(:enquiry, :incoming, geozones: [geozone]) }
+  let(:expired_enquiry)  { create(:enquiry, :expired, geozones: [geozone]) }
+  let(:foreign_enquiry)  { create(:enquiry, geozones: create_list(:geozone, 2)) }
+  let(:enquiry)  { create(:enquiry, geozones: [geozone]) }
 
   it { should be_able_to(:index, Debate) }
   it { should be_able_to(:show, debate) }
@@ -104,7 +109,10 @@ describe "Abilities::Common" do
     it { should be_able_to(:show, own_direct_message) }
     it { should_not be_able_to(:show, create(:direct_message)) }
 
-    it { should be_able_to(:answer, Enquiry) }
+    it { should be_able_to(:answer, enquiry) }
+    it { should_not be_able_to(:answer, incoming_enquiry) }
+    it { should_not be_able_to(:answer, expired_enquiry) }
+    it { should_not be_able_to(:answer, foreign_enquiry) }
   end
 
   describe "when level 3 verified" do

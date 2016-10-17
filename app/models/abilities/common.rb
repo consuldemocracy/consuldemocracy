@@ -48,7 +48,9 @@ module Abilities
         can :create, SpendingProposal
         can :create, DirectMessage
         can :show, DirectMessage, sender_id: user.id
-        can :answer, Enquiry
+        can :answer, Enquiry do |enquiry|
+          enquiry.opened? && enquiry.geozone_ids.include?(user.geozone_id)
+        end
       end
 
       can [:create, :show], ProposalNotification, proposal: { author_id: user.id }
