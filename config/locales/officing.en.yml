@@ -20,5 +20,25 @@ en:
         submit: Validate document
       show:
         title: Validate document
-        error_verifying_census: "The Census was unable to verify your information."
-        error_already_voted: "La persona asociada al documento ya ha participado en la votación."
+        error_verifying_census: "The Census was unable to verify the information of this document."
+        error_already_voted: "The person associated with the document has already participated in the vote."
+        can_participate: "The person associated with the document can participate in the vote."
+        submit: Validate vote
+        success: "Vote validated correctly."
+    results:
+      index:
+        title: "Vote results"
+        total_votes: "Total number of votes"
+      new:
+        title: Save results
+        submit: Save
+      show:
+        title: "%{booth} results"
+    shared:
+      filter_booth: All booths
+      filter_date: All dates
+      filter_officer: All officers
+      booth: Booth
+      date: Date
+      officer: Officer
+      votes_number: Number of votes

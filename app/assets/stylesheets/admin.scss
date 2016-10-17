@@ -42,6 +42,10 @@ body.admin {
 
     th {
       text-align: left;
+
+      &.text-center {
+        text-align: center;
+      }
     }
 
     tr {

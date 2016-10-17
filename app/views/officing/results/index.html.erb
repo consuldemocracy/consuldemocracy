@@ -1,1 +1,54 @@
-results index
+<h2><%= t("officing.results.index.title") %></h2>
+
+<div class="row margin">
+  <div class="small-12 medium-4 column">
+    <select>
+      <option><%= t("officing.shared.filter_booth") %></option>
+    </select>
+  </div>
+
+  <div class="small-12 medium-4 column">
+    <select>
+      <option><%= t("officing.shared.filter_date") %></option>
+    </select>
+  </div>
+
+  <div class="small-12 medium-4 column">
+    <select>
+      <option><%= t("officing.shared.filter_officer") %></option>
+    </select>
+  </div>
+</div>
+
+<table>
+  <thead>
+    <tr>
+      <th><%= t("officing.shared.booth") %></th>
+      <th><%= t("officing.shared.date") %></th>
+      <th><%= t("officing.shared.officer") %></th>
+      <th class="text-center"><%= t("officing.shared.votes_number") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- Each results do -->
+    <tr>
+      <td><%= link_to "Urna Moncloa (1)", officing_poll_result_path(Poll.last, 1) %></td>
+      <td>14/10/2016</td>
+      <td>Officer Name (officer@email.com)</td>
+      <td class="text-center">124</td>
+    </tr>
+    <!-- /. Each results do -->
+    <tr>
+      <td><%= link_to "Urna Cahamartín (6)", officing_poll_result_path(Poll.last, 1) %></td>
+      <td>17/10/2016</td>
+      <td>Other Officer (otherofficer@email.com)</td>
+      <td class="text-center">350</td>
+    </tr>
+  </tbody>
+  <tfoot>
+    <tr>
+      <td colspan="3"><%= t("officing.results.index.total_votes") %></td>
+      <td class="text-center">474</td>
+    </tr>
+  </tfoot>
+</table>
