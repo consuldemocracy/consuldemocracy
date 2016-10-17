@@ -16,11 +16,17 @@
       <% enquiry.valid_answers.each do |answer| %>
         <span class="button disabled"><%= answer %></span>
       <% end %>
-      <% if current_user.present? %>
-        <%= t('enquiries.show.verify_to_vote_html',
-              verify_link: link_to(t('enquiries.show.verify_link'), verification_path)) %>
+      <% if current_user.nil? %>
+        <%= t('enquiries.show.cant_answer_login') %>
+      <% elsif current_user.unverified? %>
+        <%= t('enquiries.show.cant_answer_verify_html',
+               verify_link: link_to(t('enquiries.show.verify_link'), verification_path)) %>
+      <% elsif enquiry.incoming? %>
+        <%= t('enquiries.show.cant_answer_incoming') %>
+      <% elsif enquiry.expired? %>
+        <%= t('enquiries.show.cant_answer_expired') %>
       <% else %>
-        <%= t('enquiries.show.login_to_vote') %>
+        <%= t('enquiries.show.cant_answer_wrong_geozone') %>
       <% end %>
     <% end %>
   </div>

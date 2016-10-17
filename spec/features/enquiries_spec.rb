@@ -53,50 +53,88 @@ feature 'Enquiries' do
   end
 
   context 'Answering' do
-    background do
-      @enquiry = create(:enquiry, valid_answers: 'Han Solo, Chewbacca')
-    end
+    let(:geozone) { create(:geozone) }
 
     scenario 'Non-logged in users' do
-      visit enquiry_path(@enquiry)
+      enquiry = create(:enquiry, valid_answers: 'Han Solo, Chewbacca')
+      visit enquiry_path(enquiry)
 
       expect(page).to have_content('Han Solo')
       expect(page).to have_content('Chewbacca')
-      expect(page).to have_content('You must log in in order to vote')
+      expect(page).to have_content('You must log in in order to answer')
 
       expect(page).to_not have_link('Han Solo')
       expect(page).to_not have_link('Chewbacca')
     end
 
     scenario 'Level 1 users' do
-      login_as(create(:user))
-      visit enquiry_path(@enquiry)
+      enquiry = create(:enquiry, geozone_ids: [geozone.id], valid_answers: 'Han Solo, Chewbacca')
+      login_as(create(:user, geozone: geozone))
+      visit enquiry_path(enquiry)
 
       expect(page).to have_content('Han Solo')
       expect(page).to have_content('Chewbacca')
-      expect(page).to have_content('You must verify your account in order to vote')
+      expect(page).to have_content('You must verify your account in order to answer')
 
       expect(page).to_not have_link('Han Solo')
       expect(page).to_not have_link('Chewbacca')
     end
 
-    xscenario 'Level 2 users in an incoming enquiry'
-    xscenario 'Level 2 users in an expired enquiry'
-    xscenario 'Level 2 users in an enquiry for a geozone which is not theirs'
+    scenario 'Level 2 users in an incoming enquiry' do
+      incoming_enquiry = create(:enquiry, :incoming, geozone_ids: [geozone.id], valid_answers: 'Rey, Finn')
+      login_as(create(:user, :level_two, geozone: geozone))
+
+      visit enquiry_path(incoming_enquiry)
+
+      expect(page).to have_content('Rey')
+      expect(page).to have_content('Finn')
+      expect(page).to_not have_link('Rey')
+      expect(page).to_not have_link('Finn')
+
+      expect(page).to have_content('This enquiry has not yet started')
+    end
+
+    scenario 'Level 2 users in an expired enquiry' do
+      expired_enquiry = create(:enquiry, :expired, geozone_ids: [geozone.id], valid_answers: 'Luke, Leia')
+      login_as(create(:user, :level_two, geozone: geozone))
+
+      visit enquiry_path(expired_enquiry)
+
+      expect(page).to have_content('Luke')
+      expect(page).to have_content('Leia')
+      expect(page).to_not have_link('Luke')
+      expect(page).to_not have_link('Leia')
+
+      expect(page).to have_content('This enquiry has finished')
+    end
+
+    scenario 'Level 2 users in an enquiry for a geozone which is not theirs' do
+      enquiry = create(:enquiry, geozone_ids: [], valid_answers: 'Vader, Palpatine')
+      login_as(create(:user, :level_two))
+
+      visit enquiry_path(enquiry)
+
+      expect(page).to have_content('Vader')
+      expect(page).to have_content('Palpatine')
+      expect(page).to_not have_link('Vader')
+      expect(page).to_not have_link('Palpatine')
+    end
 
     scenario 'Level 2 users who can answer' do
-      login_as(create(:user, :level_two))
-      visit enquiry_path(@enquiry)
+      enquiry = create(:enquiry, geozone_ids: [geozone.id], valid_answers: 'Han Solo, Chewbacca')
+      login_as(create(:user, :level_two, geozone: geozone))
+      visit enquiry_path(enquiry)
 
       expect(page).to have_link('Han Solo')
       expect(page).to have_link('Chewbacca')
     end
 
     scenario 'Level 2 users who have already answered' do
-      user = create(:user, :level_two)
-      create(:enquiry_answer, enquiry: @enquiry, author: user, answer: 'Chewbacca')
+      enquiry = create(:enquiry, geozone_ids:[geozone.id], valid_answers: 'Han Solo, Chewbacca')
+      user = create(:user, :level_two, geozone: geozone)
+      create(:enquiry_answer, enquiry: enquiry, author: user, answer: 'Chewbacca')
       login_as user
-      visit enquiry_path(@enquiry)
+      visit enquiry_path(enquiry)
 
       expect(page).to have_link('Han Solo')
       expect(page).to_not have_link('Chewbacca')
@@ -104,9 +142,10 @@ feature 'Enquiries' do
     end
 
     scenario 'Level 2 users answering', :js do
-      user = create(:user, :level_two)
+      enquiry = create(:enquiry, geozone_ids: [geozone.id], valid_answers: 'Han Solo, Chewbacca')
+      user = create(:user, :level_two, geozone: geozone)
       login_as user
-      visit enquiry_path(@enquiry)
+      visit enquiry_path(enquiry)
 
       click_link 'Han Solo'
 
