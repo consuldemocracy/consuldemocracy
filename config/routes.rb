@@ -300,6 +300,8 @@ Rails.application.routes.draw do
     resources :probe_options, only: :show
   end
 
+  resources :human_rights, only: [:index, :show]
+
   if Rails.env.development?
     mount LetterOpenerWeb::Engine, at: "/letter_opener"
   end
