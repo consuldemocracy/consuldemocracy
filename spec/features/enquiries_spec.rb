@@ -61,7 +61,7 @@ feature 'Enquiries' do
 
       expect(page).to have_content('Han Solo')
       expect(page).to have_content('Chewbacca')
-      expect(page).to have_content('You must log in in order to answer')
+      expect(page).to have_content('You must Sign in or Sign up to participate')
 
       expect(page).to_not have_link('Han Solo')
       expect(page).to_not have_link('Chewbacca')
