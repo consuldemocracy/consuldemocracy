@@ -1,33 +1,52 @@
 <div class="enquiries-answers">
-  <div class="small-12 medium-6 large-3 large-offset-3 column">
     <% if can? :answer, enquiry %>
-      <% enquiry.valid_answers.each do |answer| %>
-        <% if @enquiry_answer.try(:answer) == answer %>
-          <span class="button success"><%= answer %></span>
-        <% else %>
-          <%= link_to answer,
-            answer_enquiry_path(enquiry: enquiry, answer: answer),
-            method: :post,
-            remote: true,
-            class: "button expanded" %>
+      <div class="small-12 small-centered text-center column">
+        <% enquiry.valid_answers.each do |answer| %>
+          <% if @enquiry_answer.try(:answer) == answer %>
+            <span class="button"><%= answer %></span>
+          <% else %>
+            <%= link_to answer,
+              answer_enquiry_path(enquiry: enquiry, answer: answer),
+              method: :post,
+              remote: true,
+              class: "button" %>
+          <% end %>
         <% end %>
-      <% end %>
+      </div>
     <% else %>
-      <% enquiry.valid_answers.each do |answer| %>
-        <span class="button disabled"><%= answer %></span>
-      <% end %>
-      <% if current_user.nil? %>
-        <%= t('enquiries.show.cant_answer_login') %>
-      <% elsif current_user.unverified? %>
-        <%= t('enquiries.show.cant_answer_verify_html',
-               verify_link: link_to(t('enquiries.show.verify_link'), verification_path)) %>
-      <% elsif enquiry.incoming? %>
-        <%= t('enquiries.show.cant_answer_incoming') %>
-      <% elsif enquiry.expired? %>
-        <%= t('enquiries.show.cant_answer_expired') %>
-      <% else %>
-        <%= t('enquiries.show.cant_answer_wrong_geozone') %>
-      <% end %>
+      <div class="small-12 column">
+        <% if current_user.nil? %>
+          <div class="callout primary">
+            <%= t("enquiries.show.not_logged_in",
+                signin: link_to(t("enquiries.show.signin"), new_user_session_path, class: "probe-message"),
+                signup: link_to(t("enquiries.show.signup"), new_user_registration_path, class: "probe-message")).html_safe %>
+          </div>
+        <% elsif current_user.unverified? %>
+          <div class="callout warning">
+            <%= t('enquiries.show.cant_answer_verify_html',
+                   verify_link: link_to(t('enquiries.show.verify_link'), verification_path)) %>
+          </div>
+        <% elsif enquiry.incoming? %>
+          <div class="callout primary">
+            <%= t('enquiries.show.cant_answer_incoming') %>
+          </div>
+        <% elsif enquiry.expired? %>
+          <div class="callout alert">
+            <%= t('enquiries.show.cant_answer_expired') %>
+          </div>
+        <% else %>
+          <div class="callout warning">
+            <%= t('enquiries.show.cant_answer_wrong_geozone') %>
+          </div>
+        <% end %>
+        <div class="row">
+          <div class="small-12 small-centered text-center column">
+            <% enquiry.valid_answers.each do |answer| %>
+              <span class="button disabled"><%= answer %></span>
+            <% end %>
+          </div>
+        </div>
+      </div>
     <% end %>
   </div>
 </div>

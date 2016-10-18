@@ -1230,6 +1230,6 @@
   .button {
     font-size: rem-calc(24);
     font-weight: bold;
-    padding: $line-height 0;
+    margin-right: $line-height/2;
   }
 }
