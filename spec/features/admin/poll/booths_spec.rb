@@ -13,20 +13,12 @@ feature 'Admin booths' do
     visit admin_root_path
 
     within('#side_menu') do
-      click_link "Booths"
+      click_link "Polls"
     end
+
+    click_link poll.name
 
     expect(page).to have_content "There are no booths in this poll"
-  end
-
-  scenario 'No link to booths when no polls' do
-    Poll.destroy_all
-
-    visit admin_root_path
-
-    within('#side_menu') do
-      expect(page).to_not have_link "Booths"
-    end
   end
 
   scenario 'Index' do
@@ -35,10 +27,10 @@ feature 'Admin booths' do
     visit admin_root_path
 
     within('#side_menu') do
-      click_link "Booths"
+      click_link "Polls"
     end
 
-    expect(page).to have_css ".booth", count: 3
+    click_link poll.name
 
     booths = Poll::Booth.all
     booths.each do |booth|
@@ -48,45 +40,6 @@ feature 'Admin booths' do
       end
     end
     expect(page).to_not have_content "There are no booths"
-  end
-
-  scenario "Index default to last poll" do
-    poll1 = create(:poll)
-    poll2 = create(:poll)
-
-    booth1 = create(:poll_booth, poll: poll1)
-    booth2 = create(:poll_booth, poll: poll2)
-
-    visit admin_root_path
-
-    within('#side_menu') do
-      click_link "Booths"
-    end
-
-    expect(page).to have_css ".booth", count: 1
-    expect(page).to have_content booth2.name
-    expect(page).to_not have_content booth1.name
-  end
-
-  scenario "Index select poll", :js do
-    poll1 = create(:poll)
-    poll2 = create(:poll)
-
-    booth1 = create(:poll_booth, poll: poll1)
-    booth2 = create(:poll_booth, poll: poll2)
-
-    visit admin_root_path
-
-    within('#side_menu') do
-      click_link "Booths"
-    end
-
-    select poll1.name, from: "poll_id"
-
-    expect(page).to have_content "List of booths of poll #{poll1.name}"
-    expect(page).to have_css ".booth", count: 1
-    expect(page).to have_content booth1.name
-    expect(page).to_not have_content booth2.name
   end
 
   scenario 'Show' do
