@@ -317,6 +317,7 @@ Rails.application.routes.draw do
   get 'processes/human_rights_question_1', to: 'pages#show', id: 'processes/human_rights_question_1'
   get 'processes/human_rights_question_2', to: 'pages#show', id: 'processes/human_rights_question_2'
   get 'processes/human_rights_question_3', to: 'pages#show', id: 'processes/human_rights_question_3'
+  get 'proceso/plan-derechos-humanos', to: 'pages#show', id: 'processes/human_rights_plan', as: 'human_rights_plan'
   get 'noticias', to: 'pages#show', id: 'news'
   get 'participatory_budget/in_two_minutes', to: 'pages#show', id: 'participatory_budget/in_two_minutes'
   get 'presupuestos-participativos-resultados', to: 'spending_proposals#results', as: 'participatory_budget_results'
