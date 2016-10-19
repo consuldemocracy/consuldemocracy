@@ -6,7 +6,7 @@ class HumanRightsController < ApplicationController
     @proposals = Proposal.where(proceeding: "Derechos Humanos").page(params[:page])
     set_resource_votes(@proposals)
     @tag_cloud = tag_cloud
-    @categories = []
+    @categories = @proposals.distinct.pluck(:sub_proceeding)
     render "proposals/index"
   end
 
