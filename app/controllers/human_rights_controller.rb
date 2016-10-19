@@ -1,6 +1,9 @@
 class HumanRightsController < ApplicationController
   skip_authorization_check
   include CommentableActions
+  before_action :set_random_seed, only: :index
+
+  has_orders %w{random confidence_score}, only: :index
 
   def index
     load_human_right_proposals
@@ -11,6 +14,7 @@ class HumanRightsController < ApplicationController
     load_subproceedings
 
     paginate_results
+    order_results
     render "proposals/index"
   end
 
@@ -38,6 +42,19 @@ class HumanRightsController < ApplicationController
 
   def paginate_results
     @proposals = @proposals.page(params[:page])
+  end
+
+  def order_results
+    @proposals = @proposals.send("sort_by_#{@current_order}")
+  end
+
+  def set_random_seed
+    if params[:order] == 'random' || params[:order].blank?
+      session[:random_seed] ||= rand(99)/100.0
+      Proposal.connection.execute "select setseed(#{session[:random_seed]})"
+    else
+      session[:random_seed] = nil
+    end
   end
 
   def resource_name
