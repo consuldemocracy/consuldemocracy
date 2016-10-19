@@ -550,3 +550,43 @@ puts "Commenting Comments"
                   body: Faker::Lorem.sentence,
                   parent: parent)
 end
+
+puts "Creating Proposals for Human Right Proceeding"
+
+subproceedings = ["Derecho a una vida sin violencia machista",
+"Derecho a contar con una policía municipal democrática y eficaz",
+"Derecho a la salud, incluida la salud sexual y reproductiva",
+"Derecho a la vivienda",
+"Derecho al trabajo digno",
+"Derecho a la educación",
+"Derecho a la cultura",
+"Derecho al cuidado, incluyendo los derechos de las personas cuidadoras",
+"Derecho de las mujeres a la no discriminación",
+"Derecho de las personas gays, lesbianas, transexuales, bisexuales e intersexuales a la no discriminación",
+"Derecho a no sufrir racismo y derechos de las personas migrantes y refugiadas",
+"Derechos de la infancia",
+"Derechos de las personas con diversidad funcional",
+"Derecho a la alimentación y al agua de calidad",
+"Derecho a la movilidad y el buen transporte en la ciudad",
+"Derecho al desarrollo urbano sostenible",
+"Otros"]
+
+tags = Faker::Lorem.words(25)
+(1..30).each do |i|
+  author = User.reorder("RANDOM()").first
+  description = "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>"
+  proposal = Proposal.create!(author: author,
+                              title: Faker::Lorem.sentence(3).truncate(60),
+                              question: Faker::Lorem.sentence(3) + "?",
+                              summary: Faker::Lorem.sentence(3),
+                              responsible_name: Faker::Name.name,
+                              external_url: Faker::Internet.url,
+                              description: description,
+                              created_at: rand((Time.now - 1.week) .. Time.now),
+                              tag_list: tags.sample(3).join(','),
+                              geozone: Geozone.reorder("RANDOM()").first,
+                              terms_of_service: "1",
+                              proceeding: "Derechos Humanos",
+                              sub_procedding: subproceedings.sample)
+  puts "    #{proposal.title}"
+end
