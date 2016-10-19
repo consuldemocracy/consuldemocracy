@@ -3,7 +3,7 @@
 <br>
 
 <div id="categories" class="categories">
-  <% @categories.each do |category| %>
-    <%= link_to category, human_rights_path(sub_proceeding: category) %>
+  <% @subproceedings.each do |subproceeding| %>
+    <%= link_to subproceeding, human_rights_path(sub_proceeding: subproceeding) %>
   <% end %>
 </div>

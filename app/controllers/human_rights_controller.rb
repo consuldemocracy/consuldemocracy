@@ -3,22 +3,41 @@ class HumanRightsController < ApplicationController
   include CommentableActions
 
   def index
-    @proposals = human_right_proposals
-    @proposals = @proposals.where("sub_proceeding = ?", params[:sub_proceeding]) if params[:sub_proceeding].present?
+    load_human_right_proposals
+    filter_by_subproceeding
 
-    set_resource_votes(@proposals)
+    load_votes
+    load_tags
+    load_subproceedings
 
-    @tag_cloud = tag_cloud
-    @categories = human_right_proposals.distinct.pluck(:sub_proceeding)
-
-    @proposals = @proposals.page(params[:page])
+    paginate_results
     render "proposals/index"
   end
 
   private
 
-  def human_right_proposals
-    @human_right_proposals ||= Proposal.where(proceeding: "Derechos Humanos")
+  def load_human_right_proposals
+    @proposals = @human_right_proposals = Proposal.where(proceeding: "Derechos Humanos")
+  end
+
+  def filter_by_subproceeding
+    @proposals = @proposals.where("sub_proceeding = ?", params[:sub_proceeding]) if params[:sub_proceeding].present?
+  end
+
+  def load_votes
+    set_resource_votes(@proposals)
+  end
+
+  def load_tags
+    @tag_cloud = tag_cloud
+  end
+
+  def load_subproceedings
+    @subproceedings = @human_right_proposals.distinct.pluck(:sub_proceeding)
+  end
+
+  def paginate_results
+    @proposals = @proposals.page(params[:page])
   end
 
   def resource_name
