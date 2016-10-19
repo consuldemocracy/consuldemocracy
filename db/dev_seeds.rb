@@ -569,7 +569,7 @@ subproceedings = ["Derecho a una vida sin violencia machista",
 "Derecho a la alimentación y al agua de calidad",
 "Derecho a la movilidad y el buen transporte en la ciudad",
 "Derecho al desarrollo urbano sostenible",
-"Otros"]
+"Otros derechos"]
 
 tags = Faker::Lorem.words(25)
 (1..30).each do |i|
@@ -587,6 +587,6 @@ tags = Faker::Lorem.words(25)
                               geozone: Geozone.reorder("RANDOM()").first,
                               terms_of_service: "1",
                               proceeding: "Derechos Humanos",
-                              sub_procedding: subproceedings.sample)
+                              sub_proceeding: subproceedings.sample)
   puts "    #{proposal.title}"
 end
