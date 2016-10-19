@@ -76,4 +76,12 @@ namespace :users do
   task remove_erased_identities: :environment do
     Identity.joins(:user).where('users.erased_at IS NOT NULL').destroy_all
   end
+
+  desc "Update password changed at for existing users"
+  task update_password_changed_at: :environment do
+    User.all.each do |user|
+      user.update(password_changed_at: user.created_at)
+    end
+  end 
+
 end

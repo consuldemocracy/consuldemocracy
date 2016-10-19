@@ -50,7 +50,7 @@ feature 'Official positions' do
         @proposal1 = create(:proposal, author: @user1)
         @proposal2 = create(:proposal, author: @user2)
 
-        featured_proposals = 3.times { create(:proposal) }
+        create_featured_proposals
       end
 
       scenario "Index" do

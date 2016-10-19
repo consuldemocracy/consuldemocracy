@@ -23,6 +23,7 @@ gem 'turbolinks'
 gem 'sprockets', '~> 3.6.3'
 
 gem 'devise', '~> 3.5.7'
+gem 'devise_security_extension'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 gem 'omniauth'
@@ -41,7 +42,7 @@ gem 'ckeditor', '~> 4.2.0'
 gem 'invisible_captcha', '~> 0.9.1'
 gem 'cancancan'
 gem 'social-share-button'
-gem 'initialjs-rails', '0.2.0.1'
+gem 'initialjs-rails', '0.2.0.4'
 gem 'unicorn', '~> 5.1.0'
 gem 'paranoia'
 gem 'rinku', require: 'rails_rinku'
@@ -79,7 +80,7 @@ group :development, :test do
   gem 'i18n-tasks'
   gem 'capistrano', '3.5.0',           require: false
   gem "capistrano-bundler", '1.1.4',   require: false
-  gem "capistrano-rails", '1.1.7',     require: false
+  gem "capistrano-rails", '1.1.8',     require: false
   gem "capistrano-rvm",                require: false
   gem 'capistrano3-delayed-job', '~> 1.0'
   gem "bullet"

@@ -54,6 +54,7 @@ es:
         username: "Nombre de usuario"
         password_confirmation: "Confirmación de contraseña"
         password: "Contraseña"
+        current_password: "Contraseña actual"
         phone_number: "Teléfono"
         official_position: "Cargo público"
         official_level: "Nivel del cargo"
