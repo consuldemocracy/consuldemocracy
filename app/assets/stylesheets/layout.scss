@@ -732,6 +732,56 @@ form {
 // 07. Callout
 // -----------
 
+.callout-slide {
+  animation-duration: 1s;
+  -webkit-animation-duration: 1s;
+  animation-fill-mode: both;
+  -webkit-animation-fill-mode: both;
+  animation-name: slide;
+  -webkit-animation-name: slide;
+}
+
+@-webkit-keyframes slide {
+  from {
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+    visibility: visible;
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes slide {
+  from {
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+    visibility: visible;
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.notice-container {
+  min-width: $line-height*12;
+  position: absolute;
+  right: 24px;
+  top: 24px;
+
+  .notice {
+    height: $line-height*4;
+
+    .notice-text {
+      width: 95%;
+    }
+  }
+}
+
 .callout {
   font-size: $small-font-size;
 
