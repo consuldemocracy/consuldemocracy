@@ -9,6 +9,7 @@ class HumanRightsController < ApplicationController
   before_action :set_search_order,            only: :index
 
   has_orders %w{random confidence_score},     only: :index
+  has_orders %w{most_voted newest oldest},    only: :show
 
   def index
     load_human_right_proposals
@@ -22,6 +23,19 @@ class HumanRightsController < ApplicationController
     paginate_results
     order_results
     render "proposals/index"
+  end
+
+  def show
+    @proposal = Proposal.find(params[:id])
+    set_resource_votes(@proposal)
+
+    @notifications = []
+
+    @commentable = @proposal
+    @comment_tree = CommentTree.new(@commentable, params[:page], @current_order)
+
+    set_comment_flags(@comment_tree.comments)
+    render "proposals/show"
   end
 
   private
