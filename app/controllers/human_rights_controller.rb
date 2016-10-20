@@ -2,12 +2,17 @@ class HumanRightsController < ApplicationController
   skip_authorization_check
 
   include CommentableActions
-  before_action :set_random_seed, only: :index
 
-  has_orders %w{random confidence_score}, only: :index
+  before_action :set_random_seed,             only: :index
+  before_action :parse_search_terms,          only: :index
+  before_action :parse_advanced_search_terms, only: :index
+  before_action :set_search_order,            only: :index
+
+  has_orders %w{random confidence_score},     only: :index
 
   def index
     load_human_right_proposals
+    filter_by_search
     filter_by_subproceeding
 
     load_votes
@@ -23,6 +28,11 @@ class HumanRightsController < ApplicationController
 
   def load_human_right_proposals
     @proposals = @human_right_proposals = Proposal.where(proceeding: "Derechos Humanos")
+  end
+
+  def filter_by_search
+    @proposals = @search_terms.present? ? @proposals.search(@search_terms) : @proposals
+    @proposals = @advanced_search_terms.present? ? @proposals.filter(@advanced_search_terms) : @proposals
   end
 
   def filter_by_subproceeding

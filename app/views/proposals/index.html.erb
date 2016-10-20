@@ -1,7 +1,8 @@
 <% provide :title do %><%= t('proposals.index.title') %><% end %>
+
 <% content_for :header_addon do %>
   <%= render "shared/search_form",
-             search_path: proposals_path(page: 1),
+             search_path: current_path_with_query_params(page: 1),
              i18n_namespace: "proposals.index.search_form" %>
 <% end %>
 

@@ -68,7 +68,9 @@ class Proposal < ActiveRecord::Base
       tag_list.join(' ') => 'B',
       geozone.try(:name) => 'B',
       summary            => 'C',
-      description        => 'D'
+      description        => 'D',
+      proceeding         => 'A',
+      sub_proceeding     => 'A'
     }
   end
 
