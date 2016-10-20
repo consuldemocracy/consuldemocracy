@@ -10,7 +10,7 @@ feature 'Human Rights' do
     scenario 'Proposals' do
     end
 
-    scenario 'Legislataion' do
+    scenario 'Legislation' do
     end
 
   end
@@ -41,6 +41,15 @@ feature 'Human Rights' do
       end
 
       scenario "Highlight human right's user" do
+      end
+
+      scenario 'Do not display tag cloud' do
+      end
+
+      scenario 'Do not display create proposal button' do
+      end
+
+      scenario 'Only display official subproceedings' do
       end
 
     end
