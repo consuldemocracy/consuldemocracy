@@ -1,0 +1,118 @@
+<div class="row margin">
+  <div class="small-12 column">
+    <%= render 'shared/back_link' %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="small-12 column legislation">
+    <div class="float-left download">
+      <p><strong>DESCARGA ESTE DOCUMENTO</strong><br>
+        <%= link_to "Plan de Derechos Humanos del Ayuntamiento de Madrid (2017-2020) <small>(DOC | 495Kb)</small>".html_safe,
+                    "/docs/PENDING.doc",
+                    title: "Plan de Derechos Humanos del Ayuntamiento de Madrid (2017-2020) (DOC | 495Kb)" %><br>
+      </p>
+    </div>
+
+    <div class="float-right">
+      <p><strong>Fecha de aprobación: 28 de abril de 2011</strong><br>
+      <strong>Fecha de la última evaluación: 3 de marzo de 2016</strong></p>
+      <a class="button warning" type="button" data-toggle="annotator-help">
+        <sub><span class="icon-edit"></span></sub>&nbsp;
+        <%= t("annotator.help.title") %>
+      </a>
+
+      <div class="dropdown-pane" id="annotator-help" data-dropdown data-auto-focus="true">
+        <% if user_signed_in? %>
+          <%= t("annotator.help.alt") %>
+        <% else %>
+          <p>
+            <%= t("annotator.help.text",
+                sign_in: link_to(t("annotator.help.text_sign_in"), new_user_session_path),
+                sign_up: link_to(t("annotator.help.text_sign_up"), new_user_registration_path)).html_safe %>
+          </p>
+        <% end %>
+
+        <%= image_tag ("annotator_help.gif"), alt: t("annotator.help.alt") %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="small-12 medium-9 small-centered column legislation">
+    <section data-annotatable-type="legislation"
+             data-annotatable-id="1"
+             id="plan_ddhh_body">
+
+      <h1 class="text-center">Plan de Derechos Humanos del Ayuntamiento de Madrid (2017-2020)</h1>
+
+      <h2>Índice</h2>
+      <ul>
+        <li><a href="#intro">Introducción</a></li>
+        <li><a href="#primera_parte">Primera parte: Disposiciones Generales</a></li>
+        <li><a href="#segunda_parte">Segunda parte: Secciones, Metas, Objetivos Estratégicos y Líneas de Acción</a></li>
+        <li><a href="#seccion_I">Sección I: Una ciudad que contribuye a garantizar los Derechos Civiles y Políticos</a></li>
+        <li><a href="#meta_1">Meta 1. El Derecho a la participación democrática y a información, transparencia y rendición de cuentas</a></li>
+        <li><a href="#meta_2">Meta 2. Derecho a una seguridad centrada en los derechos humanos</a></li>
+        <li><a href="#meta_3">Meta 3. Derecho a la libertad de conciencia, religión, opinión e información</a></li>
+        <li><a href="#meta_4">Meta 4. Derecho a la libertad de reunión, asociación y manifestación</a></li>
+        <li><a href="#meta_5">Meta 5. Derecho a la verdad, justicia y reparación</a></li>
+        <li><a href="#seccion_II">Sección II. Una ciudad comprometida contra las violencias y la discriminación</a></li>
+        <li><a href="#meta_6">Meta 6. Derecho de las mujeres a una vida libre de violencias y discriminación</a></li>
+        <li><a href="#meta_7">Meta 7. Una ciudad que contribuye a garantizar la no discriminación por sexo, por orientación sexual e identidad de género</a></li>
+        <li><a href="#meta_8">Meta 8. Una ciudad comprometida contra el racismo y la xenofobia y con la protección de los derechos de las personas en movimiento (migrantes, refugiadas, víctimas de trata</a></li>
+        <li><a href="#meta_9">Meta 9. Una ciudad que protege los derechos humanos de niños y niñas</a></li>
+        <li><a href="#meta_10">Meta 10. Una ciudad que garantiza los derechos de las personas con diversidad funcional/discapacidad</a></li>
+        <li><a href="#meta_11">Meta 11. Una ciudad que garantiza los derechos de las personas con mayores</a></li>
+        <li><a href="#seccion_III">Sección III. Una ciudad que contribuye a garantizar los derechos sociales, económicos, culturales y medioambientales</a></li>
+        <li><a href="#meta_12">Meta 12. Derecho al más alto nivel de salud, incluida la salud sexual y reproductiva</a></li>
+        <li><a href="#meta_13">Meta 13. Derecho a una vivienda digna y adecuada y al domicilio, incluido el derecho a la energía</a></li>
+        <li><a href="#meta_14">Meta 14. Derecho a recibir cuidados y derechos de las personas cuidadoras</a></li>
+        <li><a href="#meta_15">Meta 15. Derecho al acceso a una educación (incluida la educación infantil y de personas adultas) de calidad, sin discriminación y con contenido de derechos humanos</a></li>
+        <li><a href="#meta_16">Meta 16. Derecho a un trabajo digno, a condiciones de trabajo adecuadas y no discriminatorias y la seguridad social</a></li>
+        <li><a href="#meta_17">Meta 17. Derecho al agua y la alimentación suficiente, apropiada y saludable</a></li>
+        <li><a href="#meta_18">Meta 18. Derecho a la cultura de calidad, sin discriminación y con contenido de derechos humanos</a></li>
+        <li><a href="#seccion_IV">Sección IV. Una ciudad con un desarrollo urbano sostenible y equitativo, que favorece la convivencia en comunidad y garantiza los derechos medioambientales</a></li>
+        <li><a href="#meta_19">Meta 19. Derecho a un entorno urbano sostenible, que garantice la calidad de vida y la movilidad en la ciudad</a></li>
+        <li><a href="#seccion_V">Sección V. Una ciudad solidaria con otras ciudades, territorios y que promueve un mundo más justo, democrático y sostenible</a></li>
+        <li><a href="#meta_20">Meta 20. Construir una Política pública municipal de Justicia y Solidaridad Global con un enfoque basado en derechos humanos</a></li>
+        <li><a href="#seccion_VI">Sección VI. Obligaciones transversales</a></li>
+        <li><a href="#meta_21">Meta 21. Derecho a un igual acceso a servicios municipales básicos y de proximidad que sean disponibles, accesibles y de calidad</a></li>
+        <li><a href="#meta_22">Meta 22. La inclusión y sostenibilidad de un enfoque de derechos humanos y de género en las políticas del Ayuntamiento</a></li>
+        <li><a href="#meta_23">Meta 23. Formación en derechos humanos en el Ayuntamiento y entidades de gestión privada y la sociedad</a></li>
+        <li><a href="#meta_24">Meta 24. Evaluación y Financiación del Plan</a></li>
+      </ul>
+
+
+
+      <h2 id="intro">1. Introducción</h2>
+
+      <p>El presente Plan de Derechos Humanos pretende responder a una pregunta: ¿Cómo puede el Ayuntamiento de Madrid mejorar su actuación para continuar contribuyendo a hacer realidad los derechos humanos en su ciudad?</p>
+      <p>Es ahí, donde verdaderamente comienzan los derechos humanos: “en lugares minúsculos muy cerca de casa. Sitios que son tan cercanos y tan pequeños que no son visibles en el mapamundi. Aun así, conforman el mundo de cada persona: el vecindario en el que vive, la escuela o universidad a la que asiste, la fábrica u oficina donde trabaja…”<sup><a href="#note_1">1</a></sup>,  su hogar, su familia, sus redes afectivas y espacios de cuidados, etc.</p>
+      <p>En suma, la ciudad donde todas y todos vivimos.</p>
+<p>El Ayuntamiento lleva mucho tiempo contribuyendo de forma cotidiana a esa labor de defensa y promoción de los derechos humanos a través de todas sus estructuras, servicios, políticas, programas y actuaciones. Además el actual Equipo de Gobierno ha convertido esa labor en uno de los ejes trasversales de toda su acción de gobierno<sup><a href="#note_2">2</a></sup>. Con este instrumento de planificación estratégica se pretende consolidar esa labor municipal, con sus múltiples fortalezas y buenas prácticas, así como mejorar, reorientar, reforzar y ampliarla para garantizar el cumplimiento de las obligaciones jurídicas del Ayuntamiento de respetar, proteger y realizar los derechos humanos de todas las personas que habitan en Madrid. </p>
+<p>El principal objetivo de este Plan es, por tanto, transversalizar un enfoque basado en derechos humanos, género e interseccionalidad<sup><a href="#note_3">3</a></sup> (en adelante enfoque DH-GI) en todas las políticas municipales. Se trata de un marco conceptual innovador desarrollado por Naciones Unidas que coloca los derechos humanos y la equidad de género como fundamento, objetivo e instrumento de las políticas públicas. Busca reforzar, sobre todo, la actuación municipal frente a las principales carencias de derechos humanos, desigualdad y pobreza que existen en Madrid y que afectan, en especial, a las mujeres y a los grupos más discriminados: el colectivo de Lesbianas, Gays, Bisexuales, Transexuales, Transgénero e Intersexuales –en adelante LGBTI<sup><a href="#note_4">4</a></sup> -; las personas pertenecientes a minorías religiosas o étnicas (pueblo gitano, afrodescendientes, población nacionalizada, etc.); personas con discapacidad/ diversidad funcional<sup><a href="#note_5">5</a></sup>; personas mayores; personas con adicciones; población migrante y refugiadas; niños y niñas, las y los adolescentes y los y las jóvenes; personas sin hogar; familias más afectadas por la crisis económica o las políticas de austeridad, etc.</p>
+<p>Para conseguir ese objetivo y reforzar la actuación municipal en este ámbito, se impulsó desde la Tercera Tenencia de la Alcaldía, a finales del año 2015 un proceso de consulta y participación de la ciudadanía y de todas las Áreas del Ayuntamiento con un doble objetivo. Identificar, por un lado, las principales carencias existentes </p>
+
+
+    <p>4.5.- Potenciar el Observatorio de la Ciudad y el Portal de Transparencia para garantizar los principios de información, transparencia y publicidad de los datos sobre el funcionamiento y la gestión del Ayuntamiento de Madrid, los procedimientos y actuaciones administrativas, los procesos de contratación, proveedores, las agendas de los responsables políticos (incluido los grupos políticos), etc.</p>
+
+    <div class="callout secondary">
+    <p><strong>Ficha:</strong></p>
+    <p>Una información clara, accesible y comprensible, en especial la relativa a procesos de contratación pública (pliegos, criterios de evaluación, resultados), salarios, presupuestos de los grupos políticos, destino del gasto, de planificación urbanística (disponibilidad y ubicación del suelo, programas habitacionales, etc.,).</p>
+    <p>Un tratamiento homogéneo y centralizado de la información generada por las distintas estructuras del Ayuntamiento para facilitar su consulta por la población a través, entre otras, la homogenización y publicación en abierto de las bases de datos.</p>
+    </div>
+
+    <hr>
+  <h3>Notas</h3>
+  <p id="note_1"><sup>1</sup>&nbsp;<small>Eleanor Roosevelt. Naciones Unidas, 27-3-1953.</small></p>
+  <p id="note_2"><sup>2</sup>&nbsp;<small>Dentro de la línea “Gobierno democrático, transparente y eficaz” del Plan de Acción de Gobierno 2015-19.</small></p>
+  <p id="note_3"><sup>3</sup>&nbsp;<small>El enfoque de interseccionalidad permite examinar cómo, diferentes categorías de discriminación construidas social y culturalmente, interactúan y se interrelacionan contribuyendo a la discriminación de determinadas personas, la denominada discriminación múltiple. Tiene en cuenta el racismo, el sexismo, la discapacidad, la homofobia y transfobia, la discriminación religiosa, la aporofogia, etc.</small></p>
+  <p id="note_4"><sup>4</sup>&nbsp;<small>En este documento se utiliza la sigla LGBTI, aunque la T se refiere tanto a Transexuales como Transgénero.</small></p>
+  <p id="note_5"><sup>5</sup>&nbsp;<small>En este Plan se utiliza tanto el término personas con discapacidad, como hace la Convención Internacional sobre los derechos de las personas con discapacidad (CIDPD), como personas con diversidad funcional.</small></p>
+
+
+    </section>
+  </div>
+</div>
