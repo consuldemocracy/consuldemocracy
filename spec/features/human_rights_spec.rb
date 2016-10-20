@@ -20,6 +20,12 @@ feature 'Human Rights' do
     scenario 'Index' do
     end
 
+    scenario 'Order by random by default' do
+    end
+
+    scenario 'Order by most voted' do
+    end
+
     scenario 'Vote' do
     end
 
