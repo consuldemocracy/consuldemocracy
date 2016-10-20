@@ -43,6 +43,9 @@ feature 'Human Rights' do
       scenario "Highlight human right's user" do
       end
 
+      scenario 'Do not display tag cloud' do
+      end
+
     end
 
     context 'Show' do
