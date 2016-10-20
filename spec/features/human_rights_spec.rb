@@ -22,6 +22,12 @@ feature 'Human Rights' do
       scenario 'Index' do
       end
 
+      scenario 'search' do
+      end
+
+      scenario 'search by subproceeding' do
+      end
+
       scenario 'Order by random by default' do
       end
 
