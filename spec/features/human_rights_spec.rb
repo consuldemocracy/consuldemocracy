@@ -10,7 +10,7 @@ feature 'Human Rights' do
     scenario 'Proposals' do
     end
 
-    scenario 'Legislataion' do
+    scenario 'Legislation' do
     end
 
   end
