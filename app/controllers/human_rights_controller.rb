@@ -63,7 +63,7 @@ class HumanRightsController < ApplicationController
 
   def load_subproceedings
     @subproceedings = @human_right_proposals.distinct.pluck(:sub_proceeding).
-    select { |sub_proceeding| official_human_rights_subproceedings.include?(sub_proceeding) }
+    select { |sub_proceeding| official_human_rights_subproceedings.include?(sub_proceeding) }.sort
   end
 
   def paginate_results
