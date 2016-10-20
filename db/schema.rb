@@ -294,7 +294,9 @@ ActiveRecord::Schema.define(version: 20161102133838) do
   end
 
   create_table "polls", force: :cascade do |t|
-    t.string "name"
+    t.string   "name"
+    t.datetime "starts_at"
+    t.datetime "ends_at"
   end
 
   create_table "proposal_notifications", force: :cascade do |t|
