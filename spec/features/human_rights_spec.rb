@@ -17,22 +17,36 @@ feature 'Human Rights' do
 
   context 'Proposals' do
 
-    scenario 'Index' do
+    context 'Index' do
+
+      scenario 'Index' do
+      end
+
+      scenario 'Order by random by default' do
+      end
+
+      scenario 'Order by most voted' do
+      end
+
+      scenario 'Vote' do
+      end
+
+      scenario 'Filter' do
+      end
+
+      scenario 'Highlight' do
+      end
+
     end
 
-    scenario 'Order by random by default' do
-    end
+    context 'Show' do
 
-    scenario 'Order by most voted' do
-    end
+      scenario 'Proceeding attributes' do
+      end
 
-    scenario 'Vote' do
-    end
+      scenario 'Vote' do
+      end
 
-    scenario 'Filter' do
-    end
-
-    scenario 'Highlight' do
     end
 
   end
