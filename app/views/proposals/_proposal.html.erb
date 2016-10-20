@@ -1,5 +1,7 @@
 <div id="<%= dom_id(proposal) %>"
-     class="proposal clear <%= ("successfull" if proposal.total_votes > Proposal.votes_needed_for_success) %>"
+     class="proposal clear
+           <%= css_for_human_rights_user(proposal) %>
+           <%= css_for_successfull_proposal(proposal) %>"
      data-type="proposal">
   <div class="panel">
     <div class="icon-successfull"></div>

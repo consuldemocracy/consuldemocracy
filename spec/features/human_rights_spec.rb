@@ -40,7 +40,7 @@ feature 'Human Rights' do
       scenario 'Filter' do
       end
 
-      scenario 'Highlight' do
+      scenario "Highlight human right's user" do
       end
 
     end
@@ -51,6 +51,9 @@ feature 'Human Rights' do
       end
 
       scenario 'Vote' do
+      end
+
+      scenario "Highlight human right's user" do
       end
 
     end
