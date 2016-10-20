@@ -1882,6 +1882,52 @@ aside {
   vertical-align: rem-calc(10);
 }
 
+.human-rights .panel {
+
+  .icon-human-rights {
+    border-left: 48px solid $brand;
+    border-top: 0;
+    border-bottom: 48px solid transparent;
+    height: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0;
+
+    &:after {
+      color: #FFF;
+      content: "\73";
+      font-family: "icons" !important;
+      right: 24px;
+      position: absolute;
+      top: 0;
+    }
+  }
+}
+
+.human-rights {
+
+  .panel {
+    position: relative;
+  }
+
+  .proposal-content {
+
+    .label-proposal {
+      color: $brand;
+      padding-top: $line-height;
+
+      &:after {
+        content: " departamento de derechos humanos"
+      }
+    }
+
+    .icon-proposals {
+      display: none;
+    }
+  }
+}
+
 // 11. Spending proposals votes
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
