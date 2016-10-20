@@ -36,4 +36,8 @@ module ProposalsHelper
     link_to title || sub_proceeding, new_proposal_path(proceeding: proceeding, sub_proceeding: sub_proceeding)
   end
 
+  def css_for_successfull_proposal(proposal)
+    "successfull" if proposal.total_votes > Proposal.votes_needed_for_success
+  end
+
 end
