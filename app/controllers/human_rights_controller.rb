@@ -1,5 +1,6 @@
 class HumanRightsController < ApplicationController
   skip_authorization_check
+
   include CommentableActions
   before_action :set_random_seed, only: :index
 

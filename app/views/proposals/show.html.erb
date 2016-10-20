@@ -121,43 +121,45 @@
         </div>
       </div>
 
-      <% unless @proposal.proceeding? %>
-        <aside class="small-12 medium-3 column">
-          <div class="sidebar-divider"></div>
-          <h3><%= t("votes.supports") %></h3>
-          <div id="<%= dom_id(@proposal) %>_votes">
-            <% if @proposal.successfull? %>
-              <p>
-                <%= t("proposal_ballots.successfull",
-                    voting: link_to(t("proposal_ballots.voting"),
-                    proposal_ballots_path)).html_safe %>
-              </p>
-            <% elsif @proposal.archived? %>
-              <p class="text-center">
-                <strong>
-                  <%= t("proposals.proposal.supports", count: @proposal.total_votes) %>
-                </strong>
-              </p>
-              <p><%= t("proposals.proposal.archived") %></p>
-            <% else %>
-              <div class="text-center">
-                <%= render 'votes',
-                           { proposal: @proposal, vote_url: vote_proposal_path(@proposal, value: 'yes') } %>
-              </div>
-            <% end %>
-          </div>
-          <div id="social-share" class="sidebar-divider"></div>
-          <h3><%= t("proposals.show.share") %></h3>
-          <div class="social-share-full">
-            <%= social_share_button_tag("#{@proposal.title} #{setting['twitter_hashtag']}") %>
-            <% if browser.device.mobile? %>
-              <a href="whatsapp://send?text=<%= @proposal.title %> <%= proposal_url(@proposal) %>" data-action="share/whatsapp/share">
-                <span class="icon-whatsapp whatsapp"></span>
-              </a>
-            <% end %>
-          </div>
-        </aside>
-      <% end %>
+      <aside class="small-12 medium-3 column">
+        <div class="sidebar-divider"></div>
+        <h3><%= t("votes.supports") %></h3>
+
+        <div id="<%= dom_id(@proposal) %>_votes">
+          <% if @proposal.successfull? %>
+            <p>
+              <%= t("proposal_ballots.successfull",
+                  voting: link_to(t("proposal_ballots.voting"),
+                  proposal_ballots_path)).html_safe %>
+            </p>
+          <% elsif @proposal.archived? %>
+            <p class="text-center">
+              <strong>
+                <%= t("proposals.proposal.supports", count: @proposal.total_votes) %>
+              </strong>
+            </p>
+            <p><%= t("proposals.proposal.archived") %></p>
+          <% else %>
+            <div class="text-center">
+              <%= render 'votes',
+                         { proposal: @proposal,
+                           vote_url: vote_proposal_path(@proposal, value: 'yes') } %>
+            </div>
+          <% end %>
+        </div>
+
+        <div id="social-share" class="sidebar-divider"></div>
+        <h3><%= t("proposals.show.share") %></h3>
+        <div class="social-share-full">
+          <%= social_share_button_tag("#{@proposal.title} #{setting['twitter_hashtag']}") %>
+          <% if browser.device.mobile? %>
+            <a href="whatsapp://send?text=<%= @proposal.title %> <%= proposal_url(@proposal) %>" data-action="share/whatsapp/share">
+              <span class="icon-whatsapp whatsapp"></span>
+            </a>
+          <% end %>
+        </div>
+
+      </aside>
     </div>
   </section>
 <% end %>
