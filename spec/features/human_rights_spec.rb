@@ -46,6 +46,9 @@ feature 'Human Rights' do
       scenario 'Do not display tag cloud' do
       end
 
+      scenario 'Only display official subproceedings' do
+      end
+
     end
 
     context 'Show' do

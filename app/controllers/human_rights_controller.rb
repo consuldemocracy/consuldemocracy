@@ -62,7 +62,8 @@ class HumanRightsController < ApplicationController
   end
 
   def load_subproceedings
-    @subproceedings = @human_right_proposals.distinct.pluck(:sub_proceeding)
+    @subproceedings = @human_right_proposals.distinct.pluck(:sub_proceeding).
+    select { |sub_proceeding| official_human_rights_subproceedings.include?(sub_proceeding) }
   end
 
   def paginate_results
@@ -88,6 +89,31 @@ class HumanRightsController < ApplicationController
 
   def resource_model
     Proposal
+  end
+
+  def official_human_rights_subproceedings
+    ["Conocer y defender mejor mis derechos",
+     "Derecho a la participación ciudadana en el diseño, ejecución y evaluación de las políticas",
+     "Derecho al acceso a la información de las administraciones públicas",
+     "Libertad de expresión, reunión, asociación y manifestación",
+     "Derecho a la verdad, justicia y reparación para víctimas de crímenes internacionales (incluidas las víctimas del ,franquismo)",
+     "Derecho a una vida sin violencia machista",
+     "Derecho a contar con una policía municipal democrática y eficaz",
+     "Derecho a la salud, incluida la salud sexual y reproductiva",
+     "Derecho a la vivienda",
+     "Derecho al trabajo digno",
+     "Derecho a la educación",
+     "Derecho a la cultura",
+     "Derecho al cuidado, incluyendo los derechos de las personas cuidadoras",
+     "Derecho de las mujeres a la no discriminación",
+     "Derecho de las personas gays, lesbianas, transexuales, bisexuales e intersexuales a la no discriminación",
+     "Derecho a no sufrir racismo y derechos de las personas migrantes y refugiadas",
+     "Derechos de la infancia",
+     "Derechos de las personas con diversidad funcional",
+     "Derecho a la alimentación y al agua de calidad",
+     "Derecho a la movilidad y el buen transporte en la ciudad",
+     "Derecho al desarrollo urbano sostenible",
+     "Contribución a las defensa de los derechos humanos en el mundo (cooperación)"]
   end
 
 end
