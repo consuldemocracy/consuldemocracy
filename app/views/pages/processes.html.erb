@@ -13,7 +13,7 @@
   </div>
 <% end %>
 
-<div class="expanded processes no-margin-top <%= ("featured" if feature?("human_rights.accepting")) %>">
+<div class="expanded processes no-margin-top <%= css_for_human_rights_phase("accepting") %>">
   <div class="row padding">
     <div class="small-12 column">
       <h1 class="margin-bottom">
@@ -41,7 +41,7 @@
           <% end %>
         </div>
 
-        <% if feature?("human_rights.voting") || true %>
+        <% if feature?("human_rights.voting") %>
           <div class="small-12 medium-6 column margin-bottom">
             <h2><%= t("pages.processes.index.process_5_title_voting") %></h2>
             <p><%= t("pages.processes.index.process_5_description_voting") %></p>
