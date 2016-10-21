@@ -34,3 +34,7 @@ en:
       share: "Share"
       button: "Vote"
       code_html: '<abbr title="Reference">REF.</abbr> %{code}'
+  human_rights:
+    banner:
+      title: "#HumanRightsPlan"
+      text_html: "Participate until <u>November 4</u>!"
