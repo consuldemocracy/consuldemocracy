@@ -1508,6 +1508,19 @@ tr td, tr th {
   padding: $line-height/2;
 }
 
+.supports-human-rights-title {
+  color: white !important;
+  font-size: rem-calc(12);
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.supports-human-rights-number {
+  font-size: rem-calc(18) !important;
+  font-weight: bold;
+  padding: $line-height/2;
+}
+
 .plenaries {
 
   h3 {
