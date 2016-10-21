@@ -2327,6 +2327,51 @@ ul.ballot-list {
   }
 }
 
+.human-rights-banner {
+  background: #08819A;
+  margin-bottom: $line-height/2;
+  position: relative;
+
+  h3, a:hover h3 {
+    color: white !important;
+  }
+
+  h3 {
+    margin-bottom: 0;
+    padding: $line-height/2 0;
+
+    small {
+      color: white;
+    }
+  }
+
+  @include breakpoint(medium) {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  .icon-human-rights {
+    border-right: 57px solid #079082;
+    border-top: 0;
+    border-bottom: 57px solid transparent;
+    height: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 0;
+
+    &:after {
+      color: white;
+      content: "\73";
+      font-family: "icons" !important;
+      font-size: rem-calc(20);
+      left: 30px;
+      position: absolute;
+      top: 0;
+    }
+  }
+}
+
 // 14. Proposal Ballots
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
