@@ -52,6 +52,9 @@ feature 'Human Rights' do
       scenario 'Only display official subproceedings' do
       end
 
+      scenario 'Do not display number of votes required' do
+      end
+
     end
 
     context 'Show' do
@@ -63,6 +66,9 @@ feature 'Human Rights' do
       end
 
       scenario "Highlight human right's user" do
+      end
+
+      scenario 'Do not display number of votes required' do
       end
 
     end
