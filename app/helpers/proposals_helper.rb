@@ -42,4 +42,12 @@ module ProposalsHelper
     "successfull" if proposal.total_votes > Proposal.votes_needed_for_success
   end
 
+  def path_to_search_proposals
+    if controller_name == "human_rights"
+      human_rights_proposals_path(page: 1)
+    else
+      proposals_path(page: 1)
+    end
+  end
+
 end
