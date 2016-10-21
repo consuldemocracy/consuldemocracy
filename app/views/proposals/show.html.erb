@@ -17,7 +17,7 @@
     <div id="<%= dom_id(@proposal) %>" class="row">
       <div class="small-12 medium-9 column">
         <%= render "shared/back_link",
-                   path: @proposal.proceeding? ? page_path('derechos-humanos') : proposals_path %>
+                   path: @proposal.proceeding? ? human_rights_proposals_path : proposals_path %>
 
         <% if author_of?(@proposal, current_user) && !@proposal.proceeding? %>
           <%= link_to t("proposals.show.send_notification"),
