@@ -57,9 +57,10 @@
         </div>
       <% end %>
 
-      <%= render("shared/advanced_search",
-                search_path: proposals_path(page: 1)) unless params[:retired].present? %>
-
+      <% unless params[:retired].present? %>
+        <%= render "shared/advanced_search",
+                   search_path: path_to_search_proposals  %>
+      <% end %>
       <%= render 'shared/order_links', i18n_namespace: "proposals.index" %>
 
       <% if request.path != human_rights_proposals_path %>

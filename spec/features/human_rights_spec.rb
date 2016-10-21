@@ -28,6 +28,9 @@ feature 'Human Rights' do
       scenario 'search by subproceeding' do
       end
 
+      scenario 'search by official position' do
+      end
+
       scenario 'Order by random by default' do
       end
 
