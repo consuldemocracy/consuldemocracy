@@ -13,27 +13,42 @@
   </div>
 <% end %>
 
-<div class="expanded processes no-margin-top">
+<div class="expanded processes no-margin-top <%= css_for_human_rights_phase("accepting") %>">
   <div class="row padding">
     <div class="small-12 column">
       <h1 class="margin-bottom">
         <%= t("pages.processes.index.title") %>
       </h1>
+      <span class="label"><%= t("pages.processes.index.featured") %></span>
+    </div>
 
-      <div id="spain-square" class="small-12 medium-7 margin-bottom">
-        <span class="label"><%= t("pages.processes.index.featured") %></span>
-        <h2><%= t("pages.processes.index.process_2_title") %></h2>
-        <% if feature?("probe.plaza") %>
-          <p><%= t("pages.processes.index.process_2_description") %></p>
-          <div class="small-12 medium-6">
-            <%= link_to t("pages.processes.index.process_2_button_vote"),
-                        plaza_path, class: "button expanded" %>
-          </div>
-        <% else %>
-          <p><%= t("pages.processes.index.process_2_description_close") %></p>
-          <div class="small-12 medium-6">
-            <%= link_to t("pages.processes.index.process_2_button"),
-                        page_path("processes_plaza_espana"), class: "button expanded" %>
+    <div class="row">
+      <div class="small-12 column">
+        <div id="spain-square" class="small-12 medium-5 column margin-bottom">
+          <h2><%= t("pages.processes.index.process_2_title") %></h2>
+          <% if feature?("probe.plaza") %>
+            <p><%= t("pages.processes.index.process_2_description") %></p>
+            <div class="small-12 medium-6">
+              <%= link_to t("pages.processes.index.process_2_button_vote"),
+                          plaza_path, class: "button expanded" %>
+            </div>
+          <% else %>
+            <p><%= t("pages.processes.index.process_2_description_close") %></p>
+            <div class="small-12 medium-6">
+              <%= link_to t("pages.processes.index.process_2_button"),
+                          page_path("processes_plaza_espana"), class: "button expanded" %>
+            </div>
+          <% end %>
+        </div>
+
+        <% if feature?("human_rights.voting") %>
+          <div class="small-12 medium-6 column margin-bottom">
+            <h2><%= t("pages.processes.index.process_5_title_voting") %></h2>
+            <p><%= t("pages.processes.index.process_5_description_voting_html") %></p>
+            <div class="small-12 medium-7">
+              <%= link_to t("pages.processes.index.process_5_button_voting"),
+                            human_rights_page_path, class: "button expanded" %>
+            </div>
           </div>
         <% end %>
       </div>
@@ -50,13 +65,15 @@
     </div>
   </div>
 
-  <div id="human-rights" class="small-12 medium-6 large-4 column">
-    <div class="panel category subcategory" data-equalizer-watch>
-      <h3><%= t("pages.processes.index.process_5_title") %></h3>
-      <p><%= t("pages.processes.index.process_5_description") %></p>
-      <%= link_to t("pages.processes.index.process_5_button"), "derechos-humanos", class: "button hollow" %>
+  <% if feature?("human_rights.accepting") %>
+    <div id="human-rights" class="small-12 medium-6 large-4 column">
+      <div class="panel category subcategory" data-equalizer-watch>
+        <h3><%= t("pages.processes.index.process_5_title") %></h3>
+        <p><%= t("pages.processes.index.process_5_description") %></p>
+        <%= link_to t("pages.processes.index.process_5_button"), human_rights_page_path, class: "button hollow" %>
+      </div>
     </div>
-  </div>
+  <% end %>
 
   <div id="service-letters" class="small-12 medium-6 large-4 column">
     <div class="panel category subcategory" data-equalizer-watch>

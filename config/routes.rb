@@ -300,6 +300,8 @@ Rails.application.routes.draw do
     resources :probe_options, only: :show
   end
 
+  resources :human_rights, only: [:index, :show]
+
   if Rails.env.development?
     mount LetterOpenerWeb::Engine, at: "/letter_opener"
   end
@@ -312,13 +314,10 @@ Rails.application.routes.draw do
   get 'participatory_budget/select_district', to: 'spending_proposals#select_district', as: 'select_district'
   get 'delegacion', to: 'forums#index', as: 'delegation'
   get 'plenoabierto', to: 'pages#show', id: 'processes_open_plenary'
-  get 'derechos-humanos', to: 'pages#show', id: 'processes/human_rights'
   get 'processes', to: 'pages#show', id: 'processes', as: 'processes'
-  get 'processes/human_rights_question_1', to: 'pages#show', id: 'processes/human_rights_question_1'
-  get 'processes/human_rights_question_2', to: 'pages#show', id: 'processes/human_rights_question_2'
-  get 'processes/human_rights_question_3', to: 'pages#show', id: 'processes/human_rights_question_3'
   get 'noticias', to: 'pages#show', id: 'news'
   get 'participatory_budget/in_two_minutes', to: 'pages#show', id: 'participatory_budget/in_two_minutes'
+
   get 'presupuestos-participativos-resultados', to: 'spending_proposals#results', as: 'participatory_budget_results'
   get 'presupuestos-participativos-estadisticas', to: 'spending_proposals#stats', as: 'participatory_budget_stats'
   get 'vota', to: 'proposal_ballots#index', as: 'proposal_ballots_index'
@@ -330,6 +329,15 @@ Rails.application.routes.draw do
   get 'proceso/plaza-espana-gracias', to: 'probes#thanks', id: 'plaza', as: 'plaza_thanks'
   get 'proceso/plaza-espana/proyectos/:id', to: 'probe_options#show', probe_id: 'plaza', as: 'plaza_probe_option'
 
+  #Human Rights
+  get 'derechos-humanos',                  to: 'pages#show', id: 'processes/human_rights',      as: 'human_rights_page'
+  get 'derechos-humanos/plan',             to: 'pages#show', id: 'processes/human_rights_plan', as: 'human_rights_plan'
+  get 'derechos-humanos/medidas',          to: 'human_rights#index',                            as: 'human_rights_proposals'
+  get 'derechos-humanos/medidas/:id',      to: 'human_rights#show',                             as: 'human_rights_proposal'
+
+  get 'processes/human_rights_question_1', to: 'pages#show', id: 'processes/human_rights_question_1'
+  get 'processes/human_rights_question_2', to: 'pages#show', id: 'processes/human_rights_question_2'
+  get 'processes/human_rights_question_3', to: 'pages#show', id: 'processes/human_rights_question_3'
 
   resources :pages, path: '/', only: [:show]
 end
