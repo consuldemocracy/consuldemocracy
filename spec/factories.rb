@@ -182,6 +182,11 @@ FactoryGirl.define do
         4.times { create(:vote, votable: debate) }
       end
     end
+
+    trait :human_rights do
+      proceeding     "Derechos Humanos"
+      sub_proceeding "Derecho a la vida"
+    end
   end
 
   factory :redeemable_code do
