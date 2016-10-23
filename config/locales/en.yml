@@ -374,7 +374,6 @@ en:
       recommendations_title: Recommendations for creating a proposal
       start_new: Create new proposal
     notice:
-      voted: You have successfully voted this proposal
       retired: Proposal retired
     proposal:
       already_supported: You have already supported this proposal. Share it!
@@ -508,9 +507,6 @@ en:
     twitter: Twitter
     youtube: YouTube
   spending_proposals:
-    notice:
-      voted: You have voted this proposal.
-      could_not_vote: We could not store your vote. Please check that you have enough budget and that you are not trying to vote in two districts simultaneously.
     form:
       association_name_label: 'If you propose in name of an assocation or collective add the name here'
       association_name: 'Association name'
