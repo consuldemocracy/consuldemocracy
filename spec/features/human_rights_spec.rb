@@ -38,7 +38,7 @@ feature 'Human Rights' do
 
     context 'Index' do
 
-      scenario 'Index', :focus do
+      scenario 'Index' do
         proposal1 = create(:proposal, :human_rights)
         proposal2 = create(:proposal, :human_rights)
         proposal3 = create(:proposal, :human_rights)
