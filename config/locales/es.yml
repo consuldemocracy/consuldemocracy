@@ -374,7 +374,6 @@ es:
       recommendations_title: Recomendaciones para crear una propuesta
       start_new: Crear una propuesta
     notice:
-      voted: Has apoyado esta propuesta
       retired: Propuesta retirada
     proposal:
       already_supported: "¡Ya has apoyado esta propuesta, compártela!"
@@ -508,9 +507,6 @@ es:
     twitter: Twitter
     youtube: YouTube
   spending_proposals:
-    notice:
-      voted: Has votado esta propuesta
-      could_not_vote: No se pudo votar esta propuesta. Comprueba que no hayas agotado el presupuesto y que no estés votando en distritos distintos.
     form:
       association_name_label: 'Si propones en nombre de una asociación o colectivo añade el nombre aquí'
       association_name: 'Nombre de la asociación'

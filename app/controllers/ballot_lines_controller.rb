@@ -12,15 +12,8 @@ class BallotLinesController < ApplicationController
     if @ballot_line.save
       @ballot.set_geozone(@geozone)
       @current_user.update(representative_id: nil)
-      if request.get?
-        redirect_to @spending_proposal, notice: t('spending_proposals.notice.voted')
-      end
     else
-      if request.get?
-        redirect_to @spending_proposal, notice: t('spending_proposals.notice.could_not_vote')
-      else
-        render :new
-      end
+      render :new
     end
   end
 
