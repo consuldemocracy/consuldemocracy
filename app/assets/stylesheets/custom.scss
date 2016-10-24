@@ -1941,6 +1941,14 @@ aside {
   }
 }
 
+.urbanistic-licenses {
+
+  a .panel:hover {
+    background: $highlight;
+    text-decoration: none;
+  }
+}
+
 // 11. Spending proposals votes
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
