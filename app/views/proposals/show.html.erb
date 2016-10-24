@@ -1,10 +1,12 @@
-<% provide :title do %><%= @proposal.title %><% end %>
-<% provide :social_media_meta_tags do %>
+<% provide :title do %>
+  <%= @proposal.title %>
+<% end %>
 
-<%= render "shared/social_media_meta_tags",
-            social_url: proposal_url(@proposal),
-            social_title: @proposal.title,
-            social_description: @proposal.summary %>
+<% provide :social_media_meta_tags do %>
+  <%= render "shared/social_media_meta_tags",
+              social_url: proposal_url(@proposal),
+              social_title: @proposal.title,
+              social_description: @proposal.summary %>
 <% end %>
 
 <% cache [locale_and_user_status(@proposal),
@@ -172,3 +174,8 @@
     <%= render "proposals/comments" %>
   </div>
 </div>
+
+<span id="js-tracking"
+      data-proposal-show="true"
+      data-proposal-rank="<%= @proposal_rank %>"
+</span>

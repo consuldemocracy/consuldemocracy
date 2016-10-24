@@ -22,6 +22,7 @@ class ProposalsController < ApplicationController
   def show
     super
     @notifications = @proposal.notifications
+    @proposal_rank = Proposal.sort_by_confidence_score.index(@proposal)
     redirect_to proposal_path(@proposal), status: :moved_permanently if request.path != proposal_path(@proposal)
   end
 

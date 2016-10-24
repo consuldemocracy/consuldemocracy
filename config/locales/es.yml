@@ -662,17 +662,28 @@ es:
       unverified_users: Usuarios sin verificar
   tracking:
     custom_variable:
+      user_id:
+        unknown: Desconocido
+      age:
+        unknown: Desconocida
       age_group:
-        unknow: Desconocida
+        unknown: Desconocida
       gender:
-        unknow: Desconocido
+        unknown: Desconocido
         male:   Hombre
         female: Mujer
+      district:
+        unknown: Desconocido
       user_type:
         level_one: Nivel 1
         level_two: Nivel 2
         level_three: Nivel 3
         anonymous: Anónimo
+      verification_level:
+        level_one: Nivel 1
+        level_two: Nivel 2
+        level_three: Nivel 3
+        anonymous: NoRegistrado
     events:
       category:
         verification: Verificación

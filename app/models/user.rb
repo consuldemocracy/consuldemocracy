@@ -278,17 +278,16 @@ class User < ActiveRecord::Base
   delegate :can?, :cannot?, to: :ability
 
   def user_gender
-    self.gender.present? ? I18n.t("tracking.custom_variable.gender.#{gender}") : I18n.t("tracking.custom_variable.gender.unknow")
+    self.gender.present? ? I18n.t("tracking.custom_variable.gender.#{gender}") : I18n.t("tracking.custom_variable.gender.unknown")
   end
 
   def age_group
     if self.date_of_birth.nil?
-      I18n.t("tracking.custom_variable.gender.unknow")
+      I18n.t("tracking.custom_variable.gender.unknown")
     else
-      age = ((Date.today - self.date_of_birth.to_date).to_i / 365.25).to_i
       case
       when (age == 0)
-        I18n.t("tracking.custom_variable.gender.unknow")
+        I18n.t("tracking.custom_variable.gender.unknown")
       when (age < 30)
         '< 30'
       when (age  > 29) && (age < 46)
@@ -298,6 +297,14 @@ class User < ActiveRecord::Base
       when (age > 60)
         '> 60'
       end
+    end
+  end
+
+  def age
+    if self.date_of_birth.blank?
+      I18n.t("tracking.custom_variable.gender.unknown")
+    else
+      ((Date.today - self.date_of_birth.to_date).to_i / 365.25).to_i
     end
   end
 
