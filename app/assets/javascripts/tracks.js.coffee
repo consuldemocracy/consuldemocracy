@@ -3,6 +3,11 @@ App.Tracks =
   tracking_enabled: ->
     _paq?
 
+  track_current_page: ->
+    _paq.push(['setCustomUrl',   window.location.href])
+    _paq.push(['setReferrerUrl', document.referrer])
+    _paq.push(['trackPageView',  $(document).find("title").text()])
+
   set_custom_var: (id, name, value, scope) ->
     _paq.push(['setCustomVariable', id, name, value, scope])
     _paq.push(['trackPageView'])
@@ -14,6 +19,8 @@ App.Tracks =
 
   initialize: ->
     if App.Tracks.tracking_enabled()
+      App.Tracks.track_current_page()
+
       $('[data-track-usertype]').each ->
         $this = $(this)
         cvar = $this.data('track-usertype')
