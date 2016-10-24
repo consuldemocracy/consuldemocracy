@@ -11,7 +11,7 @@ class Management::UsersController < Management::BaseController
     @user.residence_verified_at = Time.now
     @user.verified_at = Time.now
 
-    if @user.save then
+    if @user.save
       render :show
     else
       render :new
