@@ -301,7 +301,11 @@ class User < ActiveRecord::Base
   end
 
   def age
-    ((Date.today - self.date_of_birth.to_date).to_i / 365.25).to_i
+    if self.date_of_birth.blank?
+      I18n.t("tracking.custom_variable.gender.unknown")
+    else
+      ((Date.today - self.date_of_birth.to_date).to_i / 365.25).to_i
+    end
   end
 
   private
