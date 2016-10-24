@@ -65,6 +65,17 @@ module Verification
     end
   end
 
+  def verification_level
+    case
+    when sms_verified?
+      I18n.t("tracking.custom_variable.user_type.level_three")
+    when residence_verified?
+      I18n.t("tracking.custom_variable.user_type.level_two")
+    else
+      I18n.t("tracking.custom_variable.user_type.level_one")
+    end
+  end
+
   def sms_code_not_confirmed?
     !sms_verified?
   end

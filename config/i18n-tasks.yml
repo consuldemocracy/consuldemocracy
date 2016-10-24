@@ -149,6 +149,7 @@ ignore_unused:
   - 'shared.suggest.*'
   - 'invisible_captcha.*'
   - 'probes.codenames.*' # custom probes names
+  - 'tracking.custom_variable.verification_level.*'
 # - '{devise,kaminari,will_paginate}.*'
 # - 'simple_form.{yes,no}'
 # - 'simple_form.{placeholders,hints,labels}.*'
