@@ -14,7 +14,7 @@ class Comment < ApplicationRecord
 
   validate :validate_body_length
 
-  belongs_to :commentable, -> { with_hidden }, polymorphic: true, counter_cache: true
+  belongs_to :commentable, -> { with_hidden }, polymorphic: true, counter_cache: true, touch: true
   belongs_to :user, -> { with_hidden }
 
   before_save :calculate_confidence_score
