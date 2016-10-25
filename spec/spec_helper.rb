@@ -14,6 +14,7 @@ RSpec.configure do |config|
   config.include(EmailSpec::Helpers)
   config.include(EmailSpec::Matchers)
   config.include(CommonActions)
+
   config.before(:suite) do
     DatabaseCleaner.clean_with :truncation
   end
@@ -38,6 +39,10 @@ RSpec.configure do |config|
     DatabaseCleaner.strategy = :transaction
     I18n.locale = :en
     load "#{Rails.root}/db/seeds.rb"
+
+    #needed to temporarily use Plaza España Probe as the home page.
+    #remove when the home is again proposals_path
+    Probe.create(codename: 'plaza')
   end
 
   config.before(:each, type: :feature) do

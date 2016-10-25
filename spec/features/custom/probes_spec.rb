@@ -57,7 +57,7 @@ feature 'Probes' do
   context 'Plaza' do
 
     background do
-      @probe = Probe.create(codename: 'plaza')
+      @probe = Probe.where(codename: 'plaza').first_or_create
       @probe_option_1 = @probe.probe_options.create(code: 'PL1' , name: 'Plaza Option 1')
       @probe_option_2 = @probe.probe_options.create(code: 'PL2' , name: 'Plaza Option II')
       @user = create(:user, :level_two)

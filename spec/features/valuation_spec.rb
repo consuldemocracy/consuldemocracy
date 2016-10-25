@@ -11,7 +11,7 @@ feature 'Valuation' do
     visit valuation_root_path
 
     expect(current_path).not_to eq(valuation_root_path)
-    expect(current_path).to eq(proposals_path)
+    expect(current_path).to eq(root_path_for_logged_in_users)
     expect(page).to have_content "You do not have permission to access this page"
   end
 
@@ -24,7 +24,7 @@ feature 'Valuation' do
     visit valuation_root_path
 
     expect(current_path).not_to eq(valuation_root_path)
-    expect(current_path).to eq(proposals_path)
+    expect(current_path).to eq(root_path_for_logged_in_users)
     expect(page).to have_content "You do not have permission to access this page"
   end
 
@@ -37,7 +37,7 @@ feature 'Valuation' do
     visit valuation_root_path
 
     expect(current_path).not_to eq(valuation_root_path)
-    expect(current_path).to eq(proposals_path)
+    expect(current_path).to eq(root_path_for_logged_in_users)
     expect(page).to have_content "You do not have permission to access this page"
   end
 
