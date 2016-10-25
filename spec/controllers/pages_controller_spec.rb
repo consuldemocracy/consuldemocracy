@@ -24,13 +24,6 @@ describe PagesController do
     end
   end
 
-  describe 'Provisional pages' do
-    it 'should include a opendata page' do
-      get :show, id: :opendata
-      expect(response).to be_ok
-    end
-  end
-
   describe 'Info pages' do
     it 'should include a how_it_works page' do
       get :show, id: :how_it_works
