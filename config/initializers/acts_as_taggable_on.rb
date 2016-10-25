@@ -74,7 +74,7 @@ module ActsAsTaggableOn
     end
 
     def self.spending_proposal_tags
-      ActsAsTaggableOn::Tag.where("taggings.taggable_type" => "SpendingProposal").includes(:taggings).order(:name).uniq
+      ActsAsTaggableOn::Tag.where("taggings.taggable_type" => "SpendingProposal").includes(:taggings).order(:name).distinct
     end
 
     def self.graphql_field_name
