@@ -23,6 +23,11 @@
 // 01. Global styles
 // -----------------
 
+::selection {
+  color: white;
+  background-color: $brand;
+}
+
 body {
   font-size: $base-font-size;
 }
