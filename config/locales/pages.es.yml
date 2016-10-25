@@ -72,10 +72,6 @@ es:
         proposals_info: "¿Cómo funcionan las propuestas ciudadanas?"
         signature_sheet: Hojas de firmas
         spending_proposals_info: "¿Qué son los presupuestos participativos?"
-    opendata:
-      go_old: Ir al Portal de Datos Abiertos
-      slogan_html: 'Estamos trabajando en el nuevo Portal de Datos Abiertos del Ayuntamiento de Madrid, por ahora puedes visitar el portal que existía hasta ahora:'
-      title: Datos abiertos
     privacy: Política de Privacidad
     processes:
       back: Volver
@@ -136,7 +132,6 @@ es:
       accessibility: Accesibilidad
       conditions: Condiciones de uso
       more_information: Más información
-      opendata: Datos abiertos
       privacy: Política de Privacidad
     verify:
       code: Código que has recibido en tu carta
@@ -146,7 +141,6 @@ es:
       password: Contraseña
       submit: Verificar mi cuenta
       title: Verifica tu cuenta
-    while_unfinished_html: Mientras acabamos el nuevo portal, te invitamos a visitar el <a href="/blog" target="_blank" title="(se abre en ventana nueva)">blog del Área de Participación Ciudadana, Transparencia y Gobierno Abierto</a> para conocer nuestros avances y novedades; o la <a href="/">sección de Participación Ciudadana</a> donde poder decidir qué ciudad es la que quieres.
   participatory_budget:
     in_two_minutes:
       date_1: 22 febrero - 31 marzo

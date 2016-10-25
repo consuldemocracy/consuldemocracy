@@ -216,6 +216,7 @@ es:
       more_info: Más información
       open_data_text: Todos los datos del Ayuntamiento son tuyos.
       open_data_title: Datos Abiertos
+      opendata_url: http://datos.madrid.es
       open_source: software libre
       open_source_url: http://www.gnu.org/licenses/agpl-3.0.html
       participation_text: Decide cómo debe ser la ciudad de Madrid que quieres.
@@ -223,7 +224,7 @@ es:
       privacy: Política de privacidad
       transparency_text: Obtén cualquier información sobre el Ayuntamiento de Madrid.
       transparency_title: Transparencia
-      transparency_url: https://transparencia.madrid.es
+      transparency_url: http://www.madrid.es/portaldetransparencia
     header:
       administration: Administrar
       debates: Debates
@@ -231,7 +232,7 @@ es:
       external_link_opendata: Datos abiertos
       external_link_opendata_url: http://datos.madrid.es
       external_link_transparency: Transparencia
-      external_link_transparency_url: https://transparencia.madrid.es
+      external_link_transparency_url: http://www.madrid.es/portaldetransparencia
       help_translate: Ayúdanos a traducir
       locale: 'Idioma:'
       logo: Madrid
@@ -250,7 +251,6 @@ es:
       open_city_slogan_html: En Madrid sus habitantes, <span>debaten sobre temas</span> que les preocupan, <span>proponen ideas</span> para mejorar sus vidas y <span>deciden entre todas y todos</span> las que se llevan a cabo.
       open_city_slogan_short: Existen ciudades gobernadas directamente por sus habitantes, Madrid ya es una de ellas.
       open_city_title: La ciudad que quieres será la ciudad que quieras.
-      open_data: Datos abiertos
       open_gov: Gobierno %{open}
       proposals: Propuestas
       processes: Procesos sectoriales
