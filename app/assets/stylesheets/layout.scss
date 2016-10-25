@@ -23,6 +23,11 @@
 // 01. Global styles
 // -----------------
 
+::selection {
+  color: white;
+  background-color: $brand;
+}
+
 body {
   font-size: $base-font-size;
 }
@@ -146,10 +151,6 @@ a {
   margin: 0 auto (-$line-height)*12;
   height: auto !important;
   height: 100%;
-}
-
-.wrap {
-  background: white;
 }
 
 .footer, .push {
