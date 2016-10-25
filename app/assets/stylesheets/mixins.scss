@@ -13,7 +13,7 @@
   font-size: rem-calc(24);
   font-weight: lighter;
 
-  @include breakpoint(small) {
+  @include breakpoint(medium) {
     line-height: $line-height*2;
     margin-top: 0;
   }
@@ -22,7 +22,7 @@
     height: 48px;
     width: 48px;
 
-    @include breakpoint(small) {
+    @include breakpoint(medium) {
       height: 80px;
       margin-right: $line-height/2;
       margin-top: 0;
