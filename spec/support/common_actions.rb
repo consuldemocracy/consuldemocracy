@@ -40,6 +40,10 @@ module CommonActions
     allow_any_instance_of(Management::BaseController).to receive(:managed_user).and_return(user)
   end
 
+  def root_path_for_logged_in_users
+    plaza_path
+  end
+
   def fill_in_proposal
     fill_in 'proposal_title', with: 'Help refugees'
     fill_in 'proposal_question', with: '¿Would you like to give assistance to war refugees?'

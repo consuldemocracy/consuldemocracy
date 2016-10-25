@@ -375,8 +375,8 @@ feature 'Stats' do
   context "Probes" do
 
     scenario "Index" do
-      probe1 = Probe.create(codename: 'town_planning')
-      probe2 = Probe.create(codename: 'plaza')
+      probe1 = Probe.where(codename: 'town_planning').first_or_create
+      probe2 = Probe.where(codename: 'plaza').first_or_create
 
       visit admin_probes_path
 
@@ -385,7 +385,7 @@ feature 'Stats' do
     end
 
     scenario "Show" do
-      probe = Probe.create(codename: 'plaza')
+      probe = Probe.where(codename: 'plaza').first_or_create
 
       visit admin_probe_path(probe)
 
