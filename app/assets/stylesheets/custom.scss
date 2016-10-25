@@ -1570,7 +1570,7 @@ tr td, tr th {
 
 .panel.category {
   margin-bottom: $line-height;
-  min-height: $line-height*12;
+  min-height: $line-height*14;
   position: relative;
 
   h3 {
@@ -1938,6 +1938,14 @@ aside {
     .icon-proposals {
       display: none;
     }
+  }
+}
+
+.urbanistic-licenses {
+
+  a .panel:hover {
+    background: $highlight;
+    text-decoration: none;
   }
 }
 

@@ -336,5 +336,8 @@ Rails.application.routes.draw do
   get 'processes/human_rights_question_2', to: 'pages#show', id: 'processes/human_rights_question_2'
   get 'processes/human_rights_question_3', to: 'pages#show', id: 'processes/human_rights_question_3'
 
+  #Processes
+  get 'proceso/licencias-urbanisticas',    to: 'pages#show', id: 'processes/urbanistic_licenses', as: 'urbanistic_licenses'
+
   resources :pages, path: '/', only: [:show]
 end
