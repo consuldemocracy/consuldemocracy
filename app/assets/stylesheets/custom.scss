@@ -1949,6 +1949,23 @@ aside {
   }
 }
 
+a.show-hidden-projects {
+  display: inline-block;
+  margin-bottom: $line-height;
+  padding-right: rem-calc(16);
+  position: relative;
+
+  &:before {
+    background: image-url("icon_eye.png") no-repeat;
+    content: " ";
+    height: 24px;
+    left: -26px;
+    position: absolute;
+    top: -2px;
+    width: 24px;
+  }
+}
+
 // 11. Spending proposals votes
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
