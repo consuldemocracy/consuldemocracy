@@ -5,7 +5,7 @@ describe Management::SessionsController do
   describe "Sign in" do
     it "denies access if wrong manager credentials" do
       allow_any_instance_of(ManagerAuthenticator).to receive(:auth).and_return(false)
-      expect { get :create, login: "nonexistent", clave_usuario: "wrong"}.to raise_error CanCan::AccessDenied
+      expect { get :create, params: { login: "nonexistent" , clave_usuario: "wrong" }}.to raise_error CanCan::AccessDenied
       expect(session[:manager]).to be_nil
     end
 
@@ -13,7 +13,7 @@ describe Management::SessionsController do
       manager = {login: "JJB033", user_key: "31415926", date: "20151031135905"}
       allow_any_instance_of(ManagerAuthenticator).to receive(:auth).and_return(manager)
 
-      get :create, login: "JJB033", clave_usuario: "31415926", fecha_conexion: "20151031135905"
+      get :create, params: { login: "JJB033" , clave_usuario: "31415926", fecha_conexion: "20151031135905" }
       expect(response).to be_redirect
       expect(session[:manager][:login]).to eq "JJB033"
     end

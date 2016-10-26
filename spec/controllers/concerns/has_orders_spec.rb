@@ -10,7 +10,7 @@ describe HasOrders do
     has_orders ->(c) { ["votes_count", "flags_count"] }, only: :new
 
     def index
-      render text: "#{@current_order} (#{@valid_orders.join(" ")})"
+      render plain: "#{@current_order} (#{@valid_orders.join(" ")})"
     end
 
     def new
@@ -48,12 +48,12 @@ describe HasOrders do
     end
 
     it "can be changed by the order param" do
-      get :index, order: "votes_count"
+      get :index, params: { order: "votes_count" }
       expect(response.body).to eq("votes_count (created_at votes_count flags_count)")
     end
 
     it "defaults to the first one on the list if given a bogus order" do
-      get :index, order: "foobar"
+      get :index, params: { order: "foobar" }
       expect(response.body).to eq("created_at (created_at votes_count flags_count)")
     end
   end
