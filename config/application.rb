@@ -21,7 +21,7 @@ module Consul
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     config.i18n.default_locale = :es
     config.i18n.available_locales = [:en, :es, :fr, 'pt-BR']
-    config.i18n.fallbacks = {'fr' => 'en', 'pt-br' => 'en'}
+    config.i18n.fallbacks = {'fr' => 'es', 'pt-br' => 'es'}
 
     # Add the new directories to the locales load path
     config.i18n.load_path += Dir[Rails.root.join('doc', 'locales', '*.yml')]
