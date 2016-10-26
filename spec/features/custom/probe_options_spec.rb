@@ -82,6 +82,11 @@ feature 'Probe options' do
       scenario 'Do not display link if there are no discarded options' do
       end
 
+      scenario 'Keep track of discarded options during session' do
+        #do not display discarded options
+        #if discarded options, show link to restore
+      end
+
     end
   end
 end

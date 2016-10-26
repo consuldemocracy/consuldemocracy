@@ -73,7 +73,6 @@ var initialize_modules = function() {
   App.FixedBar.initialize();
   App.Banners.initialize();
   App.Countdown.initialize();
-  App.Probe.initialize();
 };
 
 $(function(){
