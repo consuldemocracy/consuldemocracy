@@ -1,7 +1,7 @@
 module Custom::ProbeHelper
 
   def css_for_link_to_display_hidden_project
-    @discarded_probe_option_ids.present? ? 'display:inline-block;' : 'display:none;'
+    @discarded_probe_option_ids.any? ? 'display:inline-block;' : 'display:none;'
   end
 
   def css_for_discarded_probe_option(probe_option)

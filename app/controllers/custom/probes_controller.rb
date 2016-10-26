@@ -49,7 +49,7 @@ class ProbesController < ApplicationController
     end
 
     def load_discarded_probe_options
-      @discarded_probe_option_ids = session[:discarded_probe_option_ids]
+      @discarded_probe_option_ids = session[:discarded_probe_option_ids] || []
     end
 
     def probe_show_route
