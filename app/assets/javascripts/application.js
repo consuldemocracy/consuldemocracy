@@ -49,6 +49,7 @@
 //= require fixed_bar
 //= require banners
 //= require countdown
+//= require probe
 //= require custom
 
 var initialize_modules = function() {
@@ -72,6 +73,7 @@ var initialize_modules = function() {
   App.FixedBar.initialize();
   App.Banners.initialize();
   App.Countdown.initialize();
+  App.Probe.initialize();
 };
 
 $(function(){

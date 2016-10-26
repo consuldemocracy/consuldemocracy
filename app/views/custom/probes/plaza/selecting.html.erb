@@ -30,7 +30,7 @@
   <div class="row">
     <div class="float-right">
       <small>
-        <%= link_to "Volver a mostrar los proyectos ocultos", "#", class: "show-hidden-projects" %>
+        <%= link_to "Volver a mostrar los proyectos ocultos", "#", class: "show-hidden-projects", id: 'js-show-hidden-projects' %>
       </small>
     </div>
   </div>
@@ -142,7 +142,7 @@
                           <%= "<small>Ver detalles del proyecto</small>".html_safe %>
               <% end %>
               <!-- HIDE PROJECT -->
-              <%= link_to "#" do %>
+              <%= link_to "#", class: 'js-hide-probe-option', data: {id: probe_option.id} do %>
                 <%= image_tag "icon_eye_hide.png" %>
                 <small>Ocultar este proyecto</small>
               <% end %>
