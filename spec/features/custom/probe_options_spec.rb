@@ -73,6 +73,15 @@ feature 'Probe options' do
         expect(page).to have_button "Vote"
       end
 
+      scenario 'Discard option' do
+      end
+
+      scenario 'Display all discarded options' do
+      end
+
+      scenario 'Do not display link if there are no discarded options' do
+      end
+
     end
   end
 end
