@@ -76,7 +76,7 @@
 
   <div class="row" data-equalizer>
     <% @probe_options.each do |probe_option| %>
-      <% cache ["plaza", "probe_selection_fragment_1", probe_option.id] do %>
+      <% cache ["plaza", "probe_selection_fragment_1", probe_option.id, @discarded_probe_option_ids] do %>
         <div id="<%= dom_id(probe_option) %>"
              class="probe_option small-12 medium-4 large-3 column end"
              style="<%= css_for_discarded_probe_option(probe_option) %>">
