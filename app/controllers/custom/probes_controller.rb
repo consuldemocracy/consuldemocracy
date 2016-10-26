@@ -5,6 +5,7 @@ class ProbesController < ApplicationController
   before_action :set_random_seed, only: [:show]
   before_action :load_probe_options, only: [:show]
   before_action :load_user_selection, only: [:show, :thanks]
+  before_action :load_discarded_probe_options, only: [:show]
 
   def show
     render probe_show_page
@@ -45,6 +46,10 @@ class ProbesController < ApplicationController
     def load_probe_options
       order = @probe.selecting_allowed? ? "RANDOM()" : { probe_selections_count: :desc }
       @probe_options = @probe.probe_options.all.includes(:debate).order(order)
+    end
+
+    def load_discarded_probe_options
+      @discarded_probe_option_ids = session[:discarded_probe_option_ids] || []
     end
 
     def probe_show_route

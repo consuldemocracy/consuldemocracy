@@ -49,6 +49,7 @@
 //= require fixed_bar
 //= require banners
 //= require countdown
+//= require probe
 //= require custom
 
 var initialize_modules = function() {

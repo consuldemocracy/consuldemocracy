@@ -294,7 +294,10 @@ Rails.application.routes.draw do
     post :selection,  on: :collection
     get :thanks, on: :collection
 
-    resources :probe_options, only: :show
+    resources :probe_options, only: :show do
+      post :discard, on: :member
+      post :restore_discarded, on: :collection
+    end
   end
 
   resources :human_rights, only: [:index, :show]
