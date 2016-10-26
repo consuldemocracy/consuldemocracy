@@ -73,20 +73,58 @@ feature 'Probe options' do
         expect(page).to have_button "Vote"
       end
 
-      scenario 'Discard option' do
-      end
+      context "Discard" do
 
-      scenario 'Display all discarded options' do
-      end
+        scenario 'Discard option', :js do
+          visit probe_path(id: 'plaza')
 
-      scenario 'Do not display link if there are no discarded options' do
-      end
+          within("#probe_option_#{@probe_option.id}") do
+            click_link "Ocultar este proyecto"
+          end
 
-      scenario 'Keep track of discarded options during session' do
-        #do not display discarded options
-        #if discarded options, show link to restore
-      end
+          expect(page).to_not have_content @probe_option.name
+        end
 
+        scenario 'Display all discarded options', :js do
+          visit probe_path(id: 'plaza')
+
+          within("#probe_option_#{@probe_option.id}") do
+            click_link "Ocultar este proyecto"
+          end
+          expect(page).to_not have_content @probe_option.name
+
+          click_link "Volver a mostrar los proyectos ocultos"
+          expect(page).to have_content @probe_option.name
+        end
+
+        scenario 'Do not display link if there are no discarded options', :js do
+          visit probe_path(id: 'plaza')
+
+          expect(page).to_not have_link "Volver a mostrar los proyectos ocultos"
+        end
+
+        scenario 'Keep track of discarded options during session', :js do
+          @probe_option1 = @probe.probe_options.create(code: 'PL1' , name: 'Save the plaza 1')
+          @probe_option2 = @probe.probe_options.create(code: 'PL2' , name: 'Save the plaza 2')
+
+          visit probe_path(id: 'plaza')
+
+          within("#probe_option_#{@probe_option1.id}") do
+            click_link "Ocultar este proyecto"
+          end
+
+          expect(page).to_not have_content @probe_option1.name
+          expect(page).to     have_content @probe_option2.name
+
+          visit proposals_path
+          visit probe_path(id: 'plaza')
+
+          expect(page).to_not have_content @probe_option1.name
+          expect(page).to     have_content @probe_option2.name
+          expect(page).to     have_link "Volver a mostrar los proyectos ocultos"
+        end
+
+      end
     end
   end
 end
