@@ -2,8 +2,20 @@
   <div class="row">
     <div class="small-12 medium-6 column">
       <%= f.text_field :name,
-                       placeholder: t('admin.polls.new.name'),
-                       label:       t("admin.polls.new.name") %>
+                       placeholder: t('admin.polls.form.name'),
+                       label:       t("admin.polls.form.name") %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="small-12 medium-6 column">
+      <label><%= t("admin.polls.form.starts_at") %></label>
+      <input type="date">
+    </div>
+
+    <div class="small-12 medium-6 column">
+      <label><%= t("admin.polls.form.ends_at") %></label>
+      <input type="date">
     </div>
   </div>
 

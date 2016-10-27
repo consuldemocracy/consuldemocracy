@@ -120,6 +120,7 @@ ignore_unused:
   - 'admin.activity.show.filter*'
   - 'admin.comments.index.hidden_*'
   - 'admin.settings.index.features.*'
+  - 'admin.polls.*.submit_button'
   - 'moderation.comments.index.filter*'
   - 'moderation.comments.index.order*'
   - 'moderation.debates.index.filter*'
