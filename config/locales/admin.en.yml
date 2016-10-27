@@ -160,18 +160,14 @@ en:
         status: "Status"
       new:
         title: "New poll"
-        name: "Name"
-        reference: "Reference number"
-        open_date: "Open date"
-        close_date: "Close date"
         submit_button: "Create poll"
       edit:
         title: "Edit poll"
-        name: "Name"
-        reference: "Reference number"
-        open_date: "Open date"
-        close_date: "Close date"
         submit_button: "Update poll"
+      form:
+        name: "Name"
+        starts_at: "Open date"
+        ends_at: "Close date"
       show:
         no_booths: "There are no booths in this poll."
         add_booth: "Add booth"

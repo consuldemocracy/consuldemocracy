@@ -105,7 +105,7 @@ es:
       moderators: Moderadores
       valuators: Evaluadores
       poll_officers: Presidentes de mesa
-      polls: Votaciones físicas
+      polls: Votaciones
       officials: Cargos públicos
       organizations: Organizaciones
       settings: Configuración global
@@ -160,18 +160,14 @@ es:
         status: "Estado"
       new:
         title: "Nueva votación"
-        name: "Nombre"
-        reference: "Número de referencia"
-        open_date: "Fecha de apertura"
-        close_date: "Fecha de cierre"
         submit_button: "Crear votación"
       edit:
         title: "Editar votación"
-        name: "Nombre"
-        reference: "Número de referencia"
-        open_date: "Fecha de apertura"
-        close_date: "Fecha de cierre"
         submit_button: "Actualizar votación"
+      form:
+        name: "Nombre"
+        starts_at: "Fecha de apertura"
+        ends_at: "Fecha de cierre"
       show:
         no_booths: "No hay urnas en esta votación."
         add_booth: "Añadir urna"
