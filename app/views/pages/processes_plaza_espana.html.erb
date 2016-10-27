@@ -14,7 +14,14 @@
       <h1><%= t("pages.processes.process_2.title") %></h1>
       <%= markdown t("pages.processes.process_2.text") %>
 
-      <%= link_to "Ver resultados de la encuesta", page_path('encuesta-plaza-espana-resultados'), class: "button large" %>
+      <% if feature?("probe.plaza") %>
+        <%= link_to "Votar proyectos", plaza_path, class: "button large" %>
+        <p class="margin-top">
+          <%= link_to "Ver resultados de la encuesta", page_path('encuesta-plaza-espana-resultados'), class: "white" %>
+        </p>
+      <% else %>
+        <%= link_to "Ver resultados de la encuesta", page_path('encuesta-plaza-espana-resultados'), class: "button large" %>
+      <% end %>
     </div>
     <div class="small-12 medium-5 column">
       <div class="flex-video">
@@ -42,7 +49,7 @@
 
     <div class="small-12 medium-3 column">
       <p>
-        <br>
+        28 de octubre <small><i class="icon-angle-right"></i></small><br>
         <strong>Valoración de proyectos</strong>
       </p>
     </div>
