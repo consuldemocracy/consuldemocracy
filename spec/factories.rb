@@ -296,6 +296,15 @@ FactoryGirl.define do
     end
   end
 
+  factory :poll_question, class: 'Poll::Question' do
+    association :author, factory: :user
+    sequence(:title) { |n| "Question title #{n}" }
+    sequence(:summary) { |n| "Question summary #{n}" }
+    sequence(:description) { |n| "Question description #{n}" }
+    sequence(:question) { |n| "Question question #{n}" }
+    valid_answers { Faker::Lorem.words(3).join(', ') }
+  end
+
   factory :organization do
     user
     responsible_name "Johnny Utah"

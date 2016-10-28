@@ -1,0 +1,47 @@
+class Poll::Question < ActiveRecord::Base
+  include Measurable
+
+  acts_as_paranoid column: :hidden_at
+  include ActsAsParanoidAliases
+
+  belongs_to :author, -> { with_hidden }, class_name: 'User', foreign_key: 'author_id'
+
+  has_many :comments, as: :commentable
+  has_many :answers
+  has_and_belongs_to_many :geozones
+  belongs_to :proposal
+
+  validates :title, presence: true
+  validates :question, presence: true
+  validates :summary, presence: true
+  validates :author, presence: true
+
+  validates :title, length: { in: 4..Poll::Question.title_max_length }
+  validates :description, length: { maximum: Poll::Question.description_max_length }
+  validates :question, length: { in: 10..Poll::Question.question_max_length }
+
+  scope :sort_for_list, -> { order('proposal_id IS NULL', :created_at)}
+  scope :for_render, -> { includes(:author, :proposal) }
+
+  def description
+    super.try :html_safe
+  end
+
+  def valid_answers
+    (super.try(:split, ',').compact || []).map(&:strip)
+  end
+
+  def copy_attributes_from_proposal(proposal)
+    if proposal.present?
+      self.author = proposal.author
+      self.author_visible_name = proposal.author.name
+      self.proposal_id = proposal.id
+      self.title = proposal.title
+      self.description = proposal.description
+      self.summary = proposal.summary
+      self.question = proposal.question
+      self.geozones = Geozone.all
+    end
+  end
+
+end
