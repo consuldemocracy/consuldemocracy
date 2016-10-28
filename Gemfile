@@ -3,24 +3,24 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.7.1'
 # Use PostgreSQL
-gem 'pg'
+gem 'pg', '~> 0.19.0'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0', '>= 5.0.4'
 # Use Uglifier as compressor for JavaScript assets
-gem 'uglifier', '>= 1.3.0'
+gem 'uglifier', '>= 3.0.3'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2.1'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
 # Use jquery as the JavaScript library
-gem 'jquery-rails'
+gem 'jquery-rails', '~> 4.2.1'
 gem 'jquery-ui-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 
 # Fix sprockets on the
-gem 'sprockets', '~> 3.6.3'
+gem 'sprockets', '~> 3.7.0'
 
 gem 'devise', '~> 3.5.7'
 gem 'devise_security_extension'
@@ -32,11 +32,11 @@ gem 'omniauth-facebook', '~> 3.0.0'
 gem 'omniauth-google-oauth2', '~> 0.4.0'
 
 gem 'kaminari'
-gem 'ancestry'
+gem 'ancestry', '~> 2.2.1'
 gem 'acts-as-taggable-on'
-gem 'responders'
-gem 'foundation-rails'
-gem 'foundation_rails_helper'
+gem 'responders', '~> 2.3.0'
+gem 'foundation-rails', '~> 6.2.4.0'
+gem 'foundation_rails_helper', '~> 2.0.0'
 gem 'acts_as_votable'
 gem 'ckeditor', '~> 4.2.0'
 gem 'invisible_captcha', '~> 0.9.1'
@@ -44,24 +44,24 @@ gem 'cancancan'
 gem 'social-share-button'
 gem 'initialjs-rails', '0.2.0.4'
 gem 'unicorn', '~> 5.1.0'
-gem 'paranoia'
-gem 'rinku', require: 'rails_rinku'
+gem 'paranoia', '~> 2.2.0'
+gem 'rinku', '~> 2.0.2', require: 'rails_rinku'
 gem 'savon'
 gem 'dalli'
-gem 'rollbar', '~> 2.12.0'
+gem 'rollbar', '~> 2.13.3'
 gem 'delayed_job_active_record', '~> 4.1.0'
 gem 'daemons'
 gem 'devise-async'
-gem 'newrelic_rpm', '~> 3.16'
+gem 'newrelic_rpm', '~> 3.17.0.325'
 gem 'whenever', require: false
 gem 'pg_search'
 
-gem 'ahoy_matey', '~> 1.4.0'
-gem 'groupdate'   # group temporary data
-gem 'tolk' # Web interface for translations
+gem 'ahoy_matey', '~> 1.4.2'
+gem 'groupdate', '~> 3.1.0'   # group temporary data
+gem 'tolk', '~> 2.0.0' # Web interface for translations
 
 gem 'browser'
-gem 'turnout'
+gem 'turnout', '~> 2.4.0'
 gem 'redcarpet'
 
 group :development, :test do
