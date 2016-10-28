@@ -24,28 +24,29 @@
 
     <div class="row">
       <div class="small-12 column">
-        <div id="spain-square" class="small-12 medium-5 column margin-bottom">
-          <h2><%= t("pages.processes.index.process_2_title") %></h2>
+        <div class="small-12 medium-7 column margin-bottom">
           <% if feature?("probe.plaza") %>
+            <h2><%= t("pages.processes.index.process_2_title") %></h2>
             <p><%= t("pages.processes.index.process_2_description") %></p>
             <div class="small-12 medium-6">
               <%= link_to t("pages.processes.index.process_2_button_vote"),
                           plaza_path, class: "button expanded" %>
             </div>
           <% else %>
-            <p><%= t("pages.processes.index.process_2_description_close") %></p>
+            <h2><%= t("pages.processes.index.process_8_title") %></h2>
+            <p><%= t("pages.processes.index.process_8_description") %></p>
             <div class="small-12 medium-6">
-              <%= link_to t("pages.processes.index.process_2_button"),
-                          page_path("processes_plaza_espana"), class: "button expanded" %>
+              <%= link_to t("pages.processes.index.process_8_button"),
+                          urbanistic_licenses_path, class: "button expanded margin-bottom" %>
             </div>
           <% end %>
         </div>
 
         <% if feature?("human_rights.voting") %>
-          <div class="small-12 medium-6 column margin-bottom">
+          <div class="small-12 medium-5 column margin-bottom">
             <h2><%= t("pages.processes.index.process_5_title_voting") %></h2>
             <p><%= t("pages.processes.index.process_5_description_voting_html") %></p>
-            <div class="small-12 medium-7">
+            <div class="small-12 medium-8">
               <%= link_to t("pages.processes.index.process_5_button_voting"),
                             human_rights_page_path, class: "button expanded" %>
             </div>
@@ -57,13 +58,25 @@
 </div>
 
 <div class="row margin" data-equalizer>
-  <div id="urbanistic-licenses" class="small-12 medium-6 large-4 column">
-    <div class="panel category subcategory" data-equalizer-watch>
-      <h3><%= t("pages.processes.index.process_8_title") %></h3>
-      <p><%= t("pages.processes.index.process_8_description") %></p>
-      <%= link_to t("pages.processes.index.process_8_button"), urbanistic_licenses_path, class: "button hollow" %>
+
+  <% if feature?("probe.plaza") %>
+    <div id="urbanistic-licenses" class="small-12 medium-6 large-4 column">
+      <div class="panel category subcategory" data-equalizer-watch>
+        <h3><%= t("pages.processes.index.process_8_title") %></h3>
+        <p><%= t("pages.processes.index.process_8_description") %></p>
+        <%= link_to t("pages.processes.index.process_8_button"), urbanistic_licenses_path, class: "button hollow" %>
+      </div>
     </div>
-  </div>
+  <% else %>
+    <div class="small-12 medium-6 large-4 column">
+      <div class="panel category subcategory" data-equalizer-watch>
+        <h3><%= t("pages.processes.index.process_2_title") %></h3>
+        <p><%= t("pages.processes.index.process_2_description_close") %></p>
+        <%= link_to t("pages.processes.index.process_2_button"),
+                    page_path("processes_plaza_espana"), class: "button hollow" %>
+      </div>
+    </div>
+  <% end %>
 
   <div id="town-planning" class="small-12 medium-6 large-4 column">
     <div class="panel category subcategory" data-equalizer-watch>
