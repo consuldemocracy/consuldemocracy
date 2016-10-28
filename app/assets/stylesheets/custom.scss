@@ -2240,13 +2240,13 @@ ul.ballot-list {
       margin-bottom: 0;
     }
   }
+}
 
-  .download {
-    background: $highlight;
-    border-radius: rem-calc(6);
-    margin-bottom: $line-height;
-    padding: $line-height/2;
-  }
+.download {
+  background: $highlight;
+  border-radius: rem-calc(6);
+  margin-bottom: $line-height;
+  padding: $line-height/2;
 }
 
 // 13. Counter

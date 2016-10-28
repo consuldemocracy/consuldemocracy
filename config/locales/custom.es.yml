@@ -38,3 +38,8 @@ es:
     banner:
       title: "#PlanDerechosHumanos"
       text_html: "¡Participa hasta el <u>4 de noviembre</u>!"
+  banner:
+    urbanistic_licenses:
+      title: "Licencias urbanísticas, declaraciones responsables y comunicaciones previas"
+      date_html: "¡Participa hasta el <u>24 de noviembre</u>!"
+      button: "Más información"

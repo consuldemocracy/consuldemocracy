@@ -40,6 +40,18 @@
         </div>
       </div>
     </div>
+  <% else %>
+    <div class="expanded jumbo-brand padding">
+      <div class="row">
+        <div class="small-12 medium-9 small-centered column text-center">
+          <h2><%= t("banner.urbanistic_licenses.title") %></h2>
+          <h3><%= t("banner.urbanistic_licenses.date_html") %></h3>
+          <div class="small-12 medium-6 large-4 small-centered">
+            <%= link_to t("banner.urbanistic_licenses.button"), urbanistic_licenses_path, class: "button expanded margin-top" %>
+          </div>
+        </div>
+      </div>
+    </div>
   <% end %>
 
   <% if @proposal_successfull_exists %>
