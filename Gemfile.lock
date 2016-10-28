@@ -179,7 +179,7 @@ GEM
     geocoder (1.4.0)
     globalid (0.3.7)
       activesupport (>= 4.1.0)
-    groupdate (3.1.0)
+    groupdate (3.1.1)
       activesupport (>= 3)
     gyoku (1.3.1)
       builder (>= 2.1.2)
@@ -442,7 +442,7 @@ DEPENDENCIES
   acts-as-taggable-on
   acts_as_votable
   ahoy_matey (~> 1.4.2)
-  ancestry (= 2.2.1)
+  ancestry (~> 2.2.1)
   browser
   bullet
   byebug
@@ -466,14 +466,14 @@ DEPENDENCIES
   email_spec
   factory_girl_rails
   faker
-  foundation-rails (= 6.2.4.0)
-  foundation_rails_helper (= 2.0.0)
+  foundation-rails (~> 6.2.4.0)
+  foundation_rails_helper (~> 2.0.0)
   fuubar
-  groupdate (= 3.1.0)
+  groupdate (~> 3.1.0)
   i18n-tasks
   initialjs-rails (= 0.2.0.4)
   invisible_captcha (~> 0.9.1)
-  jquery-rails (= 4.2.1)
+  jquery-rails (~> 4.2.1)
   jquery-ui-rails
   kaminari
   launchy
@@ -483,15 +483,15 @@ DEPENDENCIES
   omniauth-facebook (~> 3.0.0)
   omniauth-google-oauth2 (~> 0.4.0)
   omniauth-twitter
-  paranoia (= 2.2.0)
-  pg (= 0.19.0)
+  paranoia (~> 2.2.0)
+  pg (~> 0.19.0)
   pg_search
   poltergeist
   quiet_assets
   rails (= 4.2.7.1)
   redcarpet
-  responders (= 2.3.0)
-  rinku (= 2.0.2)
+  responders (~> 2.3.0)
+  rinku (~> 2.0.2)
   rollbar (~> 2.13.3)
   rspec-rails (~> 3.5)
   sass-rails (~> 5.0, >= 5.0.4)
@@ -500,9 +500,9 @@ DEPENDENCIES
   spring
   spring-commands-rspec
   sprockets (~> 3.7.0)
-  tolk (= 2.0.0)
+  tolk (~> 2.0.0)
   turbolinks
-  turnout (= 2.4.0)
+  turnout (~> 2.4.0)
   uglifier (>= 3.0.3)
   unicorn (~> 5.1.0)
   web-console (= 3.3.0)

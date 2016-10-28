@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.7.1'
 # Use PostgreSQL
-gem 'pg', '0.19.0'
+gem 'pg', '~> 0.19.0'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0', '>= 5.0.4'
 # Use Uglifier as compressor for JavaScript assets
@@ -14,7 +14,7 @@ gem 'coffee-rails', '~> 4.2.1'
 # gem 'therubyracer', platforms: :ruby
 
 # Use jquery as the JavaScript library
-gem 'jquery-rails', '4.2.1'
+gem 'jquery-rails', '~> 4.2.1'
 gem 'jquery-ui-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
@@ -32,11 +32,11 @@ gem 'omniauth-facebook', '~> 3.0.0'
 gem 'omniauth-google-oauth2', '~> 0.4.0'
 
 gem 'kaminari'
-gem 'ancestry', '2.2.1'
+gem 'ancestry', '~> 2.2.1'
 gem 'acts-as-taggable-on'
-gem 'responders', '2.3.0'
-gem 'foundation-rails', '6.2.4.0'
-gem 'foundation_rails_helper', '2.0.0'
+gem 'responders', '~> 2.3.0'
+gem 'foundation-rails', '~> 6.2.4.0'
+gem 'foundation_rails_helper', '~> 2.0.0'
 gem 'acts_as_votable'
 gem 'ckeditor', '~> 4.2.0'
 gem 'invisible_captcha', '~> 0.9.1'
@@ -44,8 +44,8 @@ gem 'cancancan'
 gem 'social-share-button'
 gem 'initialjs-rails', '0.2.0.4'
 gem 'unicorn', '~> 5.1.0'
-gem 'paranoia', '2.2.0'
-gem 'rinku', '2.0.2', require: 'rails_rinku'
+gem 'paranoia', '~> 2.2.0'
+gem 'rinku', '~> 2.0.2', require: 'rails_rinku'
 gem 'savon'
 gem 'dalli'
 gem 'rollbar', '~> 2.13.3'
@@ -57,11 +57,11 @@ gem 'whenever', require: false
 gem 'pg_search'
 
 gem 'ahoy_matey', '~> 1.4.2'
-gem 'groupdate', '3.1.0'   # group temporary data
-gem 'tolk', '2.0.0' # Web interface for translations
+gem 'groupdate', '~> 3.1.0'   # group temporary data
+gem 'tolk', '~> 2.0.0' # Web interface for translations
 
 gem 'browser'
-gem 'turnout', '2.4.0'
+gem 'turnout', '~> 2.4.0'
 gem 'redcarpet'
 
 group :development, :test do
