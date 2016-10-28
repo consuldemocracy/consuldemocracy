@@ -38,3 +38,9 @@ en:
     banner:
       title: "#HumanRightsPlan"
       text_html: "Participate until <u>November 4</u>!"
+      button: "Participate"
+  banner:
+    urbanistic_licenses:
+      title: "#Urbanisticlicenses"
+      date_html: "Participate until <u>November 24</u>!"
+      button: "More information"

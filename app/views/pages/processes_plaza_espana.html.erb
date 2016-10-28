@@ -21,6 +21,7 @@
         </p>
       <% else %>
         <%= link_to "Ver resultados de la encuesta", page_path('encuesta-plaza-espana-resultados'), class: "button large" %>
+        <p class="margin-top"><strong>La preselección ciudadana de los proyectos ha terminado.<br> En breve anunciaremos los resultados.</strong></p>
       <% end %>
     </div>
     <div class="small-12 medium-5 column">
@@ -55,7 +56,7 @@
     </div>
     <div class="small-12 medium-4 column">
       <p>
-        <br>
+        Próximamente <small><i class="icon-angle-right"></i></small><br>
         <strong>Votación final ciudadana del proyecto ganador</strong>
       </p>
     </div>
@@ -100,7 +101,7 @@
     </ul>
 
     <h4>Estudios</h4>
-    <ul>
+    <ul class="no-bullet download">
       <li>
         <%= link_to "Resumen <small>(PDF | 64Kb)</small>".html_safe,
                     "/docs/resumen_plaza_espana.pdf",
@@ -159,7 +160,7 @@
     </ul>
 
     <h4>Documentos del grupo de trabajo</h4>
-    <ul>
+    <ul class="no-bullet download">
       <li>
         <%= link_to "Informe grupo de trabajo Plaza de España <small>(PDF | 1,5Mb)</small>".html_safe,
                     "/docs/informe_grupo_de_trabajo_plaza_de_espana.pdf",

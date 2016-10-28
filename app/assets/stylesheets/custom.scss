@@ -1410,7 +1410,7 @@ table.age-groups-investment-projects {
   background: $brand;
 
   @include breakpoint(large) {
-    height: $line-height*15;
+    height: $line-height*16;
 
     &.active {
       background: $brand image-url('processes_featured.jpg') no-repeat;
@@ -2240,13 +2240,13 @@ ul.ballot-list {
       margin-bottom: 0;
     }
   }
+}
 
-  .download {
-    background: $highlight;
-    border-radius: rem-calc(6);
-    margin-bottom: $line-height;
-    padding: $line-height/2;
-  }
+.download {
+  background: $highlight;
+  border-radius: rem-calc(6);
+  margin-bottom: $line-height;
+  padding: $line-height/2;
 }
 
 // 13. Counter
