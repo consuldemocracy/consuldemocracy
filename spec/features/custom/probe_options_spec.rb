@@ -4,7 +4,7 @@ feature 'Probe options' do
 
   context 'Plaza probe' do
     background do
-      @probe = Probe.where(codename: 'plaza').first_or_create
+      @probe = Probe.create(codename: 'plaza')
       @probe_option = @probe.probe_options.create(code: 'PL1' , name: 'Plaza Option 1')
       logout
     end

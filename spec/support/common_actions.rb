@@ -41,7 +41,7 @@ module CommonActions
   end
 
   def root_path_for_logged_in_users
-    plaza_path
+    proposals_path
   end
 
   def fill_in_proposal

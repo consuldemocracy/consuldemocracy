@@ -3,7 +3,7 @@ include ActionView::Helpers::DateHelper
 
 feature 'Commenting Probe Options' do
   let(:user)   { create :user }
-  let(:probe) { Probe.where(codename: 'plaza').first_or_create }
+  let(:probe) { Probe.create(codename: 'plaza') }
   let(:probe_option) { create :probe_option, probe: probe }
 
   scenario 'Index' do
@@ -416,7 +416,7 @@ feature 'Commenting Probe Options' do
     background do
       @manuela = create(:user, verified_at: Time.now)
       @pablo = create(:user)
-      @probe = Probe.where(codename: 'plaza').first_or_create
+      @probe = Probe.create(codename: 'plaza')
       @probe_option = create(:probe_option, probe: @probe)
       @comment = create(:comment, commentable: @probe_option)
 
