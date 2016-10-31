@@ -1580,6 +1580,7 @@ table {
         font-size: $small-font-size;
         margin: rem-calc(6) 0;
         padding: rem-calc(6);
+        position: relative;
 
         [class^="icon-arrow"] {
           font-size: rem-calc(18);
