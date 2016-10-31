@@ -23,9 +23,6 @@ module Consul
     config.i18n.available_locales = [:en, :es, :fr, 'pt-BR']
     config.i18n.fallbacks = {'fr' => 'es', 'pt-br' => 'es'}
 
-    # Add the new directories to the locales load path
-    config.i18n.load_path += Dir[Rails.root.join('doc', 'locales', '*.yml')]
-
     config.assets.paths << Rails.root.join("app", "assets", "fonts")
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
