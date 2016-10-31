@@ -14,9 +14,6 @@ App.Tracks =
     name     = $this.data('track-event-name')
     _paq.push(['trackEvent', category, action, name])
 
-  proposal_show_page: ->
-    $("#js-tracking").data('proposal-show')
-
   track_proposal: ->
     page_title = App.Tracks.page_title()
     proposal_rank = $('#js-tracking').data('proposal-rank')
@@ -30,9 +27,9 @@ App.Tracks =
     age                = tracking_data.data('track-age')
     district           = tracking_data.data('track-district')
 
-    _paq.push(['setCustomDimension', customDimensionId = 1, customDimensionValue = verification_level]);
     if current_user_id?
       _paq.push(['setUserId', current_user_id]);
+      _paq.push(['setCustomDimension', customDimensionId = 1, customDimensionValue = verification_level]);
       _paq.push(['setCustomDimension', customDimensionId = 2, customDimensionValue = current_user_id])
       _paq.push(['setCustomDimension', customDimensionId = 3, customDimensionValue = sex])
       _paq.push(['setCustomDimension', customDimensionId = 4, customDimensionValue = age])
@@ -40,6 +37,9 @@ App.Tracks =
 
   page_title: ->
     $(document).find("title").text()
+
+  proposal_show_page: ->
+    $("#js-tracking").data('proposal-show')
 
   initialize: ->
     if App.Tracks.tracking_enabled()
