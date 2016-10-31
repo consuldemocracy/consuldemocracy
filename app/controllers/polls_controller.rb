@@ -7,7 +7,7 @@ class PollsController < ApplicationController
   end
 
   def show
-
+    @questions = @poll.questions.sort_for_list.for_render
   end
 
 end

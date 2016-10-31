@@ -21,7 +21,12 @@ feature 'Polls' do
     expect(page).to have_content(poll.name)
 
     questions.each do |question|
-      expect(page).to have_content(question.title)
+      within("#poll_question_#{question.id}") do
+        expect(page).to have_content(question.title)
+        question.valid_answers.each do |answer|
+          expect(page).to have_link(answer)
+        end
+      end
     end
   end
 end

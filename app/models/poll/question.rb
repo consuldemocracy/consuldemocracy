@@ -23,6 +23,7 @@ class Poll::Question < ActiveRecord::Base
 
   scope :sort_for_list, -> { order('proposal_id IS NULL', :created_at)}
   scope :for_render, -> { includes(:author, :proposal) }
+  scope :by_geozone, -> (geozone_id) { joins(:geozones).where(geozones: {id: geozone_id}) }
 
   def description
     super.try :html_safe
@@ -44,5 +45,7 @@ class Poll::Question < ActiveRecord::Base
       self.geozones = Geozone.all
     end
   end
+
+
 
 end

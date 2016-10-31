@@ -1,5 +1,10 @@
 <%= @poll.name %>
 
-<%= @poll.questions.sort_for_list.each do |question| %>
-  <%= question.title %>
+<% @questions.each do |question| %>
+  <div id="<%= dom_id(question) %>">
+    <%= question.title %>
+    <%= question.valid_answers.each do |valid_answer| %>
+      <%= link_to valid_answer %>
+    <% end %>
+  </div>
 <% end %>
