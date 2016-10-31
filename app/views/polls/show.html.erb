@@ -1,1 +1,5 @@
 <%= @poll.name %>
+
+<%= @poll.questions.sort_for_list.each do |question| %>
+  <%= question.title %>
+<% end %>
