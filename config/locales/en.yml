@@ -660,40 +660,6 @@ en:
       votes: Total votes
       verified_users: Verified users
       unverified_users: Unverified users
-  tracking:
-    custom_variable:
-      user_id:
-        unknown: Desconocido
-      age:
-        unknown: Desconocido
-      age_group:
-        unknown: Desconocido
-      gender:
-        unknown: Desconocido
-        male:   Hombre
-        female: Mujer
-      district:
-        unknown: Desconocido
-      user_type:
-        level_one: Nivel 1
-        level_two: Nivel 2
-        level_three: Nivel 3
-        anonymous: Anónimo
-      verification_level:
-        level_one: Nivel 1
-        level_two: Nivel 2
-        level_three: Nivel 3
-        anonymous: NoRegistrado
-    events:
-      category:
-        verification: Verification
-      action:
-        letter_code: Letter code
-        phone_verified: Phone verified
-        requested_sending_letter: Requested sending letter
-        start_residency_verification: Start residence verification
-        start_phone_verification: Start phone verification
-        residence_verified: Residence verified
   unauthorized:
     default: You do not have permission to access this page.
     manage:
