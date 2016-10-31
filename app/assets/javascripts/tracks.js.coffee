@@ -15,7 +15,8 @@ App.Tracks =
   track_event: ($this) ->
     category = $this.data('track-event-category')
     action   = $this.data('track-event-action')
-    _paq.push(['trackEvent', category, action])
+    name     = $this.data('track-event-name')
+    _paq.push(['trackEvent', category, action, name])
 
   proposal_show_page: ->
     $("#js-tracking").data('proposal-show')
