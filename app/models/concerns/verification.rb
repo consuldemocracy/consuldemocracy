@@ -54,25 +54,14 @@ module Verification
     !verification_sms_sent?
   end
 
-  def user_type
-    case
-    when level_three_verified?
-      I18n.t("tracking.custom_variable.user_type.level_three")
-    when level_two_verified?
-      I18n.t("tracking.custom_variable.user_type.level_two")
-    else
-      I18n.t("tracking.custom_variable.user_type.level_one")
-    end
-  end
-
   def verification_level
     case
     when sms_verified?
-      I18n.t("tracking.custom_variable.user_type.level_three")
+      I18n.t("tracking.custom_variable.verification_level.level_three")
     when residence_verified?
-      I18n.t("tracking.custom_variable.user_type.level_two")
+      I18n.t("tracking.custom_variable.verification_level.level_two")
     else
-      I18n.t("tracking.custom_variable.user_type.level_one")
+      I18n.t("tracking.custom_variable.verification_level.level_one")
     end
   end
 
