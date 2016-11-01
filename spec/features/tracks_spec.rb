@@ -7,7 +7,7 @@ feature 'Tracking' do
      scenario 'Usertype anonymous' do
       visit proposals_path
 
-      expect(page.html).to include I18n.t("tracking.custom_variable.user_type.anonymous")
+      expect(page.html).to include I18n.t("tracking.user_data.user_type.anonymous")
     end
 
     scenario 'Usertype level_1_user' do
@@ -16,7 +16,7 @@ feature 'Tracking' do
 
       visit proposals_path
 
-      expect(page.html).to include I18n.t("tracking.custom_variable.user_type.level_one")
+      expect(page.html).to include I18n.t("tracking.user_data.user_type.level_one")
     end
 
     scenario 'Usertype level_2_user', :js do
@@ -35,7 +35,7 @@ feature 'Tracking' do
       user = user.reload
       fill_in 'sms_confirmation_code', with: user.sms_confirmation_code
       click_button 'Send'
-      expect(page.html).to include I18n.t("tracking.custom_variable.user_type.level_two")
+      expect(page.html).to include I18n.t("tracking.user_data.user_type.level_two")
     end
   end
 

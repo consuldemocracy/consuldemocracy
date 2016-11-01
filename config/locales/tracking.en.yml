@@ -1,9 +1,7 @@
 ---
 en:
   tracking:
-    custom_variable:
-      user_id:
-        unknown: Desconocido
+    user_data:
       age:
         unknown: Desconocido
       gender:
@@ -16,7 +14,7 @@ en:
         level_one: Nivel 1
         level_two: Nivel 2
         level_three: Nivel 3
-        anonymous: NoRegistrado
+        anonymous: NoIdentificado
     events:
       category:
         login: Login

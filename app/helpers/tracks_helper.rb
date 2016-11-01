@@ -16,15 +16,15 @@ module TracksHelper
 
   def gender(user)
     if user.gender.present?
-      I18n.t("tracking.custom_variable.gender.#{gender}")
+      I18n.t("tracking.user_data.gender.#{gender}")
     else
-      I18n.t("tracking.custom_variable.gender.unknown")
+      I18n.t("tracking.user_data.gender.unknown")
     end
   end
 
   def age(user)
     if user.date_of_birth.blank?
-      I18n.t("tracking.custom_variable.gender.unknown")
+      I18n.t("tracking.user_data.age.unknown")
     else
       ((Date.today - user.date_of_birth.to_date).to_i / 365.25).to_i
     end
@@ -33,12 +33,16 @@ module TracksHelper
   def verification_level(user)
     case
     when user.sms_verified?
-      I18n.t("tracking.custom_variable.verification_level.level_three")
+      I18n.t("tracking.user_data.verification_level.level_three")
     when user.residence_verified?
-      I18n.t("tracking.custom_variable.verification_level.level_two")
+      I18n.t("tracking.user_data.verification_level.level_two")
     else
-      I18n.t("tracking.custom_variable.verification_level.level_one")
+      I18n.t("tracking.user_data.verification_level.level_one")
     end
+  end
+
+  def geozone(user)
+    current_user.try(:geozone).try(:name) || I18n.t("tracking.user_data.district.unknown")
   end
 
 end

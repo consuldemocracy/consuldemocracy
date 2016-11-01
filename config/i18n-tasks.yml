@@ -103,6 +103,9 @@ ignore_missing:
   - 'devise.failure.invalid'
   - 'devise.registrations.destroyed'
   - 'devise.password_expired.*'
+  - 'tracking.events.action.*'
+  - 'tracking.events.category.*'
+  - 'tracking.user_data.*'
 
 ## Consider these keys used:
 ignore_unused:
@@ -150,7 +153,6 @@ ignore_unused:
   - 'shared.suggest.*'
   - 'invisible_captcha.*'
   - 'probes.codenames.*' # custom probes names
-  - 'tracking.custom_variable.verification_level.*'
 # - '{devise,kaminari,will_paginate}.*'
 # - 'simple_form.{yes,no}'
 # - 'simple_form.{placeholders,hints,labels}.*'
