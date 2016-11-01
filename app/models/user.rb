@@ -277,37 +277,6 @@ class User < ActiveRecord::Base
   end
   delegate :can?, :cannot?, to: :ability
 
-  def user_gender
-    self.gender.present? ? I18n.t("tracking.custom_variable.gender.#{gender}") : I18n.t("tracking.custom_variable.gender.unknown")
-  end
-
-  def age_group
-    if self.date_of_birth.nil?
-      I18n.t("tracking.custom_variable.gender.unknown")
-    else
-      case
-      when (age == 0)
-        I18n.t("tracking.custom_variable.gender.unknown")
-      when (age < 30)
-        '< 30'
-      when (age  > 29) && (age < 46)
-        '30-45'
-      when (age  > 45) && (age < 61)
-        '45-60'
-      when (age > 60)
-        '> 60'
-      end
-    end
-  end
-
-  def age
-    if self.date_of_birth.blank?
-      I18n.t("tracking.custom_variable.gender.unknown")
-    else
-      ((Date.today - self.date_of_birth.to_date).to_i / 365.25).to_i
-    end
-  end
-
   private
     def clean_document_number
       self.document_number = self.document_number.gsub(/[^a-z0-9]+/i, "").upcase unless self.document_number.blank?

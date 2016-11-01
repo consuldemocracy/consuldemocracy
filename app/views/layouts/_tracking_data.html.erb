@@ -1,9 +1,12 @@
-name="tracking_data"
-     data-track-user-id="<%= current_user ? current_user.id : t("tracking.custom_variable.user_id.unknown") %>"
-     data-track-verification-level="<%= current_user ? current_user.verification_level : t("tracking.custom_variable.verification_level.anonymous")%>"
-     data-track-age="<%= current_user ? current_user.age : t("tracking.custom_variable.age.unknown") %>"
-     data-track-gender="<%= current_user ? current_user.user_gender : t("tracking.custom_variable.gender.unknown") %>"
-     data-track-district="<%= current_user.try(:geozone).try(:name) || t("tracking.custom_variable.district.unknown") %>"
-     data-track-event-category="<%= yield(:track_event_category) %>"
-     data-track-event-action="<%= yield(:track_event_action) %>"
-     data-track-event-name="<%= yield(:track_event_name) %>"
+<% if current_user %>
+  <meta name="tracking_data"
+        data-track-user-id="<%= current_user.id %>"
+        data-track-verification-level="<%= verification_level(current_user) %>"
+        data-track-age="<%= age(current_user) %>"
+        data-track-gender="<%= gender(current_user) %>"
+        data-track-district="<%= current_user.try(:geozone).try(:name) %>"
+
+        data-track-event-category="<%= yield(:track_event_category) %>"
+        data-track-event-action="<%= yield(:track_event_action) %>"
+        data-track-event-name="<%= yield(:track_event_name) %>"/>
+<% end %>
