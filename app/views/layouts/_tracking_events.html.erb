@@ -1,0 +1,7 @@
+<% unless session[:events].nil? %>
+  <% session[:events].each do |event|%>
+     <% track_event(event['category'], event['action'], event['name']) %>
+  <% end %>
+<% end %>
+
+<% session[:events] = nil %>

@@ -1,4 +1,5 @@
 class Users::SessionsController < Devise::SessionsController
+  after_filter :after_login, only: :create
 
   private
 
@@ -8,6 +9,10 @@ class Users::SessionsController < Devise::SessionsController
       else
         super
       end
+    end
+
+    def after_login
+      log_event("login", "successful_login")
     end
 
     def after_sign_out_path_for(resource)

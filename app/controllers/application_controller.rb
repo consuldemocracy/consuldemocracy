@@ -118,4 +118,14 @@ class ApplicationController < ActionController::Base
         store_location_for(:user, request.path)
       end
     end
+
+    def log_event(category, action, name=nil)
+      category = I18n.t("tracking.events.category.#{category}")
+      action   = I18n.t("tracking.events.action.#{action}")
+      name     = I18n.t("tracking.events.name.#{name}") if name.present?
+
+      session[:events] ||= Array.new
+      session[:events] << {category: category, action: action, name: name}
+    end
+
 end

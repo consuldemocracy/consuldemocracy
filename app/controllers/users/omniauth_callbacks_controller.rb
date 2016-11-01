@@ -1,4 +1,5 @@
 class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
+  after_filter :after_login, only: :create
 
   def twitter
     sign_in_with :twitter_login, :twitter
@@ -42,6 +43,10 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
     def save_user(user)
       @user.save || @user.save_requiring_finish_signup
+    end
+
+    def after_login
+      log_event("login", "successful_login")
     end
 
 end

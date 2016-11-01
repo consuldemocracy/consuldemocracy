@@ -19,8 +19,10 @@ en:
         anonymous: NoRegistrado
     events:
       category:
+        login: Login
         verification: Verificación
       action:
+        successful_login: Entrar
         letter_code: Introducir código de carta
         phone_verified: Teléfono verificado
         requested_sending_letter: Solicitado envio de código por carta
