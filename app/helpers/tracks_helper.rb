@@ -28,7 +28,7 @@ module TracksHelper
 
   def gender(user)
     if user.gender.present?
-      I18n.t("tracking.user_data.gender.#{gender}")
+      I18n.t("tracking.user_data.gender.#{user.gender}")
     else
       I18n.t("tracking.user_data.gender.unknown")
     end
