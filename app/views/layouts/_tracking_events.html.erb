@@ -1,12 +1,13 @@
 <% unless session[:events].nil? %>
   <% session[:events].each do |event|%>
-     <% track_event(event['category'], event['action'], event['name']) %>
+     <% track_event(event[:category], event[:action], event[:name]) %>
   <% end %>
 <% end %>
 
 <% session[:events] = nil %>
 
-<meta name="tracking_events"
+<span id="tracking_events"
       data-track-event-category="<%= yield(:track_event_category) %>"
       data-track-event-action="<%= yield(:track_event_action) %>"
-      data-track-event-name="<%= yield(:track_event_name) %>"/>
+      data-track-event-name="<%= yield(:track_event_name) %>">
+</span>

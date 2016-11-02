@@ -20,7 +20,7 @@ App.Tracks =
     _paq.push(['trackPageView', page_title, {dimension6: proposal_rank}])
 
   track_user: ->
-    tracking_data      = $("meta[name='tracking_data']")
+    tracking_data      = $("#tracking_data")
     current_user_id    = tracking_data.data('track-user-id')
     verification_level = tracking_data.data('track-verification-level')
     sex                = tracking_data.data('track-track-gender')
@@ -34,6 +34,9 @@ App.Tracks =
       _paq.push(['setCustomDimension', customDimensionId = 3, customDimensionValue = sex])
       _paq.push(['setCustomDimension', customDimensionId = 4, customDimensionValue = age])
       _paq.push(['setCustomDimension', customDimensionId = 5, customDimensionValue = district])
+
+  render_analytics: (analytics) ->
+    $("#analytics").html(analytics)
 
   page_title: ->
     $(document).find("title").text()
