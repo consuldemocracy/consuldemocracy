@@ -22,7 +22,7 @@ class ProposalsController < ApplicationController
   def show
     super
     @notifications = @proposal.notifications
-    @proposal_rank = Proposal.sort_by_confidence_score.index(@proposal)
+    load_rank
     redirect_to proposal_path(@proposal), status: :moved_permanently if request.path != proposal_path(@proposal)
   end
 
@@ -38,6 +38,8 @@ class ProposalsController < ApplicationController
   def vote
     @proposal.register_vote(current_user, 'yes')
     set_proposal_votes(@proposal)
+    load_rank
+    log_event("proposal", 'support', @proposal.id, @proposal_rank, 6, 'position')
   end
 
   def retire
@@ -127,6 +129,10 @@ class ProposalsController < ApplicationController
 
     def load_proposal_ballots
       @proposal_successfull_exists = Proposal.successfull.exists?
+    end
+
+    def load_rank
+      @proposal_rank = Proposal.sort_by_confidence_score.index(@proposal)
     end
 
 end

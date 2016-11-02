@@ -119,13 +119,13 @@ class ApplicationController < ActionController::Base
       end
     end
 
-    def log_event(category, action, name=nil)
-      category = I18n.t("tracking.events.category.#{category}")
-      action   = I18n.t("tracking.events.action.#{action}")
-      name     = I18n.t("tracking.events.name.#{name}") if name.present?
+    def log_event(category, action, name=nil, custom_value=nil, dimension=nil, dimension_value=nil)
+      category        = I18n.t("tracking.events.category.#{category}")
+      action          = I18n.t("tracking.events.action.#{action}")
+      dimension_value = I18n.t("tracking.events.dimension_value.#{dimension_value}") if dimension_value.present?
 
       session[:events] ||= Array.new
-      session[:events] << {category: category, action: action, name: name}
+      session[:events] << {category: category, action: action, name: name.to_s, custom_value: custom_value.to_s, dimension: dimension.to_s, dimension_value: dimension_value}
     end
 
 end

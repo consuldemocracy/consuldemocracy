@@ -1,6 +1,6 @@
 module TracksHelper
 
-  def track_event(category, action, name=nil)
+  def track_event(category, action, name=nil, custom_value=nil, dimension=nil, dimension_value=nil)
     content_for :track_event_category do
       category
     end
@@ -11,6 +11,18 @@ module TracksHelper
 
     content_for :track_event_name do
       name
+    end
+
+    content_for :track_event_custom_value do
+      custom_value
+    end
+
+    content_for :track_event_dimension do
+      dimension
+    end
+
+    content_for :track_event_dimension_value do
+      dimension_value
     end
   end
 

@@ -9,10 +9,16 @@ App.Tracks =
     _paq.push(['trackPageView',  App.Tracks.page_title()])
 
   track_event: ($this) ->
-    category = $this.data('track-event-category')
-    action   = $this.data('track-event-action')
-    name     = $this.data('track-event-name')
-    _paq.push(['trackEvent', category, action, name])
+    category        = $this.data('track-event-category')
+    action          = $this.data('track-event-action')
+    name            = $this.data('track-event-name')
+    custom_value    = $this.data('track-event-custom-value')
+    dimension       = $this.data('track-event-dimension')
+    dimension_value = $this.data('track-event-dimension-value')
+
+    dimension_hash = {}
+    dimension_hash['dimension' + dimension] = dimension_value
+    _paq.push(['trackEvent', category, action, name, custom_value, dimension_hash])
 
   track_proposal: ->
     page_title = App.Tracks.page_title()

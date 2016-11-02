@@ -1,5 +1,5 @@
 ---
-es:
+en:
   tracking:
     user_data:
       age:
@@ -20,12 +20,14 @@ es:
         login: Login
         registration: Registro
         debate: Debate
+        proposal: Propuesta
         verification: Verificación
       action:
         successful_login: Entrar
         successful_registration: Registrar
         successful_confirmation: Confirmar
         vote: Votar
+        support: Apoyar
         letter_code: Introducir código de carta
         phone_verified: Teléfono verificado
         requested_sending_letter: Solicitado envio de código por carta
@@ -35,3 +37,5 @@ es:
       name:
         "yes": "Positivo"
         "no": "Negativo"
+      dimension_value:
+        position: Posición
