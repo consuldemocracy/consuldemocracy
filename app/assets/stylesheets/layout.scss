@@ -1247,13 +1247,14 @@ table {
 }
 
 .share-supported {
+  text-align: center;
 
   .social-share-button {
     display: inline-block;
   }
 
   .ssb-twitter {
-    background: none;
+    background: #45B0E3;
     color: white;
     height: $line-height;
     position: relative;
@@ -1276,7 +1277,7 @@ table {
   }
 
   .ssb-facebook {
-    background: none;
+    background: #3B5998;
     color: white;
     height: rem-calc(24);
     position: relative;
@@ -1299,7 +1300,7 @@ table {
   }
 
   .ssb-google_plus {
-    background: none;
+    background: #DE4C34;
     color: white;
     height: rem-calc(24);
     position: relative;

@@ -120,64 +120,65 @@
 }
 
 @mixin supports {
-  background: $proposals;
-  margin: 0 rem-calc(-12);
-  padding: rem-calc(14) rem-calc(12);
+  padding: $line-height 0;
   position: relative;
 
   .progress {
-    background-color: rgba(255,255,255,.8);
-    height: $line-height/2;
+    background: lighten($proposals, 35%);
+    border: 1px solid lighten($proposals, 35%);
+    height: rem-calc(14);
+    position: relative;
 
     .meter {
-      background: $like;
+      background: $proposals;
+      border-radius: 0;
+      border-bottom-right-radius: rem-calc(3);
+      border-top-right-radius: rem-calc(3);
       display: block;
       height: $line-height/2;
     }
   }
 
   .percentage {
-    font-size: rem-calc(10);
-    color: $brand;
-    vertical-align: top;
+    color: $text;
+    font-size: $tiny-font-size;
     position: absolute;
-    top: 13px;
-    right: 20px;
+    right: 6px;
+    top: -2px;
+    vertical-align: top;
   }
 
   abbr {
-    color: white;
+    color: $text-medium;
 
     &[title] {
-      border-bottom: 1px dotted white;
+      border-bottom: 1px dotted $text-medium;
     }
   }
 
   .button-support {
-    background: white;
+    background: $proposals;
     color: $text;
     display: inline-block;
     font-size: $small-font-size;
     margin-top: rem-calc(12);
 
-    &:hover {
-      background: darken($proposals, 35%);
-      color: white;
+    &:hover, &:active {
+      background: lighten($proposals, 25%);
       cursor: pointer;
-    }
-
-    &:active {
-      opacity: .75;
     }
   }
 
   .total-supports {
-    color: white;
+    color: $text;
+    display: block;
+    font-weight: bold;
     text-align: center;
-    font-size: $small-font-size;
 
     span {
       display: block;
+      font-size: $small-font-size;
+      font-weight: normal;
     }
   }
 
@@ -186,23 +187,17 @@
   }
 
   .supported {
-    color: white;
+    color: $text;
     margin-top: rem-calc(12);
   }
 }
 
-.message {
-  @include supports;
-  background: none;
-  border-top: 0;
+.supports-container {
+  border-top: 1px solid $border;
 
   @include breakpoint(medium) {
     border-left: 1px solid $border;
-    margin: $line-height rem-calc(-25) 0 rem-calc(12);
-  }
-
-  p {
-    font-size: $small-font-size;
+    border-top: 0;
   }
 }
 
@@ -438,15 +433,6 @@
 
   .supports {
     @include supports;
-    border: 0;
-    border-radius: 0;
-    margin: 0;
-
-    .total-supports {
-      display: block;
-      float: none;
-      line-height: $line-height;
-    }
   }
 
   .leave-comment {
@@ -469,6 +455,17 @@
 
 .investment-project-show p {
   word-break: break-word;
+}
+
+.proposal-show {
+
+  .supports {
+    padding: $line-height/2 0 0;
+  }
+
+  .share-supported {
+    display: none;
+  }
 }
 
 // 04. List participation
@@ -667,45 +664,6 @@
 
   .supports {
     @include supports;
-    border: 1px solid $proposals;
-    margin: 0 rem-calc(-12);
-
-    @include breakpoint(medium) {
-      border-top-left-radius: 3px;
-      border-bottom-left-radius: 3px;
-      margin: 0 rem-calc(-25) 0 rem-calc(12);
-    }
-
-    &:after {
-      content: none;
-      position: absolute;
-      display: block;
-      border-style: solid;
-      border-color: #664212 transparent transparent transparent;
-      bottom: -14px;
-      border-left-width: 0;
-      border-right-color: transparent;
-      right: -1px;
-      border-width: 13px 13px 0 0;
-
-      @include breakpoint(medium) {
-        content: "";
-      }
-    }
-
-    .total-supports {
-      display: inline-block;
-      line-height: $line-height;
-      padding-top: rem-calc(12);
-      vertical-align: top;
-
-      @include breakpoint(medium) {
-        display: block;
-        float: none;
-        margin-left: 0;
-        padding-top: 0;
-      }
-    }
   }
 }
 
@@ -857,7 +815,14 @@
     }
 
     .button-support {
+      background: $text;
+      color: $featured;
       margin-top: 0;
+
+      &:hover {
+        background: white;
+        color: $text;
+      }
     }
 
     .participation-not-allowed {
@@ -878,6 +843,7 @@
 
     .supported {
       margin-top: 0;
+      font-size: $small-font-size;
     }
 
     .share-supported {
@@ -885,7 +851,10 @@
       .ssb-twitter,
       .ssb-facebook,
       .ssb-google_plus {
-        height: rem-calc(33);
+        background: none;
+        color: $text;
+        height: rem-calc(33) !important;
+
 
         &:before {
           font-size: rem-calc(18);
