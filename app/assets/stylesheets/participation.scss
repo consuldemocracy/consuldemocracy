@@ -12,14 +12,21 @@
 // ----------------------
 
 @mixin votes {
-  background: $votes;
-  margin: 0 rem-calc(-12);
-  padding: rem-calc(14) rem-calc(12);
+  border-top: 1px solid $border;
+  margin-top: $line-height;
+  padding: $line-height 0;
   position: relative;
+
+  @include breakpoint(medium) {
+    border-left: 1px solid $border;
+    border-top: 0;
+    margin-top: 0;
+    padding-top: $line-height*2;
+  }
 
   .icon-like, .icon-unlike {
     background: white;
-    border: 2px solid $votes;
+    border: 2px solid $text-light;
     border-radius: rem-calc(3);
     color: $text-light;
     display: inline-block;
@@ -29,7 +36,6 @@
     position: relative;
 
     &:hover, &:active {
-      border-color: white;
       color: white;
       cursor: pointer;
       opacity: 1 !important;
@@ -40,6 +46,7 @@
 
     &:hover, &:active {
       background: $like;
+      border: 2px solid $like;
     }
   }
 
@@ -47,50 +54,64 @@
 
     &:hover, &:active {
       background: $unlike;
+      border: 2px solid $unlike;
     }
   }
 
   .like, .unlike {
     line-height: rem-calc(48);
     vertical-align: super;
+    text-decoration: none;
 
     span.percentage {
-      color: white;
+      color: $text;
       display: inline-block;
-      font-size: rem-calc(16);
+      font-size: $small-font-size;
       line-height: $line-height*2;
-      padding-left: rem-calc(8);
+      padding-right: $line-height/2;
       vertical-align: top;
+
+      @include breakpoint(medium) {
+        display: block;
+        line-height: $line-height;
+        padding-right: 0;
+      }
     }
   }
 
   .voted {
 
     .icon-like, .icon-unlike {
-      border-color: white;
       color: white;
     }
 
     .icon-like {
       background: $like;
+      border: 2px solid $like;
     }
 
     .icon-unlike {
       background: $unlike;
+      border: 2px solid $unlike;
     }
   }
 
   .no-voted {
 
     .icon-like, .icon-unlike {
-      opacity: .5;
+      opacity: .3;
     }
   }
 
   .total-votes {
-    color: white;
+    font-weight: bold;
     float: right;
     line-height: $line-height*2;
+
+    @include breakpoint(medium) {
+      display: block;
+      float: none;
+    }
   }
 
   .divider {
@@ -276,7 +297,9 @@
 // 03. Show participation
 // ----------------------
 
-.debate-show, .proposal-show, .investment-project-show {
+.debate-show,
+.proposal-show,
+.investment-project-show {
 
   p {
     word-wrap: break-word;
@@ -413,36 +436,6 @@
     }
   }
 
-  .votes {
-    @include votes;
-    border: 0;
-    border-radius: 0;
-    margin: 0;
-
-    .total-votes {
-      display: block;
-      float: none;
-      line-height: $line-height;
-    }
-
-    @include breakpoint(small + rem-calc(1) and medium down) {
-      .in-favor, .against {
-        text-align: left;
-        width: rem-calc(100);
-      }
-    }
-
-    .divider {
-      display: none;
-    }
-
-    @include breakpoint(medium) {
-      .divider {
-        display: inline-block;
-      }
-    }
-  }
-
   .supports {
     @include supports;
     border: 0;
@@ -496,8 +489,7 @@
 }
 
 .debate, .proposal, .investment-project {
-  margin-bottom: 0;
-  margin-top: 0;
+  margin: $line-height/4 0;
 
   .panel {
     background: white;
@@ -651,62 +643,24 @@
   }
 }
 
-.debate {
+.debate, .debate-show {
 
   .votes {
     @include votes;
-    border: 1px solid $votes;
-    margin: 0 rem-calc(-12);
 
-    @include breakpoint(medium) {
-      border-top-left-radius: 3px;
-      border-bottom-left-radius: 3px;
-      margin: 0 rem-calc(-25) 0 rem-calc(12);
-    }
-
-    &:after {
-      content: none;
-      position: absolute;
-      display: block;
-      border-style: solid;
-      border-color: #166387 transparent transparent transparent;
-      bottom: -14px;
-      border-left-width: 0;
-      border-right-color: transparent;
-      right: -1px;
-      border-width: 13px 13px 0 0;
-
-      @include breakpoint(medium) {
-        content: "";
-      }
-    }
-
-    .total-votes {
-      display: inline-block;
-      line-height: $line-height;
-      margin-left: rem-calc(24);
-      padding-top: rem-calc(12);
-      vertical-align: top;
-
-      @include breakpoint(medium) {
-        display: block;
-        float: none;
-        line-height: $line-height*2;
-        margin-left: 0;
-        padding-top: 0;
-      }
+    .against {
+      margin-left: $line-height/4;
     }
 
     @include breakpoint(medium) {
-      .like, .unlike {
-
-        span.percentage {
-          display: block;
-          line-height: $line-height/2;
-        }
-      }
+      text-align: center;
     }
   }
+}
+
+.debate-show .votes {
+  border: 0;
+  padding: $line-height/2 0;
 }
 
 .proposal {
