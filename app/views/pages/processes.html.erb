@@ -26,6 +26,7 @@
       <div class="small-12 column">
         <div class="small-12 medium-7 column margin-bottom">
           <% if feature?("probe.plaza") %>
+            <!-- Remodelación Plaza España -->
             <h2><%= t("pages.processes.index.process_2_title") %></h2>
             <p><%= t("pages.processes.index.process_2_description") %></p>
             <div class="small-12 medium-6">
@@ -33,6 +34,7 @@
                           plaza_path, class: "button expanded" %>
             </div>
           <% else %>
+            <!-- Licencias urbanísticas -->
             <h2><%= t("pages.processes.index.process_8_title") %></h2>
             <p><%= t("pages.processes.index.process_8_description") %></p>
             <div class="small-12 medium-6">
@@ -43,6 +45,7 @@
         </div>
 
         <% if feature?("human_rights.voting") %>
+          <!-- Plan Derechos humanos -->
           <div class="small-12 medium-5 column margin-bottom">
             <h2><%= t("pages.processes.index.process_5_title_voting") %></h2>
             <p><%= t("pages.processes.index.process_5_description_voting_html") %></p>
@@ -57,66 +60,88 @@
   </div>
 </div>
 
-<div class="row margin" data-equalizer>
+<div class="processes-list padding">
 
-  <% if feature?("probe.plaza") %>
-    <div id="urbanistic-licenses" class="small-12 medium-6 large-4 column">
-      <div class="panel category subcategory" data-equalizer-watch>
-        <h3><%= t("pages.processes.index.process_8_title") %></h3>
-        <p><%= t("pages.processes.index.process_8_description") %></p>
-        <%= link_to t("pages.processes.index.process_8_button"), urbanistic_licenses_path, class: "button hollow" %>
+  <div class="row">
+    <div class="small-12 medium-3 column">
+      <ul class="tabs vertical" id="processes-tab" data-tabs>
+        <li class="tabs-title is-active">
+          <a href="#panel1v" aria-selected="true">
+            <%= t("pages.processes.menu.open") %>
+          </a>
+        </li>
+        <li class="tabs-title">
+          <a href="#panel2v">
+            <%= t("pages.processes.menu.coming_soon") %>
+          </a>
+        </li>
+        <li class="tabs-title">
+          <a href="#panel3v">
+            <%= t("pages.processes.menu.finished") %>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="small-12 medium-9 column">
+      <div class="tabs-content vertical" data-tabs-content="processes-tab">
+
+        <!-- Procesos abiertos -->
+        <div class="tabs-panel is-active" id="panel1v">
+
+          <!-- Alianza para el Gobierno abierto -->
+          <div id="open-government" class="panel">
+            <h3><%= t("pages.processes.index.process_9_title") %></h3>
+            <p><%= t("pages.processes.index.process_9_description") %></p>
+            <%= link_to t("pages.processes.index.process_9_button"), open_government_path, class: "button hollow" %>
+          </div>
+
+          <!-- Cartas de servicios -->
+          <div id="service-letters" class="panel">
+            <h3><%= t("pages.processes.index.process_6_title") %></h3>
+            <p><%= t("pages.processes.index.process_6_description") %></p>
+            <%= link_to t("pages.processes.index.process_6_button"), page_path("processes_services_letters"), class: "button hollow" %>
+          </div>
+        </div>
+
+        <!-- Procesos próximamente -->
+        <div class="tabs-panel" id="panel2v">
+
+          <!-- Remodelación Plaza España -->
+          <div class="panel">
+            <h3><%= t("pages.processes.index.process_2_title") %></h3>
+            <p><%= t("pages.processes.index.process_2_description_close") %></p>
+            <%= link_to t("pages.processes.index.process_2_button"),
+                        page_path("processes_plaza_espana"), class: "button hollow" %>
+          </div>
+
+        </div>
+
+        <!-- Procesos terminados -->
+        <div class="tabs-panel" id="panel3v">
+
+          <!-- Urbanismo bancos -->
+          <div id="town-planning" class="panel">
+            <h3><%= t("pages.processes.index.process_7_title") %></h3>
+            <p><%= t("pages.processes.index.process_7_description") %></p>
+            <%= link_to t("pages.processes.index.process_7_button"), town_planning_path, class: "button hollow" %>
+          </div>
+
+          <!-- Pleno abierto -->
+          <div id="open-plenary" class="panel">
+            <h3><%= t("pages.processes.index.process_3_title") %></h3>
+            <p><%= t("pages.processes.index.process_3_description") %></p>
+            <%= link_to t("pages.processes.index.process_3_button"), page_path("processes_open_plenary"), class: "button hollow" %>
+          </div>
+
+          <!-- Ordenanza de transparencia -->
+          <div id="transparency-law" class="panel">
+            <h3><%= t("pages.processes.index.process_1_title") %></h3>
+            <p><%= t("pages.processes.index.process_1_description") %></p>
+            <%= link_to t("pages.processes.index.process_1_button"), page_path("processes_ordinance"), class: "button hollow" %>
+          </div>
+        </div>
       </div>
-    </div>
-  <% else %>
-    <div class="small-12 medium-6 large-4 column">
-      <div class="panel category subcategory" data-equalizer-watch>
-        <h3><%= t("pages.processes.index.process_2_title") %></h3>
-        <p><%= t("pages.processes.index.process_2_description_close") %></p>
-        <%= link_to t("pages.processes.index.process_2_button"),
-                    page_path("processes_plaza_espana"), class: "button hollow" %>
-      </div>
-    </div>
-  <% end %>
-
-  <div id="town-planning" class="small-12 medium-6 large-4 column">
-    <div class="panel category subcategory" data-equalizer-watch>
-      <h3><%= t("pages.processes.index.process_7_title") %></h3>
-      <p><%= t("pages.processes.index.process_7_description") %></p>
-      <%= link_to t("pages.processes.index.process_7_button"), town_planning_path, class: "button hollow" %>
-    </div>
-  </div>
-
-  <% if feature?("human_rights.accepting") %>
-    <div id="human-rights" class="small-12 medium-6 large-4 column">
-      <div class="panel category subcategory" data-equalizer-watch>
-        <h3><%= t("pages.processes.index.process_5_title") %></h3>
-        <p><%= t("pages.processes.index.process_5_description") %></p>
-        <%= link_to t("pages.processes.index.process_5_button"), human_rights_page_path, class: "button hollow" %>
-      </div>
-    </div>
-  <% end %>
-
-  <div id="service-letters" class="small-12 medium-6 large-4 column">
-    <div class="panel category subcategory" data-equalizer-watch>
-      <h3><%= t("pages.processes.index.process_6_title") %></h3>
-      <p><%= t("pages.processes.index.process_6_description") %></p>
-      <%= link_to t("pages.processes.index.process_6_button"), page_path("processes_services_letters"), class: "button hollow" %>
-    </div>
-  </div>
-
-  <div id="open-plenary" class="small-12 medium-6 large-4 column">
-    <div class="panel category subcategory" data-equalizer-watch>
-      <h3><%= t("pages.processes.index.process_3_title") %></h3>
-      <p><%= t("pages.processes.index.process_3_description") %></p>
-      <%= link_to t("pages.processes.index.process_3_button"), page_path("processes_open_plenary"), class: "button hollow" %>
-    </div>
-  </div>
-
-  <div id="transparency-law" class="small-12 medium-6 large-4 column end">
-    <div class="panel category subcategory" data-equalizer-watch>
-      <h3><%= t("pages.processes.index.process_1_title") %></h3>
-      <p><%= t("pages.processes.index.process_1_description") %></p>
-      <%= link_to t("pages.processes.index.process_1_button"), page_path("processes_ordinance"), class: "button hollow" %>
     </div>
   </div>
 </div>

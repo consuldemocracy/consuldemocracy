@@ -341,6 +341,8 @@ Rails.application.routes.draw do
 
   #Processes
   get 'proceso/licencias-urbanisticas',    to: 'pages#show', id: 'processes/urbanistic_licenses', as: 'urbanistic_licenses'
+  get 'proceso/alianza-gobierno-abierto',           to: 'pages#show', id: 'processes/open_government',         as: 'open_government'
+  get 'proceso/alianza-gobierno-abierto-borrador',  to: 'pages#show', id: 'processes/open_government_doc',     as: 'open_government_doc'
 
   resources :pages, path: '/', only: [:show]
 end

@@ -75,6 +75,10 @@ es:
     privacy: Política de Privacidad
     processes:
       back: Volver
+      menu:
+        open: "Abiertos"
+        coming_soon: "Próximamente"
+        finished: "Terminados"
       index:
         featured: Destacado
         process_1_title: Ordenanza de Transparencia
@@ -90,7 +94,6 @@ es:
         process_3_button: Ver propuestas y preguntas
         process_5_title: Plan de Derechos Humanos
         process_5_description: El Ayuntamiento de Madrid quiere reforzar su compromiso con los Derechos Humanos con la elaboración de un Plan para el desarrollo de sus políticas públicas.
-        process_5_button: Participa en la elaboración del Plan
         process_5_title_voting: Plan de Derechos Humanos
         process_5_description_voting_html: "Comenta <strong>hasta el 4 de noviembre</strong> y prioriza el borrador del Plan de Derechos Humanos."
         process_5_button_voting: Participa en la elaboración del Plan
@@ -103,6 +106,9 @@ es:
         process_8_title: "Licencias urbanísticas, declaraciones responsables y comunicaciones previas"
         process_8_description: Consulta previa sobre la regulación de la concesión de licencias urbanísticas para la realización de obras y la apertura de locales comerciales o empresariales.
         process_8_button: "Más información"
+        process_9_title: "Alianza para el Gobierno Abierto"
+        process_9_description: "Esta organización compuesta por gobiernos y sociedad civil, ayuda a que los gobiernos desarrollen medidas relevantes y específicas para avanzar en la participación y la transparencia, y certifica el cumplimiento de las mismas por medio de evaluadores independientes."
+        process_9_button: "Más información"
         title: Procesos sectoriales
         process_plaza_title: Remodelación de Plaza España
         process_plaza_description: Selecciona el proyecto que más te guste para este nuevo espacio en tu ciudad.
