@@ -32,6 +32,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       @user = current_user || identity.user || User.first_or_initialize_for_oauth(auth)
 
       if save_user(@user)
+        log_event("registration", "successful_registration")
         identity.update(user: @user)
         sign_in_and_redirect @user, event: :authentication
         set_flash_message(:notice, :success, kind: "#{provider}".capitalize) if is_navigational_format?

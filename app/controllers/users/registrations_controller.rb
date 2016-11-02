@@ -13,6 +13,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     build_resource(sign_up_params)
     track_event
     if resource.valid?
+      log_event("registration", "successful_registration")
       super
     else
       render :new

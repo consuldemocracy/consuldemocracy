@@ -4,9 +4,5 @@
         data-track-verification-level="<%= verification_level(current_user) %>"
         data-track-age="<%= age(current_user) %>"
         data-track-gender="<%= gender(current_user) %>"
-        data-track-district="<%= geozone(current_user) %>"
-
-        data-track-event-category="<%= yield(:track_event_category) %>"
-        data-track-event-action="<%= yield(:track_event_action) %>"
-        data-track-event-name="<%= yield(:track_event_name) %>"/>
+        data-track-district="<%= geozone(current_user) %>"/>
 <% end %>

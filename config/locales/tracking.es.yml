@@ -18,9 +18,12 @@ es:
     events:
       category:
         login: Login
+        registration: Registro
         verification: Verificación
       action:
         successful_login: Entrar
+        successful_registration: Registrar
+        successful_confirmation: Confirmar
         letter_code: Introducir código de carta
         phone_verified: Teléfono verificado
         requested_sending_letter: Solicitado envio de código por carta

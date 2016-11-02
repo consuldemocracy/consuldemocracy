@@ -5,3 +5,8 @@
 <% end %>
 
 <% session[:events] = nil %>
+
+<meta name="tracking_events"
+      data-track-event-category="<%= yield(:track_event_category) %>"
+      data-track-event-action="<%= yield(:track_event_action) %>"
+      data-track-event-name="<%= yield(:track_event_name) %>"/>
