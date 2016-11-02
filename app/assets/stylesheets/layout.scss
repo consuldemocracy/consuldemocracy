@@ -1550,7 +1550,7 @@ table {
 
     .comment-votes {
       color: $text-medium;
-      font-size: rem-calc(14);
+      font-size: $small-font-size;
       line-height: $line-height;
 
       a {
@@ -1560,12 +1560,21 @@ table {
 
         &:hover {
           color: $text-medium;
+          text-decoration: none;
+
+          .icon-like {
+            color: $like;
+          }
+
+          .icon-unlike {
+            color: $unlike;
+          }
         }
       }
 
       [class^="icon-"] {
-        font-size: rem-calc(20);
-        vertical-align: middle;
+        font-size: $base-font-size;
+        vertical-align: sub;
       }
     }
 
@@ -1685,7 +1694,8 @@ table {
 }
 
 .flag-disable, .flag-active {
-  vertical-align: middle;
+  line-height: 0;
+  vertical-align: sub;
 }
 
 .flag-disable {
