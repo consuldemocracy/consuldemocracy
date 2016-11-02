@@ -31,6 +31,7 @@ es:
         comment: Comentar
         comment_reply: Responder comentario
         census: Censo
+        sms: SMS
         letter_code: Introducir código de carta
         phone_verified: Teléfono verificado
         requested_sending_letter: Solicitado envio de código por carta

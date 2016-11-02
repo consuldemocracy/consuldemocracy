@@ -125,7 +125,7 @@ class ApplicationController < ActionController::Base
       dimension_value = I18n.t("tracking.events.dimension_value.#{dimension_value}") if dimension_value.present?
 
       session[:events] ||= Array.new
-      session[:events] << {category: category, action: action, name: name.to_s, custom_value: custom_value.to_s, dimension: dimension.to_s, dimension_value: dimension_value}
+      session[:events] << {category: category, action: action, name: name.to_s, custom_value: custom_value.to_s, dimension: dimension.to_s, dimension_value: dimension_value.to_s}
     end
 
 end
