@@ -265,6 +265,19 @@ FactoryGirl.define do
 
   factory :poll do
     sequence(:name) { |n| "Poll #{n}" }
+
+    starts_at { 1.month.ago }
+    ends_at { 1.month.from_now }
+
+    trait :incoming do
+      starts_at { 2.days.from_now }
+      ends_at { 1.month.from_now }
+    end
+
+    trait :expired do
+      starts_at { 1.month.ago }
+      ends_at { 15.days.ago }
+    end
   end
 
   factory :poll_officer, class: 'Poll::Officer' do
