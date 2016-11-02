@@ -48,37 +48,32 @@
 // --------------------
 
 $base-font-size:      rem-calc(17);
-$base-line-height:    rem-calc(26);
+$base-line:           rem-calc(26);
 $small-font-size:     rem-calc(14);
 $line-height:         rem-calc(24);
 
 $brand:             #004A83;
-$body:              #E9E9E9;
-$background:        #EDEFF0;
-$border:            #DEE0E3;
 $dark:              darken($brand, 10%);
 
 $text:              #222222;
 $text-medium:       #999999;
 $text-light:        #CCCCCC;
 
+$border:            #DEE0E3;
+
 $link:              #2895F1;
-$link-hover:        #2178BF;
+$link-hover:        darken($link, 20%);
 
 $debates:           #008CCF;
-$votes-bg:          #26AEEE;
-$votes-border:      #1F94CB;
 
-$votes-like:        #7BD2A8;
-$votes-like-act:    #5D9E7F;
-$votes-unlike:      #EF8585;
-$votes-unlike-act:  #BD6A6A;
+$votes:             #26AEEE;
+$like:              #7BD2A8;
+$unlike:            #EF8585;
 
 $delete:            #F04124;
 $check:             #46DB91;
 
 $proposals:         #FFA42D;
-$proposals-border:  #CC8425;
 
 $budget:            #454372;
 $budget-hover:      #7571BF;
@@ -86,9 +81,6 @@ $budget-hover:      #7571BF;
 $highlight:         #E7F2FC;
 $featured:          #FED900;
 
-$footer-bg:         #DEE0E2;
-$footer-color:      #171819;
-$footer-link:       #454A4C;
 $footer-border:     #BFC1C3;
 
 $success-bg:        #DFF0D8;

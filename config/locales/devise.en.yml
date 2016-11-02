@@ -2,6 +2,12 @@
 
 en:
   devise:
+    password_expired:
+      expire_password: "Password expired"
+      change_required: "Your password is expired"
+      change_password: "Change your password"
+      new_password: "New password"
+      updated: "Password successfully updated"
     confirmations:
       confirmed: "Your account has been confirmed."
       send_instructions: "In a few minutes you will receive an email containing instructions on how to reset your password."
@@ -62,3 +68,4 @@ en:
       not_saved:
         one: "1 error prevented this %{resource} from being saved:"
         other: "%{count} errors prevented this %{resource} from being saved:"
+      equal_to_current_password: "must be different than the current password."

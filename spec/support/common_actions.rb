@@ -185,8 +185,8 @@ module CommonActions
 
    def expect_message_you_need_to_sign_in_to_vote_comments
     expect(page).to have_content 'You must Sign in or Sign up to vote'
-    expect(page).to have_selector('.logged', visible: false)
-    expect(page).to have_selector('.not-logged', visible: true)
+    expect(page).to have_selector('.participation-allowed', visible: false)
+    expect(page).to have_selector('.participation-not-allowed', visible: true)
   end
 
   def expect_message_to_many_anonymous_votes

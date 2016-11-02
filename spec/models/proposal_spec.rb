@@ -792,7 +792,6 @@ describe Proposal do
     end
   end
 
-
   describe "#open_plenary?" do
     it "returns false when it does not have the open plenary tag" do
       proposal = create(:proposal, tag_list: 'health')
@@ -814,7 +813,6 @@ describe Proposal do
   end
 
   describe "retired" do
-
     let!(:proposal1) { create(:proposal) }
     let!(:proposal2) { create(:proposal, retired_at: Time.now) }
 
