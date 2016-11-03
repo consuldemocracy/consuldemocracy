@@ -1568,25 +1568,6 @@ tr td, tr th {
   vertical-align: middle;
 }
 
-.panel.category {
-  margin-bottom: $line-height;
-  min-height: $line-height*14;
-  position: relative;
-
-  h3 {
-    font-size: rem-calc(20);
-  }
-
-  &.subcategory {
-    a, .button {
-      bottom: 12px;
-      left: 24px;
-      position: absolute;
-      right: 24px;
-    }
-  }
-}
-
 .process-comment {
   border-bottom: 1px solid $border;
   border-top: 1px solid $border;
@@ -1963,6 +1944,32 @@ a.show-hidden-projects {
     position: absolute;
     top: -2px;
     width: 24px;
+  }
+}
+
+.processes-list {
+
+  .tabs {
+    border: 0;
+    padding: $line-height;
+  }
+
+  .tabs.vertical > li {
+    margin-bottom: $line-height;
+  }
+
+  .tabs-content {
+    background: none;
+    border: 0;
+    padding: 0;
+  }
+
+  .tabs-panel {
+    padding: 0;
+  }
+
+  .panel {
+    margin-bottom: $line-height/4;
   }
 }
 
