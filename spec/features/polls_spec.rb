@@ -15,40 +15,40 @@ feature 'Polls' do
       end
     end
 
-    xscenario 'Filtering enquiries' do
-      create(:poll_question, poll: poll, title: "Open question")
-      create(:poll_question, :incoming, poll: poll, title: "Incoming question")
-      create(:poll_question, :expired, poll: poll, title: "Expired question")
+    scenario 'Filtering polls' do
+      create(:poll, name: "Current poll")
+      create(:poll, :incoming, name: "Incoming poll")
+      create(:poll, :expired, name: "Expired poll")
 
-      visit enquiries_path
-      expect(page).to have_content('Open question')
-      expect(page).to_not have_content('Incoming question')
-      expect(page).to_not have_content('Expired question')
+      visit polls_path
+      expect(page).to have_content('Current poll')
+      expect(page).to_not have_content('Incoming poll')
+      expect(page).to_not have_content('Expired poll')
 
-      visit enquiries_path(filter: 'incoming')
-      expect(page).to_not have_content('Open question')
-      expect(page).to have_content('Incoming question')
-      expect(page).to_not have_content('Expired question')
+      visit polls_path(filter: 'incoming')
+      expect(page).to_not have_content('Current poll')
+      expect(page).to have_content('Incoming poll')
+      expect(page).to_not have_content('Expired poll')
 
-      visit enquiries_path(filter: 'expired')
-      expect(page).to_not have_content('Open question')
-      expect(page).to_not have_content('Incoming question')
-      expect(page).to have_content('Expired question')
+      visit polls_path(filter: 'expired')
+      expect(page).to_not have_content('Current poll')
+      expect(page).to_not have_content('Incoming poll')
+      expect(page).to have_content('Expired poll')
     end
 
-    xscenario "Current filter is properly highlighted" do
-      visit enquiries_path
-      expect(page).to_not have_link('Open')
+    scenario "Current filter is properly highlighted" do
+      visit polls_path
+      expect(page).to_not have_link('Current')
       expect(page).to have_link('Incoming')
       expect(page).to have_link('Expired')
 
-      visit enquiries_path(filter: 'incoming')
-      expect(page).to have_link('Open')
+      visit polls_path(filter: 'incoming')
+      expect(page).to have_link('Current')
       expect(page).to_not have_link('Incoming')
       expect(page).to have_link('Expired')
 
-      visit enquiries_path(filter: 'expired')
-      expect(page).to have_link('Open')
+      visit polls_path(filter: 'expired')
+      expect(page).to have_link('Current')
       expect(page).to have_link('Incoming')
       expect(page).to_not have_link('Expired')
     end

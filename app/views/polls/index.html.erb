@@ -1,3 +1,7 @@
+<%= render 'shared/filter_subnav', i18n_namespace: "polls.index" %>
+
 <% @polls.each do |poll| %>
   <%= link_to poll.name, poll %>
 <% end %>
+
+<%= paginate @polls %>

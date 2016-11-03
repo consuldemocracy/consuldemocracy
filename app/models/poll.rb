@@ -9,6 +9,8 @@ class Poll < ActiveRecord::Base
   scope :incoming, -> { where('? < starts_at', Time.now) }
   scope :expired,  -> { where('ends_at < ?', Time.now) }
 
+  scope :sort_for_list, -> { order(:starts_at) }
+
   def current?(timestamp = DateTime.now)
     starts_at <= timestamp && timestamp <= ends_at
   end
