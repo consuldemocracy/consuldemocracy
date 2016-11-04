@@ -132,7 +132,7 @@ class ProposalsController < ApplicationController
     end
 
     def load_rank
-      @proposal_rank = Proposal.sort_by_confidence_score.index(@proposal)
+      @proposal_rank = Proposal.sort_by_confidence_score.index(@proposal) + 1
     end
 
 end
