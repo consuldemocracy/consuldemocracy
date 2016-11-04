@@ -14,7 +14,6 @@ es:
         level_one: Nivel 1
         level_two: Nivel 2
         level_three: Nivel 3
-        anonymous: NoIdentificado
     events:
       category:
         login: Login
@@ -27,13 +26,14 @@ es:
         successful_login: Entrar
         successful_registration: Registrar
         successful_confirmation: Confirmar
+        create: Crear
         vote: Votar
         support: Apoyar
         comment: Comentar
         comment_reply: Responder comentario
         census: Censo
         sms: SMS
-        degistered: dar de baja
+        degistered: Dar de baja
         letter_code: Introducir código de carta
         phone_verified: Teléfono verificado
         requested_sending_letter: Solicitado envio de código por carta
