@@ -27,6 +27,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def delete
     current_user.erase(erase_params[:erase_reason])
     sign_out
+    log_event("deregister", "degistered")
     redirect_to root_url, notice: t("devise.registrations.destroyed")
   end
 
