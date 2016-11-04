@@ -11,22 +11,25 @@ feature 'Human Rights' do
     scenario 'Home' do
       visit "/"
       first(:link, "Open processes").click
-      click_link "Participa en la elaboración del Plan"
 
-      expect(page).to have_content "Participa hasta el 4 de noviembre"
+      within("#dd-hh") do
+        click_link "Más información"
+      end
+
+      expect(page).to have_content "El Ayuntamiento de Madrid quiere reforzar su compromiso con los Derechos Humanos"
       expect(current_path).to eq("/derechos-humanos")
     end
 
     scenario 'Proposals' do
       visit "derechos-humanos"
-      click_link "Priorizar medidas"
+      click_link "Ver medidas"
 
       expect(current_path).to eq("/derechos-humanos/medidas")
     end
 
     scenario 'Legislation' do
       visit "derechos-humanos"
-      click_link "Comentar borrador"
+      click_link "Ver borrador"
 
       expect(page).to have_content "Borrador del Plan de Derechos Humanos del Ayuntamiento"
       expect(current_path).to eq("/derechos-humanos/plan")
