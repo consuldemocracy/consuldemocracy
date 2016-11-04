@@ -32,7 +32,6 @@ feature 'Tracking' do
     scenario 'Support a proposal'
     scenario 'Create a proposal'
     scenario 'Comment a proposal'
-    scenario 'Share propoposal'
     scenario 'Verify census'
     scenario 'Verify sms'
     scenario 'Delete account'
