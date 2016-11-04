@@ -44,9 +44,9 @@ module TracksHelper
 
   def verification_level(user)
     case
-    when user.sms_verified?
+    when user.level_three_verified?
       I18n.t("tracking.user_data.verification_level.level_three")
-    when user.residence_verified?
+    when user.level_two_verified?
       I18n.t("tracking.user_data.verification_level.level_two")
     else
       I18n.t("tracking.user_data.verification_level.level_one")
