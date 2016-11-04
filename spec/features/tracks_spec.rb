@@ -236,9 +236,6 @@ feature 'Tracking' do
     end
   end
 
-  #Requires testing social network registrations
-  xscenario 'Register with social network'
-
   #Requires testing outgoing _paq.push call from track.js.coffee
   xcontext 'Page view' do
 
@@ -247,4 +244,12 @@ feature 'Tracking' do
     scenario 'Title'
   end
 
+  #Requires testing social network registrations
+  xscenario 'Register with social network'
+
+  #Requires testing method track_proposal from track.js.coffee
+  xcontext 'Proposals' do
+    scenario 'show' do
+    end
+  end
 end
