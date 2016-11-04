@@ -2,6 +2,12 @@ require 'rails_helper'
 
 feature 'Tracking' do
 
+  context 'Page view' do
+    scenario 'Url'
+    scenario 'Referer'
+    scenario 'Title'
+  end
+
   context 'User data' do
 
     context 'Verification level' do
@@ -26,10 +32,9 @@ feature 'Tracking' do
     scenario 'Support a proposal'
     scenario 'Create a proposal'
     scenario 'Comment a proposal'
+    scenario 'Share propoposal'
     scenario 'Verify census'
     scenario 'Verify sms'
-    scenario 'Ask for postal letter'
-    scenario 'Verify postal letter'
     scenario 'Delete account'
   end
 
