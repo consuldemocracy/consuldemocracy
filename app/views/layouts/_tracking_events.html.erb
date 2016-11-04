@@ -1,21 +1,12 @@
-<% unless session[:events].nil? %>
-  <% session[:events].each do |event|%>
-     <% track_event(event[:category] || event['category'],
-                    event[:action] || event['action'],
-                    event[:name] || event['name'],
-                    event[:custom_value] || event['custom_value'],
-                    event[:dimension] || event['dimension'],
-                    event[:dimension_value] || event['dimension_value']) %>
-  <% end %>
+<% if session[:event].present? %>
+  <%= tag("span",
+          id:   "tracking_events",
+          data: { track_event_category:        event_data_for(:category),
+                  track_event_action:          event_data_for(:action),
+                  track_event_name:            event_data_for(:name),
+                  track_event_custom_value:    event_data_for(:custom_value),
+                  track_event_dimension:       event_data_for(:dimension),
+                  track_event_dimension_value: event_data_for(:dimension_value) }) %>
+
+  <% session[:event] = nil %>
 <% end %>
-
-<% session[:events] = nil %>
-
-<span id="tracking_events"
-      data-track-event-category="<%= yield(:track_event_category) %>"
-      data-track-event-action="<%= yield(:track_event_action) %>"
-      data-track-event-name="<%= yield(:track_event_name) %>"
-      data-track-event-custom-value="<%= yield(:track_event_custom_value) %>"
-      data-track-event-dimension="<%= yield(:track_event_dimension) %>"
-      data-track-event-dimension-value="<%= yield(:track_event_dimension_value) %>">
-</span>
