@@ -43,6 +43,9 @@ module CommentableActions
 
     if @resource.save
       track_event
+      if @resource.class == Proposal
+        log_event("proposal", "create")
+      end
       redirect_path = url_for(controller: controller_name, action: :show, id: @resource.id)
       redirect_to redirect_path, notice: t("flash.actions.create.#{resource_name.underscore}")
     else
