@@ -24,37 +24,15 @@
 
     <div class="row">
       <div class="small-12 column">
-        <div class="small-12 medium-7 column margin-bottom">
-          <% if feature?("probe.plaza") %>
-            <!-- Remodelación Plaza España -->
-            <h2><%= t("pages.processes.index.process_2_title") %></h2>
-            <p><%= t("pages.processes.index.process_2_description") %></p>
-            <div class="small-12 medium-6">
-              <%= link_to t("pages.processes.index.process_2_button_vote"),
-                          plaza_path, class: "button expanded" %>
-            </div>
-          <% else %>
-            <!-- Licencias urbanísticas -->
-            <h2><%= t("pages.processes.index.process_8_title") %></h2>
-            <p><%= t("pages.processes.index.process_8_description") %></p>
-            <div class="small-12 medium-6">
-              <%= link_to t("pages.processes.index.process_8_button"),
-                          urbanistic_licenses_path, class: "button expanded margin-bottom" %>
-            </div>
-          <% end %>
-        </div>
-
-        <% if feature?("human_rights.voting") %>
-          <!-- Plan Derechos humanos -->
-          <div class="small-12 medium-5 column margin-bottom">
-            <h2><%= t("pages.processes.index.process_5_title_voting") %></h2>
-            <p><%= t("pages.processes.index.process_5_description_voting_html") %></p>
-            <div class="small-12 medium-8">
-              <%= link_to t("pages.processes.index.process_5_button_voting"),
-                            human_rights_page_path, class: "button expanded" %>
-            </div>
+        <div class="small-12 medium-8 column margin-bottom">
+          <!-- Licencias urbanísticas -->
+          <h2><%= t("pages.processes.index.process_8_title") %></h2>
+          <p><%= t("pages.processes.index.process_8_description") %></p>
+          <div class="small-12 medium-6">
+            <%= link_to t("pages.processes.index.process_8_button"),
+                        urbanistic_licenses_path, class: "button expanded margin-bottom" %>
           </div>
-        <% end %>
+        </div>
       </div>
     </div>
   </div>
@@ -95,13 +73,6 @@
             <p><%= t("pages.processes.index.process_9_description") %></p>
             <%= link_to t("pages.processes.index.process_9_button"), open_government_path, class: "button hollow" %>
           </div>
-
-          <!-- Cartas de servicios -->
-          <div id="service-letters" class="panel">
-            <h3><%= t("pages.processes.index.process_6_title") %></h3>
-            <p><%= t("pages.processes.index.process_6_description") %></p>
-            <%= link_to t("pages.processes.index.process_6_button"), page_path("processes_services_letters"), class: "button hollow" %>
-          </div>
         </div>
 
         <!-- Procesos próximamente -->
@@ -119,6 +90,20 @@
 
         <!-- Procesos terminados -->
         <div class="tabs-panel" id="panel3v">
+
+          <!-- Plan Derechos humanos -->
+          <div class="panel">
+            <h3><%= t("pages.processes.index.process_5_title_voting") %></h3>
+            <p><%= t("pages.processes.index.process_5_description_voting_html") %></p>
+            <%= link_to t("pages.processes.index.process_5_button_voting"), human_rights_page_path, class: "button hollow" %>
+          </div>
+
+          <!-- Cartas de servicios -->
+          <div id="service-letters" class="panel">
+            <h3><%= t("pages.processes.index.process_6_title") %></h3>
+            <p><%= t("pages.processes.index.process_6_description") %></p>
+            <%= link_to t("pages.processes.index.process_6_button"), page_path("processes_services_letters"), class: "button hollow" %>
+          </div>
 
           <!-- Urbanismo bancos -->
           <div id="town-planning" class="panel">
