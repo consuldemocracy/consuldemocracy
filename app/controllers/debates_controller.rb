@@ -36,7 +36,7 @@ class DebatesController < ApplicationController
   def vote
     @debate.register_vote(current_user, params[:value])
     set_debate_votes(@debate)
-    log_event("debate", "vote", params[:value])
+    log_event("debate", "vote", I18n.t("tracking.events.name.#{params[:value]}"))
   end
 
   def unmark_featured
