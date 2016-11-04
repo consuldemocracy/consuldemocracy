@@ -9,7 +9,7 @@
 <div class="expanded processes-show no-margin-top">
   <div class="row padding">
     <div class="small-12 medium-7 column">
-
+      <%= render 'shared/back_link' %>
       <h1 class="margin-bottom">
         <%= t("pages.processes.index.process_5_title") %>
       </h1>
@@ -29,10 +29,10 @@
       <span>Propuestas y debates</span>
     </div>
     <div class="small-12 medium-4 column text-center">
-      <span class="<%= css_for_human_rights_phase("accepting") %>">Análisis de la información</span>
+      <span>Análisis de la información</span>
     </div>
     <div class="small-12 medium-4 column text-center">
-      <span class="<%= css_for_human_rights_phase("voting") %>">Priorización</span>
+      <span>Priorización</span>
     </div>
   </div>
 </div>
@@ -46,7 +46,6 @@
       </p>
 
     <% elsif feature?("human_rights.voting") %>
-      <h3>Participa hasta el 4 de noviembre</h3>
       <p>Tras un amplio proceso de diagnóstico y consulta con diversos actores (ciudadanía, personal del Ayuntamiento, entidades y organizaciones sociales, grupos políticos municipales...) para la elaboración del Plan de Derechos Humanos de la ciudad de Madrid, ponemos a disposición de todo el mundo el primer borrador del mismo para su socialización y contraste.</p>
 
       <p>Puedes priorizar cuáles deben ser las líneas de acción prioritarias por las que el Ayuntamiento debería comenzar la implementación del Plan o acceder al borrador completo del mismo y realizar comentarios de modo directo y transparente en la web. <%= link_to "Más información", page_path('human_rights_info', anchor: '4') %>.
@@ -54,10 +53,10 @@
 
       <div class="row">
         <div class="small-6 column">
-          <%= link_to "Priorizar medidas", human_rights_proposals_path, class: "button expanded" %>
+          <%= link_to "Ver medidas", human_rights_proposals_path, class: "button expanded" %>
         </div>
         <div class="small-6 column">
-          <%= link_to "Comentar borrador", human_rights_plan_path, class: "button expanded" %>
+          <%= link_to "Ver borrador", human_rights_plan_path, class: "button expanded" %>
         </div>
       </div>
     <% end %>
