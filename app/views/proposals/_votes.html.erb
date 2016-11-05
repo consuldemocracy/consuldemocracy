@@ -37,7 +37,7 @@
       <div class="supported">
         <%= t("proposals.proposal.already_supported") %>
       </div>
-    <% else %>
+    <% elsif not proposal.proceeding? %>
       <%= link_to vote_url,
           class: "button button-support small expanded",
           title: t('proposals.proposal.support_title'), method: "post", remote: true do %>
