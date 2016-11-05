@@ -40,10 +40,6 @@
         <%= render "shared/banner" %>
       <% end %>
 
-      <% if feature?("human_rights.voting") %>
-        <%= render "human_rights/banner" %>
-      <% end %>
-
       <% if feature?("probe.plaza") %>
         <%= render "custom/probes/plaza/banner" %>
       <% elsif @proposal_successfull_exists %>

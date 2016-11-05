@@ -23,7 +23,6 @@ es:
     plaza_banner:
       title: '#RemodelaciónPlazaEspaña'
       date_html: '¡Participa hasta el <u>28 de octubre</u>!'
-      button: 'Votar un proyecto'
     plaza:
       selecting:
         code_html: '<abbr title="Referencia">REF.</abbr> %{code}'
@@ -38,9 +37,12 @@ es:
     banner:
       title: "#PlanDerechosHumanos"
       text_html: "¡Participa hasta el <u>4 de noviembre</u>!"
-      button: "Participa en la elaboración del Plan"
   banner:
     urbanistic_licenses:
       title: "#LicenciasUrbanísticas"
       date_html: "¡Participa hasta el <u>24 de noviembre</u>!"
+      button: "Más información"
+    open_government:
+      title: "#AlianzaGobiernoAbierto"
+      date_html: "¡Participa hasta el <u>20 de noviembre</u>!"
       button: "Más información"
