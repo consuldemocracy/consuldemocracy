@@ -166,13 +166,25 @@ feature 'Tracking' do
       create(:proposal, title: 'Worst proposal').update_column(:confidence_score, 2)
 
       login_as(user)
+
       visit proposals_path
       click_link 'Best proposal'
-
       find('.in-favor a').click
+
       expect(page).to have_css("span[data-track-event-category='Propuesta']")
       expect(page).to have_css("span[data-track-event-action='Apoyar']")
       expect(page).to have_css("span[data-track-event-custom-value='1']")
+      expect(page).to have_css("span[data-proposal-rank='1']")
+
+      visit proposals_path
+      click_link 'Medium proposal'
+
+      expect(page).to have_css("span[data-proposal-rank='2']")
+
+      visit proposals_path
+      click_link 'Worst proposal'
+
+      expect(page).to have_css("span[data-proposal-rank='3']")
     end
 
     scenario 'Create a proposal' do
