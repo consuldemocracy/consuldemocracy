@@ -459,38 +459,4 @@ describe User do
     end
   end
 
-  describe "tracking users" do
-
-    it "groups by age group" do
-      user = create(:user)
-
-      user.date_of_birth = nil
-      expect(user.age_group).to eq('Desconocido')
-
-      user.date_of_birth = Date.today - 25.years
-      expect(user.age_group).to eq('< 30')
-
-      user.date_of_birth = Date.today - 33.years
-      expect(user.age_group).to eq('30-45')
-
-      user.date_of_birth = Date.today - 55.years
-      expect(user.age_group).to eq('45-60')
-
-      user.date_of_birth = Date.today - 65.years
-      expect(user.age_group).to eq('> 60')
-    end
-
-    it "groups by gender" do
-      user = create(:user)
-
-      user.gender = nil
-      expect(user.user_gender).to eq("Desconocido")
-
-      user.gender = "female"
-      expect(user.user_gender).to eq("Mujer")
-
-      user.gender = "male"
-      expect(user.user_gender).to eq("Hombre")
-    end
-  end
 end
