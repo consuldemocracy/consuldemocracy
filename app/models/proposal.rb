@@ -194,6 +194,17 @@ class Proposal < ActiveRecord::Base
     proposal_notifications
   end
 
+  def self.rank(proposal)
+    return 0 if proposal.blank?
+    connection.select_all(<<-SQL).first['rank']
+      SELECT ranked.rank FROM (
+        SELECT id, rank() OVER (ORDER BY confidence_score DESC)
+        FROM proposals
+      ) AS ranked
+      WHERE id = #{proposal.id}
+      SQL
+  end
+
   protected
 
     def set_responsible_name
