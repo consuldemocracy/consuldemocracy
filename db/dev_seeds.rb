@@ -44,6 +44,24 @@ Setting.create(key: 'per_page_code', value: "")
 Setting.create(key: 'comments_body_max_length', value: '1000')
 Setting.create(key: 'analytics_url', value: "")
 
+piwik_tracking_code = "<!-- Piwik -->
+<script type='text/javascript'>
+  var _paq = _paq || [];
+  _paq.push(['setDomains', ['*.decidedesa.madrid.es']]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u='//webanalytics01.madrid.es/';
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', '6']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src='//webanalytics01.madrid.es/piwik.php?idsite=6' style='border:0;' alt=' /></p></noscript>
+<!-- End Piwik Code -->"
+Setting[:per_page_code] = piwik_tracking_code
+
 puts "Creating Legislations"
 6.times {|i| Legislation.create!(title: "Legislation #{i+1}")}
 

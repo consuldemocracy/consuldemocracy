@@ -1,5 +1,4 @@
 class DebatesController < ApplicationController
-
   before_action :redirect_to_plaza, only: :show
 
   include FeatureFlags
@@ -37,6 +36,7 @@ class DebatesController < ApplicationController
   def vote
     @debate.register_vote(current_user, params[:value])
     set_debate_votes(@debate)
+    log_event("debate", "vote", I18n.t("tracking.events.name.#{params[:value]}"))
   end
 
   def unmark_featured

@@ -3,6 +3,7 @@ require "application_responder"
 class ApplicationController < ActionController::Base
   include HasFilters
   include HasOrders
+  include Analytics
 
   before_action :authenticate_http_basic, if: :http_basic_auth_site?
 
@@ -118,4 +119,5 @@ class ApplicationController < ActionController::Base
         store_location_for(:user, request.path)
       end
     end
+
 end
