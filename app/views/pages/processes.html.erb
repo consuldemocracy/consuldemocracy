@@ -24,13 +24,22 @@
 
     <div class="row">
       <div class="small-12 column">
-        <div class="small-12 medium-8 column margin-bottom">
+        <div class="small-12 medium-7 column">
           <!-- Licencias urbanísticas -->
           <h2><%= t("pages.processes.index.process_8_title") %></h2>
           <p><%= t("pages.processes.index.process_8_description") %></p>
-          <div class="small-12 medium-6">
+          <div class="small-12 medium-5">
             <%= link_to t("pages.processes.index.process_8_button"),
-                        urbanistic_licenses_path, class: "button expanded margin-bottom" %>
+                        urbanistic_licenses_path, class: "button expanded" %>
+          </div>
+        </div>
+
+        <div id="subvention-ordinance" class="small-12 medium-5 column">
+          <!-- Ordenanza subvenciones -->
+          <h2><%= t("pages.processes.index.process_10_title") %></h2>
+          <p><%= t("pages.processes.index.process_10_description") %></p>
+          <div class="small-12 medium-6">
+            <%= link_to t("pages.processes.index.process_10_button"), subvention_ordinance_path, class: "button expanded" %>
           </div>
         </div>
       </div>
@@ -66,13 +75,6 @@
 
         <!-- Procesos abiertos -->
         <div class="tabs-panel is-active" id="panel1v">
-
-          <!-- Ordenanza subvenciones -->
-          <div id="subvention-ordinance" class="panel">
-            <h3><%= t("pages.processes.index.process_10_title") %></h3>
-            <p><%= t("pages.processes.index.process_10_description") %></p>
-            <%= link_to t("pages.processes.index.process_10_button"), subvention_ordinance_path, class: "button hollow" %>
-          </div>
 
           <!-- Alianza para el Gobierno abierto -->
           <div id="open-government" class="panel">

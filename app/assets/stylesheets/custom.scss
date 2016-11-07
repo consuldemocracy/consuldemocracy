@@ -1410,7 +1410,6 @@ table.age-groups-investment-projects {
   background: $brand;
 
   @include breakpoint(large) {
-    height: $line-height*16;
 
     &.active {
       background: $brand image-url('processes_featured.jpg') no-repeat;
