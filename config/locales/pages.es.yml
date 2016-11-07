@@ -97,7 +97,7 @@ es:
         process_5_button_voting: Más información
         process_6_title: Cartas de Servicios
         process_6_description: Puedes dejar tus comentarios en las Cartas de Servicios de los servicios de Ayuda a Domicilio, de los Centros de Día, de Centros Municipales de Mayores y de Teleasistencia Domiciliaria.
-        process_6_button: Comenta las Cartas de Servicios
+        process_6_button: Ver resultados de participación
         process_7_title: "Urbanismo: nuevos bancos"
         process_7_description: Los ciudadanos eligieron el nuevo diseño de bancos para sentarse que les gustaría que se instalasen en la ciudad.
         process_7_button: Ver resultados de la votación
@@ -107,6 +107,9 @@ es:
         process_9_title: "Alianza para el Gobierno Abierto"
         process_9_description: "Esta organización compuesta por gobiernos y sociedad civil, ayuda a que los gobiernos desarrollen medidas relevantes y específicas para avanzar en la participación y la transparencia, y certifica el cumplimiento de las mismas por medio de evaluadores independientes."
         process_9_button: "Más información"
+        process_10_title: "Ordenanza de subvenciones"
+        process_10_description: "El Ayuntamiento de Madrid, somete a consulta pública la necesidad de modificar la regulación del sistema de subvenciones."
+        process_10_button: "Más información"
         title: Procesos sectoriales
         process_plaza_title: Remodelación de Plaza España
         process_plaza_description: Selecciona el proyecto que más te guste para este nuevo espacio en tu ciudad.

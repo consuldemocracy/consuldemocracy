@@ -14,6 +14,7 @@
 // 12. Collaborative legislation
 // 13. Counter
 // 14. Proposal Ballots
+// 15. Welcome index
 //
 
 // 01. Global styles
@@ -184,7 +185,7 @@ h2.featured {
 }
 
 .featured-welcome {
-  background: #f7f8fb;
+  border-bottom: 1px solid $border;
 
   &.features {
     background: white;
@@ -1410,7 +1411,6 @@ table.age-groups-investment-projects {
   background: $brand;
 
   @include breakpoint(large) {
-    height: $line-height*16;
 
     &.active {
       background: $brand image-url('processes_featured.jpg') no-repeat;
@@ -1455,9 +1455,22 @@ tr td, tr th {
   }
 }
 
-.services-letters h3 {
-  font-size: rem-calc(18);
-  line-height: $line-height;
+.services-letters {
+
+  h3 {
+    font-size: rem-calc(18);
+    line-height: $line-height;
+  }
+
+  a.button.hollow {
+    height: $line-height*2;
+    line-height: $line-height*2;
+    padding-top: 0;
+
+    img {
+      vertical-align: sub;
+    }
+  }
 }
 
 .processes-show {
@@ -1922,11 +1935,14 @@ aside {
   }
 }
 
-.urbanistic-licenses {
+.process-debates {
+
+  a:hover {
+    text-decoration: none;
+  }
 
   a .panel:hover {
     background: $highlight;
-    text-decoration: none;
   }
 }
 
@@ -2445,5 +2461,28 @@ ul.ballot-list {
 
   .banner-text {
     padding: $line-height/4;
+  }
+}
+
+// 15. Welcome index
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+.welcome-featured {
+  background: #fafafa;
+
+  h2 {
+    font-size: $line-height;
+  }
+
+  p {
+
+    &.info {
+      min-height: rem-calc(140);
+    }
+
+    &.info-date {
+      color: $brand;
+      font-size: $small-font-size;
+    }
   }
 }

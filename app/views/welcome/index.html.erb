@@ -1,4 +1,4 @@
-<% cache ["welcome_index_20161029", display_budget_countdown?] do %>
+<% cache ["welcome_index_20161107", display_budget_countdown?] do %>
   <div class="expanded home-page padding no-margin-top">
     <div class="row">
       <div class="small-12 medium-8 column small-centered text-center">
@@ -9,6 +9,7 @@
   </div>
 
   <% if display_budget_countdown? %>
+  <%else%>
     <div class="expanded jumbo-counter padding">
       <div class="row">
         <div class="small-12 medium-6 column">
@@ -24,26 +25,6 @@
       </div>
     </div>
   <% end %>
-
-  <div class="expanded jumbo-brand padding">
-    <div class="row">
-      <div class="small-12 medium-6 column">
-        <h2><%= t("banner.urbanistic_licenses.title") %></h2>
-        <h3><%= t("banner.urbanistic_licenses.date_html") %></h3>
-        <div class="small-12 medium-6 large-4 small-centered">
-          <%= link_to t("banner.urbanistic_licenses.button"), urbanistic_licenses_path, class: "button expanded margin-top" %>
-        </div>
-      </div>
-
-      <div class="small-12 medium-6 column">
-        <h2><%= t("banner.open_government.title") %></h2>
-        <h3><%= t("banner.open_government.date_html") %></h3>
-        <div class="small-12 medium-6 large-4 small-centered">
-          <%= link_to t("banner.open_government.button"), open_government_path, class: "button expanded margin-top" %>
-        </div>
-      </div>
-    </div>
-  </div>
 
   <% if @proposal_successfull_exists %>
     <div class="expanded jumbo-proposal-ballots">
@@ -61,6 +42,44 @@
       </div>
     </div>
   <% end %>
+
+  <div class="expanded welcome-featured padding">
+
+    <div class="row">
+      <div class="small-12 column margin">
+        <h2 class="featured"><%= t('welcome.featured.page_title') %></h2>
+      </div>
+    </div>
+
+    <div class="row" data-equalizer>
+      <div class="small-12 medium-4 column">
+        <div class="panel" data-equalizer-watch>
+          <h2><%= t("banner.open_government.title") %></h2>
+          <p class="info-date"><span class="icon-calendar"></span>&nbsp;<%= t("banner.open_government.date_html") %></p>
+          <p class="info"><%= t("banner.open_government.text") %></p>
+          <%= link_to t("banner.open_government.button"), open_government_path, class: "button expanded margin-top" %>
+        </div>
+      </div>
+
+      <div class="small-12 medium-4 column">
+        <div class="panel" data-equalizer-watch>
+          <h2><%= t("banner.subvention_ordinance.title") %></h2>
+          <p class="info-date"><span class="icon-calendar"></span>&nbsp;<%= t("banner.subvention_ordinance.date_html") %></p>
+          <p class="info"><%= t("banner.subvention_ordinance.text") %></p>
+          <%= link_to t("banner.subvention_ordinance.button"), subvention_ordinance_path, class: "button expanded margin-top" %>
+        </div>
+      </div>
+
+      <div class="small-12 medium-4 column">
+        <div class="panel" data-equalizer-watch>
+          <h2><%= t("banner.urbanistic_licenses.title") %></h2>
+          <p class="info-date"><span class="icon-calendar"></span>&nbsp;<%= t("banner.urbanistic_licenses.date_html") %></p>
+          <p class="info"><%= t("banner.urbanistic_licenses.text") %></p>
+          <%= link_to t("banner.urbanistic_licenses.button"), urbanistic_licenses_path, class: "button expanded margin-top" %>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <%= render "featured_welcome" %>
 
