@@ -1455,9 +1455,22 @@ tr td, tr th {
   }
 }
 
-.services-letters h3 {
-  font-size: rem-calc(18);
-  line-height: $line-height;
+.services-letters {
+
+  h3 {
+    font-size: rem-calc(18);
+    line-height: $line-height;
+  }
+
+  a.button.hollow {
+    height: $line-height*2;
+    line-height: $line-height*2;
+    padding-top: 0;
+
+    img {
+      vertical-align: sub;
+    }
+  }
 }
 
 .processes-show {
