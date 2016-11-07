@@ -47,12 +47,13 @@ class Poll::Question < ActiveRecord::Base
   end
 
   def answerable_by?(user)
-    user.present? && poll.current? && (self.all_geozones || self.geozone_ids.include?(user.geozone_id))
+    poll.answerable_by?(user) && (self.all_geozones || self.geozone_ids.include?(user.geozone_id))
   end
 
   def self.answerable_by(user)
-    return where(false) unless user.present?
-    where(poll_id: Poll.current.pluck(:id))
+    return none if user.nil? || user.unverified?
+
+    where(poll_id: Poll.answerable_by(user).pluck(:id))
       .joins(:geozones)
       .where('poll_questions.all_geozones = ? or geozones.id = ?',
               true,
