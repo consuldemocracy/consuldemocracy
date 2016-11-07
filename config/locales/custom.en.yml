@@ -40,9 +40,13 @@ en:
   banner:
     urbanistic_licenses:
       title: "#Urbanisticlicenses"
-      date_html: "Participate until <u>November 24</u>!"
+      date_html: "Participate until <strong>November 24</strong>"
       button: "More information"
     open_government:
       title: "#OpenGovernmentAlliance"
-      date_html: "Participate until <u>November 20</u>!"
+      date_html: "Participate until <strong>November 20</strong>"
+      button: "More information"
+    subvention_ordinance:
+      title: "#SubventionOrdinance"
+      date_html: "Participate until <strong>November 22</strong>"
       button: "More information"
