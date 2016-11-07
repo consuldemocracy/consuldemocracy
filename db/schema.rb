@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161028143204) do
+ActiveRecord::Schema.define(version: 20161107124207) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -309,6 +309,7 @@ ActiveRecord::Schema.define(version: 20161028143204) do
     t.datetime "hidden_at"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "all_geozones",        default: false
   end
 
   add_index "poll_questions", ["author_id"], name: "index_poll_questions_on_author_id", using: :btree
