@@ -384,7 +384,7 @@ en:
       verify_link: "verify your account"
       cant_answer_incoming: "This poll has not yet started."
       cant_answer_expired: "This poll has finished."
-      cant_answer_wrong_geozone: "This enquiry is not available on your geozone."
+      cant_answer_wrong_geozone: "The following questions are not available in your geozone."
   proposal_ballots:
     title: "Votings"
     description_html: "The following citizen proposals that have reached the <strong>required supports</strong> and will be voted."

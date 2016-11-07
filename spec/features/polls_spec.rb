@@ -86,9 +86,10 @@ feature 'Polls' do
       login_as(create(:user, geozone: geozone))
       visit poll_path(poll)
 
+      expect(page).to have_content('You must verify your account in order to answer')
+
       expect(page).to have_content('Han Solo')
       expect(page).to have_content('Chewbacca')
-      expect(page).to have_content('You must verify your account in order to answer')
 
       expect(page).to_not have_link('Han Solo')
       expect(page).to_not have_link('Chewbacca')
@@ -124,11 +125,13 @@ feature 'Polls' do
       expect(page).to have_content('This poll has finished')
     end
 
-    xscenario 'Level 2 users in an question for a geozone which is not theirs' do
+    scenario 'Level 2 users in a poll with questions for a geozone which is not theirs' do
       create(:poll_question, poll: poll, geozone_ids: [], valid_answers: 'Vader, Palpatine')
       login_as(create(:user, :level_two))
 
       visit poll_path(poll)
+
+      expect(page).to have_content('The following questions are not available in your geozone')
 
       expect(page).to have_content('Vader')
       expect(page).to have_content('Palpatine')

@@ -9,7 +9,10 @@ class PollsController < ApplicationController
   end
 
   def show
-    @questions = @poll.questions.sort_for_list.for_render
+    questions = @poll.questions.sort_for_list.for_render
+
+    @answerable_questions = questions.answerable_by(current_user)
+    @non_answerable_questions = questions.where.not(id: @answerable_questions.pluck(:id))
   end
 
 end

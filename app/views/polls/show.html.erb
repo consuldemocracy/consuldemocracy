@@ -1,23 +1,53 @@
 <%= @poll.name %>
 
-<%= render 'warnings' %>
+<% unless can?(:answer, @poll) %>
+  <div class="small-12 column">
+    <% if current_user.nil? %>
+      <div class="callout primary">
+        <%= t("polls.show.cant_answer_not_logged_in",
+              signin: link_to(t("polls.show.signin"), new_user_session_path, class: "probe-message"),
+              signup: link_to(t("polls.show.signup"), new_user_registration_path, class: "probe-message")).html_safe %>
+      </div>
+    <% elsif current_user.unverified? %>
+      <div class="callout warning">
+        <%= t('polls.show.cant_answer_verify_html',
+              verify_link: link_to(t('polls.show.verify_link'), verification_path)) %>
+      </div>
+    <% elsif @poll.incoming? %>
+      <div class="callout primary">
+        <%= t('polls.show.cant_answer_incoming') %>
+      </div>
+    <% elsif @poll.expired? %>
+      <div class="callout alert">
+        <%= t('polls.show.cant_answer_expired') %>
+      </div>
+    <% end %>
+  </div>
+<% end %>
 
-<% @questions.each do |question| %>
+<% @answerable_questions.each do |question| %>
   <div id="<%= dom_id(question) %>">
     <%= question.title %>
 
-    <%= question.valid_answers.each do |valid_answer| %>
-      <% if can? :answer, @poll %>
-        <%= link_to valid_answer %>
-      <% else %>
-        <span><%= valid_answer %></span>
-      <% end %>
+    <% question.valid_answers.each do |valid_answer| %>
+      <%= link_to valid_answer %>
     <% end %>
+  </div>
+<% end %>
 
-    <% if false #wrong geozone %>
-      <div class="callout warning">
-        <%= t('polls.show.cant_answer_wrong_geozone') %>
-      </div>
+<% if can?(:answer, @poll) &&
+      @non_answerable_questions.present? %>
+  <div class="callout warning">
+    <%= t('polls.show.cant_answer_wrong_geozone') %>
+  </div>
+<% end %>
+
+<% @non_answerable_questions.each do |question| %>
+  <div id="<%= dom_id(question) %>">
+    <%= question.title %>
+
+    <% question.valid_answers.each do |valid_answer| %>
+      <span><%= valid_answer %></span>
     <% end %>
   </div>
 <% end %>
