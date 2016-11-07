@@ -310,6 +310,7 @@ FactoryGirl.define do
   end
 
   factory :poll_question, class: 'Poll::Question' do
+    poll
     association :author, factory: :user
     sequence(:title) { |n| "Question title #{n}" }
     sequence(:summary) { |n| "Question summary #{n}" }
