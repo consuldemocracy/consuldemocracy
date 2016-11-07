@@ -3,6 +3,7 @@ require "application_responder"
 class ApplicationController < ActionController::Base
   include HasFilters
   include HasOrders
+  include Analytics
 
   before_action :authenticate_http_basic, if: :http_basic_auth_site?
 
@@ -117,14 +118,6 @@ class ApplicationController < ActionController::Base
       if !devise_controller? && controller_name != 'welcome' && is_navigational_format?
         store_location_for(:user, request.path)
       end
-    end
-
-    def log_event(category, action, name=nil, custom_value=nil, dimension=nil, dimension_value=nil)
-      category        = I18n.t("tracking.events.category.#{category}")
-      action          = I18n.t("tracking.events.action.#{action}")
-      dimension_value = I18n.t("tracking.events.dimension_value.#{dimension_value}") if dimension_value.present?
-
-      session[:event] = {category: category, action: action, name: name.to_s, custom_value: custom_value.to_s, dimension: dimension.to_s, dimension_value: dimension_value.to_s}
     end
 
 end
