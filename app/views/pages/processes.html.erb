@@ -67,6 +67,13 @@
         <!-- Procesos abiertos -->
         <div class="tabs-panel is-active" id="panel1v">
 
+          <!-- Ordenanza subvenciones -->
+          <div id="subvention-ordinance" class="panel">
+            <h3><%= t("pages.processes.index.process_10_title") %></h3>
+            <p><%= t("pages.processes.index.process_10_description") %></p>
+            <%= link_to t("pages.processes.index.process_10_button"), subvention_ordinance_path, class: "button hollow" %>
+          </div>
+
           <!-- Alianza para el Gobierno abierto -->
           <div id="open-government" class="panel">
             <h3><%= t("pages.processes.index.process_9_title") %></h3>

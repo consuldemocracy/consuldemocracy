@@ -1922,11 +1922,14 @@ aside {
   }
 }
 
-.urbanistic-licenses {
+.process-debates {
+
+  a:hover {
+    text-decoration: none;
+  }
 
   a .panel:hover {
     background: $highlight;
-    text-decoration: none;
   }
 }
 
