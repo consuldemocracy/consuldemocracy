@@ -49,7 +49,9 @@ module Abilities
         can :create, DirectMessage
         can :show, DirectMessage, sender_id: user.id
         can(:answer, Poll, Poll.current){ |poll| poll.current? }
-        can :answer, Poll::Question, geozones: {id: user.geozone_id}
+        can(:answer, Poll::Question, Poll::Question.answerable_by(user)) do |question|
+          question.answerable_by?(user)
+        end
       end
 
       can [:create, :show], ProposalNotification, proposal: { author_id: user.id }
