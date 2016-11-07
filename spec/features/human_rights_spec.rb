@@ -150,7 +150,7 @@ feature 'Human Rights' do
         expect('Medium').to appear_before('Worst')
       end
 
-      scenario 'Vote', :js do
+      scenario 'No vote', :js do
         user = create(:user, :level_two)
         proposal = create(:proposal,  :human_rights)
 
@@ -158,12 +158,8 @@ feature 'Human Rights' do
         visit human_rights_proposals_path
 
         within("#proposal_#{proposal.id}") do
-          find('.in-favor a').click
-
-          expect(page).to have_content "1 support"
-          expect(page).to have_content "You have already supported this proposal. Share it!"
+          expect(page).to_not have_css('.in-favor a')
         end
-        expect(current_path).to eq(human_rights_proposals_path)
       end
 
       scenario 'Filter by sub process' do
@@ -245,7 +241,7 @@ feature 'Human Rights' do
         expect(page).to have_content "Derecho a la educación"
       end
 
-      scenario 'Vote', :js do
+      scenario 'No vote', :js do
         user = create(:user, :level_two)
         proposal = create(:proposal, :human_rights)
 
@@ -253,12 +249,8 @@ feature 'Human Rights' do
         visit human_rights_proposal_path(proposal)
 
         within("#proposal_#{proposal.id}") do
-          find('.in-favor a').click
-
-          expect(page).to have_content "1 support"
-          expect(page).to have_content "You have already supported this proposal. Share it!"
+          expect(page).to_not have_css('.in-favor a')
         end
-        expect(current_path).to eq(human_rights_proposal_path(proposal))
       end
 
       scenario 'Do not display number of votes required' do
