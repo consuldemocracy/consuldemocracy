@@ -236,6 +236,35 @@ feature 'Tracking' do
     end
   end
 
+  context 'Track events on ajax call' do
+
+    scenario 'sanity check', :js do
+      user = create(:user)
+      debate = create(:debate)
+      login_as(user)
+
+      visit debate_path(debate)
+
+      message = "JS initialized on ajax request to: #{debate_path(debate)}"
+
+      within("#js-ajax-sanity-check") do
+        expect(page).to_not have_content message
+      end
+
+      find('.in-favor a').click
+
+      expect(page).to have_css("span[data-track-event-category='Debate']")
+      expect(page).to have_css("span[data-track-event-action='Votar']")
+      expect(page).to have_css("span[data-track-event-name='Positivo']")
+
+      #Temporarily using a span to make sure that method App.Tracks.track_event() is triggered after an ajax call
+      #Should eventually test outgoing _paq.push call
+      within("#js-ajax-sanity-check") do
+        expect(page).to have_content message
+      end
+    end
+  end
+
   #Requires testing outgoing _paq.push call from track.js.coffee
   xcontext 'Page view' do
 
@@ -252,4 +281,5 @@ feature 'Tracking' do
     scenario 'show' do
     end
   end
+
 end

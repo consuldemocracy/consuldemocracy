@@ -8,17 +8,21 @@ App.Tracks =
     _paq.push(['setReferrerUrl', document.referrer])
     _paq.push(['trackPageView',  App.Tracks.page_title()])
 
-  track_event: ($this) ->
-    category        = $this.data('track-event-category')
-    action          = $this.data('track-event-action')
-    name            = $this.data('track-event-name')
-    custom_value    = $this.data('track-event-custom-value')
-    dimension       = $this.data('track-event-dimension')
-    dimension_value = $this.data('track-event-dimension-value')
+  track_event: ->
+    App.Tracks.ajax_sanity_check()
+    tracking_data   = $("#tracking_events")
+    category        = tracking_data.data('track-event-category')
+    action          = tracking_data.data('track-event-action')
+    name            = tracking_data.data('track-event-name')
+    custom_value    = tracking_data.data('track-event-custom-value')
+    dimension       = tracking_data.data('track-event-dimension')
+    dimension_value = tracking_data.data('track-event-dimension-value')
 
     dimension_hash = {}
     dimension_hash['dimension' + dimension] = dimension_value
-    _paq.push(['trackEvent', category, action, name, custom_value, dimension_hash])
+
+    if category?
+      _paq.push(['trackEvent', category, action, name, custom_value, dimension_hash])
 
   track_proposal: ->
     page_title = App.Tracks.page_title()
@@ -43,6 +47,7 @@ App.Tracks =
 
   render_analytics: (analytics) ->
     $("#analytics").html(analytics)
+    App.Tracks.track_event()
 
   page_title: ->
     $(document).find("title").text()
@@ -50,15 +55,16 @@ App.Tracks =
   proposal_show_page: ->
     $("#js-tracking").data('proposal-show')
 
+  ajax_sanity_check: ->
+    message = "JS initialized on ajax request to: " + window.location.pathname
+    $("#js-ajax-sanity-check").html(message)
+
   initialize: ->
     if App.Tracks.tracking_enabled()
 
       if App.Tracks.proposal_show_page()
         App.Tracks.track_proposal()
 
-      $('[data-track-event-category]').each ->
-        $this = $(this)
-        App.Tracks.track_event($this)
-
+      App.Tracks.track_event()
       App.Tracks.track_user()
       App.Tracks.track_current_page()
