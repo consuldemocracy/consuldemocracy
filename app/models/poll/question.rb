@@ -54,8 +54,8 @@ class Poll::Question < ActiveRecord::Base
     return none if user.nil? || user.unverified?
 
     where(poll_id: Poll.answerable_by(user).pluck(:id))
-      .joins(:geozones)
-      .where('poll_questions.all_geozones = ? or geozones.id = ?',
+      .joins('LEFT OUTER JOIN "geozones_poll_questions" ON "geozones_poll_questions"."question_id" = "poll_questions"."id"')
+      .where('(poll_questions.all_geozones = ? or geozones_poll_questions.geozone_id = ?)',
               true,
               user.geozone_id || -1) # user.geozone_id can be nil, which would throw errors on sql
   end

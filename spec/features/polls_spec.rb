@@ -148,6 +148,16 @@ feature 'Polls' do
       expect(page).to have_link('Chewbacca')
     end
 
+    scenario 'Level 2 users reading a all-geozones question' do
+      create(:poll_question, poll: poll, all_geozones: true, valid_answers: 'Han Solo, Chewbacca')
+      login_as(create(:user, :level_two, geozone: geozone))
+      visit poll_path(poll)
+      save_and_open_page
+
+      expect(page).to have_link('Han Solo')
+      expect(page).to have_link('Chewbacca')
+    end
+
     xscenario 'Level 2 users who have already answered' do
       question = create(:poll_question, poll: poll, geozone_ids:[geozone.id], valid_answers: 'Han Solo, Chewbacca')
       user = create(:user, :level_two, geozone: geozone)
