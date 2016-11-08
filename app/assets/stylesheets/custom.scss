@@ -101,6 +101,12 @@ blockquote p {
     padding-top: $line-height;
   }
 
+  h1 {
+    border-left: 2px solid black;
+    display: inline-block;
+    padding-left: $line-height;
+  }
+
   h1, h2, .back, .icon-angle-left, .p, a {
     color: black;
   }
@@ -632,6 +638,11 @@ table {
 
 .survey-results {
 
+  h3.legend {
+    color: $text-medium;
+    margin-bottom: 0;
+  }
+
   .title {
     color: #000201;
     font-size: rem-calc(40);
@@ -645,12 +656,12 @@ table {
   }
 
   .subtitle {
-    background: #fae100;
-    color: #000201;
-    display: inline;
+    border-left: 1px solid $brand;
+    color: $brand;
     font-size: rem-calc(40);
     line-height: rem-calc(40);
-    text-transform: uppercase;
+    margin-bottom: rem-calc(40);
+    padding-left: $line-height/2;
   }
 
   .panel {
