@@ -10,7 +10,7 @@ feature 'Human Rights' do
 
     scenario 'Home' do
       visit "/"
-      first(:link, "Open processes").click
+      first(:link, "Processes").click
 
       within("#dd-hh") do
         click_link "Más información"
