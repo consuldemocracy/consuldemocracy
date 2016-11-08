@@ -314,7 +314,6 @@ Rails.application.routes.draw do
   get 'participatory_budget/select_district', to: 'spending_proposals#select_district', as: 'select_district'
   get 'delegacion', to: 'forums#index', as: 'delegation'
   get 'plenoabierto', to: 'pages#show', id: 'processes_open_plenary'
-  get 'processes', to: 'pages#show', id: 'processes', as: 'processes'
   get 'noticias', to: 'pages#show', id: 'news'
   get 'participatory_budget/in_two_minutes', to: 'pages#show', id: 'participatory_budget/in_two_minutes'
 
@@ -344,10 +343,11 @@ Rails.application.routes.draw do
   get 'processes/human_rights_question_3', to: 'pages#show', id: 'processes/human_rights_question_3'
 
   #Processes
-  get 'proceso/licencias-urbanisticas',    to: 'pages#show', id: 'processes/urbanistic_licenses', as: 'urbanistic_licenses'
-  get 'proceso/alianza-gobierno-abierto',           to: 'pages#show', id: 'processes/open_government',         as: 'open_government'
-  get 'proceso/alianza-gobierno-abierto-borrador',  to: 'pages#show', id: 'processes/open_government_doc',     as: 'open_government_doc'
-  get 'proceso/ordenanza-subvenciones',             to: 'pages#show', id: 'processes/subvention_ordinance',    as: 'subvention_ordinance'
+  get 'procesos',                                   to: 'pages#show', id: 'processes',                        as: 'processes'
+  get 'proceso/licencias-urbanisticas',             to: 'pages#show', id: 'processes/urbanistic_licenses',    as: 'urbanistic_licenses'
+  get 'proceso/alianza-gobierno-abierto',           to: 'pages#show', id: 'processes/open_government',        as: 'open_government'
+  get 'proceso/alianza-gobierno-abierto-borrador',  to: 'pages#show', id: 'processes/open_government_doc',    as: 'open_government_doc'
+  get 'proceso/ordenanza-subvenciones',             to: 'pages#show', id: 'processes/subvention_ordinance',   as: 'subvention_ordinance'
 
   resources :pages, path: '/', only: [:show]
 end
