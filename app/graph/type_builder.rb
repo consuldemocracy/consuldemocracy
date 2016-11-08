@@ -1,5 +1,6 @@
 class TypeBuilder
   attr_reader :filter_strategy, :graphql_models
+  attr_accessor :graphql_types  # contains all generated GraphQL types
 
   def initialize(graphql_models, options = {})
     @graphql_models = graphql_models
@@ -31,14 +32,30 @@ private
     type_builder = self
 
     graphql_type = GraphQL::ObjectType.define do
-      em = ExposableModel.new(model_class, filter_strategy: type_builder.filter_strategy, filter_list: type_builder.graphql_models[model_class])
+      em = ExposableModel.new(
+        model_class,
+        filter_strategy: type_builder.filter_strategy,
+        field_filter_list: type_builder.graphql_models[model_class][:fields],
+        assoc_filter_list: type_builder.graphql_models[model_class][:associations]
+      )
 
       name(em.name)
       description(em.description)
 
       em.exposed_fields.each do |column|
         ef = ExposableField.new(column)
-        field(ef.name, ef.graphql_type)
+        field(ef.name, ef.graphql_type) # returns a GraphQL::Field
+      end
+
+      em.exposed_associations.each do |association|
+        ea = ExposableAssociation.new(association)
+        if ea.type.in? [:has_one, :belongs_to]
+          field(ea.name, -> { type_builder.graphql_types[association.klass] })
+        elsif ea.type.in? [:has_many]
+          field(ea.name, -> {
+            types[type_builder.graphql_types[association.klass]]
+          })
+        end
       end
     end
 
@@ -48,10 +65,25 @@ end
 
 graphql_models = {}
 
-graphql_models.store(User, ['id', 'username'])
-graphql_models.store(Proposal, ['id', 'title', 'description', 'author_id', 'created_at'])
-graphql_models.store(Debate, ['id', 'title', 'description', 'author_id', 'created_at'])
-graphql_models.store(Comment, ['id', 'commentable_id', 'commentable_type', 'body'])
-graphql_models.store(Geozone, ['id', 'name', 'html_map_coordinates'])
+graphql_models.store(User, {
+  fields: ['id', 'username'],
+  associations: ['proposals', 'debates']
+})
+graphql_models.store(Proposal, {
+  fields: ['id', 'title', 'description', 'author_id', 'created_at'],
+  associations: ['author']
+})
+graphql_models.store(Debate, {
+  fields: ['id', 'title', 'description', 'author_id', 'created_at'],
+  associations: ['author']
+})
+graphql_models.store(Comment, {
+  fields: ['id', 'commentable_id', 'commentable_type', 'body'],
+  associations: ['author']
+})
+graphql_models.store(Geozone, {
+  fields: ['id', 'name', 'html_map_coordinates'],
+  associations: []
+})
 
 TYPE_BUILDER = TypeBuilder.new(graphql_models, filter_strategy: :whitelist)
