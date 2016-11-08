@@ -6,44 +6,6 @@
 <%= javascript_include_tag "chart", 'data-turbolinks-track' => true %>
 <%= javascript_include_tag "survey-charts", 'data-turbolinks-track' => true %>
 
-<div class="expanded jumbo-survey no-margin-top padding">
-  <div class="row">
-    <div class="small-12 medium-7 column">
-      <%= link_to "/processes_plaza_espana", class: "back" do %>
-        <i class="icon-angle-left"></i>
-        <%= t("pages.processes.back") %>
-      <% end %>
-      <h1 class="margin">Remodelación de Plaza España</h1>
-      <p>
-        <%= link_to "Más información sobre este proceso", "#" %>
-      </p>
-    </div>
-    <div class="small-12 medium-5 column text-right">
-      <%= image_tag "processes_plaza_espana.png", alt: "#decideplazaespaña"%>
-    </div>
-  </div>
-</div>
+<%= render "shared/plaza_espana_header" %>
 
-<div class="row margin-top">
-  <div class="small-12 column">
-    <ul class="tabs" id="stats-tabs" data-tabs>
-      <li class="tabs-title is-active">
-        <%= link_to "Fase de preselección", "#stats_1" %>
-      </li>
-      <li class="tabs-title">
-        <%= link_to "Encuesta inicial", "#stats_2" %>
-      </li>
-    </ul>
-  </div>
-</div>
-
-<div class="tabs-content" data-tabs-content="stats-tabs">
-
-  <div class="tabs-panel is-active" id="stats_1">
-    <%= render "processes_plaza_espana_preselection" %>
-  </div>
-
-  <div class="tabs-panel" id="stats_2">
-    <%= render "processes_plaza_espana_survey" %>
-  </div>
-</div>
+<%= render "processes_plaza_espana_survey" %>

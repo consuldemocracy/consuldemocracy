@@ -329,6 +329,9 @@ Rails.application.routes.draw do
   get 'proceso/plaza-espana-gracias', to: 'probes#thanks', id: 'plaza', as: 'plaza_thanks'
   get 'proceso/plaza-espana/proyectos/:id', to: 'probe_options#show', probe_id: 'plaza', as: 'plaza_probe_option'
 
+  get 'proceso/remodelacion-plaza-espana', to: 'pages#show', id: 'processes_plaza_espana',            as: 'remodeling_plaza'
+  get 'proceso/plaza-espana-encuesta',     to: 'pages#show', id: 'encuesta-plaza-espana-resultados',  as: 'survey_plaza'
+
   #Human Rights
   get 'derechos-humanos',                  to: 'pages#show', id: 'processes/human_rights',      as: 'human_rights_page'
   get 'derechos-humanos/plan',             to: 'pages#show', id: 'processes/human_rights_plan', as: 'human_rights_plan'
