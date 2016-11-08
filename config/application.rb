@@ -20,11 +20,8 @@ module Consul
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     config.i18n.default_locale = :es
-
-    config.i18n.available_locales = [:en, :es]
-
-    # Add the new directories to the locales load path
-    config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}')]
+    config.i18n.available_locales = [:en, :es, :fr, 'pt-BR']
+    config.i18n.fallbacks = {'fr' => 'es', 'pt-br' => 'es'}
 
     config.assets.paths << Rails.root.join("app", "assets", "fonts")
 
@@ -44,8 +41,7 @@ module Consul
     config.autoload_paths << "#{Rails.root}/app/controllers/custom"
     config.autoload_paths << "#{Rails.root}/app/models/custom"
     config.paths['app/views'].unshift(Rails.root.join('app', 'views', 'custom'))
-
-    # Add GraphQL directories to the autoload path
+    config.i18n.load_path += Dir[Rails.root.join('config', 'locales', 'custom', '*.{rb,yml}')]
     config.autoload_paths << Rails.root.join('app', 'graph')
   end
 end

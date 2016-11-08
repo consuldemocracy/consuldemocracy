@@ -8,7 +8,7 @@
         <% I18n.available_locales.map do |loc| %>
           <option <%= "selected" if loc == I18n.locale %>
                   value="<%= current_path_with_query_params(locale: loc) %>">
-            <%= I18n.t("locale", locale: loc) %>
+            <%= name_for_locale(loc) %>
           </option>
         <% end %>
       </select>
