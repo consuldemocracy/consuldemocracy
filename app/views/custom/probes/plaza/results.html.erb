@@ -2,4 +2,54 @@
 
 <%= render "shared/plaza_espana_header" %>
 
-<%= render "probes/plaza/stats_preselection" %>
+<div class="row survey-results">
+
+  <hr>
+
+  <div class="small-12 column">
+
+    <h2 class="subtitle">Finalistas de la preselección</h2>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Proyecto</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Proyecto 1</td>
+        </tr>
+        <tr>
+          <td>Proyecto 2</td>
+        </tr>
+        <tr>
+          <td>Proyecto 3</td>
+        </tr>
+        <tr>
+          <td>Proyecto 4</td>
+        </tr>
+        <tr>
+          <td>Proyecto 5</td>
+        </tr>
+        </tr>
+      </tbody>
+    </table>
+
+    <hr class="double">
+
+    <h2 class="subtitle">Resultado de la votación ciudadana</h2>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Proyecto</th>
+          <th class="text-center">Número de votos</th>
+        </tr>
+      </thead>
+      <tbody>
+        <%= render partial: '/custom/probes/plaza/plaza_option', collection: @probe_options %>
+      </tbody>
+    </table>
+  </div>
+</div>

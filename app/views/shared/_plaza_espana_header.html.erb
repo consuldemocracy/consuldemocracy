@@ -1,3 +1,6 @@
+<%= javascript_include_tag "chart", 'data-turbolinks-track' => true %>
+<%= javascript_include_tag "survey-charts", 'data-turbolinks-track' => true %>
+
 <div class="expanded jumbo-survey no-margin-top padding">
   <div class="row">
     <div class="small-12 medium-7 column">
@@ -46,10 +49,13 @@
   <div class="small-12 column">
     <ul class="tabs">
       <li class="tabs-title <%= 'is-active' if current_page?(plaza_path) %>">
-        <%= link_to "Fase de preselección", plaza_path %>
+        <%= link_to "Resultados", plaza_path %>
+      </li>
+      <li class="tabs-title <%= 'is-active' if current_page?(preselection_plaza_path) %>">
+        <%= link_to "Preselección", preselection_plaza_path %>
       </li>
       <li class="tabs-title <%= 'is-active' if current_page?(survey_plaza_path) %>">
-        <%= link_to "Encuesta inicial", survey_plaza_path %>
+        <%= link_to "Encuesta", survey_plaza_path %>
       </li>
       <li class="tabs-title <%= 'is-active' if current_page?(remodeling_plaza_path) %>">
         <%= link_to "Información del proceso", remodeling_plaza_path %>
