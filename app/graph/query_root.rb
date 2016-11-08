@@ -3,7 +3,7 @@ QueryRoot = GraphQL::ObjectType.define do
   description "The query root for this schema"
 
   field :proposal do
-    type ProposalType
+    type TYPE_BUILDER.types[Proposal]
     description "Find a Proposal by id"
     argument :id, !types.ID
     resolve -> (object, arguments, context) {
@@ -11,7 +11,8 @@ QueryRoot = GraphQL::ObjectType.define do
     }
   end
 
-  connection :proposals, ProposalType.connection_type do
+  field :proposals do
+    type types[TYPE_BUILDER.types[Proposal]]
     description "Find all Proposals"
     resolve -> (object, arguments, context) {
       Proposal.all
@@ -19,7 +20,7 @@ QueryRoot = GraphQL::ObjectType.define do
   end
 
   field :debate do
-    type DebateType
+    type TYPE_BUILDER.types[Debate]
     description "Find a Debate by id"
     argument :id, !types.ID
     resolve -> (object, arguments, context) {
@@ -27,7 +28,8 @@ QueryRoot = GraphQL::ObjectType.define do
     }
   end
 
-  connection :debates, DebateType.connection_type do
+  field :debates do
+    type types[TYPE_BUILDER.types[Debate]]
     description "Find all Debates"
     resolve -> (object, arguments, context) {
       Debate.all
@@ -35,7 +37,7 @@ QueryRoot = GraphQL::ObjectType.define do
   end
 
   field :comment do
-    type CommentType
+    type TYPE_BUILDER.types[Comment]
     description "Find a Comment by id"
     argument :id, !types.ID
     resolve -> (object, arguments, context) {
@@ -43,7 +45,8 @@ QueryRoot = GraphQL::ObjectType.define do
     }
   end
 
-  connection :comments, CommentType.connection_type do
+  field :comments do
+    type types[TYPE_BUILDER.types[Comment]]
     description "Find all Comments"
     resolve -> (object, arguments, context) {
       Comment.all
@@ -51,7 +54,7 @@ QueryRoot = GraphQL::ObjectType.define do
   end
 
   field :user do
-    type UserType
+    type TYPE_BUILDER.types[User]
     description "Find a User by id"
     argument :id, !types.ID
     resolve -> (object, arguments, context) {
