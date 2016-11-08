@@ -139,7 +139,7 @@ feature 'Polls' do
       expect(page).to_not have_link('Palpatine')
     end
 
-    xscenario 'Level 2 users who can answer' do
+    scenario 'Level 2 users reading a same-geozone question' do
       create(:poll_question, poll: poll, geozone_ids: [geozone.id], valid_answers: 'Han Solo, Chewbacca')
       login_as(create(:user, :level_two, geozone: geozone))
       visit poll_path(poll)
