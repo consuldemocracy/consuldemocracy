@@ -36,10 +36,28 @@ var doughnutDataSex = [
     },
   ];
 
+// Chart sex preselection
+var doughnutDataSex = [
+    {
+      value: 4562,
+      color:"#FF6600",
+      highlight: "#fc9550",
+      label: "Hombres"
+    },
+    {
+      value: 3028,
+      color: "#FF9E01",
+      highlight: "#fbc56d",
+      label: "Mujeres"
+    },
+  ];
 
 var load_charts = function(){
   var channels = document.getElementById("chart-channels").getContext("2d");
   window.myDoughnut = new Chart(channels).Doughnut(doughnutData, {responsive : true});
+
+  var sex = document.getElementById("chart-sex-preselection").getContext("2d");
+  window.myDoughnut = new Chart(sex).Doughnut(doughnutDataSex, {responsive : true});
 
   var sex = document.getElementById("chart-sex").getContext("2d");
   window.myDoughnut = new Chart(sex).Doughnut(doughnutDataSex, {responsive : true});

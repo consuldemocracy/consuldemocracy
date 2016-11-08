@@ -638,7 +638,7 @@ table {
 
 .survey-results {
 
-  h3.legend {
+  .legend {
     color: $text-medium;
     margin-bottom: 0;
   }
@@ -686,6 +686,11 @@ table {
     &.light-green {
       background: #9CC56A;
     }
+  }
+
+  .number-stat {
+    font-size: rem-calc(24);
+    font-weight: bold;
   }
 
   .big-number-stat {
@@ -738,7 +743,6 @@ table {
   table {
     margin-top: $line-height*1.5;
 
-
     &.questions-table {
 
       tr.empty td {
@@ -763,7 +767,6 @@ table {
           width: auto;
         }
       }
-
     }
 
     tr td, tr th {
@@ -850,7 +853,8 @@ table.survey-districts {
 
   tr th {
     border: 1px solid $border;
-    padding: 0;
+    padding-left: 0;
+    padding-right: 0;
     text-align: center;
   }
 

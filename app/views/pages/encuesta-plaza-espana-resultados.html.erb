@@ -8,16 +8,18 @@
 
 <div class="expanded jumbo-survey no-margin-top padding">
   <div class="row">
-    <div class="small-12 column">
+    <div class="small-12 medium-7 column">
       <%= link_to "/processes_plaza_espana", class: "back" do %>
         <i class="icon-angle-left"></i>
         <%= t("pages.processes.back") %>
       <% end %>
-      <br>
-      <h1 class="margin-top">Remodelación de Plaza España</h1>
-      <div class="float-right">
-        <%= image_tag "processes_plaza_espana_debates.png", size: "480x270", alt: "#decideplazaespaña"%>
-      </div>
+      <h1 class="margin">Remodelación de Plaza España</h1>
+      <p>
+        <%= link_to "Más información sobre este proceso", "#" %>
+      </p>
+    </div>
+    <div class="small-12 medium-5 column text-right">
+      <%= image_tag "processes_plaza_espana.png", alt: "#decideplazaespaña"%>
     </div>
   </div>
 </div>
@@ -26,14 +28,10 @@
   <div class="small-12 column">
     <ul class="tabs" id="stats-tabs" data-tabs>
       <li class="tabs-title is-active">
-        <a href="#stats_1" aria-selected="true">
-          Fase de preselección
-        </a>
+        <%= link_to "Fase de preselección", "#stats_1" %>
       </li>
       <li class="tabs-title">
-        <a href="#stats_2">
-          Encuesta inicial
-        </a>
+        <%= link_to "Encuesta inicial", "#stats_2" %>
       </li>
     </ul>
   </div>
