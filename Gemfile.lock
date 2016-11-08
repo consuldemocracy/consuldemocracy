@@ -472,13 +472,9 @@ DEPENDENCIES
   foundation-rails (~> 6.2.4.0)
   foundation_rails_helper (~> 2.0.0)
   fuubar
-<<<<<<< HEAD
   graphiql-rails
   graphql
-  groupdate
-=======
   groupdate (~> 3.1.0)
->>>>>>> master
   i18n-tasks
   initialjs-rails (= 0.2.0.4)
   invisible_captcha (~> 0.9.1)
