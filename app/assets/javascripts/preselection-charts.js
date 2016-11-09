@@ -1,13 +1,13 @@
 // Chart sex preselection
 var doughnutDataPreselect = [
   {
-    value: 4562,
+    value: 4554,
     color:"#FF6600",
     highlight: "#fc9550",
     label: "Hombres"
   },
   {
-    value: 3028,
+    value: 3017,
     color: "#FF9E01",
     highlight: "#fbc56d",
     label: "Mujeres"
