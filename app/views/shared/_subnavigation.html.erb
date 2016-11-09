@@ -12,8 +12,7 @@
       <%= link_to t("layouts.header.proposal_ballot"), proposal_ballots_index_path, class: ("active" if  controller_name == "proposal_ballots"), accesskey: "v" %>
     </li>
     <li>
-      <%= link_to t("layouts.header.processes"), "/processes",
-              class: ("active" if current_page?("/processes") || current_page?("/processes_ordinance")), accesskey: "o"  %>
+      <%= link_to t("layouts.header.processes"), processes_path, class: ("active" if current_page?(processes_path)), accesskey: "o"  %>
     </li>
     <% if feature?(:spending_proposals) %>
       <li>
