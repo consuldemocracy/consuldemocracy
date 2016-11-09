@@ -849,6 +849,14 @@ table {
   }
 }
 
+.section-title {
+  background: $brand;
+  color: white;
+  margin-bottom: $line-height*2;
+  padding: $line-height 0;
+  text-align: center;
+}
+
 .chart-legend {
   bottom: $line-height;
   list-style-type: none;
