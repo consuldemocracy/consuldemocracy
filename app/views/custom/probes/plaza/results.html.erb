@@ -21,22 +21,16 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>Pradera Urbana</td>
-        </tr>
-        <tr>
-          <td>Welcome mother Nature, good bye Mr Ford</td>
-        </tr>
-        <tr>
-          <td>De este a oeste</td>
-        </tr>
-        <tr>
-          <td>UN PASEO POR LA CORNISA</td>
-        </tr>
-        <tr>
-          <td>PlazaSdeespaña</td>
-        </tr>
-        </tr>
+        <% finalists = ["Pradera urbana", "Welcome mother Nature, good bye Mr Ford", "De este a oeste", "UN PASEO POR LA CORNISA", "PlazaSdeespaña"] %>
+        <% finalists.each do |name_project| %>
+          <tr>
+            <td>
+              <strong>
+                <%= link_to name_project, plaza_probe_option_path(ProbeOption.find_by(name: name_project).id) %>
+              </strong>
+            </td>
+          </tr>
+        <% end %>
       </tbody>
     </table>
 
