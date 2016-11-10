@@ -44,9 +44,6 @@ module Consul
     config.autoload_paths << "#{Rails.root}/app/controllers/custom"
     config.autoload_paths << "#{Rails.root}/app/models/custom"
     config.paths['app/views'].unshift(Rails.root.join('app', 'views', 'custom'))
-
-    # Add GraphQL directories to the autoload path
-    config.autoload_paths << Rails.root.join('app', 'graph')
   end
 end
 
