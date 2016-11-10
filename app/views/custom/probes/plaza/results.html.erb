@@ -21,13 +21,15 @@
         </tr>
       </thead>
       <tbody>
-        <% finalists = ["Pradera urbana", "Welcome mother Nature, good bye Mr Ford", "De este a oeste", "UN PASEO POR LA CORNISA", "Mi rincón favorito de Madrid"] %>
+        <% finalists = ["Mi rincón favorito de Madrid", "UN PASEO POR LA CORNISA", "De este a oeste", "Welcome mother Nature, good bye Mr Ford", "Pradera urbana"] %>
         <% finalists.each do |name_project| %>
+          <% finalist_probe = ProbeOption.find_by(name: name_project)%>
           <tr>
             <td>
               <strong>
-                <%= link_to name_project, plaza_probe_option_path(ProbeOption.find_by(name: name_project).id) %>
+                <%= link_to name_project, plaza_probe_option_path(finalist_probe.to_param) %>
               </strong>
+              (<abbr title="Código de Referencia">REF</abbr>: <%= finalist_probe.code %>)
             </td>
           </tr>
         <% end %>
