@@ -23,10 +23,10 @@
       </div>
 
       <aside class="small-12 medium-3 column">
+<% end %>
+      <% if @probe.selecting_allowed? %>
         <div class="sidebar-divider"></div>
         <h3><%= t("probes.show.vote") %></h3>
-<% end %>
-
         <% if user_signed_in? %>
           <% if @probe_option == @user_selection %>
             <div class="callout success">
@@ -64,6 +64,7 @@
             <p class="button expanded secondary disabled margin-top"><%= t("probes.show.button") %></p>
           <% end %>
         <% end %>
+      <% end %>
 
 <% cache ["plaza", "probe_option", @probe_option.id, "fragment_2"] do %>
         <div class="sidebar-divider"></div>

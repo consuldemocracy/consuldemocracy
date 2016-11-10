@@ -101,6 +101,12 @@ blockquote p {
     padding-top: $line-height;
   }
 
+  h1 {
+    border-left: 2px solid black;
+    display: inline-block;
+    padding-left: $line-height;
+  }
+
   h1, h2, .back, .icon-angle-left, .p, a {
     color: black;
   }
@@ -141,6 +147,12 @@ blockquote p {
 
 .menu.no-padding>li>a {
   padding-left: 0;
+}
+
+.tabs li.is-active a {
+  color: $brand;
+  border-bottom: 2px solid $brand;
+  font-weight: bold;
 }
 
 // 02. Header
@@ -624,13 +636,31 @@ table {
 }
 
 .survey-timeline-line {
-  border-bottom: 1px solid $border;
-  border-top: 4px solid black;
-  color: black;
-  padding-top: $line-height;
+  background: #2D3E50;
+  color: white;
+
+  .column {
+    border-top: 1px solid $border;
+    padding-bottom: $line-height/2;
+    padding-top: $line-height/2;
+
+    @include breakpoint(medium) {
+      border-right: 1px solid $border;
+      border-top: 0;
+
+      &:first-child {
+        border-left: 1px solid $border;
+      }
+    }
+  }
 }
 
 .survey-results {
+
+  .legend {
+    color: $text-medium;
+    margin-bottom: 0;
+  }
 
   .title {
     color: #000201;
@@ -645,12 +675,12 @@ table {
   }
 
   .subtitle {
-    background: #fae100;
-    color: #000201;
-    display: inline;
+    border-left: 1px solid $brand;
+    color: $brand;
     font-size: rem-calc(40);
     line-height: rem-calc(40);
-    text-transform: uppercase;
+    margin-bottom: rem-calc(40);
+    padding-left: $line-height/2;
   }
 
   .panel {
@@ -675,6 +705,11 @@ table {
     &.light-green {
       background: #9CC56A;
     }
+  }
+
+  .number-stat {
+    font-size: rem-calc(24);
+    font-weight: bold;
   }
 
   .big-number-stat {
@@ -727,7 +762,6 @@ table {
   table {
     margin-top: $line-height*1.5;
 
-
     &.questions-table {
 
       tr.empty td {
@@ -752,7 +786,6 @@ table {
           width: auto;
         }
       }
-
     }
 
     tr td, tr th {
@@ -816,6 +849,14 @@ table {
   }
 }
 
+.section-title {
+  background: $brand;
+  color: white;
+  margin-bottom: $line-height*2;
+  padding: $line-height 0;
+  text-align: center;
+}
+
 .chart-legend {
   bottom: $line-height;
   list-style-type: none;
@@ -839,7 +880,8 @@ table.survey-districts {
 
   tr th {
     border: 1px solid $border;
-    padding: 0;
+    padding-left: 0;
+    padding-right: 0;
     text-align: center;
   }
 

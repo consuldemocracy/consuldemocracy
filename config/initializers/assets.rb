@@ -17,6 +17,8 @@ Rails.application.config.assets.precompile += %w( ie.css )
 Rails.application.config.assets.precompile += %w( survey_timeline.js )
 Rails.application.config.assets.precompile += %w( chart.js )
 Rails.application.config.assets.precompile += %w( survey-charts.js )
+Rails.application.config.assets.precompile += %w( preselection-charts.js )
+Rails.application.config.assets.precompile += %w( stats-charts.js )
 Rails.application.config.assets.precompile += %w( progress_bar.js )
 Rails.application.config.assets.precompile += %w( participatory-budget-charts.js )
 

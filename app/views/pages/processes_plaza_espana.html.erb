@@ -3,85 +3,18 @@
   <%= render "shared/social_media_meta_tags_plaza_espana" %>
 <% end %>
 
-<div class="expanded jumbo-survey no-margin-top">
-  <div class="row">
-    <div class="small-12 medium-7 column">
-      <%= link_to "/processes", class: "left back" do %>
-        <i class="icon-angle-left left"></i>
-        <%= t("pages.processes.back") %>
-      <% end %>
-
-      <h1><%= t("pages.processes.process_2.title") %></h1>
-      <%= markdown t("pages.processes.process_2.text") %>
-
-      <% if feature?("probe.plaza") %>
-        <%= link_to "Votar proyectos", plaza_path, class: "button large" %>
-        <p class="margin-top">
-          <%= link_to "Ver resultados de la encuesta", page_path('encuesta-plaza-espana-resultados'), class: "white" %>
-        </p>
-      <% else %>
-        <%= link_to "Ver resultados de la encuesta", page_path('encuesta-plaza-espana-resultados'), class: "button large" %>
-        <p class="margin-top"><strong>La preselección ciudadana de los proyectos ha terminado.<br> En breve anunciaremos los resultados.</strong></p>
-      <% end %>
-    </div>
-    <div class="small-12 medium-5 column">
-      <div class="flex-video">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/2PisFJRfDj4?rel=0" frameborder="0" allowfullscreen title="Proceso Participativo #decideplazaespaña"></iframe>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="expanded jumbo-featured survey-timeline-line">
-  <div class="row">
-    <div class="small-12 medium-2 column">
-      <p>
-        28 de enero <small><i class="icon-angle-right"></i></small><br>
-        <strong>Consulta ciudadana</strong>
-      </p>
-    </div>
-
-    <div class="small-12 medium-3 column">
-      <p>
-        14 de junio <small><i class="icon-angle-right"></i></small><br>
-        <strong>Concurso de proyectos</strong>
-      </p>
-    </div>
-
-    <div class="small-12 medium-3 column">
-      <p>
-        28 de octubre <small><i class="icon-angle-right"></i></small><br>
-        <strong>Valoración de proyectos</strong>
-      </p>
-    </div>
-    <div class="small-12 medium-4 column">
-      <p>
-        Próximamente <small><i class="icon-angle-right"></i></small><br>
-        <strong>Votación final ciudadana del proyecto ganador</strong>
-      </p>
-    </div>
-  </div>
-</div>
+<%= render "shared/plaza_espana_header" %>
 
 <div class="process row margin">
   <div class="small-12 medium-7 column">
+    <div class="flex-video">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/2PisFJRfDj4?rel=0" frameborder="0" allowfullscreen title="Proceso Participativo #decideplazaespaña"></iframe>
+  </div>
+    <h3>Información detallada para tomar la mejor decisión</h3>
 
-    <div class="callout primary margin-bottom">
-      <h3>
-        <%= link_to "Concurso de proyectos", "https://sede.madrid.es/portal/site/tramites/menuitem.1f3361415fda829be152e15284f1a5a0/?vgnextoid=d3dcffda5cd55510VgnVCM2000001f4a900aRCRD&vgnextchannel=e53965dd72ede410VgnVCM1000000b205a0aRCRD&vgnextfmt=default", target: "_blank", title: t("shared.target_blank_html") %>
-      </h3>
-    </div>
+    <p>El pasado 14 de diciembre se convocó un grupo de trabajo multidisciplinar (asociaciones de vecinos, urbanistas, hoteleros, técnicos del Ayuntamiento, etc), que decidió las preguntas clave que habría que resolver para definir la nueva Plaza de España. Desde el 28 de enero esas preguntas han estado disponibles aquí para que cualquier madrileño las responda, y las respuestas mayoritarias se han convertido en las bases obligatorias del concurso internacional de remodelación de Plaza España.</p>
 
-    <div class="callout primary margin-bottom">
-      <h3>
-        <%= link_to "Debates sobre la Remodelación de Plaza España", "/processes_plaza_espana_debates" %>
-      </h3>
-    </div>
-
-    <h3>A continuación tienes información detallada para tomar la mejor decisión</h3>
-    <p>El pasado 14 de diciembre se convocó un grupo de trabajo multidisciplinar (asociaciones de vecinos, urbanistas, hoteleros, técnicos del Ayuntamiento, etc), que decidió las preguntas clave que habría que resolver para definir la nueva Plaza de España. Desde el 28 de enero esas preguntas están disponibles aquí para que cualquier madrileño las responda, y las respuestas mayoritarias se convertirán en las bases obligatorias de un concurso internacional de remodelación de Plaza España.</p>
-
-    <p>Una vez abierto el concurso, todos los proyectos que se presenten al concurso serán publicados en la web para que puedan ser debatidos y valorados. Un jurado elegirá cinco de ellos, que serán desarrollados, y posteriormente dos finalistas. Finalmente será la gente de Madrid la que vote entre esos dos decidiendo el proyecto final a ejecutar.</p>
+    <p>Todos los proyectos presentados han sido publicados en la web para ser debatidos y valorados. Un jurado ha elegido cinco de ellos, que serán desarrollados, y posteriormente dos finalistas. Finalmente será la gente de Madrid la que vote entre esos dos decidiendo el proyecto final a ejecutar.</p>
 
     <p>A continuación te ofrecemos diferentes documentos elaborados por el Área de Desarrollo Urbano Sostenible, para que todos tengan la máxima información a la hora de responder las preguntas sobre la reforma. Además encontrarás preguntas frecuentes, así como las actas y archivos relacionadas con el grupo de trabajo.</p>
 
@@ -93,6 +26,22 @@
     </p>
   </div>
   <div class="small-12 medium-5 column">
+    <h4>Enlaces relacionados</h4>
+    <ul>
+      <li>
+        <%= link_to "Bases del concurso",
+                    "http://www.coam.org/media/Default%20Files/servicios/concursos/concursos_ocam/2016/plaza_espania/160617_bases_plaza_espana.pdf",
+                    target: "_blank", title: t("shared.target_blank_html") %>
+      </li>
+      <li>
+        <%= link_to "Concurso de proyectos",
+                    "https://sede.madrid.es/portal/site/tramites/menuitem.1f3361415fda829be152e15284f1a5a0/?vgnextoid=d3dcffda5cd55510VgnVCM2000001f4a900aRCRD&vgnextchannel=e53965dd72ede410VgnVCM1000000b205a0aRCRD&vgnextfmt=default", target: "_blank", title: t("shared.target_blank_html") %>
+      </li>
+      <li>
+        <%= link_to "Debates sobre la Remodelación de Plaza España", "/processes_plaza_espana_debates" %>
+      </li>
+    </ul>
+
     <h4>Preguntas frecuentes</h4>
     <ul>
       <li>

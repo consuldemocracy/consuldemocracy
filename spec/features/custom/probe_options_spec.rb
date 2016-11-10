@@ -10,7 +10,7 @@ feature 'Probe options' do
     end
 
     context 'Show' do
-      scenario 'Option info is visble' do
+      scenario 'Option info is visible' do
         visit probe_probe_option_path(probe_id: 'plaza', id: @probe_option.id)
 
         expect(page).to have_content 'Plaza Option 1'
@@ -18,6 +18,18 @@ feature 'Probe options' do
 
         expect(page).to have_link('Memoria ()')
         expect(page).to have_link('Imágenes ()')
+      end
+
+      scenario 'Voting info is visible only if selecting allowed' do
+        @probe.update(selecting_allowed: false)
+
+        visit probe_probe_option_path(probe_id: 'plaza', id: @probe_option.id)
+        expect(page).to_not have_content 'Vote'
+
+        @probe.update(selecting_allowed: true)
+
+        visit probe_probe_option_path(probe_id: 'plaza', id: @probe_option.id)
+        expect(page).to have_content 'Vote'
       end
 
       scenario 'User needs permission to select' do

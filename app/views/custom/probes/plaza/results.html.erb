@@ -1,24 +1,59 @@
 <%= render "probes/#{@probe.codename}/header" %>
 
-<div class="expanded processes-show no-margin-top">
-  <div class="row padding">
-    <div class="small-12 medium-9 column">
-      <%= render "shared/back_link" %>
+<%= render "shared/plaza_espana_header" %>
 
-      <h1 class="margin-bottom"><%= t("pages.processes.index.process_2_title") %></h1>
-        <p>Hasta el 28 de octubre, la ciudadanía formó parte del jurado que está decidiendo cómo será la nueva Plaza de España.</p>
-      <div class="small-12 medium-6">
-        <%= link_to "Más información sobre la remodelación",
-                      page_path("processes_plaza_espana"), class: "button" %>
-      </div>
-    </div>
-  </div>
-</div>
+<div class="row survey-results">
 
-<div class="row margin-top">
-  <div class="small-12 medium-9 small-centered column text-center">
-    <div class="callout primary">
-      <strong>La preselección ciudadana de los proyectos ha terminado</strong>. En breve anunciaremos los resultados.
+  <hr>
+
+  <div class="small-12 column">
+
+    <h2 class="subtitle">Finalistas de la preselección</h2>
+
+    <div class="small-12 medium-9">
+      <p>La selección de los finalistas realizada por el jurado ha tenido en cuenta la votación ciudadana según lo especificado en las bases del concurso, otorgando de 5 a 1 puntos a los 5 proyectos más votados.</p>
     </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Proyecto</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% finalists = ["Mi rincón favorito de Madrid", "UN PASEO POR LA CORNISA", "De este a oeste", "Welcome mother Nature, good bye Mr Ford", "Pradera urbana"] %>
+        <% finalists.each do |name_project| %>
+          <% finalist_probe = ProbeOption.find_by(name: name_project)%>
+          <tr>
+            <td>
+              <strong>
+                <%= link_to name_project, plaza_probe_option_path(finalist_probe.to_param) %>
+              </strong>
+              (<abbr title="Código de Referencia">REF</abbr>: <%= finalist_probe.code %>)
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+    <hr class="double">
+
+    <h2 class="subtitle">Resultado de la votación ciudadana</h2>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Proyecto</th>
+          <th class="text-center">Número de votos</th>
+        </tr>
+      </thead>
+      <tbody>
+        <%= render partial: '/custom/probes/plaza/plaza_option', collection: @probe_options %>
+      </tbody>
+    </table>
   </div>
+
+  <hr>
+
+  <%= render 'pages/processes_plaza_espana_results_answers' %>
 </div>

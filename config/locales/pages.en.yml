@@ -108,7 +108,7 @@ en:
         process_10_title: "Ordenanza de subvenciones"
         process_10_description: "El Ayuntamiento de Madrid somete a consulta pública la necesidad de modificar la regulación del sistema de subvenciones."
         process_10_button: "Más información"
-        title: Open processes
+        title: Processes
         process_plaza_title: Remodeling of the Plaza España
         process_plaza_description: Select the project that you like for this new space in your city.
       process_1:
@@ -119,9 +119,6 @@ en:
 
                 You can now see the [final draft Transparency Ordinance of the City of Madrid](/docs/ordenanza_de_transparencia_de_la_ciudad_de_madrid.doc 'Transparency Ordinance of the City of Madrid')."
         button: See ordinance
-      process_2:
-        title: Remodeling of the Plaza de España
-        text: We count on you for filling out a short survey decide how you want it this new space in your city.
       process_3:
         send_proposal: Send a proposal
         send_question: Make a question

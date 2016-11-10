@@ -110,7 +110,7 @@ es:
         process_10_title: "Ordenanza de subvenciones"
         process_10_description: "El Ayuntamiento de Madrid somete a consulta pública la necesidad de modificar la regulación del sistema de subvenciones."
         process_10_button: "Más información"
-        title: Procesos sectoriales
+        title: Procesos
         process_plaza_title: Remodelación de Plaza España
         process_plaza_description: Selecciona el proyecto que más te guste para este nuevo espacio en tu ciudad.
       process_1:
@@ -126,9 +126,6 @@ es:
           El proceso de consulta pública finalizó el 31 de Enero de 2016.
 
         button: Ver borrador
-      process_2:
-        title: Remodelación de Plaza España
-        text: Contamos contigo para que decidas cómo debe ser este nuevo espacio en tu ciudad.
       process_3:
         send_proposal: Enviar una propuesta
         send_question: Hacer una pregunta
