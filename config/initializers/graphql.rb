@@ -1,5 +1,6 @@
 API_TYPE_DEFINITIONS = {
-  User => %I[ id username ],
+  User     => %I[ id username proposals ],
+  Debate   => %I[ id title description author_id author created_at ],
   Proposal => %I[ id title description author_id author created_at ]
 }
 
@@ -13,7 +14,7 @@ ConsulSchema = GraphQL::Schema.define do
   query QueryRoot
 
   # Reject deeply-nested queries
-  max_depth 7
+  max_depth 10
 
   resolve_type -> (object, ctx) {
     # look up types by class name
@@ -26,21 +27,25 @@ QueryRoot = GraphQL::ObjectType.define do
   name "Query"
   description "The query root for this schema"
 
-  field :proposal do
-    type api_types[Proposal]
-    description "Find a Proposal by id"
-    argument :id, !types.ID
-    resolve -> (object, arguments, context) {
-      Proposal.find(arguments["id"])
-    }
-  end
+  API_TYPE_DEFINITIONS.each_key do |model|
 
-  field :proposals do
-    type types[api_types[Proposal]]
-    description "Find all Proposals"
-    resolve -> (object, arguments, context) {
-      Proposal.all
-    }
-  end
+    # create an entry field to retrive a single object
+    field model.name.underscore.to_sym do
+      type api_types[model]
+      description "Find one #{model.model_name.human} by ID"
+      argument :id, !types.ID
+      resolve -> (object, arguments, context) {
+        model.find(arguments["id"])
+      }
+    end
 
+    # create an entry filed to retrive a paginated collection
+    connection model.name.underscore.pluralize.to_sym, api_types[model].connection_type do
+      description "Find all #{model.model_name.human.pluralize}"
+      resolve -> (object, arguments, context) {
+        model.all
+      }
+    end
+
+  end
 end
