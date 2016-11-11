@@ -14,7 +14,7 @@ module GraphQL
       new_graphql_type = GraphQL::ObjectType.define do
 
         name(model.name)
-        description("Generated programmatically from model: #{model.name}")
+        description("#{model.model_name.human}")
 
         # Make a field for each column
         field_names.each do |field_name|
@@ -29,7 +29,10 @@ module GraphQL
               field(association.name, -> { api_types[association.klass] })
             when :has_many
               connection(association.name, api_types[association.klass].connection_type {
-                description "Description for a field with pagination"
+                description "#{association.klass.model_name.human.pluralize}"
+                resolve -> (object, arguments, context) {
+                  association.klass.all
+                }
               })
             end
           end
