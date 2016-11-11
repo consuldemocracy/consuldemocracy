@@ -17,8 +17,11 @@ App.Tracks =
     dimension       = tracking_data.data('track-event-dimension')
     dimension_value = tracking_data.data('track-event-dimension-value')
 
-    dimension_hash = {}
-    dimension_hash['dimension' + dimension] = dimension_value
+    if dimension_value is ''
+      dimension_hash = null
+    else
+      dimension_hash = {}
+      dimension_hash['dimension' + dimension] = dimension_value
 
     if category?
       _paq.push(['trackEvent', category, action, name, custom_value, dimension_hash])
