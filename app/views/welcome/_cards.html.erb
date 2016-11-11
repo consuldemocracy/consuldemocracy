@@ -5,8 +5,10 @@
       <h2 class="title inline-block">
         <%= t("welcome.featured.title") %>
       </h2>
-      <%= link_to t("welcome.featured.see_all"),
-                  processes_path, class: "float-right" %>
+      <small>
+        <%= link_to t("welcome.featured.see_all"),
+                    processes_path, class: "float-right margin-top" %>
+      </small>
     </div>
   </div>
 
@@ -16,13 +18,13 @@
     <% if @proposal_successfull_exists %>
       <div class="small-12 medium-4 column margin-top">
         <div class="panel dark" data-equalizer-watch>
-          <h2><%= t("proposal_ballots.featured_title") %></h2>
+          <h2><%= t("cards.proposal_ballots.title") %></h2>
           <p class="info-date">
-            <span class="icon-calendar"></span>&nbsp;<strong>Próximamente</strong></p>
+            <span class="icon-calendar"></span>&nbsp;<strong><%= t("cards.proposal_ballots.date_html") %></strong></p>
           <p class="info">
-            <%= t("proposal_ballots.info") %>
+            <%= t("cards.proposal_ballots.text") %>
           </p>
-          <%= link_to t("proposal_ballots.button"), proposal_ballots_index_path, class: "button expanded margin-top" %>
+          <%= link_to t("cards.proposal_ballots.button"), proposal_ballots_index_path, class: "button expanded margin-top" %>
         </div>
       </div>
     <% end %>
@@ -30,42 +32,42 @@
     <!-- Remodelación Plaza España -->
     <div class="small-12 medium-4 column margin-top">
       <div class="panel" data-equalizer-watch>
-        <h2>#RemodelaciónPlazaEspaña</h2>
-        <p class="info-date"><span class="icon-document"></span>&nbsp;Resultados <strong>disponibles</strong></p>
+        <h2><%= t("cards.plaza.title") %></h2>
+        <p class="info-date"><span class="icon-document"></span>&nbsp;<%= t("cards.plaza.date_html") %></p>
         <p class="info">
-          La preselección ciudadana de los proyectos ha terminado. Ya puedes ver los resultados.
+          <%= t("cards.plaza.text") %>
         </p>
-        <%= link_to "Ver resultados", plaza_path, class: "button expanded margin-top" %>
+        <%= link_to t("cards.plaza.button"), plaza_path, class: "button expanded margin-top" %>
       </div>
     </div>
 
     <!-- Alianza Gobierno Abierto -->
     <div class="small-12 medium-4 column margin-top">
       <div class="panel" data-equalizer-watch>
-        <h2><%= t("banner.open_government.title") %></h2>
-        <p class="info-date"><span class="icon-calendar"></span>&nbsp;<%= t("banner.open_government.date_html") %></p>
-        <p class="info"><%= t("banner.open_government.text") %></p>
-        <%= link_to t("banner.open_government.button"), open_government_path, class: "button expanded margin-top" %>
+        <h2><%= t("cards.open_government.title") %></h2>
+        <p class="info-date"><span class="icon-calendar"></span>&nbsp;<%= t("cards.open_government.date_html") %></p>
+        <p class="info"><%= t("cards.open_government.text") %></p>
+        <%= link_to t("cards.open_government.button"), open_government_path, class: "button expanded margin-top" %>
       </div>
     </div>
 
     <!-- Ordenanza subvenciones -->
     <div class="small-12 medium-4 column margin-top">
       <div class="panel" data-equalizer-watch>
-        <h2><%= t("banner.subvention_ordinance.title") %></h2>
-        <p class="info-date"><span class="icon-calendar"></span>&nbsp;<%= t("banner.subvention_ordinance.date_html") %></p>
-        <p class="info"><%= t("banner.subvention_ordinance.text") %></p>
-        <%= link_to t("banner.subvention_ordinance.button"), subvention_ordinance_path, class: "button expanded margin-top" %>
+        <h2><%= t("cards.subvention_ordinance.title") %></h2>
+        <p class="info-date"><span class="icon-calendar"></span>&nbsp;<%= t("cards.subvention_ordinance.date_html") %></p>
+        <p class="info"><%= t("cards.subvention_ordinance.text") %></p>
+        <%= link_to t("cards.subvention_ordinance.button"), subvention_ordinance_path, class: "button expanded margin-top" %>
       </div>
     </div>
 
     <!-- Licencias urbanísticas -->
     <div class="small-12 medium-4 column margin-top end">
       <div class="panel" data-equalizer-watch>
-        <h2><%= t("banner.urbanistic_licenses.title") %></h2>
-        <p class="info-date"><span class="icon-calendar"></span>&nbsp;<%= t("banner.urbanistic_licenses.date_html") %></p>
-        <p class="info"><%= t("banner.urbanistic_licenses.text") %></p>
-        <%= link_to t("banner.urbanistic_licenses.button"), urbanistic_licenses_path, class: "button expanded margin-top" %>
+        <h2><%= t("cards.urbanistic_licenses.title") %></h2>
+        <p class="info-date"><span class="icon-calendar"></span>&nbsp;<%= t("cards.urbanistic_licenses.date_html") %></p>
+        <p class="info"><%= t("cards.urbanistic_licenses.text") %></p>
+        <%= link_to t("cards.urbanistic_licenses.button"), urbanistic_licenses_path, class: "button expanded margin-top" %>
       </div>
     </div>
   </div>

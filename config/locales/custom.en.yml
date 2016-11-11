@@ -37,7 +37,17 @@ en:
     banner:
       title: "#HumanRightsPlan"
       text_html: "Participate until <u>November 4</u>!"
-  banner:
+  cards:
+    proposal_ballots:
+      title: "#NextVoting"
+      text: "New proposals that have reached the voting phase."
+      date_html: "Coming soon"
+      button: "I want to decide"
+    plaza:
+      title: "#RemodelingPlazaEspaña"
+      text: "The preselection of the projects is over. You can already see the results."
+      date_html: "Results are <strong>available</strong>"
+      button: "See results"
     urbanistic_licenses:
       title: "#Urbanisticlicenses"
       text: "Consulta previa sobre la regulación de la concesión de licencias urbanísticas para la realización de obras y la apertura de locales comerciales o empresariales."
