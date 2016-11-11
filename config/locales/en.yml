@@ -385,6 +385,8 @@ en:
       cant_answer_incoming: "This poll has not yet started."
       cant_answer_expired: "This poll has finished."
       cant_answer_wrong_geozone: "The following questions are not available in your geozone."
+  poll_questions:
+    default_valid_answers: "Yes, No"
   proposal_ballots:
     title: "Votings"
     description_html: "The following citizen proposals that have reached the <strong>required supports</strong> and will be voted."

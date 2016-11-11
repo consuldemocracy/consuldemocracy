@@ -15,12 +15,13 @@ RSpec.describe Poll::Question, type: :model do
       p = create(:proposal)
       q = create(:poll_question)
       q.copy_attributes_from_proposal(p)
+      expect(q.valid_answers).to eq(['Yes', 'No'])
       expect(q.author).to eq(p.author)
       expect(q.author_visible_name).to eq(p.author.name)
       expect(q.proposal_id).to eq(p.id)
       expect(q.title).to eq(p.title)
       expect(q.question).to eq(p.question)
-      expect(q.geozones).to eq(Geozone.all)
+      expect(q.all_geozones).to be_true
     end
   end
 

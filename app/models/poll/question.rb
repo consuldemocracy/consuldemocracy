@@ -43,7 +43,8 @@ class Poll::Question < ActiveRecord::Base
       self.description = proposal.description
       self.summary = proposal.summary
       self.question = proposal.question
-      self.geozones = Geozone.all
+      self.all_geozones = true
+      self.valid_answers = I18n.t('poll_questions.default_valid_answers')
     end
   end
 
@@ -56,9 +57,10 @@ class Poll::Question < ActiveRecord::Base
 
     where(poll_id: Poll.answerable_by(user).pluck(:id))
       .joins('LEFT OUTER JOIN "geozones_poll_questions" ON "geozones_poll_questions"."question_id" = "poll_questions"."id"')
-      .where('(poll_questions.all_geozones = ? or geozones_poll_questions.geozone_id = ?)',
+      .where('(poll_questions.all_geozones = ? OR geozones_poll_questions.geozone_id = ?)',
               true,
               user.geozone_id || -1) # user.geozone_id can be nil, which would throw errors on sql
+      .distinct
   end
 
 end
