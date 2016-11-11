@@ -1,94 +1,28 @@
 <% cache ["welcome_index_20161111", display_budget_countdown?] do %>
-  <div class="expanded padding no-margin-top home-page">
-    <div class="row">
+  <div class="welcome">
+    <div class="expanded padding no-margin-top header">
+      <div class="row">
+        <div class="small-12 medium-8 column small-centered text-center">
+          <h1><%= t("layouts.header.open_city_title") %></h1>
+          <p><%= t("layouts.header.open_city_slogan_short") %></p>
+          <%= link_to t("layouts.header.sign_up"), new_user_registration_path , class: "button" %>
+          <p><%= t("layouts.header.sign_in",
+              login: link_to(t("layouts.header.sign_in_link"), new_user_session_path)).html_safe %></p>
+        </div>
+      </div>
+    </div>
+
+    <%= render "cards" %>
+
+    <%= render "features" %>
+
+    <div class="row padding slogan">
       <div class="small-12 medium-8 column small-centered text-center">
-        <h1><%= t("layouts.header.open_city_title") %></h1>
-        <p><%= t("layouts.header.open_city_slogan_short") %></p>
-        <%= link_to t("layouts.header.sign_up"), new_user_registration_path , class: "button" %>
-        <p><%= t("layouts.header.sign_in",
-            login: link_to(t("layouts.header.sign_in_link"), new_user_session_path)).html_safe %></p>
-      </div>
-    </div>
-  </div>
-
-  <div class="expanded welcome-featured padding">
-
-    <div class="row">
-      <div class="small-12 column">
-        <h2 class="featured inline-block"><%= t('welcome.featured.title') %></h2>
-        <%= link_to t('welcome.featured.see_all'), processes_path, class: "float-right margin-top" %>
-      </div>
-    </div>
-
-    <div class="row" data-equalizer>
-
-      <!-- Próxima votación -->
-      <% if @proposal_successfull_exists %>
-        <div class="small-12 medium-4 column margin-top">
-          <div class="panel dark" data-equalizer-watch>
-            <h2><%= t("proposal_ballots.featured_title") %></h2>
-            <p class="info-date">
-              <span class="icon-calendar"></span>&nbsp;<strong>Próximamente</strong></p>
-            <p class="info">
-              <%= t("proposal_ballots.info") %>
-            </p>
-            <%= link_to t("proposal_ballots.button"), proposal_ballots_index_path, class: "button expanded margin-top" %>
-          </div>
+        <p><%= t("layouts.header.open_city_slogan_html") %></p>
+        <div class="small-12 medium-6 small-centered padding">
+          <%= link_to t("welcome.more_information", org_name: setting['org_name']),
+                      page_path('more_information'), class: "button hollow expanded" %>
         </div>
-      <% end %>
-
-      <!-- Remodelación Plaza España -->
-      <div class="small-12 medium-4 column margin-top">
-        <div class="panel" data-equalizer-watch>
-          <h2>#RemodelaciónPlazaEspaña</h2>
-          <p class="info-date"><span class="icon-document"></span>&nbsp;Resultados <strong>disponibles</strong></p>
-          <p class="info">
-            La preselección ciudadana de los proyectos ha terminado. Ya puedes ver los resultados.
-          </p>
-          <%= link_to "Ver resultados", plaza_path, class: "button expanded margin-top" %>
-        </div>
-      </div>
-
-      <!-- Alianza Gobierno Abierto -->
-      <div class="small-12 medium-4 column margin-top">
-        <div class="panel" data-equalizer-watch>
-          <h2><%= t("banner.open_government.title") %></h2>
-          <p class="info-date"><span class="icon-calendar"></span>&nbsp;<%= t("banner.open_government.date_html") %></p>
-          <p class="info"><%= t("banner.open_government.text") %></p>
-          <%= link_to t("banner.open_government.button"), open_government_path, class: "button expanded margin-top" %>
-        </div>
-      </div>
-
-      <!-- Ordenanza subvenciones -->
-      <div class="small-12 medium-4 column margin-top">
-        <div class="panel" data-equalizer-watch>
-          <h2><%= t("banner.subvention_ordinance.title") %></h2>
-          <p class="info-date"><span class="icon-calendar"></span>&nbsp;<%= t("banner.subvention_ordinance.date_html") %></p>
-          <p class="info"><%= t("banner.subvention_ordinance.text") %></p>
-          <%= link_to t("banner.subvention_ordinance.button"), subvention_ordinance_path, class: "button expanded margin-top" %>
-        </div>
-      </div>
-
-      <!-- Licencias urbanísticas -->
-      <div class="small-12 medium-4 column margin-top end">
-        <div class="panel" data-equalizer-watch>
-          <h2><%= t("banner.urbanistic_licenses.title") %></h2>
-          <p class="info-date"><span class="icon-calendar"></span>&nbsp;<%= t("banner.urbanistic_licenses.date_html") %></p>
-          <p class="info"><%= t("banner.urbanistic_licenses.text") %></p>
-          <%= link_to t("banner.urbanistic_licenses.button"), urbanistic_licenses_path, class: "button expanded margin-top" %>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <%= render "featured_welcome" %>
-
-  <div class="row padding slogan">
-    <div class="small-12 medium-8 column small-centered text-center">
-      <p><%= t("layouts.header.open_city_slogan_html") %></p>
-      <div class="small-12 medium-6 small-centered padding">
-        <%= link_to t("welcome.more_information", org_name: setting['org_name']),
-                    page_path('more_information'), class: "button hollow expanded" %>
       </div>
     </div>
   </div>
