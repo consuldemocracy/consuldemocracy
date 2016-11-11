@@ -14,7 +14,7 @@
 // 12. Collaborative legislation
 // 13. Counter
 // 14. Proposal Ballots
-// 15. Welcome index
+// 15. Welcome
 //
 
 // 01. Global styles
@@ -157,115 +157,6 @@ blockquote p {
 
 // 02. Header
 // - - - - - - - - - - - - - - - - - - - - - - - - -
-
-.home-page {
-  background: $brand image-url('home_page_bg.jpg');
-  background-position: 50%;
-  background-size: cover;
-
-  @include breakpoint(medium) {
-    min-height: $line-height*13;
-
-    h1 {
-      font-size: rem-calc(60);
-      line-height: rem-calc(72);
-    }
-  }
-
-  h1, p, a {
-    color: white;
-  }
-
-  a:not(.button) {
-    text-decoration: underline;
-  }
-
-  .button {
-    background: white;
-    color: $brand;
-  }
-}
-
-h2.featured {
-  border-left: 2px solid #ccc;
-  font-size: rem-calc(18);
-  padding: $line-height/2;
-  text-transform: uppercase;
-}
-
-.featured-welcome {
-  border-bottom: 1px solid $border;
-
-  &.features {
-    background: white;
-    border-bottom: 1px solid #eaeaea;
-    margin-bottom: $line-height;
-
-    h2 {
-      font-size: rem-calc(18);
-    }
-
-    .panel {
-      border: 0;
-    }
-  }
-
-  .panel {
-    border: 0;
-    margin-bottom: $line-height;
-
-    .button {
-      color: white;
-    }
-  }
-
-  .panel.budget {
-
-    h3 {
-      color: $budget;
-    }
-
-    .button {
-      background: $budget;
-    }
-  }
-
-  .panel.proposals {
-
-    h3 {
-      color: $proposals;
-    }
-
-    .button {
-      background: $proposals;
-    }
-  }
-}
-
-.slogan {
-
-  p {
-    font-size: rem-calc(30);
-    line-height: rem-calc(48);
-  }
-
-  span {
-    background: #f4fb2d;
-    font-weight: bold;
-  }
-}
-
-.jumbo {
-  background: $highlight;
-
-  @include breakpoint(medium) {
-    padding: rem-calc(24) 0;
-  }
-
-  h1, p {
-    color: $text;
-  }
-}
 
 .jumbo-survey, .jumbo-featured, .jumbo-investment-project {
 
@@ -477,6 +368,18 @@ table {
 
 // 07. Surveys
 // - - - - - - - - - - - - - - - - - - - - - - - - -
+
+.jumbo {
+  background: $highlight;
+
+  @include breakpoint(medium) {
+    padding: rem-calc(24) 0;
+  }
+
+  h1, p {
+    color: $text;
+  }
+}
 
 .survey {
 
@@ -1269,101 +1172,6 @@ table.age-groups-investment-projects {
 
 // 09. Featured
 // - - - - - - - - - - - - - - - - - - - - - - - - -
-
-.home-page-featured {
-
-  a:hover, a:hover h2, a:hover p {
-    text-decoration: none;
-  }
-
-  .panel {
-
-    &.featured-one, &.featured-two, &.featured-three {
-      background-size: cover;
-      background-position: 50% 50%;
-      border: 0;
-      padding: $line-height;
-      position: relative;
-
-      @include breakpoint(medium) {
-        min-height: $line-height*11;
-      }
-
-      h2, p {
-        color: $text;
-      }
-
-      .button {
-        background: white;
-        color: $text;
-        margin-top: $line-height;
-      }
-    }
-
-    &.featured-brand {
-      background: $brand;
-
-      @include breakpoint(large) {
-        background: $brand image-url('featured_open_plenary.jpg') no-repeat;
-        background-position: 90% 0;
-      }
-
-      .button {
-        background: white;
-        color: $brand;
-      }
-
-      h2, p {
-        color: white;
-      }
-    }
-
-    &.featured-one {
-      background: $featured;
-      margin-top: $line-height;
-
-      @include breakpoint(medium) {
-        margin-top: 0;
-      }
-
-      .icon-proposals {
-        color: #e5c300;
-        font-size: rem-calc(128);
-        line-height: $line-height;
-        position: absolute;
-        right: 2%;
-        top: 100px;
-
-        @include breakpoint(medium down) {
-          display: none;
-        }
-      }
-    }
-
-    &.featured-two {
-      background: #33DADF;
-      margin-bottom: 0;
-
-      @include breakpoint(large) {
-        background: #00DADE image-url('processes_plaza_espana_small.gif') no-repeat;
-        background-position: bottom right;
-      }
-    }
-
-    &.featured-three {
-      background: $budget;
-
-      @include breakpoint(large) {
-        background: $budget image-url('featured_spending_proposals.png') no-repeat;
-        background-position: bottom right;
-      }
-
-      h2, p {
-        color: #eaeaf2;
-      }
-    }
-  }
-}
 
 .featured-process {
   background: #33DADF;
@@ -2503,53 +2311,137 @@ ul.ballot-list {
   }
 }
 
-// 15. Welcome index
+// 15. Welcome
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
-.welcome-featured {
-  background: #fafafa;
+.welcome {
 
-  h2 {
-    font-size: $line-height;
-  }
+  .header {
+    background: $brand image-url('home_page_bg.jpg');
+    background-position: 50%;
+    background-size: cover;
+    color: white;
 
-  .panel {
+    @include breakpoint(medium) {
+      min-height: $line-height*13;
 
-    [class^="icon-"] {
-      left: 0;
-      position: absolute;
-      top: 2px;
+      h1 {
+        font-size: rem-calc(60);
+        line-height: rem-calc(72);
+      }
     }
 
-    &.dark {
-      background: #2D3E50;
+    a:not(.button) {
+      color: white;
+      text-decoration: underline;
+    }
 
-      h2, p.info-date {
-        color: #FFD200;
+    .button {
+      background: white;
+      color: $brand;
+    }
+  }
+
+  .cards {
+    background: #fafafa;
+
+    h2 {
+      font-size: $line-height;
+
+      &.title {
+        border-left: 1px solid $brand;
+        color: $brand;
+        padding-left: $line-height/2;
+      }
+    }
+
+    .panel {
+
+      [class^="icon-"] {
+        left: 0;
+        position: absolute;
+        top: 2px;
       }
 
-      p {
+      &.dark {
+        background: #2D3E50;
+
+        h2, p.info-date {
+          color: #FFD200;
+        }
+
+        p {
+          color: white;
+        }
+
+        .button {
+          background: #FFD200;
+          color: $text;
+        }
+      }
+    }
+
+    p {
+
+      &.info {
+        min-height: rem-calc(140);
+      }
+
+      &.info-date {
+        color: $brand;
+        font-size: $small-font-size;
+        padding-left: rem-calc(16);
+        position: relative;
+      }
+    }
+  }
+
+  .features {
+    border-bottom: 1px solid $border;
+
+    .panel {
+      border: 0;
+      margin-bottom: $line-height;
+
+      .button {
         color: white;
       }
 
-      .button {
-        background: #FFD200;
-        color: $text;
+      &.budget {
+
+        h3 {
+          color: $budget;
+        }
+
+        .button {
+          background: $budget;
+        }
+      }
+
+      &.proposals {
+
+        h3 {
+          color: $proposals;
+        }
+
+        .button {
+          background: $proposals;
+        }
       }
     }
   }
 
-  p {
+  .slogan {
+    padding-top: $line-height*2;
 
-    &.info {
-      min-height: rem-calc(140);
+    p {
+      font-size: rem-calc(30);
+      line-height: rem-calc(48);
     }
 
-    &.info-date {
-      color: $brand;
-      font-size: $small-font-size;
-      padding-left: rem-calc(16);
-      position: relative;
+    span {
+      background: #F4FB2D;
+      font-weight: bold;
     }
   }
 }
