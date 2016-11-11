@@ -9,7 +9,6 @@ App.Tracks =
     _paq.push(['trackPageView',  App.Tracks.page_title()])
 
   track_event: ->
-    App.Tracks.ajax_sanity_check()
     tracking_data   = $("#tracking_events")
     category        = tracking_data.data('track-event-category')
     action          = tracking_data.data('track-event-action')
@@ -54,10 +53,6 @@ App.Tracks =
 
   proposal_show_page: ->
     $("#js-tracking").data('proposal-show')
-
-  ajax_sanity_check: ->
-    message = "JS initialized on ajax request to: " + window.location.pathname
-    $("#js-ajax-sanity-check").html(message)
 
   initialize: ->
     if App.Tracks.tracking_enabled()
