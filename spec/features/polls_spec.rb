@@ -152,7 +152,6 @@ feature 'Polls' do
       create(:poll_question, poll: poll, all_geozones: true, valid_answers: 'Han Solo, Chewbacca')
       login_as(create(:user, :level_two, geozone: geozone))
       visit poll_path(poll)
-      save_and_open_page
 
       expect(page).to have_link('Han Solo')
       expect(page).to have_link('Chewbacca')
