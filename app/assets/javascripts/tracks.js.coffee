@@ -9,7 +9,6 @@ App.Tracks =
     _paq.push(['trackPageView',  App.Tracks.page_title()])
 
   track_event: ->
-    App.Tracks.ajax_sanity_check()
     tracking_data   = $("#tracking_events")
     category        = tracking_data.data('track-event-category')
     action          = tracking_data.data('track-event-action')
