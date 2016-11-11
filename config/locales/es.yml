@@ -257,6 +257,9 @@ es:
       spending_proposals: Presupuestos participativos
       proposal_ballot: Votaciones
       spending_proposals: Presupuestos ciudadanos
+      sign_up: Regístrate para participar
+      sign_in: Si ya tienes una cuenta %{login}.
+      sign_in_link: entra ahora
   locale: Español
   notifications:
     index:
@@ -750,7 +753,8 @@ es:
       description: Si la propuesta es aceptada mayoritariamente, el Ayuntamiento la asume como propia y se hace.
       title: Se hace
     featured:
-      page_title: Destacados
+      title: Procesos abiertos
+      see_all: Ver todos los procesos
       proposals:
         link: Ver propuestas
         text: Crear tus propias propuestas y apoya las de otros ciudadanos.

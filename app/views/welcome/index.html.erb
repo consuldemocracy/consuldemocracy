@@ -1,56 +1,43 @@
-<% cache ["welcome_index_20161108", display_budget_countdown?] do %>
-  <div class="expanded home-page padding no-margin-top">
+<% cache ["welcome_index_20161111", display_budget_countdown?] do %>
+  <div class="expanded padding no-margin-top home-page">
     <div class="row">
       <div class="small-12 medium-8 column small-centered text-center">
         <h1><%= t("layouts.header.open_city_title") %></h1>
         <p><%= t("layouts.header.open_city_slogan_short") %></p>
+        <%= link_to t("layouts.header.sign_up"), new_user_registration_path , class: "button" %>
+        <p><%= t("layouts.header.sign_in",
+            login: link_to(t("layouts.header.sign_in_link"), new_user_session_path)).html_safe %></p>
       </div>
     </div>
   </div>
 
-  <% if display_budget_countdown? %>
-    <div class="expanded jumbo-counter padding">
-      <div class="row">
-        <div class="small-12 medium-6 column">
-          <h2><%= t("shared.counter.budget_text_html") %></h2>
-          <h3><%= t("shared.counter.budget_title") %></h3>
-          <div class="small-12 medium-6 small-centered">
-            <%= link_to t("shared.counter.budget_button"), participatory_budget_path, class: "button expanded" %>
-          </div>
-        </div>
-        <div class="small-12 medium-6 column">
-          <%= render "shared/budget_counter" %>
-        </div>
-      </div>
-    </div>
-  <% end %>
-
-  <% if @proposal_successfull_exists %>
-    <div class="expanded jumbo-proposal-ballots">
-      <div class="row">
-        <div class="small-12 medium-6 column padding">
-          <h2><%= t("proposal_ballots.featured_title") %></h2>
-          <h3><%= t("proposal_ballots.info") %></h3>
-          <div class="small-12 medium-6 small-centered">
-            <%= link_to t("proposal_ballots.button"), proposal_ballots_index_path, class: "button expanded" %>
-          </div>
-        </div>
-        <div class="small-12 medium-6 column">
-          <%= image_tag ("ballot_big.gif") %>
-        </div>
-      </div>
-    </div>
-  <% end %>
-
   <div class="expanded welcome-featured padding">
 
     <div class="row">
-      <div class="small-12 column margin">
-        <h2 class="featured"><%= t('welcome.featured.page_title') %></h2>
+      <div class="small-12 column">
+        <h2 class="featured inline-block"><%= t('welcome.featured.title') %></h2>
+        <%= link_to t('welcome.featured.see_all'), processes_path, class: "float-right margin-top" %>
       </div>
     </div>
 
     <div class="row" data-equalizer>
+
+      <!-- Próxima votación -->
+      <% if @proposal_successfull_exists %>
+        <div class="small-12 medium-4 column margin-top">
+          <div class="panel dark" data-equalizer-watch>
+            <h2><%= t("proposal_ballots.featured_title") %></h2>
+            <p class="info-date">
+              <span class="icon-calendar"></span>&nbsp;<strong>Próximamente</strong></p>
+            <p class="info">
+              <%= t("proposal_ballots.info") %>
+            </p>
+            <%= link_to t("proposal_ballots.button"), proposal_ballots_index_path, class: "button expanded margin-top" %>
+          </div>
+        </div>
+      <% end %>
+
+      <!-- Remodelación Plaza España -->
       <div class="small-12 medium-4 column margin-top">
         <div class="panel" data-equalizer-watch>
           <h2>#RemodelaciónPlazaEspaña</h2>
@@ -62,6 +49,7 @@
         </div>
       </div>
 
+      <!-- Alianza Gobierno Abierto -->
       <div class="small-12 medium-4 column margin-top">
         <div class="panel" data-equalizer-watch>
           <h2><%= t("banner.open_government.title") %></h2>
@@ -71,6 +59,7 @@
         </div>
       </div>
 
+      <!-- Ordenanza subvenciones -->
       <div class="small-12 medium-4 column margin-top">
         <div class="panel" data-equalizer-watch>
           <h2><%= t("banner.subvention_ordinance.title") %></h2>
@@ -80,6 +69,7 @@
         </div>
       </div>
 
+      <!-- Licencias urbanísticas -->
       <div class="small-12 medium-4 column margin-top end">
         <div class="panel" data-equalizer-watch>
           <h2><%= t("banner.urbanistic_licenses.title") %></h2>
@@ -92,58 +82,6 @@
   </div>
 
   <%= render "featured_welcome" %>
-
-  <div class="expanded padding featured-welcome features">
-    <div class="row" data-equalizer>
-      <div class="small-12 medium-6 column">
-        <div class="panel" data-equalizer-watch>
-          <div class="small-12 medium-3 column text-left">
-            <%= image_tag("icon_home_debate.png", size: "80x80", alt: "", title: t("welcome.debates.title")) %>
-          </div>
-          <div class="small-12 medium-9 column">
-            <h2><%= t("welcome.debates.title") %></h2>
-            <p><%= t("welcome.debates.description") %></p>
-          </div>
-        </div>
-      </div>
-
-      <div class="small-12 medium-6 column">
-        <div class="panel" data-equalizer-watch>
-          <div class="small-12 medium-3 column text-left">
-            <%= image_tag("icon_home_proposal.png", size: "80x80", alt: "", title: t("welcome.proposal.title"))  %>
-          </div>
-          <div class="small-12 medium-9 column">
-            <h2><%= t("welcome.proposal.title") %></h2>
-            <p><%= t("welcome.proposal.description") %></p>
-          </div>
-        </div>
-      </div>
-
-      <div class="small-12 medium-6 column">
-        <div class="panel" data-equalizer-watch>
-          <div class="small-12 medium-3 column text-left">
-            <%= image_tag("icon_home_decide.png", size: "80x80", alt: "", title: t("welcome.decide.title")) %>
-          </div>
-          <div class="small-12 medium-9 column">
-            <h2><%= t("welcome.decide.title") %></h2>
-            <p><%= t("welcome.decide.description") %></p>
-          </div>
-        </div>
-      </div>
-
-      <div class="small-12 medium-6 column">
-        <div class="panel" data-equalizer-watch>
-          <div class="small-12 medium-3 column text-left">
-            <%= image_tag("icon_home_do.png", size: "80x80", alt: "", title: t("welcome.do.title")) %>
-          </div>
-          <div class="small-12 medium-9 column">
-            <h2><%= t("welcome.do.title") %></h2>
-            <p><%= t("welcome.do.description") %></p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
 
   <div class="row padding slogan">
     <div class="small-12 medium-8 column small-centered text-center">

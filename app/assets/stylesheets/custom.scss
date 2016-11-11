@@ -169,23 +169,20 @@ blockquote p {
     h1 {
       font-size: rem-calc(60);
       line-height: rem-calc(72);
-      margin-top: rem-calc(18);
     }
-  }
-
-  p {
-    font-size: rem-calc(24);
-    line-height: rem-calc(36);
   }
 
   h1, p, a {
     color: white;
   }
 
+  a:not(.button) {
+    text-decoration: underline;
+  }
+
   .button {
-    background: none;
-    border: 1px solid white;
-    color: white;
+    background: white;
+    color: $brand;
   }
 }
 
@@ -2516,6 +2513,32 @@ ul.ballot-list {
     font-size: $line-height;
   }
 
+  .panel {
+
+    [class^="icon-"] {
+      left: 0;
+      position: absolute;
+      top: 2px;
+    }
+
+    &.dark {
+      background: #2D3E50;
+
+      h2, p.info-date {
+        color: #FFD200;
+      }
+
+      p {
+        color: white;
+      }
+
+      .button {
+        background: #FFD200;
+        color: $text;
+      }
+    }
+  }
+
   p {
 
     &.info {
@@ -2525,6 +2548,8 @@ ul.ballot-list {
     &.info-date {
       color: $brand;
       font-size: $small-font-size;
+      padding-left: rem-calc(16);
+      position: relative;
     }
   }
 }

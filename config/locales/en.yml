@@ -257,6 +257,9 @@ en:
       spending_proposals: Participatory budgeting
       proposal_ballot: Voting
       spending_proposals: Spending proposals
+      sign_up: Sign up to participate
+      sign_in: If you have an account %{login}.
+      sign_in_link: enter now
   locale: English
   notifications:
     index:
@@ -750,7 +753,8 @@ en:
       description: If the proposal is accepted by the majority, the City Council accepts it as its own and it gets done.
       title: It gets done
     featured:
-      page_title: Featured
+      title: Open processes
+      see_all: See all processes
       proposals:
         link: See proposals
         text: Create your own proposals and supports those of other citizens.
