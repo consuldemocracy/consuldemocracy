@@ -319,6 +319,13 @@ FactoryGirl.define do
     valid_answers { Faker::Lorem.words(3).join(', ') }
   end
 
+  factory :poll_partial_result, class: 'Poll::PartialResult' do
+    association :question, factory: :poll_question
+    association :author, factory: :user
+    origin { 'web' }
+    answer { question.verified_answers.sample }
+  end
+
   factory :organization do
     user
     responsible_name "Johnny Utah"
