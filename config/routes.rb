@@ -325,6 +325,7 @@ Rails.application.routes.draw do
   get 'processes/urbanismo-bancos', to: 'probes#show', id: 'town_planning', as: 'town_planning'
   get 'processes/urbanismo-bancos-gracias', to: 'probes#thanks', id: 'town_planning', as: 'town_planning_thanks'
   get 'proceso/plaza-espana-resultados', to: 'probes#show', id: 'plaza', as: 'plaza'
+  get 'proceso/plaza-espana',            to: 'probes#show', id: 'plaza', as: 'plaza'
   get 'proceso/plaza-espana-gracias', to: 'probes#thanks', id: 'plaza', as: 'plaza_thanks'
   get 'proceso/plaza-espana/proyectos/:id', to: 'probe_options#show', probe_id: 'plaza', as: 'plaza_probe_option'
 
