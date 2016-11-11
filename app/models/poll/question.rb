@@ -9,6 +9,7 @@ class Poll::Question < ActiveRecord::Base
 
   has_many :comments, as: :commentable
   has_many :answers
+  has_many :partial_results
   has_and_belongs_to_many :geozones
   belongs_to :proposal
 
@@ -21,7 +22,7 @@ class Poll::Question < ActiveRecord::Base
   validates :description, length: { maximum: Poll::Question.description_max_length }
   validates :question, length: { in: 10..Poll::Question.question_max_length }
 
-  scope :sort_for_list, -> { order('proposal_id IS NULL', :created_at)}
+  scope :sort_for_list, -> { order('poll_questions.proposal_id IS NULL', :created_at)}
   scope :for_render, -> { includes(:author, :proposal) }
   scope :by_geozone, -> (geozone_id) { joins(:geozones).where(geozones: {id: geozone_id}) }
 
