@@ -29,9 +29,9 @@
   <div id="<%= dom_id(question) %>">
     <%= question.title %>
 
-    <% question.valid_answers.each do |valid_answer| %>
-      <%= link_to valid_answer %>
-    <% end %>
+    <div class="row margin-top text-center" id="<%= dom_id(question) %>_answers">
+      <%= render 'poll/questions/answers', question: question %>
+    </div>
   </div>
 <% end %>
 
@@ -46,8 +46,8 @@
   <div id="<%= dom_id(question) %>">
     <%= question.title %>
 
-    <% question.valid_answers.each do |valid_answer| %>
-      <span><%= valid_answer %></span>
-    <% end %>
+    <div class="row margin-top text-center" id="<%= dom_id(question) %>_answers">
+      <%= render 'poll/questions/answers', question: question %>
+    </div>
   </div>
 <% end %>

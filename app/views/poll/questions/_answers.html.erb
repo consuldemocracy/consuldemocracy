@@ -1,0 +1,23 @@
+<div class="enquiries-answers">
+  <% if can? :answer, question %>
+    <div class="small-12 small-centered text-center column">
+      <% question.valid_answers.each do |answer| %>
+        <% if @answers_by_question_id[question.id] == answer %>
+          <span class="button answered-fixme-decabeza">
+            <%= answer %>
+          </span>
+        <% else %>
+          <%= link_to answer,
+            answer_poll_question_path(poll_id: question.poll_id, question_id: question.id, answer: answer),
+              method: :post,
+              remote: true,
+              class: "button secondary hollow" %>
+        <% end %>
+      <% end %>
+    </div>
+  <% else %>
+    <% question.valid_answers.each do |answer| %>
+      <span class="button deactivated-fixme-decabeza"><%= answer %></span>
+    <% end %>
+  <% end %>
+</div>
