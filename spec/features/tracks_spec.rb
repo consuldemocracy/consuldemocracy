@@ -154,16 +154,18 @@ feature 'Tracking' do
       expect(page).to have_css("span[data-track-event-category='Propuesta']")
       expect(page).to have_css("span[data-track-event-action='Apoyar']")
       expect(page).to have_css("span[data-track-event-name='#{proposal.id}']")
-      expect(page).to have_css("span[data-track-event-dimension='6']")
-      expect(page).to have_css("span[data-track-event-dimension-value='Posición']")
     end
 
     scenario 'Proposal ranking', :js do
       user = create(:user, :level_two)
 
-      create(:proposal, title: 'Medium proposal').update_column(:confidence_score, 5)
-      create(:proposal, title: 'Best proposal').update_column(:confidence_score, 10)
-      create(:proposal, title: 'Worst proposal').update_column(:confidence_score, 2)
+      medium = create(:proposal, title: 'Medium proposal')
+      best   = create(:proposal, title: 'Best proposal')
+      worst  = create(:proposal, title: 'Worst proposal')
+
+      10.times { create(:vote, votable: best)   }
+      5.times  { create(:vote, votable: medium) }
+      2.times  { create(:vote, votable: worst)  }
 
       login_as(user)
 
@@ -174,17 +176,22 @@ feature 'Tracking' do
       expect(page).to have_css("span[data-track-event-category='Propuesta']")
       expect(page).to have_css("span[data-track-event-action='Apoyar']")
       expect(page).to have_css("span[data-track-event-custom-value='1']")
-      expect(page).to have_css("span[data-proposal-rank='1']")
+      expect(page).to have_css("span[data-track-event-dimension='6']")
+      expect(page).to have_css("span[data-track-event-dimension-value='1']")
 
       visit proposals_path
       click_link 'Medium proposal'
+      find('.in-favor a').click
 
-      expect(page).to have_css("span[data-proposal-rank='2']")
+      expect(page).to have_css("span[data-track-event-custom-value='2']")
+      expect(page).to have_css("span[data-track-event-dimension-value='2']")
 
       visit proposals_path
       click_link 'Worst proposal'
+      find('.in-favor a').click
 
-      expect(page).to have_css("span[data-proposal-rank='3']")
+      expect(page).to have_css("span[data-track-event-custom-value='3']")
+      expect(page).to have_css("span[data-track-event-dimension-value='3']")
     end
 
     scenario 'Create a proposal' do

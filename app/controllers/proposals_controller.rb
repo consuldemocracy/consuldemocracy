@@ -39,7 +39,7 @@ class ProposalsController < ApplicationController
     @proposal.register_vote(current_user, 'yes')
     set_proposal_votes(@proposal)
     load_rank
-    log_event("proposal", 'support', @proposal.id, @proposal_rank, 6, 'position')
+    log_event("proposal", 'support', @proposal.id, @proposal_rank, 6, @proposal_rank)
   end
 
   def retire
