@@ -257,6 +257,9 @@ en:
       spending_proposals: Participatory budgeting
       proposal_ballot: Voting
       spending_proposals: Spending proposals
+      sign_up: Sign up to participate
+      sign_in: If you have an account %{login}.
+      sign_in_link: enter now
   locale: English
   notifications:
     index:
@@ -471,7 +474,6 @@ en:
     counter:
       budget_title: Participatory budgets
       budget_text_html: "Participates until <span>June 30</span>!"
-      budget_button: Participates in the final vote
       days: Days
       hours: Hours
       minutes: Minutes
@@ -740,17 +742,9 @@ en:
       confirm_discard_delegation: "If you vote you will stop delegating. "
       no_ballots_allowed: No ballots allowed
   welcome:
-    debates:
-      description: For meeting, discussing and sharing the things that matter to us in our city.
-      title: Debates
-    decide:
-      description: The public decides if it accepts or rejects the most supported proposals.
-      title: You decide
-    do:
-      description: If the proposal is accepted by the majority, the City Council accepts it as its own and it gets done.
-      title: It gets done
     featured:
-      page_title: Featured
+      title: Open processes
+      see_all: See all processes
       proposals:
         link: See proposals
         text: Create your own proposals and supports those of other citizens.
@@ -762,9 +756,6 @@ en:
         text: You decide how to invest 60 million euros to your city.
         title: Participatory budgeting
     more_information: More information about %{org_name}
-    proposal:
-      description: Open space for citizen proposals about the kind of city we want to live in.
-      title: You propose
     verification:
       i_dont_have_an_account: I don't have an account
       i_have_an_account: I already have an account

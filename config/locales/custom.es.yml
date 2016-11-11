@@ -37,7 +37,17 @@ es:
     banner:
       title: "#PlanDerechosHumanos"
       text_html: "¡Participa hasta el <u>4 de noviembre</u>!"
-  banner:
+  cards:
+    proposal_ballots:
+      title: "#PróximaVotación"
+      text: "Nuevas propuestas ciudadanas han llegado a la fase de votación."
+      date_html: "Próximamente"
+      button: "Quiero decidir"
+    plaza:
+      title: "#RemodelaciónPlazaEspaña"
+      text: "La preselección ciudadana de los proyectos ha terminado. Ya puedes ver los resultados."
+      date_html: "Resultados <strong>disponibles</strong>"
+      button: "Ver resultados"
     urbanistic_licenses:
       title: "#LicenciasUrbanísticas"
       text: "Consulta previa sobre la regulación de la concesión de licencias urbanísticas para la realización de obras y la apertura de locales comerciales o empresariales."
