@@ -55,10 +55,6 @@ App.Tracks =
   proposal_show_page: ->
     $("#js-tracking").data('proposal-show')
 
-  ajax_sanity_check: ->
-    message = "JS initialized on ajax request to: " + window.location.pathname
-    $("#js-ajax-sanity-check").html(message)
-
   initialize: ->
     if App.Tracks.tracking_enabled()
 
