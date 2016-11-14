@@ -8,7 +8,7 @@
           </span>
         <% else %>
           <%= link_to answer,
-            answer_poll_question_path(poll_id: question.poll_id, question_id: question.id, answer: answer),
+            answer_poll_question_path(poll_id: question.poll_id, id: question.id, answer: answer),
               method: :post,
               remote: true,
               class: "button secondary hollow" %>

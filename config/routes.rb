@@ -86,7 +86,7 @@ Rails.application.routes.draw do
   end
 
   resources :polls, only: [:show, :index] do
-    resources :questions, only: [] do
+    resources :questions, only: [], controller: 'polls/questions' do
       post :answer, on: :member
     end
   end

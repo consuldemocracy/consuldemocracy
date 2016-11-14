@@ -1,7 +1,7 @@
 class Polls::QuestionsController < ApplicationController
 
   load_and_authorize_resource :poll
-  load_and_authorize_resource :question, through: :poll
+  load_and_authorize_resource :question, class: 'Poll::Question', through: :poll
 
   def answer
     partial_result = @question.partial_results.find_or_initialize_by(author: current_user,
