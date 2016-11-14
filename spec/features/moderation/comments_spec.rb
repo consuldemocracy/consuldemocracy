@@ -192,5 +192,55 @@ feature 'Moderate comments' do
       expect("Flagged comment").to appear_before("Flagged newer comment")
       expect("Flagged newer comment").to appear_before("Newer comment")
     end
+
+    context "Commentables" do
+
+      scenario 'Proposal' do
+        proposal = create(:proposal)
+        comment  = create(:comment, :flagged, commentable: proposal)
+
+        moderator = create(:moderator)
+        login_as(moderator.user)
+
+       visit moderation_comments_path
+
+        expect(page).to have_content "Proposal"
+        expect(page).to have_link proposal.title, href: proposal_path(proposal)
+        expect(page).to have_content comment.body
+      end
+
+      scenario 'Debate' do
+        debate = create(:debate)
+        comment  = create(:comment, :flagged, commentable: debate)
+
+        visit moderation_comments_path
+
+        expect(page).to have_content "Debate"
+        expect(page).to have_link debate.title, href: debate_path(debate)
+        expect(page).to have_content comment.body
+      end
+
+      scenario 'Spending Proposal' do
+        spending_proposal = create(:spending_proposal)
+        comment  = create(:comment, :flagged, commentable: spending_proposal)
+
+        visit moderation_comments_path
+
+        expect(page).to have_content "Spending Proposal"
+        expect(page).to have_link spending_proposal.title, href: spending_proposal_path(spending_proposal)
+        expect(page).to have_content comment.body
+      end
+
+      scenario 'Probe Option' do
+        probe_option = create(:probe_option)
+        comment  = create(:comment, :flagged, commentable: probe_option)
+
+        visit moderation_comments_path
+
+        expect(page).to have_content "Probe option"
+        expect(page).to have_link probe_option.name, href: probe_probe_option_path(probe_option.probe.codename, probe_option.id)
+        expect(page).to have_content comment.body
+      end
+    end
   end
 end
