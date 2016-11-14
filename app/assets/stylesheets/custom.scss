@@ -749,6 +749,12 @@ table {
   }
 }
 
+.menu.border-bottom {
+  border-bottom: 1px solid $border;
+  margin-bottom: $line-height;
+  padding-bottom: $line-height/4;
+}
+
 .section-title {
   background: $brand;
   color: white;
