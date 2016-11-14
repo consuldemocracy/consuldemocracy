@@ -23,6 +23,11 @@
 // 01. Global styles
 // -----------------
 
+::selection {
+  color: white;
+  background-color: $brand;
+}
+
 body {
   font-size: $base-font-size;
 }
@@ -35,7 +40,7 @@ h1, h2, h3, h4, h5, h6 {
 p {
   font-size: $base-font-size;
   font-weight: 400;
-  line-height: $base-line-height;
+  line-height: $base-line;
 }
 
 a {
@@ -146,10 +151,6 @@ a {
   margin: 0 auto (-$line-height)*12;
   height: auto !important;
   height: 100%;
-}
-
-.wrap {
-  background: white;
 }
 
 .footer, .push {
@@ -486,7 +487,7 @@ header {
 // ----------
 
 footer {
-  color: $footer-color;
+  color: $text;
 
   .logo a {
     font-family: 'Lato' !important;
@@ -506,10 +507,11 @@ footer {
   }
 
   a, a:active, a:focus {
-    color: $footer-link;
+    color: $text;
+    text-decoration: underline;
 
     &:hover {
-      color: $footer-color;
+      color: $text-medium;
     }
   }
 
@@ -518,7 +520,7 @@ footer {
   }
 
   h2 a {
-    border-bottom: 1px solid $footer-border;
+    border-bottom: 1px solid $text-light;
     display: block;
     font-size: rem-calc(24);
     line-height: rem-calc(31);
@@ -528,14 +530,14 @@ footer {
 }
 
 .footer {
-  background: $footer-bg;
+  background: $border;
   border-top: 6px solid $brand;
   margin-top: $line-height*2;
   padding-top: $line-height;
 }
 
 .subfooter {
-  border-top: 1px solid $footer-border;
+  border-top: 1px solid $text-light;
   padding-top: $line-height/2;
 }
 
@@ -562,8 +564,8 @@ footer {
   color: $link;
 
   &:hover {
-    background: $highlight;
-    color: $link-hover;
+    background: $brand;
+    color: white;
   }
 }
 
@@ -1000,15 +1002,6 @@ img.avatar, img.admin-avatar, img.moderator-avatar, img.initialjs-avatar {
 
 // 09. Search
 // ----------
-
-.search-form h3 {
-  border-top: 1px solid $votes-border;
-  display: inline-block;
-  font-size: rem-calc(16);
-  margin: -1px 0 $line-height/2;
-  padding-top: $line-height/4;
-  text-transform: uppercase;
-}
 
 .search-results h2 {
   margin-bottom: 0;
@@ -1587,6 +1580,7 @@ table {
         font-size: $small-font-size;
         margin: rem-calc(6) 0;
         padding: rem-calc(6);
+        position: relative;
 
         [class^="icon-arrow"] {
           font-size: rem-calc(18);

@@ -12,15 +12,14 @@
 // ----------------------
 
 @mixin votes {
-  background: $votes-bg;
-  border-top: 1px solid $votes-border;
+  background: $votes;
   margin: 0 rem-calc(-12);
   padding: rem-calc(14) rem-calc(12);
   position: relative;
 
-  .icon-like {
+  .icon-like, .icon-unlike {
     background: white;
-    border: 2px solid $votes-border;
+    border: 2px solid $votes;
     border-radius: rem-calc(3);
     color: $text-light;
     display: inline-block;
@@ -29,40 +28,25 @@
     padding: rem-calc(3) rem-calc(6);
     position: relative;
 
-    &:hover {
-      background: $votes-like;
+    &:hover, &:active {
       border-color: white;
       color: white;
       cursor: pointer;
       opacity: 1 !important;
     }
+  }
 
-    &:active {
-      border-color: $votes-like-act;
+  .icon-like {
+
+    &:hover, &:active {
+      background: $like;
     }
   }
 
   .icon-unlike {
-    background: white;
-    border: 2px solid $votes-border;
-    border-radius: rem-calc(3);
-    color: $text-light;
-    display: inline-block;
-    font-size: rem-calc(30);
-    line-height: rem-calc(30);
-    padding: rem-calc(3) rem-calc(6);
-    position: relative;
 
-    &:hover {
-      background: $votes-unlike;
-      border-color: white;
-      color: white;
-      cursor: pointer;
-      opacity: 1 !important;
-    }
-
-    &:active {
-      border-color: $votes-unlike-act;
+    &:hover, &:active {
+      background: $unlike;
     }
   }
 
@@ -81,20 +65,23 @@
   }
 
   .voted {
-    .icon-like {
-      background: $votes-like;
+
+    .icon-like, .icon-unlike {
       border-color: white;
       color: white;
     }
 
+    .icon-like {
+      background: $like;
+    }
+
     .icon-unlike {
-      background: $votes-unlike;
-      border-color: white;
-      color: white;
+      background: $unlike;
     }
   }
 
   .no-voted {
+
     .icon-like, .icon-unlike {
       opacity: .5;
     }
@@ -109,54 +96,10 @@
   .divider {
     margin: 0 rem-calc(6);
   }
-
-  .not-logged {
-    background: rgba(22,99,135,.9);
-    color: white;
-    font-size: $small-font-size;
-    height: 100%;
-    left: 0;
-    position: absolute;
-    text-align: center;
-    top: 0;
-    width: 100%;
-    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#222222', endColorstr='#222222'); /* IE */
-
-    a {
-      color: white;
-      text-decoration: underline;
-    }
-  }
-
-  .anonymous-votes, .organizations-votes {
-    background: $warning-bg;
-    color: $color-warning;
-    height: 100%;
-    left: 0;
-    line-height: $line-height;
-    padding-top: rem-calc(12);
-    position: absolute;
-    text-align: center;
-    top: 0;
-    width: 100%;
-
-    p {
-      color: $color-warning;
-      margin: 0 rem-calc(12);
-      text-align: left;
-    }
-
-    a {
-      color: $color-warning;
-      font-weight: bold;
-      text-decoration: underline;
-    }
-  }
 }
 
 @mixin supports {
   background: $proposals;
-  border-top: 1px solid $proposals-border;
   margin: 0 rem-calc(-12);
   padding: rem-calc(14) rem-calc(12);
   position: relative;
@@ -166,7 +109,7 @@
     height: $line-height/2;
 
     .meter {
-      background: $votes-like;
+      background: $like;
       display: block;
       height: $line-height/2;
     }
@@ -197,7 +140,7 @@
     margin-top: rem-calc(12);
 
     &:hover {
-      background: $proposals-border;
+      background: darken($proposals, 35%);
       color: white;
       cursor: pointer;
     }
@@ -221,49 +164,6 @@
     margin: 0 rem-calc(6);
   }
 
-  .not-logged {
-    background: rgba(255,164,45,.9);
-    color: white;
-    font-size: $small-font-size;
-    height: 100%;
-    left: 0;
-    position: absolute;
-    text-align: center;
-    top: 0;
-    width: 100%;
-    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#222222', endColorstr='#222222'); /* IE */
-
-    a {
-      color: white;
-      text-decoration: underline;
-    }
-  }
-
-  .anonymous-votes, .organizations-votes, .no-supports-allowed {
-    background: $warning-bg;
-    color: $color-warning;
-    height: 100%;
-    left: 0;
-    line-height: $line-height;
-    padding-top: rem-calc(12);
-    position: absolute;
-    text-align: center;
-    top: 0;
-    width: 100%;
-
-    p {
-      color: $color-warning;
-      margin: 0 rem-calc(12);
-      text-align: left;
-    }
-
-    a {
-      color: $color-warning;
-      font-weight: bold;
-      text-decoration: underline;
-    }
-  }
-
   .supported {
     color: white;
     margin-top: rem-calc(12);
@@ -285,32 +185,61 @@
   }
 }
 
+.participation-not-allowed {
+  background: $warning-bg;
+  color: $color-warning;
+  height: 100%;
+  left: 0;
+  line-height: $line-height;
+  padding: $line-height $line-height/2;
+  position: absolute;
+  text-align: center;
+  top: 0;
+  width: 100%;
+  z-index: 2;
+
+  p {
+    color: $color-warning !important;
+    margin: 0 rem-calc(12);
+    text-align: left;
+  }
+
+  a {
+    color: $color-warning !important;
+    font-weight: bold;
+    text-decoration: underline;
+  }
+}
+
+.reply .participation-not-allowed {
+  padding-right: $line-height/2;
+  padding-top: $line-height/6;
+  text-align: right;
+}
+
 // 02. New participation
 // ---------------------
 
-.debate-new, .debate-edit,
-.proposal-new, .proposal-edit,
-.spending-proposal-new, .spending-proposal-edit {
+.debate-form,
+.proposal-form,
+.spending-proposal-form {
+
+  .icon-debates, .icon-proposals, .icon-budget {
+    font-size: rem-calc(50);
+    line-height: $line-height;
+    opacity: .5;
+  }
 
   .icon-debates {
     color: $debates;
-    font-size: rem-calc(60);
-    line-height: $line-height;
-    opacity: .5;
   }
 
   .icon-proposals {
     color: $proposals;
-    font-size: rem-calc(50);
-    line-height: $line-height;
-    opacity: .5;
   }
 
   .icon-budget {
     color: $budget;
-    font-size: rem-calc(50);
-    line-height: $line-height;
-    opacity: .5;
   }
 
   .recommendations {
@@ -330,14 +259,14 @@
   }
 }
 
-.debate-new, .debate-edit {
+.debate-form {
 
   .recommendations li:before {
     color: $debates;
   }
 }
 
-.proposal-new, .proposal-edit {
+.proposal-form {
 
   .recommendations li:before {
     color: $proposals;
@@ -496,11 +425,6 @@
       line-height: $line-height;
     }
 
-    .not-logged {
-      line-height: $line-height;
-      padding: rem-calc(24);
-    }
-
     @include breakpoint(small + rem-calc(1) and medium down) {
       .in-favor, .against {
         text-align: left;
@@ -529,11 +453,6 @@
       display: block;
       float: none;
       line-height: $line-height;
-    }
-
-    .not-logged {
-      line-height: $line-height;
-      padding: rem-calc(24);
     }
   }
 
@@ -711,15 +630,6 @@
     }
   }
 
-  .not-logged {
-    line-height: $line-height;
-    padding-top: rem-calc(24);
-  }
-
-  .anonymous-votes, .organizations-votes {
-    padding-top: rem-calc(24);
-  }
-
   .divider {
     display: none;
   }
@@ -745,7 +655,7 @@
 
   .votes {
     @include votes;
-    border: 1px solid $votes-border;
+    border: 1px solid $votes;
     margin: 0 rem-calc(-12);
 
     @include breakpoint(medium) {
@@ -803,7 +713,7 @@
 
   .supports {
     @include supports;
-    border: 1px solid $proposals-border;
+    border: 1px solid $proposals;
     margin: 0 rem-calc(-12);
 
     @include breakpoint(medium) {
@@ -904,16 +814,6 @@
       line-height: rem-calc(70);
     }
 
-    .no-supports-allowed {
-      background: rgba(69,67,114,.96);
-      color: white;
-      padding: rem-calc(12);
-    }
-
-    .no-supports-allowed p, .no-supports-allowed a {
-      color: white;
-    }
-
     .share-supported {
 
       .ssb-twitter,
@@ -1006,18 +906,13 @@
       margin-top: 0;
     }
 
-    .not-logged,
-    .organizations-votes,
-    .anonymous-votes {
+    .participation-not-allowed {
       background: $featured;
-      color: $color-warning;
       font-size: $small-font-size;
-      line-height: $line-height;
       padding-top: 0;
 
       a {
         color: $color-warning;
-        font-weight: bold;
       }
 
       p {

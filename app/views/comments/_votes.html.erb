@@ -33,7 +33,7 @@
 
   <% elsif !user_signed_in? %>
 
-    <div class="logged" >
+    <div class="participation-allowed">
       <%= t('comments.comment.votes', count: comment.total_votes) %>
       &nbsp;|&nbsp;
 
@@ -60,7 +60,7 @@
         <%= comment.total_dislikes %>
       </span>
      </div>
-    <div class="not-logged" style='display:none'>
+    <div class="participation-not-allowed" style='display:none' aria-hidden="false">
       <%= t("votes.comment_unauthenticated",
         signin: link_to(t("votes.signin"), new_user_session_path),
         signup: link_to(t("votes.signup"), new_user_registration_path)).html_safe %>

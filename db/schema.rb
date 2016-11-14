@@ -484,17 +484,17 @@ ActiveRecord::Schema.define(version: 20161107174423) do
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                                     default: ""
-    t.string   "encrypted_password",                        default: "",    null: false
+    t.string   "encrypted_password",                        default: "",                    null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",                             default: 0,     null: false
+    t.integer  "sign_in_count",                             default: 0,                     null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.datetime "created_at",                                                null: false
-    t.datetime "updated_at",                                                null: false
+    t.datetime "created_at",                                                                null: false
+    t.datetime "updated_at",                                                                null: false
     t.string   "confirmation_token"
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
@@ -535,7 +535,7 @@ ActiveRecord::Schema.define(version: 20161107174423) do
     t.boolean  "email_digest",                              default: true
     t.boolean  "email_on_direct_message",                   default: true
     t.boolean  "official_position_badge",                   default: false
-    t.datetime "password_changed_at"
+    t.datetime "password_changed_at",                       default: '2016-11-02 13:51:14', null: false
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree
