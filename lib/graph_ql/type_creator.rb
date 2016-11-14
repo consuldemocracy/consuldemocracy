@@ -19,7 +19,7 @@ module GraphQL
         # Make a field for each column
         field_names.each do |field_name|
           if model.column_names.include?(field_name.to_s)
-            field(field_name.to_s, TYPES_CONVERSION[field_name])
+            field(field_name.to_s, TYPES_CONVERSION[model.columns_hash[field_name.to_s].type])
           else
             association = model.reflect_on_all_associations.find { |a| a.name == field_name }
             case association.macro
