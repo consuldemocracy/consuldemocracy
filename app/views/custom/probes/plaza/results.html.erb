@@ -2,13 +2,21 @@
 
 <%= render "shared/plaza_espana_header" %>
 
-<div class="row survey-results">
+<div class="row">
+  <div class="small-12 column">
+    <ul class="expanded menu text-center border-bottom">
+      <li><a href="#title_1"><strong>Finalistas de la preselección</strong></a></li>
+      <li><a href="#title_2"><strong>Resultado de la votación ciudadana</strong></a></li>
+      <li><a href="#title_3"><strong>Resultado de la encuesta</strong></a></li>
+    </ul>
+  </div>
+</div>
 
-  <hr>
+<div class="row survey-results">
 
   <div class="small-12 column">
 
-    <h2 class="subtitle">Finalistas de la preselección</h2>
+    <h2 id="title_1" class="subtitle">Finalistas de la preselección</h2>
 
     <div class="small-12 medium-9">
       <p>La selección de los finalistas realizada por el jurado ha tenido en cuenta la votación ciudadana según lo especificado en las bases del concurso, otorgando de 5 a 1 puntos a los 5 proyectos más votados.</p>
@@ -38,7 +46,7 @@
 
     <hr class="double">
 
-    <h2 class="subtitle">Resultado de la votación ciudadana</h2>
+    <h2 id="title_2" class="subtitle">Resultado de la votación ciudadana</h2>
 
     <table>
       <thead>
