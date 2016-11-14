@@ -98,10 +98,6 @@
           </div>
         <% end %>
 
-        <% unless @proposal.proceeding? %>
-          <h4><%= @proposal.question %></h4>
-        <% end %>
-
         <% if @proposal.retired? %>
           <div id="retired_explanation" class="callout">
             <h2>
