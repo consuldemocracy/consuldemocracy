@@ -191,12 +191,7 @@ feature 'Proposals' do
     login_as(author)
 
     visit new_proposal_path
-    fill_in 'proposal_title', with: 'I am a bot'
-    fill_in 'proposal_summary', with: 'This is the summary'
-    fill_in 'proposal_description', with: 'This is the description'
-    fill_in 'proposal_external_url', with: 'http://google.com/robots.txt'
-    fill_in 'proposal_responsible_name', with: 'Some other robot'
-    check 'proposal_terms_of_service'
+    fill_in_proposal
 
     click_button 'Create proposal'
 
@@ -210,11 +205,7 @@ feature 'Proposals' do
     login_as(author)
 
     visit new_proposal_path
-    fill_in 'proposal_title', with: 'Help refugees'
-    fill_in 'proposal_summary', with: 'In summary, what we want is...'
-    fill_in 'proposal_description', with: 'This is very important because...'
-    fill_in 'proposal_external_url', with: 'http://rescue.org/refugees'
-    fill_in 'proposal_responsible_name', with: 'Isabel Garcia'
+    fill_in_proposal
     fill_in 'proposal_responsible_name', with: 'Isabel Garcia'
     check 'proposal_terms_of_service'
 
@@ -256,17 +247,12 @@ feature 'Proposals' do
     login_as(author)
 
     visit new_proposal_path
-    fill_in 'proposal_title', with: 'Testing an attack'
-    fill_in 'proposal_summary', with: 'In summary, what we want is...'
+    fill_in_proposal
     fill_in 'proposal_description', with: '<p>This is <script>alert("an attack");</script></p>'
-    fill_in 'proposal_external_url', with: 'http://rescue.org/refugees'
-    fill_in 'proposal_responsible_name', with: 'Isabel Garcia'
-    check 'proposal_terms_of_service'
 
     click_button 'Create proposal'
 
     expect(page).to have_content 'Proposal created successfully.'
-    expect(page).to have_content 'Testing an attack'
     expect(page.html).to include '<p>This is alert("an attack");</p>'
     expect(page.html).to_not include '<script>alert("an attack");</script>'
     expect(page.html).to_not include '&lt;p&gt;This is'
@@ -277,16 +263,12 @@ feature 'Proposals' do
     login_as(author)
 
     visit new_proposal_path
-    fill_in 'proposal_title', with: 'Testing auto link'
-    fill_in 'proposal_summary', with: 'In summary, what we want is...'
+    fill_in_proposal
     fill_in 'proposal_description', with: '<p>This is a link www.example.org</p>'
-    fill_in 'proposal_responsible_name', with: 'Isabel Garcia'
-    check 'proposal_terms_of_service'
 
     click_button 'Create proposal'
 
     expect(page).to have_content 'Proposal created successfully.'
-    expect(page).to have_content 'Testing auto link'
     expect(page).to have_link('www.example.org', href: 'http://www.example.org')
   end
 
@@ -295,16 +277,12 @@ feature 'Proposals' do
     login_as(author)
 
     visit new_proposal_path
-    fill_in 'proposal_title', with: 'Testing auto link'
-    fill_in 'proposal_summary', with: 'In summary, what we want is...'
+    fill_in_proposal
     fill_in 'proposal_description', with: "<script>alert('hey')</script> <a href=\"javascript:alert('surprise!')\">click me<a/> http://example.org"
-    fill_in 'proposal_responsible_name', with: 'Isabel Garcia'
-    check 'proposal_terms_of_service'
 
     click_button 'Create proposal'
 
     expect(page).to have_content 'Proposal created successfully.'
-    expect(page).to have_content 'Testing auto link'
     expect(page).to have_link('http://example.org', href: 'http://example.org')
     expect(page).not_to have_link('click me')
     expect(page.html).to_not include "<script>alert('hey')</script>"
@@ -328,7 +306,6 @@ feature 'Proposals' do
       health    = create(:tag, name: 'Health',    kind: 'category')
 
       visit new_proposal_path
-
       fill_in 'proposal_title', with: 'Help refugees'
       fill_in 'proposal_summary', with: 'In summary, what we want is...'
       fill_in_ckeditor 'proposal_description', with: 'A description with enough characters'
@@ -351,14 +328,7 @@ feature 'Proposals' do
     scenario 'Custom tags' do
       visit new_proposal_path
 
-      fill_in 'proposal_title', with: 'Help refugees'
-      fill_in 'proposal_summary', with: 'In summary, what we want is...'
-      fill_in 'proposal_description', with: 'This is very important because...'
-      fill_in 'proposal_external_url', with: 'http://rescue.org/refugees'
-      fill_in 'proposal_video_url', with: 'http://youtube.com'
-      fill_in 'proposal_responsible_name', with: 'Isabel Garcia'
-      check 'proposal_terms_of_service'
-
+      fill_in_proposal
       fill_in 'proposal_tag_list', with: 'Refugees, Solidarity'
       click_button 'Create proposal'
 
@@ -374,14 +344,7 @@ feature 'Proposals' do
       login_as(author)
 
       visit new_proposal_path
-
-      fill_in 'proposal_title', with: 'A test of dangerous strings'
-      fill_in 'proposal_summary', with: 'In summary, what we want is...'
-      fill_in 'proposal_description', with: 'A description suitable for this test'
-      fill_in 'proposal_external_url', with: 'http://rescue.org/refugees'
-      fill_in 'proposal_responsible_name', with: 'Isabel Garcia'
-      check 'proposal_terms_of_service'
-
+      fill_in_proposal
       fill_in 'proposal_tag_list', with: 'user_id=1, &a=3, <script>alert("hey");</script>'
 
       click_button 'Create proposal'
@@ -401,14 +364,7 @@ feature 'Proposals' do
       login_as(author)
 
       visit new_proposal_path
-
-      fill_in 'proposal_title', with: 'Help refugees'
-      fill_in 'proposal_summary', with: 'In summary, what we want is...'
-      fill_in 'proposal_description', with: 'This is very important because...'
-      fill_in 'proposal_external_url', with: 'http://rescue.org/refugees'
-      fill_in 'proposal_video_url', with: 'http://youtube.com'
-      fill_in 'proposal_responsible_name', with: 'Isabel Garcia'
-      check 'proposal_terms_of_service'
+      fill_in_proposal
 
       click_button 'Create proposal'
 
@@ -425,15 +381,7 @@ feature 'Proposals' do
       login_as(author)
 
       visit new_proposal_path
-
-      fill_in 'proposal_title', with: 'Help refugees'
-      fill_in 'proposal_summary', with: 'In summary, what we want is...'
-      fill_in 'proposal_description', with: 'This is very important because...'
-      fill_in 'proposal_external_url', with: 'http://rescue.org/refugees'
-      fill_in 'proposal_video_url', with: 'http://youtube.com'
-      fill_in 'proposal_responsible_name', with: 'Isabel Garcia'
-      check 'proposal_terms_of_service'
-
+      fill_in_proposal
       select('California', from: 'proposal_geozone_id')
       click_button 'Create proposal'
 
