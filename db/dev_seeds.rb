@@ -27,9 +27,9 @@ Setting.create(key: 'org_name', value: 'Consul')
 Setting.create(key: 'place_name', value: 'City')
 Setting.create(key: 'feature.debates', value: "true")
 Setting.create(key: 'feature.spending_proposals', value: "true")
-Setting.create(key: 'feature.spending_proposal_features.phase1', value: "true")
+Setting.create(key: 'feature.spending_proposal_features.phase1', value: nil)
 Setting.create(key: 'feature.spending_proposal_features.phase2', value: nil)
-Setting.create(key: 'feature.spending_proposal_features.phase3', value: nil)
+Setting.create(key: 'feature.spending_proposal_features.phase3', value: "true")
 Setting.create(key: 'feature.spending_proposal_features.voting_allowed', value: "true")
 Setting.create(key: 'feature.spending_proposal_features.final_voting_allowed', value: "true")
 Setting.create(key: 'feature.spending_proposal_features.open_results_page', value: nil)
@@ -102,24 +102,24 @@ def create_user(email, username = Faker::Name.name)
   User.create!(username: username, email: email, password: pwd, password_confirmation: pwd, confirmed_at: Time.now, date_of_birth: (16..100).to_a.sample.years.ago, terms_of_service: "1")
 end
 
-admin = create_user('admin@consul.dev', 'admin')
+admin = create_user('admin@madrid.es', 'admin')
 admin.create_administrator
 
-moderator = create_user('mod@consul.dev', 'mod')
+moderator = create_user('mod@madrid.es', 'mod')
 moderator.create_moderator
 
-valuator = create_user('valuator@consul.dev', 'valuator')
+valuator = create_user('valuator@madrid.es', 'valuator')
 valuator.create_valuator
 
-level_2 = create_user('leveltwo@consul.dev', 'level 2')
+level_2 = create_user('leveltwo@madrid.es', 'level 2')
 level_2.update(residence_verified_at: Time.now, confirmed_phone: Faker::PhoneNumber.phone_number, document_number: "2222222222", document_type: "1" )
 
-verified = create_user('verified@consul.dev', 'verified')
+verified = create_user('verified@madrid.es', 'verified')
 verified.update(residence_verified_at: Time.now, confirmed_phone: Faker::PhoneNumber.phone_number, document_type: "1", verified_at: Time.now, document_number: "3333333333")
 
 (1..10).each do |i|
   org_name = Faker::Company.name
-  org_user = create_user("org#{i}@consul.dev", org_name)
+  org_user = create_user("org#{i}@madrid.es", org_name)
   org_responsible_name = Faker::Name.name
   org = org_user.create_organization(name: org_name, responsible_name: org_responsible_name)
 
@@ -132,12 +132,12 @@ verified.update(residence_verified_at: Time.now, confirmed_phone: Faker::PhoneNu
 end
 
 (1..5).each do |i|
-  official = create_user("official#{i}@consul.dev")
+  official = create_user("official#{i}@madrid.es")
   official.update(official_level: i, official_position: "Official position #{i}")
 end
 
 (1..40).each do |i|
-  user = create_user("user#{i}@consul.dev")
+  user = create_user("user#{i}@madrid.es")
   level = [1,2,3].sample
   if level >= 2 then
     user.update(residence_verified_at: Time.now, confirmed_phone: Faker::PhoneNumber.phone_number, document_number: Faker::Number.number(10), document_type: "1" )
@@ -351,6 +351,31 @@ tags = Faker::Lorem.words(10)
                               description: description,
                               created_at: rand((Time.now - 1.week) .. Time.now),
                               geozone: [geozone, nil].sample,
+                              feasible: feasible,
+                              feasible_explanation: feasible_explanation,
+                              valuation_finished: valuation_finished,
+                              tag_list: tags.sample(3).join(','),
+                              forum: forum,
+                              price: rand(1000000),
+                              terms_of_service: "1")
+  puts "    #{spending_proposal.title}"
+end
+
+puts "Creating ballotable spending proposals for districts"
+(1..60).each do |i|
+  geozone = Geozone.reorder("RANDOM()").first
+  author = User.reorder("RANDOM()").reject {|a| a.organization? }.first
+  description = "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>"
+  forum = ["true", "false"].sample
+  feasible_explanation = "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>"
+  valuation_finished = true
+  feasible = true
+  spending_proposal = SpendingProposal.create!(author: author,
+                              title: Faker::Lorem.sentence(3).truncate(60),
+                              external_url: Faker::Internet.url,
+                              description: description,
+                              created_at: rand((Time.now - 1.week) .. Time.now),
+                              geozone: geozone,
                               feasible: feasible,
                               feasible_explanation: feasible_explanation,
                               valuation_finished: valuation_finished,
