@@ -6,6 +6,7 @@ require 'rails_helper'
 describe 'CustomizationEngine' do
 
   let(:test_key) { I18n.t('account.show.change_credentials_link') }
+  let!(:default_path) { I18n.load_path }
 
   it "should load custom and override original locales" do
     I18n.load_path += Dir[Rails.root.join('spec', 'support', 'locales', 'custom', '*.{rb,yml}')]
@@ -19,4 +20,10 @@ describe 'CustomizationEngine' do
     I18n.reload!
     expect(test_key).to eq 'Not overriden string with custom locales'
   end
+
+  after(:each) do
+    I18n.load_path = default_path
+    I18n.reload!
+  end
+
 end
