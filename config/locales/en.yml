@@ -449,6 +449,12 @@ en:
       categories: "Categories"
     target_blank_html: " (link opens in new window)"
     unflag: Unflag
+    outline:
+      debates: Debates
+      proposals: Proposals
+      budget: Participatory budget
+      pagination: Pagination
+      searcher: Searcher
   social:
     blog: Blog
     facebook: Facebook

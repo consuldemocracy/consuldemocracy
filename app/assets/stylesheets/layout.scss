@@ -475,7 +475,15 @@ header {
     &.active {
       border-bottom: 2px solid $brand;
       color: $brand;
+
+      &:hover {
+        text-decoration: none;
+      }
     }
+  }
+
+  h2 {
+    font-size: $base-font-size;
   }
 }
 
