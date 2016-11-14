@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161102133838) do
+ActiveRecord::Schema.define(version: 20161107174423) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -211,6 +211,14 @@ ActiveRecord::Schema.define(version: 20161102133838) do
     t.string   "census_code"
   end
 
+  create_table "geozones_poll_questions", force: :cascade do |t|
+    t.integer "geozone_id"
+    t.integer "question_id"
+  end
+
+  add_index "geozones_poll_questions", ["geozone_id"], name: "index_geozones_poll_questions_on_geozone_id", using: :btree
+  add_index "geozones_poll_questions", ["question_id"], name: "index_geozones_poll_questions_on_question_id", using: :btree
+
   create_table "identities", force: :cascade do |t|
     t.integer  "user_id"
     t.string   "provider"
@@ -286,6 +294,40 @@ ActiveRecord::Schema.define(version: 20161102133838) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "poll_partial_results", force: :cascade do |t|
+    t.integer "question_id"
+    t.integer "author_id"
+    t.string  "answer"
+    t.integer "amount"
+    t.string  "origin"
+  end
+
+  add_index "poll_partial_results", ["answer"], name: "index_poll_partial_results_on_answer", using: :btree
+  add_index "poll_partial_results", ["author_id"], name: "index_poll_partial_results_on_author_id", using: :btree
+  add_index "poll_partial_results", ["origin"], name: "index_poll_partial_results_on_origin", using: :btree
+  add_index "poll_partial_results", ["question_id"], name: "index_poll_partial_results_on_question_id", using: :btree
+
+  create_table "poll_questions", force: :cascade do |t|
+    t.integer  "proposal_id"
+    t.integer  "poll_id"
+    t.integer  "author_id"
+    t.string   "author_visible_name"
+    t.string   "title"
+    t.string   "question"
+    t.string   "summary"
+    t.string   "valid_answers"
+    t.text     "description"
+    t.integer  "comments_count"
+    t.datetime "hidden_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.boolean  "all_geozones",        default: false
+  end
+
+  add_index "poll_questions", ["author_id"], name: "index_poll_questions_on_author_id", using: :btree
+  add_index "poll_questions", ["poll_id"], name: "index_poll_questions_on_poll_id", using: :btree
+  add_index "poll_questions", ["proposal_id"], name: "index_poll_questions_on_proposal_id", using: :btree
 
   create_table "poll_voters", force: :cascade do |t|
     t.integer "booth_id"
@@ -583,12 +625,19 @@ ActiveRecord::Schema.define(version: 20161102133838) do
   add_foreign_key "annotations", "users"
   add_foreign_key "failed_census_calls", "users"
   add_foreign_key "flags", "users"
+  add_foreign_key "geozones_poll_questions", "geozones"
+  add_foreign_key "geozones_poll_questions", "poll_questions", column: "question_id"
   add_foreign_key "identities", "users"
   add_foreign_key "locks", "users"
   add_foreign_key "managers", "users"
   add_foreign_key "moderators", "users"
   add_foreign_key "notifications", "users"
   add_foreign_key "organizations", "users"
+  add_foreign_key "poll_partial_results", "poll_questions", column: "question_id"
+  add_foreign_key "poll_partial_results", "users", column: "author_id"
+  add_foreign_key "poll_questions", "polls"
+  add_foreign_key "poll_questions", "proposals"
+  add_foreign_key "poll_questions", "users", column: "author_id"
   add_foreign_key "users", "geozones"
   add_foreign_key "valuators", "users"
 end

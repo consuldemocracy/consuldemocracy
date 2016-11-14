@@ -1,0 +1,53 @@
+<%= @poll.name %>
+
+<% unless can?(:answer, @poll) %>
+  <div class="small-12 column">
+    <% if current_user.nil? %>
+      <div class="callout primary">
+        <%= t("polls.show.cant_answer_not_logged_in",
+              signin: link_to(t("polls.show.signin"), new_user_session_path, class: "probe-message"),
+              signup: link_to(t("polls.show.signup"), new_user_registration_path, class: "probe-message")).html_safe %>
+      </div>
+    <% elsif current_user.unverified? %>
+      <div class="callout warning">
+        <%= t('polls.show.cant_answer_verify_html',
+              verify_link: link_to(t('polls.show.verify_link'), verification_path)) %>
+      </div>
+    <% elsif @poll.incoming? %>
+      <div class="callout primary">
+        <%= t('polls.show.cant_answer_incoming') %>
+      </div>
+    <% elsif @poll.expired? %>
+      <div class="callout alert">
+        <%= t('polls.show.cant_answer_expired') %>
+      </div>
+    <% end %>
+  </div>
+<% end %>
+
+<% @answerable_questions.each do |question| %>
+  <div id="<%= dom_id(question) %>">
+    <%= question.title %>
+
+    <div class="row margin-top text-center" id="<%= dom_id(question) %>_answers">
+      <%= render 'polls/questions/answers', question: question %>
+    </div>
+  </div>
+<% end %>
+
+<% if can?(:answer, @poll) &&
+      @non_answerable_questions.present? %>
+  <div class="callout warning">
+    <%= t('polls.show.cant_answer_wrong_geozone') %>
+  </div>
+<% end %>
+
+<% @non_answerable_questions.each do |question| %>
+  <div id="<%= dom_id(question) %>">
+    <%= question.title %>
+
+    <div class="row margin-top text-center" id="<%= dom_id(question) %>_answers">
+      <%= render 'polls/questions/answers', question: question %>
+    </div>
+  </div>
+<% end %>

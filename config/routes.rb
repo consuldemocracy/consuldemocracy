@@ -85,6 +85,12 @@ Rails.application.routes.draw do
     get :search, on: :collection
   end
 
+  resources :polls, only: [:show, :index] do
+    resources :questions, only: [], controller: 'polls/questions' do
+      post :answer, on: :member
+    end
+  end
+
   resources :users, only: [:show] do
     resources :direct_messages, only: [:new, :create, :show]
   end

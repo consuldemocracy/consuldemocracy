@@ -265,10 +265,21 @@ FactoryGirl.define do
 
   factory :poll do
     sequence(:name) { |n| "Poll #{n}" }
+
+    starts_at { 1.month.ago }
+    ends_at { 1.month.from_now }
+
+    trait :incoming do
+      starts_at { 2.days.from_now }
+      ends_at { 1.month.from_now }
+    end
+
+    trait :expired do
+      starts_at { 1.month.ago }
+      ends_at { 15.days.ago }
+    end
   end
 
-<<<<<<< HEAD
-=======
   factory :poll_officer, class: 'Poll::Officer' do
     user
   end
@@ -278,7 +289,6 @@ FactoryGirl.define do
     association :booth,   factory: :poll_booth
   end
 
->>>>>>> assigns officers to booths
   factory :poll_booth, class: 'Poll::Booth' do
     sequence(:name) { |n| "Booth #{n}" }
     sequence(:location) { |n| "Street #{n}" }
@@ -299,7 +309,23 @@ FactoryGirl.define do
     end
   end
 
->>>>>>> validates voter in census
+  factory :poll_question, class: 'Poll::Question' do
+    poll
+    association :author, factory: :user
+    sequence(:title) { |n| "Question title #{n}" }
+    sequence(:summary) { |n| "Question summary #{n}" }
+    sequence(:description) { |n| "Question description #{n}" }
+    sequence(:question) { |n| "Question question #{n}" }
+    valid_answers { Faker::Lorem.words(3).join(', ') }
+  end
+
+  factory :poll_partial_result, class: 'Poll::PartialResult' do
+    association :question, factory: :poll_question
+    association :author, factory: :user
+    origin { 'web' }
+    answer { question.verified_answers.sample }
+  end
+
   factory :organization do
     user
     responsible_name "Johnny Utah"

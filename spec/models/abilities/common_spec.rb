@@ -3,8 +3,9 @@ require 'cancan/matchers'
 
 describe "Abilities::Common" do
   subject(:ability) { Ability.new(user) }
+  let(:geozone) { create(:geozone) }
 
-  let(:user) { create(:user) }
+  let(:user) { create(:user, geozone: geozone) }
 
   let(:debate) { create(:debate) }
   let(:comment) { create(:comment) }
@@ -12,6 +13,20 @@ describe "Abilities::Common" do
   let(:own_debate) { create(:debate, author: user) }
   let(:own_comment) { create(:comment, author: user) }
   let(:own_proposal) { create(:proposal, author: user) }
+
+  let(:current_poll) { create(:poll) }
+  let(:incoming_poll) { create(:poll, :incoming) }
+  let(:expired_poll) { create(:poll, :expired) }
+
+  let(:poll_question_from_own_geozone) { create(:poll_question, geozones: [geozone])  }
+  let(:poll_question_from_other_geozone) { create(:poll_question, geozones: [create(:geozone)])  }
+  let(:poll_question_from_all_geozones) { create(:poll_question, all_geozones: true) }
+  let(:expired_poll_question_from_own_geozone) { create(:poll_question, poll: expired_poll, geozones: [geozone])  }
+  let(:expired_poll_question_from_other_geozone) { create(:poll_question, poll: expired_poll, geozones: [create(:geozone)])  }
+  let(:expired_poll_question_from_all_geozones) { create(:poll_question, poll: expired_poll, all_geozones: true) }
+  let(:incoming_poll_question_from_own_geozone) { create(:poll_question, poll: incoming_poll, geozones: [geozone])  }
+  let(:incoming_poll_question_from_other_geozone) { create(:poll_question, poll: incoming_poll, geozones: [create(:geozone)])  }
+  let(:incoming_poll_question_from_all_geozones) { create(:poll_question, poll: incoming_poll, all_geozones: true) }
 
   it { should be_able_to(:index, Debate) }
   it { should be_able_to(:show, debate) }
@@ -103,6 +118,33 @@ describe "Abilities::Common" do
     it { should be_able_to(:create, DirectMessage) }
     it { should be_able_to(:show, own_direct_message) }
     it { should_not be_able_to(:show, create(:direct_message)) }
+
+    it { should be_able_to(:answer, current_poll) }
+    it { should_not be_able_to(:answer, expired_poll) }
+    it { should_not be_able_to(:answer, incoming_poll) }
+
+    it { should be_able_to(:answer, poll_question_from_own_geozone ) }
+    it { should be_able_to(:answer, poll_question_from_all_geozones ) }
+    it { should_not be_able_to(:answer, poll_question_from_other_geozone ) }
+    it { should_not be_able_to(:answer, expired_poll_question_from_own_geozone ) }
+    it { should_not be_able_to(:answer, expired_poll_question_from_all_geozones ) }
+    it { should_not be_able_to(:answer, expired_poll_question_from_other_geozone ) }
+    it { should_not be_able_to(:answer, incoming_poll_question_from_own_geozone ) }
+    it { should_not be_able_to(:answer, incoming_poll_question_from_all_geozones ) }
+    it { should_not be_able_to(:answer, incoming_poll_question_from_other_geozone ) }
+
+    context "without geozone" do
+      before(:each) { user.geozone = nil }
+      it { should_not be_able_to(:answer, poll_question_from_own_geozone ) }
+      it { should be_able_to(:answer, poll_question_from_all_geozones ) }
+      it { should_not be_able_to(:answer, poll_question_from_other_geozone ) }
+      it { should_not be_able_to(:answer, expired_poll_question_from_own_geozone ) }
+      it { should_not be_able_to(:answer, expired_poll_question_from_all_geozones ) }
+      it { should_not be_able_to(:answer, expired_poll_question_from_other_geozone ) }
+      it { should_not be_able_to(:answer, incoming_poll_question_from_own_geozone ) }
+      it { should_not be_able_to(:answer, incoming_poll_question_from_all_geozones ) }
+      it { should_not be_able_to(:answer, incoming_poll_question_from_other_geozone ) }
+    end
   end
 
   describe "when level 3 verified" do
@@ -121,5 +163,32 @@ describe "Abilities::Common" do
     it { should be_able_to(:create, DirectMessage) }
     it { should be_able_to(:show, own_direct_message) }
     it { should_not be_able_to(:show, create(:direct_message)) }
+
+    it { should be_able_to(:answer, current_poll) }
+    it { should_not be_able_to(:answer, expired_poll) }
+    it { should_not be_able_to(:answer, incoming_poll) }
+
+    it { should be_able_to(:answer, poll_question_from_own_geozone ) }
+    it { should be_able_to(:answer, poll_question_from_all_geozones ) }
+    it { should_not be_able_to(:answer, poll_question_from_other_geozone ) }
+    it { should_not be_able_to(:answer, expired_poll_question_from_own_geozone ) }
+    it { should_not be_able_to(:answer, expired_poll_question_from_all_geozones ) }
+    it { should_not be_able_to(:answer, expired_poll_question_from_other_geozone ) }
+    it { should_not be_able_to(:answer, incoming_poll_question_from_own_geozone ) }
+    it { should_not be_able_to(:answer, incoming_poll_question_from_all_geozones ) }
+    it { should_not be_able_to(:answer, incoming_poll_question_from_other_geozone ) }
+
+    context "without geozone" do
+      before(:each) { user.geozone = nil }
+      it { should_not be_able_to(:answer, poll_question_from_own_geozone ) }
+      it { should be_able_to(:answer, poll_question_from_all_geozones ) }
+      it { should_not be_able_to(:answer, poll_question_from_other_geozone ) }
+      it { should_not be_able_to(:answer, expired_poll_question_from_own_geozone ) }
+      it { should_not be_able_to(:answer, expired_poll_question_from_all_geozones ) }
+      it { should_not be_able_to(:answer, expired_poll_question_from_other_geozone ) }
+      it { should_not be_able_to(:answer, incoming_poll_question_from_own_geozone ) }
+      it { should_not be_able_to(:answer, incoming_poll_question_from_all_geozones ) }
+      it { should_not be_able_to(:answer, incoming_poll_question_from_other_geozone ) }
+    end
   end
 end

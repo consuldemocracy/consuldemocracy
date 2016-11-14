@@ -375,6 +375,18 @@ en:
     update:
       form:
         submit_button: Save changes
+  polls:
+    show:
+      cant_answer_not_logged_in: "You must %{signin} or %{signup} to participate."
+      signin: Sign in
+      signup: Sign up
+      cant_answer_verify_html: "You must %{verify_link} in order to answer."
+      verify_link: "verify your account"
+      cant_answer_incoming: "This poll has not yet started."
+      cant_answer_expired: "This poll has finished."
+      cant_answer_wrong_geozone: "The following questions are not available in your geozone."
+  poll_questions:
+    default_valid_answers: "Yes, No"
   proposal_ballots:
     title: "Votings"
     description_html: "The following citizen proposals that have reached the <strong>required supports</strong> and will be voted."
