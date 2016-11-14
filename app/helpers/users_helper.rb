@@ -17,10 +17,10 @@ module UsersHelper
       deleted_commentable_text(comment)
     elsif commentable.hidden?
       "<abbr title='#{deleted_commentable_text(comment)}'>".html_safe +
-      comment.commentable.commentable_title +
+      comment.commentable_title +
       "</abbr>".html_safe
     else
-      link_to(comment.commentable.commentable_title, comment)
+      link_to(comment.commentable_title, comment)
     end
   end
 
