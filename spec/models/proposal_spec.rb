@@ -48,23 +48,6 @@ describe Proposal do
     end
   end
 
-  describe "#question" do
-    it "should not be valid without a question" do
-      proposal.question = nil
-      expect(proposal).to_not be_valid
-    end
-
-    it "should not be valid when very short" do
-      proposal.question = "abc"
-      expect(proposal).to_not be_valid
-    end
-
-    it "should not be valid when very long" do
-      proposal.question = "a" * 141
-      expect(proposal).to_not be_valid
-    end
-  end
-
   describe "#responsible_name" do
     it "should be mandatory" do
       proposal.responsible_name = nil
