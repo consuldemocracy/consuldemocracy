@@ -319,8 +319,6 @@ en:
       geozone: Scope of operation
       sub_proceeding: Human right
       proposal_external_url: Link to additional documentation
-      proposal_question: Proposal question
-      proposal_question_example_html: Must be summarised in one question with a Yes or No answer. <em>E.g. 'Do you agree with the pedestrianisation of Calle Mayor?'</em>
       proposal_responsible_name: Full name of the person submitting the proposal
       proposal_responsible_name_note: "(individually or as representative of a collective; will not be displayed publically)"
       proposal_summary: Proposal summary
