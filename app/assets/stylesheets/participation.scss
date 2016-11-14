@@ -457,7 +457,7 @@
   word-break: break-word;
 }
 
-.proposal-show {
+.proposal-show, .investment-project-show {
 
   .supports {
     padding: $line-height/2 0 0;
@@ -671,20 +671,6 @@
 
   .supports {
     @include supports;
-    background: none;
-    border: 0;
-    border-left: 1px solid $border;
-    margin: 0 rem-calc(-12);
-    min-height: rem-calc(180);
-    padding-top: 0;
-
-    @include breakpoint(medium) {
-      padding-top: $line-height*1.5;
-    }
-
-    &:after {
-      content: none;
-    }
 
     .investment-project-amount {
       color: $budget;
@@ -714,31 +700,12 @@
       font-weight: bold;
     }
 
-    .supported {
-      color: $budget;
-      margin-top: 0;
-      width: 100%;
-    }
-
     .remove .icon-check-circle {
       display: block;
       font-size: rem-calc(70);
       line-height: rem-calc(70);
     }
-
-    .share-supported {
-
-      .ssb-twitter,
-      .ssb-facebook,
-      .ssb-google_plus {
-        color: $budget;
-      }
-    }
   }
-}
-
-.investment-project-show .supports {
-  border: 0;
 }
 
 .proposals-summary {
