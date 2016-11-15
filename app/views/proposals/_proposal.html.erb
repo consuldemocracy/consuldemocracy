@@ -66,13 +66,13 @@
                   voting: link_to(t("proposal_ballots.voting"),
                   proposal_ballots_path)).html_safe %>
             </p>
-          </div>
           <% elsif proposal.archived? %>
             <div class="message">
               <strong>
                 <%= t("proposals.proposal.supports", count: proposal.total_votes) %>
               </strong>
               <p><%= t("proposals.proposal.archived") %></p>
+            </div>
           <% else %>
             <%= render 'votes',
                        { proposal: proposal,
@@ -80,6 +80,7 @@
           <% end %>
         </div>
       </div>
+
     </div>
   </div>
 </div>
