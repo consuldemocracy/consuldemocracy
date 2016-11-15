@@ -416,9 +416,9 @@ es:
         submit_button: Guardar cambios
   proposal_ballots:
     title: "Votaciones"
-    description_html: "Las siguientes propuestas ciudadanas han alcanzado el <strong>número de apoyos necesarios</strong> y pasarán a votación."
+    description_html: "Las siguientes propuestas ciudadanas han alcanzado el <strong>número de apoyos necesarios</strong> y pasarán a votación. Antes de la votación publicaremos en esta misma web toda la información al respecto."
     date_title: "Fechas de participación"
-    date: "En breve anunciaremos la fecha de votación de estas propuestas."
+    date: "Del 13 al 19 de febrero"
     successfull: "Esta propuesta ha alcanzado los apoyos necesarios y pasará a la %{voting}."
     voting: "próxima votación"
     featured_title: "#PróximaVotación"
