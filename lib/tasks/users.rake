@@ -82,6 +82,6 @@ namespace :users do
     User.all.each do |user|
       user.update(password_changed_at: user.created_at)
     end
-  end 
+  end
 
 end

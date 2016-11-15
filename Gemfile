@@ -57,7 +57,7 @@ gem 'whenever', require: false
 gem 'pg_search'
 
 gem 'ahoy_matey', '~> 1.4.2'
-gem 'groupdate', '~> 3.1.0'   # group temporary data
+gem 'groupdate', '~> 3.1.0' # group temporary data
 gem 'tolk', '~> 2.0.0' # Web interface for translations
 
 gem 'browser'
@@ -85,6 +85,7 @@ group :development, :test do
   gem 'capistrano3-delayed-job', '~> 1.0'
   gem "bullet"
   gem "faker"
+  gem 'rubocop', '~> 0.45.0', require: false
 end
 
 group :test do

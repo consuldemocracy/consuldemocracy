@@ -15,7 +15,9 @@ class Admin::SettingsController < Admin::BaseController
   end
 
   private
+
     def settings_params
       params.require(:setting).permit(:value)
     end
+
 end
