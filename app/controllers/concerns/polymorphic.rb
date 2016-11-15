@@ -1,6 +1,7 @@
 module Polymorphic
 
   private
+
     def resource
       @resource ||= instance_variable_get("@#{resource_name}")
     end

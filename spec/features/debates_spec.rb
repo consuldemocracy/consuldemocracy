@@ -1020,7 +1020,6 @@ feature 'Debates' do
     end
   end
 
-
   context 'Suggesting debates' do
     scenario 'Shows up to 5 suggestions', :js do
       author = create(:user)
@@ -1092,7 +1091,6 @@ feature 'Debates' do
       expect(page).to_not have_content 'Featured'
     end
   end
-
 
   scenario 'Index include featured debates' do
     admin = create(:administrator)

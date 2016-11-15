@@ -23,9 +23,9 @@ class DebatesController < ApplicationController
   respond_to :html, :js
 
   def index_customization
-     @featured_debates = @debates.featured
-     @proposal_successfull_exists = Proposal.successfull.exists?
-     discard_probe_debates
+    @featured_debates = @debates.featured
+    @proposal_successfull_exists = Proposal.successfull.exists?
+    discard_probe_debates
   end
 
   def show

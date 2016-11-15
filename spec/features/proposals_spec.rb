@@ -675,7 +675,6 @@ feature 'Proposals' do
       within("#proposals-list") do
         archived_proposals.each do |proposal|
           within("#proposal_#{proposal.id}_votes") do
-            expect(page).to_not have_css(".supports")
             expect(page).to have_content "This proposal has been archived and can't collect supports"
           end
         end
@@ -686,7 +685,6 @@ feature 'Proposals' do
       archived_proposal = create(:proposal, :archived)
 
       visit proposal_path(archived_proposal)
-      expect(page).to_not have_css(".supports")
       expect(page).to have_content "This proposal has been archived and can't collect supports"
     end
 

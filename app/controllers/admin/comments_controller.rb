@@ -20,6 +20,7 @@ class Admin::CommentsController < Admin::BaseController
   end
 
   private
+
     def load_comment
       @comment = Comment.with_hidden.find(params[:id])
     end

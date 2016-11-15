@@ -51,6 +51,7 @@ $base-font-size:      rem-calc(17);
 $base-line:           rem-calc(26);
 $small-font-size:     rem-calc(14);
 $line-height:         rem-calc(24);
+$tiny-font-size:      rem-calc(12);
 
 $brand:             #004A83;
 $dark:              darken($brand, 10%);
@@ -66,7 +67,6 @@ $link-hover:        darken($link, 20%);
 
 $debates:           #008CCF;
 
-$votes:             #26AEEE;
 $like:              #7BD2A8;
 $unlike:            #EF8585;
 
@@ -79,7 +79,7 @@ $budget:            #454372;
 $budget-hover:      #7571BF;
 
 $highlight:         #E7F2FC;
-$featured:          #FED900;
+$featured:          #FFDC5C;
 
 $footer-border:     #BFC1C3;
 

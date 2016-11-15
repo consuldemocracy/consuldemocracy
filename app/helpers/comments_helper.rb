@@ -40,4 +40,5 @@ module CommentsHelper
       "" # Default not author class
     end
   end
+
 end

@@ -1,6 +1,7 @@
 require 'rails_helper'
 
 feature 'Admin banners magement' do
+
   background do
     login_as(create(:administrator).user)
   end
@@ -124,8 +125,8 @@ feature 'Admin banners magement' do
     fill_in 'banner_description', with: 'Edited text'
 
     within('div#js-banner-style') do
-      expect(page).to have_selector('h2', :text => 'Modified title')
-      expect(page).to have_selector('h3', :text => 'Edited text')
+      expect(page).to have_selector('h2', text: 'Modified title')
+      expect(page).to have_selector('h3', text: 'Edited text')
     end
 
     click_button 'Save changes'
@@ -139,13 +140,14 @@ feature 'Admin banners magement' do
   end
 
   scenario 'Delete a banner' do
-    banner1 = create(:banner, title: 'Ugly banner',
-                              description: 'Bad text',
-                              target_url:  'http://www.url.com',
-                              style: 'banner-style.banner-one',
-                              image: 'banner-img.banner-one',
-                              post_started_at: (Time.now + 4.days),
-                              post_ended_at:   (Time.now + 10.days))
+    create(:banner, title: 'Ugly banner',
+                    description: 'Bad text',
+                    target_url:  'http://www.url.com',
+                    style: 'banner-style.banner-one',
+                    image: 'banner-img.banner-one',
+                    post_started_at: (Time.now + 4.days),
+                    post_ended_at:   (Time.now + 10.days))
+
     visit admin_root_path
 
     within("#side_menu") do

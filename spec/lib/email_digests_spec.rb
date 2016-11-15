@@ -85,7 +85,7 @@ describe EmailDigest do
       user = create(:user)
 
       proposal_notification = create(:proposal_notification)
-      notification = create(:notification, notifiable: proposal_notification, user: user, emailed_at: Time.now)
+      create(:notification, notifiable: proposal_notification, user: user, emailed_at: Time.now)
 
       reset_mailer
       email_digest = EmailDigest.new(user)

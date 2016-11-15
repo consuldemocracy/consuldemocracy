@@ -98,4 +98,5 @@ feature 'Verification path' do
       expect(page).to have_content 'Your account is verified'
     end
   end
+
 end
