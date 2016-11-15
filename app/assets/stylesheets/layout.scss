@@ -475,7 +475,15 @@ header {
     &.active {
       border-bottom: 2px solid $brand;
       color: $brand;
+
+      &:hover {
+        text-decoration: none;
+      }
     }
+  }
+
+  h2 {
+    font-size: $base-font-size;
   }
 }
 
@@ -1247,13 +1255,14 @@ table {
 }
 
 .share-supported {
+  text-align: center;
 
   .social-share-button {
     display: inline-block;
   }
 
   .ssb-twitter {
-    background: none;
+    background: #45B0E3;
     color: white;
     height: $line-height;
     position: relative;
@@ -1276,7 +1285,7 @@ table {
   }
 
   .ssb-facebook {
-    background: none;
+    background: #3B5998;
     color: white;
     height: rem-calc(24);
     position: relative;
@@ -1299,7 +1308,7 @@ table {
   }
 
   .ssb-google_plus {
-    background: none;
+    background: #DE4C34;
     color: white;
     height: rem-calc(24);
     position: relative;
@@ -1550,7 +1559,7 @@ table {
 
     .comment-votes {
       color: $text-medium;
-      font-size: rem-calc(14);
+      font-size: $small-font-size;
       line-height: $line-height;
 
       a {
@@ -1560,12 +1569,21 @@ table {
 
         &:hover {
           color: $text-medium;
+          text-decoration: none;
+
+          .icon-like {
+            color: $like;
+          }
+
+          .icon-unlike {
+            color: $unlike;
+          }
         }
       }
 
       [class^="icon-"] {
-        font-size: rem-calc(20);
-        vertical-align: middle;
+        font-size: $base-font-size;
+        vertical-align: sub;
       }
     }
 
@@ -1685,7 +1703,8 @@ table {
 }
 
 .flag-disable, .flag-active {
-  vertical-align: middle;
+  line-height: 0;
+  vertical-align: sub;
 }
 
 .flag-disable {

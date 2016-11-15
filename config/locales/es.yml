@@ -343,7 +343,7 @@ es:
         other: "%{count} Comentarios"
         zero: Sin comentarios
       proposal: Propuesta
-      reason_for_supports_necessary: 2% del Censo
+      reason_for_supports_necessary: 1% del Censo
       support: Apoyar
       support_title: Apoyar esta propuesta
       supports:
@@ -449,6 +449,12 @@ es:
       categories: "Categorías"
     target_blank_html: " (se abre en ventana nueva)"
     unflag: Deshacer denuncia
+    outline:
+      debates: Debates
+      proposals: Propuestas
+      budget: Presupuestos ciudadanos
+      pagination: Paginación
+      searcher: Buscador
   social:
     blog: Blog
     facebook: Facebook
