@@ -348,6 +348,9 @@ Rails.application.routes.draw do
   get 'proceso/alianza-gobierno-abierto',           to: 'pages#show', id: 'processes/open_government',        as: 'open_government'
   get 'proceso/alianza-gobierno-abierto-borrador',  to: 'pages#show', id: 'processes/open_government_doc',    as: 'open_government_doc'
   get 'proceso/ordenanza-subvenciones',             to: 'pages#show', id: 'processes/subvention_ordinance',   as: 'subvention_ordinance'
+  get 'proceso/plan-calidad-aire',                  to: 'pages#show', id: 'processes/air_quality_plan/index', as: 'air_quality_plan'
+
+
 
   resources :pages, path: '/', only: [:show]
 end

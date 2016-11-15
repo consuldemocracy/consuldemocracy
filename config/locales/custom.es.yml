@@ -38,6 +38,11 @@ es:
       title: "#PlanDerechosHumanos"
       text_html: "¡Participa hasta el <u>4 de noviembre</u>!"
   cards:
+    air_quality_plan:
+      title: "#PlanDeCalidadDelAire"
+      text: "Información y comunicación de las medidas propuestas en el borrador del nuevo plan de calidad del aire y cambio climático de la ciudad de Madrid."
+      date_html: "Participa hasta el <strong>mes de marzo</strong>"
+      button: "Más información"
     proposal_ballots:
       title: "#PróximaVotación"
       text: "Nuevas propuestas ciudadanas han llegado a la fase de votación."

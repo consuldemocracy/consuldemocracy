@@ -29,6 +29,18 @@
       </div>
     <% end %>
 
+    <!-- Plan de calidad del aire -->
+    <div class="small-12 medium-4 column margin-top">
+      <div class="panel" data-equalizer-watch>
+        <h2><%= t("cards.air_quality_plan.title") %></h2>
+        <p class="info-date"><span class="icon-calendar"></span>&nbsp;<%= t("cards.air_quality_plan.date_html") %></p>
+        <p class="info">
+          <%= t("cards.air_quality_plan.text") %>
+        </p>
+        <%= link_to t("cards.air_quality_plan.button"), air_quality_plan_path, class: "button expanded margin-top" %>
+      </div>
+    </div>
+
     <!-- Remodelación Plaza España -->
     <div class="small-12 medium-4 column margin-top">
       <div class="panel" data-equalizer-watch>

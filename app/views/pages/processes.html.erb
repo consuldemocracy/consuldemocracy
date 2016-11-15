@@ -76,6 +76,13 @@
         <!-- Procesos abiertos -->
         <div class="tabs-panel is-active" id="panel1v">
 
+          <!-- Plan de calidad del aire -->
+          <div id="air_quality_plan" class="panel">
+            <h3><%= t("pages.processes.index.process_11_title") %></h3>
+            <p><%= t("pages.processes.index.process_11_description") %></p>
+            <%= link_to t("pages.processes.index.process_11_button"), air_quality_plan_path, class: "button hollow" %>
+          </div>
+
           <!-- Alianza para el Gobierno abierto -->
           <div id="open-government" class="panel">
             <h3><%= t("pages.processes.index.process_9_title") %></h3>
