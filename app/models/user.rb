@@ -2,7 +2,7 @@ class User < ActiveRecord::Base
 
   include Verification
 
-  devise :database_authenticatable, :registerable, :confirmable, :recoverable, :rememberable, 
+  devise :database_authenticatable, :registerable, :confirmable, :recoverable, :rememberable,
          :trackable, :validatable, :omniauthable, :async, :password_expirable, :secure_validatable
 
   acts_as_voter
@@ -246,6 +246,7 @@ class User < ActiveRecord::Base
   delegate :can?, :cannot?, to: :ability
 
   private
+
     def clean_document_number
       self.document_number = self.document_number.gsub(/[^a-z0-9]+/i, "").upcase unless self.document_number.blank?
     end
