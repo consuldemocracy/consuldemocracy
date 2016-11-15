@@ -159,4 +159,5 @@ shared_examples_for "verifiable" do
       expect(user.verification_letter_sent?).to eq(false)
     end
   end
+
 end

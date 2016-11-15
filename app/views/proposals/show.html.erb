@@ -122,8 +122,7 @@
       <aside class="small-12 medium-3 column">
         <div class="sidebar-divider"></div>
         <h3><%= t("votes.supports") %></h3>
-
-        <div id="<%= dom_id(@proposal) %>_votes">
+        <div id="<%= dom_id(@proposal) %>_votes" class="supports text-center">
           <% if @proposal.successfull? %>
             <p>
               <%= t("proposal_ballots.successfull",
@@ -131,18 +130,13 @@
                   proposal_ballots_path)).html_safe %>
             </p>
           <% elsif @proposal.archived? %>
-            <p class="text-center">
-              <strong>
-                <%= t("proposals.proposal.supports", count: @proposal.total_votes) %>
-              </strong>
+            <p>
+              <strong><%= t("proposals.proposal.supports", count: @proposal.total_votes) %></strong>
             </p>
             <p><%= t("proposals.proposal.archived") %></p>
           <% else %>
-            <div class="text-center">
-              <%= render 'votes',
-                         { proposal: @proposal,
-                           vote_url: vote_proposal_path(@proposal, value: 'yes') } %>
-            </div>
+            <%= render 'votes',
+                      { proposal: @proposal, vote_url: vote_proposal_path(@proposal, value: 'yes') } %>
           <% end %>
         </div>
 

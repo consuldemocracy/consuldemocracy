@@ -162,4 +162,5 @@ module CommentableActions
     def add_predefined_tag
       @resource.tag_list << params[:tag] if params[:tag].present?
     end
+
 end

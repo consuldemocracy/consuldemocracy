@@ -501,6 +501,12 @@ es:
     target_blank_html: " (se abre en ventana nueva)"
     unflag: Deshacer denuncia
     probe_plaza_banner: "#RemodelaciónPlazaEspaña"
+    outline:
+      debates: Debates
+      proposals: Propuestas
+      budget: Presupuestos ciudadanos
+      pagination: Paginación
+      searcher: Buscador
   social:
     blog: Blog
     facebook: Facebook

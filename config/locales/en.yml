@@ -501,6 +501,12 @@ en:
     target_blank_html: " (link opens in new window)"
     unflag: Unflag
     probe_plaza_banner: "#RemodelingPlazaEspaña"
+    outline:
+      debates: Debates
+      proposals: Proposals
+      budget: Participatory budget
+      pagination: Pagination
+      searcher: Searcher
   social:
     blog: Blog
     facebook: Facebook

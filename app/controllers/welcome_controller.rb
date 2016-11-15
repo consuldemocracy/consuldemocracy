@@ -17,5 +17,4 @@ class WelcomeController < ApplicationController
     redirect_to verification_path if signed_in?
   end
 
-
 end

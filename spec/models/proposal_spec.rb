@@ -634,28 +634,28 @@ describe Proposal do
     context "no results" do
 
       it "no words match" do
-        proposal = create(:proposal, title: 'save world')
+        create(:proposal, title: 'save world')
 
         results = Proposal.search('destroy planet')
         expect(results).to eq([])
       end
 
       it "too many typos" do
-        proposal = create(:proposal, title: 'fantastic')
+        create(:proposal, title: 'fantastic')
 
         results = Proposal.search('frantac')
         expect(results).to eq([])
       end
 
       it "too much stemming" do
-        proposal = create(:proposal, title: 'reloj')
+        create(:proposal, title: 'reloj')
 
         results = Proposal.search('superrelojimetro')
         expect(results).to eq([])
       end
 
       it "empty" do
-        proposal = create(:proposal, title: 'great')
+        create(:proposal, title: 'great')
 
         results = Proposal.search('')
         expect(results).to eq([])

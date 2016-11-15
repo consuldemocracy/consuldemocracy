@@ -30,4 +30,5 @@ module StatsHelper
     end
     text
   end
+
 end
