@@ -362,7 +362,32 @@ end
 puts "Creating polls"
 
 3.times.each_with_index do |i|
-  Poll.create(name: "Poll #{i}")
+  starts_at = rand(2.months.ago .. 2.months.from_now)
+  ends_at   = starts_at + 1.month
+
+  poll = Poll.create(name: "Poll #{i}",
+                     starts_at: starts_at,
+                     ends_at:   ends_at)
+  puts "    #{poll.name}"
+end
+
+puts "Creating Poll Questions"
+
+(1..10).each do |i|
+  poll = Poll.reorder("RANDOM()").first
+  author = User.reorder("RANDOM()").first
+  description = "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>"
+  open_at = rand(2.months.ago .. 2.months.from_now)
+  question = Poll::Question.create!(author: author,
+                                    title: Faker::Lorem.sentence(3).truncate(60),
+                                    question: Faker::Lorem.sentence(3) + "?",
+                                    summary: Faker::Lorem.sentence(3),
+                                    description: description,
+                                    valid_answers: Faker::Lorem.words(3).join(', '),
+                                    poll: poll,
+                                    geozones: Geozone.reorder("RANDOM()").limit(3),
+                                    all_geozones: [true, false].sample)
+  puts "    #{question.title}"
 end
 
 10.times.each_with_index do |i|
