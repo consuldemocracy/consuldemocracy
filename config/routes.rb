@@ -61,8 +61,6 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :proposal_ballots, only: [:index]
-
   resources :comments, only: [:create, :show], shallow: true do
     member do
       post :vote
