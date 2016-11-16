@@ -1,0 +1,76 @@
+---
+fr:
+  moderation:
+    comments:
+      index:
+        block_authors: Bloquer l'auteur
+        confirm: Etes-vous sûr?
+        filter: Filtrer
+        filters:
+          all: Tous
+          pending_flag_review: En cours
+          with_ignored_flag: Marquer comme vu
+        headers:
+          comment: Commentaire
+          moderate: Modérer
+        hide_comments: Cacher les commentaires
+        ignore_flags: Marquer comme vu
+        order: Trier par
+        orders:
+          flags: Les plus populaires
+          newest: Les plus récents
+        title: Commentaires
+    dashboard:
+      index:
+        title: Moderation
+    debates:
+      index:
+        block_authors: Bloquer l'auteur
+        confirm: Etes-vous sûr?
+        filter: Filtrer
+        filters:
+          all: Tous
+          pending_flag_review: En-cours
+          with_ignored_flag: Marquer comme vu
+        headers:
+          debate: Debattre
+          moderate: Modérer
+        hide_debates: cacher les débats
+        ignore_flags: Marquer comme vu
+        order: Trier par
+        orders:
+          created_at: Les plus récents
+          flags: Les plus populaires
+        title: Débats
+    menu:
+      flagged_comments: Commentaires
+      flagged_debates: débats
+      proposals: Propositions
+      users: Bloquer les utilisateurs
+    proposals:
+      index:
+        block_authors: Bloquer les utilisateurs
+        confirm: Etes-vous sûr?
+        filter: Filtrer
+        filters:
+          all: tous
+          pending_flag_review: En-cours de vérification
+          with_ignored_flag: Marquer comme vu
+        headers:
+          moderate: Modérer
+          proposal: Proposition
+        hide_proposals: Cacher les propositionss
+        ignore_flags: Marquer comme vu
+        order: Trier par
+        orders:
+          created_at: Les plus récents
+          flags: Les plus populaires
+        title: Propositions
+    users:
+      index:
+        hidden: Bloqué
+        hide: Bloqué
+        search: Chercher
+        search_placeholder: email ou nom d'utilisateur
+        title: Bloquer les utilisateurs
+      notice_hide: Utilisateur bloqués. Tous les débats et commentaires de cette uitilisateur ont été caché.
