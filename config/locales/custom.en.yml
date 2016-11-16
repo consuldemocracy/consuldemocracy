@@ -39,7 +39,7 @@ en:
       text_html: "Participate until <u>November 4</u>!"
   cards:
     air_quality_plan:
-      title: "#PlanDeCalidadDelAire"
+      title_html: "#DraftAirQuality<br>andClimateChangePlan"
       text: "Information and communication of the measures proposed in the draft of the new air quality and climate change plan of the city of Madrid."
       date_html: "Participate until <strong>March</strong>"
       button: "More information"
