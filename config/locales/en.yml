@@ -416,9 +416,9 @@ en:
         submit_button: Save changes
   proposal_ballots:
     title: "Votings"
-    description_html: "The following citizen proposals that have reached the <strong>required supports</strong> and will be voted."
+    description_html: "The following citizen proposals that have reached the <strong>required supports</strong> and will be voted. Before the vote, we will publish all the information on this website."
     date_title: "Dates of participation"
-    date: "Soon we'll announce the date of vote these proposals."
+    date: "From 13th to 19th of February"
     successfull: "This proposal has reached the required supports and will be voted in the %{voting}."
     voting: "next voting"
     featured_title: "#NextVoting"

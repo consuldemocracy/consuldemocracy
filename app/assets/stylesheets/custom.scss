@@ -1223,32 +1223,6 @@ table.age-groups-investment-projects {
   }
 }
 
-.featured-open-plenary {
-  background: $brand;
-  padding: $line-height/2;
-
-  @include breakpoint(medium) {
-    background: $brand image-url('featured_open_plenary_small.jpg') no-repeat;
-    background-position: bottom right;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-  }
-
-  h2, h3, a {
-    color: white;
-    margin: 0;
-
-    &:hover {
-      text-decoration: none;
-    }
-  }
-
-  a:hover h2, a:hover h3 {
-    color: white !important;
-    text-decoration: none;
-  }
-}
-
 .process {
   min-height: $line-height*15;
 
@@ -1262,14 +1236,6 @@ table.age-groups-investment-projects {
 
 .processes {
   background: $brand;
-
-  @include breakpoint(large) {
-
-    &.active {
-      background: $brand image-url('processes_featured.jpg') no-repeat;
-      background-position: 80%;
-    }
-  }
 
   &.show {
     height: auto;
@@ -1395,14 +1361,6 @@ tr td, tr th {
 
   [class^="icon-"] {
     color: $text-light;
-  }
-}
-
-@include breakpoint(large) {
-
-  .human-rights {
-    background: $brand image-url('processes_featured.jpg') no-repeat;
-    background-position: 80% 100%;
   }
 }
 
