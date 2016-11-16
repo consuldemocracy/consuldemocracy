@@ -1,0 +1,32 @@
+---
+fr:
+  mailers:
+    comment:
+      hi: Salut
+      new_comment_by_html: Il y a un nouveau commentaire de <b>%{commenter}</b>
+      subject: Nouveau commentaire sur votre %{commentable}
+      title: Nouveau commentaire
+    config:
+      manage_email_subscriptions: "Pour ne plus recevoir de notifications, paramétrer votre compte"
+    email_verification:
+      click_here_to_verify: ce lien
+      instructions_html: Pour completer la verifiration de votre compte avec Open Government Portal of the Madrid City Council, vous devez imperativement suivre ce lien %{verification_link}.
+      instructions_2_html: Ce mail vous permettrez de verifier votre compte avec <b>%{document_type} %{document_number}</b>. Si celles-ci ne vous appartiennent pas, nous vous prions de ne pas cliquer et d'ignorer cet mail.
+      subject: Confirmer votre email
+      thanks: Merci beaucoup
+      title: Confirmer votre compte avec le lien ci-dessous
+    reply:
+      hi: Salut
+      new_reply_by_html: Il y a un nouveau réponse de <b>%{commenter}</b> à votre commentaire on
+      subject: Quelqu'un a repondu à votre commentaire
+      title: Nouvelle réponse à votre commentaire
+    unfeasible_spending_proposal:
+      hi: "Bonjour,"
+      new_html: "Nous vous invitons à élaborer une proposition plus forte, adaptée aux conditions de cette processus. Vous pourriez le faire en suivant ce lien: %{url}."
+      new_href: "nouveau projet d'investissement"
+      reconsider_html: "Si vous pensez que votre proposition réponds aux conditions de d'une proposition d'investissement, vous pouvez nous le communiquer, dans les 48 heures, en écrivant à cette address preparticipativos@madrid.es, s'il vous plaît de mettre le code %{code} dans le sujet de votre message."
+      sincerely: "Cordialement"
+      signatory: "DIRECCIÓN GENERAL DE PARTICIPACIÓN CIUDADANA"
+      sorry: "Nos excuse de l'inconvenient, nous vous remercions de votre participation précieux."
+      subject: "Votre projet d'investissement '%{code}' a était signaler infaissable."
+      unfeasible_html: "De la Ville de Madrid, nous vous remercions de votre participation dans <strong>le budget participatif de la ville de Madrid</strong>. Nous regrettons de vous informer que votre proposition <strong>'%{title}'</strong> n'a pas pu être retenu dans cette processus participatif pour la raison suivante:"
