@@ -38,8 +38,7 @@ module GraphQL
           end
         end
       end
-
-      return new_graphql_type
+      return new_graphql_type # GraphQL::ObjectType
     end
   end
 end
