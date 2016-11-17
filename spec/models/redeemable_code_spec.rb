@@ -51,4 +51,22 @@ describe RedeemableCode do
     end
   end
 
+  describe "#generate_list" do
+    it "creates as many codes as expected" do
+      expect{ RedeemableCode.generate_list(5) }.to change{ RedeemableCode.count }.from(0).to(5)
+    end
+
+    it "re-rolls the token when it finds a collision" do
+      RedeemableCode.create(token: 'potato')
+
+      expect(RedeemableCode).to receive(:generate_token).and_return('potato')
+      expect(RedeemableCode).to receive(:generate_token).and_return('tomato')
+
+      RedeemableCode.generate_list(1)
+
+      expect(RedeemableCode.last.token).to eq('tomato')
+      expect(RedeemableCode.count).to eq(2)
+    end
+  end
+
 end
