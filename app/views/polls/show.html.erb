@@ -27,7 +27,7 @@
 
 <% @answerable_questions.each do |question| %>
   <div id="<%= dom_id(question) %>">
-    <%= link_to question.title, poll_question_path(@poll, question) %>
+    <%= link_to question.title, question_path(question) %>
 
     <div class="row margin-top text-center" id="<%= dom_id(question) %>_answers">
       <%= render 'polls/questions/answers', question: question %>
@@ -44,7 +44,7 @@
 
 <% @non_answerable_questions.each do |question| %>
   <div id="<%= dom_id(question) %>">
-    <%= link_to question.title, poll_question_path(@poll, question) %>
+    <%= link_to question.title, question_path(question) %>
 
     <div class="row margin-top text-center" id="<%= dom_id(question) %>_answers">
       <%= render 'polls/questions/answers', question: question %>
