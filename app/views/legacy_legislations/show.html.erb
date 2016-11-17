@@ -1,0 +1,29 @@
+<div class="row margin-top">
+  <div class="small-12 column">
+    <div class="float-right">
+      <a class="button warning" type="button" data-toggle="help-legacy-legislation">
+        <sub><span class="icon-edit"></span></sub>&nbsp;
+        <%= t("legacy_legislation.help.title") %>
+      </a>
+
+      <div class="dropdown-pane" id="help-legacy-legislation" data-dropdown data-auto-focus="true">
+        <p>
+          <%= t("legacy_legislation.help.text",
+              sign_in: link_to(t("legacy_legislation.help.text_sign_in"), new_user_session_path),
+              sign_up: link_to(t("legacy_legislation.help.text_sign_up"), new_user_registration_path)).html_safe %>
+          <%= image_tag ("annotator_help.gif"), alt: t("legacy_legislation.help.alt") %>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="small-12 medium-9 small-centered column">
+    <section data-annotatable-type="legacy_legislation"
+             data-annotatable-id="<%= @legacy_legislation.id %>">
+      <h1 class="text-center"><%= @legacy_legislation.title %></h1>
+      <div id="legacy_legislation_body"><%= @legacy_legislation.body %></div>
+    </section>
+  </div>
+</div>

@@ -212,7 +212,7 @@ es:
       proposal_ballot: Votaciones
       see_all: Ver propuestas
       spending_proposals: Presupuestos ciudadanos
-  legislation:
+  legacy_legislation:
     help:
       alt: Selecciona el texto que quieres comentar y pulsa en el botón con el lápiz.
       text: Para comentar este documento debes %{sign_in} o %{sign_up}. Después selecciona el texto que quieres comentar y pulsa en el botón con el lápiz.

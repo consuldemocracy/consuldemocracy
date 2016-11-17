@@ -7,7 +7,7 @@ module Abilities
       can [:read, :map, :summary], Proposal
       can :read, Comment
       can :read, SpendingProposal
-      can :read, Legislation
+      can :read, LegacyLegislation
       can :read, User
       can [:search, :read], Annotation
       can :new, DirectMessage

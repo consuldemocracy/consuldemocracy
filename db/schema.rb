@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161102133838) do
+ActiveRecord::Schema.define(version: 20161117115841) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -57,10 +57,10 @@ ActiveRecord::Schema.define(version: 20161102133838) do
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
     t.integer  "user_id"
-    t.integer  "legislation_id"
+    t.integer  "legacy_legislation_id"
   end
 
-  add_index "annotations", ["legislation_id"], name: "index_annotations_on_legislation_id", using: :btree
+  add_index "annotations", ["legacy_legislation_id"], name: "index_annotations_on_legacy_legislation_id", using: :btree
   add_index "annotations", ["user_id"], name: "index_annotations_on_user_id", using: :btree
 
   create_table "banners", force: :cascade do |t|
@@ -221,7 +221,7 @@ ActiveRecord::Schema.define(version: 20161102133838) do
 
   add_index "identities", ["user_id"], name: "index_identities_on_user_id", using: :btree
 
-  create_table "legislations", force: :cascade do |t|
+  create_table "legacy_legislations", force: :cascade do |t|
     t.string   "title"
     t.text     "body"
     t.datetime "created_at", null: false
@@ -550,7 +550,7 @@ ActiveRecord::Schema.define(version: 20161102133838) do
   add_index "votes", ["voter_id", "voter_type", "vote_scope"], name: "index_votes_on_voter_id_and_voter_type_and_vote_scope", using: :btree
 
   add_foreign_key "administrators", "users"
-  add_foreign_key "annotations", "legislations"
+  add_foreign_key "annotations", "legacy_legislations"
   add_foreign_key "annotations", "users"
   add_foreign_key "failed_census_calls", "users"
   add_foreign_key "flags", "users"

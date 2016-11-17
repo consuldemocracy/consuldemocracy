@@ -79,7 +79,7 @@ Rails.application.routes.draw do
 
   resources :stats, only: [:index]
 
-  resources :legislations, only: [:show]
+  resources :legacy_legislations, only: [:show], path: 'legislations'
 
   resources :annotations do
     get :search, on: :collection

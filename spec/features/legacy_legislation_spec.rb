@@ -1,11 +1,11 @@
 require 'rails_helper'
 
-feature 'Legislation' do
+feature 'Legacy Legislation' do
 
   scenario 'Show' do
-    legislation = create(:legislation, title: 'Change the world', body: 'To achieve this...')
+    legacy_legislation = create(:legacy_legislation, title: 'Change the world', body: 'To achieve this...')
 
-    visit legislation_path(legislation)
+    visit legacy_legislation_path(legacy_legislation)
 
     expect(page).to have_content 'Change the world'
     expect(page).to have_content 'To achieve this...'
@@ -17,11 +17,11 @@ feature 'Legislation' do
     background { login_as user }
 
     scenario 'Create' do
-      legislation = create(:legislation)
+      legacy_legislation = create(:legacy_legislation)
 
-      visit legislation_path(legislation)
+      visit legacy_legislation_path(legacy_legislation)
 
-      page.find(:css, "#legislation_body").double_click
+      page.find(:css, "#legacy_legislation_body").double_click
       page.find(:css, ".annotator-adder button").click
       fill_in 'annotator-field-0', with: 'this is my annotation'
       page.find(:css, ".annotator-controls a[href='#save']").click
@@ -30,7 +30,7 @@ feature 'Legislation' do
       first(:css, ".annotator-hl").click
       expect(page).to have_content "this is my annotation"
 
-      visit legislation_path(legislation)
+      visit legacy_legislation_path(legacy_legislation)
 
       expect(page).to have_css ".annotator-hl"
       first(:css, ".annotator-hl").click
@@ -38,10 +38,10 @@ feature 'Legislation' do
     end
 
     scenario 'Update' do
-      legislation = create(:legislation)
-      annotation = create(:annotation, legislation: legislation, user: user, text: "my annotation")
+      legacy_legislation = create(:legacy_legislation)
+      annotation = create(:annotation, legacy_legislation: legacy_legislation, user: user, text: "my annotation")
 
-      visit legislation_path(legislation)
+      visit legacy_legislation_path(legacy_legislation)
 
       expect(page).to have_css ".annotator-hl"
       page.find(:css, ".annotator-hl").click
@@ -55,17 +55,17 @@ feature 'Legislation' do
       page.find(:css, ".annotator-hl").click
       expect(page).to have_content "edited annotation"
 
-      visit legislation_path(legislation)
+      visit legacy_legislation_path(legacy_legislation)
 
       page.find(:css, ".annotator-hl").click
       expect(page).to have_content "edited annotation"
     end
 
     scenario 'Destroy' do
-      legislation = create(:legislation)
-      annotation = create(:annotation, legislation: legislation, user: user)
+      legacy_legislation = create(:legacy_legislation)
+      annotation = create(:annotation, legacy_legislation: legacy_legislation, user: user)
 
-      visit legislation_path(legislation)
+      visit legacy_legislation_path(legacy_legislation)
 
       expect(page).to have_css ".annotator-hl"
 
@@ -76,11 +76,11 @@ feature 'Legislation' do
     end
 
     scenario 'Search' do
-      legislation = create(:legislation)
-      annotation1 = create(:annotation, legislation: legislation, text: "my annotation",       ranges: [{"start"=>"/div[1]", "startOffset"=>5, "end"=>"/div[1]", "endOffset"=>10}])
-      annotation2 = create(:annotation, legislation: legislation, text: "my other annotation", ranges: [{"start"=>"/div[1]", "startOffset"=>12, "end"=>"/div[1]", "endOffset"=>19}])
+      legacy_legislation = create(:legacy_legislation)
+      annotation1 = create(:annotation, legacy_legislation: legacy_legislation, text: "my annotation",       ranges: [{"start"=>"/div[1]", "startOffset"=>5, "end"=>"/div[1]", "endOffset"=>10}])
+      annotation2 = create(:annotation, legacy_legislation: legacy_legislation, text: "my other annotation", ranges: [{"start"=>"/div[1]", "startOffset"=>12, "end"=>"/div[1]", "endOffset"=>19}])
 
-      visit legislation_path(legislation)
+      visit legacy_legislation_path(legacy_legislation)
 
       expect(page).to have_css ".annotator-hl"
       first(:css, ".annotator-hl").click

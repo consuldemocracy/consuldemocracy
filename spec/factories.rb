@@ -234,8 +234,8 @@ FactoryGirl.define do
     end
   end
 
-  factory :legislation do
-    sequence(:title) { |n| "Legislation #{n}" }
+  factory :legacy_legislation do
+    sequence(:title) { |n| "Legacy Legislation #{n}" }
     body "In order to achieve this..."
   end
 
@@ -243,7 +243,7 @@ FactoryGirl.define do
     quote "ipsum"
     text "Loremp ipsum dolor"
     ranges [{"start"=>"/div[1]", "startOffset"=>5, "end"=>"/div[1]", "endOffset"=>10}]
-    legislation
+    legacy_legislation
     user
   end
 
