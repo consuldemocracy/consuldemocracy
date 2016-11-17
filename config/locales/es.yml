@@ -375,8 +375,8 @@ es:
     update:
       form:
         submit_button: Guardar cambios
-  questions:
-    create_enquiry: "Crear votación"
+  poll_questions:
+    create_question: "Crear votación"
     default_valid_answers: "Sí, No"
     index:
       filters:

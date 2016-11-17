@@ -1,14 +1,19 @@
-<% if @question.proposal.present? %>
-  <div>
-    <%= I18n.t("admin.questions.show.proposal") %>:
-    <%= @question.proposal.title %>
-  </div>
-<% end %>
-
 <div class="small-12 column">
+  <% if @question.proposal.present? %>
+    <div>
+      <%= I18n.t("admin.questions.show.proposal") %>:
+      <%= link_to @question.proposal.title, proposal_path(@question.proposal) %>
+    </div>
+  <% end %>
+
   <div>
     <%= I18n.t("admin.questions.show.title") %>:
     <%= @question.title %>
+  </div>
+
+  <div>
+    <%= I18n.t("admin.questions.show.author") %>:
+    <%= link_to @question.author.name, user_path(@question.author) %>
   </div>
 
   <div>
@@ -30,7 +35,7 @@
     <%= I18n.t("admin.questions.show.geozones") %>:
     <% @question.geozones.each do |geozone| %>
       <div>
-        <% geozone.name %>
+        <%= geozone.name %>
       </div>
     <% end %>
   </div>

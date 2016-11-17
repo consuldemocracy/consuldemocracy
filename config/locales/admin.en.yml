@@ -186,7 +186,8 @@ en:
       new:
         title: "Create Question"
       show:
-        proposal: Proposal
+        proposal: Original proposal
+        author: Author
         title: Title
         valid_answers: Valid answers
         summary: Summary

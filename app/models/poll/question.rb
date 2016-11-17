@@ -14,13 +14,11 @@ class Poll::Question < ActiveRecord::Base
   belongs_to :proposal
 
   validates :title, presence: true
-  validates :question, presence: true
   validates :summary, presence: true
   validates :author, presence: true
 
   validates :title, length: { in: 4..Poll::Question.title_max_length }
   validates :description, length: { maximum: Poll::Question.description_max_length }
-  validates :question, length: { in: 10..Poll::Question.question_max_length }
 
   scope :sort_for_list, -> { order('poll_questions.proposal_id IS NULL', :created_at)}
   scope :for_render, -> { includes(:author, :proposal) }

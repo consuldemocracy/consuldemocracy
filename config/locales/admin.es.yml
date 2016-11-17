@@ -186,7 +186,8 @@ es:
       new:
         title: "Crear pregunta ciudadana"
       show:
-        proposal: Propuesta Ciudadana
+        proposal: Propuesta ciudadana original
+        author: Autor
         title: Título
         valid_answers: Respuestas válidas
         summary: Resumen

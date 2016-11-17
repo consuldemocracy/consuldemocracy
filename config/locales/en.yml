@@ -385,7 +385,7 @@ en:
       cant_answer_incoming: "This poll has not yet started."
       cant_answer_expired: "This poll has finished."
       cant_answer_wrong_geozone: "The following questions are not available in your geozone."
-  questions:
+  poll_questions:
     create_question: "Create question"
     default_valid_answers: "Yes, No"
     index:

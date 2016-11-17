@@ -181,6 +181,10 @@ FactoryGirl.define do
         4.times { create(:vote, votable: debate) }
       end
     end
+
+    trait :successful do
+      cached_votes_up { Proposal.votes_needed_for_success + 100 }
+    end
   end
 
   factory :spending_proposal do
@@ -280,6 +284,15 @@ FactoryGirl.define do
     end
   end
 
+  factory :poll_question, class: 'Poll::Question' do
+    poll
+    association :author, factory: :user
+    sequence(:title) { |n| "Question title #{n}" }
+    sequence(:summary) { |n| "Question summary #{n}" }
+    sequence(:description) { |n| "Question description #{n}" }
+    valid_answers { Faker::Lorem.words(3).join(', ') }
+  end
+
   factory :poll_officer, class: 'Poll::Officer' do
     user
   end
@@ -307,16 +320,6 @@ FactoryGirl.define do
       document_type   "1"
       document_number "99999999A"
     end
-  end
-
-  factory :poll_question, class: 'Poll::Question' do
-    poll
-    association :author, factory: :user
-    sequence(:title) { |n| "Question title #{n}" }
-    sequence(:summary) { |n| "Question summary #{n}" }
-    sequence(:description) { |n| "Question description #{n}" }
-    sequence(:question) { |n| "Question question #{n}" }
-    valid_answers { Faker::Lorem.words(3).join(', ') }
   end
 
   factory :poll_partial_result, class: 'Poll::PartialResult' do
