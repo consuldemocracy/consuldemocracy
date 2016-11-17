@@ -96,6 +96,7 @@ es:
       admin: Menú de administración
       banner: Gestionar banners
       debate_topics: Temas de debate
+      poll_questions: Preguntas ciudadanas
       hidden_comments: Comentarios ocultos
       hidden_debates: Debates ocultos
       hidden_proposals: Propuestas ocultas
@@ -175,6 +176,15 @@ es:
         name: "Nombre"
         location: "Ubicación"
         officers: "Presidentes de mesa"
+    questions:
+      index:
+        title: "Preguntas ciudadanas"
+        create: "Crear pregunta ciudadana"
+        no_enquiries: "No hay ninguna pregunta ciudadana."
+      edit:
+        title: "Editar pregunta ciudadana"
+      new:
+        title: "Crear pregunta ciudadana"
     booths:
       index:
         title: "Lista de urnas"

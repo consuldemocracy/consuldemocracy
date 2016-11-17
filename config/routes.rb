@@ -84,7 +84,7 @@ Rails.application.routes.draw do
   end
 
   resources :polls, only: [:show, :index] do
-    resources :questions, only: [:show], controller: 'polls/questions' do
+    resources :questions, only: [:show], controller: 'polls/questions', shallow: true do
       post :answer, on: :member
     end
   end
@@ -190,6 +190,7 @@ Rails.application.routes.draw do
       resources :polls do
         resources :booths
       end
+      resources :questions, except: :show
     end
 
     resources :verifications, controller: :verifications, only: :index do

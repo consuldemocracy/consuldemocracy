@@ -210,7 +210,7 @@ en:
       open_data: Open data
       open_gov: Open government
       proposals: Proposals
-      proposal_ballot: Voting
+      polls: Voting
       see_all: See proposals
       spending_proposals: Spending proposals
   legislation:
@@ -385,19 +385,40 @@ en:
       cant_answer_incoming: "This poll has not yet started."
       cant_answer_expired: "This poll has finished."
       cant_answer_wrong_geozone: "The following questions are not available in your geozone."
-  poll_questions:
+  questions:
+    create_question: "Create question"
     default_valid_answers: "Yes, No"
-  proposal_ballots:
-    title: "Votings"
-    description_html: "The following citizen proposals that have reached the <strong>required supports</strong> and will be voted."
-    date_title: "Dates of participation"
-    date: "Soon we'll announce the date of vote these proposals."
-    successfull: "This proposal has reached the required supports and will be voted in the %{voting}."
-    voting: "next voting"
-    featured_title: "#NextVoting"
-    nothing_to_vote: "There is nothing to vote at the moment."
-    info: "New proposals that have reached the voting phase."
-    button: "I want to decide"
+    index:
+      filters:
+        opened: "Open"
+        incoming: "Incoming"
+        expired: "Expired"
+      title: "Enquiries"
+      description_html: "The following citizen proposals that have reached the <strong>required supports</strong> and will be voted."
+      dates: "From %{open_at} to %{closed_at}"
+      no_enquiries_opened: "There aren't opened enquiries."
+      no_enquiries_expired: "There aren't expired enquiries."
+      no_enquiries_incoming: "There aren't incoming enquiries."
+    show:
+      original_proposal: "Original proposal"
+      author: "Created by"
+      dates_title: "Participation dates"
+      dates: "From %{open_at} to %{closed_at}"
+      external_url: "Additional documentation"
+      more_info: "More information"
+      not_logged_in: "You must %{signin} or %{signup} to participate."
+      signin: Sign in
+      signup: Sign up
+      cant_answer_verify_html: "You must %{verify_link} in order to answer."
+      verify_link: "verify your account"
+      cant_answer_incoming: "This question has not yet started."
+      cant_answer_expired: "This question has finished."
+      cant_answer_wrong_geozone: "This question is not available on your geozone."
+      vote_answer: "Vote %{answer}"
+      voted: "You have voted %{answer}"
+    banner:
+      featured_title: "#NextVoting"
+      info: "New proposals that have reached the voting phase."
   proposal_notifications:
     new:
       title: "Send message"
@@ -409,6 +430,12 @@ en:
     show:
       back: "Go back to my activity"
   shared:
+    edit: 'Edit'
+    save: 'Save'
+    delete: 'Delete'
+    comments:
+      title: 'Comments'
+      login_to_comment: 'You must %{signin} or %{signup} to leave a comment.'
     advanced_search:
       author_type: 'By author category'
       author_type_blank: 'Select a category'

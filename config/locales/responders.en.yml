@@ -22,3 +22,4 @@ en:
         spending_proposal: "Investment project updated succesfully."
       destroy:
         spending_proposal: "Spending proposal deleted succesfully."
+        error: "Could not delete"

@@ -43,6 +43,10 @@ module Abilities
       can :manage, Annotation
 
       can [:read, :update, :destroy, :summary], SpendingProposal
+
+      can [:read, :create, :update], Poll::Question
+      can :destroy, Poll::Question # , comments_count: 0, votes_up: 0
+
       can [:search, :edit, :update, :create, :index, :destroy], Banner
 
       can [:manage], Poll
