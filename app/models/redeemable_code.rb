@@ -23,4 +23,29 @@ class RedeemableCode < ActiveRecord::Base
     end
   end
 
+  def self.generate_list(how_many)
+    deactivate_activerecord_console_log
+    begin
+      how_many.times do |i|
+        code = new(token: generate_token)
+        while !code.save # regenerate if duplicated token found
+          code.token = generate_token
+        end
+
+        print('.') if i > 0 && i.multiple_of?(1000)
+      end
+    ensure
+      activate_activerecord_console_log
+    end
+  end
+
+  private
+    def self.deactivate_activerecord_console_log
+      ActiveRecord::Base.logger.level = 1
+    end
+
+    def self.activate_activerecord_console_log
+      ActiveRecord::Base.logger.level = 0
+    end
+
 end
