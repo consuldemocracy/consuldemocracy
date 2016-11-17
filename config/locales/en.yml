@@ -212,7 +212,7 @@ en:
       proposal_ballot: Voting
       see_all: See proposals
       spending_proposals: Spending proposals
-  legislation:
+  legacy_legislation:
     help:
       alt: Select the text you want to comment and press the button with the pencil.
       text: To comment this document you must %{sign_in} or %{sign_up}. Then select the text you want to comment and press the button with the pencil.

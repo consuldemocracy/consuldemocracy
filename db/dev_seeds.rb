@@ -316,10 +316,6 @@ puts "Creating Valuation Assignments"
   SpendingProposal.reorder("RANDOM()").first.valuators << valuator.valuator
 end
 
-puts "Creating Legislation"
-
-Legislation.create!(title: 'Participatory Democracy', body: 'In order to achieve...')
-
 
 puts "Ignoring flags in Debates, comments & proposals"
 
