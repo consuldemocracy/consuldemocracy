@@ -52,7 +52,7 @@ feature 'Admin enquiries' do
     expect(page).to have_content(summary)
   end
 
-  scenario 'Create from successful proposal', :focus do
+  scenario 'Create from successful proposal' do
     geozones = create_list(:geozone, 3)
     proposal = create(:proposal, :successful)
 

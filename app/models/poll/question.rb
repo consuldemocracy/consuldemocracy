@@ -47,8 +47,7 @@ class Poll::Question < ActiveRecord::Base
   end
 
   def answerable_by?(user)
-    true
-    #poll.answerable_by?(user) && (self.all_geozones || self.geozone_ids.include?(user.geozone_id))
+    poll.answerable_by?(user) && (self.all_geozones || self.geozone_ids.include?(user.geozone_id))
   end
 
   def self.answerable_by(user)

@@ -11,8 +11,8 @@ class Polls::QuestionsController < ApplicationController
     @comment_tree = CommentTree.new(@commentable, params[:page], @current_order)
     set_comment_flags(@comment_tree.comments)
 
-    #@question_answer = @question.answers.where(author_id: current_user.try(:id)).first
-    @answers_by_question_id = {@question.id => params[:answer]}
+    question_answer = @question.partial_results.where(author_id: current_user.try(:id)).first
+    @answers_by_question_id = {@question.id => question_answer.try(:answer)}
   end
 
   def answer

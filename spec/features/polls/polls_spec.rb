@@ -1,4 +1,3 @@
-# coding: utf-8
 require 'rails_helper'
 
 feature 'Polls' do
@@ -95,7 +94,7 @@ feature 'Polls' do
       expect(page).to_not have_link('Chewbacca')
     end
 
-    scenario 'Level 2 users in an incoming question' do
+    scenario 'Level 2 users in an incoming poll' do
       incoming_poll = create(:poll, :incoming)
       create(:poll_question, poll: incoming_poll, geozone_ids: [geozone.id], valid_answers: 'Rey, Finn')
       login_as(create(:user, :level_two, geozone: geozone))
@@ -110,7 +109,7 @@ feature 'Polls' do
       expect(page).to have_content('This poll has not yet started')
     end
 
-    scenario 'Level 2 users in an expired question' do
+    scenario 'Level 2 users in an expired poll' do
       expired_poll = create(:poll, :expired)
       create(:poll_question, poll: expired_poll, geozone_ids: [geozone.id], valid_answers: 'Luke, Leia')
       login_as(create(:user, :level_two, geozone: geozone))
@@ -161,6 +160,7 @@ feature 'Polls' do
       question = create(:poll_question, poll: poll, geozone_ids:[geozone.id], valid_answers: 'Han Solo, Chewbacca')
       user = create(:user, :level_two, geozone: geozone)
       create(:poll_partial_result, question: question, author: user, answer: 'Chewbacca')
+
       login_as user
       visit poll_path(poll)
 
@@ -182,6 +182,4 @@ feature 'Polls' do
     end
 
   end
-
 end
-
