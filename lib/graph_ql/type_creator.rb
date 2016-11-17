@@ -28,12 +28,12 @@ module GraphQL
             when :belongs_to
               field(association.name, -> { api_types[association.klass] })
             when :has_many
-              connection(association.name, api_types[association.klass].connection_type {
+              connection(association.name, -> { api_types[association.klass].connection_type {
                 description "#{association.klass.model_name.human.pluralize}"
                 resolve -> (object, arguments, context) {
                   association.klass.all
                 }
-              })
+              }})
             end
           end
         end
