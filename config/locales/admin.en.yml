@@ -185,6 +185,13 @@ en:
         title: "Edit Question"
       new:
         title: "Create Question"
+      show:
+        proposal: Proposal
+        title: Title
+        valid_answers: Valid answers
+        summary: Summary
+        description: Description
+        geozones: Geozones
     booths:
       index:
         title: "List of booths"

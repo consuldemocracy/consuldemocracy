@@ -190,7 +190,7 @@ Rails.application.routes.draw do
       resources :polls do
         resources :booths
       end
-      resources :questions, except: :show
+      resources :questions
     end
 
     resources :verifications, controller: :verifications, only: :index do

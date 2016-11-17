@@ -185,6 +185,13 @@ es:
         title: "Editar pregunta ciudadana"
       new:
         title: "Crear pregunta ciudadana"
+      show:
+        proposal: Propuesta Ciudadana
+        title: Título
+        valid_answers: Respuestas válidas
+        summary: Resumen
+        description: Descripción
+        geozones: Distritos
     booths:
       index:
         title: "Lista de urnas"

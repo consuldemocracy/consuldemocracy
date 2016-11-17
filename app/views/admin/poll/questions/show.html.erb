@@ -1,0 +1,37 @@
+<% if @question.proposal.present? %>
+  <div>
+    <%= I18n.t("admin.questions.show.proposal") %>:
+    <%= @question.proposal.title %>
+  </div>
+<% end %>
+
+<div class="small-12 column">
+  <div>
+    <%= I18n.t("admin.questions.show.title") %>:
+    <%= @question.title %>
+  </div>
+
+  <div>
+    <%= I18n.t("admin.questions.show.valid_answers") %>:
+    <%= @question.valid_answers.join(", ") %>
+  </div>
+
+  <div>
+    <%= I18n.t("admin.questions.show.summary") %>:
+    <%= @question.summary %>
+  </div>
+
+  <div>
+    <%= I18n.t("admin.questions.show.description") %>:
+    <%= @question.description %>
+  </div>
+
+  <div>
+    <%= I18n.t("admin.questions.show.geozones") %>:
+    <% @question.geozones.each do |geozone| %>
+      <div>
+        <% geozone.name %>
+      </div>
+    <% end %>
+  </div>
+</div>

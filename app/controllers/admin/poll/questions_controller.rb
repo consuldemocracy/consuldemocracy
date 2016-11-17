@@ -17,19 +17,21 @@ class Admin::Poll::QuestionsController < Admin::BaseController
     @question.author = @question.proposal.try(:author) || current_user
 
     if @question.save
-      redirect_to question_path(@question)
+      redirect_to admin_question_path(@question)
     else
       render :new
     end
   end
 
-  def edit
+  def show
+  end
 
+  def edit
   end
 
   def update
     if @question.update(question_params)
-      redirect_to question_path(@question), notice: t("flash.actions.save_changes.notice")
+      redirect_to admin_question_path(@question), notice: t("flash.actions.save_changes.notice")
     else
       render :edit
     end
