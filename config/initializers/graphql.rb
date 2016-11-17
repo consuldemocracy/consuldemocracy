@@ -2,7 +2,7 @@ API_TYPE_DEFINITIONS = {
   User     => %I[ id username proposals ],
   Debate   => %I[ id title description author_id author created_at ],
   Proposal => %I[ id title description author_id author created_at ],
-  Comment  => %I[ id body author_id author commentable_id commentable]
+  Comment  => %I[ id body user_id user commentable_id ]
 }
 
 api_types = {}
