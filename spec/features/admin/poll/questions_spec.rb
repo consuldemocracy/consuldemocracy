@@ -26,7 +26,7 @@ feature 'Admin enquiries' do
     expect(page).to have_content(question.description)
     expect(page).to have_content(question.summary)
     expect(page).to have_content(question.author.name)
-    expect(page).to have_content(question.valid_answers.join(", "))
+    expect(page).to have_content(question.valid_answers.join(" "))
     expect(page).to have_content(geozone.name)
   end
 
