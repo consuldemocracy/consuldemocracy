@@ -1214,8 +1214,8 @@ pt-BR:
           podem ser apoiadas por todos os cidadãos registrados em Madrid que verificaram
           a sua conta na plataforma de participação. Desta forma, a cidadania e não
           alguém em seu nome, irá decidir quais são as propostas que valem a pena
-          levar a cabo.\r\n\r\nAssim que a proposta atingir o apoio de 2% Madrid recenseada
-          (cerca de 53.000 pessoas), será estudado por um grupo conselheiro da cidade,
+          levar a cabo.\r\n\r\nAssim que a proposta atingir o apoio de 1% Madrid recenseada
+          (cerca de 28.000 pessoas), será estudado por um grupo conselheiro da cidade,
           avançar além da fase de consulta popular, em que a cidadania de Madrid vai
           votar se a proposta será realizada ou não. O prazo máximo para obter apoio
           suficiente é de 12 meses."
@@ -1339,7 +1339,7 @@ pt-BR:
         other: "%{count} comentários"
         zero: Nenhum comentário
       proposal: Proposta
-      reason_for_supports_necessary: 2% do Censo
+      reason_for_supports_necessary: 1% do Censo
       support: Apoiar
       supports:
         one: 1 apoio

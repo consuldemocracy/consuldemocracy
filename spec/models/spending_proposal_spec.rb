@@ -174,7 +174,7 @@ describe SpendingProposal do
       by_valuator = SpendingProposal.by_valuator(valuator1.id)
 
       expect(by_valuator.size).to eq(2)
-      expect(by_valuator.sort).to eq([spending_proposal1,spending_proposal3].sort)
+      expect(by_valuator.sort).to eq([spending_proposal1, spending_proposal3].sort)
     end
   end
 

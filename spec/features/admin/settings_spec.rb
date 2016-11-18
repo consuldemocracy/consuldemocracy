@@ -27,4 +27,5 @@ feature 'Admin settings' do
 
     expect(page).to have_content 'Value updated'
   end
+
 end

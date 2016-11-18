@@ -56,5 +56,4 @@ class Verification::LetterController < ApplicationController
       end
     end
 
-
 end

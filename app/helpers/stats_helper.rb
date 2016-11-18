@@ -20,4 +20,5 @@ module StatsHelper
     opt[:data][:graph] = admin_api_stats_path(spending_proposals: true)
     content_tag :div, "", opt
   end
+
 end

@@ -32,4 +32,5 @@ class Admin::StatsController < Admin::BaseController
     @direct_messages = DirectMessage.count
     @users_who_have_sent_message = DirectMessage.select(:sender_id).distinct.count
   end
+
 end

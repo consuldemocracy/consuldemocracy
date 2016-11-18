@@ -24,6 +24,7 @@ class Organizations::RegistrationsController < Devise::RegistrationsController
   end
 
   protected
+
     def after_inactive_sign_up_path_for(resource)
       organizations_sign_up_success_path
     end
