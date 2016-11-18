@@ -285,7 +285,7 @@ GEM
     powerpack (0.1.1)
     quiet_assets (1.1.0)
       railties (>= 3.1, < 5.0)
-    rack (1.6.4)
+    rack (1.6.5)
     rack-accept (0.4.5)
       rack (>= 0.4)
     rack-attack (5.0.1)
