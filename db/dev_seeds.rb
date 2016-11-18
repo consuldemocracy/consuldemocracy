@@ -404,3 +404,14 @@ end
 10.times.each_with_index do |i|
   Poll::Booth.create(name: "Booth #{i}", poll: Poll.all.sample)
 end
+
+puts "Commenting Poll Questions"
+
+(1..30).each do |i|
+  author = User.reorder("RANDOM()").first
+  question = Poll::Question.reorder("RANDOM()").first
+  Comment.create!(user: author,
+                  created_at: rand(question.created_at .. Time.now),
+                  commentable: question,
+                  body: Faker::Lorem.sentence)
+end
