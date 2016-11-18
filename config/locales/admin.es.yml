@@ -193,6 +193,7 @@ es:
         summary: Resumen
         description: Descripción
         geozones: Distritos
+        preview: Ver en la web
     booths:
       index:
         title: "Lista de urnas"

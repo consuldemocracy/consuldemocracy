@@ -193,6 +193,7 @@ en:
         summary: Summary
         description: Description
         geozones: Geozones
+        preview: View on website
     booths:
       index:
         title: "List of booths"
