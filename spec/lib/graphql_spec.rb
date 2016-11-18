@@ -20,6 +20,8 @@ describe ConsulSchema do
     end
 
     describe "supports nested queries" do
+      let(:user) { create(:user) }
+
       it "with :has_one associations" do
         skip "I think this test isn't needed"
         # TODO: the only has_one associations inside the project are in the User
@@ -38,7 +40,6 @@ describe ConsulSchema do
       end
 
       it "with :belongs_to associations" do
-        user = create(:user)
         proposal = create(:proposal, author: user)
         query_string = "{ proposal(id: #{proposal.id}) { author { username } } }"
 
@@ -49,7 +50,6 @@ describe ConsulSchema do
       end
 
       it "with :has_many associations" do
-        user = create(:user)
         proposal = create(:proposal)
         create(:comment, body: "Blah Blah", author: user, commentable: proposal)
         create(:comment, body: "I told ya", author: user, commentable: proposal)
@@ -62,9 +62,72 @@ describe ConsulSchema do
         expect(comment_bodies).to match_array(["Blah Blah", "I told ya"])
       end
     end
+
+    describe "does not expose confidential" do
+      let(:user) { create(:user) }
+
+      it "Int fields" do
+        query_string = "{ user(id: #{user.id}) { failed_census_calls_count } }"
+
+        result = ConsulSchema.execute(query_string, context: {}, variables: {})
+
+        expect(result['data']).to be_nil
+        expect(result['errors'].first['message']).to eq("Field 'failed_census_calls_count' doesn't exist on type 'User'")
+      end
+
+      it "String fields" do
+        query_string = "{ user(id: #{user.id}) { encrypted_password } }"
+
+        result = ConsulSchema.execute(query_string, context: {}, variables: {})
+
+        expect(result['data']).to be_nil
+        expect(result['errors'].first['message']).to eq("Field 'encrypted_password' doesn't exist on type 'User'")
+      end
+
+      it ":has_one associations" do
+        user.administrator = create(:administrator)
+        query_string = "{ user(id: #{user.id}) { administrator { id } } }"
+
+        result = ConsulSchema.execute(query_string, context: {}, variables: {})
+
+        expect(result['data']).to be_nil
+        expect(result['errors'].first['message']).to eq("Field 'administrator' doesn't exist on type 'User'")
+      end
+
+      it ":belongs_to associations" do
+        create(:failed_census_call, user: user)
+
+        query_string = "{ user(id: #{user.id}) { failed_census_calls { id } } }"
+
+        result = ConsulSchema.execute(query_string, context: {}, variables: {})
+
+        expect(result['data']).to be_nil
+        expect(result['errors'].first['message']).to eq("Field 'failed_census_calls' doesn't exist on type 'User'")
+      end
+
+      it ":has_many associations" do
+        create(:direct_message, sender: user)
+        query_string = "{ user(id: #{user.id}) { direct_messages_sent { id } } }"
+
+        result = ConsulSchema.execute(query_string, context: {}, variables: {})
+
+        expect(result['data']).to be_nil
+        expect(result['errors'].first['message']).to eq("Field 'direct_messages_sent' doesn't exist on type 'User'")
+      end
+
+      it "fields inside nested queries" do
+        proposal = create(:proposal, author: user)
+        query_string = "{ proposal(id: #{proposal.id}) { author { reset_password_sent_at } } }"
+
+        result = ConsulSchema.execute(query_string, context: {}, variables: {})
+
+        expect(result['data']).to be_nil
+        expect(result['errors'].first['message']).to eq("Field 'reset_password_sent_at' doesn't exist on type 'User'")
+      end
+    end
   end
 
-  describe "queries with nested associations" do
+  describe "queries to collections" do
     let(:query_string) { "{ proposals { edges { node { id, title, author { username } } } } }" }
 
     let(:mrajoy) { create(:user, username: 'mrajoy') }
@@ -75,7 +138,7 @@ describe ConsulSchema do
       { proposal_3: create(:proposal, id: 3, title: "Construir un muro", author: dtrump) }
     }
 
-    it "returns the appropiate fields" do
+    it "return the appropiate fields" do
       proposals = result["data"]["proposals"]["edges"].collect { |edge| edge['node'] }
 
       expected_result = [
