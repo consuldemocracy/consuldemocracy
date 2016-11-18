@@ -53,12 +53,17 @@ class Poll::Question < ActiveRecord::Base
   def self.answerable_by(user)
     return none if user.nil? || user.unverified?
 
-    joins('LEFT JOIN "geozones_poll_questions" ON "geozones_poll_questions"."question_id" = "poll_questions"."id"')
-      .where('poll_questions.poll_id IN (?) AND (poll_questions.all_geozones = ? OR geozones_poll_questions.geozone_id = ?)',
-             Poll.answerable_by(user).pluck(:id),
-             true,
-             user.geozone_id || -1) # user.geozone_id can be nil, which would throw errors on sql
-      .group('poll_questions.id')
+    where(poll_id:  answerable_polls(user),
+          geozones: { id: answerable_geozones(user) }).
+    joins(:geozones)
+  end
+
+  def self.answerable_polls(user)
+    Poll.answerable_by(user)
+  end
+
+  def self.answerable_geozones(user)
+    user.geozone || Geozone.city
   end
 
 end
