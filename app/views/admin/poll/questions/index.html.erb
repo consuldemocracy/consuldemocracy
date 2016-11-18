@@ -11,7 +11,7 @@
   <table>
   <% @questions.each do |question| %>
     <tr id="<%= dom_id(question) %>">
-      <td><%= link_to question.title, question_path(question) %></td>
+      <td><%= link_to question.title, admin_question_path(question) %></td>
       <td class="text-right">
         <%= link_to t('shared.edit'), edit_admin_question_path(question), class: "button hollow" %>
         <%= link_to t('shared.delete'), admin_question_path(question), class: "button hollow alert", method: :delete %>
