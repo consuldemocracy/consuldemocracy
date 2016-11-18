@@ -186,6 +186,28 @@ tags = Faker::Lorem.words(25)
   puts "    #{proposal.title}"
 end
 
+puts "Creating Successful Proposals"
+
+tags = Faker::Lorem.words(25)
+(1..10).each do |i|
+  author = User.reorder("RANDOM()").first
+  description = "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>"
+  proposal = Proposal.create!(author: author,
+                              title: Faker::Lorem.sentence(3).truncate(60),
+                              question: Faker::Lorem.sentence(3) + "?",
+                              summary: Faker::Lorem.sentence(3),
+                              responsible_name: Faker::Name.name,
+                              external_url: Faker::Internet.url,
+                              description: description,
+                              created_at: rand((Time.now - 1.week) .. Time.now),
+                              tag_list: tags.sample(3).join(','),
+                              geozone: Geozone.reorder("RANDOM()").first,
+                              terms_of_service: "1",
+                              created_at: 1.month.ago,
+                              cached_votes_up: Setting["votes_for_proposal_success"])
+  puts "    #{proposal.title}"
+end
+
 
 tags = ActsAsTaggableOn::Tag.where(kind: 'category')
 (1..30).each do |i|
@@ -408,6 +430,18 @@ end
 puts "Creating Poll Question from Proposals"
 
 (1..3).each do |i|
+  proposal = Proposal.reorder("RANDOM()").first
+  poll = Poll.current.first
+  question = Poll::Question.create(valid_answers: "Yes, No")
+  question.copy_attributes_from_proposal(proposal)
+  question.save!
+
+  puts " #{question.title} (from proposal)"
+end
+
+puts "Creating Successfull Proposals"
+
+(1..10).each do |i|
   proposal = Proposal.reorder("RANDOM()").first
   poll = Poll.current.first
   question = Poll::Question.create(valid_answers: "Yes, No")
