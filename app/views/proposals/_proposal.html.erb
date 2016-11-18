@@ -56,8 +56,8 @@
         <% if proposal.successfull? %>
           <div class="message">
             <p>
-              <%= t("proposal_ballots.successfull",
-                  voting: link_to(t("proposal_ballots.voting"), polls_path)).html_safe %>
+              <%= t("proposals.proposal.successfull",
+                  voting: link_to(t("proposals.proposal.voting"), polls_path)).html_safe %>
             </p>
           </div>
           <% if can? :create, Poll::Question %>

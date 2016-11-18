@@ -52,7 +52,7 @@ feature 'Admin enquiries' do
     expect(page).to have_content(summary)
   end
 
-  scenario 'Create from successful proposal' do
+  scenario 'Create from successful proposal index' do
     geozones = create_list(:geozone, 3)
     proposal = create(:proposal, :successful)
 
@@ -73,6 +73,8 @@ feature 'Admin enquiries' do
     expect(page).to have_link(proposal.title, href: proposal_path(proposal))
     expect(page).to have_link(proposal.author.name, href: user_path(proposal.author))
   end
+
+  pending "Create from successul proposal show"
 
   scenario 'Update' do
     question1 = create(:poll_question)

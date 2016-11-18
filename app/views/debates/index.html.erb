@@ -30,10 +30,10 @@
       <% end %>
 
       <% if @proposal_successfull_exists %>
-        <%= render "proposals/proposal_ballots_banner" %>
+        <%= render "proposals/successfull_banner" %>
       <% end %>
 
-      <% unless @tag_filter || @search_terms || !has_featured? || @proposal_ballots.present? || @proposal_successfull_exists %>
+      <% unless @tag_filter || @search_terms || !has_featured? || @proposal_successfull_exists %>
         <%= render "featured_debates" %>
       <% end %>
 
