@@ -8,7 +8,7 @@ class Admin::Poll::QuestionsController < Admin::BaseController
   end
 
   def new
-    @question.valid_answers = I18n.t('questions.default_valid_answers')
+    @question.valid_answers = I18n.t('poll_questions.default_valid_answers')
     proposal = Proposal.find(params[:proposal_id]) if params[:proposal_id].present?
     @question.copy_attributes_from_proposal(proposal)
   end
