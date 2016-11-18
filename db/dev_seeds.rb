@@ -364,19 +364,27 @@ end
 
 puts "Creating polls"
 
-3.times.each_with_index do |i|
-  starts_at = rand(2.months.ago .. 2.months.from_now)
-  ends_at   = starts_at + 1.month
+puts "Active Poll"
+poll = Poll.create(name: "Poll 1",
+                   starts_at: 1.month.ago,
+                   ends_at:   1.month.from_now)
+puts "    #{poll.name}"
 
-  poll = Poll.create(name: "Poll #{i}",
-                     starts_at: starts_at,
-                     ends_at:   ends_at)
-  puts "    #{poll.name}"
-end
+puts "Upcoming Poll"
+poll = Poll.create(name: "Poll 2",
+                   starts_at: 1.month.from_now,
+                   ends_at:   2.months.from_now)
+puts "    #{poll.name}"
+
+puts "Expired Poll"
+poll = Poll.create(name: "Poll 3",
+                     starts_at: 2.months.ago,
+                     ends_at:   1.months.ago)
+puts "    #{poll.name}"
 
 puts "Creating Poll Questions"
 
-(1..10).each do |i|
+(1..20).each do |i|
   poll = Poll.reorder("RANDOM()").first
   author = User.reorder("RANDOM()").first
   description = "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>"
