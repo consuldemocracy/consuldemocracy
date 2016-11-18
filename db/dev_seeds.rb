@@ -405,6 +405,18 @@ end
   Poll::Booth.create(name: "Booth #{i}", poll: Poll.all.sample)
 end
 
+puts "Creating Poll Question from Proposals"
+
+(1..3).each do |i|
+  proposal = Proposal.reorder("RANDOM()").first
+  poll = Poll.current.first
+  question = Poll::Question.create(valid_answers: "Yes, No")
+  question.copy_attributes_from_proposal(proposal)
+  question.save!
+
+  puts " #{question.title} (from proposal)"
+end
+
 puts "Commenting Poll Questions"
 
 (1..30).each do |i|
