@@ -439,7 +439,7 @@ puts "Creating Poll Question from Proposals"
   puts " #{question.title} (from proposal)"
 end
 
-puts "Creating Successfull Proposals"
+puts "Creating Successful Proposals"
 
 (1..10).each do |i|
   proposal = Proposal.reorder("RANDOM()").first

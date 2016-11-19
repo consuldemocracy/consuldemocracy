@@ -1,8 +1,8 @@
 <div id="<%= dom_id(proposal) %>"
-     class="proposal clear <%= ("successfull" if proposal.total_votes > Proposal.votes_needed_for_success) %>"
+     class="proposal clear <%= ("successful" if proposal.total_votes > Proposal.votes_needed_for_success) %>"
      data-type="proposal">
   <div class="panel">
-    <div class="icon-successfull"></div>
+    <div class="icon-successful"></div>
     <div class="row">
 
       <div class="small-12 medium-9 column">
@@ -53,10 +53,10 @@
       </div>
 
       <div id="<%= dom_id(proposal) %>_votes" class="small-12 medium-3 column">
-        <% if proposal.successfull? %>
+        <% if proposal.successful? %>
           <div class="message">
             <p>
-              <%= t("proposals.proposal.successfull",
+              <%= t("proposals.proposal.successful",
                   voting: link_to(t("proposals.proposal.voting"), polls_path)).html_safe %>
             </p>
           </div>
