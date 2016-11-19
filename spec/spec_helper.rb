@@ -2,7 +2,9 @@ require 'factory_girl_rails'
 require 'database_cleaner'
 require 'email_spec'
 require 'devise'
+require 'knapsack'
 Dir["./spec/support/**/*.rb"].sort.each { |f| require f }
+Knapsack::Adapters::RSpecAdapter.bind
 
 RSpec.configure do |config|
   config.use_transactional_fixtures = false
@@ -101,6 +103,4 @@ RSpec.configure do |config|
   # test failures related to randomization by passing the same `--seed` value
   # as the one that triggered the failure.
   Kernel.srand config.seed
-
-
 end

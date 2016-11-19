@@ -7,4 +7,5 @@ cache: bundler
 before_script:
   - "for i in config/*.example; do cp \"$i\" \"${i/.example}\"; done"
   - bundle exec rake db:setup
-script: bundle exec rake
+script:
+  - "KNAPSACK_GENERATE_REPORT=true bundle exec rspec spec"
