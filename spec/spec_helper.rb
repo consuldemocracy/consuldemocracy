@@ -105,9 +105,4 @@ RSpec.configure do |config|
 end
 
 # Parallel build helper configuration for travis
-Knapsack.tracker.config({
-  enable_time_offset_warning: true, # Enable warning when real build time exceeds expected build time
-  time_offset_in_seconds: 300 # Time offset between expected build time and real build time
-})
-
 Knapsack::Adapters::RSpecAdapter.bind
