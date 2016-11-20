@@ -4,7 +4,6 @@ require 'email_spec'
 require 'devise'
 require 'knapsack'
 Dir["./spec/support/**/*.rb"].sort.each { |f| require f }
-Knapsack::Adapters::RSpecAdapter.bind
 
 RSpec.configure do |config|
   config.use_transactional_fixtures = false
@@ -104,3 +103,11 @@ RSpec.configure do |config|
   # as the one that triggered the failure.
   Kernel.srand config.seed
 end
+
+# Parallel build helper configuration for travis
+Knapsack.tracker.config({
+  enable_time_offset_warning: true, # Enable warning when real build time exceeds expected build time
+  time_offset_in_seconds: 300 # Time offset between expected build time and real build time
+})
+
+Knapsack::Adapters::RSpecAdapter.bind
