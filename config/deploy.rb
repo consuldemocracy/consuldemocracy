@@ -53,6 +53,8 @@ namespace :deploy do
   # before :deploy, "deploy:check_revision"
   # Run test aund continue only if passed
   # before :deploy, "deploy:run_tests"
+  before :starting, 'rvm1:install:rvm'  # install/update RVM
+  before :starting, 'rvm1:install:ruby' # install Ruby and create gemset
 
   # Custom compile and rsync of assets - works, but it is very slow
   #after 'deploy:symlink:shared', 'deploy:compile_assets_locally'
