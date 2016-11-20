@@ -9,6 +9,7 @@ end
 set :rails_env, fetch(:stage)
 set :rvm_ruby_version, '2.3.1'
 set :rvm_type, :user
+set :rvm1_ruby_version, '2.3.2'
 
 set :application, 'consul'
 set :full_app_name, deploysecret(:full_app_name)
