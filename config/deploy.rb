@@ -43,9 +43,16 @@ set :whenever_roles, -> { :cron }
 namespace :deploy do
   before :starting, 'rvm1:install:rvm'  # install/update RVM
   before :starting, 'rvm1:install:ruby' # install Ruby and create gemset
+  before :starting, 'install_bundler_gem' # install bundler gem
 
   after :publishing, 'deploy:restart'
   after :published, 'delayed_job:restart'
 
   after :finishing, 'deploy:cleanup'
+end
+
+task :install_bundler_gem do
+  on roles(:app) do
+    execute "rvm use #{fetch(:rvm1_ruby_version)}; gem install bundler"
+  end
 end
