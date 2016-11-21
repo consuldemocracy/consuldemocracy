@@ -82,13 +82,6 @@
             <p><%= t("pages.processes.index.process_11_description") %></p>
             <%= link_to t("pages.processes.index.process_11_button"), air_quality_plan_path, class: "button hollow" %>
           </div>
-
-          <!-- Alianza para el Gobierno abierto -->
-          <div id="open-government" class="panel">
-            <h3><%= t("pages.processes.index.process_9_title") %></h3>
-            <p><%= t("pages.processes.index.process_9_description") %></p>
-            <%= link_to t("pages.processes.index.process_9_button"), open_government_path, class: "button hollow" %>
-          </div>
         </div>
 
         <!-- Procesos próximamente -->
@@ -106,6 +99,13 @@
 
         <!-- Procesos terminados -->
         <div class="tabs-panel" id="panel3v">
+
+          <!-- Alianza para el Gobierno abierto -->
+          <div id="open-government" class="panel">
+            <h3><%= t("pages.processes.index.process_9_title") %></h3>
+            <p><%= t("pages.processes.index.process_9_description") %></p>
+            <%= link_to t("pages.processes.index.process_9_button"), open_government_path, class: "button hollow" %>
+          </div>
 
           <!-- Plan Derechos humanos -->
           <div id="dd-hh" class="panel">
