@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe Poll::PartialResult, type: :model do
+describe Poll::PartialResult do
 
   describe "validations" do
     it "validates that the answers are included in the Enquiry's list" do

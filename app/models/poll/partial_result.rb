@@ -14,5 +14,4 @@ class Poll::PartialResult < ActiveRecord::Base
   scope :by_author, -> (author_id) { where(author_id: author_id) }
   scope :by_question, -> (question_id) { where(question_id: question_id) }
 
-
 end
