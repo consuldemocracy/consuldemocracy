@@ -180,7 +180,7 @@ GEM
       activesupport (>= 3)
     gyoku (1.3.1)
       builder (>= 2.1.2)
-    hashie (3.4.3)
+    hashie (3.4.6)
     highline (1.7.8)
     htmlentities (4.3.4)
     httpi (2.4.1)
