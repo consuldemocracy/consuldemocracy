@@ -58,11 +58,6 @@ en:
       text: "Consulta previa sobre la regulación de la concesión de licencias urbanísticas para la realización de obras y la apertura de locales comerciales o empresariales."
       date_html: "Participate until <strong>November 24</strong>"
       button: "More information"
-    open_government:
-      title: "#OpenGovernmentAlliance"
-      text: "Esta organización compuesta por gobiernos y sociedad civil, ayuda a que los gobiernos desarrollen medidas relevantes y específicas para avanzar en la participación y la transparencia."
-      date_html: "Participate until <strong>November 20</strong>"
-      button: "More information"
     subvention_ordinance:
       title: "#SubventionOrdinance"
       text: "El Ayuntamiento de Madrid somete a consulta pública la necesidad de modificar la regulación del sistema de subvenciones."
