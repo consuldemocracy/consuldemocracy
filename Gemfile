@@ -86,6 +86,7 @@ group :development, :test do
   gem "bullet"
   gem "faker"
   gem 'rubocop', '~> 0.45.0', require: false
+  gem 'knapsack'
 end
 
 group :test do
