@@ -32,7 +32,7 @@ gem 'omniauth-facebook', '~> 3.0.0'
 gem 'omniauth-google-oauth2', '~> 0.4.0'
 
 gem 'kaminari'
-gem 'ancestry', '~> 2.2.1'
+gem 'ancestry', '~> 2.2.2'
 gem 'acts-as-taggable-on'
 gem 'responders', '~> 2.3.0'
 gem 'foundation-rails', '~> 6.2.4.0'
