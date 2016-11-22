@@ -81,13 +81,14 @@ group :development, :test do
   gem 'letter_opener_web', '~> 1.3.0'
   gem 'i18n-tasks'
   gem 'capistrano', '3.5.0',           require: false
-  gem "capistrano-bundler", '1.1.4',   require: false
+  gem 'capistrano-bundler', '~> 1.2',  require: false
   gem "capistrano-rails", '1.1.8',     require: false
-  gem "capistrano-rvm",                require: false
+  gem 'rvm1-capistrano3',              require: false
   gem 'capistrano3-delayed-job', '~> 1.0'
   gem "bullet"
   gem "faker"
   gem 'rubocop', '~> 0.45.0', require: false
+  gem 'knapsack'
 end
 
 group :test do

@@ -235,7 +235,6 @@ tags = Faker::Lorem.words(25)
                               responsible_name: Faker::Name.name,
                               external_url: Faker::Internet.url,
                               description: description,
-                              created_at: rand((Time.now - 1.week) .. Time.now),
                               tag_list: tags.sample(3).join(','),
                               geozone: Geozone.reorder("RANDOM()").first,
                               terms_of_service: "1",
@@ -285,6 +284,9 @@ puts "Commenting Proposals"
                   commentable: proposal,
                   body: Faker::Lorem.sentence)
 end
+
+
+puts "Commenting Comments"
 
 (1..200).each do
   author = User.reorder("RANDOM()").first

@@ -80,16 +80,13 @@ GEM
       i18n
       rake (>= 10.0.0)
       sshkit (>= 1.9.0)
-    capistrano-bundler (1.1.4)
+    capistrano-bundler (1.2.0)
       capistrano (~> 3.1)
       sshkit (~> 1.2)
     capistrano-harrow (0.5.3)
     capistrano-rails (1.1.8)
       capistrano (~> 3.1)
       capistrano-bundler (~> 1.1)
-    capistrano-rvm (0.1.2)
-      capistrano (~> 3.0)
-      sshkit (~> 1.2)
     capistrano3-delayed-job (1.7.2)
       capistrano (~> 3.0, >= 3.0.0)
     capybara (2.7.1)
@@ -217,6 +214,9 @@ GEM
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
     kgio (2.10.0)
+    knapsack (1.13.0)
+      rake
+      timecop (>= 0.1.0)
     launchy (2.4.3)
       addressable (~> 2.3)
     letter_opener (1.4.1)
@@ -358,6 +358,9 @@ GEM
       unicode-display_width (~> 1.0, >= 1.0.1)
     ruby-progressbar (1.8.1)
     rubyzip (1.2.0)
+    rvm1-capistrano3 (1.4.0)
+      capistrano (~> 3.0)
+      sshkit (>= 1.2)
     safe_yaml (1.0.4)
     safely_block (0.1.1)
       errbase
@@ -398,7 +401,7 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
-    sshkit (1.11.3)
+    sshkit (1.11.4)
       net-scp (>= 1.1.2)
       net-ssh (>= 2.8.0)
     term-ansicolor (1.3.2)
@@ -462,9 +465,8 @@ DEPENDENCIES
   byebug
   cancancan
   capistrano (= 3.5.0)
-  capistrano-bundler (= 1.1.4)
+  capistrano-bundler (~> 1.2)
   capistrano-rails (= 1.1.8)
-  capistrano-rvm
   capistrano3-delayed-job (~> 1.0)
   capybara
   ckeditor (~> 4.2.0)
@@ -490,6 +492,7 @@ DEPENDENCIES
   jquery-rails (~> 4.2.1)
   jquery-ui-rails
   kaminari
+  knapsack
   launchy
   letter_opener_web (~> 1.3.0)
   newrelic_rpm (~> 3.17.0.325)
@@ -510,6 +513,7 @@ DEPENDENCIES
   rspec-rails (~> 3.5)
   rubocop (~> 0.45.0)
   rubyzip
+  rvm1-capistrano3
   sass-rails (~> 5.0, >= 5.0.4)
   savon
   social-share-button
