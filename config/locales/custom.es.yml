@@ -46,7 +46,7 @@ es:
     proposal_ballots:
       title: "#PróximaVotación"
       text: "Nuevas propuestas ciudadanas han llegado a la fase de votación."
-      date_html: "Próximamente"
+      date_html: "<strong>Del 13 al 19 de febrero</strong>"
       button: "Quiero decidir"
     plaza:
       title: "#RemodelaciónPlazaEspaña"
