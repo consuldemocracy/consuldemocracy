@@ -6,19 +6,17 @@ describe ConsulSchema do
   let(:result) { ConsulSchema.execute(query_string, context: context, variables: variables) }
 
   describe "queries to single elements" do
-    let(:proposal) { create(:proposal, title: 'Proposal Title') }
+    let(:proposal) { create(:proposal) }
+    subject(:returned_proposal) { result['data']['proposal'] }
 
-    describe "can returns fields of" do
-      let(:query_string) { "{ proposal(id: #{proposal.id}) { id, title } }" }
-      subject(:returned_proposal) { result['data']['proposal'] }
+    describe "return fields of Int type" do
+      let(:query_string) { "{ proposal(id: #{proposal.id}) { id } }" }
+      specify { expect(returned_proposal['id']).to eq(proposal.id) }
+    end
 
-      it "numeric type" do
-        expect(returned_proposal['id']).to eq(proposal.id)
-      end
-
-      it "String type" do
-        expect(returned_proposal['title']).to eq(proposal.title)
-      end
+    describe "return fields of String type" do
+      let(:query_string) { "{ proposal(id: #{proposal.id}) { title } }" }
+      specify { expect(returned_proposal['title']).to eq(proposal.title) }
     end
 
     describe "support nested" do
@@ -28,7 +26,6 @@ describe ConsulSchema do
       let!(:comment_1) { create(:comment, author: comments_author, commentable: proposal) }
       let!(:comment_2) { create(:comment, author: comments_author, commentable: proposal) }
       let(:query_string) { "{ proposal(id: #{proposal.id}) { author { username }, comments { edges { node { body } } } } }" }
-      subject(:returned_proposal) { result['data']['proposal'] }
 
       it ":has_one associations" do
         skip "I think this test isn't needed"
@@ -104,38 +101,32 @@ describe ConsulSchema do
   end
 
   describe "queries to collections" do
-    let(:query_string) { "{ proposals { edges { node { id, title, author { username } } } } }" }
-
     let(:mrajoy) { create(:user, username: 'mrajoy') }
     let(:dtrump) { create(:user, username: 'dtrump') }
-    let(:context) do
-      { proposal_1: create(:proposal, id: 1, title: "Bajar el IVA", author: mrajoy) }
-      { proposal_2: create(:proposal, id: 2, title: "Censurar los memes", author: mrajoy) }
-      { proposal_3: create(:proposal, id: 3, title: "Construir un muro", author: dtrump) }
+    let!(:proposal_1) { create(:proposal, id: 1, title: "Bajar el IVA", author: mrajoy) }
+    let!(:proposal_2) { create(:proposal, id: 2, title: "Censurar los memes", author: mrajoy) }
+    let!(:proposal_3) { create(:proposal, id: 3, title: "Construir un muro", author: dtrump) }
+    subject(:returned_proposals) { result['data']['proposals']["edges"].collect { |edge| edge['node'] } }
+
+    describe "return fields of Int type" do
+      let(:query_string) { "{ proposals { edges { node { id } } } }" }
+      let(:ids) { returned_proposals.collect { |proposal| proposal['id'] } }
+
+      specify { expect(ids).to match_array([3, 1, 2]) }
     end
 
-    it "return the appropiate fields" do
-      proposals = result["data"]["proposals"]["edges"].collect { |edge| edge['node'] }
+    describe "return fields of String type" do
+      let(:query_string) { "{ proposals { edges { node { title } } } }" }
+      let(:titles) { returned_proposals.collect { |proposal| proposal['title'] } }
 
-      expected_result = [
-        {
-          'id' => 1,
-          'title' => 'Bajar el IVA',
-          'author' => { 'username' => 'mrajoy' }
-        },
-        {
-          'id' => 2,
-          'title' => 'Censurar los memes',
-          'author' => { 'username' => 'mrajoy' }
-        },
-        {
-          'id' => 3,
-          'title' => 'Construir un muro',
-          'author' => { 'username' => 'dtrump' }
-        }
-      ]
+      specify { expect(titles).to match_array(['Construir un muro', 'Censurar los memes', 'Bajar el IVA']) }
+    end
 
-      expect(proposals).to match_array(expected_result)
+    describe "return nested fields" do
+      let(:query_string) { "{ proposals { edges { node { author { username } } } } }" }
+      let(:authors) { returned_proposals.collect { |proposal| proposal['author']['username'] } }
+
+      specify { expect(authors).to match_array(['mrajoy', 'dtrump', 'mrajoy']) }
     end
   end
 end
