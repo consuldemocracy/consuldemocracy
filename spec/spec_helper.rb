@@ -2,6 +2,7 @@ require 'factory_girl_rails'
 require 'database_cleaner'
 require 'email_spec'
 require 'devise'
+require 'knapsack'
 Dir["./spec/support/**/*.rb"].sort.each { |f| require f }
 
 RSpec.configure do |config|
@@ -102,6 +103,7 @@ RSpec.configure do |config|
   # test failures related to randomization by passing the same `--seed` value
   # as the one that triggered the failure.
   Kernel.srand config.seed
-
-
 end
+
+# Parallel build helper configuration for travis
+Knapsack::Adapters::RSpecAdapter.bind
