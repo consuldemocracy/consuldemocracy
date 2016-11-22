@@ -317,7 +317,7 @@ GEM
       rake (>= 0.8.7)
       thor (>= 0.18.1, < 2.0)
     rainbow (2.1.0)
-    raindrops (0.16.0)
+    raindrops (0.17.0)
     rake (11.3.0)
     redcarpet (3.3.4)
     referer-parser (0.3.0)
