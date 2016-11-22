@@ -46,7 +46,7 @@ en:
     proposal_ballots:
       title: "#NextVoting"
       text: "New proposals that have reached the voting phase."
-      date_html: "Coming soon"
+      date_html: "<strong>From 13th to 19th of February</strong>"
       button: "I want to decide"
     plaza:
       title: "#RemodelingPlazaEspaña"
