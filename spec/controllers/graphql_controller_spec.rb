@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe GraphqlController do
-  let!(:uri) { URI::HTTP.build(host: 'localhost', path: '/queries', port: 3000) }
+  let!(:uri) { URI::HTTP.build(host: 'localhost', path: '/graphql', port: 3000) }
 
   describe "GET request" do
     it "is accepted when valid" do
