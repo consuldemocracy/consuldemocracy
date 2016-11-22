@@ -40,7 +40,6 @@ class Poll::Question < ActiveRecord::Base
       self.title = proposal.title
       self.description = proposal.description
       self.summary = proposal.summary
-      self.question = proposal.question
       self.all_geozones = true
       self.valid_answers = I18n.t('poll_questions.default_valid_answers')
     end

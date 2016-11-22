@@ -20,7 +20,6 @@ RSpec.describe Poll::Question, type: :model do
       expect(q.author_visible_name).to eq(p.author.name)
       expect(q.proposal_id).to eq(p.id)
       expect(q.title).to eq(p.title)
-      expect(q.question).to eq(p.question)
       expect(q.all_geozones).to be_true
     end
   end

@@ -70,8 +70,7 @@ es:
         geozone_id: "Ámbito de actuación"
         title: "Título"
       poll/question:
-        title: "Título"
-        question: "Pregunta"
+        title: "Pregunta"
         valid_answers: "Posibles respuestas"
         summary: "Resumen"
         description: "Descripción"
