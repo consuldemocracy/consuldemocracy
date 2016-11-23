@@ -24,13 +24,13 @@
 
     <div class="row">
       <div class="small-12 column">
-        <div class="small-12 medium-7 column">
-          <!-- Licencias urbanísticas -->
-          <h2><%= t("pages.processes.index.process_8_title") %></h2>
-          <p><%= t("pages.processes.index.process_8_description") %></p>
-          <div class="small-12 medium-5">
-            <%= link_to t("pages.processes.index.process_8_button"),
-                        urbanistic_licenses_path, class: "button expanded" %>
+        <div class="small-12 medium-9 column">
+          <!-- Rotulación de vías -->
+          <h2><%= t("pages.processes.index.process_12_title") %></h2>
+          <p><%= t("pages.processes.index.process_12_description") %></p>
+          <div class="small-12 medium-6 large-4">
+            <%= link_to t("pages.processes.index.process_12_button"),
+                        label_streets_path, class: "button expanded" %>
           </div>
         </div>
       </div>
@@ -89,6 +89,13 @@
 
         <!-- Procesos terminados -->
         <div class="tabs-panel" id="panel3v">
+
+          <!-- Licencias urbanísticas -->
+          <div class="panel">
+            <h3><%= t("pages.processes.index.process_8_title") %></h3>
+            <p><%= t("pages.processes.index.process_8_description") %></p>
+            <%= link_to t("pages.processes.index.process_8_button"), urbanistic_licenses_path, class: "button hollow" %>
+          </div>
 
           <!-- Ordenanza subvenciones -->
           <div id="subvention-ordinance" class="panel">
