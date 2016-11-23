@@ -2458,7 +2458,11 @@ ul.ballot-list {
       left: 50%;
       margin-left: rem-calc(-72);
       position: absolute;
-      top: 50%;
+      top: 110%;
+
+      @include breakpoint(medium) {
+        top: 50%;
+      }
     }
   }
 
