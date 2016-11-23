@@ -9,17 +9,17 @@ describe Organization do
       expect(subject.verified?).to be false
     end
     it "is true when verified_at? exists" do
-      subject.verified_at = Time.now
+      subject.verified_at = Time.current
       expect(subject.verified?).to be true
     end
     it "is false when the organization was verified and then rejected" do
-      subject.verified_at = Time.now
-      subject.rejected_at = Time.now + 1
+      subject.verified_at = Time.current
+      subject.rejected_at = Time.current + 1
       expect(subject.verified?).to be false
     end
     it "is true when the organization was rejected and then verified" do
-      subject.rejected_at = Time.now
-      subject.verified_at = Time.now + 1
+      subject.rejected_at = Time.current
+      subject.verified_at = Time.current + 1
       expect(subject.verified?).to be true
     end
   end
@@ -29,17 +29,17 @@ describe Organization do
       expect(subject.rejected?).to be false
     end
     it "is true when rejected_at? exists" do
-      subject.rejected_at = Time.now
+      subject.rejected_at = Time.current
       expect(subject.rejected?).to be true
     end
     it "is true when the organization was verified and then rejected" do
-      subject.verified_at = Time.now
-      subject.rejected_at = Time.now + 1
+      subject.verified_at = Time.current
+      subject.rejected_at = Time.current + 1
       expect(subject.rejected?).to be true
     end
     it "is false when the organization was rejected and then verified" do
-      subject.rejected_at = Time.now
-      subject.verified_at = Time.now + 1
+      subject.rejected_at = Time.current
+      subject.verified_at = Time.current + 1
       expect(subject.rejected?).to be false
     end
   end
