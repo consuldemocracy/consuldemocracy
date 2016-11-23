@@ -83,6 +83,10 @@ Rails.application.routes.draw do
     resource :ballot, only: [:show] do
       resources :ballot_lines, only: [:create, :destroy], shallow: true
     end
+
+    resource :budget_poll, only: [:new, :create] do
+      get :thanks, on: :collection
+    end
   end
 
   resources :open_plenaries, only: [] do
@@ -308,6 +312,7 @@ Rails.application.routes.draw do
 
   mount Tolk::Engine => '/translate', :as => 'tolk'
 
+  get 'jornada-presupuestos-participativos'=> redirect('/participatory_budget/budget_poll/new')
   get 'encuesta-plaza-espana' => redirect('/encuesta-plaza-espana-resultados')
   get '/blog' => redirect('http://diario.madrid.es/participa/')
   get 'participatory_budget', to: 'spending_proposals#welcome', as: 'participatory_budget'
