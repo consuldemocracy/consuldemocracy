@@ -2,10 +2,6 @@ class BudgetPollsController < ApplicationController
 
   skip_authorization_check
 
-  def show
-    redirect_to new_budget_poll_path
-  end
-
   def new
     @budget_poll = BudgetPoll.new
   end
