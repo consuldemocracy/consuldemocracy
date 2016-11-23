@@ -43,6 +43,7 @@ es:
         public_worker: "Eres empleado municipal"
         proposal_author: "Eres autor de alguna propuesta"
         selected_proposal_author: "En caso de ser autor tu propuesta ha resultado seleccionada"
+        help: "Sí (rellena la casilla de email para que te podamos contactar)"
       comment:
         body: "Comentario"
         user: "Usuario"

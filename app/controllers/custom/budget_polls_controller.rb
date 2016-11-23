@@ -22,7 +22,7 @@ class BudgetPollsController < ApplicationController
   private
 
     def budget_poll_params
-      params.require(:budget_poll).permit(:name, :email, :preferred_subject, :collective, :public_worker, :proposal_author, :selected_proposal_author)
+      params.require(:budget_poll).permit(:name, :email, :preferred_subject, :collective, :public_worker, :proposal_author, :selected_proposal_author, :help)
     end
 
 
