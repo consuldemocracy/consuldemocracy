@@ -35,6 +35,15 @@ en:
         one: "Investment project"
         other: "Investment projects"
     attributes:
+      budget_poll:
+        name: "First and last name"
+        email: "Email (optional)"
+        preferred_subject: "Preferred subject"
+        collective: "Collective"
+        public_worker: "Public Worker"
+        proposal_author: "Proposal author"
+        selected_proposal_author: "Selected proposal author"
+        help: "I want to help"
       comment:
         body: "Comment"
         user: "User"
