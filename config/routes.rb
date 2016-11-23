@@ -83,6 +83,10 @@ Rails.application.routes.draw do
     resource :ballot, only: [:show] do
       resources :ballot_lines, only: [:create, :destroy], shallow: true
     end
+
+    resource :budget_poll, only: [:show, :new, :create] do
+      get :thanks, on: :collection
+    end
   end
 
   resources :open_plenaries, only: [] do

@@ -1,0 +1,18 @@
+<p>Te agradecemos tu inscripción para la jornada de evaluación del proceso de presupuestos participativos. Esta información nos ayudará con la logística y organización de la jornada.</p>
+
+<%= form_for @budget_poll, url: budget_poll_path do |f| %>
+  <%= f.text_field :name %>
+  <%= f.email_field :email %>
+  <%= f.collection_select :preferred_subject, BudgetPoll::VALID_PREFERRED_SUBJECTS, :to_s, :to_s %>
+
+  <p>Información adicional:</p>
+
+  <%= f.check_box :collective %>
+  <%= f.check_box :public_worker %>
+  <%= f.check_box :proposal_author %>
+  <%= f.check_box :selected_proposal_author %>
+
+  <%= f.submit "Enviar" %>
+<% end %>
+
+

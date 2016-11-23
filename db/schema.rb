@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161102133838) do
+ActiveRecord::Schema.define(version: 20161123101808) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -107,6 +107,16 @@ ActiveRecord::Schema.define(version: 20161102133838) do
   end
 
   add_index "banners", ["hidden_at"], name: "index_banners_on_hidden_at", using: :btree
+
+  create_table "budget_polls", force: :cascade do |t|
+    t.string  "name"
+    t.string  "email"
+    t.string  "preferred_subject"
+    t.boolean "collective"
+    t.boolean "public_worker"
+    t.boolean "proposal_author"
+    t.boolean "selected_proposal_author"
+  end
 
   create_table "campaigns", force: :cascade do |t|
     t.string   "name"
@@ -499,17 +509,17 @@ ActiveRecord::Schema.define(version: 20161102133838) do
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                                                       default: ""
-    t.string   "encrypted_password",                                          default: "",    null: false
+    t.string   "encrypted_password",                                          default: "",                    null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",                                               default: 0,     null: false
+    t.integer  "sign_in_count",                                               default: 0,                     null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.datetime "created_at",                                                                  null: false
-    t.datetime "updated_at",                                                                  null: false
+    t.datetime "created_at",                                                                                  null: false
+    t.datetime "updated_at",                                                                                  null: false
     t.string   "confirmation_token"
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
@@ -551,11 +561,11 @@ ActiveRecord::Schema.define(version: 20161102133838) do
     t.boolean  "accepted_delegation_alert",                                   default: false
     t.string   "gender",                                           limit: 10
     t.datetime "date_of_birth"
-    t.boolean  "email_on_proposal_notification",            default: true
-    t.boolean  "email_digest",                              default: true
-    t.boolean  "email_on_direct_message",                   default: true
-    t.boolean  "official_position_badge",                   default: false
-    t.datetime "password_changed_at",                       default: '2016-11-02 13:51:14', null: false
+    t.boolean  "email_on_proposal_notification",                              default: true
+    t.boolean  "email_digest",                                                default: true
+    t.boolean  "email_on_direct_message",                                     default: true
+    t.boolean  "official_position_badge",                                     default: false
+    t.datetime "password_changed_at",                                         default: '2016-11-02 13:51:14', null: false
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree
