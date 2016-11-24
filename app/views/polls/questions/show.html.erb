@@ -34,12 +34,6 @@
   </div>
 </div>
 
-<div class="row margin-top">
-  <div class="small-12 column text-center">
-    <h2><%= @question.question %></h2>
-  </div>
-</div>
-
 <div class="row margin-top text-center" id="<%= dom_id(@question) %>_answers">
   <%= render "answers", question: @question %>
 </div>
