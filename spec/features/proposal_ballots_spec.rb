@@ -43,15 +43,5 @@ feature 'Proposal ballots' do
     end
   end
 
-  scenario 'Successful proposals are listed in the proposal ballots index' do
-    successful_proposals = create_successful_proposals
-
-    visit proposal_ballots_path
-
-    successful_proposals.each do |proposal|
-      expect(page).to have_content(proposal.title)
-    end
-  end
-
 end
 
