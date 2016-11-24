@@ -413,7 +413,6 @@ puts "Creating Poll Questions"
   open_at = rand(2.months.ago .. 2.months.from_now)
   question = Poll::Question.create!(author: author,
                                     title: Faker::Lorem.sentence(3).truncate(60),
-                                    question: Faker::Lorem.sentence(3) + "?",
                                     summary: Faker::Lorem.sentence(3),
                                     description: description,
                                     valid_answers: Faker::Lorem.words(3).join(', '),
