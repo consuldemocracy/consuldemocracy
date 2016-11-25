@@ -13,40 +13,40 @@ feature 'Admin banners magement' do
                   target_url:  "http://www.url.com",
                   style: "banner-style.banner-one",
                   image: "banner-img.banner-one",
-                  post_started_at: (Time.now + 4.days),
-                  post_ended_at:   (Time.now + 10.days))
+                  post_started_at: (Time.current + 4.days),
+                  post_ended_at:   (Time.current + 10.days))
 
       @banner2 = create(:banner, title: "Banner number two",
                   description:  "This is the text of banner number two and is not longer active",
                   target_url:  "http://www.url.com",
                   style: "banner-style.banner-two",
                   image: "banner-img.banner-two",
-                  post_started_at: (Time.now - 10.days),
-                  post_ended_at:   (Time.now - 3.days))
+                  post_started_at: (Time.current - 10.days),
+                  post_ended_at:   (Time.current - 3.days))
 
       @banner3 = create(:banner, title: "Banner number three",
                   description:  "This is the text of banner number three and has style banner-three",
                   target_url:  "http://www.url.com",
                   style: "banner-style.banner-three",
                   image: "banner-img.banner-three",
-                  post_started_at: (Time.now - 1.days),
-                  post_ended_at:   (Time.now + 10.days))
+                  post_started_at: (Time.current - 1.days),
+                  post_ended_at:   (Time.current + 10.days))
 
       @banner4 = create(:banner, title: "Banner number four",
                   description:  "This is the text of banner number four and has style banner-one",
                   target_url:  "http://www.url.com",
                   style: "banner-style.banner-one",
                   image: "banner-img.banner-one",
-                  post_started_at: (DateTime.now - 10.days),
-                  post_ended_at:   (DateTime.now + 10.days))
+                  post_started_at: (DateTime.current - 10.days),
+                  post_ended_at:   (DateTime.current + 10.days))
 
       @banner5 = create(:banner, title: "Banner number five",
                   description:  "This is the text of banner number five and has style banner-two",
                   target_url:  "http://www.url.com",
                   style: "banner-style.banner-one",
                   image: "banner-img.banner-one",
-                  post_started_at: (DateTime.now - 10.days),
-                  post_ended_at:   (DateTime.now + 10.days))
+                  post_started_at: (DateTime.current - 10.days),
+                  post_ended_at:   (DateTime.current + 10.days))
     end
 
     scenario 'Index show active banners' do
@@ -87,8 +87,8 @@ feature 'Admin banners magement' do
     fill_in 'banner_title', with: 'Such banner'
     fill_in 'banner_description', with: 'many text wow link'
     fill_in 'banner_target_url', with: 'https://www.url.com'
-    last_week = Time.now - 7.days
-    next_week = Time.now + 7.days
+    last_week = Time.current - 7.days
+    next_week = Time.current + 7.days
     fill_in 'post_started_at', with: last_week.strftime("%d/%m/%Y")
     fill_in 'post_ended_at', with: next_week.strftime("%d/%m/%Y")
 
@@ -108,8 +108,8 @@ feature 'Admin banners magement' do
                               target_url:  'http://www.url.com',
                               style: 'banner-style.banner-one',
                               image: 'banner-img.banner-one',
-                              post_started_at: (Time.now + 4.days),
-                              post_ended_at:   (Time.now + 10.days))
+                              post_started_at: (Time.current + 4.days),
+                              post_ended_at:   (Time.current + 10.days))
 
     visit admin_root_path
 
@@ -145,8 +145,8 @@ feature 'Admin banners magement' do
                     target_url:  'http://www.url.com',
                     style: 'banner-style.banner-one',
                     image: 'banner-img.banner-one',
-                    post_started_at: (Time.now + 4.days),
-                    post_ended_at:   (Time.now + 10.days))
+                    post_started_at: (Time.current + 4.days),
+                    post_ended_at:   (Time.current + 10.days))
 
     visit admin_root_path
 
