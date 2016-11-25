@@ -29,7 +29,7 @@ class Verification::LetterController < ApplicationController
   def update
     @letter = Verification::Letter.new(letter_params.merge(user: current_user, verify: true))
     if @letter.valid?
-      current_user.update(verified_at: Time.now)
+      current_user.update(verified_at: Time.current)
       redirect_to account_path, notice: t('verification.letter.update.flash.success')
     else
       Lock.increase_tries(@letter.user) if @letter.user
@@ -55,6 +55,5 @@ class Verification::LetterController < ApplicationController
         sign_in(user)
       end
     end
-
 
 end

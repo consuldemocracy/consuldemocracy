@@ -26,8 +26,8 @@ class ProposalNotificationsController < ApplicationController
 
   private
 
-  def proposal_notification_params
-    params.require(:proposal_notification).permit(:title, :body, :proposal_id)
-  end
+    def proposal_notification_params
+      params.require(:proposal_notification).permit(:title, :body, :proposal_id)
+    end
 
 end

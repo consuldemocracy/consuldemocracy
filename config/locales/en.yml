@@ -209,6 +209,7 @@ en:
       open_data: Open data
       open_gov: Open government
       proposals: Proposals
+      proposal_ballot: Voting
       see_all: See proposals
       spending_proposals: Spending proposals
   legislation:
@@ -301,6 +302,7 @@ en:
         hot_score: most active
         most_commented: most commented
         relevance: relevance
+        archival_date: Archived
       retired_proposals: Retired proposals
       retired_proposals_link: "Proposals retired by the author"
       retired_links:
@@ -341,7 +343,7 @@ en:
         other: "%{count} comments"
         zero: No comments
       proposal: Proposal
-      reason_for_supports_necessary: 2% of Census
+      reason_for_supports_necessary: 1% of Census
       support: Support
       support_title: Support this proposal
       supports:
@@ -350,6 +352,7 @@ en:
         zero: No supports
       supports_necessary: "%{number} supports needed"
       total_percent: 100%
+      archived: "This proposal has been archived and can't collect supports."
     show:
       author_deleted: User deleted
       code: 'Proposal code:'
@@ -371,6 +374,17 @@ en:
     update:
       form:
         submit_button: Save changes
+  proposal_ballots:
+    title: "Votings"
+    description_html: "The following citizen proposals that have reached the <strong>required supports</strong> and will be voted."
+    date_title: "Dates of participation"
+    date: "Soon we'll announce the date of vote these proposals."
+    successfull: "This proposal has reached the required supports and will be voted in the %{voting}."
+    voting: "next voting"
+    featured_title: "#NextVoting"
+    nothing_to_vote: "There is nothing to vote at the moment."
+    info: "New proposals that have reached the voting phase."
+    button: "I want to decide"
   proposal_notifications:
     new:
       title: "Send message"
@@ -435,6 +449,12 @@ en:
       categories: "Categories"
     target_blank_html: " (link opens in new window)"
     unflag: Unflag
+    outline:
+      debates: Debates
+      proposals: Proposals
+      budget: Participatory budget
+      pagination: Pagination
+      searcher: Searcher
   social:
     blog: Blog
     facebook: Facebook

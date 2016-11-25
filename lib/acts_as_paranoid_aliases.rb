@@ -5,7 +5,7 @@ module ActsAsParanoidAliases
 
     def hide
       return false if hidden?
-      update_attribute(:hidden_at, Time.now)
+      update_attribute(:hidden_at, Time.current)
       after_hide
     end
 
@@ -21,7 +21,7 @@ module ActsAsParanoidAliases
     end
 
     def confirm_hide
-      update_attribute(:confirmed_hide_at, Time.now)
+      update_attribute(:confirmed_hide_at, Time.current)
     end
 
     def restore(opts={})

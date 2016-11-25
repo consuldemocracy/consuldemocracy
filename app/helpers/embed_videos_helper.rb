@@ -9,15 +9,15 @@ module EmbedVideosHelper
     end
 
     if server == "Vimeo"
-      regExp = /vimeo.*(staffpicks\/|channels\/|videos\/|video\/|\/)([^#\&\?]*).*/
+      reg_exp = /vimeo.*(staffpicks\/|channels\/|videos\/|video\/|\/)([^#\&\?]*).*/
       src =  "https://player.vimeo.com/video/"
     elsif server == "YouTube"
-      regExp = /youtu.*(be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/
+      reg_exp = /youtu.*(be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/
       src = "https://www.youtube.com/embed/"
     end
 
-    if regExp
-      match  = link.match(regExp)
+    if reg_exp
+      match = link.match(reg_exp)
     end
 
     if match and match[2]

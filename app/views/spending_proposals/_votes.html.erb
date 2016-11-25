@@ -1,4 +1,4 @@
-<div class="supports">
+<div class="supports text-center">
 
   <% reason = spending_proposal.reason_for_not_being_votable_by(current_user) %>
   <% voting_allowed = true unless reason.presence == :not_voting_allowed %>
@@ -10,7 +10,7 @@
 
   <div class="in-favor">
     <% if user_voted_for %>
-      <div class="supported">
+      <div class="supported callout success">
         <%= t("spending_proposals.spending_proposal.already_supported") %>
       </div>
     <% elsif voting_allowed %>
@@ -24,7 +24,7 @@
   </div>
 
   <% if reason.present? && !user_voted_for %>
-    <div class="no-supports-allowed" style='display:none' aria-hidden="false">
+    <div class="participation-not-allowed" style='display:none' aria-hidden="false">
       <p>
           <%= t("votes.spending_proposals.#{reason}",
                 verify_account: link_to(t("votes.verify_account"), verification_path),

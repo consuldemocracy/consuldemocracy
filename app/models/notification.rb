@@ -49,4 +49,5 @@ class Notification < ApplicationRecord
   def linkable_resource
     notifiable.is_a?(ProposalNotification) ? notifiable.proposal : notifiable
   end
+
 end

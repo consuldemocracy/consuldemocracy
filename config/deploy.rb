@@ -7,15 +7,12 @@ def deploysecret(key)
 end
 
 set :rails_env, fetch(:stage)
-set :rvm_ruby_version, '2.3.1'
-set :rvm_type, :user
+set :rvm1_ruby_version, '2.3.2'
 
 set :application, 'consul'
 set :full_app_name, deploysecret(:full_app_name)
 
 set :server_name, deploysecret(:server_name)
-#set :repo_url, 'git@github.com:consul/consul.git'
-# If ssh access is restricted, probably you need to use https access
 set :repo_url, 'https://github.com/consul/consul.git'
 
 set :scm, :git
@@ -32,34 +29,30 @@ set :keep_releases, 5
 
 set :local_user, ENV['USER']
 
-# Run test before deploy
-set :tests, ["spec"]
-
 set :delayed_job_workers, 2
 
-# Config files should be copied by deploy:setup_config
 set(:config_files, %w(
   log_rotation
   database.yml
   secrets.yml
   unicorn.rb
-  sidekiq.yml
 ))
 
 set :whenever_roles, -> { :cron }
 
 namespace :deploy do
-  # Check right version of deploy branch
-  # before :deploy, "deploy:check_revision"
-  # Run test aund continue only if passed
-  # before :deploy, "deploy:run_tests"
+  before :starting, 'rvm1:install:rvm'  # install/update RVM
+  before :starting, 'rvm1:install:ruby' # install Ruby and create gemset
+  before :starting, 'install_bundler_gem' # install bundler gem
 
-  # Custom compile and rsync of assets - works, but it is very slow
-  #after 'deploy:symlink:shared', 'deploy:compile_assets_locally'
+  after :publishing, 'deploy:restart'
+  after :published, 'delayed_job:restart'
 
   after :finishing, 'deploy:cleanup'
-  # Restart unicorn
-  after 'deploy:publishing', 'deploy:restart'
-  # Restart Delayed Jobs
-  after 'deploy:published', 'delayed_job:restart'
+end
+
+task :install_bundler_gem do
+  on roles(:app) do
+    execute "rvm use #{fetch(:rvm1_ruby_version)}; gem install bundler"
+  end
 end

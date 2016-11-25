@@ -8,8 +8,8 @@ class Management::UsersController < Management::BaseController
     @user = User.new(user_params)
     @user.skip_password_validation = true
     @user.terms_of_service = '1'
-    @user.residence_verified_at = Time.now
-    @user.verified_at = Time.now
+    @user.residence_verified_at = Time.current
+    @user.verified_at = Time.current
 
     if @user.save
       render :show

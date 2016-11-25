@@ -12,9 +12,9 @@ class Banner < ApplicationRecord
   validates :post_started_at, presence: true
   validates :post_ended_at, presence: true
 
-  scope :with_active,  -> {where("post_started_at <= ?", Time.now).
-                      where("post_ended_at >= ?", Time.now) }
+  scope :with_active,  -> {where("post_started_at <= ?", Time.current).
+                      where("post_ended_at >= ?", Time.current) }
 
-  scope :with_inactive,-> {where("post_started_at > ? or post_ended_at < ?", Time.now, Time.now) }
+  scope :with_inactive,-> {where("post_started_at > ? or post_ended_at < ?", Time.current, Time.current) }
 
 end

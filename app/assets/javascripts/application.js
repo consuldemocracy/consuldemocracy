@@ -45,6 +45,7 @@
 //= require valuation_spending_proposal_form
 //= require embed_video
 //= require banners
+//= require social_share
 //= require custom
 
 var initialize_modules = function() {
@@ -66,6 +67,7 @@ var initialize_modules = function() {
   App.ValuationSpendingProposalForm.initialize();
   App.EmbedVideo.initialize();
   App.Banners.initialize();
+  App.SocialShare.initialize();
 };
 
 $(function(){

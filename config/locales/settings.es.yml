@@ -11,9 +11,21 @@ es:
     max_votes_for_debate_edit: "Número de votos en que un Debate deja de poderse editar"
     proposal_code_prefix: "Prefijo para los códigos de Propuestas"
     votes_for_proposal_success: "Número de votos necesarios para aprobar una Propuesta"
+    months_to_archive_proposals: "Meses para archivar las Propuestas"
     email_domain_for_officials: "Dominio de email para cargos públicos"
     per_page_code: "Código a incluir en cada página"
+    twitter_handle: "Usuario de Twitter"
+    twitter_hashtag: "Hashtag para Twitter"
+    facebook_handle: "Identificador de Facebook"
+    youtube_handle: "Usuario de Youtube"
+    blog_url: "URL del blog"
+    url: "URL general de la web"
+    org_name: "Nombre de la organización"
+    place_name: "Nombre del lugar"
     feature:
+      twitter_login: Registro con Twitter
+      facebook_login: Registro con Facebook
+      google_login: Registro con Google
       debates: Debates
       spending_proposals: Propuestas de inversión
       spending_proposal_features:

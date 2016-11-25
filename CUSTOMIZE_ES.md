@@ -1,8 +1,8 @@
 # Personalización
 
-Puedes modificar consul y ponerle tu propia imagen, para esto debes primero hacer un fork de https://github.com/consul/consul creando un repositorio nuevo en Github. Puedes usar otro servicio como Gitlab, pero no te olvides de poner el enlace en el footer a tu repositorio en cumplimiento con la licencia de este proyecto (GPL Affero 3). 
+Puedes modificar consul y ponerle tu propia imagen, para esto debes primero hacer un fork de https://github.com/consul/consul creando un repositorio nuevo en Github. Puedes usar otro servicio como Gitlab, pero no te olvides de poner el enlace en el footer a tu repositorio en cumplimiento con la licencia de este proyecto (GPL Affero 3).
 
-Hemos creado una estructura específica donde puedes sobreescribir y personalizar la aplicación para que puedas actualizar sin que tengas problemas al hacer merge y se sobreescriban por error tus cambios. Intentamos que Consul sea una aplicación Ruby on Rails lo más plain vanilla posible para facilitar el acceso de nuevas desarrolladoras. 
+Hemos creado una estructura específica donde puedes sobreescribir y personalizar la aplicación para que puedas actualizar sin que tengas problemas al hacer merge y se sobreescriban por error tus cambios. Intentamos que Consul sea una aplicación Ruby on Rails lo más plain vanilla posible para facilitar el acceso de nuevas desarrolladoras.
 
 ## Ficheros y directorios especiales
 
@@ -21,16 +21,16 @@ Aparte de estos directorios también cuentas con ciertos ficheros para:
 * Gemfile_custom
 * config/application.custom.rb
 
-### Internacionalización 
+### Internacionalización
 
-Si quieres modificar algún texto de la web deberías encontrarlos en los ficheros formato YML disponibles en *config/locales/*. Puedes leer la [guía de internacionalización](http://guides.rubyonrails.org/i18n.html) de Ruby on Rails sobre como funciona este sistema. 
+Si quieres modificar algún texto de la web deberías encontrarlos en los ficheros formato YML disponibles en *config/locales/*. Puedes leer la [guía de internacionalización](http://guides.rubyonrails.org/i18n.html) de Ruby on Rails sobre como funciona este sistema.
 
-Las adaptaciones los debes poner en el directorio *config/locales/custom/*, recomendamos poner solo los textos que quieras personalizar. Por ejemplo si quieres personalizar el texto de "Ayuntamiento de Madrid, 2016" que se encuentra en el footer en todas las páginas, primero debemos ubicar en que plantilla se encuentra (app/views/layouts/_footer.html.erb), vemos que en el código pone lo siguiente: 
+Las adaptaciones los debes poner en el directorio *config/locales/custom/*, recomendamos poner solo los textos que quieras personalizar. Por ejemplo si quieres personalizar el texto de "Ayuntamiento de Madrid, 2016" que se encuentra en el footer en todas las páginas, primero debemos ubicar en que plantilla se encuentra (app/views/layouts/_footer.html.erb), vemos que en el código pone lo siguiente:
 ```
-<%= t("layouts.footer.copyright", year: Time.now.year) %> 
+<%= t("layouts.footer.copyright", year: Time.current.year) %>
 ```
 
-Y que en el fichero config/locales/es.yml sigue esta estructura (solo ponemos lo relevante para este caso): 
+Y que en el fichero config/locales/es.yml sigue esta estructura (solo ponemos lo relevante para este caso):
 
 ```
 es:
@@ -40,11 +40,11 @@ es:
 
 ```
 
-Si creamos el fichero config/locales/custom/es.yml y modificamos "Ayuntamiento de Madrid" por el nombre de la organización que se este haciendo la modificación. Recomendamos directamente copiar los ficheros config/locales/ e ir revisando y corrigiendo las que querramos, borrando las líneas que no querramos traducir. 
+Si creamos el fichero config/locales/custom/es.yml y modificamos "Ayuntamiento de Madrid" por el nombre de la organización que se este haciendo la modificación. Recomendamos directamente copiar los ficheros config/locales/ e ir revisando y corrigiendo las que querramos, borrando las líneas que no querramos traducir.
 
 ### Imágenes
 
-Si quieres sobreescribir alguna imagen debes primero fijarte el nombre que tiene, por defecto se encuentran en *app/assets/images*. Por ejemplo si quieres modificar *app/assets/images/logo_header.png* debes poner otra con ese mismo nombre en el directorio app/assets/images/custom. Los iconos que seguramente quieras modificar son: 
+Si quieres sobreescribir alguna imagen debes primero fijarte el nombre que tiene, por defecto se encuentran en *app/assets/images*. Por ejemplo si quieres modificar *app/assets/images/logo_header.png* debes poner otra con ese mismo nombre en el directorio app/assets/images/custom. Los iconos que seguramente quieras modificar son:
 
 * apple-touch-icon-200.png
 * icon_home.png
@@ -59,7 +59,7 @@ Si quieres modificar el HTML de alguna página puedes hacerlo copiando el HTML d
 
 ### CSS
 
-Si quieres cambiar algun selector CSS (de las hojas de estilo) puedes hacerlo en el fichero *app/assets/stylesheets/custom.scss*. Por ejemplo si quieres cambiar el color del header (.top-links) puedes hacerlo agregando: 
+Si quieres cambiar algun selector CSS (de las hojas de estilo) puedes hacerlo en el fichero *app/assets/stylesheets/custom.scss*. Por ejemplo si quieres cambiar el color del header (.top-links) puedes hacerlo agregando:
 
 ```
 .top-links {
@@ -67,11 +67,11 @@ Si quieres cambiar algun selector CSS (de las hojas de estilo) puedes hacerlo en
 }
 ```
 
-Usamos un preprocesador de CSS, [SASS, con la sintaxis SCSS](http://sass-lang.com/guide). 
+Usamos un preprocesador de CSS, [SASS, con la sintaxis SCSS](http://sass-lang.com/guide).
 
 ### Javascript
 
-Si quieres agregar código Javascript puedes hacerlo en el fichero *app/assets/javascripts/custom.js". Por ejemplo si quieres que salga una alerta puedes poner lo siguiente: 
+Si quieres agregar código Javascript puedes hacerlo en el fichero *app/assets/javascripts/custom.js". Por ejemplo si quieres que salga una alerta puedes poner lo siguiente:
 
 ```
 $(function(){
@@ -81,9 +81,9 @@ $(function(){
 
 ### Modelos
 
-Si quieres agregar modelos nuevos, o modificar o agregar métodos a uno ya existente puedes hacerlo en *app/models/custom*. En el caso de los modelos antiguos debes primero hacer un require de la dependencia. 
+Si quieres agregar modelos nuevos, o modificar o agregar métodos a uno ya existente puedes hacerlo en *app/models/custom*. En el caso de los modelos antiguos debes primero hacer un require de la dependencia.
 
-Por ejemplo en el caso del Ayuntamiento de Madrid se requiere comprobar que el código postal durante la verificación sigue un cierto formato (empieza con 280). Esto se realiza creando este fichero en *app/models/custom/verification/residence.rb*: 
+Por ejemplo en el caso del Ayuntamiento de Madrid se requiere comprobar que el código postal durante la verificación sigue un cierto formato (empieza con 280). Esto se realiza creando este fichero en *app/models/custom/verification/residence.rb*:
 
 ```
 require_dependency Rails.root.join('app', 'models', 'verification', 'residence').to_s
@@ -123,10 +123,10 @@ No olvides poner los tests relevantes en *spec/models/custom*, siguiendo con el 
 require 'rails_helper'
 
 describe Verification::Residence do
- 
+
   let(:residence) { build(:verification_residence, document_number: "12345678Z") }
 
-  describe "verification" do 
+  describe "verification" do
 
     describe "postal code" do
       it "should be valid with postal codes starting with 280" do
@@ -162,7 +162,7 @@ TODO
 
 ### Gemfile
 
-Para agregar librerías (gems) nuevas puedes hacerlo en el fichero *Gemfile_custom*. Por ejemplo si quieres agregar la gema [rails-footnotes](https://github.com/josevalim/rails-footnotes) debes hacerlo agregandole 
+Para agregar librerías (gems) nuevas puedes hacerlo en el fichero *Gemfile_custom*. Por ejemplo si quieres agregar la gema [rails-footnotes](https://github.com/josevalim/rails-footnotes) debes hacerlo agregandole
 
 ```
 gem 'rails-footnotes', '~> 4.0'
@@ -170,9 +170,9 @@ gem 'rails-footnotes', '~> 4.0'
 
 Y siguiendo el flujo clásico en Ruby on Rails (bundle install y seguir con los pasos específicos de la gema en la documentación)
 
-### application.rb 
+### application.rb
 
-Cuando necesites extender o modificar el *config/application.rb* puedes hacerlo a través del fichero *config/application_custom.rb*. Por ejemplo si quieres modificar el idioma por defecto al inglés pondrías lo siguiente: 
+Cuando necesites extender o modificar el *config/application.rb* puedes hacerlo a través del fichero *config/application_custom.rb*. Por ejemplo si quieres modificar el idioma por defecto al inglés pondrías lo siguiente:
 
 
 ```
@@ -198,15 +198,15 @@ TODO
 
 TODO
 
-## Actualizar 
+## Actualizar
 
-Te recomendamos que agregues el remote de consul para facilitar este proceso de merge: 
+Te recomendamos que agregues el remote de consul para facilitar este proceso de merge:
 
 ```
-$ git remote add consul https://github.com/consul/consul 
+$ git remote add consul https://github.com/consul/consul
 ```
 
-Con esto puedes actualizarte con 
+Con esto puedes actualizarte con
 
 ```
 git checkout -b consul_update

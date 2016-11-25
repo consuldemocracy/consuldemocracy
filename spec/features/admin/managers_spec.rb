@@ -33,5 +33,5 @@ feature 'Admin managers' do
       expect(page).to_not have_content @manager.name
     end
   end
-end
 
+end

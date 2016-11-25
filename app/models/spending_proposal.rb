@@ -110,7 +110,7 @@ class SpendingProposal < ApplicationRecord
 
   def send_unfeasible_email
     Mailer.unfeasible_spending_proposal(self).deliver_later
-    update(unfeasible_email_sent_at: Time.now)
+    update(unfeasible_email_sent_at: Time.current)
   end
 
   def reason_for_not_being_votable_by(user)

@@ -13,6 +13,7 @@ Setting.create(key: 'max_votes_for_debate_edit', value: '1000')
 Setting.create(key: 'max_votes_for_proposal_edit', value: '1000')
 Setting.create(key: 'proposal_code_prefix', value: 'MAD')
 Setting.create(key: 'votes_for_proposal_success', value: '100')
+Setting.create(key: 'months_to_archive_proposals', value: '12')
 Setting.create(key: 'comments_body_max_length', value: '1000')
 
 Setting.create(key: 'twitter_handle', value: '@consul_dev')
@@ -40,7 +41,7 @@ puts "Creating Users"
 def create_user(email, username = Faker::Name.name)
   pwd = '12345678'
   puts "    #{username}"
-  User.create!(username: username, email: email, password: pwd, password_confirmation: pwd, confirmed_at: Time.now, terms_of_service: "1")
+  User.create!(username: username, email: email, password: pwd, password_confirmation: pwd, confirmed_at: Time.current, terms_of_service: "1")
 end
 
 admin = create_user('admin@consul.dev', 'admin')
@@ -53,10 +54,10 @@ valuator = create_user('valuator@consul.dev', 'valuator')
 valuator.create_valuator
 
 level_2 = create_user('leveltwo@consul.dev', 'level 2')
-level_2.update(residence_verified_at: Time.now, confirmed_phone: Faker::PhoneNumber.phone_number, document_number: "2222222222", document_type: "1" )
+level_2.update(residence_verified_at: Time.current, confirmed_phone: Faker::PhoneNumber.phone_number, document_number: "2222222222", document_type: "1" )
 
 verified = create_user('verified@consul.dev', 'verified')
-verified.update(residence_verified_at: Time.now, confirmed_phone: Faker::PhoneNumber.phone_number, document_type: "1", verified_at: Time.now, document_number: "3333333333")
+verified.update(residence_verified_at: Time.current, confirmed_phone: Faker::PhoneNumber.phone_number, document_type: "1", verified_at: Time.current, document_number: "3333333333")
 
 (1..10).each do |i|
   org_name = Faker::Company.name
@@ -79,12 +80,12 @@ end
 
 (1..40).each do |i|
   user = create_user("user#{i}@consul.dev")
-  level = [1,2,3].sample
-  if level >= 2 then
-    user.update(residence_verified_at: Time.now, confirmed_phone: Faker::PhoneNumber.phone_number, document_number: Faker::Number.number(10), document_type: "1" )
+  level = [1, 2, 3].sample
+  if level >= 2
+    user.update(residence_verified_at: Time.current, confirmed_phone: Faker::PhoneNumber.phone_number, document_number: Faker::Number.number(10), document_type: "1" )
   end
-  if level == 3 then
-    user.update(verified_at: Time.now, document_number: Faker::Number.number(10) )
+  if level == 3
+    user.update(verified_at: Time.current, document_number: Faker::Number.number(10) )
   end
 end
 
@@ -112,12 +113,12 @@ ActsAsTaggableOn::Tag.create!(name:  "Medio Ambiente", featured: true, kind: "ca
 puts "Creating Debates"
 
 tags = Faker::Lorem.words(25)
-(1..30).each do |i|
+(1..30).each do
   author = User.reorder("RANDOM()").first
   description = "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>"
   debate = Debate.create!(author: author,
                           title: Faker::Lorem.sentence(3).truncate(60),
-                          created_at: rand((Time.now - 1.week) .. Time.now),
+                          created_at: rand((Time.current - 1.week) .. Time.current),
                           description: description,
                           tag_list: tags.sample(3).join(','),
                           geozone: Geozone.reorder("RANDOM()").first,
@@ -127,12 +128,12 @@ end
 
 
 tags = ActsAsTaggableOn::Tag.where(kind: 'category')
-(1..30).each do |i|
+(1..30).each do
   author = User.reorder("RANDOM()").first
   description = "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>"
   debate = Debate.create!(author: author,
                           title: Faker::Lorem.sentence(3).truncate(60),
-                          created_at: rand((Time.now - 1.week) .. Time.now),
+                          created_at: rand((Time.current - 1.week) .. Time.current),
                           description: description,
                           tag_list: tags.sample(3).join(','),
                           geozone: Geozone.reorder("RANDOM()").first,
@@ -149,31 +150,52 @@ tags = Faker::Lorem.words(25)
   description = "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>"
   proposal = Proposal.create!(author: author,
                               title: Faker::Lorem.sentence(3).truncate(60),
-                              question: Faker::Lorem.sentence(3),
+                              question: Faker::Lorem.sentence(3) + "?",
                               summary: Faker::Lorem.sentence(3),
                               responsible_name: Faker::Name.name,
                               external_url: Faker::Internet.url,
                               description: description,
-                              created_at: rand((Time.now - 1.week) .. Time.now),
+                              created_at: rand((Time.current - 1.week) .. Time.current),
                               tag_list: tags.sample(3).join(','),
                               geozone: Geozone.reorder("RANDOM()").first,
                               terms_of_service: "1")
   puts "    #{proposal.title}"
 end
 
+puts "Creating Archived Proposals"
 
-tags = ActsAsTaggableOn::Tag.where(kind: 'category')
-(1..30).each do |i|
+tags = Faker::Lorem.words(25)
+(1..5).each do
   author = User.reorder("RANDOM()").first
   description = "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>"
   proposal = Proposal.create!(author: author,
                               title: Faker::Lorem.sentence(3).truncate(60),
-                              question: Faker::Lorem.sentence(3),
+                              question: Faker::Lorem.sentence(3) + "?",
                               summary: Faker::Lorem.sentence(3),
                               responsible_name: Faker::Name.name,
                               external_url: Faker::Internet.url,
                               description: description,
-                              created_at: rand((Time.now - 1.week) .. Time.now),
+                              created_at: rand((Time.current - 1.week) .. Time.current),
+                              tag_list: tags.sample(3).join(','),
+                              geozone: Geozone.reorder("RANDOM()").first,
+                              terms_of_service: "1",
+                              created_at: Setting["months_to_archive_proposals"].to_i.months.ago)
+  puts "    #{proposal.title}"
+end
+
+
+tags = ActsAsTaggableOn::Tag.where(kind: 'category')
+(1..30).each do
+  author = User.reorder("RANDOM()").first
+  description = "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>"
+  proposal = Proposal.create!(author: author,
+                              title: Faker::Lorem.sentence(3).truncate(60),
+                              question: Faker::Lorem.sentence(3) + "?",
+                              summary: Faker::Lorem.sentence(3),
+                              responsible_name: Faker::Name.name,
+                              external_url: Faker::Internet.url,
+                              description: description,
+                              created_at: rand((Time.current - 1.week) .. Time.current),
                               tag_list: tags.sample(3).join(','),
                               geozone: Geozone.reorder("RANDOM()").first,
                               terms_of_service: "1")
@@ -183,11 +205,11 @@ end
 
 puts "Commenting Debates"
 
-(1..100).each do |i|
+(1..100).each do
   author = User.reorder("RANDOM()").first
   debate = Debate.reorder("RANDOM()").first
   Comment.create!(user: author,
-                  created_at: rand(debate.created_at .. Time.now),
+                  created_at: rand(debate.created_at .. Time.current),
                   commentable: debate,
                   body: Faker::Lorem.sentence)
 end
@@ -199,7 +221,7 @@ puts "Commenting Proposals"
   author = User.reorder("RANDOM()").first
   proposal = Proposal.reorder("RANDOM()").first
   Comment.create!(user: author,
-                  created_at: rand(proposal.created_at .. Time.now),
+                  created_at: rand(proposal.created_at .. Time.current),
                   commentable: proposal,
                   body: Faker::Lorem.sentence)
 end
@@ -207,11 +229,11 @@ end
 
 puts "Commenting Comments"
 
-(1..200).each do |i|
+(1..200).each do
   author = User.reorder("RANDOM()").first
   parent = Comment.reorder("RANDOM()").first
   Comment.create!(user: author,
-                  created_at: rand(parent.created_at .. Time.now),
+                  created_at: rand(parent.created_at .. Time.current),
                   commentable_id: parent.commentable_id,
                   commentable_type: parent.commentable_type,
                   body: Faker::Lorem.sentence,
@@ -221,7 +243,7 @@ end
 
 puts "Voting Debates, Proposals & Comments"
 
-(1..100).each do |i|
+(1..100).each do
   voter  = not_org_users.reorder("RANDOM()").first
   vote   = [true, false].sample
   debate = Debate.reorder("RANDOM()").first
@@ -235,7 +257,7 @@ end
   comment.vote_by(voter: voter, vote: vote)
 end
 
-(1..100).each do |i|
+(1..100).each do
   voter  = User.level_two_or_three_verified.reorder("RANDOM()").first
   proposal = Proposal.reorder("RANDOM()").first
   proposal.vote_by(voter: voter, vote: true)
@@ -244,19 +266,19 @@ end
 
 puts "Flagging Debates & Comments"
 
-(1..40).each do |i|
+(1..40).each do
   debate = Debate.reorder("RANDOM()").first
   flagger = User.where(["users.id <> ?", debate.author_id]).reorder("RANDOM()").first
   Flag.flag(flagger, debate)
 end
 
-(1..40).each do |i|
+(1..40).each do
   comment = Comment.reorder("RANDOM()").first
   flagger = User.where(["users.id <> ?", comment.user_id]).reorder("RANDOM()").first
   Flag.flag(flagger, comment)
 end
 
-(1..40).each do |i|
+(1..40).each do
   proposal = Proposal.reorder("RANDOM()").first
   flagger = User.where(["users.id <> ?", proposal.author_id]).reorder("RANDOM()").first
   Flag.flag(flagger, proposal)
@@ -266,7 +288,7 @@ puts "Creating Spending Proposals"
 
 tags = Faker::Lorem.words(10)
 
-(1..60).each do |i|
+(1..60).each do
   geozone = Geozone.reorder("RANDOM()").first
   author = User.reorder("RANDOM()").first
   description = "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>"
@@ -277,7 +299,7 @@ tags = Faker::Lorem.words(10)
                               title: Faker::Lorem.sentence(3).truncate(60),
                               external_url: Faker::Internet.url,
                               description: description,
-                              created_at: rand((Time.now - 1.week) .. Time.now),
+                              created_at: rand((Time.current - 1.week) .. Time.current),
                               geozone: [geozone, nil].sample,
                               feasible: feasible,
                               feasible_explanation: feasible_explanation,
@@ -331,8 +353,8 @@ Proposal.last(3).each do |proposal|
                           image: ["banner-img banner-img-one", "banner-img banner-img-two",
                                   "banner-img banner-img-three"].sample,
                           target_url: Rails.application.routes.url_helpers.proposal_path(proposal),
-                          post_started_at: rand((Time.now - 1.week) .. (Time.now - 1.day)),
-                          post_ended_at:   rand((Time.now  - 1.day) .. (Time.now + 1.week)),
-                          created_at: rand((Time.now - 1.week) .. Time.now))
+                          post_started_at: rand((Time.current - 1.week) .. (Time.current - 1.day)),
+                          post_ended_at:   rand((Time.current  - 1.day) .. (Time.current + 1.week)),
+                          created_at: rand((Time.current - 1.week) .. Time.current))
   puts "    #{banner.title}"
 end

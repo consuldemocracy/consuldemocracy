@@ -1,0 +1,5 @@
+---
+en:
+  account:
+    show:
+      change_credentials_link: Overriden string with custom locales
