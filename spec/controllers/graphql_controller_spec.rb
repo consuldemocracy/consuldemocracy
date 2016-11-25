@@ -12,6 +12,7 @@ describe GraphqlController do
 
     it "is rejected when not valid" do
       skip
+      # Just doing this to trigger Travis CI build
     end
   end
 
