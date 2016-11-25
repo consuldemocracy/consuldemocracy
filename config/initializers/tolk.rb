@@ -13,6 +13,8 @@ Tolk.config do |config|
   # config.mapping['is']      = 'Icelandic'
   # config.mapping['vi']      = 'Vietnamese'
 
+  config.mapping['eu'] = 'Basque'
+
   # Master source of strings to be translated
   config.primary_locale_name = 'en'
 end
