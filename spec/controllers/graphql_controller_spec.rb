@@ -1,63 +1,73 @@
 require 'rails_helper'
+require 'http'
 
 describe GraphqlController do
-  let!(:uri) { URI::HTTP.build(host: 'localhost', path: '/graphql', port: 3000) }
+  let(:uri) { URI::HTTP.build(host: 'localhost', path: '/graphql', port: 3000) }
+  let(:query_string) { "" }
+  let(:body) { {query: query_string}.to_json }
 
-  describe "GET request" do
-    it "is accepted when valid" do
-      # Like POST requests but the query string goes in the URL
-      # More info at: http://graphql.org/learn/serving-over-http/#get-request
-      skip
+  describe "POST requests" do
+    let(:author) { create(:user) }
+    let(:proposal) { create(:proposal, author: author) }
+    let(:response) { HTTP.headers('Content-Type' => 'application/json').post(uri, body: body) }
+    let(:response_body) { JSON.parse(response.body) }
+
+    context "when query string is valid" do
+      let(:query_string) { "{ proposal(id: #{proposal.id}) { title, author { username } } }" }
+      let(:returned_proposal) { response_body['data']['proposal'] }
+
+      it "returns HTTP 200 OK" do
+        expect(response.code).to eq(200)
+      end
+
+      it "returns first-level fields" do
+        expect(returned_proposal['title']).to eq(proposal.title)
+      end
+
+      it "returns nested fields" do
+        expect(returned_proposal['author']['username']).to eq(author.username)
+      end
     end
 
-    it "is rejected when not valid" do
-      skip
-      # Just doing this to trigger Travis CI build
+    context "when query string asks for invalid fields" do
+      let(:query_string) { "{ proposal(id: #{proposal.id}) { missing_field } }" }
+
+      it "returns HTTP 200 OK" do
+        expect(response.code).to eq(200)
+      end
+
+      it "doesn't return any data" do
+        expect(response_body['data']).to be_nil
+      end
+
+      it "returns error inside body" do
+        expect(response_body['errors']).to be_present
+      end
     end
+
+    context "when query string is not valid" do
+      let(:query_string) { "invalid" }
+
+      it "returns HTTP 400 Bad Request" do
+        expect(response.code).to eq(400)
+      end
+    end
+
+    context "when query string is missing" do
+      let(:query_string) { nil }
+
+      it "returns HTTP 400 Bad Request" do
+        expect(response.code).to eq(400)
+      end
+    end
+
+    context "when body is missing" do
+      let(:body) { nil }
+
+      it "returns HTTP 400 Bad Request" do
+        expect(response.code).to eq(400)
+      end
+    end
+
   end
-
-  describe "POST request" do
-    let(:post_request) {
-      req = Net::HTTP::Post.new(uri)
-      req['Content-Type'] = 'application/json'
-      req
-    }
-
-    it "succeeds when valid" do
-      body = { query: "{ proposals(first: 2) { edges { node { id } } } }" }.to_json
-      response = Net::HTTP.start(uri.host, uri.port) do |http|
-        post_request.body = body
-        http.request(post_request)
-      end
-
-      # Is it enough to check the status code or should I also check the body?
-      expect(response.code.to_i).to eq(200)
-    end
-
-    it "succeeds and returns an error when disclosed attributes are requested" do
-      body = { query: "{ user(id: 1) { encrypted_password } }" }.to_json
-      response = Net::HTTP.start(uri.host, uri.port) do |http|
-        post_request.body = body
-        http.request(post_request)
-      end
-
-      body_hash = JSON.parse(response.body)
-      expect(body_hash['errors']).to be_present
-    end
-
-    it "fails when no query string is provided" do
-      body = {}.to_json
-      response = Net::HTTP.start(uri.host, uri.port) do |http|
-        post_request.body = body
-        http.request(post_request)
-      end
-
-      # TODO: I must find a way to handle this better. Right now it shows a 500
-      # Internal Server Error, I think I should always return a valid (but empty)
-      # JSON document like '{}'
-      expect(response.code.to_i).not_to eq(200)
-    end
-
-  end
-
 end

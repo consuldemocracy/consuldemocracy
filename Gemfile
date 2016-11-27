@@ -96,6 +96,7 @@ group :test do
   gem 'poltergeist'
   gem 'coveralls', require: false
   gem 'email_spec'
+  gem 'http'
 end
 
 group :development do
