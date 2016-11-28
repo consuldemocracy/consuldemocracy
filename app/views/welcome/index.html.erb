@@ -4,7 +4,7 @@
       <div class="row">
         <div class="small-12 medium-8 column small-centered text-center">
           <h1><%= t("layouts.header.open_city_title") %></h1>
-          <p><%= t("layouts.header.open_city_slogan_short_html") %></p>
+          <p><%= t("layouts.header.open_city_slogan_short") %></p>
           <%= link_to t("layouts.header.sign_up"), new_user_registration_path , class: "button" %>
           <p><%= t("layouts.header.sign_in",
               login: link_to(t("layouts.header.sign_in_link"), new_user_session_path)).html_safe %></p>

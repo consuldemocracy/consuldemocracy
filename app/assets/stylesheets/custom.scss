@@ -2292,9 +2292,8 @@ ul.ballot-list {
       min-height: $line-height*13;
 
       h1 {
-        font-size: rem-calc(40);
-        line-height: $line-height*2;
-        padding-top: $line-height*10;
+        font-size: rem-calc(60);
+        line-height: rem-calc(72);
       }
     }
 
