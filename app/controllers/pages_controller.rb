@@ -13,7 +13,7 @@ class PagesController < ApplicationController
 
     def track_campaign
       if request.path == blas_bonilla_path
-        session[:campaign_name] = I18n.t("tracking.events.name.joaquin_reyes")
+        session[:campaign_name] = I18n.t("tracking.events.name.landing_joaquin_reyes")
       end
     end
 end

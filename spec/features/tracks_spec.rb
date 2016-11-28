@@ -255,7 +255,7 @@ feature 'Tracking' do
     end
   end
 
-  context "Joaquin Reyes" do
+  context "Joaquin Reyes Landing" do
 
     context "Logged in user" do
 
@@ -269,7 +269,7 @@ feature 'Tracking' do
         expect(current_path).to eq(blas_bonilla_path)
         expect(page).to have_css("span[data-track-event-category='Registro']")
         expect(page).to have_css("span[data-track-event-action='Ver formulario registro']")
-        expect(page).to have_css("span[data-track-event-name='Campaña Joaquin Reyes']")
+        expect(page).to have_css("span[data-track-event-name='Landing Joaquin Reyes']")
       end
 
     end
@@ -283,7 +283,7 @@ feature 'Tracking' do
         expect(current_path).to eq(new_user_registration_path)
         expect(page).to have_css("span[data-track-event-category='Registro']")
         expect(page).to have_css("span[data-track-event-action='Ver formulario registro']")
-        expect(page).to have_css("span[data-track-event-name='Campaña Joaquin Reyes']")
+        expect(page).to have_css("span[data-track-event-name='Landing Joaquin Reyes']")
       end
 
       scenario 'Registers successfully' do
@@ -296,7 +296,37 @@ feature 'Tracking' do
         expect(page).to have_content "Thank you for registering"
         expect(page).to have_css("span[data-track-event-category='Registro']")
         expect(page).to have_css("span[data-track-event-action='Registrar']")
-        expect(page).to have_css("span[data-track-event-name='Campaña Joaquin Reyes']")
+        expect(page).to have_css("span[data-track-event-name='Landing Joaquin Reyes']")
+      end
+
+    end
+  end
+
+  context "Home with Joaquin Reyes" do
+
+    context "Not logged in user" do
+
+      scenario 'Clicks on register' do
+        visit root_path
+        click_link "Sign up and participate"
+
+        expect(current_path).to eq(new_user_registration_path)
+        expect(page).to have_css("span[data-track-event-category='Registro']")
+        expect(page).to have_css("span[data-track-event-action='Ver formulario registro']")
+        expect(page).to have_css("span[data-track-event-name='Home Joaquin Reyes']")
+      end
+
+      scenario 'Registers successfully' do
+        visit root_path
+        click_link "Sign up and participate"
+
+        fill_in_signup_form
+        click_button "Register"
+
+        expect(page).to have_content "Thank you for registering"
+        expect(page).to have_css("span[data-track-event-category='Registro']")
+        expect(page).to have_css("span[data-track-event-action='Registrar']")
+        expect(page).to have_css("span[data-track-event-name='Home Joaquin Reyes']")
       end
 
     end
