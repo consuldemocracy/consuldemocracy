@@ -1,0 +1,109 @@
+<% provide :title, "Haz propuestas en Decide Madrid" %>
+
+<div class="blas-bonilla">
+  <div class="expanded no-margin-top padding header">
+    <div class="row">
+      <div class="small-12 medium-9 column small-centered text-center">
+        <h1>Si quieres empezar a hacer tus propuestas y votar en decide.madrid.es, pulsa el botón</h1>
+
+        <%= link_to "Regístrate y participa", "https://decide.madrid.es/users/sign_up", class: "button" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="small-12 medium-9 column small-centered">
+      <h2 class="margin text-center">Si quieres saber cómo participar en el ayuntamiento de Madrid, Blas Bonilla te lo cuenta</h2>
+
+      <p>Blas Bonilla es un ciudadano que ha aprendido hace poco a usar Internet y se ha topado con la página de participación del Ayuntamiento de Madrid: <%= link_to "decide.madrid.es", "https://decide.madrid.es" %>.</p>
+
+      <p>Entre otras iniciativas, cualquier persona puede crear una propuesta relacionada con nuestra ciudad y conseguir el apoyo de la ciudadanía para que se lleven a cabo. Si la apoyan y luego hay más gente a favor de la propuesta que en contra, ¡se hace! <%= link_to "Regístrate", "https://decide.madrid.es/users/sign_up" %>, y crea tus <%=link_to "propuestas ciudadanas", "https://decide.madrid.es/proposals_info" %>.</p>
+
+      <p>No te pierdas las propuestas que ha hecho Blas Bonilla. ¡Mira el vídeo y compártelo! <%= link_to "#LoDiceBlasBonilla", "https://twitter.com/search?f=tweets&q=%23LoDiceBlasBonilla" %></p>
+
+      <div class="flex-video widescreen">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/s_asCv_nkX0?list=PLhnvwI6F9eqUk7l8_sIVcPz7DjvE27hfS" frameborder="0" allowfullscreen title="Vídeos del canal de YouTube de Abriendo Madrid"></iframe>
+      </div>
+
+      <h2 class="margin text-center">También puedes ver y compartir una por una las propuestas de Blas Bonilla</h2>
+
+      <div class="row" data-equalizer>
+        <div class="small-12 medium-6 large-4 column" >
+          <div class="callout" data-equalizer-watch>
+            <%= link_to "#", class: "video-thumbnail" do %>
+              <%= image_tag("video_1_blas_bonilla.jpg", alt: "") %>
+              Obras constantes para que la gente mayor mire y opine
+            <% end %>
+          </div>
+        </div>
+
+        <div class="small-12 medium-6 large-4 column" >
+          <div class="callout" data-equalizer-watch>
+            <%= link_to "#", class: "video-thumbnail" do %>
+              <%= image_tag("video_2_blas_bonilla.jpg", alt: "") %>
+              Efectos de sonido para la gente que va andando por la calle
+            <% end %>
+          </div>
+        </div>
+
+        <div class="small-12 medium-6 large-4 column" >
+          <div class="callout" data-equalizer-watch>
+            <%= link_to "#", class: "video-thumbnail" do %>
+              <%= image_tag("video_3_blas_bonilla.jpg", alt: "") %>
+              Instaurar un servicio municipal de recogida de muebles y trastos viejos
+            <% end %>
+          </div>
+        </div>
+
+        <div class="small-12 medium-6 large-4 column" >
+          <div class="callout" data-equalizer-watch>
+            <%= link_to "#", class: "video-thumbnail" do %>
+              <%= image_tag("video_4_blas_bonilla.jpg", alt: "") %>
+              Que los camareros hablen con la voz de Ralph Macchio
+            <% end %>
+          </div>
+        </div>
+
+        <div class="small-12 medium-6 large-4 column" >
+          <div class="callout" data-equalizer-watch>
+            <%= link_to "#", class: "video-thumbnail" do %>
+              <%= image_tag("video_5_blas_bonilla.jpg", alt: "") %>
+              Pintar una berenjena
+            <% end %>
+          </div>
+        </div>
+
+        <div class="small-12 medium-6 large-4 column" >
+          <div class="callout" data-equalizer-watch>
+            <%= link_to "#", class: "video-thumbnail" do %>
+              <%= image_tag("video_6_blas_bonilla.jpg", alt: "") %>
+              Placas conmemorativas en edificios de los pequeños milagros de la vida
+            <% end %>
+          </div>
+        </div>
+      </div>
+
+      <div class="margin">
+        <p>#LoDiceBlasBonilla es una campaña del Área de Gobierno de Participación Ciudadana, Transparencia y Gobierno Abierto del Ayuntamiento de Madrid en colaboración con el actor y humorista Joaquín Reyes, invitando a todas las personas que residen en Madrid a inscribirse en el sistema de participación y toma de decisiones que pone a su disposición el ayuntamiento y colaborar activamente en construir entre todas las personas una ciudad mejor.</p>
+      </div>
+
+      <div class="text-center">
+        <div class="small-12 medium-6 large-4 large-offset-2 column">
+          <%= link_to "#", class: "button expanded facebook" do %>
+            <span class="icon-facebook"></span>
+            Compartir en Facebook
+          <% end %>
+        </div>
+          <!-- Haz caso a Blas Bonilla y presenta tus propuestas para que Madrid sea una ciudad mejor. Entra, regístrate y participa en decide.madrid.es/haz-propuestas -->
+
+        <div class="small-12 medium-6 large-4 column end">
+          <%= link_to "#", class: "button expanded twitter" do %>
+            <span class="icon-twitter"></span>
+            Compartir en Twitter
+          <% end %>
+        </div>
+        <!-- #LoDiceBlasBonilla: Haz tus propuestas para que Madrid sea una ciudad mejor. Entra, regístrate y participa en decide.madrid.es/haz-propuestas -->
+      </div>
+    </div>
+  </div>
+</div>
