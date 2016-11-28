@@ -25,7 +25,7 @@ module CommonActions
   end
 
   def login_as_authenticated_manager
-    login, user_key, date = "JJB042", "31415926", Time.now.strftime("%Y%m%d%H%M%S")
+    login, user_key, date = "JJB042", "31415926", Time.current.strftime("%Y%m%d%H%M%S")
     allow_any_instance_of(ManagerAuthenticator).to receive(:auth).and_return({login: login, user_key: user_key, date: date}.with_indifferent_access)
     visit management_sign_in_path(login: login, clave_usuario: user_key, fecha_conexion: date)
   end
@@ -164,10 +164,10 @@ module CommonActions
     expect(page).to have_selector('.in-favor a', visible: false)
   end
 
-   def expect_message_you_need_to_sign_in_to_vote_comments
+  def expect_message_you_need_to_sign_in_to_vote_comments
     expect(page).to have_content 'You must Sign in or Sign up to vote'
-    expect(page).to have_selector('.logged', visible: false)
-    expect(page).to have_selector('.not-logged', visible: true)
+    expect(page).to have_selector('.participation-allowed', visible: false)
+    expect(page).to have_selector('.participation-not-allowed', visible: true)
   end
 
   def expect_message_to_many_anonymous_votes
@@ -211,6 +211,16 @@ module CommonActions
     [create(:debate, :with_confidence_score, cached_votes_up: 100),
      create(:debate, :with_confidence_score, cached_votes_up: 90),
      create(:debate, :with_confidence_score, cached_votes_up: 80)]
+  end
+
+  def create_successfull_proposals
+    [create(:proposal, title: "Winter is coming", question: "Do you speak it?", cached_votes_up: Proposal.votes_needed_for_success + 100),
+     create(:proposal, title: "Fire and blood", question: "You talking to me?", cached_votes_up: Proposal.votes_needed_for_success + 1)]
+  end
+
+  def create_archived_proposals
+    [create(:proposal, title: "This is an expired proposal", created_at: Setting["months_to_archive_proposals"].to_i.months.ago),
+     create(:proposal, title: "This is an oldest expired proposal", created_at: (Setting["months_to_archive_proposals"].to_i + 2).months.ago)]
   end
 
   def tag_names(tag_cloud)

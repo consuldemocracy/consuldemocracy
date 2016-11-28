@@ -24,7 +24,9 @@ Frontend tools used include [SCSS](http://sass-lang.com/) over [Foundation](http
 
 ## Configuration for development and test environments
 
-Prerequisites: install git, Ruby 2.2.3, bundler gem, ghostscript and PostgreSQL (>=9.4).
+**NOTE**: For more detailed instructions check the [docs](https://github.com/consul/consul/tree/master/doc/en/dev_test_setup.md)
+
+Prerequisites: install git, Ruby 2.3.2, bundler gem, ghostscript and PostgreSQL (>=9.4).
 
 ```
 git clone https://github.com/consul/consul.git
@@ -32,7 +34,6 @@ cd consul
 bundle install
 cp config/database.yml.example config/database.yml
 cp config/secrets.yml.example config/secrets.yml
-rake db:create
 bin/rake db:setup
 bin/rake db:dev_seed
 RAILS_ENV=test rake db:setup

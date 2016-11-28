@@ -34,6 +34,16 @@ Cuando quieras resolver una incidencia mediante código:
 * Sigue estas [buenas prácticas](https://github.com/styleguide/ruby)
 * Envía una *pull request* al repositorio principal indicando la incidencia que se está arreglando
 
+## Limpiar
+
+En la urgencia del momento, las cosas a veces se ensucian, puedes ayudarnos a limpiar la casa:
+
+* implementando [tests pendientes](https://travis-ci.org/consul/consul)
+* incrementando la [cobertura de tests](https://coveralls.io/github/consul/consul?branch=master)
+* mejorando la [calidad del código](https://codeclimate.com/github/consul/consul)
+* actualizando [dependecias](https://gemnasium.com/consul/consul)
+* haciendo el [código consistente](https://github.com/bbatsov/rubocop)
+
 ## Otras formas de contribuir sin código
 
 * Si crees que hay una funcionalidad que hace falta, o descubres un problema, abre una incidencia (asegúrate de que

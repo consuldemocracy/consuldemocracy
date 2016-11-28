@@ -274,10 +274,10 @@ describe User do
       # Subdomains are also accepted
 
       Setting['email_domain_for_officials'] = 'officials.madrid.es'
-      user1 = create(:user, email: "john@officials.madrid.es", confirmed_at: Time.now)
-      user2 = create(:user, email: "john@yes.officials.madrid.es", confirmed_at: Time.now)
-      user3 = create(:user, email: "john@unofficials.madrid.es", confirmed_at: Time.now)
-      user4 = create(:user, email: "john@example.org", confirmed_at: Time.now)
+      user1 = create(:user, email: "john@officials.madrid.es", confirmed_at: Time.current)
+      user2 = create(:user, email: "john@yes.officials.madrid.es", confirmed_at: Time.current)
+      user3 = create(:user, email: "john@unofficials.madrid.es", confirmed_at: Time.current)
+      user4 = create(:user, email: "john@example.org", confirmed_at: Time.current)
 
       expect(user1.has_official_email?).to eq(true)
       expect(user2.has_official_email?).to eq(true)
@@ -332,7 +332,7 @@ describe User do
       it "returns users that have not been erased" do
         user1 = create(:user, erased_at: nil)
         user2 = create(:user, erased_at: nil)
-        user3 = create(:user, erased_at: Time.now)
+        user3 = create(:user, erased_at: Time.current)
 
         expect(User.active).to include(user1)
         expect(User.active).to include(user2)

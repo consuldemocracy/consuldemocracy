@@ -51,7 +51,7 @@ feature 'Incomplete verifications' do
   end
 
   scenario "Phone not given" do
-    incompletely_verified_user = create(:user, residence_verified_at: Time.now, unconfirmed_phone: nil)
+    incompletely_verified_user = create(:user, residence_verified_at: Time.current, unconfirmed_phone: nil)
 
     visit admin_verifications_path
 
@@ -61,7 +61,7 @@ feature 'Incomplete verifications' do
   end
 
   scenario "SMS code not confirmed" do
-    incompletely_verified_user = create(:user, residence_verified_at: Time.now,
+    incompletely_verified_user = create(:user, residence_verified_at: Time.current,
                                                unconfirmed_phone:     "611111111",
                                                sms_confirmation_code: "1234",
                                                confirmed_phone:       nil)

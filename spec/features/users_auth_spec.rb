@@ -52,7 +52,6 @@ feature 'Users' do
                                                uid: '12345',
                                                info: {name: 'manuela', email: 'manuelacarmena@example.com', verified: '1'}} }
 
-
       scenario 'Sign up when Oauth provider has a verified email' do
         OmniAuth.config.add_mock(:twitter, twitter_hash_with_verified_email)
 
@@ -285,4 +284,59 @@ feature 'Users' do
 
     expect(page).to have_content "Your password has been changed successfully."
   end
+
+  scenario 'Sign in, admin with password expired' do
+    user = create(:user, password_changed_at: Time.current - 1.year)
+    admin = create(:administrator, user: user)
+
+    login_as(admin.user)
+    visit root_path
+
+    expect(page).to have_content "Your password is expired"
+
+    fill_in 'user_current_password', with: 'judgmentday'
+    fill_in 'user_password', with: '123456789'
+    fill_in 'user_password_confirmation', with: '123456789'
+
+    click_button 'Change your password'
+
+    expect(page).to have_content "Password successfully updated"
+  end
+
+  scenario 'Sign in, admin without password expired' do
+    user = create(:user, password_changed_at: Time.current - 360.days)
+    admin = create(:administrator, user: user)
+
+    login_as(admin.user)
+    visit root_path
+
+    expect(page).to_not have_content "Your password is expired"
+  end
+
+  scenario 'Sign in, user with password expired' do
+    user = create(:user, password_changed_at: Time.current - 1.year)
+
+    login_as(user)
+    visit root_path
+
+    expect(page).to_not have_content "Your password is expired"
+  end
+
+  scenario 'Admin with password expired trying to use same password' do
+    user = create(:user, password_changed_at: Time.current - 1.year, password: '123456789')
+    admin = create(:administrator, user: user)
+
+    login_as(admin.user)
+    visit root_path
+
+    expect(page).to have_content "Your password is expired"
+
+    fill_in 'user_current_password', with: 'judgmentday'
+    fill_in 'user_password', with: '123456789'
+    fill_in 'user_password_confirmation', with: '123456789'
+    click_button 'Change your password'
+
+    expect(page).to have_content "must be different than the current password."
+  end
+
 end

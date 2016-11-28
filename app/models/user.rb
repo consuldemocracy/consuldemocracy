@@ -2,8 +2,8 @@ class User < ActiveRecord::Base
 
   include Verification
 
-  devise :database_authenticatable, :registerable, :confirmable,
-         :recoverable, :rememberable, :trackable, :validatable, :omniauthable, :async
+  devise :database_authenticatable, :registerable, :confirmable, :recoverable, :rememberable,
+         :trackable, :validatable, :omniauthable, :async, :password_expirable, :secure_validatable
 
   acts_as_voter
   acts_as_paranoid column: :hidden_at
@@ -70,7 +70,7 @@ class User < ActiveRecord::Base
       oauth_email: oauth_email,
       password: Devise.friendly_token[0,20],
       terms_of_service: '1',
-      confirmed_at: oauth_email_confirmed ? DateTime.now : nil
+      confirmed_at: oauth_email_confirmed ? DateTime.current : nil
     )
   end
 
@@ -164,7 +164,7 @@ class User < ActiveRecord::Base
 
   def erase(erase_reason = nil)
     self.update(
-      erased_at: Time.now,
+      erased_at: Time.current,
       erase_reason: erase_reason,
       username: nil,
       email: nil,
@@ -252,6 +252,7 @@ class User < ActiveRecord::Base
   delegate :can?, :cannot?, to: :ability
 
   private
+
     def clean_document_number
       self.document_number = self.document_number.gsub(/[^a-z0-9]+/i, "").upcase unless self.document_number.blank?
     end

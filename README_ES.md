@@ -23,7 +23,9 @@ Las herramientas utilizadas para el frontend no están cerradas aún. Los estilo
 
 ## Configuración para desarrollo y tests
 
-Prerequisitos: tener instalado git, Ruby 2.2.3, la gema `bundler`, ghostscript y PostgreSQL (9.4 o superior).
+**NOTA**: para unas instrucciones más detalladas consulta la [documentación](https://github.com/consul/consul/tree/master/doc/es/dev_test_setup.md)
+
+Prerequisitos: tener instalado git, Ruby 2.3.2, la gema `bundler`, ghostscript y PostgreSQL (9.4 o superior).
 
 ```
 
@@ -32,7 +34,6 @@ cd consul
 bundle install
 cp config/database.yml.example config/database.yml
 cp config/secrets.yml.example config/secrets.yml
-rake db:create
 bin/rake db:setup
 bin/rake db:dev_seed
 RAILS_ENV=test rake db:setup

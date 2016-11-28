@@ -3,7 +3,7 @@ require 'rails_helper'
 feature 'Verification path' do
 
   scenario "User is an organization" do
-    user = create(:user, verified_at: Time.now)
+    user = create(:user, verified_at: Time.current)
     create(:organization, user: user)
 
     login_as(user)
@@ -13,7 +13,7 @@ feature 'Verification path' do
   end
 
   scenario "User is verified" do
-    user = create(:user, verified_at: Time.now)
+    user = create(:user, verified_at: Time.current)
 
     login_as(user)
     visit verification_path
@@ -23,8 +23,8 @@ feature 'Verification path' do
   end
 
   scenario "User requested a letter" do
-    user = create(:user, confirmed_phone: "623456789", residence_verified_at: Time.now,
-                         letter_requested_at: Time.now, letter_verification_code: "666")
+    user = create(:user, confirmed_phone: "623456789", residence_verified_at: Time.current,
+                         letter_requested_at: Time.current, letter_verification_code: "666")
 
     login_as(user)
     visit verification_path
@@ -33,7 +33,7 @@ feature 'Verification path' do
   end
 
   scenario "User is level two verified" do
-    user = create(:user, residence_verified_at: Time.now, confirmed_phone: "666666666")
+    user = create(:user, residence_verified_at: Time.current, confirmed_phone: "666666666")
 
     login_as(user)
     visit verification_path
@@ -42,7 +42,7 @@ feature 'Verification path' do
   end
 
   scenario "User received a verification sms" do
-    user = create(:user, residence_verified_at: Time.now, unconfirmed_phone: "666666666", sms_confirmation_code: "666")
+    user = create(:user, residence_verified_at: Time.current, unconfirmed_phone: "666666666", sms_confirmation_code: "666")
 
     login_as(user)
     visit verification_path
@@ -51,7 +51,7 @@ feature 'Verification path' do
   end
 
   scenario "User received verification email" do
-    user = create(:user, residence_verified_at: Time.now, email_verification_token: "1234")
+    user = create(:user, residence_verified_at: Time.current, email_verification_token: "1234")
 
     login_as(user)
     visit verification_path
@@ -64,7 +64,7 @@ feature 'Verification path' do
   end
 
   scenario "User has verified residence" do
-    user = create(:user, residence_verified_at: Time.now)
+    user = create(:user, residence_verified_at: Time.current)
 
     login_as(user)
     visit verification_path
@@ -86,7 +86,7 @@ feature 'Verification path' do
   end
 
   scenario "A verified user can not access verification pages" do
-    user = create(:user, verified_at: Time.now)
+    user = create(:user, verified_at: Time.current)
 
     login_as(user)
 
@@ -98,4 +98,5 @@ feature 'Verification path' do
       expect(page).to have_content 'Your account is already verified'
     end
   end
+
 end

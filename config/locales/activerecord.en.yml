@@ -66,6 +66,7 @@ en:
         username: "Username"
         password_confirmation: "Password confirmation"
         password: "Password"
+        current_password: "Current password"
         phone_number: "Phone number"
         official_position: "Official position"
         official_level: "Official level"

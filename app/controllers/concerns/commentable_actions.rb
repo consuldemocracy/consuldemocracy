@@ -12,7 +12,7 @@ module CommentableActions
 
     @tag_cloud = tag_cloud
     @banners = Banner.with_active
-    
+
     set_resource_votes(@resources)
     set_resources_instance
   end
