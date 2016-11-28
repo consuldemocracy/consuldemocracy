@@ -1,4 +1,5 @@
 class Users::RegistrationsController < Devise::RegistrationsController
+  prepend_before_action :track_signup, only: :new
   prepend_before_action :authenticate_scope!, only: [:edit, :update, :destroy, :finish_signup, :do_finish_signup]
 
   invisible_captcha only: [:create], honeypot: :family_name, scope: :user
@@ -13,7 +14,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     build_resource(sign_up_params)
     track_event
     if resource.valid?
-      log_event("registration", "successful_registration")
+      log_event("registration", "successful_registration", campaign_name)
       super
     else
       render :new
@@ -81,4 +82,11 @@ class Users::RegistrationsController < Devise::RegistrationsController
       end
     end
 
+    def track_signup
+      log_event("registration", "access_registration_form", campaign_name)
+    end
+
+    def campaign_name
+      session[:campaign_name]
+    end
 end

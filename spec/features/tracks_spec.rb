@@ -255,6 +255,53 @@ feature 'Tracking' do
     end
   end
 
+  context "Joaquin Reyes" do
+
+    context "Logged in user" do
+
+      scenario 'Clicks on register' do
+        user = create(:user)
+        login_as(user)
+
+        visit blas_bonilla_path
+        click_link "Regístrate y participa"
+
+        expect(current_path).to eq(blas_bonilla_path)
+        expect(page).to have_css("span[data-track-event-category='Registro']")
+        expect(page).to have_css("span[data-track-event-action='Ver formulario registro']")
+        expect(page).to have_css("span[data-track-event-name='Campaña Joaquin Reyes']")
+      end
+
+    end
+
+    context "Not logged in user" do
+
+      scenario 'Clicks on register' do
+        visit blas_bonilla_path
+        click_link "Regístrate y participa"
+
+        expect(current_path).to eq(new_user_registration_path)
+        expect(page).to have_css("span[data-track-event-category='Registro']")
+        expect(page).to have_css("span[data-track-event-action='Ver formulario registro']")
+        expect(page).to have_css("span[data-track-event-name='Campaña Joaquin Reyes']")
+      end
+
+      scenario 'Registers successfully' do
+        visit blas_bonilla_path
+        click_link "Regístrate y participa"
+
+        fill_in_signup_form
+        click_button "Register"
+
+        expect(page).to have_content "Thank you for registering"
+        expect(page).to have_css("span[data-track-event-category='Registro']")
+        expect(page).to have_css("span[data-track-event-action='Registrar']")
+        expect(page).to have_css("span[data-track-event-name='Campaña Joaquin Reyes']")
+      end
+
+    end
+  end
+
   #Requires testing outgoing _paq.push call from track.js.coffee
   xscenario 'Track events on ajax call'
 
