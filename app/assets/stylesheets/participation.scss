@@ -982,36 +982,6 @@
   }
 }
 
-// 07. Proposals successfull
-// -------------------------
-
-.dark-heading {
-  background: #2D3E50;
-  color: white;
-
-  @include breakpoint(medium) {
-    padding-bottom: $line-height;
-  }
-
-  p {
-    margin-bottom: 0;
-
-    &.title {
-      color: #FFD200;
-    }
-  }
-
-  .info {
-    background: #314253;
-    padding-top: $line-height;
-
-    @include breakpoint(medium) {
-      border-top: rem-calc(6) solid #FFD200;
-    }
-  }
-}
-
-
 .big-number {
   color: $budget;
   font-size: rem-calc(60);
@@ -1136,6 +1106,35 @@ ul.ballot-list {
 
     &:hover {
       text-decoration: none;
+    }
+  }
+}
+
+// 07. Proposals successfull
+// -------------------------
+
+.dark-heading {
+  background: #2D3E50;
+  color: white;
+
+  @include breakpoint(medium) {
+    padding-bottom: $line-height;
+  }
+
+  p {
+    margin-bottom: 0;
+
+    &.title {
+      color: #FFD200;
+    }
+  }
+
+  .info {
+    background: #314253;
+    padding-top: $line-height;
+
+    @include breakpoint(medium) {
+      border-top: rem-calc(6) solid #FFD200;
     }
   }
 }
