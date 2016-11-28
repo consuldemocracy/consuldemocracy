@@ -16,6 +16,7 @@
 // 14. Proposal Ballots
 // 15. Welcome
 // 16. Si te sientes gato
+// 17. Blas Bonilla
 //
 
 // 01. Global styles
@@ -2296,6 +2297,11 @@ ul.ballot-list {
       }
     }
 
+    p {
+      font-size: rem-calc(24);
+      line-height: $line-height*1.5;
+    }
+
     a:not(.button) {
       color: white;
       text-decoration: underline;
@@ -2525,5 +2531,75 @@ ul.ballot-list {
         text-decoration: none;
       }
     }
+  }
+}
+
+// 17. Blas Bonilla
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+.blas-bonilla {
+
+  a {
+    text-decoration: underline;
+  }
+
+  .header {
+    background: $brand image-url('header_blas_bonilla.jpg');
+    background-position: 50% 50%;
+    background-size: cover;
+    min-height: $line-height*12;
+
+    h1 {
+      color: white;
+      padding: $line-height*2 0 $line-height;
+    }
+
+    .button {
+      font-size: rem-calc(24);
+    }
+  }
+
+  .button, .video-thumbnail {
+    text-decoration: none;
+  }
+
+  .video-thumbnail {
+    color: $text;
+    font-size: $small-font-size;
+    text-decoration: none;
+
+    img {
+      margin-bottom: $line-height/2;
+    }
+  }
+
+  .facebook, .twitter {
+    position: relative;
+  }
+
+  .icon-facebook, .icon-twitter {
+    position: absolute;
+    top: 12px;
+  }
+
+  .facebook {
+    background: #3B5998;
+
+    a {
+      color: white !important;
+      text-decoration: none !important;
+    }
+  }
+
+  .icon-facebook {
+    left: 24px;
+  }
+
+  .twitter {
+    background: #55ACEE;
+  }
+
+  .icon-twitter {
+    left: 32px;
   }
 }

@@ -356,5 +356,8 @@ Rails.application.routes.draw do
   get 'proceso/plan-calidad-aire',                  to: 'pages#show', id: 'processes/air_quality_plan/index', as: 'air_quality_plan'
   get 'proceso/rotulacion-vias',                    to: 'pages#show', id: 'processes/label_streets/index',    as: 'label_streets'
 
+  #Campaña Blas Bonilla
+  get 'haz-propuestas',                             to: 'pages#show', id: 'blas_bonilla', as: 'blas_bonilla'
+
   resources :pages, path: '/', only: [:show]
 end

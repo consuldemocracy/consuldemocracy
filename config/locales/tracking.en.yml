@@ -26,6 +26,7 @@ en:
         successful_login: Entrar
         successful_registration: Registrar
         successful_confirmation: Confirmar
+        access_registration_form: Ver formulario registro
         create: Crear
         vote: Votar
         support: Apoyar
@@ -43,5 +44,6 @@ en:
       name:
         "yes": "Positivo"
         "no": "Negativo"
+        joaquin_reyes: "Campaña Joaquin Reyes"
       dimension_value:
         position: Posición
