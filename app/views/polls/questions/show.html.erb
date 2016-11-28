@@ -1,0 +1,49 @@
+<div class="expanded no-margin-top dark-heading">
+  <div class="row">
+    <div class="small-12 medium-9 column padding">
+      <%= render "shared/back_link" %>
+
+      <h1><%= @question.title %></h1>
+
+      <% if @question.proposal.present? %>
+        <div class="margin-bottom">
+          <%= link_to t('questions.show.original_proposal'), @question.proposal %>
+        </div>
+      <% end %>
+
+      <p><%= @question.summary %></p>
+
+      <ul class="tags">
+        <% @question.geozones.each do |g| %>
+          <li><%= g.name %></li>
+        <% end %>
+      </ul>
+    </div>
+
+    <div class="small-12 medium-3 column info">
+      <p>
+        <span class="title author"><%= t('questions.show.author') %></span><br>
+        <%= link_to @question.author.name, @question.author %>
+      </p>
+
+      <p>
+        <span class="title url"><%= t('questions.show.external_url') %></span><br>
+        <%# link_to @question.external_url, @question.external_url %>
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="row margin-top text-center" id="<%= dom_id(@question) %>_answers">
+  <%= render "answers", question: @question %>
+</div>
+
+<div class="row margin-top">
+  <div class="small-12 medium-9 column">
+    <h3><%= t('questions.show.more_info') %></h3>
+    <%= @question.description %>
+  </div>
+</div>
+
+
+<%= render "comments" %>

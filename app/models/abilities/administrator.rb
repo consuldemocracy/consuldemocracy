@@ -33,7 +33,7 @@ module Abilities
       can :mark_featured, Debate
       can :unmark_featured, Debate
 
-      can :comment_as_administrator, [Debate, Comment, Proposal]
+      can :comment_as_administrator, [Debate, Comment, Proposal, Poll::Question]
 
       can [:search, :create, :index, :destroy], ::Moderator
       can [:search, :create, :index, :summary], ::Valuator
@@ -43,6 +43,10 @@ module Abilities
       can :manage, Annotation
 
       can [:read, :update, :destroy, :summary], SpendingProposal
+
+      can [:read, :create, :update], Poll::Question
+      can :destroy, Poll::Question # , comments_count: 0, votes_up: 0
+
       can [:search, :edit, :update, :create, :index, :destroy], Banner
 
       can [:manage], Poll

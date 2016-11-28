@@ -5,7 +5,7 @@
 // 03. Show participation
 // 04. List participation
 // 05. Featured
-// 06. Proposals successfull
+// 06. Proposals successful
 //
 
 // 01. Votes and supports
@@ -846,7 +846,7 @@
 // ------------
 
 .featured-debates, .featured-proposals,
-.proposals-ballot, .proposals-ballot-list {
+.enquiries-list {
   padding: $line-height/2 0;
 
   @include breakpoint(medium) {
@@ -942,7 +942,7 @@
   }
 }
 
-// 06. Proposals successfull
+// 06. Proposals successful
 // -------------------------
 
 .dark-heading {
@@ -951,6 +951,11 @@
 
   @include breakpoint(medium) {
     padding-bottom: $line-height;
+  }
+
+  &.enquiries {
+    background: #2D3E50 image-url('heading_enquiries.jpg') no-repeat;
+    background-position: 70%;
   }
 
   p {
@@ -971,7 +976,7 @@
   }
 }
 
-.featured-proposals-ballot-banner {
+.sucessfull-proposals-banner {
   background: #2D3E50 image-url("ballot_tiny.gif") no-repeat;
   background-position: 75% 0;
   position: relative;
@@ -995,10 +1000,10 @@
   }
 }
 
-.featured-proposals-ballot-banner,
-.successfull .panel {
+.sucessfull-proposals-banner,
+.successful .panel {
 
-  .icon-successfull {
+  .icon-successful {
     border-right: 60px solid #FFD200;
     border-top: 0;
     border-bottom: 60px solid transparent;
@@ -1019,9 +1024,9 @@
   }
 }
 
-.proposals-ballot-list {
+.enquiries-list {
 
-  .proposal-sucessfull {
+  .enquiry {
     background: white;
     border-top: 1px solid $border;
     padding: $line-height 0;
@@ -1029,7 +1034,7 @@
   }
 }
 
-.successfull {
+.successful {
 
   .panel {
     position: relative;

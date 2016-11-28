@@ -9,7 +9,7 @@
       <%= link_to t("layouts.header.proposals"), proposals_path, class: ("active" if  controller_name == "proposals"), accesskey: "p" %>
     </li>
     <li>
-      <%= link_to t("layouts.header.proposal_ballot"), proposal_ballots_path, class: ("active" if  controller_name == "proposal_ballots"), accesskey: "v" %>
+      <%= link_to t("layouts.header.poll_questions"), polls_path, class: ("active" if  controller_name == "polls"), accesskey: "v" %>
     </li>
     <% if feature?(:spending_proposals) %>
       <li>

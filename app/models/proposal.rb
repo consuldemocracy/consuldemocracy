@@ -50,7 +50,7 @@ class Proposal < ActiveRecord::Base
   scope :last_week,                -> { where("proposals.created_at >= ?", 7.days.ago)}
   scope :retired,                  -> { where.not(retired_at: nil) }
   scope :not_retired,              -> { where(retired_at: nil) }
-  scope :successfull,              -> { where("cached_votes_up + physical_votes >= ?", Proposal.votes_needed_for_success)}
+  scope :successful,              -> { where("cached_votes_up + physical_votes >= ?", Proposal.votes_needed_for_success)}
 
   def to_param
     "#{id}-#{title}".parameterize
@@ -159,7 +159,7 @@ class Proposal < ActiveRecord::Base
     Setting['votes_for_proposal_success'].to_i
   end
 
-  def successfull?
+  def successful?
     total_votes >= Proposal.votes_needed_for_success
   end
 

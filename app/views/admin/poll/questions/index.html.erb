@@ -1,0 +1,22 @@
+<h2 class="inline-block"><%= t('admin.questions.index.title') %></h2>
+
+<%= link_to t('admin.questions.index.create'), new_admin_question_path,
+            class: "button success float-right" %>
+
+<% if @questions.count == 0 %>
+  <div class="callout primary">
+    <%= t('admin.questions.index.no_questions') %>
+  </div>
+<% else %>
+  <table>
+  <% @questions.each do |question| %>
+    <tr id="<%= dom_id(question) %>">
+      <td><%= link_to question.title, admin_question_path(question) %></td>
+      <td class="text-right">
+        <%= link_to t('shared.edit'), edit_admin_question_path(question), class: "button hollow" %>
+        <%= link_to t('shared.delete'), admin_question_path(question), class: "button hollow alert", method: :delete %>
+      </td>
+    </tr>
+  <% end %>
+  </table>
+<% end %>

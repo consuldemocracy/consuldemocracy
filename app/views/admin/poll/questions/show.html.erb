@@ -1,0 +1,55 @@
+<%= render "shared/back_link" %>
+
+<div class="clear"></div>
+
+<div class="row margin-top">
+  <div class="small-12 medium-9 column">
+    <% if @question.proposal.present? %>
+      <%= t("admin.questions.show.proposal") %>
+      <%= link_to @question.proposal.title, proposal_path(@question.proposal) %>
+    <% end %>
+
+    <strong><%= t("admin.questions.show.title") %></strong>
+    <h1><%= @question.title %></h1>
+
+    <p>
+      <strong><%= t("admin.questions.show.author") %></strong>
+      <br>
+      <%= link_to @question.author.name, user_path(@question.author) %>
+    </p>
+
+    <p>
+      <strong><%= t("admin.questions.show.valid_answers") %></strong>
+    </p>
+
+    <% @question.valid_answers.each do |answer| %>
+      <span class="button">
+        <%= answer %>
+      </span>
+    <% end %>
+
+    <p>
+      <strong><%= t("admin.questions.show.summary") %></strong>
+      <br>
+      <%= @question.summary %>
+    </p>
+
+    <p>
+      <strong><%= t("admin.questions.show.description") %></strong>
+      <br>
+      <%= @question.description %>
+    </p>
+
+    <p>
+      <strong><%= t("admin.questions.show.geozones") %></strong>
+      <br>
+      <% @question.geozones.each do |geozone| %>
+        <span class="geozone">
+          <%= geozone.name %>
+        </span>
+      <% end %>
+    </p>
+
+    <%= link_to t("admin.questions.show.preview"), question_path(@question) %>
+  </div>
+</div>

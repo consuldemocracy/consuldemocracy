@@ -14,13 +14,11 @@ class Poll::Question < ActiveRecord::Base
   belongs_to :proposal
 
   validates :title, presence: true
-  validates :question, presence: true
   validates :summary, presence: true
   validates :author, presence: true
 
   validates :title, length: { in: 4..Poll::Question.title_max_length }
   validates :description, length: { maximum: Poll::Question.description_max_length }
-  validates :question, length: { in: 10..Poll::Question.question_max_length }
 
   scope :sort_for_list, -> { order('poll_questions.proposal_id IS NULL', :created_at)}
   scope :for_render, -> { includes(:author, :proposal) }
@@ -42,7 +40,6 @@ class Poll::Question < ActiveRecord::Base
       self.title = proposal.title
       self.description = proposal.description
       self.summary = proposal.summary
-      self.question = proposal.question
       self.all_geozones = true
       self.valid_answers = I18n.t('poll_questions.default_valid_answers')
     end
@@ -55,12 +52,17 @@ class Poll::Question < ActiveRecord::Base
   def self.answerable_by(user)
     return none if user.nil? || user.unverified?
 
-    joins('LEFT JOIN "geozones_poll_questions" ON "geozones_poll_questions"."question_id" = "poll_questions"."id"')
-      .where('poll_questions.poll_id IN (?) AND (poll_questions.all_geozones = ? OR geozones_poll_questions.geozone_id = ?)',
-             Poll.answerable_by(user).pluck(:id),
-             true,
-             user.geozone_id || -1) # user.geozone_id can be nil, which would throw errors on sql
-      .group('poll_questions.id')
+    where(poll_id:  answerable_polls(user),
+          geozones: { id: answerable_geozones(user) }).
+    joins(:geozones)
+  end
+
+  def self.answerable_polls(user)
+    Poll.answerable_by(user)
+  end
+
+  def self.answerable_geozones(user)
+    user.geozone || Geozone.city
   end
 
 end

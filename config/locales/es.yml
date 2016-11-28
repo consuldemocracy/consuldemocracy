@@ -210,7 +210,7 @@ es:
       open_data: Datos abiertos
       open_gov: Gobierno %{open}
       proposals: Propuestas
-      proposal_ballot: Votaciones
+      poll_questions: Votaciones
       see_all: Ver propuestas
       spending_proposals: Presupuestos ciudadanos
   legislation:
@@ -354,6 +354,8 @@ es:
       supports_necessary: "%{number} apoyos necesarios"
       total_percent: 100%
       archived: "Esta propuesta ha sido archivada y ya no puede recoger apoyos."
+      successful: "Esta propuesta ha alcanzado los apoyos necesarios y pasará a la %{voting}."
+      voting: "próxima votación"
     show:
       author_deleted: Usuario eliminado
       code: 'Código de la propuesta:'
@@ -375,17 +377,40 @@ es:
     update:
       form:
         submit_button: Guardar cambios
-  proposal_ballots:
-    title: "Votaciones"
-    description_html: "Las siguientes propuestas ciudadanas han alcanzado el <strong>número de apoyos necesarios</strong> y pasarán a votación."
-    date_title: "Fechas de participación"
-    date: "En breve anunciaremos la fecha de votación de estas propuestas."
-    successfull: "Esta propuesta ha alcanzado los apoyos necesarios y pasará a la %{voting}."
-    voting: "próxima votación"
-    featured_title: "#PróximaVotación"
-    nothing_to_vote: "No hay nada que votar en este momento."
-    info: "Nuevas propuestas ciudadanas han llegado a la fase de votación."
-    button: "Quiero decidir"
+  poll_questions:
+    create_question: "Crear votación"
+    default_valid_answers: "Sí, No"
+    index:
+      filters:
+        opened: "Abiertas"
+        incoming: "Próximamente"
+        expired: "Terminadas"
+      title: "Votaciones"
+      description_html: "Las siguientes propuestas ciudadanas han alcanzado el <strong>número de apoyos necesarios</strong> y pasarán a votación."
+      dates: "Desde el %{open_at} hasta el %{closed_at}"
+      no_enquiries_opened: "No hay votaciones abiertas."
+      no_enquiries_expired: "No hay votaciones terminadas."
+      no_enquiries_incoming: "No hay votaciones próximamente."
+    show:
+      original_proposal: "Propuesta original"
+      author: "Creado por"
+      dates_title: "Fechas de participación"
+      dates: "Desde el %{open_at} hasta el %{closed_at}"
+      external_url: "Documentación adicional"
+      more_info: "Más información"
+      not_logged_in: "Necesitas %{signin} o %{signup} para participar."
+      signin: iniciar sesión
+      signup: registrarte
+      cant_answer_verify_html: "Por favor %{verify_link} para poder responder."
+      verify_link: "verifica tu cuenta"
+      cant_answer_incoming: "Esta votación todavía no ha comenzado."
+      cant_answer_expired: "Esta votación ha terminado."
+      cant_answer_wrong_geozone: "Esta votación no está disponible en tu zona."
+      vote_answer: "Votar %{answer}"
+      voted: "Has votado %{answer}"
+    banner:
+      featured_title: "#PróximaVotación"
+      info: "Nuevas propuestas ciudadanas han llegado a la fase de votación."
   proposal_notifications:
     new:
       title: "Enviar mensaje"
@@ -397,6 +422,12 @@ es:
     show:
       back: "Volver a mi actividad"
   shared:
+    edit: 'Editar'
+    save: 'Guardar'
+    delete: 'Borrar'
+    comments:
+      title: 'Comentarios'
+      login_to_comment: 'Necesitas %{signin} o %{signup} para comentar.'
     advanced_search:
       author_type: 'Por categoría de autor'
       author_type_blank: 'Elige una categoría'

@@ -1,23 +1,46 @@
-<div class="enquiries-answers">
+<div class="poll-question-answers">
   <% if can? :answer, question %>
     <div class="small-12 small-centered text-center column">
       <% question.valid_answers.each do |answer| %>
         <% if @answers_by_question_id[question.id] == answer %>
-          <span class="button answered-fixme-decabeza">
+          <span class="button" title="<%= t("poll_questions.show.voted", answer: answer)%>">
             <%= answer %>
           </span>
         <% else %>
           <%= link_to answer,
-            answer_poll_question_path(poll_id: question.poll_id, id: question.id, answer: answer),
-              method: :post,
-              remote: true,
-              class: "button secondary hollow" %>
+            answer_question_path(question, answer: answer),
+            method: :post,
+            remote: true,
+            title: t("poll_questions.show.vote_answer", answer: answer),
+            class: "button secondary hollow" %>
         <% end %>
       <% end %>
     </div>
   <% else %>
-    <% question.valid_answers.each do |answer| %>
-      <span class="button deactivated-fixme-decabeza"><%= answer %></span>
-    <% end %>
+    <div class="small-12 column">
+      <% if current_user.nil? %>
+        <div class="callout primary">
+          <%= t("poll_questions.show.not_logged_in",
+              signin: link_to(t("poll_questions.show.signin"), new_user_session_path, class: "probe-message"),
+              signup: link_to(t("poll_questions.show.signup"), new_user_registration_path, class: "probe-message")).html_safe %>
+        </div>
+      <% elsif current_user.unverified? %>
+        <div class="callout warning">
+          <%= t('poll_questions.show.cant_answer_verify_html',
+                 verify_link: link_to(t('poll_questions.show.verify_link'), verification_path)) %>
+        </div>
+      <% else %>
+        <div class="callout warning">
+          <%= t('poll_questions.show.cant_answer_wrong_geozone') %>
+        </div>
+      <% end %>
+      <div class="row">
+        <div class="small-12 small-centered text-center column">
+          <% question.valid_answers.each do |answer| %>
+            <span class="button disabled"><%= answer %></span>
+          <% end %>
+        </div>
+      </div>
+    </div>
   <% end %>
 </div>

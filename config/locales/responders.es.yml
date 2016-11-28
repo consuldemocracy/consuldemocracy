@@ -22,3 +22,4 @@ es:
         spending_proposal: "Propuesta de inversión actualizada correctamente."
       destroy:
         spending_proposal: "Propuesta de inversión eliminada."
+        error: "No se pudo borrar"

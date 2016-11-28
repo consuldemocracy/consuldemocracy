@@ -95,6 +95,7 @@ en:
       activity: Moderator activity
       admin: Admin menu
       banner: Manage banners
+      poll_questions: Poll questions
       debate_topics: Debate topics
       hidden_comments: Hidden comments
       hidden_debates: Hidden debates
@@ -175,6 +176,24 @@ en:
         name: "Name"
         location: "Location"
         officers: "Officers"
+    questions:
+      index:
+        title: "Questions"
+        create: "Create question"
+        no_enquiries: "There are no questions."
+      edit:
+        title: "Edit Question"
+      new:
+        title: "Create Question"
+      show:
+        proposal: Original proposal
+        author: Author
+        title: Title
+        valid_answers: Valid answers
+        summary: Summary
+        description: Description
+        geozones: Geozones
+        preview: View on website
     booths:
       index:
         title: "List of booths"

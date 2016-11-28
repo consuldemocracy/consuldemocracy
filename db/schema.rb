@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161107174423) do
+ActiveRecord::Schema.define(version: 20161122101702) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -314,7 +314,6 @@ ActiveRecord::Schema.define(version: 20161107174423) do
     t.integer  "author_id"
     t.string   "author_visible_name"
     t.string   "title"
-    t.string   "question"
     t.string   "summary"
     t.string   "valid_answers"
     t.text     "description"

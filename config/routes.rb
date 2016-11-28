@@ -61,8 +61,6 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :proposal_ballots, only: [:index]
-
   resources :comments, only: [:create, :show], shallow: true do
     member do
       post :vote
@@ -86,7 +84,7 @@ Rails.application.routes.draw do
   end
 
   resources :polls, only: [:show, :index] do
-    resources :questions, only: [], controller: 'polls/questions' do
+    resources :questions, only: [:show], controller: 'polls/questions', shallow: true do
       post :answer, on: :member
     end
   end
@@ -192,6 +190,7 @@ Rails.application.routes.draw do
       resources :polls do
         resources :booths
       end
+      resources :questions
     end
 
     resources :verifications, controller: :verifications, only: :index do
