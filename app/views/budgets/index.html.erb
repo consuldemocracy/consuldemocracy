@@ -20,7 +20,7 @@
             <%= link_to budget.name, budget %>
           </td>
           <td>
-            <%= budget.phase %>
+            <%= t("budgets.phases.#{budget.phase}") %>
           </td>
         </tr>
       <% end %>

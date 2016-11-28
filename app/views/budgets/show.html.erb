@@ -6,8 +6,11 @@
         <%= t('shared.back') %>
       <% end %>
 
-      <h1><%= @budget.name %></h1>
+      <h1><%= @budget.name %>
+          <small><%= t("budgets.phases.#{@budget.phase}") %></small>
+      </h1>
       <p><%= @budget.description %></p>
+
     </div>
   </div>
 </div>
