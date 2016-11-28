@@ -27,6 +27,14 @@ module CommonActions
     click_button 'Register'
   end
 
+  def fill_in_signup_form(email='manuela@consul.dev', password='judgementday')
+    fill_in 'user_username',              with: "Manuela Carmena #{rand(99999)}"
+    fill_in 'user_email',                 with: email
+    fill_in 'user_password',              with: password
+    fill_in 'user_password_confirmation', with: password
+    check 'user_terms_of_service'
+  end
+
   def login_through_form_as(user)
     visit root_path
     click_link 'Sign in'
