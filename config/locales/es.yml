@@ -257,7 +257,7 @@ es:
       spending_proposals: Presupuestos participativos
       proposal_ballot: Votaciones
       spending_proposals: Presupuestos ciudadanos
-      sign_up: Regístrate para participar
+      sign_up: Regístrate y participa
       sign_in: Si ya tienes una cuenta %{login}.
       sign_in_link: entra ahora
   locale: Español
