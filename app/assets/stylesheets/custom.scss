@@ -2283,7 +2283,7 @@ ul.ballot-list {
 .welcome {
 
   .header {
-    background: $brand image-url('home_page_bg.jpg');
+    background: $brand image-url('home_page_bg.gif');
     background-position: 50%;
     background-size: cover;
     color: white;
@@ -2294,7 +2294,7 @@ ul.ballot-list {
       h1 {
         font-size: rem-calc(40);
         line-height: $line-height*2;
-        padding-top: $line-height*10;
+        padding-top: $line-height*2;
       }
     }
 
