@@ -2557,6 +2557,10 @@ ul.ballot-list {
       padding: $line-height*2 0 $line-height;
     }
 
+    a {
+      color: white;
+    }
+
     .button {
       font-size: rem-calc(24);
     }
@@ -2574,35 +2578,5 @@ ul.ballot-list {
     img {
       margin-bottom: $line-height/2;
     }
-  }
-
-  .facebook, .twitter {
-    position: relative;
-  }
-
-  .icon-facebook, .icon-twitter {
-    position: absolute;
-    top: 12px;
-  }
-
-  .facebook {
-    background: #3B5998;
-
-    a {
-      color: white !important;
-      text-decoration: none !important;
-    }
-  }
-
-  .icon-facebook {
-    left: 24px;
-  }
-
-  .twitter {
-    background: #55ACEE;
-  }
-
-  .icon-twitter {
-    left: 32px;
   }
 }

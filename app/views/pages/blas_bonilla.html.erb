@@ -11,9 +11,10 @@
   <div class="expanded no-margin-top padding header">
     <div class="row">
       <div class="small-12 medium-9 column small-centered text-center">
-        <h1>Si quieres empezar a hacer tus propuestas y votar en decide.madrid.es, pulsa el botón</h1>
-
-        <%= link_to "Regístrate y participa", new_user_registration_path, class: "button" %>
+        <h1>
+          Empieza a hacer tus propuestas y votar en <%= link_to "decide.madrid.es", root_path %>
+        </h1>
+        <%= link_to "Quiero registrarme", new_user_registration_path, class: "button" %>
       </div>
     </div>
   </div>
@@ -98,7 +99,7 @@
 
         <!-- Compartir en Twitter -->
         <div class="small-6 large-2 column end margin-top">
-          <a href="https://twitter.com/share" class="twitter-share-button button expanded twitter" data-url="https://decide.madrid.es/haz-propuestas" data-text="#LoDiceBlasBonilla: Haz tus propuestas para que Madrid sea una ciudad mejor. Entra, regístrate y participa en" data-size="large">Tweet</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+          <a href="https://twitter.com/share" class="twitter-share-button" data-url="https://decide.madrid.es/haz-propuestas" data-text="#LoDiceBlasBonilla: Haz tus propuestas para que Madrid sea una ciudad mejor. Entra, regístrate y participa en" data-size="large">Tweet</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
         </div>
       </div>
     </div>
