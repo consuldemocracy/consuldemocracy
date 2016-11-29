@@ -2291,10 +2291,12 @@ ul.ballot-list {
     padding-top: $line-height;
 
     @include breakpoint(medium) {
+      height: rem-calc(562);
 
       h1 {
         font-size: rem-calc(40);
         line-height: $line-height*2;
+        padding-top: rem-calc(225);
       }
     }
 
