@@ -264,7 +264,7 @@ feature 'Tracking' do
         login_as(user)
 
         visit blas_bonilla_path
-        click_link "Regístrate y participa"
+        click_link "Quiero registrarme"
 
         expect(current_path).to eq(blas_bonilla_path)
         expect(page).to have_css("span[data-track-event-category='Registro']")
@@ -278,7 +278,7 @@ feature 'Tracking' do
 
       scenario 'Clicks on register' do
         visit blas_bonilla_path
-        click_link "Regístrate y participa"
+        click_link "Quiero registrarme"
 
         expect(current_path).to eq(new_user_registration_path)
         expect(page).to have_css("span[data-track-event-category='Registro']")
@@ -288,7 +288,7 @@ feature 'Tracking' do
 
       scenario 'Registers successfully' do
         visit blas_bonilla_path
-        click_link "Regístrate y participa"
+        click_link "Quiero registrarme"
 
         fill_in_signup_form
         click_button "Register"
