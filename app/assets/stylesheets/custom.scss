@@ -2287,16 +2287,15 @@ ul.ballot-list {
     background-position: 50%;
     background-size: cover;
     color: white;
-    min-height: rem-calc(675);
+    height: rem-calc(675);
     padding-top: $line-height*4;
 
     @include breakpoint(medium) {
-      min-height: rem-calc(450);
 
       h1 {
         font-size: rem-calc(40);
         line-height: $line-height*2;
-        padding-top: $line-height*4;
+        padding-top: rem-calc(225);
       }
     }
 
