@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161122101702) do
+ActiveRecord::Schema.define(version: 20161129011737) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -322,11 +322,13 @@ ActiveRecord::Schema.define(version: 20161122101702) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "all_geozones",        default: false
+    t.tsvector "tsv"
   end
 
   add_index "poll_questions", ["author_id"], name: "index_poll_questions_on_author_id", using: :btree
   add_index "poll_questions", ["poll_id"], name: "index_poll_questions_on_poll_id", using: :btree
   add_index "poll_questions", ["proposal_id"], name: "index_poll_questions_on_proposal_id", using: :btree
+  add_index "poll_questions", ["tsv"], name: "index_poll_questions_on_tsv", using: :gin
 
   create_table "poll_voters", force: :cascade do |t|
     t.integer "booth_id"
