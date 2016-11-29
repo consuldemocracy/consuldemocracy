@@ -306,19 +306,19 @@ feature 'Tracking' do
 
     context "Not logged in user" do
 
-      scenario 'Clicks on register' do
+      scenario 'Clicks on register', :js do
         visit root_path
-        click_link "Sign up and participate"
 
-        expect(current_path).to eq(new_user_registration_path)
+        click_link "Register"
+
         expect(page).to have_css("span[data-track-event-category='Registro']")
         expect(page).to have_css("span[data-track-event-action='Ver formulario registro']")
         expect(page).to have_css("span[data-track-event-name='Home Joaquin Reyes']")
       end
 
-      scenario 'Registers successfully' do
+      scenario 'Registers successfully', :js do
         visit root_path
-        click_link "Sign up and participate"
+        click_link "Register"
 
         fill_in_signup_form
         click_button "Register"
