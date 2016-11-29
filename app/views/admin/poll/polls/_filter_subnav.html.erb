@@ -1,0 +1,33 @@
+<div class="row">
+  <div class="small-12 column">
+    <ul class="tabs" data-tabs id="example-tabs">
+      <li class="tabs-title is-active">
+        <%= link_to "#tab-questions" do %>
+          <h2>
+            <%# t("proposals.show.comments_tab") %>
+            Preguntas
+            <span class="js-comments-count">(<%= @poll.questions.count %>)</span>
+          </h2>
+        <% end %>
+      </li>
+      <li class="tabs-title">
+        <%= link_to "#tab-booths" do %>
+          <h2>
+            <%# t("proposals.show.notifications_tab") %>
+            Urnas
+            (<%= @poll.booths.count %>)
+          </h2>
+        <% end %>
+      </li>
+      <li class="tabs-title">
+        <%= link_to "#tab-officers" do %>
+          <h2>
+            <%# t("proposals.show.notifications_tab") %>
+            Presidentes
+            (<%= @poll.officers.count %>)
+          </h2>
+        <% end %>
+      </li>
+    </ul>
+  </div>
+</div>

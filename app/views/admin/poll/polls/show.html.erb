@@ -9,28 +9,18 @@
             edit_admin_poll_path(@poll),
             class: "button hollow float-right" %>
 
-<%= link_to t("admin.polls.show.add_booth"),
-            new_admin_poll_booth_path(@poll),
-            class: "button success" %>
+<div class="tabs-content" data-tabs-content="example-tabs">
+  <%= render "filter_subnav" %>
 
-<% if @poll.booths.empty? %>
-  <div class="callout primary">
-    <%= t("admin.polls.show.no_booths") %>
+  <div class="tabs-panel is-active" id="tab-questions">
+    <%= render "questions" %>
   </div>
-<% else %>
-  <h2><%= t("admin.polls.show.booths_title") %></h2>
 
-  <table>
-    <thead>
-      <th><%= t("admin.polls.show.name") %></th>
-      <th><%= t("admin.polls.show.location") %></th>
-      <th><%= t("admin.polls.show.officers") %></th>
-      <th>&nbsp;</th>
-    </thead>
-    <tbody>
-      <% @poll.booths.each do |booth| %>
-        <%= render partial: "admin/poll/booths/booth", locals: { booth: booth } %>
-      <% end %>
-    </tbody>
-  </table>
-<% end %>
+  <div class="tabs-panel" id="tab-booths">
+    <%= render "booths" %>
+  </div>
+
+  <div class="tabs-panel" id="tab-officers">
+    <%= render 'officers' %>
+  </div>
+</div>
