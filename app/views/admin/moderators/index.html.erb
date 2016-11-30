@@ -1,4 +1,6 @@
-<h2><%= t("admin.moderators.index.title") %></h2>
+<%= link_to t('admin.menu.activity'), admin_activity_path, class: "button hollow float-right" %>
+
+<h2 class="inline-block"><%= t("admin.moderators.index.title") %></h2>
 
 <div class="row">
   <%= form_tag search_admin_moderators_path, method: :get, remote: true  do %>

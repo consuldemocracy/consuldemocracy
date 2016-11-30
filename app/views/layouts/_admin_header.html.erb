@@ -2,6 +2,8 @@
   <section class="top-links">
     <div class="expanded row">
       <%= render 'shared/locale_switcher' %>
+      <%= link_to t("admin.dashboard.index.back") + " " + setting['org_name'],
+                  root_path, class: "float-right back-web" %>
     </div>
   </section>
 

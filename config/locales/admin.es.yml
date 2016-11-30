@@ -95,13 +95,12 @@ es:
       activity: Actividad de moderadores
       admin: Menú de administración
       banner: Gestionar banners
-      debate_topics: Temas de debate
+      proposals_topics: Temas de propuestas
       poll_questions: Preguntas ciudadanas
       hidden_comments: Comentarios ocultos
       hidden_debates: Debates ocultos
       hidden_proposals: Propuestas ocultas
       hidden_users: Usuarios bloqueados
-      incomplete_verifications: Verificaciones incompletas
       managers: Gestores
       moderators: Moderadores
       valuators: Evaluadores
@@ -112,6 +111,12 @@ es:
       settings: Configuración global
       spending_proposals: Propuestas de inversión
       stats: Estadísticas
+      title_categories: Categorías
+      title_moderated_content: Contenido moderado
+      title_budgets: Presupuestos
+      title_polls: Votaciones
+      title_profiles: Perfiles
+      title_banners: Banners
     moderators:
       index:
         title: Moderadores
@@ -373,6 +378,7 @@ es:
         visits_title: Visitas
         direct_messages: Mensajes directos
         proposal_notifications: Notificaciones de propuestas
+        incomplete_verifications: Verificaciones incompletas
       direct_messages:
         title: Mensajes directos
         total: Total
@@ -385,9 +391,9 @@ es:
       create: Crear Tema
       destroy: Eliminar Tema
       index:
-        add_tag: Añade un nuevo tema de debate
-        title: Temas de debate
-      mark_as_featured: Proponer tema al crear debate
+        add_tag: Añade un nuevo tema de propuesta
+        title: Temas de propuesta
+      mark_as_featured: Proponer tema al crear propuesta
       name:
         placeholder: Escribe el nombre del tema
       update: Actualizar Tema

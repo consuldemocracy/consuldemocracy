@@ -20,6 +20,11 @@ body.admin {
     .top-links {
       background: darken($admin-color, 15%);
     }
+
+    .back-web {
+      padding-top: $line-height/4;
+      text-decoration: underline;
+    }
   }
 
   .top-bar {
@@ -150,7 +155,7 @@ body.admin {
   border-right: 1px solid $border;
 
   @include breakpoint(medium) {
-    padding-bottom: $line-height*3;
+    min-height: rem-calc(1100);
   }
 
   ul {
@@ -160,10 +165,12 @@ body.admin {
     padding: 0;
 
     [class^="icon-"] {
+      color: $admin-color;
       display: inline-block;
       font-size: rem-calc(24);
-      padding-right: rem-calc(12);
-      padding-top: rem-calc(4);
+      line-height: $line-height;
+      padding: $line-height/2 $line-height/4;
+      padding-left: 0;
       vertical-align: middle;
     }
 
@@ -172,17 +179,24 @@ body.admin {
       margin: 0;
       outline: 0;
 
+      ul {
+        margin-left: $line-height/1.5;
+        border-left: 1px solid $border;
+        padding-left: $line-height/2;
+      }
+
+      &.section-title {
+        border-bottom: 1px solid $border;
+      }
+
       &.active a {
         background: #f3f6f7;
+        border-radius: rem-calc(6);
+        -moz-border-radius: rem-calc(6);
+        -webkit-border-radius: rem-calc(6);
         color: $admin-color;
         font-weight: bold;
       }
-    }
-
-    li.section {
-      border-bottom: 1px dotted #d5d5d5;
-      border-top: 1px dotted #d5d5d5;
-      height: $line-height/2;
     }
 
     li a {
@@ -194,8 +208,36 @@ body.admin {
 
       &:hover {
         background: #f3f6f7;
+        border-radius: rem-calc(6);
+        -moz-border-radius: rem-calc(6);
+        -webkit-border-radius: rem-calc(6);
+        color: $admin-color;
         text-decoration: none;
       }
+    }
+  }
+
+  .is-accordion-submenu-parent {
+
+    & > a::after {
+      border-color: $admin-color transparent transparent;
+    }
+  }
+
+  .submenu {
+    border-bottom: 0;
+    margin-left: $line-height;
+
+    li:first-child {
+      padding-top: $line-height/2;
+    }
+
+    li:last-child {
+      padding-bottom: $line-height/2;
+    }
+
+    a {
+      font-weight: normal;
     }
   }
 }
