@@ -1,5 +1,4 @@
 class Poll < ActiveRecord::Base
-  has_many :booths
   has_many :voters, through: :booths, class_name: "Poll::Voter"
   has_many :officers, through: :booths, class_name: "Poll::Officer"
   has_many :questions
