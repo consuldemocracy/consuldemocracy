@@ -1,8 +1,9 @@
 API_TYPE_DEFINITIONS = {
-  User     => %I[ id username proposals ],
+  User     => %I[ id username proposals organization ],
   Debate   => %I[ id title description author_id author created_at comments ],
   Proposal => %I[ id title description author_id author created_at comments ],
-  Comment  => %I[ id body user_id user commentable_id ]
+  Comment  => %I[ id body user_id user commentable_id ],
+  Organization => %I[ id name ]
 }
 
 type_creator = GraphQL::TypeCreator.new
