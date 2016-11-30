@@ -1,6 +1,5 @@
 module GraphQL
   class TypeCreator
-
     # Return a GraphQL type for a 'database_type'
     TYPES_CONVERSION = Hash.new(GraphQL::STRING_TYPE).merge(
       integer: GraphQL::INT_TYPE,
@@ -9,9 +8,16 @@ module GraphQL
       double: GraphQL::FLOAT_TYPE
     )
 
-    def self.create(model, field_names, api_types)
+    attr_accessor :created_types
 
-      new_graphql_type = GraphQL::ObjectType.define do
+    def initialize
+      @created_types = {}
+    end
+
+    def create(model, field_names)
+      type_creator = self
+
+      created_type = GraphQL::ObjectType.define do
 
         name(model.name)
         description("#{model.model_name.human}")
@@ -24,21 +30,22 @@ module GraphQL
             association = model.reflect_on_all_associations.find { |a| a.name == field_name }
             case association.macro
             when :has_one
-              field(association.name, -> { api_types[association.klass] })
+              field(association.name, -> { type_creator.created_types[association.klass] })
             when :belongs_to
-              field(association.name, -> { api_types[association.klass] })
+              field(association.name, -> { type_creator.created_types[association.klass] })
             when :has_many
-              connection(association.name, -> { api_types[association.klass].connection_type {
-                description "#{association.klass.model_name.human.pluralize}"
-                resolve -> (object, arguments, context) {
-                  association.klass.all
-                }
-              }})
+              connection association.name, -> do
+                type_creator.created_types[association.klass].connection_type do
+                  description "#{association.klass.model_name.human.pluralize}"
+                  resolve -> (object, arguments, context) { association.klass.all }
+                end
+              end
             end
           end
         end
       end
-      return new_graphql_type # GraphQL::ObjectType
+      created_types[model] = created_type
+      return created_type # GraphQL::ObjectType
     end
   end
 end

@@ -5,10 +5,10 @@ API_TYPE_DEFINITIONS = {
   Comment  => %I[ id body user_id user commentable_id ]
 }
 
-api_types = {}
+type_creator = GraphQL::TypeCreator.new
 
 API_TYPE_DEFINITIONS.each do |model, fields|
-  api_types[model] = GraphQL::TypeCreator.create(model, fields, api_types)
+  type_creator.create(model, fields)
 end
 
 ConsulSchema = GraphQL::Schema.define do
@@ -28,11 +28,11 @@ QueryRoot = GraphQL::ObjectType.define do
   name "Query"
   description "The query root for this schema"
 
-  API_TYPE_DEFINITIONS.each_key do |model|
+  type_creator.created_types.each do |model, created_type|
 
     # create an entry field to retrive a single object
     field model.name.underscore.to_sym do
-      type api_types[model]
+      type created_type
       description "Find one #{model.model_name.human} by ID"
       argument :id, !types.ID
       resolve -> (object, arguments, context) {
@@ -41,7 +41,7 @@ QueryRoot = GraphQL::ObjectType.define do
     end
 
     # create an entry filed to retrive a paginated collection
-    connection model.name.underscore.pluralize.to_sym, api_types[model].connection_type do
+    connection model.name.underscore.pluralize.to_sym, created_type.connection_type do
       description "Find all #{model.model_name.human.pluralize}"
       resolve -> (object, arguments, context) {
         model.all
