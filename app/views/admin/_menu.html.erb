@@ -36,9 +36,27 @@
     <% end %>
 
     <% if feature?(:polls) %>
+      <li <%= 'class=active' if controller_name == 'polls' %>>
+        <%= link_to admin_polls_path do %>
+          <span class="icon-user"></span><%= t('admin.menu.polls') %>
+        <% end %>
+      </li>
+
       <li <%= "class=active" if controller_name == "poll_questions" %>>
         <%= link_to admin_questions_path do %>
           <span class="icon-checkmark-circle"></span><%= t("admin.menu.poll_questions") %>
+        <% end %>
+      </li>
+
+      <li <%= 'class=active' if controller_name == 'officers' %>>
+        <%= link_to admin_officers_path do %>
+          <span class="icon-user"></span><%= t('admin.menu.poll_officers') %>
+        <% end %>
+      </li>
+
+      <li <%= 'class=active' if controller_name == 'booths' %>>
+        <%= link_to admin_booths_path do %>
+          <span class="icon-user"></span><%= t('admin.menu.booths') %>
         <% end %>
       </li>
     <% end %>
@@ -88,18 +106,6 @@
     <li <%= 'class=active' if controller_name == 'managers' %>>
       <%= link_to admin_managers_path do %>
         <span class="icon-user"></span><%= t('admin.menu.managers') %>
-      <% end %>
-    </li>
-
-    <li <%= 'class=active' if controller_name == 'officers' %>>
-      <%= link_to admin_officers_path do %>
-        <span class="icon-user"></span><%= t('admin.menu.poll_officers') %>
-      <% end %>
-    </li>
-
-    <li <%= 'class=active' if controller_name == 'polls' %>>
-      <%= link_to admin_polls_path do %>
-        <span class="icon-user"></span><%= t('admin.menu.polls') %>
       <% end %>
     </li>
 
