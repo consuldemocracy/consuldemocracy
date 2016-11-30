@@ -5,6 +5,13 @@
 <meta property="og:title"         content="Haz propuestas en Decide Madrid" />
 <meta property="og:image"         content="<%= image_url '/social_media_blas.jpg' %>" />
 <meta property="og:description"   content="Haz caso a Blas Bonilla y presenta tus propuestas para que Madrid sea una ciudad mejor. Entra, regístrate y participa en https://decide.madrid.es/haz-propuestas" />
+<!-- Twitter -->
+<meta name="twitter:card"          content="summary" />
+<meta name="twitter:site"          content="@decideMadrid" />
+<meta name="twitter:title"         content="Haz propuestas en Decide Madrid" />
+<meta name="twitter:image"         content="<%= image_url '/social_media_blas.jpg' %>" />
+<meta name="twitter:description"   content="Haz caso a Blas Bonilla y presenta tus propuestas para que Madrid sea una ciudad mejor. Entra, regístrate y participa en https://decide.madrid.es/haz-propuestas" />
+
 <% end %>
 
 <div class="blas-bonilla">
@@ -27,7 +34,7 @@
 
       <p>Entre otras iniciativas, cualquier persona puede crear una propuesta relacionada con nuestra ciudad y conseguir el apoyo de la ciudadanía para que se lleven a cabo. Si la apoyan y luego hay más gente a favor de la propuesta que en contra, ¡se hace! <%= link_to "Regístrate", "https://decide.madrid.es/users/sign_up" %>, y crea tus <%=link_to "propuestas ciudadanas", "https://decide.madrid.es/proposals_info" %>.</p>
 
-      <p>No te pierdas las propuestas que ha hecho Blas Bonilla. ¡Mira el vídeo y compártelo! <%= link_to "#LoDiceBlasBonilla", "https://twitter.com/search?f=tweets&q=%23LoDiceBlasBonilla" %></p>
+      <p>No te pierdas las propuestas que ha hecho Blas Bonilla. ¡Mira el vídeo y compártelo! <%= link_to "#LoDiceBlasBonilla", "https://twitter.com/search?f=tweets&q=%23LoDiceBlasBonilla", target: "_blank" %></p>
 
       <div class="flex-video widescreen">
         <iframe width="560" height="315" src="https://www.youtube.com/embed/1m8yhyVgREc?rel=0" frameborder="0" allowfullscreen></iframe>
@@ -78,7 +85,7 @@
       </div>
 
       <div class="margin">
-        <p><%= link_to "#LoDiceBlasBonilla", "https://twitter.com/search?f=tweets&q=%23LoDiceBlasBonilla" %> es una campaña del Área de Gobierno de Participación Ciudadana, Transparencia y Gobierno Abierto del Ayuntamiento de Madrid en colaboración con el actor y humorista Joaquín Reyes, invitando a todas las personas que residen en Madrid a inscribirse en el sistema de participación y toma de decisiones que pone a su disposición el ayuntamiento y colaborar activamente en construir entre todas las personas una ciudad mejor.</p>
+        <p><%= link_to "#LoDiceBlasBonilla", "https://twitter.com/search?f=tweets&q=%23LoDiceBlasBonilla", target: "_blank" %> es una campaña del Área de Gobierno de Participación Ciudadana, Transparencia y Gobierno Abierto del Ayuntamiento de Madrid en colaboración con el actor y humorista Joaquín Reyes, invitando a todas las personas que residen en Madrid a inscribirse en el sistema de participación y toma de decisiones que pone a su disposición el ayuntamiento y colaborar activamente en construir entre todas las personas una ciudad mejor.</p>
       </div>
 
       <div class="text-center">
