@@ -1,6 +1,22 @@
 require 'rails_helper'
-require 'http'
 
+# Hacerlo como los test de controlador de rails
+
+describe GraphqlController, type: :request do
+  let(:proposal) { create(:proposal) }
+
+  it "answers simple json queries" do
+    headers = { "CONTENT_TYPE" => "application/json" }
+    #post "/widgets", '{ "widget": { "name":"My Widget" } }', headers
+    post '/graphql', { query: "{ proposal(id: #{proposal.id}) { title } }" }.to_json, headers
+    expect(response).to have_http_status(200)
+    expect(JSON.parse(response.body)['data']['proposal']['title']).to eq(proposal.title)
+  end
+
+  
+end
+
+=begin
 describe GraphqlController do
   let(:uri) { URI::HTTP.build(host: 'localhost', path: '/graphql', port: 3000) }
   let(:query_string) { "" }
@@ -71,3 +87,4 @@ describe GraphqlController do
 
   end
 end
+=end
