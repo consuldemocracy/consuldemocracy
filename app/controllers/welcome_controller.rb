@@ -1,4 +1,5 @@
 class WelcomeController < ApplicationController
+  before_action :track_campaign, only: :index
   skip_authorization_check
 
   layout "devise", only: [:welcome, :verification]
@@ -17,4 +18,9 @@ class WelcomeController < ApplicationController
     redirect_to verification_path if signed_in?
   end
 
+  private
+
+    def track_campaign
+      session[:campaign_name] = I18n.t("tracking.events.name.home_joaquin_reyes")
+    end
 end

@@ -249,15 +249,15 @@ en:
       no_notifications: You don't have new notifications
       open: open
       open_city_slogan_html: In Madrid their inhabitants, <span>discuss the topics</span> they are concerned about, <span>propose ideas</span> to improve their lives and <span>decide among themselves</span> which ones will be carried out.
-      open_city_slogan_short: There are cities that are governed directly by their inhabitants, Madrid is already one of these cities.
-      open_city_title: The city you love will become the city you want.
+      open_city_slogan_short_html: "Blas Bonilla has made his proposals in <u>decide.madrid.es </u><br>Sign up and make yours proposals!"
+      open_city_title:  '"In Madrid it is the people who decide how is the city they want to live"'
       open_gov: Open government
       proposals: Proposals
       processes: Processes
       spending_proposals: Participatory budgeting
       proposal_ballot: Voting
       spending_proposals: Spending proposals
-      sign_up: Sign up to participate
+      sign_up: Watch the video of Blas Bonilla
       sign_in: If you have an account %{login}.
       sign_in_link: enter now
   locale: English

@@ -2283,21 +2283,29 @@ ul.ballot-list {
 .welcome {
 
   .header {
-    background: $brand image-url('home_page_bg.jpg');
+    background: $brand image-url('home_page_bg.gif');
     background-position: 50%;
+    background-repeat: no-repeat;
     background-size: cover;
     color: white;
+    height: rem-calc(450);
+    padding-top: $line-height;
 
     @include breakpoint(medium) {
-      min-height: $line-height*13;
+      height: rem-calc(562);
+      padding-top: rem-calc(225);
 
       h1 {
-        font-size: rem-calc(60);
-        line-height: rem-calc(72);
+        font-size: rem-calc(40);
+        line-height: $line-height*2;
       }
     }
 
-    p {
+    a.decoration-none {
+      text-decoration: none !important;
+    }
+
+    p.lead {
       font-size: rem-calc(24);
       line-height: $line-height*1.5;
     }

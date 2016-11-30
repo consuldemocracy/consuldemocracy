@@ -106,6 +106,7 @@ ignore_missing:
   - 'tracking.events.action.*'
   - 'tracking.events.category.*'
   - 'tracking.user_data.*'
+  - 'tracking.events.name.*'
 
 ## Consider these keys used:
 ignore_unused:
