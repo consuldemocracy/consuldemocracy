@@ -59,26 +59,24 @@
       </div>
 
       <div id="<%= dom_id(proposal) %>_votes" class="small-12 medium-3 column supports-container">
-        <div class="supports text-center">
-          <% if proposal.successfull? %>
-            <p>
-              <%= t("proposal_ballots.successfull",
-                  voting: link_to(t("proposal_ballots.voting"),
-                  proposal_ballots_path)).html_safe %>
-            </p>
-          <% elsif proposal.archived? %>
-            <div class="message">
-              <strong>
-                <%= t("proposals.proposal.supports", count: proposal.total_votes) %>
-              </strong>
-              <p><%= t("proposals.proposal.archived") %></p>
-            </div>
-          <% else %>
-            <%= render 'votes',
-                       { proposal: proposal,
-                         vote_url: vote_proposal_path(proposal, value: 'yes') } %>
-          <% end %>
-        </div>
+        <% if proposal.successfull? %>
+          <p>
+            <%= t("proposal_ballots.successfull",
+                voting: link_to(t("proposal_ballots.voting"),
+                proposal_ballots_path)).html_safe %>
+          </p>
+        <% elsif proposal.archived? %>
+          <div class="message">
+            <strong>
+              <%= t("proposals.proposal.supports", count: proposal.total_votes) %>
+            </strong>
+            <p><%= t("proposals.proposal.archived") %></p>
+          </div>
+        <% else %>
+          <%= render 'votes',
+                     { proposal: proposal,
+                       vote_url: vote_proposal_path(proposal, value: 'yes') } %>
+        <% end %>
       </div>
 
     </div>

@@ -99,7 +99,7 @@ feature 'Admin banners magement' do
     visit proposals_path
 
     expect(page).to have_content 'Such banner'
-    expect(page).to have_link 'Such banner many text wow link', href: 'https://decide.madrid.es'
+    expect(page).to have_link 'Such banner many text wow link', href: 'https://www.url.com'
   end
 
   scenario 'Edit banner with live refresh', :js do
