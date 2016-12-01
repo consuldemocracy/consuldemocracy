@@ -40,7 +40,7 @@ class Verification::Management::Document
   end
 
   def verify
-    user.update(verified_at: Time.now) if user?
+    user.update(verified_at: Time.current) if user?
   end
 
 end

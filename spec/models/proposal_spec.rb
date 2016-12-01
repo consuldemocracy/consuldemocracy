@@ -149,12 +149,12 @@ describe Proposal do
     let(:proposal) { create(:proposal) }
 
     it "should be true for level two verified users" do
-      user = create(:user, residence_verified_at: Time.now, confirmed_phone: "666333111")
+      user = create(:user, residence_verified_at: Time.current, confirmed_phone: "666333111")
       expect(proposal.votable_by?(user)).to be true
     end
 
     it "should be true for level three verified users" do
-      user = create(:user, verified_at: Time.now)
+      user = create(:user, verified_at: Time.current)
       expect(proposal.votable_by?(user)).to be true
     end
 
@@ -169,14 +169,14 @@ describe Proposal do
 
     describe "from level two verified users" do
       it "should register vote" do
-        user = create(:user, residence_verified_at: Time.now, confirmed_phone: "666333111")
+        user = create(:user, residence_verified_at: Time.current, confirmed_phone: "666333111")
         expect {proposal.register_vote(user, 'yes')}.to change{proposal.reload.votes_for.size}.by(1)
       end
     end
 
     describe "from level three verified users" do
       it "should register vote" do
-        user = create(:user, verified_at: Time.now)
+        user = create(:user, verified_at: Time.current)
         expect {proposal.register_vote(user, 'yes')}.to change{proposal.reload.votes_for.size}.by(1)
       end
     end
@@ -189,7 +189,7 @@ describe Proposal do
     end
 
     it "should not register vote for archived proposals" do
-      user = create(:user, verified_at: Time.now)
+      user = create(:user, verified_at: Time.current)
       archived_proposal = create(:proposal, :archived)
 
       expect {archived_proposal.register_vote(user, 'yes')}.to change{proposal.reload.votes_for.size}.by(0)
@@ -213,7 +213,7 @@ describe Proposal do
   end
 
   describe '#hot_score' do
-    let(:now) { Time.now }
+    let(:now) { Time.current }
 
     it "increases for newer proposals" do
       old = create(:proposal, :with_hot_score, created_at: now - 1.day)
@@ -250,7 +250,7 @@ describe Proposal do
 
       it "increases with votes" do
         previous = proposal.hot_score
-        5.times { proposal.register_vote(create(:user, verified_at: Time.now), true) }
+        5.times { proposal.register_vote(create(:user, verified_at: Time.current), true) }
         expect(previous).to be < proposal.reload.hot_score
       end
 
@@ -300,7 +300,7 @@ describe Proposal do
 
       it "increases with like" do
         previous = proposal.confidence_score
-        5.times { proposal.register_vote(create(:user, verified_at: Time.now), true) }
+        5.times { proposal.register_vote(create(:user, verified_at: Time.current), true) }
         expect(previous).to be < proposal.confidence_score
       end
     end
@@ -595,7 +595,7 @@ describe Proposal do
 
       it "should be able to reorder by created_at after searching" do
         recent  = create(:proposal,  title: 'stop corruption', cached_votes_up: 1, created_at: 1.week.ago)
-        newest  = create(:proposal,  title: 'stop corruption', cached_votes_up: 2, created_at: Time.now)
+        newest  = create(:proposal,  title: 'stop corruption', cached_votes_up: 2, created_at: Time.current)
         oldest  = create(:proposal,  title: 'stop corruption', cached_votes_up: 3, created_at: 1.month.ago)
 
         results = Proposal.search('stop corruption')
@@ -797,7 +797,7 @@ describe Proposal do
 
   describe "retired" do
     let!(:proposal1) { create(:proposal) }
-    let!(:proposal2) { create(:proposal, retired_at: Time.now) }
+    let!(:proposal2) { create(:proposal, retired_at: Time.current) }
 
     it "retired? is true" do
       expect(proposal1.retired?).to eq false

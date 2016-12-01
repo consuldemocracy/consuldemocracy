@@ -46,7 +46,7 @@ module CommonActions
   end
 
   def login_as_authenticated_manager
-    login, user_key, date = "JJB042", "31415926", Time.now.strftime("%Y%m%d%H%M%S")
+    login, user_key, date = "JJB042", "31415926", Time.current.strftime("%Y%m%d%H%M%S")
     allow_any_instance_of(ManagerAuthenticator).to receive(:auth).and_return({login: login, user_key: user_key, date: date}.with_indifferent_access)
     visit management_sign_in_path(login: login, clave_usuario: user_key, fecha_conexion: date)
   end

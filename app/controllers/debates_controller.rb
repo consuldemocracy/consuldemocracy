@@ -45,7 +45,7 @@ class DebatesController < ApplicationController
   end
 
   def mark_featured
-    @debate.update_attribute(:featured_at, Time.now)
+    @debate.update_attribute(:featured_at, Time.current)
     redirect_to request.query_parameters.merge(action: :index)
   end
 

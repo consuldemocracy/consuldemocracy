@@ -433,7 +433,7 @@ feature 'Proposals' do
     scenario 'Index do not list retired proposals by default' do
       create_featured_proposals
       not_retired = create(:proposal)
-      retired = create(:proposal, retired_at: Time.now)
+      retired = create(:proposal, retired_at: Time.current)
 
       visit proposals_path
 
@@ -447,7 +447,7 @@ feature 'Proposals' do
     scenario 'Index has a link to retired proposals list' do
       create_featured_proposals
       not_retired = create(:proposal)
-      retired = create(:proposal, retired_at: Time.now)
+      retired = create(:proposal, retired_at: Time.current)
 
       visit proposals_path
 
@@ -467,8 +467,8 @@ feature 'Proposals' do
     end
 
     scenario 'Retired proposals index has links to filter by retired_reason' do
-      unfeasible = create(:proposal, retired_at: Time.now, retired_reason: 'unfeasible')
-      duplicated = create(:proposal, retired_at: Time.now, retired_reason: 'duplicated')
+      unfeasible = create(:proposal, retired_at: Time.current, retired_reason: 'unfeasible')
+      duplicated = create(:proposal, retired_at: Time.current, retired_reason: 'duplicated')
 
       visit proposals_path(retired: 'all')
 
@@ -612,9 +612,9 @@ feature 'Proposals' do
     scenario 'Proposals are ordered by newest', :js do
       create_featured_proposals
 
-      create(:proposal, title: 'Best proposal',   created_at: Time.now)
-      create(:proposal, title: 'Medium proposal', created_at: Time.now - 1.hour)
-      create(:proposal, title: 'Worst proposal',  created_at: Time.now - 1.day)
+      create(:proposal, title: 'Best proposal',   created_at: Time.current)
+      create(:proposal, title: 'Medium proposal', created_at: Time.current - 1.hour)
+      create(:proposal, title: 'Worst proposal',  created_at: Time.current - 1.day)
 
       visit proposals_path
       click_link 'newest'
@@ -1124,7 +1124,7 @@ feature 'Proposals' do
     scenario "Reorder results maintaing search", :js do
       proposal1 = create(:proposal, title: "Show you got",      cached_votes_up: 10,  created_at: 1.week.ago)
       proposal2 = create(:proposal, title: "Show what you got", cached_votes_up: 1,   created_at: 1.month.ago)
-      proposal3 = create(:proposal, title: "Show you got",      cached_votes_up: 100, created_at: Time.now)
+      proposal3 = create(:proposal, title: "Show you got",      cached_votes_up: 100, created_at: Time.current)
       proposal4 = create(:proposal, title: "Do not display",    cached_votes_up: 1,   created_at: 1.week.ago)
 
       visit proposals_path

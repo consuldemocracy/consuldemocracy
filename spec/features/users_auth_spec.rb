@@ -286,7 +286,7 @@ feature 'Users' do
   end
 
   scenario 'Sign in, admin with password expired' do
-    user = create(:user, password_changed_at: Time.now - 1.year)
+    user = create(:user, password_changed_at: Time.current - 1.year)
     admin = create(:administrator, user: user)
 
     login_as(admin.user)
@@ -304,7 +304,7 @@ feature 'Users' do
   end
 
   scenario 'Sign in, admin without password expired' do
-    user = create(:user, password_changed_at: Time.now - 360.days)
+    user = create(:user, password_changed_at: Time.current - 360.days)
     admin = create(:administrator, user: user)
 
     login_as(admin.user)
@@ -314,7 +314,7 @@ feature 'Users' do
   end
 
   scenario 'Sign in, user with password expired' do
-    user = create(:user, password_changed_at: Time.now - 1.year)
+    user = create(:user, password_changed_at: Time.current - 1.year)
 
     login_as(user)
     visit root_path
@@ -323,7 +323,8 @@ feature 'Users' do
   end
 
   scenario 'Admin with password expired trying to use same password' do
-    user = create(:user, password_changed_at: Time.now - 1.year, password: '123456789')
+    user = create(:user, password_changed_at: Time.current - 1.year, password: '123456789')
+
     admin = create(:administrator, user: user)
 
     login_as(admin.user)

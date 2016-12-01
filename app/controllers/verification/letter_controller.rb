@@ -30,7 +30,7 @@ class Verification::LetterController < ApplicationController
     @letter = Verification::Letter.new(letter_params.merge(user: current_user, verify: true))
     if @letter.valid?
       @letter.redeem_code
-      current_user.update(verified_at: Time.now)
+      current_user.update(verified_at: Time.current)
       redirect_to account_path, notice: t('verification.letter.update.flash.success')
     else
       Lock.increase_tries(@letter.user) if @letter.user
