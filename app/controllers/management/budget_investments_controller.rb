@@ -2,11 +2,11 @@ class Management::BudgetInvestmentsController < Management::BaseController
 
   before_action :only_verified_users, except: :print
   before_action :set_budget_investment, only: [:vote, :show]
-  before_action :load_budget
+  before_action :load_accepting_headings, only: [:new, :create]
 
   def index
-    @budget_investments = apply_filters_and_search(Budget::Investment).order(cached_votes_up: :desc).page(params[:page]).for_render
-    set_budget_investment_votes(@budget_investments)
+    @investments = apply_filters_and_search(Budget::Investment).order(cached_votes_up: :desc).page(params[:page]).for_render
+    set_budget_investment_votes(@investments)
   end
 
   def new
@@ -14,39 +14,40 @@ class Management::BudgetInvestmentsController < Management::BaseController
   end
 
   def create
-    @budget_investment = Budget::Investment.new(budget_investment_params)
-    @budget_investment.author = managed_user
+    @investment = Budget::Investment.new(budget_investment_params)
+    @investment.terms_of_service = "1"
+    @investment.author = managed_user
 
-    if @budget_investment.save
-      redirect_to management_budget_investment_path(@budget_investment), notice: t('flash.actions.create.notice', resource_name: t("activerecord.models.budget_investment", count: 1))
+    if @investment.save
+      redirect_to management_budget_investment_path(@investment), notice: t('flash.actions.create.notice', resource_name: Budget::Investment.model_name.human, count: 1)
     else
       render :new
     end
   end
 
   def show
-    set_budget_investment_votes(@budget_investment)
+    set_budget_investment_votes(@investment)
   end
 
   def vote
-    @budget_investment.register_vote(managed_user, 'yes')
-    set_budget_investment_votes(@budget_investment)
+    @investment.register_vote(managed_user, 'yes')
+    set_budget_investment_votes(@investment)
   end
 
   def print
     params[:geozone] ||= 'all'
-    @budget_investments = apply_filters_and_search(Budget::Investment).order(cached_votes_up: :desc).for_render.limit(15)
-    set_budget_investment_votes(@budget_investments)
+    @investments = apply_filters_and_search(Budget::Investment).order(cached_votes_up: :desc).for_render.limit(15)
+    set_budget_investment_votes(@investments)
   end
 
   private
 
     def set_budget_investment
-      @budget_investment = Budget::Investment.find(params[:id])
+      @investment = Budget::Investment.find(params[:id])
     end
 
     def budget_investment_params
-      params.require(:budget_investment).permit(:title, :description, :external_url, :geozone_id, :terms_of_service)
+      params.require(:budget_investment).permit(:title, :description, :external_url, :geozone_id, :heading_id)
     end
 
     def only_verified_users
@@ -55,7 +56,7 @@ class Management::BudgetInvestmentsController < Management::BaseController
 
     # This should not be necessary. Maybe we could create a specific show view for managers.
     def set_budget_investment_votes(budget_investments)
-      @budget_investment_votes = managed_user ? managed_user.budget_investment_votes(budget_investments) : {}
+      @investment_votes = managed_user ? managed_user.budget_investment_votes(budget_investments) : {}
     end
 
     def set_geozone_name
@@ -74,6 +75,12 @@ class Management::BudgetInvestmentsController < Management::BaseController
       end
       target = target.search(params[:search]) if params[:search].present?
       target
+    end
+
+    def load_accepting_headings
+      accepting_budget_ids = Budget.accepting.pluck(:id)
+      accepting_budget_group_ids = Budget::Group.where(budget_id: accepting_budget_ids).pluck(:id)
+      @headings = Budget::Heading.where(group_id: accepting_budget_group_ids).order(:group_id, :name).includes(:group => :budget)
     end
 
 end

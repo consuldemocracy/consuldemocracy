@@ -17,6 +17,7 @@ class Budget < ActiveRecord::Base
   scope :open,      -> { where.not(phase: "finished") }
   scope :finished,  -> { where(phase: "finished") }
   scope :valuating, -> { where(valuating: true) }
+  scope :accepting, -> { where(phase: "accepting") }
 
   def on_hold?
     phase == "on_hold"

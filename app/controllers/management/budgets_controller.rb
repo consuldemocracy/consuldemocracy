@@ -1,5 +1,6 @@
 class Management::BudgetsController < Management::BaseController
   include FeatureFlags
+  include HasFilters
   feature_flag :budgets
 
   has_filters %w{open finished}, only: :index

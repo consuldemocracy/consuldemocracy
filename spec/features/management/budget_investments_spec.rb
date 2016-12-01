@@ -4,21 +4,16 @@ feature 'Budget Investments' do
 
   background do
     login_as_manager
-    @budget = create(:budget)
-  end
-
-  context "Select a budget" do
-    budget2 = create(:budget)
-    budget3 = create(:budget)
-
-    click_link "Create budget investment"
-
+    budget = create(:budget, phase: 'accepting', name: "2016")
+    group = create(:budget_group, budget: budget, name: 'Whole city')
+    @heading = create(:budget_heading, group: group, name: "Health")
   end
 
   context "Create" do
 
-    scenario 'Creating budget investments on behalf of someone' do
+    scenario 'Creating budget investments on behalf of someone, selecting a budget' do
       user = create(:user, :level_two)
+
       login_managed_user(user)
 
       click_link "Create budget investment"
@@ -30,6 +25,7 @@ feature 'Budget Investments' do
         expect(page).to have_content "#{user.document_number}"
       end
 
+      select "2016 - Whole city - Health", from: 'budget_investment_heading_id'
       fill_in 'budget_investment_title', with: 'Build a park in my neighborhood'
       fill_in 'budget_investment_description', with: 'There is no parks here...'
       fill_in 'budget_investment_external_url', with: 'http://moarparks.com'
@@ -37,11 +33,13 @@ feature 'Budget Investments' do
 
       click_button 'Create'
 
-      expect(page).to have_content 'budget investment created successfully.'
+      expect(page).to have_content 'Investment created successfully.'
 
+      expect(page).to have_content '2016'
+      expect(page).to have_content 'Whole city'
+      expect(page).to have_content 'Health'
       expect(page).to have_content 'Build a park in my neighborhood'
       expect(page).to have_content 'There is no parks here...'
-      expect(page).to have_content 'All city'
       expect(page).to have_content 'http://moarparks.com'
       expect(page).to have_content user.name
       expect(page).to have_content I18n.l(Budget::Investment.last.created_at.to_date)

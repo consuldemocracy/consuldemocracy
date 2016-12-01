@@ -1,6 +1,13 @@
 <% provide :title do %><%= @investment.title %><% end %>
 
 <section class="budget-investment-show">
+
+  <ul class="breadcrumbs">
+    <li><%= link_to @investment.budget.name, budget_path(@investment.budget) %></a></li>
+    <li><%= @investment.group.name %></a></li>
+    <li><%= @investment.heading.name %></a></li>
+  </ul>
+
   <div id="<%= dom_id(@investment) %>" class="row">
     <div class="small-12 medium-9 column">
       <%= link_to :back, class: "back" do %>
@@ -44,19 +51,19 @@
       <% end %>
     </div>
 
-    <% if (@budget.selecting? && !@investment.unfeasible?) ||
-          (@budget.balloting? && @investment.feasible? ||
-          (@budget.on_hold?)) %>
+    <% if (@investment.budget.selecting? && !@investment.unfeasible?) ||
+          (@investment.budget.balloting? && @investment.feasible? ||
+          (@investment.budget.on_hold?)) %>
       <aside class="small-12 medium-3 column">
         <div class="sidebar-divider"></div>
         <h3><%= t("votes.supports") %></h3>
         <div class="text-center">
 
-          <% if @budget.selecting? || @budget.on_hold? %>
+          <% if @investment.budget.selecting? || @investment.budget.on_hold? %>
             <div id="<%= dom_id(@investment) %>_votes">
               <%= render 'votes',
                           { investment: @investment,
-                            vote_url: vote_budget_investment_path(@budget, @investment, value: 'yes') }
+                            vote_url: vote_budget_investment_path(@investment.budget, @investment, value: 'yes') }
               %>
             </div>
           <% else %>
@@ -71,7 +78,7 @@
         <div class="social-share-full">
           <%= social_share_button_tag("#{@investment.title} #{setting['twitter_hashtag']}") %>
           <% if browser.device.mobile? %>
-            <a href="whatsapp://send?text=<%= @investment.title %> <%= budget_investment_url(budget_id: budget.id, id: @investment.id) %>" data-action="share/whatsapp/share">
+            <a href="whatsapp://send?text=<%= @investment.title %> <%= budget_investment_url(budget_id: @investment.budget.id, id: @investment.id) %>" data-action="share/whatsapp/share">
               <span class="icon-whatsapp whatsapp"></span>
             </a>
           <% end %>
