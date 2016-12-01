@@ -124,6 +124,7 @@ feature 'Tracking' do
       login_as(user)
       visit debate_path(debate)
 
+
       find('.in-favor a').click
       expect(page).to have_css("span[data-track-event-category='Debate']")
       expect(page).to have_css("span[data-track-event-action='Votar']")

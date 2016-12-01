@@ -33,7 +33,7 @@ class Verification::Residence
                 geozone:               self.geozone,
                 date_of_birth:         date_of_birth.to_datetime,
                 gender:                gender,
-                residence_verified_at: Time.now)
+                residence_verified_at: Time.current)
 
     if redeemable_code.present?
       RedeemableCode.redeem(redeemable_code, user)

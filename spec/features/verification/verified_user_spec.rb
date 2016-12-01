@@ -4,7 +4,7 @@ feature 'Verified users' do
 
   scenario "Verified emails" do
     user = create(:user,
-                  residence_verified_at: Time.now,
+                  residence_verified_at: Time.current,
                   document_number:       '12345678Z')
 
     create(:verified_user,
@@ -29,7 +29,7 @@ feature 'Verified users' do
 
   scenario "Verified phones" do
     user = create(:user,
-                  residence_verified_at: Time.now,
+                  residence_verified_at: Time.current,
                   document_number:       '12345678Z')
 
     create(:verified_user,
@@ -54,7 +54,7 @@ feature 'Verified users' do
 
   scenario "No emails or phones" do
     user = create(:user,
-                  residence_verified_at: Time.now,
+                  residence_verified_at: Time.current,
                   document_number:       '12345678Z')
 
     create(:verified_user,
@@ -72,7 +72,7 @@ feature 'Verified users' do
 
   scenario "Select a verified email" do
     user = create(:user,
-              residence_verified_at: Time.now,
+              residence_verified_at: Time.current,
               document_number:       '12345678Z')
 
     verified_user = create(:verified_user,
@@ -92,7 +92,7 @@ feature 'Verified users' do
 
   scenario "Select a verified phone" do
     user = create(:user,
-                  residence_verified_at: Time.now,
+                  residence_verified_at: Time.current,
                   document_number:       '12345678Z')
 
     verified_user = create(:verified_user,
@@ -111,7 +111,7 @@ feature 'Verified users' do
 
   scenario "Continue without selecting any verified information" do
     user = create(:user,
-                  residence_verified_at: Time.now,
+                  residence_verified_at: Time.current,
                   document_number:       '12345678Z')
 
     create(:verified_user,
@@ -127,7 +127,7 @@ feature 'Verified users' do
   end
 
   scenario "No verified information" do
-    user = create(:user, residence_verified_at: Time.now)
+    user = create(:user, residence_verified_at: Time.current)
 
     login_as(user)
     visit verified_user_path

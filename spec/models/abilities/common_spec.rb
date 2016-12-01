@@ -94,7 +94,7 @@ describe "Abilities::Common" do
     let(:spending_proposal) { create(:spending_proposal) }
     let(:own_spending_proposal) { create(:spending_proposal, author: user) }
     let(:own_direct_message) { create(:direct_message, sender: user) }
-    before{ user.update(residence_verified_at: Time.now, confirmed_phone: "1") }
+    before{ user.update(residence_verified_at: Time.current, confirmed_phone: "1") }
 
     it { should be_able_to(:vote, Proposal) }
     it { should be_able_to(:vote_featured, Proposal) }
@@ -128,7 +128,7 @@ describe "Abilities::Common" do
     let(:spending_proposal) { create(:spending_proposal) }
     let(:own_spending_proposal) { create(:spending_proposal, author: user) }
     let(:own_direct_message) { create(:direct_message, sender: user) }
-    before{ user.update(verified_at: Time.now) }
+    before{ user.update(verified_at: Time.current) }
 
     it { should be_able_to(:vote, Proposal) }
     it { should be_able_to(:vote_featured, Proposal) }

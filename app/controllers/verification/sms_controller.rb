@@ -32,7 +32,7 @@ class Verification::SmsController < ApplicationController
       log_event("verification", "sms")
 
       if VerifiedUser.phone?(current_user)
-        current_user.update(verified_at: Time.now)
+        current_user.update(verified_at: Time.current)
       end
 
       redirect_to_next_path

@@ -4,7 +4,7 @@ feature 'Verify email' do
 
   scenario 'Verify' do
     user = create(:user,
-                  residence_verified_at: Time.now,
+                  residence_verified_at: Time.current,
                   document_number:       '12345678Z',
                   document_type:         'dni')
 
@@ -34,7 +34,7 @@ feature 'Verify email' do
   end
 
   scenario "Errors on token verification" do
-    user = create(:user, residence_verified_at: Time.now)
+    user = create(:user, residence_verified_at: Time.current)
 
     login_as(user)
     visit email_path(email_verification_token: "1234")
@@ -44,7 +44,7 @@ feature 'Verify email' do
 
   scenario "Errors on sending confirmation email" do
     user = create(:user,
-                  residence_verified_at: Time.now,
+                  residence_verified_at: Time.current,
                   document_number:       '12345678Z',
                   document_type:         'dni')
 
