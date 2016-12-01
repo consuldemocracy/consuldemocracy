@@ -55,6 +55,7 @@ class Budget
 
     before_save :calculate_confidence_score
     before_validation :set_responsible_name
+    before_validation :set_denormalized_ids
 
     def self.filter_params(params)
       params.select{|x,_| %w{heading_id group_id administrator_id tag_name valuator_id}.include? x.to_s }
@@ -188,5 +189,11 @@ class Budget
       self.responsible_name = author.try(:document_number) if author.try(:document_number).present?
     end
 
+    private
+
+      def set_denormalized_ids
+        self.group_id ||= self.heading.group_id
+        self.budget_id ||= self.heading.group.budget_id
+      end
   end
 end
