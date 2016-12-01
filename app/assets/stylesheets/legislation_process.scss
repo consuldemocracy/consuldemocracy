@@ -1,0 +1,205 @@
+// Table of Contents
+//
+// 01. Utils
+// 02. Hero
+// 03. Legislation process
+// 04. Debate list
+// 05. Legislation draft
+//
+
+// 01. Utils
+// -----------------
+.grey {
+  color: #878787;
+}
+
+.grey-heading {
+  background: #E6E6E6;
+}
+
+.center {
+  text-align: center;
+}
+
+.right {
+  text-align: right;
+}
+
+.strong {
+  font-weight: 700;
+}
+
+// 02. Hero
+// -----------------
+.legislation-hero {
+  padding-top: 1.5rem;
+  
+  @include breakpoint(medium) {
+    padding-top: 3.5rem;
+  }
+  
+  h4 {
+    color: #878787;
+    text-transform: uppercase;
+    font-weight: 400;
+  }
+  
+  ul {
+    list-style: none;
+    margin-left: 0;
+    
+    li:before {
+      vertical-align: text-bottom;
+      padding-right: 0.5rem;
+      content: "■";
+      color: #8AA8BE;
+    }
+  }
+  
+  .half-gradient {
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#e6e6e6+0,e6e6e6+50,ffffff+50 */
+    background: #e6e6e6; /* Old browsers */
+    background: -moz-linear-gradient(top, #e6e6e6 0%, #e6e6e6 50%, #ffffff 50%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #e6e6e6 0%,#e6e6e6 50%,#ffffff 50%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #e6e6e6 0%,#e6e6e6 50%,#ffffff 50%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e6e6e6', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
+  }
+  
+  .center .button {
+    background: #004A83;
+    margin-bottom: 0;
+  }
+  
+  .headline {
+    margin-bottom: 1rem;
+  }
+  
+  .description {
+    margin-bottom: 1rem;
+  }
+  
+  .button-subscribe {
+    margin-top: 1.5rem;
+    
+    h3 {
+      margin-bottom: 0;
+    }
+    
+    p {
+      margin-bottom: 0;
+      font-size: $small-font-size;
+    }
+    
+    &:hover h3 {
+      color: white;
+    }
+    
+    @include breakpoint(medium) {
+      padding: 0.5em 1em;
+      margin-top: 3rem;
+    }
+  }
+  
+  @include breakpoint(medium) {
+    .headline {
+      margin-bottom: 4rem;
+    }
+    
+    .description {
+      margin-bottom: 0;
+    }
+  }
+}
+
+// 03. Legislation process
+// -----------------
+.legislation-process-categories {
+  list-style: none;
+  margin-left: 0;
+  padding-left: 0;
+  border-bottom: 1px solid $medium-gray;
+  
+  li {
+    cursor: pointer;
+    margin-left: 3rem;
+    display: inline-block;
+    
+    a,
+    h4 {
+      color: #6D6D6D;
+      margin-bottom: 0;
+    }
+    a:hover {
+      text-decoration: none;
+    }
+  }
+  
+  .active {
+    border-bottom: 2px solid $brand;
+  }
+  
+  .active h4 {
+    // padding-bottom: 0.4rem;
+  }
+}
+
+// 04. Debate list
+// -----------------
+.debate-chooser {
+  padding: 2rem 3rem;
+  
+  .debate-block {
+    margin-bottom: 2.5rem;
+    
+    .debate-type {
+      text-transform: uppercase;
+      color: #178DCC;
+      font-weight: 700;
+      font-size: $small-font-size;
+      
+      .icon-debates {
+        margin-left: 0.2rem;
+      }
+    }
+    
+    .debate-title a {
+      color: $brand;
+    }
+    
+    .debate-meta,
+    .debate-meta a {
+      font-size: $small-font-size;
+      color: #6D6D6D;
+      
+      .icon-comments {
+        margin-right: 0.2rem;
+      }
+    }
+  }
+  
+  .debate-info {
+    padding: 1rem;
+    background: #F4F4F4;
+  }
+}
+
+// 05. Legislation draft
+// -----------------
+.debate-draft {
+  padding: 10rem 2rem 15rem 2rem;
+  display: block;
+  background: #F2F2F2;
+  
+  button {
+    height: 90px;
+    
+    h3 {
+      margin-bottom: 0;
+    }
+    
+    p {
+      margin-bottom: 0;
+      font-size: $small-font-size;
+    }
+  }
+}
