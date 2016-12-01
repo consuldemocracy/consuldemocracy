@@ -2578,7 +2578,11 @@ ul.ballot-list {
   .video-thumbnail {
     color: $text;
     font-size: $small-font-size;
-    text-decoration: none;
+
+    a {
+      color: $text;
+      text-decoration: none;
+    }
 
     img {
       margin-bottom: $line-height/2;
