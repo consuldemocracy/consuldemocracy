@@ -305,7 +305,11 @@ FactoryGirl.define do
   factory :poll_booth, class: 'Poll::Booth' do
     sequence(:name) { |n| "Booth #{n}" }
     sequence(:location) { |n| "Street #{n}" }
+  end
+
+  factory :poll_booth_assignment, class: 'Poll::BoothAssignment' do
     poll
+    association :booth, factory: :poll_booth
   end
 
   factory :poll_voter, class: 'Poll::Voter' do
