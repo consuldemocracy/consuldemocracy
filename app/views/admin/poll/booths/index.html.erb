@@ -11,6 +11,7 @@
             class: "button success" %>
 
 <% if @booths.any? %>
+  <h3><%= page_entries_info @booths %></h3>
   <table>
     <thead>
       <th><%= t("admin.booths.index.name") %></th>
