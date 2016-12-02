@@ -189,6 +189,16 @@ class Budget
       self.responsible_name = author.try(:document_number) if author.try(:document_number).present?
     end
 
+    def should_show_aside?
+      (budget.selecting? && !investment.unfeasible?) ||
+      (budget.balloting? && investment.feasible?) ||
+      budget.on_hold?
+    end
+
+    def should_show_votes?
+      budget.selecting? || budget.on_hold?
+    end
+
     private
 
       def set_denormalized_ids
