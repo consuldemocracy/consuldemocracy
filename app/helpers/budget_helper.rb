@@ -11,13 +11,11 @@ module BudgetHelper
   end
 
   def namespaced_budget_investment_path(investment, options={})
-    @namespaced_budget_investment_path ||= namespace
-    options[:budget_id] ||= investment.budget.id
-    case @namespace_budget_investment_path
-    when "management"
+    case namespace
+    when "management::budgets"
       management_budgets_investment_path(investment, options)
     else
-      budget_investment_path(investment, options)
+      budget_investment_path(investment, options.merge(budget_id: investment.budget_id))
     end
   end
 
