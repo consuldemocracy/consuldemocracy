@@ -64,7 +64,7 @@
                 vote_url: vote_budget_investment_path(investment.budget, investment, value: 'yes')
               } %>
             </div>
-          <% else %>
+          <% elseif investment.sould_show_ballots? %>
             <div id="<%= dom_id(investment) %>_ballot">
               <%= render 'ballot', investment: investment %>
             </div>

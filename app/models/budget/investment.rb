@@ -199,6 +199,10 @@ class Budget
       budget.selecting? || budget.on_hold?
     end
 
+    def should_show_ballots?
+      budget.balloting?
+    end
+
     private
 
       def set_denormalized_ids
