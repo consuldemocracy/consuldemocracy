@@ -15,7 +15,7 @@ module BudgetHelper
     options[:budget_id] ||= investment.budget.id
     case @namespace_budget_investment_path
     when "management"
-      management_budget_investment_path(investment, options)
+      management_budgets_investment_path(investment, options)
     else
       budget_investment_path(investment, options)
     end
