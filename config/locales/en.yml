@@ -632,6 +632,8 @@ en:
       price: Cost
       amount_available: Available budget
       incompatible: Incompatibles
+      accepted: "Accepted spending proposal: "
+      discarded: "Discarded spending proposal: "
     stats:
       page_title: "Participatory budget | Participation stats"
       heading: "PARTICIPATORY BUDGET"

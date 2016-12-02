@@ -26,9 +26,13 @@
         <% end %>
             <td>
               <% if budget >= 0 %>
-                <span class="icon-check"></span>
+                <span class="icon-check">
+                  <%= t("spending_proposals.results.accepted") %>
+                </span>
               <% else %>
-                <span class="icon-x"></span>
+                <span class="icon-x">
+                  <%= t("spending_proposals.results.discarded") %>
+                </span>
               <% end %>
               <%= link_to spending_proposal.title, spending_proposal_path(spending_proposal) %>
             </td>

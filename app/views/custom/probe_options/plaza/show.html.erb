@@ -72,13 +72,13 @@
         <%= link_to @probe_option.file_path('memoria', 'pdf'),
                     title: "PDF #{@probe_option.name} | #{@probe_option.file_size('memoria', 'pdf')}",
                     target: "_blank", class: "button hollow expanded" do %>
-                    <%= image_tag "icon_pdf.png" %>
+                    <%= image_tag "icon_pdf.png", alt: "PDF" %>
                     <%= "<small>Memoria (#{@probe_option.file_size('memoria', 'pdf')})</small>".html_safe %>
         <% end %>
         <%= link_to @probe_option.file_path('dossier', 'pdf'),
                     title: "PDF #{@probe_option.name} | #{@probe_option.file_size('dossier', 'pdf')}",
                     target: "_blank", class: "button hollow expanded" do %>
-                    <%= image_tag "icon_pdf.png" %>
+                    <%= image_tag "icon_pdf.png", alt: "PDF" %>
                     <%= "<small>Imágenes (#{@probe_option.file_size('dossier', 'pdf')})</small>".html_safe %>
         <% end %>
 
