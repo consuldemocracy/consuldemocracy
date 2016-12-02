@@ -632,6 +632,8 @@ es:
       price: Coste
       amount_available: Presupuesto disponible
       incompatible: Incompatibles
+      accepted: "Propuesta de inversión aceptada: "
+      discarded: "Propuesta de inversión descartada: "
     stats:
       page_title: "Presupuestos participativos | Estadísticas de participación"
       heading: "PRESUPUESTOS PARTICIPATIVOS"
