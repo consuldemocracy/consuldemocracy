@@ -1,6 +1,6 @@
 class Poll < ActiveRecord::Base
-  has_many :booth_assigments
-  has_many :booths, through: :booth_assigments, class_name: "Poll::BoothAssignment"
+  has_many :booth_assignments, class_name: "Poll::BoothAssignment"
+  has_many :booths, through: :booth_assignments
   has_many :voters, through: :booths, class_name: "Poll::Voter"
   has_many :officers, through: :booths, class_name: "Poll::Officer"
   has_many :questions
