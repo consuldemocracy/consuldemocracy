@@ -1,4 +1,4 @@
-class Management::BudgetInvestmentsController < Management::BaseController
+class Management::Budgets::InvestmentsController < Management::BaseController
 
   before_action :only_verified_users, except: :print
   before_action :set_budget_investment, only: [:vote, :show]
@@ -19,7 +19,7 @@ class Management::BudgetInvestmentsController < Management::BaseController
     @investment.author = managed_user
 
     if @investment.save
-      redirect_to management_budget_investment_path(@investment), notice: t('flash.actions.create.notice', resource_name: Budget::Investment.model_name.human, count: 1)
+      redirect_to management_budgets_investment_path(@investment), notice: t('flash.actions.create.notice', resource_name: Budget::Investment.model_name.human, count: 1)
     else
       render :new
     end
