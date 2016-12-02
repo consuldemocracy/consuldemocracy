@@ -381,6 +381,8 @@ GEM
       json (>= 1.8, < 3)
       simplecov-html (~> 0.10.0)
     simplecov-html (0.10.0)
+    sitemap_generator (5.2.0)
+      builder (~> 3.0)
     social-share-button (0.3.1)
       coffee-rails
       sass-rails
@@ -511,6 +513,7 @@ DEPENDENCIES
   rvm1-capistrano3
   sass-rails (~> 5.0, >= 5.0.4)
   savon
+  sitemap_generator
   social-share-button
   spring
   spring-commands-rspec
@@ -522,3 +525,6 @@ DEPENDENCIES
   unicorn (~> 5.1.0)
   web-console (= 3.3.0)
   whenever
+
+BUNDLED WITH
+   1.13.6
