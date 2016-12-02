@@ -29,7 +29,7 @@ feature 'Admin feature flags' do
     visit admin_root_path
 
     within('#side_menu') do
-      expect(page).not_to have_link "Spending proposals"
+      expect(page).not_to have_link "Budgets"
     end
 
     expect{ visit spending_proposals_path }.to raise_exception(FeatureFlags::FeatureDisabled)
@@ -43,7 +43,7 @@ feature 'Admin feature flags' do
     visit admin_root_path
 
     within('#side_menu') do
-      expect(page).not_to have_link "Spending proposals"
+      expect(page).not_to have_link "Budgets"
     end
 
     visit admin_settings_path
