@@ -1,9 +1,9 @@
 <main>
   <div class="row">
-    <div id="investment-projects" class="investment-projects-list small-12 column">
+    <div id="budget-investments" class="budget-investments-list small-12 column">
 
       <div class="not-print">
-        <%= form_tag print_management_budget_investments_path, method: :get, enforce_utf8: false do %>
+        <%= form_tag print_management_budgets_investments_path, method: :get, enforce_utf8: false do %>
           <div class="small-12 medium-4 column float-left">
             <%= select_tag :geozone,
                            options_for_select(geozone_select_options.unshift([t("geozones.none"), "all"]), params[:geozone]),

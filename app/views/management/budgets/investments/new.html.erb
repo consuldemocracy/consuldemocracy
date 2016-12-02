@@ -7,7 +7,7 @@
   <div class="small-12 medium-9 column end">
     <h1 class=""><%= t("management.budget_investments.create") %></h1>
 
-    <%= form_for(@investment, url: management_budget_investments_path, method: :post) do |f| %>
+    <%= form_for(@investment, url: management_budgets_investments_path, method: :post) do |f| %>
       <%= render 'shared/errors', resource: @investment %>
 
       <div class="row">
