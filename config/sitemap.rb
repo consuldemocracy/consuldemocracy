@@ -1,3 +1,9 @@
+# not use compression
+class SitemapGenerator::FileAdapter
+  def gzip(stream, data); stream.write(data); stream.close end
+end
+SitemapGenerator::Sitemap.namer = SitemapGenerator::SimpleNamer.new(:sitemap, extension: '.xml')
+
 # default host
 SitemapGenerator::Sitemap.default_host = "https://decide.madrid.es"
 
