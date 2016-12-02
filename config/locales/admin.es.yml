@@ -202,23 +202,18 @@ es:
     booths:
       index:
         title: "Lista de urnas"
-        select_poll: "Selecciona una votación"
-        title_list: "Lista de urnas de la votación %{poll}"
-        no_booths: "No hay urnas en esta votación."
+        no_booths: "No hay urnas."
         add_booth: "Añadir urna"
         name: "Nombre"
         location: "Ubicación"
-        officers: "Presidentes de mesa"
       new:
-        title: "Votación %{poll}"
-        subtitle: "Nueva urna"
+        title: "Nueva urna"
         name: "Nombre"
         reference: "Número de referencia"
         location: "Ubicación"
         submit_button: "Crear urna"
       edit:
-        title: "Votación %{poll}"
-        subtitle: "Editar urna"
+        title: "Editar urna"
         name: "Nombre"
         reference: "Número de referencia"
         location: "Ubicación"

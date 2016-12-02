@@ -202,23 +202,18 @@ en:
     booths:
       index:
         title: "List of booths"
-        select_poll: "Select a poll"
-        title_list: "List of booths of poll %{poll}"
-        no_booths: "There are no booths in this poll."
+        no_booths: "There are no booths."
         add_booth: "Add booth"
         name: "Name"
         location: "Location"
-        officers: "Officers"
       new:
-        title: "Poll %{poll}"
-        subtitle: "New booth"
+        title: "New booth"
         name: "Name"
         reference: "Reference number"
         location: "Location"
         submit_button: "Create booth"
       edit:
-        title: "Poll %{poll}"
-        subtitle: "Edit booth"
+        title: "Edit booth"
         name: "Name"
         reference: "Reference number"
         location: "Location"

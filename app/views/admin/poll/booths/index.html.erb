@@ -1,18 +1,5 @@
 <h2><%= t("admin.booths.index.title") %></h2>
 
-<div class="small-12 medium-6">
-  <%= form_tag '', method: :get do %>
-    <%= select_tag "poll_id",
-                   options_for_select(@polls.collect {|poll|
-                     [poll.name, admin_poll_booths_path(poll)]
-                   }),
-                   prompt: t("admin.booths.index.select_poll"),
-                   class: "js-location-changer" %>
-  <% end %>
-</div>
-
-<h3><%= t("admin.booths.index.title_list", poll: @poll.name) %></h3>
-
 <% if @booths.empty? %>
   <div class="callout primary">
     <%= t("admin.booths.index.no_booths") %>
@@ -20,19 +7,22 @@
 <% end %>
 
 <%= link_to t("admin.booths.index.add_booth"),
-            new_admin_poll_booth_path(@poll),
+            new_admin_booth_path,
             class: "button success" %>
 
-<table>
-  <thead>
-    <th><%= t("admin.booths.index.name") %></th>
-    <th><%= t("admin.booths.index.location") %></th>
-    <th><%= t("admin.booths.index.officers") %></th>
-    <th>&nbsp;</th>
-  </thead>
-  <tbody>
-  <% @booths.each do |booth| %>
-    <%= render partial: "booth", locals: { booth: booth } %>
-  <% end %>
-  </tbody>
-</table>
+<% if @booths.any? %>
+  <table>
+    <thead>
+      <th><%= t("admin.booths.index.name") %></th>
+      <th><%= t("admin.booths.index.location") %></th>
+      <th>&nbsp;</th>
+    </thead>
+    <tbody>
+    <% @booths.each do |booth| %>
+      <%= render partial: "booth", locals: { booth: booth } %>
+    <% end %>
+    </tbody>
+  </table>
+
+  <%= paginate @booths %>
+<% end %>
