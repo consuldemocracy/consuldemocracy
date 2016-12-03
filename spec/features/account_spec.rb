@@ -114,10 +114,11 @@ feature 'Account' do
   scenario 'Errors editing credentials' do
     visit root_path
 
-    click_link "My account"
+    click_link 'My account'
 
     expect(current_path).to eq(account_path)
 
+    expect(page).to have_link('Change my credentials')
     click_link 'Change my credentials'
     click_button 'Update'
 
