@@ -5,7 +5,7 @@ end
 SitemapGenerator::Sitemap.namer = SitemapGenerator::SimpleNamer.new(:sitemap, extension: '.xml')
 
 # default host
-SitemapGenerator::Sitemap.default_host = "https://decide.madrid.es"
+SitemapGenerator::Sitemap.default_host = Setting["url"]
 
 # sitemap generator
 SitemapGenerator::Sitemap.create do
