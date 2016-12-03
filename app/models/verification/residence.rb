@@ -31,7 +31,7 @@ class Verification::Residence
                 geozone:               self.geozone,
                 date_of_birth:         date_of_birth.to_datetime,
                 gender:                gender,
-                residence_verified_at: Time.now)
+                residence_verified_at: Time.current)
   end
 
   def allowed_age

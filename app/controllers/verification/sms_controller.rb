@@ -31,7 +31,7 @@ class Verification::SmsController < ApplicationController
       ahoy.track(:level_2_user, user_id: current_user.id) rescue nil
 
       if VerifiedUser.phone?(current_user)
-        current_user.update(verified_at: Time.now)
+        current_user.update(verified_at: Time.current)
       end
 
       redirect_to_next_path
