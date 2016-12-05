@@ -1,6 +1,6 @@
 <li id="<%= dom_id(investment) %>_sidebar">
   <%= investment.title %>
-  <span><%= format_price(@budget, investment.price) %></span>
+  <span><%= investment.formatted_price %></span>
 
   <% if @budget.balloting? %>
     <%= link_to budget_ballot_line_url(id: investment.id,

@@ -42,5 +42,16 @@ class Budget < ActiveRecord::Base
   def heading_price(heading)
     heading_ids.include?(heading.id) ? heading.price : -1
   end
+
+  def formatted_amount(amount)
+    ActionController::Base.helpers.number_to_currency(amount,
+                                                      precision: 0,
+                                                      locale: I18n.default_locale,
+                                                      unit: currency_symbol)
+  end
+
+  def formatted_heading_price(heading)
+    formatted_ammount(heading_price(heading))
+  end
 end
 

@@ -1,10 +1,4 @@
 module BudgetHelper
-  def format_price(budget, number)
-    number_to_currency(number,
-                       precision: 0,
-                       locale: I18n.default_locale,
-                       unit: budget.currency_symbol)
-  end
 
   def heading_name(heading)
     heading.present? ? heading.name : t("budget.headings.none")

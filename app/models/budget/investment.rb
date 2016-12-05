@@ -203,6 +203,10 @@ class Budget
       budget.balloting?
     end
 
+    def formatted_price
+      budget.formatted_amount(price)
+    end
+
     private
 
       def set_denormalized_ids
