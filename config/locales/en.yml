@@ -185,6 +185,7 @@ en:
       transparency_url: https://transparency.consul
     header:
       administration: Administration
+      available_locales: Available languages
       debates: Debates
       external_link_blog: Blog
       external_link_opendata: Open data
