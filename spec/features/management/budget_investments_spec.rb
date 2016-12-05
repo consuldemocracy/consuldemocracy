@@ -81,14 +81,14 @@ feature 'Budget Investments' do
       end
     end
 
-    scenario "by district" do
-      budget_investment1 = create(:budget_investment, title: "Hey ho", geozone_id: create(:geozone, name: "District 9").id)
-      budget_investment2 = create(:budget_investment, title: "Let's go", geozone_id: create(:geozone, name: "Area 52").id)
+    scenario "by heading" do
+      budget_investment1 = create(:budget_investment, title: "Hey ho", heading: create(:budget_heading, name: "District 9"))
+      budget_investment2 = create(:budget_investment, title: "Let's go", heading: create(:budget_heading, name: "Area 52"))
 
       user = create(:user, :level_two)
       login_managed_user(user)
 
-      click_link "Support budget investments"
+      click_link "Support Budget Investments"
 
       fill_in "search", with: "Area 52"
       click_button "Search"
@@ -112,7 +112,7 @@ feature 'Budget Investments' do
     user = create(:user, :level_two)
     login_managed_user(user)
 
-    click_link "Support budget investments"
+    click_link "Support Budget Investments"
 
     expect(current_path).to eq(management_budgets_investments_path)
 
@@ -140,7 +140,7 @@ feature 'Budget Investments' do
       user = create(:user, :level_two)
       login_managed_user(user)
 
-      click_link "Support budget investments"
+      click_link "Support Budget Investments"
 
       within("#budget-investments") do
         find('.in-favor a').click
@@ -157,7 +157,7 @@ feature 'Budget Investments' do
       user = create(:user, :level_two)
       login_managed_user(user)
 
-      click_link "Support budget investments"
+      click_link "Support Budget Investments"
 
       within("#budget-investments") do
         click_link budget_investment.title
@@ -175,7 +175,7 @@ feature 'Budget Investments' do
       user = create(:user)
       login_managed_user(user)
 
-      click_link "Support budget investments"
+      click_link "Support Budget Investments"
 
       expect(page).to have_content "User is not verified"
     end
