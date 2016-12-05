@@ -34,11 +34,11 @@ module GraphQL
             when :belongs_to
               field(association.name, -> { type_creator.created_types[association.klass] })
             when :has_many
-              connection association.name, -> do
-                type_creator.created_types[association.klass].connection_type do
-                  description "#{association.klass.model_name.human.pluralize}"
-                  resolve -> (object, arguments, context) { association.klass.all }
-                end
+              connection(
+                association.name,
+                Proc.new { type_creator.created_types[association.klass].connection_type }
+              ) do
+                resolve -> (object, arguments, context) { association.klass.all }
               end
             end
           end
