@@ -23,7 +23,6 @@ data:
     # - "<%#= %x[bundle show vagrant].chomp %>/templates/locales/%{locale}.yml"
     - config/locales/%{locale}.yml
     - config/locales/admin.%{locale}.yml
-    - config/locales/admin.legislation.%{locale}.yml
     - config/locales/moderation.%{locale}.yml
     - config/locales/valuation.%{locale}.yml
     - config/locales/management.%{locale}.yml
