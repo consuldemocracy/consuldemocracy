@@ -4,7 +4,8 @@
 // 02. Hero
 // 03. Legislation process
 // 04. Debate list
-// 05. Legislation draft
+// 05. Debate quiz
+// 06. Legislation draft
 //
 
 // 01. Utils
@@ -33,9 +34,11 @@
 // -----------------
 .legislation-hero {
   padding-top: 1.5rem;
+  margin-bottom: 2rem;
   
   @include breakpoint(medium) {
     padding-top: 3.5rem;
+    margin-bottom: 4rem;
   }
   
   h4 {
@@ -72,14 +75,23 @@
   
   .headline {
     margin-bottom: 1rem;
+    
+    @include breakpoint(medium) {
+      margin-bottom: 4rem;
+      
+    }
   }
   
   .description {
     margin-bottom: 1rem;
+    
+    @include breakpoint(medium) {
+        margin-bottom: 0;
+    }
   }
   
   .button-subscribe {
-    margin-top: 1.5rem;
+    margin-top: 1rem;
     
     h3 {
       margin-bottom: 0;
@@ -99,16 +111,6 @@
       margin-top: 3rem;
     }
   }
-  
-  @include breakpoint(medium) {
-    .headline {
-      margin-bottom: 4rem;
-    }
-    
-    .description {
-      margin-bottom: 0;
-    }
-  }
 }
 
 // 03. Legislation process
@@ -121,32 +123,51 @@
   
   li {
     cursor: pointer;
-    margin-left: 3rem;
+    margin-left: 1rem;
     display: inline-block;
+    margin-bottom: 1rem;
+    
+    @include breakpoint(medium) {
+      margin-left: 3rem;
+      margin-bottom: 0;
+    }
     
     a,
     h4 {
       color: #6D6D6D;
       margin-bottom: 0;
     }
-    a:hover {
-      text-decoration: none;
+    
+    a {
+      &:hover, &:active {
+        text-decoration: none;
+      }
+      
+      p {
+        margin-bottom: 0;
+        
+        @include breakpoint(medium) {
+          margin-bottom: 1rem;
+        }
+      }
     }
   }
   
   .active {
     border-bottom: 2px solid $brand;
   }
-  
-  .active h4 {
-    // padding-bottom: 0.4rem;
-  }
 }
 
 // 04. Debate list
 // -----------------
 .debate-chooser {
-  padding: 2rem 3rem;
+  padding: 2rem 1rem;
+  
+  @include breakpoint(medium) {
+    .debate-chooser {
+      padding: 2rem 3rem;
+    }
+  }
   
   .debate-block {
     margin-bottom: 2.5rem;
@@ -183,7 +204,130 @@
   }
 }
 
-// 05. Legislation draft
+// 05. Debate quiz
+// -----------------
+.debate-quiz {
+  
+  .quiz-header {
+    margin-bottom: 2rem;
+    
+    .quiz-title, .quiz-next {
+      padding: 1rem;
+      height: 6rem;
+    }
+    
+    .quiz-title {
+      background: #E5ECF2;
+      
+      .quiz-header-title {
+        margin-bottom: 0;
+        text-transform: uppercase;
+        color: #979B9F;
+        font-weight: 700;
+        font-size: $small-font-size;
+      }
+    }
+    
+    h4 a {
+      color: $brand;
+    }
+    
+    h4 a:hover {
+      text-decoration: none;
+    }
+    
+    .quiz-next-link {
+      
+      &:hover, &:active {
+        text-decoration: none;
+      }
+      
+      .quiz-next {
+        background: #CCDBE5;
+        font-weight: 700;
+        color: $brand;
+        font-size: $small-font-size;
+        text-align: right;
+        text-transform: uppercase;
+        transition: background 0.25s ease-out, background 0.25s ease-out;
+        
+        .icon-angle-right {
+          vertical-align: sub;
+        }
+        
+        &:hover, &:active {
+          text-decoration: none;
+          background: $brand;
+          color: white;
+          
+          .icon-angle-right {
+            color: white;
+          }
+        }
+      }
+    }
+  }
+  
+  .quiz-question {
+    margin-bottom: 2rem;
+  }
+  
+  .debate-questions {
+    list-style: none;
+    
+    .control {
+      position: relative;
+      display: inline-block;
+      color: #555;
+      cursor: pointer;
+      background: #fff;
+      border: 1px solid $border;
+      border-radius: 4px;
+      padding: 0.75rem 2.5rem;
+      margin-right: 1.5rem;
+    }
+    
+    .active {
+      background: #CCDBE6;
+      border: none;
+    }
+    
+    .control input {
+      position: absolute;
+      opacity: 0;
+      z-index: -1;
+    }
+    
+    .control input:checked ~ .control-indicator {
+      background-color: $brand;
+      border: none;
+    }
+    
+    .radio .control-indicator {
+      border-radius: 50%;
+    }
+    
+    .control-indicator {
+      position: absolute;
+      top: 0.95rem;
+      left: 0.95rem;
+      display: block;
+      width: 1rem;
+      height: 1rem;
+      line-height: 1rem;
+      font-size: 65%;
+      text-align: center;
+      border: 2px solid #9C9C9C;
+      pointer-events: none;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+  }
+}
+
+// 06. Legislation draft
 // -----------------
 .debate-draft {
   padding: 10rem 2rem 15rem 2rem;
