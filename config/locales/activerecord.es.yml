@@ -34,6 +34,9 @@ es:
       spending_proposal:
         one: "Propuesta de inversión"
         other: "Propuestas de inversión"
+      legislation/process:
+          one: "Proceso"
+          other: "Procesos"
     attributes:
       comment:
         body: "Comentario"
@@ -69,6 +72,20 @@ es:
         external_url: "Enlace a documentación adicional"
         geozone_id: "Ámbito de actuación"
         title: "Título"
+      legislation/process:
+        title: Título del proceso
+        description: En qué consiste
+        target: A quién afecta
+        how_to_participate: Cómo participar
+        additional_info: Información adicional
+        start_date: Fecha de inicio del proceso
+        end_date: Fecha de fin del proceso
+        debate_start_date: Fecha de inicio del debate
+        debate_end_date: Fecha de fin del debate
+        draft_publication_date: Fecha de publicación del borrador
+        allegations_start_date: Fecha de inicio de alegaciones
+        allegations_end_date: Fecha de fin de alegaciones
+        final_publication_date: Fecha de publicación del resultado final
     errors:
       models:
         user:

@@ -1,0 +1,27 @@
+---
+en:
+  admin:
+    legislation:
+      processes:
+        edit:
+          back: Back
+          submit_button: Save changes
+        errors:
+          form:
+            error: Error
+        index:
+          create: New process
+          delete: Delete
+          edit: Edit
+          title: Legislation processess
+          filters:
+            open: Open
+            next: Next
+            past: Past
+            all: All
+        new:
+          back: Back
+          title: Create new collaborative legislation process
+          submit_button: Create process
+        process:
+          title: Collaborative legislation process title

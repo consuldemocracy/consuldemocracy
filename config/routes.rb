@@ -189,6 +189,10 @@ Rails.application.routes.draw do
       get :direct_messages, on: :collection
     end
 
+    namespace :legislation do
+      resources :processes
+    end
+
     namespace :api do
       resource :stats, only: :show
     end

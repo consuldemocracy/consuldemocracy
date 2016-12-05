@@ -23,6 +23,7 @@ data:
     # - "<%#= %x[bundle show vagrant].chomp %>/templates/locales/%{locale}.yml"
     - config/locales/%{locale}.yml
     - config/locales/admin.%{locale}.yml
+    - config/locales/admin.legislation.%{locale}.yml
     - config/locales/moderation.%{locale}.yml
     - config/locales/valuation.%{locale}.yml
     - config/locales/management.%{locale}.yml
@@ -117,6 +118,8 @@ ignore_unused:
   - 'admin.organizations.index.filter*'
   - 'admin.users.index.filter*'
   - 'admin.activity.show.filter*'
+  - 'admin.legislation.processes.index.filter*'
+  - 'admin.legislation.processes.*.submit_button'
   - 'admin.comments.index.hidden_*'
   - 'admin.settings.index.features.*'
   - 'moderation.comments.index.filter*'

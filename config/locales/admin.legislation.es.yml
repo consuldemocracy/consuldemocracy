@@ -1,0 +1,27 @@
+---
+es:
+  admin:
+    legislation:
+      processes:
+        edit:
+          back: Volver
+          submit_button: Guardar cambios
+        errors:
+          form:
+            error: Error
+        index:
+          create: Nuevo proceso
+          delete: Borrar
+          edit: Editar
+          title: Procesos de legislación colaborativa
+          filters:
+            open: Abiertos
+            next: Próximamente
+            past: Pasados
+            all: Todos
+        new:
+          back: Volver
+          title: Crear nuevo proceso de legislación colaborativa
+          submit_button: Crear proceso
+        process:
+          title: Título del proceso de legislación colaborativa

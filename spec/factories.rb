@@ -1,4 +1,19 @@
 FactoryGirl.define do
+  factory :legislation_process, class: 'Legislation::Process' do
+    title "A collaborative legislation process"
+    description "Description of the process"
+    target "Who will affected by this law?"
+    how_to_participate "You can participate by answering some questions"
+    start_date "2016-11-16"
+    end_date "2016-11-16"
+    debate_start_date "2016-11-16"
+    debate_end_date "2016-11-16"
+    draft_publication_date "2016-11-16"
+    allegations_start_date "2016-11-16"
+    allegations_end_date "2016-11-16"
+    final_publication_date "2016-11-16"
+  end
+
   sequence(:document_number) { |n| "#{n.to_s.rjust(8, '0')}X" }
 
   factory :user do
