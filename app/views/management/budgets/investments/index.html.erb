@@ -18,7 +18,12 @@
       </div>
 
       <% @investments.each do |investment| %>
-        <%= render partial: '/budgets/investments/investment', locals: { investment: investment, investment_votes: @investment_votes } %>
+        <%= render partial: '/budgets/investments/investment', locals: {
+          investment: investment,
+          investment_ids: @investment_ids,
+          investment_votes: @investment_votes,
+          investment_ballots: @investment_ballots
+        } %>
       <% end %>
 
       <%= paginate @investments %>

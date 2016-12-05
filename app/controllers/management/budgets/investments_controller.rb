@@ -6,6 +6,8 @@ class Management::Budgets::InvestmentsController < Management::BaseController
 
   def index
     @investments = apply_filters_and_search(Budget::Investment).order(cached_votes_up: :desc).page(params[:page]).for_render
+    @investment_ids = @investments.pluck(:id)
+    set_investment_ballots(@investments)
     set_budget_investment_votes(@investments)
   end
 
@@ -26,11 +28,13 @@ class Management::Budgets::InvestmentsController < Management::BaseController
   end
 
   def show
+    set_investment_ballots(@investment)
     set_budget_investment_votes(@investment)
   end
 
   def vote
     @investment.register_vote(managed_user, 'yes')
+    set_investment_ballots(@investment)
     set_budget_investment_votes(@investment)
   end
 
@@ -41,6 +45,13 @@ class Management::Budgets::InvestmentsController < Management::BaseController
   end
 
   private
+
+    def set_investment_ballots(investments)
+      @investment_ballots = {}
+      Budget.where(id: Array.wrap(investments).map(&:budget_id).uniq).each do |budget|
+        @investment_ballots[budget] = Budget::Ballot.where(user: current_user, budget: budget).first_or_create
+      end
+    end
 
     def set_budget_investment
       @investment = Budget::Investment.find(params[:id])
