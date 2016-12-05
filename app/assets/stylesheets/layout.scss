@@ -366,6 +366,10 @@ header {
       text-decoration: underline;
     }
   }
+
+  ul {
+    margin-bottom: 0;
+  }
 }
 
 .subnavigation {
@@ -509,7 +513,7 @@ footer {
   p {
     font-size: $small-font-size;
 
-    .info a {
+    &.info a {
       text-decoration: underline;
     }
   }
@@ -546,6 +550,7 @@ footer {
 
 .subfooter {
   border-top: 1px solid $text-light;
+  font-size: $small-font-size;
   padding-top: $line-height/2;
 }
 
@@ -577,7 +582,7 @@ footer {
   }
 }
 
-h3.sidebar-title {
+h2.sidebar-title {
   border-top: 2px solid $brand;
   display: inline-block;
   font-size: rem-calc(16);
