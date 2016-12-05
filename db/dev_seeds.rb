@@ -51,6 +51,9 @@ admin.create_administrator
 moderator = create_user('mod@consul.dev', 'mod')
 moderator.create_moderator
 
+manager = create_user('manager@consul.dev', 'manager')
+manager.create_manager
+
 valuator = create_user('valuator@consul.dev', 'valuator')
 valuator.create_valuator
 
