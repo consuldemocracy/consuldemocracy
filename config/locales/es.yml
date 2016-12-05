@@ -426,6 +426,7 @@ es:
     check_none: Ninguno
     collective: Colectivo
     flag: Denunciar como inapropiado
+    hide: Ocultar
     print:
       print_button: Imprimir esta información
     show: Mostrar
