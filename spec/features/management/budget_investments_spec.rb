@@ -143,7 +143,7 @@ feature 'Budget Investments' do
       click_link "Support Budget Investments"
 
       within("#budget-investments") do
-        find('.in-favor a').click
+        find('.js-in-favor a').click
 
         expect(page).to have_content "1 support"
         expect(page).to have_content "You have already supported this. Share it!"
@@ -163,7 +163,7 @@ feature 'Budget Investments' do
         click_link budget_investment.title
       end
 
-      find('.in-favor a').click
+      find('.js-in-favor a').click
       expect(page).to have_content "1 support"
       expect(page).to have_content "You have already supported this. Share it!"
       expect(current_path).to eq(management_budgets_investment_path(budget_investment))
