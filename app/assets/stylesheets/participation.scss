@@ -360,6 +360,13 @@
       font-size: rem-calc(15);
       margin-bottom: rem-calc(15);
     }
+
+    &.tags, &.geozone {
+
+      li {
+        margin-bottom: 0;
+      }
+    }
   }
 
   .author-photo {
