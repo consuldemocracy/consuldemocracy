@@ -383,7 +383,7 @@
 
   aside {
 
-    h3 {
+    h2 {
       border-top: 2px solid $brand;
       display: inline-block;
       font-size: rem-calc(16);
@@ -844,10 +844,14 @@
   }
 
   p {
-    margin-bottom: 0;
 
     &.title {
       color: #FFD200;
+    }
+
+    &.title-date {
+      font-size: rem-calc(24);
+      font-weight: bold;
     }
   }
 
