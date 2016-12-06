@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161206131125) do
+ActiveRecord::Schema.define(version: 20161206132126) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -337,9 +337,12 @@ ActiveRecord::Schema.define(version: 20161206131125) do
   add_index "poll_questions", ["tsv"], name: "index_poll_questions_on_tsv", using: :gin
 
   create_table "poll_voters", force: :cascade do |t|
-    t.integer "booth_id"
-    t.string  "document_number"
-    t.string  "document_type"
+    t.string   "document_number"
+    t.string   "document_type"
+    t.integer  "booth_assignment_id", null: false
+    t.integer  "poll_id",             null: false
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
   end
 
   create_table "polls", force: :cascade do |t|

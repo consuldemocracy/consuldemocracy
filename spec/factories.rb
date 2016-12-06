@@ -309,11 +309,11 @@ FactoryGirl.define do
 
   factory :poll_officer_assignment, class: 'Poll::OfficerAssignment' do
     association :officer, factory: :poll_officer
-    association :booth_assignment,   factory: :poll_booth_assignment
+    association :booth_assignment, factory: :poll_booth_assignment
   end
 
   factory :poll_voter, class: 'Poll::Voter' do
-    association :booth, factory: :budget_booth
+    association :booth_assignment, factory: :poll_booth_assignment
 
     trait :valid_document do
       document_type   "1"

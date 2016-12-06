@@ -5,5 +5,6 @@ class Poll
 
     has_many :officer_assignments, class_name: "Poll::OfficerAssignment", dependent: :destroy
     has_many :officers, through: :officer_assignments
+    has_many :voters
   end
 end

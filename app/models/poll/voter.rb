@@ -1,10 +1,13 @@
 class Poll
   class Voter < ActiveRecord::Base
-    belongs_to :booth
-    delegate :poll, to: :booth
+    belongs_to :booth_assignment
+    delegate :poll, to: :booth_assignment
 
+    validates :booth_assignment, presence: true
     validate :in_census
     validate :has_not_voted
+
+    before_create :assign_poll
 
     def in_census
       errors.add(:document_number, :not_in_census) unless census_api_response.valid?
@@ -19,11 +22,15 @@ class Poll
     end
 
     def has_voted?
-      poll.voters.where(document_number: document_number, document_type: document_type).exists?
+      poll.document_has_voted?(document_number, document_type)
     end
 
     def name
       @census.name
+    end
+
+    def assign_poll
+      poll_id = booth_assignment.poll_id
     end
 
   end
