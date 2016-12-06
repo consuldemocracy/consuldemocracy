@@ -12,6 +12,11 @@
 
       <div class="row">
         <div class="small-12 column">
+          <%= f.label :heading_id,  t("budget.investments.form.heading") %>
+          <%= f.select :heading_id, budget_heading_select_options(@budget), {include_blank: t("budget.headings.none"), label: false} %>
+        </div>
+
+        <div class="small-12 column">
           <%= f.label :title, t("budget.investments.form.title") %>
           <%= f.text_field :title, maxlength: SpendingProposal.title_max_length, placeholder: t("budget.investments.form.title"), label: false %>
         </div>
@@ -28,10 +33,7 @@
           <%= f.text_field :external_url, placeholder: t("budget.investments.form.external_url"), label: false %>
         </div>
 
-        <div class="small-12 column">
-          <%= f.label :heading_id,  t("budget.investments.form.heading") %>
-          <%= f.select :heading_id, multiple_budgets_heading_select_options(@headings), {include_blank: t("budget.headings.none"), label: false} %>
-        </div>
+
 
         <div class="small-12 column">
           <%= f.label :terms_of_service do %>

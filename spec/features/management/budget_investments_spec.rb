@@ -4,8 +4,8 @@ feature 'Budget Investments' do
 
   background do
     login_as_manager
-    budget = create(:budget, phase: 'accepting', name: "2016")
-    group = create(:budget_group, budget: budget, name: 'Whole city')
+    @budget = create(:budget, phase: 'accepting', name: "2016")
+    group = create(:budget_group, budget: @budget, name: 'Whole city')
     @heading = create(:budget_heading, group: group, name: "Health")
   end
 
@@ -17,15 +17,16 @@ feature 'Budget Investments' do
       login_managed_user(user)
 
       click_link "Create budget investment"
+      click_link "Create New Investment"
 
       within(".account-info") do
         expect(page).to have_content "Identified as"
-        expect(page).to have_content "#{user.username}"
-        expect(page).to have_content "#{user.email}"
-        expect(page).to have_content "#{user.document_number}"
+        expect(page).to have_content user.username
+        expect(page).to have_content user.email
+        expect(page).to have_content user.document_number
       end
 
-      select "2016 - Whole city - Health", from: 'budget_investment_heading_id'
+      select "Whole city: Health", from: 'budget_investment_heading_id'
       fill_in 'budget_investment_title', with: 'Build a park in my neighborhood'
       fill_in 'budget_investment_description', with: 'There is no parks here...'
       fill_in 'budget_investment_external_url', with: 'http://moarparks.com'
@@ -42,9 +43,7 @@ feature 'Budget Investments' do
       expect(page).to have_content 'There is no parks here...'
       expect(page).to have_content 'http://moarparks.com'
       expect(page).to have_content user.name
-      expect(page).to have_content I18n.l(Budget::Investment.last.created_at.to_date)
-
-      expect(current_path).to eq(management_budgets_investment_path(Budget::Investment.last))
+      expect(page).to have_content I18n.l(@budget.created_at.to_date)
     end
 
     scenario "Should not allow unverified users to create budget investments" do
@@ -70,14 +69,14 @@ feature 'Budget Investments' do
       fill_in "search", with: "what you got"
       click_button "Search"
 
-      expect(current_path).to eq(management_budgets_investments_path)
+      expect(current_path).to eq(management_budget_investments_path)
 
       within("#budget-investments") do
         expect(page).to have_css('.budget-investment', count: 1)
         expect(page).to have_content(budget_investment1.title)
         expect(page).to_not have_content(budget_investment2.title)
-        expect(page).to have_css("a[href='#{management_budgets_investment_path(budget_investment1)}']", text: budget_investment1.title)
-        expect(page).to have_css("a[href='#{management_budgets_investment_path(budget_investment1)}']", text: budget_investment1.description)
+        expect(page).to have_css("a[href='#{management_budget_investment_path(budget_investment1)}']", text: budget_investment1.title)
+        expect(page).to have_css("a[href='#{management_budget_investment_path(budget_investment1)}']", text: budget_investment1.description)
       end
     end
 
@@ -93,14 +92,14 @@ feature 'Budget Investments' do
       fill_in "search", with: "Area 52"
       click_button "Search"
 
-      expect(current_path).to eq(management_budgets_investments_path)
+      expect(current_path).to eq(management_budget_investments_path)
 
       within("#budget-investments") do
         expect(page).to have_css('.budget-investment', count: 1)
         expect(page).to_not have_content(budget_investment1.title)
         expect(page).to have_content(budget_investment2.title)
-        expect(page).to have_css("a[href='#{management_budgets_investment_path(budget_investment2)}']", text: budget_investment2.title)
-        expect(page).to have_css("a[href='#{management_budgets_investment_path(budget_investment2)}']", text: budget_investment2.description)
+        expect(page).to have_css("a[href='#{management_budget_investment_path(budget_investment2)}']", text: budget_investment2.title)
+        expect(page).to have_css("a[href='#{management_budget_investment_path(budget_investment2)}']", text: budget_investment2.description)
       end
     end
   end
@@ -114,7 +113,7 @@ feature 'Budget Investments' do
 
     click_link "Support Budget Investments"
 
-    expect(current_path).to eq(management_budgets_investments_path)
+    expect(current_path).to eq(management_budget_investments_path)
 
     within(".account-info") do
       expect(page).to have_content "Identified as"
@@ -125,10 +124,10 @@ feature 'Budget Investments' do
 
     within("#budget-investments") do
       expect(page).to have_css('.budget-investment', count: 2)
-      expect(page).to have_css("a[href='#{management_budgets_investment_path(budget_investment1)}']", text: budget_investment1.title)
-      expect(page).to have_css("a[href='#{management_budgets_investment_path(budget_investment1)}']", text: budget_investment1.description)
-      expect(page).to have_css("a[href='#{management_budgets_investment_path(budget_investment2)}']", text: budget_investment2.title)
-      expect(page).to have_css("a[href='#{management_budgets_investment_path(budget_investment2)}']", text: budget_investment2.description)
+      expect(page).to have_css("a[href='#{management_budget_investment_path(budget_investment1)}']", text: budget_investment1.title)
+      expect(page).to have_css("a[href='#{management_budget_investment_path(budget_investment1)}']", text: budget_investment1.description)
+      expect(page).to have_css("a[href='#{management_budget_investment_path(budget_investment2)}']", text: budget_investment2.title)
+      expect(page).to have_css("a[href='#{management_budget_investment_path(budget_investment2)}']", text: budget_investment2.description)
     end
   end
 
@@ -148,7 +147,7 @@ feature 'Budget Investments' do
         expect(page).to have_content "1 support"
         expect(page).to have_content "You have already supported this. Share it!"
       end
-      expect(current_path).to eq(management_budgets_investments_path)
+      expect(current_path).to eq(management_budget_investments_path)
     end
 
     scenario 'Voting budget investments on behalf of someone in show view', :js do
@@ -166,7 +165,7 @@ feature 'Budget Investments' do
       find('.js-in-favor a').click
       expect(page).to have_content "1 support"
       expect(page).to have_content "You have already supported this. Share it!"
-      expect(current_path).to eq(management_budgets_investment_path(budget_investment))
+      expect(current_path).to eq(management_budget_investment_path(budget_investment))
     end
 
     scenario "Should not allow unverified users to vote proposals" do
