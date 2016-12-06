@@ -121,8 +121,8 @@
 
       <aside class="small-12 medium-3 column">
         <div class="sidebar-divider"></div>
-        <h3><%= t("votes.supports") %></h3>
-        <div id="<%= dom_id(@proposal) %>_votes">
+        <h2><%= t("votes.supports") %></h2>
+        <div id="<%= dom_id(@proposal) %>_votes" class="supports text-center">
           <% if @proposal.successfull? %>
             <p>
               <%= t("proposal_ballots.successfull",
@@ -141,7 +141,7 @@
         </div>
 
         <div id="social-share" class="sidebar-divider"></div>
-        <h3><%= t("proposals.show.share") %></h3>
+        <h2><%= t("proposals.show.share") %></h2>
         <div class="social-share-full">
           <%= social_share_button_tag("#{@proposal.title} #{setting['twitter_hashtag']}") %>
           <% if browser.device.mobile? %>

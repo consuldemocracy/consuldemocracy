@@ -41,13 +41,13 @@
 
   <div class="subfooter row">
     <div class="small-12 medium-8 column">
-      <p>
-        <%= t("layouts.footer.copyright", year: Time.current.year) %>&nbsp;|&nbsp;
-        <%= link_to t("layouts.footer.more_info"), page_path('more_information') %>&nbsp;|&nbsp;
-        <%= link_to t("layouts.footer.privacy"), page_path('privacy') %>&nbsp;|&nbsp;
-        <%= link_to t("layouts.footer.conditions"), page_path('conditions') %>&nbsp;|&nbsp;
-        <%= link_to t("layouts.footer.accessibility"), page_path('accessibility') %>
-      </p>
+      <%= t("layouts.footer.copyright", year: Time.current.year) %>&nbsp;|
+      <ul class="no-bullet inline-block">
+        <li class="inline-block"><%= link_to t("layouts.footer.more_info"), page_path('more_information') %>&nbsp;|</li>
+        <li class="inline-block"><%= link_to t("layouts.footer.privacy"), page_path('privacy') %>&nbsp;|</li>
+        <li class="inline-block"><%= link_to t("layouts.footer.conditions"), page_path('conditions') %>&nbsp;|</li>
+        <li class="inline-block"><%= link_to t("layouts.footer.accessibility"), page_path('accessibility') %></li>
+      </ul>
     </div>
 
     <div class="small-12 medium-4 column social">

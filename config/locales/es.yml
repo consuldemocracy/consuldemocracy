@@ -227,6 +227,7 @@ es:
       transparency_url: http://www.madrid.es/portaldetransparencia
     header:
       administration: Administrar
+      available_locales: Idiomas disponibles
       debates: Debates
       external_link_blog: Blog
       external_link_opendata: Datos abiertos
@@ -477,6 +478,7 @@ es:
       minutes: Minutos
       seconds: Segundos
     flag: Denunciar como inapropiado
+    hide: Ocultar
     print:
       print_button: Imprimir esta información
     show: Mostrar
