@@ -14,10 +14,11 @@ class Budget < ActiveRecord::Base
   has_many :groups, dependent: :destroy
   has_many :headings, through: :groups
 
-  scope :open,      -> { where.not(phase: "finished") }
+  scope :current,   -> { where.not(phase: "finished") }
   scope :finished,  -> { where(phase: "finished") }
   scope :valuating, -> { where(valuating: true) }
   scope :accepting, -> { where(phase: "accepting") }
+  scope :balloting, -> { where(phase: "balloting") }
 
   def on_hold?
     phase == "on_hold"
@@ -41,6 +42,10 @@ class Budget < ActiveRecord::Base
 
   def heading_price(heading)
     heading_ids.include?(heading.id) ? heading.price : -1
+  end
+
+  def translated_phase
+    I18n.t "budget.phase.#{phase}"
   end
 
   def formatted_amount(amount)
