@@ -286,8 +286,13 @@ Rails.application.routes.draw do
       get :print, on: :collection
     end
 
-    namespace :budgets do
-      resources :investments, only: [:index, :new, :create, :show] do
+    resources :budgets, only: :index do
+      collection do
+        get :create_investments
+        get :support_investments
+        get :print_investments
+      end
+      resources :investments, only: [:index, :new, :create, :show], controller: 'budgets/investments' do
         post :vote, on: :member
         get :print, on: :collection
       end

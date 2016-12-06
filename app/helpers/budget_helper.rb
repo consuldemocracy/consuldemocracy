@@ -7,7 +7,7 @@ module BudgetHelper
   def namespaced_budget_investment_path(investment, options={})
     case namespace
     when "management::budgets"
-      management_budgets_investment_path(investment, options)
+      management_budget_investment_path(investment, options)
     else
       budget_investment_path(investment, options.merge(budget_id: investment.budget_id))
     end
