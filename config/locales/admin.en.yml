@@ -186,7 +186,7 @@ en:
         booths_title: "List of booths"
         name: "Name"
         location: "Location"
-        officers: "Officers"
+        email: "Email"
     questions:
       index:
         title: "Questions"

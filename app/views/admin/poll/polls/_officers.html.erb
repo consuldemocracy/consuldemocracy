@@ -11,28 +11,18 @@
       <table>
         <thead>
           <th><%= t("admin.polls.show.name") %></th>
-          <th><%= t("admin.polls.show.location") %></th>
-          <th><%= t("admin.polls.show.officers") %></th>
-          <th>&nbsp;</th>
+          <th><%= t("admin.polls.show.email") %></th>
         </thead>
         <tbody>
           <% @poll.officers.each do |officer| %>
             <tr id="officer_<%= officer.id %>" class="officer">
               <td>
                 <strong>
-                  <%= link_to officer.name, admin_poll_officer_path(@poll, booth) %>
+                  <%= officer.name %>
                 </strong>
               </td>
               <td>
-                <%= officer.name %>
-              </td>
-              <td>
-                N <%= t("admin.booths.index.officers") %>
-              </td>
-              <td class="text-right">
-                <%= link_to t("admin.actions.edit"),
-                            edit_admin_poll_officer_path(@poll, officer),
-                            class: "button hollow" %>
+                <%= officer.email %>
               </td>
             </tr>
           <% end %>

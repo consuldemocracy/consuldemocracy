@@ -186,7 +186,7 @@ es:
         booths_title: "Listado de urnas"
         name: "Nombre"
         location: "Ubicación"
-        officers: "Presidentes de mesa"
+        email: "Email"
     questions:
       index:
         title: "Preguntas ciudadanas"
