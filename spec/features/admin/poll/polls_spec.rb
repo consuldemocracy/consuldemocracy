@@ -7,21 +7,24 @@ feature 'Admin polls' do
     login_as(admin.user)
   end
 
-  scenario 'Index empty' do
+  scenario 'Index empty', :js do
     visit admin_root_path
-    within('#side_menu') do
+
+    click_link "Polls"
+    within('#polls_menu') do
       click_link "Polls"
     end
 
     expect(page).to have_content "There are no polls"
   end
 
-  scenario 'Index' do
+  scenario 'Index', :js do
     3.times { create(:poll) }
 
     visit admin_root_path
 
-    within('#side_menu') do
+    click_link "Polls"
+    within('#polls_menu') do
       click_link "Polls"
     end
 
@@ -84,18 +87,20 @@ feature 'Admin polls' do
 
     context "Poll show" do
 
-      scenario "No booths" do
+      scenario "No booths", :js do
         poll = create(:poll)
         visit admin_poll_path(poll)
+        click_link "Booths (0)"
 
         expect(page).to have_content "There are no booths in this poll."
       end
 
-      scenario "Booth list" do
+      scenario "Booth list", :js do
         poll = create(:poll)
-        3.times { create(:poll_booth, poll: poll) }
+        3.times { create(:poll_booth, polls: [poll]) }
 
         visit admin_poll_path(poll)
+        click_link "Booths (3)"
 
         expect(page).to have_css ".booth", count: 3
 
@@ -107,16 +112,6 @@ feature 'Admin polls' do
           end
         end
         expect(page).to_not have_content "There are no booths"
-      end
-
-      scenario "Add booth" do
-        poll = create(:poll)
-        visit admin_poll_path(poll)
-
-        click_link "Add booth"
-
-        expect(current_path).to eq(new_admin_poll_booth_path(poll))
-        expect(page).to have_content poll.name
       end
     end
   end

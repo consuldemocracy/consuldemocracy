@@ -3,27 +3,28 @@
     <%= link_to "Añadir pregunta",
               new_admin_question_path(poll_id: @poll.id),
               class: "button success" %>
+
+    <% if @poll.questions.empty? %>
+      <div class="callout primary text-center">
+        <%= t('admin.polls.show.no_questions') %>
+      </div>
+    <% else %>
+      <table>
+        <% @poll.questions.each do |question| %>
+          <tr id="<%= dom_id(question) %>">
+            <td><%= link_to question.title, admin_question_path(question) %></td>
+            <td class="text-right">
+              <%= link_to t('shared.edit'),
+                          edit_admin_question_path(question),
+                          class: "button hollow" %>
+              <%= link_to t('shared.delete'),
+                          admin_question_path(question),
+                          class: "button hollow alert",
+                          method: :delete %>
+            </td>
+          </tr>
+        <% end %>
+      </table>
+    <% end %>
   </div>
-  <% if @poll.questions.count == 0 %>
-    <div class="callout primary text-center">
-      <%= t('admin.questions.index.no_questions') %>
-    </div>
-  <% else %>
-    <table>
-      <% @poll.questions.each do |question| %>
-        <tr id="<%= dom_id(question) %>">
-          <td><%= link_to question.title, admin_question_path(question) %></td>
-          <td class="text-right">
-            <%= link_to t('shared.edit'),
-                        edit_admin_question_path(question),
-                        class: "button hollow" %>
-            <%= link_to t('shared.delete'),
-                        admin_question_path(question),
-                        class: "button hollow alert",
-                        method: :delete %>
-          </td>
-        </tr>
-      <% end %>
-    </table>
-  <% end %>
 </div>

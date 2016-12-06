@@ -59,7 +59,7 @@
           <span class="icon-checkmark-circle"></span>
           <strong><%= t("admin.menu.title_polls") %></strong>
         </a>
-        <ul <%= "class=is-active" if menu_polls %>>
+        <ul id="polls_menu" <%= "class=is-active" if menu_polls %>>
           <li <%= 'class=active' if controller_name == 'polls' %>>
             <%= link_to t('admin.menu.polls'), admin_polls_path %>
           </li>

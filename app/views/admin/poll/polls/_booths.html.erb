@@ -12,12 +12,25 @@
         <thead>
           <th><%= t("admin.polls.show.name") %></th>
           <th><%= t("admin.polls.show.location") %></th>
-          <th><%= t("admin.polls.show.officers") %></th>
           <th>&nbsp;</th>
         </thead>
         <tbody>
           <% @poll.booths.each do |booth| %>
-            <%= render partial: "admin/poll/booths/booth", locals: { booth: booth } %>
+            <tr id="booth_<%= booth.id %>" class="booth">
+              <td>
+                <strong>
+                  <%= link_to booth.name, admin_booth_path(booth) %>
+                </strong>
+              </td>
+              <td>
+                <%= booth.location %>
+              </td>
+              <td class="text-right">
+                <%= link_to t("admin.polls.show.remove_booth"),
+                            "#",
+                            class: "button hollow alert" %>
+              </td>
+            </tr>
           <% end %>
         </tbody>
       </table>

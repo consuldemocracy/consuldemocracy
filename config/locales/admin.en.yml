@@ -179,7 +179,10 @@ en:
         booths_tab: Booths
         officers_tab: Officers
         no_booths: "There are no booths in this poll."
+        no_questions: "There are no questions assigned to this poll yet."
+        no_officers: "There are no officers assigned to this poll."
         add_booth: "Add booth"
+        remove_booth: "Remove booth from poll"
         booths_title: "List of booths"
         name: "Name"
         location: "Location"
