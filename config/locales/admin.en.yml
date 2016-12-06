@@ -175,6 +175,9 @@ en:
         starts_at: "Open date"
         ends_at: "Close date"
       show:
+        questions_tab: Questions
+        booths_tab: Booths
+        officers_tab: Officers
         no_booths: "There are no booths in this poll."
         add_booth: "Add booth"
         booths_title: "List of booths"

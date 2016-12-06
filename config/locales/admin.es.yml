@@ -175,6 +175,9 @@ es:
         starts_at: "Fecha de apertura"
         ends_at: "Fecha de cierre"
       show:
+        questions_tab: Preguntas
+        booths_tab: Urnas
+        officers_tab: Presidentes de mesa
         no_booths: "No hay urnas en esta votación."
         add_booth: "Añadir urna"
         booths_title: "Listado de urnas"
