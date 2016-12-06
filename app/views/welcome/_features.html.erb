@@ -4,7 +4,7 @@
     <div class="small-12 medium-6 column text-center" data-equalizer-watch>
       <div class="panel proposals">
         <%= image_tag "welcome_featured_proposals.png", alt: "", class: "margin-bottom" %>
-        <h3><%= t('welcome.featured.proposals.title') %></h3>
+        <h2><%= t('welcome.featured.proposals.title') %></h2>
         <p><%= t('welcome.featured.proposals.text') %></p>
         <%= link_to t('welcome.featured.proposals.link'), proposals_path, class: "button" %>
       </div>
@@ -13,7 +13,7 @@
     <div class="small-12 medium-6 column text-center" data-equalizer-watch>
       <div class="panel budget">
         <%= image_tag "welcome_featured_sps.png", alt: "", class: "margin-bottom" %>
-        <h3><%= t('welcome.featured.spending_proposals.title') %></h3>
+        <h2><%= t('welcome.featured.spending_proposals.title') %></h2>
         <p><%= t('welcome.featured.spending_proposals.text') %></p>
         <% if setting["feature.spending_proposal_features.final_voting_allowed"].present? %>
           <%= link_to t('welcome.featured.spending_proposals.link'), participatory_budget_path, class: "button" %>

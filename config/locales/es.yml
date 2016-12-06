@@ -235,6 +235,7 @@ es:
       external_link_transparency: Transparencia
       external_link_transparency_url: http://www.madrid.es/portaldetransparencia
       help_translate: Ayúdanos a traducir
+      help_translate_info: Cómo ayudar
       locale: 'Idioma:'
       logo: Madrid
       management: Gestión
@@ -249,7 +250,7 @@ es:
         other: Tienes %{count} notificaciones nuevas
       no_notifications: No tienes notificaciones nuevas
       open: abierto
-      open_city_slogan_html: En Madrid sus habitantes, <span>debaten sobre temas</span> que les preocupan, <span>proponen ideas</span> para mejorar sus vidas y <span>deciden entre todas y todos</span> las que se llevan a cabo.
+      open_city_slogan_html: En Madrid sus habitantes, <strong>debaten sobre temas</strong> que les preocupan, <strong>proponen ideas</strong> para mejorar sus vidas y <strong>deciden entre todas y todos</strong> las que se llevan a cabo.
       open_city_slogan_short_html: "Blas Bonilla ha hecho sus propuestas en <u>decide.madrid.es </u><br>¡Regístrate y haz las tuyas!"
       open_city_title:  '"En Madrid es la gente la que decide cómo es la ciudad en la que quiere vivir"'
       open_gov: Gobierno %{open}
