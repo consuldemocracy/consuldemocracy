@@ -541,17 +541,23 @@ table {
   background: #2D3E50;
   color: white;
 
-  .column {
-    border-top: 1px solid $border;
-    padding-bottom: $line-height/2;
-    padding-top: $line-height/2;
+  ul {
+    border-left: 1px solid $border;
+    border-right: 1px solid $border;
+    margin-bottom: 0;
 
-    @include breakpoint(medium) {
-      border-right: 1px solid $border;
-      border-top: 0;
+    li {
+      border-top: 1px solid $border;
+      padding: $line-height/2 $line-height;
 
-      &:first-child {
-        border-left: 1px solid $border;
+      @include breakpoint(medium) {
+        border-right: 1px solid $border;
+        border-top: 0;
+        display: inline-block;
+
+        &:last-child {
+          border-right: 0;
+        }
       }
     }
   }
