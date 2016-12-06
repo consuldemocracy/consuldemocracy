@@ -43,6 +43,8 @@ module Abilities
 
       can [:read, :update, :destroy, :summary], SpendingProposal
       can [:search, :edit, :update, :create, :index, :destroy], Banner
+
+      can [:manage], ::Legislation::Process
     end
   end
 end

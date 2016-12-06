@@ -117,6 +117,8 @@ ignore_unused:
   - 'admin.organizations.index.filter*'
   - 'admin.users.index.filter*'
   - 'admin.activity.show.filter*'
+  - 'admin.legislation.processes.index.filter*'
+  - 'admin.legislation.processes.*.submit_button'
   - 'admin.comments.index.hidden_*'
   - 'admin.settings.index.features.*'
   - 'moderation.comments.index.filter*'

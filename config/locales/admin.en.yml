@@ -82,6 +82,30 @@ en:
           with_confirmed_hide: Confirmed
           without_confirmed_hide: Pending
         title: Hidden debates
+    legislation:
+      processes:
+        edit:
+          back: Back
+          submit_button: Save changes
+        errors:
+          form:
+            error: Error
+        index:
+          create: New process
+          delete: Delete
+          edit: Edit
+          title: Legislation processess
+          filters:
+            open: Open
+            next: Next
+            past: Past
+            all: All
+        new:
+          back: Back
+          title: Create new collaborative legislation process
+          submit_button: Create process
+        process:
+          title: Collaborative legislation process title
     managers:
       index:
         title: Managers
@@ -110,6 +134,7 @@ en:
       settings: Configuration settings
       spending_proposals: Spending proposals
       stats: Statistics
+      legislation: Collaborative Legislation
     moderators:
       index:
         title: Moderators

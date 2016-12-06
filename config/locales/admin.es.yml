@@ -80,6 +80,30 @@ es:
           with_confirmed_hide: Confirmados
           without_confirmed_hide: Pendientes
         title: Debates ocultos
+    legislation:
+      processes:
+        edit:
+          back: Volver
+          submit_button: Guardar cambios
+        errors:
+          form:
+            error: Error
+        index:
+          create: Nuevo proceso
+          delete: Borrar
+          edit: Editar
+          title: Procesos de legislación colaborativa
+          filters:
+            open: Abiertos
+            next: Próximamente
+            past: Pasados
+            all: Todos
+        new:
+          back: Volver
+          title: Crear nuevo proceso de legislación colaborativa
+          submit_button: Crear proceso
+        process:
+          title: Título del proceso de legislación colaborativa
     managers:
       index:
         title: Gestores
@@ -108,6 +132,7 @@ es:
       settings: Configuración global
       spending_proposals: Propuestas de inversión
       stats: Estadísticas
+      legislation: Legislación colaborativa
     moderators:
       index:
         title: Moderadores
