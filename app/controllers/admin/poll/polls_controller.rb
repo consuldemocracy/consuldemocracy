@@ -5,6 +5,7 @@ class Admin::Poll::PollsController < Admin::BaseController
   end
 
   def show
+    @poll = Poll.includes(:questions, :booths, :officers).find(params[:id])
   end
 
   def new
