@@ -17,7 +17,9 @@ feature 'Budget Investments' do
       login_managed_user(user)
 
       click_link "Create budget investment"
-      click_link "Create New Investment"
+      within "#budget_#{@budget.id}" do
+        click_link "Create New Investment"
+      end
 
       within(".account-info") do
         expect(page).to have_content "Identified as"
@@ -58,88 +60,96 @@ feature 'Budget Investments' do
 
   context "Searching" do
     scenario "by title" do
-      budget_investment1 = create(:budget_investment, title: "Show me what you got")
-      budget_investment2 = create(:budget_investment, title: "Get Schwifty")
+      budget_investment1 = create(:budget_investment, budget: @budget, title: "Show me what you got")
+      budget_investment2 = create(:budget_investment, budget: @budget, title: "Get Schwifty")
 
       user = create(:user, :level_two)
       login_managed_user(user)
 
       click_link "Support Budget Investments"
+      within "#budget_#{@budget.id}" do
+        click_link "Support Budget Investments"
+      end
 
       fill_in "search", with: "what you got"
       click_button "Search"
-
-      expect(current_path).to eq(management_budget_investments_path)
 
       within("#budget-investments") do
         expect(page).to have_css('.budget-investment', count: 1)
         expect(page).to have_content(budget_investment1.title)
         expect(page).to_not have_content(budget_investment2.title)
-        expect(page).to have_css("a[href='#{management_budget_investment_path(budget_investment1)}']", text: budget_investment1.title)
-        expect(page).to have_css("a[href='#{management_budget_investment_path(budget_investment1)}']", text: budget_investment1.description)
+        expect(page).to have_css("a[href='#{management_budget_investment_path(@budget, budget_investment1)}']", text: budget_investment1.title)
+        expect(page).to have_css("a[href='#{management_budget_investment_path(@budget, budget_investment1)}']", text: budget_investment1.description)
       end
     end
 
     scenario "by heading" do
-      budget_investment1 = create(:budget_investment, title: "Hey ho", heading: create(:budget_heading, name: "District 9"))
-      budget_investment2 = create(:budget_investment, title: "Let's go", heading: create(:budget_heading, name: "Area 52"))
+      budget_investment1 = create(:budget_investment, budget: @budget, title: "Hey ho", heading: create(:budget_heading, name: "District 9"))
+      budget_investment2 = create(:budget_investment, budget: @budget, title: "Let's go", heading: create(:budget_heading, name: "Area 52"))
 
       user = create(:user, :level_two)
       login_managed_user(user)
 
       click_link "Support Budget Investments"
+      within "#budget_#{@budget.id}" do
+        click_link "Support Budget Investments"
+      end
 
       fill_in "search", with: "Area 52"
       click_button "Search"
-
-      expect(current_path).to eq(management_budget_investments_path)
 
       within("#budget-investments") do
         expect(page).to have_css('.budget-investment', count: 1)
         expect(page).to_not have_content(budget_investment1.title)
         expect(page).to have_content(budget_investment2.title)
-        expect(page).to have_css("a[href='#{management_budget_investment_path(budget_investment2)}']", text: budget_investment2.title)
-        expect(page).to have_css("a[href='#{management_budget_investment_path(budget_investment2)}']", text: budget_investment2.description)
+        expect(page).to have_css("a[href='#{management_budget_investment_path(@budget, budget_investment2)}']", text: budget_investment2.title)
+        expect(page).to have_css("a[href='#{management_budget_investment_path(@budget, budget_investment2)}']", text: budget_investment2.description)
       end
     end
   end
 
   scenario "Listing" do
-    budget_investment1 = create(:budget_investment, title: "Show me what you got")
-    budget_investment2 = create(:budget_investment, title: "Get Schwifty")
+    budget_investment1 = create(:budget_investment, budget: @budget, title: "Show me what you got")
+    budget_investment2 = create(:budget_investment, budget: @budget, title: "Get Schwifty")
 
     user = create(:user, :level_two)
     login_managed_user(user)
 
     click_link "Support Budget Investments"
-
-    expect(current_path).to eq(management_budget_investments_path)
+    within "#budget_#{@budget.id}" do
+      click_link "Support Budget Investments"
+    end
 
     within(".account-info") do
       expect(page).to have_content "Identified as"
-      expect(page).to have_content "#{user.username}"
-      expect(page).to have_content "#{user.email}"
-      expect(page).to have_content "#{user.document_number}"
+      expect(page).to have_content user.username
+      expect(page).to have_content user.email
+      expect(page).to have_content user.document_number
     end
 
     within("#budget-investments") do
       expect(page).to have_css('.budget-investment', count: 2)
-      expect(page).to have_css("a[href='#{management_budget_investment_path(budget_investment1)}']", text: budget_investment1.title)
-      expect(page).to have_css("a[href='#{management_budget_investment_path(budget_investment1)}']", text: budget_investment1.description)
-      expect(page).to have_css("a[href='#{management_budget_investment_path(budget_investment2)}']", text: budget_investment2.title)
-      expect(page).to have_css("a[href='#{management_budget_investment_path(budget_investment2)}']", text: budget_investment2.description)
+      expect(page).to have_css("a[href='#{management_budget_investment_path(@budget, budget_investment1)}']", text: budget_investment1.title)
+      expect(page).to have_css("a[href='#{management_budget_investment_path(@budget, budget_investment1)}']", text: budget_investment1.description)
+      expect(page).to have_css("a[href='#{management_budget_investment_path(@budget, budget_investment2)}']", text: budget_investment2.title)
+      expect(page).to have_css("a[href='#{management_budget_investment_path(@budget, budget_investment2)}']", text: budget_investment2.description)
     end
   end
 
-  context "Voting" do
+  context "Supporting" do
 
-    scenario 'Voting budget investments on behalf of someone in index view', :js do
-      budget_investment = create(:budget_investment)
+    scenario 'Supporting budget investments on behalf of someone in index view', :js do
+      budget_investment = create(:budget_investment, budget: @budget)
 
       user = create(:user, :level_two)
       login_managed_user(user)
 
       click_link "Support Budget Investments"
+      within "#budget_#{@budget.id}" do
+        click_link "Support Budget Investments"
+      end
+
+      save_and_open_page
 
       within("#budget-investments") do
         find('.js-in-favor a').click
@@ -147,16 +157,18 @@ feature 'Budget Investments' do
         expect(page).to have_content "1 support"
         expect(page).to have_content "You have already supported this. Share it!"
       end
-      expect(current_path).to eq(management_budget_investments_path)
     end
 
-    scenario 'Voting budget investments on behalf of someone in show view', :js do
-      budget_investment = create(:budget_investment)
+    scenario 'Supporting budget investments on behalf of someone in show view', :js do
+      budget_investment = create(:budget_investment, budget: @budget)
 
       user = create(:user, :level_two)
       login_managed_user(user)
 
       click_link "Support Budget Investments"
+      within "#budget_#{@budget.id}" do
+        click_link "Support Budget Investments"
+      end
 
       within("#budget-investments") do
         click_link budget_investment.title
@@ -165,11 +177,10 @@ feature 'Budget Investments' do
       find('.js-in-favor a').click
       expect(page).to have_content "1 support"
       expect(page).to have_content "You have already supported this. Share it!"
-      expect(current_path).to eq(management_budget_investment_path(budget_investment))
     end
 
     scenario "Should not allow unverified users to vote proposals" do
-      budget_investment = create(:budget_investment)
+      budget_investment = create(:budget_investment, budget: @budget)
 
       user = create(:user)
       login_managed_user(user)
@@ -183,9 +194,12 @@ feature 'Budget Investments' do
   context "Printing" do
 
     scenario 'Printing budget investments' do
-      16.times { create(:budget_investment, geozone_id: nil) }
+      16.times { create(:budget_investment, budget: @budget, geozone_id: nil) }
 
       click_link "Print budget investments"
+      within "#budget_#{@budget.id}" do
+        click_link "Support Budget Investments"
+      end
 
       expect(page).to have_css('.budget-investment', count: 15)
       expect(page).to have_css("a[href='javascript:window.print();']", text: 'Print')
@@ -193,15 +207,18 @@ feature 'Budget Investments' do
 
     scenario "Filtering budget investments by geozone to be printed", :js do
       district_9 = create(:geozone, name: "District Nine")
-      create(:budget_investment, title: 'Change district 9', geozone: district_9, cached_votes_up: 10)
-      create(:budget_investment, title: 'Destroy district 9', geozone: district_9, cached_votes_up: 100)
-      create(:budget_investment, title: 'Nuke district 9', geozone: district_9, cached_votes_up: 1)
-      create(:budget_investment, title: 'Add new districts to the city', geozone_id: nil)
+      create(:budget_investment, budget: @budget, title: 'Change district 9', geozone: district_9, cached_votes_up: 10)
+      create(:budget_investment, budget: @budget, title: 'Destroy district 9', geozone: district_9, cached_votes_up: 100)
+      create(:budget_investment, budget: @budget, title: 'Nuke district 9', geozone: district_9, cached_votes_up: 1)
+      create(:budget_investment, budget: @budget, title: 'Add new districts to the city', geozone_id: nil)
 
       user = create(:user, :level_two)
       login_managed_user(user)
 
       click_link "Print budget investments"
+      within "#budget_#{@budget.id}" do
+        click_link "Support Budget Investments"
+      end
 
       expect(page).to have_content "Budget investments with scope: All city"
 
