@@ -116,4 +116,37 @@ feature 'Admin polls' do
     end
   end
 
+  context "Officers" do
+
+    context "Poll show" do
+
+      scenario "No officers", :js do
+        poll = create(:poll)
+        visit admin_poll_path(poll)
+        click_link "Officers (0)"
+
+        expect(page).to have_content "There are no officers assigned to this poll"
+      end
+
+      scenario "Officer list", :js do
+        poll = create(:poll)
+        booth = create(:poll_booth, polls: [poll])
+
+        visit admin_poll_path(poll)
+        click_link "Officers (3)"
+
+        expect(page).to have_css ".officer", count: 3
+
+        officers = Poll::Officer.all
+        officers.each do |officer|
+          within("#officer_#{officer.id}") do
+            expect(page).to have_content officer.name
+            expect(page).to have_content officer.email
+          end
+        end
+        expect(page).to_not have_content "There are no officers assigned to this poll"
+      end
+    end
+  end
+
 end
