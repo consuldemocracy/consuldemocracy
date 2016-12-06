@@ -1,0 +1,12 @@
+<table>
+<% @budgets.each do |budget| %>
+  <tr>
+    <td><%= budget.name %></td>
+    <td><%= budget.translated_phase %></td>
+    <td align="right">
+      <%= link_to t("management.budgets.vote_investments"),
+                  management_budget_investments_path(budget) %>
+    </td>
+  </tr>
+<% end %>
+</table>

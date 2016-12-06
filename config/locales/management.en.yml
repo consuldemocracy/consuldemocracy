@@ -74,6 +74,10 @@ en:
       create_proposal: Create proposal
       print:
         print_button: Print
+    budgets:
+      create_new_investment: Create New Investment
+      print_investments: Print Budget Investments
+      support_investments: Support Budget Investments
     budget_investments:
       alert:
         unverified_user: User is not verified
