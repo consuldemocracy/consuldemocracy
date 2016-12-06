@@ -1,8 +1,5 @@
 <div class="row">
   <div class="small-12 column">
-    <%= link_to "Añadir pregunta",
-              new_admin_question_path(poll_id: @poll.id),
-              class: "button success" %>
 
     <% if @poll.questions.empty? %>
       <div class="callout primary text-center">
