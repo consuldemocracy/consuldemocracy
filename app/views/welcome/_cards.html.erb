@@ -18,7 +18,7 @@
     <% if @proposal_successfull_exists %>
       <div class="small-12 medium-4 column margin-top">
         <div class="panel dark" data-equalizer-watch>
-          <h2><%= t("cards.proposal_ballots.title") %></h2>
+          <h3><%= t("cards.proposal_ballots.title") %></h3>
           <p class="info-date">
             <span class="icon-calendar"></span>&nbsp;<strong><%= t("cards.proposal_ballots.date_html") %></strong></p>
           <p class="info">
@@ -32,7 +32,7 @@
     <!-- Borrador de Plan de Calidad de Aire y Cambio Climático -->
     <div class="small-12 medium-4 column margin-top">
       <div class="panel" data-equalizer-watch>
-        <h2><%= t("cards.air_quality_plan.title_html") %></h2>
+        <h3><%= t("cards.air_quality_plan.title_html") %></h3>
         <p class="info-date"><span class="icon-calendar"></span>&nbsp;<%= t("cards.air_quality_plan.date_html") %></p>
         <p class="info">
           <%= t("cards.air_quality_plan.text") %>
@@ -44,7 +44,7 @@
     <!-- Remodelación Plaza España -->
     <div class="small-12 medium-4 column margin-top">
       <div class="panel" data-equalizer-watch>
-        <h2><%= t("cards.plaza.title") %></h2>
+        <h3><%= t("cards.plaza.title") %></h3>
         <p class="info-date"><span class="icon-document"></span>&nbsp;<%= t("cards.plaza.date_html") %></p>
         <p class="info">
           <%= t("cards.plaza.text") %>
@@ -56,7 +56,7 @@
     <!-- Rotulación de vías -->
     <div class="small-12 medium-4 column margin-top end">
       <div class="panel" data-equalizer-watch>
-        <h2><%= t("cards.label_streets.title") %></h2>
+        <h3><%= t("cards.label_streets.title") %></h3>
         <p class="info-date"><span class="icon-calendar"></span>&nbsp;<%= t("cards.label_streets.date_html") %></p>
         <p class="info"><%= t("cards.label_streets.text") %></p>
         <%= link_to t("cards.label_streets.button"), label_streets_path, class: "button expanded margin-top" %>

@@ -881,8 +881,13 @@ table.age-groups {
       border-top: 2px solid $border;
     }
 
-    h3, p {
+    p {
       color: white;
+
+      &.title {
+        font-size: rem-calc(24);
+        font-weight: bold;
+      }
     }
 
 
@@ -2325,7 +2330,6 @@ ul.ballot-list {
     background: #fafafa;
 
     h2 {
-      font-size: $line-height;
 
       &.title {
         border-left: 1px solid $brand;
@@ -2345,7 +2349,7 @@ ul.ballot-list {
       &.dark {
         background: #2D3E50;
 
-        h2, p.info-date {
+        h3, p.info-date {
           color: #FFD200;
         }
 
@@ -2388,7 +2392,7 @@ ul.ballot-list {
 
       &.budget {
 
-        h3 {
+        h2 {
           color: $budget;
         }
 
@@ -2399,7 +2403,7 @@ ul.ballot-list {
 
       &.proposals {
 
-        h3 {
+        h2 {
           color: $proposals;
         }
 

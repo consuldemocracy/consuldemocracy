@@ -19,14 +19,14 @@
       <h1 class="margin-bottom">
         <%= t("pages.processes.index.title") %>
       </h1>
-      <span class="label"><%= t("pages.processes.index.featured") %></span>
+      <h2 class="label"><%= t("pages.processes.index.featured") %></h2>
     </div>
 
     <div class="row">
       <div class="small-12 column">
         <div class="small-12 medium-9 column">
           <!-- Rotulación de vías -->
-          <h2><%= t("pages.processes.index.process_12_title") %></h2>
+          <h3><%= t("pages.processes.index.process_12_title") %></h3>
           <p><%= t("pages.processes.index.process_12_description") %></p>
           <div class="small-12 medium-6 large-4">
             <%= link_to t("pages.processes.index.process_12_button"),
@@ -66,6 +66,7 @@
 
         <!-- Procesos abiertos -->
         <div class="tabs-panel is-active" id="panel1v">
+          <h2 class="sr-only"><%= t("pages.processes.menu.open") %></h2>
 
           <!-- Borrador de Plan de Calidad de Aire y Cambio Climático -->
           <div id="air_quality_plan" class="panel">
@@ -77,6 +78,7 @@
 
         <!-- Procesos próximamente -->
         <div class="tabs-panel" id="panel2v">
+          <h2 class="sr-only"><%= t("pages.processes.menu.coming_soon") %></h2>
 
           <!-- Remodelación Plaza España -->
           <div class="panel">
@@ -89,6 +91,7 @@
 
         <!-- Procesos terminados -->
         <div class="tabs-panel" id="panel3v">
+          <h2 class="sr-only"><%= t("pages.processes.menu.finished") %></h2>
 
           <!-- Licencias urbanísticas -->
           <div class="panel">
