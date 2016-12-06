@@ -1,0 +1,38 @@
+<div class="legislation-draft-versions-index row">
+  <div class="small-12 column">
+    <%= link_to admin_legislation_processes_path, class: "back" do %>
+      <span class="icon-angle-left"></span>
+      <%= t("admin.legislation.processes.edit.back") %>
+    <% end %>
+
+    <h1><%= @process.title %></h1>
+
+    <%= render 'admin/legislation/processes/subnav', process: @process, active: 'draft_versions' %>
+
+    <%= link_to t("admin.legislation.draft_versions.index.create"),
+              new_admin_legislation_process_draft_version_path, class: "button float-right" %>
+
+    <h3><%= t("admin.legislation.draft_versions.index.title") %></h3>
+
+    <table>
+      <tr>
+        <th><%= t("admin.legislation.draft_versions.table.title") %></th>
+        <th><%= t("admin.legislation.draft_versions.table.created_at") %></th>
+        <th><%= t("admin.legislation.draft_versions.table.status") %></th>
+        <th><%= t("admin.legislation.draft_versions.table.comments") %></th>
+        <th><%= t("admin.legislation.draft_versions.table.final_version") %></th>
+      </tr>
+      <% @process.draft_versions.each do |draft_version| %>
+        <tr id="<%= dom_id(draft_version) %>">
+          <td>
+            <%= link_to draft_version.title, edit_admin_legislation_process_draft_version_path(@process, draft_version) %>
+          </td>
+          <td><%= draft_version.created_at.to_date %></td>
+          <td><%= draft_version.status %></td>
+          <td><%#= draft_version.comments %></td>
+          <td><%= draft_version.final_version %></td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+</div>

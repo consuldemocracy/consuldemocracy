@@ -1,19 +1,4 @@
 FactoryGirl.define do
-  factory :legislation_process, class: 'Legislation::Process' do
-    title "A collaborative legislation process"
-    description "Description of the process"
-    target "Who will affected by this law?"
-    how_to_participate "You can participate by answering some questions"
-    start_date "2016-11-16"
-    end_date "2016-11-16"
-    debate_start_date "2016-11-16"
-    debate_end_date "2016-11-16"
-    draft_publication_date "2016-11-16"
-    allegations_start_date "2016-11-16"
-    allegations_end_date "2016-11-16"
-    final_publication_date "2016-11-16"
-  end
-
   sequence(:document_number) { |n| "#{n.to_s.rjust(8, '0')}X" }
 
   factory :user do
@@ -356,5 +341,29 @@ FactoryGirl.define do
     body     "How are You doing?"
     association :sender,   factory: :user
     association :receiver, factory: :user
+  end
+
+  factory :legislation_process, class: 'Legislation::Process' do
+    title "A collaborative legislation process"
+    description "Description of the process"
+    target "Who will affected by this law?"
+    how_to_participate "You can participate by answering some questions"
+    start_date "2016-11-16"
+    end_date "2016-11-16"
+    debate_start_date "2016-11-16"
+    debate_end_date "2016-11-16"
+    draft_publication_date "2016-11-16"
+    allegations_start_date "2016-11-16"
+    allegations_end_date "2016-11-16"
+    final_publication_date "2016-11-16"
+  end
+
+  factory :legislation_draft_version, class: 'Legislation::DraftVersion' do
+    process factory: :legislation_process
+    title "Version 1"
+    changelog "What changed in this version"
+    status "draft"
+    final_version false
+    body "Body of the legislation text"
   end
 end

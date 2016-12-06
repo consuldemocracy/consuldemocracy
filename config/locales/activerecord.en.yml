@@ -37,6 +37,9 @@ en:
       legislation/process:
         one: "Process"
         other: "Processes"
+      legislation/draft_versions:
+        one: "Draft version"
+        other: "Draft versions"
     attributes:
       comment:
         body: "Comment"
@@ -86,6 +89,12 @@ en:
         allegations_start_date: Allegations start date
         allegations_end_date: Allegations end date
         final_publication_date: Final result publication date
+      legislation/draft_version:
+        title: Version title
+        body: Text
+        changelog: Changes
+        status: Status
+        final_version: Final version
     errors:
       models:
         user:

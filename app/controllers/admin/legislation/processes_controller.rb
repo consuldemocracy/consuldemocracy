@@ -17,7 +17,6 @@ class Admin::Legislation::ProcessesController < Admin::Legislation::BaseControll
   end
 
   def update
-    @process.assign_attributes(process_params)
     if @process.update(process_params)
       redirect_to admin_legislation_processes_path
     else
