@@ -215,20 +215,13 @@ en:
       new:
         title: "New booth"
         name: "Name"
-        reference: "Reference number"
         location: "Location"
         submit_button: "Create booth"
       edit:
         title: "Edit booth"
-        name: "Name"
-        reference: "Reference number"
-        location: "Location"
         submit_button: "Update booth"
       show:
         location: "Location"
-        assign_officer: "Assign officer"
-        officers_list: "List of officers"
-        no_officers: "There are no officers assigned to this booth"
     officials:
       edit:
         destroy: Remove 'Official' status

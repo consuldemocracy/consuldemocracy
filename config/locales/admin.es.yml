@@ -215,20 +215,13 @@ es:
       new:
         title: "Nueva urna"
         name: "Nombre"
-        reference: "Número de referencia"
         location: "Ubicación"
         submit_button: "Crear urna"
       edit:
         title: "Editar urna"
-        name: "Nombre"
-        reference: "Número de referencia"
-        location: "Ubicación"
         submit_button: "Actualizar urna"
       show:
         location: "Ubicación"
-        assign_officer: "Asignar presidente de mesa"
-        officers_list: "Lista de presidentes de mesa"
-        no_officers: "No hay presidentes de mesa en esta urna."
     officials:
       edit:
         destroy: Eliminar condición de 'Cargo Público'
