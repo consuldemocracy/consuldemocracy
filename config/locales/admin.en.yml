@@ -287,8 +287,8 @@ en:
         editing: Editing geozone
         back: Go back
       new:
-        back: Volver
-        creating: Crear distrito
+        back: Go back
+        creating: Create district
     stats:
       show:
         stats_title: Stats
