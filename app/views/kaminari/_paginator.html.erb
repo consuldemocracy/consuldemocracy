@@ -1,7 +1,7 @@
 <%= paginator.render do -%>
   <div class="pagination-centered">
     <nav>
-      <h1 class="sr-only"><%= t("shared.outline.pagination") %></h1>
+      <h2 class="sr-only"><%= t("shared.outline.pagination") %></h2>
       <ul class="pagination text-center margin-top" aria-label="Pagination">
         <%= first_page_tag unless current_page.first? %>
         <%= prev_page_tag unless current_page.first? %>
