@@ -7,8 +7,6 @@ class Poll
     validate :in_census
     validate :has_not_voted
 
-    before_create :assign_poll
-
     def in_census
       errors.add(:document_number, :not_in_census) unless census_api_response.valid?
     end
@@ -27,10 +25,6 @@ class Poll
 
     def name
       @census.name
-    end
-
-    def assign_poll
-      poll_id = booth_assignment.poll_id
     end
 
   end
