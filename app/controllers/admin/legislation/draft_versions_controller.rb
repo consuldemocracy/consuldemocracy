@@ -7,8 +7,7 @@ class Admin::Legislation::DraftVersionsController < Admin::Legislation::BaseCont
   end
 
   def create
-    @draft_version = @process.draft_versions.new(draft_version_params)
-    if @process.save
+    if @draft_version.save
       redirect_to admin_legislation_process_draft_versions_path
     else
       render :new
