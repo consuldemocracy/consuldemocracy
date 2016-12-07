@@ -212,7 +212,7 @@ es:
       proposals: Propuestas
       proposal_ballot: Votaciones
       see_all: Ver propuestas
-      spending_proposals: Presupuestos ciudadanos
+      spending_proposals: Presupuestos participativos
   legislation:
     help:
       alt: Selecciona el texto que quieres comentar y pulsa en el botón con el lápiz.
@@ -454,8 +454,7 @@ es:
     outline:
       debates: Debates
       proposals: Propuestas
-      budget: Presupuestos ciudadanos
-      pagination: Paginación
+      budget: Presupuestos participativos
       searcher: Buscador
   social:
     blog: Blog
