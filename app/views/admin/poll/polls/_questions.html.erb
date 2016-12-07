@@ -1,11 +1,13 @@
 <div class="row">
   <div class="small-12 column">
-
     <% if @poll.questions.empty? %>
       <div class="callout primary text-center">
         <%= t('admin.polls.show.no_questions') %>
       </div>
     <% else %>
+
+      <h2><%= t("admin.polls.show.questions_title") %></h2>
+
       <table>
         <% @poll.questions.each do |question| %>
           <tr id="<%= dom_id(question) %>">

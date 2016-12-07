@@ -377,26 +377,32 @@ es:
     update:
       form:
         submit_button: Guardar cambios
-  poll_questions:
-    create_question: "Crear votación"
-    default_valid_answers: "Sí, No"
+  polls:
+    all: "Todas"
+    no_dates: "sin fecha asignada"
+    dates: "Desde el %{open_at} hasta el %{closed_at}"
     index:
       filters:
-        opened: "Abiertas"
+        current: "Abiertas"
         incoming: "Próximamente"
         expired: "Terminadas"
-      title: "Votaciones"
-      description_html: "Las siguientes propuestas ciudadanas han alcanzado el <strong>número de apoyos necesarios</strong> y pasarán a votación."
-      dates: "Desde el %{open_at} hasta el %{closed_at}"
-      no_enquiries_opened: "No hay votaciones abiertas."
-      no_enquiries_expired: "No hay votaciones terminadas."
-      no_enquiries_incoming: "No hay votaciones próximamente."
+    show:
+      dates_title: "Fechas de participación"
+      cant_answer_not_logged_in: "Necesitas %{signin} o %{signup} para participar."
+      signin: iniciar sesión
+      signup: registrarte
+      cant_answer_verify_html: "Por favor %{verify_link} para poder responder."
+      verify_link: "verifica tu cuenta"
+      cant_answer_incoming: "Esta votación todavía no ha comenzado."
+      cant_answer_expired: "Esta votación ha terminado."
+      cant_answer_wrong_geozone: "Esta votación no está disponible en tu zona."
+  poll_questions:
+    create_question: "Crear pregunta para votación"
+    default_valid_answers: "Sí, No"
     show:
       original_proposal: "Propuesta original"
       author: "Creado por"
       dates_title: "Fechas de participación"
-      dates: "Desde el %{open_at} hasta el %{closed_at}"
-      external_url: "Documentación adicional"
       more_info: "Más información"
       not_logged_in: "Necesitas %{signin} o %{signup} para participar."
       signin: iniciar sesión

@@ -106,6 +106,7 @@ en:
       valuators: Valuators
       poll_officers: Poll officers
       polls: Polls
+      poll_booths: Booths
       officials: Officials
       organizations: Organisations
       settings: Configuration settings
@@ -181,9 +182,10 @@ en:
         no_booths: "There are no booths in this poll."
         no_questions: "There are no questions assigned to this poll yet."
         no_officers: "There are no officers assigned to this poll."
-        add_booth: "Add booth"
         remove_booth: "Remove booth from poll"
         booths_title: "List of booths"
+        officers_title: "List of officers"
+        questions_title: "List of questions"
         name: "Name"
         location: "Location"
         email: "Email"
@@ -191,7 +193,8 @@ en:
       index:
         title: "Questions"
         create: "Create question"
-        no_enquiries: "There are no questions."
+        no_questions: "There are no questions."
+        select_poll: Select Poll
       edit:
         title: "Edit Question"
       new:

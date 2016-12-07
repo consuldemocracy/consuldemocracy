@@ -9,7 +9,15 @@ module PollsHelper
   end
 
   def all_polls
-    ["Todas", admin_questions_path]
+    [I18n.t("polls.all"), admin_questions_path]
+  end
+
+  def poll_dates(poll)
+    if poll.starts_at.blank? || poll.ends_at.blank?
+      I18n.t("polls.no_dates")
+    else
+      I18n.t("polls.dates", open_at: l(poll.starts_at.to_date), closed_at: l(poll.ends_at.to_date))
+    end
   end
 
 end

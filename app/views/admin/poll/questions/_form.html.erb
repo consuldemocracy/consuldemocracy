@@ -10,7 +10,7 @@
       <div class="small-12 medium-6">
           <%= f.select :poll_id,
                         options_for_select(Poll.pluck(:name, :id)),
-                        prompt: t("admin.booths.index.select_poll") %>
+                        prompt: t("admin.questions.index.select_poll") %>
       </div>
 
       <%= f.text_field :title, maxlength: Poll::Question.title_max_length %>

@@ -2,7 +2,7 @@
   <%= form_tag '', method: :get do %>
     <%= select_tag "poll_id",
                    poll_select_options(true),
-                   prompt: t("admin.booths.index.select_poll"),
+                   prompt: t("admin.questions.index.select_poll"),
                    class: "js-location-changer" %>
   <% end %>
 </div>

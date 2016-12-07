@@ -1,4 +1,5 @@
-<%= @poll.name %>
+<h1><%= @poll.name %></h1>
+<p><strong><%= t("polls.show.dates_title") %>: <%= poll_dates(@poll) %></strong></p>
 
 <% unless can?(:answer, @poll) %>
   <div class="small-12 column">
