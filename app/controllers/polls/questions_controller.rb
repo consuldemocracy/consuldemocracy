@@ -3,7 +3,6 @@ class Polls::QuestionsController < ApplicationController
   load_and_authorize_resource :poll
   load_and_authorize_resource :question, class: 'Poll::Question'#, through: :poll
 
-  has_filters %w{opened expired incoming}
   has_orders %w{most_voted newest oldest}, only: :show
 
   def show
