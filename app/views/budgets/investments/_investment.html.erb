@@ -51,7 +51,7 @@
                <%= render partial: '/budgets/investments/votes', locals: {
                  investment: investment,
                  investment_votes: investment_votes,
-                 vote_url: vote_budget_investment_path(investment.budget, investment, value: 'yes')
+                 vote_url: namespaced_budget_investment_vote_path(investment, value: 'yes')
                } %>
           </div>
 

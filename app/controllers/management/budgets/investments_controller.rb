@@ -6,8 +6,8 @@ class Management::Budgets::InvestmentsController < Management::BaseController
   before_action :only_verified_users, except: :print
 
   def index
-    @investments = apply_filters_and_search(@investments).order(cached_votes_up: :desc).page(params[:page]).for_render
-    @investment_ids = @investments.pluck(:id)
+    @investments = apply_filters_and_search(@investments).page(params[:page])
+    set_investment_votes(@investments)
   end
 
   def new
@@ -26,10 +26,12 @@ class Management::Budgets::InvestmentsController < Management::BaseController
   end
 
   def show
+    set_investment_votes(@investment)
   end
 
   def vote
-    @investment.register_vote(managed_user, 'yes')
+    @investment.register_selection(managed_user)
+    set_investment_votes(@investment)
   end
 
   def print
@@ -38,6 +40,10 @@ class Management::Budgets::InvestmentsController < Management::BaseController
   end
 
   private
+
+    def set_investment_votes(investments)
+      @investment_votes = managed_user ? managed_user.budget_investment_votes(investments) : {}
+    end
 
     def load_budget
       @budget = Budget.find(params[:budget_id])

@@ -4,12 +4,13 @@ feature 'Budget Investments' do
 
   background do
     login_as_manager
-    @budget = create(:budget, phase: 'accepting', name: "2016")
-    group = create(:budget_group, budget: @budget, name: 'Whole city')
-    @heading = create(:budget_heading, group: group, name: "Health")
+    @budget = create(:budget, phase: 'selecting', name: "2016")
+    @group = create(:budget_group, budget: @budget, name: 'Whole city')
+    @heading = create(:budget_heading, group: @group, name: "Health")
   end
 
   context "Create" do
+    before { @budget.update(phase: 'accepting') }
 
     scenario 'Creating budget investments on behalf of someone, selecting a budget' do
       user = create(:user, :level_two)
@@ -59,6 +60,7 @@ feature 'Budget Investments' do
   end
 
   context "Searching" do
+
     scenario "by title" do
       budget_investment1 = create(:budget_investment, budget: @budget, title: "Show me what you got")
       budget_investment2 = create(:budget_investment, budget: @budget, title: "Get Schwifty")
@@ -67,6 +69,7 @@ feature 'Budget Investments' do
       login_managed_user(user)
 
       click_link "Support Budget Investments"
+      expect(page).to have_content(@budget.name)
       within "#budget_#{@budget.id}" do
         click_link "Support Budget Investments"
       end
@@ -91,6 +94,7 @@ feature 'Budget Investments' do
       login_managed_user(user)
 
       click_link "Support Budget Investments"
+      expect(page).to have_content(@budget.name)
       within "#budget_#{@budget.id}" do
         click_link "Support Budget Investments"
       end
@@ -116,6 +120,7 @@ feature 'Budget Investments' do
     login_managed_user(user)
 
     click_link "Support Budget Investments"
+    expect(page).to have_content(@budget.name)
     within "#budget_#{@budget.id}" do
       click_link "Support Budget Investments"
     end
@@ -145,11 +150,11 @@ feature 'Budget Investments' do
       login_managed_user(user)
 
       click_link "Support Budget Investments"
+      expect(page).to have_content(@budget.name)
       within "#budget_#{@budget.id}" do
         click_link "Support Budget Investments"
       end
-
-      save_and_open_page
+      expect(page).to have_content(budget_investment.title)
 
       within("#budget-investments") do
         find('.js-in-favor a').click
@@ -166,6 +171,7 @@ feature 'Budget Investments' do
       login_managed_user(user)
 
       click_link "Support Budget Investments"
+      expect(page).to have_content(@budget.name)
       within "#budget_#{@budget.id}" do
         click_link "Support Budget Investments"
       end
@@ -194,9 +200,10 @@ feature 'Budget Investments' do
   context "Printing" do
 
     scenario 'Printing budget investments' do
-      16.times { create(:budget_investment, budget: @budget, geozone_id: nil) }
+      16.times { create(:budget_investment, budget: @budget) }
 
       click_link "Print budget investments"
+      expect(page).to have_content(@budget.name)
       within "#budget_#{@budget.id}" do
         click_link "Support Budget Investments"
       end
@@ -206,16 +213,17 @@ feature 'Budget Investments' do
     end
 
     scenario "Filtering budget investments by geozone to be printed", :js do
-      district_9 = create(:geozone, name: "District Nine")
-      create(:budget_investment, budget: @budget, title: 'Change district 9', geozone: district_9, cached_votes_up: 10)
-      create(:budget_investment, budget: @budget, title: 'Destroy district 9', geozone: district_9, cached_votes_up: 100)
-      create(:budget_investment, budget: @budget, title: 'Nuke district 9', geozone: district_9, cached_votes_up: 1)
-      create(:budget_investment, budget: @budget, title: 'Add new districts to the city', geozone_id: nil)
+      district_9 = create(:budget_heading, group: @group, name: "District Nine")
+      create(:budget_investment, budget: @budget, title: 'Change district 9', heading: district_9, cached_votes_up: 10)
+      create(:budget_investment, budget: @budget, title: 'Destroy district 9', heading: district_9, cached_votes_up: 100)
+      create(:budget_investment, budget: @budget, title: 'Nuke district 9', heading: district_9, cached_votes_up: 1)
+      create(:budget_investment, budget: @budget, title: 'Add new districts to the city', heading: @heading)
 
       user = create(:user, :level_two)
       login_managed_user(user)
 
       click_link "Print budget investments"
+      expect(page).to have_content(@budget.name)
       within "#budget_#{@budget.id}" do
         click_link "Support Budget Investments"
       end

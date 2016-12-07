@@ -10,7 +10,7 @@ class Management::BudgetsController < Management::BaseController
   end
 
   def support_investments
-    @budgets = Budget.accepting.order(created_at: :desc).page(params[:page])
+    @budgets = Budget.selecting.order(created_at: :desc).page(params[:page])
   end
 
   def print_investments

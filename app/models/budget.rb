@@ -14,11 +14,14 @@ class Budget < ActiveRecord::Base
   has_many :groups, dependent: :destroy
   has_many :headings, through: :groups
 
-  scope :current,   -> { where.not(phase: "finished") }
-  scope :finished,  -> { where(phase: "finished") }
-  scope :valuating, -> { where(valuating: true) }
+  scope :on_hold,   -> { where(phase: "on_hold") }
   scope :accepting, -> { where(phase: "accepting") }
+  scope :selecting, -> { where(phase: "selecting") }
   scope :balloting, -> { where(phase: "balloting") }
+  scope :finished,  -> { where(phase: "finished") }
+
+  scope :current,   -> { where.not(phase: "finished") }
+  scope :valuating, -> { where(valuating: true) }
 
   def on_hold?
     phase == "on_hold"
