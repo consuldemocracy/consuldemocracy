@@ -1,4 +1,4 @@
-class Admin::GeozonesController < ApplicationController
+class Admin::GeozonesController < Admin::BaseController
 
   respond_to :html
   
