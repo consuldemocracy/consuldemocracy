@@ -435,6 +435,7 @@ en:
     flag: Flag as inappropriate
     print:
       print_button: Print this info
+    search: Search
     show: Show
     suggest:
       debate:
