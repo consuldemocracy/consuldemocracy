@@ -19,12 +19,16 @@
     <div class="supported callout success">
       <%= t("proposals.proposal.already_supported") %>
     </div>
-  <% else %>
+  <% elsif user_signed_in? && proposal.votable_by?(current_user) %>
     <%= link_to vote_url,
         class: "button button-support small expanded",
         title: t('proposals.proposal.support_title'), method: "post", remote: true do %>
       <%= t("proposals.proposal.support") %>
     <% end %>
+  <% else %>
+    <div class="button button-support small expanded">
+      <%= t("proposals.proposal.support") %>
+    </div>
   <% end %>
 </div>
 
@@ -34,18 +38,22 @@
       <%= t("votes.organizations") %>
     </p>
   </div>
-<% elsif user_signed_in? && !proposal.votable_by?(current_user)%>
-  <div class="participation-not-allowed" style='display:none' aria-hidden="false">
-    <p>
-      <%= t("votes.verified_only",
-          verify_account: link_to(t("votes.verify_account"), verification_path )).html_safe %>
-    </p>
+<% elsif user_signed_in? && !proposal.votable_by?(current_user) %>
+  <div tabindex="0">
+    <div class="participation-not-allowed" style='display:none' aria-hidden="false">
+      <p>
+        <%= t("votes.verified_only",
+            verify_account: link_to(t("votes.verify_account"), verification_path )).html_safe %>
+      </p>
+    </div>
   </div>
 <% elsif !user_signed_in? %>
-  <div class="participation-not-allowed" style='display:none' aria-hidden="false">
-    <%= t("votes.unauthenticated",
-      signin: link_to(t("votes.signin"), new_user_session_path),
-      signup: link_to(t("votes.signup"), new_user_registration_path)).html_safe %>
+  <div tabindex="0">
+    <div class="participation-not-allowed" style='display:none' aria-hidden="false">
+      <%= t("votes.unauthenticated",
+        signin: link_to(t("votes.signin"), new_user_session_path),
+        signup: link_to(t("votes.signup"), new_user_registration_path)).html_safe %>
+    </div>
   </div>
 <% end %>
 
