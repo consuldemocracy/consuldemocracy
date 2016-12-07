@@ -37,4 +37,41 @@ feature 'Admin geozones' do
 
     expect(page).to have_content 'Fancy District'
   end
+
+  scenario 'Edit geozone with no associated elements' do
+    target_geozone = create(:geozone, name: 'Edit me!', census_code: '012')
+
+    visit admin_geozones_path
+
+    within("#geozone_#{target_geozone.id}") do
+      click_link "Edit"
+    end
+
+    fill_in 'geozone_name', with: 'New geozone name'
+    fill_in 'geozone_census_code', with: '333'
+
+    click_button 'Save changes'
+
+    within("#geozone_#{target_geozone.id}") do
+      expect(page).to have_content 'New geozone name'
+      expect(page).to have_content '333'
+    end
+  end
+
+  scenario 'Edit geozone with associated elements' do
+    target_geozone = create(:geozone, name: 'Edit me!')
+    proposal = create(:proposal, title: 'Proposal with geozone', geozone: target_geozone)
+
+    visit admin_geozones_path
+
+    within("#geozone_#{target_geozone.id}") do
+      click_link "Edit"
+    end
+
+    fill_in 'geozone_name', with: 'New geozone name'
+
+    click_button 'Save changes'
+
+    expect(proposal.geozone.name).to eq('New geozone name')
+  end
 end

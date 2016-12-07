@@ -282,6 +282,8 @@ es:
       edit:
         form:
           submit_button: Guardar cambios
+        editing: Editando distrito
+        back: Volver
       new:
         back: Volver
         creating: Crear distrito

@@ -284,6 +284,8 @@ en:
       edit:
         form:
           submit_button: Save changes
+        editing: Editing geozone
+        back: Go back
       new:
         back: Volver
         creating: Crear distrito

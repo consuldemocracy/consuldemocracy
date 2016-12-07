@@ -9,6 +9,8 @@ class Admin::GeozonesController < Admin::BaseController
 
   def new
   end
+  def edit
+  end
 
   def create
     @geozone = Geozone.new(geozone_params)
@@ -20,6 +22,13 @@ class Admin::GeozonesController < Admin::BaseController
     end
   end
 
+  def update
+    if @geozone.update(geozone_params)
+      redirect_to admin_geozones_path
+    else
+      render :edit
+    end
+  end
   private
 
     def geozone_params

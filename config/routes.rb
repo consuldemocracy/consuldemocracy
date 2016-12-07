@@ -193,7 +193,7 @@ Rails.application.routes.draw do
       resource :stats, only: :show
     end
 
-    resources :geozones, only: [:index, :new, :create]
+    resources :geozones, only: [:index, :new, :create, :edit, :update, :destroy]
   end
 
   namespace :moderation do

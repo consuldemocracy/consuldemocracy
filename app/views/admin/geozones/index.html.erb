@@ -9,6 +9,7 @@
       <th><%= t("admin.geozones.geozone.name") %></th>
       <th><%= t("admin.geozones.geozone.external_code") %></th>
       <th><%= t("admin.geozones.geozone.census_code") %></th>
+      <th colspan="2"></th>
     </tr>
   </thead>
 
@@ -18,6 +19,9 @@
         <td><%= geozone.name %></td>
         <td><%= geozone.external_code %></td>
         <td><%= geozone.census_code %></td>
+        <td>
+          <%= link_to t("admin.geozones.index.edit"), edit_admin_geozone_path(geozone), class: 'edit-banner button hollow' %>
+        </td>
       </tr>
     <% end %>
   </tbody>
