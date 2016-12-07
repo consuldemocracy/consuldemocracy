@@ -37,17 +37,17 @@ feature 'Polls' do
 
     scenario "Current filter is properly highlighted" do
       visit polls_path
-      expect(page).to_not have_link('Current')
+      expect(page).to_not have_link('Open')
       expect(page).to have_link('Incoming')
       expect(page).to have_link('Expired')
 
       visit polls_path(filter: 'incoming')
-      expect(page).to have_link('Current')
+      expect(page).to have_link('Open')
       expect(page).to_not have_link('Incoming')
       expect(page).to have_link('Expired')
 
       visit polls_path(filter: 'expired')
-      expect(page).to have_link('Current')
+      expect(page).to have_link('Open')
       expect(page).to have_link('Incoming')
       expect(page).to_not have_link('Expired')
     end
