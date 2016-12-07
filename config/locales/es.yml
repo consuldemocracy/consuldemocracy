@@ -435,6 +435,7 @@ es:
     flag: Denunciar como inapropiado
     print:
       print_button: Imprimir esta información
+    search: Buscar
     show: Mostrar
     suggest:
       debate:

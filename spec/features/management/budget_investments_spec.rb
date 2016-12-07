@@ -202,45 +202,41 @@ feature 'Budget Investments' do
     scenario 'Printing budget investments' do
       16.times { create(:budget_investment, budget: @budget) }
 
-      click_link "Print budget investments"
+      click_link "Print Budget Investments"
       expect(page).to have_content(@budget.name)
       within "#budget_#{@budget.id}" do
-        click_link "Support Budget Investments"
+        click_link "Print Budget Investments"
       end
 
       expect(page).to have_css('.budget-investment', count: 15)
       expect(page).to have_css("a[href='javascript:window.print();']", text: 'Print')
     end
 
-    scenario "Filtering budget investments by geozone to be printed", :js do
+    scenario "Filtering budget investments by heading to be printed", :js do
       district_9 = create(:budget_heading, group: @group, name: "District Nine")
       create(:budget_investment, budget: @budget, title: 'Change district 9', heading: district_9, cached_votes_up: 10)
       create(:budget_investment, budget: @budget, title: 'Destroy district 9', heading: district_9, cached_votes_up: 100)
       create(:budget_investment, budget: @budget, title: 'Nuke district 9', heading: district_9, cached_votes_up: 1)
-      create(:budget_investment, budget: @budget, title: 'Add new districts to the city', heading: @heading)
+      create(:budget_investment, budget: @budget, title: 'Add new districts to the city')
 
       user = create(:user, :level_two)
       login_managed_user(user)
 
-      click_link "Print budget investments"
+      click_link "Print Budget Investments"
       expect(page).to have_content(@budget.name)
       within "#budget_#{@budget.id}" do
-        click_link "Support Budget Investments"
+        click_link "Print Budget Investments"
       end
-
-      expect(page).to have_content "Budget investments with scope: All city"
 
       within '#budget-investments' do
         expect(page).to have_content('Add new districts to the city')
-        expect(page).to_not have_content('Change district 9')
-        expect(page).to_not have_content('Destroy district 9')
-        expect(page).to_not have_content('Nuke district 9')
+        expect(page).to have_content('Change district 9')
+        expect(page).to have_content('Destroy district 9')
+        expect(page).to have_content('Nuke district 9')
       end
 
-      select 'District Nine', from: 'geozone'
-
-      expect(page).to have_content "Investment projects with scope: District Nine"
-      expect(current_url).to include("geozone=#{district_9.id}")
+      select 'Whole city: District Nine', from: 'heading_id'
+      click_button("Search")
 
       within '#budget-investments' do
         expect(page).to_not have_content('Add new districts to the city')

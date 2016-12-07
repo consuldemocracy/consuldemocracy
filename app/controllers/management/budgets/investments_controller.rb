@@ -1,7 +1,7 @@
 class Management::Budgets::InvestmentsController < Management::BaseController
 
-  load_and_authorize_resource :budget
-  load_and_authorize_resource :investment, through: :budget, class: 'Budget::Investment'
+  load_resource :budget
+  load_resource :investment, through: :budget, class: 'Budget::Investment'
 
   before_action :only_verified_users, except: :print
 
@@ -35,8 +35,8 @@ class Management::Budgets::InvestmentsController < Management::BaseController
   end
 
   def print
-    params[:geozone] ||= 'all'
     @investments = apply_filters_and_search(@investments).order(cached_votes_up: :desc).for_render.limit(15)
+    set_investment_votes(@investments)
   end
 
   private
@@ -45,31 +45,19 @@ class Management::Budgets::InvestmentsController < Management::BaseController
       @investment_votes = managed_user ? managed_user.budget_investment_votes(investments) : {}
     end
 
-    def load_budget
-      @budget = Budget.find(params[:budget_id])
-    end
-
     def investment_params
-      params.require(:budget_investment).permit(:title, :description, :external_url, :geozone_id, :heading_id)
+      params.require(:budget_investment).permit(:title, :description, :external_url, :heading_id)
     end
 
     def only_verified_users
       check_verified_user t("management.budget_investments.alert.unverified_user")
     end
 
-    def set_geozone_name
-      if params[:geozone] == 'all'
-        @geozone_name = t('geozones.none')
-      else
-        @geozone_name = Geozone.find(params[:geozone]).name
-      end
-    end
-
     def apply_filters_and_search(investments)
       investments = params[:unfeasible].present? ? investments.unfeasible : investments.not_unfeasible
-      if params[:geozone].present?
-        investments = investments.by_geozone(params[:geozone])
-        set_geozone_name
+      if params[:heading_id].present?
+        investments = investments.by_heading(params[:heading_id])
+        @heading = Budget::Heading.find(params[:heading_id])
       end
       investments = investments.search(params[:search]) if params[:search].present?
       investments
