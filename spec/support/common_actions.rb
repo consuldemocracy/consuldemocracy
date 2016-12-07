@@ -156,7 +156,7 @@ module CommonActions
 
   def expect_message_you_need_to_sign_in
     expect(page).to have_content 'You must Sign in or Sign up to continue'
-    expect(page).to have_selector('.in-favor a', visible: false)
+    expect(page).to have_selector('.in-favor', visible: false)
   end
 
   def expect_message_you_need_to_sign_in_to_vote_comments
@@ -172,7 +172,7 @@ module CommonActions
 
   def expect_message_only_verified_can_vote_proposals
     expect(page).to have_content 'Only verified users can vote on proposals'
-    expect(page).to have_selector('.in-favor a', visible: false)
+    expect(page).to have_selector('.in-favor', visible: false)
   end
 
   def expect_message_voting_not_allowed
