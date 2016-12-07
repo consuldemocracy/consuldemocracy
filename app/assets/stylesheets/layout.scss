@@ -56,6 +56,7 @@ a {
   }
 
   &:focus {
+    color: $link-hover;
     outline: 3px solid #ffbf47;
   }
 }
@@ -256,6 +257,10 @@ a {
 
 .button.float-right ~ .button.float-right {
   margin: 0 $line-height/2;
+}
+
+.pagination .current {
+  background: $brand;
 }
 
 // 02. Header
