@@ -8,7 +8,6 @@ class Admin::Legislation::ProcessesController < Admin::Legislation::BaseControll
   end
 
   def create
-    @process = ::Legislation::Process.new(process_params)
     if @process.save
       redirect_to admin_legislation_processes_path
     else
@@ -17,7 +16,6 @@ class Admin::Legislation::ProcessesController < Admin::Legislation::BaseControll
   end
 
   def update
-    @process.assign_attributes(process_params)
     if @process.update(process_params)
       redirect_to admin_legislation_processes_path
     else

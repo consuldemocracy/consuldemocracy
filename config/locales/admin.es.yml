@@ -91,7 +91,6 @@ es:
         index:
           create: Nuevo proceso
           delete: Borrar
-          edit: Editar
           title: Procesos de legislación colaborativa
           filters:
             open: Abiertos
@@ -104,6 +103,32 @@ es:
           submit_button: Crear proceso
         process:
           title: Título del proceso de legislación colaborativa
+        subnav:
+          info: Información
+          draft_texts: Texto
+      draft_versions:
+        edit:
+          back: Volver
+          submit_button: Guardar cambios
+        errors:
+          form:
+            error: Error
+        index:
+          title: Versiones del borrador
+          create: Crear versión
+        new:
+          back: Volver
+          title: Crear nueva versión
+          submit_button: Crear versión
+        statuses:
+          draft: Borrador
+          published: Publicado
+        table:
+          title: Título
+          created_at: Creado
+          comments: Comentarios
+          final_version: Versión final
+          status: Estado
     managers:
       index:
         title: Gestores

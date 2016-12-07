@@ -45,6 +45,7 @@ module Abilities
       can [:search, :edit, :update, :create, :index, :destroy], Banner
 
       can [:manage], ::Legislation::Process
+      can [:manage], ::Legislation::DraftVersion
     end
   end
 end

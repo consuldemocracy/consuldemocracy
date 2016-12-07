@@ -190,7 +190,9 @@ Rails.application.routes.draw do
     end
 
     namespace :legislation do
-      resources :processes
+      resources :processes do
+        resources :draft_versions
+      end
     end
 
     namespace :api do

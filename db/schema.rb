@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161117135624) do
+ActiveRecord::Schema.define(version: 20161205110441) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -227,6 +227,22 @@ ActiveRecord::Schema.define(version: 20161117135624) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "legislation_draft_versions", force: :cascade do |t|
+    t.integer  "legislation_process_id"
+    t.string   "title"
+    t.text     "changelog"
+    t.string   "status",                 default: "draft"
+    t.boolean  "final_version",          default: false
+    t.text     "body"
+    t.datetime "hidden_at"
+    t.datetime "created_at",                               null: false
+    t.datetime "updated_at",                               null: false
+  end
+
+  add_index "legislation_draft_versions", ["hidden_at"], name: "index_legislation_draft_versions_on_hidden_at", using: :btree
+  add_index "legislation_draft_versions", ["legislation_process_id"], name: "index_legislation_draft_versions_on_legislation_process_id", using: :btree
+  add_index "legislation_draft_versions", ["status"], name: "index_legislation_draft_versions_on_status", using: :btree
 
   create_table "legislation_processes", force: :cascade do |t|
     t.string   "title"
@@ -584,6 +600,7 @@ ActiveRecord::Schema.define(version: 20161117135624) do
   add_foreign_key "failed_census_calls", "users"
   add_foreign_key "flags", "users"
   add_foreign_key "identities", "users"
+  add_foreign_key "legislation_draft_versions", "legislation_processes"
   add_foreign_key "locks", "users"
   add_foreign_key "managers", "users"
   add_foreign_key "moderators", "users"

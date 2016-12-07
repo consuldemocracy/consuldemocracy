@@ -37,6 +37,9 @@ es:
       legislation/process:
           one: "Proceso"
           other: "Procesos"
+      legislation/draft_texts:
+        one: "Borrador"
+        other: "Borradores"
     attributes:
       comment:
         body: "Comentario"
@@ -86,6 +89,12 @@ es:
         allegations_start_date: Fecha de inicio de alegaciones
         allegations_end_date: Fecha de fin de alegaciones
         final_publication_date: Fecha de publicación del resultado final
+      legislation/draft_version:
+        title: Título de la version
+        body: Texto
+        changelog: Cambios
+        status: Estado
+        final_version: Versión final
     errors:
       models:
         user:

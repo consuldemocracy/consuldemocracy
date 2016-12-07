@@ -355,3 +355,33 @@ Proposal.last(3).each do |proposal|
                           created_at: rand((Time.current - 1.week) .. Time.current))
   puts "    #{banner.title}"
 end
+
+puts "Creating legislation processes"
+
+(1..5).each do |i|
+  process = ::Legislation::Process.create!(title: Faker::Lorem.sentence(3).truncate(60),
+                                           description: Faker::Lorem.paragraphs.join("\n\n"),
+                                           target: Faker::Lorem.paragraphs.join("\n\n"),
+                                           how_to_participate: Faker::Lorem.paragraphs.join("\n\n"),
+                                           additional_info: Faker::Lorem.paragraphs.join("\n\n"),
+                                           start_date: Date.current - 3.days,
+                                           end_date: Date.current + 3.days,
+                                           debate_start_date: Date.current - 3.days,
+                                           debate_end_date: Date.current - 1.day,
+                                           draft_publication_date: Date.current + 1.day,
+                                           allegations_start_date: Date.current + 2.days,
+                                           allegations_end_date: Date.current + 3.days,
+                                           final_publication_date: Date.current + 4.days
+  )
+  puts "    #{process.title}"
+end
+
+::Legislation::Process.all.each do |process|
+  (1..3).each do |i|
+    version = process.draft_versions.create!(title: "Version #{i}",
+                                             body: Faker::Lorem.paragraphs.join("\n\n")
+    )
+    puts "    #{version.title}"
+  end
+end
+

@@ -2,6 +2,8 @@ class Legislation::Process < ActiveRecord::Base
   acts_as_paranoid column: :hidden_at
   include ActsAsParanoidAliases
 
+  has_many :draft_versions, class_name: 'Legislation::DraftVersion', foreign_key: 'legislation_process_id'
+
   validates :title, presence: true
   validates :description, presence: true
   validates :target, presence: true
