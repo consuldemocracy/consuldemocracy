@@ -7,7 +7,7 @@
 
       <% if @question.proposal.present? %>
         <div class="margin-bottom">
-          <%= link_to t('questions.show.original_proposal'), @question.proposal %>
+          <%= link_to t('poll_questions.show.original_proposal'), @question.proposal %>
         </div>
       <% end %>
 
@@ -22,28 +22,36 @@
 
     <div class="small-12 medium-3 column info">
       <p>
-        <span class="title author"><%= t('questions.show.author') %></span><br>
+        <span class="title author"><%= t('poll_questions.show.author') %></span><br>
         <%= link_to @question.author.name, @question.author %>
       </p>
 
       <p>
-        <span class="title url"><%= t('questions.show.external_url') %></span><br>
-        <%# link_to @question.external_url, @question.external_url %>
+        <span class="title"><%= t('poll_questions.show.dates_title') %></span><br>
+        <span class="date"><%= poll_dates(@question.poll) %></span>
       </p>
     </div>
   </div>
 </div>
 
+<% if @question.poll.current? %>
 <div class="row margin-top text-center" id="<%= dom_id(@question) %>_answers">
+
   <%= render "answers", question: @question %>
 </div>
+<% elsif @question.poll.incoming? %>
+  <%= t('poll_questions.show.cant_answer_expired') %>
+<% elsif @question.poll.expired? %>
+  <%= t('poll_questions.show.cant_answer_incoming') %>
+<% end %>
 
 <div class="row margin-top">
   <div class="small-12 medium-9 column">
-    <h3><%= t('questions.show.more_info') %></h3>
+    <h3><%= t('poll_questions.show.more_info') %></h3>
     <%= @question.description %>
   </div>
 </div>
+
 
 
 <%= render "comments" %>

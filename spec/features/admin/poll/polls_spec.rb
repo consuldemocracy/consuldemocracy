@@ -7,21 +7,24 @@ feature 'Admin polls' do
     login_as(admin.user)
   end
 
-  scenario 'Index empty' do
+  scenario 'Index empty', :js do
     visit admin_root_path
-    within('#side_menu') do
+
+    click_link "Polls"
+    within('#polls_menu') do
       click_link "Polls"
     end
 
     expect(page).to have_content "There are no polls"
   end
 
-  scenario 'Index' do
+  scenario 'Index', :js do
     3.times { create(:poll) }
 
     visit admin_root_path
 
-    within('#side_menu') do
+    click_link "Polls"
+    within('#polls_menu') do
       click_link "Polls"
     end
 
@@ -84,18 +87,20 @@ feature 'Admin polls' do
 
     context "Poll show" do
 
-      scenario "No booths" do
+      scenario "No booths", :js do
         poll = create(:poll)
         visit admin_poll_path(poll)
+        click_link "Booths (0)"
 
         expect(page).to have_content "There are no booths in this poll."
       end
 
-      scenario "Booth list" do
+      scenario "Booth list", :js do
         poll = create(:poll)
-        3.times { create(:poll_booth, poll: poll) }
+        3.times { create(:poll_booth, polls: [poll]) }
 
         visit admin_poll_path(poll)
+        click_link "Booths (3)"
 
         expect(page).to have_css ".booth", count: 3
 
@@ -108,15 +113,43 @@ feature 'Admin polls' do
         end
         expect(page).to_not have_content "There are no booths"
       end
+    end
+  end
 
-      scenario "Add booth" do
+  context "Officers" do
+
+    context "Poll show" do
+
+      scenario "No officers", :js do
         poll = create(:poll)
         visit admin_poll_path(poll)
+        click_link "Officers (0)"
 
-        click_link "Add booth"
+        expect(page).to have_content "There are no officers assigned to this poll"
+      end
 
-        expect(current_path).to eq(new_admin_poll_booth_path(poll))
-        expect(page).to have_content poll.name
+      scenario "Officer list", :js do
+        poll = create(:poll)
+        booth = create(:poll_booth, polls: [poll])
+
+        booth.booth_assignments.each do |booth_assignment|
+          3.times {create(:poll_officer_assignment, booth_assignment: booth_assignment) }
+        end
+
+        visit admin_poll_path(poll)
+
+        click_link "Officers (3)"
+
+        expect(page).to have_css ".officer", count: 3
+
+        officers = Poll::Officer.all
+        officers.each do |officer|
+          within("#officer_#{officer.id}") do
+            expect(page).to have_content officer.name
+            expect(page).to have_content officer.email
+          end
+        end
+        expect(page).to_not have_content "There are no officers assigned to this poll"
       end
     end
   end

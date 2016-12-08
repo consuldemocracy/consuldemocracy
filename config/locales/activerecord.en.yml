@@ -28,6 +28,9 @@ en:
       organization:
         one: "Organisation"
         other: "Organisations"
+      poll/booth:
+        one: "booth"
+        other: "booths"
       proposal:
         one: "Citizen proposal"
         other: "Citizen proposals"

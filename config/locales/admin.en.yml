@@ -96,22 +96,28 @@ en:
       admin: Admin menu
       banner: Manage banners
       poll_questions: Poll questions
-      debate_topics: Debate topics
+      proposals_topics: Proposals topics
       hidden_comments: Hidden comments
       hidden_debates: Hidden debates
       hidden_proposals: Hidden proposals
       hidden_users: Hidden users
-      incomplete_verifications: Incomplete verifications
       managers: Managers
       moderators: Moderators
       valuators: Valuators
       poll_officers: Poll officers
       polls: Polls
+      poll_booths: Booths
       officials: Officials
       organizations: Organisations
       settings: Configuration settings
       spending_proposals: Spending proposals
       stats: Statistics
+      title_categories: Categories
+      title_moderated_content: Moderated content
+      title_budgets: Budgets
+      title_polls: Polls
+      title_profiles: Profiles
+      title_banners: Banners
     moderators:
       index:
         title: Moderators
@@ -170,17 +176,25 @@ en:
         starts_at: "Open date"
         ends_at: "Close date"
       show:
+        questions_tab: Questions
+        booths_tab: Booths
+        officers_tab: Officers
         no_booths: "There are no booths in this poll."
-        add_booth: "Add booth"
+        no_questions: "There are no questions assigned to this poll yet."
+        no_officers: "There are no officers assigned to this poll."
+        remove_booth: "Remove booth from poll"
         booths_title: "List of booths"
+        officers_title: "List of officers"
+        questions_title: "List of questions"
         name: "Name"
         location: "Location"
-        officers: "Officers"
+        email: "Email"
     questions:
       index:
         title: "Questions"
         create: "Create question"
-        no_enquiries: "There are no questions."
+        no_questions: "There are no questions."
+        select_poll: Select Poll
       edit:
         title: "Edit Question"
       new:
@@ -197,32 +211,20 @@ en:
     booths:
       index:
         title: "List of booths"
-        select_poll: "Select a poll"
-        title_list: "List of booths of poll %{poll}"
-        no_booths: "There are no booths in this poll."
+        no_booths: "There are no booths."
         add_booth: "Add booth"
         name: "Name"
         location: "Location"
-        officers: "Officers"
       new:
-        title: "Poll %{poll}"
-        subtitle: "New booth"
+        title: "New booth"
         name: "Name"
-        reference: "Reference number"
         location: "Location"
         submit_button: "Create booth"
       edit:
-        title: "Poll %{poll}"
-        subtitle: "Edit booth"
-        name: "Name"
-        reference: "Reference number"
-        location: "Location"
+        title: "Edit booth"
         submit_button: "Update booth"
       show:
         location: "Location"
-        assign_officer: "Assign officer"
-        officers_list: "List of officers"
-        no_officers: "There are no officers assigned to this booth"
     officials:
       edit:
         destroy: Remove 'Official' status
@@ -373,6 +375,7 @@ en:
         visits_title: Visits
         direct_messages: Direct messages
         proposal_notifications: Proposal notifications
+        incomplete_verifications: Incomplete verifications
       direct_messages:
         title: Direct messages
         total: Total
@@ -385,9 +388,9 @@ en:
       create: Create Topic
       destroy: Destroy Topic
       index:
-        add_tag: Add a new debate topic
-        title: Debate topics
-      mark_as_featured: Propose topic upon creating debate
+        add_tag: Add a new proposal topic
+        title: Proposal topics
+      mark_as_featured: Propose topic upon creating proposal
       name:
         placeholder: Type the name of the topic
       update: Update Topic

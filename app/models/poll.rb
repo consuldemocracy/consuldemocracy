@@ -1,6 +1,9 @@
 class Poll < ActiveRecord::Base
-  has_many :booths
-  has_many :voters, through: :booths, class_name: "Poll::Voter"
+  has_many :booth_assignments, class_name: "Poll::BoothAssignment"
+  has_many :booths, through: :booth_assignments
+  has_many :voters, through: :booth_assignments
+  has_many :officer_assignments, through: :booth_assignments
+  has_many :officers, through: :officer_assignments
   has_many :questions
 
   validates :name, presence: true
@@ -30,5 +33,9 @@ class Poll < ActiveRecord::Base
   def self.answerable_by(user)
     return none if user.nil? || user.unverified?
     current
+  end
+
+  def document_has_voted?(document_number, document_type)
+    voters.where(document_number: document_number, document_type: document_type).exists?
   end
 end

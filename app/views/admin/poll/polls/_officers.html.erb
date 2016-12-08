@@ -1,0 +1,33 @@
+<div class="row">
+  <div class="small-12 column">
+    <% if @poll.officers.empty? %>
+      <div class="callout primary text-center">
+        <%= t("admin.polls.show.no_officers") %>
+      </div>
+    <% else %>
+
+      <h2><%= t("admin.polls.show.officers_title") %></h2>
+
+      <table>
+        <thead>
+          <th><%= t("admin.polls.show.name") %></th>
+          <th><%= t("admin.polls.show.email") %></th>
+        </thead>
+        <tbody>
+          <% @poll.officers.each do |officer| %>
+            <tr id="officer_<%= officer.id %>" class="officer">
+              <td>
+                <strong>
+                  <%= officer.name %>
+                </strong>
+              </td>
+              <td>
+                <%= officer.email %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    <% end %>
+  </div>
+</div>

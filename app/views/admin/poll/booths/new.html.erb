@@ -1,7 +1,7 @@
-<%= render 'shared/back_link' %>
+<%= back_link_to admin_booths_path %>
 
-<h2><%= t("admin.booths.new.title", poll: @poll.name) %>: <%= t("admin.booths.new.subtitle") %></h2>
+<h2><%= t("admin.booths.new.title") %></h2>
 
-<%= form_for @booth, url: admin_poll_booths_path(@poll) do |f| %>
+<%= form_for @booth, url: admin_booths_path(@booth) do |f| %>
   <%= render "form", f: f %>
 <% end %>

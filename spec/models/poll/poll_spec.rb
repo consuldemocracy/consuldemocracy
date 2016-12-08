@@ -38,4 +38,20 @@ describe :poll do
       expect(create(:poll)).to_not be_expired
     end
   end
+
+  describe "#document_has_voted?" do
+    it "returns true if Poll::Voter with document exists" do
+      booth_assignment = create(:poll_booth_assignment, poll: poll)
+      voter = create(:poll_voter, :valid_document, booth_assignment: booth_assignment)
+
+      expect(poll.document_has_voted?(voter.document_number, voter.document_type)).to eq(true)
+    end
+
+    it "returns false if Poll::Voter with document does not exists" do
+      booth_assignment = create(:poll_booth_assignment)
+      voter = create(:poll_voter, :valid_document, booth_assignment: booth_assignment)
+
+      expect(poll.document_has_voted?(voter.document_number, voter.document_type)).to eq(false)
+    end
+  end
 end

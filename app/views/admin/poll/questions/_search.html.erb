@@ -1,0 +1,12 @@
+<%= form_tag(admin_questions_path, method: :get) do |f| %>
+  <div class="row">
+    <div class="small-12 medium-6 column">
+      <%= text_field_tag :search,
+                         @search,
+                         placeholder: t("admin.shared.spending_proposal_search.placeholder") %>
+    </div>
+    <div class="form-inline small-12 medium-3 column end">
+      <%= submit_tag t("admin.shared.spending_proposal_search.button"), class: "button" %>
+    </div>
+  </div>
+<% end %>

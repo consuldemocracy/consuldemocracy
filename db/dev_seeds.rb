@@ -422,8 +422,9 @@ puts "Creating Poll Questions"
   puts "    #{question.title}"
 end
 
+puts "Creating Poll Booths"
 10.times.each_with_index do |i|
-  Poll::Booth.create(name: "Booth #{i}", poll: Poll.all.sample)
+  Poll::Booth.create(name: "Booth #{i}", polls: [Poll.all.sample])
 end
 
 puts "Creating Poll Question from Proposals"

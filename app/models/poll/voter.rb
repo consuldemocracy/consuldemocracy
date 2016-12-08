@@ -1,8 +1,9 @@
 class Poll
   class Voter < ActiveRecord::Base
-    belongs_to :booth
-    delegate :poll, to: :booth
+    belongs_to :booth_assignment
+    delegate :poll, to: :booth_assignment
 
+    validates :booth_assignment, presence: true
     validate :in_census
     validate :has_not_voted
 
@@ -19,7 +20,7 @@ class Poll
     end
 
     def has_voted?
-      poll.voters.where(document_number: document_number, document_type: document_type).exists?
+      poll.document_has_voted?(document_number, document_type)
     end
 
     def name

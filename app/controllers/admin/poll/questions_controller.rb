@@ -1,13 +1,18 @@
 class Admin::Poll::QuestionsController < Admin::BaseController
+  load_and_authorize_resource :poll
   load_and_authorize_resource :question, class: 'Poll::Question'
 
   before_action :load_geozones, only: [:new, :create, :edit, :update]
 
   def index
-    @questions = @questions.page(params[:page])
+    @polls = Poll.all
+    @search = search_params[:search]
+
+    @questions = @questions.search(search_params).page(params[:page]).order("created_at DESC")
   end
 
   def new
+    @polls = Poll.all
     @question.valid_answers = I18n.t('poll_questions.default_valid_answers')
     proposal = Proposal.find(params[:proposal_id]) if params[:proposal_id].present?
     @question.copy_attributes_from_proposal(proposal)
@@ -53,7 +58,11 @@ class Admin::Poll::QuestionsController < Admin::BaseController
     end
 
     def question_params
-      params.require(:poll_question).permit(:title, :question, :summary, :description, :proposal_id, :valid_answers, :geozone_ids => [])
+      params.require(:poll_question).permit(:title, :question, :summary, :description, :proposal_id, :valid_answers, :poll_id, :geozone_ids => [])
+    end
+
+    def search_params
+      params.permit(:poll_id, :search)
     end
 
 end

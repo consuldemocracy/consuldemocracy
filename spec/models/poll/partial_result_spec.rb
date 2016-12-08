@@ -3,7 +3,7 @@ require 'rails_helper'
 describe Poll::PartialResult do
 
   describe "validations" do
-    it "validates that the answers are included in the Enquiry's list" do
+    it "validates that the answers are included in the Poll::Question's list" do
       q = create(:poll_question, valid_answers: 'One, Two, Three')
       expect(build(:poll_partial_result, question: q, answer: 'One')).to be_valid
       expect(build(:poll_partial_result, question: q, answer: 'Two')).to be_valid

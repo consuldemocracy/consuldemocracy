@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-feature 'Admin enquiries' do
+feature 'Admin poll questions' do
 
   background do
     login_as(create(:administrator).user)

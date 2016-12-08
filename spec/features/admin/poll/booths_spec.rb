@@ -2,8 +2,6 @@ require 'rails_helper'
 
 feature 'Admin booths' do
 
-  let!(:poll) { create(:poll) }
-
   background do
     admin = create(:administrator)
     login_as(admin.user)
@@ -13,24 +11,20 @@ feature 'Admin booths' do
     visit admin_root_path
 
     within('#side_menu') do
-      click_link "Polls"
+      click_link "Booths"
     end
 
-    click_link poll.name
-
-    expect(page).to have_content "There are no booths in this poll"
+    expect(page).to have_content "There are no booths"
   end
 
   scenario 'Index' do
-    3.times { create(:poll_booth, poll: poll) }
+    3.times { create(:poll_booth) }
 
     visit admin_root_path
 
     within('#side_menu') do
-      click_link "Polls"
+      click_link "Booths"
     end
-
-    click_link poll.name
 
     booths = Poll::Booth.all
     booths.each do |booth|
@@ -43,9 +37,9 @@ feature 'Admin booths' do
   end
 
   scenario 'Show' do
-    booth = create(:poll_booth, poll: poll)
+    booth = create(:poll_booth)
 
-    visit admin_poll_booths_path(poll)
+    visit admin_booths_path
     click_link booth.name
 
     expect(page).to have_content booth.name
@@ -53,47 +47,41 @@ feature 'Admin booths' do
   end
 
   scenario "Create" do
-    visit admin_poll_booths_path(poll)
+    visit admin_booths_path
     click_link "Add booth"
-
-    expect(page).to have_content "Poll #{poll.name}"
 
     fill_in "poll_booth_name", with: "Upcoming booth"
     fill_in "poll_booth_location", with: "39th Street, number 2, ground floor"
     click_button "Create booth"
 
     expect(page).to have_content "Booth created successfully"
+
+    visit admin_booths_path
     expect(page).to have_content "Upcoming booth"
     expect(page).to have_content "39th Street, number 2, ground floor"
   end
 
   scenario "Edit" do
-    booth = create(:poll_booth, poll: poll)
+    booth = create(:poll_booth)
 
-    visit admin_poll_booths_path(poll)
+    visit admin_booths_path
 
-    click_link "Edit"
-
-    expect(page).to have_content "Poll #{poll.name}"
+    within("#booth_#{booth.id}") do
+      click_link "Edit"
+    end
 
     fill_in "poll_booth_name", with: "Next booth"
     fill_in "poll_booth_location", with: "40th Street, number 1, firts floor"
     click_button "Update booth"
 
     expect(page).to have_content "Booth updated successfully"
-    expect(page).to have_content "Next booth"
-    expect(page).to have_content "40th Street, number 1, firts floor"
-  end
 
-  scenario 'Edit from index' do
-    booth = create(:poll_booth, poll: poll)
-    visit admin_poll_booths_path(poll)
+    visit admin_booths_path
 
     within("#booth_#{booth.id}") do
-      click_link "Edit"
+      expect(page).to have_content "Next booth"
+      expect(page).to have_content "40th Street, number 1, firts floor"
     end
-
-    expect(current_path).to eq(edit_admin_poll_booth_path(poll, booth))
   end
 
 end

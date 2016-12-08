@@ -2,7 +2,7 @@ require 'rails_helper'
 
 feature 'Poll Questions' do
 
-  scenario 'Lists enquiries from proposals before regular enquiries' do
+  scenario 'Lists questions from proposals before regular questions' do
     poll = create(:poll)
     normal_question = create(:poll_question, poll: poll)
     proposal_question = create(:poll_question, proposal: create(:proposal), poll: poll)
@@ -42,7 +42,7 @@ feature 'Poll Questions' do
       expect(page).to_not have_link('Chewbacca')
     end
 
-    scenario 'Level 2 users in an enquiry for a geozone which is not theirs' do
+    scenario 'Level 2 users in an poll question for a geozone which is not theirs' do
       question = create(:poll_question, geozone_ids: [], valid_answers: 'Vader, Palpatine')
 
       login_as(create(:user, :level_two))

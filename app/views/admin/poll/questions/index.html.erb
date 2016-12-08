@@ -3,6 +3,9 @@
 <%= link_to t('admin.questions.index.create'), new_admin_question_path,
             class: "button success float-right" %>
 
+<%= render 'filter' %>
+<%= render 'search' %>
+
 <% if @questions.count == 0 %>
   <div class="callout primary">
     <%= t('admin.questions.index.no_questions') %>

@@ -1531,7 +1531,7 @@ feature 'Successful proposals' do
     end
   end
 
-  scenario 'Successful proposals show create enquiry button to admin users' do
+  scenario 'Successful proposals show create question button to admin users' do
     successful_proposals = create_successful_proposals
 
     visit proposals_path

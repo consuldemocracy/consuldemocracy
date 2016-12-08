@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161122101702) do
+ActiveRecord::Schema.define(version: 20161207181001) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -278,21 +278,27 @@ ActiveRecord::Schema.define(version: 20161122101702) do
 
   add_index "organizations", ["user_id"], name: "index_organizations_on_user_id", using: :btree
 
+  create_table "poll_booth_assignments", force: :cascade do |t|
+    t.integer  "booth_id"
+    t.integer  "poll_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "poll_booths", force: :cascade do |t|
-    t.string  "name"
-    t.integer "poll_id"
-    t.string  "location"
+    t.string "name"
+    t.string "location"
+  end
+
+  create_table "poll_officer_assignments", force: :cascade do |t|
+    t.integer  "booth_assignment_id"
+    t.integer  "officer_id"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
   end
 
   create_table "poll_officers", force: :cascade do |t|
     t.integer "user_id"
-  end
-
-  create_table "poll_officing_booths", force: :cascade do |t|
-    t.integer  "officer_id"
-    t.integer  "booth_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "poll_partial_results", force: :cascade do |t|
@@ -322,16 +328,20 @@ ActiveRecord::Schema.define(version: 20161122101702) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "all_geozones",        default: false
+    t.tsvector "tsv"
   end
 
   add_index "poll_questions", ["author_id"], name: "index_poll_questions_on_author_id", using: :btree
   add_index "poll_questions", ["poll_id"], name: "index_poll_questions_on_poll_id", using: :btree
   add_index "poll_questions", ["proposal_id"], name: "index_poll_questions_on_proposal_id", using: :btree
+  add_index "poll_questions", ["tsv"], name: "index_poll_questions_on_tsv", using: :gin
 
   create_table "poll_voters", force: :cascade do |t|
-    t.integer "booth_id"
-    t.string  "document_number"
-    t.string  "document_type"
+    t.string   "document_number"
+    t.string   "document_type"
+    t.integer  "booth_assignment_id", null: false
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
   end
 
   create_table "polls", force: :cascade do |t|

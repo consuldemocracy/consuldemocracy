@@ -1,0 +1,39 @@
+<div class="row">
+  <div class="small-12 column">
+    <% if @poll.booths.empty? %>
+      <div class="callout primary text-center">
+        <%= t("admin.polls.show.no_booths") %>
+      </div>
+    <% else %>
+
+      <h2><%= t("admin.polls.show.booths_title") %></h2>
+
+      <table>
+        <thead>
+          <th><%= t("admin.polls.show.name") %></th>
+          <th><%= t("admin.polls.show.location") %></th>
+          <th>&nbsp;</th>
+        </thead>
+        <tbody>
+          <% @poll.booths.each do |booth| %>
+            <tr id="booth_<%= booth.id %>" class="booth">
+              <td>
+                <strong>
+                  <%= link_to booth.name, admin_booth_path(booth) %>
+                </strong>
+              </td>
+              <td>
+                <%= booth.location %>
+              </td>
+              <td class="text-right">
+                <%= link_to t("admin.polls.show.remove_booth"),
+                            "#",
+                            class: "button hollow alert" %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    <% end %>
+  </div>
+</div>

@@ -4,6 +4,30 @@ module AdminHelper
     render "/#{namespace}/menu"
   end
 
+  def menu_tags?
+    ["tags"].include? controller_name
+  end
+
+  def menu_moderated_content?
+    ["proposals", "debates", "comments", "users"].include? controller_name
+  end
+
+  def menu_budget?
+    ["spending_proposals"].include? controller_name
+  end
+
+  def menu_polls?
+    ["polls", "questions", "officers", "booths"].include? controller_name
+  end
+
+  def menu_profiles?
+    ["organizations", "officials", "moderators", "valuators", "managers"].include? controller_name
+  end
+
+  def menu_banners?
+    ["banners"].include? controller_name
+  end
+
   def official_level_options
     options = [["",0]]
     (1..5).each do |i|
