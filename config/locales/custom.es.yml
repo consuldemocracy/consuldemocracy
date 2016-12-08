@@ -53,8 +53,3 @@ es:
       text: "La preselección ciudadana de los proyectos ha terminado. Ya puedes ver los resultados."
       date_html: "Resultados <strong>disponibles</strong>"
       button: "Ver resultados"
-    label_streets:
-      title: "#RotulaciónDeVías"
-      text: "En el año 2007, se aprobó la denominada Ley de Memoria Histórica que tiene por objeto reconocer y ampliar derechos así como establecer medidas en favor de quienes padecieron persecución o violencia durante la guerra civil y la dictadura."
-      date_html: "Participa hasta el <strong>8 de diciembre</strong>"
-      button: "Más información"

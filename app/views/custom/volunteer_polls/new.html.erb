@@ -50,13 +50,17 @@
       <p><strong>¿En qué distritos podrías participar?</strong></p>
 
       <div class="row">
-        <% VolunteerPoll::DISTRICTS.each_slice(7) do |slice| %>
-          <div class="small-6 medium-4 column end">
-            <% slice.each do |district| %>
-              <%= f.check_box(district) %>
-            <% end %>
-          </div>
-        <% end %>
+        <div class="volunteer-poll-districts">
+          <% VolunteerPoll::DISTRICTS.each_slice(8) do |slice| %>
+            <div class="small-6 medium-4 column end">
+              <% slice.each do |district| %>
+                <div class="<%= district %>">
+                  <%= f.check_box(district) %>
+                </div>
+              <% end %>
+            </div>
+          <% end %>
+        </div>
       </div>
 
       <div class="small-12 medium-6 large-4 margin-top">

@@ -26,12 +26,12 @@
     <div class="row">
       <div class="small-12 column">
         <div class="small-12 medium-9 column">
-          <!-- Rotulación de vías -->
-          <h3><%= t("pages.processes.index.process_12_title") %></h3>
-          <p><%= t("pages.processes.index.process_12_description") %></p>
+          <!-- Borrador de Plan de Calidad de Aire y Cambio Climático -->
+          <h3><%= t("pages.processes.index.process_11_title") %></h3>
+          <p><%= t("pages.processes.index.process_11_description") %></p>
           <div class="small-12 medium-6 large-4">
-            <%= link_to t("pages.processes.index.process_12_button"),
-                        label_streets_path, class: "button expanded" %>
+            <%= link_to t("pages.processes.index.process_11_button"),
+                        air_quality_plan_path, class: "button expanded" %>
           </div>
         </div>
       </div>
@@ -93,6 +93,13 @@
         <!-- Procesos terminados -->
         <div class="tabs-panel" id="panel3v">
           <h2 class="sr-only"><%= t("pages.processes.menu.finished") %></h2>
+
+          <!-- Rotulación de vías -->
+          <div class="panel">
+            <h3><%= t("pages.processes.index.process_12_title") %></h3>
+            <p><%= t("pages.processes.index.process_12_description") %></p>
+            <%= link_to t("pages.processes.index.process_12_button"), label_streets_path, class: "button hollow" %>
+          </div>
 
           <!-- Licencias urbanísticas -->
           <div class="panel">
