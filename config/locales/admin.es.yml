@@ -276,6 +276,7 @@ es:
         name: Nombre
         external_code: Código externo
         census_code: Código del censo
+        coordinates: Coordenadas
       errors:
         form:
           error:

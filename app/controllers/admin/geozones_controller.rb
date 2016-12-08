@@ -33,14 +33,9 @@ class Admin::GeozonesController < Admin::BaseController
   end
 
   def destroy
-    # Check that in none of the other associated models talbes a record exists
+    # Check that in none of the other associated models tables a record exists
     # referencing this geozone
     safe_to_destroy = true
-
-    # safe_to_destroy &= Proposal.where(geozone: @geozone).empty?
-    # safe_to_destroy &= Debate.where(geozone: @geozone).empty?
-    # safe_to_destroy &= SpendingProposal.where(geozone: @geozone).empty?
-    # safe_to_destroy &= User.where(geozone: @geozone).empty?
 
     Geozone.reflect_on_all_associations.each do |association|
       attached_model = association.klass
@@ -58,6 +53,6 @@ class Admin::GeozonesController < Admin::BaseController
   private
 
     def geozone_params
-      params.require(:geozone).permit(:name, :external_code, :census_code)
+      params.require(:geozone).permit(:name, :external_code, :census_code, :html_map_coordinates)
     end
 end

@@ -278,6 +278,7 @@ en:
         name: Name
         external_code: External code
         census_code: Census code
+        coordinates: Coordinates
       errors:
         form:
           error:
