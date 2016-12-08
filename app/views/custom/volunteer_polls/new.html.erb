@@ -1,0 +1,49 @@
+<div class="row">
+  <div class="small-12 column">
+    <h2>Voluntarios para las mesas presenciales de votación de Decide Madrid</h2>
+    <p>Del lunes 13 al domingo 19 de febrero tendrá lugar un gran proceso participativo en Madrid (puedes ver las propuestas
+    que se votarán en <a href="https://decide.madrid.es/vota">decide.madrid.es/vota</a>). ¿Quieres formar parte de la primera
+    votación de propuestas ciudadanas en todo Madrid de la historia?
+    Apúntate aquí para ser parte de las mesas presenciales de votación que habrá por toda la ciudad.
+    En enero escribiremos a las personas que os inscribáis para confirmar vuestra participación. ¡Muchísimas gracias por
+    ayudar a que todo el mundo pueda decidir!.</p>
+  </div>
+</div>
+
+<div class="row">
+  <div class="small-12 medium-9 large-6 column">
+
+    <%= form_for @volunteer_poll, url: volunteer_poll_path do |f| %>
+
+      <h3>Puedes apuntarte hasta el próximo martes 13 de diciembre</h3>
+
+      <%= f.email_field :email %>
+
+      <h3>¿En qué franjas horarias crees que estarás disponible durante la semana de votación? (independientemente de si puedes participar un único día o varios)</h3>
+
+      <%= f.collection_select :availability_week, VolunteerPoll::VALID_AVAILABILITY_WEEKS, :to_s, :to_s, include_blank: true %>
+
+      <%= f.collection_select :availability_weekend, VolunteerPoll::VALID_AVAILABILITY_WEEKENDS, :to_s, :to_s, include_blank: true %>
+
+      <h3>¿En cuántos turnos crees que podrías participar? (un turno es una mañana o una tarde)</h3>
+
+      <%= f.collection_select :turns, VolunteerPoll::VALID_TURNS, :to_s, :to_s, include_blank: true, label: false %>
+
+      <h3>¿En qué distritos podrías participar?</h3>
+
+      <% VolunteerPoll::DISTRICTS.each do |district| %>
+        <%= f.check_box(district) %>
+      <% end %>
+
+      <div class="small-12 medium-6 margin-top">
+        <%= f.submit "Enviar", class: "button expanded" %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="small-12 column">
+    <p><small>La información de contacto recabada en este formulario será tratada con la única finalidad de gestionar la inscripción en la jornada de evaluación del proceso de presupuestos participativos. Una vez celebrada la jornada los datos serán cancelados. El órgano responsable del tratamiento de los datos es la Dirección General de Participación Ciudadana (c/ Alcalá 45, 28014 Madrid),  todo lo cual se informa en cumplimiento del artículo 5 de la Ley Orgánica 15/1999 de Protección de datos de Carácter Personal. Si además te interesa inscribirte y participar en los debates y procesos participativos que están abiertos en el Ayuntamiento de Madrid puedes realizarlo a través del portal de gobierno abierto <a href="https://decide.madrid.es/">https://decide.madrid.es</a></small></p>
+  </div>
+</div>

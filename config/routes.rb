@@ -303,12 +303,17 @@ Rails.application.routes.draw do
 
   resources :human_rights, only: [:index, :show]
 
+  resource :volunteer_poll, only: [:new, :create] do
+    get :thanks, on: :collection
+  end
+
   if Rails.env.development?
     mount LetterOpenerWeb::Engine, at: "/letter_opener"
   end
 
   mount Tolk::Engine => '/translate', :as => 'tolk'
 
+  get 'voluntarios-mesas-presenciales' => redirect('/volunteer_poll/new')
   get 'encuesta-plaza-espana' => redirect('/encuesta-plaza-espana-resultados')
   get '/blog' => redirect('http://diario.madrid.es/participa/')
   get 'participatory_budget', to: 'spending_proposals#welcome', as: 'participatory_budget'
