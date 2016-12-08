@@ -41,7 +41,7 @@
 
             </p>
             <div class="debate-description">
-              <%= link_to debate.description, debate %>
+              <%= debate.description %>
               <div class="truncate"></div>
             </div>
             <%= render "shared/tags", taggable: debate, limit: 5 %>

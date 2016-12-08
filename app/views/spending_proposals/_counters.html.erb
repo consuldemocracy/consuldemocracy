@@ -1,7 +1,7 @@
 <% if current_user %>
   <% if can? :vote, SpendingProposal %>
     <div class="sidebar-divider"></div>
-    <h3 class="sidebar-title"><%= t("spending_proposals.index.sidebar.votes") %></h3>
+    <h2 class="sidebar-title"><%= t("spending_proposals.index.sidebar.votes") %></h2>
     <br>
 
     <% if current_user.city_wide_spending_proposals_supported_count > 0 %>

@@ -14,7 +14,7 @@
 
 <% if current_user && @ballot.spending_proposals.by_geozone(@geozone).count > 0 %>
   <div class="sidebar-divider"></div>
-  <h3 class="sidebar-title"><%= t("spending_proposals.index.sidebar.my_ballot") %></h3>
+  <h2 class="sidebar-title"><%= t("spending_proposals.index.sidebar.my_ballot") %></h2>
 <% end %>
 
 <% if @ballot.spending_proposals.by_geozone(@geozone).count > 0 %>

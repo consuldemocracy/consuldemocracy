@@ -2395,28 +2395,6 @@ ul.ballot-list {
       .button {
         color: white;
       }
-
-      &.budget {
-
-        h2 {
-          color: $budget;
-        }
-
-        .button {
-          background: $budget;
-        }
-      }
-
-      &.proposals {
-
-        h2 {
-          color: $proposals;
-        }
-
-        .button {
-          background: $proposals;
-        }
-      }
     }
   }
 

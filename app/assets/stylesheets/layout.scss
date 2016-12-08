@@ -56,6 +56,7 @@ a {
   }
 
   &:focus {
+    color: $link-hover;
     outline: 3px solid #ffbf47;
   }
 }
@@ -256,6 +257,10 @@ a {
 
 .button.float-right ~ .button.float-right {
   margin: 0 $line-height/2;
+}
+
+.pagination .current {
+  background: $brand;
 }
 
 // 02. Header
@@ -1160,7 +1165,7 @@ table {
     top: 0;
   }
 
-  &:hover {
+  &:hover, &:focus {
     background: white;
     color: #40A2D1;
   }
@@ -1200,7 +1205,7 @@ table {
     top: 0;
   }
 
-  &:hover {
+  &:hover, &:focus {
     background: white;
     color: #354F88;
   }
@@ -1240,7 +1245,7 @@ table {
     top: 0;
   }
 
-  &:hover {
+  &:hover, &:focus {
     background: white;
     color: #CE3E26;
   }
@@ -1284,7 +1289,8 @@ table {
       top: 0;
     }
 
-    &:hover {
+    &:hover, &:focus {
+      background: white;
       color: #40A2D1;
     }
   }
@@ -1307,7 +1313,8 @@ table {
       top: 0;
     }
 
-    &:hover {
+    &:hover, &:focus {
+      background: white;
       color: #354F88;
     }
   }
@@ -1330,7 +1337,8 @@ table {
       top: 0;
     }
 
-    &:hover {
+    &:hover, &:focus {
+      background: white;
       color: #CE3E26;
     }
   }
