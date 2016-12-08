@@ -72,7 +72,8 @@ feature 'Admin geozones' do
 
     click_button 'Save changes'
 
-    expect(proposal.geozone.name).to eq('New geozone name')
+    expect(proposal.reload.geozone.name).to eq('New geozone name')
+  end
 
   scenario 'Delete geozone with no associated elements' do
     target_geozone = create(:geozone, name: 'Delete me!')
