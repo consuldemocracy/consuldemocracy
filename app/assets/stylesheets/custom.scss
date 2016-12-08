@@ -17,6 +17,7 @@
 // 15. Welcome
 // 16. Si te sientes gato
 // 17. Blas Bonilla
+// 18. Voluntarios mesas presenciales
 //
 
 // 01. Global styles
@@ -2574,5 +2575,16 @@ ul.ballot-list {
     img {
       margin-bottom: $line-height/2;
     }
+  }
+}
+
+// 18. Voluntarios mesas presenciales
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+.volunteer-poll-districts {
+
+  .any_district {
+    background: $highlight;
+    padding-top: rem-calc(6);
   }
 }
