@@ -6,7 +6,7 @@
         <span class="icon-proposals"></span>
         <strong><%= t("admin.menu.title_categories") %></strong>
       </a>
-      <ul <%= "class=is-active" if menu_tags %>>
+      <ul <%= "class=is-active" if menu_tags? %>>
         <li <%= "class=active" if controller_name == "tags" %>>
           <%= link_to t("admin.menu.proposals_topics"), admin_tags_path %>
         </li>
@@ -18,7 +18,7 @@
         <span class="icon-eye"></span>
         <strong><%= t("admin.menu.title_moderated_content") %></strong>
       </a>
-      <ul <%= "class=is-active" if menu_moderated_content %>>
+      <ul <%= "class=is-active" if menu_moderated_content? %>>
         <li <%= "class=active" if controller_name == "proposals" %>>
           <%= link_to t("admin.menu.hidden_proposals"), admin_proposals_path %>
         </li>
@@ -45,7 +45,7 @@
           <span class="icon-budget"></span>
           <strong><%= t("admin.menu.title_budgets") %></strong>
         </a>
-        <ul <%= "class=is-active" if menu_budget %>>
+        <ul <%= "class=is-active" if menu_budget? %>>
           <li <%= "class=active" if controller_name == "spending_proposals" %>>
             <%= link_to t("admin.menu.spending_proposals"), admin_spending_proposals_path %>
           </li>
@@ -59,7 +59,7 @@
           <span class="icon-checkmark-circle"></span>
           <strong><%= t("admin.menu.title_polls") %></strong>
         </a>
-        <ul id="polls_menu" <%= "class=is-active" if menu_polls %>>
+        <ul id="polls_menu" <%= "class=is-active" if menu_polls? %>>
           <li <%= 'class=active' if controller_name == 'polls' %>>
             <%= link_to t('admin.menu.polls'), admin_polls_path %>
           </li>
@@ -84,7 +84,7 @@
         <span class="icon-organizations"></span>
         <strong><%= t("admin.menu.title_profiles") %></strong>
       </a>
-      <ul <%= "class=is-active" if menu_profiles %>>
+      <ul <%= "class=is-active" if menu_profiles? %>>
         <li <%= "class=active" if controller_name == "organizations" %>>
           <%= link_to t("admin.menu.organizations"), admin_organizations_path %>
         </li>
@@ -112,7 +112,7 @@
         <span class="icon-banner"></span>
         <strong><%= t("admin.menu.title_banners") %></strong>
       </a>
-      <ul <%= "class=is-active" if menu_banners %>>
+      <ul <%= "class=is-active" if menu_banners? %>>
         <li <%= "class=active" if controller_name == "banners" %>>
           <%= link_to t("admin.menu.banner"), admin_banners_path %>
         </li>

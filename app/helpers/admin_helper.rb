@@ -4,27 +4,27 @@ module AdminHelper
     render "/#{namespace}/menu"
   end
 
-  def menu_tags
+  def menu_tags?
     ["tags"].include? controller_name
   end
 
-  def menu_moderated_content
+  def menu_moderated_content?
     ["proposals", "debates", "comments", "users"].include? controller_name
   end
 
-  def menu_budget
+  def menu_budget?
     ["spending_proposals"].include? controller_name
   end
 
-  def menu_polls
+  def menu_polls?
     ["polls", "questions", "officers", "booths"].include? controller_name
   end
 
-  def menu_profiles
+  def menu_profiles?
     ["organizations", "officials", "moderators", "valuators", "managers"].include? controller_name
   end
 
-  def menu_banners
+  def menu_banners?
     ["banners"].include? controller_name
   end
 
