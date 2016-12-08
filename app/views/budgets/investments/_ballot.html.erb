@@ -1,16 +1,46 @@
-<% reason = investment.reason_for_not_being_ballotable_by(current_user, @ballot) %>
+<% reason = investment.reason_for_not_being_ballotable_by(current_user, investment_ballot) %>
 <div class="supports ballot">
-  <% if @ballot.has_investment?(investment) %>
-    <%= render 'budgets/ballot/remove',
-               investment: investment,
-               investment_ids: @investments %>
+  <% if investment_ballot.has_investment?(investment) %>
+
+    <div class="remove supported inline-block">
+      <span class="icon-check-circle bounceIn animated"
+            title="<%= t("budget.investments.investment.already_added") %>">
+      </span>
+      <p class="investment-project-amount">
+        <%= investment.formatted_price %>
+      </p>
+      <% if investment.should_show_ballots? %>
+        <%= link_to t('budgets.ballots.show.remove'),
+                    budget_ballot_line_path(id: investment.id,
+                                            budget_id: investment.budget_id,
+                                            investments_ids: investment_ids),
+                    class: "delete small expanded",
+                    method: :delete,
+                    remote: true %>
+      <% end %>
+    </div>
+
   <% else %>
-    <%= render 'budgets/ballot/add',
-               investment: investment,
-               investment_ids: @investments %>
+
+    <div class="add in-favor">
+      <p class="investment-project-amount">
+        <%= investment.formatted_price %>
+      </p>
+      <% if investment.should_show_ballots? %>
+        <%= link_to t("budget.investments.investment.add"),
+                    budget_ballot_lines_url(investment_id: investment.id,
+                                            budget_id: investment.budget_id,
+                                            investments_ids: investment_ids),
+                    class: "button button-support small expanded",
+                    title: t('budget.investments.investment.support_title'),
+                    method: :post,
+                    remote: true %>
+      <% end %>
+    </div>
+
   <% end %>
 
-  <% if reason.present? && !@ballot.has_investment?(investment) %>
+  <% if reason.present? && !investment_ballot.has_investment?(investment) %>
 
     <div class="no-supports-allowed" style='display:none'>
       <p>
@@ -18,7 +48,9 @@
               verify_account: link_to(t("votes.verify_account"), verification_path),
               signin: link_to(t("votes.signin"), new_user_session_path),
               signup: link_to(t("votes.signup"), new_user_registration_path),
-              my_heading: link_to(@ballot.try(:heading).try(:name), budget_investments_path(budget_id: @budget.id, heading_id: @ballot.try(:heading_id)))
+              my_heading: link_to(investment.heading.name,
+                                  budget_investments_path(budget_id: investment.budget_id,
+                                                          heading_id: investment.heading_id))
          ).html_safe %>
       </p>
     </div>

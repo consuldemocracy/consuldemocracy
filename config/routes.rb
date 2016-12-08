@@ -286,9 +286,16 @@ Rails.application.routes.draw do
       get :print, on: :collection
     end
 
-    resources :budget_investments, only: [:index, :new, :create, :show] do
-      post :vote, on: :member
-      get :print, on: :collection
+    resources :budgets, only: :index do
+      collection do
+        get :create_investments
+        get :support_investments
+        get :print_investments
+      end
+      resources :investments, only: [:index, :new, :create, :show], controller: 'budgets/investments' do
+        post :vote, on: :member
+        get :print, on: :collection
+      end
     end
   end
 

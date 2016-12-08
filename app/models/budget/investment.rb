@@ -55,6 +55,7 @@ class Budget
 
     before_save :calculate_confidence_score
     before_validation :set_responsible_name
+    before_validation :set_denormalized_ids
 
     def self.filter_params(params)
       params.select{|x,_| %w{heading_id group_id administrator_id tag_name valuator_id}.include? x.to_s }
@@ -155,7 +156,7 @@ class Budget
     def permission_problem(user)
       return :not_logged_in unless user
       return :organization  if user.organization?
-      return :not_verified  unless user.can?(:vote, SpendingProposal)
+      return :not_verified  unless user.can?(:vote, Budget::Investment)
       return nil
     end
 
@@ -188,5 +189,27 @@ class Budget
       self.responsible_name = author.try(:document_number) if author.try(:document_number).present?
     end
 
+    def should_show_aside?
+      (budget.selecting? && !unfeasible?) || (budget.balloting? && feasible?) || budget.on_hold?
+    end
+
+    def should_show_votes?
+      budget.selecting? || budget.on_hold?
+    end
+
+    def should_show_ballots?
+      budget.balloting?
+    end
+
+    def formatted_price
+      budget.formatted_amount(price)
+    end
+
+    private
+
+      def set_denormalized_ids
+        self.group_id ||= self.heading.group_id
+        self.budget_id ||= self.heading.group.budget_id
+      end
   end
 end

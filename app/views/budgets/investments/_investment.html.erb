@@ -44,20 +44,28 @@
 
       <% unless investment.unfeasible? %>
 
-        <% if @budget.selecting? || @budget.on_hold? %>
+        <% if investment.should_show_votes? %>
 
           <div id="<%= dom_id(investment) %>_votes"
                class="small-12 medium-3 column text-center">
-            <%= render 'votes',
-                      { investment: investment,
-                        vote_url: vote_budget_investment_path(@budget, investment, value: 'yes') } %>
+               <%= render partial: '/budgets/investments/votes', locals: {
+                 investment: investment,
+                 investment_votes: investment_votes,
+                 vote_url: namespaced_budget_investment_vote_path(investment, value: 'yes')
+               } %>
           </div>
 
-        <% elsif @budget.balloting? %>
+        <% elsif investment.should_show_ballots? %>
+
           <div id="<%= dom_id(investment) %>_ballot"
                 class="small-12 medium-3 column text-center">
-            <%= render 'ballot', investment: investment %>
+                <%= render partial: '/budgets/investments/ballot', locals: {
+                  investment: investment,
+                  investment_ids: investment_ids,
+                  investment_ballot: investment_ballots[investment.budget]
+                } %>
           </div>
+
         <% end %>
 
       <% end %>

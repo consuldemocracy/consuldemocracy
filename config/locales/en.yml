@@ -33,6 +33,19 @@ en:
   application:
     close: Close
     menu: Menu
+  budgets:
+    progress_bar:
+      available: Available
+    phases:
+      accepting: Accepting investment projects
+      on_hold: On Hold
+      selecting: Selecting investment projects
+      balloting: Voting investment projects
+      finished: Finished
+  budget_investments:
+    notice:
+      could_not_vote: Could not vote
+      voted: Vote stored successfully
   comments:
     comment:
       admin: Administrator
@@ -428,6 +441,7 @@ en:
     flag: Flag as inappropriate
     print:
       print_button: Print this info
+    search: Search
     show: Show
     suggest:
       debate:

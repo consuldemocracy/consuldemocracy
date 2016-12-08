@@ -1,6 +1,6 @@
 <% reason = investment.reason_for_not_being_selectable_by(current_user) %>
 <% voting_allowed = true unless reason.presence == :not_voting_allowed %>
-<% user_voted_for = voted_for?(@budget_investment_votes, investment) %>
+<% user_voted_for = voted_for?(investment_votes, investment) %>
 
 <div class="supports">
 
@@ -8,12 +8,12 @@
     <%= t("budget.investments.investment.supports", count: investment.total_votes) %>
   </span>
 
-  <div class="in-favor">
+  <div class="in-favor js-in-favor">
     <% if user_voted_for %>
       <div class="supported">
         <%= t("budget.investments.investment.already_supported") %>
       </div>
-    <% elsif @budget.selecting? %>
+    <% elsif investment.should_show_votes? %>
 
       <%= link_to vote_url,
           class: "button button-support small expanded",
@@ -40,7 +40,7 @@
 
   <% if user_voted_for && setting['twitter_handle'] %>
     <div class="share-supported">
-      <%= social_share_button_tag("#{investment.title} #{setting['twitter_hashtag']}", url: budget_investment_url(budget_id: @budget.id, id: investment.id), via: setting['twitter_handle']) %>
+      <%= social_share_button_tag("#{investment.title} #{setting['twitter_hashtag']}", url: budget_investment_url(budget_id: investment.budget_id, id: investment.id), via: setting['twitter_handle']) %>
     </div>
   <% end %>
 </div>

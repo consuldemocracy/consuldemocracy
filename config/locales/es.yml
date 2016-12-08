@@ -33,6 +33,19 @@ es:
   application:
     close: Cerrar
     menu: Menú
+  budgets:
+    progress_bar:
+      available: Disponible
+    phases:
+      accepting: Aceptación de proyectos
+      on_hold: En espera
+      selecting: Selección de proyectos
+      balloting: Votación de proyectos
+      finished: Terminado
+  budget_investments:
+    notice:
+      could_not_vote: No se pudo votar
+      voted: Voto emitido con éxito
   comments:
     comment:
       admin: Administrador
@@ -428,6 +441,7 @@ es:
     flag: Denunciar como inapropiado
     print:
       print_button: Imprimir esta información
+    search: Buscar
     show: Mostrar
     suggest:
       debate:

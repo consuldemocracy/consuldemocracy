@@ -20,11 +20,11 @@ module Budgets
           #@ballot.set_geozone(@geozone)
           #@current_user.update(representative_id: nil)
           if request.get?
-            redirect_to @spending_proposal, notice: t('spending_proposals.notice.voted')
+            redirect_to @investment, notice: t('budget_investments.notice.voted')
           end
         else
           if request.get?
-            redirect_to @spending_proposal, notice: t('spending_proposals.notice.could_not_vote')
+            redirect_to @investment, notice: t('budget_investments.notice.could_not_vote')
           else
             render :new
           end

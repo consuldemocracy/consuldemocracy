@@ -1,16 +1,26 @@
 class Management::BudgetsController < Management::BaseController
   include FeatureFlags
+  include HasFilters
   feature_flag :budgets
 
-  has_filters %w{open finished}, only: :index
+  before_action :only_verified_users, except: :print_investments
 
-  load_and_authorize_resource
-
-  def index
-    @budgets = @budgets.send(@current_filter).order(created_at: :desc).page(params[:page])
+  def create_investments
+    @budgets = Budget.accepting.order(created_at: :desc).page(params[:page])
   end
 
-  def show
-    @budget = Budget.includes(groups: :headings).find(params[:id])
+  def support_investments
+    @budgets = Budget.selecting.order(created_at: :desc).page(params[:page])
   end
+
+  def print_investments
+    @budgets = Budget.current.order(created_at: :desc).page(params[:page])
+  end
+
+  private
+
+    def only_verified_users
+      check_verified_user t("management.budget_investments.alert.unverified_user")
+    end
+
 end
