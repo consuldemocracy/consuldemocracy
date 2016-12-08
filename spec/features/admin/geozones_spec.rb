@@ -73,5 +73,63 @@ feature 'Admin geozones' do
     click_button 'Save changes'
 
     expect(proposal.geozone.name).to eq('New geozone name')
+
+  scenario 'Delete geozone with no associated elements' do
+    target_geozone = create(:geozone, name: 'Delete me!')
+
+    visit admin_geozones_path
+
+    within("#geozone_#{target_geozone.id}") { click_link 'Delete' }
+
+    expect(page).not_to have_content('Delete me!')
+    expect(Geozone.find_by_id(target_geozone.id)).to be_nil
+  end
+
+  scenario 'Delete geozone with associated proposal' do
+    target_geozone = create(:geozone, name: 'Delete me!')
+    proposal = create(:proposal, geozone: target_geozone)
+
+    visit admin_geozones_path
+
+    within("#geozone_#{target_geozone.id}") { click_link 'Delete' }
+
+    expect(page).to have_content('Delete me!')
+    expect(proposal.reload.geozone).to eq(target_geozone)
+  end
+
+  scenario 'Delete geozone with associated spending proposal' do
+    target_geozone = create(:geozone, name: 'Delete me!')
+    spending_proposal = create(:spending_proposal, geozone: target_geozone)
+
+    visit admin_geozones_path
+
+    within("#geozone_#{target_geozone.id}") { click_link 'Delete' }
+
+    expect(page).to have_content('Delete me!')
+    expect(spending_proposal.reload.geozone).to eq(target_geozone)
+  end
+
+  scenario 'Delete geozone with associated debate' do
+    target_geozone = create(:geozone, name: 'Delete me!')
+    debate = create(:debate, geozone: target_geozone)
+
+    visit admin_geozones_path
+
+    within("#geozone_#{target_geozone.id}") { click_link 'Delete' }
+
+    expect(page).to have_content('Delete me!')
+    expect(debate.reload.geozone).to eq(target_geozone)
+  end
+
+  scenario 'Delete geozone with associated user' do
+    target_geozone = create(:geozone, name: 'Delete me!')
+    user = create(:user, geozone: target_geozone)
+
+    visit admin_geozones_path
+
+    within("#geozone_#{target_geozone.id}") { click_link 'Delete' }
+
+    expect(page).to have_content('Delete me!')
+    expect(user.reload.geozone).to eq(target_geozone)
   end
 end

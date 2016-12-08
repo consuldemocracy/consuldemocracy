@@ -270,6 +270,8 @@ es:
       index:
         title: Distritos
         create: Crear un distrito
+        edit: Editar
+        delete: Borrar
       geozone:
         name: Nombre
         external_code: Código externo
@@ -287,6 +289,9 @@ es:
       new:
         back: Volver
         creating: Crear distrito
+      delete:
+        success: Distrito borrado correctamente
+        error: No se puede borrar el distrito porque ya tiene elementos asociados
     stats:
       show:
         stats_title: Estadísticas

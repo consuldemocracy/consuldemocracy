@@ -272,6 +272,8 @@ en:
       index:
         title: Geozone
         create: Create geozone
+        edit: Edit
+        delete: Delete
       geozone:
         name: Name
         external_code: External code
@@ -289,6 +291,9 @@ en:
       new:
         back: Go back
         creating: Create district
+      delete:
+        success: Geozone successfully deleted
+        error: This geozone can't be deleted since there are elements attached to it
     stats:
       show:
         stats_title: Stats

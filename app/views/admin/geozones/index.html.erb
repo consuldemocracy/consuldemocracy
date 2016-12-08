@@ -22,6 +22,9 @@
         <td>
           <%= link_to t("admin.geozones.index.edit"), edit_admin_geozone_path(geozone), class: 'edit-banner button hollow' %>
         </td>
+        <td>
+          <%= link_to t("admin.geozones.index.delete"), admin_geozone_path(geozone), method: :delete, class: 'button hollow alert' %>
+        </td>
       </tr>
     <% end %>
   </tbody>
