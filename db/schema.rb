@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161208110225) do
+ActiveRecord::Schema.define(version: 20161208112521) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -624,6 +624,35 @@ ActiveRecord::Schema.define(version: 20161208110225) do
 
   add_index "visits", ["started_at"], name: "index_visits_on_started_at", using: :btree
   add_index "visits", ["user_id"], name: "index_visits_on_user_id", using: :btree
+
+  create_table "volunteer_polls", force: :cascade do |t|
+    t.string  "email"
+    t.string  "availability_week"
+    t.string  "availability_weekend"
+    t.string  "turns"
+    t.boolean "any_district"
+    t.boolean "arganzuela"
+    t.boolean "barajas"
+    t.boolean "carabanchel"
+    t.boolean "centro"
+    t.boolean "chamartin"
+    t.boolean "chamberi"
+    t.boolean "ciudad_lineal"
+    t.boolean "fuencarral_el_pardo"
+    t.boolean "hortaleza"
+    t.boolean "latina"
+    t.boolean "moncloa_aravaca"
+    t.boolean "moratalaz"
+    t.boolean "puente_de_vallecas"
+    t.boolean "retiro"
+    t.boolean "salamanca"
+    t.boolean "san_blas_canillejas"
+    t.boolean "tetuan"
+    t.boolean "usera"
+    t.boolean "vicalvaro"
+    t.boolean "villa_de_vallecas"
+    t.boolean "villaverde"
+  end
 
   create_table "votes", force: :cascade do |t|
     t.integer  "votable_id"
