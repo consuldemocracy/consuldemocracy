@@ -199,8 +199,7 @@ module CommonActions
     expect(page).to have_content 'You must Sign in or Sign up to continue'
     expect(page).to have_link("Sign in", href: new_user_session_path)
     expect(page).to have_link("Sign up", href: new_user_registration_path)
-
-    expect(page).to have_selector('.in-favor a', visible: false)
+    expect(page).to have_selector('.in-favor', visible: false)
   end
 
   def expect_message_you_need_to_sign_in_to_vote_comments
@@ -217,8 +216,7 @@ module CommonActions
   def expect_message_only_verified_can_vote_proposals
     expect(page).to have_content 'Only verified users can vote on proposals'
     expect(page).to have_link("verify your account", href: verification_path)
-
-    expect(page).to have_selector('.in-favor a', visible: false)
+    expect(page).to have_selector('.in-favor', visible: false)
   end
 
   def expect_message_organizations_cannot_vote

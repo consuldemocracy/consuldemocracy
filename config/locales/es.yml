@@ -258,10 +258,17 @@ es:
       processes: Procesos
       spending_proposals: Presupuestos participativos
       proposal_ballot: Votaciones
-      spending_proposals: Presupuestos ciudadanos
       sign_up: Ver el vídeo de Blas Bonilla
       sign_in: Si ya tienes una cuenta %{login}.
       sign_in_link: entra ahora
+      see_all: Ver propuestas
+  legislation:
+    help:
+      alt: Selecciona el texto que quieres comentar y pulsa en el botón con el lápiz.
+      text: Para comentar este documento debes %{sign_in} o %{sign_up}. Después selecciona el texto que quieres comentar y pulsa en el botón con el lápiz.
+      text_sign_in: iniciar sesión
+      text_sign_up: registrarte
+      title: "¿Cómo puedo comentar este documento?"
   locale: Español
   notifications:
     index:
@@ -507,8 +514,7 @@ es:
     outline:
       debates: Debates
       proposals: Propuestas
-      budget: Presupuestos ciudadanos
-      pagination: Paginación
+      budget: Presupuestos participativos
       searcher: Buscador
   social:
     blog: Blog

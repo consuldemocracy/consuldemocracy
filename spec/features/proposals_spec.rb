@@ -22,8 +22,8 @@ feature 'Proposals' do
       proposals.each do |proposal|
         within('#proposals') do
           expect(page).to have_content proposal.title
+          expect(page).to have_content proposal.summary
           expect(page).to have_css("a[href='#{proposal_path(proposal)}']", text: proposal.title)
-          expect(page).to have_css("a[href='#{proposal_path(proposal)}']", text: proposal.summary)
         end
       end
     end
