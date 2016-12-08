@@ -336,7 +336,7 @@ describe SpendingProposal do
 
     it "does not get updated if the user is erased" do
       user.erase
-      expect(user.document_number).to be_blank
+      expect(user.erased_at).to be
       spending_proposal.touch
       expect(spending_proposal.responsible_name).to eq("123456")
     end
