@@ -20,7 +20,7 @@
     <p id="amount-spent" class="progress-meter-text spent-amount-text">
       <%= @budget.format_amount(@ballot.amount_spent(@heading.id)) %>
       <span id="amount-available" class="amount-available">
-        <%= t("spending_proposals.index.available") %>
+        <%= t("budget.progress_bar.available") %>
         <span><%= @budget.format_amount(@ballot.amount_available(@heading)) %></span>
       </span>
     </p>

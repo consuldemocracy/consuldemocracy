@@ -7,12 +7,12 @@
     <div id="budget-investments" class="budget-investments-list small-12 medium-9 column">
 
       <div class="small-12 search-results">
-        <%= content_tag(:h2, t("management.investments.filters.unfeasible")) if params[:unfeasible].present? %>
-        <%= content_tag(:h2, t("management.investments.filters.by_geozone", geozone: @geozone_name)) if @geozone_name.present? %>
+        <%= content_tag(:h2, t("management.budget_investments.filters.unfeasible")) if params[:unfeasible].present? %>
+        <%= content_tag(:h2, t("management.budget_investments.filters.heading", heading: @heading.name)) if @heading.present? %>
         <% if params[:search].present? %>
           <h2>
             <%= page_entries_info @investments %>
-            <%= t("management.investments.search_results", count: @investments.size, search_term: params[:search]) %>
+            <%= t("management.budget_investments.search_results", count: @investments.size, search_term: params[:search]) %>
           </h2>
         <% end %>
       </div>
