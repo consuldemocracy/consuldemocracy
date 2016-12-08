@@ -1,14 +1,16 @@
 class Admin::GeozonesController < Admin::BaseController
 
   respond_to :html
-  
+
   load_and_authorize_resource
 
   def index
+    @geozones = Geozone.all.order("LOWER(name)")
   end
 
   def new
   end
+
   def edit
   end
 
