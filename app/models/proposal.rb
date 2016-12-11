@@ -6,6 +6,8 @@ class Proposal < ActiveRecord::Base
   include Sanitizable
   include Searchable
   include Filterable
+  include HasPublicAuthor
+  extend HasPublicAuthorTypes
 
   acts_as_votable
   acts_as_paranoid column: :hidden_at

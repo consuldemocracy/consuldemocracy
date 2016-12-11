@@ -1,15 +1,15 @@
 API_TYPE_DEFINITIONS = {
   User     => %I[ id username proposals organization ],
   Debate   => %I[ id title description author_id author created_at comments ],
-  Proposal => %I[ id title description author_id author created_at comments ],
+  Proposal => %I[ id title description author_id author public_author_id public_author created_at comments ],
   Comment  => %I[ id body user_id user commentable_id ],
   Organization => %I[ id name ]
 }
 
-type_creator = GraphQL::TypeCreator.new
+TypeCreator = GraphQL::TypeCreator.new
 
 API_TYPE_DEFINITIONS.each do |model, fields|
-  type_creator.create(model, fields)
+  TypeCreator.create(model, fields)
 end
 
 ConsulSchema = GraphQL::Schema.define do
@@ -29,7 +29,7 @@ QueryRoot = GraphQL::ObjectType.define do
   name "Query"
   description "The query root for this schema"
 
-  type_creator.created_types.each do |model, created_type|
+  TypeCreator.created_types.each do |model, created_type|
 
     # create an entry field to retrive a single object
     field model.name.underscore.to_sym do
