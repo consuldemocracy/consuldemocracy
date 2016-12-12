@@ -40,7 +40,7 @@ class Verification::Residence
   end
 
   def document_number_uniqueness
-    errors.add(:document_number, I18n.t('errors.messages.taken')) if User.active.where(document_number: document_number).any?
+    errors.add(:document_number, I18n.t('errors.messages.taken')) if User.where(document_number: document_number).any?
   end
 
   def store_failed_attempt
