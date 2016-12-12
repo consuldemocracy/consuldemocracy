@@ -363,6 +363,13 @@
       font-size: rem-calc(15);
       margin-bottom: rem-calc(15);
     }
+
+    &.tags, &.geozone {
+
+      li {
+        margin-bottom: 0;
+      }
+    }
   }
 
   .author-photo {
@@ -386,7 +393,7 @@
 
   aside {
 
-    h3 {
+    h2 {
       border-top: 2px solid $brand;
       display: inline-block;
       font-size: rem-calc(16);
@@ -524,7 +531,7 @@
     }
 
     .label-proposal {
-      color: $proposals;
+      color: $proposals-dark;
     }
 
     .label-investment-project {
@@ -566,7 +573,7 @@
     }
 
     .icon-proposals {
-      color: $proposals;
+      color: $proposals-dark;
     }
 
     .icon-budget {
@@ -1122,10 +1129,14 @@ ul.ballot-list {
   }
 
   p {
-    margin-bottom: 0;
 
     &.title {
       color: #FFD200;
+    }
+
+    &.title-date {
+      font-size: rem-calc(24);
+      font-weight: bold;
     }
   }
 

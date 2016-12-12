@@ -56,6 +56,7 @@ a {
   }
 
   &:focus {
+    color: $link-hover;
     outline: 3px solid #ffbf47;
   }
 }
@@ -263,6 +264,10 @@ a {
 //>>>>>>> budget
 //}
 
+.pagination .current {
+  background: $brand;
+}
+
 // 02. Header
 // ----------
 
@@ -370,6 +375,10 @@ header {
     &:hover {
       text-decoration: underline;
     }
+  }
+
+  ul {
+    margin-bottom: 0;
   }
 }
 
@@ -514,7 +523,7 @@ footer {
   p {
     font-size: $small-font-size;
 
-    .info a {
+    &.info a {
       text-decoration: underline;
     }
   }
@@ -551,6 +560,7 @@ footer {
 
 .subfooter {
   border-top: 1px solid $text-light;
+  font-size: $small-font-size;
   padding-top: $line-height/2;
 }
 
@@ -582,7 +592,7 @@ footer {
   }
 }
 
-h3.sidebar-title {
+h2.sidebar-title {
   border-top: 2px solid $brand;
   display: inline-block;
   font-size: rem-calc(16);
@@ -1160,7 +1170,7 @@ table {
     top: 0;
   }
 
-  &:hover {
+  &:hover, &:focus {
     background: white;
     color: #40A2D1;
   }
@@ -1200,7 +1210,7 @@ table {
     top: 0;
   }
 
-  &:hover {
+  &:hover, &:focus {
     background: white;
     color: #354F88;
   }
@@ -1240,7 +1250,7 @@ table {
     top: 0;
   }
 
-  &:hover {
+  &:hover, &:focus {
     background: white;
     color: #CE3E26;
   }
@@ -1284,7 +1294,8 @@ table {
       top: 0;
     }
 
-    &:hover {
+    &:hover, &:focus {
+      background: white;
       color: #40A2D1;
     }
   }
@@ -1307,7 +1318,8 @@ table {
       top: 0;
     }
 
-    &:hover {
+    &:hover, &:focus {
+      background: white;
       color: #354F88;
     }
   }
@@ -1330,7 +1342,8 @@ table {
       top: 0;
     }
 
-    &:hover {
+    &:hover, &:focus {
+      background: white;
       color: #CE3E26;
     }
   }

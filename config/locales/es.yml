@@ -198,6 +198,7 @@ es:
       transparency_url: https://transparency.consul
     header:
       administration: Administrar
+      available_locales: Idiomas disponibles
       debates: Debates
       external_link_blog: Blog
       external_link_opendata: Datos abiertos
@@ -225,6 +226,7 @@ es:
       proposal_ballot: Votaciones
       see_all: Ver propuestas
       budgets: Presupuestos ciudadanos
+      spending_proposals: Presupuestos participativos
   legislation:
     help:
       alt: Selecciona el texto que quieres comentar y pulsa en el botón con el lápiz.
@@ -439,6 +441,7 @@ es:
     check_none: Ninguno
     collective: Colectivo
     flag: Denunciar como inapropiado
+    hide: Ocultar
     print:
       print_button: Imprimir esta información
     search: Buscar
@@ -466,8 +469,7 @@ es:
     outline:
       debates: Debates
       proposals: Propuestas
-      budget: Presupuestos ciudadanos
-      pagination: Paginación
+      budget: Presupuestos participativos
       searcher: Buscador
   social:
     blog: Blog

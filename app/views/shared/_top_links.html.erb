@@ -1,15 +1,16 @@
 <div class="top-links hide-for-small-only">
   <div class="row">
     <%= render "shared/locale_switcher" %>
-    <div class="external-links">
-      <%= link_to t("layouts.header.external_link_transparency"), t("layouts.header.external_link_transparency_url") %>&nbsp;|
-      <%= link_to t("layouts.header.external_link_opendata"), "/opendata", class: ("selected" if current_page?("/opendata")) %>
+    <ul class="no-bullet external-links">
+      <li class="inline-block"><%= link_to t("layouts.header.external_link_transparency"), t("layouts.header.external_link_transparency_url") %>&nbsp;|</li>
+      <li class="inline-block"><%= link_to t("layouts.header.external_link_opendata"), "/opendata", class: ("selected" if current_page?("/opendata")) %></li>
       <% if setting['blog_url'] %>
-        &nbsp;|
-        <%= link_to setting['blog_url'], title: t('shared.target_blank_html'), target: "_blank" do %>
-          <%= t("layouts.header.external_link_blog") %>
-        <% end %>
+        <li class="inline-block">|&nbsp;
+          <%= link_to setting['blog_url'], title: t('shared.target_blank_html'), target: "_blank" do %>
+            <%= t("layouts.header.external_link_blog") %>
+          <% end %>
+        </li>
       <% end %>
-    </div>
+    </ul>
   </div>
 </div>

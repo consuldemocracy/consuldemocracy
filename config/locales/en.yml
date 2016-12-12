@@ -198,6 +198,7 @@ en:
       transparency_url: https://transparency.consul
     header:
       administration: Administration
+      available_locales: Available languages
       debates: Debates
       external_link_blog: Blog
       external_link_opendata: Open data
@@ -439,6 +440,7 @@ en:
     check_none: None
     collective: Collective
     flag: Flag as inappropriate
+    hide: Hide
     print:
       print_button: Print this info
     search: Search
@@ -467,7 +469,6 @@ en:
       debates: Debates
       proposals: Proposals
       budget: Participatory budget
-      pagination: Pagination
       searcher: Searcher
   social:
     blog: Blog
