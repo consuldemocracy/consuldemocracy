@@ -76,7 +76,7 @@ feature 'Admin budget investments' do
       expect(page).to have_link("Change name")
       expect(page).to have_link("Plant trees")
 
-      select "Central Park", from: "heading_id"
+      select "Parks: Central Park", from: "heading_id"
 
       expect(page).to_not have_link("Realocate visitors")
       expect(page).to_not have_link("Change name")
@@ -88,31 +88,13 @@ feature 'Admin budget investments' do
       expect(page).to have_link("Change name")
       expect(page).to have_link("Plant trees")
 
-      select "Main Avenue", from: "heading_id"
+      select "Streets: Main Avenue", from: "heading_id"
 
       expect(page).to have_link("Realocate visitors")
       expect(page).to_not have_link("Change name")
       expect(page).to_not have_link("Plant trees")
 
-      select "Mercy Street", from: "heading_id"
-
-      expect(page).to_not have_link("Realocate visitors")
-      expect(page).to have_link("Change name")
-      expect(page).to_not have_link("Plant trees")
-
-      click_link("Change name")
-      click_link("Go back")
-
-      expect(page).to_not have_link("Realocate visitors")
-      expect(page).to have_link("Change name")
-      expect(page).to_not have_link("Plant trees")
-
-      click_link("Change name")
-      click_link("Edit classification")
-      expect(page).to have_button("Update")
-      click_link("Go back")
-      expect(page).to_not have_button("Update")
-      click_link("Go back")
+      select "Streets: Mercy Street", from: "heading_id"
 
       expect(page).to_not have_link("Realocate visitors")
       expect(page).to have_link("Change name")
@@ -144,22 +126,6 @@ feature 'Admin budget investments' do
 
       select "Admin 1", from: "administrator_id"
       expect(page).to have_content('There is 1 investment')
-
-      click_link("Realocate visitors")
-      click_link("Go back")
-
-      expect(page).to have_content('There is 1 investment')
-      expect(page).to_not have_link("Destroy the city")
-      expect(page).to have_link("Realocate visitors")
-
-      click_link("Realocate visitors")
-      click_link("Edit classification")
-      expect(page).to have_button("Update")
-      click_link("Go back")
-      expect(page).to_not have_button("Update")
-      click_link("Go back")
-
-      expect(page).to have_content('There is 1 investment')
       expect(page).to_not have_link("Destroy the city")
       expect(page).to have_link("Realocate visitors")
     end
@@ -190,21 +156,6 @@ feature 'Admin budget investments' do
       expect(page).to have_link("Realocate visitors")
 
       select "Valuator 1", from: "valuator_id"
-      expect(page).to have_content('There is 1 investment')
-      click_link("Realocate visitors")
-      click_link("Go back")
-
-      expect(page).to have_content('There is 1 investment')
-      expect(page).to_not have_link("Destroy the city")
-      expect(page).to have_link("Realocate visitors")
-
-      click_link("Realocate visitors")
-      click_link("Edit classification")
-      expect(page).to have_button("Update")
-      click_link("Go back")
-      expect(page).to_not have_button("Update")
-      click_link("Go back")
-
       expect(page).to have_content('There is 1 investment')
       expect(page).to_not have_link("Destroy the city")
       expect(page).to have_link("Realocate visitors")
@@ -297,24 +248,6 @@ feature 'Admin budget investments' do
 
       expect(page).to_not have_content("More hospitals")
       expect(page).to have_css(".budget_investment", count: 2)
-      expect(page).to have_content("Educate the children")
-      expect(page).to have_content("More schools")
-
-      click_link("Educate the children")
-      click_link("Go back")
-
-      expect(page).to_not have_content("More hospitals")
-      expect(page).to have_content("Educate the children")
-      expect(page).to have_content("More schools")
-
-      click_link("Educate the children")
-      click_link("Edit classification")
-      expect(page).to have_button("Update")
-      click_link("Go back")
-      expect(page).to_not have_button("Update")
-      click_link("Go back")
-
-      expect(page).to_not have_content("More hospitals")
       expect(page).to have_content("Educate the children")
       expect(page).to have_content("More schools")
     end
