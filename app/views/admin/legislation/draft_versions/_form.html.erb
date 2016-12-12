@@ -59,8 +59,13 @@
     <div class="small-12 medium-4 column">
       <%= f.label :body %>
     </div>
-    <div class="small-12 medium-8 column">
-      <%= f.text_area :body, label: false, rows: 15 %>
+    <br/>
+    <div class="markdown-editor">
+      <div class="small-12 medium-6 column">
+        <%= f.text_area :body, label: false, rows: 25 %>
+      </div>
+      <div id="markdown-preview" class="small-12 medium-6 column">
+      </div>
     </div>
   </div>
 

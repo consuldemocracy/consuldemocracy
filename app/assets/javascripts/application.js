@@ -46,6 +46,8 @@
 //= require embed_video
 //= require banners
 //= require social_share
+//= require markdown-it
+//= require markdown_editor
 //= require custom
 
 var initialize_modules = function() {
@@ -68,6 +70,7 @@ var initialize_modules = function() {
   App.EmbedVideo.initialize();
   App.Banners.initialize();
   App.SocialShare.initialize();
+  App.MarkdownEditor.initialize();
 };
 
 $(function(){
