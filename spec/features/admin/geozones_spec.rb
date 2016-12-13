@@ -83,54 +83,9 @@ feature 'Admin geozones' do
     expect(Geozone.where(id: geozone.id)).to be_empty
   end
 
-  scenario 'Delete geozone with associated proposal' do
+  scenario 'Delete geozone with associated element' do
     geozone = create(:geozone, name: 'Delete me!')
     create(:proposal, geozone: geozone)
-
-    visit admin_geozones_path
-
-    within("#geozone_#{geozone.id}") { click_link 'Delete' }
-
-    expect(page).to have_content "This geozone can't be deleted since there are elements attached to it"
-
-    within("#geozone_#{geozone.id}") do
-      expect(page).to have_content 'Delete me!'
-    end
-  end
-
-  scenario 'Delete geozone with associated spending proposal' do
-    geozone = create(:geozone, name: 'Delete me!')
-    create(:spending_proposal, geozone: geozone)
-
-    visit admin_geozones_path
-
-    within("#geozone_#{geozone.id}") { click_link 'Delete' }
-
-    expect(page).to have_content "This geozone can't be deleted since there are elements attached to it"
-
-    within("#geozone_#{geozone.id}") do
-      expect(page).to have_content 'Delete me!'
-    end
-  end
-
-  scenario 'Delete geozone with associated debate' do
-    geozone = create(:geozone, name: 'Delete me!')
-    create(:debate, geozone: geozone)
-
-    visit admin_geozones_path
-
-    within("#geozone_#{geozone.id}") { click_link 'Delete' }
-
-    expect(page).to have_content "This geozone can't be deleted since there are elements attached to it"
-
-    within("#geozone_#{geozone.id}") do
-      expect(page).to have_content 'Delete me!'
-    end
-  end
-
-  scenario 'Delete geozone with associated user' do
-    geozone = create(:geozone, name: 'Delete me!')
-    create(:user, geozone: geozone)
 
     visit admin_geozones_path
 
