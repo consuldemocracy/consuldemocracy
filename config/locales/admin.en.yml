@@ -115,6 +115,8 @@ en:
         errors:
           form:
             error: Error
+        form:
+          fullscreen_toggle: Toggle full screen
         index:
           title: Draft versions
           create: Create version

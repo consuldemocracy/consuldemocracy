@@ -113,6 +113,8 @@ es:
         errors:
           form:
             error: Error
+        form:
+          fullscreen_toggle: Pantalla completa
         index:
           title: Versiones del borrador
           create: Crear versión
