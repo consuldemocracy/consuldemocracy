@@ -46,14 +46,15 @@ class User < ActiveRecord::Base
   attr_accessor :skip_password_validation
   attr_accessor :use_redeemable_code
 
-  scope :administrators, -> { joins(:administrators) }
-  scope :moderators,     -> { joins(:moderator) }
-  scope :organizations,  -> { joins(:organization) }
-  scope :officials,      -> { where("official_level > 0") }
-  scope :for_render,     -> { includes(:organization) }
-  scope :by_document,    -> (document_type, document_number) { where(document_type: document_type, document_number: document_number) }
-  scope :email_digest,   -> { where(email_digest: true) }
-  scope :active,         -> { where(erased_at: nil) }
+  scope :administrators,  -> { joins(:administrators) }
+  scope :moderators,      -> { joins(:moderator) }
+  scope :organizations,   -> { joins(:organization) }
+  scope :officials,       -> { where("official_level > 0") }
+  scope :for_render,      -> { includes(:organization) }
+  scope :by_document,     -> (document_type, document_number) { where(document_type: document_type, document_number: document_number) }
+  scope :email_digest,    -> { where(email_digest: true) }
+  scope :active,          -> { where(erased_at: nil) }
+  scope :public_activity, -> { where(public_activity: true) }
 
   before_validation :clean_document_number
 

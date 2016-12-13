@@ -6,8 +6,6 @@ class Proposal < ActiveRecord::Base
   include Sanitizable
   include Searchable
   include Filterable
-  include HasPublicAuthor
-  extend HasPublicAuthorTypes
 
   acts_as_votable
   acts_as_paranoid column: :hidden_at
@@ -16,6 +14,7 @@ class Proposal < ActiveRecord::Base
   RETIRE_OPTIONS = %w(duplicated started unfeasible done other)
 
   belongs_to :author, -> { with_hidden }, class_name: 'User', foreign_key: 'author_id'
+  belongs_to :public_author, -> { public_activity }, class_name: 'User', foreign_key: 'author_id'
   belongs_to :geozone
   has_many :comments, as: :commentable
   has_many :proposal_notifications

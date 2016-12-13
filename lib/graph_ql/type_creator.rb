@@ -26,14 +26,13 @@ module GraphQL
         field_names.each do |field_name|
           if model.column_names.include?(field_name.to_s)
             field(field_name.to_s, TYPES_CONVERSION[model.columns_hash[field_name.to_s].type])
-          elsif association = type_creator.class.association?(model, field_name)
+          else
+            association = type_creator.class.association?(model, field_name)
             if type_creator.class.needs_pagination?(association)
               connection association.name, -> { type_creator.created_types[association.klass].connection_type }
             else
               field association.name, -> { type_creator.created_types[association.klass] }
             end
-          else
-            field field_name.to_s, model.send("#{field_name}_type".to_sym)
           end
         end
       end
