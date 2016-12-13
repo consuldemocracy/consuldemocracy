@@ -394,3 +394,34 @@ table.investment-projects-summary {
     white-space: nowrap;
   }
 }
+
+
+// Markdown Editor
+// ---------------
+
+.markdown-editor {
+  background-color: white;
+}
+
+.markdown-editor #markdown-preview {
+  overflow-y: auto;
+  height: 15em;
+}
+
+.markdown-editor textarea {
+  height: 15em;
+}
+
+.markdown-editor.fullscreen {
+  z-index: 9999;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.markdown-editor.fullscreen #markdown-preview {
+  height: 99%;
+}
+

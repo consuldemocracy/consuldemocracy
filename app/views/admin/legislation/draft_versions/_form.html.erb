@@ -61,8 +61,11 @@
     </div>
     <br/>
     <div class="markdown-editor">
+      <div class="small-12 column">
+        <span class="icon-arrows-expand"></span><%= link_to t("admin.legislation.draft_versions.form.fullscreen_toggle"), "#", class: 'fullscreen-toggle' %>
+      </div>
       <div class="small-12 medium-6 column">
-        <%= f.text_area :body, label: false, rows: 25 %>
+        <%= f.text_area :body, label: false %>
       </div>
       <div id="markdown-preview" class="small-12 medium-6 column">
       </div>
