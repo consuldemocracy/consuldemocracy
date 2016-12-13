@@ -4,6 +4,7 @@ App.MarkdownEditor =
     textarea_content = element.find('textarea').val()
     result = md.render(textarea_content)
     element.find('#markdown-preview').html(result)
+    element.find('#markdown-result input').val(result)
 
   initialize: ->
     $('.markdown-editor').each ->

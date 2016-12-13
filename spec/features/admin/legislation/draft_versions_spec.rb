@@ -35,7 +35,7 @@ feature 'Admin legislation draft versions' do
   end
 
   context 'Create' do
-    scenario 'Valid legislation draft_version' do
+    scenario 'Valid legislation draft version' do
       process = create(:legislation_process, title: 'An example legislation process')
 
       visit admin_root_path
@@ -61,6 +61,36 @@ feature 'Admin legislation draft versions' do
 
       expect(page).to have_content 'An example legislation process'
       expect(page).to have_content 'Version 3'
+    end
+  end
+
+  context 'Update' do
+    scenario 'Valid legislation draft version', :js do
+      process = create(:legislation_process, title: 'An example legislation process')
+      draft_version = create(:legislation_draft_version, title: 'Version 1', process: process)
+
+      visit admin_root_path
+
+      within('#side_menu') do
+        click_link "Collaborative Legislation"
+      end
+
+      click_link "All"
+
+      expect(page).to have_content 'An example legislation process'
+
+      click_link 'An example legislation process'
+      click_link 'Text'
+
+      click_link 'Version 1'
+
+      fill_in 'legislation_draft_version_title', with: 'Version 1b'
+      fill_in 'legislation_draft_version_body', with: '# Version 1 body\r\nParagraph\r\n>Quote'
+
+      click_button 'Save changes'
+
+      expect(page).to have_content 'Version 1b'
+      expect(draft_version.reload.body_html).to eq("<h1>Version 1 body\\r\\nParagraph\\r\\n&gt;Quote</h1>\r\n")
     end
   end
 end

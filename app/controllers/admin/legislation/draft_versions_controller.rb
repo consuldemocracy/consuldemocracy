@@ -36,7 +36,8 @@ class Admin::Legislation::DraftVersionsController < Admin::Legislation::BaseCont
         :changelog,
         :status,
         :final_version,
-        :body
+        :body,
+        :body_html
       )
     end
 end
