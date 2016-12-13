@@ -78,6 +78,7 @@ feature 'Admin geozones' do
 
     within("#geozone_#{geozone.id}") { click_link 'Delete' }
 
+    expect(page).to have_content 'Geozone successfully deleted'
     expect(page).not_to have_content('Delete me!')
     expect(Geozone.where(id: geozone.id)).to be_empty
   end
@@ -89,6 +90,8 @@ feature 'Admin geozones' do
     visit admin_geozones_path
 
     within("#geozone_#{geozone.id}") { click_link 'Delete' }
+
+    expect(page).to have_content "This geozone can't be deleted since there are elements attached to it"
 
     within("#geozone_#{geozone.id}") do
       expect(page).to have_content 'Delete me!'
@@ -103,6 +106,8 @@ feature 'Admin geozones' do
 
     within("#geozone_#{geozone.id}") { click_link 'Delete' }
 
+    expect(page).to have_content "This geozone can't be deleted since there are elements attached to it"
+
     within("#geozone_#{geozone.id}") do
       expect(page).to have_content 'Delete me!'
     end
@@ -116,6 +121,8 @@ feature 'Admin geozones' do
 
     within("#geozone_#{geozone.id}") { click_link 'Delete' }
 
+    expect(page).to have_content "This geozone can't be deleted since there are elements attached to it"
+
     within("#geozone_#{geozone.id}") do
       expect(page).to have_content 'Delete me!'
     end
@@ -128,6 +135,8 @@ feature 'Admin geozones' do
     visit admin_geozones_path
 
     within("#geozone_#{geozone.id}") { click_link 'Delete' }
+
+    expect(page).to have_content "This geozone can't be deleted since there are elements attached to it"
 
     within("#geozone_#{geozone.id}") do
       expect(page).to have_content 'Delete me!'
