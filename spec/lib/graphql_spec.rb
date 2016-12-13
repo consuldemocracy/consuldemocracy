@@ -35,8 +35,8 @@ describe ConsulSchema do
   end
 
   it "returns belongs_to associations" do
-    response = execute("{ proposal(id: #{proposal.id}) { author { username } } }")
-    expect(dig(response, 'data.proposal.author.username')).to eq(proposal.author.username)
+    response = execute("{ proposal(id: #{proposal.id}) { public_author { username } } }")
+    expect(dig(response, 'data.proposal.public_author.username')).to eq(proposal.public_author.username)
   end
 
   it "returns has_many associations" do
@@ -55,9 +55,9 @@ describe ConsulSchema do
     org_user = create(:user)
     organization = create(:organization, user: org_user)
     org_proposal = create(:proposal, author: org_user)
-    response = execute("{ proposal(id: #{org_proposal.id}) { author { organization { name } } } }")
+    response = execute("{ proposal(id: #{org_proposal.id}) { public_author { organization { name } } } }")
 
-    expect(dig(response, 'data.proposal.author.organization.name')).to eq(organization.name)
+    expect(dig(response, 'data.proposal.public_author.organization.name')).to eq(organization.name)
   end
 
   it "hides confidential fields of Int type" do
@@ -89,7 +89,7 @@ describe ConsulSchema do
   end
 
   it "hides confidential fields inside deeply nested queries" do
-    response = execute("{ proposals(first: 1) { edges { node { author { encrypted_password } } } } }")
+    response = execute("{ proposals(first: 1) { edges { node { public_author { encrypted_password } } } } }")
     expect(hidden_field?(response, 'encrypted_password')).to be_truthy
   end
 end
