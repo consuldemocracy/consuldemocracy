@@ -34,10 +34,7 @@ Setting.create(key: 'per_page_code', value: "")
 Setting.create(key: 'comments_body_max_length', value: '1000')
 
 puts "Creating Geozones"
-('A'..'Z').each do |i|
-  code = "#{i.each_byte.to_a.first}"
-  Geozone.create(name: "District #{i}", external_code: code, census_code: code)
-end
+('A'..'Z').each { |i| Geozone.create(name: "District #{i}", external_code: i.ord, census_code: i.ord) }
 
 puts "Creating Users"
 
