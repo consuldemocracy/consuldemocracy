@@ -47,7 +47,7 @@ feature 'Admin budgets' do
       expect(page).to_not have_content(budget4.name)
       expect(page).to have_content(budget5.name)
 
-      click_link 'Open'
+      click_link 'Current'
       expect(page).to have_content(budget1.name)
       expect(page).to have_content(budget2.name)
       expect(page).to have_content(budget3.name)
@@ -56,7 +56,7 @@ feature 'Admin budgets' do
     end
 
     scenario 'Current filter is properly highlighted' do
-      filters_links = {'open' => 'Open', 'finished' => 'Finished'}
+      filters_links = {'current' => 'Current', 'finished' => 'Finished'}
 
       visit admin_budgets_path
 
