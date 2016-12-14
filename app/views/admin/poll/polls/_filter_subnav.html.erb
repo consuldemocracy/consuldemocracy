@@ -1,30 +1,20 @@
-<div class="row">
-  <div class="small-12 column">
-    <ul class="tabs" data-tabs id="example-tabs">
-      <li class="tabs-title is-active">
-        <%= link_to "#tab-questions" do %>
-          <h2>
-            <%= t("admin.polls.show.questions_tab") %>
-            <span class="js-comments-count">(<%= @poll.questions.count %>)</span>
-          </h2>
-        <% end %>
-      </li>
-      <li class="tabs-title">
-        <%= link_to "#tab-booths" do %>
-          <h2>
-            <%= t("admin.polls.show.booths_tab") %>
-            (<%= @poll.booths.count %>)
-          </h2>
-        <% end %>
-      </li>
-      <li class="tabs-title">
-        <%= link_to "#tab-officers" do %>
-          <h2>
-            <%= t("admin.polls.show.officers_tab") %>
-            (<%= @poll.officers.count %>)
-          </h2>
-        <% end %>
-      </li>
-    </ul>
-  </div>
-</div>
+<ul class="tabs" data-tabs id="example-tabs">
+  <li class="tabs-title is-active">
+    <%= link_to "#tab-questions" do %>
+      <%= t("admin.polls.show.questions_tab") %>
+      <span class="js-comments-count">(<%= @poll.questions.count %>)</span>
+    <% end %>
+  </li>
+  <li class="tabs-title">
+    <%= link_to "#tab-booths" do %>
+      <%= t("admin.polls.show.booths_tab") %>
+      (<%= @poll.booths.count %>)
+    <% end %>
+  </li>
+  <li class="tabs-title">
+    <%= link_to "#tab-officers" do %>
+      <%= t("admin.polls.show.officers_tab") %>
+      (<%= @poll.officers.count %>)
+    <% end %>
+  </li>
+</ul>
