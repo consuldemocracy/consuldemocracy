@@ -34,6 +34,9 @@ es:
       poll/booth:
         one: "urna"
         other: "urnas"
+      poll/officer:
+        one: "presidente de mesa"
+        other: "presidentes de mesa"
       spending_proposal:
         one: "Propuesta de inversión"
         other: "Propuestas de inversión"

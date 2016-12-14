@@ -31,6 +31,9 @@ en:
       poll/booth:
         one: "booth"
         other: "booths"
+      poll/officer:
+        one: "officer"
+        other: "officers"
       proposal:
         one: "Citizen proposal"
         other: "Citizen proposals"
