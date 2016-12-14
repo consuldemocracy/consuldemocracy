@@ -35,7 +35,15 @@
 
       <%= render('shared/order_links', i18n_namespace: "budget.investments.index") unless params[:unfeasible].present? %>
 
-      <%= render partial: 'investment', collection: @investments %>
+      <% @investments.each do |investment| %>
+        <%= render partial: '/budgets/investments/investment', locals: {
+          investment: investment,
+          investment_ids: @investment_ids,
+          investment_votes: @investment_votes,
+          investment_ballots: @investment_ballots
+        } %>
+      <% end %>
+
       <%= paginate @investments %>
     </div>
 
