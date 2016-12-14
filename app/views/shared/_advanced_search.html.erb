@@ -29,19 +29,21 @@
         </div>
 
         <div id='js-custom-date' class='small-12 large-8 column' style="display: none">
-          <div class='small-12 large-6 column'>
-            <label><%= t("shared.advanced_search.from") %></label>
-            <%= text_field_tag 'advanced_search[date_min]',
-                                params[:advanced_search].try(:[], :date_min),
-                                placeholder: t("shared.advanced_search.date_placeholder"),
-                                class: 'js-calendar' %>
-          </div>
-          <div class='small-12 large-6 column'>
-            <label><%= t("shared.advanced_search.to") %></label>
-            <%= text_field_tag 'advanced_search[date_max]',
-                                params[:advanced_search].try(:[], :date_max),
-                                placeholder: t("shared.advanced_search.date_placeholder"),
-                                class: 'js-calendar' %>
+          <div class="row">
+            <div class='small-12 large-6 column'>
+              <label><%= t("shared.advanced_search.from") %> (<%= t("shared.advanced_search.date_placeholder") %>)</label>
+              <%= text_field_tag 'advanced_search[date_min]',
+                                  params[:advanced_search].try(:[], :date_min),
+                                  placeholder: t("shared.advanced_search.date_placeholder"),
+                                  class: 'js-calendar' %>
+            </div>
+            <div class='small-12 large-6 column'>
+              <label><%= t("shared.advanced_search.to") %> (<%= t("shared.advanced_search.date_placeholder") %>)</label>
+              <%= text_field_tag 'advanced_search[date_max]',
+                                  params[:advanced_search].try(:[], :date_max),
+                                  placeholder: t("shared.advanced_search.date_placeholder"),
+                                  class: 'js-calendar' %>
+            </div>
           </div>
         </div>
       </div>
