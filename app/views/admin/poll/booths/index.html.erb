@@ -1,14 +1,13 @@
-<h2><%= t("admin.booths.index.title") %></h2>
+<h2 class="inline-block"><%= t("admin.booths.index.title") %></h2>
+
+<%= link_to t("admin.booths.index.add_booth"), new_admin_booth_path,
+            class: "button success float-right" %>
 
 <% if @booths.empty? %>
   <div class="callout primary">
     <%= t("admin.booths.index.no_booths") %>
   </div>
 <% end %>
-
-<%= link_to t("admin.booths.index.add_booth"),
-            new_admin_booth_path,
-            class: "button success" %>
 
 <% if @booths.any? %>
   <h3><%= page_entries_info @booths %></h3>

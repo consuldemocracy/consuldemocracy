@@ -154,6 +154,9 @@ es:
       officer:
         add: Añadir como Presidente de mesa
         delete: Borrar
+        name: Nombre
+        email: Email
+        entry_name: presidente de mesa
       search:
         email_placeholder: Buscar usuario por email
         search: Buscar
@@ -194,11 +197,14 @@ es:
         title: "Preguntas ciudadanas"
         create: "Crear pregunta ciudadana"
         no_questions: "No hay ninguna pregunta ciudadana."
-        select_poll: Seleccionar votación
+        filter_poll: "Filtrar por votación"
+        select_poll: "Seleccionar votación"
       edit:
         title: "Editar pregunta ciudadana"
       new:
         title: "Crear pregunta ciudadana"
+        poll_label: "Votación"
+        valid_answers_note: "Escribe las respuestas separadas por comas (,)"
       show:
         proposal: Propuesta ciudadana original
         author: Autor

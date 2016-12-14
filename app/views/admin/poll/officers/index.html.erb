@@ -1,21 +1,25 @@
 <h2><%= t("admin.poll_officers.index.title") %></h2>
 
 <div class="row">
-  <%= form_tag search_admin_officers_path, method: :get, remote: true  do %>
-    <div class="small-12 medium-6 column">
-      <%= text_field_tag :email, '', placeholder: t('admin.poll_officers.search.email_placeholder') %>
-    </div>
-    <div class="small-12 medium-6 column">
-      <%= submit_tag t('admin.poll_officers.search.search'), class: 'button' %>
-    </div>
-  <% end %>
+  <div class="small-12 medium-6 column">
+    <%= render 'search' %>
+  </div>
 </div>
 
-<div id="search-result" class="row"></div>
+<div id="search-result"></div>
 
-<h3><%= page_entries_info @officers %></h3>
+<h3>
+  <%= page_entries_info @officers, entry_name: t('admin.poll_officers.officer.entry_name') %>
+</h3>
 
 <table id="officers">
+  <thead>
+    <tr>
+      <th><%= t('admin.poll_officers.officer.name') %></th>
+      <th colspan="2"><%= t('admin.poll_officers.officer.email') %></th>
+    </tr>
+  </thead>
+  <tbody>
   <% @officers.each do |officer| %>
     <tr>
       <td>
@@ -41,6 +45,7 @@
       </td>
     </tr>
   <% end %>
+  </tbody>
 </table>
 
 <%= paginate @officers %>

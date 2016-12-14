@@ -7,15 +7,19 @@
   <div class="row">
 
     <div class="small-12 column">
-      <div class="small-12 medium-6">
-          <%= f.select :poll_id,
-                        options_for_select(Poll.pluck(:name, :id)),
-                        prompt: t("admin.questions.index.select_poll") %>
+      <div class="small-12 medium-6 large-4">
+        <%= f.select :poll_id,
+                      options_for_select(Poll.pluck(:name, :id)),
+                      prompt: t("admin.questions.index.select_poll"),
+                      label: t("admin.questions.new.poll_label") %>
       </div>
 
       <%= f.text_field :title, maxlength: Poll::Question.title_max_length %>
 
-      <%= f.text_field :valid_answers %>
+      <%= f.label :valid_answers %>
+      <p class="note"><%= t("admin.questions.new.valid_answers_note") %></p>
+      <%= f.text_field :valid_answers, label: false %>
+
 
       <%= f.text_area :summary, rows: 4, maxlength: 200 %>
 

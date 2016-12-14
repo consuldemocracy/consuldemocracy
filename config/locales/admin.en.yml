@@ -154,6 +154,9 @@ en:
       officer:
         add: Add
         delete: Delete
+        name: Name
+        email: Email
+        entry_name: officer
       search:
         email_placeholder: Search user by email
         search: Search
@@ -194,11 +197,14 @@ en:
         title: "Questions"
         create: "Create question"
         no_questions: "There are no questions."
+        filter_poll: Filter by Poll
         select_poll: Select Poll
       edit:
         title: "Edit Question"
       new:
         title: "Create Question"
+        poll_label: "Poll"
+        valid_answers_note: "Enter the answers separated by commas (,)"
       show:
         proposal: Original proposal
         author: Author

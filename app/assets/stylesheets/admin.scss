@@ -32,6 +32,13 @@ body.admin {
     height: auto;
   }
 
+  .top-bar-title {
+
+    h1 {
+      margin-bottom: 0;
+    }
+  }
+
   form {
 
     .button {
@@ -75,6 +82,11 @@ body.admin {
   .menu.simple li.active {
     border-bottom: 2px solid $admin-color;
     color: $admin-color;
+  }
+
+  .tabs-panel {
+    padding-left: 0;
+    padding-right: 0;
   }
 
   #proposals {
@@ -145,6 +157,13 @@ body.admin {
     &:hover .on-hover {
       display: inline;
     }
+  }
+}
+
+.input-group {
+
+  .input-group-button {
+    padding-bottom: rem-calc(16);
   }
 }
 
