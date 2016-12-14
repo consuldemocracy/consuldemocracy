@@ -154,6 +154,9 @@ en:
       officer:
         add: Add
         delete: Delete
+        name: Name
+        email: Email
+        entry_name: officer
       search:
         email_placeholder: Search user by email
         search: Search

@@ -154,6 +154,9 @@ es:
       officer:
         add: Añadir como Presidente de mesa
         delete: Borrar
+        name: Nombre
+        email: Email
+        entry_name: presidente de mesa
       search:
         email_placeholder: Buscar usuario por email
         search: Buscar
