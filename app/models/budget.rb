@@ -61,5 +61,9 @@ class Budget < ActiveRecord::Base
   def formatted_heading_price(heading)
     formatted_amount(heading_price(heading))
   end
+
+  def formatted_heading_amount_spent(heading)
+    formatted_amount(amount_spent(heading))
+  end
 end
 

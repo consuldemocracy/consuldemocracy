@@ -13,7 +13,7 @@
     <em>
       <%= t("budget.investments.index.sidebar.voted_html",
           count: @ballot.investments.by_heading(@heading.id).count,
-          amount_spent: @budget.format_amount(@ballot.amount_spent(@heading))) %>
+          amount_spent: @ballot.formatted_amount_spent(@heading)) %>
     </em>
   </p>
 <% else %>

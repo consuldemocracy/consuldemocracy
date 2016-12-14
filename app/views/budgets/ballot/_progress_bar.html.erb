@@ -7,7 +7,7 @@
   <div class="progress-meter"
        style="width:
        <%= progress_bar_width(@budget.heading_price(@heading),
-                              @ballot.amount_spent(@heading.id)) %>">
+                              @ballot.amount_spent(@heading)) %>">
   </div>
 </div>
 
@@ -16,12 +16,12 @@
   <span class="progress-meter spent-amount-meter"
         style="width:
         <%= progress_bar_width(@budget.heading_price(@heading),
-                               @ballot.amount_spent(@heading.id)) %>">
+                               @ballot.amount_spent(@heading)) %>">
     <p id="amount-spent" class="progress-meter-text spent-amount-text">
-      <%= @budget.format_amount(@ballot.amount_spent(@heading.id)) %>
+      <%= @ballot.formatted_amount_spent(@heading) %>
       <span id="amount-available" class="amount-available">
         <%= t("budget.progress_bar.available") %>
-        <span><%= @budget.format_amount(@ballot.amount_available(@heading)) %></span>
+        <span><%= @ballot.formatted_amount_available(@heading) %></span>
       </span>
     </p>
   </span>
