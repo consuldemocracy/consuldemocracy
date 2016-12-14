@@ -194,11 +194,14 @@ en:
         title: "Questions"
         create: "Create question"
         no_questions: "There are no questions."
+        filter_poll: Filter by Poll
         select_poll: Select Poll
       edit:
         title: "Edit Question"
       new:
         title: "Create Question"
+        poll_label: "Poll"
+        valid_answers_note: "Enter the answers separated by commas (,)"
       show:
         proposal: Original proposal
         author: Author

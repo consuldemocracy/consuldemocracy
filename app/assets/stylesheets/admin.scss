@@ -84,6 +84,11 @@ body.admin {
     color: $admin-color;
   }
 
+  .tabs-panel {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
   #proposals {
     width: 100% !important;
   }
@@ -155,9 +160,11 @@ body.admin {
   }
 }
 
-.admin .tabs-panel {
-  padding-left: 0;
-  padding-right: 0;
+.input-group {
+
+  .input-group-button {
+    padding-bottom: rem-calc(16);
+  }
 }
 
 // 02. Sidebar
