@@ -24,7 +24,7 @@
           </p>
         <% end %>
 
-        <%= content_tag(:h2, t("budget.investments.index.by_heading", heading: @filter_heading_name)) if @filter_heading_name.present? %>
+        <%= content_tag(:h2, t("budget.investments.index.by_heading", heading: @heading.name)) if @heading.present? %>
         <% if params[:search].present? %>
           <h2>
             <%= page_entries_info @investments %>
