@@ -17,7 +17,7 @@ module BudgetsHelper
     when "management::budgets"
       management_budget_investment_path(investment.budget, investment, options)
     else
-      budget_investment_path(investment.budget, investment, options.merge(budget_id: investment.budget_id))
+      budget_investment_path(investment.budget, investment, options)
     end
   end
 
