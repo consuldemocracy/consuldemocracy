@@ -7,8 +7,8 @@ class Management::Budgets::InvestmentsController < Management::BaseController
   before_action :load_heading, only: [:index, :show, :print]
 
   def index
-    set_investment_votes(@investments)
     @investments = @investments.apply_filters_and_search(params).page(params[:page])
+    load_investment_votes(@investments)
   end
 
   def new
@@ -27,22 +27,22 @@ class Management::Budgets::InvestmentsController < Management::BaseController
   end
 
   def show
-    set_investment_votes(@investment)
+    load_investment_votes(@investment)
   end
 
   def vote
     @investment.register_selection(managed_user)
-    set_investment_votes(@investment)
+    load_investment_votes(@investment)
   end
 
   def print
-    set_investment_votes(@investments)
     @investments = @investments.apply_filters_and_search(params).order(cached_votes_up: :desc).for_render.limit(15)
+    load_investment_votes(@investments)
   end
 
   private
 
-    def set_investment_votes(investments)
+    def load_investment_votes(investments)
       @investment_votes = managed_user ? managed_user.budget_investment_votes(investments) : {}
     end
 

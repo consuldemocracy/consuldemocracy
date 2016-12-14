@@ -24,8 +24,8 @@ module Budgets
     respond_to :html, :js
 
     def index
-      set_budget_investment_votes(@investments)
       @investments = @investments.apply_filters_and_search(params).send("sort_by_#{@current_order}").page(params[:page]).per(10).for_render
+      load_investment_votes(@investments)
     end
 
     def new
@@ -35,15 +35,18 @@ module Budgets
       @commentable = @investment
       @comment_tree = CommentTree.new(@commentable, params[:page], @current_order)
       set_comment_flags(@comment_tree.comments)
-      set_budget_investment_votes(@investment)
+      load_investment_votes(@investment)
     end
 
     def create
       @investment.author = current_user
 
       if @investment.save
-        notice = t('flash.actions.create.budget_investment', activity: "<a href='#{user_path(current_user, filter: :budget_investments)}'>#{t('layouts.header.my_activity_link')}</a>")
-        redirect_to @investment, notice: notice, flash: { html_safe: true }
+        activity_link = view_context.link_to(t('layouts.header.my_activity_link'),
+                                             user_path(current_user, filter: :budget_investments))
+        redirect_to @investment,
+                    flash: { html_safe: true },
+                    notice: t('flash.actions.create.budget_investment', activity: activity_link)
       else
         render :new
       end
@@ -56,10 +59,14 @@ module Budgets
 
     def vote
       @investment.register_selection(current_user)
-      set_budget_investment_votes(@investment)
+      load_investment_votes(@investment)
     end
 
     private
+
+      def load_investment_votes(investments)
+        @investment_votes = current_user ? current_user.budget_investment_votes(investments) : {}
+      end
 
       def set_random_seed
         if params[:order] == 'random' || params[:order].blank?
