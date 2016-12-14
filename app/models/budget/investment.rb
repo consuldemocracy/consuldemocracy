@@ -205,6 +205,13 @@ class Budget
       budget.formatted_amount(price)
     end
 
+    def self.apply_filters_and_search(params)
+      investments = params[:unfeasible].present? ? unfeasible : not_unfeasible
+      investments = investments.by_heading(params[:heading_id]) if params[:heading_id].present?
+      investments = investments.search(params[:search])         if params[:search].present?
+      investments
+    end
+
     private
 
       def set_denormalized_ids

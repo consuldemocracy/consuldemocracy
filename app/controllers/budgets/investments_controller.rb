@@ -24,8 +24,8 @@ module Budgets
     respond_to :html, :js
 
     def index
-      @investments = apply_filters_and_search(@investments).send("sort_by_#{@current_order}").page(params[:page]).per(10).for_render
       set_budget_investment_votes(@investments)
+      @investments = @investments.apply_filters_and_search(params).send("sort_by_#{@current_order}").page(params[:page]).per(10).for_render
     end
 
     def new
@@ -72,26 +72,6 @@ module Budgets
 
       def investment_params
         params.require(:investment).permit(:title, :description, :external_url, :heading_id, :terms_of_service)
-      end
-
-      def apply_filters_and_search(investments)
-        if params[:heading_id].blank?
-          @filter_heading_name = t('geozones.none')
-        else
-          @filter_heading = @budget.headings.find(params[:heading_id])
-          @filter_heading_name = @filter_heading.name
-        end
-
-        investments = investments.by_heading(params[:heading_id].presence || @budget.headings.first)
-
-        if params[:unfeasible].present?
-          investments = investments.unfeasible
-        else
-          investments = @budget.balloting? ? investments.feasible.valuation_finished : investments.not_unfeasible
-        end
-
-        investments = investments.search(params[:search]) if params[:search].present?
-        investments
       end
 
       def load_ballot
