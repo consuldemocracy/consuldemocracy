@@ -9,4 +9,8 @@ class Legislation::DraftVersion < ActiveRecord::Base
   validates :title, presence: true
   validates :body, presence: true
   validates :status, presence: true, inclusion: { in: VALID_STATUSES }
+
+  def body_in_html
+    body_html || Redcarpet::Markdown.new(Redcarpet::Render::HTML.new).render(body)
+  end
 end

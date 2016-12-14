@@ -1,0 +1,9 @@
+<div class="row">
+
+<h1><%= @process.title %></h1>
+
+<% @process.draft_versions.each do |draft_version| %>
+  <%= link_to draft_version.title, legislation_process_draft_version_path(@process, draft_version) %>
+<% end %>
+
+</div>

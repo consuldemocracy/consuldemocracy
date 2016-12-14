@@ -85,6 +85,15 @@ Rails.application.routes.draw do
     get :search, on: :collection
   end
 
+  namespace :legislation do
+    resources :processes, only: [:index, :show] do
+      resources :draft_versions, only: [:show] do
+        resources :annotations
+        get :changes
+      end
+    end
+  end
+
   resources :users, only: [:show] do
     resources :direct_messages, only: [:new, :create, :show]
   end

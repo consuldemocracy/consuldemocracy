@@ -186,6 +186,7 @@ en:
     header:
       administration: Administration
       available_locales: Available languages
+      collaborative_legislation: Legislation processes
       debates: Debates
       external_link_blog: Blog
       external_link_opendata: Open data
@@ -220,6 +221,12 @@ en:
       text_sign_in: login
       text_sign_up: sign up
       title: How I can comment this document?
+  legislation:
+    draft_versions:
+      changes:
+        see_text: See text
+      show:
+        see_changes: See changes
   locale: English
   notifications:
     index:

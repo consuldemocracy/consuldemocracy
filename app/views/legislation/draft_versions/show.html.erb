@@ -1,0 +1,12 @@
+<div class="row">
+  <h2><%= link_to @process.title, @process %></h2>
+  <h2><%= @draft_version.title %></h2>
+
+  <div>
+    <%= link_to t('.see_changes'), legislation_process_draft_version_changes_path(@process, @draft_version) %>
+  </div>
+
+  <div>
+    <%= @draft_version.body_in_html.html_safe %>
+  </div>
+</div>

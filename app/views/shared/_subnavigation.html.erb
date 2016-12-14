@@ -11,6 +11,11 @@
     <li>
       <%= link_to t("layouts.header.proposal_ballot"), proposal_ballots_path, class: ("active" if  controller_name == "proposal_ballots"), accesskey: "v" %>
     </li>
+    <% if feature?(:legislation) %>
+      <li>
+        <%= link_to t("layouts.header.collaborative_legislation"), legislation_processes_path, class: ("active" if controller.class.parent == Legislation ), accesskey: "l" %>
+      </li>
+    <% end %>
     <% if feature?(:spending_proposals) %>
       <li>
         <%= link_to t("layouts.header.spending_proposals"), spending_proposals_path, class: ("active" if controller_name == "spending_proposals"), accesskey: "s" %>

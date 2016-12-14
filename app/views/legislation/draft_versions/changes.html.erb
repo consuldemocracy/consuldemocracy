@@ -1,0 +1,12 @@
+<div class="row">
+  <h2><%= @process.title %></h2>
+  <h2><%= @draft_version.title %></h2>
+
+  <div>
+    <%= link_to t('.see_text'), legislation_process_draft_version_path(@process, @draft_version) %>
+  </div>
+
+  <div>
+    <%= markdown @draft_version.changelog %>
+  </div>
+</div>
