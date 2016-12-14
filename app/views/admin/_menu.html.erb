@@ -83,6 +83,12 @@
       <% end %>
     </li>
 
+    <li <%= 'class=active' if controller_name == 'geozones' %>>
+      <%= link_to admin_geozones_path do %>
+        <span class="icon-settings"></span><%= t('admin.menu.geozones') %>
+      <% end %>
+    </li>
+
     <li <%= 'class=active' if controller_name == 'activity' %>>
       <%= link_to admin_activity_path do %>
         <span class="icon-eye"></span><%= t('admin.menu.activity') %>

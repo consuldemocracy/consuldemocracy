@@ -97,6 +97,7 @@ en:
       admin: Admin menu
       banner: Manage banners
       debate_topics: Debate topics
+      geozones: Manage geozones
       hidden_comments: Hidden comments
       hidden_debates: Hidden debates
       hidden_proposals: Hidden proposals
@@ -267,6 +268,33 @@ en:
         in_evaluation_count: In evaluation
         total_count: Total
         cost_for_geozone: Cost
+    geozones:
+      index:
+        title: Geozone
+        create: Create geozone
+        edit: Edit
+        delete: Delete
+      geozone:
+        name: Name
+        external_code: External code
+        census_code: Census code
+        coordinates: Coordinates
+      errors:
+        form:
+          error:
+            one: "prevented this geozone from being saved"
+            other: 'prevented this geozone from being saved'
+      edit:
+        form:
+          submit_button: Save changes
+        editing: Editing geozone
+        back: Go back
+      new:
+        back: Go back
+        creating: Create district
+      delete:
+        success: Geozone successfully deleted
+        error: This geozone can't be deleted since there are elements attached to it
     stats:
       show:
         stats_title: Stats

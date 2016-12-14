@@ -95,6 +95,7 @@ es:
       admin: Menú de administración
       banner: Gestionar banners
       debate_topics: Temas de debate
+      geozones: Gestionar distritos
       hidden_comments: Comentarios ocultos
       hidden_debates: Debates ocultos
       hidden_proposals: Propuestas ocultas
@@ -265,6 +266,33 @@ es:
         in_evaluation_count: En evaluación
         total_count: Total
         cost_for_geozone: Coste total
+    geozones:
+      index:
+        title: Distritos
+        create: Crear un distrito
+        edit: Editar
+        delete: Borrar
+      geozone:
+        name: Nombre
+        external_code: Código externo
+        census_code: Código del censo
+        coordinates: Coordenadas
+      errors:
+        form:
+          error:
+            one: "error impidió guardar el distrito"
+            other: "errores impidieron guardar el distrito."
+      edit:
+        form:
+          submit_button: Guardar cambios
+        editing: Editando distrito
+        back: Volver
+      new:
+        back: Volver
+        creating: Crear distrito
+      delete:
+        success: Distrito borrado correctamente
+        error: No se puede borrar el distrito porque ya tiene elementos asociados
     stats:
       show:
         stats_title: Estadísticas
