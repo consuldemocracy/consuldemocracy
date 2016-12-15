@@ -1,0 +1,25 @@
+<div class="row">
+  <h2><%= link_to @process.title, @process %></h2>
+  <h2><%= @draft_version.title %></h2>
+
+  <div>
+    <%= link_to t('.see_changes'), legislation_process_draft_version_changes_path(@process, @draft_version) %>
+  </div>
+
+  <% toc, body = @draft_version.body_in_html %>
+
+  <div class="small-12 medium-3 column">
+    <%= toc.html_safe %>
+  </div>
+
+  <div class="small-12 medium-9 column">
+    <section data-annotatable-type="legislation_draft_version"
+             data-annotatable-id="<%= @draft_version.id %>">
+
+      <div id="legislation_draft_version_body">
+        <%= body.html_safe %>
+      </div>
+    </section>
+  </div>
+
+</div>

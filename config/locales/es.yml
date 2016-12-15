@@ -186,6 +186,7 @@ es:
     header:
       administration: Administrar
       available_locales: Idiomas disponibles
+      collaborative_legislation: Procesos legislativos
       debates: Debates
       external_link_blog: Blog
       external_link_opendata: Datos abiertos
@@ -220,6 +221,12 @@ es:
       text_sign_in: iniciar sesión
       text_sign_up: registrarte
       title: "¿Cómo puedo comentar este documento?"
+  legislation:
+    draft_versions:
+      changes:
+        see_text: Ver texto
+      show:
+        see_changes: Ver cambios
   locale: Español
   notifications:
     index:
