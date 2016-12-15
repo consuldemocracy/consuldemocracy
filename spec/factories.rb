@@ -227,9 +227,7 @@ FactoryGirl.define do
 
   factory :budget_investment, class: 'Budget::Investment' do
     sequence(:title)     { |n| "Budget Investment #{n} title" }
-    budget
-    group      { create :budget_group, budget: budget }
-    heading    { create :budget_heading, group: group }
+    association :heading, factory: :budget_heading
     association :author, factory: :user
     description          'Spend money on this'
     price                10
@@ -261,11 +259,8 @@ FactoryGirl.define do
   end
 
   factory :budget_ballot_line, class: 'Budget::Ballot::Line' do
-    budget
-    ballot     { create :budget_ballot, budget: budget }
-    group      { create :budget_group, budget: budget }
-    heading    { create :budget_heading, group: group }
-    investment { create :budget_investment, :feasible, heading: heading }
+    association :ballot, factory: :budget_ballot
+    association :investment, factory: :budget_investment
   end
 
   factory :vote do
