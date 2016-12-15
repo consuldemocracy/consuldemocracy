@@ -317,7 +317,8 @@ FactoryGirl.define do
 
   factory :geozone do
     sequence(:name) { |n| "District #{n}" }
-    census_code { '01' }
+    sequence(:external_code) { |n| "#{n}" }
+    sequence(:census_code) { |n| "#{n}" }
   end
 
   factory :banner do
