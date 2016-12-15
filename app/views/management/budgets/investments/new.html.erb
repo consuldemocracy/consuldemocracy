@@ -7,50 +7,6 @@
   <div class="small-12 medium-9 column end">
     <h1 class=""><%= t("management.budget_investments.create") %></h1>
 
-    <%= form_for(@investment, url: management_budget_investments_path(@budget), method: :post) do |f| %>
-      <%= render 'shared/errors', resource: @investment %>
-
-      <div class="row">
-        <div class="small-12 column">
-          <%= f.label :heading_id,  t("budget.investments.form.heading") %>
-          <%= f.select :heading_id, budget_heading_select_options(@budget), {include_blank: t("budget.headings.none"), label: false} %>
-        </div>
-
-        <div class="small-12 column">
-          <%= f.label :title, t("budget.investments.form.title") %>
-          <%= f.text_field :title, maxlength: SpendingProposal.title_max_length, placeholder: t("budget.investments.form.title"), label: false %>
-        </div>
-
-        <%= f.invisible_captcha :subtitle %>
-
-        <div class="ckeditor small-12 column">
-          <%= f.label :description, t("budget.investments.form.description") %>
-          <%= f.cktext_area :description, maxlength: SpendingProposal.description_max_length, ckeditor: { language: I18n.locale }, label: false %>
-        </div>
-
-        <div class="small-12 column">
-          <%= f.label :external_url, t("budget.investments.form.external_url") %>
-          <%= f.text_field :external_url, placeholder: t("budget.investments.form.external_url"), label: false %>
-        </div>
-
-
-
-        <div class="small-12 column">
-          <%= f.label :terms_of_service do %>
-            <%= f.check_box :terms_of_service, title: t('form.accept_terms_title'), label: false %>
-            <span class="checkbox">
-              <%= t("form.accept_terms",
-                  policy: link_to(t("form.policy"), "/privacy", target: "blank"),
-                  conditions: link_to(t("form.conditions"), "/conditions", target: "blank")).html_safe %>
-            </span>
-          <% end %>
-        </div>
-
-        <div class="actions small-12 column">
-          <%= f.submit(class: "button", value: t("budget.investments.form.submit_buttons.#{action_name}")) %>
-        </div>
-      </div>
-    <% end %>
-
+    <%= render '/budgets/investments/form', form_url: management_budget_investments_path(@budget) %>
   </div>
 </div>
