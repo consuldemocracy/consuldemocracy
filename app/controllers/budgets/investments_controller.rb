@@ -46,7 +46,7 @@ module Budgets
       if @investment.save
         activity_link = view_context.link_to(t('layouts.header.my_activity_link'),
                                              user_path(current_user, filter: :budget_investments))
-        redirect_to @investment,
+        redirect_to budget_investment_path(@budget, @investment),
                     flash: { html_safe: true },
                     notice: t('flash.actions.create.budget_investment', activity: activity_link)
       else
@@ -80,7 +80,7 @@ module Budgets
       end
 
       def investment_params
-        params.require(:investment).permit(:title, :description, :external_url, :heading_id, :terms_of_service)
+        params.require(:budget_investment).permit(:title, :description, :external_url, :heading_id, :terms_of_service)
       end
 
       def load_ballot
