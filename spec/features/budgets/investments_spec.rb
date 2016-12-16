@@ -3,13 +3,13 @@ require 'rails_helper'
 feature 'Budget Investments' do
 
   let(:author)  { create(:user, :level_two, username: 'Isabel') }
-  let(:budget)  { create(:budget) }
-  let(:group)   { create(:budget_group, budget: budget) }
-  let(:heading) { create(:budget_heading, group: group) }
+  let(:budget)  { create(:budget, name: "Big Budget") }
+  let(:group)   { create(:budget_group, name: "Health", budget: budget) }
+  let!(:heading) { create(:budget_heading, name: "More hospitals", group: group) }
 
   scenario 'Index' do
-    investments = [create(:budget_investment, budget: budget, group: group, heading: heading), create(:budget_investment, budget: budget, group: group, heading: heading), create(:budget_investment, :feasible, budget: budget, group: group, heading: heading)]
-    unfeasible_investment = create(:budget_investment, :unfeasible, budget: budget, group: group, heading: heading)
+    investments = [create(:budget_investment, heading: heading), create(:budget_investment, heading: heading), create(:budget_investment, :feasible, heading: heading)]
+    unfeasible_investment = create(:budget_investment, :unfeasible, heading: heading)
 
     visit budget_investments_path(budget, heading_id: heading.id)
 
@@ -25,9 +25,9 @@ feature 'Budget Investments' do
 
   context("Search") do
     scenario 'Search by text' do
-      investment1 = create(:budget_investment, budget: budget, group: group, heading: heading, title: "Get Schwifty")
-      investment2 = create(:budget_investment, budget: budget, group: group, heading: heading, title: "Schwifty Hello")
-      investment3 = create(:budget_investment, budget: budget, group: group, heading: heading, title: "Do not show me")
+      investment1 = create(:budget_investment, heading: heading, title: "Get Schwifty")
+      investment2 = create(:budget_investment, heading: heading, title: "Schwifty Hello")
+      investment3 = create(:budget_investment, heading: heading, title: "Do not show me")
 
       visit budget_investments_path(budget, heading_id: heading.id)
 
@@ -48,10 +48,10 @@ feature 'Budget Investments' do
 
   context("Filters") do
     scenario 'by unfeasibility' do
-      investment1 = create(:budget_investment, :unfeasible, budget: budget, group: group, heading: heading, valuation_finished: true)
-      investment2 = create(:budget_investment, :feasible, budget: budget, group: group, heading: heading)
-      investment3 = create(:budget_investment, budget: budget, group: group, heading: heading)
-      investment4 = create(:budget_investment, :feasible, budget: budget, group: group, heading: heading)
+      investment1 = create(:budget_investment, :unfeasible, heading: heading, valuation_finished: true)
+      investment2 = create(:budget_investment, :feasible, heading: heading)
+      investment3 = create(:budget_investment, heading: heading)
+      investment4 = create(:budget_investment, :feasible, heading: heading)
 
       visit budget_investments_path(budget_id: budget.id, heading_id: heading.id, unfeasible: 1)
 
@@ -99,7 +99,7 @@ feature 'Budget Investments' do
 
     scenario 'Random order maintained with pagination', :js do
       per_page = Kaminari.config.default_per_page
-      (per_page + 2).times { create(:budget_investment, budget: budget, group: group, heading: heading) }
+      (per_page + 2).times { create(:budget_investment, heading: heading) }
 
       visit budget_investments_path(budget, heading_id: heading.id)
 
@@ -116,9 +116,9 @@ feature 'Budget Investments' do
     end
 
     scenario 'Proposals are ordered by confidence_score', :js do
-      create(:budget_investment, budget: budget, group: group, heading: heading, title: 'Best proposal').update_column(:confidence_score, 10)
-      create(:budget_investment, budget: budget, group: group, heading: heading, title: 'Worst proposal').update_column(:confidence_score, 2)
-      create(:budget_investment, budget: budget, group: group, heading: heading, title: 'Medium proposal').update_column(:confidence_score, 5)
+      create(:budget_investment, heading: heading, title: 'Best proposal').update_column(:confidence_score, 10)
+      create(:budget_investment, heading: heading, title: 'Worst proposal').update_column(:confidence_score, 2)
+      create(:budget_investment, heading: heading, title: 'Medium proposal').update_column(:confidence_score, 5)
 
       visit budget_investments_path(budget, heading_id: heading.id)
       click_link 'highest rated'
@@ -207,7 +207,7 @@ feature 'Budget Investments' do
     user = create(:user)
     login_as(user)
 
-    investment = create(:budget_investment, budget: budget, group: group, heading: heading)
+    investment = create(:budget_investment, heading: heading)
 
     visit budget_investment_path(budget_id: budget.id, id: investment.id)
 
@@ -262,7 +262,7 @@ feature 'Budget Investments' do
     xscenario "Admin cannot destroy spending proposals" do
       admin = create(:administrator)
       user = create(:user, :level_two)
-      investment = create(:budget_investment, budget: budget, group: group, heading: heading, author: user)
+      investment = create(:budget_investment, heading: heading, author: user)
 
       login_as(admin.user)
       visit user_path(user)
@@ -282,8 +282,8 @@ feature 'Budget Investments' do
 
     xscenario "Index" do
       user = create(:user, :level_two)
-      sp1 = create(:budget_investment, :feasible, :finished, budget: budget, group: group, heading: heading, price: 10000)
-      sp2 = create(:budget_investment, :feasible, :finished, budget: budget, group: group, heading: heading, price: 20000)
+      sp1 = create(:budget_investment, :feasible, :finished, heading: heading, price: 10000)
+      sp2 = create(:budget_investment, :feasible, :finished, heading: heading, price: 20000)
 
       login_as(user)
       visit root_path
@@ -304,9 +304,10 @@ feature 'Budget Investments' do
     end
 
     xscenario 'Order by cost (only in phase3)' do
-      create(:budget_investment, :feasible, :finished, budget: budget, group: group, heading: heading, title: 'Build a nice house',  price:  1000).update_column(:confidence_score, 10)
-      create(:budget_investment, :feasible, :finished, budget: budget, group: group, heading: heading, title: 'Build an ugly house', price:  1000).update_column(:confidence_score, 5)
-      create(:budget_investment, :feasible, :finished, budget: budget, group: group, heading: heading, title: 'Build a skyscraper',  price: 20000)
+    scenario 'Order by cost (only in phase3)' do
+      create(:budget_investment, :feasible, :finished, heading: heading, title: 'Build a nice house',  price:  1000).update_column(:confidence_score, 10)
+      create(:budget_investment, :feasible, :finished, heading: heading, title: 'Build an ugly house', price:  1000).update_column(:confidence_score, 5)
+      create(:budget_investment, :feasible, :finished, heading: heading, title: 'Build a skyscraper',  price: 20000)
 
       visit budget_investments_path(budget, heading_id: heading.id)
 
@@ -324,7 +325,7 @@ feature 'Budget Investments' do
 
     scenario "Show" do
       user = create(:user, :level_two)
-      sp1 = create(:budget_investment, :feasible, :finished, budget: budget, group: group, heading: heading, price: 10000)
+      sp1 = create(:budget_investment, :feasible, :finished, heading: heading, price: 10000)
 
       login_as(user)
       visit budget_investments_path(budget, heading_id: heading.id)
