@@ -2,7 +2,9 @@
 
 <%= render partial: '/budgets/investments/investment_show', locals: {
   investment: @investment,
-  investment_votes: @investment_votes
+  investment_ids: @investment_ids,
+  investment_votes: @investment_votes,
+  ballot: @ballot
 } %>
 
 <%= render partial: '/comments/comment_tree', locals: { comment_tree: @comment_tree, comment_flags: @comment_flags } %>

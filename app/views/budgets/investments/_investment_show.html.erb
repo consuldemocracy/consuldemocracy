@@ -65,7 +65,11 @@
             </div>
           <% elsif investment.should_show_ballots? %>
             <div id="<%= dom_id(investment) %>_ballot">
-              <%= render 'ballot', investment: investment %>
+              <%= render partial: 'ballot', locals: {
+                investment: investment,
+                investment_ids: investment_ids,
+                ballot: ballot,
+              } %>
             </div>
          <% end %>
         </div>

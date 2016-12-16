@@ -1,6 +1,6 @@
-<% reason = investment.reason_for_not_being_ballotable_by(current_user, investment_ballot) %>
+<% reason = investment.reason_for_not_being_ballotable_by(current_user, ballot) %>
 <div class="supports ballot">
-  <% if investment_ballot.has_investment?(investment) %>
+  <% if ballot.has_investment?(investment) %>
 
     <div class="remove supported inline-block">
       <span class="icon-check-circle bounceIn animated"
@@ -40,7 +40,7 @@
 
   <% end %>
 
-  <% if reason.present? && !investment_ballot.has_investment?(investment) %>
+  <% if reason.present? && !ballot.has_investment?(investment) %>
 
     <div class="no-supports-allowed" style='display:none'>
       <p>
