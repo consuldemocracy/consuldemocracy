@@ -19,7 +19,7 @@ module Budgets
     has_orders %w{most_voted newest oldest}, only: :show
     has_orders ->(c){ c.instance_variable_get(:@budget).balloting? ? %w{random price} : %w{random confidence_score} }, only: :index
 
-    invisible_captcha only: [:create, :update], honeypot: :subtitle
+    invisible_captcha only: [:create, :update], honeypot: :subtitle, scope: :budget_investment
 
     respond_to :html, :js
 
