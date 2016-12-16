@@ -167,7 +167,7 @@ es:
         no_polls: "No hay ninguna votación."
         create: "Crear votación"
         name: "Nombre"
-        status: "Estado"
+        dates: "Fechas"
       new:
         title: "Nueva votación"
         submit_button: "Crear votación"

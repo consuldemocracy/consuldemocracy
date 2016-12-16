@@ -167,7 +167,7 @@ en:
         no_polls: "There are no polls."
         create: "Create poll"
         name: "Name"
-        status: "Status"
+        dates: "Dates"
       new:
         title: "New poll"
         submit_button: "Create poll"
