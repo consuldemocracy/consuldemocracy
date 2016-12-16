@@ -34,9 +34,9 @@ class Budget
       private
 
         def set_denormalized_ids
-          self.heading_id ||= self.investment.heading_id
-          self.group_id   ||= self.investment.group_id
-          self.budget_id  ||= self.investment.budget_id
+          self.heading_id ||= self.investment.try(:heading_id)
+          self.group_id   ||= self.investment.try(:group_id)
+          self.budget_id  ||= self.investment.try(:budget_id)
         end
     end
   end
