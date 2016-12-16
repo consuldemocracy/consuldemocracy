@@ -43,6 +43,10 @@ class Budget < ActiveRecord::Base
     phase == "finished"
   end
 
+  def current?
+    !finished?
+  end
+
   def heading_price(heading)
     heading_ids.include?(heading.id) ? heading.price : -1
   end
