@@ -189,6 +189,7 @@ en:
         booths_title: "List of booths"
         officers_title: "List of officers"
         questions_title: "List of questions"
+        remove_question: "Remove question from poll"
         name: "Name"
         location: "Location"
         email: "Email"
