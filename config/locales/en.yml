@@ -227,6 +227,22 @@ en:
         see_text: See text
       show:
         see_changes: See changes
+    processes:
+      common:
+        key_dates: "Key dates:"
+        debate_dates: Debate
+        draft_publication_date: Draft publication
+        allegations_dates: Allegations
+        final_publication_date: Final result publication
+      index:
+        hightlighted_processes: HIGHLIGHTED PROCESSES
+        filters:
+          open: Open processes
+          next: Next
+          past: Past
+      process:
+        see_latest_comments: See latest comments
+        see_latest_comments_title: Comment on this process
   locale: English
   notifications:
     index:

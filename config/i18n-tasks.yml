@@ -141,6 +141,7 @@ ignore_unused:
   - 'notifications.index.comments_on*'
   - 'notifications.index.replies_to*'
   - 'notifications.index.proposal_notification*'
+  - 'legislation.processes.index.filter*'
   - 'helpers.page_entries_info.*' # kaminari
   - 'views.pagination.*' # kaminari
   - 'shared.suggest.*'

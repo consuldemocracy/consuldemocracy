@@ -88,8 +88,8 @@ Rails.application.routes.draw do
   namespace :legislation do
     resources :processes, only: [:index, :show] do
       resources :draft_versions, only: [:show] do
-        resources :annotations
         get :changes
+        resources :annotations
       end
     end
   end
