@@ -5,6 +5,7 @@
 // 03. List elements
 // 04. Stats
 // 05. Management
+// 06. Polls
 //
 
 // 01. Global styles
@@ -473,4 +474,13 @@ table.investment-projects-summary {
   &:hover {
     background: #e0e0e0;
   }
+}
+
+// 06. Polls
+// -----------------
+
+.count-error {
+  background: $alert-bg !important;
+  color: $color-alert;
+  font-weight: bold;
 }
