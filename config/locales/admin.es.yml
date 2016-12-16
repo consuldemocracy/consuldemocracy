@@ -153,7 +153,7 @@ es:
         title: Presidentes de mesa
       officer:
         add: Añadir como Presidente de mesa
-        delete: Borrar
+        delete: Eliminar cargo
         name: Nombre
         email: Email
         entry_name: presidente de mesa
