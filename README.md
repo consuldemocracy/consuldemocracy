@@ -30,7 +30,7 @@ Frontend tools used include [SCSS](http://sass-lang.com/) over [Foundation](http
 Prerequisites: install git, Ruby 2.3.2, bundler gem, ghostscript and PostgreSQL (>=9.4).
 
 ```
-git clone https://github.com/consul/consul.git
+git clone https://github.com/ayuntamientomadrid/consul.git
 cd consul
 bundle install
 cp config/database.yml.example config/database.yml

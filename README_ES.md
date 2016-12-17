@@ -30,7 +30,7 @@ Prerequisitos: tener instalado git, Ruby 2.3.2, la gema `bundler`, ghostscript y
 
 ```
 
-git clone https://github.com/consul/consul.git
+git clone https://github.com/ayuntamientomadrid/consul.git
 cd consul
 bundle install
 cp config/database.yml.example config/database.yml
