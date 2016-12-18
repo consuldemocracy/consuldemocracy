@@ -1,5 +1,22 @@
+<div class="legislation-hero no-margin-top brand-heading">
+  <div class="row">
+    <div class="small-12 medium-12 column padding">
+      <h4>
+        <%= t('.hightlighted_processes') %>
+      </h4>
+    </div>
+  </div>
+</div>
+
 <div class="row">
-  <% @processes.each do |process| %>
-    <%= link_to process.title, process %><br/>
-  <% end %>
+  <div class="legislation-categories small-12 medium-3 column">
+    <%= render 'shared/filter_subnav', i18n_namespace: "legislation.processes.index" %>
+  </div>
+
+  <div id="legislation" class="legislation-list small-12 medium-9 column">
+    <div id="legislation-list">
+      <%= render @processes %>
+      <%= paginate @processes %>
+    </div>
+  </div>
 </div>

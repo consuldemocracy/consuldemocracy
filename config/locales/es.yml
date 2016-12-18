@@ -227,6 +227,22 @@ es:
         see_text: Ver texto
       show:
         see_changes: Ver cambios
+    processes:
+      common:
+        key_dates: "Fechas clave:"
+        debate_dates: Debate previo
+        draft_publication_date: Publicación borrador
+        allegations_dates: Alegaciones
+        final_publication_date: Publicación resultados
+      index:
+        hightlighted_processes: PROCESOS DESTACADOS
+        filters:
+          open: Procesos activos
+          next: Próximamente
+          past: Terminados
+      process:
+        see_latest_comments: Ver últimas aportaciones
+        see_latest_comments_title: Aportar a este proceso
   locale: Español
   notifications:
     index:
