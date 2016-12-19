@@ -9,25 +9,15 @@ module Budgets
       before_action :load_investments
 
       load_and_authorize_resource :budget
-      load_and_authorize_resource :ballot, class: "Budget::Ballot"
+      load_and_authorize_resource :ballot, class: "Budget::Ballot", through: :budget
       load_and_authorize_resource :line, through: :ballot, find_by: :investment_id, class: "Budget::Ballot::Line"
 
       def create
         load_investment
         load_heading
 
-        if @ballot.add_investment(@investment)
-          #@ballot.set_geozone(@geozone)
-          #@current_user.update(representative_id: nil)
-          if request.get?
-            redirect_to @investment, notice: t('budget_investments.notice.voted')
-          end
-        else
-          if request.get?
-            redirect_to @investment, notice: t('budget_investments.notice.could_not_vote')
-          else
-            render :new
-          end
+        unless @ballot.add_investment(@investment)
+          head :bad_request
         end
       end
 
@@ -47,7 +37,7 @@ module Budgets
         end
 
         def line_params
-          params.permit(:investment_id)
+          params.permit(:investment_id, :budget_id)
         end
 
         def load_budget
