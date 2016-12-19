@@ -9,6 +9,7 @@
 // 07. Legislation allegations
 // 08. Legislation changes
 // 09. Legislation comments
+// 10. Legislation draft comment
 //
 
 // 01. Utils
@@ -952,6 +953,54 @@
 // 09. Legislation comments
 // -----------------
 .legislation-comments {
+  
+  .pull-right {
+    float: right;
+  }
+  
+  .comment-section {
+    background: #FAFAFA;
+    padding: 1rem;
+    border: 1px solid #DEE0E3;
+    margin-top: 0.25rem;
+    margin-bottom: 1rem;
+  }
+  
+  .comment {
+    margin-bottom: 3rem;
+    
+    a {
+      span {
+        text-decoration: underline;
+      }
+      
+      .icon-expand,
+      .icon-comments {
+        text-decoration: none;
+        color: #999999;
+        line-height: 0;
+      }
+      
+      .icon-expand {
+        margin-left: 0.25rem;
+      }
+      
+      .icon-comments {
+        margin-right: 0.25rem;
+      }
+      
+      &:active,
+      &:focus,
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+// 10. Legislation draft comment
+// -----------------
+.legislation-comment {
   
   .pull-right {
     float: right;
