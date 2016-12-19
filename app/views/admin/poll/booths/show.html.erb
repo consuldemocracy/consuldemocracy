@@ -3,13 +3,92 @@
 <div class="clear"></div>
 
 <h2 class="inline-block">
-  <%= @booth.name %>
+  Poll 3: <%= @booth.name %>
 </h2>
-<%= link_to t("admin.actions.edit"),
-            edit_admin_booth_path(@booth),
-            class: "button hollow float-right" %>
 
 <p>
   <strong><%= t("admin.booths.show.location") %></strong>:
   <%= @booth.location %>
 </p>
+
+<div class="tabs-content" data-tabs-content="booths-tabs">
+  <ul class="tabs" data-tabs id="booths-tabs">
+    <li class="tabs-title is-active">
+      <%= link_to "#tab-officers" do %>
+        Presidentes de mesa
+      <% end %>
+    </li>
+    <li class="tabs-title">
+      <%= link_to "#tab-count" do %>
+        Recuentos
+      <% end %>
+    </li>
+  </ul>
+
+  <div class="tabs-panel is-active" id="tab-officers">
+    <h3>Lista de presidentes de mesa</h3>
+
+    <div class="small-12 medium-6 large-4">
+      <select>
+        <option>Seleccionar fecha</option>
+      </select>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Fecha</th>
+          <th>Presidente de mesa</th>
+          <th>Email</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>13/02/2016</td>
+          <td>Clemente Padilla Otero</td>
+          <td>user5@consul.dev</td>
+        </tr>
+        <tr>
+          <td>13/02/2016</td>
+          <td>Ana Luisa Ceja Benítez</td>
+          <td>user7@consul.dev</td>
+        </tr>
+        <tr>
+          <td>14/02/2016</td>
+          <td>Clemente Padilla Otero</td>
+          <td>user5@consul.dev</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="tabs-panel" id="tab-count">
+    <h3>Lista de recuentos</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Fecha</th>
+          <th class="text-center">Votos (Presidente de mesa)</th>
+          <th class="text-center">Votos (Admin)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>13/02/2016</td>
+          <td class="text-center">320</td>
+          <td class="text-center">320</td>
+        </tr>
+        <tr class="count-error">
+          <td>14/02/2016</td>
+          <td class="text-center">160</td>
+          <td class="text-center">140</td>
+        </tr>
+        <tr>
+          <td>15/02/2016</td>
+          <td class="text-center">226</td>
+          <td class="text-center">226</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

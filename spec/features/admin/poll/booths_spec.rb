@@ -40,7 +40,6 @@ feature 'Admin booths' do
     booth = create(:poll_booth)
 
     visit admin_booths_path
-    click_link booth.name
 
     expect(page).to have_content booth.name
     expect(page).to have_content booth.location

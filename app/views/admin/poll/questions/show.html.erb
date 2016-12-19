@@ -1,8 +1,11 @@
 <%= render "shared/back_link" %>
 
+<%= link_to t('shared.edit'), edit_admin_question_path(@question),
+            class: "button hollow float-right" %>
+
 <div class="clear"></div>
 
-<div class="row margin-top">
+<div class="row">
   <div class="small-12 medium-9 column">
     <% if @question.proposal.present? %>
       <%= t("admin.questions.show.proposal") %>

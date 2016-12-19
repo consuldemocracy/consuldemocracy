@@ -153,7 +153,7 @@ en:
         title: Poll officers
       officer:
         add: Add
-        delete: Delete
+        delete: Delete position
         name: Name
         email: Email
         entry_name: officer
@@ -167,7 +167,7 @@ en:
         no_polls: "There are no polls."
         create: "Create poll"
         name: "Name"
-        status: "Status"
+        dates: "Dates"
       new:
         title: "New poll"
         submit_button: "Create poll"
@@ -189,6 +189,7 @@ en:
         booths_title: "List of booths"
         officers_title: "List of officers"
         questions_title: "List of questions"
+        remove_question: "Remove question from poll"
         name: "Name"
         location: "Location"
         email: "Email"

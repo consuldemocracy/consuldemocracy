@@ -28,7 +28,7 @@ feature 'Admin poll officers' do
   end
 
   scenario 'Delete' do
-    click_link 'Delete'
+    click_link 'Delete position'
 
     within("#officers") do
       expect(page).to_not have_content @officer.name
