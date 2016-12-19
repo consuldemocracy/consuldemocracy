@@ -94,15 +94,15 @@ feature 'Votes' do
       visit budget_investments_path(budget, heading_id: heading.id)
 
       within("#budget_investment_#{investment.id}") do
-        find("div.supports").hover
-        expect_message_selecting_not_allowed
+        find("div.js-supports").hover
+        expect(page).to have_content 'No Selecting Allowed'
       end
 
       visit budget_investment_path(budget, investment)
 
       within("#budget_investment_#{investment.id}") do
-        find("div.supports").hover
-        expect_message_selecting_not_allowed
+        find("div.js-supports").hover
+        expect(page).to have_content 'No Selecting Allowed'
       end
     end
   end
