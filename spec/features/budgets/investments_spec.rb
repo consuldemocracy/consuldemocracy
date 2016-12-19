@@ -135,72 +135,75 @@ feature 'Budget Investments' do
 
   end
 
-  xscenario 'Create with invisible_captcha honeypot field' do
-    login_as(author)
-    visit new_budget_investment_path(budget_id: budget.id)
+  context 'Phase I - Accepting' do
+    before(:each) { budget.update(phase: 'accepting') }
 
-    fill_in 'investment_title', with: 'I am a bot'
-    fill_in 'investment_subtitle', with: 'This is the honeypot'
-    fill_in 'investment_description', with: 'This is the description'
-    select  'All city', from: 'investment_heading_id'
-    check 'investment_terms_of_service'
+    scenario 'Create with invisible_captcha honeypot field' do
+      login_as(author)
+      visit new_budget_investment_path(budget_id: budget.id)
 
-    click_button 'Create'
+      select  'Health: More hospitals', from: 'budget_investment_heading_id'
+      fill_in 'budget_investment_title', with: 'I am a bot'
+      fill_in 'budget_investment_subtitle', with: 'This is the honeypot'
+      fill_in 'budget_investment_description', with: 'This is the description'
+      check   'budget_investment_terms_of_service'
 
-    expect(page.status_code).to eq(200)
-    expect(page.html).to be_empty
-    expect(current_path).to eq(budget_investments_path(budget_id: budget.id))
-  end
+      click_button 'Create'
 
-  xscenario 'Create spending proposal too fast' do
-    allow(InvisibleCaptcha).to receive(:timestamp_threshold).and_return(Float::INFINITY)
-
-    login_as(author)
-
-    visit new_budget_investments_path(budget_id: budget.id)
-    fill_in 'investment_title', with: 'I am a bot'
-    fill_in 'investment_description', with: 'This is the description'
-    select  'All city', from: 'investment_heading_id'
-    check 'investment_terms_of_service'
-
-    click_button 'Create'
-
-    expect(page).to have_content 'Sorry, that was too quick! Please resubmit'
-    expect(current_path).to eq(new_budget_investment_path(budget_id: budget.id))
-  end
-
-  xscenario 'Create notice' do
-    budget.update(phase: "accepting")
-    login_as(author)
-
-    visit new_budget_investment_path(budget_id: budget.id)
-    save_and_open_page
-    fill_in 'budget_investment_title', with: 'Build a skyscraper'
-    fill_in 'budget_investment_description', with: 'I want to live in a high tower over the clouds'
-    fill_in 'budget_investment_external_url', with: 'http://http://skyscraperpage.com/'
-    select  'All city', from: 'investment_heading_id'
-    check 'investment_terms_of_service'
-
-    click_button 'Create'
-
-    expect(page).to have_content 'Investment created successfully'
-    expect(page).to have_content 'You can access it from My activity'
-
-    within "#notice" do
-      click_link 'My activity'
+      expect(page.status_code).to eq(200)
+      expect(page.html).to be_empty
+      expect(current_path).to eq(budget_investments_path(budget_id: budget.id))
     end
 
-    expect(current_url).to eq(user_url(author, filter: :budget_investments))
-    expect(page).to have_content "1 Investment"
-    expect(page).to have_content "Build a skyscraper"
-  end
+    scenario 'Create spending proposal too fast' do
+      allow(InvisibleCaptcha).to receive(:timestamp_threshold).and_return(Float::INFINITY)
 
-  xscenario 'Errors on create' do
-    login_as(author)
+      login_as(author)
+      visit new_budget_investment_path(budget_id: budget.id)
 
-    visit new_budget_investment_path(budget_id: budget.id)
-    click_button 'Create'
-    expect(page).to have_content error_message
+      select  'Health: More hospitals', from: 'budget_investment_heading_id'
+      fill_in 'budget_investment_title', with: 'I am a bot'
+      fill_in 'budget_investment_description', with: 'This is the description'
+      check   'budget_investment_terms_of_service'
+
+      click_button 'Create'
+
+      expect(page).to have_content 'Sorry, that was too quick! Please resubmit'
+      expect(current_path).to eq(new_budget_investment_path(budget_id: budget.id))
+    end
+
+    scenario 'Create notice' do
+      login_as(author)
+
+      visit new_budget_investment_path(budget_id: budget.id)
+
+      select  'Health: More hospitals', from: 'budget_investment_heading_id'
+      fill_in 'budget_investment_title', with: 'Build a skyscraper'
+      fill_in 'budget_investment_description', with: 'I want to live in a high tower over the clouds'
+      fill_in 'budget_investment_external_url', with: 'http://http://skyscraperpage.com/'
+      check   'budget_investment_terms_of_service'
+
+      click_button 'Create'
+
+      expect(page).to have_content 'Investment created successfully'
+      expect(page).to have_content 'You can access it from My activity'
+
+      within "#notice" do
+        click_link 'My activity'
+      end
+
+      expect(current_url).to eq(user_url(author, filter: :budget_investments))
+      expect(page).to have_content "1 Investment"
+      expect(page).to have_content "Build a skyscraper"
+    end
+
+    scenario 'Errors on create' do
+      login_as(author)
+
+      visit new_budget_investment_path(budget_id: budget.id)
+      click_button 'Create'
+      expect(page).to have_content error_message
+    end
   end
 
   scenario "Show" do
@@ -259,7 +262,7 @@ feature 'Budget Investments' do
 
   context "Destroy" do
 
-    xscenario "Admin cannot destroy spending proposals" do
+    scenario "Admin cannot destroy spending proposals" do
       admin = create(:administrator)
       user = create(:user, :level_two)
       investment = create(:budget_investment, heading: heading, author: user)
@@ -267,7 +270,7 @@ feature 'Budget Investments' do
       login_as(admin.user)
       visit user_path(user)
 
-      within("#investment_#{investment.id}") do
+      within("#budget_investment_#{investment.id}") do
         expect(page).to_not have_link "Delete"
       end
     end
@@ -280,7 +283,7 @@ feature 'Budget Investments' do
       budget.update(phase: "balloting")
     end
 
-    xscenario "Index" do
+    scenario "Index" do
       user = create(:user, :level_two)
       sp1 = create(:budget_investment, :feasible, :finished, heading: heading, price: 10000)
       sp2 = create(:budget_investment, :feasible, :finished, heading: heading, price: 20000)
@@ -290,7 +293,7 @@ feature 'Budget Investments' do
 
       first(:link, "Participatory budgeting").click
       click_link budget.name
-      click_link "No Heading"
+      click_link "Health"
 
       within("#budget_investment_#{sp1.id}") do
         expect(page).to have_content sp1.title
@@ -303,7 +306,6 @@ feature 'Budget Investments' do
       end
     end
 
-    xscenario 'Order by cost (only in phase3)' do
     scenario 'Order by cost (only in phase3)' do
       create(:budget_investment, :feasible, :finished, heading: heading, title: 'Build a nice house',  price:  1000).update_column(:confidence_score, 10)
       create(:budget_investment, :feasible, :finished, heading: heading, title: 'Build an ugly house', price:  1000).update_column(:confidence_score, 5)
@@ -335,36 +337,41 @@ feature 'Budget Investments' do
       expect(page).to have_content "€10,000"
     end
 
-    xscenario "Confirm", :js do
+    scenario "Confirm", :js do
+      budget.update(phase: 'balloting')
       user = create(:user, :level_two)
 
-      carabanchel = create(:geozone, name: "Carabanchel")
-      new_york    = create(:geozone, name: "New York")
+      global_group   = create(:budget_group, budget: budget, name: 'Global Group')
+      global_heading = create(:budget_heading, group: global_group, name: 'Global Heading')
 
-      carabanchel_heading = create(:budget_heading, heading: heading, geozone: carabanchel, name: carabanchel.name)
-      new_york_heading    = create(:budget_heading, heading: heading, geozone: new_york, name: new_york.name)
+      carabanchel         = create(:geozone, name: "Carabanchel")
+      new_york            = create(:geozone, name: "New York")
+      carabanchel_heading = create(:budget_heading, group: group, geozone: carabanchel, name: carabanchel.name)
+      new_york_heading    = create(:budget_heading, group: group, geozone: new_york, name: new_york.name)
 
-      sp1 = create(:budget_investment, :feasible, :finished, price:      1, heading: nil)
-      sp2 = create(:budget_investment, :feasible, :finished, price:     10, heading: nil)
-      sp3 = create(:budget_investment, :feasible, :finished, price:    100, heading: nil)
-      sp4 = create(:budget_investment, :feasible, :finished, price:   1000, budget: budget, group: group, heading: carabanchel_heading)
-      sp5 = create(:budget_investment, :feasible, :finished, price:  10000, budget: budget, group: group, heading: carabanchel_heading)
-      sp6 = create(:budget_investment, :feasible, :finished, price: 100000, budget: budget, group: group, heading: new_york_heading)
+
+      sp1 = create(:budget_investment, :feasible, :finished, price:      1, heading: global_heading)
+      sp2 = create(:budget_investment, :feasible, :finished, price:     10, heading: global_heading)
+      sp3 = create(:budget_investment, :feasible, :finished, price:    100, heading: global_heading)
+      sp4 = create(:budget_investment, :feasible, :finished, price:   1000, heading: carabanchel_heading)
+      sp5 = create(:budget_investment, :feasible, :finished, price:  10000, heading: carabanchel_heading)
+      sp6 = create(:budget_investment, :feasible, :finished, price: 100000, heading: new_york_heading)
 
       login_as(user)
-      visit root_path
+      visit budget_path(budget)
 
-      first(:link, "Participatory budgeting").click
-      click_link budget.name
-      click_link "No Heading"
+      click_link "Global Group"
+      # No need to click_link "Global Heading" because groups with a single heading redirect to the
+      # list of investments directly
 
       add_to_ballot(sp1)
       add_to_ballot(sp2)
 
-      first(:link, "Participatory budgeting").click
+      visit budgets_path
 
       click_link budget.name
-      click_link carabanchel.name
+      click_link "Health"
+      click_link "Carabanchel"
 
       add_to_ballot(sp4)
       add_to_ballot(sp5)
