@@ -7,6 +7,7 @@
 // 05. Debate quiz
 // 06. Legislation draft
 // 07. Legislation allegations
+// 08. Legislation changes
 //
 
 // 01. Utils
@@ -893,6 +894,54 @@
       .show-for-medium {
         .panel-title {
           display: none;
+        }
+      }
+    }
+  }
+}
+
+// 08. Legislation changes
+// -----------------
+.legislation-changes {
+  ul {
+    list-style: none;
+    margin-left: 0;
+    
+    li {
+      margin-bottom: 1rem;
+      
+      &::before {
+        margin-right: 0.25rem;
+        content: "—"
+      }
+      
+      .changes-link {
+        display: block;
+        margin-left: 1rem;
+        font-size: $small-font-size;
+        
+        @include breakpoint(medium) {
+          display: inline-block;
+        }
+        
+        a {          
+          span {
+            text-decoration: underline;
+          }
+          
+          .icon-external {
+            text-decoration: none;
+            color: #999999;
+            line-height: 0;
+            vertical-align: sub;
+            margin-left: 0.5rem;
+          }
+          
+          &:active,
+          &:focus,
+          &:hover {
+            text-decoration: none;
+          }
         }
       }
     }
