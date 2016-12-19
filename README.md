@@ -7,7 +7,7 @@ Citizen Participation and Open Government Application
 
 [![Join the chat at https://gitter.im/consul/consul](https://badges.gitter.im/consul/consul.svg)](https://gitter.im/consul/consul?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![Build Status](https://travis-ci.org/AyuntamientoMadrid/consul.svg?branch=master)](https://travis-ci.org/AyuntamientoMadrid/consul)
-[![Code Climate](https://codeclimate.com/github/AyuntamientoMadrid/consul/badges/gpa.svg)](https://codeclimate.com/github/consul/consul)
+[![Code Climate](https://codeclimate.com/github/AyuntamientoMadrid/consul/badges/gpa.svg)](https://codeclimate.com/github/AyuntamientoMadrid/consul)
 [![Dependency Status](https://gemnasium.com/AyuntamientoMadrid/consul.svg)](https://gemnasium.com/AyuntamientoMadrid/consul)
 [![Coverage Status](https://coveralls.io/repos/github/AyuntamientoMadrid/consul/badge.svg?branch=master)](https://coveralls.io/github/AyuntamientoMadrid/consul?branch=master)
 
