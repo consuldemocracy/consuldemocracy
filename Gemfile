@@ -35,7 +35,7 @@ gem 'kaminari'
 gem 'ancestry', '~> 2.2.2'
 gem 'acts-as-taggable-on'
 gem 'responders', '~> 2.3.0'
-gem 'foundation-rails', '6.2.3.0' # Allows use responsive menu
+gem 'foundation-rails', '~> 6.2.4.0'
 gem 'foundation_rails_helper', '~> 2.0.0'
 gem 'acts_as_votable'
 gem 'ckeditor', '~> 4.2.0'
