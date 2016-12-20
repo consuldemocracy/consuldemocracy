@@ -311,9 +311,9 @@ es:
         created_at: Creado
         author: Autor
         documents: Documentos
-        all_valid: "Todas las firmas introducidas (%{count}) son válidas"
-        valid: "Hay %{count} firmas válidas"
-        invalid: "Hay %{count} firmas inválidas"
+        all_verified: "Todas las firmas introducidas (%{count}) son válidas"
+        verified: "Hay %{count} firmas válidas"
+        unverified: "Hay %{count} firmas inválidas"
         loading: "Aún hay firmas que se están verificando por el Padrón, por favor refresca la página en unos instantes"
     stats:
       show:

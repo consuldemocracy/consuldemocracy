@@ -313,9 +313,9 @@ en:
         created_at: Created
         author: Author
         documents: Documents
-        all_valid: "All the signatures (%{count}) are valid"
-        valid: "There are %{count} valid signatures"
-        invalid: "There are %{count} invalid signatures"
+        all_verified: "All the signatures (%{count}) are valid"
+        verified: "There are %{count} valid signatures"
+        unverified: "There are %{count} invalid signatures"
         loading: "There are still signatures that are being verified by the Census, please refresh the page in a few moments"
     stats:
       show:

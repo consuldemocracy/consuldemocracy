@@ -330,7 +330,7 @@ ActiveRecord::Schema.define(version: 20161214233817) do
     t.integer  "signable_id"
     t.string   "signable_type"
     t.text     "document_numbers"
-    t.boolean  "processed"
+    t.boolean  "processed",        default: false
     t.integer  "author_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -340,7 +340,7 @@ ActiveRecord::Schema.define(version: 20161214233817) do
     t.integer  "signature_sheet_id"
     t.integer  "user_id"
     t.string   "document_number"
-    t.string   "status"
+    t.boolean  "verified",           default: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
