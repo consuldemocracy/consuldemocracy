@@ -1,0 +1,28 @@
+<h1><%= @signature_sheet.name %></h1>
+
+<div>Documentos: <%= @signature_sheet.document_numbers %></div>
+<div>Creado: <%= l(@signature_sheet.created_at, format: :short) %></div>
+<div>Autor: <%= @signature_sheet.author.name %></div>
+<br/>
+
+<div>
+  Hay <%= @signature_sheet.signatures.valid.count %> firmas válidas
+</div>
+
+<div>
+  Hay <%= @signature_sheet.signatures.invalid.count %> firmas inválidas
+</div>
+<br/>
+
+<% if @signature_sheet.signatures.invalid.any? %>
+  <% @invalid_signatures.each do |error, signatures| %>
+    <div><%= error %></div>
+    <div>
+        <%= signatures.map(&:document_number).join(",") %>
+    </div>
+  <% end %>
+<% end %>
+
+<% unless @signature_sheet.processed? %>
+  Aún hay firmas que se están verificando por el Padrón, por favor refresca la página en unos instantes.
+<% end %>

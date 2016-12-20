@@ -122,9 +122,9 @@ class Proposal < ActiveRecord::Base
     retired_at.present?
   end
 
-  def register_vote(user, vote_value)
+  def register_vote(user, vote_value, signature=nil)
     if votable_by?(user) && !archived?
-      vote_by(voter: user, vote: vote_value)
+      vote_by(voter: user, vote: vote_value, vote_scope: signature)
     end
   end
 

@@ -1,0 +1,9 @@
+<%= form_for [:admin, @signature_sheet] do |f| %>
+  <%= render 'shared/errors',
+              resource: @signature_sheet %>
+
+  <%= f.select :signable_type, signable_options %>
+  <%= f.text_field :signable_id %>
+  <%= f.text_area :document_numbers %>
+  <%= f.submit %>
+<% end %>

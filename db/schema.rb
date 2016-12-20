@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161102133838) do
+ActiveRecord::Schema.define(version: 20161214233817) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -325,6 +325,25 @@ ActiveRecord::Schema.define(version: 20161102133838) do
   end
 
   add_index "settings", ["key"], name: "index_settings_on_key", using: :btree
+
+  create_table "signature_sheets", force: :cascade do |t|
+    t.integer  "signable_id"
+    t.string   "signable_type"
+    t.text     "document_numbers"
+    t.boolean  "processed"
+    t.integer  "author_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "signatures", force: :cascade do |t|
+    t.integer  "signature_sheet_id"
+    t.integer  "user_id"
+    t.string   "document_number"
+    t.string   "status"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "spending_proposals", force: :cascade do |t|
     t.string   "title"
