@@ -27,6 +27,7 @@ en:
       facebook_login: Facebook login
       google_login: Google login
       debates: Debates
+      signature_sheets: Signature sheets
       spending_proposals: Investment projects
       spending_proposal_features:
         voting_allowed: Voting on investment projects
