@@ -1,6 +1,6 @@
 <% cache [locale_and_user_status(comment), comment, commentable_cache_key(comment.commentable), comment.author, (@comment_flags[comment.id] if @comment_flags)] do %>
   <div class="row">
-  	<div id="<%= dom_id(comment) %>" class="comment small-12 column">
+  	<ul id="<%= dom_id(comment) %>" class="comment no-bullet small-12 column">
 
       <% if comment.hidden? || comment.user.hidden? %>
         <% if comment.children.size > 0 %>
@@ -23,7 +23,7 @@
           <% end %>
         <% end %>
 
-        <div class="comment-body">
+        <li class="comment-body">
           <div class="comment-info">
 
             <% if comment.as_administrator? %>
@@ -92,14 +92,13 @@
               <%= render 'comments/form', {commentable: comment.commentable, parent_id: comment.id, toggeable: true} %>
             <% end %>
           </div>
-        </div>
+        </li>
       <% end %>
-
-      <div id="<%= dom_id(comment) %>_children" class="comment-children">
+      <ul id="<%= dom_id(comment) %>_children" class="no-bullet comment-children">
         <% child_comments_of(comment).each do |child| %>
           <%= render 'comments/comment', comment: child %>
         <% end %>
-      </div>
-    </div>
+      </ul>
+    </ul>
   </div>
 <% end %>
