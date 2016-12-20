@@ -10,8 +10,21 @@ describe SignatureSheet do
       expect(signature_sheet).to be_valid
     end
 
-    it "should not be valid without a valid signable" do
+    it "should be valid with a valid signable" do
+      signature_sheet.signable = create(:proposal)
+      expect(signature_sheet).to be_valid
+
+      signature_sheet.signable = create(:spending_proposal)
+      expect(signature_sheet).to be_valid
+    end
+
+    it "should not be valid without signable" do
       signature_sheet.signable = nil
+      expect(signature_sheet).to_not be_valid
+    end
+
+    it "should not be valid without a valid signable" do
+      signature_sheet.signable = create(:comment)
       expect(signature_sheet).to_not be_valid
     end
 

@@ -8,12 +8,14 @@ class Signature < ActiveRecord::Base
   scope :verified,   -> { where(verified: true) }
   scope :unverified, -> { where(verified: false) }
 
+  delegate :signable, to: :signature_sheet
+
   before_save :verify
 
   def verify
     if verified?
       assign_vote
-      verified = true
+      self.verified = true
     end
   end
 
@@ -36,7 +38,8 @@ class Signature < ActiveRecord::Base
   end
 
   def user_exists?
-    user = User.where(document_number: document_number).exists?
+    self.user = User.where(document_number: document_number).first
+    self.user.present?
   end
 
   def create_user
@@ -47,10 +50,6 @@ class Signature < ActiveRecord::Base
     document_types.any? do |document_type|
       CensusApi.new.call(document_type, document_number).valid?
     end
-  end
-
-  def signable
-    signature_sheet.signable
   end
 
   def document_types
