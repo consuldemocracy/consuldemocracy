@@ -3,6 +3,7 @@ class Legislation::Process < ActiveRecord::Base
   include ActsAsParanoidAliases
 
   has_many :draft_versions, class_name: 'Legislation::DraftVersion', foreign_key: 'legislation_process_id'
+  has_many :questions, class_name: 'Legislation::Question', foreign_key: 'legislation_process_id'
 
   validates :title, presence: true
   validates :description, presence: true

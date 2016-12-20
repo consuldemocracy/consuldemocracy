@@ -200,6 +200,7 @@ Rails.application.routes.draw do
 
     namespace :legislation do
       resources :processes do
+        resources :questions
         resources :draft_versions
       end
     end

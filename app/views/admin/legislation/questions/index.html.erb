@@ -1,0 +1,42 @@
+<div class="legislation-draft-versions-index row">
+  <div class="small-12 column">
+    <%= link_to admin_legislation_processes_path, class: "back" do %>
+      <span class="icon-angle-left"></span>
+      <%= t("admin.legislation.questions.index.back") %>
+    <% end %>
+
+    <h1><%= @process.title %></h1>
+
+    <%= render 'admin/legislation/processes/subnav', process: @process, active: 'questions' %>
+
+    <%= link_to t("admin.legislation.questions.index.create"),
+              new_admin_legislation_process_question_path, class: "button float-right" %>
+
+    <h3><%= t("admin.legislation.questions.index.title") %></h3>
+
+    <table>
+      <tr>
+        <th><%= t("admin.legislation.questions.table.title") %></th>
+        <th><%= t("admin.legislation.questions.table.question_options") %></th>
+        <th><%= t("admin.legislation.questions.table.answers_count") %></th>
+        <th><%= t("admin.legislation.questions.table.comments_count") %></th>
+      </tr>
+      <% @process.questions.each do |question| %>
+        <tr id="<%= dom_id(question) %>">
+          <td>
+            <%= link_to question.title, edit_admin_legislation_process_question_path(@process, question) %>
+          </td>
+          <td>
+            <%= content_tag :ul do %>
+              <% question.question_options.each do |question_option| %>
+                <%= content_tag :li, question_option.value %>
+              <% end %>
+            <% end %>
+          </td>
+          <td><%= question.answers_count %></td>
+          <td><%= question.comments.count %></td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+</div>

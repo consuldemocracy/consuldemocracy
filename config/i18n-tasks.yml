@@ -120,6 +120,7 @@ ignore_unused:
   - 'admin.legislation.processes.index.filter*'
   - 'admin.legislation.processes.*.submit_button'
   - 'admin.legislation.draft_versions.*.submit_button'
+  - 'admin.legislation.questions.*.submit_button'
   - 'admin.comments.index.hidden_*'
   - 'admin.settings.index.features.*'
   - 'moderation.comments.index.filter*'

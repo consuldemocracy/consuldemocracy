@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161213144031) do
+ActiveRecord::Schema.define(version: 20161220120037) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -54,8 +54,8 @@ ActiveRecord::Schema.define(version: 20161213144031) do
     t.string   "quote"
     t.text     "ranges"
     t.text     "text"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
     t.integer  "user_id"
     t.integer  "legacy_legislation_id"
   end
@@ -273,6 +273,30 @@ ActiveRecord::Schema.define(version: 20161213144031) do
   add_index "legislation_processes", ["final_publication_date"], name: "index_legislation_processes_on_final_publication_date", using: :btree
   add_index "legislation_processes", ["hidden_at"], name: "index_legislation_processes_on_hidden_at", using: :btree
   add_index "legislation_processes", ["start_date"], name: "index_legislation_processes_on_start_date", using: :btree
+
+  create_table "legislation_question_options", force: :cascade do |t|
+    t.integer  "legislation_question_id"
+    t.string   "value"
+    t.integer  "answers_count",           default: 0
+    t.datetime "hidden_at"
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
+  end
+
+  add_index "legislation_question_options", ["hidden_at"], name: "index_legislation_question_options_on_hidden_at", using: :btree
+  add_index "legislation_question_options", ["legislation_question_id"], name: "index_legislation_question_options_on_legislation_question_id", using: :btree
+
+  create_table "legislation_questions", force: :cascade do |t|
+    t.integer  "legislation_process_id"
+    t.text     "title"
+    t.integer  "answers_count",          default: 0
+    t.datetime "hidden_at"
+    t.datetime "created_at",                         null: false
+    t.datetime "updated_at",                         null: false
+  end
+
+  add_index "legislation_questions", ["hidden_at"], name: "index_legislation_questions_on_hidden_at", using: :btree
+  add_index "legislation_questions", ["legislation_process_id"], name: "index_legislation_questions_on_legislation_process_id", using: :btree
 
   create_table "locks", force: :cascade do |t|
     t.integer  "user_id"

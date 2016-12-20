@@ -31,7 +31,6 @@ class Admin::Legislation::DraftVersionsController < Admin::Legislation::BaseCont
 
     def draft_version_params
       params.require(:legislation_draft_version).permit(
-        :legislation_process_id,
         :title,
         :changelog,
         :status,
