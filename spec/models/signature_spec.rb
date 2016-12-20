@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe Signature
+describe Signature do
 
   describe "validations" do
     it "should be valid"
@@ -9,25 +9,25 @@ describe Signature
     it "should not be valid if not in census"
   end
 
-  describe "in census" do
+  describe "#in_census" do
     it "checks for all document_types"
   end
 
-  describe "verify" do
+  describe "#verify" do
 
-    describie "valid" do
+    describe "valid" do
       it "sets status to verified"
       it "asigns vote to user"
     end
 
-    describe "invalid"
+    describe "invalid" do
       it "sets status to error"
       it "does not asign any votes"
     end
 
   end
 
-  describe "assign vote" do
+  describe "#assign_vote" do
 
     describe "existing user" do
       it "assigns vote to user"
