@@ -296,10 +296,27 @@ en:
       delete:
         success: Geozone successfully deleted
         error: This geozone can't be deleted since there are elements attached to it
-    signature_sheet:
+    signature_sheets:
       author: Author
       created_at: Creation date
       name: Name
+      no_signature_sheets: "There are not signature_sheets"
+      index:
+        title: Signature sheets
+        new: New signature sheets
+      new:
+        title: New signature sheets
+        signable_type: Type of signature sheet
+        document_numbers_note: "Write the numbers separated by commas (,)"
+        submit: Create signature sheets
+      show:
+        created_at: Created
+        author: Author
+        documents: Documents
+        all_valid: "All the signatures (%{count}) are valid"
+        valid: "There are %{count} valid signatures"
+        invalid: "There are %{count} invalid signatures"
+        loading: "There are still signatures that are being verified by the Census, please refresh the page in a few moments"
     stats:
       show:
         stats_title: Stats

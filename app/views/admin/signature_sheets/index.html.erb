@@ -1,26 +1,31 @@
-<h1>Signatures</h1>
+<h2 class="inline-block"><%= t("admin.signature_sheets.index.title") %></h2>
 
-<div>
-  <%= link_to 'Nueva hoja de firmas', new_admin_signature_sheet_path %>
-</div>
+<%= link_to t("admin.signature_sheets.index.new"), new_admin_signature_sheet_path,
+            class: "button success float-right" %>
 
-<table>
-  <tr>
-    <th><%= t("admin.signature_sheet.name") %></th>
-    <th><%= t("admin.signature_sheet.author") %></th>
-    <th><%= t("admin.signature_sheet.created_at") %></th>
-  </tr>
-  <% @signature_sheets.each do |signature_sheet| %>
-    <tr id="<%= dom_id(signature_sheet) %>">
-      <td>
-        <%= link_to signature_sheet.name, [:admin, signature_sheet] %>
-      </td>
-      <td>
-        <%= signature_sheet.author.name %>
-      </td>
-      <td>
-        <%= l(signature_sheet.created_at, format: :short) %>
-      </td>
+<% if @signature_sheets.any? %>
+  <table>
+    <tr>
+      <th><%= t("admin.signature_sheets.name") %></th>
+      <th><%= t("admin.signature_sheets.author") %></th>
+      <th><%= t("admin.signature_sheets.created_at") %></th>
     </tr>
-  <% end %>
-</table>
+    <% @signature_sheets.each do |signature_sheet| %>
+      <tr id="<%= dom_id(signature_sheet) %>">
+        <td>
+          <%= link_to signature_sheet.name, [:admin, signature_sheet] %>
+        </td>
+        <td>
+          <%= signature_sheet.author.name %>
+        </td>
+        <td>
+          <%= l(signature_sheet.created_at, format: :short) %>
+        </td>
+      </tr>
+    <% end %>
+  </table>
+<% else %>
+  <div class="callout primary margin-top">
+    <%= t("admin.signature_sheets.no_signature_sheets") %>
+  </div>
+<% end %>
