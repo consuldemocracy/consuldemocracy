@@ -15,7 +15,7 @@
           Flag.flagged?(current_user, @proposal),
           @proposal_votes] do %>
 
-  <section class="proposal-show">
+  <div class="proposal-show">
     <div id="<%= dom_id(@proposal) %>" class="row">
       <div class="small-12 medium-9 column">
         <%= render "shared/back_link",
@@ -156,7 +156,7 @@
 
       </aside>
     </div>
-  </section>
+  </div>
 <% end %>
 
 <div class="tabs-content" data-tabs-content="example-tabs">
