@@ -111,6 +111,7 @@ en:
       settings: Configuration settings
       spending_proposals: Spending proposals
       stats: Statistics
+      signature_sheets: Signature Sheets
     moderators:
       index:
         title: Moderators
@@ -295,6 +296,10 @@ en:
       delete:
         success: Geozone successfully deleted
         error: This geozone can't be deleted since there are elements attached to it
+    signature_sheet:
+      author: Author
+      created_at: Creation date
+      name: Name
     stats:
       show:
         stats_title: Stats

@@ -95,6 +95,8 @@ search:
 # - '{devise,simple_form}.*'
 ignore_missing:
   - 'unauthorized.*'
+  - 'activerecord.models.proposal'
+  - 'activerecord.models.spending_proposal'
   - 'activerecord.errors.models.proposal_notification.*'
   - 'activerecord.errors.models.direct_message.*'
   - 'errors.messages.blank'

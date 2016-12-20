@@ -109,6 +109,7 @@ es:
       settings: Configuración global
       spending_proposals: Propuestas de inversión
       stats: Estadísticas
+      signature_sheets: Hojas de firmas
     moderators:
       index:
         title: Moderadores
@@ -293,6 +294,10 @@ es:
       delete:
         success: Distrito borrado correctamente
         error: No se puede borrar el distrito porque ya tiene elementos asociados
+    signature_sheet:
+      author: Autor
+      created_at: Fecha de creación
+      name: Nombre
     stats:
       show:
         stats_title: Estadísticas

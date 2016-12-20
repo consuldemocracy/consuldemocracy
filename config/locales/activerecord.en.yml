@@ -91,3 +91,8 @@ en:
           attributes:
             minimum_interval:
               invalid: "You have to wait a minium of %{interval} days between notifications"
+        signature:
+          attributes:
+            document_number:
+              not_in_census: 'Not verified by Census'
+              already_voted: 'Already voted this proposal'

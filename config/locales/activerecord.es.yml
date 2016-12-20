@@ -91,3 +91,8 @@ es:
           attributes:
             minimum_interval:
               invalid: "Debes esperar un mínimo de %{interval} días entre notificaciones"
+        signature:
+          attributes:
+            document_number:
+              not_in_census: 'No verificado por Padrón'
+              already_voted: 'Ya ha votado esta propuesta'
