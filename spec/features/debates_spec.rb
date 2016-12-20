@@ -117,7 +117,7 @@ feature 'Debates' do
     click_button 'Start a debate'
 
     expect(page).to have_content 'Debate created successfully.'
-    within("#tags") do
+    within "#tags_debate_#{Debate.last.id}" do
       expect(page).to have_content "open-plenary"
     end
   end

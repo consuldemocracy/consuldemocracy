@@ -159,7 +159,7 @@ feature 'Proposals' do
     click_button 'Create proposal'
 
     expect(page).to have_content 'Proposal created successfully.'
-    within("#tags") do
+    within "#tags_proposal_#{Proposal.last.id}" do
       expect(page).to have_content "open-plenary"
     end
   end
