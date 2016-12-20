@@ -343,4 +343,12 @@ FactoryGirl.define do
     association :sender,   factory: :user
     association :receiver, factory: :user
   end
+
+  factory :signature_sheet do
+
+  end
+
+  factory :signature do
+
+  end
 end
