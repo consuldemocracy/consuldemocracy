@@ -6,21 +6,21 @@
 <br/>
 
 <div>
-  Hay <%= @signature_sheet.signatures.valid.count %> firmas válidas
+  Hay <%= @signature_sheet.signatures.verified.count %> firmas válidas
 </div>
 
 <div>
-  Hay <%= @signature_sheet.signatures.invalid.count %> firmas inválidas
+  Hay <%= @signature_sheet.signatures.unverified.count %> firmas inválidas
 </div>
 <br/>
 
-<% if @signature_sheet.signatures.invalid.any? %>
-  <% @invalid_signatures.each do |error, signatures| %>
-    <div><%= error %></div>
+<% if @signature_sheet.signatures.verified.any? %>
     <div>
-        <%= signatures.map(&:document_number).join(",") %>
+      EL PADRÓN NO PUDO VERIFICAR LA INFORMACIÓN
     </div>
-  <% end %>
+    <div>
+        <%= @signature_sheet.signatures.unverified.map(&:document_number).join(",") %>
+    </div>
 <% end %>
 
 <% unless @signature_sheet.processed? %>

@@ -13,7 +13,7 @@ class SignatureSheet < ActiveRecord::Base
   validate  :signable_found
 
   def name
-    "#{signable_name} + #{signable_id}"
+    "#{signable_name} #{signable_id}"
   end
 
   def signable_name
@@ -22,19 +22,13 @@ class SignatureSheet < ActiveRecord::Base
 
   def verify_signatures
     parsed_document_numbers.each do |document_number|
-      signature = signatures.new(document_number: document_number)
-      signature.save(validate: false)
-      signature.verify
+      signature = signatures.create(document_number: document_number)
     end
     update(processed: true)
   end
 
-  def invalid_signatures
-    signatures.invalid.group_by(&:status)
-  end
-
   def parsed_document_numbers
-    document_numbers.split(",")
+    document_numbers.split(/\W+/)
   end
 
   def signable_found

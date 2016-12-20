@@ -4,7 +4,7 @@ class CreateSignatures < ActiveRecord::Migration
       t.references :signature_sheet
       t.references :user
       t.string :document_number
-      t.string :status, default: nil
+      t.boolean :verified, default: false
       t.timestamps
     end
   end

@@ -21,7 +21,6 @@ class Admin::SignatureSheetsController < Admin::BaseController
 
   def show
     @signature_sheet = SignatureSheet.find(params[:id])
-    @invalid_signatures = @signature_sheet.invalid_signatures
   end
 
   private
