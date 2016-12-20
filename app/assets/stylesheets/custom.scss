@@ -732,9 +732,10 @@ table {
       }
     }
 
-    th.question {
+    .question, caption {
       background: #fff7b4;
       border: 2px solid #fae100;
+      text-align: left;
 
       @include breakpoint(medium) {
         font-size: rem-calc(24);
@@ -750,6 +751,10 @@ table {
       background: #c1fdd2;
       border-bottom: 2px solid #58ff87;
       border-top: 2px solid #58ff87;
+
+      th {
+        background: #c1fdd2;
+      }
 
       td:first-child, td:last-child {
         font-weight: bold;
