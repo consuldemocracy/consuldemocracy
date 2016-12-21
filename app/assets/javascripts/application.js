@@ -49,6 +49,7 @@
 //= require markdown-it
 //= require markdown_editor
 //= require cocoon
+//= require allegations
 //= require custom
 
 var initialize_modules = function() {
@@ -72,6 +73,7 @@ var initialize_modules = function() {
   App.Banners.initialize();
   App.SocialShare.initialize();
   App.MarkdownEditor.initialize();
+  App.Allegations.initialize();
 };
 
 $(function(){
