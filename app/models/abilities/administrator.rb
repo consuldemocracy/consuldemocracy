@@ -48,6 +48,7 @@ module Abilities
 
       can [:manage], ::Legislation::Process
       can [:manage], ::Legislation::DraftVersion
+      can [:manage], ::Legislation::Question
     end
   end
 end

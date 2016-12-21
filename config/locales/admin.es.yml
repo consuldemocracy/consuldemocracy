@@ -106,6 +106,7 @@ es:
         subnav:
           info: Información
           draft_texts: Texto
+          questions: Debate
       draft_versions:
         edit:
           back: Volver
@@ -131,6 +132,30 @@ es:
           comments: Comentarios
           final_version: Versión final
           status: Estado
+      questions:
+        edit:
+          back: Volver
+          submit_button: Guardar cambios
+        errors:
+          form:
+            error: Error
+        form:
+          add_option: +Añadir respuesta cerrada
+        index:
+          back: Volver
+          title: Preguntas
+          create: Crear pregunta
+        new:
+          back: Volver
+          title: Crear nueva pregunta
+          submit_button: Crear pregunta
+        table:
+          title: Título
+          question_options: Opciones de respuesta
+          answers_count: Número de respuestas
+          comments_count: Número de comentarios
+        question_option_fields:
+          remove_option: Eliminar
     managers:
       index:
         title: Gestores

@@ -389,4 +389,14 @@ FactoryGirl.define do
     final_version false
     body "Body of the legislation text"
   end
+
+  factory :legislation_question, class: 'Legislation::Question' do
+    process factory: :legislation_process
+    title "Question text"
+  end
+
+  factory :legislation_question_option, class: 'Legislation::QuestionOption' do
+    question factory: :legislation_question
+    sequence(:value) { |n| "Option #{n}" }
+  end
 end
