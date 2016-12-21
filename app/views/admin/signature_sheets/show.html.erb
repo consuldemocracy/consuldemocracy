@@ -14,14 +14,14 @@
 </div>
 
 <% if @signature_sheet.signatures.unverified.any? %>
-  <div class="callout success">
+  <div id="verified_signatures" class="callout success">
     <strong>
       <%= t("admin.signature_sheets.show.verified",
           count: @signature_sheet.signatures.verified.count ) %>
     </strong>
   </div>
 
-  <div class="callout alert">
+  <div id="unverified_signatures" class="callout alert">
     <p>
       <strong>
         <%= t("admin.signature_sheets.show.unverified",

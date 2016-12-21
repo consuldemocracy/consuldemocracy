@@ -11,7 +11,7 @@
       <th><%= t("admin.signature_sheets.created_at") %></th>
     </tr>
     <% @signature_sheets.each do |signature_sheet| %>
-      <tr id="<%= dom_id(signature_sheet) %>">
+      <tr id="<%= dom_id(signature_sheet) %>" class="signature_sheet">
         <td>
           <%= link_to signature_sheet.name, [:admin, signature_sheet] %>
         </td>

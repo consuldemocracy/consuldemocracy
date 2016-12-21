@@ -23,6 +23,7 @@ class SignatureSheet < ActiveRecord::Base
   def verify_signatures
     parsed_document_numbers.each do |document_number|
       signature = signatures.create(document_number: document_number)
+      signature.verify
     end
     update(processed: true)
   end
