@@ -125,10 +125,6 @@ class SpendingProposal < ActiveRecord::Base
     return :organization  if user.organization?
   end
 
-  def voters
-    User.active.where(id: votes_for.voters)
-  end
-
   def votable_by?(user)
     reason_for_not_being_votable_by(user).blank?
   end
