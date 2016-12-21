@@ -1,0 +1,15 @@
+<%= render 'legislation/processes/header_full', process: @process %>
+
+<div class="row">
+  <%= render 'legislation/processes/key_dates', process: @process, phase: @phase %>
+
+  <div class="debate-chooser">
+    <div class="row">
+      <% if @process.show_phase?(@phase) %>
+        <%= render "phase_#{@phase}", process: @process %>
+      <% else %>
+        <%= render 'legislation/processes/phase_not_open' %>
+      <% end %>
+    </div>
+  </div>
+</div>

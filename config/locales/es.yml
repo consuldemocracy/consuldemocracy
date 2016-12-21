@@ -227,21 +227,45 @@ es:
       show:
         see_changes: Ver cambios
     processes:
-      common:
-        key_dates: "Fechas clave:"
-        debate_dates: Debate previo
-        draft_publication_date: Publicación borrador
-        allegations_dates: Alegaciones
-        final_publication_date: Publicación resultados
+      debate:
+        empty_questions: No hay preguntas
+        participate: Realiza tus aportaciones al debate previo participando en los siguientes temas.
+      header_full:
+        title: Colabora en la elaboración de la normativa sobre
+        description: En qué consiste
+        target: A quién va dirigido
+        how_to_participate: Cómo puedes participar
+        more_info: Más información y contexto
       index:
         hightlighted_processes: PROCESOS DESTACADOS
         filters:
           open: Procesos activos
           next: Próximamente
           past: Terminados
+      phase_not_open:
+        not_open: Esta fase del proceso todavía no está abierta
+      phase_draft_publication:
+        empty: No se ha publicado ningún borrador
+      phase_allegations:
+        empty: No se ha publicado ningún borrador
+      phase_final_version_publication:
+        empty: No se ha publicado el resultado todavía
       process:
         see_latest_comments: Ver últimas aportaciones
         see_latest_comments_title: Aportar a este proceso
+      shared:
+        key_dates: "Fechas clave:"
+        debate_dates: Debate previo
+        draft_publication_date: Publicación borrador
+        allegations_dates: Alegaciones
+        final_publication_date: Publicación resultados
+    questions:
+      question:
+        comments:
+          zero: Sin comentarios
+          one: "%{count} comentario"
+          other: "%{count} comentarios"
+        debate: Debate
   locale: Español
   notifications:
     index:

@@ -1,0 +1,37 @@
+<div class="legislation-hero no-margin-top grey-heading">
+  <div class="row headline">
+    <div class="small-12 medium-7 column">
+      <p class="grey"><%= t('.title') %></p>
+      <h2>
+        <%= process.title %>
+      </h2>
+    </div>
+    <div class="small-12 medium-4 column right">
+      <a class="button-subscribe expanded button strong" title="Suscríbete al proceso" data-remote="true" rel="nofollow" data-method="post" href="/proposals/6-soluta-sed-sapiente-dolores/vote?value=yes">
+        <h3>Suscríbete al proceso</h3>
+        <p>Recibe notificaciones clave sobre el proceso</p>
+      </a>
+    </div>
+  </div>
+
+  <div class="row description">
+    <div class="small-12 medium-4 column">
+      <h4><%= t('.description') %></h4>
+      <%= markdown process.description %>
+    </div>
+    <div class="small-12 medium-4 column">
+      <h4><%= t('.target') %></h4>
+      <%= markdown process.target %>
+    </div>
+    <div class="small-12 medium-4 column">
+      <h4><%= t('.how_to_participate') %></h4>
+      <%= markdown process.how_to_participate %>
+    </div>
+  </div>
+
+  <div class="center half-gradient">
+    <a class="button big center strong" title="<%= t('.more_info') %>">
+      <%= t('.more_info') %>
+    </a>
+  </div>
+</div>

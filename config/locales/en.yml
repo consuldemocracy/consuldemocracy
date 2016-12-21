@@ -227,21 +227,45 @@ en:
       show:
         see_changes: See changes
     processes:
-      common:
-        key_dates: "Key dates:"
-        debate_dates: Debate
-        draft_publication_date: Draft publication
-        allegations_dates: Allegations
-        final_publication_date: Final result publication
+      debate:
+        empty_questions: There aren't any questions
+        participate: Participate in the debate
+      header_full:
+        title: Participate
+        description: Description
+        target: Target
+        how_to_participate: How to participate
+        more_info: More information and context
       index:
         hightlighted_processes: HIGHLIGHTED PROCESSES
         filters:
           open: Open processes
           next: Next
           past: Past
+      phase_not_open:
+        not_open: This phase is not open yet
+      phase_draft_publication:
+        empty: There are no drafts published
+      phase_allegations:
+        empty: There are no drafts published
+      phase_final_version_publication:
+        empty: Results have not been published yet
       process:
         see_latest_comments: See latest comments
         see_latest_comments_title: Comment on this process
+      shared:
+        key_dates: "Key dates:"
+        debate_dates: Debate
+        draft_publication_date: Draft publication
+        allegations_dates: Allegations
+        final_publication_date: Final result publication
+    questions:
+      question:
+        comments:
+          zero: No comments
+          one: "%{count} comment"
+          other: "%{count} comments"
+        debate: Debate
   locale: English
   notifications:
     index:

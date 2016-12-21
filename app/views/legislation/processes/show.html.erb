@@ -1,9 +1,16 @@
+
+<%= render 'header_full', process: @process %>
+
 <div class="row">
+  <%= render 'key_dates', process: @process, phase: :debate %>
 
-<h1><%= @process.title %></h1>
-
-<% @process.draft_versions.each do |draft_version| %>
-  <%= link_to draft_version.title, legislation_process_draft_version_path(@process, draft_version) %>
-<% end %>
-
+  <div class="debate-chooser">
+    <div class="row">
+      <% if @process.show_phase?(:debate) %>
+        <%= render 'debate', process: @process %>
+      <% else %>
+        <%= render 'phase_not_open' %>
+      <% end %>
+    </div>
+  </div>
 </div>

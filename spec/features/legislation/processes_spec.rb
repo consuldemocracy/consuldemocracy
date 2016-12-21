@@ -35,4 +35,24 @@ feature 'Legislation' do
       expect(page).to have_content('Process past')
     end
   end
+
+  context 'processes#show' do
+    scenario 'Debate phase not open' do
+      process = create(:legislation_process, title: "Process open",
+        debate_start_date: Date.current + 1.day, debate_end_date: Date.current + 2.days)
+
+      visit legislation_process_path(process)
+
+      expect(page).to have_content("This phase is not open yet")
+    end
+
+    scenario 'Debate phase open' do
+      process = create(:legislation_process, title: "Process open",
+        debate_start_date: Date.current - 1.day, debate_end_date: Date.current + 2.days)
+
+      visit legislation_process_path(process)
+
+      expect(page).to have_content("Participate in the debate")
+    end
+  end
 end
