@@ -189,6 +189,7 @@ en:
       debates: Debates
       external_link_blog: Blog
       external_link_opendata: Open data
+      external_link_opendata_url: "/opendata"
       external_link_transparency: Transparency
       external_link_transparency_url: https://transparency.consul
       locale: 'Language:'
@@ -449,6 +450,7 @@ en:
       districts_list: "Districts list"
       categories: "Categories"
     target_blank_html: " (link opens in new window)"
+    you_are_in: "You are in"
     unflag: Unflag
     outline:
       debates: Debates
