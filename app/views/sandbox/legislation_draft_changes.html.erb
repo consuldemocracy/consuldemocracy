@@ -21,32 +21,7 @@
 </div>
 
 <div class="column row">
-  <ul class="legislation-process-categories">
-    <li>
-      <a href="legislation_debate.html">
-        <h4>Fase debate previo</h4>
-        <p>15 nov 2015 - 15 dic 2016</p>
-      </a>
-    </li>
-    <li>
-      <a href="legislation_draft.html">
-        <h4>Publicación borrador</h4>
-        <p>15 nov 2015 - 15 dic 2016</p>
-      </a>
-    </li>
-    <li class="active">
-      <a href="#">
-        <h4>Fase alegaciones</h4>
-        <p>15 nov 2015 - 15 dic 2016</p>
-      </a>
-    </li>
-    <li>
-      <a href="#">
-        <h4>Publicación resultados</h4>
-        <p>15 nov 2015 - 15 dic 2016</p>
-      </a>
-    </li>
-  </ul>
+  <%= render 'sandbox/legislation_process_nav' %>
   
   <div class="draft-panels small-12 column row">
     <div class="row draft-chooser">
@@ -62,7 +37,7 @@
         <span>actualizada el 13 nov 2017</span>
       </div>
       <div class="small-12 medium-3 column">
-        <a class="button strong" title="Suscríbete al proceso" data-remote="true" rel="nofollow" data-method="post" href="legislation_allegations.html">Ver borrador del texto</a>
+        <a class="button strong" title="Suscríbete al proceso" href="legislation_allegations.html">Ver borrador del texto</a>
       </div>
     </div>
     
