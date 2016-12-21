@@ -82,6 +82,7 @@ en:
         description: "Description"
         external_url: "Link to additional documentation"
     errors:
+      invalid_date_range: "Invalid date range"
       models:
         user:
           attributes:

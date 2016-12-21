@@ -53,6 +53,8 @@ feature 'Admin polls' do
     click_link "Create poll"
 
     fill_in "poll_name", with: "Upcoming poll"
+    fill_in 'poll_starts_at', with: 1.week.from_now.strftime("%d/%m/%Y")
+    fill_in 'poll_ends_at', with: 2.weeks.from_now.strftime("%d/%m/%Y")
     click_button "Create poll"
 
     expect(page).to have_content "Poll created successfully"

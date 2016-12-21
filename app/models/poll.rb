@@ -8,6 +8,8 @@ class Poll < ActiveRecord::Base
 
   validates :name, presence: true
 
+  validate :date_range
+
   scope :current,  -> { where('starts_at <= ? and ? <= ends_at', Time.now, Time.now) }
   scope :incoming, -> { where('? < starts_at', Time.now) }
   scope :expired,  -> { where('ends_at < ?', Time.now) }
@@ -38,4 +40,11 @@ class Poll < ActiveRecord::Base
   def document_has_voted?(document_number, document_type)
     voters.where(document_number: document_number, document_type: document_type).exists?
   end
+
+  def date_range
+    unless starts_at.present? && ends_at.present? && starts_at <= ends_at
+      errors.add(:starts_at, I18n.t('activerecord.errors.invalid_date_range'))
+    end
+  end
+
 end

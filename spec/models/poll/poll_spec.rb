@@ -13,6 +13,22 @@ describe :poll do
       poll.name = nil
       expect(poll).to_not be_valid
     end
+
+    it "should not be valid without a start date" do
+      poll.starts_at = nil
+      expect(poll).to_not be_valid
+    end
+
+    it "should not be valid without an end date" do
+      poll.ends_at = nil
+      expect(poll).to_not be_valid
+    end
+
+    it "should not be valid without a proper start/end date range" do
+      poll.starts_at = 1.week.ago
+      poll.ends_at = 2.months.ago
+      expect(poll).to_not be_valid
+    end
   end
 
   describe "#opened?" do

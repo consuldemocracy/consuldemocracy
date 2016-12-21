@@ -33,7 +33,7 @@ class Admin::Poll::PollsController < Admin::BaseController
   private
 
     def poll_params
-      params.require(:poll).permit(:name)
+      params.require(:poll).permit(:name, :starts_at, :ends_at)
     end
 
 end

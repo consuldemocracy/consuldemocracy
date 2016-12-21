@@ -82,6 +82,7 @@ es:
         description: "Descripción"
         external_url: "Enlace a documentación adicional"
     errors:
+      invalid_date_range: "El rango de fechas no es válido"
       models:
         user:
           attributes:
