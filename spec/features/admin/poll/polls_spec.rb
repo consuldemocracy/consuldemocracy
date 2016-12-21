@@ -52,13 +52,18 @@ feature 'Admin polls' do
     visit admin_polls_path
     click_link "Create poll"
 
+    start_date = 1.week.from_now
+    end_date = 2.weeks.from_now
+
     fill_in "poll_name", with: "Upcoming poll"
-    fill_in 'poll_starts_at', with: 1.week.from_now.strftime("%d/%m/%Y")
-    fill_in 'poll_ends_at', with: 2.weeks.from_now.strftime("%d/%m/%Y")
+    fill_in 'poll_starts_at', with: start_date.strftime("%d/%m/%Y")
+    fill_in 'poll_ends_at', with: end_date.strftime("%d/%m/%Y")
     click_button "Create poll"
 
     expect(page).to have_content "Poll created successfully"
     expect(page).to have_content "Upcoming poll"
+    expect(page).to have_content I18n.l(start_date.to_date)
+    expect(page).to have_content I18n.l(end_date.to_date)
   end
 
   scenario "Edit" do
@@ -67,11 +72,15 @@ feature 'Admin polls' do
     visit admin_poll_path(poll)
     click_link "Edit"
 
+    end_date = 1.year.from_now
+
     fill_in "poll_name", with: "Next Poll"
+    fill_in 'poll_ends_at', with: end_date.strftime("%d/%m/%Y")
     click_button "Update poll"
 
     expect(page).to have_content "Poll updated successfully"
     expect(page).to have_content "Next Poll"
+    expect(page).to have_content I18n.l(end_date.to_date)
   end
 
   scenario 'Edit from index' do
