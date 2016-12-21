@@ -2,7 +2,7 @@
 //
 // 01. Utils
 // 02. Hero
-// 03. Legislation process
+// 03. Legislation process navigation
 // 04. Debate list
 // 05. Debate quiz
 // 06. Legislation draft
@@ -38,11 +38,9 @@
 // -----------------
 .legislation-hero {
   padding-top: 1.5rem;
-  margin-bottom: 2rem;
   
   @include breakpoint(medium) {
     padding-top: 3.5rem;
-    margin-bottom: 4rem;
   }
   
   h4 {
@@ -117,48 +115,69 @@
   }
 }
 
-// 03. Legislation process
+// 03. Legislation process navigation
 // -----------------
 .legislation-process-categories {
-  list-style: none;
-  margin-left: 0;
-  padding-left: 0;
-  border-bottom: 1px solid $medium-gray;
+  position: relative;
   
-  li {
-    cursor: pointer;
-    margin-left: 0;
-    display: inline-block;
-    margin-bottom: 1rem;
+  svg {
+    position: absolute;
+    top: 0.75rem;
+    left: 0;
     
     @include breakpoint(medium) {
-      margin-left: 3rem;
-      margin-bottom: 0;
-    }
-    
-    a,
-    h4 {
-      color: #6D6D6D;
-      margin-bottom: 0;
-    }
-    
-    a {
-      &:hover, &:active {
-        text-decoration: none;
-      }
-      
-      p {
-        margin-bottom: 0;
-        
-        @include breakpoint(medium) {
-          margin-bottom: 1rem;
-        }
-      }
+      transform: rotate(-8deg);
     }
   }
   
-  .active {
-    border-bottom: 2px solid $brand;
+  ul {
+    padding-top: 3rem;
+    list-style: none;
+    margin-left: 0;
+    padding-left: 0;
+    border-bottom: 1px solid $medium-gray;
+    
+    @include breakpoint(medium) {
+      padding-top: 4rem;
+    }
+    
+    li {
+      cursor: pointer;
+      margin-left: 0;
+      display: inline-block;
+      margin-bottom: 1rem;
+      margin-right: 1rem;
+      
+      @media (min-width: 950px) {
+        margin-right: 0;
+        margin-left: 3rem;
+        margin-bottom: 0;
+      }
+      
+      a,
+      h4 {
+        color: #6D6D6D;
+        margin-bottom: 0;
+      }
+      
+      a {
+        &:hover, &:active {
+          text-decoration: none;
+        }
+        
+        p {
+          margin-bottom: 0;
+          
+          @include breakpoint(medium) {
+            margin-bottom: 1rem;
+          }
+        }
+      }
+    }
+    
+    .active {
+      border-bottom: 2px solid $brand;
+    }
   }
 }
 
@@ -356,7 +375,6 @@
 // -----------------
 .legislation-allegation {
   padding-top: 1rem;
-  margin-bottom: 2rem;
   
   .headline {
     margin-bottom: 0;
