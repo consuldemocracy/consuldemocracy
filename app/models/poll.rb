@@ -43,7 +43,7 @@ class Poll < ActiveRecord::Base
 
   def date_range
     unless starts_at.present? && ends_at.present? && starts_at <= ends_at
-      errors.add(:starts_at, I18n.t('activerecord.errors.invalid_date_range'))
+      errors.add(:starts_at, I18n.t('errors.messages.invalid_date_range'))
     end
   end
 

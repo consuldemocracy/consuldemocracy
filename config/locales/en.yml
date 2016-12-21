@@ -139,6 +139,7 @@ en:
   errors:
     messages:
       user_not_found: User not found
+      invalid_date_range: "Invalid date range"
   form:
     accept_terms: I agree to the %{policy} and the %{conditions}
     accept_terms_title: I agree to the Privacy Policy and the Terms and conditions of use
