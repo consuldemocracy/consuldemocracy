@@ -4,6 +4,7 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
 
   before_action :load_budget
   before_action :load_investment, only: [:show, :edit, :update]
+  before_action :load_ballot, only: [:show, :index]
 
   has_filters %w{valuation_open without_admin managed valuating valuation_finished all}, only: :index
 
@@ -56,5 +57,11 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
 
     def load_tags
       @tags = ActsAsTaggableOn::Tag.budget_investment_tags
+    end
+
+    def load_ballot
+      if @budget.balloting?
+        @ballot = Budget::Ballot.where(user: current_user, budget: @budget).first_or_create
+      end
     end
 end
