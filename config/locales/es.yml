@@ -224,6 +224,7 @@ es:
   legislation:
     draft_versions:
       changes:
+        title: Cambios
         see_text: Ver texto
       show:
         see_changes: Ver cambios
