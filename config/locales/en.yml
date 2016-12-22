@@ -271,6 +271,9 @@ en:
         comments: COMMENTS
         next_question: Next question
         share: Share
+        share_twitter: Share on Twitter
+        share_facebook: Share on Facebook
+        share_gplus: Share on Google+
         title: Collaborative legislation process
   locale: English
   notifications:
