@@ -2,22 +2,33 @@
   <ul>
     <% if feature?(:debates) %>
       <li>
-        <%= link_to t("layouts.header.debates"), debates_path, class: ("active" if controller_name == "debates"), accesskey: "d" %>
+        <%= layout_menu_link_to t("layouts.header.debates"),
+                                debates_path,
+                                controller_name == 'debates',
+                                accesskey: "d" %>
       </li>
     <% end %>
     <li>
-      <%= link_to t("layouts.header.proposals"), proposals_path, class: ("active" if  controller_name == "proposals"), accesskey: "p" %>
+      <%= layout_menu_link_to t("layouts.header.proposals"),
+                                proposals_path,
+                                controller_name == 'proposals',
+                                accesskey: "p" %>
     </li>
     <li>
-      <%= link_to t("layouts.header.proposal_ballot"), proposal_ballots_index_path, class: ("active" if  controller_name == "proposal_ballots"), accesskey: "v" %>
+      <%= layout_menu_link_to t("layouts.header.proposal_ballot"),
+                                proposal_ballots_index_path,
+                                controller_name == 'proposal_ballots',
+                                accesskey: "v" %>
     </li>
     <li>
       <%= link_to t("layouts.header.processes"), processes_path, class: ("active" if current_page?(processes_path)), accesskey: "o"  %>
     </li>
     <% if feature?(:spending_proposals) %>
       <li>
-        <%= link_to t("layouts.header.spending_proposals"), participatory_budget_path,
-                    class: ("active" if controller_name == "spending_proposals" || current_page?("/participatory_budget/in_two_minutes")), accesskey: "s" %>
+        <%= layout_menu_link_to t("layouts.header.spending_proposals"),
+                                  participatory_budget_path,
+                                  controller_name == 'spending_proposals',
+                                  accesskey: "s" %>
       </li>
     <% end %>
   </ul>

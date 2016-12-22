@@ -47,6 +47,7 @@ module Abilities
       end
 
       can [:search, :edit, :update, :create, :index, :destroy], Banner
+      can [:index, :create, :edit, :update, :destroy], Geozone
     end
   end
 end
