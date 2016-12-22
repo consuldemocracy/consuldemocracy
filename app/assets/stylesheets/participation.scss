@@ -6,6 +6,7 @@
 // 04. List participation
 // 05. Featured
 // 06. Proposals successful
+// 07. Polls
 //
 
 // 01. Votes and supports
@@ -945,37 +946,6 @@
 // 06. Proposals successful
 // -------------------------
 
-.dark-heading {
-  background: #2D3E50;
-  color: white;
-
-  @include breakpoint(medium) {
-    padding-bottom: $line-height;
-  }
-
-  &.enquiries {
-    background: #2D3E50 image-url('heading_enquiries.jpg') no-repeat;
-    background-position: 70%;
-  }
-
-  p {
-    margin-bottom: 0;
-
-    &.title {
-      color: #FFD200;
-    }
-  }
-
-  .info {
-    background: #314253;
-    padding-top: $line-height;
-
-    @include breakpoint(medium) {
-      border-top: rem-calc(6) solid #FFD200;
-    }
-  }
-}
-
 .sucessfull-proposals-banner {
   background: #2D3E50 image-url("ballot_tiny.gif") no-repeat;
   background-position: 75% 0;
@@ -1043,5 +1013,52 @@
       border-left: 1px solid $border;
       margin: $line-height rem-calc(-25) 0 rem-calc(12);
     }
+  }
+}
+
+// 07. Polls
+// ----------------------
+
+.dark-heading {
+  background: #2D3E50;
+  color: white;
+
+  .title {
+    color: #FFD200;
+  }
+
+  .info {
+    background: #314253;
+    padding: $line-height;
+
+    @include breakpoint(medium) {
+      border-top: rem-calc(6) solid #FFD200;
+    }
+
+    a {
+      color: white;
+      text-decoration: underline;
+    }
+
+  }
+
+  &.poll-show {
+    min-height: $line-height*8;
+  }
+}
+
+.poll, .poll-question {
+  background: white;
+  border-bottom: 1px solid $border;
+  margin-bottom: $line-height/2;
+  padding: $line-height;
+
+  .date {
+    color: $brand;
+    font-size: $small-font-size;
+  }
+
+  h3 a {
+    color: $text;
   }
 }

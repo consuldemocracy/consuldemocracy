@@ -387,6 +387,8 @@ es:
         current: "Abiertas"
         incoming: "Próximamente"
         expired: "Terminadas"
+      title: "Votaciones"
+      button: "Participar en esta votación"
     show:
       dates_title: "Fechas de participación"
       cant_answer_not_logged_in: "Necesitas %{signin} o %{signup} para participar."

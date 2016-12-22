@@ -1,7 +1,31 @@
-<%= render 'shared/filter_subnav', i18n_namespace: "polls.index" %>
+<% provide :title do %><%= t("polls.index.title") %><% end %>
+<% content_for :wrapper_class, "light" %>
 
-<% @polls.each do |poll| %>
-  <%= link_to poll.name, poll %> (<%= poll_dates(poll) %>)
-<% end %>
+<div class="expanded no-margin-top dark-heading">
+  <div class="row">
+    <div class="small-12 medium-6 column padding">
+      <h1><%= t("polls.index.title") %></h1>
+    </div>
+  </div>
+</div>
 
-<%= paginate @polls %>
+<div class="row">
+  <div class="small-12 medium-3 column">
+    <%= render 'shared/filter_subnav_vertical', i18n_namespace: "polls.index" %>
+  </div>
+
+  <div class="small-12 medium-9 column margin-top">
+    <% @polls.each do |poll| %>
+      <div class="poll">
+        <h3><%= poll.name %></h3>
+        <p><%= poll_dates(poll) %></p>
+        <%= link_to t("polls.index.button"),
+                    poll,
+                    class: "button",
+                    title: t("polls.index.button") + " " + (poll.name) %>
+      </div>
+    <% end %>
+
+    <%= paginate @polls %>
+  </div>
+</div>
