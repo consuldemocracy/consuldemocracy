@@ -7,6 +7,7 @@ class Admin::Legislation::QuestionsController < Admin::Legislation::BaseControll
   end
 
   def create
+    @question.author = current_user
     if @question.save
       redirect_to admin_legislation_process_questions_path
     else
