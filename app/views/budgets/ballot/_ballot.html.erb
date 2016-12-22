@@ -47,7 +47,7 @@
 
         <h4>
           <%= t("budgets.ballots.show.remaining",
-              amount_city: @ballot.formatted_amount_available(@ballot.heading_for_group(group)).html_safe %>
+                amount_city: @ballot.formatted_amount_available(@ballot.heading_for_group(group))).html_safe %>
         </h4>
       </div>
     <% end %>
