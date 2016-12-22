@@ -54,6 +54,7 @@ module Budgets
 
         def load_investments
           if params[:investments_ids].present?
+            @investment_ids = params[:investment_ids]
             @investments = Budget::Investment.where(id: params[:investments_ids])
           end
         end
