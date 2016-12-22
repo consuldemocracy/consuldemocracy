@@ -11,7 +11,7 @@ module Abilities
       can :read, User
       can [:search, :read], Annotation
       can :new, DirectMessage
-      can [:read, :draft_version_publication, :allegations, :final_version_publication], Legislation::Process
+      can [:read, :draft_publication, :allegations, :final_version_publication], Legislation::Process
       can [:read], Legislation::DraftVersion
     end
   end
