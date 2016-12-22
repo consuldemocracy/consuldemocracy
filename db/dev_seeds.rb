@@ -362,13 +362,18 @@ tags = Faker::Lorem.words(10)
     external_url: Faker::Internet.url,
     description: "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>",
     created_at: rand((Time.now - 1.week) .. Time.now),
-    feasibility: %w{undecided feasible unfeasible}.sample,
+    feasibility: %w{undecided unfeasible feasible feasible feasible feasible}.sample,
     unfeasibility_explanation: "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>",
     valuation_finished: [false, true].sample,
     tag_list: tags.sample(3).join(','),
     price: rand(1 .. 100) * 100000,
     terms_of_service: "1")
   puts "    #{investment.title}"
+end
+
+puts "Selecting Investments"
+Budget.balloting.reorder("RANDOM()").limit(3).each do |budget|
+  budget.investments.feasible.reorder("RANDOM()").limit(10).update_all(selected: true)
 end
 
 puts "Creating Valuation Assignments"

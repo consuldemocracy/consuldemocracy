@@ -11,7 +11,7 @@ class Budget
 
       validate :insufficient_funds
       #needed? validate :different_geozone, :if => :district_proposal?
-      validate :unfeasible
+      validate :unselected
 
       before_validation :set_denormalized_ids
 
@@ -23,8 +23,8 @@ class Budget
         errors.add(:heading, "different heading assigned") if (ballot.heading.present? && investment.heading != ballot.heading)
       end
 
-      def unfeasible
-        errors.add(:unfeasible, "unfeasible investment") unless investment.feasible?
+      def unselected
+        errors.add(:unselected, "unselected investment") unless investment.selected?
       end
 
       def heading_proposal?

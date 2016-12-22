@@ -44,6 +44,7 @@ class Budget
     scope :not_unfeasible,         -> { where.not(feasibility: "unfeasible") }
     scope :undecided,              -> { where(feasibility: "undecided") }
     scope :with_supports,          -> { where('cached_votes_up > 0') }
+    scope :selected,               -> { where(selected: true) }
 
     scope :by_group,    -> (group_id)    { where(group_id: group_id) }
     scope :by_heading,  -> (heading_id)  { where(heading_id: heading_id) }
@@ -205,8 +206,13 @@ class Budget
       budget.formatted_amount(price)
     end
 
-    def self.apply_filters_and_search(params)
-      investments = params[:unfeasible].present? ? unfeasible : not_unfeasible
+    def self.apply_filters_and_search(budget, params)
+      investments = all
+      if budget.balloting?
+        investments = investments.selected
+      else
+        investments = params[:unfeasible].present? ? investments.unfeasible : investments.not_unfeasible
+      end
       investments = investments.by_heading(params[:heading_id]) if params[:heading_id].present?
       investments = investments.search(params[:search])         if params[:search].present?
       investments
