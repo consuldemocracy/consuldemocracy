@@ -13,6 +13,7 @@ module Abilities
       can :new, DirectMessage
       can [:read, :draft_publication, :allegations, :final_version_publication], Legislation::Process
       can [:read], Legislation::DraftVersion
+      can [:read], Legislation::Question
     end
   end
 end

@@ -266,6 +266,11 @@ en:
           one: "%{count} comment"
           other: "%{count} comments"
         debate: Debate
+      show:
+        comments: COMMENTS
+        next_question: Next question
+        share: Share
+        title: Collaborative legislation process
   locale: English
   notifications:
     index:

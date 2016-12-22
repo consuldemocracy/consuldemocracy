@@ -266,6 +266,11 @@ es:
           one: "%{count} comentario"
           other: "%{count} comentarios"
         debate: Debate
+      show:
+        comments: COMENTARIOS
+        next_question: Siguiente pregunta
+        share: Compartir
+        title: Proceso de legislación colaborativa
   locale: Español
   notifications:
     index:

@@ -2,7 +2,7 @@ require 'rails_helper'
 
 feature 'Legislation' do
 
-  context 'processes#index' do
+  context 'processes home page' do
 
     scenario 'Processes can be listed' do
       processes = create_list(:legislation_process, 3)
