@@ -36,23 +36,77 @@ feature 'Legislation' do
     end
   end
 
-  context 'processes#show' do
-    scenario 'Debate phase not open' do
-      process = create(:legislation_process, title: "Process open",
-        debate_start_date: Date.current + 1.day, debate_end_date: Date.current + 2.days)
+  context 'process page' do
+    context 'debate phase' do
+      scenario 'not open' do
+        process = create(:legislation_process, debate_start_date: Date.current + 1.day, debate_end_date: Date.current + 2.days)
 
-      visit legislation_process_path(process)
+        visit legislation_process_path(process)
 
-      expect(page).to have_content("This phase is not open yet")
+        expect(page).to have_content("This phase is not open yet")
+      end
+
+      scenario 'open' do
+        process = create(:legislation_process, debate_start_date: Date.current - 1.day, debate_end_date: Date.current + 2.days)
+
+        visit legislation_process_path(process)
+
+        expect(page).to have_content("Participate in the debate")
+      end
     end
 
-    scenario 'Debate phase open' do
-      process = create(:legislation_process, title: "Process open",
-        debate_start_date: Date.current - 1.day, debate_end_date: Date.current + 2.days)
+    context 'draft publication phase' do
+      scenario 'not open' do
+        process = create(:legislation_process, draft_publication_date: Date.current + 1.day)
 
-      visit legislation_process_path(process)
+        visit legislation_process_draft_publication_path(process)
 
-      expect(page).to have_content("Participate in the debate")
+        expect(page).to have_content("This phase is not open yet")
+      end
+
+      scenario 'open' do
+        process = create(:legislation_process, draft_publication_date: Date.current)
+
+        visit legislation_process_draft_publication_path(process)
+
+        expect(page).to have_content("There are no drafts published")
+      end
+    end
+
+    context 'allegations phase' do
+      scenario 'not open' do
+        process = create(:legislation_process, allegations_start_date: Date.current + 1.day, allegations_end_date: Date.current + 2.days)
+
+        visit legislation_process_allegations_path(process)
+
+        expect(page).to have_content("This phase is not open yet")
+      end
+
+      scenario 'open' do
+        process = create(:legislation_process, allegations_start_date: Date.current - 1.day, allegations_end_date: Date.current + 2.days)
+
+        visit legislation_process_allegations_path(process)
+
+        expect(page).to have_content("There are no drafts published")
+      end
+    end
+
+    context 'final version publication phase' do
+      scenario 'not open' do
+        process = create(:legislation_process, final_publication_date: Date.current + 1.day)
+
+        visit legislation_process_final_version_publication_path(process)
+
+        expect(page).to have_content("This phase is not open yet")
+      end
+
+      scenario 'open' do
+        process = create(:legislation_process, final_publication_date: Date.current)
+
+        visit legislation_process_final_version_publication_path(process)
+
+        expect(page).to have_content("Results have not been published yet")
+      end
     end
   end
 end
