@@ -4,7 +4,7 @@ es:
       show:
         title: Mis votos
         amount_spent: Coste total
-        remaining: "Te quedan <span>%{amount_city}</span> para invertir"
+        remaining: "Te quedan <span>%{amount}</span> para invertir"
         remove: Quitar voto
         voted_html:
           one: "Has votado <span>una</span> propuesta."

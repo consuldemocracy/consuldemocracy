@@ -4,7 +4,7 @@ en:
       show:
         title: Your ballot
         amount_spent: Amount spent
-        remaining: "You still have <span>%{amount_city}</span> to invest."
+        remaining: "You still have <span>%{amount}</span> to invest."
         remove: Remove vote
         voted_html:
           one: "You have voted <span>one</span> proposal."
