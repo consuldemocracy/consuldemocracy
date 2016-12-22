@@ -11,6 +11,6 @@ class Legislation::Question < ActiveRecord::Base
   validates :title, presence: true
 
   def next_question_id
-    @next_question_id ||= process.questions.where("id > ?", id).limit(1).pluck(:id).first
+    @next_question_id ||= process.questions.where("id > ?", id).order('id ASC').limit(1).pluck(:id).first
   end
 end
