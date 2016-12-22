@@ -94,14 +94,14 @@ feature 'Votes' do
       visit budget_investments_path(budget, heading_id: heading.id)
 
       within("#budget_investment_#{investment.id}") do
-        find("div.js-supports").hover
+        find("div.js-participation").hover
         expect(page).to have_content 'No Selecting Allowed'
       end
 
       visit budget_investment_path(budget, investment)
 
       within("#budget_investment_#{investment.id}") do
-        find("div.js-supports").hover
+        find("div.js-participation").hover
         expect(page).to have_content 'No Selecting Allowed'
       end
     end
