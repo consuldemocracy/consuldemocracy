@@ -388,7 +388,7 @@ en:
         incoming: "Incoming"
         expired: "Expired"
       title: "Polls"
-      button: "Participate in this polls"
+      button: "Participate in this poll"
     show:
       dates_title: "Participation dates"
       cant_answer_not_logged_in: "You must %{signin} or %{signup} to participate."

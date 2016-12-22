@@ -10,7 +10,8 @@ feature 'Polls' do
       visit polls_path
 
       polls.each do |poll|
-        expect(page).to have_link(poll.name)
+        expect(page).to have_content(poll.name)
+        expect(page).to have_link("Participate in this poll")
       end
     end
 
