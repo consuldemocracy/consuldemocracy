@@ -24,7 +24,7 @@ module Budgets
     respond_to :html, :js
 
     def index
-      @investments = @investments.apply_filters_and_search(params).send("sort_by_#{@current_order}").page(params[:page]).per(10).for_render
+      @investments = @investments.apply_filters_and_search(@budget, params).send("sort_by_#{@current_order}").page(params[:page]).per(10).for_render
       @investment_ids = @investments.pluck(:id)
       load_investment_votes(@investments)
     end

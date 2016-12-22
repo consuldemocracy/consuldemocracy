@@ -7,7 +7,7 @@ class Management::Budgets::InvestmentsController < Management::BaseController
   before_action :load_heading, only: [:index, :show, :print]
 
   def index
-    @investments = @investments.apply_filters_and_search(params).page(params[:page])
+    @investments = @investments.apply_filters_and_search(@budget, params).page(params[:page])
     load_investment_votes(@investments)
   end
 
@@ -36,7 +36,7 @@ class Management::Budgets::InvestmentsController < Management::BaseController
   end
 
   def print
-    @investments = @investments.apply_filters_and_search(params).order(cached_votes_up: :desc).for_render.limit(15)
+    @investments = @investments.apply_filters_and_search(@budget, params).order(cached_votes_up: :desc).for_render.limit(15)
     load_investment_votes(@investments)
   end
 
