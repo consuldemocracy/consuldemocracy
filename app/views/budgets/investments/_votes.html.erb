@@ -2,7 +2,7 @@
 <% voting_allowed = true unless reason.presence == :not_voting_allowed %>
 <% user_voted_for = voted_for?(investment_votes, investment) %>
 
-<div class="supports js-supports">
+<div class="supports js-participation">
 
   <span class="total-supports <%= 'no-button' unless voting_allowed || user_voted_for %>">
     <%= t("budget.investments.investment.supports", count: investment.total_votes) %>
@@ -27,7 +27,7 @@
   </div>
 
   <% if reason.present? && !user_voted_for %>
-    <div class="js-supports-not-allowed" style='display:none' aria-hidden="false">
+    <div class="js-participation-not-allowed" style='display:none' aria-hidden="false">
       <p>
           <%= t("votes.budget_investments.#{reason}",
                 verify_account: link_to(t("votes.verify_account"), verification_path),
