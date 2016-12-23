@@ -116,9 +116,7 @@ feature 'Ballots' do
         visit budget_path(budget)
         click_link "Group 1"
 
-        within("#budget_investment_#{investment1.id}") do
-          find('.add a').trigger('click')
-        end
+        add_to_ballot(investment1)
 
         expect(page).to have_css("#amount-spent", text: "€10,000")
         expect(page).to have_css("#amount-available", text: "€990,000")
@@ -128,9 +126,7 @@ feature 'Ballots' do
           expect(page).to have_content "€10,000"
         end
 
-        within("#budget_investment_#{investment2.id}") do
-          find('.add a').trigger('click')
-        end
+        add_to_ballot(investment2)
 
         expect(page).to have_css("#amount-spent", text: "€30,000")
         expect(page).to have_css("#amount-available", text: "€970,000")
@@ -191,10 +187,7 @@ feature 'Ballots' do
         visit budget_path(budget)
         click_link "City"
 
-        within("#budget_investment_#{investment1.id}") do
-          find('.add a').trigger('click')
-          expect(page).to have_content "Remove"
-        end
+        add_to_ballot(investment1)
 
         expect(page).to have_css("#amount-spent",     text: "€10,000")
         expect(page).to have_css("#amount-available", text: "€9,990,000")
@@ -211,10 +204,7 @@ feature 'Ballots' do
         expect(page).to have_css("#amount-spent", text: "€0")
         expect(page).to have_css("#amount-spent", text: "€1,000,000")
 
-        within("#budget_investment_#{investment2.id}") do
-          find('.add a').trigger('click')
-          expect(page).to have_content "Remove"
-        end
+        add_to_ballot(investment2)
 
         expect(page).to have_css("#amount-spent",     text: "€20,000")
         expect(page).to have_css("#amount-available", text: "€980,000")
@@ -255,10 +245,7 @@ feature 'Ballots' do
       visit budget_investments_path(budget, heading_id: heading.id)
 
       expect(page).to have_content investment.title
-      within("#budget_investment_#{investment.id}") do
-        find('.add a').trigger('click')
-        expect(page).to have_content "Remove"
-      end
+      add_to_ballot(investment)
 
       within("#progress_bar") do
         expect(page).to have_css("#amount-spent", text: "€10,000")
@@ -282,10 +269,7 @@ feature 'Ballots' do
       click_link "Districts"
       click_link "California"
 
-      within("#budget_investment_#{investment.id}") do
-        find('.add a').trigger('click')
-        expect(page).to have_content "Remove"
-      end
+      add_to_ballot(investment)
 
       visit budget_path(budget)
       click_link "Districts"
@@ -309,9 +293,7 @@ feature 'Ballots' do
 
       visit budget_investments_path(budget, heading_id: new_york_heading.id)
 
-      within("#budget_investment_#{investment2.id}") do
-        find('.add a').trigger('click')
-      end
+      add_to_ballot(investment2)
 
       visit budget_path(budget)
       click_link "Districts"
@@ -547,10 +529,7 @@ feature 'Ballots' do
       login_as(user)
       visit spending_proposals_path(geozone: 'all')
 
-      within("#spending_proposal_#{sp1.id}") do
-        find('.add a').trigger('click')
-        expect(page).to have_content "Remove vote"
-      end
+      add_to_ballot(sp1)
 
       within("#spending_proposal_#{sp2.id}") do
         find("div.ballot").hover
@@ -627,10 +606,7 @@ feature 'Ballots' do
       login_as(user)
       visit spending_proposals_path(geozone: 'all')
 
-      within("#spending_proposal_#{sp1.id}") do
-        find('.add a').trigger('click')
-        expect(page).to have_content "Remove vote"
-      end
+      add_to_ballot(sp1)
 
       within("#spending_proposal_#{sp2.id}") do
         find("div.ballot").trigger(:mouseover)
