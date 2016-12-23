@@ -24,7 +24,7 @@ class Budget
       end
 
       def unselected
-        errors.add(:unselected, "unselected investment") unless investment.selected?
+        errors.add(:investment, "unselected investment") unless investment.selected?
       end
 
       def heading_proposal?
