@@ -306,7 +306,6 @@ en:
         new: New signature sheets
       new:
         title: New signature sheets
-        signable_type: Type of signature sheet
         document_numbers_note: "Write the numbers separated by commas (,)"
         submit: Create signature sheet
       show:
