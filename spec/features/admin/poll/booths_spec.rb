@@ -11,7 +11,7 @@ feature 'Admin booths' do
     visit admin_root_path
 
     within('#side_menu') do
-      click_link "Booths"
+      click_link "Booths location"
     end
 
     expect(page).to have_content "There are no booths"
@@ -23,7 +23,7 @@ feature 'Admin booths' do
     visit admin_root_path
 
     within('#side_menu') do
-      click_link "Booths"
+      click_link "Booths location"
     end
 
     booths = Poll::Booth.all
