@@ -9,6 +9,8 @@ class Admin::Poll::QuestionsController < Admin::BaseController
     @search = search_params[:search]
 
     @questions = @questions.search(search_params).page(params[:page]).order("created_at DESC")
+
+    @proposals = Proposal.successful.sort_by_confidence_score
   end
 
   def new
@@ -49,6 +51,10 @@ class Admin::Poll::QuestionsController < Admin::BaseController
       notice = t("flash.actions.destroy.error")
     end
     redirect_to admin_questions_path, notice: notice
+  end
+
+  def successful?
+    total_votes >= Proposal.votes_needed_for_success
   end
 
   private
