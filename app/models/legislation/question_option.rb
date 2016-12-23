@@ -1,7 +1,8 @@
 class Legislation::QuestionOption < ActiveRecord::Base
-  belongs_to :question, class_name: 'Legislation::Question', foreign_key: 'legislation_question_id', inverse_of: :question_options
+  acts_as_paranoid column: :hidden_at
+  include ActsAsParanoidAliases
 
-  # has_many :answers
+  belongs_to :question, class_name: 'Legislation::Question', foreign_key: 'legislation_question_id', inverse_of: :question_options
 
   validates :question, presence: true
   validates :value, presence: true, uniqueness: { scope: :legislation_question_id }

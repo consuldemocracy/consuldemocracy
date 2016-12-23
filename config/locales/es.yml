@@ -269,7 +269,7 @@ es:
           other: "%{count} comentarios"
         debate: Debate
       show:
-        comments: COMENTARIOS
+        comments: Comentarios
         next_question: Siguiente pregunta
         share: Compartir
         share_twitter: Compartir en Twitter

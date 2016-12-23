@@ -269,7 +269,7 @@ en:
           other: "%{count} comments"
         debate: Debate
       show:
-        comments: COMMENTS
+        comments: Comments
         next_question: Next question
         share: Share
         share_twitter: Share on Twitter

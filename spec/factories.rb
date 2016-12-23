@@ -393,6 +393,7 @@ FactoryGirl.define do
   factory :legislation_question, class: 'Legislation::Question' do
     process factory: :legislation_process
     title "Question text"
+    author factory: :user
   end
 
   factory :legislation_question_option, class: 'Legislation::QuestionOption' do
