@@ -9,6 +9,8 @@ class Admin::Poll::QuestionsController < Admin::BaseController
     @search = search_params[:search]
 
     @questions = @questions.search(search_params).page(params[:page]).order("created_at DESC")
+
+    @proposals = Proposal.successful.sort_by_confidence_score
   end
 
   def new

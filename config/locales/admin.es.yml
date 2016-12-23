@@ -106,7 +106,7 @@ es:
       valuators: Evaluadores
       poll_officers: Presidentes de mesa
       polls: Votaciones
-      poll_booths: Urnas
+      poll_booths: Ubicación de urnas
       officials: Cargos públicos
       organizations: Organizaciones
       settings: Configuración global
@@ -200,6 +200,9 @@ es:
         no_questions: "No hay ninguna pregunta ciudadana."
         filter_poll: "Filtrar por votación"
         select_poll: "Seleccionar votación"
+        questions_tab: "Preguntas ciudadanas"
+        successful_proposals_tab: "Propuestas que han superado el umbral"
+        create_question: "Crear pregunta para votación"
       edit:
         title: "Editar pregunta ciudadana"
       new:
