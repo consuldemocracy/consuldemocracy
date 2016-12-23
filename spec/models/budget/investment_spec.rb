@@ -338,23 +338,23 @@ describe Budget::Investment do
           california = create(:budget_heading, group: group)
           new_york = create(:budget_heading, group: group)
 
-          inv1 = create(:budget_investment, :feasible, budget: budget, group: group, heading: california)
-          inv2 = create(:budget_investment, :feasible, budget: budget, group: group, heading: new_york)
-          b = create(:budget_ballot, user: user, budget: budget)
-          b.add_investment inv1
+          inv1 = create(:budget_investment, :selected, budget: budget, group: group, heading: california)
+          inv2 = create(:budget_investment, :selected, budget: budget, group: group, heading: new_york)
+          ballot = create(:budget_ballot, user: user, budget: budget)
+          ballot.investments << inv1
 
-          expect(inv2.reason_for_not_being_ballotable_by(user, b)).to eq(:different_heading_assigned)
+          expect(inv2.reason_for_not_being_ballotable_by(user, ballot)).to eq(:different_heading_assigned)
         end
 
         it "rejects proposals with price higher than current available money" do
           budget.phase = "balloting"
           districts = create(:budget_group, budget: budget)
           carabanchel = create(:budget_heading, group: districts, price: 35)
-          inv1 = create(:budget_investment, :feasible, budget: budget, group: districts, heading: carabanchel, price: 30)
-          inv2 = create(:budget_investment, :feasible, budget: budget, group: districts, heading: carabanchel, price: 10)
+          inv1 = create(:budget_investment, :selected, budget: budget, group: districts, heading: carabanchel, price: 30)
+          inv2 = create(:budget_investment, :selected, budget: budget, group: districts, heading: carabanchel, price: 10)
 
           ballot = create(:budget_ballot, user: user, budget: budget)
-          ballot.add_investment inv1
+          ballot.investments << inv1
 
           expect(inv2.reason_for_not_being_ballotable_by(user, ballot)).to eq(:not_enough_money)
         end

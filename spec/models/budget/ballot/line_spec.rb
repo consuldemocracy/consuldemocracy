@@ -6,7 +6,7 @@ describe "Budget::Ballot::Line" do
     let(:budget){ create(:budget) }
     let(:group){ create(:budget_group, budget: budget) }
     let(:heading){ create(:budget_heading, group: group, price: 10000000) }
-    let(:investment){ create(:budget_investment, :feasible, price: 5000000, heading: heading) }
+    let(:investment){ create(:budget_investment, :selected, price: 5000000, heading: heading) }
     let(:ballot) { create(:budget_ballot, budget: budget) }
     let(:ballot_line) { build(:budget_ballot_line, ballot: ballot, investment: investment) }
 
@@ -29,19 +29,14 @@ describe "Budget::Ballot::Line" do
       end
     end
 
-    describe 'Feasibility' do
-      it "should not be valid if investment is unfeasible" do
-        investment.update(feasibility: "unfeasible")
+    describe 'Selectibility' do
+      it "should not be valid if investment is unselected" do
+        investment.update(selected: false)
         expect(ballot_line).to_not be_valid
       end
 
-      it "should not be valid if investment feasibility is undecided" do
-        investment.update(feasibility: "undecided", price: 20000)
-        expect(ballot_line).to_not be_valid
-      end
-
-      it "should be valid if investment is feasible" do
-        investment.update(feasibility: "feasible", price: 20000)
+      it "should be valid if investment is selected" do
+        investment.update(selected: true, price: 20000)
         expect(ballot_line).to be_valid
       end
     end
