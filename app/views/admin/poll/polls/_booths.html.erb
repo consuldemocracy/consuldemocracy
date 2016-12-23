@@ -24,7 +24,8 @@
           </td>
           <td class="text-right">
             <%= link_to t("admin.polls.show.remove_booth"),
-                        "#",
+                        admin_booth_assignment_path(poll: @poll, booth: booth),
+                        method: :delete,
                         class: "button hollow alert" %>
           </td>
         </tr>

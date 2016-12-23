@@ -187,8 +187,12 @@ Rails.application.routes.draw do
       resources :officers do
         get :search, on: :collection
       end
-      resources :polls
+      resources :polls do
+        get :search_booths, on: :member
+      end
+
       resources :booths
+      resources :booth_assignments, only: [:create, :destroy]
       resources :questions
     end
 

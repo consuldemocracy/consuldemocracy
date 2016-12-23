@@ -190,9 +190,12 @@ en:
         officers_title: "List of officers"
         questions_title: "List of questions"
         remove_question: "Remove question from poll"
+        add_booth: "Assign booth"
         name: "Name"
         location: "Location"
         email: "Email"
+        search_results: "Search results"
+        no_search_results: "No results found"
     questions:
       index:
         title: "Questions"
@@ -235,6 +238,12 @@ en:
         submit_button: "Update booth"
       show:
         location: "Location"
+    booth_assignments:
+      flash:
+        destroy: "Booth not assigned anymore"
+        create: "Booth assigned"
+        error_destroy: "An error ocurred when removing booth assignment"
+        error_create: "An error ocurred when assigning booth to the poll"
     officials:
       edit:
         destroy: Remove 'Official' status
@@ -297,6 +306,9 @@ en:
           enable: "Enable"
           disable: "Disable"
     shared:
+      booths_search:
+        button: Search
+        placeholder: Search booth by name
       proposal_search:
         button: Search
         placeholder: Search proposals by title, code, description or question

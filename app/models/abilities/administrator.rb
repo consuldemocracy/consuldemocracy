@@ -38,19 +38,20 @@ module Abilities
       can [:search, :create, :index, :destroy], ::Moderator
       can [:search, :create, :index, :summary], ::Valuator
       can [:search, :create, :index, :destroy], ::Manager
-      can [:search, :create, :index, :destroy], ::Poll::Officer
 
       can :manage, Annotation
 
       can [:read, :update, :destroy, :summary], SpendingProposal
 
-      can [:read, :create, :update], Poll::Question
-      can :destroy, Poll::Question # , comments_count: 0, votes_up: 0
-
       can [:search, :edit, :update, :create, :index, :destroy], Banner
 
       can [:manage], Poll
       can [:manage], Poll::Booth
+      can [:search, :create, :index, :destroy], ::Poll::Officer
+      can [:create, :destroy], ::Poll::BoothAssignment
+      can [:create, :destroy], ::Poll::OfficerAssignment
+      can [:read, :create, :update], Poll::Question
+      can :destroy, Poll::Question # , comments_count: 0, votes_up: 0
     end
   end
 end

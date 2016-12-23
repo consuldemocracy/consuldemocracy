@@ -1,5 +1,6 @@
 class Admin::Poll::PollsController < Admin::BaseController
   load_and_authorize_resource
+  before_action :load_search, only: [:search_booths]
 
   def index
   end
@@ -30,10 +31,25 @@ class Admin::Poll::PollsController < Admin::BaseController
     end
   end
 
+  def search_booths
+    @booths = ::Poll::Booth.search(@search)
+    respond_to do |format|
+      format.js
+    end
+  end
+
   private
 
     def poll_params
       params.require(:poll).permit(:name, :starts_at, :ends_at)
+    end
+
+    def search_params
+      params.permit(:poll_id, :search)
+    end
+
+    def load_search
+      @search = search_params[:search]
     end
 
 end

@@ -7,7 +7,7 @@
             edit_admin_poll_path(@poll),
             class: "button hollow float-right" %>
 
-<div class="tabs-content" data-tabs-content="example-tabs">
+<div id="poll-resources" class="tabs-content" data-tabs-content="assigned-resources-tabs">
   <%= render "filter_subnav" %>
 
   <div class="tabs-panel is-active" id="tab-questions">
@@ -15,6 +15,7 @@
   </div>
 
   <div class="tabs-panel" id="tab-booths">
+    <%= render "search_booths" %>
     <%= render "booths" %>
   </div>
 

@@ -186,13 +186,16 @@ es:
         no_questions: "No hay preguntas asignadas a esta votación todavía."
         no_officers: "No hay presidentes de mesa asignados."
         remove_booth: "Desasignar urna"
-        booths_title: "Listado de urnas"
-        officers_title: "Listado de presidentes de mesa"
-        questions_title: "Listado de preguntas"
+        booths_title: "Listado de urnas asignadas"
+        officers_title: "Listado de presidentes de mesa asignados"
+        questions_title: "Listado de preguntas asignadas"
         remove_question: "Desasignar pregunta"
+        add_booth: "Asignar urna"
         name: "Nombre"
         location: "Ubicación"
         email: "Email"
+        search_results: "Resultados de la búsqueda"
+        no_search_results: "No se han encontrado resultados"
     questions:
       index:
         title: "Preguntas ciudadanas"
@@ -235,6 +238,12 @@ es:
         submit_button: "Actualizar urna"
       show:
         location: "Ubicación"
+    booth_assignments:
+      flash:
+        destroy: "Urna desasignada"
+        create: "Urna asignada"
+        error_destroy: "Se ha producido un error al desasignar la urna"
+        error_create: "Se ha producido un error al intentar asignar la urna"
     officials:
       edit:
         destroy: Eliminar condición de 'Cargo Público'
@@ -297,6 +306,9 @@ es:
           enable: "Activar"
           disable: "Desactivar"
     shared:
+      booths_search:
+        button: Buscar
+        placeholder: Buscar urna por nombre
       proposal_search:
         button: Buscar
         placeholder: Buscar propuestas por título, código, descripción o pregunta
