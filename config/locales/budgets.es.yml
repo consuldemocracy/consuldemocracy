@@ -105,7 +105,7 @@ es:
         vote: Votar
       header:
         check_ballot: Revisar mis votos
-        different_heading_active: Ya apoyaste propuestas de otro distrito.
+        different_heading_assigned: Ya apoyaste propuestas de otro distrito.
     show:
       group: Grupo
       heading: Partida

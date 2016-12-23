@@ -105,7 +105,7 @@ en:
         vote: Vote
       header:
         check_ballot: Check my ballot
-        different_heading_active: You have active votes in another district.
+        different_heading_assigned: You have active votes in another heading.
     show:
       group: Group
       heading: Heading
