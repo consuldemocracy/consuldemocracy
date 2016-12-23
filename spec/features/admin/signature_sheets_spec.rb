@@ -29,6 +29,10 @@ feature 'Signature sheets' do
     click_button "Create signature sheet"
 
     expect(page).to have_content "Signature sheet created successfully"
+
+    visit proposal_path(proposal)
+
+    expect(page).to have_content "1 support"
   end
 
   scenario 'Errors on create' do

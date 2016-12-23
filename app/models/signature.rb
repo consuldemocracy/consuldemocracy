@@ -51,7 +51,7 @@ class Signature < ActiveRecord::Base
       created_from_signature: true,
       verified_at: Time.now,
       erased_at: Time.now,
-      email: "#{document_number}@signatures.com",
+      email: "#{document_number}@inexistent.dev",
       password: "12345678",
       username: document_number,
       terms_of_service: '1'
