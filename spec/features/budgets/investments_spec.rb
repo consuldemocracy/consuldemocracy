@@ -361,26 +361,25 @@ feature 'Budget Investments' do
       visit budget_path(budget)
 
       click_link "Global Group"
-      # No need to click_link "Global Heading" because groups with a single heading redirect to the
-      # list of investments directly
+      # No need to click_link "Global Heading" because the link of a group with a single heading
+      # points to the list of investments directly
 
       add_to_ballot(sp1)
       add_to_ballot(sp2)
 
-      visit budgets_path
+      visit budget_path(budget)
 
-      click_link budget.name
       click_link "Health"
       click_link "Carabanchel"
 
       add_to_ballot(sp4)
       add_to_ballot(sp5)
 
-      click_link "Check my ballot"
+      visit budget_ballot_path(budget)
 
       expect(page).to have_content "You can change your vote at any time until the close of this phase"
 
-      within("#city_wide") do
+      within("#budget_group_#{global_group.id}") do
         expect(page).to have_content sp1.title
         expect(page).to have_content sp1.price
 
@@ -391,15 +390,15 @@ feature 'Budget Investments' do
         expect(page).to_not have_content sp3.price
       end
 
-      within("#district_wide") do
+      within("#budget_group_#{group.id}") do
         expect(page).to have_content sp4.title
-        expect(page).to have_content "$1,000"
+        expect(page).to have_content "€1,000"
 
         expect(page).to have_content sp5.title
-        expect(page).to have_content "$10,000"
+        expect(page).to have_content "€10,000"
 
         expect(page).to_not have_content sp6.title
-        expect(page).to_not have_content "$100,000"
+        expect(page).to_not have_content "€100,000"
       end
     end
 
