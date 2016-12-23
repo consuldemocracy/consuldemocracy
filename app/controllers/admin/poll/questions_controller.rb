@@ -53,10 +53,6 @@ class Admin::Poll::QuestionsController < Admin::BaseController
     redirect_to admin_questions_path, notice: notice
   end
 
-  def successful?
-    total_votes >= Proposal.votes_needed_for_success
-  end
-
   private
 
     def load_geozones
