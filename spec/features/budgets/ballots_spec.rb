@@ -144,7 +144,7 @@ feature 'Ballots' do
       scenario "Removing a proposal", :js do
         investment = create(:budget_investment, :selected, budget: budget, heading: heading, group: group, price: 10000)
         ballot = create(:budget_ballot, user: user, budget: budget)
-        ballot.add_investment(investment)
+        ballot.investments << investment
 
         visit budget_path(budget)
         click_link group.name
@@ -216,10 +216,6 @@ feature 'Ballots' do
           expect(page).to have_content "Remove"
         end
 
-        visit budget_path(budget)
-        click_link "Districts"
-        click_link "District 1"
-
         expect(page).to have_css("#amount-spent",     text: "€20,000")
         expect(page).to have_css("#amount-available", text: "€980,000")
 
@@ -249,8 +245,7 @@ feature 'Ballots' do
         click_link "Districts"
         click_link "District 2"
 
-        expect(page).to have_css("#amount-spent", text: "€0")
-        expect(page).to have_css("#amount-spent", text: "€2,000,000")
+        expect(page).to have_content("You have active votes in another heading")
       end
     end
 
@@ -303,7 +298,8 @@ feature 'Ballots' do
       investment1 = create(:budget_investment, :selected, heading: california_heading)
       investment2 = create(:budget_investment, :selected, heading: new_york_heading)
 
-      create(:budget_ballot, user: user, budget: budget, investments: [investment1])
+      ballot = create(:budget_ballot, user: user, budget: budget)
+      ballot.investments << investment1
 
       visit budget_investments_path(budget, heading_id: california_heading.id)
 
@@ -326,7 +322,8 @@ feature 'Ballots' do
     scenario 'View another heading' do
       investment = create(:budget_investment, :selected, heading: california_heading)
 
-      create(:budget_ballot, user: user, budget: budget, investments: [investment])
+      ballot = create(:budget_ballot, user: user, budget: budget)
+      ballot.investments << investment
 
       visit budget_investments_path(budget, heading_id: new_york_heading.id)
 
@@ -409,7 +406,8 @@ feature 'Ballots' do
     investment1 = create(:budget_investment, :selected, price: 10000, heading: heading)
     investment2 = create(:budget_investment, :selected, price: 20000, heading: heading)
 
-    ballot = create(:budget_ballot, budget: budget, user: user, investments: [investment1, investment2])
+    ballot = create(:budget_ballot, budget: budget, user: user)
+    ballot.investments << investment1 << investment2
 
     login_as(user)
     visit budget_investments_path(budget, heading_id: heading.id)
