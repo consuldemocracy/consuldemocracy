@@ -1,13 +1,13 @@
 require 'rails_helper'
 
-xdescribe 'HasOrders' do
+describe 'HasOrders' do
 
   class FakeController < ActionController::Base; end
 
   controller(FakeController) do
     include HasOrders
-    has_orders ['created_at', 'votes_count', 'flags_count'], only: :index
-    has_orders -> { ['votes_count', 'flags_count'] }, only: :new
+    has_orders ['created_at', 'votes_count', 'flags_count', 'relevance'], only: :index
+    has_orders -> (c) { ['votes_count', 'flags_count'] }, only: :new
 
     def index
       render text: "#{@current_order} (#{@valid_orders.join(' ')})"
@@ -18,7 +18,7 @@ xdescribe 'HasOrders' do
     end
   end
 
-  it "has the valid orders set up" do
+  it "displays all the orders except relevance when not searching" do
     get :index
     expect(response.body).to eq('created_at (created_at votes_count flags_count)')
   end
@@ -26,6 +26,11 @@ xdescribe 'HasOrders' do
   it "allows specifying the orders via a lambda" do
     get :new
     expect(response.body).to eq('votes_count (votes_count flags_count)')
+  end
+
+  it "displays relevance when searching" do
+    get :index, search: 'ipsum'
+    expect(response.body).to eq('created_at (created_at votes_count flags_count relevance)')
   end
 
   describe "the current order" do
