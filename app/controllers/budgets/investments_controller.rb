@@ -84,7 +84,8 @@ module Budgets
       end
 
       def load_ballot
-        @ballot = Budget::Ballot.where(user: current_user, budget: @budget).first_or_create
+        query = Budget::Ballot.where(user: current_user, budget: @budget)
+        @ballot = @budget.balloting? ? query.first_or_create : query.first_or_initialize
       end
 
       def load_heading
