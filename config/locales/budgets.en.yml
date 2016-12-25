@@ -11,6 +11,14 @@ en:
           other: "You have voted <span>%{count}</span> proposals."
         voted_info_html: "You can change your vote at any time until the close of this phase.<br> No need to invest all the money available."
         zero: You have not voted any investment project.
+      reasons_for_not_balloting:
+        not_logged_in: You must %{signin} or %{signup} to continue.
+        not_verified: Only verified users can vote on proposals; %{verify_account}.
+        organization: Organizations are not permitted to vote
+        not_selected: Unselected investment projects can not be supported
+        not_enough_money: "Price is higher than the available amount left"
+        no_ballots_allowed: Selecting phase is closed
+        different_heading_assigned: You have already voted a different heading
     groups:
       show:
         title: Select a heading
@@ -105,7 +113,7 @@ en:
         vote: Vote
       header:
         check_ballot: Check my ballot
-        different_heading_assigned: You have active votes in another heading.
+        different_heading_assigned_html: "You have active votes in another heading: %{heading_link}"
     show:
       group: Group
       heading: Heading

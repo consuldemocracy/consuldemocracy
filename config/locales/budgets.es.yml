@@ -11,6 +11,14 @@ es:
           other: "Has votado <span>%{count}</span> propuestas."
         voted_info_html: "Puedes cambiar tus votos en cualquier momento hasta el cierre de esta fase.<br> No hace falta que inviertas todo el dinero disponible."
         zero: "Todavía no has votado ninguna propuesta de inversión."
+    reasons_for_not_balloting:
+      not_logged_in: Necesitas %{signin} o %{signup} para continuar.
+      not_verified: Las propuestas de inversión sólo pueden ser apoyadas por usuarios verificados, %{verify_account}.
+      organization: Las organizaciones no pueden votar.
+      not_selected: No se pueden votar propuestas inviables.
+      not_enough_money: No hay fondos suficientes
+      no_ballots_allowed: El periodo de votación está cerrado.
+      different_heading_assigned: Ya votaste en una sección distinta del presupuesto.
     groups:
       show:
         title: Selecciona una partida
@@ -105,7 +113,7 @@ es:
         vote: Votar
       header:
         check_ballot: Revisar mis votos
-        different_heading_assigned: Ya apoyaste propuestas de otro distrito.
+        different_heading_assigned_html: "Ya apoyaste propuestas de otra sección del presupuesto: %{heading_link}"
     show:
       group: Grupo
       heading: Partida
