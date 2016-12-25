@@ -599,12 +599,6 @@ en:
       organization: Organizations are not permitted to vote
       unfeasible: Unfeasible investment projects can not be supported
       not_voting_allowed: Voting phase is closed
-    budget_investments:
-      not_logged_in: You must %{signin} or %{signup} to continue.
-      not_verified: Only verified users can vote on proposals; %{verify_account}.
-      organization: Organisations are not permitted to vote
-      unfeasible: Unfeasible investment projects can not be supported
-      not_voting_allowed: Selecting phase is closed
   welcome:
     debates:
       description: For meeting, discussing and sharing the things that matter to us in our city.
