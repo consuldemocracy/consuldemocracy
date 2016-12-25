@@ -6,6 +6,9 @@ feature 'Ballots' do
   let!(:budget)  { create(:budget, phase: "balloting") }
   let!(:group)   { create(:budget_group, budget: budget, name: "Group 1") }
   let!(:heading) { create(:budget_heading, group: group, name: "Heading 1", price: 1000000) }
+  let!(:states)     { create(:budget_group, budget: budget, name: "States") }
+  let!(:california) { create(:budget_heading, group: states, name: "California", price: 1000) }
+  let!(:new_york)   { create(:budget_heading, group: states, name: "New York") }
 
   context "Voting" do
 
@@ -242,63 +245,59 @@ feature 'Ballots' do
   end
 
   context "Groups" do
-    let!(:districts_group)    { create(:budget_group, budget: budget, name: "Districts") }
-    let!(:california_heading) { create(:budget_heading, group: districts_group, name: "California") }
-    let!(:new_york_heading)   { create(:budget_heading, group: districts_group, name: "New York") }
-    let!(:investment)         { create(:budget_investment, :selected, heading: california_heading) }
 
-    background do
-      login_as(user)
-    end
+    let!(:investment) { create(:budget_investment, :selected, heading: california) }
+
+    background { login_as(user) }
 
     scenario 'Select my heading', :js do
       visit budget_path(budget)
-      click_link "Districts"
+      click_link "States"
       click_link "California"
 
       add_to_ballot(investment)
 
       visit budget_path(budget)
-      click_link "Districts"
+      click_link "States"
 
       expect(page).to have_content "California"
-      expect(page).to have_css("#budget_heading_#{california_heading.id}.active")
+      expect(page).to have_css("#budget_heading_#{california.id}.active")
     end
 
     scenario 'Change my heading', :js do
-      investment1 = create(:budget_investment, :selected, heading: california_heading)
-      investment2 = create(:budget_investment, :selected, heading: new_york_heading)
+      investment1 = create(:budget_investment, :selected, heading: california)
+      investment2 = create(:budget_investment, :selected, heading: new_york)
 
       ballot = create(:budget_ballot, user: user, budget: budget)
       ballot.investments << investment1
 
-      visit budget_investments_path(budget, heading_id: california_heading.id)
+      visit budget_investments_path(budget, heading_id: california.id)
 
       within("#budget_investment_#{investment1.id}") do
         find('.remove a').trigger('click')
       end
 
-      visit budget_investments_path(budget, heading_id: new_york_heading.id)
+      visit budget_investments_path(budget, heading_id: new_york.id)
 
       add_to_ballot(investment2)
 
       visit budget_path(budget)
-      click_link "Districts"
-      expect(page).to have_css("#budget_heading_#{new_york_heading.id}.active")
-      expect(page).to_not have_css("#budget_heading_#{california_heading.id}.active")
+      click_link "States"
+      expect(page).to have_css("#budget_heading_#{new_york.id}.active")
+      expect(page).to_not have_css("#budget_heading_#{california.id}.active")
     end
 
     scenario 'View another heading' do
-      investment = create(:budget_investment, :selected, heading: california_heading)
+      investment = create(:budget_investment, :selected, heading: california)
 
       ballot = create(:budget_ballot, user: user, budget: budget)
       ballot.investments << investment
 
-      visit budget_investments_path(budget, heading_id: new_york_heading.id)
+      visit budget_investments_path(budget, heading_id: new_york.id)
 
       expect(page).to_not have_css "#progressbar"
       expect(page).to have_content "You have active votes in another heading:"
-      expect(page).to have_link california_heading.name, href: budget_investments_path(budget, heading: california_heading)
+      expect(page).to have_link california.name, href: budget_investments_path(budget, heading: california)
     end
 
   end
@@ -473,9 +472,6 @@ feature 'Ballots' do
     end
 
     scenario 'Different district', :js do
-      california = create(:budget_heading, group: group)
-      new_york = create(:budget_heading, group: group)
-
       bi1 = create(:budget_investment, :selected, heading: california)
       bi2 = create(:budget_investment, :selected, heading: new_york)
 
@@ -493,8 +489,6 @@ feature 'Ballots' do
     end
 
     scenario 'Insufficient funds (on page load)', :js do
-      california = create(:budget_heading, group: group, price: 1000)
-
       bi1 = create(:budget_investment, :selected, heading: california, price: 600)
       bi2 = create(:budget_investment, :selected, heading: california, price: 500)
 
@@ -512,8 +506,6 @@ feature 'Ballots' do
     end
 
     scenario 'Insufficient funds (added after create)', :js do
-      california = create(:budget_heading, group: group, price: 1000)
-
       bi1 = create(:budget_investment, :selected, heading: california, price: 600)
       bi2 = create(:budget_investment, :selected, heading: california, price: 500)
 
@@ -537,8 +529,6 @@ feature 'Ballots' do
     end
 
     scenario 'Insufficient funds (removed after destroy)', :js do
-      california = create(:budget_heading, group: group, price: 1000)
-
       bi1 = create(:budget_investment, :selected, heading: california, price: 600)
       bi2 = create(:budget_investment, :selected, heading: california, price: 500)
 
@@ -567,8 +557,6 @@ feature 'Ballots' do
     end
 
     scenario 'Insufficient functs (removed after destroying from sidebar)', :js do
-      california = create(:budget_heading, group: group, price: 1000)
-
       bi1 = create(:budget_investment, :selected, heading: california, price: 600)
       bi2 = create(:budget_investment, :selected, heading: california, price: 500)
 
@@ -600,7 +588,6 @@ feature 'Ballots' do
     scenario "Balloting is disabled when budget isn't in the balotting phase", :js do
       budget.update(phase: 'on_hold')
 
-      california = create(:budget_heading, group: group, price: 1000)
       bi1 = create(:budget_investment, :selected, heading: california, price: 600)
 
       login_as(user)
