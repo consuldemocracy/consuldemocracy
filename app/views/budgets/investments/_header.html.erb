@@ -34,8 +34,11 @@
               <% else %>
                 <br>
                 <p class="callout warning inline-block">
-                  <%= t("budget.investments.header.different_heading_assigned") %>
-                  <%= link_to @heading.name, budget_investments_path(budget_id: @budget.id, heading_id: @heading.id) %>
+                  <%= t("budget.investments.header.different_heading_assigned_html",
+                        heading_link: link_to(
+                          @assigned_heading.name,
+                          budget_investments_path(@budget, heading: @assigned_heading))
+                       ) %>
                 </p>
               <% end %>
           </div>
