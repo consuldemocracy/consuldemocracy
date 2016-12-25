@@ -301,7 +301,7 @@ describe Budget::Investment do
       let(:user)        { create(:user, :level_two) }
       let(:luser)       { create(:user) }
       let(:ballot)      { create(:budget_ballot, budget: budget) }
-      let(:investment)  { create(:budget_investment, budget: budget, group: group, heading: heading) }
+      let(:investment)  { create(:budget_investment, :selected, budget: budget, heading: heading) }
 
       describe '#reason_for_not_being_ballotable_by' do
         it "rejects not logged in users" do
@@ -320,6 +320,11 @@ describe Budget::Investment do
         it "rejects votes when voting is not allowed (via admin setting)" do
           budget.phase = "on_hold"
           expect(investment.reason_for_not_being_ballotable_by(user, ballot)).to eq(:no_ballots_allowed)
+        end
+
+        it "rejects non-selected investments" do
+          investment.selected = false
+          expect(investment.reason_for_not_being_ballotable_by(user, ballot)).to eq(:not_selected)
         end
 
         it "accepts valid ballots when voting is allowed" do
