@@ -8,7 +8,7 @@
 <div class="sidebar-divider"></div>
 <h3 class="sidebar-title"><%= t("spending_proposals.index.sidebar.my_ballot") %></h3>
 
-<% if @ballot.investments.by_heading(@heading).count > 0 %>
+<% if @heading && @ballot.investments.by_heading(@heading.id).count > 0 %>
   <p>
     <em>
       <%= t("budget.investments.index.sidebar.voted_html",
@@ -21,10 +21,12 @@
 <% end %>
 
 <ul class="ballot-list">
-  <% @ballot.investments.by_heading(@heading).each do |investment| %>
-    <%= render 'budgets/ballot/investment_for_sidebar',
-                investment: investment,
-                investment_ids: @investments %>
+  <% if @heading %>
+    <% @ballot.investments.by_heading(@heading.id).each do |investment| %>
+      <%= render 'budgets/ballot/investment_for_sidebar',
+                  investment: investment,
+                  investment_ids: @investment_ids %>
+    <% end %>
   <% end %>
 </ul>
 
