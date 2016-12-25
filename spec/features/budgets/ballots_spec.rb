@@ -2,9 +2,9 @@ require 'rails_helper'
 
 feature 'Ballots' do
 
-  let(:budget)  { create(:budget, phase: "balloting") }
-  let(:group)   { create(:budget_group, budget: budget, name: "Group 1") }
-  let(:heading) { create(:budget_heading, group: group, name: "Heading 1", price: 1000000) }
+  let!(:budget)  { create(:budget, phase: "balloting") }
+  let!(:group)   { create(:budget_group, budget: budget, name: "Group 1") }
+  let!(:heading) { create(:budget_heading, group: group, name: "Heading 1", price: 1000000) }
 
   context "Voting" do
     let!(:user) { create(:user, :level_two) }
@@ -310,14 +310,20 @@ feature 'Ballots' do
       visit budget_investments_path(budget, heading_id: new_york_heading.id)
 
       expect(page).to_not have_css "#progressbar"
-      expect(page).to have_content "You have active votes in another district:"
+      expect(page).to have_content "You have active votes in another heading:"
       expect(page).to have_link california_heading.name, href: budget_investments_path(budget, heading: california_heading)
     end
 
   end
 
   context 'Showing the ballot' do
-    pending "Do not display heading name if there is only one heading in the group (example: group city)"
+    scenario "Do not display heading name if there is only one heading in the group (example: group city)" do
+      visit budget_path(budget)
+      click_link group.name
+      # No need to click on the heading name
+      expect(page).to have_content("Investment projects with scope: #{heading.name}")
+      expect(current_path).to eq(budget_investments_path(budget))
+    end
 
     scenario 'Displaying the correct count & amount' do
       user = create(:user, :level_two)
@@ -430,7 +436,8 @@ feature 'Ballots' do
 
       within("#budget_investment_#{investment.id}") do
         find("div.ballot").hover
-        expect_message_you_need_to_sign_in_to_ballot
+        expect(page).to have_content 'You must Sign in or Sign up to continue.'
+        expect(page).to have_selector('.in-favor a', visible: false)
       end
     end
 
@@ -443,7 +450,8 @@ feature 'Ballots' do
 
       within("#budget_investment_#{investment.id}") do
         find("div.ballot").hover
-        expect_message_only_verified_can_vote_investments
+        expect(page).to have_content 'Only verified users can vote on proposals'
+        expect(page).to have_selector('.in-favor a', visible: false)
       end
     end
 
@@ -467,9 +475,7 @@ feature 'Ballots' do
       login_as(user)
       visit budget_investments_path(budget, heading_id: heading.id, unfeasible: 1)
 
-      within("#budget_investment_#{investment.id}") do
-        expect(page).to_not have_css("div.ballot")
-      end
+      expect(page).to_not have_css("#budget_investment_#{investment.id}")
     end
 
     scenario 'Investments with feasibility undecided are not shown' do
@@ -487,150 +493,150 @@ feature 'Ballots' do
 
     scenario 'Different district', :js do
       user = create(:user, :level_two)
-      california = create(:geozone)
-      new_york = create(:geozone)
+      california = create(:budget_heading, group: group)
+      new_york = create(:budget_heading, group: group)
 
-      sp1 = create(:spending_proposal, :selected, geozone: california)
-      sp2 = create(:spending_proposal, :selected, geozone: new_york)
+      bi1 = create(:budget_investment, :selected, heading: california)
+      bi2 = create(:budget_investment, :selected, heading: new_york)
 
-      create(:ballot, user: user, geozone: california, spending_proposals: [sp1])
+      ballot = create(:budget_ballot, budget: budget, user: user)
+      ballot.investments << bi1
 
       login_as(user)
-      visit spending_proposals_path(geozone: new_york)
+      visit budget_investments_path(budget, heading: new_york)
 
-      within("#spending_proposal_#{sp2.id}") do
+      within("#budget_investment_#{bi2.id}") do
         find("div.ballot").hover
-        expect_message_already_voted_in_another_geozone(california)
+        expect(page).to have_content('already voted a different heading')
+        expect(page).to have_selector('.in-favor a', visible: false)
       end
     end
 
-    scenario 'Insufficient funds', :js do
+    scenario 'Insufficient funds (on page load)', :js do
       user = create(:user, :level_two)
-      california = create(:geozone)
+      california = create(:budget_heading, group: group, price: 1000)
 
-      sp1 = create(:spending_proposal, :selected, price: 25000000)
+      bi1 = create(:budget_investment, :selected, heading: california, price: 600)
+      bi2 = create(:budget_investment, :selected, heading: california, price: 500)
+
+      ballot = create(:budget_ballot, budget: budget, user: user)
+      ballot.investments << bi1
 
       login_as(user)
-      visit spending_proposals_path(geozone: 'all')
+      visit budget_investments_path(budget, heading_id: california.id)
 
-      within("#spending_proposal_#{sp1.id}") do
-        find('.add a').trigger('click')
-        expect_message_insufficient_funds
+      within("#budget_investment_#{bi2.id}") do
+        find("div.ballot").hover
+        expect(page).to have_content('Price is higher than the available amount left')
+        expect(page).to have_selector('.in-favor a', visible: false)
       end
     end
 
-    scenario 'Displays error message for all proposals (on create)', :js do
+    scenario 'Insufficient funds (added after create)', :js do
       user = create(:user, :level_two)
-      california = create(:geozone)
+      california = create(:budget_heading, group: group, price: 1000)
 
-      sp1 = create(:spending_proposal, :selected, price: 20000000)
-      sp2 = create(:spending_proposal, :selected, price: 5000000)
+      bi1 = create(:budget_investment, :selected, heading: california, price: 600)
+      bi2 = create(:budget_investment, :selected, heading: california, price: 500)
 
       login_as(user)
-      visit spending_proposals_path(geozone: 'all')
+      visit budget_investments_path(budget, heading_id: california.id)
 
-      add_to_ballot(sp1)
-
-      within("#spending_proposal_#{sp2.id}") do
+      within("#budget_investment_#{bi1.id}") do
         find("div.ballot").hover
-        expect_message_insufficient_funds
+        expect(page).to_not have_content('Price is higher than the available amount left')
+        expect(page).to have_selector('.in-favor a', visible: true)
       end
 
-    end
+      add_to_ballot(bi1)
 
-    scenario 'Displays error message for all proposals (on destroy)', :js do
-      user = create(:user, :level_two)
-
-      sp1 = create(:spending_proposal, :selected, price: 24000000)
-      sp2 = create(:spending_proposal, :selected, price: 5000000)
-
-      create(:ballot, user: user, spending_proposals: [sp1])
-
-      login_as(user)
-      visit spending_proposals_path(geozone: 'all')
-
-      within("#spending_proposal_#{sp2.id}") do
+      within("#budget_investment_#{bi2.id}") do
         find("div.ballot").hover
-        expect(page).to have_content "This proposal's price is more than the available amount left"
+        expect(page).to have_content('Price is higher than the available amount left')
         expect(page).to have_selector('.in-favor a', visible: false)
       end
 
-      within("#spending_proposal_#{sp1.id}") do
-        find('.remove a').trigger('click')
+    end
+
+    scenario 'Insufficient funds (removed after destroy)', :js do
+      user = create(:user, :level_two)
+      california = create(:budget_heading, group: group, price: 1000)
+
+      bi1 = create(:budget_investment, :selected, heading: california, price: 600)
+      bi2 = create(:budget_investment, :selected, heading: california, price: 500)
+
+      ballot = create(:budget_ballot, budget: budget, user: user)
+      ballot.investments << bi1
+
+      login_as(user)
+      visit budget_investments_path(budget, heading_id: california.id)
+
+      within("#budget_investment_#{bi2.id}") do
+        find("div.ballot").hover
+        expect(page).to have_content('Price is higher than the available amount left')
+        expect(page).to have_selector('.in-favor a', visible: false)
       end
 
-      within("#spending_proposal_#{sp2.id}") do
+      within("#budget_investment_#{bi1.id}") do
+        find('.remove a').trigger('click')
+        expect(page).to have_css ".add a"
+      end
+
+      within("#budget_investment_#{bi2.id}") do
         find("div.ballot").hover
-        expect(page).to_not have_content "This proposal's price is more than the available amount left"
+        expect(page).to_not have_content('Price is higher than the available amount left')
         expect(page).to have_selector('.in-favor a', visible: true)
       end
     end
 
-    scenario 'Displays error message for all proposals (on destroy from sidebar)', :js do
+    scenario 'Insufficient functs (removed after destroying from sidebar)', :js do
       user = create(:user, :level_two)
+      california = create(:budget_heading, group: group, price: 1000)
 
-      sp1 = create(:spending_proposal, :selected, price: 24000000)
-      sp2 = create(:spending_proposal, :selected, price: 5000000)
+      bi1 = create(:budget_investment, :selected, heading: california, price: 600)
+      bi2 = create(:budget_investment, :selected, heading: california, price: 500)
 
-      create(:ballot, user: user, spending_proposals: [sp1])
+      ballot = create(:budget_ballot, budget: budget, user: user)
+      ballot.investments << bi1
 
       login_as(user)
-      visit spending_proposals_path(geozone: 'all')
+      visit budget_investments_path(budget, heading_id: california.id)
 
-      within("#spending_proposal_#{sp2.id}") do
+      within("#budget_investment_#{bi2.id}") do
         find("div.ballot").hover
-        expect(page).to have_content "This proposal's price is more than the available amount left"
+        expect(page).to have_content('Price is higher than the available amount left')
         expect(page).to have_selector('.in-favor a', visible: false)
       end
 
-      within("#spending_proposal_#{sp1.id}_sidebar") do
+      within("#budget_investment_#{bi1.id}_sidebar") do
         find('.remove-investment-project').trigger('click')
       end
 
-      expect(page).to_not have_css "#spending_proposal_#{sp1.id}_sidebar"
+      expect(page).to_not have_css "#budget_investment_#{bi1.id}_sidebar"
 
-      within("#spending_proposal_#{sp2.id}") do
+      within("#budget_investment_#{bi2.id}") do
         find("div.ballot").hover
-        expect(page).to_not have_content "This proposal's price is more than the available amount left"
+        expect(page).to_not have_content('Price is higher than the available amount left')
         expect(page).to have_selector('.in-favor a', visible: true)
       end
     end
 
-    scenario "Display hover for ajax generated content", :js do
-      user = create(:user, :level_two)
-      california = create(:geozone)
+    scenario "Balloting is disabled when budget isn't in the balotting phase", :js do
+      budget.update(phase: 'on_hold')
 
-      sp1 = create(:spending_proposal, :selected, price: 20000000)
-      sp2 = create(:spending_proposal, :selected, price: 5000000)
+      california = create(:budget_heading, group: group, price: 1000)
+      bi1 = create(:budget_investment, :selected, heading: california, price: 600)
 
-      login_as(user)
-      visit spending_proposals_path(geozone: 'all')
+      login_as(create(:user, :level_two))
 
-      add_to_ballot(sp1)
-
-      within("#spending_proposal_#{sp2.id}") do
-        find("div.ballot").trigger(:mouseover)
-        expect_message_insufficient_funds
+      visit budget_investments_path(budget, heading_id: california.id)
+      within("#budget_investment_#{bi1.id}") do
+        expect(page).to_not have_css("div.ballot")
       end
     end
   end
+
+
 end
 
-feature "Ballots in the wrong phase" do
-
-  background { login_as(create(:user, :level_two)) }
-  let(:sp) { create(:spending_proposal, :selected, price: 10000) }
-
-  scenario "When not on phase 3" do
-    Setting['feature.spending_proposal_features.phase3'] = nil
-    visit create_ballot_line_path(spending_proposal_id: sp.id)
-    expect(page.status_code).to eq(403)
-  end
-
-  scenario "When in phase 3 but voting disabled" do
-    Setting['feature.spending_proposal_features.phase3'] = true
-    Setting['feature.spending_proposal_features.final_voting_allowed'] = nil
-    expect{visit create_ballot_line_path(spending_proposal_id: sp.id)}.to raise_error(ActionController::RoutingError)
-  end
-end
 
