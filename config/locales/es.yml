@@ -42,10 +42,6 @@ es:
       selecting: Selección de proyectos
       balloting: Votación de proyectos
       finished: Terminado
-  budget_investments:
-    notice:
-      could_not_vote: No se pudo votar
-      voted: Voto emitido con éxito
   comments:
     comment:
       admin: Administrador
@@ -226,7 +222,6 @@ es:
       proposal_ballot: Votaciones
       see_all: Ver propuestas
       budgets: Presupuestos ciudadanos
-      spending_proposals: Presupuestos participativos
   legislation:
     help:
       alt: Selecciona el texto que quieres comentar y pulsa en el botón con el lápiz.

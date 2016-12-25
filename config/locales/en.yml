@@ -42,10 +42,6 @@ en:
       selecting: Selecting investment projects
       balloting: Voting investment projects
       finished: Finished
-  budget_investments:
-    notice:
-      could_not_vote: Could not vote
-      voted: Vote stored successfully
   comments:
     comment:
       admin: Administrator
@@ -216,7 +212,7 @@ en:
       new_notifications:
         one: You have a new notification
         other: You have %{count} new notifications
-      no_notifications: You don't have new notifications
+      no_notifications: "You don't have new notifications"
       open: open
       open_city_slogan_html: There are cities that are governed directly by their inhabitants, who <b>discuss</b> the topics they are concerned about, <b>propose</b> ideas to improve their lives and <b>decide</b> among themselves which ones will be carried out.
       open_city_title: Love the city, and it will become a city you love.
