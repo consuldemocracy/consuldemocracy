@@ -2,12 +2,12 @@ require 'rails_helper'
 
 feature 'Ballots' do
 
+  let!(:user) { create(:user, :level_two) }
   let!(:budget)  { create(:budget, phase: "balloting") }
   let!(:group)   { create(:budget_group, budget: budget, name: "Group 1") }
   let!(:heading) { create(:budget_heading, group: group, name: "Heading 1", price: 1000000) }
 
   context "Voting" do
-    let!(:user) { create(:user, :level_two) }
 
     background do
       login_as(user)
@@ -254,7 +254,6 @@ feature 'Ballots' do
   end
 
   context "Groups" do
-    let!(:user) { create(:user, :level_two) }
     let!(:districts_group)    { create(:budget_group, budget: budget, name: "Districts") }
     let!(:california_heading) { create(:budget_heading, group: districts_group, name: "California") }
     let!(:new_york_heading)   { create(:budget_heading, group: districts_group, name: "New York") }
@@ -326,8 +325,6 @@ feature 'Ballots' do
     end
 
     scenario 'Displaying the correct count & amount' do
-      user = create(:user, :level_two)
-
       group1 = create(:budget_group, budget: budget)
       group2 = create(:budget_group, budget: budget)
 
@@ -371,7 +368,6 @@ feature 'Ballots' do
   end
 
   scenario 'Removing spending proposals from ballot', :js do
-    user = create(:user, :level_two)
     ballot = create(:budget_ballot, user: user, budget: budget)
     investment = create(:budget_investment, :selected, price: 10, heading: heading, group: group)
     create(:budget_ballot_line, ballot: ballot, investment: investment, heading: heading, group: group)
@@ -390,7 +386,6 @@ feature 'Ballots' do
   end
 
   scenario 'Removing spending proposals from ballot (sidebar)', :js do
-    user = create(:user, :level_two)
     investment1 = create(:budget_investment, :selected, price: 10000, heading: heading)
     investment2 = create(:budget_investment, :selected, price: 20000, heading: heading)
 
@@ -442,10 +437,10 @@ feature 'Ballots' do
     end
 
     scenario 'User not verified', :js do
-      user = create(:user)
+      unverified_user = create(:user)
       investment = create(:budget_investment, :selected, heading: heading)
 
-      login_as(user)
+      login_as(unverified_user)
       visit budget_investments_path(budget, heading_id: heading.id)
 
       within("#budget_investment_#{investment.id}") do
@@ -469,7 +464,6 @@ feature 'Ballots' do
     end
 
     scenario 'Unselected investments' do
-      user = create(:user, :level_two)
       investment = create(:budget_investment, heading: heading)
 
       login_as(user)
@@ -479,7 +473,6 @@ feature 'Ballots' do
     end
 
     scenario 'Investments with feasibility undecided are not shown' do
-      user = create(:user, :level_two)
       investment = create(:budget_investment, feasibility: "undecided", heading: heading)
 
       login_as(user)
@@ -492,7 +485,6 @@ feature 'Ballots' do
     end
 
     scenario 'Different district', :js do
-      user = create(:user, :level_two)
       california = create(:budget_heading, group: group)
       new_york = create(:budget_heading, group: group)
 
@@ -513,7 +505,6 @@ feature 'Ballots' do
     end
 
     scenario 'Insufficient funds (on page load)', :js do
-      user = create(:user, :level_two)
       california = create(:budget_heading, group: group, price: 1000)
 
       bi1 = create(:budget_investment, :selected, heading: california, price: 600)
@@ -533,7 +524,6 @@ feature 'Ballots' do
     end
 
     scenario 'Insufficient funds (added after create)', :js do
-      user = create(:user, :level_two)
       california = create(:budget_heading, group: group, price: 1000)
 
       bi1 = create(:budget_investment, :selected, heading: california, price: 600)
@@ -559,7 +549,6 @@ feature 'Ballots' do
     end
 
     scenario 'Insufficient funds (removed after destroy)', :js do
-      user = create(:user, :level_two)
       california = create(:budget_heading, group: group, price: 1000)
 
       bi1 = create(:budget_investment, :selected, heading: california, price: 600)
@@ -590,7 +579,6 @@ feature 'Ballots' do
     end
 
     scenario 'Insufficient functs (removed after destroying from sidebar)', :js do
-      user = create(:user, :level_two)
       california = create(:budget_heading, group: group, price: 1000)
 
       bi1 = create(:budget_investment, :selected, heading: california, price: 600)
@@ -627,7 +615,7 @@ feature 'Ballots' do
       california = create(:budget_heading, group: group, price: 1000)
       bi1 = create(:budget_investment, :selected, heading: california, price: 600)
 
-      login_as(create(:user, :level_two))
+      login_as(user)
 
       visit budget_investments_path(budget, heading_id: california.id)
       within("#budget_investment_#{bi1.id}") do
