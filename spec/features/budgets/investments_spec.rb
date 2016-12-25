@@ -70,7 +70,7 @@ feature 'Budget Investments' do
 
     scenario "Default order is random" do
       per_page = Kaminari.config.default_per_page
-      (per_page + 2).times { create(:budget_investment) }
+      (per_page + 100).times { create(:budget_investment) }
 
       visit budget_investments_path(budget, heading_id: heading.id)
       order = all(".budget-investment h3").collect {|i| i.text }
