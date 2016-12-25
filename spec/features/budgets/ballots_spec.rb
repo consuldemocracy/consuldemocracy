@@ -104,8 +104,8 @@ feature 'Ballots' do
     context "Adding and Removing Investments" do
 
       scenario "Add a proposal", :js do
-        investment1 = create(:budget_investment, :selected, budget: budget, heading: heading, group: group, price: 10000)
-        investment2 = create(:budget_investment, :selected, budget: budget, heading: heading, group: group, price: 20000)
+        investment1 = create(:budget_investment, :selected, heading: heading, price: 10000)
+        investment2 = create(:budget_investment, :selected, heading: heading, price: 20000)
 
         visit budget_path(budget)
         click_link "Group 1"
@@ -132,7 +132,7 @@ feature 'Ballots' do
       end
 
       scenario "Removing a proposal", :js do
-        investment = create(:budget_investment, :selected, budget: budget, heading: heading, group: group, price: 10000)
+        investment = create(:budget_investment, :selected, heading: heading, price: 10000)
         ballot = create(:budget_ballot, user: user, budget: budget)
         ballot.investments << investment
 
@@ -356,8 +356,8 @@ feature 'Ballots' do
 
   scenario 'Removing spending proposals from ballot', :js do
     ballot = create(:budget_ballot, user: user, budget: budget)
-    investment = create(:budget_investment, :selected, price: 10, heading: heading, group: group)
-    create(:budget_ballot_line, ballot: ballot, investment: investment, heading: heading, group: group)
+    investment = create(:budget_investment, :selected, price: 10, heading: heading)
+    create(:budget_ballot_line, ballot: ballot, investment: investment)
 
     login_as(user)
     visit budget_ballot_path(budget)
