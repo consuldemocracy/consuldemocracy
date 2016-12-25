@@ -33,6 +33,14 @@ describe 'HasOrders' do
     expect(response.body).to eq('created_at (created_at votes_count flags_count relevance)')
   end
 
+  it "does not overwrite the has_orders options when doing several requests" do
+    get :index
+    # Since has_orders did valid_options.delete, the first call to :index might remove 'relevance' from
+    # the list by mistake.
+    get :index, search: 'ipsum'
+    expect(response.body).to eq('created_at (created_at votes_count flags_count relevance)')
+  end
+
   describe "the current order" do
     it "defaults to the first one on the list" do
       get :index
