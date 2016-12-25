@@ -14,12 +14,12 @@ feature 'Ballots' do
       visit budget_path(budget)
     end
 
+    let!(:city) { create(:budget_group, budget: budget, name: "City") }
+    let!(:districts) { create(:budget_group, budget: budget, name: "Districts") }
+
     context "Group and Heading Navigation" do
 
       scenario "Groups" do
-        city      = create(:budget_group, budget: budget, name: "City")
-        districts = create(:budget_group, budget: budget, name: "Districts")
-
         visit budget_path(budget)
 
         expect(page).to have_link "City"
@@ -27,9 +27,6 @@ feature 'Ballots' do
       end
 
       scenario "Headings" do
-        city      = create(:budget_group, budget: budget, name: "City")
-        districts = create(:budget_group, budget: budget, name: "Districts")
-
         city_heading1     = create(:budget_heading, group: city,      name: "Investments Type1")
         city_heading2     = create(:budget_heading, group: city,      name: "Investments Type2")
         district_heading1 = create(:budget_heading, group: districts, name: "District 1")
@@ -50,9 +47,6 @@ feature 'Ballots' do
       end
 
       scenario "Investments" do
-        city      = create(:budget_group, budget: budget, name: "City")
-        districts = create(:budget_group, budget: budget, name: "Districts")
-
         city_heading1     = create(:budget_heading, group: city,      name: "Investments Type1")
         city_heading2     = create(:budget_heading, group: city,      name: "Investments Type2")
         district_heading1 = create(:budget_heading, group: districts, name: "District 1")
@@ -90,9 +84,6 @@ feature 'Ballots' do
       end
 
       scenario "Redirect to first heading if there is only one" do
-        city      = create(:budget_group, budget: budget, name: "City")
-        districts = create(:budget_group, budget: budget, name: "Districts")
-
         city_heading      = create(:budget_heading, group: city,      name: "City")
         district_heading1 = create(:budget_heading, group: districts, name: "District 1")
         district_heading2 = create(:budget_heading, group: districts, name: "District 2")
@@ -173,9 +164,6 @@ feature 'Ballots' do
     context "Balloting in multiple headings" do
 
       scenario "Independent progress bar for headings", :js do
-        city      = create(:budget_group, budget: budget, name: "City")
-        districts = create(:budget_group, budget: budget, name: "Districts")
-
         city_heading      = create(:budget_heading, group: city,      name: "All city",   price: 10000000)
         district_heading1 = create(:budget_heading, group: districts, name: "District 1", price: 1000000)
         district_heading2 = create(:budget_heading, group: districts, name: "District 2", price: 2000000)
