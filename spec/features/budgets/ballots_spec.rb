@@ -2,13 +2,11 @@ require 'rails_helper'
 
 feature 'Ballots' do
 
-  let!(:user) { create(:user, :level_two) }
-  let!(:budget)  { create(:budget, phase: "balloting") }
-  let!(:group)   { create(:budget_group, budget: budget, name: "Group 1") }
-  let!(:heading) { create(:budget_heading, group: group, name: "Heading 1", price: 1000000) }
+  let!(:user)       { create(:user, :level_two) }
+  let!(:budget)     { create(:budget, phase: "balloting") }
   let!(:states)     { create(:budget_group, budget: budget, name: "States") }
   let!(:california) { create(:budget_heading, group: states, name: "California", price: 1000) }
-  let!(:new_york)   { create(:budget_heading, group: states, name: "New York") }
+  let!(:new_york)   { create(:budget_heading, group: states, name: "New York", price: 1000000) }
 
   context "Voting" do
 
@@ -104,11 +102,12 @@ feature 'Ballots' do
     context "Adding and Removing Investments" do
 
       scenario "Add a proposal", :js do
-        investment1 = create(:budget_investment, :selected, heading: heading, price: 10000)
-        investment2 = create(:budget_investment, :selected, heading: heading, price: 20000)
+        investment1 = create(:budget_investment, :selected, heading: new_york, price: 10000)
+        investment2 = create(:budget_investment, :selected, heading: new_york, price: 20000)
 
         visit budget_path(budget)
-        click_link "Group 1"
+        click_link "States"
+        click_link "New York"
 
         add_to_ballot(investment1)
 
@@ -132,12 +131,13 @@ feature 'Ballots' do
       end
 
       scenario "Removing a proposal", :js do
-        investment = create(:budget_investment, :selected, heading: heading, price: 10000)
+        investment = create(:budget_investment, :selected, heading: new_york, price: 10000)
         ballot = create(:budget_ballot, user: user, budget: budget)
         ballot.investments << investment
 
         visit budget_path(budget)
-        click_link group.name
+        click_link "States"
+        click_link "New York"
 
         expect(page).to have_content investment.title
         expect(page).to have_css("#amount-spent", text: "€10,000")
@@ -231,9 +231,9 @@ feature 'Ballots' do
     end
 
     scenario "Display progress bar after first vote", :js do
-      investment = create(:budget_investment, :selected, heading: heading, price: 10000)
+      investment = create(:budget_investment, :selected, heading: new_york, price: 10000)
 
-      visit budget_investments_path(budget, heading_id: heading.id)
+      visit budget_investments_path(budget, heading_id: new_york.id)
 
       expect(page).to have_content investment.title
       add_to_ballot(investment)
@@ -304,6 +304,8 @@ feature 'Ballots' do
 
   context 'Showing the ballot' do
     scenario "Do not display heading name if there is only one heading in the group (example: group city)" do
+      group = create(:budget_group, budget: budget)
+      heading = create(:budget_heading, group: group)
       visit budget_path(budget)
       click_link group.name
       # No need to click on the heading name
@@ -318,21 +320,15 @@ feature 'Ballots' do
       heading1 = create(:budget_heading, name: "District 1", group: group1, price: 100)
       heading2 = create(:budget_heading, name: "District 2", group: group2, price: 50)
 
+      investment1 = create(:budget_investment, :selected, price: 10, heading: heading1)
+      investment2 = create(:budget_investment, :selected, price: 10, heading: heading1)
+      investment3 = create(:budget_investment, :selected, price: 5,  heading: heading2)
+      investment4 = create(:budget_investment, :selected, price: 5,  heading: heading2)
+      investment5 = create(:budget_investment, :selected, price: 5,  heading: heading2)
+
       ballot = create(:budget_ballot, user: user, budget: budget)
 
-      investment1 = create(:budget_investment, :selected, price: 10, heading: heading1, group: group1)
-      investment2 = create(:budget_investment, :selected, price: 10, heading: heading1, group: group1)
-
-      investment3 = create(:budget_investment, :selected, price: 5,  heading: heading2, group: group2)
-      investment4 = create(:budget_investment, :selected, price: 5,  heading: heading2, group: group2)
-      investment5 = create(:budget_investment, :selected, price: 5,  heading: heading2, group: group2)
-
-      create(:budget_ballot_line, ballot: ballot, investment: investment1, group: group1)
-      create(:budget_ballot_line, ballot: ballot, investment: investment2, group: group1)
-
-      create(:budget_ballot_line, ballot: ballot, investment: investment3, group: group2)
-      create(:budget_ballot_line, ballot: ballot, investment: investment4, group: group2)
-      create(:budget_ballot_line, ballot: ballot, investment: investment5, group: group2)
+      ballot.investments << investment1 << investment2 << investment3 << investment4 << investment5
 
       login_as(user)
       visit budget_ballot_path(budget)
@@ -355,9 +351,9 @@ feature 'Ballots' do
   end
 
   scenario 'Removing spending proposals from ballot', :js do
+    investment = create(:budget_investment, :selected, price: 10, heading: new_york)
     ballot = create(:budget_ballot, user: user, budget: budget)
-    investment = create(:budget_investment, :selected, price: 10, heading: heading)
-    create(:budget_ballot_line, ballot: ballot, investment: investment)
+    ballot.investments << investment
 
     login_as(user)
     visit budget_ballot_path(budget)
@@ -373,14 +369,14 @@ feature 'Ballots' do
   end
 
   scenario 'Removing spending proposals from ballot (sidebar)', :js do
-    investment1 = create(:budget_investment, :selected, price: 10000, heading: heading)
-    investment2 = create(:budget_investment, :selected, price: 20000, heading: heading)
+    investment1 = create(:budget_investment, :selected, price: 10000, heading: new_york)
+    investment2 = create(:budget_investment, :selected, price: 20000, heading: new_york)
 
     ballot = create(:budget_ballot, budget: budget, user: user)
     ballot.investments << investment1 << investment2
 
     login_as(user)
-    visit budget_investments_path(budget, heading_id: heading.id)
+    visit budget_investments_path(budget, heading_id: new_york.id)
 
     expect(page).to have_css("#amount-spent", text: "€30,000")
     expect(page).to have_css("#amount-available", text: "€970,000")
@@ -412,9 +408,9 @@ feature 'Ballots' do
   context 'Permissions' do
 
     scenario 'User not logged in', :js do
-      investment = create(:budget_investment, :selected, heading: heading)
+      investment = create(:budget_investment, :selected, heading: new_york)
 
-      visit budget_investments_path(budget, heading_id: heading.id)
+      visit budget_investments_path(budget, heading_id: new_york.id)
 
       within("#budget_investment_#{investment.id}") do
         find("div.ballot").hover
@@ -425,10 +421,10 @@ feature 'Ballots' do
 
     scenario 'User not verified', :js do
       unverified_user = create(:user)
-      investment = create(:budget_investment, :selected, heading: heading)
+      investment = create(:budget_investment, :selected, heading: new_york)
 
       login_as(unverified_user)
-      visit budget_investments_path(budget, heading_id: heading.id)
+      visit budget_investments_path(budget, heading_id: new_york.id)
 
       within("#budget_investment_#{investment.id}") do
         find("div.ballot").hover
@@ -439,10 +435,10 @@ feature 'Ballots' do
 
     scenario 'User is organization', :js do
       org = create(:organization)
-      investment = create(:budget_investment, :selected, heading: heading)
+      investment = create(:budget_investment, :selected, heading: new_york)
 
       login_as(org.user)
-      visit budget_investments_path(budget, heading_id: heading.id)
+      visit budget_investments_path(budget, heading_id: new_york.id)
 
       within("#budget_investment_#{investment.id}") do
         find("div.ballot").hover
@@ -451,19 +447,19 @@ feature 'Ballots' do
     end
 
     scenario 'Unselected investments' do
-      investment = create(:budget_investment, heading: heading)
+      investment = create(:budget_investment, heading: new_york)
 
       login_as(user)
-      visit budget_investments_path(budget, heading_id: heading.id, unfeasible: 1)
+      visit budget_investments_path(budget, heading_id: new_york.id, unfeasible: 1)
 
       expect(page).to_not have_css("#budget_investment_#{investment.id}")
     end
 
     scenario 'Investments with feasibility undecided are not shown' do
-      investment = create(:budget_investment, feasibility: "undecided", heading: heading)
+      investment = create(:budget_investment, feasibility: "undecided", heading: new_york)
 
       login_as(user)
-      visit budget_investments_path(budget, heading_id: heading.id)
+      visit budget_investments_path(budget, heading_id: new_york.id)
 
       within("#budget-investments") do
         expect(page).to_not have_css("div.ballot")
