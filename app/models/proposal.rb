@@ -14,7 +14,7 @@ class Proposal < ActiveRecord::Base
   RETIRE_OPTIONS = %w(duplicated started unfeasible done other)
 
   belongs_to :author, -> { with_hidden }, class_name: 'User', foreign_key: 'author_id'
-  belongs_to :public_author, -> { public_activity }, class_name: 'User', foreign_key: 'author_id'
+  belongs_to :public_author, -> { with_public_activity }, class_name: 'User', foreign_key: 'author_id'
   belongs_to :geozone
   has_many :comments, as: :commentable
   has_many :proposal_notifications
