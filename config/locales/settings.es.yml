@@ -38,3 +38,5 @@ es:
         final_voting_allowed: Votaciones finales en propuestas de inversión.
       probe:
         plaza: "Sondeo Plaza España"
+    mailer_from_name: Nombre email remitente
+    mailer_from_address: Dirección email remitente
