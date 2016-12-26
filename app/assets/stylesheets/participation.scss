@@ -1049,16 +1049,63 @@
 
 .poll, .poll-question {
   background: white;
-  border-bottom: 1px solid $border;
+  border-radius: rem-calc(6);
   margin-bottom: $line-height/2;
+}
+
+.poll {
   padding: $line-height;
 
-  .date {
-    color: $brand;
+  .dates {
+    color: $text-medium;
     font-size: $small-font-size;
   }
 
   h3 a {
     color: $text;
+  }
+}
+
+h2.questions-callout {
+  font-size: $base-font-size;
+}
+
+.poll-question {
+  padding: 0 $line-height;
+
+  h3 {
+    padding-top: $line-height;
+
+    a {
+      color: $text;
+    }
+  }
+}
+
+.poll-question-answers {
+
+  .button {
+    margin-right: $line-height/4;
+    min-width: rem-calc(168);
+
+    &.answered {
+      background: #F4F8EC;
+      border: 2px solid #92BA48;
+      color: $text;
+      position: relative;
+
+      &:after {
+        background: #92BA48;
+        border-radius: rem-calc(20);
+        content: "\6c";
+        color: white;
+        font-family: "icons" !important;
+        font-size: rem-calc(12);
+        padding: $line-height/4;
+        position: absolute;
+        right: -6px;
+        top: -6px;
+      }
+    }
   }
 }
