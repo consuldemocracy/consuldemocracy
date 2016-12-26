@@ -10,7 +10,7 @@
 
 <div class="callout margin-top">
   <p><strong><%= t("admin.signature_sheets.show.documents") %></strong></p>
-  <%= @signature_sheet.document_numbers %>
+  <%= simple_format @signature_sheet.document_numbers %>
 </div>
 
 
@@ -29,7 +29,7 @@
       <%= t("admin.signature_sheets.show.unverified_error") %>
     </strong>
   </p>
-  <%= @signature_sheet.signatures.unverified.map(&:document_number).join(",") %>
+  <%= @signature_sheet.signatures.unverified.map(&:document_number).join(", ") %>
 </div>
 
 <% unless @signature_sheet.processed? %>
