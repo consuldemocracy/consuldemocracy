@@ -25,6 +25,7 @@ Setting.create(key: 'blog_url', value: '/blog')
 Setting.create(key: 'url', value: 'http://localhost:3000')
 Setting.create(key: 'org_name', value: 'Consul')
 Setting.create(key: 'place_name', value: 'City')
+
 Setting.create(key: 'feature.debates', value: "true")
 Setting.create(key: 'feature.spending_proposals', value: "true")
 Setting.create(key: 'feature.spending_proposal_features.phase1', value: nil)
@@ -40,8 +41,11 @@ Setting.create(key: 'feature.probe.plaza', value: 'true')
 Setting.create(key: 'feature.human_rights.accepting', value: 'true')
 Setting.create(key: 'feature.human_rights.voting', value: 'true')
 Setting.create(key: 'feature.human_rights.closed', value: 'true')
+
+Setting.create(key: 'mailer_from_name', value: 'Consul')
+Setting.create(key: 'mailer_from_address', value: 'noreply@consul.dev')
+
 Setting.create(key: 'per_page_code', value: "")
-Setting.create(key: 'comments_body_max_length', value: '1000')
 Setting.create(key: 'analytics_url', value: "")
 
 piwik_tracking_code = "<!-- Piwik -->
