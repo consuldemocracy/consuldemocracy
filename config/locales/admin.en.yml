@@ -191,11 +191,17 @@ en:
         questions_title: "List of questions"
         remove_question: "Remove question from poll"
         add_booth: "Assign booth"
+        add_question: "Include question"
         name: "Name"
         location: "Location"
         email: "Email"
         search_results: "Search results"
         no_search_results: "No results found"
+      flash:
+        question_added: "Question added to this poll"
+        error_on_question_added: "Question could not be assigned to this poll"
+        question_removed: "Question removed from this poll"
+        error_on_question_removed: "Question could not be removed from this poll"
     questions:
       index:
         title: "Questions"
@@ -309,6 +315,9 @@ en:
       booths_search:
         button: Search
         placeholder: Search booth by name
+      poll_questions_search:
+        button: Search
+        placeholder: Search poll questions
       proposal_search:
         button: Search
         placeholder: Search proposals by title, code, description or question

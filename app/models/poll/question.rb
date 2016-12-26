@@ -21,6 +21,7 @@ class Poll::Question < ActiveRecord::Base
   validates :title, length: { in: 4..Poll::Question.title_max_length }
   validates :description, length: { maximum: Poll::Question.description_max_length }
 
+  scope :no_poll,       -> { where(poll_id: nil) }
   scope :by_poll_id,    -> (poll_id)    { where(poll_id: poll_id) }
   scope :by_geozone_id, -> (geozone_id) { where(geozones: {id: geozone_id}.joins(:geozones)) }
 

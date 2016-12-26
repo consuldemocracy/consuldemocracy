@@ -189,6 +189,9 @@ Rails.application.routes.draw do
       end
       resources :polls do
         get :search_booths, on: :member
+        get :search_questions, on: :member
+        patch :add_question, on: :member
+        patch :remove_question, on: :member
       end
 
       resources :booths
