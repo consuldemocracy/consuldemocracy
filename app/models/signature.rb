@@ -60,9 +60,10 @@ class Signature < ActiveRecord::Base
   end
 
   def in_census?
-    document_types.any? do |document_type|
+    response = document_types.detect do |document_type|
       CensusApi.new.call(document_type, document_number).valid?
     end
+    response.present?
   end
 
   def set_user
