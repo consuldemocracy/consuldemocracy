@@ -1,7 +1,7 @@
 API_TYPE_DEFINITIONS = {
   User     => %I[ id username proposals organization ],
   Debate   => %I[ id title description author_id author created_at comments ],
-  Proposal => %I[ id title description public_author created_at comments ],
+  Proposal => %I[ id title description external_url cached_votes_up comments_count hot_score confidence_score created_at summary video_url geozone_id retired_at retired_reason retired_explanation geozone comments public_author ],
   Comment  => %I[ id body user_id user commentable_id ],
   Organization => %I[ id name ]
 }
