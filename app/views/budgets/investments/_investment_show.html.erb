@@ -6,7 +6,7 @@
     <li><%= investment.heading.name %></a></li>
   </ul>
 
-  <div id="<%= dom_id(investment) %>" class="row">
+  <div class="row">
     <div class="small-12 medium-9 column">
       <%= link_to :back, class: "back" do %>
         <span class="icon-angle-left"></span>
@@ -65,7 +65,11 @@
             </div>
           <% elsif investment.should_show_ballots? %>
             <div id="<%= dom_id(investment) %>_ballot">
-              <%= render 'ballot', investment: investment %>
+              <%= render partial: 'ballot', locals: {
+                investment: investment,
+                investment_ids: investment_ids,
+                ballot: ballot,
+              } %>
             </div>
          <% end %>
         </div>

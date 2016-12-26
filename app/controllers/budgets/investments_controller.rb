@@ -19,13 +19,14 @@ module Budgets
     has_orders %w{most_voted newest oldest}, only: :show
     has_orders ->(c){ c.instance_variable_get(:@budget).balloting? ? %w{random price} : %w{random confidence_score} }, only: :index
 
-    invisible_captcha only: [:create, :update], honeypot: :subtitle
+    invisible_captcha only: [:create, :update], honeypot: :subtitle, scope: :budget_investment
 
     respond_to :html, :js
 
     def index
-      @investments = apply_filters_and_search(@investments).send("sort_by_#{@current_order}").page(params[:page]).per(10).for_render
-      set_budget_investment_votes(@investments)
+      @investments = @investments.apply_filters_and_search(@budget, params).send("sort_by_#{@current_order}").page(params[:page]).per(10).for_render
+      @investment_ids = @investments.pluck(:id)
+      load_investment_votes(@investments)
     end
 
     def new
@@ -35,15 +36,19 @@ module Budgets
       @commentable = @investment
       @comment_tree = CommentTree.new(@commentable, params[:page], @current_order)
       set_comment_flags(@comment_tree.comments)
-      set_budget_investment_votes(@investment)
+      load_investment_votes(@investment)
+      @investment_ids = [@investment.id]
     end
 
     def create
       @investment.author = current_user
 
       if @investment.save
-        notice = t('flash.actions.create.budget_investment', activity: "<a href='#{user_path(current_user, filter: :budget_investments)}'>#{t('layouts.header.my_activity_link')}</a>")
-        redirect_to @investment, notice: notice, flash: { html_safe: true }
+        activity_link = view_context.link_to(t('layouts.header.my_activity_link'),
+                                             user_path(current_user, filter: :budget_investments))
+        redirect_to budget_investment_path(@budget, @investment),
+                    flash: { html_safe: true },
+                    notice: t('flash.actions.create.budget_investment', activity: activity_link)
       else
         render :new
       end
@@ -56,10 +61,14 @@ module Budgets
 
     def vote
       @investment.register_selection(current_user)
-      set_budget_investment_votes(@investment)
+      load_investment_votes(@investment)
     end
 
     private
+
+      def load_investment_votes(investments)
+        @investment_votes = current_user ? current_user.budget_investment_votes(investments) : {}
+      end
 
       def set_random_seed
         if params[:order] == 'random' || params[:order].blank?
@@ -71,35 +80,19 @@ module Budgets
       end
 
       def investment_params
-        params.require(:investment).permit(:title, :description, :external_url, :heading_id, :terms_of_service)
-      end
-
-      def apply_filters_and_search(investments)
-        if params[:heading_id].blank?
-          @filter_heading_name = t('geozones.none')
-        else
-          @filter_heading = @budget.headings.find(params[:heading_id])
-          @filter_heading_name = @filter_heading.name
-        end
-
-        investments = investments.by_heading(params[:heading_id].presence || @budget.headings.first)
-
-        if params[:unfeasible].present?
-          investments = investments.unfeasible
-        else
-          investments = @budget.balloting? ? investments.feasible.valuation_finished : investments.not_unfeasible
-        end
-
-        investments = investments.search(params[:search]) if params[:search].present?
-        investments
+        params.require(:budget_investment).permit(:title, :description, :external_url, :heading_id, :terms_of_service)
       end
 
       def load_ballot
-        @ballot = Budget::Ballot.where(user: current_user, budget: @budget).first_or_create
+        query = Budget::Ballot.where(user: current_user, budget: @budget)
+        @ballot = @budget.balloting? ? query.first_or_create : query.first_or_initialize
       end
 
       def load_heading
-        @heading = @budget.headings.find(params[:heading_id]) if params[:heading_id].present?
+        if params[:heading_id].present?
+          @heading = @budget.headings.find(params[:heading_id])
+          @assigned_heading = @ballot.try(:heading_for_group, @heading.try(:group))
+        end
       end
 
   end

@@ -28,7 +28,7 @@
           <h4 class="amount-spent text-right">
             <%= t("budgets.ballots.show.amount_spent") %>
             <span>
-              <%= @budget.formatted_amount(@ballot.amount_spent(@ballot.heading_for_group(group).id))) %>
+              <%= @ballot.formatted_amount_spent(@ballot.heading_for_group(group)) %>
             </span>
           </h4>
         <% else %>
@@ -47,7 +47,7 @@
 
         <h4>
           <%= t("budgets.ballots.show.remaining",
-              amount_city: @budget.formatted_amount(@ballot.amount_available(@ballot.heading_for_group(group))))).html_safe %>
+                amount: @ballot.formatted_amount_available(@ballot.heading_for_group(group))).html_safe %>
         </h4>
       </div>
     <% end %>

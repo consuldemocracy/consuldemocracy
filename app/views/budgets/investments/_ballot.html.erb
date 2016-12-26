@@ -1,6 +1,6 @@
-<% reason = investment.reason_for_not_being_ballotable_by(current_user, investment_ballot) %>
-<div class="supports ballot">
-  <% if investment_ballot.has_investment?(investment) %>
+<% reason = investment.reason_for_not_being_ballotable_by(current_user, ballot) %>
+<div class="js-participation supports ballot">
+  <% if ballot.has_investment?(investment) %>
 
     <div class="remove supported inline-block">
       <span class="icon-check-circle bounceIn animated"
@@ -40,11 +40,11 @@
 
   <% end %>
 
-  <% if reason.present? && !investment_ballot.has_investment?(investment) %>
+  <% if reason.present? && !ballot.has_investment?(investment) %>
 
-    <div class="no-supports-allowed" style='display:none'>
+    <div class="js-participation-not-allowed" style='display:none'>
       <p>
-        <%= t("votes.budget_investments.#{reason}",
+        <%= t("budgets.ballots.reasons_for_not_balloting.#{reason}",
               verify_account: link_to(t("votes.verify_account"), verification_path),
               signin: link_to(t("votes.signin"), new_user_session_path),
               signup: link_to(t("votes.signup"), new_user_registration_path),

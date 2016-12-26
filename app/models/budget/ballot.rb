@@ -9,19 +9,27 @@ class Budget
     has_many :headings, -> { uniq }, through: :groups
 
     def add_investment(investment)
-      lines.create!(budget: budget, investment: investment, heading: investment.heading, group_id: investment.heading.group_id)
+      lines.create!(investment: investment)
     end
 
     def total_amount_spent
       investments.sum(:price).to_i
     end
 
-    def amount_spent(heading_id)
-      investments.by_heading(heading_id).sum(:price).to_i
+    def amount_spent(heading)
+      investments.by_heading(heading.id).sum(:price).to_i
+    end
+
+    def formatted_amount_spent(heading)
+      budget.formatted_amount(amount_spent(heading))
     end
 
     def amount_available(heading)
-      budget.heading_price(heading) - amount_spent(heading.id)
+      budget.heading_price(heading) - amount_spent(heading)
+    end
+
+    def formatted_amount_available(heading)
+      budget.formatted_amount(amount_available(heading))
     end
 
     def has_lines_in_group?(group)

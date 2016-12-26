@@ -4,10 +4,11 @@ class Management::Budgets::InvestmentsController < Management::BaseController
   load_resource :investment, through: :budget, class: 'Budget::Investment'
 
   before_action :only_verified_users, except: :print
+  before_action :load_heading, only: [:index, :show, :print]
 
   def index
-    @investments = apply_filters_and_search(@investments).page(params[:page])
-    set_investment_votes(@investments)
+    @investments = @investments.apply_filters_and_search(@budget, params).page(params[:page])
+    load_investment_votes(@investments)
   end
 
   def new
@@ -26,22 +27,22 @@ class Management::Budgets::InvestmentsController < Management::BaseController
   end
 
   def show
-    set_investment_votes(@investment)
+    load_investment_votes(@investment)
   end
 
   def vote
     @investment.register_selection(managed_user)
-    set_investment_votes(@investment)
+    load_investment_votes(@investment)
   end
 
   def print
-    @investments = apply_filters_and_search(@investments).order(cached_votes_up: :desc).for_render.limit(15)
-    set_investment_votes(@investments)
+    @investments = @investments.apply_filters_and_search(@budget, params).order(cached_votes_up: :desc).for_render.limit(15)
+    load_investment_votes(@investments)
   end
 
   private
 
-    def set_investment_votes(investments)
+    def load_investment_votes(investments)
       @investment_votes = managed_user ? managed_user.budget_investment_votes(investments) : {}
     end
 
@@ -53,14 +54,8 @@ class Management::Budgets::InvestmentsController < Management::BaseController
       check_verified_user t("management.budget_investments.alert.unverified_user")
     end
 
-    def apply_filters_and_search(investments)
-      investments = params[:unfeasible].present? ? investments.unfeasible : investments.not_unfeasible
-      if params[:heading_id].present?
-        investments = investments.by_heading(params[:heading_id])
-        @heading = Budget::Heading.find(params[:heading_id])
-      end
-      investments = investments.search(params[:search]) if params[:search].present?
-      investments
+    def load_heading
+      @heading = @budget.headings.find(params[:heading_id]) if params[:heading_id].present?
     end
 
 end

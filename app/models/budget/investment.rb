@@ -44,6 +44,7 @@ class Budget
     scope :not_unfeasible,         -> { where.not(feasibility: "unfeasible") }
     scope :undecided,              -> { where(feasibility: "undecided") }
     scope :with_supports,          -> { where('cached_votes_up > 0') }
+    scope :selected,               -> { where(selected: true) }
 
     scope :by_group,    -> (group_id)    { where(group_id: group_id) }
     scope :by_heading,  -> (heading_id)  { where(heading_id: heading_id) }
@@ -148,6 +149,7 @@ class Budget
 
     def reason_for_not_being_ballotable_by(user, ballot)
       return permission_problem(user)    if permission_problem?(user)
+      return :not_selected               unless selected?
       return :no_ballots_allowed         unless budget.balloting?
       return :different_heading_assigned unless ballot.valid_heading?(heading)
       return :not_enough_money           if ballot.present? && !enough_money?(ballot)
@@ -205,11 +207,23 @@ class Budget
       budget.formatted_amount(price)
     end
 
+    def self.apply_filters_and_search(budget, params)
+      investments = all
+      if budget.balloting?
+        investments = investments.selected
+      else
+        investments = params[:unfeasible].present? ? investments.unfeasible : investments.not_unfeasible
+      end
+      investments = investments.by_heading(params[:heading_id]) if params[:heading_id].present?
+      investments = investments.search(params[:search])         if params[:search].present?
+      investments
+    end
+
     private
 
       def set_denormalized_ids
-        self.group_id ||= self.heading.group_id
-        self.budget_id ||= self.heading.group.budget_id
+        self.group_id ||= self.heading.try(:group_id)
+        self.budget_id ||= self.heading.try(:group).try(:budget_id)
       end
   end
 end

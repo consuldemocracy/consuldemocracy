@@ -1,4 +1,4 @@
-<% if @filter_heading_name.present? %>
+<% if @heading.present? %>
   <section class="no-margin-top margin-bottom">
     <div class="expanded jumbo-budget budget-heading padding">
 
@@ -11,7 +11,7 @@
 
           <% if can? :show, @ballot %>
             <%= link_to t("budget.investments.header.check_ballot"),
-                        budget_ballot_path(@budget, @ballot),
+                        budget_ballot_path(@budget),
                         class: "button float-right" %>
           <% end %>
         </div>
@@ -27,20 +27,19 @@
                             budget_ballot_path(@budget) %>
               <% end %>
             </div>
-              <% if false
-                    #@heading.present? &&
-                    #@ballot.heading.present? &&
-                    #@ballot.heading != @heading
-              %>
-              <br>
-              <p class="callout warning inline-block">
-                <%= t("budget.investments.header.different_heading_active") %>
-                <%= link_to @ballot.heading.name, budget_investments_path(budget_id: budget.id, heading_id: @ballot.heading_id) %>
-              </p>
+              <% if @ballot.valid_heading?(@heading) %>
+                <div id="progress_bar" class="no-margin-top">
+                  <%= render 'budgets/ballot/progress_bar' %>
+                </div>
               <% else %>
-              <div id="progress_bar" class="no-margin-top">
-                <%= render 'budgets/ballot/progress_bar' %>
-              </div>
+                <br>
+                <p class="callout warning inline-block">
+                  <%= t("budget.investments.header.different_heading_assigned_html",
+                        heading_link: link_to(
+                          @assigned_heading.name,
+                          budget_investments_path(@budget, heading: @assigned_heading))
+                       ) %>
+                </p>
               <% end %>
           </div>
         </div>

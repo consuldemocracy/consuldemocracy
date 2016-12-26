@@ -4,11 +4,14 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
 
   before_action :load_budget
   before_action :load_investment, only: [:show, :edit, :update]
+  before_action :load_ballot, only: [:show, :index]
 
   has_filters %w{valuation_open without_admin managed valuating valuation_finished all}, only: :index
 
   def index
-    @investments = Budget::Investment.scoped_filter(params, @current_filter).order(cached_votes_up: :desc, created_at: :desc).page(params[:page])
+    @investments = Budget::Investment.scoped_filter(params, @current_filter)
+                                     .order(cached_votes_up: :desc, created_at: :desc)
+                                     .page(params[:page])
   end
 
   def show
@@ -20,7 +23,7 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
     load_tags
   end
 
-   def update
+  def update
     if @investment.update(budget_investment_params)
       redirect_to admin_budget_budget_investment_path(@budget, @investment, Budget::Investment.filter_params(params)),
                   notice: t("flash.actions.update.budget_investment")
@@ -35,7 +38,8 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
   private
 
     def budget_investment_params
-      params.require(:budget_investment).permit(:title, :description, :external_url, :heading_id, :administrator_id, :tag_list, valuator_ids: [])
+      params.require(:budget_investment)
+            .permit(:title, :description, :external_url, :heading_id, :administrator_id, :tag_list, valuator_ids: [])
     end
 
     def load_budget
@@ -56,5 +60,10 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
 
     def load_tags
       @tags = ActsAsTaggableOn::Tag.budget_investment_tags
+    end
+
+    def load_ballot
+      query = Budget::Ballot.where(user: current_user, budget: @budget)
+      @ballot = @budget.balloting? ? query.first_or_create : query.first_or_initialize
     end
 end

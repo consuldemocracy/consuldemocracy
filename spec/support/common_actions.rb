@@ -159,11 +159,6 @@ module CommonActions
     expect(page).to have_selector('.in-favor', visible: false)
   end
 
-  def expect_message_you_need_to_sign_in_to_ballot
-    expect(page).to have_content 'Not Logged In'
-    expect(page).to have_selector('.in-favor a', visible: false)
-  end
-
   def expect_message_you_need_to_sign_in_to_vote_comments
     expect(page).to have_content 'You must Sign in or Sign up to vote'
     expect(page).to have_selector('.participation-allowed', visible: false)
@@ -178,11 +173,6 @@ module CommonActions
   def expect_message_only_verified_can_vote_proposals
     expect(page).to have_content 'Only verified users can vote on proposals'
     expect(page).to have_selector('.in-favor', visible: false)
-  end
-
-  def expect_message_only_verified_can_vote_investments
-    expect(page).to have_content 'Not Verified'
-    expect(page).to have_selector('.in-favor a', visible: false)
   end
 
   def expect_message_voting_not_allowed
@@ -278,7 +268,9 @@ module CommonActions
 
   def add_to_ballot(budget_investment)
     within("#budget_investment_#{budget_investment.id}") do
-      click_link "Spend money on this"#find('.add a').trigger('click')
+      find('.add a').trigger('click')
+      expect(page).to have_content "Remove"
     end
   end
+
 end

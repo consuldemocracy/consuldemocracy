@@ -8,8 +8,8 @@ en:
       erase_account_link: Erase my account
       finish_verification: Complete verification
       notifications: Notifications
-      organization_name_label: Name of organisation
-      organization_responsible_name_placeholder: Representative of the organisation/collective
+      organization_name_label: Name of organization
+      organization_responsible_name_placeholder: Representative of the organization/collective
       personal: Personal details
       phone_number_label: Phone number
       public_activity_label: Keep my list of activities public
@@ -42,10 +42,6 @@ en:
       selecting: Selecting investment projects
       balloting: Voting investment projects
       finished: Finished
-  budget_investments:
-    notice:
-      could_not_vote: Could not vote
-      voted: Vote stored successfully
   comments:
     comment:
       admin: Administrator
@@ -216,7 +212,7 @@ en:
       new_notifications:
         one: You have a new notification
         other: You have %{count} new notifications
-      no_notifications: You don't have new notifications
+      no_notifications: "You don't have new notifications"
       open: open
       open_city_slogan_html: There are cities that are governed directly by their inhabitants, who <b>discuss</b> the topics they are concerned about, <b>propose</b> ideas to improve their lives and <b>decide</b> among themselves which ones will be carried out.
       open_city_title: Love the city, and it will become a city you love.
@@ -586,7 +582,7 @@ en:
     anonymous: Too many anonymous votes to admit vote %{verify_account}.
     comment_unauthenticated: You must %{signin} or %{signup} to vote.
     disagree: I disagree
-    organizations: Organisations are not permitted to vote
+    organizations: Organizations are not permitted to vote
     signin: Sign in
     signup: Sign up
     supports: Supports
@@ -596,7 +592,7 @@ en:
     spending_proposals:
       not_logged_in: You must %{signin} or %{signup} to continue.
       not_verified: Only verified users can vote on proposals; %{verify_account}.
-      organization: Organisations are not permitted to vote
+      organization: Organizations are not permitted to vote
       unfeasible: Unfeasible investment projects can not be supported
       not_voting_allowed: Voting phase is closed
   welcome:
