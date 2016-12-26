@@ -13,32 +13,24 @@
   <%= @signature_sheet.document_numbers %>
 </div>
 
-<% if @signature_sheet.signatures.unverified.any? %>
-  <div id="verified_signatures" class="callout success">
-    <strong>
-      <%= t("admin.signature_sheets.show.verified",
-          count: @signature_sheet.signatures.verified.count ) %>
-    </strong>
-  </div>
 
-  <div id="unverified_signatures" class="callout alert">
-    <p>
-      <strong>
-        <%= t("admin.signature_sheets.show.unverified",
-            count: @signature_sheet.signatures.unverified.count ) %>
-        (No verificadas por el Padrón)
-      </strong>
-    </p>
-    <%= @signature_sheet.signatures.unverified.map(&:document_number).join(",") %>
-  </div>
-<% else %>
-  <div class="callout success">
+<div id="verified_signatures" class="callout success">
+  <strong>
+    <%= t("admin.signature_sheets.show.verified",
+        count: @signature_sheet.signatures.verified.count ) %>
+  </strong>
+</div>
+
+<div id="unverified_signatures" class="callout alert">
+  <p>
     <strong>
-      <%= t("admin.signature_sheets.show.all_verified",
-          count: @signature_sheet.signatures.verified.count ) %>
+      <%= t("admin.signature_sheets.show.unverified",
+          count: @signature_sheet.signatures.unverified.count ) %>
+      <%= t("admin.signature_sheets.show.unverified_error") %>
     </strong>
-  </div>
-<% end %>
+  </p>
+  <%= @signature_sheet.signatures.unverified.map(&:document_number).join(",") %>
+</div>
 
 <% unless @signature_sheet.processed? %>
   <div class="callout primary margin-top">
