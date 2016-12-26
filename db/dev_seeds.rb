@@ -41,6 +41,7 @@ Setting.create(key: 'feature.probe.plaza', value: 'true')
 Setting.create(key: 'feature.human_rights.accepting', value: 'true')
 Setting.create(key: 'feature.human_rights.voting', value: 'true')
 Setting.create(key: 'feature.human_rights.closed', value: 'true')
+Setting.create(key: 'feature.signature_sheets', value: "true")
 
 Setting.create(key: 'mailer_from_name', value: 'Consul')
 Setting.create(key: 'mailer_from_address', value: 'noreply@consul.dev')

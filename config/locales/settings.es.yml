@@ -28,6 +28,7 @@ es:
       facebook_login: Registro con Facebook
       google_login: Registro con Google
       debates: Debates
+      signature_sheets: Hojas de firmas
       spending_proposals: Propuestas de inversión
       spending_proposal_features:
         phase1: "Prespuestos participativos: Fase 1 - Aceptar propuestas"

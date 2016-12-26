@@ -1,4 +1,6 @@
 ActsAsVotable::Vote.class_eval do
+  belongs_to :signature
+
   def self.for_debates(debates)
     where(votable_type: 'Debate', votable_id: debates)
   end
@@ -26,4 +28,5 @@ ActsAsVotable::Vote.class_eval do
   def value
     vote_flag
   end
+
 end

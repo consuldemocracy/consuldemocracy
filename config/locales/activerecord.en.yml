@@ -78,6 +78,10 @@ en:
         external_url: "Link to additional documentation"
         geozone_id: "Scope of operation"
         title: "Title"
+      signature_sheet:
+        signable_type: "Signable type"
+        signable_id: "Signable ID"
+        document_numbers: "Documents numbers"
     errors:
       models:
         user:
@@ -100,3 +104,7 @@ en:
           attributes:
             minimum_interval:
               invalid: "You have to wait a minium of %{interval} days between notifications"
+        signature:
+          attributes:
+            document_number:
+              not_in_census: 'Not verified by Census'

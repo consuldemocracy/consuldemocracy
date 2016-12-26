@@ -165,6 +165,7 @@ Rails.application.routes.draw do
     end
 
     resources :probes, only: [:index, :show]
+    resources :signature_sheets, only: [:index, :new, :create, :show]
 
     resources :banners, only: [:index, :new, :create, :edit, :update, :destroy] do
       collection { get :search}

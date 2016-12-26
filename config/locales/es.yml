@@ -177,6 +177,7 @@ es:
     not_saved: 'impidieron guardar %{resource}:'
     policy: Política de privacidad
     proposal: la propuesta
+    signature_sheet: la hoja de firmas
     spending_proposal: la propuesta de inversión
     proposal_notification: "la notificación"
     user: la cuenta

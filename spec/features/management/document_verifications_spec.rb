@@ -47,7 +47,7 @@ feature 'DocumentVerifications' do
   scenario 'Verifying a user which does exists in the census but not in the db redirects allows sending an email' do
 
     visit management_document_verifications_path
-    fill_in 'document_verification_document_number', with: '1234'
+    fill_in 'document_verification_document_number', with: '12345678Z'
     click_button 'Check'
 
     expect(page).to have_content "Please introduce the email used on the account"
@@ -66,7 +66,7 @@ feature 'DocumentVerifications' do
     expect_any_instance_of(Verification::Management::Document).to receive(:under_sixteen?).and_return(true)
 
     visit management_document_verifications_path
-    fill_in 'document_verification_document_number', with: '1234'
+    fill_in 'document_verification_document_number', with: '12345678Z'
     click_button 'Check'
 
     expect(page).to have_content "You must be over 16 to verify your account."
