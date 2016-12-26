@@ -312,9 +312,13 @@ en:
         created_at: Created
         author: Author
         documents: Documents
-        all_verified: "All the signatures (%{count}) are valid"
-        verified: "There are %{count} valid signatures"
-        unverified: "There are %{count} invalid signatures"
+        verified:
+          one: "There is %{count} valid signature"
+          other: "There are %{count} valid signatures"
+        unverified:
+          one: "There is %{count} invalid signature"
+          other: "There are %{count} invalid signatures"
+        unverified_error: (Not verified by Census)
         loading: "There are still signatures that are being verified by the Census, please refresh the page in a few moments"
     stats:
       show:

@@ -310,9 +310,13 @@ es:
         created_at: Creado
         author: Autor
         documents: Documentos
-        all_verified: "Todas las firmas introducidas (%{count}) son válidas"
-        verified: "Hay %{count} firmas válidas"
-        unverified: "Hay %{count} firmas inválidas"
+        verified:
+          one: "Hay %{count} firma válida"
+          other: "Hay %{count} firmas válidas"
+        unverified:
+          one: "Hay %{count} firma inválida"
+          other: "Hay %{count} firmas inválidas"
+        unverified_error: (No verificadas por el Padrón)
         loading: "Aún hay firmas que se están verificando por el Padrón, por favor refresca la página en unos instantes"
     stats:
       show:
