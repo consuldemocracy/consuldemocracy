@@ -191,11 +191,17 @@ es:
         questions_title: "Listado de preguntas asignadas"
         remove_question: "Desasignar pregunta"
         add_booth: "Asignar urna"
+        add_question: "Incluir pregunta"
         name: "Nombre"
         location: "Ubicación"
         email: "Email"
         search_results: "Resultados de la búsqueda"
         no_search_results: "No se han encontrado resultados"
+      flash:
+        question_added: "Pregunta añadida a esta votación"
+        error_on_question_added: "No se pudo asignar la pregunta"
+        question_removed: "Pregunta eliminada de esta votación"
+        error_on_question_removed: "No se pudo quitar la pregunta"
     questions:
       index:
         title: "Preguntas ciudadanas"
@@ -309,6 +315,9 @@ es:
       booths_search:
         button: Buscar
         placeholder: Buscar urna por nombre
+      poll_questions_search:
+        button: Buscar
+        placeholder: Buscar preguntas
       proposal_search:
         button: Buscar
         placeholder: Buscar propuestas por título, código, descripción o pregunta

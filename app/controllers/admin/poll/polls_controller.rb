@@ -1,6 +1,6 @@
 class Admin::Poll::PollsController < Admin::BaseController
   load_and_authorize_resource
-  before_action :load_search, only: [:search_booths]
+  before_action :load_search, only: [:search_booths, :search_questions]
 
   def index
   end
@@ -31,8 +31,39 @@ class Admin::Poll::PollsController < Admin::BaseController
     end
   end
 
+  def add_question
+    question = ::Poll::Question.find(params[:question_id])
+
+    if question.present?
+      @poll.questions << question
+      notice = t("admin.polls.flash.question_added")
+    else
+      notice = t("admin.polls.flash.error_on_question_added")
+    end
+    redirect_to admin_poll_path(@poll, anchor: 'tab-questions'), notice: notice
+  end
+
+  def remove_question
+    question = ::Poll::Question.find(params[:question_id])
+
+    if @poll.questions.include? question
+      @poll.questions.delete(question)
+      notice = t("admin.polls.flash.question_removed")
+    else
+      notice = t("admin.polls.flash.error_on_question_removed")
+    end
+    redirect_to admin_poll_path(@poll, anchor: 'tab-questions'), notice: notice
+  end
+
   def search_booths
     @booths = ::Poll::Booth.search(@search)
+    respond_to do |format|
+      format.js
+    end
+  end
+
+  def search_questions #cambiar a @poll.id
+    @questions = ::Poll::Question.where("poll_id IS ? OR poll_id != ?", nil, search_params[:poll_id]).search({search: @search})
     respond_to do |format|
       format.js
     end
