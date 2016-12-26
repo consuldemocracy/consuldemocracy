@@ -71,8 +71,8 @@
         </div>
       <% end %>
 
-      <div id="<%= dom_id(@question) %>_answers">
-        <div class="small-12 small-centered text-center column">
+      <div class="small-12 small-centered text-center column">
+        <div id="<%= dom_id(@question) %>_answers">
           <%= render "answers", question: @question %>
         </div>
       </div>
