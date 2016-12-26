@@ -1,7 +1,7 @@
 <%- limit ||= nil %>
 
 <% if taggable.tags.any? %>
-  <ul id="tags" class="no-bullet tags">
+  <ul id="tags_<%= dom_id(taggable) %>" class="no-bullet tags">
     <% taggable.tag_list_with_limit(limit).each do |tag| %>
       <li class="inline-block"><%= link_to sanitize(tag.name), send("#{taggable.class.name.underscore.pluralize}_path", search: tag.name) %></li>
     <% end %>
