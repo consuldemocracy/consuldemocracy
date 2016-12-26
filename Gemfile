@@ -7,7 +7,7 @@ gem 'pg', '~> 0.19.0'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0', '>= 5.0.4'
 # Use Uglifier as compressor for JavaScript assets
-gem 'uglifier', '>= 3.0.3'
+gem 'uglifier', '>= 3.0.4'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2.1'
 # See https://github.com/rails/execjs#readme for more supported runtimes
@@ -52,7 +52,7 @@ gem 'rollbar', '~> 2.13.3'
 gem 'delayed_job_active_record', '~> 4.1.0'
 gem 'daemons'
 gem 'devise-async'
-gem 'newrelic_rpm', '~> 3.17.0.325'
+gem 'newrelic_rpm', '~> 3.17.1.326'
 gem 'whenever', require: false
 gem 'pg_search'
 gem 'sitemap_generator'

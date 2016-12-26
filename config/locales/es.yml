@@ -185,9 +185,11 @@ es:
       transparency_url: https://transparency.consul
     header:
       administration: Administrar
+      available_locales: Idiomas disponibles
       debates: Debates
       external_link_blog: Blog
       external_link_opendata: Datos abiertos
+      external_link_opendata_url: "/opendata"
       external_link_transparency: Transparencia
       external_link_transparency_url: https://transparency.consul
       locale: 'Idioma:'
@@ -206,12 +208,11 @@ es:
       open: abierto
       open_city_slogan_html: Existen ciudades gobernadas directamente por sus habitantes, que <strong>debaten</strong> sobre temas que les preocupan, <strong>proponen</strong> ideas para mejorar sus vidas y <strong>deciden</strong> entre todas y todos las que se llevan a cabo.
       open_city_title: La ciudad que quieres será la ciudad que quieras.
-      open_data: Datos abiertos
       open_gov: Gobierno %{open}
       proposals: Propuestas
       proposal_ballot: Votaciones
       see_all: Ver propuestas
-      spending_proposals: Presupuestos ciudadanos
+      spending_proposals: Presupuestos participativos
   legislation:
     help:
       alt: Selecciona el texto que quieres comentar y pulsa en el botón con el lápiz.
@@ -426,6 +427,7 @@ es:
     check_none: Ninguno
     collective: Colectivo
     flag: Denunciar como inapropiado
+    hide: Ocultar
     print:
       print_button: Imprimir esta información
     show: Mostrar
@@ -448,12 +450,12 @@ es:
       districts_list: "Listado de distritos"
       categories: "Categorías"
     target_blank_html: " (se abre en ventana nueva)"
+    you_are_in: "Estás en"
     unflag: Deshacer denuncia
     outline:
       debates: Debates
       proposals: Propuestas
-      budget: Presupuestos ciudadanos
-      pagination: Paginación
+      budget: Presupuestos participativos
       searcher: Buscador
   social:
     blog: Blog

@@ -17,7 +17,8 @@ feature 'Debates' do
     debates.each do |debate|
       within('#debates') do
         expect(page).to have_content debate.title
-        expect(page).to have_css("a[href='#{debate_path(debate)}']", text: debate.description)
+        expect(page).to have_content debate.description
+        expect(page).to have_css("a[href='#{debate_path(debate)}']", text: debate.title)
       end
     end
   end
@@ -231,7 +232,7 @@ feature 'Debates' do
 
       expect(page).to have_content 'Debate created successfully.'
 
-      within "#tags" do
+      within "#tags_debate_#{Debate.last.id}" do
         expect(page).to have_content 'Education'
         expect(page).to_not have_content 'Health'
       end
@@ -248,7 +249,8 @@ feature 'Debates' do
       click_button 'Start a debate'
 
       expect(page).to have_content 'Debate created successfully.'
-      within "#tags" do
+
+      within "#tags_debate_#{Debate.last.id}" do
         expect(page).to have_content 'Refugees'
         expect(page).to have_content 'Solidarity'
       end
