@@ -51,12 +51,14 @@ class Signature < ActiveRecord::Base
       created_from_signature: true,
       verified_at: Time.now,
       erased_at: Time.now,
-      email: "#{document_number}@inexistent.dev",
-      password: "12345678",
-      username: document_number,
+      password: random_password
       terms_of_service: '1'
     }
-    User.create(user_params)
+    User.create!(user_params)
+  end
+
+  def random_password
+    (0...20).map { ('a'..'z').to_a[rand(26)] }.join
   end
 
   def in_census?
