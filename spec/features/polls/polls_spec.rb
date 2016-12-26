@@ -131,7 +131,7 @@ feature 'Polls' do
 
       visit poll_path(poll)
 
-      expect(page).to have_content('The following questions are not available in your geozone')
+      expect(page).to have_content("You can't answers the following 1 questions because are not available in your geozone.")
 
       expect(page).to have_content('Vader')
       expect(page).to have_content('Palpatine')
