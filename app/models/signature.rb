@@ -52,7 +52,8 @@ class Signature < ActiveRecord::Base
       verified_at: Time.now,
       erased_at: Time.now,
       password: random_password,
-      terms_of_service: '1'
+      terms_of_service: '1',
+      email: nil
     }
     User.create!(user_params)
   end
