@@ -36,6 +36,7 @@
               </label>
               <%= text_field_tag 'advanced_search[date_min]',
                                   params[:advanced_search].try(:[], :date_min),
+                                  type: "date",
                                   placeholder: t("shared.advanced_search.date_placeholder"),
                                   class: 'js-calendar' %>
             </div>
@@ -45,6 +46,7 @@
               </label>
               <%= text_field_tag 'advanced_search[date_max]',
                                   params[:advanced_search].try(:[], :date_max),
+                                  type: "date",
                                   placeholder: t("shared.advanced_search.date_placeholder"),
                                   class: 'js-calendar' %>
             </div>
