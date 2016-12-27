@@ -197,7 +197,7 @@ Rails.application.routes.draw do
 
       resources :booths
       resources :booth_assignments, only: [:create, :destroy]
-      resources :officer_assignments, only: [:new, :create, :destroy]
+      resources :officer_assignments, only: [:index, :create, :destroy]
       resources :questions
     end
 

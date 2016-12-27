@@ -15,7 +15,7 @@
         <tr id="officer_<%= officer.id %>" class="officer">
           <td>
             <strong>
-              <%= officer.name %>
+              <%= link_to officer.name, admin_officer_assignments_path(officer: officer, poll: @poll) %>
             </strong>
           </td>
           <td>
@@ -26,65 +26,3 @@
     </tbody>
   </table>
 <% end %>
-
-<!-- Assign booths to officer -->
-<h2>Clemente padilla Otero</h2>
-<p>user2@consul.dev</p>
-
-
-<fieldset class="fieldset">
-  <legend>Nuevo turno</legend>
-  <div class="small-12 medium-4 column">
-    <label>Fecha</label>
-    <select>
-      <option>Seleccionar día</option>
-    </select>
-  </div>
-
-  <div class="small-12 medium-4 column">
-    <label>Urna</label>
-    <select>
-      <option>Seleccionar urna</option>
-    </select>
-  </div>
-
-  <div class="small-12 medium-4 column">
-    <input type="submit" value="Añadir turno" class="button expanded hollow margin-top">
-  </div>
-</fieldset>
-
-<a class="float-right">Añadir nuevo turno</a>
-
-<h3>Turnos asignados</h3>
-<table>
-    <thead>
-      <tr>
-        <th>Fecha</th>
-        <th colspan="2">Urna</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>13/02/2016</td>
-        <td>Urna Moncloa</td>
-        <td class="text-right">
-          <%= link_to "Eliminar turno", "#", class: "button hollow alert" %>
-        </td>
-      </tr>
-      <tr>
-        <td>14/02/2016</td>
-        <td>Urna Moncloa</td>
-        <td class="text-right">
-          <%= link_to "Eliminar turno", "#", class: "button hollow alert" %>
-        </td>
-      </tr>
-      <tr>
-        <td>15/02/2016</td>
-        <td>Urna Chamartín</td>
-        <td class="text-right">
-          <%= link_to "Eliminar turno", "#", class: "button hollow alert" %>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-<!-- /. Assign booths to officer -->

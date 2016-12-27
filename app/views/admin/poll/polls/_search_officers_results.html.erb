@@ -14,7 +14,15 @@
         <%= user.email %>
       </td>
       <td class="text-right">
-
+      <% if @poll.officer_ids.include?(user.poll_officer.id) %>
+          <%= link_to t("admin.polls.show.edit_officer_assignments"),
+                        admin_officer_assignments_path(poll: @poll, officer: user.poll_officer),
+                        class: "button hollow alert" %>
+        <% else %>
+          <%= link_to t("admin.polls.show.add_officer_assignments"),
+                        admin_officer_assignments_path(poll: @poll, officer: user.poll_officer),
+                        class: "button hollow" %>
+        <% end %>
       </td>
     </tr>
     <% end %>

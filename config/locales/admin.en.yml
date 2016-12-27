@@ -161,6 +161,22 @@ en:
         email_placeholder: Search user by email
         search: Search
         user_not_found: User not found
+    poll_officer_assignments:
+      flash:
+        destroy: "Officing shift removed"
+        create: "Officing shift added"
+        error_destroy: "An error ocurred when removing officer assignment"
+        error_create: "An error ocurred when adding officer assignment"
+      index:
+        new_assignment: "New shift"
+        date: "Date"
+        booth: "Booth"
+        select_date: "Select day"
+        select_booth: "Select booth"
+        add_assignment: "Add shift"
+        remove_assignment: "Remove"
+        assignments: "Officing shifts in this poll"
+        no_assignments: "This user has no officing shifts in this poll"
     polls:
       index:
         title: "List of polls"
@@ -192,6 +208,8 @@ en:
         remove_question: "Remove question from poll"
         add_booth: "Assign booth"
         add_question: "Include question"
+        add_officer_assignments: "Add shifts as officer"
+        edit_officer_assignments: "Edit officing shifts"
         name: "Name"
         location: "Location"
         email: "Email"
