@@ -114,6 +114,10 @@ class User < ActiveRecord::Base
     manager.present?
   end
 
+  def poll_officer?
+    poll_officer.present?
+  end
+
   def organization?
     organization.present?
   end
