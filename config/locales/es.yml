@@ -270,6 +270,7 @@ es:
           other: "%{count} comentarios"
         debate: Debate
       show:
+        answer_question: Enviar respuesta
         comments: Comentarios
         next_question: Siguiente pregunta
         share: Compartir

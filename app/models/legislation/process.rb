@@ -2,9 +2,9 @@ class Legislation::Process < ActiveRecord::Base
   acts_as_paranoid column: :hidden_at
   include ActsAsParanoidAliases
 
-  has_many :draft_versions, class_name: 'Legislation::DraftVersion', foreign_key: 'legislation_process_id'
+  has_many :draft_versions, -> { order(:id) }, class_name: 'Legislation::DraftVersion', foreign_key: 'legislation_process_id'
   has_one :final_draft_version, -> { where final_version:  true }, class_name: 'Legislation::DraftVersion', foreign_key: 'legislation_process_id'
-  has_many :questions, class_name: 'Legislation::Question', foreign_key: 'legislation_process_id'
+  has_many :questions, -> { order(:id) }, class_name: 'Legislation::Question', foreign_key: 'legislation_process_id'
 
   validates :title, presence: true
   validates :description, presence: true

@@ -270,6 +270,7 @@ en:
           other: "%{count} comments"
         debate: Debate
       show:
+        answer_question: Submit answer
         comments: Comments
         next_question: Next question
         share: Share

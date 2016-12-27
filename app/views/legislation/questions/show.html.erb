@@ -23,16 +23,19 @@
     <div class="small-12 medium-9 column">
       <h3 class="quiz-question"><%= @question.title %></h3>
       <div class="debate-questions">
-        <form class="controls-stacked">
-          <% @question.question_options.each do |question_option| %>
-            <label class="control radio">
-              <input id="quiz-1" name="radio" type="radio">
-              <span class="control-indicator"></span>
-              <%= question_option.value %>
-            </label>
+        <% if @question.question_options.any? %>
+          <%= form_for @answer, url: legislation_process_question_answers_path(@process, @question, @answer), class: "controls-stacked" do |f| %>
+            <% @question.question_options.each do |question_option| %>
+              <label class="control radio <%= 'active' if @answer.legislation_question_option_id == question_option.id %>">
+                <%= f.radio_button :legislation_question_option_id, question_option.id, label: false, disabled: @answer.persisted? %>
+                <span class="control-indicator"></span>
+                <%= question_option.value %>
+              </label>
+            <% end %>
+            <%= f.submit t('.answer_question'), class: "button" unless @answer.persisted? %>
           <% end %>
-      </form>
-    </div>
+        <% end %>
+      </div>
     </div>
 
     <aside class="small-12 medium-3 column">

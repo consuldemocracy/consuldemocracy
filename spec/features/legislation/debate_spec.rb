@@ -1,15 +1,16 @@
 require 'rails_helper'
 
 feature 'Legislation' do
-
   context 'process debate page' do
-    scenario 'shows question list' do
-      process = create(:legislation_process, debate_start_date: Date.current - 1.day, debate_end_date: Date.current + 2.days)
-      create(:legislation_question, process: process, title: "Question 1")
-      create(:legislation_question, process: process, title: "Question 2")
-      create(:legislation_question, process: process, title: "Question 3")
+    before(:each) do
+      @process = create(:legislation_process, debate_start_date: Date.current - 1.day, debate_end_date: Date.current + 2.days)
+      create(:legislation_question, process: @process, title: "Question 1")
+      create(:legislation_question, process: @process, title: "Question 2")
+      create(:legislation_question, process: @process, title: "Question 3")
+    end
 
-      visit legislation_process_path(process)
+    scenario 'shows question list' do
+      visit legislation_process_path(@process)
 
       expect(page).to have_content("Participate in the debate")
 
@@ -31,6 +32,60 @@ feature 'Legislation' do
 
       expect(page).to have_content("Question 3")
       expect(page).to_not have_content("Next question")
+    end
+
+    scenario 'shows question page' do
+      visit legislation_process_question_path(@process, @process.questions.first)
+
+      expect(page).to have_content("Question 1")
+      expect(page).to have_content("Comments (0)")
+    end
+
+    scenario 'shows next question link in question page' do
+      visit legislation_process_question_path(@process, @process.questions.first)
+
+      expect(page).to have_content("Question 1")
+      expect(page).to have_content("Next question")
+
+      click_link "Next question"
+
+      expect(page).to have_content("Question 2")
+      expect(page).to have_content("Next question")
+
+      click_link "Next question"
+
+      expect(page).to have_content("Question 3")
+      expect(page).to_not have_content("Next question")
+    end
+
+    scenario 'answer question' do
+      question = @process.questions.first
+      create(:legislation_question_option, question: question, value: "Yes")
+      create(:legislation_question_option, question: question, value: "No")
+      option = create(:legislation_question_option, question: question, value: "I don't know")
+      user = create(:user, :level_two)
+
+      login_as(user)
+
+      visit legislation_process_question_path(@process, question)
+
+      expect(page).to have_content("Yes")
+      expect(page).to have_content("No")
+      expect(page).to have_content("I don't know")
+      expect(page).to have_selector(:link_or_button, "Submit answer")
+
+      choose("I don't know")
+      click_button "Submit answer"
+
+      within(:css, "label.active") do
+        expect(page).to have_content("I don't know")
+        expect(page).to_not have_content("Yes")
+        expect(page).to_not have_content("No")
+      end
+      expect(page).to_not have_selector(:link_or_button, "Submit answer")
+
+      expect(question.reload.answers_count).to eq(1)
+      expect(option.reload.answers_count).to eq(1)
     end
   end
 end
