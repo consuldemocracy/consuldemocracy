@@ -1626,6 +1626,10 @@ table {
         .divider {
           color: $text-light;
         }
+
+        form {
+          margin-top: $line-height/2;
+        }
       }
 
       .comment-user {
@@ -1655,13 +1659,13 @@ table {
 
     .is-deleted {
       background: #E7E7E7;
-      margin-left: rem-calc(42);
-      padding: $line-height/4 $line-height/2;
+      margin-left: $line-height;
+      padding: $line-height/2;
     }
 
     .comment-children {
       border-left: 1px dashed $border;
-      margin-left: rem-calc(42);
+      margin-left: $line-height;
       padding-left: $line-height/4;
 
       @media only screen and (max-width: 40em) {
