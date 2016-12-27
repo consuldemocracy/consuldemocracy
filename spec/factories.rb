@@ -7,7 +7,7 @@ FactoryGirl.define do
 
     password            'judgmentday'
     terms_of_service     '1'
-    confirmed_at        { Time.now }
+    confirmed_at        { Time.current }
 
     trait :incomplete_verification do
       after :create do |user|
@@ -16,7 +16,7 @@ FactoryGirl.define do
     end
 
     trait :level_two do
-      residence_verified_at Time.now
+      residence_verified_at Time.current
       unconfirmed_phone "611111111"
       confirmed_phone "611111111"
       sms_confirmation_code "1234"
@@ -25,17 +25,17 @@ FactoryGirl.define do
     end
 
     trait :level_three do
-      verified_at Time.now
+      verified_at Time.current
       document_type "1"
       document_number
     end
 
     trait :hidden do
-      hidden_at Time.now
+      hidden_at Time.current
     end
 
     trait :with_confirmed_hide do
-      confirmed_hide_at Time.now
+      confirmed_hide_at Time.current
     end
   end
 
@@ -86,7 +86,7 @@ FactoryGirl.define do
   factory :lock do
     user
     tries 0
-    locked_until Time.now
+    locked_until Time.current
   end
 
   factory :verified_user do
@@ -101,15 +101,15 @@ FactoryGirl.define do
     association :author, factory: :user
 
     trait :hidden do
-      hidden_at Time.now
+      hidden_at Time.current
     end
 
     trait :with_ignored_flag do
-      ignored_flag_at Time.now
+      ignored_flag_at Time.current
     end
 
     trait :with_confirmed_hide do
-      confirmed_hide_at Time.now
+      confirmed_hide_at Time.current
     end
 
     trait :flagged do
@@ -146,15 +146,15 @@ FactoryGirl.define do
     association :author, factory: :user
 
     trait :hidden do
-      hidden_at Time.now
+      hidden_at Time.current
     end
 
     trait :with_ignored_flag do
-      ignored_flag_at Time.now
+      ignored_flag_at Time.current
     end
 
     trait :with_confirmed_hide do
-      confirmed_hide_at Time.now
+      confirmed_hide_at Time.current
     end
 
     trait :flagged do
@@ -216,15 +216,15 @@ FactoryGirl.define do
     sequence(:body) { |n| "Comment body #{n}" }
 
     trait :hidden do
-      hidden_at Time.now
+      hidden_at Time.current
     end
 
     trait :with_ignored_flag do
-      ignored_flag_at Time.now
+      ignored_flag_at Time.current
     end
 
     trait :with_confirmed_hide do
-      confirmed_hide_at Time.now
+      confirmed_hide_at Time.current
     end
 
     trait :flagged do
@@ -340,11 +340,11 @@ FactoryGirl.define do
     sequence(:name) { |n| "org#{n}" }
 
     trait :verified do
-      verified_at Time.now
+      verified_at Time.current
     end
 
     trait :rejected do
-      rejected_at Time.now
+      rejected_at Time.current
     end
   end
 
@@ -367,13 +367,13 @@ FactoryGirl.define do
 
   factory :ahoy_event, :class => Ahoy::Event do
     id { SecureRandom.uuid }
-    time DateTime.now
+    time DateTime.current
     sequence(:name) {|n| "Event #{n} type"}
   end
 
   factory :visit  do
     id { SecureRandom.uuid }
-    started_at DateTime.now
+    started_at DateTime.current
   end
 
   factory :campaign do
@@ -388,7 +388,8 @@ FactoryGirl.define do
 
   factory :geozone do
     sequence(:name) { |n| "District #{n}" }
-    census_code { '01' }
+    sequence(:external_code) { |n| "#{n}" }
+    sequence(:census_code) { |n| "#{n}" }
   end
 
   factory :banner do
@@ -397,8 +398,8 @@ FactoryGirl.define do
     style {["banner-style-one", "banner-style-two", "banner-style-three"].sample}
     image {["banner.banner-img-one", "banner.banner-img-two", "banner.banner-img-three"].sample}
     target_url {["/proposals", "/debates" ].sample}
-    post_started_at Time.now - 7.days
-    post_ended_at Time.now + 7.days
+    post_started_at Time.current - 7.days
+    post_ended_at Time.current + 7.days
   end
 
   factory :proposal_notification do
@@ -412,5 +413,16 @@ FactoryGirl.define do
     body     "How are You doing?"
     association :sender,   factory: :user
     association :receiver, factory: :user
+  end
+
+  factory :signature_sheet do
+    association :signable, factory: :proposal
+    association :author, factory: :user
+    document_numbers "123A, 456B, 789C"
+  end
+
+  factory :signature do
+    signature_sheet
+    sequence(:document_number) { |n| "#{n}A" }
   end
 end

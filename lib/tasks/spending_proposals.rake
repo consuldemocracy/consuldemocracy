@@ -1,4 +1,5 @@
 namespace :spending_proposals do
+
   desc "Sends an email to the authors of unfeasible spending proposals"
   task send_unfeasible_emails: :environment do
     SpendingProposal.find_each do |spending_proposal|

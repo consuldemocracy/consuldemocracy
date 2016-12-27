@@ -17,7 +17,8 @@ feature 'Debates' do
     debates.each do |debate|
       within('#debates') do
         expect(page).to have_content debate.title
-        expect(page).to have_css("a[href='#{debate_path(debate)}']", text: debate.description)
+        expect(page).to have_content debate.description
+        expect(page).to have_css("a[href='#{debate_path(debate)}']", text: debate.title)
       end
     end
   end
@@ -231,7 +232,7 @@ feature 'Debates' do
 
       expect(page).to have_content 'Debate created successfully.'
 
-      within "#tags" do
+      within "#tags_debate_#{Debate.last.id}" do
         expect(page).to have_content 'Education'
         expect(page).to_not have_content 'Health'
       end
@@ -248,7 +249,8 @@ feature 'Debates' do
       click_button 'Start a debate'
 
       expect(page).to have_content 'Debate created successfully.'
-      within "#tags" do
+
+      within "#tags_debate_#{Debate.last.id}" do
         expect(page).to have_content 'Refugees'
         expect(page).to have_content 'Solidarity'
       end
@@ -422,9 +424,9 @@ feature 'Debates' do
     end
 
     scenario 'Debates are ordered by newest', :js do
-      create(:debate, title: 'Best',   created_at: Time.now)
-      create(:debate, title: 'Medium', created_at: Time.now - 1.hour)
-      create(:debate, title: 'Worst',  created_at: Time.now - 1.day)
+      create(:debate, title: 'Best',   created_at: Time.current)
+      create(:debate, title: 'Medium', created_at: Time.current - 1.hour)
+      create(:debate, title: 'Worst',  created_at: Time.current - 1.day)
 
       visit debates_path
       click_link 'newest'
@@ -808,7 +810,7 @@ feature 'Debates' do
     scenario "Reorder results maintaing search", :js do
       debate1 = create(:debate, title: "Show you got",      cached_votes_up: 10,  created_at: 1.week.ago)
       debate2 = create(:debate, title: "Show what you got", cached_votes_up: 1,   created_at: 1.month.ago)
-      debate3 = create(:debate, title: "Show you got",      cached_votes_up: 100, created_at: Time.now)
+      debate3 = create(:debate, title: "Show you got",      cached_votes_up: 100, created_at: Time.current)
       debate4 = create(:debate, title: "Do not display",    cached_votes_up: 1,   created_at: 1.week.ago)
 
       visit debates_path
@@ -956,7 +958,6 @@ feature 'Debates' do
     end
   end
 
-
   context 'Suggesting debates' do
     scenario 'Shows up to 5 suggestions', :js do
       author = create(:user)
@@ -1029,12 +1030,11 @@ feature 'Debates' do
     end
   end
 
-
   scenario 'Index include featured debates' do
     admin = create(:administrator)
     login_as(admin.user)
 
-    debate1 = create(:debate, featured_at: Time.now)
+    debate1 = create(:debate, featured_at: Time.current)
     debate2 = create(:debate)
 
     visit debates_path

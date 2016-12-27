@@ -13,7 +13,7 @@ module Flaggable
   end
 
   def ignore_flag
-    update(ignored_flag_at: Time.now)
+    update(ignored_flag_at: Time.current)
   end
 
 end

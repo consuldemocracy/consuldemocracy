@@ -7,7 +7,7 @@ gem 'pg', '~> 0.19.0'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0', '>= 5.0.4'
 # Use Uglifier as compressor for JavaScript assets
-gem 'uglifier', '>= 3.0.3'
+gem 'uglifier', '>= 3.0.4'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2.1'
 # See https://github.com/rails/execjs#readme for more supported runtimes
@@ -32,7 +32,7 @@ gem 'omniauth-facebook', '~> 3.0.0'
 gem 'omniauth-google-oauth2', '~> 0.4.0'
 
 gem 'kaminari'
-gem 'ancestry', '~> 2.2.1'
+gem 'ancestry', '~> 2.2.2'
 gem 'acts-as-taggable-on'
 gem 'responders', '~> 2.3.0'
 gem 'foundation-rails', '~> 6.2.4.0'
@@ -52,12 +52,13 @@ gem 'rollbar', '~> 2.13.3'
 gem 'delayed_job_active_record', '~> 4.1.0'
 gem 'daemons'
 gem 'devise-async'
-gem 'newrelic_rpm', '~> 3.17.0.325'
+gem 'newrelic_rpm', '~> 3.17.1.326'
 gem 'whenever', require: false
 gem 'pg_search'
+gem 'sitemap_generator'
 
 gem 'ahoy_matey', '~> 1.4.2'
-gem 'groupdate', '~> 3.1.0'   # group temporary data
+gem 'groupdate', '~> 3.1.0' # group temporary data
 gem 'tolk', '~> 2.0.0' # Web interface for translations
 
 gem 'browser'
@@ -79,12 +80,14 @@ group :development, :test do
   gem 'letter_opener_web', '~> 1.3.0'
   gem 'i18n-tasks'
   gem 'capistrano', '3.5.0',           require: false
-  gem "capistrano-bundler", '1.1.4',   require: false
+  gem 'capistrano-bundler', '~> 1.2',  require: false
   gem "capistrano-rails", '1.1.8',     require: false
-  gem "capistrano-rvm",                require: false
+  gem 'rvm1-capistrano3',              require: false
   gem 'capistrano3-delayed-job', '~> 1.0'
   gem "bullet"
   gem "faker"
+  gem 'rubocop', '~> 0.45.0', require: false
+  gem 'knapsack'
 end
 
 group :test do

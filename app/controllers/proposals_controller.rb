@@ -38,7 +38,7 @@ class ProposalsController < ApplicationController
   end
 
   def retire
-    if valid_retired_params? && @proposal.update(retired_params.merge(retired_at: Time.now))
+    if valid_retired_params? && @proposal.update(retired_params.merge(retired_at: Time.current))
       redirect_to proposal_path(@proposal), notice: t('proposals.notice.retired')
     else
       render action: :retire_form

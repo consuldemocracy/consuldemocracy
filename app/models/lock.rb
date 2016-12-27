@@ -4,7 +4,7 @@ class Lock < ActiveRecord::Base
   before_save :set_locked_until
 
   def locked?
-    locked_until > Time.now
+    locked_until > Time.current
   end
 
   def set_locked_until
@@ -12,7 +12,7 @@ class Lock < ActiveRecord::Base
   end
 
   def lock_time
-    Time.now + (2**tries).minutes
+    Time.current + (2**tries).minutes
   end
 
   def too_many_tries?

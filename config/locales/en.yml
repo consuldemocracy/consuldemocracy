@@ -155,6 +155,7 @@ en:
     spending_proposal: Spending proposal
     user: Account
     verification/sms: phone
+    signature_sheet: Signature sheet
   geozones:
     none: All city
     all: All scopes
@@ -186,9 +187,11 @@ en:
       transparency_url: https://transparency.consul
     header:
       administration: Administration
+      available_locales: Available languages
       debates: Debates
       external_link_blog: Blog
       external_link_opendata: Open data
+      external_link_opendata_url: "/opendata"
       external_link_transparency: Transparency
       external_link_transparency_url: https://transparency.consul
       locale: 'Language:'
@@ -208,7 +211,6 @@ en:
       open: open
       open_city_slogan_html: There are cities that are governed directly by their inhabitants, who <b>discuss</b> the topics they are concerned about, <b>propose</b> ideas to improve their lives and <b>decide</b> among themselves which ones will be carried out.
       open_city_title: Love the city, and it will become a city you love.
-      open_data: Open data
       open_gov: Open government
       proposals: Proposals
       poll_questions: Voting
@@ -345,7 +347,7 @@ en:
         other: "%{count} comments"
         zero: No comments
       proposal: Proposal
-      reason_for_supports_necessary: 2% of Census
+      reason_for_supports_necessary: 1% of Census
       support: Support
       support_title: Support this proposal
       supports:
@@ -469,6 +471,7 @@ en:
     check_none: None
     collective: Collective
     flag: Flag as inappropriate
+    hide: Hide
     print:
       print_button: Print this info
     show: Show
@@ -491,7 +494,13 @@ en:
       districts_list: "Districts list"
       categories: "Categories"
     target_blank_html: " (link opens in new window)"
+    you_are_in: "You are in"
     unflag: Unflag
+    outline:
+      debates: Debates
+      proposals: Proposals
+      budget: Participatory budget
+      searcher: Searcher
   social:
     blog: Blog
     facebook: Facebook

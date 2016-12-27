@@ -274,10 +274,10 @@ describe User do
       # Subdomains are also accepted
 
       Setting['email_domain_for_officials'] = 'officials.madrid.es'
-      user1 = create(:user, email: "john@officials.madrid.es", confirmed_at: Time.now)
-      user2 = create(:user, email: "john@yes.officials.madrid.es", confirmed_at: Time.now)
-      user3 = create(:user, email: "john@unofficials.madrid.es", confirmed_at: Time.now)
-      user4 = create(:user, email: "john@example.org", confirmed_at: Time.now)
+      user1 = create(:user, email: "john@officials.madrid.es", confirmed_at: Time.current)
+      user2 = create(:user, email: "john@yes.officials.madrid.es", confirmed_at: Time.current)
+      user3 = create(:user, email: "john@unofficials.madrid.es", confirmed_at: Time.current)
+      user4 = create(:user, email: "john@example.org", confirmed_at: Time.current)
 
       expect(user1.has_official_email?).to eq(true)
       expect(user2.has_official_email?).to eq(true)
@@ -332,7 +332,7 @@ describe User do
       it "returns users that have not been erased" do
         user1 = create(:user, erased_at: nil)
         user2 = create(:user, erased_at: nil)
-        user3 = create(:user, erased_at: Time.now)
+        user3 = create(:user, erased_at: Time.current)
 
         expect(User.active).to include(user1)
         expect(User.active).to include(user2)
@@ -415,48 +415,58 @@ describe User do
   end
 
   describe "#erase" do
-    it "anonymizes a user and marks him as hidden" do
+    it "erases user information and marks him as erased" do
       user = create(:user,
                      username: "manolo",
+                     email: "a@a.com",
                      unconfirmed_email: "a@a.com",
-                     document_number: "1234",
                      phone_number: "5678",
+                     confirmed_phone: "5678",
+                     unconfirmed_phone: "5678",
                      encrypted_password: "foobar",
                      confirmation_token: "token1",
                      reset_password_token: "token2",
-                     email_verification_token: "token3",
-                     confirmed_phone:"5678",
-                     unconfirmed_phone:"5678")
+                     email_verification_token: "token3")
 
       user.erase('a test')
       user.reload
 
       expect(user.erase_reason).to eq('a test')
-      expect(user.erased_at).to be
+      expect(user.erased_at).to    be
 
       expect(user.username).to be_nil
-
       expect(user.email).to be_nil
       expect(user.unconfirmed_email).to be_nil
-      expect(user.document_number).to be_nil
       expect(user.phone_number).to be_nil
       expect(user.confirmed_phone).to be_nil
       expect(user.unconfirmed_phone).to be_nil
-
       expect(user.encrypted_password).to be_empty
-
       expect(user.confirmation_token).to be_nil
       expect(user.reset_password_token).to be_nil
       expect(user.email_verification_token).to be_nil
-
     end
 
-    it "destroys associated identities" do
+    it "maintains associated identification document" do
+      user = create(:user,
+                     document_number: "1234",
+                     document_type:   "1")
+      user.erase
+      user.reload
+
+      expect(user.erased_at).to be
+      expect(user.document_number).to be
+      expect(user.document_type).to be
+    end
+
+    it "destroys associated social network identities" do
       user = create(:user)
       identity = create(:identity, user: user)
+
       user.erase('an identity test')
+
       expect(Identity.exists?(identity.id)).to_not be
     end
+
   end
 
 end

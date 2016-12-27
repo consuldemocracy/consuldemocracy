@@ -153,6 +153,8 @@ Rails.application.routes.draw do
       get :summary, on: :collection
     end
 
+    resources :signature_sheets, only: [:index, :new, :create, :show]
+
     resources :banners, only: [:index, :new, :create, :edit, :update, :destroy] do
       collection { get :search}
     end
@@ -214,6 +216,8 @@ Rails.application.routes.draw do
     namespace :api do
       resource :stats, only: :show
     end
+
+    resources :geozones, only: [:index, :new, :create, :edit, :update, :destroy]
   end
 
   namespace :moderation do

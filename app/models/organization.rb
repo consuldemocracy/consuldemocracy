@@ -14,11 +14,11 @@ class Organization < ActiveRecord::Base
   scope :rejected, -> { where.not(rejected_at: nil).where("(organizations.verified_at IS NULL or organizations.verified_at < rejected_at)") }
 
   def verify
-    update(verified_at: Time.now)
+    update(verified_at: Time.current)
   end
 
   def reject
-    update(rejected_at: Time.now)
+    update(rejected_at: Time.current)
   end
 
   def verified?

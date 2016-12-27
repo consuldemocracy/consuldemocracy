@@ -62,4 +62,5 @@ feature 'Admin feature flags' do
       expect(page).to have_link "Spending proposals"
     end
   end
+
 end

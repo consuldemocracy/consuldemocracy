@@ -25,7 +25,6 @@ feature 'Proposal ballots' do
 
     successful_proposals.each do |proposal|
       within("#proposal_#{proposal.id}_votes") do
-        expect(page).to_not have_css(".supports")
         expect(page).to have_content "This proposal has reached the required supports"
       end
     end
@@ -37,7 +36,6 @@ feature 'Proposal ballots' do
     successful_proposals.each do |proposal|
       visit proposal_path(proposal)
       within("#proposal_#{proposal.id}_votes") do
-        expect(page).to_not have_css(".supports")
         expect(page).to have_content "This proposal has reached the required supports"
       end
     end

@@ -66,7 +66,7 @@ feature 'Managed User' do
         expect(page).not_to have_content "Email"
         expect(page).to have_content "Document type"
         expect(page).to have_content "Document number"
-        expect(page).to have_content "1234"
+        expect(page).to have_content "12345678Z"
       end
 
       expect(page).to have_content "Please introduce the email used on the account"

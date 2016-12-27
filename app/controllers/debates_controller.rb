@@ -21,8 +21,8 @@ class DebatesController < ApplicationController
   respond_to :html, :js
 
   def index_customization
-     @featured_debates = @debates.featured
-     @proposal_successful_exists = Proposal.successful.exists?
+    @featured_debates = @debates.featured
+    @proposal_successfull_exists = Proposal.successfull.exists?
   end
 
   def show
@@ -41,7 +41,7 @@ class DebatesController < ApplicationController
   end
 
   def mark_featured
-    @debate.update_attribute(:featured_at, Time.now)
+    @debate.update_attribute(:featured_at, Time.current)
     redirect_to request.query_parameters.merge(action: :index)
   end
 

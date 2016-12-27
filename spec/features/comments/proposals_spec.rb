@@ -62,9 +62,9 @@ feature 'Commenting proposals' do
   end
 
   scenario 'Comment order' do
-    c1 = create(:comment, :with_confidence_score, commentable: proposal, cached_votes_up: 100, cached_votes_total: 120, created_at: Time.now - 2)
-    c2 = create(:comment, :with_confidence_score, commentable: proposal, cached_votes_up: 10, cached_votes_total: 12, created_at: Time.now - 1)
-    c3 = create(:comment, :with_confidence_score, commentable: proposal, cached_votes_up: 1, cached_votes_total: 2, created_at: Time.now)
+    c1 = create(:comment, :with_confidence_score, commentable: proposal, cached_votes_up: 100, cached_votes_total: 120, created_at: Time.current - 2)
+    c2 = create(:comment, :with_confidence_score, commentable: proposal, cached_votes_up: 10, cached_votes_total: 12, created_at: Time.current - 1)
+    c3 = create(:comment, :with_confidence_score, commentable: proposal, cached_votes_up: 1, cached_votes_total: 2, created_at: Time.current)
 
     visit proposal_path(proposal, order: :most_voted)
 
@@ -83,10 +83,10 @@ feature 'Commenting proposals' do
   end
 
   scenario 'Creation date works differently in roots and in child comments, when sorting by confidence_score' do
-   old_root = create(:comment, commentable: proposal, created_at: Time.now - 10)
-   new_root = create(:comment, commentable: proposal, created_at: Time.now)
-   old_child = create(:comment, commentable: proposal, parent_id: new_root.id, created_at: Time.now - 10)
-   new_child = create(:comment, commentable: proposal, parent_id: new_root.id, created_at: Time.now)
+   old_root = create(:comment, commentable: proposal, created_at: Time.current - 10)
+   new_root = create(:comment, commentable: proposal, created_at: Time.current)
+   old_child = create(:comment, commentable: proposal, parent_id: new_root.id, created_at: Time.current - 10)
+   new_child = create(:comment, commentable: proposal, parent_id: new_root.id, created_at: Time.current)
 
    visit proposal_path(proposal, order: :most_voted)
 
@@ -407,7 +407,7 @@ feature 'Commenting proposals' do
   feature 'Voting comments' do
 
     background do
-      @manuela = create(:user, verified_at: Time.now)
+      @manuela = create(:user, verified_at: Time.current)
       @pablo = create(:user)
       @proposal = create(:proposal)
       @comment = create(:comment, commentable: @proposal)

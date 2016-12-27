@@ -6,6 +6,7 @@ class Management::AccountController < Management::BaseController
   end
 
   private
+
     def only_verified_users
       check_verified_user t("management.account.alert.unverified_user")
     end

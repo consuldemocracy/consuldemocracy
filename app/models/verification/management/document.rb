@@ -10,7 +10,7 @@ class Verification::Management::Document
   delegate :username, :email, to: :user, allow_nil: true
 
   def user
-    @user = User.by_document(document_type, document_number).first
+    @user = User.active.by_document(document_type, document_number).first
   end
 
   def user?
@@ -40,7 +40,7 @@ class Verification::Management::Document
   end
 
   def verify
-    user.update(verified_at: Time.now) if user?
+    user.update(verified_at: Time.current) if user?
   end
 
 end

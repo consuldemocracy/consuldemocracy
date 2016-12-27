@@ -174,7 +174,7 @@ describe SpendingProposal do
       by_valuator = SpendingProposal.by_valuator(valuator1.id)
 
       expect(by_valuator.size).to eq(2)
-      expect(by_valuator.sort).to eq([spending_proposal1,spending_proposal3].sort)
+      expect(by_valuator.sort).to eq([spending_proposal1, spending_proposal3].sort)
     end
   end
 
@@ -336,7 +336,7 @@ describe SpendingProposal do
 
     it "does not get updated if the user is erased" do
       user.erase
-      expect(user.document_number).to be_blank
+      expect(user.erased_at).to be
       spending_proposal.touch
       expect(spending_proposal.responsible_name).to eq("123456")
     end

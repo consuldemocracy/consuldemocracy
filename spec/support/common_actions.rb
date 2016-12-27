@@ -25,7 +25,7 @@ module CommonActions
   end
 
   def login_as_authenticated_manager
-    login, user_key, date = "JJB042", "31415926", Time.now.strftime("%Y%m%d%H%M%S")
+    login, user_key, date = "JJB042", "31415926", Time.current.strftime("%Y%m%d%H%M%S")
     allow_any_instance_of(ManagerAuthenticator).to receive(:auth).and_return({login: login, user_key: user_key, date: date}.with_indifferent_access)
     visit management_sign_in_path(login: login, clave_usuario: user_key, fecha_conexion: date)
   end
@@ -156,10 +156,10 @@ module CommonActions
 
   def expect_message_you_need_to_sign_in
     expect(page).to have_content 'You must Sign in or Sign up to continue'
-    expect(page).to have_selector('.in-favor a', visible: false)
+    expect(page).to have_selector('.in-favor', visible: false)
   end
 
-   def expect_message_you_need_to_sign_in_to_vote_comments
+  def expect_message_you_need_to_sign_in_to_vote_comments
     expect(page).to have_content 'You must Sign in or Sign up to vote'
     expect(page).to have_selector('.participation-allowed', visible: false)
     expect(page).to have_selector('.participation-not-allowed', visible: true)
@@ -172,7 +172,7 @@ module CommonActions
 
   def expect_message_only_verified_can_vote_proposals
     expect(page).to have_content 'Only verified users can vote on proposals'
-    expect(page).to have_selector('.in-favor a', visible: false)
+    expect(page).to have_selector('.in-favor', visible: false)
   end
 
   def expect_message_voting_not_allowed

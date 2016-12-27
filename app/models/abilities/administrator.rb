@@ -45,6 +45,8 @@ module Abilities
 
       can [:search, :edit, :update, :create, :index, :destroy], Banner
 
+      can [:index, :create, :edit, :update, :destroy], Geozone
+
       can [:manage], Poll
       can [:manage], Poll::Booth
       can [:search, :create, :index, :destroy], ::Poll::Officer
