@@ -9,7 +9,7 @@ feature 'Users' do
   scenario 'Create a level 3 user from scratch' do
 
     visit management_document_verifications_path
-    fill_in 'document_verification_document_number', with: '1234'
+    fill_in 'document_verification_document_number', with: '12345678Z'
     click_button 'Check'
 
     expect(page).to have_content "Please introduce the email used on the account"
@@ -45,10 +45,10 @@ feature 'Users' do
   end
 
   scenario 'Delete a level 2 user account from document verification page', :js do
-    level_2_user = create(:user, :level_two, document_number: 13579)
+    level_2_user = create(:user, :level_two, document_number: "12345678Z")
 
     visit management_document_verifications_path
-    fill_in 'document_verification_document_number', with: '13579'
+    fill_in 'document_verification_document_number', with: '12345678Z'
     click_button 'Check'
 
     expect(page).to_not have_content "This user account is already verified."
@@ -62,7 +62,7 @@ feature 'Users' do
     expect(level_2_user.reload.erase_reason).to eq "Deleted by manager: manager_user_#{Manager.last.user_id}"
 
     visit management_document_verifications_path
-    fill_in 'document_verification_document_number', with: '13579'
+    fill_in 'document_verification_document_number', with: '12345678Z'
     click_button 'Check'
 
     expect(page).to have_content "no user account associated to it"

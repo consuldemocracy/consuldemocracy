@@ -154,6 +154,7 @@ en:
     spending_proposal: Spending proposal
     user: Account
     verification/sms: phone
+    signature_sheet: Signature sheet
   geozones:
     none: All city
     all: All scopes

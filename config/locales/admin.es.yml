@@ -185,6 +185,7 @@ es:
       settings: Configuración global
       spending_proposals: Propuestas de inversión
       stats: Estadísticas
+      signature_sheets: Hojas de firmas
       legislation: Legislación colaborativa
     moderators:
       index:
@@ -370,6 +371,30 @@ es:
       delete:
         success: Distrito borrado correctamente
         error: No se puede borrar el distrito porque ya tiene elementos asociados
+    signature_sheets:
+      author: Autor
+      created_at: Fecha de creación
+      name: Nombre
+      no_signature_sheets: "No existen hojas de firmas"
+      index:
+        title: Hojas de firmas
+        new: Nueva hoja de firmas
+      new:
+        title: Nueva hoja de firmas
+        document_numbers_note: "Introduce los números separados por comas (,)"
+        submit: Crear hoja de firmas
+      show:
+        created_at: Creado
+        author: Autor
+        documents: Documentos
+        verified:
+          one: "Hay %{count} firma válida"
+          other: "Hay %{count} firmas válidas"
+        unverified:
+          one: "Hay %{count} firma inválida"
+          other: "Hay %{count} firmas inválidas"
+        unverified_error: (No verificadas por el Padrón)
+        loading: "Aún hay firmas que se están verificando por el Padrón, por favor refresca la página en unos instantes"
     stats:
       show:
         stats_title: Estadísticas

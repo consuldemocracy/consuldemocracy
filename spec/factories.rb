@@ -344,6 +344,17 @@ FactoryGirl.define do
     association :receiver, factory: :user
   end
 
+  factory :signature_sheet do
+    association :signable, factory: :proposal
+    association :author, factory: :user
+    document_numbers "123A, 456B, 789C"
+  end
+
+  factory :signature do
+    signature_sheet
+    sequence(:document_number) { |n| "#{n}A" }
+  end
+
   factory :legislation_process, class: 'Legislation::Process' do
     title "A collaborative legislation process"
     description "Description of the process"

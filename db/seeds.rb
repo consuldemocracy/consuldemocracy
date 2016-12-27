@@ -64,6 +64,7 @@ Setting['feature.twitter_login'] = true
 Setting['feature.facebook_login'] = true
 Setting['feature.google_login'] = true
 Setting['feature.public_stats'] = true
+Setting['feature.signature_sheets'] = true
 Setting['feature.legislation'] = true
 
 # Spending proposals feature flags
@@ -82,3 +83,7 @@ Setting['banner-img.banner-img-three'] = "Banner image 3"
 # Proposal notifications
 Setting['proposal_notification_minimum_interval_in_days'] = 3
 Setting['direct_message_max_per_day'] = 3
+
+# Email settings
+Setting['mailer_from_name'] = 'Consul'
+Setting['mailer_from_address'] = 'noreply@consul.dev'
