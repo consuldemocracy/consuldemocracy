@@ -398,7 +398,8 @@ en:
       verify_link: "verify your account"
       cant_answer_incoming: "This poll has not yet started."
       cant_answer_expired: "This poll has finished."
-      cant_answer_wrong_geozone: "The following questions are not available in your geozone."
+      cant_answer_wrong_geozone: "You can't answers the following %{count} questions because are not available in your geozone."
+      question_count_html: "This poll has a total of <strong>%{count} qeustions</strong>."
   poll_questions:
     create_question: "Create question"
     default_valid_answers: "Yes, No"
@@ -417,6 +418,7 @@ en:
       cant_answer_wrong_geozone: "This question is not available on your geozone."
       vote_answer: "Vote %{answer}"
       voted: "You have voted %{answer}"
+      poll: "Poll"
     banner:
       featured_title: "#NextVoting"
       info: "New proposals that have reached the voting phase."

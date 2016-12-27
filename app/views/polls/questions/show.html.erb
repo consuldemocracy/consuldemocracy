@@ -27,52 +27,67 @@
         <span class="title">
           <strong><%= t('poll_questions.show.author') %></strong>
         </span>
-      </p>
-      <p>
-        <%= link_to @question.author.name, @question.author, class: "margin-bottom" %>
+        <br>
+        <%= link_to @question.author.name, @question.author %>
       </p>
 
       <p>
-      <span class="title">
-        <strong><%= t('poll_questions.show.dates_title') %></strong>
+        <span class="title">
+          <strong><%= t('poll_questions.show.poll') %></strong>
+        </span>
+        <br>
+        <%= link_to @question.poll.name, @question.poll %>
       </p>
-      <p><%= poll_dates(@question.poll) %></p>
+
+      <p>
+        <span class="title">
+          <strong><%= t('poll_questions.show.dates_title') %></strong>
+        </span>
+        <br>
+        <%= poll_dates(@question.poll) %>
+      </p>
     </div>
   </div>
 </div>
 
-<% if @question.poll.current? %>
 <div class="row margin-top">
   <div class="small-12 column">
-    <% if current_user.nil? %>
+    <% if @question.poll.current? %>
+
+      <% if current_user.nil? %>
+        <div class="callout primary">
+          <%= t("poll_questions.show.not_logged_in",
+              signin: link_to(t("poll_questions.show.signin"), new_user_session_path, class: "probe-message"),
+              signup: link_to(t("poll_questions.show.signup"), new_user_registration_path, class: "probe-message")).html_safe %>
+        </div>
+      <% elsif current_user.unverified? %>
+        <div class="callout warning">
+          <%= t('poll_questions.show.cant_answer_verify_html',
+                 verify_link: link_to(t('poll_questions.show.verify_link'), verification_path)) %>
+        </div>
+      <% else %>
+        <div class="callout warning">
+          <%= t('poll_questions.show.cant_answer_wrong_geozone') %>
+        </div>
+      <% end %>
+
+      <div class="small-12 small-centered text-center column">
+        <div id="<%= dom_id(@question) %>_answers">
+          <%= render "answers", question: @question %>
+        </div>
+      </div>
+
+    <% elsif @question.poll.incoming? %>
+      <div class="callout alert">
+        <%= t('poll_questions.show.cant_answer_expired') %>
+      </div>
+    <% elsif @question.poll.expired? %>
       <div class="callout primary">
-        <%= t("poll_questions.show.not_logged_in",
-            signin: link_to(t("poll_questions.show.signin"), new_user_session_path, class: "probe-message"),
-            signup: link_to(t("poll_questions.show.signup"), new_user_registration_path, class: "probe-message")).html_safe %>
-      </div>
-    <% elsif current_user.unverified? %>
-      <div class="callout warning">
-        <%= t('poll_questions.show.cant_answer_verify_html',
-               verify_link: link_to(t('poll_questions.show.verify_link'), verification_path)) %>
-      </div>
-    <% else %>
-      <div class="callout warning">
-        <%= t('poll_questions.show.cant_answer_wrong_geozone') %>
+        <%= t('poll_questions.show.cant_answer_incoming') %>
       </div>
     <% end %>
   </div>
-
-  <div id="<%= dom_id(@question) %>_answers">
-    <div class="small-12 small-centered text-center column">
-      <%= render "answers", question: @question %>
-    </div>
-  </div>
 </div>
-<% elsif @question.poll.incoming? %>
-  <%= t('poll_questions.show.cant_answer_expired') %>
-<% elsif @question.poll.expired? %>
-  <%= t('poll_questions.show.cant_answer_incoming') %>
-<% end %>
 
 <div class="row margin-top">
   <div class="small-12 medium-9 column">

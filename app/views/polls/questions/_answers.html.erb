@@ -2,7 +2,7 @@
   <% if can? :answer, question %>
     <% question.valid_answers.each do |answer| %>
       <% if @answers_by_question_id[question.id] == answer %>
-        <span class="button" title="<%= t("poll_questions.show.voted", answer: answer)%>">
+        <span class="button answered" title="<%= t("poll_questions.show.voted", answer: answer)%>">
           <%= answer %>
         </span>
       <% else %>
@@ -16,7 +16,7 @@
     <% end %>
   <% else %>
     <% question.valid_answers.each do |answer| %>
-      <span class="button disabled"><%= answer %></span>
+      <span class="button secondary hollow disabled"><%= answer %></span>
     <% end %>
   <% end %>
 </div>

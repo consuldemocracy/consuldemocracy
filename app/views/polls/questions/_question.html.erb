@@ -3,7 +3,7 @@
     <%= link_to question.title, question_path(question) %>
   </h3>
 
-  <div id="<%= dom_id(question) %>_answers">
+  <div id="<%= dom_id(question) %>_answers" class="padding">
     <%= render 'polls/questions/answers', question: question %>
   </div>
 </div>
