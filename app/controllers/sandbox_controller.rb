@@ -1,6 +1,10 @@
 class SandboxController < ApplicationController
   skip_authorization_check
 
+  layout :set_layout
+
+  helper_method(:namespace)
+
   def index
     @templates = Dir.glob(Rails.root.join('app/views/sandbox/*.html.erb').to_s).map do |filename|
       filename = File.basename(filename, File.extname(filename))
@@ -23,5 +27,19 @@ class SandboxController < ApplicationController
     else
       render :action => "index"
     end
+  end
+
+  private
+
+  def set_layout
+    if params[:template] && params[:template].split("_").first == "admin"
+      "admin"
+    else
+      "application"
+    end
+  end
+
+  def namespace
+    "admin"
   end
 end
