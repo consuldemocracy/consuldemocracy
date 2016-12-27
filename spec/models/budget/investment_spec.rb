@@ -260,6 +260,7 @@ describe Budget::Investment do
 
     it "does not get updated if the user is erased" do
       user.erase
+      user.update(document_number: nil)
       expect(user.document_number).to be_blank
       investment.touch
       expect(investment.responsible_name).to eq("123456")
