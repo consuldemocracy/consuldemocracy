@@ -326,8 +326,12 @@
     clear: both;
     color: $text-medium;
     font-size: $small-font-size;
-    min-height: $line-height*2;
+    margin-bottom: $line-height/2;
     position: relative;
+
+    span {
+      line-height: rem-calc(32); // Same as avatar height
+    }
 
     a {
       color: $text-medium;
@@ -337,15 +341,6 @@
       font-size: $small-font-size;
       line-height: $line-height;
       margin: 0;
-    }
-
-    .author-deleted {
-      left: 0;
-      top: 4px;
-    }
-
-    .author.deleted {
-      margin-left: rem-calc(48);
     }
   }
 
@@ -371,9 +366,9 @@
   }
 
   .author-photo {
-    line-height: $line-height*2;
+    line-height: rem-calc(32);
     margin-right: rem-calc(6);
-    vertical-align: middle;
+    vertical-align: top;
     width: 32px;
   }
 
