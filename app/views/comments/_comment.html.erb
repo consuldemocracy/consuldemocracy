@@ -67,9 +67,9 @@
           </div>
 
           <div id="<%= dom_id(comment) %>_reply" class="reply">
-            <span id="<%= dom_id(comment) %>_votes" class="comment-votes float-right">
+            <div id="<%= dom_id(comment) %>_votes" class="comment-votes float-right">
               <%= render 'comments/votes', comment: comment %>
-            </span>
+            </div>
 
             <% if comment.children.size > 0 %>
               <%= link_to "#{dom_id(comment)}", class: "js-toggle-children relative", data:  {'id': "#{dom_id(comment)}"} do %>
