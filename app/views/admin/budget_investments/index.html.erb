@@ -41,6 +41,17 @@
 <h3><%= page_entries_info @investments %></h3>
 
 <table>
+  <thead>
+    <tr>
+      <th><%= t("admin.budget_investments.index.table_id") %></th>
+      <th><%= t("admin.budget_investments.index.table_title") %></th>
+      <th><%= t("admin.budget_investments.index.table_admin") %></th>
+      <th><%= t("admin.budget_investments.index.table_valuator") %></th>
+      <th><%= t("admin.budget_investments.index.table_geozone") %></th>
+      <th><%= t("admin.budget_investments.index.table_status") %></th>
+      <th class="text-center"><%= t("admin.budget_investments.index.table_actions") %></th>
+    </tr>
+  </thead>
   <% @investments.each do |investment| %>
     <tr id="<%= dom_id(investment) %>" class="budget_investment">
       <td>
@@ -68,6 +79,17 @@
       </td>
       <td class="small">
         <%= t("admin.budget_investments.index.feasibility.#{investment.feasibility}", price: investment.price) %>
+      </td>
+      <td class="small">
+        <% if investment.feasible? %>
+          <%= link_to "#", class: "button small hollow expanded" do %>
+            <%= t("admin.budget_investments.index.select") %>
+          <% end %>
+        <% else %>
+          <%= link_to "#", class: "button small hollow warning expanded" do %>
+            <%= t("admin.budget_investments.index.deselect") %>
+          <% end %>
+        <% end %>
       </td>
     </tr>
   <% end %>
