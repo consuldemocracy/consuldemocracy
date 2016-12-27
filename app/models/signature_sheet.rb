@@ -29,7 +29,7 @@ class SignatureSheet < ActiveRecord::Base
   end
 
   def parsed_document_numbers
-    document_numbers.split(/\W+/)
+    document_numbers.split(/\r\n|\n|[,]/).collect {|d| d.gsub(/\s+/, '') }
   end
 
   def signable_found
