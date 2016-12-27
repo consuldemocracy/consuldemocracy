@@ -14,7 +14,7 @@
   <li class="tabs-title">
     <%= link_to "#tab-officers" do %>
       <%= t("admin.polls.show.officers_tab") %>
-      (<%= @poll.officers.count %>)
+      (<%= @poll.officers.uniq.count %>)
     <% end %>
   </li>
 </ul>
