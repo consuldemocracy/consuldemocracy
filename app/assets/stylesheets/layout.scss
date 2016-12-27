@@ -901,16 +901,12 @@ img.avatar, img.admin-avatar, img.moderator-avatar, img.initialjs-avatar {
 }
 
 .author-deleted, .user-deleted {
-  background-color: rgba(255,255,255,.5);
   color: rgba(0,0,0,.4);
-  font-size: rem-calc(40);
-  left: 11px;
-  position: absolute;
-  top: 72px;
-}
-
-.user-deleted {
-  top: -4px;
+  display: inline-block;
+  font-size: rem-calc(32);
+  line-height: rem-calc(32);
+  height: rem-calc(32);
+  vertical-align: top;
 }
 
 .user-permissions {
@@ -1675,6 +1671,7 @@ table {
 
     .comment-info {
       color: $text-medium;
+      display: inline-block;
       font-size: $small-font-size;
       line-height: rem-calc(32); // Same as avatar height
 
