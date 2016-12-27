@@ -203,7 +203,7 @@ tags = Faker::Lorem.words(25)
                               responsible_name: Faker::Name.name,
                               external_url: Faker::Internet.url,
                               description: description,
-                              created_at: rand((Time.now - 1.week) .. Time.now),
+                              created_at: rand((Time.current - 1.week) .. Time.current),
                               tag_list: tags.sample(3).join(','),
                               geozone: Geozone.reorder("RANDOM()").first,
                               terms_of_service: "1",
@@ -461,7 +461,7 @@ puts "Commenting Poll Questions"
   author = User.reorder("RANDOM()").first
   question = Poll::Question.reorder("RANDOM()").first
   Comment.create!(user: author,
-                  created_at: rand(question.created_at .. Time.now),
+                  created_at: rand(question.created_at .. Time.current),
                   commentable: question,
                   body: Faker::Lorem.sentence)
 end

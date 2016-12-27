@@ -10,21 +10,21 @@ class Poll < ActiveRecord::Base
 
   validate :date_range
 
-  scope :current,  -> { where('starts_at <= ? and ? <= ends_at', Time.now, Time.now) }
-  scope :incoming, -> { where('? < starts_at', Time.now) }
-  scope :expired,  -> { where('ends_at < ?', Time.now) }
+  scope :current,  -> { where('starts_at <= ? and ? <= ends_at', Time.current, Time.current) }
+  scope :incoming, -> { where('? < starts_at', Time.current) }
+  scope :expired,  -> { where('ends_at < ?', Time.current) }
 
   scope :sort_for_list, -> { order(:starts_at) }
 
-  def current?(timestamp = DateTime.now)
+  def current?(timestamp = DateTime.current)
     starts_at <= timestamp && timestamp <= ends_at
   end
 
-  def incoming?(timestamp = DateTime.now)
+  def incoming?(timestamp = DateTime.current)
     timestamp < starts_at
   end
 
-  def expired?(timestamp = DateTime.now)
+  def expired?(timestamp = DateTime.current)
     ends_at < timestamp
   end
 
