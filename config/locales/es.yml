@@ -190,6 +190,7 @@ es:
       debates: Debates
       external_link_blog: Blog
       external_link_opendata: Datos abiertos
+      external_link_opendata_url: "/opendata"
       external_link_transparency: Transparencia
       external_link_transparency_url: https://transparency.consul
       locale: 'Idioma:'
@@ -208,7 +209,6 @@ es:
       open: abierto
       open_city_slogan_html: Existen ciudades gobernadas directamente por sus habitantes, que <strong>debaten</strong> sobre temas que les preocupan, <strong>proponen</strong> ideas para mejorar sus vidas y <strong>deciden</strong> entre todas y todos las que se llevan a cabo.
       open_city_title: La ciudad que quieres será la ciudad que quieras.
-      open_data: Datos abiertos
       open_gov: Gobierno %{open}
       proposals: Propuestas
       proposal_ballot: Votaciones
@@ -224,9 +224,58 @@ es:
   legislation:
     draft_versions:
       changes:
+        title: Cambios
         see_text: Ver texto
       show:
         see_changes: Ver cambios
+    processes:
+      debate:
+        empty_questions: No hay preguntas
+        participate: Realiza tus aportaciones al debate previo participando en los siguientes temas.
+      header_full:
+        title: Colabora en la elaboración de la normativa sobre
+        description: En qué consiste
+        target: A quién va dirigido
+        how_to_participate: Cómo puedes participar
+        more_info: Más información y contexto
+      index:
+        hightlighted_processes: PROCESOS DESTACADOS
+        filters:
+          open: Procesos activos
+          next: Próximamente
+          past: Terminados
+      phase_not_open:
+        not_open: Esta fase del proceso todavía no está abierta
+      phase_draft_publication:
+        empty: No se ha publicado ningún borrador
+      phase_allegations:
+        empty: No se ha publicado ningún borrador
+      phase_final_version_publication:
+        empty: No se ha publicado el resultado todavía
+      process:
+        see_latest_comments: Ver últimas aportaciones
+        see_latest_comments_title: Aportar a este proceso
+      shared:
+        key_dates: "Fechas clave:"
+        debate_dates: Debate previo
+        draft_publication_date: Publicación borrador
+        allegations_dates: Alegaciones
+        final_publication_date: Publicación resultados
+    questions:
+      question:
+        comments:
+          zero: Sin comentarios
+          one: "%{count} comentario"
+          other: "%{count} comentarios"
+        debate: Debate
+      show:
+        comments: Comentarios
+        next_question: Siguiente pregunta
+        share: Compartir
+        share_twitter: Compartir en Twitter
+        share_facebook: Compartir en Facebook
+        share_gplus: Compartir en Google+
+        title: Proceso de legislación colaborativa
   locale: Español
   notifications:
     index:
@@ -457,6 +506,7 @@ es:
       districts_list: "Listado de distritos"
       categories: "Categorías"
     target_blank_html: " (se abre en ventana nueva)"
+    you_are_in: "Estás en"
     unflag: Deshacer denuncia
     outline:
       debates: Debates

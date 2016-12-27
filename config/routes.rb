@@ -92,9 +92,15 @@ Rails.application.routes.draw do
 
   namespace :legislation do
     resources :processes, only: [:index, :show] do
+      get :draft_publication
+      get :allegations
+      get :final_version_publication
+      resources :questions, only: [:show] do
+        resources :answers, only: [:create]
+      end
       resources :draft_versions, only: [:show] do
-        resources :annotations
         get :changes
+        resources :annotations
       end
     end
   end
@@ -205,6 +211,7 @@ Rails.application.routes.draw do
 
     namespace :legislation do
       resources :processes do
+        resources :questions
         resources :draft_versions
       end
     end

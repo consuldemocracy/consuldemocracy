@@ -48,6 +48,7 @@
 //= require social_share
 //= require markdown-it
 //= require markdown_editor
+//= require cocoon
 //= require allegations
 //= require custom
 

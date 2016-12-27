@@ -1,0 +1,5 @@
+<% if process.final_draft_version %>
+  <p><%= legislation_process_draft_version_path(process.final_draft_version) %></p>
+<% else %>
+  <p><%= t('.empty') %></p>
+<% end %>

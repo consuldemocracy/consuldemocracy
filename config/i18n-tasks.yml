@@ -120,6 +120,7 @@ ignore_unused:
   - 'admin.legislation.processes.index.filter*'
   - 'admin.legislation.processes.*.submit_button'
   - 'admin.legislation.draft_versions.*.submit_button'
+  - 'admin.legislation.questions.*.submit_button'
   - 'admin.comments.index.hidden_*'
   - 'admin.settings.index.features.*'
   - 'moderation.comments.index.filter*'
@@ -141,6 +142,7 @@ ignore_unused:
   - 'notifications.index.comments_on*'
   - 'notifications.index.replies_to*'
   - 'notifications.index.proposal_notification*'
+  - 'legislation.processes.index.filter*'
   - 'helpers.page_entries_info.*' # kaminari
   - 'views.pagination.*' # kaminari
   - 'shared.suggest.*'

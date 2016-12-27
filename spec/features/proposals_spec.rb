@@ -333,7 +333,7 @@ feature 'Proposals' do
 
       expect(page).to have_content 'Proposal created successfully.'
 
-      within "#tags" do
+      within "#tags_proposal_#{Proposal.last.id}" do
         expect(page).to have_content 'Education'
         expect(page).to_not have_content 'Health'
       end
@@ -355,7 +355,7 @@ feature 'Proposals' do
       click_button 'Create proposal'
 
       expect(page).to have_content 'Proposal created successfully.'
-      within "#tags" do
+      within "#tags_proposal_#{Proposal.last.id}" do
         expect(page).to have_content 'Refugees'
         expect(page).to have_content 'Solidarity'
       end

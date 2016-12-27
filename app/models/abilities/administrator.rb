@@ -33,7 +33,7 @@ module Abilities
       can :mark_featured, Debate
       can :unmark_featured, Debate
 
-      can :comment_as_administrator, [Debate, Comment, Proposal]
+      can :comment_as_administrator, [Debate, Comment, Proposal, Legislation::Question]
 
       can [:search, :create, :index, :destroy], ::Moderator
       can [:search, :create, :index, :summary], ::Valuator
@@ -48,6 +48,8 @@ module Abilities
 
       can [:manage], ::Legislation::Process
       can [:manage], ::Legislation::DraftVersion
+      can [:manage], ::Legislation::Question
+      cannot :comment_as_moderator, ::Legislation::Question
     end
   end
 end

@@ -349,14 +349,36 @@ FactoryGirl.define do
     description "Description of the process"
     target "Who will affected by this law?"
     how_to_participate "You can participate by answering some questions"
-    start_date "2016-11-16"
-    end_date "2016-11-16"
-    debate_start_date "2016-11-16"
-    debate_end_date "2016-11-16"
-    draft_publication_date "2016-11-16"
-    allegations_start_date "2016-11-16"
-    allegations_end_date "2016-11-16"
-    final_publication_date "2016-11-16"
+    start_date Date.current - 5.days
+    end_date Date.current + 5.days
+    debate_start_date Date.current - 5.days
+    debate_end_date Date.current - 2.days
+    draft_publication_date Date.current - 1.day
+    allegations_start_date Date.current
+    allegations_end_date Date.current + 3.days
+    final_publication_date Date.current + 5.days
+
+    trait :next do
+      start_date Date.current + 2.days
+      end_date Date.current + 8.days
+      debate_start_date Date.current + 2.days
+      debate_end_date Date.current + 4.days
+      draft_publication_date Date.current + 5.day
+      allegations_start_date Date.current + 5.days
+      allegations_end_date Date.current + 7.days
+      final_publication_date Date.current + 8.days
+    end
+
+    trait :past do
+      start_date Date.current - 12.days
+      end_date Date.current - 2.days
+      debate_start_date Date.current - 12.days
+      debate_end_date Date.current - 9.days
+      draft_publication_date Date.current - 8.day
+      allegations_start_date Date.current - 8.days
+      allegations_end_date Date.current - 4.days
+      final_publication_date Date.current - 2.days
+    end
   end
 
   factory :legislation_draft_version, class: 'Legislation::DraftVersion' do
@@ -366,5 +388,16 @@ FactoryGirl.define do
     status "draft"
     final_version false
     body "Body of the legislation text"
+  end
+
+  factory :legislation_question, class: 'Legislation::Question' do
+    process factory: :legislation_process
+    title "Question text"
+    author factory: :user
+  end
+
+  factory :legislation_question_option, class: 'Legislation::QuestionOption' do
+    question factory: :legislation_question
+    sequence(:value) { |n| "Option #{n}" }
   end
 end

@@ -190,6 +190,7 @@ en:
       debates: Debates
       external_link_blog: Blog
       external_link_opendata: Open data
+      external_link_opendata_url: "/opendata"
       external_link_transparency: Transparency
       external_link_transparency_url: https://transparency.consul
       locale: 'Language:'
@@ -208,7 +209,6 @@ en:
       open: open
       open_city_slogan_html: There are cities that are governed directly by their inhabitants, who <b>discuss</b> the topics they are concerned about, <b>propose</b> ideas to improve their lives and <b>decide</b> among themselves which ones will be carried out.
       open_city_title: Love the city, and it will become a city you love.
-      open_data: Open data
       open_gov: Open government
       proposals: Proposals
       proposal_ballot: Voting
@@ -224,9 +224,58 @@ en:
   legislation:
     draft_versions:
       changes:
+        title: Changes
         see_text: See text
       show:
         see_changes: See changes
+    processes:
+      debate:
+        empty_questions: There aren't any questions
+        participate: Participate in the debate
+      header_full:
+        title: Participate
+        description: Description
+        target: Target
+        how_to_participate: How to participate
+        more_info: More information and context
+      index:
+        hightlighted_processes: HIGHLIGHTED PROCESSES
+        filters:
+          open: Open processes
+          next: Next
+          past: Past
+      phase_not_open:
+        not_open: This phase is not open yet
+      phase_draft_publication:
+        empty: There are no drafts published
+      phase_allegations:
+        empty: There are no drafts published
+      phase_final_version_publication:
+        empty: Results have not been published yet
+      process:
+        see_latest_comments: See latest comments
+        see_latest_comments_title: Comment on this process
+      shared:
+        key_dates: "Key dates:"
+        debate_dates: Debate
+        draft_publication_date: Draft publication
+        allegations_dates: Allegations
+        final_publication_date: Final result publication
+    questions:
+      question:
+        comments:
+          zero: No comments
+          one: "%{count} comment"
+          other: "%{count} comments"
+        debate: Debate
+      show:
+        comments: Comments
+        next_question: Next question
+        share: Share
+        share_twitter: Share on Twitter
+        share_facebook: Share on Facebook
+        share_gplus: Share on Google+
+        title: Collaborative legislation process
   locale: English
   notifications:
     index:
@@ -457,6 +506,7 @@ en:
       districts_list: "Districts list"
       categories: "Categories"
     target_blank_html: " (link opens in new window)"
+    you_are_in: "You are in"
     unflag: Unflag
     outline:
       debates: Debates

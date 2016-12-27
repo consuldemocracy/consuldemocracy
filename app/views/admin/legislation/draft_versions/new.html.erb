@@ -1,6 +1,6 @@
 <div class="legislation-draft-versions-index row">
   <div class="small-12 column">
-    <%= link_to admin_legislation_processes_path, class: "back" do %>
+    <%= link_to admin_legislation_process_path(@process), class: "back" do %>
       <span class="icon-angle-left"></span>
       <%= t("admin.legislation.draft_versions.new.back") %>
     <% end %>
@@ -12,6 +12,5 @@
     <h3><%= t("admin.legislation.draft_versions.new.title") %></h3>
 
     <%= render 'form', url: admin_legislation_process_draft_versions_path(@process) %>
-
   </div>
 </div>
