@@ -132,4 +132,45 @@ describe Comment do
     end
   end
 
+  describe "public_for_api" do
+    it "returns comments" do
+      comment = create(:comment)
+
+      expect(Comment.public_for_api).to include(comment)
+    end
+
+    it "does not return hidden comments" do
+      hidden_comment = create(:comment, :hidden)
+
+      expect(Comment.public_for_api).not_to include(hidden_comment)
+    end
+
+    it "returns comments on debates" do
+      debate = create(:debate)
+      comment = create(:comment, commentable: debate)
+
+      expect(Comment.public_for_api).to include(comment)
+    end
+
+    it "does not return comments on hidden debates" do
+      hidden_debate = create(:debate, :hidden)
+      comment = create(:comment, commentable: hidden_debate)
+
+      expect(Comment.public_for_api).not_to include(comment)
+    end
+
+    it "returns comments on proposals" do
+      proposal = create(:proposal)
+      comment = create(:comment, commentable: proposal)
+
+      expect(Comment.public_for_api).to include(comment)
+    end
+
+    it "does not return comments on hidden proposals" do
+      hidden_proposal = create(:proposal, :hidden)
+      comment = create(:comment, commentable: hidden_proposal)
+
+      expect(Comment.public_for_api).not_to include(comment)
+    end
+  end
 end

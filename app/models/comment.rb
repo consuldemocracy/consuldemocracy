@@ -16,6 +16,7 @@ class Comment < ActiveRecord::Base
 
   belongs_to :commentable, -> { with_hidden }, polymorphic: true, counter_cache: true
   belongs_to :user, -> { with_hidden }
+  belongs_to :public_author, -> { with_public_activity }, class_name: 'User', foreign_key: 'user_id'
 
   before_save :calculate_confidence_score
 
@@ -23,6 +24,12 @@ class Comment < ActiveRecord::Base
   scope :with_visible_author, -> { joins(:user).where("users.hidden_at IS NULL") }
   scope :not_as_admin_or_moderator, -> { where("administrator_id IS NULL").where("moderator_id IS NULL")}
   scope :sort_by_flags, -> { order(flags_count: :desc, updated_at: :desc) }
+
+  scope :public_for_api, -> do
+    joins("FULL OUTER JOIN debates ON commentable_type = 'Debate' AND commentable_id = debates.id").
+    joins("FULL OUTER JOIN proposals ON commentable_type = 'Proposal' AND commentable_id = proposals.id").
+    where("commentable_type = 'Proposal' AND proposals.hidden_at IS NULL OR commentable_type = 'Debate' AND debates.hidden_at IS NULL")
+  end
 
   scope :sort_by_most_voted, -> { order(confidence_score: :desc, created_at: :desc) }
   scope :sort_descendants_by_most_voted, -> { order(confidence_score: :desc, created_at: :asc) }
