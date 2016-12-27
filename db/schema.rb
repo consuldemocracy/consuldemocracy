@@ -227,6 +227,20 @@ ActiveRecord::Schema.define(version: 20161222180927) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "legislation_answers", force: :cascade do |t|
+    t.integer  "legislation_question_id"
+    t.integer  "legislation_question_option_id"
+    t.integer  "user_id"
+    t.datetime "hidden_at"
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
+  end
+
+  add_index "legislation_answers", ["hidden_at"], name: "index_legislation_answers_on_hidden_at", using: :btree
+  add_index "legislation_answers", ["legislation_question_id"], name: "index_legislation_answers_on_legislation_question_id", using: :btree
+  add_index "legislation_answers", ["legislation_question_option_id"], name: "index_legislation_answers_on_legislation_question_option_id", using: :btree
+  add_index "legislation_answers", ["user_id"], name: "index_legislation_answers_on_user_id", using: :btree
+
   create_table "legislation_draft_versions", force: :cascade do |t|
     t.integer  "legislation_process_id"
     t.string   "title"
