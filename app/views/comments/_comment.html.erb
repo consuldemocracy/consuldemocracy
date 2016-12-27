@@ -1,29 +1,28 @@
 <% cache [locale_and_user_status(comment), comment, commentable_cache_key(comment.commentable), comment.author, (@comment_flags[comment.id] if @comment_flags)] do %>
   <div class="row">
   	<ul id="<%= dom_id(comment) %>" class="comment no-bullet small-12 column">
-
-      <% if comment.hidden? || comment.user.hidden? %>
-        <% if comment.children.size > 0 %>
-          <div class="is-deleted">
-            <p><%= t("comments.comment.deleted") %></p>
-          </div>
-        <% end %>
-      <% else %>
-        <% if comment.as_administrator? %>
-          <%= image_tag("avatar_admin.png", size: 32, class: "admin-avatar float-left") %>
-        <% elsif comment.as_moderator? %>
-          <%= image_tag("avatar_moderator.png", size: 32, class: "moderator-avatar float-left") %>
-        <% else %>
-        <% if comment.user.hidden? || comment.user.erased? %>
-            <span class="icon-deleted user-deleted"></span>
-          <% elsif comment.user.organization? %>
-            <%= image_tag("avatar_collective.png", size: 32, class: "avatar float-left") %>
-          <% else %>
-            <%= avatar_image(comment.user, seed: comment.user_id, size: 32, class: "float-left") %>
+      <li class="comment-body">
+        <% if comment.hidden? || comment.user.hidden? %>
+          <% if comment.children.size > 0 %>
+            <div class="is-deleted">
+              <p><%= t("comments.comment.deleted") %></p>
+            </div>
           <% end %>
-        <% end %>
+        <% else %>
+          <% if comment.as_administrator? %>
+            <%= image_tag("avatar_admin.png", size: 32, class: "admin-avatar float-left") %>
+          <% elsif comment.as_moderator? %>
+            <%= image_tag("avatar_moderator.png", size: 32, class: "moderator-avatar float-left") %>
+          <% else %>
+          <% if comment.user.hidden? || comment.user.erased? %>
+              <span class="icon-deleted user-deleted"></span>
+            <% elsif comment.user.organization? %>
+              <%= image_tag("avatar_collective.png", size: 32, class: "avatar float-left") %>
+            <% else %>
+              <%= avatar_image(comment.user, seed: comment.user_id, size: 32, class: "float-left") %>
+            <% end %>
+          <% end %>
 
-        <li class="comment-body">
           <div class="comment-info">
 
             <% if comment.as_administrator? %>
@@ -73,7 +72,7 @@
             </span>
 
             <% if comment.children.size > 0 %>
-              <%= link_to "", class: "js-toggle-children relative", data:  {'id': "#{dom_id(comment)}"} do %>
+              <%= link_to "#{dom_id(comment)}", class: "js-toggle-children relative", data:  {'id': "#{dom_id(comment)}"} do %>
                 <span class="sr-only js-child-toggle" style="display: none;"><%= t("shared.show") %></span>
                 <span class="sr-only js-child-toggle"><%= t("shared.hide") %></span>
                 <span id="<%= dom_id(comment) %>_children_arrow" class="icon-arrow-down"></span> <%= t("comments.comment.responses", count: comment.children.size) %>
@@ -94,11 +93,13 @@
           </div>
         </li>
       <% end %>
-      <ul id="<%= dom_id(comment) %>_children" class="no-bullet comment-children">
-        <% child_comments_of(comment).each do |child| %>
-          <%= render 'comments/comment', comment: child %>
-        <% end %>
-      </ul>
+      <li>
+        <ul id="<%= dom_id(comment) %>_children" class="no-bullet comment-children">
+          <% child_comments_of(comment).each do |child| %>
+            <%= render 'comments/comment', comment: child %>
+          <% end %>
+        </ul>
+      </li>
     </ul>
   </div>
 <% end %>

@@ -1601,7 +1601,10 @@ table {
     }
 
     .comment-body {
-      margin-left: rem-calc(42);
+
+      img {
+        margin-right: $line-height/2;
+      }
 
       .reply {
         background: white;
@@ -1609,15 +1612,19 @@ table {
         border-left: 0;
         border-right: 0;
         font-size: $small-font-size;
-        margin: rem-calc(6) 0;
-        padding: rem-calc(6);
+        margin: $line-height/4 0;
+        padding: $line-height/4;
         position: relative;
 
+        a.relative, [class^="icon-arrow"] {
+          padding-left: $line-height/2;
+        }
+
         [class^="icon-arrow"] {
-          font-size: rem-calc(18);
+          font-size: $base-font-size;
           left: -20px;
           position: absolute;
-          top: 0;
+          top: -1px;
         }
 
         .divider {
@@ -1669,8 +1676,7 @@ table {
     .comment-info {
       color: $text-medium;
       font-size: $small-font-size;
-      margin-top: $line-height/4;
-      vertical-align: middle;
+      line-height: rem-calc(32); // Same as avatar height
 
       span.user-name {
         color: $text;
