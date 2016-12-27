@@ -6,7 +6,7 @@ class Admin::Poll::PollsController < Admin::BaseController
   end
 
   def show
-    @poll = Poll.includes(:questions, :booths, :officers).find(params[:id])
+    @poll = Poll.includes(:questions, :booths, officers: [:user]).order('poll_questions.title', 'poll_booths.name', 'users.username').find(params[:id])
   end
 
   def new
@@ -63,14 +63,14 @@ class Admin::Poll::PollsController < Admin::BaseController
   end
 
   def search_questions
-    @questions = ::Poll::Question.where("poll_id IS ? OR poll_id != ?", nil, @poll.id).search({search: @search})
+    @questions = ::Poll::Question.where("poll_id IS ? OR poll_id != ?", nil, @poll.id).search({search: @search}).order(title: :asc)
     respond_to do |format|
       format.js
     end
   end
 
   def search_officers
-    @officers = User.joins(:poll_officer).search(@search)
+    @officers = User.joins(:poll_officer).search(@search).order(username: :asc)
 
     respond_to do |format|
       format.js
