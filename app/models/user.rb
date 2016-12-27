@@ -13,6 +13,7 @@ class User < ActiveRecord::Base
   has_one :moderator
   has_one :valuator
   has_one :manager
+  has_one :poll_officer, class_name: "Poll::Officer"
   has_one :organization
   has_one :lock
   has_many :flags

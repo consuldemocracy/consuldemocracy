@@ -189,6 +189,7 @@ Rails.application.routes.draw do
       end
       resources :polls do
         get :search_booths, on: :member
+        get :search_officers, on: :member
         get :search_questions, on: :member
         patch :add_question, on: :member
         patch :remove_question, on: :member
@@ -196,6 +197,7 @@ Rails.application.routes.draw do
 
       resources :booths
       resources :booth_assignments, only: [:create, :destroy]
+      resources :officer_assignments, only: [:new, :create, :destroy]
       resources :questions
     end
 

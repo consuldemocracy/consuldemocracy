@@ -315,6 +315,9 @@ en:
       booths_search:
         button: Search
         placeholder: Search booth by name
+      poll_officers_search:
+        button: Search
+        placeholder: Search poll officers
       poll_questions_search:
         button: Search
         placeholder: Search poll questions

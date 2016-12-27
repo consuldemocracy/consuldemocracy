@@ -1,0 +1,22 @@
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"><%= @officers.blank? ? t('admin.polls.show.no_search_results') : t('admin.polls.show.search_results') %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @officers.each do |officer| %>
+    <tr>
+      <td>
+        <%= officer.name %>
+      </td>
+      <td>
+        <%= officer.email %>
+      </td>
+      <td class="text-right">
+
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -315,6 +315,9 @@ es:
       booths_search:
         button: Buscar
         placeholder: Buscar urna por nombre
+      poll_officers_search:
+        button: Buscar
+        placeholder: Buscar presidentes de mesa
       poll_questions_search:
         button: Buscar
         placeholder: Buscar preguntas

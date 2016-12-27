@@ -1,6 +1,6 @@
 class Admin::Poll::PollsController < Admin::BaseController
   load_and_authorize_resource
-  before_action :load_search, only: [:search_booths, :search_questions]
+  before_action :load_search, only: [:search_booths, :search_questions, :search_officers]
 
   def index
   end
@@ -62,8 +62,16 @@ class Admin::Poll::PollsController < Admin::BaseController
     end
   end
 
-  def search_questions #cambiar a @poll.id
-    @questions = ::Poll::Question.where("poll_id IS ? OR poll_id != ?", nil, search_params[:poll_id]).search({search: @search})
+  def search_questions
+    @questions = ::Poll::Question.where("poll_id IS ? OR poll_id != ?", nil, @poll.id).search({search: @search})
+    respond_to do |format|
+      format.js
+    end
+  end
+
+  def search_officers
+    @officers = User.joins(:poll_officer).search(@search)
+
     respond_to do |format|
       format.js
     end
