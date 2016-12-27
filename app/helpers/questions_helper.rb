@@ -17,7 +17,7 @@ module QuestionsHelper
 
   def comment_label(css_id, parent_id, commentable)
     comment_kind = find_comment_kind(commentable)
-    if parent_id.present? && commentable.is_a?(Debate)
+    if parent_id.present?
       comment_label_for_reply
     else
       t("#{comment_kind.pluralize}.form.leave_comment")
@@ -25,7 +25,7 @@ module QuestionsHelper
   end
 
   def comment_label_for_reply
-    ""
+    t("comments.form.leave_reply")
   end
 
   def find_comment_kind(resource)

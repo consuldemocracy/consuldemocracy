@@ -59,6 +59,7 @@ es:
       comment_as_admin: Comentar como administrador
       comment_as_moderator: Comentar como moderador
       leave_comment: Deja tu comentario
+      leave_reply: Deja tu respuesta
     orders:
       most_voted: Más votados
       newest: Más nuevos primero
