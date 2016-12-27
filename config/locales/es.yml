@@ -223,6 +223,7 @@ es:
       proposal_ballot: Votaciones
       see_all: Ver propuestas
       budgets: Presupuestos ciudadanos
+      spending_proposals: "Propuestas de inversión"
   legislation:
     help:
       alt: Selecciona el texto que quieres comentar y pulsa en el botón con el lápiz.
