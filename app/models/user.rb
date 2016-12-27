@@ -169,7 +169,6 @@ class User < ActiveRecord::Base
       username: nil,
       email: nil,
       unconfirmed_email: nil,
-      document_number: nil,
       phone_number: nil,
       encrypted_password: "",
       confirmation_token: nil,

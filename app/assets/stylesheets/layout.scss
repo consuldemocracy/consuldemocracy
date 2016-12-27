@@ -221,7 +221,6 @@ a {
   float: left;
 }
 
-//<<<<<<< HEAD
 //.table-fixed {
 //  table-layout: fixed;
 //=======
@@ -261,8 +260,45 @@ a {
 //
 //.button.float-right ~ .button.float-right {
 //  margin: 0 $line-height/2;
-//>>>>>>> budget
 //}
+
+.tabs-content {
+  border: 0;
+}
+
+.tabs {
+  border: {
+    left: 0;
+    right: 0;
+    top: 0;
+  };
+  margin-bottom: $line-height;
+
+  .tabs-title > a {
+    color: $text-medium;
+    margin-bottom: rem-calc(-1);
+    margin-right: $line-height;
+
+    &[aria-selected='true'],
+    &.is-active {
+      color: $brand;
+      border-bottom: 2px solid $brand;
+      font-weight: bold;
+    }
+  }
+
+  h2, h3 {
+    font-size: $base-font-size;
+  }
+}
+
+.no-max-width {
+  max-width: none;
+}
+
+.button.float-right ~ .button.float-right {
+  margin: 0 $line-height/2;
+}
 
 .pagination .current {
   background: $brand;

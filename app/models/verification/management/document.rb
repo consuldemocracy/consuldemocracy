@@ -10,7 +10,7 @@ class Verification::Management::Document
   delegate :username, :email, to: :user, allow_nil: true
 
   def user
-    @user = User.by_document(document_type, document_number).first
+    @user = User.active.by_document(document_type, document_number).first
   end
 
   def user?

@@ -414,6 +414,25 @@ ActiveRecord::Schema.define(version: 20161221172447) do
 
   add_index "settings", ["key"], name: "index_settings_on_key", using: :btree
 
+  create_table "signature_sheets", force: :cascade do |t|
+    t.integer  "signable_id"
+    t.string   "signable_type"
+    t.text     "document_numbers"
+    t.boolean  "processed",        default: false
+    t.integer  "author_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "signatures", force: :cascade do |t|
+    t.integer  "signature_sheet_id"
+    t.integer  "user_id"
+    t.string   "document_number"
+    t.boolean  "verified",           default: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "spending_proposals", force: :cascade do |t|
     t.string   "title"
     t.text     "description"
@@ -553,7 +572,8 @@ ActiveRecord::Schema.define(version: 20161221172447) do
     t.boolean  "email_digest",                              default: true
     t.boolean  "email_on_direct_message",                   default: true
     t.boolean  "official_position_badge",                   default: false
-    t.datetime "password_changed_at",                       default: '2016-11-02 13:51:14', null: false
+    t.datetime "password_changed_at",                       default: '2016-12-21 17:55:08', null: false
+    t.boolean  "created_from_signature",                    default: false
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree
@@ -634,8 +654,10 @@ ActiveRecord::Schema.define(version: 20161221172447) do
     t.integer  "vote_weight"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "signature_id"
   end
 
+  add_index "votes", ["signature_id"], name: "index_votes_on_signature_id", using: :btree
   add_index "votes", ["votable_id", "votable_type", "vote_scope"], name: "index_votes_on_votable_id_and_votable_type_and_vote_scope", using: :btree
   add_index "votes", ["voter_id", "voter_type", "vote_scope"], name: "index_votes_on_voter_id_and_voter_type_and_vote_scope", using: :btree
 

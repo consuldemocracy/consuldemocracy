@@ -50,6 +50,7 @@ module Abilities
       can :create, Budget::ValuatorAssignment
 
       can [:search, :edit, :update, :create, :index, :destroy], Banner
+      can [:index, :create, :edit, :update, :destroy], Geozone
     end
   end
 end

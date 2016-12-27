@@ -394,7 +394,8 @@ FactoryGirl.define do
 
   factory :geozone do
     sequence(:name) { |n| "District #{n}" }
-    census_code { '01' }
+    sequence(:external_code) { |n| "#{n}" }
+    sequence(:census_code) { |n| "#{n}" }
   end
 
   factory :banner do
@@ -420,4 +421,14 @@ FactoryGirl.define do
     association :receiver, factory: :user
   end
 
+  factory :signature_sheet do
+    association :signable, factory: :proposal
+    association :author, factory: :user
+    document_numbers "123A, 456B, 789C"
+  end
+
+  factory :signature do
+    signature_sheet
+    sequence(:document_number) { |n| "#{n}A" }
+  end
 end
