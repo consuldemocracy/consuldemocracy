@@ -278,6 +278,13 @@ en:
         share_facebook: Share on Facebook
         share_gplus: Share on Google+
         title: Collaborative legislation process
+      participation:
+        organizations: Organisations are not permitted to participate in the debate
+        signin: Sign in
+        signup: Sign up
+        unauthenticated: You must %{signin} or %{signup} to participate.
+        verified_only: Only verified users can participate, %{verify_account}.
+        verify_account: verify your account
   locale: English
   notifications:
     index:

@@ -13,4 +13,5 @@ App.Votes =
   initialize: ->
     App.Votes.hoverize "div.votes"
     App.Votes.hoverize "div.supports"
+    App.Votes.hoverize "div.debate-questions"
     false
