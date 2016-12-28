@@ -428,6 +428,15 @@ table.investment-projects-summary {
 
 // 06. Legislation
 // --------------
+.legislation-process-index {
+  
+  .legislation-process-new {
+    @include breakpoint(medium) {
+      text-align: right;
+    }
+  }
+}
+
 .legislation-process-edit {
   
   .menu .active > a {
