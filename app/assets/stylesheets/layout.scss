@@ -1065,10 +1065,6 @@ img.avatar, img.admin-avatar, img.moderator-avatar, img.initialjs-avatar {
   background: #C0392B;
 }
 
-.is-deleted {
-  background: #E7E7E7;
-}
-
 .level-1 {
   background: #1ABC9C;
 }
@@ -1657,20 +1653,12 @@ table {
       }
     }
 
-    .is-deleted {
-      background: #E7E7E7;
-      margin-left: $line-height;
-      padding: $line-height/2;
-    }
-
     .comment-children {
       border-left: 1px dashed $border;
-      margin-left: $line-height;
-      padding-left: $line-height/4;
-
-      @media only screen and (max-width: 40em) {
-        margin-left: rem-calc(16);
-      }
+      display: inline-block;
+      margin-left: rem-calc(16);
+      padding-left: rem-calc(8);
+      width: 100%;
     }
 
     .comment-info {
@@ -1708,6 +1696,11 @@ table {
       float: right;
     }
   }
+}
+
+.comment-form {
+  display: inline-block;
+  width: 100%;
 }
 
 // 16. Flags
