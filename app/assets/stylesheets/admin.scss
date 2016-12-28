@@ -5,6 +5,7 @@
 // 03. List elements
 // 04. Stats
 // 05. Management
+// 06. Legislation
 //
 
 // 01. Global styles
@@ -425,3 +426,40 @@ table.investment-projects-summary {
   height: 99%;
 }
 
+// 06. Legislation
+// --------------
+.legislation-process-edit {
+  
+  .menu .active > a {
+    background: none;
+  }
+  
+  .edit_legislation_process {
+    
+    small {
+      color: $text-medium;
+    }
+    
+    input[type]:not([type="submit"]):not([type="file"]):not([type="checkbox"]):not([type="radio"]) {
+      background: $white;
+    }
+    
+    .legislation-process-start, .legislation-process-end {
+      @include breakpoint(medium) {
+        line-height: 3rem;
+      }
+    }
+    
+    .legislation-process-end {
+      @include breakpoint(medium) {
+        text-align: right;
+      }
+    }
+  }
+  
+  .legislation-process-save {
+    @include breakpoint(medium) {
+      float: right;
+    }
+  }
+}
