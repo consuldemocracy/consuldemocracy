@@ -165,7 +165,9 @@ Rails.application.routes.draw do
         end
       end
 
-      resources :budget_investments, only: [:index, :show, :edit, :update]
+      resources :budget_investments, only: [:index, :show, :edit, :update] do
+        member { patch :toggle_selection }
+      end
     end
 
     resources :signature_sheets, only: [:index, :new, :create, :show]
