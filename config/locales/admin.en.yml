@@ -115,7 +115,7 @@ en:
         feasibility:
           feasible: "Feasible (%{price})"
           unfeasible: "Unfeasible"
-          undefined: "Undefined"
+          undecided: "Undecided"
         selected: "Selected"
         select: "Select"
         table_id: "ID"
