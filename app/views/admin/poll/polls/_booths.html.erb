@@ -5,11 +5,11 @@
     <%= t("admin.polls.show.no_booths") %>
   </div>
 <% else %>
-  <table>
+  <table class="margin">
     <thead>
-      <th><%= t("admin.polls.show.name") %></th>
-      <th><%= t("admin.polls.show.location") %></th>
-      <th>&nbsp;</th>
+      <th><%= t("admin.polls.show.table_name") %></th>
+      <th><%= t("admin.polls.show.table_location") %></th>
+      <th class="text-center"><%= t("admin.polls.show.table_assignment") %></th>
     </thead>
     <tbody>
       <% @poll.booths.each do |booth| %>
@@ -22,7 +22,7 @@
           <td>
             <%= booth.location %>
           </td>
-          <td class="text-right">
+          <td class="text-center">
             <%= link_to t("admin.polls.show.remove_booth"),
                         admin_booth_assignment_path(poll: @poll, booth: booth),
                         method: :delete,

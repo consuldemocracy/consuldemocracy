@@ -30,9 +30,7 @@ feature 'Admin poll officers' do
   scenario 'Delete' do
     click_link 'Delete position'
 
-    within("#officers") do
-      expect(page).to_not have_content @officer.name
-    end
+    expect(page).to_not have_css '#officers'
   end
 
 end

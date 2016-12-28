@@ -1,30 +1,42 @@
-<table>
-  <thead>
-    <tr>
-      <th colspan="3"><%= @officers.blank? ? t('admin.polls.show.no_search_results') : t('admin.polls.show.search_results') %></th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @officers.each do |user| %>
-    <tr>
-      <td>
-        <%= user.name %>
-      </td>
-      <td>
-        <%= user.email %>
-      </td>
-      <td class="text-right">
-      <% if @poll.officer_ids.include?(user.poll_officer.id) %>
-          <%= link_to t("admin.polls.show.edit_officer_assignments"),
-                        admin_officer_assignments_path(poll: @poll, officer: user.poll_officer),
-                        class: "button hollow alert" %>
-        <% else %>
-          <%= link_to t("admin.polls.show.add_officer_assignments"),
-                        admin_officer_assignments_path(poll: @poll, officer: user.poll_officer),
-                        class: "button hollow" %>
-        <% end %>
-      </td>
-    </tr>
-    <% end %>
-  </tbody>
-</table>
+<% if @officers.blank? %>
+  <div class="callout alert margin-bottom">
+    <%= t('admin.polls.show.no_search_results') %>
+  </div>
+<% else %>
+  <h3><%= t('admin.polls.show.search_results') %></h3>
+<% end %>
+
+<% if @officers.any? %>
+  <table>
+    <thead>
+      <tr>
+        <th><%= t("admin.polls.show.table_name") %></th>
+        <th><%= t("admin.polls.show.table_email") %></th>
+        <th class="text-center"><%= t("admin.polls.show.table_assignment") %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @officers.each do |user| %>
+      <tr>
+        <td>
+          <%= user.name %>
+        </td>
+        <td>
+          <%= user.email %>
+        </td>
+        <td class="text-center">
+        <% if @poll.officer_ids.include?(user.poll_officer.id) %>
+            <%= link_to t("admin.polls.show.edit_officer_assignments"),
+                          admin_officer_assignments_path(poll: @poll, officer: user.poll_officer),
+                          class: "button hollow alert" %>
+          <% else %>
+            <%= link_to t("admin.polls.show.add_officer_assignments"),
+                          admin_officer_assignments_path(poll: @poll, officer: user.poll_officer),
+                          class: "button hollow" %>
+          <% end %>
+        </td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>

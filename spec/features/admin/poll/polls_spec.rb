@@ -103,7 +103,7 @@ feature 'Admin polls' do
         visit admin_poll_path(poll)
         click_link "Booths (0)"
 
-        expect(page).to have_content "There are no booths in this poll."
+        expect(page).to have_content "There are no booths assigned to this poll."
       end
 
       scenario "Booth list", :js do
@@ -122,7 +122,7 @@ feature 'Admin polls' do
             expect(page).to have_content booth.location
           end
         end
-        expect(page).to_not have_content "There are no booths"
+        expect(page).to_not have_content "There are no booths assigned to this poll."
       end
     end
   end

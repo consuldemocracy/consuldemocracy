@@ -1,4 +1,8 @@
-<%= link_to @poll.name, admin_poll_path(@poll, anchor: 'tab-officers') %>
+<%= link_to admin_poll_path(@poll, anchor: 'tab-officers') do %>
+  <span class="icon-angle-left"></span>
+  <%= @poll.name %>
+<% end %>
+
 <h2><%= @officer.name %> - <%= @officer.email %></h2>
 
 <%= form_tag(admin_officer_assignments_path, {id: "officer_assignment_form"}) do %>
@@ -40,7 +44,8 @@
     <thead>
       <tr>
         <th><%= t("admin.poll_officer_assignments.index.date") %></th>
-        <th colspan="2"><%= t("admin.poll_officer_assignments.index.booth") %></th>
+        <th><%= t("admin.poll_officer_assignments.index.booth") %></th>
+        <th class="text-center"><%= t("admin.poll_officer_assignments.index.assignment") %></th>
       </tr>
     </thead>
     <tbody>
@@ -48,7 +53,7 @@
         <tr id="<%= dom_id officer_assignment %>">
           <td><%= l officer_assignment.date.to_date %></td>
           <td><%= booth_name_with_location(officer_assignment.booth_assignment.booth) %></td>
-          <td class="text-right">
+          <td class="text-center">
             <%= link_to t("admin.poll_officer_assignments.index.remove_assignment"),
                         admin_officer_assignment_path(officer_assignment),
                         method: :delete,

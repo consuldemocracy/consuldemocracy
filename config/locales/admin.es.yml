@@ -173,12 +173,13 @@ es:
         new_assignment: "Nuevo turno"
         date: "Fecha"
         booth: "Urna"
+        assignment: "Asignación"
         select_date: "Seleccionar día"
         select_booth: "Seleccionar urna"
         add_assignment: "Añadir turno"
         remove_assignment: "Eliminar turno"
         assignments: "Turnos como presidente de mesa en esta votación"
-        no_assignments: "No tiene turnos como presidente de mesa en esta votación"
+        no_assignments: "No tiene turnos como presidente de mesa en esta votación."
     polls:
       index:
         title: "Listado de votaciones"
@@ -200,9 +201,9 @@ es:
         questions_tab: Preguntas
         booths_tab: Urnas
         officers_tab: Presidentes de mesa
-        no_booths: "No hay urnas en esta votación."
-        no_questions: "No hay preguntas asignadas a esta votación todavía."
-        no_officers: "No hay presidentes de mesa asignados."
+        no_booths: "No hay urnas asignadas a esta votación."
+        no_questions: "No hay preguntas asignadas a esta votación."
+        no_officers: "No hay presidentes de mesa asignados a esta votación."
         remove_booth: "Desasignar urna"
         booths_title: "Listado de urnas asignadas"
         officers_title: "Listado de presidentes de mesa asignados"
@@ -212,11 +213,14 @@ es:
         add_question: "Incluir pregunta"
         add_officer_assignments: "Añadir turnos como presidente de mesa"
         edit_officer_assignments: "Editar turnos"
-        name: "Nombre"
-        location: "Ubicación"
-        email: "Email"
         search_results: "Resultados de la búsqueda"
-        no_search_results: "No se han encontrado resultados"
+        no_search_results: "No se han encontrado resultados."
+        table_title: "Título"
+        table_summary: "Resumen"
+        table_assignment: "Asignación"
+        table_name: "Nombre"
+        table_location: "Ubicación"
+        table_email: "Email"
       flash:
         question_added: "Pregunta añadida a esta votación"
         error_on_question_added: "No se pudo asignar la pregunta"
