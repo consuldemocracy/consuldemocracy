@@ -434,6 +434,12 @@ table.investment-projects-summary {
   }
 }
 
+.legislation-question-delete {
+  @include breakpoint(medium) {
+    text-align: right;
+  }
+}
+
 .legislation-process-index {
   
   .legislation-process-new {
@@ -521,12 +527,6 @@ table.investment-projects-summary {
     font-style: italic;
   }
   
-  .legislation-question-delete {
-    @include breakpoint(medium) {
-      text-align: right;
-    }
-  }
-  
   .legislation-questions-answers {
     margin-bottom: 1rem;
   }
@@ -568,4 +568,166 @@ table.investment-projects-summary {
       text-align: right;
     }
   }
+  
+  input[type]:not([type="submit"]):not([type="file"]):not([type="checkbox"]):not([type="radio"]) {
+    background: $white;
+  }
+  
+  .control {
+    cursor: pointer;
+    margin-bottom: 1rem;
+    
+    small {
+      display: block;
+      margin-top: -1rem;
+      color: $text-medium;
+      
+      @include breakpoint(medium) {
+        margin-left: 0.25rem;
+        display: inline-block;
+        margin-top: 0;
+      }
+    }
+  }
+  
+  .fullscreen-container {
+    
+    .markdown-editor-header,
+    .markdown-editor-buttons {
+      display: none;
+    }
+    
+    a {
+
+      @include breakpoint(medium) {
+        float: right;
+      }
+      
+      line-height: 3rem;
+      
+      span {
+        text-decoration: none;
+        font-size: $small-font-size;
+      }
+      
+      .icon-expand {
+        margin-left: 0.25rem;
+        vertical-align: sub;
+        text-decoration: none;
+        line-height: 0;
+      }
+      
+      &:active,
+      &:focus,
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+  
+  #legislation_draft_version_body {
+    font-family: $font-family-monospace;
+    background: #f5f5f5;
+    height: 16em;
+    
+    &:focus {
+      border: 1px solid #cacaca;
+      box-shadow: inset 0 1px 2px rgba(34, 34, 34, 0.1);
+    }
+  }
+  
+  #markdown-preview {
+    font-family: $font-family-serif;
+    border: 1px solid #cacaca;
+    margin-bottom: 2rem;
+    
+    h1, h2, h3, h4, h5, h6 {
+      font-family: $font-family-serif !important;
+    }
+    
+    h2 {
+      border-bottom: 1px solid $text-medium;
+    }
+  }
+  
+  .fullscreen {
+    
+    .column {
+      padding: 0;
+    }
+    
+    .fullscreen-container {
+      background: $admin-color;
+      padding: 0.5rem 1rem;
+      
+      .markdown-editor-header {
+        vertical-align: top;
+        display: inline-block;
+        color: $white;
+        
+        @include breakpoint(medium) {
+          line-height: 3rem;
+        }
+      }
+      
+      .truncate {
+        @include breakpoint(medium) {
+          width: 40vw;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+      }
+      
+      .markdown-editor-buttons {
+        display: block;
+        
+        @include breakpoint(medium) {
+          display: inline-block;
+          float: right;
+          padding-left: 1rem;
+        }
+        
+        input {
+          font-size: $small-font-size;
+          padding: 0.5em 1em;
+          margin-left: 0;
+          margin-bottom: 0;
+          margin-top: 1rem;
+          
+          @include breakpoint(medium) {
+            margin: 0.5rem;
+          }
+        }
+      }
+      
+      a {
+        color: $white;
+      }
+    }
+    
+    #legislation_draft_version_body {
+      border-radius: 0;
+      padding: 1rem;
+      border: none;
+      
+      @include breakpoint(medium) {
+        padding: 1rem 2rem;
+      }
+      
+      &:focus {
+        border: none;
+      }
+    }
+    
+    #markdown-preview {
+      padding: 1rem;
+      border: none;
+      
+      @include breakpoint(medium) {
+        padding: 1rem 2rem;
+      }
+    }
+  }
+
 }
