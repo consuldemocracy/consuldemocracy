@@ -22,14 +22,14 @@ class SignatureSheet < ActiveRecord::Base
 
   def verify_signatures
     parsed_document_numbers.each do |document_number|
-      signature = signatures.create(document_number: document_number)
+      signature = self.signatures.where(document_number: document_number).first_or_create
       signature.verify
     end
     update(processed: true)
   end
 
   def parsed_document_numbers
-    document_numbers.split(/\W+/)
+    document_numbers.split(/\r\n|\n|[,]/).collect {|d| d.gsub(/\s+/, '') }
   end
 
   def signable_found
