@@ -312,6 +312,7 @@ en:
         created_at: Created
         author: Author
         documents: Documents
+        document_count: "Number of documents:"
         verified:
           one: "There is %{count} valid signature"
           other: "There are %{count} valid signatures"
