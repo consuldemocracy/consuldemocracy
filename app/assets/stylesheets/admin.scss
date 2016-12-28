@@ -472,3 +472,20 @@ table.investment-projects-summary {
     }
   }
 }
+
+.legislation-draft-versions-index {
+  
+  .menu .active > a {
+    background: none;
+  }
+  
+  .legislation-process-question {
+    @include breakpoint(medium) {
+      text-align: right;
+    }
+  }
+  
+  table tr td {
+    padding: 0.25rem 0.375rem;
+  }
+}
