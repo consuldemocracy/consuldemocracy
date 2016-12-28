@@ -1,18 +1,12 @@
-class Officing::BaseController < ActionController::Base
+class Officing::BaseController < ApplicationController
   layout 'admin'
 
-  #before_action :verify_officer
-  before_action :set_locale
+  before_action :authenticate_user!
+  before_action :verify_officer
 
-  private
+  skip_authorization_check
 
-    def set_locale
-      if params[:locale] && I18n.available_locales.include?(params[:locale].to_sym)
-        session[:locale] = params[:locale]
-      end
-
-      session[:locale] ||= I18n.default_locale
-
-      I18n.locale = session[:locale]
+  def verify_officer
+      raise CanCan::AccessDenied unless current_user.try(:poll_officer?) || current_user.try(:administrator?)
     end
 end
