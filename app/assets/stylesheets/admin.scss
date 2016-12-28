@@ -560,3 +560,12 @@ table.investment-projects-summary {
     }
   }
 }
+
+.legislation-draft-versions-index {
+  
+  .legislation-process-version {
+    @include breakpoint(medium) {
+      text-align: right;
+    }
+  }
+}
