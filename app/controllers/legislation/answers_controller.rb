@@ -6,10 +6,16 @@ class Legislation::AnswersController < Legislation::BaseController
   load_and_authorize_resource :question, through: :process
   load_and_authorize_resource :answer, through: :question
 
+  respond_to :html, :js
+
   def create
     @answer.user = current_user
     @answer.save
-    redirect_to legislation_process_question_path(@process, @question)
+
+    respond_to do |format|
+      format.js {}
+      format.html { redirect_to legislation_process_question_path(@process, @question) }
+    end
   end
 
   private
