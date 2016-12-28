@@ -7,13 +7,16 @@
 
 <div class="row">
   <div class="small-12 medium-9 column">
-    <% if @question.proposal.present? %>
-      <%= t("admin.questions.show.proposal") %>
-      <%= link_to @question.proposal.title, proposal_path(@question.proposal) %>
-    <% end %>
-
     <strong><%= t("admin.questions.show.title") %></strong>
     <h1><%= @question.title %></h1>
+
+    <% if @question.proposal.present? %>
+      <p>
+        <strong><%= t("admin.questions.show.proposal") %></strong>
+        <br>
+        <%= link_to @question.proposal.title, proposal_path(@question.proposal) %>
+      </p>
+    <% end %>
 
     <p>
       <strong><%= t("admin.questions.show.author") %></strong>

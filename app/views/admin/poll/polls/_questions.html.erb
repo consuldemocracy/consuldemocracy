@@ -5,11 +5,21 @@
     <%= t('admin.polls.show.no_questions') %>
   </div>
 <% else %>
-  <table class="margin-top">
+  <table class="margin">
+    <thead>
+      <tr>
+        <th><%= t('admin.polls.show.table_title') %></th>
+        <th class="text-center"><%= t('admin.polls.show.table_assignment') %></th>
+      </tr>
+    </thead>
     <% @poll.questions.each do |question| %>
       <tr id="<%= dom_id(question) %>">
-        <td><%= link_to question.title, admin_question_path(question) %></td>
-        <td class="text-right">
+        <td>
+          <strong>
+            <%= link_to question.title, admin_question_path(question) %>
+          </strong>
+        </td>
+        <td class="text-center">
           <%= link_to t('admin.polls.show.remove_question'),
                       remove_question_admin_poll_path(poll_id: @poll.id, question_id: question.id),
                       class: "button hollow alert",

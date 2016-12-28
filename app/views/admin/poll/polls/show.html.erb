@@ -1,39 +1,30 @@
-<h2 class="inline-block">
-  <%= @poll.name %>
-  <small><%= l @poll.starts_at.to_date %> - <%= l @poll.ends_at.to_date %></small>
-</h2>
-
 <%= link_to t("admin.actions.edit"),
             edit_admin_poll_path(@poll),
             class: "button hollow float-right" %>
+
+<h2 class="inline-block">
+  <%= @poll.name %>
+</h2>
+<br>
+<p class="inline-block">
+  (<%= l @poll.starts_at.to_date %> - <%= l @poll.ends_at.to_date %>)
+</p>
 
 <div id="poll-resources" class="tabs-content" data-tabs-content="assigned-resources-tabs">
   <%= render "filter_subnav" %>
 
   <div class="tabs-panel is-active" id="tab-questions">
-    <div class="row">
-      <div class="small-12 medium-6 column">
-        <%= render "search_questions" %>
-      </div>
-    </div>
+    <%= render "search_questions" %>
     <%= render "questions" %>
   </div>
 
   <div class="tabs-panel" id="tab-booths">
-    <div class="row">
-      <div class="small-12 medium-6 column">
-        <%= render "search_booths" %>
-      </div>
-    </div>
+    <%= render "search_booths" %>
     <%= render "booths" %>
   </div>
 
   <div class="tabs-panel" id="tab-officers">
-    <div class="row">
-      <div class="small-12 medium-6 column">
-        <%= render "search_officers" %>
-      </div>
-    </div>
+    <%= render "search_officers" %>
     <%= render 'officers' %>
   </div>
 </div>
