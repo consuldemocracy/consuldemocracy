@@ -59,6 +59,10 @@ feature 'Signature sheets' do
     expect(page).to have_content signature_sheet.created_at.strftime("%d %b %H:%M")
     expect(page).to have_content user.name
 
+    within("#document_count") do
+      expect(page).to have_content 3
+    end
+
     within("#verified_signatures") do
       expect(page).to have_content 1
     end
