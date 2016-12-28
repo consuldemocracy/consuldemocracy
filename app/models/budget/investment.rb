@@ -34,17 +34,18 @@ class Budget
     scope :sort_by_price,            -> { reorder(price: :desc, confidence_score: :desc, id: :desc) }
     scope :sort_by_random,           -> { reorder("RANDOM()") }
 
-    scope :valuation_open,         -> { where(valuation_finished: false) }
-    scope :without_admin,          -> { valuation_open.where(administrator_id: nil) }
-    scope :managed,                -> { valuation_open.where(valuator_assignments_count: 0).where("administrator_id IS NOT ?", nil) }
-    scope :valuating,              -> { valuation_open.where("valuator_assignments_count > 0 AND valuation_finished = ?", false) }
-    scope :valuation_finished,     -> { where(valuation_finished: true) }
-    scope :feasible,               -> { where(feasibility: "feasible") }
-    scope :unfeasible,             -> { where(feasibility: "unfeasible") }
-    scope :not_unfeasible,         -> { where.not(feasibility: "unfeasible") }
-    scope :undecided,              -> { where(feasibility: "undecided") }
-    scope :with_supports,          -> { where('cached_votes_up > 0') }
-    scope :selected,               -> { where(selected: true) }
+    scope :valuation_open,              -> { where(valuation_finished: false) }
+    scope :without_admin,               -> { valuation_open.where(administrator_id: nil) }
+    scope :managed,                     -> { valuation_open.where(valuator_assignments_count: 0).where("administrator_id IS NOT ?", nil) }
+    scope :valuating,                   -> { valuation_open.where("valuator_assignments_count > 0 AND valuation_finished = ?", false) }
+    scope :valuation_finished,          -> { where(valuation_finished: true) }
+    scope :valuation_finished_feasible, -> { where(valuation_finished: true, feasibility: "feasible") }
+    scope :feasible,                    -> { where(feasibility: "feasible") }
+    scope :unfeasible,                  -> { where(feasibility: "unfeasible") }
+    scope :not_unfeasible,              -> { where.not(feasibility: "unfeasible") }
+    scope :undecided,                   -> { where(feasibility: "undecided") }
+    scope :with_supports,               -> { where('cached_votes_up > 0') }
+    scope :selected,                    -> { where(selected: true) }
 
     scope :by_group,    -> (group_id)    { where(group_id: group_id) }
     scope :by_heading,  -> (heading_id)  { where(heading_id: heading_id) }
