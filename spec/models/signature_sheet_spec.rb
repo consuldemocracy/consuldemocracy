@@ -76,6 +76,12 @@ describe SignatureSheet do
 
       expect(signature_sheet.parsed_document_numbers).to eq(['123A', '456B', '789C', '123B'])
     end
+
+    it "strips spaces between number and letter" do
+      signature_sheet.document_numbers = "123 A\n456 B \n 789C"
+
+      expect(signature_sheet.parsed_document_numbers).to eq(['123A', '456B', '789C'])
+    end
   end
 
 end
