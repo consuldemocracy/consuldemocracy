@@ -428,6 +428,12 @@ table.investment-projects-summary {
 
 // 06. Legislation
 // --------------
+.legislation-process-save {
+  @include breakpoint(medium) {
+    float: right;
+  }
+}
+
 .legislation-process-index {
   
   .legislation-process-new {
@@ -465,12 +471,6 @@ table.investment-projects-summary {
       }
     }
   }
-  
-  .legislation-process-save {
-    @include breakpoint(medium) {
-      float: right;
-    }
-  }
 }
 
 .legislation-draft-versions-index {
@@ -487,5 +487,76 @@ table.investment-projects-summary {
   
   table tr td {
     padding: 0.25rem 0.375rem;
+  }
+}
+
+.legislation-questions-index {
+  
+  .menu .active > a {
+    background: none;
+  }
+  
+  input[type]:not([type="submit"]):not([type="file"]):not([type="checkbox"]):not([type="radio"]) {
+    background: $white;
+    margin-bottom: 0;
+    
+    @include breakpoint(medium) {
+      margin-bottom: 1rem;
+    }
+  }
+  
+  input::-webkit-input-placeholder {
+    font-style: italic;
+  }
+
+  input:-moz-placeholder { /* Firefox 18- */
+    font-style: italic;
+  }
+
+  input::-moz-placeholder {  /* Firefox 19+ */
+    font-style: italic;
+  }
+
+  input:-ms-input-placeholder {  
+    font-style: italic;
+  }
+  
+  .legislation-question-delete {
+    @include breakpoint(medium) {
+      text-align: right;
+    }
+  }
+  
+  .legislation-questions-answers {
+    margin-bottom: 1rem;
+  }
+  
+  .field {
+    margin-bottom: 1rem;
+    
+    @include breakpoint(medium) {
+      margin-bottom: 0;
+    }
+    
+    a {
+      line-height: 3rem;
+      color: $delete;
+      
+      span {
+        text-decoration: underline;
+      }
+      
+      .icon-x {
+        vertical-align: sub;
+        text-decoration: none;
+        line-height: 0;
+      }
+      
+      &:active,
+      &:focus,
+      &:hover {
+        text-decoration: none;
+      }
+    }
   }
 }
