@@ -279,6 +279,7 @@ en:
         share_gplus: Share on Google+
         title: Collaborative legislation process
       participation:
+        phase_not_open: This phase is not open
         organizations: Organisations are not permitted to participate in the debate
         signin: Sign in
         signup: Sign up
