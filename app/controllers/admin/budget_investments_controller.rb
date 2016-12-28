@@ -7,15 +7,13 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
               only: [:index, :toggle_selection])
 
   before_action :load_budget
-  before_action :load_investment, only: [:show, :edit, :update]
+  before_action :load_investment, only: [:show, :edit, :update, :toggle_selection]
   before_action :load_ballot, only: [:show, :index]
+  before_action :load_investments, only: [:index, :toggle_selection]
 
-  has_filters %w{valuation_open without_admin managed valuating valuation_finished all}, only: :index
+
 
   def index
-    @investments = Budget::Investment.scoped_filter(params, @current_filter)
-                                     .order(cached_votes_up: :desc, created_at: :desc)
-                                     .page(params[:page])
   end
 
   def show
@@ -39,7 +37,18 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
     end
   end
 
+  def toggle_selection
+    @investment.toggle :selected
+    @investment.save
+  end
+
   private
+
+    def load_investments
+      @investments = Budget::Investment.scoped_filter(params, @current_filter)
+                                       .order(cached_votes_up: :desc, created_at: :desc)
+                                       .page(params[:page])
+    end
 
     def budget_investment_params
       params.require(:budget_investment)
