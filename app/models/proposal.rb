@@ -1,3 +1,4 @@
+require 'csv'
 class Proposal < ActiveRecord::Base
   include Flaggable
   include Taggable
@@ -46,6 +47,7 @@ class Proposal < ActiveRecord::Base
   scope :sort_by_relevance,        -> { all }
   scope :sort_by_flags,            -> { order(flags_count: :desc, updated_at: :desc) }
   scope :sort_by_archival_date,    -> { archived.sort_by_confidence_score }
+  scope :active,                   -> { where.not(hidden_at: nil) }
   scope :archived,                 -> { where("proposals.created_at <= ?", Setting["months_to_archive_proposals"].to_i.months.ago)}
   scope :not_archived,             -> { where("proposals.created_at > ?", Setting["months_to_archive_proposals"].to_i.months.ago)}
   scope :last_week,                -> { where("proposals.created_at >= ?", 7.days.ago)}
@@ -54,6 +56,81 @@ class Proposal < ActiveRecord::Base
   scope :proceedings,              -> { where.not(proceeding: nil) }
   scope :not_proceedings,          -> { where(proceeding: nil) }
   scope :successfull,              -> { where("cached_votes_up + physical_votes >= ?", Proposal.votes_needed_for_success)}
+
+  #Ocutar comentario de cosas que estan ocultas (commentable)
+  #Etiquetas (Taggins) no mostrar si depende de un elemento oculto (taggs)
+  #Mirar a ver si hay alguna mas
+#
+  #las propuestas
+  #  no incluir las que no sean 'nil, Derechos Humanos'
+#
+  #Entonces para las propuestas
+  #  LAs que no sean estas no mostrar...
+#
+  #Primero mirar a ver si elemento original esta incluido en el csv y sino esconder el elemento hijo
+#
+  #Tambien tener en cienta ProposalNotifications
+#
+  #created_at mostrar solo fecha y hora (no minutos)
+
+    #* COMPROBAR campo "hidden_at". Si está oculto se excluye la propuesta del archivo.
+    #* COMPROBAR campo "author_id". Si el usuario no tiene actividad pública se excluye el contenido de este campo del archivo.
+#
+    #*** Comprobar sólo se añaden las propuestas cuyo proceeding sea nil o derechos humanos (para que no se cuelen otras)
+
+
+  def self.to_csv(options = {})
+    CSV.generate(options) do |csv|
+      csv << public_columns
+      all.limit(2).each do |proposal|
+        csv << proposal.public_attributes
+      end
+    end
+  end
+
+  def self.public_columns
+    ["id",
+     "title",
+     "description",
+     "author_id",
+     "external_url",
+     "cached_votes_up",
+     "comments_count",
+     "hot_score",
+     "confidence_score",
+     "created_at",
+     "summary",
+     "video_url",
+     "geozone_id",
+     "retired_at",
+     "retired_reason",
+     "retired_explanation",
+     "proceeding",
+     "sub_proceeding"]
+  end
+
+  def public_attributes
+    return [] unless public?
+
+    attrs = attributes
+    attrs["author_id"] = public_author_id
+
+    attrs.values_at(*Proposal.public_columns)
+  end
+
+  def public_author_id
+    author.public_activity? ? author.id  : nil
+  end
+
+  def public?
+    return false if hidden?
+    return false unless ["Derechos Humanos", nil].include?(proceeding)
+    return true
+  end
+
+
+
+
 
   def to_param
     "#{id}-#{title}".parameterize

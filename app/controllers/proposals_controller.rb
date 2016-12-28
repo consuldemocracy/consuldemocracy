@@ -23,7 +23,11 @@ class ProposalsController < ApplicationController
     super
     @notifications = @proposal.notifications
     load_rank
-    redirect_to proposal_path(@proposal), status: :moved_permanently if request.path != proposal_path(@proposal)
+    respond_to do |format|
+      format.html { redirect_to proposal_path(@proposal), status: :moved_permanently if request.path != proposal_path(@proposal) }
+      format.csv  { send_data Proposal.to_csv }
+    end
+
   end
 
   def index_customization
