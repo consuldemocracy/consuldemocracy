@@ -4,7 +4,7 @@ class Admin::Legislation::ProcessesController < Admin::Legislation::BaseControll
   load_and_authorize_resource :process, class: "Legislation::Process"
 
   def index
-    @processes = ::Legislation::Process.send(@current_filter).page(params[:page])
+    @processes = ::Legislation::Process.send(@current_filter).order('id DESC').page(params[:page])
   end
 
   def create

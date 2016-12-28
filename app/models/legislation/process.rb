@@ -19,9 +19,9 @@ class Legislation::Process < ActiveRecord::Base
   validates :allegations_end_date, presence: true
   validates :final_publication_date, presence: true
 
-  scope :open, -> {where("start_date <= ? and end_date >= ?", Date.current, Date.current) }
-  scope :next, -> {where("start_date > ?", Date.current) }
-  scope :past, -> {where("end_date < ?", Date.current) }
+  scope :open, -> { where("start_date <= ? and end_date >= ?", Date.current, Date.current).order('id DESC') }
+  scope :next, -> { where("start_date > ?", Date.current).order('id DESC') }
+  scope :past, -> { where("end_date < ?", Date.current).order('id DESC') }
 
   def open_phase?(phase)
     today = Date.current
