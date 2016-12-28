@@ -2,6 +2,10 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
   include FeatureFlags
   feature_flag :budgets
 
+  has_filters(%w{valuation_open without_admin managed valuating valuation_finished
+                 valuation_finished_feasible selected all},
+              only: [:index, :toggle_selection])
+
   before_action :load_budget
   before_action :load_investment, only: [:show, :edit, :update]
   before_action :load_ballot, only: [:show, :index]
