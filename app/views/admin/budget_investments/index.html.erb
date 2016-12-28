@@ -48,8 +48,8 @@
       <th><%= t("admin.budget_investments.index.table_admin") %></th>
       <th><%= t("admin.budget_investments.index.table_valuator") %></th>
       <th><%= t("admin.budget_investments.index.table_geozone") %></th>
-      <th><%= t("admin.budget_investments.index.table_status") %></th>
-      <th class="text-center"><%= t("admin.budget_investments.index.table_actions") %></th>
+      <th><%= t("admin.budget_investments.index.table_feasibility") %></th>
+      <th class="text-center"><%= t("admin.budget_investments.index.table_selection") %></th>
     </tr>
   </thead>
   <% @investments.each do |investment| %>
@@ -86,8 +86,8 @@
             <%= t("admin.budget_investments.index.select") %>
           <% end %>
         <% else %>
-          <%= link_to "#", class: "button small hollow warning expanded" do %>
-            <%= t("admin.budget_investments.index.deselect") %>
+          <%= link_to "#", class: "button small expanded" do %>
+            <%= t("admin.budget_investments.index.selected") %>
           <% end %>
         <% end %>
       </td>
