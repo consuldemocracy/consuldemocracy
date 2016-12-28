@@ -10,6 +10,8 @@ class Signature < ActiveRecord::Base
 
   delegate :signable, to: :signature_sheet
 
+  before_validation :clean_document_number
+
   def verified?
     user_exists? || in_census?
   end
@@ -56,6 +58,11 @@ class Signature < ActiveRecord::Base
       email: nil
     }
     User.create!(user_params)
+  end
+
+  def clean_document_number
+    return if self.document_number.blank?
+    self.document_number = self.document_number.gsub(/[^a-z0-9]+/i, "").upcase
   end
 
   def random_password
