@@ -11,17 +11,29 @@
   <%= render "filter_subnav" %>
 
   <div class="tabs-panel is-active" id="tab-questions">
-    <%= render "search_questions" %>
+    <div class="row">
+      <div class="small-12 medium-6 column">
+        <%= render "search_questions" %>
+      </div>
+    </div>
     <%= render "questions" %>
   </div>
 
   <div class="tabs-panel" id="tab-booths">
-    <%= render "search_booths" %>
+    <div class="row">
+      <div class="small-12 medium-6 column">
+        <%= render "search_booths" %>
+      </div>
+    </div>
     <%= render "booths" %>
   </div>
 
   <div class="tabs-panel" id="tab-officers">
-    <%= render "search_officers" %>
+    <div class="row">
+      <div class="small-12 medium-6 column">
+        <%= render "search_officers" %>
+      </div>
+    </div>
     <%= render 'officers' %>
   </div>
 </div>
