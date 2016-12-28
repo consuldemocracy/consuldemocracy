@@ -114,6 +114,15 @@ en:
           feasible: "Feasible (%{price})"
           not_feasible: "Not feasible"
           undefined: "Undefined"
+        deselect: "Deselect"
+        select: "Select"
+        table_id: "ID"
+        table_title: "Title"
+        table_admin: "Administrator"
+        table_valuator: "Valuator"
+        table_geozone: "Scope of operation"
+        table_status: "Status"
+        table_actions: "Actions"
       show:
         assigned_admin: Assigned administrator
         assigned_valuators: Assigned valuators
