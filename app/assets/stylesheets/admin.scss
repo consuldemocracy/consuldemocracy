@@ -428,6 +428,13 @@ table.investment-projects-summary {
 
 // 06. Legislation
 // --------------
+
+.legislation-admin {
+  .menu .active > a {
+    background: none;
+  }
+}
+
 .legislation-process-save {
   @include breakpoint(medium) {
     float: right;
@@ -450,11 +457,7 @@ table.investment-projects-summary {
 }
 
 .legislation-process-edit {
-  
-  .menu .active > a {
-    background: none;
-  }
-  
+
   .edit_legislation_process {
     
     small {
@@ -480,11 +483,7 @@ table.investment-projects-summary {
 }
 
 .legislation-draft-versions-index {
-  
-  .menu .active > a {
-    background: none;
-  }
-  
+
   .legislation-process-question {
     @include breakpoint(medium) {
       text-align: right;
@@ -496,12 +495,8 @@ table.investment-projects-summary {
   }
 }
 
-.legislation-questions-index {
-  
-  .menu .active > a {
-    background: none;
-  }
-  
+.legislation-questions-form {
+
   input[type]:not([type="submit"]):not([type="file"]):not([type="checkbox"]):not([type="radio"]) {
     background: $white;
     margin-bottom: 0;
@@ -561,8 +556,8 @@ table.investment-projects-summary {
   }
 }
 
-.legislation-draft-versions-index {
-  
+.legislation-draft-versions-form {
+
   .legislation-process-version {
     @include breakpoint(medium) {
       text-align: right;
