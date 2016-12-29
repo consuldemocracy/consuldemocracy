@@ -501,11 +501,9 @@ es:
         one: " que contiene '%{search_term}'"
         other: " que contienen '%{search_term}'"
       sidebar:
-        back: Volver
         geozones: Ámbitos de actuación
         feasibility: Viabilidad
         unfeasible: No viables
-        my_ballot: Mis votos
       start_spending_proposal: Crea una propuesta de inversión
     new:
       more_info: "¿Cómo funcionan los presupuestos participativos?"
