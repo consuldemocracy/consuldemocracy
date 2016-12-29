@@ -44,7 +44,7 @@
     <% end %>
 
     <% if feature?(:legislation) %>
-      <li <%= "class=active" if controller_name == "processes" %>>
+      <li <%= "class=active" if controller.class.parent == Admin::Legislation %>>
         <%= link_to admin_legislation_processes_path do %>
           <span class="icon-budget"></span><%= t("admin.menu.legislation") %>
         <% end %>

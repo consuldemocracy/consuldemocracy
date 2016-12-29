@@ -40,6 +40,15 @@ en:
       legislation/draft_versions:
         one: "Draft version"
         other: "Draft versions"
+      legislation/questions:
+        one: "Question"
+        other: "Questions"
+      legislation/question_options:
+        one: "Question option"
+        other: "Question options"
+      legislation/answers:
+        one: "Answer"
+        other: "Answers"
     attributes:
       comment:
         body: "Comment"
@@ -99,6 +108,10 @@ en:
         changelog: Changes
         status: Status
         final_version: Final version
+      legislation/questions:
+        title: "Title"
+      legislation/question_options:
+        value: "Value"
     errors:
       models:
         user:

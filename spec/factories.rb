@@ -411,4 +411,10 @@ FactoryGirl.define do
     question factory: :legislation_question
     sequence(:value) { |n| "Option #{n}" }
   end
+
+  factory :legislation_answer, class: 'Legislation::Answer' do
+    question factory: :legislation_question
+    question_option factory: :legislation_question_option
+    user
+  end
 end

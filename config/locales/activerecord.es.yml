@@ -40,6 +40,15 @@ es:
       legislation/draft_texts:
         one: "Borrador"
         other: "Borradores"
+      legislation/questions:
+        one: "Pregunta"
+        other: "Preguntas"
+      legislation/question_options:
+        one: "Opción de respuesta cerrada"
+        other: "Opciones de respuesta cerrada"
+      legislation/answers:
+        one: "Respuesta"
+        other: "Respuestas"
     attributes:
       comment:
         body: "Comentario"
@@ -99,6 +108,10 @@ es:
         changelog: Cambios
         status: Estado
         final_version: Versión final
+      legislation/questions:
+        title: "Título"
+      legislation/question_options:
+        value: "Valor"
     errors:
       models:
         user:

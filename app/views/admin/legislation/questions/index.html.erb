@@ -29,7 +29,9 @@
           <td>
             <%= content_tag :ul do %>
               <% question.question_options.each do |question_option| %>
-                <%= content_tag :li, question_option.value %>
+                <%= content_tag :li do %>
+                  <%= question_option.value %> (<%= question_option.answers_count %>)
+                <% end %>
               <% end %>
             <% end %>
           </td>
