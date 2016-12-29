@@ -28,10 +28,22 @@ module GraphQL
             field(field_name.to_s, TYPES_CONVERSION[model.columns_hash[field_name.to_s].type])
           else
             association = type_creator.class.association?(model, field_name)
+            target_model = association.klass
+            public_elements = target_model.respond_to?(:public_for_api) ? target_model.public_for_api : target_model.all
+
             if type_creator.class.needs_pagination?(association)
-              connection association.name, -> { type_creator.created_types[association.klass].connection_type }
+              connection(association.name, -> { type_creator.created_types[target_model].connection_type }) do
+                resolve -> (object, arguments, context) do
+                  object.send(association.name).all & public_elements.all
+                end
+              end
             else
-              field association.name, -> { type_creator.created_types[association.klass] }
+              field(association.name, -> { type_creator.created_types[target_model] }) do
+                resolve -> (object, arguments, context) do
+                  linked_element = object.send(field_name)
+                  public_elements.include?(linked_element) ? linked_element : nil
+                end
+              end
             end
           end
         end
