@@ -424,9 +424,10 @@ es:
     date: "Del 13 al 19 de febrero"
     successfull: "Esta propuesta ha alcanzado los apoyos necesarios y pasará a la %{voting}."
     voting: "próxima votación"
-    featured_title: "#PróximaVotación"
+    featured_title: "En febrero tú decides"
     nothing_to_vote: "No hay nada que votar en este momento."
-    info: "Nuevas propuestas ciudadanas han llegado a la fase de votación."
+    info: "Del 13 al 19 de febrero, primera votación de propuestas ciudadanas."
+    info_extend: "¿Sí o no? Del 13 al 19 de febrero tú decides: billete único para el transporte público, Madrid 100% sostenible y reforma de Plaza España. ¡Regístrate!"
     button: "Quiero decidir"
   proposal_notifications:
     new:

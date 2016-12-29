@@ -44,8 +44,8 @@ es:
       date_html: "Participa hasta el <strong>mes de marzo</strong>"
       button: "Más información"
     proposal_ballots:
-      title: "#PróximaVotación"
-      text: "Nuevas propuestas ciudadanas han llegado a la fase de votación."
+      title: "En febrero tú dedices"
+      text: "Madrid 100% sostenible. Billete único para el transporte público. Remodelación de Plaza España. ¿Sí o no? Regístrate y vota del 13 al 19 de febrero en Decide Madrid."
       date_html: "<strong>Del 13 al 19 de febrero</strong>"
       button: "Quiero decidir"
     plaza:
