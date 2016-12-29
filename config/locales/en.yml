@@ -154,6 +154,7 @@ en:
     spending_proposal: Spending proposal
     user: Account
     verification/sms: phone
+    signature_sheet: Signature sheet
   geozones:
     none: All city
     all: All scopes
@@ -269,6 +270,7 @@ en:
           other: "%{count} comments"
         debate: Debate
       show:
+        answer_question: Submit answer
         comments: Comments
         next_question: Next question
         share: Share
@@ -276,6 +278,14 @@ en:
         share_facebook: Share on Facebook
         share_gplus: Share on Google+
         title: Collaborative legislation process
+      participation:
+        phase_not_open: This phase is not open
+        organizations: Organisations are not permitted to participate in the debate
+        signin: Sign in
+        signup: Sign up
+        unauthenticated: You must %{signin} or %{signup} to participate.
+        verified_only: Only verified users can participate, %{verify_account}.
+        verify_account: verify your account
   locale: English
   notifications:
     index:

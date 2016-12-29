@@ -27,7 +27,10 @@ es:
       facebook_login: Registro con Facebook
       google_login: Registro con Google
       debates: Debates
+      signature_sheets: Hojas de firmas
       spending_proposals: Propuestas de inversión
       spending_proposal_features:
         voting_allowed: Votaciones sobre propuestas de inversión.
       legislation: Legislación
+    mailer_from_name: Nombre email remitente
+    mailer_from_address: Dirección email remitente
