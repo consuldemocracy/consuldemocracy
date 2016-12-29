@@ -61,7 +61,7 @@ en:
     budgets:
       index:
         title: Participatory budgets
-        new_link: Create new
+        new_link: Create new budget
         info_link: Info
         filters:
           open: Open
@@ -74,6 +74,7 @@ en:
         title: Edit Participatory budget
       new:
         title: New participatory budget
+        submit: Create budget
       show:
         phase: Current phase
         currency: Currency

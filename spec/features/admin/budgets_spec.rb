@@ -80,7 +80,7 @@ feature 'Admin budgets' do
 
     scenario 'Create budget' do
       visit admin_budgets_path
-      click_link 'Create new'
+      click_link 'Create new budget'
 
       fill_in 'budget_name', with: 'M30 - Summer campaign'
       fill_in 'budget_description', with: 'Budgeting for summer 2017 maintenance and improvements of the road M-30'
@@ -97,7 +97,7 @@ feature 'Admin budgets' do
       click_button 'Create budget'
 
       expect(page).to_not have_content 'New participatory budget created successfully!'
-      expect(page).to have_css("label.error", text: "Budget's name")
+      expect(page).to have_css("label.error", text: "Name")
     end
 
   end

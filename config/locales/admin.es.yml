@@ -61,7 +61,7 @@ es:
     budgets:
       index:
         title: Presupuestos participativos
-        new_link: Crear nuevo
+        new_link: Crear nuevo presupuesto
         info_link: Info
         filters:
           open: Abiertos
@@ -74,6 +74,7 @@ es:
         title: Editar campaña de presupuestos participativos
       new:
         title: Nuevo presupuesto ciudadano
+        submit: Crear presupuesto
       show:
         phase: Fase actual
         currency: Divisa
