@@ -63,6 +63,28 @@
   
   #debate-info {
     display: none;
+    margin-top: 1rem;
+    
+    @include breakpoint(medium) {
+      margin-bottom: 2rem;
+    }
+        
+    .debate-info-wrapper {
+
+      h2 {
+        font-size: $lead-font-size;
+        
+        @include breakpoint(medium) {
+          float: left;
+        }
+      }
+      
+      p {
+        @include breakpoint(medium) {
+          margin-left: 25%;
+        }
+      }
+    }
   }
   
   .half-gradient {
