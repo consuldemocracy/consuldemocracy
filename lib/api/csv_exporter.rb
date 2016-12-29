@@ -5,7 +5,7 @@ class API::CSVExporter
     end
 
     def tables
-      ["proposals", "debates", "comments", "geozones"]
+      ["proposals", "debates", "comments", "geozones", "proposal_notifications"]
     end
 
     def export(options = {})
