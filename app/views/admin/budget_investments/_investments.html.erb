@@ -45,7 +45,7 @@
         %>
       </td>
       <td class="small text-center">
-        <%= investment.valuation_finished? ? "✔ ": "✘" %>
+        <%= investment.valuation_finished? ? t('shared.yes'): t('shared.no') %>
       </td>
       <td class="small">
         <% if investment.selected? %>

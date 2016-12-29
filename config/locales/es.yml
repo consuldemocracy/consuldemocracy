@@ -408,6 +408,8 @@ es:
     show:
       back: "Volver a mi actividad"
   shared:
+    "yes": "Sí"
+    "no": "No"
     advanced_search:
       author_type: 'Por categoría de autor'
       author_type_blank: 'Elige una categoría'
