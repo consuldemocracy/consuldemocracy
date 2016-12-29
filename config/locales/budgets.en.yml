@@ -36,7 +36,7 @@ en:
       none: Whole City
       all: All scopes
     index:
-      name: Budget's name
+      name: Budget name
       phase: Phase
       title: Participatory budgets
     investments:
@@ -46,6 +46,7 @@ en:
         description: Description
         external_url: Link to additional documentation
         heading: Choose if a proposed citywide or district
+        location: "Location"
         submit_buttons:
           create: Create
           new: Create
@@ -96,7 +97,9 @@ en:
         author_deleted: User deleted
         price_explanation: Price explanation
         unfeasibility_explanation: Unfeasibility explanation
-        code: 'Investment project code:'
+        code_html: 'Investment project code: <strong>%{code}</strong>'
+        location_html: 'Location: <strong>%{location}</strong>'
+        location: Location
         share: Share
       wrong_price_format: Only integer numbers
       investment:

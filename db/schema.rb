@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161221172447) do
+ActiveRecord::Schema.define(version: 20161229153505) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -142,6 +142,7 @@ ActiveRecord::Schema.define(version: 20161221172447) do
     t.integer  "budget_id"
     t.integer  "group_id"
     t.boolean  "selected",                              default: false
+    t.string   "location"
   end
 
   add_index "budget_investments", ["administrator_id"], name: "index_budget_investments_on_administrator_id", using: :btree
@@ -572,7 +573,7 @@ ActiveRecord::Schema.define(version: 20161221172447) do
     t.boolean  "email_digest",                              default: true
     t.boolean  "email_on_direct_message",                   default: true
     t.boolean  "official_position_badge",                   default: false
-    t.datetime "password_changed_at",                       default: '2016-12-21 17:55:08', null: false
+    t.datetime "password_changed_at",                       default: '2016-11-02 13:51:14', null: false
     t.boolean  "created_from_signature",                    default: false
   end
 
