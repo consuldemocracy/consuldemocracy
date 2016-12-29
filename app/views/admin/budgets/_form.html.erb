@@ -1,0 +1,16 @@
+<%= form_for [:admin, @budget] do |f| %>
+
+  <%= f.text_field :name, maxlength: Budget.title_max_length %>
+
+  <%= f.cktext_area :description, maxlength: Budget.description_max_length, ckeditor: { language: I18n.locale } %>
+
+  <div class="row">
+    <div class="small-12 medium-9 column">
+      <%= f.select :phase, budget_phases_select_options %>
+    </div>
+    <div class="small-12 medium-3 column">
+      <%= f.select :currency_symbol, budget_currency_symbol_select_options %>
+    </div>
+  </div>
+  <%= f.submit t("shared.send"), class: "button success" %>
+<% end %>

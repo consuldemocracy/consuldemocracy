@@ -68,13 +68,12 @@ es:
           finished: Terminados
       create:
         notice: ¡Nueva campaña de presupuestos participativos creada con éxito!
+      update:
+        notice: Campaña de presupuestos participativos actualizada
+      edit:
+        title: Editar campaña de presupuestos participativos
       new:
         title: Nuevo presupuesto ciudadano
-        create: Crear presupuesto
-        name: Nombre del presupuesto
-        description: Descripción
-        phase: Fase
-        currency: Divisa
       show:
         phase: Fase actual
         currency: Divisa

@@ -15,7 +15,17 @@ class Admin::BudgetsController < Admin::BaseController
   end
 
   def new
-    @budget = Budget.new
+  end
+
+  def edit
+  end
+
+  def update
+    if @budget.update(budget_params)
+      redirect_to admin_budget_path(@budget), notice: t('admin.budgets.update.notice')
+    else
+      render :edit
+    end
   end
 
   def create

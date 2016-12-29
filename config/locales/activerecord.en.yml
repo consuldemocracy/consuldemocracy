@@ -41,6 +41,11 @@ en:
         one: "Spending proposal"
         other: "Spending proposals"
     attributes:
+      budget:
+        name: "Name"
+        descripcion: "Description"
+        phase: "Phase"
+        currency_symbol: "Currency"
       budget/investment:
         administrator_id: "Administrator"
         description: "Description"

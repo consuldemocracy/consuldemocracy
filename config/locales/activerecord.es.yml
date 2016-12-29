@@ -41,6 +41,11 @@ es:
         one: "Propuesta de inversión"
         other: "Propuestas de inversión"
     attributes:
+      budget:
+        name: "Nombre"
+        description: "Descripción"
+        phase: "Fase"
+        currency_symbol: "Divisa"
       budget/investment:
         administrator_id: "Administrador"
         description: "Descripción"
