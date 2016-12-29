@@ -397,4 +397,98 @@ feature 'Admin budget investments' do
 
   end
 
+  context "Selecting" do
+
+    let!(:unfeasible_bi)  { create(:budget_investment, :unfeasible, budget: @budget, title: "Unfeasible project") }
+    let!(:feasible_bi)    { create(:budget_investment, :feasible, budget: @budget, title: "Feasible project") }
+    let!(:feasible_vf_bi) { create(:budget_investment, :feasible, :finished, budget: @budget, title: "Feasible, VF project") }
+    let!(:selected_bi)    { create(:budget_investment, :selected, budget: @budget, title: "Selected project") }
+
+    scenario "Filtering by valuation and selection" do
+      visit admin_budget_budget_investments_path(@budget)
+
+      within('#filter-subnav') { click_link 'Valuation finished' }
+      expect(page).to_not have_content(unfeasible_bi.title)
+      expect(page).to_not have_content(feasible_bi.title)
+      expect(page).to have_content(feasible_vf_bi.title)
+      expect(page).to have_content(selected_bi.title)
+
+      within('#filter-subnav') { click_link 'Val. fin. Feasible' }
+      expect(page).to_not have_content(unfeasible_bi.title)
+      expect(page).to_not have_content(feasible_bi.title)
+      expect(page).to have_content(feasible_vf_bi.title)
+      expect(page).to have_content(selected_bi.title)
+
+      within('#filter-subnav') { click_link 'Selected' }
+      expect(page).to_not have_content(unfeasible_bi.title)
+      expect(page).to_not have_content(feasible_bi.title)
+      expect(page).to_not have_content(feasible_vf_bi.title)
+      expect(page).to have_content(selected_bi.title)
+    end
+
+    scenario "Showing the selection buttons", :js do
+      visit admin_budget_budget_investments_path(@budget)
+      within('#filter-subnav') { click_link 'All' }
+
+      within("#budget_investment_#{unfeasible_bi.id}") do
+        expect(page).to_not have_link('Select')
+        expect(page).to_not have_link('Selected')
+      end
+
+      within("#budget_investment_#{feasible_bi.id}") do
+        expect(page).to_not have_link('Select')
+        expect(page).to_not have_link('Selected')
+      end
+
+      within("#budget_investment_#{feasible_vf_bi.id}") do
+        expect(page).to have_link('Select')
+        expect(page).to_not have_link('Selected')
+      end
+
+      within("#budget_investment_#{selected_bi.id}") do
+        expect(page).to_not have_link('Select')
+        expect(page).to have_link('Selected')
+      end
+    end
+
+    scenario "Selecting an investment", :js do
+      visit admin_budget_budget_investments_path(@budget)
+      within('#filter-subnav') { click_link 'All' }
+
+      within("#budget_investment_#{feasible_vf_bi.id}") do
+        click_link('Select')
+        expect(page).to have_link('Selected')
+      end
+
+      within('#filter-subnav') { click_link 'Selected' }
+
+      within("#budget_investment_#{feasible_vf_bi.id}") do
+        expect(page).to_not have_link('Select')
+        expect(page).to have_link('Selected')
+      end
+    end
+
+    scenario "Unselecting an investment", :js do
+      visit admin_budget_budget_investments_path(@budget)
+      within('#filter-subnav') { click_link 'Selected' }
+
+      expect(page).to have_content('There is 1 investment')
+
+      within("#budget_investment_#{selected_bi.id}") do
+        click_link('Selected')
+      end
+
+      expect(page).to_not have_content(selected_bi.title)
+      expect(page).to have_content('investments cannot be found')
+
+      within('#filter-subnav') { click_link 'All' }
+
+      within("#budget_investment_#{selected_bi.id}") do
+        expect(page).to have_link('Select')
+        expect(page).to_not have_link('Selected')
+      end
+    end
+
+  end
+
 end

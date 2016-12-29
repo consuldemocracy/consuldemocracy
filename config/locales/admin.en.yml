@@ -105,6 +105,8 @@ en:
           managed: Managed
           valuating: Under valuation
           valuation_finished: Valuation finished
+          valuation_finished_feasible: Val. fin. Feasible
+          selected: Selected
           all: All
         title: Investment projects
         assigned_admin: Assigned administrator
@@ -112,8 +114,18 @@ en:
         no_valuators_assigned: No valuators assigned
         feasibility:
           feasible: "Feasible (%{price})"
-          not_feasible: "Not feasible"
-          undefined: "Undefined"
+          unfeasible: "Unfeasible"
+          undecided: "Undecided"
+        selected: "Selected"
+        select: "Select"
+        table_id: "ID"
+        table_title: "Title"
+        table_admin: "Administrator"
+        table_valuator: "Valuator"
+        table_geozone: "Scope of operation"
+        table_feasibility: "Feasibility"
+        table_valuation_finished: "Val. Fin."
+        table_selection: "Selection"
       show:
         assigned_admin: Assigned administrator
         assigned_valuators: Assigned valuators

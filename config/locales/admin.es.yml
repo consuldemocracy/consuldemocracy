@@ -105,6 +105,8 @@ es:
           managed: Gestionando
           valuating: En evaluación
           valuation_finished: Evaluación finalizada
+          valuation_finished_feasible: Viables
+          selected: Seleccionadas
           all: Todas
         title: Propuestas de inversión
         assigned_admin: Administrador asignado
@@ -112,8 +114,18 @@ es:
         no_valuators_assigned: Sin evaluador
         feasibility:
           feasible: "Viable (%{price})"
-          not_feasible: "Inviable"
-          undefined: "Sin definir"
+          unfeasible: "Inviable"
+          undecided: "Sin decidir"
+        selected: "Seleccionada"
+        select: "Seleccionar"
+        table_id: "ID"
+        table_title: "Título"
+        table_admin: "Administrador"
+        table_valuator: "Evaluador"
+        table_geozone: "Ámbito de actuación"
+        table_feasibility: "Viabilidad"
+        table_valuation_finished: "Ev. Fin."
+        table_selection: "Selección"
       show:
         assigned_admin: Administrador asignado
         assigned_valuators: Evaluadores asignados
