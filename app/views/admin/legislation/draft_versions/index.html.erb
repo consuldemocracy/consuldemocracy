@@ -9,19 +9,27 @@
 
     <%= render 'admin/legislation/processes/subnav', process: @process, active: 'draft_versions' %>
 
-    <%= link_to t("admin.legislation.draft_versions.index.create"),
-              new_admin_legislation_process_draft_version_path, class: "button float-right" %>
+    <div class="row">
+      <div class="small-12 medium-9 column">
+        <h4><%= t("admin.legislation.draft_versions.index.title") %></h4>
+      </div>
 
-    <h3><%= t("admin.legislation.draft_versions.index.title") %></h3>
+      <div class="small-12 medium-3 column legislation-process-version">
+        <%= link_to t("admin.legislation.draft_versions.index.create"), new_admin_legislation_process_draft_version_path, class: "button" %>
+      </div>
+    </div>
 
-    <table>
-      <tr>
-        <th><%= t("admin.legislation.draft_versions.table.title") %></th>
-        <th><%= t("admin.legislation.draft_versions.table.created_at") %></th>
-        <th><%= t("admin.legislation.draft_versions.table.status") %></th>
-        <th><%= t("admin.legislation.draft_versions.table.comments") %></th>
-        <th><%= t("admin.legislation.draft_versions.table.final_version") %></th>
-      </tr>
+    <table class="stack">
+      <thead>
+        <tr>
+          <th><%= t("admin.legislation.draft_versions.table.title") %></th>
+          <th><%= t("admin.legislation.draft_versions.table.created_at") %></th>
+          <th><%= t("admin.legislation.draft_versions.table.status") %></th>
+          <th><%= t("admin.legislation.draft_versions.table.comments") %></th>
+          <th><%= t("admin.legislation.draft_versions.table.final_version") %></th>
+        </tr>
+      </thead>
+      <tbody>
       <% @process.draft_versions.each do |draft_version| %>
         <tr id="<%= dom_id(draft_version) %>">
           <td>
@@ -33,6 +41,7 @@
           <td><%= draft_version.final_version %></td>
         </tr>
       <% end %>
+      </tbody>
     </table>
   </div>
 </div>

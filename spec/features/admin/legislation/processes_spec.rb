@@ -44,15 +44,15 @@ feature 'Admin legislation processes' do
       fill_in 'legislation_process_how_to_participate', with: 'You can partipate in this thing by doing...'
 
       base_date = Date.current
-      fill_in 'start_date', with: base_date.strftime("%d/%m/%Y")
-      fill_in 'end_date', with: (base_date + 5.days).strftime("%d/%m/%Y")
+      fill_in 'legislation_process[start_date]', with: base_date.strftime("%d/%m/%Y")
+      fill_in 'legislation_process[end_date]', with: (base_date + 5.days).strftime("%d/%m/%Y")
 
-      fill_in 'debate_start_date', with: base_date.strftime("%d/%m/%Y")
-      fill_in 'debate_end_date', with: (base_date + 2.days).strftime("%d/%m/%Y")
-      fill_in 'draft_publication_date', with: (base_date + 3.days).strftime("%d/%m/%Y")
-      fill_in 'allegations_start_date', with: (base_date + 3.days).strftime("%d/%m/%Y")
-      fill_in 'allegations_end_date', with: (base_date + 5.days).strftime("%d/%m/%Y")
-      fill_in 'final_publication_date', with: (base_date + 7.days).strftime("%d/%m/%Y")
+      fill_in 'legislation_process[debate_start_date]', with: base_date.strftime("%d/%m/%Y")
+      fill_in 'legislation_process[debate_end_date]', with: (base_date + 2.days).strftime("%d/%m/%Y")
+      fill_in 'legislation_process[draft_publication_date]', with: (base_date + 3.days).strftime("%d/%m/%Y")
+      fill_in 'legislation_process[allegations_start_date]', with: (base_date + 3.days).strftime("%d/%m/%Y")
+      fill_in 'legislation_process[allegations_end_date]', with: (base_date + 5.days).strftime("%d/%m/%Y")
+      fill_in 'legislation_process[final_publication_date]', with: (base_date + 7.days).strftime("%d/%m/%Y")
 
       click_button 'Create process'
 

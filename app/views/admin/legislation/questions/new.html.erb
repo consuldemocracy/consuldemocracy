@@ -9,7 +9,11 @@
 
     <%= render 'admin/legislation/processes/subnav', process: @process, active: 'questions' %>
 
-    <h3><%= t("admin.legislation.questions.new.title") %></h3>
+    <div class="row">
+      <div class="small-12 medium-9 column">
+        <h3><%= t("admin.legislation.questions.new.title") %></h3>
+      </div>
+    </div>
 
     <%= render 'form', url: admin_legislation_process_questions_path(@process) %>
   </div>

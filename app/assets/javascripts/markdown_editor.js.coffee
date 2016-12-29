@@ -18,6 +18,7 @@ App.MarkdownEditor =
 
       $(this).on 'change input paste keyup', ->
         App.MarkdownEditor.refresh_preview($(this), md)
+        $('.legislation-draft-versions-edit .warning').show()
         return
 
       $(this).find('.fullscreen-toggle').on 'click', ->

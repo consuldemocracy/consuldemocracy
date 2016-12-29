@@ -1,30 +1,42 @@
-<%= link_to t("admin.legislation.processes.index.create"),
-              new_admin_legislation_process_path, class: "button success float-right" %>
+<div class="legislation-process-index">
+  <div class="row">
+    <div class="small-12 medium-9 column">
+      <h2 class="inline-block"><%= t("admin.legislation.processes.index.title") %></h2>
+    </div>
+    <div class="small-12 medium-3 column legislation-process-new">
+      <%= link_to t("admin.legislation.processes.index.create"), new_admin_legislation_process_path, class: "button" %>
+    </div>
+  </div>
 
-<h2 class="inline-block"><%= t("admin.legislation.processes.index.title") %></h2>
+  <%= render 'shared/filter_subnav', i18n_namespace: "admin.legislation.processes.index" %>
 
-<%= render 'shared/filter_subnav', i18n_namespace: "admin.legislation.processes.index" %>
+  <h3><%= page_entries_info @processes %></h3>
 
-<h3><%= page_entries_info @processes %></h3>
+  <table class="stack">
+    <thead>
+      <tr>
+        <th><%= t("admin.legislation.processes.process.title") %></th>
+        <th><%= t("admin.legislation.processes.process.comments") %></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+    <% @processes.each do |process| %>
+      <tr id="<%= dom_id(process) %>">
+        <td class="small-12 medium-8">
+          <%= link_to process.title, edit_admin_legislation_process_path(process) %>
+        </td>
+        <td><%= process.total_comments %></td>
+        <td>
+          <%= link_to t("admin.legislation.processes.index.delete"), admin_legislation_process_path(process),
+                      method: :delete,
+                      class: 'button hollow alert' %>
+        </td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
 
-<table>
-  <tr>
-    <th><%= t("admin.legislation.processes.process.title") %></th>
-    <th></th>
-  </tr>
-  <% @processes.each do |process| %>
-    <tr id="<%= dom_id(process) %>">
-      <td class="small-12 medium-9">
-        <%= link_to process.title, edit_admin_legislation_process_path(process) %>
-      </td>
+  <%= paginate @processes %>
 
-      <td class="text-right">
-        <%= link_to t("admin.legislation.processes.index.delete"), admin_legislation_process_path(process),
-                    method: :delete,
-                    class: 'button hollow alert' %>
-      </td>
-    </tr>
-  <% end %>
-</table>
-
-<%= paginate @processes %>
+</div>

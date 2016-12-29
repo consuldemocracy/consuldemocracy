@@ -9,18 +9,26 @@
 
     <%= render 'admin/legislation/processes/subnav', process: @process, active: 'questions' %>
 
-    <%= link_to t("admin.legislation.questions.index.create"),
-              new_admin_legislation_process_question_path, class: "button float-right" %>
+    <div class="row">
+      <div class="small-12 medium-9 column">
+        <h4><%= t("admin.legislation.questions.index.title") %></h4>
+      </div>
 
-    <h3><%= t("admin.legislation.questions.index.title") %></h3>
+      <div class="small-12 medium-3 column legislation-process-question">
+        <%= link_to t("admin.legislation.questions.index.create"), new_admin_legislation_process_question_path, class: "button" %>
+      </div>
+    </div>
 
-    <table>
-      <tr>
-        <th><%= t("admin.legislation.questions.table.title") %></th>
-        <th><%= t("admin.legislation.questions.table.question_options") %></th>
-        <th><%= t("admin.legislation.questions.table.answers_count") %></th>
-        <th><%= t("admin.legislation.questions.table.comments_count") %></th>
-      </tr>
+    <table class="stack">
+     <thead>
+        <tr>
+          <th><%= t("admin.legislation.questions.table.title") %></th>
+          <th><%= t("admin.legislation.questions.table.question_options") %></th>
+          <th><%= t("admin.legislation.questions.table.answers_count") %></th>
+          <th><%= t("admin.legislation.questions.table.comments_count") %></th>
+        </tr>
+      </thead>
+      <tbody>
       <% @process.questions.each do |question| %>
         <tr id="<%= dom_id(question) %>">
           <td>
@@ -36,9 +44,10 @@
             <% end %>
           </td>
           <td><%= question.answers_count %></td>
-          <td><%= question.comments.count %></td>
+          <td><%= link_to question.comments.count, legislation_process_question_path(@process, question, anchor: 'comments') %></td>
         </tr>
       <% end %>
+      </tbody>
     </table>
   </div>
 </div>

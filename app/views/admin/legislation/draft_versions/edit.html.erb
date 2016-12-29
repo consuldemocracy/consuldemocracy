@@ -1,6 +1,6 @@
-<div class="legislation-draft-versions-index row">
+<div class="legislation-draft-versions-index legislation-draft-versions-edit row">
   <div class="small-12 column">
-    <%= link_to admin_legislation_process_path(@process), class: "back" do %>
+    <%= link_to admin_legislation_processes_path, class: "back" do %>
       <span class="icon-angle-left"></span>
       <%= t("admin.legislation.draft_versions.edit.back") %>
     <% end %>
@@ -9,13 +9,24 @@
 
     <%= render 'admin/legislation/processes/subnav', process: @process, active: 'draft_versions' %>
 
-    <h3><%= @draft_version.title %></h3>
+    <div class="row">
+      <div class="small-12 column">
+        <div class="callout warning" style="display: none;">
+          <%= t("admin.legislation.draft_versions.edit.warning") %>
+        </div>
+      </div>
+
+      <div class="small-12 medium-9 column">
+        <h3><%= @draft_version.title %></h3>
+      </div>
+      <div class="small-12 medium-3 column legislation-question-delete">
+        <%= link_to t("admin.legislation.draft_versions.index.delete"),
+                    admin_legislation_process_draft_version_path(@process, @draft_version),
+                    method: :delete,
+                    class: 'button hollow alert' %>
+      </div>
+    </div>
 
     <%= render 'form', url: admin_legislation_process_draft_version_path(@process, @draft_version) %>
-
-    <%= link_to t("admin.legislation.processes.index.delete"), admin_legislation_process_draft_version_path(@process, @draft_version),
-                        method: :delete,
-                        class: 'button hollow alert' %>
-
   </div>
 </div>

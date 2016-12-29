@@ -88,6 +88,13 @@ es:
         errors:
           form:
             error: Error
+        form:
+          process: Proceso
+          debate_phase: Fase previa
+          allegations_phase: Fase de alegaciones
+          start: Inicio
+          end: Fin
+          use_markdown: Usa Markdown para formatear el texto
         index:
           create: Nuevo proceso
           delete: Borrar
@@ -102,7 +109,8 @@ es:
           title: Crear nuevo proceso de legislación colaborativa
           submit_button: Crear proceso
         process:
-          title: Título del proceso de legislación colaborativa
+          title: Proceso
+          comments: Comentarios
         subnav:
           info: Información
           draft_texts: Texto
@@ -111,14 +119,22 @@ es:
         edit:
           back: Volver
           submit_button: Guardar cambios
+          warning: Ojo, has editado el texto. Para conservar de forma permanente los cambios, no te olvides de hacer click en Guardar.
         errors:
           form:
             error: Error
         form:
           fullscreen_toggle: Pantalla completa
+          use_markdown: Usa Markdown para formatear el texto
+          hints:
+            final_version: Será la versión que se publique en Publicación de Resultados. Esta versión no se podrá comentar
+            status:
+              draft: Podrás previsualizarlo como logueado, nadie más lo podrá ver
+              published: Será visible para todo el mundo
         index:
           title: Versiones del borrador
           create: Crear versión
+          delete: Borrar
         new:
           back: Volver
           title: Crear nueva versión
@@ -135,6 +151,7 @@ es:
       questions:
         edit:
           back: Volver
+          title: "Editar “%{question_title}”"
           submit_button: Guardar cambios
         errors:
           form:
@@ -143,8 +160,9 @@ es:
           add_option: +Añadir respuesta cerrada
         index:
           back: Volver
-          title: Preguntas
+          title: Preguntas asociadas a este proceso
           create: Crear pregunta
+          delete: Borrar
         new:
           back: Volver
           title: Crear nueva pregunta
