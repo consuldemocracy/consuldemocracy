@@ -50,6 +50,7 @@
 //= require markdown_editor
 //= require cocoon
 //= require allegations
+//= require legislation_debate
 //= require legislation_questions
 //= require custom
 
@@ -75,6 +76,7 @@ var initialize_modules = function() {
   App.SocialShare.initialize();
   App.MarkdownEditor.initialize();
   App.Allegations.initialize();
+  App.LegislationDebate.initialize();
   App.LegislationQuestions.initialize();
 };
 
