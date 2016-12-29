@@ -7,6 +7,8 @@ class ProposalNotification < ActiveRecord::Base
   validates :proposal, presence: true
   validate :minimum_interval
 
+  scope :public_for_api, -> { joins(:proposal).where("proposals.hidden_at IS NULL") }
+
   def minimum_interval
     return true if proposal.try(:notifications).blank?
     if proposal.notifications.last.created_at > (Time.current - Setting[:proposal_notification_minimum_interval_in_days].to_i.days).to_datetime
