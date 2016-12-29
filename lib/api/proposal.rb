@@ -37,3 +37,9 @@ class API::Proposal
   end
 
 end
+
+#Mirar a ver si hay alguna mas
+#Primero mirar a ver si elemento original esta incluido en el csv y sino esconder el elemento hijo
+
+#created_at mostrar solo fecha y hora (no minutos)
+

@@ -57,29 +57,7 @@ class Proposal < ActiveRecord::Base
   scope :not_proceedings,          -> { where(proceeding: nil) }
   scope :successfull,              -> { where("cached_votes_up + physical_votes >= ?", Proposal.votes_needed_for_success)}
 
-  #Ocutar comentario de cosas que estan ocultas (commentable)
-  #Etiquetas (Taggins) no mostrar si depende de un elemento oculto (taggs)
-  #Mirar a ver si hay alguna mas
-#
-  #las propuestas
-  #  no incluir las que no sean 'nil, Derechos Humanos'
-#
-  #Entonces para las propuestas
-  #  LAs que no sean estas no mostrar...
-#
-  #Primero mirar a ver si elemento original esta incluido en el csv y sino esconder el elemento hijo
-#
-  #Tambien tener en cienta ProposalNotifications
-#
-  #created_at mostrar solo fecha y hora (no minutos)
-
-    #* COMPROBAR campo "hidden_at". Si está oculto se excluye la propuesta del archivo.
-    #* COMPROBAR campo "author_id". Si el usuario no tiene actividad pública se excluye el contenido de este campo del archivo.
-#
-    #*** Comprobar sólo se añaden las propuestas cuyo proceeding sea nil o derechos humanos (para que no se cuelen otras)
-
-
-  #def self.to_csv(options = {})
+   #def self.to_csv(options = {})
   #  CSV.generate(options) do |csv|
   #    csv << public_columns
   #    all.limit(2).each do |proposal|
