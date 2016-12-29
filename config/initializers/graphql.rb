@@ -35,15 +35,17 @@ QueryRoot = GraphQL::ObjectType.define do
   type_creator.created_types.each do |model, created_type|
 
     # create an entry field to retrive a single object
-    field model.name.underscore.to_sym do
-      type created_type
-      description "Find one #{model.model_name.human} by ID"
-      argument :id, !types.ID
-      resolve -> (object, arguments, context) do
-        if model.respond_to?(:public_for_api)
-          model.public_for_api.find(arguments["id"])
-        else
-          model.find(arguments["id"])
+    if API_TYPE_DEFINITIONS[model].include?(:id)
+      field model.name.underscore.to_sym do
+        type created_type
+        description "Find one #{model.model_name.human} by ID"
+        argument :id, !types.ID
+        resolve -> (object, arguments, context) do
+          if model.respond_to?(:public_for_api)
+            model.public_for_api.find(arguments["id"])
+          else
+            model.find(arguments["id"])
+          end
         end
       end
     end
