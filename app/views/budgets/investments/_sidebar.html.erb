@@ -1,12 +1,18 @@
-<%= link_to @budget, class: "back" do %>
-  <i class="icon-angle-left"></i>
-  <%= t("spending_proposals.index.sidebar.back") %>
-<% end %>
-
 <div class="clear"></div>
 
+<% if @budget.accepting? %>
+  <% if current_user && current_user.level_two_or_three_verified? %>
+    <%= link_to t("budget.investments.index.sidebar.create"), new_budget_investment_path, class: "button budget expanded" %>
+  <% else %>
+    <div class="callout warning">
+      <%= t("budget.investments.index.sidebar.verified_only",
+          verify: link_to(t("budget.investments.index.sidebar.verify_account"), verification_path)).html_safe %>
+    </div>
+  <% end %>
+<% end %>
+
 <div class="sidebar-divider"></div>
-<h3 class="sidebar-title"><%= t("spending_proposals.index.sidebar.my_ballot") %></h3>
+<h2 class="sidebar-title"><%= t("spending_proposals.index.sidebar.my_ballot") %></h2>
 
 <% if @heading && @ballot.investments.by_heading(@heading.id).count > 0 %>
   <p>

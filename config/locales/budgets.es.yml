@@ -80,6 +80,9 @@ es:
           votes: Apoyos restantes
           votes_district: "Solo puedes votar en el distrito %{district}"
           zero: "Todavía no has votado ninguna propuesta de inversión."
+          verified_only: "Para crear una nueva propuesta de inversión %{verify}."
+          verify_account: "verifica tu cuenta"
+          create: "Crear propuesta de inversión"
         orders:
           random: Aleatorias
           confidence_score: Mejor valoradas
