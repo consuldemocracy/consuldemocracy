@@ -5,6 +5,7 @@ API_TYPE_DEFINITIONS = {
   Comment  => %I[ id commentable_id commentable_type body created_at cached_votes_total cached_votes_up cached_votes_down ancestry confidence_score public_author ],
   Geozone  => %I[ id name ]
   ProposalNotification => %I[ title body proposal_id created_at proposal ],
+  Tag => %I[ id name taggings_count kind ],
 }
 
 type_creator = GraphQL::TypeCreator.new
