@@ -425,9 +425,10 @@ en:
     date: "From 13th to 19th of February"
     successfull: "This proposal has reached the required supports and will be voted in the %{voting}."
     voting: "next voting"
-    featured_title: "#NextVoting"
+    featured_title: "In February you decide"
     nothing_to_vote: "There is nothing to vote at the moment."
-    info: "New proposals that have reached the voting phase."
+    info: "From 13th to 19th of February, first vote on citizen proposals."
+    info_extend: "Yes or no? From 13th to 19th February you decide: single ticket for public transport, Madrid 100% sustainable and remodeling Plaza España. Sign up!"
     button: "I want to decide"
   proposal_notifications:
     new:
