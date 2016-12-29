@@ -6,6 +6,10 @@ class Admin::Legislation::QuestionsController < Admin::Legislation::BaseControll
     @questions = @process.questions
   end
 
+  def new
+    @question.question_options.build
+  end
+
   def create
     @question.author = current_user
     if @question.save
