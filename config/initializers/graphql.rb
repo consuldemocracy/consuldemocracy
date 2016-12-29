@@ -1,11 +1,12 @@
 API_TYPE_DEFINITIONS = {
-  User     => %I[ id username proposals ],
+  User     => %I[ id username gender geozone_id geozone ],
   Debate   => %I[ id title description created_at cached_votes_total cached_votes_up cached_votes_down comments_count hot_score confidence_score geozone_id geozone comments public_author ],
   Proposal => %I[ id title description external_url cached_votes_up comments_count hot_score confidence_score created_at summary video_url geozone_id retired_at retired_reason retired_explanation geozone comments proposal_notifications public_author ],
   Comment  => %I[ id commentable_id commentable_type body created_at cached_votes_total cached_votes_up cached_votes_down ancestry confidence_score public_author ],
-  Geozone  => %I[ id name ]
+  Geozone  => %I[ id name ],
   ProposalNotification => %I[ title body proposal_id created_at proposal ],
   Tag => %I[ id name taggings_count kind ],
+  Vote => %I[ votable_id votable_type created_at public_voter ]
 }
 
 type_creator = GraphQL::TypeCreator.new
