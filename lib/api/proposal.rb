@@ -27,8 +27,6 @@ class API::Proposal
   end
 
   def public_attributes
-    return [] unless public?
-
     proposal.attributes.values_at(*API::Proposal.public_columns)
   end
 

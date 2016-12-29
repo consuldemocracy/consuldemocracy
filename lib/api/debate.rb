@@ -20,8 +20,6 @@ class API::Debate
   end
 
   def public_attributes
-    return [] unless public?
-
     debate.attributes.values_at(*API::Debate.public_columns)
   end
 
