@@ -5,7 +5,7 @@ class API::CSVExporter
     end
 
     def tables
-      ["proposals"]
+      ["proposals", "debates"]
     end
 
     def export(options = {})
@@ -18,7 +18,7 @@ class API::CSVExporter
       CSV.open(filename(table), "w") do |csv|
         csv << columns(table)
         model(table).all.limit(2).each do |record|
-          csv << record.public_attributes
+          csv << public_attributes(record)
         end
       end
     end
@@ -33,6 +33,10 @@ class API::CSVExporter
 
     def model_name(table)
       table.camelcase.singularize
+    end
+
+    def public_attributes(record)
+      "API::#{record.class}".constantize.new(record.id).public_attributes
     end
 
     def filename(table)
