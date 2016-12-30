@@ -44,10 +44,6 @@ class API::CSVExporter
       table.camelcase.singularize
     end
 
-    def api_record(record)
-       "API::#{record.class}".constantize.new(record.id)
-    end
-
     def public_attributes(record)
       record.attributes.values_at(*columns(record.class.name.underscore.pluralize))
     end
@@ -57,7 +53,7 @@ class API::CSVExporter
     end
 
     def folder
-      "tmp/"
+      "public/"
     end
 
 end
