@@ -105,6 +105,24 @@ class Comment < ActiveRecord::Base
                                                              cached_votes_up)
   end
 
+  def self.public_columns
+    ["id",
+     "commentable_id",
+     "commentable_type",
+     "body",
+     "created_at",
+     "cached_votes_total",
+     "cached_votes_up",
+     "cached_votes_down",
+     "ancestry",
+     "confidence_score"]
+  end
+
+  def public?
+    return false if commentable.hidden?
+    ["Proposal", "Debate"].include? commentable_type
+  end
+
   private
 
     def validate_body_length

@@ -152,4 +152,22 @@ class Debate < ActiveRecord::Base
     self.featured_at.present?
   end
 
+  def self.public_columns
+    ["id",
+     "title",
+     "description",
+     "created_at",
+     "cached_votes_total",
+     "cached_votes_up",
+     "cached_votes_down",
+     "comments_count",
+     "hot_score",
+     "confidence_score"]
+  end
+
+  def public?
+    hidden? ? false : true
+  end
+
+  #* COMPROBAR campo "hidden_at". Si está oculto se excluye el debate del archivo.
 end

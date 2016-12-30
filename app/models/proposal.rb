@@ -57,59 +57,6 @@ class Proposal < ActiveRecord::Base
   scope :not_proceedings,          -> { where(proceeding: nil) }
   scope :successfull,              -> { where("cached_votes_up + physical_votes >= ?", Proposal.votes_needed_for_success)}
 
-   #def self.to_csv(options = {})
-  #  CSV.generate(options) do |csv|
-  #    csv << public_columns
-  #    all.limit(2).each do |proposal|
-  #      csv << proposal.public_attributes
-  #    end
-  #  end
-  #end
-#
-  #def self.public_columns
-  #  ["id",
-  #   "title",
-  #   "description",
-  #   "author_id",
-  #   "external_url",
-  #   "cached_votes_up",
-  #   "comments_count",
-  #   "hot_score",
-  #   "confidence_score",
-  #   "created_at",
-  #   "summary",
-  #   "video_url",
-  #   "geozone_id",
-  #   "retired_at",
-  #   "retired_reason",
-  #   "retired_explanation",
-  #   "proceeding",
-  #   "sub_proceeding"]
-  #end
-#
-  #def public_attributes
-  #  return [] unless public?
-#
-  #  attrs = attributes
-  #  attrs["author_id"] = public_author_id
-#
-  #  attrs.values_at(*Proposal.public_columns)
-  #end
-#
-  #def public_author_id
-  #  author.public_activity? ? author.id  : nil
-  #end
-#
-  #def public?
-  #  return false if hidden?
-  #  return false unless ["Derechos Humanos", nil].include?(proceeding)
-  #  return true
-  #end
-
-
-
-
-
   def to_param
     "#{id}-#{title}".parameterize
   end
@@ -257,6 +204,37 @@ class Proposal < ActiveRecord::Base
       WHERE id = #{proposal.id}
       SQL
   end
+
+  def self.public_columns
+    ["id",
+     "title",
+     "description",
+     "external_url",
+     "cached_votes_up",
+     "comments_count",
+     "hot_score",
+     "confidence_score",
+     "created_at",
+     "summary",
+     "video_url",
+     "geozone_id",
+     "retired_at",
+     "retired_reason",
+     "retired_explanation",
+     "proceeding",
+     "sub_proceeding"]
+  end
+
+  def public?
+    return false if hidden?
+    return false unless ["Derechos Humanos", nil].include?(proceeding)
+    return true
+  end
+
+  #Mirar a ver si hay alguna mas
+  #Primero mirar a ver si elemento original esta incluido en el csv y sino esconder el elemento hijo
+
+  #created_at mostrar solo fecha y hora (no minutos)
 
   protected
 

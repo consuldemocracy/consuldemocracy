@@ -14,4 +14,15 @@ class ProposalNotification < ActiveRecord::Base
     end
   end
 
+  def self.public_columns
+    ["title",
+     "body",
+     "proposal_id",
+     "created_at"]
+  end
+
+  def public?
+    proposal.hidden? ? false : true
+  end
+
 end
