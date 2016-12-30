@@ -441,7 +441,6 @@ en:
     collective: Collective
     flag: Flag as inappropriate
     hide: Hide
-    send: Send
     edit: Editar
     print:
       print_button: Print this info
