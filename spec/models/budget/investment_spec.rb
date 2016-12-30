@@ -318,8 +318,8 @@ describe Budget::Investment do
           expect(investment.reason_for_not_being_ballotable_by(user, ballot)).to eq(:organization)
         end
 
-        it "rejects votes when voting is not allowed (via admin setting)" do
-          budget.phase = "on_hold"
+        it "rejects votes when voting is not allowed (wrong phase)" do
+          budget.phase = "reviewing"
           expect(investment.reason_for_not_being_ballotable_by(user, ballot)).to eq(:no_ballots_allowed)
         end
 

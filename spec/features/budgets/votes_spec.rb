@@ -88,7 +88,7 @@ feature 'Votes' do
 
     scenario 'Disable voting on spending proposals', :js do
       login_as(@manuela)
-      budget.update(phase: "on_hold")
+      budget.update(phase: "reviewing")
       investment = create(:budget_investment, budget: budget, heading: heading)
 
       visit budget_investments_path(budget, heading_id: heading.id)

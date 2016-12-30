@@ -15,17 +15,23 @@ describe Budget do
     end
 
     it "produces auxiliary methods" do
-      budget.phase = "on_hold"
-      expect(budget).to be_on_hold
-
       budget.phase = "accepting"
       expect(budget).to be_accepting
+
+      budget.phase = "reviewing"
+      expect(budget).to be_reviewing
 
       budget.phase = "selecting"
       expect(budget).to be_selecting
 
+      budget.phase = "valuating"
+      expect(budget).to be_valuating
+
       budget.phase = "balloting"
       expect(budget).to be_balloting
+
+      budget.phase = "reviewing_ballots"
+      expect(budget).to be_reviewing_ballots
 
       budget.phase = "finished"
       expect(budget).to be_finished
