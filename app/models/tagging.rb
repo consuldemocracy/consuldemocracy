@@ -8,8 +8,8 @@ class Tagging < ActsAsTaggableOn::Tagging
 
   def public?
     return false unless ["Proposal", "Debate"].include? (taggable_type)
-    return false if taggable.hidden?
-    return false unless Tag.find(tag_id).public?
+    return false if taggable.try(:hidden?)
+    return false unless Tag.find(tag_id).try(:public?)
     return true
   end
 
