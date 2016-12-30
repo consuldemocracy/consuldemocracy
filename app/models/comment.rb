@@ -105,7 +105,7 @@ class Comment < ActiveRecord::Base
                                                              cached_votes_up)
   end
 
-  def self.public_columns
+  def self.public_columns_for_api
     ["id",
      "commentable_id",
      "commentable_type",
@@ -118,7 +118,7 @@ class Comment < ActiveRecord::Base
      "confidence_score"]
   end
 
-  def public?
+  def public_for_api?
     return false if commentable.hidden?
     ["Proposal", "Debate"].include? commentable_type
   end

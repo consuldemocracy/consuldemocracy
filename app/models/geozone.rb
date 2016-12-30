@@ -15,11 +15,11 @@ class Geozone < ActiveRecord::Base
     end
   end
 
-  def self.public_columns
+  def self.public_columns_for_api
     ["id", "name"]
   end
 
-  def public?
+  def public_for_api?
     true
   end
 end

@@ -25,7 +25,7 @@ class API::CSVExporter
       CSV.open(filename(table), "w") do |csv|
         csv << columns(table)
         model(table).all.each do |record|
-          if record.public?
+          if record.public_for_api?
             csv << public_attributes(record)
           end
         end
@@ -33,7 +33,7 @@ class API::CSVExporter
     end
 
     def columns(table)
-      model_name(table).constantize.public_columns
+      model_name(table).constantize.public_columns_for_api
     end
 
     def model(table)

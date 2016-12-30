@@ -14,14 +14,14 @@ class ProposalNotification < ActiveRecord::Base
     end
   end
 
-  def self.public_columns
+  def self.public_columns_for_api
     ["title",
      "body",
      "proposal_id",
      "created_at"]
   end
 
-  def public?
+  def public_for_api?
     proposal.hidden? ? false : true
   end
 

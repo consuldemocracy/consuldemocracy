@@ -205,7 +205,7 @@ class Proposal < ActiveRecord::Base
       SQL
   end
 
-  def self.public_columns
+  def self.public_columns_for_api
     ["id",
      "title",
      "description",
@@ -225,7 +225,7 @@ class Proposal < ActiveRecord::Base
      "sub_proceeding"]
   end
 
-  def public?
+  def public_for_api?
     return false if hidden?
     return false unless ["Derechos Humanos", nil].include?(proceeding)
     return true

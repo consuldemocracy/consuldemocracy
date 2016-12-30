@@ -152,7 +152,7 @@ class Debate < ActiveRecord::Base
     self.featured_at.present?
   end
 
-  def self.public_columns
+  def self.public_columns_for_api
     ["id",
      "title",
      "description",
@@ -165,7 +165,7 @@ class Debate < ActiveRecord::Base
      "confidence_score"]
   end
 
-  def public?
+  def public_for_api?
     hidden? ? false : true
   end
 
