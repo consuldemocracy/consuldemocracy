@@ -1,3 +1,7 @@
+<% provide :title do %>
+  Admin - <%= t("admin.menu.legislation") %> - <%= @process.title %> - <%= t("admin.legislation.draft_versions.index.title") %>
+<% end %>
+
 <div class="legislation-admin legislation-draft-versions-index row">
   <div class="small-12 column">
     <%= link_to admin_legislation_processes_path, class: "back" do %>
