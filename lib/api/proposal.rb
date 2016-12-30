@@ -26,10 +26,6 @@ class API::Proposal
      "sub_proceeding"]
   end
 
-  def public_attributes
-    proposal.attributes.values_at(*API::Proposal.public_columns)
-  end
-
   def public?
     return false if proposal.hidden?
     return false unless ["Derechos Humanos", nil].include?(proposal.proceeding)

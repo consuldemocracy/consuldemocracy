@@ -13,10 +13,6 @@ class API::Vote
      "created_at"]
   end
 
-  def public_attributes
-    vote.attributes.values_at(*API::Vote.public_columns)
-  end
-
   def public?
     return false unless ["Proposal", "Debate", "Comment"].include? vote.votable_type
     return false if vote.votable.hidden?

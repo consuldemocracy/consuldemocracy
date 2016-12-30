@@ -19,10 +19,6 @@ class API::Debate
      "confidence_score"]
   end
 
-  def public_attributes
-    debate.attributes.values_at(*API::Debate.public_columns)
-  end
-
   def public?
     debate.hidden? ? false : true
   end

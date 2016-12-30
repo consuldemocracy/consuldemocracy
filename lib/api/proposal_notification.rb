@@ -13,10 +13,6 @@ class API::ProposalNotification
      "created_at"]
   end
 
-  def public_attributes
-    proposal_notification.attributes.values_at(*API::ProposalNotification.public_columns)
-  end
-
   def public?
     proposal_notification.proposal.hidden? ? false : true
   end

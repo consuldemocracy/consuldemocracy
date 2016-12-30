@@ -32,6 +32,10 @@ class API::CSVExporter
       end
     end
 
+    def public_attributes
+
+  end
+
     def columns(table)
       "API::#{model_name(table)}".constantize.public_columns
     end
@@ -49,7 +53,7 @@ class API::CSVExporter
     end
 
     def public_attributes(record)
-      api_record(record).public_attributes
+      record.attributes.values_at(*columns(record.class.name.underscore.pluralize))
     end
 
     def filename(table)

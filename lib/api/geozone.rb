@@ -10,10 +10,6 @@ class API::Geozone
     ["id", "name"]
   end
 
-  def public_attributes
-    geozone.attributes.values_at(*API::Geozone.public_columns)
-  end
-
   def public?
     true
   end

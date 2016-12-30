@@ -12,10 +12,6 @@ class API::Tagging
      "taggable_type"]
   end
 
-  def public_attributes
-    tagging.attributes.values_at(*API::Tagging.public_columns)
-  end
-
   def public?
     return false unless ["Proposal", "Debate"].include? (tagging.taggable_type)
     return false if tagging.taggable.hidden?

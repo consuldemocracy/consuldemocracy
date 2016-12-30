@@ -12,10 +12,6 @@ class API::Tag
      "kind"]
   end
 
-  def public_attributes
-    tag.attributes.values_at(*API::Tag.public_columns)
-  end
-
   def public?
     [nil, "category"].include? tag.kind
   end

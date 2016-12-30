@@ -19,12 +19,6 @@ class API::Comment
      "confidence_score"]
   end
 
-  def public_attributes
-    return [] unless public?
-
-    comment.attributes.values_at(*API::Comment.public_columns)
-  end
-
   def public?
     return false if comment.commentable.hidden?
     ["Proposal", "Debate"].include? comment.commentable_type
