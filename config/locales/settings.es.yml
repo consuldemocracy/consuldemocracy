@@ -33,3 +33,5 @@ es:
         voting_allowed: Votaciones sobre propuestas de inversión.
     mailer_from_name: Nombre email remitente
     mailer_from_address: Dirección email remitente
+    meta_description: "Descripción del sitio (SEO)"
+    meta_keywords: "Palabras clave (SEO)"
