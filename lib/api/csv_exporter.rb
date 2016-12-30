@@ -24,7 +24,7 @@ class API::CSVExporter
     def generate_csv(table)
       CSV.open(filename(table), "w") do |csv|
         csv << columns(table)
-        model(table).all.limit(2).each do |record|
+        model(table).all.each do |record|
           if record.public?
             csv << public_attributes(record)
           end
