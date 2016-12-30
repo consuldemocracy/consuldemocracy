@@ -61,6 +61,32 @@
     }
   }
   
+  #debate-info {
+    display: none;
+    margin-top: 1rem;
+    
+    @include breakpoint(medium) {
+      margin-bottom: 2rem;
+    }
+        
+    .debate-info-wrapper {
+
+      h2 {
+        font-size: $lead-font-size;
+        
+        @include breakpoint(medium) {
+          float: left;
+        }
+      }
+      
+      p {
+        @include breakpoint(medium) {
+          margin-left: 25%;
+        }
+      }
+    }
+  }
+  
   .half-gradient {
     /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#e6e6e6+0,e6e6e6+50,ffffff+50 */
     background: #e6e6e6; /* Old browsers */
@@ -122,24 +148,21 @@
   
   svg {
     position: absolute;
-    top: 0.75rem;
+    top: 1.5rem;
     left: 0;
     
     @include breakpoint(medium) {
       transform: rotate(-8deg);
+      top: 0.75rem;
     }
   }
   
   ul {
-    padding-top: 3rem;
+    padding-top: 4rem;
     list-style: none;
     margin-left: 0;
     padding-left: 0;
     border-bottom: 1px solid $medium-gray;
-    
-    @include breakpoint(medium) {
-      padding-top: 4rem;
-    }
     
     li {
       cursor: pointer;
@@ -622,7 +645,11 @@
         content: "#";
         color: $text-medium;
         position: absolute;
-        left: 1.5rem;
+        left: 0;
+        
+        @include breakpoint(medium) {
+          left: 1.5rem;
+        }
       }
       
       a {
