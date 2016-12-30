@@ -40,10 +40,6 @@ describe ProposalsHelper do
       expect(supports_percentage(proposal)).to eq "100%"
     end
 
-    it "should take into account the physical votes" do
-      proposal = create(:proposal, physical_votes: Proposal.votes_needed_for_success/2)
-      expect(supports_percentage(proposal)).to eq "50%"
-    end
   end
 
 end
