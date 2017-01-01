@@ -55,8 +55,6 @@ class User < ActiveRecord::Base
   scope :email_digest,   -> { where(email_digest: true) }
   scope :active,         -> { where(erased_at: nil) }
   scope :with_public_activity, -> { where(public_activity: true) }
-  scope :public_for_api, -> { select("id, username") }
-  scope :for_votes,      -> { select("users.gender, users.geozone_id") }
 
   before_validation :clean_document_number
 

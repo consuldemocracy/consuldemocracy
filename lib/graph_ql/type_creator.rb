@@ -33,7 +33,11 @@ module GraphQL
               resolve -> (object, arguments, context) do
                 target_public_elements = type.respond_to?(:public_for_api) ? type.public_for_api : type.all
                 wanted_element = object.send(name)
-                target_public_elements.include?(wanted_element) ? wanted_element : nil
+                if target_public_elements.include?(wanted_element) || GraphQL::TypeCreator.matching_exceptions.include?(name)
+                  wanted_element
+                else
+                  nil
+                end
               end
             end
           when :paginated_association
@@ -60,6 +64,11 @@ module GraphQL
       elsif type.class == Array
         :paginated_association
       end
+    end
+
+    # TODO: esto es una ñapa, hay que buscar una solución mejor
+    def self.matching_exceptions
+      [:public_voter]
     end
 
   end

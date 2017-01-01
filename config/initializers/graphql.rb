@@ -1,12 +1,15 @@
 API_TYPE_DEFINITIONS = {
-  User     => {
+  User => {
     id:         :integer,
-    username:   :string,
-    gender:     :string,
-    geozone_id: :integer,
-    geozone:    Geozone
+    username:   :string
   },
-  Debate   => {
+  Voter => {
+    gender:         :string,
+    date_of_birth:  :string,
+    geozone_id:     :integer,
+    geozone:        Geozone
+  },
+  Debate => {
     id:                 :integer,
     title:              :string,
     description:        :string,
@@ -43,7 +46,7 @@ API_TYPE_DEFINITIONS = {
     proposal_notifications: [ProposalNotification],
     public_author:      User
   },
-  Comment  => {
+  Comment => {
     id:                 :integer,
     commentable_id:     :integer,
     commentable_type:   :string,
@@ -56,7 +59,7 @@ API_TYPE_DEFINITIONS = {
     confidence_score:   :integer,
     public_author:      User
   },
-  Geozone  => {
+  Geozone => {
     id:   :integer,
     name: :string
   },
@@ -77,7 +80,7 @@ API_TYPE_DEFINITIONS = {
     votable_id:     :integer,
     votable_type:   :string,
     created_at:     :string,
-    public_voter:   User
+    public_voter:   Voter
   }
 }
 
