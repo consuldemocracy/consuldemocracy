@@ -27,6 +27,10 @@ class Budget < ActiveRecord::Base
 
   scope :current,   -> { where.not(phase: "finished") }
 
+  def description
+    self.send("description_#{self.phase}").try(:html_safe)
+  end
+
   def accepting?
     phase == "accepting"
   end

@@ -1,6 +1,19 @@
 require 'rails_helper'
 
 describe Budget do
+
+  describe "description" do
+    it "changes depending on the phase" do
+      budget = create(:budget)
+
+      Budget::VALID_PHASES.each do |phase|
+        budget.phase = phase
+        expect(budget.description).to eq(budget.send("description_#{phase}"))
+        expect(budget.description).to be_html_safe
+      end
+    end
+  end
+
   describe "phase" do
     let(:budget) { create(:budget) }
 
