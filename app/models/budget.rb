@@ -2,11 +2,11 @@ class Budget < ActiveRecord::Base
 
   include Measurable
 
-  VALID_PHASES = %w(accepting reviewing selecting valuating balloting reviewing_ballots finished).freeze
+  PHASES = %w(accepting reviewing selecting valuating balloting reviewing_ballots finished).freeze
   CURRENCY_SYMBOLS = %w(€ $ £ ¥).freeze
 
   validates :name, presence: true
-  validates :phase, inclusion: { in: VALID_PHASES }
+  validates :phase, inclusion: { in: PHASES }
   validates :currency_symbol, presence: true
 
   has_many :investments, dependent: :destroy
@@ -94,7 +94,7 @@ class Budget < ActiveRecord::Base
 
     def sanitize_descriptions
       s = WYSIWYGSanitizer.new
-      VALID_PHASES.each do |phase|
+      PHASES.each do |phase|
         sanitized = s.sanitize(self.send("description_#{phase}"))
         self.send("description_#{phase}=", sanitized)
       end
