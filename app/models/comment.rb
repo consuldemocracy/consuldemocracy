@@ -1,5 +1,6 @@
 class Comment < ActiveRecord::Base
   include Flaggable
+  include HasPublicAuthor
 
   acts_as_paranoid column: :hidden_at
   include ActsAsParanoidAliases
@@ -16,7 +17,6 @@ class Comment < ActiveRecord::Base
 
   belongs_to :commentable, -> { with_hidden }, polymorphic: true, counter_cache: true
   belongs_to :user, -> { with_hidden }
-  belongs_to :public_author, -> { with_public_activity }, class_name: 'User', foreign_key: 'user_id'
 
   before_save :calculate_confidence_score
 

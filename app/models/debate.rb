@@ -7,13 +7,13 @@ class Debate < ActiveRecord::Base
   include Sanitizable
   include Searchable
   include Filterable
+  include HasPublicAuthor
 
   acts_as_votable
   acts_as_paranoid column: :hidden_at
   include ActsAsParanoidAliases
 
   belongs_to :author, -> { with_hidden }, class_name: 'User', foreign_key: 'author_id'
-  belongs_to :public_author, -> { with_public_activity }, class_name: 'User', foreign_key: 'author_id'
   belongs_to :geozone
   has_many :comments, as: :commentable
 
