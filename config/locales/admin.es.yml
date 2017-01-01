@@ -74,7 +74,6 @@ es:
         title: Editar campaña de presupuestos participativos
       new:
         title: Nuevo presupuesto ciudadano
-        submit: Crear presupuesto
       show:
         phase: Fase actual
         currency: Divisa

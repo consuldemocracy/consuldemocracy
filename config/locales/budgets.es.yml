@@ -24,10 +24,12 @@ es:
         title: Selecciona una partida
   budget:
     phase:
-      on_hold: En pausa
       accepting: Aceptando propuestas
+      reviewing: Revisando propuestas
       selecting: Fase de selección
-      balloting: Fase de Votación
+      valuating: Fase de evaluación de propuestas
+      balloting: Fase de votación
+      reviewing_ballots: Contando resultados
       finished: Terminado
     groups:
       index:

@@ -24,10 +24,12 @@ en:
         title: Select a heading
   budget:
     phase:
-      on_hold: On hold
       accepting: Accepting proposals
+      reviewing: Reviewing proposals
       selecting: Selecting
+      valuating: Valuating
       balloting: Balloting
+      reviewing_ballots: Reviewing Ballots
       finished: Finished
     groups:
       index:
