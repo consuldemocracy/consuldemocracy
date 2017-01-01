@@ -1,6 +1,5 @@
 class Budget < ActiveRecord::Base
 
-  include Sanitizable
   include Measurable
 
   VALID_PHASES = %w(accepting reviewing selecting valuating balloting reviewing_ballots finished).freeze
@@ -16,6 +15,7 @@ class Budget < ActiveRecord::Base
   has_many :headings, through: :groups
 
   scope :on_hold,   -> { where(phase: ["reviewing", "valuating", "reviewing_ballots"]) }
+  before_validation :sanitize_descriptions
   scope :accepting, -> { where(phase: "accepting") }
   scope :reviewing, -> { where(phase: "reviewing") }
   scope :selecting, -> { where(phase: "selecting") }
@@ -84,5 +84,15 @@ class Budget < ActiveRecord::Base
   def formatted_heading_amount_spent(heading)
     formatted_amount(amount_spent(heading))
   end
+
+  private
+
+    def sanitize_descriptions
+      s = WYSIWYGSanitizer.new
+      VALID_PHASES.each do |phase|
+        sanitized = s.sanitize(self.send("description_#{phase}"))
+        self.send("description_#{phase}=", sanitized)
+      end
+    end
 end
 
