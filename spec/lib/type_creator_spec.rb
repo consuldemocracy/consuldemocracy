@@ -5,7 +5,7 @@ describe GraphQL::TypeCreator do
 
   describe "::create" do
     it "creates fields for Int attributes" do
-      debate_type = type_creator.create(Debate, %I[ id ])
+      debate_type = type_creator.create(Debate, { id: :integer })
       created_field = debate_type.fields['id']
 
       expect(created_field).to be_a(GraphQL::Field)
@@ -14,7 +14,7 @@ describe GraphQL::TypeCreator do
     end
 
     it "creates fields for String attributes" do
-      debate_type = type_creator.create(Debate, %I[ title ])
+      debate_type = type_creator.create(Debate, { title: :string })
       created_field = debate_type.fields['title']
 
       expect(created_field).to be_a(GraphQL::Field)
@@ -23,8 +23,8 @@ describe GraphQL::TypeCreator do
     end
 
     it "creates connections for :belongs_to associations" do
-      user_type = type_creator.create(User, %I[ id ])
-      debate_type = type_creator.create(Debate, %I[ author ])
+      user_type = type_creator.create(User, { id: :integer })
+      debate_type = type_creator.create(Debate, { author: User })
 
       connection = debate_type.fields['author']
 
@@ -34,8 +34,8 @@ describe GraphQL::TypeCreator do
     end
 
     it "creates connections for :has_one associations" do
-      user_type = type_creator.create(User, %I[ organization ])
-      organization_type = type_creator.create(Organization, %I[ id ])
+      user_type = type_creator.create(User, { organization: Organization })
+      organization_type = type_creator.create(Organization, { id: :integer })
 
       connection = user_type.fields['organization']
 
@@ -45,8 +45,8 @@ describe GraphQL::TypeCreator do
     end
 
     it "creates connections for :has_many associations" do
-      comment_type = type_creator.create(Comment, %I[ id ])
-      debate_type = type_creator.create(Debate, %I[ comments ])
+      comment_type = type_creator.create(Comment, { id: :integer })
+      debate_type = type_creator.create(Debate, { comments: [Comment] })
 
       connection = debate_type.fields['comments']
 

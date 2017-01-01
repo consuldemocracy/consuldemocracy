@@ -1,12 +1,84 @@
 API_TYPE_DEFINITIONS = {
-  User     => %I[ id username gender geozone_id geozone ],
-  Debate   => %I[ id title description created_at cached_votes_total cached_votes_up cached_votes_down comments_count hot_score confidence_score geozone_id geozone comments public_author ],
-  Proposal => %I[ id title description external_url cached_votes_up comments_count hot_score confidence_score created_at summary video_url geozone_id retired_at retired_reason retired_explanation geozone comments proposal_notifications public_author ],
-  Comment  => %I[ id commentable_id commentable_type body created_at cached_votes_total cached_votes_up cached_votes_down ancestry confidence_score public_author ],
-  Geozone  => %I[ id name ],
-  ProposalNotification => %I[ title body proposal_id created_at proposal ],
-  Tag => %I[ id name taggings_count kind ],
-  Vote => %I[ votable_id votable_type created_at public_voter ]
+  User     => {
+    id:         :integer,
+    username:   :string,
+    gender:     :string,
+    geozone_id: :integer,
+    geozone:    Geozone
+  },
+  Debate   => {
+    id:                 :integer,
+    title:              :string,
+    description:        :string,
+    created_at:         :string,
+    cached_votes_total: :integer,
+    cached_votes_up:    :integer,
+    cached_votes_down:  :integer,
+    comments_count:     :integer,
+    hot_score:          :integer,
+    confidence_score:   :integer,
+    geozone_id:         :integer,
+    geozone:            Geozone,
+    comments:           [Comment],
+    public_author:      User
+  },
+  Proposal => {
+    id:                 :integer,
+    title:              :string,
+    description:        :sting,
+    external_url:       :string,
+    cached_votes_up:    :integer,
+    comments_count:     :integer,
+    hot_score:          :integer,
+    confidence_score:   :integer,
+    created_at:         :string,
+    summary:            :string,
+    video_url:          :string,
+    geozone_id:         :integer,
+    retired_at:         :string,
+    retired_reason:     :string,
+    retired_explanation: :string,
+    geozone:            Geozone,
+    comments:           [Comment],
+    proposal_notifications: [ProposalNotification],
+    public_author:      User
+  },
+  Comment  => {
+    id:                 :integer,
+    commentable_id:     :integer,
+    commentable_type:   :string,
+    body:               :string,
+    created_at:         :string,
+    cached_votes_total: :integer,
+    cached_votes_up:    :integer,
+    cached_votes_down:  :integer,
+    ancestry:           :string,
+    confidence_score:   :integer,
+    public_author:      User
+  },
+  Geozone  => {
+    id:   :integer,
+    name: :string
+  },
+  ProposalNotification => {
+    title:          :string,
+    body:           :string,
+    proposal_id:    :integer,
+    created_at:     :string,
+    proposal:       Proposal
+  },
+  Tag => {
+    id:             :integer,
+    name:           :string,
+    taggings_count: :integer,
+    kind:           :string
+  },
+  Vote => {
+    votable_id:     :integer,
+    votable_type:   :string,
+    created_at:     :string,
+    public_voter:   User
+  }
 }
 
 type_creator = GraphQL::TypeCreator.new
@@ -35,7 +107,7 @@ QueryRoot = GraphQL::ObjectType.define do
   type_creator.created_types.each do |model, created_type|
 
     # create an entry field to retrive a single object
-    if API_TYPE_DEFINITIONS[model].include?(:id)
+    if API_TYPE_DEFINITIONS[model][:id]
       field model.name.underscore.to_sym do
         type created_type
         description "Find one #{model.model_name.human} by ID"
