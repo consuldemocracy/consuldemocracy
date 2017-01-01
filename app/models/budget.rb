@@ -14,8 +14,9 @@ class Budget < ActiveRecord::Base
   has_many :groups, dependent: :destroy
   has_many :headings, through: :groups
 
-  scope :on_hold,   -> { where(phase: ["reviewing", "valuating", "reviewing_ballots"]) }
   before_validation :sanitize_descriptions
+
+  scope :on_hold,   -> { where(phase: %w(reviewing valuating reviewing_ballots")) }
   scope :accepting, -> { where(phase: "accepting") }
   scope :reviewing, -> { where(phase: "reviewing") }
   scope :selecting, -> { where(phase: "selecting") }
