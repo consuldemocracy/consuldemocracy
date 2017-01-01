@@ -40,7 +40,9 @@ class Admin::BudgetsController < Admin::BaseController
   private
 
     def budget_params
-      params.require(:budget).permit(:name, :description, :phase, :currency_symbol)
+      descriptions = Budget::PHASES.map{|p| "description_#{p}"}.map(&:to_sym)
+      valid_attributes = [:name, :phase, :currency_symbol] + descriptions
+      params.require(:budget).permit(*valid_attributes)
     end
 
 end

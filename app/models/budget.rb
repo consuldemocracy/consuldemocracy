@@ -31,6 +31,10 @@ class Budget < ActiveRecord::Base
     self.send("description_#{self.phase}").try(:html_safe)
   end
 
+  def self.description_max_length
+    2000
+  end
+
   def accepting?
     phase == "accepting"
   end
