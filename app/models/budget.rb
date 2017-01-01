@@ -3,8 +3,8 @@ class Budget < ActiveRecord::Base
   include Sanitizable
   include Measurable
 
-  VALID_PHASES = %W{accepting reviewing selecting valuating balloting reviewing_ballots finished}.freeze
-  CURRENCY_SYMBOLS = %W{€ $ £ ¥}.freeze
+  VALID_PHASES = %w(accepting reviewing selecting valuating balloting reviewing_ballots finished).freeze
+  CURRENCY_SYMBOLS = %w(€ $ £ ¥).freeze
 
   validates :name, presence: true
   validates :phase, inclusion: { in: VALID_PHASES }
