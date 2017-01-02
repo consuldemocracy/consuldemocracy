@@ -10,4 +10,8 @@ class Vote < ActsAsVotable::Vote
   def public_voter
     User.select("gender, geozone_id, date_of_birth").where(id: self.voter_id).first
   end
+
+  def public_timestamp
+    self.created_at.change(min: 0)
+  end
 end

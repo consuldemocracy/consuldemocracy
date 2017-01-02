@@ -77,10 +77,10 @@ API_TYPE_DEFINITIONS = {
     kind:           :string
   },
   Vote => {
-    votable_id:     :integer,
-    votable_type:   :string,
-    created_at:     :string,
-    public_voter:   Voter
+    votable_id:       :integer,
+    votable_type:     :string,
+    public_timestamp: :string,
+    public_voter:     Voter
   }
 }
 

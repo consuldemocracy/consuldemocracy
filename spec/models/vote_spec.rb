@@ -91,4 +91,11 @@ describe 'Vote' do
       expect(Vote.public_for_api).not_to include(vote)
     end
   end
+
+  describe '#public_timestamp' do
+    it "truncates created_at timestamp up to minutes" do
+      vote = create(:vote, created_at: Time.zone.parse('2016-02-10 15:30:45'))
+      expect(vote.public_timestamp).to eq(Time.zone.parse('2016-02-10 15:00:00'))
+    end
+  end
 end
