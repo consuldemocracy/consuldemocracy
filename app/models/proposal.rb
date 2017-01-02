@@ -45,12 +45,12 @@ class Proposal < ActiveRecord::Base
   scope :sort_by_relevance,        -> { all }
   scope :sort_by_flags,            -> { order(flags_count: :desc, updated_at: :desc) }
   scope :sort_by_archival_date,    -> { archived.sort_by_confidence_score }
-  scope :archived,                 -> { where("proposals.created_at <= ?", Setting["months_to_archive_proposals"].to_i.months.ago)}
-  scope :not_archived,             -> { where("proposals.created_at > ?", Setting["months_to_archive_proposals"].to_i.months.ago)}
+  scope :archived,                 -> { where("proposals.created_at <= ?", Setting["months_to_archive_proposals"].to_i.months.ago) }
+  scope :not_archived,             -> { where("proposals.created_at > ?", Setting["months_to_archive_proposals"].to_i.months.ago) }
   scope :last_week,                -> { where("proposals.created_at >= ?", 7.days.ago)}
   scope :retired,                  -> { where.not(retired_at: nil) }
   scope :not_retired,              -> { where(retired_at: nil) }
-  scope :successful,               -> { where("cached_votes_up + physical_votes >= ?", Proposal.votes_needed_for_success)}
+  scope :successful,               -> { where("cached_votes_up >= ?", Proposal.votes_needed_for_success) }
 
   def to_param
     "#{id}-#{title}".parameterize
@@ -99,7 +99,7 @@ class Proposal < ActiveRecord::Base
   end
 
   def total_votes
-    cached_votes_up + physical_votes
+    cached_votes_up
   end
 
   def voters
