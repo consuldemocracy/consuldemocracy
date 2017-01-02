@@ -942,16 +942,12 @@ img.avatar, img.admin-avatar, img.moderator-avatar, img.initialjs-avatar {
 }
 
 .author-deleted, .user-deleted {
-  background-color: rgba(255,255,255,.5);
   color: rgba(0,0,0,.4);
-  font-size: rem-calc(40);
-  left: 11px;
-  position: absolute;
-  top: 72px;
-}
-
-.user-deleted {
-  top: -4px;
+  display: inline-block;
+  font-size: rem-calc(32);
+  line-height: rem-calc(32);
+  height: rem-calc(32);
+  vertical-align: top;
 }
 
 .user-permissions {
@@ -1108,10 +1104,6 @@ img.avatar, img.admin-avatar, img.moderator-avatar, img.initialjs-avatar {
 
 .is-association {
   background: #C0392B;
-}
-
-.is-deleted {
-  background: #E7E7E7;
 }
 
 .level-1 {
@@ -1642,7 +1634,10 @@ table {
     }
 
     .comment-body {
-      margin-left: rem-calc(42);
+
+      img {
+        margin-right: $line-height/2;
+      }
 
       .reply {
         background: white;
@@ -1650,19 +1645,27 @@ table {
         border-left: 0;
         border-right: 0;
         font-size: $small-font-size;
-        margin: rem-calc(6) 0;
-        padding: rem-calc(6);
+        margin: $line-height/4 0;
+        padding: $line-height/4;
         position: relative;
 
+        a.relative, [class^="icon-arrow"] {
+          padding-left: $line-height/2;
+        }
+
         [class^="icon-arrow"] {
-          font-size: rem-calc(18);
+          font-size: $base-font-size;
           left: -20px;
           position: absolute;
-          top: 0;
+          top: -1px;
         }
 
         .divider {
           color: $text-light;
+        }
+
+        form {
+          margin-top: $line-height/2;
         }
       }
 
@@ -1691,27 +1694,19 @@ table {
       }
     }
 
-    .is-deleted {
-      background: #E7E7E7;
-      margin-left: rem-calc(42);
-      padding: $line-height/4 $line-height/2;
-    }
-
     .comment-children {
       border-left: 1px dashed $border;
-      margin-left: rem-calc(42);
-      padding-left: $line-height/4;
-
-      @media only screen and (max-width: 40em) {
-        margin-left: rem-calc(16);
-      }
+      display: inline-block;
+      margin-left: rem-calc(16);
+      padding-left: rem-calc(8);
+      width: 100%;
     }
 
     .comment-info {
       color: $text-medium;
+      display: inline-block;
       font-size: $small-font-size;
-      margin-top: $line-height/4;
-      vertical-align: middle;
+      line-height: rem-calc(32); // Same as avatar height
 
       span.user-name {
         color: $text;
@@ -1742,6 +1737,11 @@ table {
       float: right;
     }
   }
+}
+
+.comment-form {
+  display: inline-block;
+  width: 100%;
 }
 
 // 16. Flags

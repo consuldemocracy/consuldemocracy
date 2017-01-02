@@ -393,7 +393,6 @@ ActiveRecord::Schema.define(version: 20170102080432) do
     t.string   "responsible_name",    limit: 60
     t.text     "summary"
     t.string   "video_url"
-    t.integer  "physical_votes",                 default: 0
     t.tsvector "tsv"
     t.integer  "geozone_id"
     t.datetime "retired_at"
