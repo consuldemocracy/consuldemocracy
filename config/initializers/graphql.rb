@@ -28,7 +28,7 @@ API_TYPE_DEFINITIONS = {
   Proposal => {
     id:                 :integer,
     title:              :string,
-    description:        :sting,
+    description:        :string,
     external_url:       :string,
     cached_votes_up:    :integer,
     comments_count:     :integer,
