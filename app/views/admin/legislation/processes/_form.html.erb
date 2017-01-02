@@ -25,6 +25,7 @@
     <div class="small-12 medium-2 column">
       <%= f.text_field :start_date,
                         label: false,
+                        value: format_date_for_calendar_form(@process.start_date),
                         class: "js-calendar-full",
                         id: "start_date" %>
     </div>
@@ -34,6 +35,7 @@
     <div class="small-12 medium-2 column">
       <%= f.text_field :end_date,
                         label: false,
+                        value: format_date_for_calendar_form(@process.end_date),
                         class: "js-calendar-full",
                         id: "end_date" %>
     </div>
@@ -47,6 +49,7 @@
     <div class="small-12 medium-2 column">
       <%= f.text_field :debate_start_date,
                         label: false,
+                        value: format_date_for_calendar_form(@process.debate_start_date),
                         class: "js-calendar-full",
                         id: "debate_start_date" %>
     </div>
@@ -56,6 +59,7 @@
     <div class="small-12 medium-2 column">
       <%= f.text_field :debate_end_date,
                         label: false,
+                        value: format_date_for_calendar_form(@process.debate_end_date),
                         class: "js-calendar-full",
                         id: "debate_end_date" %>
     </div>
@@ -69,6 +73,7 @@
     <div class="small-12 medium-2 column">
       <%= f.text_field :allegations_start_date,
                         label: false,
+                        value: format_date_for_calendar_form(@process.allegations_start_date),
                         class: "js-calendar-full",
                         id: "allegations_start_date" %>
     </div>
@@ -78,6 +83,7 @@
     <div class="small-12 medium-2 column">
       <%= f.text_field :allegations_end_date,
                         label: false,
+                        value: format_date_for_calendar_form(@process.allegations_end_date),
                         class: "js-calendar-full",
                         id: "allegations_end_date" %>
     </div>
@@ -88,6 +94,7 @@
     <div class="small-12 medium-2 column end">
       <%= f.text_field :draft_publication_date,
                         label: false,
+                        value: format_date_for_calendar_form(@process.draft_publication_date),
                         class: "js-calendar-full",
                         id: "draft_publication_date" %>
     </div>
@@ -100,6 +107,7 @@
     <div class="small-12 medium-2 column end">
       <%= f.text_field :final_publication_date,
                         label: false,
+                        value: format_date_for_calendar_form(@process.final_publication_date),
                         class: "js-calendar-full",
                         id: "final_publication_date" %>
     </div>
