@@ -13,6 +13,7 @@ class Poll < ActiveRecord::Base
   scope :current,  -> { where('starts_at <= ? and ? <= ends_at', Time.current, Time.current) }
   scope :incoming, -> { where('? < starts_at', Time.current) }
   scope :expired,  -> { where('ends_at < ?', Time.current) }
+  scope :published,  -> { where('published = ?', true) }
 
   scope :sort_for_list, -> { order(:starts_at) }
 

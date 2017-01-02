@@ -282,6 +282,10 @@ FactoryGirl.define do
       starts_at { 1.month.ago }
       ends_at { 15.days.ago }
     end
+
+    trait :published do
+      published true
+    end
   end
 
   factory :poll_question, class: 'Poll::Question' do

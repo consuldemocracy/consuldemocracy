@@ -55,6 +55,13 @@ describe :poll do
     end
   end
 
+  describe "#published?" do
+    it "returns true only when published is true" do
+      expect(create(:poll)).to_not be_published
+      expect(create(:poll, :published)).to be_published
+    end
+  end
+
   describe "#document_has_voted?" do
     it "returns true if Poll::Voter with document exists" do
       booth_assignment = create(:poll_booth_assignment, poll: poll)
