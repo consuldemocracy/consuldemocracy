@@ -313,6 +313,12 @@ FactoryGirl.define do
     date Time.current.to_date
   end
 
+  factory :poll_recount, class: 'Poll::Recount' do
+    association :officer_assignment, factory: :poll_officer_assignment
+    association :booth_assignment, factory: :poll_booth_assignment
+    count (1..100).to_a.sample
+  end
+
   factory :poll_voter, class: 'Poll::Voter' do
     association :booth_assignment, factory: :poll_booth_assignment
 
