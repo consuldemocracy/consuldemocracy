@@ -1,1 +1,2 @@
-Voter = User
+class Voter < User
+end
