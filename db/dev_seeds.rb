@@ -327,19 +327,23 @@ end
 
 puts "Creating Budgets"
 
-phases = %w{on_hold accepting selecting balloting finished}
-phases.each_with_index do |phase, i|
-  budget = Budget.create!(name: (Date.today.year - 10 + i).to_s,
-                          description: "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>",
-                          currency_symbol: "€",
-                          phase: phase,
-                          valuating: [false, true].sample)
+Budget::PHASES.each_with_index do |phase, i|
+  descriptions = Hash[Budget::PHASES.map{ |p| ["description_#{p}",
+                                               "<p>#{Faker::Lorem.paragraphs(2).join('</p><p>')}</p>"] }]
+  budget = Budget.create!(
+    descriptions.merge(
+      name: (Date.current - 10 + i).to_s,
+      currency_symbol: "€",
+      phase: phase
+    )
+  )
+
   puts budget.name
 
-  (1..[1,2,3].sample).each do |i|
+  (1..([1, 2, 3].sample)).each do
     group = budget.groups.create!(name: Faker::StarWars.planet)
 
-    geozones = Geozone.reorder("RANDOM()").limit([2,5,6,7].sample)
+    geozones = Geozone.reorder("RANDOM()").limit([2, 5, 6, 7].sample)
     geozones.each do |geozone|
       group.headings << group.headings.create!(name: geozone.name,
                                                geozone: geozone,
