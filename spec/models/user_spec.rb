@@ -351,18 +351,6 @@ describe User do
       end
 
     end
-
-    describe "public activity" do
-      it "returns users whose activity feed is public" do
-        user1 = create(:user)
-        user2 = create(:user, public_activity: false)
-        user3 = create(:user)
-
-        expect(User.with_public_activity).to include(user1)
-        expect(User.with_public_activity).not_to include(user2)
-        expect(User.with_public_activity).to include(user3)
-      end
-    end
   end
 
   describe "self.search" do

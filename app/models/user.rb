@@ -54,7 +54,6 @@ class User < ActiveRecord::Base
   scope :by_document,    -> (document_type, document_number) { where(document_type: document_type, document_number: document_number) }
   scope :email_digest,   -> { where(email_digest: true) }
   scope :active,         -> { where(erased_at: nil) }
-  scope :with_public_activity, -> { where(public_activity: true) }
 
   before_validation :clean_document_number
 
