@@ -226,9 +226,18 @@ en:
     draft_versions:
       changes:
         title: Changes
-        see_text: See text
+        seeing_changelog_version: Revision changes summary
+        see_text: See text draft
       show:
-        see_changes: See changes
+        seeing_version: You're seeing draft version
+        select_draft_version: Select draft
+        select_version_submit: see
+        updated_at: updated at %{date}
+        see_changes: see changes summary
+        see_comments: See all comments
+        text_index: Index
+        text_body: Text
+        text_comments: Comments
     processes:
       debate:
         empty_questions: There aren't any questions

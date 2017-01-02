@@ -226,9 +226,18 @@ es:
     draft_versions:
       changes:
         title: Cambios
-        see_text: Ver texto
+        seeing_changelog_version: Resumen de cambios de la revisión
+        see_text: Ver borrador del texto
       show:
-        see_changes: Ver cambios
+        seeing_version: Estás viendo la revisión
+        select_draft_version: Seleccionar borrador
+        select_version_submit: ver
+        updated_at: actualizada el %{date}
+        see_changes: ver resumen de cambios
+        see_comments: Ver todos los comentarios
+        text_index: Índice
+        text_body: Texto
+        text_comments: Comentarios
     processes:
       debate:
         empty_questions: No hay preguntas
