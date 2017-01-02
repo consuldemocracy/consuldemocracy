@@ -265,12 +265,12 @@ Rails.application.routes.draw do
   end
 
   # GraphQL
-  mount GraphiQL::Rails::Engine, at: '/graphiql', graphql_path: '/graphql'
   get '/graphql', to: 'graphql#query'
   post '/graphql', to: 'graphql#query'
 
   if Rails.env.development?
     mount LetterOpenerWeb::Engine, at: "/letter_opener"
+    mount GraphiQL::Rails::Engine, at: '/graphiql', graphql_path: '/graphql'
   end
 
   mount Tolk::Engine => '/translate', :as => 'tolk'
