@@ -9,6 +9,7 @@
 // -----------------
 .brand-heading {
   background: $brand;
+  margin-bottom: 2rem;
   
   .column {
     padding-top: 10rem;
@@ -25,35 +26,31 @@
 // 02. Sidebar menu
 // -----------------
 .legislation-categories {
-  ul {
+  
+  .menu.simple {
+    border-bottom: none;
     list-style: none;
     padding-left: 0;
     margin-left: 0;
+    margin-top: 0;
+    
+    @include breakpoint(medium) {
+      margin: 1.5rem 0;
+    }
     
     li {
+      display: block;
       cursor: pointer;
+      margin-bottom: 1rem;
       
       @include breakpoint(medium) {
+        margin-bottom: 2rem;
         max-width: 80%;
       }
-      
-      h4 {
-        font-weight: 400;
-        color: $text-medium;
-        margin-bottom: 3rem;
-        transition: color 0.25s ease-out, color 0.25s ease-out;
-      }
-      
-      &:hover h4, &:active h4 {
-        color: $brand;
-      }
     }
-
-    .active h4 {
+    
+    li.active {
       font-weight: 700;
-      color: $brand;
-      padding-bottom: 0.5rem;
-      border-bottom: 2px solid $brand;
     }
   }
 }
@@ -62,9 +59,6 @@
 // -----------------
 .legislation {
   margin: 0 0 4rem 0;
-}
-
-.legislation {
   background: white;
   border: 1px solid;
   border-color: #e5e6e9 #dfe0e4 #d0d1d5;
@@ -117,11 +111,21 @@
   padding-top: 1rem;
   
   h5 {
+    margin-left: 0.25rem;
     margin-bottom: 0;
     color: #61686E;
+    
+    @include breakpoint(medium) {
+      margin-left: 0;
+    }
   }
   
   p {
+    margin-left: 0.25rem;
     font-size: $small-font-size;
+    
+    @include breakpoint(medium) {
+      margin-left: 0;
+    }
   }
 }
