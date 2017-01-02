@@ -24,10 +24,12 @@ es:
         title: Selecciona una partida
   budget:
     phase:
-      on_hold: En pausa
       accepting: Aceptando propuestas
+      reviewing: Revisando propuestas
       selecting: Fase de selección
-      balloting: Fase de Votación
+      valuating: Fase de evaluación de propuestas
+      balloting: Fase de votación
+      reviewing_ballots: Contando resultados
       finished: Terminado
     groups:
       index:
@@ -46,6 +48,7 @@ es:
         description: Descripción detallada
         external_url: Enlace a documentación adicional
         heading: "Elige si es una propuesta para toda la ciudad o para un distrito"
+        location: "Ubicación de la propuesta"
         submit_buttons:
           create: Crear
           new: Crear
@@ -79,6 +82,9 @@ es:
           votes: Apoyos restantes
           votes_district: "Solo puedes votar en el distrito %{district}"
           zero: "Todavía no has votado ninguna propuesta de inversión."
+          verified_only: "Para crear una nueva propuesta de inversión %{verify}."
+          verify_account: "verifica tu cuenta"
+          create: "Crear propuesta de inversión"
         orders:
           random: Aleatorias
           confidence_score: Mejor valoradas
@@ -96,7 +102,8 @@ es:
         author_deleted: Usuario eliminado
         price_explanation: Informe de coste
         unfeasibility_explanation: Informe de inviabilidad
-        code: 'Código propuesta de gasto:'
+        code_html: 'Código propuesta de gasto: <strong>%{code}</strong>'
+        location_html: 'Ubicación: <strong>%{location}</strong>'
         share: Compartir
       wrong_price_format: Solo puede incluir caracteres numéricos
       investment:

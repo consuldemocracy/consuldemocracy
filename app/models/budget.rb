@@ -1,12 +1,12 @@
 class Budget < ActiveRecord::Base
 
-  include Sanitizable
+  include Measurable
 
-  VALID_PHASES = %W{on_hold accepting selecting balloting finished}
-  CURRENCY_SYMBOLS = %W{€ $ £ ¥}
+  PHASES = %w(accepting reviewing selecting valuating balloting reviewing_ballots finished).freeze
+  CURRENCY_SYMBOLS = %w(€ $ £ ¥).freeze
 
   validates :name, presence: true
-  validates :phase, inclusion: { in: VALID_PHASES }
+  validates :phase, inclusion: { in: PHASES }
   validates :currency_symbol, presence: true
 
   has_many :investments, dependent: :destroy
@@ -14,33 +14,57 @@ class Budget < ActiveRecord::Base
   has_many :groups, dependent: :destroy
   has_many :headings, through: :groups
 
-  scope :on_hold,   -> { where(phase: "on_hold") }
+  before_validation :sanitize_descriptions
+
+  scope :on_hold,   -> { where(phase: %w(reviewing valuating reviewing_ballots")) }
   scope :accepting, -> { where(phase: "accepting") }
+  scope :reviewing, -> { where(phase: "reviewing") }
   scope :selecting, -> { where(phase: "selecting") }
+  scope :valuating, -> { where(phase: "valuating") }
   scope :balloting, -> { where(phase: "balloting") }
+  scope :reviewing_ballots, -> { where(phase: "reviewing_ballots") }
   scope :finished,  -> { where(phase: "finished") }
 
   scope :current,   -> { where.not(phase: "finished") }
-  scope :valuating, -> { where(valuating: true) }
 
-  def on_hold?
-    phase == "on_hold"
+  def description
+    self.send("description_#{self.phase}").try(:html_safe)
+  end
+
+  def self.description_max_length
+    2000
   end
 
   def accepting?
     phase == "accepting"
   end
 
+  def reviewing?
+    phase == "reviewing"
+  end
+
   def selecting?
     phase == "selecting"
+  end
+
+  def valuating?
+    phase == "valuating"
   end
 
   def balloting?
     phase == "balloting"
   end
 
+  def reviewing_ballots?
+    phase == "reviewing_ballots"
+  end
+
   def finished?
     phase == "finished"
+  end
+
+  def on_hold?
+    reviewing? || valuating? || reviewing_ballots?
   end
 
   def current?
@@ -69,5 +93,15 @@ class Budget < ActiveRecord::Base
   def formatted_heading_amount_spent(heading)
     formatted_amount(amount_spent(heading))
   end
+
+  private
+
+    def sanitize_descriptions
+      s = WYSIWYGSanitizer.new
+      PHASES.each do |phase|
+        sanitized = s.sanitize(self.send("description_#{phase}"))
+        self.send("description_#{phase}=", sanitized)
+      end
+    end
 end
 

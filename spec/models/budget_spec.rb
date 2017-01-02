@@ -1,11 +1,24 @@
 require 'rails_helper'
 
 describe Budget do
+
+  describe "description" do
+    it "changes depending on the phase" do
+      budget = create(:budget)
+
+      Budget::PHASES.each do |phase|
+        budget.phase = phase
+        expect(budget.description).to eq(budget.send("description_#{phase}"))
+        expect(budget.description).to be_html_safe
+      end
+    end
+  end
+
   describe "phase" do
     let(:budget) { create(:budget) }
 
     it "is validated" do
-      Budget::VALID_PHASES.each do |phase|
+      Budget::PHASES.each do |phase|
         budget.phase = phase
         expect(budget).to be_valid
       end
@@ -15,17 +28,23 @@ describe Budget do
     end
 
     it "produces auxiliary methods" do
-      budget.phase = "on_hold"
-      expect(budget).to be_on_hold
-
       budget.phase = "accepting"
       expect(budget).to be_accepting
+
+      budget.phase = "reviewing"
+      expect(budget).to be_reviewing
 
       budget.phase = "selecting"
       expect(budget).to be_selecting
 
+      budget.phase = "valuating"
+      expect(budget).to be_valuating
+
       budget.phase = "balloting"
       expect(budget).to be_balloting
+
+      budget.phase = "reviewing_ballots"
+      expect(budget).to be_reviewing_ballots
 
       budget.phase = "finished"
       expect(budget).to be_finished

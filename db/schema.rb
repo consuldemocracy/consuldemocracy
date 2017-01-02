@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161221172447) do
+ActiveRecord::Schema.define(version: 20170102080432) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -142,6 +142,7 @@ ActiveRecord::Schema.define(version: 20161221172447) do
     t.integer  "budget_id"
     t.integer  "group_id"
     t.boolean  "selected",                              default: false
+    t.string   "location"
   end
 
   add_index "budget_investments", ["administrator_id"], name: "index_budget_investments_on_administrator_id", using: :btree
@@ -159,13 +160,18 @@ ActiveRecord::Schema.define(version: 20161221172447) do
   add_index "budget_valuator_assignments", ["investment_id"], name: "index_budget_valuator_assignments_on_investment_id", using: :btree
 
   create_table "budgets", force: :cascade do |t|
-    t.string   "name",            limit: 30
-    t.text     "description"
-    t.string   "currency_symbol", limit: 10
-    t.string   "phase",           limit: 15, default: "on_hold"
-    t.boolean  "valuating",                  default: false
-    t.datetime "created_at",                                     null: false
-    t.datetime "updated_at",                                     null: false
+    t.string   "name",                          limit: 30
+    t.string   "currency_symbol",               limit: 10
+    t.string   "phase",                         limit: 40, default: "accepting"
+    t.datetime "created_at",                                                     null: false
+    t.datetime "updated_at",                                                     null: false
+    t.text     "description_accepting"
+    t.text     "description_reviewing"
+    t.text     "description_selecting"
+    t.text     "description_valuating"
+    t.text     "description_balloting"
+    t.text     "description_reviewing_ballots"
+    t.text     "description_finished"
   end
 
   create_table "campaigns", force: :cascade do |t|
@@ -572,7 +578,7 @@ ActiveRecord::Schema.define(version: 20161221172447) do
     t.boolean  "email_digest",                              default: true
     t.boolean  "email_on_direct_message",                   default: true
     t.boolean  "official_position_badge",                   default: false
-    t.datetime "password_changed_at",                       default: '2016-12-21 17:55:08', null: false
+    t.datetime "password_changed_at",                       default: '2016-11-02 13:51:14', null: false
     t.boolean  "created_from_signature",                    default: false
   end
 

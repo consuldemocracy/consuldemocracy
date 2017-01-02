@@ -582,7 +582,7 @@ feature 'Ballots' do
     end
 
     scenario "Balloting is disabled when budget isn't in the balotting phase", :js do
-      budget.update(phase: 'on_hold')
+      budget.update(phase: 'accepting')
 
       bi1 = create(:budget_investment, :selected, heading: california, price: 600)
 

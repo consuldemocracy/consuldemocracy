@@ -441,6 +441,7 @@ en:
     collective: Collective
     flag: Flag as inappropriate
     hide: Hide
+    edit: Editar
     print:
       print_button: Print this info
     search: Search
@@ -499,11 +500,9 @@ en:
         one: " containing the term '%{search_term}'"
         other: " containing the term '%{search_term}'"
       sidebar:
-        back: Volver
         geozones: Scope of operation
         feasibility: Feasibility
         unfeasible: Unfeasible
-        my_ballot: My votes
       start_spending_proposal: Create an investment project
     new:
       more_info: How do participatory budgeting works?

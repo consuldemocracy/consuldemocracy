@@ -195,18 +195,37 @@ FactoryGirl.define do
   factory :budget do
     sequence(:name) { |n| "Budget #{n}" }
     currency_symbol "€"
-    phase 'on_hold'
+    phase 'accepting'
+    description_accepting "This budget is accepting"
+    description_reviewing "This budget is reviewing"
+    description_selecting "This budget is selecting"
+    description_valuating "This budget is valuating"
+    description_balloting "This budget is balloting"
+    description_reviewing_ballots "This budget is reviewing ballots"
+    description_finished "This budget is finished"
 
     trait :accepting do
       phase 'accepting'
+    end
+
+    trait :reviewing do
+      phase 'reviewing'
     end
 
     trait :selecting do
       phase 'selecting'
     end
 
+    trait :valuating do
+      phase 'valuating'
+    end
+
     trait :balloting do
       phase 'balloting'
+    end
+
+    trait :reviewing_ballots do
+      phase 'reviewing_ballots'
     end
 
     trait :finished do

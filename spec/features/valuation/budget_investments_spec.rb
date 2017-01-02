@@ -5,7 +5,7 @@ feature 'Valuation budget investments' do
   background do
     @valuator = create(:valuator, user: create(:user, username: 'Rachel', email: 'rachel@valuators.org'))
     login_as(@valuator.user)
-    @budget = create(:budget, valuating: true)
+    @budget = create(:budget, :valuating)
   end
 
   scenario 'Disabled with a feature flag' do

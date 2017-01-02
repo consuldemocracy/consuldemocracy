@@ -61,20 +61,19 @@ es:
     budgets:
       index:
         title: Presupuestos participativos
-        new_link: Crear nuevo
+        new_link: Crear nuevo presupuesto
         info_link: Info
         filters:
           open: Abiertos
           finished: Terminados
       create:
         notice: ¡Nueva campaña de presupuestos participativos creada con éxito!
+      update:
+        notice: Campaña de presupuestos participativos actualizada
+      edit:
+        title: Editar campaña de presupuestos participativos
       new:
         title: Nuevo presupuesto ciudadano
-        create: Crear presupuesto
-        name: Nombre del presupuesto
-        description: Descripción
-        phase: Fase
-        currency: Divisa
       show:
         phase: Fase actual
         currency: Divisa

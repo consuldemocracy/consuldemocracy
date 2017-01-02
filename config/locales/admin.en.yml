@@ -61,30 +61,29 @@ en:
     budgets:
       index:
         title: Participatory budgets
-        new_link: Create new
+        new_link: Create new budget
         info_link: Info
         filters:
           open: Open
           finished: Finished
       create:
         notice: New participatory budget created successfully!
+      update:
+        notice: Participatory budget updated successfully
+      edit:
+        title: Edit Participatory budget
       new:
         title: New participatory budget
-        create: Create budget
-        name: Budget's name
-        description: Description
-        phase: Phase
-        currency: Currency
       show:
         phase: Current phase
         currency: Currency
         groups: Groups of budget headings
       form:
-        group: Group's name
+        group: Group name
         no_groups: No groups created yet. Each user will be able to vote in only one heading per group.
         add_group: Add new group
         create_group: Create group
-        heading: Heading's name
+        heading: Heading name
         add_heading: Add heading
         amount: Amount
         save_heading: Save heading

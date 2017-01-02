@@ -24,6 +24,11 @@
       <%= f.text_field :external_url, placeholder: t("budget.investments.form.external_url"), label: false %>
     </div>
 
+    <div class="small-12 column">
+      <%= f.label :location, t("budget.investments.form.location") %>
+      <%= f.text_field :location, placeholder: t("budget.investments.form.location"), label: false %>
+    </div>
+
     <% unless current_user.manager? %>
 
       <div class="small-12 column">

@@ -7,10 +7,10 @@ describe "Abilities::Valuator" do
   let(:valuator) { create(:valuator) }
   let(:non_assigned_investment) { create(:budget_investment) }
 
-  let(:assigned_investment) { create(:budget_investment, budget: create(:budget, valuating: true)) }
+  let(:assigned_investment) { create(:budget_investment, budget: create(:budget, phase: 'valuating')) }
   before(:each) { assigned_investment.valuators << valuator }
 
-  let(:assigned_investment_not_valuating) { create(:budget_investment, budget: create(:budget, valuating: false)) }
+  let(:assigned_investment_not_valuating) { create(:budget_investment, budget: create(:budget, phase: 'finished')) }
   before(:each) { assigned_investment_not_valuating.valuators << valuator }
 
   it { should be_able_to(:read, SpendingProposal) }

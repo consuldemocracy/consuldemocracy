@@ -26,9 +26,14 @@
 
       <br>
       <p id="investment_code">
-        <%= t("budget.investments.show.code") %>
-        <strong><%= investment.id %></strong>
+        <%= t("budget.investments.show.code_html", code: investment.id) %>
       </p>
+
+      <% if investment.location.present? %>
+        <p id="investment_code">
+          <%= t("budget.investments.show.location_html", location: investment.location) %>
+        </p>
+      <% end %>
 
       <%= safe_html_with_links investment.description.html_safe %>
 
