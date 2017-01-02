@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161230174744) do
+ActiveRecord::Schema.define(version: 20170102080432) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -162,9 +162,9 @@ ActiveRecord::Schema.define(version: 20161230174744) do
   create_table "budgets", force: :cascade do |t|
     t.string   "name",                          limit: 30
     t.string   "currency_symbol",               limit: 10
-    t.string   "phase",                         limit: 15, default: "on_hold"
-    t.datetime "created_at",                                                   null: false
-    t.datetime "updated_at",                                                   null: false
+    t.string   "phase",                         limit: 40, default: "accepting"
+    t.datetime "created_at",                                                     null: false
+    t.datetime "updated_at",                                                     null: false
     t.text     "description_accepting"
     t.text     "description_reviewing"
     t.text     "description_selecting"
