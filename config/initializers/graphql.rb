@@ -4,10 +4,10 @@ API_TYPE_DEFINITIONS = {
     username:   :string
   },
   Voter => {
-    gender:         :string,
-    date_of_birth:  :string,
-    geozone_id:     :integer,
-    geozone:        Geozone
+    gender:     :string,
+    age_range:  :string,
+    geozone_id: :integer,
+    geozone:     Geozone
   },
   Debate => {
     id:                 :integer,
