@@ -34,3 +34,5 @@ es:
       legislation: Legislación
     mailer_from_name: Nombre email remitente
     mailer_from_address: Dirección email remitente
+    meta_description: "Descripción del sitio (SEO)"
+    meta_keywords: "Palabras clave (SEO)"
