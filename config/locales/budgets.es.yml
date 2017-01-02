@@ -48,7 +48,7 @@ es:
         description: Descripción detallada
         external_url: Enlace a documentación adicional
         heading: "Elige si es una propuesta para toda la ciudad o para un distrito"
-        location: "Localización de la propuesta"
+        location: "Ubicación de la propuesta"
         submit_buttons:
           create: Crear
           new: Crear
@@ -103,7 +103,7 @@ es:
         price_explanation: Informe de coste
         unfeasibility_explanation: Informe de inviabilidad
         code_html: 'Código propuesta de gasto: <strong>%{code}</strong>'
-        location_html: 'Localización: <strong>%{location}</strong>'
+        location_html: 'Ubicación: <strong>%{location}</strong>'
         share: Compartir
       wrong_price_format: Solo puede incluir caracteres numéricos
       investment:
