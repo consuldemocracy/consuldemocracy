@@ -61,6 +61,9 @@ moderator.create_moderator
 valuator = create_user('valuator@consul.dev', 'valuator')
 valuator.create_valuator
 
+poll_officer = create_user('poll_officer@consul.dev', 'Paul O. Fisher')
+poll_officer.create_poll_officer
+
 level_2 = create_user('leveltwo@consul.dev', 'level 2')
 level_2.update(residence_verified_at: Time.current, confirmed_phone: Faker::PhoneNumber.phone_number, document_number: "2222222222", document_type: "1" )
 
@@ -183,7 +186,6 @@ tags = Faker::Lorem.words(25)
                               responsible_name: Faker::Name.name,
                               external_url: Faker::Internet.url,
                               description: description,
-                              created_at: rand((Time.current - 1.week) .. Time.current),
                               tag_list: tags.sample(3).join(','),
                               geozone: Geozone.reorder("RANDOM()").first,
                               terms_of_service: "1",
@@ -208,7 +210,6 @@ tags = Faker::Lorem.words(25)
                               tag_list: tags.sample(3).join(','),
                               geozone: Geozone.reorder("RANDOM()").first,
                               terms_of_service: "1",
-                              created_at: 1.month.ago,
                               cached_votes_up: Setting["votes_for_proposal_success"])
   puts "    #{proposal.title}"
 end
@@ -430,6 +431,20 @@ end
 puts "Creating Poll Booths"
 10.times.each_with_index do |i|
   Poll::Booth.create(name: "Booth #{i}", polls: [Poll.all.sample])
+end
+
+puts "Creating Booth Assignments"
+Poll::Booth.all.each do |booth|
+  Poll::BoothAssignment.create(booth: booth, poll: Poll.all.sample)
+end
+
+puts "Creating Poll Officer Assignments"
+(1..10).to_a.sample.times do |i|
+  Poll::BoothAssignment.all.sample(i).each do |booth_assignment|
+    Poll::OfficerAssignment.create(officer: poll_officer,
+                                   booth_assignment: booth_assignment,
+                                   date: booth_assignment.poll.starts_at)
+  end
 end
 
 puts "Creating Poll Question from Proposals"
