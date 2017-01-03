@@ -10,6 +10,8 @@ class Legislation::DraftVersion < ActiveRecord::Base
   validates :body, presence: true
   validates :status, presence: true, inclusion: { in: VALID_STATUSES }
 
+  scope :published, -> { where(status: 'published').order('id DESC') }
+
   before_save :render_html
 
   def render_html
