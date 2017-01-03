@@ -14,6 +14,21 @@ en:
         no_polls: You are not officing in any active poll
         select_poll: Select poll
         add_recount: Add recount
+    recounts:
+      flash:
+        create: "Data added"
+        error_create: "Count NOT added. Error in data."
+      new:
+        title: "%{poll} - Add daily recount"
+        not_allowed: "You are not a poll officer for this poll"
+        booth_date: "Booth and date"
+        select_booth_date: "Select booth and date"
+        count: "Vote count"
+        count_placeholder: "Vote count"
+        submit: Save
+        recount_list: "Your recounts"
+        booth: "Booth"
+        date: "Date"
     voters:
       new:
         title: Validate document
