@@ -13,6 +13,7 @@ module Budgets
     before_action :load_ballot, only: [:index, :show]
     before_action :load_heading, only: [:index, :show]
     before_action :set_random_seed, only: :index
+    before_action :load_categories, only: [:index, :new, :create]
 
     feature_flag :budgets
 
@@ -50,6 +51,7 @@ module Budgets
                     flash: { html_safe: true },
                     notice: t('flash.actions.create.budget_investment', activity: activity_link)
       else
+
         render :new
       end
     end
@@ -80,7 +82,7 @@ module Budgets
       end
 
       def investment_params
-        params.require(:budget_investment).permit(:title, :description, :external_url, :heading_id, :terms_of_service, :location)
+        params.require(:budget_investment).permit(:title, :description, :external_url, :heading_id, :terms_of_service, :location, :tag_list)
       end
 
       def load_ballot
@@ -93,6 +95,10 @@ module Budgets
           @heading = @budget.headings.find(params[:heading_id])
           @assigned_heading = @ballot.try(:heading_for_group, @heading.try(:group))
         end
+      end
+
+      def load_categories
+        @categories = ActsAsTaggableOn::Tag.where("kind = 'category'").order(:name)
       end
 
   end

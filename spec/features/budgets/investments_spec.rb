@@ -404,4 +404,84 @@ feature 'Budget Investments' do
 
   end
 
+  context 'Tagging' do
+    let(:author) { create(:user, :level_two) }
+    let(:budget) { create(:budget, :accepting) }
+    let(:group)  { create(:budget_group, budget: budget) }
+    let!(:heading) { create(:budget_heading, group: group) }
+
+    background do
+      login_as(author)
+    end
+
+    scenario 'Category tags', :js do
+      education = create(:tag, name: 'Education', kind: 'category')
+      health    = create(:tag, name: 'Health',    kind: 'category')
+
+      visit new_budget_investment_path(budget, heading_id: heading.id)
+
+      select "#{heading.group.name}: #{heading.name}", from: 'budget_investment_heading_id'
+      fill_in 'budget_investment_title', with: 'Build gym near my street'
+      fill_in_ckeditor 'budget_investment_description', with: 'If I had a gym near my place I could go do Zumba'
+      check 'budget_investment_terms_of_service'
+
+      find('.js-add-tag-link', text: 'Education').click
+      click_button 'Create Investment'
+
+      expect(page).to have_content 'Budget Investment created successfully.'
+
+      within "#tags_budget_investment_#{Budget::Investment.last.id}" do
+        expect(page).to have_content 'Education'
+        expect(page).to_not have_content 'Health'
+      end
+    end
+
+    scenario 'Custom tags' do
+      visit new_proposal_path
+
+      fill_in 'proposal_title', with: 'Help refugees'
+      fill_in 'proposal_question', with: '¿Would you like to give assistance to war refugees?'
+      fill_in 'proposal_summary', with: 'In summary, what we want is...'
+      fill_in 'proposal_description', with: 'This is very important because...'
+      fill_in 'proposal_external_url', with: 'http://rescue.org/refugees'
+      fill_in 'proposal_video_url', with: 'http://youtube.com'
+      fill_in 'proposal_responsible_name', with: 'Isabel Garcia'
+      check 'proposal_terms_of_service'
+
+      fill_in 'proposal_tag_list', with: 'Refugees, Solidarity'
+      click_button 'Create proposal'
+
+      expect(page).to have_content 'Proposal created successfully.'
+      within "#tags_proposal_#{Proposal.last.id}" do
+        expect(page).to have_content 'Refugees'
+        expect(page).to have_content 'Solidarity'
+      end
+    end
+
+    scenario 'using dangerous strings' do
+      author = create(:user)
+      login_as(author)
+
+      visit new_proposal_path
+
+      fill_in 'proposal_title', with: 'A test of dangerous strings'
+      fill_in 'proposal_question', with: '¿Would you like to give assistance to war refugees?'
+      fill_in 'proposal_summary', with: 'In summary, what we want is...'
+      fill_in 'proposal_description', with: 'A description suitable for this test'
+      fill_in 'proposal_external_url', with: 'http://rescue.org/refugees'
+      fill_in 'proposal_responsible_name', with: 'Isabel Garcia'
+      check 'proposal_terms_of_service'
+
+      fill_in 'proposal_tag_list', with: 'user_id=1, &a=3, <script>alert("hey");</script>'
+
+      click_button 'Create proposal'
+
+      expect(page).to have_content 'Proposal created successfully.'
+      expect(page).to have_content 'user_id1'
+      expect(page).to have_content 'a3'
+      expect(page).to have_content 'scriptalert("hey");script'
+      expect(page.html).to_not include 'user_id=1, &a=3, <script>alert("hey");</script>'
+    end
+  end
+
 end

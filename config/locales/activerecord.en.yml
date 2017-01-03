@@ -53,6 +53,11 @@ en:
         phase: "Phase"
         currency_symbol: "Currency"
       budget/investment:
+        heading_id: "Sección de presupuesto"
+        title: "Title"
+        description: "Description"
+        external_url: "External url"
+        location: "Location"
         administrator_id: "Administrator"
         description: "Description"
         external_url: "Link to additional documentation"

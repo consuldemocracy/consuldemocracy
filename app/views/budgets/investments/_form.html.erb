@@ -3,31 +3,45 @@
 
   <div class="row">
     <div class="small-12 column">
-      <%= f.label :heading_id,  t("budget.investments.form.heading") %>
-      <%= f.select :heading_id, budget_heading_select_options(@budget), {include_blank: true, label: false} %>
+      <%= f.select :heading_id, budget_heading_select_options(@budget), include_blank: true %>
     </div>
 
     <div class="small-12 column">
-      <%= f.label :title, t("budget.investments.form.title") %>
-      <%= f.text_field :title, maxlength: SpendingProposal.title_max_length, placeholder: t("budget.investments.form.title"), label: false %>
+      <%= f.text_field :title, maxlength: SpendingProposal.title_max_length %>
     </div>
 
     <%= f.invisible_captcha :subtitle %>
 
     <div class="ckeditor small-12 column">
-      <%= f.label :description, t("budget.investments.form.description") %>
-      <%= f.cktext_area :description, maxlength: SpendingProposal.description_max_length, ckeditor: { language: I18n.locale }, label: false %>
+      <%= f.cktext_area :description, maxlength: SpendingProposal.description_max_length, ckeditor: { language: I18n.locale } %>
     </div>
 
     <div class="small-12 column">
-      <%= f.label :external_url, t("budget.investments.form.external_url") %>
-      <%= f.text_field :external_url, placeholder: t("budget.investments.form.external_url"), label: false %>
+      <%= f.text_field :external_url %>
     </div>
 
     <div class="small-12 column">
-      <%= f.label :location, t("budget.investments.form.location") %>
-      <%= f.text_field :location, placeholder: t("budget.investments.form.location"), label: false %>
+      <%= f.text_field :location %>
     </div>
+
+    <div class="small-12 column">
+      <%= f.label :tag_list, t("budget.investments.form.tags_label") %>
+      <p class="note"><%= t("budget.investments.form.tags_instructions") %></p>
+
+      <div id="category_tags" class="tags">
+        <%= f.label :category_tag_list, t("budget.investments.form.tag_category_label") %>
+        <% @categories.each do |tag| %>
+          <a class="js-add-tag-link"><%= tag.name %></a>
+        <% end %>
+      </div>
+
+      <br>
+      <%= f.text_field :tag_list, value: @investment.tag_list.to_s,
+                        label: false,
+                        placeholder: t("budget.investments.form.tags_placeholder"),
+                        class: 'js-tag-list' %>
+    </div>
+
 
     <% unless current_user.manager? %>
 
@@ -45,7 +59,7 @@
     <% end %>
 
     <div class="actions small-12 column">
-      <%= f.submit(class: "button", value: t("budget.investments.form.submit_buttons.#{action_name}")) %>
+      <%= f.submit(nil, class: "button") %>
     </div>
   </div>
 <% end %>

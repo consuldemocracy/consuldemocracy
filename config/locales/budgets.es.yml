@@ -24,13 +24,13 @@ es:
         title: Selecciona una partida
   budget:
     phase:
-      accepting: Aceptando propuestas
-      reviewing: Revisando propuestas
-      selecting: Fase de selección
+      accepting: Fase de propuestas
+      reviewing: Fase de revisión de propuestas
+      selecting: Fase de apoyos
       valuating: Fase de evaluación de propuestas
       balloting: Fase de votación
-      reviewing_ballots: Contando resultados
-      finished: Terminado
+      reviewing_ballots: Fase de revisión de resultados
+      finished: Resultados
     groups:
       index:
         group_title: "Grupos"
