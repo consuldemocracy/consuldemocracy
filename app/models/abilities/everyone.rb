@@ -12,7 +12,7 @@ module Abilities
       can [:search, :read], Annotation
       can :new, DirectMessage
       can [:read, :draft_publication, :allegations, :final_version_publication], Legislation::Process
-      can [:read], Legislation::DraftVersion
+      can [:read, :changes, :go_to_version], Legislation::DraftVersion
       can [:read], Legislation::Question
       can [:create], Legislation::Answer
     end

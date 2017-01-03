@@ -235,7 +235,7 @@ en:
         updated_at: updated at %{date}
         see_changes: see changes summary
         see_comments: See all comments
-        text_index: Index
+        text_toc: Table of contents
         text_body: Text
         text_comments: Comments
     processes:
