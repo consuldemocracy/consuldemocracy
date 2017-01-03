@@ -108,9 +108,10 @@ es:
         changelog: Cambios
         status: Estado
         final_version: Versión final
-      legislation/questions:
+      legislation/question:
         title: "Título"
-      legislation/question_options:
+        question_options: Respuestas
+      legislation/question_option:
         value: "Valor"
     errors:
       models:

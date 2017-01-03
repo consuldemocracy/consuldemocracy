@@ -90,6 +90,13 @@ en:
         errors:
           form:
             error: Error
+        form:
+          process: Process
+          debate_phase: Debate phase
+          allegations_phase: Allegations phase
+          start: Start
+          end: End
+          use_markdown: Use Markdown to format the text
         index:
           create: New process
           delete: Delete
@@ -104,7 +111,8 @@ en:
           title: Create new collaborative legislation process
           submit_button: Create process
         process:
-          title: Collaborative legislation process title
+          title: Process
+          comments: Comments
         subnav:
           info: Information
           draft_texts: Text
@@ -113,14 +121,22 @@ en:
         edit:
           back: Back
           submit_button: Save changes
+          warning: You've edited the text, don't forget to click on Save to permanently save the changes.
         errors:
           form:
             error: Error
         form:
           fullscreen_toggle: Toggle full screen
+          use_markdown: Use Markdown to format the text
+          hints:
+            final_version: This version will be published as Final Result for this process. Comments won't be allowed in this version.
+            status:
+              draft: You can preview as admin, no one else can see it
+              published: Visible for everybody
         index:
           title: Draft versions
           create: Create version
+          delete: Delete
         new:
           back: Back
           title: Create new version
@@ -137,6 +153,7 @@ en:
       questions:
         edit:
           back: Back
+          title: "Edit “%{question_title}”"
           submit_button: Save changes
         errors:
           form:
@@ -145,8 +162,9 @@ en:
           add_option: Add option
         index:
           back: Back
-          title: Questions
+          title: Questions associated to this process
           create: Create question
+          delete: Delete
         new:
           back: Back
           title: Create new question

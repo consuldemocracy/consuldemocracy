@@ -27,10 +27,15 @@
       <h4><%= t('.how_to_participate') %></h4>
       <%= markdown process.how_to_participate %>
     </div>
+    <div id="debate-info" class="small-12 column">
+      <div class="debate-info-wrapper">
+        <%= markdown process.additional_info if process.additional_info %>
+      </div>
+    </div>
   </div>
 
   <div class="center half-gradient">
-    <a class="button big center strong" title="<%= t('.more_info') %>">
+    <a id="js-toggle-debate" class="button big center strong" title="Más información y contexto">
       <%= t('.more_info') %>
     </a>
   </div>

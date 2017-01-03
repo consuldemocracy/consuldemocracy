@@ -53,4 +53,8 @@ class Legislation::Process < ActiveRecord::Base
       today >= final_publication_date
     end
   end
+
+  def total_comments
+    questions.map(&:comments_count).sum
+  end
 end
