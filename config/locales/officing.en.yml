@@ -25,20 +25,3 @@ en:
         can_participate: "The person associated with the document can participate in the vote."
         submit: Validate vote
         success: "Vote validated correctly."
-    results:
-      index:
-        title: "Vote results"
-        total_votes: "Total number of votes"
-      new:
-        title: Save results
-        submit: Save
-      show:
-        title: "%{booth} results"
-    shared:
-      filter_booth: All booths
-      filter_date: All dates
-      filter_officer: All officers
-      booth: Booth
-      date: Date
-      officer: Officer
-      votes_number: Number of votes

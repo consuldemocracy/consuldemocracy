@@ -25,20 +25,3 @@ es:
         can_participate: "La persona asociada al documento puede participar en la votación."
         submit: Validar voto
         success: "Voto validado correctamente."
-    results:
-      index:
-        title: "Resultados de la votación"
-        total_votes: "Número total de votos"
-      new:
-        title: Guardar resultados
-        submit: Guardar
-      show:
-        title: "Resultados de %{booth}"
-    shared:
-      filter_booth: Todas las urnas
-      filter_date: Todas las fechas
-      filter_officer: Todos los presidentes de mesa
-      booth: Urna
-      date: Fecha
-      officer: Presidente de mesa
-      votes_number: Número de votos
