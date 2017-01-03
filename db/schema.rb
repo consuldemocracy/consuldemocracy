@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170102170125) do
+ActiveRecord::Schema.define(version: 20170103191711) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -340,9 +340,11 @@ ActiveRecord::Schema.define(version: 20170102170125) do
     t.integer  "booth_assignment_id"
     t.integer  "officer_assignment_id"
     t.integer  "count"
-    t.text     "count_log",             default: ""
-    t.datetime "created_at",                         null: false
-    t.datetime "updated_at",                         null: false
+    t.text     "count_log",                 default: ""
+    t.datetime "created_at",                             null: false
+    t.datetime "updated_at",                             null: false
+    t.datetime "date"
+    t.text     "officer_assignment_id_log", default: ""
   end
 
   add_index "poll_recounts", ["booth_assignment_id"], name: "index_poll_recounts_on_booth_assignment_id", using: :btree
