@@ -1518,7 +1518,6 @@ pt-BR:
       create:
         flash:
           offices: Escritórios de Apoio ao Cidadão
-          offices_url: http://offices.consul
           success_html: Obrigado por solicitar seu <b>código de segurança máxima (somente
             solicitado em votações finais)</b>. Em poucos dias nós lhe enviaremos
             para seu endereço relacionado nos dados que temos em arquivo. Por favor
@@ -1534,7 +1533,6 @@ pt-BR:
         go_to_index: Ver propostas
         office: Verificar em qualquer %{office}
         offices: Escritórios de Apoio ao Cidadão
-        offices_url: http://offices.consul
         send_letter: Envie-me uma carta com o código
         title: Parabéns!
         user_permission_info: Com a sua conta você pode...
