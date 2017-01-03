@@ -7,7 +7,13 @@ en:
         info: Here you can validate user documents and store voting results
     menu:
       voters: Validate document
-      results: Store results
+      recounts: Store recount
+    polls:
+      index:
+        title: Poll list
+        no_polls: You are not officing in any active poll
+        select_poll: Select poll
+        add_recount: Add recount
     voters:
       new:
         title: Validate document

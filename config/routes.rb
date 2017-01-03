@@ -289,7 +289,7 @@ Rails.application.routes.draw do
   end
 
   namespace :officing do
-    resources :polls do
+    resources :polls, only: [:index] do
       resources :voters, only: [:new, :show]
       resources :results, only: [:new, :index, :show]
     end

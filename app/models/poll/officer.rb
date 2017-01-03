@@ -13,5 +13,6 @@ class Poll
                                map(&:poll).uniq.compact.
                                sort {|x, y| y.ends_at <=> x.ends_at}
     end
+
   end
 end

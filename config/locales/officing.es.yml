@@ -6,8 +6,14 @@ es:
         title: Presidir mesa de votaciones
         info: Aquí puedes validar documentos de ciudadanos y guardar los resultados de las urnas
     menu:
-      voters: Validar documento
-      results: Guardar resultados
+      voters: "Validar documento"
+      recounts: "Guardar recuento"
+    polls:
+      index:
+        title: "Listado de votaciones"
+        no_polls: "No eres presidente de mesa en ninguna votación activa"
+        select_poll: "Selecciona votación"
+        add_recount: "Añadir recuento"
     voters:
       new:
         title: Validar documento
