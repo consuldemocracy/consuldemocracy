@@ -15,6 +15,7 @@ module Abilities
       can [:read, :changes, :go_to_version], Legislation::DraftVersion
       can [:read], Legislation::Question
       can [:create], Legislation::Answer
+      can [:search, :read, :create], Legislation::Annotation
     end
   end
 end
