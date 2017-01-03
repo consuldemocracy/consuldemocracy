@@ -86,4 +86,22 @@ feature 'Admin legislation questions' do
       expect(page).to have_content 'Question 2b'
     end
   end
+
+  context 'Delete' do
+    scenario 'Legislation question', :js do
+      process = create(:legislation_process, title: 'An example legislation process')
+      create(:legislation_question, title: 'Question 1', process: process)
+      question = create(:legislation_question, title: 'Question 2', process: process)
+      question_option = create(:legislation_question_option, question: question, value: 'Yes')
+      create(:legislation_answer, question: question, question_option: question_option)
+
+      visit edit_admin_legislation_process_question_path(process, question)
+
+      click_link 'Delete'
+
+      expect(page).to have_content 'Questions'
+      expect(page).to have_content 'Question 1'
+      expect(page).to_not have_content 'Question 2'
+    end
+  end
 end
