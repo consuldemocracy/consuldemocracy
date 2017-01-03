@@ -372,7 +372,7 @@ tags = Faker::Lorem.words(10)
     description: "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>",
     created_at: rand((Time.now - 1.week) .. Time.now),
     feasibility: %w{undecided unfeasible feasible feasible feasible feasible}.sample,
-    unfeasibility_explanation: "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>",
+    unfeasibility_explanation: Faker::Lorem.paragraph,
     valuation_finished: [false, true].sample,
     tag_list: tags.sample(3).join(','),
     price: rand(1 .. 100) * 100000,
