@@ -21,4 +21,8 @@ class Legislation::DraftVersion < ActiveRecord::Base
     self.body_html = Redcarpet::Markdown.new(renderer).render(body)
     self.toc_html = Redcarpet::Markdown.new(toc_renderer).render(body)
   end
+
+  def display_title
+    status == 'draft' ? "#{title} *" : title
+  end
 end
