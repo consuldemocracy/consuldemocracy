@@ -262,7 +262,7 @@ feature 'Valuation budget investments' do
     scenario 'Edit dossier' do
       visit valuation_budget_budget_investments_path(@budget)
       within("#budget_investment_#{@investment.id}") do
-        click_link "Edit"
+        click_link "Edit dossier"
       end
 
       fill_in 'budget_investment_price', with: '12345'
@@ -381,7 +381,7 @@ feature 'Valuation budget investments' do
     scenario 'Validates price formats' do
       visit valuation_budget_budget_investments_path(@budget)
       within("#budget_investment_#{@investment.id}") do
-        click_link "Edit"
+        click_link "Edit dossier"
       end
 
       fill_in 'budget_investment_price', with: '12345,98'

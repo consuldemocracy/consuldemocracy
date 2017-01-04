@@ -47,7 +47,7 @@ feature 'Admin budgets' do
       expect(page).to_not have_content(budget4.name)
       expect(page).to have_content(budget5.name)
 
-      click_link 'Current'
+      click_link 'Open'
       expect(page).to have_content(budget1.name)
       expect(page).to have_content(budget2.name)
       expect(page).to have_content(budget3.name)
@@ -55,8 +55,8 @@ feature 'Admin budgets' do
       expect(page).to_not have_content(budget5.name)
     end
 
-    scenario 'Current filter is properly highlighted' do
-      filters_links = {'current' => 'Current', 'finished' => 'Finished'}
+    scenario 'Open filter is properly highlighted' do
+      filters_links = {'current' => 'Open', 'finished' => 'Finished'}
 
       visit admin_budgets_path
 
@@ -110,7 +110,7 @@ feature 'Admin budgets' do
       visit admin_budgets_path
 
       within("#budget_#{budget.id}") do
-        click_link 'Info'
+        click_link 'Edit headings groups'
       end
 
       expect(page).to have_content 'No groups created yet.'
@@ -124,7 +124,7 @@ feature 'Admin budgets' do
       expect(page).to_not have_content 'No groups created yet.'
 
       visit admin_budgets_path
-      click_link 'Yearly participatory budget'
+      click_link 'Edit budget'
 
       expect(page).to have_content 'Yearly participatory budget'
       expect(page).to_not have_content 'No groups created yet.'
