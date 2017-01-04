@@ -69,7 +69,7 @@ feature 'Legislation' do
 
         visit legislation_process_draft_publication_path(process)
 
-        expect(page).to have_content("There are no drafts published")
+        expect(page).to have_content("Nothing published yet")
       end
     end
 
@@ -87,7 +87,7 @@ feature 'Legislation' do
 
         visit legislation_process_allegations_path(process)
 
-        expect(page).to have_content("There are no drafts published")
+        expect(page).to have_content("Nothing published yet")
       end
     end
 
@@ -105,7 +105,7 @@ feature 'Legislation' do
 
         visit legislation_process_final_version_publication_path(process)
 
-        expect(page).to have_content("Results have not been published yet")
+        expect(page).to have_content("Nothing published yet")
       end
     end
   end

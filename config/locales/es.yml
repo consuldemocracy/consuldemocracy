@@ -256,12 +256,8 @@ es:
           past: Terminados
       phase_not_open:
         not_open: Esta fase del proceso todavía no está abierta
-      phase_draft_publication:
-        empty: No se ha publicado ningún borrador
-      phase_allegations:
-        empty: No se ha publicado ningún borrador
-      phase_final_version_publication:
-        empty: No se ha publicado el resultado todavía
+      phase_empty:
+          empty: No hay nada publicado todavía
       process:
         see_latest_comments: Ver últimas aportaciones
         see_latest_comments_title: Aportar a este proceso

@@ -7,11 +7,7 @@
 
   <div class="debate-chooser">
     <div class="row">
-      <% if @process.show_phase?(@phase) %>
-        <%= render "phase_#{@phase}", process: @process %>
-      <% else %>
-        <%= render 'legislation/processes/phase_not_open' %>
-      <% end %>
+      <p><%= t(".empty") %></p>
     </div>
   </div>
 </div>
