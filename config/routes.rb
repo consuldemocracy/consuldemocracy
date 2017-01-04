@@ -101,7 +101,9 @@ Rails.application.routes.draw do
       resources :draft_versions, only: [:show] do
         get :go_to_version, on: :collection
         get :changes
-        resources :annotations
+        resources :annotations do
+          get :search, on: :collection
+        end
       end
     end
   end

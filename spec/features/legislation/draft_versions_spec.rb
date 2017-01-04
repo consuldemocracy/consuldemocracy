@@ -119,4 +119,45 @@ feature 'Legislation Draft Versions' do
     end
   end
 
+  context 'Annotations', :js do
+    let(:user) { create(:user) }
+    background { login_as user }
+
+    scenario 'Create' do
+      draft_version = create(:legislation_draft_version, :published, body: Faker::Lorem.paragraph)
+
+      visit legislation_process_draft_version_path(draft_version.process, draft_version)
+
+      page.find(:css, ".legislation-annotatable").double_click
+      page.find(:css, ".annotator-adder button").click
+      fill_in 'annotator-field-0', with: 'this is my annotation'
+      page.find(:css, ".annotator-controls a[href='#save']").click
+
+      expect(page).to have_css ".annotator-hl"
+      first(:css, ".annotator-hl").click
+      expect(page).to have_content "this is my annotation"
+
+      visit legislation_process_draft_version_path(draft_version.process, draft_version)
+
+      expect(page).to have_css ".annotator-hl"
+      first(:css, ".annotator-hl").click
+      expect(page).to have_content "this is my annotation"
+    end
+
+    scenario 'Search' do
+      draft_version = create(:legislation_draft_version, :published, body: Faker::Lorem.paragraph)
+      annotation1 = create(:legislation_annotation, draft_version: draft_version, text: "my annotation",       ranges: [{"start"=>"/p[1]", "startOffset"=>5, "end"=>"/p[1]", "endOffset"=>10}])
+      annotation2 = create(:legislation_annotation, draft_version: draft_version, text: "my other annotation", ranges: [{"start"=>"/p[1]", "startOffset"=>12, "end"=>"/p[1]", "endOffset"=>19}])
+
+      visit legislation_process_draft_version_path(draft_version.process, draft_version)
+
+      expect(page).to have_css ".annotator-hl"
+      first(:css, ".annotator-hl").click
+      expect(page).to have_content "my annotation"
+
+      all(".annotator-hl")[1].click
+      expect(page).to have_content "my other annotation"
+    end
+  end
+
 end

@@ -49,8 +49,9 @@
 //= require markdown-it
 //= require markdown_editor
 //= require cocoon
-//= require allegations
 //= require legislation
+//= require legislation_allegations
+//= require legislation_annotatable
 //= require custom
 
 var initialize_modules = function() {
@@ -74,8 +75,9 @@ var initialize_modules = function() {
   App.Banners.initialize();
   App.SocialShare.initialize();
   App.MarkdownEditor.initialize();
-  App.Allegations.initialize();
+  App.LegislationAllegations.initialize();
   App.Legislation.initialize();
+  App.LegislationAnnotatable.initialize();
 };
 
 $(function(){
