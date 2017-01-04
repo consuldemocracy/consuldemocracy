@@ -9,7 +9,7 @@ feature 'CSV Exporter' do
 
   context "Proposals" do
 
-    scenario "Attributes" do
+    scenario "Attributes", :focus do
       proposal = create(:proposal)
 
       @csv_exporter.export
