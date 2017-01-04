@@ -221,47 +221,6 @@ a {
   float: left;
 }
 
-//.table-fixed {
-//  table-layout: fixed;
-//=======
-//.tabs-content {
-//  border: 0;
-//}
-//
-//.tabs {
-//  border: {
-//    left: 0;
-//    right: 0;
-//    top: 0;
-//  };
-//  margin-bottom: $line-height;
-//
-//  .tabs-title > a {
-//    color: $text-medium;
-//    margin-bottom: rem-calc(-1);
-//    margin-right: $line-height;
-//
-//    &[aria-selected='true'],
-//    &.is-active {
-//      color: $brand;
-//      border-bottom: 2px solid $brand;
-//      font-weight: bold;
-//    }
-//  }
-//
-//  h2 {
-//    font-size: $base-font-size;
-//  }
-//}
-//
-//.no-max-width {
-//  max-width: none;
-//}
-//
-//.button.float-right ~ .button.float-right {
-//  margin: 0 $line-height/2;
-//}
-
 .tabs-content {
   border: 0;
 }
