@@ -1,6 +1,6 @@
 <% if process.draft_versions.any? %>
   <ul>
-  <% process.draft_versions.each do |draft_version| %>
+  <% process.draft_versions.published.each do |draft_version| %>
     <li><%= link_to draft_version.title, legislation_process_draft_version_path(process, draft_version) %></li>
   <% end %>
   </ul>

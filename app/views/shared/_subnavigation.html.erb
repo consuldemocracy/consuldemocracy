@@ -22,7 +22,10 @@
     </li>
     <% if feature?(:legislation) %>
       <li>
-        <%= link_to t("layouts.header.collaborative_legislation"), legislation_processes_path, class: ("active" if controller.class.parent == Legislation ), accesskey: "l" %>
+        <%= layout_menu_link_to t("layouts.header.collaborative_legislation"),
+                                legislation_processes_path,
+                                controller.class.parent == Legislation,
+                                accesskey: "l" %>
       </li>
     <% end %>
     <% if feature?(:spending_proposals) %>

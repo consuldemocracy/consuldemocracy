@@ -10,13 +10,19 @@ class Legislation::DraftVersion < ActiveRecord::Base
   validates :body, presence: true
   validates :status, presence: true, inclusion: { in: VALID_STATUSES }
 
-  def body_in_html
+  scope :published, -> { where(status: 'published').order('id DESC') }
+
+  before_save :render_html
+
+  def render_html
     renderer = Redcarpet::Render::HTML.new(with_toc_data: true)
     toc_renderer = Redcarpet::Render::HTML_TOC.new(with_toc_data: true)
 
-    body_html = Redcarpet::Markdown.new(renderer).render(body)
-    toc = Redcarpet::Markdown.new(toc_renderer).render(body)
+    self.body_html = Redcarpet::Markdown.new(renderer).render(body)
+    self.toc_html = Redcarpet::Markdown.new(toc_renderer).render(body)
+  end
 
-    return toc, body_html
+  def display_title
+    status == 'draft' ? "#{title} *" : title
   end
 end

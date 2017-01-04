@@ -99,6 +99,7 @@ Rails.application.routes.draw do
         resources :answers, only: [:create]
       end
       resources :draft_versions, only: [:show] do
+        get :go_to_version, on: :collection
         get :changes
         resources :annotations
       end

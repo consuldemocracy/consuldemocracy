@@ -69,7 +69,6 @@
             <div class="markdown-editor-header truncate">Consul | Editando <span class="strong">Versión 3</span> del proceso <span class="strong">Licencias urbanísticas, declaraciones</span></div>
 
             <div class="markdown-editor-buttons">
-              <a class="button secondary" href="#">Previsualizar</a>
               <%= f.submit(class: "button", value: t("admin.legislation.draft_versions.#{admin_submit_action(@draft_version)}.submit_button")) %>
             </div>
 
@@ -82,18 +81,12 @@
       </div>
       <div id="markdown-preview" class="small-12 medium-6 column">
       </div>
-      <div id="markdown-result">
-        <%= f.hidden_field :body_html, label: false %>
-      </div>
     </div>
   </div>
 
   <div class="row primary-buttons">
     <div class="actions small-12 medium-3 column legislation-process-save">
       <%= f.submit(class: "button expanded", value: t("admin.legislation.draft_versions.#{admin_submit_action(@draft_version)}.submit_button")) %>
-    </div>
-    <div class="actions small-12 medium-3 column legislation-process-save">
-      <a class="button secondary" href="#">Previsualizar</a>
     </div>
   </div>
 <% end %>

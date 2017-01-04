@@ -87,12 +87,11 @@ feature 'Admin legislation draft versions' do
       click_link 'Version 1'
 
       fill_in 'legislation_draft_version_title', with: 'Version 1b'
-      fill_in 'legislation_draft_version_body', with: '# Version 1 body\r\nParagraph\r\n>Quote'
+      fill_in 'legislation_draft_version_body', with: '# Version 1 body\r\n\r\nParagraph\r\n\r\n>Quote'
 
       click_button 'Save changes'
 
       expect(page).to have_content 'Version 1b'
-      expect(draft_version.reload.body_html).to eq("<h1>Version 1 body\\r\\nParagraph\\r\\n&gt;Quote</h1>\r\n")
     end
   end
 end

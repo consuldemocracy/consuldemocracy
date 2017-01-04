@@ -137,6 +137,7 @@ en:
           title: Draft versions
           create: Create version
           delete: Delete
+          preview: Preview
         new:
           back: Back
           title: Create new version
