@@ -131,7 +131,7 @@ feature 'Proposals' do
     expect(current_path).to eq(new_proposal_path)
 
     fill_in 'proposal_title', with: 'Help refugees'
-    fill_in 'proposal_summary', with: 'In summary, what we want is...'
+    fill_in 'proposal_summary', with: 'In summary what we want is...'
     fill_in 'proposal_description', with: 'This is very important because...'
     fill_in 'proposal_external_url', with: 'http://rescue.org/refugees'
     fill_in 'proposal_video_url', with: 'http://youtube.com'
@@ -142,7 +142,7 @@ feature 'Proposals' do
 
     expect(page).to have_content 'Proposal created successfully.'
     expect(page).to have_content 'Help refugees'
-    expect(page).to have_content 'In summary, what we want is...'
+    expect(page).to have_content 'In summary what we want is...'
     expect(page).to have_content 'This is very important because...'
     expect(page).to have_content 'http://rescue.org/refugees'
     expect(page).to have_content 'http://youtube.com'
@@ -223,7 +223,7 @@ feature 'Proposals' do
     expect(page).to_not have_selector('#proposal_responsible_name')
 
     fill_in 'proposal_title', with: 'Help refugees'
-    fill_in 'proposal_summary', with: 'In summary, what we want is...'
+    fill_in 'proposal_summary', with: 'In summary what we want is...'
     fill_in 'proposal_description', with: 'This is very important because...'
     fill_in 'proposal_external_url', with: 'http://rescue.org/refugees'
     check 'proposal_terms_of_service'
@@ -307,7 +307,7 @@ feature 'Proposals' do
 
       visit new_proposal_path
       fill_in 'proposal_title', with: 'Help refugees'
-      fill_in 'proposal_summary', with: 'In summary, what we want is...'
+      fill_in 'proposal_summary', with: 'In summary what we want is...'
       fill_in_ckeditor 'proposal_description', with: 'A description with enough characters'
       fill_in 'proposal_external_url', with: 'http://rescue.org/refugees'
       fill_in 'proposal_video_url', with: 'http://youtube.com'

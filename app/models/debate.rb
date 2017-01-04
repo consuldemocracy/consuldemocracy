@@ -166,6 +166,7 @@ class Debate < ActiveRecord::Base
   end
 
   def public_for_api?
+    return false unless author.public_activity?
     hidden? ? false : true
   end
 

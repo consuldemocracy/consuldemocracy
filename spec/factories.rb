@@ -137,7 +137,7 @@ FactoryGirl.define do
 
   factory :proposal do
     sequence(:title)     { |n| "Proposal #{n} title" }
-    sequence(:summary)   { |n| "In summary, what we want is... #{n}" }
+    sequence(:summary)   { |n| "In summary what we want is... #{n}" }
     description          'Proposal description'
     question             'Proposal question'
     external_url         'http://external_documention.es'
@@ -313,6 +313,12 @@ FactoryGirl.define do
     trait :unfeatured do
       featured false
     end
+  end
+
+  factory :tagging, class: 'ActsAsTaggableOn::Tagging' do
+    context "tags"
+    association :taggable, factory: :proposal
+    tag
   end
 
   factory :setting do

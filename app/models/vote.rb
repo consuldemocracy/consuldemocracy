@@ -9,7 +9,8 @@ class Vote < ActsAsVotable::Vote
 
   def public_for_api?
     return false unless ["Proposal", "Debate", "Comment"].include? votable_type
-    return false if votable.try(:hidden?)
+    return false unless votable.present?
+    return false if votable.hidden?
     return true
   end
 

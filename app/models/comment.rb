@@ -120,6 +120,7 @@ class Comment < ActiveRecord::Base
 
   def public_for_api?
     return false if commentable.hidden?
+    return false unless author.public_activity?
     ["Proposal", "Debate"].include? commentable_type
   end
 

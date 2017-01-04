@@ -7,6 +7,8 @@ class Tag < ActsAsTaggableOn::Tag
   end
 
   def public_for_api?
-    [nil, "category"].include? kind
+    return false unless [nil, "category"].include? kind
+    return false unless Proposal.tagged_with(self).present? || Debate.tagged_with(self).present?
+    return true
   end
 end

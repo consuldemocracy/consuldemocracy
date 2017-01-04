@@ -45,7 +45,11 @@ class API::CSVExporter
     end
 
     def public_attributes(record)
-      record.attributes.values_at(*columns(record.class.name.underscore.pluralize))
+      record.attributes.values_at(*columns(record_model(record)))
+    end
+
+    def record_model(record)
+      record.class.name.demodulize.underscore.pluralize
     end
 
     def filename(table)
@@ -53,7 +57,7 @@ class API::CSVExporter
     end
 
     def folder
-      "public/"
+      "public/api/"
     end
 
 end

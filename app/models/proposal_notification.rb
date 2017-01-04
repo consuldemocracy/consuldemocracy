@@ -22,6 +22,7 @@ class ProposalNotification < ActiveRecord::Base
   end
 
   def public_for_api?
+    return false unless proposal.present?
     proposal.hidden? ? false : true
   end
 
