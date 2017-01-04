@@ -62,10 +62,17 @@ en:
       index:
         title: Participatory budgets
         new_link: Create new budget
-        info_link: Info
         filters:
-          open: Open
+          current: Open
           finished: Finished
+        budget_investments: See budget investments
+        table_name: Name
+        table_phase: Phase
+        table_investments: Investments
+        table_edit_groups: Headings groups
+        table_edit_budget: Edit
+        edit_groups: Edit headings groups
+        edit_budget: Edit budget
       create:
         notice: New participatory budget created successfully!
       update:
@@ -75,8 +82,6 @@ en:
       new:
         title: New participatory budget
       show:
-        phase: Current phase
-        currency: Currency
         groups: Groups of budget headings
       form:
         group: Group name
