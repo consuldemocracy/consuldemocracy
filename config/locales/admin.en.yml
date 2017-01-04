@@ -180,6 +180,18 @@ en:
         remove_assignment: "Remove"
         assignments: "Officing shifts in this poll"
         no_assignments: "This user has no officing shifts in this poll."
+    poll_booth_assignments:
+      show:
+        location: "Location"
+        officers: "Officers"
+        officers_list: "Officer list for this booth"
+        no_officers: "There are no officers for this booth"
+        recounts: "Recounts"
+        recounts_list: "Recount list for this booth"
+        no_recounts: "There are not daily recounts of this booth yet"
+        date: "Date"
+        count_by_officer: "Votes (by officer)"
+        count_by_system:  "Votes (automatic)"
     polls:
       index:
         title: "List of polls"

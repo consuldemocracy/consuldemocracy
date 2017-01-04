@@ -1,7 +1,5 @@
 class Admin::Poll::BoothAssignmentsController < Admin::BaseController
 
-  before_action :load_booth_assignment, only: :destroy
-
   def create
     @booth_assignment = ::Poll::BoothAssignment.new(poll_id: booth_assignment_params[:poll], booth_id: booth_assignment_params[:booth])
 
@@ -14,6 +12,8 @@ class Admin::Poll::BoothAssignmentsController < Admin::BaseController
   end
 
   def destroy
+    @booth_assignment = ::Poll::BoothAssignment.find(params[:id])
+
     if @booth_assignment.destroy
       notice = t("admin.booth_assignments.flash.destroy")
     else
@@ -22,10 +22,15 @@ class Admin::Poll::BoothAssignmentsController < Admin::BaseController
     redirect_to admin_poll_path(@booth_assignment.poll_id, anchor: 'tab-booths'), notice: notice
   end
 
+  def show
+    @poll = ::Poll.find(params[:poll_id])
+    @booth_assignment = @poll.booth_assignments.includes(:recounts, officer_assignments: [officer: [:user]]).find(params[:id])
+  end
+
   private
 
     def load_booth_assignment
-      @booth_assignment = ::Poll::BoothAssignment.find_by(poll: params[:poll], booth: params[:booth])
+      @booth_assignment = ::Poll::BoothAssignment.find(params[:id])
     end
 
     def booth_assignment_params

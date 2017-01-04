@@ -186,15 +186,18 @@ Rails.application.routes.draw do
     end
 
     scope module: :poll do
-      resources :officers do
-        get :search, on: :collection
-      end
       resources :polls do
         get :search_booths, on: :member
         get :search_officers, on: :member
         get :search_questions, on: :member
         patch :add_question, on: :member
         patch :remove_question, on: :member
+
+        resources :booth_assignments, only: :show
+      end
+
+      resources :officers do
+        get :search, on: :collection
       end
 
       resources :booths

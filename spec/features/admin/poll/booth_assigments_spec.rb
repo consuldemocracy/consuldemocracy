@@ -39,7 +39,7 @@ feature 'Admin booths assignments' do
   scenario 'remove booth from poll', :js do
     poll = create(:poll)
     booth = create(:poll_booth)
-    create(:poll_booth_assignment, poll: poll, booth: booth)
+    assignment = create(:poll_booth_assignment, poll: poll, booth: booth)
 
     visit admin_poll_path(poll)
     within('#poll-resources') do
@@ -49,7 +49,7 @@ feature 'Admin booths assignments' do
     expect(page).to_not have_content 'There are no booths assigned to this poll.'
     expect(page).to have_content booth.name
 
-    within("#booth_#{booth.id}") do
+    within("#poll_booth_assignment_#{assignment.id}") do
       click_link 'Remove booth from poll'
     end
 

@@ -1,6 +1,6 @@
 <h3><%= t("admin.polls.show.booths_title") %></h3>
 
-<% if @poll.booths.empty? %>
+<% if @poll.booth_assignments.empty? %>
   <div class="callout primary margin-top">
     <%= t("admin.polls.show.no_booths") %>
   </div>
@@ -12,19 +12,19 @@
       <th class="text-center"><%= t("admin.polls.show.table_assignment") %></th>
     </thead>
     <tbody>
-      <% @poll.booths.each do |booth| %>
-        <tr id="booth_<%= booth.id %>" class="booth">
+      <% @poll.booth_assignments.each do |booth_assignment| %>
+        <tr id="<%= dom_id(booth_assignment) %>" class="booth">
           <td>
             <strong>
-              <%= link_to booth.name, admin_booth_path(booth) %>
+              <%= link_to booth_assignment.booth.name, admin_poll_booth_assignment_path(@poll, booth_assignment) %>
             </strong>
           </td>
           <td>
-            <%= booth.location %>
+            <%= booth_assignment.booth.location %>
           </td>
           <td class="text-center">
             <%= link_to t("admin.polls.show.remove_booth"),
-                        admin_booth_assignment_path(poll: @poll, booth: booth),
+                        admin_booth_assignment_path(booth_assignment),
                         method: :delete,
                         class: "button hollow alert" %>
           </td>

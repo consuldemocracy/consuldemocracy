@@ -180,6 +180,18 @@ es:
         remove_assignment: "Eliminar turno"
         assignments: "Turnos como presidente de mesa en esta votación"
         no_assignments: "No tiene turnos como presidente de mesa en esta votación."
+    poll_booth_assignments:
+      show:
+        location: "Ubicación"
+        officers: "Presidentes de mesa"
+        officers_list: "Lista de presidentes de mesa asignados a esta urna"
+        no_officers: "No hay presidentes de mesa para esta urna"
+        recounts: "Recuentos"
+        recounts_list: "Lista de recuentos de esta urna"
+        no_recounts: "No hay recuentos diarios de esta urna"
+        date: "Fecha"
+        count_by_officer: "Votos (presidente de mesa)"
+        count_by_system:  "Votos (automático)"
     polls:
       index:
         title: "Listado de votaciones"

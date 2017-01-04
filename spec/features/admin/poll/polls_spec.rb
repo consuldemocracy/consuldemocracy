@@ -98,7 +98,7 @@ feature 'Admin polls' do
 
     context "Poll show" do
 
-      scenario "No booths", :js do
+      scenario "No booths" do
         poll = create(:poll)
         visit admin_poll_path(poll)
         click_link "Booths (0)"
@@ -106,7 +106,7 @@ feature 'Admin polls' do
         expect(page).to have_content "There are no booths assigned to this poll."
       end
 
-      scenario "Booth list", :js do
+      scenario "Booth list" do
         poll = create(:poll)
         3.times { create(:poll_booth, polls: [poll]) }
 
@@ -115,11 +115,10 @@ feature 'Admin polls' do
 
         expect(page).to have_css ".booth", count: 3
 
-        booths = Poll::Booth.all
-        booths.each do |booth|
-          within("#booth_#{booth.id}") do
-            expect(page).to have_content booth.name
-            expect(page).to have_content booth.location
+        poll.booth_assignments.each do |ba|
+          within("#poll_booth_assignment_#{ba.id}") do
+            expect(page).to have_content ba.booth.name
+            expect(page).to have_content ba.booth.location
           end
         end
         expect(page).to_not have_content "There are no booths assigned to this poll."
