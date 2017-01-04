@@ -82,8 +82,6 @@ en:
       new:
         title: New participatory budget
       show:
-        phase: Current phase
-        currency: Currency
         groups: Groups of budget headings
       form:
         group: Group name

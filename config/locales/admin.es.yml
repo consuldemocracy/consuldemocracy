@@ -82,8 +82,6 @@ es:
       new:
         title: Nuevo presupuesto ciudadano
       show:
-        phase: Fase actual
-        currency: Divisa
         groups: Grupos de partidas presupuestarias
       form:
         group: Nombre del grupo
