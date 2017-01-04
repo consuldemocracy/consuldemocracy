@@ -24,6 +24,7 @@ es:
           valuating: En evaluación
           valuation_finished: Evaluación finalizada
         title: Propuestas de inversión
+        assigned_to: "Asignadas a %{valuator}"
         edit: Editar informe
         valuators_assigned:
           one: Evaluador asignado

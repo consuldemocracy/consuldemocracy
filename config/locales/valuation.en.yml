@@ -23,6 +23,7 @@ en:
           valuation_open: Open
           valuating: Under valuation
           valuation_finished: Valuation finished
+        assigned_to: "Assigned to %{valuator}"
         title: Investment projects
         edit: Edit dossier
         valuators_assigned:

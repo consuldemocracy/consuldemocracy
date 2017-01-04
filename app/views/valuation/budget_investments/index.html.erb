@@ -1,6 +1,6 @@
 <h2>
   <%= @budget.name %> - <%= t("valuation.budget_investments.index.title") %>
-  <small>(Asignadas a EVALUADOR)</small>
+  <small><%= t('valuation.budget_investments.index.assigned_to', valuator: current_user.name) %></small>
 </h2>
 
 <div class="row collapse">
