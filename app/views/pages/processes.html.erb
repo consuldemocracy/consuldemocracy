@@ -1,4 +1,7 @@
-<% provide :title do %><%= t("pages.processes.index.title") %><% end %>
+<% provide :title, t("meta_tags.processes.title") %>
+<% provide :meta_description, t("meta_tags.processes.description") %>
+<% provide :meta_keywords, t("meta_tags.processes.keywords") %>
+
 <% if @proposal_successfull_exists %>
   <div class="expanded jumbo-proposal-ballots-small no-margin-top">
     <div class="row">

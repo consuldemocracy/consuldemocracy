@@ -53,3 +53,28 @@ es:
       text: "La preselección ciudadana de los proyectos ha terminado. Ya puedes ver los resultados."
       date_html: "Resultados <strong>disponibles</strong>"
       button: "Ver resultados"
+  meta_tags:
+    welcome_index:
+      title: "Decide Madrid - Participación del Ayuntamiento de Madrid"
+      description: "Decide Madrid. Web de participación ciudadana del Ayuntamiento de Madrid. Haz, apoya y vota propuestas, decide en qué gasta el Ayuntamiento su presupuesto."
+      keywords: "Decide Madrid, consulta ciudadana, participación ciudadana, participación Ayuntamiento Madrid, Ayuntamiento de Madrid, votación ciudadana"
+    debates:
+      title: "Debates ciudadanos en Decide Madrid"
+      description: "Debate con otros habitantes de Madrid los temas de la ciudad que te preocupan y envía tus preguntas a los concejales del Ayuntamiento para que te respondan."
+      keywords: "Debate, debates, debates ciudadanos, Decide Madrid, participación ciudadana, Ayuntamiento de Madrid, participación"
+    proposals:
+      title: "Propuestas ciudadanas en Decide Madrid"
+      description: "Haz una propuesta, tienes un plazo de un año para conseguir 27.000 apoyos y que los habitantes de Madrid la voten. El Ayuntamiento de Madrid la realizará."
+      keywords: "Propuestas ciudadanas, propuestas, Decide Madrid, participación ciudadana, Ayuntamiento de Madrid"
+    polls:
+      title: "Votaciones ciudadanas en Decide Madrid"
+      description: "Vota las propuestas ciudadanas para mejorar la ciudad en la web Decide Madrid. Del 13 al 19 de febrero de 2017 tú decides cómo quieres que sea Madrid."
+      keywords: "votación ciudadana, votaciones ciudadanas, Decide Madrid, participación Madrid, Alianza por el Clima, Madrid sostenible, billete único"
+    processes:
+      title: "Procesos de participación en Decide Madrid"
+      description: "Haz tus sugerencias en la elaboración de ordenanzas municipales, consultas previas y en los proyectos en los que el Ayuntamiento quiere saber tu opinión."
+      keywords: "procesos de participación, legislación colaborativa, Decide Madrid, Ayuntamiento de Madrid, participación ciudadana"
+    budget:
+      title: "Presupuestos participativos en Decide Madrid"
+      description: "Tú decides en qué invierte parte de sus presupuestos el Ayuntamiento de Madrid. Haz una propuesta, consigue los apoyos y el proyecto se llevará a cabo."
+      keywords: "Presupuestos participativos, presupuestos municipales, Decide Madrid, inversión pública, Ayuntamiento de Madrid, participación ciudadana"
