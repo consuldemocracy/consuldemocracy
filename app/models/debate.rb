@@ -170,5 +170,4 @@ class Debate < ActiveRecord::Base
     hidden? ? false : true
   end
 
-  #* COMPROBAR campo "hidden_at". Si está oculto se excluye el debate del archivo.
 end
