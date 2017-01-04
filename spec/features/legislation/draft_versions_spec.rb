@@ -37,7 +37,7 @@ feature 'Legislation Draft Versions' do
       within('select#draft_version_id') do
         expect(page).to have_content("Version 1")
         expect(page).to have_content("Version 2")
-        expect(page).to_not have_content("Version 3")
+        expect(page).to have_content("Version 3")
       end
     end
 
@@ -93,7 +93,7 @@ feature 'Legislation Draft Versions' do
       within('select#draft_version_id') do
         expect(page).to have_content("Version 1")
         expect(page).to have_content("Version 2")
-        expect(page).to_not have_content("Version 3")
+        expect(page).to have_content("Version 3")
       end
     end
 
