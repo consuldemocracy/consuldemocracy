@@ -1,93 +1,33 @@
-API_TYPE_DEFINITIONS = {
-  User => {
-    id:         :integer,
-    username:   :string
-  },
-  Voter => {
-    gender:     :string,
-    age_range:  :string,
-    geozone_id: :integer,
-    geozone:     Geozone
-  },
-  Debate => {
-    id:                 :integer,
-    title:              :string,
-    description:        :string,
-    created_at:         :string,
-    cached_votes_total: :integer,
-    cached_votes_up:    :integer,
-    cached_votes_down:  :integer,
-    comments_count:     :integer,
-    hot_score:          :integer,
-    confidence_score:   :integer,
-    geozone_id:         :integer,
-    geozone:            Geozone,
-    comments:           [Comment],
-    public_author:      User
-  },
-  Proposal => {
-    id:                 :integer,
-    title:              :string,
-    description:        :string,
-    external_url:       :string,
-    cached_votes_up:    :integer,
-    comments_count:     :integer,
-    hot_score:          :integer,
-    confidence_score:   :integer,
-    created_at:         :string,
-    summary:            :string,
-    video_url:          :string,
-    geozone_id:         :integer,
-    retired_at:         :string,
-    retired_reason:     :string,
-    retired_explanation: :string,
-    geozone:            Geozone,
-    comments:           [Comment],
-    proposal_notifications: [ProposalNotification],
-    public_author:      User
-  },
-  Comment => {
-    id:                 :integer,
-    commentable_id:     :integer,
-    commentable_type:   :string,
-    body:               :string,
-    created_at:         :string,
-    cached_votes_total: :integer,
-    cached_votes_up:    :integer,
-    cached_votes_down:  :integer,
-    ancestry:           :string,
-    confidence_score:   :integer,
-    public_author:      User
-  },
-  Geozone => {
-    id:   :integer,
-    name: :string
-  },
-  ProposalNotification => {
-    title:          :string,
-    body:           :string,
-    proposal_id:    :integer,
-    created_at:     :string,
-    proposal:       Proposal
-  },
-  Tag => {
-    id:             :integer,
-    name:           :string,
-    taggings_count: :integer,
-    kind:           :string
-  },
-  Vote => {
-    votable_id:       :integer,
-    votable_type:     :string,
-    public_timestamp: :string,
-    public_voter:     Voter
-  }
-}
+api_config = YAML.load_file('./config/api.yml')
+
+API_TYPE_DEFINITIONS = {}
+
+# Parse API configuration file
+
+api_config.each do |api_type_model, api_type_info|
+  model = api_type_model.constantize
+  options = api_type_info['options']
+  fields = {}
+
+  api_type_info['fields'].each do |field_name, field_type|
+    if field_type.is_a?(Array) # paginated association
+      fields[field_name.to_sym] = [field_type.first.constantize]
+    elsif GraphQL::TypeCreator::SCALAR_TYPES[field_type.to_sym]
+      fields[field_name.to_sym] = field_type.to_sym
+    else # simple association
+      fields[field_name.to_sym] = field_type.constantize
+    end
+  end
+
+  API_TYPE_DEFINITIONS[model] = { options: options, fields: fields }
+end
+
+# Create all GraphQL types
 
 type_creator = GraphQL::TypeCreator.new
 
-API_TYPE_DEFINITIONS.each do |model, fields|
-  type_creator.create(model, fields)
+API_TYPE_DEFINITIONS.each do |model, info|
+  type_creator.create(model, info[:fields])
 end
 
 ConsulSchema = GraphQL::Schema.define do
@@ -110,7 +50,7 @@ QueryRoot = GraphQL::ObjectType.define do
   type_creator.created_types.each do |model, created_type|
 
     # create an entry field to retrive a single object
-    if API_TYPE_DEFINITIONS[model][:id]
+    if API_TYPE_DEFINITIONS[model][:fields][:id]
       field model.name.underscore.to_sym do
         type created_type
         description "Find one #{model.model_name.human} by ID"
