@@ -117,7 +117,7 @@ es:
           one: 1 apoyo
           other: "%{count} apoyos"
           zero: Sin apoyos
-        vote: Votar
+        give_support: Apoyar
       header:
         check_ballot: Revisar mis votos
         different_heading_assigned_html: "Ya apoyaste propuestas de otra sección del presupuesto: %{heading_link}"
