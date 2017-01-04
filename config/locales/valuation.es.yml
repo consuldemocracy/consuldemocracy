@@ -13,7 +13,7 @@ es:
           finished: Terminados
         table_name: Nombre
         table_phase: Fase
-        table_assigned_headings: Partidas asignadas
+        table_assigned_investments_valuation_open: Prop. Inv. asignadas en evaluación
         table_actions: Acciones
         evaluate: Evaluar
     budget_investments:
