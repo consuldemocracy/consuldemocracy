@@ -111,6 +111,7 @@ en:
       settings: Configuration settings
       spending_proposals: Spending proposals
       stats: Statistics
+      signature_sheets: Signature Sheets
     moderators:
       index:
         title: Moderators
@@ -295,6 +296,31 @@ en:
       delete:
         success: Geozone successfully deleted
         error: This geozone can't be deleted since there are elements attached to it
+    signature_sheets:
+      author: Author
+      created_at: Creation date
+      name: Name
+      no_signature_sheets: "There are not signature_sheets"
+      index:
+        title: Signature sheets
+        new: New signature sheets
+      new:
+        title: New signature sheets
+        document_numbers_note: "Write the numbers separated by commas (,)"
+        submit: Create signature sheet
+      show:
+        created_at: Created
+        author: Author
+        documents: Documents
+        document_count: "Number of documents:"
+        verified:
+          one: "There is %{count} valid signature"
+          other: "There are %{count} valid signatures"
+        unverified:
+          one: "There is %{count} invalid signature"
+          other: "There are %{count} invalid signatures"
+        unverified_error: (Not verified by Census)
+        loading: "There are still signatures that are being verified by the Census, please refresh the page in a few moments"
     stats:
       show:
         stats_title: Stats

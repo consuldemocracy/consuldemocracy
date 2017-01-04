@@ -30,10 +30,14 @@ Setting.create(key: 'feature.spending_proposal_features.voting_allowed', value: 
 Setting.create(key: 'feature.twitter_login', value: "true")
 Setting.create(key: 'feature.facebook_login', value: "true")
 Setting.create(key: 'feature.google_login', value: "true")
+Setting.create(key: 'feature.signature_sheets', value: "true")
 Setting.create(key: 'per_page_code', value: "")
 Setting.create(key: 'comments_body_max_length', value: '1000')
 Setting.create(key: 'mailer_from_name', value: 'Consul')
 Setting.create(key: 'mailer_from_address', value: 'noreply@consul.dev')
+Setting.create(key: 'meta_description', value: 'Citizen Participation and Open Government Application')
+Setting.create(key: 'meta_keywords', value: 'citizen participation, open government')
+Setting.create(key: 'verification_offices_url', value: 'http://oficinas-atencion-ciudadano.url/')
 
 puts "Creating Geozones"
 ('A'..'Z').each { |i| Geozone.create(name: "District #{i}", external_code: i.ord, census_code: i.ord) }

@@ -69,6 +69,10 @@ es:
         external_url: "Enlace a documentación adicional"
         geozone_id: "Ámbito de actuación"
         title: "Título"
+      signature_sheet:
+        signable_type: "Tipo de hoja de firmas"
+        signable_id: "ID Propuesta ciudadana/Propuesta inversión"
+        document_numbers: "Números de documentos"
     errors:
       models:
         user:
@@ -91,3 +95,8 @@ es:
           attributes:
             minimum_interval:
               invalid: "Debes esperar un mínimo de %{interval} días entre notificaciones"
+        signature:
+          attributes:
+            document_number:
+              not_in_census: 'No verificado por Padrón'
+              already_voted: 'Ya ha votado esta propuesta'

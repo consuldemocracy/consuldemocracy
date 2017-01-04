@@ -12,7 +12,7 @@
     <div data-alert class="callout success">
       <%= t("verification.letter.create.flash.success_html",
           offices: link_to(t("verification.letter.create.flash.offices"),
-                           t("verification.letter.create.flash.offices_url"),
+                           setting['verification_offices_url'],
                            title: t('shared.target_blank_html'),
                            target: "_blank")).html_safe
       %>
