@@ -7,6 +7,41 @@ RSpec.describe Legislation::Process, type: :model do
     expect(legislation_process).to be_valid
   end
 
+  describe "date ranges validations" do
+    it "is invalid if end_date is before start_date" do
+      process = build(:legislation_process, start_date: Date.current, end_date: Date.current - 1.day)
+      expect(process).to be_invalid
+      expect(process.errors.messages[:end_date]).to include("must be on or after the start date")
+    end
+
+    it "is valid if end_date is the same as start_date" do
+      process = build(:legislation_process, start_date: Date.current - 1.day, end_date: Date.current - 1.day)
+      expect(process).to be_valid
+    end
+
+    it "is invalid if debate_end_date is before debate start_date" do
+      process = build(:legislation_process, debate_start_date: Date.current, debate_end_date: Date.current - 1.day)
+      expect(process).to be_invalid
+      expect(process.errors.messages[:debate_end_date]).to include("must be on or after the debate start date")
+    end
+
+    it "is valid if debate_end_date is the same as debate_start_date" do
+      process = build(:legislation_process, debate_start_date: Date.current - 1.day, debate_end_date: Date.current - 1.day)
+      expect(process).to be_valid
+    end
+
+    it "is invalid if allegations_end_date is before allegations_start_date" do
+      process = build(:legislation_process, allegations_start_date: Date.current, allegations_end_date: Date.current - 1.day)
+      expect(process).to be_invalid
+      expect(process.errors.messages[:allegations_end_date]).to include("must be on or after the allegations start date")
+    end
+
+    it "is valid if allegations_end_date is the same as allegations_start_date" do
+      process = build(:legislation_process, allegations_start_date: Date.current - 1.day, allegations_end_date: Date.current - 1.day)
+      expect(process).to be_valid
+    end
+  end
+
   describe "filter scopes" do
     before(:each) do
       @process_1 = create(:legislation_process, start_date: Date.current - 2.days, end_date: Date.current + 1.day)
