@@ -1,12 +1,18 @@
-<div class="row budget-investments-scope margin-bottom">
+<div class="expanded budget no-margin-top">
+  <div class="row">
+    <div class="small-12 medium-9 column padding">
+      <%= link_to budget_path(@budget), class: "back" do %>
+        <span class="icon-angle-left"></span>
+        <%= t('shared.back') %>
+      <% end %>
+
+      <h2><%= t("budgets.groups.show.title") %></h2>
+    </div>
+  </div>
+</div>
+
+<div class="row margin-top">
   <div id="select-district" class="small-12 medium-7 column select-district">
-    <%= link_to budget_path(@budget), class: "back" do %>
-      <span class="icon-angle-left"></span>
-      <%= t('shared.back') %>
-    <% end %>
-
-    <h2><%= t("budgets.groups.show.title") %></h2>
-
     <div class="row">
       <% @group.headings.each_slice(7) do |slice| %>
         <div class="small-6 medium-4 column end">

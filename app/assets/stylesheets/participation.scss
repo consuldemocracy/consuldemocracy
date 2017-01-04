@@ -856,8 +856,21 @@
 .expanded.budget {
   background: $budget;
 
-  h1, p, a {
+  h1, h2, p, a.back, .icon-angle-left {
     color: white;
+  }
+
+  .button {
+    background: white;
+    color: $budget;
+  }
+
+  .info {
+    background: #6A2A72;
+
+    @include breakpoint(medium) {
+      border-top: rem-calc(6) solid #54225C;
+    }
   }
 }
 
