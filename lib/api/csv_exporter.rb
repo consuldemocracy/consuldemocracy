@@ -63,7 +63,7 @@ class API::CSVExporter
     end
 
     def folder
-      "#{Rails.root}/public/api/"
+      "public/api/"
     end
 
 end
