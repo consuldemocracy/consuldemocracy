@@ -83,6 +83,17 @@ feature 'CSV Exporter' do
       expect(csv).to_not include(hidden_proposal.title)
     end
 
+    scenario "Only display date and hour for created_at" do
+      create(:proposal, created_at: Time.new(2017, 12, 31, 9, 0, 0))
+
+      @csv_exporter.export
+      visit csv_path_for("proposals")
+      csv = CSV.parse(page.html).flatten
+
+      expect(csv).to     include(/2017-12-31 09/)
+      expect(csv).to_not include(/2017-12-31 09:00:00/)
+    end
+
   end
 
   context "Debates" do
@@ -137,6 +148,17 @@ feature 'CSV Exporter' do
 
       expect(csv).to include(visible_debate.title)
       expect(csv).to_not include(hidden_debate.title)
+    end
+
+    scenario "Only display date and hour for created_at" do
+      create(:debate, created_at: Time.new(2017, 12, 31, 9, 0, 0))
+
+      @csv_exporter.export
+      visit csv_path_for("debates")
+      csv = CSV.parse(page.html).flatten
+
+      expect(csv).to     include(/2017-12-31 09/)
+      expect(csv).to_not include(/2017-12-31 09:00:00/)
     end
 
   end
@@ -239,6 +261,17 @@ feature 'CSV Exporter' do
       expect(csv).to_not include(hidden_debate_comment.body)
     end
 
+    scenario "Only display date and hour for created_at" do
+      create(:comment, created_at: Time.new(2017, 12, 31, 9, 0, 0))
+
+      @csv_exporter.export
+      visit csv_path_for("comments")
+      csv = CSV.parse(page.html).flatten
+
+      expect(csv).to     include(/2017-12-31 09/)
+      expect(csv).to_not include(/2017-12-31 09:00:00/)
+    end
+
   end
 
   context "Geozones" do
@@ -294,6 +327,17 @@ feature 'CSV Exporter' do
 
       expect(csv).to include(visible_proposal_notification.title)
       expect(csv).to_not include(hidden_proposal_notification.title)
+    end
+
+    scenario "Only display date and hour for created_at" do
+      create(:proposal_notification, created_at: Time.new(2017, 12, 31, 9, 0, 0))
+
+      @csv_exporter.export
+      visit csv_path_for("proposal_notifications")
+      csv = CSV.parse(page.html).flatten
+
+      expect(csv).to     include(/2017-12-31 09/)
+      expect(csv).to_not include(/2017-12-31 09:00:00/)
     end
 
   end
@@ -441,7 +485,7 @@ feature 'CSV Exporter' do
 
   context "Votes" do
 
-    scenario "Attributes", :focus do
+    scenario "Attributes" do
       vote = create(:vote)
       @csv_exporter.export
 
@@ -460,7 +504,7 @@ feature 'CSV Exporter' do
       expect(csv).to include(vote_line)
     end
 
-    scenario "Only include votes from proposals, debates and comments", :focus do
+    scenario "Only include votes from proposals, debates and comments" do
       proposal = create(:proposal)
       debate   = create(:debate)
       comment  = create(:comment)
@@ -494,6 +538,17 @@ feature 'CSV Exporter' do
 
       expect(csv).to include(visible_proposal_vote.votable_id.to_s)
       expect(csv).to_not include(hidden_proposal_vote.votable_id.to_s)
+    end
+
+    scenario "Only display date and hour for created_at" do
+      create(:vote, created_at: Time.new(2017, 12, 31, 9, 0, 0))
+
+      @csv_exporter.export
+      visit csv_path_for("votes")
+      csv = CSV.parse(page.html).flatten
+
+      expect(csv).to     include(/2017-12-31 09/)
+      expect(csv).to_not include(/2017-12-31 09:00:00/)
     end
 
   end

@@ -23,3 +23,4 @@ en:
   time:
     formats:
       datetime: "%Y-%m-%d %H:%M:%S"
+      api: "%Y-%m-%d %H"

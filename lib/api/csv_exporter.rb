@@ -45,7 +45,13 @@ class API::CSVExporter
     end
 
     def public_attributes(record)
-      record.attributes.values_at(*columns(record_model(record)))
+      attrs = record.attributes
+
+      if attrs["created_at"]
+        attrs["created_at"] = I18n.l(record.created_at, format: :api)
+      end
+
+      attrs.values_at(*columns(record_model(record)))
     end
 
     def record_model(record)
