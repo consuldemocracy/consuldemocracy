@@ -57,6 +57,10 @@ Setting["org_name"] = "Decide Madrid"
 # Consul installation place name (City, Country...)
 Setting["place_name"] = "Madrid"
 
+# Meta tags for SEO
+Setting["meta_description"] = nil
+Setting["meta_keywords"] = nil
+
 # Feature flags
 Setting['feature.debates'] = true
 Setting['feature.spending_proposals'] = true

@@ -53,7 +53,7 @@ class Proposal < ActiveRecord::Base
   scope :not_retired,              -> { where(retired_at: nil) }
   scope :proceedings,              -> { where.not(proceeding: nil) }
   scope :not_proceedings,          -> { where(proceeding: nil) }
-  scope :successfull,              -> { where("cached_votes_up + physical_votes >= ?", Proposal.votes_needed_for_success)}
+  scope :successfull,              -> { where("cached_votes_up >= ?", Proposal.votes_needed_for_success)}
 
   def to_param
     "#{id}-#{title}".parameterize
@@ -104,7 +104,7 @@ class Proposal < ActiveRecord::Base
   end
 
   def total_votes
-    cached_votes_up + physical_votes
+    cached_votes_up
   end
 
   def voters

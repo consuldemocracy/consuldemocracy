@@ -41,3 +41,5 @@ en:
         plaza: "Plaza España Probe"
     mailer_from_name: Origin email name
     mailer_from_address: Origin email address
+    meta_description: "Site description (SEO)"
+    meta_keywords: "Keywords (SEO)"
