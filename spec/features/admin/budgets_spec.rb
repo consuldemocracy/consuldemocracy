@@ -153,7 +153,6 @@ feature 'Admin budgets' do
 
         expect(page).to have_content 'District 9 reconstruction'
         expect(page).to have_content '6785'
-        expect(page).to have_content 'All city'
       end
     end
 

@@ -21,7 +21,6 @@
             <tr>
               <th><%= t("admin.budgets.form.table_heading") %></th>
               <th><%= t("admin.budgets.form.table_amount") %></th>
-              <th><%= t("admin.budgets.form.table_geozone") %></th>
             </tr>
           </thead>
         <tbody>
@@ -45,10 +44,6 @@
                                   maxlength: 8,
                                   placeholder: t("admin.budgets.form.amount") %>
               </div>
-              <div class="small-12 medium-6 column">
-                <label><%= t("admin.budgets.form.geozone") %></label>
-                <%= f.select :geozone_id, geozone_select_options, {include_blank: t("geozones.none"), label: false} %>
-              </div>
             </div>
 
             <%= f.submit t("admin.budgets.form.save_heading"), class: "button success" %>
@@ -64,9 +59,6 @@
           </td>
           <td>
             <%= heading.price %>
-          </td>
-          <td>
-            <%= geozone_name_from_id heading.geozone_id %>
           </td>
         </tr>
         <% end %>
