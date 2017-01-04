@@ -11,8 +11,8 @@ feature 'CSV Exporter' do
 
     scenario "Attributes" do
       proposal = create(:proposal)
-      @csv_exporter.export
 
+      @csv_exporter.export
       visit csv_path_for("proposals")
       csv = CSV.parse(page.html)
 
@@ -100,8 +100,8 @@ feature 'CSV Exporter' do
 
     scenario "Attributes" do
       debate = create(:debate)
-      @csv_exporter.export
 
+      @csv_exporter.export
       visit csv_path_for("debates")
       csv = CSV.parse(page.html)
 
@@ -167,8 +167,8 @@ feature 'CSV Exporter' do
 
     scenario "Attributes" do
       comment = create(:comment)
-      @csv_exporter.export
 
+      @csv_exporter.export
       visit csv_path_for("comments")
       csv = CSV.parse(page.html)
 

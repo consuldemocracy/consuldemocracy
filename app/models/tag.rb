@@ -11,4 +11,5 @@ class Tag < ActsAsTaggableOn::Tag
     return false unless Proposal.tagged_with(self).present? || Debate.tagged_with(self).present?
     return true
   end
+
 end

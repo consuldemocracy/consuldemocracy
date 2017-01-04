@@ -47,7 +47,6 @@ class Proposal < ActiveRecord::Base
   scope :sort_by_relevance,        -> { all }
   scope :sort_by_flags,            -> { order(flags_count: :desc, updated_at: :desc) }
   scope :sort_by_archival_date,    -> { archived.sort_by_confidence_score }
-  scope :active,                   -> { where.not(hidden_at: nil) }
   scope :archived,                 -> { where("proposals.created_at <= ?", Setting["months_to_archive_proposals"].to_i.months.ago)}
   scope :not_archived,             -> { where("proposals.created_at > ?", Setting["months_to_archive_proposals"].to_i.months.ago)}
   scope :last_week,                -> { where("proposals.created_at >= ?", 7.days.ago)}
@@ -231,11 +230,6 @@ class Proposal < ActiveRecord::Base
     return false unless author.public_activity?
     return true
   end
-
-  #Mirar a ver si hay alguna mas
-  #Primero mirar a ver si elemento original esta incluido en el csv y sino esconder el elemento hijo
-
-  #created_at mostrar solo fecha y hora (no minutos)
 
   protected
 
