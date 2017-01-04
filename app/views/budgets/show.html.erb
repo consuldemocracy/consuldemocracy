@@ -1,23 +1,38 @@
-<div class="expanded budget no-margin-top padding">
-  <div class="row">
-    <div class="small-12 medium-9 column">
-      <%= link_to budgets_path do %>
+<div class="expanded budget no-margin-top">
+  <div class="row" data-equalizer>
+    <div class="small-12 medium-9 column padding" data-equalizer-watch>
+      <%= link_to budgets_path, class: "back" do %>
         <span class="icon-angle-left"></span>
         <%= t('shared.back') %>
       <% end %>
 
-      <h1><%= @budget.name %>
-          <small><%= t("budgets.phases.#{@budget.phase}") %></small>
-      </h1>
+      <h1><%= @budget.name %></h1>
 
       <%= @budget.description %>
+    </div>
+    <div class="small-12 medium-3 column info padding" data-equalizer-watch>
+      <p>
+        <strong><%= t('budget.show.phase') %></strong>
+        <br>
+        <%= t("budgets.phases.#{@budget.phase}") %>
+      </p>
 
+      <% if @budget.accepting? %>
+        <% if current_user && current_user.level_two_or_three_verified? %>
+          <%= link_to t("budget.investments.index.sidebar.create"), new_budget_investment_path(@budget), class: "button margin-top" %>
+        <% else %>
+          <div class="callout warning margin-top">
+            <%= t("budget.investments.index.sidebar.verified_only",
+                verify: link_to(t("budget.investments.index.sidebar.verify_account"), verification_path)).html_safe %>
+          </div>
+        <% end %>
+      <% end %>
     </div>
   </div>
 </div>
 
 <div class="row margin-top">
-  <div class="small-12 medium-6 column">
+  <div class="small-12 medium-9 column">
     <table class="table-fixed">
       <thead>
         <th><%= t('budget.show.group') %></th>
