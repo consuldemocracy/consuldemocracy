@@ -14,7 +14,7 @@
       <p>
         <strong><%= t('budget.show.phase') %></strong>
         <br>
-        <%= t("budgets.phases.#{@budget.phase}") %>
+        <%= t("budget.phase.#{@budget.phase}") %>
       </p>
 
       <% if can?(:create, Budget::Investment.new(budget: @budget)) %>

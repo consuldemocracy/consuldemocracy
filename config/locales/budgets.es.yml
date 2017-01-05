@@ -26,11 +26,11 @@ es:
     phase:
       accepting: Aceptando propuestas
       reviewing: Revisando propuestas
-      selecting: Fase de selección
-      valuating: Fase de evaluación de propuestas
-      balloting: Fase de votación
+      selecting: Selección de propuestas
+      valuating: Evaluación de propuestas
+      balloting: Votación de propuestas
       reviewing_ballots: Contando resultados
-      finished: Terminado
+      finished: Presupuesto terminado
     groups:
       index:
         group_title: "Grupos"

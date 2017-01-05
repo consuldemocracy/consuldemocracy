@@ -26,11 +26,11 @@ en:
     phase:
       accepting: Accepting proposals
       reviewing: Reviewing proposals
-      selecting: Selecting
-      valuating: Valuating
-      balloting: Balloting
+      selecting: Selecting proposals
+      valuating: Valuating proposals
+      balloting: Balloting proposals
       reviewing_ballots: Reviewing Ballots
-      finished: Finished
+      finished: Finished budget
     groups:
       index:
         group_title: "Groups"
