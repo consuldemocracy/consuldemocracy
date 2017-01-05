@@ -117,15 +117,17 @@ feature 'Admin budgets' do
 
       click_link 'Add new group'
 
-      fill_in 'budget_group_name', with: 'General improvments'
+      fill_in 'budget_group_name', with: 'Health'
       click_button 'Create group'
 
+      expect(page).to have_content 'Health'
       expect(page).to have_content 'Yearly participatory budget'
       expect(page).to_not have_content 'No groups created yet.'
 
       visit admin_budgets_path
       click_link 'Edit budget'
 
+      expect(page).to have_content 'Health'
       expect(page).to have_content 'Yearly participatory budget'
       expect(page).to_not have_content 'No groups created yet.'
     end
