@@ -10,7 +10,7 @@
 
   <div class="in-favor js-in-favor">
     <% if user_voted_for %>
-      <div class="supported">
+      <div class="supported callout success">
         <%= t("budget.investments.investment.already_supported") %>
       </div>
     <% elsif investment.should_show_votes? %>

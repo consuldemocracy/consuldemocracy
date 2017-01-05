@@ -35,7 +35,7 @@
               <%= heading_name(investment.heading) %>
             </p>
             <div class="investment-project-description">
-              <p><%= link_to investment.description, namespaced_budget_investment_path(investment) %></p>
+              <p><%= investment.description %></p>
               <div class="truncate"></div>
             </div>
           <% end %>
