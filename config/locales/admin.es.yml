@@ -111,6 +111,11 @@ es:
         process:
           title: Proceso
           comments: Comentarios
+          status: Estado
+          creation_date: Fecha creación
+          status_open: Abierto
+          status_closed: Cerrado
+          status_planned: Próximamente
         subnav:
           info: Información
           draft_texts: Texto

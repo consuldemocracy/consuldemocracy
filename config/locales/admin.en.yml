@@ -113,6 +113,11 @@ en:
         process:
           title: Process
           comments: Comments
+          status: Status
+          creation_date: Creation date
+          status_open: Open
+          status_closed: Closed
+          status_planned: Planned
         subnav:
           info: Information
           draft_texts: Text

@@ -59,6 +59,18 @@ class Legislation::Process < ActiveRecord::Base
     questions.map(&:comments_count).sum
   end
 
+  def status
+    today = Date.current
+
+    if today < start_date
+      :planned
+    elsif end_date < today
+      :closed
+    else
+      :open
+    end
+  end
+
   private
 
     def valid_date_ranges
