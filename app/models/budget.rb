@@ -94,6 +94,17 @@ class Budget < ActiveRecord::Base
     formatted_amount(amount_spent(heading))
   end
 
+  def investments_orders
+    case phase
+    when 'accepting', 'reviewing'
+      %w{random}
+    when 'balloting', 'reviewing_ballots'
+      %w{random price}
+    else
+      %w{random confidence_score}
+    end
+  end
+
   private
 
     def sanitize_descriptions
