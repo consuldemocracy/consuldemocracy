@@ -254,6 +254,9 @@ en:
           open: Open processes
           next: Next
           past: Past
+        no_open_processes: There aren't open processes
+        no_next_processes: There aren't planned processes
+        no_past_processes: There aren't past processes
       phase_not_open:
         not_open: This phase is not open yet
       phase_empty:

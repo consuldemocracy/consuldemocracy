@@ -19,8 +19,12 @@
 
   <div id="legislation" class="legislation-list small-12 medium-9 column">
     <div id="legislation-list">
-      <%= render @processes %>
-      <%= paginate @processes %>
+      <% if @processes.any? %>
+        <%= render @processes %>
+        <%= paginate @processes %>
+      <% else %>
+        <%= t(".no_#{@current_filter}_processes") %>
+      <% end %>
     </div>
   </div>
 </div>

@@ -254,6 +254,9 @@ es:
           open: Procesos activos
           next: Próximamente
           past: Terminados
+        no_open_processes: No hay procesos activos
+        no_next_processes: No hay procesos planeados
+        no_past_processes: No hay procesos terminados
       phase_not_open:
         not_open: Esta fase del proceso todavía no está abierta
       phase_empty:
