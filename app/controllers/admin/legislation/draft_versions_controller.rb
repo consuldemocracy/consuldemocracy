@@ -8,23 +8,25 @@ class Admin::Legislation::DraftVersionsController < Admin::Legislation::BaseCont
 
   def create
     if @draft_version.save
-      redirect_to admin_legislation_process_draft_versions_path
+      redirect_to admin_legislation_process_draft_versions_path, notice: t('admin.legislation.draft_versions.create.notice')
     else
+      flash.now[:error] = t('admin.legislation.draft_versions.create.error')
       render :new
     end
   end
 
   def update
     if @draft_version.update(draft_version_params)
-      redirect_to admin_legislation_process_draft_versions_path
+      redirect_to edit_admin_legislation_process_draft_version_path(@process, @draft_version), notice: t('admin.legislation.draft_versions.update.notice')
     else
+      flash.now[:error] = t('admin.legislation.draft_versions.update.error')
       render :edit
     end
   end
 
   def destroy
     @draft_version.destroy
-    redirect_to admin_legislation_process_draft_versions_path
+    redirect_to admin_legislation_process_draft_versions_path, notice: t('admin.legislation.draft_versions.destroy.notice')
   end
 
   private

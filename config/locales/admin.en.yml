@@ -84,6 +84,14 @@ en:
         title: Hidden debates
     legislation:
       processes:
+        create:
+          notice: Process created successfully
+          error: Process couldn't be created
+        update:
+          notice: Process updated successfully
+          error: Process couldn't be updated
+        destroy:
+          notice: Process deleted successfully
         edit:
           back: Back
           submit_button: Save changes
@@ -123,6 +131,14 @@ en:
           draft_texts: Text
           questions: Debate
       draft_versions:
+        create:
+          notice: Draft created successfully
+          error: Draft couldn't be created
+        update:
+          notice: Draft updated successfully
+          error: Draft couldn't be updated
+        destroy:
+          notice: Draft deleted successfully
         edit:
           back: Back
           submit_button: Save changes
@@ -157,6 +173,14 @@ en:
           final_version: Final version
           status: Status
       questions:
+        create:
+          notice: Question created successfully
+          error: Question couldn't be created
+        update:
+          notice: Question updated successfully
+          error: Question couldn't be updated
+        destroy:
+          notice: Question deleted successfully
         edit:
           back: Back
           title: "Edit “%{question_title}”"

@@ -82,6 +82,14 @@ es:
         title: Debates ocultos
     legislation:
       processes:
+        create:
+          notice: Proceso creado correctamente
+          error: No se ha podido crear el proceso
+        update:
+          notice: Proceso actualizado correctamente
+          error: No se ha podido actualizar el proceso
+        destroy:
+          notice: Proceso eliminado correctamente
         edit:
           back: Volver
           submit_button: Guardar cambios
@@ -121,6 +129,14 @@ es:
           draft_texts: Texto
           questions: Debate
       draft_versions:
+        create:
+          notice: Borrador creado correctamente
+          error: No se ha podido crear el borrador
+        update:
+          notice: Borrador actualizado correctamente
+          error: No se ha podido actualizar el borrador
+        destroy:
+          notice: Borrador eliminado correctamente
         edit:
           back: Volver
           submit_button: Guardar cambios
@@ -155,6 +171,14 @@ es:
           final_version: Versión final
           status: Estado
       questions:
+        create:
+          notice: Pregunta creada correctamente
+          error: No se ha podido crear la pregunta
+        update:
+          notice: Pregunta actualizada correctamente
+          error: No se ha podido actualizar la pregunta
+        destroy:
+          notice: Pregunta eliminada correctamente
         edit:
           back: Volver
           title: "Editar “%{question_title}”"

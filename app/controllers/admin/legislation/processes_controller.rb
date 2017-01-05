@@ -9,23 +9,25 @@ class Admin::Legislation::ProcessesController < Admin::Legislation::BaseControll
 
   def create
     if @process.save
-      redirect_to admin_legislation_processes_path
+      redirect_to edit_admin_legislation_process_path(@process), notice: t('admin.legislation.processes.create.notice')
     else
+      flash.now[:error] = t('admin.legislation.processes.create.error')
       render :new
     end
   end
 
   def update
     if @process.update(process_params)
-      redirect_to admin_legislation_processes_path
+      redirect_to edit_admin_legislation_process_path(@process), notice: t('admin.legislation.processes.update.notice')
     else
+      flash.now[:error] = t('admin.legislation.processes.update.error')
       render :edit
     end
   end
 
   def destroy
     @process.destroy
-    redirect_to admin_legislation_processes_path
+    redirect_to admin_legislation_processes_path, notice: t('admin.legislation.processes.destroy.notice')
   end
 
   private
