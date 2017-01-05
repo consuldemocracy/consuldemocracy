@@ -74,9 +74,9 @@ class Legislation::Process < ActiveRecord::Base
   private
 
     def valid_date_ranges
-      errors.add(:end_date, :invalid_date_range) if end_date < start_date
-      errors.add(:debate_end_date, :invalid_date_range) if debate_end_date < debate_start_date
-      errors.add(:allegations_end_date, :invalid_date_range) if allegations_end_date < allegations_start_date
+      errors.add(:end_date, :invalid_date_range) if end_date && start_date && end_date < start_date
+      errors.add(:debate_end_date, :invalid_date_range) if debate_end_date && debate_start_date && debate_end_date < debate_start_date
+      errors.add(:allegations_end_date, :invalid_date_range) if allegations_end_date && allegations_start_date && allegations_end_date < allegations_start_date
     end
 
 end
