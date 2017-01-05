@@ -82,7 +82,9 @@ en:
       new:
         title: New participatory budget
       show:
-        groups: Groups of budget headings
+        groups:
+          one: 1 Group of budget headings
+          other: "%{count} Groups of budget headings"
       form:
         group: Group name
         no_groups: No groups created yet. Each user will be able to vote in only one heading per group.

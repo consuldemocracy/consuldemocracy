@@ -82,7 +82,9 @@ es:
       new:
         title: Nuevo presupuesto ciudadano
       show:
-        groups: Grupos de partidas presupuestarias
+        groups:
+          one: 1 Grupo de partidas presupuestarias
+          other: "%{count} Grupos de partidas presupuestarias"
       form:
         group: Nombre del grupo
         no_groups: No hay grupos creados todavía. Cada usuario podrá votar en una sola partida de cada grupo.

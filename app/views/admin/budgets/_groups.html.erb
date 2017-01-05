@@ -1,4 +1,4 @@
-<h3 class="inline-block"><%= t('admin.budgets.show.groups') %></h3>
+<h3 class="inline-block"><%= t('admin.budgets.show.groups', count: groups.count) %></h3>
 <% if groups.blank? %>
   <div class="callout primary">
     <%= t("admin.budgets.form.no_groups") %>
