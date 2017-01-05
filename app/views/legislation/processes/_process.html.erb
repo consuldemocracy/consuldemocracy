@@ -3,7 +3,7 @@
     <div class="small-12 medium-8 column">
       <div class="legislation-text">
         <h3><%= link_to process.title, process %></h3>
-        <p><%= process.description %></p>
+        <%= simple_format(first_paragraph(process.description)) %>
       </div>
     </div>
 
