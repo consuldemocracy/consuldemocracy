@@ -127,6 +127,14 @@ en:
           attributes:
             max_per_day:
               invalid: "You have reached the maximum number of private messages per day"
+        legislation/process:
+          attributes:
+            end_date:
+              invalid_date_range: must be on or after the start date
+            debate_end_date:
+              invalid_date_range: must be on or after the debate start date
+            allegations_end_date:
+              invalid_date_range: must be on or after the allegations start date
         proposal:
           attributes:
             tag_list:
