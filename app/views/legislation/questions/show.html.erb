@@ -16,6 +16,13 @@
             <span class="icon-angle-right" aria-hidden="true">
           <% end %>
         <% end %>
+      <% elsif @question.first_question_id %>
+        <%= link_to legislation_process_question_path(@process, @question.first_question_id), class: "quiz-next-link" do %>
+          <%= content_tag :div, class: "quiz-next" do %>
+            <%= t('.first_question') %>
+            <span class="icon-angle-right" aria-hidden="true">
+          <% end %>
+        <% end %>
       <% end %>
     </div>
   </div>
